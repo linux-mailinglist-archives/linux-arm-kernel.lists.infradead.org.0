@@ -2,54 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C196B43207
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 13 Jun 2019 02:46:04 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5CCFF43209
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 13 Jun 2019 02:48:06 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=L02j2ba+ligsiWwZbZFIrXGN7tjyhMVPQc7Gu8zAu7w=; b=aVALyUfv/ubzyT
-	44t+4EjLSGolZQcAstg0/k0UHLcznU0sYRZN82vKvTd4OSPOuSW8sLGAa9Xhv+AQ+tNcrXe5k9aGA
-	cmq5E5hlY20G6OJmrVWd6lk4oOlo0tTUDnXsaAHCTQMNqmow7XCOk7/gBUuQOmgqOPcHL48KaIQkb
-	SIiodPa9qX1AChU/zKe+mrlKVRq8WpCxyx3BLntHgZZR3psRSXTqZSzJ41UHwF40u+1ACpufNoTDx
-	VGtyUm2pTXAx8lJybzj3KeOyxkBYJug5pxXQD4XeiBSfdum2nAB/KBPhwiogCh6DQBjruZDbMqmLE
-	cO4IM6Wb6XSwCWKZ4IZg==;
+	List-Owner; bh=4hXvz/hf/YT2LnLSH0PrpmmT6yuVgBbrN89bfVPrPYM=; b=b9e/37aNKFL2Jw
+	FIMmWqYvHY4RxAe4E6eAIVS0X/ggsmoan7l2eFHbLYx0UDxFElAS/JvTY6dnRb0lZC/mnNae7C66l
+	RMQaad7AoOQ9Tug4ygMxE6Y3hVzeq8TINR82gAkGlvN69puUeDjPGdCYuOOUlx9KV98jSpCZ1n5vm
+	MS5erTWWHVmlPGy43aorzBC535CP6PArkAhSuOAX7GfrFN7RGmnh1uorDcvx+pDUJLZ4xKvziF3OY
+	jX1KbM22Tou0gJNVbddBOlQRX9hPQgeKP3/zZcQ5jlwl6CW0AKBSi4vwUcv3tnHplUFkPe+TfVya3
+	qgocW/30o8sXvyHHKjLQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hbDsP-0004PS-E9; Thu, 13 Jun 2019 00:46:01 +0000
+	id 1hbDuM-0004j4-GE; Thu, 13 Jun 2019 00:48:02 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hbDsA-0004P8-DA
- for linux-arm-kernel@lists.infradead.org; Thu, 13 Jun 2019 00:45:47 +0000
+ id 1hbDu8-0004id-C0
+ for linux-arm-kernel@lists.infradead.org; Thu, 13 Jun 2019 00:47:49 +0000
 Received: from dragon (li1322-146.members.linode.com [45.79.223.146])
  (using TLSv1.2 with cipher DHE-RSA-AES128-SHA (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id A5143215EA;
- Thu, 13 Jun 2019 00:45:42 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id E0644215EA;
+ Thu, 13 Jun 2019 00:47:41 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1560386745;
- bh=Y7mdi6uFOuBO3QxKWlpKYM6bNyXkY1xifsM4T0q7N8U=;
+ s=default; t=1560386868;
+ bh=4lclOnf/sfAPyFXVi/HGPDJVKp6DvLHCXDKLDcqvQaU=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=S7EpA5OokHKhhjL9gHwCJrcGLGApv/KADm67/XXDDdIrNY684DJbkzkOJPmVOjFQt
- ZLTdOzW6obAQYrYpwF+ZTMLvsVggKTzpNRFkS5JnUyX29Ah+W/ZcuK7JbuUrgVMB7J
- 9jDWecsCijkiNcUINgXNm3wZHEfS8ExGt2NMokZo=
-Date: Thu, 13 Jun 2019 08:45:10 +0800
+ b=Apd1/9RvRe5RRMZS7XQ5mBXWsp+u6fbo99Qa+k24pfkJ/rDYjokzMyqi2R02tYu1U
+ mgmuZuNYIIQgcl/+J3WTW0OGIJYhv4veu1KwtcdtxW3zcTFlr1GggxJDg5cBz95zlI
+ xTfzNH3Q9tNXDAlBIzzqKKbubumC1q/twZiOPTBc=
+Date: Thu, 13 Jun 2019 08:47:10 +0800
 From: Shawn Guo <shawnguo@kernel.org>
-To: Li Yang <leoyang.li@nxp.com>
-Subject: Re: [PATCH] arm64: defconfig: Enable FSL_EDMA driver
-Message-ID: <20190613004508.GA20747@dragon>
-References: <20190422183056.16375-1-leoyang.li@nxp.com>
- <20190510030525.GC15856@dragon>
- <CADRPPNT2G20j2pvSEyqX=_WNDPrcNR+xCR_XZukbnSW19wFLNA@mail.gmail.com>
+To: Herbert Xu <herbert@gondor.apana.org.au>
+Subject: Re: [PATCH] ARM: dts: imx7ulp: add crypto support
+Message-ID: <20190613004709.GB20747@dragon>
+References: <20190606080255.25504-1-horia.geanta@nxp.com>
+ <20190612103926.GE11086@dragon>
+ <VI1PR0402MB3485A573518D60A573BA55C298EC0@VI1PR0402MB3485.eurprd04.prod.outlook.com>
+ <20190612130602.GH11086@dragon>
+ <VI1PR0402MB348596BF52CE43B5D4CD534798EC0@VI1PR0402MB3485.eurprd04.prod.outlook.com>
+ <20190612132600.GI11086@dragon>
+ <20190612135952.ds6zzh7ppahiuodd@gondor.apana.org.au>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <CADRPPNT2G20j2pvSEyqX=_WNDPrcNR+xCR_XZukbnSW19wFLNA@mail.gmail.com>
+In-Reply-To: <20190612135952.ds6zzh7ppahiuodd@gondor.apana.org.au>
 User-Agent: Mutt/1.5.21 (2010-09-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190612_174546_465985_813DEEAD 
-X-CRM114-Status: GOOD (  16.77  )
+X-CRM114-CacheID: sfid-20190612_174748_431391_8FC5012E 
+X-CRM114-Status: GOOD (  10.96  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -78,50 +82,35 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: aisheng.dong@nxp.com, Grant Likely <grant.likely@arm.com>,
- madalin.bucur@nxp.com, lkml <linux-kernel@vger.kernel.org>,
- Vinod Koul <vkoul@kernel.org>, Rob Herring <robh+dt@kernel.org>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ Aymen Sghaier <aymen.sghaier@nxp.com>, Horia Geanta <horia.geanta@nxp.com>,
+ Iuliana Prodan <iuliana.prodan@nxp.com>, Sascha Hauer <s.hauer@pengutronix.de>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Franck Lenormand <franck.lenormand@nxp.com>, Rob Herring <robh+dt@kernel.org>,
+ "linux-crypto@vger.kernel.org" <linux-crypto@vger.kernel.org>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Fabio Estevam <festevam@gmail.com>, "David S. Miller" <davem@davemloft.net>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ dl-linux-imx <linux-imx@nxp.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Jun 12, 2019 at 03:01:29PM -0500, Li Yang wrote:
-> On Thu, May 9, 2019 at 10:15 PM Shawn Guo <shawnguo@kernel.org> wrote:
+On Wed, Jun 12, 2019 at 09:59:52PM +0800, Herbert Xu wrote:
+> On Wed, Jun 12, 2019 at 09:26:02PM +0800, Shawn Guo wrote:
 > >
-> > On Mon, Apr 22, 2019 at 01:30:56PM -0500, Li Yang wrote:
-> > > Enables the FSL EDMA driver by default.  This also works around an issue
-> > > that imx-i2c driver keeps deferring the probe because of the DMA is not
-> > > ready.  And currently the DMA engine framework can not correctly tell
-> > > if the DMA channels will truly become available later (it will never be
-> > > available if the DMA driver is not enabled).
-> > >
-> > > This will cause indefinite messages like below:
-> > > [    3.335829] imx-i2c 2180000.i2c: can't get pinctrl, bus recovery not supported
-> > > [    3.344455] ina2xx 0-0040: power monitor ina220 (Rshunt = 1000 uOhm)
-> > > [    3.350917] lm90 0-004c: 0-004c supply vcc not found, using dummy regulator
-> > > [    3.362089] imx-i2c 2180000.i2c: can't get pinctrl, bus recovery not supported
-> > > [    3.370741] ina2xx 0-0040: power monitor ina220 (Rshunt = 1000 uOhm)
-> > > [    3.377205] lm90 0-004c: 0-004c supply vcc not found, using dummy regulator
-> > > [    3.388455] imx-i2c 2180000.i2c: can't get pinctrl, bus recovery not supported
-> > > .....
-> > >
-> > > Signed-off-by: Li Yang <leoyang.li@nxp.com>
-> >
-> > Applied, thanks.
+> > Yes, it happens from time to time depending on maintainer's style. I'm
+> > fine with the DT changes going through other subsystem tree, if the
+> > subsystem maintainer wants to and is willing to take the risk of merge
+> > conflict between his tree and arm-soc tree.
 > 
-> Hi Shawn,
-> 
-> Is it possible to move this patch to the -fix series so that it can
-> reach the mainline earlier?  It is having a boot failure in mainline
-> for platforms using this device without this workaround.
+> I have no problems with potential merge conflicts.
 
-Why would I2C device deferring cause boot failure on a platform?  I'm
-just trying to understand severity of the problem.
+Then feel free to take it:
 
-Shawn
+Acked-by: Shawn Guo <shawnguo@kernel.org>
 
 _______________________________________________
 linux-arm-kernel mailing list
