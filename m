@@ -2,65 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A4BC3433D3
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 13 Jun 2019 09:45:38 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5D0CF433D9
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 13 Jun 2019 09:48:29 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=eCc3/hH4/cjsMOng/T+JxBBle3fvCeED+3nB9Oug+ZI=; b=ITtVQCuWK7S3A8
-	iWYSfWCcwtlC0mWNcjLqYTAfFxlvBb2gtMtV0UJR0M4Msxg/kun87pvueO4OsVO/2O/3hRddj+agS
-	UAzWCwrTUJIduQyZnARgl2+OXKhz81QrJTcfc1YtZ7FvYVnJFRt9ftfqoE/NrkyeGodOdOcy6q6wt
-	3eIAdngeqCDCqWPgtAkbPbzMxlyZ5+0srlw1UzOCmj4NUoJi9gRiVOINmccOe+ouTx8aoZAycXBzX
-	+/E1Bbdkt8FrilkuVAHBx4G+Pkw7qSuJzF1W3hHsow20cu6TILQg1bBNy50xRqcwm6udaNUgH2uQt
-	FmVWhTAutOSsuWc2lP8A==;
+	List-Owner; bh=cl2CRv9p74ftzFFGUHL0afDMDMnfHq3I9rEUBIlvg0g=; b=CoBhUSB86jSNXO
+	9+cWQ2bjMu6KHjbaMxaq/Rj33og4vZgQEx//DNiCSlgYIwvwSrpsuzn2hVlCQ5zt3VP3x8r1N4RnT
+	+8baU/uhNKV6P2cx74XvnSnDDVjmBexwXArfYCs2vTLu6YV+rZmIaQ0yJbeCglgHInElZetjn1a2e
+	U2bICx3S0u+quB7GZtwXX6fMsNjvshfGhmDVrhtskO3jz3HouaccLGqCfopvQH0kdygdWSYsJmz3Z
+	Moct0pTzaMnm84xJZ84B+pU9HWCRqSpduo8Vh47jaxjGgCXZIDR8kEFgiNZ/JUUMdA0BpWGZKmguZ
+	a00eRljN2yGaI+lhGURA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hbKQP-0000yQ-HE; Thu, 13 Jun 2019 07:45:33 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
+	id 1hbKTA-0001Sl-8F; Thu, 13 Jun 2019 07:48:24 +0000
+Received: from mail-qt1-f193.google.com ([209.85.160.193])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hbKQ5-0000y1-20; Thu, 13 Jun 2019 07:45:14 +0000
-X-UUID: a1793233c06d4df6a0fe3899141ff412-20190612
-X-UUID: a1793233c06d4df6a0fe3899141ff412-20190612
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
- (envelope-from <ck.hu@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 597823498; Wed, 12 Jun 2019 23:45:06 -0800
-Received: from MTKMBS31N1.mediatek.inc (172.27.4.69) by
- MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Thu, 13 Jun 2019 00:45:05 -0700
-Received: from MTKCAS06.mediatek.inc (172.21.101.30) by
- MTKMBS31N1.mediatek.inc (172.27.4.69) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Thu, 13 Jun 2019 15:45:03 +0800
-Received: from [172.21.77.4] (172.21.77.4) by MTKCAS06.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Thu, 13 Jun 2019 15:45:03 +0800
-Message-ID: <1560411902.27582.0.camel@mtksdaap41>
-Subject: Re: [PATCH v3, 09/27] drm/mediatek: add mutex sof register offset
- into ddp private data
-From: CK Hu <ck.hu@mediatek.com>
-To: <yongqiang.niu@mediatek.com>
-Date: Thu, 13 Jun 2019 15:45:02 +0800
-In-Reply-To: <1559734986-7379-10-git-send-email-yongqiang.niu@mediatek.com>
-References: <1559734986-7379-1-git-send-email-yongqiang.niu@mediatek.com>
- <1559734986-7379-10-git-send-email-yongqiang.niu@mediatek.com>
-X-Mailer: Evolution 3.10.4-0ubuntu2 
+ id 1hbKSw-0001SG-JS
+ for linux-arm-kernel@lists.infradead.org; Thu, 13 Jun 2019 07:48:11 +0000
+Received: by mail-qt1-f193.google.com with SMTP id h21so21436246qtn.13
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 13 Jun 2019 00:48:08 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=fgT/YI2hhlyXpTA69Z5TLJrfk51LKe8sjqrg92sPdsE=;
+ b=qByZPR9njpY2MQoktAWFohaICF53sfF40BOfKoPXPKO/fCgMtz4BR+VaKfL4fNpZsW
+ Eo2aToieTYD+UJFIrbqgT3arq2VhEgzGtwKUcanl/olkMqIpRQqutF5PqBZWGFi43tdC
+ LR+Io2eTvM2G3mbvT/QQmfs9SMgKNS2EmozVyVEnd4DPQu312cM2pMCkzMmvlpQHJ7lL
+ pSwDFYI69R0Js0tvDWkCKQMO0+so60U/H6+NbxQZaSXX6psOPdVTq6ykv3OyZCrbHlGK
+ oG6Rs5zc7wyytCc9zkKmhJpDhvnbhR7O9C7PqwiIst9XSAJj09SRhORccZ+/maQ4rpkJ
+ y/Aw==
+X-Gm-Message-State: APjAAAWs43O5qt8rx5dEGd+2W23PT7bi/5SjbqUSCoJeMY30yqs1MLzl
+ /rbRHHS1uHCWpoxoMp4u4fD+YKChpnBp2xJfuT0=
+X-Google-Smtp-Source: APXvYqxrrnzKo+F21ENjug1XYtPxZtDHIGQHLWn6kMjV5ZWTGO0RqR8XpwT1uM7DX/d/KwMCFvP6KDGEjgTJk97GDCA=
+X-Received: by 2002:ac8:3ff5:: with SMTP id v50mr69703766qtk.142.1560412088101; 
+ Thu, 13 Jun 2019 00:48:08 -0700 (PDT)
 MIME-Version: 1.0
-X-MTK: N
+References: <1560262374-67875-1-git-send-email-john.garry@huawei.com>
+ <1560262374-67875-3-git-send-email-john.garry@huawei.com>
+ <20190613032034.GE13533@google.com>
+In-Reply-To: <20190613032034.GE13533@google.com>
+From: Arnd Bergmann <arnd@arndb.de>
+Date: Thu, 13 Jun 2019 09:47:51 +0200
+Message-ID: <CAK8P3a0C010LEs3HmyQKHWx4EVpVH1NUtFwYkoF16syFQ9hd8w@mail.gmail.com>
+Subject: Re: [PATCH v4 2/3] lib: logic_pio: Reject accesses to unregistered
+ CPU MMIO regions
+To: Bjorn Helgaas <helgaas@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190613_004513_107573_5155E8DE 
-X-CRM114-Status: GOOD (  12.61  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190613_004810_644035_EC768AE6 
+X-CRM114-Status: GOOD (  11.82  )
+X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (0.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.160.193 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.160.193 listed in wl.mailspike.net]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (arndbergmann[at]gmail.com)
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -72,106 +85,46 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Philipp Zabel <p.zabel@pengutronix.de>, David Airlie <airlied@linux.ie>,
- linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
- Rob Herring <robh+dt@kernel.org>, linux-mediatek@lists.infradead.org,
- Daniel Vetter <daniel@ffwll.ch>, Matthias Brugger <matthias.bgg@gmail.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: Kefeng Wang <wangkefeng.wang@huawei.com>,
+ Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ "Rafael J. Wysocki" <rjw@rjwysocki.net>, John Garry <john.garry@huawei.com>,
+ Will Deacon <will.deacon@arm.com>, Linuxarm <linuxarm@huawei.com>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ linux-pci <linux-pci@vger.kernel.org>,
+ Andy Shevchenko <andriy.shevchenko@linux.intel.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi, Yongqiang:
+On Thu, Jun 13, 2019 at 5:20 AM Bjorn Helgaas <helgaas@kernel.org> wrote:
+>
+> On Tue, Jun 11, 2019 at 10:12:53PM +0800, John Garry wrote:
+> > Currently when accessing logical indirect PIO addresses in
+> > logic_{in, out}{,s}, we first ensure that the region is registered.
+>
+> I think logic_pio is specifically concerned with I/O port space, so
+> it's a little bit unfortunate that we named this "PIO".
+>
+> PIO is a general term for "Programmed I/O", which just means the CPU
+> is involved in each transfer, as opposed to DMA.  The transfers can be
+> to either MMIO or I/O port space.
+>
+> So this ends up being a little confusing because I think you mean
+> "Port I/O", not "Programmed I/O".
 
-On Wed, 2019-06-05 at 19:42 +0800, yongqiang.niu@mediatek.com wrote:
-> From: Yongqiang Niu <yongqiang.niu@mediatek.com>
-> 
-> mutex sof register offset will be private data of ddp
-> 
-> Signed-off-by: Yongqiang Niu <yongqiang.niu@mediatek.com>
-> ---
->  drivers/gpu/drm/mediatek/mtk_drm_ddp.c | 13 ++++++++++---
->  1 file changed, 10 insertions(+), 3 deletions(-)
-> 
-> diff --git a/drivers/gpu/drm/mediatek/mtk_drm_ddp.c b/drivers/gpu/drm/mediatek/mtk_drm_ddp.c
-> index e1a510f..717609d 100644
-> --- a/drivers/gpu/drm/mediatek/mtk_drm_ddp.c
-> +++ b/drivers/gpu/drm/mediatek/mtk_drm_ddp.c
-> @@ -42,12 +42,13 @@
->  #define DISP_REG_CONFIG_DPI_SEL			0x064
->  
->  #define MT2701_DISP_MUTEX0_MOD0			0x2c
-> +#define MT2701_DISP_MUTEX0_SOF0			0x2c
+I think the terms that John uses are more common: I would also
+assume that "PIO" (regardless of whether you expand it as Port
+or Programmed I/O) refers only to inb/outb and PCI/ISA/LPC
+I/O space, and is distinct from "MMIO", which refers to the readl/writel
+accessors and PCI memory space.
 
-0x30?
+That is consistent with the usage across at least the x86, powerpc
+and ia64 architectures when they refer to PIO.
 
-Regards,
-CK
-
->  
->  #define DISP_REG_MUTEX_EN(n)			(0x20 + 0x20 * (n))
->  #define DISP_REG_MUTEX(n)			(0x24 + 0x20 * (n))
->  #define DISP_REG_MUTEX_RST(n)			(0x28 + 0x20 * (n))
->  #define DISP_REG_MUTEX_MOD(mutex_mod_reg, n)	(mutex_mod_reg + 0x20 * (n))
-> -#define DISP_REG_MUTEX_SOF(n)			(0x30 + 0x20 * (n))
-> +#define DISP_REG_MUTEX_SOF(mutex_sof_reg, n)	(mutex_sof_reg + 0x20 * (n))
->  #define DISP_REG_MUTEX_MOD2(n)			(0x34 + 0x20 * (n))
->  
->  #define INT_MUTEX				BIT(1)
-> @@ -164,6 +165,7 @@ struct mtk_ddp_data {
->  	const unsigned int *mutex_mod;
->  	const unsigned int *mutex_sof;
->  	const unsigned int mutex_mod_reg;
-> +	const unsigned int mutex_sof_reg;
->  };
->  
->  struct mtk_ddp {
-> @@ -235,18 +237,21 @@ struct mtk_ddp {
->  	.mutex_mod = mt2701_mutex_mod,
->  	.mutex_sof = mt2712_mutex_sof,
->  	.mutex_mod_reg = MT2701_DISP_MUTEX0_MOD0,
-> +	.mutex_sof_reg = MT2701_DISP_MUTEX0_SOF0,
->  };
->  
->  static const struct mtk_ddp_data mt2712_ddp_driver_data = {
->  	.mutex_mod = mt2712_mutex_mod,
->  	.mutex_sof = mt2712_mutex_sof,
->  	.mutex_mod_reg = MT2701_DISP_MUTEX0_MOD0,
-> +	.mutex_sof_reg = MT2701_DISP_MUTEX0_SOF0,
->  };
->  
->  static const struct mtk_ddp_data mt8173_ddp_driver_data = {
->  	.mutex_mod = mt8173_mutex_mod,
->  	.mutex_sof = mt2712_mutex_sof,
->  	.mutex_mod_reg = MT2701_DISP_MUTEX0_MOD0,
-> +	.mutex_sof_reg = MT2701_DISP_MUTEX0_SOF0,
->  };
->  
->  static unsigned int mtk_ddp_mout_en(enum mtk_ddp_comp_id cur,
-> @@ -528,7 +533,8 @@ void mtk_disp_mutex_add_comp(struct mtk_disp_mutex *mutex,
->  	}
->  
->  	writel_relaxed(ddp->data->mutex_sof[sof_id],
-> -		       ddp->regs + DISP_REG_MUTEX_SOF(mutex->id));
-> +		       ddp->regs +
-> +		       DISP_REG_MUTEX_SOF(ddp->data->mutex_sof_reg, mutex->id));
->  }
->  
->  void mtk_disp_mutex_remove_comp(struct mtk_disp_mutex *mutex,
-> @@ -550,7 +556,8 @@ void mtk_disp_mutex_remove_comp(struct mtk_disp_mutex *mutex,
->  	case DDP_COMPONENT_DPI1:
->  		writel_relaxed(MUTEX_SOF_SINGLE_MODE,
->  			       ddp->regs +
-> -			       DISP_REG_MUTEX_SOF(mutex->id));
-> +			       DISP_REG_MUTEX_SOF(ddp->data->mutex_sof_reg,
-> +						  mutex->id));
->  		break;
->  	default:
->  		if (ddp->data->mutex_mod[id] < 32) {
-
-
+        Arnd
 
 _______________________________________________
 linux-arm-kernel mailing list
