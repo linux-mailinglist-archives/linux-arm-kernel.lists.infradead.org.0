@@ -2,49 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9DE5C44393
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 13 Jun 2019 18:31:44 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D17F744395
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 13 Jun 2019 18:32:02 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=DvpejaNT4eBhDns4FxJHLSG+zmWCjPWj3DUJGU1HA+0=; b=U5HR+BVOuAC/E8
-	nFHo3NNnf/apQ+ctinRwRfb2KfTsAUb7ZUpIl54fuCw/9GaxhMVGPvViCELEYZSqU3In+Fo3+hP3s
-	kMyQxkFXCOuAawwfHbC5O/B5rW4mu3/wtmY6WU8/7j0+z295Xf6bcbL61ViJl004E6RRiw+o3AvsX
-	k5tb581Re61dLl+MWGJETzSUGZZl9OzPmwJiQ2MrQltCsHWXJM4Q+PjSa/figIf9yD8w3MUbDmtfX
-	Cj28FmfT2DfWi2kNlitMG7EqEvpPnc51G2u3JVUOnj1/C2UkRjWqMkbyLlzDAnqntyXFKePRDd2Uq
-	I2tA62mw1OY4IxFiP+Qw==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=LFzXHTB61aXkXS+LAjmuLxtuk3qaqOq6fXSU6Ok4OFU=; b=a+nk7spUF3MnHz
+	KgVHKSzoG5/FAkr1PigmyoQYFJQ1mME/+RHnUlayfWCtXa83ivuCWtlYkoxnN9pCWbewmPKpr8Xwa
+	GcGbMvI2jfY85/oNg2awU2hdt5pAKHXvxNHqVqgiqWiM7GGFG+4sUYVBVybUwWuXLann29HWDrM7p
+	QobnXSi/iDuwdavIMYRpJi8tfU8Wr/8gda9p8yjHKBumD/CpJiN2AnookiO2qyCfveVy105466yje
+	XoG/klLEyETzWwyktWwAndNUHxcjJny/PoKwjNEJmKLSPHy3esDC23ticZxCk/50FT0Sljc7TtUbv
+	AO7KSPfamwXttvsokcpA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hbSdY-00080h-Bn; Thu, 13 Jun 2019 16:31:40 +0000
-Received: from bhuna.collabora.co.uk ([46.235.227.227])
+	id 1hbSds-00005S-C1; Thu, 13 Jun 2019 16:32:00 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hbSZw-00036Y-Gr; Thu, 13 Jun 2019 16:27:58 +0000
-Received: from [127.0.0.1] (localhost [127.0.0.1])
- (Authenticated sender: eballetbo) with ESMTPSA id 2E34F27D7A1
-From: Enric Balletbo i Serra <enric.balletbo@collabora.com>
-To: devicetree@vger.kernel.org
-Subject: [PATCH] arm64: dts: rockchip: Update DWC3 modules on RK3399 SoCs
-Date: Thu, 13 Jun 2019 18:27:45 +0200
-Message-Id: <20190613162745.12195-1-enric.balletbo@collabora.com>
-X-Mailer: git-send-email 2.20.1
+ id 1hbSbQ-0004Y4-6X
+ for linux-arm-kernel@lists.infradead.org; Thu, 13 Jun 2019 16:29:29 +0000
+Received: from mail-qt1-f181.google.com (mail-qt1-f181.google.com
+ [209.85.160.181])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id BC23D21743
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 13 Jun 2019 16:29:27 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1560443367;
+ bh=IA1sl0WAgVc4QRwi3osxrVID6baMw19n8gHARPi9JpU=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=CYROQRbBeQ23sCVK/3AKdfxTVhvLgbjCcGVYXOn2zzXxSCWozaxM14r2svT0lYXae
+ ejpeEdTSchQ3tpJALRPXctxlJHKrAq8mzPoFsfzRjyWnw/KAVONU0NjLNzPvhyjbRx
+ qfvaJBZT0A9/+0Zrm31Ke8PN2K9X0cvIXpcbwjcQ=
+Received: by mail-qt1-f181.google.com with SMTP id h21so23227261qtn.13
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 13 Jun 2019 09:29:27 -0700 (PDT)
+X-Gm-Message-State: APjAAAXA4D+OGemsOuPb0KC6v7hm4llhvPQvamVbFQto5FjZi0WqrEM3
+ DXAYCNUSCUz7tax8xdVpM8ZY5A2eJK3VWnpa6Q==
+X-Google-Smtp-Source: APXvYqz7nRNHAVqybvGqVRQjCt3XMPBnSZESMahCXBsUKT+OJpLrP7rhzia7S5ePIDFWLy/TxydSZBG/gc1IevYjNdc=
+X-Received: by 2002:a0c:b786:: with SMTP id l6mr4467509qve.148.1560443366968; 
+ Thu, 13 Jun 2019 09:29:26 -0700 (PDT)
 MIME-Version: 1.0
+References: <20190613085712.22241-1-maxime.ripard@bootlin.com>
+ <20190613085712.22241-2-maxime.ripard@bootlin.com>
+In-Reply-To: <20190613085712.22241-2-maxime.ripard@bootlin.com>
+From: Rob Herring <robh+dt@kernel.org>
+Date: Thu, 13 Jun 2019 10:29:15 -0600
+X-Gmail-Original-Message-ID: <CAL_Jsq+OsJthxY2E0VKRROk3iaTfWoOw62GKQTLjtxaEg2tMRA@mail.gmail.com>
+Message-ID: <CAL_Jsq+OsJthxY2E0VKRROk3iaTfWoOw62GKQTLjtxaEg2tMRA@mail.gmail.com>
+Subject: Re: [PATCH 2/2] dt-bindings: nvmem: Convert Allwinner SID to a schema
+To: Maxime Ripard <maxime.ripard@bootlin.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190613_092756_843034_D5C41B2D 
-X-CRM114-Status: GOOD (  10.09  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20190613_092928_412427_344D4AFE 
+X-CRM114-Status: GOOD (  12.78  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [46.235.227.227 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -56,78 +86,34 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Heiko Stuebner <heiko@sntech.de>,
- Felipe Balbi <felipe.balbi@linux.intel.com>,
- linux-rockchip@lists.infradead.org, Tony Xie <tony.xie@rock-chips.com>,
- Viresh Kumar <viresh.kumar@linaro.org>, Randy Li <ayaka@soulik.info>,
- linux-kernel@vger.kernel.org, Vicente Bergas <vicencb@gmail.com>,
- Masahiro Yamada <yamada.masahiro@socionext.com>,
- Rob Herring <robh+dt@kernel.org>,
- Klaus Goger <klaus.goger@theobroma-systems.com>,
- Matthias Brugger <matthias.bgg@gmail.com>,
- Collabora Kernel ML <kernel@collabora.com>,
- linux-arm-kernel@lists.infradead.org,
- Christoph Muellner <christoph.muellner@theobroma-systems.com>
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Chen-Yu Tsai <wens@csie.org>,
+ Srinivas Kandagatla <srinivas.kandagatla@linaro.org>,
+ Frank Rowand <frowand.list@gmail.com>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-As per binding documentation [1], the DWC3 core should have the "ref",
-"bus_early" and "suspend" clocks. As explained in the binding, those
-clocks are required for new platforms but not for existing platforms
-before commit fe8abf332b8f ("usb: dwc3: support clocks and resets for
-DWC3 core").
+On Thu, Jun 13, 2019 at 7:50 AM Maxime Ripard <maxime.ripard@bootlin.com> wrote:
+>
+> The Allwinner SoCs have an efuse supported in Linux, with a matching Device
+> Tree binding.
+>
+> Now that we have the DT validation in place, let's convert the device tree
+> bindings for that controller over to a YAML schemas.
+>
+> Signed-off-by: Maxime Ripard <maxime.ripard@bootlin.com>
+> ---
+>  .../nvmem/allwinner,sun4i-a10-sid.yaml        | 51 +++++++++++++++++++
+>  .../bindings/nvmem/allwinner,sunxi-sid.txt    | 29 -----------
+>  2 files changed, 51 insertions(+), 29 deletions(-)
+>  create mode 100644 Documentation/devicetree/bindings/nvmem/allwinner,sun4i-a10-sid.yaml
+>  delete mode 100644 Documentation/devicetree/bindings/nvmem/allwinner,sunxi-sid.txt
 
-However, as those clocks are really treated as required, this ends with
-having some annoying messages when the "rockchip,rk3399-dwc3" is used:
-
-[    1.724107] dwc3 fe800000.dwc3: Failed to get clk 'ref': -2
-[    1.731893] dwc3 fe900000.dwc3: Failed to get clk 'ref': -2
-[    2.495937] dwc3 fe800000.dwc3: Failed to get clk 'ref': -2
-[    2.647239] dwc3 fe900000.dwc3: Failed to get clk 'ref': -2
-
-In order to remove those annoying messages, update the DWC3 hardware
-module node and add all the required clocks. With this change, both, the
-glue node and the DWC3 core node, have the clocks defined, but that's
-not really a problem and there isn't a side effect on do this. So, we
-can get rid of the annoying get clk error messages.
-
-[1] Documentation/devicetree/bindings/usb/dwc3.txt
-
-Signed-off-by: Enric Balletbo i Serra <enric.balletbo@collabora.com>
----
-
- arch/arm64/boot/dts/rockchip/rk3399.dtsi | 6 ++++++
- 1 file changed, 6 insertions(+)
-
-diff --git a/arch/arm64/boot/dts/rockchip/rk3399.dtsi b/arch/arm64/boot/dts/rockchip/rk3399.dtsi
-index 196ac9b78076..a15348d185ce 100644
---- a/arch/arm64/boot/dts/rockchip/rk3399.dtsi
-+++ b/arch/arm64/boot/dts/rockchip/rk3399.dtsi
-@@ -414,6 +414,9 @@
- 			compatible = "snps,dwc3";
- 			reg = <0x0 0xfe800000 0x0 0x100000>;
- 			interrupts = <GIC_SPI 105 IRQ_TYPE_LEVEL_HIGH 0>;
-+			clocks = <&cru SCLK_USB3OTG0_REF>, <&cru ACLK_USB3OTG0>,
-+				 <&cru SCLK_USB3OTG0_SUSPEND>;
-+			clock-names = "ref", "bus_early", "suspend";
- 			dr_mode = "otg";
- 			phys = <&u2phy0_otg>, <&tcphy0_usb3>;
- 			phy-names = "usb2-phy", "usb3-phy";
-@@ -447,6 +450,9 @@
- 			compatible = "snps,dwc3";
- 			reg = <0x0 0xfe900000 0x0 0x100000>;
- 			interrupts = <GIC_SPI 110 IRQ_TYPE_LEVEL_HIGH 0>;
-+			clocks = <&cru SCLK_USB3OTG1_REF>, <&cru ACLK_USB3OTG1>,
-+				 <&cru SCLK_USB3OTG1_SUSPEND>;
-+			clock-names = "ref", "bus_early", "suspend";
- 			dr_mode = "otg";
- 			phys = <&u2phy1_otg>, <&tcphy1_usb3>;
- 			phy-names = "usb2-phy", "usb3-phy";
--- 
-2.20.1
-
+Reviewed-by: Rob Herring <robh@kernel.org>
 
 _______________________________________________
 linux-arm-kernel mailing list
