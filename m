@@ -2,61 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 24372437EE
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 13 Jun 2019 17:02:21 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 77488437EF
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 13 Jun 2019 17:02:44 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Date:Message-Id:MIME-Version:Subject:To
 	:From:References:In-Reply-To:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=wMx4vWwfe/BOWDq8xMjEAJQyr8lBsHQnX2D8IUC8yz8=; b=EuYvClfMu0xTBN
-	KSGZJ+dZn0v5m6TxUKrCMz3z1F6rc1wndEYXICEwnqoghSltZNhN2kG0fuVcfKTdEVJ6qCAje2B8z
-	455QPI9246pWwccvJb6zrMxALFl3PVAyKGHRfUZuue8QZs+9TiHvO4NW4/apU+iNRBfiFLcTWYE7y
-	Dz5ylaSZBd3/3nCKOmh/bm2MFrL5zAOCop62rjqgKs37SmLqlHL91mt8iqeKak5fv3fPMROakbmVs
-	T7oVjaWYIMC53UclRGbjuNoWbVvJPP2mp2hdrdTXpZyYA5m06kDYhoA1FYCcHxtc2ZcC3K4dL11/F
-	Y5ec/2WxGvo3UTpRb36g==;
+	List-Owner; bh=dheJpge6zIKsfPCYS7E9VoQTYCzmrHrO9Y33esXqVrE=; b=GGH0IGCwDbixoX
+	0qn84orhahgVZDf2K1LVhVkzptqrak2r3jWB/ReDvDpqQwQX0QpyPo5b8TqCdnNPIXIsBrv5jKql2
+	h4mixP4NJ8a+tCQkthX5PcOjXfizpAl8hX2gHkhG8wM/qKC7mC5bNj8/hI9TRMtQg3U2l+V1h1Uah
+	r3Ikt7xNG25JkdBvtgudKEDvzTWveXtZmfvHRlzc6Lnkt5DhbpxPggL3gugdhpfR+RvqhDApTta6I
+	6Dj4mXDNUq3tJwpG9Tbgzr10aEEHZmI5t/MRpeGZbwCb0NYvuHPW/25PO2kZXzvQ9o8IXor3QO1AH
+	oNesfMiwZPIG9OMY86bQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hbRF3-0001oo-As; Thu, 13 Jun 2019 15:02:17 +0000
+	id 1hbRFQ-0002Gk-H7; Thu, 13 Jun 2019 15:02:40 +0000
 Received: from pandora.armlinux.org.uk
  ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hbREm-0001jt-5K
- for linux-arm-kernel@lists.infradead.org; Thu, 13 Jun 2019 15:02:02 +0000
+ id 1hbREp-0001nh-Ou
+ for linux-arm-kernel@lists.infradead.org; Thu, 13 Jun 2019 15:02:05 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=armlinux.org.uk; s=pandora-2019; h=Date:Sender:Message-Id:Content-Type:
  Content-Transfer-Encoding:MIME-Version:Subject:Cc:To:From:References:
  In-Reply-To:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
  Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:
  List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=YZe73em0KXNvF4FCfbKTyLNP8J30nCWSEC9qrAb+TqI=; b=QHEva45DLznnK1fKvVBMEF8cWU
- yieZlrzOOtJBIXbRR/BJvUFSApwgQZQz+6/2V7aAZ3G7u8neM6KGj8oqXUC8quyJ0xBgxumHJ0W5C
- gJxLzmOSFGdezOIh9joRt9TtCO9Y8U9F/jhfyWNsiwDb0Cg4rCy9nT5oVvJDNCDS8ZNpbqCAsmS4G
- 21uKDM9sziUl7E3p1FAc1X9EPxRco7wFRjIJHwlJ/UfOdwbCmTapAIZ79NFJDUzNC880nbmB8cRDo
- TMB1C5LwTY5pc3OHdlsFIlASXknBMs8wHCVv8JNtlbkherkNxuScg7OfgyY2jKHyEcI6qUhYiAIh1
- FsGmoxyg==;
+ bh=51ybDZL5ICqBgHpzWFPJBJAExf58VodpQvGF1SWDfk4=; b=rf6HU56lWgQQMJOR1cHCMRIHOf
+ GubzYpxMmL5t25hZxGDb4lCpdHsOPMyVtqck429IRDv4L5Hcgh9A2s7zVHcbxger9C9+toy7hhZzc
+ 2KDpH/0A4IYYLUD2CTIS4OiW4xY+AXSRL3VgGva1wmH+ZvzaKJfDFm98Sed242RVU49Kc7vwfvn0b
+ l0S//uqhSo5qefGspFHa6hig6q6LV/0tcFSIXmAsopEgWABVwnZJzAq0Wczq84+vFmbnjt9weYdSV
+ /+MQVGIroJleUiDMeYc5isDKKZI5MRtaVnYfUEO9fWYwfFV5TbnOr3blNObHl9Mx3fYKndyzRdk5R
+ kU0hQfCg==;
 Received: from e0022681537dd.dyn.armlinux.org.uk
- ([2001:4d48:ad52:3201:222:68ff:fe15:37dd]:45336 helo=rmk-PC.armlinux.org.uk)
+ ([2001:4d48:ad52:3201:222:68ff:fe15:37dd]:45338 helo=rmk-PC.armlinux.org.uk)
  by pandora.armlinux.org.uk with esmtpsa
  (TLSv1.2:ECDHE-RSA-AES128-GCM-SHA256:128) (Exim 4.90_1)
  (envelope-from <rmk@armlinux.org.uk>)
- id 1hbREZ-0003j4-NI; Thu, 13 Jun 2019 16:01:47 +0100
+ id 1hbREf-0003jD-N1; Thu, 13 Jun 2019 16:01:53 +0100
 Received: from rmk by rmk-PC.armlinux.org.uk with local (Exim
  4.82_1-5b7a7c0-XX) (envelope-from <rmk@armlinux.org.uk>)
- id 1hbREY-00006f-FR; Thu, 13 Jun 2019 16:01:46 +0100
+ id 1hbREd-00006m-Ia; Thu, 13 Jun 2019 16:01:51 +0100
 In-Reply-To: <20190613150114.xqkyb7j7w4ve4yvr@shell.armlinux.org.uk>
 References: <20190613150114.xqkyb7j7w4ve4yvr@shell.armlinux.org.uk>
 From: Russell King <rmk+kernel@armlinux.org.uk>
 To: dri-devel@lists.freedesktop.org, linux-arm-kernel@lists.infradead.org
-Subject: [PATCH 01/18] drm/armada: fix crtc interlace
+Subject: [PATCH 02/18] drm/armada: use __drm_atomic_helper_plane_reset in
+ overlay reset
 MIME-Version: 1.0
 Content-Disposition: inline
-Message-Id: <E1hbREY-00006f-FR@rmk-PC.armlinux.org.uk>
-Date: Thu, 13 Jun 2019 16:01:46 +0100
+Message-Id: <E1hbREd-00006m-Ia@rmk-PC.armlinux.org.uk>
+Date: Thu, 13 Jun 2019 16:01:51 +0100
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190613_080200_199393_A7EE0AAF 
-X-CRM114-Status: GOOD (  11.12  )
+X-CRM114-CacheID: sfid-20190613_080203_866774_29136FBC 
+X-CRM114-Status: GOOD (  10.97  )
 X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.5 points)
@@ -91,58 +92,45 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-We support interlace, but this was broken when we could no longer get
-a ref on the vblank interrupt.  Arrange to get the ref on the vblank
-interrupt after we've re-enabled vblank, and put it before we disable
-the vblank.
+Use the __drm_atomic_helper_plane_reset() helper in the overlay reset
+code to ensure that generic features are correctly reset in future.
 
 Signed-off-by: Russell King <rmk+kernel@armlinux.org.uk>
 ---
- drivers/gpu/drm/armada/armada_crtc.c | 15 +++++++--------
- 1 file changed, 7 insertions(+), 8 deletions(-)
+ drivers/gpu/drm/armada/armada_overlay.c | 9 ++++-----
+ 1 file changed, 4 insertions(+), 5 deletions(-)
 
-diff --git a/drivers/gpu/drm/armada/armada_crtc.c b/drivers/gpu/drm/armada/armada_crtc.c
-index ba4a3fab7745..09bade15f51c 100644
---- a/drivers/gpu/drm/armada/armada_crtc.c
-+++ b/drivers/gpu/drm/armada/armada_crtc.c
-@@ -278,16 +278,9 @@ static void armada_drm_crtc_mode_set_nofb(struct drm_crtc *crtc)
+diff --git a/drivers/gpu/drm/armada/armada_overlay.c b/drivers/gpu/drm/armada/armada_overlay.c
+index 8d770641fcc4..f830f53d7adf 100644
+--- a/drivers/gpu/drm/armada/armada_overlay.c
++++ b/drivers/gpu/drm/armada/armada_overlay.c
+@@ -307,13 +307,10 @@ static void armada_overlay_reset(struct drm_plane *plane)
+ 	if (plane->state)
+ 		__drm_atomic_helper_plane_destroy_state(plane->state);
+ 	kfree(plane->state);
++	plane->state = NULL;
  
- 	armada_reg_queue_set(regs, i, sclk, LCD_CFG_SCLK_DIV);
- 
--	if (interlaced ^ dcrtc->interlaced) {
--		if (adj->flags & DRM_MODE_FLAG_INTERLACE)
--			drm_crtc_vblank_get(&dcrtc->crtc);
--		else
--			drm_crtc_vblank_put(&dcrtc->crtc);
--		dcrtc->interlaced = interlaced;
--	}
--
- 	spin_lock_irqsave(&dcrtc->irq_lock, flags);
- 
-+	dcrtc->interlaced = interlaced;
- 	/* Even interlaced/progressive frame */
- 	dcrtc->v[1].spu_v_h_total = adj->crtc_vtotal << 16 |
- 				    adj->crtc_htotal;
-@@ -390,6 +383,9 @@ static void armada_drm_crtc_atomic_disable(struct drm_crtc *crtc,
- 
- 	DRM_DEBUG_KMS("[CRTC:%d:%s]\n", crtc->base.id, crtc->name);
- 
-+	if (old_state->adjusted_mode.flags & DRM_MODE_FLAG_INTERLACE)
-+		drm_crtc_vblank_put(crtc);
-+
- 	drm_crtc_vblank_off(crtc);
- 	armada_drm_crtc_update(dcrtc, false);
- 
-@@ -434,6 +430,9 @@ static void armada_drm_crtc_atomic_enable(struct drm_crtc *crtc,
- 	armada_drm_crtc_update(dcrtc, true);
- 	drm_crtc_vblank_on(crtc);
- 
-+	if (crtc->state->adjusted_mode.flags & DRM_MODE_FLAG_INTERLACE)
-+		WARN_ON(drm_crtc_vblank_get(crtc));
-+
- 	armada_drm_crtc_queue_state_event(crtc);
+ 	state = kzalloc(sizeof(*state), GFP_KERNEL);
+ 	if (state) {
+-		state->base.plane = plane;
+-		state->base.color_encoding = DEFAULT_ENCODING;
+-		state->base.color_range = DRM_COLOR_YCBCR_LIMITED_RANGE;
+-		state->base.rotation = DRM_MODE_ROTATE_0;
+ 		state->colorkey_yr = 0xfefefe00;
+ 		state->colorkey_ug = 0x01010100;
+ 		state->colorkey_vb = 0x01010100;
+@@ -323,8 +320,10 @@ static void armada_overlay_reset(struct drm_plane *plane)
+ 		state->brightness = DEFAULT_BRIGHTNESS;
+ 		state->contrast = DEFAULT_CONTRAST;
+ 		state->saturation = DEFAULT_SATURATION;
++		__drm_atomic_helper_plane_reset(plane, &state->base);
++		state->base.color_encoding = DEFAULT_ENCODING;
++		state->base.color_range = DRM_COLOR_YCBCR_LIMITED_RANGE;
+ 	}
+-	plane->state = &state->base;
  }
  
+ struct drm_plane_state *
 -- 
 2.7.4
 
