@@ -2,75 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5CCFF43209
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 13 Jun 2019 02:48:06 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DD2404320C
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 13 Jun 2019 03:01:24 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=4hXvz/hf/YT2LnLSH0PrpmmT6yuVgBbrN89bfVPrPYM=; b=b9e/37aNKFL2Jw
-	FIMmWqYvHY4RxAe4E6eAIVS0X/ggsmoan7l2eFHbLYx0UDxFElAS/JvTY6dnRb0lZC/mnNae7C66l
-	RMQaad7AoOQ9Tug4ygMxE6Y3hVzeq8TINR82gAkGlvN69puUeDjPGdCYuOOUlx9KV98jSpCZ1n5vm
-	MS5erTWWHVmlPGy43aorzBC535CP6PArkAhSuOAX7GfrFN7RGmnh1uorDcvx+pDUJLZ4xKvziF3OY
-	jX1KbM22Tou0gJNVbddBOlQRX9hPQgeKP3/zZcQ5jlwl6CW0AKBSi4vwUcv3tnHplUFkPe+TfVya3
-	qgocW/30o8sXvyHHKjLQ==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=5IMXnnIgG7K2Fq4l5HjXVwuJx3qWWeIdP94vo30fMRY=; b=HS/
+	MiRglYzcfRfEDbToCoscHBNA/nusw9t3ogLnLTaLrJBTutb+XurLQN84KWUcBwUqtlQdiyXtAwLPm
+	17XVk660cR0QYOZPJ94iacIGrLaQcpSDZbSuamuHeuN2cJvEkdyIVmIRrAe+ItiAbUHBfYtglMYD/
+	MJa3IAiWgilH3h+9lhiONRiuppbPKS/Ux0U4yDT09HOBEDzZoelpbLZLpwVTXRZOQl3AZR+RsIWBa
+	DoE6u68JYr6NEuJXuGrQjp1kbSM/ruHzbUnjiawAf2d4NwanYW2dQ0g6B2xddDFov7TC/Mm9heWAL
+	Y5MZHPkI4XShX+kZC11bjc6mXInQZ+w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hbDuM-0004j4-GE; Thu, 13 Jun 2019 00:48:02 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1hbE7F-0001R8-Cp; Thu, 13 Jun 2019 01:01:21 +0000
+Received: from inva020.nxp.com ([92.121.34.13])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hbDu8-0004id-C0
- for linux-arm-kernel@lists.infradead.org; Thu, 13 Jun 2019 00:47:49 +0000
-Received: from dragon (li1322-146.members.linode.com [45.79.223.146])
- (using TLSv1.2 with cipher DHE-RSA-AES128-SHA (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id E0644215EA;
- Thu, 13 Jun 2019 00:47:41 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1560386868;
- bh=4lclOnf/sfAPyFXVi/HGPDJVKp6DvLHCXDKLDcqvQaU=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=Apd1/9RvRe5RRMZS7XQ5mBXWsp+u6fbo99Qa+k24pfkJ/rDYjokzMyqi2R02tYu1U
- mgmuZuNYIIQgcl/+J3WTW0OGIJYhv4veu1KwtcdtxW3zcTFlr1GggxJDg5cBz95zlI
- xTfzNH3Q9tNXDAlBIzzqKKbubumC1q/twZiOPTBc=
-Date: Thu, 13 Jun 2019 08:47:10 +0800
-From: Shawn Guo <shawnguo@kernel.org>
-To: Herbert Xu <herbert@gondor.apana.org.au>
-Subject: Re: [PATCH] ARM: dts: imx7ulp: add crypto support
-Message-ID: <20190613004709.GB20747@dragon>
-References: <20190606080255.25504-1-horia.geanta@nxp.com>
- <20190612103926.GE11086@dragon>
- <VI1PR0402MB3485A573518D60A573BA55C298EC0@VI1PR0402MB3485.eurprd04.prod.outlook.com>
- <20190612130602.GH11086@dragon>
- <VI1PR0402MB348596BF52CE43B5D4CD534798EC0@VI1PR0402MB3485.eurprd04.prod.outlook.com>
- <20190612132600.GI11086@dragon>
- <20190612135952.ds6zzh7ppahiuodd@gondor.apana.org.au>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190612135952.ds6zzh7ppahiuodd@gondor.apana.org.au>
-User-Agent: Mutt/1.5.21 (2010-09-15)
+ id 1hbE70-0001Qa-4A
+ for linux-arm-kernel@lists.infradead.org; Thu, 13 Jun 2019 01:01:08 +0000
+Received: from inva020.nxp.com (localhost [127.0.0.1])
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id C392D1A0E14;
+ Thu, 13 Jun 2019 03:01:01 +0200 (CEST)
+Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
+ [165.114.16.14])
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id E60AB1A0E1A;
+ Thu, 13 Jun 2019 03:00:54 +0200 (CEST)
+Received: from localhost.localdomain (mega.ap.freescale.net [10.192.208.232])
+ by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 411CD402E6;
+ Thu, 13 Jun 2019 09:00:46 +0800 (SGT)
+From: Anson.Huang@nxp.com
+To: robh+dt@kernel.org, mark.rutland@arm.com, shawnguo@kernel.org,
+ s.hauer@pengutronix.de, kernel@pengutronix.de, festevam@gmail.com,
+ l.stach@pengutronix.de, ccaione@baylibre.com, abel.vesa@nxp.com,
+ baruch@tkos.co.il, daniel.baluta@nxp.com, andrew.smirnov@gmail.com,
+ devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-kernel@vger.kernel.org
+Subject: [PATCH] arm64: dts: imx8mq-evk: Enable SNVS power key
+Date: Thu, 13 Jun 2019 09:02:27 +0800
+Message-Id: <20190613010227.46860-1-Anson.Huang@nxp.com>
+X-Mailer: git-send-email 2.17.1
+X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190612_174748_431391_8FC5012E 
-X-CRM114-Status: GOOD (  10.96  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190612_180106_307343_50B0C9D3 
+X-CRM114-Status: UNSURE (   6.10  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [92.121.34.13 listed in list.dnswl.org]
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -82,35 +69,40 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- Aymen Sghaier <aymen.sghaier@nxp.com>, Horia Geanta <horia.geanta@nxp.com>,
- Iuliana Prodan <iuliana.prodan@nxp.com>, Sascha Hauer <s.hauer@pengutronix.de>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Franck Lenormand <franck.lenormand@nxp.com>, Rob Herring <robh+dt@kernel.org>,
- "linux-crypto@vger.kernel.org" <linux-crypto@vger.kernel.org>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Fabio Estevam <festevam@gmail.com>, "David S. Miller" <davem@davemloft.net>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- dl-linux-imx <linux-imx@nxp.com>
+Cc: Linux-imx@nxp.com
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Jun 12, 2019 at 09:59:52PM +0800, Herbert Xu wrote:
-> On Wed, Jun 12, 2019 at 09:26:02PM +0800, Shawn Guo wrote:
-> >
-> > Yes, it happens from time to time depending on maintainer's style. I'm
-> > fine with the DT changes going through other subsystem tree, if the
-> > subsystem maintainer wants to and is willing to take the risk of merge
-> > conflict between his tree and arm-soc tree.
-> 
-> I have no problems with potential merge conflicts.
+From: Anson Huang <Anson.Huang@nxp.com>
 
-Then feel free to take it:
+Enable SNVS power key for i.MX8MQ EVK board.
 
-Acked-by: Shawn Guo <shawnguo@kernel.org>
+Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
+---
+ arch/arm64/boot/dts/freescale/imx8mq-evk.dts | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+diff --git a/arch/arm64/boot/dts/freescale/imx8mq-evk.dts b/arch/arm64/boot/dts/freescale/imx8mq-evk.dts
+index b2038be..e3df9b8 100644
+--- a/arch/arm64/boot/dts/freescale/imx8mq-evk.dts
++++ b/arch/arm64/boot/dts/freescale/imx8mq-evk.dts
+@@ -242,6 +242,10 @@
+ 	power-supply = <&sw1a_reg>;
+ };
+ 
++&snvs_pwrkey {
++	status = "okay";
++};
++
+ &uart1 {
+ 	pinctrl-names = "default";
+ 	pinctrl-0 = <&pinctrl_uart1>;
+-- 
+2.7.4
+
 
 _______________________________________________
 linux-arm-kernel mailing list
