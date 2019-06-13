@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 56C9E43564
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 13 Jun 2019 13:16:15 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6766C43565
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 13 Jun 2019 13:16:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,38 +11,38 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=PlRLLEsExNFOQ9gmONVVeSnM+4WrdTPSlziXH7Jozyc=; b=YKTm5T8s3tglUcVRnQaD+1D9AB
-	qeFhYo6A7NsZ9RIjZpbOJWkZillLiVqktV6m8VSTzxMM7lT1nDNbtpzb6AVipDuZrnnwlYdjUkIyO
-	Hw0mTV4P30IUaUvSJlD9TWsUwXqXAVIGscktYxqOKQVNf4bR0ljC8L4sBNJju/oTw2fupHs/79fVH
-	MMLw0S1ECw3eo2rmzJ+C1s4wLs/G6vEjSXQmvnNFKf/hhpXBsG7U0tIdbbG1x+64nxSD+gCE6Ao/k
-	Rkz4zax4bWsEC9TsOp6uU/xnrXmfZcLIhkJsyiUP9vV4bGy8m1ECHS+yEy8J5AioD1NBx5Su0xPzN
-	UYCN5mhQ==;
+	bh=/fugA2YpJRz73zalt9cvj5/DaHZq8AZ+yBBgfMQlIaY=; b=kHpWUeE8u/epEqqwL/b28Odzj4
+	gzpvQqOVsY3JK6YNlj4qxGWya8h55abk7zNepkr/7KbI5nuMKSdxPtdBHxGnV3Bfs1m1Thwg7+uYv
+	JEUHAo8pbGgnrReQhkwQo1wsGBKbn37Y18ZK3g/vYhyCZBGXd/HcZBXsob3Y99T8qG/AcJF8112GN
+	ea2oFDrHMePoqgFvQFNCjnOLaW1DYMwOdBrV4lt8NL32ioGpUlkqWh98GY5Hn6Vd/N11ZtsrVguPA
+	JiiPv1ku20S4F822QRpoEStNMaQu3b4Inehevz1KTJ+ecMRoKTo55BHHV5lKoSgPhGhL8iSdURX4a
+	koJztbTA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hbNiA-0001uX-9R; Thu, 13 Jun 2019 11:16:06 +0000
+	id 1hbNiP-0002EV-K2; Thu, 13 Jun 2019 11:16:21 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hbNgY-0007W2-9F
- for linux-arm-kernel@lists.infradead.org; Thu, 13 Jun 2019 11:14:28 +0000
+ id 1hbNgZ-0007XJ-LS
+ for linux-arm-kernel@lists.infradead.org; Thu, 13 Jun 2019 11:14:29 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 34BC93EF;
- Thu, 13 Jun 2019 04:14:25 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 46B35367;
+ Thu, 13 Jun 2019 04:14:27 -0700 (PDT)
 Received: from e120937-lin.cambridge.arm.com (e120937-lin.cambridge.arm.com
  [10.1.197.50])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id BACEB3F694;
- Thu, 13 Jun 2019 04:16:07 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id C68083F694;
+ Thu, 13 Jun 2019 04:16:09 -0700 (PDT)
 From: Cristian Marussi <cristian.marussi@arm.com>
 To: linux-kselftest@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
  shuah@kernel.org
-Subject: [PATCH 03/13] kselftest: arm64: mangle_sp_misaligned
-Date: Thu, 13 Jun 2019 12:13:25 +0100
-Message-Id: <20190613111335.7645-4-cristian.marussi@arm.com>
+Subject: [PATCH 04/13] kselftest: arm64: mangle_pc_invalid
+Date: Thu, 13 Jun 2019 12:13:26 +0100
+Message-Id: <20190613111335.7645-5-cristian.marussi@arm.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20190613111335.7645-1-cristian.marussi@arm.com>
 References: <20190613111335.7645-1-cristian.marussi@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190613_041426_615316_99D567D7 
-X-CRM114-Status: GOOD (  10.23  )
+X-CRM114-CacheID: sfid-20190613_041427_785468_F77EE81B 
+X-CRM114-Status: GOOD (  10.68  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -69,29 +69,29 @@ Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 Added a simple mangle testcase which messes with the ucontext_t
-from within the sig_handler, trying to badly modify and misalign the SP.
-Expects SIGBUS on test PASS.
+from within the sig_handler, trying to badly modify the PC to point
+toward Kernel land.
+Expects SIGSEGV on test PASS.
 
 Signed-off-by: Cristian Marussi <cristian.marussi@arm.com>
 ---
  .../arm64/signal/testcases/.gitignore         |  1 +
- .../signal/testcases/mangle_sp_misaligned.c   | 24 +++++++++++++++++++
+ .../signal/testcases/mangle_pc_invalid.c      | 24 +++++++++++++++++++
  2 files changed, 25 insertions(+)
- create mode 100644 tools/testing/selftests/arm64/signal/testcases/.gitignore
- create mode 100644 tools/testing/selftests/arm64/signal/testcases/mangle_sp_misaligned.c
+ create mode 100644 tools/testing/selftests/arm64/signal/testcases/mangle_pc_invalid.c
 
 diff --git a/tools/testing/selftests/arm64/signal/testcases/.gitignore b/tools/testing/selftests/arm64/signal/testcases/.gitignore
-new file mode 100644
-index 000000000000..7f7414d241f2
---- /dev/null
+index 7f7414d241f2..a87fb0f0d2cf 100644
+--- a/tools/testing/selftests/arm64/signal/testcases/.gitignore
 +++ b/tools/testing/selftests/arm64/signal/testcases/.gitignore
-@@ -0,0 +1 @@
-+mangle_sp_misaligned
-diff --git a/tools/testing/selftests/arm64/signal/testcases/mangle_sp_misaligned.c b/tools/testing/selftests/arm64/signal/testcases/mangle_sp_misaligned.c
+@@ -1 +1,2 @@
+ mangle_sp_misaligned
++mangle_pc_invalid
+diff --git a/tools/testing/selftests/arm64/signal/testcases/mangle_pc_invalid.c b/tools/testing/selftests/arm64/signal/testcases/mangle_pc_invalid.c
 new file mode 100644
-index 000000000000..41bd27312e54
+index 000000000000..0024032528bc
 --- /dev/null
-+++ b/tools/testing/selftests/arm64/signal/testcases/mangle_sp_misaligned.c
++++ b/tools/testing/selftests/arm64/signal/testcases/mangle_pc_invalid.c
 @@ -0,0 +1,24 @@
 +/* SPDX-License-Identifier: GPL-2.0 */
 +/* Copyright (C) 2019 ARM Limited */
@@ -99,23 +99,23 @@ index 000000000000..41bd27312e54
 +#include "test_signals_utils.h"
 +#include "testcases.h"
 +
-+static int mangle_misaligned_sp_run(struct tdescr *td, siginfo_t *si,
-+				    ucontext_t *uc)
++static int mangle_invalid_pc_run(struct tdescr *td, siginfo_t *si,
++				 ucontext_t *uc)
 +{
 +	ASSERT_GOOD_CONTEXT(uc);
 +
-+	uc->uc_mcontext.sp += 3;
++	uc->uc_mcontext.pc = 0xffffffffcccccccc;
 +
 +	return 1;
 +}
 +
 +struct tdescr tde = {
 +		.sanity_disabled = true,
-+		.name = "MANGLE_SP_MISALIGNED",
-+		.descr = "Mangling uc_mcontext with MISALIGNED SP",
++		.name = "MANGLE_PC_INVALID",
++		.descr = "Mangling uc_mcontext with INVALID PC",
 +		.sig_trig = SIGUSR1,
-+		.sig_ok = SIGBUS,
-+		.run = mangle_misaligned_sp_run,
++		.sig_ok = SIGSEGV,
++		.run = mangle_invalid_pc_run,
 +};
 -- 
 2.17.1
