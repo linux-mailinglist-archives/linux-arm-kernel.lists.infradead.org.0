@@ -2,65 +2,64 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 85CB6436EE
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 13 Jun 2019 15:52:55 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 28B73436EC
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 13 Jun 2019 15:52:22 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=U1OVFGEr3pOA78OGDP4PkQOqqg+B8QrRYlVS2KLb/ks=; b=c+W4ssR2Cm+C+B
-	o997qD2xcm/SUdVrR2IPQfFO79qwAsI3N98X2UQIpZ8w81sitrMu5wyBuefY4bbMIknZGz+I8QyyX
-	M8qfck71Cp9XakVKX1LgoQJpmqHzRfv/IcwZiU33uRvIAJKA957OPg6OG17DqDF8Big5mqru8HREo
-	iuE7bSdkKEAJJL3+XJE3iWk/g8d4FPzNQBkX/hk/eGbIbujP3NwRaeYkRq36CnyYKhDe8nMscn6SO
-	8ldES7+PiG3S+Y4OrVl0qQPKzqNebr7bqPUYyfTMXEbtmow6/7UbiDitmGcLxhGLNhGWTcVVRoD8M
-	Xcleom2uBeYFocFmn1Xg==;
+	List-Owner; bh=56KBnYXfD5CpivKmKMuGHBICK2e/QRWo8WDy1OFL4/0=; b=YGy2lqjvykBAtA
+	WM4XcSalf1s7msBZvc/z3GXK3MT6+wgPxGaJdqpr+brSEgNFgTffSnJUffRuZZX2yu2tvETdrS21u
+	cUac3Ue193g7MYt3gSUG5amPp5k/S8b8ZS0xwB13nKvaolgnYOuw2gdLjvG4PB7uq6J6QeOnCoaBN
+	NbH3+9AjNCRhrv+sh6Hgsz7DHpogfaHKzdqUeDKcMnHlQ+IKItNCOaBX16kcK8yYhfRVBG8J7CrUM
+	z6gwTy5BX7J8qy2LCykECi9DTDV1SU5tIbE/UHRN6qNvAA3K3y9oA8Ivu683+Gcm/9s0fkSixeSKz
+	0PDju7AjQclhbjYctSJA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hbQ9r-0002wH-BH; Thu, 13 Jun 2019 13:52:51 +0000
+	id 1hbQ9K-0002Rx-D5; Thu, 13 Jun 2019 13:52:18 +0000
 Received: from mx07-00178001.pphosted.com ([62.209.51.94])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hbQ7X-0000s6-Nq
+ id 1hbQ7X-0000rs-HZ
  for linux-arm-kernel@lists.infradead.org; Thu, 13 Jun 2019 13:50:29 +0000
 Received: from pps.filterd (m0046037.ppops.net [127.0.0.1])
  by mx07-00178001.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id
- x5DDkN4u026656; Thu, 13 Jun 2019 15:50:22 +0200
+ x5DDkNre026654; Thu, 13 Jun 2019 15:50:21 +0200
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
  h=from : to : cc : subject
  : date : message-id : in-reply-to : references : mime-version :
  content-type; s=STMicroelectronics;
- bh=iT7+5JC9WPbhI5PaS7+Ewr2POFob/Asvvo5ll9SBvAI=;
- b=tdHdQXVGULeqAqq93hf4A/agVHC7Zc1wizbT6fZBLBGnmEY5DKhhmzkgIK+VBrBHtCG7
- 9IsGcCyWWtu3wrVxQ1ynI0qDWjV8c6pEbFMNaWTk4QeMuIB584f+ANY3RiKSrab/e7ci
- MNaPjVxzLaCeqNZMcRBN/nWF/86Ky5T9lOIWJEYwpe3vYzJob+r6ytPkBcp8oOmBE3XU
- QrHZk0NOPJyT8zzYAX/UTzPvjk/8DyLLTEkjC3GtPehrZTlLLLbKelAxw1rhhJbHGZta
- l28qExSbjGH03U03nXUII9zFsyLirviEAGEIxsW/93hwbe0n3cYATWeFnJyzIOYGatlz +g== 
+ bh=hllslad0ZWm7rs4WEeAUG4PuD0rX/7NjtO8beDQ9F3E=;
+ b=fYhEwkIEGFECFS7WVam7esMnqdrz2I2VUQOSNaXI3cmIxqL6OPGlOgpWHl0Q6xwlv3NJ
+ 7nCkm0nLiQwCmbnhmIaTjmHihFkaN7f41PfIm153YWEm6UPdZ1z6wMALnOOhGmPB67tb
+ MOLGhmdgm460oLT7lYmiV6GE+sBu2jni6DkLmosOrrFao6hhmlNWF9IxkDf5kNLX090B
+ ICm/u69nUisJbZU+5Gdk7V8pvvrM+Q+u0Wp95VJKpeJp2RgRgrKXo8YQPqTWzDltuHtm
+ yJHE+6th1ZjQLb4T+cUSaThEI9aHm206rFdgJSmngBpgkgXJvLriAGrTY1N5cn5kNTge Fg== 
 Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx07-00178001.pphosted.com with ESMTP id 2t2k3cb6dx-1
+ by mx07-00178001.pphosted.com with ESMTP id 2t2k3cb6e8-1
  (version=TLSv1 cipher=ECDHE-RSA-AES256-SHA bits=256 verify=NOT);
- Thu, 13 Jun 2019 15:50:22 +0200
+ Thu, 13 Jun 2019 15:50:21 +0200
 Received: from zeta.dmz-eu.st.com (zeta.dmz-eu.st.com [164.129.230.9])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 199B938;
- Thu, 13 Jun 2019 13:50:16 +0000 (GMT)
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 8188441;
+ Thu, 13 Jun 2019 13:50:18 +0000 (GMT)
 Received: from Webmail-eu.st.com (Safex1hubcas21.st.com [10.75.90.44])
- by zeta.dmz-eu.st.com (STMicroelectronics) with ESMTP id AF6642BC0;
- Thu, 13 Jun 2019 13:50:15 +0000 (GMT)
+ by zeta.dmz-eu.st.com (STMicroelectronics) with ESMTP id CD94C2BDD;
+ Thu, 13 Jun 2019 13:50:17 +0000 (GMT)
 Received: from SAFEX1HUBCAS22.st.com (10.75.90.93) by SAFEX1HUBCAS21.st.com
  (10.75.90.44) with Microsoft SMTP Server (TLS) id 14.3.439.0; Thu, 13 Jun
- 2019 15:50:15 +0200
+ 2019 15:50:17 +0200
 Received: from localhost (10.201.23.31) by Webmail-ga.st.com (10.75.90.48)
- with Microsoft SMTP Server (TLS) id 14.3.439.0; Thu, 13 Jun 2019 15:50:15
+ with Microsoft SMTP Server (TLS) id 14.3.439.0; Thu, 13 Jun 2019 15:50:16
  +0200
 From: Erwan Le Ray <erwan.leray@st.com>
 To: Greg Kroah-Hartman <gregkh@linuxfoundation.org>, Jiri Slaby
  <jslaby@suse.com>, Maxime Coquelin <mcoquelin.stm32@gmail.com>, "Alexandre
  Torgue" <alexandre.torgue@st.com>, Rob Herring <robh+dt@kernel.org>, "Mark
  Rutland" <mark.rutland@arm.com>
-Subject: [PATCH v3 03/10] serial: stm32: select pinctrl state in each
- suspend/resume function
-Date: Thu, 13 Jun 2019 15:49:53 +0200
-Message-ID: <1560433800-12255-4-git-send-email-erwan.leray@st.com>
+Subject: [PATCH v3 04/10] serial: stm32: add pm_runtime support
+Date: Thu, 13 Jun 2019 15:49:54 +0200
+Message-ID: <1560433800-12255-5-git-send-email-erwan.leray@st.com>
 X-Mailer: git-send-email 1.9.1
 In-Reply-To: <1560433800-12255-1-git-send-email-erwan.leray@st.com>
 References: <1560433800-12255-1-git-send-email-erwan.leray@st.com>
@@ -69,8 +68,8 @@ X-Originating-IP: [10.201.23.31]
 X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:, ,
  definitions=2019-06-13_08:, , signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190613_065028_100370_1AD252E5 
-X-CRM114-Status: GOOD (  12.15  )
+X-CRM114-CacheID: sfid-20190613_065027_985298_09FD2035 
+X-CRM114-Status: GOOD (  13.31  )
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.9 points)
@@ -108,41 +107,96 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Select either pinctrl sleep state in suspend function or default state in
-resume function.
+Use pm_runtime for clock management.
 
 Signed-off-by: Bich Hemon <bich.hemon@st.com>
 Signed-off-by: Erwan Le Ray <erwan.leray@st.com>
 
 diff --git a/drivers/tty/serial/stm32-usart.c b/drivers/tty/serial/stm32-usart.c
-index 9c2b04e..a8f20ba 100644
+index a8f20ba..41898c4 100644
 --- a/drivers/tty/serial/stm32-usart.c
 +++ b/drivers/tty/serial/stm32-usart.c
-@@ -24,6 +24,7 @@
- #include <linux/module.h>
- #include <linux/of.h>
- #include <linux/of_platform.h>
-+#include <linux/pinctrl/consumer.h>
- #include <linux/platform_device.h>
- #include <linux/pm_runtime.h>
- #include <linux/pm_wakeirq.h>
-@@ -1298,6 +1299,8 @@ static int stm32_serial_suspend(struct device *dev)
- 	else
- 		stm32_serial_enable_wakeup(port, false);
+@@ -810,13 +810,13 @@ static void stm32_pm(struct uart_port *port, unsigned int state,
  
-+	pinctrl_pm_select_sleep_state(dev);
+ 	switch (state) {
+ 	case UART_PM_STATE_ON:
+-		clk_prepare_enable(stm32port->clk);
++		pm_runtime_get_sync(port->dev);
+ 		break;
+ 	case UART_PM_STATE_OFF:
+ 		spin_lock_irqsave(&port->lock, flags);
+ 		stm32_clr_bits(port, ofs->cr1, BIT(cfg->uart_enable_bit));
+ 		spin_unlock_irqrestore(&port->lock, flags);
+-		clk_disable_unprepare(stm32port->clk);
++		pm_runtime_put_sync(port->dev);
+ 		break;
+ 	}
+ }
+@@ -1111,6 +1111,11 @@ static int stm32_serial_probe(struct platform_device *pdev)
+ 
+ 	platform_set_drvdata(pdev, &stm32port->port);
+ 
++	pm_runtime_get_noresume(&pdev->dev);
++	pm_runtime_set_active(&pdev->dev);
++	pm_runtime_enable(&pdev->dev);
++	pm_runtime_put_sync(&pdev->dev);
 +
  	return 0;
+ 
+ err_wirq:
+@@ -1132,6 +1137,9 @@ static int stm32_serial_remove(struct platform_device *pdev)
+ 	struct uart_port *port = platform_get_drvdata(pdev);
+ 	struct stm32_port *stm32_port = to_stm32_port(port);
+ 	struct stm32_usart_offsets *ofs = &stm32_port->info->ofs;
++	int err;
++
++	pm_runtime_get_sync(&pdev->dev);
+ 
+ 	stm32_clr_bits(port, ofs->cr3, USART_CR3_DMAR);
+ 
+@@ -1160,7 +1168,12 @@ static int stm32_serial_remove(struct platform_device *pdev)
+ 
+ 	clk_disable_unprepare(stm32_port->clk);
+ 
+-	return uart_remove_one_port(&stm32_usart_driver, port);
++	err = uart_remove_one_port(&stm32_usart_driver, port);
++
++	pm_runtime_disable(&pdev->dev);
++	pm_runtime_put_noidle(&pdev->dev);
++
++	return err;
  }
  
-@@ -1305,6 +1308,8 @@ static int stm32_serial_resume(struct device *dev)
- {
- 	struct uart_port *port = dev_get_drvdata(dev);
  
-+	pinctrl_pm_select_default_state(dev);
+@@ -1317,7 +1330,29 @@ static int stm32_serial_resume(struct device *dev)
+ }
+ #endif /* CONFIG_PM_SLEEP */
+ 
++static int __maybe_unused stm32_serial_runtime_suspend(struct device *dev)
++{
++	struct uart_port *port = dev_get_drvdata(dev);
++	struct stm32_port *stm32port = container_of(port,
++			struct stm32_port, port);
 +
- 	if (device_may_wakeup(dev))
- 		stm32_serial_enable_wakeup(port, false);
++	clk_disable_unprepare(stm32port->clk);
++
++	return 0;
++}
++
++static int __maybe_unused stm32_serial_runtime_resume(struct device *dev)
++{
++	struct uart_port *port = dev_get_drvdata(dev);
++	struct stm32_port *stm32port = container_of(port,
++			struct stm32_port, port);
++
++	return clk_prepare_enable(stm32port->clk);
++}
++
+ static const struct dev_pm_ops stm32_serial_pm_ops = {
++	SET_RUNTIME_PM_OPS(stm32_serial_runtime_suspend,
++			   stm32_serial_runtime_resume, NULL)
+ 	SET_SYSTEM_SLEEP_PM_OPS(stm32_serial_suspend, stm32_serial_resume)
+ };
  
 -- 
 1.9.1
