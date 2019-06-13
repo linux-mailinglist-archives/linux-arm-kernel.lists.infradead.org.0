@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1F71044341
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 13 Jun 2019 18:30:17 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9335F44371
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 13 Jun 2019 18:30:36 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,70 +11,71 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=5d7j9fgXjaBcbPjxzDMwQWW89qp9tOtLvIvA4aAEHns=; b=WyXqeB7Us/FdNv5T0BNvaf3X/X
-	5QVtVkqe995as5tj1COGj3VxO3tZ0mk1xJh94xZTFelb4Pyb03kUGZ0QRtnI7br0Lbb6VVYdbjIht
-	hCXsXd4LmnNXQFiXSf03XgElU4iF2QzWS+yUVfp+jzsbEYG0CkU3+P/wm4rlWT4hgRlljXfpd2zR4
-	1OIYCGpXw7szcycvUFp6fitji8DI6w8iiRcFXWDKPGZ+54C05SA9An5yBq8bH2b7KHdZBG0jJf0Nb
-	rZ/t4Hr3r8A6yvWVo35BopzaGCP5eWNtclkJwZYox2ZJRYzY+/IFsqltTrydW1gQr46gkrvffCxlQ
-	OPfPn8Mg==;
+	bh=9W8idbv21RtohyFvax8guEGgcvqDE8CibF60qPJj0G0=; b=fws5sRpSoLjblXgw7lKTy9RUMk
+	MAj/81rvjXAcx4bUznUlcBmhE8iuLVBuUx1AyzCIZ8I4mMLJp/vaU57v2/K3eN5TXuK35q32QtYMn
+	ZjpZPd3muqBWmKqz+KRT45HHTp2ua8K3cwH5AVvb7PXjIBmtYIobUJFbIIAnzTvw7akObRUtFCILI
+	d7IW5cGAUs9xU8mPz33C9xB5/1Cyq6nX9JEJXlewp6/u+g3Xzp/Jon5uyCEG6iLMvRh1gHPetbFC+
+	NzDJGaKA9wgQTHdv3y3yeQfoX697syHXCeDBwG2V6N0I/+cCrTwdPq7mZwz8DzJ50/tsxa2I+4Q1H
+	TDM6Oo8w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hbSc9-0004sw-0O; Thu, 13 Jun 2019 16:30:13 +0000
-Received: from mail-pg1-x543.google.com ([2607:f8b0:4864:20::543])
+	id 1hbScU-0006bz-Ug; Thu, 13 Jun 2019 16:30:34 +0000
+Received: from mail-pf1-x444.google.com ([2607:f8b0:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hbSZa-0002os-QT; Thu, 13 Jun 2019 16:27:36 +0000
-Received: by mail-pg1-x543.google.com with SMTP id l19so8641903pgh.9;
- Thu, 13 Jun 2019 09:27:34 -0700 (PDT)
+ id 1hbSZe-0002ri-0T; Thu, 13 Jun 2019 16:27:39 +0000
+Received: by mail-pf1-x444.google.com with SMTP id d126so12169371pfd.2;
+ Thu, 13 Jun 2019 09:27:37 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=Q4z+1lD6L8nleD1j+L3SnZJFelsfjWSFPaZVMarGO8g=;
- b=fOYdYWOhF3ZyKvMjqvLUfJ0cwxcI5mFQycuQv7JzdfadQaDqxSFq88q2ia+Tnbvmkp
- 6Nh3M7lCMtpSP9bipGQFNCbzwS7L6213Z/3b8crNq9lKGyjnS/r1gcWlg5qW9/WfvPbJ
- L9BeU+t7EzCCUq2B9wGxOz7SLQdop76XwPlwXbKsg3I9b0dLuxgMn/dPxX4saClyok43
- T0HQfzWKw8m4CtBi73JACE7kTioBqo4MZCayRF2hMy89yDz8gZkTOIRA5G+cVrhLwLVM
- pL+v/aWmDUGF2gdG3/Qaezrp3xOQ8+OMTA1nAyrOJxYbgApp67WZDvw4lKGpiPO5k8fR
- /p7g==
+ bh=qmE6RcMdl/q+0c881KvtGIqeACQmyD2joLL+qnIqt7s=;
+ b=ky0C6UzAre6s7Pe1an8KXFMZ/n8er3ta59i58tFn/r47l49NZ1VN9+rM4j58jiwZm9
+ BUUw6IU+xEyg4pe+tDNRlfgA9svhmO2wxcbkJHrqtHDfZDb2fj7DY5Cf4VvjoboR7CIX
+ OeBNbMOECRVKcWg9TZsdtgQHWp3yDmtksofWOyLU40oMHr3faQ0ik2GBZUko6/swbKHv
+ 7RGjJPXVHsRByfrTzTawZilS9vgW8lWz++Xf6nhndTHMDV4ESOIq73Px9aaMRrSMifOz
+ BJF/jAQU3fP5h6BPGIHukh63y8OJ7SKf0mw8j8hSxtoXwtnawYConS3vgXuTarhLoGEO
+ KZDQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=Q4z+1lD6L8nleD1j+L3SnZJFelsfjWSFPaZVMarGO8g=;
- b=Je3zByuQcltZvhAFD6MKDTYPDTyDlMyfy/VR8rv+kDg0d52K0aV61VmflsVtFn8yEI
- DnxLX7StBeZTcYL3m4++yQLS+Mw67snyNJ1j2EpSjiqoPVnpp8Gnzlif+rHFbJGM6ci1
- TzWQNtD/emr5xxTshLbO2Z4fdrbxdAAC78IxK+M1C+CA9KZVEqQezAlx6IeQgfbh9cLb
- FBWjqpml85PwLcQrBZy0OqWNY4sGoR+gGSEWUn2joK2P+29+KDEQIMhyeUyl4Ny2Mhn3
- 0S6PngB3qd9gK12MrbWc2Jgiypqr5GjE926JWMoJN6ZS87VfRYHYLPgyujFJt+UlSbdJ
- o1og==
-X-Gm-Message-State: APjAAAWZWH3y/ca9nN/Ag+xuk1PH54x8DM+5K/vE4q5Qzh1GgfmzDA2D
- g3I69JFcoj6N4qd2GlEicdA=
-X-Google-Smtp-Source: APXvYqxX/RanT51RYSaVZsxeTP+rQPGVZ62n+jf0t5emIHsrys1734E1A4fccZi67O/PQXiUedWBeQ==
-X-Received: by 2002:a65:64d5:: with SMTP id t21mr32140036pgv.310.1560443254129; 
- Thu, 13 Jun 2019 09:27:34 -0700 (PDT)
+ bh=qmE6RcMdl/q+0c881KvtGIqeACQmyD2joLL+qnIqt7s=;
+ b=OJx9pcXZ7szPYvj3XlDqqFL4cTZtRAaoW6uzG5yI+s8Wk0n9mAAOYoNZNbSOmqsUYC
+ RnnN0La9KkZ0eLZpUtSNrfbj/caU8W98exRNp/eU7zgRww74l2UaILU1lP4rP76lDXst
+ 2ipYgmBD3HcZfk7ixbBpnOs9ZETYxPTnldYkprBFlBE95ruVRNxWA8KFJA3tFcAeiLah
+ xW7cGEU0tJ6hvvH42lrlcREEjlfiX2srtOfcYHIMTeXMeyExUNuO5dxkyKTemVeSSg6s
+ Gyz7WAO/EAnMP5qi82IBa1rscVzxw0yWumyu09N6D+sre+u9VcdHafg6vYdcagVk9jJu
+ wb9A==
+X-Gm-Message-State: APjAAAWrAp7ENEq+YO/NGHi41qgB2aorxzv4XTGrDAuy6nX62GSS5Bl4
+ 70DDFqn6boo2B8BpEwjSyOE=
+X-Google-Smtp-Source: APXvYqxNXSVIQgcvlSSbelNewR4QAEP4WL6URSrkeuuhpNYR//oQq+uySr22HwqTovLEfyCOwtfKXQ==
+X-Received: by 2002:a63:3c9:: with SMTP id 192mr25962053pgd.90.1560443256920; 
+ Thu, 13 Jun 2019 09:27:36 -0700 (PDT)
 Received: from localhost (68.168.130.77.16clouds.com. [68.168.130.77])
- by smtp.gmail.com with ESMTPSA id l23sm261906pgh.68.2019.06.13.09.27.33
+ by smtp.gmail.com with ESMTPSA id r11sm294291pgs.39.2019.06.13.09.27.36
  (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Thu, 13 Jun 2019 09:27:33 -0700 (PDT)
+ Thu, 13 Jun 2019 09:27:36 -0700 (PDT)
 From: Yangtao Li <tiny.windzz@gmail.com>
 To: joro@8bytes.org, m.szyprowski@samsung.com, kgene@kernel.org,
  krzk@kernel.org, will.deacon@arm.com, robin.murphy@arm.com,
  agross@kernel.org, david.brown@linaro.org, robdclark@gmail.com,
  heiko@sntech.de, thierry.reding@gmail.com, jonathanh@nvidia.com
-Subject: [PATCH 08/10] iommu/sysfs: convert to SPDX license tags
-Date: Thu, 13 Jun 2019 12:27:01 -0400
-Message-Id: <20190613162703.986-8-tiny.windzz@gmail.com>
+Subject: [PATCH 09/10] iommu/rockchip: convert to SPDX license tags
+Date: Thu, 13 Jun 2019 12:27:02 -0400
+Message-Id: <20190613162703.986-9-tiny.windzz@gmail.com>
 X-Mailer: git-send-email 2.17.0
 In-Reply-To: <20190613162703.986-1-tiny.windzz@gmail.com>
 References: <20190613162703.986-1-tiny.windzz@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190613_092734_877961_0B9B9E66 
-X-CRM114-Status: GOOD (  10.02  )
+X-CRM114-CacheID: sfid-20190613_092738_119149_C4FE0677 
+X-CRM114-Status: UNSURE (   9.15  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:543 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:444 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -112,27 +113,27 @@ Updates license to use SPDX-License-Identifier.
 
 Signed-off-by: Yangtao Li <tiny.windzz@gmail.com>
 ---
- drivers/iommu/iommu-sysfs.c | 5 +----
+ drivers/iommu/rockchip-iommu.c | 5 +----
  1 file changed, 1 insertion(+), 4 deletions(-)
 
-diff --git a/drivers/iommu/iommu-sysfs.c b/drivers/iommu/iommu-sysfs.c
-index 44127d54e943..a193758c8122 100644
---- a/drivers/iommu/iommu-sysfs.c
-+++ b/drivers/iommu/iommu-sysfs.c
+diff --git a/drivers/iommu/rockchip-iommu.c b/drivers/iommu/rockchip-iommu.c
+index 77d4bd93fe4b..9c4c6eb7d42b 100644
+--- a/drivers/iommu/rockchip-iommu.c
++++ b/drivers/iommu/rockchip-iommu.c
 @@ -1,12 +1,9 @@
 +// SPDX-License-Identifier: GPL-2.0
  /*
-  * IOMMU sysfs class support
+  * IOMMU API for Rockchip
   *
-  * Copyright (C) 2014 Red Hat, Inc.  All rights reserved.
-  *     Author: Alex Williamson <alex.williamson@redhat.com>
+  * Module Authors:	Simon Xue <xxm@rock-chips.com>
+  *			Daniel Kurtz <djkurtz@chromium.org>
 - *
 - * This program is free software; you can redistribute it and/or modify
 - * it under the terms of the GNU General Public License version 2 as
 - * published by the Free Software Foundation.
   */
  
- #include <linux/device.h>
+ #include <linux/clk.h>
 -- 
 2.17.0
 
