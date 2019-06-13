@@ -2,66 +2,95 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6960A43255
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 13 Jun 2019 05:31:20 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 183E843258
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 13 Jun 2019 05:32:14 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=qNVNtdaXjWmXN8ex+CeEayfOdUoejQuig4bRkVwcN98=; b=sahvoFtsQxzyJi
-	cUgwkOA9hy77VUO13VsJjVpJOXHgp4lHPuwV1NhhO5EOb1CDsXQ9rGuIZe1cXvttNAeiUD5dyC7h4
-	LbrXuTInspJpSRBScTZl9vPFqO4KSzDJobIb+kUR+fYFYUFn/jQIjevx18XJxvQNISvAqvvds1xH5
-	4XZDkq7UKYGpClWcvDAK07kysyyeF1jxCs0hH6OzC0P9mpUiN2NVy22OO0P0K/ZwcsuEo2ely/PmE
-	EkT5fWU4eTfgtpQtLD7kdRLdVbxaAi2mTQGStZMe52gMTTheZFU/h2kVC9CnJ5NnIP8PFjlrll6T2
-	pr1xPIfy+7m43XDhzlRQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=oh+eueW4yvN9SFNTv5dKUw3PDIkcsst5TETT1XcM1Ik=; b=m09JiWNbxANcLl
+	PuOCTDRH6pfGYetm1n8i82WkJkWqFeCxk5UndYUYLN8P7s0oM1Za87VxVVIAYpQs6Zyu3nEqRbLOo
+	BKZN+9nojVAfGpDQro9lO5CJ2AwoKKN8dNoN2LeNtsNxNMlE8Xx53WW2wxGNsHE9DSMJBhw+rYStL
+	39iJLTd/X4IkSfQgRrtYMQGcsxQiyKJ1J4JvC1pwUKWkyP5XsJN/vA2wom9mFPMxI3oyi8uyEBl0r
+	bBGx1v8i6bzE43VqtoKNxOF0JiQqMhzpo2UWsjciTiGgphF9k7HCRaQiLXytslcwnsYgu24AE4+2H
+	e0X+LYuJwilXy1UpMTGA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hbGSK-000850-69; Thu, 13 Jun 2019 03:31:16 +0000
-Received: from mailgw02.mediatek.com ([216.200.240.185])
+	id 1hbGTE-0008VP-DA; Thu, 13 Jun 2019 03:32:12 +0000
+Received: from mail-pl1-x642.google.com ([2607:f8b0:4864:20::642])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hbGRz-00080S-9h; Thu, 13 Jun 2019 03:30:57 +0000
-X-UUID: 736bc2961ae04d49b4f250ce546aadf4-20190612
-X-UUID: 736bc2961ae04d49b4f250ce546aadf4-20190612
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
- (envelope-from <dongchun.zhu@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 199553996; Wed, 12 Jun 2019 19:30:17 -0800
-Received: from MTKMBS31N1.mediatek.inc (172.27.4.69) by
- MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Wed, 12 Jun 2019 20:30:15 -0700
-Received: from MTKCAS32.mediatek.inc (172.27.4.184) by MTKMBS31N1.mediatek.inc
- (172.27.4.69) with Microsoft SMTP Server (TLS) id 15.0.1395.4;
- Thu, 13 Jun 2019 11:30:12 +0800
-Received: from [10.17.3.153] (172.27.4.253) by MTKCAS32.mediatek.inc
- (172.27.4.170) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Thu, 13 Jun 2019 11:30:11 +0800
-Message-ID: <1560396611.9392.77.camel@mhfsdcap03>
-Subject: Re: [PATCH 3/3] media: dt-bindings: media: i2c: Add bindings for
- ov02a10
-From: Dongchun Zhu <dongchun.zhu@mediatek.com>
-To: Sakari Ailus <sakari.ailus@iki.fi>
-Date: Thu, 13 Jun 2019 11:30:11 +0800
-In-Reply-To: <20190531161658.2y2amfngbhfbllj7@valkosipuli.retiisi.org.uk>
-References: <20190523102204.24112-1-dongchun.zhu@mediatek.com>
- <20190523102204.24112-4-dongchun.zhu@mediatek.com>
- <20190531161658.2y2amfngbhfbllj7@valkosipuli.retiisi.org.uk>
-X-Mailer: Evolution 3.10.4-0ubuntu2 
+ id 1hbGSx-0008Ue-Ai; Thu, 13 Jun 2019 03:31:56 +0000
+Received: by mail-pl1-x642.google.com with SMTP id bh12so7484309plb.4;
+ Wed, 12 Jun 2019 20:31:54 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=subject:to:cc:references:from:openpgp:message-id:date:user-agent
+ :mime-version:in-reply-to:content-language:content-transfer-encoding;
+ bh=nzGBiH9Q2cHj69v2s9SzWAcskIQxRVWhnxjtOISSfH0=;
+ b=P3+W71Z7wOq9r8J9vPu4J49YzWsvoiYpKSpycf1qS/PpM52rE88Oag+c2qaNi7/2f2
+ B2vFG4DCa0POM6uTUi0Zia+afz9c3sPd6I4KV5yof6kGAQs+wplvUjZPekYBSx5fGRfw
+ +RgrUpwADxnUhYoWW4zzACqtWio9HSLHDq2kPVjGwEgfIL8KvX4tj4qgL7zEFUmbBbLA
+ fAQqbaAXYmEZrxgMUCdtaTvmGUzPNRutOqnFkECRPCyp18KKI/5d5CCF2qMj488IJZb5
+ eqs1bvGTk80kDWb/pJhk8MxZWrTH65Zeuptnjgmpmnl0K8snjNv/+SmrSTJJAwpKMh+1
+ 9A0Q==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:subject:to:cc:references:from:openpgp:message-id
+ :date:user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=nzGBiH9Q2cHj69v2s9SzWAcskIQxRVWhnxjtOISSfH0=;
+ b=uFpwRtvnjaB5zQmvJOX6G3Y1KZFbfKlGb+DEH693eQj6wltekur5niN72m4v238fqj
+ +4K3adRz5Y8WPcoPBIRtwi43Oi3S3OaG54OTjGOVp8CxRY5TkDmZ+ocRoW/TC2xLJnZc
+ 7Cx+qMIcxsqkq48ctL7/F39D3jWwp0xvYV9b9xpQFupE+WG4cfj0iXIDNVi/aWUKqkUY
+ AE5dZXTgu/RJYrRe7s2sYE7CP/f4EluxhSVZPuEtkKuucdo3apyWiqn55MFwwCfdPWyK
+ lPeyHbiyl60ixYAHdnyCsuaHUj1jVNNTJ69Vh87Pato/ZVmMfbQLZj3Yips2sFhCOXmV
+ cWlw==
+X-Gm-Message-State: APjAAAUvm8bjqgIU1/ql3qmqduNsYhmtGlbrMox/gL3IkfLpZMOQvEv8
+ gJci9GvgMEO24a9aMT3m+g4=
+X-Google-Smtp-Source: APXvYqzWKE85pfVmqmvHVbcmT2pdlkwsEpSroa8BFRjBzzgBTWFi6CVwqLEqha4xH+IoiFuJd4jOMA==
+X-Received: by 2002:a17:902:b594:: with SMTP id
+ a20mr5329327pls.259.1560396714089; 
+ Wed, 12 Jun 2019 20:31:54 -0700 (PDT)
+Received: from [10.230.1.150] ([192.19.228.250])
+ by smtp.gmail.com with ESMTPSA id h6sm5445482pjs.2.2019.06.12.20.31.51
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Wed, 12 Jun 2019 20:31:53 -0700 (PDT)
+Subject: Re: [PATCH v4 0/7] cpufreq support for Raspberry Pi
+To: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>, stefan.wahren@i2se.com,
+ linux-kernel@vger.kernel.org
+References: <20190612182500.4097-1-nsaenzjulienne@suse.de>
+From: Florian Fainelli <f.fainelli@gmail.com>
+Openpgp: preference=signencrypt
+Message-ID: <6a9e1450-80ad-a13c-59d2-d0b39f25f67e@gmail.com>
+Date: Wed, 12 Jun 2019 20:31:46 -0700
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:60.0) Gecko/20100101
+ Thunderbird/60.7.0
 MIME-Version: 1.0
-X-MTK: N
+In-Reply-To: <20190612182500.4097-1-nsaenzjulienne@suse.de>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190612_203055_382846_36678F3A 
-X-CRM114-Status: GOOD (  18.87  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190612_203155_393563_D923ADC5 
+X-CRM114-Status: GOOD (  21.02  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:642 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (f.fainelli[at]gmail.com)
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -73,112 +102,96 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
- srv_heupstream@mediatek.com, menghui.lin@mediatek.com, tfiga@google.com,
- shengnan.wang@mediatek.com, louis.kuo@mediatek.com, sj.huang@mediatek.com,
- robh+dt@kernel.org, linux-mediatek@lists.infradead.org, matthias.bgg@gmail.com,
- bingbu.cao@intel.com, mchehab@kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-media@vger.kernel.org
+Cc: linux-arm-kernel@lists.infradead.org, ptesarik@suse.com, sboyd@kernel.org,
+ viresh.kumar@linaro.org, mturquette@baylibre.com, linux-pm@vger.kernel.org,
+ rjw@rjwysocki.net, eric@anholt.net, bcm-kernel-feedback-list@broadcom.com,
+ linux-rpi-kernel@lists.infradead.org, linux-clk@vger.kernel.org,
+ mbrugger@suse.de, ssuloev@orpaltech.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Sakari,
-
-On Fri, 2019-05-31 at 19:16 +0300, Sakari Ailus wrote:
-> Hi Dongchun,
-> 
-> Thanks for the patch.
-> 
-> On Thu, May 23, 2019 at 06:22:04PM +0800, dongchun.zhu@mediatek.com wrote:
-> > From: Dongchun Zhu <dongchun.zhu@mediatek.com>
-> > 
-> > Add device tree binding documentation for the OV02A10 CMOS image sensor.
-> > 
-> > Signed-off-by: Dongchun Zhu <dongchun.zhu@mediatek.com>
-> > ---
-> >  .../devicetree/bindings/media/i2c/ov02a10.txt      | 43 ++++++++++++++++++++++
-> >  1 file changed, 43 insertions(+)
-> >  create mode 100644 Documentation/devicetree/bindings/media/i2c/ov02a10.txt
-> > 
-> > diff --git a/Documentation/devicetree/bindings/media/i2c/ov02a10.txt b/Documentation/devicetree/bindings/media/i2c/ov02a10.txt
-> > new file mode 100644
-> > index 0000000..fdc2904
-> > --- /dev/null
-> > +++ b/Documentation/devicetree/bindings/media/i2c/ov02a10.txt
-> > @@ -0,0 +1,43 @@
-> > +* Omnivision OV02A10 MIPI CSI-2 sensor
-> > +
-> > +Required Properties:
-> > +- compatible: shall be "ovti,ov02a10"
-> > +- clocks: reference to the xvclk input clock
-> > +- clock-names: shall be "xvclk"
-> > +- avdd-supply: Analog voltage supply, 2.8 volts
-> > +- dovdd-supply: Digital I/O voltage supply, 1.8 volts
-> > +- dvdd-supply: Digital core voltage supply, 1.8 volts
-> > +- reset-gpios: Low active reset gpio
-> > +
-> > +The device node shall contain one 'port' child node with an
-> > +'endpoint' subnode for its digital output video port,
-> > +in accordance with the video interface bindings defined in
-> > +Documentation/devicetree/bindings/media/video-interfaces.txt.
-> > +The endpoint optional property 'data-lanes' shall be "<1>".
-> 
-> If the sensor only supports a single lane configuration (one lane), you can
-> omit that property altogether. Is that the only possible configuration for
-> the sensor?
-> 
-> Please also wrap the text at 80 characters, not 65 or so.
-> 
-
-Thanks for kind reminder. We would double confirm the lane nums that
-sensor can support.
-And the issue of text length one line would also be fixed in next
-release.
-
-> > +
-> > +Example:
-> > +&i2c4 {
-> > +	sensor_sub: sensor_sub {
-> 
-> camera-sensor@3d {
-> 
-
-Fixed in next release.
-
-> > +		compatible = "ovti,ov02a10";
-> > +		reg = <0x3d>;
-> > +		pinctrl-names = "default";
-> > +		pinctrl-0 = <&camera_pins_cam1_mclk_on>;
-> > +
-> > +		clocks = <&topckgen CLK_TOP_MUX_CAMTG2>,
-> > +			<&topckgen CLK_TOP_UNIVP_192M_D8>;
-> > +		clock-names = "xvclk", "freq_mux";
-> > +
-> > +		avdd-supply = <&mt6358_vcama1_reg>;
-> > +		dvdd-supply = <&mt6358_vcn18_reg>;
-> > +		dovdd-supply = <&mt6358_vcamio_reg>;
-> > +		pwdn-gpios = <&pio 107 1>;
-> > +		reset-gpios = <&pio 109 1>;
-> > +
-> > +		port@0 {
-> > +		   ov02a10_core: endpoint {
-> > +		       remote-endpoint = <&ov02a10_0>;
-> > +			   data-lanes = <1>;
-> > +		   };
-> 
-> Tabs for indentation, please.
-> 
-
-Fixed in next release.
-
-> > +		};
-> > +	};
-> > +};
-> 
 
 
+On 6/12/2019 11:24 AM, Nicolas Saenz Julienne wrote:
+> Hi all,
+> this aims at adding cpufreq support to the Raspberry Pi family of
+> boards.
+> 
+> The series first factors out 'pllb' from clk-bcm2385 and creates a new
+> clk driver that operates it over RPi's firmware interface[1]. We are
+> forced to do so as the firmware 'owns' the pll and we're not allowed to
+> change through the register interface directly as we might race with the
+> over-temperature and under-voltage protections provided by the firmware.
+> 
+> Next it creates a minimal cpufreq driver that populates the CPU's opp
+> table, and registers cpufreq-dt. Which is needed as the firmware
+> controls the max and min frequencies available.
+> 
+> This was tested on a RPi3b+ and RPI2b, both using multi_v7_defconfig and
+> arm64's defconfig.
+
+How do we go about merging this? Stefan, will you pick up patch 3, 6 and
+7 and submit them for 5.3/5.4? Viresh has already picked up patch 4.
+
+> 
+> That's all,
+> kind regards,
+> Nicolas
+> 
+> [1] https://github.com/raspberrypi/firmware/wiki/Mailbox-property-interface
+> 
+> ---
+> 
+> Changes since v3:
+>   - Fix sparse warnings in clk-raspberrypi.c
+>   - Minor cleanups
+> 
+> Changes since v2:
+>   - Fixed configs to match Stefan's comments
+>   - Round OPP frequencies
+>   - Rebase onto linux-next
+>   - Minor cleanups & checkpatch.pl
+> 
+> Changes since v1:
+>   - Enabled by default on the whole family of devices
+>   - Added/Fixed module support
+>   - clk device now registered by firmware driver
+>   - raspberrypi-cpufreq device now registered by clk driver
+>   - Reimplemented clk rounding unsing determine_rate()
+>   - Enabled in configs for arm and arm64
+> 
+> Changes since RFC:
+>   - Move firmware clk device into own driver
+> 
+> Nicolas Saenz Julienne (7):
+>   clk: bcm2835: remove pllb
+>   clk: bcm283x: add driver interfacing with Raspberry Pi's firmware
+>   firmware: raspberrypi: register clk device
+>   cpufreq: add driver for Raspberry Pi
+>   clk: raspberrypi: register platform device for raspberrypi-cpufreq
+>   ARM: defconfig: enable cpufreq driver for RPi
+>   arm64: defconfig: enable cpufreq support for RPi3
+> 
+>  arch/arm/configs/bcm2835_defconfig    |   9 +
+>  arch/arm/configs/multi_v7_defconfig   |   2 +
+>  arch/arm64/configs/defconfig          |   2 +
+>  drivers/clk/bcm/Kconfig               |   7 +
+>  drivers/clk/bcm/Makefile              |   1 +
+>  drivers/clk/bcm/clk-bcm2835.c         |  28 +--
+>  drivers/clk/bcm/clk-raspberrypi.c     | 315 ++++++++++++++++++++++++++
+>  drivers/cpufreq/Kconfig.arm           |   8 +
+>  drivers/cpufreq/Makefile              |   1 +
+>  drivers/cpufreq/raspberrypi-cpufreq.c |  97 ++++++++
+>  drivers/firmware/raspberrypi.c        |  10 +
+>  11 files changed, 456 insertions(+), 24 deletions(-)
+>  create mode 100644 drivers/clk/bcm/clk-raspberrypi.c
+>  create mode 100644 drivers/cpufreq/raspberrypi-cpufreq.c
+> 
+
+-- 
+Florian
 
 _______________________________________________
 linux-arm-kernel mailing list
