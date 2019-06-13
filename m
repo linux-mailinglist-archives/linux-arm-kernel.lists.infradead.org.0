@@ -2,89 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 155ED43630
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 13 Jun 2019 15:02:35 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6D5CE43636
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 13 Jun 2019 15:04:21 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=QiSqeuJGxKwegZIdo0Pp0YMxkDFRPwj8PrGtIcyi79w=; b=b9NICedJsbx4lXqu49PbRTDIV
-	kbu1uTPuBMOBWoX4pInZVurDGoOZR3lAFewfhOIFvalNRkII0h9CuTcvqXnY8MXTZyK21GfLS2/NW
-	x4bC1yhfiR78cU2N69gj28TEoKjCBJ8jrImlQgG5bj5f2yaWGRsqQaET6NowD5vFzxBMnyKHKxjU3
-	qVIKE3zZ6dQMkopr+30PG7A3NZR4Jz8OK6oSGmC2E3XtcMpBH0bg5YZ3fi9Im3gaUdC593NP1L1kd
-	aCQXQaakDz0LYdXeWzBA///6XcLy7u1NLYzIHwYQ5g41h2nmbJTLjUtpG8JzMG7nXh4trHjwyTSOr
-	5/32KRlVw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Subject:To:From:Message-ID:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=lccW/5eczcUxeheEWs4RTP1BSYLgiG9Lt7/lRJMgs94=; b=ac0Iw3Bk1ltrET
+	nqwxRz2ZGBS2HwJMyWoXGAGn9+kHZHyOsSYbrY+5PZWYE12lkKCfgX55pk7tAisLnHyEgdhLoasYz
+	MqBiFnFYyygLMBcuuWJZpaxTDk9BVE6udvA05+K1dAxAlDXfZv7ALv9TZ64FslR8N66Hnj0eALjAc
+	WdDDXrsNcVRN2rbzN5Bbzo6AUq36u/rsuiroX2dzOonEiedNqE5BRzIdL3ItNDNMT879MUtNEHN/Z
+	iDPgBVFsUg3Oq1qrVJLQQNCAyP98+3Klzew/nwwyEgSHx6AOoVD8ZqNgEBsD6cb0oOYESWKolCO8J
+	zlUBfIQnZyfllCIhm6rQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hbPNA-0000wB-Az; Thu, 13 Jun 2019 13:02:32 +0000
-Received: from mx08-00178001.pphosted.com ([91.207.212.93]
- helo=mx07-00178001.pphosted.com)
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hbPMv-0000vb-At
- for linux-arm-kernel@lists.infradead.org; Thu, 13 Jun 2019 13:02:19 +0000
-Received: from pps.filterd (m0046661.ppops.net [127.0.0.1])
- by mx08-00178001.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id
- x5DCuqlD015993; Thu, 13 Jun 2019 15:02:08 +0200
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
- h=subject : to : cc :
- references : from : message-id : date : mime-version : in-reply-to :
- content-type : content-transfer-encoding; s=STMicroelectronics;
- bh=Dn/GSx8oOSdqicVsHAm1fovUZXgcL2YgME4MVY/Qjls=;
- b=p2IjvnhiN/FcNRbhaIg1lhrdvfWacg0fAHNZsSLbHECrbVZ+DKSOAZHrDmSfGyeGbXTz
- cbulaWATzSgherwadBy2cvsyIcGcn0HOr/dJr5/BbQXQcPMQ/m2MUT3WoKmzsIR1qNC1
- HTDu/W0jH7vSHEdtIjtvdRQnq8vEuCapW9IeRhn4orunu2XSaz7pVmzPUcukjR8mVyxa
- ox2Y0H/mHPtYpawdV5uOL7yTyjjzAM+e2TICpftmQb6QSATdKH6kCjv10WM9KCi26EWM
- 0GJtfsjIHqUkRpiVWzKC9QIvFeu4SwaxIc67s0qgq/3zthgCSlNTEs2RhWlp1ZPTFeFX 2g== 
-Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx08-00178001.pphosted.com with ESMTP id 2t2gxebr13-1
- (version=TLSv1 cipher=ECDHE-RSA-AES256-SHA bits=256 verify=NOT);
- Thu, 13 Jun 2019 15:02:08 +0200
-Received: from zeta.dmz-eu.st.com (zeta.dmz-eu.st.com [164.129.230.9])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 91CA534;
- Thu, 13 Jun 2019 13:02:04 +0000 (GMT)
-Received: from Webmail-eu.st.com (sfhdag6node1.st.com [10.75.127.16])
- by zeta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 5FCD72AC5;
- Thu, 13 Jun 2019 13:02:04 +0000 (GMT)
-Received: from [10.48.0.237] (10.75.127.45) by SFHDAG6NODE1.st.com
- (10.75.127.16) with Microsoft SMTP Server (TLS) id 15.0.1347.2; Thu, 13 Jun
- 2019 15:02:03 +0200
-Subject: Re: [PATCH V3 0/3] mmc: mmci: add busy detect for stm32 sdmmc variant
-To: Ulf Hansson <ulf.hansson@linaro.org>, Rob Herring <robh+dt@kernel.org>
-References: <1559577325-19266-1-git-send-email-ludovic.Barre@st.com>
-From: Ludovic BARRE <ludovic.barre@st.com>
-Message-ID: <5b7e1ae5-c97e-5a21-fc3e-7cc328087f04@st.com>
-Date: Thu, 13 Jun 2019 15:02:02 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.7.0
-MIME-Version: 1.0
-In-Reply-To: <1559577325-19266-1-git-send-email-ludovic.Barre@st.com>
-Content-Language: en-US
-X-Originating-IP: [10.75.127.45]
-X-ClientProxiedBy: SFHDAG8NODE2.st.com (10.75.127.23) To SFHDAG6NODE1.st.com
- (10.75.127.16)
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:, ,
- definitions=2019-06-13_08:, , signatures=0
+	id 1hbPOt-0001KI-8d; Thu, 13 Jun 2019 13:04:19 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hbPOg-0001Jp-KJ
+ for linux-arm-kernel@lists.infradead.org; Thu, 13 Jun 2019 13:04:08 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 37EAA2B;
+ Thu, 13 Jun 2019 06:04:04 -0700 (PDT)
+Received: from big-swifty.misterjones.org (unknown [172.31.20.19])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 736773F694;
+ Thu, 13 Jun 2019 06:04:01 -0700 (PDT)
+Date: Thu, 13 Jun 2019 14:03:53 +0100
+Message-ID: <86imt9bps6.wl-marc.zyngier@arm.com>
+From: Marc Zyngier <marc.zyngier@arm.com>
+To: Andrew Murray <andrew.murray@arm.com>
+Subject: Re: [PATCH v2] clocksource/arm_arch_timer: extract elf_hwcap use to
+ arch-helper
+In-Reply-To: <20190613125102.23879-1-andrew.murray@arm.com>
+References: <20190613125102.23879-1-andrew.murray@arm.com>
+User-Agent: Wanderlust/2.15.9 (Almost Unreal) SEMI-EPG/1.14.7 (Harue)
+ FLIM/1.14.9 (=?UTF-8?B?R29qxY0=?=) APEL/10.8 EasyPG/1.0.0 Emacs/26
+ (aarch64-unknown-linux-gnu) MULE/6.0 (HANACHIRUSATO)
+Organization: ARM Ltd
+MIME-Version: 1.0 (generated by SEMI-EPG 1.14.7 - "Harue")
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190613_060217_835736_5F9FA270 
-X-CRM114-Status: GOOD (  15.97  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20190613_060406_758022_ADF91211 
+X-CRM114-Status: GOOD (  20.74  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [91.207.212.93 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -96,52 +63,140 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Alexandre Torgue <alexandre.torgue@st.com>,
- linux-mmc@vger.kernel.org, linux-kernel@vger.kernel.org,
- srinivas.kandagatla@linaro.org, Maxime Coquelin <mcoquelin.stm32@gmail.com>,
- linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Daniel Lezcano <daniel.lezcano@linaro.org>, Will Deacon <will.deacon@arm.com>,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-hi Ulf
++ Daniel
 
-Just a "gentleman ping" about this series.
-I know you are busy, it's just to be sure you do not forget me :-)
+On Thu, 13 Jun 2019 13:51:02 +0100,
+Andrew Murray <andrew.murray@arm.com> wrote:
+> 
+> Different mechanisms are used to test and set elf_hwcaps between ARM
+> and ARM64, this results in the use of ifdeferry in this file when
+> setting/testing for the EVTSTRM hwcap.
+> 
+> Let's improve readability by extracting this to an arch helper.
+> 
+> Signed-off-by: Andrew Murray <andrew.murray@arm.com>
+> Acked-by: Mark Rutland <mark.rutland@arm.com>
+> Acked-by: Will Deacon <will.deacon@arm.com>
 
-Regards
-Ludo
+Acked-by: Marc Zyngier <marc.zyngier@arm.com>
 
-On 6/3/19 5:55 PM, Ludovic Barre wrote:
-> From: Ludovic Barre <ludovic.barre@st.com>
+Daniel, can you please take this though the clocksource tree?
+
+Thanks,
+
+	M.
+
+> ---
+>  arch/arm/include/asm/arch_timer.h    | 10 ++++++++++
+>  arch/arm64/include/asm/arch_timer.h  | 13 +++++++++++++
+>  drivers/clocksource/arm_arch_timer.c | 15 ++-------------
+>  3 files changed, 25 insertions(+), 13 deletions(-)
 > 
-> This patch series adds busy detect for stm32 sdmmc variant.
-> Some adaptations are required:
-> -Clear busy status bit if busy_detect_flag and busy_detect_mask are
->   different.
-> -Add hardware busy timeout with MMCIDATATIMER register.
+> diff --git a/arch/arm/include/asm/arch_timer.h b/arch/arm/include/asm/arch_timer.h
+> index 4b66ecd6be99..ae533caec1e9 100644
+> --- a/arch/arm/include/asm/arch_timer.h
+> +++ b/arch/arm/include/asm/arch_timer.h
+> @@ -4,6 +4,7 @@
+>  
+>  #include <asm/barrier.h>
+>  #include <asm/errno.h>
+> +#include <asm/hwcap.h>
+>  #include <linux/clocksource.h>
+>  #include <linux/init.h>
+>  #include <linux/types.h>
+> @@ -124,6 +125,15 @@ static inline void arch_timer_set_cntkctl(u32 cntkctl)
+>  	isb();
+>  }
+>  
+> +static inline bool arch_timer_set_evtstrm_feature(void)
+> +{
+> +	elf_hwcap |= HWCAP_EVTSTRM;
+> +}
+> +
+> +static inline bool arch_timer_have_evtstrm_feature(void)
+> +{
+> +	return elf_hwcap & HWCAP_EVTSTRM;
+> +}
+>  #endif
+>  
+>  #endif
+> diff --git a/arch/arm64/include/asm/arch_timer.h b/arch/arm64/include/asm/arch_timer.h
+> index 50b3ab7ded4f..a847a3ee6cab 100644
+> --- a/arch/arm64/include/asm/arch_timer.h
+> +++ b/arch/arm64/include/asm/arch_timer.h
+> @@ -20,6 +20,7 @@
+>  #define __ASM_ARCH_TIMER_H
+>  
+>  #include <asm/barrier.h>
+> +#include <asm/hwcap.h>
+>  #include <asm/sysreg.h>
+>  
+>  #include <linux/bug.h>
+> @@ -240,4 +241,16 @@ static inline int arch_timer_arch_init(void)
+>  	return 0;
+>  }
+>  
+> +static inline void arch_timer_set_evtstrm_feature(void)
+> +{
+> +	cpu_set_named_feature(EVTSTRM);
+> +#ifdef CONFIG_COMPAT
+> +	compat_elf_hwcap |= COMPAT_HWCAP_EVTSTRM;
+> +#endif
+> +}
+> +
+> +static inline bool arch_timer_have_evtstrm_feature(void)
+> +{
+> +	return cpu_have_named_feature(EVTSTRM);
+> +}
+>  #endif
+> diff --git a/drivers/clocksource/arm_arch_timer.c b/drivers/clocksource/arm_arch_timer.c
+> index b2a951a798e2..3583a92ad960 100644
+> --- a/drivers/clocksource/arm_arch_timer.c
+> +++ b/drivers/clocksource/arm_arch_timer.c
+> @@ -804,14 +804,7 @@ static void arch_timer_evtstrm_enable(int divider)
+>  	cntkctl |= (divider << ARCH_TIMER_EVT_TRIGGER_SHIFT)
+>  			| ARCH_TIMER_VIRT_EVT_EN;
+>  	arch_timer_set_cntkctl(cntkctl);
+> -#ifdef CONFIG_ARM64
+> -	cpu_set_named_feature(EVTSTRM);
+> -#else
+> -	elf_hwcap |= HWCAP_EVTSTRM;
+> -#endif
+> -#ifdef CONFIG_COMPAT
+> -	compat_elf_hwcap |= COMPAT_HWCAP_EVTSTRM;
+> -#endif
+> +	arch_timer_set_evtstrm_feature();
+>  	cpumask_set_cpu(smp_processor_id(), &evtstrm_available);
+>  }
+>  
+> @@ -1040,11 +1033,7 @@ static int arch_timer_cpu_pm_notify(struct notifier_block *self,
+>  	} else if (action == CPU_PM_ENTER_FAILED || action == CPU_PM_EXIT) {
+>  		arch_timer_set_cntkctl(__this_cpu_read(saved_cntkctl));
+>  
+> -#ifdef CONFIG_ARM64
+> -		if (cpu_have_named_feature(EVTSTRM))
+> -#else
+> -		if (elf_hwcap & HWCAP_EVTSTRM)
+> -#endif
+> +		if (arch_timer_have_evtstrm_feature())
+>  			cpumask_set_cpu(smp_processor_id(), &evtstrm_available);
+>  	}
+>  	return NOTIFY_OK;
+> -- 
+> 2.21.0
 > 
-> V3:
-> -rebase on latest mmc next
-> -replace re-read by status parameter.
-> 
-> V2:
-> -mmci_cmd_irq cleanup in separate patch.
-> -simplify the busy_detect_flag exclude
-> -replace sdmmc specific comment in
-> "mmc: mmci: avoid fake busy polling in mmci_irq"
-> to focus on common behavior
-> 
-> Ludovic Barre (3):
->    mmc: mmci: fix read status for busy detect
->    mmc: mmci: add hardware busy timeout feature
->    mmc: mmci: add busy detect for stm32 sdmmc variant
-> 
->   drivers/mmc/host/mmci.c | 49 +++++++++++++++++++++++++++++++++++++++++--------
->   drivers/mmc/host/mmci.h |  3 +++
->   2 files changed, 44 insertions(+), 8 deletions(-)
-> 
+
+-- 
+Jazz is not dead, it just smells funny.
 
 _______________________________________________
 linux-arm-kernel mailing list
