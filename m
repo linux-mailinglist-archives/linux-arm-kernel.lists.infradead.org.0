@@ -2,56 +2,71 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8558C43201
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 13 Jun 2019 02:26:39 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C196B43207
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 13 Jun 2019 02:46:04 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=uaSI2DvnVHao1TSuJ8O+3vaY7Rbzz5GhuXRcUk74KNo=; b=uLQyTS7xbkmHPE
-	/KxTkkbazSl++ESPHLXzdsUuHT8hD8boirqLTF0QEKupoJO3b5hJnTSmLVF83tp8a+ps9cZfDv+1M
-	nhrPGqiVHVP4VY57XZ/HdFRcW1MuNSw73qCi5qjjS3Bb2D9gXfMBNhZzYFC4XuxSoJT/U3hkrAbSo
-	HP6Gd11u2C/yomlatDnrWHiXYSNwqGPDFf2TQmZ5S7IQrUcvXyqqoBXWtN2lvDOIjtt6O0ewwc1rV
-	DLe0TnxWorMVAxgofAYmuvhwi8Stt4QynAtVJpFuBgXcl/p/36mGLP/2IpywL8Gt6vS42iK4WUT77
-	l90S8j36QUZkSwww6wNw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=L02j2ba+ligsiWwZbZFIrXGN7tjyhMVPQc7Gu8zAu7w=; b=aVALyUfv/ubzyT
+	44t+4EjLSGolZQcAstg0/k0UHLcznU0sYRZN82vKvTd4OSPOuSW8sLGAa9Xhv+AQ+tNcrXe5k9aGA
+	cmq5E5hlY20G6OJmrVWd6lk4oOlo0tTUDnXsaAHCTQMNqmow7XCOk7/gBUuQOmgqOPcHL48KaIQkb
+	SIiodPa9qX1AChU/zKe+mrlKVRq8WpCxyx3BLntHgZZR3psRSXTqZSzJ41UHwF40u+1ACpufNoTDx
+	VGtyUm2pTXAx8lJybzj3KeOyxkBYJug5pxXQD4XeiBSfdum2nAB/KBPhwiogCh6DQBjruZDbMqmLE
+	cO4IM6Wb6XSwCWKZ4IZg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hbDZZ-0005rO-Hn; Thu, 13 Jun 2019 00:26:33 +0000
-Received: from outgoing-stata.csail.mit.edu ([128.30.2.210])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hbDZK-0005qK-4x
- for linux-arm-kernel@lists.infradead.org; Thu, 13 Jun 2019 00:26:19 +0000
-Received: from [4.30.142.84] (helo=srivatsab-a01.vmware.com)
- by outgoing-stata.csail.mit.edu with esmtpsa (TLS1.2:RSA_AES_128_CBC_SHA1:128)
- (Exim 4.82) (envelope-from <srivatsa@csail.mit.edu>)
- id 1hbDYq-000Xfo-J5; Wed, 12 Jun 2019 20:25:48 -0400
-Subject: Re: [PATCH v4 18/28] docs: convert docs to ReST and rename to *.rst
-To: Mauro Carvalho Chehab <mchehab+samsung@kernel.org>,
- Linux Doc Mailing List <linux-doc@vger.kernel.org>
-References: <cover.1560361364.git.mchehab+samsung@kernel.org>
- <fac44e1fbab5ea755a93601a4fdfa34fcc57ae9e.1560361364.git.mchehab+samsung@kernel.org>
-From: "Srivatsa S. Bhat" <srivatsa@csail.mit.edu>
-Message-ID: <7dc94cb4-ebf1-22ab-29c9-fcb2b875a9ac@csail.mit.edu>
-Date: Wed, 12 Jun 2019 17:25:39 -0700
-User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:60.0)
- Gecko/20100101 Thunderbird/60.7.0
+	id 1hbDsP-0004PS-E9; Thu, 13 Jun 2019 00:46:01 +0000
+Received: from mail.kernel.org ([198.145.29.99])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hbDsA-0004P8-DA
+ for linux-arm-kernel@lists.infradead.org; Thu, 13 Jun 2019 00:45:47 +0000
+Received: from dragon (li1322-146.members.linode.com [45.79.223.146])
+ (using TLSv1.2 with cipher DHE-RSA-AES128-SHA (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id A5143215EA;
+ Thu, 13 Jun 2019 00:45:42 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1560386745;
+ bh=Y7mdi6uFOuBO3QxKWlpKYM6bNyXkY1xifsM4T0q7N8U=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=S7EpA5OokHKhhjL9gHwCJrcGLGApv/KADm67/XXDDdIrNY684DJbkzkOJPmVOjFQt
+ ZLTdOzW6obAQYrYpwF+ZTMLvsVggKTzpNRFkS5JnUyX29Ah+W/ZcuK7JbuUrgVMB7J
+ 9jDWecsCijkiNcUINgXNm3wZHEfS8ExGt2NMokZo=
+Date: Thu, 13 Jun 2019 08:45:10 +0800
+From: Shawn Guo <shawnguo@kernel.org>
+To: Li Yang <leoyang.li@nxp.com>
+Subject: Re: [PATCH] arm64: defconfig: Enable FSL_EDMA driver
+Message-ID: <20190613004508.GA20747@dragon>
+References: <20190422183056.16375-1-leoyang.li@nxp.com>
+ <20190510030525.GC15856@dragon>
+ <CADRPPNT2G20j2pvSEyqX=_WNDPrcNR+xCR_XZukbnSW19wFLNA@mail.gmail.com>
 MIME-Version: 1.0
-In-Reply-To: <fac44e1fbab5ea755a93601a4fdfa34fcc57ae9e.1560361364.git.mchehab+samsung@kernel.org>
-Content-Language: en-US
+Content-Disposition: inline
+In-Reply-To: <CADRPPNT2G20j2pvSEyqX=_WNDPrcNR+xCR_XZukbnSW19wFLNA@mail.gmail.com>
+User-Agent: Mutt/1.5.21 (2010-09-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190612_172618_271860_9E80FACE 
-X-CRM114-Status: GOOD (  17.74  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20190612_174546_465985_813DEEAD 
+X-CRM114-Status: GOOD (  16.77  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [128.30.2.210 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -63,99 +78,50 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Nishanth Menon <nm@ti.com>, linux-wireless@vger.kernel.org,
- David Airlie <airlied@linux.ie>, Viresh Kumar <viresh.kumar@linaro.org>,
- Joonas Lahtinen <joonas.lahtinen@linux.intel.com>,
- dri-devel@lists.freedesktop.org, Sebastian Reichel <sre@kernel.org>,
- Harry Wei <harryxiyou@gmail.com>, Pavel Machek <pavel@ucw.cz>,
- "H. Peter Anvin" <hpa@zytor.com>, Alex Shi <alex.shi@linux.alibaba.com>,
- Jonathan Corbet <corbet@lwn.net>, x86@kernel.org,
- Ingo Molnar <mingo@redhat.com>, linux-pci@vger.kernel.org,
- Len Brown <len.brown@intel.com>, Suzuki K Poulose <suzuki.poulose@arm.com>,
- intel-gfx@lists.freedesktop.org, Jani Nikula <jani.nikula@linux.intel.com>,
- Mauro Carvalho Chehab <mchehab@infradead.org>, Mark Brown <broonie@kernel.org>,
- Borislav Petkov <bp@alien8.de>, Rodrigo Vivi <rodrigo.vivi@intel.com>,
- Bjorn Helgaas <bhelgaas@google.com>, Thomas Gleixner <tglx@linutronix.de>,
- linux-arm-kernel@lists.infradead.org,
- Mathieu Poirier <mathieu.poirier@linaro.org>, Stephen Boyd <sboyd@kernel.org>,
- netdev@vger.kernel.org, linux-pm@vger.kernel.org,
- "Rafael J. Wysocki" <rjw@rjwysocki.net>, Liam Girdwood <lgirdwood@gmail.com>,
- linux-kernel@vger.kernel.org, Daniel Vetter <daniel@ffwll.ch>,
- Johannes Berg <johannes@sipsolutions.net>,
- "David S. Miller" <davem@davemloft.net>
+Cc: aisheng.dong@nxp.com, Grant Likely <grant.likely@arm.com>,
+ madalin.bucur@nxp.com, lkml <linux-kernel@vger.kernel.org>,
+ Vinod Koul <vkoul@kernel.org>, Rob Herring <robh+dt@kernel.org>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 6/12/19 10:52 AM, Mauro Carvalho Chehab wrote:
-> Convert the PM documents to ReST, in order to allow them to
-> build with Sphinx.
+On Wed, Jun 12, 2019 at 03:01:29PM -0500, Li Yang wrote:
+> On Thu, May 9, 2019 at 10:15 PM Shawn Guo <shawnguo@kernel.org> wrote:
+> >
+> > On Mon, Apr 22, 2019 at 01:30:56PM -0500, Li Yang wrote:
+> > > Enables the FSL EDMA driver by default.  This also works around an issue
+> > > that imx-i2c driver keeps deferring the probe because of the DMA is not
+> > > ready.  And currently the DMA engine framework can not correctly tell
+> > > if the DMA channels will truly become available later (it will never be
+> > > available if the DMA driver is not enabled).
+> > >
+> > > This will cause indefinite messages like below:
+> > > [    3.335829] imx-i2c 2180000.i2c: can't get pinctrl, bus recovery not supported
+> > > [    3.344455] ina2xx 0-0040: power monitor ina220 (Rshunt = 1000 uOhm)
+> > > [    3.350917] lm90 0-004c: 0-004c supply vcc not found, using dummy regulator
+> > > [    3.362089] imx-i2c 2180000.i2c: can't get pinctrl, bus recovery not supported
+> > > [    3.370741] ina2xx 0-0040: power monitor ina220 (Rshunt = 1000 uOhm)
+> > > [    3.377205] lm90 0-004c: 0-004c supply vcc not found, using dummy regulator
+> > > [    3.388455] imx-i2c 2180000.i2c: can't get pinctrl, bus recovery not supported
+> > > .....
+> > >
+> > > Signed-off-by: Li Yang <leoyang.li@nxp.com>
+> >
+> > Applied, thanks.
 > 
-> The conversion is actually:
->   - add blank lines and identation in order to identify paragraphs;
->   - fix tables markups;
->   - add some lists markups;
->   - mark literal blocks;
->   - adjust title markups.
+> Hi Shawn,
 > 
-> At its new index.rst, let's add a :orphan: while this is not linked to
-> the main index.rst file, in order to avoid build warnings.
-> 
-> Signed-off-by: Mauro Carvalho Chehab <mchehab+samsung@kernel.org>
-> Acked-by: Bjorn Helgaas <bhelgaas@google.com>
-> Acked-by: Mark Brown <broonie@kernel.org>
-> ---
+> Is it possible to move this patch to the -fix series so that it can
+> reach the mainline earlier?  It is having a boot failure in mainline
+> for platforms using this device without this workaround.
 
-[...]
+Why would I2C device deferring cause boot failure on a platform?  I'm
+just trying to understand severity of the problem.
 
-> diff --git a/Documentation/power/suspend-and-cpuhotplug.txt b/Documentation/power/suspend-and-cpuhotplug.rst
-> similarity index 90%
-> rename from Documentation/power/suspend-and-cpuhotplug.txt
-> rename to Documentation/power/suspend-and-cpuhotplug.rst
-> index a8751b8df10e..9df664f5423a 100644
-> --- a/Documentation/power/suspend-and-cpuhotplug.txt
-> +++ b/Documentation/power/suspend-and-cpuhotplug.rst
-> @@ -1,10 +1,15 @@
-> +====================================================================
->  Interaction of Suspend code (S3) with the CPU hotplug infrastructure
-> +====================================================================
->  
-> -     (C) 2011 - 2014 Srivatsa S. Bhat <srivatsa.bhat@linux.vnet.ibm.com>
-> +(C) 2011 - 2014 Srivatsa S. Bhat <srivatsa.bhat@linux.vnet.ibm.com>
->  
->  
-> -I. How does the regular CPU hotplug code differ from how the Suspend-to-RAM
-> -   infrastructure uses it internally? And where do they share common code?
-> +I. Differences between CPU hotplug and Suspend-to-RAM
-> +======================================================
-> +
-> +How does the regular CPU hotplug code differ from how the Suspend-to-RAM
-> +infrastructure uses it internally? And where do they share common code?
->  
->  Well, a picture is worth a thousand words... So ASCII art follows :-)
->  
-
-[...]
-
-> @@ -101,7 +108,7 @@ execution during resume):
->  
->  It is to be noted here that the system_transition_mutex lock is acquired at the very
->  beginning, when we are just starting out to suspend, and then released only
-> -after the entire cycle is complete (i.e., suspend + resume).
-> +after the entire cycle is complete (i.e., suspend + resume)::
->  
-
-I think that should be a period, not a colon, because it is clarifying
-the text above it (as opposed to referring to the example below it).
-
-Other than that, for suspend-and-cpuhotplug.txt:
-
-Acked-by: Srivatsa S. Bhat (VMware) <srivatsa@csail.mit.edu>
- 
-Regards,
-Srivatsa
-VMware Photon OS
+Shawn
 
 _______________________________________________
 linux-arm-kernel mailing list
