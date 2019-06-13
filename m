@@ -2,53 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 65C084348C
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 13 Jun 2019 11:15:25 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 165E743495
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 13 Jun 2019 11:19:50 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=MdNDBvzkxIZQ1KRoL9EPmvI1W5xnQt7Hu1r6Org3ZeQ=; b=MPpN5z0NB/PP5r
-	cXPbkzVkLyRVemMX2pik39TbDXuEDm921roO1oTsru421LAXXfaUqPzKje3VU+N0eoNHj4nfr5qls
-	GaLt1DqCvx95umEBz9EVxkO0Avqd7/ZTbEhTHUcDZeapY+FTqIGLSE2DsyLIhSxmD/Li4ZUrzXFK6
-	ZuI72LNGLZI9LbTI0GnNCdrXmXIDByM8HtucxzauJ6mdV3WN8AU4poQsxs4Rhb8TwEy/xTFffi4Gc
-	yzDy3DRXeJkcwTF0jHDknDFJkNxKyw0R0fmCMnX1C4kTpUycnxsV2biJyJNbm092q1M065n173EO5
-	Ad52phI+u4XPahgtbYKg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=svMv/iquSIB8w0/0JQNCTPqinMTIFi6BDCkWqgEgqqQ=; b=AGAaFtqLfF0K8AQbEKJg05dqO
+	/OgsE7b49ECHJlbwssrHZv9vwLFyMbJ3/tO7fU1Y7jiqjqMZtGZoXv/4p6Kb2LaezVTHjxBLNKMwb
+	WCzh/pZdd2colz8zuYYr5tNX5+xGmwzyrvXiTieQuvgj99sndAe+WBxcsLpE63hclSd5oirGd/Af5
+	ilifEz93JDrs/x21s9iOrHod9E0yiQhFoeux6spINAEumQYpf3vlyFrLX+VZ7foxsexNrEhlNZ2JE
+	7X1a0rJUpZ5lbteX/IKv7DwV0fZweSvoK5WUNyu9crHdeu+NgVXzcQ7thKHjP1v4xuu6D84W0mwFH
+	i7VVRqTSw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hbLpH-0005JT-Sb; Thu, 13 Jun 2019 09:15:19 +0000
-Received: from foss.arm.com ([217.140.110.172])
+	id 1hbLtc-0006cQ-7x; Thu, 13 Jun 2019 09:19:48 +0000
+Received: from sauhun.de ([88.99.104.3] helo=pokefinder.org)
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hbLp5-00046f-G1
- for linux-arm-kernel@lists.infradead.org; Thu, 13 Jun 2019 09:15:08 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id EB89A367;
- Thu, 13 Jun 2019 02:14:59 -0700 (PDT)
-Received: from fuggles.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
- [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 446B13F694;
- Thu, 13 Jun 2019 02:14:59 -0700 (PDT)
-Date: Thu, 13 Jun 2019 10:14:54 +0100
-From: Will Deacon <will.deacon@arm.com>
-To: Sudeep Holla <sudeep.holla@arm.com>
-Subject: Re: [PATCH] arm64: smp: disable hotplug on trusted OS resident CPU
-Message-ID: <20190613091454.GA17331@fuggles.cambridge.arm.com>
-References: <20190612125137.10260-1-sudeep.holla@arm.com>
+ id 1hbLtK-0006bm-Bf
+ for linux-arm-kernel@lists.infradead.org; Thu, 13 Jun 2019 09:19:31 +0000
+Received: from localhost (p5486CF99.dip0.t-ipconnect.de [84.134.207.153])
+ by pokefinder.org (Postfix) with ESMTPSA id 7A4352C3559;
+ Thu, 13 Jun 2019 11:19:26 +0200 (CEST)
+Date: Thu, 13 Jun 2019 11:19:26 +0200
+From: Wolfram Sang <wsa@the-dreams.de>
+To: Lee Jones <lee.jones@linaro.org>
+Subject: Re: [PATCH v3 1/8] i2c: i2c-qcom-geni: Provide support for ACPI
+Message-ID: <20190613091926.GB952@kunai>
+References: <20190610084213.1052-1-lee.jones@linaro.org>
+ <20190612103453.ccet2pneairnlpcc@ninjato>
+ <20190612104011.GA4660@dell>
+ <20190612104459.gvji3qxym5s4odfq@ninjato>
+ <20190613085204.GF4660@dell>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190612125137.10260-1-sudeep.holla@arm.com>
-User-Agent: Mutt/1.11.1+86 (6f28e57d73f2) ()
+In-Reply-To: <20190613085204.GF4660@dell>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190613_021507_588498_573C64CF 
-X-CRM114-Status: GOOD (  14.89  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190613_021930_549323_516E57F2 
+X-CRM114-Status: UNSURE (   9.05  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [88.99.104.3 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -61,49 +63,80 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- Catalin Marinas <catalin.marinas@arm.com>,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: balbi@kernel.org, linux-usb@vger.kernel.org,
+ wsa+renesas@sang-engineering.com, gregkh@linuxfoundation.org,
+ linus.walleij@linaro.org, ard.biesheuvel@linaro.org,
+ linux-kernel@vger.kernel.org, bjorn.andersson@linaro.org,
+ david.brown@linaro.org, alokc@codeaurora.org, linux-i2c@vger.kernel.org,
+ linux-gpio@vger.kernel.org, linux-arm-msm@vger.kernel.org,
+ andy.gross@linaro.org, jlhugo@gmail.com, linux-arm-kernel@lists.infradead.org
+Content-Type: multipart/mixed; boundary="===============1624337728034579834=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Sudeep.
 
-On Wed, Jun 12, 2019 at 01:51:37PM +0100, Sudeep Holla wrote:
-> The trusted OS may reject CPU_OFF calls to its resident CPU, so we must
-> avoid issuing those. We never migrate a Trusted OS and we already take
-> care to prevent CPU_OFF PSCI call. However, this is not reflected
-> explicitly to the userspace. Any user can attempt to hotplug trusted OS
-> resident CPU. The entire motion of going through the various state
-> transitions in the CPU hotplug state machine gets executed and the
-> PSCI layer finally refuses to make CPU_OFF call.
-> 
-> This results is unnecessary unwinding of CPU hotplug state machine in
-> the kernel. Instead we can mark the trusted OS resident CPU as not
-> available for hotplug, so that the user attempt or request to do the
-> same will get immediately rejected.
-> 
-> Cc: Mark Rutland <mark.rutland@arm.com>
-> Cc: Catalin Marinas <catalin.marinas@arm.com>
-> Cc: Will Deacon <will.deacon@arm.com>
-> Signed-off-by: Sudeep Holla <sudeep.holla@arm.com>
-> ---
->  arch/arm64/include/asm/cpu_ops.h |  3 +++
->  arch/arm64/kernel/psci.c         |  6 ++++++
->  arch/arm64/kernel/setup.c        | 11 ++++++++++-
->  3 files changed, 19 insertions(+), 1 deletion(-)
+--===============1624337728034579834==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="Fba/0zbH8Xs+Fj9o"
+Content-Disposition: inline
 
-I'm just trying to understand the motivation behind this. It's not a fix as
-far as I can tell, but more of an optimisation for a failing CPU hotplug
-case. Why is that important? I feel like I'm missing something.
 
-Thanks,
+--Fba/0zbH8Xs+Fj9o
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
 
-Will
+
+> I contacted both of them.
+>=20
+>  Andy doesn't touch anything that isn't QUP based (8994 and older).
+>=20
+>  David doesn't deal with MSM platforms if Andy is available.=20
+
+That's good to know, thanks!
+
+> So I guess the decision is yours.  Seeing at this patch is pretty
+> trivial and has our ACPI expert's Ack, the decision shouldn't be a
+> difficult one.
+
+No worries, the patch will be applied. I just wanted to check if the
+listed maintainers are still there. Otherwise I need to orphan this
+driver.
+
+
+--Fba/0zbH8Xs+Fj9o
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAABCgAdFiEEOZGx6rniZ1Gk92RdFA3kzBSgKbYFAl0CFRkACgkQFA3kzBSg
+KbaquBAArPmt8Fz3DGFNlnfxI6ee/fBc4huwdqsLrUXhirCq2NxTHi0g8mc1Y4O5
+js7pOOLQSqZ6cTamIqHGv7wNonZ16xhvJPexVAz8CPT9BOysmHI/Z1eBEorBqOh8
+MXkJGWXCSJ8li3yAdDLcQWKyj42zzEV7YJ/7kzEVpodSec/ufP1l34mxPNY+gVkj
+b2YAX41oX7KMQ+ix+O9dK1U/wja5costVyUNXxjLuzZBTooVShj7dnrcLuROw1ss
+I3V09OpXN7E8tF4Tq52gJ3xH1wJslMsi2GGGBFC4kKC3txfO04cuOZsLmf36Jomd
+hBFUBBQotylM32w5lshWXcPQOUWBsKlDtfK5qyAhKIeBEvs08pbqK1Lw8hFT8T7t
+6kD5Ty0cRPx5yBU0DE46FWuR60RYUqfq+bLYy4Y1O5lyCY2IdM46SMuFo6pp96lq
+GQReaFopNp4SCpNPNJCDFtoHegeEoT5JKrcjLHRV9Zg2+p4mNL2O7Epkvi+4JvzV
+p1gVvtL0/x5wVD8QWtXq8a7/IQ5oYUaULExw+WzhWD+VV4c/4JyyMNtGpCmnXCAr
+EXj+7drBHheZN7nmmrer+sEuAySjTlhhHtFvb2K735P06Etqu5YWAtm88j7FcZUU
+SaCzuSKqPQgU401V3+k5aexWOMCEN1DehlbyL+n7nQazEovGM24=
+=dLE0
+-----END PGP SIGNATURE-----
+
+--Fba/0zbH8Xs+Fj9o--
+
+
+--===============1624337728034579834==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============1624337728034579834==--
+
