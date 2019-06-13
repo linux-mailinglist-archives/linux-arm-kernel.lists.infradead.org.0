@@ -2,75 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 581FD43600
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 13 Jun 2019 14:43:59 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9D77343603
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 13 Jun 2019 14:45:02 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=cf80Y7rkCwfdeiAvPIFyxFiaagcszR4SUmAGPXvgUhU=; b=hcD/KexnPsSyRl
-	uaoI/P5e396UOr8dGtNAFrMyIA3qcjPAtW/5ewWtD5f5L/AIyRUjb5GSLoUK8c3OR8lLWwEIzliKP
-	J0lnpIstZpu/qhcGCwj19YS3Tsrn3JJmtR/YXzvhLN8aD5udu7WrObJ8Vnut5j0Xgbhp2xw1+fgQH
-	5QrXxtgv1BpGXk9B8m2PIQC+HQV2uWyVusRkH0TngVrMohDjMNspd1eVR7bTrOYZ0sFxcuzXYLVcy
-	SgHmSRP2W/AqbfiPfNR2d37z95N/ZpMy+zHeR+PGHUencoo7wvCKslnEv5L/2vs2hB+Pz5+tYnsog
-	4uynsgDObjkZAMmozs4A==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=yfjZnZv4Qu+TibzoFLisWVk4xo8GlTQcspHvc4bfJuE=; b=NPtG3giT2m4tWX
+	vglIJRb7x2krGqQ7hwkzIjygWR9aHH6fUaagHGGA455ZDlenPnQ1kDkUZP7OvTeagVoqOHmZTM7K3
+	AH/q2mblr+8Fr2cPT/VcqvnmpmMpboCvZCSs4EJcklWMpToNgMji3nK/tFEtPvv5mbYQE9KW2gLb5
+	Kcx9xDOHQF2L1PR9elkXUXpgSTBAxi+nreCj6r8iBjVfYa6MRn1HJ+mEKenXxqr45CFZiAjEj4fwe
+	KQliauuzDqs7/FQoni8srCeKLEFhqa4VWtx9inK4EiBnU4hr512QnZVZ+btNk3Ojh1fZ2ZRHOzUp+
+	MIwznKcxQa96ObDRdVOw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hbP58-00089X-2b; Thu, 13 Jun 2019 12:43:54 +0000
-Received: from mail-qk1-f196.google.com ([209.85.222.196])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hbP4V-000880-Hf
- for linux-arm-kernel@lists.infradead.org; Thu, 13 Jun 2019 12:43:17 +0000
-Received: by mail-qk1-f196.google.com with SMTP id a27so12599606qkk.5
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 13 Jun 2019 05:43:15 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=M1sFURB9VOBy4jtZMrXEnFN+uXQmeakOQ9D7hQoU5Oo=;
- b=pTVWBndCYuyR2YJLFjtWCdyh1+0+vyrEYWOs9bVmpfUORCPuaKdzov6zOIyX+pP5XZ
- QLnLUVXdSiCuPNe0ywe+hzOs07NaDqBdAqxFHOiOxUG3sCcXHu8tq4Vqan6Ncn2slaEo
- KTsEYlKTIvwgdqTFzvaiYgvy0ufi+J0XFUVVZK6XgAkKobnqJ4h5+ZZcBUy0UYLQ3rfc
- 1ACIWqZS21z75P8BLV0SojdZ8R9kQ1OkL0CBmyvDr+RQwbJW+4G35zR849F3ZWTm1+Q0
- uCv3lDWnWIWMcI2gMsRrSjdvddVVxqIIPuOlG/mA5MQ2VwZYpemEd8/5jnSnoJLAsyBJ
- w3GQ==
-X-Gm-Message-State: APjAAAWK+WNu5TyD68NAuoFvvo4zZ6covH4nsqKNtxkwyu5DsjU6zgoT
- CJNSXMNjtp7U+SCqRJdmr1Z0HzClcghJ+ADoA5k=
-X-Google-Smtp-Source: APXvYqx0GATfAKDHQiQUDbUvb9OL9pOZqSyQ28f3QUXB75XM3Ltr+LckmYh3837y9Za7XbZ5exY75L49164V4buSJ0g=
-X-Received: by 2002:a05:620a:16c1:: with SMTP id
- a1mr27974065qkn.269.1560429794286; 
- Thu, 13 Jun 2019 05:43:14 -0700 (PDT)
+	id 1hbP6A-0000B0-6y; Thu, 13 Jun 2019 12:44:58 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hbP4d-0008AX-5J; Thu, 13 Jun 2019 12:43:25 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id E04BE2B;
+ Thu, 13 Jun 2019 05:43:20 -0700 (PDT)
+Received: from [10.1.196.105] (eglon.cambridge.arm.com [10.1.196.105])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 76DA33F694;
+ Thu, 13 Jun 2019 05:43:18 -0700 (PDT)
+Subject: Re: [PATCH 0/4] support reserving crashkernel above 4G on arm64 kdump
+To: Chen Zhou <chenzhou10@huawei.com>
+References: <20190507035058.63992-1-chenzhou10@huawei.com>
+ <51995efd-8469-7c15-0d5e-935b63fe2d9f@arm.com>
+ <638a5d22-8d51-8d63-2d8a-a38bbb8fb1d6@huawei.com>
+From: James Morse <james.morse@arm.com>
+Message-ID: <72a9c52b-1b24-57e8-e29f-b5a53524744b@arm.com>
+Date: Thu, 13 Jun 2019 13:43:16 +0100
+User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
+ Thunderbird/60.7.0
 MIME-Version: 1.0
-References: <c2e6af51-5676-3715-6666-c3f18df7b992@free.fr>
-In-Reply-To: <c2e6af51-5676-3715-6666-c3f18df7b992@free.fr>
-From: Arnd Bergmann <arnd@arndb.de>
-Date: Thu, 13 Jun 2019 14:42:57 +0200
-Message-ID: <CAK8P3a1_WvHYW243MR5-NdFm3cSt+cVGM5EJmOM8uiQMQ3vQjQ@mail.gmail.com>
-Subject: Re: [PATCH v1] iopoll: Tweak readx_poll_timeout sleep range
-To: Marc Gonzalez <marc.w.gonzalez@free.fr>
+In-Reply-To: <638a5d22-8d51-8d63-2d8a-a38bbb8fb1d6@huawei.com>
+Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190613_054315_582121_4DA29E15 
-X-CRM114-Status: GOOD (  11.64  )
-X-Spam-Score: 0.5 (/)
+X-CRM114-CacheID: sfid-20190613_054324_279742_862B2082 
+X-CRM114-Status: GOOD (  15.40  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.5 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.222.196 listed in list.dnswl.org]
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (arndbergmann[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.222.196 listed in wl.mailspike.net]
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -82,44 +62,67 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Douglas Anderson <dianders@chromium.org>, Will Deacon <will.deacon@arm.com>,
- LKML <linux-kernel@vger.kernel.org>,
- Bjorn Andersson <bjorn.andersson@linaro.org>,
- Thierry Reding <thierry.reding@gmail.com>,
- Matt Wagantall <mattw@codeaurora.org>, Bjorn Helgaas <helgaas@kernel.org>,
- Andrew Morton <akpm@linux-foundation.org>,
- Mitchel Humpherys <mitchelh@codeaurora.org>,
- Thomas Gleixner <tglx@linutronix.de>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: wangkefeng.wang@huawei.com, horms@verge.net.au, ard.biesheuvel@linaro.org,
+ catalin.marinas@arm.com, will.deacon@arm.com, linux-kernel@vger.kernel.org,
+ rppt@linux.ibm.com, linux-mm@kvack.org, takahiro.akashi@linaro.org,
+ mingo@redhat.com, bp@alien8.de, ebiederm@xmission.com,
+ kexec@lists.infradead.org, akpm@linux-foundation.org, tglx@linutronix.de,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Jun 13, 2019 at 2:16 PM Marc Gonzalez <marc.w.gonzalez@free.fr> wrote:
->
-> Chopping max delay in 4 seems excessive. Let's just cut it in half.
->
-> Signed-off-by: Marc Gonzalez <marc.w.gonzalez@free.fr>
-> ---
-> When max_us=100, old_min was 26 us; new_min would be 50 us
-> Was there a good reason for the 1/4th?
-> Is new_min=0 a problem? (for max=1)
+Hi Chen Zhou,
 
-You normally want a large enough range between min and max. I don't
-see anything wrong with a factor of four.
+On 13/06/2019 12:27, Chen Zhou wrote:
+> On 2019/6/6 0:32, James Morse wrote:
+>> On 07/05/2019 04:50, Chen Zhou wrote:
+>>> We use crashkernel=X to reserve crashkernel below 4G, which will fail
+>>> when there is no enough memory. Currently, crashkernel=Y@X can be used
+>>> to reserve crashkernel above 4G, in this case, if swiotlb or DMA buffers
+>>> are requierd, capture kernel will boot failure because of no low memory.
+>>
+>>> When crashkernel is reserved above 4G in memory, kernel should reserve
+>>> some amount of low memory for swiotlb and some DMA buffers. So there may
+>>> be two crash kernel regions, one is below 4G, the other is above 4G.
+>>
+>> This is a good argument for supporting the 'crashkernel=...,low' version.
+>> What is the 'crashkernel=...,high' version for?
+>>
+>> Wouldn't it be simpler to relax the ARCH_LOW_ADDRESS_LIMIT if we see 'crashkernel=...,low'
+>> in the kernel cmdline?
+>>
+>> I don't see what the 'crashkernel=...,high' variant is giving us, it just complicates the
+>> flow of reserve_crashkernel().
+>>
+>> If we called reserve_crashkernel_low() at the beginning of reserve_crashkernel() we could
+>> use crashk_low_res.end to change some limit variable from ARCH_LOW_ADDRESS_LIMIT to
+>> memblock_end_of_DRAM().
+>> I think this is a simpler change that gives you what you want.
+> 
+> According to your suggestions, we should do like this:
+> 1. call reserve_crashkernel_low() at the beginning of reserve_crashkernel()
+> 2. mark the low region as 'nomap'
+> 3. use crashk_low_res.end to change some limit variable from ARCH_LOW_ADDRESS_LIMIT to
+> memblock_end_of_DRAM()
+> 4. rename crashk_low_res as "Crash kernel (low)" for arm64
 
-> @@ -47,7 +47,7 @@
->                         break; \
->                 } \
->                 if (__sleep_us) \
-> -                       usleep_range((__sleep_us >> 2) + 1, __sleep_us); \
-> +                       usleep_range(__sleep_us / 2, __sleep_us); \
->         } \
+> 5. add an 'linux,low-memory-range' node in DT
 
-You are also missing the '+1' now, so this breaks with __sleep_us=1.
+(This bit would happen in kexec-tools)
 
-        Arnd
+
+> Do i understand correctly?
+
+Yes, I think this is simpler and still gives you what you want.
+It also leaves the existing behaviour unchanged, which helps with keeping compatibility
+with existing user-space and older kdump kernels.
+
+
+Thanks,
+
+James
 
 _______________________________________________
 linux-arm-kernel mailing list
