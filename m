@@ -2,64 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 73A3E44CDC
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 13 Jun 2019 22:04:30 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 92A3844D06
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 13 Jun 2019 22:08:31 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:In-Reply-To:
-	Message-Id:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=HsbRHZgq0knY80cnsL1Ja2PntglsJf1zrvHQYT0HTRM=; b=Dps/sP3FUuuxZi
-	3+aTJQCjvJITVYo8VQiZvlf2XZBu6UBUAjfWvr5NvZArhdFtvUSTQUsE6kftm+75Mcv3FeRMOVZjq
-	9AkPyNqDZZPSHJjFpq0O4aVHo+J2qQwzMq3f0C009pOlQxC2dVSOWvsfhmRE044niHF5fxVm6K6nU
-	aoaax7mWuAtw43i6DVyBqTI937G2fa9HMwIFo0T8xXbNjBma6mnNYLqoAXftaNvtlmlY82d0Fd3/V
-	xcMFr3M3LmKFmpjMXpR10MRftq8pR/8os2AiD19zD54aornxyvFV5oJgnDu8gwTsP+bwzD5oW576L
-	MDaUUy9hxynUR8VtI7pw==;
+	List-Owner; bh=xcwFkHsRqLm0AmQnrujWHuPLF2OlOGNFSKtEJsaOI+s=; b=BIsyn8GBwTE0Pn
+	CXP0kEeGW2zD6FNWsK9ai1DznLbie/BHVxOY2KJOkkTsEQ7xiuXxd83514gZtzfhXjj6x8CtQ0eSE
+	c1aiYDRlbxBlC+tBf6wcrxT7CS5N2TsbwhAXW8qEOOUV25a2Yrn29GYzVTeXe1LIjyIs1WXMnigrg
+	TZB591qjS81WgBYvcrgoqFkNOiv/WYmfdUKDJ107Gj070LYqmUsBfmAoaD8pSGYcnZhjVyhTl8WpG
+	MkFw0Zfh7kotceFKdHVsGOtJcRmjIBvUZox7ZqMT6AnIRydj3UrCsH567B5SJNmMeNl1cYKk4Ktnk
+	cXJyrlDyTpM/BhaNocMw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hbVxS-00077G-CI; Thu, 13 Jun 2019 20:04:26 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1hbW1L-0000hP-IR; Thu, 13 Jun 2019 20:08:27 +0000
+Received: from mail-qt1-f194.google.com ([209.85.160.194])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hbVxH-00074b-Uk; Thu, 13 Jun 2019 20:04:18 +0000
-Received: from akpm3.svl.corp.google.com (unknown [104.133.8.65])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 1E84021537;
- Thu, 13 Jun 2019 20:04:09 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1560456250;
- bh=STyJgmmKr944RjOkqQ8HWC3xeSyqe7HVqnGI2LWRsD8=;
- h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
- b=N2gTptqwNshky9t39zHrhF/tFwNwxgbkrbTJor+tak1vLqX97uKewRk8bUnzrn4Ko
- U5IaH0MfRPlK77bT7Yc/4PbSrlc3n6J8M0GsjcRBoXIwR5bmuZZez1tgkNHDFM277/
- c+zGeW7mHjTeucDkGZEHLB7VbopRA5mQ7/vZdAH4=
-Date: Thu, 13 Jun 2019 13:04:08 -0700
-From: Andrew Morton <akpm@linux-foundation.org>
-To: Anshuman Khandual <anshuman.khandual@arm.com>
-Subject: Re: [PATCH] mm: Generalize and rename notify_page_fault() as
- kprobe_page_fault()
-Message-Id: <20190613130408.3091869d8e50d0524157523f@linux-foundation.org>
-In-Reply-To: <1560420444-25737-1-git-send-email-anshuman.khandual@arm.com>
-References: <1560420444-25737-1-git-send-email-anshuman.khandual@arm.com>
-X-Mailer: Sylpheed 3.7.0 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
-Mime-Version: 1.0
+ id 1hbW1C-0000Y2-5U
+ for linux-arm-kernel@lists.infradead.org; Thu, 13 Jun 2019 20:08:19 +0000
+Received: by mail-qt1-f194.google.com with SMTP id n11so21946188qtl.5
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 13 Jun 2019 13:08:17 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=UwChhjSzjeOfvvnEfR7YJU7oQ/qodwbm5JIdXsqXlRo=;
+ b=f4wdWtp9DWUOoI5bC6SbvBpK8s9f4/DantLEA5h2mnZSpPBW3/7idzmUYXfEtrG6GW
+ kDgH/b246ljriiH2dvreS7SThyS0Jehnbf3804tvxGZrpOMDPrZ2KqnONKetKMwIJ33U
+ jsNvme5rcOQWiox1RF/Ht8lxGcAuwByk0pqcScq0ITKBE+eZdtHW9/Jz4mh6JILzZ8uS
+ 2rSfdMglrsu0c27cQ4ff2AW0mTjsjr1/nXcHvcTMKFrjwHIv+bQTIN8SScqXqs3uKsas
+ Pr5pdiy/o6dK0nPfckQGtjlsJmnDEHrMt1X3gmfv21w6NMBlzUIqi3P7qAznb/BAx0OH
+ lcyA==
+X-Gm-Message-State: APjAAAWHexx1DjGOojGoUNU1K82rIGM7voPXWdxfCzzzTrzdCF7tdtrt
+ LbkcbGD35jSG/e2+NzXwVA==
+X-Google-Smtp-Source: APXvYqxlMoVZh97RRGXb4sVgHdetYuU+vA47kS1FGVMnu6eGCEIfvRk5fRpKmQ3WZnBR9tg5KwicmA==
+X-Received: by 2002:a0c:d91b:: with SMTP id p27mr5042508qvj.236.1560456496941; 
+ Thu, 13 Jun 2019 13:08:16 -0700 (PDT)
+Received: from localhost ([64.188.179.243])
+ by smtp.gmail.com with ESMTPSA id j62sm248574qte.89.2019.06.13.13.08.15
+ (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
+ Thu, 13 Jun 2019 13:08:16 -0700 (PDT)
+Date: Thu, 13 Jun 2019 14:08:13 -0600
+From: Rob Herring <robh@kernel.org>
+To: Wen He <wen.he_1@nxp.com>
+Subject: Re: [v1 1/4] dt-bindings: display: Add DT bindings for LS1028A
+ HDP-TX PHY.
+Message-ID: <20190613200813.GA895@bogus>
+References: <20190508103703.40885-1-wen.he_1@nxp.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20190508103703.40885-1-wen.he_1@nxp.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190613_130417_167998_8C09B122 
-X-CRM114-Status: GOOD (  14.47  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20190613_130818_216763_8D1F5E85 
+X-CRM114-Status: GOOD (  18.53  )
+X-Spam-Score: 0.8 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (0.8 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.160.194 listed in list.dnswl.org]
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (robherring2[at]gmail.com)
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (robherring2[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- 0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.160.194 listed in wl.mailspike.net]
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -71,70 +91,100 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Michal Hocko <mhocko@suse.com>,
- linux-ia64@vger.kernel.org, linux-sh@vger.kernel.org,
- Peter Zijlstra <peterz@infradead.org>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Dave Hansen <dave.hansen@linux.intel.com>, Will Deacon <will.deacon@arm.com>,
- linux-mips@vger.kernel.org, linux-mm@kvack.org,
- Paul Mackerras <paulus@samba.org>, sparclinux@vger.kernel.org,
- linux-s390@vger.kernel.org, Yoshinori Sato <ysato@users.sourceforge.jp>,
- Michael Ellerman <mpe@ellerman.id.au>, x86@kernel.org,
- Russell King <linux@armlinux.org.uk>, Matthew Wilcox <willy@infradead.org>,
- Ingo Molnar <mingo@redhat.com>, James Hogan <jhogan@kernel.org>,
- linux-snps-arc@lists.infradead.org, Fenghua Yu <fenghua.yu@intel.com>,
- Stephen Rothwell <sfr@canb.auug.org.au>,
- Andrey Konovalov <andreyknvl@google.com>, Andy Lutomirski <luto@kernel.org>,
- Thomas Gleixner <tglx@linutronix.de>, linux-arm-kernel@lists.infradead.org,
- Christophe Leroy <christophe.leroy@c-s.fr>, Tony Luck <tony.luck@intel.com>,
- Heiko Carstens <heiko.carstens@de.ibm.com>, Vineet Gupta <vgupta@synopsys.com>,
- linux-kernel@vger.kernel.org, Ralf Baechle <ralf@linux-mips.org>,
- Paul Burton <paul.burton@mips.com>,
- Martin Schwidefsky <schwidefsky@de.ibm.com>, linuxppc-dev@lists.ozlabs.org,
- "David S. Miller" <davem@davemloft.net>
+Cc: "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ "shawnguo@kernel.org" <shawnguo@kernel.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ Leo Li <leoyang.li@nxp.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, 13 Jun 2019 15:37:24 +0530 Anshuman Khandual <anshuman.khandual@arm.com> wrote:
+On Wed, May 08, 2019 at 10:35:25AM +0000, Wen He wrote:
+> Add DT bindings documentmation for the HDP-TX PHY controller. The describes
+> which could be found on NXP Layerscape ls1028a platform.
 
-> Architectures which support kprobes have very similar boilerplate around
-> calling kprobe_fault_handler(). Use a helper function in kprobes.h to unify
-> them, based on the x86 code.
+Drop the hard stop (.) from the subject.
+
 > 
-> This changes the behaviour for other architectures when preemption is
-> enabled. Previously, they would have disabled preemption while calling the
-> kprobe handler. However, preemption would be disabled if this fault was
-> due to a kprobe, so we know the fault was not due to a kprobe handler and
-> can simply return failure.
+> Signed-off-by: Wen He <wen.he_1@nxp.com>
+> ---
+>  .../devicetree/bindings/display/fsl,hdp.txt   | 56 +++++++++++++++++++
+>  1 file changed, 56 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/display/fsl,hdp.txt
 > 
-> This behaviour was introduced in the commit a980c0ef9f6d ("x86/kprobes:
-> Refactor kprobes_fault() like kprobe_exceptions_notify()")
+> diff --git a/Documentation/devicetree/bindings/display/fsl,hdp.txt b/Documentation/devicetree/bindings/display/fsl,hdp.txt
+> new file mode 100644
+> index 000000000000..36b5687a1261
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/display/fsl,hdp.txt
+> @@ -0,0 +1,56 @@
+> +NXP Layerscpae ls1028a HDP-TX PHY Controller
+> +============================================
+> +
+> +The following bindings describe the Cadence HDP TX PHY on ls1028a that
+> +offer multi-protocol support of standars such as eDP and Displayport,
+> +supports for 25-600MHz pixel clock and up to 4k2k at 60MHz resolution.
+> +The HDP transmitter is a Cadence HDP TX controller IP with a companion
+> +PHY IP.
+
+I'm confused. This binding covers both blocks or is just one of them?
+
+> +
+> +Required properties:
+> +  - compatible:   Should be "fsl,ls1028a-dp" for ls1028a.
+> +  - reg:          Physical base address and size of the block of registers used
+> +  by the processor.
+> +  - interrupts:   HDP hotplug in/out detect interrupt number
+> +  - clocks:       A list of phandle + clock-specifier pairs, one for each entry
+> +  in 'clock-names'
+> +  - clock-names:  A list of clock names. It should contain:
+> +      - "clk_ipg": inter-Integrated circuit clock
+> +      - "clk_core": for the Main Display TX controller clock
+> +      - "clk_pxl": for the pixel clock feeding the output PLL of the processor
+> +      - "clk_pxl_mux": for the high PerfPLL bypass clock
+> +      - "clk_pxl_link": for the link rate pixel clock
+> +      - "clk_apb": for the APB interface clock
+> +      - "clk_vif": for the Video pixel clock
+
+The 'clk_' part is redundant.
+
+> +
+> +Required sub-nodes:
+> +  - port: The HDP connection to an encoder output port. The connection
+> +    is modelled using the OF graph bindings specified in
+> +    Documentation/devicetree/bindings/graph.txt
+> +
+> +
+> +Example:
+> +
+> +/ {
+> +        ...
+> +
+> +	hdp: display@f200000 {
+> +                compatible = "fsl,ls1028a-dp";
+> +		reg = <0x0 0xf1f0000 0x0 0xffff>,
+> +		    <0x0 0xf200000 0x0 0xfffff>;
+> +                interrupts = <0 221 IRQ_TYPE_LEVEL_HIGH>;
+> +		clocks = <&sysclk>, <&hdpclk>, <&dpclk>,
+> +                         <&dpclk>, <&dpclk>, <&pclk>, <&dpclk>;
+> +		clock-names = "clk_ipg", "clk_core", "clk_pxl",
+> +                              "clk_pxl_mux", "clk_pxl_link", "clk_apb",
+> +                              "clk_vif";
+> +
+> +		port {
+> +			dp1_output: endpoint {
+> +				remote-endpoint = <&dp0_input>;
+> +			};
+> +		};
+> +        };
+> +
+> +        ...
+> +};
+> -- 
+> 2.17.1
 > 
-> ...
->
-> --- a/arch/arm/mm/fault.c
-> +++ b/arch/arm/mm/fault.c
-> @@ -30,28 +30,6 @@
->  
->  #ifdef CONFIG_MMU
->  
-> -#ifdef CONFIG_KPROBES
-> -static inline int notify_page_fault(struct pt_regs *regs, unsigned int fsr)
-
-Some architectures make this `static inline'.  Others make it
-`nokprobes_inline', others make it `static inline __kprobes'.  The
-latter seems weird - why try to put an inline function into
-.kprobes.text?
-
-So..  what's the best thing to do here?  You chose `static
-nokprobe_inline' - is that the best approach, if so why?  Does
-kprobe_page_fault() actually need to be inlined?
-
-Also, some architectures had notify_page_fault returning int, others
-bool.  You chose bool and that seems appropriate and all callers are OK
-with that.
 
 _______________________________________________
 linux-arm-kernel mailing list
