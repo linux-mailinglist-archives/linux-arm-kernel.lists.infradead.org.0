@@ -2,58 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 845BC43F8A
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 13 Jun 2019 17:58:41 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7AACE44049
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 13 Jun 2019 18:05:02 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=oa1kPKVyvsTxQaaxOiJ3n1nvQDs5AG/Q/3mTQHdkimk=; b=aEPVZJoZ2FAWe1
-	uqCMdI8K+DXPTVtHahsmqXs2MaffVV0FZE9DALVOLawx2/m6B7pk4RwfXZx/q8P9sCjhZ0xFW8X18
-	PpY5SqIc7Vjocj60nsWvn18O5/4uAN03DorXLnq+lh0n+kDAoFm/i85UApBJYMvOHrFOEGJ367JjP
-	GoR8r3IvWwvpQ6QrM1pwrUhpTYuef935BRYevgFWZ0tcuVNiN7tFKyShv9/palYsvqzba8ZBjM3km
-	6eJpLgpxjJQVCnr+Pbp8iDeU3bE6JxtwYXHijRMbxR81JsDFpUQZUAG9Ee3p4mS5mlGPpBRrh8FTp
-	S1TteP3g/synZxF1873A==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=9aII7oaAp5nBQnSf3zR3ob1CcgXYKjS4sOl7soLJJfA=; b=sp/D60hrmsnDXj
+	fOXkloXYtHImtYG3IJFR2PrNjvraEKvqTC8JiCOiw9SNz1DgR4RJv/hcpRj4GRvM2raKQC4xRvb5r
+	20GEQgc3n2G/wlTpm6tbKh5STcdhGL0AK9n+N0My1FOuyg1g8YmmTo2pJ1dFLaw1iumocEHjpWr21
+	tEFd4aM6Ug6hx0lrp8yNKFdCXQb0PD9Gfw6rACXF8syCJUj4oKg4fCCA6380kDsUNBVKEdcBrEgeE
+	mRWV4YULO87RwlYf7WxRCVXVg544m8FYGKXMGC/WnrMqP23g6gWwNNRMq0FAQ7cUsHqGB486BL4zs
+	hwiT3Ztn51vXx8HAMY1A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hbS7Y-0007Ov-AJ; Thu, 13 Jun 2019 15:58:36 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hbS7L-0007O8-Q4
- for linux-arm-kernel@lists.infradead.org; Thu, 13 Jun 2019 15:58:25 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id D2C10367;
- Thu, 13 Jun 2019 08:58:22 -0700 (PDT)
-Received: from C02TF0J2HF1T.local (unknown [172.31.20.19])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 825ED3F246;
- Thu, 13 Jun 2019 08:58:02 -0700 (PDT)
-Date: Thu, 13 Jun 2019 16:57:55 +0100
-From: Catalin Marinas <catalin.marinas@arm.com>
-To: Vincenzo Frascino <vincenzo.frascino@arm.com>
-Subject: Re: [PATCH v17 03/15] arm64: Introduce prctl() options to control
- the tagged user addresses ABI
-Message-ID: <20190613155754.GX28951@C02TF0J2HF1T.local>
-References: <cover.1560339705.git.andreyknvl@google.com>
- <a7a2933bea5fe57e504891b7eec7e9432e5e1c1a.1560339705.git.andreyknvl@google.com>
- <20190613111659.GX28398@e103592.cambridge.arm.com>
- <20190613153505.GU28951@C02TF0J2HF1T.local>
- <99cc257d-5e99-922a-fbe7-3bbaf3621e38@arm.com>
+	id 1hbSDk-0003At-OY; Thu, 13 Jun 2019 16:05:00 +0000
+Received: from ns.iliad.fr ([212.27.33.1])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hbSDY-00030O-FJ
+ for linux-arm-kernel@lists.infradead.org; Thu, 13 Jun 2019 16:04:50 +0000
+Received: from ns.iliad.fr (localhost [127.0.0.1])
+ by ns.iliad.fr (Postfix) with ESMTP id 6CBC320AC3;
+ Thu, 13 Jun 2019 18:04:42 +0200 (CEST)
+Received: from [192.168.108.49] (freebox.vlq16.iliad.fr [213.36.7.13])
+ by ns.iliad.fr (Postfix) with ESMTP id ED4C220514;
+ Thu, 13 Jun 2019 18:04:41 +0200 (CEST)
+Subject: Re: [PATCH v1] iopoll: Tweak readx_poll_timeout sleep range
+To: Arnd Bergmann <arnd@arndb.de>
+References: <c2e6af51-5676-3715-6666-c3f18df7b992@free.fr>
+ <CAK8P3a1_WvHYW243MR5-NdFm3cSt+cVGM5EJmOM8uiQMQ3vQjQ@mail.gmail.com>
+From: Marc Gonzalez <marc.w.gonzalez@free.fr>
+Message-ID: <a732f522-5e65-3ac4-de04-802ef5455747@free.fr>
+Date: Thu, 13 Jun 2019 18:04:41 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.6.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <99cc257d-5e99-922a-fbe7-3bbaf3621e38@arm.com>
-User-Agent: Mutt/1.11.2 (2019-01-07)
+In-Reply-To: <CAK8P3a1_WvHYW243MR5-NdFm3cSt+cVGM5EJmOM8uiQMQ3vQjQ@mail.gmail.com>
+Content-Language: en-US
+X-Virus-Scanned: ClamAV using ClamSMTP ; ns.iliad.fr ;
+ Thu Jun 13 18:04:42 2019 +0200 (CEST)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190613_085823_896941_23E9D7E6 
-X-CRM114-Status: GOOD (  17.39  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190613_090448_656735_B061C948 
+X-CRM114-Status: GOOD (  12.00  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [212.27.33.1 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (marc.w.gonzalez[at]free.fr)
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -65,71 +68,44 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, kvm@vger.kernel.org,
- Christian Koenig <Christian.Koenig@amd.com>,
- Szabolcs Nagy <Szabolcs.Nagy@arm.com>, Will Deacon <will.deacon@arm.com>,
- dri-devel@lists.freedesktop.org, Kostya Serebryany <kcc@google.com>,
- Khalid Aziz <khalid.aziz@oracle.com>, Lee Smith <Lee.Smith@arm.com>,
- linux-kselftest@vger.kernel.org, Jacob Bramley <Jacob.Bramley@arm.com>,
- Leon Romanovsky <leon@kernel.org>, linux-rdma@vger.kernel.org,
- amd-gfx@lists.freedesktop.org, Christoph Hellwig <hch@infradead.org>,
- Jason Gunthorpe <jgg@ziepe.ca>, Dmitry Vyukov <dvyukov@google.com>,
- Dave Martin <Dave.Martin@arm.com>, Evgeniy Stepanov <eugenis@google.com>,
- linux-media@vger.kernel.org, Kees Cook <keescook@chromium.org>,
- Ruben Ayrapetyan <Ruben.Ayrapetyan@arm.com>,
- Andrey Konovalov <andreyknvl@google.com>,
- Kevin Brodsky <kevin.brodsky@arm.com>,
- Alex Williamson <alex.williamson@redhat.com>,
- Mauro Carvalho Chehab <mchehab@kernel.org>,
- linux-arm-kernel@lists.infradead.org, linux-mm@kvack.org,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Felix Kuehling <Felix.Kuehling@amd.com>, linux-kernel@vger.kernel.org,
- Jens Wiklander <jens.wiklander@linaro.org>,
- Ramana Radhakrishnan <Ramana.Radhakrishnan@arm.com>,
- Alexander Deucher <Alexander.Deucher@amd.com>,
- Andrew Morton <akpm@linux-foundation.org>, enh <enh@google.com>,
- Robin Murphy <robin.murphy@arm.com>, Yishai Hadas <yishaih@mellanox.com>,
- Luc Van Oostenryck <luc.vanoostenryck@gmail.com>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Douglas Anderson <dianders@chromium.org>, Will Deacon <will.deacon@arm.com>,
+ LKML <linux-kernel@vger.kernel.org>,
+ Bjorn Andersson <bjorn.andersson@linaro.org>,
+ Thierry Reding <thierry.reding@gmail.com>, Bjorn Helgaas <helgaas@kernel.org>,
+ Andrew Morton <akpm@linux-foundation.org>,
+ Thomas Gleixner <tglx@linutronix.de>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Jun 13, 2019 at 04:45:54PM +0100, Vincenzo Frascino wrote:
-> On 13/06/2019 16:35, Catalin Marinas wrote:
-> > On Thu, Jun 13, 2019 at 12:16:59PM +0100, Dave P Martin wrote:
-> >> On Wed, Jun 12, 2019 at 01:43:20PM +0200, Andrey Konovalov wrote:
-> >>> +
-> >>> +/*
-> >>> + * Control the relaxed ABI allowing tagged user addresses into the kernel.
-> >>> + */
-> >>> +static unsigned int tagged_addr_prctl_allowed = 1;
-> >>> +
-> >>> +long set_tagged_addr_ctrl(unsigned long arg)
-> >>> +{
-> >>> +	if (!tagged_addr_prctl_allowed)
-> >>> +		return -EINVAL;
-> >>
-> >> So, tagging can actually be locked on by having a process enable it and
-> >> then some possibly unrelated process clearing tagged_addr_prctl_allowed.
-> >> That feels a bit weird.
-> > 
-> > The problem is that if you disable the ABI globally, lots of
-> > applications would crash. This sysctl is meant as a way to disable the
-> > opt-in to the TBI ABI. Another option would be a kernel command line
-> > option (I'm not keen on a Kconfig option).
-> 
-> Why you are not keen on a Kconfig option?
-
-Because I don't want to rebuild the kernel/reboot just to be able to
-test how user space handles the ABI opt-in. I'm ok with a Kconfig option
-to disable this globally in addition to a run-time option (if actually
-needed, I'm not sure).
-
--- 
-Catalin
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gMTMvMDYvMjAxOSAxNDo0MiwgQXJuZCBCZXJnbWFubiB3cm90ZToKCj4gT24gVGh1LCBKdW4g
+MTMsIDIwMTkgYXQgMjoxNiBQTSBNYXJjIEdvbnphbGV6IHdyb3RlOgo+Cj4+IENob3BwaW5nIG1h
+eCBkZWxheSBpbiA0IHNlZW1zIGV4Y2Vzc2l2ZS4gTGV0J3MganVzdCBjdXQgaXQgaW4gaGFsZi4K
+Pj4KPj4gU2lnbmVkLW9mZi1ieTogTWFyYyBHb256YWxleiA8bWFyYy53LmdvbnphbGV6QGZyZWUu
+ZnI+Cj4+IC0tLQo+PiBXaGVuIG1heF91cz0xMDAsIG9sZF9taW4gd2FzIDI2IHVzOyBuZXdfbWlu
+IHdvdWxkIGJlIDUwIHVzCj4+IFdhcyB0aGVyZSBhIGdvb2QgcmVhc29uIGZvciB0aGUgMS80dGg/
+Cj4+IElzIG5ld19taW49MCBhIHByb2JsZW0/IChmb3IgbWF4PTEpCj4gCj4gWW91IG5vcm1hbGx5
+IHdhbnQgYSBsYXJnZSBlbm91Z2ggcmFuZ2UgYmV0d2VlbiBtaW4gYW5kIG1heC4gSSBkb24ndAo+
+IHNlZSBhbnl0aGluZyB3cm9uZyB3aXRoIGEgZmFjdG9yIG9mIGZvdXIuCgpIbW1tLCBJIGV4cGVj
+dCB0aGUgdHlwaWNhbCB1c2UtY2FzZSB0byBiZToKIkhXIG1hbnVhbCBzdGF0ZXMgb3BlcmF0aW9u
+IFggY29tcGxldGVzIGluIDEwMCDCtXMuCkxldCdzIGNhbGwgdXNsZWVwX3JhbmdlKDEwMCwgZm9v
+KTsgYmVmb3JlIGhpdHRpbmcgdGhlIHJlZy4iCgpBbmQgZm9vIG5lZWRzIHRvIGJlIGEgInJlYXNv
+bmFibGUiIHZhbHVlOiBiaWcgZW5vdWdoIHRvIGJlIGFibGUKdG8gbWVyZ2Ugc2V2ZXJhbCByZXF1
+ZXN0cywgbG93IGVub3VnaCBub3QgdG8gd2FpdCB0b28gbG9uZyBhZnRlcgp0aGUgSFcgaXMgcmVh
+ZHkuCgpJbiB0aGlzIGNhc2UsIEknZCBzYXkgdXNsZWVwX3JhbmdlKDEwMCwgMjAwKTsgbWFrZXMg
+c2Vuc2UuCgpDb21lIHRvIHRoaW5rIG9mIGl0LCBJJ20gbm90IHN1cmUgbWluPTI2IChvciBtaW49
+NTApIG1ha2VzIHNlbnNlLi4uCldoeSB3YWl0ICpsZXNzKiB0aGFuIHdoYXQgdGhlIHVzZXIgc3Bl
+Y2lmaWVkPwoKPj4gQEAgLTQ3LDcgKzQ3LDcgQEAKPj4gICAgICAgICAgICAgICAgICAgICAgICAg
+YnJlYWs7IFwKPj4gICAgICAgICAgICAgICAgIH0gXAo+PiAgICAgICAgICAgICAgICAgaWYgKF9f
+c2xlZXBfdXMpIFwKPj4gLSAgICAgICAgICAgICAgICAgICAgICAgdXNsZWVwX3JhbmdlKChfX3Ns
+ZWVwX3VzID4+IDIpICsgMSwgX19zbGVlcF91cyk7IFwKPj4gKyAgICAgICAgICAgICAgICAgICAg
+ICAgdXNsZWVwX3JhbmdlKF9fc2xlZXBfdXMgLyAyLCBfX3NsZWVwX3VzKTsgXAo+PiAgICAgICAg
+IH0gXAo+IAo+IFlvdSBhcmUgYWxzbyBtaXNzaW5nIHRoZSAnKzEnIG5vdywgc28gdGhpcyBicmVh
+a3Mgd2l0aCBfX3NsZWVwX3VzPTEuCgpJdCB3YXMgb24gcHVycG9zZS4KCnVzbGVlcF9yYW5nZSgw
+LCAxKTsgaXMgbm90IHdlbGwtZGVmaW5lZD8KKEkgdHJpZWQgbG9va2luZyBhdCB0aGUgc291cmNl
+LCBnb3QgbG9zdCBkb3duIHRoZSByYWJiaXQgaG9sZS4pCgpSZWdhcmRzLgoKX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWls
+aW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0
+cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
