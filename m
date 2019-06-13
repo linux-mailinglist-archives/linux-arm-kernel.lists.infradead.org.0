@@ -2,53 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 389EB43459
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 13 Jun 2019 10:49:51 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 296534343D
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 13 Jun 2019 10:42:14 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=61vcuAjWlfXlwYw25xqIi2QpQMF2mG/M8EZ9MuyIVUo=; b=ND/kBej1qgAWQV
-	9HVkdAKcboTDvG6e7yVNK+e3VFhOkExGH3JimaWcUiJV+3S+KWKGtYwwcvGRsnCUnMUQpwXBLhKVv
-	rARN8Fzyf8NoP4Nd/fb1uoQkDKMfg7sIUS6sljQF0i5sNJfUCtGKFQr0MAgN+E0J50LcRKfGoaqsU
-	q+Bnv1nIBXnwmYw2E0uOEPwCsFxJVYhU3XiJvkqrxEA3UpIIl68i2bQi2RJxBHLctedhrNtcnoztl
-	wUav6/mDJulp9s/sK8J612wFcp9iY/q18p1Ef8JF+8beb1ccoOqPioAfbmEXw0tThUuBToVYX8gMj
-	RBusD2HqLEspkT0pxaYQ==;
+	List-Owner; bh=dMNZYo3SfJWGh1iY/hzGUWYkdR4cbe1gEeCeNlZWxjU=; b=fkkI7Ltc45EQTf
+	BD/w/q/A5ZvqglMtJaWP2WPgcojzMmc98syYnMJJ6p+Y3pjq1dne/KzdhwqXhIUCDkg6rfYmAcgIG
+	Rnbum1r3w3pJ9rb8TjNBLCvxpZg48Y3qbaOk5opwhXWyd70mn6BUuN6/dPCojyIr954JtHh4+0zTk
+	NOY+FaO4iiiihYlQnYEALn8kHKrGL3VUby+Mc69KS7DfLkbL98WqE1lHOlLKzmgnuwL0k8cxqnlPG
+	AQ9t6e08oTHMIIZz8GxFIIYK1llT4g6p811FG3sbvOqzWXKmPOOPT0mBEjAEDhkrVKiH5kpsgIeqj
+	Fda0Gx4jKC+tDAdB4v6Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hbLQZ-0008Nm-AQ; Thu, 13 Jun 2019 08:49:47 +0000
+	id 1hbLJB-0002bh-KC; Thu, 13 Jun 2019 08:42:09 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hbLPd-0007pi-IH
- for linux-arm-kernel@lists.infradead.org; Thu, 13 Jun 2019 08:48:50 +0000
+ id 1hbLIs-0002at-SK
+ for linux-arm-kernel@lists.infradead.org; Thu, 13 Jun 2019 08:41:52 +0000
 Received: from localhost (83-86-89-107.cable.dynamic.v4.ziggo.nl
  [83.86.89.107])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id A5C66206BA;
- Thu, 13 Jun 2019 08:48:48 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 21C7421479;
+ Thu, 13 Jun 2019 08:41:49 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1560415729;
- bh=uHIzevUT7g4WchZFVtnSnpQFc+iBFjejbnq0jgNHS1M=;
+ s=default; t=1560415310;
+ bh=fyZu/gYrV7PPh/Thl9XnRrH6GNZTCy6xAUWW3u4hmlc=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=vRYGEs4CzY9Ptrzuyw8A7JjC23epj7EHXl5TP/UPgXkhDCU8yY4aN+heSykY1f/EE
- 88owTqDyCEwscUDklsUAwPeJYWD+7CZQ/STbotL1UZKBHhL9BL607xEL8Gt+2EiSA4
- 7UvO96xO4I8jJWtKftV4RncCkyEFmQG/3W/TPzgU=
+ b=zwFtCUsdQKD7GvoRKoUTRb8bh3J+XHKhGzUOsvvXDzSn5i9n0bJWMy+x0R55aQFhI
+ ZvIlPT6u3RVBYOT6EAF4BCuNpej+JEju88Fsnbo/vt+soLEIJFISMgHu2dVGaRZksC
+ ofcaLy5qBi5hOIRB/dNSia/oVvrMTDA6nPjUasXs=
 From: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
 To: linux-kernel@vger.kernel.org
-Subject: [PATCH 5.1 106/155] ARM: dts: imx50: Specify IMX5_CLK_IPG as "ahb"
+Subject: [PATCH 4.19 080/118] ARM: dts: imx51: Specify IMX5_CLK_IPG as "ahb"
  clock to SDMA
 Date: Thu, 13 Jun 2019 10:33:38 +0200
-Message-Id: <20190613075658.934940437@linuxfoundation.org>
+Message-Id: <20190613075648.475709941@linuxfoundation.org>
 X-Mailer: git-send-email 2.22.0
-In-Reply-To: <20190613075652.691765927@linuxfoundation.org>
-References: <20190613075652.691765927@linuxfoundation.org>
+In-Reply-To: <20190613075643.642092651@linuxfoundation.org>
+References: <20190613075643.642092651@linuxfoundation.org>
 User-Agent: quilt/0.66
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190613_014849_671946_4B3D1B41 
+X-CRM114-CacheID: sfid-20190613_014150_931316_132A1615 
 X-CRM114-Status: GOOD (  11.90  )
 X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -85,7 +85,7 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-[ Upstream commit b7b4fda2636296471e29b78c2aa9535d7bedb7a0 ]
+[ Upstream commit 918bbde8085ae147a43dcb491953e0dd8f3e9d6a ]
 
 Since 25aaa75df1e6 SDMA driver uses clock rates of "ipg" and "ahb"
 clock to determine if it needs to configure the IP block as operating
@@ -106,22 +106,22 @@ Cc: linux-kernel@vger.kernel.org
 Signed-off-by: Shawn Guo <shawnguo@kernel.org>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- arch/arm/boot/dts/imx50.dtsi | 2 +-
+ arch/arm/boot/dts/imx51.dtsi | 2 +-
  1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/arch/arm/boot/dts/imx50.dtsi b/arch/arm/boot/dts/imx50.dtsi
-index ee1e3e8bf4ec..4a68e30cc668 100644
---- a/arch/arm/boot/dts/imx50.dtsi
-+++ b/arch/arm/boot/dts/imx50.dtsi
-@@ -411,7 +411,7 @@
- 				reg = <0x63fb0000 0x4000>;
+diff --git a/arch/arm/boot/dts/imx51.dtsi b/arch/arm/boot/dts/imx51.dtsi
+index 5c4ba91e43ba..ef2abc097843 100644
+--- a/arch/arm/boot/dts/imx51.dtsi
++++ b/arch/arm/boot/dts/imx51.dtsi
+@@ -481,7 +481,7 @@
+ 				reg = <0x83fb0000 0x4000>;
  				interrupts = <6>;
  				clocks = <&clks IMX5_CLK_SDMA_GATE>,
 -					 <&clks IMX5_CLK_SDMA_GATE>;
 +					 <&clks IMX5_CLK_AHB>;
  				clock-names = "ipg", "ahb";
  				#dma-cells = <3>;
- 				fsl,sdma-ram-script-name = "imx/sdma/sdma-imx50.bin";
+ 				fsl,sdma-ram-script-name = "imx/sdma/sdma-imx51.bin";
 -- 
 2.20.1
 
