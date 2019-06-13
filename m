@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9AA914325D
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 13 Jun 2019 05:34:45 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id F30D34325E
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 13 Jun 2019 05:35:05 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,45 +11,45 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=hnieWTaF1Vb8hsvsqm4aQb7FeoYNFDbavpOQ9Ov4+OA=; b=oX9hAUTtPhvOB3AINYdYMmLkTa
-	m6gSlfzmQFuxkngFFCZMPcQgdC+gh2bG8LuI3xAqDzGp+wm3T0i+gGfI8O2UxQJNoUSgIJAdxeQGP
-	J3GtcpGp0kVobwRK0Zsn/xX+1x2IFVjbccqnjH++WiRlsv8UBOt/LUJ7ts2PKng4/ricFHlCERk9e
-	7iNM/Yi++A6/dQbnie8YBH4kqSXmV2tDcTxPweIm7tsyDvnjhHQddcGDq1HfGB49HLsh3tEF/1hVM
-	xZjSCOsaXXpfLq0lKLOme5C2Ut5AZrs15ODWYzEC1/5h45zS6quY1dqJ/1fP4AkuzS7Yp3lzzH9e4
-	9OdVYLQQ==;
+	bh=6q0WWeH9xgwVurrXDLZKiiCH7uSlxRy8JpKrQcZfezE=; b=IaIACU5CKHZkDGOt8wwPw963DR
+	jT03qU2Mkr+yzYQwPrKwCwCd35B4o/FxuWSPMtMCxiAKlcLb1SW65GjerRsVOyue+rZue0CjC4Cfq
+	MwfNfb+rG5KpUDHKnq14RSAdycE9E8hyJilYCt20sdlI9NvCEBmS74vGFV90tLxCSmFkQhZ1loLyB
+	YyhpPw8UqBmCrTIuDEh0NuOtiLKrmlxhmFjEP9DmMWJV7iz2Dit8kG+EvNaUvzhMfJR1IlN0XtwFG
+	O4yvGPh9Wrtpfb3neKoCMHeprGTTivi0k24SVoe3j0bLzoiiDMn4La1uI4KiYnQrHouct606FVbTO
+	U3xV2Jpw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hbGVd-0000tK-VD; Thu, 13 Jun 2019 03:34:42 +0000
-Received: from inva021.nxp.com ([92.121.34.21])
+	id 1hbGVy-0001Ec-CX; Thu, 13 Jun 2019 03:35:02 +0000
+Received: from inva020.nxp.com ([92.121.34.13])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hbGUi-0000Pe-VN
- for linux-arm-kernel@lists.infradead.org; Thu, 13 Jun 2019 03:33:46 +0000
-Received: from inva021.nxp.com (localhost [127.0.0.1])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id B5E1E200026;
- Thu, 13 Jun 2019 05:33:43 +0200 (CEST)
+ id 1hbGUk-0000Q2-0c
+ for linux-arm-kernel@lists.infradead.org; Thu, 13 Jun 2019 03:33:47 +0000
+Received: from inva020.nxp.com (localhost [127.0.0.1])
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id CA1AF1A030E;
+ Thu, 13 Jun 2019 05:33:44 +0200 (CEST)
 Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
  [165.114.16.14])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 3605920033E;
- Thu, 13 Jun 2019 05:33:39 +0200 (CEST)
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 49F231A0310;
+ Thu, 13 Jun 2019 05:33:40 +0200 (CEST)
 Received: from localhost.localdomain (mega.ap.freescale.net [10.192.208.232])
- by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 4D16C402CA;
- Thu, 13 Jun 2019 11:33:33 +0800 (SGT)
+ by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 63C1C402DD;
+ Thu, 13 Jun 2019 11:33:34 +0800 (SGT)
 From: Anson.Huang@nxp.com
 To: robh+dt@kernel.org, mark.rutland@arm.com, shawnguo@kernel.org,
  s.hauer@pengutronix.de, kernel@pengutronix.de, festevam@gmail.com,
  devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
  linux-kernel@vger.kernel.org
-Subject: [PATCH 3/6] ARM: dts: imx6ul: Enable SNVS power key according to
+Subject: [PATCH 4/6] ARM: dts: imx6sll: Enable SNVS power key according to
  board design
-Date: Thu, 13 Jun 2019 11:35:24 +0800
-Message-Id: <20190613033527.40555-3-Anson.Huang@nxp.com>
+Date: Thu, 13 Jun 2019 11:35:25 +0800
+Message-Id: <20190613033527.40555-4-Anson.Huang@nxp.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20190613033527.40555-1-Anson.Huang@nxp.com>
 References: <20190613033527.40555-1-Anson.Huang@nxp.com>
 X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190612_203345_143461_3983E237 
-X-CRM114-Status: UNSURE (   8.70  )
+X-CRM114-CacheID: sfid-20190612_203346_201228_56DDA086 
+X-CRM114-Status: UNSURE (   8.41  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -57,7 +57,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [92.121.34.21 listed in list.dnswl.org]
+ medium trust [92.121.34.13 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -86,37 +86,37 @@ wired up.
 
 Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
 ---
- arch/arm/boot/dts/imx6ul-14x14-evk.dtsi | 4 ++++
- arch/arm/boot/dts/imx6ul.dtsi           | 1 +
+ arch/arm/boot/dts/imx6sll-evk.dts | 4 ++++
+ arch/arm/boot/dts/imx6sll.dtsi    | 1 +
  2 files changed, 5 insertions(+)
 
-diff --git a/arch/arm/boot/dts/imx6ul-14x14-evk.dtsi b/arch/arm/boot/dts/imx6ul-14x14-evk.dtsi
-index 9207d5d..cbe61b6 100644
---- a/arch/arm/boot/dts/imx6ul-14x14-evk.dtsi
-+++ b/arch/arm/boot/dts/imx6ul-14x14-evk.dtsi
-@@ -238,6 +238,10 @@
- 	status = "okay";
+diff --git a/arch/arm/boot/dts/imx6sll-evk.dts b/arch/arm/boot/dts/imx6sll-evk.dts
+index 78809ea..61aa074 100644
+--- a/arch/arm/boot/dts/imx6sll-evk.dts
++++ b/arch/arm/boot/dts/imx6sll-evk.dts
+@@ -269,6 +269,10 @@
+ 	vin-supply = <&sw2_reg>;
  };
  
 +&snvs_pwrkey {
 +	status = "okay";
 +};
 +
- &tsc {
+ &uart1 {
  	pinctrl-names = "default";
- 	pinctrl-0 = <&pinctrl_tsc>;
-diff --git a/arch/arm/boot/dts/imx6ul.dtsi b/arch/arm/boot/dts/imx6ul.dtsi
-index fc388b8..0c51439 100644
---- a/arch/arm/boot/dts/imx6ul.dtsi
-+++ b/arch/arm/boot/dts/imx6ul.dtsi
-@@ -650,6 +650,7 @@
+ 	pinctrl-0 = <&pinctrl_uart1>;
+diff --git a/arch/arm/boot/dts/imx6sll.dtsi b/arch/arm/boot/dts/imx6sll.dtsi
+index 1b4899f..4384023 100644
+--- a/arch/arm/boot/dts/imx6sll.dtsi
++++ b/arch/arm/boot/dts/imx6sll.dtsi
+@@ -576,6 +576,7 @@
  					interrupts = <GIC_SPI 4 IRQ_TYPE_LEVEL_HIGH>;
  					linux,keycode = <KEY_POWER>;
  					wakeup-source;
 +					status = "disabled";
  				};
+ 			};
  
- 				snvs_lpgpr: snvs-lpgpr {
 -- 
 2.7.4
 
