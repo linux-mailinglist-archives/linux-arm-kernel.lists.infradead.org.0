@@ -2,69 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 19E7A44ECF
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 13 Jun 2019 23:57:57 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0671A44EF8
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Jun 2019 00:07:48 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=eMO8sGXAR+ezcArqiinRPDmYln78U8B+/XSm2nJvhb0=; b=m9Ewu45aKt/gDK
-	ijM63Br553gt5UMoF1TyKNd1GMEWXrElG+k7Uiu+LfyG0ovZi/syYIPFUViFyzeBM+fMgP1ElsjRs
-	7Onwdby+sh0cP6k0f7tKsQbH4bq/uwTt9kAjiFstG353aWePgH9jAQoN9M99Lb7mxDUlZStliTkCj
-	YC8jbeFXMF4IQIBmgUUO/RW/CVDxeyy4P5m/o7P/UqyKeMupG2S6bSTmELFUgd5OXPDg55MokfHaL
-	j8/IvfrsiczrcqOIarbzOwRaAfjwyzKgQAgGwG10toGOifcZ5ECO21HjwmL1Y0Rz/iH7UglewTDPC
-	dN3DvMHbAhpFqbzU+oPQ==;
+	List-Owner; bh=2uPefAMy5nP60FOHYeuO3wcfOZCX/RjjkLmS0pKAb4c=; b=eCpNg4XUdT8+2G
+	GhwyO3vWDFXCFzh91TUgbSXNKbC578VdWxN2v3yeJCPlHgyNFoVvlDaiKQyBs3l0oHO5q6amYmwep
+	gDhFfzj4sUY219cgfl0NTNVdbgYu7NcOZ/OVXTICiGpcWoGUlH0TcnO6LgtZHsQmD898/1B4I9Kf6
+	PyzkIlUbdHQjXLjrUcg2QYArfzeJFfrjeclgB7YMZnoLx9CbBZLEUXjHVIUzpErlG9UQOaW3utSps
+	h5ahjVDCx9tY7t6np6ZHDi/TfqU8Dbi6kmAhR2VQahi+O1gOYCVZ8efGmWIMJ5heGfBjID0rL/gQh
+	aoVdosDKOE96FpX+Ik+Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hbXjF-0001mz-Mt; Thu, 13 Jun 2019 21:57:53 +0000
-Received: from merlin.infradead.org ([2001:8b0:10b:1231::1])
+	id 1hbXso-00067j-4Z; Thu, 13 Jun 2019 22:07:46 +0000
+Received: from mail-qk1-f193.google.com ([209.85.222.193])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hbXj9-0001mq-ER
- for linux-arm-kernel@bombadil.infradead.org; Thu, 13 Jun 2019 21:57:47 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=infradead.org; s=merlin.20170209; h=In-Reply-To:Content-Type:MIME-Version:
- References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
- Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
- List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=eSfGJqOciOrlZTffR40iw8/Y+MZHoDP7Kn2h+s5mm4E=; b=qMayn7eOsNEwKAUi+ecMf2+Qj
- 9o32FSqo/PR7z/BlxulChF9wQdiD4vzYXZOQNXfcSoRPuOn1oEGNaFJceq3m7CgCH9qHJtcXGAoFF
- i0e+u3/yNd5WXohzBy45i4vbR5tCSFAEeBL1/AOVn+0wQqQkVj72qheS03IjQzkVSYifaSl+T9QrZ
- fXIko7cbiqm3/Q6R3GTWQdV+SXT7qjK2xOblTN5107+u3dlc/5PW38fJm2ApAcyuv5SzqLLbig5p4
- UpoAWyWp9DlIu7zf7rfJThSV+SiNDdmV2LP1ERqlJjJGxa+0pYkOZjRB2XRz8RGMNtKPREH7TjN0f
- e4Hz3yXQA==;
-Received: from relay1-d.mail.gandi.net ([217.70.183.193])
- by merlin.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hbXj5-0002Lh-DN
- for linux-arm-kernel@lists.infradead.org; Thu, 13 Jun 2019 21:57:44 +0000
-X-Originating-IP: 88.190.179.123
-Received: from localhost (unknown [88.190.179.123])
- (Authenticated sender: repk@triplefau.lt)
- by relay1-d.mail.gandi.net (Postfix) with ESMTPSA id E8A4A240005;
- Thu, 13 Jun 2019 21:57:06 +0000 (UTC)
-Date: Fri, 14 Jun 2019 00:06:54 +0200
-From: Remi Pommarel <repk@triplefau.lt>
-To: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
-Subject: Re: [PATCH] PCI: aardvark: Fix PCI_EXP_RTCTL conf register writing
-Message-ID: <20190613220653.GB12859@voidbox.localdomain>
-References: <20190522213351.21366-1-repk@triplefau.lt>
- <20190613161441.GA2247@e121166-lin.cambridge.arm.com>
+ id 1hbXsa-00067D-6H
+ for linux-arm-kernel@lists.infradead.org; Thu, 13 Jun 2019 22:07:33 +0000
+Received: by mail-qk1-f193.google.com with SMTP id p144so406297qke.11
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 13 Jun 2019 15:07:31 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=BhWdQ+n9lb5V8igkIdjlDGkO+bOshDClHntzHo4xkx4=;
+ b=M53E5QTfv/KDhoLEGZIejJiBDVdqOhBfVl784goGo1bNY4izTXWNTKtxAcGCYGmAlI
+ K8P94qaUGPononGnzbjBu6/dVUnNsXNZTwZOgK6GZmvKNlPxxcQY+6K0Od/I6XIBQJz4
+ aMbSVKSBQ27wv4hlxrh5Wf/6HJQxXDHDVebDO/PnMdG7m/UK/+Mg+h67w322NfcCdf5i
+ D5r4OtfBLTgssJ/VjRH73PfS2hl4yHe777GFDzgdYrtgS4Ruw9QQDNgSjEaNJuhamAel
+ JG+41KuXUPUzf2+MHaDq8TLAfTnPEYFzgY4Hxq7X0HE/5tb+jlO7LdMBwuTC60P/UWHR
+ Vxeg==
+X-Gm-Message-State: APjAAAVbaHD4bKF7sfGSODPtteR5xSpLgYdulUmKfD8vaqDH8JniSnn+
+ fELu7yWL6w9ZZNpoJIUlNA==
+X-Google-Smtp-Source: APXvYqzlg3l0HADoNTIkv5SXk7nuuzVo6Jw7oSlbsAolVM+MxEBgZazQrw5oWThYP2sbSY8L9PzBsg==
+X-Received: by 2002:a37:6512:: with SMTP id z18mr73992402qkb.158.1560463650992; 
+ Thu, 13 Jun 2019 15:07:30 -0700 (PDT)
+Received: from localhost ([64.188.179.243])
+ by smtp.gmail.com with ESMTPSA id t8sm708240qtc.80.2019.06.13.15.07.30
+ (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
+ Thu, 13 Jun 2019 15:07:30 -0700 (PDT)
+Date: Thu, 13 Jun 2019 16:07:29 -0600
+From: Rob Herring <robh@kernel.org>
+To: Ran Wang <ran.wang_1@nxp.com>
+Subject: Re: [PATCH 2/3] Documentation: dt: binding: fsl: Add 'little-endian'
+ and update Chassis define
+Message-ID: <20190613220729.GA29761@bogus>
+References: <20190517024748.15534-1-ran.wang_1@nxp.com>
+ <20190517024748.15534-2-ran.wang_1@nxp.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190613161441.GA2247@e121166-lin.cambridge.arm.com>
+In-Reply-To: <20190517024748.15534-2-ran.wang_1@nxp.com>
 User-Agent: Mutt/1.10.1 (2018-07-13)
-X-Spam-Note: CRM114 invocation failed
-X-Spam-Score: -0.7 (/)
-X-Spam-Report: SpamAssassin version 3.4.2 on merlin.infradead.org summary:
- Content analysis details:   (-0.7 points)
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20190613_150732_233946_B0A9872C 
+X-CRM114-Status: GOOD (  10.59  )
+X-Spam-Score: 0.8 (/)
+X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
+ Content analysis details:   (0.8 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.183.193 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.222.193 listed in list.dnswl.org]
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (robherring2[at]gmail.com)
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (robherring2[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.222.193 listed in wl.mailspike.net]
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -76,69 +91,32 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Ellie Reeves <ellierevves@gmail.com>, linux-pci@vger.kernel.org,
- linux-kernel@vger.kernel.org, Bjorn Helgaas <helgaas@kernel.org>,
- Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>, Len Brown <len.brown@intel.com>,
+ devicetree@vger.kernel.org, Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ linux-pm@vger.kernel.org, "Rafael J . Wysocki" <rjw@rjwysocki.net>,
+ linux-kernel@vger.kernel.org, Li Yang <leoyang.li@nxp.com>,
+ Pavel Machek <pavel@ucw.cz>, Ran Wang <ran.wang_1@nxp.com>,
+ linuxppc-dev@lists.ozlabs.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Jun 13, 2019 at 05:14:41PM +0100, Lorenzo Pieralisi wrote:
-> On Wed, May 22, 2019 at 11:33:49PM +0200, Remi Pommarel wrote:
-> > PCI_EXP_RTCTL is used to activate PME interrupt only, so writing into it
-> > should not modify other interrupts' mask (such as ISR0).
-> > 
-> > Fixes: 6302bf3ef78d ("PCI: Init PCIe feature bits for managed host bridge alloc")
-> > Signed-off-by: Remi Pommarel <repk@triplefau.lt>
-> > ---
-> > Please note that I will unlikely be able to answer any comments from May
-> > 24th to June 10th.
-> > ---
-> >  drivers/pci/controller/pci-aardvark.c | 10 +++++++---
-> >  1 file changed, 7 insertions(+), 3 deletions(-)
-> > 
-> > diff --git a/drivers/pci/controller/pci-aardvark.c b/drivers/pci/controller/pci-aardvark.c
-> > index 134e0306ff00..27102d3b4f9c 100644
-> > --- a/drivers/pci/controller/pci-aardvark.c
-> > +++ b/drivers/pci/controller/pci-aardvark.c
-> > @@ -451,10 +451,14 @@ advk_pci_bridge_emul_pcie_conf_write(struct pci_bridge_emul *bridge,
-> >  		advk_writel(pcie, new, PCIE_CORE_PCIEXP_CAP + reg);
-> >  		break;
-> >  
-> > -	case PCI_EXP_RTCTL:
-> > -		new = (new & PCI_EXP_RTCTL_PMEIE) << 3;
-> > -		advk_writel(pcie, new, PCIE_ISR0_MASK_REG);
-> > +	case PCI_EXP_RTCTL: {
-> > +		/* Only mask/unmask PME interrupt */
-> > +		u32 val = advk_readl(pcie, PCIE_ISR0_MASK_REG) &
-> > +			~PCIE_MSG_PM_PME_MASK;
-> > +		val |= (new & PCI_EXP_RTCTL_PMEIE) << 3;
+On Fri, 17 May 2019 10:47:47 +0800, Ran Wang wrote:
+> By default, QorIQ SoC's RCPM register block is Big Endian. But
+> there are some exceptions, such as LS1088A and LS2088A, are Little
+> Endian. So add this optional property to help identify them.
 > 
-> I know you have not introduced this code but maybe we can
-> take an opportunity to clarify it (that << 3 shift obfuscates
-> a bit):
+> Actually LS2021A and other Layerscapes won't totally follow Chassis
+> 2.1, so separate them from powerpc SoC.
 > 
-> 	u32 val = advk_readl(pcie, PCIE_ISR0_MASK_REG) &
-> 			~PCIE_MSG_PM_PME_MASK;
+> Signed-off-by: Ran Wang <ran.wang_1@nxp.com>
+> ---
+>  Documentation/devicetree/bindings/soc/fsl/rcpm.txt |    8 +++++++-
+>  1 files changed, 7 insertions(+), 1 deletions(-)
 > 
-> 	if (new & PCI_EXP_RTCTL_PMEIE)
-> 		val |= PCIE_MSG_PM_PME_MASK;
-> 
-> 	advk_writel(pcie, val, PCIE_ISR0_MASK_REG);
-> 	break;
-> 
-> Or I am not reading the code correctly ?
 
-Sure, that clarifies the code at the point where I realize that the
-"<< 3" from the original code was off by one and the mask polarity was
-inverted. So I'll fix all that in the v2.
-
-Thanks.
-
--- 
-Remi
+Reviewed-by: Rob Herring <robh@kernel.org>
 
 _______________________________________________
 linux-arm-kernel mailing list
