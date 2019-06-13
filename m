@@ -2,60 +2,50 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 92C5D4333A
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 13 Jun 2019 09:17:25 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 480274333D
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 13 Jun 2019 09:18:09 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=kEIyH44/vVjSygZ1pzQUg2row+1M/nzRbCcw7GgEntY=; b=PNc9D/3J6FHc+b8XQJYXlt0vK
-	i7A8EC0FHg7Yu3zJ06117ZaueRolIYQDChJwH3aP83VleSMsb8ye6+5Z1DKXNWun0PcNgD18dOjAx
-	zr/r1CevZuDYqsjIlPUvRVT2c4X6jEfU6KGYfvV63pmXksEgZhK+IqOlVLO3WL/NFxTmtrH2c5TzB
-	q+sv87jSdTKWNSrCkQ0iOiEGqZYKS2w+q9S5CvMSDvzUjBnewjIMVGppuMJFldapnhAY0Wc/VBGoj
-	7WpBxPCNmU4K4dgsQemlCBwD+IAuLVlHhy3NmrTfbQTnE8rZvawmkvvqn8nfJKQdcZkhSRuwiJlsb
-	rIb8GueKQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=Jq1n+fK3QtWysix5ypCW4meS/g7py8UBFAR9F5JHQ1s=; b=lnDlq6mrR6vg29
+	zxNS19TqK2Iwd4kuHArIdb19JEHCw9usD6bep0UtXsaXybPs4MLf2MzzeIHZkR2a9vPiStp0B0tM1
+	GOKJdKM6I3yg3zzYE2UweGXhYPdgDjKLtScn2PhyQNKtAs/K7yYaxut0AFo46ZsRn7MmxLbYAPuXf
+	Is/9v8dSpYg/yZ1xh5fG3Mh/MGEio+0TqhpW8YqGODwf7zstui4t7PUGqIRGFh3FPwa34zgsQyiuO
+	nFLPVwSVPfZ0W6HhHW/YUkb1//CqG04zG6MZnt1hD49QXFRmRC1sxBMkhokBicHKixKQ6FJEQ1rZ5
+	v58g9WpxWfmo8wDcdwuw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hbJzA-0004LR-0f; Thu, 13 Jun 2019 07:17:24 +0000
-Received: from foss.arm.com ([217.140.110.172])
+	id 1hbJzr-0004yC-Nj; Thu, 13 Jun 2019 07:18:07 +0000
+Received: from muru.com ([72.249.23.125])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hbJsp-0006HE-An
- for linux-arm-kernel@lists.infradead.org; Thu, 13 Jun 2019 07:10:53 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 467C228;
- Thu, 13 Jun 2019 00:10:48 -0700 (PDT)
-Received: from [10.1.196.120] (e121650-lin.cambridge.arm.com [10.1.196.120])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 0F8973F73C;
- Thu, 13 Jun 2019 00:10:46 -0700 (PDT)
-Subject: Re: [PATCH 3/7] perf: arm64: Use rseq to test userspace access to pmu
- counters
-To: Mathieu Desnoyers <mathieu.desnoyers@efficios.com>,
- Mark Rutland <mark.rutland@arm.com>
-References: <20190611125315.18736-1-raphael.gault@arm.com>
- <20190611125315.18736-4-raphael.gault@arm.com>
- <20190611143346.GB28689@kernel.org>
- <20190611165755.GG29008@lakrids.cambridge.arm.com>
- <1620360283.42036.1560281622707.JavaMail.zimbra@efficios.com>
-From: Raphael Gault <raphael.gault@arm.com>
-Message-ID: <a99c41fb-40f6-a0e2-af6b-22d7e6ac9b3d@arm.com>
-Date: Thu, 13 Jun 2019 08:10:45 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.6.1
+ id 1hbJt0-0006Qm-Gu
+ for linux-arm-kernel@lists.infradead.org; Thu, 13 Jun 2019 07:11:04 +0000
+Received: from hillo.muru.com (localhost [127.0.0.1])
+ by muru.com (Postfix) with ESMTP id 2E960811B;
+ Thu, 13 Jun 2019 07:11:21 +0000 (UTC)
+From: Tony Lindgren <tony@atomide.com>
+To: arm@kernel.org
+Subject: [GIT PULL 1/4] soc changes for omap variants for v5.3
+Date: Thu, 13 Jun 2019 00:10:50 -0700
+Message-Id: <pull-1560399818-512977@atomide.com>
+X-Mailer: git-send-email 2.21.0
 MIME-Version: 1.0
-In-Reply-To: <1620360283.42036.1560281622707.JavaMail.zimbra@efficios.com>
-Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190613_001051_487769_9E3B9A05 
-X-CRM114-Status: GOOD (  25.84  )
+X-CRM114-CacheID: sfid-20190613_001102_809266_86EC9324 
+X-CRM114-Status: UNSURE (   8.49  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [72.249.23.125 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -67,127 +57,45 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Peter Zijlstra <peterz@infradead.org>,
- Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will.deacon@arm.com>,
- Arnaldo Carvalho de Melo <arnaldo.melo@gmail.com>,
- linux-kernel <linux-kernel@vger.kernel.org>, Ingo Molnar <mingo@redhat.com>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Cc: Tony Lindgren <tony@atomide.com>, linux-omap@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Mathieu,
+From: "Tony Lindgren" <tony@atomide.com>
 
-On 6/11/19 8:33 PM, Mathieu Desnoyers wrote:
-> ----- On Jun 11, 2019, at 6:57 PM, Mark Rutland mark.rutland@arm.com wrote:
-> 
->> Hi Arnaldo,
->>
->> On Tue, Jun 11, 2019 at 11:33:46AM -0300, Arnaldo Carvalho de Melo wrote:
->>> Em Tue, Jun 11, 2019 at 01:53:11PM +0100, Raphael Gault escreveu:
->>>> Add an extra test to check userspace access to pmu hardware counters.
->>>> This test doesn't rely on the seqlock as a synchronisation mechanism but
->>>> instead uses the restartable sequences to make sure that the thread is
->>>> not interrupted when reading the index of the counter and the associated
->>>> pmu register.
->>>>
->>>> In addition to reading the pmu counters, this test is run several time
->>>> in order to measure the ratio of failures:
->>>> I ran this test on the Juno development platform, which is big.LITTLE
->>>> with 4 Cortex A53 and 2 Cortex A57. The results vary quite a lot
->>>> (running it with 100 tests is not so long and I did it several times).
->>>> I ran it once with 10000 iterations:
->>>> `runs: 10000, abort: 62.53%, zero: 34.93%, success: 2.54%`
->>>>
->>>> Signed-off-by: Raphael Gault <raphael.gault@arm.com>
->>>> ---
->>>>   tools/perf/arch/arm64/include/arch-tests.h    |   5 +-
->>>>   tools/perf/arch/arm64/include/rseq-arm64.h    | 220 ++++++++++++++++++
->>>
->>> So, I applied the first patch in this series, but could you please break
->>> this patch into at least two, one introducing the facility
->>> (include/rseq*) and the second adding the test?
->>>
->>> We try to enforce this kind of granularity as down the line we may want
->>> to revert one part while the other already has other uses and thus
->>> wouldn't allow a straight revert.
->>>
->>> Also, can this go to tools/arch/ instead? Is this really perf specific?
->>> Isn't there any arch/arm64/include files for the kernel that we could
->>> mirror and have it checked for drift in tools/perf/check-headers.sh?
->>
->> The rseq bits aren't strictly perf specific, and I think the existing
->> bits under tools/testing/selftests/rseq/ could be factored out to common
->> locations under tools/include/ and tools/arch/*/include/.
-> 
-> Hi Mark,
-> 
-> Thanks for CCing me!
-> 
-> Or into a stand-alone librseq project:
-> 
-> https://github.com/compudj/librseq (currently a development branch in
-> my own github)
-> 
-> I don't see why this user-space code should sit in the kernel tree.
-> It is not tooling-specific.
-> 
->>
->>  From a scan, those already duplicate barriers and other helpers which
->> already have definitions under tools/, which seems unfortunate. :/
->>
->> Comments below are for Raphael and Matthieu.
->>
->> [...]
->>
->>>> +static u64 noinline mmap_read_self(void *addr, int cpu)
->>>> +{
->>>> +	struct perf_event_mmap_page *pc = addr;
->>>> +	u32 idx = 0;
->>>> +	u64 count = 0;
->>>> +
->>>> +	asm volatile goto(
->>>> +                     RSEQ_ASM_DEFINE_TABLE(0, 1f, 2f, 3f)
->>>> +		     "nop\n"
->>>> +                     RSEQ_ASM_STORE_RSEQ_CS(1, 0b, rseq_cs)
->>>> +		     RSEQ_ASM_CMP_CPU_ID(cpu_id, current_cpu_id, 3f)
->>>> +                     RSEQ_ASM_OP_R_LOAD(pc_idx)
->>>> +                     RSEQ_ASM_OP_R_AND(0xFF)
->>>> +		     RSEQ_ASM_OP_R_STORE(idx)
->>>> +                     RSEQ_ASM_OP_R_SUB(0x1)
->>>> +		     RSEQ_ASM_CMP_CPU_ID(cpu_id, current_cpu_id, 3f)
->>>> +                     "msr pmselr_el0, " RSEQ_ASM_TMP_REG "\n"
->>>> +                     "isb\n"
->>>> +		     RSEQ_ASM_CMP_CPU_ID(cpu_id, current_cpu_id, 3f)
-> 
-> I really don't understand why the cpu_id needs to be compared 3 times
-> here (?!?)
-> 
-> Explicit comparison of the cpu_id within the rseq critical section
-> should be done _once_.
-> 
+The following changes since commit a188339ca5a396acc588e5851ed7e19f66b0ebd9:
 
-I understand and that's what I thought as well but I got confused with a 
-comment in (src)/include/uapi/linux/rseq.h which states:
- > This CPU number value should always be compared
- > against the value of the cpu_id field before performing a rseq
- > commit or returning a value read from a data structure indexed
- > using the cpu_id_start value.
+  Linux 5.2-rc1 (2019-05-19 15:47:09 -0700)
 
-I'll remove the unnecessary testing.
+are available in the Git repository at:
 
+  git://git.kernel.org/pub/scm/linux/kernel/git/tmlind/linux-omap tags/omap-for-v5.3/soc-signed
 
-> If the kernel happens to preempt and migrate the thread while in the
-> critical section, it's the kernel's job to move user-space execution
-> to the abort handler.
-> 
-[...]
+for you to fetch changes up to 45450f36e569e5162957df488b0174c9a952e1b0:
 
-Thanks,
+  soc: ti: pm33xx: Add a print while entering RTC only mode with DDR in self-refresh (2019-06-10 05:19:26 -0700)
 
--- 
-Raphael Gault
+----------------------------------------------------------------
+ti-sysc soc changes for v5.3
+
+Just two changes to make few platform data functions static, and to
+call dev_info() if am437x is suspending to RTC-only mode. We want to
+see this in case of issues as it depends on the board wiring for things
+like DDR memory.
+
+----------------------------------------------------------------
+Keerthy (1):
+      soc: ti: pm33xx: Add a print while entering RTC only mode with DDR in self-refresh
+
+YueHaibing (1):
+      ARM: OMAP2+: Make some variables static
+
+ arch/arm/mach-omap2/omap_hwmod_33xx_43xx_ipblock_data.c | 8 ++++----
+ drivers/soc/ti/pm33xx.c                                 | 1 +
+ 2 files changed, 5 insertions(+), 4 deletions(-)
 
 _______________________________________________
 linux-arm-kernel mailing list
