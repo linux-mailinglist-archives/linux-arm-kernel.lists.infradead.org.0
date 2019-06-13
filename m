@@ -2,63 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E79A4436D6
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 13 Jun 2019 15:47:08 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 85062436E3
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 13 Jun 2019 15:50:35 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=SYHiNvkCnYcYC/B+ogK8Oh6IliTvfU5W6nmLGQwsEeo=; b=SkSwqoX61QPpfx
-	N5r1khldbDxE2IAqW2JtEqF0awD+TqZwBDS/I6RWA0ltGO9KdvJzslIS45X/iD9YnbhIbF2Eu2AOW
-	iVb+mog7U5nzU8ZOAw1wGufKH+V1U6zGriXUqR21TO6JDkPAI3rz3oAn0QVkqvBW8hYQBI+Y34rIZ
-	tVWgg/hl03p07dKQ2Ocnx3NRdqaaNBlmgRo6DWMyVcjHvIlm4VE78tpdzWXwHTRX9H8kSGNuUOo+V
-	PYaT5FXm2vKZ6EX6Azkv/IoW0l8KmuzQblmhd/Xsg8U0y7dIPpFIOwnfV7vi99Q+D8riT/5wtufR1
-	1V3w5xJSZmVoSaTzKXGg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=eSSChA/g7i/OPvnd0y5jtEtP7ZbcoCxEyyCoaWm2N2E=; b=skHN17gdGPLa6Z
+	1njJVkuLloZ40izuvqToP4Hpr6NoZcVTMq0+z3HGnY4g42JQWXx+kRrDzhPWX83ROFL2W/pGTqhU4
+	9gqPPfv2rDVvF/akp54LE4IBgaOMg/KF3K0XkUzv/oqeHjJx41B2Rx8tZlPQqKD8oYXv4bzuMcSQH
+	Lfs1ULY2PKFLSobHEqNhDGO7EF2NCxRxigYjvvs0um8VWZ0NDdzJuUgWz4wvRr69NGpILGUlVQTk0
+	KUHOFrQGGHq1uNTxZAZrc7N9+MDHg+2E2uqFmeJD+U6xTWdU8nEcwsaP16j/qjnv8ypUFY+cIOEFb
+	G4fh/9xc7b4uyz9kPyug==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hbQ4F-0007f7-Fn; Thu, 13 Jun 2019 13:47:03 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1hbQ7b-0000jZ-2a; Thu, 13 Jun 2019 13:50:31 +0000
+Received: from mx08-00178001.pphosted.com ([91.207.212.93]
+ helo=mx07-00178001.pphosted.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hbQ44-0007em-4w
- for linux-arm-kernel@lists.infradead.org; Thu, 13 Jun 2019 13:46:53 +0000
-Received: from localhost (173-25-83-245.client.mchsi.com [173.25.83.245])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 75D0F20851;
- Thu, 13 Jun 2019 13:46:51 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1560433611;
- bh=fWn/j2co1eFhB4DIu2nWHccLcw32ULZkm0SQPN00GJ0=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=cG+i+kOKixoCQcmut8i62OMOBk9DfbfDH7NSPCeVW9lIlCZ/A8keKKXgTcX6v8HFC
- k++fvHnF3gzHI3CIOB1+q1xZS2y/fkJcvmGVwcRODyrgW2R3gL5YUXnsUB7u3CyR05
- s0iiD7aWcKwY4IIEZ6e80nDIeKylwpvNYD6cH0oY=
-Date: Thu, 13 Jun 2019 08:46:50 -0500
-From: Bjorn Helgaas <helgaas@kernel.org>
-To: John Garry <john.garry@huawei.com>
-Subject: Re: [PATCH v4 2/3] lib: logic_pio: Reject accesses to unregistered
- CPU MMIO regions
-Message-ID: <20190613134650.GF13533@google.com>
-References: <1560262374-67875-1-git-send-email-john.garry@huawei.com>
- <1560262374-67875-3-git-send-email-john.garry@huawei.com>
- <20190613032034.GE13533@google.com>
- <2d5e6112-be27-33c2-c1fd-6ab06405fa40@huawei.com>
+ id 1hbQ7K-0000j6-Vh
+ for linux-arm-kernel@lists.infradead.org; Thu, 13 Jun 2019 13:50:16 +0000
+Received: from pps.filterd (m0046660.ppops.net [127.0.0.1])
+ by mx08-00178001.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id
+ x5DDkNs6010989; Thu, 13 Jun 2019 15:50:06 +0200
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
+ h=from : to : cc : subject
+ : date : message-id : mime-version : content-type; s=STMicroelectronics;
+ bh=5gqbigQzuPm78gX6OwWptVfTPVoyB0SK+37QgGiOQ8o=;
+ b=Ue87XHvD5ZKIXu6PdZuN239KmgTduC8gejRAYkFkvfwojL9J57hHlgZBKo5PsLmrW3j0
+ pcORKZuIIkSE0HQeNcsaAH2k0JakIIGhef2Xb8qblyKU+Qor45JuCUMdhp/Unv0NsPKI
+ xZKYTst+hHzM5S/TIMAbAS+QDqLVpG7nQ8zZsyPI4Bi/mOM7XmyBoz9EzDiySOBJVoO/
+ XWGY/IGjQ4hJaaibCL6PDrWS8B+Qp6yyRNN/qWG8dw6VKQN6EdbodfP14L7oWk27gsAT
+ aNOVid0gtvqUN7ppYoRfS22IvyFBF/GdZY+1CLzDnrgrbGAWlHgj956WjWKY3yPVMnmP dQ== 
+Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
+ by mx08-00178001.pphosted.com with ESMTP id 2t2f8ecgqn-1
+ (version=TLSv1 cipher=ECDHE-RSA-AES256-SHA bits=256 verify=NOT);
+ Thu, 13 Jun 2019 15:50:06 +0200
+Received: from zeta.dmz-eu.st.com (zeta.dmz-eu.st.com [164.129.230.9])
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id B91BE34;
+ Thu, 13 Jun 2019 13:50:05 +0000 (GMT)
+Received: from Webmail-eu.st.com (Safex1hubcas24.st.com [10.75.90.94])
+ by zeta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 94B2F2BC0;
+ Thu, 13 Jun 2019 13:50:05 +0000 (GMT)
+Received: from SAFEX1HUBCAS22.st.com (10.75.90.93) by Safex1hubcas24.st.com
+ (10.75.90.94) with Microsoft SMTP Server (TLS) id 14.3.439.0; Thu, 13 Jun
+ 2019 15:50:05 +0200
+Received: from localhost (10.201.23.31) by Webmail-ga.st.com (10.75.90.48)
+ with Microsoft SMTP Server (TLS) id 14.3.439.0; Thu, 13 Jun 2019 15:50:04
+ +0200
+From: Erwan Le Ray <erwan.leray@st.com>
+To: Greg Kroah-Hartman <gregkh@linuxfoundation.org>, Jiri Slaby
+ <jslaby@suse.com>, Maxime Coquelin <mcoquelin.stm32@gmail.com>, "Alexandre
+ Torgue" <alexandre.torgue@st.com>, Rob Herring <robh+dt@kernel.org>, "Mark
+ Rutland" <mark.rutland@arm.com>
+Subject: [PATCH v3 00/10] STM32 usart power improvements
+Date: Thu, 13 Jun 2019 15:49:50 +0200
+Message-ID: <1560433800-12255-1-git-send-email-erwan.leray@st.com>
+X-Mailer: git-send-email 1.9.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <2d5e6112-be27-33c2-c1fd-6ab06405fa40@huawei.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+X-Originating-IP: [10.201.23.31]
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:, ,
+ definitions=2019-06-13_08:, , signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190613_064652_231011_CD4FB098 
-X-CRM114-Status: GOOD (  24.81  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190613_065015_360146_EDB49783 
+X-CRM114-Status: GOOD (  12.32  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [91.207.212.93 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -68,7 +84,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- 0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -80,113 +95,49 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: rjw@rjwysocki.net, wangkefeng.wang@huawei.com, lorenzo.pieralisi@arm.com,
- arnd@arndb.de, linux-pci@vger.kernel.org, will.deacon@arm.com,
- linuxarm@huawei.com, linux-kernel@vger.kernel.org, catalin.marinas@arm.com,
- andriy.shevchenko@linux.intel.com, linux-arm-kernel@lists.infradead.org
+Cc: devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+ Erwan Le Ray <erwan.leray@st.com>, linux-serial@vger.kernel.org, Fabrice
+ Gasnier <fabrice.gasnier@st.com>, linux-stm32@st-md-mailman.stormreply.com,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Jun 13, 2019 at 11:17:37AM +0100, John Garry wrote:
-> On 13/06/2019 04:20, Bjorn Helgaas wrote:
-> > On Tue, Jun 11, 2019 at 10:12:53PM +0800, John Garry wrote:
-> > > Currently when accessing logical indirect PIO addresses in
-> > > logic_{in, out}{,s}, we first ensure that the region is registered.
-> 
-> > I think logic_pio is specifically concerned with I/O port space, so
-> > it's a little bit unfortunate that we named this "PIO".
-> > 
-> > PIO is a general term for "Programmed I/O", which just means the CPU
-> > is involved in each transfer, as opposed to DMA.  The transfers can be
-> > to either MMIO or I/O port space.
-> > 
-> > So this ends up being a little confusing because I think you mean
-> > "Port I/O", not "Programmed I/O".
-> 
-> Personally I agree that the naming isn't great. But then Arnd does think
-> that "PIO" is appropriate.
-> 
-> There were many different names along the way to this support merged, and I
-> think that the naming became almost irrelevant in the end.
+This series delivers power improvements for stm32-usart driver.
 
-Yep, Arnd is right.  The "PIO" name contributed a little to my
-confusion, but I think the bigger piece was that I read the "indirect
-PIO addresses" above as being parallel to the "CPU MMIO regions"
-below, when in fact, they are not.  The arguments to logic_inb() are
-always port addresses, never CPU MMIO addresses, but in some cases
-logic_inb() internally references a CPU MMIO region that corresponds
-to the port address.
+Changes in v3:
+Move pinctrl/consumer.h include from "add support for no_console_suspend"
+patch to "select pinctrl state" patch in order to solve a compilation 
+issue.
 
-Possible commit log text:
+Bich Hemon (3):
+  dt-bindings: serial: add optional pinctrl states
+  ARM: dts: stm32: Update pin states for uart4 on stm32mp157c-ed1
+  ARM: dts: stm32: Update UART4 pin states on stm32mp157a-dk1
 
-  The logic_{in,out}*() functions access two regions of I/O port
-  addresses:
+Erwan Le Ray (7):
+  dt-bindings: serial: stm32: add wakeup option
+  serial: stm32: select pinctrl state in each suspend/resume function
+  serial: stm32: add pm_runtime support
+  serial: stm32: Use __maybe_unused instead of #if CONFIG_PM_SLEEP
+  serial: stm32: add support for no_console_suspend
+  ARM: dts: stm32: update uart4 pin configurations for low power
+  ARM: dts: stm32: add wakeup capability on each usart/uart on
+    stm32mp157c
 
-    1) [0, MMIO_UPPER_LIMIT): these are assumed to be
-       LOGIC_PIO_CPU_MMIO regions, where a bridge converts CPU loads
-       and stores to MMIO space on its primary side into I/O port
-       transactions on its secondary side.
+ .../devicetree/bindings/serial/st,stm32-usart.txt  | 19 ++++-
+ arch/arm/boot/dts/stm32mp157-pinctrl.dtsi          | 17 +++++
+ arch/arm/boot/dts/stm32mp157a-dk1.dts              |  5 +-
+ arch/arm/boot/dts/stm32mp157c-ed1.dts              |  5 +-
+ arch/arm/boot/dts/stm32mp157c.dtsi                 | 40 ++++++++--
+ drivers/tty/serial/stm32-usart.c                   | 88 ++++++++++++++++++++--
+ drivers/tty/serial/stm32-usart.h                   |  1 +
+ 7 files changed, 155 insertions(+), 20 deletions(-)
 
-    2) [MMIO_UPPER_LIMIT, IO_SPACE_LIMIT): these are assumed to be
-       LOGIC_PIO_INDIRECT regions, where we verify that the region was
-       registered by logic_pio_register_range() before calling the
-       logic_pio_host_ops functions to perform the access.
+-- 
+1.9.1
 
-  Previously there was no requirement that accesses to the
-  LOGIC_PIO_CPU_MMIO area matched anything registered by
-  logic_pio_register_range(), and accesses to unregistered I/O ports
-  could cause exceptions like the one below.
-
-  Verify that accesses to ports in the LOGIC_PIO_CPU_MMIO area
-  correspond to registered ranges.  Accesses to ports outside those
-  registered ranges fail (logic_in*() returns ~0 data and logic_out*()
-  does nothing).
-
-  This matches the x86 behavior where in*() returns ~0 if no device
-  responds, and out*() is dropped if no device claims it.
-
-> >   1) The simple "bridge converts CPU MMIO space to PCI I/O port space"
-> >      flavor is essentially identical to what ia64 (and probably other
-> >      architectures) does.  This should really be combined somehow.
-> 
-> Maybe. For ia64, it seems to have some "platform" versions of IO port
-> accessors, and then also accessors need a fence barrier. I'm not sure how
-> well that would fit with logical PIO. It would need further analysis.
-
-Right.  That shouldn't be part of this series, but I think it would be
-nice to someday unify the ia64 add_io_space() path with the
-pci_register_io_range() path.  There might have to be ia64-specific
-accessors at the bottom for the fences, but I think the top side could
-be unified because it's conceptually the same thing -- an MMIO region
-that is translated by a bridge to an I/O port region.
-
-> >   2) If you made a default set of logic_pio_host_ops that merely did
-> >      loads/stores and maybe added a couple fields in the struct
-> >      logic_pio_hwaddr, I bet you could unify the two kinds so
-> >      logic_inb() would look something like this:
-> 
-> Yeah, I did consider this. We do not provide host operators for PCI MMIO
-> ranges. We could simply provide regular versions of inb et al for this. A
-> small obstacle for this is that we redefine inb et al, so would need
-> "direct" versions also. It would be strange.
-
-Yeah, just a thought, maybe it wouldn't work out.
-
-> > > Any failed checks silently return.
-> > 
-> > I *think* what you're doing here is making inb/outb/etc work the same
-> > as on x86, i.e., if no device responds to an inb(), the caller gets
-> > ~0, and if no device claims an outb() the data gets dropped.
-> 
-> Correct, but with a caveat: when you say no device responds, this means that
-> - for arm64 case - no PCI MMIO region is mapped.
-
-Yep.  I was describing the x86 behavior, where we don't do any mapping
-and all we can say is that no device responded.
-
-Bjorn
 
 _______________________________________________
 linux-arm-kernel mailing list
