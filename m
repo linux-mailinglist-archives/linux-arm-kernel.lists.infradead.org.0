@@ -2,53 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4E1234350B
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 13 Jun 2019 11:59:16 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 139C94350E
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 13 Jun 2019 12:00:55 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=cAFX6D0za62DiJwmIWtVSU58RO04tKidBBJR/HxwzQE=; b=uJGD2IJG0zKoU3
-	kBHB1YswsToySVcJhmZFWFxZbwFH43jRs/xVt9FHEqkfPnWpNPoo5i8uDKZj6cKiRZ4HypFG9rbFH
-	pnRdTSrx0ovnAVHJIvB+H8OvmVyaQrtZW6Uo7PJsiWc+WdrtxWWnbPQkYM9Exs2ucXF7Fr9D+8zCj
-	u75O711Tc9eRDdQwMkTnCyPUO19s94b4hA1SZPwCt4ZzMgumruGzbhfkv6uhWHYNPhnwTuyVIcBID
-	SI3MsIMyZTgChc9fNwBmkMhaU9gwXyju9Cpm+9hWVXrs/Rpuca2O2HluCULkzzLVZYLQZsX1pnNtl
-	FDGXPGL/eOONRPVTPj3A==;
+	List-Owner; bh=tmuoj0KCCcwxXvTbxOI8gOpOKL8HrK1ZDsJ5a5TMnSQ=; b=Tia+ooV512rtxL
+	55z3tCXexQVpKHBB+fzce+Wa63no2jPFLhT8z2UFQBHmLFbNb9jzBAHpwpqckVly2KnCDq7HbXrtp
+	XP92sWrSiHCKp3T+fa80o+94La64N7Thl1NDHw0rVJXEjLD3hX2nPoTzKBmaU/1mv5yOb70z95Vwi
+	9Cdqit0ifpwWNB7F0+oT3E0pntg5q37/ZO2L166YxOHbeDDelV/MqDboCK6NdcA4SrVpO6tPit4WA
+	v1HiGcUU9yAgOD9FLFNtxHPbGGx1+I6L1ShrOB7DEIbXo/W5tgt4FVOQyfRAjkt29c1t/3XOCAOTo
+	GpfY9wCacmDmtJIjeeGg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hbMVm-0000rd-Me; Thu, 13 Jun 2019 09:59:14 +0000
-Received: from casper.infradead.org ([2001:8b0:10b:1236::1])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hbMVc-0000rP-KL; Thu, 13 Jun 2019 09:59:04 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=infradead.org; s=casper.20170209; h=Content-Transfer-Encoding:Content-Type:
- MIME-Version:References:In-Reply-To:Message-ID:Subject:Cc:To:From:Date:Sender
- :Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
- Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:
- List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=X6go1h+qBvd8UqStxDka25oSP1lwn219vXM1njzftqM=; b=st/cCkCW17JvfhPcMMlIiWlWs7
- IjzbMHLeCgNGoALijV6IG+3mBu2hWh+zDF/ixgeztGRJFvKYWEb/k1hwDtOuJEM+LaN5VPyeL2Nyt
- pUW3p7YE7JRXzR5AqF9H3+IiwxYWckQCRps/QFoMco8bS1sS+v518UWrrJXO7ml5NcscdFDSXeQVX
- ZKduv2MoYrDVAMjIkypzrzv1fDu9De18EdqyKnVmVA/jtlt3lbqFtvB/kKq3/UdhRk448WORt2zGk
- vyVeBQhaltTvjNhKaj4bDz1fJNL7g5eIVBQzyzZatNVk3zR46pfOQJ6fi4X1Ul2gzhVbF7Xgp5Fcx
- 8jdm6Tow==;
-Received: from 201.86.169.251.dynamic.adsl.gvt.net.br ([201.86.169.251]
- helo=coco.lan)
- by casper.infradead.org with esmtpsa (Exim 4.92 #3 (Red Hat Linux))
- id 1hbMVS-0000iN-9Z; Thu, 13 Jun 2019 09:58:54 +0000
-Date: Thu, 13 Jun 2019 06:58:43 -0300
-From: Mauro Carvalho Chehab <mchehab+samsung@kernel.org>
-To: "Srivatsa S. Bhat" <srivatsa@csail.mit.edu>
-Subject: Re: [PATCH v4 18/28] docs: convert docs to ReST and rename to *.rst
-Message-ID: <20190613065843.100f72dd@coco.lan>
-In-Reply-To: <7dc94cb4-ebf1-22ab-29c9-fcb2b875a9ac@csail.mit.edu>
-References: <cover.1560361364.git.mchehab+samsung@kernel.org>
- <fac44e1fbab5ea755a93601a4fdfa34fcc57ae9e.1560361364.git.mchehab+samsung@kernel.org>
- <7dc94cb4-ebf1-22ab-29c9-fcb2b875a9ac@csail.mit.edu>
-X-Mailer: Claws Mail 3.17.3 (GTK+ 2.24.32; x86_64-redhat-linux-gnu)
+	id 1hbMXL-0003E3-8u; Thu, 13 Jun 2019 10:00:51 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hbMXA-0003DY-9m
+ for linux-arm-kernel@lists.infradead.org; Thu, 13 Jun 2019 10:00:41 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id A462D367;
+ Thu, 13 Jun 2019 03:00:37 -0700 (PDT)
+Received: from e103592.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
+ [10.121.207.14])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id BC6D13F694;
+ Thu, 13 Jun 2019 03:02:19 -0700 (PDT)
+Date: Thu, 13 Jun 2019 11:00:34 +0100
+From: Dave Martin <Dave.Martin@arm.com>
+To: Julien Grall <julien.grall@arm.com>
+Subject: Re: [PATCH v2 1/3] arm64/sve: Fix missing SVE/FPSIMD endianness
+ conversions
+Message-ID: <20190613100031.GU28398@e103592.cambridge.arm.com>
+References: <1560355234-25516-1-git-send-email-Dave.Martin@arm.com>
+ <1560355234-25516-2-git-send-email-Dave.Martin@arm.com>
+ <771b0099-9217-4e55-b73a-b03434c61655@arm.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <771b0099-9217-4e55-b73a-b03434c61655@arm.com>
+User-Agent: Mutt/1.5.23 (2014-03-12)
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20190613_030040_432590_A36EE82D 
+X-CRM114-Status: GOOD (  22.70  )
+X-Spam-Score: 0.0 (/)
+X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
+ Content analysis details:   (0.0 points)
+ pts rule name              description
+ ---- ---------------------- --------------------------------------------------
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -60,117 +64,106 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Nishanth Menon <nm@ti.com>, linux-wireless@vger.kernel.org,
- Linux Doc Mailing List <linux-doc@vger.kernel.org>,
- David Airlie <airlied@linux.ie>, Viresh Kumar <viresh.kumar@linaro.org>,
- Joonas Lahtinen <joonas.lahtinen@linux.intel.com>,
- dri-devel@lists.freedesktop.org, linux-kernel@vger.kernel.org,
- Harry Wei <harryxiyou@gmail.com>, Pavel Machek <pavel@ucw.cz>,
- "H. Peter Anvin" <hpa@zytor.com>, Alex Shi <alex.shi@linux.alibaba.com>,
- Jonathan Corbet <corbet@lwn.net>, x86@kernel.org,
- Ingo Molnar <mingo@redhat.com>, linux-pci@vger.kernel.org,
- Len Brown <len.brown@intel.com>, Suzuki K Poulose <suzuki.poulose@arm.com>,
- intel-gfx@lists.freedesktop.org, Jani Nikula <jani.nikula@linux.intel.com>,
- Mauro Carvalho Chehab <mchehab@infradead.org>, Mark Brown <broonie@kernel.org>,
- Borislav Petkov <bp@alien8.de>, Rodrigo Vivi <rodrigo.vivi@intel.com>,
- Bjorn Helgaas <bhelgaas@google.com>, Thomas Gleixner <tglx@linutronix.de>,
- linux-arm-kernel@lists.infradead.org,
- Mathieu Poirier <mathieu.poirier@linaro.org>, Stephen Boyd <sboyd@kernel.org>,
- netdev@vger.kernel.org, linux-pm@vger.kernel.org, "Rafael J.
- Wysocki" <rjw@rjwysocki.net>, Liam Girdwood <lgirdwood@gmail.com>,
- Daniel Vetter <daniel@ffwll.ch>, Sebastian Reichel <sre@kernel.org>,
- Johannes Berg <johannes@sipsolutions.net>,
- "David S. Miller" <davem@davemloft.net>
+Cc: Peter Maydell <peter.maydell@linaro.org>,
+ Catalin Marinas <catalin.marinas@arm.com>, gdb@sourceware.org,
+ Will Deacon <will.deacon@arm.com>, Zhang Lei <zhang.lei@jp.fujitsu.com>,
+ Alan Hayward <alan.hayward@arm.com>,
+ Alex =?iso-8859-1?Q?Benn=E9e?= <alex.bennee@linaro.org>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Em Wed, 12 Jun 2019 17:25:39 -0700
-"Srivatsa S. Bhat" <srivatsa@csail.mit.edu> escreveu:
-
-> On 6/12/19 10:52 AM, Mauro Carvalho Chehab wrote:
-> > Convert the PM documents to ReST, in order to allow them to
-> > build with Sphinx.
-> > 
-> > The conversion is actually:
-> >   - add blank lines and identation in order to identify paragraphs;
-> >   - fix tables markups;
-> >   - add some lists markups;
-> >   - mark literal blocks;
-> >   - adjust title markups.
-> > 
-> > At its new index.rst, let's add a :orphan: while this is not linked to
-> > the main index.rst file, in order to avoid build warnings.
-> > 
-> > Signed-off-by: Mauro Carvalho Chehab <mchehab+samsung@kernel.org>
-> > Acked-by: Bjorn Helgaas <bhelgaas@google.com>
-> > Acked-by: Mark Brown <broonie@kernel.org>
-> > ---  
+On Wed, Jun 12, 2019 at 06:46:04PM +0100, Julien Grall wrote:
+> Hi Dave,
+> 
+> On 12/06/2019 17:00, Dave Martin wrote:
+> >The in-memory representation of SVE and FPSIMD registers is
+> >different: the FPSIMD V-registers are stored as single 128-bit
+> >host-endian values, whereas SVE registers are stored in an
+> >endianness-invariant byte order.
+> >
+> >This means that the two representations differ when running on a
+> >big-endian host.  But we blindly copy data from one representation
+> >to another when converting between the two, resulting in the
+> >register contents being unintentionally byteswapped in certain
+> >situations.  Currently this can be triggered by the first SVE
+> >instruction after a syscall, for example (though the potential
+> >trigger points may vary in future).
+> >
+> >So, fix the conversion functions fpsimd_to_sve(), sve_to_fpsimd()
+> >and sve_sync_from_fpsimd_zeropad() to swab where appropriate.
+> >
+> >There is no common swahl128() or swab128() that we could use here.
+> >Maybe it would be worth making this generic, but for now add a
+> >simple local hack.
+> >
+> >Since the byte order differences are exposed in ABI, also clarify
+> >the docuentation.
+> 
+> NIT: s/docuentation/documentation/
+> 
+> Although, it is probably too late to fix this one as Will already took the patch.
 > 
 > [...]
 > 
-> > diff --git a/Documentation/power/suspend-and-cpuhotplug.txt b/Documentation/power/suspend-and-cpuhotplug.rst
-> > similarity index 90%
-> > rename from Documentation/power/suspend-and-cpuhotplug.txt
-> > rename to Documentation/power/suspend-and-cpuhotplug.rst
-> > index a8751b8df10e..9df664f5423a 100644
-> > --- a/Documentation/power/suspend-and-cpuhotplug.txt
-> > +++ b/Documentation/power/suspend-and-cpuhotplug.rst
-> > @@ -1,10 +1,15 @@
-> > +====================================================================
-> >  Interaction of Suspend code (S3) with the CPU hotplug infrastructure
-> > +====================================================================
-> >  
-> > -     (C) 2011 - 2014 Srivatsa S. Bhat <srivatsa.bhat@linux.vnet.ibm.com>
-> > +(C) 2011 - 2014 Srivatsa S. Bhat <srivatsa.bhat@linux.vnet.ibm.com>
-> >  
-> >  
-> > -I. How does the regular CPU hotplug code differ from how the Suspend-to-RAM
-> > -   infrastructure uses it internally? And where do they share common code?
-> > +I. Differences between CPU hotplug and Suspend-to-RAM
-> > +======================================================
-> > +
-> > +How does the regular CPU hotplug code differ from how the Suspend-to-RAM
-> > +infrastructure uses it internally? And where do they share common code?
-> >  
-> >  Well, a picture is worth a thousand words... So ASCII art follows :-)
-> >    
+> >diff --git a/Documentation/arm64/sve.txt b/Documentation/arm64/sve.txt
+> >index 9940e92..6c0bed3 100644
+> >--- a/Documentation/arm64/sve.txt
+> >+++ b/Documentation/arm64/sve.txt
+> >@@ -56,6 +56,18 @@ model features for SVE is included in Appendix A.
+> >    is to connect to a target process first and then attempt a
+> >    ptrace(PTRACE_GETREGSET, pid, NT_ARM_SVE, &iov).
+> >+* Whenever SVE scalable register values (Zn, Pn, FFR) are exchanged in memory
+> >+  between userspace and the kernel, the register value is encoded in memory in
+> >+  an endianness-invariant layout, with bits [(8 * i + 7) : (8 * i)] encoded at
+> >+  byte offset i in from the start of the memory representation.  This affects
+> >+  for example the signal frame (struct sve_context) and ptrace interface
+> >+  (struct user_sve_header) and associated data.
+> >+
+> >+  Beware that on big-endian systems this results in a different byte order than
+> >+  for the FPSIMD V-registers, which are stored as single host-endian 128-bit
+> >+  values, with bits [(127 - 8 * i) : (120 - 8 * i)] of the register encoded at
+> >+  byte offset i.  (struct fpsimd_context, struct user_fpsimd_state).
+> >+
+> >  2.  Vector length terminology
+> >  -----------------------------
+> >@@ -124,6 +136,10 @@ the SVE instruction set architecture.
+> >    size and layout.  Macros SVE_SIG_* are defined [1] to facilitate access to
+> >    the members.
+> >+* Each scalable register (Zn, Pn, FFR) is stored in an endianness-invariant
+> >+  layout, with bits [(8 * i + 7) : (8 * i)] stored at byte offset i from the
+> >+  start of the register's representation in memory.
+> >+
+> >  * If the SVE context is too big to fit in sigcontext.__reserved[], then extra
+> >    space is allocated on the stack, an extra_context record is written in
+> >    __reserved[] referencing this space.  sve_context is then written in the
+> >diff --git a/arch/arm64/include/uapi/asm/kvm.h b/arch/arm64/include/uapi/asm/kvm.h
+> >index 7b7ac0f..072ea1e 100644
+> >--- a/arch/arm64/include/uapi/asm/kvm.h
+> >+++ b/arch/arm64/include/uapi/asm/kvm.h
+> >@@ -260,6 +260,13 @@ struct kvm_vcpu_events {
+> >  	 KVM_REG_SIZE_U256 |						\
+> >  	 ((i) & (KVM_ARM64_SVE_MAX_SLICES - 1)))
+> >+/*
+> >+ * Register values for KVM_REG_ARM64_SVE_ZREG(), KVM_REG_ARM64_SVE_PREG() and
+> >+ * KVM_REG_ARM64_SVE_FFR() and represented in memory in an endianness-
 > 
-> [...]
+> NIT: s/and represented/are represented/ I think.
 > 
-> > @@ -101,7 +108,7 @@ execution during resume):
-> >  
-> >  It is to be noted here that the system_transition_mutex lock is acquired at the very
-> >  beginning, when we are just starting out to suspend, and then released only
-> > -after the entire cycle is complete (i.e., suspend + resume).
-> > +after the entire cycle is complete (i.e., suspend + resume)::
-> >    
+> >+ * invariant layout which differs from the layout used for the FPSIMD
+> >+ * V-registers on big-endian systems: see sigcontext.h for more explanaion.
 > 
-> I think that should be a period, not a colon, because it is clarifying
-> the text above it (as opposed to referring to the example below it).
-> 
-> Other than that, for suspend-and-cpuhotplug.txt:
-> 
-> Acked-by: Srivatsa S. Bhat (VMware) <srivatsa@csail.mit.edu>
+> NIT: s/explanaion/explanation/
 
-Ah, ok. I'll change it to:
+Dang, the first of these two is quite confusing.
 
-	after the entire cycle is complete (i.e., suspend + resume).
+I might send a fix for that, but I guess it's not urgent.  Thanks for
+spotting it.
 
-	::
-
-and add your acked-by.
-
->  
-> Regards,
-> Srivatsa
-> VMware Photon OS
-
-
-
-Thanks,
-Mauro
+Cheers
+---Dave
 
 _______________________________________________
 linux-arm-kernel mailing list
