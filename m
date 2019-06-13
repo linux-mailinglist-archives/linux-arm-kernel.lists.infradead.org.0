@@ -2,62 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 949C24382D
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 13 Jun 2019 17:04:18 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 262AA43832
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 13 Jun 2019 17:04:38 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Date:Message-Id:MIME-Version:Subject:To
 	:From:References:In-Reply-To:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=T3Vai/gaCXLKSx5XvCCSM9LyBcvIpTQpDg2npldves0=; b=NB5rydZua3auKP
-	ZYtMqwpxxQjLL9hh3W0uPBMvyebZsf2vxtW0sIBdrgJb0iVZt3ByhBV7YCwntiQQZ2412tAYy3K+E
-	w3FJy8AXS52SfZN4ABw2cME4cxxOWMSndUHMJc4oB7HGW2s9T+pJNgGjU2BIlcDKxbPzJ1/H7dmlg
-	B0BFe7W5iDJ7qcbi1Emo+SdhgsLbyKSPsm6XuImCQ5KHByN6qq7iBmqNQiOHOmtu/5oXvckO8oV0T
-	unMa+jR5ISxFr6HSVzZjQLKI359MtSO4rVEnoeXhmtYVJ0ihgTPVqq6UuIAGmAzpT5REXt2g6Bjhj
-	iylaBxTemG5g9Cbn+tIQ==;
+	List-Owner; bh=YrkmRxL4c0tmLVKUAitU61j7S4qLE44pov3RM+Sb6sg=; b=Apq4ehpwjw35sd
+	YLUeNewjdRP/ksn71EbCNkgQLdDLGdEH2akTSJ2CoOUopg1TXP2gaYnaX03WKtbA/6TTfuOzcNcL7
+	YiSjEhjGM6rboMzFFliyZcH7kxMO25egINCZGD9yZpcj34/zzYmbMhhFSIezkFeFtnOFDBnSSU15q
+	KNq6dgHvJiiPIOne/T4CCQOg/m5ZvEHvKVSRZeKc8tsx8drW6zgVs3+iYvk9U22/qaoxa2gUOSx9k
+	IwOBw0/Rhz7L79fJa7UgPwYsRGJdmmDpQYZU+JuVfWXnP1AjJKm6n+PfS0KWByzshvP76s/h1sbey
+	bmz5ev4kud+pk+PRoFbw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hbRGx-0003X1-7e; Thu, 13 Jun 2019 15:04:15 +0000
+	id 1hbRHI-0003oI-2Z; Thu, 13 Jun 2019 15:04:36 +0000
 Received: from pandora.armlinux.org.uk
  ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hbRFM-0002Lz-Pk
- for linux-arm-kernel@lists.infradead.org; Thu, 13 Jun 2019 15:02:38 +0000
+ id 1hbRFU-0002RL-HQ
+ for linux-arm-kernel@lists.infradead.org; Thu, 13 Jun 2019 15:02:50 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=armlinux.org.uk; s=pandora-2019; h=Date:Sender:Message-Id:Content-Type:
  Content-Transfer-Encoding:MIME-Version:Subject:Cc:To:From:References:
  In-Reply-To:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
  Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:
  List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=qSVsWyvK+cKWzJzuyZpZ5WpnbkdBvj5koIHFQzg5Qa4=; b=eh6MLByycBNJf6sd6jfIdXcJ5p
- Y4r3kDH6ATvLrvqg62zeddcFBhdvfzsWoCqJVEup9GwmIxKZW0bQe8KnfWM1KJHW1uylwg5FdwHk1
- SJ4nLVUybJEGnRcjsWReIPP1LircOLMjrQYCuBipiiNqO7u2RCdnLEaBjpm4vmg2shln4g5VdzNEL
- dSkMk7ZDDl3E+ebOZQrmRW6nFPA/yQJ2e532mq0gQ1E70fRCZ0zmM3HXkbBH1ikd7lJ3a7G/8goVk
- R0fLwU0dRhff6dA9P2VOiiqUVRnVsfouDaZQM/4O1OrJ5oOnyv3yqf3StI1S2miKaX17dC2ld2HtV
- x6WwnDnw==;
+ bh=JeVMX6aI1+Z/tyR4St48w2936SMKwWSxzsX8PHJe/6Q=; b=JYlJSLreO6FEFhxPxQUz+FRx5/
+ ckVhvqsmvlPjSFc0IeZWl7NqTgTwKfGUNm2NR/5tY9/PFlhPhZ6BCq8G73ky6bbfsDIsa1iiDlP4G
+ xXorB146z0EnseekxNdhjAE7MXPZlhpb2iSFbYu6YB8eMDFFREgSz2jcCisN4WR277aKFwOAEutrl
+ xu4msBGwd+nW5SmTQTC2RPg3ggAQxrQcQP9di3LboA+xk4byQZc3LtDWBcyHSetczu/SyM9j+BiKC
+ uuSLEREl+Ml7R1oYrctn1PR0ePM+kDgaTy+2zFsSd50i0PB2Gm9QjgRg8JBkesvnkrEk/SFAFX4Xj
+ yWJQ2t9g==;
 Received: from e0022681537dd.dyn.armlinux.org.uk
- ([fd8f:7570:feb6:1:222:68ff:fe15:37dd]:35404 helo=rmk-PC.armlinux.org.uk)
+ ([2002:4e20:1eda:1:222:68ff:fe15:37dd]:44836 helo=rmk-PC.armlinux.org.uk)
  by pandora.armlinux.org.uk with esmtpsa
  (TLSv1.2:ECDHE-RSA-AES128-GCM-SHA256:128) (Exim 4.90_1)
  (envelope-from <rmk@armlinux.org.uk>)
- id 1hbRF1-0003jk-CG; Thu, 13 Jun 2019 16:02:15 +0100
+ id 1hbRF6-0003jy-Kb; Thu, 13 Jun 2019 16:02:20 +0100
 Received: from rmk by rmk-PC.armlinux.org.uk with local (Exim
  4.82_1-5b7a7c0-XX) (envelope-from <rmk@armlinux.org.uk>)
- id 1hbREy-00007L-OE; Thu, 13 Jun 2019 16:02:12 +0100
+ id 1hbRF3-00007S-Rr; Thu, 13 Jun 2019 16:02:17 +0100
 In-Reply-To: <20190613150114.xqkyb7j7w4ve4yvr@shell.armlinux.org.uk>
 References: <20190613150114.xqkyb7j7w4ve4yvr@shell.armlinux.org.uk>
 From: Russell King <rmk+kernel@armlinux.org.uk>
 To: dri-devel@lists.freedesktop.org, linux-arm-kernel@lists.infradead.org
-Subject: [PATCH 06/18] drm/armada: move plane address and pitch calculation to
- atomic_check
+Subject: [PATCH 07/18] drm/armada: add support for setting gamma
 MIME-Version: 1.0
 Content-Disposition: inline
-Message-Id: <E1hbREy-00007L-OE@rmk-PC.armlinux.org.uk>
-Date: Thu, 13 Jun 2019 16:02:12 +0100
+Message-Id: <E1hbRF3-00007S-Rr@rmk-PC.armlinux.org.uk>
+Date: Thu, 13 Jun 2019 16:02:17 +0100
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190613_080237_065667_18B2AF04 
-X-CRM114-Status: GOOD (  12.79  )
+X-CRM114-CacheID: sfid-20190613_080245_707209_3FB8E467 
+X-CRM114-Status: GOOD (  15.67  )
 X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.5 points)
@@ -92,152 +91,153 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Move the plane address and pitch calculations to atomic_check rather
-than the update function, so we don't have to probe the interlace
-setting for the CRTC while updating the plane.
+Add support for setting gamma through both the legacy interfaces and
+the atomic interfaces.
 
 Signed-off-by: Russell King <rmk+kernel@armlinux.org.uk>
 ---
- drivers/gpu/drm/armada/armada_overlay.c | 23 ++++++++++-------------
- drivers/gpu/drm/armada/armada_plane.c   | 30 ++++++++++--------------------
- drivers/gpu/drm/armada/armada_plane.h   |  5 +++++
- 3 files changed, 25 insertions(+), 33 deletions(-)
+ drivers/gpu/drm/armada/armada_crtc.c  | 63 +++++++++++++++++++++++++++++++++++
+ drivers/gpu/drm/armada/armada_hw.h    |  4 +++
+ drivers/gpu/drm/armada/armada_plane.c |  2 +-
+ 3 files changed, 68 insertions(+), 1 deletion(-)
 
-diff --git a/drivers/gpu/drm/armada/armada_overlay.c b/drivers/gpu/drm/armada/armada_overlay.c
-index d8d6e4645c1f..a79d6e940435 100644
---- a/drivers/gpu/drm/armada/armada_overlay.c
-+++ b/drivers/gpu/drm/armada/armada_overlay.c
-@@ -109,27 +109,24 @@ static void armada_drm_overlay_plane_atomic_update(struct drm_plane *plane,
- 	    old_state->fb != state->fb ||
- 	    state->crtc->state->mode_changed) {
- 		const struct drm_format_info *format;
--		u16 src_x, pitches[3];
--		u32 addrs[2][3];
-+		u16 src_x;
+diff --git a/drivers/gpu/drm/armada/armada_crtc.c b/drivers/gpu/drm/armada/armada_crtc.c
+index 09bade15f51c..5991feb1bcc9 100644
+--- a/drivers/gpu/drm/armada/armada_crtc.c
++++ b/drivers/gpu/drm/armada/armada_crtc.c
+@@ -130,6 +130,44 @@ static void armada_drm_crtc_queue_state_event(struct drm_crtc *crtc)
+ 	}
+ }
  
--		armada_drm_plane_calc(state, addrs, pitches, dcrtc->interlaced);
--
--		armada_reg_queue_set(regs, idx, addrs[0][0],
-+		armada_reg_queue_set(regs, idx, armada_addr(state, 0, 0),
- 				     LCD_SPU_DMA_START_ADDR_Y0);
--		armada_reg_queue_set(regs, idx, addrs[0][1],
-+		armada_reg_queue_set(regs, idx, armada_addr(state, 0, 1),
- 				     LCD_SPU_DMA_START_ADDR_U0);
--		armada_reg_queue_set(regs, idx, addrs[0][2],
-+		armada_reg_queue_set(regs, idx, armada_addr(state, 0, 2),
- 				     LCD_SPU_DMA_START_ADDR_V0);
--		armada_reg_queue_set(regs, idx, addrs[1][0],
-+		armada_reg_queue_set(regs, idx, armada_addr(state, 1, 0),
- 				     LCD_SPU_DMA_START_ADDR_Y1);
--		armada_reg_queue_set(regs, idx, addrs[1][1],
-+		armada_reg_queue_set(regs, idx, armada_addr(state, 1, 1),
- 				     LCD_SPU_DMA_START_ADDR_U1);
--		armada_reg_queue_set(regs, idx, addrs[1][2],
-+		armada_reg_queue_set(regs, idx, armada_addr(state, 1, 2),
- 				     LCD_SPU_DMA_START_ADDR_V1);
++static void armada_drm_update_gamma(struct drm_crtc *crtc)
++{
++	struct drm_property_blob *blob = crtc->state->gamma_lut;
++	void __iomem *base = drm_to_armada_crtc(crtc)->base;
++	int i;
++
++	if (blob) {
++		struct drm_color_lut *lut = blob->data;
++
++		armada_updatel(CFG_CSB_256x8, CFG_CSB_256x8 | CFG_PDWN256x8,
++			       base + LCD_SPU_SRAM_PARA1);
++
++		for (i = 0; i < 256; i++) {
++			writel_relaxed(drm_color_lut_extract(lut[i].red, 8),
++				       base + LCD_SPU_SRAM_WRDAT);
++			writel_relaxed(i | SRAM_WRITE | SRAM_GAMMA_YR,
++				       base + LCD_SPU_SRAM_CTRL);
++			readl_relaxed(base + LCD_SPU_HWC_OVSA_HPXL_VLN);
++			writel_relaxed(drm_color_lut_extract(lut[i].green, 8),
++				       base + LCD_SPU_SRAM_WRDAT);
++			writel_relaxed(i | SRAM_WRITE | SRAM_GAMMA_UG,
++				       base + LCD_SPU_SRAM_CTRL);
++			readl_relaxed(base + LCD_SPU_HWC_OVSA_HPXL_VLN);
++			writel_relaxed(drm_color_lut_extract(lut[i].blue, 8),
++				       base + LCD_SPU_SRAM_WRDAT);
++			writel_relaxed(i | SRAM_WRITE | SRAM_GAMMA_VB,
++				       base + LCD_SPU_SRAM_CTRL);
++			readl_relaxed(base + LCD_SPU_HWC_OVSA_HPXL_VLN);
++		}
++		armada_updatel(CFG_GAMMA_ENA, CFG_GAMMA_ENA,
++			       base + LCD_SPU_DMA_CTRL0);
++	} else {
++		armada_updatel(0, CFG_GAMMA_ENA, base + LCD_SPU_DMA_CTRL0);
++		armada_updatel(CFG_PDWN256x8, CFG_CSB_256x8 | CFG_PDWN256x8,
++			       base + LCD_SPU_SRAM_PARA1);
++	}
++}
++
+ /* The mode_config.mutex will be held for this call */
+ static bool armada_drm_crtc_mode_fixup(struct drm_crtc *crtc,
+ 	const struct drm_display_mode *mode, struct drm_display_mode *adj)
+@@ -338,6 +376,20 @@ static void armada_drm_crtc_mode_set_nofb(struct drm_crtc *crtc)
+ 	spin_unlock_irqrestore(&dcrtc->irq_lock, flags);
+ }
  
--		val = pitches[0] << 16 | pitches[0];
-+		val = armada_pitch(state, 0) << 16 | armada_pitch(state, 0);
- 		armada_reg_queue_set(regs, idx, val, LCD_SPU_DMA_PITCH_YC);
--		val = pitches[1] << 16 | pitches[2];
-+		val = armada_pitch(state, 1) << 16 | armada_pitch(state, 2);
- 		armada_reg_queue_set(regs, idx, val, LCD_SPU_DMA_PITCH_UV);
++static int armada_drm_crtc_atomic_check(struct drm_crtc *crtc,
++					struct drm_crtc_state *state)
++{
++	DRM_DEBUG_KMS("[CRTC:%d:%s]\n", crtc->base.id, crtc->name);
++
++	if (state->gamma_lut && drm_color_lut_size(state->gamma_lut) != 256)
++		return -EINVAL;
++
++	if (state->color_mgmt_changed)
++		state->planes_changed = true;
++
++	return 0;
++}
++
+ static void armada_drm_crtc_atomic_begin(struct drm_crtc *crtc,
+ 					 struct drm_crtc_state *old_crtc_state)
+ {
+@@ -345,6 +397,9 @@ static void armada_drm_crtc_atomic_begin(struct drm_crtc *crtc,
  
- 		cfg = CFG_DMA_FMT(drm_fb_to_armada_fb(state->fb)->fmt) |
-@@ -147,7 +144,7 @@ static void armada_drm_overlay_plane_atomic_update(struct drm_plane *plane,
- 		src_x = state->src.x1 >> 16;
- 		if (format->num_planes == 1 && src_x & (format->hsub - 1))
- 			cfg ^= CFG_DMA_MOD(CFG_SWAPUV);
--		if (dcrtc->interlaced)
-+		if (to_armada_plane_state(state)->interlace)
- 			cfg |= CFG_DMA_FTOGGLE;
- 		cfg_mask = CFG_CBSH_ENA | CFG_DMAFORMAT |
- 			   CFG_DMA_MOD(CFG_SWAPRB | CFG_SWAPUV |
+ 	DRM_DEBUG_KMS("[CRTC:%d:%s]\n", crtc->base.id, crtc->name);
+ 
++	if (crtc->state->color_mgmt_changed)
++		armada_drm_update_gamma(crtc);
++
+ 	dcrtc->regs_idx = 0;
+ 	dcrtc->regs = dcrtc->atomic_regs;
+ }
+@@ -439,6 +494,7 @@ static void armada_drm_crtc_atomic_enable(struct drm_crtc *crtc,
+ static const struct drm_crtc_helper_funcs armada_crtc_helper_funcs = {
+ 	.mode_fixup	= armada_drm_crtc_mode_fixup,
+ 	.mode_set_nofb	= armada_drm_crtc_mode_set_nofb,
++	.atomic_check	= armada_drm_crtc_atomic_check,
+ 	.atomic_begin	= armada_drm_crtc_atomic_begin,
+ 	.atomic_flush	= armada_drm_crtc_atomic_flush,
+ 	.atomic_disable	= armada_drm_crtc_atomic_disable,
+@@ -702,6 +758,7 @@ static const struct drm_crtc_funcs armada_crtc_funcs = {
+ 	.cursor_set	= armada_drm_crtc_cursor_set,
+ 	.cursor_move	= armada_drm_crtc_cursor_move,
+ 	.destroy	= armada_drm_crtc_destroy,
++	.gamma_set	= drm_atomic_helper_legacy_gamma_set,
+ 	.set_config	= drm_atomic_helper_set_config,
+ 	.page_flip	= drm_atomic_helper_page_flip,
+ 	.atomic_duplicate_state = drm_atomic_helper_crtc_duplicate_state,
+@@ -793,6 +850,12 @@ static int armada_drm_crtc_create(struct drm_device *drm, struct device *dev,
+ 
+ 	drm_crtc_helper_add(&dcrtc->crtc, &armada_crtc_helper_funcs);
+ 
++	ret = drm_mode_crtc_set_gamma_size(&dcrtc->crtc, 256);
++	if (ret)
++		return ret;
++
++	drm_crtc_enable_color_mgmt(&dcrtc->crtc, 0, false, 256);
++
+ 	return armada_overlay_plane_create(drm, 1 << dcrtc->num);
+ 
+ err_crtc_init:
+diff --git a/drivers/gpu/drm/armada/armada_hw.h b/drivers/gpu/drm/armada/armada_hw.h
+index 345dc4d0851e..babfca71c4db 100644
+--- a/drivers/gpu/drm/armada/armada_hw.h
++++ b/drivers/gpu/drm/armada/armada_hw.h
+@@ -169,6 +169,10 @@ enum {
+ 	SRAM_READ	= 0 << 14,
+ 	SRAM_WRITE	= 2 << 14,
+ 	SRAM_INIT	= 3 << 14,
++	SRAM_GAMMA_YR	= 0x0 << 8,
++	SRAM_GAMMA_UG	= 0x1 << 8,
++	SRAM_GAMMA_VB	= 0x2 << 8,
++	SRAM_PALETTE	= 0x3 << 8,
+ 	SRAM_HWC32_RAM1	= 0xc << 8,
+ 	SRAM_HWC32_RAM2	= 0xd << 8,
+ 	SRAM_HWC32_RAMR	= SRAM_HWC32_RAM1,
 diff --git a/drivers/gpu/drm/armada/armada_plane.c b/drivers/gpu/drm/armada/armada_plane.c
-index 09218c1d8a4b..45092fc3598e 100644
+index 45092fc3598e..dbd4d52e8a32 100644
 --- a/drivers/gpu/drm/armada/armada_plane.c
 +++ b/drivers/gpu/drm/armada/armada_plane.c
-@@ -79,23 +79,6 @@ void armada_drm_plane_calc(struct drm_plane_state *state, u32 addrs[2][3],
- 	}
- }
+@@ -265,7 +265,7 @@ static void armada_drm_primary_plane_atomic_disable(struct drm_plane *plane,
+ 	/* Disable plane and power down most RAMs and FIFOs */
+ 	armada_reg_queue_mod(regs, idx, 0, CFG_GRA_ENA, LCD_SPU_DMA_CTRL0);
+ 	armada_reg_queue_mod(regs, idx, CFG_PDWN256x32 | CFG_PDWN256x24 |
+-			     CFG_PDWN256x8 | CFG_PDWN32x32 | CFG_PDWN64x66,
++			     CFG_PDWN32x32 | CFG_PDWN64x66,
+ 			     0, LCD_SPU_SRAM_PARA1);
  
--static unsigned armada_drm_crtc_calc_fb(struct drm_plane_state *state,
--	struct armada_regs *regs, bool interlaced)
--{
--	u16 pitches[3];
--	u32 addrs[2][3];
--	unsigned i = 0;
--
--	armada_drm_plane_calc(state, addrs, pitches, interlaced);
--
--	/* write offset, base, and pitch */
--	armada_reg_queue_set(regs, i, addrs[0][0], LCD_CFG_GRA_START_ADDR0);
--	armada_reg_queue_set(regs, i, addrs[1][0], LCD_CFG_GRA_START_ADDR1);
--	armada_reg_queue_mod(regs, i, pitches[0], 0xffff, LCD_CFG_GRA_PITCH);
--
--	return i;
--}
--
- int armada_drm_plane_prepare_fb(struct drm_plane *plane,
- 	struct drm_plane_state *state)
- {
-@@ -167,6 +150,9 @@ int armada_drm_plane_atomic_check(struct drm_plane *plane,
- 	st->dst_hw <<= 16;
- 	st->dst_hw |= drm_rect_width(&state->dst) & 0x0000ffff;
- 
-+	armada_drm_plane_calc(state, st->addrs, st->pitches, interlace);
-+	st->interlace = interlace;
-+
- 	return 0;
- }
- 
-@@ -213,8 +199,12 @@ static void armada_drm_primary_plane_atomic_update(struct drm_plane *plane,
- 	    old_state->src.y1 != state->src.y1 ||
- 	    old_state->fb != state->fb ||
- 	    state->crtc->state->mode_changed) {
--		idx += armada_drm_crtc_calc_fb(state, regs + idx,
--					       dcrtc->interlaced);
-+		armada_reg_queue_set(regs, idx, armada_addr(state, 0, 0),
-+				     LCD_CFG_GRA_START_ADDR0);
-+		armada_reg_queue_set(regs, idx, armada_addr(state, 1, 0),
-+				     LCD_CFG_GRA_START_ADDR1);
-+		armada_reg_queue_mod(regs, idx, armada_pitch(state, 0), 0xffff,
-+				     LCD_CFG_GRA_PITCH);
- 	}
- 	if (old_state->fb != state->fb ||
- 	    state->crtc->state->mode_changed) {
-@@ -224,7 +214,7 @@ static void armada_drm_primary_plane_atomic_update(struct drm_plane *plane,
- 			cfg |= CFG_PALETTE_ENA;
- 		if (state->visible)
- 			cfg |= CFG_GRA_ENA;
--		if (dcrtc->interlaced)
-+		if (to_armada_plane_state(state)->interlace)
- 			cfg |= CFG_GRA_FTOGGLE;
- 		cfg_mask = CFG_GRAFORMAT |
- 			   CFG_GRA_MOD(CFG_SWAPRB | CFG_SWAPUV |
-diff --git a/drivers/gpu/drm/armada/armada_plane.h b/drivers/gpu/drm/armada/armada_plane.h
-index 396c45a4ea5e..2707ec781941 100644
---- a/drivers/gpu/drm/armada/armada_plane.h
-+++ b/drivers/gpu/drm/armada/armada_plane.h
-@@ -6,6 +6,9 @@ struct armada_plane_state {
- 	u32 src_hw;
- 	u32 dst_yx;
- 	u32 dst_hw;
-+	u32 addrs[2][3];
-+	u16 pitches[3];
-+	bool interlace;
- };
- 
- #define to_armada_plane_state(st) \
-@@ -13,6 +16,8 @@ struct armada_plane_state {
- #define armada_src_hw(state) to_armada_plane_state(state)->src_hw
- #define armada_dst_yx(state) to_armada_plane_state(state)->dst_yx
- #define armada_dst_hw(state) to_armada_plane_state(state)->dst_hw
-+#define armada_addr(state, f, p) to_armada_plane_state(state)->addrs[f][p]
-+#define armada_pitch(state, n) to_armada_plane_state(state)->pitches[n]
- 
- void armada_drm_plane_calc(struct drm_plane_state *state, u32 addrs[2][3],
- 	u16 pitches[3], bool interlaced);
+ 	dcrtc->regs_idx += idx;
 -- 
 2.7.4
 
