@@ -2,53 +2,49 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0417F43557
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 13 Jun 2019 13:02:39 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id EE6C243558
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 13 Jun 2019 13:02:56 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=rGrOulW1l0C/5bvO7L4KPSh1VIE5TvXhtzFyf8uVK2Y=; b=BGMZbMBJXVu8BT9iPj1oniIo0
-	ZZfwgyvNpIPmhRf8vFkAu3lWeAfpUtSw9y8ZaM9AW3kSn+PwnbL/+6mU91yZ3vNHK4TF3aIBJEqjO
-	qdUgqLLOcM83KzlGMhWrJU33jHdVVSlhQ0486NCDk8AuNd0Y1e+U8yCW2NTiyfUlET/Uw1MjmTcPb
-	ECDCiELeEcwG4UhvMTngi2Xrm7cKF2+hg9MSt/QOPRt7YdjsMRaKdJOzXPrnfBMKowfrsX86gunKS
-	ISzNEkb4rS8z/PtrlzDAuYGFdCa371yYzMuTFPEhplSKaz40swSk+w0rNnNWAnbJqEVxiqR6wm3uO
-	zwvv2asAw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=fyMtRfytk7VU0vQwRH6/5dgJe7uDA9SO2wHRA+ZVX9k=; b=Ms+6cYJCayVP4S
+	mBOcNeUJKOJCff4mM0MjdmI5h8+WUIVV8xjsY7L5IoNOJWVZzUaieoqumst/JL6KxNCPT9eSF7j1V
+	Y3QPYpXrI0dY08UH+bmcnbDkAZLxMzLyBS+pAHPvGR9MSIGrYoMpjCMXYGa3jfuIgN2gP2e15+Gcz
+	PJ3Lvq1Cl6P4LbZeU5Z9iVF7wCmmRnvgQ6ntNojWVHhHlSe/mBH6XLMF2oO1nzRTqHofFrphbPLrU
+	xLY0reb/0gMmVbSyboA0gN+Ce4gje4o1QH2S1jGPSe1n9fqyBJug3U5eUEqht6EECEqp/nR0BMf9e
+	Pb+CyAwSBIVicjasquqA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hbNV5-0004Cj-0l; Thu, 13 Jun 2019 11:02:35 +0000
+	id 1hbNVN-0004R4-9H; Thu, 13 Jun 2019 11:02:53 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hbNUv-0004C1-Fs
- for linux-arm-kernel@lists.infradead.org; Thu, 13 Jun 2019 11:02:27 +0000
+ id 1hbNVC-0004Pe-Lp
+ for linux-arm-kernel@lists.infradead.org; Thu, 13 Jun 2019 11:02:44 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id C4927367;
- Thu, 13 Jun 2019 04:02:24 -0700 (PDT)
-Received: from [10.1.196.120] (e121650-lin.cambridge.arm.com [10.1.196.120])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 0326E3F694;
- Thu, 13 Jun 2019 04:04:06 -0700 (PDT)
-Subject: Re: [PATCH 3/7] perf: arm64: Use rseq to test userspace access to pmu
- counters
-To: Mathieu Desnoyers <mathieu.desnoyers@efficios.com>,
- Mark Rutland <mark.rutland@arm.com>
-References: <20190611125315.18736-1-raphael.gault@arm.com>
- <20190611125315.18736-4-raphael.gault@arm.com>
- <20190611143346.GB28689@kernel.org>
- <20190611165755.GG29008@lakrids.cambridge.arm.com>
- <1620360283.42036.1560281622707.JavaMail.zimbra@efficios.com>
-From: Raphael Gault <raphael.gault@arm.com>
-Message-ID: <b3a5c6d6-5827-36e1-f9ef-9602eaa5741d@arm.com>
-Date: Thu, 13 Jun 2019 12:02:22 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.6.1
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 5543A3EF;
+ Thu, 13 Jun 2019 04:02:42 -0700 (PDT)
+Received: from e103592.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
+ [10.121.207.14])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 03BCD3F694;
+ Thu, 13 Jun 2019 04:04:20 -0700 (PDT)
+Date: Thu, 13 Jun 2019 12:02:35 +0100
+From: Dave Martin <Dave.Martin@arm.com>
+To: Andrey Konovalov <andreyknvl@google.com>
+Subject: Re: [PATCH v17 03/15] arm64: Introduce prctl() options to control
+ the tagged user addresses ABI
+Message-ID: <20190613110235.GW28398@e103592.cambridge.arm.com>
+References: <cover.1560339705.git.andreyknvl@google.com>
+ <a7a2933bea5fe57e504891b7eec7e9432e5e1c1a.1560339705.git.andreyknvl@google.com>
 MIME-Version: 1.0
-In-Reply-To: <1620360283.42036.1560281622707.JavaMail.zimbra@efficios.com>
-Content-Language: en-US
+Content-Disposition: inline
+In-Reply-To: <a7a2933bea5fe57e504891b7eec7e9432e5e1c1a.1560339705.git.andreyknvl@google.com>
+User-Agent: Mutt/1.5.23 (2014-03-12)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190613_040225_621047_58839480 
-X-CRM114-Status: GOOD (  26.53  )
+X-CRM114-CacheID: sfid-20190613_040242_806316_3C146289 
+X-CRM114-Status: GOOD (  31.85  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -67,97 +63,287 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Peter Zijlstra <peterz@infradead.org>,
+Cc: Mark Rutland <mark.rutland@arm.com>, kvm@vger.kernel.org,
+ Christian Koenig <Christian.Koenig@amd.com>,
+ Szabolcs Nagy <Szabolcs.Nagy@arm.com>,
  Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will.deacon@arm.com>,
- Arnaldo Carvalho de Melo <arnaldo.melo@gmail.com>,
- linux-kernel <linux-kernel@vger.kernel.org>, Ingo Molnar <mingo@redhat.com>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+ dri-devel@lists.freedesktop.org, Kostya Serebryany <kcc@google.com>,
+ Khalid Aziz <khalid.aziz@oracle.com>, Lee Smith <Lee.Smith@arm.com>,
+ linux-kselftest@vger.kernel.org, Vincenzo Frascino <vincenzo.frascino@arm.com>,
+ Jacob Bramley <Jacob.Bramley@arm.com>, Leon Romanovsky <leon@kernel.org>,
+ linux-rdma@vger.kernel.org, amd-gfx@lists.freedesktop.org,
+ Christoph Hellwig <hch@infradead.org>, Jason Gunthorpe <jgg@ziepe.ca>,
+ Dmitry Vyukov <dvyukov@google.com>, Evgeniy Stepanov <eugenis@google.com>,
+ linux-media@vger.kernel.org, Kees Cook <keescook@chromium.org>,
+ Ruben Ayrapetyan <Ruben.Ayrapetyan@arm.com>,
+ Kevin Brodsky <kevin.brodsky@arm.com>,
+ Alex Williamson <alex.williamson@redhat.com>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>,
+ linux-arm-kernel@lists.infradead.org, linux-mm@kvack.org,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Felix Kuehling <Felix.Kuehling@amd.com>, linux-kernel@vger.kernel.org,
+ Jens Wiklander <jens.wiklander@linaro.org>,
+ Ramana Radhakrishnan <Ramana.Radhakrishnan@arm.com>,
+ Alexander Deucher <Alexander.Deucher@amd.com>,
+ Andrew Morton <akpm@linux-foundation.org>, enh <enh@google.com>,
+ Robin Murphy <robin.murphy@arm.com>, Yishai Hadas <yishaih@mellanox.com>,
+ Luc Van Oostenryck <luc.vanoostenryck@gmail.com>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Mathieu, Mark,
-
-On 6/11/19 8:33 PM, Mathieu Desnoyers wrote:
-> ----- On Jun 11, 2019, at 6:57 PM, Mark Rutland mark.rutland@arm.com wrote:
+On Wed, Jun 12, 2019 at 01:43:20PM +0200, Andrey Konovalov wrote:
+> From: Catalin Marinas <catalin.marinas@arm.com>
 > 
->> Hi Arnaldo,
->>
->> On Tue, Jun 11, 2019 at 11:33:46AM -0300, Arnaldo Carvalho de Melo wrote:
->>> Em Tue, Jun 11, 2019 at 01:53:11PM +0100, Raphael Gault escreveu:
->>>> Add an extra test to check userspace access to pmu hardware counters.
->>>> This test doesn't rely on the seqlock as a synchronisation mechanism but
->>>> instead uses the restartable sequences to make sure that the thread is
->>>> not interrupted when reading the index of the counter and the associated
->>>> pmu register.
->>>>
->>>> In addition to reading the pmu counters, this test is run several time
->>>> in order to measure the ratio of failures:
->>>> I ran this test on the Juno development platform, which is big.LITTLE
->>>> with 4 Cortex A53 and 2 Cortex A57. The results vary quite a lot
->>>> (running it with 100 tests is not so long and I did it several times).
->>>> I ran it once with 10000 iterations:
->>>> `runs: 10000, abort: 62.53%, zero: 34.93%, success: 2.54%`
->>>>
->>>> Signed-off-by: Raphael Gault <raphael.gault@arm.com>
->>>> ---
->>>>   tools/perf/arch/arm64/include/arch-tests.h    |   5 +-
->>>>   tools/perf/arch/arm64/include/rseq-arm64.h    | 220 ++++++++++++++++++
->>>
->>> So, I applied the first patch in this series, but could you please break
->>> this patch into at least two, one introducing the facility
->>> (include/rseq*) and the second adding the test?
->>>
->>> We try to enforce this kind of granularity as down the line we may want
->>> to revert one part while the other already has other uses and thus
->>> wouldn't allow a straight revert.
->>>
->>> Also, can this go to tools/arch/ instead? Is this really perf specific?
->>> Isn't there any arch/arm64/include files for the kernel that we could
->>> mirror and have it checked for drift in tools/perf/check-headers.sh?
->>
->> The rseq bits aren't strictly perf specific, and I think the existing
->> bits under tools/testing/selftests/rseq/ could be factored out to common
->> locations under tools/include/ and tools/arch/*/include/.
+> It is not desirable to relax the ABI to allow tagged user addresses into
+> the kernel indiscriminately. This patch introduces a prctl() interface
+> for enabling or disabling the tagged ABI with a global sysctl control
+> for preventing applications from enabling the relaxed ABI (meant for
+> testing user-space prctl() return error checking without reconfiguring
+> the kernel). The ABI properties are inherited by threads of the same
+> application and fork()'ed children but cleared on execve().
 > 
-> Hi Mark,
+> The PR_SET_TAGGED_ADDR_CTRL will be expanded in the future to handle
+> MTE-specific settings like imprecise vs precise exceptions.
 > 
-> Thanks for CCing me!
+> Signed-off-by: Catalin Marinas <catalin.marinas@arm.com>
+> ---
+>  arch/arm64/include/asm/processor.h   |  6 +++
+>  arch/arm64/include/asm/thread_info.h |  1 +
+>  arch/arm64/include/asm/uaccess.h     |  3 +-
+>  arch/arm64/kernel/process.c          | 67 ++++++++++++++++++++++++++++
+>  include/uapi/linux/prctl.h           |  5 +++
+>  kernel/sys.c                         | 16 +++++++
+>  6 files changed, 97 insertions(+), 1 deletion(-)
 > 
-> Or into a stand-alone librseq project:
-> 
-> https://github.com/compudj/librseq (currently a development branch in
-> my own github)
-> 
-> I don't see why this user-space code should sit in the kernel tree.
-> It is not tooling-specific.
-> 
+> diff --git a/arch/arm64/include/asm/processor.h b/arch/arm64/include/asm/processor.h
+> index fcd0e691b1ea..fee457456aa8 100644
+> --- a/arch/arm64/include/asm/processor.h
+> +++ b/arch/arm64/include/asm/processor.h
+> @@ -307,6 +307,12 @@ extern void __init minsigstksz_setup(void);
+>  /* PR_PAC_RESET_KEYS prctl */
+>  #define PAC_RESET_KEYS(tsk, arg)	ptrauth_prctl_reset_keys(tsk, arg)
+>  
+> +/* PR_TAGGED_ADDR prctl */
+> +long set_tagged_addr_ctrl(unsigned long arg);
+> +long get_tagged_addr_ctrl(void);
+> +#define SET_TAGGED_ADDR_CTRL(arg)	set_tagged_addr_ctrl(arg)
+> +#define GET_TAGGED_ADDR_CTRL()		get_tagged_addr_ctrl()
+> +
+>  /*
+>   * For CONFIG_GCC_PLUGIN_STACKLEAK
+>   *
+> diff --git a/arch/arm64/include/asm/thread_info.h b/arch/arm64/include/asm/thread_info.h
+> index f1d032be628a..354a31d2b737 100644
+> --- a/arch/arm64/include/asm/thread_info.h
+> +++ b/arch/arm64/include/asm/thread_info.h
+> @@ -99,6 +99,7 @@ void arch_release_task_struct(struct task_struct *tsk);
+>  #define TIF_SVE			23	/* Scalable Vector Extension in use */
+>  #define TIF_SVE_VL_INHERIT	24	/* Inherit sve_vl_onexec across exec */
+>  #define TIF_SSBD		25	/* Wants SSB mitigation */
+> +#define TIF_TAGGED_ADDR		26	/* Allow tagged user addresses */
+>  
+>  #define _TIF_SIGPENDING		(1 << TIF_SIGPENDING)
+>  #define _TIF_NEED_RESCHED	(1 << TIF_NEED_RESCHED)
+> diff --git a/arch/arm64/include/asm/uaccess.h b/arch/arm64/include/asm/uaccess.h
+> index df729afca0ba..995b9ea11a89 100644
+> --- a/arch/arm64/include/asm/uaccess.h
+> +++ b/arch/arm64/include/asm/uaccess.h
+> @@ -73,7 +73,8 @@ static inline unsigned long __range_ok(const void __user *addr, unsigned long si
+>  {
+>  	unsigned long ret, limit = current_thread_info()->addr_limit;
+>  
+> -	addr = untagged_addr(addr);
+> +	if (test_thread_flag(TIF_TAGGED_ADDR))
+> +		addr = untagged_addr(addr);
+>  
+>  	__chk_user_ptr(addr);
+>  	asm volatile(
+> diff --git a/arch/arm64/kernel/process.c b/arch/arm64/kernel/process.c
+> index 3767fb21a5b8..69d0be1fc708 100644
+> --- a/arch/arm64/kernel/process.c
+> +++ b/arch/arm64/kernel/process.c
+> @@ -30,6 +30,7 @@
+>  #include <linux/kernel.h>
+>  #include <linux/mm.h>
+>  #include <linux/stddef.h>
+> +#include <linux/sysctl.h>
+>  #include <linux/unistd.h>
+>  #include <linux/user.h>
+>  #include <linux/delay.h>
+> @@ -323,6 +324,7 @@ void flush_thread(void)
+>  	fpsimd_flush_thread();
+>  	tls_thread_flush();
+>  	flush_ptrace_hw_breakpoint(current);
+> +	clear_thread_flag(TIF_TAGGED_ADDR);
+>  }
+>  
+>  void release_thread(struct task_struct *dead_task)
+> @@ -552,3 +554,68 @@ void arch_setup_new_exec(void)
+>  
+>  	ptrauth_thread_init_user(current);
+>  }
+> +
+> +/*
+> + * Control the relaxed ABI allowing tagged user addresses into the kernel.
+> + */
+> +static unsigned int tagged_addr_prctl_allowed = 1;
+> +
+> +long set_tagged_addr_ctrl(unsigned long arg)
+> +{
+> +	if (!tagged_addr_prctl_allowed)
+> +		return -EINVAL;
+> +	if (is_compat_task())
+> +		return -EINVAL;
+> +	if (arg & ~PR_TAGGED_ADDR_ENABLE)
+> +		return -EINVAL;
+> +
+> +	if (arg & PR_TAGGED_ADDR_ENABLE)
+> +		set_thread_flag(TIF_TAGGED_ADDR);
+> +	else
+> +		clear_thread_flag(TIF_TAGGED_ADDR);
+> +
+> +	return 0;
+> +}
+> +
+> +long get_tagged_addr_ctrl(void)
+> +{
+> +	if (!tagged_addr_prctl_allowed)
+> +		return -EINVAL;
+> +	if (is_compat_task())
+> +		return -EINVAL;
+> +
+> +	if (test_thread_flag(TIF_TAGGED_ADDR))
+> +		return PR_TAGGED_ADDR_ENABLE;
+> +
+> +	return 0;
+> +}
+> +
+> +/*
+> + * Global sysctl to disable the tagged user addresses support. This control
+> + * only prevents the tagged address ABI enabling via prctl() and does not
+> + * disable it for tasks that already opted in to the relaxed ABI.
+> + */
+> +static int zero;
+> +static int one = 1;
 
-I understand your point but I have to admit that I don't really see how 
-to make it work together with the test which require those definitions.
+!!!
 
->>
->>  From a scan, those already duplicate barriers and other helpers which
->> already have definitions under tools/, which seems unfortunate. :/
->>
+And these can't even be const without a cast.  Yuk.
 
-Also I realize that there is a duplicate with definitions introduced in 
-the selftests but I kind of simplified the macros I'm using to get rid 
-of what wasn't useful to me at the moment. (mainly the loop labels and 
-parameter injections in the asm statement)
-I understand what both Mark and Arnaldo are saying about moving it out 
-of perf so that it is not duplicated but my question is whether it is a 
-good thing to do as is since it is not exactly the same content as 
-what's in the selftests.
+(Not your fault though, but it would be nice to have a proc_dobool() to
+avoid this.)
 
-I hope you can understand my concerns and I'd like to hear your opinions 
-on that matter.
+> +
+> +static struct ctl_table tagged_addr_sysctl_table[] = {
+> +	{
+> +		.procname	= "tagged_addr",
+> +		.mode		= 0644,
+> +		.data		= &tagged_addr_prctl_allowed,
+> +		.maxlen		= sizeof(int),
+> +		.proc_handler	= proc_dointvec_minmax,
+> +		.extra1		= &zero,
+> +		.extra2		= &one,
+> +	},
+> +	{ }
+> +};
+> +
+> +static int __init tagged_addr_init(void)
+> +{
+> +	if (!register_sysctl("abi", tagged_addr_sysctl_table))
+> +		return -EINVAL;
+> +	return 0;
+> +}
+> +
+> +core_initcall(tagged_addr_init);
+> diff --git a/include/uapi/linux/prctl.h b/include/uapi/linux/prctl.h
+> index 094bb03b9cc2..2e927b3e9d6c 100644
+> --- a/include/uapi/linux/prctl.h
+> +++ b/include/uapi/linux/prctl.h
+> @@ -229,4 +229,9 @@ struct prctl_mm_map {
+>  # define PR_PAC_APDBKEY			(1UL << 3)
+>  # define PR_PAC_APGAKEY			(1UL << 4)
+>  
+> +/* Tagged user address controls for arm64 */
+> +#define PR_SET_TAGGED_ADDR_CTRL		55
+> +#define PR_GET_TAGGED_ADDR_CTRL		56
+> +# define PR_TAGGED_ADDR_ENABLE		(1UL << 0)
+> +
 
-Thanks,
+Do we expect this prctl to be applicable to other arches, or is it
+strictly arm64-specific?
 
--- 
-Raphael Gault
+>  #endif /* _LINUX_PRCTL_H */
+> diff --git a/kernel/sys.c b/kernel/sys.c
+> index 2969304c29fe..ec48396b4943 100644
+> --- a/kernel/sys.c
+> +++ b/kernel/sys.c
+> @@ -124,6 +124,12 @@
+>  #ifndef PAC_RESET_KEYS
+>  # define PAC_RESET_KEYS(a, b)	(-EINVAL)
+>  #endif
+> +#ifndef SET_TAGGED_ADDR_CTRL
+> +# define SET_TAGGED_ADDR_CTRL(a)	(-EINVAL)
+> +#endif
+> +#ifndef GET_TAGGED_ADDR_CTRL
+> +# define GET_TAGGED_ADDR_CTRL()		(-EINVAL)
+> +#endif
+>  
+>  /*
+>   * this is where the system-wide overflow UID and GID are defined, for
+> @@ -2492,6 +2498,16 @@ SYSCALL_DEFINE5(prctl, int, option, unsigned long, arg2, unsigned long, arg3,
+>  			return -EINVAL;
+>  		error = PAC_RESET_KEYS(me, arg2);
+>  		break;
+> +	case PR_SET_TAGGED_ADDR_CTRL:
+> +		if (arg3 || arg4 || arg5)
+
+<bikeshed>
+
+How do you anticipate these arguments being used in the future?
+
+For the SVE prctls I took the view that "get" could only ever mean one
+thing, and "put" already had a flags argument with spare bits for future
+expansion anyway, so forcing the extra arguments to zero would be
+unnecessary.
+
+Opinions seem to differ on whether requiring surplus arguments to be 0
+is beneficial for hygiene, but the glibc prototype for prctl() is
+
+	int prctl (int __option, ...);
+
+so it seemed annoying to have to pass extra arguments to it just for the
+sake of it.  IMHO this also makes the code at the call site less
+readable, since it's not immediately apparent that all those 0s are
+meaningless.
+
+</bikeshed>
+
+(OTOH, the extra arguments are harmless and prctl is far from being a
+general-purpose syscall.)
+
+> +			return -EINVAL;
+> +		error = SET_TAGGED_ADDR_CTRL(arg2);
+> +		break;
+> +	case PR_GET_TAGGED_ADDR_CTRL:
+> +		if (arg2 || arg3 || arg4 || arg5)
+> +			return -EINVAL;
+> +		error = GET_TAGGED_ADDR_CTRL();
+
+Having a "get" prctl is probably a good idea, but is there a clear
+usecase for it?
+
+(The usecase for PR_SVE_GET_VL was always a bit dubious, since the
+VL can also be read via an SVE insn or a compiler intrinsic, which is
+less portable but much cheaper.  As for the PR_SVE_SET_VL_INHERIT flag
+that can be read via PR_SVE_GET_VL, I've never been sure how useful it
+is to be able to read that...)
+
+[...]
+
+Cheers
+---Dave
 
 _______________________________________________
 linux-arm-kernel mailing list
