@@ -2,53 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 37A8943553
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 13 Jun 2019 12:57:07 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0417F43557
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 13 Jun 2019 13:02:39 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=QD1jYWSafBy9jEFjr4FZeDtKksTdluM8A9XU0+ja8Fw=; b=jtHOfketGm39kz
-	T/pDay/N8IiZdnA8Wh0yp9XG9xuoNzAs/m3cVxuI+4/fQvbllkNnu1VfQAfpxxm5KYwQhePM8y80O
-	O9HgY7Cn3F3NMYt108kdL/MkqKjSE83nYgjZ4LmK8lOrky6bwJNNCw+f6lm42IS0W6J6l91d8Q2HH
-	wzvSG3wLCd68m6nrdHEyxP/y+yvTfPPtM95qkjMcujNY1WGKIdTAR3+ouRmhreCl6kxS8PtRPYLx/
-	EuUEC623iAzzCIT5XwN6KbZtJLUGTrOvO/zJYPnX13FavAQDivtxJma/Bv/Uni2p74+KkJQIIj1Hk
-	TIYbHIrUhIRotJg46N+Q==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=rGrOulW1l0C/5bvO7L4KPSh1VIE5TvXhtzFyf8uVK2Y=; b=BGMZbMBJXVu8BT9iPj1oniIo0
+	ZZfwgyvNpIPmhRf8vFkAu3lWeAfpUtSw9y8ZaM9AW3kSn+PwnbL/+6mU91yZ3vNHK4TF3aIBJEqjO
+	qdUgqLLOcM83KzlGMhWrJU33jHdVVSlhQ0486NCDk8AuNd0Y1e+U8yCW2NTiyfUlET/Uw1MjmTcPb
+	ECDCiELeEcwG4UhvMTngi2Xrm7cKF2+hg9MSt/QOPRt7YdjsMRaKdJOzXPrnfBMKowfrsX86gunKS
+	ISzNEkb4rS8z/PtrlzDAuYGFdCa371yYzMuTFPEhplSKaz40swSk+w0rNnNWAnbJqEVxiqR6wm3uO
+	zwvv2asAw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hbNPj-0001cD-O7; Thu, 13 Jun 2019 10:57:03 +0000
-Received: from gate.crashing.org ([63.228.1.57])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hbNPb-0001bj-Av
- for linux-arm-kernel@lists.infradead.org; Thu, 13 Jun 2019 10:56:57 +0000
-Received: from localhost (localhost.localdomain [127.0.0.1])
- by gate.crashing.org (8.14.1/8.14.1) with ESMTP id x5DAuVOr010532;
- Thu, 13 Jun 2019 05:56:32 -0500
-Message-ID: <5e3e3f21b53f45cb115b4c04e04dc7557c63982d.camel@kernel.crashing.org>
-Subject: Re: [PATCH+DISCUSSION] irqchip: armada-370-xp: Remove redundant ops
- assignment
-From: Benjamin Herrenschmidt <benh@kernel.crashing.org>
-To: Marc Zyngier <marc.zyngier@arm.com>
-Date: Thu, 13 Jun 2019 20:56:31 +1000
-In-Reply-To: <86muilc012.wl-marc.zyngier@arm.com>
-References: <e4c7b434452775d00b6621012ad5e263076b3fcf.camel@kernel.crashing.org>
- <86muilc012.wl-marc.zyngier@arm.com>
-X-Mailer: Evolution 3.28.5-0ubuntu0.18.04.1 
-Mime-Version: 1.0
+	id 1hbNV5-0004Cj-0l; Thu, 13 Jun 2019 11:02:35 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hbNUv-0004C1-Fs
+ for linux-arm-kernel@lists.infradead.org; Thu, 13 Jun 2019 11:02:27 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id C4927367;
+ Thu, 13 Jun 2019 04:02:24 -0700 (PDT)
+Received: from [10.1.196.120] (e121650-lin.cambridge.arm.com [10.1.196.120])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 0326E3F694;
+ Thu, 13 Jun 2019 04:04:06 -0700 (PDT)
+Subject: Re: [PATCH 3/7] perf: arm64: Use rseq to test userspace access to pmu
+ counters
+To: Mathieu Desnoyers <mathieu.desnoyers@efficios.com>,
+ Mark Rutland <mark.rutland@arm.com>
+References: <20190611125315.18736-1-raphael.gault@arm.com>
+ <20190611125315.18736-4-raphael.gault@arm.com>
+ <20190611143346.GB28689@kernel.org>
+ <20190611165755.GG29008@lakrids.cambridge.arm.com>
+ <1620360283.42036.1560281622707.JavaMail.zimbra@efficios.com>
+From: Raphael Gault <raphael.gault@arm.com>
+Message-ID: <b3a5c6d6-5827-36e1-f9ef-9602eaa5741d@arm.com>
+Date: Thu, 13 Jun 2019 12:02:22 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.6.1
+MIME-Version: 1.0
+In-Reply-To: <1620360283.42036.1560281622707.JavaMail.zimbra@efficios.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190613_035655_526383_8FE3389D 
-X-CRM114-Status: GOOD (  14.00  )
+X-CRM114-CacheID: sfid-20190613_040225_621047_58839480 
+X-CRM114-Status: GOOD (  26.53  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [63.228.1.57 listed in list.dnswl.org]
- 0.0 T_SPF_PERMERROR        SPF: test of record failed (permerror)
- 0.0 T_SPF_HELO_PERMERROR   SPF: test of HELO record failed (permerror)
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -60,55 +67,97 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Thomas Petazzoni <thomas.petazzoni@free-electrons.com>,
- Gregory CLEMENT <gregory.clement@free-electrons.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
+Cc: Peter Zijlstra <peterz@infradead.org>,
+ Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will.deacon@arm.com>,
+ Arnaldo Carvalho de Melo <arnaldo.melo@gmail.com>,
+ linux-kernel <linux-kernel@vger.kernel.org>, Ingo Molnar <mingo@redhat.com>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, 2019-06-13 at 10:22 +0100, Marc Zyngier wrote:
+Hi Mathieu, Mark,
+
+On 6/11/19 8:33 PM, Mathieu Desnoyers wrote:
+> ----- On Jun 11, 2019, at 6:57 PM, Mark Rutland mark.rutland@arm.com wrote:
 > 
-> It looks to me that masking at the PCI level is rather superfluous as
-> long as the MSI controller HW has the capability to mask the interrupt
-> on a per MSI basis. After all, most non MSI-X endpoint lack support
-> for masking of individual vectors, so I think that we should just mask
-> things at the irqchip level. This is also consistent with what you'd
-> have to do for non-PCI MSI, where nothing standardises the MSI
-> masking.
+>> Hi Arnaldo,
+>>
+>> On Tue, Jun 11, 2019 at 11:33:46AM -0300, Arnaldo Carvalho de Melo wrote:
+>>> Em Tue, Jun 11, 2019 at 01:53:11PM +0100, Raphael Gault escreveu:
+>>>> Add an extra test to check userspace access to pmu hardware counters.
+>>>> This test doesn't rely on the seqlock as a synchronisation mechanism but
+>>>> instead uses the restartable sequences to make sure that the thread is
+>>>> not interrupted when reading the index of the counter and the associated
+>>>> pmu register.
+>>>>
+>>>> In addition to reading the pmu counters, this test is run several time
+>>>> in order to measure the ratio of failures:
+>>>> I ran this test on the Juno development platform, which is big.LITTLE
+>>>> with 4 Cortex A53 and 2 Cortex A57. The results vary quite a lot
+>>>> (running it with 100 tests is not so long and I did it several times).
+>>>> I ran it once with 10000 iterations:
+>>>> `runs: 10000, abort: 62.53%, zero: 34.93%, success: 2.54%`
+>>>>
+>>>> Signed-off-by: Raphael Gault <raphael.gault@arm.com>
+>>>> ---
+>>>>   tools/perf/arch/arm64/include/arch-tests.h    |   5 +-
+>>>>   tools/perf/arch/arm64/include/rseq-arm64.h    | 220 ++++++++++++++++++
+>>>
+>>> So, I applied the first patch in this series, but could you please break
+>>> this patch into at least two, one introducing the facility
+>>> (include/rseq*) and the second adding the test?
+>>>
+>>> We try to enforce this kind of granularity as down the line we may want
+>>> to revert one part while the other already has other uses and thus
+>>> wouldn't allow a straight revert.
+>>>
+>>> Also, can this go to tools/arch/ instead? Is this really perf specific?
+>>> Isn't there any arch/arm64/include files for the kernel that we could
+>>> mirror and have it checked for drift in tools/perf/check-headers.sh?
+>>
+>> The rseq bits aren't strictly perf specific, and I think the existing
+>> bits under tools/testing/selftests/rseq/ could be factored out to common
+>> locations under tools/include/ and tools/arch/*/include/.
 > 
-> I think this is in effect a split in responsibilities:
+> Hi Mark,
 > 
-> - the end-point driver should (directly or indirectly) control the
->   interrupt generation at the end-point level,
+> Thanks for CCing me!
 > 
-> - the MSI controller driver should control the signalling of the MSI
->   to the CPU.
+> Or into a stand-alone librseq project:
 > 
-> The only case where we should rely on masking interrupts at the
-> end-point level is when the MSI controller doesn't provide a method to
-> do so (hopefully a rare exception).
+> https://github.com/compudj/librseq (currently a development branch in
+> my own github)
+> 
+> I don't see why this user-space code should sit in the kernel tree.
+> It is not tooling-specific.
+> 
 
-While I would tend to agree, I'm also wary of standardizing on
-something which isn't what x86 does today :-)
+I understand your point but I have to admit that I don't really see how 
+to make it work together with the test which require those definitions.
 
-You know what happens when we break them... interestingly enough they
-(like quite a few other drivers) don't even bother trying to mask at
-the APIC level unless I misread the code. That means that for endpoints
-that don't support masking, they just get those MSIs and
-"ignore" them...
+>>
+>>  From a scan, those already duplicate barriers and other helpers which
+>> already have definitions under tools/, which seems unfortunate. :/
+>>
 
-But I'll look into it, see what the patch looks like.
+Also I realize that there is a duplicate with definitions introduced in 
+the selftests but I kind of simplified the macros I'm using to get rid 
+of what wasn't useful to me at the moment. (mainly the loop labels and 
+parameter injections in the asm statement)
+I understand what both Mark and Arnaldo are saying about moving it out 
+of perf so that it is not duplicated but my question is whether it is a 
+good thing to do as is since it is not exactly the same content as 
+what's in the selftests.
 
-I've also looked at trying to make the "inner domain" more generic but
-that's looking a tad trickier... not giving up yet though :-)
+I hope you can understand my concerns and I'd like to hear your opinions 
+on that matter.
 
-Cheers,
-Ben.
+Thanks,
 
-
+-- 
+Raphael Gault
 
 _______________________________________________
 linux-arm-kernel mailing list
