@@ -2,61 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D1E0E438C7
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 13 Jun 2019 17:08:50 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5BC8943A96
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 13 Jun 2019 17:22:34 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+4RkJ1B8ExBuM0iVa+CDcLL9jfpbrhueXkX3uDWFkok=; b=HpvupG6tHTfPM4
-	ykK8MXqGpnjff9McZ/GQig3pbnaBafjIZ96MpBp2tljwKU+CsrBuxKA+za4cVbW3jhXHsXn1wxQ2t
-	ZPP1xn+bV+3VyMRh8XK7TRJCD6W7n+ateF0De0Pv9/zkF8riy9ajAgdo5NDAIu57j64KtdsoK8m9p
-	G3yEkXqWa2+586DOhlndj8daJQfehm96OfL2+m72CIPYq9DWpXKcoaSXWegZsurXaFnVjNu2QEBGR
-	9aVvkR6Zcpwxt8qCWAG1EwDPGqXUTJIaQO3ZlCLaJgCH3/CxrmCv7l8xLKNvs1dLfniVprP8NPkR4
-	SGqEI3x4Eib8x03JMKeA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=NICyNaFWdicJlbzgxyeuRZ9GeXlr7B1WN2D8kuArQ/0=; b=mA8k/QOCh2q8xNoTm3RmbmN0D
+	W0qUqM/d56ilZJNXHQRyAayR3+JcJV/HYx4vh06m/1BxNQFpdQHQOWmzaBDz6c5P7kVCxl5ykFjAu
+	CBvriDdxu50grvfoj+/gQiYLzDQsuUivPFw2robiLUwY+2MdWGeQZkar+b1Kg2J1zK0hhF+TRZGWh
+	/TmHV3cWkebE64O1JL1U4J38Kbv9XbzC79nW5pzkjyTV2tAsjABL9SO8JjOqLokpjsGBY8Ia3J50B
+	reyHk6aP6qBCplY20iPL2/jbDI8Uv1Q1VClmvDNFrKaljvB097DgwpMgIi01b5ccH7B+BKk2KA7kv
+	dJPDi0z7Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hbRLL-0000Ed-AO; Thu, 13 Jun 2019 15:08:47 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hbRKm-0008V5-Vv
- for linux-arm-kernel@lists.infradead.org; Thu, 13 Jun 2019 15:08:14 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 28E59367;
- Thu, 13 Jun 2019 08:08:12 -0700 (PDT)
-Received: from e107155-lin (e107155-lin.cambridge.arm.com [10.1.196.42])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id E383A3F718;
- Thu, 13 Jun 2019 08:08:10 -0700 (PDT)
-Date: Thu, 13 Jun 2019 16:08:04 +0100
-From: Sudeep Holla <sudeep.holla@arm.com>
-To: Jassi Brar <jassisinghbrar@gmail.com>
-Subject: Re: [PATCH 0/6] mailbox: arm_mhu: add support to use in doorbell mode
-Message-ID: <20190613150804.GA11854@e107155-lin>
-References: <20190531143320.8895-1-sudeep.holla@arm.com>
- <CABb+yY1u5zdocgV=HhQcHWQa_R7ArtFqndU5_T=NsPHJ=jwseA@mail.gmail.com>
- <20190531165326.GA18115@e107155-lin>
- <20190603193946.GC2456@sirena.org.uk>
- <20190604093827.GA31069@e107533-lin.cambridge.arm.com>
- <20190605194636.GW2456@sirena.org.uk>
- <CABb+yY27Xe7d5=drKUGg82rJXcRU3EfZkG9FygZoOiioY-BMyw@mail.gmail.com>
- <20190606125140.GB26273@e107155-lin>
- <CABb+yY06heJ5s5-2tvrDt9CdL+--YLG+P52e52YFPqTA=Nb3vw@mail.gmail.com>
- <20190606154045.GA2429@e107155-lin>
+	id 1hbRYa-0007rF-T2; Thu, 13 Jun 2019 15:22:28 +0000
+Received: from szxga06-in.huawei.com ([45.249.212.32] helo=huawei.com)
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hbRY5-0007fZ-5k
+ for linux-arm-kernel@lists.infradead.org; Thu, 13 Jun 2019 15:22:09 +0000
+Received: from DGGEMS408-HUB.china.huawei.com (unknown [172.30.72.60])
+ by Forcepoint Email with ESMTP id 5B032930F6C48A56E290;
+ Thu, 13 Jun 2019 23:21:51 +0800 (CST)
+Received: from [127.0.0.1] (10.202.227.238) by DGGEMS408-HUB.china.huawei.com
+ (10.3.19.208) with Microsoft SMTP Server id 14.3.439.0;
+ Thu, 13 Jun 2019 23:21:42 +0800
+Subject: Re: [PATCH v4 1/3] lib: logic_pio: Use logical PIO low-level
+ accessors for !CONFIG_INDIRECT_PIO
+To: Bjorn Helgaas <helgaas@kernel.org>
+References: <1560262374-67875-1-git-send-email-john.garry@huawei.com>
+ <1560262374-67875-2-git-send-email-john.garry@huawei.com>
+ <20190613135825.GG13533@google.com>
+From: John Garry <john.garry@huawei.com>
+Message-ID: <5b03c093-26fb-0e01-6104-5f92eef7956e@huawei.com>
+Date: Thu, 13 Jun 2019 16:21:35 +0100
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:45.0) Gecko/20100101
+ Thunderbird/45.3.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190606154045.GA2429@e107155-lin>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+In-Reply-To: <20190613135825.GG13533@google.com>
+X-Originating-IP: [10.202.227.238]
+X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190613_080813_285027_2D5B7A58 
-X-CRM114-Status: GOOD (  20.35  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190613_082157_485578_0F8D4170 
+X-CRM114-Status: GOOD (  15.83  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [45.249.212.32 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -69,59 +67,90 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Arnd Bergmann <arnd@arndb.de>, Mark Brown <broonie@kernel.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Bjorn Andersson <bjorn.andersson@linaro.org>, Rob Herring <robh+dt@kernel.org>,
- Cristian Marussi <cristian.marussi@arm.com>,
- Sudeep Holla <sudeep.holla@arm.com>, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
+Cc: rjw@rjwysocki.net, wangkefeng.wang@huawei.com, lorenzo.pieralisi@arm.com,
+ arnd@arndb.de, linux-pci@vger.kernel.org, will.deacon@arm.com,
+ linuxarm@huawei.com, linux-kernel@vger.kernel.org, catalin.marinas@arm.com,
+ andriy.shevchenko@linux.intel.com, linux-arm-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Jun 06, 2019 at 04:40:45PM +0100, Sudeep Holla wrote:
-> On Thu, Jun 06, 2019 at 10:20:40AM -0500, Jassi Brar wrote:
-> > On Thu, Jun 6, 2019 at 7:51 AM Sudeep Holla <sudeep.holla@arm.com> wrote:
-> >
-> > >
-> > > > BTW, this is not going to be the end of SCMI troubles (I believe
-> > > > that's what his client is). SCMI will eventually have to be broken up
-> > > > in layers (protocol and transport) for many legit platforms to use it.
-> > > > That is mbox_send_message() will have to be replaced by, say,
-> > > > platform_mbox_send()  in drivers/firmware/arm_scmi/driver.c  OR  the
-> > > > platforms have to have shmem and each mailbox controller driver (that
-> > > > could ever be used under scmi) will have to implement "doorbell
-> > > > emulation" mode. That is the reason I am not letting the way paved for
-> > > > such emulations.
-> > > >
-> > >
-> > > While I don't dislike or disagree with separate transport in SCMI which
-> > > I have invested time and realised that I will duplicate mailbox framework
-> > > at the end.
-> > >
-> > Can you please share the code? Or is it no more available?
-> >
-> > > So I am against it only because of duplication and extra
-> > > layer of indirection which has performance impact(we have this seen in
-> > > sched governor for DVFS).
-> > >
-> > I don't see why the overhead should increase noticeably.
-> >
+On 13/06/2019 14:58, Bjorn Helgaas wrote:
+> On Tue, Jun 11, 2019 at 10:12:52PM +0800, John Garry wrote:
+> Another thought here:
 >
-> Simple, if 2 protocols share the same channel, then the requests are
-> serialised. E.g. if bits 0 and 1 are allocated for protocol#1
-> and bits 2 and 3 for protocol#2 and protocol#1 has higher latency
-> requirements like sched-governor DVFS and there are 3-4 pending requests
-> on protocol#2, then the incoming request for protocol#1 is blocked.
+>>  	if (addr < MMIO_UPPER_LIMIT) {					\
+>>  		ret = read##bw(PCI_IOBASE + addr);			\
+>>  	} else if (addr >= MMIO_UPPER_LIMIT && addr < IO_SPACE_LIMIT) { \
+>> -		struct logic_pio_hwaddr *entry = find_io_range(addr);	\
+>> +		struct logic_pio_hwaddr *range = find_io_range(addr);	\
+>> +		size_t sz = sizeof(type);				\
+>>  									\
+>> -		if (entry && entry->ops)				\
+>> -			ret = entry->ops->in(entry->hostdata,		\
+>> -					addr, sizeof(type));		\
+>> +		if (range && range->ops)				\
+>> +			ret = range->ops->in(range->hostdata, addr, sz);\
+>>  		else							\
+>>  			WARN_ON_ONCE(1);
+
+Hi Bjorn,
+				\
+>
+> Could this be simplified a little by requiring callers to set
+> range->ops for LOGIC_PIO_INDIRECT ranges *before* calling
+> logic_pio_register_range()?  E.g.,
+>
+>   hisi_lpc_probe(...)
+>   {
+>     range = devm_kzalloc(...);
+>     range->flags = LOGIC_PIO_INDIRECT;
+>     range->ops = &hisi_lpc_ops;
+>     logic_pio_register_range(range);
+>     ...
+>
+> and
+>
+>   logic_pio_register_range(struct logic_pio_hwaddr *new_range)
+>   {
+>     if (new_range->flags == LOGIC_PIO_INDIRECT && !new_range->ops)
+>       return -EINVAL;
+>     ...
+>
+> Then maybe you wouldn't need to check range->ops in the accessors.
 >
 
-Any idea on addressing the above with abstraction layer above the driver ?
-And the bit allotment without the virtual channel representation in DT.
-These 2 are main issues that needs to be resolved.
+I think I know the reason why it was done this way.
 
---
-Regards,
-Sudeep
+So currently there is no method to unregister a logical PIO region (the 
+old code leaked ranges as well). As such, if hisi_lpc_probe() fails 
+after we register the logical PIO range, there would be a range 
+registered but no actual host backing it. So we set the ops at the point 
+at which the probe cannot fail to avoid a potential problem.
+
+And now I realise that there is a bug in the code - range is allocated 
+with devm_kzalloc and is passed to logic_pio_register_range(). As such, 
+if the hisi_lpc_probe() goes on to fail, then this memory would be 
+free'd and we have an issue.
+
+PCI code should be ok as it uses kzalloc().
+
+The simplest solution is to not change the logical PIO API to allocate 
+this memory itself, but rather make hisi_lpc_probe() use kzalloc(). And, 
+if we go this way, we can use your idea to set the ops.
+
+I'll spin a separate patch for this.
+
+Thanks,
+John
+
+> Bjorn
+>
+> .
+>
+
+
 
 _______________________________________________
 linux-arm-kernel mailing list
