@@ -2,55 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 139C94350E
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 13 Jun 2019 12:00:55 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6969A43514
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 13 Jun 2019 12:03:06 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=tmuoj0KCCcwxXvTbxOI8gOpOKL8HrK1ZDsJ5a5TMnSQ=; b=Tia+ooV512rtxL
-	55z3tCXexQVpKHBB+fzce+Wa63no2jPFLhT8z2UFQBHmLFbNb9jzBAHpwpqckVly2KnCDq7HbXrtp
-	XP92sWrSiHCKp3T+fa80o+94La64N7Thl1NDHw0rVJXEjLD3hX2nPoTzKBmaU/1mv5yOb70z95Vwi
-	9Cdqit0ifpwWNB7F0+oT3E0pntg5q37/ZO2L166YxOHbeDDelV/MqDboCK6NdcA4SrVpO6tPit4WA
-	v1HiGcUU9yAgOD9FLFNtxHPbGGx1+I6L1ShrOB7DEIbXo/W5tgt4FVOQyfRAjkt29c1t/3XOCAOTo
-	GpfY9wCacmDmtJIjeeGg==;
+	List-Owner; bh=8g54W9V5w4IgJIgnRiyfqoNSvxX/ZyQx4atwqd+x0ZM=; b=Nh8pXulkI12aW5
+	u2TRwU02sU2vN2mRhAtBbMCDjUJsYvGx6v/jkxHYkp1LaMs6DoQbH20NUgPxscP6QiZNfB5qEb0Zt
+	SJ/d/ioPTjFJxxb0FenHIbQvaEt2Zfq1PzoZYik9isHjBrqM1lqgZtnPPYIK55hUopuAu4KsFFWGT
+	iUMD/ltQ71ZSMKJaAjUCqrxXtGqPCZl5y27XKzFa2bxDIU+I2APiq6CvtEhIK9DTYaa+79Aw7MPYn
+	PWs7JOOVhG1LmXvFVOyYWTZ84c88LmqOjYXolEBVzRq6sJHQTL4JAPS7WgtFXiDSRv4dmApMIL75E
+	XiW7nGwZxAnLc4BI7dsw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hbMXL-0003E3-8u; Thu, 13 Jun 2019 10:00:51 +0000
-Received: from foss.arm.com ([217.140.110.172])
+	id 1hbMZS-0003jo-DC; Thu, 13 Jun 2019 10:03:02 +0000
+Received: from kirsty.vergenet.net ([202.4.237.240])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hbMXA-0003DY-9m
- for linux-arm-kernel@lists.infradead.org; Thu, 13 Jun 2019 10:00:41 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id A462D367;
- Thu, 13 Jun 2019 03:00:37 -0700 (PDT)
-Received: from e103592.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
- [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id BC6D13F694;
- Thu, 13 Jun 2019 03:02:19 -0700 (PDT)
-Date: Thu, 13 Jun 2019 11:00:34 +0100
-From: Dave Martin <Dave.Martin@arm.com>
-To: Julien Grall <julien.grall@arm.com>
-Subject: Re: [PATCH v2 1/3] arm64/sve: Fix missing SVE/FPSIMD endianness
- conversions
-Message-ID: <20190613100031.GU28398@e103592.cambridge.arm.com>
-References: <1560355234-25516-1-git-send-email-Dave.Martin@arm.com>
- <1560355234-25516-2-git-send-email-Dave.Martin@arm.com>
- <771b0099-9217-4e55-b73a-b03434c61655@arm.com>
+ id 1hbMZG-0003j0-Cf
+ for linux-arm-kernel@lists.infradead.org; Thu, 13 Jun 2019 10:02:52 +0000
+Received: from reginn.horms.nl (watermunt.horms.nl [80.127.179.77])
+ by kirsty.vergenet.net (Postfix) with ESMTPA id 10B7925BE52;
+ Thu, 13 Jun 2019 20:02:49 +1000 (AEST)
+Received: by reginn.horms.nl (Postfix, from userid 7100)
+ id 0FF64940483; Thu, 13 Jun 2019 12:02:47 +0200 (CEST)
+Date: Thu, 13 Jun 2019 12:02:46 +0200
+From: Simon Horman <horms@verge.net.au>
+To: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
+Subject: Re: [PATCH/RFT] arm64: dts: renesas: r8a77995: Add cpg reset for
+ LVDS Interface
+Message-ID: <20190613100246.qa2lcbcgbyd3zuaz@verge.net.au>
+References: <1560078659-19236-1-git-send-email-ykaneko0929@gmail.com>
+ <CAMuHMdV8Mg2ao9EwrLkiHF53Y_a5RKyvaqAv13uPvqTr19K++Q@mail.gmail.com>
+ <20190612121556.GK5035@pendragon.ideasonboard.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <771b0099-9217-4e55-b73a-b03434c61655@arm.com>
-User-Agent: Mutt/1.5.23 (2014-03-12)
+In-Reply-To: <20190612121556.GK5035@pendragon.ideasonboard.com>
+Organisation: Horms Solutions BV
+User-Agent: NeoMutt/20170113 (1.7.2)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190613_030040_432590_A36EE82D 
-X-CRM114-Status: GOOD (  22.70  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190613_030250_585840_EC3B131C 
+X-CRM114-Status: GOOD (  23.68  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [202.4.237.240 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -64,106 +65,68 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Peter Maydell <peter.maydell@linaro.org>,
- Catalin Marinas <catalin.marinas@arm.com>, gdb@sourceware.org,
- Will Deacon <will.deacon@arm.com>, Zhang Lei <zhang.lei@jp.fujitsu.com>,
- Alan Hayward <alan.hayward@arm.com>,
- Alex =?iso-8859-1?Q?Benn=E9e?= <alex.bennee@linaro.org>,
- linux-arm-kernel@lists.infradead.org
+Cc: Laurent Pinchart <laurent.pinchart+renesas@ideasonboard.com>,
+ Yoshihiro Kaneko <ykaneko0929@gmail.com>, Magnus Damm <magnus.damm@gmail.com>,
+ Linux-Renesas <linux-renesas-soc@vger.kernel.org>,
+ Geert Uytterhoeven <geert@linux-m68k.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Jun 12, 2019 at 06:46:04PM +0100, Julien Grall wrote:
-> Hi Dave,
+On Wed, Jun 12, 2019 at 03:15:56PM +0300, Laurent Pinchart wrote:
+> Hi Geert,
 > 
-> On 12/06/2019 17:00, Dave Martin wrote:
-> >The in-memory representation of SVE and FPSIMD registers is
-> >different: the FPSIMD V-registers are stored as single 128-bit
-> >host-endian values, whereas SVE registers are stored in an
-> >endianness-invariant byte order.
-> >
-> >This means that the two representations differ when running on a
-> >big-endian host.  But we blindly copy data from one representation
-> >to another when converting between the two, resulting in the
-> >register contents being unintentionally byteswapped in certain
-> >situations.  Currently this can be triggered by the first SVE
-> >instruction after a syscall, for example (though the potential
-> >trigger points may vary in future).
-> >
-> >So, fix the conversion functions fpsimd_to_sve(), sve_to_fpsimd()
-> >and sve_sync_from_fpsimd_zeropad() to swab where appropriate.
-> >
-> >There is no common swahl128() or swab128() that we could use here.
-> >Maybe it would be worth making this generic, but for now add a
-> >simple local hack.
-> >
-> >Since the byte order differences are exposed in ABI, also clarify
-> >the docuentation.
+> On Wed, Jun 12, 2019 at 09:37:14AM +0200, Geert Uytterhoeven wrote:
+> > On Sun, Jun 9, 2019 at 1:11 PM Yoshihiro Kaneko <ykaneko0929@gmail.com> wrote:
+> > > It is necessary to reset the LVDS Interface according to display on/off.
+> > > Therefore, this patch adds CPG reset properties in DU device node
+> > > for the R8A77995 SoC.
+> > >
+> > > This patch was inspired by a patch in the BSP by Takeshi Kihara <takeshi.kihara.df@renesas.com>.
+> > >
+> > > Signed-off-by: Yoshihiro Kaneko <ykaneko0929@gmail.com>
+> > 
+> > Thanks for your patch!
+> > 
+> > > --- a/arch/arm64/boot/dts/renesas/r8a77995.dtsi
+> > > +++ b/arch/arm64/boot/dts/renesas/r8a77995.dtsi
+> > > @@ -1001,6 +1001,8 @@
+> > >                         clocks = <&cpg CPG_MOD 724>,
+> > >                                  <&cpg CPG_MOD 723>;
+> > >                         clock-names = "du.0", "du.1";
+> > > +                       resets = <&cpg 724>, <&cpg 724>;
+> > > +                       reset-names = "du.0", "du.1";
+> > 
+> > These are not the LVDS resets, but the (shared) DU channel resets.
+> > 
+> > The LVDS interface has its own separate device node, so if you want to
+> > be able to reset that, you need to add reset properties to the LVDS
+> > node instead.
+> > 
+> > Note that I haven't reposted a new version of "[PATCH v2] dt-bindings:
+> > drm: rcar-du: Document optional reset properties"[1] yet, after the
+> > split off of the LVDS interface into its own device node. Laurent wanted
+> > to wait until the driver gained DU reset support.
+> > However, the above differs from my proposal, as it also adds "du.1",
+> > pointing to the same (shared) reset.
+> > With a fresh look (2 years later ;-), that actually makes sense, so
+> > perhaps I should change my proposal and repost? We do have shared
+> > resets in other places (e.g. USB).
+> > Laurent, what do you think?
 > 
-> NIT: s/docuentation/documentation/
+> For Gen3 reset is handled at the group level, so I think specifying one
+> entry per group is enough. If other SoCs require per-channel reset
+> (which would surprise me as it would then imply a big redesign of the DU
+> IP core, which may lead to a separate driver) we can always extend the
+> bindings accordingly.
 > 
-> Although, it is probably too late to fix this one as Will already took the patch.
-> 
-> [...]
-> 
-> >diff --git a/Documentation/arm64/sve.txt b/Documentation/arm64/sve.txt
-> >index 9940e92..6c0bed3 100644
-> >--- a/Documentation/arm64/sve.txt
-> >+++ b/Documentation/arm64/sve.txt
-> >@@ -56,6 +56,18 @@ model features for SVE is included in Appendix A.
-> >    is to connect to a target process first and then attempt a
-> >    ptrace(PTRACE_GETREGSET, pid, NT_ARM_SVE, &iov).
-> >+* Whenever SVE scalable register values (Zn, Pn, FFR) are exchanged in memory
-> >+  between userspace and the kernel, the register value is encoded in memory in
-> >+  an endianness-invariant layout, with bits [(8 * i + 7) : (8 * i)] encoded at
-> >+  byte offset i in from the start of the memory representation.  This affects
-> >+  for example the signal frame (struct sve_context) and ptrace interface
-> >+  (struct user_sve_header) and associated data.
-> >+
-> >+  Beware that on big-endian systems this results in a different byte order than
-> >+  for the FPSIMD V-registers, which are stored as single host-endian 128-bit
-> >+  values, with bits [(127 - 8 * i) : (120 - 8 * i)] of the register encoded at
-> >+  byte offset i.  (struct fpsimd_context, struct user_fpsimd_state).
-> >+
-> >  2.  Vector length terminology
-> >  -----------------------------
-> >@@ -124,6 +136,10 @@ the SVE instruction set architecture.
-> >    size and layout.  Macros SVE_SIG_* are defined [1] to facilitate access to
-> >    the members.
-> >+* Each scalable register (Zn, Pn, FFR) is stored in an endianness-invariant
-> >+  layout, with bits [(8 * i + 7) : (8 * i)] stored at byte offset i from the
-> >+  start of the register's representation in memory.
-> >+
-> >  * If the SVE context is too big to fit in sigcontext.__reserved[], then extra
-> >    space is allocated on the stack, an extra_context record is written in
-> >    __reserved[] referencing this space.  sve_context is then written in the
-> >diff --git a/arch/arm64/include/uapi/asm/kvm.h b/arch/arm64/include/uapi/asm/kvm.h
-> >index 7b7ac0f..072ea1e 100644
-> >--- a/arch/arm64/include/uapi/asm/kvm.h
-> >+++ b/arch/arm64/include/uapi/asm/kvm.h
-> >@@ -260,6 +260,13 @@ struct kvm_vcpu_events {
-> >  	 KVM_REG_SIZE_U256 |						\
-> >  	 ((i) & (KVM_ARM64_SVE_MAX_SLICES - 1)))
-> >+/*
-> >+ * Register values for KVM_REG_ARM64_SVE_ZREG(), KVM_REG_ARM64_SVE_PREG() and
-> >+ * KVM_REG_ARM64_SVE_FFR() and represented in memory in an endianness-
-> 
-> NIT: s/and represented/are represented/ I think.
-> 
-> >+ * invariant layout which differs from the layout used for the FPSIMD
-> >+ * V-registers on big-endian systems: see sigcontext.h for more explanaion.
-> 
-> NIT: s/explanaion/explanation/
+> > [1] https://lore.kernel.org/linux-renesas-soc/1488817556-21410-1-git-send-email-geert+renesas@glider.be/
 
-Dang, the first of these two is quite confusing.
+Sorry, I'm a little unclear on what the suggested way forwards is here.
 
-I might send a fix for that, but I guess it's not urgent.  Thanks for
-spotting it.
-
-Cheers
----Dave
+Is it to add a reset for du.0 but not du.1 ?
 
 _______________________________________________
 linux-arm-kernel mailing list
