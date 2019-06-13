@@ -2,53 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F38DA43464
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 13 Jun 2019 10:52:06 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5FD7D4344E
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 13 Jun 2019 10:44:46 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+ZY/36KJM/kvYuiHgeLNCFhd8cXVJMsiuVL6h+eLEAY=; b=hsTJWtwQIS66G4
-	r3/+qdB/I7fLMI+ufXjZ02XZMoBjx3cLUsFDcIX+QjQ6fZDMWH+S4rnOIU0kSOQqiI2HLd8H7B7ML
-	YoBfXHbx7UYVJYy9jS4uSj4U92y5Cygse6GGFRJL/Mlm4vMThS08pcomafrSwwjK/i+XbKVL+l5NB
-	LzYpEu9/o8sF/NGPlixLJsoOLSOQMTiFhDWv4OsMM/KzyDvgmj3yTOAtzjXSmkjy9T66teVkifhKQ
-	d7YLlwEgBiVoCRt59jYVDfD3A4BhNbXBBOLOJL0TmLIgdPaKy4As2KPL2wzccjFa3Y7f0IIiOSiWy
-	ag8RBxBGuJyDbOWJ413A==;
+	List-Owner; bh=QNrkdJG3WQPOJqHYep5YVW3061fw545B5EeMF5fXH0w=; b=mrvNk4A3pfqJth
+	+HQ8Vlmll4MTOd69DLwBif+2UpyieCeM8yWtaRFi6Q+00rgLqmHcFQ0xiBOOxo69Nf5ZvXOWhyq09
+	1pHQ8W6uGaeEAVl2RyACx8IgFtOXA2rLbruldIxnqMU2SgPDkaoxGCP6GWDo+He5YM04m187bT+eO
+	C+g2IrqbjybC9ebD5e0yx74b4DtTPiox9FEJhKUwM5jz8nLcF2PtGAA5WbUDd7LtCIjOAUWhLmloj
+	x6awYZL/w0jL4EmzQDov0ktOekBhM35ni4zUNd1iiFi+r8bXRXP7Ej5Eng50w8oF4Qpl5X+ir5aia
+	n4q/76ojx/9eg6SsmSfQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hbLSn-00039g-6r; Thu, 13 Jun 2019 08:52:05 +0000
+	id 1hbLLg-0004fn-M3; Thu, 13 Jun 2019 08:44:44 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hbLQA-0008He-2t
- for linux-arm-kernel@lists.infradead.org; Thu, 13 Jun 2019 08:49:24 +0000
+ id 1hbLJI-0002tl-R3
+ for linux-arm-kernel@lists.infradead.org; Thu, 13 Jun 2019 08:42:19 +0000
 Received: from localhost (83-86-89-107.cable.dynamic.v4.ziggo.nl
  [83.86.89.107])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id DAA2420851;
- Thu, 13 Jun 2019 08:49:20 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 707C12147A;
+ Thu, 13 Jun 2019 08:42:15 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1560415761;
- bh=ZVqb1gDvPjyh7ACDlsJKpmEovywKK7AOKkgjnSZz0B4=;
+ s=default; t=1560415335;
+ bh=/xsKunJb0b7JNI+hxbSs2B2m7XRoClfEzzm84fBCY4s=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=RWGamL78lA+t48o/ORvbG/GErzGBqzoIlIhBxCRAtrGNoG1mbA7x5L5TxE6XyCmSt
- 02PqamLWS+LDLl9ogalC8IPHCBLmdP1FH7FvTExdPu9YYNzgsIOGHLaR8FfbXHudaR
- B4+Cb8dNO+5BXwcjGRE8ejomgqXiVELBJWRalIxo=
+ b=G0R3ww2q310bufO2v/P3vRARdIy2WZ9LPsuSa8NOiND1bUC3ka5DD9Hxgislj+qSm
+ GX3G5ZKGfVWpftNRkIRT/V+I7P9G7FBeOB88p6S0nfhF+Pgr2GEPwmUEwGQVUMI/wl
+ eI8gTykos4Xnt/a2n3R3Lp/AKpmtztYW1zsGHsDU=
 From: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
 To: linux-kernel@vger.kernel.org
-Subject: [PATCH 5.1 113/155] ARM: dts: imx6qdl: Specify IMX6QDL_CLK_IPG as
+Subject: [PATCH 4.19 088/118] ARM: dts: imx6qdl: Specify IMX6QDL_CLK_IPG as
  "ipg" clock to SDMA
-Date: Thu, 13 Jun 2019 10:33:45 +0200
-Message-Id: <20190613075659.267777553@linuxfoundation.org>
+Date: Thu, 13 Jun 2019 10:33:46 +0200
+Message-Id: <20190613075648.954823832@linuxfoundation.org>
 X-Mailer: git-send-email 2.22.0
-In-Reply-To: <20190613075652.691765927@linuxfoundation.org>
-References: <20190613075652.691765927@linuxfoundation.org>
+In-Reply-To: <20190613075643.642092651@linuxfoundation.org>
+References: <20190613075643.642092651@linuxfoundation.org>
 User-Agent: quilt/0.66
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190613_014922_298307_BDF25030 
+X-CRM114-CacheID: sfid-20190613_014216_990446_7826D659 
 X-CRM114-Status: GOOD (  11.92  )
 X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -113,10 +113,10 @@ Signed-off-by: Sasha Levin <sashal@kernel.org>
  1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/arch/arm/boot/dts/imx6qdl.dtsi b/arch/arm/boot/dts/imx6qdl.dtsi
-index fe17a3405edc..2df39c308c83 100644
+index 61d2d26afbf4..00d44a60972f 100644
 --- a/arch/arm/boot/dts/imx6qdl.dtsi
 +++ b/arch/arm/boot/dts/imx6qdl.dtsi
-@@ -918,7 +918,7 @@
+@@ -905,7 +905,7 @@
  				compatible = "fsl,imx6q-sdma", "fsl,imx35-sdma";
  				reg = <0x020ec000 0x4000>;
  				interrupts = <0 2 IRQ_TYPE_LEVEL_HIGH>;
