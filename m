@@ -2,67 +2,68 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2DDE543217
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 13 Jun 2019 03:39:34 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E956E43220
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 13 Jun 2019 03:55:15 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:In-Reply-To:
+	Message-Id:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=pks7h8KuJbIkPcAJPaSkJeqYk7pONsv12wtcbsuvb90=; b=auNT/VJvUHUmhk
-	Zw1EiqYeO55jbZF8GWXsoPW60mVPflR5XosZMhOlbVy7lA1FM94erO26pNjTiifgCJa3SWUV9XG0m
-	FErubmRxBChVrldckks8XxzH4nOjuyxYg6h9VNjKBB5dEQDrHg0hGyJOfw4EAqgcvZn+FXRHLuZZM
-	Z45kYj6bmu5M1Diklw6+wtRKQ+PQkCEOYUNfYW3+u6AZOI9+0V42OBSbVX2UUW9derp4D7iWOAyza
-	4+5Yg5uMsDF8783TVtZgA72v5y4yXHa56Sq3ENc8DMSyD6nHBfCnGtY56k27iF5fWA9iYei1Gcyzh
-	x6mhT5qPzXlLSXXjghfA==;
+	List-Owner; bh=jiRu/UaDWfX67XT/cKPRx27xCbp5lU+YPiNRPPwmXpM=; b=tcjTPUAbgw+sLO
+	DuLDTHulAAmJYlIF/eVz9cH9gU/6tp4g99lwiUEeGZGLPydKTpM+mzBeV0I+hMPanKFfqu60u1TQx
+	B7KxmIbdrkPSgDa4X2PYa6F2d6gG0tA+nEQEw65iT7HRC7Es83w894sr1GWBveUYQdXhDG0C96XPo
+	o0djDRBwb+NITGUeur0bj3YbsaR14rrx4AMjV5l72plIaFBEbafppzglpkMu7sURwgyiNS+y+yPXa
+	BANGbDl6RYZJl7dikyeo0bH4mbvWshtTqUBHVUGKh+Ji2rj/74CrLTCDVmnJ1pNpd3gC/y32qUaL0
+	vTIaFvHOB+vv0cZidnMA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hbEi7-00058c-Bs; Thu, 13 Jun 2019 01:39:27 +0000
+	id 1hbExN-0002DV-5l; Thu, 13 Jun 2019 01:55:13 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hbEhp-00058A-Ao
- for linux-arm-kernel@lists.infradead.org; Thu, 13 Jun 2019 01:39:10 +0000
-Received: from dragon (li1322-146.members.linode.com [45.79.223.146])
- (using TLSv1.2 with cipher DHE-RSA-AES128-SHA (128/128 bits))
+ id 1hbEx2-0002D0-3O
+ for linux-arm-kernel@lists.infradead.org; Thu, 13 Jun 2019 01:54:53 +0000
+Received: from localhost.localdomain (c-73-223-200-170.hsd1.ca.comcast.net
+ [73.223.200.170])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 59E1520B7C;
- Thu, 13 Jun 2019 01:39:03 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id A68BF208CA;
+ Thu, 13 Jun 2019 01:54:50 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1560389948;
- bh=E3BVSamBEJXWxz5OabhY2ueDy3SNwdh0BFD9+FBsprM=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=rxQ1w6A2RQZRn7b7ecknRx0Tz6fy2EaASij1/HQZci8yLHrzeuqzCkPKS2yn9QJEN
- nK8YNrAuZ2hBU4KK+VbD874D5qOGlu97wBEGAwClolQhR8FDBmoSBTZWEWX4arbYZ2
- +Y/MTKIdfKPfrpKHr7UTrB2d2B5BCjattasT3JrQ=
-Date: Thu, 13 Jun 2019 09:38:32 +0800
-From: Shawn Guo <shawnguo@kernel.org>
-To: Oliver Graute <oliver.graute@gmail.com>
-Subject: Re: [PATCHv3 0/2] Variscite DART-6UL SoM support
-Message-ID: <20190613013830.GC20747@dragon>
-References: <1559839624-12286-1-git-send-email-oliver.graute@gmail.com>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <1559839624-12286-1-git-send-email-oliver.graute@gmail.com>
-User-Agent: Mutt/1.5.21 (2010-09-15)
+ s=default; t=1560390891;
+ bh=GXivTwKQk8Y+X5xE03CN8fthnLjjz3AlLtUYgE6QieY=;
+ h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
+ b=r8JdgWt24mLYxAVnydiRtAdlx+xRwCOlsBeGXcMQy1oJV3B/cDxN+OnDejmpSyIV6
+ RcIibyipNA+YGPuxHDsGF+U/AKFps7DbsQDuq1Fpc/BUfIrexokv2IP71eCmwXk283
+ fI0rscTQw/skUc8NwPguKxlABRXZDgasoljgBWxA=
+Date: Wed, 12 Jun 2019 18:54:50 -0700
+From: Andrew Morton <akpm@linux-foundation.org>
+To: David Hildenbrand <david@redhat.com>
+Subject: Re: [PATCH V5 - Rebased] mm/hotplug: Reorder
+ memblock_[free|remove]() calls in try_remove_memory()
+Message-Id: <20190612185450.73841b9f5af3a4189de6f910@linux-foundation.org>
+In-Reply-To: <67f5c5ad-d753-77d8-8746-96cf4746b3e0@redhat.com>
+References: <36e0126f-e2d1-239c-71f3-91125a49e019@redhat.com>
+ <1560252373-3230-1-git-send-email-anshuman.khandual@arm.com>
+ <20190611151908.cdd6b73fd17fda09b1b3b65b@linux-foundation.org>
+ <5b4f1f19-2f8d-9b8f-4240-7b728952b6fe@arm.com>
+ <67f5c5ad-d753-77d8-8746-96cf4746b3e0@redhat.com>
+X-Mailer: Sylpheed 3.5.1 (GTK+ 2.24.31; x86_64-pc-linux-gnu)
+Mime-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190612_183909_393818_2C737065 
-X-CRM114-Status: GOOD (  12.40  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190612_185452_165281_5AFA9244 
+X-CRM114-Status: GOOD (  12.52  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
  high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -76,42 +77,35 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- narmstrong@baylibre.com, Sascha Hauer <s.hauer@pengutronix.de>,
- linux-kernel@vger.kernel.org, Rob Herring <robh+dt@kernel.org>,
- NXP Linux Team <linux-imx@nxp.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Fabio Estevam <festevam@gmail.com>, linux-arm-kernel@lists.infradead.org
+Cc: mark.rutland@arm.com, mhocko@suse.com,
+ Anshuman Khandual <anshuman.khandual@arm.com>, catalin.marinas@arm.com,
+ will.deacon@arm.com, linux-kernel@vger.kernel.org, linux-mm@kvack.org,
+ ard.biesheuvel@arm.com, linux-arm-kernel@lists.infradead.org,
+ osalvador@suse.de
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Jun 06, 2019 at 06:47:00PM +0200, Oliver Graute wrote:
-> Need feedback to the following patches which adds support for a DART-6UL Board
-> 
-> Product Page: https://www.variscite.com/product/evaluation-kits/dart-6ul-kits
-> 
-> Oliver Graute (2):
->   ARM: dts: imx6ul: Add Variscite DART-6UL SoM support
->   ARM: dts: Add support for i.MX6 UltraLite DART Variscite Customboard
+On Wed, 12 Jun 2019 08:53:33 +0200 David Hildenbrand <david@redhat.com> wrote:
 
-It's already v3?  I did not find previous versions.  What's changed
-since previous versions?
+> >>> ...
+> >>>
+> >>>
+> >>> - Rebased on linux-next (next-20190611)
+> >>
+> >> Yet the patch you've prepared is designed for 5.3.  Was that
+> >> deliberate, or should we be targeting earlier kernels?
+> > 
+> > It was deliberate for 5.3 as a preparation for upcoming reworked arm64 hot-remove.
+> > 
+> 
+> We should probably add to the patch description something like "This is
+> a preparation for arm64 memory hotremove. The described issue is not
+> relevant on other architectures."
 
-Shawn
-
-> 
->  arch/arm/boot/dts/Makefile                         |   1 +
->  .../boot/dts/imx6ul-imx6ull-var-dart-common.dtsi   | 458 +++++++++++++++++++++
->  arch/arm/boot/dts/imx6ul-var-6ulcustomboard.dts    | 209 ++++++++++
->  3 files changed, 668 insertions(+)
->  create mode 100644 arch/arm/boot/dts/imx6ul-imx6ull-var-dart-common.dtsi
->  create mode 100644 arch/arm/boot/dts/imx6ul-var-6ulcustomboard.dts
-> 
-> -- 
-> 2.7.4
-> 
+Please.  And is there any reason to merge it separately?  Can it be
+[patch 1/3] in the "arm64/mm: Enable memory hot remove" series?
 
 _______________________________________________
 linux-arm-kernel mailing list
