@@ -2,80 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A560C44B36
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 13 Jun 2019 20:54:02 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 624A144B43
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 13 Jun 2019 20:54:25 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=Z/ajcw58Bcu8GYyOzBe2QSyTv9RUHoDYhffFGOP8imI=; b=FlC9HLxxoiFTXI
-	8LiKLd/3muGMhkWEO1Bk27BefaF0ktjV1h0rKTJTeI4efFbcuEqmqriLFJ7gJOCAQyAIKDrj7m7Ud
-	YwR+maqJqjTGPkWPckcGtcJEvvb4TV72LyaK5rXSXq/9uFtKy1WSbuf44STCegA5U1n2ESHqiyTKr
-	/+LHFyTdcdKKkBQ7xdw2RChbBUjJoESTK2BCB73lUltiiYXJsizjf2+yDgG+wvt22H1qXoYkfRs3/
-	wzwDjiCgDA/sXuQ+C8KmItsJfipIQ/iwXiOk7Ga9P0bOfBvXpa0R78iiL96E79A1cyYkcyyUelW3T
-	QZZPPz1d2aBSCJAQu1ag==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=/h93WxNQ+MU827+OkOXCSlkNHqtYwJfk46AhLXbcKFQ=; b=ImwO6O2BSam8Ij
+	rvnTKaVN3ouseedRabfXz2r19cjGTIKIfFQh2C9iFFUtyI5IJ7zQuaq+RrREDJLlEb4DHbQFS8pwE
+	Ox3GuPtv2i2hqTyrRQIJfrZ3UnuZRMiiY806jDBaDBGYBKgiyVrYlQ9Ke9J1pEaShZsIIWPSZV4ZN
+	Xe6mvhxbH+xXZWnOS6RBN/Cbyf6a8cSPDxjjzLy8WdAHaphGirXqfJASFrgyX7j+BsFmCNAIvpWHs
+	zoUOm05bycej9CGLIJQ733rDI9z4NyV8UCfx+g9qC7H1koafx30PMFUboEImARV1BdImAkGp7xRnM
+	qNFvmUxy/IudGreyGbOg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hbUrI-0005ZF-2j; Thu, 13 Jun 2019 18:54:00 +0000
-Received: from mail-pl1-x641.google.com ([2607:f8b0:4864:20::641])
+	id 1hbUrd-0005jJ-Qp; Thu, 13 Jun 2019 18:54:21 +0000
+Received: from mail-pf1-x443.google.com ([2607:f8b0:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hbUr5-0005Yh-AD
- for linux-arm-kernel@lists.infradead.org; Thu, 13 Jun 2019 18:53:49 +0000
-Received: by mail-pl1-x641.google.com with SMTP id f97so8540197plb.5
+ id 1hbUrB-0005aU-Ij
+ for linux-arm-kernel@lists.infradead.org; Thu, 13 Jun 2019 18:53:55 +0000
+Received: by mail-pf1-x443.google.com with SMTP id r7so6503034pfl.3
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 13 Jun 2019 11:53:46 -0700 (PDT)
+ Thu, 13 Jun 2019 11:53:52 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=amarulasolutions.com; s=google;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=F8d7m1DDnqH/bUU0S136tJmuahNrjwjbhZ2wXcmIkdw=;
- b=XYnYivhjrL8PvMkvcXOzIdoB8lf1mxtbUYycZaEG3qDzZOBTZW8NEM4v6Fq3KNpMR1
- V9M4+v2ssLCBbmr5ZhabNGscBCasuvkwnhUqZ54hKPn1YDbi6BS99GW/25z7RJoSLomS
- zMZ0+g/bDTm+xsqCnr1Clt8/yhkTCEp0Kf8g8=
+ h=from:to:cc:subject:date:message-id:in-reply-to:references
+ :mime-version:content-transfer-encoding;
+ bh=T43YpeB6KPwzAeP2AJF/MUSVY3ntDzP4uFwV6vk6NQg=;
+ b=j9mr7D0Q6WW70PaeAtZuQL8G13f13pQs9IWPwKl+tPlMpbbUYNHSA7/2znZNRp4i6f
+ xuPGM5N8BaXMZD4k9kcCOJvheE6bxtkD9vhqrtzOQlUR2aj++rY26vh/QPKy1Nx4sSA1
+ k6tcIi7x5mhhp3NQyTlU98pZFu5OqX4r0AHls=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=F8d7m1DDnqH/bUU0S136tJmuahNrjwjbhZ2wXcmIkdw=;
- b=t4/8JmIc5G8rsRyByzrGyHyIrtFT342S2cNJDHxILmDFxqu/FFLICDiFjbm3BA1qN8
- NI87v/mf+zEogJbSoQw3JkGN1rchFm3ht5K6mkYg1YLOrLbYOeL8E/jwhtLbrCap+diQ
- pX6awW8PdzbLDx7Q4UUufVkyyDkJwp29h5pcxXGiRDBX7ddrXVe4r1eBckBgHYNEYyHd
- IHzv05y8jrYAcwaI6dEasAhlXFS8175wsaUHPK+PN9NRi1QFay1T9TT0Od/T82xS9JzZ
- GtnO6cPzL1D/+JLi/Fb+vqcAx/HTMx+5HjjsSdkA7ONYqbZyp2CGtZpbNyJDKVUPKUEI
- MAKg==
-X-Gm-Message-State: APjAAAXSVD+yX1dP+N8kBDt9WfNL05IUVlAUhOZZU/9OqhxjFI7Oi+rF
- 4F7lybAhpsSCfHp/GnSqFAkKNg==
-X-Google-Smtp-Source: APXvYqxKp7XuhbcSPIGuqB4Br4J+FEyezdRc8LcQCzcSqRvzjXK5pGpx+EH6W3hDqkSMxv54g7UEGQ==
-X-Received: by 2002:a17:902:a5c5:: with SMTP id
- t5mr90864681plq.288.1560452026080; 
- Thu, 13 Jun 2019 11:53:46 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references:mime-version:content-transfer-encoding;
+ bh=T43YpeB6KPwzAeP2AJF/MUSVY3ntDzP4uFwV6vk6NQg=;
+ b=aSVMp+aghcA/oquocPatco55NbG3kWlVzfFr9V7jIuqIr7Nciw1zZxmJD6RZzSGmh2
+ uhKV8bKB4il+xvuqV/uI6j3VyQb2rwaSAyd0U1TlU03t8KqLzgJrNxSbTfEK2LnxoCou
+ NAFOPW4+TCqCk0/k3KWiGC0yTPIvZiZfNGjXDtKw2wAhOg22iTrvtSf04KDF1z5Pjw5m
+ wwidcRBvgextEfD5xpRrxPeCjGXvAKqcEHo/H3db+vaanBQ0Y4e1VpJdp8e9yEu3MnHA
+ ADVtI8I158x2GURjJIaSVJHcqMhiM2u9pqghExYPFWvn6ypswFCLTjB1ey2eoI+1Nady
+ IW9A==
+X-Gm-Message-State: APjAAAXndue/TGpO//GwjwXNMNukpR9uLIyZXTssWJcZXkDY4I0hFDhB
+ EgMPpv6xBpqmkla2qiOKV8RTeg==
+X-Google-Smtp-Source: APXvYqyVfFXF+RWaOpNVOg11XNoCvv+xPHrf1CT9JUGH0iqGtinHj2ErGGLnXkVZWEBC2hZlm3HTDg==
+X-Received: by 2002:a63:d008:: with SMTP id z8mr32305004pgf.335.1560452031872; 
+ Thu, 13 Jun 2019 11:53:51 -0700 (PDT)
 Received: from localhost.localdomain ([115.97.180.18])
- by smtp.gmail.com with ESMTPSA id p43sm946314pjp.4.2019.06.13.11.53.40
+ by smtp.gmail.com with ESMTPSA id p43sm946314pjp.4.2019.06.13.11.53.46
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Thu, 13 Jun 2019 11:53:45 -0700 (PDT)
+ Thu, 13 Jun 2019 11:53:51 -0700 (PDT)
 From: Jagan Teki <jagan@amarulasolutions.com>
 To: Maxime Ripard <maxime.ripard@bootlin.com>, David Airlie <airlied@linux.ie>,
  Daniel Vetter <daniel@ffwll.ch>, Chen-Yu Tsai <wens@csie.org>,
  dri-devel@lists.freedesktop.org, linux-arm-kernel@lists.infradead.org,
  linux-kernel@vger.kernel.org, devicetree@vger.kernel.org,
  Jernej Skrabec <jernej.skrabec@siol.net>
-Subject: [PATCH 0/9] drm/sun4i: Allwinner R40 MIPI-DSI support
-Date: Fri, 14 Jun 2019 00:22:32 +0530
-Message-Id: <20190613185241.22800-1-jagan@amarulasolutions.com>
+Subject: [PATCH 1/9] dt-bindings: display: Add TCON LCD compatible for R40
+Date: Fri, 14 Jun 2019 00:22:33 +0530
+Message-Id: <20190613185241.22800-2-jagan@amarulasolutions.com>
 X-Mailer: git-send-email 2.18.0.321.gffc6fa0e3
+In-Reply-To: <20190613185241.22800-1-jagan@amarulasolutions.com>
+References: <20190613185241.22800-1-jagan@amarulasolutions.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190613_115347_828651_3659F8FD 
-X-CRM114-Status: GOOD (  10.70  )
+X-CRM114-CacheID: sfid-20190613_115353_666873_90C6428D 
+X-CRM114-Status: GOOD (  12.19  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:641 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:443 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -97,59 +98,40 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-sunxi@googlegroups.com,
+Cc: Mark Rutland <mark.rutland@arm.com>, linux-sunxi@googlegroups.com,
+ Rob Herring <robh+dt@kernel.org>, Jagan Teki <jagan@amarulasolutions.com>,
  Michael Trimarchi <michael@amarulasolutions.com>,
- linux-amarula@amarulasolutions.com, Jagan Teki <jagan@amarulasolutions.com>
+ linux-amarula@amarulasolutions.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This is initial version for supporting MIPI-DSI on Allwinner R40.
+Like TCON TV0, TV1 allwinner R40 has TCON LCD0, LCD1 which
+are managed via TCON TOP.
 
-The controller look similar like, Allwinnwe A64 so it has
-dependencies with A64 MIPI DSI changes, DSI fixes and R40 pwm 
-driver [1] [2] [3] 
+Add tcon lcd compatible R40, the same compatible can handle
+TCON LCD0, LCD1.
 
-PLL-MIPI, dclk divders logic bpp/lanes are properly work for R40,
-like A31, A64.
+Cc: Rob Herring <robh+dt@kernel.org>
+Cc: Mark Rutland <mark.rutland@arm.com>
+Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
+---
+ Documentation/devicetree/bindings/display/sunxi/sun4i-drm.txt | 1 +
+ 1 file changed, 1 insertion(+)
 
-patch 1, 2: TCON LCD support
-
-patch 3, 4: Use clock index macros instead of numbers
-
-patch 5: Add tcon top lcd clocking
-
-patch 6, 7: Add dt-bindings for r40 dsi, dphy
-
-patch 8: Add R40 MIPI DSI pipeline
-
-patch 9: Overlay patch to test it on BPI-M2U
-
-[1] https://patchwork.freedesktop.org/series/61310/
-[2] https://patchwork.freedesktop.org/series/60847/ 
-[3] https://lore.kernel.org/patchwork/cover/862766/ 
-
-Jagan Teki (9):
-  dt-bindings: display: Add TCON LCD compatible for R40
-  drm/sun4i: tcon: Add TCON LCD support for R40
-  ARM: dts: sun8i: r40: Use tcon top clock index macros
-  drm/sun4i: tcon_top: Use clock name index macros
-  ARM: dts: sun8i: r40: Add TCON TOP LCD clocking
-  dt-bindings: sun6i-dsi: Add R40 MIPI-DSI compatible (w/ A64 fallback)
-  dt-bindings: sun6i-dsi: Add R40 DPHY compatible (w/ A31 fallback)
-  ARM: dts: sun8i: r40: Add MIPI DSI pipeline
-  [DO NOT MERGE] ARM: dts: sun8i-r40: bananapi-m2-ultra: Enable Bananapi S070WV20-CT16 DSI panel
-
- .../bindings/display/sunxi/sun4i-drm.txt      |  1 +
- .../bindings/display/sunxi/sun6i-dsi.txt      |  2 +
- .../boot/dts/sun8i-r40-bananapi-m2-ultra.dts  | 36 ++++++++
- arch/arm/boot/dts/sun8i-r40.dtsi              | 84 +++++++++++++++++--
- drivers/gpu/drm/sun4i/sun4i_tcon.c            |  7 ++
- drivers/gpu/drm/sun4i/sun8i_tcon_top.c        | 13 +--
- include/dt-bindings/clock/sun8i-tcon-top.h    |  2 +-
- 7 files changed, 134 insertions(+), 11 deletions(-)
-
+diff --git a/Documentation/devicetree/bindings/display/sunxi/sun4i-drm.txt b/Documentation/devicetree/bindings/display/sunxi/sun4i-drm.txt
+index 31ab72cba3d4..9e9c7f934202 100644
+--- a/Documentation/devicetree/bindings/display/sunxi/sun4i-drm.txt
++++ b/Documentation/devicetree/bindings/display/sunxi/sun4i-drm.txt
+@@ -160,6 +160,7 @@ Required properties:
+    * allwinner,sun8i-a33-tcon
+    * allwinner,sun8i-a83t-tcon-lcd
+    * allwinner,sun8i-a83t-tcon-tv
++   * allwinner,sun8i-r40-tcon-lcd
+    * allwinner,sun8i-r40-tcon-tv
+    * allwinner,sun8i-v3s-tcon
+    * allwinner,sun9i-a80-tcon-lcd
 -- 
 2.18.0.321.gffc6fa0e3
 
