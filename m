@@ -2,31 +2,31 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 72E5543D05
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 13 Jun 2019 17:39:21 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1335E43D2A
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 13 Jun 2019 17:40:04 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=opCqagLpJrmeS7euG2A9LOwQRaC7rGN0AH3D64eBLrc=; b=K8kL44FDXI1di5
-	GhrgCu7b4SftOOSKrJgGj/y0ScvlvnCtUJ5QeuXKEZC+PC8CUVlD4Qkn7bpRlwymYGjbZwGBSIPbb
-	Z8XyiHujOlm3rsJh9cKghtXeBcKlY2ZqFyNAsrkWLHWJgUejvL1mecUZEGQaaBQqKQJ0lR5O8gr+3
-	B3KS+xadU4z7EsMVDXnpQK2ZX0HtehLmCySMnNf/5c/PFtAxLXzcE2pJ3BC2XEShQngF2S1m3FtVl
-	xjZeT6NXbrNcHkvlmDkemm1m76uL5mXRIAL7g1Doa6CxjXUFeWJpj0cFFBJSgqJDqDHSPrv4y6aOG
-	c1vMw3QPaWJEd0L3XbvQ==;
+	List-Owner; bh=SAIup+DBB2atoPozhJ6S7a3bdAKHGvYj1NPpoK4b+vQ=; b=Hk5K/zfqh6ezGl
+	V9d07mrPt5PDwGhB/Y+SpKukk5QcoUIZ3lTEok89vaoRu+wEia3FBdpcu96/oqn222WitYRBLklht
+	6YWYMqmROrHfPDJ9n9rZGWWTUXoLJEY+rqAJViyY4RTPDyBrAOdTjEyuWm7RGuINZNcm1T3m3UTRU
+	iIu9iN2brBjBG+BnfKKltErcOFBWgvB6jSMyQEEL+5lXyy/7BMFaxZjDWHCmHEKX0zPfn8NN0nllE
+	6fWSeuzhrsKBeG9x5scjTSoXsRhlBgAr3/v0Vr5jOkG4iDIxyIiqIXPatkXPFul7cavPd2akV6boB
+	sHGir8Z2Yot5qNLGzyIQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hbRor-00010J-Sw; Thu, 13 Jun 2019 15:39:17 +0000
-Received: from esa2.microchip.iphmx.com ([68.232.149.84])
+	id 1hbRpX-0001mU-Mc; Thu, 13 Jun 2019 15:39:59 +0000
+Received: from esa5.microchip.iphmx.com ([216.71.150.166])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hbRn7-00084b-8k
- for linux-arm-kernel@lists.infradead.org; Thu, 13 Jun 2019 15:37:30 +0000
-Received-SPF: Pass (esa2.microchip.iphmx.com: domain of
+ id 1hbRnS-0008TT-Ro
+ for linux-arm-kernel@lists.infradead.org; Thu, 13 Jun 2019 15:37:52 +0000
+Received-SPF: Pass (esa5.microchip.iphmx.com: domain of
  Claudiu.Beznea@microchip.com designates 198.175.253.82 as
  permitted sender) identity=mailfrom;
- client-ip=198.175.253.82; receiver=esa2.microchip.iphmx.com;
+ client-ip=198.175.253.82; receiver=esa5.microchip.iphmx.com;
  envelope-from="Claudiu.Beznea@microchip.com";
  x-sender="Claudiu.Beznea@microchip.com";
  x-conformance=spf_only; x-record-type="v=spf1";
@@ -34,55 +34,55 @@ Received-SPF: Pass (esa2.microchip.iphmx.com: domain of
  a:smtpout.microchip.com a:mx1.microchip.iphmx.com
  a:mx2.microchip.iphmx.com include:servers.mcsv.net
  include:mktomail.com include:spf.protection.outlook.com ~all"
-Received-SPF: None (esa2.microchip.iphmx.com: no sender
+Received-SPF: None (esa5.microchip.iphmx.com: no sender
  authenticity information available from domain of
  postmaster@email.microchip.com) identity=helo;
- client-ip=198.175.253.82; receiver=esa2.microchip.iphmx.com;
+ client-ip=198.175.253.82; receiver=esa5.microchip.iphmx.com;
  envelope-from="Claudiu.Beznea@microchip.com";
  x-sender="postmaster@email.microchip.com"; x-conformance=spf_only
-Authentication-Results: esa2.microchip.iphmx.com;
+Authentication-Results: esa5.microchip.iphmx.com;
  spf=Pass smtp.mailfrom=Claudiu.Beznea@microchip.com;
  spf=None smtp.helo=postmaster@email.microchip.com;
  dkim=pass (signature verified) header.i=@microchiptechnology.onmicrosoft.com;
  dmarc=pass (p=none dis=none) d=microchip.com
-X-IronPort-AV: E=Sophos;i="5.63,369,1557212400"; d="scan'208";a="37225863"
+X-IronPort-AV: E=Sophos;i="5.63,369,1557212400"; d="scan'208";a="35722873"
 Received: from smtpout.microchip.com (HELO email.microchip.com)
  ([198.175.253.82])
- by esa2.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
- 13 Jun 2019 08:37:28 -0700
+ by esa5.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
+ 13 Jun 2019 08:37:49 -0700
 Received: from chn-vm-ex01.mchp-main.com (10.10.87.71) by
- chn-vm-ex04.mchp-main.com (10.10.87.151) with Microsoft SMTP Server
+ chn-vm-ex01.mchp-main.com (10.10.87.71) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
- 15.1.1713.5; Thu, 13 Jun 2019 08:37:26 -0700
+ 15.1.1713.5; Thu, 13 Jun 2019 08:37:31 -0700
 Received: from NAM03-CO1-obe.outbound.protection.outlook.com (10.10.215.89) by
  email.microchip.com (10.10.87.71) with Microsoft SMTP Server
  (version=TLS1_2, 
- cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.1713.5 via Frontend
- Transport; Thu, 13 Jun 2019 08:37:25 -0700
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256) id 15.1.1713.5 via Frontend
+ Transport; Thu, 13 Jun 2019 08:37:31 -0700
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=microchiptechnology.onmicrosoft.com;
  s=selector1-microchiptechnology-onmicrosoft-com;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=GuMignnHSk1wHStshTPWzkZhNKC/LFV8UppGFTq0Jmg=;
- b=aJzcuNABY9eHzOXX4HULzTXxX0LnmfwrheU53Kzu0cd8jGhn8WvqkfUmxyHu84vnbx9EHKl1SHHNDh2tb9w7K1BUhuCCCFOpXBTEirWLs6Sb2hYk5E3Isf+FR9ccymJ1IHcmKyc2NmFsNMrqmYCoOtBjozRXSquwUN5XKDEfPWA=
+ bh=UOZ9+vPbOcFNoSthQyXk2v4olF8WrSzzh6Nv3CHKd2M=;
+ b=kbfqa1M9ikRf5H7Hn0J/uT/zV5mHc+bsWbyv+cNfmrZDwnBDndNbPEzaneClhRByaNS97COKyBtRniYAO/i+IFsMjLyU1W4J6tIe99WTnYOVJDbLrG7VfTCBy3n5T982gv+56lu6PwpdWwS0LVQqyP4rv5iO2S3JfplaM0UGn38=
 Received: from MWHPR11MB1549.namprd11.prod.outlook.com (10.172.54.17) by
  MWHPR11MB1343.namprd11.prod.outlook.com (10.169.232.18) with Microsoft SMTP
  Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.1987.10; Thu, 13 Jun 2019 15:37:25 +0000
+ 15.20.1987.10; Thu, 13 Jun 2019 15:37:31 +0000
 Received: from MWHPR11MB1549.namprd11.prod.outlook.com
  ([fe80::316b:7774:8db6:30ec]) by MWHPR11MB1549.namprd11.prod.outlook.com
  ([fe80::316b:7774:8db6:30ec%7]) with mapi id 15.20.1987.012; Thu, 13 Jun 2019
- 15:37:25 +0000
+ 15:37:31 +0000
 From: <Claudiu.Beznea@microchip.com>
 To: <mturquette@baylibre.com>, <sboyd@kernel.org>,
  <Nicolas.Ferre@microchip.com>, <alexandre.belloni@bootlin.com>
-Subject: [PATCH 6/7] clk: at91: sckc: improve error path for sama5d4 sck
- registration
-Thread-Topic: [PATCH 6/7] clk: at91: sckc: improve error path for sama5d4 sck
- registration
-Thread-Index: AQHVIf3m83vVP0B1JUCHfcMSnaofCA==
-Date: Thu, 13 Jun 2019 15:37:25 +0000
-Message-ID: <1560440205-4604-7-git-send-email-claudiu.beznea@microchip.com>
+Subject: [PATCH 7/7] clk: at91: sckc: use dedicated functions to unregister
+ clock
+Thread-Topic: [PATCH 7/7] clk: at91: sckc: use dedicated functions to
+ unregister clock
+Thread-Index: AQHVIf3qCcDPnGZNZEKT8OcqVXuveQ==
+Date: Thu, 13 Jun 2019 15:37:31 +0000
+Message-ID: <1560440205-4604-8-git-send-email-claudiu.beznea@microchip.com>
 References: <1560440205-4604-1-git-send-email-claudiu.beznea@microchip.com>
 In-Reply-To: <1560440205-4604-1-git-send-email-claudiu.beznea@microchip.com>
 Accept-Language: en-US
@@ -96,41 +96,42 @@ x-ms-exchange-messagesentrepresentingtype: 1
 x-mailer: git-send-email 2.7.4
 x-originating-ip: [94.177.32.154]
 x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: 59b0c989-6bf8-41d2-f972-08d6f01508b2
+x-ms-office365-filtering-correlation-id: 09a276d2-3e5b-4400-f9b6-08d6f0150a85
 x-microsoft-antispam: BCL:0; PCL:0;
  RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600148)(711020)(4605104)(1401327)(2017052603328)(7193020);
  SRVR:MWHPR11MB1343; 
 x-ms-traffictypediagnostic: MWHPR11MB1343:
-x-microsoft-antispam-prvs: <MWHPR11MB13431F894942F3C18032E59187EF0@MWHPR11MB1343.namprd11.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:386;
+x-microsoft-antispam-prvs: <MWHPR11MB1343A06916FE767F83D045B187EF0@MWHPR11MB1343.namprd11.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:1227;
 x-forefront-prvs: 0067A8BA2A
 x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(39860400002)(396003)(366004)(376002)(136003)(346002)(189003)(199004)(81156014)(14454004)(486006)(102836004)(50226002)(8936002)(81166006)(99286004)(110136005)(71190400001)(71200400001)(54906003)(53936002)(6436002)(316002)(72206003)(68736007)(8676002)(52116002)(478600001)(2501003)(446003)(25786009)(476003)(386003)(5660300002)(2616005)(86362001)(6506007)(36756003)(11346002)(76176011)(64756008)(6512007)(4326008)(26005)(66476007)(66556008)(2906002)(6116002)(73956011)(66946007)(66446008)(3846002)(107886003)(7736002)(256004)(6486002)(305945005)(186003)(66066001);
+ SFS:(10009020)(979002)(39860400002)(396003)(366004)(376002)(136003)(346002)(189003)(199004)(81156014)(14454004)(486006)(102836004)(50226002)(8936002)(81166006)(99286004)(110136005)(71190400001)(71200400001)(54906003)(53936002)(6436002)(316002)(72206003)(68736007)(8676002)(52116002)(478600001)(2501003)(446003)(25786009)(476003)(386003)(5660300002)(2616005)(86362001)(6506007)(36756003)(11346002)(76176011)(64756008)(6512007)(4326008)(26005)(66476007)(66556008)(2906002)(4744005)(6116002)(73956011)(66946007)(66446008)(3846002)(107886003)(7736002)(256004)(6486002)(305945005)(186003)(66066001)(969003)(989001)(999001)(1009001)(1019001);
  DIR:OUT; SFP:1101; SCL:1; SRVR:MWHPR11MB1343;
  H:MWHPR11MB1549.namprd11.prod.outlook.com; FPR:; SPF:None; LANG:en;
  PTR:InfoNoRecords; MX:1; A:1; 
 received-spf: None (protection.outlook.com: microchip.com does not designate
  permitted sender hosts)
 x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: H4+Dz7PbdAY6Obg5kK6sVIM/SODfBjFJhdcfSaNwaWs2VmOvGcfeVtDBOagqjqaFc9qRL+OWXlZg5fgxVd5DPdDQIb9tEzK62EAUXav4yfqSZIKlUQ3fHnNW3CeerjvgIeJWHMy0tewCbA6dV4QcPXioydmpdTpVhffn1V1M5Gxj3SrPjkMg0kluRnNZD8M1f2C399Yz1M8VMBpH8+HiSXdXfL+ArNQbYJkJXwS6uZ0Gae6gtdGmiz9ey7OlsAr3gqTwkMtb3sPjprVnHWGRJN2a0M/sPfUYsLL/wq5p4MLTaquoeX91EA/d2NBxdsXtkde3kgOuFHLZ8u2eJ5vhgsD3RCXpWPXfPnV4TxVOr68xNIhGAS9kiLK0pt66JFqA4hizck/GhfxcCws47zWywYbCDqpQjN8YhtNJL0XE7Lc=
+x-microsoft-antispam-message-info: mcUM4w9TL+JPNsvlXd5BVcemipc/pxPpf01hPhHy+z0Ev/Q4Pqhc+YXBN6+J0Wr5qBZTaLCi3ipEQmDRJGbE6VbOhWAIeV/AdLKf7ZldzoWBM4MP8yXvzAwVZSSECFPQTJ/WQTdJIeGWklAB7/1pzewkCRUXE3YNPN85yG2IVr5Nd7agX/z+TiDvqsDmBnzekGJGwjLaBE46giTnKNv5vyVtGe6hlWxHFiX05tr400FKX3Fu4vkmQ3F+HT+wpOX0TUGEjLJvOWViObY5e/UllaP0PWlI0nAG33DdTjR9wjnRDRx1K4X6iilPxywaI/tITc9TOipmw6NLEK0x2FGn1OfQ7XGB0WEVdDAB2Ail+MBXxBWIkGOgPU4h2sAl5uRn8DGe7zenZEc/aPC5/hfrgKLzGqr3r0B8txDgio3Oeio=
 MIME-Version: 1.0
-X-MS-Exchange-CrossTenant-Network-Message-Id: 59b0c989-6bf8-41d2-f972-08d6f01508b2
-X-MS-Exchange-CrossTenant-originalarrivaltime: 13 Jun 2019 15:37:25.2922 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 09a276d2-3e5b-4400-f9b6-08d6f0150a85
+X-MS-Exchange-CrossTenant-originalarrivaltime: 13 Jun 2019 15:37:31.4883 (UTC)
 X-MS-Exchange-CrossTenant-fromentityheader: Hosted
 X-MS-Exchange-CrossTenant-id: 3f4057f3-b418-4d4e-ba84-d55b4e897d88
 X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
 X-MS-Exchange-CrossTenant-userprincipalname: claudiu.beznea@microchip.com
 X-MS-Exchange-Transport-CrossTenantHeadersStamped: MWHPR11MB1343
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190613_083729_540761_6B272CF0 
-X-CRM114-Status: GOOD (  11.14  )
+X-CRM114-CacheID: sfid-20190613_083751_099813_78CC8588 
+X-CRM114-Status: UNSURE (   9.03  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [68.232.149.84 listed in list.dnswl.org]
+ medium trust [216.71.150.166 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -157,89 +158,33 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Claudiu Beznea <claudiu.beznea@microchip.com>
 
-Improve error path for sama5d4 sck registration.
+Use at91 specific functions to free all resources in case of error.
 
 Signed-off-by: Claudiu Beznea <claudiu.beznea@microchip.com>
 ---
- drivers/clk/at91/sckc.c | 43 ++++++++++++++++++++++++++++---------------
- 1 file changed, 28 insertions(+), 15 deletions(-)
+ drivers/clk/at91/sckc.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
 
 diff --git a/drivers/clk/at91/sckc.c b/drivers/clk/at91/sckc.c
-index c61b6c9ddb94..f7ad3e9414dc 100644
+index f7ad3e9414dc..42502830a56a 100644
 --- a/drivers/clk/at91/sckc.c
 +++ b/drivers/clk/at91/sckc.c
-@@ -568,7 +568,7 @@ static const struct clk_slow_bits at91sama5d4_bits = {
- static void __init of_sama5d4_sckc_setup(struct device_node *np)
- {
- 	void __iomem *regbase = of_iomap(np, 0);
--	struct clk_hw *hw;
-+	struct clk_hw *slow_rc, *slowck;
- 	struct clk_sama5d4_slow_osc *osc;
- 	struct clk_init_data init;
- 	const char *xtal_name;
-@@ -578,17 +578,18 @@ static void __init of_sama5d4_sckc_setup(struct device_node *np)
- 	if (!regbase)
- 		return;
+@@ -514,13 +514,13 @@ static void __init of_sam9x60_sckc_setup(struct device_node *np)
+ 	return;
  
--	hw = clk_hw_register_fixed_rate_with_accuracy(NULL, parent_names[0],
--						      NULL, 0, 32768,
--						      250000000);
--	if (IS_ERR(hw))
-+	slow_rc = clk_hw_register_fixed_rate_with_accuracy(NULL,
-+							   parent_names[0],
-+							   NULL, 0, 32768,
-+							   250000000);
-+	if (IS_ERR(slow_rc))
- 		return;
- 
- 	xtal_name = of_clk_get_parent_name(np, 0);
- 
- 	osc = kzalloc(sizeof(*osc), GFP_KERNEL);
- 	if (!osc)
--		return;
-+		goto unregister_slow_rc;
- 
- 	init.name = parent_names[1];
- 	init.ops = &sama5d4_slow_osc_ops;
-@@ -602,17 +603,29 @@ static void __init of_sama5d4_sckc_setup(struct device_node *np)
- 	osc->bits = &at91sama5d4_bits;
- 
- 	ret = clk_hw_register(NULL, &osc->hw);
--	if (ret) {
--		kfree(osc);
--		return;
--	}
-+	if (ret)
-+		goto free_slow_osc_data;
- 
--	hw = at91_clk_register_sam9x5_slow(regbase, "slowck", parent_names, 2,
--					   &at91sama5d4_bits);
--	if (IS_ERR(hw))
--		return;
-+	slowck = at91_clk_register_sam9x5_slow(regbase, "slowck",
-+					       parent_names, 2,
-+					       &at91sama5d4_bits);
-+	if (IS_ERR(slowck))
-+		goto unregister_slow_osc;
- 
--	of_clk_add_hw_provider(np, of_clk_hw_simple_get, hw);
-+	ret = of_clk_add_hw_provider(np, of_clk_hw_simple_get, slowck);
-+	if (WARN_ON(ret))
-+		goto unregister_slowck;
-+
-+	return;
-+
-+unregister_slowck:
-+	at91_clk_unregister_sam9x5_slow(slowck);
-+unregister_slow_osc:
-+	clk_hw_unregister(&osc->hw);
-+free_slow_osc_data:
-+	kfree(osc);
-+unregister_slow_rc:
-+	clk_hw_unregister(slow_rc);
+ unregister_td_slck:
+-	clk_hw_unregister(clk_data->hws[1]);
++	at91_clk_unregister_sam9x5_slow(clk_data->hws[1]);
+ unregister_md_slck:
+ 	clk_hw_unregister(clk_data->hws[0]);
+ clk_data_free:
+ 	kfree(clk_data);
+ unregister_slow_osc:
+-	clk_hw_unregister(slow_osc);
++	at91_clk_unregister_slow_osc(slow_osc);
+ unregister_slow_rc:
+ 	clk_hw_unregister(slow_rc);
  }
- CLK_OF_DECLARE(sama5d4_clk_sckc, "atmel,sama5d4-sckc",
- 	       of_sama5d4_sckc_setup);
 -- 
 2.7.4
 
