@@ -2,46 +2,46 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2EC4F44494
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 13 Jun 2019 18:38:48 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 69E2B444BC
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 13 Jun 2019 18:39:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Sd7YveYMO5PWaBFJcqtR8HZo6GMm6SNR2kP8ucwmcQo=; b=of7Ek7sI0EBzWz
-	ZQowx3rkt30smbd4gPxbLsHokgcSfMB0JH5e2r4AD/UoSGgxXltn+aHTgCMI6B+Ia21RDyJTHL/6F
-	5jw74UTTa54uJ02HC+CvBmU1kHGCD+XZuppfnzjGfWA5RZh+FI4ig1B0+s7/22ZDqWn1/XbcRAqUk
-	6wdzO1g0WLeMlcMHODGWdrQRjHnJ+t6s6nYUYeAXHgjhq++aPU2P4lj8EIQg4ZmFUUYj8P9cwk9jS
-	+IxBayXlaoYJeyg7/dl7D798Wo5J++MGaKVi8bp9z9hzlKgDdIH6ZCrf2w/w4XpPY8khNlYC7WMGi
-	vScFxWYtYq4aLI7rVfow==;
+	List-Owner; bh=l962yu4/DufuAg9mOqpGVvEr1DDvKdKv3qVwvRm/4bA=; b=gcBoMBMdHHnhE6
+	yUcdNydpG0VL++Hr9wCRFveb2ZsqTMqmH+ktfp9uLGxnjjAIwvhQLYv1PBWjpsfKvMs3kIiH4kIZr
+	OYFn7fe8IAY5bp0/wFxRKS0vMRW2L2UFs7exbRNPTZku0RzYx5io/voxVALaK5/rmTEIkdvBMRsYf
+	QnA+NU5hM/73iu+9ANPlL0ZFMHCtaX3RT85GuwHLrZH9SkEFDdXDUidYccW6PMV/ti7KR5rYJ/YQ3
+	wG9ge2LGtV7f2jjzIDss6BiK/Eb5dKEk2m8cbLTFBhyaAKN42z5iPMo3iqD2Fdp9bu8I/Ull+pnNX
+	+N4P4i3rzvRUdqICDkLQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hbSkP-0003qx-Cq; Thu, 13 Jun 2019 16:38:45 +0000
+	id 1hbSky-0004KH-V5; Thu, 13 Jun 2019 16:39:21 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hbSkB-0003q1-Po; Thu, 13 Jun 2019 16:38:32 +0000
+ id 1hbSkL-0003xe-F9; Thu, 13 Jun 2019 16:38:43 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id BB24E367;
- Thu, 13 Jun 2019 09:38:30 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 0BE4B367;
+ Thu, 13 Jun 2019 09:38:41 -0700 (PDT)
 Received: from fuggles.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
  [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 664303F694;
- Thu, 13 Jun 2019 09:38:28 -0700 (PDT)
-Date: Thu, 13 Jun 2019 17:38:26 +0100
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id AD1933F694;
+ Thu, 13 Jun 2019 09:38:38 -0700 (PDT)
+Date: Thu, 13 Jun 2019 17:38:36 +0100
 From: Will Deacon <will.deacon@arm.com>
 To: Yangtao Li <tiny.windzz@gmail.com>
-Subject: Re: [PATCH 02/10] iommu/io-pgtable: convert to SPDX license tags
-Message-ID: <20190613163826.GE18966@fuggles.cambridge.arm.com>
+Subject: Re: [PATCH 07/10] iommu/io-pgtable-arm: convert to SPDX license tags
+Message-ID: <20190613163836.GF18966@fuggles.cambridge.arm.com>
 References: <20190613162703.986-1-tiny.windzz@gmail.com>
- <20190613162703.986-2-tiny.windzz@gmail.com>
+ <20190613162703.986-7-tiny.windzz@gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190613162703.986-2-tiny.windzz@gmail.com>
+In-Reply-To: <20190613162703.986-7-tiny.windzz@gmail.com>
 User-Agent: Mutt/1.11.1+86 (6f28e57d73f2) ()
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190613_093831_886936_5DB6BF1D 
+X-CRM114-CacheID: sfid-20190613_093841_971316_24175107 
 X-CRM114-Status: UNSURE (   8.14  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
@@ -75,12 +75,12 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Jun 13, 2019 at 12:26:55PM -0400, Yangtao Li wrote:
+On Thu, Jun 13, 2019 at 12:27:00PM -0400, Yangtao Li wrote:
 > Updates license to use SPDX-License-Identifier.
 > 
 > Signed-off-by: Yangtao Li <tiny.windzz@gmail.com>
 > ---
->  drivers/iommu/io-pgtable.c | 13 +------------
+>  drivers/iommu/io-pgtable-arm.c | 13 +------------
 >  1 file changed, 1 insertion(+), 12 deletions(-)
 
 Acked-by: Will Deacon <will.deacon@arm.com>
