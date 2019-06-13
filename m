@@ -2,61 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 262AA43832
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 13 Jun 2019 17:04:38 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 401284383D
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 13 Jun 2019 17:04:57 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Date:Message-Id:MIME-Version:Subject:To
 	:From:References:In-Reply-To:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=YrkmRxL4c0tmLVKUAitU61j7S4qLE44pov3RM+Sb6sg=; b=Apq4ehpwjw35sd
-	YLUeNewjdRP/ksn71EbCNkgQLdDLGdEH2akTSJ2CoOUopg1TXP2gaYnaX03WKtbA/6TTfuOzcNcL7
-	YiSjEhjGM6rboMzFFliyZcH7kxMO25egINCZGD9yZpcj34/zzYmbMhhFSIezkFeFtnOFDBnSSU15q
-	KNq6dgHvJiiPIOne/T4CCQOg/m5ZvEHvKVSRZeKc8tsx8drW6zgVs3+iYvk9U22/qaoxa2gUOSx9k
-	IwOBw0/Rhz7L79fJa7UgPwYsRGJdmmDpQYZU+JuVfWXnP1AjJKm6n+PfS0KWByzshvP76s/h1sbey
-	bmz5ev4kud+pk+PRoFbw==;
+	List-Owner; bh=yZyn387rLtY37/5nJmpsjJsyCbPYTX2Z8eCpID5U3Cg=; b=Kr5bHni1fdO/TY
+	295dTV4inuHkE8wjoCC8TEc4PmkzLPyjqCqdnFKjchRz2uosVrrL5vpRthnYFBx7Zb929hV8i7LS+
+	++HXmHeH08LkrLqlC2bZ54mozd8yYsQmUUE21iTYUP8+EkbXM4FUu7f5Dk1bSJUlg/2yE+g/ZK9cK
+	lFDpwf3W0syOhc5pnPsJMqkzSg/ZkqitOxJdByYaLjR1TEvSglsTvJzl8pALsxMkBUV7HCTa7NG2h
+	Qg29l3VigUkQiXo5igmmkD/sLx0svBNmEfV2cXZ8SYIF+syuX+ysjrpPq6LhLcWlt1GIyGUiSE08r
+	fFsQ6b5Vl20hpFvAqlRg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hbRHI-0003oI-2Z; Thu, 13 Jun 2019 15:04:36 +0000
+	id 1hbRHb-00046d-7m; Thu, 13 Jun 2019 15:04:55 +0000
 Received: from pandora.armlinux.org.uk
  ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hbRFU-0002RL-HQ
- for linux-arm-kernel@lists.infradead.org; Thu, 13 Jun 2019 15:02:50 +0000
+ id 1hbRFh-0002aQ-93
+ for linux-arm-kernel@lists.infradead.org; Thu, 13 Jun 2019 15:02:59 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=armlinux.org.uk; s=pandora-2019; h=Date:Sender:Message-Id:Content-Type:
  Content-Transfer-Encoding:MIME-Version:Subject:Cc:To:From:References:
  In-Reply-To:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
  Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:
  List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=JeVMX6aI1+Z/tyR4St48w2936SMKwWSxzsX8PHJe/6Q=; b=JYlJSLreO6FEFhxPxQUz+FRx5/
- ckVhvqsmvlPjSFc0IeZWl7NqTgTwKfGUNm2NR/5tY9/PFlhPhZ6BCq8G73ky6bbfsDIsa1iiDlP4G
- xXorB146z0EnseekxNdhjAE7MXPZlhpb2iSFbYu6YB8eMDFFREgSz2jcCisN4WR277aKFwOAEutrl
- xu4msBGwd+nW5SmTQTC2RPg3ggAQxrQcQP9di3LboA+xk4byQZc3LtDWBcyHSetczu/SyM9j+BiKC
- uuSLEREl+Ml7R1oYrctn1PR0ePM+kDgaTy+2zFsSd50i0PB2Gm9QjgRg8JBkesvnkrEk/SFAFX4Xj
- yWJQ2t9g==;
+ bh=t/YRdgsgfrdYB46CJhogo5+pu4hXbPL6fB+Lr+vl+R8=; b=jLItS/QnABHU2T6uCrUPhLzLhe
+ v09FAyrsiSMGmTZXb4zdzdslsBcIqa7bVzJHhM0+qH+O2vP9g9Sd7yvdyLXuNB0DPQTLs3HmYNy8n
+ HnIOHpvpdJZSoPOuBVAn6YhBEU+SYZclKh/V5dox2DgEfbsE/9BI9Bx/T+MRlxU8UNRk2aEFPQcFj
+ 2SXYLxnromhvRA3TSoABoZkz/U0b0/DfVHYGzrZPYmZ/X9M5/CNgHXyBdt+pzcyo8l4M7wdmJCbwE
+ V7u/ZAyqkIBZ1oCwu/KN9Ha8shhpK33YlkL7wFqtRX2kZ4UcB47b5C642IA1PvUQmguauppQrgkhd
+ F9fOZr3g==;
 Received: from e0022681537dd.dyn.armlinux.org.uk
- ([2002:4e20:1eda:1:222:68ff:fe15:37dd]:44836 helo=rmk-PC.armlinux.org.uk)
+ ([2002:4e20:1eda:1:222:68ff:fe15:37dd]:44838 helo=rmk-PC.armlinux.org.uk)
  by pandora.armlinux.org.uk with esmtpsa
  (TLSv1.2:ECDHE-RSA-AES128-GCM-SHA256:128) (Exim 4.90_1)
  (envelope-from <rmk@armlinux.org.uk>)
- id 1hbRF6-0003jy-Kb; Thu, 13 Jun 2019 16:02:20 +0100
+ id 1hbRFC-0003k6-C6; Thu, 13 Jun 2019 16:02:26 +0100
 Received: from rmk by rmk-PC.armlinux.org.uk with local (Exim
  4.82_1-5b7a7c0-XX) (envelope-from <rmk@armlinux.org.uk>)
- id 1hbRF3-00007S-Rr; Thu, 13 Jun 2019 16:02:17 +0100
+ id 1hbRF8-00007Z-WE; Thu, 13 Jun 2019 16:02:23 +0100
 In-Reply-To: <20190613150114.xqkyb7j7w4ve4yvr@shell.armlinux.org.uk>
 References: <20190613150114.xqkyb7j7w4ve4yvr@shell.armlinux.org.uk>
 From: Russell King <rmk+kernel@armlinux.org.uk>
 To: dri-devel@lists.freedesktop.org, linux-arm-kernel@lists.infradead.org
-Subject: [PATCH 07/18] drm/armada: add support for setting gamma
+Subject: [PATCH 08/18] drm/armada: add comments about HWC32 cursor colour
+ format
 MIME-Version: 1.0
 Content-Disposition: inline
-Message-Id: <E1hbRF3-00007S-Rr@rmk-PC.armlinux.org.uk>
-Date: Thu, 13 Jun 2019 16:02:17 +0100
+Message-Id: <E1hbRF8-00007Z-WE@rmk-PC.armlinux.org.uk>
+Date: Thu, 13 Jun 2019 16:02:22 +0100
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190613_080245_707209_3FB8E467 
-X-CRM114-Status: GOOD (  15.67  )
+X-CRM114-CacheID: sfid-20190613_080257_645258_7CB91FA8 
+X-CRM114-Status: GOOD (  10.28  )
 X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.5 points)
@@ -91,153 +92,31 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add support for setting gamma through both the legacy interfaces and
-the atomic interfaces.
+Add some comments about the format of the HWC32 cursor colour format.
 
 Signed-off-by: Russell King <rmk+kernel@armlinux.org.uk>
 ---
- drivers/gpu/drm/armada/armada_crtc.c  | 63 +++++++++++++++++++++++++++++++++++
- drivers/gpu/drm/armada/armada_hw.h    |  4 +++
- drivers/gpu/drm/armada/armada_plane.c |  2 +-
- 3 files changed, 68 insertions(+), 1 deletion(-)
+ drivers/gpu/drm/armada/armada_crtc.c | 7 +++++++
+ 1 file changed, 7 insertions(+)
 
 diff --git a/drivers/gpu/drm/armada/armada_crtc.c b/drivers/gpu/drm/armada/armada_crtc.c
-index 09bade15f51c..5991feb1bcc9 100644
+index 5991feb1bcc9..e81e57823b66 100644
 --- a/drivers/gpu/drm/armada/armada_crtc.c
 +++ b/drivers/gpu/drm/armada/armada_crtc.c
-@@ -130,6 +130,44 @@ static void armada_drm_crtc_queue_state_event(struct drm_crtc *crtc)
- 	}
- }
+@@ -515,6 +515,13 @@ static void armada_load_cursor_argb(void __iomem *base, uint32_t *pix,
+ 		for (x = 0; x < width; x++, p++) {
+ 			uint32_t val = *p;
  
-+static void armada_drm_update_gamma(struct drm_crtc *crtc)
-+{
-+	struct drm_property_blob *blob = crtc->state->gamma_lut;
-+	void __iomem *base = drm_to_armada_crtc(crtc)->base;
-+	int i;
-+
-+	if (blob) {
-+		struct drm_color_lut *lut = blob->data;
-+
-+		armada_updatel(CFG_CSB_256x8, CFG_CSB_256x8 | CFG_PDWN256x8,
-+			       base + LCD_SPU_SRAM_PARA1);
-+
-+		for (i = 0; i < 256; i++) {
-+			writel_relaxed(drm_color_lut_extract(lut[i].red, 8),
-+				       base + LCD_SPU_SRAM_WRDAT);
-+			writel_relaxed(i | SRAM_WRITE | SRAM_GAMMA_YR,
-+				       base + LCD_SPU_SRAM_CTRL);
-+			readl_relaxed(base + LCD_SPU_HWC_OVSA_HPXL_VLN);
-+			writel_relaxed(drm_color_lut_extract(lut[i].green, 8),
-+				       base + LCD_SPU_SRAM_WRDAT);
-+			writel_relaxed(i | SRAM_WRITE | SRAM_GAMMA_UG,
-+				       base + LCD_SPU_SRAM_CTRL);
-+			readl_relaxed(base + LCD_SPU_HWC_OVSA_HPXL_VLN);
-+			writel_relaxed(drm_color_lut_extract(lut[i].blue, 8),
-+				       base + LCD_SPU_SRAM_WRDAT);
-+			writel_relaxed(i | SRAM_WRITE | SRAM_GAMMA_VB,
-+				       base + LCD_SPU_SRAM_CTRL);
-+			readl_relaxed(base + LCD_SPU_HWC_OVSA_HPXL_VLN);
-+		}
-+		armada_updatel(CFG_GAMMA_ENA, CFG_GAMMA_ENA,
-+			       base + LCD_SPU_DMA_CTRL0);
-+	} else {
-+		armada_updatel(0, CFG_GAMMA_ENA, base + LCD_SPU_DMA_CTRL0);
-+		armada_updatel(CFG_PDWN256x8, CFG_CSB_256x8 | CFG_PDWN256x8,
-+			       base + LCD_SPU_SRAM_PARA1);
-+	}
-+}
-+
- /* The mode_config.mutex will be held for this call */
- static bool armada_drm_crtc_mode_fixup(struct drm_crtc *crtc,
- 	const struct drm_display_mode *mode, struct drm_display_mode *adj)
-@@ -338,6 +376,20 @@ static void armada_drm_crtc_mode_set_nofb(struct drm_crtc *crtc)
- 	spin_unlock_irqrestore(&dcrtc->irq_lock, flags);
- }
- 
-+static int armada_drm_crtc_atomic_check(struct drm_crtc *crtc,
-+					struct drm_crtc_state *state)
-+{
-+	DRM_DEBUG_KMS("[CRTC:%d:%s]\n", crtc->base.id, crtc->name);
-+
-+	if (state->gamma_lut && drm_color_lut_size(state->gamma_lut) != 256)
-+		return -EINVAL;
-+
-+	if (state->color_mgmt_changed)
-+		state->planes_changed = true;
-+
-+	return 0;
-+}
-+
- static void armada_drm_crtc_atomic_begin(struct drm_crtc *crtc,
- 					 struct drm_crtc_state *old_crtc_state)
- {
-@@ -345,6 +397,9 @@ static void armada_drm_crtc_atomic_begin(struct drm_crtc *crtc,
- 
- 	DRM_DEBUG_KMS("[CRTC:%d:%s]\n", crtc->base.id, crtc->name);
- 
-+	if (crtc->state->color_mgmt_changed)
-+		armada_drm_update_gamma(crtc);
-+
- 	dcrtc->regs_idx = 0;
- 	dcrtc->regs = dcrtc->atomic_regs;
- }
-@@ -439,6 +494,7 @@ static void armada_drm_crtc_atomic_enable(struct drm_crtc *crtc,
- static const struct drm_crtc_helper_funcs armada_crtc_helper_funcs = {
- 	.mode_fixup	= armada_drm_crtc_mode_fixup,
- 	.mode_set_nofb	= armada_drm_crtc_mode_set_nofb,
-+	.atomic_check	= armada_drm_crtc_atomic_check,
- 	.atomic_begin	= armada_drm_crtc_atomic_begin,
- 	.atomic_flush	= armada_drm_crtc_atomic_flush,
- 	.atomic_disable	= armada_drm_crtc_atomic_disable,
-@@ -702,6 +758,7 @@ static const struct drm_crtc_funcs armada_crtc_funcs = {
- 	.cursor_set	= armada_drm_crtc_cursor_set,
- 	.cursor_move	= armada_drm_crtc_cursor_move,
- 	.destroy	= armada_drm_crtc_destroy,
-+	.gamma_set	= drm_atomic_helper_legacy_gamma_set,
- 	.set_config	= drm_atomic_helper_set_config,
- 	.page_flip	= drm_atomic_helper_page_flip,
- 	.atomic_duplicate_state = drm_atomic_helper_crtc_duplicate_state,
-@@ -793,6 +850,12 @@ static int armada_drm_crtc_create(struct drm_device *drm, struct device *dev,
- 
- 	drm_crtc_helper_add(&dcrtc->crtc, &armada_crtc_helper_funcs);
- 
-+	ret = drm_mode_crtc_set_gamma_size(&dcrtc->crtc, 256);
-+	if (ret)
-+		return ret;
-+
-+	drm_crtc_enable_color_mgmt(&dcrtc->crtc, 0, false, 256);
-+
- 	return armada_overlay_plane_create(drm, 1 << dcrtc->num);
- 
- err_crtc_init:
-diff --git a/drivers/gpu/drm/armada/armada_hw.h b/drivers/gpu/drm/armada/armada_hw.h
-index 345dc4d0851e..babfca71c4db 100644
---- a/drivers/gpu/drm/armada/armada_hw.h
-+++ b/drivers/gpu/drm/armada/armada_hw.h
-@@ -169,6 +169,10 @@ enum {
- 	SRAM_READ	= 0 << 14,
- 	SRAM_WRITE	= 2 << 14,
- 	SRAM_INIT	= 3 << 14,
-+	SRAM_GAMMA_YR	= 0x0 << 8,
-+	SRAM_GAMMA_UG	= 0x1 << 8,
-+	SRAM_GAMMA_VB	= 0x2 << 8,
-+	SRAM_PALETTE	= 0x3 << 8,
- 	SRAM_HWC32_RAM1	= 0xc << 8,
- 	SRAM_HWC32_RAM2	= 0xd << 8,
- 	SRAM_HWC32_RAMR	= SRAM_HWC32_RAM1,
-diff --git a/drivers/gpu/drm/armada/armada_plane.c b/drivers/gpu/drm/armada/armada_plane.c
-index 45092fc3598e..dbd4d52e8a32 100644
---- a/drivers/gpu/drm/armada/armada_plane.c
-+++ b/drivers/gpu/drm/armada/armada_plane.c
-@@ -265,7 +265,7 @@ static void armada_drm_primary_plane_atomic_disable(struct drm_plane *plane,
- 	/* Disable plane and power down most RAMs and FIFOs */
- 	armada_reg_queue_mod(regs, idx, 0, CFG_GRA_ENA, LCD_SPU_DMA_CTRL0);
- 	armada_reg_queue_mod(regs, idx, CFG_PDWN256x32 | CFG_PDWN256x24 |
--			     CFG_PDWN256x8 | CFG_PDWN32x32 | CFG_PDWN64x66,
-+			     CFG_PDWN32x32 | CFG_PDWN64x66,
- 			     0, LCD_SPU_SRAM_PARA1);
- 
- 	dcrtc->regs_idx += idx;
++			/*
++			 * In "ARGB888" (HWC32) mode, writing to the SRAM
++			 * requires these bits to contain:
++			 * 31:24 = alpha 23:16 = blue 15:8 = green 7:0 = red
++			 * So, it's actually ABGR8888.  This is independent
++			 * of the SWAPRB bits in DMA control register 0.
++			 */
+ 			val = (val & 0xff00ff00) |
+ 			      (val & 0x000000ff) << 16 |
+ 			      (val & 0x00ff0000) >> 16;
 -- 
 2.7.4
 
