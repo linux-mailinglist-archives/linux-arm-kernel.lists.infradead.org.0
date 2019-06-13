@@ -2,74 +2,72 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0EAC844F8D
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Jun 2019 00:51:34 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4E3B944FBC
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Jun 2019 01:01:10 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=zK9ZqwDQq47lPG7xnLbbVxzldmsLfA/QywZyZt1cjI0=; b=HSAMis5RheD9Wt
-	H6TqpchT4JcYUZ+otiE8jvrLT+LEUJiyCsVd+/cjUDwzucvqP9L4hcuW4AzKBSCaolg9OAkqtVogO
-	kxeUTbgdspj6K1gTZDUs7hSZBu4ftiR5MapE+aRK8iTYqpteoAw3hT6BCFgtSawkNMtELE+ariNMN
-	h8d2qLEGWmB3fjjOIXSDOTx+eabqoGhQGjy4kctHaJC+WiK3c8Lh9QcOKwWhSptxxi3SSlL3xRcaz
-	g4kj/3F0bWBd6pGUmUp7VW/TJDI+hELpzJAxTbotIT6KITSHYLrzrYE3XnG8VItVNOMrfwayycKDG
-	L6pWn89JLGQtUR08WJrw==;
+	List-Owner; bh=sIa3gCj+Pgewk0oe452jDx67P1YhDFx6UJtEg8fESZQ=; b=qWqdIE6Rtdbqwd
+	NM+rbb3VIDd8AYHCdOFwJpWMc09aF30mAAVoumj4I13U/cZ3aXEfrllL2XXXCfx3Eqp0F0Vnqn59o
+	uDIlqypmKNgBp7sAql4g31d9ts0N2i2bya/Vl++NwRGAI7YNPar5qCmu+a82D+krc+ELGQ5/367dA
+	gwxwScUDVvvHut9kBGfq2wEICHb5fIhbMiInBoh672RIVolDMHBkcWbhrnl2Qz6p+pb9NfACSlnUq
+	rx3j+BJA3HgaiFY9xkcKWLKZTsnx7FuqtyD9FBvzVEvrdnj83mg/l4eg5cg/R4nu5kap5Ss3/8bUO
+	y1u80RrwgrPLXHAx+Nfg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hbYZ7-0002Ip-KD; Thu, 13 Jun 2019 22:51:29 +0000
-Received: from mail-qt1-f194.google.com ([209.85.160.194])
+	id 1hbYiR-0006KG-9u; Thu, 13 Jun 2019 23:01:07 +0000
+Received: from mail-qt1-f196.google.com ([209.85.160.196])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hbYYv-0002Hn-FH
- for linux-arm-kernel@lists.infradead.org; Thu, 13 Jun 2019 22:51:19 +0000
-Received: by mail-qt1-f194.google.com with SMTP id z24so328204qtj.10
+ id 1hbYiI-0006JZ-Qj
+ for linux-arm-kernel@lists.infradead.org; Thu, 13 Jun 2019 23:01:00 +0000
+Received: by mail-qt1-f196.google.com with SMTP id p15so398427qtl.3
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 13 Jun 2019 15:51:16 -0700 (PDT)
+ Thu, 13 Jun 2019 16:00:58 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to:user-agent;
- bh=cv40RcWOMVy1JZtFpd3gJTvQihsNZLPm+qc6d4re47Q=;
- b=olrqsxBAQ+3LP06jYwzqaDJdfbqwXqFfjM+SwUyv7VDjDSW8XGkdvSIF55wRQk8hrb
- VQ+8Dv/2x1aIXpDqNYyPt809BrBYHFeFZGcUfQRTbDo8Q3pFcR3P7LBqRBx0opqOWHXN
- scXHdqg9R4XxKhKOqxatN9TmkYy62QPxNjmd+pWWce8Z0e5gx3XvMaM5Y0Co/yhPM1o1
- Rl/t7VDHimlqBnHuYJyEXOpB8I2CnctolOrSf5zhe4FQlFsgjAjJe1EUFVc1x4icJgu8
- BC0OsLt2vN/sDXG7RmatmW4DEifnmuQEVCGedvermCxWCDjkUZwHNF28SLR1dmUGawYD
- Kvvw==
-X-Gm-Message-State: APjAAAU0bxbzqQahIqUe2WSNVz5YlP1OoiqRL7mptHLQRgEsX71APHF9
- /kVXU20tnTNEJlbYt1wMzg==
-X-Google-Smtp-Source: APXvYqzyrbusjb6nMpbIGijvU32NhrU/T6DUb/Ee8K0MWe1C4b1O2CixCC2mnFnW35EKNJT+hN11+g==
-X-Received: by 2002:a0c:aecd:: with SMTP id n13mr5670753qvd.182.1560466275579; 
- Thu, 13 Jun 2019 15:51:15 -0700 (PDT)
+ bh=G79DWXHKgxClAySaL1um3UbwoRauIDKIz2yJHIv30Gg=;
+ b=o9q/wgOeoa50wHTiclnHrRKJw1xD0VJ2IQE/OioSy7mlwQsLnYjDDxneJvlKwOLFqA
+ eXorOKTbBE6xCof+zRB+8dL/N1bYUPPJclMUhd+zsYTTwLcMpfR8i2tNlZ4SevEJ2bbx
+ Nul0gLtUUn9dMHaFn9vnYJHoh8EsnoUnhKqkThzhdwdCDKJbEqgeSvPoNomGN2FFzaOP
+ YbIB22BrWQblKTt646do4UPVC/T6Ajy46EJznWg8Mpjc0XzezmHN0PjAEIqx6p1gshUv
+ QztSBY/kD/ngJ8kSIEcU2LBnd5TNlbDwzPXG9JFR/t4aiQPMgoLR5sbmwOArB3LX6VNo
+ 0NuQ==
+X-Gm-Message-State: APjAAAWOf+7knIloqq2JBaN3NhqZZSPgs9vJ50bFBTE5W8IMZTprThOa
+ 4/L90nH/oc1TRPjNOgBU2w==
+X-Google-Smtp-Source: APXvYqwO8MrRxA4IbLmzYlI+M/YrQOnAWJYgHuPsnvehk+Nb8nAc5Jq4q/qt4ywjdBg+E8zmH8NyaQ==
+X-Received: by 2002:a0c:aff8:: with SMTP id t53mr5602907qvc.47.1560466857634; 
+ Thu, 13 Jun 2019 16:00:57 -0700 (PDT)
 Received: from localhost ([64.188.179.243])
- by smtp.gmail.com with ESMTPSA id p23sm402566qkm.55.2019.06.13.15.51.14
+ by smtp.gmail.com with ESMTPSA id n5sm655080qta.29.2019.06.13.16.00.56
  (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Thu, 13 Jun 2019 15:51:15 -0700 (PDT)
-Date: Thu, 13 Jun 2019 16:51:14 -0600
+ Thu, 13 Jun 2019 16:00:56 -0700 (PDT)
+Date: Thu, 13 Jun 2019 17:00:55 -0600
 From: Rob Herring <robh@kernel.org>
-To: Stephen Boyd <swboyd@chromium.org>
-Subject: Re: [RFC/PATCH 1/5] reserved_mem: Add a devm_memremap_reserved_mem()
- API
-Message-ID: <20190613225114.GA16158@bogus>
-References: <20190517164746.110786-1-swboyd@chromium.org>
- <20190517164746.110786-2-swboyd@chromium.org>
+To: Peng Fan <peng.fan@nxp.com>
+Subject: Re: [RFC 1/2] dt-bindings: imx-ocotp: Add fusable-node property
+Message-ID: <20190613230055.GA19296@bogus>
+References: <20190520032020.7920-1-peng.fan@nxp.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190517164746.110786-2-swboyd@chromium.org>
+In-Reply-To: <20190520032020.7920-1-peng.fan@nxp.com>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190613_155117_508810_2805912E 
-X-CRM114-Status: GOOD (  10.57  )
+X-CRM114-CacheID: sfid-20190613_160058_875406_46FC5AE5 
+X-CRM114-Status: GOOD (  12.62  )
 X-Spam-Score: 0.8 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.8 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.160.194 listed in list.dnswl.org]
+ no trust [209.85.160.196 listed in list.dnswl.org]
  0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [209.85.160.194 listed in wl.mailspike.net]
+ [209.85.160.196 listed in wl.mailspike.net]
  0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
  in digit (robherring2[at]gmail.com)
  0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
@@ -92,35 +90,43 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, linux-arm-msm@vger.kernel.org,
- Will Deacon <will.deacon@arm.com>, linux-kernel@vger.kernel.org,
- Evan Green <evgreen@chromium.org>, Catalin Marinas <catalin.marinas@arm.com>,
- Dan Williams <dan.j.williams@intel.com>, linux-arm-kernel@lists.infradead.org
+Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ "festevam@gmail.com" <festevam@gmail.com>,
+ "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "srinivas.kandagatla@linaro.org" <srinivas.kandagatla@linaro.org>,
+ dl-linux-imx <linux-imx@nxp.com>,
+ "kernel@pengutronix.de" <kernel@pengutronix.de>,
+ "shawnguo@kernel.org" <shawnguo@kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, 17 May 2019 09:47:42 -0700, Stephen Boyd wrote:
-> We have a few drivers that need to get a reserved memory region, request
-> the region, and map the reserved memory with memremap(). Add an API to
-> do this all in one function call.
+On Mon, May 20, 2019 at 03:06:35AM +0000, Peng Fan wrote:
+> Introduce fusable-node property for i.MX OCOTP driver.
+> The property will only be used by Firmware(eg. U-Boot) to
+> runtime disable the nodes.
 > 
-> Cc: Evan Green <evgreen@chromium.org>
-> Cc: Rob Herring <robh+dt@kernel.org>
-> Cc: Bjorn Andersson <bjorn.andersson@linaro.org>
-> Cc: Andy Gross <agross@kernel.org>
-> Cc: Will Deacon <will.deacon@arm.com>
-> Cc: Catalin Marinas <catalin.marinas@arm.com>
-> Cc: Dan Williams <dan.j.williams@intel.com>
-> Signed-off-by: Stephen Boyd <swboyd@chromium.org>
+> Take i.MX6ULL for example, there are several parts that only
+> have limited modules enabled controlled by OCOTP fuse. It is
+> not flexible to provide several dts for the serval parts, instead
+> we could provide one device tree and let Firmware to runtime disable
+> the device tree nodes for those modules that are disable(fused).
+> 
+> Signed-off-by: Peng Fan <peng.fan@nxp.com>
 > ---
->  drivers/of/of_reserved_mem.c    | 45 +++++++++++++++++++++++++++++++++
->  include/linux/of_reserved_mem.h |  6 +++++
->  2 files changed, 51 insertions(+)
 > 
+> Currently NXP vendor use U-Boot to set status to disabled for devices
+> that could not function,
+> https://source.codeaurora.org/external/imx/uboot-imx/tree/arch/arm/mach-imx/mx6/module_fuse.c?h=imx_v2018.03_4.14.98_2.0.0_ga#n149
+> But this approach is will not work if kernel dts node path changed.
 
-Reviewed-by: Rob Herring <robh@kernel.org>
+Why would the path change? The DT should be stable.
+
+Rob
 
 _______________________________________________
 linux-arm-kernel mailing list
