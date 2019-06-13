@@ -2,70 +2,73 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 16B98442F1
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 13 Jun 2019 18:27:39 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8E6C7442F8
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 13 Jun 2019 18:28:00 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=u64Am9oeDfSV/qgdoDlB6sg91Q82TWhqntjHYDDcAtM=; b=O/Y
-	rREPwzMna9OG55r0B4YNs9co4LG/8nViNaG6xe7/Jz7SCRfvNbdi84FqGzm91f8KS6TRz/FPYxO9p
-	iOA6jXR6sYLEd5xa4HfzEy1nn1gyJsjRvzADcQAgGb3AflGSXkItAZnQvsaRZiPjAE5AV3n46YWu+
-	zBeXKU5CaaZp/x9Z9gG+Y4LdtIPinAlJrM79cM2b6zs9iXWweI3WbaCW+m+3Co/RFERHT2nS+n4WK
-	EjieFWIzaEMIzyj0t8ZBMDG5UZecxGOMs5FSJAGhoLNPO6+KiY5JJKU4/femNEO04K9T5yiNd+hT+
-	EeYOdUzQfSwZcSHyhs0a8PLud1zNSuQ==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=ph7RVB5GFbrD8Ea/2e/0Cx6V4ms98F8cNza5fk1IQT4=; b=TMHJlq1HpmNHiYckc7oMMms0C4
+	b8IDQtx7BuPomspI6/Hptzv7ptnXTD4aVRmOjjzyJuuQPxYep4B/v9hhv4yYJ2EQHTLY6qXvB3YrY
+	cX7pHlsUkvZTQQklVwo1J75GhfVoXnRl33Otvp1a0hbD/mbgy6y39UAFABQduvf/FekTdI/OSTI03
+	jm8XImg3jJ+ji2EqaRUV4pHYratZB3nzX12a7v8Ko4z8E2CJwBFM5/7cNZmJrcclXznItIm3coZsG
+	AY4YTMH/O7jw/Z6jROcT7Ut/zAEXkHJXnvWXoESd/DtCyBf+dooEbn6PPY1KDHnLP8ycGeawITm9g
+	6Z2ztt6Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hbSZZ-0002Xo-Kr; Thu, 13 Jun 2019 16:27:33 +0000
+	id 1hbSZv-0002rR-Ti; Thu, 13 Jun 2019 16:27:56 +0000
 Received: from mail-pg1-x543.google.com ([2607:f8b0:4864:20::543])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hbSZD-0002WR-54; Thu, 13 Jun 2019 16:27:12 +0000
-Received: by mail-pg1-x543.google.com with SMTP id s21so703974pga.12;
- Thu, 13 Jun 2019 09:27:10 -0700 (PDT)
+ id 1hbSZF-0002XT-It; Thu, 13 Jun 2019 16:27:15 +0000
+Received: by mail-pg1-x543.google.com with SMTP id p10so5392446pgn.1;
+ Thu, 13 Jun 2019 09:27:13 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id;
- bh=v6vzilPAtj2ODZwSW8fHlBGBIGUDcN2J3Si9o5NBA3E=;
- b=kAXXgwoguPvU4cAuhcaUgbXJuBSrc4pXZ01mFgLMVTiAUcb3NIkvnGdriEvuRYpcS4
- KCkN0/7AHFbsRxOm8x2szfUod289BCzSUB2ccFOtOVvhKdOyGMzy87Zl4dSeFroG+guL
- esu84wiMoP6w/H+9AVYLyYbjuEGjHZzfZcq2VaqLVuBVPuF438x9B/V4m6ISqtGWYOQM
- 8j/Kz0duNoACz0A3QT+4bKsgCn6EYE+p503sKJ0P7oLkeyri1jHoyoEfTeT7CCHRCAYz
- W6zqItpX7twXVXqsYxk+Veh+fw38UvbAkJGCbeVSGbdwoGav2hPr0WylW6UZnDsmRVLn
- tv3w==
+ h=from:to:cc:subject:date:message-id:in-reply-to:references;
+ bh=r1vy7DnzNlW7BikrT1aYtCzomLZ4jnCb1JSwMR9zHaI=;
+ b=ThcDxsm2Eo7zmQtLPSCGbD3aEVtad1mN6qL3VVuxd32Ezhy3h2gEuGJOB5igc6ejUi
+ 8Tw/ooqqLqbKROz4UOMjhfE+0MEUn+wzcvHJIUfQKqeT9ftOaehe0G+B+nbBVbIHDVCG
+ f12Z0/tv+bh6ILWIY35miZeb0HaDAZhrhYF/bc3ZRdYs2e6NTxF2QUwK7R0IUa2m1k2z
+ IjJPuVzLzzye9N56nP2N1bs1hGoe13ydtlOWdcuN3RsYcC/ZRq9v8wAUHczMA1ZUHWkr
+ aqy9QPNtz/dhG54rl5XGKA+aoI52ct7cgtVQGs+5afZ70qj8buSJASglXjK2dYttNmKf
+ ndig==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=v6vzilPAtj2ODZwSW8fHlBGBIGUDcN2J3Si9o5NBA3E=;
- b=FKw0qtFqfDze9TTmM6XUcwxetUNGeakbWGR5kZJ5ByxxPxWMgP4fSXTYbo/HHCT0sU
- d1S6zZvRAOPpzaqvNrPMnlWiTl/8kq9RyyuNnN4ZvzR2tH2cVmXLOOgyMBLRt90N4e61
- /vYc14Bsp74aGI0FpUbpo73vCufTbSdywW9S/Enpk9K87xufEbVvt3vzZ/no8hQoZbVs
- mo70C0ZW0q+VpWfoF1b4277DWCGNJCMCT+hCJIoXIAaRks8cv9QkdB5F12Rbf2aDPlbi
- 3YIjJdWagtrFT1PjHwY3SzMFC9uNOEiK9vuHJAI3RyqcsE+7pPPq3YJa904HFlotQ/be
- DaaQ==
-X-Gm-Message-State: APjAAAWz0k3YM3i2itIK5kWxffnJOVmCMEEio1YdXg8lPG9xivjY+vFe
- 5RuCdJ/iigodk9hsHNDb98c=
-X-Google-Smtp-Source: APXvYqzPxG4x6iJ3bSwjicFDgP/gbJZePtynT5+d9Kai+1QhkL96mw1oCJcSqEHcntuvftQRVXyDCg==
-X-Received: by 2002:a17:90a:db52:: with SMTP id
- u18mr6471125pjx.107.1560443229896; 
- Thu, 13 Jun 2019 09:27:09 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references;
+ bh=r1vy7DnzNlW7BikrT1aYtCzomLZ4jnCb1JSwMR9zHaI=;
+ b=NQ+K4IHrggJl0fAdczer/GwqQGm62JeNRI1OSnnXNe05JRamizd1jMEzr8XnzmpffR
+ X1m62ZMAd5q21lFu6XGmKJ+9Oruu+LmD/aMGBpcT+XXXCqcbWVupfarjWb/99kPYr/Ji
+ gAeiSSf4IQbiVN06J5QQVigjrLDkEpBlnyXp88O7cDYNOAwqQHZ9QYVrkpafdQQxrr/k
+ GddmFk4mZSvL+8kyoQ4zU/0yAJ2Smo0x3zWZ5v0DfX+fIFf1sw4l86awZsNCaWzRIKb3
+ +ZXOL3amvTWPiP4pUyTJxLfIqA2LNyycWdkG8U09vWX2U+zptpSeOPGWQ+huHV2wcqQo
+ OIkA==
+X-Gm-Message-State: APjAAAUVkYpMIBjGp2/m15HLGcevCkKoDUfLnXkcaV4Y10NNKEJ2khfS
+ SGdXGYrTktpUty1/NVqa4H8=
+X-Google-Smtp-Source: APXvYqxALl3rWY5oZWGDTc9ogW7qCDR1OKax63JMlYMjuaLbW+O6IMlBZCCBpt/Bp4dU5/yrELe38g==
+X-Received: by 2002:a17:90a:fa07:: with SMTP id
+ cm7mr6526915pjb.115.1560443233237; 
+ Thu, 13 Jun 2019 09:27:13 -0700 (PDT)
 Received: from localhost (68.168.130.77.16clouds.com. [68.168.130.77])
- by smtp.gmail.com with ESMTPSA id z186sm185768pfz.7.2019.06.13.09.27.08
+ by smtp.gmail.com with ESMTPSA id v9sm169586pfm.34.2019.06.13.09.27.12
  (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Thu, 13 Jun 2019 09:27:09 -0700 (PDT)
+ Thu, 13 Jun 2019 09:27:12 -0700 (PDT)
 From: Yangtao Li <tiny.windzz@gmail.com>
 To: joro@8bytes.org, m.szyprowski@samsung.com, kgene@kernel.org,
  krzk@kernel.org, will.deacon@arm.com, robin.murphy@arm.com,
  agross@kernel.org, david.brown@linaro.org, robdclark@gmail.com,
  heiko@sntech.de, thierry.reding@gmail.com, jonathanh@nvidia.com
-Subject: [PATCH 01/10] iommu/exynos: convert to SPDX license tags
-Date: Thu, 13 Jun 2019 12:26:54 -0400
-Message-Id: <20190613162703.986-1-tiny.windzz@gmail.com>
+Subject: [PATCH 02/10] iommu/io-pgtable: convert to SPDX license tags
+Date: Thu, 13 Jun 2019 12:26:55 -0400
+Message-Id: <20190613162703.986-2-tiny.windzz@gmail.com>
 X-Mailer: git-send-email 2.17.0
+In-Reply-To: <20190613162703.986-1-tiny.windzz@gmail.com>
+References: <20190613162703.986-1-tiny.windzz@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190613_092711_196006_0C55C39B 
-X-CRM114-Status: UNSURE (   8.49  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190613_092713_622166_27F81735 
+X-CRM114-Status: GOOD (  11.09  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -110,25 +113,33 @@ Updates license to use SPDX-License-Identifier.
 
 Signed-off-by: Yangtao Li <tiny.windzz@gmail.com>
 ---
- drivers/iommu/exynos-iommu.c | 5 +----
- 1 file changed, 1 insertion(+), 4 deletions(-)
+ drivers/iommu/io-pgtable.c | 13 +------------
+ 1 file changed, 1 insertion(+), 12 deletions(-)
 
-diff --git a/drivers/iommu/exynos-iommu.c b/drivers/iommu/exynos-iommu.c
-index 05c6bc099d62..938a33d2f89d 100644
---- a/drivers/iommu/exynos-iommu.c
-+++ b/drivers/iommu/exynos-iommu.c
-@@ -1,10 +1,7 @@
+diff --git a/drivers/iommu/io-pgtable.c b/drivers/iommu/io-pgtable.c
+index 5227cfdbb65b..3c84ff1901ea 100644
+--- a/drivers/iommu/io-pgtable.c
++++ b/drivers/iommu/io-pgtable.c
+@@ -1,18 +1,7 @@
 +// SPDX-License-Identifier: GPL-2.0
  /*
-  * Copyright (c) 2011,2016 Samsung Electronics Co., Ltd.
-  *		http://www.samsung.com
-- *
+  * Generic page table allocator for IOMMUs.
+  *
 - * This program is free software; you can redistribute it and/or modify
 - * it under the terms of the GNU General Public License version 2 as
 - * published by the Free Software Foundation.
-  */
- 
- #ifdef CONFIG_EXYNOS_IOMMU_DEBUG
+- *
+- * This program is distributed in the hope that it will be useful,
+- * but WITHOUT ANY WARRANTY; without even the implied warranty of
+- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+- * GNU General Public License for more details.
+- *
+- * You should have received a copy of the GNU General Public License
+- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+- *
+  * Copyright (C) 2014 ARM Limited
+  *
+  * Author: Will Deacon <will.deacon@arm.com>
 -- 
 2.17.0
 
