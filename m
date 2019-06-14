@@ -2,50 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4241145A98
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Jun 2019 12:39:42 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2E34B45A9A
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Jun 2019 12:39:59 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=dsA9ikcyHxc8XK2ZAc001UQNxM1Z0Iag5rNl5o7NHAY=; b=tTa
-	yVemPPJN2bbuzfwgZuXCq669MLC3h1e2VYpWfA75qn22Ce3HAy2cb9r+2FTC9sc4y2gL+Pp7JromJ
-	Nm9SgIOXlG7Irhl9s38fCFfMVBl8zMJy2PI66W9xiqY7SWkzL6u1hw6YKtokD3ohOCJv2o6MIa2d1
-	XKxpqQcLQvWNkN6RVgJhDVmDXXatkDDjwZT59V8sZoxq4H27dKMM6TBrje4/JFhuHAThEoYqHlPFC
-	o0HM3KDHNLUhS1X3Jp2J/JnQ2/8kaIjQXMJARLgwSsUhl6JXagxTtxN1G4Ygqvumf5ywzgPzBzcp5
-	dHoNK4Z5XliEzP0PurWepzVqutGjtYg==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=9vJQtK4PcpKiMcAV7yo/qP54JhN6bNnIi+NBBTIiqj8=; b=USHa5NeV7F1r07pClSjmE+usQt
+	Zp23FYpi7zsG8dpZig/YZ/Z+WHViGAvbglUeh0Str47lCLI704qIxkDpC8PKn7f/RIW2GmjnpHQDl
+	m+fuNc7kQUo+pVsR4ocxyZZ9G6FrvKnJ1lYBY3J2rqv9rv4Bmtlrn76ht7blnUD7Q3nPQoXGSLOMd
+	xRWH7haw/vzYt6glvjtzOLlX5ASynq68cb1CBnJ+3s39Ur+pS++3YzwBYb0aoCY7HKBa6MlsmoywN
+	L2j3N9ghJbs/XHEefu9Rns55wxvAFmkxIxEKwesNvxkD2+Q43wg7fdSRo9xbgNczBR1qajoRfQdTS
+	Un1TIfug==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hbjcO-0005dH-MU; Fri, 14 Jun 2019 10:39:36 +0000
+	id 1hbjcj-0005sp-Qk; Fri, 14 Jun 2019 10:39:57 +0000
 Received: from inva021.nxp.com ([92.121.34.21])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hbjc1-0005Za-Sw
+ id 1hbjc2-0005a2-D0
  for linux-arm-kernel@lists.infradead.org; Fri, 14 Jun 2019 10:39:15 +0000
 Received: from inva021.nxp.com (localhost [127.0.0.1])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 31CED200E7D;
- Fri, 14 Jun 2019 12:39:10 +0200 (CEST)
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id BCFD12003DA;
+ Fri, 14 Jun 2019 12:39:11 +0200 (CEST)
 Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
  [165.114.16.14])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id A81A12003DA;
- Fri, 14 Jun 2019 12:39:05 +0200 (CEST)
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 3C9E0200E7C;
+ Fri, 14 Jun 2019 12:39:07 +0200 (CEST)
 Received: from localhost.localdomain (mega.ap.freescale.net [10.192.208.232])
- by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 386C7402CA;
- Fri, 14 Jun 2019 18:39:00 +0800 (SGT)
+ by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 451ED4029F;
+ Fri, 14 Jun 2019 18:39:01 +0800 (SGT)
 From: Yangbo Lu <yangbo.lu@nxp.com>
 To: netdev@vger.kernel.org, "David S . Miller" <davem@davemloft.net>,
  Richard Cochran <richardcochran@gmail.com>,
  Rob Herring <robh+dt@kernel.org>, Shawn Guo <shawnguo@kernel.org>,
  Andrew Lunn <andrew@lunn.ch>
-Subject: [v2, 0/6] Reuse ptp_qoriq driver for dpaa2-ptp
-Date: Fri, 14 Jun 2019 18:40:49 +0800
-Message-Id: <20190614104055.43998-1-yangbo.lu@nxp.com>
+Subject: [v2, 1/6] ptp: add QorIQ PTP support for DPAA2
+Date: Fri, 14 Jun 2019 18:40:50 +0800
+Message-Id: <20190614104055.43998-2-yangbo.lu@nxp.com>
 X-Mailer: git-send-email 2.17.1
+In-Reply-To: <20190614104055.43998-1-yangbo.lu@nxp.com>
+References: <20190614104055.43998-1-yangbo.lu@nxp.com>
 X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190614_033914_072649_FF451DF2 
-X-CRM114-Status: UNSURE (   7.33  )
+X-CRM114-CacheID: sfid-20190614_033914_576026_43540EE1 
+X-CRM114-Status: UNSURE (   9.44  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -75,41 +78,35 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+This patch is to add QorIQ PTP support for DPAA2.
 Although dpaa2-ptp.c driver is a fsl_mc_driver which
-is using MC APIs for register accessing, it's same IP
-block with eTSEC/DPAA/ENETC 1588 timer.
-This patch-set is to convert to reuse ptp_qoriq driver by
-using register ioremap and dropping related MC APIs.
-However the interrupts could only be handled by MC which
-fires MSIs to ARM cores. So the interrupt enabling and
-handling still rely on MC APIs. MC APIs for interrupt
-and PPS event support are also added by this patch-set.
+is using MC APIs for register accessing, it's same
+IP block with eTSEC/DPAA/ENETC 1588 timer. We will
+convert to reuse ptp_qoriq driver by using register
+ioremap and dropping related MC APIs.
+Also allow to compile ptp_qoriq with COMPILE_TEST.
 
+Signed-off-by: Yangbo Lu <yangbo.lu@nxp.com>
 ---
 Changes for v2:
 	- Allowed to compile with COMPILE_TEST.
+---
+ drivers/ptp/Kconfig | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-Yangbo Lu (6):
-  ptp: add QorIQ PTP support for DPAA2
-  dpaa2-ptp: reuse ptp_qoriq driver
-  dt-binding: ptp_qoriq: support DPAA2 PTP compatible
-  arm64: dts: fsl: add ptp timer node for dpaa2 platforms
-  dpaa2-ptp: add interrupt support
-  MAINTAINERS: maintain DPAA2 PTP driver in QorIQ PTP entry
-
- .../devicetree/bindings/ptp/ptp-qoriq.txt          |   3 +-
- MAINTAINERS                                        |   9 +-
- arch/arm64/boot/dts/freescale/fsl-ls1088a.dtsi     |   8 +
- arch/arm64/boot/dts/freescale/fsl-ls208xa.dtsi     |   8 +
- arch/arm64/boot/dts/freescale/fsl-lx2160a.dtsi     |   8 +
- drivers/net/ethernet/freescale/dpaa2/Kconfig       |   3 +-
- drivers/net/ethernet/freescale/dpaa2/dpaa2-ptp.c   | 242 +++++++++++----------
- drivers/net/ethernet/freescale/dpaa2/dprtc-cmd.h   |  48 +++-
- drivers/net/ethernet/freescale/dpaa2/dprtc.c       | 191 ++++++++++++----
- drivers/net/ethernet/freescale/dpaa2/dprtc.h       |  62 ++++--
- drivers/ptp/Kconfig                                |   2 +-
- 11 files changed, 386 insertions(+), 198 deletions(-)
-
+diff --git a/drivers/ptp/Kconfig b/drivers/ptp/Kconfig
+index 9b8fee5..960961f 100644
+--- a/drivers/ptp/Kconfig
++++ b/drivers/ptp/Kconfig
+@@ -44,7 +44,7 @@ config PTP_1588_CLOCK_DTE
+ 
+ config PTP_1588_CLOCK_QORIQ
+ 	tristate "Freescale QorIQ 1588 timer as PTP clock"
+-	depends on GIANFAR || FSL_DPAA_ETH || FSL_ENETC || FSL_ENETC_VF
++	depends on GIANFAR || FSL_DPAA_ETH || FSL_DPAA2_ETH || FSL_ENETC || FSL_ENETC_VF || COMPILE_TEST
+ 	depends on PTP_1588_CLOCK
+ 	default y
+ 	help
 -- 
 2.7.4
 
