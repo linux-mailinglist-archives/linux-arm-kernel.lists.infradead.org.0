@@ -2,63 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BABFA45DE6
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Jun 2019 15:16:10 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8AAF945DFD
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Jun 2019 15:21:28 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=cpBGx8MyH4dY0rOq+/8o3aknU+sBqE0XB0g2U24Fqdc=; b=mgkFkwZkMq9FoF
-	6mN0eFvdXEphV/kblp4BvgEvtoeP00V8fT11JVn9i5T5TqoeKxzqQPntZR3FJMOtjvbUGCAE2GwOc
-	OmeGPm3w+OWv8g+hCqzvuI9VJLb54wGJ53M4DlrV8oC9Rl1QKLtCwjOvXh63koLVhUBh87yfPtluc
-	DwB97X+L0CwmSx9w58e6iS/K2Yq182nmuKV2UPQ3SmMOOoTItcoSo7+xP642U7HDu78v8Q1e9Pddt
-	A7jtn7RyJ3/Hm3Z/iKYvfvXm6XBcmopM1LTdISi/ypQxbaMZugjZaL5SV4Nfk1k1wwm4IngNoeMMC
-	j163Pqt+U04laP5Q0ToQ==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Oqa/U/CnmoSrUBPmSxTHpSR1XxxDn0ZeddMaCHl4pQE=; b=pqS2cQoB6IZM7L
+	nX0Y4OkiN8Az6XZX/KzOrc2FAgFJO0QHSTsd2IDkC5EqE/HNu2gRaoZjlWai7hJQCLuPQVK7xglic
+	X597ebO/UsrAR8X5l9ghGi7zvGIWKfDz3hQG/k7cpej5iezI/kEALxHQe5jQxlgx+RjwP8W8qjEeu
+	ox0zja2kIGcEx7B+CGHapstDvD71BbpnbK9lB2r787rmuHHhwmSxS6NETkz5dtbaNQYSXFdg3MvOJ
+	OrD8tSgWFyfpE0bOJOEULexhkctZCU6HzLKci6Lopbc19QejtXoj0W1WT7Ias6/4oGs8NC+lhCUo9
+	AjCZ4n/HgKuVToit1b4A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hbm3p-0005oz-UY; Fri, 14 Jun 2019 13:16:05 +0000
-Received: from ns.iliad.fr ([212.27.33.1])
+	id 1hbm8y-0007dD-4B; Fri, 14 Jun 2019 13:21:24 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hbm3g-0005oY-JJ
- for linux-arm-kernel@lists.infradead.org; Fri, 14 Jun 2019 13:15:58 +0000
-Received: from ns.iliad.fr (localhost [127.0.0.1])
- by ns.iliad.fr (Postfix) with ESMTP id 59A3E20A5C;
- Fri, 14 Jun 2019 15:15:53 +0200 (CEST)
-Received: from [192.168.108.49] (freebox.vlq16.iliad.fr [213.36.7.13])
- by ns.iliad.fr (Postfix) with ESMTP id 4555020C11;
- Fri, 14 Jun 2019 15:15:53 +0200 (CEST)
-Subject: Re: [PATCH v3 3/4] iommu/arm-smmu: Add support to handle Qcom's
- wait-for-safe logic
-To: Vivek Gautam <vivek.gautam@codeaurora.org>,
- Bjorn Andersson <bjorn.andersson@linaro.org>
-References: <20190612071554.13573-1-vivek.gautam@codeaurora.org>
- <20190612071554.13573-4-vivek.gautam@codeaurora.org>
-From: Marc Gonzalez <marc.w.gonzalez@free.fr>
-Message-ID: <6f85b50d-4ee8-d33a-37c9-72d45eb50a9d@free.fr>
-Date: Fri, 14 Jun 2019 15:15:53 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.6.1
+ id 1hbm8l-0007ci-Bs
+ for linux-arm-kernel@lists.infradead.org; Fri, 14 Jun 2019 13:21:12 +0000
+Received: from mail-qt1-f179.google.com (mail-qt1-f179.google.com
+ [209.85.160.179])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 89A4F21721
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 14 Jun 2019 13:21:10 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1560518470;
+ bh=zSqDfvTWi/91oRnFPmD+sDE1OD8meYbhenxAA0rkJpQ=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=R/OivYycKXCrR4qbnGPXhaeUCc8L4u/YFYrA52THSyhzc7IZ/wON5glZJ4BYkkz28
+ cM5y1K7zmj5znbVPQ+rM+TGktxk5HKIq8cBKMnjEirB7nBD5wAU2x7Zo2fEayOuA1b
+ 9uyJnkaPsk0m63CXpFrWN38NQwOUSd8J1wr282ZI=
+Received: by mail-qt1-f179.google.com with SMTP id i34so2373587qta.6
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 14 Jun 2019 06:21:10 -0700 (PDT)
+X-Gm-Message-State: APjAAAUUtgYFer9ZEUSqqGTJEkdh29FMU+RTud4PJwOPbDyrbc50u/9q
+ d3m7sGFjD+opvUh34qKRS9WHefd3MghF7sYNLA==
+X-Google-Smtp-Source: APXvYqwPY5Ii8d7b9MpE2fLLzqMQruglLqs18oegyUlcZ2uGTJsB4Rwfi7XLE6zjZcAEozwYHNHmqcKgnXfo9XquaAc=
+X-Received: by 2002:aed:3f10:: with SMTP id p16mr15589221qtf.110.1560518469746; 
+ Fri, 14 Jun 2019 06:21:09 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <20190612071554.13573-4-vivek.gautam@codeaurora.org>
-Content-Language: en-US
-X-Virus-Scanned: ClamAV using ClamSMTP ; ns.iliad.fr ;
- Fri Jun 14 15:15:53 2019 +0200 (CEST)
+References: <20190506123456.6777-1-peter.ujfalusi@ti.com>
+ <20190506123456.6777-10-peter.ujfalusi@ti.com>
+ <20190613181626.GA7039@bogus> <e0d6a264-96b5-31a6-e70b-3b1c2d863988@ti.com>
+In-Reply-To: <e0d6a264-96b5-31a6-e70b-3b1c2d863988@ti.com>
+From: Rob Herring <robh@kernel.org>
+Date: Fri, 14 Jun 2019 07:20:57 -0600
+X-Gmail-Original-Message-ID: <CAL_JsqJNMkKL_FubZfjKY6jLebMetmgR24EoendHoPM2ckrUQA@mail.gmail.com>
+Message-ID: <CAL_JsqJNMkKL_FubZfjKY6jLebMetmgR24EoendHoPM2ckrUQA@mail.gmail.com>
+Subject: Re: [PATCH 09/16] dt-bindings: dma: ti: Add document for K3 UDMA
+To: Peter Ujfalusi <peter.ujfalusi@ti.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190614_061556_789823_1DFAD906 
-X-CRM114-Status: GOOD (  10.42  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20190614_062111_463009_4BA9AB36 
+X-CRM114-Status: GOOD (  16.74  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [212.27.33.1 listed in list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (marc.w.gonzalez[at]free.fr)
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ 0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -70,51 +87,79 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: MSM <linux-arm-msm@vger.kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: Nishanth Menon <nm@ti.com>, devicetree@vger.kernel.org,
+ Grygorii Strashko <grygorii.strashko@ti.com>,
+ Lokesh Vutla <lokeshvutla@ti.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Tero Kristo <t-kristo@ti.com>, Tony Lindgren <tony@atomide.com>,
+ Vinod <vkoul@kernel.org>, Santosh Shilimkar <ssantosh@kernel.org>,
+ "open list:DMA GENERIC OFFLOAD ENGINE SUBSYSTEM" <dmaengine@vger.kernel.org>,
+ Dan Williams <dan.j.williams@intel.com>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 12/06/2019 09:15, Vivek Gautam wrote:
+On Thu, Jun 13, 2019 at 2:33 PM Peter Ujfalusi <peter.ujfalusi@ti.com> wrote:
+>
+> Rob,
+>
+> On 13/06/2019 21.16, Rob Herring wrote:
+> >> +Remote PSI-L endpoint
+> >> +
+> >> +Required properties:
+> >> +--------------------
+> >> +- ti,psil-base:             PSI-L thread ID base of the endpoint
+> >> +
+> >> +Within the PSI-L endpoint node thread configuration subnodes must present with:
+> >> +ti,psil-configX naming convention, where X is the thread ID offset.
+> >
+> > Don't use vendor prefixes on node names.
+>
+> OK.
+>
+> >> +
+> >> +Configuration node Required properties:
+> >> +--------------------
+> >> +- linux,udma-mode:  Channel mode, can be:
+> >> +                    - UDMA_PKT_MODE: for Packet mode channels (peripherals)
+> >> +                    - UDMA_TR_MODE: for Third-Party mode
+> >
+> > This is hardly a common linux thing. What determines the value here.
+>
+> Unfortunately it is.
 
-> This change is inspired by the downstream change from Patrick Daly
-> to address performance issues with display and camera by handling
-> this wait-for-safe within separte io-pagetable ops to do TLB
-> maintenance. So a big thanks to him for the change.
-> 
-> Without this change the UFS reads are pretty slow:
-> $ time dd if=/dev/sda of=/dev/zero bs=1048576 count=10 conv=sync
-> 10+0 records in
-> 10+0 records out
-> 10485760 bytes (10.0MB) copied, 22.394903 seconds, 457.2KB/s
-> real    0m 22.39s
-> user    0m 0.00s
-> sys     0m 0.01s
-> 
-> With this change they are back to rock!
-> $ time dd if=/dev/sda of=/dev/zero bs=1048576 count=300 conv=sync
-> 300+0 records in
-> 300+0 records out
-> 314572800 bytes (300.0MB) copied, 1.030541 seconds, 291.1MB/s
-> real    0m 1.03s
-> user    0m 0.00s
-> sys     0m 0.54s
+No, it's a feature of your h/w and in no way is something linux
+defined which is the point of 'linux' prefix.
 
-This issue does not affect msm8998, I presume?
+> Each channel can be configured to Packet or TR mode. For some
+> peripherals it is true that they only support packet mode, these are the
+> newer PSI-L native peripherals.
+> For these channels a udma-mode property would be correct.
+>
+> But we have legacy peripherals as well and they are serviced by PDMA
+> (which is a native peripheral designed to talk to the given legacy IP).
+> We can use either packet or TR mode in UDMAP to talk to PDMAs, it is in
+> most cases clear what to use, but for example for audio (McASP) channels
+> Linux is using TR channel because we need cyclic DMA while for example
+> RTOS is using Packet mode as it fits their needs better.
+>
+> Here I need to prefix the udma-mode with linux as the mode is used by
+> Linux, but other OS might opt to use different channel mode.
 
-Nevertheless, I see much lower performance on msm8998:
+So you'd need <os>,udma-mode? That doesn't work... If the setting is
+per OS, then it belongs in the OS because the same dtb should work
+across OS's.
 
-# dd if=/dev/sde of=/dev/null bs=1M status=progress
-3892314112 bytes (3.9 GB, 3.6 GiB) copied, 50.0042 s, 77.8 MB/s
+> The reason why this needs to be in the DT is that when the channel is
+> requested we need to configure the mode and it can not be swapped
+> runtime easily between Packet and TR mode.
 
-80 MB/s on msm8998 -- vs -- 300 MB/s on sdm845
+So when the client makes the channel request, why doesn't it specify the mode?
 
-Do you have the interconnect patches on sdm845 that allow boosting
-the clock/bandwidth for specific HW blocks?
-
-Regards.
+Rob
 
 _______________________________________________
 linux-arm-kernel mailing list
