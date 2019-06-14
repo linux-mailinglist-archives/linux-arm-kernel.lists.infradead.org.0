@@ -2,79 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A378546498
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Jun 2019 18:44:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 34072464B6
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Jun 2019 18:44:40 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=PUCMRGRubASXZsef6+G9c1AhMOg5u7CDlBghCHv6IUM=; b=LMx1kcJ9vit9Cx
-	OAOZIGg/B1JU/zhXLWx0rz6PuT7n6s0dglH6zK0Yl22yznxgTi/31Dl/wqw5F5HKNtFFvWzewwL32
-	BR+sPs5b7+gwSFbf1uh1Ke0ZIxU8ASOQQNc8362eCvVRRTvGx6egF5mLsAwwE3LACocS1r8UY/Ng4
-	12+TaBuIECH46oHz3QfaaAlbhSImrbKwDukwkuM3Lm+t16cxNMvlAo+iMQIw5IKm96b3ytHBE9YXr
-	tn533m1cTiuhY/LGL258sW1E9pncmbrzed6y0Qv/eKcIkeonN2l3yLerZ+KBwrJxAg+TTEuqYbODe
-	xvhDYEwPkORPPZg0t/kQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=0Anwn3JZbajQFqfon1U0Vmlvc4oVpIdyo6L4ReGuNvk=; b=l+UhkLLT7sbDzX
+	NQGyRxTpQGDOrhpJIKhGGf1xay3f7qundIu8XDlYz0/slhK7uDR2SDGj8hWt34xAyebxdT3ywF6nO
+	5sFQJnyjMWXijwgtHn/1/ScPNXsg7OtpeQ2vUbyCo7QsQ9y1KYcddXMq9fMkSS3bVv7RrVnjscVoW
+	PnfQ4HGdZv1WMMpJT0/orqwMHPFtE2VmzHlPp6k0MWZjWKIHvogrcWXl8Bas5XjwkzN0b4wYS4XMz
+	iGSjLC5NwvBeytK0lg36F5y4tsNxoM2qsS2eVuzMWM0oh5T317zuvePjVCj4bUG0A5cFy5R4MQeAZ
+	LgPvwghtyVgVsNvO/PCQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hbpIx-00073h-Gv; Fri, 14 Jun 2019 16:43:55 +0000
-Received: from mail-pg1-x542.google.com ([2607:f8b0:4864:20::542])
+	id 1hbpJe-0007oP-29; Fri, 14 Jun 2019 16:44:38 +0000
+Received: from mail-pf1-x441.google.com ([2607:f8b0:4864:20::441])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hbpIi-0006uj-SM
- for linux-arm-kernel@lists.infradead.org; Fri, 14 Jun 2019 16:43:42 +0000
-Received: by mail-pg1-x542.google.com with SMTP id s21so1839304pga.12
+ id 1hbpIo-00074K-8X
+ for linux-arm-kernel@lists.infradead.org; Fri, 14 Jun 2019 16:43:47 +0000
+Received: by mail-pf1-x441.google.com with SMTP id c85so1802434pfc.1
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 14 Jun 2019 09:43:40 -0700 (PDT)
+ Fri, 14 Jun 2019 09:43:45 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=amarulasolutions.com; s=google;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=YB8tvQ/A4LBfMdy9uXKQQ4D0KlkqxcG44woQEGvz30s=;
- b=qYxsx+A6S9zLLNTdR52vMXSYNC4esdZSFUMNrOleaGkevIAAzDbqGuI9GvOfXHTW0t
- K6MWIOyfG3XEJvM8gDFnZbOcCzjNuRKhwawvyODHKOUMtD9GlufynwBgS84+Dr6eR6EN
- zVUtAhESJK8BH/wZD1lA5elxAzgdFRasq3A6U=
+ h=from:to:cc:subject:date:message-id:in-reply-to:references
+ :mime-version:content-transfer-encoding;
+ bh=vlwa0s5nqheQS3zabJv02XXNAZF54w3RCaO1lz7mJ5Q=;
+ b=qyDQb+/76FQ6lTl+mdRWZykq7uCJj62GkbjTONISkaUVyPOfFAVxh65BAsgt6CPzut
+ 9ZhtdcgyXulLsQ1H3JMr+aIhTmdWStjDH33vZohhqIgSFCH9Bmt1KPxsjMRXuFEmqAAd
+ VsjLDD8ARz48aonbrS/nKu3429nfJ9hSppYtE=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=YB8tvQ/A4LBfMdy9uXKQQ4D0KlkqxcG44woQEGvz30s=;
- b=hS4k6sVTqcE8F+QefbtzIdI0lvxzcGW8gSdxp6aJ5x8qw9amdWc+2Bt5Ko2UXZ6yht
- 6uw8Q/KXu/vwz74jahD1yUB04+x58x+6PYuHf27IGpgJyM/V2YcNdPKRiRU5mPEzDYEm
- SJPV9xLkbJEGV5zh00PHCb06Rbhc2F+XpNHU7xrmNXor/y1SrywpDiMGYBzyqU6htN1n
- cBGqdCxZCBka6u7GUGkeUJHWhgS8nXIR5kppWEk+gLFtGlyqDiWaICWpZITCN5hU/1Bf
- 3YLiLwcjire+0UW1rblJUfqfdQ9PmQFVYvSlBiHzu5JZWGBk0ZY1kXTxEHTdvIsvhNA6
- uMLw==
-X-Gm-Message-State: APjAAAXMzyqUVTx8S1tFwucQNemsX4xgrXO3HdGgqdInLldvgcnCFGO5
- VcgNWVckeTdoakJm4H271785pA==
-X-Google-Smtp-Source: APXvYqwYXdTXpfDhGmQt8us4MjMKgpbr+c5sCD+q4V7paAN4sFr9nfOElG4ad8gQmXlIHo+aNGcOGQ==
-X-Received: by 2002:aa7:8c0f:: with SMTP id c15mr73672184pfd.113.1560530619784; 
- Fri, 14 Jun 2019 09:43:39 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references:mime-version:content-transfer-encoding;
+ bh=vlwa0s5nqheQS3zabJv02XXNAZF54w3RCaO1lz7mJ5Q=;
+ b=hbcADOAfD4fe1CeJw9SdfeOivdvDUAa1U+KSw3qaBRmZZ1VsqZokFwrFMGUidt3feO
+ 2/OfoGTy8ZOiB+k7h9/3PRgL62JTgv4z+x7kWdyet5Ho3eIPcu24XdKMtvc7KsfKNYEX
+ a5Axoam5uaOQ7OXlY/8Hz351ueGY9jwga38VfyuQRZcz7h0unPmhLNQHjUCo/RNnIpE4
+ JYPVXOWlQSiDOOSFl9nclo7sNyt8g34Kthm03AIdO26jhLrTR575Y4FIGBR1uwOPE5ZK
+ rRCagbyGnJI4IsdZVHFhZ+XuydS5p8YWOHJf6mddAzIR69gW2WkUSywSca0QAMB3+fod
+ 5EwQ==
+X-Gm-Message-State: APjAAAWeNoLTyD7sldy7GWWe55mfH97v3mERA/hSR+uI5xKKRmwPPrhf
+ FG4IehNR4Ki1tZwcrPGOaxlZLQ==
+X-Google-Smtp-Source: APXvYqzxQKiNS3nurPOM/V2GvxzGm9mKdD7TK0cz5nTv+lySbEQRBjB51s0f2UVYbHxtO6KpqnOlHw==
+X-Received: by 2002:a17:90a:af8e:: with SMTP id
+ w14mr12320434pjq.89.1560530625092; 
+ Fri, 14 Jun 2019 09:43:45 -0700 (PDT)
 Received: from localhost.localdomain ([115.97.180.18])
- by smtp.gmail.com with ESMTPSA id 85sm1639583pfv.130.2019.06.14.09.43.33
+ by smtp.gmail.com with ESMTPSA id 85sm1639583pfv.130.2019.06.14.09.43.40
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Fri, 14 Jun 2019 09:43:38 -0700 (PDT)
+ Fri, 14 Jun 2019 09:43:44 -0700 (PDT)
 From: Jagan Teki <jagan@amarulasolutions.com>
 To: Maxime Ripard <maxime.ripard@bootlin.com>, David Airlie <airlied@linux.ie>,
  Daniel Vetter <daniel@ffwll.ch>, Chen-Yu Tsai <wens@csie.org>,
  dri-devel@lists.freedesktop.org, linux-arm-kernel@lists.infradead.org,
  linux-kernel@vger.kernel.org, devicetree@vger.kernel.org,
  Jernej Skrabec <jernej.skrabec@siol.net>
-Subject: [PATCH v2 0/9] drm/sun4i: Allwinner R40 MIPI-DSI support
-Date: Fri, 14 Jun 2019 22:13:15 +0530
-Message-Id: <20190614164324.9427-1-jagan@amarulasolutions.com>
+Subject: [PATCH v2 1/9] dt-bindings: display: Add TCON LCD compatible for R40
+Date: Fri, 14 Jun 2019 22:13:16 +0530
+Message-Id: <20190614164324.9427-2-jagan@amarulasolutions.com>
 X-Mailer: git-send-email 2.18.0.321.gffc6fa0e3
+In-Reply-To: <20190614164324.9427-1-jagan@amarulasolutions.com>
+References: <20190614164324.9427-1-jagan@amarulasolutions.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190614_094341_067775_F6746694 
-X-CRM114-Status: GOOD (  10.76  )
+X-CRM114-CacheID: sfid-20190614_094346_332549_1448D033 
+X-CRM114-Status: GOOD (  10.97  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:542 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:441 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -104,50 +107,30 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This is v2 version for supporting MIPI-DSI on Allwinner R40 from
-initial version[4].
+Like TCON TV0, TV1 allwinner R40 has TCON LCD0, LCD1 which
+are managed via TCON TOP.
 
-The controller look similar like, Allwinnwe A64 so it has
-dependencies with A64 MIPI DSI changes, DSI fixes and R40 pwm 
-driver [1] [2] [3]. 
+Add tcon lcd compatible R40, the same compatible can handle
+TCON LCD0, LCD1.
 
-PLL-MIPI, dclk divders logic bpp/lanes are properly work for R40,
-like A31, A64.
+Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
+Acked-by: Chen-Yu Tsai <wens@csie.org>
+---
+ Documentation/devicetree/bindings/display/sunxi/sun4i-drm.txt | 1 +
+ 1 file changed, 1 insertion(+)
 
-Changes for v2:
-- drop tcon top lcd clock patch
-- add TODO text while adding tcon lcd support
-- add patch for registering tcon top clock gates in probe
-- change tcon-ch0 in tcon_lcd0 to CLK_TCON_LCD0
-- change mod clock in dphy to tcon_top with index 3 
-
-[1] https://patchwork.freedesktop.org/series/61310/
-[2] https://patchwork.freedesktop.org/series/60847/ 
-[3] https://lore.kernel.org/patchwork/cover/862766/ 
-[4] https://patchwork.freedesktop.org/series/62062/
-
-Any inputs?
-Jagan.
-
-Jagan Teki (9):
-  dt-bindings: display: Add TCON LCD compatible for R40
-  drm/sun4i: tcon: Add TCON LCD support for R40
-  ARM: dts: sun8i: r40: Use tcon top clock index macros
-  drm/sun4i: tcon_top: Use clock name index macros
-  drm/sun4i: tcon_top: Register clock gates in probe
-  dt-bindings: sun6i-dsi: Add R40 MIPI-DSI compatible (w/ A64 fallback)
-  dt-bindings: sun6i-dsi: Add R40 DPHY compatible (w/ A31 fallback)
-  ARM: dts: sun8i: r40: Add MIPI DSI pipeline
-  [DO NOT MERGE] ARM: dts: sun8i-r40: bananapi-m2-ultra: Enable Bananapi S070WV20-CT16 DSI panel
-
- .../bindings/display/sunxi/sun4i-drm.txt      |   1 +
- .../bindings/display/sunxi/sun6i-dsi.txt      |   2 +
- .../boot/dts/sun8i-r40-bananapi-m2-ultra.dts  |  36 ++++++
- arch/arm/boot/dts/sun8i-r40.dtsi              |  78 ++++++++++++-
- drivers/gpu/drm/sun4i/sun4i_tcon.c            |   8 ++
- drivers/gpu/drm/sun4i/sun8i_tcon_top.c        | 103 ++++++++++--------
- 6 files changed, 178 insertions(+), 50 deletions(-)
-
+diff --git a/Documentation/devicetree/bindings/display/sunxi/sun4i-drm.txt b/Documentation/devicetree/bindings/display/sunxi/sun4i-drm.txt
+index 31ab72cba3d4..9e9c7f934202 100644
+--- a/Documentation/devicetree/bindings/display/sunxi/sun4i-drm.txt
++++ b/Documentation/devicetree/bindings/display/sunxi/sun4i-drm.txt
+@@ -160,6 +160,7 @@ Required properties:
+    * allwinner,sun8i-a33-tcon
+    * allwinner,sun8i-a83t-tcon-lcd
+    * allwinner,sun8i-a83t-tcon-tv
++   * allwinner,sun8i-r40-tcon-lcd
+    * allwinner,sun8i-r40-tcon-tv
+    * allwinner,sun8i-v3s-tcon
+    * allwinner,sun9i-a80-tcon-lcd
 -- 
 2.18.0.321.gffc6fa0e3
 
