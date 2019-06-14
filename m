@@ -2,57 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 52FBA456F2
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Jun 2019 10:06:24 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2E9CE456F3
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Jun 2019 10:06:41 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=/1u6qcZ6sXM9AzUMpZzxOE2jepSdqfH3HwxwUoJYlqQ=; b=K7I
-	zaWLVuwCBrepavREn89KGMlnhIiU1whs4JQtqtOlUj0i1veyly5JY/q/9/44OyeB3vOboXPodi7NT
-	pPCWsDg+5jdgwoLUJdcwkn4bwSDfzVs8HOaJrqOSQbA6fPQ8Xp7qA25SNPrj1BG5HTFGOxjwrGTIm
-	C4GaiatQB2JaSQC0B7eGrsOm3cGlYjspyy3y1pk6awvx2e/zCYvS5aCXErreMNCGE1DWQZZUkbIFH
-	TZhAW1/c/owLgJQsIjFQwGHvy6d3xAEE3iWFXJxKCUi53WE3Xte+FarYl1DH2E2WcFqdk5Ep38Oa5
-	qds8aswIKPTS71eqTqsWEqSOFstBobg==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=z60hzZ2ygkDKia4PpqCQpy1+yKV7sg38BngKC/bc53A=; b=VV9BVFFEr+X5E66Vz/r/+YYM1G
+	vvz8RifRKoNgXIMQTeqcFCxuQ0NbdPNxqPsadK6RdMG/OI3QgUA3TxFUssRW1fq+HH6uC0dFJ1reo
+	A56o417LBVH70v6ddGAm26LsxrVkbsgpEX9Sbd46H4cXBRSy6eoLx1JHb90lmSjF11iiTc9Ql40V3
+	ViAw2hglw8sTvG/CUf4nNdMpW5rLM/wOs0Y0iDvQdszD91MPf0MEe7+l3Tzl12DlO7oVxFqPkhLq/
+	0DkHdEDxMR6TinVc5KIw+s9jr5GdxOTjz7cYhpn6F75HRNHpLa09sMHzkYX/y7Gm6oRvC7zvu9ll6
+	bzFJRfyw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hbhE5-0001ZC-2G; Fri, 14 Jun 2019 08:06:21 +0000
-Received: from inva021.nxp.com ([92.121.34.21])
+	id 1hbhEL-0001k0-Rn; Fri, 14 Jun 2019 08:06:37 +0000
+Received: from inva020.nxp.com ([92.121.34.13])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hbhDq-0001N0-92
- for linux-arm-kernel@lists.infradead.org; Fri, 14 Jun 2019 08:06:07 +0000
-Received: from inva021.nxp.com (localhost [127.0.0.1])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id AB11F200E44;
- Fri, 14 Jun 2019 10:06:02 +0200 (CEST)
+ id 1hbhDq-0001NO-Qd
+ for linux-arm-kernel@lists.infradead.org; Fri, 14 Jun 2019 08:06:08 +0000
+Received: from inva020.nxp.com (localhost [127.0.0.1])
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id C1BA31A05DC;
+ Fri, 14 Jun 2019 10:06:03 +0200 (CEST)
 Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
  [165.114.16.14])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 37E1C2005D2;
- Fri, 14 Jun 2019 10:05:58 +0200 (CEST)
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 435B91A0157;
+ Fri, 14 Jun 2019 10:05:59 +0200 (CEST)
 Received: from localhost.localdomain (mega.ap.freescale.net [10.192.208.232])
- by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id BE37C402A0;
- Fri, 14 Jun 2019 16:05:52 +0800 (SGT)
+ by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id C7ECB40310;
+ Fri, 14 Jun 2019 16:05:53 +0800 (SGT)
 From: Anson.Huang@nxp.com
 To: shawnguo@kernel.org, s.hauer@pengutronix.de, kernel@pengutronix.de,
  festevam@gmail.com, leonard.crestez@nxp.com, viresh.kumar@linaro.org,
  abel.vesa@nxp.com, linux-arm-kernel@lists.infradead.org,
  linux-kernel@vger.kernel.org
-Subject: [PATCH V2 1/2] soc: imx8: Fix potential kernel dump in error path
-Date: Fri, 14 Jun 2019 16:07:47 +0800
-Message-Id: <20190614080748.32997-1-Anson.Huang@nxp.com>
+Subject: [PATCH V2 2/2] soc: imx8: Use existing of_root directly
+Date: Fri, 14 Jun 2019 16:07:48 +0800
+Message-Id: <20190614080748.32997-2-Anson.Huang@nxp.com>
 X-Mailer: git-send-email 2.17.1
+In-Reply-To: <20190614080748.32997-1-Anson.Huang@nxp.com>
+References: <20190614080748.32997-1-Anson.Huang@nxp.com>
 X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190614_010606_464876_5BC917FE 
-X-CRM114-Status: GOOD (  10.80  )
+X-CRM114-CacheID: sfid-20190614_010607_004636_75EBC808 
+X-CRM114-Status: UNSURE (   7.97  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [92.121.34.21 listed in list.dnswl.org]
+ medium trust [92.121.34.13 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -75,71 +79,61 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Anson Huang <Anson.Huang@nxp.com>
 
-When SoC's revision value is 0, SoC driver will print out
-"unknown" in sysfs's revision node, this "unknown" is a
-static string which can NOT be freed, this will caused below
-kernel dump in later error path which calls kfree:
+There is common of_root for reference, no need to find it
+from DT again, use of_root directly to make driver simple.
 
-kernel BUG at mm/slub.c:3942!
-Internal error: Oops - BUG: 0 [#1] PREEMPT SMP
-Modules linked in:
-CPU: 2 PID: 1 Comm: swapper/0 Not tainted 5.2.0-rc4-next-20190611-00023-g705146c-dirty #2197
-Hardware name: NXP i.MX8MQ EVK (DT)
-pstate: 60000005 (nZCv daif -PAN -UAO)
-pc : kfree+0x170/0x1b0
-lr : imx8_soc_init+0xc0/0xe4
-sp : ffff00001003bd10
-x29: ffff00001003bd10 x28: ffff00001121e0a0
-x27: ffff000011482000 x26: ffff00001117068c
-x25: ffff00001121e100 x24: ffff000011482000
-x23: ffff000010fe2b58 x22: ffff0000111b9ab0
-x21: ffff8000bd9dfba0 x20: ffff0000111b9b70
-x19: ffff7e000043f880 x18: 0000000000001000
-x17: ffff000010d05fa0 x16: ffff0000122e0000
-x15: 0140000000000000 x14: 0000000030360000
-x13: ffff8000b94b5bb0 x12: 0000000000000038
-x11: ffffffffffffffff x10: ffffffffffffffff
-x9 : 0000000000000003 x8 : ffff8000b9488147
-x7 : ffff00001003bc00 x6 : 0000000000000000
-x5 : 0000000000000003 x4 : 0000000000000003
-x3 : 0000000000000003 x2 : b8793acd604edf00
-x1 : ffff7e000043f880 x0 : ffff7e000043f888
-Call trace:
- kfree+0x170/0x1b0
- imx8_soc_init+0xc0/0xe4
- do_one_initcall+0x58/0x1b8
- kernel_init_freeable+0x1cc/0x288
- kernel_init+0x10/0x100
- ret_from_fork+0x10/0x18
-
-This patch fixes this potential kernel dump when a chip's
-revision is "unknown", it is done by checking whether the
-revision space can be freed.
-
-Fixes: a7e26f356ca1 ("soc: imx: Add generic i.MX8 SoC driver")
 Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
+Reviewed-by: Dong Aisheng <aisheng.dong@nxp.com>
 ---
-Changes since V1:
-	- still need the "unknown" info for revision to avoid confusion, so fix this issue
-	  by checking whether the revision space can be freed before freeing it.
+No changes.
 ---
- drivers/soc/imx/soc-imx8.c | 3 ++-
- 1 file changed, 2 insertions(+), 1 deletion(-)
+ drivers/soc/imx/soc-imx8.c | 9 ++-------
+ 1 file changed, 2 insertions(+), 7 deletions(-)
 
 diff --git a/drivers/soc/imx/soc-imx8.c b/drivers/soc/imx/soc-imx8.c
-index 02309a2..5c7f330 100644
+index 5c7f330..b459bf2 100644
 --- a/drivers/soc/imx/soc-imx8.c
 +++ b/drivers/soc/imx/soc-imx8.c
-@@ -155,7 +155,8 @@ static int __init imx8_soc_init(void)
- 	return 0;
+@@ -105,7 +105,6 @@ static int __init imx8_soc_init(void)
+ {
+ 	struct soc_device_attribute *soc_dev_attr;
+ 	struct soc_device *soc_dev;
+-	struct device_node *root;
+ 	const struct of_device_id *id;
+ 	u32 soc_rev = 0;
+ 	const struct imx8_soc_data *data;
+@@ -117,12 +116,11 @@ static int __init imx8_soc_init(void)
  
- free_rev:
--	kfree(soc_dev_attr->revision);
-+	if (strcmp(soc_dev_attr->revision, "unknown"))
-+		kfree(soc_dev_attr->revision);
+ 	soc_dev_attr->family = "Freescale i.MX";
+ 
+-	root = of_find_node_by_path("/");
+-	ret = of_property_read_string(root, "model", &soc_dev_attr->machine);
++	ret = of_property_read_string(of_root, "model", &soc_dev_attr->machine);
+ 	if (ret)
+ 		goto free_soc;
+ 
+-	id = of_match_node(imx8_soc_match, root);
++	id = of_match_node(imx8_soc_match, of_root);
+ 	if (!id) {
+ 		ret = -ENODEV;
+ 		goto free_soc;
+@@ -147,8 +145,6 @@ static int __init imx8_soc_init(void)
+ 		goto free_rev;
+ 	}
+ 
+-	of_node_put(root);
+-
+ 	if (IS_ENABLED(CONFIG_ARM_IMX_CPUFREQ_DT))
+ 		platform_device_register_simple("imx-cpufreq-dt", -1, NULL, 0);
+ 
+@@ -159,7 +155,6 @@ static int __init imx8_soc_init(void)
+ 		kfree(soc_dev_attr->revision);
  free_soc:
  	kfree(soc_dev_attr);
- 	of_node_put(root);
+-	of_node_put(root);
+ 	return ret;
+ }
+ device_initcall(imx8_soc_init);
 -- 
 2.7.4
 
