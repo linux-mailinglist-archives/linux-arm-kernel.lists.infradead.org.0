@@ -2,81 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DAEF346CED
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 15 Jun 2019 01:26:29 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 00E1646CEF
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 15 Jun 2019 01:26:49 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:References
 	:In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=f99y4rpsj4hhsE3/aAP9KH9z5q77QV0UQAbk6UVmcjE=; b=SrpIoG35b0onWd
-	Sx9DOJP8IBhNDWdGCwEj5soxppjfLnb+OiPc5gfmjQR+M7F0n03XnrvZBxMYZkicRrUwOex9HXq/B
-	0+6fbhh2r/tVADv25f02h5TDuaVvvR/lN8eaZr9mNRAaXvY7HvGUzUkD1tn8mCabsGV6ktTo2O9Lt
-	+yQ0h5SN43WBR1EVOTYei1JHyPvHsXJLLopbGBZI5iaGjD2cCWyTb8rPQxwRr7aeimrbuBy+I3UYL
-	G4Dm0LYXBWCRs4WnbAVdKyduGOPO39sJtuK+JtaGMcikaXF0qsj085Pk3FwFQhdZBAgbqhsafgHVm
-	Zfs4Ymvnn9MQBOVJ2Iwg==;
+	List-Owner; bh=gQ1jdKiycjSyRsT6579W197jkc0+4OiiNhjihhXeLsk=; b=aBMsaQ7LUxdsAN
+	YdOoOlIYIjQvBg0as3oC0pa8Ov1qD6cUX66skvwQyob26ZfHmmNfH9FPylRy75NxqGEJ5SVgQ8rwJ
+	dOgB24Wxu+CIE9Li8qBoQAQl082kjuc8Rdkk378Z6d0JGTVsqw3W7Vl6yI7SCzKqyYxBznzD4c5qV
+	MYE3jQzWl1wvaPfnh3IJy8SwDnoyj5KOQTGh3koygQDoWr1K/jJCda+C9D3Z4yDr/LDhmDoSLd9Co
+	Xl8wAWTFeUhAeX25eBl32uEtUT7Mw3PGyrq3KnaOQkNpdbhS6N/zLSbVF7i78HDV8lKr5ZHgOzFOC
+	u/ZQ0NNPRaeKx8SnrLKA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hbvaS-0001Ha-L0; Fri, 14 Jun 2019 23:26:24 +0000
-Received: from mail-pf1-x444.google.com ([2607:f8b0:4864:20::444])
+	id 1hbvao-0001YN-73; Fri, 14 Jun 2019 23:26:46 +0000
+Received: from mail-pl1-x644.google.com ([2607:f8b0:4864:20::644])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hbvaI-0001HF-6A
- for linux-arm-kernel@lists.infradead.org; Fri, 14 Jun 2019 23:26:15 +0000
-Received: by mail-pf1-x444.google.com with SMTP id x15so2295732pfq.0
+ id 1hbvaV-0001TI-4s
+ for linux-arm-kernel@lists.infradead.org; Fri, 14 Jun 2019 23:26:28 +0000
+Received: by mail-pl1-x644.google.com with SMTP id i2so1603904plt.1
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 14 Jun 2019 16:26:14 -0700 (PDT)
+ Fri, 14 Jun 2019 16:26:27 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=baylibre-com.20150623.gappssmtp.com; s=20150623;
  h=from:to:cc:subject:in-reply-to:references:date:message-id
- :mime-version; bh=X0PaE8UgoSXCd5aH+z1B3Qe35NkfrQQNqk1NT+8oFYY=;
- b=I6dxrrNm0Se40AINnZKnyGQJ06/YQci/tt03JWr+PGNRuMl/6+Hov9DrEm575HWHSk
- V9VysQXgsdArAItkM+P5p30FxsyGS/OvIHA3GVfrNLcMkTCzNth27BnGvGSecv/UYYKe
- m9mar59Z3WQJDD07KEadz1JVDhXTqioVAc5hMvLtwLL+o8a+bpXrIp9mX6HH7q23UK5x
- vmI6E85am3K1i3hm3pxlQDrXPuhAieTErM2TOkN9pgigqOT+yT9orTFLscdibRzdfVZg
- B5ebeZydNzHStUkxJ6nfO9mwZstU/6PqUqqlSIYlJ+KqWtdXZn9hRwFlSVyKEOUOh2tJ
- grLw==
+ :mime-version; bh=txevGFdZuzBEDJGiWgJSEl3KtJMa2A1EwegQ2ClWo7Q=;
+ b=ZeLyUTv0uYJ5hEPB7IEAFeiDjo7xDzKAvcGAl5pLbVYX7Le3G2x6V+kc+HKai82pKb
+ KG2ze4kSons5LiQdoZW568SCESgX2Fa81ZPT4f90AkBercg6UABHZhjMl/NLPAU8C71a
+ FLlPUcFVktoDfDyUEPwzlVS00DTHdHPQpD07mE7Sv8SumaVbnGe0JYvyJy0YA+9D/b9M
+ uCOIILN48ezUlW5gQTzCMZh0oWZ0vMryGFBNotSmHJUDRT4CTmAb8ccpXuERhvH/NEY+
+ RvxS9N2hWMHaxZkh7secmk9YrRNLKTij1eT4Mx5y3kDiuyQwPMOCvaXfbEtJ+lhYSse2
+ UWcw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:in-reply-to:references:date
  :message-id:mime-version;
- bh=X0PaE8UgoSXCd5aH+z1B3Qe35NkfrQQNqk1NT+8oFYY=;
- b=BZn6Mzf6/p2fWE0kWT/zcF4dFE1TZfPohB4j7FATmV0+Xz0cDdGK+1u00f+EH/6wEj
- EfeGN2Hce9xc2DuZK1xONBg7bKoFqyCmxRK1Hg5Q1IfKAzh3b7REQmBoKnsmOXdN7YJ3
- ANvEVDENtisaNFPgQ8uipwIKU4wcrZuYBhrPDrFY+R7KQt1rkQz82v8B77auF4bTBlbr
- uWh1KUxi1Oq88eptx4ZQhvtijaWZqFoyvwp78hiWuEWad3WAhgEuj44unhESwRUHhAVp
- KoycipSQWoUU/kLzQ1KptihBgv1u9a6gDfz1PXlqm0oix+JgsYNDr1pHNr/AUEelXvWu
- FFsQ==
-X-Gm-Message-State: APjAAAUAmmTClfbv6cTQ4kNIoBeEEQVNYOlZiL19M6Djmpn6OMBLO54Y
- ImZXwmue9o3wont66CC/oElg1w==
-X-Google-Smtp-Source: APXvYqzPsMayZPDa651TozhfBKS4Z0Ea6ktolXjYCwX53TQIkUwRp3PKK3Daaxs62z9Bgmauuz/pVA==
-X-Received: by 2002:a17:90a:9503:: with SMTP id
- t3mr13459977pjo.47.1560554773640; 
- Fri, 14 Jun 2019 16:26:13 -0700 (PDT)
+ bh=txevGFdZuzBEDJGiWgJSEl3KtJMa2A1EwegQ2ClWo7Q=;
+ b=ScCTOkpfjC9l35OzmbOM8x+K3W/0TLWNXWrDXmxoCMUKnyH5/u71oe4yIIMYob6Vid
+ qOuYkJ8h3hziSXshutDCkr+dqUna8lKi16Qrs7oQSrrGVm1kwWnRapbkZG+A2THZ6D0b
+ HeHXVuiSphaS3fudzID1wOjIDpvNtPvtrVR2+uKSJFa7men7tKrp32ysBKaeJsKCn+NX
+ KCqM02MLGw02pD0XhzQWXgQUk/CRk0f+KwUxi4oj0TWAehs374mWNOKZWip5L/+KGVXg
+ nwCF/Rjbn2bELvVnmB/BXkisJFiRZ7Y8YIQlzxwdtuNl/GDhiWeq2Lz0kgETIncTJnb0
+ mmEw==
+X-Gm-Message-State: APjAAAUisQnnvNxwtPRiiCaAW9+bY9uH1S/jyt6/usWfuQ7EK/EO/W6L
+ R4s2Rh6zUiX/jXbZJpqqY716oA==
+X-Google-Smtp-Source: APXvYqzm5PDiqQqzsIvfn/LmZzXIR8BpV5+IdKHziBqsEa3r1EdH/tZs9utNM8iLfpFvrT8HIxiL1w==
+X-Received: by 2002:a17:902:760a:: with SMTP id
+ k10mr75503097pll.83.1560554786407; 
+ Fri, 14 Jun 2019 16:26:26 -0700 (PDT)
 Received: from localhost (c-71-197-186-152.hsd1.wa.comcast.net.
- [71.197.186.152]) by smtp.googlemail.com with ESMTPSA id
- e184sm7032630pfa.169.2019.06.14.16.26.12
+ [71.197.186.152])
+ by smtp.googlemail.com with ESMTPSA id a3sm4508235pje.3.2019.06.14.16.26.24
  (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Fri, 14 Jun 2019 16:26:12 -0700 (PDT)
+ Fri, 14 Jun 2019 16:26:25 -0700 (PDT)
 From: Kevin Hilman <khilman@baylibre.com>
 To: Neil Armstrong <narmstrong@baylibre.com>, jbrunet@baylibre.com
-Subject: Re: [PATCH] arm64: dts: meson-g12b-odroid-n2: add sound card
-In-Reply-To: <20190611143120.25074-1-narmstrong@baylibre.com>
-References: <20190611143120.25074-1-narmstrong@baylibre.com>
-Date: Fri, 14 Jun 2019 16:26:12 -0700
-Message-ID: <7h8su3eokr.fsf@baylibre.com>
+Subject: Re: [PATCH] arm64: dts: meson-g12a-x96-max: add sound card
+In-Reply-To: <20190611150101.30413-1-narmstrong@baylibre.com>
+References: <20190611150101.30413-1-narmstrong@baylibre.com>
+Date: Fri, 14 Jun 2019 16:26:24 -0700
+Message-ID: <7h5zp7eokf.fsf@baylibre.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190614_162614_232104_1CCAFEBE 
-X-CRM114-Status: UNSURE (   9.26  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190614_162627_202287_1A740D49 
+X-CRM114-Status: GOOD (  10.28  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:444 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:644 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -103,8 +102,9 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 Neil Armstrong <narmstrong@baylibre.com> writes:
 
-> Enable the sound card on the Hardkernel Odroid-N2, enabling HDMI output
-> using the TDM interface B, being aligned on other boards sound cards.
+> Enable the sound card on the X96 Max, enabling HDMI output using the
+> TDM interface B, being aligned on other boards sound cards.
+> SPDI/F support is also enabled to the physical toslink port and to HDMI.
 >
 > The internal DAC connected to the audio jack will be added later on, when
 > driver support is added.
@@ -135,7 +135,7 @@ Neil Armstrong <narmstrong@baylibre.com> writes:
 >
 > Signed-off-by: Neil Armstrong <narmstrong@baylibre.com>
 
-Queued for v5.3, 
+Queued for v5.3,
 
 Thanks,
 
