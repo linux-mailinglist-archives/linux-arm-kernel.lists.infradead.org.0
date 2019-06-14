@@ -2,55 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A6CC646089
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Jun 2019 16:22:51 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 50B7946097
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Jun 2019 16:24:28 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/iVmkSM6ZGG1bm0ovWc7NtsxLx+gibTTg1rw1so8Rm0=; b=P/pRHcdWe605Gz
-	Fu1o2Pe8JxH/tTYFsXVcwJKuwGcsCkUhksvajceeGrVTuDUhqDtfjjd9sE3Zn331EFP5veaOkN9fl
-	Scbc8rmo7GSc+id85DInREM5hPBA8NVyh2NN0dRyCRFVlkpp1uubxgPg09E05enHwSq4jtQNo3dQa
-	U8MlSAqqEGhO4IPzoz63jYH4DtwyiPFNQTOFAKxpHt5y8Ne9i5srNz4s3HCk1vtGqb/M63SCAUYWb
-	e7bvUC/m/lS7slxjJLK8gFhFKZvtkVgjr7u30tBg4iJBZKUVnCuy4SupyxP3uBpT2uRwgx0u0db2u
-	eyGAILLDrNfGvhADZHxg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=T43Sff9ayarc3UrKsXOrqE7tNOJIaScaIiMQ6GYIasc=; b=YPU78tsYQYIOASLWPTLWAav7n
+	Jnosc9OgvA9kf4MhgyxuM8IkWgclkOJreBAsp4P70qsrPxqaVLXqk89Hc+BJw6N1f2l2udkmqQipv
+	YTnyyFQ7AFXa/QRxvKOSZvY3phJcoG2tMKEgQWN3li8rd9wrigtOz879XQc+rqoYlbIvpSiGJDrJ3
+	oV4gQlKjHH8hk7Esr2FzvkVIeyKfIeDLVTfD7ItzHx7TObLscdHrKwZJsRZYV8ztFBmb7AE8djpWe
+	vji5x0fJR51JEiBFKoXMhY+fk3ISEATUuTcl2QqeAuBrF0oHiyQUufF7/kkvSxSKsTTXFNY2yIb8G
+	7skmtvLzw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hbn6P-0003AU-Bc; Fri, 14 Jun 2019 14:22:49 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hbn6H-0003A3-2U
- for linux-arm-kernel@lists.infradead.org; Fri, 14 Jun 2019 14:22:42 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 0FA17344;
- Fri, 14 Jun 2019 07:22:40 -0700 (PDT)
-Received: from fuggles.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
- [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 8BF923F246;
- Fri, 14 Jun 2019 07:22:38 -0700 (PDT)
-Date: Fri, 14 Jun 2019 15:22:31 +0100
-From: Will Deacon <will.deacon@arm.com>
-To: Anisse Astier <aastier@freebox.fr>
-Subject: Re: [PATCH] arm64/sve: <uapi/asm/ptrace.h> should not depend on
- <uapi/linux/prctl.h>
-Message-ID: <20190614142231.GA29231@fuggles.cambridge.arm.com>
-References: <20190613163801.21949-1-aastier@freebox.fr>
- <20190613171432.GA2790@e103592.cambridge.arm.com>
- <20190614112222.GA47082@anisse-station>
+	id 1hbn7y-0003Tg-DQ; Fri, 14 Jun 2019 14:24:26 +0000
+Received: from relay4-d.mail.gandi.net ([217.70.183.196])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hbn7l-0003TL-1f
+ for linux-arm-kernel@lists.infradead.org; Fri, 14 Jun 2019 14:24:15 +0000
+X-Originating-IP: 90.88.23.150
+Received: from localhost (aaubervilliers-681-1-81-150.w90-88.abo.wanadoo.fr
+ [90.88.23.150]) (Authenticated sender: maxime.ripard@bootlin.com)
+ by relay4-d.mail.gandi.net (Postfix) with ESMTPSA id 61125E0019;
+ Fri, 14 Jun 2019 14:24:06 +0000 (UTC)
+Date: Fri, 14 Jun 2019 16:24:06 +0200
+From: Maxime Ripard <maxime.ripard@bootlin.com>
+To: Jagan Teki <jagan@amarulasolutions.com>
+Subject: Re: [PATCH v6 11/22] clk: sunxi-ng: a64: Add minimum rate for PLL_MIPI
+Message-ID: <20190614142406.ybdiqfppo5mc5bgq@flea>
+References: <20190124195900.22620-1-jagan@amarulasolutions.com>
+ <20190124195900.22620-12-jagan@amarulasolutions.com>
+ <20190125212433.ni2jg3wvpyjazlxf@flea>
+ <CAMty3ZAsH2iZ+JEqTE3D58aXfGuhMSg9YoO56ZhhOeE4c4yQHQ@mail.gmail.com>
+ <20190129151348.mh27btttsqcmeban@flea>
+ <CAMty3ZAjAoti8Zu80c=OyCA+u-jtQnkidsKSNz_c2OaRswqc3w@mail.gmail.com>
+ <20190201143102.rcvrxstc365mezvx@flea>
+ <CAMty3ZC3_+z1upH4Y08R1z=Uq1C=OpWETNrBO8nGRoHhuNrHSA@mail.gmail.com>
+ <20190605064933.6bmskkxzzgn35xz7@flea>
+ <CAMty3ZCCP=oCqm5=49BsjwoxdDETgBfU_5g8fQ=bz=iWApV0tw@mail.gmail.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190614112222.GA47082@anisse-station>
-User-Agent: Mutt/1.11.1+86 (6f28e57d73f2) ()
+In-Reply-To: <CAMty3ZCCP=oCqm5=49BsjwoxdDETgBfU_5g8fQ=bz=iWApV0tw@mail.gmail.com>
+User-Agent: NeoMutt/20180716
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190614_072241_160755_D12A7FAD 
-X-CRM114-Status: GOOD (  20.09  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190614_072413_407804_36C6C4F0 
+X-CRM114-Status: GOOD (  36.64  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [217.70.183.196 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -65,73 +70,214 @@ List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: Mark Rutland <mark.rutland@arm.com>,
- Catalin Marinas <catalin.marinas@arm.com>, Rich Felker <dalias@aerifal.cx>,
- linux-kernel@vger.kernel.org, Kristina Martsenko <kristina.martsenko@arm.com>,
- "Dmitry V . Levin" <ldv@altlinux.org>, Ricardo Salveti <ricardo@foundries.io>,
- Richard Henderson <richard.henderson@linaro.org>,
- Dave Martin <Dave.Martin@arm.com>, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+ devicetree <devicetree@vger.kernel.org>, David Airlie <airlied@linux.ie>,
+ Michael Turquette <mturquette@baylibre.com>,
+ linux-sunxi <linux-sunxi@googlegroups.com>,
+ linux-kernel <linux-kernel@vger.kernel.org>,
+ dri-devel <dri-devel@lists.freedesktop.org>, Chen-Yu Tsai <wens@csie.org>,
+ Rob Herring <robh+dt@kernel.org>, Daniel Vetter <daniel@ffwll.ch>,
+ Michael Trimarchi <michael@amarulasolutions.com>,
+ linux-amarula <linux-amarula@amarulasolutions.com>,
+ linux-clk <linux-clk@vger.kernel.org>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Content-Type: multipart/mixed; boundary="===============4152218842366422490=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Anisse, Dave,
 
-On Fri, Jun 14, 2019 at 01:22:22PM +0200, Anisse Astier wrote:
-> On Thu, Jun 13, 2019 at 06:14:44PM +0100, Dave Martin wrote:
-> > On Thu, Jun 13, 2019 at 06:38:01PM +0200, Anisse Astier wrote:
-> > > -#define SVE_PT_VL_INHERIT		(PR_SVE_VL_INHERIT >> 16)
-> > > -#define SVE_PT_VL_ONEXEC		(PR_SVE_SET_VL_ONEXEC >> 16)
-> > > +#define SVE_PT_VL_INHERIT		(1 << 1) /* PR_SVE_VL_INHERIT */
-> > > +#define SVE_PT_VL_ONEXEC		(1 << 2) /* PR_SVE_SET_VL_ONEXEC */
-> > 
-> > Makes sense, but...
-> > 
-> > Since sve_context.h was already introduced to solve a closely related
-> > problem, I wonder whether we can provide shadow definitions there,
-> > similarly to way the arm64/include/uapi/asm/ptrace.h definitions are
-> > derived.  Although it's a slight abuse of that header, I think that
-> > would be my preferred approach.
-> 
-> Yes I saw this, and I considered doing something similar. But, those
-> defines are in uapi/linux/prctl.h, which does not include any asm/*.h
-> header. This would have then required adding a full infrastructure for
-> asm/prctl.h (that could then include sve_context.h for example), which
-> does not exist yet, instead of copying these two values.
+--===============4152218842366422490==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="npvcnqi5yg4bofaa"
+Content-Disposition: inline
 
-x86 appears to have an asm/prctl.h implementation, but it's not included
-by anybody so I guess that doesn't really help us here.
 
-> Since this is part of the kernel-userspace ABI, I don't see this values
-> changing anytime soon, which is why I thought copying them shouldn't be
-> a big issue.
+--npvcnqi5yg4bofaa
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
 
-Certainly not a big issue, just that the harder we make this to change
-the better.
+On Wed, Jun 05, 2019 at 01:03:16PM +0530, Jagan Teki wrote:
+> On Wed, Jun 5, 2019 at 12:19 PM Maxime Ripard <maxime.ripard@bootlin.com> wrote:
+> >
+> > Hi,
+> >
+> > I've reordered the mail a bit to work on chunks
+> >
+> > On Fri, May 24, 2019 at 03:37:42PM +0530, Jagan Teki wrote:
+> > > > I wish it was in your commit log in the first place, instead of having
+> > > > to exchange multiple mails over this.
+> > > >
+> > > > However, I don't think that's quite true, and it might be a bug in
+> > > > Allwinner's implementation (or rather something quite confusing).
+> > > >
+> > > > You're right that the lcd_rate and pll_rate seem to be generated from
+> > > > the pixel clock, and it indeed looks like the ratio between the pixel
+> > > > clock and the TCON dotclock is defined through the number of bits per
+> > > > lanes.
+> > > >
+> > > > However, in this case, dsi_rate is actually the same than lcd_rate,
+> > > > since pll_rate is going to be divided by dsi_div:
+> > > > https://github.com/BPI-SINOVOIP/BPI-M64-bsp/blob/master/linux-sunxi/drivers/video/sunxi/disp2/disp/de/disp_lcd.c#L791
+> > > >
+> > > > Since lcd_div is 1, it also means that in this case, dsi_rate ==
+> > > > dclk_rate.
+> > > >
+> > > > The DSI module clock however, is always set to 148.5 MHz. Indeed, if
+> > > > we look at:
+> > > > https://github.com/BPI-SINOVOIP/BPI-M64-bsp/blob/master/linux-sunxi/drivers/video/sunxi/disp2/disp/de/disp_lcd.c#L804
+> > > >
+> > > > We can see that the rate in clk_info is used if it's different than
+> > > > 0. This is filled by disp_al_lcd_get_clk_info, which, in the case of a
+> > > > DSI panel, will hardcode it to 148.5 MHz:
+> > > > https://github.com/BPI-SINOVOIP/BPI-M64-bsp/blob/master/linux-sunxi/drivers/video/sunxi/disp2/disp/de/lowlevel_sun50iw1/disp_al.c#L164
+> > >
+> > > Let me explain, something more.
+> > >
+> > > According to bsp there are clk_info.tcon_div which I will explain below.
+> > > clk_info.dsi_div which is dynamic and it depends on bpp/lanes, so it
+> > > is 6 for 24bpp and 4 lanes devices.
+> > >
+> > > PLL rate here depends on dsi_div (not tcon_div)
+> > >
+> > > Code here
+> > > https://github.com/BPI-SINOVOIP/BPI-M64-bsp/blob/master/linux-sunxi/drivers/video/sunxi/disp2/disp/de/disp_lcd.c#L784
+> > >
+> > > is computing the actual set rate, which depends on dsi_rate.
+> > >
+> > > lcd_rate = dclk_rate * clk_info.dsi_div;
+> > > dsi_rate = pll_rate / clk_info.dsi_div;
+> > >
+> > > Say if the dclk_rate 148MHz then the dsi_rate is 888MHz which set rate
+> > > for above link you mentioned.
+> > >
+> > > Here are the evidence with some prints.
+> > >
+> > > https://gist.github.com/openedev/9bae2d87d2fcc06b999fe48c998b7043
+> > > https://gist.github.com/openedev/700de2e3701b2bf3ad1aa0f0fa862c9a
+> >
+> > Ok, so we agree up to this point, and the prints confirm that the
+> > analysis above is the right one.
+> >
+> > > > So, the DSI clock is set to this here:
+> > > > https://github.com/BPI-SINOVOIP/BPI-M64-bsp/blob/master/linux-sunxi/drivers/video/sunxi/disp2/disp/de/disp_lcd.c#L805
+> >
+> > Your patch doesn't address that, so let's leave that one alone.
+>
+> Basically this is final pll set rate when sun4i_dotclock.c called the
+> desired rate with ccu_nkm.c so it ended the final rate with parent as
+> Line 8 of
+> https://gist.github.com/openedev/700de2e3701b2bf3ad1aa0f0fa862c9a
 
-> A simple solution would be to to include sve_context.h or a third
-> header, maybe linux/prctl_arm64_sve.h (with only these two/five
-> defines), in linux/prctl.h, and reuse it in uapi/asm/ptrace.h; but this
-> would break the self-contained nature of linux/prctl.h.
-> > 
-> > Otherwise, at least make the required relationship between ptrace.h and
-> > prctl.h constants a bit more obvious, say,
-> > 
-> > 	#define SVE_PT_VL_INHERIT ((1 << 17) /* PR_SVE_SET_VL_INHERIT */ >> 16)
-> 
-> This one is much simpler and closer to what I had in mind with this
-> patch.
-> 
-> Will, what do you think of this second approach Dave proposed ?
+If that's important to the driver, it should be set explicitly then,
+and not work by accident.
 
-Duplication is grotty, but it does the job so I'm ok with it. I don't have
-any better ideas.
+> > > > The TCON *module* clock (the one in the clock controller) has been set
+> > > > to lcd_rate (so the pixel clock times the number of bits per lane) here:
+> > > > https://github.com/BPI-SINOVOIP/BPI-M64-bsp/blob/master/linux-sunxi/drivers/video/sunxi/disp2/disp/de/disp_lcd.c#L800
+> > > >
+> > > > And the PLL has been set to the same rate here:
+> > > > https://github.com/BPI-SINOVOIP/BPI-M64-bsp/blob/master/linux-sunxi/drivers/video/sunxi/disp2/disp/de/disp_lcd.c#L794
+> > > >
+> > > > Let's take a step back now: that function we were looking at,
+> > > > lcd_clk_config, is called by lcd_clk_enable, which is in turn called
+> > > > by disp_lcd_enable here:
+> > > > https://github.com/BPI-SINOVOIP/BPI-M64-bsp/blob/master/linux-sunxi/drivers/video/sunxi/disp2/disp/de/disp_lcd.c#L1328
+> > > >
+> > > > The next function being called is disp_al_lcd_cfg, and that function
+> > > > will hardcode the TCON dotclock divider to 4, here:
+> > > > https://github.com/BPI-SINOVOIP/BPI-M64-bsp/blob/master/linux-sunxi/drivers/video/sunxi/disp2/disp/de/lowlevel_sun50iw1/disp_al.c#L240
+> > >
+> > > tcon_div from BSP point-of-view of there are two variants
+> > > 00) clk_info.tcon_div which is 4 and same is set the divider position
+> > > in SUN4I_TCON0_DCLK_REG (like above link refer)
+> > > 01) tcon_div which is 4 and used for edge timings computation
+> > > https://github.com/BPI-SINOVOIP/BPI-M64-bsp/blob/master/linux-sunxi/drivers/video/sunxi/disp2/disp/de/lowlevel_sun50iw1/de_dsi.c#L12
+> > >
+> > > The real reason for 01) is again 4 is they set the divider to 4 in 00)
+> > > which is technically wrong because the dividers which used during
+> > > dotclock in above (dsi_div) should be used here as well. Since there
+> > > is no dynamic way of doing this BSP hard-coding these values.
+> > >
+> > > Patches 5,6,7 on this series doing this
+> > > https://patchwork.freedesktop.org/series/60847/
+> > >
+> > > Hope this explanation helps?
+> >
+> > It doesn't.
+> >
+> > The clock tree is this one:
+> >
+> > PLL(s) -> TCON module clock -> TCON dotclock.
+> >
+> > The links I mentioned above show that the clock set to lcd_rate is the
+> > TCON module clocks (and it should be the one taking the bpp and lanes
+> > into account), while the TCON dotclock uses a fixed divider of 4.
+>
+> Sorry, I can argue much other-than giving some code snips, according to [1]
+>
+> 00) Line 785, 786 with dclk_rate 148000000
+>
+> lcd_rate = dclk_rate * clk_info.dsi_div;
+> pll_rate = lcd_rate * clk_info.lcd_div;
+>
+> Since dsi_div is 6 (bpp/lanes), lcd_div 1
+>
+> lcd_rate = 888000000, pll_rate = 888000000
+>
+> 01)  Line 801, 804 are final rates computed as per clock driver (say
+> ccu_nkm in mainline)
+>
+> lcd_rate_set=891000000
+>
+> As per your comments if it would be 4 then the desired numbers are
+> would be 592000000 not 888000000.
+>
+> This is what I'm trying to say in all mails, and same as verified with
+> 2-lanes devices as well where the dsi_div is 12 so the final rate is
+> 290MHz * 12
 
-Thanks,
+In the code you sent, you're forcing a divider on the internal TCON
+clock, while that one is fixed in the BSP.
 
-Will
+There's indeed the bpp / lanes divider, but it's used in the *parent*
+clock of the one you're changing.
+
+And the dsi0_clk clock you pointed out in the code snippet is yet
+another clock, the MIPI DSI module clock.
+
+The analysis you have is probably correct, you're just not
+implementing it properly in your patch.
+
+Maxime
+
+--
+Maxime Ripard, Bootlin
+Embedded Linux and Kernel engineering
+https://bootlin.com
+
+--npvcnqi5yg4bofaa
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXQOuBgAKCRDj7w1vZxhR
+xVScAPwJAh0zbjS2D2GVNKLA/jet+pw0LYampil65HFHY37fKgEAj5hO1cJdHIPM
+IjOKl6B/qRBrtcW9BEpz5/abyaOyogE=
+=uMQI
+-----END PGP SIGNATURE-----
+
+--npvcnqi5yg4bofaa--
+
+
+--===============4152218842366422490==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============4152218842366422490==--
+
