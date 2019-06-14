@@ -2,54 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B7A9945C9D
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Jun 2019 14:20:22 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 976C545C8B
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Jun 2019 14:18:10 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=M8TSHUMrM3ba1XeoyRO3/vaFkan7DEDN0vk73Vw72Lo=; b=gTnfVrVzV7Ug8T
-	G2DH9cqsOoTO+FOJYcJffHaohAmZczYVcL+rbwOTcnfr3XulaPTKHQInMBDd18bhq/ZTC5R9auH5Z
-	+SNMkqh5agL62kcaNEP412FAbQujmp2zkZhiWHg5j49pXPgUkO8bJ/Ph3K01oYhVmDtFHpQgmQyPh
-	vhwVurfzWRvDR/Oen3dGHu5eEaNQzBFWba/YOPaO5rIDL2EJaeH38eVkZPKxJuzEeoGHXuMOIbHo6
-	Ze2vQwxl465D0RgFuzThA5TSVOKLgCgCQnxN9F6X+rEWEEOfnIh8YpUq04dDCI20clzmzyf9vYlGL
-	3J5/roT/+r111e0Cu7ng==;
+	List-Owner; bh=IBUQdxFmwzZUS+gHrbGZzh2WB5niyvk5UK2Gl3y9UfE=; b=Ib9Tl75aPuQQHQ
+	U7Pmlv/LgdKtuhHaQ3S9/yXL+4ysal1w8rCXz7J3fi0DIRVihc+/EmCJ24elINmUNroSElavLRfGk
+	rI0rfzs4Ec84QAbGFXvDkHI/fRfCMJgcNF9WiKllQ9BFu7AXEgQ31GhLqrQLAw2fBS/c3BEsYl11o
+	rrprpXXnP6mI4AwhM9oCywF3B4xs+qY5DsGpnDCdO0Orciq9O8DTabJip4ye+AEDEynOWiHpQeHzt
+	CZDQ/RYvZljaJUr/2frm2ZUmEDN3UfqVPOhcaEjAfcB5yU2pk1xxDdjQu8cDgqqWa2fLhoo6cqLmK
+	rhQdGOLbH15H85iVb+aw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hblBp-0002iD-Kr; Fri, 14 Jun 2019 12:20:17 +0000
-Received: from relay2-d.mail.gandi.net ([217.70.183.194])
+	id 1hbl9h-0000aD-Tw; Fri, 14 Jun 2019 12:18:05 +0000
+Received: from relay6-d.mail.gandi.net ([217.70.183.198])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hbl5p-0004cx-HP
- for linux-arm-kernel@lists.infradead.org; Fri, 14 Jun 2019 12:14:09 +0000
+ id 1hbl5k-0004YT-SY
+ for linux-arm-kernel@lists.infradead.org; Fri, 14 Jun 2019 12:14:06 +0000
 X-Originating-IP: 90.88.23.150
 Received: from localhost (aaubervilliers-681-1-81-150.w90-88.abo.wanadoo.fr
  [90.88.23.150]) (Authenticated sender: maxime.ripard@bootlin.com)
- by relay2-d.mail.gandi.net (Postfix) with ESMTPSA id A9B7E40007;
- Fri, 14 Jun 2019 12:14:01 +0000 (UTC)
+ by relay6-d.mail.gandi.net (Postfix) with ESMTPSA id 5E24DC001E;
+ Fri, 14 Jun 2019 12:13:52 +0000 (UTC)
 From: Maxime Ripard <maxime.ripard@bootlin.com>
 To: Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
  Sean Paul <seanpaul@chromium.org>,
  Maxime Ripard <maxime.ripard@bootlin.com>,
  Daniel Vetter <daniel.vetter@intel.com>, David Airlie <airlied@linux.ie>
-Subject: [PATCH v4 08/12] drm/connector: Introduce a TV margins structure
-Date: Fri, 14 Jun 2019 14:13:15 +0200
-Message-Id: <06f9c2fdbca44d9c04a0420cc78265c83ccd0d41.1560514379.git-series.maxime.ripard@bootlin.com>
+Subject: [PATCH v4 09/12] drm/atomic: Add a function to reset connector TV
+ properties
+Date: Fri, 14 Jun 2019 14:13:16 +0200
+Message-Id: <da8097de4e52e677933707eddcf202ba89790876.1560514379.git-series.maxime.ripard@bootlin.com>
 X-Mailer: git-send-email 2.21.0
 In-Reply-To: <cover.5fc7840dc8fb24744516c13acb8c8aa18e44c0d0.1560514379.git-series.maxime.ripard@bootlin.com>
 References: <cover.5fc7840dc8fb24744516c13acb8c8aa18e44c0d0.1560514379.git-series.maxime.ripard@bootlin.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190614_051405_771402_BFB450DE 
-X-CRM114-Status: GOOD (  10.15  )
+X-CRM114-CacheID: sfid-20190614_051401_105095_C9628A96 
+X-CRM114-Status: GOOD (  11.06  )
 X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.183.194 listed in list.dnswl.org]
+ low trust [217.70.183.198 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [217.70.183.198 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -73,63 +76,58 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The TV margins has been defined as a structure inside the
-drm_connector_state structure so far. However, we will need it in other
-structures as well, so let's move that structure definition so that it can
-be reused.
+During the connector reset, if that connector has a TV property, it needs
+to be reset to the value provided on the command line.
+
+Provide a helper to do that.
 
 Signed-off-by: Maxime Ripard <maxime.ripard@bootlin.com>
 ---
- include/drm/drm_connector.h | 34 +++++++++++++++++++++++++++++-----
- 1 file changed, 29 insertions(+), 5 deletions(-)
+ drivers/gpu/drm/drm_atomic_state_helper.c | 18 ++++++++++++++++++
+ include/drm/drm_atomic_state_helper.h     |  1 +
+ 2 files changed, 19 insertions(+)
 
-diff --git a/include/drm/drm_connector.h b/include/drm/drm_connector.h
-index 68a04169ea36..c58a35b34c1a 100644
---- a/include/drm/drm_connector.h
-+++ b/include/drm/drm_connector.h
-@@ -464,13 +464,37 @@ int drm_display_info_set_bus_formats(struct drm_display_info *info,
- 				     unsigned int num_formats);
+diff --git a/drivers/gpu/drm/drm_atomic_state_helper.c b/drivers/gpu/drm/drm_atomic_state_helper.c
+index 97ab26679b96..f4f0ada9c152 100644
+--- a/drivers/gpu/drm/drm_atomic_state_helper.c
++++ b/drivers/gpu/drm/drm_atomic_state_helper.c
+@@ -376,6 +376,24 @@ void drm_atomic_helper_connector_reset(struct drm_connector *connector)
+ EXPORT_SYMBOL(drm_atomic_helper_connector_reset);
  
  /**
-+ * struct drm_connector_tv_margins - TV connector related margins
++ * drm_atomic_helper_connector_tv_reset - Resets TV connector properties
++ * @connector: DRM connector
 + *
-+ * Describes the margins in pixels to put around the image on TV
-+ * connectors to deal with overscan.
++ * Resets the TV-related properties attached to a connector.
 + */
-+struct drm_connector_tv_margins {
-+	/**
-+	 * @bottom: Bottom margin in pixels.
-+	 */
-+	unsigned int bottom;
++void drm_atomic_helper_connector_tv_reset(struct drm_connector *connector)
++{
++	struct drm_cmdline_mode *cmdline = &connector->cmdline_mode;
++	struct drm_connector_state *state = connector->state;
 +
-+	/**
-+	 * @left: Left margin in pixels.
-+	 */
-+	unsigned int left;
-+
-+	/**
-+	 * @right: Right margin in pixels.
-+	 */
-+	unsigned int right;
-+
-+	/**
-+	 * @top: Top margin in pixels.
-+	 */
-+	unsigned int top;
-+};
++	state->tv.margins.left = cmdline->tv_margins.left;
++	state->tv.margins.right = cmdline->tv_margins.right;
++	state->tv.margins.top = cmdline->tv_margins.top;
++	state->tv.margins.bottom = cmdline->tv_margins.bottom;
++}
++EXPORT_SYMBOL(drm_atomic_helper_connector_tv_reset);
 +
 +/**
-  * struct drm_tv_connector_state - TV connector related states
-  * @subconnector: selected subconnector
-- * @margins: margins (all margins are expressed in pixels)
-- * @margins.left: left margin
-- * @margins.right: right margin
-- * @margins.top: top margin
-- * @margins.bottom: bottom margin
-+ * @margins: TV margins
-  * @mode: TV mode
-  * @brightness: brightness in percent
-  * @contrast: contrast in percent
+  * __drm_atomic_helper_connector_duplicate_state - copy atomic connector state
+  * @connector: connector object
+  * @state: atomic connector state
+diff --git a/include/drm/drm_atomic_state_helper.h b/include/drm/drm_atomic_state_helper.h
+index 4e6d2e7a40b8..e4577cc11689 100644
+--- a/include/drm/drm_atomic_state_helper.h
++++ b/include/drm/drm_atomic_state_helper.h
+@@ -62,6 +62,7 @@ void drm_atomic_helper_plane_destroy_state(struct drm_plane *plane,
+ void __drm_atomic_helper_connector_reset(struct drm_connector *connector,
+ 					 struct drm_connector_state *conn_state);
+ void drm_atomic_helper_connector_reset(struct drm_connector *connector);
++void drm_atomic_helper_connector_tv_reset(struct drm_connector *connector);
+ void
+ __drm_atomic_helper_connector_duplicate_state(struct drm_connector *connector,
+ 					   struct drm_connector_state *state);
 -- 
 git-series 0.9.1
 
