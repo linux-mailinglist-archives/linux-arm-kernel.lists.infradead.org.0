@@ -2,74 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 00766467E4
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Jun 2019 20:54:27 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 87097467EE
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Jun 2019 20:57:04 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9XThUsosGqKg3kVIwS37uiBT8SB9Wj7Pch2sDtxxYAw=; b=LPS7H+Y+upl71X
-	MwKFPw9XeRtgJz5jiKbQr1IjnJiyDm85tU/iPYkC6GOl3Ba7FxAsGT/73lKPlXWNndKQWXrL6mbN0
-	nySYj5nj2NC8QFMN9gTPx7syHBDjwk8o+y//vX5+NyAi3L2EkbjBLvbm7qTo23E/GOQ/I/lekm+3j
-	gSJbqkaHM4+LHvFh5wJWNDe3hSifL5u2uiBQeWwH86qUTD7q7Cbr+oIoPAeT605a07/Gn7xoY4QcW
-	XVFUWqvFN6dEq1mjxtH+0qQ1Jpecqys89mO3VklgLdZmvK8k85ZIelRP/jzdWxX6Zz7HZLdx3Yrkk
-	oxxTMYqawA6+EuzTpB4g==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=aMrk0qJ2ZFEdeKNKjvG6F84ilZeTRfoVDh6XTiZtddU=; b=C92
+	zzGva3UijJ7E+eHwZ8riCniCyvE6W9BrmhyjxiRShKhLx6LT/XnZHugMamdnGryyO1JInOwA4oHXH
+	egxhzAhp6OCoiwfo7juSFgc3nd1jyzOHifb53k1JXrMacWxM1lfiv92Av1iUIpqpEgkkjtEMc60+j
+	l3fzXE03OCiFnPf8L8LwiiGNepOZENL/oQLISMwd2xm81+9+H07ea/S2xCvABSFxgFFWYWPoJXSdI
+	8+Kqhkgz2tVoyHIiLkve1o5flMEj2LvPq+ES+HJRlB0x16NYB8bSuIfUnHtnrUzAYXpTdhZ43AorZ
+	sHloB0yD1UGJaKq5OITzWlQdNU4ZRng==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hbrLF-0001GV-Mm; Fri, 14 Jun 2019 18:54:25 +0000
-Received: from pandora.armlinux.org.uk
- ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
+	id 1hbrNj-0002ly-7K; Fri, 14 Jun 2019 18:56:59 +0000
+Received: from mail-pf1-x441.google.com ([2607:f8b0:4864:20::441])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hbrL8-0001GC-AY
- for linux-arm-kernel@lists.infradead.org; Fri, 14 Jun 2019 18:54:19 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
- MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
- Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
- List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=8upm4+29tOlpQvd0AoUl0tlNlWmR9q34xlzKP6CkZm4=; b=WJ33Ov75EUUu6/DmEUFB19pkd
- AApE091e//VzGGWXOnqjguRJk0CA4BAhULBk8rApp7qZJ0tEF7vsi0te7DwN703C0+ZS8k9W7ofW5
- WrA+5w78xp8yBxCmp7GtPP8+L66lQgyWE8JojrcIjhbKld1qI7oe/EAYtw4ZMwE5O0/cfk9jHgEHo
- B+uYGeapZZUHgoh5mFCngwnBYfM2FtU+UrVOWJOkiySHui2BQaWdDitlmyes7nG91jkEl6qDnWMoA
- NOAMjjtHXTIN0WipAs6YI6qqSMhqfLEGfxR9XlBgkFJ2jkv7CkTsuKTZXyCBkPMQdV5snRmuwzdaA
- yr4JHKlrw==;
-Received: from shell.armlinux.org.uk
- ([2001:4d48:ad52:3201:5054:ff:fe00:4ec]:56404)
- by pandora.armlinux.org.uk with esmtpsa
- (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <linux@armlinux.org.uk>)
- id 1hbrL0-0003Cj-3x; Fri, 14 Jun 2019 19:54:10 +0100
-Received: from linux by shell.armlinux.org.uk with local (Exim 4.89)
- (envelope-from <linux@shell.armlinux.org.uk>)
- id 1hbrKy-0002R4-91; Fri, 14 Jun 2019 19:54:08 +0100
-Date: Fri, 14 Jun 2019 19:54:08 +0100
-From: Russell King - ARM Linux admin <linux@armlinux.org.uk>
-To: Denis 'GNUtoo' Carikli <GNUtoo@cyberdimension.org>
-Subject: Re: [PATCH] security: do not enable CONFIG_GCC_PLUGINS by default
-Message-ID: <20190614185408.dg6iblbsjwkk3kt6@shell.armlinux.org.uk>
-References: <20190614145755.10926-1-GNUtoo@cyberdimension.org>
- <CAG48ez30+VOj78rCiWMKtm0tHdVR67CcrHVCV-FFCfK-nRQTOw@mail.gmail.com>
- <20190614162811.o33yeq65ythjumrh@shell.armlinux.org.uk>
- <20190614201434.3fa4bb6d@primarylaptop.localdomain>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190614201434.3fa4bb6d@primarylaptop.localdomain>
-User-Agent: NeoMutt/20170113 (1.7.2)
+ id 1hbrNX-0002lB-MR
+ for linux-arm-kernel@lists.infradead.org; Fri, 14 Jun 2019 18:56:49 +0000
+Received: by mail-pf1-x441.google.com with SMTP id 81so1958400pfy.13
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 14 Jun 2019 11:56:46 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id;
+ bh=kXP6RPbHGxfRHVxshgv418nQMeWFco7bVcG4pxVfdpQ=;
+ b=ewW5LVea+JWpRTTQ9Ymq3AhgxtbQ02f34SkC+QSETwdm4+z6yDcvz+zb+e0XxLfrlH
+ 14a+LuJ+uQL6WLE3nJU72MnrO1/XDgBmc4Xjj5Qml4Jvt6XHo4fMXryaUxQsO+ndf3xk
+ 2Dz/MV3d6/785nd+1ntM1AhyRXUL6ROs9IyJ7UWlRhOyw+hGnBYS1HsAlvouFDMp1gQq
+ qQjH4cuPS7biMshImT86hR1h8o4PqFiBxBDFhu5ClJ70OtUZ/6GDxs9poQK4JP21SwvF
+ 4YarnjI0rvrp/WkRIT84R3TYrtRYJcoTivp3QGWXAyeCpIPNZ7Iqft45mL7SMo69WNtn
+ PghQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=kXP6RPbHGxfRHVxshgv418nQMeWFco7bVcG4pxVfdpQ=;
+ b=s57hxreOUkDf6JGqT+HVMkt1DnZNXT7/PeMsBb3iWcYcM65GrooCraNe7hFR4JrtpX
+ e4r0R6AYRy1pwu1hiaYOLvh7EoHkCjZZwGoV5c5JxQSNgnqy5UsgKV6l7qagG2L0BXfu
+ h+vtkcTiYYxHyEyknD2okEnF2MWHpOE/ZTBVAvIhmtk14WJwTvijGu9oaUKf45PK5LH2
+ VIpXDmnIV7lmfITR7nebgz//S8A/yQ7BK0j2KvuyTtZRD9INPu61SMgUioCle2q2c+2P
+ eG7fb8prpaqwxzGL1lg2D9LP2Jiglj9ahek8FK1VAy3fnA8oVkv4s0uto1NmQc2ecQ9k
+ kkPQ==
+X-Gm-Message-State: APjAAAXPx1hUQMoBs5LtcjZDU3MPeIt6YftBUh+6FvgLw/59yBRm80AI
+ ivA+1nqMSAZ5VWifi4z6/Z0X17yr
+X-Google-Smtp-Source: APXvYqx70/CMTi+44qQfPlpiZj6yXBUe3eSw9DeC4HVnXisOv4Q2JZU9DYQc9Ym0dnZJizUCFkJ2gQ==
+X-Received: by 2002:a63:f95d:: with SMTP id q29mr30978918pgk.368.1560538605919; 
+ Fri, 14 Jun 2019 11:56:45 -0700 (PDT)
+Received: from fainelli-desktop.igp.broadcom.net ([192.19.223.252])
+ by smtp.gmail.com with ESMTPSA id r9sm3466072pgv.24.2019.06.14.11.56.44
+ (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
+ Fri, 14 Jun 2019 11:56:45 -0700 (PDT)
+From: Florian Fainelli <f.fainelli@gmail.com>
+To: linux-arm-kernel@lists.infradead.org
+Subject: [PATCH v2] arm64: Allow user selection of ARM64_MODULE_PLTS
+Date: Fri, 14 Jun 2019 11:56:34 -0700
+Message-Id: <20190614185635.6982-1-f.fainelli@gmail.com>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190614_115418_363402_7773B18C 
-X-CRM114-Status: GOOD (  23.59  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20190614_115647_761493_4969744C 
+X-CRM114-Status: GOOD (  13.24  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [2001:4d48:ad52:3201:214:fdff:fe10:1be6 listed in]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:441 listed in]
  [list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (f.fainelli[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -89,81 +93,69 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Kees Cook <keescook@chromium.org>,
- Kernel Hardening <kernel-hardening@lists.openwall.com>,
- Jann Horn <jannh@google.com>,
- Paul Kocialkowski <paul.kocialkowski@bootlin.com>,
- Emese Revfy <re.emese@gmail.com>, linux-arm-kernel@lists.infradead.org
+Cc: Florian Fainelli <f.fainelli@gmail.com>, ard.biesheuvel@linaro.org,
+ Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will.deacon@arm.com>,
+ open list <linux-kernel@vger.kernel.org>,
+ bcm-kernel-feedback-list@broadcom.com
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Jun 14, 2019 at 08:14:34PM +0200, Denis 'GNUtoo' Carikli wrote:
-> On Fri, 14 Jun 2019 17:28:11 +0100
-> Russell King - ARM Linux admin <linux@armlinux.org.uk> wrote:
-> > I'm wondering whether this is sloppy wording or whether the author is
-> > really implying that they call the kernel decompressor with the MMU
-> > enabled, against the express instructions in
-> > Documentation/arm/Booting.
-> According to [1]
-> > If they are going against the express instructions, all bets are off.
-> 
-> More background on the decompressor patch:
-> - The "ANDROID: arm: decompressor: Flush tlb before swiching domain 0 to
->   client mode" patch is needed anyway since 3.4 in any case, and
->   according to the thread about it [1], the MMU is on at boot.
-> - There is a downstream u-boot port for the Galaxy SIII and other very
->   similar devices, which doesn't setup the MMU at boot, but I'm not
->   confident enough to test in on the devices I have. To test with
->   u-boot I'd need to find a new device.
-> - If I don't manage to find a new device to test on, since there is
->   already some setup code like arch/arm/boot/compressed/head-sa1100.S
->   that deal with MMU that are enabled with the bootloader, are patches
->   to add a new file like that still accepted? The big downside is that
->   using something like that is probably incompatible with
->   ARCH_MULTIPLATFORM.
+Make ARM64_MODULE_PLTS a selectable Kconfig symbol, since some people
+might have very big modules spilling out of the dedicated module area
+into vmalloc. Help text is copied from the ARM 32-bit counterpart and
+modified to a mention of KASLR and specific ARM errata workaround(s).
 
-SA11x0 pre-dates the booting document, which came about because of the
-desire to make the kernel less dependent on the host CPU type.  So
-"sa11x0 does it so we can do it" is really not an argument I ever want
-to see to justify this kind of stuff.
+Signed-off-by: Florian Fainelli <f.fainelli@gmail.com>
+---
+Changes in v2:
 
-The booting requirements have been known since at least 2002, some
-SEVENTEEN years ago, and the problem was identified as buggy back in
-2012.  As far as I can see, nothing has changed.
+- added Ard's paragraph about KASLR
+- added a paragraph about specific workarounds also requiring
+  ARM64_MODULE_PLTS
 
-Entering the kernel with the MMU on and optionally caches on is an
-inherently unsafe thing to do.  The kernel would have been placed into
-RAM via the data cache, and then we're trying to execute code - unless
-the caches have been properly cleaned and invalidated, there is no
-guarantee that we'd even reach any instructions to do our own cache
-cleaning and invalidation.  So, caches on is utter madness.
+ arch/arm64/Kconfig | 22 +++++++++++++++++++++-
+ 1 file changed, 21 insertions(+), 1 deletion(-)
 
-MMU on presents a problem: the kernel moves itself around during
-decompression - if it happens to move itself on top of the in-use
-page tables, then that would be really bad.  There's another issue as
-well - if the page tables are already setup, and we create a different
-mapping for the virtual address range, the _only_ way to safely switch
-to that mapping is via a break-make arrangement, which means we need
-code to disable the MMU, flush it.  It is not as simple as "a few extra
-instructions to flush TLBs" although that may work in the majority of
-cases.  Architecturally, it is wrong.
-
-Things can get even worse - what if the page tables are located where
-the kernel writes its own page tables - modifying the live tables and
-changing the type of the entries.  Architecturally unpredictable
-behaviour may result.
-
-What is written in Documentation/arm/Booting is not for our fun, it is
-there to spell out what the kernel requires to be able to boot reliably
-on hardware.  If it isn't followed, then booting a kernel will be
-unreliable.
-
+diff --git a/arch/arm64/Kconfig b/arch/arm64/Kconfig
+index 697ea0510729..7bfaeeeee9bc 100644
+--- a/arch/arm64/Kconfig
++++ b/arch/arm64/Kconfig
+@@ -1418,8 +1418,28 @@ config ARM64_SVE
+ 	  KVM in the same kernel image.
+ 
+ config ARM64_MODULE_PLTS
+-	bool
++	bool "Use PLTs to allow module memory to spill over into vmalloc area"
+ 	select HAVE_MOD_ARCH_SPECIFIC
++	help
++	  Allocate PLTs when loading modules so that jumps and calls whose
++	  targets are too far away for their relative offsets to be encoded
++	  in the instructions themselves can be bounced via veneers in the
++	  module's PLT. This allows modules to be allocated in the generic
++	  vmalloc area after the dedicated module memory area has been
++	  exhausted. The modules will use slightly more memory, but after
++	  rounding up to page size, the actual memory footprint is usually
++	  the same.
++
++	  When running with address space randomization (KASLR), the module
++	  region itself may be too far away for ordinary relative jumps and
++	  calls, and so in that case, module PLTs are required and cannot be
++	  disabled.
++
++	  Specific errata workaround(s) might also force module PLTs to be
++	  enabled (ARM64_ERRATUM_843419).
++
++	  Disabling this is usually safe for small single-platform
++	  configurations. If unsure, say y.
+ 
+ config ARM64_PSEUDO_NMI
+ 	bool "Support for NMI-like interrupts"
 -- 
-RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
-FTTC broadband for 0.8mile line in suburbia: sync at 12.1Mbps down 622kbps up
-According to speedtest.net: 11.9Mbps down 500kbps up
+2.17.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
