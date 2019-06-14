@@ -2,53 +2,65 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 09F0E45B57
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Jun 2019 13:23:04 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 03ABE45B5B
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Jun 2019 13:25:16 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=QJR8kPfHi1uB0LQ/a42WBGANHke/SgS9UTO1Wn7lLSY=; b=WswRavlM4ip8rz
-	Hxxcv+FjCugYMFl4lgf+D2PW7Ji+bllpwLGk/bhRC1MjRlYwdrjFOmh0QtUuuSnPTBtYhpCqaroAL
-	e5BJudNxyQ71q1DIVSfbpDJBB4zzkB/Rwks7wgKwnmMrq2Agm3lprFRRBxhkKeyFv7690jAtYVk5X
-	Gv1tXR3Hi1zuV+0QFhstETqiFlGmbxCQPzDbddwgs/SI8wU2huMHazAiUgfTwAW5r4ddCmGj0MG3D
-	hH7Rt7n4MzLSiLtJflC5znuEbwQSPIvvaJ58dNLPVskGnAff9HH/h145OnKYliNzShYhXyOKoqpsR
-	WO8ySIPl6cBV8cGrBuTQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Y3myPbdH+P5lieU678fac76UcjjqKv/fkuS6pZUZJx0=; b=pF38CChAZ4divk
+	V9nCR0l4mjtccqTTu8c89vAE/Xrc6sUMmgvX/Re0Mv0QMgdeFpajzmIDw/XF7qn5uN2SQzwk8+Jyn
+	tLiSP2ap5cBBNvQDHuFf8cLK94rXt+GcqEOab46irh8AD9LhqP1Cbu1psQkB9CZOx9BdVCjpwEnte
+	QKvD6AcBDL40Wu2Coualu+HyJghBXbhofmseJhLS20W/Zl2c+CcSWVCu8iBrwTy8Y4o2DECXymCtf
+	lE3LW1OYCwQS64Lzx16CDd0IE0xGE8cbgC2L6fV117SYvOOwv/oOnUft3L/PWGp4O4SNAQlnfIAqe
+	PxNZ7AvM2Ip8tdtxODXg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hbkIO-0005tC-1k; Fri, 14 Jun 2019 11:23:00 +0000
-Received: from smtp3-g21.free.fr ([212.27.42.3])
+	id 1hbkKX-0006HZ-U8; Fri, 14 Jun 2019 11:25:13 +0000
+Received: from ns.iliad.fr ([212.27.33.1])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hbkID-0005sX-RR
- for linux-arm-kernel@lists.infradead.org; Fri, 14 Jun 2019 11:22:51 +0000
-Received: from anisse-station (unknown [213.36.7.13])
- by smtp3-g21.free.fr (Postfix) with ESMTPS id 517A013F84C;
- Fri, 14 Jun 2019 13:22:23 +0200 (CEST)
-Date: Fri, 14 Jun 2019 13:22:22 +0200
-From: Anisse Astier <aastier@freebox.fr>
-To: Dave Martin <Dave.Martin@arm.com>, Will Deacon <will.deacon@arm.com>
-Subject: Re: [PATCH] arm64/sve: <uapi/asm/ptrace.h> should not depend on
- <uapi/linux/prctl.h>
-Message-ID: <20190614112222.GA47082@anisse-station>
-References: <20190613163801.21949-1-aastier@freebox.fr>
- <20190613171432.GA2790@e103592.cambridge.arm.com>
+ id 1hbkKC-0006Gk-Gr
+ for linux-arm-kernel@lists.infradead.org; Fri, 14 Jun 2019 11:24:54 +0000
+Received: from ns.iliad.fr (localhost [127.0.0.1])
+ by ns.iliad.fr (Postfix) with ESMTP id 92D7A2046B;
+ Fri, 14 Jun 2019 13:24:48 +0200 (CEST)
+Received: from [192.168.108.49] (freebox.vlq16.iliad.fr [213.36.7.13])
+ by ns.iliad.fr (Postfix) with ESMTP id 7BD2520186;
+ Fri, 14 Jun 2019 13:24:48 +0200 (CEST)
+Subject: Re: [PATCH v3] iommu/arm-smmu: Avoid constant zero in TLBI writes
+To: Andy Gross <agross@kernel.org>,
+ Bjorn Andersson <bjorn.andersson@linaro.org>
+References: <f523effd-ef81-46fe-1f9e-1a0cb42c8b7b@free.fr>
+ <20190529130559.GB11023@fuggles.cambridge.arm.com>
+ <84791515-e0ae-0322-78aa-02ca0b40d157@free.fr>
+ <09a290f1-27a0-5ee3-16b9-659ef2ba99dc@free.fr>
+ <20190612081051.GD21613@8bytes.org>
+From: Marc Gonzalez <marc.w.gonzalez@free.fr>
+Message-ID: <3939f36f-eb7b-b165-426a-1beed23bf4a9@free.fr>
+Date: Fri, 14 Jun 2019 13:24:48 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.6.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190613171432.GA2790@e103592.cambridge.arm.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <20190612081051.GD21613@8bytes.org>
+Content-Language: en-US
+X-Virus-Scanned: ClamAV using ClamSMTP ; ns.iliad.fr ;
+ Fri Jun 14 13:24:48 2019 +0200 (CEST)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190614_042250_184651_229226A0 
-X-CRM114-Status: GOOD (  22.38  )
-X-Spam-Score: 1.0 (+)
+X-CRM114-CacheID: sfid-20190614_042452_712836_767BDC59 
+X-CRM114-Status: UNSURE (   7.76  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (1.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.27.42.3 listed in list.dnswl.org]
- 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [212.27.33.1 listed in list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (marc.w.gonzalez[at]free.fr)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -61,115 +73,31 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Richard Henderson <richard.henderson@linaro.org>, linux-kernel@vger.kernel.org,
- Will Deacon <will.deacon@arm.com>, "Dmitry V . Levin" <ldv@altlinux.org>,
- Ricardo Salveti <ricardo@foundries.io>,
- Kristina Martsenko <kristina.martsenko@arm.com>,
- Rich Felker <dalias@aerifal.cx>, linux-arm-kernel@lists.infradead.org
+Cc: MSM <linux-arm-msm@vger.kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Jeffrey Hugo <jeffrey.l.hugo@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Dave,
+[ Trimming recipients to minimize inconvenience ]
 
-Thanks for taking the time to review this patch,
+On 12/06/2019 10:10, Joerg Roedel wrote:
 
-On Thu, Jun 13, 2019 at 06:14:44PM +0100, Dave Martin wrote:
-> On Thu, Jun 13, 2019 at 06:38:01PM +0200, Anisse Astier wrote:
-> > Otherwise this will create userspace build issues for any program
-> > (strace, qemu) that includes both <sys/prctl.h> (with musl libc) and
-> > <linux/ptrace.h> (which then includes <asm/ptrace.h>), like this:
-> > 
-> > 	error: redefinition of 'struct prctl_mm_map'
-> > 	 struct prctl_mm_map {
-> > 
-> > See https://github.com/foundriesio/meta-lmp/commit/6d4a106e191b5d79c41b9ac78fd321316d3013c0
-> > for a public example of people working around this issue.
-> > 
-> > This fixes an UAPI regression introduced in commit 43d4da2c45b2
-> > ("arm64/sve: ptrace and ELF coredump support").
-> > 
-> > Cc: stable@vger.kernel.org
+> On Mon, Jun 03, 2019 at 02:15:37PM +0200, Marc Gonzalez wrote:
 > 
-> Consider adding a Fixes: tag.
-
-Will do in v2.
-
+>>  drivers/iommu/arm-smmu.c | 15 ++++++++++++---
+>>  1 file changed, 12 insertions(+), 3 deletions(-)
 > 
-> > Signed-off-by: Anisse Astier <aastier@freebox.fr>
-> > ---
-> >  arch/arm64/include/uapi/asm/ptrace.h | 8 +++-----
-> >  1 file changed, 3 insertions(+), 5 deletions(-)
-> > 
-> > diff --git a/arch/arm64/include/uapi/asm/ptrace.h b/arch/arm64/include/uapi/asm/ptrace.h
-> > index d78623acb649..03b6d6f029fc 100644
-> > --- a/arch/arm64/include/uapi/asm/ptrace.h
-> > +++ b/arch/arm64/include/uapi/asm/ptrace.h
-> > @@ -65,8 +65,6 @@
-> >  
-> >  #ifndef __ASSEMBLY__
-> >  
-> > -#include <linux/prctl.h>
-> > -
-> >  /*
-> >   * User structures for general purpose, floating point and debug registers.
-> >   */
-> > @@ -113,10 +111,10 @@ struct user_sve_header {
-> >  
-> >  /*
-> >   * Common SVE_PT_* flags:
-> > - * These must be kept in sync with prctl interface in <linux/ptrace.h>
-> > + * These must be kept in sync with prctl interface in <linux/prctl.h>
-> 
-> Ack
-> 
-> >   */
-> > -#define SVE_PT_VL_INHERIT		(PR_SVE_VL_INHERIT >> 16)
-> > -#define SVE_PT_VL_ONEXEC		(PR_SVE_SET_VL_ONEXEC >> 16)
-> > +#define SVE_PT_VL_INHERIT		(1 << 1) /* PR_SVE_VL_INHERIT */
-> > +#define SVE_PT_VL_ONEXEC		(1 << 2) /* PR_SVE_SET_VL_ONEXEC */
-> 
-> Makes sense, but...
-> 
-> Since sve_context.h was already introduced to solve a closely related
-> problem, I wonder whether we can provide shadow definitions there,
-> similarly to way the arm64/include/uapi/asm/ptrace.h definitions are
-> derived.  Although it's a slight abuse of that header, I think that
-> would be my preferred approach.
+> Applied, thanks. It should show up in linux-next in the next days.
 
+Almost there... Should be in tomorrow's next.
 
-Yes I saw this, and I considered doing something similar. But, those
-defines are in uapi/linux/prctl.h, which does not include any asm/*.h
-header. This would have then required adding a full infrastructure for
-asm/prctl.h (that could then include sve_context.h for example), which
-does not exist yet, instead of copying these two values.
+https://git.kernel.org/pub/scm/linux/kernel/git/joro/iommu.git/log/?h=next
+https://git.kernel.org/pub/scm/linux/kernel/git/joro/iommu.git/commit/?h=next&id=4e4abae311e4b44aaf61f18a826fd7136037f199
 
-Since this is part of the kernel-userspace ABI, I don't see this values
-changing anytime soon, which is why I thought copying them shouldn't be
-a big issue.
-
-A simple solution would be to to include sve_context.h or a third
-header, maybe linux/prctl_arm64_sve.h (with only these two/five
-defines), in linux/prctl.h, and reuse it in uapi/asm/ptrace.h; but this
-would break the self-contained nature of linux/prctl.h.
-
-> 
-> Otherwise, at least make the required relationship between ptrace.h and
-> prctl.h constants a bit more obvious, say,
-> 
-> 	#define SVE_PT_VL_INHERIT ((1 << 17) /* PR_SVE_SET_VL_INHERIT */ >> 16)
-
-This one is much simpler and closer to what I had in mind with this
-patch.
-
-Will, what do you think of this second approach Dave proposed ?
-
-Regards,
-
-Anisse
+Regards.
 
 _______________________________________________
 linux-arm-kernel mailing list
