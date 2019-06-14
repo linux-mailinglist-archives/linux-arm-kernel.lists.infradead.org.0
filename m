@@ -2,56 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 268BA451DC
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Jun 2019 04:27:13 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 62736451ED
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Jun 2019 04:32:36 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=PhjPeSURTTiBOgVy+EgCUiIe3gcVyyGEuZBsQELY0AU=; b=UBtQ1a+cqbhdp4
-	1rCw3whEIkGACoY+qchpJyGGA5NrMWcy8VEkx+AdTbbvN/Tkp3MaG8NQX09oQ6/9EleZ9bKAgQKFI
-	mWGXYa+z3K9+Bx4tQTmMw25f4YUNAimoGztLA1YVvktp0U+iBtfTNt7tykdTYVqOXfPZQ4VTZjx1C
-	nC8uJ81b0RMtchQ25/z9/lI6HSYB1qX8qcFWSzN7qQ/10qaoc2hekVaFW2hVtsE9f0lQnW9R8HBxf
-	UpQxfaa9OVMAdNRB4Cve8o3YmonQgnI4CYYO/PfNhEhUiyAqqqT6hhL3/TLlY+8ZWFZRGIucjLM0L
-	nDrjEnM/8R3ExxhMhEGg==;
+	List-Owner; bh=88KmhaS8qjnll92r9siHf3T9ZkRhAJHWungESQ4PT2I=; b=ZPl6aAnVK1YLfd
+	exT9P0wBg1rg5Q1m01/WEr4spfSzk66ZVqKUFOvbEt40PbvT+VpoUdzwe/eRWDXfvivTZhBz1uhxq
+	i8pNoECo7uJP8MLefyK7ThYteBtKZbJd5RpQ26TACoExTgUsItgsmGZMndClQHJ0D6KqkzAg2G9Jt
+	MT7Ll5udMmSnVCMnapv5aiUE6zUQEMZi6aYhGgZf/Q2O9T3ElKwKABlhqsBosUfc9223EZZ+h453b
+	EnGzMj1+hKJPLPYLFomeeEkeB/xrZZCTsnVuU6Cr8w4y4HqkwfM2W/EZf8lNCGZr5h0qcmMIqJJnH
+	sGuNhjNw9E397oMcQASw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hbbvp-00005F-8V; Fri, 14 Jun 2019 02:27:09 +0000
-Received: from mailgw02.mediatek.com ([216.200.240.185])
+	id 1hbc12-0002Rb-0O; Fri, 14 Jun 2019 02:32:32 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hbbvP-0008U9-Lk; Fri, 14 Jun 2019 02:26:45 +0000
-X-UUID: 3561f09de74a445e8e5be5cc9a036e37-20190613
-X-UUID: 3561f09de74a445e8e5be5cc9a036e37-20190613
-Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw02.mediatek.com
- (envelope-from <ck.hu@mediatek.com>)
+ id 1hbc0p-0002DC-4d; Fri, 14 Jun 2019 02:32:20 +0000
+X-UUID: 19c69bc2b55a43ba855ba6e14fe55af1-20190613
+X-UUID: 19c69bc2b55a43ba855ba6e14fe55af1-20190613
+Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw01.mediatek.com
+ (envelope-from <walter-zh.wu@mediatek.com>)
  (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 689387322; Thu, 13 Jun 2019 18:26:37 -0800
-Received: from mtkmbs05n1.mediatek.inc (172.21.101.15) by
+ with ESMTP id 505435386; Thu, 13 Jun 2019 18:32:09 -0800
+Received: from mtkmbs08n2.mediatek.inc (172.21.101.56) by
  MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Thu, 13 Jun 2019 19:26:36 -0700
+ 15.0.1395.4; Thu, 13 Jun 2019 19:32:08 -0700
 Received: from mtkcas07.mediatek.inc (172.21.101.84) by
- mtkmbs05n1.mediatek.inc (172.21.101.15) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Fri, 14 Jun 2019 10:26:34 +0800
-Received: from [172.21.77.4] (172.21.77.4) by mtkcas07.mediatek.inc
+ mtkmbs08n2.mediatek.inc (172.21.101.56) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Fri, 14 Jun 2019 10:32:00 +0800
+Received: from [172.21.84.99] (172.21.84.99) by mtkcas07.mediatek.inc
  (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Fri, 14 Jun 2019 10:26:34 +0800
-Message-ID: <1560479194.16718.5.camel@mtksdaap41>
-Subject: Re: [PATCH v3, 10/27] drm/mediatek: split DISP_REG_CONFIG_DSI_SEL
- setting into another use case
-From: CK Hu <ck.hu@mediatek.com>
-To: <yongqiang.niu@mediatek.com>, <bibby.hsieh@mediatek.com>
-Date: Fri, 14 Jun 2019 10:26:34 +0800
-In-Reply-To: <1559734986-7379-11-git-send-email-yongqiang.niu@mediatek.com>
-References: <1559734986-7379-1-git-send-email-yongqiang.niu@mediatek.com>
- <1559734986-7379-11-git-send-email-yongqiang.niu@mediatek.com>
-X-Mailer: Evolution 3.10.4-0ubuntu2 
+ Transport; Fri, 14 Jun 2019 10:32:00 +0800
+Message-ID: <1560479520.15814.34.camel@mtksdccf07>
+Subject: Re: [PATCH v3] kasan: add memory corruption identification for
+ software tag-based mode
+From: Walter Wu <walter-zh.wu@mediatek.com>
+To: Andrey Ryabinin <aryabinin@virtuozzo.com>
+Date: Fri, 14 Jun 2019 10:32:00 +0800
+In-Reply-To: <1560447999.15814.15.camel@mtksdccf07>
+References: <20190613081357.1360-1-walter-zh.wu@mediatek.com>
+ <da7591c9-660d-d380-d59e-6d70b39eaa6b@virtuozzo.com>
+ <1560447999.15814.15.camel@mtksdccf07>
+X-Mailer: Evolution 3.2.3-0ubuntu6 
 MIME-Version: 1.0
+X-TM-SNTS-SMTP: C34F4A9FF25B720FA8D264905C1A23CE1B1F2B5A1E4DE450A529D5CDAA5FBF8F2000:8
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190613_192643_724851_A625CA43 
-X-CRM114-Status: GOOD (  15.11  )
+X-CRM114-CacheID: sfid-20190613_193219_189773_CED56027 
+X-CRM114-Status: GOOD (  20.56  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -72,59 +74,92 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Philipp Zabel <p.zabel@pengutronix.de>, David Airlie <airlied@linux.ie>,
- linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
- Rob Herring <robh+dt@kernel.org>, linux-mediatek@lists.infradead.org,
- Daniel Vetter <daniel@ffwll.ch>, Matthias Brugger <matthias.bgg@gmail.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: wsd_upstream@mediatek.com, "Jason A . Donenfeld" <Jason@zx2c4.com>, Vasily
+ Gorbik <gor@linux.ibm.com>, Arnd Bergmann <arnd@arndb.de>, linux-mm@kvack.org,
+ Andrey Konovalov <andreyknvl@google.com>, linux-kernel@vger.kernel.org,
+ kasan-dev@googlegroups.com, Pekka Enberg <penberg@kernel.org>, Martin
+ Schwidefsky <schwidefsky@de.ibm.com>, Miles Chen <miles.chen@mediatek.com>,
+ Alexander Potapenko <glider@google.com>, linux-arm-kernel@lists.infradead.org,
+ David Rientjes <rientjes@google.com>,
+ Matthias Brugger <matthias.bgg@gmail.com>, linux-mediatek@lists.infradead.org,
+ Christoph Lameter <cl@linux.com>, Joonsoo Kim <iamjoonsoo.kim@lge.com>,
+ Dmitry Vyukov <dvyukov@google.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-+Bibby:
-
-Hi, Yongqiang:
-
-On Wed, 2019-06-05 at 19:42 +0800, yongqiang.niu@mediatek.com wrote:
-> From: Yongqiang Niu <yongqiang.niu@mediatek.com>
+On Fri, 2019-06-14 at 01:46 +0800, Walter Wu wrote:
+> On Thu, 2019-06-13 at 15:27 +0300, Andrey Ryabinin wrote:
+> > 
+> > On 6/13/19 11:13 AM, Walter Wu wrote:
+> > > This patch adds memory corruption identification at bug report for
+> > > software tag-based mode, the report show whether it is "use-after-free"
+> > > or "out-of-bound" error instead of "invalid-access" error.This will make
+> > > it easier for programmers to see the memory corruption problem.
+> > > 
+> > > Now we extend the quarantine to support both generic and tag-based kasan.
+> > > For tag-based kasan, the quarantine stores only freed object information
+> > > to check if an object is freed recently. When tag-based kasan reports an
+> > > error, we can check if the tagged addr is in the quarantine and make a
+> > > good guess if the object is more like "use-after-free" or "out-of-bound".
+> > > 
+> > 
+> > 
+> > We already have all the information and don't need the quarantine to make such guess.
+> > Basically if shadow of the first byte of object has the same tag as tag in pointer than it's out-of-bounds,
+> > otherwise it's use-after-free.
+> > 
+> > In pseudo-code it's something like this:
+> > 
+> > u8 object_tag = *(u8 *)kasan_mem_to_shadow(nearest_object(cacche, page, access_addr));
+> > 
+> > if (access_addr_tag == object_tag && object_tag != KASAN_TAG_INVALID)
+> > 	// out-of-bounds
+> > else
+> > 	// use-after-free
 > 
-> Here is two modifition in this patch:
-> 1.bls->dpi0 and rdma1->dsi are differen usecase,
-> Split DISP_REG_CONFIG_DSI_SEL setting into anther usecase
-> 2.remove DISP_REG_CONFIG_DPI_SEL setting, DPI_SEL_IN_BLS is 0 and
-> this is same with hardware defautl setting,
+> Thanks your explanation.
+> I see, we can use it to decide corruption type.
+> But some use-after-free issues, it may not have accurate free-backtrace.
+> Unfortunately in that situation, free-backtrace is the most important.
+> please see below example
 > 
-> Signed-off-by: Yongqiang Niu <yongqiang.niu@mediatek.com>
+> In generic KASAN, it gets accurate free-backrace(ptr1).
+> In tag-based KASAN, it gets wrong free-backtrace(ptr2). It will make
+> programmer misjudge, so they may not believe tag-based KASAN.
+> So We provide this patch, we hope tag-based KASAN bug report is the same
+> accurate with generic KASAN.
+> 
 > ---
->  drivers/gpu/drm/mediatek/mtk_drm_ddp.c | 3 +--
->  1 file changed, 1 insertion(+), 2 deletions(-)
+>     ptr1 = kmalloc(size, GFP_KERNEL);
+>     ptr1_free(ptr1);
 > 
-> diff --git a/drivers/gpu/drm/mediatek/mtk_drm_ddp.c b/drivers/gpu/drm/mediatek/mtk_drm_ddp.c
-> index 717609d..1bbabe6 100644
-> --- a/drivers/gpu/drm/mediatek/mtk_drm_ddp.c
-> +++ b/drivers/gpu/drm/mediatek/mtk_drm_ddp.c
-> @@ -401,10 +401,9 @@ static void mtk_ddp_sout_sel(void __iomem *config_regs,
->  	} else if (cur == DDP_COMPONENT_BLS && next == DDP_COMPONENT_DPI0) {
->  		writel_relaxed(BLS_TO_DPI_RDMA1_TO_DSI,
->  			       config_regs + DISP_REG_CONFIG_OUT_SEL);
+>     ptr2 = kmalloc(size, GFP_KERNEL);
+>     ptr2_free(ptr2);
+> 
+>     ptr1[size] = 'x';  //corruption here
+> 
+> 
+> static noinline void ptr1_free(char* ptr)
+> {
+>     kfree(ptr);
+> }
+> static noinline void ptr2_free(char* ptr)
+> {
+>     kfree(ptr);
+> }
+> ---
+> 
+We think of another question about deciding by that shadow of the first
+byte.
+In tag-based KASAN, it is immediately released after calling kfree(), so
+the slub is easy to be used by another pointer, then it will change
+shadow memory to the tag of new pointer, it will not be the
+KASAN_TAG_INVALID, so there are many false negative cases, especially in
+small size allocation.
 
-You move 2 register setting out of the path from BLS to DPI0, does this
-path still work? Please make sure that all modification could work on
-all supported SoC.
-
-Regards,
-CK
-
-> +	} else if (cur == DDP_COMPONENT_RDMA1 && next == DDP_COMPONENT_DSI0) {
->  		writel_relaxed(DSI_SEL_IN_RDMA,
->  			       config_regs + DISP_REG_CONFIG_DSI_SEL);
-> -		writel_relaxed(DPI_SEL_IN_BLS,
-> -			       config_regs + DISP_REG_CONFIG_DPI_SEL);
->  	}
->  }
->  
+Our patch is to solve those problems. so please consider it, thanks.
 
 
 
