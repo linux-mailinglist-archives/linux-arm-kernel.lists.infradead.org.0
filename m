@@ -2,57 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 55B0F46206
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Jun 2019 17:05:51 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8B0FA4620E
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Jun 2019 17:06:42 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=qNET8miv9fR9WuUHTT9nhDK8Y+010p/G9i2pd8E55o0=; b=YWr/MSJihkoR1S2vFDzYJL8q1
-	/DHSIS93mum8SReuM8dj46auYjlrJtQh3yCsCMsN2yf8cg+zHcv1eHMqYgR1vmqrbDD+qHlwXuxCf
-	2y9eQxJx6LKJlGsWIBIZSG4INruwKhqg9fjg5LW29OV2uXQ+BrzNUEDFeHHxMLZUsX4rmSojLJ38+
-	roWm9MLALHDM35LCenp8TdQquwOddO+PFk/+WepaDkNnH0MnVWr5YPPbr+jt726gxCmXUN3iBDs9V
-	eBFaR7Lry1MOuoro8LNglmdQ5kI00NB9Qi96ipjsMr+w5VMOYB/T8W417r0fhb9gnxg69TVUzAhdu
-	D6GAH7qRg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Sk4TftXt8GDRe55Gg2jLkR49c85awi+QHc0bmU1XgOo=; b=FhELSOxTy2IZGJ
+	5u7oNm2VAOjOXToPCTPjJttcSZSfmdKDLPbuXUKGo8iQLEaGnVAsbpeqM3iiFkNM2jtFOyVZif/CV
+	qW2hqXVI/B4lLbSHp844spWTZingkj6JgBemMtQO7ka/PaqFkVAou3yyaZsYU4L9+TBwV3HoIaFfN
+	2lfJokmjkdCYr5N+uOi5RPFw5on+kpmho+S5iXl2Zm0xYcX5Ie720PHnGvSUzRSmS7o3hJSJb8qCq
+	/KGo36FRy9B3V0IgNazgWEVz3wZPrI43rZ8ODaiO9YpiQyr/gpDqiED47Mqt9+LnqJ0GL8hiHoe6I
+	8c1HCZZfEXzQE9yAOUAg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hbnlz-00059X-6q; Fri, 14 Jun 2019 15:05:47 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hbnlq-00058f-6W
- for linux-arm-kernel@lists.infradead.org; Fri, 14 Jun 2019 15:05:39 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 4E8F2344;
- Fri, 14 Jun 2019 08:05:37 -0700 (PDT)
-Received: from [10.1.197.57] (e110467-lin.cambridge.arm.com [10.1.197.57])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 5B1F93F246;
- Fri, 14 Jun 2019 08:05:34 -0700 (PDT)
+	id 1hbnmq-0005f5-IT; Fri, 14 Jun 2019 15:06:40 +0000
+Received: from verein.lst.de ([213.95.11.211] helo=newverein.lst.de)
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hbnme-0005e7-L1
+ for linux-arm-kernel@lists.infradead.org; Fri, 14 Jun 2019 15:06:29 +0000
+Received: by newverein.lst.de (Postfix, from userid 2407)
+ id 9BFFD68AFE; Fri, 14 Jun 2019 17:05:58 +0200 (CEST)
+Date: Fri, 14 Jun 2019 17:05:58 +0200
+From: 'Christoph Hellwig' <hch@lst.de>
+To: David Laight <David.Laight@ACULAB.COM>
 Subject: Re: [PATCH 16/16] dma-mapping: use exact allocation in
  dma_alloc_contiguous
-To: 'Christoph Hellwig' <hch@lst.de>, David Laight <David.Laight@ACULAB.COM>
+Message-ID: <20190614150558.GA9402@lst.de>
 References: <20190614134726.3827-1-hch@lst.de>
  <20190614134726.3827-17-hch@lst.de>
  <a90cf7ec5f1c4166b53c40e06d4d832a@AcuMS.aculab.com>
  <20190614145001.GB9088@lst.de>
-From: Robin Murphy <robin.murphy@arm.com>
-Message-ID: <4113cd5f-5c13-e9c7-bc5e-dcf0b60e7054@arm.com>
-Date: Fri, 14 Jun 2019 16:05:33 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.6.1
+ <d93fd4c2c1584d92a05dd641929f6d63@AcuMS.aculab.com>
 MIME-Version: 1.0
-In-Reply-To: <20190614145001.GB9088@lst.de>
-Content-Language: en-GB
+Content-Disposition: inline
+In-Reply-To: <d93fd4c2c1584d92a05dd641929f6d63@AcuMS.aculab.com>
+User-Agent: Mutt/1.5.17 (2007-11-01)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190614_080538_281596_4C5C40FC 
-X-CRM114-Status: GOOD (  15.23  )
+X-CRM114-CacheID: sfid-20190614_080628_845016_F11ADB4E 
+X-CRM114-Status: UNSURE (   7.64  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [213.95.11.211 listed in list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -68,7 +67,7 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>,
 Cc: Maxime Ripard <maxime.ripard@bootlin.com>,
  Joonas Lahtinen <joonas.lahtinen@linux.intel.com>,
  "dri-devel@lists.freedesktop.org" <dri-devel@lists.freedesktop.org>,
- "linux-mm@kvack.org" <linux-mm@kvack.org>,
+ "linux-mm@kvack.org" <linux-mm@kvack.org>, 'Christoph Hellwig' <hch@lst.de>,
  "devel@driverdev.osuosl.org" <devel@driverdev.osuosl.org>,
  "linux-s390@vger.kernel.org" <linux-s390@vger.kernel.org>,
  "linux-rdma@vger.kernel.org" <linux-rdma@vger.kernel.org>,
@@ -86,37 +85,18 @@ Cc: Maxime Ripard <maxime.ripard@bootlin.com>,
  H Hartley Sweeten <hsweeten@visionengravers.com>,
  "iommu@lists.linux-foundation.org" <iommu@lists.linux-foundation.org>,
  Daniel Vetter <daniel@ffwll.ch>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 14/06/2019 15:50, 'Christoph Hellwig' wrote:
-> On Fri, Jun 14, 2019 at 02:15:44PM +0000, David Laight wrote:
->> Does this still guarantee that requests for 16k will not cross a 16k boundary?
->> It looks like you are losing the alignment parameter.
-> 
-> The DMA API never gave you alignment guarantees to start with,
-> and you can get not naturally aligned memory from many of our
-> current implementations.
+On Fri, Jun 14, 2019 at 03:01:22PM +0000, David Laight wrote:
+> I'm pretty sure there is a lot of code out there that makes that assumption.
+> Without it many drivers will have to allocate almost double the
+> amount of memory they actually need in order to get the required alignment.
+> So instead of saving memory you'll actually make more be used.
 
-Well, apart from the bit in DMA-API-HOWTO which has said this since 
-forever (well, before Git history, at least):
-
-"The CPU virtual address and the DMA address are both
-guaranteed to be aligned to the smallest PAGE_SIZE order which
-is greater than or equal to the requested size.  This invariant
-exists (for example) to guarantee that if you allocate a chunk
-which is smaller than or equal to 64 kilobytes, the extent of the
-buffer you receive will not cross a 64K boundary."
-
-That said, I don't believe this particular patch should make any 
-appreciable difference - alloc_pages_exact() is still going to give back 
-the same base address as the rounded up over-allocation would, and 
-PAGE_ALIGN()ing the size passed to get_order() already seemed to be 
-pointless.
-
-Robin.
+That code would already be broken on a lot of Linux platforms.
 
 _______________________________________________
 linux-arm-kernel mailing list
