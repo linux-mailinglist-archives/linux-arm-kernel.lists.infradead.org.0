@@ -2,71 +2,70 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 282C8452FF
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Jun 2019 05:32:06 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4E80045301
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Jun 2019 05:32:37 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=b6psofUB/5tC8iTW7hv5leifBF/mi71x0h3eOXKyQyk=; b=YdZscZNbgZ0ZhD
-	/ptMEvVFppy/b1XksTGKwIuDZITOaG0+o7BDDqLHZPZOngXq0ALFP5d0RtTdX5ehWAoUIT44l2dgU
-	RGuFv+LjJW6MwG01ccmrqQCvwMXIn0DWiMd9vM1pBkmpLUJUwF3SKuOe3TK9QD4LShcEtDoE9BfM8
-	U/QXjNd/afxFXacqLAqar+GOlCFVwiCVMeQ7N/3LTjhbWyh2biMP6kEvmBD3hF5/nSej29yXAXKj7
-	RxgvIU4EwrGDJ5wdPopg+H2hZn5m+VBbFPqF3r67zCrXxk1T6+cve/s/5TSsVSqLNC1XDtF0z2ogQ
-	DADH/G3VWRutz8M8pIzw==;
+	List-Owner; bh=FqMQi6MjEsngkwCUcxxSzWzLisz25pmsXQA9X5VKf9I=; b=XHvfUH99VIU49C
+	QPOPzk9LmXhUr7ZZe8r5hUoNPlxfHIpb5aQ6iOWBCHJYXBGWHd2xL1kXOiUf85U6EhDefam+k3A0+
+	oK3tndIbH6B+cMgk3Y7gVHlTKlu8JOSBP6Rbntpy+ocW3PabQGMOioZSJyIS0/uIdp2r5am3raoie
+	7Zd1yjsuXBwZp0+VYdez1Kb8FY0dx+MjVVVexD+62RiRhTrHoMEzD2kYD/fkf8JoJbCdX18I4P5Uc
+	5JGZv3NU9MLERU6xMtlAidHrnkxZ4MMEBOpQ0iDXsrMzi/nuULw+16dYZcaNFXBF8MsgLbSVQyKRa
+	hdP3/6LTQrfpLOIb8TCw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hbcwc-0004Js-BC; Fri, 14 Jun 2019 03:32:02 +0000
+	id 1hbcx7-0004ks-Pq; Fri, 14 Jun 2019 03:32:33 +0000
 Received: from mail-ed1-f65.google.com ([209.85.208.65])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hbcmi-0002Bo-1Q
- for linux-arm-kernel@lists.infradead.org; Fri, 14 Jun 2019 03:21:49 +0000
-Received: by mail-ed1-f65.google.com with SMTP id p15so1297988eds.8
+ id 1hbcpY-0004dz-TB
+ for linux-arm-kernel@lists.infradead.org; Fri, 14 Jun 2019 03:24:46 +0000
+Received: by mail-ed1-f65.google.com with SMTP id i11so1373844edq.0
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 13 Jun 2019 20:21:47 -0700 (PDT)
+ Thu, 13 Jun 2019 20:24:44 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=gVoHYq0itV3pYTA3eOtXIMDIVkYyR0cLDLEAE/xIlME=;
- b=YRgD+h4k+4Yah2PgePhkoHQ2fKr+b9svvARVUrEwcYBu4iR4FPdyLOy/qrdheGZ8US
- Lod8c66QqhuFpuaR9YuYwLhy5BzFyL4wqR4hId3TezuGajPQx10P3M1GUwf+ul6x2Esb
- GutMPRSuJUpwBECFuybxghilbARtlpF3766tOlU4XOE9fESC4QvefkMTCML3Y2omPgrS
- 2UFFPIDOsSM+OMQk5hzeqb1v0XalnJGfe/Nx6x/GBxxC5fwT3Q+KEjX83+sU+fcQZUd/
- pG71B5+PSXs1xqcgda4kBpM1xXVwB+AIpJZVz7xAQ64tU03Cw/TNX22NYyWOIUKVTTVx
- TdFw==
-X-Gm-Message-State: APjAAAV+gi+k6xoCQ7W9MGSYwlqSAsV41nqaTT8hdrWtWPi769RvyXl8
- T8nYXtc+MRJhoIsg+ACpsT7oMihZkt8=
-X-Google-Smtp-Source: APXvYqzB7b6JOss2dBAicM3WgYeVHtRHzEhk9Zg6k4rdv6rk/ESybuILg+wnglIMAk+frJ9bjPAkpQ==
-X-Received: by 2002:a17:906:76c8:: with SMTP id
- q8mr76471120ejn.229.1560482505903; 
- Thu, 13 Jun 2019 20:21:45 -0700 (PDT)
-Received: from mail-wr1-f49.google.com (mail-wr1-f49.google.com.
- [209.85.221.49])
- by smtp.gmail.com with ESMTPSA id dc1sm315764ejb.39.2019.06.13.20.21.45
+ bh=2AfQZDv35ufBp3E88y1iMFldBKX1WcqrUozmSOVMRmA=;
+ b=Eqq6D0eMhITIWFmdEfz69fObc6/t9wleelOK7GYE2NoyVr0gEvIVgEudRZxQqlfGfw
+ ypMhIFPL4vvkWgfW8TlG/6x+KNLpKsujvCD6G3gKq6ufvhimK0IkH+ibor03KH232lB/
+ FmTDaNj/Hj19n9tdVLU/k1A72VCJ8rHy2Sjdug+HHaSnj3fkTSyIpfcnWtJmvwmLztJ+
+ Ce5+fjsHI2D5HFrJlH5ar+Hvq2agvlWifoJ35wJHpu3TjCmM6M4YocsVInEXTDKVJzk2
+ l8GG/x+Zby8ewrMExzOE+yfE45nz1qFq0OMyGzeMztYaEtV3CfvIgGcxiuwiqR0FjqcW
+ uu7g==
+X-Gm-Message-State: APjAAAWLWmW1QoN7DCtcCzL2RAoskckkxzmpccHBGuWERG9SG1lj9xOL
+ pCMyHypxWVKUWDAOLgiTW0dzosjXLGA=
+X-Google-Smtp-Source: APXvYqzoSlUqf6qMrIx5kQG0Kvoxoge7F+61wcFsnPHXANuThzqWBG/cB7D1GNgSETH0KKslsfXiXw==
+X-Received: by 2002:a50:9107:: with SMTP id e7mr13183024eda.280.1560482683268; 
+ Thu, 13 Jun 2019 20:24:43 -0700 (PDT)
+Received: from mail-wr1-f45.google.com (mail-wr1-f45.google.com.
+ [209.85.221.45])
+ by smtp.gmail.com with ESMTPSA id y22sm447097edw.94.2019.06.13.20.24.41
  for <linux-arm-kernel@lists.infradead.org>
  (version=TLS1_3 cipher=AEAD-AES128-GCM-SHA256 bits=128/128);
- Thu, 13 Jun 2019 20:21:45 -0700 (PDT)
-Received: by mail-wr1-f49.google.com with SMTP id d18so881899wrs.5
+ Thu, 13 Jun 2019 20:24:42 -0700 (PDT)
+Received: by mail-wr1-f45.google.com with SMTP id x4so881750wrt.6
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 13 Jun 2019 20:21:45 -0700 (PDT)
-X-Received: by 2002:adf:dc43:: with SMTP id m3mr3389739wrj.279.1560482505069; 
- Thu, 13 Jun 2019 20:21:45 -0700 (PDT)
+ Thu, 13 Jun 2019 20:24:41 -0700 (PDT)
+X-Received: by 2002:adf:fc85:: with SMTP id g5mr62039461wrr.324.1560482681552; 
+ Thu, 13 Jun 2019 20:24:41 -0700 (PDT)
 MIME-Version: 1.0
 References: <20190613185241.22800-1-jagan@amarulasolutions.com>
- <20190613185241.22800-4-jagan@amarulasolutions.com>
-In-Reply-To: <20190613185241.22800-4-jagan@amarulasolutions.com>
+ <20190613185241.22800-5-jagan@amarulasolutions.com>
+In-Reply-To: <20190613185241.22800-5-jagan@amarulasolutions.com>
 From: Chen-Yu Tsai <wens@csie.org>
-Date: Fri, 14 Jun 2019 11:21:32 +0800
-X-Gmail-Original-Message-ID: <CAGb2v65mR0DwAuf_YvDS-dwx2RpEdBeV-5R44zgWn83GNEgp6w@mail.gmail.com>
-Message-ID: <CAGb2v65mR0DwAuf_YvDS-dwx2RpEdBeV-5R44zgWn83GNEgp6w@mail.gmail.com>
-Subject: Re: [PATCH 3/9] ARM: dts: sun8i: r40: Use tcon top clock index macros
+Date: Fri, 14 Jun 2019 11:24:29 +0800
+X-Gmail-Original-Message-ID: <CAGb2v67eNu31pQExMTxAki1Wp4tdqRH87Oh+1j4Cb0cuK8pQRQ@mail.gmail.com>
+Message-ID: <CAGb2v67eNu31pQExMTxAki1Wp4tdqRH87Oh+1j4Cb0cuK8pQRQ@mail.gmail.com>
+Subject: Re: [PATCH 4/9] drm/sun4i: tcon_top: Use clock name index macros
 To: Jagan Teki <jagan@amarulasolutions.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190613_202148_101173_3936CD66 
-X-CRM114-Status: UNSURE (   8.58  )
+X-CRM114-CacheID: sfid-20190613_202444_986781_01E51FBE 
+X-CRM114-Status: UNSURE (   9.64  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.8 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -114,17 +113,21 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 On Fri, Jun 14, 2019 at 2:54 AM Jagan Teki <jagan@amarulasolutions.com> wrote:
 >
-> tcon_tv0, tcon_tv1 nodes have a clock names of tcon-ch0,
-> tcon-ch1 which are referring tcon_top clocks via index
-> numbers like 0, 1 with CLK_TCON_TV0 and CLK_TCON_TV1
-> respectively.
+> TCON TOP mux blocks in R40 are registering clock using
+> tcon top clock index numbers.
 >
-> Use the macro in place of index numbers, for more code
-> readability.
+> Right now the code is using, real numbers start with 0, but
+> we have proper macros that defined these name index numbers.
+>
+> Use the existing macros, instead of real numbers for more
+> code readability.
 >
 > Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
 
 Reviewed-by: Chen-Yu Tsai <wens@csie.org>
+
+However, you might want to rename the clock first, then switch to
+using the index macros?
 
 _______________________________________________
 linux-arm-kernel mailing list
