@@ -2,115 +2,130 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 857B346641
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Jun 2019 19:53:19 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E753C46707
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Jun 2019 20:05:22 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
+	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=E1RHJhkjzH/fbdjs1eK/Kyx2dZ1SyaiI2sRFjwh64es=; b=ZDpWSfBEFfD4xt
-	2F8XwnZW96zyZrcr0GtrH8+gSIlJ5K7jG+ve1zfXjThNzX0wxKV1IqO4ytNcHqdXmxmU7E7fCgcbC
-	XyOOziS+/aT5j2Ub/KqvX1MDhZvpPtEyBxSCiLRgpn+2PUpyZQFpc8uWlLhkjxVWnHRkFNck5BCL1
-	/dO6GpNnZXxH2LHaEpO4/VyXkp0psFSbdCZpvrmTZciEzwxWpj4nAJl6c1aor66Wkr1pZlbBmZTGz
-	Vuc5Qby5eSvNxsPJsaX5O7XijNME3sbi2eyTEDfpqMlurBZ4Vc9Dpb77kkr/oCnKrS9FRRiwflpWR
-	a1k2DkQlvw0TA35YXHbw==;
+	List-Owner; bh=yfyJdtC8oTapoXpHWuSNmwLAkxP7MEGD+TN2ZEdmxZg=; b=cvzxj4NZ3i2guG
+	HW+k/h1XKTYp/eWNatO9lkW48Tz8ctBnNBrYTBAyhnCzz3sUKFR/DODCNt+WF23khd6ebmtwdsfMX
+	sHLYjF1Sco4LUNRs4jJut5pf8BavTB7D6IzxON/U77LA4/Lm9DVl8sqVwG06Mje4tat+FpV+WFIZ+
+	oW/efkoxLAgWwhz659ySB3hissQb0Vu7WdRWOJ0rZt9/Fn3o8yiuFGqWc75Ibs0U3sZqySy3qW9VF
+	d4hUAlqAixXNGU1c5RA7YiwbC7oY53P1keFqwAkRsB4l3aSwm6oyuL7WcAXr6xOuxwresvo5ubWuJ
+	Mjq48E3iIzs4lnI7jsww==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hbqO6-0000Yx-2x; Fri, 14 Jun 2019 17:53:18 +0000
-Received: from mail-eopbgr750122.outbound.protection.outlook.com
- ([40.107.75.122] helo=NAM02-BL2-obe.outbound.protection.outlook.com)
+	id 1hbqZj-0006fM-Gh; Fri, 14 Jun 2019 18:05:19 +0000
+Received: from dc2-smtprelay2.synopsys.com ([198.182.61.142]
+ helo=smtprelay-out1.synopsys.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hbqNu-0000YF-3u
- for linux-arm-kernel@lists.infradead.org; Fri, 14 Jun 2019 17:53:07 +0000
+ id 1hbqZa-0006ce-8I; Fri, 14 Jun 2019 18:05:11 +0000
+Received: from mailhost.synopsys.com (dc2-mailhost1.synopsys.com
+ [10.12.135.161])
+ (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
+ (No client certificate requested)
+ by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id 034BBC2289;
+ Fri, 14 Jun 2019 18:05:06 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=synopsys.com; s=mail;
+ t=1560535508; bh=8l8rPS/BySgxKl7CjMynmtU9SAyJOl5r8Xw0NG8wAC0=;
+ h=From:To:CC:Subject:Date:References:In-Reply-To:From;
+ b=gYkilA5FB8HiSeRy3vKPpk5f4eCqFid+8N3qGOQkb+u9MEkuKLQtD60WF6LncCyVo
+ QeoSjg/yuJsnQJNlqTgMX8qfrXg4rtoYa0SmFgUIuLZy28heStZIY24ATvCE0v5XST
+ o35bQF3DWPTSqqMIg0nsbKSWi+1UEjWOtQHyf34TvDAs89UBINSd9Xttn8tVPVUojs
+ 8pKMnAwGkJnB/nf5HQMrhH4bbWfHoPncCwTd7GQ7gd03p28GmOUZhOvQqNdozrervd
+ m6CdlpOb3owxqS340+5uaCiZ6i4T5ZfD2dA2DJ/lKZ977u9gXauvIVapnAnPrAZjyp
+ 6doF38xDoZ4Mw==
+Received: from us01wehtc1.internal.synopsys.com
+ (us01wehtc1-vip.internal.synopsys.com [10.12.239.236])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mailhost.synopsys.com (Postfix) with ESMTPS id D4B33A009B;
+ Fri, 14 Jun 2019 18:05:03 +0000 (UTC)
+Received: from US01HYBRID2.internal.synopsys.com (10.15.246.24) by
+ us01wehtc1.internal.synopsys.com (10.12.239.235) with Microsoft SMTP Server
+ (TLS) id 14.3.408.0; Fri, 14 Jun 2019 11:05:03 -0700
+Received: from NAM04-CO1-obe.outbound.protection.outlook.com (10.13.134.195)
+ by mrs.synopsys.com (10.15.246.24) with Microsoft SMTP Server (TLS) id
+ 14.3.408.0; Fri, 14 Jun 2019 11:05:02 -0700
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=aampusa.onmicrosoft.com; s=selector2-aampusa-onmicrosoft-com;
+ d=synopsys.onmicrosoft.com; s=selector1-synopsys-onmicrosoft-com;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=EktKp3FM/TYhopDrmc4FHkZWPxJilSUv8KXU9GDkTtQ=;
- b=pHY41RnJm4QzIrthtIGZVqOpL8TaCZ8e5903pYZ7o9T2OKCsKNJRM9u9HmtsG9x4CMOOIRAh1MGUC+hpiVAVLNBW9NRfj2Uj9hqiwESZlkXAoyUSUdGvLhIoa7DnYAR7heMVOAxWIWbTHIESD30MFUAB2zNxfabvxgIf6n6+o4Y=
-Received: from BL0PR07MB4115.namprd07.prod.outlook.com (52.132.10.149) by
- BL0PR07MB4034.namprd07.prod.outlook.com (52.132.10.24) with Microsoft SMTP
+ bh=8l8rPS/BySgxKl7CjMynmtU9SAyJOl5r8Xw0NG8wAC0=;
+ b=oaOJffTjW0uTpKf34k7hA4ANFNsEMxaGhtz6N1kUgHH+s238w8ljAedjDNr8knG8MLj2PddmLsOGZXyqmdHBxD0xg28TxIF2IdAYdAMEYFE8Jljiiy/0hfPsaFrTUY6t7svusvAd9f8KO9dTFX9WiuJpZCZk5Gx/rdC0mQMAq8g=
+Received: from SN6PR12MB2670.namprd12.prod.outlook.com (52.135.103.23) by
+ SN6PR12MB2670.namprd12.prod.outlook.com (52.135.103.23) with Microsoft SMTP
  Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.1987.12; Fri, 14 Jun 2019 17:53:02 +0000
-Received: from BL0PR07MB4115.namprd07.prod.outlook.com
- ([fe80::f064:5129:63c6:d3e]) by BL0PR07MB4115.namprd07.prod.outlook.com
- ([fe80::f064:5129:63c6:d3e%6]) with mapi id 15.20.1965.019; Fri, 14 Jun 2019
- 17:53:02 +0000
-From: Ken Sloat <KSloat@aampglobal.com>
-To: Guenter Roeck <linux@roeck-us.net>
-Subject: RE: [PATCH v2 1/1] watchdog: atmel: atmel-sama5d4-wdt: Disable
- watchdog on system suspend
-Thread-Topic: [PATCH v2 1/1] watchdog: atmel: atmel-sama5d4-wdt: Disable
- watchdog on system suspend
-Thread-Index: AQHVIrAmpSe7ef5LPkq+gtVGV8yaCKabW/WAgAAQIfA=
-Date: Fri, 14 Jun 2019 17:53:01 +0000
-Message-ID: <BL0PR07MB4115E99D065FD9BEA4C43BB5ADEE0@BL0PR07MB4115.namprd07.prod.outlook.com>
-References: <20190614125310.29458-1-ksloat@aampglobal.com>
- <20190614164609.GA29814@roeck-us.net>
-In-Reply-To: <20190614164609.GA29814@roeck-us.net>
+ 15.20.1965.17; Fri, 14 Jun 2019 18:05:01 +0000
+Received: from SN6PR12MB2670.namprd12.prod.outlook.com
+ ([fe80::cd10:94a4:d1b1:c3b2]) by SN6PR12MB2670.namprd12.prod.outlook.com
+ ([fe80::cd10:94a4:d1b1:c3b2%5]) with mapi id 15.20.1965.019; Fri, 14 Jun 2019
+ 18:05:01 +0000
+From: Eugeniy Paltsev <Eugeniy.Paltsev@synopsys.com>
+To: "hch@lst.de" <hch@lst.de>,
+	Vineet Gupta <Vineet.Gupta1@synopsys.com>
+Subject: Re: [PATCH 7/7] arc: use the generic remapping allocator for coherent
+ DMA allocations
+Thread-Topic: [PATCH 7/7] arc: use the generic remapping allocator for
+ coherent DMA allocations
+Thread-Index: AQHVIsAMmlRh09Vs6Ea+qlthrKcWyaabcdSA
+Date: Fri, 14 Jun 2019 18:05:01 +0000
+Message-ID: <78ac563f2815a9a14bfab6076d0ef948497f5b9f.camel@synopsys.com>
+References: <20190614144431.21760-1-hch@lst.de>
+ <20190614144431.21760-8-hch@lst.de>
+In-Reply-To: <20190614144431.21760-8-hch@lst.de>
 Accept-Language: en-US
 Content-Language: en-US
 X-MS-Has-Attach: 
 X-MS-TNEF-Correlator: 
 authentication-results: spf=none (sender IP is )
- smtp.mailfrom=KSloat@aampglobal.com; 
-x-originating-ip: [100.3.71.115]
+ smtp.mailfrom=paltsev@synopsys.com; 
+x-originating-ip: [84.204.78.101]
 x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: 0930e3a5-75c0-4c09-553b-08d6f0f12546
+x-ms-office365-filtering-correlation-id: fe65ae5e-8ab4-4807-cac3-08d6f0f2d1c4
 x-microsoft-antispam: BCL:0; PCL:0;
  RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600148)(711020)(4605104)(1401327)(2017052603328)(7193020);
- SRVR:BL0PR07MB4034; 
-x-ms-traffictypediagnostic: BL0PR07MB4034:
-x-microsoft-antispam-prvs: <BL0PR07MB403422AF5E3C1EEE01DE79DCADEE0@BL0PR07MB4034.namprd07.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:10000;
+ SRVR:SN6PR12MB2670; 
+x-ms-traffictypediagnostic: SN6PR12MB2670:
+x-microsoft-antispam-prvs: <SN6PR12MB2670A4F2AE9D22869844289FDEEE0@SN6PR12MB2670.namprd12.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:3631;
 x-forefront-prvs: 0068C7E410
 x-forefront-antispam-report: SFV:NSPM;
- SFS:(10019020)(979002)(346002)(376002)(136003)(366004)(39850400004)(396003)(189003)(199004)(13464003)(68736007)(76176011)(26005)(7696005)(33656002)(8676002)(305945005)(54906003)(316002)(102836004)(74316002)(99286004)(81156014)(52536014)(6916009)(478600001)(15650500001)(72206003)(71200400001)(71190400001)(81166006)(6506007)(53546011)(80792005)(14454004)(66066001)(6246003)(2906002)(66476007)(6436002)(256004)(73956011)(55016002)(53936002)(86362001)(14444005)(76116006)(186003)(229853002)(66556008)(66946007)(66446008)(64756008)(5660300002)(476003)(4326008)(486006)(8936002)(11346002)(446003)(7736002)(25786009)(6116002)(3846002)(9686003)(969003)(989001)(999001)(1009001)(1019001);
- DIR:OUT; SFP:1102; SCL:1; SRVR:BL0PR07MB4034;
- H:BL0PR07MB4115.namprd07.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ SFS:(10019020)(979002)(346002)(366004)(39860400002)(376002)(396003)(136003)(189003)(199004)(66476007)(99286004)(66946007)(91956017)(73956011)(118296001)(102836004)(76176011)(478600001)(76116006)(6506007)(305945005)(7736002)(2501003)(66446008)(64756008)(66556008)(8676002)(8936002)(81166006)(81156014)(316002)(53936002)(6436002)(86362001)(6512007)(229853002)(6486002)(4326008)(6246003)(68736007)(25786009)(54906003)(110136005)(14454004)(2906002)(66066001)(7416002)(5660300002)(3846002)(6116002)(6636002)(486006)(476003)(26005)(256004)(14444005)(71190400001)(71200400001)(186003)(36756003)(2616005)(11346002)(446003)(41533002)(969003)(989001)(999001)(1009001)(1019001);
+ DIR:OUT; SFP:1102; SCL:1; SRVR:SN6PR12MB2670;
+ H:SN6PR12MB2670.namprd12.prod.outlook.com; FPR:; SPF:None; LANG:en;
  PTR:InfoNoRecords; MX:1; A:1; 
-received-spf: None (protection.outlook.com: aampglobal.com does not designate
+received-spf: None (protection.outlook.com: synopsys.com does not designate
  permitted sender hosts)
 x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: M4JaadTdGtAewidarsw/8y7QUS5qeDhCPW1LOIwU8hAgI6t5cRIc69rIv/Csm4pBKLVZzPcx+FdLIN5Agkn99qJNsgtJ4MTVd8ECt47hQRzdLM9eQuPwSf1+WhdDLAzZ83VqjA0V9wgw00RobI8E3PpjnCQ9oKp4nx48kGYeEQAn+20rOWoyZdo8eBUdnxK5xAoSqVlfLNMryj6zw1CWRiB79a5HvI6vtkYaf4TevtoCPbbO2CgWpchhKCJh7Z2FEyAPB5XG9eRpzAhC+IQJHRyUoeq+E6txLwlGeWkY6hTlcq1mwD9v9hGbikiyUU256bZ3tbe+d86qTPBS6l+Ng1O1Q/s21WoI/A5KAj6Wxi3Mj/KFooTFlqxD8c8LNi0pOqqJ4y3Vke7afYL2gBmOwYLbLNTGWNiBDCuELXOgfWs=
+x-microsoft-antispam-message-info: YBo9AYdmhEZbwv5F7ged9mWrC7tql7NT/82/lk4XBk4yxnVTMeXKJkmO/NjR85T44P5fCtj9xLXlJq9Ucph+GJH4m3+N//zN8tQtYI06Dq4BBxo7v6XIpR22HYlb/2KyiFzVWZ+2nKz84PkZWPkOlIqHHuRcNZ0zWSY16jw5gdyNkT4h/gn7M3mtCfptPWK9h/g0BXFbxbkqC6xgvi/jttuP7GI6eHhrGNHGiGQIfpMalogyDPNVq8zTgVertmYirFJda3stU1kZIIRNzG6smhyRLoZfRYFcnaSs8tqepqOsbsk8RNRuzdww5tXASliJmsM2Hs3JpzT5a9idHU3GyP2F5IGaF4QyjSsW54WTao4IWUGOvUolro4T4ZUaXgvsiQCZDW8IhXZ8DvCk2pH1fNVZx0/w7eUJjwi/d8tuhX4=
+Content-ID: <FCDD90A34BC48347BC639126DA077974@namprd12.prod.outlook.com>
 MIME-Version: 1.0
-X-OriginatorOrg: aampglobal.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 0930e3a5-75c0-4c09-553b-08d6f0f12546
-X-MS-Exchange-CrossTenant-originalarrivaltime: 14 Jun 2019 17:53:02.1265 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: fe65ae5e-8ab4-4807-cac3-08d6f0f2d1c4
+X-MS-Exchange-CrossTenant-originalarrivaltime: 14 Jun 2019 18:05:01.0717 (UTC)
 X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: e20e3a66-8b9e-46e9-b859-cb654c1ec6ea
+X-MS-Exchange-CrossTenant-id: c33c9f88-1eb7-4099-9700-16013fd9e8aa
 X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: ken.sloat@aampglobal.com
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: BL0PR07MB4034
-X-MS-Exchange-CrossPremises-AuthAs: Internal
-X-MS-Exchange-CrossPremises-AuthMechanism: 04
-X-MS-Exchange-CrossPremises-AuthSource: BL0PR07MB4115.namprd07.prod.outlook.com
-X-MS-Exchange-CrossPremises-TransportTrafficType: Email
-X-MS-Exchange-CrossPremises-TransportTrafficSubType: 
-X-MS-Exchange-CrossPremises-SCL: 1
-X-MS-Exchange-CrossPremises-messagesource: StoreDriver
-X-MS-Exchange-CrossPremises-BCC: 
-X-MS-Exchange-CrossPremises-originalclientipaddress: 100.3.71.115
-X-MS-Exchange-CrossPremises-transporttraffictype: Email
-X-MS-Exchange-CrossPremises-transporttrafficsubtype: 
-X-MS-Exchange-CrossPremises-antispam-scancontext: DIR:Originating; SFV:NSPM;
- SKIP:0; 
-X-MS-Exchange-CrossPremises-processed-by-journaling: Journal Agent
-X-OrganizationHeadersPreserved: BL0PR07MB4034.namprd07.prod.outlook.com
+X-MS-Exchange-CrossTenant-userprincipalname: paltsev@synopsys.com
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: SN6PR12MB2670
+X-OriginatorOrg: synopsys.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190614_105306_221908_C734201E 
-X-CRM114-Status: GOOD (  23.85  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20190614_110510_361222_E9324F91 
+X-CRM114-Status: GOOD (  23.17  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.75.122 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -124,126 +139,160 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "alexandre.belloni@bootlin.com" <alexandre.belloni@bootlin.com>,
- "linux-watchdog@vger.kernel.org" <linux-watchdog@vger.kernel.org>,
+Cc: "jonas@southpole.se" <jonas@southpole.se>,
+ "linux-xtensa@linux-xtensa.org" <linux-xtensa@linux-xtensa.org>,
+ "vladimir.murzin@arm.com" <vladimir.murzin@arm.com>,
+ "linux-parisc@vger.kernel.org" <linux-parisc@vger.kernel.org>,
+ "deller@gmx.de" <deller@gmx.de>,
  "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "ludovic.desroches@microchip.com" <ludovic.desroches@microchip.com>,
- "wim@linux-watchdog.org" <wim@linux-watchdog.org>,
+ "stefan.kristiansson@saunalahti.fi" <stefan.kristiansson@saunalahti.fi>,
+ "iommu@lists.linux-foundation.org" <iommu@lists.linux-foundation.org>,
+ "openrisc@lists.librecores.org" <openrisc@lists.librecores.org>,
+ "shorne@gmail.com" <shorne@gmail.com>,
+ "linux-snps-arc@lists.infradead.org" <linux-snps-arc@lists.infradead.org>,
  "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-> -----Original Message-----
-> From: Guenter Roeck <groeck7@gmail.com> On Behalf Of Guenter Roeck
-> Sent: Friday, June 14, 2019 12:46 PM
-> To: Ken Sloat <KSloat@aampglobal.com>
-> Cc: nicolas.ferre@microchip.com; alexandre.belloni@bootlin.com;
-> ludovic.desroches@microchip.com; wim@linux-watchdog.org; linux-arm-
-> kernel@lists.infradead.org; linux-watchdog@vger.kernel.org; linux-
-> kernel@vger.kernel.org
-> Subject: Re: [PATCH v2 1/1] watchdog: atmel: atmel-sama5d4-wdt: Disable
-> watchdog on system suspend
+Hi Christoph,
+
+Regular question - do you have any public git repository with all this dma changes?
+I want to test it for ARC.
+
+Pretty sure the
+ [PATCH 2/7] arc: remove the partial DMA_ATTR_NON_CONSISTENT support
+is fine.
+
+Not so sure about
+ [PATCH 7/7] arc: use the generic remapping allocator for coherent DMA allocations
+:)
+
+On Fri, 2019-06-14 at 16:44 +0200, Christoph Hellwig wrote:
+> Replace the code that sets up uncached PTEs with the generic vmap based
+> remapping code.  It also provides an atomic pool for allocations from
+> non-blocking context, which we not properly supported by the existing
+> arc code.
 > 
-> [This is an EXTERNAL EMAIL]
-> ________________________________
+> Signed-off-by: Christoph Hellwig <hch@lst.de>
+> ---
+>  arch/arc/Kconfig  |  2 ++
+>  arch/arc/mm/dma.c | 62 ++++++++---------------------------------------
+>  2 files changed, 12 insertions(+), 52 deletions(-)
 > 
-> On Fri, Jun 14, 2019 at 12:53:22PM +0000, Ken Sloat wrote:
-> > From: Ken Sloat <ksloat@aampglobal.com>
-> >
-> > Currently, the atmel-sama5d4-wdt continues to run after system suspend.
-> > Unless the system resumes within the watchdog timeout period so the
-> > userspace can kick it, the system will be reset. This change disables
-> > the watchdog on suspend if it is active and re-enables on resume.
-> > These actions occur during the late and early phases of suspend and
-> > resume respectively to minimize chances where a lock could occur while
-> > the watchdog is disabled.
-> >
-> > Signed-off-by: Ken Sloat <ksloat@aampglobal.com>
-> > ---
-> >  Changes in v2:
-> >  -Consolidate resume and resume early statements.
-> >
-> >  drivers/watchdog/sama5d4_wdt.c | 21 ++++++++++++++++++---
-> >  1 file changed, 18 insertions(+), 3 deletions(-)
-> >
-> > diff --git a/drivers/watchdog/sama5d4_wdt.c
-> > b/drivers/watchdog/sama5d4_wdt.c index 111695223aae..0d123f8cbcc6
-> > 100644
-> > --- a/drivers/watchdog/sama5d4_wdt.c
-> > +++ b/drivers/watchdog/sama5d4_wdt.c
-> > @@ -280,7 +280,17 @@ static const struct of_device_id
-> > sama5d4_wdt_of_match[] = {  MODULE_DEVICE_TABLE(of,
-> > sama5d4_wdt_of_match);
-> >
-> >  #ifdef CONFIG_PM_SLEEP
-> > -static int sama5d4_wdt_resume(struct device *dev)
-> > +static int sama5d4_wdt_suspend_late(struct device *dev) {
-> > +     struct sama5d4_wdt *wdt = dev_get_drvdata(dev);
-> > +
-> > +     if (watchdog_active(&wdt->wdd))
-> > +             sama5d4_wdt_stop(&wdt->wdd);
-> > +
-> > +     return 0;
-> > +}
-> > +
-> > +static int sama5d4_wdt_resume_early(struct device *dev)
-> >  {
-> >       struct sama5d4_wdt *wdt = dev_get_drvdata(dev);
-> >
-> > @@ -291,12 +301,17 @@ static int sama5d4_wdt_resume(struct device
-> *dev)
-> >        */
-> >       sama5d4_wdt_init(wdt);
-> >
-> > +     if (watchdog_active(&wdt->wdd))
-> > +             sama5d4_wdt_start(&wdt->wdd);
-> > +
-> 
-> The call to sama5d4_wdt_init() above now explicitly stops the watchdog
-> even if we want to (re)start it. I think this would be better handled with an
-> else case here
-> 
->         else
->                 sama5d4_wdt_stop(&wdt->wdd);
-> 
-
-So we completely remove the sama5d4_wdt_init() call then correct?
-
-To leave the code as it behaves today with the addition
-of wdt stop/start, shouldn't we call init in the else instead?
-
-	if (watchdog_active(&wdt->wdd))
-		sama5d4_wdt_start(&wdt->wdd);
-	else
-		sama5d4_wdt_init();
-
-I guess I don't really understand the purpose of having the init statement in resume
-in the first place. I agree, calling this first does end up essentially resetting the wdt
-it will start again if it was running before, but the count will be reset.
-
-> Guenter
-> 
-> >       return 0;
-> >  }
-> >  #endif
-> >
-> > -static SIMPLE_DEV_PM_OPS(sama5d4_wdt_pm_ops, NULL,
-> > -                      sama5d4_wdt_resume);
-> > +static const struct dev_pm_ops sama5d4_wdt_pm_ops = {
-> > +     SET_LATE_SYSTEM_SLEEP_PM_OPS(sama5d4_wdt_suspend_late,
-> > +                     sama5d4_wdt_resume_early) };
-> >
-> >  static struct platform_driver sama5d4_wdt_driver = {
-> >       .probe          = sama5d4_wdt_probe,
-> > --
-> > 2.17.1
-> >
-
-Thanks,
-Ken Sloat
-
+> diff --git a/arch/arc/Kconfig b/arch/arc/Kconfig
+> index 23e063df5d2c..cdad7d30ff1d 100644
+> --- a/arch/arc/Kconfig
+> +++ b/arch/arc/Kconfig
+> @@ -10,6 +10,7 @@ config ARC
+>  	def_bool y
+>  	select ARC_TIMERS
+>  	select ARCH_HAS_DMA_COHERENT_TO_PFN
+> +	select ARCH_HAS_DMA_PREP_COHERENT
+>  	select ARCH_HAS_PTE_SPECIAL
+>  	select ARCH_HAS_SETUP_DMA_OPS
+>  	select ARCH_HAS_SYNC_DMA_FOR_CPU
+> @@ -19,6 +20,7 @@ config ARC
+>  	select BUILDTIME_EXTABLE_SORT
+>  	select CLONE_BACKWARDS
+>  	select COMMON_CLK
+> +	select DMA_DIRECT_REMAP
+>  	select GENERIC_ATOMIC64 if !ISA_ARCV2 || !(ARC_HAS_LL64 && ARC_HAS_LLSC)
+>  	select GENERIC_CLOCKEVENTS
+>  	select GENERIC_FIND_FIRST_BIT
+> diff --git a/arch/arc/mm/dma.c b/arch/arc/mm/dma.c
+> index 9832928f896d..0fa850709fac 100644
+> --- a/arch/arc/mm/dma.c
+> +++ b/arch/arc/mm/dma.c
+> @@ -11,46 +11,15 @@
+>  #include <asm/cacheflush.h>
+>  
+>  /*
+> - * ARCH specific callbacks for generic noncoherent DMA ops (dma/noncoherent.c)
+> + * ARCH specific callbacks for generic noncoherent DMA ops
+>   *  - hardware IOC not available (or "dma-coherent" not set for device in DT)
+>   *  - But still handle both coherent and non-coherent requests from caller
+>   *
+>   * For DMA coherent hardware (IOC) generic code suffices
+>   */
+> -void *arch_dma_alloc(struct device *dev, size_t size, dma_addr_t *dma_handle,
+> -		gfp_t gfp, unsigned long attrs)
+> -{
+> -	unsigned long order = get_order(size);
+> -	struct page *page;
+> -	phys_addr_t paddr;
+> -	void *kvaddr;
+> -
+> -	/*
+> -	 * __GFP_HIGHMEM flag is cleared by upper layer functions
+> -	 * (in include/linux/dma-mapping.h) so we should never get a
+> -	 * __GFP_HIGHMEM here.
+> -	 */
+> -	BUG_ON(gfp & __GFP_HIGHMEM);
+> -
+> -	page = alloc_pages(gfp | __GFP_ZERO, order);
+> -	if (!page)
+> -		return NULL;
+> -
+> -	/* This is linear addr (0x8000_0000 based) */
+> -	paddr = page_to_phys(page);
+> -
+> -	*dma_handle = paddr;
+> -
+> -	/*
+> -	 * A coherent buffer needs MMU mapping to enforce non-cachability.
+> -	 * kvaddr is kernel Virtual address (0x7000_0000 based).
+> -	 */
+> -	kvaddr = ioremap_nocache(paddr, size);
+> -	if (kvaddr == NULL) {
+> -		__free_pages(page, order);
+> -		return NULL;
+> -	}
+>  
+> +void arch_dma_prep_coherent(struct page *page, size_t size)
+> +{
+>  	/*
+>  	 * Evict any existing L1 and/or L2 lines for the backing page
+>  	 * in case it was used earlier as a normal "cached" page.
+> @@ -61,24 +30,7 @@ void *arch_dma_alloc(struct device *dev, size_t size, dma_addr_t *dma_handle,
+>  	 * Currently flush_cache_vmap nukes the L1 cache completely which
+>  	 * will be optimized as a separate commit
+>  	 */
+> -	dma_cache_wback_inv(paddr, size);
+> -	return kvaddr;
+> -}
+> -
+> -void arch_dma_free(struct device *dev, size_t size, void *vaddr,
+> -		dma_addr_t dma_handle, unsigned long attrs)
+> -{
+> -	phys_addr_t paddr = dma_handle;
+> -	struct page *page = virt_to_page(paddr);
+> -
+> -	iounmap((void __force __iomem *)vaddr);
+> -	__free_pages(page, get_order(size));
+> -}
+> -
+> -long arch_dma_coherent_to_pfn(struct device *dev, void *cpu_addr,
+> -		dma_addr_t dma_addr)
+> -{
+> -	return __phys_to_pfn(dma_addr);
+> +	dma_cache_wback_inv(page_to_phys(page), size);
+>  }
+>  
+>  /*
+> @@ -155,3 +107,9 @@ void arch_setup_dma_ops(struct device *dev, u64 dma_base, u64 size,
+>  	dev_info(dev, "use %sncoherent DMA ops\n",
+>  		 dev->dma_coherent ? "" : "non");
+>  }
+> +
+> +static int __init atomic_pool_init(void)
+> +{
+> +	return dma_atomic_pool_init(GFP_KERNEL, pgprot_noncached(PAGE_KERNEL));
+> +}
+> +postcore_initcall(atomic_pool_init);
+-- 
+ Eugeniy Paltsev
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
