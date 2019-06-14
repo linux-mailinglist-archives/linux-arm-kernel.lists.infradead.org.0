@@ -2,58 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A378245AC9
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Jun 2019 12:43:51 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 73B3C45AD4
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Jun 2019 12:44:39 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=gbwv+YABhJnmIh669KHUsIsbWRlMiBZNpQf1lVS3kBo=; b=GlIa+XYsFxe22X
-	IaBhNhrKm3dM5vwUw00rQULV7BCpgcyxf/UICs1Cuh5kVLz5H/NZbwvFJNnVrar5Lrh4CQvjZ56jE
-	Aao2I5471dyUdMBv05GheiC+FuSAzdUEDcJiAz3Zl68eK1Y/jOhgMQ7P/4fpfPg4LCnFfzdrVDq+h
-	CsvUfrxir9+p4WrkWfuvxy7vln2h6Y4cdiB1I6wEH9v5RmMNPE7sXk8fo0EYLazUrwCl1SDgzuivm
-	yqgD8XpmvF59YXynDlVImwp8v+tOivw2ZRblywXNIHU/Wnr0eZLLoRuOebU9aF0OAi2fsh9scSHgJ
-	S3Hk48J1uZ2saehUu7TQ==;
+	List-Owner; bh=Bc0K20UtE+VwEbI2VGTK5wirTIYRePmOYNH2FkevefU=; b=h12GoKgMBjB4tn
+	JHHy9JhItOsGlhjh+ewPLC4mCO7X1RJfSqkoWsGqxCSUQkuwMyd3g+buyeMSnwQtiU6n5KrDBS3RW
+	NFy+HQq8kLWeg/Rl+d8V0zvx/rI+hqIPM7k0vPezmjNdk5OhGExOd6IhXHNJ1qULfHNpkY5GRNQu6
+	mPbQy94i+viCz/b2JWXPYKvrdxCWXbPeRXddttSgXdOLoEHGEqj7Kvy9KJtbSOtKtqPt3IMIt1+Mz
+	qeWBTvy2csBEDS3QHRY98s3xaqMvOxg9b6TsOipX42/EXIlUCiR7illr9RNRfnKeuP8p3m4FghBFp
+	sgXnL7Lvzm0KTJOLmitQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hbjgU-0001Iv-24; Fri, 14 Jun 2019 10:43:50 +0000
-Received: from gate.crashing.org ([63.228.1.57])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hbjgA-0001GP-JW
- for linux-arm-kernel@lists.infradead.org; Fri, 14 Jun 2019 10:43:34 +0000
-Received: from localhost (localhost.localdomain [127.0.0.1])
- by gate.crashing.org (8.14.1/8.14.1) with ESMTP id x5EAhJFG009086;
- Fri, 14 Jun 2019 05:43:20 -0500
-Message-ID: <84320a45ef9395d82bf1c5d4d2d7e6db189cbfda.camel@kernel.crashing.org>
-Subject: Re: [RFC PATCH v2] arm64: acpi/pci: invoke _DSM whether to preserve
- firmware PCI setup
-From: Benjamin Herrenschmidt <benh@kernel.crashing.org>
-To: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
-Date: Fri, 14 Jun 2019 20:43:19 +1000
-In-Reply-To: <906b2576756e82a54b584c3de2d8362602de07ce.camel@kernel.crashing.org>
-References: <5783e36561bb77a1deb6ba67e5a9824488cc69c6.camel@kernel.crashing.org>
- <20190613190248.GH13533@google.com>
- <e6c7854ae360be513f6f43729ed6d4052e289376.camel@kernel.crashing.org>
- <CAKv+Gu95pQ7_OfLbEXHZ_bhYnqOgTBKCmTgqUY27un-Y708BgQ@mail.gmail.com>
- <d5d3e7b9553438482854c97e09543afb7de23eaa.camel@kernel.crashing.org>
- <20190614095742.GA27188@e121166-lin.cambridge.arm.com>
- <906b2576756e82a54b584c3de2d8362602de07ce.camel@kernel.crashing.org>
-X-Mailer: Evolution 3.28.5-0ubuntu0.18.04.1 
-Mime-Version: 1.0
+	id 1hbjhF-0001qP-7H; Fri, 14 Jun 2019 10:44:37 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hbjgt-0001db-57
+ for linux-arm-kernel@lists.infradead.org; Fri, 14 Jun 2019 10:44:17 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 2A7262B;
+ Fri, 14 Jun 2019 03:44:14 -0700 (PDT)
+Received: from e121166-lin.cambridge.arm.com (unknown [10.1.196.255])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id D936F3F246;
+ Fri, 14 Jun 2019 03:45:55 -0700 (PDT)
+Date: Fri, 14 Jun 2019 11:43:59 +0100
+From: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
+To: Karthikeyan Mitran <m.karthikeyan@mobiveil.co.in>
+Subject: Re: [PATCHv5 10/20] PCI: mobiveil: Fix the INTx process errors
+Message-ID: <20190614104351.GA29955@e121166-lin.cambridge.arm.com>
+References: <20190412083635.33626-1-Zhiqiang.Hou@nxp.com>
+ <20190412083635.33626-11-Zhiqiang.Hou@nxp.com>
+ <20190612150819.GD15747@redmoon>
+ <CAKnKUHFMH6=ox=qdaUR1kNEhETDCVyu3jQZEj+taEbbMRBRuYA@mail.gmail.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <CAKnKUHFMH6=ox=qdaUR1kNEhETDCVyu3jQZEj+taEbbMRBRuYA@mail.gmail.com>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190614_034330_820706_85964FE4 
-X-CRM114-Status: GOOD (  13.99  )
+X-CRM114-CacheID: sfid-20190614_034415_341015_8FC82428 
+X-CRM114-Status: GOOD (  24.35  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [63.228.1.57 listed in list.dnswl.org]
- 0.0 T_SPF_PERMERROR        SPF: test of record failed (permerror)
- 0.0 T_SPF_HELO_PERMERROR   SPF: test of HELO record failed (permerror)
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -65,51 +63,137 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-pci <linux-pci@vger.kernel.org>, Bjorn Helgaas <helgaas@kernel.org>,
- Sinan Kaya <okaya@kernel.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
- Ard Biesheuvel <ard.biesheuvel@linaro.org>
+Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ Xiaowei Bao <xiaowei.bao@nxp.com>,
+ "linux-pci@vger.kernel.org" <linux-pci@vger.kernel.org>,
+ "Z.q. Hou" <zhiqiang.hou@nxp.com>,
+ "l.subrahmanya@mobiveil.co.in" <l.subrahmanya@mobiveil.co.in>,
+ "will.deacon@arm.com" <will.deacon@arm.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Leo Li <leoyang.li@nxp.com>, "M.h. Lian" <minghuan.lian@nxp.com>,
+ "robh+dt@kernel.org" <robh+dt@kernel.org>, Mingkai Hu <mingkai.hu@nxp.com>,
+ "catalin.marinas@arm.com" <catalin.marinas@arm.com>,
+ "bhelgaas@google.com" <bhelgaas@google.com>,
+ "shawnguo@kernel.org" <shawnguo@kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, 2019-06-14 at 20:36 +1000, Benjamin Herrenschmidt wrote:
-> On Fri, 2019-06-14 at 10:57 +0100, Lorenzo Pieralisi wrote:
-> > > Also using "probe_only" for _DSM #5 = 0 isn't a good idea, at least as
-> > > implemented today in the rest of the kernel, probe_only also means we
-> > > shouldn't assign what was left unassigned. However _DSM #5 allows this.
-> > 
-> > I am not sure about this. PCI_PROBE_ONLY cannot stop an OS from
-> > reassigning BARs that are clearly misconfigured, it does not make
-> > any sense.
+On Fri, Jun 14, 2019 at 12:38:51PM +0530, Karthikeyan Mitran wrote:
+> Hi Lorenzo and Hou Zhiqiang
+>  PAB_INTP_AMBA_MISC_STAT does have other status in the higher bits, it
+> should have been masked before checking for the status
+
+You are the maintainer for this driver, so if there is something to be
+changed you must post a patch to that extent, I do not understand what
+the above means, write the code to fix it, I won't do it.
+
+I am getting a bit annoyed with this Mobiveil driver so either you guys
+sort this out or I will have to remove it from the kernel.
+
+> Acked-by: Karthikeyan Mitran <m.karthikeyan@mobiveil.co.in>
+
+Ok I assume this means you tested it but according to what you
+say above, are there still issues with this code path ? Should
+we update the patch ?
+
+Moreover:
+
+https://kernelnewbies.org/PatchCulture
+
+Please read it and never top-post.
+
+Thanks,
+Lorenzo
+
+> On Wed, Jun 12, 2019 at 8:38 PM Lorenzo Pieralisi
+> <lorenzo.pieralisi@arm.com> wrote:
+> >
+> > On Fri, Apr 12, 2019 at 08:36:12AM +0000, Z.q. Hou wrote:
+> > > From: Hou Zhiqiang <Zhiqiang.Hou@nxp.com>
+> > >
+> > > In the loop block, there is not code to update the loop key,
+> > > this patch updates the loop key by re-read the INTx status
+> > > register.
+> > >
+> > > This patch also add the clearing of the handled INTx status.
+> > >
+> > > Note: Need MV to test this fix.
+> >
+> > This means INTX were never tested and current code handling them is,
+> > AFAICS, an infinite loop which is very very bad.
+> >
+> > This is a gross bug and must be fixed as soon as possible.
+> >
+> > I want Karthikeyan ACK and Tested-by on this patch.
+> >
+> > Lorenzo
+> >
+> > > Fixes: 9af6bcb11e12 ("PCI: mobiveil: Add Mobiveil PCIe Host Bridge IP driver")
+> > > Signed-off-by: Hou Zhiqiang <Zhiqiang.Hou@nxp.com>
+> > > Reviewed-by: Minghuan Lian <Minghuan.Lian@nxp.com>
+> > > Reviewed-by: Subrahmanya Lingappa <l.subrahmanya@mobiveil.co.in>
+> > > ---
+> > > V5:
+> > >  - Corrected and retouched the subject and changelog.
+> > >
+> > >  drivers/pci/controller/pcie-mobiveil.c | 13 +++++++++----
+> > >  1 file changed, 9 insertions(+), 4 deletions(-)
+> > >
+> > > diff --git a/drivers/pci/controller/pcie-mobiveil.c b/drivers/pci/controller/pcie-mobiveil.c
+> > > index 4ba458474e42..78e575e71f4d 100644
+> > > --- a/drivers/pci/controller/pcie-mobiveil.c
+> > > +++ b/drivers/pci/controller/pcie-mobiveil.c
+> > > @@ -361,6 +361,7 @@ static void mobiveil_pcie_isr(struct irq_desc *desc)
+> > >       /* Handle INTx */
+> > >       if (intr_status & PAB_INTP_INTX_MASK) {
+> > >               shifted_status = csr_readl(pcie, PAB_INTP_AMBA_MISC_STAT);
+> > > +             shifted_status &= PAB_INTP_INTX_MASK;
+> > >               shifted_status >>= PAB_INTX_START;
+> > >               do {
+> > >                       for_each_set_bit(bit, &shifted_status, PCI_NUM_INTX) {
+> > > @@ -372,12 +373,16 @@ static void mobiveil_pcie_isr(struct irq_desc *desc)
+> > >                                       dev_err_ratelimited(dev, "unexpected IRQ, INT%d\n",
+> > >                                                           bit);
+> > >
+> > > -                             /* clear interrupt */
+> > > -                             csr_writel(pcie,
+> > > -                                        shifted_status << PAB_INTX_START,
+> > > +                             /* clear interrupt handled */
+> > > +                             csr_writel(pcie, 1 << (PAB_INTX_START + bit),
+> > >                                          PAB_INTP_AMBA_MISC_STAT);
+> > >                       }
+> > > -             } while ((shifted_status >> PAB_INTX_START) != 0);
+> > > +
+> > > +                     shifted_status = csr_readl(pcie,
+> > > +                                                PAB_INTP_AMBA_MISC_STAT);
+> > > +                     shifted_status &= PAB_INTP_INTX_MASK;
+> > > +                     shifted_status >>= PAB_INTX_START;
+> > > +             } while (shifted_status != 0);
+> > >       }
+> > >
+> > >       /* read extra MSI status register */
+> > > --
+> > > 2.17.1
+> > >
 > 
-> PCI_PROBE_ONLY is a linux thing which, as implemented today, implies no
-> assignment at all. I believe it originates as a merge of variants of
-> the same thing, at least one of them being one I created for powerpc
-> back in the days due to our proprietary hypervisor not letting you
-> touch any of the PCI config space.
-
-Well... you could "touch" things and even BAR size but mostly we don't
-even do that on powerpc on these systems these days, we read the BAR
-values (and a bunch of other things) from OFW and manufacture the
-pci_dev. The generic code still use cfg space to fill up the blanks.
-sparc64 uses the same technique.
-
-This least to another conversation we hinted at earlier.. we should
-probably have a way to do the same at least for BARs on ACPI systems so
-we don't have to temporarily disable access to a device to size them.
-
-This can be problematic is the device in question need to be used
-during the sizing. It can happen with some system devices used behind
-the scene by FW, or the device on which the console is (how many time
-did I crash bcs I had too verbose printk's in the PCI code during BAR
-sizing of the framebuffer or the serial card...)
-
-Cheers,
-Ben.
-
-
+> 
+> 
+> -- 
+> Thanks,
+> Regards,
+> Karthikeyan Mitran
+> 
+> -- 
+> Mobiveil INC., CONFIDENTIALITY NOTICE: This e-mail message, including any 
+> attachments, is for the sole use of the intended recipient(s) and may 
+> contain proprietary confidential or privileged information or otherwise be 
+> protected by law. Any unauthorized review, use, disclosure or distribution 
+> is prohibited. If you are not the intended recipient, please notify the 
+> sender and destroy all copies and the original message.
 
 _______________________________________________
 linux-arm-kernel mailing list
