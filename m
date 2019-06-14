@@ -2,74 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 777A146056
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Jun 2019 16:16:08 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A6CC646089
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Jun 2019 16:22:51 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=JGK0uRoQGmZinpDODljcAR4DePi7dCysDLkjcJkgwaM=; b=lKSjodnTt6xp77
-	O+52GhewFjDRoiWjPq1ICdqchcUeSrYQrs6WQk3Q+jg1UqlKoQLzaykqrtFeKrJo6edbo/b3avWbv
-	DKLOgiMUgatQTJPXJ7p5NRRb6c1XL9qaK0nJ4pwyPyvQcyONomC0PEUti7/xtY3zitu2EomqDYOOS
-	EL5jREzDFzJjbF/ZkvZlIeDK4vsUCVkxYxmISnpiNQU2IKssoQU/+sCnps+322OLmSTK+Yt85l36C
-	gkWte2fW394mL9zDKGc8OWObJjcJmCZPEgSzk3W/6Cgn825kv4aaDK0l9yFt2+dAypnOSjkZCO8IQ
-	pWBTyjRVE/7MCplAcanQ==;
+	List-Owner; bh=/iVmkSM6ZGG1bm0ovWc7NtsxLx+gibTTg1rw1so8Rm0=; b=P/pRHcdWe605Gz
+	Fu1o2Pe8JxH/tTYFsXVcwJKuwGcsCkUhksvajceeGrVTuDUhqDtfjjd9sE3Zn331EFP5veaOkN9fl
+	Scbc8rmo7GSc+id85DInREM5hPBA8NVyh2NN0dRyCRFVlkpp1uubxgPg09E05enHwSq4jtQNo3dQa
+	U8MlSAqqEGhO4IPzoz63jYH4DtwyiPFNQTOFAKxpHt5y8Ne9i5srNz4s3HCk1vtGqb/M63SCAUYWb
+	e7bvUC/m/lS7slxjJLK8gFhFKZvtkVgjr7u30tBg4iJBZKUVnCuy4SupyxP3uBpT2uRwgx0u0db2u
+	eyGAILLDrNfGvhADZHxg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hbmzs-0001Op-6V; Fri, 14 Jun 2019 14:16:04 +0000
-Received: from eu-smtp-delivery-151.mimecast.com ([146.101.78.151])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hbmzg-0001MU-RV
- for linux-arm-kernel@lists.infradead.org; Fri, 14 Jun 2019 14:15:54 +0000
-Received: from AcuMS.aculab.com (156.67.243.126 [156.67.243.126]) (Using
- TLS) by relay.mimecast.com with ESMTP id
- uk-mta-171-6ZL5OlDfPHWG6RvRpXiEQg-1; Fri, 14 Jun 2019 15:15:45 +0100
-Received: from AcuMS.Aculab.com (fd9f:af1c:a25b:0:43c:695e:880f:8750) by
- AcuMS.aculab.com (fd9f:af1c:a25b:0:43c:695e:880f:8750) with Microsoft SMTP
- Server (TLS) id 15.0.1347.2; Fri, 14 Jun 2019 15:15:44 +0100
-Received: from AcuMS.Aculab.com ([fe80::43c:695e:880f:8750]) by
- AcuMS.aculab.com ([fe80::43c:695e:880f:8750%12]) with mapi id 15.00.1347.000; 
- Fri, 14 Jun 2019 15:15:44 +0100
-From: David Laight <David.Laight@ACULAB.COM>
-To: 'Christoph Hellwig' <hch@lst.de>, Maarten Lankhorst
- <maarten.lankhorst@linux.intel.com>, Maxime Ripard
- <maxime.ripard@bootlin.com>, Sean Paul <sean@poorly.run>, David Airlie
- <airlied@linux.ie>, Daniel Vetter <daniel@ffwll.ch>, Jani Nikula
- <jani.nikula@linux.intel.com>, Joonas Lahtinen
- <joonas.lahtinen@linux.intel.com>, Rodrigo Vivi <rodrigo.vivi@intel.com>,
- "Ian Abbott" <abbotti@mev.co.uk>, H Hartley Sweeten
- <hsweeten@visionengravers.com>
-Subject: RE: [PATCH 16/16] dma-mapping: use exact allocation in
- dma_alloc_contiguous
-Thread-Topic: [PATCH 16/16] dma-mapping: use exact allocation in
- dma_alloc_contiguous
-Thread-Index: AQHVIrfpTFjppS25RkWUhwqPPyqZ4qabLzdw
-Date: Fri, 14 Jun 2019 14:15:44 +0000
-Message-ID: <a90cf7ec5f1c4166b53c40e06d4d832a@AcuMS.aculab.com>
-References: <20190614134726.3827-1-hch@lst.de>
- <20190614134726.3827-17-hch@lst.de>
-In-Reply-To: <20190614134726.3827-17-hch@lst.de>
-Accept-Language: en-GB, en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-x-ms-exchange-transport-fromentityheader: Hosted
-x-originating-ip: [10.202.205.107]
+	id 1hbn6P-0003AU-Bc; Fri, 14 Jun 2019 14:22:49 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hbn6H-0003A3-2U
+ for linux-arm-kernel@lists.infradead.org; Fri, 14 Jun 2019 14:22:42 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 0FA17344;
+ Fri, 14 Jun 2019 07:22:40 -0700 (PDT)
+Received: from fuggles.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
+ [10.121.207.14])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 8BF923F246;
+ Fri, 14 Jun 2019 07:22:38 -0700 (PDT)
+Date: Fri, 14 Jun 2019 15:22:31 +0100
+From: Will Deacon <will.deacon@arm.com>
+To: Anisse Astier <aastier@freebox.fr>
+Subject: Re: [PATCH] arm64/sve: <uapi/asm/ptrace.h> should not depend on
+ <uapi/linux/prctl.h>
+Message-ID: <20190614142231.GA29231@fuggles.cambridge.arm.com>
+References: <20190613163801.21949-1-aastier@freebox.fr>
+ <20190613171432.GA2790@e103592.cambridge.arm.com>
+ <20190614112222.GA47082@anisse-station>
 MIME-Version: 1.0
-X-MC-Unique: 6ZL5OlDfPHWG6RvRpXiEQg-1
-X-Mimecast-Spam-Score: 0
+Content-Disposition: inline
+In-Reply-To: <20190614112222.GA47082@anisse-station>
+User-Agent: Mutt/1.11.1+86 (6f28e57d73f2) ()
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190614_071553_242365_D96D01BB 
-X-CRM114-Status: GOOD (  14.92  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20190614_072241_160755_D12A7FAD 
+X-CRM114-Status: GOOD (  20.09  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [146.101.78.151 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -83,68 +64,72 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "devel@driverdev.osuosl.org" <devel@driverdev.osuosl.org>,
- "linux-s390@vger.kernel.org" <linux-s390@vger.kernel.org>,
- Intel Linux Wireless <linuxwifi@intel.com>,
- "linux-rdma@vger.kernel.org" <linux-rdma@vger.kernel.org>,
- "netdev@vger.kernel.org" <netdev@vger.kernel.org>,
- "intel-gfx@lists.freedesktop.org" <intel-gfx@lists.freedesktop.org>,
- "linux-wireless@vger.kernel.org" <linux-wireless@vger.kernel.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "dri-devel@lists.freedesktop.org" <dri-devel@lists.freedesktop.org>,
- "linux-mm@kvack.org" <linux-mm@kvack.org>,
- "iommu@lists.linux-foundation.org" <iommu@lists.linux-foundation.org>,
- "moderated list:ARM PORT" <linux-arm-kernel@lists.infradead.org>,
- "linux-media@vger.kernel.org" <linux-media@vger.kernel.org>
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, Rich Felker <dalias@aerifal.cx>,
+ linux-kernel@vger.kernel.org, Kristina Martsenko <kristina.martsenko@arm.com>,
+ "Dmitry V . Levin" <ldv@altlinux.org>, Ricardo Salveti <ricardo@foundries.io>,
+ Richard Henderson <richard.henderson@linaro.org>,
+ Dave Martin <Dave.Martin@arm.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Christoph Hellwig
-> Sent: 14 June 2019 14:47
+Hi Anisse, Dave,
+
+On Fri, Jun 14, 2019 at 01:22:22PM +0200, Anisse Astier wrote:
+> On Thu, Jun 13, 2019 at 06:14:44PM +0100, Dave Martin wrote:
+> > On Thu, Jun 13, 2019 at 06:38:01PM +0200, Anisse Astier wrote:
+> > > -#define SVE_PT_VL_INHERIT		(PR_SVE_VL_INHERIT >> 16)
+> > > -#define SVE_PT_VL_ONEXEC		(PR_SVE_SET_VL_ONEXEC >> 16)
+> > > +#define SVE_PT_VL_INHERIT		(1 << 1) /* PR_SVE_VL_INHERIT */
+> > > +#define SVE_PT_VL_ONEXEC		(1 << 2) /* PR_SVE_SET_VL_ONEXEC */
+> > 
+> > Makes sense, but...
+> > 
+> > Since sve_context.h was already introduced to solve a closely related
+> > problem, I wonder whether we can provide shadow definitions there,
+> > similarly to way the arm64/include/uapi/asm/ptrace.h definitions are
+> > derived.  Although it's a slight abuse of that header, I think that
+> > would be my preferred approach.
 > 
-> Many architectures (e.g. arm, m68 and sh) have always used exact
-> allocation in their dma coherent allocator, which avoids a lot of
-> memory waste especially for larger allocations.  Lift this behavior
-> into the generic allocator so that dma-direct and the generic IOMMU
-> code benefit from this behavior as well.
+> Yes I saw this, and I considered doing something similar. But, those
+> defines are in uapi/linux/prctl.h, which does not include any asm/*.h
+> header. This would have then required adding a full infrastructure for
+> asm/prctl.h (that could then include sve_context.h for example), which
+> does not exist yet, instead of copying these two values.
+
+x86 appears to have an asm/prctl.h implementation, but it's not included
+by anybody so I guess that doesn't really help us here.
+
+> Since this is part of the kernel-userspace ABI, I don't see this values
+> changing anytime soon, which is why I thought copying them shouldn't be
+> a big issue.
+
+Certainly not a big issue, just that the harder we make this to change
+the better.
+
+> A simple solution would be to to include sve_context.h or a third
+> header, maybe linux/prctl_arm64_sve.h (with only these two/five
+> defines), in linux/prctl.h, and reuse it in uapi/asm/ptrace.h; but this
+> would break the self-contained nature of linux/prctl.h.
+> > 
+> > Otherwise, at least make the required relationship between ptrace.h and
+> > prctl.h constants a bit more obvious, say,
+> > 
+> > 	#define SVE_PT_VL_INHERIT ((1 << 17) /* PR_SVE_SET_VL_INHERIT */ >> 16)
 > 
-> Signed-off-by: Christoph Hellwig <hch@lst.de>
-> ---
->  include/linux/dma-contiguous.h |  8 +++++---
->  kernel/dma/contiguous.c        | 17 +++++++++++------
->  2 files changed, 16 insertions(+), 9 deletions(-)
+> This one is much simpler and closer to what I had in mind with this
+> patch.
 > 
-> diff --git a/include/linux/dma-contiguous.h b/include/linux/dma-contiguous.h
-> index c05d4e661489..2e542e314acf 100644
-> --- a/include/linux/dma-contiguous.h
-> +++ b/include/linux/dma-contiguous.h
-> @@ -161,15 +161,17 @@ static inline struct page *dma_alloc_contiguous(struct device *dev, size_t size,
->  		gfp_t gfp)
->  {
->  	int node = dev ? dev_to_node(dev) : NUMA_NO_NODE;
-> -	size_t align = get_order(PAGE_ALIGN(size));
-> +	void *cpu_addr = alloc_pages_exact_node(node, size, gfp);
-> 
-> -	return alloc_pages_node(node, gfp, align);
-> +	if (!cpu_addr)
-> +		return NULL;
-> +	return virt_to_page(p);
->  }
+> Will, what do you think of this second approach Dave proposed ?
 
-Does this still guarantee that requests for 16k will not cross a 16k boundary?
-It looks like you are losing the alignment parameter.
+Duplication is grotty, but it does the job so I'm ok with it. I don't have
+any better ideas.
 
-There may be drivers and hardware that also require 12k allocates
-to not cross 16k boundaries (etc).
+Thanks,
 
-	David
-
--
-Registered Address Lakeside, Bramley Road, Mount Farm, Milton Keynes, MK1 1PT, UK
-Registration No: 1397386 (Wales)
-
+Will
 
 _______________________________________________
 linux-arm-kernel mailing list
