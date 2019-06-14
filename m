@@ -2,81 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1735645292
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Jun 2019 05:15:11 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6EBA945294
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Jun 2019 05:15:53 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=BzPMhrFXGXOlk8TywbHUNZU5N0LGvRG5V1LZIu9o7EM=; b=bW5Veg1Rs0k8AL
-	CW02laNlCl9LmJ18xoO042yYR4plBpwGr58eohHjnPojt7DVuQCmIzG2tOahUc+qqLRAFGb0L33tY
-	vDgImev8/1zbmww4UId7j9QHUny56CYmnFctGGNVagWuY516v6COs9kP9o8Bt8DTJRDRdH4DqO/+G
-	3ugdbhQw/6qLWypbq/ENfF4DK1yjuhmQ9lan7goW49Da7ONS1v6BUeFW4tpMuFghAOLg9y+quZIvm
-	I9hSGH4YTUnP8syPQa6buRb5KFZ0uXx4FFTmNYjXzKiqz0AwzcdrXyohWtixCiJQQIqi1e++hNf1Z
-	C4fFQK5E2tzl1JvYFiWQ==;
+	List-Owner; bh=1rbnN/NBu8aeJONIAaZ+ex0+xnT4Jeg4MmV0OlGUhJ0=; b=XuvGXwucxh653p
+	43hg9IPCcQKMdfAaAXk/Ihu3GmhQUSWr1vlPwcQu1GSOWGeM6O4vImlS0j0olXvJyAYB3MFPmtdHg
+	QoeBE0TQkTTZtMmrnyNwEiVZwlm6tykt86LeqEufZz3R3RtOmHQ+cFgSWKH8EoyEIxCrjizBsYctT
+	ZMP0I+tyPxcX8ZJ7A1EP6QYlySXwS5MVEUuXCkNC+6LmmcSUqjLPq22DUUylv8MZRL5++e/RpOafj
+	RxvFvmlMMVUqXWo3yq492aHYSOAglcnXYGdf4PGMgA1Dssa38qbuxPmaX9aDvX9QqOX7Oi9cNlxu3
+	IinwLfnS9G8zJWjaJs6g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hbcgH-0001q1-5y; Fri, 14 Jun 2019 03:15:09 +0000
-Received: from mail-pf1-x443.google.com ([2607:f8b0:4864:20::443])
+	id 1hbcgv-0003mk-0x; Fri, 14 Jun 2019 03:15:49 +0000
+Received: from mail-pl1-x644.google.com ([2607:f8b0:4864:20::644])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hbcdP-00009h-Ng
- for linux-arm-kernel@lists.infradead.org; Fri, 14 Jun 2019 03:12:13 +0000
-Received: by mail-pf1-x443.google.com with SMTP id 19so497618pfa.4
+ id 1hbcdU-0000CP-9j
+ for linux-arm-kernel@lists.infradead.org; Fri, 14 Jun 2019 03:12:19 +0000
+Received: by mail-pl1-x644.google.com with SMTP id i2so383897plt.1
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 13 Jun 2019 20:12:11 -0700 (PDT)
+ Thu, 13 Jun 2019 20:12:14 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=oplH30x1zLW/kw5XTQuFI7s72sVvdi1RahKBb4zAIVI=;
- b=Yzltk8JB8mBXf0jZiiOn54g5/T0KcQ7kKV+UgQ9lpUwSlLs7Pt5kZUz7O8VRM5Gywr
- a6759AUaffVtNH/TQGwSHY5oA17fJKXMnvPoFyntQBTfIscQNfo17nFck1DVJjrDtGmA
- +OsNTrb2LaV2WQoX5sd/qPiJek55dGs814vb4bBwWTlq1ot6VHkqG7m98hfa/cY12zOZ
- NVjM5NrthLLacQzOfmEqJDxiugx32DoJGjZw/qboBQpDb5iGkEpwkxHwzJmyDijrFmnK
- zlGHBFAbNvl6JKVjnyBkeDwcgVbmq34wRQMm7GRnJ59Qelhe/pLC0cpTAsYd2dtksl3m
- bQxg==
+ bh=1IdhsUs/fdllTh2EJ+ScRqWrO1uX9GsPUvP6PugnTR0=;
+ b=CeEm6Q1HCBNewplA3EEpKwApVIKTpTNllAdvcpIQe77l+53e3CBoti53KWIeaNe0AV
+ uR33V/xqt5i78jkGXLw5r7hKp87D8o3XXeTj2CX3c6eW5pbdE4O8M/DEhUuVcvJLyCue
+ J/HxOYccIDOdOn0PgfLpjg1ooi2feDWeCRsPH41MC/6U3E11V3hs/g6YcluMAoJclkf0
+ RYrOLVM24b3kdzMeos5tsXRAFN9RPr1E5Ixv5qsOkkQyxTPZ6qhPRWOb4NWe8ELnZbqq
+ Cz7MO6TMue7XovkrPAocu+1P2xG1vLWIb0lKRAT9tTf8MVYN0fsM1/hYKglqWz5WgZbA
+ fArQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=oplH30x1zLW/kw5XTQuFI7s72sVvdi1RahKBb4zAIVI=;
- b=Vvv6pjEb1zBWE8o7fEgUNZ2eZkef/xXilfN2P7FSf3QnKjkLRcmaa8c5l73qBAj7ca
- 0AY2cocCzRvM4cdN1bdTYzeNpFkbMBlCVDtEneGzB/2OrzMnylF2S6R0fFPZB/ltuYK3
- 6CCKaa7j9cKpLUkvwnsNtYEbCmK7+9MZ8wbBqN4PaehfevJY65EgZerZE/gXC2JO2PNy
- 8oSe8un+x9UAboL423Mq1UzLZyIObwXd/0+ZD2cFBsFkmXtDyQ+cU8NPVLwunZnQQVQt
- izGl4zn/S/j9pCCG4nqfmbn63bNrW8q2qAgGffevjxYJXlr/hF9IxRpy/f7RL1/554+n
- bvbg==
-X-Gm-Message-State: APjAAAUsfWEUJn8ZB9Jr2P17t7rJulDX3gnCDmc7ip1Ox3FYW+dz+FBB
- /AWEMa0R6E3OjbxpZznbtBYxlHfnOSM=
-X-Google-Smtp-Source: APXvYqy5wJDFGT5CTVHTGOqYSsSzofcsN1zQjCYusln8vRIdY/+WOc7URnCgUo7C85NDttUzgH3b+A==
-X-Received: by 2002:a63:dc15:: with SMTP id s21mr34323601pgg.215.1560481930079; 
- Thu, 13 Jun 2019 20:12:10 -0700 (PDT)
+ bh=1IdhsUs/fdllTh2EJ+ScRqWrO1uX9GsPUvP6PugnTR0=;
+ b=Q2jShugfiZo7si7WQtc3nA+egD+XaW1OioJoY0PsQMeTtlv2dnuEJhgocxT44QwKR8
+ goaVGEPXWopR3yFYr54+cmqhxijn6rrh2S8fa3Fc6k73xznOWSuxxw9KdO23Ot+o1E6r
+ JQCP9OJdSycaD4JNF64oTaQ4gzsfXijfWruePIxYKojIW9fkSqpYNNssUbJ5541Zm+IJ
+ siRkSNHFFAtRui91A0IpSbdT80E1TVqvgyjpq1rO0Oli9rwtehS+ZstFvEoFE0uC4/3V
+ AR8dzwrR3DasutMpA8dZ8SLmHpBnZnd6fKXFvJ2CDJxUNx6993sP8RYf/ALbi3XrFhLE
+ V3WQ==
+X-Gm-Message-State: APjAAAU2ngZ45mexHXHrO80Z7IirACnj3prWb7G+ZlhQ+rivOuq7eOQo
+ d/ABc2+IlVFerFkgIpSmAyp1RwiJDg4=
+X-Google-Smtp-Source: APXvYqxZaE1F8d9DJY74Bh26I9mrpSGzX/LNmvHBq/ilBx736pFGlQUSrt6qWsqrIVuHCyJRaPUq7w==
+X-Received: by 2002:a17:902:b94a:: with SMTP id
+ h10mr91088007pls.265.1560481932763; 
+ Thu, 13 Jun 2019 20:12:12 -0700 (PDT)
 Received: from localhost ([122.172.66.84])
- by smtp.gmail.com with ESMTPSA id y1sm1198391pjw.5.2019.06.13.20.12.09
+ by smtp.gmail.com with ESMTPSA id e184sm1047863pfa.169.2019.06.13.20.12.11
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Thu, 13 Jun 2019 20:12:09 -0700 (PDT)
+ Thu, 13 Jun 2019 20:12:12 -0700 (PDT)
 From: Viresh Kumar <viresh.kumar@linaro.org>
 To: linux-arm-kernel@lists.infradead.org,
  Julien Thierry <Julien.Thierry@arm.com>
-Subject: [PATCH v4.4 06/45] arm64: Use pointer masking to limit uaccess
- speculation
-Date: Fri, 14 Jun 2019 08:37:49 +0530
-Message-Id: <33a351b8683ca17c3d6ed3711d2c6fe2ae1a36f3.1560480942.git.viresh.kumar@linaro.org>
+Subject: [PATCH v4.4 07/45] arm64: entry: Ensure branch through syscall table
+ is bounded under speculation
+Date: Fri, 14 Jun 2019 08:37:50 +0530
+Message-Id: <ee036f503b414d84b1491e2fb0c6ffbd4e770d18.1560480942.git.viresh.kumar@linaro.org>
 X-Mailer: git-send-email 2.21.0.rc0.269.g1a574e7a288b
 In-Reply-To: <cover.1560480942.git.viresh.kumar@linaro.org>
 References: <cover.1560480942.git.viresh.kumar@linaro.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190613_201211_911964_824DAA96 
-X-CRM114-Status: GOOD (  13.80  )
+X-CRM114-CacheID: sfid-20190613_201216_429956_573A879C 
+X-CRM114-Status: GOOD (  11.22  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:443 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:644 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -108,84 +109,60 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Robin Murphy <robin.murphy@arm.com>
+From: Will Deacon <will.deacon@arm.com>
 
-commit 4d8efc2d5ee4c9ccfeb29ee8afd47a8660d0c0ce upstream.
+commit 6314d90e64936c584f300a52ef173603fb2461b5 upstream.
 
-Similarly to x86, mitigate speculation past an access_ok() check by
-masking the pointer against the address limit before use.
+In a similar manner to array_index_mask_nospec, this patch introduces an
+assembly macro (mask_nospec64) which can be used to bound a value under
+speculation. This macro is then used to ensure that the indirect branch
+through the syscall table is bounded under speculation, with out-of-range
+addresses speculating as calls to sys_io_setup (0).
 
-Even if we don't expect speculative writes per se, it is plausible that
-a CPU may still speculate at least as far as fetching a cache line for
-writing, hence we also harden put_user() and clear_user() for peace of
-mind.
-
-Signed-off-by: Robin Murphy <robin.murphy@arm.com>
+Reviewed-by: Mark Rutland <mark.rutland@arm.com>
 Signed-off-by: Will Deacon <will.deacon@arm.com>
 Signed-off-by: Catalin Marinas <catalin.marinas@arm.com>
+[ v4.4: use existing scno & sc_nr definitions ]
 Signed-off-by: Viresh Kumar <viresh.kumar@linaro.org>
 ---
- arch/arm64/include/asm/uaccess.h | 26 +++++++++++++++++++++++---
- 1 file changed, 23 insertions(+), 3 deletions(-)
+ arch/arm64/include/asm/assembler.h | 11 +++++++++++
+ arch/arm64/kernel/entry.S          |  1 +
+ 2 files changed, 12 insertions(+)
 
-diff --git a/arch/arm64/include/asm/uaccess.h b/arch/arm64/include/asm/uaccess.h
-index c625cc5531fc..75363d723262 100644
---- a/arch/arm64/include/asm/uaccess.h
-+++ b/arch/arm64/include/asm/uaccess.h
-@@ -121,6 +121,26 @@ static inline unsigned long __range_ok(unsigned long addr, unsigned long size)
- #define access_ok(type, addr, size)	__range_ok((unsigned long)(addr), size)
- #define user_addr_max			get_fs
+diff --git a/arch/arm64/include/asm/assembler.h b/arch/arm64/include/asm/assembler.h
+index 683c2875278f..2b30363a3a89 100644
+--- a/arch/arm64/include/asm/assembler.h
++++ b/arch/arm64/include/asm/assembler.h
+@@ -102,6 +102,17 @@
+ 	hint	#20
+ 	.endm
  
 +/*
-+ * Sanitise a uaccess pointer such that it becomes NULL if above the
-+ * current addr_limit.
++ * Sanitise a 64-bit bounded index wrt speculation, returning zero if out
++ * of bounds.
 + */
-+#define uaccess_mask_ptr(ptr) (__typeof__(ptr))__uaccess_mask_ptr(ptr)
-+static inline void __user *__uaccess_mask_ptr(const void __user *ptr)
-+{
-+	void __user *safe_ptr;
++	.macro	mask_nospec64, idx, limit, tmp
++	sub	\tmp, \idx, \limit
++	bic	\tmp, \tmp, \idx
++	and	\idx, \idx, \tmp, asr #63
++	csdb
++	.endm
 +
-+	asm volatile(
-+	"	bics	xzr, %1, %2\n"
-+	"	csel	%0, %1, xzr, eq\n"
-+	: "=&r" (safe_ptr)
-+	: "r" (ptr), "r" (current_thread_info()->addr_limit)
-+	: "cc");
-+
-+	csdb();
-+	return safe_ptr;
-+}
-+
- /*
-  * The "__xxx" versions of the user access functions do not verify the address
-  * space - it must have been done previously with a separate "access_ok()"
-@@ -193,7 +213,7 @@ do {									\
- 	__typeof__(*(ptr)) __user *__p = (ptr);				\
- 	might_fault();							\
- 	access_ok(VERIFY_READ, __p, sizeof(*__p)) ?			\
--		__get_user((x), __p) :					\
-+		__p = uaccess_mask_ptr(__p), __get_user((x), __p) :	\
- 		((x) = 0, -EFAULT);					\
- })
- 
-@@ -259,7 +279,7 @@ do {									\
- 	__typeof__(*(ptr)) __user *__p = (ptr);				\
- 	might_fault();							\
- 	access_ok(VERIFY_WRITE, __p, sizeof(*__p)) ?			\
--		__put_user((x), __p) :					\
-+		__p = uaccess_mask_ptr(__p), __put_user((x), __p) :	\
- 		-EFAULT;						\
- })
- 
-@@ -297,7 +317,7 @@ static inline unsigned long __must_check copy_in_user(void __user *to, const voi
- static inline unsigned long __must_check clear_user(void __user *to, unsigned long n)
- {
- 	if (access_ok(VERIFY_WRITE, to, n))
--		n = __clear_user(to, n);
-+		n = __clear_user(__uaccess_mask_ptr(to), n);
- 	return n;
- }
- 
+ #define USER(l, x...)				\
+ 9999:	x;					\
+ 	.section __ex_table,"a";		\
+diff --git a/arch/arm64/kernel/entry.S b/arch/arm64/kernel/entry.S
+index 4c5013b09dcb..e6aec982dea9 100644
+--- a/arch/arm64/kernel/entry.S
++++ b/arch/arm64/kernel/entry.S
+@@ -697,6 +697,7 @@ el0_svc_naked:					// compat entry point
+ 	b.ne	__sys_trace
+ 	cmp     scno, sc_nr                     // check upper syscall limit
+ 	b.hs	ni_sys
++	mask_nospec64 scno, sc_nr, x19	// enforce bounds for syscall number
+ 	ldr	x16, [stbl, scno, lsl #3]	// address in the syscall table
+ 	blr	x16				// call sys_* routine
+ 	b	ret_fast_syscall
 -- 
 2.21.0.rc0.269.g1a574e7a288b
 
