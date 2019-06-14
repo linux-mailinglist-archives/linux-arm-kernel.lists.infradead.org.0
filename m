@@ -2,52 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C7C2845CB7
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Jun 2019 14:23:51 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9C48045CC2
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Jun 2019 14:25:00 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:Message-ID:
-	In-Reply-To:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3JfVpSz116I7RukDCcohgaKX7L3JAHgpA3z89WyT1xM=; b=f2VlIk+XNkLmTq
-	kCJkCfOBztPiaYDIgDPfMOs6lmGPvlYTLYm6eb76YzaKonn5VWhz4M45WiIkZ8qwtw8+OLAhChj0g
-	Cc/Hh/1H6SNqVDOWlta5Yh4JF2W4fIllRoLMXtPHhUDoFjeTR2YBRplydCBAQcM6/gjk9xTs9LLHT
-	P1RBKa9DRy9X07nSRqINLKW922lOKP3aYfZVV6H6ZcoYE2eiTJ5vTx2WnoSUIFJYQhrI5Se08xYhO
-	D8quohlF2aI+Mbb6RpT5PlJB2fWVztSOaveACJZyyH8BCuGSncChq7plO6oT8Jn49bxg4MCm668oJ
-	CupV7lz/32AM0HNZIdWw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=QeBqCTU8riDEfGtNWV6tzpM9qn+cuR0Ijs8KGDET+UM=; b=ej+wGXv3Zjhh0f
+	mTi4QJ+GH1gLv4/FbpjoWSeaHUagLwPHuQYIIJ/7l36177/v9LuJ9dAzIlCSfCgIN78D5+KCA3kad
+	P8Vv0eCf2Oamk4FE2jkGI+DEpQy91M4Hk/F6OJI0QwCtLJh3llBcaQSkXg8ZZ/dx8mCFgmxMjrjt/
+	EiydP1yZHd0x3byoTImMCjDXzhGV1Bmym62yK1BjPn/inKQKYO2RNTMLnmEq+xNAxy4wiO5tVRP0Q
+	gYnJAArG4ImkdCKUS31j5YURQQFCAteCZafHo9BO0pi25IOPlL3kTGKEMn06/EBIycQHm7xcQJeHU
+	eQnvfAhCx1WuEYelrkiQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hblFF-00076F-AI; Fri, 14 Jun 2019 12:23:49 +0000
-Received: from galois.linutronix.de ([2a01:7a0:2:106d:700::1])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hblEW-0006ak-2T
- for linux-arm-kernel@lists.infradead.org; Fri, 14 Jun 2019 12:23:05 +0000
-Received: from [5.158.153.52] (helo=nanos.tec.linutronix.de)
- by Galois.linutronix.de with esmtpsa (TLS1.2:DHE_RSA_AES_256_CBC_SHA256:256)
- (Exim 4.80) (envelope-from <tglx@linutronix.de>)
- id 1hblEL-0002pf-BB; Fri, 14 Jun 2019 14:22:53 +0200
-Date: Fri, 14 Jun 2019 14:22:52 +0200 (CEST)
-From: Thomas Gleixner <tglx@linutronix.de>
-To: Anshuman Khandual <anshuman.khandual@arm.com>
-Subject: Re: [PATCH] mm/ioremap: Probe platform for p4d huge map support
-In-Reply-To: <1560406781-14253-1-git-send-email-anshuman.khandual@arm.com>
-Message-ID: <alpine.DEB.2.21.1906141422370.1722@nanos.tec.linutronix.de>
-References: <1560406781-14253-1-git-send-email-anshuman.khandual@arm.com>
-User-Agent: Alpine 2.21 (DEB 202 2017-01-01)
+	id 1hblGI-0007X6-Ub; Fri, 14 Jun 2019 12:24:55 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hblG7-0007Wc-8y
+ for linux-arm-kernel@lists.infradead.org; Fri, 14 Jun 2019 12:24:44 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 957F83EF;
+ Fri, 14 Jun 2019 05:24:42 -0700 (PDT)
+Received: from [192.168.1.18] (unknown [172.31.20.19])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id C78263F246;
+ Fri, 14 Jun 2019 05:24:39 -0700 (PDT)
+Subject: Re: [PATCH v6 03/19] kernel: Unify update_vsyscall implementation
+To: Thomas Gleixner <tglx@linutronix.de>
+References: <20190530141531.43462-1-vincenzo.frascino@arm.com>
+ <20190530141531.43462-4-vincenzo.frascino@arm.com>
+ <alpine.DEB.2.21.1906141307430.1722@nanos.tec.linutronix.de>
+ <a69e48a2-575d-255c-2653-d3e99b7ba760@arm.com>
+ <alpine.DEB.2.21.1906141416100.1722@nanos.tec.linutronix.de>
+From: Vincenzo Frascino <vincenzo.frascino@arm.com>
+Message-ID: <9371eabc-ed74-3db8-794c-44c37ada2163@arm.com>
+Date: Fri, 14 Jun 2019 13:25:21 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.7.0
 MIME-Version: 1.0
+In-Reply-To: <alpine.DEB.2.21.1906141416100.1722@nanos.tec.linutronix.de>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190614_052304_284815_AB0E88B4 
-X-CRM114-Status: GOOD (  10.04  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20190614_052443_359274_74156F6D 
+X-CRM114-Status: GOOD (  17.71  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [2a01:7a0:2:106d:700:0:0:1 listed in]
- [list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -60,43 +65,61 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: x86@kernel.org, Peter Zijlstra <peterz@infradead.org>,
+Cc: linux-arch@vger.kernel.org, Shuah Khan <shuah@kernel.org>,
+ Arnd Bergmann <arnd@arndb.de>, Huw Davies <huw@codeweavers.com>,
  Catalin Marinas <catalin.marinas@arm.com>,
- Dave Hansen <dave.hansen@linux.intel.com>, Will Deacon <will.deacon@arm.com>,
- linux-kernel@vger.kernel.org, Michal Hocko <mhocko@kernel.org>,
- linux-mm@kvack.org, Ingo Molnar <mingo@redhat.com>,
- linux-arm-kernel@lists.infradead.org, Andy Lutomirski <luto@kernel.org>,
- akpm@linux-foundation.org,
- "Kirill A . Shutemov" <kirill.shutemov@linux.intel.com>
+ Daniel Lezcano <daniel.lezcano@linaro.org>, Will Deacon <will.deacon@arm.com>,
+ linux-kernel@vger.kernel.org, Ralf Baechle <ralf@linux-mips.org>,
+ linux-mips@vger.kernel.org, Paul Burton <paul.burton@mips.com>,
+ linux-kselftest@vger.kernel.org, Rasmus Villemoes <linux@rasmusvillemoes.dk>,
+ Russell King <linux@armlinux.org.uk>, Dmitry Safonov <0x7f454c46@gmail.com>,
+ Mark Salyzyn <salyzyn@android.com>, Peter Collingbourne <pcc@google.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, 13 Jun 2019, Anshuman Khandual wrote:
-
-> Finishing up what the commit c2febafc67734a ("mm: convert generic code to
-> 5-level paging") started out while levelling up P4D huge mapping support
-> at par with PUD and PMD. A new arch call back arch_ioremap_p4d_supported()
-> is being added which just maintains status quo (P4D huge map not supported)
-> on x86 and arm64.
+On 6/14/19 1:19 PM, Thomas Gleixner wrote:
+> On Fri, 14 Jun 2019, Vincenzo Frascino wrote:
+>> On 6/14/19 12:10 PM, Thomas Gleixner wrote:
+>>> On Thu, 30 May 2019, Vincenzo Frascino wrote:
+>>>> +
+>>>> +	if (__arch_use_vsyscall(vdata)) {
+>>>> +		vdata[CS_HRES_COARSE].cycle_last	=
+>>>> +						tk->tkr_mono.cycle_last;
+>>>> +		vdata[CS_HRES_COARSE].mask		=
+>>>> +						tk->tkr_mono.mask;
+>>>> +		vdata[CS_HRES_COARSE].mult		=
+>>>> +						tk->tkr_mono.mult;
+>>>
+>>> These line breaks make it really hard to read. Can you fold in the patch
+>>> below please?
+>>>
+>>
+>> Thanks for this. I will do it in v7.
 > 
-> Cc: Catalin Marinas <catalin.marinas@arm.com>
-> Cc: Will Deacon <will.deacon@arm.com>
-> Cc: Dave Hansen <dave.hansen@linux.intel.com>
-> Cc: Andy Lutomirski <luto@kernel.org>
-> Cc: Peter Zijlstra <peterz@infradead.org>
-> Cc: Thomas Gleixner <tglx@linutronix.de>
-> Cc: Ingo Molnar <mingo@redhat.com>
-> Cc: Kirill A. Shutemov <kirill.shutemov@linux.intel.com>
-> Cc: Andrew Morton <akpm@linux-foundation.org>
-> Cc: Michal Hocko <mhocko@kernel.org>
-> Cc: linux-arm-kernel@lists.infradead.org
-> Cc: x86@kernel.org
+> Talking about v7. I'd like to get this into 5.3. That means you'd have to
+> rebase it on
 > 
-> Signed-off-by: Anshuman Khandual <anshuman.khandual@arm.com>
+>   git://git.kernel.org/pub/scm/linux/kernel/git/hyperv/linux.git hyperv-next
+> 
+> to avoid the hyperv conflict. I'll sort this out with the hyperv folks how
+> I can get these bits as a base for a tip branch which holds all the vdso
+> pieces.
+>
 
-Acked-by: Thomas Gleixner <tglx@linutronix.de>
+Ok, I will rebase and test the patches against the hyperv-next branch. Could you
+please let me know when all the bits are sorted?
+
+> Thanks,
+> 
+> 	tglx
+> 
+
+-- 
+Regards,
+Vincenzo
 
 _______________________________________________
 linux-arm-kernel mailing list
