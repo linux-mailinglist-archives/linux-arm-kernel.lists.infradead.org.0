@@ -2,41 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5EF43461A8
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Jun 2019 16:52:07 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3B73D461B7
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Jun 2019 16:53:17 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=QcVVAH6TGN2d+khTPRAR9tMtLEOVB9O3ly4RRzCHcQA=; b=Lnk8EPeOq8dX+m
-	c2P8jL3HBp0GDbYiVwGV5CtmcmoI17Y98ty1wu1Wx9+1Yi8gyFoZWS9TZLy5wIle/+H/uzv/b9bdx
-	nq1xO+WaG7+Jhg2xnv/YT5GK4csVcEPnGG1aOLd15DI0SyftP0a4KtMJB+ZXUsHsTImg/oANu3aPF
-	oZ44lpH98TXHoFvu8sald6JkTYCGE6rtMXdsRmjLFHeIqo++90tDw89a2/1Fp2bWKGc20Ujloab/w
-	62hgaYFS3AMJvmjXC0yUaA9G6s+TxINAbm6yL2f1WZvuSoCW9+1xWE4UDdGHNTj/L1KDqkqTTYqeG
-	wOxhe1jlTC7Qau/LdZ/Q==;
+	List-Owner; bh=/krlLZexDcJ7/PLdJZ1FK+cFl8RMk1cmmuVg+cOQleU=; b=C+0wQtTFZqSaTu
+	m8BAdaRP6f85gSPltRExkAaRxzclv1Y2/NN5fPUj2odOjfmGrkWlJw885droVL9r5fSr7o6GwgHdY
+	9HpZQe6e5G7Wk8Zp/FgXA2zSsdk3F2nsTcLWeaxZi0VuhuSNZQAh8y5PkvZpn+X3HXKfvTAhQs26y
+	WgqhkExOmZiwNMxehAgXl9gfl3bW3m4gc1aLGzdgO+E1A04De+7pJ99vJG91yDZl5VrzNku2ebRJQ
+	kfdCqh+GCTVFp2KMKlNQLMC8gEDDWpr0Y4R/l4Z58rN+9BjigXjCIMk+Eaf9XO8BB+e+l4U8Reu4T
+	GmSsBJXD1E5Jcd1c/0rQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hbnYj-00060x-De; Fri, 14 Jun 2019 14:52:05 +0000
-Received: from 179-240-172-117.3g.claro.net.br ([179.240.172.117]
- helo=quaco.ghostprotocols.net)
- by bombadil.infradead.org with esmtpsa (Exim 4.92 #3 (Red Hat Linux))
- id 1hbnXh-0005Hs-35; Fri, 14 Jun 2019 14:51:01 +0000
-Received: by quaco.ghostprotocols.net (Postfix, from userid 1000)
- id F07C241149; Fri, 14 Jun 2019 11:50:57 -0300 (-03)
-Date: Fri, 14 Jun 2019 11:50:57 -0300
-From: Arnaldo Carvalho de Melo <acme@kernel.org>
-To: John Garry <john.garry@huawei.com>
-Subject: Re: [PATCH v2 2/5] perf pmu: Support more complex PMU event aliasing
-Message-ID: <20190614145057.GG1402@kernel.org>
-References: <1560521283-73314-1-git-send-email-john.garry@huawei.com>
- <1560521283-73314-3-git-send-email-john.garry@huawei.com>
+	id 1hbnZp-0006gx-OC; Fri, 14 Jun 2019 14:53:13 +0000
+Received: from mail.kernel.org ([198.145.29.99])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hbnZh-0006gb-Ca
+ for linux-arm-kernel@lists.infradead.org; Fri, 14 Jun 2019 14:53:06 +0000
+Received: from mail-qk1-f182.google.com (mail-qk1-f182.google.com
+ [209.85.222.182])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id DD2BC21721
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 14 Jun 2019 14:53:04 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1560523985;
+ bh=xXLXuR+L8hhQa1ErD+u0rcoh9h0mBsxWabprP9kW9MI=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=wk/1a4shWxNb0N1kY/k/UaqXtQEShtWb2wrMVi6jUYzhWtd/6z8tKQrLCEehTBjkV
+ R2+kOEa/LD4aQEKDgGDxy2BNF5fk8xXRdVl7rjbHpb6Iy8bSon9qs9Rvs7em8b86ro
+ WWbH3PUw3t8OP6hKhg8PNzM0SLcRKPAcSRepSB6E=
+Received: by mail-qk1-f182.google.com with SMTP id a27so1829967qkk.5
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 14 Jun 2019 07:53:04 -0700 (PDT)
+X-Gm-Message-State: APjAAAV/o1LuvzgLF2f5fhWtZ5R81h5dz2WT7XXPFKF2OnHxmE/qk965
+ UzyhM2f0XFGZDHEe7fVxP/b583tqnMo4BYZjPQ==
+X-Google-Smtp-Source: APXvYqzCzbjmjEqoh/p0P1ONf9SWsDRWOXpqAjANf0PIAA9ZEPQPgEKQ4Fa+P/aQgf5tr5TAK/wuQsBfgtzZ/HtFS+4=
+X-Received: by 2002:a05:620a:13d1:: with SMTP id
+ g17mr21296388qkl.121.1560523984156; 
+ Fri, 14 Jun 2019 07:53:04 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <1560521283-73314-3-git-send-email-john.garry@huawei.com>
-X-Url: http://acmel.wordpress.com
-User-Agent: Mutt/1.11.3 (2019-02-01)
+References: <20190614081650.11880-1-daniel.baluta@nxp.com>
+ <20190614081650.11880-3-daniel.baluta@nxp.com>
+In-Reply-To: <20190614081650.11880-3-daniel.baluta@nxp.com>
+From: Rob Herring <robh+dt@kernel.org>
+Date: Fri, 14 Jun 2019 08:52:51 -0600
+X-Gmail-Original-Message-ID: <CAL_JsqJKgMB1PNA33gmFju4AQTc2WaSBoOGQExVaGd9LZRmk_g@mail.gmail.com>
+Message-ID: <CAL_JsqJKgMB1PNA33gmFju4AQTc2WaSBoOGQExVaGd9LZRmk_g@mail.gmail.com>
+Subject: Re: [PATCH 2/2] dt-bindings: arm: fsl: Add DSP IPC binding support
+To: Daniel Baluta <daniel.baluta@nxp.com>
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20190614_075305_461874_184BF157 
+X-CRM114-Status: GOOD (  19.39  )
+X-Spam-Score: -5.2 (-----)
+X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
+ Content analysis details:   (-5.2 points)
+ pts rule name              description
+ ---- ---------------------- --------------------------------------------------
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ 0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -48,111 +87,114 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, brueckner@linux.ibm.com, mathieu.poirier@linaro.org,
- peterz@infradead.org, ben@decadent.org.uk, tmricht@linux.ibm.com,
- will.deacon@arm.com, linux-kernel@vger.kernel.org, linuxarm@huawei.com,
- zhangshaokun@hisilicon.com, alexander.shishkin@linux.intel.com,
- mingo@redhat.com, namhyung@kernel.org, jolsa@redhat.com,
- linux-arm-kernel@lists.infradead.org, kan.liang@linux.intel.com
+Cc: Dong Aisheng <aisheng.dong@nxp.com>, Mark Rutland <mark.rutland@arm.com>,
+ Daniel Baluta <daniel.baluta@gmail.com>, Anson Huang <anson.huang@nxp.com>,
+ devicetree@vger.kernel.org, Shawn Guo <shawnguo@kernel.org>,
+ Sascha Hauer <s.hauer@pengutronix.de>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Oleksij Rempel <o.rempel@pengutronix.de>, NXP Linux Team <linux-imx@nxp.com>,
+ Fabio Estevam <festevam@gmail.com>, "S.j. Wang" <shengjiu.wang@nxp.com>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Em Fri, Jun 14, 2019 at 10:08:00PM +0800, John Garry escreveu:
-> The jevent "Unit" field is used for uncore PMU alias definition.
-> 
-> The form uncore_pmu_example_X is supported, where "X" is a wildcard,
-> to support multiple instances of the same PMU in a system.
-> 
-> Unfortunately this format not suitable for all uncore PMUs; take the Hisi
-> DDRC uncore PMU for example, where the name is in the form
-> hisi_scclX_ddrcY.
-> 
-> For the current jevent parsing, we would be required to hardcode an uncore
-> alias translation for each possible value of X. This is not scalable.
-> 
-> Instead, add support for "Unit" field in the form "hisi_sccl,ddrc", where
-> we can match by hisi_scclX and ddrcY. Tokens in Unit field are 
-> delimited by ','.
-
-Looks ok, but would be good to have some Reviewed-by attached as I'm not
-super familiar with the PMU oddities, Jiri, can you please review this,
-somebody else?
-
-Thanks,
-
-- Arnaldo
- 
-> Signed-off-by: John Garry <john.garry@huawei.com>
+On Fri, Jun 14, 2019 at 2:15 AM <daniel.baluta@nxp.com> wrote:
+>
+> From: Daniel Baluta <daniel.baluta@nxp.com>
+>
+> DSP IPC is the layer that allows the Host CPU to communicate
+> with DSP firmware.
+> DSP is part of some i.MX8 boards (e.g i.MX8QM, i.MX8QXP)
+>
+> Signed-off-by: Daniel Baluta <daniel.baluta@nxp.com>
 > ---
->  tools/perf/util/pmu.c | 39 ++++++++++++++++++++++++++++++++++-----
->  1 file changed, 34 insertions(+), 5 deletions(-)
-> 
-> diff --git a/tools/perf/util/pmu.c b/tools/perf/util/pmu.c
-> index 7e7299fee550..bc71c60589b5 100644
-> --- a/tools/perf/util/pmu.c
-> +++ b/tools/perf/util/pmu.c
-> @@ -700,6 +700,39 @@ struct pmu_events_map *perf_pmu__find_map(struct perf_pmu *pmu)
->  	return map;
->  }
->  
-> +static bool pmu_uncore_alias_match(const char *pmu_name, const char *name)
-> +{
-> +	char *tmp, *tok, *str;
-> +	bool res;
+>  .../bindings/arm/freescale/fsl,dsp.yaml       | 43 +++++++++++++++++++
+
+bindings/dsp/...
+
+>  1 file changed, 43 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/arm/freescale/fsl,dsp.yaml
+>
+> diff --git a/Documentation/devicetree/bindings/arm/freescale/fsl,dsp.yaml b/Documentation/devicetree/bindings/arm/freescale/fsl,dsp.yaml
+> new file mode 100644
+> index 000000000000..16d9df1d397b
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/arm/freescale/fsl,dsp.yaml
+> @@ -0,0 +1,43 @@
+> +# SPDX-License-Identifier: GPL-2.0
+
+The preference is to dual license new bindings: GPL-2.0 OR BSD-2-Clause
+
+> +%YAML 1.2
+> +---
+> +$id: http://devicetree.org/schemas/arm/freescale/fsl,dsp.yaml#
+> +$schema: http://devicetree.org/meta-schemas/core.yaml#
 > +
-> +	str = strdup(pmu_name);
-> +	if (!str)
-> +		return false;
+> +title: NXP i.MX IPC DSP driver
+
+This isn't a driver.
+
 > +
-> +	/*
-> +	 * uncore alias may be from different PMU with common
-> +	 * prefix or matching tokens.
-> +	 */
-> +	tok = strtok_r(str, ",", &tmp);
-> +	if (strncmp(pmu_name, tok, strlen(tok))) {
-> +		res = false;
-> +		goto out;
-> +	}
+> +maintainers:
+> +  - Daniel Baluta <daniel.baluta@nxp.com>
 > +
-> +	for (; tok; name += strlen(tok), tok = strtok_r(NULL, ",", &tmp)) {
-> +		name = strstr(name, tok);
-> +		if (!name) {
-> +			res = false;
-> +			goto out;
-> +		}
-> +	}
+> +description: |
+> +  IPC communication layer between Host CPU and DSP on NXP i.MX8 platforms
 > +
-> +	res = true;
-> +out:
-> +	free(str);
-> +	return res;
-> +}
+> +properties:
+> +  compatible:
+> +    enum:
+> +      - fsl,imx-dsp
+
+You can have a fallback, but it needs SoC specific compatible(s).
+
 > +
->  /*
->   * From the pmu_events_map, find the table of PMU events that corresponds
->   * to the current running CPU. Then, add all PMU events from that table
-> @@ -730,12 +763,8 @@ static void pmu_add_cpu_aliases(struct list_head *head, struct perf_pmu *pmu)
->  			break;
->  		}
->  
-> -		/*
-> -		 * uncore alias may be from different PMU
-> -		 * with common prefix
-> -		 */
->  		if (pmu_is_uncore(name) &&
-> -		    !strncmp(pname, name, strlen(pname)))
-> +		    pmu_uncore_alias_match(pname, name))
->  			goto new_alias;
->  
->  		if (strcmp(pname, name))
-> -- 
+> +  mboxes:
+> +    description:
+> +      List of phandle of 2 MU channels for TXDB, 2 MU channels for RXDB
+> +      (see mailbox/fsl,mu.txt)
+> +    maxItems: 1
+
+Should be 4?
+
+> +
+> +  mbox-names
+> +    description:
+> +      Mailboxes names
+> +    allOf:
+> +      - $ref: "/schemas/types.yaml#/definitions/string"
+
+No need for this, '*-names' already has a defined type.
+
+> +      - enum: [ "txdb0", "txdb1", "rxdb0", "rxdb1" ]
+
+Should be an 'items' list with 4 entries?
+
+> +required:
+> +  - compatible
+> +  - mboxes
+> +  - mbox-names
+
+This seems incomplete. How does one boot the DSP? Load firmware? No
+resources that Linux has to manage. Shared memory?
+
+> +
+> +examples:
+> +  - |
+> +    dsp {
+> +      compatbile = "fsl,imx-dsp";
+> +      mbox-names = "txdb0", "txdb1", "rxdb0", "rxdb1";
+> +      mboxes = <&lsio_mu13 2 0 &lsio_mu13 2 1 &lsio_mu13 3 0 &lsio_mu13 3 1>;
+
+mboxes = <&lsio_mu13 2 0>, <&lsio_mu13 2 1>, <&lsio_mu13 3 0>, <&lsio_mu13 3 1>;
+
+> +    };
+> --
 > 2.17.1
-
--- 
-
-- Arnaldo
+>
 
 _______________________________________________
 linux-arm-kernel mailing list
