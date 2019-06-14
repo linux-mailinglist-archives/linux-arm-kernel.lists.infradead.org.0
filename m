@@ -2,67 +2,145 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7F2F54583C
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Jun 2019 11:08:44 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 45B504583E
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Jun 2019 11:09:08 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=lB1rpSjjRZeMSaVY1Et5ZpMx7J13LubTUgdgspMhlqE=; b=ajPIATh6yMEZvh
-	cKAX9CrKZGHrLSVdx/swJlPFca1riLdB2/sirznvIs+VeCjrKfw2BsAM0dKp8AeZyTV++3Yi6YYMS
-	GzIlfkarzkZLjq6137usf9FMyLgisYymG9hp/tGTDcM31zOO1zMwUHVXSRqSJ90EfeBu8R/Fm+cvM
-	OPUzby4ASPOxF6EGSdqGD5urbe1en4xalmNmJaOpiVnqZDj1Ai6cg65+BdcKIB3Y1kUV9kTWhfgvh
-	4CJR0c2ec8bSypQzJg0BAuqisXPyoFGTOm92zetezIvdEbCzRJvT6k+Vu7j/BamVMy39P7wJ+1RDV
-	jqPI/WssZZQo/CXLnDKA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Y4dBOY1x+r2a5iiq6BE2W6bRl1bYv2E75oyzt3o7JZ8=; b=bvJERhuXUd+Kgu
+	46b2iYPN8mraztGdAukDwq4H4wD6RJPe9zQUn+O1Z9/dEd0/MJayqppBHg5G3dkmgtU7EviyqzjCz
+	j3fauBZLGUobYaR2P9UbvRP13iScBiE44j00L05Din8tPBE8pxG/G03cqDHRj5VcU6Bqxgt3qWQJ3
+	QxWmtPwRuiBjQGDMohJM1P6NQyzWZ0fNJTdrdKPWXdi0tiUD3kPIzM9q02PsxjBhZempEbZdf2zQc
+	vTN3nRdPsy7sH02R0lbTtncHQMw3zk5eNLVj7+e++FQVvr9A2xQbJxtTrBLHA23hBLaLxTQlDJRNF
+	ba6KfMKxABRcnx9V8lGA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hbiCP-0008N9-Nr; Fri, 14 Jun 2019 09:08:41 +0000
-Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
+	id 1hbiCm-0000Bd-6i; Fri, 14 Jun 2019 09:09:04 +0000
+Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hbiCA-0008MI-65
- for linux-arm-kernel@lists.infradead.org; Fri, 14 Jun 2019 09:08:28 +0000
-Received: from pty.hi.pengutronix.de ([2001:67c:670:100:1d::c5])
- by metis.ext.pengutronix.de with esmtps
- (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
- (envelope-from <ore@pengutronix.de>)
- id 1hbiC0-0005HQ-NT; Fri, 14 Jun 2019 11:08:16 +0200
-Received: from ore by pty.hi.pengutronix.de with local (Exim 4.89)
- (envelope-from <ore@pengutronix.de>)
- id 1hbiBz-0001J6-Ji; Fri, 14 Jun 2019 11:08:15 +0200
-Date: Fri, 14 Jun 2019 11:08:15 +0200
-From: Oleksij Rempel <o.rempel@pengutronix.de>
-To: daniel.baluta@nxp.com
-Subject: Re: [PATCH 1/2] firmware: imx: Add DSP IPC protocol driver
-Message-ID: <20190614090815.lb2vnncqnom3fgu2@pengutronix.de>
-References: <20190614081650.11880-1-daniel.baluta@nxp.com>
- <20190614081650.11880-2-daniel.baluta@nxp.com>
+ id 1hbiCE-0008NE-HB
+ for linux-arm-kernel@lists.infradead.org; Fri, 14 Jun 2019 09:08:32 +0000
+Received: by mail-wr1-x441.google.com with SMTP id p13so1658362wru.10
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 14 Jun 2019 02:08:30 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=baylibre-com.20150623.gappssmtp.com; s=20150623;
+ h=subject:to:cc:references:from:openpgp:autocrypt:organization
+ :message-id:date:user-agent:mime-version:in-reply-to
+ :content-language:content-transfer-encoding;
+ bh=IQ/erJBNnsdc3zQx8I0qI+U41fetT1HXtvyCfi4lBLE=;
+ b=iYkinS0pyuFDC+hOsXs43U9JgV1JMi5sLiEnfTqlxLryFpbT0b1WuxBP/98YLpSAUI
+ FiU72kEtWCJuGCdjDxFnAKUKTnIwJZg3FPASJK0ijhvgNwYNj/G7D95EiEinWmtSxApM
+ NhSmCNNfLigRfmxP+evdQeEs2X1g8NbDuH6a7VAMVZuKe/ChY2v4opk5cEPX9ikDZGzz
+ vd4ip1yg1ouNvlEu2eKlMf+octTGaOiJfosPXK/ZKdzVT+gNU4MGGpME12CgtwM3KGfw
+ okRI3nMiqyHO+jxvYHEDpxyMHSsRFg6owsh9p4DIkDknaFUh5UauRxouky9S4XDXHXsN
+ B6pg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:subject:to:cc:references:from:openpgp:autocrypt
+ :organization:message-id:date:user-agent:mime-version:in-reply-to
+ :content-language:content-transfer-encoding;
+ bh=IQ/erJBNnsdc3zQx8I0qI+U41fetT1HXtvyCfi4lBLE=;
+ b=ufW9qB7g+Dg+qAF1PuKy+mqhDBgyZyuW1PZaO1J/dUTabVbz/p5KuuRajXxe4OMUzV
+ e+E+feLHmtIlBVtAMyVQxx/K3mk3bI48pPaQ8T49AL443+wryeEhPUd0sRQBBYFlsFhp
+ 1Tbv35vgOJnyU+kFnFKjLPRCbuf50HgvAycQ4WL0XD/u044qECqVznGIzEOOoB2msk7S
+ jH0jciAB6NmiOx4519z1GCGNcy4u8vM/tUG1sUDS/a0WIUBab4YJs1Sc3wKVfB+Q6Eyp
+ Cqn0caRLqLIYaCKAKQ+Vl9QHzIEqfJdyOkSCrihUieEFQdR8Ff2IPsSLH/GqtsbFKUqR
+ iN7w==
+X-Gm-Message-State: APjAAAXwpJOVnGmLVE7iYdTH5oE5fRM7uwGMJFjnPUJC9uQIsY3JQD73
+ QIEWcIFo4PmQVN9QQTfSqf3jWeMcBMpvUg==
+X-Google-Smtp-Source: APXvYqwGAmmni9g2TfdENdf+hpcYcSTjIVX6fFSbiW7SoeQjxILbpa67cf60JheQm5An39C2IoOosA==
+X-Received: by 2002:a5d:4941:: with SMTP id r1mr54081660wrs.225.1560503308926; 
+ Fri, 14 Jun 2019 02:08:28 -0700 (PDT)
+Received: from [10.1.2.12] (lmontsouris-657-1-212-31.w90-63.abo.wanadoo.fr.
+ [90.63.244.31])
+ by smtp.gmail.com with ESMTPSA id l124sm2280324wmf.36.2019.06.14.02.08.27
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Fri, 14 Jun 2019 02:08:28 -0700 (PDT)
+Subject: Re: [PATCH v2 4/4] arm64: dts: meson: g12b: odroid-n2: add the
+ Ethernet PHY reset line
+To: Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
+ linux-amlogic@lists.infradead.org, khilman@baylibre.com
+References: <20190612205529.19834-1-martin.blumenstingl@googlemail.com>
+ <20190612205529.19834-5-martin.blumenstingl@googlemail.com>
+From: Neil Armstrong <narmstrong@baylibre.com>
+Openpgp: preference=signencrypt
+Autocrypt: addr=narmstrong@baylibre.com; prefer-encrypt=mutual; keydata=
+ mQENBE1ZBs8BCAD78xVLsXPwV/2qQx2FaO/7mhWL0Qodw8UcQJnkrWmgTFRobtTWxuRx8WWP
+ GTjuhvbleoQ5Cxjr+v+1ARGCH46MxFP5DwauzPekwJUD5QKZlaw/bURTLmS2id5wWi3lqVH4
+ BVF2WzvGyyeV1o4RTCYDnZ9VLLylJ9bneEaIs/7cjCEbipGGFlfIML3sfqnIvMAxIMZrvcl9
+ qPV2k+KQ7q+aXavU5W+yLNn7QtXUB530Zlk/d2ETgzQ5FLYYnUDAaRl+8JUTjc0CNOTpCeik
+ 80TZcE6f8M76Xa6yU8VcNko94Ck7iB4vj70q76P/J7kt98hklrr85/3NU3oti3nrIHmHABEB
+ AAG0KE5laWwgQXJtc3Ryb25nIDxuYXJtc3Ryb25nQGJheWxpYnJlLmNvbT6JATsEEwEKACUC
+ GyMGCwkIBwMCBhUIAgkKCwQWAgMBAh4BAheABQJXDO2CAhkBAAoJEBaat7Gkz/iubGIH/iyk
+ RqvgB62oKOFlgOTYCMkYpm2aAOZZLf6VKHKc7DoVwuUkjHfIRXdslbrxi4pk5VKU6ZP9AKsN
+ NtMZntB8WrBTtkAZfZbTF7850uwd3eU5cN/7N1Q6g0JQihE7w4GlIkEpQ8vwSg5W7hkx3yQ6
+ 2YzrUZh/b7QThXbNZ7xOeSEms014QXazx8+txR7jrGF3dYxBsCkotO/8DNtZ1R+aUvRfpKg5
+ ZgABTC0LmAQnuUUf2PHcKFAHZo5KrdO+tyfL+LgTUXIXkK+tenkLsAJ0cagz1EZ5gntuheLD
+ YJuzS4zN+1Asmb9kVKxhjSQOcIh6g2tw7vaYJgL/OzJtZi6JlIW5AQ0ETVkGzwEIALyKDN/O
+ GURaHBVzwjgYq+ZtifvekdrSNl8TIDH8g1xicBYpQTbPn6bbSZbdvfeQPNCcD4/EhXZuhQXM
+ coJsQQQnO4vwVULmPGgtGf8PVc7dxKOeta+qUh6+SRh3vIcAUFHDT3f/Zdspz+e2E0hPV2hi
+ SvICLk11qO6cyJE13zeNFoeY3ggrKY+IzbFomIZY4yG6xI99NIPEVE9lNBXBKIlewIyVlkOa
+ YvJWSV+p5gdJXOvScNN1epm5YHmf9aE2ZjnqZGoMMtsyw18YoX9BqMFInxqYQQ3j/HpVgTSv
+ mo5ea5qQDDUaCsaTf8UeDcwYOtgI8iL4oHcsGtUXoUk33HEAEQEAAYkBHwQYAQIACQUCTVkG
+ zwIbDAAKCRAWmrexpM/4rrXiB/sGbkQ6itMrAIfnM7IbRuiSZS1unlySUVYu3SD6YBYnNi3G
+ 5EpbwfBNuT3H8//rVvtOFK4OD8cRYkxXRQmTvqa33eDIHu/zr1HMKErm+2SD6PO9umRef8V8
+ 2o2oaCLvf4WeIssFjwB0b6a12opuRP7yo3E3gTCSKmbUuLv1CtxKQF+fUV1cVaTPMyT25Od+
+ RC1K+iOR0F54oUJvJeq7fUzbn/KdlhA8XPGzwGRy4zcsPWvwnXgfe5tk680fEKZVwOZKIEuJ
+ C3v+/yZpQzDvGYJvbyix0lHnrCzq43WefRHI5XTTQbM0WUIBIcGmq38+OgUsMYu4NzLu7uZF
+ Acmp6h8guQINBFYnf6QBEADQ+wBYa+X2n/xIQz/RUoGHf84Jm+yTqRT43t7sO48/cBW9vAn9
+ GNwnJ3HRJWKATW0ZXrCr40ES/JqM1fUTfiFDB3VMdWpEfwOAT1zXS+0rX8yljgsWR1UvqyEP
+ 3xN0M/40Zk+rdmZKaZS8VQaXbveaiWMEmY7sBV3QvgOzB7UF2It1HwoCon5Y+PvyE3CguhBd
+ 9iq5iEampkMIkbA3FFCpQFI5Ai3BywkLzbA3ZtnMXR8Qt9gFZtyXvFQrB+/6hDzEPnBGZOOx
+ zkd/iIX59SxBuS38LMlhPPycbFNmtauOC0DNpXCv9ACgC9tFw3exER/xQgSpDVc4vrL2Cacr
+ wmQp1k9E0W+9pk/l8S1jcHx03hgCxPtQLOIyEu9iIJb27TjcXNjiInd7Uea195NldIrndD+x
+ 58/yU3X70qVY+eWbqzpdlwF1KRm6uV0ZOQhEhbi0FfKKgsYFgBIBchGqSOBsCbL35f9hK/JC
+ 6LnGDtSHeJs+jd9/qJj4WqF3x8i0sncQ/gszSajdhnWrxraG3b7/9ldMLpKo/OoihfLaCxtv
+ xYmtw8TGhlMaiOxjDrohmY1z7f3rf6njskoIXUO0nabun1nPAiV1dpjleg60s3OmVQeEpr3a
+ K7gR1ljkemJzM9NUoRROPaT7nMlNYQL+IwuthJd6XQqwzp1jRTGG26J97wARAQABiQM+BBgB
+ AgAJBQJWJ3+kAhsCAikJEBaat7Gkz/iuwV0gBBkBAgAGBQJWJ3+kAAoJEHfc29rIyEnRk6MQ
+ AJDo0nxsadLpYB26FALZsWlN74rnFXth5dQVQ7SkipmyFWZhFL8fQ9OiIoxWhM6rSg9+C1w+
+ n45eByMg2b8H3mmQmyWztdI95OxSREKwbaXVapCcZnv52JRjlc3DoiiHqTZML5x1Z7lQ1T3F
+ 8o9sKrbFO1WQw1+Nc91+MU0MGN0jtfZ0Tvn/ouEZrSXCE4K3oDGtj3AdC764yZVq6CPigCgs
+ 6Ex80k6QlzCdVP3RKsnPO2xQXXPgyJPJlpD8bHHHW7OLfoR9DaBNympfcbQJeekQrTvyoASw
+ EOTPKE6CVWrcQIztUp0WFTdRGgMK0cZB3Xfe6sOp24PQTHAKGtjTHNP/THomkH24Fum9K3iM
+ /4Wh4V2eqGEgpdeSp5K+LdaNyNgaqzMOtt4HYk86LYLSHfFXywdlbGrY9+TqiJ+ZVW4trmui
+ NIJCOku8SYansq34QzYM0x3UFRwff+45zNBEVzctSnremg1mVgrzOfXU8rt+4N1b2MxorPF8
+ 619aCwVP7U16qNSBaqiAJr4e5SNEnoAq18+1Gp8QsFG0ARY8xp+qaKBByWES7lRi3QbqAKZf
+ yOHS6gmYo9gBmuAhc65/VtHMJtxwjpUeN4Bcs9HUpDMDVHdfeRa73wM+wY5potfQ5zkSp0Jp
+ bxnv/cRBH6+c43stTffprd//4Hgz+nJcCgZKtCYIAPkUxABC85ID2CidzbraErVACmRoizhT
+ KR2OiqSLW2x4xdmSiFNcIWkWJB6Qdri0Fzs2dHe8etD1HYaht1ZhZ810s7QOL7JwypO8dscN
+ KTEkyoTGn6cWj0CX+PeP4xp8AR8ot4d0BhtUY34UPzjE1/xyrQFAdnLd0PP4wXxdIUuRs0+n
+ WLY9Aou/vC1LAdlaGsoTVzJ2gX4fkKQIWhX0WVk41BSFeDKQ3RQ2pnuzwedLO94Bf6X0G48O
+ VsbXrP9BZ6snXyHfebPnno/te5XRqZTL9aJOytB/1iUna+1MAwBxGFPvqeEUUyT+gx1l3Acl
+ ZaTUOEkgIor5losDrePdPgE=
+Organization: Baylibre
+Message-ID: <db1c85b8-2e9c-7c12-026d-9b0d7ede6923@baylibre.com>
+Date: Fri, 14 Jun 2019 11:08:27 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.7.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190614081650.11880-2-daniel.baluta@nxp.com>
-X-Sent-From: Pengutronix Hildesheim
-X-URL: http://www.pengutronix.de/
-X-IRC: #ptxdist @freenode
-X-Accept-Language: de,en
-X-Accept-Content-Type: text/plain
-X-Uptime: 10:44:09 up 27 days, 15:02, 49 users,  load average: 0.03, 0.16, 0.24
-User-Agent: NeoMutt/20170113 (1.7.2)
-X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::c5
-X-SA-Exim-Mail-From: ore@pengutronix.de
-X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
- SAEximRunCond expanded to false
-X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
+In-Reply-To: <20190612205529.19834-5-martin.blumenstingl@googlemail.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190614_020826_400405_E3E5BE96 
-X-CRM114-Status: GOOD (  33.96  )
+X-CRM114-CacheID: sfid-20190614_020830_600530_60776928 
+X-CRM114-Status: GOOD (  18.85  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:441 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -74,378 +152,51 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: aisheng.dong@nxp.com, mark.rutland@arm.com, daniel.baluta@gmail.com,
- anson.huang@nxp.com, devicetree@vger.kernel.org, shawnguo@kernel.org,
- s.hauer@pengutronix.de, linux-kernel@vger.kernel.org, robh+dt@kernel.org,
- linux-imx@nxp.com, festevam@gmail.com, shengjiu.wang@nxp.com,
+Cc: andrew@lunn.ch, netdev@vger.kernel.org, linus.walleij@linaro.org,
+ linux-kernel@vger.kernel.org, robin.murphy@arm.com,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Daniel,
-
-please, see my review inline.
-
-On Fri, Jun 14, 2019 at 04:16:49PM +0800, daniel.baluta@nxp.com wrote:
-> From: Daniel Baluta <daniel.baluta@nxp.com>
+On 12/06/2019 22:55, Martin Blumenstingl wrote:
+> The reset line of the RTL8211F PHY is routed to the GPIOZ_15 pad.
+> Describe this in the device tree so the PHY framework can bring the PHY
+> into a known state when initializing it. GPIOZ_15 doesn't support
+> driving the output HIGH (to take the PHY out of reset, only output LOW
+> to reset the PHY is supported). The datasheet states it's an "3.3V input
+> tolerant open drain (OD) output pin". Instead there's a pull-up resistor
+> on the board to take the PHY out of reset. The GPIO itself will be set
+> to INPUT mode to take the PHY out of reset and LOW to reset the PHY,
+> which is achieved with the flags (GPIO_ACTIVE_LOW | GPIO_OPEN_DRAIN).
 > 
-> Some of i.MX8 processors (e.g i.MX8QM, i.MX8QXP) contain
-> the Tensilica HiFi4 DSP for advanced pre- and post-audio
-> processing.
-> 
-> The communication between Host CPU and DSP firmware is
-> taking place using a shared memory area for message passing
-> and a dedicated Messaging Unit for notifications.
-> 
-> DSP IPC protocol driver offers a doorbell interface using
-> imx-mailbox API.
-> 
-> We use 4 MU channels (2 x TXDB, 2 x RXDB) to implement a
-> request-reply protocol.
-> 
-> Connection 0 (txdb0, rxdb0):
->         - Host writes messasge to shared memory [SHMEM]
-> 	- Host sends a request [MU]
-> 	- DSP handles request [SHMEM]
-> 	- DSP sends reply [MU]
-> 
-> Connection 1 (txdb1, rxdb1):
-> 	- DSP writes a message to shared memory [SHMEM]
-> 	- DSP sends a request [MU]
-> 	- Host handles request [SHMEM]
-> 	- Host sends reply [MU]
-> 
-> The protocol driver will be used by a Host client to
-> communicate with the DSP. First client will be the i.MX8
-> part from Sound Open Firmware infrastructure.
-> 
-> The protocol drivers offers the following interface:
-> 
-> On Tx:
->    - imx_dsp_ring_doorbell, will be called to notify the DSP
->    that it needs to handle a request.
-> 
-> On Rx:
->    - clients need to provide two callbacks:
-> 	.handle_reply
-> 	.handle_request
->   - the callbacks will be used by the protocol driver on
->     notification arrival from DSP.
-> 
-> Signed-off-by: Daniel Baluta <daniel.baluta@nxp.com>
+> Signed-off-by: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
 > ---
->  drivers/firmware/imx/Kconfig     |  11 ++
->  drivers/firmware/imx/Makefile    |   1 +
->  drivers/firmware/imx/imx-dsp.c   | 167 +++++++++++++++++++++++++++++++
->  include/linux/firmware/imx/dsp.h |  61 +++++++++++
->  4 files changed, 240 insertions(+)
->  create mode 100644 drivers/firmware/imx/imx-dsp.c
->  create mode 100644 include/linux/firmware/imx/dsp.h
+>  arch/arm64/boot/dts/amlogic/meson-g12b-odroid-n2.dts | 4 ++++
+>  1 file changed, 4 insertions(+)
 > 
-> diff --git a/drivers/firmware/imx/Kconfig b/drivers/firmware/imx/Kconfig
-> index 42b566f8903f..383996b679a8 100644
-> --- a/drivers/firmware/imx/Kconfig
-> +++ b/drivers/firmware/imx/Kconfig
-> @@ -1,4 +1,15 @@
->  # SPDX-License-Identifier: GPL-2.0-only
-> +config IMX_DSP
-> +	bool "IMX DSP Protocol driver"
-> +	depends on IMX_MBOX
-> +	help
-> +	  This enables DSP IPC protocol between host CPU (Linux)
-> +	  and the firmware running on DSP.
-> +	  DSP exists on some i.MX8 processors (e.g i.MX8QM, i.MX8QXP).
+> diff --git a/arch/arm64/boot/dts/amlogic/meson-g12b-odroid-n2.dts b/arch/arm64/boot/dts/amlogic/meson-g12b-odroid-n2.dts
+> index 4146cd84989c..f911bbdc4e70 100644
+> --- a/arch/arm64/boot/dts/amlogic/meson-g12b-odroid-n2.dts
+> +++ b/arch/arm64/boot/dts/amlogic/meson-g12b-odroid-n2.dts
+> @@ -186,6 +186,10 @@
+>  		/* Realtek RTL8211F (0x001cc916) */	
+>  		reg = <0>;
+>  		max-speed = <1000>;
 > +
-> +          It acts like a doorbell. Client might use shared memory to
-> +	  exchange information with DSP side.
-> +
->  config IMX_SCU
->  	bool "IMX SCU Protocol driver"
->  	depends on IMX_MBOX
-> diff --git a/drivers/firmware/imx/Makefile b/drivers/firmware/imx/Makefile
-> index 802c4ad8e8f9..08bc9ddfbdfb 100644
-> --- a/drivers/firmware/imx/Makefile
-> +++ b/drivers/firmware/imx/Makefile
-> @@ -1,3 +1,4 @@
->  # SPDX-License-Identifier: GPL-2.0
-> +obj-$(CONFIG_IMX_DSP)		+= imx-dsp.o
->  obj-$(CONFIG_IMX_SCU)		+= imx-scu.o misc.o imx-scu-irq.o
->  obj-$(CONFIG_IMX_SCU_PD)	+= scu-pd.o
-> diff --git a/drivers/firmware/imx/imx-dsp.c b/drivers/firmware/imx/imx-dsp.c
-> new file mode 100644
-> index 000000000000..953fd364ad76
-> --- /dev/null
-> +++ b/drivers/firmware/imx/imx-dsp.c
-> @@ -0,0 +1,167 @@
-> +// SPDX-License-Identifier: GPL-2.0+
-> +/*
-> + * Copyright 2018 NXP
-> + *  Author: Daniel Baluta <daniel.baluta@nxp.com>
-> + *
-> + * Implementation of the DSP IPC interface (host side)
-> + */
-> +
-> +#include <linux/firmware/imx/dsp.h>
-> +#include <linux/kernel.h>
-> +#include <linux/mailbox_client.h>
-> +#include <linux/module.h>
-> +#include <linux/of_platform.h>
-> +#include <linux/platform_device.h>
-> +#include <linux/slab.h>
-> +
-> +static struct imx_dsp_ipc *imx_dsp_handle;
-> +
-> +/*
-> + * Get the default handle used by DSP
-> + */
-> +int imx_dsp_get_handle(struct imx_dsp_ipc **ipc)
-> +{
-> +	if (!imx_dsp_handle)
-> +		return -EPROBE_DEFER;
-> +
-> +	*ipc = imx_dsp_handle;
-> +	return 0;
-> +}
-> +EXPORT_SYMBOL(imx_dsp_get_handle);
-
-Please, extract needed device or handle form device tree. The consumer
-should pars own device tree node and get the phandle to the dsp node.
-
-> +void imx_dsp_set_data(struct imx_dsp_ipc *ipc, void *data)
-> +{
-> +	if (!ipc)
-> +		return;
-> +
-> +	ipc->private_data = data;
-> +}
-> +EXPORT_SYMBOL(imx_dsp_set_data);
-> +
-> +void *imx_dsp_get_data(struct imx_dsp_ipc *ipc)
-> +{
-> +	if (!ipc)
-> +		return NULL;
-> +
-> +	return ipc->private_data;
-> +}
-> +EXPORT_SYMBOL(imx_dsp_get_data);
-> +
-> +/*
-> + * imx_dsp_ring_doorbell - triggers an interrupt on the other side (DSP)
-> + *
-> + * @dsp: DSP IPC handle
-> + * @chan_idx: index of the channel where to trigger the interrupt
-> + *
-> + * Returns non-negative value for success, negative value for error
-> + */
-> +int imx_dsp_ring_doorbell(struct imx_dsp_ipc *ipc, unsigned int idx)
-> +{
-> +	int ret;
-> +	struct imx_dsp_chan *dsp_chan;
-> +
-> +	if (idx > DSP_MU_CHAN_NUM)
-> +		return -EINVAL;
-
-On this test idx may overflow. DSP_MU_CHAN_NUM is 4, means idx can be:
-0, 1, 2, 3. In you case idx == 4 is allowed, so the caller will be able
-to corrupt the rest of imx_dsp_ipc struct.
-
-> +	dsp_chan = &ipc->chans[idx];
-> +	ret = mbox_send_message(dsp_chan->ch, NULL);
-> +	if (ret < 0)
-> +		return ret;
-> +
-> +	return 0;
-> +}
-> +EXPORT_SYMBOL(imx_dsp_ring_doorbell);
-> +
-> +/*
-> + * imx_dsp_handle_rx - rx callback used by imx mailbox
-> + *
-> + * @c: mbox client
-> + * @msg: message received
-> + *
-> + * Users of DSP IPC will need to privde handle_reply and handle_request
-> + * callbacks.
-> + */
-> +static void imx_dsp_handle_rx(struct mbox_client *c, void *msg)
-> +{
-> +	struct imx_dsp_chan *chan = container_of(c, struct imx_dsp_chan, cl);
-> +
-> +	if (chan->idx == 0) {
-> +		chan->ipc->ops->handle_reply(chan->ipc);
-> +	} else {
-> +		chan->ipc->ops->handle_request(chan->ipc);
-> +		imx_dsp_ring_doorbell(chan->ipc, 1);
-> +	}
-> +}
-> +
-> +static int imx_dsp_probe(struct platform_device *pdev)
-> +{
-> +	struct device *dev = &pdev->dev;
-> +	struct imx_dsp_ipc *dsp_ipc;
-> +	struct imx_dsp_chan *dsp_chan;
-> +	struct mbox_client *cl;
-> +	char *chan_name;
-> +	int ret;
-> +	int i;
-> +
-> +	dsp_ipc = devm_kzalloc(dev, sizeof(*dsp_ipc), GFP_KERNEL);
-> +	if (!dsp_ipc)
-> +		return -ENOMEM;
-> +
-> +	for (i = 0; i < DSP_MU_CHAN_NUM; i++) {
-> +		if (i < 2)
-> +			chan_name = kasprintf(GFP_KERNEL, "txdb%d", i);
-> +		else
-> +			chan_name = kasprintf(GFP_KERNEL, "rxdb%d", i - 2);
-> +
-> +		if (!chan_name)
-> +			return -ENOMEM;
-> +
-> +		dsp_chan = &dsp_ipc->chans[i];
-> +		cl = &dsp_chan->cl;
-> +		cl->dev = dev;
-> +		cl->tx_block = false;
-> +		cl->knows_txdone = true;
-> +		cl->rx_callback = imx_dsp_handle_rx;
-> +
-> +		dsp_chan->ipc = dsp_ipc;
-> +		dsp_chan->idx = i % 2;
-> +		dsp_chan->ch = mbox_request_channel_byname(cl, chan_name);
-> +		if (IS_ERR(dsp_chan->ch)) {
-> +			ret = PTR_ERR(dsp_chan->ch);
-> +			if (ret != -EPROBE_DEFER)
-> +				dev_err(dev, "Failed to request mbox chan %s ret %d\n",
-> +					chan_name, ret);
-> +			return ret;
-
-On the error you will leak the memory previously allocated chan_name.
-And you should call mbox_free_channel() for each previously registered
-channel in this loop. 
-
-> +		}
-> +
-> +		dev_dbg(dev, "request mbox chan %s\n", chan_name);
-> +		/* chan_name is not used anymore by framework */
-> +		kfree(chan_name);
-> +	}
-> +
-> +	dsp_ipc->dev = dev;
-> +
-> +	imx_dsp_handle = dsp_ipc;
-
-bad idea. What happens if multiple dsp nodes are registered in the
-device tree?
-
-> +	dev_info(dev, "NXP i.MX DSP IPC initialized\n");
-> +
-> +	return devm_of_platform_populate(dev);
-> +}
-> +
-> +static const struct of_device_id imx_dsp_match[] = {
-> +	{ .compatible = "fsl,imx-dsp", },
-
-i would prefer to have chip name in the compatible. For example
-fsl,imx8qm-dsp. Soon or later we will need to define some quirks
-for on or another chip.
-
-> +	{ /* Sentinel */ }
-> +};
-> +
-> +static struct platform_driver imx_dsp_driver = {
-> +	.driver = {
-> +		.name = "imx-dsp",
-> +		.of_match_table = imx_dsp_match,
-> +	},
-> +	.probe = imx_dsp_probe,
-> +};
-> +builtin_platform_driver(imx_dsp_driver);
-> +
-> +MODULE_AUTHOR("Daniel Baluta <daniel.baluta@nxp.com>");
-> +MODULE_DESCRIPTION("IMX DSP IPC protocol driver");
-> +MODULE_LICENSE("GPL v2");
-> diff --git a/include/linux/firmware/imx/dsp.h b/include/linux/firmware/imx/dsp.h
-> new file mode 100644
-> index 000000000000..75637d8fab34
-> --- /dev/null
-> +++ b/include/linux/firmware/imx/dsp.h
-> @@ -0,0 +1,61 @@
-> +/* SPDX-License-Identifier: GPL-2.0+ */
-> +/*
-> + * Copyright 2018 NXP
-> + *
-> + * Header file for the DSP IPC implementation
-> + */
-> +
-> +#ifndef _IMX_DSP_IPC_H
-> +#define _IMX_DSP_IPC_H
-> +
-> +#include <linux/device.h>
-> +#include <linux/types.h>
-> +#include <linux/mailbox_client.h>
-> +
-> +#define DSP_MU_CHAN_NUM		4
-> +
-> +struct imx_dsp_chan {
-> +	struct imx_dsp_ipc *ipc;
-> +	struct mbox_client cl;
-> +	struct mbox_chan *ch;
-> +	int idx;
-> +};
-> +
-> +struct imx_dsp_ops {
-> +	void (*handle_reply)(struct imx_dsp_ipc *ipc);
-> +	void (*handle_request)(struct imx_dsp_ipc *ipc);
-> +};
-> +
-> +struct imx_dsp_ipc {
-> +	/* Host <-> DSP communication uses 2 txdb and 2 rxdb channels */
-> +	struct imx_dsp_chan chans[DSP_MU_CHAN_NUM];
-> +	struct device *dev;
-> +	struct imx_dsp_ops *ops;
-> +	void *private_data;
-> +};
-> +
-> +#if IS_ENABLED(CONFIG_IMX_DSP)
-> +
-> +int imx_dsp_ring_doorbell(struct imx_dsp_ipc *dsp, unsigned int chan_idx);
-> +int imx_dsp_get_handle(struct imx_dsp_ipc **ipc);
-> +void imx_dsp_set_data(struct imx_dsp_ipc *ipc, void *data);
-> +void *imx_dsp_get_data(struct imx_dsp_ipc *ipc);
-> +
-> +#else
-> +
-> +static inline int imx_dsp_get_handle(struct imx_dsp_ipc **ipc)
-> +{
-> +	return -EIO;
-
-please, use -ENOTSUPP instead.
-
-> +}
-> +
-> +static inline int imx_dsp_ring_doorbell(struct imx_dsp_ipc *ipc,
-> +					unsigned int chan_idx)
-> +{
-> +	return -EIO;
-> +}
-> +
-> +void imx_dsp_set_data(struct imx_dsp_ipc *ipc, void *data) { }
-> +void *imx_dsp_get_data(struct imx_dsp_ipc *ipc) { return NULL; }
-> +
-> +#endif
-> +#endif /* _IMX_DSP_IPC_H */
-> -- 
-> 2.17.1
-> 
+> +		reset-assert-us = <10000>;
+> +		reset-deassert-us = <30000>;
+> +		reset-gpios = <&gpio GPIOZ_15 (GPIO_ACTIVE_LOW | GPIO_OPEN_DRAIN)>;
+>  	};
+>  };
+>  
 > 
 
--- 
-Pengutronix e.K.                           |                             |
-Industrial Linux Solutions                 | http://www.pengutronix.de/  |
-Peiner Str. 6-8, 31137 Hildesheim, Germany | Phone: +49-5121-206917-0    |
-Amtsgericht Hildesheim, HRA 2686           | Fax:   +49-5121-206917-5555 |
+Thanks !
+
+Acked-by: Neil Armstrong <narmstrong@baylibre.com>
+Tested-by: Neil Armstrong <narmstrong@baylibre.com>
 
 _______________________________________________
 linux-arm-kernel mailing list
