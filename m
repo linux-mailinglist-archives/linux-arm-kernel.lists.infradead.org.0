@@ -2,82 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8A2EB464E9
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Jun 2019 18:48:07 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 41617464ED
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Jun 2019 18:48:44 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=btqxQWlh2N1hf2AUEaZmwkNgVJOmnXWJ9J/lOZC9tS4=; b=TXR2n6ay/mESo9
-	J6E36z1pOdStx1gyqIfHPqrULXxkYeIOwR/3tVkTBTD2gSo0B+4L2aERgtvjSxon8f3mJN8T/Fl/B
-	0qOy7jk1CbAKbcRleDu8B/d+9WxuFFwqNocLtVcCYerX1iUdgLhffd2DvhQaalzSUu4txH6RHL6lJ
-	H0a7QCxY7IxYcW8qCOqLY/8ufmdTzvJRrQu4pTXy+ErXmZwgLvc4jj0dST9QTztU9UqPjjWhHWA7g
-	mS19zRZU+F9H33HGi/7uKYpHZQeUMh9ckyQyVY9sQavsYX9QMbPcahoJqwvmZYcWl5NTjtuf4SYQ1
-	OMICQs0IyKTw7xgU16KQ==;
+	List-Owner; bh=LXBSs1jdwJYwdyjEqIywOOnDof8yWxomNGiSUpaRBNI=; b=CzmUm//xOMIql2
+	vSm4gf8hOzBvBDULvCOtg4UdYB+h8703PVnLGsD1Zb4iE0RoMAqwUbesqo7c5EaN2qTGfigEDGU1O
+	lLVMZnEmHMAz2UjsER7s5m6aMlPBJ98iKfJ2dBw/PrHqYhHH8B9rGxLnWd3Er/OpC63wLhp26NjUB
+	2iINwnCGiLUSAp5dom02ZWzgCEwzbNRPw46Elpz2UM2324nUKnm80vbA772JevI8APRS2+uhgq4o1
+	JAGIsSoN2ZaNc1+QIQrAcnfSHdj3Ux1xijuwI/z1jP0PWr2RW5v8WFFSlxaTi2G23PFKXbVhRARFm
+	Vcyc7Dw6/9HKB8UfqkVQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hbpMv-0005Ep-00; Fri, 14 Jun 2019 16:48:01 +0000
-Received: from mail-qt1-f195.google.com ([209.85.160.195])
+	id 1hbpNa-0006AD-On; Fri, 14 Jun 2019 16:48:42 +0000
+Received: from smtp3-g21.free.fr ([2a01:e0c:1:1599::12])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hbpKx-0003EJ-Bo
- for linux-arm-kernel@lists.infradead.org; Fri, 14 Jun 2019 16:46:00 +0000
-Received: by mail-qt1-f195.google.com with SMTP id a15so3205477qtn.7
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 14 Jun 2019 09:45:58 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=tkF76/YWyBi2DNFHRTKUkXkyJ1fsnWPr1qR9pgyZkc0=;
- b=qCoIHSd/ZfeAVLnQVTawVXvKACQfHI+QpKQeuURVmqaJX7Zb87fDvoMCLzPoENq3s9
- 0REcrFGfr9HQIkNq9SYXkVOcSRXuaIumsPTLg1Dc+J6IrssRNQlZ/CVQpQN0w1MTK60L
- FttTdiVfumQY/frWTvXNVtR7LO4+jTOrpihOnmopy25K826ur+AZka0/Hb7cvl7z0Gvp
- RDKcLW8ZZuhlqm4WVaCVf1LKZcDyQtG/OLXge6saXBgTfip2y6YFXQaavXKIJsJWQmUz
- 3PR9QGDjNR9LwJm9uLMuvZxaRn97zVY2ELU3XsPdaww4PWHVyTGP/ZuyZ6Qte6CwrICa
- gqrQ==
-X-Gm-Message-State: APjAAAW9wR9KYEdizA+aoMTt8mBcHVM5dgPbzAgZZvtPQ2f1KVLOrZby
- cfcO7pZPuRrRNupOyqgZpQ==
-X-Google-Smtp-Source: APXvYqzeZjnaIMhoekYjI1KAjGSgD0u8xfYWVwEDuon+Prg33JgQL/mvg90QKAMLqnJN9uLyklsNNw==
-X-Received: by 2002:a0c:ae5a:: with SMTP id z26mr9212014qvc.65.1560530757901; 
- Fri, 14 Jun 2019 09:45:57 -0700 (PDT)
-Received: from localhost ([64.188.179.243])
- by smtp.gmail.com with ESMTPSA id e8sm1819685qkn.95.2019.06.14.09.45.56
- (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Fri, 14 Jun 2019 09:45:57 -0700 (PDT)
-Date: Fri, 14 Jun 2019 10:45:55 -0600
-From: Rob Herring <robh@kernel.org>
-To: Nishanth Menon <nm@ti.com>
-Subject: Re: [PATCH 2/6] dt-bindings: serial: 8250_omap: Add compatible for
- J721E UART controller
-Message-ID: <20190614164555.GA18636@bogus>
-References: <20190522161921.20750-1-nm@ti.com>
- <20190522161921.20750-3-nm@ti.com>
+ id 1hbpLW-0003lZ-7b
+ for linux-arm-kernel@lists.infradead.org; Fri, 14 Jun 2019 16:46:36 +0000
+Received: from anisse-station.iliad.local (unknown [213.36.7.13])
+ by smtp3-g21.free.fr (Postfix) with ESMTPS id 2882B13F8B6;
+ Fri, 14 Jun 2019 18:46:03 +0200 (CEST)
+From: Anisse Astier <aastier@freebox.fr>
+To: Will Deacon <will.deacon@arm.com>, Dave Martin <Dave.Martin@arm.com>,
+ linux-arm-kernel@lists.infradead.org
+Subject: [PATCH v2] arm64/sve: <uapi/asm/ptrace.h> should not depend on
+ <uapi/linux/prctl.h>
+Date: Fri, 14 Jun 2019 18:46:00 +0200
+Message-Id: <20190614164600.36966-1-aastier@freebox.fr>
+X-Mailer: git-send-email 2.19.1
+In-Reply-To: <20190613163801.21949-1-aastier@freebox.fr>
+References: <20190613163801.21949-1-aastier@freebox.fr>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190522161921.20750-3-nm@ti.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190614_094559_445151_A2D921F1 
-X-CRM114-Status: GOOD (  14.04  )
-X-Spam-Score: 0.8 (/)
+X-CRM114-CacheID: sfid-20190614_094634_447799_AE143B15 
+X-CRM114-Status: UNSURE (   9.77  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.3 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.8 points)
+ Content analysis details:   (0.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.160.195 listed in list.dnswl.org]
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (robherring2[at]gmail.com)
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (robherring2[at]gmail.com)
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [2a01:e0c:1:1599:0:0:0:12 listed in] [list.dnswl.org]
+ 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -89,40 +61,75 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Nishanth Menon <nm@ti.com>, Vignesh R <vigneshr@ti.com>,
- Arnd Bergmann <arnd@arndb.de>, Tony Lindgren <tony@atomide.com>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Santosh Shilimkar <ssantosh@kernel.org>, Will Deacon <will.deacon@arm.com>,
- linux-kernel@vger.kernel.org, Sekhar Nori <nsekhar@ti.com>,
- Russell King <linux@armlinux.org.uk>, Tero Kristo <t-kristo@ti.com>,
- Rob Herring <robh+dt@kernel.org>, linux-serial@vger.kernel.org,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Olof Johansson <olof@lixom.net>, linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>, Anisse Astier <aastier@freebox.fr>,
+ Catalin Marinas <catalin.marinas@arm.com>, Rich Felker <dalias@aerifal.cx>,
+ linux-kernel@vger.kernel.org, Kristina Martsenko <kristina.martsenko@arm.com>,
+ "Dmitry V . Levin" <ldv@altlinux.org>, Ricardo Salveti <ricardo@foundries.io>,
+ Richard Henderson <richard.henderson@linaro.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, 22 May 2019 11:19:17 -0500, Nishanth Menon wrote:
-> J721e uses a UART controller that is compatible with AM654 UART.
-> Introduce a specific compatible to help handle the differences if
-> necessary.
-> 
-> Cc: Sekhar Nori <nsekhar@ti.com>
-> Cc: Vignesh R <vigneshr@ti.com>
-> Signed-off-by: Nishanth Menon <nm@ti.com>
-> ---
-> NOTE:
->  - If Greg is ok, we can pick up the uart compatibility via the k3 tree,
->    else, I can spawn it off the series into it's own patch, but it
->    seemed better in a logical order.
-> 
->  Documentation/devicetree/bindings/serial/omap_serial.txt | 1 +
->  1 file changed, 1 insertion(+)
-> 
+Otherwise this will create userspace build issues for any program
+(strace, qemu) that includes both <sys/prctl.h> (with musl libc) and
+<linux/ptrace.h> (which then includes <asm/ptrace.h>), like this:
 
-Reviewed-by: Rob Herring <robh@kernel.org>
+	error: redefinition of 'struct prctl_mm_map'
+	 struct prctl_mm_map {
+
+See https://github.com/foundriesio/meta-lmp/commit/6d4a106e191b5d79c41b9ac78fd321316d3013c0
+for a public example of people working around this issue.
+
+Copying the defines is a bit imperfect here, but better than creating a
+whole other header for just two defines that would never change, as part
+of the kernel ABI.
+
+Fixes: 43d4da2c45b2 ("arm64/sve: ptrace and ELF coredump support")
+Cc: stable@vger.kernel.org
+Signed-off-by: Anisse Astier <aastier@freebox.fr>
+---
+Changes since v1:
+ - made a bit more explicit that we copied defined symbols, in commit
+   and code.
+ - Use Fixes: tag in commit message
+
+Thanks to Dave Martin and Will Deacon for the review.
+
+---
+ arch/arm64/include/uapi/asm/ptrace.h | 8 +++-----
+ 1 file changed, 3 insertions(+), 5 deletions(-)
+
+diff --git a/arch/arm64/include/uapi/asm/ptrace.h b/arch/arm64/include/uapi/asm/ptrace.h
+index d78623acb649..438759e7e8a7 100644
+--- a/arch/arm64/include/uapi/asm/ptrace.h
++++ b/arch/arm64/include/uapi/asm/ptrace.h
+@@ -65,8 +65,6 @@
+ 
+ #ifndef __ASSEMBLY__
+ 
+-#include <linux/prctl.h>
+-
+ /*
+  * User structures for general purpose, floating point and debug registers.
+  */
+@@ -113,10 +111,10 @@ struct user_sve_header {
+ 
+ /*
+  * Common SVE_PT_* flags:
+- * These must be kept in sync with prctl interface in <linux/ptrace.h>
++ * These must be kept in sync with prctl interface in <linux/prctl.h>
+  */
+-#define SVE_PT_VL_INHERIT		(PR_SVE_VL_INHERIT >> 16)
+-#define SVE_PT_VL_ONEXEC		(PR_SVE_SET_VL_ONEXEC >> 16)
++#define SVE_PT_VL_INHERIT		((1 << 17) /* PR_SVE_VL_INHERIT */ >> 16)
++#define SVE_PT_VL_ONEXEC		((1 << 18) /* PR_SVE_SET_VL_ONEXEC */ >> 16)
+ 
+ 
+ /*
+-- 
+2.19.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
