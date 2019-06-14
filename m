@@ -2,54 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 04D9345C9A
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Jun 2019 14:20:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CA21E45CA3
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Jun 2019 14:21:09 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=XYf3D7prwTLadCw5vy43f0rxDqHHJb7GvNlHfqOFzdI=; b=H4a0QHEsPboLfs
-	4zN+zqnoxjDZXv5YtJ7pWiIPIgf5E8VNJg2Sno2JWgyALg9g5yatM7PRDS595t0NA+8f03aYhf1JA
-	nzGN4b+DA2st/hb/fARXaneQ6TAeQq0riFmidQdTkPK5ZKoRQfzayBsmktQaELuc1JKNrcDWFpuSd
-	EFBFbOoePp7la657URkXVR9eSWqWj/J9qy25TRTE8kBArSs/lnlndGJrqBhwKSSqwVKqRG8y/L/S5
-	1khwCPOt+7qv40Gw1xaHl57H+odgckJp8apFZHPeWLAknMuHWlaj8cHCMdzuj7tHQCXx/EQrKLmIg
-	U/JzKV1A1dBxLcQtf5xQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=ThDpIrz5ijmUSjnoenE1OIOOgXwilcxmQ0h7O4iqa9s=; b=geqQf2v1FCAjux
+	AEq4KDqaNzimXigRBV3ydo30CMziO5Q9uJfXNUxmKLqLue9Szh1TrWRAc998ISy4fW8tPR4Yoig+P
+	OZzfRi+W4SpfCDfaSh1cm8gLNGNRcf1evpDvdks+vpegL/n7iOjdCWrZLESwBXV+O2ZZU2QhxyrZx
+	5+u9Eq440iHXz0gO3Ovs/eMxfMXkAqYwkX22fej+n+Igae6kInsAUcxxLAAmPmWeFrtTHUvGj064i
+	hbe5tRAjOmhldp0OxK6aoqRE+GU5fL0fHzOHzo5cJhMjK/t67L5h17ZcKZT3jLiLJ+gj4pNHKVY90
+	qhnXMWUf2WIoL0vTArSQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hblBT-0002Lr-AO; Fri, 14 Jun 2019 12:19:55 +0000
-Received: from relay4-d.mail.gandi.net ([217.70.183.196])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hbl5n-0004ar-Ic
- for linux-arm-kernel@lists.infradead.org; Fri, 14 Jun 2019 12:14:09 +0000
-X-Originating-IP: 90.88.23.150
-Received: from localhost (aaubervilliers-681-1-81-150.w90-88.abo.wanadoo.fr
- [90.88.23.150]) (Authenticated sender: maxime.ripard@bootlin.com)
- by relay4-d.mail.gandi.net (Postfix) with ESMTPSA id 672CDE000C;
- Fri, 14 Jun 2019 12:13:59 +0000 (UTC)
-From: Maxime Ripard <maxime.ripard@bootlin.com>
-To: Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
- Sean Paul <seanpaul@chromium.org>,
- Maxime Ripard <maxime.ripard@bootlin.com>,
- Daniel Vetter <daniel.vetter@intel.com>, David Airlie <airlied@linux.ie>
-Subject: [PATCH v4 12/12] drm/vc4: hdmi: Set default state margin at reset
-Date: Fri, 14 Jun 2019 14:13:19 +0200
-Message-Id: <a8f01d3653f3ed4166a4d88dcc5d6e905fa2e602.1560514379.git-series.maxime.ripard@bootlin.com>
-X-Mailer: git-send-email 2.21.0
-In-Reply-To: <cover.5fc7840dc8fb24744516c13acb8c8aa18e44c0d0.1560514379.git-series.maxime.ripard@bootlin.com>
-References: <cover.5fc7840dc8fb24744516c13acb8c8aa18e44c0d0.1560514379.git-series.maxime.ripard@bootlin.com>
+	id 1hblCd-0004eI-RW; Fri, 14 Jun 2019 12:21:07 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hbl6H-0004vl-0p
+ for linux-arm-kernel@lists.infradead.org; Fri, 14 Jun 2019 12:14:35 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 7972B2B;
+ Fri, 14 Jun 2019 05:14:30 -0700 (PDT)
+Received: from [192.168.1.18] (unknown [172.31.20.19])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id F11DD3F246;
+ Fri, 14 Jun 2019 05:14:27 -0700 (PDT)
+Subject: Re: [PATCH v6 03/19] kernel: Unify update_vsyscall implementation
+To: Thomas Gleixner <tglx@linutronix.de>
+References: <20190530141531.43462-1-vincenzo.frascino@arm.com>
+ <20190530141531.43462-4-vincenzo.frascino@arm.com>
+ <alpine.DEB.2.21.1906141307430.1722@nanos.tec.linutronix.de>
+From: Vincenzo Frascino <vincenzo.frascino@arm.com>
+Message-ID: <a69e48a2-575d-255c-2653-d3e99b7ba760@arm.com>
+Date: Fri, 14 Jun 2019 13:15:08 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.7.0
 MIME-Version: 1.0
+In-Reply-To: <alpine.DEB.2.21.1906141307430.1722@nanos.tec.linutronix.de>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190614_051403_823812_EA06D057 
-X-CRM114-Status: GOOD (  10.71  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20190614_051433_191117_BF4D451F 
+X-CRM114-Status: GOOD (  18.61  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.183.196 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -63,50 +63,222 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: eben@raspberrypi.org, dri-devel@lists.freedesktop.org,
- Paul Kocialkowski <paul.kocialkowski@bootlin.com>,
- Eric Anholt <eric@anholt.net>, noralf@tronnes.org,
- Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
+Cc: linux-arch@vger.kernel.org, Shuah Khan <shuah@kernel.org>,
+ Arnd Bergmann <arnd@arndb.de>, Huw Davies <huw@codeweavers.com>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Daniel Lezcano <daniel.lezcano@linaro.org>, Will Deacon <will.deacon@arm.com>,
+ linux-kernel@vger.kernel.org, Ralf Baechle <ralf@linux-mips.org>,
+ linux-mips@vger.kernel.org, Paul Burton <paul.burton@mips.com>,
+ linux-kselftest@vger.kernel.org, Rasmus Villemoes <linux@rasmusvillemoes.dk>,
+ Russell King <linux@armlinux.org.uk>, Dmitry Safonov <0x7f454c46@gmail.com>,
+ Mark Salyzyn <salyzyn@android.com>, Peter Collingbourne <pcc@google.com>,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Now that the TV margins are properly parsed and filled into
-drm_cmdline_mode, we just need to initialise the first state at reset to
-get those values and start using them.
+Hi Thomas,
 
-Signed-off-by: Maxime Ripard <maxime.ripard@bootlin.com>
----
- drivers/gpu/drm/vc4/vc4_hdmi.c | 8 +++++++-
- 1 file changed, 7 insertions(+), 1 deletion(-)
+On 6/14/19 12:10 PM, Thomas Gleixner wrote:
+> On Thu, 30 May 2019, Vincenzo Frascino wrote:
+>> +
+>> +	if (__arch_use_vsyscall(vdata)) {
+>> +		vdata[CS_HRES_COARSE].cycle_last	=
+>> +						tk->tkr_mono.cycle_last;
+>> +		vdata[CS_HRES_COARSE].mask		=
+>> +						tk->tkr_mono.mask;
+>> +		vdata[CS_HRES_COARSE].mult		=
+>> +						tk->tkr_mono.mult;
+> 
+> These line breaks make it really hard to read. Can you fold in the patch
+> below please?
+> 
 
-diff --git a/drivers/gpu/drm/vc4/vc4_hdmi.c b/drivers/gpu/drm/vc4/vc4_hdmi.c
-index 99fc8569e0f5..43442c5619a3 100644
---- a/drivers/gpu/drm/vc4/vc4_hdmi.c
-+++ b/drivers/gpu/drm/vc4/vc4_hdmi.c
-@@ -255,11 +255,17 @@ static int vc4_hdmi_connector_get_modes(struct drm_connector *connector)
- 	return ret;
- }
- 
-+static void vc4_hdmi_connector_reset(struct drm_connector *connector)
-+{
-+	drm_atomic_helper_connector_reset(connector);
-+	drm_atomic_helper_connector_tv_reset(connector);
-+}
-+
- static const struct drm_connector_funcs vc4_hdmi_connector_funcs = {
- 	.detect = vc4_hdmi_connector_detect,
- 	.fill_modes = drm_helper_probe_single_connector_modes,
- 	.destroy = vc4_hdmi_connector_destroy,
--	.reset = drm_atomic_helper_connector_reset,
-+	.reset = vc4_hdmi_connector_reset,
- 	.atomic_duplicate_state = drm_atomic_helper_connector_duplicate_state,
- 	.atomic_destroy_state = drm_atomic_helper_connector_destroy_state,
- };
+Thanks for this. I will do it in v7.
+
+> Thanks,
+> 
+> 	tglx
+> 8<-----------
+> --- a/kernel/vdso/vsyscall.c
+> +++ b/kernel/vdso/vsyscall.c
+> @@ -11,6 +11,66 @@
+>  #include <vdso/helpers.h>
+>  #include <vdso/vsyscall.h>
+>  
+> +static inline void udpate_vdata(struct vdso_data *vdata, struct timekeeper *tk)
+> +{
+> +	struct vdso_timestamp *vdso_ts;
+> +	u64 nsec;
+> +
+> +	vdata[CS_HRES_COARSE].cycle_last	= tk->tkr_mono.cycle_last;
+> +	vdata[CS_HRES_COARSE].mask		= tk->tkr_mono.mask;
+> +	vdata[CS_HRES_COARSE].mult		= tk->tkr_mono.mult;
+> +	vdata[CS_HRES_COARSE].shift		= tk->tkr_mono.shift;
+> +	vdata[CS_RAW].cycle_last		= tk->tkr_raw.cycle_last;
+> +	vdata[CS_RAW].mask			= tk->tkr_raw.mask;
+> +	vdata[CS_RAW].mult			= tk->tkr_raw.mult;
+> +	vdata[CS_RAW].shift			= tk->tkr_raw.shift;
+> +
+> +	/* CLOCK_REALTIME */
+> +	vdso_ts		=  &vdata[CS_HRES_COARSE].basetime[CLOCK_REALTIME];
+> +	vdso_ts->sec	= tk->xtime_sec;
+> +	vdso_ts->nsec	= tk->tkr_mono.xtime_nsec;
+> +
+> +	/* CLOCK_MONOTONIC */
+> +	vdso_ts		= &vdata[CS_HRES_COARSE].basetime[CLOCK_MONOTONIC];
+> +	vdso_ts->sec	= tk->xtime_sec + tk->wall_to_monotonic.tv_sec;
+> +
+> +	nsec = tk->tkr_mono.xtime_nsec;
+> +	nsec += ((u64)tk->wall_to_monotonic.tv_nsec << tk->tkr_mono.shift);
+> +	while (nsec >= (((u64)NSEC_PER_SEC) << tk->tkr_mono.shift)) {
+> +		nsec -= (((u64)NSEC_PER_SEC) << tk->tkr_mono.shift);
+> +		vdso_ts->sec++;
+> +	}
+> +	vdso_ts->nsec	= nsec;
+> +
+> +	/* CLOCK_MONOTONIC_RAW */
+> +	vdso_ts		= &vdata[CS_RAW].basetime[CLOCK_MONOTONIC_RAW];
+> +	vdso_ts->sec	= tk->raw_sec;
+> +	vdso_ts->nsec	= tk->tkr_raw.xtime_nsec;
+> +
+> +	/* CLOCK_BOOTTIME */
+> +	vdso_ts		= &vdata[CS_HRES_COARSE].basetime[CLOCK_BOOTTIME];
+> +	vdso_ts->sec	= tk->xtime_sec + tk->wall_to_monotonic.tv_sec;
+> +	nsec = tk->tkr_mono.xtime_nsec;
+> +	nsec += ((u64)(tk->wall_to_monotonic.tv_nsec +
+> +		       ktime_to_ns(tk->offs_boot)) << tk->tkr_mono.shift);
+> +	while (nsec >= (((u64)NSEC_PER_SEC) << tk->tkr_mono.shift)) {
+> +		nsec -= (((u64)NSEC_PER_SEC) << tk->tkr_mono.shift);
+> +		vdso_ts->sec++;
+> +	}
+> +	vdso_ts->nsec	= nsec;
+> +
+> +	/* CLOCK_TAI */
+> +	vdso_ts		= &vdata[CS_HRES_COARSE].basetime[CLOCK_TAI];
+> +	vdso_ts->sec	= tk->xtime_sec + (s64)tk->tai_offset;
+> +	vdso_ts->nsec	= tk->tkr_mono.xtime_nsec;
+> +
+> +	/*
+> +	 * Read without the seqlock held by clock_getres().
+> +	 * Note: No need to have a second copy.
+> +	 */
+> +	WRITE_ONCE(vdata[CS_HRES_COARSE].hrtimer_res, hrtimer_resolution);
+> +}
+> +
+>  void update_vsyscall(struct timekeeper *tk)
+>  {
+>  	struct vdso_data *vdata = __arch_get_k_vdso_data();
+> @@ -32,92 +92,23 @@ void update_vsyscall(struct timekeeper *
+>  	vdata[CS_RAW].clock_mode		= __arch_get_clock_mode(tk);
+>  
+>  	/* CLOCK_REALTIME_COARSE */
+> -	vdso_ts			=
+> -			&vdata[CS_HRES_COARSE].basetime[CLOCK_REALTIME_COARSE];
+> -	vdso_ts->sec		= tk->xtime_sec;
+> -	vdso_ts->nsec		= tk->tkr_mono.xtime_nsec >> tk->tkr_mono.shift;
+> +	vdso_ts		= &vdata[CS_HRES_COARSE].basetime[CLOCK_REALTIME_COARSE];
+> +	vdso_ts->sec	= tk->xtime_sec;
+> +	vdso_ts->nsec	= tk->tkr_mono.xtime_nsec >> tk->tkr_mono.shift;
+> +
+>  	/* CLOCK_MONOTONIC_COARSE */
+> -	vdso_ts			=
+> -			&vdata[CS_HRES_COARSE].basetime[CLOCK_MONOTONIC_COARSE];
+> -	vdso_ts->sec		= tk->xtime_sec + tk->wall_to_monotonic.tv_sec;
+> -	nsec			= tk->tkr_mono.xtime_nsec >> tk->tkr_mono.shift;
+> -	nsec			= nsec + tk->wall_to_monotonic.tv_nsec;
+> +	vdso_ts		= &vdata[CS_HRES_COARSE].basetime[CLOCK_MONOTONIC_COARSE];
+> +	vdso_ts->sec	= tk->xtime_sec + tk->wall_to_monotonic.tv_sec;
+> +	nsec		= tk->tkr_mono.xtime_nsec >> tk->tkr_mono.shift;
+> +	nsec		= nsec + tk->wall_to_monotonic.tv_nsec;
+>  	while (nsec >= NSEC_PER_SEC) {
+>  		nsec = nsec - NSEC_PER_SEC;
+>  		vdso_ts->sec++;
+>  	}
+> -	vdso_ts->nsec		= nsec;
+> +	vdso_ts->nsec	= nsec;
+>  
+> -	if (__arch_use_vsyscall(vdata)) {
+> -		vdata[CS_HRES_COARSE].cycle_last	=
+> -						tk->tkr_mono.cycle_last;
+> -		vdata[CS_HRES_COARSE].mask		=
+> -						tk->tkr_mono.mask;
+> -		vdata[CS_HRES_COARSE].mult		=
+> -						tk->tkr_mono.mult;
+> -		vdata[CS_HRES_COARSE].shift		=
+> -						tk->tkr_mono.shift;
+> -		vdata[CS_RAW].cycle_last		=
+> -						tk->tkr_raw.cycle_last;
+> -		vdata[CS_RAW].mask			=
+> -						tk->tkr_raw.mask;
+> -		vdata[CS_RAW].mult			=
+> -						tk->tkr_raw.mult;
+> -		vdata[CS_RAW].shift			=
+> -						tk->tkr_raw.shift;
+> -		/* CLOCK_REALTIME */
+> -		vdso_ts			=
+> -			&vdata[CS_HRES_COARSE].basetime[CLOCK_REALTIME];
+> -		vdso_ts->sec		= tk->xtime_sec;
+> -		vdso_ts->nsec		= tk->tkr_mono.xtime_nsec;
+> -		/* CLOCK_MONOTONIC */
+> -		vdso_ts			=
+> -			&vdata[CS_HRES_COARSE].basetime[CLOCK_MONOTONIC];
+> -		vdso_ts->sec		= tk->xtime_sec +
+> -					  tk->wall_to_monotonic.tv_sec;
+> -		nsec			= tk->tkr_mono.xtime_nsec;
+> -		nsec			= nsec +
+> -					  ((u64)tk->wall_to_monotonic.tv_nsec <<
+> -					  tk->tkr_mono.shift);
+> -		while (nsec >= (((u64)NSEC_PER_SEC) << tk->tkr_mono.shift)) {
+> -			nsec = nsec -
+> -			       (((u64)NSEC_PER_SEC) << tk->tkr_mono.shift);
+> -			vdso_ts->sec++;
+> -		}
+> -		vdso_ts->nsec		= nsec;
+> -		/* CLOCK_MONOTONIC_RAW */
+> -		vdso_ts			=
+> -			&vdata[CS_RAW].basetime[CLOCK_MONOTONIC_RAW];
+> -		vdso_ts->sec		= tk->raw_sec;
+> -		vdso_ts->nsec		= tk->tkr_raw.xtime_nsec;
+> -		/* CLOCK_BOOTTIME */
+> -		vdso_ts			=
+> -			&vdata[CS_HRES_COARSE].basetime[CLOCK_BOOTTIME];
+> -		vdso_ts->sec		= tk->xtime_sec +
+> -					  tk->wall_to_monotonic.tv_sec;
+> -		nsec			= tk->tkr_mono.xtime_nsec;
+> -		nsec			= nsec +
+> -					  ((u64)(tk->wall_to_monotonic.tv_nsec +
+> -					  ktime_to_ns(tk->offs_boot)) <<
+> -					  tk->tkr_mono.shift);
+> -		while (nsec >= (((u64)NSEC_PER_SEC) << tk->tkr_mono.shift)) {
+> -			nsec = nsec -
+> -				(((u64)NSEC_PER_SEC) << tk->tkr_mono.shift);
+> -			vdso_ts->sec++;
+> -		}
+> -		vdso_ts->nsec		= nsec;
+> -		/* CLOCK_TAI */
+> -		vdso_ts			=
+> -			&vdata[CS_HRES_COARSE].basetime[CLOCK_TAI];
+> -		vdso_ts->sec		= tk->xtime_sec + (s64)tk->tai_offset;
+> -		vdso_ts->nsec		= tk->tkr_mono.xtime_nsec;
+> -
+> -		/*
+> -		 * Read without the seqlock held by clock_getres().
+> -		 * Note: No need to have a second copy.
+> -		 */
+> -		WRITE_ONCE(vdata[CS_HRES_COARSE].hrtimer_res, hrtimer_resolution);
+> -	}
+> +	if (__arch_use_vsyscall(vdata))
+> +		update_vdata(vdata, tk);
+>  
+>  	__arch_update_vsyscall(vdata, tk);
+>  
+> 
+
 -- 
-git-series 0.9.1
+Regards,
+Vincenzo
 
 _______________________________________________
 linux-arm-kernel mailing list
