@@ -2,55 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C80F445CB3
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Jun 2019 14:23:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7499345CAF
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Jun 2019 14:22:47 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:Message-ID:
-	In-Reply-To:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Ck3F/xGdabxNzBi4ZnVcdN4xXSed9LcApkV9ExGgPkk=; b=ApDXvc0vcBi3N+
-	j0tMfgyHkOy7pZTZnhKJL8ihI6uZHUIbX8TSBWtbCK5W26r3ez2AIoG+dalvPQ9xrlw6eGBTozJ23
-	wYH2A9QnpRiN2dlwreyK/eGVoesLq0ECh/YZhaIk2/SD8S2DQ1/OS7Q/px4vkVkNhqObaXFp1zB9x
-	bfFTr8Sng8ERVOAI1qADWxYn3KUxVshbivNG90DsfL/LI/DADUext6n4bc0WZmDPItIzsZION17W7
-	4EncCHINVJWvWBoMdyYI1jjRU+B42fpEZ+4+27icAkZOe2GvkXuUHa+c/cy3SdIUo5Ey5Im0V13e5
-	VFxbKtnsbgpAC+w5Un6A==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=3DxXqhrT7ZvUUaGj6SmkWyC7ngyJFrcOKKJg6KA4JYc=; b=MGdkoKHA9Rr+2H
+	gkxMAnXVocxVflbRiE/Gs4yJ4kjzmKqkwcmYMDpjDVNnTcuV0etCFEuM4+1BrR4i62yqRFUfOkLEy
+	AAg+Xh5S24p/c7qILa5PMyvHakGfdflS54NtvcqwO9DiGFhisw+SrxLBHO3QAnzIDdPMvXho1X1Dd
+	ZWmsfymYIEtnIykWFSy3UHOY4ebhYFsmngahlHNcB0hqjh8bA0GY0Y+dVS6QX5qvekxv2NgFByAZL
+	z9M0pZ7Qwbl99dMIqE5jjLckue+vndDG5xTfvA8ANy6i5v32sguqCf8qo8j/kEJfi1CZVndEGvJRs
+	9txskc7QBRpGXaktMEeQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hblER-0006J5-CM; Fri, 14 Jun 2019 12:22:59 +0000
-Received: from galois.linutronix.de ([2a01:7a0:2:106d:700::1])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hblB2-0002M2-76
- for linux-arm-kernel@lists.infradead.org; Fri, 14 Jun 2019 12:19:42 +0000
-Received: from [5.158.153.52] (helo=nanos.tec.linutronix.de)
- by Galois.linutronix.de with esmtpsa (TLS1.2:DHE_RSA_AES_256_CBC_SHA256:256)
- (Exim 4.80) (envelope-from <tglx@linutronix.de>)
- id 1hblAz-0002iH-Sb; Fri, 14 Jun 2019 14:19:26 +0200
-Date: Fri, 14 Jun 2019 14:19:25 +0200 (CEST)
-From: Thomas Gleixner <tglx@linutronix.de>
-To: Vincenzo Frascino <vincenzo.frascino@arm.com>
-Subject: Re: [PATCH v6 03/19] kernel: Unify update_vsyscall implementation
-In-Reply-To: <a69e48a2-575d-255c-2653-d3e99b7ba760@arm.com>
-Message-ID: <alpine.DEB.2.21.1906141416100.1722@nanos.tec.linutronix.de>
+	id 1hblEB-00060V-B4; Fri, 14 Jun 2019 12:22:43 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hblAt-0002EY-CB
+ for linux-arm-kernel@lists.infradead.org; Fri, 14 Jun 2019 12:19:25 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 4E2DA3EF;
+ Fri, 14 Jun 2019 05:19:18 -0700 (PDT)
+Received: from [192.168.1.18] (unknown [172.31.20.19])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id C24183F246;
+ Fri, 14 Jun 2019 05:19:15 -0700 (PDT)
+Subject: Re: [PATCH v6 00/19] Unify vDSOs across more architectures
+To: Thomas Gleixner <tglx@linutronix.de>
 References: <20190530141531.43462-1-vincenzo.frascino@arm.com>
- <20190530141531.43462-4-vincenzo.frascino@arm.com>
- <alpine.DEB.2.21.1906141307430.1722@nanos.tec.linutronix.de>
- <a69e48a2-575d-255c-2653-d3e99b7ba760@arm.com>
-User-Agent: Alpine 2.21 (DEB 202 2017-01-01)
+ <CAK8P3a11DE0sXteZoaP_N=mDhx3tXitGKddn1ogtFqJBYO-SCA@mail.gmail.com>
+ <d96667d5-e43b-d33a-fbd0-5acfb4904316@arm.com>
+ <alpine.DEB.2.21.1906141413070.1722@nanos.tec.linutronix.de>
+From: Vincenzo Frascino <vincenzo.frascino@arm.com>
+Message-ID: <6f3bcd07-6eb4-53d6-d209-de42396a4ee2@arm.com>
+Date: Fri, 14 Jun 2019 13:19:58 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.7.0
 MIME-Version: 1.0
+In-Reply-To: <alpine.DEB.2.21.1906141413070.1722@nanos.tec.linutronix.de>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190614_051928_434963_88FEC636 
-X-CRM114-Status: GOOD (  13.95  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20190614_051919_511427_5F5342FC 
+X-CRM114-Status: GOOD (  17.51  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [2a01:7a0:2:106d:700:0:0:1 listed in]
- [list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -63,51 +64,67 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arch@vger.kernel.org, Shuah Khan <shuah@kernel.org>,
+Cc: linux-arch <linux-arch@vger.kernel.org>, Shuah Khan <shuah@kernel.org>,
  Arnd Bergmann <arnd@arndb.de>, Huw Davies <huw@codeweavers.com>,
  Catalin Marinas <catalin.marinas@arm.com>,
  Daniel Lezcano <daniel.lezcano@linaro.org>, Will Deacon <will.deacon@arm.com>,
- linux-kernel@vger.kernel.org, Ralf Baechle <ralf@linux-mips.org>,
- linux-mips@vger.kernel.org, Paul Burton <paul.burton@mips.com>,
- linux-kselftest@vger.kernel.org, Rasmus Villemoes <linux@rasmusvillemoes.dk>,
+ linux-mips@vger.kernel.org, Ralf Baechle <ralf@linux-mips.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Paul Burton <paul.burton@mips.com>,
+ "open list:KERNEL SELFTEST FRAMEWORK" <linux-kselftest@vger.kernel.org>,
+ Rasmus Villemoes <linux@rasmusvillemoes.dk>,
  Russell King <linux@armlinux.org.uk>, Dmitry Safonov <0x7f454c46@gmail.com>,
  Mark Salyzyn <salyzyn@android.com>, Peter Collingbourne <pcc@google.com>,
- linux-arm-kernel@lists.infradead.org
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, 14 Jun 2019, Vincenzo Frascino wrote:
-> On 6/14/19 12:10 PM, Thomas Gleixner wrote:
-> > On Thu, 30 May 2019, Vincenzo Frascino wrote:
-> >> +
-> >> +	if (__arch_use_vsyscall(vdata)) {
-> >> +		vdata[CS_HRES_COARSE].cycle_last	=
-> >> +						tk->tkr_mono.cycle_last;
-> >> +		vdata[CS_HRES_COARSE].mask		=
-> >> +						tk->tkr_mono.mask;
-> >> +		vdata[CS_HRES_COARSE].mult		=
-> >> +						tk->tkr_mono.mult;
-> > 
-> > These line breaks make it really hard to read. Can you fold in the patch
-> > below please?
-> > 
+
+On 6/14/19 1:16 PM, Thomas Gleixner wrote:
+> On Tue, 4 Jun 2019, Vincenzo Frascino wrote:
+>> On 31/05/2019 09:46, Arnd Bergmann wrote:
+>>> One open question I touched in my review is whether we want to
+>>> have a vdso version of clock_getres() in all architectures or not.
+>>> I'd prefer to leave it out because there is very little advantage to
+>>> it over the system call (the results don't change at runtime and
+>>> can easily be cached by libc if performance ever matters), and
+>>> it takes up a small amount of memory for the implementation.
+>>>
+>>
+>> I thought about it and I ended up with what proposed in this patchset mainly for
+>> symmetry across all the architectures since in the end they use the same common
+>> code.
+>>
+>> It seems also that there is some performance impact (i.e.):
+>>
+>> clock-getres-monotonic:    libc(system call): 296 nsec/call
+>> clock-getres-monotonic:    libc(vdso): 5 nsec/call
 > 
-> Thanks for this. I will do it in v7.
+> clock_getres() is usually not a hot path operation.
+> 
+>> I agree with you though when you say that caching it in the libc is a
+>> possibility to overcome the performance impact.
+>>
+>>> We shouldn't just need it for consistency because all callers
+>>> would require implementing a fallback to the system call
+>>> anyway, to deal with old kernels.
+> 
+> libc has the fallback already. Let's aim for 1:1 replacement of the
+> architecture code first and then add the extra bits in separate patches.
+>
 
-Talking about v7. I'd like to get this into 5.3. That means you'd have to
-rebase it on
+Ok, thanks Thomas, I will split the patches accordingly.
 
-  git://git.kernel.org/pub/scm/linux/kernel/git/hyperv/linux.git hyperv-next
+> Thanks,
+> 
+> 	tglx
+> 
 
-to avoid the hyperv conflict. I'll sort this out with the hyperv folks how
-I can get these bits as a base for a tip branch which holds all the vdso
-pieces.
-
-Thanks,
-
-	tglx
+-- 
+Regards,
+Vincenzo
 
 _______________________________________________
 linux-arm-kernel mailing list
