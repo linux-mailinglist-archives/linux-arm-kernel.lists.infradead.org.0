@@ -2,91 +2,73 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 21298452E9
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Jun 2019 05:27:29 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9BFF9452EF
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Jun 2019 05:28:51 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=QEyOhIh6jn1G4FFCKmRcBgUq3clX2HV7zBmBKtrFTTE=; b=AiR9+AtcYqPjfv
-	IBAHQE5ajpVe3YJLmzjAghs51DSBDxHYVyb5mK0qJizaz4Tf1CW8RlbaKHE8wP3bd5OvgY0v8yafP
-	+SbhPJZUyPR5iZEUjDjNOhrLZWute3NiKfHdnByD2jODvbVo/vul0WmfvcUmtrD+sFpZnGVJmXa+S
-	wI8Ecvcyp4HdXJ6bxDZ0i+01zWD/+ssiWMyoirLvQc2Y/SG4Ejzy+AbrigemA0+vxxDScbtMvmWvn
-	4ga383GksriuY9jnzre8IID52+PdeuGtlhPEvTH1N1O29crGfL+0pveVEwBPjax6HIMUIDlU+19mz
-	ZAbX2aF1l5wGANBpspvg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=aR8tOoS4Ql6lWuDIgGK7qpJqtoMBMJLFQ+0jH1RBxQs=; b=pb45h5H+AxM6vT
+	IfRQ2t7QxfEBfRVB5VYqMTtnzkq9bTiYNwEChNCEEdN/ryWr20Ly8O1NhwL0K5DdIloi3rmJRa6xj
+	jS8DyOnzK81Ix/PP/ItgY0JXhgptoWahqNSxdF4bkKCsumPqrLKiqdB2AMhoehvcrPe4r9s81yFXS
+	5+/ZKxpktHT+dUi15SkrtXDAfHWN5rgojf8ypfIRtIx2v0p9041/y8fArDj8sTaU4OPt+RhcG8Akr
+	acJhK8KniwsKhfYfQxU2puvWEQW36sognehHNeEkhT3fLrn6WpcvlmYo3HEy6O4YCZPqxwttZ9mLj
+	0iHsIdrsD8G1C74J12kQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hbcs8-0007kD-3Z; Fri, 14 Jun 2019 03:27:24 +0000
-Received: from mail-pg1-x544.google.com ([2607:f8b0:4864:20::544])
+	id 1hbctS-0000OC-74; Fri, 14 Jun 2019 03:28:46 +0000
+Received: from lucky1.263xmail.com ([211.157.147.130])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hbcf3-0001Mm-2h
- for linux-arm-kernel@lists.infradead.org; Fri, 14 Jun 2019 03:13:55 +0000
-Received: by mail-pg1-x544.google.com with SMTP id n2so663669pgp.11
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 13 Jun 2019 20:13:52 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=PDeednBQHQCWJxR0NKh3z84Gd8kBTabHNB90hamsE18=;
- b=h4QWP2mvAS916s6auJJfFzviYDDjb+PpuiP6IFws5Q2EJ2uXczHMoheg4jezvSjnWr
- IJZk2FdXIdxz4vVreKM+jSnz4myExFPgAWxesJ/pE5wWSokxF95skddVsLWzPAFq2qBa
- rWImiMAK2fNA0OmFptcJ3wBYFUWzhWTrrdjce/uktXZQsjpCDqQr+9KgdFG8HvaxatBa
- dldxbR/0B1pKiGZFbiisf23ByiGrVPy4yxKyj4SQtn3SLEwGY6B/MqLfsRWtZ1Y79LDF
- G069q0y5MeHuXEEZZlup4NZcn5SOiaCUZOD1Ayqbx3h0mCWmJuDIykLZNpm1YUL0O0cp
- P4+w==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=PDeednBQHQCWJxR0NKh3z84Gd8kBTabHNB90hamsE18=;
- b=swG9eYhuNpURRTSAEImYqUKhul2aJSkvjMcUsbS2oXFam6KWiU+0cI49oEyiLff4dh
- m4Y78bTSDTmRbdZdOcLVvkkGY0BMlbIYB9uL5x6prHZzJLAbR1iktGUyKKUGS7Sum3Sb
- v05NG6G+h9yQAlEm0N4exw9p63hWOp+zlqEfDXS6isHQCW7Z5lO76b3jP3WQgXAkQ626
- gdjUzOe0vs5TNCPym9SAEA9l2n8eJC9l3dWFXrzqvBB2NeVxcBlzmv5Ux91TDOPpa6t9
- vC1XE2h27efFbUQZqTOMTdzcp+Z5L013HbdYmx/a0WE9uHJYQw3Kj296tNYTeyK2X/6D
- o4cA==
-X-Gm-Message-State: APjAAAXYrmKB1ruF0jPyi0/RwjQiWa8pgGtiWA7ryqVlqwe/QqX5Vivl
- /9GqXNxgyyLRKcnClquI/Zo3WUpfxeg=
-X-Google-Smtp-Source: APXvYqyB8Yl7Jcgzm5jDA6YzQVPHMarwbfyU+veTySu1KhLykTJJEGVatBN2jEFN1ggpDp0OoSP18Q==
-X-Received: by 2002:a63:a056:: with SMTP id u22mr33204122pgn.318.1560482031830; 
- Thu, 13 Jun 2019 20:13:51 -0700 (PDT)
-Received: from localhost ([122.172.66.84])
- by smtp.gmail.com with ESMTPSA id s12sm1032837pfe.143.2019.06.13.20.13.51
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Thu, 13 Jun 2019 20:13:51 -0700 (PDT)
-From: Viresh Kumar <viresh.kumar@linaro.org>
-To: linux-arm-kernel@lists.infradead.org,
- Julien Thierry <Julien.Thierry@arm.com>
-Subject: [PATCH v4.4 45/45] arm64: futex: Mask __user pointers prior to
- dereference
-Date: Fri, 14 Jun 2019 08:38:28 +0530
-Message-Id: <1e0218d2ca5026bccbad88acba998349fe2195f1.1560480942.git.viresh.kumar@linaro.org>
-X-Mailer: git-send-email 2.21.0.rc0.269.g1a574e7a288b
-In-Reply-To: <cover.1560480942.git.viresh.kumar@linaro.org>
-References: <cover.1560480942.git.viresh.kumar@linaro.org>
+ id 1hbcfu-0001uS-0E; Fri, 14 Jun 2019 03:14:53 +0000
+Received: from tony.xie?rock-chips.com (unknown [192.168.167.229])
+ by lucky1.263xmail.com (Postfix) with ESMTP id B29D95E8A4;
+ Fri, 14 Jun 2019 11:14:37 +0800 (CST)
+X-263anti-spam: KSV:0;BIG:0;
+X-MAIL-GRAY: 1
+X-MAIL-DELIVERY: 0
+X-KSVirus-check: 0
+X-ADDR-CHECKED4: 1
+X-ABS-CHECKED: 1
+X-SKE-CHECKED: 1
+X-ANTISPAM-LEVEL: 2
+Received: from localhost.localdomain (unknown [58.22.7.114])
+ by smtp.263.net (postfix) whith ESMTP id
+ P13273T140214467016448S1560482074692142_; 
+ Fri, 14 Jun 2019 11:14:36 +0800 (CST)
+X-IP-DOMAINF: 1
+X-UNIQUE-TAG: <da7045de40a53e67fa1df5b4903fd717>
+X-RL-SENDER: tony.xie@rock-chips.com
+X-SENDER: xxx@rock-chips.com
+X-LOGIN-NAME: tony.xie@rock-chips.com
+X-FST-TO: heiko@sntech.de
+X-SENDER-IP: 58.22.7.114
+X-ATTACHMENT-NUM: 0
+X-DNS-TYPE: 0
+From: Tony Xie <tony.xie@rock-chips.com>
+To: heiko@sntech.de
+Subject: [PATCH v9 0/6] support a new type of PMIC,
+ including two chips(rk817 and rk809)
+Date: Thu, 13 Jun 2019 23:14:19 -0400
+Message-Id: <20190614031425.15741-1-tony.xie@rock-chips.com>
+X-Mailer: git-send-email 2.17.1
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190613_201353_256501_F15F2805 
-X-CRM114-Status: GOOD (  11.78  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190613_201446_532372_3ED7DA3D 
+X-CRM114-Status: UNSURE (   8.11  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 1.5 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (1.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ 1.5 RCVD_IN_SORBS_WEB      RBL: SORBS: sender is an abusable web server
+ [58.22.7.114 listed in dnsbl.sorbs.net]
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:544 listed in]
- [list.dnswl.org]
+ no trust [211.157.147.130 listed in list.dnswl.org]
+ 0.0 T_SPF_PERMERROR        SPF: test of record failed (permerror)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -98,70 +80,88 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Marc Zyngier <marc.zyngier@arm.com>,
- Viresh Kumar <viresh.kumar@linaro.org>, Will Deacon <will.deacon@arm.com>,
- stable@vger.kernel.org, mark.brown@arm.com,
- Catalin Marinas <catalin.marinas@arm.com>,
- Russell King <rmk+kernel@arm.linux.org.uk>
+Cc: mark.rutland@arm.com, a.zummo@towertech.it, alexandre.belloni@bootlin.com,
+ tony.xie@rock-chips.com, huangtao@rock-chips.com, devicetree@vger.kernel.org,
+ sboyd@kernel.org, zhangqing@rock-chips.com, linux-kernel@vger.kernel.org,
+ robh+dt@kernel.org, xsf@rock-chips.com, linux-rockchip@lists.infradead.org,
+ broonie@kernel.org, chenjh@rock-chips.com, lee.jones@linaro.org,
+ linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-rtc@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Will Deacon <will.deacon@arm.com>
+Most of functions and registers of the rk817 and rk808 are the same,
+so they can share allmost all codes.
 
-commit 91b2d3442f6a44dce875670d702af22737ad5eff upstream.
+Their specifications are as follows:
+  1) The RK809 and RK809 consist of 5 DCDCs, 9 LDOs and have the same
+registers
+     for these components except dcdc5.
+  2) The dcdc5 is a boost dcdc for RK817 and is a buck for RK809.
+  3) The RK817 has one switch but The Rk809 has two.
 
-The arm64 futex code has some explicit dereferencing of user pointers
-where performing atomic operations in response to a futex command. This
-patch uses masking to limit any speculative futex operations to within
-the user address space.
+Changes in V2:
+1. initialize the pm_pwroff_fn to NULL.
+2. use EXPORT_SYMBOL_GPL to export pm_power_off_prepare.
+3. change patch 2/3/4/5 subjects.
 
-Signed-off-by: Will Deacon <will.deacon@arm.com>
-Signed-off-by: Catalin Marinas <catalin.marinas@arm.com>
-Signed-off-by: Viresh Kumar <viresh.kumar@linaro.org>
----
- arch/arm64/include/asm/futex.h | 9 ++++++---
- 1 file changed, 6 insertions(+), 3 deletions(-)
+Changes in V3
+1. change patch 4 subjects
+2. replace pr_ with dev_ for printing in patch 2
+3. modify switch1 and switch2 configs in patch 2
+4. explain gpio information for rk809 and rk817 in patch 4
 
-diff --git a/arch/arm64/include/asm/futex.h b/arch/arm64/include/asm/futex.h
-index 34d4d2e2f561..8ab6e83cb629 100644
---- a/arch/arm64/include/asm/futex.h
-+++ b/arch/arm64/include/asm/futex.h
-@@ -53,9 +53,10 @@
- 	: "memory")
- 
- static inline int
--arch_futex_atomic_op_inuser(int op, int oparg, int *oval, u32 __user *uaddr)
-+arch_futex_atomic_op_inuser(int op, int oparg, int *oval, u32 __user *_uaddr)
- {
- 	int oldval = 0, ret, tmp;
-+	u32 __user *uaddr = __uaccess_mask_ptr(_uaddr);
- 
- 	pagefault_disable();
- 
-@@ -93,15 +94,17 @@ arch_futex_atomic_op_inuser(int op, int oparg, int *oval, u32 __user *uaddr)
- }
- 
- static inline int
--futex_atomic_cmpxchg_inatomic(u32 *uval, u32 __user *uaddr,
-+futex_atomic_cmpxchg_inatomic(u32 *uval, u32 __user *_uaddr,
- 			      u32 oldval, u32 newval)
- {
- 	int ret = 0;
- 	u32 val, tmp;
-+	u32 __user *uaddr;
- 
--	if (!access_ok(VERIFY_WRITE, uaddr, sizeof(u32)))
-+	if (!access_ok(VERIFY_WRITE, _uaddr, sizeof(u32)))
- 		return -EFAULT;
- 
-+	uaddr = __uaccess_mask_ptr(_uaddr);
- 	asm volatile("// futex_atomic_cmpxchg_inatomic\n"
- ALTERNATIVE("nop", SET_PSTATE_PAN(0), ARM64_HAS_PAN, CONFIG_ARM64_PAN)
- "	prfm	pstl1strm, %2\n"
+Changes in V4:
+1. modify some codes for patch 2 and patch 5 according to comments
+2. add reviewer mail lists for patch 3 and 4
+
+Changes in V5:
+modify some codes for patch 1 according to reveiw comments for v3.
+ 1) remove the pm_power_off_prepare() and replace with shutdown
+call-back from syscore
+ 2) move the macro REGMAP_IRQ_M into the regmap.h and rename it
+REGMAP_IRQ_LINE
+ 3) make some dev_warn() log clear
+
+Changes in V6:
+modify some codes according to reveiw comments for v5.
+
+Changes in V7:
+modify some codes for patch 2 according to reveiw comments.
+
+Changes in V8:
+For helping me promote this work, Heiko send the V8
+
+Changes in V9:
+1.base on the V8
+2.modify some codes according to reveiw comments for V8 from Mark Brown
+
+Tony Xie (6):
+  mfd: rk808: remove the id_table
+  mfd: rk808: Add RK817 and RK809 support
+  regulator: rk808: add RK809 and RK817 support.
+  dt-bindings: mfd: rk808: Add binding information for RK809 and RK817.
+  rtc: rk808: add RK809 and RK817 support.
+  clk: RK808: add RK809 and RK817 support.
+
+ .../devicetree/bindings/mfd/rk808.txt         |  44 ++
+ drivers/clk/Kconfig                           |   9 +-
+ drivers/clk/clk-rk808.c                       |  64 +-
+ drivers/mfd/Kconfig                           |   6 +-
+ drivers/mfd/rk808.c                           | 199 +++++-
+ drivers/regulator/Kconfig                     |   4 +-
+ drivers/regulator/rk808-regulator.c           | 646 +++++++++++++++++-
+ drivers/rtc/Kconfig                           |   4 +-
+ drivers/rtc/rtc-rk808.c                       |  68 +-
+ include/linux/mfd/rk808.h                     | 175 +++++
+ 10 files changed, 1155 insertions(+), 64 deletions(-)
+
 -- 
-2.21.0.rc0.269.g1a574e7a288b
+2.17.1
+
+
 
 
 _______________________________________________
