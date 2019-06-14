@@ -2,82 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2CF0B452E7
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Jun 2019 05:26:56 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E848B452E8
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Jun 2019 05:27:10 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=rl9R92uY08q5DL/+qpS8+V7uNIFAS7xFfNPq0hfE2mM=; b=q2hyHc+gS9y784
-	EoYmkSl3WsXqbCyov6y7PLSxcCaCKsCW1dpyzSnZFe+iZyNKgou8DGzz8LiwrAnTtRB5Urc0jRxxg
-	khRY+RHeT5LJ0vgOb0P3CIbIlzpAgZ/1yFGjVt8dXE9YhcnrNi62VMn6DYuf6rkFSAh23AV6MCqrX
-	0g9xEDiGooDnJr9vENQWQbhbqXqrU8kM+85xpocMkkOhQO1FGOwZdz/2ho5mj2cnP8yTex5vuuKLy
-	cjuAwo6VIvIA+Lq9CRYc2GeLX4hCZUcsi4gOBPO5ByiOwwoQ1i1Ipl4i/pIYqN19F8qLNQEtQ9J+2
-	MPsIvYLJK1pzQMVnn2Zg==;
+	List-Owner; bh=/kugVDSmU85Nu3KSHK4XF716uH91n1zok0GDufVJwtI=; b=RnzQQ7q/lUNd/N
+	tX04C+qaIuaDjhtGq4ISLTkfQ/0EzEyLxF/5T5gxnxN5WPg/lhb7WQdIhe3Ipxzzjxcb2TXucmUMC
+	FeRw61wZdtl33YEVcZ/7oD+BxzaprQF6HJs5/IQJBr/U7X5PTXhL/UfXWZy5RZV6Teiruo1gj2oln
+	BASZ+HWQZb6+WngO/J8mK9X0WDJKQ4YDTSC03e6tRaiQI9iqLyQPSUZM2Z5UoYpU1HN5l7TcULrMn
+	HyHKLl8D77GXWDV2HS76Q4XH3t91Kej2v6do1NZ0nQG/mR9SmDnqOMNS2Q7djjvsxiMlkGHWKpVpK
+	dphvuY/+Ykt/9eoCwoMw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hbcrb-0007FI-9m; Fri, 14 Jun 2019 03:26:51 +0000
-Received: from mail-pf1-x441.google.com ([2607:f8b0:4864:20::441])
+	id 1hbcrr-0007Vq-J2; Fri, 14 Jun 2019 03:27:07 +0000
+Received: from mail-pf1-x443.google.com ([2607:f8b0:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hbcev-0001HS-9T
- for linux-arm-kernel@lists.infradead.org; Fri, 14 Jun 2019 03:13:49 +0000
-Received: by mail-pf1-x441.google.com with SMTP id m30so489479pff.8
+ id 1hbcex-0001J0-Ll
+ for linux-arm-kernel@lists.infradead.org; Fri, 14 Jun 2019 03:13:50 +0000
+Received: by mail-pf1-x443.google.com with SMTP id 81so477120pfy.13
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 13 Jun 2019 20:13:45 -0700 (PDT)
+ Thu, 13 Jun 2019 20:13:47 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=kulBovnYLz4YjgSJ0sOniJhX8Qcc8ljUXoag6+mJQMI=;
- b=ZuPth7El82cfeoWv8qXI0kULOoymbsqUIM1ht3vdgKpkGkPrBhXQjROt8Y46oqOOZN
- NW0wSdYyeYqZbWOn8EkbIGVulRgHXgcl8gWsNQFY5Ho5YsDuostC4jlQrdPSLMXql821
- uIPnibCnCusSMq9GlFaiDZs7zRIL5CXUIWhDrasfXcSXkC/b5kIdkIu3IJXUoBJI5D9m
- 72+PNQK90lICef7SjkbVshOMWasZqTLV07YKmMK9uetNJrv+ZQGx4PZmsbyGy5FJyYxH
- nN5PgAknmx1xcU9tLut4myAh+yT9NN1ZatTB4RArnw5pHuc+UhsIfPdarUdobDXL18LY
- HfcQ==
+ bh=wEbgFQxZMC6fJD33Waf3N1W37Y6IiBDcFwhvI4lbj2Y=;
+ b=va81nY0feP5sEouud+fj3TpaKzUjL4h3DIk3Y1b7M7OpENMdls4SqZdkdcWM/bFwol
+ cxLfuDhb8rkZnov7C4WnONY4NIS2iZUBmdJzyIrOrMeA8QXLsS/GNl/dISGjNzpzu0hr
+ 8Xed6r894iT+aS9xp9BCfqgPhVD1T7k2rfUpWPmiPaash2i7Met8Cq76UosREyYjEd6R
+ HHdrf8pcUZTbcAAWlUUZMbroQmy4mG2l8UQL1tgi0ueNXZIEclvhTKHT6Qx4knFveG2z
+ KvhvLxkLMx7Fj5bYA1GNt/z9CvXFc2HOZ2mmqgFacovro8YrIE3TS5VD1JMmuLw7tlo+
+ fHxQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=kulBovnYLz4YjgSJ0sOniJhX8Qcc8ljUXoag6+mJQMI=;
- b=kG+n2uGVsfYqRcL5SmrTobJZxSVtRnUp0vqtm7oP95MB5Sd65jA0KD0YTxUnL22AtI
- 7UH+pcFKUy9+HnTL8ImF7wCCI21hDsOv59c1N5+vBV4HQ8UwtdYzheUTb+Cn1BSmhjTw
- SSwEA++HcdzfW4UV7X8uX0O7PkCKLwUuLbM9sarDzwuUqShc0R72q4Oyo9yoxDQw20/6
- BzlamcKmfKUIEQnN+zdSh9A2y+vqz5aHZLhWz6+H+Dg6MfI3wSWYKBZc9CZ1TjNA80c3
- ZURD6HiB7LlImruGPipD28KbgrzBdvMqnBpEuOfIh+CrOaIUrHYGJjVPXwKb4Ny4/QWe
- Nwqw==
-X-Gm-Message-State: APjAAAVFwv2YSnR+Ag6R+kgtJxVu/Gm8Vt4Tjmiwe+JNaivl8FpqOCMz
- SrcYbEjFVI3QnJs8mg06T7EaO7fQ+qg=
-X-Google-Smtp-Source: APXvYqx0Kkci7UqnQCFalHHZtOTO2SjyfHBEjwe2NpR5FtlxaURVTZ0I9PFv4Aq0n91C/9rOr621Ww==
-X-Received: by 2002:a63:6ecf:: with SMTP id
- j198mr20165303pgc.437.1560482024157; 
- Thu, 13 Jun 2019 20:13:44 -0700 (PDT)
+ bh=wEbgFQxZMC6fJD33Waf3N1W37Y6IiBDcFwhvI4lbj2Y=;
+ b=XQlFSLGQarct7NyuF0X3zjO8DLoFc5m7A846z8i5EUEXABPszwFj2qGGwYluqNPw4J
+ OI4N1XqGKCmEc/TsuXzJThI+dZL+RDd490PC3PsCTzNM3qB4uGEGCveMwm448lrFmb2l
+ aPgtiSLWrjXShFzIbIxPE+VBNLekJJukBPwBENbpnKNfNKUxM8RnuYaS4QRaJL8jHCeK
+ Es0/YpMTE98PtZPdwJRyLA3JNmghPNw4QL6XogDu7ZhbQstUwP0gVAJY2t/xy6tBbM2o
+ aq3i/S1pZToBHlo+LeezXkyl5neYESmqtard2LKcpeo2hRvuJ6KPJInC7Vi/q/pYETe7
+ d0fA==
+X-Gm-Message-State: APjAAAUE1BdkJ+uGBtgAfH+Wt0o3pIpzkk8mKw/c3xK929QbyhZyXMk+
+ tXEDbOOmILxNYVrVNmSm7T0YlJrCkqE=
+X-Google-Smtp-Source: APXvYqwIjeVWHz26eKFF+ExDvKi2FzjZR9grd3zdwzhujp4QoPdneyQPL2SR38XuS//1pfVyaddkMA==
+X-Received: by 2002:a65:4209:: with SMTP id c9mr34466210pgq.111.1560482026653; 
+ Thu, 13 Jun 2019 20:13:46 -0700 (PDT)
 Received: from localhost ([122.172.66.84])
- by smtp.gmail.com with ESMTPSA id l44sm1270624pje.29.2019.06.13.20.13.43
+ by smtp.gmail.com with ESMTPSA id 188sm1042980pfg.11.2019.06.13.20.13.45
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Thu, 13 Jun 2019 20:13:43 -0700 (PDT)
+ Thu, 13 Jun 2019 20:13:46 -0700 (PDT)
 From: Viresh Kumar <viresh.kumar@linaro.org>
 To: linux-arm-kernel@lists.infradead.org,
  Julien Thierry <Julien.Thierry@arm.com>
-Subject: [PATCH v4.4 42/45] arm/arm64: smccc: Implement SMCCC v1.1 inline
- primitive
-Date: Fri, 14 Jun 2019 08:38:25 +0530
-Message-Id: <ca843383a8f027d3401268ff89aec8cb6b23dcde.1560480942.git.viresh.kumar@linaro.org>
+Subject: [PATCH v4.4 43/45] arm64: Add ARM_SMCCC_ARCH_WORKAROUND_1 BP
+ hardening support
+Date: Fri, 14 Jun 2019 08:38:26 +0530
+Message-Id: <fb796e62a7a8f596b2ef1b81c07aefe53245708f.1560480942.git.viresh.kumar@linaro.org>
 X-Mailer: git-send-email 2.21.0.rc0.269.g1a574e7a288b
 In-Reply-To: <cover.1560480942.git.viresh.kumar@linaro.org>
 References: <cover.1560480942.git.viresh.kumar@linaro.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190613_201345_530031_3439B68A 
-X-CRM114-Status: GOOD (  14.57  )
+X-CRM114-CacheID: sfid-20190613_201347_790253_3419C77E 
+X-CRM114-Status: GOOD (  14.21  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:441 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:443 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -111,174 +110,158 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Marc Zyngier <marc.zyngier@arm.com>
 
-commit f2d3b2e8759a5833df6f022e42df2d581e6d843c upstream.
+commit b092201e0020614127f495c092e0a12d26a2116e upstream.
 
-One of the major improvement of SMCCC v1.1 is that it only clobbers
-the first 4 registers, both on 32 and 64bit. This means that it
-becomes very easy to provide an inline version of the SMC call
-primitive, and avoid performing a function call to stash the
-registers that would otherwise be clobbered by SMCCC v1.0.
+Add the detection and runtime code for ARM_SMCCC_ARCH_WORKAROUND_1.
+It is lovely. Really.
 
-Reviewed-by: Robin Murphy <robin.murphy@arm.com>
 Tested-by: Ard Biesheuvel <ard.biesheuvel@linaro.org>
 Signed-off-by: Marc Zyngier <marc.zyngier@arm.com>
 Signed-off-by: Catalin Marinas <catalin.marinas@arm.com>
 Signed-off-by: Viresh Kumar <viresh.kumar@linaro.org>
 ---
- include/linux/arm-smccc.h | 141 ++++++++++++++++++++++++++++++++++++++
- 1 file changed, 141 insertions(+)
+ arch/arm64/kernel/bpi.S        | 20 ++++++++++
+ arch/arm64/kernel/cpu_errata.c | 68 +++++++++++++++++++++++++++++++++-
+ 2 files changed, 87 insertions(+), 1 deletion(-)
 
-diff --git a/include/linux/arm-smccc.h b/include/linux/arm-smccc.h
-index 4c45fd75db5d..60c2ad6316d8 100644
---- a/include/linux/arm-smccc.h
-+++ b/include/linux/arm-smccc.h
-@@ -122,5 +122,146 @@ asmlinkage void arm_smccc_hvc(unsigned long a0, unsigned long a1,
- 			unsigned long a5, unsigned long a6, unsigned long a7,
- 			struct arm_smccc_res *res);
+diff --git a/arch/arm64/kernel/bpi.S b/arch/arm64/kernel/bpi.S
+index dec95bd82e31..c72f261f4b64 100644
+--- a/arch/arm64/kernel/bpi.S
++++ b/arch/arm64/kernel/bpi.S
+@@ -17,6 +17,7 @@
+  */
  
-+/* SMCCC v1.1 implementation madness follows */
-+#ifdef CONFIG_ARM64
+ #include <linux/linkage.h>
++#include <linux/arm-smccc.h>
+ 
+ .macro ventry target
+ 	.rept 31
+@@ -77,3 +78,22 @@ ENTRY(__psci_hyp_bp_inval_start)
+ 	ldp	x0, x1, [sp, #(16 * 8)]
+ 	add	sp, sp, #(8 * 18)
+ ENTRY(__psci_hyp_bp_inval_end)
 +
-+#define SMCCC_SMC_INST	"smc	#0"
-+#define SMCCC_HVC_INST	"hvc	#0"
++.macro smccc_workaround_1 inst
++	sub	sp, sp, #(8 * 4)
++	stp	x2, x3, [sp, #(8 * 0)]
++	stp	x0, x1, [sp, #(8 * 2)]
++	mov	w0, #ARM_SMCCC_ARCH_WORKAROUND_1
++	\inst	#0
++	ldp	x2, x3, [sp, #(8 * 0)]
++	ldp	x0, x1, [sp, #(8 * 2)]
++	add	sp, sp, #(8 * 4)
++.endm
 +
-+#elif defined(CONFIG_ARM)
-+#include <asm/opcodes-sec.h>
-+#include <asm/opcodes-virt.h>
++ENTRY(__smccc_workaround_1_smc_start)
++	smccc_workaround_1	smc
++ENTRY(__smccc_workaround_1_smc_end)
 +
-+#define SMCCC_SMC_INST	__SMC(0)
-+#define SMCCC_HVC_INST	__HVC(0)
++ENTRY(__smccc_workaround_1_hvc_start)
++	smccc_workaround_1	hvc
++ENTRY(__smccc_workaround_1_hvc_end)
+diff --git a/arch/arm64/kernel/cpu_errata.c b/arch/arm64/kernel/cpu_errata.c
+index da861bf24780..506b339b91bb 100644
+--- a/arch/arm64/kernel/cpu_errata.c
++++ b/arch/arm64/kernel/cpu_errata.c
+@@ -51,6 +51,10 @@ DEFINE_PER_CPU_READ_MOSTLY(struct bp_hardening_data, bp_hardening_data);
+ 
+ #ifdef CONFIG_KVM
+ extern char __psci_hyp_bp_inval_start[], __psci_hyp_bp_inval_end[];
++extern char __smccc_workaround_1_smc_start[];
++extern char __smccc_workaround_1_smc_end[];
++extern char __smccc_workaround_1_hvc_start[];
++extern char __smccc_workaround_1_hvc_end[];
+ 
+ static void __copy_hyp_vect_bpi(int slot, const char *hyp_vecs_start,
+ 				const char *hyp_vecs_end)
+@@ -95,6 +99,10 @@ static void __install_bp_hardening_cb(bp_hardening_cb_t fn,
+ #else
+ #define __psci_hyp_bp_inval_start	NULL
+ #define __psci_hyp_bp_inval_end		NULL
++#define __smccc_workaround_1_smc_start		NULL
++#define __smccc_workaround_1_smc_end		NULL
++#define __smccc_workaround_1_hvc_start		NULL
++#define __smccc_workaround_1_hvc_end		NULL
+ 
+ static void __install_bp_hardening_cb(bp_hardening_cb_t fn,
+ 				      const char *hyp_vecs_start,
+@@ -121,17 +129,75 @@ static void  install_bp_hardening_cb(const struct arm64_cpu_capabilities *entry,
+ 	__install_bp_hardening_cb(fn, hyp_vecs_start, hyp_vecs_end);
+ }
+ 
++#include <uapi/linux/psci.h>
++#include <linux/arm-smccc.h>
+ #include <linux/psci.h>
+ 
++static void call_smc_arch_workaround_1(void)
++{
++	arm_smccc_1_1_smc(ARM_SMCCC_ARCH_WORKAROUND_1, NULL);
++}
 +
-+#endif
++static void call_hvc_arch_workaround_1(void)
++{
++	arm_smccc_1_1_hvc(ARM_SMCCC_ARCH_WORKAROUND_1, NULL);
++}
 +
-+#define ___count_args(_0, _1, _2, _3, _4, _5, _6, _7, _8, x, ...) x
++static bool check_smccc_arch_workaround_1(const struct arm64_cpu_capabilities *entry)
++{
++	bp_hardening_cb_t cb;
++	void *smccc_start, *smccc_end;
++	struct arm_smccc_res res;
 +
-+#define __count_args(...)						\
-+	___count_args(__VA_ARGS__, 7, 6, 5, 4, 3, 2, 1, 0)
++	if (!entry->matches(entry, SCOPE_LOCAL_CPU))
++		return false;
 +
-+#define __constraint_write_0						\
-+	"+r" (r0), "=&r" (r1), "=&r" (r2), "=&r" (r3)
-+#define __constraint_write_1						\
-+	"+r" (r0), "+r" (r1), "=&r" (r2), "=&r" (r3)
-+#define __constraint_write_2						\
-+	"+r" (r0), "+r" (r1), "+r" (r2), "=&r" (r3)
-+#define __constraint_write_3						\
-+	"+r" (r0), "+r" (r1), "+r" (r2), "+r" (r3)
-+#define __constraint_write_4	__constraint_write_3
-+#define __constraint_write_5	__constraint_write_4
-+#define __constraint_write_6	__constraint_write_5
-+#define __constraint_write_7	__constraint_write_6
++	if (psci_ops.smccc_version == SMCCC_VERSION_1_0)
++		return false;
 +
-+#define __constraint_read_0
-+#define __constraint_read_1
-+#define __constraint_read_2
-+#define __constraint_read_3
-+#define __constraint_read_4	"r" (r4)
-+#define __constraint_read_5	__constraint_read_4, "r" (r5)
-+#define __constraint_read_6	__constraint_read_5, "r" (r6)
-+#define __constraint_read_7	__constraint_read_6, "r" (r7)
++	switch (psci_ops.conduit) {
++	case PSCI_CONDUIT_HVC:
++		arm_smccc_1_1_hvc(ARM_SMCCC_ARCH_FEATURES_FUNC_ID,
++				  ARM_SMCCC_ARCH_WORKAROUND_1, &res);
++		if (res.a0)
++			return false;
++		cb = call_hvc_arch_workaround_1;
++		smccc_start = __smccc_workaround_1_hvc_start;
++		smccc_end = __smccc_workaround_1_hvc_end;
++		break;
 +
-+#define __declare_arg_0(a0, res)					\
-+	struct arm_smccc_res   *___res = res;				\
-+	register u32           r0 asm("r0") = a0;			\
-+	register unsigned long r1 asm("r1");				\
-+	register unsigned long r2 asm("r2");				\
-+	register unsigned long r3 asm("r3")
++	case PSCI_CONDUIT_SMC:
++		arm_smccc_1_1_smc(ARM_SMCCC_ARCH_FEATURES_FUNC_ID,
++				  ARM_SMCCC_ARCH_WORKAROUND_1, &res);
++		if (res.a0)
++			return false;
++		cb = call_smc_arch_workaround_1;
++		smccc_start = __smccc_workaround_1_smc_start;
++		smccc_end = __smccc_workaround_1_smc_end;
++		break;
 +
-+#define __declare_arg_1(a0, a1, res)					\
-+	struct arm_smccc_res   *___res = res;				\
-+	register u32           r0 asm("r0") = a0;			\
-+	register typeof(a1)    r1 asm("r1") = a1;			\
-+	register unsigned long r2 asm("r2");				\
-+	register unsigned long r3 asm("r3")
++	default:
++		return false;
++	}
 +
-+#define __declare_arg_2(a0, a1, a2, res)				\
-+	struct arm_smccc_res   *___res = res;				\
-+	register u32           r0 asm("r0") = a0;			\
-+	register typeof(a1)    r1 asm("r1") = a1;			\
-+	register typeof(a2)    r2 asm("r2") = a2;			\
-+	register unsigned long r3 asm("r3")
++	install_bp_hardening_cb(entry, cb, smccc_start, smccc_end);
 +
-+#define __declare_arg_3(a0, a1, a2, a3, res)				\
-+	struct arm_smccc_res   *___res = res;				\
-+	register u32           r0 asm("r0") = a0;			\
-+	register typeof(a1)    r1 asm("r1") = a1;			\
-+	register typeof(a2)    r2 asm("r2") = a2;			\
-+	register typeof(a3)    r3 asm("r3") = a3
++	return true;
++}
 +
-+#define __declare_arg_4(a0, a1, a2, a3, a4, res)			\
-+	__declare_arg_3(a0, a1, a2, a3, res);				\
-+	register typeof(a4) r4 asm("r4") = a4
+ static int enable_psci_bp_hardening(void *data)
+ {
+ 	const struct arm64_cpu_capabilities *entry = data;
+ 
+-	if (psci_ops.get_version)
++	if (psci_ops.get_version) {
++		if (check_smccc_arch_workaround_1(entry))
++			return 0;
 +
-+#define __declare_arg_5(a0, a1, a2, a3, a4, a5, res)			\
-+	__declare_arg_4(a0, a1, a2, a3, a4, res);			\
-+	register typeof(a5) r5 asm("r5") = a5
-+
-+#define __declare_arg_6(a0, a1, a2, a3, a4, a5, a6, res)		\
-+	__declare_arg_5(a0, a1, a2, a3, a4, a5, res);			\
-+	register typeof(a6) r6 asm("r6") = a6
-+
-+#define __declare_arg_7(a0, a1, a2, a3, a4, a5, a6, a7, res)		\
-+	__declare_arg_6(a0, a1, a2, a3, a4, a5, a6, res);		\
-+	register typeof(a7) r7 asm("r7") = a7
-+
-+#define ___declare_args(count, ...) __declare_arg_ ## count(__VA_ARGS__)
-+#define __declare_args(count, ...)  ___declare_args(count, __VA_ARGS__)
-+
-+#define ___constraints(count)						\
-+	: __constraint_write_ ## count					\
-+	: __constraint_read_ ## count					\
-+	: "memory"
-+#define __constraints(count)	___constraints(count)
-+
-+/*
-+ * We have an output list that is not necessarily used, and GCC feels
-+ * entitled to optimise the whole sequence away. "volatile" is what
-+ * makes it stick.
-+ */
-+#define __arm_smccc_1_1(inst, ...)					\
-+	do {								\
-+		__declare_args(__count_args(__VA_ARGS__), __VA_ARGS__);	\
-+		asm volatile(inst "\n"					\
-+			     __constraints(__count_args(__VA_ARGS__)));	\
-+		if (___res)						\
-+			*___res = (typeof(*___res)){r0, r1, r2, r3};	\
-+	} while (0)
-+
-+/*
-+ * arm_smccc_1_1_smc() - make an SMCCC v1.1 compliant SMC call
-+ *
-+ * This is a variadic macro taking one to eight source arguments, and
-+ * an optional return structure.
-+ *
-+ * @a0-a7: arguments passed in registers 0 to 7
-+ * @res: result values from registers 0 to 3
-+ *
-+ * This macro is used to make SMC calls following SMC Calling Convention v1.1.
-+ * The content of the supplied param are copied to registers 0 to 7 prior
-+ * to the SMC instruction. The return values are updated with the content
-+ * from register 0 to 3 on return from the SMC instruction if not NULL.
-+ */
-+#define arm_smccc_1_1_smc(...)	__arm_smccc_1_1(SMCCC_SMC_INST, __VA_ARGS__)
-+
-+/*
-+ * arm_smccc_1_1_hvc() - make an SMCCC v1.1 compliant HVC call
-+ *
-+ * This is a variadic macro taking one to eight source arguments, and
-+ * an optional return structure.
-+ *
-+ * @a0-a7: arguments passed in registers 0 to 7
-+ * @res: result values from registers 0 to 3
-+ *
-+ * This macro is used to make HVC calls following SMC Calling Convention v1.1.
-+ * The content of the supplied param are copied to registers 0 to 7 prior
-+ * to the HVC instruction. The return values are updated with the content
-+ * from register 0 to 3 on return from the HVC instruction if not NULL.
-+ */
-+#define arm_smccc_1_1_hvc(...)	__arm_smccc_1_1(SMCCC_HVC_INST, __VA_ARGS__)
-+
- #endif /*__ASSEMBLY__*/
- #endif /*__LINUX_ARM_SMCCC_H*/
+ 		install_bp_hardening_cb(entry,
+ 				       (bp_hardening_cb_t)psci_ops.get_version,
+ 				       __psci_hyp_bp_inval_start,
+ 				       __psci_hyp_bp_inval_end);
++	}
+ 
+ 	return 0;
+ }
 -- 
 2.21.0.rc0.269.g1a574e7a288b
 
