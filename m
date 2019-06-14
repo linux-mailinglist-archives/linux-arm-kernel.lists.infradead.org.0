@@ -2,55 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E670E46AA0
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Jun 2019 22:38:32 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D491746B1D
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Jun 2019 22:41:00 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=p1fp9J3H/zaYLy5lcZ/PhXuRF7bT1Wq4e9So8T6+uaA=; b=hV2iILUFrSzXig
-	b1SEckqRdyG36p249VYp1coxwePBJ+1UlUTXFQ+Y1sJ6G+PZgCssXAEJsgC5igQseV7ivi6pQvvE9
-	91hdniJAPxkHfSQvrUCExN3TTgEUpNY6nHXidlx4HtgjJFXtdE5EWye1ofDuqO6BVwRrYSsgY1fx+
-	POOB26FIK2nTyZ/HK67CNltQcW3Dd/RJ9TsiHdCgJZI80IAFxSgrIqbmIA+viXtYs9sOZnYnKNddf
-	ljITXH+yhAe6NvW9kJVoYfsAOSiuF9NklpSMWnnA2iQt7VI9oUwGF+6Ftlditu0IGM4cz2FDRH3kj
-	NEtY6jAyUuV+mX6jHxMw==;
+	List-Owner; bh=Y3NqLi3noQhscEuEIcpdthWMQjf7jWONoRYi2s4YDzY=; b=KGVwT2RQfRpyxz
+	L7xsbKMIdrN2DSkyfc8X5xD60KdkwsiU8mvLpv0oGe3AmsCJLL/HZCytapEsbm9UA9yNLXk93vMhl
+	fYPCCQ6Fho3PLJfZtwtFYQo8ZVb8DVnQyRm57Ms8W2dhl5HcmDmHLRaQ98IPOYXVKCjEg2jz8ekFy
+	vcZLjq3rrPtJCzFMu978PdHnEzsU2M4SCsGlSaUIOWKIWhyVHtRw+nFRMjP29uqGTcjoIonGpRm7Z
+	bP90si6ZyMhLYU3PLcYKwJiQECqB8rvyD67GNmVZ9fIhza5ESt39xZBTuRoYEKvFzWApOeyuv4tEt
+	zy+GJRn1Pj1NsNSE/nJQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hbsxv-0004sO-MQ; Fri, 14 Jun 2019 20:38:27 +0000
-Received: from ms.lwn.net ([45.79.88.28])
+	id 1hbt0M-000075-Fc; Fri, 14 Jun 2019 20:40:58 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hbsw9-0003ji-Ns
- for linux-arm-kernel@lists.infradead.org; Fri, 14 Jun 2019 20:36:39 +0000
-Received: from lwn.net (localhost [127.0.0.1])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ id 1hbswU-00042H-AL
+ for linux-arm-kernel@lists.infradead.org; Fri, 14 Jun 2019 20:36:59 +0000
+Received: from mail-qt1-f180.google.com (mail-qt1-f180.google.com
+ [209.85.160.180])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by ms.lwn.net (Postfix) with ESMTPSA id 656C91429;
- Fri, 14 Jun 2019 20:36:36 +0000 (UTC)
-Date: Fri, 14 Jun 2019 14:36:35 -0600
-From: Jonathan Corbet <corbet@lwn.net>
-To: Mauro Carvalho Chehab <mchehab+samsung@kernel.org>
-Subject: Re: [PATCH v4 19/28] docs: powerpc: convert docs to ReST and rename
- to *.rst
-Message-ID: <20190614143635.3aff154d@lwn.net>
-In-Reply-To: <63560c1ee7174952e148a353840a17969fe0be2d.1560361364.git.mchehab+samsung@kernel.org>
-References: <cover.1560361364.git.mchehab+samsung@kernel.org>
- <63560c1ee7174952e148a353840a17969fe0be2d.1560361364.git.mchehab+samsung@kernel.org>
-Organization: LWN.net
+ by mail.kernel.org (Postfix) with ESMTPSA id 9E25621871
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 14 Jun 2019 20:36:57 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1560544617;
+ bh=BMo9z7ktz9HuAZSsZMrvij5s/QTJTao6137g4UhlIgs=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=vWedKb+jbEbTSmw49dIs6fTCJMj1eNLfzV8lZhNRiHHoNikTzq2f3wdnIMZkVCQyL
+ knYe1cDPqn1d10QezlNcqa/UafNrHuBUfY7wb2TBsdKdscj2QcfL0si88DVa5eR8xe
+ an96ZnAgozIFPA2aIN/tmAjrRvruXjj6fWhglrLM=
+Received: by mail-qt1-f180.google.com with SMTP id a15so4019938qtn.7
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 14 Jun 2019 13:36:57 -0700 (PDT)
+X-Gm-Message-State: APjAAAXJ52LMOF4sWGBjSAjDwjCflUSbULTFwTU77zd3yp1sobUlF8kE
+ Nh7Zw/SqVXkWQkyqww8TrRWoCSUNzOu7LeuhJg==
+X-Google-Smtp-Source: APXvYqyWRzWEZ0HIsQNXaYvRLs4N5ZiA6PSR36infTnI62eYz0wn0LN3U9LzbcQ569w7rU4GDgO6FBTD8OY61VcRQO8=
+X-Received: by 2002:a0c:b627:: with SMTP id f39mr10202928qve.72.1560544616863; 
+ Fri, 14 Jun 2019 13:36:56 -0700 (PDT)
 MIME-Version: 1.0
+References: <20190614203144.3850-1-joseph.kogut@gmail.com>
+ <20190614203144.3850-2-joseph.kogut@gmail.com>
+In-Reply-To: <20190614203144.3850-2-joseph.kogut@gmail.com>
+From: Rob Herring <robh+dt@kernel.org>
+Date: Fri, 14 Jun 2019 14:36:45 -0600
+X-Gmail-Original-Message-ID: <CAL_JsqJjqCRU2a9sfMimTJoMQnR6CjqAqjHRAxyaebWAad299g@mail.gmail.com>
+Message-ID: <CAL_JsqJjqCRU2a9sfMimTJoMQnR6CjqAqjHRAxyaebWAad299g@mail.gmail.com>
+Subject: Re: [PATCH 2/2] arm: dts: add ARM Mali GPU node for Odroid XU3
+To: Joseph Kogut <joseph.kogut@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190614_133637_807606_AC07DB09 
-X-CRM114-Status: GOOD (  15.38  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190614_133658_378585_AA4D80E5 
+X-CRM114-Status: GOOD (  15.58  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [45.79.88.28 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ 0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -62,93 +86,68 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Linux Doc Mailing List <linux-doc@vger.kernel.org>,
- Benjamin Herrenschmidt <benh@kernel.crashing.org>, linux-pci@vger.kernel.org,
- Oliver O'Halloran <oohall@gmail.com>, Russell Currey <ruscur@russell.cc>,
- Qiang Zhao <qiang.zhao@nxp.com>, linux-scsi@vger.kernel.org,
- Michael Ellerman <mpe@ellerman.id.au>, Jiri Slaby <jslaby@suse.com>,
- Linas Vepstas <linasvepstas@gmail.com>, Andrew Donnellan <ajd@linux.ibm.com>,
- Mauro Carvalho Chehab <mchehab@infradead.org>,
- "Manoj N. Kumar" <manoj@linux.ibm.com>, Bjorn Helgaas <bhelgaas@google.com>,
- linux-arm-kernel@lists.infradead.org, "Matthew R. Ochs" <mrochs@linux.ibm.com>,
- Uma Krishnan <ukrishn@linux.ibm.com>, Sam Bobroff <sbobroff@linux.ibm.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-kernel@vger.kernel.org,
- Li Yang <leoyang.li@nxp.com>, Andrew Donnellan <andrew.donnellan@au1.ibm.com>,
- Frederic Barrat <fbarrat@linux.ibm.com>, Paul Mackerras <paulus@samba.org>,
- linuxppc-dev@lists.ozlabs.org
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ linux-samsung-soc <linux-samsung-soc@vger.kernel.org>,
+ David Airlie <airlied@linux.ie>, dri-devel <dri-devel@lists.freedesktop.org>,
+ Kukjin Kim <kgene@kernel.org>, Krzysztof Kozlowski <krzk@kernel.org>,
+ Daniel Vetter <daniel@ffwll.ch>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, 12 Jun 2019 14:52:55 -0300
-Mauro Carvalho Chehab <mchehab+samsung@kernel.org> wrote:
+On Fri, Jun 14, 2019 at 2:31 PM Joseph Kogut <joseph.kogut@gmail.com> wrote:
+>
+> Add device tree node for mali gpu on Odroid XU3 SoCs.
+>
+> Signed-off-by: Joseph Kogut <joseph.kogut@gmail.com>
+> ---
+>  .../boot/dts/exynos5422-odroidxu3-common.dtsi  | 18 ++++++++++++++++++
+>  1 file changed, 18 insertions(+)
+>
+> diff --git a/arch/arm/boot/dts/exynos5422-odroidxu3-common.dtsi b/arch/arm/boot/dts/exynos5422-odroidxu3-common.dtsi
+> index 93a48f2dda49..1f2ae19d01af 100644
+> --- a/arch/arm/boot/dts/exynos5422-odroidxu3-common.dtsi
+> +++ b/arch/arm/boot/dts/exynos5422-odroidxu3-common.dtsi
+> @@ -48,6 +48,24 @@
+>                 cooling-levels = <0 130 170 230>;
+>         };
+>
+> +       gpu: gpu@11800000 {
+> +               compatible = "samsung,exynos-mali", "arm,mali-t628";
+> +               reg = <0x11800000 0x5000>;
+> +               interrupts = <0 117 0>,
+> +                            <0 219 0>,
+> +                            <0 74  0>;
+> +               interrupt-names = "gpu", "job", "mmu";
 
-> Convert docs to ReST and add them to the arch-specific
-> book.
-> 
-> The conversion here was trivial, as almost every file there
-> was already using an elegant format close to ReST standard.
-> 
-> The changes were mostly to mark literal blocks and add a few
-> missing section title identifiers.
-> 
-> One note with regards to "--": on Sphinx, this can't be used
-> to identify a list, as it will format it badly. This can be
-> used, however, to identify a long hyphen - and "---" is an
-> even longer one.
-> 
-> At its new index.rst, let's add a :orphan: while this is not linked to
-> the main index.rst file, in order to avoid build warnings.
-> 
-> Signed-off-by: Mauro Carvalho Chehab <mchehab+samsung@kernel.org>
-> Acked-by: Andrew Donnellan <andrew.donnellan@au1.ibm.com> # cxl
+Please use the order defined in the binding doc.
 
-This one fails to apply because ...
+> +               clocks = <&clock CLK_G3D>,
+> +                        <&clock CLK_DOUT_ACLK_G3D>,
+> +                        <&clock CLK_FOUT_VPLL>;
 
-[...]
+The binding doc says a single clock.
 
-> diff --git a/Documentation/PCI/pci-error-recovery.rst b/Documentation/PCI/pci-error-recovery.rst
-> index 83db42092935..acc21ecca322 100644
-> --- a/Documentation/PCI/pci-error-recovery.rst
-> +++ b/Documentation/PCI/pci-error-recovery.rst
-> @@ -403,7 +403,7 @@ That is, the recovery API only requires that:
->  .. note::
->  
->     Implementation details for the powerpc platform are discussed in
-> -   the file Documentation/powerpc/eeh-pci-error-recovery.txt
-> +   the file Documentation/powerpc/eeh-pci-error-recovery.rst
->  
->     As of this writing, there is a growing list of device drivers with
->     patches implementing error recovery. Not all of these patches are in
-> @@ -422,3 +422,24 @@ That is, the recovery API only requires that:
->     - drivers/net/cxgb3
->     - drivers/net/s2io.c
->     - drivers/net/qlge
+> +               mali-supply = <&buck4_reg>;
+> +               operating-points = <
+
+The binding doc says operating-points-v2.
+
+> +                       /* KHz  uV   */
+> +                       600000  1150000
+> +                       177000  812500
+> +               >;
+> +       };
 > +
-> +>>> As of this writing, there is a growing list of device drivers with
-> +>>> patches implementing error recovery. Not all of these patches are in
-> +>>> mainline yet. These may be used as "examples":
-> +>>>
-> +>>> drivers/scsi/ipr
-> +>>> drivers/scsi/sym53c8xx_2
-> +>>> drivers/scsi/qla2xxx
-> +>>> drivers/scsi/lpfc
-> +>>> drivers/next/bnx2.c
-> +>>> drivers/next/e100.c
-> +>>> drivers/net/e1000
-> +>>> drivers/net/e1000e
-> +>>> drivers/net/ixgb
-> +>>> drivers/net/ixgbe
-> +>>> drivers/net/cxgb3
-> +>>> drivers/net/s2io.c
-> +>>> drivers/net/qlge  
-
-...of this, which has the look of a set of conflict markers that managed
-to get committed...?
-
-jon
-
+>         thermal-zones {
+>                 cpu0_thermal: cpu0-thermal {
+>                         thermal-sensors = <&tmu_cpu0 0>;
+> --
+> 2.22.0
+>
 
 _______________________________________________
 linux-arm-kernel mailing list
