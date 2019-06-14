@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6E47D45C51
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Jun 2019 14:13:24 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2117045C5A
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Jun 2019 14:13:46 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,71 +11,70 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=EENHpDtn/VHoPae3bb41Aa4i8k2+F8fmz4D1cHg03lQ=; b=CwZVj6tNTCSIYxDPgQU5p6uZ+Y
-	DMv2myThcy74qRTkmwG3SEAgnteY+62MNt6tnyxxgesrXnPFtf5A8F6uBzudp5jhdGHZwdYu3nvhV
-	IghIadPwLcUqBQ42G/LOTv6ktL6Mdt+QWDX+KVfwIDjTmBP1hGkEmIPCoA6z7uaHgzclUki5fIcgO
-	zlRmVbIG23+X7OIJMKvpEaxQhkPSF54zLMQzbgMGvL0uTv26v0FqMvAq1RR7GDJDB8ou8PORDXJJe
-	/vVpaLPL4yLRgeQ3ZZbaPtXjXRSP4oRg0Ai9gMPw0iE27B8ONxN2iqEl5ZYX43NYeP1jcRJTH3Rwz
-	KA6UlRhA==;
+	bh=EKhj2CZSsQ7iPo7bFMgmOdyaOkXuiVpQWJwYoPL6Etw=; b=XVkxorHR001BDNfnQ/PTtolXIB
+	7ybIW0Y13IdAQOPBNj59s0TfdLXAPbdVlUp4s1oEvT/GROkeVhBnp1fhmHvTJ70d1gX4/YTLnsFRp
+	eA0PqzN6VJkEQRfFQWiO+BqKO+m51XubYoTQ3nhQtQlNm31X4e9NEv5aUVNKbzVfnUbJev1FQnnm8
+	woU1GlWtQNEoFVghDLuwAuc4xJrgVXcw19hhHdsxF/kAJcFXNtQYk+b62G7zk+bijdh4wMG3YcXSo
+	EnPCYvz0/3sQgRNVC7XYoH6VHL9fogcSb1+wUHKloZGBWiN5cnp/vXSpFW/1CcC8tQK0X6Hrr/XbJ
+	Y99tmzGQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hbl55-0003m5-7e; Fri, 14 Jun 2019 12:13:19 +0000
-Received: from mail-lf1-x143.google.com ([2a00:1450:4864:20::143])
+	id 1hbl5R-00046O-1g; Fri, 14 Jun 2019 12:13:41 +0000
+Received: from mail-lf1-x141.google.com ([2a00:1450:4864:20::141])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hbl3k-0002nX-Sm
- for linux-arm-kernel@lists.infradead.org; Fri, 14 Jun 2019 12:11:58 +0000
-Received: by mail-lf1-x143.google.com with SMTP id 136so1566200lfa.8
+ id 1hbl3m-0002p3-6I
+ for linux-arm-kernel@lists.infradead.org; Fri, 14 Jun 2019 12:11:59 +0000
+Received: by mail-lf1-x141.google.com with SMTP id 136so1566252lfa.8
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 14 Jun 2019 05:11:56 -0700 (PDT)
+ Fri, 14 Jun 2019 05:11:57 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=UYjsmUBIL6tntgGWQMmUG0zM7PGoxZJvICmLpEKuiKM=;
- b=il7i9G1w3SX0Zw4vIbZTsQplXBvEBNZ+eNvDmLzsAFQexzjH9BwvOMZhALmT9Y5DA7
- RVg6hUfJwzJoRyUpD2JtLUJevdCgwMplMPfNfdiiwzyY3BvMOqYmUj+NCQFP2zBQ9YFq
- yJkcaArmW5G6cXeBfEObNJpRV29I+BC8bjnO0tNtniXG+fjo0rsHMPxy8NkFfaXMPaFX
- AlUsdxlbXNi+wd6yNy7OtljKJzeUK+mfQESTfTJ2QXA+xtC1qnE8n1dLXXnqU02x5yna
- ZlNnxlR0rpet7esPf7bPaEgP0kxMpnv+E+oYXmR/FmhlQmM8u2BG54xhpe8Ue2qv9Fsd
- 9rqg==
+ bh=p8PmpzAbRDVJoeBuit/g26TECB2oYt6y7ni9hx4zI8w=;
+ b=fQuo2zrpMCuabBlUMf1rVUEvwsHvE6+8jPSDVc+L1fgqjP02c0JsjUR3b/Q93OxSh9
+ BCPlEaTD5YEdujGBF2r382+8pudMWyoEfzuvRld7V5akGTlp1xWmjDBqK5inh0H4kxlQ
+ y9pGQ7X3pY1NbpsFFPEJE1URn7oWiV+7Qmab96JSQ3exGafQdJedX/DLXL8rzdY3gjgW
+ Kn8h6Cj543f30W3md6b8q2aVfuIN/4N+/KgyS4FUQAtQAZ4K33J/izosMSvViZCc9nkk
+ fsusU8pRNNOoUowMKCbkCTMOpGMRHhauy7MTB4Cd0XBz/52PQgoe9RPs/wOcPznTpfCS
+ alQQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=UYjsmUBIL6tntgGWQMmUG0zM7PGoxZJvICmLpEKuiKM=;
- b=Ssjwke4hq2ub0HgXoG7cOWRLLZRktv07fWdCr6aVGLMtvK/VS129PLlg4vfU9QVoBg
- TO3cmpK7eCJpkQyuVTiqEKjwqCH46uEBJDM3xhRW5fuXwMUEqWLtELhU15gwUpouEl4q
- ZzhoNHc5yGndoOGq22HJbmqSdlTw1JcJid+QgstSaKpq3jddiYXl8Y3BgYWpEt7yuG0J
- zNXeIKy/zral63FCJ8My7U5Ymyh39EFauman0IhLoswj1QJpGfrAQ8EFKa18sFM0ZCwm
- e5LuUIvG2rLu1P81d3z5vxDiWhQFRpFF6vdvCmKpMqNartcoAN+dyNPrOi38Tx8lhWvG
- Mxcw==
-X-Gm-Message-State: APjAAAWPAalRwofupiCDlB+Z4qam5V98eVAMOkPj2Z4pEwoNRbOzZxKe
- 10q6Afl+H2OTlJJVVhM1UHY=
-X-Google-Smtp-Source: APXvYqwE0kQ3/SOZHOsiq+i5HI5BQIQVPxzNpqWa+XM9yTu3PSUfyxB/zEsW9U1o4rVYPTAAidt/xw==
-X-Received: by 2002:ac2:5382:: with SMTP id g2mr46735673lfh.92.1560514315029; 
- Fri, 14 Jun 2019 05:11:55 -0700 (PDT)
+ bh=p8PmpzAbRDVJoeBuit/g26TECB2oYt6y7ni9hx4zI8w=;
+ b=I7+NjqrXLqV8EkoxNDOGMNLOl1N1PBEO8y/UjVAqxf5/iLZynVk3AGgQ/M4jYb9VYY
+ OqhlL01/DdVnxyhag/+Q9+vj9Ru+FGSo5a+2/7brHo7HN3KjXOYwUXIVWUKfd96zqI5T
+ szaFf6lro3vWLbN3MMVGK1QgE2K/yvnheb/foQx6Yxbi3v86cvJbuME9jDix9OuNGxMR
+ eu1QCLhZRt9eADzh6RfVAVr8vHJvh1h9AUTAM9bFRKl7Wsp0s5n0CVq97ikXuFdUd0ie
+ yfpAUAbcqLeL3DnRuzAu1m6eSxbrOQdxxH8paCP37oVK1iWQsvdXVbZ+q1HqhbAPMo86
+ besA==
+X-Gm-Message-State: APjAAAVTkyEY+UQhBYGAaiEdffUG/9nzrtwRJQWEk1ALeyOKv3illdaO
+ 1XL3l4skmdcMsTYUyhhZ5lSxiZKP
+X-Google-Smtp-Source: APXvYqytig4LM1LLSO65nkrj13abfiZO90k3Hd+raLW/m2R9YpRb/VKxxV8lIaz5AhcKUa1gQnrY8Q==
+X-Received: by 2002:a19:f00e:: with SMTP id p14mr4876955lfc.94.1560514316299; 
+ Fri, 14 Jun 2019 05:11:56 -0700 (PDT)
 Received: from osv.localdomain ([89.175.180.246])
- by smtp.gmail.com with ESMTPSA id p27sm459683lfh.8.2019.06.14.05.11.54
+ by smtp.gmail.com with ESMTPSA id p27sm459683lfh.8.2019.06.14.05.11.55
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-SHA bits=128/128);
- Fri, 14 Jun 2019 05:11:54 -0700 (PDT)
+ Fri, 14 Jun 2019 05:11:55 -0700 (PDT)
 From: Sergey Organov <sorganov@gmail.com>
 To: Sascha Hauer <s.hauer@pengutronix.de>
-Subject: [PATCH RFC 4/7] serial: imx: set_termios(): do not enable autoRTS if
- RTS is unset
-Date: Fri, 14 Jun 2019 15:11:31 +0300
-Message-Id: <1560514294-29111-5-git-send-email-sorganov@gmail.com>
+Subject: [PATCH RFC 5/7] serial: imx: set_termios(): preserve RTS state
+Date: Fri, 14 Jun 2019 15:11:32 +0300
+Message-Id: <1560514294-29111-6-git-send-email-sorganov@gmail.com>
 X-Mailer: git-send-email 2.1.4
 In-Reply-To: <1560514294-29111-1-git-send-email-sorganov@gmail.com>
 References: <20190614072801.3187-1-s.hauer@pengutronix.de>
  <1560514294-29111-1-git-send-email-sorganov@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190614_051156_953599_D87CF255 
-X-CRM114-Status: GOOD (  11.53  )
+X-CRM114-CacheID: sfid-20190614_051158_239389_18093F12 
+X-CRM114-Status: GOOD (  10.81  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:143 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:141 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -109,28 +108,57 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-set_termios() shouldn't set UCR2_CTSC bit if UCR2_CTS (=TIOCM_RTS) is
-cleared. Added corresponding check in imx_uart_rts_auto() to fix this.
+imx_set_termios() cleared RTS on every call, now fixed.
 
 Signed-off-by: Sergey Organov <sorganov@gmail.com>
 ---
- drivers/tty/serial/imx.c | 3 ++-
- 1 file changed, 2 insertions(+), 1 deletion(-)
+ drivers/tty/serial/imx.c | 12 ++++++++----
+ 1 file changed, 8 insertions(+), 4 deletions(-)
 
 diff --git a/drivers/tty/serial/imx.c b/drivers/tty/serial/imx.c
-index 17e2322..8ee910f 100644
+index 8ee910f..de23068 100644
 --- a/drivers/tty/serial/imx.c
 +++ b/drivers/tty/serial/imx.c
-@@ -405,7 +405,8 @@ static void imx_uart_rts_inactive(struct imx_port *sport, u32 *ucr2)
- /* called with port.lock taken and irqs caller dependent */
- static void imx_uart_rts_auto(struct imx_port *sport, u32 *ucr2)
- {
--	*ucr2 |= UCR2_CTSC;
-+	if (*ucr2 & UCR2_CTS)
-+		*ucr2 |= UCR2_CTSC;
- }
+@@ -1564,6 +1564,13 @@ imx_uart_set_termios(struct uart_port *port, struct ktermios *termios,
  
- /* called with port.lock taken and irqs off */
+ 	spin_lock_irqsave(&sport->port.lock, flags);
+ 
++	/*
++	 * Read current UCR2 and save it for future use, then clear all the bits
++	 * except those we will or may need to preserve.
++	 */
++	old_ucr2 = imx_uart_readl(sport, UCR2);
++	ucr2 = old_ucr2 & (UCR2_TXEN | UCR2_RXEN | UCR2_ATEN | UCR2_CTSC);
++
+ 	ucr2 = UCR2_SRST | UCR2_IRTS;
+ 	if ((termios->c_cflag & CSIZE) == CS8)
+ 		ucr2 |= UCR2_WS;
+@@ -1633,7 +1640,6 @@ imx_uart_set_termios(struct uart_port *port, struct ktermios *termios,
+ 	imx_uart_writel(sport,
+ 			old_ucr1 & ~(UCR1_TXMPTYEN | UCR1_RRDYEN | UCR1_RTSDEN),
+ 			UCR1);
+-	old_ucr2 = imx_uart_readl(sport, UCR2);
+ 	imx_uart_writel(sport, old_ucr2 & ~UCR2_ATEN, UCR2);
+ 
+ 	while (!(imx_uart_readl(sport, USR2) & USR2_TXDC))
+@@ -1641,7 +1647,6 @@ imx_uart_set_termios(struct uart_port *port, struct ktermios *termios,
+ 
+ 	/* then, disable everything */
+ 	imx_uart_writel(sport, old_ucr2 & ~(UCR2_TXEN | UCR2_RXEN | UCR2_ATEN), UCR2);
+-	old_ucr2 &= (UCR2_TXEN | UCR2_RXEN | UCR2_ATEN);
+ 
+ 	/* custom-baudrate handling */
+ 	div = sport->port.uartclk / (baud * 16);
+@@ -1679,8 +1684,7 @@ imx_uart_set_termios(struct uart_port *port, struct ktermios *termios,
+ 
+ 	imx_uart_writel(sport, old_ucr1, UCR1);
+ 
+-	/* set the parity, stop bits and data size */
+-	imx_uart_writel(sport, ucr2 | old_ucr2, UCR2);
++	imx_uart_writel(sport, ucr2, UCR2);
+ 
+ 	if (UART_ENABLE_MS(&sport->port, termios->c_cflag))
+ 		imx_uart_enable_ms(&sport->port);
 -- 
 2.10.0.1.g57b01a3
 
