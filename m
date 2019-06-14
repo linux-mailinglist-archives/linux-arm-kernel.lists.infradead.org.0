@@ -2,91 +2,64 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 424B645308
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Jun 2019 05:35:31 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DA8B845311
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Jun 2019 05:43:25 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=WBnU6WAwSyaXJTlOgNmJDCNS3yrd4bVb4APoUhYDhb4=; b=gMgxEK1sj/uOpM
-	v+eYVIoCNmKY1UMiCznDm5tfu5HDLwQiLwhCWy37LSp8SSwh9wddWf8xLX2gLTDCAAwuqoN9F0mKj
-	6m4jeHyRsPT397qYOL4DaBWmyg5YiU/zV7bsEvB4gbZz67uAFfmlF44E340avXbl9vngDKXjNuOO2
-	pkLbZh1YtA+wxaSTj+C4lo95HWPZevnu8ITsEeMfE6f7cmaTSy0Sm5f7acqrnwZukgoccwDgG3fVz
-	qKCPcCiPZHlLOYp5fsPOBjCtNqOiHBXeL+89dB5Ja9IeXJENEBsf7JOqy9sO2Jo7TKu9PX74+Ezx4
-	xu6Prk87hUtwieyCyG5g==;
+	List-Owner; bh=5/SMFPtkVISU5TNoVHfydwqUtrKc8IFicaBLJhEj/Ew=; b=Ht42WTyZvaBOtX
+	l4ZkXuQgTNivvnRO0vDQSubAq/GaY39LSUC5+M8KE3QWRgPfFpxOnvK3vrNU2wmXVm/FByNLu8RDG
+	oIjB04RCM2GX+EoN6A15Boxi50fZ4g9OIPrgPqBYb4dLPSxJR5vjLgLdedqyuUHSomBWjGbn82PjW
+	TMfQ7ZcraWIunSYXNp4uMex43U/qbqpm775LMkWpBcoIGzUWg/EM1PZk3C3TMn+gzAbFXT81gZbqJ
+	FfWFacAMscqpnNQawoIuODMQcde69y9DJrquSAPYvluudMTrI1zzBHEBN29zC8puaPIv6n3KKxkbX
+	Q05yXaRc06nbAhnEdEog==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hbczq-0007rZ-64; Fri, 14 Jun 2019 03:35:22 +0000
-Received: from mail-ed1-f65.google.com ([209.85.208.65])
+	id 1hbd7I-0001Yl-NN; Fri, 14 Jun 2019 03:43:04 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hbczg-0007qr-5h
- for linux-arm-kernel@lists.infradead.org; Fri, 14 Jun 2019 03:35:13 +0000
-Received: by mail-ed1-f65.google.com with SMTP id i11so1404194edq.0
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 13 Jun 2019 20:35:12 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=h5X0bylW7cnZXlc8waXhJ/q/kNkLK/1K8QN94+coOFM=;
- b=PS+vTccTt26NOBL1WSMWRQ6U5ZPp96+IVHfX4qlEZZP/IWEgVc+9hkFXuGO3DDYqeh
- 75L0Vsx7Qza+yjdgNk6FmQMItF3Iz0wZWCUXjpTNfJZKpc4yC6WnoWBA2WMUZGBYE3tt
- CRV4sfmlMpp6feZ64Jlm9wEc29DuE5VsGG4Tsabb11WVYVMaKJvejIagtPtVwOtTddGf
- NclD7Yh7BnsaiUJDB8F0ZtKLvIknNZE8a4e4kNXB7WrnsyuFb4o9Vn2RvBhDzoicrbiA
- LeUWWgU58tYm6MuFKMSRdE+7jDvvqb7yYqY/wOKknEG+rcSWw0sUF6lvxuBReiBTqsV+
- UYLQ==
-X-Gm-Message-State: APjAAAXMnUXgg/t1LHWox3tqmPwttqvU3AKOj0OZ1IoKhfe+U4n2GvU+
- Kqd6Ci2aq8jBGP50wXO5726EXWt8oa4=
-X-Google-Smtp-Source: APXvYqy74seyQnoRCXpGLNJcuf7gZ6Gk+jKTST8H9zIj8LWsY7LTHrSjogspxr8UeCtcpkme9je+HA==
-X-Received: by 2002:a50:900d:: with SMTP id b13mr65959655eda.289.1560483310267; 
- Thu, 13 Jun 2019 20:35:10 -0700 (PDT)
-Received: from mail-wr1-f54.google.com (mail-wr1-f54.google.com.
- [209.85.221.54])
- by smtp.gmail.com with ESMTPSA id x30sm482114edc.53.2019.06.13.20.35.09
- for <linux-arm-kernel@lists.infradead.org>
- (version=TLS1_3 cipher=AEAD-AES128-GCM-SHA256 bits=128/128);
- Thu, 13 Jun 2019 20:35:10 -0700 (PDT)
-Received: by mail-wr1-f54.google.com with SMTP id k11so921552wrl.1
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 13 Jun 2019 20:35:09 -0700 (PDT)
-X-Received: by 2002:adf:fc85:: with SMTP id g5mr62068736wrr.324.1560483309487; 
- Thu, 13 Jun 2019 20:35:09 -0700 (PDT)
+ id 1hbd78-0001Xz-EW; Fri, 14 Jun 2019 03:42:56 +0000
+X-UUID: a14d439faf8c41e294ba7ae92cd3378e-20190613
+X-UUID: a14d439faf8c41e294ba7ae92cd3378e-20190613
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
+ (envelope-from <ck.hu@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 347621719; Thu, 13 Jun 2019 19:42:47 -0800
+Received: from MTKMBS31N1.mediatek.inc (172.27.4.69) by
+ MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Thu, 13 Jun 2019 20:42:45 -0700
+Received: from mtkcas08.mediatek.inc (172.21.101.126) by
+ MTKMBS31N1.mediatek.inc (172.27.4.69) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Fri, 14 Jun 2019 11:42:40 +0800
+Received: from [172.21.77.4] (172.21.77.4) by mtkcas08.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
+ Transport; Fri, 14 Jun 2019 11:42:39 +0800
+Message-ID: <1560483759.16718.12.camel@mtksdaap41>
+Subject: Re: [PATCH v3, 13/27] drm/mediatek: add ddp component CCORR
+From: CK Hu <ck.hu@mediatek.com>
+To: <yongqiang.niu@mediatek.com>
+Date: Fri, 14 Jun 2019 11:42:39 +0800
+In-Reply-To: <1559734986-7379-14-git-send-email-yongqiang.niu@mediatek.com>
+References: <1559734986-7379-1-git-send-email-yongqiang.niu@mediatek.com>
+ <1559734986-7379-14-git-send-email-yongqiang.niu@mediatek.com>
+X-Mailer: Evolution 3.10.4-0ubuntu2 
 MIME-Version: 1.0
-References: <20190613185241.22800-1-jagan@amarulasolutions.com>
- <20190613185241.22800-3-jagan@amarulasolutions.com>
- <CAGb2v65xuXc4C1jOyM1GbEFVDam5P-6NN0ZhtzwzA7qU5F3nJQ@mail.gmail.com>
-In-Reply-To: <CAGb2v65xuXc4C1jOyM1GbEFVDam5P-6NN0ZhtzwzA7qU5F3nJQ@mail.gmail.com>
-From: Chen-Yu Tsai <wens@csie.org>
-Date: Fri, 14 Jun 2019 11:34:57 +0800
-X-Gmail-Original-Message-ID: <CAGb2v67DY534hXrx2H4jnZXA7jJS7sq2UwYCqw1iAgyLKdNzgA@mail.gmail.com>
-Message-ID: <CAGb2v67DY534hXrx2H4jnZXA7jJS7sq2UwYCqw1iAgyLKdNzgA@mail.gmail.com>
-Subject: Re: [linux-sunxi] [PATCH 2/9] drm/sun4i: tcon: Add TCON LCD support
- for R40
-To: Jagan Teki <jagan@amarulasolutions.com>
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190613_203512_222218_E9D3D2CB 
-X-CRM114-Status: GOOD (  10.27  )
-X-Spam-Score: 0.8 (/)
+X-CRM114-CacheID: sfid-20190613_204254_495736_20893881 
+X-CRM114-Status: GOOD (  13.47  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.8 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.208.65 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.208.65 listed in wl.mailspike.net]
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (wens213[at]gmail.com)
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (wens213[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -98,45 +71,132 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree <devicetree@vger.kernel.org>,
- Jernej Skrabec <jernej.skrabec@siol.net>,
- Maxime Ripard <maxime.ripard@bootlin.com>,
- linux-kernel <linux-kernel@vger.kernel.org>,
- dri-devel <dri-devel@lists.freedesktop.org>, David Airlie <airlied@linux.ie>,
- linux-sunxi <linux-sunxi@googlegroups.com>, Daniel Vetter <daniel@ffwll.ch>,
- Michael Trimarchi <michael@amarulasolutions.com>,
- linux-amarula@amarulasolutions.com,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Philipp Zabel <p.zabel@pengutronix.de>, David Airlie <airlied@linux.ie>,
+ linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
+ Rob Herring <robh+dt@kernel.org>, linux-mediatek@lists.infradead.org,
+ Daniel Vetter <daniel@ffwll.ch>, Matthias Brugger <matthias.bgg@gmail.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Jun 14, 2019 at 11:19 AM Chen-Yu Tsai <wens@csie.org> wrote:
->
-> On Fri, Jun 14, 2019 at 2:53 AM Jagan Teki <jagan@amarulasolutions.com> wrote:
-> >
-> > TCON LCD0, LCD1 in allwinner R40, are used for managing
-> > LCD interfaces like RGB, LVDS and DSI.
-> >
-> > Like TCON TV0, TV1 these LCD0, LCD1 are also managed via
-> > tcon top.
-> >
-> > Add support for it, in tcon driver.
-> >
-> > Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
->
-> Reviewed-by: Chen-Yu Tsai <wens@csie.org>
+Hi, Yongqiang:
 
-I take that back.
+On Wed, 2019-06-05 at 19:42 +0800, yongqiang.niu@mediatek.com wrote:
+> From: Yongqiang Niu <yongqiang.niu@mediatek.com>
+> 
+> This patch add ddp component CCORR
 
-The TCON output muxing (which selects whether TCON LCD or TCON TV
-outputs to the GPIO pins)
-is not supported yet. Please at least add TODO notes, or ideally,
-block RGB output from
-being used.
+This patch is identical to v2, and I've give a 'Reviewed-by' for v2 [1],
+so you should keep this 'Reviewed-by' tag in this patch, so I still give
+you a
 
-ChenYu
+Reviewed-by: CK Hu <ck.hu@mediatek.com>
+
+[1] https://patchwork.kernel.org/patch/10872697/
+
+> 
+> Signed-off-by: Yongqiang Niu <yongqiang.niu@mediatek.com>
+> ---
+>  drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.c | 32 +++++++++++++++++++++++++++++
+>  drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.h |  2 ++
+>  2 files changed, 34 insertions(+)
+> 
+> diff --git a/drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.c b/drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.c
+> index 54ca794..310c0b9 100644
+> --- a/drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.c
+> +++ b/drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.c
+> @@ -41,6 +41,12 @@
+>  #define DISP_AAL_EN				0x0000
+>  #define DISP_AAL_SIZE				0x0030
+>  
+> +#define DISP_CCORR_EN				0x0000
+> +#define CCORR_EN				BIT(0)
+> +#define DISP_CCORR_CFG				0x0020
+> +#define CCORR_RELAY_MODE			BIT(0)
+> +#define DISP_CCORR_SIZE				0x0030
+> +
+>  #define DISP_GAMMA_EN				0x0000
+>  #define DISP_GAMMA_CFG				0x0020
+>  #define DISP_GAMMA_SIZE				0x0030
+> @@ -131,6 +137,24 @@ static void mtk_aal_stop(struct mtk_ddp_comp *comp)
+>  	writel_relaxed(0x0, comp->regs + DISP_AAL_EN);
+>  }
+>  
+> +static void mtk_ccorr_config(struct mtk_ddp_comp *comp, unsigned int w,
+> +			     unsigned int h, unsigned int vrefresh,
+> +			     unsigned int bpc)
+> +{
+> +	writel(h << 16 | w, comp->regs + DISP_CCORR_SIZE);
+> +	writel(CCORR_RELAY_MODE, comp->regs + DISP_CCORR_CFG);
+> +}
+> +
+> +static void mtk_ccorr_start(struct mtk_ddp_comp *comp)
+> +{
+> +	writel(CCORR_EN, comp->regs + DISP_CCORR_EN);
+> +}
+> +
+> +static void mtk_ccorr_stop(struct mtk_ddp_comp *comp)
+> +{
+> +	writel_relaxed(0x0, comp->regs + DISP_CCORR_EN);
+> +}
+> +
+>  static void mtk_gamma_config(struct mtk_ddp_comp *comp, unsigned int w,
+>  			     unsigned int h, unsigned int vrefresh,
+>  			     unsigned int bpc)
+> @@ -179,6 +203,12 @@ static void mtk_gamma_set(struct mtk_ddp_comp *comp,
+>  	.stop = mtk_aal_stop,
+>  };
+>  
+> +static const struct mtk_ddp_comp_funcs ddp_ccorr = {
+> +	.config = mtk_ccorr_config,
+> +	.start = mtk_ccorr_start,
+> +	.stop = mtk_ccorr_stop,
+> +};
+> +
+>  static const struct mtk_ddp_comp_funcs ddp_gamma = {
+>  	.gamma_set = mtk_gamma_set,
+>  	.config = mtk_gamma_config,
+> @@ -200,6 +230,7 @@ static void mtk_gamma_set(struct mtk_ddp_comp *comp,
+>  	[MTK_DISP_RDMA] = "rdma",
+>  	[MTK_DISP_WDMA] = "wdma",
+>  	[MTK_DISP_COLOR] = "color",
+> +	[MTK_DISP_CCORR] = "ccorr",
+>  	[MTK_DISP_AAL] = "aal",
+>  	[MTK_DISP_GAMMA] = "gamma",
+>  	[MTK_DISP_UFOE] = "ufoe",
+> @@ -221,6 +252,7 @@ struct mtk_ddp_comp_match {
+>  	[DDP_COMPONENT_AAL0]	= { MTK_DISP_AAL,	0, &ddp_aal },
+>  	[DDP_COMPONENT_AAL1]	= { MTK_DISP_AAL,	1, &ddp_aal },
+>  	[DDP_COMPONENT_BLS]	= { MTK_DISP_BLS,	0, NULL },
+> +	[DDP_COMPONENT_CCORR]	= { MTK_DISP_CCORR,	0, &ddp_ccorr },
+>  	[DDP_COMPONENT_COLOR0]	= { MTK_DISP_COLOR,	0, NULL },
+>  	[DDP_COMPONENT_COLOR1]	= { MTK_DISP_COLOR,	1, NULL },
+>  	[DDP_COMPONENT_DPI0]	= { MTK_DPI,		0, NULL },
+> diff --git a/drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.h b/drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.h
+> index 8399229..87ef290 100644
+> --- a/drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.h
+> +++ b/drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.h
+> @@ -28,6 +28,7 @@ enum mtk_ddp_comp_type {
+>  	MTK_DISP_RDMA,
+>  	MTK_DISP_WDMA,
+>  	MTK_DISP_COLOR,
+> +	MTK_DISP_CCORR,
+>  	MTK_DISP_AAL,
+>  	MTK_DISP_GAMMA,
+>  	MTK_DISP_UFOE,
+> @@ -44,6 +45,7 @@ enum mtk_ddp_comp_id {
+>  	DDP_COMPONENT_AAL0,
+>  	DDP_COMPONENT_AAL1,
+>  	DDP_COMPONENT_BLS,
+> +	DDP_COMPONENT_CCORR,
+>  	DDP_COMPONENT_COLOR0,
+>  	DDP_COMPONENT_COLOR1,
+>  	DDP_COMPONENT_DPI0,
+
+
 
 _______________________________________________
 linux-arm-kernel mailing list
