@@ -2,86 +2,64 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2163545CB4
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Jun 2019 14:23:22 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4501F45CB6
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Jun 2019 14:23:40 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=JDlNGqqEiD3FfTgHjHsnEHjB5ibasq0LffZSOk0gJPM=; b=SkoggR8/cxvdCP
-	9XJoajeurE8B53Df/W/EAVgrwsQr7h2UY82ZHFAtanV3GsJHDKLI4HU1gJeO9lpzhZ0Hj4ULYKQQ+
-	bPwCo+6Uw1PvwBKwKVtmKRS/Q1r3msJwQj0dZUI/lovD1OKCD2eHpyIC1qGXOrmKDGBfit85bLBRE
-	fN/jAq2wddsCHktFYuzKhjxgu/E0FlbC7caLBaRMKFDiQHoH9NqJDGxBGdpzNuR7UxL3DSTOHeSbm
-	S1i0kpmmKY77KgsEh52xJqzLJgkG8eItl/u2JxL3bwJ0NdNuNq1cSHNVd4v1Vfv25yUaW0xqR3G2s
-	ZOcASxAutmYK3gvEYp7w==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:References:
+	To:Subject:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=8kt7yQSDp+uFfZ5TcypNbFsEgdPr8Kxlwpqg14J9Rp0=; b=d55p8UZcnbCxXwPBqRaw2L835
+	0frp98umjM3Pa8p26yg/Ldk1RRNQr7BarjPWolc8bwI8NwytVcX+tVAfipyA5F65Eo3HsKaKmIHkI
+	apAuX3ZFkEHCCpkkVP6xTY/LoQHbohpdqxfZ9+sO8FAuukuSH8MJ6Evcy6V5A5dbiRBrxwaYo0HrL
+	8gdMrhsYkkg3Wrn6oPo7XOc5qVAr9/WmCwA5L94BjXsVw5g+uzlR1L9vwGrTz32OM5UiFsviFvnEb
+	5EIKhX1jMHLbuoA5F+gpQ3yg6jLKV4fll2VPiD3prJ1QqZrP25Vne3ZpsjRzuMN2lHQexJ1rVwAoA
+	Hi5NTgrIA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hblEj-0006ZA-Ui; Fri, 14 Jun 2019 12:23:17 +0000
-Received: from mail-qk1-x741.google.com ([2607:f8b0:4864:20::741])
+	id 1hblF2-0006sa-1B; Fri, 14 Jun 2019 12:23:36 +0000
+Received: from szxga07-in.huawei.com ([45.249.212.35] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hblBn-00047D-4A
- for linux-arm-kernel@lists.infradead.org; Fri, 14 Jun 2019 12:20:16 +0000
-Received: by mail-qk1-x741.google.com with SMTP id d15so1502870qkl.4
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 14 Jun 2019 05:20:14 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=jms.id.au; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=6rc60klXbDdC4U4/MMrqWt/2TewJnLjQ/8r8hSCMd1s=;
- b=iWbnwpM3Kxebrp9DARy7xnFW6kr0KF6p8qC4q2EsM9P78mqslIAqRrIUj8ZBTUvZfA
- UiBAhtpSOHng8d69r5N05E8Pd9q3WGFt2mQ34gwLycRcYSw9+j8M02cm6srnmt9Ei8vU
- ZkeV7zq719zsUoqI2tf7K64TdVSLi9VimJ680=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=6rc60klXbDdC4U4/MMrqWt/2TewJnLjQ/8r8hSCMd1s=;
- b=Aa52RfSI4y49eLx007hCZ+wN/pcKxNpQ3HJ+3tXbxhG2oSnPf1omfNynCrc/W0RI4k
- +9DXsjf9Ijt64z6nQbbiJQq0+fGW9aNgSsj1vJvmDhWXYf+ynoCgpRwqXLaIeqhI2pSi
- CNOHQI7siJ3fhCtXRL5QFAIVj6h/q5D/Elb1ra5OigSUg2heq8B1kMKeApQsCYBBGsQn
- 5OkRe4YG3Il06srV0cuAo8oQHWjGEebRGNIm+ZjWm962XS0vW6yi0ABZSL6n7y7KXrHL
- doHNEfRsmusfdTg4y5hlc6a1yqbXHkV4+6Dh7/u3gwBEMZ0s2xHn8kLs1LEjw1INiYJ3
- 17SA==
-X-Gm-Message-State: APjAAAVNndxjlKfQiqJ5DzGSzKEfDikFfpSSRTrOXBT5OmEabWaPmslL
- 6z9uhkQQ5EFb+8/iUMjeMKqXC+v3732cYVCeF5A=
-X-Google-Smtp-Source: APXvYqyGrNC/mqtxIRaAuWze/JoTz2AsfNmSDrq8G4akumQY0TXEILTuIxe67BM5xQ23Pb3umDQ2KTDTek1Fgy9Gk4A=
-X-Received: by 2002:a37:a743:: with SMTP id q64mr74518182qke.236.1560514813660; 
- Fri, 14 Jun 2019 05:20:13 -0700 (PDT)
+ id 1hblEL-0006Ln-EA
+ for linux-arm-kernel@lists.infradead.org; Fri, 14 Jun 2019 12:22:56 +0000
+Received: from DGGEMS408-HUB.china.huawei.com (unknown [172.30.72.59])
+ by Forcepoint Email with ESMTP id 154F19C821EE6C64B89A;
+ Fri, 14 Jun 2019 20:22:45 +0800 (CST)
+Received: from [127.0.0.1] (10.202.227.238) by DGGEMS408-HUB.china.huawei.com
+ (10.3.19.208) with Microsoft SMTP Server id 14.3.439.0;
+ Fri, 14 Jun 2019 20:22:38 +0800
+From: John Garry <john.garry@huawei.com>
+Subject: Re: [PATCH v4 1/3] lib: logic_pio: Use logical PIO low-level
+ accessors for !CONFIG_INDIRECT_PIO
+To: Bjorn Helgaas <helgaas@kernel.org>
+References: <1560262374-67875-1-git-send-email-john.garry@huawei.com>
+ <1560262374-67875-2-git-send-email-john.garry@huawei.com>
+ <20190613023947.GD13533@google.com>
+ <8ef228f8-97cb-e40e-ea6b-410b80a845cf@huawei.com>
+ <20190613200932.GJ13533@google.com>
+ <7495dcab-f293-4b2a-4740-2249f61351f7@huawei.com>
+ <20190614115056.GP13533@google.com>
+Message-ID: <4c49bf7d-f68e-0b79-f03d-03958dac640e@huawei.com>
+Date: Fri, 14 Jun 2019 13:22:31 +0100
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:45.0) Gecko/20100101
+ Thunderbird/45.3.0
 MIME-Version: 1.0
-References: <20190509035549.2203169-1-taoren@fb.com>
- <29d7503b-6c14-4990-aadc-7cbce2897fc2@www.fastmail.com>
-In-Reply-To: <29d7503b-6c14-4990-aadc-7cbce2897fc2@www.fastmail.com>
-From: Joel Stanley <joel@jms.id.au>
-Date: Fri, 14 Jun 2019 12:20:01 +0000
-Message-ID: <CACPK8Xe8qNww18hJx2skjYJtsCRLA+uwZsjGUb50u6QLE+wmSg@mail.gmail.com>
-Subject: Re: [PATCH] ARM: dts: aspeed: Add Facebook YAMP BMC
-To: Andrew Jeffery <andrew@aj.id.au>
+In-Reply-To: <20190614115056.GP13533@google.com>
+X-Originating-IP: [10.202.227.238]
+X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190614_052015_388446_B434136E 
-X-CRM114-Status: UNSURE (   8.60  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.4 (/)
+X-CRM114-CacheID: sfid-20190614_052253_740326_DDA8C060 
+X-CRM114-Status: GOOD (  19.55  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.4 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:741 listed in]
- [list.dnswl.org]
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [45.249.212.35 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (joel.stan[at]gmail.com)
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,33 +71,95 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- devicetree <devicetree@vger.kernel.org>, linux-aspeed@lists.ozlabs.org,
- Tao Ren <taoren@fb.com>, OpenBMC Maillist <openbmc@lists.ozlabs.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Rob Herring <robh+dt@kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
+Cc: rjw@rjwysocki.net, wangkefeng.wang@huawei.com, lorenzo.pieralisi@arm.com,
+ arnd@arndb.de, linux-pci@vger.kernel.org, will.deacon@arm.com,
+ linuxarm@huawei.com, linux-kernel@vger.kernel.org, catalin.marinas@arm.com,
+ andriy.shevchenko@linux.intel.com, linux-arm-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, 9 May 2019 at 06:06, Andrew Jeffery <andrew@aj.id.au> wrote:
->
->
->
-> On Thu, 9 May 2019, at 13:26, Tao Ren wrote:
-> > Add initial version of device tree for Facebook YAMP ast2500 BMC.
-> >
-> > Signed-off-by: Tao Ren <taoren@fb.com>
->
-> Acked-by: Andrew Jeffery <andrew@aj.id.au>
+On 14/06/2019 12:50, Bjorn Helgaas wrote:
+> On Fri, Jun 14, 2019 at 10:02:52AM +0100, John Garry wrote:
+>> On 13/06/2019 21:09, Bjorn Helgaas wrote:
+>>> On Thu, Jun 13, 2019 at 10:39:12AM +0100, John Garry wrote:
+>>>> On 13/06/2019 03:39, Bjorn Helgaas wrote:
+>>>>> I'm not sure it's even safe, because CONFIG_INDIRECT_PIO depends on
+>>>>> ARM64,  but PCI_IOBASE is defined on most arches via asm-generic/io.h,
+>>>>> so this potentially affects arches other than ARM64.
+>>>>
+>>>> It would do. It would affect any arch which defines PCI_IOBASE and
+>>>> does not have arch-specific definition of inb et all.
+>>
+>>> What's the reason for testing PCI_IOBASE instead of
+>>> CONFIG_INDIRECT_PIO?  If there's a reason it's needed, that's fine,
+>>> but it does make this much more complicated to review.
+>>
+>> For ARM64, we have PCI_IOBASE defined but may not have
+>> CONFIG_INDIRECT_PIO defined. Currently CONFIG_INDIRECT_PIO is only
+>> selected by CONFIG_HISILICON_LPC.
+>>
+>> As such, we should make this change also for when
+>> CONFIG_INDIRECT_PIO is not defined.
 
-Committed to dev-5.1.
+Hi Bjorn,
+
+>
+> OK.  This is all very important for the commit log -- we need to
+> understand what arches are affected and the reason they need it.
+
+Right, and to repeat, this would affect other archs which define 
+PCI_IOBASE and don't have custom IO port accessors definitions.
+
+There are a few remaining even after the recent arch clear out . I have 
+it at arm64, microblaze, and unicore32. Arch m68k defines PCI_IOBASE but 
+seems to have its own IO port accessors. Same again for some arm machines.
+
+At least I should cc those arch maintainers.
+
+>
+> Since the goal of this series is to fix an ARM64-specific issue,
+
+"ARM64" was in the headline banner, but it would apply to other archs, 
+as mentioned above. I should have made that clearer.
+
+and
+> the typical port I/O model is for each arch to #define its own inb(),
+> maybe it would make sense to move the "#define inb logic_inb" from
+> linux/logic_pio.h to arm64/include/asm/io.h?
+>
+
+CONFIG_INDIRECT_PIO has been indirectly enabled in ARM64 defconfig for 
+some time, so I think that it's ok for ARM64 arch Kconfig to select it 
+at this stage. From that, we could make the change suggested.
+
+And, in addition to that, we can make the change in this series just for 
+CONFIG_INDIRECT_PIO.
+
+But I think that the other archs, above, could benefit from the changes 
+in this series, so it would be shame to omit them.
+
+> The "#ifndef inb" arrangement gets pretty complicated when it occurs
+> more than one place (asm-generic/io.h and logic_pio.h) and we have to
+> start worrying about the ordering of #includes.
+
+I agree on that.
 
 Cheers,
+John
 
-Joel
+>
+> Bjorn
+>
+> _______________________________________________
+> linux-arm-kernel mailing list
+> linux-arm-kernel@lists.infradead.org
+> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+>
+>
+
+
 
 _______________________________________________
 linux-arm-kernel mailing list
