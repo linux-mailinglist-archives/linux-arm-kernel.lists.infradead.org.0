@@ -2,59 +2,48 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B5861457B8
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Jun 2019 10:38:04 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E5D98457BF
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Jun 2019 10:38:50 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=3tuJLC+FAJaHwA0aqGYAcPxHr6JwgTQTA9xu6XDXhZM=; b=eUuinD4gbUv4QHepUrtPCwd/RE
-	R1zPzEl/0P7VB0qbJT8JfVhzfGk4hEU3zgpQ8pmYDhiez9B5ez4rkuPdJPnlhV0rQeyviNoCHYLcB
-	JhvRwk8SXulcxj2x+iHtUItpeT1egHn+dXtySvpGUGnokuV/huOnZXg300QVb1gZXBfTLRU3d2yPh
-	+uKbL0m6cH4qkQhgJajlfasAj0zuOoimjQCC2x2kYECj+YCHRvS53Lmmi4LM2dScivj9guOLqWkon
-	ZVbyCpCaj7AtnnE3LfiLwFIOtWDzRcp7OkNksPMgePx0wOvAEZBIoF8IPjNjLg3pb5M9LvEenoPPo
-	55bjABDw==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=wGqjjCRJLCrwQ/lKtGss3PxHk4N2YlkzUnkLxo1fZCw=; b=hQj
+	yVZJN701NFjHMxNsiqEiMI8km+ySzfOa+hRPnuhQ1raFXE2nTNVCGp4xNOJgxB1yt5VUSZnAdFWj5
+	+FoRe+TY8fOhup9x1h8EMaiOxeBP914tKc2BhkNt+9JDrj1lcSz3TRYyl/W/T+i8G38pi75F1UsC7
+	JByUMUMtqjV6DH3l1zlZB0F9dVB2kk6kZiPIG9h5A3UtNhMzxxUArFlM7WUSTnVTpdtX7PVqlz5pC
+	Eq0id7cbDGHxNM3cWobbElVqByOgI/aZjFUAgTNhTCbMEp0DQmes2ffUlfVDJV0V0Z3nkspn1Gfui
+	TTCRwHtuijpUOluaH3wdl/2wfuN/VJg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hbhil-0001RS-AQ; Fri, 14 Jun 2019 08:38:03 +0000
-Received: from inva020.nxp.com ([92.121.34.13])
+	id 1hbhjS-00022f-FY; Fri, 14 Jun 2019 08:38:46 +0000
+Received: from inva021.nxp.com ([92.121.34.21])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hbhhJ-0000G2-5i
- for linux-arm-kernel@lists.infradead.org; Fri, 14 Jun 2019 08:36:34 +0000
-Received: from inva020.nxp.com (localhost [127.0.0.1])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id AE0501A05C7;
- Fri, 14 Jun 2019 10:36:31 +0200 (CEST)
+ id 1hbhiz-0001tc-DM
+ for linux-arm-kernel@lists.infradead.org; Fri, 14 Jun 2019 08:38:19 +0000
+Received: from inva021.nxp.com (localhost [127.0.0.1])
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 0D726200E49;
+ Fri, 14 Jun 2019 10:38:16 +0200 (CEST)
 Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
  [165.114.16.14])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 38AC51A05EE;
- Fri, 14 Jun 2019 10:36:19 +0200 (CEST)
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 808C1200E52;
+ Fri, 14 Jun 2019 10:38:11 +0200 (CEST)
 Received: from localhost.localdomain (mega.ap.freescale.net [10.192.208.232])
- by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 2623840310;
- Fri, 14 Jun 2019 16:36:01 +0800 (SGT)
-From: Anson.Huang@nxp.com
-To: mturquette@baylibre.com, sboyd@kernel.org, robh+dt@kernel.org,
- mark.rutland@arm.com, shawnguo@kernel.org, s.hauer@pengutronix.de,
- kernel@pengutronix.de, festevam@gmail.com, catalin.marinas@arm.com,
- will.deacon@arm.com, maxime.ripard@bootlin.com, horms+renesas@verge.net.au,
- olof@lixom.net, jagan@amarulasolutions.com, bjorn.andersson@linaro.org,
- leonard.crestez@nxp.com, dinguyen@kernel.org, enric.balletbo@collabora.com,
- aisheng.dong@nxp.com, ping.bai@nxp.com, abel.vesa@nxp.com,
- l.stach@pengutronix.de, peng.fan@nxp.com, linux-clk@vger.kernel.org,
- devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-kernel@vger.kernel.org
-Subject: [PATCH V5 5/5] arm64: defconfig: Select CONFIG_CLK_IMX8MN by default
-Date: Fri, 14 Jun 2019 16:37:47 +0800
-Message-Id: <20190614083747.28762-5-Anson.Huang@nxp.com>
+ by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id A2DE7402E6;
+ Fri, 14 Jun 2019 16:38:05 +0800 (SGT)
+From: yibin.gong@nxp.com
+To: shawnguo@kernel.org, s.hauer@pengutronix.de, festevam@gmail.com,
+ vkoul@kernel.org, dan.j.williams@intel.com, thesven73@gmail.com
+Subject: [PATCH v1] dmaengine: imx-sdma: remove BD_INTR for channel0
+Date: Fri, 14 Jun 2019 16:39:59 +0800
+Message-Id: <20190614083959.37944-1-yibin.gong@nxp.com>
 X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20190614083747.28762-1-Anson.Huang@nxp.com>
-References: <20190614083747.28762-1-Anson.Huang@nxp.com>
 X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190614_013633_414127_CF039AC6 
-X-CRM114-Status: UNSURE (   6.39  )
+X-CRM114-CacheID: sfid-20190614_013817_785065_863E0BFA 
+X-CRM114-Status: UNSURE (   8.22  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -62,7 +51,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [92.121.34.13 listed in list.dnswl.org]
+ medium trust [92.121.34.21 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -76,36 +65,53 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Linux-imx@nxp.com
+Cc: dmaengine@vger.kernel.org, linux-imx@nxp.com,
+ linux-arm-kernel@lists.infradead.org, kernel@pengutronix.de
 MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Anson Huang <Anson.Huang@nxp.com>
+From: Robin Gong <yibin.gong@nxp.com>
 
-Enable CONFIG_CLK_IMX8MN to support i.MX8MN clock driver.
+It is possible for an irq triggered by channel0 to be received later
+after clks are disabled once firmware loaded during sdma probe. If
+that happens then clearing them by writing to SDMA_H_INTR won't work
+and the system will hang processing infinite interrupts. Actually,
+don't need interrupt triggered on channel0 since it's pollling
+SDMA_H_STATSTOP to know channel0 done rather than interrupt in
+current code, just clear BD_INTR to disable channel0 interrupt to
+avoid the above case.
 
-Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
+Signed-off-by: Robin Gong <yibin.gong@nxp.com>
+Reported-by: Sven Van Asbroeck <thesven73@gmail.com>
 ---
-No changes.
----
- arch/arm64/configs/defconfig | 1 +
- 1 file changed, 1 insertion(+)
+ drivers/dma/imx-sdma.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
 
-diff --git a/arch/arm64/configs/defconfig b/arch/arm64/configs/defconfig
-index 3dfbd6a..b2de9d0 100644
---- a/arch/arm64/configs/defconfig
-+++ b/arch/arm64/configs/defconfig
-@@ -658,6 +658,7 @@ CONFIG_COMMON_CLK_S2MPS11=y
- CONFIG_CLK_QORIQ=y
- CONFIG_COMMON_CLK_PWM=y
- CONFIG_CLK_IMX8MM=y
-+CONFIG_CLK_IMX8MN=y
- CONFIG_CLK_IMX8MQ=y
- CONFIG_CLK_IMX8QXP=y
- CONFIG_TI_SCI_CLK=y
+diff --git a/drivers/dma/imx-sdma.c b/drivers/dma/imx-sdma.c
+index deea9aa..b5a1ee2 100644
+--- a/drivers/dma/imx-sdma.c
++++ b/drivers/dma/imx-sdma.c
+@@ -742,7 +742,7 @@ static int sdma_load_script(struct sdma_engine *sdma, void *buf, int size,
+ 	spin_lock_irqsave(&sdma->channel_0_lock, flags);
+ 
+ 	bd0->mode.command = C0_SETPM;
+-	bd0->mode.status = BD_DONE | BD_INTR | BD_WRAP | BD_EXTD;
++	bd0->mode.status = BD_DONE | BD_WRAP | BD_EXTD;
+ 	bd0->mode.count = size / 2;
+ 	bd0->buffer_addr = buf_phys;
+ 	bd0->ext_buffer_addr = address;
+@@ -1064,7 +1064,7 @@ static int sdma_load_context(struct sdma_channel *sdmac)
+ 	context->gReg[7] = sdmac->watermark_level;
+ 
+ 	bd0->mode.command = C0_SETDM;
+-	bd0->mode.status = BD_DONE | BD_INTR | BD_WRAP | BD_EXTD;
++	bd0->mode.status = BD_DONE | BD_WRAP | BD_EXTD;
+ 	bd0->mode.count = sizeof(*context) / 4;
+ 	bd0->buffer_addr = sdma->context_phys;
+ 	bd0->ext_buffer_addr = 2048 + (sizeof(*context) / 4) * channel;
 -- 
 2.7.4
 
