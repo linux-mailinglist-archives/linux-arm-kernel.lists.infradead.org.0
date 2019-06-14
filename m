@@ -2,56 +2,67 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 26A1545FDF
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Jun 2019 16:02:39 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 73F8645FE8
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Jun 2019 16:03:01 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=kuugeEJfMUq632D+TGSHAWx9WeptB+n2/zttblQC908=; b=iS+AUf5sWaI37CNi04sgUt/kj
-	CU9AEUfiOByQtlVXLXx+iJ00C0o6WnJ8JRxMnlorn6GW6NITQSSr9j4V9Z64UPM0Ws1deFW0Tf7U7
-	ztaz3VY23q7aXKv7uD2VoztvsiJIKwE/DWHjmdv9y57xrNAsm8X2hxYnADIr+r6yADLU27nLAi3vX
-	vBkh86sVHedXOeScFcOH3gtjvB99ZmPQnyrfr+8Xlmg8ZEB5wRMgEPl/tzlmk5xAZH5dMvO/BUd9e
-	Co9YRIS/hr+xxppmhlzzsrPUZFkGF2lT2t82qNE4Jif1kTvK5vHQ3/HTeE5RlB/xt+ZIcSo3EW1ej
-	+jgKT/sHA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=CNwl4On7bLs9cuKkK4RVhALf9Z10ACvSKSnjm8drajM=; b=ohXDI7hT0HeQ8a
+	70N0Y2TDhg5x2Wxeh6iA9plx8CxG0ZwqvGf4WX96Zs2yFcu2AFVTdxgMc3Y2sERzEeI6ZHRStE88W
+	PmWt5wR1d+dRkW5+rL4ZdBpVkICtYV21n4Yyn8kxekRXn9execYcxK1TMhMUQKD6GUybliPss3RLE
+	+rYBNcj+Y+6YQMHlQjnsJCKIsDzidWe55IdfEUKMOYhpeSbEcqpF/Rl7JNaz7mob1coF8aTIRTbSR
+	CvNgyp+Gk0V3h/JeP9b34WZiWLTpz82fIkNLRP6QDUE1nimJbERIFv66AhzVOw1lR/do0pEyqGAPB
+	OWdLIBEgnwCeaDVPycyQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hbmmp-0006vk-1V; Fri, 14 Jun 2019 14:02:35 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hbmmb-0006uS-O5; Fri, 14 Jun 2019 14:02:23 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 59C9728;
- Fri, 14 Jun 2019 07:02:20 -0700 (PDT)
-Received: from [10.1.197.57] (e110467-lin.cambridge.arm.com [10.1.197.57])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id C8EFF3F718;
- Fri, 14 Jun 2019 07:02:17 -0700 (PDT)
-Subject: Re: [PATCH 1/2] arm64: dts: rockchip: Fix multiple thermal zones
- conflict in rk3399.dtsi
-To: Daniel Lezcano <daniel.lezcano@linaro.org>,
- Heiko Stuebner <heiko@sntech.de>
-References: <20190604165802.7338-1-daniel.lezcano@linaro.org>
- <5188064.YWmxIpmbGp@phil> <55b9018e-672e-522b-d0a0-c5655be0f353@linaro.org>
-From: Robin Murphy <robin.murphy@arm.com>
-Message-ID: <e5a4f850-27e0-cad3-04bd-6c004fca2b81@arm.com>
-Date: Fri, 14 Jun 2019 15:02:16 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.6.1
+	id 1hbmnC-0007Y0-57; Fri, 14 Jun 2019 14:02:58 +0000
+Received: from mail.kernel.org ([198.145.29.99])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hbmmw-0007RL-Lu
+ for linux-arm-kernel@lists.infradead.org; Fri, 14 Jun 2019 14:02:44 +0000
+Received: from localhost (83-86-89-107.cable.dynamic.v4.ziggo.nl
+ [83.86.89.107])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id F10F42064A;
+ Fri, 14 Jun 2019 14:02:40 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1560520961;
+ bh=yuQRJdK0c0k8QDLCPmaaUBPA4Gh5iMSc87ydddzUjLY=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=Adj/ubhVrddpf3XNZqH7bla3F/OQLtlWktGpnu78fRXaEWJVclE8EAVB7iVcwuXIj
+ MgEu3GKKHjwm4kv6V7mrBTfmdB65iAPolSabTzDn8Y8MigqQqnxVgShMq6aUvnqaEX
+ cqT5x9DBfftx8QKc8qPay9S9idxZcSOh+UlLdp+0=
+Date: Fri, 14 Jun 2019 16:02:39 +0200
+From: Greg KH <gregkh@linuxfoundation.org>
+To: Christoph Hellwig <hch@lst.de>
+Subject: Re: [PATCH 12/16] staging/comedi: mark as broken
+Message-ID: <20190614140239.GA7234@kroah.com>
+References: <20190614134726.3827-1-hch@lst.de>
+ <20190614134726.3827-13-hch@lst.de>
 MIME-Version: 1.0
-In-Reply-To: <55b9018e-672e-522b-d0a0-c5655be0f353@linaro.org>
-Content-Language: en-GB
+Content-Disposition: inline
+In-Reply-To: <20190614134726.3827-13-hch@lst.de>
+User-Agent: Mutt/1.12.0 (2019-05-25)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190614_070221_881037_7F701E78 
-X-CRM114-Status: GOOD (  22.88  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190614_070242_751444_E52333D2 
+X-CRM114-Status: GOOD (  15.95  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ 0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -63,100 +74,53 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
- <devicetree@vger.kernel.org>, Emil Renner Berthing <kernel@esmil.dk>,
- "open list:ARM/Rockchip SoC support" <linux-rockchip@lists.infradead.org>,
- Tony Xie <tony.xie@rock-chips.com>, Viresh Kumar <viresh.kumar@linaro.org>,
- Randy Li <ayaka@soulik.info>, linux-kernel@vger.kernel.org,
- Vicente Bergas <vicencb@gmail.com>, dianders@chromium.org, edubezval@gmail.com,
- Enric Balletbo i Serra <enric.balletbo@collabora.com>,
- Rob Herring <robh+dt@kernel.org>,
- Klaus Goger <klaus.goger@theobroma-systems.com>,
- manivannan.sadhasivam@linaro.org, Matthias Brugger <matthias.bgg@gmail.com>,
- Philipp Tomsich <philipp.tomsich@theobroma-systems.com>,
- "moderated list:ARM/Rockchip SoC support"
- <linux-arm-kernel@lists.infradead.org>,
- Christoph Muellner <christoph.muellner@theobroma-systems.com>
+Cc: Maxime Ripard <maxime.ripard@bootlin.com>,
+ Joonas Lahtinen <joonas.lahtinen@linux.intel.com>,
+ dri-devel@lists.freedesktop.org, linux-mm@kvack.org,
+ devel@driverdev.osuosl.org, linux-s390@vger.kernel.org,
+ linux-rdma@vger.kernel.org, David Airlie <airlied@linux.ie>,
+ linux-media@vger.kernel.org, Intel Linux Wireless <linuxwifi@intel.com>,
+ intel-gfx@lists.freedesktop.org,
+ Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
+ Jani Nikula <jani.nikula@linux.intel.com>, Ian Abbott <abbotti@mev.co.uk>,
+ Rodrigo Vivi <rodrigo.vivi@intel.com>, Sean Paul <sean@poorly.run>,
+ "moderated list:ARM PORT" <linux-arm-kernel@lists.infradead.org>,
+ netdev@vger.kernel.org, linux-wireless@vger.kernel.org,
+ linux-kernel@vger.kernel.org, H Hartley Sweeten <hsweeten@visionengravers.com>,
+ iommu@lists.linux-foundation.org, Daniel Vetter <daniel@ffwll.ch>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 14/06/2019 14:03, Daniel Lezcano wrote:
-> On 14/06/2019 11:35, Heiko Stuebner wrote:
->> Hi Daniel,
->>
->> Am Dienstag, 4. Juni 2019, 18:57:57 CEST schrieb Daniel Lezcano:
->>> Currently the common thermal zones definitions for the rk3399 assumes
->>> multiple thermal zones are supported by the governors. This is not the
->>> case and each thermal zone has its own governor instance acting
->>> individually without collaboration with other governors.
->>>
->>> As the cooling device for the CPU and the GPU thermal zones is the
->>> same, each governors take different decisions for the same cooling
->>> device leading to conflicting instructions and an erratic behavior.
->>>
->>> As the cooling-maps is about to become an optional property, let's
->>> remove the cpu cooling device map from the GPU thermal zone.
->>>
->>> Signed-off-by: Daniel Lezcano <daniel.lezcano@linaro.org>
->>> ---
->>>   arch/arm64/boot/dts/rockchip/rk3399.dtsi | 9 ---------
->>>   1 file changed, 9 deletions(-)
->>>
->>> diff --git a/arch/arm64/boot/dts/rockchip/rk3399.dtsi b/arch/arm64/boot/dts/rockchip/rk3399.dtsi
->>> index 196ac9b78076..e1357e0f60f7 100644
->>> --- a/arch/arm64/boot/dts/rockchip/rk3399.dtsi
->>> +++ b/arch/arm64/boot/dts/rockchip/rk3399.dtsi
->>> @@ -821,15 +821,6 @@
->>>   					type = "critical";
->>>   				};
->>>   			};
->>> -
->>> -			cooling-maps {
->>> -				map0 {
->>> -					trip = <&gpu_alert0>;
->>> -					cooling-device =
->>> -						<&cpu_b0 THERMAL_NO_LIMIT THERMAL_NO_LIMIT>,
->>> -						<&cpu_b1 THERMAL_NO_LIMIT THERMAL_NO_LIMIT>;
->>> -				};
->>> -			};
->>>   		};
->>>   	};
->>
->> my knowledge of the thermal framework is not that big, but what about the
->> rk3399-devices which further detail the cooling-maps like rk3399-gru-kevin
->> and the rk3399-nanopc-t4 with its fan-handling in the cooling-maps?
+On Fri, Jun 14, 2019 at 03:47:22PM +0200, Christoph Hellwig wrote:
+> comedi_buf.c abuse the DMA API in gravely broken ways, as it assumes it
+> can call virt_to_page on the result, and the just remap it as uncached
+> using vmap.  Disable the driver until this API abuse has been fixed.
 > 
-> The rk3399-gru-kevin is correct.
+> Signed-off-by: Christoph Hellwig <hch@lst.de>
+> ---
+>  drivers/staging/comedi/Kconfig | 1 +
+>  1 file changed, 1 insertion(+)
 > 
-> The rk3399-nanopc-t4 is not correct because the cpu and the gpu are
-> sharing the same cooling device (the fan). There are different
-> configurations:
-> 
-> 1. The cpu cooling device for the CPU and the fan for the GPU
-> 
-> 2. Different trip points on the CPU thermal zone, eg. one to for the CPU
-> cooling device and another one for the fan.
-> 
-> There are some variant for the above. If this board is not on battery,
-> you may want to give priority to the throughput, so activate the fan
-> first and then cool down the CPU. Or if you are on battery, you may want
-> to invert the trip points.
-> 
-> In any case, it is not possible to share the same cooling device for
-> different thermal zones.
+> diff --git a/drivers/staging/comedi/Kconfig b/drivers/staging/comedi/Kconfig
+> index 049b659fa6ad..e7c021d76cfa 100644
+> --- a/drivers/staging/comedi/Kconfig
+> +++ b/drivers/staging/comedi/Kconfig
+> @@ -1,6 +1,7 @@
+>  # SPDX-License-Identifier: GPL-2.0
+>  config COMEDI
+>  	tristate "Data acquisition support (comedi)"
+> +	depends on BROKEN
 
-OK, thanks for the clarification. I'll get my board set up again to 
-figure out the best fix for rk3399-nanopc-t4 (FWIW most users are 
-probably just using passive cooling or a plain DC fan anyway). You might 
-want to raise this issue with the maintainers of 
-arch/arm/boot/dts/exynos5422-odroidxu3-common.dtsi, since the 
-everything-shared-by-everything approach in there was what I used as a 
-reference.
+Um, that's a huge sledgehammer.
 
-Robin.
+Perhaps a hint as to how we can fix this up?  This is the first time
+I've heard of the comedi code not handling dma properly.
+
+thanks,
+
+greg k-h
 
 _______________________________________________
 linux-arm-kernel mailing list
