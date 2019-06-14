@@ -2,75 +2,77 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 025DC45E59
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Jun 2019 15:38:20 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A386645E98
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Jun 2019 15:43:04 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Lla3PhpFQOFBGWGjNyF1LjYaMifg3kGE3DvthtaTG9U=; b=G/0foDiN6DzoB5
-	+NA5cszmVrLgKdSZaJamztlMoS/xKH+BY35xqaK8GYpzGZ6ZzOaw90aQ0m8J6qTEfUF12MX1IDWOp
-	HchGam8gWzaoPIN44vvxWQGbBCdhDYKDpBULu3ABWF7BubPmEIKR2X6dPDMQexsU+i2BKXlc9Zho4
-	2P/E+m5/ToTk66PNwMvaGwunAlT2poKZyz4ctW8WI2jqhaO+2uyMPDpWqTFTLXy8od6ArisNfvH7J
-	AuFw7A6LIwidBYBzBdLTN2MptjRxcISRpcH4RStDgGyiXw1IWz+0Jxgn5fx2g2e7yQTAZVi1wQAn8
-	iucOhctE2+mRBBxSJzrA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=+AGtv/zoEjVdR4FDaWlvZazL18I5uVQSpOO5BGh/SvA=; b=bgK8TL7MsFcxgo
+	j5OoxC/E+3VB+rsMb6ASYaM5C3xZ5ZA1syAyT7ohjcTGKQl6tCBuqFJ2/6MWzR6v1TNbzv6UZfxOa
+	imw+wZlLw2aCfVPWhZP58N7CiVDUYN3LvYy/6lBCKlTj7FmxumYUfsYOpOTgnKIES+RnxMTmBg+nu
+	4EYnKtt8n7SJ/YwhKBacR2Izw7vuLJydopt8ben4Xe97doTAe0uWCduiWmlaNEilro00F9YuinNOG
+	mUyoxGuUhxkOzBxKUoFHLtjcZt38oGtKQjB/aZjYktpCw1pEteCie3e8c68jwu+qMgXvvyWt4eqPi
+	1d8Jelw89d/KFc+GYshA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hbmPG-0007C7-K5; Fri, 14 Jun 2019 13:38:14 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1hbmTt-0000Zs-WF; Fri, 14 Jun 2019 13:43:02 +0000
+Received: from lelv0142.ext.ti.com ([198.47.23.249])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hbmP4-0007Bn-CU
- for linux-arm-kernel@lists.infradead.org; Fri, 14 Jun 2019 13:38:03 +0000
-Received: from mail-qt1-f182.google.com (mail-qt1-f182.google.com
- [209.85.160.182])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 6E5F821773
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 14 Jun 2019 13:38:01 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1560519481;
- bh=5kPUwCBQMbS2M8o+wglPzUUXRhVd4mGNXeo+GKUnF6A=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=0pkIZa6kP5BSGUByBNXPb11Mtf9FoTuMz5OP/9UhNutVmICtSUC0evQmkqa7iouuB
- gnqMfGThUsxcWLoeMeycy32pw31W8V3FRPXUbwnacWCx00mOPxpQA406tg6jwOfjOO
- cCPg8YY4ve8ySWSx2GrOulpCip2vxl2n5Arfh2Gg=
-Received: by mail-qt1-f182.google.com with SMTP id h21so2398074qtn.13
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 14 Jun 2019 06:38:01 -0700 (PDT)
-X-Gm-Message-State: APjAAAUEoXSA8HWriQ4BMN+uVooOUzyiDYaFBhyMStn+34uiRVQSMhGn
- j/FYzLdrD3GU3IYjyOp01xgt7dd4SpO5yYbEzw==
-X-Google-Smtp-Source: APXvYqyAj1odsDjtBwKdPSSywnQwCLoF/jNhPP0/kPXHppC/FT4M38muk0yGeu+a4kpzJwb49v6vKwKl9z5OZO/sjH8=
-X-Received: by 2002:aed:3f10:: with SMTP id p16mr15675043qtf.110.1560519480558; 
- Fri, 14 Jun 2019 06:38:00 -0700 (PDT)
+ id 1hbmTj-0000ZP-N3
+ for linux-arm-kernel@lists.infradead.org; Fri, 14 Jun 2019 13:42:53 +0000
+Received: from lelv0266.itg.ti.com ([10.180.67.225])
+ by lelv0142.ext.ti.com (8.15.2/8.15.2) with ESMTP id x5EDgjcU015726;
+ Fri, 14 Jun 2019 08:42:45 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
+ s=ti-com-17Q1; t=1560519765;
+ bh=JTrKAS5DxBlxyr/RUcG7xCZZCkjwEovfo2qd+cpbq7o=;
+ h=Subject:To:CC:References:From:Date:In-Reply-To;
+ b=HEpkw3CrAA6B+lRcszpV93/Y16UTfxTK16V1R8rSpRtlNuPfp4MuPbeje6tJaOzv5
+ fLdJFQ9otRoony+Lme3E13MenSQy4LEqEfVsXt7mou3/cYyqI1RR0wYBEpi47ZEC48
+ vJVGouhBNOuc0lWGVRF9c2Y/XVhzbzCnR+kY2Cn8=
+Received: from DFLE106.ent.ti.com (dfle106.ent.ti.com [10.64.6.27])
+ by lelv0266.itg.ti.com (8.15.2/8.15.2) with ESMTPS id x5EDgjTi018675
+ (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
+ Fri, 14 Jun 2019 08:42:45 -0500
+Received: from DFLE102.ent.ti.com (10.64.6.23) by DFLE106.ent.ti.com
+ (10.64.6.27) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5; Fri, 14
+ Jun 2019 08:42:45 -0500
+Received: from lelv0327.itg.ti.com (10.180.67.183) by DFLE102.ent.ti.com
+ (10.64.6.23) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5 via
+ Frontend Transport; Fri, 14 Jun 2019 08:42:45 -0500
+Received: from [192.168.2.6] (ileax41-snat.itg.ti.com [10.172.224.153])
+ by lelv0327.itg.ti.com (8.15.2/8.15.2) with ESMTP id x5EDggeV100780;
+ Fri, 14 Jun 2019 08:42:43 -0500
+Subject: Re: [PATCH 09/16] dt-bindings: dma: ti: Add document for K3 UDMA
+To: Rob Herring <robh@kernel.org>
+References: <20190506123456.6777-1-peter.ujfalusi@ti.com>
+ <20190506123456.6777-10-peter.ujfalusi@ti.com> <20190613181626.GA7039@bogus>
+ <e0d6a264-96b5-31a6-e70b-3b1c2d863988@ti.com>
+ <CAL_JsqJNMkKL_FubZfjKY6jLebMetmgR24EoendHoPM2ckrUQA@mail.gmail.com>
+From: Peter Ujfalusi <peter.ujfalusi@ti.com>
+Message-ID: <e811d674-b79f-4da8-c632-c7a90844b6c5@ti.com>
+Date: Fri, 14 Jun 2019 16:43:15 +0300
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.7.0
 MIME-Version: 1.0
-References: <91618c7e9a5497462afa74c6d8a947f709f54331.1560158667.git-series.maxime.ripard@bootlin.com>
- <d198d29119b37b2fdb700d8992b31963e98b6693.1560158667.git-series.maxime.ripard@bootlin.com>
- <20190610143139.GG28724@lunn.ch>
- <CAL_JsqJahCJcdu=+fA=ewbGezuEJ2W6uwMVxkQpdY6w+1OWVVA@mail.gmail.com>
- <20190611145856.ua2ggkn6ccww6vpp@flea>
- <CAL_Jsq+KwH-j8f+r+fWhMuqJPWcHdBQau+nUz3NRAXYTpsyuvg@mail.gmail.com>
- <20190614095048.j2xwdsucucbakkl2@flea>
-In-Reply-To: <20190614095048.j2xwdsucucbakkl2@flea>
-From: Rob Herring <robh+dt@kernel.org>
-Date: Fri, 14 Jun 2019 07:37:49 -0600
-X-Gmail-Original-Message-ID: <CAL_Jsq+=yh3WhTg=1G02LUHGLHts6mECR9BQ+n7qHAihFViAxA@mail.gmail.com>
-Message-ID: <CAL_Jsq+=yh3WhTg=1G02LUHGLHts6mECR9BQ+n7qHAihFViAxA@mail.gmail.com>
-Subject: Re: [PATCH v2 05/11] dt-bindings: net: sun4i-emac: Convert the
- binding to a schemas
-To: Maxime Ripard <maxime.ripard@bootlin.com>
+In-Reply-To: <CAL_JsqJNMkKL_FubZfjKY6jLebMetmgR24EoendHoPM2ckrUQA@mail.gmail.com>
+Content-Language: en-US
+X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190614_063802_458302_4D10D44B 
-X-CRM114-Status: GOOD (  34.68  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190614_064251_859346_DDD4CD92 
+X-CRM114-Status: GOOD (  19.77  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [198.47.23.249 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -92,130 +94,82 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Andrew Lunn <andrew@lunn.ch>,
- Florian Fainelli <f.fainelli@gmail.com>,
- Alexandre Torgue <alexandre.torgue@st.com>, devicetree@vger.kernel.org,
- =?UTF-8?Q?Antoine_T=C3=A9nart?= <antoine.tenart@bootlin.com>,
- netdev <netdev@vger.kernel.org>, linux-stm32@st-md-mailman.stormreply.com,
- Chen-Yu Tsai <wens@csie.org>, Maxime Coquelin <mcoquelin.stm32@gmail.com>,
- Maxime Chevallier <maxime.chevallier@bootlin.com>,
- Frank Rowand <frowand.list@gmail.com>,
- "David S . Miller" <davem@davemloft.net>,
+Cc: Nishanth Menon <nm@ti.com>, devicetree@vger.kernel.org,
+ Grygorii Strashko <grygorii.strashko@ti.com>,
+ Lokesh Vutla <lokeshvutla@ti.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Tero Kristo <t-kristo@ti.com>, Tony Lindgren <tony@atomide.com>,
+ Vinod <vkoul@kernel.org>, Santosh Shilimkar <ssantosh@kernel.org>, "open
+ list:DMA GENERIC OFFLOAD ENGINE SUBSYSTEM" <dmaengine@vger.kernel.org>,
+ Dan Williams <dan.j.williams@intel.com>,
  "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>, Heiner Kallweit <hkallweit1@gmail.com>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+ <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Jun 14, 2019 at 3:50 AM Maxime Ripard <maxime.ripard@bootlin.com> wrote:
->
-> Hi Rob,
->
-> On Thu, Jun 13, 2019 at 11:32:30AM -0600, Rob Herring wrote:
-> > On Thu, Jun 13, 2019 at 7:25 AM Maxime Ripard <maxime.ripard@bootlin.com> wrote:
-> > > On Mon, Jun 10, 2019 at 12:59:29PM -0600, Rob Herring wrote:
-> > > > On Mon, Jun 10, 2019 at 8:31 AM Andrew Lunn <andrew@lunn.ch> wrote:
-> > > > >
-> > > > > > +required:
-> > > > > > +  - compatible
-> > > > > > +  - reg
-> > > > > > +  - interrupts
-> > > > > > +  - clocks
-> > > > > > +  - phy
-> > > > > > +  - allwinner,sram
-> > > > >
-> > > > > Quoting ethernet.txt:
-> > > > >
-> > > > > - phy: the same as "phy-handle" property, not recommended for new bindings.
-> > > > >
-> > > > > - phy-handle: phandle, specifies a reference to a node representing a PHY
-> > > > >   device; this property is described in the Devicetree Specification and so
-> > > > >   preferred;
-> > > > >
-> > > > > Can this be expressed in Yaml? Accept phy, but give a warning. Accept
-> > > > > phy-handle without a warning? Enforce that one or the other is
-> > > > > present?
-> > > >
-> > > > The common schema could have 'phy: false'. This works as long as we've
-> > > > updated (or plan to) all the dts files to use phy-handle. The issue is
-> > > > how far back do you need kernels to work with newer dtbs.
-> > >
-> > > I guess another question being raised by this is how hard do we want
-> > > to be a deprecating things, and should the DT validation be a tool to
-> > > enforce that validation.
-> > >
-> > > For example, you've used in you GPIO meta-schema false for anything
-> > > ending with -gpio, since it's deprecated. This means that we can't
-> > > convert any binding using a deprecated property without introducing a
-> > > build error in the schemas, which in turn means that you'll have a lot
-> > > of friction to support schemas, since you would have to convert your
-> > > driver to support the new way of doing things, before being able to
-> > > have a schema for your binding.
-> >
-> > I've err'ed on the stricter side. We may need to back off on some
-> > things to get to warning free builds. Really, I'd like to have levels
-> > to separate checks for existing bindings, new bindings, and pedantic
-> > checks.
->
-> That would be awesome. Do you have a plan for that already though? I
-> can't really think of a way to implement it at the moment.
-
-The only idea I have so far is some sort of 'level' property and then
-we filter schema based on what level we run validation at. I'm not too
-sure if that would take some restructuring of schema though because
-it's all a mixture ATM.
-
-The other aspect is how to set the 'level' per platform so new
-platforms have to pass a higher level. We already have that problem
-just with dtc warnings. Ideally, we should build new platforms with
-'W=1' or 'W=12'. Maybe the soc/board schema's can specify the level.
-
-> > For '-gpio', we may be okay because the suffix is handled in the GPIO
-> > core. It should be safe to update the binding to use the preferred
-> > form.
->
-> It might require a bit of work though in drivers, since the fallback
-> is only handled if you're using the gpiod API, and not the legacy one.
->
-> > > And then, we need to agree on how to express the deprecation. I guess
-> > > we could allow the deprecated keyword that will be there in the
-> > > draft-8, instead of ad-hoc solutions?
-> >
-> > Oh, nice! I hadn't seen that. Seems like we should use that. We can
-> > start even without draft-8 support because unknown keywords are
-> > ignored (though we probably have to add it to our meta-schema). Then
-> > at some point we can add a 'disallow deprecated' flag to the tool.
->
-> So, in the generic ethernet binding, we would have:
->
-> properties:
->   phy-handle:
->     $ref: /schemas/types.yaml#definitions/phandle
->     description:
->       Specifies a reference to a node representing a PHY device.
->
->   phy:
->     $ref: "#/properties/phy-handle"
->     deprecated: true
->
->   phy-device:
->     $ref: "#/properties/phy-handle"
->     deprecated: true
->
-> Does that sound good?
-
-Yes.
-
-> Now, how do we handle the case above, in the device specific binding?
-> We just require the non-deprecated one, or the three?
-
-Wouldn't that just depend if all the instances of the device specific
-binding have been updated?
-
-Rob
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+Ck9uIDE0LzA2LzIwMTkgMTYuMjAsIFJvYiBIZXJyaW5nIHdyb3RlOgo+IE9uIFRodSwgSnVuIDEz
+LCAyMDE5IGF0IDI6MzMgUE0gUGV0ZXIgVWpmYWx1c2kgPHBldGVyLnVqZmFsdXNpQHRpLmNvbT4g
+d3JvdGU6Cj4+Cj4+IFJvYiwKPj4KPj4gT24gMTMvMDYvMjAxOSAyMS4xNiwgUm9iIEhlcnJpbmcg
+d3JvdGU6Cj4+Pj4gK1JlbW90ZSBQU0ktTCBlbmRwb2ludAo+Pj4+ICsKPj4+PiArUmVxdWlyZWQg
+cHJvcGVydGllczoKPj4+PiArLS0tLS0tLS0tLS0tLS0tLS0tLS0KPj4+PiArLSB0aSxwc2lsLWJh
+c2U6ICAgICAgICAgICAgIFBTSS1MIHRocmVhZCBJRCBiYXNlIG9mIHRoZSBlbmRwb2ludAo+Pj4+
+ICsKPj4+PiArV2l0aGluIHRoZSBQU0ktTCBlbmRwb2ludCBub2RlIHRocmVhZCBjb25maWd1cmF0
+aW9uIHN1Ym5vZGVzIG11c3QgcHJlc2VudCB3aXRoOgo+Pj4+ICt0aSxwc2lsLWNvbmZpZ1ggbmFt
+aW5nIGNvbnZlbnRpb24sIHdoZXJlIFggaXMgdGhlIHRocmVhZCBJRCBvZmZzZXQuCj4+Pgo+Pj4g
+RG9uJ3QgdXNlIHZlbmRvciBwcmVmaXhlcyBvbiBub2RlIG5hbWVzLgo+Pgo+PiBPSy4KPj4KPj4+
+PiArCj4+Pj4gK0NvbmZpZ3VyYXRpb24gbm9kZSBSZXF1aXJlZCBwcm9wZXJ0aWVzOgo+Pj4+ICst
+LS0tLS0tLS0tLS0tLS0tLS0tLQo+Pj4+ICstIGxpbnV4LHVkbWEtbW9kZTogIENoYW5uZWwgbW9k
+ZSwgY2FuIGJlOgo+Pj4+ICsgICAgICAgICAgICAgICAgICAgIC0gVURNQV9QS1RfTU9ERTogZm9y
+IFBhY2tldCBtb2RlIGNoYW5uZWxzIChwZXJpcGhlcmFscykKPj4+PiArICAgICAgICAgICAgICAg
+ICAgICAtIFVETUFfVFJfTU9ERTogZm9yIFRoaXJkLVBhcnR5IG1vZGUKPj4+Cj4+PiBUaGlzIGlz
+IGhhcmRseSBhIGNvbW1vbiBsaW51eCB0aGluZy4gV2hhdCBkZXRlcm1pbmVzIHRoZSB2YWx1ZSBo
+ZXJlLgo+Pgo+PiBVbmZvcnR1bmF0ZWx5IGl0IGlzLgo+IAo+IE5vLCBpdCdzIGEgZmVhdHVyZSBv
+ZiB5b3VyIGgvdyBhbmQgaW4gbm8gd2F5IGlzIHNvbWV0aGluZyBsaW51eAo+IGRlZmluZWQgd2hp
+Y2ggaXMgdGhlIHBvaW50IG9mICdsaW51eCcgcHJlZml4LgoKVGhlIGNoYW5uZWwgY2FuIGJlIGVp
+dGhlciBQYWNrZXQgb3IgVFIgbW9kZS4gVGhlIEhXIGlzIHJlYWxseSBmbGV4aWJsZQpvbiB0aGlz
+IChhbmQgb24gb3RoZXIgdGhpbmdzIGFzIHdlbGwpLgpJdCBqdXN0IGhhcHBlbnMgdGhhdCBMaW51
+eCBuZWVkIHRvIHVzZSBzcGVjaWZpYyBjaGFubmVscyBpbiBhIHNwZWNpZmljIG1vZGUuCgpXb3Vs
+ZCBpdCBoZWxwIGlmIHdlIGFzc3VtZSB0aGF0IGFsbCBjaGFubmVscyBhcmUgdXNlZCBpbiBQYWNr
+ZXQgbW9kZSwKYnV0IHdlIGhhdmUgbGludXgsdHItbW9kZSBib29sIHRvIGluZGljYXRlIHRoYXQg
+dGhlIGdpdmVuIGNoYW5uZWwgaW4KTGludXggbmVlZCB0byBiZSB1c2VkIGluIFRSIG1vZGUuCgo+
+PiBFYWNoIGNoYW5uZWwgY2FuIGJlIGNvbmZpZ3VyZWQgdG8gUGFja2V0IG9yIFRSIG1vZGUuIEZv
+ciBzb21lCj4+IHBlcmlwaGVyYWxzIGl0IGlzIHRydWUgdGhhdCB0aGV5IG9ubHkgc3VwcG9ydCBw
+YWNrZXQgbW9kZSwgdGhlc2UgYXJlIHRoZQo+PiBuZXdlciBQU0ktTCBuYXRpdmUgcGVyaXBoZXJh
+bHMuCj4+IEZvciB0aGVzZSBjaGFubmVscyBhIHVkbWEtbW9kZSBwcm9wZXJ0eSB3b3VsZCBiZSBj
+b3JyZWN0Lgo+Pgo+PiBCdXQgd2UgaGF2ZSBsZWdhY3kgcGVyaXBoZXJhbHMgYXMgd2VsbCBhbmQg
+dGhleSBhcmUgc2VydmljZWQgYnkgUERNQQo+PiAod2hpY2ggaXMgYSBuYXRpdmUgcGVyaXBoZXJh
+bCBkZXNpZ25lZCB0byB0YWxrIHRvIHRoZSBnaXZlbiBsZWdhY3kgSVApLgo+PiBXZSBjYW4gdXNl
+IGVpdGhlciBwYWNrZXQgb3IgVFIgbW9kZSBpbiBVRE1BUCB0byB0YWxrIHRvIFBETUFzLCBpdCBp
+cyBpbgo+PiBtb3N0IGNhc2VzIGNsZWFyIHdoYXQgdG8gdXNlLCBidXQgZm9yIGV4YW1wbGUgZm9y
+IGF1ZGlvIChNY0FTUCkgY2hhbm5lbHMKPj4gTGludXggaXMgdXNpbmcgVFIgY2hhbm5lbCBiZWNh
+dXNlIHdlIG5lZWQgY3ljbGljIERNQSB3aGlsZSBmb3IgZXhhbXBsZQo+PiBSVE9TIGlzIHVzaW5n
+IFBhY2tldCBtb2RlIGFzIGl0IGZpdHMgdGhlaXIgbmVlZHMgYmV0dGVyLgo+Pgo+PiBIZXJlIEkg
+bmVlZCB0byBwcmVmaXggdGhlIHVkbWEtbW9kZSB3aXRoIGxpbnV4IGFzIHRoZSBtb2RlIGlzIHVz
+ZWQgYnkKPj4gTGludXgsIGJ1dCBvdGhlciBPUyBtaWdodCBvcHQgdG8gdXNlIGRpZmZlcmVudCBj
+aGFubmVsIG1vZGUuCj4gCj4gU28geW91J2QgbmVlZCA8b3M+LHVkbWEtbW9kZT8gVGhhdCBkb2Vz
+bid0IHdvcmsuLi4gSWYgdGhlIHNldHRpbmcgaXMKPiBwZXIgT1MsIHRoZW4gaXQgYmVsb25ncyBp
+biB0aGUgT1MgYmVjYXVzZSB0aGUgc2FtZSBkdGIgc2hvdWxkIHdvcmsKPiBhY3Jvc3MgT1Mncy4K
+ClNvIEkgc2hvdWxkIGhhdmUgYSB0YWJsZSBmb3IgdGhlIHRocmVhZCBJRHMgaW4gdGhlIERNQSBk
+cml2ZXIgYW5kIG1hcmsKY2hhbm5lbHMgYXMgVFIgb3IgUGFja2V0IGluIHRoZXJlIGZvciBMaW51
+eCB1c2U/Ck9yIGp1c3QgYW4gYXJyYXkgd2hpY2ggd291bGQgbWFyayB0aGUgbm9uIHBhY2tldCBQ
+U0ktTCB0aHJlYWQgSURzPwoKSSBzdGlsbCBwcmVmZXIgdG8gaGF2ZSB0aGlzIGNvbWluZyB2aWEg
+RFQgYXMgYSBMaW51eCBwYXJhbWV0ZXIgYXMgb3RoZXIKT1MgaXMgZnJlZSB0byBpZ25vcmUgdGhl
+IGxpbnV4LHVkbWEtbW9kZSwgYnV0IGFzIEkgc2FpZCB0aGVyZSBhcmUKY2VydGFpbiBjaGFubmVs
+cyB3aGljaCBtdXN0IGJlIHVzZWQgaW4gTGludXggaW4gY2VydGFpbiBtb2RlIHdoaWxlCm90aGVy
+cyBpbiBkaWZmZXJlbnQgbW9kZS4KCj4+IFRoZSByZWFzb24gd2h5IHRoaXMgbmVlZHMgdG8gYmUg
+aW4gdGhlIERUIGlzIHRoYXQgd2hlbiB0aGUgY2hhbm5lbCBpcwo+PiByZXF1ZXN0ZWQgd2UgbmVl
+ZCB0byBjb25maWd1cmUgdGhlIG1vZGUgYW5kIGl0IGNhbiBub3QgYmUgc3dhcHBlZAo+PiBydW50
+aW1lIGVhc2lseSBiZXR3ZWVuIFBhY2tldCBhbmQgVFIgbW9kZS4KPiAKPiBTbyB3aGVuIHRoZSBj
+bGllbnQgbWFrZXMgdGhlIGNoYW5uZWwgcmVxdWVzdCwgd2h5IGRvZXNuJ3QgaXQgc3BlY2lmeSB0
+aGUgbW9kZT8KClRoaXMgaXMgVURNQVAgaW50ZXJuYWwgaW5mb3JtYXRpb24gb24gd2hhdCB0eXBl
+IG9mIERlc2NyaXB0b3JzIHRoZQpjaGFubmVsIHdpbGwgZXhwZWN0IGFuZCBob3cgaXQgaXMgZ29p
+bmcgdG8gZGlzcGF0Y2ggdGhlIHdvcmsuCgpQYWNrZXQgYW5kIFRSIG1vZGUgYXQgdGhlIGVuZCBk
+b2VzIHRoZSBzYW1lIHRoaW5nLCBidXQgaW4gYSBjb21wbGV0ZWx5CmRpZmZlcmVudCB3YXkuCgot
+IFDDqXRlcgoKVGV4YXMgSW5zdHJ1bWVudHMgRmlubGFuZCBPeSwgUG9ya2thbGFua2F0dSAyMiwg
+MDAxODAgSGVsc2lua2kuClktdHVubnVzL0J1c2luZXNzIElEOiAwNjE1NTIxLTQuIEtvdGlwYWlr
+a2EvRG9taWNpbGU6IEhlbHNpbmtpCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2Vy
+bmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1h
+bi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
