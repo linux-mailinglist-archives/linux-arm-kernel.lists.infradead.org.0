@@ -2,82 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CA2D7452A4
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Jun 2019 05:19:04 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B0EB5452AA
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Jun 2019 05:19:49 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=bLSscBmNJRGAuE2Om45Yx19FF7uscGX3IETCW+Os4OY=; b=N3YuM+46HhN/8/
-	kXoGSG5G47e1L41oT9DoN5aqWPgDLlrF99hv3386c0hauqsZukq/AQN4763x5/iCkDqCb7ev5u1Ma
-	71LDLn64MYe/9PLy9jUPBzu/JYuVs+8kcl5iQAhU7AXEcZZrchkn7x/kULpH+GAn+hFMXFg3FiirM
-	3+FgTmHZfN7kg4GfeVi6DuP9gbNwj29/MwwddX7dd8MN05Au6dcvmjcCnwJsh60MYw/0iWCs/idTH
-	kfDBNCB59V9A6HUbCT+gBZ9TzhtppFKo8KEDQggTwuIYld24KOn+x7KlVjSE2AFX51zJRkT79h8e5
-	FKRNvdW2viXWmAmrOj9Q==;
+	List-Owner; bh=nYqtYuhHl4/o54n2QKOVooy+a9jqsUwunRWlifnsV7w=; b=VZVwPdPn6rJ6eV
+	AGXzFmDCHDN4EhhRvzyOkOLeOngnE6kd23nqY1aFbKscpvRAXnoggwsZiBcm2MkbMzQUmmmOcx712
+	gqzVYpqp/f/nZQKYoidrRY/9ooEwQ/bSU16HCbKJfiSnsAlUKj/WYuSNDo6rbnmvVMsg06FzdA94m
+	C1OQ0G1pQ9N7TF0J2zYvmIhMeMoozTrxZlan9L2JhJnxJp4/4V1/BlRiNDrphKD91Bjfyv2/GGr2V
+	nFZr6NcgIRQv+teG3mG/1aNU892pqaRMwDHYUpz4+LCM03YRbGKhsl/9jOmbRM7OLPL4hk6pTJpml
+	sx9qUkBampR1Ilvol8Cg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hbck0-0006ue-63; Fri, 14 Jun 2019 03:19:00 +0000
-Received: from mail-pl1-x642.google.com ([2607:f8b0:4864:20::642])
+	id 1hbckm-0007WQ-3a; Fri, 14 Jun 2019 03:19:48 +0000
+Received: from mail-pg1-x544.google.com ([2607:f8b0:4864:20::544])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hbcdx-0000WE-Ar
- for linux-arm-kernel@lists.infradead.org; Fri, 14 Jun 2019 03:12:46 +0000
-Received: by mail-pl1-x642.google.com with SMTP id p1so382045plo.2
+ id 1hbcdz-0000Y2-Mr
+ for linux-arm-kernel@lists.infradead.org; Fri, 14 Jun 2019 03:12:49 +0000
+Received: by mail-pg1-x544.google.com with SMTP id f25so662639pgv.10
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 13 Jun 2019 20:12:45 -0700 (PDT)
+ Thu, 13 Jun 2019 20:12:47 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=7MRMdAKqkkU6zuM8WMZXIs4D8fug3sxafZUJy2Rr9SE=;
- b=zIBaeowzCoFmP6lTOOtVqg/coHbsWzGE6IBagj6ylKyIvZwnD6kH8rzh4+Rv3ir17v
- 1Iv/Z0kG2fU8wIp8nOT0hJqzoN8Hkd4pviocn6TLwNgf4OfMlC16x+V8vN8XjM+4i2aU
- lDKKqPw1NWmXYS/R5KBvQ/FLkaSYfma/KfVvfIAd/ZUfK2O1lFmzB/hNohE6YPUSH5vJ
- fMSmeop/Yiwuzr680e0cWfbIKBAYuRran7/zaMqPOok2xS7XSbcibw6dL3UX0yaskt/q
- bkLWeBgRG96yH33aA4S6a33qUazKKP4YfaEZInOrc9MPcryBfcvP6y28zmRVLTTNNzJ2
- 5KeA==
+ bh=EmoJPia4REdmsbQ4H3ol9/VbnaPc01q7ugk/yi36Irk=;
+ b=PkSwe6ZM+84aZssqC9yjuM9KdfFBu/kwlLo5pJlTemrHl3tbpWb2jFu9oCwjIJLbjZ
+ +R2sV3v4Svb7AGgxYSENh7WQ/BsSqkO3SrL6i1rAA8K9jGSppUSeagoCqZ7kApJZrdmN
+ Ut75sba5qxz1fnQrw+BDywqbPFjsmoNKEmHjhAV+153MleaDr7XY+6okqraszIUYzqRX
+ yRGdmp4jlswT+ElJ/Br6Q9ooyShdDsSjoot+sJxssHE/ZFb7kM+znGZgY02db3aviW/3
+ qBfzYmNrPIFScOHk+93wZHDGvUVHziCN41rErxUmySN2LDp2wy1cJYAsbuOtFZOVECLc
+ 6YPQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=7MRMdAKqkkU6zuM8WMZXIs4D8fug3sxafZUJy2Rr9SE=;
- b=S1rDiTYzU326/dchgC0fyerO19/IjHbfdozvLKVe+3Gyzn+6541oM0guH8qW6SZ2zl
- GyyTI7PYAYwS/lG/PCwcUEYiGG2+JSPB/XUirHGeXckPCTh8c3fQPosGSqfP1BylP4lv
- a7t2x35si4xjJJJncjORRgdHVWMQIrKnK9inMtqeiOV8a1ubBqx8b1Yy0stQo8ChFbL1
- 6gQIGynH30TV4LciOg3yiJCV9EWwV06mRteiwFfuf5kOv0dCFhpjv2qvk0oe3tJBLiW/
- 0myhpa/wQX4b9HRp+/QZHzM1jcp17ku8Pyjvs4odMtXuy6EK5lzyKs3E9Xbo6mFbEk5X
- IClg==
-X-Gm-Message-State: APjAAAUyTnZ8tZxzpj2/yl/HMz4yWoyh9dvPHdBmb68bgGQXmKEwETn6
- VKZU5L0dcSmRPKZUtXrQmEDKexiesfU=
-X-Google-Smtp-Source: APXvYqz6RhgMc8g8mnKBOwmoxjNrQ1nJMlP61xQip6ol8kykbvXyf74BhFBqpojp8hF+tY1HAFnpPw==
-X-Received: by 2002:a17:902:e582:: with SMTP id
- cl2mr76144694plb.60.1560481964343; 
- Thu, 13 Jun 2019 20:12:44 -0700 (PDT)
+ bh=EmoJPia4REdmsbQ4H3ol9/VbnaPc01q7ugk/yi36Irk=;
+ b=Jb9ri5kGCwRastFdQ2tHZEPz5O+Bki2vNlz4FF0b6bh9wZopaX1FfH3ZTiTifSEe/x
+ h1Q05YR+UGVZAToMJ+h40aHvZjTtONKoDj4XpEXrbfeTUX+z7bJONmViRC/nJVhXEWXN
+ IoKkKOYpi9fSVhE5ourY2odGaNhVXL194Qb4jFRsQEAQ31l6KTo1DQ/niqvi+BEXHlwL
+ Ho2LtTDiouQQc7kLdB27qSuR+pPNosLt4Ge94qkNXlufn/efaxT3/i3uSBxJqlNil2ny
+ fAtC1Slt4rA2GN3stM4/D/Of17F1sHSg6/xriHObd9ty8Xk/JlEKP3e+0f9ZIlmD2jrg
+ R6Lw==
+X-Gm-Message-State: APjAAAU5NFSniP1s6yXac01tfU9mkHE2ao8A5BwaSitiSV3qxQc5rONp
+ uvKHE1hmSxxTOWO4kutt2NASSRjNSKI=
+X-Google-Smtp-Source: APXvYqzFJ5M7fhmGROMUgYHr4HeztcDrQP1Hyg2FauE3GQtu6eOZ00AU7ushEX3OlWUqiKLJAas35g==
+X-Received: by 2002:aa7:825a:: with SMTP id e26mr98018300pfn.255.1560481966986; 
+ Thu, 13 Jun 2019 20:12:46 -0700 (PDT)
 Received: from localhost ([122.172.66.84])
- by smtp.gmail.com with ESMTPSA id k11sm1008499pfi.168.2019.06.13.20.12.43
+ by smtp.gmail.com with ESMTPSA id o13sm1237168pje.28.2019.06.13.20.12.46
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Thu, 13 Jun 2019 20:12:43 -0700 (PDT)
+ Thu, 13 Jun 2019 20:12:46 -0700 (PDT)
 From: Viresh Kumar <viresh.kumar@linaro.org>
 To: linux-arm-kernel@lists.infradead.org,
  Julien Thierry <Julien.Thierry@arm.com>
-Subject: [PATCH v4.4 19/45] arm64: Move BP hardening to
- check_and_switch_context
-Date: Fri, 14 Jun 2019 08:38:02 +0530
-Message-Id: <c1008ca215c8ad08528e8de8f0634e2b8ea5a0ed.1560480942.git.viresh.kumar@linaro.org>
+Subject: [PATCH v4.4 20/45] mm: Introduce lm_alias
+Date: Fri, 14 Jun 2019 08:38:03 +0530
+Message-Id: <8500aeb27596eef7bd952f988c8db0a4b2f655c6.1560480942.git.viresh.kumar@linaro.org>
 X-Mailer: git-send-email 2.21.0.rc0.269.g1a574e7a288b
 In-Reply-To: <cover.1560480942.git.viresh.kumar@linaro.org>
 References: <cover.1560480942.git.viresh.kumar@linaro.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190613_201245_479478_56509234 
-X-CRM114-Status: GOOD (  13.73  )
+X-CRM114-CacheID: sfid-20190613_201247_816675_692A9EBA 
+X-CRM114-Status: GOOD (  10.66  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:642 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:544 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -109,53 +107,39 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Marc Zyngier <marc.zyngier@arm.com>
+From: Laura Abbott <labbott@redhat.com>
 
-commit a8e4c0a919ae310944ed2c9ace11cf3ccd8a609b upstream.
+commit 568c5fe5a54f2654f5a4c599c45b8a62ed9a2013 upstream.
 
-We call arm64_apply_bp_hardening() from post_ttbr_update_workaround,
-which has the unexpected consequence of being triggered on every
-exception return to userspace when ARM64_SW_TTBR0_PAN is selected,
-even if no context switch actually occured.
+Certain architectures may have the kernel image mapped separately to
+alias the linear map. Introduce a macro lm_alias to translate a kernel
+image symbol into its linear alias. This is used in part with work to
+add CONFIG_DEBUG_VIRTUAL support for arm64.
 
-This is a bit suboptimal, and it would be more logical to only
-invalidate the branch predictor when we actually switch to
-a different mm.
-
-In order to solve this, move the call to arm64_apply_bp_hardening()
-into check_and_switch_context(), where we're guaranteed to pick
-a different mm context.
-
-Acked-by: Will Deacon <will.deacon@arm.com>
-Signed-off-by: Marc Zyngier <marc.zyngier@arm.com>
-Signed-off-by: Catalin Marinas <catalin.marinas@arm.com>
+Reviewed-by: Mark Rutland <mark.rutland@arm.com>
+Tested-by: Mark Rutland <mark.rutland@arm.com>
+Signed-off-by: Laura Abbott <labbott@redhat.com>
+Signed-off-by: Will Deacon <will.deacon@arm.com>
 Signed-off-by: Viresh Kumar <viresh.kumar@linaro.org>
 ---
- arch/arm64/mm/context.c | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
+ include/linux/mm.h | 4 ++++
+ 1 file changed, 4 insertions(+)
 
-diff --git a/arch/arm64/mm/context.c b/arch/arm64/mm/context.c
-index be42bd3dca5c..de5afc27b4e6 100644
---- a/arch/arm64/mm/context.c
-+++ b/arch/arm64/mm/context.c
-@@ -183,6 +183,8 @@ void check_and_switch_context(struct mm_struct *mm, unsigned int cpu)
- 	raw_spin_unlock_irqrestore(&cpu_asid_lock, flags);
+diff --git a/include/linux/mm.h b/include/linux/mm.h
+index 251adf4d8a71..f86fdf015c74 100644
+--- a/include/linux/mm.h
++++ b/include/linux/mm.h
+@@ -59,6 +59,10 @@ extern int sysctl_legacy_va_layout;
+ #define __pa_symbol(x)  __pa(RELOC_HIDE((unsigned long)(x), 0))
+ #endif
  
- switch_mm_fastpath:
-+	arm64_apply_bp_hardening();
++#ifndef lm_alias
++#define lm_alias(x)	__va(__pa_symbol(x))
++#endif
 +
- 	cpu_switch_mm(mm->pgd, mm);
- }
- 
-@@ -193,8 +195,6 @@ asmlinkage void post_ttbr_update_workaround(void)
- 			"ic iallu; dsb nsh; isb",
- 			ARM64_WORKAROUND_CAVIUM_27456,
- 			CONFIG_CAVIUM_ERRATUM_27456));
--
--	arm64_apply_bp_hardening();
- }
- 
- static int asids_init(void)
+ /*
+  * To prevent common memory management code establishing
+  * a zero page mapping on a read fault.
 -- 
 2.21.0.rc0.269.g1a574e7a288b
 
