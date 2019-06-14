@@ -2,65 +2,91 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 57A3A453CA
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Jun 2019 07:07:11 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2AC89453DE
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Jun 2019 07:14:14 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=nGu6gi3GLUVT1K8EYAEBplbnIASp0/TgIfQEb5Kh5qo=; b=GoSq41EXooI2aj
-	INNnn4QbLTqYRVbExdBrkYSE1of19Ehm9KG3k2Fe4Nj4eSXDeXlV7SrUF1QPLJ3aLrArPPIA7vF3Q
-	h1t64wtPnEeHymI+9ir21DVCOj6iJhHU4wmi5NAGmqhxOwuRMP3fw2GeqVefAGGWQKvQo6UlJZJ/y
-	V06sZ2aJlrNup4/5bjaGInqbnrgsz4tfpyNCiEwAanVl6ZyYQmLjtjDtvf5aZBYJVSA383iF9nJt6
-	Xr3wxaChdK4pq5GH5J4756cAVTKT5FAm1Qpmq6mCZ4I+SZV9K7TkHV8IYEvw+5i6AqAY7kIZQmA8C
-	+Jo3oT7f0n8QfjyAjiZw==;
+	List-Owner; bh=2vqlAQGOahOYfbSLLptzhY59pu5aniI23D+ySgpPAVM=; b=kBcfAqIFOYWrqZ
+	usoCmYGZAMSDDLS2r+E7LBSSVmfLMNqzwu6uUM0x9GhM3rM0RRmYYdwWJ7C/sp2vi1sE/fNdShpHD
+	k4FIdH+f/MierzNGaTxj5TSkzy3ZC/4vAgUsCWuxcNhXaDQBU2CUjRMrmBl6tQeikZM5YRkaZSzZ1
+	9fnJd0yaDwKArO1PdOo2BTAJkE/rrjjk6X7Yy85DaCxwlygGccD1YQa0dUmzUBDkXACZtBh8RcziD
+	nJkocGjual6xByxLtCm7WsZkfIAzyB0EqAIligwe/AbTjvDseAtQYcOL0xumxE038KTuPVTELEB2P
+	e/GMUcTLoxRmaB6EehHQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hbeQa-0000ij-5Y; Fri, 14 Jun 2019 05:07:04 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
+	id 1hbeXR-0002mX-6F; Fri, 14 Jun 2019 05:14:09 +0000
+Received: from mail-pf1-x443.google.com ([2607:f8b0:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hbeQO-0000iI-9U; Fri, 14 Jun 2019 05:06:53 +0000
-X-UUID: 291b172541a54dc6939c771cfdbf2b8f-20190613
-X-UUID: 291b172541a54dc6939c771cfdbf2b8f-20190613
-Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw01.mediatek.com
- (envelope-from <ck.hu@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1910252098; Thu, 13 Jun 2019 21:06:39 -0800
-Received: from MTKMBS31N1.mediatek.inc (172.27.4.69) by
- MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Thu, 13 Jun 2019 22:06:38 -0700
-Received: from mtkcas09.mediatek.inc (172.21.101.178) by
- MTKMBS31N1.mediatek.inc (172.27.4.69) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Fri, 14 Jun 2019 13:06:35 +0800
-Received: from [172.21.77.4] (172.21.77.4) by mtkcas09.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Fri, 14 Jun 2019 13:06:35 +0800
-Message-ID: <1560488795.16718.18.camel@mtksdaap41>
-Subject: Re: [PATCH v3, 20/27] drm/mediatek: add background color input
- select function for ovl/ovl_2l
-From: CK Hu <ck.hu@mediatek.com>
-To: <yongqiang.niu@mediatek.com>
-Date: Fri, 14 Jun 2019 13:06:35 +0800
-In-Reply-To: <1559734986-7379-21-git-send-email-yongqiang.niu@mediatek.com>
-References: <1559734986-7379-1-git-send-email-yongqiang.niu@mediatek.com>
- <1559734986-7379-21-git-send-email-yongqiang.niu@mediatek.com>
-X-Mailer: Evolution 3.10.4-0ubuntu2 
+ id 1hbeXG-0002lb-5k
+ for linux-arm-kernel@lists.infradead.org; Fri, 14 Jun 2019 05:14:00 +0000
+Received: by mail-pf1-x443.google.com with SMTP id q10so665625pff.9
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 13 Jun 2019 22:13:57 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to;
+ bh=7L7uajw4KCsbL/S4E35UjNUKEFnxH/l2jD/CiFHPlB4=;
+ b=iVgLfh3u2rK3LSidDHhJBtdtNtpSlz4dIEb1BDsj4Re2fjkTLPAq5VHIrDbtF7rfc6
+ 5a9vwqPeA/oCez/a3NCM+60PRvHQV0ltptm4u18TbaZDEEEiYlVGWcXj0ugZtZMkqFnM
+ ltnmFCb7F68lK6w+sv8Frqic/ZXdf9np/Ivm0=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to;
+ bh=7L7uajw4KCsbL/S4E35UjNUKEFnxH/l2jD/CiFHPlB4=;
+ b=Knu6gpbOo73HOgKyhmrOVp/U5S736S46OV6RL7lNgOGuc1qd+aQf31SgO3N49wfZlU
+ oj7AEv/YGCSYLLD+7yv46GefMlFPMEI4vzEA1vnSykNSZeRbdB4ORA7va02AU4m3Pksr
+ mtCopnSwqvzKrQiuIyWWG8Vyd3sK7Bx50tYL1YG0ryoQXw8uuIPkA6FCwN191bFe5afI
+ ZAINKgAZMlaFe0c7uoFNSVzXfOdDyB0UJnf7XJAlaU9mCB+Z4FouUP176GibcBcj79K6
+ LuVMoVahzBPYtBbh5DG+pDh+8/boX4OFfx3HAjRiUAlGWaE/nBtZqqamjrDR/uWtgtNU
+ Zevw==
+X-Gm-Message-State: APjAAAUZNqf+3HPYCNyh1Ry5/pYGxWj2hKt5wd0ye7eD6TrsTz3BZhU8
+ Rmg1stXB4i0jivQXg56bEBFNMQ==
+X-Google-Smtp-Source: APXvYqzTfasIXQ0R9bH+BHnjS/rxhZOCyiy3olY/JYV+P2HTQ7p4rEZDPtcIb7Np5EQm4YDFboUW8Q==
+X-Received: by 2002:a63:6948:: with SMTP id e69mr23166361pgc.441.1560489236782; 
+ Thu, 13 Jun 2019 22:13:56 -0700 (PDT)
+Received: from www.outflux.net (smtp.outflux.net. [198.145.64.163])
+ by smtp.gmail.com with ESMTPSA id f13sm1417022pje.11.2019.06.13.22.13.55
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Thu, 13 Jun 2019 22:13:55 -0700 (PDT)
+Date: Thu, 13 Jun 2019 22:13:54 -0700
+From: Kees Cook <keescook@chromium.org>
+To: Catalin Marinas <catalin.marinas@arm.com>
+Subject: Re: [PATCH v17 03/15] arm64: Introduce prctl() options to control
+ the tagged user addresses ABI
+Message-ID: <201906132209.FC65A3C771@keescook>
+References: <cover.1560339705.git.andreyknvl@google.com>
+ <a7a2933bea5fe57e504891b7eec7e9432e5e1c1a.1560339705.git.andreyknvl@google.com>
+ <20190613110235.GW28398@e103592.cambridge.arm.com>
+ <20190613152632.GT28951@C02TF0J2HF1T.local>
 MIME-Version: 1.0
-X-MTK: N
+Content-Disposition: inline
+In-Reply-To: <20190613152632.GT28951@C02TF0J2HF1T.local>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190613_220652_341950_F21B8280 
-X-CRM114-Status: GOOD (  17.18  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190613_221358_841030_F8D0DA16 
+X-CRM114-Status: GOOD (  13.20  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:443 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -72,105 +98,61 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Philipp Zabel <p.zabel@pengutronix.de>, David Airlie <airlied@linux.ie>,
- linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
- Rob Herring <robh+dt@kernel.org>, linux-mediatek@lists.infradead.org,
- Daniel Vetter <daniel@ffwll.ch>, Matthias Brugger <matthias.bgg@gmail.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>, kvm@vger.kernel.org,
+ Christian Koenig <Christian.Koenig@amd.com>,
+ Szabolcs Nagy <Szabolcs.Nagy@arm.com>, Will Deacon <will.deacon@arm.com>,
+ dri-devel@lists.freedesktop.org, Kostya Serebryany <kcc@google.com>,
+ Khalid Aziz <khalid.aziz@oracle.com>, Lee Smith <Lee.Smith@arm.com>,
+ linux-kselftest@vger.kernel.org, Vincenzo Frascino <vincenzo.frascino@arm.com>,
+ Jacob Bramley <Jacob.Bramley@arm.com>, Leon Romanovsky <leon@kernel.org>,
+ linux-rdma@vger.kernel.org, amd-gfx@lists.freedesktop.org,
+ Christoph Hellwig <hch@infradead.org>, Jason Gunthorpe <jgg@ziepe.ca>,
+ Dmitry Vyukov <dvyukov@google.com>, Dave Martin <Dave.Martin@arm.com>,
+ Evgeniy Stepanov <eugenis@google.com>, linux-media@vger.kernel.org,
+ Ruben Ayrapetyan <Ruben.Ayrapetyan@arm.com>,
+ Andrey Konovalov <andreyknvl@google.com>,
+ Kevin Brodsky <kevin.brodsky@arm.com>,
+ Alex Williamson <alex.williamson@redhat.com>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>,
+ linux-arm-kernel@lists.infradead.org, linux-mm@kvack.org,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Felix Kuehling <Felix.Kuehling@amd.com>, linux-kernel@vger.kernel.org,
+ Jens Wiklander <jens.wiklander@linaro.org>,
+ Ramana Radhakrishnan <Ramana.Radhakrishnan@arm.com>,
+ Alexander Deucher <Alexander.Deucher@amd.com>,
+ Andrew Morton <akpm@linux-foundation.org>, enh <enh@google.com>,
+ Robin Murphy <robin.murphy@arm.com>, Yishai Hadas <yishaih@mellanox.com>,
+ Luc Van Oostenryck <luc.vanoostenryck@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi, Yongqiang:
-
-On Wed, 2019-06-05 at 19:42 +0800, yongqiang.niu@mediatek.com wrote:
-> From: Yongqiang Niu <yongqiang.niu@mediatek.com>
+On Thu, Jun 13, 2019 at 04:26:32PM +0100, Catalin Marinas wrote:
+> On Thu, Jun 13, 2019 at 12:02:35PM +0100, Dave P Martin wrote:
+> > On Wed, Jun 12, 2019 at 01:43:20PM +0200, Andrey Konovalov wrote:
+> > > +static int zero;
+> > > +static int one = 1;
+> > 
+> > !!!
+> > 
+> > And these can't even be const without a cast.  Yuk.
+> > 
+> > (Not your fault though, but it would be nice to have a proc_dobool() to
+> > avoid this.)
 > 
-> This patch add background color input select function for ovl/ovl_2l
-> 
-> ovl include 4 DRAM layer and 1 background color layer
-> ovl_2l include 4 DRAM layer and 1 background color layer
-> DRAM layer frame buffer data from render hardware, GPU for example.
-> backgournd color layer is embed in ovl/ovl_2l, we can only set
-> it color, but not support DRAM frame buffer.
-> 
-> for ovl0->ovl0_2l direct link usecase,
-> we need set ovl0_2l background color intput select from ovl0
-> if render send DRAM buffer layer number <=4, all these layer read
-> by ovl.
-> layer0 is at the bottom of all layers.
-> layer3 is at the top of all layers.
-> if render send DRAM buffer layer numbfer >=4 && <=6
-> ovl0 read layer0~3
-> ovl0_2l read layer4~5
-> layer5 is at the top ot all these layers.
-> 
-> the decision of how to setting ovl0/ovl0_2l read these layer data
-> is controlled in mtk crtc, which will be another patch
-> 
-> Signed-off-by: Yongqiang Niu <yongqiang.niu@mediatek.com>
-> ---
->  drivers/gpu/drm/mediatek/mtk_disp_ovl.c | 23 +++++++++++++++++++++++
->  1 file changed, 23 insertions(+)
-> 
-> diff --git a/drivers/gpu/drm/mediatek/mtk_disp_ovl.c b/drivers/gpu/drm/mediatek/mtk_disp_ovl.c
-> index a0ab760..b5a9907 100644
-> --- a/drivers/gpu/drm/mediatek/mtk_disp_ovl.c
-> +++ b/drivers/gpu/drm/mediatek/mtk_disp_ovl.c
-> @@ -27,6 +27,8 @@
->  #define DISP_REG_OVL_EN				0x000c
->  #define DISP_REG_OVL_RST			0x0014
->  #define DISP_REG_OVL_ROI_SIZE			0x0020
-> +#define DISP_REG_OVL_DATAPATH_CON		0x0024
-> +#define OVL_BGCLR_SEL_IN				BIT(2)
->  #define DISP_REG_OVL_ROI_BGCLR			0x0028
->  #define DISP_REG_OVL_SRC_CON			0x002c
->  #define DISP_REG_OVL_CON(n)			(0x0030 + 0x20 * (n))
-> @@ -245,6 +247,25 @@ static void mtk_ovl_layer_config(struct mtk_ddp_comp *comp, unsigned int idx,
->  		mtk_ovl_layer_on(comp, idx);
->  }
->  
-> +static void mtk_ovl_bgclr_in_on(struct mtk_ddp_comp *comp,
-> +				enum mtk_ddp_comp_id prev)
+> I had the same reaction. Maybe for another patch sanitising this pattern
+> across the kernel.
 
-prev is useless, so remove it.
+That's actually already happening (via -mm tree last I looked). tl;dr:
+it ends up using a cast hidden in a macro. It's in linux-next already
+along with a checkpatch.pl addition to yell about doing what's being
+done here. ;)
 
-Regards,
-CK
+https://lore.kernel.org/lkml/20190430180111.10688-1-mcroce@redhat.com/#r
 
-> +{
-> +	unsigned int reg;
-> +
-> +	reg = readl(comp->regs + DISP_REG_OVL_DATAPATH_CON);
-> +	reg = reg | OVL_BGCLR_SEL_IN;
-> +	writel(reg, comp->regs + DISP_REG_OVL_DATAPATH_CON);
-> +}
-> +
-> +static void mtk_ovl_bgclr_in_off(struct mtk_ddp_comp *comp)
-> +{
-> +	unsigned int reg;
-> +
-> +	reg = readl(comp->regs + DISP_REG_OVL_DATAPATH_CON);
-> +	reg = reg & ~OVL_BGCLR_SEL_IN;
-> +	writel(reg, comp->regs + DISP_REG_OVL_DATAPATH_CON);
-> +}
-> +
->  static const struct mtk_ddp_comp_funcs mtk_disp_ovl_funcs = {
->  	.config = mtk_ovl_config,
->  	.start = mtk_ovl_start,
-> @@ -255,6 +276,8 @@ static void mtk_ovl_layer_config(struct mtk_ddp_comp *comp, unsigned int idx,
->  	.layer_on = mtk_ovl_layer_on,
->  	.layer_off = mtk_ovl_layer_off,
->  	.layer_config = mtk_ovl_layer_config,
-> +	.bgclr_in_on = mtk_ovl_bgclr_in_on,
-> +	.bgclr_in_off = mtk_ovl_bgclr_in_off,
->  };
->  
->  static int mtk_disp_ovl_bind(struct device *dev, struct device *master,
-
-
+-- 
+Kees Cook
 
 _______________________________________________
 linux-arm-kernel mailing list
