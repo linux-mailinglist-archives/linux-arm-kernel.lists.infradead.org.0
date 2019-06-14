@@ -2,84 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 505AB464E8
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Jun 2019 18:47:52 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A604F464EA
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Jun 2019 18:48:20 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=z7FesK2KJB520Ut7pxyQbpNi8j7b8ZexH6aYH7b2SiQ=; b=fr6tFR8lrGAaK5
-	sqz6hTW03BaSVqFjpaGnLwuuadzCGAszfPrO94V42jsmQHLUo6LTRXQEpKN1aplVHGZMSZeIVgWDB
-	kl4+hOtEhjaO/APIgtQr8y2D8pjfZ1QZDJA2JC036IXtCpK8Ic8a3yK05RJ+/vCPGL51fv+gG4dHp
-	FFFHqWsRo6JeRbytVGH9CxGGHxLsU0S7bTX4FN5pA488MCxYxcsM62U64H+I2A/h7gz/WrztowMzG
-	2eXy1kJ6JEDdnWOv/qCAHcz8NqX9GkZMDBQzuOeqQi5gSuwMempWVz5aV+wdxP61xvVLjSKSd6J1p
-	ns6wO/GzcdK6sJBIpyuQ==;
+	List-Owner; bh=0C6FoCCw/N5c5sUByTNjwoAtb//jvhc1tZmYyLd9yfA=; b=LHx5ELPXWVY4AC
+	uGC+KLQeICWk3RWTtbyxyTMy57SwCu3SE/+WnEB64UQWeyUnNDzOik5X/3Ck+o7Rp+dbd5D4TuoVn
+	lk79GIm13cxEjiJpHZvHu/tjujjruOP8tqk64iRrGGSP2vfCD3IG1W25lsuQeplsJQKGkvlsIYTuy
+	LLmcHGtIEfFMl7HZrboxGrS/QOQG79UyafNoWKZZICFqCE6DBQNdqz/6O91KmJLoS9y/vanUPURSx
+	laFqDmdhR05MEtdcIDLbrwyJZ/9DadvOg4iBGxh+fZklLVXiTAiglkandJPuizoAxu24mdLsD8bIJ
+	5h04Is08Pkrc8rqjfbDw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hbpMh-0004tu-Hu; Fri, 14 Jun 2019 16:47:47 +0000
-Received: from mail-qt1-f193.google.com ([209.85.160.193])
+	id 1hbpN9-0005WK-MW; Fri, 14 Jun 2019 16:48:15 +0000
+Received: from mga12.intel.com ([192.55.52.136])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hbpKd-0002pq-Jm
- for linux-arm-kernel@lists.infradead.org; Fri, 14 Jun 2019 16:45:42 +0000
-Received: by mail-qt1-f193.google.com with SMTP id y57so3227810qtk.4
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 14 Jun 2019 09:45:38 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=HlBKCnO0xMTag9WfokrT/rGmwb/ORvUR1BpXNNiMUQM=;
- b=YPyr7nVgvHWDUGd6/UeNxyPVtm8ueEJ7ecG232GVgbJxrZU63XqT73Pm6mfypEwWZz
- Y8hJ/ULM7klYzPcoEOPioO3CZojoqDiO2xyQqcB1DfP/R03d7RBod8hKP2yaL10qBpb1
- bZMKcYkZSGHDDh056QDI6ZOYBu+/+brm6/MHR0bn0o1j4iWMWNGpX/AuKYLh1vODD/oE
- FhesFS1cwieoQU8TEGrvAfLPs+ydqd3X/5Y8/fkZ1eiCyGrx/2kjGj8e9ICPjRAzHY9O
- G2I3w56W/UrFirgfEKkv9mTwnzH3I6rLoLPK0of55mx4GqZwHI7l5vmYhGfMKrXe/LKb
- ypSw==
-X-Gm-Message-State: APjAAAXzALWyzj04eGxF3SoXeC3cToKtpOsHNYK5lknq8Z//6rH57mEB
- +nG5M1vt4w7hyiY8yMOfyA==
-X-Google-Smtp-Source: APXvYqyd6wUFLy/S8KXkP9eDUvnYHmUJhimauNDZWvGK3zxBUlgJUXMl3RMwWqaPxUusvLz6Y82JMQ==
-X-Received: by 2002:ac8:2b51:: with SMTP id 17mr25937893qtv.206.1560530737809; 
- Fri, 14 Jun 2019 09:45:37 -0700 (PDT)
-Received: from localhost ([64.188.179.243])
- by smtp.gmail.com with ESMTPSA id g2sm1831222qkb.80.2019.06.14.09.45.37
- (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Fri, 14 Jun 2019 09:45:37 -0700 (PDT)
-Date: Fri, 14 Jun 2019 10:45:36 -0600
-From: Rob Herring <robh@kernel.org>
-To: Nishanth Menon <nm@ti.com>
-Subject: Re: [PATCH 1/6] dt-bindings: arm: ti: Add bindings for J721E SoC
-Message-ID: <20190614164536.GA18039@bogus>
-References: <20190522161921.20750-1-nm@ti.com>
- <20190522161921.20750-2-nm@ti.com>
+ id 1hbpKx-0003CL-MF
+ for linux-arm-kernel@lists.infradead.org; Fri, 14 Jun 2019 16:46:03 +0000
+X-Amp-Result: UNKNOWN
+X-Amp-Original-Verdict: FILE UNKNOWN
+X-Amp-File-Uploaded: False
+Received: from fmsmga007.fm.intel.com ([10.253.24.52])
+ by fmsmga106.fm.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
+ 14 Jun 2019 09:45:57 -0700
+X-ExtLoop1: 1
+Received: from stinkbox.fi.intel.com (HELO stinkbox) ([10.237.72.174])
+ by fmsmga007.fm.intel.com with SMTP; 14 Jun 2019 09:45:50 -0700
+Received: by stinkbox (sSMTP sendmail emulation);
+ Fri, 14 Jun 2019 19:45:49 +0300
+Date: Fri, 14 Jun 2019 19:45:49 +0300
+From: Ville =?iso-8859-1?Q?Syrj=E4l=E4?= <ville.syrjala@linux.intel.com>
+To: Christoph Hellwig <hch@lst.de>
+Subject: Re: [Intel-gfx] [PATCH 03/16] drm/i915: stop using drm_pci_alloc
+Message-ID: <20190614164549.GD5942@intel.com>
+References: <20190614134726.3827-1-hch@lst.de>
+ <20190614134726.3827-4-hch@lst.de>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190522161921.20750-2-nm@ti.com>
+In-Reply-To: <20190614134726.3827-4-hch@lst.de>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190614_094539_720163_E8FB7BCC 
-X-CRM114-Status: GOOD (  13.69  )
-X-Spam-Score: 0.8 (/)
+X-CRM114-CacheID: sfid-20190614_094559_784336_513F698A 
+X-CRM114-Status: GOOD (  22.23  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.8 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.160.193 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [209.85.160.193 listed in wl.mailspike.net]
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (robherring2[at]gmail.com)
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (robherring2[at]gmail.com)
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [192.55.52.136 listed in list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -91,64 +68,211 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Nishanth Menon <nm@ti.com>, Arnd Bergmann <arnd@arndb.de>,
- Tony Lindgren <tony@atomide.com>, Catalin Marinas <catalin.marinas@arm.com>,
- Santosh Shilimkar <ssantosh@kernel.org>, Will Deacon <will.deacon@arm.com>,
- linux-kernel@vger.kernel.org, Russell King <linux@armlinux.org.uk>,
- Tero Kristo <t-kristo@ti.com>, Rob Herring <robh+dt@kernel.org>,
- linux-serial@vger.kernel.org, Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Olof Johansson <olof@lixom.net>, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Maxime Ripard <maxime.ripard@bootlin.com>,
+ Joonas Lahtinen <joonas.lahtinen@linux.intel.com>,
+ dri-devel@lists.freedesktop.org, Chris Wilson <chris@chris-wilson.co.uk>,
+ linux-mm@kvack.org, devel@driverdev.osuosl.org, linux-s390@vger.kernel.org,
+ linux-rdma@vger.kernel.org, David Airlie <airlied@linux.ie>,
+ linux-media@vger.kernel.org, Intel Linux Wireless <linuxwifi@intel.com>,
+ intel-gfx@lists.freedesktop.org,
+ Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
+ Jani Nikula <jani.nikula@linux.intel.com>, Ian Abbott <abbotti@mev.co.uk>,
+ Rodrigo Vivi <rodrigo.vivi@intel.com>, Sean Paul <sean@poorly.run>,
+ "moderated list:ARM PORT" <linux-arm-kernel@lists.infradead.org>,
+ netdev@vger.kernel.org, linux-wireless@vger.kernel.org,
+ linux-kernel@vger.kernel.org, H Hartley Sweeten <hsweeten@visionengravers.com>,
+ iommu@lists.linux-foundation.org, Daniel Vetter <daniel@ffwll.ch>
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, 22 May 2019 11:19:16 -0500, Nishanth Menon wrote:
-> The J721E SoC belongs to the K3 Multicore SoC architecture platform,
-> providing advanced system integration to enable lower system costs
-> of automotive applications such as infotainment, cluster, premium
-> Audio, Gateway, industrial and a range of broad market applications.
-> This SoC is designed around reducing the system cost by eliminating
-> the need of an external system MCU and is targeted towards ASIL-B/C
-> certification/requirements in addition to allowing complex software
-> and system use-cases.
-> 
-> Some highlights of this SoC are:
-> * Dual Cortex-A72s in a single cluster, three clusters of lockstep
->   capable dual Cortex-R5F MCUs, Deep-learning Matrix Multiply Accelerator(MMA),
->   C7x floating point Vector DSP, Two C66x floating point DSPs.
-> * 3D GPU PowerVR Rogue 8XE GE8430
-> * Vision Processing Accelerator (VPAC) with image signal processor and Depth
->   and Motion Processing Accelerator (DMPAC)
-> * Two Gigabit Industrial Communication Subsystems (ICSSG), each with dual
->   PRUs and dual RTUs
-> * Two CSI2.0 4L RX plus one CSI2.0 4L TX, one eDP/DP, One DSI Tx, and
->   up to two DPI interfaces.
-> * Integrated Ethernet switch supporting up to a total of 8 external ports in
->   addition to legacy Ethernet switch of up to 2 ports.
-> * System MMU (SMMU) Version 3.0 and advanced virtualisation
->   capabilities.
-> * Upto 4 PCIe-GEN3 controllers, 2 USB3.0 Dual-role device subsystems,
->   16 MCANs, 12 McASP, eMMC and SD, UFS, OSPI/HyperBus memory controller, QSPI,
->   I3C and I2C, eCAP/eQEP, eHRPWM, MLB among other peripherals.
-> * Two hardware accelerator block containing AES/DES/SHA/MD5 called SA2UL
->   management.
-> * Configurable L3 Cache and IO-coherent architecture with high data throughput
->   capable distributed DMA architecture under NAVSS
-> * Centralized System Controller for Security, Power, and Resource
->   Management (DMSC)
-> 
-> See J721E Technical Reference Manual (SPRUIL1, May 2019)
-> for further details: http://www.ti.com/lit/pdf/spruil1
-> 
-> Signed-off-by: Nishanth Menon <nm@ti.com>
-> ---
->  Documentation/devicetree/bindings/arm/ti/k3.txt | 3 +++
->  1 file changed, 3 insertions(+)
-> 
+On Fri, Jun 14, 2019 at 03:47:13PM +0200, Christoph Hellwig wrote:
+> Remove usage of the legacy drm PCI DMA wrappers, and with that the
+> incorrect usage cocktail of __GFP_COMP, virt_to_page on DMA allocation
+> and SetPageReserved.
+> =
 
-Reviewed-by: Rob Herring <robh@kernel.org>
+> Signed-off-by: Christoph Hellwig <hch@lst.de>
+> ---
+>  drivers/gpu/drm/i915/i915_gem.c        | 30 +++++++++++++-------------
+>  drivers/gpu/drm/i915/i915_gem_object.h |  3 ++-
+>  drivers/gpu/drm/i915/intel_display.c   |  2 +-
+>  3 files changed, 18 insertions(+), 17 deletions(-)
+> =
+
+> diff --git a/drivers/gpu/drm/i915/i915_gem.c b/drivers/gpu/drm/i915/i915_=
+gem.c
+> index ad01c92aaf74..8f2053c91aff 100644
+> --- a/drivers/gpu/drm/i915/i915_gem.c
+> +++ b/drivers/gpu/drm/i915/i915_gem.c
+> @@ -228,7 +228,6 @@ i915_gem_get_aperture_ioctl(struct drm_device *dev, v=
+oid *data,
+>  static int i915_gem_object_get_pages_phys(struct drm_i915_gem_object *ob=
+j)
+>  {
+>  	struct address_space *mapping =3D obj->base.filp->f_mapping;
+> -	drm_dma_handle_t *phys;
+>  	struct sg_table *st;
+>  	struct scatterlist *sg;
+>  	char *vaddr;
+> @@ -242,13 +241,13 @@ static int i915_gem_object_get_pages_phys(struct dr=
+m_i915_gem_object *obj)
+>  	 * to handle all possible callers, and given typical object sizes,
+>  	 * the alignment of the buddy allocation will naturally match.
+>  	 */
+> -	phys =3D drm_pci_alloc(obj->base.dev,
+> -			     roundup_pow_of_two(obj->base.size),
+> -			     roundup_pow_of_two(obj->base.size));
+> -	if (!phys)
+> +	obj->phys_vaddr =3D dma_alloc_coherent(&obj->base.dev->pdev->dev,
+> +			roundup_pow_of_two(obj->base.size),
+> +			&obj->phys_handle, GFP_KERNEL);
+> +	if (!obj->phys_vaddr)
+>  		return -ENOMEM;
+>  =
+
+> -	vaddr =3D phys->vaddr;
+> +	vaddr =3D obj->phys_vaddr;
+>  	for (i =3D 0; i < obj->base.size / PAGE_SIZE; i++) {
+>  		struct page *page;
+>  		char *src;
+> @@ -286,18 +285,17 @@ static int i915_gem_object_get_pages_phys(struct dr=
+m_i915_gem_object *obj)
+>  	sg->offset =3D 0;
+>  	sg->length =3D obj->base.size;
+>  =
+
+> -	sg_dma_address(sg) =3D phys->busaddr;
+> +	sg_dma_address(sg) =3D obj->phys_handle;
+>  	sg_dma_len(sg) =3D obj->base.size;
+>  =
+
+> -	obj->phys_handle =3D phys;
+> -
+>  	__i915_gem_object_set_pages(obj, st, sg->length);
+>  =
+
+>  	return 0;
+>  =
+
+>  err_phys:
+> -	drm_pci_free(obj->base.dev, phys);
+> -
+> +	dma_free_coherent(&obj->base.dev->pdev->dev,
+> +			roundup_pow_of_two(obj->base.size), obj->phys_vaddr,
+> +			obj->phys_handle);
+
+Need to undo the damage to obj->phys_vaddr here since
+i915_gem_pwrite_ioctl() will now use that to determine if it's
+dealing with a phys obj.
+
+>  	return err;
+>  }
+>  =
+
+> @@ -335,7 +333,7 @@ i915_gem_object_put_pages_phys(struct drm_i915_gem_ob=
+ject *obj,
+>  =
+
+>  	if (obj->mm.dirty) {
+>  		struct address_space *mapping =3D obj->base.filp->f_mapping;
+> -		char *vaddr =3D obj->phys_handle->vaddr;
+> +		char *vaddr =3D obj->phys_vaddr;
+>  		int i;
+>  =
+
+>  		for (i =3D 0; i < obj->base.size / PAGE_SIZE; i++) {
+> @@ -363,7 +361,9 @@ i915_gem_object_put_pages_phys(struct drm_i915_gem_ob=
+ject *obj,
+>  	sg_free_table(pages);
+>  	kfree(pages);
+>  =
+
+> -	drm_pci_free(obj->base.dev, obj->phys_handle);
+> +	dma_free_coherent(&obj->base.dev->pdev->dev,
+> +			roundup_pow_of_two(obj->base.size), obj->phys_vaddr,
+> +			obj->phys_handle);
+
+This one is fine I think since the object remains a phys obj once
+turned into one. At least the current code isn't clearing
+phys_handle here. But my memory is a bit hazy on the details. Chris?
+
+Also maybe s/phys_handle/phys_busaddr/ all over?
+
+>  }
+>  =
+
+>  static void
+> @@ -603,7 +603,7 @@ i915_gem_phys_pwrite(struct drm_i915_gem_object *obj,
+>  		     struct drm_i915_gem_pwrite *args,
+>  		     struct drm_file *file)
+>  {
+> -	void *vaddr =3D obj->phys_handle->vaddr + args->offset;
+> +	void *vaddr =3D obj->phys_vaddr + args->offset;
+>  	char __user *user_data =3D u64_to_user_ptr(args->data_ptr);
+>  =
+
+>  	/* We manually control the domain here and pretend that it
+> @@ -1431,7 +1431,7 @@ i915_gem_pwrite_ioctl(struct drm_device *dev, void =
+*data,
+>  		ret =3D i915_gem_gtt_pwrite_fast(obj, args);
+>  =
+
+>  	if (ret =3D=3D -EFAULT || ret =3D=3D -ENOSPC) {
+> -		if (obj->phys_handle)
+> +		if (obj->phys_vaddr)
+>  			ret =3D i915_gem_phys_pwrite(obj, args, file);
+>  		else
+>  			ret =3D i915_gem_shmem_pwrite(obj, args);
+> diff --git a/drivers/gpu/drm/i915/i915_gem_object.h b/drivers/gpu/drm/i91=
+5/i915_gem_object.h
+> index ca93a40c0c87..14bd2d61d0f6 100644
+> --- a/drivers/gpu/drm/i915/i915_gem_object.h
+> +++ b/drivers/gpu/drm/i915/i915_gem_object.h
+> @@ -290,7 +290,8 @@ struct drm_i915_gem_object {
+>  	};
+>  =
+
+>  	/** for phys allocated objects */
+> -	struct drm_dma_handle *phys_handle;
+> +	dma_addr_t phys_handle;
+> +	void *phys_vaddr;
+>  =
+
+>  	struct reservation_object __builtin_resv;
+>  };
+> diff --git a/drivers/gpu/drm/i915/intel_display.c b/drivers/gpu/drm/i915/=
+intel_display.c
+> index 5098228f1302..4f8b368ac4e2 100644
+> --- a/drivers/gpu/drm/i915/intel_display.c
+> +++ b/drivers/gpu/drm/i915/intel_display.c
+> @@ -10066,7 +10066,7 @@ static u32 intel_cursor_base(const struct intel_p=
+lane_state *plane_state)
+>  	u32 base;
+>  =
+
+>  	if (INTEL_INFO(dev_priv)->display.cursor_needs_physical)
+> -		base =3D obj->phys_handle->busaddr;
+> +		base =3D obj->phys_handle;
+>  	else
+>  		base =3D intel_plane_ggtt_offset(plane_state);
+>  =
+
+> -- =
+
+> 2.20.1
+> =
+
+> _______________________________________________
+> Intel-gfx mailing list
+> Intel-gfx@lists.freedesktop.org
+> https://lists.freedesktop.org/mailman/listinfo/intel-gfx
+
+-- =
+
+Ville Syrj=E4l=E4
+Intel
 
 _______________________________________________
 linux-arm-kernel mailing list
