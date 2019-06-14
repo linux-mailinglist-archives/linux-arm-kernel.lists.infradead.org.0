@@ -2,88 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EC23D45E22
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Jun 2019 15:28:37 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0F90A45E50
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Jun 2019 15:36:01 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:In-Reply-To:
-	Date:References:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=aZTD7tMUYisgLgcyE4pATswl7W6oK52E/QRsdA7t35g=; b=oMba0UbFPeXfPj
-	zHnDFUQBdngE688LeklHoSnVKQVTbaPV4tGmlVidEEoHku/QH1PfNZoh3fzrEQ7x1d9NprSP63hgJ
-	SUeq9muTqt5MiflRCbQAHPKDhnHBhdARFRSpcXM9chSUrXPF3YhZgKZ1XVBc9P41aAacV7K6Y6yDk
-	7ObZO2kx49cxjeXdvfaskGYZ6A1tdt3HYsyfrD9teRVuoHjlzepuN/uiWTwlWyyRzO9fYx6WRbyiq
-	KxEiT3cCDiTMeEEB8UN6j1tV5a5pYbPeO8Y3N/PE6JR6jzlaP5mN4zyrWMxsyiNn7zNWPf6xHUh/g
-	XLugJy10G4NOh4lwmQYQ==;
+	List-Owner; bh=mxcPVh5KzL3LM/RcvV+LX3qqe75DMdkcJKzKMryduH0=; b=l4BtYVva244hKI
+	WU3w+XfWrh84szhXc2AeFI5bvVEriHDQ4fBSFgXfHf1MCX7r6MJDUz9QlcMsCKtahf/zrioYsqgtz
+	rd/8bW5vymU70mu/Ra4feudSF10VnHZkUK81pDk1/Ra4XsrynFA/H3oEMt9Ggq2zMhe1NqCv1s6Nk
+	1oMrpgAvPKEWcrJRpkJeeNq2lcHL3PXQZM+C/Kp/p6QKD6KwCu/BiJPL3h0BlgoOP3ovNFSJOHAuQ
+	2wzFP2+jcoA9Z9Zhw2y/2EpN5FkOBCIUN29wSZwHNtKFKrxZlEVRCKvj9ZjZDYbhNmyiu0UP2DwLH
+	+o3QlKh5ZvWZR+hUnlMw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hbmFv-0002Iy-Kk; Fri, 14 Jun 2019 13:28:35 +0000
-Received: from mail-lj1-x241.google.com ([2a00:1450:4864:20::241])
+	id 1hbmN3-0006WF-0e; Fri, 14 Jun 2019 13:35:57 +0000
+Received: from mail-ot1-x341.google.com ([2607:f8b0:4864:20::341])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hbmFj-0002I9-1a
- for linux-arm-kernel@lists.infradead.org; Fri, 14 Jun 2019 13:28:24 +0000
-Received: by mail-lj1-x241.google.com with SMTP id m23so2372442lje.12
+ id 1hbmMu-0006VH-BU
+ for linux-arm-kernel@lists.infradead.org; Fri, 14 Jun 2019 13:35:49 +0000
+Received: by mail-ot1-x341.google.com with SMTP id e8so1683000otl.7
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 14 Jun 2019 06:28:21 -0700 (PDT)
+ Fri, 14 Jun 2019 06:35:47 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:references:date:in-reply-to:message-id
- :user-agent:mime-version:content-transfer-encoding;
- bh=JP80xhJ18NHJTNjcJo/Bl2P17GO3TeYYX7NMTL4bldU=;
- b=jCVPuxQ4FkNfKFICCJ64CLjzX0+2/2H8B3cvdNjNlaHJN3AGvmifoDziGRvHPB3bgH
- UfFkggC1blN1qF45kN3uCp/vUPVwn+JV4CJZc85fSxWXq/Ti/faPBRxBI9rzkV2lXulY
- bJ/DEz6FhlV4wqqB5jVVt5vtfkhWvrounG0i//kCKtY/9kUN9ncnqCs9ADEwPjmi40rS
- Q0LG3UZxOuI90zQgTl++h0vly8VtJ6vZHm6v8Urc/cvAfgg8JQ0ARw0AEimXmuE+IJZA
- /zlPF3ikSVP0kAvJpudoTzNTQTi6cFN5858U8g8CKebCNEulNlXVHBPofwwTthcl0O4K
- c+Zw==
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=/Iumb5nCJVz2HC5/nbRIEDZUIZqdpRhVEmQs809cxSo=;
+ b=h7tg3sjFL4f+yNN/91TYjVrpxnwzYt+gGHLq8QmMeaQrToFB2+nRGWop83WSLVjJss
+ 5oyNn74saGXhBLqBKroPI9odbFsqifoREUvx+3xW59g9m+tXUqZgP8wfUej6ENlHnUCV
+ vlitnGmwpM+VVsnWEkF1vMXfqJrcOBIxhua/taQ1bVXz7u1NtZpO+CZb/3mt+rhvwyxH
+ 9uPRRveSTTiWyGfuYnGmmSRmr9MxFZ8512dHDfw879ehHWtxVmqNt2TiS4OclukO4zYX
+ bKtwUcLW8d8NrkeJVYbFNX20S2btklGN0EsrjcVrJ0MTl2+kenxIk6V69ZAWhyrkFu56
+ ofzw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:references:date:in-reply-to
- :message-id:user-agent:mime-version:content-transfer-encoding;
- bh=JP80xhJ18NHJTNjcJo/Bl2P17GO3TeYYX7NMTL4bldU=;
- b=EQwY17+0ynGEGQeYTtVqkDpflVtE0NwK7KOKppjeOyWnvPdmq3AjPxWWgoMFXlnMDp
- qcbsx6mrcu92s1kG6FdDp7ig43czUDRiCrFsK+wh2UgRjDMmnNW+1qwET4/0dooQuzsI
- skhaLz9xhEnwWjdwauUGqwO8g0S5zAUJIp7ZyhBJyxxBN0m8b2TVSAHiWBTqRrv9+pzO
- qKX0WxX1ghMSgWML8smuxZ17bGeqhk16R3Y432r4YqvM/OZKlgqmS+fd4AL3HqvPYQKh
- k97TIdOkqo9XDdUoEVR0PbELpkJ6ywA92Nj/y8CNbleEelGikY7U2YwXQ6XN5jeKGYfk
- EQvw==
-X-Gm-Message-State: APjAAAVRFbIaB2EV4tdMpFoySAOQfHYS+qS8SXR+rB5ixQYgHS6GzTrn
- cd8XRxxCNJP3RumzW1u1QXk=
-X-Google-Smtp-Source: APXvYqztMxGSY6Lx00111C1VMpGUt2o8MjP80aHxfw8oK8R/O4efjZgP55gdmTrXrRjqaACcbG3gIQ==
-X-Received: by 2002:a2e:9e4c:: with SMTP id g12mr25744328ljk.3.1560518899979; 
- Fri, 14 Jun 2019 06:28:19 -0700 (PDT)
-Received: from osv.localdomain ([89.175.180.246])
- by smtp.gmail.com with ESMTPSA id b11sm597852ljf.8.2019.06.14.06.28.18
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Fri, 14 Jun 2019 06:28:18 -0700 (PDT)
-From: Sergey Organov <sorganov@gmail.com>
-To: Lothar =?utf-8?Q?Wa=C3=9Fmann?= <LW@KARO-electronics.de>
-Subject: Re: [PATCH RFC 5/7] serial: imx: set_termios(): preserve RTS state
-References: <20190614072801.3187-1-s.hauer@pengutronix.de>
- <1560514294-29111-1-git-send-email-sorganov@gmail.com>
- <1560514294-29111-6-git-send-email-sorganov@gmail.com>
- <20190614150551.1472b154@karo-electronics.de>
-Date: Fri, 14 Jun 2019 16:28:17 +0300
-In-Reply-To: <20190614150551.1472b154@karo-electronics.de> ("Lothar
- \=\?utf-8\?Q\?Wa\=C3\=9Fmann\=22's\?\=
- message of "Fri, 14 Jun 2019 15:05:51 +0200")
-Message-ID: <87blz09tzi.fsf@osv.gnss.ru>
-User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/24.4 (gnu/linux)
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=/Iumb5nCJVz2HC5/nbRIEDZUIZqdpRhVEmQs809cxSo=;
+ b=smv/+/YSCCwSpAaq9L4E17iNmIi9vqY3fNfp2/bow68aY1VnjIRfcQwDgEVUHtxRx8
+ MhheyH+ZEdHJHJ6osopYhcEmXxjgVRiudhzxEYNE4jCaLkTHQAQYbmTmQglxyy1t2oBg
+ JBaL1HfO/P9w/ByTjrMQ+IUOSyu2IlgyPdaYUa7YC0rYWGX1MYi1X7G/Scfu/vYilyQA
+ Yw6cP30nw8xYntYknHCAX3BUHRHODxWbWRD06iIOFMPGl56Rx35JmNbiBlehejhuxdS9
+ ZMcipGIl5p3SfaJWdgakytMV5xZa4sQ9DQdTAwv99QnBQ7KbMWOdg98WSUKYetWkT8Br
+ nltQ==
+X-Gm-Message-State: APjAAAUQTPGmtId4MPctJicT+Z2RBi3wf1iXJk19hNyV2WLEz3j6qYe9
+ wcqq9qcw6NSdgod9x4PcmWT/8juTn34gt2HBNvY=
+X-Google-Smtp-Source: APXvYqyAHNQQrhuiues4BPDDMqOVwi6uPApFWQbGHNqabmJA/bDejfzEJeXfWZbmC3TNm/pELH4rkrdnbKy756U7huo=
+X-Received: by 2002:a05:6830:1319:: with SMTP id
+ p25mr6040495otq.224.1560519346918; 
+ Fri, 14 Jun 2019 06:35:46 -0700 (PDT)
 MIME-Version: 1.0
+References: <20190614083959.37944-1-yibin.gong@nxp.com>
+In-Reply-To: <20190614083959.37944-1-yibin.gong@nxp.com>
+From: Sven Van Asbroeck <thesven73@gmail.com>
+Date: Fri, 14 Jun 2019 09:35:36 -0400
+Message-ID: <CAGngYiU_sNiAi0gYFEUg6=TfvUWH+6Nhid9PqYa6x+nb4UkVWA@mail.gmail.com>
+Subject: Re: [PATCH v1] dmaengine: imx-sdma: remove BD_INTR for channel0
+To: Robin Gong <yibin.gong@nxp.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190614_062823_120325_DAACE360 
-X-CRM114-Status: GOOD (  11.56  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190614_063548_392016_5A9D1CC4 
+X-CRM114-Status: GOOD (  12.74  )
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:241 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:341 listed in]
  [list.dnswl.org]
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (thesven73[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (sorganov[at]gmail.com)
+ provider (thesven73[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -103,35 +95,62 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-serial@vger.kernel.org, Sascha Hauer <s.hauer@pengutronix.de>,
- NXP Linux Team <linux-imx@nxp.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Uwe =?utf-8?Q?Kleine-K=C3=B6nig?= <u.kleine-koenig@pengutronix.de>,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Shawn Guo <shawnguo@kernel.org>, Sascha Hauer <s.hauer@pengutronix.de>,
+ Vinod <vkoul@kernel.org>, NXP Linux Team <linux-imx@nxp.com>,
+ Sascha Hauer <kernel@pengutronix.de>, dmaengine@vger.kernel.org,
+ Dan Williams <dan.j.williams@intel.com>, Fabio Estevam <festevam@gmail.com>,
+ Michael Olbrich <m.olbrich@pengutronix.de>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-TG90aGFyIFdhw59tYW5uIDxMV0BLQVJPLWVsZWN0cm9uaWNzLmRlPiB3cml0ZXM6Cj4gSGksCj4K
-PiBPbiBGcmksIDE0IEp1biAyMDE5IDE1OjExOjMyICswMzAwIFNlcmdleSBPcmdhbm92IHdyb3Rl
-Ogo+PiBpbXhfc2V0X3Rlcm1pb3MoKSBjbGVhcmVkIFJUUyBvbiBldmVyeSBjYWxsLCBub3cgZml4
-ZWQuCj4+IAo+PiBTaWduZWQtb2ZmLWJ5OiBTZXJnZXkgT3JnYW5vdiA8c29yZ2Fub3ZAZ21haWwu
-Y29tPgo+PiAtLS0KPj4gIGRyaXZlcnMvdHR5L3NlcmlhbC9pbXguYyB8IDEyICsrKysrKysrLS0t
-LQo+PiAgMSBmaWxlIGNoYW5nZWQsIDggaW5zZXJ0aW9ucygrKSwgNCBkZWxldGlvbnMoLSkKPj4g
-Cj4+IGRpZmYgLS1naXQgYS9kcml2ZXJzL3R0eS9zZXJpYWwvaW14LmMgYi9kcml2ZXJzL3R0eS9z
-ZXJpYWwvaW14LmMKPj4gaW5kZXggOGVlOTEwZi4uZGUyMzA2OCAxMDA2NDQKPj4gLS0tIGEvZHJp
-dmVycy90dHkvc2VyaWFsL2lteC5jCj4+ICsrKyBiL2RyaXZlcnMvdHR5L3NlcmlhbC9pbXguYwo+
-PiBAQCAtMTU2NCw2ICsxNTY0LDEzIEBAIGlteF91YXJ0X3NldF90ZXJtaW9zKHN0cnVjdCB1YXJ0
-X3BvcnQgKnBvcnQsIHN0cnVjdCBrdGVybWlvcyAqdGVybWlvcywKPj4gIAo+PiAgCXNwaW5fbG9j
-a19pcnFzYXZlKCZzcG9ydC0+cG9ydC5sb2NrLCBmbGFncyk7Cj4+ICAKPj4gKwkvKgo+PiArCSAq
-IFJlYWQgY3VycmVudCBVQ1IyIGFuZCBzYXZlIGl0IGZvciBmdXR1cmUgdXNlLCB0aGVuIGNsZWFy
-IGFsbCB0aGUgYml0cwo+PiArCSAqIGV4Y2VwdCB0aG9zZSB3ZSB3aWxsIG9yIG1heSBuZWVkIHRv
-IHByZXNlcnZlLgo+PiArCSAqLwo+PiArCW9sZF91Y3IyID0gaW14X3VhcnRfcmVhZGwoc3BvcnQs
-IFVDUjIpOwo+PiArCXVjcjIgPSBvbGRfdWNyMiAmIChVQ1IyX1RYRU4gfCBVQ1IyX1JYRU4gfCBV
-Q1IyX0FURU4gfCBVQ1IyX0NUU0MpOwo+PiArCj4+ICAJdWNyMiA9IFVDUjJfU1JTVCB8IFVDUjJf
-SVJUUzsKPiBzLz0vfD0vCgpOaWNlIGNhdGNoIQoKVGhhbmtzLAoKLS0gU2VyZ2V5IE9yZ2Fub3YK
-Cl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFy
-bS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9y
-ZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1r
-ZXJuZWwK
+Hi Robin, see comments inline.
+
+On Fri, Jun 14, 2019 at 4:38 AM <yibin.gong@nxp.com> wrote:
+>
+> diff --git a/drivers/dma/imx-sdma.c b/drivers/dma/imx-sdma.c
+> index deea9aa..b5a1ee2 100644
+> --- a/drivers/dma/imx-sdma.c
+> +++ b/drivers/dma/imx-sdma.c
+> @@ -742,7 +742,7 @@ static int sdma_load_script(struct sdma_engine *sdma, void *buf, int size,
+>         spin_lock_irqsave(&sdma->channel_0_lock, flags);
+>
+>         bd0->mode.command = C0_SETPM;
+> -       bd0->mode.status = BD_DONE | BD_INTR | BD_WRAP | BD_EXTD;
+> +       bd0->mode.status = BD_DONE | BD_WRAP | BD_EXTD;
+
+I tested this change on its own, and it seemed sufficient to make the crash
+disappear.
+
+>         bd0->mode.count = size / 2;
+>         bd0->buffer_addr = buf_phys;
+>         bd0->ext_buffer_addr = address;
+> @@ -1064,7 +1064,7 @@ static int sdma_load_context(struct sdma_channel *sdmac)
+>         context->gReg[7] = sdmac->watermark_level;
+>
+>         bd0->mode.command = C0_SETDM;
+> -       bd0->mode.status = BD_DONE | BD_INTR | BD_WRAP | BD_EXTD;
+> +       bd0->mode.status = BD_DONE | BD_WRAP | BD_EXTD;
+
+This function isn't part of the firmware load path, so how can it be related
+to fixing the firmware crash?
+
+If this is an unrelated efficiency saving, maybe it should go into its
+own patch?
+Maybe we want bugfix patches to be as small and specific as possible, so they
+can more easily be backported to older kernels?
+
+>         bd0->mode.count = sizeof(*context) / 4;
+>         bd0->buffer_addr = sdma->context_phys;
+>         bd0->ext_buffer_addr = 2048 + (sizeof(*context) / 4) * channel;
+> --
+> 2.7.4
+>
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
