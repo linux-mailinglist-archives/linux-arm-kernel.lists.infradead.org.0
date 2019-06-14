@@ -2,56 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8BA6A46174
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Jun 2019 16:47:56 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E79504617C
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Jun 2019 16:48:32 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=QmMU1v6dY75Qr2WMgnM59qKANK8/mA99fGRrzoLJOqw=; b=DRYd8mKwKLW1ZI
-	KvlOrFtHvHFQZMUD2SCpMDvDx4a1ZKHx9qfwz0gWj0kuUUK1O2fnBd/HegWnYngpqN9ynaXXaXt3C
-	GXMUsH/qH+WRytdv6ksJLgPyiarcUa1q9Dk4sh8AJDlkh+OnDbzxR5FulCzEtbMtkaO6f1ebMvpp3
-	hOT9S6raZJMuiTYRYlPA9OZJNtiiRP/NJiICtShYRN0NipTDvSfRZQwByBjtS58Z7P5ik7eJ95b3Z
-	pfUYORMsK0RVgaBQjl8wWexJKqiVZoNQNeTrOSgsBl8JccoKjPxDhQ6H0PKeQcBnhP7U9VpOv0Bkz
-	IGg6lHjo+4bIPQo0p+eQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Cix5HOCBiDtmcTcd7HscCWeMlo4qLHt3vRTolUVmmOU=; b=u+gEe73PTBF7Li
+	qYUtMm1ERQYLV5Y4m0gc8OY3I30ue7P2LqIFsOI1aUDqRHpZfYobK3w8h2P3ZxDyLeIs4OdFNN5WQ
+	hpupo5i+M2U9dAlzJLg1ys2MPaHOKVc95piarT8QWXbx1z4O/+o/Gd5wkiuOEBUu4ZESTxXOBGpMI
+	3Si5AXgg3j1ZuwVl32+vKYwE/C0ZIflJSjQYUgRQGtbRMvtGOECU97ith9u0N+a1Zc3srfPDe9IS2
+	rUI1HY19HGBzHyp18cQYKKGKF0doiZUWbIZZ6wD3f1lKrGLahPL7kWd9JJI7RcbXKzdvVg8mWSgji
+	dIW2gBfrBdszX5oxPJ2g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hbnUg-0001jr-N1; Fri, 14 Jun 2019 14:47:54 +0000
-Received: from merlin.infradead.org ([2001:8b0:10b:1231::1])
+	id 1hbnVE-0002PA-25; Fri, 14 Jun 2019 14:48:28 +0000
+Received: from lelv0142.ext.ti.com ([198.47.23.249])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hbnU2-0001Gt-RR
- for linux-arm-kernel@bombadil.infradead.org; Fri, 14 Jun 2019 14:47:14 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=infradead.org; s=merlin.20170209; h=In-Reply-To:Content-Type:MIME-Version:
- References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
- Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
- List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=eto68beFTMuFiXin5hRYooxdWER5uQTswdUxEzMWaWA=; b=DBSwzm54pOyV8n25mD2a3wO+S
- 18o8yGYyLI51UTQBautY5GV45uh/2R7pJ4NJs5GU3Uf8KHOLJMgC4RB6SLZWEUJpaecD8Ovbaq2SW
- xYj/BjggESR++454UQsUCz4YbFKQCO8kBuYg8OczWY9S5H/PZOD2w0YxeDUt0VAfPffy8FFQfquFq
- gA4ZftJWbIyzLJTApeMN6PRa0QBOJfP3+i6oupWGT6oAoOqjwvzEhXb+emrJxriPLBz0dhOMwZAUy
- 57aUPQityaS15rf4H4yey68+/94B/aZEHc4U1LxSjAppUhsmxQZnePmIJEB+KN8rDWU2YD0PDT3LX
- hHZL9r8zw==;
-Received: from [179.240.172.117] (helo=quaco.ghostprotocols.net)
- by merlin.infradead.org with esmtpsa (Exim 4.92 #3 (Red Hat Linux))
- id 1hbnU0-0000H2-Qu; Fri, 14 Jun 2019 14:47:13 +0000
-Received: by quaco.ghostprotocols.net (Postfix, from userid 1000)
- id 262DC41149; Fri, 14 Jun 2019 11:46:56 -0300 (-03)
-Date: Fri, 14 Jun 2019 11:46:56 -0300
-From: Arnaldo Carvalho de Melo <acme@kernel.org>
-To: John Garry <john.garry@huawei.com>
-Subject: Re: [PATCH v2 1/5] perf pmu: Fix uncore PMU alias list for ARM64
-Message-ID: <20190614144656.GF1402@kernel.org>
-References: <1560521283-73314-1-git-send-email-john.garry@huawei.com>
- <1560521283-73314-2-git-send-email-john.garry@huawei.com>
+ id 1hbnV3-0002Od-JZ
+ for linux-arm-kernel@lists.infradead.org; Fri, 14 Jun 2019 14:48:19 +0000
+Received: from fllv0034.itg.ti.com ([10.64.40.246])
+ by lelv0142.ext.ti.com (8.15.2/8.15.2) with ESMTP id x5EEmE79033033;
+ Fri, 14 Jun 2019 09:48:14 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
+ s=ti-com-17Q1; t=1560523694;
+ bh=YY407v4FUUGrWVxCrjpprZqWG+ZFz6K5gsWMS4+ez1c=;
+ h=Subject:To:CC:References:From:Date:In-Reply-To;
+ b=cV3Aamep8bVc3Rp8Vy8uL2oBqZkuEOo3ed31ki5CSTdTy+L+jV1+IsWJ9KY67yoPX
+ +aXr4M3DP57tE9GS7xjrJfa1G52IfhVLKWkACaf94MfHTJVJuhs85TmUWTA0otCuN6
+ HeFS0vhc6zFDRtqUNPTIhjEqeOhxkureNDZpykU8=
+Received: from DFLE109.ent.ti.com (dfle109.ent.ti.com [10.64.6.30])
+ by fllv0034.itg.ti.com (8.15.2/8.15.2) with ESMTPS id x5EEmEnp018446
+ (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
+ Fri, 14 Jun 2019 09:48:14 -0500
+Received: from DFLE107.ent.ti.com (10.64.6.28) by DFLE109.ent.ti.com
+ (10.64.6.30) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5; Fri, 14
+ Jun 2019 09:48:14 -0500
+Received: from lelv0327.itg.ti.com (10.180.67.183) by DFLE107.ent.ti.com
+ (10.64.6.28) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5 via
+ Frontend Transport; Fri, 14 Jun 2019 09:48:14 -0500
+Received: from [172.24.190.117] (ileax41-snat.itg.ti.com [10.172.224.153])
+ by lelv0327.itg.ti.com (8.15.2/8.15.2) with ESMTP id x5EEmA55062905;
+ Fri, 14 Jun 2019 09:48:11 -0500
+Subject: Re: [PATCH] arm64: dts: ti: k3-j721e-main: Add Main NavSS Interrupt
+ controller node
+To: Suman Anna <s-anna@ti.com>, Tero Kristo <t-kristo@ti.com>, Nishanth Menon
+ <nm@ti.com>
+References: <20190531004848.32061-1-s-anna@ti.com>
+From: Lokesh Vutla <lokeshvutla@ti.com>
+Message-ID: <5e8fa7b4-6c44-85dc-0a33-bcf930b6d795@ti.com>
+Date: Fri, 14 Jun 2019 20:17:37 +0530
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.7.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <1560521283-73314-2-git-send-email-john.garry@huawei.com>
-X-Url: http://acmel.wordpress.com
-User-Agent: Mutt/1.11.3 (2019-02-01)
+In-Reply-To: <20190531004848.32061-1-s-anna@ti.com>
+Content-Language: en-US
+X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20190614_074817_795834_06AE34D0 
+X-CRM114-Status: GOOD (  17.48  )
+X-Spam-Score: -2.5 (--)
+X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
+ Content analysis details:   (-2.5 points)
+ pts rule name              description
+ ---- ---------------------- --------------------------------------------------
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [198.47.23.249 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ 0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -63,101 +93,75 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, brueckner@linux.ibm.com, mathieu.poirier@linaro.org,
- peterz@infradead.org, ben@decadent.org.uk, tmricht@linux.ibm.com,
- will.deacon@arm.com, linux-kernel@vger.kernel.org, linuxarm@huawei.com,
- zhangshaokun@hisilicon.com, alexander.shishkin@linux.intel.com,
- mingo@redhat.com, namhyung@kernel.org, jolsa@redhat.com,
- linux-arm-kernel@lists.infradead.org, kan.liang@linux.intel.com
+Cc: Peter Ujfalusi <peter.ujfalusi@ti.com>, devicetree@vger.kernel.org,
+ Grygorii Strashko <grygorii.strashko@ti.com>, Rob Herring <robh+dt@kernel.org>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Em Fri, Jun 14, 2019 at 10:07:59PM +0800, John Garry escreveu:
-> In commit 292c34c10249 ("perf pmu: Fix core PMU alias list for X86
-> platform"), we fixed the issue of CPU events being aliased to uncore
-> events.
+
+
+On 31/05/19 6:18 AM, Suman Anna wrote:
+> Add the Interrupt controller node for the Interrupt Router present within
+> the Main NavSS module. This Interrupt Router can route 192 interrupts to
+> the GIC_SPI in 3 sets of 64 interrupts each. Note that the last set is
+> reserved for the host ID A72_3 for hypervisor usecases, so the node is
+> added only with 2 sets for the Linux kernel context (host id A72_2). This
+> is specified through the ti,sci-rm-range-girq property.
 > 
-> Fix this same issue for ARM64, since the said commit left the (broken)
-> behaviour untouched for ARM64.
+> Signed-off-by: Suman Anna <s-anna@ti.com>
 
-So I added:
+Reviewed-by: Lokesh Vutla <lokeshvutla@ti.com>
 
-Cc: stable@vger.kernel.org
-Fixes: 292c34c10249 ("perf pmu: Fix core PMU alias list for X86 platform")
+Thanks and regards,
+Lokesh
 
-So that the stable trees get this fix and add it to the versions where
-it should have been together with the x86 fix, ok?
-
-- Arnaldo
- 
-> Signed-off-by: John Garry <john.garry@huawei.com>
 > ---
->  tools/perf/util/pmu.c | 28 ++++++++++++----------------
->  1 file changed, 12 insertions(+), 16 deletions(-)
+> Hi Tero,
 > 
-> diff --git a/tools/perf/util/pmu.c b/tools/perf/util/pmu.c
-> index f2eff272279b..7e7299fee550 100644
-> --- a/tools/perf/util/pmu.c
-> +++ b/tools/perf/util/pmu.c
-> @@ -709,9 +709,7 @@ static void pmu_add_cpu_aliases(struct list_head *head, struct perf_pmu *pmu)
->  {
->  	int i;
->  	struct pmu_events_map *map;
-> -	struct pmu_event *pe;
->  	const char *name = pmu->name;
-> -	const char *pname;
+> This patch depends on the J721E series [1] from Nishanth. Patch tested
+> using additional patches exercising Mailbox IP.
+> 
+> regards
+> Suman
+> 
+> [1] https://patchwork.kernel.org/project/linux-arm-kernel/list/?series=121189
+> 
+>  arch/arm64/boot/dts/ti/k3-j721e-main.dtsi | 18 ++++++++++++++++++
+>  1 file changed, 18 insertions(+)
+> 
+> diff --git a/arch/arm64/boot/dts/ti/k3-j721e-main.dtsi b/arch/arm64/boot/dts/ti/k3-j721e-main.dtsi
+> index d42912044a5d..36c51ff9a898 100644
+> --- a/arch/arm64/boot/dts/ti/k3-j721e-main.dtsi
+> +++ b/arch/arm64/boot/dts/ti/k3-j721e-main.dtsi
+> @@ -50,6 +50,24 @@
+>  		#iommu-cells = <1>;
+>  	};
 >  
->  	map = perf_pmu__find_map(pmu);
->  	if (!map)
-> @@ -722,28 +720,26 @@ static void pmu_add_cpu_aliases(struct list_head *head, struct perf_pmu *pmu)
->  	 */
->  	i = 0;
->  	while (1) {
-> +		const char *cpu_name = is_arm_pmu_core(name) ? name : "cpu";
-> +		struct pmu_event *pe = &map->table[i++];
-> +		const char *pname = pe->pmu ? pe->pmu : cpu_name;
->  
-> -		pe = &map->table[i++];
->  		if (!pe->name) {
->  			if (pe->metric_group || pe->metric_name)
->  				continue;
->  			break;
->  		}
->  
-> -		if (!is_arm_pmu_core(name)) {
-> -			pname = pe->pmu ? pe->pmu : "cpu";
-> -
-> -			/*
-> -			 * uncore alias may be from different PMU
-> -			 * with common prefix
-> -			 */
-> -			if (pmu_is_uncore(name) &&
-> -			    !strncmp(pname, name, strlen(pname)))
-> -				goto new_alias;
-> +		/*
-> +		 * uncore alias may be from different PMU
-> +		 * with common prefix
-> +		 */
-> +		if (pmu_is_uncore(name) &&
-> +		    !strncmp(pname, name, strlen(pname)))
-> +			goto new_alias;
->  
-> -			if (strcmp(pname, name))
-> -				continue;
-> -		}
-> +		if (strcmp(pname, name))
-> +			continue;
->  
->  new_alias:
->  		pr_err("%s new_alias name=%s pe->name=%s\n", __func__, name, pe->name);
-> -- 
-> 2.17.1
-
--- 
-
-- Arnaldo
+> +	cbass_main_navss: interconnect0 {
+> +		compatible = "simple-bus";
+> +		#address-cells = <2>;
+> +		#size-cells = <2>;
+> +		ranges;
+> +
+> +		main_navss_intr: interrupt-controller1 {
+> +			compatible = "ti,sci-intr";
+> +			ti,intr-trigger-type = <4>;
+> +			interrupt-controller;
+> +			interrupt-parent = <&gic500>;
+> +			#interrupt-cells = <2>;
+> +			ti,sci = <&dmsc>;
+> +			ti,sci-dst-id = <14>;
+> +			ti,sci-rm-range-girq = <0>, <2>;
+> +		};
+> +	};
+> +
+>  	secure_proxy_main: mailbox@32c00000 {
+>  		compatible = "ti,am654-secure-proxy";
+>  		#mbox-cells = <1>;
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
