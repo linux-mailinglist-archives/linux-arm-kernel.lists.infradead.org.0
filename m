@@ -2,61 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7E18A46032
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Jun 2019 16:11:27 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7EDAF46037
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Jun 2019 16:11:40 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=DkQh4epnoFThYt9xmSQ4oqk79z7ofav2jdIuSukv1yw=; b=MRThmcqyyN4ZUC
-	4ZpcJDfidT+66i9QehRi1bhwwEUJINLylNuOIffjH19IF2Hb7CeqUU5LWT6rcopTpqm7EMlv/PrOX
-	vm1W48Ebs4QcUeA07wnxuGHut8FxiT77YH9jTZCzgJIw2F/J4FflQOtlls9sTai3dI4j+gi18d5SP
-	Olly3gA9uuMOxDCUY6DgwKjmA+ONwm51S8oi1V70gO7Jmfbi/IHn6ePTHZ/Vme+0WCSOyI053Sb1s
-	9MrbzzCwNK/HQF2N650PtFlBBDF1PfBW+Y+OkOByTkCTdC8jrIvd7RMZNHvr8U9X/seWFSdErkAxf
-	OewAjSFgEqWO0QnFafKw==;
+	List-Owner; bh=KyWd7KbuaJXAWQ1g9CJB7UCc6wwQcqRjsmKsfThpazw=; b=J2ZtxaVIzzb5hw
+	TyqeznFPxbEpQZDYTOUNPrmdgddm+NcljKntHgKXQ5VImU2YCw3eyzk5lCPyPuW8WbyzUd04euoah
+	LWZxPZyGX/ZB/QO3T8bSsM4qIXHWln5E7SVD+IxH5EWFPaEEaBi55BWQRjUx7kU3EB+wMsLYiO+Q/
+	sWMcqR1/2O3vkmUoWEypZbYOljLcteqxqwVNZLBvXhofBQBwDWwK066DR1ucIgIS9RPSAkbunDEd+
+	LR2cout84t29VQfTGsz3G4EAsT9H88vkVaHN4QbBKVmquGTzuE2xORPspKmd8HfpjGA0QW/xeXPTA
+	z/Pq3CCGAMWTrLPazwiQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hbmvL-0006Ea-3F; Fri, 14 Jun 2019 14:11:23 +0000
-Received: from szxga04-in.huawei.com ([45.249.212.190] helo=huawei.com)
+	id 1hbmva-0006Wx-NI; Fri, 14 Jun 2019 14:11:38 +0000
+Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hbmtj-0003iP-Bl
- for linux-arm-kernel@lists.infradead.org; Fri, 14 Jun 2019 14:09:45 +0000
-Received: from DGGEMS401-HUB.china.huawei.com (unknown [172.30.72.58])
- by Forcepoint Email with ESMTP id CBC109D5139CFB18DE92;
- Fri, 14 Jun 2019 22:09:34 +0800 (CST)
-Received: from localhost.localdomain (10.67.212.75) by
- DGGEMS401-HUB.china.huawei.com (10.3.19.201) with Microsoft SMTP Server id
- 14.3.439.0; Fri, 14 Jun 2019 22:09:24 +0800
-From: John Garry <john.garry@huawei.com>
-To: <peterz@infradead.org>, <mingo@redhat.com>, <acme@kernel.org>,
- <alexander.shishkin@linux.intel.com>, <jolsa@redhat.com>,
- <namhyung@kernel.org>, <tmricht@linux.ibm.com>, <brueckner@linux.ibm.com>,
- <kan.liang@linux.intel.com>, <ben@decadent.org.uk>,
- <mathieu.poirier@linaro.org>, <mark.rutland@arm.com>, <will.deacon@arm.com>
-Subject: [PATCH v2 5/5] perf jevents: Add support for Hisi hip08 L3C PMU
- aliasing
-Date: Fri, 14 Jun 2019 22:08:03 +0800
-Message-ID: <1560521283-73314-6-git-send-email-john.garry@huawei.com>
-X-Mailer: git-send-email 2.8.1
-In-Reply-To: <1560521283-73314-1-git-send-email-john.garry@huawei.com>
-References: <1560521283-73314-1-git-send-email-john.garry@huawei.com>
-MIME-Version: 1.0
-X-Originating-IP: [10.67.212.75]
-X-CFilter-Loop: Reflected
+ id 1hbmv9-0006HE-C8
+ for linux-arm-kernel@lists.infradead.org; Fri, 14 Jun 2019 14:11:13 +0000
+Received: from lupine.hi.pengutronix.de
+ ([2001:67c:670:100:3ad5:47ff:feaf:1a17] helo=lupine)
+ by metis.ext.pengutronix.de with esmtp (Exim 4.92)
+ (envelope-from <p.zabel@pengutronix.de>)
+ id 1hbmv0-0001nW-0Z; Fri, 14 Jun 2019 16:11:02 +0200
+Message-ID: <1560521459.18257.1.camel@pengutronix.de>
+Subject: Re: [PATCH v8 5/5] media: imx: Try colorimetry at both sink and
+ source pads
+From: Philipp Zabel <p.zabel@pengutronix.de>
+To: Steve Longerbeam <slongerbeam@gmail.com>, linux-media@vger.kernel.org
+Date: Fri, 14 Jun 2019 16:10:59 +0200
+In-Reply-To: <20190522010317.23710-6-slongerbeam@gmail.com>
+References: <20190522010317.23710-1-slongerbeam@gmail.com>
+ <20190522010317.23710-6-slongerbeam@gmail.com>
+X-Mailer: Evolution 3.22.6-1+deb9u2 
+Mime-Version: 1.0
+X-SA-Exim-Connect-IP: 2001:67c:670:100:3ad5:47ff:feaf:1a17
+X-SA-Exim-Mail-From: p.zabel@pengutronix.de
+X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
+ SAEximRunCond expanded to false
+X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190614_070943_664872_F3AD26CF 
-X-CRM114-Status: GOOD (  10.92  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20190614_071111_455182_6169E3D0 
+X-CRM114-Status: UNSURE (   9.35  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [45.249.212.190 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -68,83 +66,39 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: zhangshaokun@hisilicon.com, John
- Garry <john.garry@huawei.com>, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linuxarm@huawei.com
+Cc: "open list:STAGING SUBSYSTEM" <devel@driverdev.osuosl.org>,
+ Fabio Estevam <festevam@gmail.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Sascha Hauer <s.hauer@pengutronix.de>,
+ open list <linux-kernel@vger.kernel.org>, Rui Miguel Silva <rmfrfs@gmail.com>,
+ NXP Linux Team <linux-imx@nxp.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>, Shawn Guo <shawnguo@kernel.org>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM
+ ARCHITECTURE" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add support for Hisi hip08 L3C PMU aliasing.
+Hi Steve,
 
-The kernel driver is in drivers/perf/hisilicon/hisi_uncore_l3c_pmu.c
+On Tue, 2019-05-21 at 18:03 -0700, Steve Longerbeam wrote:
+> Retask imx_media_fill_default_mbus_fields() to try colorimetry parameters,
+> renaming it to to imx_media_try_colorimetry(), and call it at both sink and
+> source pad try_fmt's. The unrelated check for uninitialized field value is
+> moved out to appropriate places in each subdev try_fmt.
+> 
+> The IC now supports Rec.709 and BT.601 Y'CbCr encoding, and both limited
+> and full range quantization for both YUV and RGB space, so allow those
+> for pipelines that route through the IC.
+> 
+> Signed-off-by: Steve Longerbeam <slongerbeam@gmail.com>
 
-Signed-off-by: John Garry <john.garry@huawei.com>
----
- .../arm64/hisilicon/hip08/uncore-l3c.json     | 37 +++++++++++++++++++
- tools/perf/pmu-events/jevents.c               |  1 +
- 2 files changed, 38 insertions(+)
- create mode 100644 tools/perf/pmu-events/arch/arm64/hisilicon/hip08/uncore-l3c.json
+I've applied them on the imx-drm/next branch with Hans' Acked-by on 5/5.
 
-diff --git a/tools/perf/pmu-events/arch/arm64/hisilicon/hip08/uncore-l3c.json b/tools/perf/pmu-events/arch/arm64/hisilicon/hip08/uncore-l3c.json
-new file mode 100644
-index 000000000000..ca48747642e1
---- /dev/null
-+++ b/tools/perf/pmu-events/arch/arm64/hisilicon/hip08/uncore-l3c.json
-@@ -0,0 +1,37 @@
-+[
-+   {
-+	    "EventCode": "0x00",
-+	    "EventName": "uncore_hisi_l3c.rd_cpipe",
-+	    "BriefDescription": "Total read accesses",
-+	    "PublicDescription": "Total read accesses",
-+	    "Unit": "hisi_sccl,l3c",
-+   },
-+   {
-+	    "EventCode": "0x01",
-+	    "EventName": "uncore_hisi_l3c.wr_cpipe",
-+	    "BriefDescription": "Total write accesses",
-+	    "PublicDescription": "Total write accesses",
-+	    "Unit": "hisi_sccl,l3c",
-+   },
-+   {
-+	    "EventCode": "0x02",
-+	    "EventName": "uncore_hisi_l3c.rd_hit_cpipe",
-+	    "BriefDescription": "Total read hits",
-+	    "PublicDescription": "Total read hits",
-+	    "Unit": "hisi_sccl,l3c",
-+   },
-+   {
-+	    "EventCode": "0x03",
-+	    "EventName": "uncore_hisi_l3c.wr_hit_cpipe",
-+	    "BriefDescription": "Total write hits",
-+	    "PublicDescription": "Total write hits",
-+	    "Unit": "hisi_sccl,l3c",
-+   },
-+   {
-+	    "EventCode": "0x04",
-+	    "EventName": "uncore_hisi_l3c.victim_num",
-+	    "BriefDescription": "l3c precharge commands",
-+	    "PublicDescription": "l3c precharge commands",
-+	    "Unit": "hisi_sccl,l3c",
-+   },
-+]
-diff --git a/tools/perf/pmu-events/jevents.c b/tools/perf/pmu-events/jevents.c
-index 909e53e3b5bd..7d241efd03de 100644
---- a/tools/perf/pmu-events/jevents.c
-+++ b/tools/perf/pmu-events/jevents.c
-@@ -238,6 +238,7 @@ static struct map {
- 	{ "UPI LL", "uncore_upi" },
- 	{ "hisi_sccl,ddrc", "hisi_sccl,ddrc" },
- 	{ "hisi_sccl,hha", "hisi_sccl,hha" },
-+	{ "hisi_sccl,l3c", "hisi_sccl,l3c" },
- 	{}
- };
- 
--- 
-2.17.1
-
+regards
+Philipp
 
 _______________________________________________
 linux-arm-kernel mailing list
