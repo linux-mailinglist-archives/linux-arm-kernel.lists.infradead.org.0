@@ -2,64 +2,90 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DA8B845311
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Jun 2019 05:43:25 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 45BEC4531B
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Jun 2019 05:47:01 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=5/SMFPtkVISU5TNoVHfydwqUtrKc8IFicaBLJhEj/Ew=; b=Ht42WTyZvaBOtX
-	l4ZkXuQgTNivvnRO0vDQSubAq/GaY39LSUC5+M8KE3QWRgPfFpxOnvK3vrNU2wmXVm/FByNLu8RDG
-	oIjB04RCM2GX+EoN6A15Boxi50fZ4g9OIPrgPqBYb4dLPSxJR5vjLgLdedqyuUHSomBWjGbn82PjW
-	TMfQ7ZcraWIunSYXNp4uMex43U/qbqpm775LMkWpBcoIGzUWg/EM1PZk3C3TMn+gzAbFXT81gZbqJ
-	FfWFacAMscqpnNQawoIuODMQcde69y9DJrquSAPYvluudMTrI1zzBHEBN29zC8puaPIv6n3KKxkbX
-	Q05yXaRc06nbAhnEdEog==;
+	List-Owner; bh=N/F0sYBrC51X5snuh/S1exPc9XsuGMYcGatQ8hzH6EQ=; b=BzNJd86sc7vDko
+	RYLpTC/SgmxavvQVfMN5Fr6ysZryZ0Ehxe92yDNOHbRpPXuupz0FHNYiYea7WbhIph7F/txlYhTis
+	wsi6SRW0Y66tOOlKaluKjpJad+ldXeUjQOkNdBRlMLm5ZyhBGsNUQXr5s1ueTEDZqcJYrFzFzW/n3
+	tZOWItls9tnExYR2OzhCB7aKvilvEQDFTZaU/KgIEBabNeR3z7skPkxU/Umi+Ff4WlIt2Kdb336ek
+	riFrLhlxDW76g4Lf3ul0ZK2179302wD27JK7FEegiZY7XsIxPUzxeOGrxT8mUuU2y8c5WEkmYWkaf
+	SI5Lh8MCHXdKbxorAy8A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hbd7I-0001Yl-NN; Fri, 14 Jun 2019 03:43:04 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
+	id 1hbdB5-0004Cv-2j; Fri, 14 Jun 2019 03:46:59 +0000
+Received: from mail-ed1-f65.google.com ([209.85.208.65])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hbd78-0001Xz-EW; Fri, 14 Jun 2019 03:42:56 +0000
-X-UUID: a14d439faf8c41e294ba7ae92cd3378e-20190613
-X-UUID: a14d439faf8c41e294ba7ae92cd3378e-20190613
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
- (envelope-from <ck.hu@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 347621719; Thu, 13 Jun 2019 19:42:47 -0800
-Received: from MTKMBS31N1.mediatek.inc (172.27.4.69) by
- MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Thu, 13 Jun 2019 20:42:45 -0700
-Received: from mtkcas08.mediatek.inc (172.21.101.126) by
- MTKMBS31N1.mediatek.inc (172.27.4.69) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Fri, 14 Jun 2019 11:42:40 +0800
-Received: from [172.21.77.4] (172.21.77.4) by mtkcas08.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Fri, 14 Jun 2019 11:42:39 +0800
-Message-ID: <1560483759.16718.12.camel@mtksdaap41>
-Subject: Re: [PATCH v3, 13/27] drm/mediatek: add ddp component CCORR
-From: CK Hu <ck.hu@mediatek.com>
-To: <yongqiang.niu@mediatek.com>
-Date: Fri, 14 Jun 2019 11:42:39 +0800
-In-Reply-To: <1559734986-7379-14-git-send-email-yongqiang.niu@mediatek.com>
-References: <1559734986-7379-1-git-send-email-yongqiang.niu@mediatek.com>
- <1559734986-7379-14-git-send-email-yongqiang.niu@mediatek.com>
-X-Mailer: Evolution 3.10.4-0ubuntu2 
+ id 1hbdAw-0004CQ-7N
+ for linux-arm-kernel@lists.infradead.org; Fri, 14 Jun 2019 03:46:51 +0000
+Received: by mail-ed1-f65.google.com with SMTP id p15so1369942eds.8
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 13 Jun 2019 20:46:50 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=a8hlfPfnXEjBTjeUfjk+FsaluQO4vebhuMrI7tB+55k=;
+ b=qkQXX0SNHKAyvbT0k2Qw+oTbq6quDbz1D559pupwjwD2A82FInO4LHbAGSY6UnKmTe
+ 4oaIH70wqUYKcizc4MfIraXdgWW2lv1kUXbzBLSem/D97jsKxS0lVpjUnwhPA1Docz9x
+ YWXWOL+s0/c7UxMrAatrx8fR8ZiNZRf50uj2i6JcVCJasqppKVINClcpswrQuaUzqKk7
+ KGZuX0GmBsrf+cpHlJydKsBez+eyi3B9ItRphHt6tftf9ytNYhW56lJwku1IEiw2GYGw
+ ocR7g8hIVEMpR2Jdh9x52yMpn8/1nMXvL6FharZdkWbyoCnAVD2aJDrsCZCEuLfVGpPF
+ x2ug==
+X-Gm-Message-State: APjAAAW0epFeXIB0jggXuA8wOl4G5tr00N/DDivE6P8kBxKMEiQQkJ0/
+ hdNO4vWVkD3+vv+PLzcloCPpkxCspcE=
+X-Google-Smtp-Source: APXvYqwsirbYcyrwXCBSldDQIxPWJcztB4GiFx7wzgq0zag4ymfNSrbK3rj5y/uWLsCpYIAcaqbBGw==
+X-Received: by 2002:a17:906:a989:: with SMTP id
+ jr9mr79244022ejb.117.1560484008567; 
+ Thu, 13 Jun 2019 20:46:48 -0700 (PDT)
+Received: from mail-wr1-f48.google.com (mail-wr1-f48.google.com.
+ [209.85.221.48])
+ by smtp.gmail.com with ESMTPSA id z9sm337772ejq.17.2019.06.13.20.46.48
+ for <linux-arm-kernel@lists.infradead.org>
+ (version=TLS1_3 cipher=AEAD-AES128-GCM-SHA256 bits=128/128);
+ Thu, 13 Jun 2019 20:46:48 -0700 (PDT)
+Received: by mail-wr1-f48.google.com with SMTP id p13so890291wru.10
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 13 Jun 2019 20:46:48 -0700 (PDT)
+X-Received: by 2002:a5d:4311:: with SMTP id h17mr64213816wrq.9.1560484007885; 
+ Thu, 13 Jun 2019 20:46:47 -0700 (PDT)
 MIME-Version: 1.0
-X-MTK: N
+References: <20190613185241.22800-1-jagan@amarulasolutions.com>
+ <20190613185241.22800-6-jagan@amarulasolutions.com>
+In-Reply-To: <20190613185241.22800-6-jagan@amarulasolutions.com>
+From: Chen-Yu Tsai <wens@csie.org>
+Date: Fri, 14 Jun 2019 11:46:36 +0800
+X-Gmail-Original-Message-ID: <CAGb2v654p=HZuXCTJkrbWbFP_kEkpRWHwj-7_Ck_=XbyMFmvFw@mail.gmail.com>
+Message-ID: <CAGb2v654p=HZuXCTJkrbWbFP_kEkpRWHwj-7_Ck_=XbyMFmvFw@mail.gmail.com>
+Subject: Re: [PATCH 5/9] ARM: dts: sun8i: r40: Add TCON TOP LCD clocking
+To: Jagan Teki <jagan@amarulasolutions.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190613_204254_495736_20893881 
-X-CRM114-Status: GOOD (  13.47  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190613_204650_264483_5B922F88 
+X-CRM114-Status: GOOD (  15.03  )
+X-Spam-Score: 0.8 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (0.8 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.208.65 listed in list.dnswl.org]
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (wens213[at]gmail.com)
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.208.65 listed in wl.mailspike.net]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (wens213[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -71,132 +97,72 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Philipp Zabel <p.zabel@pengutronix.de>, David Airlie <airlied@linux.ie>,
- linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
- Rob Herring <robh+dt@kernel.org>, linux-mediatek@lists.infradead.org,
- Daniel Vetter <daniel@ffwll.ch>, Matthias Brugger <matthias.bgg@gmail.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: devicetree <devicetree@vger.kernel.org>,
+ Jernej Skrabec <jernej.skrabec@siol.net>,
+ Maxime Ripard <maxime.ripard@bootlin.com>,
+ linux-kernel <linux-kernel@vger.kernel.org>,
+ dri-devel <dri-devel@lists.freedesktop.org>, David Airlie <airlied@linux.ie>,
+ linux-sunxi <linux-sunxi@googlegroups.com>, Daniel Vetter <daniel@ffwll.ch>,
+ Michael Trimarchi <michael@amarulasolutions.com>,
+ linux-amarula@amarulasolutions.com,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi, Yongqiang:
+On Fri, Jun 14, 2019 at 2:54 AM Jagan Teki <jagan@amarulasolutions.com> wrote:
+>
+> According to Fig 7-2. TCON Top Block Diagram in User manual.
+>
+> TCON TOP can have an hierarchy for TCON_LCD0, LCD1 like
+> TCON_TV0, TV1 so, the tcon top would handle the clocks of
+> TCON_LCD0, LCD1 similar like TV0, TV1.
 
-On Wed, 2019-06-05 at 19:42 +0800, yongqiang.niu@mediatek.com wrote:
-> From: Yongqiang Niu <yongqiang.niu@mediatek.com>
-> 
-> This patch add ddp component CCORR
+That is not guaranteed. The diagram shows the pixel data path,
+not necessarily the clocks. In addition, the LCD TCONs have an
+internal clock gate for the dot-clock output, which the TV variants
+do not. That might explain the need for the gates in TCON TOP.
 
-This patch is identical to v2, and I've give a 'Reviewed-by' for v2 [1],
-so you should keep this 'Reviewed-by' tag in this patch, so I still give
-you a
+> But, the current tcon_top node is using dsi clock name with
+> CLK_DSI_DPHY which is ideally handle via dphy which indeed
+> a separate interface block.
+>
+> So, use tcon-lcd0 instead of dsi which would refer the
+> CLK_TCON_LCD0 similar like CLK_TCON_TV0 with tcon-tv0.
+>
+> This way we can refer CLK_TCON_LCD0 from tcon_top clock in
+> tcon_lcd0 node and the actual DSI_DPHY clock node would
+> refer in dphy node.
 
-Reviewed-by: CK Hu <ck.hu@mediatek.com>
+That doesn't make sense. What about TCON_LCD1?
 
-[1] https://patchwork.kernel.org/patch/10872697/
+The CCU already has CLK_TCON_LCD0 and CLK_TCON_LCD1. What makes
+you think that the TCONs don't use them directly?
 
-> 
-> Signed-off-by: Yongqiang Niu <yongqiang.niu@mediatek.com>
+Or maybe they do go through TCON_TOP, but there's no gate,
+so we don't know about it.
+
+You need to rethink this. What are you trying to deal with?
+
+> Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
 > ---
->  drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.c | 32 +++++++++++++++++++++++++++++
->  drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.h |  2 ++
->  2 files changed, 34 insertions(+)
-> 
-> diff --git a/drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.c b/drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.c
-> index 54ca794..310c0b9 100644
-> --- a/drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.c
-> +++ b/drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.c
-> @@ -41,6 +41,12 @@
->  #define DISP_AAL_EN				0x0000
->  #define DISP_AAL_SIZE				0x0030
->  
-> +#define DISP_CCORR_EN				0x0000
-> +#define CCORR_EN				BIT(0)
-> +#define DISP_CCORR_CFG				0x0020
-> +#define CCORR_RELAY_MODE			BIT(0)
-> +#define DISP_CCORR_SIZE				0x0030
-> +
->  #define DISP_GAMMA_EN				0x0000
->  #define DISP_GAMMA_CFG				0x0020
->  #define DISP_GAMMA_SIZE				0x0030
-> @@ -131,6 +137,24 @@ static void mtk_aal_stop(struct mtk_ddp_comp *comp)
->  	writel_relaxed(0x0, comp->regs + DISP_AAL_EN);
->  }
->  
-> +static void mtk_ccorr_config(struct mtk_ddp_comp *comp, unsigned int w,
-> +			     unsigned int h, unsigned int vrefresh,
-> +			     unsigned int bpc)
-> +{
-> +	writel(h << 16 | w, comp->regs + DISP_CCORR_SIZE);
-> +	writel(CCORR_RELAY_MODE, comp->regs + DISP_CCORR_CFG);
-> +}
-> +
-> +static void mtk_ccorr_start(struct mtk_ddp_comp *comp)
-> +{
-> +	writel(CCORR_EN, comp->regs + DISP_CCORR_EN);
-> +}
-> +
-> +static void mtk_ccorr_stop(struct mtk_ddp_comp *comp)
-> +{
-> +	writel_relaxed(0x0, comp->regs + DISP_CCORR_EN);
-> +}
-> +
->  static void mtk_gamma_config(struct mtk_ddp_comp *comp, unsigned int w,
->  			     unsigned int h, unsigned int vrefresh,
->  			     unsigned int bpc)
-> @@ -179,6 +203,12 @@ static void mtk_gamma_set(struct mtk_ddp_comp *comp,
->  	.stop = mtk_aal_stop,
->  };
->  
-> +static const struct mtk_ddp_comp_funcs ddp_ccorr = {
-> +	.config = mtk_ccorr_config,
-> +	.start = mtk_ccorr_start,
-> +	.stop = mtk_ccorr_stop,
-> +};
-> +
->  static const struct mtk_ddp_comp_funcs ddp_gamma = {
->  	.gamma_set = mtk_gamma_set,
->  	.config = mtk_gamma_config,
-> @@ -200,6 +230,7 @@ static void mtk_gamma_set(struct mtk_ddp_comp *comp,
->  	[MTK_DISP_RDMA] = "rdma",
->  	[MTK_DISP_WDMA] = "wdma",
->  	[MTK_DISP_COLOR] = "color",
-> +	[MTK_DISP_CCORR] = "ccorr",
->  	[MTK_DISP_AAL] = "aal",
->  	[MTK_DISP_GAMMA] = "gamma",
->  	[MTK_DISP_UFOE] = "ufoe",
-> @@ -221,6 +252,7 @@ struct mtk_ddp_comp_match {
->  	[DDP_COMPONENT_AAL0]	= { MTK_DISP_AAL,	0, &ddp_aal },
->  	[DDP_COMPONENT_AAL1]	= { MTK_DISP_AAL,	1, &ddp_aal },
->  	[DDP_COMPONENT_BLS]	= { MTK_DISP_BLS,	0, NULL },
-> +	[DDP_COMPONENT_CCORR]	= { MTK_DISP_CCORR,	0, &ddp_ccorr },
->  	[DDP_COMPONENT_COLOR0]	= { MTK_DISP_COLOR,	0, NULL },
->  	[DDP_COMPONENT_COLOR1]	= { MTK_DISP_COLOR,	1, NULL },
->  	[DDP_COMPONENT_DPI0]	= { MTK_DPI,		0, NULL },
-> diff --git a/drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.h b/drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.h
-> index 8399229..87ef290 100644
-> --- a/drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.h
-> +++ b/drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.h
-> @@ -28,6 +28,7 @@ enum mtk_ddp_comp_type {
->  	MTK_DISP_RDMA,
->  	MTK_DISP_WDMA,
->  	MTK_DISP_COLOR,
-> +	MTK_DISP_CCORR,
->  	MTK_DISP_AAL,
->  	MTK_DISP_GAMMA,
->  	MTK_DISP_UFOE,
-> @@ -44,6 +45,7 @@ enum mtk_ddp_comp_id {
->  	DDP_COMPONENT_AAL0,
->  	DDP_COMPONENT_AAL1,
->  	DDP_COMPONENT_BLS,
-> +	DDP_COMPONENT_CCORR,
->  	DDP_COMPONENT_COLOR0,
->  	DDP_COMPONENT_COLOR1,
->  	DDP_COMPONENT_DPI0,
+>  arch/arm/boot/dts/sun8i-r40.dtsi           | 6 +++---
+>  drivers/gpu/drm/sun4i/sun8i_tcon_top.c     | 6 +++---
+>  include/dt-bindings/clock/sun8i-tcon-top.h | 2 +-
 
+This is going to be a pain to merge.
 
+First, you need to split the driver parts from the DT parts.
+
+Second, you might need to revert CLK_DSI_DPHY back to a raw
+number for now, so that when the patches get merged through
+different trees, nothing breaks.
+
+Third, you'll come back after everything is merged, and change
+the raw number to the new macro.
+
+ChenYu
 
 _______________________________________________
 linux-arm-kernel mailing list
