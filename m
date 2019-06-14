@@ -2,84 +2,63 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 28F8F46BDA
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Jun 2019 23:27:39 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 448A246BE5
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Jun 2019 23:30:49 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:Message-Id:To:
-	Subject:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=5+YiCxt6qN9n7+5PKpJUqIiOG1QWVcDxLx4AyaHjpUM=; b=jh3h4wSSEZol/QYG6bJvUHme1
-	HuOJnQTzF1NqvImrUX45V4v15yDWrmuYhpOtuPLdfe/hsf2w6PvBom14gVMeo5zUKZZJOAxhBI4Io
-	hO/vrWOhIKjwPv50r1olKDGykcnZuYTf2Dv0S+JxNf0RDCfLPZWEb5hiAw/QYWupLALs+qk5eggsb
-	+7mAvCE1QoJ3qi7Of9Di3BoKOmfM91tkd6QQpXcbSKESxbsCUpkKH3DJVagFIgkhIGJqPDXNJcyhr
-	qu62QA+exLJgy5M0Bnnq/AlRO6qOR+rHmWhGRe1/z/qWg8euhg1tYMWzyaFOnph6r+EAv9aEbTmxc
-	n9WXyD37w==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=KX0DoaqibKsz6jmKREOnGHqAHEAiWXmOPyJ0iCM+Y4M=; b=qFpSeq8klV1g3u
+	jvDXSqXObwxZe+akXj31Y+hXMyy86IPKPOB4xxRxoEsCkw3gdWlfWHRxZs0omCAetGUoy5KeeIV+C
+	vyVCRE3gjsDw2Y7su9+/V9U1ZX6mCDDquekYRGFXawHzkl7u49/aM6s2nL8ARoUCMQEwff2aeJon8
+	BUQiqG2BeHYsIPXeKzAe3CxYQdohERrDTupq8EUcptO/uubUv2Kz8hZfwrj61EyCLbTEUEUQv/9r7
+	PAChZ1rgvn7zHUXdhWBXnJ5JHkhbmiYolnQQPx0IJZd3Byk2ANjT/pAtCOfRxGf6QQlB7kPkzlxHN
+	qBbbFFGnie1ogExDvycQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hbtjR-0005CB-5y; Fri, 14 Jun 2019 21:27:33 +0000
-Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
+	id 1hbtmY-0006qb-0C; Fri, 14 Jun 2019 21:30:46 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hbtjA-0005Ax-Js; Fri, 14 Jun 2019 21:27:17 +0000
-Received: by mail-wr1-x444.google.com with SMTP id v14so3936069wrr.4;
- Fri, 14 Jun 2019 14:27:16 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=date:from:subject:to:cc:message-id:in-reply-to:references
- :mime-version; bh=Uc2f6CQXrYqQEI1IDSyVk4ypG7EglesOk7GUtbp0rYQ=;
- b=lmIVJ76ozWQkcY0V1jkobL62yLQMvrEWL08HGyPohsnZKsfkecN4dl/mbRE3VsX3yh
- OiRDzXUTpYRaowIhTahm22tj7biPfwRU3KX9mcP/aqps/pDy77iPhuSqMcRALQEK6LRp
- RfWLZlrd8uHqxRtk9bbnJpALqxBuGbO0cVbh/CmSkD+8D7nXNNmpdxGb8DOcXe0BrCz1
- Z+UUK1SMwiKXybyodFl3PXip69MgA+BRYHhSaNloCfTNv7PS3lx968IYT8Zcf0IH3eVH
- ZrGg0AhI8p+0vTDvW6LHwVSpJI7LhRKFG9WI0hkZOeqkmthJKAbr4knM443MVcvMsfT5
- fm0Q==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:subject:to:cc:message-id:in-reply-to
- :references:mime-version;
- bh=Uc2f6CQXrYqQEI1IDSyVk4ypG7EglesOk7GUtbp0rYQ=;
- b=iGqrKmLcXcggCpyiPQGpdZ/jJBbELCUlED1gCATo3tfKzBjfxkXXK2IgGyUBsEZxEm
- KU43irMI0YITT6hyCwei3CiGas1JcsXA3GekBs1ApSBF7CCFcyvQihUWo1UoBqRiJKJ8
- sXso2DnSNGV/COcr0iRBJBjIedCwZWawYIpxcwnet6++7m7RyhZc/y61H4lxqr3GgQV2
- Dj7fFwP9d3vIW6nioRrUeLIEJ7oJWj25jrC3xLtXRbOuFEUqYBciXkmQuC5HgpuAdzfa
- aTsEum2nH93jx7sZ8MTlziFmPkk3MKLAsdBGUxxE5NDPv9Ihm6750xLn2LIfgTijokpz
- 82GA==
-X-Gm-Message-State: APjAAAXGuFr+GIzCw6recFFYMjJgjju9o4HDYMJpzmXH+UI0S8D04BRz
- Uk+e/i4FVb7DNAWa90ApJXI=
-X-Google-Smtp-Source: APXvYqwHIKIzJh16kp2/Ta+Cp14JGaM4ketsZocnKsCF7KMCunIdRIWs8bJiBwtvJUYTHx3baFU4/g==
-X-Received: by 2002:a5d:5303:: with SMTP id e3mr2160114wrv.239.1560547635129; 
- Fri, 14 Jun 2019 14:27:15 -0700 (PDT)
-Received: from X555LD ([2a02:85f:51e:5d00:f1ab:2da6:d378:d0de])
- by smtp.gmail.com with ESMTPSA id x16sm2940166wmj.4.2019.06.14.14.27.13
- (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Fri, 14 Jun 2019 14:27:14 -0700 (PDT)
-Date: Sat, 15 Jun 2019 00:27:11 +0300
-From: "Leonidas P. Papadakos" <papadakospan@gmail.com>
-Subject: Re: [PATCH] arm64: dts: rockchip: improve rk3328-roc-cc rgmii
- performance.
-To: Peter Geis <pgwipeout@gmail.com>
-Message-Id: <1560547631.1367.4@gmail.com>
-In-Reply-To: <CAMdYzYorvWr1YhmFKaMQUCditjop5AZp4d1tO79XsVr7m7HrMw@mail.gmail.com>
-References: <20190607123731.8737-1-pgwipeout@gmail.com>
- <1559912295.22520.0@gmail.com>
- <CAMdYzYorvWr1YhmFKaMQUCditjop5AZp4d1tO79XsVr7m7HrMw@mail.gmail.com>
-X-Mailer: geary/3.32.1
+ id 1hbtmN-0006pu-4x
+ for linux-arm-kernel@lists.infradead.org; Fri, 14 Jun 2019 21:30:36 +0000
+Received: from localhost (unknown [69.71.4.100])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 7E908206BB;
+ Fri, 14 Jun 2019 21:30:34 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1560547834;
+ bh=ZxDW8K6J+radmhN5Vs7dffyGWwY56OXzv8PYXR/lauo=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=D/zHigl6AEHgfKDfYaQUw48nJ0lJIJi63bv2MJ+d8wmz+4j43FfzZUkMaIGPzY7VV
+ n+W7xyxXoFe8ifSY15/YHLd5tqvHKjYOYq243asXrG4VkaF+IKjYq4SNTJiVqGGVD3
+ isDi+ABOK/k1Q25bBsPQ+LT1tqvlis8g776GBz60=
+Date: Fri, 14 Jun 2019 16:30:33 -0500
+From: Bjorn Helgaas <helgaas@kernel.org>
+To: Jonathan Corbet <corbet@lwn.net>
+Subject: Re: [PATCH v4 19/28] docs: powerpc: convert docs to ReST and rename
+ to *.rst
+Message-ID: <20190614213033.GV13533@google.com>
+References: <cover.1560361364.git.mchehab+samsung@kernel.org>
+ <63560c1ee7174952e148a353840a17969fe0be2d.1560361364.git.mchehab+samsung@kernel.org>
+ <20190614143635.3aff154d@lwn.net>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20190614143635.3aff154d@lwn.net>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190614_142716_655817_8ADB9286 
-X-CRM114-Status: UNSURE (   6.21  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190614_143035_217928_26F24294 
+X-CRM114-Status: GOOD (  18.57  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:444 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (papadakospan[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -88,6 +67,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ 0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -99,29 +79,99 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Jose Abreu <jose.abreu@synopsys.com>, devicetree@vger.kernel.org,
- Heiko Stuebner <heiko@sntech.de>, linux-rockchip@lists.infradead.org,
- Rob Herring <robh+dt@kernel.org>, Robin Murphy <robin.murphy@arm.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: Linux Doc Mailing List <linux-doc@vger.kernel.org>,
+ Benjamin Herrenschmidt <benh@kernel.crashing.org>, linux-pci@vger.kernel.org,
+ Oliver O'Halloran <oohall@gmail.com>, Russell Currey <ruscur@russell.cc>,
+ Mauro Carvalho Chehab <mchehab+samsung@kernel.org>,
+ Qiang Zhao <qiang.zhao@nxp.com>, linux-scsi@vger.kernel.org,
+ Michael Ellerman <mpe@ellerman.id.au>, Jiri Slaby <jslaby@suse.com>,
+ Linas Vepstas <linasvepstas@gmail.com>, Andrew Donnellan <ajd@linux.ibm.com>,
+ Mauro Carvalho Chehab <mchehab@infradead.org>,
+ "Manoj N. Kumar" <manoj@linux.ibm.com>, linux-arm-kernel@lists.infradead.org,
+ "Matthew R. Ochs" <mrochs@linux.ibm.com>, Uma Krishnan <ukrishn@linux.ibm.com>,
+ Sam Bobroff <sbobroff@linux.ibm.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-kernel@vger.kernel.org,
+ Li Yang <leoyang.li@nxp.com>, Andrew Donnellan <andrew.donnellan@au1.ibm.com>,
+ Frederic Barrat <fbarrat@linux.ibm.com>, Paul Mackerras <paulus@samba.org>,
+ linuxppc-dev@lists.ozlabs.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-
-
-> The big change was actually snps,aal.
-> As per the TRM, DMA channels not address aligned have severe
-> limitations, if they work at all.
+On Fri, Jun 14, 2019 at 02:36:35PM -0600, Jonathan Corbet wrote:
+> On Wed, 12 Jun 2019 14:52:55 -0300
+> Mauro Carvalho Chehab <mchehab+samsung@kernel.org> wrote:
 > 
-> Setting the DMA ops as address aligned fixed my 30mbps TX issue when
-> combined with your snps,txpbl = <0x4>.
+> > Convert docs to ReST and add them to the arch-specific
+> > book.
+> > 
+> > The conversion here was trivial, as almost every file there
+> > was already using an elegant format close to ReST standard.
+> > 
+> > The changes were mostly to mark literal blocks and add a few
+> > missing section title identifiers.
+> > 
+> > One note with regards to "--": on Sphinx, this can't be used
+> > to identify a list, as it will format it badly. This can be
+> > used, however, to identify a long hyphen - and "---" is an
+> > even longer one.
+> > 
+> > At its new index.rst, let's add a :orphan: while this is not linked to
+> > the main index.rst file, in order to avoid build warnings.
+> > 
+> > Signed-off-by: Mauro Carvalho Chehab <mchehab+samsung@kernel.org>
+> > Acked-by: Andrew Donnellan <andrew.donnellan@au1.ibm.com> # cxl
+> 
+> This one fails to apply because ...
+> 
+> [...]
+> 
+> > diff --git a/Documentation/PCI/pci-error-recovery.rst b/Documentation/PCI/pci-error-recovery.rst
+> > index 83db42092935..acc21ecca322 100644
+> > --- a/Documentation/PCI/pci-error-recovery.rst
+> > +++ b/Documentation/PCI/pci-error-recovery.rst
+> > @@ -403,7 +403,7 @@ That is, the recovery API only requires that:
+> >  .. note::
+> >  
+> >     Implementation details for the powerpc platform are discussed in
+> > -   the file Documentation/powerpc/eeh-pci-error-recovery.txt
+> > +   the file Documentation/powerpc/eeh-pci-error-recovery.rst
+> >  
+> >     As of this writing, there is a growing list of device drivers with
+> >     patches implementing error recovery. Not all of these patches are in
+> > @@ -422,3 +422,24 @@ That is, the recovery API only requires that:
+> >     - drivers/net/cxgb3
+> >     - drivers/net/s2io.c
+> >     - drivers/net/qlge
+> > +
+> > +>>> As of this writing, there is a growing list of device drivers with
+> > +>>> patches implementing error recovery. Not all of these patches are in
+> > +>>> mainline yet. These may be used as "examples":
+> > +>>>
+> > +>>> drivers/scsi/ipr
+> > +>>> drivers/scsi/sym53c8xx_2
+> > +>>> drivers/scsi/qla2xxx
+> > +>>> drivers/scsi/lpfc
+> > +>>> drivers/next/bnx2.c
+> > +>>> drivers/next/e100.c
+> > +>>> drivers/net/e1000
+> > +>>> drivers/net/e1000e
+> > +>>> drivers/net/ixgb
+> > +>>> drivers/net/ixgbe
+> > +>>> drivers/net/cxgb3
+> > +>>> drivers/net/s2io.c
+> > +>>> drivers/net/qlge  
+> 
+> ...of this, which has the look of a set of conflict markers that managed
+> to get committed...?
 
-Honestly, I don't notice any difference either way with aal. So what 
-happens without it? If You only use the 0x4 txpbl and having removed 
-thresh dma mode, (2 things then) do you get bad tx?
+I don't see these conflict markers in my local branch or in
+linux-next (next-20190614).
 
+Let me know if I need to do something.
 
+Bjorn
 
 _______________________________________________
 linux-arm-kernel mailing list
