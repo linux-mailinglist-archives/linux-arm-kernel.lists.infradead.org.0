@@ -2,59 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 68D1E461E3
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Jun 2019 16:59:34 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5AA5B461F7
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Jun 2019 17:01:49 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=mQ8Tmh6OAsUJOcEcpszCDnJ7Q3MQzKqu1EITk9PDbzg=; b=gKBmiro35UktxwY/w3PjzQWHY
-	nUDCnD6rBM5Sz2h1oDUP+W8lTVvLYHfgnVt6ICZNIRTf0H8G70V7M3xH65fUWl15bRq3BJB5+Tlo0
-	keCJNXfJepr5nmyG18nH1o0Hd3lwDTdeci602mDXmZK8D9wPSNRc+j/qTu/eKwfQu5sRQCqay4Ff6
-	yFrZnEiQOMf6iAFqzacsHc9rn4JiOVfxFuTX8Yhu3LhF9O9DPg8g2lczwiq457dC0X1+QoCoKkInp
-	Y8P1M/yjNkq+WrSmWqv/L1sohFap96IFSyQ9DCAe6pKTVEvqjr/fpC85RGEC5sUj0YzJwr7nQ8bpe
-	5JlATIvqw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=q9ObmGEW6CRSTEnwdIZ1p7BnW7UHjP/690Vb4BKXImk=; b=u96LXrN+OLaaxN
+	6XQ03egg+YoD9M2I2iOf7nNTUT2XdHSyIfjWu94a3gvgxUG7Up2ZXScBJ69pHab1M2ERAs+vkI7a1
+	EtOGLD/gmMoe5YbfxyfK6yhTPHBczBHNa7NuQO2GfCY+IUxVh+5dT5P2VwUbqJNZcZswM1UcO2qCi
+	98z9+go1w5r8LMUhnMnJLpCU4kAiLQdbfcB+plki9vQnvkKoFh/JeZGDSDflGoEVXJL/uu0GMYpXe
+	D4PUKfhfd1OEV3lCxO14YXznOHS64fwtuNjC93XaI1UxhMnn2RqjCX5jEbjSCw+HKtJQBYxBN7Axy
+	xvk+0nQ0K0hdMK7Kbb1g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hbnft-0000q5-CY; Fri, 14 Jun 2019 14:59:29 +0000
-Received: from relay9-d.mail.gandi.net ([217.70.183.199])
+	id 1hbnhx-0002pB-An; Fri, 14 Jun 2019 15:01:37 +0000
+Received: from eu-smtp-delivery-151.mimecast.com ([207.82.80.151])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hbnfg-0000pE-Rs
- for linux-arm-kernel@lists.infradead.org; Fri, 14 Jun 2019 14:59:18 +0000
-X-Originating-IP: 90.88.23.150
-Received: from localhost (aaubervilliers-681-1-81-150.w90-88.abo.wanadoo.fr
- [90.88.23.150]) (Authenticated sender: maxime.ripard@bootlin.com)
- by relay9-d.mail.gandi.net (Postfix) with ESMTPSA id B5937FF806;
- Fri, 14 Jun 2019 14:59:02 +0000 (UTC)
-Date: Fri, 14 Jun 2019 16:59:02 +0200
-From: Maxime Ripard <maxime.ripard@bootlin.com>
-To: Rob Herring <robh+dt@kernel.org>
-Subject: Re: [PATCH v2 05/11] dt-bindings: net: sun4i-emac: Convert the
- binding to a schemas
-Message-ID: <20190614145902.vjytw74bs5roh2f2@flea>
-References: <91618c7e9a5497462afa74c6d8a947f709f54331.1560158667.git-series.maxime.ripard@bootlin.com>
- <d198d29119b37b2fdb700d8992b31963e98b6693.1560158667.git-series.maxime.ripard@bootlin.com>
- <20190610143139.GG28724@lunn.ch>
- <CAL_JsqJahCJcdu=+fA=ewbGezuEJ2W6uwMVxkQpdY6w+1OWVVA@mail.gmail.com>
- <20190611145856.ua2ggkn6ccww6vpp@flea>
- <CAL_Jsq+KwH-j8f+r+fWhMuqJPWcHdBQau+nUz3NRAXYTpsyuvg@mail.gmail.com>
- <20190614095048.j2xwdsucucbakkl2@flea>
- <CAL_Jsq+=yh3WhTg=1G02LUHGLHts6mECR9BQ+n7qHAihFViAxA@mail.gmail.com>
+ id 1hbnhp-0002oY-Du
+ for linux-arm-kernel@lists.infradead.org; Fri, 14 Jun 2019 15:01:30 +0000
+Received: from AcuMS.aculab.com (156.67.243.126 [156.67.243.126]) (Using
+ TLS) by relay.mimecast.com with ESMTP id uk-mta-6-Ae-vvi9EMKOPr28p6sbQQA-1;
+ Fri, 14 Jun 2019 16:01:23 +0100
+Received: from AcuMS.Aculab.com (fd9f:af1c:a25b::d117) by AcuMS.aculab.com
+ (fd9f:af1c:a25b::d117) with Microsoft SMTP Server (TLS) id 15.0.1347.2; Fri,
+ 14 Jun 2019 16:01:22 +0100
+Received: from AcuMS.Aculab.com ([fe80::43c:695e:880f:8750]) by
+ AcuMS.aculab.com ([fe80::43c:695e:880f:8750%12]) with mapi id 15.00.1347.000; 
+ Fri, 14 Jun 2019 16:01:22 +0100
+From: David Laight <David.Laight@ACULAB.COM>
+To: 'Christoph Hellwig' <hch@lst.de>
+Subject: RE: [PATCH 16/16] dma-mapping: use exact allocation in
+ dma_alloc_contiguous
+Thread-Topic: [PATCH 16/16] dma-mapping: use exact allocation in
+ dma_alloc_contiguous
+Thread-Index: AQHVIrfpTFjppS25RkWUhwqPPyqZ4qabLzdw///7eICAABIeYA==
+Date: Fri, 14 Jun 2019 15:01:22 +0000
+Message-ID: <d93fd4c2c1584d92a05dd641929f6d63@AcuMS.aculab.com>
+References: <20190614134726.3827-1-hch@lst.de>
+ <20190614134726.3827-17-hch@lst.de>
+ <a90cf7ec5f1c4166b53c40e06d4d832a@AcuMS.aculab.com>
+ <20190614145001.GB9088@lst.de>
+In-Reply-To: <20190614145001.GB9088@lst.de>
+Accept-Language: en-GB, en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-ms-exchange-transport-fromentityheader: Hosted
+x-originating-ip: [10.202.205.107]
 MIME-Version: 1.0
-In-Reply-To: <CAL_Jsq+=yh3WhTg=1G02LUHGLHts6mECR9BQ+n7qHAihFViAxA@mail.gmail.com>
-User-Agent: NeoMutt/20180716
+X-MC-Unique: Ae-vvi9EMKOPr28p6sbQQA-1
+X-Mimecast-Spam-Score: 0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190614_075917_218170_A252E2B2 
-X-CRM114-Status: GOOD (  17.92  )
+X-CRM114-CacheID: sfid-20190614_080129_739737_148E8AF6 
+X-CRM114-Status: GOOD (  11.21  )
 X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.183.199 listed in list.dnswl.org]
+ low trust [207.82.80.151 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -68,115 +78,59 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Andrew Lunn <andrew@lunn.ch>,
- Florian Fainelli <f.fainelli@gmail.com>,
- Alexandre Torgue <alexandre.torgue@st.com>, devicetree@vger.kernel.org,
- Antoine =?utf-8?Q?T=C3=A9nart?= <antoine.tenart@bootlin.com>,
- netdev <netdev@vger.kernel.org>, linux-stm32@st-md-mailman.stormreply.com,
- Chen-Yu Tsai <wens@csie.org>, Maxime Coquelin <mcoquelin.stm32@gmail.com>,
- Maxime Chevallier <maxime.chevallier@bootlin.com>,
- Frank Rowand <frowand.list@gmail.com>,
- "David S . Miller" <davem@davemloft.net>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>, Heiner Kallweit <hkallweit1@gmail.com>
-Content-Type: multipart/mixed; boundary="===============7602920802026227795=="
+Cc: Maxime Ripard <maxime.ripard@bootlin.com>,
+ Joonas Lahtinen <joonas.lahtinen@linux.intel.com>,
+ "dri-devel@lists.freedesktop.org" <dri-devel@lists.freedesktop.org>,
+ "linux-mm@kvack.org" <linux-mm@kvack.org>,
+ "devel@driverdev.osuosl.org" <devel@driverdev.osuosl.org>,
+ "linux-s390@vger.kernel.org" <linux-s390@vger.kernel.org>,
+ "linux-rdma@vger.kernel.org" <linux-rdma@vger.kernel.org>,
+ David Airlie <airlied@linux.ie>,
+ "linux-media@vger.kernel.org" <linux-media@vger.kernel.org>,
+ Intel Linux Wireless <linuxwifi@intel.com>,
+ "intel-gfx@lists.freedesktop.org" <intel-gfx@lists.freedesktop.org>,
+ Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
+ Jani Nikula <jani.nikula@linux.intel.com>, Ian Abbott <abbotti@mev.co.uk>,
+ Rodrigo Vivi <rodrigo.vivi@intel.com>, Sean Paul <sean@poorly.run>,
+ "moderated list:ARM PORT" <linux-arm-kernel@lists.infradead.org>,
+ "netdev@vger.kernel.org" <netdev@vger.kernel.org>,
+ "linux-wireless@vger.kernel.org" <linux-wireless@vger.kernel.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ H Hartley Sweeten <hsweeten@visionengravers.com>,
+ "iommu@lists.linux-foundation.org" <iommu@lists.linux-foundation.org>,
+ Daniel Vetter <daniel@ffwll.ch>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+From: 'Christoph Hellwig'
+> Sent: 14 June 2019 15:50
+> To: David Laight
+> On Fri, Jun 14, 2019 at 02:15:44PM +0000, David Laight wrote:
+> > Does this still guarantee that requests for 16k will not cross a 16k boundary?
+> > It looks like you are losing the alignment parameter.
+> 
+> The DMA API never gave you alignment guarantees to start with,
+> and you can get not naturally aligned memory from many of our
+> current implementations.
 
---===============7602920802026227795==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="wmxpz6l3hrzuotke"
-Content-Disposition: inline
+Hmmm...
+I thought that was even documented.
 
+I'm pretty sure there is a lot of code out there that makes that assumption.
+Without it many drivers will have to allocate almost double the
+amount of memory they actually need in order to get the required alignment.
+So instead of saving memory you'll actually make more be used.
 
---wmxpz6l3hrzuotke
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
+	David
 
-Hi,
+-
+Registered Address Lakeside, Bramley Road, Mount Farm, Milton Keynes, MK1 1PT, UK
+Registration No: 1397386 (Wales)
 
-On Fri, Jun 14, 2019 at 07:37:49AM -0600, Rob Herring wrote:
-> > > For '-gpio', we may be okay because the suffix is handled in the GPIO
-> > > core. It should be safe to update the binding to use the preferred
-> > > form.
-> >
-> > It might require a bit of work though in drivers, since the fallback
-> > is only handled if you're using the gpiod API, and not the legacy one.
-> >
-> > > > And then, we need to agree on how to express the deprecation. I guess
-> > > > we could allow the deprecated keyword that will be there in the
-> > > > draft-8, instead of ad-hoc solutions?
-> > >
-> > > Oh, nice! I hadn't seen that. Seems like we should use that. We can
-> > > start even without draft-8 support because unknown keywords are
-> > > ignored (though we probably have to add it to our meta-schema). Then
-> > > at some point we can add a 'disallow deprecated' flag to the tool.
-> >
-> > So, in the generic ethernet binding, we would have:
-> >
-> > properties:
-> >   phy-handle:
-> >     $ref: /schemas/types.yaml#definitions/phandle
-> >     description:
-> >       Specifies a reference to a node representing a PHY device.
-> >
-> >   phy:
-> >     $ref: "#/properties/phy-handle"
-> >     deprecated: true
-> >
-> >   phy-device:
-> >     $ref: "#/properties/phy-handle"
-> >     deprecated: true
-> >
-> > Does that sound good?
->
-> Yes.
-
-Great, I'll post that.
-
-> > Now, how do we handle the case above, in the device specific binding?
-> > We just require the non-deprecated one, or the three?
->
-> Wouldn't that just depend if all the instances of the device specific
-> binding have been updated?
-
-You mean in the DTS?
-
-It shouldn't matter, we'll want to have a warning anyway. But yeah,
-I'll update them too.
-
-Maxme
-
---
-Maxime Ripard, Bootlin
-Embedded Linux and Kernel engineering
-https://bootlin.com
-
---wmxpz6l3hrzuotke
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXQO2NgAKCRDj7w1vZxhR
-xYYMAQCpuUGZecwJPnE6MJSUbuL1fXyUaH+2U+W+fTF4OHIb8gEAxykOmBXCzeYm
-qShBRvc18IIAbeOPCAbqTKJy+kpccgc=
-=AR23
------END PGP SIGNATURE-----
-
---wmxpz6l3hrzuotke--
-
-
---===============7602920802026227795==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============7602920802026227795==--
-
