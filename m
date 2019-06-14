@@ -2,70 +2,89 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 023A7463E3
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Jun 2019 18:20:19 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id F4142463F1
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Jun 2019 18:23:32 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:To:Date:Message-Id:
-	References:In-Reply-To:From:Subject:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=rfwx3rijCW6Tdg5kt+ooQ+4ASAu2VX1G5iqq21ZTHdI=; b=PzR7YADzk+YQD8
-	r7BdtcDaeMTD7Jbu9M4NI0FDD4GyBilPJubp82WAUgIQKxnxT4XfQrn0/90krMDZF38Cslb21kdUI
-	Azg1g0YzgZLi1+FfE8wi8bQmq5IE7BePJU5v5hU72bn6EHDfzvOvMZPbXvWMzFd7KJdJMrmWuy5ht
-	os9rqU1ZYltkMRA4YkGod909qS+ksF8hqT+PUayteKTvj8zpEI9vqaLMyZ6b2cFdh6pxN4mrtdI+h
-	Ih5cgFmGVBdLu4Eo0FHMH/Pc1KJo4nUj3V14p+oQwTeUf7cQRgS1SSazxqQ6vhocf6amu0yP/yYGi
-	Q2qKBJz2wBWeR/PNrhPA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
+	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=H15BZM0y7HBVdlpCIuaL/kIazmeqATcnR5Z+m7i93PY=; b=YUCp1c8y1BaEpL5b8bDXHYk2s
+	SXbq+8KdQhQmIEgWSU5OKCUPEKsRyrZHxeIgA5T7CMkNsLnoH7TiFpl1HJK684QcB6yFmXuqL7uQe
+	VKKVoPJ3JuIs10kc1WNWNZXMM0jq9b8Mj6jUjl+7KzK9/3SROAvTfVb67N1pY/NNr2TRv9sh7hPX4
+	AWOGSVlgQghV641mayRRu4bzfy66KGagpMLqHnxhyFjptBPrgjhY+ggfdfDtAMMTCfcxrz7uAF+R9
+	OZZCLfivgvjo42WexEvy9Cz5pBoGkFXyI7VgYPTFetm8F0nXwFaumu7M5DYoowupBNpRR9Pu9dYVB
+	swcFai2OQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hbow3-0005FH-1d; Fri, 14 Jun 2019 16:20:15 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1hbozA-0005fq-BW; Fri, 14 Jun 2019 16:23:28 +0000
+Received: from outgoing19.flk.host-h.net ([197.242.87.53])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hbovu-0004td-TU
- for linux-arm-kernel@lists.infradead.org; Fri, 14 Jun 2019 16:20:08 +0000
-Subject: Re: [GIT PULL] arm64: fixes for -rc5
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1560529206;
- bh=YSjErc7PG0zYq9LWy32CF1nC6yzHgA3XMXyS3+NrZzU=;
- h=From:In-Reply-To:References:Date:To:Cc:From;
- b=THxE7Y0ZBeZdlL9DlgYmmOGEe6VsBHxjzQ15etYEMSHVOaY7voqY6EtDIuMOtbWIy
- 3mvSAe9Xpr6eU8QJu3ZHcUm4yVK0vuDvOY/WBJpvAcCLZeXFkLAX9F5Cq6P6gZ03N4
- 5yqomUActKDQOdZKP+pTc195UzO5LR8/RJW/LwK4=
-From: pr-tracker-bot@kernel.org
-In-Reply-To: <20190614150259.GC29231@fuggles.cambridge.arm.com>
-References: <20190614150259.GC29231@fuggles.cambridge.arm.com>
-X-PR-Tracked-List-Id: <linux-kernel.vger.kernel.org>
-X-PR-Tracked-Message-Id: <20190614150259.GC29231@fuggles.cambridge.arm.com>
-X-PR-Tracked-Remote: git://git.kernel.org/pub/scm/linux/kernel/git/arm64/linux.git
- tags/arm64-fixes
-X-PR-Tracked-Commit-Id: 41040cf7c5f0f26c368bc5d3016fed3a9ca6dba4
-X-PR-Merge-Tree: torvalds/linux.git
-X-PR-Merge-Refname: refs/heads/master
-X-PR-Merge-Commit-Id: 72a20cee5d99d231809ee4d3d2c09a96a25451e2
-Message-Id: <156052920631.12738.3532002147631387577.pr-tracker-bot@kernel.org>
-Date: Fri, 14 Jun 2019 16:20:06 +0000
-To: Will Deacon <will.deacon@arm.com>
+ id 1hboyv-0005dd-Qr; Fri, 14 Jun 2019 16:23:17 +0000
+Received: from www31.flk1.host-h.net ([188.40.1.173])
+ by antispam5-flk1.host-h.net with esmtpsa
+ (TLSv1.2:ECDHE-RSA-AES128-GCM-SHA256:128) (Exim 4.89)
+ (envelope-from <justin.swartz@risingedge.co.za>)
+ id 1hboyi-0002i4-Tv; Fri, 14 Jun 2019 18:23:02 +0200
+Received: from roundcubeweb1.flk1.host-h.net ([138.201.244.33]
+ helo=webmail9.konsoleh.co.za)
+ by www31.flk1.host-h.net with esmtpa (Exim 4.84_2)
+ (envelope-from <justin.swartz@risingedge.co.za>)
+ id 1hboye-0007ST-Gf; Fri, 14 Jun 2019 18:22:56 +0200
+MIME-Version: 1.0
+Date: Fri, 14 Jun 2019 18:22:55 +0200
+From: Justin Swartz <justin.swartz@risingedge.co.za>
+To: Heiko Stuebner <heiko@sntech.de>
+Subject: Re: [PATCH] ARM: dts: rockchip: add display nodes for rk322x
+Organization: Rising Edge Consulting (Pty) Ltd.
+In-Reply-To: <1854794.0zkvb3x0FP@phil>
+References: <20190613101305.30491-1-justin.swartz@risingedge.co.za>
+ <1854794.0zkvb3x0FP@phil>
+Message-ID: <9e2b1e26bedfd30e9295d64865819c99@risingedge.co.za>
+X-Sender: justin.swartz@risingedge.co.za
+User-Agent: Roundcube Webmail/1.2.3
+X-Authenticated-Sender: justin.swartz@risingedge.co.za
+X-Virus-Scanned: Clear (ClamAV 0.100.3/25480/Fri Jun 14 10:12:45 2019)
+X-Originating-IP: 188.40.1.173
+X-SpamExperts-Domain: risingedge.co.za
+X-SpamExperts-Username: 
+Authentication-Results: host-h.net;
+ auth=pass (login) smtp.auth=@risingedge.co.za
+X-SpamExperts-Outgoing-Class: ham
+X-SpamExperts-Outgoing-Evidence: Combined (0.05)
+X-Recommended-Action: accept
+X-Filter-ID: Mvzo4OR0dZXEDF/gcnlw0aEcKiGOen0TgGQo14QTNxSpSDasLI4SayDByyq9LIhVr0JQmSUYAAuW
+ O3sRX9p2S0TNWdUk1Ol2OGx3IfrIJKyP9eGNFz9TW9u+Jt8z2T3K7uDjV/sFUXQr+CDrNQuIHgQg
+ mAX8Bxy/iUu0ThNZg0jxJtcVJProrT987X1VDPOqN+OoDzRTdku7DidYUZdNf38Sp7Of4wP429AA
+ f49baR+f3He7jw4SoVhmTJ/3eP9ORQWVx8ds1M4qmk3/bYr2p8zbg4Paoa3pNVQ0zl7t/+UfQLYB
+ qEPnp1U88kqVD8AM2G81dFO0E3gi+MOI1foZYzDggRXhpvoPtF3cVkniFXU3qJSqpdJudO6+rkiw
+ E5i8Wl78Q18OeOfsy4h7jF1Uv9lnibl3vcBqVmvQB4A18ad0DLTuA47GFMxRMKMMweQrmH6eQvWp
+ DWTULXV1jJ5bfceEJeNruLKdflVX7oFNsdEJmBWjbvtlAwK809YKuz/mg2lBMt3xu9nbye2CdJLN
+ jSo1M+TSg3TNDI3/M5s9/ot3ko3rrae7IifWc6pL546YUVQwaYLh3di89W/ji5iahyCgJgyv93tC
+ 61cbiLYl3RCqADG/Ryndzp4OfbK7c6EqHwlqvaI+zok/BsKQK4gft4+8sY8CNaDDoRMm0CGce/eR
+ NtlfJySsZ2eS9qGTagUdlCnL4IjEaJi/Te03jgZkriNJs+0XIAXn1Ie+HcHl8lOi8gnN+VQO0b1v
+ xxohqsS9Q4vjfJZCa/7ru+hcV3qy2r6xT6/ToAAJ7pkQGcMvuOIaxlHt0+FCc1pvcmHgLAF+EhY3
+ a9HVLrEqCQymRpkPmbqFsDBc6VdTgr76BrtpImVjH1OXbaW1Jv61sDnMyufskMA9nxtZ9pIksMRC
+ ciEOsBpiAOoh+1qN2rbgvDZlJzPY/RdmiK0Zdwcq7WqJxp4Gp2qnVW06BkjrfxpqPrbH09M+m4Wp
+ RRDP6YzwkAPgQJbWosiwuQOYUcnYOSO7mW1OBrz96gclqEeyvm/wFZzBrxWl4RF0S4vtpJPL5i9k
+ NMFAXPUoooAOejJ9oJ3w7xlWZuM7jUXIESohoO51xWmU8epLuQ6AlI64+tPy8xM9qWPEX9Stl4rj
+ MDcWV8dcwmItP+eLAc3RVz4KjqXB2lFLCYn9TDvfbJbimDcSbTO4QszeNHk15VolAGHS5rCXQKDy
+ G9IFICpfYwbtmVFtzX/1jFBp21i62SsUn3KsaNY+4eSGHfTOXf670dxTbCnoHvieMS+4ayUpOtEh
+ dxekWDmK9g==
+X-Report-Abuse-To: spam@antispammaster.host-h.net
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190614_092006_977276_EF659A7A 
-X-CRM114-Status: UNSURE (   1.52  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190614_092313_874349_BF0E3EBF 
+X-CRM114-Status: GOOD (  13.68  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [197.242.87.53 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- 0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -77,26 +96,51 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: catalin.marinas@arm.com, torvalds@linux-foundation.org,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
-Content-Type: text/plain; charset="us-ascii"
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org,
+ Rob Herring <robh+dt@kernel.org>, linux-arm-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The pull request you sent on Fri, 14 Jun 2019 16:02:59 +0100:
+Hi Heiko,
 
-> git://git.kernel.org/pub/scm/linux/kernel/git/arm64/linux.git tags/arm64-fixes
+On 2019-06-14 11:15, Heiko Stuebner wrote:
 
-has been merged into torvalds/linux.git:
-https://git.kernel.org/torvalds/c/72a20cee5d99d231809ee4d3d2c09a96a25451e2
+> Hi Justin,
+> 
+> Am Donnerstag, 13. Juni 2019, 12:13:04 CEST schrieb Justin Swartz:
+> 
+>> Add display_subsystem, hdmi_phy, vop, and hdmi device nodes plus
+>> a few hdmi pinctrl entries to allow for HDMI output.
+>> 
+>> Signed-off-by: Justin Swartz <justin.swartz@risingedge.co.za>
+> 
+> Overall looks good, but in combination with the clock-patch you posted,
+> I'd really prefer if we could try a slightly different approach.
+> 
+> Hard register-level settings in the clock driver look bad and tend to
+> cause problems later on, so I've adapted things a bit in [0] (untested)
+> and would be glad if you could give it a try on actual hardware.
 
-Thank you!
+I can confirm that your approach works properly here.
 
--- 
-Deet-doot-dot, I am a bot.
-https://korg.wiki.kernel.org/userdoc/prtracker
+> The hdmiphy itself is a clock-provider for its pll and therefore the
+> assigned-clock* properties into the hdmi controller, as the phy needs
+> to probe before trying to set clocks.
+> But in theory this should achieve the same result of reparenting the
+> system's hdmiphy clock to the actual output of the phy-pll.
+> 
+> I've also moved the iommu-cells fix to a separate commit.
+> 
+> Please test, thanks
+> Heiko
+> 
+> [0] https://github.com/mmind/linux-rockchip/commits/wip/rk3229-hdmi
+
+Thanks
+Justin
 
 _______________________________________________
 linux-arm-kernel mailing list
