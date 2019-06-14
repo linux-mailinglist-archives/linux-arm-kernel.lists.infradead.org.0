@@ -2,89 +2,77 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2B85B45686
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Jun 2019 09:40:09 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A4C2745691
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Jun 2019 09:42:37 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
-	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=tadFtRBfma1dXrrSEsiRggDCDGNYgjWozECu1t3tzks=; b=mbe8APZb769Ryz
-	1LREodUHf3FoU2pyXcPu7lkWsiyLQarZCBv0+q7FHIgSShwMh2EpXMSX6s09VA6rVwDBLzCiWGpvA
-	KgfSXDpGMwAKN0Nfp930a8y457K/JRSUQjEgG11HXVVzd6G8wy/vcxrsOb55jbeuKyt2FBjr4k2sz
-	HB/9eI5ziSC5JbqQQkdl/maVIu/yCtP/JK5nOVauYv3fJ4AEJtfs7vwzPsllXq2mgXqk/filyuEzS
-	2SXN0ZUkJaGIuN0P+tdikfP0T0RR65ijI+/9oohBHLihhS+fFlP9UodQA9l5oQhERWiuo8yhRq7kW
-	qqsFKY752M/KjHEsyfxg==;
+	List-Owner; bh=VYcSDfXUl48K2W8vHpVZgYrsPm9ZrCdZk9Bh/T6TpUA=; b=dn9gEN8mkyDQPq
+	JJmb3OjH6LDMGG3ZxfzOak92V51tElvwYbSSixoiPrlFZQUwoOlDOCNKwery4ACO/3/UTSPlcqsQl
+	QuLsiNTl4sLxp+wcCAI3srHgjNNEuhGT2EgYmTERaesnKd0ja9QGDB40Q9eQDF81stj+Q+OgYVzj9
+	1o7DgbMO8s95zlOD+aztBA3U749om72CkrS7eYMX63ud0UZ9wFxac2vrkIvJGPXBUk72XUjiXGSLK
+	F1wFHALawxlsnvJD+pObIa3F39pZ46KbL1ycUhzuqqSo0AzSgguFD/6oBl6Nx0YvdrAMhJUcnlrpm
+	/YFrIs4ZquLQtrZsGn6Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hbgoc-0004HW-FU; Fri, 14 Jun 2019 07:40:02 +0000
-Received: from mx07-00178001.pphosted.com ([62.209.51.94])
+	id 1hbgr5-0005yz-5T; Fri, 14 Jun 2019 07:42:35 +0000
+Received: from mail-io1-xd41.google.com ([2607:f8b0:4864:20::d41])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hbgoD-0004AJ-IG
- for linux-arm-kernel@lists.infradead.org; Fri, 14 Jun 2019 07:39:39 +0000
-Received: from pps.filterd (m0046668.ppops.net [127.0.0.1])
- by mx07-00178001.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id
- x5E7asaD020061; Fri, 14 Jun 2019 09:39:26 +0200
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
- h=from : to : cc : subject
- : date : message-id : references : in-reply-to : content-type : content-id
- : content-transfer-encoding : mime-version; s=STMicroelectronics;
- bh=WnBJiL3yLXib/3hyU89WJ3ADaCZVb5cHV2S7IUcVmG8=;
- b=d5hQVDNSjEe3/rSaKwOUDiXx1sfXNGQJMBOrTR7+nNma3iYoaulYBv02GV2z7dXa21++
- 8YQ8vK9HbOhfIcSDBeLESRTlC/w4XSzsYSpwG34Q83l8jOYiXCQxoIQFpesSXIrAz24H
- BnDFxqg/UEfaaK9avM3Nue63kiRa3XhqGiPToCvxwGdHGByk3tEJQFr+oBQoXiwHbijD
- Vibc+Ycpx618ZEkwSWO0vRdfd8eQLeY+5sy1+sMA9SIk1I2t3pMvTTdvQmkip+CU+NBN
- bJckRzlTtFQlpvoJCb7+FkHLds7hG4VhYLO8pDAtzM4/2OYcYgtCZ52M/Yaic4Usqjym Kg== 
-Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx07-00178001.pphosted.com with ESMTP id 2t2f8c8ear-1
- (version=TLSv1 cipher=ECDHE-RSA-AES256-SHA bits=256 verify=NOT);
- Fri, 14 Jun 2019 09:39:26 +0200
-Received: from zeta.dmz-eu.st.com (zeta.dmz-eu.st.com [164.129.230.9])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 6B07D3A;
- Fri, 14 Jun 2019 07:39:25 +0000 (GMT)
-Received: from Webmail-eu.st.com (sfhdag6node2.st.com [10.75.127.17])
- by zeta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 0AAFF1807;
- Fri, 14 Jun 2019 07:39:25 +0000 (GMT)
-Received: from SFHDAG6NODE3.st.com (10.75.127.18) by SFHDAG6NODE2.st.com
- (10.75.127.17) with Microsoft SMTP Server (TLS) id 15.0.1347.2; Fri, 14 Jun
- 2019 09:39:24 +0200
-Received: from SFHDAG6NODE3.st.com ([fe80::d04:5337:ab17:b6f6]) by
- SFHDAG6NODE3.st.com ([fe80::d04:5337:ab17:b6f6%20]) with mapi id
- 15.00.1473.003; Fri, 14 Jun 2019 09:39:24 +0200
-From: Patrice CHOTARD <patrice.chotard@st.com>
-To: Lubomir Rintel <lkundrak@v3.sk>, Olof Johansson <olof@lixom.net>
-Subject: Re: [PATCH 1/6] ARM: dts: STi: Switch to SPDX header
-Thread-Topic: [PATCH 1/6] ARM: dts: STi: Switch to SPDX header
-Thread-Index: AQHVICdybxhZw6uCRkCvwJXJ6Jt2RKaapruA
-Date: Fri, 14 Jun 2019 07:39:24 +0000
-Message-ID: <95148f1a-c48b-95a3-77ab-4420f7cf7de2@st.com>
-References: <20190611072921.2979446-1-lkundrak@v3.sk>
- <20190611072921.2979446-2-lkundrak@v3.sk>
-In-Reply-To: <20190611072921.2979446-2-lkundrak@v3.sk>
-Accept-Language: fr-FR, en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-user-agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.7.0
-x-ms-exchange-messagesentrepresentingtype: 1
-x-ms-exchange-transport-fromentityheader: Hosted
-x-originating-ip: [10.75.127.47]
-Content-ID: <F57771CFAF48BE4AB6A55DC764223446@st.com>
+ id 1hbgqp-0005xo-Lz
+ for linux-arm-kernel@lists.infradead.org; Fri, 14 Jun 2019 07:42:21 +0000
+Received: by mail-io1-xd41.google.com with SMTP id u19so3662195ior.9
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 14 Jun 2019 00:42:19 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=FQ8LZODblM+N4Tgxv/Vx/JLYR0QWgL30pjQyU5T9Z7k=;
+ b=d61MN0ui4Nr3LdQUczYZoW1GbBfce5WPuW85XJAbQsVc2VzpdChR+riLWW6r11KZxB
+ yg3IOLzoh95RaA/8DZkOT+bXMf9kZlI4dMmL8mhTraPZhyaCOF06oX7LCR5uqNAAXgJN
+ S6rthT/UKfeR1Xos+QFbt1jAwYeQ4ymyG1CfSpO1D3pEmtBUELkjtZyJh/ZnYR8cwsnN
+ 6T+4+ZuJWF0yzqyVx0CyNGjYsJ7U5c8mOFmotqs6dNaeKPdnZf+ljIFCT9IldFiDM/ji
+ OrHRfJSMC4POv4FnJVYb4b7VS7MuE7dhm1qEwsrenV5IQwMr6YiF253wIy7ku4ikS+Am
+ 6anw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=FQ8LZODblM+N4Tgxv/Vx/JLYR0QWgL30pjQyU5T9Z7k=;
+ b=OqGucCiRlZwWAfUvntTMOuGTt08AbA5Qji+LkuNjCKncQX8294jdugZnJwwrGYEF89
+ wkR8mQWbdiHAUwUFtL2UY+PTYrnZV3kMiGU1QaMMT1sm3X5pyEOVC5W6tRmM7enkGlLX
+ llBjkS+MNmVTNVd+CLi6h0rGjGQAYas/uefx861tpXfPrxfXqbiHvU/j5ExI6xY6u8dI
+ udkReeHhL50b8g5O/rKneabeTjyFfjAUK945SG1DyQ4DjZECVtbb9qKIk7O2lqH+gW2a
+ 0qjfPBsArZOH/mCHXQqcDdYwBGrXOdXjNElNAINSAPpD/BvhtPVHgXEDyaF+8ztIekpC
+ bU3Q==
+X-Gm-Message-State: APjAAAWYglFAOsGUqZyXeOknrQ69xESim+L8+MzxCFOT760+T8ScDoG0
+ cRmN4krEDNTRZEiodQHbVrAbE/VRDpdfWGXX9auvKj+YNjE=
+X-Google-Smtp-Source: APXvYqx2gVmfLUq9fYnWUdyVXvs8Eyu6IOEDQyJhsEZOOwZ2zQ9n4ZMlIc6F7+6tGOcFj+COvIrNEMx8IxjCIikZX8o=
+X-Received: by 2002:a6b:7312:: with SMTP id e18mr6634725ioh.156.1560498138569; 
+ Fri, 14 Jun 2019 00:42:18 -0700 (PDT)
 MIME-Version: 1.0
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:, ,
- definitions=2019-06-14_04:, , signatures=0
+References: <5783e36561bb77a1deb6ba67e5a9824488cc69c6.camel@kernel.crashing.org>
+ <20190613190248.GH13533@google.com>
+ <e6c7854ae360be513f6f43729ed6d4052e289376.camel@kernel.crashing.org>
+In-Reply-To: <e6c7854ae360be513f6f43729ed6d4052e289376.camel@kernel.crashing.org>
+From: Ard Biesheuvel <ard.biesheuvel@linaro.org>
+Date: Fri, 14 Jun 2019 09:42:05 +0200
+Message-ID: <CAKv+Gu95pQ7_OfLbEXHZ_bhYnqOgTBKCmTgqUY27un-Y708BgQ@mail.gmail.com>
+Subject: Re: [RFC PATCH v2] arm64: acpi/pci: invoke _DSM whether to preserve
+ firmware PCI setup
+To: Benjamin Herrenschmidt <benh@kernel.crashing.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190614_003938_006804_50B830D8 
-X-CRM114-Status: GOOD (  18.09  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20190614_004219_727981_D1CAA006 
+X-CRM114-Status: GOOD (  33.90  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [62.209.51.94 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:d41 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -105,134 +93,129 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "linux-arm-kernel@lists.infradead.org"
- <linux-arm-kernel@lists.infradead.org>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>, Haojian
- Zhuang <haojian.zhuang@gmail.com>, Wei Xu <xuwei5@hisilicon.com>,
- Robert Jarzmik <robert.jarzmik@free.fr>, Daniel Mack <daniel@zonque.org>
+Cc: Sinan Kaya <okaya@kernel.org>,
+ Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ Bjorn Helgaas <helgaas@kernel.org>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
+ linux-pci <linux-pci@vger.kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Lubomir
-
-On 6/11/19 9:29 AM, Lubomir Rintel wrote:
-> The original license text had a typo ("publishhed") which would be
-> likely to confuse automated licensing auditing tools. Let's just switch
-> to SPDX instead of fixing the wording.
+On Fri, 14 Jun 2019 at 01:07, Benjamin Herrenschmidt
+<benh@kernel.crashing.org> wrote:
 >
-> Signed-off-by: Lubomir Rintel <lkundrak@v3.sk>
-> ---
->  arch/arm/boot/dts/stih407-family.dtsi  | 5 +----
->  arch/arm/boot/dts/stih407-pinctrl.dtsi | 5 +----
->  arch/arm/boot/dts/stih407.dtsi         | 5 +----
->  arch/arm/boot/dts/stih410-pinctrl.dtsi | 5 +----
->  arch/arm/boot/dts/stih410.dtsi         | 5 +----
->  arch/arm/boot/dts/stih418.dtsi         | 5 +----
->  6 files changed, 6 insertions(+), 24 deletions(-)
+> On Thu, 2019-06-13 at 14:02 -0500, Bjorn Helgaas wrote:
+> >
+> > PCI FW r3.2 says 0 means "the OS must not ignore config done by
+> > firmware."  That means we must keep the FW configuration intact.
 >
-> diff --git a/arch/arm/boot/dts/stih407-family.dtsi b/arch/arm/boot/dts/stih407-family.dtsi
-> index 9e29a4499938..2ff2542bf335 100644
-> --- a/arch/arm/boot/dts/stih407-family.dtsi
-> +++ b/arch/arm/boot/dts/stih407-family.dtsi
-> @@ -1,10 +1,7 @@
-> +// SPDX-License-Identifier: GPL-2.0
->  /*
->   * Copyright (C) 2014 STMicroelectronics Limited.
->   * Author: Giuseppe Cavallaro <peppe.cavallaro@st.com>
-> - *
-> - * This program is free software; you can redistribute it and/or modify
-> - * it under the terms of the GNU General Public License version 2 as
-> - * publishhed by the Free Software Foundation.
->   */
->  #include "stih407-pinctrl.dtsi"
->  #include <dt-bindings/mfd/st-lpc.h>
-> diff --git a/arch/arm/boot/dts/stih407-pinctrl.dtsi b/arch/arm/boot/dts/stih407-pinctrl.dtsi
-> index e393519fb84c..db174019626f 100644
-> --- a/arch/arm/boot/dts/stih407-pinctrl.dtsi
-> +++ b/arch/arm/boot/dts/stih407-pinctrl.dtsi
-> @@ -1,10 +1,7 @@
-> +// SPDX-License-Identifier: GPL-2.0
->  /*
->   * Copyright (C) 2014 STMicroelectronics Limited.
->   * Author: Giuseppe Cavallaro <peppe.cavallaro@st.com>
-> - *
-> - * This program is free software; you can redistribute it and/or modify
-> - * it under the terms of the GNU General Public License version 2 as
-> - * publishhed by the Free Software Foundation.
->   */
->  #include "st-pincfg.h"
->  #include <dt-bindings/interrupt-controller/arm-gic.h>
-> diff --git a/arch/arm/boot/dts/stih407.dtsi b/arch/arm/boot/dts/stih407.dtsi
-> index 5b7951ffc350..242ac72e4d4a 100644
-> --- a/arch/arm/boot/dts/stih407.dtsi
-> +++ b/arch/arm/boot/dts/stih407.dtsi
-> @@ -1,10 +1,7 @@
-> +// SPDX-License-Identifier: GPL-2.0
->  /*
->   * Copyright (C) 2015 STMicroelectronics Limited.
->   * Author: Gabriel Fernandez <gabriel.fernandez@linaro.org>
-> - *
-> - * This program is free software; you can redistribute it and/or modify
-> - * it under the terms of the GNU General Public License version 2 as
-> - * publishhed by the Free Software Foundation.
->   */
->  #include "stih407-clock.dtsi"
->  #include "stih407-family.dtsi"
-> diff --git a/arch/arm/boot/dts/stih410-pinctrl.dtsi b/arch/arm/boot/dts/stih410-pinctrl.dtsi
-> index 5ae1fd66c0b8..8532ae3f61e8 100644
-> --- a/arch/arm/boot/dts/stih410-pinctrl.dtsi
-> +++ b/arch/arm/boot/dts/stih410-pinctrl.dtsi
-> @@ -1,10 +1,7 @@
-> +// SPDX-License-Identifier: GPL-2.0
->  /*
->   * Copyright (C) 2014 STMicroelectronics Limited.
->   * Author: Peter Griffin <peter.griffin@linaro.org>
-> - *
-> - * This program is free software; you can redistribute it and/or modify
-> - * it under the terms of the GNU General Public License version 2 as
-> - * publishhed by the Free Software Foundation.
->   */
->  #include "st-pincfg.h"
->  / {
-> diff --git a/arch/arm/boot/dts/stih410.dtsi b/arch/arm/boot/dts/stih410.dtsi
-> index 888548ea9b5c..23b494a13c47 100644
-> --- a/arch/arm/boot/dts/stih410.dtsi
-> +++ b/arch/arm/boot/dts/stih410.dtsi
-> @@ -1,10 +1,7 @@
-> +// SPDX-License-Identifier: GPL-2.0
->  /*
->   * Copyright (C) 2014 STMicroelectronics Limited.
->   * Author: Peter Griffin <peter.griffin@linaro.org>
-> - *
-> - * This program is free software; you can redistribute it and/or modify
-> - * it under the terms of the GNU General Public License version 2 as
-> - * publishhed by the Free Software Foundation.
->   */
->  #include "stih410-clock.dtsi"
->  #include "stih407-family.dtsi"
-> diff --git a/arch/arm/boot/dts/stih418.dtsi b/arch/arm/boot/dts/stih418.dtsi
-> index 0efb3cd6a86e..f3f0a0e0f23c 100644
-> --- a/arch/arm/boot/dts/stih418.dtsi
-> +++ b/arch/arm/boot/dts/stih418.dtsi
-> @@ -1,10 +1,7 @@
-> +// SPDX-License-Identifier: GPL-2.0
->  /*
->   * Copyright (C) 2014 STMicroelectronics Limited.
->   * Author: Peter Griffin <peter.griffin@linaro.org>
-> - *
-> - * This program is free software; you can redistribute it and/or modify
-> - * it under the terms of the GNU General Public License version 2 as
-> - * publishhed by the Free Software Foundation.
->   */
->  #include "stih418-clock.dtsi"
->  #include "stih407-family.dtsi"
+> So I tried implementing what you seem to want and it doesn't make sense
+> imho.
+>
+> I think the wording of the spec is terrible and doesn't convey the
+> intent here.
+>
+> What is it that _DSM #5 is about ? Is it about telling us that the FW
+> config shall not be trusted ? That seem to be its original intent based
+> on the existing wording and the fact that "1" says "may ignore".
+>
+> Or was it always intended to be some kind of inverted logic with 0
+> meaning that we *must* preserve what FW did ?
+>
 
-Acked-by: Patrice Chotard <patrice.chotard@st.com>
+The original purpose was for firmware running on 64-bit hosts to not
+create a PCI resource assignment that was incompatible with the OS
+booting in 32-bit mode.
 
-Thanks
+So the expectation was that a 32-bit OS would reuse whatever config
+the firmware created, and the 64-bit version would be enlightened to
+understand that it could reassign resource assignments to make better
+use of the available resource windows, but this required a mechanism
+to describe which resources should be left alone by the OS.
+
+So I don't think anybody cares about that use case anymore, and I have
+no idea how widespread its use was when people did.
+
+> But preserving what FW did was always the default for x86 and
+> Windows... It's just that we happen to do something wrong today on
+> Linux/ARM64 which is to always reassign everything.
+>
+> The way Linux resource assignment works accross platforms has generally
+> been based on one of these 3 methods:
+>
+>  - The standard x86 method, which is to claim what's there when it
+> doesn't look completely busted and has been assigned, then assign
+> what's left. This allows for FW doing partial assignment, and allows to
+> work around a number of BIOS bugs.
+>
+>  - The "probe only" method. This was created independently on powerpc
+> and some other archs afaik. At least for powerpc, the reason for that
+> is some interesting virtualization cases where we just cannot touch or
+> change or move anything. The effect is to not reassign even what we
+> dont like, and not call pci_assign_unassign_resources().
+>
+>  - The "reassign everything" method. This is used by almost all
+> embedded patforms accross archs. All arm32, all arm64 today (but we
+> agree that's wrong), all embedded powerpc etc... This is basically
+> meant for us not trusting whatever random uboot or other embedded FW,
+> if any, and do a full from-scratch assignment. There are issues in how
+> that is implemented accross the various platforms/archs, some for
+> example still honor existing bus numbers and some don't, but I doubt
+> it's intentional etc... but that method is there to stay.
+>
+> Now, the questions are two fold
+>
+>   - How do we map _DSM #5 to these, at least on arm64, maybe in the
+> long run we can also look at affecting x86, but that's less urgent.
+>
+>   - How do I ensure the above fixes my Amazon platform ? :-)
+>
+
+It would help if you could explain what exactly is wrong with your
+Amazon platform :-)
+
+> There's one obvious thing here. If we don't want to break existing
+> things, then the absence of _DSM #5 must not change our existing
+> behaviour. I think we can all agree on this.
+>
+> We might explore changing arm64 default behaviour as a second step
+> since we all agree it's not doing what it should, but we also know that
+> it will probably break some things so we need to be careful, understand
+> the issues and work around them. This isn't the scope of the initial
+> _DSM #5 patch.
+>
+> That leaves us with the _DSM #5 present cases.
+>
+> Now we have two values. What do they mean ? As I already said before,
+> the wording with "must not ignore" and "may ignore" is completely
+> useless and doesn't tell us a thing about the intention here. We don't
+> know why the FW folks may have put a given value here, and what they
+> expect us to do about it.
+>
+> What we do know is that Seattle returns 1 and needs reassignment, and
+> we do know that the Amazon platforms return 0 and will want us to not
+> touch the existing setup.
+>
+> However, does 1 means "business as usual" or does it mean "reassign
+> everything" ?
+>
+> Does 0 means "probe only" ? Or do we still do an assignment pass for
+> things that the FW may have left unassigned ?
+>
+> Today in Linux, the "probe only" logic tends to not call
+> pci_assign_unassigned_resources for example.
+>
+> From a pure reading of the spec, there's an argument to be made that
+> both 0 and 1 values can lead to the same code that reads what's there
+> and reassign what's missing.
+>
+> So this is a mess, a usual when it comes to specs written by
+> committees, but at this stage I'm at a loss as to what you want me to
+> do.
+>
+
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
