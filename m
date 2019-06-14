@@ -2,122 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9BF5346B3A
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Jun 2019 22:45:45 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3ACE546B46
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Jun 2019 22:53:37 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fkA7O8tvKy2BIQzOPTIGC60vbf7LApo9hbA+u3Cn0Sw=; b=P/ORg2rIs+eh+p
-	fcQh+Wcokq+ok0HOVDZt2lGoNVxOzJyCw+zFEhK1XcLD1f9gnkiZiC998RxLkEQLZJYiGPG3z/ACd
-	NuRKIZoeTzj3HySIB9kTEDt8JPeTOjXWunxy0Z9PTRhKdu5PIv2qj4QzVvgzYnpbeq2BM8JZv5ZY1
-	nY0dlOJFjs4aF2nK4aTGv36/6FLyQi2B6NB07zzNsdTJhUhvZ5toUfZT3ounViKYS/4afQwtPdnuD
-	Kdo3X4MwGaAx3OXE0kbRJWYljDhMvRloU8RNkqP0+O0d6k2GbW76kTlWjyWjnxjk2U/QBS1Va06TL
-	AxTW0okvVMvmhFS/npTA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=tSYMI4Wrz5ecB6tjoVttGymaWVHw/kfjJ4PP60rWyeY=; b=enKWQdsBq85VKCAqXgxFJ59kI
+	A+uG575JCQopS6+PIYXDap8kLS+zXqdp4P+00GDFvqFjSoD+CFkZiSyCAhu12wNJnonkcQKHexT+U
+	WPkBCBwx5VbKE7CLBqIhdbV+SeAp1WTco6LV5YYnK5SnDknZeX/ijXx2eyhqk5fIPwvtA3+8ikqpb
+	6tcrW+yRUTeBEKcaHKbbB53z2bVSU2KDP4JEmp15QLuiJ8BYu6wYleIy2IxXBktKNLhdFKDHdAUak
+	7mMw8y5wFIkZhIKQZ7l/xKJCcvMDEoPnWf+K/LaM01OabgaPcnHilOokT2SBlZArnjvqnvtT/7lxG
+	XHrDoeuHw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hbt4u-0005qD-WF; Fri, 14 Jun 2019 20:45:41 +0000
-Received: from mail-eopbgr680105.outbound.protection.outlook.com
- ([40.107.68.105] helo=NAM04-BN3-obe.outbound.protection.outlook.com)
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hbt4l-0005pa-Lm
- for linux-arm-kernel@lists.infradead.org; Fri, 14 Jun 2019 20:45:33 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=aampusa.onmicrosoft.com; s=selector2-aampusa-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=8LJs3kHOWi3j4TbBy3wsNFShGNm1OeEJNgVtrMZGuOg=;
- b=tl9Tkb1OcbCVBQNcdpmRSMTqcifPl8P57kZOTOxcpNmQbetbrJOB6W2VbtuqEKXgP90axSP2dxYC/lG7zml9jBRPYTGDTi8qAQlLSJj6qmfaBPp5I3kHkJ+FYUnlrRAaGmdexentvv9mY0WsIDYzB+kIyAoutkCGEI0njVROrq8=
-Received: from BL0PR07MB4115.namprd07.prod.outlook.com (52.132.10.149) by
- BL0PR07MB5521.namprd07.prod.outlook.com (20.177.242.88) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.1965.17; Fri, 14 Jun 2019 20:45:28 +0000
-Received: from BL0PR07MB4115.namprd07.prod.outlook.com
- ([fe80::f064:5129:63c6:d3e]) by BL0PR07MB4115.namprd07.prod.outlook.com
- ([fe80::f064:5129:63c6:d3e%6]) with mapi id 15.20.1965.019; Fri, 14 Jun 2019
- 20:45:28 +0000
-From: Ken Sloat <KSloat@aampglobal.com>
-To: Alexandre Belloni <alexandre.belloni@bootlin.com>
-Subject: RE: [PATCH v2 1/1] watchdog: atmel: atmel-sama5d4-wdt: Disable
- watchdog on system suspend
-Thread-Topic: [PATCH v2 1/1] watchdog: atmel: atmel-sama5d4-wdt: Disable
- watchdog on system suspend
-Thread-Index: AQHVIrAmpSe7ef5LPkq+gtVGV8yaCKabW/WAgAAQIfCAAAbcAIAAAenAgAAmm4CAAADR8A==
-Date: Fri, 14 Jun 2019 20:45:28 +0000
-Message-ID: <BL0PR07MB4115721DA2EB445BE7590BF6ADEE0@BL0PR07MB4115.namprd07.prod.outlook.com>
-References: <20190614125310.29458-1-ksloat@aampglobal.com>
- <20190614164609.GA29814@roeck-us.net>
- <BL0PR07MB4115E99D065FD9BEA4C43BB5ADEE0@BL0PR07MB4115.namprd07.prod.outlook.com>
- <20190614180826.GD3369@piout.net>
- <BL0PR07MB4115D5ECDEDCC028197637E5ADEE0@BL0PR07MB4115.namprd07.prod.outlook.com>
- <20190614203327.GE3369@piout.net>
-In-Reply-To: <20190614203327.GE3369@piout.net>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=KSloat@aampglobal.com; 
-x-originating-ip: [100.3.71.115]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: ef799d38-ce9a-450a-4553-08d6f1093bfb
-x-microsoft-antispam: BCL:0; PCL:0;
- RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600148)(711020)(4605104)(1401327)(2017052603328)(7193020);
- SRVR:BL0PR07MB5521; 
-x-ms-traffictypediagnostic: BL0PR07MB5521:
-x-ms-exchange-purlcount: 1
-x-microsoft-antispam-prvs: <BL0PR07MB5521FD3294C937CFBF135680ADEE0@BL0PR07MB5521.namprd07.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:10000;
-x-forefront-prvs: 0068C7E410
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10019020)(366004)(396003)(136003)(376002)(346002)(39850400004)(189003)(51914003)(13464003)(199004)(8676002)(71200400001)(7736002)(68736007)(81166006)(15650500001)(74316002)(8936002)(81156014)(71190400001)(99286004)(80792005)(14444005)(52536014)(256004)(229853002)(316002)(5660300002)(66066001)(25786009)(4326008)(478600001)(2906002)(11346002)(6246003)(7696005)(476003)(186003)(102836004)(53936002)(6916009)(14454004)(6116002)(486006)(76176011)(446003)(66446008)(66556008)(6306002)(66476007)(6506007)(55016002)(86362001)(9686003)(53546011)(3846002)(966005)(54906003)(66946007)(76116006)(73956011)(305945005)(6436002)(26005)(33656002)(64756008)(72206003);
- DIR:OUT; SFP:1102; SCL:1; SRVR:BL0PR07MB5521;
- H:BL0PR07MB4115.namprd07.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; MX:1; A:1; 
-received-spf: None (protection.outlook.com: aampglobal.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: 1n57G2uVzOQuQ4YESdudQgJYMrha4miz0Ca+ReHjOhlsazLzZFGPUUedvp78P+cF0zEZ0CPOJ1ziufUHKJCkwxq0Im26HSm1EWrUOZcidkfn1WJ7SWdqm9HYReNLSUqhxYmmOpm3iy1axTk14ZpHt9dZCP/t5uHx/zrCb+SlqP+VOKOJOARuYnNzGmcBbd5UeN48u5zFAg9xu9rwSArLBbNQKF2aP077oGG9mNqo18IIYqYnKbiaDQxSWxfwvx11iWqmmdX0hg+Gw0jKJ1sJHr34q/daU+RxsuaAvgUhwRTJ3xUQhRPvLK11H7mScULAfS8ce+dSYUAKqcGLwWSXFF2qXykCn5fLPuYuPzsPNw2XaoIjdj2kaZ+fXnwwnctj6JO6Wr6SWwDACXL8i2u40zPktcC0v+wTH15g2T5vn78=
+	id 1hbtCY-0007op-2X; Fri, 14 Jun 2019 20:53:34 +0000
+Received: from sauhun.de ([88.99.104.3] helo=pokefinder.org)
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hbtCP-0007oT-0J
+ for linux-arm-kernel@lists.infradead.org; Fri, 14 Jun 2019 20:53:26 +0000
+Received: from localhost (p5486CF81.dip0.t-ipconnect.de [84.134.207.129])
+ by pokefinder.org (Postfix) with ESMTPSA id D46602CF690;
+ Fri, 14 Jun 2019 22:53:22 +0200 (CEST)
+Date: Fri, 14 Jun 2019 22:53:22 +0200
+From: Wolfram Sang <wsa@the-dreams.de>
+To: Fabrice Gasnier <fabrice.gasnier@st.com>
+Subject: Re: [PATCH v2] i2c: i2c-stm32f7: fix the get_irq error cases
+Message-ID: <20190614205322.GA17899@ninjato>
+References: <1558020594-1498-1-git-send-email-fabrice.gasnier@st.com>
 MIME-Version: 1.0
-X-OriginatorOrg: aampglobal.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: ef799d38-ce9a-450a-4553-08d6f1093bfb
-X-MS-Exchange-CrossTenant-originalarrivaltime: 14 Jun 2019 20:45:28.0817 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: e20e3a66-8b9e-46e9-b859-cb654c1ec6ea
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: ken.sloat@aampglobal.com
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: BL0PR07MB5521
-X-MS-Exchange-CrossPremises-AuthAs: Internal
-X-MS-Exchange-CrossPremises-AuthMechanism: 04
-X-MS-Exchange-CrossPremises-AuthSource: BL0PR07MB4115.namprd07.prod.outlook.com
-X-MS-Exchange-CrossPremises-TransportTrafficType: Email
-X-MS-Exchange-CrossPremises-TransportTrafficSubType: 
-X-MS-Exchange-CrossPremises-SCL: 1
-X-MS-Exchange-CrossPremises-messagesource: StoreDriver
-X-MS-Exchange-CrossPremises-BCC: 
-X-MS-Exchange-CrossPremises-originalclientipaddress: 100.3.71.115
-X-MS-Exchange-CrossPremises-transporttraffictype: Email
-X-MS-Exchange-CrossPremises-transporttrafficsubtype: 
-X-MS-Exchange-CrossPremises-antispam-scancontext: DIR:Originating; SFV:NSPM;
- SKIP:0; 
-X-MS-Exchange-CrossPremises-processed-by-journaling: Journal Agent
-X-OrganizationHeadersPreserved: BL0PR07MB5521.namprd07.prod.outlook.com
+In-Reply-To: <1558020594-1498-1-git-send-email-fabrice.gasnier@st.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190614_134531_773168_0A7DAF85 
-X-CRM114-Status: GOOD (  19.79  )
+X-CRM114-CacheID: sfid-20190614_135325_673727_E792D8AC 
+X-CRM114-Status: UNSURE (   6.68  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.68.105 listed in list.dnswl.org]
+ no trust [88.99.104.3 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -129,74 +59,77 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "linux-watchdog@vger.kernel.org" <linux-watchdog@vger.kernel.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "ludovic.desroches@microchip.com" <ludovic.desroches@microchip.com>,
- Guenter Roeck <linux@roeck-us.net>,
- "wim@linux-watchdog.org" <wim@linux-watchdog.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: alexandre.torgue@st.com, pierre-yves.mordret@st.com,
+ marc.w.gonzalez@free.fr, linux-kernel@vger.kernel.org, fabien.dessenne@st.com,
+ linux-i2c@vger.kernel.org, mcoquelin.stm32@gmail.com,
+ linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
+Content-Type: multipart/mixed; boundary="===============1848730776849603886=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-> -----Original Message-----
-> From: Alexandre Belloni <alexandre.belloni@bootlin.com>
-> Sent: Friday, June 14, 2019 4:33 PM
-> To: Ken Sloat <KSloat@aampglobal.com>
-> Cc: Guenter Roeck <linux@roeck-us.net>; nicolas.ferre@microchip.com;
-> ludovic.desroches@microchip.com; wim@linux-watchdog.org; linux-arm-
-> kernel@lists.infradead.org; linux-watchdog@vger.kernel.org; linux-
-> kernel@vger.kernel.org
-> Subject: Re: [PATCH v2 1/1] watchdog: atmel: atmel-sama5d4-wdt: Disable
-> watchdog on system suspend
-> 
-> [This is an EXTERNAL EMAIL]
-> ________________________________
-> 
-> On 14/06/2019 18:43:22+0000, Ken Sloat wrote:
-> > Well I'm a little confused still because there are two separate
-> > comments in these statements. The first within resume implies that the
-> > init should be called because we might have lost register values for
-> > some reason unexplained.
-> 
-> The sama5d2 has a suspend mode where power to the core is completely
-> cut. Only a few IPs remain powered (in the backup power domain).
-> Unfortunately, the watchdog is not in that domain and may lose its registers.
-> 
-> > Then within the init it says that the bootloader might have modified
-> > the registers so we should check them and then update it or otherwise
-> > disable it. I'm not trying to pick apart the logic or anything, I'm
-> > just readily assuming it is good as it was already reviewed before.
-> >
-> 
-> The bootloaders may have started the watchdog (this makes sense if you
-> really care about reliability) and so we need to be careful to keep the proper
-> parameters.
 
-Thanks for the explanation Alexandre I appreciate it.
+--===============1848730776849603886==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="Dxnq1zWXvFF0Q93v"
+Content-Disposition: inline
 
-> > So without digging into that too much, if we don't know if any of the
-> > runtime situations above might have occurred, then isn't it best to
-> > leave my patch as is? Yes this has the side effect of resetting the
-> > timer count, but if the init call is needed and we don't have any way
-> > to know if any of the situations occurred, then we have no choice right?
-> >
-> 
-> Until we can differentiate between suspend modes, we have no other
-> choice.
 
-Ok I will leave my patch as is for now then
+--Dxnq1zWXvFF0Q93v
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
 
-> --
-> Alexandre Belloni, Bootlin
-> Embedded Linux and Kernel engineering
-> https://bootlin.com
+Hi Fabrice,
 
-Thanks,
-Ken Sloat
+> +		return irq_event ? irq_event : -ENODEV;
+
+Maybe -ENOENT instead of -ENODEV? I mean you have a dev_err there, so
+the driver core should probably also complain?
+
+You could also shorten the ternary operator to:
+
+	return irq_event ? : -E<whatyouprefer>;
+
+However, both are minor nits. If you prefer to keep the patch as is,
+fine with me.
+
+Regards,
+
+   Wolfram
+
+
+--Dxnq1zWXvFF0Q93v
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAABCgAdFiEEOZGx6rniZ1Gk92RdFA3kzBSgKbYFAl0ECT4ACgkQFA3kzBSg
+KbaP8xAAiUUQ1YDf9eeO9qQ5B7FKo7kXJ7iUA/RbGjfpC5zhjsoVgb7DdHvc7npe
+PSrQ21fAXNJtFz4N1CcQ6A38C2/IYZ+A2NnmwNyzMhqL5W5Ah2gPl6UP7S6USF4J
+4NnHw0/0eeH7/i+F13uiVGJudC+MVesWYPZgOBq9GGqgwxp7IztsjSOliBDRkC6c
+6RtdlqXD0UfUt60sxIJz/Oy+SYRKc0V78KUeybe7+fT5gisBfF3E1Zs3OZFieupk
+BIRuhXDNBQUTb7Cy387Zh4Im2uEzUb1qBIqC3azfJhNVyMm9fyiFGgysXNhkgEJ5
+1CKiXadTzhYJQJUpxNDmYQcmk8t/cM69R9NKBXou8XCeutIbe4BA6myz0U0hz1Np
+E7iBJ//LJpXAptZErq3n2VzDFHKKFWn4hyIJKI7LOZIdO2t/I/6wzJPMKxHJSOTv
+soWDgPcS/D1to1Glq4+CPqwNicEXLm5q1H18UE0SjBskFaGwCwyjNFAvwwjmhJ4f
+73uuuJBC3Oq2W/JqnYY+IFcue4GO/VS6ZughqW8iebSmwaoArzN00L844leXDkHN
+0dBGj3bT/lcLrR+d7jLsWeHt4t6J0dTJAkIxBivl+dK2nta7NMalnqp6cFp/nHfY
+R8KQhpWqlKhaoFGQzW1XiLNlKq+ZPC4MGq3h3thFOc9Z4lo96KA=
+=VE/8
+-----END PGP SIGNATURE-----
+
+--Dxnq1zWXvFF0Q93v--
+
+
+--===============1848730776849603886==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============1848730776849603886==--
+
