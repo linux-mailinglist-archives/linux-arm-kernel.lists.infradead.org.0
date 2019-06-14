@@ -2,82 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A6AE9464B8
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Jun 2019 18:44:58 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 11122464B9
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Jun 2019 18:45:22 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=QSZmi0Kpff64LHyF3G4pYi5myDQmI79CNurUtOh0wBc=; b=idNwrdXKMbeSoj
-	A7B8S8NJvgPUd21nCGf7oOBJsqIz9gQOmIFPko+oKWWUy/1ZoMOpZCxoF7oxBi0d5BwtFYkS/f0hb
-	cXJcwm7hm19ogdcTiL3zWSd2pXOpWvrBiC9itsnrTL6RgEHars+0i9hHlq9zA7zK+uL2x2M29c8+L
-	z6AG6lZdC+De3e0wVipcYVnVzp4sA5hDDJwale7bzyBFNDFv9IVMTQuDQFJ21OZf5a/TFr0zD4EPy
-	1KfWB5JXYoyDMgAe+/ArAWfyXpxaOg8dpcwiWJLGnrtuuLjDOKb2WP6QGLUMKdI4BB0Q5Z9oYNSNv
-	Mh4tfz5RJ3jKwOaWXyGA==;
+	List-Owner; bh=w3CrAvi3RnnFKMeAeNla4nQmwPW3WeqzeXIEXX0THRw=; b=A596DZTsNejLX0
+	zF3sk8oWolKNCMbAp90GBHqj3A7obqByzR+wjIr2zTqg9H3hhdBvF87zqZOztnGSh8Qatnbo/G9yj
+	qn19dMTF4Rq1/tV4xoi3NZGP5whGI24mvFNktS9RBSGVohxFBBjcMDIVgYLhaSigsAnZxFs9pxwug
+	xiSQtAS8Nl0c9TOUt/oBdriNjKstTiU7fDHQk05w9qPNpXgyeWdWEWT4K1L3lBC6Wk5ul62eS/oOO
+	QQKwjHEr1jutwGNoSPmyjaHSxIjip09X89+znEY8Uy8Ey9708Z1vWSbdhQ4E2PAKB5mYVJ7rlEWI9
+	ruWg96YzNmuo8daIDekQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hbpJu-0000S6-Kz; Fri, 14 Jun 2019 16:44:54 +0000
-Received: from mail-pg1-x542.google.com ([2607:f8b0:4864:20::542])
+	id 1hbpKI-0000iS-6z; Fri, 14 Jun 2019 16:45:18 +0000
+Received: from mail-pf1-x442.google.com ([2607:f8b0:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hbpIr-00078O-KV
- for linux-arm-kernel@lists.infradead.org; Fri, 14 Jun 2019 16:43:50 +0000
-Received: by mail-pg1-x542.google.com with SMTP id p10so1875108pgn.1
+ id 1hbpIw-0007DC-6t
+ for linux-arm-kernel@lists.infradead.org; Fri, 14 Jun 2019 16:43:55 +0000
+Received: by mail-pf1-x442.google.com with SMTP id i189so1781698pfg.10
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 14 Jun 2019 09:43:49 -0700 (PDT)
+ Fri, 14 Jun 2019 09:43:53 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=amarulasolutions.com; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=kEKdnhKR+/dWWRVZjYYO+x5HGCPCoPobrZ4wln/DJzY=;
- b=pt+MCQrYrr1z9usf53hpmCyEdhtX35GU4v450sx+7ngZfUg9lOUJdWuFI9JOxl8RTp
- CHUPQOKAzK2NXpws6xY7rj+PcC18JYJtjwgryLTh5NTOOLOBJcHS6zygGc3tgYy1fJyE
- efXaUwOts0I1GtXTgS8qdMApryCG8QaDzqmMc=
+ bh=848PkAQSuqGBV9d1ZE22q9YEz/y0k4xnXoRXzpZqX+0=;
+ b=dZXH9NvKdmO0bTsLkbJzcgWsuOWrWooI8HoZvgEnDZAITMfdSO31becAdutXgCndye
+ MHderODMAFVl3kDDQUpeEvuaZoNXhqkGysP/vFvCfDg3SYV3HcMKFSS9NMVFDDhAaFDG
+ eJI66CGb5Ses9xXU+ojj0rPo/6FtA8Nuaz1Pk=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=kEKdnhKR+/dWWRVZjYYO+x5HGCPCoPobrZ4wln/DJzY=;
- b=bH9CBV7LMF7CiofdR1HXL0kQiNSv6WglHZGDBMnDZvQZwYL3OyPftbWCW6zkhkW8Fd
- VYLsryYpHmXOQQ+x5x5B6sk1tbGLpQbnz3B2wJd8S5ZLof4OVEVJYMQzYuDxOh/QgOm/
- yVUbsD9G12+8w6Kg8XG/KMkDEwO0+ucOShFc5ey9EBeSLGL0Yb9+p9wn++TvdgYdrP/T
- i7v0nen8CFvkul7JgUNy5COjfWAx/m5JZzYYlxP6qekckf5HcJKbXAF118PIcrH8f5Ob
- XhuvuCnhRIjhPlouACdDnXDE1W9J37IMJgjYj9oP44eQSfBdNRTODy4CfVq8xctUaRIg
- W1OQ==
-X-Gm-Message-State: APjAAAVca5wc03R0EGI6mCA8B4La4/fT3PpPepPJ5u4fx8VTioq98Ldo
- XrRSKZpe0e/l305uAytwjygD3g==
-X-Google-Smtp-Source: APXvYqxVZ/VBMdd1plRYRlRdBu2PAEOFwSdXMjHmnSt33jJGhQ4n+lhUW7eRWumCYAU2L0kC+eo4hA==
-X-Received: by 2002:a63:6881:: with SMTP id
- d123mr11058424pgc.201.1560530628964; 
- Fri, 14 Jun 2019 09:43:48 -0700 (PDT)
+ bh=848PkAQSuqGBV9d1ZE22q9YEz/y0k4xnXoRXzpZqX+0=;
+ b=AiFNHObRu08ecAMdOxn8jRBAXTfORwMs0FuU2xA/Oo8EDArjWnEzpjS0tR0usT+JNt
+ xy34v4GGyAHwZBduxfvEbxbfsYhfMMWNQ1LjNPziI3O9SDuwzQ/jB9J0SvgJHkR1yk/Y
+ Ay/1QEVUkjFA3EeWSsvrcZBtNYXWGS8vlnY7n3Ffzz/oAvZpSi++4FyDRnAhD4OE3sC/
+ PkXgGzyuHj/a/sdNYwGCxXhUp6M22rNg8/OUn8umIHs3Kf80QAeAVOAk8kInPrZjFyZ+
+ EQz3pjIx7aUUXLJGLzOhTdZN/p8g1MtYeDok9b7Hq2K4RR19Pu4k6jWUKv5UDo9CT6t8
+ yWxQ==
+X-Gm-Message-State: APjAAAW/wmA0FiSYRQTRZIh5/lgpbis0HRXGJ385QgyiXT6O2X/MGJ68
+ tX/AeirpNGJnxDDvBWcYnNX34w==
+X-Google-Smtp-Source: APXvYqwUHYYxZ/0pN9i06WfooF6JJ94tywE4LYJ0JGGICFTLtuW3GCdvLxxtuIbnkkx9sC5rpEpZNA==
+X-Received: by 2002:a63:2349:: with SMTP id u9mr10900061pgm.410.1560530633068; 
+ Fri, 14 Jun 2019 09:43:53 -0700 (PDT)
 Received: from localhost.localdomain ([115.97.180.18])
- by smtp.gmail.com with ESMTPSA id 85sm1639583pfv.130.2019.06.14.09.43.45
+ by smtp.gmail.com with ESMTPSA id 85sm1639583pfv.130.2019.06.14.09.43.49
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Fri, 14 Jun 2019 09:43:48 -0700 (PDT)
+ Fri, 14 Jun 2019 09:43:52 -0700 (PDT)
 From: Jagan Teki <jagan@amarulasolutions.com>
 To: Maxime Ripard <maxime.ripard@bootlin.com>, David Airlie <airlied@linux.ie>,
  Daniel Vetter <daniel@ffwll.ch>, Chen-Yu Tsai <wens@csie.org>,
  dri-devel@lists.freedesktop.org, linux-arm-kernel@lists.infradead.org,
  linux-kernel@vger.kernel.org, devicetree@vger.kernel.org,
  Jernej Skrabec <jernej.skrabec@siol.net>
-Subject: [PATCH v2 2/9] drm/sun4i: tcon: Add TCON LCD support for R40
-Date: Fri, 14 Jun 2019 22:13:17 +0530
-Message-Id: <20190614164324.9427-3-jagan@amarulasolutions.com>
+Subject: [PATCH v2 3/9] ARM: dts: sun8i: r40: Use tcon top clock index macros
+Date: Fri, 14 Jun 2019 22:13:18 +0530
+Message-Id: <20190614164324.9427-4-jagan@amarulasolutions.com>
 X-Mailer: git-send-email 2.18.0.321.gffc6fa0e3
 In-Reply-To: <20190614164324.9427-1-jagan@amarulasolutions.com>
 References: <20190614164324.9427-1-jagan@amarulasolutions.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190614_094349_697166_06D9CF13 
-X-CRM114-Status: GOOD (  11.92  )
+X-CRM114-CacheID: sfid-20190614_094354_285801_2A4D839F 
+X-CRM114-Status: GOOD (  12.38  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:542 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:442 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -107,45 +106,50 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-TCON LCD0, LCD1 in allwinner R40, are used for managing
-LCD interfaces like RGB, LVDS and DSI.
+tcon_tv0, tcon_tv1 nodes have a clock names of tcon-ch0,
+tcon-ch1 which are referring tcon_top clocks via index
+numbers like 0, 1 with CLK_TCON_TV0 and CLK_TCON_TV1
+respectively.
 
-Like TCON TV0, TV1 these LCD0, LCD1 are also managed via
-tcon top.
-
-Add support for it, in tcon driver.
+Use the macro in place of index numbers, for more code
+readability.
 
 Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
+Reviewed-by: Chen-Yu Tsai <wens@csie.org>
 ---
- drivers/gpu/drm/sun4i/sun4i_tcon.c | 8 ++++++++
- 1 file changed, 8 insertions(+)
+ arch/arm/boot/dts/sun8i-r40.dtsi | 5 +++--
+ 1 file changed, 3 insertions(+), 2 deletions(-)
 
-diff --git a/drivers/gpu/drm/sun4i/sun4i_tcon.c b/drivers/gpu/drm/sun4i/sun4i_tcon.c
-index 9e9d08ee8387..9838913305a0 100644
---- a/drivers/gpu/drm/sun4i/sun4i_tcon.c
-+++ b/drivers/gpu/drm/sun4i/sun4i_tcon.c
-@@ -1471,6 +1471,13 @@ static const struct sun4i_tcon_quirks sun8i_a83t_tv_quirks = {
- 	.has_channel_1		= true,
- };
+diff --git a/arch/arm/boot/dts/sun8i-r40.dtsi b/arch/arm/boot/dts/sun8i-r40.dtsi
+index bb856e53b806..219d2dca16b3 100644
+--- a/arch/arm/boot/dts/sun8i-r40.dtsi
++++ b/arch/arm/boot/dts/sun8i-r40.dtsi
+@@ -44,6 +44,7 @@
+ #include <dt-bindings/interrupt-controller/arm-gic.h>
+ #include <dt-bindings/clock/sun8i-de2.h>
+ #include <dt-bindings/clock/sun8i-r40-ccu.h>
++#include <dt-bindings/clock/sun8i-tcon-top.h>
+ #include <dt-bindings/reset/sun8i-r40-ccu.h>
+ #include <dt-bindings/reset/sun8i-de2.h>
  
-+static const struct sun4i_tcon_quirks sun8i_r40_lcd_quirks = {
-+	.supports_lvds		= true,
-+	.has_channel_0		= true,
-+	/* TODO Need to support TCON output muxing via GPIO pins */
-+	.set_mux		= sun8i_r40_tcon_tv_set_mux,
-+};
-+
- static const struct sun4i_tcon_quirks sun8i_r40_tv_quirks = {
- 	.has_channel_1		= true,
- 	.set_mux		= sun8i_r40_tcon_tv_set_mux,
-@@ -1501,6 +1508,7 @@ const struct of_device_id sun4i_tcon_of_table[] = {
- 	{ .compatible = "allwinner,sun8i-a33-tcon", .data = &sun8i_a33_quirks },
- 	{ .compatible = "allwinner,sun8i-a83t-tcon-lcd", .data = &sun8i_a83t_lcd_quirks },
- 	{ .compatible = "allwinner,sun8i-a83t-tcon-tv", .data = &sun8i_a83t_tv_quirks },
-+	{ .compatible = "allwinner,sun8i-r40-tcon-lcd", .data = &sun8i_r40_lcd_quirks },
- 	{ .compatible = "allwinner,sun8i-r40-tcon-tv", .data = &sun8i_r40_tv_quirks },
- 	{ .compatible = "allwinner,sun8i-v3s-tcon", .data = &sun8i_v3s_quirks },
- 	{ .compatible = "allwinner,sun9i-a80-tcon-lcd", .data = &sun9i_a80_tcon_lcd_quirks },
+@@ -704,7 +705,7 @@
+ 			compatible = "allwinner,sun8i-r40-tcon-tv";
+ 			reg = <0x01c73000 0x1000>;
+ 			interrupts = <GIC_SPI 51 IRQ_TYPE_LEVEL_HIGH>;
+-			clocks = <&ccu CLK_BUS_TCON_TV0>, <&tcon_top 0>;
++			clocks = <&ccu CLK_BUS_TCON_TV0>, <&tcon_top CLK_TCON_TOP_TV0>;
+ 			clock-names = "ahb", "tcon-ch1";
+ 			resets = <&ccu RST_BUS_TCON_TV0>;
+ 			reset-names = "lcd";
+@@ -747,7 +748,7 @@
+ 			compatible = "allwinner,sun8i-r40-tcon-tv";
+ 			reg = <0x01c74000 0x1000>;
+ 			interrupts = <GIC_SPI 52 IRQ_TYPE_LEVEL_HIGH>;
+-			clocks = <&ccu CLK_BUS_TCON_TV1>, <&tcon_top 1>;
++			clocks = <&ccu CLK_BUS_TCON_TV1>, <&tcon_top CLK_TCON_TOP_TV1>;
+ 			clock-names = "ahb", "tcon-ch1";
+ 			resets = <&ccu RST_BUS_TCON_TV1>;
+ 			reset-names = "lcd";
 -- 
 2.18.0.321.gffc6fa0e3
 
