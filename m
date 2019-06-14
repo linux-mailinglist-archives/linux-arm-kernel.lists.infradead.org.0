@@ -2,80 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A4A77452D5
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Jun 2019 05:22:56 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B515F452D6
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Jun 2019 05:23:11 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=uf0MNUftKdFblmffXT7BOT8WQ4naGuI/DAstHa3QItY=; b=DqhzT2iySlKoGJ
-	LRFmUch4KNOTg10KYUVbtZFnZWsPjb+FyHXIPFI3MUV6qhKscrzHOSkm4eJE40u/fY+aXUebWvuGR
-	DOrXEYYVu3WECn3LlQDjFBJuKXuaxjECkxrrwa61mklNQNqbe4GxNYgKF8gPR5m1SQDpZHvo+oBw9
-	GaWmiDuT9ssicd6ZfsZTC5Ke2EL2WrFQy3NcXmvrsjj8DC92FpAVcLXh2EFYIi7fEYEfSu1pZMGcD
-	gTdZ9mnZ+D5kizgD2k9DvK4t1CI146XT+EKBI3F9GIZ7mVuj3Um0VI6pJEkIgoNANoxPyZeFe4fx8
-	k/0Z6aQgjcIcBKSJ6oOw==;
+	List-Owner; bh=3CD+xk6IqUou6GsdTzS1a9ZpuNOhDuwobd6r8idwalk=; b=Z4DBO0DhxcY8Rm
+	UO5y1jeKmWagCrO4t0oZGjleowo5xuggutLjNTNfk/tX5rGFfvgXQW22jzsp23tlBGdJgYj3uptNi
+	4FoA7pJUv6cK0JQVczxTilh08JvSONIux7PoKbw+VZNAGNPxvebD+tq9pCCq2vqTS71cV2nee8iZ5
+	loxyKMq5lpSbeVCzeAoME/pwvQV2QwfmtNs261gcmnGL13HiCIDFp9/FA8EBfxm5UdMtzfu2UaEUj
+	Mc7Vcre3swsFSkiV3XQHV3Fs1BuISiin4uw3qyJB5/JbyoqQUrQ2IyyDBAHgpc1uD8ZwE/OBCzJZn
+	Obh2yPN4ri+9aMxZzi0Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hbcnj-0002sD-6F; Fri, 14 Jun 2019 03:22:51 +0000
-Received: from mail-pg1-x541.google.com ([2607:f8b0:4864:20::541])
+	id 1hbco2-000387-3k; Fri, 14 Jun 2019 03:23:10 +0000
+Received: from mail-pf1-x442.google.com ([2607:f8b0:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hbceO-0000q0-Bl
- for linux-arm-kernel@lists.infradead.org; Fri, 14 Jun 2019 03:13:16 +0000
-Received: by mail-pg1-x541.google.com with SMTP id p10so690188pgn.1
+ id 1hbceS-0000rY-3A
+ for linux-arm-kernel@lists.infradead.org; Fri, 14 Jun 2019 03:13:20 +0000
+Received: by mail-pf1-x442.google.com with SMTP id 19so498924pfa.4
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 13 Jun 2019 20:13:11 -0700 (PDT)
+ Thu, 13 Jun 2019 20:13:15 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=hP63VKEYPHg3zKNj3xMaZwjK56Qq/K++eO//dDzRjvk=;
- b=XKzO/FoVC0F/C4cPzxh2/w9xDeu3OZ3640Q66sWIDaYrI4StlFuJ3ZBr1yFuUuBOeD
- lAPWHE6wpJixcIXHSeVdX7HYeAwZ1jk4l8IId6e2YoZyHBTw1Cbhs+1ZcCD7HmWfBg9Z
- Mg/z8WeXnPtbWv3DcJW9vguLf6NclZdtb2PHrhx7vP4hvspjwrd/UcpBOqakQ23I8YJj
- wKS5TakaT13Waa8g7uoG37UWjq8U6cOWr0o3yUbZXY9T7L8MuVXzIqFMxExia6clUbSu
- HApz5WTgOGxo7STDNUHSQuiqTJd4DXkW5nwubO7ta7JT7OFDH/B+bGerim8MwpmMSWzp
- 9rRA==
+ bh=RBs1rUgoU6ONwGkddceY1nFBB7cQx3Xs99bBwFEL95E=;
+ b=Y+C3vCm4FkAIC9ch5xg5mi8S62oaHgpJnjqQq+9lw8g9Xph7XUJlAmNDCc33ug39w6
+ e/FxICYL1v+gXJSPGpk4abMVGyBOrKwE/0zjP4smzzCzNga3q90iJtaLrxAMC1tz/wO4
+ fYKov71NsbdHsYB+kGPyzeMqqqn3qVMEdnwq5VGs/UawuNFTPwh0GTBWmOr8exKBwGM0
+ HCnGqmdUj/OrLoPiL3ABfRNC5FWKxQfoupQcwJe7fzwger9I++tW2np6m5KhLbY6oHqR
+ D5K3XavaqFUz33yhK5eXM/BXTUiaxAip93SGy2tDEVN/C0lP2cPT0x1nl5fZuDHreUDV
+ JC3w==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=hP63VKEYPHg3zKNj3xMaZwjK56Qq/K++eO//dDzRjvk=;
- b=eWScJHdpwE0XRm+DNe3rBpAcZzzn+KiUZY+d/UT7rGdCKJGST8v7eamGR/b5bnJMP8
- bnCOymqWq5BuYvPXnSEJfJDRSSTgTI68F64Ky1J9xy/58MQ83epeYLtg8H4Ys6RCJHqU
- b/zerPWfxaafAzdvwa+28WYq4/aIWhtubBQbVxSsnHenSlxLyY3YYNXBhLVSQLPk4oyI
- xltTTY2z3+2eJ3PFyqPfa24Hn8BsSucKjs8us0RIBCBq3tL1Fd0xudHMzzR8gzzHjp/x
- sVKR5MFGP1+u3uJSc+0L3aTzdDcfdjs8hXiQjvH+88I7imoO9MOtw+QZRhSKiMPE7qOF
- HIJw==
-X-Gm-Message-State: APjAAAVkv1Iqb9a3Mo4lMsQ+CXLtFELN6dyXfsqIPbbFND+FmerqcwXc
- ZrRUFh8J1Cclf1MsFXHDduMG9Gv9gXE=
-X-Google-Smtp-Source: APXvYqz3iGB3sFLe1ujAa4CWxg87VdsLELINdehSRwwhAyr0qsSp+adC3/BhKcW2M+2In5oYCgZjeg==
-X-Received: by 2002:a63:545a:: with SMTP id e26mr33192910pgm.162.1560481991000; 
- Thu, 13 Jun 2019 20:13:11 -0700 (PDT)
+ bh=RBs1rUgoU6ONwGkddceY1nFBB7cQx3Xs99bBwFEL95E=;
+ b=L+0dq8G/YzrSAjo5FSn7RwEXHY+GFQ/bjLXXFfuv0sC1Zor2CSxQiTJNNMA7EJ7ISk
+ RG3lXyRijy6sLnhdb7HEbXpNJzF/okLiGgIE87MKybNa/kAe/Ps3Su60X6U6YmAUjsJi
+ zlJ1gr3QynytCmzYPNwXcWlSCspVN9gaSYB1xUr27jxPHlma+w2FTf13ZMr9/U6nKlhh
+ q75X1gdo8/cv0ny8v0eJ2+t+vFYcsaiTUILNtPOE3pXN4Sdp7kIXraGRTEfmxLdszt2y
+ jvSvR/vPabXI54wGbnK0jZZPrieGpimQFkkeXu8q+mAlu0O896Zj0srExXXIagR/lCyT
+ wViQ==
+X-Gm-Message-State: APjAAAVCp32xBYe5sUcMe3g9zB2HRDh6J/vbMaC8pBzFf4jk7bE3u/qb
+ 98qUQThnGnnOsuvQUYsuWPPtl9P1nb4=
+X-Google-Smtp-Source: APXvYqx1w5jIHExWIUiykLHbam+LKm0LbPJSJi662J7oNbLxNPX3VOKBfV57rgpjB/MT0Ts0/xEdpg==
+X-Received: by 2002:a63:1617:: with SMTP id w23mr25538091pgl.183.1560481993805; 
+ Thu, 13 Jun 2019 20:13:13 -0700 (PDT)
 Received: from localhost ([122.172.66.84])
- by smtp.gmail.com with ESMTPSA id b16sm1067054pfd.12.2019.06.13.20.13.10
+ by smtp.gmail.com with ESMTPSA id f17sm1131479pgv.16.2019.06.13.20.13.12
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Thu, 13 Jun 2019 20:13:10 -0700 (PDT)
+ Thu, 13 Jun 2019 20:13:13 -0700 (PDT)
 From: Viresh Kumar <viresh.kumar@linaro.org>
 To: linux-arm-kernel@lists.infradead.org,
  Julien Thierry <Julien.Thierry@arm.com>
-Subject: [PATCH v4.4 29/45] arm64: KVM: Increment PC after handling an SMC trap
-Date: Fri, 14 Jun 2019 08:38:12 +0530
-Message-Id: <2798950c13d82c9e5b4c9a94afe8eeeef052283a.1560480942.git.viresh.kumar@linaro.org>
+Subject: [PATCH v4.4 30/45] arm/arm64: KVM: Consolidate the PSCI include files
+Date: Fri, 14 Jun 2019 08:38:13 +0530
+Message-Id: <165e8628ae4e24397d1dcee69d10487d53a7df98.1560480942.git.viresh.kumar@linaro.org>
 X-Mailer: git-send-email 2.21.0.rc0.269.g1a574e7a288b
 In-Reply-To: <cover.1560480942.git.viresh.kumar@linaro.org>
 References: <cover.1560480942.git.viresh.kumar@linaro.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190613_201312_506102_8715F18A 
-X-CRM114-Status: GOOD (  11.83  )
+X-CRM114-CacheID: sfid-20190613_201316_342867_6CB87B2C 
+X-CRM114-Status: GOOD (  15.85  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:541 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:442 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -107,49 +107,157 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Marc Zyngier <marc.zyngier@arm.com>
+From: Mark Rutland <mark.rutland@arm.com>
 
-commit f5115e8869e1dfafac0e414b4f1664f3a84a4683 upstream.
+commit 1a2fb94e6a771ff94f4afa22497a4695187b820c upstream.
 
-When handling an SMC trap, the "preferred return address" is set
-to that of the SMC, and not the next PC (which is a departure from
-the behaviour of an SMC that isn't trapped).
+As we're about to update the PSCI support, and because I'm lazy,
+let's move the PSCI include file to include/kvm so that both
+ARM architectures can find it.
 
-Increment PC in the handler, as the guest is otherwise forever
-stuck...
-
-Cc: stable@vger.kernel.org
-Fixes: acfb3b883f6d ("arm64: KVM: Fix SMCCC handling of unimplemented SMC/HVC calls")
-Reviewed-by: Christoffer Dall <christoffer.dall@linaro.org>
+Acked-by: Christoffer Dall <christoffer.dall@linaro.org>
 Tested-by: Ard Biesheuvel <ard.biesheuvel@linaro.org>
 Signed-off-by: Marc Zyngier <marc.zyngier@arm.com>
 Signed-off-by: Catalin Marinas <catalin.marinas@arm.com>
+[ v4.4: account for files moved to virt/ upstream ]
 Signed-off-by: Viresh Kumar <viresh.kumar@linaro.org>
 ---
- arch/arm64/kvm/handle_exit.c | 9 +++++++++
- 1 file changed, 9 insertions(+)
+ arch/arm/include/asm/kvm_psci.h               | 27 -------------------
+ arch/arm/kvm/arm.c                            |  2 +-
+ arch/arm/kvm/handle_exit.c                    |  2 +-
+ arch/arm/kvm/psci.c                           |  3 ++-
+ arch/arm64/kvm/handle_exit.c                  |  5 +++-
+ .../asm/kvm_psci.h => include/kvm/arm_psci.h  |  6 ++---
+ 6 files changed, 11 insertions(+), 34 deletions(-)
+ delete mode 100644 arch/arm/include/asm/kvm_psci.h
+ rename arch/arm64/include/asm/kvm_psci.h => include/kvm/arm_psci.h (89%)
 
+diff --git a/arch/arm/include/asm/kvm_psci.h b/arch/arm/include/asm/kvm_psci.h
+deleted file mode 100644
+index 6bda945d31fa..000000000000
+--- a/arch/arm/include/asm/kvm_psci.h
++++ /dev/null
+@@ -1,27 +0,0 @@
+-/*
+- * Copyright (C) 2012 - ARM Ltd
+- * Author: Marc Zyngier <marc.zyngier@arm.com>
+- *
+- * This program is free software; you can redistribute it and/or modify
+- * it under the terms of the GNU General Public License version 2 as
+- * published by the Free Software Foundation.
+- *
+- * This program is distributed in the hope that it will be useful,
+- * but WITHOUT ANY WARRANTY; without even the implied warranty of
+- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+- * GNU General Public License for more details.
+- *
+- * You should have received a copy of the GNU General Public License
+- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+- */
+-
+-#ifndef __ARM_KVM_PSCI_H__
+-#define __ARM_KVM_PSCI_H__
+-
+-#define KVM_ARM_PSCI_0_1	1
+-#define KVM_ARM_PSCI_0_2	2
+-
+-int kvm_psci_version(struct kvm_vcpu *vcpu);
+-int kvm_psci_call(struct kvm_vcpu *vcpu);
+-
+-#endif /* __ARM_KVM_PSCI_H__ */
+diff --git a/arch/arm/kvm/arm.c b/arch/arm/kvm/arm.c
+index d7bef2144760..96fa300cf581 100644
+--- a/arch/arm/kvm/arm.c
++++ b/arch/arm/kvm/arm.c
+@@ -28,6 +28,7 @@
+ #include <linux/sched.h>
+ #include <linux/kvm.h>
+ #include <trace/events/kvm.h>
++#include <kvm/arm_psci.h>
+ 
+ #define CREATE_TRACE_POINTS
+ #include "trace.h"
+@@ -43,7 +44,6 @@
+ #include <asm/kvm_mmu.h>
+ #include <asm/kvm_emulate.h>
+ #include <asm/kvm_coproc.h>
+-#include <asm/kvm_psci.h>
+ 
+ #ifdef REQUIRES_VIRT
+ __asm__(".arch_extension	virt");
+diff --git a/arch/arm/kvm/handle_exit.c b/arch/arm/kvm/handle_exit.c
+index 05b2f8294968..ed879e3238d3 100644
+--- a/arch/arm/kvm/handle_exit.c
++++ b/arch/arm/kvm/handle_exit.c
+@@ -21,7 +21,7 @@
+ #include <asm/kvm_emulate.h>
+ #include <asm/kvm_coproc.h>
+ #include <asm/kvm_mmu.h>
+-#include <asm/kvm_psci.h>
++#include <kvm/arm_psci.h>
+ #include <trace/events/kvm.h>
+ 
+ #include "trace.h"
+diff --git a/arch/arm/kvm/psci.c b/arch/arm/kvm/psci.c
+index 443db0c43d7c..b4acfec9b459 100644
+--- a/arch/arm/kvm/psci.c
++++ b/arch/arm/kvm/psci.c
+@@ -21,9 +21,10 @@
+ 
+ #include <asm/cputype.h>
+ #include <asm/kvm_emulate.h>
+-#include <asm/kvm_psci.h>
+ #include <asm/kvm_host.h>
+ 
++#include <kvm/arm_psci.h>
++
+ #include <uapi/linux/psci.h>
+ 
+ /*
 diff --git a/arch/arm64/kvm/handle_exit.c b/arch/arm64/kvm/handle_exit.c
-index 5295aef7c8f0..c43e0e100c11 100644
+index c43e0e100c11..5b7fb5ab9136 100644
 --- a/arch/arm64/kvm/handle_exit.c
 +++ b/arch/arm64/kvm/handle_exit.c
-@@ -51,7 +51,16 @@ static int handle_hvc(struct kvm_vcpu *vcpu, struct kvm_run *run)
+@@ -22,11 +22,14 @@
+ #include <linux/kvm.h>
+ #include <linux/kvm_host.h>
  
- static int handle_smc(struct kvm_vcpu *vcpu, struct kvm_run *run)
- {
-+	/*
-+	 * "If an SMC instruction executed at Non-secure EL1 is
-+	 * trapped to EL2 because HCR_EL2.TSC is 1, the exception is a
-+	 * Trap exception, not a Secure Monitor Call exception [...]"
-+	 *
-+	 * We need to advance the PC after the trap, as it would
-+	 * otherwise return to the same address...
-+	 */
- 	vcpu_set_reg(vcpu, 0, ~0UL);
-+	kvm_skip_instr(vcpu, kvm_vcpu_trap_il_is32bit(vcpu));
- 	return 1;
- }
++#include <kvm/arm_psci.h>
++
+ #include <asm/esr.h>
+ #include <asm/kvm_coproc.h>
+ #include <asm/kvm_emulate.h>
+ #include <asm/kvm_mmu.h>
+-#include <asm/kvm_psci.h>
++#include <asm/debug-monitors.h>
++#include <asm/traps.h>
  
+ #define CREATE_TRACE_POINTS
+ #include "trace.h"
+diff --git a/arch/arm64/include/asm/kvm_psci.h b/include/kvm/arm_psci.h
+similarity index 89%
+rename from arch/arm64/include/asm/kvm_psci.h
+rename to include/kvm/arm_psci.h
+index bc39e557c56c..2042bb909474 100644
+--- a/arch/arm64/include/asm/kvm_psci.h
++++ b/include/kvm/arm_psci.h
+@@ -15,8 +15,8 @@
+  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  */
+ 
+-#ifndef __ARM64_KVM_PSCI_H__
+-#define __ARM64_KVM_PSCI_H__
++#ifndef __KVM_ARM_PSCI_H__
++#define __KVM_ARM_PSCI_H__
+ 
+ #define KVM_ARM_PSCI_0_1	1
+ #define KVM_ARM_PSCI_0_2	2
+@@ -24,4 +24,4 @@
+ int kvm_psci_version(struct kvm_vcpu *vcpu);
+ int kvm_psci_call(struct kvm_vcpu *vcpu);
+ 
+-#endif /* __ARM64_KVM_PSCI_H__ */
++#endif /* __KVM_ARM_PSCI_H__ */
 -- 
 2.21.0.rc0.269.g1a574e7a288b
 
