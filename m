@@ -2,80 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5ECA545291
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Jun 2019 05:14:29 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1735645292
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Jun 2019 05:15:11 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=HgvpQUs5HAIoCUK+yET1ORVvk2frIJQzLhcH0Cs8YHM=; b=VKGX8D1fkFRhQ7
-	Kw/CpOf9dLmmXmP+gnj4vnwmjCzF8L12MD9UDWyBBeLOfWx7M8VePF59PPGhStSOV7ABDDjZEg8VI
-	xISeAPEZ+eWR/ofk8mQstPCXOp8cvN2dwe1MUVCG4aCEInoyv6XhUO1HJVAYqXQxkEyCk+CgPvJpm
-	V+9fFUHf+0/dBVRJrE1sDyk0IbFCc8yAiI7wH53iLeh0xwJSfs1ZwUXHIr5giJIbP6En3MJ6H3R/Y
-	WfmVZ6T9g8OanvovzbkaXlEFGQfwt60MpsEsFKtjujTdqDdCumdeoasSFtmFn3eCKqBFtYWzL95yy
-	I77wmcOItbb0bd3+bkgA==;
+	List-Owner; bh=BzPMhrFXGXOlk8TywbHUNZU5N0LGvRG5V1LZIu9o7EM=; b=bW5Veg1Rs0k8AL
+	CW02laNlCl9LmJ18xoO042yYR4plBpwGr58eohHjnPojt7DVuQCmIzG2tOahUc+qqLRAFGb0L33tY
+	vDgImev8/1zbmww4UId7j9QHUny56CYmnFctGGNVagWuY516v6COs9kP9o8Bt8DTJRDRdH4DqO/+G
+	3ugdbhQw/6qLWypbq/ENfF4DK1yjuhmQ9lan7goW49Da7ONS1v6BUeFW4tpMuFghAOLg9y+quZIvm
+	I9hSGH4YTUnP8syPQa6buRb5KFZ0uXx4FFTmNYjXzKiqz0AwzcdrXyohWtixCiJQQIqi1e++hNf1Z
+	C4fFQK5E2tzl1JvYFiWQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hbcfY-0001Wg-Au; Fri, 14 Jun 2019 03:14:24 +0000
-Received: from mail-pf1-x444.google.com ([2607:f8b0:4864:20::444])
+	id 1hbcgH-0001q1-5y; Fri, 14 Jun 2019 03:15:09 +0000
+Received: from mail-pf1-x443.google.com ([2607:f8b0:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hbcdM-00007X-Pz
- for linux-arm-kernel@lists.infradead.org; Fri, 14 Jun 2019 03:12:11 +0000
-Received: by mail-pf1-x444.google.com with SMTP id a186so495121pfa.5
+ id 1hbcdP-00009h-Ng
+ for linux-arm-kernel@lists.infradead.org; Fri, 14 Jun 2019 03:12:13 +0000
+Received: by mail-pf1-x443.google.com with SMTP id 19so497618pfa.4
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 13 Jun 2019 20:12:08 -0700 (PDT)
+ Thu, 13 Jun 2019 20:12:11 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=jM3DSSQ5QlZXEONoZT9K+P8C++Y23zetJjpY6WsFYS8=;
- b=hBCJXZ9T5rigkGtisPLeaNWQAqyrRUj2ZgHPm2y7iDH6diBfYxhmzU8hOKt3ZaXamK
- 2Y1OGoXRoCAyflZlrfyE5IE48ZTOh8LM2OefFE5Hf+DNft2GN4OqskqBGJGsmugNMdFt
- zBEOm41x2PhNvmk0ARTG4AVFrStmDOxF/T9Rt9tNs9bKaaQ8ERB0NIlaWVvRxvqwEayX
- iLI/2ihNHk1NZ9eAlfuHKsihkm2KIHRT3d2QNEZv5sZx+XWTM8KFPOnsl82rRx9Qt5XT
- WNuhFgOeqQo/1ujIDrC/tQQx4oz5TCckXqLulhZWVW5SX/U+V/cniN5fSXvOdIQ5VkP+
- UqsA==
+ bh=oplH30x1zLW/kw5XTQuFI7s72sVvdi1RahKBb4zAIVI=;
+ b=Yzltk8JB8mBXf0jZiiOn54g5/T0KcQ7kKV+UgQ9lpUwSlLs7Pt5kZUz7O8VRM5Gywr
+ a6759AUaffVtNH/TQGwSHY5oA17fJKXMnvPoFyntQBTfIscQNfo17nFck1DVJjrDtGmA
+ +OsNTrb2LaV2WQoX5sd/qPiJek55dGs814vb4bBwWTlq1ot6VHkqG7m98hfa/cY12zOZ
+ NVjM5NrthLLacQzOfmEqJDxiugx32DoJGjZw/qboBQpDb5iGkEpwkxHwzJmyDijrFmnK
+ zlGHBFAbNvl6JKVjnyBkeDwcgVbmq34wRQMm7GRnJ59Qelhe/pLC0cpTAsYd2dtksl3m
+ bQxg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=jM3DSSQ5QlZXEONoZT9K+P8C++Y23zetJjpY6WsFYS8=;
- b=BRxQ1XWSSkzquCGYOIbF9Gp5Up/HVFSy7bRgN4jGeMUCBAtoVY5Kj+xKHf2OB8/5XO
- f6Pv4veOaJrCaGxXCDFgwts1y26UZ6SORT4DLkOnX6Mx4xMIQ14DKJsBcsK0FeA8FY0n
- 4k/wsb/qjwB4HfhFqjCNRwkuMaeKIwOLn6mcW3KrrUMv+coKMP2s+Z/pAANvu99giHdl
- APIz8bOcUMmzGKFDLVro4dX44WvEBoUASeIy5UXPUzHusP+p/zwHHhhkI9F2399ApYam
- CPXA0XmvrHwh/PSKsPFX43u+NHQQvg5KQETUbZ7mrTj9UDDCduRC1xl3WFeMJTJprTj3
- W1uQ==
-X-Gm-Message-State: APjAAAUL7wcSyUu0oAZx//PH8x3ZLa/NZW1LM0ahLZUVFiCme1qYNpsl
- ldMy9NtzP2VSFpUIRod5HpROIeqjtf8=
-X-Google-Smtp-Source: APXvYqzWFlyC3EJ/bVwwN3mi8OsYWxdTJ66D3uyl+Z/F0Uvt5mWUspb0ZlZluW6jd+3CS16mwNdxRw==
-X-Received: by 2002:aa7:8e54:: with SMTP id d20mr7531785pfr.16.1560481927612; 
- Thu, 13 Jun 2019 20:12:07 -0700 (PDT)
+ bh=oplH30x1zLW/kw5XTQuFI7s72sVvdi1RahKBb4zAIVI=;
+ b=Vvv6pjEb1zBWE8o7fEgUNZ2eZkef/xXilfN2P7FSf3QnKjkLRcmaa8c5l73qBAj7ca
+ 0AY2cocCzRvM4cdN1bdTYzeNpFkbMBlCVDtEneGzB/2OrzMnylF2S6R0fFPZB/ltuYK3
+ 6CCKaa7j9cKpLUkvwnsNtYEbCmK7+9MZ8wbBqN4PaehfevJY65EgZerZE/gXC2JO2PNy
+ 8oSe8un+x9UAboL423Mq1UzLZyIObwXd/0+ZD2cFBsFkmXtDyQ+cU8NPVLwunZnQQVQt
+ izGl4zn/S/j9pCCG4nqfmbn63bNrW8q2qAgGffevjxYJXlr/hF9IxRpy/f7RL1/554+n
+ bvbg==
+X-Gm-Message-State: APjAAAUsfWEUJn8ZB9Jr2P17t7rJulDX3gnCDmc7ip1Ox3FYW+dz+FBB
+ /AWEMa0R6E3OjbxpZznbtBYxlHfnOSM=
+X-Google-Smtp-Source: APXvYqy5wJDFGT5CTVHTGOqYSsSzofcsN1zQjCYusln8vRIdY/+WOc7URnCgUo7C85NDttUzgH3b+A==
+X-Received: by 2002:a63:dc15:: with SMTP id s21mr34323601pgg.215.1560481930079; 
+ Thu, 13 Jun 2019 20:12:10 -0700 (PDT)
 Received: from localhost ([122.172.66.84])
- by smtp.gmail.com with ESMTPSA id l20sm1008268pff.102.2019.06.13.20.12.06
+ by smtp.gmail.com with ESMTPSA id y1sm1198391pjw.5.2019.06.13.20.12.09
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Thu, 13 Jun 2019 20:12:07 -0700 (PDT)
+ Thu, 13 Jun 2019 20:12:09 -0700 (PDT)
 From: Viresh Kumar <viresh.kumar@linaro.org>
 To: linux-arm-kernel@lists.infradead.org,
  Julien Thierry <Julien.Thierry@arm.com>
-Subject: [PATCH v4.4 05/45] arm64: Make USER_DS an inclusive limit
-Date: Fri, 14 Jun 2019 08:37:48 +0530
-Message-Id: <86a5655ffd342f6f62ae1280cd5131868abfa6de.1560480942.git.viresh.kumar@linaro.org>
+Subject: [PATCH v4.4 06/45] arm64: Use pointer masking to limit uaccess
+ speculation
+Date: Fri, 14 Jun 2019 08:37:49 +0530
+Message-Id: <33a351b8683ca17c3d6ed3711d2c6fe2ae1a36f3.1560480942.git.viresh.kumar@linaro.org>
 X-Mailer: git-send-email 2.21.0.rc0.269.g1a574e7a288b
 In-Reply-To: <cover.1560480942.git.viresh.kumar@linaro.org>
 References: <cover.1560480942.git.viresh.kumar@linaro.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190613_201208_925491_1B598FF6 
-X-CRM114-Status: GOOD (  16.38  )
+X-CRM114-CacheID: sfid-20190613_201211_911964_824DAA96 
+X-CRM114-Status: GOOD (  13.80  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:444 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:443 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -109,134 +110,82 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Robin Murphy <robin.murphy@arm.com>
 
-commit 51369e398d0d33e8f524314e672b07e8cf870e79 upstream.
+commit 4d8efc2d5ee4c9ccfeb29ee8afd47a8660d0c0ce upstream.
 
-Currently, USER_DS represents an exclusive limit while KERNEL_DS is
-inclusive. In order to do some clever trickery for speculation-safe
-masking, we need them both to behave equivalently - there aren't enough
-bits to make KERNEL_DS exclusive, so we have precisely one option. This
-also happens to correct a longstanding false negative for a range
-ending on the very top byte of kernel memory.
+Similarly to x86, mitigate speculation past an access_ok() check by
+masking the pointer against the address limit before use.
 
-Mark Rutland points out that we've actually got the semantics of
-addresses vs. segments muddled up in most of the places we need to
-amend, so shuffle the {USER,KERNEL}_DS definitions around such that we
-can correct those properly instead of just pasting "-1"s everywhere.
+Even if we don't expect speculative writes per se, it is plausible that
+a CPU may still speculate at least as far as fetching a cache line for
+writing, hence we also harden put_user() and clear_user() for peace of
+mind.
 
 Signed-off-by: Robin Murphy <robin.murphy@arm.com>
 Signed-off-by: Will Deacon <will.deacon@arm.com>
 Signed-off-by: Catalin Marinas <catalin.marinas@arm.com>
-[ 4.4: Dropped changes from fault.c and fixed minor rebase conflict ]
 Signed-off-by: Viresh Kumar <viresh.kumar@linaro.org>
 ---
- arch/arm64/include/asm/processor.h |  3 ++
- arch/arm64/include/asm/uaccess.h   | 45 +++++++++++++++++-------------
- arch/arm64/kernel/entry.S          |  4 +--
- 3 files changed, 31 insertions(+), 21 deletions(-)
+ arch/arm64/include/asm/uaccess.h | 26 +++++++++++++++++++++++---
+ 1 file changed, 23 insertions(+), 3 deletions(-)
 
-diff --git a/arch/arm64/include/asm/processor.h b/arch/arm64/include/asm/processor.h
-index 12d5b2b97f04..c49597ae529d 100644
---- a/arch/arm64/include/asm/processor.h
-+++ b/arch/arm64/include/asm/processor.h
-@@ -21,6 +21,9 @@
- 
- #define TASK_SIZE_64		(UL(1) << VA_BITS)
- 
-+#define KERNEL_DS	UL(-1)
-+#define USER_DS		(TASK_SIZE_64 - 1)
-+
- #ifndef __ASSEMBLY__
- 
- /*
 diff --git a/arch/arm64/include/asm/uaccess.h b/arch/arm64/include/asm/uaccess.h
-index 829fa6d3e561..c625cc5531fc 100644
+index c625cc5531fc..75363d723262 100644
 --- a/arch/arm64/include/asm/uaccess.h
 +++ b/arch/arm64/include/asm/uaccess.h
-@@ -56,10 +56,7 @@ struct exception_table_entry
- 
- extern int fixup_exception(struct pt_regs *regs);
- 
--#define KERNEL_DS	(-1UL)
- #define get_ds()	(KERNEL_DS)
--
--#define USER_DS		TASK_SIZE_64
- #define get_fs()	(current_thread_info()->addr_limit)
- 
- static inline void set_fs(mm_segment_t fs)
-@@ -87,22 +84,32 @@ static inline void set_fs(mm_segment_t fs)
-  * Returns 1 if the range is valid, 0 otherwise.
-  *
-  * This is equivalent to the following test:
-- * (u65)addr + (u65)size <= current->addr_limit
-- *
-- * This needs 65-bit arithmetic.
-+ * (u65)addr + (u65)size <= (u65)current->addr_limit + 1
-  */
--#define __range_ok(addr, size)						\
--({									\
--	unsigned long __addr = (unsigned long __force)(addr);		\
--	unsigned long flag, roksum;					\
--	__chk_user_ptr(addr);						\
--	asm("adds %1, %1, %3; ccmp %1, %4, #2, cc; cset %0, ls"		\
--		: "=&r" (flag), "=&r" (roksum)				\
--		: "1" (__addr), "Ir" (size),				\
--		  "r" (current_thread_info()->addr_limit)		\
--		: "cc");						\
--	flag;								\
--})
-+static inline unsigned long __range_ok(unsigned long addr, unsigned long size)
-+{
-+	unsigned long limit = current_thread_info()->addr_limit;
-+
-+	__chk_user_ptr(addr);
-+	asm volatile(
-+	// A + B <= C + 1 for all A,B,C, in four easy steps:
-+	// 1: X = A + B; X' = X % 2^64
-+	"	adds	%0, %0, %2\n"
-+	// 2: Set C = 0 if X > 2^64, to guarantee X' > C in step 4
-+	"	csel	%1, xzr, %1, hi\n"
-+	// 3: Set X' = ~0 if X >= 2^64. For X == 2^64, this decrements X'
-+	//    to compensate for the carry flag being set in step 4. For
-+	//    X > 2^64, X' merely has to remain nonzero, which it does.
-+	"	csinv	%0, %0, xzr, cc\n"
-+	// 4: For X < 2^64, this gives us X' - C - 1 <= 0, where the -1
-+	//    comes from the carry in being clear. Otherwise, we are
-+	//    testing X' - C == 0, subject to the previous adjustments.
-+	"	sbcs	xzr, %0, %1\n"
-+	"	cset	%0, ls\n"
-+	: "+r" (addr), "+r" (limit) : "Ir" (size) : "cc");
-+
-+	return addr;
-+}
- 
- /*
-  * When dealing with data aborts, watchpoints, or instruction traps we may end
-@@ -111,7 +118,7 @@ static inline void set_fs(mm_segment_t fs)
-  */
- #define untagged_addr(addr)		sign_extend64(addr, 55)
- 
--#define access_ok(type, addr, size)	__range_ok(addr, size)
-+#define access_ok(type, addr, size)	__range_ok((unsigned long)(addr), size)
+@@ -121,6 +121,26 @@ static inline unsigned long __range_ok(unsigned long addr, unsigned long size)
+ #define access_ok(type, addr, size)	__range_ok((unsigned long)(addr), size)
  #define user_addr_max			get_fs
  
++/*
++ * Sanitise a uaccess pointer such that it becomes NULL if above the
++ * current addr_limit.
++ */
++#define uaccess_mask_ptr(ptr) (__typeof__(ptr))__uaccess_mask_ptr(ptr)
++static inline void __user *__uaccess_mask_ptr(const void __user *ptr)
++{
++	void __user *safe_ptr;
++
++	asm volatile(
++	"	bics	xzr, %1, %2\n"
++	"	csel	%0, %1, xzr, eq\n"
++	: "=&r" (safe_ptr)
++	: "r" (ptr), "r" (current_thread_info()->addr_limit)
++	: "cc");
++
++	csdb();
++	return safe_ptr;
++}
++
  /*
-diff --git a/arch/arm64/kernel/entry.S b/arch/arm64/kernel/entry.S
-index c849be9231bb..4c5013b09dcb 100644
---- a/arch/arm64/kernel/entry.S
-+++ b/arch/arm64/kernel/entry.S
-@@ -96,10 +96,10 @@
- 	.else
- 	add	x21, sp, #S_FRAME_SIZE
- 	get_thread_info tsk
--	/* Save the task's original addr_limit and set USER_DS (TASK_SIZE_64) */
-+	/* Save the task's original addr_limit and set USER_DS */
- 	ldr	x20, [tsk, #TI_ADDR_LIMIT]
- 	str	x20, [sp, #S_ORIG_ADDR_LIMIT]
--	mov	x20, #TASK_SIZE_64
-+	mov	x20, #USER_DS
- 	str	x20, [tsk, #TI_ADDR_LIMIT]
- 	.endif /* \el == 0 */
- 	mrs	x22, elr_el1
+  * The "__xxx" versions of the user access functions do not verify the address
+  * space - it must have been done previously with a separate "access_ok()"
+@@ -193,7 +213,7 @@ do {									\
+ 	__typeof__(*(ptr)) __user *__p = (ptr);				\
+ 	might_fault();							\
+ 	access_ok(VERIFY_READ, __p, sizeof(*__p)) ?			\
+-		__get_user((x), __p) :					\
++		__p = uaccess_mask_ptr(__p), __get_user((x), __p) :	\
+ 		((x) = 0, -EFAULT);					\
+ })
+ 
+@@ -259,7 +279,7 @@ do {									\
+ 	__typeof__(*(ptr)) __user *__p = (ptr);				\
+ 	might_fault();							\
+ 	access_ok(VERIFY_WRITE, __p, sizeof(*__p)) ?			\
+-		__put_user((x), __p) :					\
++		__p = uaccess_mask_ptr(__p), __put_user((x), __p) :	\
+ 		-EFAULT;						\
+ })
+ 
+@@ -297,7 +317,7 @@ static inline unsigned long __must_check copy_in_user(void __user *to, const voi
+ static inline unsigned long __must_check clear_user(void __user *to, unsigned long n)
+ {
+ 	if (access_ok(VERIFY_WRITE, to, n))
+-		n = __clear_user(to, n);
++		n = __clear_user(__uaccess_mask_ptr(to), n);
+ 	return n;
+ }
+ 
 -- 
 2.21.0.rc0.269.g1a574e7a288b
 
