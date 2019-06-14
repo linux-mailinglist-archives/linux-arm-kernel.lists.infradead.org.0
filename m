@@ -2,120 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 81D7445D2E
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Jun 2019 14:53:45 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2CFCF45D4F
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Jun 2019 15:00:24 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=8nBxdAomKrmlGt5bwbSyOirvcr11SnqBiFrPj/huuVY=; b=HIwfK6NI2z2v6F
-	T9UYLKneMMp6/4cbhqo+R4IidOBdGu9AfZrkwaQSE1XBiXY6XOfRm/pceAwCmhuDMnjixkUjmUT1C
-	mAbQ2pxAGz3WKd7TvINPUeTE62ZCHP1E0EOX3o+wOBuuwUng/tCnRgwOqfWosJpD9ZHK39smAqIou
-	BNSqyMTu/lNnUZlBcv5VDBgo5T3IlakCqUlGTm8YdSSmCCvw7fZbfzEO0o6+bVCXAampWItaqNiey
-	6kl37KKVumbZj+5X4HV4E/Kpa/mJS4vrLe8M5vLc4UPh4uxdv9Ym9SJ8jwPbDF+QUE6TjIiS4IkHq
-	zXA79uhhWVeHow0KB/8g==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=pNPrN8Y0VwB3jkkefPCoKuMBMQxoTqkjlkZhCATWb04=; b=aJndJ4EEHGWy7i
+	sYQDBzhJg29hAUmFI529NnmvGU1eKHigjLZuDhJg1/OCFxD0/RtRh0cn3oiixavsN51mI7HUxVdN2
+	x6hibr27BdjFwPTL4iZjdAtxgh7DJka1J34Yr+3nIXWclKo90nGnhU/BhzAZ2GZ5SG5Xiobq4wXsl
+	faLiZ2EmmYl0f9s4DT8c4B/UT8qYQCG+uxR7IfKbHMmbxXH45+dGAoXNuGiuTqGMr4j5BwqRgUSBx
+	u3AgNiHt8UQPs6bwsVJ/DFr9DdzvXBXMfOpljBMpSx7S/NJ1WsU6QYNN847OMIAWlRL9Y0eC7atrM
+	cJlPdSH11+27NbGJB6oQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hbli9-0003O4-EV; Fri, 14 Jun 2019 12:53:41 +0000
-Received: from mail-eopbgr730115.outbound.protection.outlook.com
- ([40.107.73.115] helo=NAM05-DM3-obe.outbound.protection.outlook.com)
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hblhy-0003NZ-5M
- for linux-arm-kernel@lists.infradead.org; Fri, 14 Jun 2019 12:53:31 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=aampusa.onmicrosoft.com; s=selector2-aampusa-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=MrLeNhTOMV/5b5VUsNtYNMV9IHI5LroPmp/odYruiOA=;
- b=FtuccU556ayc6hnWqXgj/B1T8KdfPMsuV7CpbFJlsRDTPv4i5pcvnCaoVNqyFYDnokx6UaeTOBPqoDjNilSmtiGbaL9Ed+n9D76Ihyf+WWc1RPFxozvNjIIzD06s3vz+Vs/8shlCROG2c/pdufoGMM/8Rib5dnI2Eghcp8MAbuE=
-Received: from BL0PR07MB4115.namprd07.prod.outlook.com (52.132.10.149) by
- BL0PR07MB5713.namprd07.prod.outlook.com (20.177.243.16) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.1965.17; Fri, 14 Jun 2019 12:53:22 +0000
-Received: from BL0PR07MB4115.namprd07.prod.outlook.com
- ([fe80::f064:5129:63c6:d3e]) by BL0PR07MB4115.namprd07.prod.outlook.com
- ([fe80::f064:5129:63c6:d3e%6]) with mapi id 15.20.1965.019; Fri, 14 Jun 2019
- 12:53:22 +0000
-From: Ken Sloat <KSloat@aampglobal.com>
-To: "nicolas.ferre@microchip.com" <nicolas.ferre@microchip.com>
-Subject: [PATCH v2 1/1] watchdog: atmel: atmel-sama5d4-wdt: Disable watchdog
- on system suspend
-Thread-Topic: [PATCH v2 1/1] watchdog: atmel: atmel-sama5d4-wdt: Disable
- watchdog on system suspend
-Thread-Index: AQHVIrAmpSe7ef5LPkq+gtVGV8yaCA==
-Date: Fri, 14 Jun 2019 12:53:22 +0000
-Message-ID: <20190614125310.29458-1-ksloat@aampglobal.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-x-originating-ip: [100.3.71.115]
-x-clientproxiedby: BN6PR2001CA0008.namprd20.prod.outlook.com
- (2603:10b6:404:b4::18) To BL0PR07MB4115.namprd07.prod.outlook.com
- (2603:10b6:207:4c::21)
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=KSloat@aampglobal.com; 
-x-ms-exchange-messagesentrepresentingtype: 1
-x-mailer: git-send-email 2.17.1
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: defbe8bb-55e7-4ea6-771c-08d6f0c7484e
-x-microsoft-antispam: BCL:0; PCL:0;
- RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600148)(711020)(4605104)(1401327)(2017052603328)(7193020);
- SRVR:BL0PR07MB5713; 
-x-ms-traffictypediagnostic: BL0PR07MB5713:
-x-microsoft-antispam-prvs: <BL0PR07MB571385E3D0B3A804456B66F3ADEE0@BL0PR07MB5713.namprd07.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:6430;
-x-forefront-prvs: 0068C7E410
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10019020)(346002)(376002)(366004)(396003)(136003)(39850400004)(199004)(189003)(66066001)(305945005)(81166006)(4326008)(6486002)(66946007)(81156014)(80792005)(486006)(8936002)(72206003)(2501003)(7736002)(478600001)(476003)(6916009)(14454004)(2351001)(8676002)(50226002)(2616005)(99286004)(6512007)(68736007)(6436002)(86362001)(15650500001)(66556008)(6116002)(71190400001)(386003)(316002)(66476007)(53936002)(102836004)(3846002)(2906002)(71200400001)(25786009)(5640700003)(36756003)(5660300002)(256004)(1076003)(73956011)(26005)(186003)(66446008)(14444005)(52116002)(64756008)(54906003)(6506007);
- DIR:OUT; SFP:1102; SCL:1; SRVR:BL0PR07MB5713;
- H:BL0PR07MB4115.namprd07.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; A:1; MX:1; 
-received-spf: None (protection.outlook.com: aampglobal.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: tQ3SjGDxPiV0Bm0djYMEuUhQuCYzxUvFDkWyGq0yOeNWanhqqF2ZF5wrQJVhNQYSKUTPUc/vSPA7g7XgPcWDT/A+zBRI/Ylg+pqkdzgqoJsBiw4l9HUtHeo6pR4Osz+HsB2vkB+Z2rhmKw4Mp9XJ6bvRoR0TC1Mj9ssph3nk0bALi7Tyvjs+e5iyYj+Tt9gUGt4d5cGH5d1WBdekUzOu9/r+Ee7NTIzIzBXoyengA/svowvkKqJR/QqxBpwuLK1VADPWIBqNBwAsRQId+D4bNLU0WQKMq9YakeFAjaexDNYatObiX3LjtVg+7LFBKlrCPaVc8UFfSrIWORRKWJC5ySUhy87KCe3Sk8bhAu3cQfT2Yoy0F3tbGIUB8DAQ0Mic9VJrAraGFwg/PgqTMTIGPbIVIq5wSJ369EVvgKAIXcg=
+	id 1hbloZ-0006Is-RE; Fri, 14 Jun 2019 13:00:19 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hbloL-0005cI-2I
+ for linux-arm-kernel@lists.infradead.org; Fri, 14 Jun 2019 13:00:09 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 9B31A2B;
+ Fri, 14 Jun 2019 06:00:03 -0700 (PDT)
+Received: from [10.162.41.168] (p8cg001049571a15.blr.arm.com [10.162.41.168])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
+ 61E5C3F246; Fri, 14 Jun 2019 06:00:01 -0700 (PDT)
+Subject: Re: [PATCH v3 01/10] arm64: mm: Flip kernel VA space
+To: Steve Capper <steve.capper@arm.com>, linux-arm-kernel@lists.infradead.org
+References: <20190612172658.28522-1-steve.capper@arm.com>
+ <20190612172658.28522-2-steve.capper@arm.com>
+From: Anshuman Khandual <anshuman.khandual@arm.com>
+Message-ID: <e8b68e70-1d01-6a7a-57af-28f7f9b0ae1f@arm.com>
+Date: Fri, 14 Jun 2019 18:30:21 +0530
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101
+ Thunderbird/52.9.1
 MIME-Version: 1.0
-X-OriginatorOrg: aampglobal.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: defbe8bb-55e7-4ea6-771c-08d6f0c7484e
-X-MS-Exchange-CrossTenant-originalarrivaltime: 14 Jun 2019 12:53:22.6691 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: e20e3a66-8b9e-46e9-b859-cb654c1ec6ea
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: ken.sloat@aampglobal.com
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: BL0PR07MB5713
-X-MS-Exchange-CrossPremises-AuthAs: Internal
-X-MS-Exchange-CrossPremises-AuthMechanism: 06
-X-MS-Exchange-CrossPremises-AuthSource: BL0PR07MB4115.namprd07.prod.outlook.com
-X-MS-Exchange-CrossPremises-TransportTrafficType: Email
-X-MS-Exchange-CrossPremises-TransportTrafficSubType: 
-X-MS-Exchange-CrossPremises-SCL: 1
-X-MS-Exchange-CrossPremises-mapi-admin-submission: 
-X-MS-Exchange-CrossPremises-messagesource: StoreDriver
-X-MS-Exchange-CrossPremises-BCC: 
-X-MS-Exchange-CrossPremises-originalclientipaddress: 100.3.71.115
-X-MS-Exchange-CrossPremises-transporttraffictype: Email
-X-MS-Exchange-CrossPremises-transporttrafficsubtype: 
-X-MS-Exchange-CrossPremises-antispam-scancontext: DIR:Originating; SFV:NSPM;
- SKIP:0; 
-X-MS-Exchange-CrossPremises-processed-by-journaling: Journal Agent
-X-OrganizationHeadersPreserved: BL0PR07MB5713.namprd07.prod.outlook.com
+In-Reply-To: <20190612172658.28522-2-steve.capper@arm.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190614_055330_257810_32AC5911 
-X-CRM114-Status: GOOD (  12.64  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20190614_060005_239204_F86D7B89 
+X-CRM114-Status: GOOD (  24.73  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.73.115 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -127,82 +62,240 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "alexandre.belloni@bootlin.com" <alexandre.belloni@bootlin.com>,
- "linux-watchdog@vger.kernel.org" <linux-watchdog@vger.kernel.org>,
- Ken Sloat <KSloat@aampglobal.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "ludovic.desroches@microchip.com" <ludovic.desroches@microchip.com>,
- "linux@roeck-us.net" <linux@roeck-us.net>,
- "wim@linux-watchdog.org" <wim@linux-watchdog.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: crecklin@redhat.com, ard.biesheuvel@linaro.org, marc.zyngier@arm.com,
+ catalin.marinas@arm.com, bhsharma@redhat.com, will.deacon@arm.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Ken Sloat <ksloat@aampglobal.com>
+On 06/12/2019 10:56 PM, Steve Capper wrote:
+> Put the direct linear map in the lower addresses of the kernel VA range
+> and everything else in the higher ranges.
+> 
+> This allows us to make room for an inline KASAN shadow that operates
+> under both 48 and 52 bit kernel VA sizes. For example with a 52-bit VA,
+> if KASAN_SHADOW_END < 0xFFF8000000000000 (it is in the lower addresses
+> of the kernel VA range), this will be below the start of the minimum
+> 48-bit kernel VA address of 0xFFFF000000000000.
+> 
+> We need to adjust:
+>  *) KASAN shadow region placement logic,
+>  *) KASAN_SHADOW_OFFSET computation logic,
+>  *) virt_to_phys, phys_to_virt checks,
+>  *) page table dumper.
+> 
+> These are all small changes, that need to take place atomically, so they
+> are bundled into this commit.
+> 
+> Signed-off-by: Steve Capper <steve.capper@arm.com>
+> ---
+>  arch/arm64/Makefile              | 2 +-
+>  arch/arm64/include/asm/memory.h  | 8 ++++----
+>  arch/arm64/include/asm/pgtable.h | 2 +-
+>  arch/arm64/kernel/hibernate.c    | 2 +-
+>  arch/arm64/mm/dump.c             | 8 ++++----
+>  arch/arm64/mm/init.c             | 9 +--------
+>  arch/arm64/mm/kasan_init.c       | 6 +++---
+>  arch/arm64/mm/mmu.c              | 4 ++--
+>  8 files changed, 17 insertions(+), 24 deletions(-)
+> 
+> diff --git a/arch/arm64/Makefile b/arch/arm64/Makefile
+> index b025304bde46..2dad2ae6b181 100644
+> --- a/arch/arm64/Makefile
+> +++ b/arch/arm64/Makefile
+> @@ -115,7 +115,7 @@ KBUILD_AFLAGS += -DKASAN_SHADOW_SCALE_SHIFT=$(KASAN_SHADOW_SCALE_SHIFT)
+>  #				 - (1 << (64 - KASAN_SHADOW_SCALE_SHIFT))
+>  # in 32-bit arithmetic
+>  KASAN_SHADOW_OFFSET := $(shell printf "0x%08x00000000\n" $$(( \
+> -	(0xffffffff & (-1 << ($(CONFIG_ARM64_VA_BITS) - 32))) \
+> +	(0xffffffff & (-1 << ($(CONFIG_ARM64_VA_BITS) - 1 - 32))) \
+>  	+ (1 << ($(CONFIG_ARM64_VA_BITS) - 32 - $(KASAN_SHADOW_SCALE_SHIFT))) \
+>  	- (1 << (64 - 32 - $(KASAN_SHADOW_SCALE_SHIFT))) )) )
+>  
+> diff --git a/arch/arm64/include/asm/memory.h b/arch/arm64/include/asm/memory.h
+> index 8ffcf5a512bb..5cd2eb8cb424 100644
+> --- a/arch/arm64/include/asm/memory.h
+> +++ b/arch/arm64/include/asm/memory.h
+> @@ -49,9 +49,9 @@
+>   */
+>  #define VA_BITS			(CONFIG_ARM64_VA_BITS)
+>  #define VA_START		(UL(0xffffffffffffffff) - \
+> -	(UL(1) << VA_BITS) + 1)
+> -#define PAGE_OFFSET		(UL(0xffffffffffffffff) - \
+>  	(UL(1) << (VA_BITS - 1)) + 1)
+> +#define PAGE_OFFSET		(UL(0xffffffffffffffff) - \
+> +	(UL(1) << VA_BITS) + 1)
 
-Currently, the atmel-sama5d4-wdt continues to run after system suspend.
-Unless the system resumes within the watchdog timeout period so the
-userspace can kick it, the system will be reset. This change disables
-the watchdog on suspend if it is active and re-enables on resume. These
-actions occur during the late and early phases of suspend and resume
-respectively to minimize chances where a lock could occur while the
-watchdog is disabled.
+PAGE_OFFSET and VA_START swapped their positions.
 
-Signed-off-by: Ken Sloat <ksloat@aampglobal.com>
----
- Changes in v2:
- -Consolidate resume and resume early statements.
+There are many places with UL(0xffffffffffffffff). Time to define
+it as a constant ? Something like [KERNEL|TTBR1]_MAX_VADDR.
 
- drivers/watchdog/sama5d4_wdt.c | 21 ++++++++++++++++++---
- 1 file changed, 18 insertions(+), 3 deletions(-)
+>  #define KIMAGE_VADDR		(MODULES_END)
+>  #define BPF_JIT_REGION_START	(VA_START + KASAN_SHADOW_SIZE)
+>  #define BPF_JIT_REGION_SIZE	(SZ_128M)
+> @@ -59,7 +59,7 @@
+>  #define MODULES_END		(MODULES_VADDR + MODULES_VSIZE)
+>  #define MODULES_VADDR		(BPF_JIT_REGION_END)
+>  #define MODULES_VSIZE		(SZ_128M)
+> -#define VMEMMAP_START		(PAGE_OFFSET - VMEMMAP_SIZE)
+> +#define VMEMMAP_START		(-VMEMMAP_SIZE)
+>  #define PCI_IO_END		(VMEMMAP_START - SZ_2M)
+>  #define PCI_IO_START		(PCI_IO_END - PCI_IO_SIZE)
+>  #define FIXADDR_TOP		(PCI_IO_START - SZ_2M)
+> @@ -238,7 +238,7 @@ extern u64			vabits_user;
+>   * space. Testing the top bit for the start of the region is a
+>   * sufficient check.
+>   */
+> -#define __is_lm_address(addr)	(!!((addr) & BIT(VA_BITS - 1)))
+> +#define __is_lm_address(addr)	(!((addr) & BIT(VA_BITS - 1)))
 
-diff --git a/drivers/watchdog/sama5d4_wdt.c b/drivers/watchdog/sama5d4_wdt.c
-index 111695223aae..0d123f8cbcc6 100644
---- a/drivers/watchdog/sama5d4_wdt.c
-+++ b/drivers/watchdog/sama5d4_wdt.c
-@@ -280,7 +280,17 @@ static const struct of_device_id sama5d4_wdt_of_match[] = {
- MODULE_DEVICE_TABLE(of, sama5d4_wdt_of_match);
- 
- #ifdef CONFIG_PM_SLEEP
--static int sama5d4_wdt_resume(struct device *dev)
-+static int sama5d4_wdt_suspend_late(struct device *dev)
-+{
-+	struct sama5d4_wdt *wdt = dev_get_drvdata(dev);
-+
-+	if (watchdog_active(&wdt->wdd))
-+		sama5d4_wdt_stop(&wdt->wdd);
-+
-+	return 0;
-+}
-+
-+static int sama5d4_wdt_resume_early(struct device *dev)
- {
- 	struct sama5d4_wdt *wdt = dev_get_drvdata(dev);
- 
-@@ -291,12 +301,17 @@ static int sama5d4_wdt_resume(struct device *dev)
- 	 */
- 	sama5d4_wdt_init(wdt);
- 
-+	if (watchdog_active(&wdt->wdd))
-+		sama5d4_wdt_start(&wdt->wdd);
-+
- 	return 0;
- }
- #endif
- 
--static SIMPLE_DEV_PM_OPS(sama5d4_wdt_pm_ops, NULL,
--			 sama5d4_wdt_resume);
-+static const struct dev_pm_ops sama5d4_wdt_pm_ops = {
-+	SET_LATE_SYSTEM_SLEEP_PM_OPS(sama5d4_wdt_suspend_late,
-+			sama5d4_wdt_resume_early)
-+};
- 
- static struct platform_driver sama5d4_wdt_driver = {
- 	.probe		= sama5d4_wdt_probe,
--- 
-2.17.1
+Should it be (!!((addr) & BIT(VA_BITS - 2))) instead for a positive validation
+for addresses in the lower half ?
+
+>  
+>  #define __lm_to_phys(addr)	(((addr) & ~PAGE_OFFSET) + PHYS_OFFSET)
+>  #define __kimg_to_phys(addr)	((addr) - kimage_voffset)
+> diff --git a/arch/arm64/include/asm/pgtable.h b/arch/arm64/include/asm/pgtable.h
+> index 2c41b04708fe..d0ab784304e9 100644
+> --- a/arch/arm64/include/asm/pgtable.h
+> +++ b/arch/arm64/include/asm/pgtable.h
+> @@ -32,7 +32,7 @@
+>   *	and fixed mappings
+>   */
+>  #define VMALLOC_START		(MODULES_END)
+> -#define VMALLOC_END		(PAGE_OFFSET - PUD_SIZE - VMEMMAP_SIZE - SZ_64K)
+> +#define VMALLOC_END		(- PUD_SIZE - VMEMMAP_SIZE - SZ_64K)
+
+(-VMEMMAP_SIZE) and (- PUD_SIZE - VMEMMAP_SIZE - SZ_64K) depends on implicit sign
+inversion. IMHO it might be better to add [KERNEL|TTBR1]_MAX_VADDR in the equation.
+
+>  
+>  #define vmemmap			((struct page *)VMEMMAP_START - (memstart_addr >> PAGE_SHIFT))
+>  
+> diff --git a/arch/arm64/kernel/hibernate.c b/arch/arm64/kernel/hibernate.c
+> index 9859e1178e6b..6ffcc32f35dd 100644
+> --- a/arch/arm64/kernel/hibernate.c
+> +++ b/arch/arm64/kernel/hibernate.c
+> @@ -497,7 +497,7 @@ int swsusp_arch_resume(void)
+>  		rc = -ENOMEM;
+>  		goto out;
+>  	}
+> -	rc = copy_page_tables(tmp_pg_dir, PAGE_OFFSET, 0);
+> +	rc = copy_page_tables(tmp_pg_dir, PAGE_OFFSET, VA_START);
+>  	if (rc)
+>  		goto out;
+>  
+> diff --git a/arch/arm64/mm/dump.c b/arch/arm64/mm/dump.c
+> index 14fe23cd5932..ee4e5bea8944 100644
+> --- a/arch/arm64/mm/dump.c
+> +++ b/arch/arm64/mm/dump.c
+> @@ -30,6 +30,8 @@
+>  #include <asm/ptdump.h>
+>  
+>  static const struct addr_marker address_markers[] = {
+> +	{ PAGE_OFFSET,			"Linear Mapping start" },
+> +	{ VA_START,			"Linear Mapping end" },
+>  #ifdef CONFIG_KASAN
+>  	{ KASAN_SHADOW_START,		"Kasan shadow start" },
+>  	{ KASAN_SHADOW_END,		"Kasan shadow end" },
+> @@ -43,10 +45,8 @@ static const struct addr_marker address_markers[] = {
+>  	{ PCI_IO_START,			"PCI I/O start" },
+>  	{ PCI_IO_END,			"PCI I/O end" },
+>  #ifdef CONFIG_SPARSEMEM_VMEMMAP
+> -	{ VMEMMAP_START,		"vmemmap start" },
+> -	{ VMEMMAP_START + VMEMMAP_SIZE,	"vmemmap end" },
+> +	{ VMEMMAP_START,		"vmemmap" },
+
+Vmemmap end got dropped ?
+
+>  #endif
+> -	{ PAGE_OFFSET,			"Linear mapping" },
+>  	{ -1,				NULL },
+>  };
+>  
+> @@ -380,7 +380,7 @@ static void ptdump_initialize(void)
+>  static struct ptdump_info kernel_ptdump_info = {
+>  	.mm		= &init_mm,
+>  	.markers	= address_markers,
+> -	.base_addr	= VA_START,
+> +	.base_addr	= PAGE_OFFSET,
+>  };
+>  
+>  void ptdump_check_wx(void)
+> diff --git a/arch/arm64/mm/init.c b/arch/arm64/mm/init.c
+> index d2adffb81b5d..574ed1d4be19 100644
+> --- a/arch/arm64/mm/init.c
+> +++ b/arch/arm64/mm/init.c
+> @@ -311,7 +311,7 @@ static void __init fdt_enforce_memory_region(void)
+>  
+>  void __init arm64_memblock_init(void)
+>  {
+> -	const s64 linear_region_size = -(s64)PAGE_OFFSET;
+> +	const s64 linear_region_size = BIT(VA_BITS - 1);
+>  
+>  	/* Handle linux,usable-memory-range property */
+>  	fdt_enforce_memory_region();
+> @@ -319,13 +319,6 @@ void __init arm64_memblock_init(void)
+>  	/* Remove memory above our supported physical address size */
+>  	memblock_remove(1ULL << PHYS_MASK_SHIFT, ULLONG_MAX);
+>  
+> -	/*
+> -	 * Ensure that the linear region takes up exactly half of the kernel
+> -	 * virtual address space. This way, we can distinguish a linear address
+> -	 * from a kernel/module/vmalloc address by testing a single bit.
+> -	 */
+> -	BUILD_BUG_ON(linear_region_size != BIT(VA_BITS - 1));
+> -
+>  	/*
+>  	 * Select a suitable value for the base of physical memory.
+>  	 */
+> diff --git a/arch/arm64/mm/kasan_init.c b/arch/arm64/mm/kasan_init.c
+> index 296de39ddee5..8066621052db 100644
+> --- a/arch/arm64/mm/kasan_init.c
+> +++ b/arch/arm64/mm/kasan_init.c
+> @@ -229,10 +229,10 @@ void __init kasan_init(void)
+>  	kasan_map_populate(kimg_shadow_start, kimg_shadow_end,
+>  			   early_pfn_to_nid(virt_to_pfn(lm_alias(_text))));
+>  
+> -	kasan_populate_early_shadow((void *)KASAN_SHADOW_START,
+> -				    (void *)mod_shadow_start);
+> +	kasan_populate_early_shadow(kasan_mem_to_shadow((void *) VA_START),
+> +				   (void *)mod_shadow_start);
+>  	kasan_populate_early_shadow((void *)kimg_shadow_end,
+> -				    kasan_mem_to_shadow((void *)PAGE_OFFSET));
+> +				   (void *)KASAN_SHADOW_END);
+>  
+>  	if (kimg_shadow_start > mod_shadow_end)
+>  		kasan_populate_early_shadow((void *)mod_shadow_end,
+> diff --git a/arch/arm64/mm/mmu.c b/arch/arm64/mm/mmu.c
+> index a1bfc4413982..16063ff10c6d 100644
+> --- a/arch/arm64/mm/mmu.c
+> +++ b/arch/arm64/mm/mmu.c
+> @@ -409,7 +409,7 @@ static phys_addr_t pgd_pgtable_alloc(int shift)
+>  static void __init create_mapping_noalloc(phys_addr_t phys, unsigned long virt,
+>  				  phys_addr_t size, pgprot_t prot)
+>  {
+> -	if (virt < VMALLOC_START) {
+> +	if ((virt >= VA_START) && (virt < VMALLOC_START)) {
+>  		pr_warn("BUG: not creating mapping for %pa at 0x%016lx - outside kernel range\n",
+>  			&phys, virt);
+>  		return;
+> @@ -436,7 +436,7 @@ void __init create_pgd_mapping(struct mm_struct *mm, phys_addr_t phys,
+>  static void update_mapping_prot(phys_addr_t phys, unsigned long virt,
+>  				phys_addr_t size, pgprot_t prot)
+>  {
+> -	if (virt < VMALLOC_START) {
+> +	if ((virt >= VA_START) && (virt < VMALLOC_START)) {
+>  		pr_warn("BUG: not updating mapping for %pa at 0x%016lx - outside kernel range\n",
+>  			&phys, virt);
+>  		return;
+> 
+
+Seems like adding (virt >= VA_START) is a semantics change here. In the previous
+scheme (virt < VMALLOC_START) included undefined addresses below VA_START as well
+which will be omitted here. Should not we add (virt < PAGE_OFFSET) to check those ?
 
 _______________________________________________
 linux-arm-kernel mailing list
