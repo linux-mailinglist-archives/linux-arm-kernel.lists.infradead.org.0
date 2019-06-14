@@ -2,75 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E2900452B7
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Jun 2019 05:20:46 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2B147452B8
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Jun 2019 05:21:08 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=kqQCVBK4XsUKPzPFHTcQNcV+ZJxLN+2v4NoSsBhKWfU=; b=EP4y1oUrDgIyF9
-	whdO9EtDokfKJUjmc+5P92VYDzkbKzX9UW7cDmiuDdssNycgAvyqQNrRoa/HZBzoTxJwET/ClM9BZ
-	bqvbXtwIm5aCf/Jxb8quzb4QUBU6rEjwzpfwp8Y4VsjzXzAt+R1LJCQUCfg3jXpKzP1tX+hJa/ZtS
-	+VSjP1tejLb1iXk8uL/+lcDsgQ2bCylVx+WCIobJZgogh7ZTsuRj+H5b25SP5MHB7K+mlhjjzS3So
-	bks/nGtuRq966B3TFWdbMUCn0GojCZjSJ9umSqdbIun7X+q5qya5yaz09nXZAjeeuhzVjSPeJJHls
-	o/O19z9x395ojPB7Wlbg==;
+	List-Owner; bh=Q9Rk73Kon5lXCfq74/aKT62c7D8QFQ0UCrFGAKna/NE=; b=n/feId4KIe3C/I
+	oDU/yx0+jWkBEzZJP1jGNxH2fvtpOg38fkEU3zxFwbJLj1tlNciExbiFOHAXPULXHSxwBbm2Mwwfo
+	iMvk8eiM6imy+NjGWZUx76Gv6MM+SPTBJkS6HKKMfw7bgwEVVjalkqMnUg1hKAely88Fp988l9HR+
+	O/lkSciPG3kRYKCktEPDqN8fx6bcbVm1ejZmiREoYu9RqYzYE7vRjG8cdP3UAw4l/WX3RWenEVHCM
+	SW62j5cbRkA+znLeV7VN+MVIkXXMGo0alLqsyW/jbwm75/Aw1xMZHBi3nR2/wrB1jWsTCfy/gH1+I
+	X/h6hvqQFnjjZFfFRXVw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hbclg-000115-7A; Fri, 14 Jun 2019 03:20:44 +0000
+	id 1hbclz-0001Kd-ML; Fri, 14 Jun 2019 03:21:03 +0000
 Received: from mail-pg1-x543.google.com ([2607:f8b0:4864:20::543])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hbce8-0000ec-MW
- for linux-arm-kernel@lists.infradead.org; Fri, 14 Jun 2019 03:12:58 +0000
-Received: by mail-pg1-x543.google.com with SMTP id f25so662829pgv.10
+ id 1hbceB-0000gV-Hw
+ for linux-arm-kernel@lists.infradead.org; Fri, 14 Jun 2019 03:13:03 +0000
+Received: by mail-pg1-x543.google.com with SMTP id f21so682951pgi.3
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 13 Jun 2019 20:12:56 -0700 (PDT)
+ Thu, 13 Jun 2019 20:12:59 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=D7dDso9mEizkFlSNIpcQXEVsYMAg+0dXCi9osCif4dQ=;
- b=fKikLlZuAQwMsJ7IxdZ8VaTDrZUxIEZ23eNY/ec3KB1TeAkqv+Dd8EAOX2jOAgTmRi
- 32CQuw+4/4j3eOkxgcDh29AnCQVRSZrT4BaN6E3Q39lYAZVbENVcOm8XPzsqNDaiE48y
- yjndCGjmzUzdw5d/H8+50cc15w15uQ4VsI8t7/LuLjW0NAtRrsznKOzILwQEVq4JhUjr
- 9aQ/PnnP76FkI5bomv330zrABfuEa9DAwt+1oMCGWmv6zTrjBN546hhVvZvAlUFSoBok
- bAHCvf9uNRrp3k106WZTFTQXDvkQwiI/2pA/ej7S7/AIrrelGoVgvs7PId7Mn6OcvKAI
- j6mQ==
+ bh=y7D7di+hWLJT4S7T0euG3Tl4lwmsE/s4d/bbuco5Z4Y=;
+ b=tn9ttUjCo/EPvIMutHSe21ptFw26CO8lMLTifKPIv38gL7+JQt+HP8TJghUQmKKFpp
+ ZpLfHPaBsCa8fyB29TufhWsnLm1JxOkQqGXQjeEfNqHl3WjYf9Hi3tk2zMM/90BPaJCv
+ PK4MM1eqbM5VvFktAiQ4S8uIcW3nVE8Sb0TcB9CJLZ+2C9LNRmiSvf4Gcy/TutPKIDJO
+ 6oRlTUHT+FdhBjMC+pgPt/ZadHh8hc8RVYcm5dPXTdWWLOaiaxFcRx7YhawcoLH7lJEs
+ Z1PptH6hyBln/IZcxEGZcPwBuo4jSo3oywpV2aRUTn9Gn40jGiSFEryl9gCr02qIa/Ut
+ I4ag==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=D7dDso9mEizkFlSNIpcQXEVsYMAg+0dXCi9osCif4dQ=;
- b=FxoVolaHVks/nDtXU5OmSLa8o7tZshM5DVnbPnapXi4xyoLwjsMiOZbOpNriXH4ROk
- qCdENjaRKreeJzs8b6JCvGQI6a68LJ+mqPclIVMtRq4AFZa6Sa0CeftgCecMJU2j++HC
- Dq4lAniDnJQj3QkowqeOXjlSPJrni/emAa9l8YbGTVIxtYZK5l1W25qPTYDbnj4CNVQS
- 3nhDqZnFKo5IiB/o6zok3yCkYjIeud3+zb+W4MCJ8nzTxiQjBcYx5qhDAhuOeQNzD/ht
- +l+lf9hl3KxZDAVkQgNVW8QSi8UJnTiLViC3ea0/eTuW/Y01R22iC2rj37XZ5GXXIFiy
- wQaw==
-X-Gm-Message-State: APjAAAXYZVc0OGlkrC/6Gbrtz8xa+DnJWQ5QxL3v+Q0o0PyfZGAQ5k0k
- iedV1x2vB0PWfztecIP3Fz4eh5Spf5c=
-X-Google-Smtp-Source: APXvYqxW3zGVG0I9OzIQ9niSlNH61hh4YIpqfv75eHxvSTKVVpPie3Lls43Fy6uold1oh56+3H7abA==
-X-Received: by 2002:a63:8249:: with SMTP id w70mr31527593pgd.33.1560481975265; 
- Thu, 13 Jun 2019 20:12:55 -0700 (PDT)
+ bh=y7D7di+hWLJT4S7T0euG3Tl4lwmsE/s4d/bbuco5Z4Y=;
+ b=tmCejZmMFKrRn4SpXiDlAtPeIIR+RVTfP48zCFv6pNik6D2SJnznM8XBRgZdBF2QDe
+ Ng2L4s/npj1pGioge2bsZlj34SQWTHQsNx3sMStVwwnWvL1e/Hts9s1njHX+81R+r5n7
+ uZ5AmcwHV4q3VpUllZSlA9EHNoFPu9GxjFdti0uN8dK07SPh621uyo9EkJmx4Rze5UeU
+ KCU7Q8+AcRUhUvvYalAOX8SJSkUVadlIGML98Cghk/hubcB363lZrFfq+trSHgt7TvCs
+ XaijkDPRJkNMu6M4qi3fzV5cjEebMCn09cqtLlnNVqWVcAh1/mOltECsCeiLuB0I03uO
+ sHPA==
+X-Gm-Message-State: APjAAAXoQ1OWBYOMTyq58nEJAB5FVk+yHw8um8e9we8MIVCJpEJSO9l4
+ DAwsCa9AqddVtdSl/3+DGXXW4plVjMg=
+X-Google-Smtp-Source: APXvYqy1XoUqM5zu1PsPirXi5eV1NLgcorVG8nNQhT9EvyDCcgAzjv4/LVlEZkfFxuFNSqYr80p4Ew==
+X-Received: by 2002:a63:140c:: with SMTP id u12mr33588467pgl.378.1560481978109; 
+ Thu, 13 Jun 2019 20:12:58 -0700 (PDT)
 Received: from localhost ([122.172.66.84])
- by smtp.gmail.com with ESMTPSA id 11sm1046028pfo.19.2019.06.13.20.12.54
+ by smtp.gmail.com with ESMTPSA id g5sm1064300pjt.14.2019.06.13.20.12.57
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Thu, 13 Jun 2019 20:12:54 -0700 (PDT)
+ Thu, 13 Jun 2019 20:12:57 -0700 (PDT)
 From: Viresh Kumar <viresh.kumar@linaro.org>
 To: linux-arm-kernel@lists.infradead.org,
  Julien Thierry <Julien.Thierry@arm.com>
-Subject: [PATCH v4.4 23/45] arm64: cputype: Add missing MIDR values for
- Cortex-A72 and Cortex-A75
-Date: Fri, 14 Jun 2019 08:38:06 +0530
-Message-Id: <664f5eab4d993d056ab82bcfaf7037d538ee6095.1560480942.git.viresh.kumar@linaro.org>
+Subject: [PATCH v4.4 24/45] arm64: cpu_errata: Allow an erratum to be match
+ for all revisions of a core
+Date: Fri, 14 Jun 2019 08:38:07 +0530
+Message-Id: <1b836bac823d576986a9e893e2d2509776ff3565.1560480942.git.viresh.kumar@linaro.org>
 X-Mailer: git-send-email 2.21.0.rc0.269.g1a574e7a288b
 In-Reply-To: <cover.1560480942.git.viresh.kumar@linaro.org>
 References: <cover.1560480942.git.viresh.kumar@linaro.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190613_201256_835341_DD5B2373 
-X-CRM114-Status: UNSURE (   9.15  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190613_201259_634460_7161F5F4 
+X-CRM114-Status: GOOD (  10.72  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -109,46 +108,45 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Will Deacon <will.deacon@arm.com>
+From: Marc Zyngier <marc.zyngier@arm.com>
 
-commit a65d219fe5dc7887fd5ca04c2ac3e9a34feb8dfc upstream.
+commit 06f1494f837da8997d670a1ba87add7963b08922 upstream.
 
-Hook up MIDR values for the Cortex-A72 and Cortex-A75 CPUs, since they
-will soon need MIDR matches for hardening the branch predictor.
+Some minor erratum may not be fixed in further revisions of a core,
+leading to a situation where the workaround needs to be updated each
+time an updated core is released.
 
-Signed-off-by: Will Deacon <will.deacon@arm.com>
-Signed-off-by: Catalin Marinas <catalin.marinas@arm.com>
-[ v4.4: Add A73 values as well ]
+Introduce a MIDR_ALL_VERSIONS match helper that will work for all
+versions of that MIDR, once and for all.
+
+Acked-by: Thomas Gleixner <tglx@linutronix.de>
+Acked-by: Mark Rutland <mark.rutland@arm.com>
+Acked-by: Daniel Lezcano <daniel.lezcano@linaro.org>
+Reviewed-by: Suzuki K Poulose <suzuki.poulose@arm.com>
+Signed-off-by: Marc Zyngier <marc.zyngier@arm.com>
 Signed-off-by: Viresh Kumar <viresh.kumar@linaro.org>
 ---
- arch/arm64/include/asm/cputype.h | 6 ++++++
- 1 file changed, 6 insertions(+)
+ arch/arm64/kernel/cpu_errata.c | 7 +++++++
+ 1 file changed, 7 insertions(+)
 
-diff --git a/arch/arm64/include/asm/cputype.h b/arch/arm64/include/asm/cputype.h
-index f43e10cfeda2..2a1f44646048 100644
---- a/arch/arm64/include/asm/cputype.h
-+++ b/arch/arm64/include/asm/cputype.h
-@@ -77,14 +77,20 @@
- #define ARM_CPU_PART_AEM_V8		0xD0F
- #define ARM_CPU_PART_FOUNDATION		0xD00
- #define ARM_CPU_PART_CORTEX_A57		0xD07
-+#define ARM_CPU_PART_CORTEX_A72		0xD08
- #define ARM_CPU_PART_CORTEX_A53		0xD03
- #define ARM_CPU_PART_CORTEX_A55		0xD05
-+#define ARM_CPU_PART_CORTEX_A73		0xD09
-+#define ARM_CPU_PART_CORTEX_A75		0xD0A
+diff --git a/arch/arm64/kernel/cpu_errata.c b/arch/arm64/kernel/cpu_errata.c
+index 6c5e9e462629..c05135cd53fe 100644
+--- a/arch/arm64/kernel/cpu_errata.c
++++ b/arch/arm64/kernel/cpu_errata.c
+@@ -124,6 +124,13 @@ static void  install_bp_hardening_cb(const struct arm64_cpu_capabilities *entry,
+ 	.midr_range_min = min, \
+ 	.midr_range_max = max
  
- #define APM_CPU_PART_POTENZA		0x000
- 
- #define CAVIUM_CPU_PART_THUNDERX	0x0A1
- 
- #define MIDR_CORTEX_A55 MIDR_CPU_PART(ARM_CPU_IMP_ARM, ARM_CPU_PART_CORTEX_A55)
-+#define MIDR_CORTEX_A72 MIDR_CPU_PART(ARM_CPU_IMP_ARM, ARM_CPU_PART_CORTEX_A72)
-+#define MIDR_CORTEX_A73 MIDR_CPU_PART(ARM_CPU_IMP_ARM, ARM_CPU_PART_CORTEX_A73)
-+#define MIDR_CORTEX_A75 MIDR_CPU_PART(ARM_CPU_IMP_ARM, ARM_CPU_PART_CORTEX_A75)
- 
- #ifndef __ASSEMBLY__
- 
++#define MIDR_ALL_VERSIONS(model) \
++	.def_scope = SCOPE_LOCAL_CPU, \
++	.matches = is_affected_midr_range, \
++	.midr_model = model, \
++	.midr_range_min = 0, \
++	.midr_range_max = (MIDR_VARIANT_MASK | MIDR_REVISION_MASK)
++
+ const struct arm64_cpu_capabilities arm64_errata[] = {
+ #if	defined(CONFIG_ARM64_ERRATUM_826319) || \
+ 	defined(CONFIG_ARM64_ERRATUM_827319) || \
 -- 
 2.21.0.rc0.269.g1a574e7a288b
 
