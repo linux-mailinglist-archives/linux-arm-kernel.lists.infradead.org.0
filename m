@@ -2,68 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AAEC546601
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Jun 2019 19:45:43 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 19A7846631
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Jun 2019 19:52:11 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:Subject:From:To:
-	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=0I+h5zdLO/f37wzgdQJkwkv3D92c0FeIz1NR7qscQXk=; b=A1V7srnQKT4vak
-	xlM4QHqyRyuvh04t8GhMxgsdZ7r3BnAGLeklFARCZpIQna/OVNCZJnbXCbO1v4EPsylPD2TzeGG1W
-	sb4/0WyYbWoCAJYcrUWe5fTNNRLLvv4NQzTuOLvL7Fus9Bo9O83tTPB3LS/B4hvWN13znvnBhhyOJ
-	VPz0UEZ/7u2Ta7QNkjZ2xSs5R8h9Dyb4l9kb+yLf1NFKp0brTjjx7jgKf3KLSXFsaVWseajj6Jaa4
-	3q3mPuMegMaGMj3NXhoZGc9U+5j1SalaXNBWVP1J4Il3mvO9CFtChstJ00TYk9wiPpPfpWnD43QWA
-	W5m4U6guQbpPEiy6krJA==;
+	List-Owner; bh=z6NxypcOa3s2lswmzurdZmPCsBnnWKjanQW2kFm89PY=; b=DYYUfMDcECEA0/
+	XdXGy3hSQbS70Mqma7rhb/GIriS0/vO8dno4KwyD7FfCGVx8F01MgwsnxccP4FHLiy8iZsnUA5GXs
+	h8PL5z5lMIm9Am0tsyyiBkblJUK9EFL3zZJawY2QzrTxWHj6S20jWLDwVaolRHFzhg7wKhdESUjY+
+	ctnCU6FMWjW7yRyTqJIvFrG0eLeYiKiJzX0XJayYDfnJk3XvPVgsirmb+g8WEAsg0h4fVA6m9S4zO
+	ewZDyD92WZExB39NtBpoxyzEDGH6Y64wybkMzvm+4gbxk/QaJxejxJmEtO/0kufGftvJCtWdgIjti
+	YmjwbWltReel0OBATPdQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hbqGh-0006Ud-7n; Fri, 14 Jun 2019 17:45:39 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1hbqMw-0008V9-Q4; Fri, 14 Jun 2019 17:52:06 +0000
+Received: from mail-qt1-f193.google.com ([209.85.160.193])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hbqGW-0006Ox-8X; Fri, 14 Jun 2019 17:45:29 +0000
-Received: from kernel.org (unknown [104.132.0.74])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 6F805217D6;
- Fri, 14 Jun 2019 17:45:26 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1560534326;
- bh=kx4whV3+G7xv6Ua4IzE5Zy4KcxaFapVmVAK6sYZUR9w=;
- h=In-Reply-To:References:To:From:Subject:Cc:Date:From;
- b=NnyqCi+vlDw4kRWkVqrmIm6G5wsVWphvPzg9cKyQ3snje5k3zJEzryynKo3PS9a2Y
- iBbL+mLbmkn5RscFsNohnZ0C3pUPnTFOGFc56J9DXIKAKaqyw4VrIcEnDi8nh/s8+f
- eUqgn4VUbY0weoGF+brolP67G/unwp9nY71RNGzE=
+ id 1hbqMl-0008R1-IX
+ for linux-arm-kernel@lists.infradead.org; Fri, 14 Jun 2019 17:51:56 +0000
+Received: by mail-qt1-f193.google.com with SMTP id i34so3448171qta.6
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 14 Jun 2019 10:51:55 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=PST035fihKP7qa7V2kxzXv7aujCa26RgBIP4O3/ziZQ=;
+ b=tARYdTbu4L8z0xbpUo3TG9oDwSHaqDuVYb+AaPEUU/abXXjizD2wD2wzAKWk96Iwaw
+ a8Diutr6RnbXq/0Bdnw//meoowy3W4AMyoDNa6n4EY1q1aJEMHTjsGg/0uHMRinUyYzX
+ Q4qoAXcEzRyDW0oKz0cXdy6lRS/rVzUbkba9IWw/UKolgyKbqjI7XmAM2bE2XvAYf2p1
+ 2IwFm8EJvSbhse94HG5mhMu1Mlx4gOXi27/5TUbnLZkI+WgNMQKkUHLwd7DaQ1KU2/iC
+ xnlsWhxKcxQp1rimL86wcjseci4srgDx1tDPp7v/thHkqLPwEZDkQimAcKGFv6GOuhxp
+ EbQQ==
+X-Gm-Message-State: APjAAAVC0CUt60Dat9Z2dzR2VRCy9mHz++A5zWRj2OfyqzlKtCP9q8Jr
+ OX3YQAbi4zylsP1a45EPIiYckHjdzQ==
+X-Google-Smtp-Source: APXvYqwUnd8FPADe8nH6dseR+TRRkfxHm0kmkb3uxoiwjmhMZifbdpbshCoLVh3igT7lLIlcMAitWA==
+X-Received: by 2002:a0c:86e8:: with SMTP id 37mr9667182qvg.77.1560534714279;
+ Fri, 14 Jun 2019 10:51:54 -0700 (PDT)
+Received: from localhost ([64.188.179.243])
+ by smtp.gmail.com with ESMTPSA id n5sm2197915qta.29.2019.06.14.10.51.53
+ (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
+ Fri, 14 Jun 2019 10:51:53 -0700 (PDT)
+Date: Fri, 14 Jun 2019 11:51:52 -0600
+From: Rob Herring <robh@kernel.org>
+To: Erwan Le Ray <erwan.leray@st.com>
+Subject: Re: [PATCH 1/1] dt-bindings: stm32: serial: Add optional reset
+Message-ID: <20190614175152.GA18378@bogus>
+References: <1558711838-21174-1-git-send-email-erwan.leray@st.com>
 MIME-Version: 1.0
-In-Reply-To: <20190614165454.13743-4-heiko@sntech.de>
-References: <20190614165454.13743-1-heiko@sntech.de>
- <20190614165454.13743-4-heiko@sntech.de>
-To: Heiko Stuebner <heiko@sntech.de>, linux-rockchip@lists.infradead.org
-From: Stephen Boyd <sboyd@kernel.org>
-Subject: Re: [PATCH 3/4] ARM: dts: rockchip: add display nodes for rk322x
-User-Agent: alot/0.8.1
-Date: Fri, 14 Jun 2019 10:45:25 -0700
-Message-Id: <20190614174526.6F805217D6@mail.kernel.org>
+Content-Disposition: inline
+In-Reply-To: <1558711838-21174-1-git-send-email-erwan.leray@st.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190614_104528_349160_F91BE110 
-X-CRM114-Status: GOOD (  11.87  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190614_105155_644009_811A7640 
+X-CRM114-Status: UNSURE (   6.90  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.8 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.8 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.160.193 listed in list.dnswl.org]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (robherring2[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (robherring2[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- 0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.160.193 listed in wl.mailspike.net]
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -75,44 +91,28 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: justin.swartz@risingedge.co.za, Heiko Stuebner <heiko@sntech.de>,
- mturquette@baylibre.com, linux-kernel@vger.kernel.org,
- linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Alexandre Torgue <alexandre.torgue@st.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-kernel@vger.kernel.org,
+ Rob Herring <robh+dt@kernel.org>, Erwan Le Ray <erwan.leray@st.com>,
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>, linux-serial@vger.kernel.org,
+ Fabrice Gasnier <fabrice.gasnier@st.com>,
+ linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Quoting Heiko Stuebner (2019-06-14 09:54:53)
-> From: Justin Swartz <justin.swartz@risingedge.co.za>
+On Fri, 24 May 2019 17:30:38 +0200, Erwan Le Ray wrote:
+> STM32 serial can be reset via reset controller.
+> Add an optional reset property to stm32 usart bindings.
 > 
-> Add display_subsystem, hdmi_phy, vop, and hdmi device nodes plus
-> a few hdmi pinctrl entries to allow for HDMI output.
+> Signed-off-by: Erwan Le Ray <erwan.leray@st.com>
 > 
-> Signed-off-by: Justin Swartz <justin.swartz@risingedge.co.za>
-> [added assigned-clock settings for hdmiphy output]
-> Signed-off-by: Heiko Stuebner <heiko@sntech.de>
-> ---
->  arch/arm/boot/dts/rk322x.dtsi | 83 +++++++++++++++++++++++++++++++++++
->  1 file changed, 83 insertions(+)
-> 
-> diff --git a/arch/arm/boot/dts/rk322x.dtsi b/arch/arm/boot/dts/rk322x.dtsi
-> index da102fff96a2..148f9b5157ea 100644
-> --- a/arch/arm/boot/dts/rk322x.dtsi
-> +++ b/arch/arm/boot/dts/rk322x.dtsi
-> @@ -143,6 +143,11 @@
->                 #clock-cells = <0>;
->         };
->  
-> +       display_subsystem: display-subsystem {
-> +               compatible = "rockchip,display-subsystem";
-> +               ports = <&vop_out>;
-> +       };
-> +
 
-What is this? It doesn't have a reg property so it looks like a virtual
-device. Why is it in DT?
+Applied, thanks.
 
+Rob
 
 _______________________________________________
 linux-arm-kernel mailing list
