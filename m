@@ -2,87 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A386645E98
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Jun 2019 15:43:04 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 46E1045ECA
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Jun 2019 15:47:03 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+AGtv/zoEjVdR4FDaWlvZazL18I5uVQSpOO5BGh/SvA=; b=bgK8TL7MsFcxgo
-	j5OoxC/E+3VB+rsMb6ASYaM5C3xZ5ZA1syAyT7ohjcTGKQl6tCBuqFJ2/6MWzR6v1TNbzv6UZfxOa
-	imw+wZlLw2aCfVPWhZP58N7CiVDUYN3LvYy/6lBCKlTj7FmxumYUfsYOpOTgnKIES+RnxMTmBg+nu
-	4EYnKtt8n7SJ/YwhKBacR2Izw7vuLJydopt8ben4Xe97doTAe0uWCduiWmlaNEilro00F9YuinNOG
-	mUyoxGuUhxkOzBxKUoFHLtjcZt38oGtKQjB/aZjYktpCw1pEteCie3e8c68jwu+qMgXvvyWt4eqPi
-	1d8Jelw89d/KFc+GYshA==;
+	List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=TrO7bajoift9kwSiBJm6Ymo9bPbkTD+nluU/SFGem0c=; b=Bul7C6Y4F+bgAD
+	c7aLRaWP7JhLLNlY7BTiKN3RG5faSK0pBKJ0Afbo2jnPuT5uS53OFQ88Qd01i9bHYJ3XAYf2YePaZ
+	502i8ooP0lsL62OLkX8ceZu8kyDH+Nt/rAu5DukOIhdl5H+56wU/BCUAcmNgjRSK9wEUhqjmxYujJ
+	hwrapwOHkpOc7vJ42jq8gvHlAa1auLngnvPIPPrE0+08DpNBU3Qg3tDi9PzBEi5tLufYlD4SuslvO
+	TdgeEppBwe29jBlbgydDp5LUPyAg62r169w88PPEoHt+a4CAfXomP9Xd3V4q6N3CcUx8ZwXinlG4u
+	fadaPdgeIEKBbCpiCjtw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hbmTt-0000Zs-WF; Fri, 14 Jun 2019 13:43:02 +0000
-Received: from lelv0142.ext.ti.com ([198.47.23.249])
+	id 1hbmXk-0003tX-Fd; Fri, 14 Jun 2019 13:47:00 +0000
+Received: from gate.crashing.org ([63.228.1.57])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hbmTj-0000ZP-N3
- for linux-arm-kernel@lists.infradead.org; Fri, 14 Jun 2019 13:42:53 +0000
-Received: from lelv0266.itg.ti.com ([10.180.67.225])
- by lelv0142.ext.ti.com (8.15.2/8.15.2) with ESMTP id x5EDgjcU015726;
- Fri, 14 Jun 2019 08:42:45 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1560519765;
- bh=JTrKAS5DxBlxyr/RUcG7xCZZCkjwEovfo2qd+cpbq7o=;
- h=Subject:To:CC:References:From:Date:In-Reply-To;
- b=HEpkw3CrAA6B+lRcszpV93/Y16UTfxTK16V1R8rSpRtlNuPfp4MuPbeje6tJaOzv5
- fLdJFQ9otRoony+Lme3E13MenSQy4LEqEfVsXt7mou3/cYyqI1RR0wYBEpi47ZEC48
- vJVGouhBNOuc0lWGVRF9c2Y/XVhzbzCnR+kY2Cn8=
-Received: from DFLE106.ent.ti.com (dfle106.ent.ti.com [10.64.6.27])
- by lelv0266.itg.ti.com (8.15.2/8.15.2) with ESMTPS id x5EDgjTi018675
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Fri, 14 Jun 2019 08:42:45 -0500
-Received: from DFLE102.ent.ti.com (10.64.6.23) by DFLE106.ent.ti.com
- (10.64.6.27) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5; Fri, 14
- Jun 2019 08:42:45 -0500
-Received: from lelv0327.itg.ti.com (10.180.67.183) by DFLE102.ent.ti.com
- (10.64.6.23) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5 via
- Frontend Transport; Fri, 14 Jun 2019 08:42:45 -0500
-Received: from [192.168.2.6] (ileax41-snat.itg.ti.com [10.172.224.153])
- by lelv0327.itg.ti.com (8.15.2/8.15.2) with ESMTP id x5EDggeV100780;
- Fri, 14 Jun 2019 08:42:43 -0500
-Subject: Re: [PATCH 09/16] dt-bindings: dma: ti: Add document for K3 UDMA
-To: Rob Herring <robh@kernel.org>
-References: <20190506123456.6777-1-peter.ujfalusi@ti.com>
- <20190506123456.6777-10-peter.ujfalusi@ti.com> <20190613181626.GA7039@bogus>
- <e0d6a264-96b5-31a6-e70b-3b1c2d863988@ti.com>
- <CAL_JsqJNMkKL_FubZfjKY6jLebMetmgR24EoendHoPM2ckrUQA@mail.gmail.com>
-From: Peter Ujfalusi <peter.ujfalusi@ti.com>
-Message-ID: <e811d674-b79f-4da8-c632-c7a90844b6c5@ti.com>
-Date: Fri, 14 Jun 2019 16:43:15 +0300
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.7.0
-MIME-Version: 1.0
-In-Reply-To: <CAL_JsqJNMkKL_FubZfjKY6jLebMetmgR24EoendHoPM2ckrUQA@mail.gmail.com>
-Content-Language: en-US
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
+ id 1hbmXb-0003jS-Ag
+ for linux-arm-kernel@lists.infradead.org; Fri, 14 Jun 2019 13:46:53 +0000
+Received: from localhost (localhost.localdomain [127.0.0.1])
+ by gate.crashing.org (8.14.1/8.14.1) with ESMTP id x5EDkdSP016739;
+ Fri, 14 Jun 2019 08:46:40 -0500
+Message-ID: <2ac7c362ccc04a7598167cc980c57fb60bc24775.camel@kernel.crashing.org>
+Subject: Re: [RFC PATCH v2] arm64: acpi/pci: invoke _DSM whether to preserve
+ firmware PCI setup
+From: Benjamin Herrenschmidt <benh@kernel.crashing.org>
+To: Bjorn Helgaas <helgaas@kernel.org>
+Date: Fri, 14 Jun 2019 23:46:39 +1000
+In-Reply-To: <20190614130952.GQ13533@google.com>
+References: <5783e36561bb77a1deb6ba67e5a9824488cc69c6.camel@kernel.crashing.org>
+ <20190613190248.GH13533@google.com>
+ <e6c7854ae360be513f6f43729ed6d4052e289376.camel@kernel.crashing.org>
+ <CAKv+Gu95pQ7_OfLbEXHZ_bhYnqOgTBKCmTgqUY27un-Y708BgQ@mail.gmail.com>
+ <d5d3e7b9553438482854c97e09543afb7de23eaa.camel@kernel.crashing.org>
+ <20190614130952.GQ13533@google.com>
+X-Mailer: Evolution 3.28.5-0ubuntu0.18.04.1 
+Mime-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190614_064251_859346_DDD4CD92 
-X-CRM114-Status: GOOD (  19.77  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20190614_064651_603150_8CDF6E38 
+X-CRM114-Status: GOOD (  26.26  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.23.249 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- 0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [63.228.1.57 listed in list.dnswl.org]
+ 0.0 T_SPF_PERMERROR        SPF: test of record failed (permerror)
+ 0.0 T_SPF_HELO_PERMERROR   SPF: test of HELO record failed (permerror)
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,82 +64,155 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Nishanth Menon <nm@ti.com>, devicetree@vger.kernel.org,
- Grygorii Strashko <grygorii.strashko@ti.com>,
- Lokesh Vutla <lokeshvutla@ti.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Tero Kristo <t-kristo@ti.com>, Tony Lindgren <tony@atomide.com>,
- Vinod <vkoul@kernel.org>, Santosh Shilimkar <ssantosh@kernel.org>, "open
- list:DMA GENERIC OFFLOAD ENGINE SUBSYSTEM" <dmaengine@vger.kernel.org>,
- Dan Williams <dan.j.williams@intel.com>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: linux-pci <linux-pci@vger.kernel.org>,
+ Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>, Sinan Kaya <okaya@kernel.org>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Ck9uIDE0LzA2LzIwMTkgMTYuMjAsIFJvYiBIZXJyaW5nIHdyb3RlOgo+IE9uIFRodSwgSnVuIDEz
-LCAyMDE5IGF0IDI6MzMgUE0gUGV0ZXIgVWpmYWx1c2kgPHBldGVyLnVqZmFsdXNpQHRpLmNvbT4g
-d3JvdGU6Cj4+Cj4+IFJvYiwKPj4KPj4gT24gMTMvMDYvMjAxOSAyMS4xNiwgUm9iIEhlcnJpbmcg
-d3JvdGU6Cj4+Pj4gK1JlbW90ZSBQU0ktTCBlbmRwb2ludAo+Pj4+ICsKPj4+PiArUmVxdWlyZWQg
-cHJvcGVydGllczoKPj4+PiArLS0tLS0tLS0tLS0tLS0tLS0tLS0KPj4+PiArLSB0aSxwc2lsLWJh
-c2U6ICAgICAgICAgICAgIFBTSS1MIHRocmVhZCBJRCBiYXNlIG9mIHRoZSBlbmRwb2ludAo+Pj4+
-ICsKPj4+PiArV2l0aGluIHRoZSBQU0ktTCBlbmRwb2ludCBub2RlIHRocmVhZCBjb25maWd1cmF0
-aW9uIHN1Ym5vZGVzIG11c3QgcHJlc2VudCB3aXRoOgo+Pj4+ICt0aSxwc2lsLWNvbmZpZ1ggbmFt
-aW5nIGNvbnZlbnRpb24sIHdoZXJlIFggaXMgdGhlIHRocmVhZCBJRCBvZmZzZXQuCj4+Pgo+Pj4g
-RG9uJ3QgdXNlIHZlbmRvciBwcmVmaXhlcyBvbiBub2RlIG5hbWVzLgo+Pgo+PiBPSy4KPj4KPj4+
-PiArCj4+Pj4gK0NvbmZpZ3VyYXRpb24gbm9kZSBSZXF1aXJlZCBwcm9wZXJ0aWVzOgo+Pj4+ICst
-LS0tLS0tLS0tLS0tLS0tLS0tLQo+Pj4+ICstIGxpbnV4LHVkbWEtbW9kZTogIENoYW5uZWwgbW9k
-ZSwgY2FuIGJlOgo+Pj4+ICsgICAgICAgICAgICAgICAgICAgIC0gVURNQV9QS1RfTU9ERTogZm9y
-IFBhY2tldCBtb2RlIGNoYW5uZWxzIChwZXJpcGhlcmFscykKPj4+PiArICAgICAgICAgICAgICAg
-ICAgICAtIFVETUFfVFJfTU9ERTogZm9yIFRoaXJkLVBhcnR5IG1vZGUKPj4+Cj4+PiBUaGlzIGlz
-IGhhcmRseSBhIGNvbW1vbiBsaW51eCB0aGluZy4gV2hhdCBkZXRlcm1pbmVzIHRoZSB2YWx1ZSBo
-ZXJlLgo+Pgo+PiBVbmZvcnR1bmF0ZWx5IGl0IGlzLgo+IAo+IE5vLCBpdCdzIGEgZmVhdHVyZSBv
-ZiB5b3VyIGgvdyBhbmQgaW4gbm8gd2F5IGlzIHNvbWV0aGluZyBsaW51eAo+IGRlZmluZWQgd2hp
-Y2ggaXMgdGhlIHBvaW50IG9mICdsaW51eCcgcHJlZml4LgoKVGhlIGNoYW5uZWwgY2FuIGJlIGVp
-dGhlciBQYWNrZXQgb3IgVFIgbW9kZS4gVGhlIEhXIGlzIHJlYWxseSBmbGV4aWJsZQpvbiB0aGlz
-IChhbmQgb24gb3RoZXIgdGhpbmdzIGFzIHdlbGwpLgpJdCBqdXN0IGhhcHBlbnMgdGhhdCBMaW51
-eCBuZWVkIHRvIHVzZSBzcGVjaWZpYyBjaGFubmVscyBpbiBhIHNwZWNpZmljIG1vZGUuCgpXb3Vs
-ZCBpdCBoZWxwIGlmIHdlIGFzc3VtZSB0aGF0IGFsbCBjaGFubmVscyBhcmUgdXNlZCBpbiBQYWNr
-ZXQgbW9kZSwKYnV0IHdlIGhhdmUgbGludXgsdHItbW9kZSBib29sIHRvIGluZGljYXRlIHRoYXQg
-dGhlIGdpdmVuIGNoYW5uZWwgaW4KTGludXggbmVlZCB0byBiZSB1c2VkIGluIFRSIG1vZGUuCgo+
-PiBFYWNoIGNoYW5uZWwgY2FuIGJlIGNvbmZpZ3VyZWQgdG8gUGFja2V0IG9yIFRSIG1vZGUuIEZv
-ciBzb21lCj4+IHBlcmlwaGVyYWxzIGl0IGlzIHRydWUgdGhhdCB0aGV5IG9ubHkgc3VwcG9ydCBw
-YWNrZXQgbW9kZSwgdGhlc2UgYXJlIHRoZQo+PiBuZXdlciBQU0ktTCBuYXRpdmUgcGVyaXBoZXJh
-bHMuCj4+IEZvciB0aGVzZSBjaGFubmVscyBhIHVkbWEtbW9kZSBwcm9wZXJ0eSB3b3VsZCBiZSBj
-b3JyZWN0Lgo+Pgo+PiBCdXQgd2UgaGF2ZSBsZWdhY3kgcGVyaXBoZXJhbHMgYXMgd2VsbCBhbmQg
-dGhleSBhcmUgc2VydmljZWQgYnkgUERNQQo+PiAod2hpY2ggaXMgYSBuYXRpdmUgcGVyaXBoZXJh
-bCBkZXNpZ25lZCB0byB0YWxrIHRvIHRoZSBnaXZlbiBsZWdhY3kgSVApLgo+PiBXZSBjYW4gdXNl
-IGVpdGhlciBwYWNrZXQgb3IgVFIgbW9kZSBpbiBVRE1BUCB0byB0YWxrIHRvIFBETUFzLCBpdCBp
-cyBpbgo+PiBtb3N0IGNhc2VzIGNsZWFyIHdoYXQgdG8gdXNlLCBidXQgZm9yIGV4YW1wbGUgZm9y
-IGF1ZGlvIChNY0FTUCkgY2hhbm5lbHMKPj4gTGludXggaXMgdXNpbmcgVFIgY2hhbm5lbCBiZWNh
-dXNlIHdlIG5lZWQgY3ljbGljIERNQSB3aGlsZSBmb3IgZXhhbXBsZQo+PiBSVE9TIGlzIHVzaW5n
-IFBhY2tldCBtb2RlIGFzIGl0IGZpdHMgdGhlaXIgbmVlZHMgYmV0dGVyLgo+Pgo+PiBIZXJlIEkg
-bmVlZCB0byBwcmVmaXggdGhlIHVkbWEtbW9kZSB3aXRoIGxpbnV4IGFzIHRoZSBtb2RlIGlzIHVz
-ZWQgYnkKPj4gTGludXgsIGJ1dCBvdGhlciBPUyBtaWdodCBvcHQgdG8gdXNlIGRpZmZlcmVudCBj
-aGFubmVsIG1vZGUuCj4gCj4gU28geW91J2QgbmVlZCA8b3M+LHVkbWEtbW9kZT8gVGhhdCBkb2Vz
-bid0IHdvcmsuLi4gSWYgdGhlIHNldHRpbmcgaXMKPiBwZXIgT1MsIHRoZW4gaXQgYmVsb25ncyBp
-biB0aGUgT1MgYmVjYXVzZSB0aGUgc2FtZSBkdGIgc2hvdWxkIHdvcmsKPiBhY3Jvc3MgT1Mncy4K
-ClNvIEkgc2hvdWxkIGhhdmUgYSB0YWJsZSBmb3IgdGhlIHRocmVhZCBJRHMgaW4gdGhlIERNQSBk
-cml2ZXIgYW5kIG1hcmsKY2hhbm5lbHMgYXMgVFIgb3IgUGFja2V0IGluIHRoZXJlIGZvciBMaW51
-eCB1c2U/Ck9yIGp1c3QgYW4gYXJyYXkgd2hpY2ggd291bGQgbWFyayB0aGUgbm9uIHBhY2tldCBQ
-U0ktTCB0aHJlYWQgSURzPwoKSSBzdGlsbCBwcmVmZXIgdG8gaGF2ZSB0aGlzIGNvbWluZyB2aWEg
-RFQgYXMgYSBMaW51eCBwYXJhbWV0ZXIgYXMgb3RoZXIKT1MgaXMgZnJlZSB0byBpZ25vcmUgdGhl
-IGxpbnV4LHVkbWEtbW9kZSwgYnV0IGFzIEkgc2FpZCB0aGVyZSBhcmUKY2VydGFpbiBjaGFubmVs
-cyB3aGljaCBtdXN0IGJlIHVzZWQgaW4gTGludXggaW4gY2VydGFpbiBtb2RlIHdoaWxlCm90aGVy
-cyBpbiBkaWZmZXJlbnQgbW9kZS4KCj4+IFRoZSByZWFzb24gd2h5IHRoaXMgbmVlZHMgdG8gYmUg
-aW4gdGhlIERUIGlzIHRoYXQgd2hlbiB0aGUgY2hhbm5lbCBpcwo+PiByZXF1ZXN0ZWQgd2UgbmVl
-ZCB0byBjb25maWd1cmUgdGhlIG1vZGUgYW5kIGl0IGNhbiBub3QgYmUgc3dhcHBlZAo+PiBydW50
-aW1lIGVhc2lseSBiZXR3ZWVuIFBhY2tldCBhbmQgVFIgbW9kZS4KPiAKPiBTbyB3aGVuIHRoZSBj
-bGllbnQgbWFrZXMgdGhlIGNoYW5uZWwgcmVxdWVzdCwgd2h5IGRvZXNuJ3QgaXQgc3BlY2lmeSB0
-aGUgbW9kZT8KClRoaXMgaXMgVURNQVAgaW50ZXJuYWwgaW5mb3JtYXRpb24gb24gd2hhdCB0eXBl
-IG9mIERlc2NyaXB0b3JzIHRoZQpjaGFubmVsIHdpbGwgZXhwZWN0IGFuZCBob3cgaXQgaXMgZ29p
-bmcgdG8gZGlzcGF0Y2ggdGhlIHdvcmsuCgpQYWNrZXQgYW5kIFRSIG1vZGUgYXQgdGhlIGVuZCBk
-b2VzIHRoZSBzYW1lIHRoaW5nLCBidXQgaW4gYSBjb21wbGV0ZWx5CmRpZmZlcmVudCB3YXkuCgot
-IFDDqXRlcgoKVGV4YXMgSW5zdHJ1bWVudHMgRmlubGFuZCBPeSwgUG9ya2thbGFua2F0dSAyMiwg
-MDAxODAgSGVsc2lua2kuClktdHVubnVzL0J1c2luZXNzIElEOiAwNjE1NTIxLTQuIEtvdGlwYWlr
-a2EvRG9taWNpbGU6IEhlbHNpbmtpCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2Vy
-bmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1h
-bi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
+On Fri, 2019-06-14 at 08:09 -0500, Bjorn Helgaas wrote:
+> On Fri, Jun 14, 2019 at 06:36:32PM +1000, Benjamin Herrenschmidt wrote:
+> > Linux can't change the switch configuration. I may have mentioned
+> > earlier it has to do with platform sec policies. But that's not totally
+> > relevant, we shoudn't be changing resources anyway since in theory
+> > runtime FW might rely on where some system devices were assigned at
+> > boot. EFI fb is another example of that.
+> 
+> "We shouldn't be changing resources anyway" is not really useful
+> guidance.  I completely agree that we shouldn't change things
+> *unnecessarily*, but it's up to the OS to define what makes it
+> necessary -- it might be for rebalancing for hotplug, to make space
+> for SR-IOV, to respect user requests to increase alignment, etc.
+> 
+> IMO the real value of _DSM #5 is as a mechanism to advertise
+> dependencies runtime firmware has on devices, e.g., SMM firmware might
+> want to log errors to a PCI remote management device.  If the OS moved
+> that managment device, the SMM logging would itself cause errors.
+
+This I agree with, though that wasn't specifically why it was created
+but this is where it's going yes.
+
+However, I think the resource management code in Linux is some way from
+being able to handle that at device granularity. It's actually a very
+difficult problem to solve in an optimal way.
+
+For example you could have a bridge that can be moved but a child of
+that bridge is fixed. That means that now, the bridge must only be
+moved within the constraints that it still contains that child.
+
+This in turn is very tricky to properly define because the bridge can
+have other children who aren't fixed, but whose alignment constraints
+will also limit where the bridge can go.
+
+I don't think we want to practically create such a mechanism, we have
+to be realistic. So that means if something needs to be fixed, all of
+its parents need too. Due to how the spec is written, if that _DSM #5
+== 0 object is a bridge, then both all of its parents and all of its
+descendants are now fixed (except hotplugged descendants), unless said
+descendants are themselves tagged with _DSM #5 == 1. But then, as I
+explain below, this does more than just "cancel" _DSM #5 == 0 ... what
+a mess :-)
+
+That said, I have been thinking about ways we could better honor that
+_DSM #5 at various levels of the tree, and I think it's doable. There's
+going to still be some arguments to sort out about policy details as
+above, and we might end up trying to get the SIG to clarify things
+further but I think we can get somewhere reasonably sane in practice
+once we've changed arm64 to use an x86-style allocation rather than
+trying to do everything from scratch. Working on it ...
+
+> > The biggest issue for me right now is that the spec says pretty much at
+> > _DSM #5 = 0 is equivalent to _DSM #5 absent, and Bjorn seems keen on
+> > having it this way, but for arm64, we specifically want to distinguish
+> > those 2 cases.
+> 
+> Nope, my opinion is exactly the opposite.  Sorry that I'm not
+> communicating this clearly.
+> 
+> It's true that the r3.2 spec *does* say _DSM #5 = 0 is equivalent to
+> the situation where it's absent, but that's based on the assumption
+> that the OS is never allowed to change PCI configuration.  I think
+> that assumption is complete nonsense and should be disregarded.
+> 
+>   _DSM #5 = 0: OS must preserve this device's BARs
+> 	       (current spec says "OS must not ignore")
+> 
+>   _DSM #5 = 1: OS *may* change this device's BARs
+> 	       (current spec says "OS may ignore")
+> 
+> Other than _DSM #5, there's no spec I'm aware of that restricts the
+> OS's ability to change BARs.  Therefore I think "_DSM #5 = 1" is
+> equivalent to _DSM #5 being absent, and in both cases the OS is free
+> to change BARs as it sees fit.
+
+I think we are conflating too many different things together here, it's
+not binary.
+
+If you look at the reasons why DSM#5 was created in the first place, it
+had to do with firmwares setting up a 32-bit compatible layout which is
+suboptimal for 64-bit, and thus marking with DSM #1 things that could
+(and probably should) be reallocated elsewhere.
+
+Based on that pattern, it's tempting (and I'm tempted...) to handle
+_DSM #5 == 1, at least at a non-root-bridge level, by wiping the
+resources (or setting IORESOURCE_UNSET), to force Linux to create a
+potentially more optimal allocation.
+
+However, that shouldn't be our default either :-)
+
+So my personal opinion is that DSM #5 0, 1 and absent are actually 3
+different things.
+
+> > Looking at the spec (and followup discussions for specs updates), I'm
+> > quite keen on treating _DSM #5 = 1 as "wipe out the resource for that
+> > endpoint/bridge and realloc something better. There are reasons for
+> > that, but we can probably discuss that later.
+> 
+> I disagree on the "wipe out all resources" part of this because we
+> have no idea how to realloc something better.  We should of course
+> look for problems (overlapping devices, etc) and fix them.  But
+> starting from scratch and reallocating won't reliably produce anything
+> different from the original, supposedly broken, configuration.
+
+Well, again, it depends *why* _DSM #5 was set to 1 in the first place.
+As I said above, there are actually more than 2 cases here and _DSM is
+trying to convey too much with too little information. We lack the
+firmware intent, it's not being conveyed well.
+
+From my understanding of the spec history, _DSM #5 == 1 was
+specifically created because the FW knew it was setting up some
+resources in a sub optimal way. The 32-bit example is spelled out. I
+can imagine others, such as FW whacking a fixed BAR value on a boot
+device to get going knowing full well it's sub optimal.
+
+Now unless we start building some pretty serious smarts into our
+allocation scheme to "decide" whether a valid resource could be done
+better elsewhere or not, which we aren't near being able to do I
+suspect, that case will not work *unless* we just wipe such resources
+and let Linux do what it thinks is best with it.
+
+All those interpretations are valid on either the current or the
+"proposed" spec, and it still leaves us in a bind because there is not
+enough intent being conveyed. It needs to be more than a binary choice
+ideally.
+
+That said, I'm not in a hurry to deal with the _DSM #5 == 1 case, so we
+can defer that conversation. Maybe we can create a mechanism where we
+do a "dummy run" of our allocation code on a snapshot of resources with
+the assumption that _DSM #5 == 1 ones get wiped, and create some
+metrics to decide whether the end result is "better" than what's
+already there, and based on that chose what to apply, but it sounds
+really really messy.
+
+Cheers,
+Ben.
+
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
