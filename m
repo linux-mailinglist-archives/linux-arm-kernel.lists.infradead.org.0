@@ -2,80 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5F6CA452DB
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Jun 2019 05:24:24 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 25F26452DC
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Jun 2019 05:24:43 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9gfvpVqxhNzwQziJqP/fMopyB3TCI8+jUc/4HEFvhY4=; b=Bail9abOZZ9q6M
-	vblkLbEdQ3AnW9V3PyXOaJHFG+VxYRB8fbTBxfBBF0MvbBnxwLh2ZnOfsGMWkbBOvsO/rpl0IMbm/
-	jkqf/T59jtnsG6juAy1K0bQ/IKzBEzRNcz1J75o29WaJ6tz4nN9nmmSjkSOeiAJN1gAi3cRSJZuDO
-	jQB7CApSqXp5HSCvBp1F6x6yDUGGwzHlroulqo4Go7sce3qsBr/w2YIJHmsJ5NB6wSDC6Vu7v3y+U
-	C0riQFb/6s3HPyqRrm++mhEjqzBBfS0Mh7VKmzRcLyKMLWjxfVEOmwe2BhFnyR7wPbfsJRFAN2LJN
-	zIIXI1X2oF4VlIShWvhg==;
+	List-Owner; bh=kUd1bptEDZm5zLjzQUhMGOv4gqpphXupU+bCnqlT3E8=; b=F/awYjv/WFUQR4
+	5JGI/Z3jXjPwjzKIXI8RwhEWSGX1//LmtNSJgNg2O+TVUK0GxEzqfYEj2i7ilfYNPjGi4TOfwwlJR
+	IGduDQS0LhSotXFpi7nfMovx32A6XNz/axX7iNpIdYGRwksGmnuSGJ1eF4M0tQ1GxKM8WTne/a269
+	DuetIN28KxQfEQi5iAoXWFXo3deO6zLyvjw7WLDOze1F5JrWGyDih6ieH6uD4tQVpJWh+bgn7wr+e
+	2HlZkqtkdS0nDB5M8tOTrqkFFT2dqoWYegVIerQgcmZZesZZXecnkU2xM6wjfZZjp6C4rhHp6i9/U
+	rK3/jcn/wJsx+mtuUFaA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hbcpB-00045o-Fp; Fri, 14 Jun 2019 03:24:21 +0000
-Received: from mail-pg1-x543.google.com ([2607:f8b0:4864:20::543])
+	id 1hbcpT-0004M2-24; Fri, 14 Jun 2019 03:24:39 +0000
+Received: from mail-pg1-x541.google.com ([2607:f8b0:4864:20::541])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hbceb-0000x6-Fv
- for linux-arm-kernel@lists.infradead.org; Fri, 14 Jun 2019 03:13:29 +0000
-Received: by mail-pg1-x543.google.com with SMTP id k187so690950pga.0
+ id 1hbcee-0000yt-BQ
+ for linux-arm-kernel@lists.infradead.org; Fri, 14 Jun 2019 03:13:32 +0000
+Received: by mail-pg1-x541.google.com with SMTP id s27so686839pgl.2
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 13 Jun 2019 20:13:25 -0700 (PDT)
+ Thu, 13 Jun 2019 20:13:27 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=4cjUvWF1fG1uJf64DV9LIZ2qblEK4Qh4cwDlO2OXHlc=;
- b=sFWQWr9WQVIoODnq13osUci8fXXwEGt2JIkyrqUTrbBm4bd7VB/u8y0UxppVd+BeiR
- UtJXoGi1ehpyDUqs0e+ubar9YWT057q4MMJ/bKxw+xgLk1CyMMDO7hhq1T1pBX5UmLjs
- B5rQdnQ1JEvgyyBHk/Gy2qptGPg2I94HqYxOjVeSouPZN5f/0YJc8VbqPpFuDDEwW3Lt
- aQBgpKRwEs98T1ALDuHy0H2ZWiKHpgj0p91BRIyGEptiEu7RGwz9vWTkk6cvMhx/7lzq
- lBYMXv4P2NwEPJa9GKD61+FgGjo/iIZK/QRSGYBghxS5ZCiizlV5quX9rJ+mM5Fkq6M+
- e5Ww==
+ bh=sZ9weVw7RciwPWpWURkguqz3JkcjVDFiI8eMy/XIk6c=;
+ b=uBa2Fanuo5OuRV3Tc+G72E7OhAmFpiIcRgunKetzQ2vV71vpUsLFIRdJ32kyLSQ3WO
+ Q+kphuNV5TIYTf+aDYD+RCwEOCs9NczgpuHExLd+SZH2SYkAKZK30z9qKogKCzJthNZC
+ axQjLiaJ2+cZwfV+bisHNRsG/EUGLH+dP6wwhJ9rx6oWMB406wy4PCLUakdcHMfIXV0s
+ BxAeBLVZCFSfFAfUTAVPeVWRt3AlXgDyDzUY3NfjptzjovgjtjgjAmrTPMgzgGtnx+c6
+ I+tUU6ycag56hY11F7zYtJWDg8EV7SsOvXU3wHVqliUi/zAhJYqCn9qN76vINNwMd67x
+ 0vqQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=4cjUvWF1fG1uJf64DV9LIZ2qblEK4Qh4cwDlO2OXHlc=;
- b=jiH9hbVzoplgZn12isVfMhoPvBWXpLmahc4A1uTWinI/3UxWshd/zGKyM3gNjC0y68
- Avx6YMvdz9i88SLAKVL+DTC+5pbTGg1PIrRKeK4HgMTvcXHi/la+tXWv/40spzVlV23A
- xPeR22miX7i2qfMvCXxOzhzFO+Zrx5PGcl9MSxTowpGrXE0OMKRyqdhBbuOC+y7K1GAA
- ClIA6D2k0DoPleA6GesbHm3f6sR9z9Axs1s749M2Gg/003D94CCet6uisUoobxcU8yKf
- j+J3rzjmJ0mMmDviD0FP2pEMWmwcTS5JbEOGn02HTcF74UY1MPwuRw5OiQ4WPFykOrjT
- h2KA==
-X-Gm-Message-State: APjAAAVFkhhUUMxtOdaSIAyPN4lM4MhZ12X11ayhpL9+rxeD4rfEmlRF
- 87/RNOhn47MuL5PCjDsK1wqxRHRBYns=
-X-Google-Smtp-Source: APXvYqzlH0OcxsgdIzwPZqpnKGrcfCU430u+ms0DTeK9I3s4ge2lcX/vcnViYs4es5GBTSoBrl9MOA==
-X-Received: by 2002:a63:f146:: with SMTP id o6mr32948616pgk.179.1560482003778; 
- Thu, 13 Jun 2019 20:13:23 -0700 (PDT)
+ bh=sZ9weVw7RciwPWpWURkguqz3JkcjVDFiI8eMy/XIk6c=;
+ b=EqX1KmP6fZCe8OeK0WWy1u2MJhST6wbQSTv1TfkcP/xvM22lnGRTRLCJKkFWASY0rK
+ tHnvpr8PByP2BaynjNKgXUXyDqsWXO3S/3CDixqjCHNws4OTy5TNxBLZWFprEyCthUZw
+ bTU9A3CcK20oINh8QStJKTJ84X84YBd9itr8q1qKLEwtrSqQ+XEtJI5iXe7ixMgLse0/
+ de8I77Tfj1feMiUB7v9F9ZQBJUPXxkRwTAt5DcjwlS0wvGcVUbCwlcedvGWue4qif8ZQ
+ +q7lnFMyEXbFoO5SZY40/yfNAUkW1eA4DM27HeVG/tgYcQJQlAuq0l7vqH7I5OoXN5DK
+ VkJQ==
+X-Gm-Message-State: APjAAAUSMFYz0qeN/NEvtXqSDYvp+NB2N7caCrGCjWkMPdDpJc5qHVVR
+ 1uTA4i1dTyzun9QrVicAjfbmpZBK2+s=
+X-Google-Smtp-Source: APXvYqyYPUab+C9R03/M6n+YP6AiMroinpBIgD7kqj5kSKV2zeWlxKVc97dROufCbUh1cEm2BkfooA==
+X-Received: by 2002:a17:90a:b294:: with SMTP id
+ c20mr8922158pjr.16.1560482006464; 
+ Thu, 13 Jun 2019 20:13:26 -0700 (PDT)
 Received: from localhost ([122.172.66.84])
- by smtp.gmail.com with ESMTPSA id m2sm1083791pgq.48.2019.06.13.20.13.22
+ by smtp.gmail.com with ESMTPSA id e20sm1043011pfi.35.2019.06.13.20.13.25
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Thu, 13 Jun 2019 20:13:23 -0700 (PDT)
+ Thu, 13 Jun 2019 20:13:25 -0700 (PDT)
 From: Viresh Kumar <viresh.kumar@linaro.org>
 To: linux-arm-kernel@lists.infradead.org,
  Julien Thierry <Julien.Thierry@arm.com>
-Subject: [PATCH v4.4 34/45] arm/arm64: KVM: Implement PSCI 1.0 support
-Date: Fri, 14 Jun 2019 08:38:17 +0530
-Message-Id: <673b7f2b7b85c228bf5136a273da7fc97d43c4d8.1560480942.git.viresh.kumar@linaro.org>
+Subject: [PATCH v4.4 35/45] arm/arm64: KVM: Advertise SMCCC v1.1
+Date: Fri, 14 Jun 2019 08:38:18 +0530
+Message-Id: <cc0e289588de42a2938932929c3329e238ff19b8.1560480942.git.viresh.kumar@linaro.org>
 X-Mailer: git-send-email 2.21.0.rc0.269.g1a574e7a288b
 In-Reply-To: <cover.1560480942.git.viresh.kumar@linaro.org>
 References: <cover.1560480942.git.viresh.kumar@linaro.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190613_201325_637734_7D2C50E8 
-X-CRM114-Status: GOOD (  14.04  )
+X-CRM114-CacheID: sfid-20190613_201328_640646_327061C7 
+X-CRM114-Status: GOOD (  14.35  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:543 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:541 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -107,114 +108,145 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Marc Zyngier <marc.zyngier@arm.com>
+From: Mark Rutland <mark.rutland@arm.com>
 
-commit 58e0b2239a4d997094ba63986ef4de29ddc91d87 upstream.
+commit 09e6be12effdb33bf7210c8867bbd213b66a499e upstream.
 
-PSCI 1.0 can be trivially implemented by providing the FEATURES
-call on top of PSCI 0.2 and returning 1.0 as the PSCI version.
+The new SMC Calling Convention (v1.1) allows for a reduced overhead
+when calling into the firmware, and provides a new feature discovery
+mechanism.
 
-We happily ignore everything else, as they are either optional or
-are clarifications that do not require any additional change.
+Make it visible to KVM guests.
 
-PSCI 1.0 is now the default until we decide to add a userspace
-selection API.
-
-Reviewed-by: Christoffer Dall <christoffer.dall@linaro.org>
 Tested-by: Ard Biesheuvel <ard.biesheuvel@linaro.org>
+Reviewed-by: Christoffer Dall <christoffer.dall@linaro.org>
 Signed-off-by: Marc Zyngier <marc.zyngier@arm.com>
 Signed-off-by: Catalin Marinas <catalin.marinas@arm.com>
 [ v4.4: account for files moved to virt/ upstream ]
 Signed-off-by: Viresh Kumar <viresh.kumar@linaro.org>
 ---
- arch/arm/kvm/psci.c    | 45 +++++++++++++++++++++++++++++++++++++++++-
- include/kvm/arm_psci.h |  3 +++
- 2 files changed, 47 insertions(+), 1 deletion(-)
+ arch/arm/kvm/handle_exit.c   |  2 +-
+ arch/arm/kvm/psci.c          | 24 +++++++++++++++++++++++-
+ arch/arm64/kvm/handle_exit.c |  2 +-
+ include/kvm/arm_psci.h       |  2 +-
+ include/linux/arm-smccc.h    | 13 +++++++++++++
+ 5 files changed, 39 insertions(+), 4 deletions(-)
 
+diff --git a/arch/arm/kvm/handle_exit.c b/arch/arm/kvm/handle_exit.c
+index ed879e3238d3..8d8daa2861f3 100644
+--- a/arch/arm/kvm/handle_exit.c
++++ b/arch/arm/kvm/handle_exit.c
+@@ -43,7 +43,7 @@ static int handle_hvc(struct kvm_vcpu *vcpu, struct kvm_run *run)
+ 	trace_kvm_hvc(*vcpu_pc(vcpu), *vcpu_reg(vcpu, 0),
+ 		      kvm_vcpu_hvc_get_imm(vcpu));
+ 
+-	ret = kvm_psci_call(vcpu);
++	ret = kvm_hvc_call_handler(vcpu);
+ 	if (ret < 0) {
+ 		vcpu_set_reg(vcpu, 0, ~0UL);
+ 		return 1;
 diff --git a/arch/arm/kvm/psci.c b/arch/arm/kvm/psci.c
-index 7ef6cdd22163..23428a3ac69b 100644
+index 23428a3ac69b..76821adf4fde 100644
 --- a/arch/arm/kvm/psci.c
 +++ b/arch/arm/kvm/psci.c
-@@ -232,7 +232,7 @@ static void kvm_psci_system_reset(struct kvm_vcpu *vcpu)
- int kvm_psci_version(struct kvm_vcpu *vcpu)
+@@ -15,6 +15,7 @@
+  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  */
+ 
++#include <linux/arm-smccc.h>
+ #include <linux/preempt.h>
+ #include <linux/kvm_host.h>
+ #include <linux/wait.h>
+@@ -337,6 +338,7 @@ static int kvm_psci_1_0_call(struct kvm_vcpu *vcpu)
+ 		case PSCI_0_2_FN_SYSTEM_OFF:
+ 		case PSCI_0_2_FN_SYSTEM_RESET:
+ 		case PSCI_1_0_FN_PSCI_FEATURES:
++		case ARM_SMCCC_VERSION_FUNC_ID:
+ 			val = 0;
+ 			break;
+ 		default:
+@@ -391,7 +393,7 @@ static int kvm_psci_0_1_call(struct kvm_vcpu *vcpu)
+  * Errors:
+  * -EINVAL: Unrecognized PSCI function
+  */
+-int kvm_psci_call(struct kvm_vcpu *vcpu)
++static int kvm_psci_call(struct kvm_vcpu *vcpu)
  {
- 	if (test_bit(KVM_ARM_VCPU_PSCI_0_2, vcpu->arch.features))
--		return KVM_ARM_PSCI_0_2;
-+		return KVM_ARM_PSCI_LATEST;
- 
- 	return KVM_ARM_PSCI_0_1;
+ 	switch (kvm_psci_version(vcpu)) {
+ 	case KVM_ARM_PSCI_1_0:
+@@ -404,3 +406,23 @@ int kvm_psci_call(struct kvm_vcpu *vcpu)
+ 		return -EINVAL;
+ 	};
  }
-@@ -311,6 +311,47 @@ static int kvm_psci_0_2_call(struct kvm_vcpu *vcpu)
- 	return ret;
- }
- 
-+static int kvm_psci_1_0_call(struct kvm_vcpu *vcpu)
-+{
-+	u32 psci_fn = smccc_get_function(vcpu);
-+	u32 feature;
-+	unsigned long val;
-+	int ret = 1;
 +
-+	switch(psci_fn) {
-+	case PSCI_0_2_FN_PSCI_VERSION:
-+		val = KVM_ARM_PSCI_1_0;
++int kvm_hvc_call_handler(struct kvm_vcpu *vcpu)
++{
++	u32 func_id = smccc_get_function(vcpu);
++	u32 val = PSCI_RET_NOT_SUPPORTED;
++
++	switch (func_id) {
++	case ARM_SMCCC_VERSION_FUNC_ID:
++		val = ARM_SMCCC_VERSION_1_1;
 +		break;
-+	case PSCI_1_0_FN_PSCI_FEATURES:
-+		feature = smccc_get_arg1(vcpu);
-+		switch(feature) {
-+		case PSCI_0_2_FN_PSCI_VERSION:
-+		case PSCI_0_2_FN_CPU_SUSPEND:
-+		case PSCI_0_2_FN64_CPU_SUSPEND:
-+		case PSCI_0_2_FN_CPU_OFF:
-+		case PSCI_0_2_FN_CPU_ON:
-+		case PSCI_0_2_FN64_CPU_ON:
-+		case PSCI_0_2_FN_AFFINITY_INFO:
-+		case PSCI_0_2_FN64_AFFINITY_INFO:
-+		case PSCI_0_2_FN_MIGRATE_INFO_TYPE:
-+		case PSCI_0_2_FN_SYSTEM_OFF:
-+		case PSCI_0_2_FN_SYSTEM_RESET:
-+		case PSCI_1_0_FN_PSCI_FEATURES:
-+			val = 0;
-+			break;
-+		default:
-+			val = PSCI_RET_NOT_SUPPORTED;
-+			break;
-+		}
++	case ARM_SMCCC_ARCH_FEATURES_FUNC_ID:
++		/* Nothing supported yet */
 +		break;
 +	default:
-+		return kvm_psci_0_2_call(vcpu);
++		return kvm_psci_call(vcpu);
 +	}
 +
 +	smccc_set_retval(vcpu, val, 0, 0, 0);
-+	return ret;
++	return 1;
 +}
-+
- static int kvm_psci_0_1_call(struct kvm_vcpu *vcpu)
- {
- 	struct kvm *kvm = vcpu->kvm;
-@@ -353,6 +394,8 @@ static int kvm_psci_0_1_call(struct kvm_vcpu *vcpu)
- int kvm_psci_call(struct kvm_vcpu *vcpu)
- {
- 	switch (kvm_psci_version(vcpu)) {
-+	case KVM_ARM_PSCI_1_0:
-+		return kvm_psci_1_0_call(vcpu);
- 	case KVM_ARM_PSCI_0_2:
- 		return kvm_psci_0_2_call(vcpu);
- 	case KVM_ARM_PSCI_0_1:
+diff --git a/arch/arm64/kvm/handle_exit.c b/arch/arm64/kvm/handle_exit.c
+index 5b7fb5ab9136..a5fa27980a1d 100644
+--- a/arch/arm64/kvm/handle_exit.c
++++ b/arch/arm64/kvm/handle_exit.c
+@@ -43,7 +43,7 @@ static int handle_hvc(struct kvm_vcpu *vcpu, struct kvm_run *run)
+ 	trace_kvm_hvc_arm64(*vcpu_pc(vcpu), vcpu_get_reg(vcpu, 0),
+ 			    kvm_vcpu_hvc_get_imm(vcpu));
+ 
+-	ret = kvm_psci_call(vcpu);
++	ret = kvm_hvc_call_handler(vcpu);
+ 	if (ret < 0) {
+ 		vcpu_set_reg(vcpu, 0, ~0UL);
+ 		return 1;
 diff --git a/include/kvm/arm_psci.h b/include/kvm/arm_psci.h
-index 5659343580a3..32360432cff5 100644
+index 32360432cff5..ed1dd8088f1c 100644
 --- a/include/kvm/arm_psci.h
 +++ b/include/kvm/arm_psci.h
-@@ -22,6 +22,9 @@
- 
- #define KVM_ARM_PSCI_0_1	PSCI_VERSION(0, 1)
- #define KVM_ARM_PSCI_0_2	PSCI_VERSION(0, 2)
-+#define KVM_ARM_PSCI_1_0	PSCI_VERSION(1, 0)
-+
-+#define KVM_ARM_PSCI_LATEST	KVM_ARM_PSCI_1_0
+@@ -27,6 +27,6 @@
+ #define KVM_ARM_PSCI_LATEST	KVM_ARM_PSCI_1_0
  
  int kvm_psci_version(struct kvm_vcpu *vcpu);
- int kvm_psci_call(struct kvm_vcpu *vcpu);
+-int kvm_psci_call(struct kvm_vcpu *vcpu);
++int kvm_hvc_call_handler(struct kvm_vcpu *vcpu);
+ 
+ #endif /* __KVM_ARM_PSCI_H__ */
+diff --git a/include/linux/arm-smccc.h b/include/linux/arm-smccc.h
+index 611d10580340..da9f3916f9a9 100644
+--- a/include/linux/arm-smccc.h
++++ b/include/linux/arm-smccc.h
+@@ -60,6 +60,19 @@
+ #define ARM_SMCCC_OWNER_TRUSTED_OS	50
+ #define ARM_SMCCC_OWNER_TRUSTED_OS_END	63
+ 
++#define ARM_SMCCC_VERSION_1_0		0x10000
++#define ARM_SMCCC_VERSION_1_1		0x10001
++
++#define ARM_SMCCC_VERSION_FUNC_ID					\
++	ARM_SMCCC_CALL_VAL(ARM_SMCCC_FAST_CALL,				\
++			   ARM_SMCCC_SMC_32,				\
++			   0, 0)
++
++#define ARM_SMCCC_ARCH_FEATURES_FUNC_ID					\
++	ARM_SMCCC_CALL_VAL(ARM_SMCCC_FAST_CALL,				\
++			   ARM_SMCCC_SMC_32,				\
++			   0, 1)
++
+ #ifndef __ASSEMBLY__
+ 
+ /**
 -- 
 2.21.0.rc0.269.g1a574e7a288b
 
