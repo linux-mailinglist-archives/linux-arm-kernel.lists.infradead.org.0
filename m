@@ -2,81 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 507B5452EA
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Jun 2019 05:27:46 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 21298452E9
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Jun 2019 05:27:29 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1Pgs/cKP24QphLd9ChKgZ990i+7juCnIMU559RWCOjY=; b=K8Gz386+yP1KtU
-	cY5ioNZIT1ydeYLcoowQGu7Tn9uqMHzUqTwoJ0+dsHihvb2oioWUZ7GS1RcGgt/TPJ0q84eSze+8C
-	rlBu2QdIKsTVY6+NM3nPb48cKQ21ibE/kdE+dB3g1936DFE+xN4Y188/z1eTOUDhr/2PI03DS9h84
-	Y4bxIoRodrb16gz+JFSmKcltlc9mAxF4trpyAcHrI78fir76a0yXf5xqDfwT4IDkbjDefGKzCTpPI
-	QSig6oDggxso4AkYAy/Ea9Spbe51iqz4oe8NFUK8LYXL/SH0hluUjJ3XTAXq/s0+cWEsshybIOYPP
-	62jQPkFWSOu/uQTjxCiQ==;
+	List-Owner; bh=QEyOhIh6jn1G4FFCKmRcBgUq3clX2HV7zBmBKtrFTTE=; b=AiR9+AtcYqPjfv
+	IBAHQE5ajpVe3YJLmzjAghs51DSBDxHYVyb5mK0qJizaz4Tf1CW8RlbaKHE8wP3bd5OvgY0v8yafP
+	+SbhPJZUyPR5iZEUjDjNOhrLZWute3NiKfHdnByD2jODvbVo/vul0WmfvcUmtrD+sFpZnGVJmXa+S
+	wI8Ecvcyp4HdXJ6bxDZ0i+01zWD/+ssiWMyoirLvQc2Y/SG4Ejzy+AbrigemA0+vxxDScbtMvmWvn
+	4ga383GksriuY9jnzre8IID52+PdeuGtlhPEvTH1N1O29crGfL+0pveVEwBPjax6HIMUIDlU+19mz
+	ZAbX2aF1l5wGANBpspvg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hbcsP-0007ys-DS; Fri, 14 Jun 2019 03:27:41 +0000
-Received: from mail-pg1-x543.google.com ([2607:f8b0:4864:20::543])
+	id 1hbcs8-0007kD-3Z; Fri, 14 Jun 2019 03:27:24 +0000
+Received: from mail-pg1-x544.google.com ([2607:f8b0:4864:20::544])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hbcf1-0001Kt-6X
+ id 1hbcf3-0001Mm-2h
  for linux-arm-kernel@lists.infradead.org; Fri, 14 Jun 2019 03:13:55 +0000
-Received: by mail-pg1-x543.google.com with SMTP id s21so656999pga.12
+Received: by mail-pg1-x544.google.com with SMTP id n2so663669pgp.11
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 13 Jun 2019 20:13:50 -0700 (PDT)
+ Thu, 13 Jun 2019 20:13:52 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=AWHPUBB3ixlXuGv+k0bkvZFjFDMYGzP6IksF+WhcPsw=;
- b=PKtJSvl7jEEaS+KAJnnItlRSBzgFPcvNacURq042QNfvpy2cUe5UTwO6kraPn7+Lbi
- jlxci1UhA3Rho59bTpzl/1OllJ3wfyPfNHHDOeExNGNwErw+LyzqgNQ2l157Xy/YpISM
- TfLHEjCt0OD4O3IDsXJCtnAQ1QiXv2ML6KkpXCtb8g08FsmTzCHwulyba/c0gq5YDI/E
- raXCx2497zdc9gBCNNASMQWvOJyymUHHgmM8LR1tzaQp9oMf8tCcJJ+vr/PUiOckO9U2
- taVNEWQ8jvhPKlR81BiQfQNhY2+83c1Q4dmDuQWEflTnT1iHHxyVC1MYYpjHrZDqTE/3
- ZPoA==
+ bh=PDeednBQHQCWJxR0NKh3z84Gd8kBTabHNB90hamsE18=;
+ b=h4QWP2mvAS916s6auJJfFzviYDDjb+PpuiP6IFws5Q2EJ2uXczHMoheg4jezvSjnWr
+ IJZk2FdXIdxz4vVreKM+jSnz4myExFPgAWxesJ/pE5wWSokxF95skddVsLWzPAFq2qBa
+ rWImiMAK2fNA0OmFptcJ3wBYFUWzhWTrrdjce/uktXZQsjpCDqQr+9KgdFG8HvaxatBa
+ dldxbR/0B1pKiGZFbiisf23ByiGrVPy4yxKyj4SQtn3SLEwGY6B/MqLfsRWtZ1Y79LDF
+ G069q0y5MeHuXEEZZlup4NZcn5SOiaCUZOD1Ayqbx3h0mCWmJuDIykLZNpm1YUL0O0cp
+ P4+w==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=AWHPUBB3ixlXuGv+k0bkvZFjFDMYGzP6IksF+WhcPsw=;
- b=pOoSsLDGTq398k/oHvrMlLOYlmnRo+PEw/ha2RW9sBmTpiCOU+8aGsEyCpEooFgt8o
- 3C3sKy3ww26GnlS8G4OSo76I5gyTB/NNiAlzASsYwfjevsAX1ZYOw9KcvkR4nixjp5E3
- HAPC1ZaU1hQsZxw47Xv42OkCPJRXUCZsKhknJHRchCwytHWxOBHfKxpZUy1xN+dFvHGI
- mY/YintoUAnSOuVAA2Wr3Xp28QQOdRr59PxfKqPBKI4JSWwToL18GbmHA8XNwV8qeILF
- j3nNub8VXjLo0o/3fd8/ZZBXX1wMlykJ3rEr0vPKFv1AbVPAfX5kS+b0joEzVtnM+e3P
- cunQ==
-X-Gm-Message-State: APjAAAURSJ0y3vHnzpvBTKZnXlgQsnx7ubn7A7MPuuG5wVKCflDS7NT0
- m7T/fOYhsoYfidBw0/ZGf+vGzm+uK/8=
-X-Google-Smtp-Source: APXvYqwOmTyfi1VeIbUlXauf+wL1jE5w3jP/lBDkJoKG2slBik2MP6qS+UEi6rwmNYywOtAFl2MXPw==
-X-Received: by 2002:a63:490a:: with SMTP id w10mr33227135pga.6.1560482029343; 
- Thu, 13 Jun 2019 20:13:49 -0700 (PDT)
+ bh=PDeednBQHQCWJxR0NKh3z84Gd8kBTabHNB90hamsE18=;
+ b=swG9eYhuNpURRTSAEImYqUKhul2aJSkvjMcUsbS2oXFam6KWiU+0cI49oEyiLff4dh
+ m4Y78bTSDTmRbdZdOcLVvkkGY0BMlbIYB9uL5x6prHZzJLAbR1iktGUyKKUGS7Sum3Sb
+ v05NG6G+h9yQAlEm0N4exw9p63hWOp+zlqEfDXS6isHQCW7Z5lO76b3jP3WQgXAkQ626
+ gdjUzOe0vs5TNCPym9SAEA9l2n8eJC9l3dWFXrzqvBB2NeVxcBlzmv5Ux91TDOPpa6t9
+ vC1XE2h27efFbUQZqTOMTdzcp+Z5L013HbdYmx/a0WE9uHJYQw3Kj296tNYTeyK2X/6D
+ o4cA==
+X-Gm-Message-State: APjAAAXYrmKB1ruF0jPyi0/RwjQiWa8pgGtiWA7ryqVlqwe/QqX5Vivl
+ /9GqXNxgyyLRKcnClquI/Zo3WUpfxeg=
+X-Google-Smtp-Source: APXvYqyB8Yl7Jcgzm5jDA6YzQVPHMarwbfyU+veTySu1KhLykTJJEGVatBN2jEFN1ggpDp0OoSP18Q==
+X-Received: by 2002:a63:a056:: with SMTP id u22mr33204122pgn.318.1560482031830; 
+ Thu, 13 Jun 2019 20:13:51 -0700 (PDT)
 Received: from localhost ([122.172.66.84])
- by smtp.gmail.com with ESMTPSA id 25sm1051970pfp.76.2019.06.13.20.13.48
+ by smtp.gmail.com with ESMTPSA id s12sm1032837pfe.143.2019.06.13.20.13.51
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Thu, 13 Jun 2019 20:13:48 -0700 (PDT)
+ Thu, 13 Jun 2019 20:13:51 -0700 (PDT)
 From: Viresh Kumar <viresh.kumar@linaro.org>
 To: linux-arm-kernel@lists.infradead.org,
  Julien Thierry <Julien.Thierry@arm.com>
-Subject: [PATCH v4.4 44/45] arm64: Kill PSCI_GET_VERSION as a variant-2
- workaround
-Date: Fri, 14 Jun 2019 08:38:27 +0530
-Message-Id: <c30381b166496955e75ed238e1c8f20867b1e862.1560480942.git.viresh.kumar@linaro.org>
+Subject: [PATCH v4.4 45/45] arm64: futex: Mask __user pointers prior to
+ dereference
+Date: Fri, 14 Jun 2019 08:38:28 +0530
+Message-Id: <1e0218d2ca5026bccbad88acba998349fe2195f1.1560480942.git.viresh.kumar@linaro.org>
 X-Mailer: git-send-email 2.21.0.rc0.269.g1a574e7a288b
 In-Reply-To: <cover.1560480942.git.viresh.kumar@linaro.org>
 References: <cover.1560480942.git.viresh.kumar@linaro.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190613_201351_469529_0775A210 
-X-CRM114-Status: GOOD (  14.19  )
+X-CRM114-CacheID: sfid-20190613_201353_256501_F15F2805 
+X-CRM114-Status: GOOD (  11.78  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:543 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:544 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -108,188 +108,58 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Marc Zyngier <marc.zyngier@arm.com>
+From: Will Deacon <will.deacon@arm.com>
 
-commit 3a0a397ff5ff8b56ca9f7908b75dee6bf0b5fabb upstream.
+commit 91b2d3442f6a44dce875670d702af22737ad5eff upstream.
 
-Now that we've standardised on SMCCC v1.1 to perform the branch
-prediction invalidation, let's drop the previous band-aid.
-If vendors haven't updated their firmware to do SMCCC 1.1, they
-haven't updated PSCI either, so we don't loose anything.
+The arm64 futex code has some explicit dereferencing of user pointers
+where performing atomic operations in response to a futex command. This
+patch uses masking to limit any speculative futex operations to within
+the user address space.
 
-Tested-by: Ard Biesheuvel <ard.biesheuvel@linaro.org>
-Signed-off-by: Marc Zyngier <marc.zyngier@arm.com>
+Signed-off-by: Will Deacon <will.deacon@arm.com>
 Signed-off-by: Catalin Marinas <catalin.marinas@arm.com>
-[ v4.4: Dropped switch.c changes ]
 Signed-off-by: Viresh Kumar <viresh.kumar@linaro.org>
 ---
- arch/arm64/kernel/bpi.S        | 24 ------------------
- arch/arm64/kernel/cpu_errata.c | 45 ++++++++++------------------------
- 2 files changed, 13 insertions(+), 56 deletions(-)
+ arch/arm64/include/asm/futex.h | 9 ++++++---
+ 1 file changed, 6 insertions(+), 3 deletions(-)
 
-diff --git a/arch/arm64/kernel/bpi.S b/arch/arm64/kernel/bpi.S
-index c72f261f4b64..dc4eb154e33b 100644
---- a/arch/arm64/kernel/bpi.S
-+++ b/arch/arm64/kernel/bpi.S
-@@ -54,30 +54,6 @@ ENTRY(__bp_harden_hyp_vecs_start)
- 	vectors __kvm_hyp_vector
- 	.endr
- ENTRY(__bp_harden_hyp_vecs_end)
--ENTRY(__psci_hyp_bp_inval_start)
--	sub	sp, sp, #(8 * 18)
--	stp	x16, x17, [sp, #(16 * 0)]
--	stp	x14, x15, [sp, #(16 * 1)]
--	stp	x12, x13, [sp, #(16 * 2)]
--	stp	x10, x11, [sp, #(16 * 3)]
--	stp	x8, x9, [sp, #(16 * 4)]
--	stp	x6, x7, [sp, #(16 * 5)]
--	stp	x4, x5, [sp, #(16 * 6)]
--	stp	x2, x3, [sp, #(16 * 7)]
--	stp	x0, x1, [sp, #(16 * 8)]
--	mov	x0, #0x84000000
--	smc	#0
--	ldp	x16, x17, [sp, #(16 * 0)]
--	ldp	x14, x15, [sp, #(16 * 1)]
--	ldp	x12, x13, [sp, #(16 * 2)]
--	ldp	x10, x11, [sp, #(16 * 3)]
--	ldp	x8, x9, [sp, #(16 * 4)]
--	ldp	x6, x7, [sp, #(16 * 5)]
--	ldp	x4, x5, [sp, #(16 * 6)]
--	ldp	x2, x3, [sp, #(16 * 7)]
--	ldp	x0, x1, [sp, #(16 * 8)]
--	add	sp, sp, #(8 * 18)
--ENTRY(__psci_hyp_bp_inval_end)
+diff --git a/arch/arm64/include/asm/futex.h b/arch/arm64/include/asm/futex.h
+index 34d4d2e2f561..8ab6e83cb629 100644
+--- a/arch/arm64/include/asm/futex.h
++++ b/arch/arm64/include/asm/futex.h
+@@ -53,9 +53,10 @@
+ 	: "memory")
  
- .macro smccc_workaround_1 inst
- 	sub	sp, sp, #(8 * 4)
-diff --git a/arch/arm64/kernel/cpu_errata.c b/arch/arm64/kernel/cpu_errata.c
-index 506b339b91bb..c9a2c5a1e0aa 100644
---- a/arch/arm64/kernel/cpu_errata.c
-+++ b/arch/arm64/kernel/cpu_errata.c
-@@ -50,7 +50,6 @@ is_affected_midr_range(const struct arm64_cpu_capabilities *entry, int scope)
- DEFINE_PER_CPU_READ_MOSTLY(struct bp_hardening_data, bp_hardening_data);
- 
- #ifdef CONFIG_KVM
--extern char __psci_hyp_bp_inval_start[], __psci_hyp_bp_inval_end[];
- extern char __smccc_workaround_1_smc_start[];
- extern char __smccc_workaround_1_smc_end[];
- extern char __smccc_workaround_1_hvc_start[];
-@@ -97,8 +96,6 @@ static void __install_bp_hardening_cb(bp_hardening_cb_t fn,
- 	spin_unlock(&bp_lock);
- }
- #else
--#define __psci_hyp_bp_inval_start	NULL
--#define __psci_hyp_bp_inval_end		NULL
- #define __smccc_workaround_1_smc_start		NULL
- #define __smccc_workaround_1_smc_end		NULL
- #define __smccc_workaround_1_hvc_start		NULL
-@@ -143,24 +140,25 @@ static void call_hvc_arch_workaround_1(void)
- 	arm_smccc_1_1_hvc(ARM_SMCCC_ARCH_WORKAROUND_1, NULL);
- }
- 
--static bool check_smccc_arch_workaround_1(const struct arm64_cpu_capabilities *entry)
-+static int enable_smccc_arch_workaround_1(void *data)
+ static inline int
+-arch_futex_atomic_op_inuser(int op, int oparg, int *oval, u32 __user *uaddr)
++arch_futex_atomic_op_inuser(int op, int oparg, int *oval, u32 __user *_uaddr)
  {
-+	const struct arm64_cpu_capabilities *entry = data;
- 	bp_hardening_cb_t cb;
- 	void *smccc_start, *smccc_end;
- 	struct arm_smccc_res res;
+ 	int oldval = 0, ret, tmp;
++	u32 __user *uaddr = __uaccess_mask_ptr(_uaddr);
  
- 	if (!entry->matches(entry, SCOPE_LOCAL_CPU))
--		return false;
-+		return 0;
+ 	pagefault_disable();
  
- 	if (psci_ops.smccc_version == SMCCC_VERSION_1_0)
--		return false;
-+		return 0;
- 
- 	switch (psci_ops.conduit) {
- 	case PSCI_CONDUIT_HVC:
- 		arm_smccc_1_1_hvc(ARM_SMCCC_ARCH_FEATURES_FUNC_ID,
- 				  ARM_SMCCC_ARCH_WORKAROUND_1, &res);
- 		if (res.a0)
--			return false;
-+			return 0;
- 		cb = call_hvc_arch_workaround_1;
- 		smccc_start = __smccc_workaround_1_hvc_start;
- 		smccc_end = __smccc_workaround_1_hvc_end;
-@@ -170,35 +168,18 @@ static bool check_smccc_arch_workaround_1(const struct arm64_cpu_capabilities *e
- 		arm_smccc_1_1_smc(ARM_SMCCC_ARCH_FEATURES_FUNC_ID,
- 				  ARM_SMCCC_ARCH_WORKAROUND_1, &res);
- 		if (res.a0)
--			return false;
-+			return 0;
- 		cb = call_smc_arch_workaround_1;
- 		smccc_start = __smccc_workaround_1_smc_start;
- 		smccc_end = __smccc_workaround_1_smc_end;
- 		break;
- 
- 	default:
--		return false;
-+		return 0;
- 	}
- 
- 	install_bp_hardening_cb(entry, cb, smccc_start, smccc_end);
- 
--	return true;
--}
--
--static int enable_psci_bp_hardening(void *data)
--{
--	const struct arm64_cpu_capabilities *entry = data;
--
--	if (psci_ops.get_version) {
--		if (check_smccc_arch_workaround_1(entry))
--			return 0;
--
--		install_bp_hardening_cb(entry,
--				       (bp_hardening_cb_t)psci_ops.get_version,
--				       __psci_hyp_bp_inval_start,
--				       __psci_hyp_bp_inval_end);
--	}
--
- 	return 0;
+@@ -93,15 +94,17 @@ arch_futex_atomic_op_inuser(int op, int oparg, int *oval, u32 __user *uaddr)
  }
- #endif	/* CONFIG_HARDEN_BRANCH_PREDICTOR */
-@@ -283,32 +264,32 @@ const struct arm64_cpu_capabilities arm64_errata[] = {
- 	{
- 		.capability = ARM64_HARDEN_BRANCH_PREDICTOR,
- 		MIDR_ALL_VERSIONS(MIDR_CORTEX_A57),
--		.enable = enable_psci_bp_hardening,
-+		.enable = enable_smccc_arch_workaround_1,
- 	},
- 	{
- 		.capability = ARM64_HARDEN_BRANCH_PREDICTOR,
- 		MIDR_ALL_VERSIONS(MIDR_CORTEX_A72),
--		.enable = enable_psci_bp_hardening,
-+		.enable = enable_smccc_arch_workaround_1,
- 	},
- 	{
- 		.capability = ARM64_HARDEN_BRANCH_PREDICTOR,
- 		MIDR_ALL_VERSIONS(MIDR_CORTEX_A73),
--		.enable = enable_psci_bp_hardening,
-+		.enable = enable_smccc_arch_workaround_1,
- 	},
- 	{
- 		.capability = ARM64_HARDEN_BRANCH_PREDICTOR,
- 		MIDR_ALL_VERSIONS(MIDR_CORTEX_A75),
--		.enable = enable_psci_bp_hardening,
-+		.enable = enable_smccc_arch_workaround_1,
- 	},
- 	{
- 		.capability = ARM64_HARDEN_BRANCH_PREDICTOR,
- 		MIDR_ALL_VERSIONS(MIDR_BRCM_VULCAN),
--		.enable = enable_psci_bp_hardening,
-+		.enable = enable_smccc_arch_workaround_1,
- 	},
- 	{
- 		.capability = ARM64_HARDEN_BRANCH_PREDICTOR,
- 		MIDR_ALL_VERSIONS(MIDR_CAVIUM_THUNDERX2),
--		.enable = enable_psci_bp_hardening,
-+		.enable = enable_smccc_arch_workaround_1,
- 	},
- #endif
- 	{
+ 
+ static inline int
+-futex_atomic_cmpxchg_inatomic(u32 *uval, u32 __user *uaddr,
++futex_atomic_cmpxchg_inatomic(u32 *uval, u32 __user *_uaddr,
+ 			      u32 oldval, u32 newval)
+ {
+ 	int ret = 0;
+ 	u32 val, tmp;
++	u32 __user *uaddr;
+ 
+-	if (!access_ok(VERIFY_WRITE, uaddr, sizeof(u32)))
++	if (!access_ok(VERIFY_WRITE, _uaddr, sizeof(u32)))
+ 		return -EFAULT;
+ 
++	uaddr = __uaccess_mask_ptr(_uaddr);
+ 	asm volatile("// futex_atomic_cmpxchg_inatomic\n"
+ ALTERNATIVE("nop", SET_PSTATE_PAN(0), ARM64_HAS_PAN, CONFIG_ARM64_PAN)
+ "	prfm	pstl1strm, %2\n"
 -- 
 2.21.0.rc0.269.g1a574e7a288b
 
