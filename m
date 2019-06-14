@@ -2,75 +2,75 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4180D4529C
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Jun 2019 05:17:44 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6252C4529D
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Jun 2019 05:18:05 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=T7e+eJi4s9KVLZ8DuWfzK4MJ1almm9M0BRCRnGc95xw=; b=nf8oJ6ALJjNfAJ
-	EKjP6/e6KJIbdb2kJOLcCikuhZLIzBm+haVbC93ui9ad2l49mI4dIq+wBI0Dg947i8otG5d2vKdnj
-	VD1mQdaj7STS7tAwfbgbeVOTPC062xvWC3rEK1LqGVUxCuF6hLhnbTbGVPocqt1Qsv+/bYq3Y9lk9
-	c4fITmHje5cyEQrHo6VMTKg8sW+W2ZE9nVSLWymEKJlfNyXc3a1daSbqV28OGcyN1fk3QfXIyJLbQ
-	ACzsK5yJhhajz6mcdjaWzBccr2aGNLMl4SD3JWnnc5KuKrzeNpLtU7ByflpcVVp5Z4nIdXZf/y0EO
-	MSzZGxwgXyh43I6jK1UQ==;
+	List-Owner; bh=1fuJ5qw7s/Ng8MM6H2RLThwE++I0Zf2XQkAV4MgDpcU=; b=f6sy+AZCus3Ub3
+	gWIz58zE/+H9qjP4lhVYSmgeX9KJJnrRcTo1TKBUm0+8yGJSH9ZgHQhKZaRX5E0NqCDp/oeDVkyfe
+	xFZEUc7U+QhNFlcQYcutOimxtNjQALyzOpVUncvNPhatXUh2VtmCz+npdg3+R8zrMJH1Jw+i6UnYs
+	Pm6XAe6wfTDNfg/8ozEWMKqZUahfkMOpZqJq8UAC+S8ym55vM0p1yhr7KAj/qBuG5tmvQYqQvoX/S
+	dM9CEzrCWBjVUJls3pPB6o5VaarBCr2MREdm3yWBz7Mydf5n86VgD1NfkmKqlH2V4BQWgLwYllaTu
+	01EbxuqUJJ5gg11Y8nrw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hbcik-0005rq-NW; Fri, 14 Jun 2019 03:17:42 +0000
+	id 1hbcj3-000673-Hq; Fri, 14 Jun 2019 03:18:01 +0000
 Received: from mail-pl1-x642.google.com ([2607:f8b0:4864:20::642])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hbcdk-0000No-Pb
- for linux-arm-kernel@lists.infradead.org; Fri, 14 Jun 2019 03:12:35 +0000
-Received: by mail-pl1-x642.google.com with SMTP id cl9so368161plb.10
+ id 1hbcdn-0000Pk-Kd
+ for linux-arm-kernel@lists.infradead.org; Fri, 14 Jun 2019 03:12:38 +0000
+Received: by mail-pl1-x642.google.com with SMTP id t7so365695plr.11
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 13 Jun 2019 20:12:32 -0700 (PDT)
+ Thu, 13 Jun 2019 20:12:35 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=tUK8ETga6k61l9Q+/z8rY6SIV6XG+DcjRuCd/1NWAIQ=;
- b=G2wmSB0wl3ZSst3wBKM0lmkGVB3EAHRbdwUzF55iA5Zc7PyVUPSzOlglM3cYPWwRdH
- kG5s+Oc45ZUBoFc7mYCpXBsXAu5XGmy/7ktcJKN5fvs5gGGo+RUG59zBtu0U0c7OD1G5
- rCdw3QRLYuHQN2CR2z5SNEW280SeN+8hmo3JnWq17WmQ0XAbAnBQB+8kSzeiv2GOos6N
- i3DZfvNnVkzqtXL9ayx0CfRlKWcSGFcOx2QhOmHPWcoJi1efyzQBp+8/rbWneAGyAo7p
- 6b75570FcqLite+nlTb86LYO3NmyJ9+l6P9/g2w84R7+Ws1R4y+j1181T/YYXzDR4xsa
- qF2w==
+ bh=Cnuqc1YlBQBZ4RWPKzaqy9DfMXgSoNZrvvTdeydR7XY=;
+ b=bCx056PQTrtu4bcBdGQja4CHWdjoDe+5H+fLVBYU88hpCO0mdINyMFmiKguyS9D9RA
+ ME26/gyKidKHOT6sc2fheDDmaUJ0eWshUQVYcqitEEOshB0SeFtS/fpdh0VOETgQSUrE
+ furCIjr9M9DUKfdzkgNQVVHORPVTjYraCnjBkAm5yNTA8mes84LCT7IpFkgDSD4SpROE
+ fMYNjTQ9OonP/wgTkKipTtd21c24O2/kCzcFzEdw5dKeswwnJYuIlKf8QLudP8C1WKyQ
+ Oj5KaXiQ5v9trrdDY0ftykarsxdOhpRb4VZqVabajO83FiVDvAnSavu1yR+F0apB6hzm
+ YW6g==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=tUK8ETga6k61l9Q+/z8rY6SIV6XG+DcjRuCd/1NWAIQ=;
- b=GlD5oBDm90oUccpFpTj0CB9k8r620NhzPKnhCjvYw3PxOz89shN/9WIxru0JqAcNqD
- 2QVNUfL/aTtitLovRA0g+xXv4AiLDEzcd4SoB3p4KuqoXPjhpNsuk90j3kMR9pBBJRqF
- HgQYGln7+zCFAXy/eKulFvCIwPb+M05l4K7lwgcuDoa/uyEFZdJkCY5yGZBduMoz1aVu
- gUdKtd7tyVzVspHjjwrM1fKJegLVpBacVdn6rX6WWHY/qfv/M1rJFYz0dE2fhfw9XaE1
- OgDwrrx82ZQe7Zl/DlvDF8m6JWGEOAlMJIU6kcWDCu8R6lDtp933fog0rrTEg23UbGIT
- 33CA==
-X-Gm-Message-State: APjAAAVe691A22yBy8i84iFnOoUNls65plhnqM6MgIvvNkxi/ElVk8xf
- eYtZdTQtQRuAj13ON9meG9//0dbiSbU=
-X-Google-Smtp-Source: APXvYqy0h/l06dEAqb68tyJjmoqTO4IsmomXMrOr3ePgip3/iFchSjUdjaq0IfSo5o/2v8S6XIqJCw==
-X-Received: by 2002:a17:902:522:: with SMTP id
- 31mr86143113plf.296.1560481951066; 
- Thu, 13 Jun 2019 20:12:31 -0700 (PDT)
+ bh=Cnuqc1YlBQBZ4RWPKzaqy9DfMXgSoNZrvvTdeydR7XY=;
+ b=a2X6OS7BBBATfEeI5c1GKcAq2shQOBd/8OFxsB2oho8dBfY8kpIocX48JHXeNZ/PzG
+ g+UD3PvW+ki6QNqPuu2aW37i0Rx7Ol6fBTza3BazNmYsEhwT3yhnvboZ55r0M52uIZLh
+ yf5S3yf4QPQoOuKMMZl51taEt8bj/cqGN+jKAhSnxlAoUq1Hjwt3JpvwNjA9OfKYYGDt
+ lHhRqgoGWT1Fjmyak8HKRdnVbbfHSWfKId8fLT5kj99XERrFAvPWX5b1vslR4mY6OIyt
+ S1QewBe0YFZGjB2YznnbZvIvJvYSRDI8PeBFBdW21yrm9LPlymgNNfT6584xAcSFU9yk
+ 727Q==
+X-Gm-Message-State: APjAAAVy0dGJB0N5HhUisITcIExp66/EKqd6YxIkT0EXq7VbCRUb8s5w
+ aWQhURktpsu2wTXi/TKT3445eXu2SzU=
+X-Google-Smtp-Source: APXvYqwWAvX5hAkv6sKgzGxrT1ixp/vTxnWhHkBaxn79v8H4S+J+iySVgfapTP4cZ7Tj264F6GLcSg==
+X-Received: by 2002:a17:902:8203:: with SMTP id
+ x3mr7315832pln.304.1560481953855; 
+ Thu, 13 Jun 2019 20:12:33 -0700 (PDT)
 Received: from localhost ([122.172.66.84])
- by smtp.gmail.com with ESMTPSA id p68sm1036348pfb.80.2019.06.13.20.12.30
+ by smtp.gmail.com with ESMTPSA id d9sm1097756pgj.34.2019.06.13.20.12.32
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Thu, 13 Jun 2019 20:12:30 -0700 (PDT)
+ Thu, 13 Jun 2019 20:12:33 -0700 (PDT)
 From: Viresh Kumar <viresh.kumar@linaro.org>
 To: linux-arm-kernel@lists.infradead.org,
  Julien Thierry <Julien.Thierry@arm.com>
-Subject: [PATCH v4.4 14/45] drivers/firmware: Expose psci_get_version through
- psci_ops structure
-Date: Fri, 14 Jun 2019 08:37:57 +0530
-Message-Id: <5f5b6ed2828ebd885fa4bc8e764483d81f419bc5.1560480942.git.viresh.kumar@linaro.org>
+Subject: [PATCH v4.4 15/45] arm64: Factor out TTBR0_EL1 post-update workaround
+ into a specific asm macro
+Date: Fri, 14 Jun 2019 08:37:58 +0530
+Message-Id: <75c8ebf74edaebb1a62190c9ae1f39c609963f06.1560480942.git.viresh.kumar@linaro.org>
 X-Mailer: git-send-email 2.21.0.rc0.269.g1a574e7a288b
 In-Reply-To: <cover.1560480942.git.viresh.kumar@linaro.org>
 References: <cover.1560480942.git.viresh.kumar@linaro.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190613_201232_929613_3566D058 
-X-CRM114-Status: GOOD (  11.79  )
+X-CRM114-CacheID: sfid-20190613_201235_955188_E0D3672B 
+X-CRM114-Status: GOOD (  11.13  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -109,50 +109,83 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Will Deacon <will.deacon@arm.com>
+From: Catalin Marinas <catalin.marinas@arm.com>
 
-commit d68e3ba5303f7e1099f51fdcd155f5263da8569b upstream.
+commit f33bcf03e6079668da6bf4eec4a7dcf9289131d0 upstream.
 
-Entry into recent versions of ARM Trusted Firmware will invalidate the CPU
-branch predictor state in order to protect against aliasing attacks.
+This patch takes the errata workaround code out of cpu_do_switch_mm into
+a dedicated post_ttbr0_update_workaround macro which will be reused in a
+subsequent patch.
 
-This patch exposes the PSCI "VERSION" function via psci_ops, so that it
-can be invoked outside of the PSCI driver where necessary.
-
-Acked-by: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
-Signed-off-by: Will Deacon <will.deacon@arm.com>
+Cc: Will Deacon <will.deacon@arm.com>
+Cc: James Morse <james.morse@arm.com>
+Cc: Kees Cook <keescook@chromium.org>
+Reviewed-by: Mark Rutland <mark.rutland@arm.com>
 Signed-off-by: Catalin Marinas <catalin.marinas@arm.com>
+[ v4.4: Included cpufeature.h and adapted to use alternative_if_not ]
 Signed-off-by: Viresh Kumar <viresh.kumar@linaro.org>
 ---
- drivers/firmware/psci.c | 2 ++
- include/linux/psci.h    | 1 +
- 2 files changed, 3 insertions(+)
+ arch/arm64/include/asm/assembler.h | 18 ++++++++++++++++++
+ arch/arm64/mm/proc.S               | 11 +----------
+ 2 files changed, 19 insertions(+), 10 deletions(-)
 
-diff --git a/drivers/firmware/psci.c b/drivers/firmware/psci.c
-index ae70d2485ca1..290f8982e7b3 100644
---- a/drivers/firmware/psci.c
-+++ b/drivers/firmware/psci.c
-@@ -305,6 +305,8 @@ static void __init psci_init_migrate(void)
- static void __init psci_0_2_set_functions(void)
- {
- 	pr_info("Using standard PSCI v0.2 function IDs\n");
-+	psci_ops.get_version = psci_get_version;
-+
- 	psci_function_id[PSCI_FN_CPU_SUSPEND] =
- 					PSCI_FN_NATIVE(0_2, CPU_SUSPEND);
- 	psci_ops.cpu_suspend = psci_cpu_suspend;
-diff --git a/include/linux/psci.h b/include/linux/psci.h
-index 12c4865457ad..04b4d92c7791 100644
---- a/include/linux/psci.h
-+++ b/include/linux/psci.h
-@@ -25,6 +25,7 @@ bool psci_power_state_loses_context(u32 state);
- bool psci_power_state_is_valid(u32 state);
+diff --git a/arch/arm64/include/asm/assembler.h b/arch/arm64/include/asm/assembler.h
+index 2b30363a3a89..8ab46508e836 100644
+--- a/arch/arm64/include/asm/assembler.h
++++ b/arch/arm64/include/asm/assembler.h
+@@ -23,6 +23,7 @@
+ #ifndef __ASM_ASSEMBLER_H
+ #define __ASM_ASSEMBLER_H
  
- struct psci_operations {
-+	u32 (*get_version)(void);
- 	int (*cpu_suspend)(u32 state, unsigned long entry_point);
- 	int (*cpu_off)(u32 state);
- 	int (*cpu_on)(unsigned long cpuid, unsigned long entry_point);
++#include <asm/cpufeature.h>
+ #include <asm/cputype.h>
+ #include <asm/ptrace.h>
+ #include <asm/thread_info.h>
+@@ -282,4 +283,21 @@ lr	.req	x30		// link register
+ .Ldone\@:
+ 	.endm
+ 
++/*
++ * Errata workaround post TTBR0_EL1 update.
++ */
++	.macro	post_ttbr0_update_workaround
++#ifdef CONFIG_CAVIUM_ERRATUM_27456
++alternative_if_not ARM64_WORKAROUND_CAVIUM_27456
++       ret
++       nop
++       nop
++       nop
++alternative_else
++       ic      iallu
++       dsb     nsh
++       isb
++#endif
++	.endm
++
+ #endif	/* __ASM_ASSEMBLER_H */
+diff --git a/arch/arm64/mm/proc.S b/arch/arm64/mm/proc.S
+index f09636738007..4eb1084e203a 100644
+--- a/arch/arm64/mm/proc.S
++++ b/arch/arm64/mm/proc.S
+@@ -139,17 +139,8 @@ ENTRY(cpu_do_switch_mm)
+ 	bfi	x0, x1, #48, #16		// set the ASID
+ 	msr	ttbr0_el1, x0			// set TTBR0
+ 	isb
+-alternative_if_not ARM64_WORKAROUND_CAVIUM_27456
++	post_ttbr0_update_workaround
+ 	ret
+-	nop
+-	nop
+-	nop
+-alternative_else
+-	ic	iallu
+-	dsb	nsh
+-	isb
+-	ret
+-alternative_endif
+ ENDPROC(cpu_do_switch_mm)
+ 
+ 	.section ".text.init", #alloc, #execinstr
 -- 
 2.21.0.rc0.269.g1a574e7a288b
 
