@@ -2,81 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 349D4452BA
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Jun 2019 05:21:45 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1768F452C2
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Jun 2019 05:22:12 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=uyQKICsRL4bdEk460xFN5vkT2JDw4zFYDIceE0Gjn6g=; b=cEhLqdrw1vqPIq
-	A9k0y3xLphfT7c25dQwSj+ukjHzQKCSF1zN6A4/NvF0kHJotNwj9CL3PDjiwNVlSxO16QUeqrGAuh
-	QW1/IO9jwCKIKFQAOW4Kz7h/xdAJx6Rt3Tk441ADcBAGK+3D5DZ7gpzoi+t/11nbR0kMoi6AtrM0f
-	YmHd8pwtSTPdNaM0ck0sdEThqwoNYSVU3UrPOP8CQ+wlnmKDRvZi0RClxXe9D01zR1PGzo3/KLOZR
-	pBo5GzI1yeiihBehza/uEG2NoSRGI5vrJuW6G7idvSJLo/xi79gD1z0wpe4G+m5bviIWm8LRUGpp3
-	xypJgZEC7sWTDDzBeYvw==;
+	List-Owner; bh=Ddm/VvqKy6OF2hh+Nqhy31swCPBVG4AcUesrwG18PUM=; b=FLr/clgxEo5Su5
+	uTJ5c9pZEfSC7ueI5dxJwjqdhA2cKwiAacn0t3G4rhd41hR0Vb5JHlDFcJkGivYqaZ3l5QyE/kRbw
+	2GK7CpH1p99KIA3SAhWX9mCyUWvfU5qLjMzcEiI80RLwI3YGKRswYOuOx+viQBuHYgF6C/AJL/4hP
+	rPhFTiNFjljIJFbnm6bcuSbk5k4qjgMmvQD5HqbBzo3EmM4f18Yiyc6VwkulvA5vRRaWuV5hSiOhC
+	EoDbNQPQn5J0mJg4A3vdgLucLWx9giSmI1yF3cP73hyrpWxmcMT86WnEfMoMRIpGq+cncT6LpYCk+
+	tTj0aO+1Zn2AEOKHo8gw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hbcmd-0001tv-A0; Fri, 14 Jun 2019 03:21:43 +0000
-Received: from mail-pg1-x542.google.com ([2607:f8b0:4864:20::542])
+	id 1hbcn1-0002Fj-0b; Fri, 14 Jun 2019 03:22:07 +0000
+Received: from mail-pl1-x643.google.com ([2607:f8b0:4864:20::643])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hbceG-0000kO-Uo
- for linux-arm-kernel@lists.infradead.org; Fri, 14 Jun 2019 03:13:07 +0000
-Received: by mail-pg1-x542.google.com with SMTP id f25so663009pgv.10
+ id 1hbceI-0000mO-Qw
+ for linux-arm-kernel@lists.infradead.org; Fri, 14 Jun 2019 03:13:11 +0000
+Received: by mail-pl1-x643.google.com with SMTP id b7so374407pls.6
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 13 Jun 2019 20:13:04 -0700 (PDT)
+ Thu, 13 Jun 2019 20:13:06 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=s6UKYk23he3dGgebGJrG3RauZikPx4goXsUxb0kpSkg=;
- b=zvCEroJYai18z93zM9pHqfeGsgfcnwFiyoZEI/5uUllBxZqQQE9aZbZ5rkjcYL+mu/
- E2feYxj2JqPTTxe0pVL///P07AZgXGWknqiChAzY9DSg02c5z0e37gc46ggiAbNV5EQh
- jhiHXo/WD6NMAEEJ/cEYyzytTfwHgsg+GQYggeevy4B3ivGcDNcOHmqYLWnigEtNuf37
- p8/UOSxtcBVyPxDzoJM4qsUCLRXsuIkcl1BwrgMRwBaU5RH85Kb7dftoxbBdMV9vrYz6
- XDHhdRGqvpS8q40H9UbOb4VsxaelFTcoDXqvOSBSzkrlUwbBOElF7vEa1sJwqse7SOTd
- Bkog==
+ bh=sBbWRB3LgLlv2c3U4FxHDhn97v+yXFInuDLMYZ1aFeE=;
+ b=yCjy6+SN414F35JKkNjFkyRAIf7YsFvNN+Kz/Mi8AgDN22LOTkEocDlKSGJU+7VWoT
+ rd7H6Kwo6rDofcCHG0iiog2QNhUUG793KzKoX2APLWphCziQ9Z0/xaLtnBnUYuMK7Z3A
+ YetcuPTD3IMuzeKAl2gn5/DadaRWJl5utXEgxSmdTugAcYNH3N9NfiJ/JOqN1fumuopz
+ cSs5wtE9I3gwI3CwTLfm8welw4DW0VNoCNIc3JfQ6880amhcfnmyEuyQYBPf651aQbcO
+ 554KdaFth8cW5dCOUl05t7MeAl6hsjFFLJvqfZsKX4U3BqTDiEFM/mrfOuo9c+OoANQn
+ NYsQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=s6UKYk23he3dGgebGJrG3RauZikPx4goXsUxb0kpSkg=;
- b=Qq2tB/Cnv+Oy7t+Lq7kPOC/guzoqgLQCjFK4yI9hqTCsoX9BV0tzNiHYsCXTP057ia
- /FdW3rufl4XlTg/pJmlmqSFpR7cGVHNezBNXvr+UIT3VgpIX7R9g6BHDJm6v5qGT8sja
- cvyqKSsEkjHNRO19qF0Q0M/e5qzMbq1m883g4oc7VOaN2l5RlFLuNnyRyDuxqfhvQzae
- /DhPvFkZxZDxaMac0/dU/SRWVf9/gueuW4SAvZ6TqpSoGTqgiLiVNwddtyVaTIQIKoYO
- MpCVtBrkXvJz45HssICzTQMZJN1Py6trAq4A3YbJ+wlTCe/XxDvX/xQ6r3HzNgShoctJ
- WriA==
-X-Gm-Message-State: APjAAAVF/qB0EgpMlu1p7mPeSxPH2XJDoY5KYsjPMjL90dXav9hfNH6c
- qVoAW2zy5YBCyGBduAjDdh3cn1LVtoQ=
-X-Google-Smtp-Source: APXvYqx+ra3YpKQWwoRa5iUExPJzGtThNQBAcoXTZoAe9nxiK6MaSF/dMW2wTNTLFt+Vb+aHjp9b0A==
-X-Received: by 2002:aa7:8b17:: with SMTP id f23mr61291788pfd.194.1560481983028; 
- Thu, 13 Jun 2019 20:13:03 -0700 (PDT)
+ bh=sBbWRB3LgLlv2c3U4FxHDhn97v+yXFInuDLMYZ1aFeE=;
+ b=STjX3e4P8G4QWyV28nUQbqyqu5vS4RfxyLdJuU7BL9I6rsO+qyq3fLILdqK85U2g95
+ u7V6mh0v7wcgdB92kIPBGpaO6Zq3k+/onKjiIpEwpGx6jAMDADXvE1xmjww60muyyGQ0
+ L0B6cgcZUoXruPVTaQiZxC3yUaWX0saNDpY2+q6+e8rPHfk6flUy52yHsiM3+XTz6JwP
+ ZSM8a65P8L26C+WwSWPkbqrxYYgJVxIeOcAN6e50gW/fT4tIOXhZvEjZT1/gdGceAeva
+ yVXPlE50GcltbQti0I4CPWEOKvOMj4tibjWp9W0vNut44UA+8lPiHvfJS9VjyJg85u7O
+ zhyg==
+X-Gm-Message-State: APjAAAXqrQzEMd7Iv66J7Vhx6NlwSYY2SX6X5p1RTaIoyGBT9szSo9Jr
+ aAZkOBXxif7fgAmTd03WlCcn3iNFntc=
+X-Google-Smtp-Source: APXvYqz8IKb1jUFIGu4BsXINQ7hYd13qL7tcvHzLmwIW0Blq8lVI06hDyZgfCOfPA73tJ87WnHnC8A==
+X-Received: by 2002:a17:902:121:: with SMTP id
+ 30mr87000779plb.314.1560481985859; 
+ Thu, 13 Jun 2019 20:13:05 -0700 (PDT)
 Received: from localhost ([122.172.66.84])
- by smtp.gmail.com with ESMTPSA id u11sm996131pfh.130.2019.06.13.20.13.02
+ by smtp.gmail.com with ESMTPSA id o26sm1106132pgv.47.2019.06.13.20.13.04
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Thu, 13 Jun 2019 20:13:02 -0700 (PDT)
+ Thu, 13 Jun 2019 20:13:05 -0700 (PDT)
 From: Viresh Kumar <viresh.kumar@linaro.org>
 To: linux-arm-kernel@lists.infradead.org,
  Julien Thierry <Julien.Thierry@arm.com>
-Subject: [PATCH v4.4 26/45] arm64: cputype info for Broadcom Vulcan
-Date: Fri, 14 Jun 2019 08:38:09 +0530
-Message-Id: <619a06ea39c6f159f0ca0c629eb3859dff1235d8.1560480942.git.viresh.kumar@linaro.org>
+Subject: [PATCH v4.4 27/45] arm64: cputype: Add MIDR values for Cavium
+ ThunderX2 CPUs
+Date: Fri, 14 Jun 2019 08:38:10 +0530
+Message-Id: <92556442f96e9f150663637c363eb892731327b1.1560480942.git.viresh.kumar@linaro.org>
 X-Mailer: git-send-email 2.21.0.rc0.269.g1a574e7a288b
 In-Reply-To: <cover.1560480942.git.viresh.kumar@linaro.org>
 References: <cover.1560480942.git.viresh.kumar@linaro.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190613_201305_065487_F8231392 
-X-CRM114-Status: UNSURE (   9.83  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190613_201306_923303_93BC9C1D 
+X-CRM114-Status: GOOD (  10.05  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:542 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:643 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -108,43 +109,42 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Jayachandran C <jchandra@broadcom.com>
+From: Jayachandran C <jnair@caviumnetworks.com>
 
-commit 9eb8a2cdf65ce47c3aa68f1297c84d8bcf5a7b3a upstream.
+commit 0d90718871fe80f019b7295ec9d2b23121e396fb upstream.
 
-Add Broadcom Vulcan implementor ID and part ID in cputype.h. This is
-to document the values.
+Add the older Broadcom ID as well as the new Cavium ID for ThunderX2
+CPUs.
 
-Signed-off-by: Jayachandran C <jchandra@broadcom.com>
-Acked-by: Will Deacon <will.deacon@arm.com>
-Acked-by: Catalin Marinas <catalin.marinas@arm.com>
-Signed-off-by: Florian Fainelli <f.fainelli@gmail.com>
+Signed-off-by: Jayachandran C <jnair@caviumnetworks.com>
+Signed-off-by: Will Deacon <will.deacon@arm.com>
+Signed-off-by: Catalin Marinas <catalin.marinas@arm.com>
 Signed-off-by: Viresh Kumar <viresh.kumar@linaro.org>
 ---
  arch/arm64/include/asm/cputype.h | 3 +++
  1 file changed, 3 insertions(+)
 
 diff --git a/arch/arm64/include/asm/cputype.h b/arch/arm64/include/asm/cputype.h
-index 2a1f44646048..c6976dd6c32a 100644
+index c6976dd6c32a..9cc7d485c812 100644
 --- a/arch/arm64/include/asm/cputype.h
 +++ b/arch/arm64/include/asm/cputype.h
-@@ -73,6 +73,7 @@
- #define ARM_CPU_IMP_ARM			0x41
- #define ARM_CPU_IMP_APM			0x50
- #define ARM_CPU_IMP_CAVIUM		0x43
-+#define ARM_CPU_IMP_BRCM		0x42
- 
- #define ARM_CPU_PART_AEM_V8		0xD0F
- #define ARM_CPU_PART_FOUNDATION		0xD00
-@@ -87,6 +88,8 @@
+@@ -87,6 +87,7 @@
+ #define APM_CPU_PART_POTENZA		0x000
  
  #define CAVIUM_CPU_PART_THUNDERX	0x0A1
++#define CAVIUM_CPU_PART_THUNDERX2	0x0AF
  
-+#define BRCM_CPU_PART_VULCAN		0x516
-+
- #define MIDR_CORTEX_A55 MIDR_CPU_PART(ARM_CPU_IMP_ARM, ARM_CPU_PART_CORTEX_A55)
+ #define BRCM_CPU_PART_VULCAN		0x516
+ 
+@@ -94,6 +95,8 @@
  #define MIDR_CORTEX_A72 MIDR_CPU_PART(ARM_CPU_IMP_ARM, ARM_CPU_PART_CORTEX_A72)
  #define MIDR_CORTEX_A73 MIDR_CPU_PART(ARM_CPU_IMP_ARM, ARM_CPU_PART_CORTEX_A73)
+ #define MIDR_CORTEX_A75 MIDR_CPU_PART(ARM_CPU_IMP_ARM, ARM_CPU_PART_CORTEX_A75)
++#define MIDR_CAVIUM_THUNDERX2 MIDR_CPU_PART(ARM_CPU_IMP_CAVIUM, CAVIUM_CPU_PART_THUNDERX2)
++#define MIDR_BRCM_VULCAN MIDR_CPU_PART(ARM_CPU_IMP_BRCM, BRCM_CPU_PART_VULCAN)
+ 
+ #ifndef __ASSEMBLY__
+ 
 -- 
 2.21.0.rc0.269.g1a574e7a288b
 
