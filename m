@@ -2,69 +2,75 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D491746B1D
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Jun 2019 22:41:00 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 60ACD46B1E
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Jun 2019 22:41:15 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Y3NqLi3noQhscEuEIcpdthWMQjf7jWONoRYi2s4YDzY=; b=KGVwT2RQfRpyxz
-	L7xsbKMIdrN2DSkyfc8X5xD60KdkwsiU8mvLpv0oGe3AmsCJLL/HZCytapEsbm9UA9yNLXk93vMhl
-	fYPCCQ6Fho3PLJfZtwtFYQo8ZVb8DVnQyRm57Ms8W2dhl5HcmDmHLRaQ98IPOYXVKCjEg2jz8ekFy
-	vcZLjq3rrPtJCzFMu978PdHnEzsU2M4SCsGlSaUIOWKIWhyVHtRw+nFRMjP29uqGTcjoIonGpRm7Z
-	bP90si6ZyMhLYU3PLcYKwJiQECqB8rvyD67GNmVZ9fIhza5ESt39xZBTuRoYEKvFzWApOeyuv4tEt
-	zy+GJRn1Pj1NsNSE/nJQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=FP806F/q5N+3tgD1V/zd2AIYeXmCfqs5A29nI7fQr/w=; b=L5xeXfB3Cu4nen
+	8C0Y8mIlpc0udG5C72Ni4pveSOkGbqE2CaYMq75mWs59fM9Kzz4VDddshpLQp0LGqKFknx+8ElZqI
+	AFKcZnrItyCWWdbcbXilnzmo2ZlTPyQyr+9fD4SYVskZ/tSRu0QBvmIaUGmsuYMJFGYtLNSlHV7G6
+	ffV05xtcw+UuYx0Ez4eAv/BaXQyibxyJnX3OkF7GV+oS1C7rYH9VQtbeIK4zgxgONZ8nidzaz0fHN
+	Y+AAlbf1eZFfz6/0ZYNKeaasv9zIdSzShPXJ1YDEgi6qMqBJ2m0UL3BDi2d7wQtkjBoW//37aoNtf
+	sO6/ULIG6klvWPsYhrmg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hbt0M-000075-Fc; Fri, 14 Jun 2019 20:40:58 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1hbt0b-0000KF-TE; Fri, 14 Jun 2019 20:41:13 +0000
+Received: from mail-pf1-x442.google.com ([2607:f8b0:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hbswU-00042H-AL
- for linux-arm-kernel@lists.infradead.org; Fri, 14 Jun 2019 20:36:59 +0000
-Received: from mail-qt1-f180.google.com (mail-qt1-f180.google.com
- [209.85.160.180])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 9E25621871
+ id 1hbswq-0004Iu-Mo
+ for linux-arm-kernel@lists.infradead.org; Fri, 14 Jun 2019 20:37:30 +0000
+Received: by mail-pf1-x442.google.com with SMTP id x15so2109879pfq.0
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 14 Jun 2019 20:36:57 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1560544617;
- bh=BMo9z7ktz9HuAZSsZMrvij5s/QTJTao6137g4UhlIgs=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=vWedKb+jbEbTSmw49dIs6fTCJMj1eNLfzV8lZhNRiHHoNikTzq2f3wdnIMZkVCQyL
- knYe1cDPqn1d10QezlNcqa/UafNrHuBUfY7wb2TBsdKdscj2QcfL0si88DVa5eR8xe
- an96ZnAgozIFPA2aIN/tmAjrRvruXjj6fWhglrLM=
-Received: by mail-qt1-f180.google.com with SMTP id a15so4019938qtn.7
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 14 Jun 2019 13:36:57 -0700 (PDT)
-X-Gm-Message-State: APjAAAXJ52LMOF4sWGBjSAjDwjCflUSbULTFwTU77zd3yp1sobUlF8kE
- Nh7Zw/SqVXkWQkyqww8TrRWoCSUNzOu7LeuhJg==
-X-Google-Smtp-Source: APXvYqyWRzWEZ0HIsQNXaYvRLs4N5ZiA6PSR36infTnI62eYz0wn0LN3U9LzbcQ569w7rU4GDgO6FBTD8OY61VcRQO8=
-X-Received: by 2002:a0c:b627:: with SMTP id f39mr10202928qve.72.1560544616863; 
- Fri, 14 Jun 2019 13:36:56 -0700 (PDT)
+ Fri, 14 Jun 2019 13:37:19 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=6vrmhhZaEzM19h9Zlx4Mo9l21Q8Z/1tpB8JbdgO/6Q0=;
+ b=Wx04VyZXSi7uEkn+qcquHj3EoBnN4m9FX9vJIgJ6cgeChrc10QLuaKpp7+rGSiDvGN
+ Sk53gojxneIiAZ8hn+pPpC6+ljGcvOasLCV6lMxQw1+3d6Tp7bsi0XiXzlyoQRZ2r0b1
+ rCNafT3ZKZUrDMLDEKZq4H1mERd0VafFAJUpw=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=6vrmhhZaEzM19h9Zlx4Mo9l21Q8Z/1tpB8JbdgO/6Q0=;
+ b=dnrG6wkVU2682WgRKwFFGTDBNPtsW3+i9XW1J9HRsSQja1aZmHDFJotdJqOsm01mSP
+ IU2fU/guXoTINXxPINN08lvdud5hh5+5zO1+mYvxfBi8xFDqx1g/Np11CiUiJNFmIn+G
+ KWiDLyDKW6Ivpg3wVzXGo9AAbA8cMcK0GSR1fwBgLtZZ1UNw9wADTUIkN25zPv2W5cnj
+ TT8jcm7FeTHRsCmb7+K1mM1aT4pv0hfFMOdKizzv3P9P/p9ce1UqvTMzhBbd3I37nYzq
+ C9HZBeHUoqyRYigIzyCuxlotkqR1QcJf4KPFgE5mnlXqxlrsnbpjMVv/7Q1ldX7wuWh3
+ 5lAw==
+X-Gm-Message-State: APjAAAW3RDVmzA7+z5MoctAmQmECk6oTLIFtZHuykTS7HJIH9gDdmUns
+ YuWepK8YPOzZt1p0WSleJya0nQ==
+X-Google-Smtp-Source: APXvYqzfpvXhgutGtT3dFx0GfX5kTtc8h04BE0rk7Qac+K8Ljsdx6ZzVsIxdzlj/CBTPmUiseBZrxw==
+X-Received: by 2002:a63:6005:: with SMTP id u5mr28274041pgb.123.1560544639097; 
+ Fri, 14 Jun 2019 13:37:19 -0700 (PDT)
+Received: from smtp.gmail.com ([2620:15c:202:1:fa53:7765:582b:82b9])
+ by smtp.gmail.com with ESMTPSA id x5sm3673187pjp.21.2019.06.14.13.37.18
+ (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
+ Fri, 14 Jun 2019 13:37:18 -0700 (PDT)
+From: Stephen Boyd <swboyd@chromium.org>
+To: Dan Williams <dan.j.williams@intel.com>
+Subject: [PATCH v2 0/5] Read-only memremap()
+Date: Fri, 14 Jun 2019 13:37:12 -0700
+Message-Id: <20190614203717.75479-1-swboyd@chromium.org>
+X-Mailer: git-send-email 2.22.0.410.gd8fdbe21b5-goog
 MIME-Version: 1.0
-References: <20190614203144.3850-1-joseph.kogut@gmail.com>
- <20190614203144.3850-2-joseph.kogut@gmail.com>
-In-Reply-To: <20190614203144.3850-2-joseph.kogut@gmail.com>
-From: Rob Herring <robh+dt@kernel.org>
-Date: Fri, 14 Jun 2019 14:36:45 -0600
-X-Gmail-Original-Message-ID: <CAL_JsqJjqCRU2a9sfMimTJoMQnR6CjqAqjHRAxyaebWAad299g@mail.gmail.com>
-Message-ID: <CAL_JsqJjqCRU2a9sfMimTJoMQnR6CjqAqjHRAxyaebWAad299g@mail.gmail.com>
-Subject: Re: [PATCH 2/2] arm: dts: add ARM Mali GPU node for Odroid XU3
-To: Joseph Kogut <joseph.kogut@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190614_133658_378585_AA4D80E5 
-X-CRM114-Status: GOOD (  15.58  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190614_133720_834387_D6F8D949 
+X-CRM114-Status: GOOD (  10.80  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:442 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -86,68 +92,60 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- linux-samsung-soc <linux-samsung-soc@vger.kernel.org>,
- David Airlie <airlied@linux.ie>, dri-devel <dri-devel@lists.freedesktop.org>,
- Kukjin Kim <kgene@kernel.org>, Krzysztof Kozlowski <krzk@kernel.org>,
- Daniel Vetter <daniel@ffwll.ch>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>
+Cc: devicetree@vger.kernel.org, linux-arm-msm@vger.kernel.org,
+ Will Deacon <will.deacon@arm.com>, linux-kernel@vger.kernel.org,
+ Evan Green <evgreen@chromium.org>,
+ Bjorn Andersson <bjorn.andersson@linaro.org>, Rob Herring <robh+dt@kernel.org>,
+ Andy Gross <agross@kernel.org>, Catalin Marinas <catalin.marinas@arm.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Jun 14, 2019 at 2:31 PM Joseph Kogut <joseph.kogut@gmail.com> wrote:
->
-> Add device tree node for mali gpu on Odroid XU3 SoCs.
->
-> Signed-off-by: Joseph Kogut <joseph.kogut@gmail.com>
-> ---
->  .../boot/dts/exynos5422-odroidxu3-common.dtsi  | 18 ++++++++++++++++++
->  1 file changed, 18 insertions(+)
->
-> diff --git a/arch/arm/boot/dts/exynos5422-odroidxu3-common.dtsi b/arch/arm/boot/dts/exynos5422-odroidxu3-common.dtsi
-> index 93a48f2dda49..1f2ae19d01af 100644
-> --- a/arch/arm/boot/dts/exynos5422-odroidxu3-common.dtsi
-> +++ b/arch/arm/boot/dts/exynos5422-odroidxu3-common.dtsi
-> @@ -48,6 +48,24 @@
->                 cooling-levels = <0 130 170 230>;
->         };
->
-> +       gpu: gpu@11800000 {
-> +               compatible = "samsung,exynos-mali", "arm,mali-t628";
-> +               reg = <0x11800000 0x5000>;
-> +               interrupts = <0 117 0>,
-> +                            <0 219 0>,
-> +                            <0 74  0>;
-> +               interrupt-names = "gpu", "job", "mmu";
+This patch series implements a read-only version of memremap() via
+a new MEMREMAP_RO flag. If this is passed in the mapping call, we'll
+try to map the memory region as read-only if it doesn't intersect
+with an existing mapping. Otherwise, we'll try to fallback to other
+flags to try to map the memory that way.
 
-Please use the order defined in the binding doc.
+The main use case I have is to map the command-db memory region on
+Qualcomm devices with a read-only mapping. It's already a const marked
+pointer and the API returns const pointers as well, so this series makes
+sure that even stray writes can't modify the memory. To get there we
+introduce a devm version of memremap() for a reserved memory region, add
+a memremap() flag, and implement support for that flag on arm64.
 
-> +               clocks = <&clock CLK_G3D>,
-> +                        <&clock CLK_DOUT_ACLK_G3D>,
-> +                        <&clock CLK_FOUT_VPLL>;
+Changes from v1:
+ * Picked up tags and rebased to v5.2-rc3
 
-The binding doc says a single clock.
+Cc: Evan Green <evgreen@chromium.org>
+Cc: Rob Herring <robh+dt@kernel.org>
+Cc: Bjorn Andersson <bjorn.andersson@linaro.org>
+Cc: Andy Gross <agross@kernel.org>
+Cc: Will Deacon <will.deacon@arm.com>
+Cc: Catalin Marinas <catalin.marinas@arm.com>
 
-> +               mali-supply = <&buck4_reg>;
-> +               operating-points = <
+Stephen Boyd (5):
+  reserved_mem: Add a devm_memremap_reserved_mem() API
+  soc: qcom: cmd-db: Migrate to devm_memremap_reserved_mem()
+  memremap: Add support for read-only memory mappings
+  arm64: Add support for arch_memremap_ro()
+  soc: qcom: cmd-db: Map with read-only mappings
 
-The binding doc says operating-points-v2.
+ arch/arm64/include/asm/io.h     |  1 +
+ drivers/of/of_reserved_mem.c    | 45 +++++++++++++++++++++++++++++++++
+ drivers/soc/qcom/cmd-db.c       | 14 +++-------
+ include/linux/io.h              |  1 +
+ include/linux/of_reserved_mem.h |  6 +++++
+ kernel/iomem.c                  | 15 +++++++++--
+ 6 files changed, 70 insertions(+), 12 deletions(-)
 
-> +                       /* KHz  uV   */
-> +                       600000  1150000
-> +                       177000  812500
-> +               >;
-> +       };
-> +
->         thermal-zones {
->                 cpu0_thermal: cpu0-thermal {
->                         thermal-sensors = <&tmu_cpu0 0>;
-> --
-> 2.22.0
->
+
+base-commit: f2c7c76c5d0a443053e94adb9f0918fa2fb85c3a
+-- 
+Sent by a computer through tubes
+
 
 _______________________________________________
 linux-arm-kernel mailing list
