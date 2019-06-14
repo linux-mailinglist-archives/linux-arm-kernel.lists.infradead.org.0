@@ -2,56 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 383D646981
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Jun 2019 22:33:56 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0DC2D4699B
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Jun 2019 22:34:43 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=i8wLhIT7d7whI0iNi/5aVYNPWuNNh5k+RPdPQMYISXg=; b=pCkqRK8/un1aU0
-	Pauqw7q2eT6ymT+cCJWQyevohA/s51Ze0Lsq0/NeOK+nweNlSyZ8dcZeSgdQ/X4ILnLRDE4nQGk13
-	HsVmEQZBbPFPOKU0wUwNPsH5ekluFtgcRm4vKupce8TFAsb2J1FMBSoyVdfsRdQhefmPXQ/KY8dRX
-	yGU+kyH1FMrXLTeEyY5lElgkYbOsJ13VIuK6lO7x16Jrn/Ti+th9HIWgMeV2v0zGEZVjO+V80P5+e
-	MHzCdEL6F3kBXsD2CMcpTUJEImAhNzvgg/Jqzc8RH594gDlohAp70xi5/2/iSW52YUdSO4hVap45M
-	5OwbUZM9oiKuCdtCI8oA==;
+	List-Owner; bh=1LkrVM5RedrGCUMSj8hgY1l55pw/mpWK1BRMSvNNogk=; b=qPvIOtTvzBi5Ko
+	yRQ65RMYsPFJN5mhL/8Xm70ZIRBeCd4NYE6gQPGVBxCCpgfLAu/CNeK3eJzaA36fRHWgRkSlN3lN2
+	EXWxhDVAnNFrR3XCBKwvdITChV6Yqkor89kxtyI04MwmkZTEM6YGo4UOdrqwWF44diHNBgACHYLlj
+	YZ1P5NPiEU4Kp1nMwAWshpTz1HjL3RB24toQfVm45wAtYm+ZQfWz77TA07OKcvtU8K0mWb5VQC5Qq
+	Pi/L65nvZ2iBVfOPvFw721hUbmdFIq2d93HreU+VTWBbc02b/lyWstCE/26ijlO6GuyzIgMCwr+1z
+	Yt6E7dCLWMP+RLU8fIng==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hbstT-0001Ar-3a; Fri, 14 Jun 2019 20:33:51 +0000
-Received: from relay12.mail.gandi.net ([217.70.178.232])
+	id 1hbsuG-0001Va-FP; Fri, 14 Jun 2019 20:34:40 +0000
+Received: from ms.lwn.net ([45.79.88.28])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hbstK-000143-Ec
- for linux-arm-kernel@lists.infradead.org; Fri, 14 Jun 2019 20:33:44 +0000
-Received: from localhost (unknown [37.205.120.66])
- (Authenticated sender: alexandre.belloni@bootlin.com)
- by relay12.mail.gandi.net (Postfix) with ESMTPSA id B9D67200009;
- Fri, 14 Jun 2019 20:33:30 +0000 (UTC)
-Date: Fri, 14 Jun 2019 22:33:27 +0200
-From: Alexandre Belloni <alexandre.belloni@bootlin.com>
-To: Ken Sloat <KSloat@aampglobal.com>
-Subject: Re: [PATCH v2 1/1] watchdog: atmel: atmel-sama5d4-wdt: Disable
- watchdog on system suspend
-Message-ID: <20190614203327.GE3369@piout.net>
-References: <20190614125310.29458-1-ksloat@aampglobal.com>
- <20190614164609.GA29814@roeck-us.net>
- <BL0PR07MB4115E99D065FD9BEA4C43BB5ADEE0@BL0PR07MB4115.namprd07.prod.outlook.com>
- <20190614180826.GD3369@piout.net>
- <BL0PR07MB4115D5ECDEDCC028197637E5ADEE0@BL0PR07MB4115.namprd07.prod.outlook.com>
+ id 1hbsu7-0001V1-1r
+ for linux-arm-kernel@lists.infradead.org; Fri, 14 Jun 2019 20:34:32 +0000
+Received: from lwn.net (localhost [127.0.0.1])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by ms.lwn.net (Postfix) with ESMTPSA id 20793128A;
+ Fri, 14 Jun 2019 20:34:30 +0000 (UTC)
+Date: Fri, 14 Jun 2019 14:34:29 -0600
+From: Jonathan Corbet <corbet@lwn.net>
+To: Mauro Carvalho Chehab <mchehab+samsung@kernel.org>
+Subject: Re: [PATCH v4 02/28] docs: arm64: convert docs to ReST and rename
+ to .rst
+Message-ID: <20190614143429.640226ec@lwn.net>
+In-Reply-To: <20190614141041.335a76e5@lwn.net>
+References: <cover.1560361364.git.mchehab+samsung@kernel.org>
+ <8320e8e871660bf9fc426bc688f4808a1a7aa031.1560361364.git.mchehab+samsung@kernel.org>
+ <20190614141041.335a76e5@lwn.net>
+Organization: LWN.net
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <BL0PR07MB4115D5ECDEDCC028197637E5ADEE0@BL0PR07MB4115.namprd07.prod.outlook.com>
-User-Agent: Mutt/1.11.4 (2019-03-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190614_133342_647950_98A67779 
-X-CRM114-Status: GOOD (  13.77  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20190614_133431_094719_D8AA45B4 
+X-CRM114-Status: GOOD (  11.96  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.178.232 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [45.79.88.28 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -65,52 +63,47 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "linux-watchdog@vger.kernel.org" <linux-watchdog@vger.kernel.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "ludovic.desroches@microchip.com" <ludovic.desroches@microchip.com>,
- Guenter Roeck <linux@roeck-us.net>,
- "wim@linux-watchdog.org" <wim@linux-watchdog.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: Ard Biesheuvel <ard.biesheuvel@linaro.org>, kvm@vger.kernel.org,
+ Linux Doc Mailing List <linux-doc@vger.kernel.org>, linux-efi@vger.kernel.org,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Radim =?UTF-8?B?S3LEjW3DocWZ?= <rkrcmar@redhat.com>,
+ Will Deacon <will.deacon@arm.com>, linux-kernel@vger.kernel.org,
+ Mauro Carvalho Chehab <mchehab@infradead.org>,
+ Harry Wei <harryxiyou@gmail.com>, Paolo Bonzini <pbonzini@redhat.com>,
+ Alex Shi <alex.shi@linux.alibaba.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 14/06/2019 18:43:22+0000, Ken Sloat wrote:
-> Well I'm a little confused still because there are two separate comments
-> in these statements. The first within resume implies that the init should
-> be called because we might have lost register values for some reason
-> unexplained.
+On Fri, 14 Jun 2019 14:10:41 -0600
+Jonathan Corbet <corbet@lwn.net> wrote:
 
-The sama5d2 has a suspend mode where power to the core is completely
-cut. Only a few IPs remain powered (in the backup power domain).
-Unfortunately, the watchdog is not in that domain and may lose its
-registers.
-
-> Then within the init it says that the bootloader might have
-> modified the registers so we should check them and then update it or
-> otherwise disable it. I'm not trying to pick apart the logic or anything, 
-> I'm just readily assuming it is good as it was already reviewed before. 
+> On Wed, 12 Jun 2019 14:52:38 -0300
+> Mauro Carvalho Chehab <mchehab+samsung@kernel.org> wrote:
 > 
-
-The bootloaders may have started the watchdog (this makes sense if you
-really care about reliability) and so we need to be careful to keep the
-proper parameters.
-
-> So without digging into that too much, if we don't know if any of the runtime
-> situations above might have occurred, then isn't it best to leave my patch
-> as is? Yes this has the side effect of resetting the timer count, but if 
-> the init call is needed and we don't have any way to know if any
-> of the situations occurred, then we have no choice right?
+> > The documentation is in a format that is very close to ReST format.
+> > 
+> > The conversion is actually:
+> >   - add blank lines in order to identify paragraphs;
+> >   - fixing tables markups;
+> >   - adding some lists markups;
+> >   - marking literal blocks;
+> >   - adjust some title markups.
+> > 
+> > At its new index.rst, let's add a :orphan: while this is not linked to
+> > the main index.rst file, in order to avoid build warnings.  
 > 
+> This one doesn't apply to docs-next, since there's a bunch of stuff in
+> linux-next that I don't have.  I'd suggest that it either go by way of an
+> ARM tree or send it my way again after the ARM changes go upstream.
 
-Until we can differentiate between suspend modes, we have no other
-choice.
+Actually, nevermind.  Pulling my tree forward to 5.2-rc4 resolved the
+issues here.
 
--- 
-Alexandre Belloni, Bootlin
-Embedded Linux and Kernel engineering
-https://bootlin.com
+Thanks,
+
+jon
 
 _______________________________________________
 linux-arm-kernel mailing list
