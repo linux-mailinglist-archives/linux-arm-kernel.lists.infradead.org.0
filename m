@@ -2,54 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8AA0C45CAE
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Jun 2019 14:22:21 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C80F445CB3
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Jun 2019 14:23:01 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=S7CzmWvVnzpOYykBN3P2+wQNjo5VwB0xkU+KUE4jI20=; b=N8q1xphDihReeo
-	TJ4hQod7n9M5bJrgY/waVBNv8F47tWoVWVKfHOt1bZy4CoYFbpAyaJlOdMHPQF/3KYQt4xWOVnBy0
-	PlfQYqoPKdwb++G3I6XpjIzAi2ahDXe81eX9ApoXrgcJWkEie5otFlj7p1eDURyuAUTxZRJARtxIt
-	FUPB2DuU9RxCYMFacRCELF7sIb7ldB3xJKtRPoMufquGwttP8joy3poyPdIn31xZmiNdeNq7USvPV
-	ViGZDmGVK3lr4Un0gYo0XLrGmiElM1HnrM0k5+UNRpgLNA9lRP9VZkZYZUzPPjgWaQ+GijcsgI3OY
-	9LueZc4NoTr9WYRBmG2w==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:Message-ID:
+	In-Reply-To:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Ck3F/xGdabxNzBi4ZnVcdN4xXSed9LcApkV9ExGgPkk=; b=ApDXvc0vcBi3N+
+	j0tMfgyHkOy7pZTZnhKJL8ihI6uZHUIbX8TSBWtbCK5W26r3ez2AIoG+dalvPQ9xrlw6eGBTozJ23
+	wYH2A9QnpRiN2dlwreyK/eGVoesLq0ECh/YZhaIk2/SD8S2DQ1/OS7Q/px4vkVkNhqObaXFp1zB9x
+	bfFTr8Sng8ERVOAI1qADWxYn3KUxVshbivNG90DsfL/LI/DADUext6n4bc0WZmDPItIzsZION17W7
+	4EncCHINVJWvWBoMdyYI1jjRU+B42fpEZ+4+27icAkZOe2GvkXuUHa+c/cy3SdIUo5Ey5Im0V13e5
+	VFxbKtnsbgpAC+w5Un6A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hblDk-0005gV-4a; Fri, 14 Jun 2019 12:22:16 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hbl9J-0000QZ-Sh
- for linux-arm-kernel@lists.infradead.org; Fri, 14 Jun 2019 12:17:43 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 221763EF;
- Fri, 14 Jun 2019 05:17:39 -0700 (PDT)
-Received: from [10.162.41.168] (p8cg001049571a15.blr.arm.com [10.162.41.168])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
- 937DD3F246; Fri, 14 Jun 2019 05:17:36 -0700 (PDT)
-Subject: Re: [PATCH v3 01/10] arm64: mm: Flip kernel VA space
-To: Steve Capper <steve.capper@arm.com>, linux-arm-kernel@lists.infradead.org
-References: <20190612172658.28522-1-steve.capper@arm.com>
- <20190612172658.28522-2-steve.capper@arm.com>
-From: Anshuman Khandual <anshuman.khandual@arm.com>
-Message-ID: <b8147191-7c02-66c0-12ff-96de972bf2ca@arm.com>
-Date: Fri, 14 Jun 2019 17:47:55 +0530
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101
- Thunderbird/52.9.1
+	id 1hblER-0006J5-CM; Fri, 14 Jun 2019 12:22:59 +0000
+Received: from galois.linutronix.de ([2a01:7a0:2:106d:700::1])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hblB2-0002M2-76
+ for linux-arm-kernel@lists.infradead.org; Fri, 14 Jun 2019 12:19:42 +0000
+Received: from [5.158.153.52] (helo=nanos.tec.linutronix.de)
+ by Galois.linutronix.de with esmtpsa (TLS1.2:DHE_RSA_AES_256_CBC_SHA256:256)
+ (Exim 4.80) (envelope-from <tglx@linutronix.de>)
+ id 1hblAz-0002iH-Sb; Fri, 14 Jun 2019 14:19:26 +0200
+Date: Fri, 14 Jun 2019 14:19:25 +0200 (CEST)
+From: Thomas Gleixner <tglx@linutronix.de>
+To: Vincenzo Frascino <vincenzo.frascino@arm.com>
+Subject: Re: [PATCH v6 03/19] kernel: Unify update_vsyscall implementation
+In-Reply-To: <a69e48a2-575d-255c-2653-d3e99b7ba760@arm.com>
+Message-ID: <alpine.DEB.2.21.1906141416100.1722@nanos.tec.linutronix.de>
+References: <20190530141531.43462-1-vincenzo.frascino@arm.com>
+ <20190530141531.43462-4-vincenzo.frascino@arm.com>
+ <alpine.DEB.2.21.1906141307430.1722@nanos.tec.linutronix.de>
+ <a69e48a2-575d-255c-2653-d3e99b7ba760@arm.com>
+User-Agent: Alpine 2.21 (DEB 202 2017-01-01)
 MIME-Version: 1.0
-In-Reply-To: <20190612172658.28522-2-steve.capper@arm.com>
-Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190614_051742_060504_8E53DE4A 
-X-CRM114-Status: GOOD (  17.78  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190614_051928_434963_88FEC636 
+X-CRM114-Status: GOOD (  13.95  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [2a01:7a0:2:106d:700:0:0:1 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -62,83 +63,51 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: crecklin@redhat.com, ard.biesheuvel@linaro.org, marc.zyngier@arm.com,
- catalin.marinas@arm.com, bhsharma@redhat.com, will.deacon@arm.com
+Cc: linux-arch@vger.kernel.org, Shuah Khan <shuah@kernel.org>,
+ Arnd Bergmann <arnd@arndb.de>, Huw Davies <huw@codeweavers.com>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Daniel Lezcano <daniel.lezcano@linaro.org>, Will Deacon <will.deacon@arm.com>,
+ linux-kernel@vger.kernel.org, Ralf Baechle <ralf@linux-mips.org>,
+ linux-mips@vger.kernel.org, Paul Burton <paul.burton@mips.com>,
+ linux-kselftest@vger.kernel.org, Rasmus Villemoes <linux@rasmusvillemoes.dk>,
+ Russell King <linux@armlinux.org.uk>, Dmitry Safonov <0x7f454c46@gmail.com>,
+ Mark Salyzyn <salyzyn@android.com>, Peter Collingbourne <pcc@google.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hello Steve,
-
-On 06/12/2019 10:56 PM, Steve Capper wrote:
-> Put the direct linear map in the lower addresses of the kernel VA range
-> and everything else in the higher ranges.
-
-The reason for this flip has to be more clear in the commit message.
-
+On Fri, 14 Jun 2019, Vincenzo Frascino wrote:
+> On 6/14/19 12:10 PM, Thomas Gleixner wrote:
+> > On Thu, 30 May 2019, Vincenzo Frascino wrote:
+> >> +
+> >> +	if (__arch_use_vsyscall(vdata)) {
+> >> +		vdata[CS_HRES_COARSE].cycle_last	=
+> >> +						tk->tkr_mono.cycle_last;
+> >> +		vdata[CS_HRES_COARSE].mask		=
+> >> +						tk->tkr_mono.mask;
+> >> +		vdata[CS_HRES_COARSE].mult		=
+> >> +						tk->tkr_mono.mult;
+> > 
+> > These line breaks make it really hard to read. Can you fold in the patch
+> > below please?
+> > 
 > 
-> This allows us to make room for an inline KASAN shadow that operates
-> under both 48 and 52 bit kernel VA sizes. For example with a 52-bit VA,
-> if KASAN_SHADOW_END < 0xFFF8000000000000 (it is in the lower addresses
-> of the kernel VA range), this will be below the start of the minimum
-> 48-bit kernel VA address of 0xFFFF000000000000.
+> Thanks for this. I will do it in v7.
 
-Though this is true it does not convey to the effect of why the flip is
-required. As you had mentioned previously KASAN_SHADOW_END is fixed because
-it needs to support the highest possible VA (~0UL) in both 48 and 52 bits.
+Talking about v7. I'd like to get this into 5.3. That means you'd have to
+rebase it on
 
-Hence KASAN_SHADOW_START will have to be variable in order to accommodate
-both 48 bits or 52 bits effective virtual address. Hence not sure what the
-above example based on KASAN_SHADOW_START is trying to convey.
+  git://git.kernel.org/pub/scm/linux/kernel/git/hyperv/linux.git hyperv-next
 
-KASAN_SHADOW_END cannot be in the (52 bit space - 48 bit space) exclusion VA
-range as it would not work for the 48 bits case. But KASAN_SHADOW_START can
-very well be in that space for 52 bits case.
+to avoid the hyperv conflict. I'll sort this out with the hyperv folks how
+I can get these bits as a base for a tip branch which holds all the vdso
+pieces.
 
-The current definition
+Thanks,
 
-#define KASAN_SHADOW_START      (VA_START)
-#define KASAN_SHADOW_END        (KASAN_SHADOW_START + KASAN_SHADOW_SIZE)
-
-This wont work in the new scheme because VA_START is different for 48 bits
-and 52 bits which will make KASAN_SHADOW_END variable as well. Hence we need
-to change this arrangement.
-
-What the commit message here does not try to convince is that there are no
-other alternate arrangements where KASAN_SHADOW_END remains fixed (and also
-accessible in 48 bits scheme), KASAN_SHADOW_FIRST is variable accommodating
-both 48 bits and 52 bits case and flipping the kernel VA space is the only
-viable option.
-
-Ahh I see this in the cover letter.
-
-" In order to allow for a KASAN shadow that changes size at boot time, one
-must fix the KASAN_SHADOW_END for both 48 & 52-bit VAs and "grow" the
-start address. Also, it is highly desirable to maintain the same
-function addresses in the kernel .text between VA sizes. Both of these
-requirements necessitate us to flip the kernel address space halves s.t.
-the direct linear map occupies the lower addresses."
-
-Though this is better (please add it to commit message).
-
-There were no alternate arrangements to achieve the above two objectives
-without flipping the VA space ? The reasoning here in the commit message is
-not convincing enough even with the above cover letter extract.
-
-> 
-> We need to adjust:
->  *) KASAN shadow region placement logic,
->  *) KASAN_SHADOW_OFFSET computation logic,
->  *) virt_to_phys, phys_to_virt checks,
->  *) page table dumper.
-> 
-> These are all small changes, that need to take place atomically, so they
-> are bundled into this commit.
-
-It will be great to add a before patch and after patch view of the kernel
-virtual address space enlisting different sections to make things apparent
-about what and how the layout has changed.
+	tglx
 
 _______________________________________________
 linux-arm-kernel mailing list
