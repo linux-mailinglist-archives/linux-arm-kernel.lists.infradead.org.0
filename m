@@ -2,67 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 62736451ED
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Jun 2019 04:32:36 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A821445246
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Jun 2019 05:00:04 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=88KmhaS8qjnll92r9siHf3T9ZkRhAJHWungESQ4PT2I=; b=ZPl6aAnVK1YLfd
-	exT9P0wBg1rg5Q1m01/WEr4spfSzk66ZVqKUFOvbEt40PbvT+VpoUdzwe/eRWDXfvivTZhBz1uhxq
-	i8pNoECo7uJP8MLefyK7ThYteBtKZbJd5RpQ26TACoExTgUsItgsmGZMndClQHJ0D6KqkzAg2G9Jt
-	MT7Ll5udMmSnVCMnapv5aiUE6zUQEMZi6aYhGgZf/Q2O9T3ElKwKABlhqsBosUfc9223EZZ+h453b
-	EnGzMj1+hKJPLPYLFomeeEkeB/xrZZCTsnVuU6Cr8w4y4HqkwfM2W/EZf8lNCGZr5h0qcmMIqJJnH
-	sGuNhjNw9E397oMcQASw==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=xq5qIABvcbLdxS2wmY7A4m6BxRMxZHNUd9hUPjcCX4w=; b=BEq
+	J8SwQEpB/7SMvTiks0B7PvS6lBNliHwr3/7tgJz1nL+XTS1f3IqmPBOxn9hBoe9qCUTduLTQKcX6s
+	EcGV3lp182NkrTKczG7+69SQ8hbsiHj/muoGtW7MKC6vxY013rQS7qrruYFnew+9PxXuFZHmsRM6W
+	y3tf1BTQgo5eOfzt3MK8BCTPf9ZAIZzNGm8yMa291ZMjr70pOKcwLsTLI/+M77y1jYkVabRB+4kEr
+	vbRVDmOPEhmOelqXBDigYMtMdKghB0faUfxUm6h/r0o6UtS7nnG5ifkdaC0lGcek93bjG84PKS0ya
+	z/8JOE/x2UX4AJUdVH/1Jk4qzk19+9g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hbc12-0002Rb-0O; Fri, 14 Jun 2019 02:32:32 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
+	id 1hbcRa-0003Bm-9Y; Fri, 14 Jun 2019 02:59:58 +0000
+Received: from mail-pg1-x543.google.com ([2607:f8b0:4864:20::543])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hbc0p-0002DC-4d; Fri, 14 Jun 2019 02:32:20 +0000
-X-UUID: 19c69bc2b55a43ba855ba6e14fe55af1-20190613
-X-UUID: 19c69bc2b55a43ba855ba6e14fe55af1-20190613
-Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw01.mediatek.com
- (envelope-from <walter-zh.wu@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 505435386; Thu, 13 Jun 2019 18:32:09 -0800
-Received: from mtkmbs08n2.mediatek.inc (172.21.101.56) by
- MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Thu, 13 Jun 2019 19:32:08 -0700
-Received: from mtkcas07.mediatek.inc (172.21.101.84) by
- mtkmbs08n2.mediatek.inc (172.21.101.56) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Fri, 14 Jun 2019 10:32:00 +0800
-Received: from [172.21.84.99] (172.21.84.99) by mtkcas07.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Fri, 14 Jun 2019 10:32:00 +0800
-Message-ID: <1560479520.15814.34.camel@mtksdccf07>
-Subject: Re: [PATCH v3] kasan: add memory corruption identification for
- software tag-based mode
-From: Walter Wu <walter-zh.wu@mediatek.com>
-To: Andrey Ryabinin <aryabinin@virtuozzo.com>
-Date: Fri, 14 Jun 2019 10:32:00 +0800
-In-Reply-To: <1560447999.15814.15.camel@mtksdccf07>
-References: <20190613081357.1360-1-walter-zh.wu@mediatek.com>
- <da7591c9-660d-d380-d59e-6d70b39eaa6b@virtuozzo.com>
- <1560447999.15814.15.camel@mtksdccf07>
-X-Mailer: Evolution 3.2.3-0ubuntu6 
-MIME-Version: 1.0
-X-TM-SNTS-SMTP: C34F4A9FF25B720FA8D264905C1A23CE1B1F2B5A1E4DE450A529D5CDAA5FBF8F2000:8
-X-MTK: N
+ id 1hbcRQ-0002tR-2k
+ for linux-arm-kernel@lists.infradead.org; Fri, 14 Jun 2019 02:59:49 +0000
+Received: by mail-pg1-x543.google.com with SMTP id s27so667337pgl.2
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 13 Jun 2019 19:59:43 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id;
+ bh=DyBxcguYr0pwpEA8xS0kQBgyqMMk8fvfBxMPOX56hn4=;
+ b=DSTLds/txoUxikicIxk+jfatAZ00LsbrrYlHf84ZuDRVrDCmIpKEfeqvv86Q1AIdsq
+ lqvNt9+50ZRdjJdo71qYg/DMVOXQ/BFWWOpNsiXs3oTh6JpnzeGs+0lAafUT2td/x0/N
+ SpKEZiwmZLt2pJBl0DKRRXo8SJBeCKRHsrN6PYf/lZjqWHosb4ca1+HDIPTT1Bz2wKfL
+ 5jqgut1Ai65s9HvDwVHdE/xODUiQCSBfWQXlvf37w+oiy85av3c8VyOJeGE/aZN0ppay
+ DHHiYsbdlAZeudIBec1hVdNaL5sgCkJZb0KqSNdAvQQIH/U6rAHztznpVA8z5OmaZV9x
+ CxKQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=DyBxcguYr0pwpEA8xS0kQBgyqMMk8fvfBxMPOX56hn4=;
+ b=chYIHAOthwIUSGXHxVRIzUQ1cdI83wYn9N8RGdSVnLB9JTbXT0nu5o45CB+BivZ9i9
+ 6iJQsd6i7YR50JNrfPMOGEXogmjHqZyq6Nh6Z+GoNfbzgwTGae7mWKDYYSFuurQppT5R
+ 8WurLdNUe41yE+sWxnddSmY2ekAavCRba+QKn15AQT9UNTB6lKwQy/3BHK+6+5nvmHgH
+ 6+fi2aiiiL2OYqCBn6ry3zjJBD6n62qkQj5ZU9AD0tIPBAfILz3N0s32+G8aggRn5PiK
+ D9u5CItwgdHkfp2sGbeZNEfSEia95pB1uyOvP5z55XCEJghXYyRpZb5OfyrYxQntozk4
+ rvIw==
+X-Gm-Message-State: APjAAAWomyGTQSeF9l0c9CEN0rwYhF4gwjBoaaZrWHhpxJgE9rE66Vtw
+ TwJ6WDhYGvWIh4UORTW7kK8=
+X-Google-Smtp-Source: APXvYqxrzBOrrex6Zoyo5EefrUU1+d4fKYIriMstlsBiwbRJ/sVc+YWrkgnxy6eAX9OWatQGJLeMHw==
+X-Received: by 2002:a63:8449:: with SMTP id k70mr34549119pgd.208.1560481182361; 
+ Thu, 13 Jun 2019 19:59:42 -0700 (PDT)
+Received: from localhost.localdomain ([192.19.228.250])
+ by smtp.gmail.com with ESMTPSA id l21sm1051079pff.40.2019.06.13.19.59.40
+ (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
+ Thu, 13 Jun 2019 19:59:41 -0700 (PDT)
+From: Florian Fainelli <f.fainelli@gmail.com>
+To: linux-arm-kernel@vger.kernel.org
+Subject: [PATCH] arm64: Allow user selection of ARM64_MODULE_PLTS
+Date: Thu, 13 Jun 2019 19:59:32 -0700
+Message-Id: <20190614025932.533-1-f.fainelli@gmail.com>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190613_193219_189773_CED56027 
-X-CRM114-Status: GOOD (  20.56  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190613_195948_129572_72EDD9D4 
+X-CRM114-Status: GOOD (  12.03  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:543 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (f.fainelli[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -74,93 +93,55 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: wsd_upstream@mediatek.com, "Jason A . Donenfeld" <Jason@zx2c4.com>, Vasily
- Gorbik <gor@linux.ibm.com>, Arnd Bergmann <arnd@arndb.de>, linux-mm@kvack.org,
- Andrey Konovalov <andreyknvl@google.com>, linux-kernel@vger.kernel.org,
- kasan-dev@googlegroups.com, Pekka Enberg <penberg@kernel.org>, Martin
- Schwidefsky <schwidefsky@de.ibm.com>, Miles Chen <miles.chen@mediatek.com>,
- Alexander Potapenko <glider@google.com>, linux-arm-kernel@lists.infradead.org,
- David Rientjes <rientjes@google.com>,
- Matthias Brugger <matthias.bgg@gmail.com>, linux-mediatek@lists.infradead.org,
- Christoph Lameter <cl@linux.com>, Joonsoo Kim <iamjoonsoo.kim@lge.com>,
- Dmitry Vyukov <dvyukov@google.com>
+Cc: Florian Fainelli <f.fainelli@gmail.com>, ard.biesheuvel@linaro.org,
+ Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will.deacon@arm.com>,
+ open list <linux-kernel@vger.kernel.org>,
+ bcm-kernel-feedback-list@Broadcom.com,
+ "moderated list:ARM64 PORT AARCH64 ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, 2019-06-14 at 01:46 +0800, Walter Wu wrote:
-> On Thu, 2019-06-13 at 15:27 +0300, Andrey Ryabinin wrote:
-> > 
-> > On 6/13/19 11:13 AM, Walter Wu wrote:
-> > > This patch adds memory corruption identification at bug report for
-> > > software tag-based mode, the report show whether it is "use-after-free"
-> > > or "out-of-bound" error instead of "invalid-access" error.This will make
-> > > it easier for programmers to see the memory corruption problem.
-> > > 
-> > > Now we extend the quarantine to support both generic and tag-based kasan.
-> > > For tag-based kasan, the quarantine stores only freed object information
-> > > to check if an object is freed recently. When tag-based kasan reports an
-> > > error, we can check if the tagged addr is in the quarantine and make a
-> > > good guess if the object is more like "use-after-free" or "out-of-bound".
-> > > 
-> > 
-> > 
-> > We already have all the information and don't need the quarantine to make such guess.
-> > Basically if shadow of the first byte of object has the same tag as tag in pointer than it's out-of-bounds,
-> > otherwise it's use-after-free.
-> > 
-> > In pseudo-code it's something like this:
-> > 
-> > u8 object_tag = *(u8 *)kasan_mem_to_shadow(nearest_object(cacche, page, access_addr));
-> > 
-> > if (access_addr_tag == object_tag && object_tag != KASAN_TAG_INVALID)
-> > 	// out-of-bounds
-> > else
-> > 	// use-after-free
-> 
-> Thanks your explanation.
-> I see, we can use it to decide corruption type.
-> But some use-after-free issues, it may not have accurate free-backtrace.
-> Unfortunately in that situation, free-backtrace is the most important.
-> please see below example
-> 
-> In generic KASAN, it gets accurate free-backrace(ptr1).
-> In tag-based KASAN, it gets wrong free-backtrace(ptr2). It will make
-> programmer misjudge, so they may not believe tag-based KASAN.
-> So We provide this patch, we hope tag-based KASAN bug report is the same
-> accurate with generic KASAN.
-> 
-> ---
->     ptr1 = kmalloc(size, GFP_KERNEL);
->     ptr1_free(ptr1);
-> 
->     ptr2 = kmalloc(size, GFP_KERNEL);
->     ptr2_free(ptr2);
-> 
->     ptr1[size] = 'x';  //corruption here
-> 
-> 
-> static noinline void ptr1_free(char* ptr)
-> {
->     kfree(ptr);
-> }
-> static noinline void ptr2_free(char* ptr)
-> {
->     kfree(ptr);
-> }
-> ---
-> 
-We think of another question about deciding by that shadow of the first
-byte.
-In tag-based KASAN, it is immediately released after calling kfree(), so
-the slub is easy to be used by another pointer, then it will change
-shadow memory to the tag of new pointer, it will not be the
-KASAN_TAG_INVALID, so there are many false negative cases, especially in
-small size allocation.
+Make ARM64_MODULE_PLTS a selectable Kconfig symbol, since some people
+might have very big modules spilling out of the dedicated module area
+into vmalloc. Help text is copied from the ARM 32-bit counterpart.
 
-Our patch is to solve those problems. so please consider it, thanks.
+Signed-off-by: Florian Fainelli <f.fainelli@gmail.com>
+---
+ arch/arm64/Kconfig | 14 +++++++++++++-
+ 1 file changed, 13 insertions(+), 1 deletion(-)
 
+diff --git a/arch/arm64/Kconfig b/arch/arm64/Kconfig
+index 697ea0510729..36befe987b73 100644
+--- a/arch/arm64/Kconfig
++++ b/arch/arm64/Kconfig
+@@ -1418,8 +1418,20 @@ config ARM64_SVE
+ 	  KVM in the same kernel image.
+ 
+ config ARM64_MODULE_PLTS
+-	bool
++	bool "Use PLTs to allow module memory to spill over into vmalloc area"
+ 	select HAVE_MOD_ARCH_SPECIFIC
++	help
++	  Allocate PLTs when loading modules so that jumps and calls whose
++	  targets are too far away for their relative offsets to be encoded
++	  in the instructions themselves can be bounced via veneers in the
++	  module's PLT. This allows modules to be allocated in the generic
++	  vmalloc area after the dedicated module memory area has been
++	  exhausted. The modules will use slightly more memory, but after
++	  rounding up to page size, the actual memory footprint is usually
++	  the same.
++
++	  Disabling this is usually safe for small single-platform
++	  configurations. If unsure, say y.
+ 
+ config ARM64_PSEUDO_NMI
+ 	bool "Support for NMI-like interrupts"
+-- 
+2.17.1
 
 
 _______________________________________________
