@@ -2,65 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 59D2545D85
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Jun 2019 15:10:15 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D029345D97
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Jun 2019 15:13:23 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=C66dw4SOabjWc77ZjKPmbushm1HAEH3KOLwP5lfFLZY=; b=ijcRQfDw/5a/BZ
-	cuvcuJBpmMfxXs+9OFsuhZi9+QqWDE9xKmprLaGW36upijyge88qRxEc3r4bLMYUQIulhWhmyq63v
-	n8/xHMEymvkCCivynPrAi/up83A7ZA8mGvc9y9duF2NQCcRBIqM3eVyr+iC12waLMKSSwzZFfqN6T
-	vqMU4WpRLkobgWzqOjpmuakwupkkZWexcqhHxpXupCya68pQiErmsgSZz4PMcQj21ugeqn1J5w4Ea
-	k/4PwxxoQIqPzAol/XGP8kdQv0uxUIqFkU9ERBsSH2qHxRoILTGxgAflSFPzYdQligNhxG315ydz4
-	iJldLFh7dXOI7XrqB1Lw==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=JypcI2OKB2UOsqCwuR2r71d31SX0UkWvjYq1GhmH4VU=; b=kFS
+	nlTpimIaHYc6TT6zcQ/4nFEv/6AUnnnACjpr5c+WgPUPnUVAzSXLqMiqMNpr9RB5o5VeYqs+N6QnV
+	Vs5W7Cm25U/JoV9MuNCX+iwjeiH1ifTCn+A24RPvNxH9jEG75IDV8KsFeDmnWv9/MhKEuEc/ZQu/3
+	e1rSxw08TbWszoTSPZkT3xKpKi4Z3vpF5Za46qfBvOYMdEQGUEGXlxDA5KwPYuKNCI8ezH01Bw0R8
+	U4ZaLlDu0l6thSMBocwE5FsxqOu26jwWZ77qDUtHW3xrptnex6+96GPpg0Xh4JZXz8EjG+Mt3Z38M
+	m95+SQllU2ZccjkUOoKPjHCgZUFC3zg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hbly8-0002Be-Tr; Fri, 14 Jun 2019 13:10:12 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1hbm1C-00040W-E4; Fri, 14 Jun 2019 13:13:22 +0000
+Received: from mail-qk1-x743.google.com ([2607:f8b0:4864:20::743])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hblxr-0002B4-3Y
- for linux-arm-kernel@lists.infradead.org; Fri, 14 Jun 2019 13:09:56 +0000
-Received: from localhost (173-25-83-245.client.mchsi.com [173.25.83.245])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 226DA20850;
- Fri, 14 Jun 2019 13:09:53 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1560517793;
- bh=mRmGyxYQIkQ13DLqdtwewdMiIqXGLpO2s27nnAvEusc=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=sDo8l+VCaLY0E2B0VcPOXJD86BMdLEtB6UFDeuGir9oVeofgXDhiiPtktK4q2ik2R
- R0MFFQ1HdF7sQmeP58ldE+asbCA3VnsDXDDCM0HuKuvUPj5H4SxLsetcui8lh3/Fw0
- TL/3RAWfIln0isDW92XF/+iA1mvmZL2GaHu7I6mA=
-Date: Fri, 14 Jun 2019 08:09:52 -0500
-From: Bjorn Helgaas <helgaas@kernel.org>
-To: Benjamin Herrenschmidt <benh@kernel.crashing.org>
-Subject: Re: [RFC PATCH v2] arm64: acpi/pci: invoke _DSM whether to preserve
- firmware PCI setup
-Message-ID: <20190614130952.GQ13533@google.com>
-References: <5783e36561bb77a1deb6ba67e5a9824488cc69c6.camel@kernel.crashing.org>
- <20190613190248.GH13533@google.com>
- <e6c7854ae360be513f6f43729ed6d4052e289376.camel@kernel.crashing.org>
- <CAKv+Gu95pQ7_OfLbEXHZ_bhYnqOgTBKCmTgqUY27un-Y708BgQ@mail.gmail.com>
- <d5d3e7b9553438482854c97e09543afb7de23eaa.camel@kernel.crashing.org>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <d5d3e7b9553438482854c97e09543afb7de23eaa.camel@kernel.crashing.org>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+ id 1hbm0w-0003x9-Ub
+ for linux-arm-kernel@lists.infradead.org; Fri, 14 Jun 2019 13:13:08 +0000
+Received: by mail-qk1-x743.google.com with SMTP id g18so1614497qkl.3
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 14 Jun 2019 06:13:05 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id;
+ bh=+tFDksFffEpGXWf74d3vaKdXMAyKwc+2Rp4MyFwCKVQ=;
+ b=fiB5wkBVxsKeL5k+KkAGrFlUmSk1byl/GiN2Xo9gy/7cEid5eY0hXmwLwDRizYspa4
+ oopJRiJUoBO3mRPxNIL+uwsH37O7Fa8SQLVmSYYd/uE18+Nret8ONqT3S4xaq/6sVxAN
+ uhn9N23jWd41HX1joxngZLUZ6P27FDH/hpovd4G11oOn9gkdRuMNDhIa7/4opnT8GGn8
+ fF9y9/AW4idvXftY6zMTtrI9fDg8TTQSo6pCrDFHW+Z30Ggi6MuRNvZVwguGP2u4sMnS
+ 3lD8R+PSQNxpbYIdTWbLpGf0Bzs78+O/M/FTdJJi1FKjsP/7oE9MRWhcf8EN1EdonIn8
+ Zn3g==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=+tFDksFffEpGXWf74d3vaKdXMAyKwc+2Rp4MyFwCKVQ=;
+ b=gUlbBAwpCOg2yS0Ta4p8bNTVb5wxH7IVtEVtMTSpX+UEepfAG3501BEUgOt6aRlqVd
+ tCEm7f4QsLHKDIHT5atR/nAPwqjU39xLN/S4w4wpu23OxGr/Y30IGDnuHnfcVA9FNmYg
+ ayS43XRRkHQAsKFWvlskmhMeJH58tAqVfedJLX8VcS21PYwazuh5/9JHRsoL2FxQc6b0
+ xJCgJ3t+QSkGRkoz+6WG2q/834YFbqNasSvijcTFOPJFzwXsWDCa8aDY5s1adf/vc+54
+ cu94/dL9ocFbVkeTRXldgCm43MR7+OaT1KroucU3Xwg8hlnBOL2yVo2VyAaWHcYZ17OT
+ G/Tw==
+X-Gm-Message-State: APjAAAVA5sPGOnfQaSw0IZ9Zy4z/cZAw/Sb29wdE/qJTASL87ahSRcHq
+ q7blFXMZdhEBKuG622qIkQ==
+X-Google-Smtp-Source: APXvYqwCZcVCKo1fyJFmDmeZVjNujYgLtaS2EAtung+hF1kdgQvDNS6dXhUFlZJN2BWHrufFLDkWgg==
+X-Received: by 2002:a37:5407:: with SMTP id i7mr3763273qkb.149.1560517985220; 
+ Fri, 14 Jun 2019 06:13:05 -0700 (PDT)
+Received: from gabell.bos.redhat.com (nat-pool-bos-t.redhat.com.
+ [66.187.233.206])
+ by smtp.gmail.com with ESMTPSA id i30sm1563893qtb.18.2019.06.14.06.13.04
+ (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
+ Fri, 14 Jun 2019 06:13:04 -0700 (PDT)
+From: Masayoshi Mizuma <msys.mizuma@gmail.com>
+To: Catalin Marinas <catalin.marinas@arm.com>,
+ Robin Murphy <robin.murphy@arm.com>, Will Deacon <will.deacon@arm.com>,
+ linux-arm-kernel@lists.infradead.org
+Subject: [PATCH v2] arm64/mm: Correct the cache line size warning with non
+ coherent device
+Date: Fri, 14 Jun 2019 09:11:41 -0400
+Message-Id: <20190614131141.4428-1-msys.mizuma@gmail.com>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190614_060955_187121_FC62F13D 
-X-CRM114-Status: GOOD (  11.21  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190614_061307_014023_D01ADBF3 
+X-CRM114-Status: GOOD (  13.73  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:743 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (msys.mizuma[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -69,7 +86,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- 0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -81,69 +97,111 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-pci <linux-pci@vger.kernel.org>,
- Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>, Sinan Kaya <okaya@kernel.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
- Ard Biesheuvel <ard.biesheuvel@linaro.org>
+Cc: Masayoshi Mizuma <m.mizuma@jp.fujitsu.com>,
+ Hidetoshi Seto <seto.hidetoshi@jp.fujitsu.com>,
+ Masayoshi Mizuma <msys.mizuma@gmail.com>, linux-kernel@vger.kernel.org,
+ Zhang Lei <zhang.lei@jp.fujitsu.com>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Jun 14, 2019 at 06:36:32PM +1000, Benjamin Herrenschmidt wrote:
-> Linux can't change the switch configuration. I may have mentioned
-> earlier it has to do with platform sec policies. But that's not totally
-> relevant, we shoudn't be changing resources anyway since in theory
-> runtime FW might rely on where some system devices were assigned at
-> boot. EFI fb is another example of that.
+From: Masayoshi Mizuma <m.mizuma@jp.fujitsu.com>
 
-"We shouldn't be changing resources anyway" is not really useful
-guidance.  I completely agree that we shouldn't change things
-*unnecessarily*, but it's up to the OS to define what makes it
-necessary -- it might be for rebalancing for hotplug, to make space
-for SR-IOV, to respect user requests to increase alignment, etc.
+If the cache line size is greater than ARCH_DMA_MINALIGN (128),
+the warning shows and it's tainted as TAINT_CPU_OUT_OF_SPEC.
 
-IMO the real value of _DSM #5 is as a mechanism to advertise
-dependencies runtime firmware has on devices, e.g., SMM firmware might
-want to log errors to a PCI remote management device.  If the OS moved
-that managment device, the SMM logging would itself cause errors.
+However, it's not good because as discussed in the thread [1], the cpu
+cache line size will be problem only on non-coherent devices.
 
-> The biggest issue for me right now is that the spec says pretty much at
-> _DSM #5 = 0 is equivalent to _DSM #5 absent, and Bjorn seems keen on
-> having it this way, but for arm64, we specifically want to distinguish
-> those 2 cases.
+Since the coherent flag is already introduced to struct device,
+show the warning only if the device is non-coherent device and
+ARCH_DMA_MINALIGN is smaller than the cpu cache size.
 
-Nope, my opinion is exactly the opposite.  Sorry that I'm not
-communicating this clearly.
+[1] https://lore.kernel.org/linux-arm-kernel/20180514145703.celnlobzn3uh5tc2@localhost/
 
-It's true that the r3.2 spec *does* say _DSM #5 = 0 is equivalent to
-the situation where it's absent, but that's based on the assumption
-that the OS is never allowed to change PCI configuration.  I think
-that assumption is complete nonsense and should be disregarded.
+Signed-off-by: Masayoshi Mizuma <m.mizuma@jp.fujitsu.com>
+Reviewed-by: Hidetoshi Seto <seto.hidetoshi@jp.fujitsu.com>
+Tested-by: Zhang Lei <zhang.lei@jp.fujitsu.com>
+---
+ arch/arm64/include/asm/cache.h |  7 +++++++
+ arch/arm64/kernel/cacheinfo.c  |  4 +---
+ arch/arm64/mm/dma-mapping.c    | 14 ++++++++++----
+ 3 files changed, 18 insertions(+), 7 deletions(-)
 
-  _DSM #5 = 0: OS must preserve this device's BARs
-	       (current spec says "OS must not ignore")
+diff --git a/arch/arm64/include/asm/cache.h b/arch/arm64/include/asm/cache.h
+index 758af6340314..d24b7c1ecd9b 100644
+--- a/arch/arm64/include/asm/cache.h
++++ b/arch/arm64/include/asm/cache.h
+@@ -91,6 +91,13 @@ static inline u32 cache_type_cwg(void)
+ 
+ #define __read_mostly __attribute__((__section__(".data..read_mostly")))
+ 
++static inline int cache_line_size_of_cpu(void)
++{
++	u32 cwg = cache_type_cwg();
++
++	return cwg ? 4 << cwg : ARCH_DMA_MINALIGN;
++}
++
+ int cache_line_size(void);
+ 
+ /*
+diff --git a/arch/arm64/kernel/cacheinfo.c b/arch/arm64/kernel/cacheinfo.c
+index 6eaf1c07aa4e..7fa6828bb488 100644
+--- a/arch/arm64/kernel/cacheinfo.c
++++ b/arch/arm64/kernel/cacheinfo.c
+@@ -19,12 +19,10 @@
+ 
+ int cache_line_size(void)
+ {
+-	u32 cwg = cache_type_cwg();
+-
+ 	if (coherency_max_size != 0)
+ 		return coherency_max_size;
+ 
+-	return cwg ? 4 << cwg : ARCH_DMA_MINALIGN;
++	return cache_line_size_of_cpu();
+ }
+ EXPORT_SYMBOL_GPL(cache_line_size);
+ 
+diff --git a/arch/arm64/mm/dma-mapping.c b/arch/arm64/mm/dma-mapping.c
+index 1669618db08a..379589dc7113 100644
+--- a/arch/arm64/mm/dma-mapping.c
++++ b/arch/arm64/mm/dma-mapping.c
+@@ -38,10 +38,6 @@ void arch_dma_prep_coherent(struct page *page, size_t size)
+ 
+ static int __init arm64_dma_init(void)
+ {
+-	WARN_TAINT(ARCH_DMA_MINALIGN < cache_line_size(),
+-		   TAINT_CPU_OUT_OF_SPEC,
+-		   "ARCH_DMA_MINALIGN smaller than CTR_EL0.CWG (%d < %d)",
+-		   ARCH_DMA_MINALIGN, cache_line_size());
+ 	return dma_atomic_pool_init(GFP_DMA32, __pgprot(PROT_NORMAL_NC));
+ }
+ arch_initcall(arm64_dma_init);
+@@ -56,7 +52,17 @@ void arch_teardown_dma_ops(struct device *dev)
+ void arch_setup_dma_ops(struct device *dev, u64 dma_base, u64 size,
+ 			const struct iommu_ops *iommu, bool coherent)
+ {
++	int cls = cache_line_size_of_cpu();
++
+ 	dev->dma_coherent = coherent;
++
++	if (!coherent)
++		WARN_TAINT(cls > ARCH_DMA_MINALIGN,
++			TAINT_CPU_OUT_OF_SPEC,
++			"%s %s: ARCH_DMA_MINALIGN smaller than CTR_EL0.CWG (%d < %d)",
++			dev_driver_string(dev), dev_name(dev),
++			ARCH_DMA_MINALIGN, cls);
++
+ 	if (iommu)
+ 		iommu_setup_dma_ops(dev, dma_base, size);
+ 
+-- 
+2.20.1
 
-  _DSM #5 = 1: OS *may* change this device's BARs
-	       (current spec says "OS may ignore")
-
-Other than _DSM #5, there's no spec I'm aware of that restricts the
-OS's ability to change BARs.  Therefore I think "_DSM #5 = 1" is
-equivalent to _DSM #5 being absent, and in both cases the OS is free
-to change BARs as it sees fit.
-
-> Looking at the spec (and followup discussions for specs updates), I'm
-> quite keen on treating _DSM #5 = 1 as "wipe out the resource for that
-> endpoint/bridge and realloc something better. There are reasons for
-> that, but we can probably discuss that later.
-
-I disagree on the "wipe out all resources" part of this because we
-have no idea how to realloc something better.  We should of course
-look for problems (overlapping devices, etc) and fix them.  But
-starting from scratch and reallocating won't reliably produce anything
-different from the original, supposedly broken, configuration.
-
-Bjorn
 
 _______________________________________________
 linux-arm-kernel mailing list
