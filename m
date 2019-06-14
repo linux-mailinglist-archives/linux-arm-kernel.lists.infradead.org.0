@@ -2,81 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E3991452DA
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Jun 2019 05:24:07 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5F6CA452DB
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Jun 2019 05:24:24 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=kwqEdcOW8F84CkBtWM4h/3ZD8vVgctmG7jqXz1ChBK0=; b=lj32ontSvYEkTU
-	fw93SEv2yC7CH15i8LaPORjt8NhTL8buyIsOJWo/71g+ftEkko2ylIKk4c0AKjguKIG1nMNXsOIKW
-	VQ8OYSdg7erjlhHNpNUMDL7B7Z5i5ET+iA/k0YVdeBs5hhKLr0zDqr8UjWWuom2fxGuzSUnvTJfAE
-	fSQBD+CPs7AQEBo2une7wSbNHZg0Fbd/uhPr+axPlz6ZgG9DdkIAzi2SerfvIDSv5PMZ1KUGw9Alv
-	jNaWWO/Vlr/AC0/xMQg084plKp9jfJsgpMLGGsjv49IVX94xA4Lp57rXCw3zvLxMuFmWeLgFsu2wK
-	TAVgensH5gpUDM+oxSRw==;
+	List-Owner; bh=9gfvpVqxhNzwQziJqP/fMopyB3TCI8+jUc/4HEFvhY4=; b=Bail9abOZZ9q6M
+	vblkLbEdQ3AnW9V3PyXOaJHFG+VxYRB8fbTBxfBBF0MvbBnxwLh2ZnOfsGMWkbBOvsO/rpl0IMbm/
+	jkqf/T59jtnsG6juAy1K0bQ/IKzBEzRNcz1J75o29WaJ6tz4nN9nmmSjkSOeiAJN1gAi3cRSJZuDO
+	jQB7CApSqXp5HSCvBp1F6x6yDUGGwzHlroulqo4Go7sce3qsBr/w2YIJHmsJ5NB6wSDC6Vu7v3y+U
+	C0riQFb/6s3HPyqRrm++mhEjqzBBfS0Mh7VKmzRcLyKMLWjxfVEOmwe2BhFnyR7wPbfsJRFAN2LJN
+	zIIXI1X2oF4VlIShWvhg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hbcou-0003q1-3g; Fri, 14 Jun 2019 03:24:04 +0000
-Received: from mail-pl1-x644.google.com ([2607:f8b0:4864:20::644])
+	id 1hbcpB-00045o-Fp; Fri, 14 Jun 2019 03:24:21 +0000
+Received: from mail-pg1-x543.google.com ([2607:f8b0:4864:20::543])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hbceY-0000vh-S1
- for linux-arm-kernel@lists.infradead.org; Fri, 14 Jun 2019 03:13:27 +0000
-Received: by mail-pl1-x644.google.com with SMTP id bh12so378313plb.4
+ id 1hbceb-0000x6-Fv
+ for linux-arm-kernel@lists.infradead.org; Fri, 14 Jun 2019 03:13:29 +0000
+Received: by mail-pg1-x543.google.com with SMTP id k187so690950pga.0
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 13 Jun 2019 20:13:22 -0700 (PDT)
+ Thu, 13 Jun 2019 20:13:25 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=yC2M+WqtpDn8WEqkn0+0Dw3Z53HTrfg3c6ZZe0WXdnU=;
- b=WmcnbRBlcrJ3IY9xi/BpOaVweisIwA209RaPUwI7iSrlOTsC7QIVtv11a++G0ymVy7
- 7/d/e7VeS1Blvy4ln/zT1GMlpYXFOnxjRGhRK46l6U0++5CH5OxVJgM3nYwedYcr1Sle
- oDzoFzaqUV04aFnHFxAXamISMuLuvK/1aD7zUY4r9+NCaMrNwNb4wlkrxzVumU0D9+Z6
- T2iUSYDPHRgTLloTFhTVt6JlnrJ6q1Xqtd4HeF1lDvu2En8MYfAfcVMV7OrT0F4SZaXu
- mxcZPmSigde4P5X5BaV8Lxqw5wOkLPQPbd9ia1kHlKJKVZ0Xf1lGzFRtTLUs0my/AxvO
- T4Pw==
+ bh=4cjUvWF1fG1uJf64DV9LIZ2qblEK4Qh4cwDlO2OXHlc=;
+ b=sFWQWr9WQVIoODnq13osUci8fXXwEGt2JIkyrqUTrbBm4bd7VB/u8y0UxppVd+BeiR
+ UtJXoGi1ehpyDUqs0e+ubar9YWT057q4MMJ/bKxw+xgLk1CyMMDO7hhq1T1pBX5UmLjs
+ B5rQdnQ1JEvgyyBHk/Gy2qptGPg2I94HqYxOjVeSouPZN5f/0YJc8VbqPpFuDDEwW3Lt
+ aQBgpKRwEs98T1ALDuHy0H2ZWiKHpgj0p91BRIyGEptiEu7RGwz9vWTkk6cvMhx/7lzq
+ lBYMXv4P2NwEPJa9GKD61+FgGjo/iIZK/QRSGYBghxS5ZCiizlV5quX9rJ+mM5Fkq6M+
+ e5Ww==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=yC2M+WqtpDn8WEqkn0+0Dw3Z53HTrfg3c6ZZe0WXdnU=;
- b=c0HCYiNFsTA6+PffiA5cF5r/nBNX0zcDUK14yaccfRj7JYFmGRVgz9Ycdydl6doDwt
- 6oTKZi8Kw5h1C9Y7n3JNLKHyXhVkvyel88xb/ouQFQ5SWEyigK3PAJ4CxpMbVwxHOQEw
- s1jKGAMuzlWJv4gGh16ZONHBi9Ayw1UNnRp35pxh24tSgBTftsRugAFdRKPudD5d8Lqp
- YgP6MLIimzd0zB2AeNf43Kx5gtkZy+bQQRgqufXeBQf81YvSK7Hv5p/414fodGEwDUSA
- jLw5uw9IkagBecmqq2ndhMgSDGvjTwq1r22I9YxFfir6CAneHB0MfsMYO3bm5kqc0tmb
- w9ZQ==
-X-Gm-Message-State: APjAAAUEaakYvshvMs6biZG8pcO2baoBf9YYpbFuwjETFLaBfb35Aaia
- LycKmjenhTYTzBU2BmhhAW99fnespzo=
-X-Google-Smtp-Source: APXvYqzUJl9Sg4Y4+3JJovtQD1uCkXXEmQspFedgwUHEnuiI9WeCF8uwvGONeY8SRIc2tPUgt/E34A==
-X-Received: by 2002:a17:902:7007:: with SMTP id
- y7mr36617088plk.28.1560482001151; 
- Thu, 13 Jun 2019 20:13:21 -0700 (PDT)
+ bh=4cjUvWF1fG1uJf64DV9LIZ2qblEK4Qh4cwDlO2OXHlc=;
+ b=jiH9hbVzoplgZn12isVfMhoPvBWXpLmahc4A1uTWinI/3UxWshd/zGKyM3gNjC0y68
+ Avx6YMvdz9i88SLAKVL+DTC+5pbTGg1PIrRKeK4HgMTvcXHi/la+tXWv/40spzVlV23A
+ xPeR22miX7i2qfMvCXxOzhzFO+Zrx5PGcl9MSxTowpGrXE0OMKRyqdhBbuOC+y7K1GAA
+ ClIA6D2k0DoPleA6GesbHm3f6sR9z9Axs1s749M2Gg/003D94CCet6uisUoobxcU8yKf
+ j+J3rzjmJ0mMmDviD0FP2pEMWmwcTS5JbEOGn02HTcF74UY1MPwuRw5OiQ4WPFykOrjT
+ h2KA==
+X-Gm-Message-State: APjAAAVFkhhUUMxtOdaSIAyPN4lM4MhZ12X11ayhpL9+rxeD4rfEmlRF
+ 87/RNOhn47MuL5PCjDsK1wqxRHRBYns=
+X-Google-Smtp-Source: APXvYqzlH0OcxsgdIzwPZqpnKGrcfCU430u+ms0DTeK9I3s4ge2lcX/vcnViYs4es5GBTSoBrl9MOA==
+X-Received: by 2002:a63:f146:: with SMTP id o6mr32948616pgk.179.1560482003778; 
+ Thu, 13 Jun 2019 20:13:23 -0700 (PDT)
 Received: from localhost ([122.172.66.84])
- by smtp.gmail.com with ESMTPSA id r88sm1527732pjb.8.2019.06.13.20.13.20
+ by smtp.gmail.com with ESMTPSA id m2sm1083791pgq.48.2019.06.13.20.13.22
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Thu, 13 Jun 2019 20:13:20 -0700 (PDT)
+ Thu, 13 Jun 2019 20:13:23 -0700 (PDT)
 From: Viresh Kumar <viresh.kumar@linaro.org>
 To: linux-arm-kernel@lists.infradead.org,
  Julien Thierry <Julien.Thierry@arm.com>
-Subject: [PATCH v4.4 33/45] ARM: 8478/2: arm/arm64: add arm-smccc
-Date: Fri, 14 Jun 2019 08:38:16 +0530
-Message-Id: <d96f0b5549581dbcc095f61d3dcc0163f8043470.1560480942.git.viresh.kumar@linaro.org>
+Subject: [PATCH v4.4 34/45] arm/arm64: KVM: Implement PSCI 1.0 support
+Date: Fri, 14 Jun 2019 08:38:17 +0530
+Message-Id: <673b7f2b7b85c228bf5136a273da7fc97d43c4d8.1560480942.git.viresh.kumar@linaro.org>
 X-Mailer: git-send-email 2.21.0.rc0.269.g1a574e7a288b
 In-Reply-To: <cover.1560480942.git.viresh.kumar@linaro.org>
 References: <cover.1560480942.git.viresh.kumar@linaro.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190613_201323_240579_BB01347F 
-X-CRM114-Status: GOOD (  19.52  )
+X-CRM114-CacheID: sfid-20190613_201325_637734_7D2C50E8 
+X-CRM114-Status: GOOD (  14.04  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:644 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:543 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -108,157 +107,114 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Jens Wiklander <jens.wiklander@linaro.org>
+From: Marc Zyngier <marc.zyngier@arm.com>
 
-commit 98dd64f34f47ce19b388d9015f767f48393a81eb upstream.
+commit 58e0b2239a4d997094ba63986ef4de29ddc91d87 upstream.
 
-Adds helpers to do SMC and HVC based on ARM SMC Calling Convention.
-CONFIG_HAVE_ARM_SMCCC is enabled for architectures that may support the
-SMC or HVC instruction. It's the responsibility of the caller to know if
-the SMC instruction is supported by the platform.
+PSCI 1.0 can be trivially implemented by providing the FEATURES
+call on top of PSCI 0.2 and returning 1.0 as the PSCI version.
 
-This patch doesn't provide an implementation of the declared functions.
-Later patches will bring in implementations and set
-CONFIG_HAVE_ARM_SMCCC for ARM and ARM64 respectively.
+We happily ignore everything else, as they are either optional or
+are clarifications that do not require any additional change.
 
-Reviewed-by: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
-Signed-off-by: Jens Wiklander <jens.wiklander@linaro.org>
-Signed-off-by: Russell King <rmk+kernel@arm.linux.org.uk>
-[ v4.4: Added #ifndef __ASSEMBLY__ section to fix compilation issues ]
+PSCI 1.0 is now the default until we decide to add a userspace
+selection API.
+
+Reviewed-by: Christoffer Dall <christoffer.dall@linaro.org>
+Tested-by: Ard Biesheuvel <ard.biesheuvel@linaro.org>
+Signed-off-by: Marc Zyngier <marc.zyngier@arm.com>
+Signed-off-by: Catalin Marinas <catalin.marinas@arm.com>
+[ v4.4: account for files moved to virt/ upstream ]
 Signed-off-by: Viresh Kumar <viresh.kumar@linaro.org>
 ---
- drivers/firmware/Kconfig  |   3 ++
- include/linux/arm-smccc.h | 107 ++++++++++++++++++++++++++++++++++++++
- 2 files changed, 110 insertions(+)
- create mode 100644 include/linux/arm-smccc.h
+ arch/arm/kvm/psci.c    | 45 +++++++++++++++++++++++++++++++++++++++++-
+ include/kvm/arm_psci.h |  3 +++
+ 2 files changed, 47 insertions(+), 1 deletion(-)
 
-diff --git a/drivers/firmware/Kconfig b/drivers/firmware/Kconfig
-index cf478fe6b335..49a3a1185bb6 100644
---- a/drivers/firmware/Kconfig
-+++ b/drivers/firmware/Kconfig
-@@ -173,6 +173,9 @@ config QCOM_SCM_64
- 	def_bool y
- 	depends on QCOM_SCM && ARM64
+diff --git a/arch/arm/kvm/psci.c b/arch/arm/kvm/psci.c
+index 7ef6cdd22163..23428a3ac69b 100644
+--- a/arch/arm/kvm/psci.c
++++ b/arch/arm/kvm/psci.c
+@@ -232,7 +232,7 @@ static void kvm_psci_system_reset(struct kvm_vcpu *vcpu)
+ int kvm_psci_version(struct kvm_vcpu *vcpu)
+ {
+ 	if (test_bit(KVM_ARM_VCPU_PSCI_0_2, vcpu->arch.features))
+-		return KVM_ARM_PSCI_0_2;
++		return KVM_ARM_PSCI_LATEST;
  
-+config HAVE_ARM_SMCCC
-+	bool
+ 	return KVM_ARM_PSCI_0_1;
+ }
+@@ -311,6 +311,47 @@ static int kvm_psci_0_2_call(struct kvm_vcpu *vcpu)
+ 	return ret;
+ }
+ 
++static int kvm_psci_1_0_call(struct kvm_vcpu *vcpu)
++{
++	u32 psci_fn = smccc_get_function(vcpu);
++	u32 feature;
++	unsigned long val;
++	int ret = 1;
 +
- source "drivers/firmware/broadcom/Kconfig"
- source "drivers/firmware/google/Kconfig"
- source "drivers/firmware/efi/Kconfig"
-diff --git a/include/linux/arm-smccc.h b/include/linux/arm-smccc.h
-new file mode 100644
-index 000000000000..611d10580340
---- /dev/null
-+++ b/include/linux/arm-smccc.h
-@@ -0,0 +1,107 @@
-+/*
-+ * Copyright (c) 2015, Linaro Limited
-+ *
-+ * This software is licensed under the terms of the GNU General Public
-+ * License version 2, as published by the Free Software Foundation, and
-+ * may be copied, distributed, and modified under those terms.
-+ *
-+ * This program is distributed in the hope that it will be useful,
-+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
-+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-+ * GNU General Public License for more details.
-+ *
-+ */
-+#ifndef __LINUX_ARM_SMCCC_H
-+#define __LINUX_ARM_SMCCC_H
++	switch(psci_fn) {
++	case PSCI_0_2_FN_PSCI_VERSION:
++		val = KVM_ARM_PSCI_1_0;
++		break;
++	case PSCI_1_0_FN_PSCI_FEATURES:
++		feature = smccc_get_arg1(vcpu);
++		switch(feature) {
++		case PSCI_0_2_FN_PSCI_VERSION:
++		case PSCI_0_2_FN_CPU_SUSPEND:
++		case PSCI_0_2_FN64_CPU_SUSPEND:
++		case PSCI_0_2_FN_CPU_OFF:
++		case PSCI_0_2_FN_CPU_ON:
++		case PSCI_0_2_FN64_CPU_ON:
++		case PSCI_0_2_FN_AFFINITY_INFO:
++		case PSCI_0_2_FN64_AFFINITY_INFO:
++		case PSCI_0_2_FN_MIGRATE_INFO_TYPE:
++		case PSCI_0_2_FN_SYSTEM_OFF:
++		case PSCI_0_2_FN_SYSTEM_RESET:
++		case PSCI_1_0_FN_PSCI_FEATURES:
++			val = 0;
++			break;
++		default:
++			val = PSCI_RET_NOT_SUPPORTED;
++			break;
++		}
++		break;
++	default:
++		return kvm_psci_0_2_call(vcpu);
++	}
 +
-+#include <linux/linkage.h>
-+#include <linux/types.h>
++	smccc_set_retval(vcpu, val, 0, 0, 0);
++	return ret;
++}
 +
-+/*
-+ * This file provides common defines for ARM SMC Calling Convention as
-+ * specified in
-+ * http://infocenter.arm.com/help/topic/com.arm.doc.den0028a/index.html
-+ */
+ static int kvm_psci_0_1_call(struct kvm_vcpu *vcpu)
+ {
+ 	struct kvm *kvm = vcpu->kvm;
+@@ -353,6 +394,8 @@ static int kvm_psci_0_1_call(struct kvm_vcpu *vcpu)
+ int kvm_psci_call(struct kvm_vcpu *vcpu)
+ {
+ 	switch (kvm_psci_version(vcpu)) {
++	case KVM_ARM_PSCI_1_0:
++		return kvm_psci_1_0_call(vcpu);
+ 	case KVM_ARM_PSCI_0_2:
+ 		return kvm_psci_0_2_call(vcpu);
+ 	case KVM_ARM_PSCI_0_1:
+diff --git a/include/kvm/arm_psci.h b/include/kvm/arm_psci.h
+index 5659343580a3..32360432cff5 100644
+--- a/include/kvm/arm_psci.h
++++ b/include/kvm/arm_psci.h
+@@ -22,6 +22,9 @@
+ 
+ #define KVM_ARM_PSCI_0_1	PSCI_VERSION(0, 1)
+ #define KVM_ARM_PSCI_0_2	PSCI_VERSION(0, 2)
++#define KVM_ARM_PSCI_1_0	PSCI_VERSION(1, 0)
 +
-+#define ARM_SMCCC_STD_CALL		0
-+#define ARM_SMCCC_FAST_CALL		1
-+#define ARM_SMCCC_TYPE_SHIFT		31
-+
-+#define ARM_SMCCC_SMC_32		0
-+#define ARM_SMCCC_SMC_64		1
-+#define ARM_SMCCC_CALL_CONV_SHIFT	30
-+
-+#define ARM_SMCCC_OWNER_MASK		0x3F
-+#define ARM_SMCCC_OWNER_SHIFT		24
-+
-+#define ARM_SMCCC_FUNC_MASK		0xFFFF
-+
-+#define ARM_SMCCC_IS_FAST_CALL(smc_val)	\
-+	((smc_val) & (ARM_SMCCC_FAST_CALL << ARM_SMCCC_TYPE_SHIFT))
-+#define ARM_SMCCC_IS_64(smc_val) \
-+	((smc_val) & (ARM_SMCCC_SMC_64 << ARM_SMCCC_CALL_CONV_SHIFT))
-+#define ARM_SMCCC_FUNC_NUM(smc_val)	((smc_val) & ARM_SMCCC_FUNC_MASK)
-+#define ARM_SMCCC_OWNER_NUM(smc_val) \
-+	(((smc_val) >> ARM_SMCCC_OWNER_SHIFT) & ARM_SMCCC_OWNER_MASK)
-+
-+#define ARM_SMCCC_CALL_VAL(type, calling_convention, owner, func_num) \
-+	(((type) << ARM_SMCCC_TYPE_SHIFT) | \
-+	((calling_convention) << ARM_SMCCC_CALL_CONV_SHIFT) | \
-+	(((owner) & ARM_SMCCC_OWNER_MASK) << ARM_SMCCC_OWNER_SHIFT) | \
-+	((func_num) & ARM_SMCCC_FUNC_MASK))
-+
-+#define ARM_SMCCC_OWNER_ARCH		0
-+#define ARM_SMCCC_OWNER_CPU		1
-+#define ARM_SMCCC_OWNER_SIP		2
-+#define ARM_SMCCC_OWNER_OEM		3
-+#define ARM_SMCCC_OWNER_STANDARD	4
-+#define ARM_SMCCC_OWNER_TRUSTED_APP	48
-+#define ARM_SMCCC_OWNER_TRUSTED_APP_END	49
-+#define ARM_SMCCC_OWNER_TRUSTED_OS	50
-+#define ARM_SMCCC_OWNER_TRUSTED_OS_END	63
-+
-+#ifndef __ASSEMBLY__
-+
-+/**
-+ * struct arm_smccc_res - Result from SMC/HVC call
-+ * @a0-a3 result values from registers 0 to 3
-+ */
-+struct arm_smccc_res {
-+	unsigned long a0;
-+	unsigned long a1;
-+	unsigned long a2;
-+	unsigned long a3;
-+};
-+
-+/**
-+ * arm_smccc_smc() - make SMC calls
-+ * @a0-a7: arguments passed in registers 0 to 7
-+ * @res: result values from registers 0 to 3
-+ *
-+ * This function is used to make SMC calls following SMC Calling Convention.
-+ * The content of the supplied param are copied to registers 0 to 7 prior
-+ * to the SMC instruction. The return values are updated with the content
-+ * from register 0 to 3 on return from the SMC instruction.
-+ */
-+asmlinkage void arm_smccc_smc(unsigned long a0, unsigned long a1,
-+			unsigned long a2, unsigned long a3, unsigned long a4,
-+			unsigned long a5, unsigned long a6, unsigned long a7,
-+			struct arm_smccc_res *res);
-+
-+/**
-+ * arm_smccc_hvc() - make HVC calls
-+ * @a0-a7: arguments passed in registers 0 to 7
-+ * @res: result values from registers 0 to 3
-+ *
-+ * This function is used to make HVC calls following SMC Calling
-+ * Convention.  The content of the supplied param are copied to registers 0
-+ * to 7 prior to the HVC instruction. The return values are updated with
-+ * the content from register 0 to 3 on return from the HVC instruction.
-+ */
-+asmlinkage void arm_smccc_hvc(unsigned long a0, unsigned long a1,
-+			unsigned long a2, unsigned long a3, unsigned long a4,
-+			unsigned long a5, unsigned long a6, unsigned long a7,
-+			struct arm_smccc_res *res);
-+
-+#endif /*__ASSEMBLY__*/
-+#endif /*__LINUX_ARM_SMCCC_H*/
++#define KVM_ARM_PSCI_LATEST	KVM_ARM_PSCI_1_0
+ 
+ int kvm_psci_version(struct kvm_vcpu *vcpu);
+ int kvm_psci_call(struct kvm_vcpu *vcpu);
 -- 
 2.21.0.rc0.269.g1a574e7a288b
 
