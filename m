@@ -2,81 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 484214529B
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Jun 2019 05:17:25 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4180D4529C
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Jun 2019 05:17:44 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=wbGh8iqvW5UYgpZmRGTKG41D5K4SX5o0obbS9Yz3WHM=; b=JJ20wQDjC7y9pt
-	OA9vz7AWLvqPfPePsKuyr+5WhQ0AUobZlHusuKcX+aCyt3NtrrZch8lfVGFeX9hDfl1egBC6ACOAB
-	8Q23AvaPP5atYGgdbMPHf9QpEq6DrBVlfGSvu/uxUcqGapYIhM5XyYNzzi5MYnzGdRb8/AZ+4AuB4
-	yhcmjHhCird06hI59jb0+fArb/PoleoDjvqpQfye+W7uDyJM5SlRj9BIE9s8ZRFxMp0YYqFl91AhH
-	qpPP2oIdGcXsdQv2CkLa/hsf62bIBAQLd4NGMZQGQlIVLRZiPYaLWutM1TGI4QidU4OJVLsVrVkr3
-	1l5tiTQJSIscR3xq5IBA==;
+	List-Owner; bh=T7e+eJi4s9KVLZ8DuWfzK4MJ1almm9M0BRCRnGc95xw=; b=nf8oJ6ALJjNfAJ
+	EKjP6/e6KJIbdb2kJOLcCikuhZLIzBm+haVbC93ui9ad2l49mI4dIq+wBI0Dg947i8otG5d2vKdnj
+	VD1mQdaj7STS7tAwfbgbeVOTPC062xvWC3rEK1LqGVUxCuF6hLhnbTbGVPocqt1Qsv+/bYq3Y9lk9
+	c4fITmHje5cyEQrHo6VMTKg8sW+W2ZE9nVSLWymEKJlfNyXc3a1daSbqV28OGcyN1fk3QfXIyJLbQ
+	ACzsK5yJhhajz6mcdjaWzBccr2aGNLMl4SD3JWnnc5KuKrzeNpLtU7ByflpcVVp5Z4nIdXZf/y0EO
+	MSzZGxwgXyh43I6jK1UQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hbciO-0005b1-FZ; Fri, 14 Jun 2019 03:17:20 +0000
-Received: from mail-pf1-x441.google.com ([2607:f8b0:4864:20::441])
+	id 1hbcik-0005rq-NW; Fri, 14 Jun 2019 03:17:42 +0000
+Received: from mail-pl1-x642.google.com ([2607:f8b0:4864:20::642])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hbcdh-0000Lq-S5
- for linux-arm-kernel@lists.infradead.org; Fri, 14 Jun 2019 03:12:33 +0000
-Received: by mail-pf1-x441.google.com with SMTP id d126so502855pfd.2
+ id 1hbcdk-0000No-Pb
+ for linux-arm-kernel@lists.infradead.org; Fri, 14 Jun 2019 03:12:35 +0000
+Received: by mail-pl1-x642.google.com with SMTP id cl9so368161plb.10
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 13 Jun 2019 20:12:29 -0700 (PDT)
+ Thu, 13 Jun 2019 20:12:32 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=+VnHrOqiLyuTpal1o2zRenzQv7xKEdgOssME91mwrbo=;
- b=Tb47hPFhrekRIM/B4VddOaEWndYWU2Mpfbs111lRorm/o8pnyAoKX5rwgAtdbh9Ccw
- fwb7GLYKgWUtNl8cQJpMYeOvZoNMd7Wu5qd7n6wAz1atAQo8t+VQSLxOEhz9562am+vj
- VWg/seVR9qMm30yB3daUKfVvrwvi/YkYDymDHYZ4mYYiUQZPdeBSQdGrFz/nxMizP2tH
- yYxcEWqg/Jga4CVq0WCtbo1VV+7l2YAP2pyZw6FikYnWiH76f1YfzGyFVJNfVMaAVbWA
- Y3N6VH6UYvlE9futQG+BB1WPjVZ3xk0qI+pY+L/tJrJ2Z6UndfT1oaEkJe4T3EbTckEH
- vF3w==
+ bh=tUK8ETga6k61l9Q+/z8rY6SIV6XG+DcjRuCd/1NWAIQ=;
+ b=G2wmSB0wl3ZSst3wBKM0lmkGVB3EAHRbdwUzF55iA5Zc7PyVUPSzOlglM3cYPWwRdH
+ kG5s+Oc45ZUBoFc7mYCpXBsXAu5XGmy/7ktcJKN5fvs5gGGo+RUG59zBtu0U0c7OD1G5
+ rCdw3QRLYuHQN2CR2z5SNEW280SeN+8hmo3JnWq17WmQ0XAbAnBQB+8kSzeiv2GOos6N
+ i3DZfvNnVkzqtXL9ayx0CfRlKWcSGFcOx2QhOmHPWcoJi1efyzQBp+8/rbWneAGyAo7p
+ 6b75570FcqLite+nlTb86LYO3NmyJ9+l6P9/g2w84R7+Ws1R4y+j1181T/YYXzDR4xsa
+ qF2w==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=+VnHrOqiLyuTpal1o2zRenzQv7xKEdgOssME91mwrbo=;
- b=WeB53bicuU7CfGxXMNIQAjJlUvv29TsMJeYiWN0X0iVXsvzu6alrAxSqtH6iQ045jE
- eYLV07iR9lvIka5+Rp33rsoFtPllWN4Ga7VKXKrrw9EsNTe444uoUZEWyk28rbcwUAaD
- ivxlDqYGeAZVQ3rpx0JyE6fGsUOPjJqymjbj8wzNjc5qFa80HMTrPoejlHwZaR7Rw1yR
- MqQNzP1RJ4JBQ7dpDNe4W8P23NDKbQwsA/rMs1FMjFjZ5RVTkXIzjqu6C60LHSeo2yjL
- 1v7DSeXfdl6DhOYaNMF7de2q/9hhesUzdAArfrAnaGPBT69ygdWeY3jk3mCYGMWuv4cO
- MH1g==
-X-Gm-Message-State: APjAAAX3f5zWSq3KNJv+bVW24jIJvpAeoUmregl7hAVH/oPbbCvggloR
- ryaptaobXERNIWe2isERyjoUGFodWQ0=
-X-Google-Smtp-Source: APXvYqxB1kT4JeouoUecMrtwQioocrM699/ETpWT/9TwmrlHZEVVfCDOCCQfYKs58tBjEcSSaW4k0g==
-X-Received: by 2002:a65:4209:: with SMTP id c9mr34462297pgq.111.1560481948541; 
- Thu, 13 Jun 2019 20:12:28 -0700 (PDT)
+ bh=tUK8ETga6k61l9Q+/z8rY6SIV6XG+DcjRuCd/1NWAIQ=;
+ b=GlD5oBDm90oUccpFpTj0CB9k8r620NhzPKnhCjvYw3PxOz89shN/9WIxru0JqAcNqD
+ 2QVNUfL/aTtitLovRA0g+xXv4AiLDEzcd4SoB3p4KuqoXPjhpNsuk90j3kMR9pBBJRqF
+ HgQYGln7+zCFAXy/eKulFvCIwPb+M05l4K7lwgcuDoa/uyEFZdJkCY5yGZBduMoz1aVu
+ gUdKtd7tyVzVspHjjwrM1fKJegLVpBacVdn6rX6WWHY/qfv/M1rJFYz0dE2fhfw9XaE1
+ OgDwrrx82ZQe7Zl/DlvDF8m6JWGEOAlMJIU6kcWDCu8R6lDtp933fog0rrTEg23UbGIT
+ 33CA==
+X-Gm-Message-State: APjAAAVe691A22yBy8i84iFnOoUNls65plhnqM6MgIvvNkxi/ElVk8xf
+ eYtZdTQtQRuAj13ON9meG9//0dbiSbU=
+X-Google-Smtp-Source: APXvYqy0h/l06dEAqb68tyJjmoqTO4IsmomXMrOr3ePgip3/iFchSjUdjaq0IfSo5o/2v8S6XIqJCw==
+X-Received: by 2002:a17:902:522:: with SMTP id
+ 31mr86143113plf.296.1560481951066; 
+ Thu, 13 Jun 2019 20:12:31 -0700 (PDT)
 Received: from localhost ([122.172.66.84])
- by smtp.gmail.com with ESMTPSA id g2sm1165232pfb.95.2019.06.13.20.12.27
+ by smtp.gmail.com with ESMTPSA id p68sm1036348pfb.80.2019.06.13.20.12.30
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Thu, 13 Jun 2019 20:12:28 -0700 (PDT)
+ Thu, 13 Jun 2019 20:12:30 -0700 (PDT)
 From: Viresh Kumar <viresh.kumar@linaro.org>
 To: linux-arm-kernel@lists.infradead.org,
  Julien Thierry <Julien.Thierry@arm.com>
-Subject: [PATCH v4.4 13/45] arm64: cpufeature: Pass capability structure to
- ->enable callback
-Date: Fri, 14 Jun 2019 08:37:56 +0530
-Message-Id: <16cc80ceb76db7e889b16a3d9b8c45ae821087de.1560480942.git.viresh.kumar@linaro.org>
+Subject: [PATCH v4.4 14/45] drivers/firmware: Expose psci_get_version through
+ psci_ops structure
+Date: Fri, 14 Jun 2019 08:37:57 +0530
+Message-Id: <5f5b6ed2828ebd885fa4bc8e764483d81f419bc5.1560480942.git.viresh.kumar@linaro.org>
 X-Mailer: git-send-email 2.21.0.rc0.269.g1a574e7a288b
 In-Reply-To: <cover.1560480942.git.viresh.kumar@linaro.org>
 References: <cover.1560480942.git.viresh.kumar@linaro.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190613_201230_047301_42B98F38 
-X-CRM114-Status: GOOD (  12.56  )
+X-CRM114-CacheID: sfid-20190613_201232_929613_3566D058 
+X-CRM114-Status: GOOD (  11.79  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:441 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:642 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -110,46 +111,48 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Will Deacon <will.deacon@arm.com>
 
-commit 0a0d111d40fd1dc588cc590fab6b55d86ddc71d3 upstream.
+commit d68e3ba5303f7e1099f51fdcd155f5263da8569b upstream.
 
-In order to invoke the CPU capability ->matches callback from the ->enable
-callback for applying local-CPU workarounds, we need a handle on the
-capability structure.
+Entry into recent versions of ARM Trusted Firmware will invalidate the CPU
+branch predictor state in order to protect against aliasing attacks.
 
-This patch passes a pointer to the capability structure to the ->enable
-callback.
+This patch exposes the PSCI "VERSION" function via psci_ops, so that it
+can be invoked outside of the PSCI driver where necessary.
 
-Reviewed-by: Suzuki K Poulose <suzuki.poulose@arm.com>
+Acked-by: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
 Signed-off-by: Will Deacon <will.deacon@arm.com>
 Signed-off-by: Catalin Marinas <catalin.marinas@arm.com>
-[ v4.4: Use &caps[i] instead as caps isn't incremented ]
 Signed-off-by: Viresh Kumar <viresh.kumar@linaro.org>
 ---
- arch/arm64/kernel/cpufeature.c | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
+ drivers/firmware/psci.c | 2 ++
+ include/linux/psci.h    | 1 +
+ 2 files changed, 3 insertions(+)
 
-diff --git a/arch/arm64/kernel/cpufeature.c b/arch/arm64/kernel/cpufeature.c
-index c1eddc07d996..c7a2827658fd 100644
---- a/arch/arm64/kernel/cpufeature.c
-+++ b/arch/arm64/kernel/cpufeature.c
-@@ -780,7 +780,7 @@ static void enable_cpu_capabilities(const struct arm64_cpu_capabilities *caps)
- 			 * uses an IPI, giving us a PSTATE that disappears when
- 			 * we return.
- 			 */
--			stop_machine(caps[i].enable, NULL, cpu_online_mask);
-+			stop_machine(caps[i].enable, (void *)&caps[i], cpu_online_mask);
- }
+diff --git a/drivers/firmware/psci.c b/drivers/firmware/psci.c
+index ae70d2485ca1..290f8982e7b3 100644
+--- a/drivers/firmware/psci.c
++++ b/drivers/firmware/psci.c
+@@ -305,6 +305,8 @@ static void __init psci_init_migrate(void)
+ static void __init psci_0_2_set_functions(void)
+ {
+ 	pr_info("Using standard PSCI v0.2 function IDs\n");
++	psci_ops.get_version = psci_get_version;
++
+ 	psci_function_id[PSCI_FN_CPU_SUSPEND] =
+ 					PSCI_FN_NATIVE(0_2, CPU_SUSPEND);
+ 	psci_ops.cpu_suspend = psci_cpu_suspend;
+diff --git a/include/linux/psci.h b/include/linux/psci.h
+index 12c4865457ad..04b4d92c7791 100644
+--- a/include/linux/psci.h
++++ b/include/linux/psci.h
+@@ -25,6 +25,7 @@ bool psci_power_state_loses_context(u32 state);
+ bool psci_power_state_is_valid(u32 state);
  
- #ifdef CONFIG_HOTPLUG_CPU
-@@ -894,7 +894,7 @@ void verify_local_cpu_capabilities(void)
- 		if (!feature_matches(__raw_read_system_reg(caps[i].sys_reg), &caps[i]))
- 			fail_incapable_cpu("arm64_features", &caps[i]);
- 		if (caps[i].enable)
--			caps[i].enable(NULL);
-+			caps[i].enable((void *)&caps[i]);
- 	}
- 
- 	for (i = 0, caps = arm64_hwcaps; caps[i].desc; i++) {
+ struct psci_operations {
++	u32 (*get_version)(void);
+ 	int (*cpu_suspend)(u32 state, unsigned long entry_point);
+ 	int (*cpu_off)(u32 state);
+ 	int (*cpu_on)(unsigned long cpuid, unsigned long entry_point);
 -- 
 2.21.0.rc0.269.g1a574e7a288b
 
