@@ -2,92 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 778B44579F
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Jun 2019 10:35:55 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5E19D457BB
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Jun 2019 10:38:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=HbqIsmIg4kSGFLgPSMpKFlFPDrDBN748USDe08+OWCc=; b=YB1ZwDgZ5GdRAcSsJbk9W7Zv7
-	TyzPF4FgXfTPyHgwETUNC2kOMZEkBkThhDVuSRW8Pn7JxuqoGqgfddUqbtyEJdjQbWACVSpRg7m7n
-	4yz50DoJl9oYiHd9lDUpYXsKYLQNt5Mat4lprUVkhYG0zKYiNgZqispkqnT/SqRb8Mf9J+kTmzSae
-	ykQwdHSNWCwf1LIOLodBI1tH6jy7BmjOAnoalVtNrK4FlWyo5deStCHUfK/09bXGKJy8+hQQJ6X+A
-	VrHkbjympZig+3/yAlbJQoqT+D98YYhUogjc0psaj57e4DSDdj0QK/P0mkpgs1gxfocO+5fWAKYso
-	nUNnSGHAA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=TpAxp6ePpZvWEUJHxhw/9Mr0c8192FBFtAWNLB2Ol6c=; b=fFGtnOTc/3VeId
+	1lqBJXGHsaqcD+tcJae3npZXlNO1vQsz8bRAdFdOE/O0eqq8i0znQUAaR7UAtba8pc/UXpiCkr+iG
+	9kUWfT6I2EGUDpFcyu0lcP6I9TZhW2ZAQgcXaw+licEXNH/U7uv9D/lWk1Xucply9zoQO7e5VHv8c
+	gWn2UA92rqnPuzVsF6Vk02FNsvte54tuXzRUXTvPd4m10rHWWGQyWh9MEabf5eHNPatRTt9/ChKuQ
+	OaP6gi+LVSobJu+d3wodJBXfIvHLz17Ju1M3jk50TRWEO4mehcZ8W6i8CBR/VbQvt5nV8WNmQzvih
+	4GSR1pCxsD+ULUShCKRw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hbhgc-0008ED-A4; Fri, 14 Jun 2019 08:35:50 +0000
-Received: from mail-lf1-x142.google.com ([2a00:1450:4864:20::142])
+	id 1hbhj8-0001ln-63; Fri, 14 Jun 2019 08:38:26 +0000
+Received: from gate.crashing.org ([63.228.1.57])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hbhgN-0008D8-Ga
- for linux-arm-kernel@lists.infradead.org; Fri, 14 Jun 2019 08:35:36 +0000
-Received: by mail-lf1-x142.google.com with SMTP id d11so1145176lfb.4
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 14 Jun 2019 01:35:34 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=cogentembedded-com.20150623.gappssmtp.com; s=20150623;
- h=subject:to:cc:references:from:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=pWi+5Am3aiah73yNoWhssqvYmNUO+DbKo0cUh/HhkqE=;
- b=pKRcA/99Kn1RlfqkHCYqITsKL7wcnLiDSjciQMsaMhyKPrztKtivTtE5j6rxb/p5mm
- m9XTZ4uAkazuHYYFeuR92f/e88xXmS32is65BsB2JBkW6wS0oiYDvfo+Y+c0cXfPJF/B
- r9FM/Df0Rb/33FclCysY54h+m5sSqYcwvaqnXP3YyIlemTEuVl+7OaUdilcQbnk6A4lR
- LU/f5FEfNUuL9DGNwp2Pg+v0B0BOXwVZpQ9RSJLtV4VVl5VMRs/3ApUkL6ieZSnrQ3Vv
- EABPOWr8yihT8hyr5T9ABQSv57oEbueA1tmjA49U0HVBi7OZAojYps6AEv+Nny2MR4oJ
- sJ/w==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=pWi+5Am3aiah73yNoWhssqvYmNUO+DbKo0cUh/HhkqE=;
- b=kBqFWK4JuB6wrdTPktCEGrbPAu3H1aSsRWLtPoWf0FtI8sNtDymow1Hl1nSzb6EpBG
- dpO9DweyI/cOWSn1hlV/0UXhlXuBlhC/m7XGeSWGlCdKwD2U72lsp/G2D8PrU3wlrjor
- CDNSjbbom1DSLG9+E1D/9Vcjx+SyXKS4askj4bDmX5mg8C73suHooBy2RO7MxwizCt1g
- hHIRtb+/V5Beg+WJrNEVteu7O5LWdDIT1IAw4+uRoyqV2ZxopffPwbQ9dHRDiLLbcMDR
- iqiqoVuSGjCBrITqw8nTPI8WIobtkcgf9YzbWe7hzPTqQ3U+LMK6gr/jPrbQSWXlvdoz
- MgMA==
-X-Gm-Message-State: APjAAAUyYbkignOvpaWt2cLXOscLJpyYkhs6r4iHeoTf1En2XLrcaG/e
- OsJAlCtZ4eCGeiObCeMT+163VQ==
-X-Google-Smtp-Source: APXvYqx2uAm03uGrknxT6QYWcLV22zpl1XfOYxHWcwU5kxumOqNqeSXIVWkf4PB3EpjuqDpve5pyOw==
-X-Received: by 2002:a19:22d8:: with SMTP id i207mr44177294lfi.97.1560501333006; 
- Fri, 14 Jun 2019 01:35:33 -0700 (PDT)
-Received: from [192.168.0.199] ([31.173.84.143])
- by smtp.gmail.com with ESMTPSA id 24sm504402ljs.63.2019.06.14.01.35.31
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Fri, 14 Jun 2019 01:35:32 -0700 (PDT)
-Subject: Re: [PATCH 15/17] binfmt_flat: move the MAX_SHARED_LIBS definition to
- binfmt_flat.c
-To: Christoph Hellwig <hch@lst.de>, Greg Ungerer <gerg@linux-m68k.org>
-References: <20190613070903.17214-1-hch@lst.de>
- <20190613070903.17214-16-hch@lst.de>
-From: Sergei Shtylyov <sergei.shtylyov@cogentembedded.com>
-Message-ID: <e000b92e-a047-936e-c20a-9cc8b4f524bb@cogentembedded.com>
-Date: Fri, 14 Jun 2019 11:35:20 +0300
-User-Agent: Mozilla/5.0 (Windows NT 6.3; WOW64; rv:60.0) Gecko/20100101
- Thunderbird/60.7.0
-MIME-Version: 1.0
-In-Reply-To: <20190613070903.17214-16-hch@lst.de>
-Content-Language: en-US
+ id 1hbhhU-0000ZK-VU
+ for linux-arm-kernel@lists.infradead.org; Fri, 14 Jun 2019 08:36:47 +0000
+Received: from localhost (localhost.localdomain [127.0.0.1])
+ by gate.crashing.org (8.14.1/8.14.1) with ESMTP id x5E8aWFp002722;
+ Fri, 14 Jun 2019 03:36:33 -0500
+Message-ID: <d5d3e7b9553438482854c97e09543afb7de23eaa.camel@kernel.crashing.org>
+Subject: Re: [RFC PATCH v2] arm64: acpi/pci: invoke _DSM whether to preserve
+ firmware PCI setup
+From: Benjamin Herrenschmidt <benh@kernel.crashing.org>
+To: Ard Biesheuvel <ard.biesheuvel@linaro.org>
+Date: Fri, 14 Jun 2019 18:36:32 +1000
+In-Reply-To: <CAKv+Gu95pQ7_OfLbEXHZ_bhYnqOgTBKCmTgqUY27un-Y708BgQ@mail.gmail.com>
+References: <5783e36561bb77a1deb6ba67e5a9824488cc69c6.camel@kernel.crashing.org>
+ <20190613190248.GH13533@google.com>
+ <e6c7854ae360be513f6f43729ed6d4052e289376.camel@kernel.crashing.org>
+ <CAKv+Gu95pQ7_OfLbEXHZ_bhYnqOgTBKCmTgqUY27un-Y708BgQ@mail.gmail.com>
+X-Mailer: Evolution 3.28.5-0ubuntu0.18.04.1 
+Mime-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190614_013535_549954_72EE4AB0 
-X-CRM114-Status: GOOD (  13.59  )
-X-Spam-Score: 2.5 (++)
+X-CRM114-CacheID: sfid-20190614_013645_303339_C24F6BE2 
+X-CRM114-Status: GOOD (  23.17  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (2.5 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:142 listed in]
- [list.dnswl.org]
- 2.5 SUSPICIOUS_RECIPS      Similar addresses in recipient list
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ no trust [63.228.1.57 listed in list.dnswl.org]
+ 0.0 T_SPF_PERMERROR        SPF: test of record failed (permerror)
+ 0.0 T_SPF_HELO_PERMERROR   SPF: test of HELO record failed (permerror)
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -99,48 +62,105 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: uclinux-h8-devel@lists.sourceforge.jp, linux-xtensa@linux-xtensa.org,
- Michal Simek <monstr@monstr.eu>, linux-c6x-dev@linux-c6x.org,
- linux-sh@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-m68k@lists.linux-m68k.org, linux-riscv@lists.infradead.org,
- linux-arm-kernel@lists.infradead.org
+Cc: Sinan Kaya <okaya@kernel.org>,
+ Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ Bjorn Helgaas <helgaas@kernel.org>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
+ linux-pci <linux-pci@vger.kernel.org>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hello!
-
-On 13.06.2019 10:09, Christoph Hellwig wrote:
-
-> MAX_SHARED_LIBS is an implementation detail of the kernel loader,
-> and should be kept away from the file format definition.
+On Fri, 2019-06-14 at 09:42 +0200, Ard Biesheuvel wrote:
+> The original purpose was for firmware running on 64-bit hosts to not
+> create a PCI resource assignment that was incompatible with the OS
+> booting in 32-bit mode.
 > 
-> Signed-off-by: Christoph Hellwig <hch@lst.de>
-> ---
->   fs/binfmt_flat.c     | 6 ++++++
->   include/linux/flat.h | 6 ------
->   2 files changed, 6 insertions(+), 6 deletions(-)
+> So the expectation was that a 32-bit OS would reuse whatever config
+> the firmware created, and the 64-bit version would be enlightened to
+> understand that it could reassign resource assignments to make better
+> use of the available resource windows, but this required a mechanism
+> to describe which resources should be left alone by the OS.
 > 
-> diff --git a/fs/binfmt_flat.c b/fs/binfmt_flat.c
-> index 0ca65d51bb01..ccd9843e979e 100644
-> --- a/fs/binfmt_flat.c
-> +++ b/fs/binfmt_flat.c
-> @@ -68,6 +68,12 @@
->   #define RELOC_FAILED 0xff00ff01		/* Relocation incorrect somewhere */
->   #define UNLOADED_LIB 0x7ff000ff		/* Placeholder for unused library */
->   
-> +#ifdef CONFIG_BINFMT_SHARED_FLAT
-> +#define	MAX_SHARED_LIBS			(4)
-> +#else
-> +#define	MAX_SHARED_LIBS			(1)
-> +#endif
+> So I don't think anybody cares about that use case anymore, and I have
+> no idea how widespread its use was when people did.
 
-    Perhaps the time to remove ()?
+Ok. At least my thinkpad happily assigns stuff in 64-bit space. AFAIK
+even 32-bit distros can deal with it with PAE no ?
 
-[...]
+> >   - The "probe only" method. This was created independently on powerpc
+> > and some other archs afaik. At least for powerpc, the reason for that
+> > is some interesting virtualization cases where we just cannot touch or
+> > change or move anything. The effect is to not reassign even what we
+> > dont like, and not call pci_assign_unassign_resources().
+> > 
+> >   - The "reassign everything" method. This is used by almost all
+> > embedded patforms accross archs. All arm32, all arm64 today (but we
+> > agree that's wrong), all embedded powerpc etc... This is basically
+> > meant for us not trusting whatever random uboot or other embedded FW,
+> > if any, and do a full from-scratch assignment. There are issues in how
+> > that is implemented accross the various platforms/archs, some for
+> > example still honor existing bus numbers and some don't, but I doubt
+> > it's intentional etc... but that method is there to stay.
+> > 
+> > Now, the questions are two fold
+> > 
+> >    - How do we map _DSM #5 to these, at least on arm64, maybe in the
+> > long run we can also look at affecting x86, but that's less urgent.
+> > 
+> >    - How do I ensure the above fixes my Amazon platform ? :-)
+> > 
+> 
+> It would help if you could explain what exactly is wrong with your
+> Amazon platform :-)
 
-MBR, Sergei
+Linux can't change the switch configuration. I may have mentioned
+earlier it has to do with platform sec policies. But that's not totally
+relevant, we shoudn't be changing resources anyway since in theory
+runtime FW might rely on where some system devices were assigned at
+boot. EFI fb is another example of that.
+
+The biggest issue for me right now is that the spec says pretty much at
+_DSM #5 = 0 is equivalent to _DSM #5 absent, and Bjorn seems keen on
+having it this way, but for arm64, we specifically want to distinguish
+those 2 cases.
+
+We want to honor _DSM #5 = 0, and at least initially, leave the rest
+alone.
+
+Now, we *also* want to look at switching the rest to the "normal" (for
+ACPI platforms at least) mechanism of using what FW setup and fixing up
+if necessary, but that's not what the code does today, we know just
+switching to pci_bus_claim_resources() will break some platforms, and
+we need more testing and possibly quirks to get there, so it's material
+for a separate patch.
+
+But in the meantime, I need to differenciate.
+
+Also using "probe_only" for _DSM #5 = 0 isn't a good idea, at least as
+implemented today in the rest of the kernel, probe_only also means we
+shouldn't assign what was left unassigned. However _DSM #5 allows this.
+
+So we'll need to find some more subtle way to convey these.
+
+Bjorn: At this point, because of all the above, I'm keen on going back
+to my original patch (slightly modified Ard's patch), possibly
+rewording a thing or two and addressing Lorenzo comment.
+
+We can look at a better and more generic implementation of _DSM #5
+including for child nodes after I have consolidated more of the
+resource management code.
+
+Looking at the spec (and followup discussions for specs updates), I'm
+quite keen on treating _DSM #5 = 1 as "wipe out the resource for that
+endpoint/bridge and realloc something better. There are reasons for
+that, but we can probably discuss that later.
+
+Cheers,
+Ben.
+
+
 
 _______________________________________________
 linux-arm-kernel mailing list
