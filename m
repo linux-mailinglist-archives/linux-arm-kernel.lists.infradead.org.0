@@ -2,63 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E616945A8B
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Jun 2019 12:39:09 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 23AB445AC2
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Jun 2019 12:43:04 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=VuVK0CBnbtoiRkvoqsUmd/ARvZ6xjaBBIVAua2COTZE=; b=IcoOrt43KH+NGG
-	Bc2KsTsPKB6oKwBF+vrL7DsQiQkofXKPbUKLFI+RRLKWHYf4WVgMnWf2v0ELt9BEZewVBuTinexuP
-	u+fNR7oMyza2QSxSVJtexmrJx2DZEexgLicl5tynHlqRDDMhTbzFCedvWe4MmOFnA2Bk4G/GvlDL2
-	m9wY+ngdtZekXVzvVR1xJdi98PEv5FpuMfHrXrP8LJ+kmePBtxnovB1zjD+uh+Fd71Yg+zx89VPxm
-	bpViD9Fp6jwQm6B8ob7//JSOlsKX9jqIEXrlkMndJRateLrXYstgXeaSn+SNd0KWwKu7noWKoFIk4
-	0RT4F/puu6pLIrJlFZcg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=eJggyJOz54b8SzuYqZxZYxmJedwiZLgaTjaag6nl33g=; b=pWPpjtDZkRvk7E
+	yJjdRgAm0I5SCd0eCgoO2zKdm6rFmihuy3DChWGk48LrMsNB4L31Zg0kNjvF25bA+QU+MSbf7ZxEA
+	DcxRq/ARM4JGLm2jWZZUr/1bS2lIkPTBy1Ai3CcYQsypsPqmEkg+vnhMSLQIzhUkMjypkVzyNyBEX
+	WlBqEU9zsN9yXLX3Q7sKtI/gSOPzRyhsA3OMge6OWQnKhZ/0hWlR12dCZdA5PyCRT8dt8k2BUq3ED
+	yE5pmXGUc7heLlmR586qekAlAi3WfQZ6F3LpKUGjBkZ+ZkcpZ1uHD06dbQGu7RrZKOwVcLSDgaqVB
+	yi90WVBQsKYgQVzVYZ2w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hbjbv-0005Mc-M3; Fri, 14 Jun 2019 10:39:07 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hbjbh-0005MI-VW
- for linux-arm-kernel@lists.infradead.org; Fri, 14 Jun 2019 10:38:55 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 473812B;
- Fri, 14 Jun 2019 03:38:53 -0700 (PDT)
-Received: from fuggles.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
- [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id F2CF63F246;
- Fri, 14 Jun 2019 03:40:35 -0700 (PDT)
-Date: Fri, 14 Jun 2019 11:38:50 +0100
-From: Will Deacon <will.deacon@arm.com>
-To: Ard Biesheuvel <ard.biesheuvel@linaro.org>
-Subject: Re: [RFC] Disable lockref on arm64
-Message-ID: <20190614103850.GG10659@fuggles.cambridge.arm.com>
-References: <20190506061100.GA8465@dc5-eodlnx05.marvell.com>
- <20190506181039.GA2875@brain-police>
- <20190518042424.GA28517@dc5-eodlnx05.marvell.com>
- <CAKv+Gu9U9z3iAuz4V1c5zTHuz1As8FSNGY-TJon4OLErB8ts8Q@mail.gmail.com>
- <20190522160417.GF7876@fuggles.cambridge.arm.com>
- <20190612040933.GA18848@dc5-eodlnx05.marvell.com>
- <20190612093151.GA11554@brain-police>
- <20190614070914.GA21961@dc5-eodlnx05.marvell.com>
- <20190614095846.GC10506@fuggles.cambridge.arm.com>
- <CAKv+Gu_Kdq=UPijjA84FpmO=ZsdEO9EyyF7GeOQ+WmfqtO_hMg@mail.gmail.com>
+	id 1hbjfM-0000Tn-6C; Fri, 14 Jun 2019 10:42:40 +0000
+Received: from fllv0015.ext.ti.com ([198.47.19.141])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hbjdJ-0007cM-FU
+ for linux-arm-kernel@lists.infradead.org; Fri, 14 Jun 2019 10:40:35 +0000
+Received: from lelv0266.itg.ti.com ([10.180.67.225])
+ by fllv0015.ext.ti.com (8.15.2/8.15.2) with ESMTP id x5EAdTdi073520;
+ Fri, 14 Jun 2019 05:39:29 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
+ s=ti-com-17Q1; t=1560508769;
+ bh=NG3g5iBJojJvfS8oHJGjK9j/D53U+mYMaMjCd+j3xgo=;
+ h=Subject:To:CC:References:From:Date:In-Reply-To;
+ b=v31V7xH3WPORvTexs7qp9uWWLKxufg+y1SGh1XVJUcxYreTgapec554Dxj8nHPxv+
+ Sg3slNaNDarlzjW1s004t78Cl9hkzMvHws41Rv/8rTas/svh+FsXbuD3J2Pu+MIkbG
+ ZhnR8cEWTnXDt0XUI4jUSirSq1hkqwsUwqJugIAs=
+Received: from DFLE114.ent.ti.com (dfle114.ent.ti.com [10.64.6.35])
+ by lelv0266.itg.ti.com (8.15.2/8.15.2) with ESMTPS id x5EAdTPB073450
+ (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
+ Fri, 14 Jun 2019 05:39:29 -0500
+Received: from DFLE114.ent.ti.com (10.64.6.35) by DFLE114.ent.ti.com
+ (10.64.6.35) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5; Fri, 14
+ Jun 2019 05:39:29 -0500
+Received: from fllv0039.itg.ti.com (10.64.41.19) by DFLE114.ent.ti.com
+ (10.64.6.35) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5 via
+ Frontend Transport; Fri, 14 Jun 2019 05:39:29 -0500
+Received: from [172.24.190.172] (ileax41-snat.itg.ti.com [10.172.224.153])
+ by fllv0039.itg.ti.com (8.15.2/8.15.2) with ESMTP id x5EAdQei077731;
+ Fri, 14 Jun 2019 05:39:27 -0500
+Subject: Re: [RFC v3 0/2] clocksource: davinci-timer: new driver
+To: Bartosz Golaszewski <brgl@bgdev.pl>, Kevin Hilman <khilman@kernel.org>,
+ Daniel Lezcano <daniel.lezcano@linaro.org>, Thomas Gleixner
+ <tglx@linutronix.de>, David Lechner <david@lechnology.com>
+References: <20190605083334.22383-1-brgl@bgdev.pl>
+From: Sekhar Nori <nsekhar@ti.com>
+Message-ID: <1ac8cfcf-1d77-9b6b-4aab-4171f6cf80fc@ti.com>
+Date: Fri, 14 Jun 2019 16:09:26 +0530
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.7.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CAKv+Gu_Kdq=UPijjA84FpmO=ZsdEO9EyyF7GeOQ+WmfqtO_hMg@mail.gmail.com>
-User-Agent: Mutt/1.11.1+86 (6f28e57d73f2) ()
+In-Reply-To: <20190605083334.22383-1-brgl@bgdev.pl>
+Content-Language: en-US
+X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190614_033854_106965_4B40499E 
-X-CRM114-Status: GOOD (  27.27  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190614_034033_671698_3BF5676B 
+X-CRM114-Status: GOOD (  10.58  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [198.47.19.141 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ 0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -70,86 +93,26 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Kees Cook <keescook@chromium.org>,
- "catalin.marinas@arm.com" <catalin.marinas@arm.com>,
- Jan Glauber <jglauber@marvell.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Jayachandran Chandrasekharan Nair <jnair@marvell.com>,
- Linus Torvalds <torvalds@linux-foundation.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: Bartosz Golaszewski <bgolaszewski@baylibre.com>,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Ard,
+Hi Daniel,
 
-On Fri, Jun 14, 2019 at 12:24:54PM +0200, Ard Biesheuvel wrote:
-> On Fri, 14 Jun 2019 at 11:58, Will Deacon <will.deacon@arm.com> wrote:
-> > On Fri, Jun 14, 2019 at 07:09:26AM +0000, Jayachandran Chandrasekharan Nair wrote:
-> > > x86 added a arch-specific fast refcount implementation - and the commit
-> > > specifically notes that it is faster than cmpxchg based code[1].
-> > >
-> > > There seems to be an ongoing effort to move over more and more subsystems
-> > > from atomic_t to refcount_t(e.g.[2]), specifically because refcount_t on
-> > > x86 is fast enough and you get some error checking atomic_t that does not
-> > > have.
-> >
-> > Correct, but there are also some cases that are only caught by
-> > REFCOUNT_FULL.
-> >
-> Yes, but do note that my arm64 implementation catches
-> increment-from-zero as well.
-
-Ok, so it's just the silly racy cases that are problematic?
-
-> > > Do you think Ard's patch needs changes before it can be considered? I
-> > > can take a look at that.
-> >
-> > I would like to see how it performs if we keep the checking inline, yes.
-> > I suspect Ard could spin this in short order.
+On 05/06/19 2:03 PM, Bartosz Golaszewski wrote:
+> From: Bartosz Golaszewski <bgolaszewski@baylibre.com>
 > 
-> Moving the post checks before the stores you mean? That shouldn't be
-> too difficult, I suppose, but it will certainly cost performance.
+> This is another version of the new davinci clocksource driver. After much
+> discussion this contains many changes to simplify and improve the driver.
 
-That's what I'd like to assess, since the major complaint seems to be the
-use of cmpxchg() as opposed to inline branching.
+Does this look good to you now? If yes, can you please merge and provide
+an immutable branch to me so I can merge dependent mach-davinci patches?
 
-> > > > Whatever we do, I prefer to keep REFCOUNT_FULL the default option for arm64,
-> > > > so if we can't keep the semantics when we remove the cmpxchg, you'll need to
-> > > > opt into this at config time.
-> > >
-> > > Only arm64 and arm selects REFCOUNT_FULL in the default config. So please
-> > > reconsider this! This is going to slow down arm64 vs. other archs and it
-> > > will become worse when more code adopts refcount_t.
-> >
-> > Maybe, but faced with the choice between your micro-benchmark results and
-> > security-by-default for people using the arm64 Linux kernel, I really think
-> > that's a no-brainer. I'm well aware that not everybody agrees with me on
-> > that.
-> 
-> I think the question whether the benchmark is valid is justified, but
-> otoh, we are obsessed with hackbench which is not that representative
-> of a real workload either. It would be better to discuss these changes
-> in the context of known real-world use cases where refcounts are a
-> true bottleneck.
-
-I wasn't calling into question the validity of the benchmark (I really have
-no clue about that), but rather that you can't have your cake and eat it.
-Faced with the choice, I'd err on the security side because it's far easier
-to explain to somebody that the default is full mitigation at a cost than it
-is to explain why a partial mitigation is acceptable (and in the end it's
-often subjective because people have different thresholds).
-
-> Also, I'd like to have Kees's view on the gap between REFCOUNT_FULL
-> and the fast version on arm64. I'm not convinced the cases we are not
-> covering are such a big deal.
-
-Fair enough, but if the conclusion is that it's not a big deal then we
-should just remove REFCOUNT_FULL altogether, because it's the choice that
-is the problem here.
-
-Will
+Thanks,
+Sekhar
 
 _______________________________________________
 linux-arm-kernel mailing list
