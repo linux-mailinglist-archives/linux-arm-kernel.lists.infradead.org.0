@@ -2,53 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CF04B46458
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Jun 2019 18:37:20 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4372046489
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Jun 2019 18:42:45 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=DCYVz2GULsPbpkjjDqnfhbT0ZbtOt7peYoZJPJnVZNs=; b=ouIFwRZGy1JyUe
-	soLIGMNazO95OhUf+YWIsrNi6NcWoxN8UWRPok5OoFgTVfbB3AoT7EvcXxIDnfEwqUYdi03GFmbBk
-	f7t0wbykWgHsZWCBBMQadXxoA+LUPR3PqUm7DGvAIR0K1bDIYr4599eQ4JkQpl4k4pK8bBYXmkQCX
-	keZy27u8cL4hc3GOm9nMWOOQYZuYvT109rAGcgZO/EF1ks5e2bKLGks3BXV5WEOl0mqQKnTP+40Ir
-	9UMIEHLLv7L6iLT7EWnn9UnvuSa2ly8hj5ZlAV6MJBI/4m/Ixtx6W0+aGcAh6mUSNkw/bHZGtszvU
-	3AsfM2zN7F5GhOuf+PRA==;
+	List-Owner; bh=MebBVH4+g/Ue5KVUx6bE7fqQA8Mek5f4G7LMa1SdOOo=; b=DQ8ZqYafI6ZK9P
+	N/tXlLgJZozySosIAR1yBTtD/yID+oT5x0IA/FZGON4nxXvKrSgpt+i1TnxbGUYtIZsy6pCyP/YRc
+	/5u1+mJaAoxTrUbLtrCwGeogqWiqoOj+z8yVyn0nNqywUGS6sv4zbTCvr2PrGY+R4wJX31Bhlm3KA
+	k1OK7o8w0LTNaNkAzyK5pud5vZpUXHoInx/RdGxGyro0m3CUw5/ZfpiGmf7C+ijhwvgeYCKdu/dRm
+	bh2JvVpFJGIxnaA2WN4JBim6xYCSRZx/bHHKavTa09XsrBRnUqVSPrhCnmLItscwH+ax5CrJnF/B8
+	955JhlHSYVqfkfWzuZyg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hbpCU-0004DA-RG; Fri, 14 Jun 2019 16:37:14 +0000
-Received: from bhuna.collabora.co.uk ([46.235.227.227])
+	id 1hbpHj-0006F9-4i; Fri, 14 Jun 2019 16:42:39 +0000
+Received: from mail-qk1-f194.google.com ([209.85.222.194])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hbpCM-0004CX-JJ
- for linux-arm-kernel@lists.infradead.org; Fri, 14 Jun 2019 16:37:08 +0000
-Received: from [127.0.0.1] (localhost [127.0.0.1])
- (Authenticated sender: eballetbo) with ESMTPSA id 141C928617E
-From: Enric Balletbo i Serra <enric.balletbo@collabora.com>
-To: linux-kernel@vger.kernel.org
-Subject: [PATCH v2 10/10] arm/arm64: defconfig: Update configs to use the new
- CROS_EC options
-Date: Fri, 14 Jun 2019 18:36:35 +0200
-Message-Id: <20190614163635.22413-11-enric.balletbo@collabora.com>
-X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20190614163635.22413-1-enric.balletbo@collabora.com>
-References: <20190614163635.22413-1-enric.balletbo@collabora.com>
+ id 1hbpHV-0006Eh-QX
+ for linux-arm-kernel@lists.infradead.org; Fri, 14 Jun 2019 16:42:27 +0000
+Received: by mail-qk1-f194.google.com with SMTP id i125so2073001qkd.6
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 14 Jun 2019 09:42:25 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=LvCoDYGzGpZHWNqqXDyj7tZ68K9QYgLtd6i/LSuZlTg=;
+ b=SQIdAx7EMVH0q5QwTswZLgJR5jdQ3hmRi4/OlL1Xdy1+BnnWw8jvUgvIgELa/IfnP1
+ TbpYlKQUv/hyl9QPptmBXP8t4kVo2vYAwZJCgvG5kQHy83CtYlLRDEmWLCTZ1JM2lGd8
+ LX9pBG+RhIvSI+8vJsnw3YmTOXfBDYSeaiaqBKNijRMHCINxG5GspgOO69qYsu597l5P
+ HkvtiWygK54uMafpDUeq0iW9s7m863gNkvSDIpb4JfXcT/tZ6DzQ0wN8Qa0CbuRK61N/
+ kVb3GKhXhitMBe6tMMm2+bBtIjK9Pmfof0V12+jTmtX7zIMRBEJagNemeOYrzV643ovA
+ U+sA==
+X-Gm-Message-State: APjAAAVbVkBZPzjxzcaO9PpDCsqq9aYWiXCTy9FmxtUyBRP4t79FKIgR
+ /6tEAnmrz5Jn7rLMmnhNyA==
+X-Google-Smtp-Source: APXvYqxkjDZsM8wtlEDOhdkqswk52LRk6i4Tm9NDsqj3lu7WW63BnoOCyD1SGGrdI5t/apU2U7gULA==
+X-Received: by 2002:a37:47d6:: with SMTP id
+ u205mr11996243qka.214.1560530544550; 
+ Fri, 14 Jun 2019 09:42:24 -0700 (PDT)
+Received: from localhost ([64.188.179.243])
+ by smtp.gmail.com with ESMTPSA id l6sm1882553qkf.83.2019.06.14.09.42.23
+ (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
+ Fri, 14 Jun 2019 09:42:23 -0700 (PDT)
+Date: Fri, 14 Jun 2019 10:42:23 -0600
+From: Rob Herring <robh@kernel.org>
+To: Leonard Crestez <leonard.crestez@nxp.com>
+Subject: Re: [PATCH v2 2/3] dt-bindings: mfd: Document short/long press
+ duration for bd718x7
+Message-ID: <20190614164222.GA30277@bogus>
+References: <cover.1558471150.git.leonard.crestez@nxp.com>
+ <ec750ff0021c942b3c477e1cc7dc35f957600c96.1558471150.git.leonard.crestez@nxp.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <ec750ff0021c942b3c477e1cc7dc35f957600c96.1558471150.git.leonard.crestez@nxp.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190614_093706_899611_72977010 
-X-CRM114-Status: GOOD (  11.37  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20190614_094225_862644_12587A53 
+X-CRM114-Status: GOOD (  16.75  )
+X-Spam-Score: 0.8 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (0.8 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [46.235.227.227 listed in list.dnswl.org]
+ no trust [209.85.222.194 listed in list.dnswl.org]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (robherring2[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (robherring2[at]gmail.com)
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.222.194 listed in wl.mailspike.net]
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -60,124 +92,52 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: gwendal@chromium.org, Geert Uytterhoeven <geert+renesas@glider.be>,
- Tony Lindgren <tony@atomide.com>, Catalin Marinas <catalin.marinas@arm.com>,
- Will Deacon <will.deacon@arm.com>,
- Bjorn Andersson <bjorn.andersson@linaro.org>,
- Miquel Raynal <miquel.raynal@bootlin.com>, Guenter Roeck <groeck@chromium.org>,
- kernel@collabora.com, dtor@chromium.org,
- Marek Szyprowski <m.szyprowski@samsung.com>,
- Maxime Ripard <maxime.ripard@bootlin.com>, linux-samsung-soc@vger.kernel.org,
- Lee Jones <lee.jones@linaro.org>, Daniel Lezcano <daniel.lezcano@linaro.org>,
- Russell King <linux@armlinux.org.uk>, Krzysztof Kozlowski <krzk@kernel.org>,
- Chanwoo Choi <cw00.choi@samsung.com>, Kukjin Kim <kgene@kernel.org>,
- Jagan Teki <jagan@amarulasolutions.com>,
- Alexandre Torgue <alexandre.torgue@st.com>, Arnd Bergmann <arnd@arndb.de>,
- Robert Jarzmik <robert.jarzmik@free.fr>,
- Simon Horman <horms+renesas@verge.net.au>, Benson Leung <bleung@chromium.org>,
- linux-arm-kernel@lists.infradead.org,
- =?UTF-8?q?Yannick=20Fertr=C3=A9?= <yannick.fertre@st.com>,
- Dinh Nguyen <dinguyen@kernel.org>, Olof Johansson <olof@lixom.net>,
- Daniel Mack <daniel@zonque.org>
+Cc: Mark Rutland <mark.rutland@arm.com>, Aisheng Dong <aisheng.dong@nxp.com>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ Shawn Guo <shawnguo@kernel.org>, Angus Ainslie <angus@akkea.ca>,
+ Matti Vaittinen <matti.vaittinen@fi.rohmeurope.com>,
+ Mark Brown <broonie@kernel.org>, dl-linux-imx <linux-imx@nxp.com>,
+ "kernel@pengutronix.de" <kernel@pengutronix.de>,
+ Fabio Estevam <fabio.estevam@nxp.com>, Robin Gong <yibin.gong@nxp.com>,
+ Lee Jones <lee.jones@linaro.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Recently we refactored the CrOS EC drivers moving part of the code from
-the MFD subsystem to the platform chrome subsystem. During this change
-we needed to rename some config options, so, update the defconfigs
-accordingly.
+On Tue, May 21, 2019 at 08:41:13PM +0000, Leonard Crestez wrote:
+> These values can be overwritten at probe time.
+> 
+> Signed-off-by: Leonard Crestez <leonard.crestez@nxp.com>
+> Acked-By: Matti Vaittinen <matti.vaittinen@fi.rohmeurope.com>
+> ---
+>  .../devicetree/bindings/mfd/rohm,bd71837-pmic.txt         | 8 ++++++++
+>  1 file changed, 8 insertions(+)
+> 
+> diff --git a/Documentation/devicetree/bindings/mfd/rohm,bd71837-pmic.txt b/Documentation/devicetree/bindings/mfd/rohm,bd71837-pmic.txt
+> index d5f68ac78d15..3649c1191432 100644
+> --- a/Documentation/devicetree/bindings/mfd/rohm,bd71837-pmic.txt
+> +++ b/Documentation/devicetree/bindings/mfd/rohm,bd71837-pmic.txt
+> @@ -36,10 +36,18 @@ switched power state to SNVS. If reset is done via READY state the power
+>  outputs will be returned to HW control by OTP loading. Thus the reset
+>  target state is set to READY by default. If SNVS state is used the boot
+>  crucial regulators must have the regulator-always-on and regulator-boot-on
+>  properties set in regulator node.
+>  
+> +- rohm,short-press-ms	: Short press duration in milliseconds
+> +- rohm,long-press-ms	: Long press duration in milliseconds
+> +
+> +Configure the "short press" and "long press" timers for the power button.
+> +Values are rounded to what hardware supports (500ms multiple for short and
+> +1000ms multiple for long). If these properties are not present the existing
+> +configuration (from bootloader or OTP) is not touched.
 
-Signed-off-by: Enric Balletbo i Serra <enric.balletbo@collabora.com>
----
+We already have a standard property 'power-off-time-sec' for at least 
+part of this assuming 'long' or 'short' causes a power off. 'long' and 
+'short' don't describe anything useful. The action should be described.
 
-Changes in v2: None
-
- arch/arm/configs/exynos_defconfig   | 4 +++-
- arch/arm/configs/multi_v7_defconfig | 6 ++++--
- arch/arm/configs/pxa_defconfig      | 4 +++-
- arch/arm64/configs/defconfig        | 6 ++++--
- 4 files changed, 14 insertions(+), 6 deletions(-)
-
-diff --git a/arch/arm/configs/exynos_defconfig b/arch/arm/configs/exynos_defconfig
-index c95c54284da2..03448fba569f 100644
---- a/arch/arm/configs/exynos_defconfig
-+++ b/arch/arm/configs/exynos_defconfig
-@@ -154,7 +154,9 @@ CONFIG_CPU_THERMAL=y
- CONFIG_THERMAL_EMULATION=y
- CONFIG_WATCHDOG=y
- CONFIG_S3C2410_WATCHDOG=y
--CONFIG_MFD_CROS_EC=y
-+CONFIG_MFD_CROS_EC_DEV=y
-+CONFIG_CHROME_PLATFORMS=y
-+CONFIG_CROS_EC=y
- CONFIG_CROS_EC_I2C=y
- CONFIG_CROS_EC_SPI=y
- CONFIG_MFD_MAX14577=y
-diff --git a/arch/arm/configs/multi_v7_defconfig b/arch/arm/configs/multi_v7_defconfig
-index 6b748f214eae..9fe783abf3c5 100644
---- a/arch/arm/configs/multi_v7_defconfig
-+++ b/arch/arm/configs/multi_v7_defconfig
-@@ -510,10 +510,12 @@ CONFIG_MFD_BCM590XX=y
- CONFIG_MFD_AC100=y
- CONFIG_MFD_AXP20X_I2C=y
- CONFIG_MFD_AXP20X_RSB=y
--CONFIG_MFD_CROS_EC=m
-+CONFIG_MFD_CROS_EC_DEV=m
-+CONFIG_CHROME_PLATFORMS=y
-+CONFIG_CROS_EC=m
- CONFIG_CROS_EC_I2C=m
- CONFIG_CROS_EC_SPI=m
--CONFIG_MFD_CROS_EC_CHARDEV=m
-+CONFIG_CROS_EC_CHARDEV=m
- CONFIG_MFD_DA9063=m
- CONFIG_MFD_MAX14577=y
- CONFIG_MFD_MAX77686=y
-diff --git a/arch/arm/configs/pxa_defconfig b/arch/arm/configs/pxa_defconfig
-index 07ebbdce3645..e335b986cf70 100644
---- a/arch/arm/configs/pxa_defconfig
-+++ b/arch/arm/configs/pxa_defconfig
-@@ -394,7 +394,9 @@ CONFIG_SA1100_WATCHDOG=m
- CONFIG_MFD_AS3711=y
- CONFIG_MFD_BCM590XX=m
- CONFIG_MFD_AXP20X=y
--CONFIG_MFD_CROS_EC=m
-+CONFIG_MFD_CROS_EC_DEV=m
-+CONFIG_CHROME_PLATFORMS=y
-+CONFIG_CROS_EC=m
- CONFIG_CROS_EC_I2C=m
- CONFIG_CROS_EC_SPI=m
- CONFIG_MFD_ASIC3=y
-diff --git a/arch/arm64/configs/defconfig b/arch/arm64/configs/defconfig
-index 4d583514258c..b5bba5f04082 100644
---- a/arch/arm64/configs/defconfig
-+++ b/arch/arm64/configs/defconfig
-@@ -430,8 +430,7 @@ CONFIG_MFD_ALTERA_SYSMGR=y
- CONFIG_MFD_BD9571MWV=y
- CONFIG_MFD_AXP20X_I2C=y
- CONFIG_MFD_AXP20X_RSB=y
--CONFIG_MFD_CROS_EC=y
--CONFIG_MFD_CROS_EC_CHARDEV=m
-+CONFIG_MFD_CROS_EC_DEV=y
- CONFIG_MFD_EXYNOS_LPASS=m
- CONFIG_MFD_HI6421_PMIC=y
- CONFIG_MFD_HI655X_PMIC=y
-@@ -631,8 +630,11 @@ CONFIG_VIRTIO_BALLOON=y
- CONFIG_VIRTIO_MMIO=y
- CONFIG_XEN_GNTDEV=y
- CONFIG_XEN_GRANT_DEV_ALLOC=y
-+CONFIG_CHROME_PLATFORMS=y
-+CONFIG_CROS_EC=y
- CONFIG_CROS_EC_I2C=y
- CONFIG_CROS_EC_SPI=y
-+CONFIG_CROS_EC_CHARDEV=m
- CONFIG_COMMON_CLK_RK808=y
- CONFIG_COMMON_CLK_SCPI=y
- CONFIG_COMMON_CLK_CS2000_CP=y
--- 
-2.20.1
-
+Rob
 
 _______________________________________________
 linux-arm-kernel mailing list
