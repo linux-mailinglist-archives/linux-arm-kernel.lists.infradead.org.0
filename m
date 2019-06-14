@@ -2,92 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0D1CE45B0F
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Jun 2019 13:02:49 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7FAE845B35
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Jun 2019 13:11:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:Message-ID:
+	In-Reply-To:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ykycGNarHk5me+SFV5hAewwAyQrMLatMwsg1mLlhF6A=; b=q5dgDZdvqjqDjZ
-	0oPNo2688kLXjJcY0JCNJfPpd+3i5QoK0KwNfqifKkSYxBX2eqhHsgaReG5a7tULIP3P033awturj
-	dVGBMR4hFU6noJ8RPP23zFZs7HyxonHzAOUhlzdk8Ck+EBYavR/sNgddPgubZaPvylFg7D4rVbjk4
-	V+y6h4zEWyO+4K6xXWihgeLyyftVAcqW5SEf+GyAzAZVHMUnva+T2vwBFOB46rZY9K4rd4Bchd2+/
-	tOvQoB7jDqic4X3F6bR6OF3Rxa/c+CizXChHpqO7SsjIbe2pBvsg+BIlSjJqSMJeHrQclrv+UsbwB
-	XN3b0fPd8X+uCZrFahWA==;
+	List-Owner; bh=Krn+PmvnWgSQXK+8BO0gbEugXnIQgb7IIIGN0Wzg+iY=; b=opuSIbmd93Fi84
+	FoJf6zA+c6ayTpKu7ozD+DrieW4jKs2eUozwOgfalcBN9P0D5kINi3lP1z3+pGzK4AqcpYI0O4Y59
+	nnewFopw2ton/lXthmMa+mc0ulTT0K4WrnF3RMEQevlUwj43X0TSXwNzTwAiSDxfpV0sVeaafOxeD
+	2LfDiwbCG5bNRsFdzB4IeAlmftxHQImlTgM8REb+YZ4ciaupTVAo6rww45ESiDMXJjpXmVQnZJ6j1
+	7GXbUfL1K82Jjv6xNqshlZ+3JduWds+eNTCuzoG7zclUeLaeWnKzcbMovcZ+7sksZpfjOx4Ibsr/s
+	B/mBKxG7Z1wb5uvAi7aw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hbjym-0003ko-04; Fri, 14 Jun 2019 11:02:44 +0000
-Received: from mail-ed1-f68.google.com ([209.85.208.68])
+	id 1hbk76-0000Qk-6b; Fri, 14 Jun 2019 11:11:20 +0000
+Received: from galois.linutronix.de ([2a01:7a0:2:106d:700::1])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hbjyb-0003k2-R6
- for linux-arm-kernel@lists.infradead.org; Fri, 14 Jun 2019 11:02:35 +0000
-Received: by mail-ed1-f68.google.com with SMTP id a14so2867400edv.12
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 14 Jun 2019 04:02:33 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=L90M1yJRaEbJvP50zlp+g8JncxyhlOF+tsQgaXRymkc=;
- b=NsdnMvMpI0HTG1Ik7Tk4rcKGb8Ou08fydshGIKf1zvDTaZmp3XT/W8gxNt3a4ABONc
- lDuotL/MVBRnRbPRVcmW05Cgr6NS3jYkepiA6UFEAEfAghk8WfmFyTYlEyp3ppY44rB9
- EMhfCdo/tAX7RmB8L5jBS9+EXvsVJpURK8ktWKCGW66zK5nTR/k2hhY6fCNi9lIx4ov+
- RwtJnTt4tdSOCGfanCYBs3Zvji4k03ujPS1geg+wmvSr6MfFk7yB7WOfy2teQP9/IBs8
- guiyAHGl1/Cj46loB4Aa6htks54uNqUuroqv9DuHIaimoQ5/sb7w0gmwvIrM2mbXb1Ld
- BJAA==
-X-Gm-Message-State: APjAAAWvIEMFongsLYqbAjSMu9Kl1ooy+Nx1BO9Q6RERQ+BCr1xy6igd
- VONY0jldgImkLHm9t/IFk+iRz23/AKk=
-X-Google-Smtp-Source: APXvYqys8slZ3/LzcpJay1XmQ1u+A/xHRYFaAa0i4zNKf9FD2MCG0t3ToCX0r70UN4CL9wmeTuJxqQ==
-X-Received: by 2002:a05:6402:8cc:: with SMTP id
- d12mr42474843edz.60.1560510152122; 
- Fri, 14 Jun 2019 04:02:32 -0700 (PDT)
-Received: from mail-wm1-f49.google.com (mail-wm1-f49.google.com.
- [209.85.128.49])
- by smtp.gmail.com with ESMTPSA id m6sm766291ede.2.2019.06.14.04.02.31
- for <linux-arm-kernel@lists.infradead.org>
- (version=TLS1_3 cipher=AEAD-AES128-GCM-SHA256 bits=128/128);
- Fri, 14 Jun 2019 04:02:31 -0700 (PDT)
-Received: by mail-wm1-f49.google.com with SMTP id g135so1880235wme.4
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 14 Jun 2019 04:02:31 -0700 (PDT)
-X-Received: by 2002:a1c:c545:: with SMTP id v66mr7776405wmf.51.1560510151032; 
- Fri, 14 Jun 2019 04:02:31 -0700 (PDT)
+ id 1hbk6v-0000OM-9F
+ for linux-arm-kernel@lists.infradead.org; Fri, 14 Jun 2019 11:11:10 +0000
+Received: from [5.158.153.52] (helo=nanos.tec.linutronix.de)
+ by Galois.linutronix.de with esmtpsa (TLS1.2:DHE_RSA_AES_256_CBC_SHA256:256)
+ (Exim 4.80) (envelope-from <tglx@linutronix.de>)
+ id 1hbk6l-0000IX-6H; Fri, 14 Jun 2019 13:10:59 +0200
+Date: Fri, 14 Jun 2019 13:10:58 +0200 (CEST)
+From: Thomas Gleixner <tglx@linutronix.de>
+To: Vincenzo Frascino <vincenzo.frascino@arm.com>
+Subject: Re: [PATCH v6 03/19] kernel: Unify update_vsyscall implementation
+In-Reply-To: <20190530141531.43462-4-vincenzo.frascino@arm.com>
+Message-ID: <alpine.DEB.2.21.1906141307430.1722@nanos.tec.linutronix.de>
+References: <20190530141531.43462-1-vincenzo.frascino@arm.com>
+ <20190530141531.43462-4-vincenzo.frascino@arm.com>
+User-Agent: Alpine 2.21 (DEB 202 2017-01-01)
 MIME-Version: 1.0
-References: <20190613185241.22800-1-jagan@amarulasolutions.com>
- <20190613185241.22800-3-jagan@amarulasolutions.com>
- <CAGb2v65xuXc4C1jOyM1GbEFVDam5P-6NN0ZhtzwzA7qU5F3nJQ@mail.gmail.com>
- <CAGb2v67DY534hXrx2H4jnZXA7jJS7sq2UwYCqw1iAgyLKdNzgA@mail.gmail.com>
- <CAMty3ZBc-AqbNGZCxRhOPw46iMvEZxoq1oATA46=K29gRYi4Sg@mail.gmail.com>
-In-Reply-To: <CAMty3ZBc-AqbNGZCxRhOPw46iMvEZxoq1oATA46=K29gRYi4Sg@mail.gmail.com>
-From: Chen-Yu Tsai <wens@csie.org>
-Date: Fri, 14 Jun 2019 19:02:18 +0800
-X-Gmail-Original-Message-ID: <CAGb2v6466QSF1wJ_wJsVwAgHsnLXD9GAwbPQtXcTDq4aqAeEfQ@mail.gmail.com>
-Message-ID: <CAGb2v6466QSF1wJ_wJsVwAgHsnLXD9GAwbPQtXcTDq4aqAeEfQ@mail.gmail.com>
-Subject: Re: [linux-sunxi] [PATCH 2/9] drm/sun4i: tcon: Add TCON LCD support
- for R40
-To: Jagan Teki <jagan@amarulasolutions.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190614_040233_876590_BB0DDE19 
-X-CRM114-Status: GOOD (  13.73  )
-X-Spam-Score: 0.8 (/)
+X-CRM114-CacheID: sfid-20190614_041109_482518_CB8E85AD 
+X-CRM114-Status: GOOD (  12.64  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.8 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.208.68 listed in list.dnswl.org]
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (wens213[at]gmail.com)
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (wens213[at]gmail.com)
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [2a01:7a0:2:106d:700:0:0:1 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -99,58 +61,211 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree <devicetree@vger.kernel.org>,
- Jernej Skrabec <jernej.skrabec@siol.net>,
- Maxime Ripard <maxime.ripard@bootlin.com>,
- linux-kernel <linux-kernel@vger.kernel.org>,
- dri-devel <dri-devel@lists.freedesktop.org>, David Airlie <airlied@linux.ie>,
- linux-sunxi <linux-sunxi@googlegroups.com>, Daniel Vetter <daniel@ffwll.ch>,
- Michael Trimarchi <michael@amarulasolutions.com>,
- linux-amarula <linux-amarula@amarulasolutions.com>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Cc: linux-arch@vger.kernel.org, Shuah Khan <shuah@kernel.org>,
+ Arnd Bergmann <arnd@arndb.de>, Huw Davies <huw@codeweavers.com>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Daniel Lezcano <daniel.lezcano@linaro.org>, Will Deacon <will.deacon@arm.com>,
+ linux-kernel@vger.kernel.org, Ralf Baechle <ralf@linux-mips.org>,
+ linux-mips@vger.kernel.org, Paul Burton <paul.burton@mips.com>,
+ linux-kselftest@vger.kernel.org, Rasmus Villemoes <linux@rasmusvillemoes.dk>,
+ Russell King <linux@armlinux.org.uk>, Dmitry Safonov <0x7f454c46@gmail.com>,
+ Mark Salyzyn <salyzyn@android.com>, Peter Collingbourne <pcc@google.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Jun 14, 2019 at 6:56 PM Jagan Teki <jagan@amarulasolutions.com> wrote:
->
-> On Fri, Jun 14, 2019 at 9:05 AM Chen-Yu Tsai <wens@csie.org> wrote:
-> >
-> > On Fri, Jun 14, 2019 at 11:19 AM Chen-Yu Tsai <wens@csie.org> wrote:
-> > >
-> > > On Fri, Jun 14, 2019 at 2:53 AM Jagan Teki <jagan@amarulasolutions.com> wrote:
-> > > >
-> > > > TCON LCD0, LCD1 in allwinner R40, are used for managing
-> > > > LCD interfaces like RGB, LVDS and DSI.
-> > > >
-> > > > Like TCON TV0, TV1 these LCD0, LCD1 are also managed via
-> > > > tcon top.
-> > > >
-> > > > Add support for it, in tcon driver.
-> > > >
-> > > > Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
-> > >
-> > > Reviewed-by: Chen-Yu Tsai <wens@csie.org>
-> >
-> > I take that back.
-> >
-> > The TCON output muxing (which selects whether TCON LCD or TCON TV
-> > outputs to the GPIO pins)
-> > is not supported yet. Please at least add TODO notes, or ideally,
->
-> Are you referring about port selection? it is support in
-> sun8i_tcon_top_de_config.
+On Thu, 30 May 2019, Vincenzo Frascino wrote:
+> +
+> +	if (__arch_use_vsyscall(vdata)) {
+> +		vdata[CS_HRES_COARSE].cycle_last	=
+> +						tk->tkr_mono.cycle_last;
+> +		vdata[CS_HRES_COARSE].mask		=
+> +						tk->tkr_mono.mask;
+> +		vdata[CS_HRES_COARSE].mult		=
+> +						tk->tkr_mono.mult;
 
-No. That's supported as you already pointed out. That only selects
-which mixer outputs to which TCON.
+These line breaks make it really hard to read. Can you fold in the patch
+below please?
 
-I'm talking about the GPIOD and GPIOH bits, which select which of
-LCD or TV TCON outputs to the LCD function pins. Keep in mind that
-the TV TCON's H/V SYNC signals are used in combination with the
-TV encoder RGB outputs for VGA.
+Thanks,
 
-ChenYu
+	tglx
+8<-----------
+--- a/kernel/vdso/vsyscall.c
++++ b/kernel/vdso/vsyscall.c
+@@ -11,6 +11,66 @@
+ #include <vdso/helpers.h>
+ #include <vdso/vsyscall.h>
+ 
++static inline void udpate_vdata(struct vdso_data *vdata, struct timekeeper *tk)
++{
++	struct vdso_timestamp *vdso_ts;
++	u64 nsec;
++
++	vdata[CS_HRES_COARSE].cycle_last	= tk->tkr_mono.cycle_last;
++	vdata[CS_HRES_COARSE].mask		= tk->tkr_mono.mask;
++	vdata[CS_HRES_COARSE].mult		= tk->tkr_mono.mult;
++	vdata[CS_HRES_COARSE].shift		= tk->tkr_mono.shift;
++	vdata[CS_RAW].cycle_last		= tk->tkr_raw.cycle_last;
++	vdata[CS_RAW].mask			= tk->tkr_raw.mask;
++	vdata[CS_RAW].mult			= tk->tkr_raw.mult;
++	vdata[CS_RAW].shift			= tk->tkr_raw.shift;
++
++	/* CLOCK_REALTIME */
++	vdso_ts		=  &vdata[CS_HRES_COARSE].basetime[CLOCK_REALTIME];
++	vdso_ts->sec	= tk->xtime_sec;
++	vdso_ts->nsec	= tk->tkr_mono.xtime_nsec;
++
++	/* CLOCK_MONOTONIC */
++	vdso_ts		= &vdata[CS_HRES_COARSE].basetime[CLOCK_MONOTONIC];
++	vdso_ts->sec	= tk->xtime_sec + tk->wall_to_monotonic.tv_sec;
++
++	nsec = tk->tkr_mono.xtime_nsec;
++	nsec += ((u64)tk->wall_to_monotonic.tv_nsec << tk->tkr_mono.shift);
++	while (nsec >= (((u64)NSEC_PER_SEC) << tk->tkr_mono.shift)) {
++		nsec -= (((u64)NSEC_PER_SEC) << tk->tkr_mono.shift);
++		vdso_ts->sec++;
++	}
++	vdso_ts->nsec	= nsec;
++
++	/* CLOCK_MONOTONIC_RAW */
++	vdso_ts		= &vdata[CS_RAW].basetime[CLOCK_MONOTONIC_RAW];
++	vdso_ts->sec	= tk->raw_sec;
++	vdso_ts->nsec	= tk->tkr_raw.xtime_nsec;
++
++	/* CLOCK_BOOTTIME */
++	vdso_ts		= &vdata[CS_HRES_COARSE].basetime[CLOCK_BOOTTIME];
++	vdso_ts->sec	= tk->xtime_sec + tk->wall_to_monotonic.tv_sec;
++	nsec = tk->tkr_mono.xtime_nsec;
++	nsec += ((u64)(tk->wall_to_monotonic.tv_nsec +
++		       ktime_to_ns(tk->offs_boot)) << tk->tkr_mono.shift);
++	while (nsec >= (((u64)NSEC_PER_SEC) << tk->tkr_mono.shift)) {
++		nsec -= (((u64)NSEC_PER_SEC) << tk->tkr_mono.shift);
++		vdso_ts->sec++;
++	}
++	vdso_ts->nsec	= nsec;
++
++	/* CLOCK_TAI */
++	vdso_ts		= &vdata[CS_HRES_COARSE].basetime[CLOCK_TAI];
++	vdso_ts->sec	= tk->xtime_sec + (s64)tk->tai_offset;
++	vdso_ts->nsec	= tk->tkr_mono.xtime_nsec;
++
++	/*
++	 * Read without the seqlock held by clock_getres().
++	 * Note: No need to have a second copy.
++	 */
++	WRITE_ONCE(vdata[CS_HRES_COARSE].hrtimer_res, hrtimer_resolution);
++}
++
+ void update_vsyscall(struct timekeeper *tk)
+ {
+ 	struct vdso_data *vdata = __arch_get_k_vdso_data();
+@@ -32,92 +92,23 @@ void update_vsyscall(struct timekeeper *
+ 	vdata[CS_RAW].clock_mode		= __arch_get_clock_mode(tk);
+ 
+ 	/* CLOCK_REALTIME_COARSE */
+-	vdso_ts			=
+-			&vdata[CS_HRES_COARSE].basetime[CLOCK_REALTIME_COARSE];
+-	vdso_ts->sec		= tk->xtime_sec;
+-	vdso_ts->nsec		= tk->tkr_mono.xtime_nsec >> tk->tkr_mono.shift;
++	vdso_ts		= &vdata[CS_HRES_COARSE].basetime[CLOCK_REALTIME_COARSE];
++	vdso_ts->sec	= tk->xtime_sec;
++	vdso_ts->nsec	= tk->tkr_mono.xtime_nsec >> tk->tkr_mono.shift;
++
+ 	/* CLOCK_MONOTONIC_COARSE */
+-	vdso_ts			=
+-			&vdata[CS_HRES_COARSE].basetime[CLOCK_MONOTONIC_COARSE];
+-	vdso_ts->sec		= tk->xtime_sec + tk->wall_to_monotonic.tv_sec;
+-	nsec			= tk->tkr_mono.xtime_nsec >> tk->tkr_mono.shift;
+-	nsec			= nsec + tk->wall_to_monotonic.tv_nsec;
++	vdso_ts		= &vdata[CS_HRES_COARSE].basetime[CLOCK_MONOTONIC_COARSE];
++	vdso_ts->sec	= tk->xtime_sec + tk->wall_to_monotonic.tv_sec;
++	nsec		= tk->tkr_mono.xtime_nsec >> tk->tkr_mono.shift;
++	nsec		= nsec + tk->wall_to_monotonic.tv_nsec;
+ 	while (nsec >= NSEC_PER_SEC) {
+ 		nsec = nsec - NSEC_PER_SEC;
+ 		vdso_ts->sec++;
+ 	}
+-	vdso_ts->nsec		= nsec;
++	vdso_ts->nsec	= nsec;
+ 
+-	if (__arch_use_vsyscall(vdata)) {
+-		vdata[CS_HRES_COARSE].cycle_last	=
+-						tk->tkr_mono.cycle_last;
+-		vdata[CS_HRES_COARSE].mask		=
+-						tk->tkr_mono.mask;
+-		vdata[CS_HRES_COARSE].mult		=
+-						tk->tkr_mono.mult;
+-		vdata[CS_HRES_COARSE].shift		=
+-						tk->tkr_mono.shift;
+-		vdata[CS_RAW].cycle_last		=
+-						tk->tkr_raw.cycle_last;
+-		vdata[CS_RAW].mask			=
+-						tk->tkr_raw.mask;
+-		vdata[CS_RAW].mult			=
+-						tk->tkr_raw.mult;
+-		vdata[CS_RAW].shift			=
+-						tk->tkr_raw.shift;
+-		/* CLOCK_REALTIME */
+-		vdso_ts			=
+-			&vdata[CS_HRES_COARSE].basetime[CLOCK_REALTIME];
+-		vdso_ts->sec		= tk->xtime_sec;
+-		vdso_ts->nsec		= tk->tkr_mono.xtime_nsec;
+-		/* CLOCK_MONOTONIC */
+-		vdso_ts			=
+-			&vdata[CS_HRES_COARSE].basetime[CLOCK_MONOTONIC];
+-		vdso_ts->sec		= tk->xtime_sec +
+-					  tk->wall_to_monotonic.tv_sec;
+-		nsec			= tk->tkr_mono.xtime_nsec;
+-		nsec			= nsec +
+-					  ((u64)tk->wall_to_monotonic.tv_nsec <<
+-					  tk->tkr_mono.shift);
+-		while (nsec >= (((u64)NSEC_PER_SEC) << tk->tkr_mono.shift)) {
+-			nsec = nsec -
+-			       (((u64)NSEC_PER_SEC) << tk->tkr_mono.shift);
+-			vdso_ts->sec++;
+-		}
+-		vdso_ts->nsec		= nsec;
+-		/* CLOCK_MONOTONIC_RAW */
+-		vdso_ts			=
+-			&vdata[CS_RAW].basetime[CLOCK_MONOTONIC_RAW];
+-		vdso_ts->sec		= tk->raw_sec;
+-		vdso_ts->nsec		= tk->tkr_raw.xtime_nsec;
+-		/* CLOCK_BOOTTIME */
+-		vdso_ts			=
+-			&vdata[CS_HRES_COARSE].basetime[CLOCK_BOOTTIME];
+-		vdso_ts->sec		= tk->xtime_sec +
+-					  tk->wall_to_monotonic.tv_sec;
+-		nsec			= tk->tkr_mono.xtime_nsec;
+-		nsec			= nsec +
+-					  ((u64)(tk->wall_to_monotonic.tv_nsec +
+-					  ktime_to_ns(tk->offs_boot)) <<
+-					  tk->tkr_mono.shift);
+-		while (nsec >= (((u64)NSEC_PER_SEC) << tk->tkr_mono.shift)) {
+-			nsec = nsec -
+-				(((u64)NSEC_PER_SEC) << tk->tkr_mono.shift);
+-			vdso_ts->sec++;
+-		}
+-		vdso_ts->nsec		= nsec;
+-		/* CLOCK_TAI */
+-		vdso_ts			=
+-			&vdata[CS_HRES_COARSE].basetime[CLOCK_TAI];
+-		vdso_ts->sec		= tk->xtime_sec + (s64)tk->tai_offset;
+-		vdso_ts->nsec		= tk->tkr_mono.xtime_nsec;
+-
+-		/*
+-		 * Read without the seqlock held by clock_getres().
+-		 * Note: No need to have a second copy.
+-		 */
+-		WRITE_ONCE(vdata[CS_HRES_COARSE].hrtimer_res, hrtimer_resolution);
+-	}
++	if (__arch_use_vsyscall(vdata))
++		update_vdata(vdata, tk);
+ 
+ 	__arch_update_vsyscall(vdata, tk);
+ 
 
 _______________________________________________
 linux-arm-kernel mailing list
