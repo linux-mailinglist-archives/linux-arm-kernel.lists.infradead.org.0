@@ -2,80 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B0EB5452AA
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Jun 2019 05:19:49 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 08E03452B2
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Jun 2019 05:20:14 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=nYqtYuhHl4/o54n2QKOVooy+a9jqsUwunRWlifnsV7w=; b=VZVwPdPn6rJ6eV
-	AGXzFmDCHDN4EhhRvzyOkOLeOngnE6kd23nqY1aFbKscpvRAXnoggwsZiBcm2MkbMzQUmmmOcx712
-	gqzVYpqp/f/nZQKYoidrRY/9ooEwQ/bSU16HCbKJfiSnsAlUKj/WYuSNDo6rbnmvVMsg06FzdA94m
-	C1OQ0G1pQ9N7TF0J2zYvmIhMeMoozTrxZlan9L2JhJnxJp4/4V1/BlRiNDrphKD91Bjfyv2/GGr2V
-	nFZr6NcgIRQv+teG3mG/1aNU892pqaRMwDHYUpz4+LCM03YRbGKhsl/9jOmbRM7OLPL4hk6pTJpml
-	sx9qUkBampR1Ilvol8Cg==;
+	List-Owner; bh=Imh/jYgm5FaNUXYYGGGczw9tY8VCLoJ/RsxoMe84hBs=; b=Lzz+73hVFpC+Eh
+	2yjWCfrBZinbRXoSnAz1hva4gCJALJelofp+pZRzoiTZKZUzox9gXHugH365LMAOHOSRlhq9BOp3R
+	+DfOiae/kgyHqHJtEtINKnEwSMKeoMax2hZUc29PdTC2jn9rZNnJ1wd4UDodpPEfKNrqu9lbsGYbN
+	XjhcGNpN1S1sXTCpCDzCrNnaoP7W5rmCCTw/EAn14iegBbufAn3sR/lxhcwh8BzljCoVEnwXOHRof
+	A28I4bbALGpkg1HAqC1hhYbUfIdcaaCq3J2eFs0SbCZ5W1sMqDaBXXzr1UQEwQ2z52YyDRj9aptzg
+	fDdQJkKiCnJFGY7DHliQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hbckm-0007WQ-3a; Fri, 14 Jun 2019 03:19:48 +0000
-Received: from mail-pg1-x544.google.com ([2607:f8b0:4864:20::544])
+	id 1hbcl7-0007mJ-3z; Fri, 14 Jun 2019 03:20:09 +0000
+Received: from mail-pf1-x443.google.com ([2607:f8b0:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hbcdz-0000Y2-Mr
- for linux-arm-kernel@lists.infradead.org; Fri, 14 Jun 2019 03:12:49 +0000
-Received: by mail-pg1-x544.google.com with SMTP id f25so662639pgv.10
+ id 1hbce2-0000aa-Ox
+ for linux-arm-kernel@lists.infradead.org; Fri, 14 Jun 2019 03:12:52 +0000
+Received: by mail-pf1-x443.google.com with SMTP id j2so493592pfe.6
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 13 Jun 2019 20:12:47 -0700 (PDT)
+ Thu, 13 Jun 2019 20:12:50 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=EmoJPia4REdmsbQ4H3ol9/VbnaPc01q7ugk/yi36Irk=;
- b=PkSwe6ZM+84aZssqC9yjuM9KdfFBu/kwlLo5pJlTemrHl3tbpWb2jFu9oCwjIJLbjZ
- +R2sV3v4Svb7AGgxYSENh7WQ/BsSqkO3SrL6i1rAA8K9jGSppUSeagoCqZ7kApJZrdmN
- Ut75sba5qxz1fnQrw+BDywqbPFjsmoNKEmHjhAV+153MleaDr7XY+6okqraszIUYzqRX
- yRGdmp4jlswT+ElJ/Br6Q9ooyShdDsSjoot+sJxssHE/ZFb7kM+znGZgY02db3aviW/3
- qBfzYmNrPIFScOHk+93wZHDGvUVHziCN41rErxUmySN2LDp2wy1cJYAsbuOtFZOVECLc
- 6YPQ==
+ bh=y6GazOWQm4IOOc6xrMbLHqM6mIdOvxmzg2BIOtMFGqg=;
+ b=QEkL+VfUuFHaUPoZrhk6ZT7Pxpl8boNF2CaYbIXPqGr11CT0iqDp494FCeQ9FYUKy0
+ k0ubcLU/OTtf72r0prvbE+Pdx5ECXxAEt8TO0W+6j10IaET7QsRQF7sgH6R/FLUnxZxW
+ uG1aw0NYax+CHYI1AxUrR+v5etyy29g+yZJe0VgZ/t4zvTsQjLp33CRoLuMo0n3C1zk5
+ O4oE8SuXkXi/ufe9/gZVe98tHnfBcXIOQIBlQaSAIvZrdxv0NJFhcKl/Wu/nmZyHU9sH
+ U6OblEjWNokjRmkhk3t0y+3HeyI66oGIKcdBgZSypchbQ97DwMOm54PQqRX+uYwxEi4l
+ JyNg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=EmoJPia4REdmsbQ4H3ol9/VbnaPc01q7ugk/yi36Irk=;
- b=Jb9ri5kGCwRastFdQ2tHZEPz5O+Bki2vNlz4FF0b6bh9wZopaX1FfH3ZTiTifSEe/x
- h1Q05YR+UGVZAToMJ+h40aHvZjTtONKoDj4XpEXrbfeTUX+z7bJONmViRC/nJVhXEWXN
- IoKkKOYpi9fSVhE5ourY2odGaNhVXL194Qb4jFRsQEAQ31l6KTo1DQ/niqvi+BEXHlwL
- Ho2LtTDiouQQc7kLdB27qSuR+pPNosLt4Ge94qkNXlufn/efaxT3/i3uSBxJqlNil2ny
- fAtC1Slt4rA2GN3stM4/D/Of17F1sHSg6/xriHObd9ty8Xk/JlEKP3e+0f9ZIlmD2jrg
- R6Lw==
-X-Gm-Message-State: APjAAAU5NFSniP1s6yXac01tfU9mkHE2ao8A5BwaSitiSV3qxQc5rONp
- uvKHE1hmSxxTOWO4kutt2NASSRjNSKI=
-X-Google-Smtp-Source: APXvYqzFJ5M7fhmGROMUgYHr4HeztcDrQP1Hyg2FauE3GQtu6eOZ00AU7ushEX3OlWUqiKLJAas35g==
-X-Received: by 2002:aa7:825a:: with SMTP id e26mr98018300pfn.255.1560481966986; 
- Thu, 13 Jun 2019 20:12:46 -0700 (PDT)
+ bh=y6GazOWQm4IOOc6xrMbLHqM6mIdOvxmzg2BIOtMFGqg=;
+ b=B4R1Mt8qXjntrmnGORiTnmnJkbLj9kflkFD4grT/SwVkl+TvdQD75gANcCc4jxnHDx
+ 08cjPJWtR/dk+pKpY8BGzN+zeB8v776Yz0lgJZLYw1D8ezSDkI1xj3x++mRjfp6/CUV/
+ uHtJagztLfxSAXwk1NKcQT/V5ifrt11GHi+xX+7LpWWZLfQO3WpOT6nLOMlOsMcC4HwU
+ KMxZqqqf4DNF06VfJnVrwUFQf3qTdSuqCIVrDFs8HTxemo4ukobEX/s1aX5bkUdwbsgn
+ LZV0ZmkNszYfNTvT8M1WjIoDqZnUCpSj2BSsaHFHLtvonkKTz9+KY29V/OWNtehI/HFP
+ YZHA==
+X-Gm-Message-State: APjAAAW5Vc2pOCXfQ9TSq8nq65J28SL956zdUh32nZTUBj9uJQ6ZlOei
+ Nptv012nVwl2/UauTeQ/nDC3OUzhdJA=
+X-Google-Smtp-Source: APXvYqxgOUsWsAd7mcooKIc7Hwy2xtxuJhMAqB8tg9mPnQ/kvSAoroLa3roQCVI6rhoA9Gz4GxJ/Zg==
+X-Received: by 2002:a65:42ca:: with SMTP id l10mr33032835pgp.181.1560481969628; 
+ Thu, 13 Jun 2019 20:12:49 -0700 (PDT)
 Received: from localhost ([122.172.66.84])
- by smtp.gmail.com with ESMTPSA id o13sm1237168pje.28.2019.06.13.20.12.46
+ by smtp.gmail.com with ESMTPSA id s9sm1131106pjp.7.2019.06.13.20.12.48
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Thu, 13 Jun 2019 20:12:46 -0700 (PDT)
+ Thu, 13 Jun 2019 20:12:49 -0700 (PDT)
 From: Viresh Kumar <viresh.kumar@linaro.org>
 To: linux-arm-kernel@lists.infradead.org,
  Julien Thierry <Julien.Thierry@arm.com>
-Subject: [PATCH v4.4 20/45] mm: Introduce lm_alias
-Date: Fri, 14 Jun 2019 08:38:03 +0530
-Message-Id: <8500aeb27596eef7bd952f988c8db0a4b2f655c6.1560480942.git.viresh.kumar@linaro.org>
+Subject: [PATCH v4.4 21/45] arm64: entry: Apply BP hardening for high-priority
+ synchronous exceptions
+Date: Fri, 14 Jun 2019 08:38:04 +0530
+Message-Id: <342eec766d9748b0c9fb4a5da48220052a5426e6.1560480942.git.viresh.kumar@linaro.org>
 X-Mailer: git-send-email 2.21.0.rc0.269.g1a574e7a288b
 In-Reply-To: <cover.1560480942.git.viresh.kumar@linaro.org>
 References: <cover.1560480942.git.viresh.kumar@linaro.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190613_201247_816675_692A9EBA 
-X-CRM114-Status: GOOD (  10.66  )
+X-CRM114-CacheID: sfid-20190613_201250_871957_A23FABCE 
+X-CRM114-Status: GOOD (  13.09  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:544 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:443 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -107,39 +108,69 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Laura Abbott <labbott@redhat.com>
+From: Will Deacon <will.deacon@arm.com>
 
-commit 568c5fe5a54f2654f5a4c599c45b8a62ed9a2013 upstream.
+commit 5dfc6ed27710c42cbc15db5c0d4475699991da0a upstream.
 
-Certain architectures may have the kernel image mapped separately to
-alias the linear map. Introduce a macro lm_alias to translate a kernel
-image symbol into its linear alias. This is used in part with work to
-add CONFIG_DEBUG_VIRTUAL support for arm64.
+Software-step and PC alignment fault exceptions have higher priority than
+instruction abort exceptions, so apply the BP hardening hooks there too
+if the user PC appears to reside in kernel space.
 
-Reviewed-by: Mark Rutland <mark.rutland@arm.com>
-Tested-by: Mark Rutland <mark.rutland@arm.com>
-Signed-off-by: Laura Abbott <labbott@redhat.com>
+Reported-by: Dan Hettena <dhettena@nvidia.com>
+Reviewed-by: Marc Zyngier <marc.zyngier@arm.com>
 Signed-off-by: Will Deacon <will.deacon@arm.com>
+Signed-off-by: Catalin Marinas <catalin.marinas@arm.com>
+[ v4.4: Resolved rebase conflicts ]
 Signed-off-by: Viresh Kumar <viresh.kumar@linaro.org>
 ---
- include/linux/mm.h | 4 ++++
- 1 file changed, 4 insertions(+)
+ arch/arm64/kernel/entry.S | 6 ++++--
+ arch/arm64/mm/fault.c     | 9 +++++++++
+ 2 files changed, 13 insertions(+), 2 deletions(-)
 
-diff --git a/include/linux/mm.h b/include/linux/mm.h
-index 251adf4d8a71..f86fdf015c74 100644
---- a/include/linux/mm.h
-+++ b/include/linux/mm.h
-@@ -59,6 +59,10 @@ extern int sysctl_legacy_va_layout;
- #define __pa_symbol(x)  __pa(RELOC_HIDE((unsigned long)(x), 0))
- #endif
- 
-+#ifndef lm_alias
-+#define lm_alias(x)	__va(__pa_symbol(x))
+diff --git a/arch/arm64/kernel/entry.S b/arch/arm64/kernel/entry.S
+index 05bfc71639fc..42a141f01f3b 100644
+--- a/arch/arm64/kernel/entry.S
++++ b/arch/arm64/kernel/entry.S
+@@ -530,8 +530,10 @@ ENDPROC(el1_irq)
+ 	 * Stack or PC alignment exception handling
+ 	 */
+ 	mrs	x26, far_el1
+-	// enable interrupts before calling the main handler
+-	enable_dbg_and_irq
++	enable_dbg
++#ifdef CONFIG_TRACE_IRQFLAGS
++	bl	trace_hardirqs_off
 +#endif
+ 	ct_user_exit
+ 	mov	x0, x26
+ 	mov	x1, x25
+diff --git a/arch/arm64/mm/fault.c b/arch/arm64/mm/fault.c
+index 1878c881a247..082f385b6592 100644
+--- a/arch/arm64/mm/fault.c
++++ b/arch/arm64/mm/fault.c
+@@ -561,6 +561,12 @@ asmlinkage void __exception do_sp_pc_abort(unsigned long addr,
+ 	struct siginfo info;
+ 	struct task_struct *tsk = current;
+ 
++	if (user_mode(regs)) {
++		if (instruction_pointer(regs) > TASK_SIZE)
++			arm64_apply_bp_hardening();
++		local_irq_enable();
++	}
 +
- /*
-  * To prevent common memory management code establishing
-  * a zero page mapping on a read fault.
+ 	if (show_unhandled_signals && unhandled_signal(tsk, SIGBUS))
+ 		pr_info_ratelimited("%s[%d]: %s exception: pc=%p sp=%p\n",
+ 				    tsk->comm, task_pid_nr(tsk),
+@@ -621,6 +627,9 @@ asmlinkage int __exception do_debug_exception(unsigned long addr_if_watchpoint,
+ 	if (interrupts_enabled(regs))
+ 		trace_hardirqs_off();
+ 
++	if (user_mode(regs) && instruction_pointer(regs) > TASK_SIZE)
++		arm64_apply_bp_hardening();
++
+ 	if (!inf->fn(addr_if_watchpoint, esr, regs)) {
+ 		rv = 1;
+ 	} else {
 -- 
 2.21.0.rc0.269.g1a574e7a288b
 
