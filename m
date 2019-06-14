@@ -2,93 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8F25446853
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Jun 2019 21:50:08 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2517046888
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Jun 2019 22:01:14 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:Message-Id:To:
-	Subject:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=LEP1etl166AkCpfWlmq2pwBOzGxd9tIVrNLexqdJlhU=; b=DOrBNoWjhJWb5Q8tNnDxc6u7e
-	GSGkSqMquUXeaNd3NxrN8mfTGXXrsdHXWzgXAPFo1+7cxpumAgEmNE76BfkyeoPpa1dA/GwnaS/C0
-	vZhW07HstqpuDjE+xXkRjzOpxoBkjn6/iroLPLtk6E9BDN8CH5YD+dua6LdF3Vl8kb+/flNgWWtBV
-	R2eogxueA0BkQdvPPPKR+C/4V6xmePW1KNQHeE6hBWESVFVOg+OCA7I4pyM4CYrcgAGtrZor+Sncg
-	tF7eSWmNfTBJL+nj1Me5nGZNsY+BluEu1iL0VEtTwg3vMdoG02omQb3PlBBBTRDYZ816FMv0nJvtr
-	kj+IriOVg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=IpAcGhIe4HBRLWELXdAJ8UjUIvy/M4pThd/y3oFPqm4=; b=EVFYJpR2G64Eiy
+	xSqrRglAMnjos1RYesbv5hAs9VLCzC4K5tuZgqvTySsXuXMKxqDA7XvOwDJ+oZK8ZN9h4wgwzkmod
+	VBoQQjdBdcEo2gdMy2oHVRKKx/lGZECXnFdT+OnnQiRGsiNy898Pa72qq6vbixRuPjYQ5O46JLxEP
+	Z1FjK1USKrhkioRon0dco8Cnmoh8+eGcz/2oDpJJf7MUU9QTYGbgf6vabOlNxbkV86PJoQoHX4xGR
+	2H4KcPAfxND3n8F9IjMh3PSpP8gbf9oZXVGWVvafLLBQyYr3he0PxVG+/rr4QYPfOS6CFgtZRiZsC
+	TlrlTxRp2Qw4pvLfAWPw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hbsD7-00071O-GX; Fri, 14 Jun 2019 19:50:05 +0000
-Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
+	id 1hbsNo-00048b-6M; Fri, 14 Jun 2019 20:01:08 +0000
+Received: from mail-qt1-f193.google.com ([209.85.160.193])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hbsCq-00070M-Bk; Fri, 14 Jun 2019 19:49:49 +0000
-Received: by mail-wr1-x441.google.com with SMTP id d18so3729382wrs.5;
- Fri, 14 Jun 2019 12:49:47 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=date:from:subject:to:cc:message-id:in-reply-to:references
- :mime-version; bh=D2Jp4MrPZCXvvnJ+vcaU1kDqB/bC2o8rRr1g4mxoY8c=;
- b=N12KO4fGu5qQHf19CP2U9aa8h+TxvCB8th+0NnIABtZTumBIdeOBTCCYPAMvjeMlpx
- rUmLFzQq/sB+eKaxXjo0tOzEeX4xfqRvTRC+dPKMYwFvHEmEeK2p0ZHPhMgARjhgMJyH
- Af0XJ88/pGRsPL3A/hYUixk+fm/7il896RiCZTSBbqnTjDFdBIZswPRystF9POHPFkVQ
- KIo56+xt10OJefdYswvEhc3lhZ47C+Bb3jewhE6iMtzB8LIHv68o8N7obWbTuFPTX7kB
- YJQk6WihWvNOtuziFS9j6uwWEeU+MvKWgCvLLa6FKnXrCh/SJQqm56emkdQJNxg7jfHH
- 7NSw==
+ id 1hbsNf-00046p-CP
+ for linux-arm-kernel@lists.infradead.org; Fri, 14 Jun 2019 20:01:00 +0000
+Received: by mail-qt1-f193.google.com with SMTP id 33so3906995qtr.8
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 14 Jun 2019 13:00:53 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:subject:to:cc:message-id:in-reply-to
- :references:mime-version;
- bh=D2Jp4MrPZCXvvnJ+vcaU1kDqB/bC2o8rRr1g4mxoY8c=;
- b=pnrIzAJP3DHkWkyrEzC11EcauflAJN3pgjx1q85cmspBWNmAtvndpQvLL1RAwzDjhy
- G3E4jAQ7zxIhwufkPHDmV/ZdVkp67aJDpi48nAqRO5ENdo3zUiIgmlgA0o5jL6a26MEE
- gAsxMw+TDDCwNRK1f7RYtoBt/k0cOoXBLCEQBCZyCsvWfgZloccxAJoTblZobmzJhWjp
- AdAt7nnPxyHSOgo/ZlBqjhycA3wErH8brzf5xvc0iNEkPRG0r8udMrSyOIigEoYx5OrW
- eLFcYOzt+ptIOcv9mRQkDKNGiM+64cVg79+WkgOlELKgbaLCXgXoVmfIHZ87l9PMY8vc
- AdFw==
-X-Gm-Message-State: APjAAAVFW1x4G4ut8jAXglVyGGJLesfL5bL0pwv4vfk8j2R8swVomp8h
- RmCkXVeshj4k9vvGbD3tcto=
-X-Google-Smtp-Source: APXvYqxm139gzKF9pSB8kIGGWvPhZLZYT0gquBj2ZyqNBxLbS1uj91g9GLI9/T8YtjOA7p+ua6yTHg==
-X-Received: by 2002:a5d:5448:: with SMTP id w8mr32445240wrv.180.1560541786773; 
- Fri, 14 Jun 2019 12:49:46 -0700 (PDT)
-Received: from X555LD ([2a02:85f:51e:5d00:f1ab:2da6:d378:d0de])
- by smtp.gmail.com with ESMTPSA id o126sm8503912wmo.31.2019.06.14.12.49.44
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=eB18U3DxOdsmPtgK5EfLEq54rx6Rwk5ZlbGeYQvoBGc=;
+ b=dNTeObq+TEG/PVz5RP4vpp3m4N/vIdZqzHNRCz+mM31DHY78WF0XX3NjIbSBmv3yqf
+ WmK4EGbAoscxkysyR8ISg35khFWEZWVh50CV1rxAVPVfUAChGxuE2GuIvnB2P0o6oXUS
+ JV0Z55yP7ZEZCwFbz5BYnhWnICgmO7Pblb23rRVJrGAS4grtlCBlfsVWzZsODDEtJu7b
+ uJW0xPyiBadMd3m8KyOprDGCkpodZc7dJj9ypHPRPMNU2nuCP2wu2HOEUNW6y+XhzlpZ
+ DPQZlnTwtodA9Aq6l/CdBrGinPfNKNLxkIApckjoHHixMULLz4XB6dntOU5HRinuaya0
+ Lfjw==
+X-Gm-Message-State: APjAAAXyTFOGDZX1K8vsohgdvN5ajN8s11jzVXyy4wKGsr/qA3F6zZHs
+ BuWPabL/rl83o5HtOyUmQ2XoRCIM/Q==
+X-Google-Smtp-Source: APXvYqzW+x16AqmtwTMocoooXQV8wwZ0g2afvcGwk5AwhPvYq70dh12nNiLJH569SFP7sRSoYwKl4Q==
+X-Received: by 2002:a0c:afa4:: with SMTP id s33mr9531897qvc.194.1560542453169; 
+ Fri, 14 Jun 2019 13:00:53 -0700 (PDT)
+Received: from localhost ([64.188.179.243])
+ by smtp.gmail.com with ESMTPSA id a11sm2039583qkn.26.2019.06.14.13.00.52
  (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Fri, 14 Jun 2019 12:49:46 -0700 (PDT)
-Date: Fri, 14 Jun 2019 22:49:43 +0300
-From: "Leonidas P. Papadakos" <papadakospan@gmail.com>
-Subject: Re: [PATCH] arm64: dts: rockchip: improve rk3328-roc-cc rgmii
- performance.
-To: Heiko Stuebner <heiko@sntech.de>
-Message-Id: <1560541783.1367.3@gmail.com>
-In-Reply-To: <4025583.lUYsg5j2zl@phil>
-References: <20190607123731.8737-1-pgwipeout@gmail.com>
- <1559912295.22520.0@gmail.com>
- <CAMdYzYorvWr1YhmFKaMQUCditjop5AZp4d1tO79XsVr7m7HrMw@mail.gmail.com>
- <4025583.lUYsg5j2zl@phil>
-X-Mailer: geary/3.32.1
+ Fri, 14 Jun 2019 13:00:52 -0700 (PDT)
+Date: Fri, 14 Jun 2019 14:00:51 -0600
+From: Rob Herring <robh@kernel.org>
+To: Daniel Baluta <daniel.baluta@nxp.com>
+Subject: Re: [PATCH 2/3] dt-bindings: sound: Clarify the usage of clocks in SAI
+Message-ID: <20190614200051.GA12858@bogus>
+References: <20190528132034.3908-1-daniel.baluta@nxp.com>
+ <20190528132034.3908-3-daniel.baluta@nxp.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20190528132034.3908-3-daniel.baluta@nxp.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190614_124948_405736_821553F7 
-X-CRM114-Status: UNSURE (   6.13  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190614_130059_426985_55B11856 
+X-CRM114-Status: GOOD (  11.26  )
+X-Spam-Score: 0.8 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.8 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:441 listed in]
- [list.dnswl.org]
+ no trust [209.85.160.193 listed in list.dnswl.org]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (robherring2[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (papadakospan[at]gmail.com)
+ provider (robherring2[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.160.193 listed in wl.mailspike.net]
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -100,32 +91,41 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Jose Abreu <jose.abreu@synopsys.com>, devicetree@vger.kernel.org,
- linux-rockchip@lists.infradead.org, Rob Herring <robh+dt@kernel.org>,
- Peter Geis <pgwipeout@gmail.com>, Robin Murphy <robin.murphy@arm.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ "alsa-devel@alsa-project.org" <alsa-devel@alsa-project.org>,
+ Daniel Baluta <daniel.baluta@nxp.com>, "timur@kernel.org" <timur@kernel.org>,
+ "Xiubo.Lee@gmail.com" <Xiubo.Lee@gmail.com>,
+ "festevam@gmail.com" <festevam@gmail.com>,
+ "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
+ "tiwai@suse.com" <tiwai@suse.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "robh+dt@kernel.org" <robh+dt@kernel.org>,
+ "lgirdwood@gmail.com" <lgirdwood@gmail.com>,
+ "nicoleotsuka@gmail.com" <nicoleotsuka@gmail.com>,
+ "broonie@kernel.org" <broonie@kernel.org>, dl-linux-imx <linux-imx@nxp.com>,
+ "kernel@pengutronix.de" <kernel@pengutronix.de>,
+ "shawnguo@kernel.org" <shawnguo@kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-
+On Tue, 28 May 2019 13:21:01 +0000, Daniel Baluta wrote:
+> SAI might have up to 4 clock sources selected by an internal
+> CLK mux.
 > 
-> same as with the other patch: I've lost track of what matters,
-> so please resend the ones that matter with appropriate
-> Tested-by, Reviewed-by tags by involved people.
+> On imx6/7 mclk0/mclk1 are the same, while on imx8 mclk0 and
+> mclk1 are coming from different sources.
 > 
-> Thanks
-> Heiko
-> 
+> Signed-off-by: Daniel Baluta <daniel.baluta@nxp.com>
+> ---
+>  Documentation/devicetree/bindings/sound/fsl-sai.txt | 5 +++--
+>  1 file changed, 3 insertions(+), 2 deletions(-)
 > 
 
-Understandable, really. haha!
-The conversation is ongoing. I'll test this now that that loaded week 
-has passed and see if we can reach something better than dropping tx 
-offload. This might be it, if it works for more than one device
-
-
+Reviewed-by: Rob Herring <robh@kernel.org>
 
 _______________________________________________
 linux-arm-kernel mailing list
