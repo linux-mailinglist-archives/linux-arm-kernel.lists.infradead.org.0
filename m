@@ -2,26 +2,26 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1658145F33
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Jun 2019 15:49:17 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id EDE8145F36
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Jun 2019 15:49:35 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=nasaMAfSzMZY08J/WN+kA4226VMCUtaWZJUMI/oV67M=; b=HKE9X1RNL9PR9j
-	8MUH14HdHt0xT3lne7taX5SIuLP4/9ehIxLwRSoQnWauqNx39sLcERl92hZ2RK7TtWvc7hJTUhBVy
-	VBjHYRRMW9ldfdQQ83QbfkDxbhNnDiUfLsclP+hyKDThUAoN9a/HlKmgSgRrWsWWCqLNNP664226Z
-	Rp1iQUMzCuTb65tUwLcdjAFKHBfmmLsJJXShlecSPdAHPEl9474WjLEEQTy1tax/LUaFGGf+Ud66D
-	AKG6z9Rk4n2fuhOXH3qwQzbFmnY/ERoROQgbk7K4FhY21S10n2xI39h43Xi0xusEgbziwLy7oaNF8
-	A8tXSxtw7fBUc1fmC/Jw==;
+	List-Owner; bh=jtGd0uUSPBEep8f8u7wSnHQU2ZkwObfCjB/tGx54FR0=; b=vBeXy005TRpo/0
+	IWhAjOcqxefk2glTlrcopgSz6uD0NZRsL0viLw42IsHTuq90GNi95ePZ3NaOzim8blvDp9YTJVOM8
+	RvSz006OBc1mBltvxUkT+cUuF9y6lIPvl1boDMJXKSgWL0WElEW2lT/hpS9H49AAtUBObZtTUdvxm
+	+BMhuXL0KazsJxSB/zo3vBrpnEUWFY55tkc4WOnGD0qzA7VeUzSSI7ZFGce/J5EdjPcHMgylS2hWq
+	5dkhidZ/fDtJfQY87SNG2w7bCmUeMiPNHQgJtDOnbom5MSX/HVzeCjRGD8AEJiu+t5ncV3vtRUOR4
+	VSrMMO+w2LHXS5X1pdPA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hbmZu-0006TB-Bv; Fri, 14 Jun 2019 13:49:14 +0000
+	id 1hbmaB-0006xR-BT; Fri, 14 Jun 2019 13:49:31 +0000
 Received: from 213-225-9-13.nat.highway.a1.net ([213.225.9.13] helo=localhost)
  by bombadil.infradead.org with esmtpsa (Exim 4.92 #3 (Red Hat Linux))
- id 1hbmYQ-0004jF-5L; Fri, 14 Jun 2019 13:47:42 +0000
+ id 1hbmYT-0004pk-75; Fri, 14 Jun 2019 13:47:45 +0000
 From: Christoph Hellwig <hch@lst.de>
 To: Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
  Maxime Ripard <maxime.ripard@bootlin.com>, Sean Paul <sean@poorly.run>,
@@ -30,9 +30,9 @@ To: Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
  Joonas Lahtinen <joonas.lahtinen@linux.intel.com>,
  Rodrigo Vivi <rodrigo.vivi@intel.com>, Ian Abbott <abbotti@mev.co.uk>,
  H Hartley Sweeten <hsweeten@visionengravers.com>
-Subject: [PATCH 03/16] drm/i915: stop using drm_pci_alloc
-Date: Fri, 14 Jun 2019 15:47:13 +0200
-Message-Id: <20190614134726.3827-4-hch@lst.de>
+Subject: [PATCH 04/16] drm: move drm_pci_{alloc,free} to drm_legacy
+Date: Fri, 14 Jun 2019 15:47:14 +0200
+Message-Id: <20190614134726.3827-5-hch@lst.de>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20190614134726.3827-1-hch@lst.de>
 References: <20190614134726.3827-1-hch@lst.de>
@@ -61,136 +61,212 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Remove usage of the legacy drm PCI DMA wrappers, and with that the
-incorrect usage cocktail of __GFP_COMP, virt_to_page on DMA allocation
-and SetPageReserved.
+These functions are rather broken in that they try to pass __GFP_COMP
+to dma_alloc_coherent, call virt_to_page on the return value and
+mess with PageReserved.  And not actually used by any modern driver.
 
 Signed-off-by: Christoph Hellwig <hch@lst.de>
 ---
- drivers/gpu/drm/i915/i915_gem.c        | 30 +++++++++++++-------------
- drivers/gpu/drm/i915/i915_gem_object.h |  3 ++-
- drivers/gpu/drm/i915/intel_display.c   |  2 +-
- 3 files changed, 18 insertions(+), 17 deletions(-)
+ drivers/gpu/drm/drm_bufs.c | 85 ++++++++++++++++++++++++++++++++++++
+ drivers/gpu/drm/drm_pci.c  | 89 --------------------------------------
+ 2 files changed, 85 insertions(+), 89 deletions(-)
 
-diff --git a/drivers/gpu/drm/i915/i915_gem.c b/drivers/gpu/drm/i915/i915_gem.c
-index ad01c92aaf74..8f2053c91aff 100644
---- a/drivers/gpu/drm/i915/i915_gem.c
-+++ b/drivers/gpu/drm/i915/i915_gem.c
-@@ -228,7 +228,6 @@ i915_gem_get_aperture_ioctl(struct drm_device *dev, void *data,
- static int i915_gem_object_get_pages_phys(struct drm_i915_gem_object *obj)
+diff --git a/drivers/gpu/drm/drm_bufs.c b/drivers/gpu/drm/drm_bufs.c
+index bfc419ed9d6c..7418872d87c6 100644
+--- a/drivers/gpu/drm/drm_bufs.c
++++ b/drivers/gpu/drm/drm_bufs.c
+@@ -38,6 +38,91 @@
+ 
+ #include <linux/nospec.h>
+ 
++/**
++ * drm_pci_alloc - Allocate a PCI consistent memory block, for DMA.
++ * @dev: DRM device
++ * @size: size of block to allocate
++ * @align: alignment of block
++ *
++ * FIXME: This is a needless abstraction of the Linux dma-api and should be
++ * removed.
++ *
++ * Return: A handle to the allocated memory block on success or NULL on
++ * failure.
++ */
++drm_dma_handle_t *drm_pci_alloc(struct drm_device * dev, size_t size, size_t align)
++{
++	drm_dma_handle_t *dmah;
++	unsigned long addr;
++	size_t sz;
++
++	/* pci_alloc_consistent only guarantees alignment to the smallest
++	 * PAGE_SIZE order which is greater than or equal to the requested size.
++	 * Return NULL here for now to make sure nobody tries for larger alignment
++	 */
++	if (align > size)
++		return NULL;
++
++	dmah = kmalloc(sizeof(drm_dma_handle_t), GFP_KERNEL);
++	if (!dmah)
++		return NULL;
++
++	dmah->size = size;
++	dmah->vaddr = dma_alloc_coherent(&dev->pdev->dev, size,
++					 &dmah->busaddr,
++					 GFP_KERNEL | __GFP_COMP);
++
++	if (dmah->vaddr == NULL) {
++		kfree(dmah);
++		return NULL;
++	}
++
++	/* XXX - Is virt_to_page() legal for consistent mem? */
++	/* Reserve */
++	for (addr = (unsigned long)dmah->vaddr, sz = size;
++	     sz > 0; addr += PAGE_SIZE, sz -= PAGE_SIZE) {
++		SetPageReserved(virt_to_page((void *)addr));
++	}
++
++	return dmah;
++}
++
++/*
++ * Free a PCI consistent memory block without freeing its descriptor.
++ *
++ * This function is for internal use in the Linux-specific DRM core code.
++ */
++void __drm_legacy_pci_free(struct drm_device * dev, drm_dma_handle_t * dmah)
++{
++	unsigned long addr;
++	size_t sz;
++
++	if (dmah->vaddr) {
++		/* XXX - Is virt_to_page() legal for consistent mem? */
++		/* Unreserve */
++		for (addr = (unsigned long)dmah->vaddr, sz = dmah->size;
++		     sz > 0; addr += PAGE_SIZE, sz -= PAGE_SIZE) {
++			ClearPageReserved(virt_to_page((void *)addr));
++		}
++		dma_free_coherent(&dev->pdev->dev, dmah->size, dmah->vaddr,
++				  dmah->busaddr);
++	}
++}
++
++/**
++ * drm_pci_free - Free a PCI consistent memory block
++ * @dev: DRM device
++ * @dmah: handle to memory block
++ *
++ * FIXME: This is a needless abstraction of the Linux dma-api and should be
++ * removed.
++ */
++void drm_pci_free(struct drm_device * dev, drm_dma_handle_t * dmah)
++{
++	__drm_legacy_pci_free(dev, dmah);
++	kfree(dmah);
++}
++
+ static struct drm_map_list *drm_find_matching_map(struct drm_device *dev,
+ 						  struct drm_local_map *map)
  {
- 	struct address_space *mapping = obj->base.filp->f_mapping;
--	drm_dma_handle_t *phys;
- 	struct sg_table *st;
- 	struct scatterlist *sg;
- 	char *vaddr;
-@@ -242,13 +241,13 @@ static int i915_gem_object_get_pages_phys(struct drm_i915_gem_object *obj)
- 	 * to handle all possible callers, and given typical object sizes,
- 	 * the alignment of the buddy allocation will naturally match.
- 	 */
--	phys = drm_pci_alloc(obj->base.dev,
--			     roundup_pow_of_two(obj->base.size),
--			     roundup_pow_of_two(obj->base.size));
--	if (!phys)
-+	obj->phys_vaddr = dma_alloc_coherent(&obj->base.dev->pdev->dev,
-+			roundup_pow_of_two(obj->base.size),
-+			&obj->phys_handle, GFP_KERNEL);
-+	if (!obj->phys_vaddr)
- 		return -ENOMEM;
+diff --git a/drivers/gpu/drm/drm_pci.c b/drivers/gpu/drm/drm_pci.c
+index 693748ad8b88..77a215f2a8e4 100644
+--- a/drivers/gpu/drm/drm_pci.c
++++ b/drivers/gpu/drm/drm_pci.c
+@@ -31,95 +31,6 @@
+ #include "drm_internal.h"
+ #include "drm_legacy.h"
  
--	vaddr = phys->vaddr;
-+	vaddr = obj->phys_vaddr;
- 	for (i = 0; i < obj->base.size / PAGE_SIZE; i++) {
- 		struct page *page;
- 		char *src;
-@@ -286,18 +285,17 @@ static int i915_gem_object_get_pages_phys(struct drm_i915_gem_object *obj)
- 	sg->offset = 0;
- 	sg->length = obj->base.size;
- 
--	sg_dma_address(sg) = phys->busaddr;
-+	sg_dma_address(sg) = obj->phys_handle;
- 	sg_dma_len(sg) = obj->base.size;
- 
--	obj->phys_handle = phys;
+-/**
+- * drm_pci_alloc - Allocate a PCI consistent memory block, for DMA.
+- * @dev: DRM device
+- * @size: size of block to allocate
+- * @align: alignment of block
+- *
+- * FIXME: This is a needless abstraction of the Linux dma-api and should be
+- * removed.
+- *
+- * Return: A handle to the allocated memory block on success or NULL on
+- * failure.
+- */
+-drm_dma_handle_t *drm_pci_alloc(struct drm_device * dev, size_t size, size_t align)
+-{
+-	drm_dma_handle_t *dmah;
+-	unsigned long addr;
+-	size_t sz;
 -
- 	__i915_gem_object_set_pages(obj, st, sg->length);
- 
- 	return 0;
- 
- err_phys:
--	drm_pci_free(obj->base.dev, phys);
+-	/* pci_alloc_consistent only guarantees alignment to the smallest
+-	 * PAGE_SIZE order which is greater than or equal to the requested size.
+-	 * Return NULL here for now to make sure nobody tries for larger alignment
+-	 */
+-	if (align > size)
+-		return NULL;
 -
-+	dma_free_coherent(&obj->base.dev->pdev->dev,
-+			roundup_pow_of_two(obj->base.size), obj->phys_vaddr,
-+			obj->phys_handle);
- 	return err;
- }
+-	dmah = kmalloc(sizeof(drm_dma_handle_t), GFP_KERNEL);
+-	if (!dmah)
+-		return NULL;
+-
+-	dmah->size = size;
+-	dmah->vaddr = dma_alloc_coherent(&dev->pdev->dev, size,
+-					 &dmah->busaddr,
+-					 GFP_KERNEL | __GFP_COMP);
+-
+-	if (dmah->vaddr == NULL) {
+-		kfree(dmah);
+-		return NULL;
+-	}
+-
+-	/* XXX - Is virt_to_page() legal for consistent mem? */
+-	/* Reserve */
+-	for (addr = (unsigned long)dmah->vaddr, sz = size;
+-	     sz > 0; addr += PAGE_SIZE, sz -= PAGE_SIZE) {
+-		SetPageReserved(virt_to_page((void *)addr));
+-	}
+-
+-	return dmah;
+-}
+-
+-EXPORT_SYMBOL(drm_pci_alloc);
+-
+-/*
+- * Free a PCI consistent memory block without freeing its descriptor.
+- *
+- * This function is for internal use in the Linux-specific DRM core code.
+- */
+-void __drm_legacy_pci_free(struct drm_device * dev, drm_dma_handle_t * dmah)
+-{
+-	unsigned long addr;
+-	size_t sz;
+-
+-	if (dmah->vaddr) {
+-		/* XXX - Is virt_to_page() legal for consistent mem? */
+-		/* Unreserve */
+-		for (addr = (unsigned long)dmah->vaddr, sz = dmah->size;
+-		     sz > 0; addr += PAGE_SIZE, sz -= PAGE_SIZE) {
+-			ClearPageReserved(virt_to_page((void *)addr));
+-		}
+-		dma_free_coherent(&dev->pdev->dev, dmah->size, dmah->vaddr,
+-				  dmah->busaddr);
+-	}
+-}
+-
+-/**
+- * drm_pci_free - Free a PCI consistent memory block
+- * @dev: DRM device
+- * @dmah: handle to memory block
+- *
+- * FIXME: This is a needless abstraction of the Linux dma-api and should be
+- * removed.
+- */
+-void drm_pci_free(struct drm_device * dev, drm_dma_handle_t * dmah)
+-{
+-	__drm_legacy_pci_free(dev, dmah);
+-	kfree(dmah);
+-}
+-
+-EXPORT_SYMBOL(drm_pci_free);
+-
+ #ifdef CONFIG_PCI
  
-@@ -335,7 +333,7 @@ i915_gem_object_put_pages_phys(struct drm_i915_gem_object *obj,
- 
- 	if (obj->mm.dirty) {
- 		struct address_space *mapping = obj->base.filp->f_mapping;
--		char *vaddr = obj->phys_handle->vaddr;
-+		char *vaddr = obj->phys_vaddr;
- 		int i;
- 
- 		for (i = 0; i < obj->base.size / PAGE_SIZE; i++) {
-@@ -363,7 +361,9 @@ i915_gem_object_put_pages_phys(struct drm_i915_gem_object *obj,
- 	sg_free_table(pages);
- 	kfree(pages);
- 
--	drm_pci_free(obj->base.dev, obj->phys_handle);
-+	dma_free_coherent(&obj->base.dev->pdev->dev,
-+			roundup_pow_of_two(obj->base.size), obj->phys_vaddr,
-+			obj->phys_handle);
- }
- 
- static void
-@@ -603,7 +603,7 @@ i915_gem_phys_pwrite(struct drm_i915_gem_object *obj,
- 		     struct drm_i915_gem_pwrite *args,
- 		     struct drm_file *file)
- {
--	void *vaddr = obj->phys_handle->vaddr + args->offset;
-+	void *vaddr = obj->phys_vaddr + args->offset;
- 	char __user *user_data = u64_to_user_ptr(args->data_ptr);
- 
- 	/* We manually control the domain here and pretend that it
-@@ -1431,7 +1431,7 @@ i915_gem_pwrite_ioctl(struct drm_device *dev, void *data,
- 		ret = i915_gem_gtt_pwrite_fast(obj, args);
- 
- 	if (ret == -EFAULT || ret == -ENOSPC) {
--		if (obj->phys_handle)
-+		if (obj->phys_vaddr)
- 			ret = i915_gem_phys_pwrite(obj, args, file);
- 		else
- 			ret = i915_gem_shmem_pwrite(obj, args);
-diff --git a/drivers/gpu/drm/i915/i915_gem_object.h b/drivers/gpu/drm/i915/i915_gem_object.h
-index ca93a40c0c87..14bd2d61d0f6 100644
---- a/drivers/gpu/drm/i915/i915_gem_object.h
-+++ b/drivers/gpu/drm/i915/i915_gem_object.h
-@@ -290,7 +290,8 @@ struct drm_i915_gem_object {
- 	};
- 
- 	/** for phys allocated objects */
--	struct drm_dma_handle *phys_handle;
-+	dma_addr_t phys_handle;
-+	void *phys_vaddr;
- 
- 	struct reservation_object __builtin_resv;
- };
-diff --git a/drivers/gpu/drm/i915/intel_display.c b/drivers/gpu/drm/i915/intel_display.c
-index 5098228f1302..4f8b368ac4e2 100644
---- a/drivers/gpu/drm/i915/intel_display.c
-+++ b/drivers/gpu/drm/i915/intel_display.c
-@@ -10066,7 +10066,7 @@ static u32 intel_cursor_base(const struct intel_plane_state *plane_state)
- 	u32 base;
- 
- 	if (INTEL_INFO(dev_priv)->display.cursor_needs_physical)
--		base = obj->phys_handle->busaddr;
-+		base = obj->phys_handle;
- 	else
- 		base = intel_plane_ggtt_offset(plane_state);
- 
+ static int drm_get_pci_domain(struct drm_device *dev)
 -- 
 2.20.1
 
