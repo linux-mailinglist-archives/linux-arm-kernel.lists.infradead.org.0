@@ -2,43 +2,43 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A9B8546BBC
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Jun 2019 23:17:50 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 67AAF46BBD
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Jun 2019 23:18:07 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
 	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=p90nAYuLFTIAxXLz9gev6OMuLke8FGbHOtjIYVnfjMc=; b=QUClg1DS94qjK5eOqageMMzAT
-	i+OcZNGh3U6NCp18Ps/SRwje3KfX1ktRONF3kC0UtIWG5m07wvStX1hQP/JG8P+2YnMqJx/s5WRBw
-	xeZU47IH1vxPOmxoB3+jbZVBtCtrYpuUMaib+vMHePaIss/H6hRYwQNPxsHi7LNfqweWVMSOiVI4i
-	v/F9iSYmFwrKaEtzoqGTP6zYzZHCJZ4TC+6siLNFaNytwR91stTuNhLVhLCh+ZGVOWM0veoVNBPxX
-	AGyAw4CnNs3NOtMXXgI5ZVPRFVFi9Lwj/9DlwL1trr3H7MaOkRP/LoQoaZiqyuDEncB9itB4bccxL
-	4hYdaUwlA==;
+	 bh=loKVKURin42G5t/B9KQ29KSL711QdvQQlMl2elmSqyE=; b=DD/oCWlMj/2I8Rn/N5YAFDXFG
+	R+a+MDjXu3HxtBRoQ3sHv8v0bCgw5jpJGW6N2X0oSpoTXVcNQy/WN39jAc2LR8tQaWDhE2YVKWMNW
+	GwD3HeGC0jQICYHe/KilLVso5kCsqjsW31igMPtD3laPn9LY/utVGnhKOQwPmZbagyo2U0eX7eQ4K
+	4WUYKAjXfUKjGWhUe4AMqsmlcK2GAKtir+qptII0SJvidi9pm5jJ3Icwf9Hn8T4XgJhRQ0rAvy5lK
+	m4IaLs6kFz00jR3Hnfh0rvhOgDG0r+JnhcdHswzRXDKIlaOZFfsYzfuH/25iL6lLaJsCyKYagd3IB
+	Fbm2mVcZw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hbtZy-0001QD-Aq; Fri, 14 Jun 2019 21:17:46 +0000
+	id 1hbtaE-0001bC-No; Fri, 14 Jun 2019 21:18:02 +0000
 Received: from sauhun.de ([88.99.104.3] helo=pokefinder.org)
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hbtZT-0001Ay-CV
- for linux-arm-kernel@lists.infradead.org; Fri, 14 Jun 2019 21:17:17 +0000
+ id 1hbtZk-0001Pc-Lb
+ for linux-arm-kernel@lists.infradead.org; Fri, 14 Jun 2019 21:17:34 +0000
 Received: from localhost (p5486CF81.dip0.t-ipconnect.de [84.134.207.129])
- by pokefinder.org (Postfix) with ESMTPSA id 620092CF690;
- Fri, 14 Jun 2019 23:17:14 +0200 (CEST)
-Date: Fri, 14 Jun 2019 23:17:14 +0200
+ by pokefinder.org (Postfix) with ESMTPSA id C6D022CF690;
+ Fri, 14 Jun 2019 23:17:31 +0200 (CEST)
+Date: Fri, 14 Jun 2019 23:17:31 +0200
 From: Wolfram Sang <wsa@the-dreams.de>
 To: Lee Jones <lee.jones@linaro.org>
-Subject: Re: [PATCH v4 1/6] i2c: i2c-qcom-geni: Provide support for ACPI
-Message-ID: <20190614211713.GH17899@ninjato>
+Subject: Re: [PATCH v4 2/6] i2c: i2c-qcom-geni: Signify successful driver probe
+Message-ID: <20190614211731.GI17899@ninjato>
 References: <20190612142654.9639-1-lee.jones@linaro.org>
- <20190612142654.9639-2-lee.jones@linaro.org>
+ <20190612142654.9639-3-lee.jones@linaro.org>
 MIME-Version: 1.0
-In-Reply-To: <20190612142654.9639-2-lee.jones@linaro.org>
+In-Reply-To: <20190612142654.9639-3-lee.jones@linaro.org>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190614_141715_784784_2BDA9073 
-X-CRM114-Status: UNSURE (   6.70  )
+X-CRM114-CacheID: sfid-20190614_141732_880554_F51E8857 
+X-CRM114-Status: UNSURE (   6.40  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -66,59 +66,60 @@ Cc: balbi@kernel.org, linux-kernel@vger.kernel.org,
  bjorn.andersson@linaro.org, david.brown@linaro.org, alokc@codeaurora.org,
  linux-i2c@vger.kernel.org, linux-arm-msm@vger.kernel.org, jlhugo@gmail.com,
  linux-arm-kernel@lists.infradead.org, linux-usb@vger.kernel.or
-Content-Type: multipart/mixed; boundary="===============4550410327232673969=="
+Content-Type: multipart/mixed; boundary="===============0784065889712217493=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 
---===============4550410327232673969==
+--===============0784065889712217493==
 Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="k+G3HLlWI7eRTl+h"
+	protocol="application/pgp-signature"; boundary="PWfwoUCx3AFJRUBq"
 Content-Disposition: inline
 
 
---k+G3HLlWI7eRTl+h
+--PWfwoUCx3AFJRUBq
 Content-Type: text/plain; charset=us-ascii
 Content-Disposition: inline
 Content-Transfer-Encoding: quoted-printable
 
-On Wed, Jun 12, 2019 at 03:26:49PM +0100, Lee Jones wrote:
-> Add a match table to allow automatic probing of ACPI device
-> QCOM0220.  Ignore clock attainment errors.  Set default clock
-> frequency value.
+On Wed, Jun 12, 2019 at 03:26:50PM +0100, Lee Jones wrote:
+> The Qualcomm Geni I2C driver currently probes silently which can be
+> confusing when debugging potential issues.  Add a low level (INFO)
+> print when each I2C controller is successfully initially set-up.
 >=20
 > Signed-off-by: Lee Jones <lee.jones@linaro.org>
 > Acked-by: Ard Biesheuvel <ard.biesheuvel@linaro.org>
+> Acked-by: Bjorn Andersson <bjorn.andersson@linaro.org>
 
 Applied to for-next, thanks!
 
 Alok, are you still there? Your ack is missed here...
 
 
---k+G3HLlWI7eRTl+h
+--PWfwoUCx3AFJRUBq
 Content-Type: application/pgp-signature; name="signature.asc"
 
 -----BEGIN PGP SIGNATURE-----
 
-iQIzBAABCgAdFiEEOZGx6rniZ1Gk92RdFA3kzBSgKbYFAl0EDtkACgkQFA3kzBSg
-KbYERA//fln0PxCO8MCvKtu91PRMaykG6c6IGBWT1XinpcUskkxv2dlJL5qb4I+s
-LTRaz0L8MqIxk2vkdTYe0unh38Horq/07c26+SjP/NSqj7PAzSFXLOjtd2f6xRDd
-T6cbUsRpQN4+qRWqR3hfKRIGmNwZmbUNLTtAVJ4S+Vx+PGOlvX2RweicbI65gRLJ
-+3oZ0iQI+mNA7TGv8Dn32SMkevbGYyXBQW4+ff2hR4lUGYRyG/sGB/izNhmqLyni
-Pt5MYDHtZo2JnLfennHKAX5r4nhdDLic+EHjr6sKym1TR+IHwwpApExsRuwsRB2p
-Mvp3zi5+3QGqq4LaDdsgtYtE9HaKNSbklaIwolEHNqbk2vECz/Dyrq0gZK2OjSzN
-/bCiuUNlbQprEnXJ06Z0/1sS/Rm1hiuYrr9Foqk8q/e7rT5ghbud+IyFf3k0ZKBK
-D3y5T+2v/qSU5LOFDXpIG+t+pVL8OActa3Rp5W8mE3t3fJWcjXYVQ06TJv77iSPk
-ErpEL3zpZ7CE5VaHOVwKEgULEgDJTEdYBW1OKA2hPmwWpQdEwaTMjDmfSpnwkMQ6
-oN+MQRNWaFHKjjLANO9iU00j0KnmX48ZdNifcHXKsDtHQbXmKq/s8P556rV/Pysv
-sjLOU5HNDvGLDFt6sMRKKEMFKKZP+jqZqkjQSaoQQ638v1n18ng=
-=BNzG
+iQIzBAABCgAdFiEEOZGx6rniZ1Gk92RdFA3kzBSgKbYFAl0EDusACgkQFA3kzBSg
+KbaF5A//eOUYXPdT2ti6Q1bKBj1UFPE+GDDgTGN5/r9/yp/CvXDI2rmQRzYZ4Hzw
+gu+c+ZlfvgufyiS3nOri6r8RgiSRqWPRUCKK+PZNGdiYg7bjmHGSzYj3QwprXu6Y
+vorDbXJ8AsnSr3/LAqO+vwzxwJIUdUNu51svi+IYKw0t+v7mbxfSKbl6vTCmrums
+DepavKTDuQKnoLD6RX7E89ffTw/wvnR5kR/kGlIeAmcOHYCWyNZhdmrNLSqhZdmf
+Ki1TTIq8D0dHoVKia0GdkcCBeegTHBpfwkiDzRl9ubpPaZen6T3ny5mrbyTWV2wF
+Xn3H7nYSiT2jbY35k09RINb1G2YSc6zHClcgIAdx0OO9Zs1OXV4s5sdHvjzHR1ep
+SbpBxZ+ndXOt+Eyo4aXSpK8In3noXs0RZiw+kf7DxUKQWOb465hHb7aX7cCwp2Fv
+kjHYMgizH6agnT5ApVTa4GLF/NQ2uTj+EmWjgwhFmPWsnfjS1rCOrvWkizGx1dpn
+55ROyQ1sS8fIRk4lhKJa0H54up9gg4ql07O0qMvkwRUkLvBnEedob5AapJp2jg2b
+FKH9EhHky3pgSWkrlChUiNcRsBtF9IKORupVYGjhDfKGo+dQMvrEhgFIpcPINk2E
+1zRvv6B2/eRrDN13n6Kztrfil3fRYOEYmbSn01W7loWGu51o2LE=
+=OtA8
 -----END PGP SIGNATURE-----
 
---k+G3HLlWI7eRTl+h--
+--PWfwoUCx3AFJRUBq--
 
 
---===============4550410327232673969==
+--===============0784065889712217493==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -129,5 +130,5 @@ linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
 
---===============4550410327232673969==--
+--===============0784065889712217493==--
 
