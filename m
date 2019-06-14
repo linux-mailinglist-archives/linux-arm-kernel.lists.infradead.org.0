@@ -2,56 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DC61D45A0F
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Jun 2019 12:10:41 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 42DBA459CF
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Jun 2019 12:02:24 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=v6oiG04gaIKXKVEBewpzmIi82wZQsP5Px8Mri6W60tY=; b=EKD7oZHQEoveT5PUceOlZmX9A
-	gctF743SM4gy/AycuK6+40GfoFtMqLnWMLETKm1HCk9BUYUcvaXi1Vl8Q6PzazMg68Mwp9bJiKlG1
-	0LnUu3BNWJ4oylXxQNZgXWAYQnK/qZsLSVP300LDme7oLHy+nisHIJM7VTLcHnvVS0P9PInRzgRq6
-	CrVnZVzx5yUI5xHpp/77VQuWzQ7Fx44nkvMKnS8ga2FXwz4+K2OJGWYro34h6Aq43ILzYv/c9fthQ
-	3YGXJnpL6iFxvE4hjmlaBSsbXipUDNUuaEikEltJYnCiMiH1nUpZJlgREm9dwAfTpzTP2t6tsKCoU
-	29srM14Ng==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=QHq6JWaWJUi1kCxEM6HahO6euNvVO7mDL1+2EkGsYIM=; b=U8Jxtr2rQ977F2
+	q7/pFJyOnUlzws5K8QGzLY7nKdiWAT9Qm1YKZ2fozb8kEaZyId7Iegoh0IYo7GYSGast/HSQ4FJOd
+	x88yxSXSG9quLSqbdoNdjYRfsgf3LcRKm4jn4KgxfGfhn7V+85RiQfmP4VrPym+FUmreVaCWMMv5M
+	SIsYerppODZKv/MlnDYjUL46AtyBCwaZbiU5SkuEc57uS/FbOxuhlJQmDG65qsi5FSgoQs60txoEm
+	0yi59vHYBuZcPc262SJQPjzus2/F8rsCB5kkf0z2halsTrHq8oNe2aa0/PQfmrHm0lcwIfezG9Gxy
+	5DEnMKuZUdHU7R+Eohow==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hbjAM-0001D0-8p; Fri, 14 Jun 2019 10:10:38 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hbj9J-0007sz-N4; Fri, 14 Jun 2019 10:09:35 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id F06ED2B;
- Fri, 14 Jun 2019 03:09:30 -0700 (PDT)
-Received: from [10.1.197.57] (e110467-lin.cambridge.arm.com [10.1.197.57])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 2E6443F246;
- Fri, 14 Jun 2019 03:11:12 -0700 (PDT)
-Subject: Re: [PATCH 1/2] arm64: dts: rockchip: Fix multiple thermal zones
- conflict in rk3399.dtsi
-To: Heiko Stuebner <heiko@sntech.de>,
- Daniel Lezcano <daniel.lezcano@linaro.org>
-References: <20190604165802.7338-1-daniel.lezcano@linaro.org>
- <5188064.YWmxIpmbGp@phil>
-From: Robin Murphy <robin.murphy@arm.com>
-Message-ID: <3ee47d34-bf71-9e53-9387-7407865d3110@arm.com>
-Date: Fri, 14 Jun 2019 11:09:27 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.6.1
+	id 1hbj2K-0005uo-SX; Fri, 14 Jun 2019 10:02:20 +0000
+Received: from casper.infradead.org ([2001:8b0:10b:1236::1])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hbj2A-0005tu-1O
+ for linux-arm-kernel@bombadil.infradead.org; Fri, 14 Jun 2019 10:02:10 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=infradead.org; s=casper.20170209; h=Content-Transfer-Encoding:MIME-Version:
+ Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:Content-ID:
+ Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+ :Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
+ List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=EZ3L2Fiofxr3pK8P81q2A2EuutLGOnACbqss2XG6JlY=; b=N7Lezlo0HdiWnr/kaXvNiHZ83V
+ uauqM3dzs3TmheQUZjQnyjXgKMqTKamCH9nfefshRvXrO5FkRi85I7p0aT8EU3zkhSJrB+GWIi/x7
+ Ea7VU1SXSxENGKrDAPBAYfSQr0uvO9aZYC7v4CYyePesBeSxu/vSRhgJelC+ixajO4JHB4t8XK3eX
+ yF25R0W49oM+ugvmSiFDhbZtKFNaLP13XnkP70B5g4sodU5k4uT6gHidrsbkYBS+SagYu0kb/AaYK
+ +8s1aniNl3N9w7fzq1bBBnwJFKoufsXNAizKOTXduEsG5OyH1oOItGgUp2khvfJ0bSMtlq9WFgwGf
+ 5ThbMKCQ==;
+Received: from relay11.mail.gandi.net ([217.70.178.231])
+ by casper.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hbj25-0002RI-D2
+ for linux-arm-kernel@lists.infradead.org; Fri, 14 Jun 2019 10:02:07 +0000
+Received: from localhost (unknown [88.190.179.123])
+ (Authenticated sender: repk@triplefau.lt)
+ by relay11.mail.gandi.net (Postfix) with ESMTPSA id BF1E1100018;
+ Fri, 14 Jun 2019 10:01:21 +0000 (UTC)
+From: Remi Pommarel <repk@triplefau.lt>
+To: Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
+ Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ Bjorn Helgaas <helgaas@kernel.org>
+Subject: [PATCH v3] PCI: aardvark: Fix PCI_EXP_RTCTL register configuration
+Date: Fri, 14 Jun 2019 12:10:59 +0200
+Message-Id: <20190614101059.1664-1-repk@triplefau.lt>
+X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
-In-Reply-To: <5188064.YWmxIpmbGp@phil>
-Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190614_030933_864275_C526CFF1 
-X-CRM114-Status: GOOD (  19.43  )
-X-Spam-Score: 0.0 (/)
-X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+X-CRM114-CacheID: sfid-20190614_110205_486838_DFA389DA 
+X-CRM114-Status: UNSURE (   8.78  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.7 (/)
+X-Spam-Report: SpamAssassin version 3.4.2 on casper.infradead.org summary:
+ Content analysis details:   (-0.7 points, 5.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [217.70.178.231 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -63,79 +76,68 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
- <devicetree@vger.kernel.org>, Emil Renner Berthing <kernel@esmil.dk>,
- "open list:ARM/Rockchip SoC support" <linux-rockchip@lists.infradead.org>,
- Tony Xie <tony.xie@rock-chips.com>, Viresh Kumar <viresh.kumar@linaro.org>,
- Randy Li <ayaka@soulik.info>, linux-kernel@vger.kernel.org,
- Vicente Bergas <vicencb@gmail.com>, dianders@chromium.org, edubezval@gmail.com,
- Enric Balletbo i Serra <enric.balletbo@collabora.com>,
- Rob Herring <robh+dt@kernel.org>,
- Klaus Goger <klaus.goger@theobroma-systems.com>,
- manivannan.sadhasivam@linaro.org, Matthias Brugger <matthias.bgg@gmail.com>,
- Philipp Tomsich <philipp.tomsich@theobroma-systems.com>,
- "moderated list:ARM/Rockchip SoC support"
- <linux-arm-kernel@lists.infradead.org>,
- Christoph Muellner <christoph.muellner@theobroma-systems.com>
+Cc: linux-pci@vger.kernel.org, Ellie Reeves <ellierevves@gmail.com>,
+ Remi Pommarel <repk@triplefau.lt>, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 14/06/2019 10:35, Heiko Stuebner wrote:
-> Hi Daniel,
-> 
-> Am Dienstag, 4. Juni 2019, 18:57:57 CEST schrieb Daniel Lezcano:
->> Currently the common thermal zones definitions for the rk3399 assumes
->> multiple thermal zones are supported by the governors. This is not the
->> case and each thermal zone has its own governor instance acting
->> individually without collaboration with other governors.
->>
->> As the cooling device for the CPU and the GPU thermal zones is the
->> same, each governors take different decisions for the same cooling
->> device leading to conflicting instructions and an erratic behavior.
->>
->> As the cooling-maps is about to become an optional property, let's
->> remove the cpu cooling device map from the GPU thermal zone.
->>
->> Signed-off-by: Daniel Lezcano <daniel.lezcano@linaro.org>
->> ---
->>   arch/arm64/boot/dts/rockchip/rk3399.dtsi | 9 ---------
->>   1 file changed, 9 deletions(-)
->>
->> diff --git a/arch/arm64/boot/dts/rockchip/rk3399.dtsi b/arch/arm64/boot/dts/rockchip/rk3399.dtsi
->> index 196ac9b78076..e1357e0f60f7 100644
->> --- a/arch/arm64/boot/dts/rockchip/rk3399.dtsi
->> +++ b/arch/arm64/boot/dts/rockchip/rk3399.dtsi
->> @@ -821,15 +821,6 @@
->>   					type = "critical";
->>   				};
->>   			};
->> -
->> -			cooling-maps {
->> -				map0 {
->> -					trip = <&gpu_alert0>;
->> -					cooling-device =
->> -						<&cpu_b0 THERMAL_NO_LIMIT THERMAL_NO_LIMIT>,
->> -						<&cpu_b1 THERMAL_NO_LIMIT THERMAL_NO_LIMIT>;
->> -				};
->> -			};
->>   		};
->>   	};
-> 
-> my knowledge of the thermal framework is not that big, but what about the
-> rk3399-devices which further detail the cooling-maps like rk3399-gru-kevin
-> and the rk3399-nanopc-t4 with its fan-handling in the cooling-maps?
+PCI_EXP_RTCTL is used to activate PME interrupt only, so writing into it
+should not modify other interrupts' mask. The ISR mask polarity was also
+inverted, when PCI_EXP_RTCTL_PMEIE is set PCIE_MSG_PM_PME_MASK mask bit
+should actually be cleared.
 
-FWIW, my knowledge of thermal is probably even less :)
+Fixes: 8a3ebd8de328 ("PCI: aardvark: Implement emulated root PCI bridge config space")
+Signed-off-by: Remi Pommarel <repk@triplefau.lt>
+---
+Changes since v1:
+ * Improve code readability
+ * Fix mask polarity
+ * PME_MASK shift was off by one
+Changes since v2:
+ * Modify patch title
+ * Change Fixes tag to commit that actually introduces the bug
+---
+ drivers/pci/controller/pci-aardvark.c | 13 +++++++++----
+ 1 file changed, 9 insertions(+), 4 deletions(-)
 
-For NanoPC-T4 I think I more or less just took Odroid-XU3/4 as the best 
-pwm-fan example and adapted that into the existing RK3399 zones in the 
-manner which seemed most logical to my interpretation - if what was 
-there wasn't right to begin with, then I may well have done that wrong too.
+diff --git a/drivers/pci/controller/pci-aardvark.c b/drivers/pci/controller/pci-aardvark.c
+index 134e0306ff00..f6e55c4597b1 100644
+--- a/drivers/pci/controller/pci-aardvark.c
++++ b/drivers/pci/controller/pci-aardvark.c
+@@ -415,7 +415,7 @@ advk_pci_bridge_emul_pcie_conf_read(struct pci_bridge_emul *bridge,
+ 
+ 	case PCI_EXP_RTCTL: {
+ 		u32 val = advk_readl(pcie, PCIE_ISR0_MASK_REG);
+-		*value = (val & PCIE_MSG_PM_PME_MASK) ? PCI_EXP_RTCTL_PMEIE : 0;
++		*value = (val & PCIE_MSG_PM_PME_MASK) ? 0 : PCI_EXP_RTCTL_PMEIE;
+ 		return PCI_BRIDGE_EMUL_HANDLED;
+ 	}
+ 
+@@ -451,10 +451,15 @@ advk_pci_bridge_emul_pcie_conf_write(struct pci_bridge_emul *bridge,
+ 		advk_writel(pcie, new, PCIE_CORE_PCIEXP_CAP + reg);
+ 		break;
+ 
+-	case PCI_EXP_RTCTL:
+-		new = (new & PCI_EXP_RTCTL_PMEIE) << 3;
+-		advk_writel(pcie, new, PCIE_ISR0_MASK_REG);
++	case PCI_EXP_RTCTL: {
++		/* Only mask/unmask PME interrupt */
++		u32 val = advk_readl(pcie, PCIE_ISR0_MASK_REG) &
++			~PCIE_MSG_PM_PME_MASK;
++		if ((new & PCI_EXP_RTCTL_PMEIE) == 0)
++			val |= PCIE_MSG_PM_PME_MASK;
++		advk_writel(pcie, val, PCIE_ISR0_MASK_REG);
+ 		break;
++	}
+ 
+ 	case PCI_EXP_RTSTA:
+ 		new = (new & PCI_EXP_RTSTA_PME) >> 9;
+-- 
+2.20.1
 
-Robin.
 
 _______________________________________________
 linux-arm-kernel mailing list
