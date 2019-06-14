@@ -2,55 +2,72 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B75264673D
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Jun 2019 20:15:20 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8BFF646784
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Jun 2019 20:24:44 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	MIME-Version:References:In-Reply-To:Message-ID:Subject:To:From:Date:Reply-To:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=OqbWYKyrlkdWAOBe5cS1JNDm8NUN2r7pCk6dzhNkgkY=; b=s3lut/kE/3yOHLPXqBoT0JmPt
-	v6DhaMxYyd8CLOJuoxpJaZcU8s/UM4z28JE4gAs5AVvivqLlbpwYihaqOSXKhZUnwbbn7F7GaFP6F
-	HNlzwt6Hb7m/zVqTIViPvt4bnakHJcMGeKQliKbL12Aa/LAma9Md4DOwgWiEsAB9jk/H4M8j6WA9W
-	3xDtAiTN3z2fBZwL0gs2tec6xkdr9jfNXWGX1y+Jw6XhrWoB6Qi8T8/NKNETnnWNZj8mLfNrJkJfD
-	lCaeoZL+cbbXYToV10ALdovjiu1EmaHRxGaZAVYM6aTYFojRx9TwxRmJpmLXI7MvWzS2kVvef1Laz
-	kz5rGK4FQ==;
+	 bh=nr8V+NSuKF7qEYMhovKaFdD2QyfWh7YtFTJpGo5H8qk=; b=Eus3Mr4lSdtuydD+vkhmVvX6o
+	bkffPpL7JZtAIQ0X2zE3xzkQJhCmF1ewOB1t/Oe8W+/RPotYUEp93G9ttkTUDhAGL/7qxcmFPSvTw
+	DKk68DSRU7ohryuncNm4z1didpwATr7aD6EwW0PDSKvZw+2aEER12JEdGjUAZLzYgpcwTL0wMbVYC
+	I+QStFTDKPUOX2G8na1oEp8wqDTLKhRpoKLqFlJi5Jx9nrmdMbl+G37n6ObNsqv8qBqQZ7EQuMV82
+	sd8Vn752joS0sxQCjZu8gZcdvbvqXmKH4cOrQt35ahQxCPODbeVdY5KBSzh37Mak2hUzHhfplxj5I
+	f+6VugFBw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hbqjL-0002VJ-JJ; Fri, 14 Jun 2019 18:15:15 +0000
-Received: from cyberdimension.org ([2001:910:1314:ffff::1]
- helo=gnutoo.cyberdimension.org)
+	id 1hbqsS-000570-F8; Fri, 14 Jun 2019 18:24:40 +0000
+Received: from heliosphere.sirena.org.uk ([2a01:7e01::f03c:91ff:fed4:a3b6])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hbqjC-0001Sm-0V
- for linux-arm-kernel@lists.infradead.org; Fri, 14 Jun 2019 18:15:07 +0000
-Received: from gnutoo.cyberdimension.org (localhost [127.0.0.1])
- by cyberdimension.org (OpenSMTPD) with ESMTP id 44d51290;
- Fri, 14 Jun 2019 18:12:46 +0000 (UTC)
-Received: from primarylaptop.localdomain (localhost.localdomain [IPv6:::1])
- by gnutoo.cyberdimension.org (OpenSMTPD) with ESMTP id 33591298;
- Fri, 14 Jun 2019 18:12:39 +0000 (UTC)
-Date: Fri, 14 Jun 2019 20:14:34 +0200
-From: Denis 'GNUtoo' Carikli <GNUtoo@cyberdimension.org>
-To: Russell King - ARM Linux admin <linux@armlinux.org.uk>
-Subject: Re: [PATCH] security: do not enable CONFIG_GCC_PLUGINS by default
-Message-ID: <20190614201434.3fa4bb6d@primarylaptop.localdomain>
-In-Reply-To: <20190614162811.o33yeq65ythjumrh@shell.armlinux.org.uk>
-References: <20190614145755.10926-1-GNUtoo@cyberdimension.org>
- <CAG48ez30+VOj78rCiWMKtm0tHdVR67CcrHVCV-FFCfK-nRQTOw@mail.gmail.com>
- <20190614162811.o33yeq65ythjumrh@shell.armlinux.org.uk>
-X-Mailer: Claws Mail 3.17.3 (GTK+ 2.24.32; i686-pc-linux-gnu)
+ id 1hbqsI-00056d-3J; Fri, 14 Jun 2019 18:24:31 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=sirena.org.uk; s=20170815-heliosphere; h=In-Reply-To:Content-Type:
+ MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=TC1DIbwZfF3TMyvcbViFGCwFe/sxI0poVP7S8t8eBkE=; b=L6PAY7gXR8eXr6P33xSeUZj+U
+ yEIp9AKwS4nTSsPfdUPjwRMP48ZS7U/8yvWHno2h4fIzlKQ9aKM19v210bkKioSACeA45EYDl4+D5
+ xIx3jMGWULyRK88mfuEkTVuSrFOIYGx5X60j6jbLHlAu4EnbdQzheeuxK6QcxUXRMGdDg=;
+Received: from cpc102320-sgyl38-2-0-cust46.18-2.cable.virginm.net
+ ([82.37.168.47] helo=finisterre.sirena.org.uk)
+ by heliosphere.sirena.org.uk with esmtpsa
+ (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.89)
+ (envelope-from <broonie@sirena.org.uk>)
+ id 1hbqsA-0000FE-Fg; Fri, 14 Jun 2019 18:24:22 +0000
+Received: by finisterre.sirena.org.uk (Postfix, from userid 1000)
+ id CA8F3440046; Fri, 14 Jun 2019 19:24:21 +0100 (BST)
+Date: Fri, 14 Jun 2019 19:24:21 +0100
+From: Mark Brown <broonie@kernel.org>
+To: Tony Xie <tony.xie@rock-chips.com>
+Subject: Re: [PATCH v9 3/6] regulator: rk808: add RK809 and RK817 support.
+Message-ID: <20190614182421.GI5316@sirena.org.uk>
+References: <20190614031425.15741-1-tony.xie@rock-chips.com>
+ <20190614031425.15741-4-tony.xie@rock-chips.com>
 MIME-Version: 1.0
+In-Reply-To: <20190614031425.15741-4-tony.xie@rock-chips.com>
+X-Cookie: Editing is a rewording activity.
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190614_111506_395797_5FCC5152 
-X-CRM114-Status: GOOD (  14.37  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20190614_112430_287326_4B33A21C 
+X-CRM114-Status: UNSURE (   8.09  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -62,79 +79,60 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Kees Cook <keescook@chromium.org>,
- Kernel Hardening <kernel-hardening@lists.openwall.com>,
- Jann Horn <jannh@google.com>,
- Paul Kocialkowski <paul.kocialkowski@bootlin.com>,
- Emese Revfy <re.emese@gmail.com>, linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============7360392564366231592=="
+Cc: mark.rutland@arm.com, a.zummo@towertech.it, alexandre.belloni@bootlin.com,
+ huangtao@rock-chips.com, heiko@sntech.de, devicetree@vger.kernel.org,
+ sboyd@kernel.org, zhangqing@rock-chips.com, linux-kernel@vger.kernel.org,
+ xsf@rock-chips.com, linux-rockchip@lists.infradead.org, robh+dt@kernel.org,
+ chenjh@rock-chips.com, lee.jones@linaro.org, linux-clk@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-rtc@vger.kernel.org
+Content-Type: multipart/mixed; boundary="===============4936034655781031333=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
---===============7360392564366231592==
-Content-Type: multipart/signed; boundary="Sig_/voOOXX9XV5OPRkIfDNCClwK";
- protocol="application/pgp-signature"; micalg=pgp-sha256
 
---Sig_/voOOXX9XV5OPRkIfDNCClwK
-Content-Type: text/plain; charset=US-ASCII
+--===============4936034655781031333==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="je2i5r69C8+2chMc"
+Content-Disposition: inline
+
+
+--je2i5r69C8+2chMc
+Content-Type: text/plain; charset=utf-8
+Content-Disposition: inline
 Content-Transfer-Encoding: quoted-printable
 
-On Fri, 14 Jun 2019 17:28:11 +0100
-Russell King - ARM Linux admin <linux@armlinux.org.uk> wrote:
-> I'm wondering whether this is sloppy wording or whether the author is
-> really implying that they call the kernel decompressor with the MMU
-> enabled, against the express instructions in
-> Documentation/arm/Booting.
-According to [1]
-> If they are going against the express instructions, all bets are off.
+On Thu, Jun 13, 2019 at 11:14:22PM -0400, Tony Xie wrote:
+>     Add support for the rk809 and rk817 regulator driver.
+>     Their specifications are as follows=EF=BC=9A
+>     1. The RK809 and RK809 consist of 5 DCDCs, 9 LDOs
+>        and have the same registers for these components except dcdc5.
+>     2. The dcdc5 is a boost dcdc for RK817 and is a buck for RK809.
+>     3. The RK817 has one switch but The Rk809 has two.
+>=20
+>     The output voltages are configurable and are meant to supply power
+>     to the main processor and other components.
 
-More background on the decompressor patch:
-- The "ANDROID: arm: decompressor: Flush tlb before swiching domain 0 to
-  client mode" patch is needed anyway since 3.4 in any case, and
-  according to the thread about it [1], the MMU is on at boot.
-- There is a downstream u-boot port for the Galaxy SIII and other very
-  similar devices, which doesn't setup the MMU at boot, but I'm not
-  confident enough to test in on the devices I have. To test with
-  u-boot I'd need to find a new device.
-- If I don't manage to find a new device to test on, since there is
-  already some setup code like arch/arm/boot/compressed/head-sa1100.S
-  that deal with MMU that are enabled with the bootloader, are patches
-  to add a new file like that still accepted? The big downside is that
-  using something like that is probably incompatible with
-  ARCH_MULTIPLATFORM.
+Acked-by: Mark Brown <broonie@kernel.org>
 
-References:
------------
-[1]http://lkml.iu.edu/hypermail/linux/kernel/1212.1/02099.html
-[2]https://blog.forkwhiletrue.me/posts/an-almost-fully-libre-galaxy-s3/
-
-Denis.
-
---Sig_/voOOXX9XV5OPRkIfDNCClwK
-Content-Type: application/pgp-signature
-Content-Description: OpenPGP digital signature
+--je2i5r69C8+2chMc
+Content-Type: application/pgp-signature; name="signature.asc"
 
 -----BEGIN PGP SIGNATURE-----
 
-iQIzBAEBCAAdFiEEeC+d2+Nrp/PU3kkGX138wUF34mMFAl0D5AoACgkQX138wUF3
-4mPGRg//XSxQro0dtk4EQYdV0C1YPG1fXjbs8d+Mq3FkDDXuzQd22ph1a0tHxWwX
-sojh58OJZHrdcnL/CC4V85qxTEW5gK7V3zklM3gZEaktbU7/7P1BHMAvI9RNrU+A
-A64fKneSHJu2o9dRpKQLCuuMOgBPWNX5wAeBdF1Wnrvt+XTtdNF7Skt52mOWlOU9
-hWHtU1Qfg6NKd7F/j5IhXlfghz/E6MtdGXTl3w23nZkYe4D250ZTzlrJMfxEUkqd
-7Wn4a4aiuXfXzN173/8aA7xZZFRC1Km2LOvmv2qPyXvYKZplAy6Zu7TNwgKZfqDg
-hmDFNAR4oMZH05mPnPwk2jAhvf10Rq74Nn+Xfi5DMbIwS43pCpCmepF0NqCu+QRQ
-esd/EWz5KcNFJxMnSi4OWa9+eH8vXERBJTNERLTLtuf3hN5+GTKgp0+Qpaax/lcr
-8hrQ0Tij7aZMEzaOYP/fYF02xESxWUPxWWm2XQdIW1MJEFSWgwIDjgSp/06j0g0Y
-NOh5LIrH9cPwGB86dppI8ctW/Ca1ifkn3FxYMLyBnraWXehgZqX13Col0oViSLHn
-coKhAQ31tAzCkIlJ5+gwlspGc6vBMthHh4gc2RjqxC9ji3f+XY1/aKy3HhBs+Nj3
-BJ/yjZ7dGkpzJNY70DQ1z2a2A8L3Ct6+TVyFpDixm/sq4NUYZ6A=
-=Ws9W
+iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAl0D5lQACgkQJNaLcl1U
+h9Cg3gf+PI+oNUSN6SISGiEj0NLwGYqM6Zuaotd0ItoKH0gSxFrTbuNhIGdsI/mN
+fjDHx3QiGEsRBgKLaae3GP35+L2B7d4sUs7+ZpVC0DrldSFUQ3G6xbsez1CKm5wB
+o3u5dBWZSKGHHxjJV/VH27wu6BonLndiAbFuwA/vjB2tTr7003bRMYeVDoI3uPik
+o7vU+ZwFhCGUuh4TmPusYRWepB5cyGCuo9j/IX+HfWnLeVvcOlz0qtIVcr0DARzF
+ZPAxMHqtm2lvyldzgU456YAA1wTVihRwRvhSyz3hAKgZLzlngjGxPrrgszbJJ05I
+SUAgVqBJ/phpgaL6BBLqlGNDtUXPmg==
+=Qfnw
 -----END PGP SIGNATURE-----
 
---Sig_/voOOXX9XV5OPRkIfDNCClwK--
+--je2i5r69C8+2chMc--
 
 
---===============7360392564366231592==
+--===============4936034655781031333==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -145,5 +143,5 @@ linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
 
---===============7360392564366231592==--
+--===============4936034655781031333==--
 
