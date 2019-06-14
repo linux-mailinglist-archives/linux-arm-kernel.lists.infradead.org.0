@@ -2,46 +2,46 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A47B646A5C
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Jun 2019 22:37:41 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E670E46AA0
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Jun 2019 22:38:32 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=HQNrfrX3hg2Zueb3fpDDF6B9K2CyNw5sDQGIUtcxwSg=; b=aaV2GJrDy5E2vv
-	Q8L8+4HwELMi01qae6qh6GiirVMo919JB8OWdcrXs8VzDEPaV3mSIE2F1sE0LFkmdGmrPgZmD9akG
-	vIp+b4HA3EurqLktzOD6oygGdlCHlgfK73cYXs8EV6cZHDf26/wHSlxrXn/t0olVrl9k46iZkknr/
-	wS/X8pwlnHH1XRw2RQep/6pcuPxqz+EkjIt2qju63ICscyZM71CDYSxDNj7lt1jSQ6yfkum7wkAWe
-	/R22WFyzhN5+tchTFeatpLZbxeNAQdYkQVrbGwdHKudymDbRnJOvziT5dqLwAj/0zExPw8yogWK7F
-	EzlgvzYvmMqD5z7ygNYw==;
+	List-Owner; bh=p1fp9J3H/zaYLy5lcZ/PhXuRF7bT1Wq4e9So8T6+uaA=; b=hV2iILUFrSzXig
+	b1SEckqRdyG36p249VYp1coxwePBJ+1UlUTXFQ+Y1sJ6G+PZgCssXAEJsgC5igQseV7ivi6pQvvE9
+	91hdniJAPxkHfSQvrUCExN3TTgEUpNY6nHXidlx4HtgjJFXtdE5EWye1ofDuqO6BVwRrYSsgY1fx+
+	POOB26FIK2nTyZ/HK67CNltQcW3Dd/RJ9TsiHdCgJZI80IAFxSgrIqbmIA+viXtYs9sOZnYnKNddf
+	ljITXH+yhAe6NvW9kJVoYfsAOSiuF9NklpSMWnnA2iQt7VI9oUwGF+6Ftlditu0IGM4cz2FDRH3kj
+	NEtY6jAyUuV+mX6jHxMw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hbsx6-0004CP-3k; Fri, 14 Jun 2019 20:37:36 +0000
+	id 1hbsxv-0004sO-MQ; Fri, 14 Jun 2019 20:38:27 +0000
 Received: from ms.lwn.net ([45.79.88.28])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hbsw6-0003hK-4c
- for linux-arm-kernel@lists.infradead.org; Fri, 14 Jun 2019 20:36:35 +0000
+ id 1hbsw9-0003ji-Ns
+ for linux-arm-kernel@lists.infradead.org; Fri, 14 Jun 2019 20:36:39 +0000
 Received: from lwn.net (localhost [127.0.0.1])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by ms.lwn.net (Postfix) with ESMTPSA id 731B91427;
- Fri, 14 Jun 2019 20:36:32 +0000 (UTC)
-Date: Fri, 14 Jun 2019 14:36:31 -0600
+ by ms.lwn.net (Postfix) with ESMTPSA id 656C91429;
+ Fri, 14 Jun 2019 20:36:36 +0000 (UTC)
+Date: Fri, 14 Jun 2019 14:36:35 -0600
 From: Jonathan Corbet <corbet@lwn.net>
 To: Mauro Carvalho Chehab <mchehab+samsung@kernel.org>
-Subject: Re: [PATCH v5] docs: power: convert docs to ReST and rename to *.rst
-Message-ID: <20190614143631.7c99719f@lwn.net>
-In-Reply-To: <72d1f8f360d395958dd0b49165fc51b58801f57e.1560420621.git.mchehab+samsung@kernel.org>
-References: <7dc94cb4-ebf1-22ab-29c9-fcb2b875a9ac@csail.mit.edu>
- <72d1f8f360d395958dd0b49165fc51b58801f57e.1560420621.git.mchehab+samsung@kernel.org>
+Subject: Re: [PATCH v4 19/28] docs: powerpc: convert docs to ReST and rename
+ to *.rst
+Message-ID: <20190614143635.3aff154d@lwn.net>
+In-Reply-To: <63560c1ee7174952e148a353840a17969fe0be2d.1560361364.git.mchehab+samsung@kernel.org>
+References: <cover.1560361364.git.mchehab+samsung@kernel.org>
+ <63560c1ee7174952e148a353840a17969fe0be2d.1560361364.git.mchehab+samsung@kernel.org>
 Organization: LWN.net
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190614_133634_217729_2DCA36A7 
-X-CRM114-Status: UNSURE (   9.62  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190614_133637_807606_AC07DB09 
+X-CRM114-Status: GOOD (  15.38  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -62,59 +62,93 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Nishanth Menon <nm@ti.com>, linux-wireless@vger.kernel.org,
- Linux Doc Mailing List <linux-doc@vger.kernel.org>,
- David Airlie <airlied@linux.ie>, Viresh Kumar <viresh.kumar@linaro.org>,
- Joonas Lahtinen <joonas.lahtinen@linux.intel.com>,
- dri-devel@lists.freedesktop.org, Sebastian Reichel <sre@kernel.org>,
- Harry Wei <harryxiyou@gmail.com>, Pavel Machek <pavel@ucw.cz>, "H. Peter
- Anvin" <hpa@zytor.com>, Alex Shi <alex.shi@linux.alibaba.com>,
- "Srivatsa S . Bhat" <srivatsa@csail.mit.edu>, x86@kernel.org,
- Ingo Molnar <mingo@redhat.com>, linux-pci@vger.kernel.org,
- Len Brown <len.brown@intel.com>, Suzuki K Poulose <suzuki.poulose@arm.com>,
- intel-gfx@lists.freedesktop.org, Jani Nikula <jani.nikula@linux.intel.com>,
- Mauro Carvalho Chehab <mchehab@infradead.org>, Mark Brown <broonie@kernel.org>,
- Borislav Petkov <bp@alien8.de>, Rodrigo Vivi <rodrigo.vivi@intel.com>,
- Bjorn Helgaas <bhelgaas@google.com>, Thomas Gleixner <tglx@linutronix.de>,
- linux-arm-kernel@lists.infradead.org,
- Mathieu Poirier <mathieu.poirier@linaro.org>, Stephen Boyd <sboyd@kernel.org>,
- netdev@vger.kernel.org, linux-pm@vger.kernel.org,
- "Rafael J. Wysocki" <rjw@rjwysocki.net>, Liam Girdwood <lgirdwood@gmail.com>,
- linux-kernel@vger.kernel.org, Daniel Vetter <daniel@ffwll.ch>,
- Johannes Berg <johannes@sipsolutions.net>,
- "David S. Miller" <davem@davemloft.net>
+Cc: Linux Doc Mailing List <linux-doc@vger.kernel.org>,
+ Benjamin Herrenschmidt <benh@kernel.crashing.org>, linux-pci@vger.kernel.org,
+ Oliver O'Halloran <oohall@gmail.com>, Russell Currey <ruscur@russell.cc>,
+ Qiang Zhao <qiang.zhao@nxp.com>, linux-scsi@vger.kernel.org,
+ Michael Ellerman <mpe@ellerman.id.au>, Jiri Slaby <jslaby@suse.com>,
+ Linas Vepstas <linasvepstas@gmail.com>, Andrew Donnellan <ajd@linux.ibm.com>,
+ Mauro Carvalho Chehab <mchehab@infradead.org>,
+ "Manoj N. Kumar" <manoj@linux.ibm.com>, Bjorn Helgaas <bhelgaas@google.com>,
+ linux-arm-kernel@lists.infradead.org, "Matthew R. Ochs" <mrochs@linux.ibm.com>,
+ Uma Krishnan <ukrishn@linux.ibm.com>, Sam Bobroff <sbobroff@linux.ibm.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-kernel@vger.kernel.org,
+ Li Yang <leoyang.li@nxp.com>, Andrew Donnellan <andrew.donnellan@au1.ibm.com>,
+ Frederic Barrat <fbarrat@linux.ibm.com>, Paul Mackerras <paulus@samba.org>,
+ linuxppc-dev@lists.ozlabs.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, 13 Jun 2019 07:10:36 -0300
+On Wed, 12 Jun 2019 14:52:55 -0300
 Mauro Carvalho Chehab <mchehab+samsung@kernel.org> wrote:
 
-> Convert the PM documents to ReST, in order to allow them to
-> build with Sphinx.
+> Convert docs to ReST and add them to the arch-specific
+> book.
 > 
-> The conversion is actually:
->   - add blank lines and identation in order to identify paragraphs;
->   - fix tables markups;
->   - add some lists markups;
->   - mark literal blocks;
->   - adjust title markups.
+> The conversion here was trivial, as almost every file there
+> was already using an elegant format close to ReST standard.
+> 
+> The changes were mostly to mark literal blocks and add a few
+> missing section title identifiers.
+> 
+> One note with regards to "--": on Sphinx, this can't be used
+> to identify a list, as it will format it badly. This can be
+> used, however, to identify a long hyphen - and "---" is an
+> even longer one.
 > 
 > At its new index.rst, let's add a :orphan: while this is not linked to
 > the main index.rst file, in order to avoid build warnings.
 > 
 > Signed-off-by: Mauro Carvalho Chehab <mchehab+samsung@kernel.org>
-> Acked-by: Mark Brown <broonie@kernel.org>
-> Acked-by: Bjorn Helgaas <bhelgaas@google.com>
-> Acked-by: Srivatsa S. Bhat (VMware) <srivatsa@csail.mit.edu>
+> Acked-by: Andrew Donnellan <andrew.donnellan@au1.ibm.com> # cxl
 
-So I can't apply this one due to conflicts in include/linux/pci.h.  Bjorn,
-perhaps the easiest thing is for you to take this one through your tree?
+This one fails to apply because ...
 
-Thanks,
+[...]
+
+> diff --git a/Documentation/PCI/pci-error-recovery.rst b/Documentation/PCI/pci-error-recovery.rst
+> index 83db42092935..acc21ecca322 100644
+> --- a/Documentation/PCI/pci-error-recovery.rst
+> +++ b/Documentation/PCI/pci-error-recovery.rst
+> @@ -403,7 +403,7 @@ That is, the recovery API only requires that:
+>  .. note::
+>  
+>     Implementation details for the powerpc platform are discussed in
+> -   the file Documentation/powerpc/eeh-pci-error-recovery.txt
+> +   the file Documentation/powerpc/eeh-pci-error-recovery.rst
+>  
+>     As of this writing, there is a growing list of device drivers with
+>     patches implementing error recovery. Not all of these patches are in
+> @@ -422,3 +422,24 @@ That is, the recovery API only requires that:
+>     - drivers/net/cxgb3
+>     - drivers/net/s2io.c
+>     - drivers/net/qlge
+> +
+> +>>> As of this writing, there is a growing list of device drivers with
+> +>>> patches implementing error recovery. Not all of these patches are in
+> +>>> mainline yet. These may be used as "examples":
+> +>>>
+> +>>> drivers/scsi/ipr
+> +>>> drivers/scsi/sym53c8xx_2
+> +>>> drivers/scsi/qla2xxx
+> +>>> drivers/scsi/lpfc
+> +>>> drivers/next/bnx2.c
+> +>>> drivers/next/e100.c
+> +>>> drivers/net/e1000
+> +>>> drivers/net/e1000e
+> +>>> drivers/net/ixgb
+> +>>> drivers/net/ixgbe
+> +>>> drivers/net/cxgb3
+> +>>> drivers/net/s2io.c
+> +>>> drivers/net/qlge  
+
+...of this, which has the look of a set of conflict markers that managed
+to get committed...?
 
 jon
+
 
 _______________________________________________
 linux-arm-kernel mailing list
