@@ -2,69 +2,88 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F204D46F25
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 15 Jun 2019 11:01:44 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DBD2C46F2B
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 15 Jun 2019 11:04:29 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=VJCTSKpXNm5m2AlZ9/O8Kk9CuSG8Uw3dEwz1ixT1Y+s=; b=olQF0xpIMUyYyx
-	F9X1cUTyfH0v6p0TDhtKA6zQq0B24duxLerg6146rwW6U6EzLg69JRaRh0PDdxEJSbgwMpvoVDe0Z
-	67oGl8d6cvpF+El325JftNHWZfE2qsFOZKyGSk2WJTmSShOqm5olyAfnuEKSOYXYy9lcxy3uDW/Qb
-	iz5ozW+mksk6KDynwrrFOadysTbK/WJg93K5G16i1yL/3bYHGsFlPMfKEt1+33HLX03O9PMOWZTr8
-	u1CUpeMU6f9eu9wDj5ecbk9I/ZjWFmNiGPevtEf8D/RlW0AhyQ2U9erswqug/pKwM90b1K12m4+Wm
-	vKeudm6ik1svEdF+kdIQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=Xlw+DNpAImqpD1qhhTIgtMgMRB+PgFRB6HGKkFLB3Xk=; b=EkERVJ2hx6hmOw8OVSCyR3I5H
+	O4oq007YoWMH0LCfxnyYGE9uWiiHZhopKz7DT/sMg7j7RUtX0MPjgK2RtxqyTITgzFvsSqhWQQgRJ
+	32p4NUFoIYEJJENtwbYvzM7O8dNqhlXQNHTDbkjmtPNQ2twz/Dj31YaixHKE269OEKXLsx+hPYAVM
+	s8xRHvgnsx+S8NJfowpHJ8zi7aVLBV4N1bmiHfV5hsyo3tAW3KBkhDzLN8mZu0HoDNdhofgk6eBIj
+	91zavhd5oa8OedZ3XcboNkvq+9HCLK4JpWIgo48j6b+x/hPyxIo+L2hc9hLk4vPO68Lr21sLp3Aon
+	1J2vXX4Qg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hc4ZB-00040G-0o; Sat, 15 Jun 2019 09:01:41 +0000
-Received: from smtp.domeneshop.no ([2a01:5b40:0:3005::1])
+	id 1hc4bo-0004ND-W6; Sat, 15 Jun 2019 09:04:25 +0000
+Received: from mail-lj1-x241.google.com ([2a00:1450:4864:20::241])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hc4Yv-0003zz-CE
- for linux-arm-kernel@lists.infradead.org; Sat, 15 Jun 2019 09:01:26 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=tronnes.org;
- s=ds201810; 
- h=Content-Transfer-Encoding:Content-Type:In-Reply-To:MIME-Version:Date:Message-ID:From:References:Cc:To:Subject;
- bh=QOdSVFJZzki1SiePQMOfV+xigT7y6gnQGS4ypEUEtWw=; 
- b=SFlQ8iYV5Rf6XrKHZzT4NB4SyfNEyvN0+tQF3weAtZrE1KiF6V5AzA67rdILUa7B1ktFiaWrb8tPezlLV5qmDzsYj5tkU311CTqt4yVPX/O458LmkLZv+sgmLGb2JpqCGBRH7b0fwysiyFtGJczwUMEFWgrIXYLRTjH1++sd/6uRiKp3eIT9EG5fq6piEpXWUjF4i3T33PYqXFw55WbDpFtRJCHXAvjj7NKdcl6kMG/v7QPS8P3/GUr/n3vB6J37a1Bpjek9a6Lg/g8B+gPAleruDd50WLk95lmK3MSy7x/bcLlLaVTFfdj3q7Ky47EkzsSJ5BmuxhVQWp0aIhL5fA==;
-Received: from 211.81-166-168.customer.lyse.net ([81.166.168.211]:52492
- helo=[192.168.10.173])
- by smtp.domeneshop.no with esmtpsa (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128)
- (Exim 4.84_2) (envelope-from <noralf@tronnes.org>)
- id 1hc4Yt-0003sY-AH; Sat, 15 Jun 2019 11:01:23 +0200
-Subject: Re: [PATCH v4 04/12] drm/client: Change drm_client_panel_rotation name
-To: Maxime Ripard <maxime.ripard@bootlin.com>,
- Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
- Sean Paul <seanpaul@chromium.org>, Daniel Vetter <daniel.vetter@intel.com>,
- David Airlie <airlied@linux.ie>
-References: <cover.5fc7840dc8fb24744516c13acb8c8aa18e44c0d0.1560514379.git-series.maxime.ripard@bootlin.com>
- <9a75b69460e0b365499562492d012824b4d341f2.1560514379.git-series.maxime.ripard@bootlin.com>
-From: =?UTF-8?Q?Noralf_Tr=c3=b8nnes?= <noralf@tronnes.org>
-Message-ID: <5988eed4-6490-39a1-75f2-2b9366d27d60@tronnes.org>
-Date: Sat, 15 Jun 2019 11:01:19 +0200
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:60.0) Gecko/20100101
- Thunderbird/60.7.0
+ id 1hc4bS-0004M6-Vr
+ for linux-arm-kernel@lists.infradead.org; Sat, 15 Jun 2019 09:04:04 +0000
+Received: by mail-lj1-x241.google.com with SMTP id i21so4708758ljj.3
+ for <linux-arm-kernel@lists.infradead.org>;
+ Sat, 15 Jun 2019 02:04:01 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=cogentembedded-com.20150623.gappssmtp.com; s=20150623;
+ h=subject:to:cc:references:from:message-id:date:user-agent
+ :mime-version:in-reply-to:content-language:content-transfer-encoding;
+ bh=q5mZQFP+g8hphwb9WUWDqOBMM/numzNM18neebO4nCQ=;
+ b=TKvbOvDCyXJ7QIhcAjzEBO/B5MJDBLcr6FovRgkpJYKud0J03MwhgTKTPkOjZi26OC
+ w6y0buREBCG1c6uq3sPlr77/VjQzLCdgOghG9e/c5s8gS7g/L8AX8h3zdyE+oqlMe0uv
+ 2/GRYJIjEEw2aJ4tyvQAEzY/28rSFifUCYqKdX7G5G54vtZtwYTTTOaFWdOHS5oGYvQv
+ w2sSVk7v/eZ/A5398oS0IY0/1qbcCYh0myKtRbJiNTvH4Rit3O8EVbfHFV6g1ix5jfjS
+ ZS37CpScGQAeZSnQbIEHHqB3Pszv3fXHApUsSgg2x4SylV0uNWfh/9b/xGFGZDs3KNsl
+ 1xeA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:subject:to:cc:references:from:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=q5mZQFP+g8hphwb9WUWDqOBMM/numzNM18neebO4nCQ=;
+ b=My2Ftr9nVK7O8Fsm3CydXHzdl25zcUf1qEJThIBGYoABdlTxlnUPaDL/Mcx7TVYj4v
+ gLeFRNKgTVUHp7AVNE3Eq5zR3LVtCHjDhVeieTb+ZMRnjsrKjC/CHqUCxzzjganPkPP2
+ ihqvbUsOEE92yr6CcTm30wwmPdKXVeKDnjDlrDPWDd0WDGoQiPy8pr+ySYNTXUAdxok6
+ 4YrvYo18IuRjXzlUCq7cA+2ptP5JX1Pz8HYzbkpYFNN2AxAG6PYQLFgO8e1kP8GxdJcQ
+ u/3XuBbFNtiupfJooQE/b8djkqF/yxQIZU1Ko1jYzVqx0fOA5L/295fpQFE6gYq2TuB3
+ hz/A==
+X-Gm-Message-State: APjAAAUc+gdnbl9moV6cv67NtKhqg8jymPWH9f5jIxzQbM+GKf90hP9n
+ hPzwbucl7EC7SiPPLqOeG/cHMQ==
+X-Google-Smtp-Source: APXvYqyPpxOV0FFgM82A++kc//QU4qjulO9oJY1P3TU1+ZG9i72C0q6wCY8EH7wur3qGZzMBXEUqUg==
+X-Received: by 2002:a2e:1510:: with SMTP id s16mr24630515ljd.19.1560589440559; 
+ Sat, 15 Jun 2019 02:04:00 -0700 (PDT)
+Received: from [192.168.0.199] ([31.173.84.132])
+ by smtp.gmail.com with ESMTPSA id l25sm814819lfk.57.2019.06.15.02.03.59
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Sat, 15 Jun 2019 02:04:00 -0700 (PDT)
+Subject: Re: [PATCH v4 6/8] ARM: dts: imx7ulp: add imx7ulp USBOTG1 support
+To: Peter Chen <peter.chen@nxp.com>, balbi@kernel.org, shawnguo@kernel.org
+References: <20190614093544.11730-1-peter.chen@nxp.com>
+ <20190614093544.11730-7-peter.chen@nxp.com>
+From: Sergei Shtylyov <sergei.shtylyov@cogentembedded.com>
+Message-ID: <0dbf01f9-7c5c-ce0b-4feb-378c9147f15a@cogentembedded.com>
+Date: Sat, 15 Jun 2019 12:03:47 +0300
+User-Agent: Mozilla/5.0 (Windows NT 6.3; WOW64; rv:60.0) Gecko/20100101
+ Thunderbird/60.7.1
 MIME-Version: 1.0
-In-Reply-To: <9a75b69460e0b365499562492d012824b4d341f2.1560514379.git-series.maxime.ripard@bootlin.com>
+In-Reply-To: <20190614093544.11730-7-peter.chen@nxp.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190615_020125_597433_29DE1A8E 
-X-CRM114-Status: UNSURE (   8.68  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20190615_020403_451573_E95E469C 
+X-CRM114-Status: GOOD (  13.17  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [2a01:5b40:0:3005:0:0:0:1 listed in] [list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:241 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -78,24 +97,58 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: eben@raspberrypi.org, dri-devel@lists.freedesktop.org,
- Paul Kocialkowski <paul.kocialkowski@bootlin.com>,
- Eric Anholt <eric@anholt.net>, Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
+Cc: aisheng.dong@nxp.com, devicetree@vger.kernel.org, linux-usb@vger.kernel.org,
+ chunfeng.yun@mediatek.com, robh+dt@kernel.org, linux-imx@nxp.com,
+ kernel@pengutronix.de, fabio.estevam@nxp.com,
  linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-CgpEZW4gMTQuMDYuMjAxOSAxNC4xMywgc2tyZXYgTWF4aW1lIFJpcGFyZDoKPiBUaGUgZHJtX2Ns
-aWVudF9wYW5lbF9yb3RhdGlvbiBmdW5jdGlvbiBoYXMgYmVlbiB1c2VkIHNvIGZhciB0byBzZXQg
-dGhlCj4gZGVmYXVsdCByb3RhdGlvbiBiYXNlZCBvbiB0aGUgcGFuZWwgb3JpZW50YXRpb24uCj4g
-Cj4gSG93ZXZlciwgd2UgY2FuIGhhdmUgbW9yZSBzb3VyY2VzIG9mIGluZm9ybWF0aW9uIHRvIG1h
-a2UgdGhhdCBkZWNpc2lvbiwKPiBzdGFydGluZyB3aXRoIHRoZSBjb21tYW5kIGxpbmUgdGhhdCB3
-ZSB3aWxsIGludHJvZHVjZSBsYXRlciBpbiB0aGlzIHNlcmllcy4KPiAKPiBDaGFuZ2UgdGhlIG5h
-bWUgdG8gcmVtb3ZlIHRoZSBwYW5lbCBtZW50aW9uLgo+IAo+IFNpZ25lZC1vZmYtYnk6IE1heGlt
-ZSBSaXBhcmQgPG1heGltZS5yaXBhcmRAYm9vdGxpbi5jb20+Cj4gLS0tCgpSZXZpZXdlZC1ieTog
-Tm9yYWxmIFRyw7hubmVzIDxub3JhbGZAdHJvbm5lcy5vcmc+CgpfX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlz
-dApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJh
-ZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
+On 14.06.2019 12:35, Peter Chen wrote:
+
+> Add imx7ulp USBOTG1 support.
+> 
+> Signed-off-by: Peter Chen <peter.chen@nxp.com>
+> ---
+>   arch/arm/boot/dts/imx7ulp.dtsi | 28 ++++++++++++++++++++++++++++
+>   1 file changed, 28 insertions(+)
+> 
+> diff --git a/arch/arm/boot/dts/imx7ulp.dtsi b/arch/arm/boot/dts/imx7ulp.dtsi
+> index fca6e50f37c8..5115e47715c3 100644
+> --- a/arch/arm/boot/dts/imx7ulp.dtsi
+> +++ b/arch/arm/boot/dts/imx7ulp.dtsi
+> @@ -30,6 +30,7 @@
+>   		serial1 = &lpuart5;
+>   		serial2 = &lpuart6;
+>   		serial3 = &lpuart7;
+> +		usbphy0 = &usbphy1;
+
+    Is that really needed?
+
+[...]
+> @@ -133,6 +134,33 @@
+[...]
+> +		usbphy1: usbphy@0x40350000 {
+
+    Name it "usb-phy@40350000" please.
+
+> +			compatible = "fsl,imx7ulp-usbphy", "fsl,imx6ul-usbphy";
+> +			reg = <0x40350000 0x1000>;
+> +			interrupts = <GIC_SPI 39 IRQ_TYPE_LEVEL_HIGH>;
+> +			clocks = <&pcc2 IMX7ULP_CLK_USB_PHY>;
+> +			#phy-cells = <0>;
+> +		};
+> +
+>   		usdhc0: mmc@40370000 {
+>   			compatible = "fsl,imx7ulp-usdhc", "fsl,imx6sx-usdhc";
+>   			reg = <0x40370000 0x10000>;
+> 
+
+MBR, Sergei
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
