@@ -2,80 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4D84646F35
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 15 Jun 2019 11:12:07 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CE8A046F37
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 15 Jun 2019 11:12:31 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=K71YX3yqnSZbOp2Vi9ZjsXRHgVZyjEVtboJckFnE4HE=; b=cTBv2/xMJDJ6cx
-	wf0+S4WZl85/GWdTAbbuUY1BwzjlDv7scWmTiLqUsjAzi6DzoNPT1rKbHMVhzz5OzGxzZ91hem2ID
-	x5299P/SvKYgd5KhDxfFdDsBXpD3toF6uBt/SnfvDHKWyboXF/a4Dtj1gX8PbN8i/wKgsESHJbWW1
-	2iLf4hZY4QfQ1L4oPV+rGxzHhhV3tC7oquNrPVe93Lq17hht4U+GTYc/XsWYi6mojTKglX6c7Xqca
-	5yJ/PhxRZ2Po23619L08JS6Lbv07sUHXZ1670KQ4kHmqtljAqqwW+N/HBbqB4XytRc+5Du0uF03a1
-	bVl9FxRSJ2tYnmaCnQUg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=JNeBFsxhkhvf0VHLbbIzMtSTGC3aMtTQ7muwPa8ToYA=; b=J2M1c3ZqGMZptd
+	AHmZgRXjjGaYVkd7bGd0YOdWgeN9dUf1gT/JLtkIdNSb1MmYRIj/atriY+Wrkg4DOWmqOcfiQjaCm
+	PwS7iKbCSVa1TiQ7MIuj6L6c4Non9NyxPoKGlwcCg7m++csbGrCDngiyKhPKvBIqFi57YozXpcIuR
+	r1x3mbfMqQOB1Pgz+a+XfFXw3bCPCD1wsNLlp8y1aZarcDTkzNcDA/XSfWEh9SoULgJm+R3+chUcZ
+	DmLwOi3c+m71R9qXH6Ll4248bBCe8MfDOsI73byEdByhHNhJevVYKuFg8h4pRhuld023dAHrjbLf9
+	BFzNpxNyTuoj7T9Lu4ag==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hc4jE-0007UX-Gr; Sat, 15 Jun 2019 09:12:04 +0000
-Received: from mail-oi1-x242.google.com ([2607:f8b0:4864:20::242])
+	id 1hc4jb-0007jE-T1; Sat, 15 Jun 2019 09:12:27 +0000
+Received: from smtp.domeneshop.no ([2a01:5b40:0:3005::1])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hc4iz-0007Tl-Rt
- for linux-arm-kernel@lists.infradead.org; Sat, 15 Jun 2019 09:11:51 +0000
-Received: by mail-oi1-x242.google.com with SMTP id t76so3736422oih.4
- for <linux-arm-kernel@lists.infradead.org>;
- Sat, 15 Jun 2019 02:11:47 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=googlemail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=GbR5FQbdW0iBa/beUoJRgpiQJiBQoxkjSkavczcORWw=;
- b=VcMKkBRb/rUMovH0xbl2hjAVh9RWLeL/2Omm6qN6vF5jxP+rWGNVzHcsGsRQvedhKE
- S89OH9D5SwVuq27LAT4LJRftoaoZWD+Q+twAaWKckXjWiqLzn1bs/2YgCgpf+YNJfUmo
- be923v5MXnvxDaYj3nIixo6Ne+HWXGGaQB2SjXTgW/VMKX9C+Z+ffC7xuBS7N4BmPObm
- z9gyq8qsnkZsXCaAifchqzQp1XgRa1Cm8zKTZCYNdVbsy+qMbAMNDTKXIEZhuzgaLtHh
- TaFOa/le9r531qZeB18/OtOYxMQNllAvwHWVeBofughuSlh7nLEDzdQP0DqY1WwEKzIG
- OF6w==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=GbR5FQbdW0iBa/beUoJRgpiQJiBQoxkjSkavczcORWw=;
- b=du4exfYk+g2lUQNB1ppJOcjQgPvpz5S+f9QComousIkKbjOAdwkT36zEYUnRvPXKHB
- ZNsKv0XaI64wOqd6n15jy2sud5HmOQO62kLdsnSailEruV5+ZIhWk0EP1qCIpWy++uOo
- bvMvdyM62d82a4Nw5+RnQQcJc0ogFKSLeXryNssraBPohIgvhb3dRCKMwcoeZ72fsDYt
- gWqyG/WSwBx5luKVkQZo6eQxe242VnwmivmfulbBK8V22bMKXPD6JBoYzdLpNjE6ZUdT
- rhjJ8RHpp3NbJOdVd+ffUDDXFdZCI7uukuEFxTo9WPLaU3B6P3fk9SsxmnU4kuWfRa5d
- AmCw==
-X-Gm-Message-State: APjAAAW+BDkCUOOFFnTRG4Qe3y6GDFwYJNTh8K8JjngAG0TZdE7bt982
- M0LUhLUvPrP96xHILZ6zwbLdbt4zPZcCFZCu0x4=
-X-Google-Smtp-Source: APXvYqyyMM3N5RMCR87NhEVuLBpMnEBYAzow16OocnDpntu7REewHZk5fn65ccx+y4maGLwoRyUAtcvK+dw0582yfzo=
-X-Received: by 2002:aca:f144:: with SMTP id p65mr4627672oih.47.1560589906273; 
- Sat, 15 Jun 2019 02:11:46 -0700 (PDT)
+ id 1hc4jA-0007Zv-5V
+ for linux-arm-kernel@lists.infradead.org; Sat, 15 Jun 2019 09:12:01 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=tronnes.org;
+ s=ds201810; 
+ h=Content-Transfer-Encoding:Content-Type:In-Reply-To:MIME-Version:Date:Message-ID:From:References:Cc:To:Subject;
+ bh=e/kZhpg6kkfRn25npvfInWEOHg2V7w40nfvL+KiiOtY=; 
+ b=CAnZf3SLCQOho+SRb2fgzfagkMvGD07X9i+qPrDUXy6cXpqqgvaW0h9rzbOb/dGlU5+NNuu8GOODFOkny+s5FZ5M9yE63NaBhxnrE9mQo1SrV22XQo6lDptc9XoPOwCOq4ThkxI99H7sjX/hwHSeBdkR5v2ZUTSPVzqIZFZhIBhJIhGKzFhk+jYTL6gjqrg9U4tpmnO2uS0FUM1PCPIAinW3n6gYvQ18G6pMiI7pLV7IfRrwUsP0jL/xfVDs/Jsa8pBtrj/SzisYvPyP856WBUIEOkf/sn1j9KieDoSQam5uzXPTrThPvv17trr+x/De/gD4o/BdCE2XjdMNHg/IPw==;
+Received: from 211.81-166-168.customer.lyse.net ([81.166.168.211]:52545
+ helo=[192.168.10.173])
+ by smtp.domeneshop.no with esmtpsa (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128)
+ (Exim 4.84_2) (envelope-from <noralf@tronnes.org>)
+ id 1hc4j8-00063R-5e; Sat, 15 Jun 2019 11:11:58 +0200
+Subject: Re: [PATCH v4 05/12] drm/modes: Rewrite the command line parser
+To: Maxime Ripard <maxime.ripard@bootlin.com>,
+ Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
+ Sean Paul <seanpaul@chromium.org>, Daniel Vetter <daniel.vetter@intel.com>,
+ David Airlie <airlied@linux.ie>
+References: <cover.5fc7840dc8fb24744516c13acb8c8aa18e44c0d0.1560514379.git-series.maxime.ripard@bootlin.com>
+ <0797f942f8c79a3825974fe9584e810e515ab8e0.1560514379.git-series.maxime.ripard@bootlin.com>
+From: =?UTF-8?Q?Noralf_Tr=c3=b8nnes?= <noralf@tronnes.org>
+Message-ID: <f333d42a-96bb-05a3-18f8-c8ebdcfec51d@tronnes.org>
+Date: Sat, 15 Jun 2019 11:11:52 +0200
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:60.0) Gecko/20100101
+ Thunderbird/60.7.0
 MIME-Version: 1.0
-References: <20190612193115.6751-1-martin.blumenstingl@googlemail.com>
- <20190612193115.6751-2-martin.blumenstingl@googlemail.com>
- <CACRpkdajXRXRFz=XpbEzwUb-crhBxNQ4f-m9rfdY6+HcG0+_gA@mail.gmail.com>
-In-Reply-To: <CACRpkdajXRXRFz=XpbEzwUb-crhBxNQ4f-m9rfdY6+HcG0+_gA@mail.gmail.com>
-From: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
-Date: Sat, 15 Jun 2019 11:11:35 +0200
-Message-ID: <CAFBinCAimhth8fDcBZ3vNdy_9dGmHZVAAK0=TUczWWC4Dsa-pA@mail.gmail.com>
-Subject: Re: [PATCH net-next v2 1/1] net: stmmac: use GPIO descriptors in
- stmmac_mdio_reset
-To: Linus Walleij <linus.walleij@linaro.org>
+In-Reply-To: <0797f942f8c79a3825974fe9584e810e515ab8e0.1560514379.git-series.maxime.ripard@bootlin.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190615_021149_922634_BAC9D4CF 
-X-CRM114-Status: GOOD (  15.83  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190615_021200_447862_7BCC5915 
+X-CRM114-Status: UNSURE (   8.53  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:242 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (martin.blumenstingl[at]googlemail.com)
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [2a01:5b40:0:3005:0:0:0:1 listed in] [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -96,56 +78,25 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Andrew Lunn <andrew@lunn.ch>, Alexandre TORGUE <alexandre.torgue@st.com>,
- Maxime Ripard <maxime.ripard@bootlin.com>, netdev <netdev@vger.kernel.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
- Jose Abreu <joabreu@synopsys.com>, Giuseppe CAVALLARO <peppe.cavallaro@st.com>,
- "David S. Miller" <davem@davemloft.net>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: eben@raspberrypi.org, dri-devel@lists.freedesktop.org,
+ Paul Kocialkowski <paul.kocialkowski@bootlin.com>,
+ Eric Anholt <eric@anholt.net>, Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
+ Maxime Ripard <maxime.ripard@free-electrons.com>,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Linus,
-
-On Sat, Jun 15, 2019 at 11:08 AM Linus Walleij <linus.walleij@linaro.org> wrote:
->
-> Hi Martin!
->
-> Thanks for fixing this up!
-you're welcome
-I think I finally understand why you want to switch everything over to
-GPIO descriptors
-
-> A hint for a follow-up:
->
-> On Wed, Jun 12, 2019 at 9:31 PM Martin Blumenstingl
-> <martin.blumenstingl@googlemail.com> wrote:
->
-> > diff --git a/include/linux/stmmac.h b/include/linux/stmmac.h
-> > index 4335bd771ce5..816edb545592 100644
-> > --- a/include/linux/stmmac.h
-> > +++ b/include/linux/stmmac.h
-> > @@ -97,7 +97,7 @@ struct stmmac_mdio_bus_data {
-> >         int *irqs;
-> >         int probed_phy_irq;
-> >  #ifdef CONFIG_OF
-> > -       int reset_gpio, active_low;
-> > +       int reset_gpio;
->
-> Nothing in the kernel seems to be using this reset_gpio either.
->
-> I think it can be deleted with associated code, any new users
-> should use machine descriptors if they insist on board files.
-good catch, thank you - I'll put that in my cleanup series that I want
-to send anyways
-
-
-Martin
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+CgpEZW4gMTQuMDYuMjAxOSAxNC4xMywgc2tyZXYgTWF4aW1lIFJpcGFyZDoKPiBGcm9tOiBNYXhp
+bWUgUmlwYXJkIDxtYXhpbWUucmlwYXJkQGZyZWUtZWxlY3Ryb25zLmNvbT4KPiAKPiBSZXdyaXRl
+IHRoZSBjb21tYW5kIGxpbmUgcGFyc2VyIGluIG9yZGVyIHRvIGdldCBhd2F5IGZyb20gdGhlIHN0
+YXRlIG1hY2hpbmUKPiBwYXJzaW5nIHRoZSB2aWRlbyBtb2RlIGxpbmVzLgo+IAo+IEhvcGVmdWxs
+eSwgdGhpcyB3aWxsIGFsbG93IHRvIGV4dGVuZCBpdCBtb3JlIGVhc2lseSB0byBzdXBwb3J0IG5h
+bWVkIG1vZGVzCj4gYW5kIC8gb3IgcHJvcGVydGllcyBzZXQgZGlyZWN0bHkgb24gdGhlIGNvbW1h
+bmQgbGluZS4KPiAKPiBTaWduZWQtb2ZmLWJ5OiBNYXhpbWUgUmlwYXJkIDxtYXhpbWUucmlwYXJk
+QGZyZWUtZWxlY3Ryb25zLmNvbT4KPiAtLS0KClJldmlld2VkLWJ5OiBOb3JhbGYgVHLDuG5uZXMg
+PG5vcmFsZkB0cm9ubmVzLm9yZz4KCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJu
+ZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFu
+L2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
