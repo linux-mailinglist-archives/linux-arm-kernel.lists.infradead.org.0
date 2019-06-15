@@ -2,76 +2,73 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C4CD146FA4
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 15 Jun 2019 12:40:56 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 279FC46FA9
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 15 Jun 2019 12:44:23 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=FBrXemAyn2MTw7SPkIqEESj26Cns/6PUq0k0ed6c+Mo=; b=by0r3/kYd1dF7s
-	WHcQWIf2ps12agwesuewM9T2rWrOXWKY/1KBBCvbRmwp0YUHQK5V44WFmMDNOjmV/ayKQ20x9ygWH
-	pBfxexCeRpUVRelx1xxS4652IATaFs7hg966FsMJBaxP8MA/gbkNglJcSBhk/yaAFixXpzEh8nGbD
-	4sicwC2uKU+yrVDPX0GvI+4GwR/pPI4qAtnrZYHJKYnAAwP0RpD/RcR2Lve/VgrNcqQrTJtVk+9QL
-	A4FJxPXIYczjoeI048NreMwfvDHvdlXvEkh8jJlvnHt8waftiIi1Yu7YZtoWydvOJbrMq65f64GYE
-	LVDCcg9114joCkw/Qb5w==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=xHcQgEKpYpzpakU3pIqN4gC0CoDR6BCfvOnNU5NZdFM=; b=jseZybSE9mlMEm
+	Btk/qWswlj8FTAWfnrC5DbIXKi268lohw18dw9OZF/IO+FImQx4ooqGYSprBudKLhZ1fTNaAE3BD2
+	LrD0b2kakrs2XnIkq4pegAmWLGsl2EoOyYhXUXPnpfe83tltFmtL3GhwgjpUVU0G3PZzUyj6bwi1b
+	IN2ZaVqCRHImIfyrgaxmQ3leiKNkyOc6W6yzkrH77RRaP3PcVVSdEdv1dVK/aUJH6XjbnIEVnKFW5
+	M3Szi2X3YWcrluVZ1rLWJ/htORVIau5inLc5+PydqVOwwol9iD1hKq56kWlnJhYc1AKqFarX1+mXB
+	Wg2mSwXZgYSaiwX10kbg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hc679-0002JQ-Rp; Sat, 15 Jun 2019 10:40:51 +0000
+	id 1hc6AU-0002th-1n; Sat, 15 Jun 2019 10:44:18 +0000
 Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hc65f-0008Ia-Nm; Sat, 15 Jun 2019 10:39:22 +0000
-Received: by mail-wm1-x342.google.com with SMTP id u8so4597739wmm.1;
- Sat, 15 Jun 2019 03:39:19 -0700 (PDT)
+ id 1hc6AG-0002rf-Ia; Sat, 15 Jun 2019 10:44:06 +0000
+Received: by mail-wm1-x342.google.com with SMTP id w9so1090974wmd.1;
+ Sat, 15 Jun 2019 03:44:04 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=googlemail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=nqWd/qVeeNGJLrkCP2JUFMQSQXMsBJtFqxofheHNWXk=;
- b=fuKDebUT8TsEdWgZzpehH53vOrTTqVVxivh6FDxX6NCHu8uJ/oiWb+z+jGtfWs3qIN
- ojtZXxPH9da+PV9kw1SCYbdBoFXvJv/EQAcEjdkptXXZD+HA8CTRjxeG5zJyxDSLAhDb
- ySEUTQK23Lbw/mKTb6LonhZG8qF3yF6wewmfyd0N81D6v9TO+nfIiTx0HIV70OPvs5CA
- EHihMrLkp605aEOvaU8r3sLgShlXeSuqHSM6ObZhBkSKwjvVA1dHxP/0RK54GqLUP3TB
- yLdfwXapp9nXbdjitlh4IWGBbKWeA9mYfePr2ClFHYIpOsqyRtZ4QEaj9OJcwuC71EI5
- taTw==
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=S3R0LLQ//2yFv2nqx2NreLb9B1XIfmWQYrxaoZNL4Ck=;
+ b=MQf6ojqwu7MV9sf8fWDTviQXFdJqej3YOwrHVJ+F2m/68WDUtAtHzkCB+lHcPCixmr
+ tSPH088SJOIAnbJnhxw07fTgiTIR6IhLmQnSdZzn6wksWy2e7G6GV9bDJje8cGjKCNqx
+ hckzo6Wi7Xqm1e/a9kQluxyJZvxro9poTdi0DxOUixNPONqjEw9F46KwWbNmfroOpL4M
+ ena0Vl2y+0I6wjtMRDT3jTzeubVPcV1U6aRkDe4V0XZgBJ0vWmmUzULR12vdFglChv6j
+ FC+7sdl91L888HeoKuNYjFAZwj16J89kS0AfAF+T4jmTDu7Z6BDg4yADViHkRzPsx3BN
+ cdKw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=nqWd/qVeeNGJLrkCP2JUFMQSQXMsBJtFqxofheHNWXk=;
- b=PWOQDVFUEbfOhmRqAF7qDZM1paxED/jf/2+RIrJuHVFNO2mbQeIbvoChGjyY+EUivo
- eJw+j+urJ4arZmAPyzcCSaX/44iWz6QciTp82rSX91vQNIIKDWX3Qx1H1H12046SOyFZ
- IsJMPyz5tECaWk6z/P6Bjj1Azr0lubwz0ymtiL2FVYmjlCS+M0X5p4xB+qxI/RE4azB8
- hzDilEj7pBZqd9kWDGru3QqbsEJydIc3imDNyduGTrWRnGMTkpkmPIQAW+rptf/BY0Sd
- Ck0G7dJ+w/AUX8LDsI52Hmj4lYbxRB2e6XQBAFKzBOa34AzklLZj41eykN0gJUTSz9Mc
- MH1g==
-X-Gm-Message-State: APjAAAUjG3BYHddJTJwZB5Lh6iywSAdbt/56X1D4AJ4/yCmM+YjI21kq
- DoEPA9aQ1ZmBwyJIzLDA6CwCyySlGks=
-X-Google-Smtp-Source: APXvYqwqvus05/JABsbGBZD+hMbcsTtFNC/JJ4BlBVVmPUhHLms3DAEG+Qg+dLV+L2PLpNGIoAmASQ==
-X-Received: by 2002:a1c:7e90:: with SMTP id z138mr9645089wmc.128.1560595158121; 
- Sat, 15 Jun 2019 03:39:18 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=S3R0LLQ//2yFv2nqx2NreLb9B1XIfmWQYrxaoZNL4Ck=;
+ b=DhDpZn832rput+rka38bDxW2c3kkt7NL7PJ05a6YCVUdxe7TeDbqPNxRupSy9rh6fh
+ 3Jxbi2YLCVBvHddicqLEOURm3Ro9Yejv9WeZPvTGm+8syd6Ci4cw86Y5xLH9hM1SLYAS
+ 2nT+ubv59s6rHfUTreFRx9WAOTpCdjOwuYaLkrQfCUIT8lSnOZCngZnxQh/7Um3eRYhc
+ Q87YtayGzuSH1iFD05Yfs2n4mmHX1JJ95goibhxNTSphZASLys+bIKQ7gdVjA7s8I2sd
+ LQHaIqiRlRyUEE0YTwXFMdLBppr+ugUHrnubkLVvs0ED8UkLAjIGObZv4cPkn/Qt+qL5
+ x39A==
+X-Gm-Message-State: APjAAAWnRlPaNRaj5mxS3vuRUKnTcS34Jn4JU6zYJj81LdFoLhoy8Smo
+ p2RHc3ovkv7MAkc227Mif2sXPfmGjwo=
+X-Google-Smtp-Source: APXvYqz3AGrVhz452+J/j0VdwEw70KSPpUUFJPajmLt/Zzo9mouiFNZ8nzMbqMSyjVK6NYISxyrFng==
+X-Received: by 2002:a1c:e709:: with SMTP id e9mr6283589wmh.144.1560595442668; 
+ Sat, 15 Jun 2019 03:44:02 -0700 (PDT)
 Received: from blackbox.darklights.net
  (p200300F133C20E00A9A405DFDBBC0790.dip0.t-ipconnect.de.
  [2003:f1:33c2:e00:a9a4:5df:dbbc:790])
- by smtp.googlemail.com with ESMTPSA id
- o126sm12209031wmo.31.2019.06.15.03.39.16
+ by smtp.googlemail.com with ESMTPSA id l12sm16761120wrb.81.2019.06.15.03.44.01
  (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Sat, 15 Jun 2019 03:39:17 -0700 (PDT)
+ Sat, 15 Jun 2019 03:44:01 -0700 (PDT)
 From: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
 To: linux-amlogic@lists.infradead.org,
 	khilman@baylibre.com
-Subject: [PATCH v3 4/4] arm64: dts: meson: g12b: odroid-n2: add the Ethernet
- PHY reset line
-Date: Sat, 15 Jun 2019 12:38:32 +0200
-Message-Id: <20190615103832.5126-5-martin.blumenstingl@googlemail.com>
+Subject: [PATCH v2 0/2] arm64: dts: g12a/g12b: add the Ethernet PHY GPIO IRQs
+Date: Sat, 15 Jun 2019 12:43:49 +0200
+Message-Id: <20190615104351.6844-1-martin.blumenstingl@googlemail.com>
 X-Mailer: git-send-email 2.22.0
-In-Reply-To: <20190615103832.5126-1-martin.blumenstingl@googlemail.com>
-References: <20190615103832.5126-1-martin.blumenstingl@googlemail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190615_033919_887006_E473CA51 
-X-CRM114-Status: GOOD (  10.85  )
+X-CRM114-CacheID: sfid-20190615_034404_612588_B13CB654 
+X-CRM114-Status: UNSURE (   9.34  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -102,47 +99,46 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: andrew@lunn.ch, narmstrong@baylibre.com,
- Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
- netdev@vger.kernel.org, linus.walleij@linaro.org, linux-kernel@vger.kernel.org,
- robin.murphy@arm.com, linux-arm-kernel@lists.infradead.org
+Cc: Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ narmstrong@baylibre.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The reset line of the RTL8211F PHY is routed to the GPIOZ_15 pad.
-Describe this in the device tree so the PHY framework can bring the PHY
-into a known state when initializing it. GPIOZ_15 doesn't support
-driving the output HIGH (to take the PHY out of reset, only output LOW
-to reset the PHY is supported). The datasheet states it's an "3.3V input
-tolerant open drain (OD) output pin". Instead there's a pull-up resistor
-on the board to take the PHY out of reset. The GPIO itself will be set
-to INPUT mode to take the PHY out of reset and LOW to reset the PHY,
-which is achieved with the flags (GPIO_ACTIVE_LOW | GPIO_OPEN_DRAIN).
+Avoid polling of the PHY status by passing the Ethernet PHY's GPIO
+interrupt line to the PHY node.
 
-Acked-by: Neil Armstrong <narmstrong@baylibre.com>
-Tested-by: Neil Armstrong <narmstrong@baylibre.com>
-Signed-off-by: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
----
+I tested this successfully on my X96 Max, but I don't have an Odroid-N2
+to test it there. The reset and interrupt GPIO part of the schematics
+seems to be identical for both boards (and probably other "reference
+design" based boards as well).
+
+This depends on my other series "Ethernet PHY reset GPIO updates for
+Amlogic SoCs" from [0]
+
+
+Changes since v1 at [1]:
+- added Neil's Tested/Acked-by (thank you!)
+- rebased on top of v3 of my other series
+- updated cover-letter since the GPIO interrupt controller support
+  is now merged so it's not a dependency anymore
+
+
+[0] https://patchwork.kernel.org/cover/10997069/
+[1] https://patchwork.kernel.org/cover/10985175/
+
+
+Martin Blumenstingl (2):
+  arm64: dts: meson: g12b: odroid-n2: add the Ethernet PHY interrupt
+    line
+  arm64: dts: meson: g12a: x96-max: add the Ethernet PHY interrupt line
+
+ arch/arm64/boot/dts/amlogic/meson-g12a-x96-max.dts   | 4 ++++
  arch/arm64/boot/dts/amlogic/meson-g12b-odroid-n2.dts | 4 ++++
- 1 file changed, 4 insertions(+)
+ 2 files changed, 8 insertions(+)
 
-diff --git a/arch/arm64/boot/dts/amlogic/meson-g12b-odroid-n2.dts b/arch/arm64/boot/dts/amlogic/meson-g12b-odroid-n2.dts
-index c3e0735e6d9f..82b42c073c5e 100644
---- a/arch/arm64/boot/dts/amlogic/meson-g12b-odroid-n2.dts
-+++ b/arch/arm64/boot/dts/amlogic/meson-g12b-odroid-n2.dts
-@@ -250,6 +250,10 @@
- 		/* Realtek RTL8211F (0x001cc916) */	
- 		reg = <0>;
- 		max-speed = <1000>;
-+
-+		reset-assert-us = <10000>;
-+		reset-deassert-us = <30000>;
-+		reset-gpios = <&gpio GPIOZ_15 (GPIO_ACTIVE_LOW | GPIO_OPEN_DRAIN)>;
- 	};
- };
- 
 -- 
 2.22.0
 
