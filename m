@@ -2,84 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2AE9546F79
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 15 Jun 2019 12:11:09 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B237446F7B
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 15 Jun 2019 12:11:29 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Z6hucd6g6nC3URNZeslg1K865W5pFWDznuLNGf0t+To=; b=q7tb9PniasXatF
-	uJ199H+J/5b08WpanvgyWNqjHBXHvgnzEo7xPDaqqXa6RCGYnnbb2hCabjZwQfvIcLoGZFpOg7fzH
-	16tnUGtRDf8RwEtE2xLslnl6jNh04HhPBuIShoTLR7SUKp1UaaGdfS2Jh0FSysUgi802rRQWPhbPU
-	mzeFD8IOfnBZTZlA2FW0JRsHrSQXkJYN1nvuCBmILJjP1zHWeCwI7WNrwTWG74r/GmuQwLBM0nwVD
-	fFDQiesXsw3LHgDQXjwlWOo5wrxtI8o1cI+km2qp6k5D1lZXsA1Nz+9G7wee1CjGXQBvIjqqYMIyd
-	NQKOtHuA7O0ZACR2V5hQ==;
+	List-Owner; bh=I31IUYZ16KQtgzEYCTKfiUBccifrbwfQSNwm/9p692A=; b=WKZkjE5E0WfmWE
+	HFU/mj0Zx28TES2LxY4jfzvzUvY+BBnu+3ud9Z+JINODRE367/Or6Fl2xRISdfB3CdvomCBIcST6b
+	JeCTx4p0tw+z5tkmjv0hwvwmyxahic2bB1P9uVLfZWLfeDVbYjVnSsR2hXFZhlMUTxsRuQefjhHn6
+	TX9XPndXairBjSKf3BWBuKEKD4orV8GWQLrCAPOGOD1As0QTExSruT6y7eyf5PE8NN0Ye6HCjGBZw
+	2PZXNmrzAAsb8Od/a0J/3UR1vmjh/vMMkZFriisLIGvh/zlnKyP5bKn03b3XmrYl+38xMq+CKdyKz
+	RJJp790tttysPYuivcUw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hc5eN-0005eS-I3; Sat, 15 Jun 2019 10:11:07 +0000
-Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
+	id 1hc5ef-0005v2-Me; Sat, 15 Jun 2019 10:11:25 +0000
+Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hc5d4-0003Ua-J3
- for linux-arm-kernel@lists.infradead.org; Sat, 15 Jun 2019 10:09:47 +0000
-Received: by mail-wr1-x444.google.com with SMTP id d18so4987431wrs.5
+ id 1hc5d5-0003Us-Pd
+ for linux-arm-kernel@lists.infradead.org; Sat, 15 Jun 2019 10:09:49 +0000
+Received: by mail-wm1-x344.google.com with SMTP id g135so4678703wme.4
  for <linux-arm-kernel@lists.infradead.org>;
- Sat, 15 Jun 2019 03:09:46 -0700 (PDT)
+ Sat, 15 Jun 2019 03:09:47 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=googlemail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=bZFU7NFpVfVeHlWdzqsP9W+7pyjV+Qkejc+qbCNG2JI=;
- b=kS071LzwgDU6YqnKn98IPviy/GgCUK0RM+EhTYLxlVneNva93160H8wS+XdNcNfRoR
- rylBQviUW+BOLyLwgO+Y/eD1tFldIBZnj5CSu5t/lMErK7NwsGNaQFYkDMidrz5MeNJD
- l4e1JC0QRccodXh/5TuRuF7Y/zv8ASzHjQBdOEqDvuP0dpYy1yCCYKclsnrM15ibmpR1
- SyEMoSQg/HiT0nD/lErdb0jRfRUTB3xlvwEEPPEeig+HV+a2PZSaSRdRKZ2BmGRDtp+f
- TCeaxMbpUGV8cSq7zugSmcBvgn35AbExvvonMeS6BE11STmktZQv9DKDCjsFYcdIi2KC
- uREg==
+ bh=21LzFx2Yc8y77IkHIvE2bMFa0+wAZqeT/XG4CmiYg9c=;
+ b=Uci2wXZnDus0zk0ldy2dfk3d4aJr68Zw4QGrTtJh9KC/t6mdLM97KeoGnbhX0BDZp4
+ mCtBky+GT+CCrAmPb6CQ3WtCzlRp7Bd9iwapxtrEqSZIR/E68kybbnIb+GcsDcnyzeeH
+ zpwELa0AKEjwI8ChQ4ZuUIuhaHIGEs5H2TLn0aZu8bEJOjsIsyDtjaeXwJEqUfXieS7k
+ At7tBj6NYhOwKcQm25Ft+x1l2BQgK16tOjck+Qnx/jf0ZDLLLhAtv6SgS5ylI0uDLeyA
+ PHFr6f7aBVSaDPS6JmhjADnFyp7rJIq5as2BAIo+i/+7/I/A+y/gz9ebD91fo6lIx5x5
+ XANQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=bZFU7NFpVfVeHlWdzqsP9W+7pyjV+Qkejc+qbCNG2JI=;
- b=TGWenFRbdNcCaJiycF2Kwan5im7PHMVFyPedshxgp1N4OM5JYEU05+4YbUtwBWwPhD
- ZuUlvXh2Z3iBpPpRTMiuTF+Hr6kSzsgYeHgH/AOQ46WEqggVlGqOxtc8nTL5bcaoMhEu
- A9NpPmgrZetLMjhGjXeZhnGjiUTV3lob/bJzZl7aeL8HJbbK8viD1CybP86sYrsO+7r4
- N+eq5kqabSLZhvS21jLfhKIsz6l1riggb+rI8BMK6imaDKW2GsxpIFuhvDrCSM8o+1fL
- zxddLRn5PszbnygmfM0ikxTuHJ5njOH4NRdUMdy81lCVY3ck59whZT97grSqAUkGl/n3
- GxpA==
-X-Gm-Message-State: APjAAAXv4lmWC6028GbzrwOCqOmX0C6TNvoU2N/muHfOMWAABXSPpW58
- 6+2vcPCK9K6dTAK0dVuNEXI=
-X-Google-Smtp-Source: APXvYqx0/fov4P+lnmI2fLd5hg9jAgZR94PgXgj/0RSR6XIrP2w7HMaZ7iddBld9yhXqDa6274scSw==
-X-Received: by 2002:a5d:4001:: with SMTP id n1mr51838065wrp.293.1560593384926; 
- Sat, 15 Jun 2019 03:09:44 -0700 (PDT)
+ bh=21LzFx2Yc8y77IkHIvE2bMFa0+wAZqeT/XG4CmiYg9c=;
+ b=Xp19ZwtQeKCIygHK+dsRGJyknTZGbfmOyyp4XDB/x6jDIqb+NBgLmDfDFibjZCoWOB
+ 6H8pBR7CC+4CHxk0G+h7+14MmLrQauj6YnliWLon1G9ivbLd+JQ82xX5kEF9eDGEJk0/
+ 0knjrw9JQ3RMgu2UQUL819qXsFcbVbaeT4iw55uC0x9Ua+x6K96gL8UyRFklIUEi1CaX
+ jWIF58zFtJN/g5aQ4s1Cs5JrVx6R1Ky52kOkZAms+Ge3wlwZFXEmtI+koEbt5cli/V95
+ Q6UXiGornxS7aBGytMNZ1Vov/eTXuwstvObmMLg/nlb+MiLc8dkVsFfWb5Vs7r2QAt1n
+ 3NGw==
+X-Gm-Message-State: APjAAAUucTWCZuE4cbaKmNMQlApt9HekOD+ZzljMV0i5X8aLCbc+demE
+ heDbBU4G8HJ4ZCe0fgrjw+M=
+X-Google-Smtp-Source: APXvYqzPm8dHyxHlzfDDjd2ma6Gj+6tSgX08AW5n9xYFU30GEctIRwfe1P7qrO8HGdN8b/koJ5+c5g==
+X-Received: by 2002:a1c:cb43:: with SMTP id b64mr10850812wmg.135.1560593386042; 
+ Sat, 15 Jun 2019 03:09:46 -0700 (PDT)
 Received: from blackbox.darklights.net
  (p200300F133C20E00A9A405DFDBBC0790.dip0.t-ipconnect.de.
  [2003:f1:33c2:e00:a9a4:5df:dbbc:790])
- by smtp.googlemail.com with ESMTPSA id f2sm9270513wrq.48.2019.06.15.03.09.43
+ by smtp.googlemail.com with ESMTPSA id f2sm9270513wrq.48.2019.06.15.03.09.44
  (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Sat, 15 Jun 2019 03:09:44 -0700 (PDT)
+ Sat, 15 Jun 2019 03:09:45 -0700 (PDT)
 From: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
 To: netdev@vger.kernel.org, peppe.cavallaro@st.com, alexandre.torgue@st.com,
  joabreu@synopsys.com, davem@davemloft.net
-Subject: [PATCH net-next v1 3/5] net: stmmac: drop the reset GPIO from struct
- stmmac_mdio_bus_data
-Date: Sat, 15 Jun 2019 12:09:30 +0200
-Message-Id: <20190615100932.27101-4-martin.blumenstingl@googlemail.com>
+Subject: [PATCH net-next v1 4/5] net: stmmac: drop the reset delays from
+ struct stmmac_mdio_bus_data
+Date: Sat, 15 Jun 2019 12:09:31 +0200
+Message-Id: <20190615100932.27101-5-martin.blumenstingl@googlemail.com>
 X-Mailer: git-send-email 2.22.0
 In-Reply-To: <20190615100932.27101-1-martin.blumenstingl@googlemail.com>
 References: <20190615100932.27101-1-martin.blumenstingl@googlemail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190615_030946_624533_F510F00E 
-X-CRM114-Status: GOOD (  13.14  )
+X-CRM114-CacheID: sfid-20190615_030947_833997_2CA71EBF 
+X-CRM114-Status: GOOD (  11.07  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:444 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:344 listed in]
  [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider (martin.blumenstingl[at]googlemail.com)
@@ -111,79 +111,69 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-No platform uses the "reset_gpio" field from stmmac_mdio_bus_data
-anymore. Drop it so we don't get any new consumers either.
+Only OF platforms use the reset delays and these delays are only read in
+stmmac_mdio_reset(). Move them from struct stmmac_mdio_bus_data to a
+stack variable inside stmmac_mdio_reset() because that's the only usage
+of these delays.
 
-Plain GPIO numbers are being deprecated in favor of GPIO descriptors. If
-needed any new non-OF platform can add a GPIO descriptor lookup table.
-devm_gpiod_get_optional() will find the GPIO in that case.
-
-Suggested-by: Linus Walleij <linus.walleij@linaro.org>
 Signed-off-by: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
 ---
- .../net/ethernet/stmicro/stmmac/stmmac_mdio.c | 29 ++++++-------------
- include/linux/stmmac.h                        |  1 -
- 2 files changed, 9 insertions(+), 21 deletions(-)
+ drivers/net/ethernet/stmicro/stmmac/stmmac_mdio.c | 15 ++++++++-------
+ include/linux/stmmac.h                            |  3 ---
+ 2 files changed, 8 insertions(+), 10 deletions(-)
 
 diff --git a/drivers/net/ethernet/stmicro/stmmac/stmmac_mdio.c b/drivers/net/ethernet/stmicro/stmmac/stmmac_mdio.c
-index 4614f1f2bffb..459ef8afe4fb 100644
+index 459ef8afe4fb..c9454cf4f189 100644
 --- a/drivers/net/ethernet/stmicro/stmmac/stmmac_mdio.c
 +++ b/drivers/net/ethernet/stmicro/stmmac/stmmac_mdio.c
-@@ -253,21 +253,15 @@ int stmmac_mdio_reset(struct mii_bus *bus)
+@@ -252,6 +252,7 @@ int stmmac_mdio_reset(struct mii_bus *bus)
+ #ifdef CONFIG_OF
  	if (priv->device->of_node) {
  		struct gpio_desc *reset_gpio;
++		u32 delays[3];
  
--		if (data->reset_gpio < 0) {
--			reset_gpio = devm_gpiod_get_optional(priv->device,
--							     "snps,reset",
--							     GPIOD_OUT_LOW);
--			if (IS_ERR(reset_gpio))
--				return PTR_ERR(reset_gpio);
--
--			device_property_read_u32_array(priv->device,
--						       "snps,reset-delays-us",
--						       data->delays, 3);
--		} else {
--			reset_gpio = gpio_to_desc(data->reset_gpio);
--
--			gpiod_direction_output(reset_gpio, 0);
--		}
-+		reset_gpio = devm_gpiod_get_optional(priv->device,
-+						     "snps,reset",
-+						     GPIOD_OUT_LOW);
-+		if (IS_ERR(reset_gpio))
-+			return PTR_ERR(reset_gpio);
-+
-+		device_property_read_u32_array(priv->device,
-+					       "snps,reset-delays-us",
-+					       data->delays, 3);
+ 		reset_gpio = devm_gpiod_get_optional(priv->device,
+ 						     "snps,reset",
+@@ -261,18 +262,18 @@ int stmmac_mdio_reset(struct mii_bus *bus)
  
- 		if (data->delays[0])
- 			msleep(DIV_ROUND_UP(data->delays[0], 1000));
-@@ -323,11 +317,6 @@ int stmmac_mdio_register(struct net_device *ndev)
- 	if (mdio_bus_data->irqs)
- 		memcpy(new_bus->irq, mdio_bus_data->irqs, sizeof(new_bus->irq));
+ 		device_property_read_u32_array(priv->device,
+ 					       "snps,reset-delays-us",
+-					       data->delays, 3);
++					       delays, ARRAY_SIZE(delays));
  
--#ifdef CONFIG_OF
--	if (priv->device->of_node)
--		mdio_bus_data->reset_gpio = -1;
--#endif
--
- 	new_bus->name = "stmmac";
+-		if (data->delays[0])
+-			msleep(DIV_ROUND_UP(data->delays[0], 1000));
++		if (delays[0])
++			msleep(DIV_ROUND_UP(delays[0], 1000));
  
- 	if (priv->plat->has_xgmac) {
+ 		gpiod_set_value_cansleep(reset_gpio, 1);
+-		if (data->delays[1])
+-			msleep(DIV_ROUND_UP(data->delays[1], 1000));
++		if (delays[1])
++			msleep(DIV_ROUND_UP(delays[1], 1000));
+ 
+ 		gpiod_set_value_cansleep(reset_gpio, 0);
+-		if (data->delays[2])
+-			msleep(DIV_ROUND_UP(data->delays[2], 1000));
++		if (delays[2])
++			msleep(DIV_ROUND_UP(delays[2], 1000));
+ 	}
+ #endif
+ 
 diff --git a/include/linux/stmmac.h b/include/linux/stmmac.h
-index 816edb545592..fe865df82e48 100644
+index fe865df82e48..96d97c908595 100644
 --- a/include/linux/stmmac.h
 +++ b/include/linux/stmmac.h
-@@ -97,7 +97,6 @@ struct stmmac_mdio_bus_data {
+@@ -96,9 +96,6 @@ struct stmmac_mdio_bus_data {
+ 	unsigned int phy_mask;
  	int *irqs;
  	int probed_phy_irq;
- #ifdef CONFIG_OF
--	int reset_gpio;
- 	u32 delays[3];
- #endif
+-#ifdef CONFIG_OF
+-	u32 delays[3];
+-#endif
  };
+ 
+ struct stmmac_dma_cfg {
 -- 
 2.22.0
 
