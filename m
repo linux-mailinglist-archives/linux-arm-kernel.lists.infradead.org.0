@@ -2,65 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0669746EE1
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 15 Jun 2019 09:56:21 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id F25C846EF6
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 15 Jun 2019 10:24:13 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1/wMZS3/ZRoZXWU8IZI45pdJiDarT65VacgF4gv+H1s=; b=e2JqsrBj2QSbBP
-	2VSGf2l1iQQC0V5XynhfgO7/ZtwZ/qHP5KRuhUgUZ32A3/RT5bd4HpO/l5h8ISVSE4YEJ5/o9hCi5
-	aiN1ImLDI7mr9hLyBqXeCgzWA/mr2xV+0yrQQUt2fdcs9lTIAipaimR+XQKTOMOOZG6ZTth873zG4
-	Uu8+/ALyRhF40J/g2mzxXpamaGEcFpO4AtEtj4V2GvQHQgMBePIXDm97/bdB477E063vN4+/ZNKLb
-	RyyWnoDm+IG/5qF/3FeVe5T0RiH/RmJv1go4rr1xkgtjxaaPxhKHLA8j/9rtctD2yMfcBkQ8lBqUA
-	7v9qFdqQlyxr/qVQXzXA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=F9C61HHmNpDgaoxc8RRRmeT0M6NjAgNse01CcpjoOOM=; b=UeG6d960GdzLES
+	453y1iCioCCLsn11fcA/3yWSt3r9YJNnVgVFxxNMYtwy2+GrvTa4gfq0vPiZpnnCY6BKE+JyoUyZK
+	Y+xIowNnmz1PfPDJNGjKR305eunBMnEAZ3qKfWkDp1A0suGk9jVl1CHtO+x3caV4h0xeqnIA3G9MB
+	5Sa4pfrj761XXPIYd15ZJGR0iHGfFI5Nm+qaHVKgSlls9OHz+7/ztI880tPKb4ebdxLhWqsDPgpYz
+	aOnXOuNzRAeVN9InkA/POp2cEibpHDIPK/R6fkwBVOIAZuLgs5qEgFSWZS9oNlZEz7j2Ps0nLkylX
+	G/+oCfLgHJp9Qp0+wYgg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hc3Xo-00059l-CS; Sat, 15 Jun 2019 07:56:13 +0000
-Received: from lb3-smtp-cloud7.xs4all.net ([194.109.24.31])
+	id 1hc3yp-0005fe-Bh; Sat, 15 Jun 2019 08:24:07 +0000
+Received: from szxga05-in.huawei.com ([45.249.212.191] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hc3X5-00058q-Qe
- for linux-arm-kernel@lists.infradead.org; Sat, 15 Jun 2019 07:55:30 +0000
-Received: from [IPv6:2001:983:e9a7:1:cc45:ac5:3048:e495]
- ([IPv6:2001:983:e9a7:1:cc45:ac5:3048:e495])
- by smtp-cloud7.xs4all.net with ESMTPA
- id c3WlhgdJD5qKac3WnhPwkl; Sat, 15 Jun 2019 09:55:14 +0200
-Subject: Re: [PATCH 2/2] media: v4l: xilinx: Add Xilinx UHD-SDI Rx Subsystem
- driver
-To: Vishal Sagar <vsagar@xilinx.com>
-References: <1559656556-79174-1-git-send-email-vishal.sagar@xilinx.com>
- <1559656556-79174-3-git-send-email-vishal.sagar@xilinx.com>
- <023cf8a6-6fbc-6425-8bca-798045d39e02@xs4all.nl>
- <CH2PR02MB608838E59840F73F00534198A7EE0@CH2PR02MB6088.namprd02.prod.outlook.com>
-From: Hans Verkuil <hverkuil@xs4all.nl>
-Message-ID: <740f44cb-24af-72c4-f227-5323efcee8ac@xs4all.nl>
-Date: Sat, 15 Jun 2019 09:55:07 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.6.1
+ id 1hc3yZ-0005ek-74
+ for linux-arm-kernel@lists.infradead.org; Sat, 15 Jun 2019 08:23:53 +0000
+Received: from DGGEMS411-HUB.china.huawei.com (unknown [172.30.72.60])
+ by Forcepoint Email with ESMTP id D11044BB0A4B7A6B23F0;
+ Sat, 15 Jun 2019 16:23:39 +0800 (CST)
+Received: from linux-ibm.site (10.175.102.37) by
+ DGGEMS411-HUB.china.huawei.com (10.3.19.211) with Microsoft SMTP Server id
+ 14.3.439.0; Sat, 15 Jun 2019 16:23:33 +0800
+From: Hanjun Guo <guohanjun@huawei.com>
+To: <linux-arm-kernel@lists.infradead.org>, <linux-acpi@vger.kernel.org>
+Subject: [PATCH] MAINTAINERS: Update my email address
+Date: Sat, 15 Jun 2019 16:21:12 +0800
+Message-ID: <1560586872-40099-1-git-send-email-guohanjun@huawei.com>
+X-Mailer: git-send-email 1.7.12.4
 MIME-Version: 1.0
-In-Reply-To: <CH2PR02MB608838E59840F73F00534198A7EE0@CH2PR02MB6088.namprd02.prod.outlook.com>
-Content-Language: en-US
-X-CMAE-Envelope: MS4wfAsC5PMZ8rglwk1Ln0NBxUik+NocyMzfkLqG9ItL3zhGeHIW586gxQPKdVqf6cp4ZknHUY9NF5494m8FXBSeoY6VDGXThHxNSk9Wp6kUMRRI/e30tgdA
- Q/ZVvxjJb5XGywkOvxUasG0hL4oyVh420nobCJVo2SjOQPure8fE7dkZjUvoRv9LvLiHZYdOY/HXqps74GJ/rupfOyoaagzky+1n3DXgOrp8Scy94mFQ+PrW
- DCca7zKX3mxkDCXP0dyYQrPwqoc1mvM8vLzwf/J0j0aWjSP/YmX1lS3uYgHN4dT1OWzEu1ICvCnSHq0JmvwL+2sAzuiCuzfbmnlI3OnJoXyo6YIXZos9I9/g
- pXlebfgJyCdDg5zmDk2ORiUC6QRIREepMM3roJLQext0iTx4TsrkTt1cc4m8IszBJ972dYYuAbnY8OBMrHqluCtXgMh+B8gQ2zk6NvCH6vkBpx2d0MUkRt/D
- 12/wwfTvwbutqRMNWpUS2c3emBbzKX6OXPX30RUGMzuzb64U3ukfoI5jQD/0bImqxGC02n57KTNqGCSI6XVUfYyjyoYCERkJ01un1VRPVrD37DcH5WpkjBnM
- Y3AKcHPcS3/l8m2tteO2od/uqCVFsAvm+0rZNAe546jGTmh1kbG22nASDdd1lQaGEhZU+OSKCRyi9yD8noQD4CYOw6BDPFEhQ9LrR1z1YbvoZiTqdjaj6XOE
- DLE0x54joRR/CpeNDHxYeoxSSpdNN7dKdMYeUkJI5dVe/Xcx8QkN7/iL2WUNAqfdOycrJPAqgv4=
+X-Originating-IP: [10.175.102.37]
+X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190615_005528_025574_E7DBB80A 
-X-CRM114-Status: GOOD (  23.69  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20190615_012351_645268_B8E8ACB9 
+X-CRM114-Status: UNSURE (   9.45  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [194.109.24.31 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [45.249.212.191 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -72,148 +62,38 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Sandip Kothari <sandipk@xilinx.com>,
- Mauro Carvalho Chehab <mchehab@kernel.org>, Hyun Kwon <hyunk@xilinx.com>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Rob Herring <robh+dt@kernel.org>, Michal Simek <michals@xilinx.com>,
- Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
- Sakari Ailus <sakari.ailus@linux.intel.com>,
- Vishal Sagar <vishal.sagar@xilinx.com>, Dinesh Kumar <dineshk@xilinx.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- "linux-media@vger.kernel.org" <linux-media@vger.kernel.org>
+Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ "Rafael J. Wysocki" <rafael@kernel.org>,
+ Catalin Marinas <catalin.marinas@arm.com>, Hanjun Guo <guohanjun@huawei.com>,
+ Sudeep Holla <sudeep.holla@arm.com>, Will Deacon <will@kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 6/14/19 1:44 PM, Vishal Sagar wrote:
-> Hi Hans,
-> 
-> Thanks for reviewing this patch.
-> 
->> -----Original Message-----
->> From: Hans Verkuil [mailto:hverkuil@xs4all.nl]
->> Sent: Wednesday, June 05, 2019 6:28 PM
->> To: Vishal Sagar <vishal.sagar@xilinx.com>; Hyun Kwon <hyunk@xilinx.com>;
->> Laurent Pinchart <laurent.pinchart@ideasonboard.com>; Mauro Carvalho
->> Chehab <mchehab@kernel.org>; Michal Simek <michals@xilinx.com>; Rob
->> Herring <robh+dt@kernel.org>; Mark Rutland <mark.rutland@arm.com>
->> Cc: linux-kernel@vger.kernel.org; linux-media@vger.kernel.org; linux-arm-
->> kernel@lists.infradead.org; devicetree@vger.kernel.org; Dinesh Kumar
->> <dineshk@xilinx.com>; Sandip Kothari <sandipk@xilinx.com>
->> Subject: Re: [PATCH 2/2] media: v4l: xilinx: Add Xilinx UHD-SDI Rx Subsystem
->> driver
->>
->> EXTERNAL EMAIL
->>
->> On 6/4/19 3:55 PM, Vishal Sagar wrote:
->>> The Xilinx UHD-SDI Rx subsystem soft IP is used to capture native SDI
->>> streams from SDI sources like SDI broadcast equipment like cameras and
->>> mixers. This block outputs either native SDI, native video or
->>> AXI4-Stream compliant data stream for further processing. Please refer
->>> to PG290 for details.
->>>
->>> The driver is used to configure the IP to add framer, search for
->>> specific modes, get the detected mode, stream parameters, errors, etc.
->>> It also generates events for video lock/unlock, bridge over/under flow.
->>>
->>> The driver supports only 10 bpc YUV 422 media bus format. It also
->>> decodes the stream parameters based on the ST352 packet embedded in the
->>> stream. In case the ST352 packet isn't present in the stream, the core's
->>> detected properties are used to set stream properties.
->>>
->>> The driver currently supports only the AXI4-Stream configuration.
->>>
->>> Signed-off-by: Vishal Sagar <vishal.sagar@xilinx.com>
->>> ---
->>>  drivers/media/platform/xilinx/Kconfig          |   11 +
->>>  drivers/media/platform/xilinx/Makefile         |    1 +
->>>  drivers/media/platform/xilinx/xilinx-sdirxss.c | 1846
->> ++++++++++++++++++++++++
->>>  include/uapi/linux/xilinx-sdirxss.h            |   63 +
->>>  include/uapi/linux/xilinx-v4l2-controls.h      |   30 +
->>>  include/uapi/linux/xilinx-v4l2-events.h        |    9 +
+The @linaro.org address is not working and bonucing, so update the
+references.
 
-<snip>
+Signed-off-by: Hanjun Guo <guohanjun@huawei.com>
+---
+ MAINTAINERS | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
->> I am concerned about this driver: I see that none of the *_dv_timings callbacks
->> are implemented. I would expect to see that for a video receiver. There is also
->> no g_input_status implemented.
->>
->> Take a look at another SDI driver: drivers/media/spi/gs1662.c
->>
-> 
-> I had a look at the gs1662 driver for the dv_timings callbacks. The gs1662 driver
-> requires the timings because it is a SDI Transmitter. 
-> 
-> Here the timings are not required as the IP block generates a AXI4 Stream.
-> I think it may be required only in case of native / parallel video being outputted
-> as the output stream needs timing information to be decoded.
-> 
-> Please feel free to correct my understanding if wrong.
-> 
-> In the current driver, the input stream properties like width, height, frame rate,
-> progressive/interlaced  are determined from the ST352 packet payload or from the
-> properties detected by the core.
-> 
-> See the xsdirx_get_stream_properties() for details.
-
-You're wrong. In xsdirx_get_stream_properties() you set the format information.
-But you can't just change that: if the video resolution changes, then that means
-that userspace needs to be informed that it has changed at the source, it has to
-find and set the new timings, update the formats, possibly reallocate memory for
-the buffers, update other parts of the video pipeline with the new resolution etc.
-
-The one thing you cannot do is just pass on the new resolution and hope that the
-video pipeline can handle it all.
-
-The right sequence of events is:
-
-1) When a change is detected at the source the driver sends the SOURCE_CHANGE
-event and either stops transmitting to the video pipeline or keeps sending the
-old resolution (some devices have a freewheeling mode where they can do that).
-
-2) Userspace sees the event, calls QUERY_DV_TIMINGS to find a new timings (if
-any), usually stops streaming, and calls S_DV_TIMINGS to set the detected timings:
-at that point the driver can configure the output towards the video pipeline with
-the new timings. Userspace reallocates buffers and resumes streaming with the new
-resolution.
-
-Note that G_DV_TIMINGS returns the last configured timings, not the detected
-timings: only QUERY_DV_TIMINGS does that.
-
-In other words: userspace has to retain control of the full pipeline.
-
-Regards,
-
-	Hans
-
-> 
->> Some of the controls you add in this driver can likely be dropped. Especially
->> those controls that are not specific to the Xilinx implementation but are
->> generic for any SDI receiver, should be looked at closely: those are
->> candidates for becoming standard controls.
-> 
-> I don't know how other SDI Receiver devices function.
-> So I am assuming all these controls are Xilinx specific implementations.
-> 
->>
->> But the documentation above is simply insufficient for me to tell what is
->> SDI specific and what is implementation specific.
->>
-> 
-> I will add more documentation for these controls.
-> 
->> Also, I'm no SDI expert, certainly not for the UHD-SDI.
->>
->> Regards,
->>
->>         Hans
-> 
-> Regards
-> Vishal Sagar
-> 
+diff --git a/MAINTAINERS b/MAINTAINERS
+index 57f496c..2fed10f 100644
+--- a/MAINTAINERS
++++ b/MAINTAINERS
+@@ -364,7 +364,7 @@ F:	drivers/acpi/fan.c
+ 
+ ACPI FOR ARM64 (ACPI/arm64)
+ M:	Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
+-M:	Hanjun Guo <hanjun.guo@linaro.org>
++M:	Hanjun Guo <guohanjun@huawei.com>
+ M:	Sudeep Holla <sudeep.holla@arm.com>
+ L:	linux-acpi@vger.kernel.org
+ L:	linux-arm-kernel@lists.infradead.org (moderated for non-subscribers)
+-- 
+1.7.12.4
 
 
 _______________________________________________
