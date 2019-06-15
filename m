@@ -2,46 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B6B1F46D69
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 15 Jun 2019 03:11:45 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2877D46D6B
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 15 Jun 2019 03:12:15 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=CxFzxFyD+nklRaZdbCFQjjixTJKLqaR6dSqQc0kg4Ro=; b=lHRD5bkFXvejFX
-	aytbYVIVpX5IbaEG+MJmI2iXsh+IqW0z8W4JJxaZmt1YCEaMMiayzFWkNqDGHLIB2vJb16F/ihw6+
-	VcqmKuW8lSOmMYCCuNK/h5j6emI/L8fqeoFVOHqQmsGghWVGlsoy+Ned7F/hRqJZCLzc61NfWoW1c
-	rUVH85nLMG/GR/wXI1G8W7ltR7t/OJYsKJusSbEQBn37wr0yyTK1EwB+R0/f5xd8gty1CJABIsrD4
-	4Bm6N6YgycOpZEdaugNUnCMWsExMxRSroqcw2NF45brb5jXVr9Co7jDZ/tykBtdxVL9K/pETi4iTZ
-	s1btWw5tuGM8VgLIj75A==;
+	List-Owner; bh=xJQNPVcBHmP0h8ZwQ5aDLY9GATlfq0TFBCLA9neuzr0=; b=olHqXW6gpwQVUe
+	k7bG1+rL3uoPM6XihR+e4uX8SQKKkfFMpSxDGGC4dujoaC9GIirRuhISddd9msaHyx6iulH4x0fRB
+	3fRKvx7DqNUywrTI2Vt5fTXnS0d6nWGnw455F6u+K1GHV1QLuNDj5F/DYMyzvuSaICIYqyruEtJhy
+	gLxG99TKoEfwPxAh9eWK6cDr4l184QyV4SHo2EgQtqikU7FXYSFzSeEzPXjZiG0E69PzA2Yfc11J9
+	I/qpBb9ZNrr3+6K/9tO7zUVI0sqkvPrjkVWQbVzr004inftI1/VrfI4n9wpYyxsgJDnZh1zV0OXyX
+	jLA/TuVm9yiG6NBWN+xQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hbxEO-0007O7-CU; Sat, 15 Jun 2019 01:11:44 +0000
+	id 1hbxEp-0007so-3P; Sat, 15 Jun 2019 01:12:11 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hbxDh-0006xV-CG
- for linux-arm-kernel@lists.infradead.org; Sat, 15 Jun 2019 01:11:02 +0000
+ id 1hbxDm-00073O-LU
+ for linux-arm-kernel@lists.infradead.org; Sat, 15 Jun 2019 01:11:08 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id DDD6C2B;
- Fri, 14 Jun 2019 18:11:00 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id B9A642B;
+ Fri, 14 Jun 2019 18:11:05 -0700 (PDT)
 Received: from mammon-tx2.austin.arm.com (mammon-tx2.austin.arm.com
  [10.118.30.49])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id D548B3F718;
- Fri, 14 Jun 2019 18:11:00 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id B03893F718;
+ Fri, 14 Jun 2019 18:11:05 -0700 (PDT)
 From: Jeremy Linton <jeremy.linton@arm.com>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH 3/4] arm_pmu: acpi: spe: Add initial MADT/SPE probing
-Date: Fri, 14 Jun 2019 20:09:09 -0500
-Message-Id: <20190615010910.33921-4-jeremy.linton@arm.com>
+Subject: [PATCH 4/4] perf: arm_spe: Enable ACPI/Platform automatic module
+ loading
+Date: Fri, 14 Jun 2019 20:09:10 -0500
+Message-Id: <20190615010910.33921-5-jeremy.linton@arm.com>
 X-Mailer: git-send-email 2.21.0
 In-Reply-To: <20190615010910.33921-1-jeremy.linton@arm.com>
 References: <20190615010910.33921-1-jeremy.linton@arm.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190614_181101_506356_B2458A84 
-X-CRM114-Status: GOOD (  15.60  )
+X-CRM114-CacheID: sfid-20190614_181106_786415_AAC169EE 
+X-CRM114-Status: GOOD (  11.16  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -69,138 +70,57 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-ACPI 6.3 adds additional fields to the MADT GICC
-structure to describe SPE PPI's. We pick these out
-of the cached reference to the madt_gicc structure
-similarly to the core PMU code. We then create a platform
-device referring to the IRQ and let the user/module loader
-decide whether to load the SPE driver.
+Lets add the MODULE_TABLE and platform id_table entries so that
+the SPE driver can attach to the ACPI platform device created by
+the core pmu code.
 
 Signed-off-by: Jeremy Linton <jeremy.linton@arm.com>
+Reviewed-by: Sudeep Holla <sudeep.holla@arm.com>
 ---
- arch/arm64/include/asm/acpi.h |  3 ++
- drivers/perf/arm_pmu_acpi.c   | 75 +++++++++++++++++++++++++++++++++++
- include/linux/perf/arm_pmu.h  |  2 +
- 3 files changed, 80 insertions(+)
+ drivers/perf/arm_spe_pmu.c | 12 ++++++++++--
+ 1 file changed, 10 insertions(+), 2 deletions(-)
 
-diff --git a/arch/arm64/include/asm/acpi.h b/arch/arm64/include/asm/acpi.h
-index 7628efbe6c12..d10399b9f998 100644
---- a/arch/arm64/include/asm/acpi.h
-+++ b/arch/arm64/include/asm/acpi.h
-@@ -41,6 +41,9 @@
- 	(!(entry) || (entry)->header.length < ACPI_MADT_GICC_MIN_LENGTH || \
- 	(unsigned long)(entry) + (entry)->header.length > (end))
+diff --git a/drivers/perf/arm_spe_pmu.c b/drivers/perf/arm_spe_pmu.c
+index e120f933412a..4fb65c61c8ea 100644
+--- a/drivers/perf/arm_spe_pmu.c
++++ b/drivers/perf/arm_spe_pmu.c
+@@ -38,6 +38,7 @@
+ #include <linux/of_address.h>
+ #include <linux/of_device.h>
+ #include <linux/perf_event.h>
++#include <linux/perf/arm_pmu.h>
+ #include <linux/platform_device.h>
+ #include <linux/printk.h>
+ #include <linux/slab.h>
+@@ -1168,7 +1169,13 @@ static const struct of_device_id arm_spe_pmu_of_match[] = {
+ };
+ MODULE_DEVICE_TABLE(of, arm_spe_pmu_of_match);
  
-+#define ACPI_MADT_GICC_SPE  (ACPI_OFFSET(struct acpi_madt_generic_interrupt, \
-+	spe_interrupt) + sizeof(u16))
+-static int arm_spe_pmu_device_dt_probe(struct platform_device *pdev)
++static const struct platform_device_id arm_spe_match[] = {
++	{ ARMV8_SPE_PDEV_NAME, 0},
++	{ }
++};
++MODULE_DEVICE_TABLE(platform, arm_spe_match);
 +
- /* Basic configuration for ACPI */
- #ifdef	CONFIG_ACPI
- pgprot_t __acpi_get_mem_attribute(phys_addr_t addr);
-diff --git a/drivers/perf/arm_pmu_acpi.c b/drivers/perf/arm_pmu_acpi.c
-index 0f197516d708..f5df100bc4f4 100644
---- a/drivers/perf/arm_pmu_acpi.c
-+++ b/drivers/perf/arm_pmu_acpi.c
-@@ -74,6 +74,79 @@ static void arm_pmu_acpi_unregister_irq(int cpu)
- 	acpi_unregister_gsi(gsi);
++static int arm_spe_pmu_device_probe(struct platform_device *pdev)
+ {
+ 	int ret;
+ 	struct arm_spe_pmu *spe_pmu;
+@@ -1228,11 +1235,12 @@ static int arm_spe_pmu_device_remove(struct platform_device *pdev)
  }
  
-+#if IS_ENABLED(CONFIG_ARM_SPE_PMU)
-+static struct resource spe_resources[] = {
-+	{
-+		/* irq */
-+		.flags          = IORESOURCE_IRQ,
-+	}
-+};
-+
-+static struct platform_device spe_dev = {
-+	.name = ARMV8_SPE_PDEV_NAME,
-+	.id = -1,
-+	.resource = spe_resources,
-+	.num_resources = ARRAY_SIZE(spe_resources)
-+};
-+
-+/*
-+ * For lack of a better place, hook the normal PMU MADT walk
-+ * and create a SPE device if we detect a recent MADT with
-+ * a homogeneous PPI mapping.
-+ */
-+static int arm_spe_acpi_register_device(void)
-+{
-+	int cpu, hetid, irq, ret;
-+	bool first = true;
-+	u16 gsi = 0;
-+
-+	/*
-+	 * sanity check all the GICC tables for the same interrupt number
-+	 * for now we only support homogeneous ACPI/SPE machines.
-+	 */
-+	for_each_possible_cpu(cpu) {
-+		struct acpi_madt_generic_interrupt *gicc;
-+
-+		gicc = acpi_cpu_get_madt_gicc(cpu);
-+		if (gicc->header.length < ACPI_MADT_GICC_SPE)
-+			return -ENODEV;
-+
-+		if (first) {
-+			gsi = gicc->spe_interrupt;
-+			if (!gsi)
-+				return -ENODEV;
-+			hetid = find_acpi_cpu_topology_hetero_id(cpu);
-+			first = false;
-+		} else if ((gsi != gicc->spe_interrupt) ||
-+			   (hetid != find_acpi_cpu_topology_hetero_id(cpu))) {
-+			pr_warn("ACPI: SPE must be homogeneous\n");
-+			return -EINVAL;
-+		}
-+	}
-+
-+	irq = acpi_register_gsi(NULL, gsi, ACPI_LEVEL_SENSITIVE,
-+				ACPI_ACTIVE_HIGH);
-+	if (irq < 0) {
-+		pr_warn("ACPI: SPE Unable to register interrupt: %d\n", gsi);
-+		return irq;
-+	}
-+
-+	spe_resources[0].start = irq;
-+	ret = platform_device_register(&spe_dev);
-+	if (ret < 0) {
-+		pr_warn("ACPI: SPE: Unable to register device\n");
-+		acpi_unregister_gsi(gsi);
-+	}
-+
-+	return ret;
-+}
-+#else
-+static inline int arm_spe_acpi_register_device(void)
-+{
-+	return -ENODEV;
-+}
-+#endif /* CONFIG_ARM_SPE_PMU */
-+
- static int arm_pmu_acpi_parse_irqs(void)
- {
- 	int irq, cpu, irq_cpu, err;
-@@ -279,6 +352,8 @@ static int arm_pmu_acpi_init(void)
- 	if (acpi_disabled)
- 		return 0;
+ static struct platform_driver arm_spe_pmu_driver = {
++	.id_table = arm_spe_match,
+ 	.driver	= {
+ 		.name		= DRVNAME,
+ 		.of_match_table	= of_match_ptr(arm_spe_pmu_of_match),
+ 	},
+-	.probe	= arm_spe_pmu_device_dt_probe,
++	.probe	= arm_spe_pmu_device_probe,
+ 	.remove	= arm_spe_pmu_device_remove,
+ };
  
-+	arm_spe_acpi_register_device(); /* failures are expected */
-+
- 	ret = arm_pmu_acpi_parse_irqs();
- 	if (ret)
- 		return ret;
-diff --git a/include/linux/perf/arm_pmu.h b/include/linux/perf/arm_pmu.h
-index 4641e850b204..784bc58f165a 100644
---- a/include/linux/perf/arm_pmu.h
-+++ b/include/linux/perf/arm_pmu.h
-@@ -175,4 +175,6 @@ void armpmu_free_irq(int irq, int cpu);
- 
- #endif /* CONFIG_ARM_PMU */
- 
-+#define ARMV8_SPE_PDEV_NAME "arm,spe-v1"
-+
- #endif /* __ARM_PMU_H__ */
 -- 
 2.21.0
 
