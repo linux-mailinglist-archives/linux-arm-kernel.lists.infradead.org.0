@@ -2,88 +2,101 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 88D8C46E1A
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 15 Jun 2019 06:21:54 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2381E46E6B
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 15 Jun 2019 07:03:52 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=uYzP9hDxuUEDYwsZk2D6/vzk2mNvRHcjYQqTjOR1OL8=; b=NJ3SScatTckosh
-	UywuL9IbsWRhhw5vNWSynaQoRUgYCLdv0xgPxErh/Er96vuOnKw1Etb94U49aaBWljjPnafZ0iPN/
-	f3bh6f3OB2Uoxun8SKN+qKNfpNKvlKOWFKQHnBtCMTN/VNTlt4fJ02+Q+bw/yhS3PMrPGdClMNTEh
-	ApG3UdyQxlkpe/8Pc6eOkxhlImaDZD5fGnSX2q7MlwqP7ocgHD3N7wZ7Zum8jol57XP+4cXo7PJrp
-	qAfN9LO7FZVnAtG+Xd47DftuziHWsVZS1xnDcTX9GezSK/lETHEZF1qMrzVCx+TLYdgUDaMBSdnab
-	U/xl3ABcV+UIQnUawtCg==;
+	List-Owner; bh=KF1AB//Y2li8gAbTKXqFVIM/XXebAuXH3UAeok/kQ9U=; b=lWPOalB1nfxZaQ
+	tsXbNNSUtVP+I/0hdI87z4fVYoym0LjMqGm1GYluFAco+wAadmSlV6vQ5Jo+8ygAun/7eDCkwjbUp
+	KwLWC5zHA0UUlBb6G+0YOyhOyIWod44VEfZawNSofqejXt8Yc7B54xU2hkaVkzJTQ2laWjbM01PVo
+	+Z+CeV7Fhx5bmXHoTrwlMz97BfhUFeow/RBi5DD8Rc0a0I43dCQcTdhLJ2vG3Sl4GDuK1qDqAWh26
+	Kx2nEz9aPBlQ/sy05Hh7P1P3PU37rSsuOKk19RYK42hQIJ5FoPPvf2JEY/w0zib386d/wmsLb3xXG
+	6VRuixwGL/y/iGgwJhNg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hc0CL-0000Mc-Kl; Sat, 15 Jun 2019 04:21:49 +0000
-Received: from mail-pg1-x543.google.com ([2607:f8b0:4864:20::543])
+	id 1hc0qz-0006Md-9D; Sat, 15 Jun 2019 05:03:49 +0000
+Received: from mail-eopbgr60084.outbound.protection.outlook.com ([40.107.6.84]
+ helo=EUR04-DB3-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hc0CA-0000MC-P9
- for linux-arm-kernel@lists.infradead.org; Sat, 15 Jun 2019 04:21:40 +0000
-Received: by mail-pg1-x543.google.com with SMTP id v9so2614717pgr.13
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 14 Jun 2019 21:21:37 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to;
- bh=e2sMQ1AZ0GtcV+cpgmOhkEZAkfXP9SWkwW6WWCjK14E=;
- b=NJo/Eh84TXhtAiPaNmEx+xZQeCM0zcjl41wUNj7hhj/WaID6M1FO62iXhG8gt/MNWl
- RvLnpnvvPa02OWyxRyLcLlwErMp7n7+JtmlXIEqgyck7bznOsIrM/Z2sNVWj3w5Xvyg7
- 5Rb6VzHLLzgr0D8GSKFDpw2IsqwMToJn74hJQ=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to;
- bh=e2sMQ1AZ0GtcV+cpgmOhkEZAkfXP9SWkwW6WWCjK14E=;
- b=Vai2cVE4kNRJcm80kWGhZlIcZWjkmySxEwUC6ugWIIlESGTkO5gpUQ14APSufheABf
- P5jGAPoMQnFkKy8A012DhdlS31Ps5MwF2kaCsAJwHFYaO0HCdKVv3xrfplh0NRe/E/Ra
- InEhkPObxq5Z4N/flWXAbjhQNAIqJW14eagzdYUedfaEzsPek1hp1TI4VtURMjkqB5qV
- vPWl03I69NxKfC3zHw2GMPIRqPWY8tcOKGWrJyqeJaM6ckIcckowAuPUeLGQgqzNJ9q1
- /dgbhK4S/2iZBmqZHtu4EerbcoVrlhdZ5QqHqggazUZu3RbCxrzPBtLjOWMV2J3sUPak
- ZbvQ==
-X-Gm-Message-State: APjAAAVJELuOFQhKrA/b7tIN1e6ogjjEIK8M9msecCmvMVaO3opx0Uqe
- V7cxrRHFmBkosS4g/Cc1YzzFaQ==
-X-Google-Smtp-Source: APXvYqyVgt5pnlVfhuyZa6vFwsGeGO8MPwwOGiXx1xL0K0Q9qN6dU+LywkN1KUgj2GhkelxQC9yBDA==
-X-Received: by 2002:a65:638e:: with SMTP id h14mr16564299pgv.86.1560572497170; 
- Fri, 14 Jun 2019 21:21:37 -0700 (PDT)
-Received: from www.outflux.net (smtp.outflux.net. [198.145.64.163])
- by smtp.gmail.com with ESMTPSA id b2sm4370319pgk.50.2019.06.14.21.21.35
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Fri, 14 Jun 2019 21:21:35 -0700 (PDT)
-Date: Fri, 14 Jun 2019 21:21:34 -0700
-From: Kees Cook <keescook@chromium.org>
-To: Will Deacon <will.deacon@arm.com>
-Subject: Re: [RFC] Disable lockref on arm64
-Message-ID: <201906142026.1BC27EDB1E@keescook>
-References: <20190506181039.GA2875@brain-police>
- <20190518042424.GA28517@dc5-eodlnx05.marvell.com>
- <CAKv+Gu9U9z3iAuz4V1c5zTHuz1As8FSNGY-TJon4OLErB8ts8Q@mail.gmail.com>
- <20190522160417.GF7876@fuggles.cambridge.arm.com>
- <20190612040933.GA18848@dc5-eodlnx05.marvell.com>
- <20190612093151.GA11554@brain-police>
- <20190614070914.GA21961@dc5-eodlnx05.marvell.com>
- <20190614095846.GC10506@fuggles.cambridge.arm.com>
- <CAKv+Gu_Kdq=UPijjA84FpmO=ZsdEO9EyyF7GeOQ+WmfqtO_hMg@mail.gmail.com>
- <20190614103850.GG10659@fuggles.cambridge.arm.com>
+ id 1hc0qn-0006M4-MU
+ for linux-arm-kernel@lists.infradead.org; Sat, 15 Jun 2019 05:03:39 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=FOcSy+KiGQxIKss8QBtUtIp7nlP5xib/WpLVin7l/p4=;
+ b=JWn4GhSPLRKcg14cq/O92KsQzcS5gC7JBW6G0s3siTnHgEhI+4PmelWRDx9EK1UIJkAwtJWfTcRouMdfsleZ2VfeVBkDHOsrooyLViQLMjJwo55JIULKCi1O2qFt0I2i8No20eb4p01/2xmjiBUWakOXRZCXF0QfBnwr5kveWAo=
+Received: from AM0PR04MB6738.eurprd04.prod.outlook.com (20.179.253.203) by
+ AM0PR04MB5412.eurprd04.prod.outlook.com (20.178.112.11) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.1987.12; Sat, 15 Jun 2019 05:03:33 +0000
+Received: from AM0PR04MB6738.eurprd04.prod.outlook.com
+ ([fe80::f41f:5455:d0b3:2527]) by AM0PR04MB6738.eurprd04.prod.outlook.com
+ ([fe80::f41f:5455:d0b3:2527%4]) with mapi id 15.20.1987.013; Sat, 15 Jun 2019
+ 05:03:33 +0000
+From: "Z.q. Hou" <zhiqiang.hou@nxp.com>
+To: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>, "bhelgaas@google.com"
+ <bhelgaas@google.com>
+Subject: RE: [PATCHv5 18/20] PCI: mobiveil: Disable IB and OB windows set by
+ bootloader
+Thread-Topic: [PATCHv5 18/20] PCI: mobiveil: Disable IB and OB windows set by
+ bootloader
+Thread-Index: AQHU8Qrl2X2dZdmZtkqqPC5pUtT6KKaYlFaAgAPP00A=
+Date: Sat, 15 Jun 2019 05:03:33 +0000
+Message-ID: <AM0PR04MB67383C84D946045874B0F14A84E90@AM0PR04MB6738.eurprd04.prod.outlook.com>
+References: <20190412083635.33626-1-Zhiqiang.Hou@nxp.com>
+ <20190412083635.33626-19-Zhiqiang.Hou@nxp.com>
+ <20190612162347.GF15747@redmoon>
+In-Reply-To: <20190612162347.GF15747@redmoon>
+Accept-Language: zh-CN, en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=zhiqiang.hou@nxp.com; 
+x-originating-ip: [27.186.246.136]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: 341e3ca0-801d-4e28-e2a9-08d6f14ed131
+x-ms-office365-filtering-ht: Tenant
+x-microsoft-antispam: BCL:0; PCL:0;
+ RULEID:(2390118)(7020095)(4652040)(8989299)(5600148)(711020)(4605104)(1401327)(4618075)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(2017052603328)(7193020);
+ SRVR:AM0PR04MB5412; 
+x-ms-traffictypediagnostic: AM0PR04MB5412:
+x-microsoft-antispam-prvs: <AM0PR04MB54128FFFE8C2D58F82C0BE9384E90@AM0PR04MB5412.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:2887;
+x-forefront-prvs: 0069246B74
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(39860400002)(366004)(376002)(346002)(136003)(396003)(13464003)(199004)(189003)(53936002)(55016002)(229853002)(9686003)(6436002)(7696005)(53546011)(76176011)(6506007)(102836004)(6246003)(3846002)(2906002)(186003)(6116002)(99286004)(4326008)(446003)(11346002)(316002)(110136005)(54906003)(25786009)(486006)(26005)(476003)(71190400001)(71200400001)(66946007)(76116006)(73956011)(66476007)(66556008)(64756008)(66446008)(7736002)(256004)(305945005)(74316002)(52536014)(5660300002)(14444005)(66066001)(7416002)(68736007)(14454004)(86362001)(2501003)(33656002)(81166006)(8676002)(81156014)(8936002)(478600001);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:AM0PR04MB5412;
+ H:AM0PR04MB6738.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; A:1; MX:1; 
+received-spf: None (protection.outlook.com: nxp.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam-message-info: V+xKVAJVpNRfIsDDhlRJqz23pIbyf3nUHQ65YngXDGeLKBdT58s29Xm9Cu60jbuGfyrp3H79n18cqHYmPJytmB8b16j0j/AvD3WIku8plQzyg756Dw4gkc7eDwga0+UfMoyiKzAzogz6ZZoChisVWInyxzohRUchca0XwVk60TlA05reZ6/iz8Ey6Wj5nzVzXNu+jiCDsj95O/YkMluwf1yxB2q0UU3H7GCPZbkNwRdINjzMUIY7/7ntZSNboJ1PmcEhjY/PihDhF/K0pdxTvkhKhEPUitIpHxt3wD1Ce8Up4ashroluizEd3e6cO8X0hTlo7EudfUGz+i61CaGVXy/9eusEOJTJRjZKQFv1JQIF2kJmgI057W5y64eG+ZoFouMXcZSUbKKqpR5B0uX7o1kWRgsyZ9zbVorllM1DVNE=
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190614103850.GG10659@fuggles.cambridge.arm.com>
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 341e3ca0-801d-4e28-e2a9-08d6f14ed131
+X-MS-Exchange-CrossTenant-originalarrivaltime: 15 Jun 2019 05:03:33.8084 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: zhiqiang.hou@nxp.com
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM0PR04MB5412
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190614_212138_856245_C71ED3EA 
-X-CRM114-Status: GOOD (  35.96  )
+X-CRM114-CacheID: sfid-20190614_220337_870949_64694594 
+X-CRM114-Status: GOOD (  19.45  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:543 listed in]
- [list.dnswl.org]
+ no trust [40.107.6.84 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -91,7 +104,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- 0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -103,153 +115,89 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Ard Biesheuvel <ard.biesheuvel@linaro.org>,
- "catalin.marinas@arm.com" <catalin.marinas@arm.com>,
- Jan Glauber <jglauber@marvell.com>,
+Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ Xiaowei Bao <xiaowei.bao@nxp.com>,
+ "linux-pci@vger.kernel.org" <linux-pci@vger.kernel.org>,
+ "l.subrahmanya@mobiveil.co.in" <l.subrahmanya@mobiveil.co.in>,
+ "will.deacon@arm.com" <will.deacon@arm.com>,
  "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Jayachandran Chandrasekharan Nair <jnair@marvell.com>,
- Linus Torvalds <torvalds@linux-foundation.org>,
+ Leo Li <leoyang.li@nxp.com>, "M.h. Lian" <minghuan.lian@nxp.com>,
+ "robh+dt@kernel.org" <robh+dt@kernel.org>, Mingkai Hu <mingkai.hu@nxp.com>,
+ "catalin.marinas@arm.com" <catalin.marinas@arm.com>,
+ "shawnguo@kernel.org" <shawnguo@kernel.org>,
  "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="gb2312"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-tl;dr: if arm/arm64 can catch overflow, untested dec-to-zero, and
-inc-from-zero, while performing better than existing REFCOUNT_FULL,
-it's a no-brainer to switch. Minimum parity to x86 would be to catch
-overflow and untested dec-to-zero. Minimum viable protection would be to
-catch overflow. LKDTM is your friend.
-
-Details below...
-
-On Fri, Jun 14, 2019 at 11:38:50AM +0100, Will Deacon wrote:
-> On Fri, Jun 14, 2019 at 12:24:54PM +0200, Ard Biesheuvel wrote:
-> > On Fri, 14 Jun 2019 at 11:58, Will Deacon <will.deacon@arm.com> wrote:
-> > > On Fri, Jun 14, 2019 at 07:09:26AM +0000, Jayachandran Chandrasekharan Nair wrote:
-> > > > x86 added a arch-specific fast refcount implementation - and the commit
-> > > > specifically notes that it is faster than cmpxchg based code[1].
-> > > >
-> > > > There seems to be an ongoing effort to move over more and more subsystems
-> > > > from atomic_t to refcount_t(e.g.[2]), specifically because refcount_t on
-> > > > x86 is fast enough and you get some error checking atomic_t that does not
-> > > > have.
-
-For clarity: the choices on x86 are: full or fast, where both catch
-the condition that leads to use-after-free that can be unconditionally
-mitigated (i.e. refcount overflow-wrapping to zero: the common missing
-ref count decrement). The _underflow_ case (the less common missing ref
-count increment) can be exploited but nothing can be done to mitigate
-it. Only a later increment from zero can indicate that something went
-wrong _in the past_.
-
-There is not a way to build x86 without the overflow protection, and
-that was matched on arm/arm64 by making REFCOUNT_FULL unconditionally
-enabled. So, from the perspective of my take on weakening the protection
-level, I'm totally fine if arm/arm64 falls back to a non-FULL
-implementation as long as it catches the overflow case (which the prior
-"fast" patches totally did).
-
-> > > Correct, but there are also some cases that are only caught by
-> > > REFCOUNT_FULL.
-> > >
-> > Yes, but do note that my arm64 implementation catches
-> > increment-from-zero as well.
-
-FWIW, the vast majority of bugs that refcount_t has found has been
-inc-from-zero (the overflow case doesn't tend to ever get exercised,
-but it's easy for syzkaller and other fuzzers to underflow when such a
-path is found). And those are only found on REFCOUNT_FULL kernels
-presently, so it'd be nice to have that case covered in the "fast"
-arm/arm64 case too.
-
-> Ok, so it's just the silly racy cases that are problematic?
-> 
-> > > > Do you think Ard's patch needs changes before it can be considered? I
-> > > > can take a look at that.
-> > >
-> > > I would like to see how it performs if we keep the checking inline, yes.
-> > > I suspect Ard could spin this in short order.
-> > 
-> > Moving the post checks before the stores you mean? That shouldn't be
-> > too difficult, I suppose, but it will certainly cost performance.
-> 
-> That's what I'd like to assess, since the major complaint seems to be the
-> use of cmpxchg() as opposed to inline branching.
-> 
-> > > > > Whatever we do, I prefer to keep REFCOUNT_FULL the default option for arm64,
-> > > > > so if we can't keep the semantics when we remove the cmpxchg, you'll need to
-> > > > > opt into this at config time.
-> > > >
-> > > > Only arm64 and arm selects REFCOUNT_FULL in the default config. So please
-> > > > reconsider this! This is going to slow down arm64 vs. other archs and it
-> > > > will become worse when more code adopts refcount_t.
-> > >
-> > > Maybe, but faced with the choice between your micro-benchmark results and
-> > > security-by-default for people using the arm64 Linux kernel, I really think
-> > > that's a no-brainer. I'm well aware that not everybody agrees with me on
-> > > that.
-> > 
-> > I think the question whether the benchmark is valid is justified, but
-> > otoh, we are obsessed with hackbench which is not that representative
-> > of a real workload either. It would be better to discuss these changes
-> > in the context of known real-world use cases where refcounts are a
-> > true bottleneck.
-> 
-> I wasn't calling into question the validity of the benchmark (I really have
-> no clue about that), but rather that you can't have your cake and eat it.
-> Faced with the choice, I'd err on the security side because it's far easier
-> to explain to somebody that the default is full mitigation at a cost than it
-> is to explain why a partial mitigation is acceptable (and in the end it's
-> often subjective because people have different thresholds).
-
-I'm happy to call into question the validity of the benchmark though! ;)
-Seriously, it came up repeatedly in the x86 port, where there was a
-claim of "it's slower" (which is certainly objectively true: more cycles
-are spent), but no one could present a real-world workload where the
-difference was measurable.
-
-> > Also, I'd like to have Kees's view on the gap between REFCOUNT_FULL
-> > and the fast version on arm64. I'm not convinced the cases we are not
-> > covering are such a big deal.
-> 
-> Fair enough, but if the conclusion is that it's not a big deal then we
-> should just remove REFCOUNT_FULL altogether, because it's the choice that
-> is the problem here.
-
-The coverage difference on x86 is that inc-from-zero is only caught in
-the FULL case. Additionally there is the internal difference around how
-"saturation" of the value happens. e.g. under FULL a count gets pinned
-either to INT_MAX or to zero.
-
-Since the "fast" arm patch caught inc-from-zero, I would say sure
-ditch FULL in favor of it (though check that "dec-to-zero" is caught:
-i.e. _dec() hitting zero -- instead of dec_and_test() hitting zero). LKDTM
-has extensive behavioral tests for refcount_t, so if the tests show the
-same results before/after, go for it. :) Though note that the logic may
-need tweaking depending on the saturation behavior: right now it expects
-either FULL (INT_MAX/0 pinning) or the x86 saturation (INT_MIN / 2).
-
-Note also that LKDTM has a refcount benchmark as well, in case you want
-to measure the difference between atomic_t and refcount_t in the most
-microbenchmark-y way possible. This is what was used for the numbers in
-commit 7a46ec0e2f48 ("locking/refcounts, x86/asm: Implement fast
-refcount overflow protection"):
-
- 2147483646 refcount_inc()s and 2147483647 refcount_dec_and_test()s:
-                 cycles        protections
- atomic_t         82249267387  none
- refcount_t-fast  82211446892  overflow, untested dec-to-zero
- refcount_t-full 144814735193  overflow, untested dec-to-zero, inc-from-zero
-
-Also note that the x86 fast implementations adjusted memory ordering
-slightly later on in commit 47b8f3ab9c49 ("refcount_t: Add ACQUIRE
-ordering on success for dec(sub)_and_test() variants").
-
--- 
-Kees Cook
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+SGkgTG9yZW56bywNCg0KPiAtLS0tLU9yaWdpbmFsIE1lc3NhZ2UtLS0tLQ0KPiBGcm9tOiBMb3Jl
+bnpvIFBpZXJhbGlzaSBbbWFpbHRvOmxvcmVuem8ucGllcmFsaXNpQGFybS5jb21dDQo+IFNlbnQ6
+IDIwMTnE6jbUwjEzyNUgMDoyNA0KPiBUbzogWi5xLiBIb3UgPHpoaXFpYW5nLmhvdUBueHAuY29t
+PjsgYmhlbGdhYXNAZ29vZ2xlLmNvbQ0KPiBDYzogbGludXgtcGNpQHZnZXIua2VybmVsLm9yZzsg
+bGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnOw0KPiBkZXZpY2V0cmVlQHZnZXIu
+a2VybmVsLm9yZzsgbGludXgta2VybmVsQHZnZXIua2VybmVsLm9yZzsNCj4gcm9iaCtkdEBrZXJu
+ZWwub3JnOyBtYXJrLnJ1dGxhbmRAYXJtLmNvbTsgbC5zdWJyYWhtYW55YUBtb2JpdmVpbC5jby5p
+bjsNCj4gc2hhd25ndW9Aa2VybmVsLm9yZzsgTGVvIExpIDxsZW95YW5nLmxpQG54cC5jb20+Ow0K
+PiBjYXRhbGluLm1hcmluYXNAYXJtLmNvbTsgd2lsbC5kZWFjb25AYXJtLmNvbTsgTWluZ2thaSBI
+dQ0KPiA8bWluZ2thaS5odUBueHAuY29tPjsgTS5oLiBMaWFuIDxtaW5naHVhbi5saWFuQG54cC5j
+b20+OyBYaWFvd2VpIEJhbw0KPiA8eGlhb3dlaS5iYW9AbnhwLmNvbT4NCj4gU3ViamVjdDogUmU6
+IFtQQVRDSHY1IDE4LzIwXSBQQ0k6IG1vYml2ZWlsOiBEaXNhYmxlIElCIGFuZCBPQiB3aW5kb3dz
+IHNldA0KPiBieSBib290bG9hZGVyDQo+IA0KPiBPbiBGcmksIEFwciAxMiwgMjAxOSBhdCAwODoz
+NzowMEFNICswMDAwLCBaLnEuIEhvdSB3cm90ZToNCj4gPiBGcm9tOiBIb3UgWmhpcWlhbmcgPFpo
+aXFpYW5nLkhvdUBueHAuY29tPg0KPiA+DQo+ID4gRGlzYWJsZSBhbGwgaW5ib3VuZCBhbmQgb3V0
+Ym91bmQgd2luZG93cyBiZWZvcmUgc2V0IHVwIHRoZSB3aW5kb3dzIGluDQo+ID4ga2VybmVsLCBp
+biBjYXNlIHRyYW5zYWN0aW9ucyBtYXRjaCB0aGUgd2luZG93IHNldCBieSBib290bG9hZGVyLg0K
+PiANCj4gVGhlcmUgbXVzdCBiZSBubyBQQ0kgdHJhbnNhY3Rpb25zIG9uZ29pbmcgYXQgYm9vdGxv
+YWRlcjwtPk9TIGhhbmRvdmVyLg0KPg0KDQpZZXMsIGV4YWN0Lg0KIA0KPiBUaGUgYm9vdGxvYWRl
+ciBuZWVkcyBmaXhpbmcgYW5kIHRoaXMgcGF0Y2ggc2hvdWxkIGJlIGRyb3BwZWQsIHRoZSBob3N0
+IGJyaWRnZQ0KPiBkcml2ZXIgYXNzdW1lcyB0aGUgaG9zdCBicmlkZ2Ugc3RhdGUgaXMgZGlzYWJs
+ZWQsDQoNClRoZSBob3N0IGJyaWRnZSBkcml2ZXIgc2hvdWxkIG5vdCBhc3N1bWVzIHRoZSBob3N0
+IHN0YXRlIGlzIGRpc2FibGVkLCBhY3R1YWxseQ0KdS1ib290IGVuYWJsZS9pbml0aWFsaXplIHRo
+ZSBob3N0IGFuZCB3aXRob3V0IGRpc2FibGluZyBpdCB3aGVuIHRyYW5zZmVyIHRoZSANCmNvbnRy
+b2wgdG8gTGludXguDQoNCj4gaXQgd2lsbCBwcm9ncmFtIHRoZSBicmlkZ2UNCj4gYXBlcnR1cmVz
+IGZyb20gc2NyYXRjaCB3aXRoIG5vIG9uZ29pbmcgdHJhbnNhY3Rpb25zLCBhbnl0aGluZyBkZXZp
+YXRpbmcgZnJvbQ0KPiB0aGlzIGJlaGF2aW91ciBpcyBhIGJvb3Rsb2FkZXIgYnVnIGFuZCBhIHJl
+Y2lwZSBmb3IgZGlzYXN0ZXIuDQoNClRoZSBwb2ludCBvZiB0aGlzIHBhdGNoIGlzIG5vdCB0byBm
+aXggdGhlIG9uZ29pbmcgdHJhbnNhY3Rpb24gaXNzdWUsIGl0IGlzIHRvIGF2b2lkDQphIHBvdGVu
+dGlhbCBpc3N1ZSB3aGljaCBpcyBjYXVzZWQgYnkgdGhlIG91dGJvdW5kIHdpbmRvdyBlbmFibGVk
+IGJ5IGJvb3Rsb2FkZXINCm92ZXJsYXBwaW5nIHdpdGggTGludXggZW5hYmxlZC4NCg0KVGhhbmtz
+LA0KWmhpcWlhbmcNCiANCj4gTG9yZW56bw0KPiANCj4gPiBTaWduZWQtb2ZmLWJ5OiBIb3UgWmhp
+cWlhbmcgPFpoaXFpYW5nLkhvdUBueHAuY29tPg0KPiA+IFJldmlld2VkLWJ5OiBNaW5naHVhbiBM
+aWFuIDxNaW5naHVhbi5MaWFuQG54cC5jb20+DQo+ID4gUmV2aWV3ZWQtYnk6IFN1YnJhaG1hbnlh
+IExpbmdhcHBhIDxsLnN1YnJhaG1hbnlhQG1vYml2ZWlsLmNvLmluPg0KPiA+IC0tLQ0KPiA+IFY1
+Og0KPiA+ICAtIE5vIGZ1bmN0aW9uYWxpdHkgY2hhbmdlLg0KPiA+DQo+ID4gIGRyaXZlcnMvcGNp
+L2NvbnRyb2xsZXIvcGNpZS1tb2JpdmVpbC5jIHwgMjUgKysrKysrKysrKysrKysrKysrKysrKysr
+Kw0KPiA+ICAxIGZpbGUgY2hhbmdlZCwgMjUgaW5zZXJ0aW9ucygrKQ0KPiA+DQo+ID4gZGlmZiAt
+LWdpdCBhL2RyaXZlcnMvcGNpL2NvbnRyb2xsZXIvcGNpZS1tb2JpdmVpbC5jDQo+ID4gYi9kcml2
+ZXJzL3BjaS9jb250cm9sbGVyL3BjaWUtbW9iaXZlaWwuYw0KPiA+IGluZGV4IDhkYzg3YzdhNjAw
+ZS4uNDExZTk3NzlkYTEyIDEwMDY0NA0KPiA+IC0tLSBhL2RyaXZlcnMvcGNpL2NvbnRyb2xsZXIv
+cGNpZS1tb2JpdmVpbC5jDQo+ID4gKysrIGIvZHJpdmVycy9wY2kvY29udHJvbGxlci9wY2llLW1v
+Yml2ZWlsLmMNCj4gPiBAQCAtNTY1LDYgKzU2NSwyNCBAQCBzdGF0aWMgaW50IG1vYml2ZWlsX2Jy
+aW5ndXBfbGluayhzdHJ1Y3QNCj4gbW9iaXZlaWxfcGNpZSAqcGNpZSkNCj4gPiAgCXJldHVybiAt
+RVRJTUVET1VUOw0KPiA+ICB9DQo+ID4NCj4gPiArc3RhdGljIHZvaWQgbW9iaXZlaWxfcGNpZV9k
+aXNhYmxlX2liX3dpbihzdHJ1Y3QgbW9iaXZlaWxfcGNpZSAqcGNpZSwNCj4gPiAraW50IGlkeCkg
+ew0KPiA+ICsJdTMyIHZhbDsNCj4gPiArDQo+ID4gKwl2YWwgPSBjc3JfcmVhZGwocGNpZSwgUEFC
+X1BFWF9BTUFQX0NUUkwoaWR4KSk7DQo+ID4gKwl2YWwgJj0gfigxIDw8IEFNQVBfQ1RSTF9FTl9T
+SElGVCk7DQo+ID4gKwljc3Jfd3JpdGVsKHBjaWUsIHZhbCwgUEFCX1BFWF9BTUFQX0NUUkwoaWR4
+KSk7IH0NCj4gPiArDQo+ID4gK3N0YXRpYyB2b2lkIG1vYml2ZWlsX3BjaWVfZGlzYWJsZV9vYl93
+aW4oc3RydWN0IG1vYml2ZWlsX3BjaWUgKnBjaWUsDQo+ID4gK2ludCBpZHgpIHsNCj4gPiArCXUz
+MiB2YWw7DQo+ID4gKw0KPiA+ICsJdmFsID0gY3NyX3JlYWRsKHBjaWUsIFBBQl9BWElfQU1BUF9D
+VFJMKGlkeCkpOw0KPiA+ICsJdmFsICY9IH4oMSA8PCBXSU5fRU5BQkxFX1NISUZUKTsNCj4gPiAr
+CWNzcl93cml0ZWwocGNpZSwgdmFsLCBQQUJfQVhJX0FNQVBfQ1RSTChpZHgpKTsgfQ0KPiA+ICsN
+Cj4gPiAgc3RhdGljIHZvaWQgbW9iaXZlaWxfcGNpZV9lbmFibGVfbXNpKHN0cnVjdCBtb2JpdmVp
+bF9wY2llICpwY2llKSAgew0KPiA+ICAJcGh5c19hZGRyX3QgbXNnX2FkZHIgPSBwY2llLT5wY2ll
+X3JlZ19iYXNlOyBAQCAtNTg1LDYgKzYwMywxMyBAQA0KPiA+IHN0YXRpYyBpbnQgbW9iaXZlaWxf
+aG9zdF9pbml0KHN0cnVjdCBtb2JpdmVpbF9wY2llICpwY2llKSAgew0KPiA+ICAJdTMyIHZhbHVl
+LCBwYWJfY3RybCwgdHlwZTsNCj4gPiAgCXN0cnVjdCByZXNvdXJjZV9lbnRyeSAqd2luOw0KPiA+
+ICsJaW50IGk7DQo+ID4gKw0KPiA+ICsJLyogRGlzYWJsZSBhbGwgaW5ib3VuZC9vdXRib3VuZCB3
+aW5kb3dzICovDQo+ID4gKwlmb3IgKGkgPSAwOyBpIDwgcGNpZS0+YXBpb193aW5zOyBpKyspDQo+
+ID4gKwkJbW9iaXZlaWxfcGNpZV9kaXNhYmxlX29iX3dpbihwY2llLCBpKTsNCj4gPiArCWZvciAo
+aSA9IDA7IGkgPCBwY2llLT5wcGlvX3dpbnM7IGkrKykNCj4gPiArCQltb2JpdmVpbF9wY2llX2Rp
+c2FibGVfaWJfd2luKHBjaWUsIGkpOw0KPiA+DQo+ID4gIAkvKiBzZXR1cCBidXMgbnVtYmVycyAq
+Lw0KPiA+ICAJdmFsdWUgPSBjc3JfcmVhZGwocGNpZSwgUENJX1BSSU1BUllfQlVTKTsNCj4gPiAt
+LQ0KPiA+IDIuMTcuMQ0KPiA+DQpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVs
+QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9s
+aXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
