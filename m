@@ -2,62 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 90CDE46F47
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 15 Jun 2019 11:21:36 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7F14146F4F
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 15 Jun 2019 11:35:04 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=onrtK7QY3tLgZamRLpT+I+FX8omYN2qwaxBq+mOqMOE=; b=Ye9fEeUXKqrFCp
-	x1oF+6SYO8QbIHX8HiNno5I1z2nSchb2zX9TwujBagGYsv2vs/oieD5L6xLTe8PFgE1WvL9FeY5aZ
-	wUL3Y7JyTxT8Bsc+YLLmjbC306dg2Zag2dQO554R7JJrtze0r7VjEUMkru2r2sBHnhNFjugvaLndp
-	vDB5kCTFCgEmn7WBzUutB4LLsdkhyNLOnK9y3V5fW5+Pu9gp+qBHJtdcLTa//z7Nr2XdGaL3lTyx1
-	HIbQ1/xmNfkKRmiblw9o4e6ZI/bu5TxQ6/G9kLcRH6rwokoXn8VnByvxnfbj2V8vSiotnIfJAr25M
-	eVES6smyRdak7h6LoK5g==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Dy/eGN11bEywVC5ZdvVxC/GmqwD6/3XzV3fX6nVGhz4=; b=XjMcxeBu1O8gg2
+	h73eApxrbDRmeWRanzUGpzJXouPojD1oW/IYUngrRIJwcgnZpeMV9T+rIKefD9et9kqIT8jQ6O3JS
+	QJne+KCxTZUDHBRkzbS/ShYUwe7bcX4rBP7ZY05u2baHj9gpn9iQOWAsN9nPNl9pS7ZzPJktN/iBJ
+	oekN9zGnk7jvsw8qwVxkSP3pVFDKmlcHf5vwV6QiGs6l6f0M3t6e10WrapWVFhC82t1LwAAPswCFd
+	rLbrLb6N94/vq52zwxPCY1ErOon3iLOj+Kim6uLbbSQ7lCZMhiBz78OzE+ifLg+Ik+wm0o5YTdv9X
+	tT9RJbFyLdX/95b0FOyw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hc4sP-0003EF-Rq; Sat, 15 Jun 2019 09:21:33 +0000
-Received: from smtp.domeneshop.no ([2a01:5b40:0:3005::1])
+	id 1hc55P-00076O-HN; Sat, 15 Jun 2019 09:34:59 +0000
+Received: from mail-lj1-x244.google.com ([2a00:1450:4864:20::244])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hc4s9-0003Ds-OS
- for linux-arm-kernel@lists.infradead.org; Sat, 15 Jun 2019 09:21:19 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=tronnes.org;
- s=ds201810; 
- h=Content-Transfer-Encoding:Content-Type:In-Reply-To:MIME-Version:Date:Message-ID:From:References:Cc:To:Subject;
- bh=7dWQziRA2IT52tm02lqZOnVP6YVLWdxh75UNzaX+cog=; 
- b=YajTB5UG8KJnxB/SjLUM6NauXqEon83j4OSqqJJdwW/rDz+bdsx14b+Y9hPuBx9yaI4O/l4LKTzpMIkPODRZqOrNFYD1X399nYaVGKxcVI1KQBC0XIujjfnoDtJfc8VzUvfqqprFm/EjTomJzFkoEqQEtpG9kYxNnAP6Tb6uaAVqFuVX/AlqwJfMt60iJZvo1Zp3vcivTU+ojUpJ0RbBk9EvOxEtfMFYW4p6Q9XJyHMHBQtNpktfytqadnjpnMOGML+66LzIQMP3dNAKrQ4iRWD/kDwL+fS6ahLLgY1xb3dBEIrjlXEwkpFMe6VmVkCWczH80wGECCzDR8JGUs81Cg==;
-Received: from 211.81-166-168.customer.lyse.net ([81.166.168.211]:52590
- helo=[192.168.10.173])
- by smtp.domeneshop.no with esmtpsa (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128)
- (Exim 4.84_2) (envelope-from <noralf@tronnes.org>)
- id 1hc4s7-000852-SH; Sat, 15 Jun 2019 11:21:15 +0200
-Subject: Re: [PATCH v4 07/12] drm/modes: Allow to specify rotation and
- reflection on the commandline
-To: Maxime Ripard <maxime.ripard@bootlin.com>,
- Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
- Sean Paul <seanpaul@chromium.org>, Daniel Vetter <daniel.vetter@intel.com>,
- David Airlie <airlied@linux.ie>
-References: <cover.5fc7840dc8fb24744516c13acb8c8aa18e44c0d0.1560514379.git-series.maxime.ripard@bootlin.com>
- <bc0803209a42b1e1c1e33281b16cd6fa4a4556b3.1560514379.git-series.maxime.ripard@bootlin.com>
-From: =?UTF-8?Q?Noralf_Tr=c3=b8nnes?= <noralf@tronnes.org>
-Message-ID: <7406ed0e-378e-8c93-709a-b6c52c56eb56@tronnes.org>
-Date: Sat, 15 Jun 2019 11:21:12 +0200
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:60.0) Gecko/20100101
- Thunderbird/60.7.0
+ id 1hc557-000760-Fg
+ for linux-arm-kernel@lists.infradead.org; Sat, 15 Jun 2019 09:34:42 +0000
+Received: by mail-lj1-x244.google.com with SMTP id v18so4750647ljh.6
+ for <linux-arm-kernel@lists.infradead.org>;
+ Sat, 15 Jun 2019 02:34:40 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=S+e3ae3nDo211Phfm6lcT95OA7IYBp3eNuvxr46hQI8=;
+ b=zsVylsI+bnY06zotdYazoqPbnqUS2bZqtx0d0MuPW/bi3FvKVPndysWw/GmsA8nyHT
+ 8OH/NT4ce1fzy5TYJlw+GTkMjV7R1XaROP5ucrGnnw9G+yWfWFxFlIgWx3OVZ0x1I5tl
+ QnwB4lxeWcknPXNyNPm3rS4cHa7P5WmM815esIo4rsIvSI7OdC5YxnnU8It9uAtMks6l
+ K850SbpvjROUXWEPw6SiH2O9omsXoqefhAPei/vVTEUCASiIZYeatcjTMajo59ZtyfWb
+ DWVcboaNAnc11jo7aidKR2y3twNjWkTIb2gO4WO2e7TpPWH+XJkry/tpYuGouE7lLcyR
+ 0c+Q==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=S+e3ae3nDo211Phfm6lcT95OA7IYBp3eNuvxr46hQI8=;
+ b=kGPyiQCaixrgT3eftBJW6WZUSh18l3hap2edbRKys4TDueVEpj01jyZnhSG74NLlqq
+ 8UQOcsdkVgi43+D8d/mGATwoO3K5eMaaj4t6UowbKfFGueX/iJk+0FFtdk6Yh0EMJ4XS
+ 81PkaZ1Sbg0Mym9DCGkPNaz6ec62Viarnn+MtF1q1dE+kQ8JNd2M8CunaYYRHLT6METr
+ /UdQG9T+PYnWP46Sto3omMBf8x6Rg8QZhjGROSTLhUfFAT/P6h4FAl4uzI1rtw9qkExb
+ tBGQZbtC2vIaKcpHaPusZxcVJfuEE7ujE70J5Wr+J+5vzUTwvjLFUAVmmrCKOIltQGuD
+ /PKg==
+X-Gm-Message-State: APjAAAUG1fv3yDUgn6ROtSqJxsZBhxRS5sI0i62WsRcq31Frr3f6X+t3
+ 7z6gV7wP/bBXxp84M6dQI012r4D/pzkPBnJFajuEgw==
+X-Google-Smtp-Source: APXvYqwLTbopvLRNBKb2DO7gOLSSgRDu4W/A9L+CndsAaEJ7YfZQiyyOgo75eSM8f89ms/J7M3hBuD/kna+45G311Jo=
+X-Received: by 2002:a2e:a0cf:: with SMTP id f15mr23119868ljm.180.1560591279344; 
+ Sat, 15 Jun 2019 02:34:39 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <bc0803209a42b1e1c1e33281b16cd6fa4a4556b3.1560514379.git-series.maxime.ripard@bootlin.com>
+References: <20190612193115.6751-1-martin.blumenstingl@googlemail.com>
+ <20190612193115.6751-2-martin.blumenstingl@googlemail.com>
+ <CACRpkdajXRXRFz=XpbEzwUb-crhBxNQ4f-m9rfdY6+HcG0+_gA@mail.gmail.com>
+ <CAFBinCAimhth8fDcBZ3vNdy_9dGmHZVAAK0=TUczWWC4Dsa-pA@mail.gmail.com>
+In-Reply-To: <CAFBinCAimhth8fDcBZ3vNdy_9dGmHZVAAK0=TUczWWC4Dsa-pA@mail.gmail.com>
+From: Linus Walleij <linus.walleij@linaro.org>
+Date: Sat, 15 Jun 2019 11:34:25 +0200
+Message-ID: <CACRpkdbQ5VivFJhL4keOgmUe7BzhVU2v2R0Lso8rQx5s3tHY8w@mail.gmail.com>
+Subject: Re: [PATCH net-next v2 1/1] net: stmmac: use GPIO descriptors in
+ stmmac_mdio_reset
+To: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190615_022117_977551_22D38ACB 
-X-CRM114-Status: GOOD (  26.56  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20190615_023441_527175_565541D0 
+X-CRM114-Status: UNSURE (   8.21  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [2a01:5b40:0:3005:0:0:0:1 listed in] [list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:244 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -78,253 +95,33 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: eben@raspberrypi.org, dri-devel@lists.freedesktop.org,
- Paul Kocialkowski <paul.kocialkowski@bootlin.com>,
- Eric Anholt <eric@anholt.net>, Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: Andrew Lunn <andrew@lunn.ch>, Alexandre TORGUE <alexandre.torgue@st.com>,
+ Maxime Ripard <maxime.ripard@bootlin.com>, netdev <netdev@vger.kernel.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
+ Jose Abreu <joabreu@synopsys.com>, Giuseppe CAVALLARO <peppe.cavallaro@st.com>,
+ "David S. Miller" <davem@davemloft.net>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On Sat, Jun 15, 2019 at 11:11 AM Martin Blumenstingl
+<martin.blumenstingl@googlemail.com> wrote:
 
+> I think I finally understand why you want to switch everything over to
+> GPIO descriptors
 
-Den 14.06.2019 14.13, skrev Maxime Ripard:
-> Rotations and reflections setup are needed in some scenarios to initialise
-> properly the initial framebuffer. Some drivers already had a bunch of
-> quirks to deal with this, such as either a private kernel command line
-> parameter (omapdss) or on the device tree (various panels).
-> 
-> In order to accomodate this, let's create a video mode parameter to deal
-> with the rotation and reflexion.
-> 
+A bit after-the-fact reasoning, but after I was made aware of an interesting
+lecture by John Ousterhout I feel the best description of the descriptor
+refactoring is the idea to make the GPIO API narrow and deep, make
+it simple for consumers (hence <linux/gpio/consumer.h>) and handle
+as much special cases (polarity inversion, open drain...) as possible
+behind the scenes.
 
-This needs to be documented in Documentation/fb/modedb.txt
-
-> Signed-off-by: Maxime Ripard <maxime.ripard@bootlin.com>
-> ---
->  drivers/gpu/drm/drm_client_modeset.c |  20 +++++-
->  drivers/gpu/drm/drm_modes.c          | 110 ++++++++++++++++++++++------
->  include/drm/drm_connector.h          |   9 ++-
->  3 files changed, 119 insertions(+), 20 deletions(-)
-> 
-> diff --git a/drivers/gpu/drm/drm_client_modeset.c b/drivers/gpu/drm/drm_client_modeset.c
-> index 33d4988f22ae..57937e38492c 100644
-> --- a/drivers/gpu/drm/drm_client_modeset.c
-> +++ b/drivers/gpu/drm/drm_client_modeset.c
-> @@ -824,6 +824,7 @@ bool drm_client_rotation(struct drm_mode_set *modeset, unsigned int *rotation)
->  {
->  	struct drm_connector *connector = modeset->connectors[0];
->  	struct drm_plane *plane = modeset->crtc->primary;
-> +	struct drm_cmdline_mode *cmdline;
->  	u64 valid_mask = 0;
->  	unsigned int i;
->  
-> @@ -844,6 +845,25 @@ bool drm_client_rotation(struct drm_mode_set *modeset, unsigned int *rotation)
->  		*rotation = DRM_MODE_ROTATE_0;
->  	}
->  
-> +	/**
-> +	 * The panel already defined the default rotation
-> +	 * through its orientation. Whatever has been provided
-> +	 * on the command line needs to be added to that.
-> +	 *
-> +	 * Unfortunately, the rotations are at different bit
-> +	 * indices, so the math to add them up are not as
-> +	 * trivial as they could.
-> +	 */
-> +	cmdline = &connector->cmdline_mode;
-> +	if (cmdline->specified) {
-> +		unsigned int panel_rot = ilog2(*rotation & DRM_MODE_ROTATE_MASK);
-> +		unsigned int cmdline_rot = ilog2(cmdline->rotation & DRM_MODE_ROTATE_MASK);
-> +		unsigned int sum_rot;
-> +
-> +		sum_rot = (panel_rot + cmdline_rot) % 4;
-> +		*rotation = 1 << sum_rot;
-> +	}
-
-Looks like reflect_* will be thrown away here?
-
-> +
->  	/*
->  	 * TODO: support 90 / 270 degree hardware rotation,
->  	 * depending on the hardware this may require the framebuffer
-> diff --git a/drivers/gpu/drm/drm_modes.c b/drivers/gpu/drm/drm_modes.c
-> index 429d3be17800..b92b7df6784a 100644
-> --- a/drivers/gpu/drm/drm_modes.c
-> +++ b/drivers/gpu/drm/drm_modes.c
-> @@ -1554,6 +1554,71 @@ static int drm_mode_parse_cmdline_res_mode(const char *str, unsigned int length,
->  	return 0;
->  }
->  
-> +static int drm_mode_parse_cmdline_options(char *str, size_t len,
-> +					  struct drm_connector *connector,
-> +					  struct drm_cmdline_mode *mode)
-> +{
-> +	unsigned int rotation = 0;
-> +	char *sep = str;
-> +
-> +	while ((sep = strchr(sep, ','))) {
-> +		char *delim, *option;
-> +
-> +		option = sep + 1;
-> +		delim = strchr(option, '=');
-> +		if (!delim) {
-> +			delim = strchr(option, ',');
-> +
-> +			if (!delim)
-> +				delim = str + len;
-> +		}
-> +
-> +		if (!strncmp(option, "rotate", delim - option)) {
-> +			const char *value = delim + 1;
-> +			unsigned int deg;
-> +
-> +			deg = simple_strtol(value, &sep, 10);
-> +
-> +			/* Make sure we have parsed something */
-> +			if (sep == value)
-> +				return -EINVAL;
-> +
-> +			switch (deg) {
-> +			case 0:
-> +				rotation |= DRM_MODE_ROTATE_0;
-> +				break;
-> +
-> +			case 90:
-> +				rotation |= DRM_MODE_ROTATE_90;
-> +				break;
-> +
-> +			case 180:
-> +				rotation |= DRM_MODE_ROTATE_180;
-> +				break;
-> +
-> +			case 270:
-> +				rotation |= DRM_MODE_ROTATE_270;
-> +				break;
-> +
-> +			default:
-> +				return -EINVAL;
-> +			}
-> +		} else if (!strncmp(option, "reflect_x", delim - option)) {
-> +			rotation |= DRM_MODE_REFLECT_X;
-> +			sep = delim;
-> +		} else if (!strncmp(option, "reflect_y", delim - option)) {
-> +			rotation |= DRM_MODE_REFLECT_Y;
-> +			sep = delim;
-> +		} else {
-> +			return -EINVAL;
-> +		}
-> +	}
-> +
-> +	mode->rotation = rotation;
-> +
-> +	return 0;
-> +}
-> +
->  /**
->   * drm_mode_parse_command_line_for_connector - parse command line modeline for connector
->   * @mode_option: optional per connector mode option
-> @@ -1581,9 +1646,10 @@ bool drm_mode_parse_command_line_for_connector(const char *mode_option,
->  {
->  	const char *name;
->  	bool named_mode = false, parse_extras = false;
-> -	unsigned int bpp_off = 0, refresh_off = 0;
-> +	unsigned int bpp_off = 0, refresh_off = 0, options_off = 0;
->  	unsigned int mode_end = 0;
->  	char *bpp_ptr = NULL, *refresh_ptr = NULL, *extra_ptr = NULL;
-> +	char *options_ptr = NULL;
->  	char *bpp_end_ptr = NULL, *refresh_end_ptr = NULL;
->  	int ret;
->  
-> @@ -1632,13 +1698,18 @@ bool drm_mode_parse_command_line_for_connector(const char *mode_option,
->  		mode->refresh_specified = true;
->  	}
->  
-> +	/* Locate the start of named options */
-> +	options_ptr = strchr(name, ',');
-> +	if (options_ptr)
-> +		options_off = options_ptr - name;
-> +
->  	/* Locate the end of the name / resolution, and parse it */
-> -	if (bpp_ptr && refresh_ptr) {
-> -		mode_end = min(bpp_off, refresh_off);
-> -	} else if (bpp_ptr) {
-> +	if (bpp_ptr) {
->  		mode_end = bpp_off;
->  	} else if (refresh_ptr) {
->  		mode_end = refresh_off;
-> +	} else if (options_ptr) {
-> +		mode_end = options_off;
->  	} else {
->  		mode_end = strlen(name);
->  		parse_extras = true;
-> @@ -1680,24 +1751,23 @@ bool drm_mode_parse_command_line_for_connector(const char *mode_option,
->  	else if (refresh_ptr)
->  		extra_ptr = refresh_end_ptr;
->  
-> -	if (extra_ptr) {
-> -		if (!named_mode) {
-> -			int len = strlen(name) - (extra_ptr - name);
-> +	if (extra_ptr &&
-> +	    extra_ptr != options_ptr) {
-> +		int len = strlen(name) - (extra_ptr - name);
->  
-> -			ret = drm_mode_parse_cmdline_extra(extra_ptr, len,
-> -							   connector, mode);
-> -			if (ret)
-> -				return false;
-> -		} else {
-> -			int remaining = strlen(name) - (extra_ptr - name);
-> +		ret = drm_mode_parse_cmdline_extra(extra_ptr, len,
-> +						   connector, mode);
-> +		if (ret)
-> +			return false;
-> +	}
->  
-> -			/*
-> -			 * We still have characters to process, while
-> -			 * we shouldn't have any
-> -			 */
-> -			if (remaining > 0)
-> -				return false;
-> -		}
-> +	if (options_ptr) {
-> +		int len = strlen(name) - (options_ptr - name);
-> +
-> +		ret = drm_mode_parse_cmdline_options(options_ptr, len,
-> +						     connector, mode);
-> +		if (ret)
-> +			return false;
->  	}
->  
->  	return true;
-> diff --git a/include/drm/drm_connector.h b/include/drm/drm_connector.h
-> index f46a53e86d75..68a04169ea36 100644
-> --- a/include/drm/drm_connector.h
-> +++ b/include/drm/drm_connector.h
-> @@ -1006,6 +1006,15 @@ struct drm_cmdline_mode {
->  	 * state to one of the DRM_FORCE_* values.
->  	 */
->  	enum drm_connector_force force;
-> +
-> +	/**
-> +	 * @rotation:
-> +	 *
-> +	 * Initial rotation of the mode setup from the command line.
-> +	 * See DRM_MODE_ROTATE_*. Only DRM_MODE_ROTATE_0 and
-> +	 * DRM_MODE_ROTATE_180 are supported at the moment.
-> +	 */
-
-Reflect is also supported?
-
-Noralf.
-
-> +	unsigned int rotation;
->  };
->  
->  /**
-> 
+Yours,
+Linus Walleij
 
 _______________________________________________
 linux-arm-kernel mailing list
