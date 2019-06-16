@@ -2,74 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A5B27476BE
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 16 Jun 2019 22:31:26 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3581F476BF
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 16 Jun 2019 22:33:20 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=66xVT8cCvXyYi1ObmIlzFz6waAK/qLaenJQEXKwavPU=; b=BAZulAEI8AOCMH
-	nsxNTL0diWeAk7PCb4DoKYX8y1aJfMFpZ8RYLQspErU2+LUElsfJ0BqrXoOlX5nzkzpEn5/Op3m//
-	3zkwC++/1//lbxqr+cKDO/m7KSfmihDEo+jSmTW8Y44TndA4juhOwY9A+/fSdpVgVAvbzZBX6hq+v
-	uKSFobAqwnk5gf7Clv7R56krH5DMf2E22+CYrb9kMwFNXidBKWjX6Q2SrLoeLb3oCCR5RG3UnHfF1
-	M+RLg8kuUejJbIGkP4tfMwn7x3TDAUYDiAg2einsO9UoYIvUsYPrrt0yYTrkbpxZzECsXDLT/DHNd
-	3dTWWIURXBaJu1W1Orfw==;
+	List-Owner; bh=usQCwhcLuLK2Z8ob60bQou/HB6msp88/9MIw0vlGxeo=; b=dMx0oElpGzCQTx
+	Vg/y+Uq126sP8rbQm38U/6CkQjWWtU0CYvje4vP3U3uxiL/9x9XSY6ARS9ZhuojnP5YZ3CNke/AtF
+	fEp66DczhYKRBLHG3LbT4yyU+h9BqZAcUJeAQr3OMzfdcWslSL4poeAbKpmw9NZxqdTGb7ROlt9Jb
+	HSH/5HFwf89jyaTMS3NAH6XlOVYQ9UTFo3HckXjgOJOSH59rUmFcdI2GIUeQcA96qvLF18uvhWHRO
+	X4Xoq/trGVqexRWpH2SCUW1bGDjy7Kapsi/EMwxm5zGg8Az+cA1xEJMUAZLXKc/ssiUA4qR2NKUbH
+	JP11IXyxA+DEVZrMO9fg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hcboC-0008Qi-3Z; Sun, 16 Jun 2019 20:31:24 +0000
-Received: from mail-io1-xd42.google.com ([2607:f8b0:4864:20::d42])
+	id 1hcbq0-0000HJ-4z; Sun, 16 Jun 2019 20:33:16 +0000
+Received: from mail-io1-xd43.google.com ([2607:f8b0:4864:20::d43])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hcbnv-0008QH-EM
- for linux-arm-kernel@lists.infradead.org; Sun, 16 Jun 2019 20:31:08 +0000
-Received: by mail-io1-xd42.google.com with SMTP id u13so16972962iop.0
+ id 1hcbpm-0000Gs-Nk
+ for linux-arm-kernel@lists.infradead.org; Sun, 16 Jun 2019 20:33:03 +0000
+Received: by mail-io1-xd43.google.com with SMTP id k8so16973684iot.1
  for <linux-arm-kernel@lists.infradead.org>;
- Sun, 16 Jun 2019 13:31:07 -0700 (PDT)
+ Sun, 16 Jun 2019 13:33:02 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=lixom-net.20150623.gappssmtp.com; s=20150623;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=N1neTIsLOM2vcRp848K28v/AFSs9sj18LXsizNJ89Zw=;
- b=fvUWsRvHuflOoSkdQIOz1A240F/4gBm4uLATsmsgaibbgVKnFjm7VOnPAFxX7TfU1Y
- 9rUlZIUMcxKAozcqthWuZWywfdSuD+PXpBr02aABfZtFfkR89F3GaxKGgFSWZnlBIGsV
- iZ1Sspxw1TZgIrGS54lvLOhQv3f5A5a7YVfk9381oqhSkCF3kYtBg0lExwihnpru55E6
- pI93TwlxUAI2xc179BKUzm6dkc1QgE3x31mwToN0/P7UHTg8KzW0+O8qmxl3PO+9Fo7j
- L+r7S7KeBfGqzDEwI2vCk4oB4u6oUPd3RUKv5k1e33rMbVvRuOJCr1kCaZo9E/jmfVkH
- cpjg==
+ :cc; bh=knrC9t60TI3A/3PJB0YePBsjPEkcwcAoM3FPlcuFSpE=;
+ b=jB7Yrv7Rn1/kSz1TcqVn6c+SbuXtpzGhoeS7K/+likGrf3jf62JTnmsVBqSlV5c0Px
+ oIPojxzg1j1Ksg2dSJtBnztm9joYZboMmCsRGobs0BT8Pr7SuZt5Gxt2CTz4eVmjyugF
+ GeGccIy+NJJClg6jXxL0xNOz8qRjwTmdknyQwqhbpUb+xKQXLsQf878/SIaLyOqUl3UY
+ q1XzUII9UrjhrgzdIhjxV78jSO6nK3w+dm4eDuHZFcY0E12evtHEMecWMmXVwDUJWRD+
+ dUp1RWY9wUZvlTBeDZDwBoXX19Kk4EDPYAtoyU7b1rg13TGg7idPBxrzKdfRm+JkBI/S
+ HzMg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=N1neTIsLOM2vcRp848K28v/AFSs9sj18LXsizNJ89Zw=;
- b=lHzkULD28xA61fs7otz+hmLhczt2womQnV/lrSECeZ2o5nuPlR7A0P2VBKtX2WahSI
- IxgEjU9rzukpOekAVoVcnbTG1gKhDI309rUjnVNYY4+1aibWAdyw4RLMesMzJ/7xW1JZ
- p4H1CGmL+EUb8TzyR7h6sPSKfdnFKnkFTiTpM9yPjazDIkEfwv0fglsshTzF3GX1pHib
- lzHvZn2LWnEfhFllIjVnfLd2IxofrG/NNNQs4+GEbSLhjAxBjRc3jTScTg2ayJE3K0S9
- 0RLnbnjmKLsZpjdqvbmUVrwzSJEJxg1Er3xHbgKfd/Sv9X9EOP3x22LT3TFJdw2+Bg6h
- cRBA==
-X-Gm-Message-State: APjAAAXh2mGvznYWQ6xLoc7yceKvoz6iPEMYBPkSNknf+4VH/0Sj191X
- Ysm6BZsEkxFu+NgYDVFBu/LEr/Hiag+HWyGuEQoOTA==
-X-Google-Smtp-Source: APXvYqxXYJzmirdsgvoJ34UTlLelxA6yyImSktWICiO9dU7LD1JAMjGaAmcoW7KED6N3SgxbHT0Jn1AyQoQ0wQzgPrE=
-X-Received: by 2002:a5d:94d0:: with SMTP id y16mr25200571ior.123.1560717066510; 
- Sun, 16 Jun 2019 13:31:06 -0700 (PDT)
+ bh=knrC9t60TI3A/3PJB0YePBsjPEkcwcAoM3FPlcuFSpE=;
+ b=uNa2V6+e+VFfykoMXzXzZMSUu5K9mcHWZqhIGaHbpOOoMcNXkISrCYdGleA2TujswM
+ +W4uumlEAtMYXoueKxNBZMonc/XZyjSIjW1tM1uj2W49WslolzRuf+IL7inGjrBcwn5A
+ ikNPldrZpwCuKfp30ThMTCFwdCfnKlaPpVy1efWoYLrztIL78dpaJwtWws5Nu2cv5kk3
+ X2OO5U0qNWhYFS3dRFdFEMwAie8s6IrvZ+5GKn+LHt/VxxvNQoCvgJNnoiW/1tI6sVgK
+ YQ5lg8TkDnwP9joT5X1ur9PcXOUc5Ar/yjqn9GUJOEaxoHbd0lqXV/PHExqkKHGxUjB1
+ vxUA==
+X-Gm-Message-State: APjAAAUSSEhUAyPExWlDF96zf6jm6e4yk5XXcvCgVvzt9PxV9llINFgN
+ E4M90maYPFTIxBBdMkEc4XBxYj90lSS1vgHG7024TA==
+X-Google-Smtp-Source: APXvYqy2o72Bfvl3QK8lNfmx52cJThtkJ3FnBlLW4JwS5jWvn7QFduZlAY78TVuVaSfk6SFt2yEb/lLfUsZ4+38N6GA=
+X-Received: by 2002:a6b:7608:: with SMTP id g8mr10852860iom.207.1560717182104; 
+ Sun, 16 Jun 2019 13:33:02 -0700 (PDT)
 MIME-Version: 1.0
-References: <b50499a6-da24-b9fd-dcfb-54158b326963@ti.com>
-In-Reply-To: <b50499a6-da24-b9fd-dcfb-54158b326963@ti.com>
+References: <87imt8pq6c.fsf@FE-laptop>
+In-Reply-To: <87imt8pq6c.fsf@FE-laptop>
 From: Olof Johansson <olof@lixom.net>
-Date: Sun, 16 Jun 2019 13:30:55 -0700
-Message-ID: <CAOesGMiBxYOZrtRsJvpMZ7CHUshd=ee2WqEMmuU9JKu+N6iBiA@mail.gmail.com>
-Subject: Re: [GIT PULL] am65x fixes for 5.2
-To: Tero Kristo <t-kristo@ti.com>
+Date: Sun, 16 Jun 2019 13:32:51 -0700
+Message-ID: <CAOesGMjzB+vVcP4ANxB2sazGdmmphPorsnks+GQBm+T2BnqJyA@mail.gmail.com>
+Subject: Re: [GIT PULL] ARM: mvebu: fixes for v5.2 (#1)
+To: Gregory CLEMENT <gregory.clement@bootlin.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190616_133107_487159_AD5452B8 
-X-CRM114-Status: GOOD (  10.43  )
+X-CRM114-CacheID: sfid-20190616_133302_777591_EBF6F345 
+X-CRM114-Status: GOOD (  12.08  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:d42 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:d43 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
@@ -87,38 +87,36 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Nishanth Menon <nm@ti.com>, "tony@atomide.com" <tony@atomide.com>,
- ARM-SoC Maintainers <arm@kernel.org>, YueHaibing <yuehaibing@huawei.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: Andrew Lunn <andrew@lunn.ch>, Jason Cooper <jason@lakedaemon.net>,
+ Arnd Bergmann <arnd@arndb.de>, ARM-SoC Maintainers <arm@kernel.org>,
+ Linux ARM Mailing List <linux-arm-kernel@lists.infradead.org>,
+ Sebastian Hesselbarth <sebastian.hesselbarth@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Jun 6, 2019 at 1:42 AM Tero Kristo <t-kristo@ti.com> wrote:
+On Fri, Jun 14, 2019 at 12:44 AM Gregory CLEMENT
+<gregory.clement@bootlin.com> wrote:
 >
-> Hello arm-soc maintainers,
+> Hi,
 >
-> Please pull this quick fix for a simple Kconfig dependency warning.
+> Here is the first pull request for fixes for mvebu for v5.2.
 >
-> Thanks,
-> Tero
->
-> ---
+> Gregory
 >
 > The following changes since commit a188339ca5a396acc588e5851ed7e19f66b0ebd9:
 >
->    Linux 5.2-rc1 (2019-05-19 15:47:09 -0700)
+>   Linux 5.2-rc1 (2019-05-19 15:47:09 -0700)
 >
-> are available in the git repository at:
+> are available in the Git repository at:
 >
->    git://git.kernel.org/pub/scm/linux/kernel/git/kristo/linux
-> tags/am654-fixes-for-v5.2
+>   git://git.infradead.org/linux-mvebu.git tags/mvebu-fixes-5.2-1
 >
-> for you to fetch changes up to a6b112b04355b87a2baee448165bd00889ac523f:
+> for you to fetch changes up to cc538ca4308372e81b824be08561c466b1d73b72:
 >
->    arm64: arch_k3: Fix kconfig dependency warning (2019-06-04 12:43:21
-> +0300)
+>   ARM: mvebu_v7_defconfig: fix Ethernet on Clearfog (2019-06-12 10:36:36 +0200)
+
 
 Merged, thanks!
 
