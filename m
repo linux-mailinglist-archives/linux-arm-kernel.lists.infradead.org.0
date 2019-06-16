@@ -2,86 +2,88 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3B7E847701
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 16 Jun 2019 23:42:20 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 36E2D47731
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 17 Jun 2019 01:22:01 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=WaISwf0+TtX5dPJQnbIBybplheWgqtahtJ5U6It/U5Q=; b=qmcZMjY9do0YLR
-	Yv7S1W1LkrgbF42bDBG53wRllW+dc2cjF1/PCcSoEoOXTJvxGC/PUQ4VgH+0AkptH62sg6DtMHE5r
-	b/3YeORqGsBCm//pO9Rnv2A/xdjSqBYJIBi++2kyGLOFU0Ij1cq3u+S6m2CLA2E6gIfmhaTvkgB5t
-	rDNefwYrJI0rNSjhecrhZF8GIWlXJ0ZKzki4qcjc8MN5863Pl2c/K5UwCz8oXj3qIccr6IsxxMWit
-	EiXaZGBsZ5B1tQBZcE6lIwin/eWW7RGk7UAUchgmo/EC0GtQzDCK2MSiMlhKgPlYv96WruhnwGWaZ
-	JcF7dzrCy5op44iClWzQ==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=QuM3n/Gm3wzbVaOuMbzGRChBzJlmpwYWyulXfGOh2no=; b=mo0AJLiSAHukT+
+	jSlD7IrbD4T7EvFVAGK3rN6QihZP2nkIv/RmgkMXczMouz6A4oQpkfCig4lgAM6/m9LEH3m2cJhEz
+	bFzhaR08r2O2u93Zzg7RO04Slwp5BL6sNwbpUzANfp7hyy4POpBirKT/SRd03mT/meUQSyxGm+vE1
+	0BrLC9N1YG3v4y02rfdeBDbfuGyqcGVTg4ljvsK8f/QrjgUFJO1/HeNlef95bjgru5obz3qLyCtR0
+	7oXZZD7ax35M0YHQF1wHIy7i9g5Pu8/Eg4iMitDjwVoI3YN8vGWQkkKN7FHIHtSsAshjmkO6xbKPZ
+	WGzDMmVveXL0wHeFIghQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hccum-0000ov-6U; Sun, 16 Jun 2019 21:42:16 +0000
-Received: from mail-lf1-x143.google.com ([2a00:1450:4864:20::143])
+	id 1hceTC-0003H0-6x; Sun, 16 Jun 2019 23:21:54 +0000
+Received: from mail-lj1-x243.google.com ([2a00:1450:4864:20::243])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hccu0-0000LJ-H1
- for linux-arm-kernel@lists.infradead.org; Sun, 16 Jun 2019 21:41:31 +0000
-Received: by mail-lf1-x143.google.com with SMTP id q26so5069890lfc.3
+ id 1hceT0-0003Fy-Tp
+ for linux-arm-kernel@lists.infradead.org; Sun, 16 Jun 2019 23:21:44 +0000
+Received: by mail-lj1-x243.google.com with SMTP id 131so7499126ljf.4
  for <linux-arm-kernel@lists.infradead.org>;
- Sun, 16 Jun 2019 14:41:27 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=vZ+O2sBuymz0JFURnyDpv5vD4FvOut6ISgM/pkke4dw=;
- b=Szk1wb4qIgDoLZzgRBzC3J5HoDU4AyOKm4r7CNbUElt7pyQJEJ85k39OnORMuTX+hI
- 6f41K/7i2SpsGX5FIzpbX6UcehbYQe29cFTvkcsOkSczvpJ2blrxdrgL3YTXerQJOcRY
- xUO5/Kw+6oZZBk5i9OlMZU6H8bMtWcf/LwDHQtfbtjBwTo3XL090mrMHijiN7E0WTa+j
- rgO2ue/7tXvHnEvxKM7RUngZ3u21+V1IGQVdIp8PBOHzfm/DUpZ4iD4KQnPImlGM6Et5
- 6uHypJo+hk4ikyx120peIzSMAx4onf1zoGXhunHUCp42bHgJlyeaxQb8Oxm2B2M7Fts/
- JWew==
+ Sun, 16 Jun 2019 16:21:40 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=hXpKt6gWW20yw9T+P1iuF5WONvvDKQOR+kKRgVpbTwg=;
+ b=TU5pM3BB/GIQukfbzVMV9fH53Ktg/mugM3gnGasFWtYIF03pcT0Zbg+nKtx2JzXLwu
+ 77USxRwKw48qyqqdd/OOUXOHfi2MR+wKeFifow4ZErMvlo4RPyR527yRkUmvIjfCCD5M
+ oGQwHv8725JoAJXaPBv93jkhiRRwVrPtF5RGI5nXkRC8Eit+BbYkVGqGWbaqWXnIM5vc
+ Hn8ejuz4YN4E00Zp74Pe+iFWxjf9sMHqbaPQ2o62QUKv9aVVW96h+TbU9vKZuQJuzVmz
+ uBvwG/P/iUnJ2sinKop202IL5bM9vSFsP3e3woKdsMz+LmPFoWv2oRPdJ0XHRh/Qg8li
+ fiLw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=vZ+O2sBuymz0JFURnyDpv5vD4FvOut6ISgM/pkke4dw=;
- b=s++Nx5O9/zPNC7t0ggdRtG9QCEOkWDW6q5ZQX5VB/KXJaCrkVslePOtXYjKLId2l4d
- oMeNtEdbO6tl26jVMzoNbjXSj7uEQvut7S1/ZiDK/oEDtckEoLG6dRVO5nn0QNnH5t1C
- 9DRk0jw6zNZMAqbZBPd2OfechFGjPXfomyWN9XRqHHRErl60FmeEvJvHwGIdxh3lPVSA
- dbL3SUq233Qlb8mWew7SHDH2pQ2Zcml2irmirWs0UedchhPrBdDQZsBw16Pz4liW5Q2C
- jEUkbBwSKt2QPn8tdm6wbPIznLd5aeQxI6jkt504p2/AcPDpi9/OZRpw3WFFxfLMDxei
- Urag==
-X-Gm-Message-State: APjAAAUM+bpBe9D0nIzhoXtq7CMZhf35/p463lIVGhZ1Rbc8cJfTL7+F
- q3/dRVwMGt5isml9ABjEtXgsylQP1pE=
-X-Google-Smtp-Source: APXvYqwTMlZO6XCMxxHtHplwA5OucxBuTkfictbWTCctLM1Ebkhp7isI3Si7bhNalfAY9FWHV6XRrw==
-X-Received: by 2002:ac2:5595:: with SMTP id v21mr16571685lfg.54.1560721285960; 
- Sun, 16 Jun 2019 14:41:25 -0700 (PDT)
-Received: from linux.local (c-d2cd225c.014-348-6c756e10.bbcust.telenor.se.
- [92.34.205.210])
- by smtp.gmail.com with ESMTPSA id 11sm1782520ljc.66.2019.06.16.14.41.24
- (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Sun, 16 Jun 2019 14:41:24 -0700 (PDT)
-From: Linus Walleij <linus.walleij@linaro.org>
-To: linux-arm-kernel@lists.infradead.org,
- Hans Ulli Kroll <ulli.kroll@googlemail.com>,
- Florian Fainelli <f.fainelli@gmail.com>
-Subject: [PATCH] ARM: dts: gemini Fix up DNS-313 compatible string
-Date: Sun, 16 Jun 2019 23:41:20 +0200
-Message-Id: <20190616214120.9054-1-linus.walleij@linaro.org>
-X-Mailer: git-send-email 2.21.0
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=hXpKt6gWW20yw9T+P1iuF5WONvvDKQOR+kKRgVpbTwg=;
+ b=qHrX2zrkfwT/bsXrRRRswL51Ttkxn+dlF4ef5uph28S6gz1uWYN2TN9JSQH0eXAnKV
+ Eo6ONRJhYDvP9oiBd+6KMRrc6eXmVzvbL17Hm6boxO0DlQ7SK6FYwSdy0tQ7QUUUqDxg
+ jlfual2PBjwbPyZ5xAQvsks9OTAGSmL0DMJSrJz4cambpAkV8OwbXXBobozluSk8a/h+
+ DVdm3fnxWYn1/pwYtwNXcnOAVdzN9DgBJP1mdgk2woBg9rIzjNvVQQlwm3JapFbs1ovd
+ RYB8w19p/g4OeB+NS7U4/t3ngWvYqGr7u9XBvsxTtq1ZBC2P4UfG+bUyjEHgO51MbcvB
+ rjiQ==
+X-Gm-Message-State: APjAAAUR2u05UlWk/pLwnsjmoMAgC3HTunETwCyv0WIMQy1F8WDMxcM7
+ +qvtZ3V88r4goIJIGRJE7tlUjMCjlOn+ZLUGTv0=
+X-Google-Smtp-Source: APXvYqxfTZNXDzQZaA2y9stVc88vFamxGkheySz+gCelCRvNO2IizDWgxf/+T92tJ6JdbZEni1wXZ4Ac/1HNyqmuJ0Q=
+X-Received: by 2002:a2e:2c07:: with SMTP id s7mr17587606ljs.44.1560727299408; 
+ Sun, 16 Jun 2019 16:21:39 -0700 (PDT)
 MIME-Version: 1.0
+References: <20190614080317.16850-1-andrew.smirnov@gmail.com>
+ <20190614080317.16850-2-andrew.smirnov@gmail.com>
+In-Reply-To: <20190614080317.16850-2-andrew.smirnov@gmail.com>
+From: Fabio Estevam <festevam@gmail.com>
+Date: Sun, 16 Jun 2019 20:21:48 -0300
+Message-ID: <CAOMZO5DNAEGWqG6VTn0KAJ5J5kKy=YurQJZ0FCTDunUADJZ3Pg@mail.gmail.com>
+Subject: Re: [PATCH 2/2] dt-bindings: arm: fsl: Add support for ZII i.MX7 RMU2
+ board
+To: Andrey Smirnov <andrew.smirnov@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190616_144128_598955_5FF66FD4 
-X-CRM114-Status: GOOD (  11.55  )
-X-Spam-Score: 0.2 (/)
+X-CRM114-CacheID: sfid-20190616_162142_993317_F9B54CFC 
+X-CRM114-Status: UNSURE (   8.74  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:143 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:243 listed in]
  [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (festevam[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- 0.1 DKIM_INVALID           DKIM or DK signature exists, but is not valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,37 +95,37 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Linus Walleij <linus.walleij@linaro.org>,
- LEDE Development List <openwrt-devel@lists.openwrt.org>
+Cc: "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>, Rob Herring <robh@kernel.org>,
+ Liang Pan <Liang.Pan@zii.aero>, linux-kernel <linux-kernel@vger.kernel.org>,
+ "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
+ <devicetree@vger.kernel.org>, Chris Healy <cphealy@gmail.com>,
+ Shawn Guo <shawnguo@kernel.org>, Bob Langer <Bob.Langer@zii.aero>,
+ Lucas Stach <l.stach@pengutronix.de>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-It's a simple typo in the DNS file, which was pretty serious.
-No scripts were working properly. Fix it up.
+Hi Andrey,
 
-Signed-off-by: Linus Walleij <linus.walleij@linaro.org>
----
- arch/arm/boot/dts/gemini-dlink-dns-313.dts | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+On Fri, Jun 14, 2019 at 5:03 AM Andrey Smirnov <andrew.smirnov@gmail.com> wrote:
 
-diff --git a/arch/arm/boot/dts/gemini-dlink-dns-313.dts b/arch/arm/boot/dts/gemini-dlink-dns-313.dts
-index b12504e10f0b..360642a02a48 100644
---- a/arch/arm/boot/dts/gemini-dlink-dns-313.dts
-+++ b/arch/arm/boot/dts/gemini-dlink-dns-313.dts
-@@ -11,7 +11,7 @@
- 
- / {
- 	model = "D-Link DNS-313 1-Bay Network Storage Enclosure";
--	compatible = "dlink,dir-313", "cortina,gemini";
-+	compatible = "dlink,dns-313", "cortina,gemini";
- 	#address-cells = <1>;
- 	#size-cells = <1>;
- 
--- 
-2.21.0
+> diff --git a/Documentation/devicetree/bindings/arm/fsl.yaml b/Documentation/devicetree/bindings/arm/fsl.yaml
+> index 407138ebc0d0..8fb4dc1d55e7 100644
+> --- a/Documentation/devicetree/bindings/arm/fsl.yaml
+> +++ b/Documentation/devicetree/bindings/arm/fsl.yaml
+> @@ -158,6 +158,7 @@ properties:
+>                - fsl,imx7d-sdb             # i.MX7 SabreSD Board
+>                - tq,imx7d-mba7             # i.MX7D TQ MBa7 with TQMa7D SoM
+>                - zii,imx7d-rpu2            # ZII RPU2 Board
+> +              - zii,imx7d-rmu2            # ZII RMU2 Board
 
+Nit: Please keep the entries in alphabetical order.
+
+Other than that:
+
+Reviewed-by: Fabio Estevam <festevam@gmail.com>
 
 _______________________________________________
 linux-arm-kernel mailing list
