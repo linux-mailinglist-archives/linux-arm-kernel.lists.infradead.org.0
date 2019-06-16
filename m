@@ -2,68 +2,68 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7766A476B7
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 16 Jun 2019 22:25:59 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B5973476B8
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 16 Jun 2019 22:26:27 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=61Ruhj7wJMrQBhMHX0BHaSh3j2NmXRJe5LY/e/46snU=; b=BY7eX03msziiTm
-	v6IfpynSorPCYWzeAv7736eznc5VotghltkeLWtLjuI4GnI53LsRt0ykENY0rWlltDow2y/91OLEw
-	t2jBl3AL/29spU5zBFJrZs3xlM7w41wv6+Rw88tWHdJnmMFagg0NVWndK45i6wmhzozkTAjm2LJbT
-	FC2RLi6sWQQA8CuolUCcd8mo7IVrc1dsRExPamXaEgP8gSa+aY+BNDTRSdpk/1b4IIx4gtHbISFsk
-	PvabbwxD2iua8ThaaFdv7oit4bi348fU8Fhca+ZdnAqgOtw3VEHcbpLRVsG7z230YJQr3Ay0b7Bqv
-	eYtdm+TwyHFZwVd9m9yw==;
+	List-Owner; bh=Qqp3x8l0IXHBYB8Tx+gpdwzZEEk6yp+iZhDYLALT1Ac=; b=IvShxmznruqVWp
+	BiBvoARk47btV/DRtmdg6/bR0o4gdpwT9DHBOCxav3ho+TX9wPS8xEt8Bpb7aPqXy8JRkmCpYQUsr
+	hm2t9BduU85DK9EtUMF5clbztQAbWWHNWIoB2iPs6a+I7qDZ6yN+VP+p1kZurfPyg9+1wT5fO3Tgq
+	E6onWhVItSbI2NvdRu08uSuzuxfSTrZw6uSy+UKzQ04lHbZ6LdzS0pP2lZV3zda8Syk/q2F4VqrY8
+	eIVwS844ZDrvPs/IcR22B+n0Sgem5WCkYXAcM9Krpmb7FVraLkuj6WjSObpbl0X2U9HKLZNNfyzQo
+	5FgIls1LUhWHrRRmYWng==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hcbir-0004vN-EB; Sun, 16 Jun 2019 20:25:53 +0000
+	id 1hcbjL-0005AY-Sx; Sun, 16 Jun 2019 20:26:23 +0000
 Received: from mail-io1-xd41.google.com ([2607:f8b0:4864:20::d41])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hcbih-0004v6-7T
- for linux-arm-kernel@lists.infradead.org; Sun, 16 Jun 2019 20:25:44 +0000
-Received: by mail-io1-xd41.google.com with SMTP id d12so8882895iod.5
+ id 1hcbj6-0005A3-Sn
+ for linux-arm-kernel@lists.infradead.org; Sun, 16 Jun 2019 20:26:10 +0000
+Received: by mail-io1-xd41.google.com with SMTP id n5so16813010ioc.7
  for <linux-arm-kernel@lists.infradead.org>;
- Sun, 16 Jun 2019 13:25:42 -0700 (PDT)
+ Sun, 16 Jun 2019 13:26:08 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=lixom-net.20150623.gappssmtp.com; s=20150623;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=lOChBJPyGUtSgclBkJlr2orBPOCctFqb8VmTPljA+cE=;
- b=OwCSVhtCVp/x1E12da/CnPv3qZdXG7ASD8Mg6VlsY0nsql7duBj4HRiOqajv9AsnDj
- aDWGTkZmBdCunwN2OmjY4kw2Yp+F2WGihazwrXuhku8qDoYBEIYK6Gd2ay/fFL2Nhs52
- cSLkP8jrm62O89T5lquQo2jvyDDjIooBqpgEstkK1La2HVSYPyRxvxLC8B/n5LXeYqxz
- huhJdYKMZ/ZAka7JEqgWPyW+oxCcoAPuPDr+Gqvofn2mlAVRiOj6xfj7/nCytm4AVWak
- Yg0SJRoXYxjsgegDrX9ALZoU/jC+HpVNSc3w4TjY9beTxI5rJj5WRi1YT6yivEyNi5br
- t2sg==
+ :cc; bh=cU61FkvzkhlUFCdPrPgVs6M101qXOJtRgMrbVE4tj58=;
+ b=D0E7byTq8PMydRUBGBdJhdyZ03pDbA2NB/NDXMS6MuDu6VKBVtOf5GCG5skwK7uKn7
+ vhmNjDbt87UM8EXaE1+tdh53NPp6XEUi/j8HLrijEjO5SMcM1If9PiCwbzG+kr0YGaVW
+ pVMQNFCDrU3CYm7IwUce7OAJYt/XyrEsqydlkW8C1oyyJSgo/4pggEwldKDCfLAF5bT5
+ yr4/BM4ixcBoNS9t6cpYQ+zlmtTZxuV3ydNyd7sWZl2jUNBqNP2V6sANDHZ1IOw1xXUz
+ 1Se+uAsKjRbo4BkesClYWHbQh/hqlYzHsg2Z46rV/JkJ4hnTgFGylZPF+JzVZ30xpI2P
+ Abxg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=lOChBJPyGUtSgclBkJlr2orBPOCctFqb8VmTPljA+cE=;
- b=BxoBDxfzmgfwRIggY7pfqVKxgxcS++DaWUyYdsu3Ikkipfm55iDz2GAoOWaAHAlTuM
- 3UHULVqg1QP3j4dQzVGQdcZziE4hvlhxH44RwGNfgSCpVBRPs7IQv34Uv/ZE+pAmfinq
- cHda5zqCbwRXguYrtK+xMoI12E/ksexZaTtTAjF1zzLofwz7mPJKNawi9zLqa2fQXQrU
- +4rqbnmJKtEyNizOwFmM5Pr8wXChqNsy0GIv5OynFS/4drJTbrdMzw0dshXhGPu/U8jm
- uQa3OSjgd1EQBLsJLBdieqXnKUUCru9fNLLVyIxccAuztAaL163Ael5uNmgD4eOaxY3m
- fj9Q==
-X-Gm-Message-State: APjAAAU7HILxQh8C6KBqQ3N2n1ej8YDUOYhbqSa2fFWRi/mTvJm2B8O8
- mZ+8IOiipiNoK2SlSQlCenmFzjp+o9bHUyVD36jrOA==
-X-Google-Smtp-Source: APXvYqx6s9q3UXtRagNMNV5wBgeQO6KEcN7GL8MZAMkrbZN7+tqgB0wCwEccA+CssUXQspccZ418E0ZeBixsXTYALB0=
-X-Received: by 2002:a02:69d7:: with SMTP id e206mr83180006jac.21.1560716741636; 
- Sun, 16 Jun 2019 13:25:41 -0700 (PDT)
+ bh=cU61FkvzkhlUFCdPrPgVs6M101qXOJtRgMrbVE4tj58=;
+ b=NcDZtCmkAVvjIUdrNZ1IkqT84Xqcif5lpUmXkExMQS7Up6JLaJu9yzSH73yz/T2XO8
+ LEkIriNwJ+Th/o53gKX9mGvuleJPgY4en1O5TXJEVDc9TjHWTwjrByMhUcZp2qmXzEpF
+ OC/tvePiUXDw7512TW/PwWjKczWSIl9a9z2RBHzfGGYuByqx7KqmemoRlfapSjV7nL98
+ mFXy7AjqdsOxRGgHBA5Gk1528uLe7+KbtzEPPQYMSxO4ESXGaINelFO7VgtNLHyvkB6G
+ 8zBeKck+J73JGpNZ4TxdGR1egP8sk0gRtojN4APDDAWXNYU5JAQRCRwzQK9hMMwXu08i
+ 7Vvw==
+X-Gm-Message-State: APjAAAUz+oPfFh4748PMf7VFyGmwbyPamrmxEGV7x0ZXtzkYTVckTMas
+ OexrPzN9ZgRWhLPnD6YRaXneGD0P8aLv4INYq4CT5A==
+X-Google-Smtp-Source: APXvYqwJyp0K20tPzxfpUriL0rpV3nFe3RlfRnt+bvHztEN97cxVn0DPb74EyIod++RU0E+LcZtIWfLdTH5V/gstOuA=
+X-Received: by 2002:a5d:94d0:: with SMTP id y16mr25187890ior.123.1560716768287; 
+ Sun, 16 Jun 2019 13:26:08 -0700 (PDT)
 MIME-Version: 1.0
 References: <20190520182648.1063-1-f.fainelli@gmail.com>
- <20190520182648.1063-2-f.fainelli@gmail.com>
-In-Reply-To: <20190520182648.1063-2-f.fainelli@gmail.com>
+ <20190520182648.1063-3-f.fainelli@gmail.com>
+In-Reply-To: <20190520182648.1063-3-f.fainelli@gmail.com>
 From: Olof Johansson <olof@lixom.net>
-Date: Sun, 16 Jun 2019 13:25:30 -0700
-Message-ID: <CAOesGMjMAZ+zwYwj7PebxrckUO_q3HfhoF2T6M7c6mMQGiKqLQ@mail.gmail.com>
-Subject: Re: [GIT PULL 2/3] Broadcom drivers fixes for 5.2
+Date: Sun, 16 Jun 2019 13:25:57 -0700
+Message-ID: <CAOesGMgCGzxKS_o8sEO+FdxdUbF+AO=PTF4B3U0+87K-hTWNRQ@mail.gmail.com>
+Subject: Re: [GIT PULL 3/3] Broadcom maintainers-arm64 fixes for 5.2
 To: Florian Fainelli <f.fainelli@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190616_132543_335725_180140F2 
-X-CRM114-Status: UNSURE (   8.32  )
+X-CRM114-CacheID: sfid-20190616_132608_960266_194FCE37 
+X-CRM114-Status: UNSURE (   8.39  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -89,17 +89,17 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: ARM-SoC Maintainers <arm@kernel.org>,
+Cc: Arnd Bergmann <arnd@arndb.de>, Kevin Hilman <khilman@kernel.org>,
+ ARM-SoC Maintainers <arm@kernel.org>,
  Broadcom Kernel Feedback List <bcm-kernel-feedback-list@broadcom.com>,
- Arnd Bergmann <arnd@arndb.de>,
- Linux ARM Mailing List <linux-arm-kernel@lists.infradead.org>,
- Kevin Hilman <khilman@kernel.org>
+ Stefan Wahren <wahrenst@gmx.net>,
+ Linux ARM Mailing List <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, May 20, 2019 at 11:26 AM Florian Fainelli <f.fainelli@gmail.com> wrote:
+On Mon, May 20, 2019 at 11:27 AM Florian Fainelli <f.fainelli@gmail.com> wrote:
 >
 > The following changes since commit a188339ca5a396acc588e5851ed7e19f66b0ebd9:
 >
@@ -107,10 +107,10 @@ On Mon, May 20, 2019 at 11:26 AM Florian Fainelli <f.fainelli@gmail.com> wrote:
 >
 > are available in the Git repository at:
 >
->   https://github.com/Broadcom/stblinux.git tags/arm-soc/for-5.2/drivers-fixes
->
+>   https://github.com/Broadcom/stblinux.git tags/arm-soc/for-5.2/maintainers
 
 Merged, thanks!
+
 
 -Olof
 
