@@ -2,96 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 02228476FA
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 16 Jun 2019 23:31:47 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3B7E847701
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 16 Jun 2019 23:42:20 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+/+qqTExgMCgq8ipzcFybYtGpKwuQ5VUo9030O4/U8g=; b=O0N1XJfED6d3hO
-	n1ifsDp3tdDlujS9ejbvYJLAiaylgdOtsIYmPH+F0lyNUrVluqbUOJK/zFUpyK87zG6PnBeuWaGgt
-	pvwa1yyaGio2yoTpIJ2HTy3UgdMYSKwhAEemSoimV7CksB+2Mt0+7QRcrZfm0ewf1GZl15MTKe5KO
-	I7VtuBVYCjA7QO1Q8h5HIdhAED1bAUPUxyN34wwxZOYFU9LGnX2GbQgAZEfiHidNpEZB5iuav6GNk
-	VQNcuys5m0H6OI7NCLt5TyVRZU0oxegDDjmxP/Slsw9WGa+9YHRUYLYwqrSPng18d1aq1BRFypd24
-	ueNb8GXPh3+et2lny2Dw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=WaISwf0+TtX5dPJQnbIBybplheWgqtahtJ5U6It/U5Q=; b=qmcZMjY9do0YLR
+	Yv7S1W1LkrgbF42bDBG53wRllW+dc2cjF1/PCcSoEoOXTJvxGC/PUQ4VgH+0AkptH62sg6DtMHE5r
+	b/3YeORqGsBCm//pO9Rnv2A/xdjSqBYJIBi++2kyGLOFU0Ij1cq3u+S6m2CLA2E6gIfmhaTvkgB5t
+	rDNefwYrJI0rNSjhecrhZF8GIWlXJ0ZKzki4qcjc8MN5863Pl2c/K5UwCz8oXj3qIccr6IsxxMWit
+	EiXaZGBsZ5B1tQBZcE6lIwin/eWW7RGk7UAUchgmo/EC0GtQzDCK2MSiMlhKgPlYv96WruhnwGWaZ
+	JcF7dzrCy5op44iClWzQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hcckW-0005Qi-0z; Sun, 16 Jun 2019 21:31:40 +0000
-Received: from mail-pf1-x42a.google.com ([2607:f8b0:4864:20::42a])
+	id 1hccum-0000ov-6U; Sun, 16 Jun 2019 21:42:16 +0000
+Received: from mail-lf1-x143.google.com ([2a00:1450:4864:20::143])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hcckK-0005QP-4b
- for linux-arm-kernel@lists.infradead.org; Sun, 16 Jun 2019 21:31:29 +0000
-Received: by mail-pf1-x42a.google.com with SMTP id m30so4511935pff.8
+ id 1hccu0-0000LJ-H1
+ for linux-arm-kernel@lists.infradead.org; Sun, 16 Jun 2019 21:41:31 +0000
+Received: by mail-lf1-x143.google.com with SMTP id q26so5069890lfc.3
  for <linux-arm-kernel@lists.infradead.org>;
- Sun, 16 Jun 2019 14:31:27 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to;
- bh=7VduBeQKV5QqdjaRJMGgAlmp2IHtPHNsUVn3EFkQ16A=;
- b=NaOJcl+yzjhCeEuveWJCk+ztsn2feghCQVbaTu/DJt/zO+DaY4tFj/CMCQsela+8h+
- EKmmF2vvjDrJU6JhpZFROJhfuBdfMvQrtx3BxSU/UtzB8jNzHBhvW5ji713pacfpK+ur
- T/RCfrXIOu2euKG9FHWvlH0SOhLRvANMeGHsY=
+ Sun, 16 Jun 2019 14:41:27 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=vZ+O2sBuymz0JFURnyDpv5vD4FvOut6ISgM/pkke4dw=;
+ b=Szk1wb4qIgDoLZzgRBzC3J5HoDU4AyOKm4r7CNbUElt7pyQJEJ85k39OnORMuTX+hI
+ 6f41K/7i2SpsGX5FIzpbX6UcehbYQe29cFTvkcsOkSczvpJ2blrxdrgL3YTXerQJOcRY
+ xUO5/Kw+6oZZBk5i9OlMZU6H8bMtWcf/LwDHQtfbtjBwTo3XL090mrMHijiN7E0WTa+j
+ rgO2ue/7tXvHnEvxKM7RUngZ3u21+V1IGQVdIp8PBOHzfm/DUpZ4iD4KQnPImlGM6Et5
+ 6uHypJo+hk4ikyx120peIzSMAx4onf1zoGXhunHUCp42bHgJlyeaxQb8Oxm2B2M7Fts/
+ JWew==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to;
- bh=7VduBeQKV5QqdjaRJMGgAlmp2IHtPHNsUVn3EFkQ16A=;
- b=IoCZE/Lc4VRcAtXnEBS3pGtYXV6zQnLOJuM7sJ2BoeiAMR4gqalPs3CL5WhELT7zh2
- KiDWIXOhRG5fQOQEmvAUKYEP5WZmliR5y0qUIoTeK3f52VvGcK1P7uHKFaAQVaNpRlmz
- 8rJgpLfTN+yzPmGNOmMo+lhI+7ecKE+1mRAFNiB6HkhJp/Cn7dMWXmFlYmeTYsBrpX3p
- 3eklRakHOZUmDvFaoCJtIW6OCd5/ThkF13Dp3rrvNbBUL7YmAItmwoY3kHpjK2ukJqSb
- cbwuyGYlIu9rXXc/0gsLASZZdPS11l3pQwDMYnpke1OiY28VAqm+S32PaQLF1kffHIxv
- pOoQ==
-X-Gm-Message-State: APjAAAXpjOrt+x44YMLo0/qgh7Jo3W8T57tOI/RXiCT+kLtOG1PkOIGV
- r6X5qXvXYOqkjDaQobBFTW8eWg==
-X-Google-Smtp-Source: APXvYqy5woxSa9sXUW5owSCTm3+vlDqFe+0XmxF8JtpZmxIUt7qyTuJKjIzBbbHvBsWgxujujdFMaA==
-X-Received: by 2002:a65:64d6:: with SMTP id t22mr43708172pgv.406.1560720686430; 
- Sun, 16 Jun 2019 14:31:26 -0700 (PDT)
-Received: from www.outflux.net (smtp.outflux.net. [198.145.64.163])
- by smtp.gmail.com with ESMTPSA id f11sm4268923pjg.1.2019.06.16.14.31.25
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Sun, 16 Jun 2019 14:31:25 -0700 (PDT)
-Date: Sun, 16 Jun 2019 14:31:24 -0700
-From: Kees Cook <keescook@chromium.org>
-To: Ard Biesheuvel <ard.biesheuvel@linaro.org>
-Subject: Re: [RFC] Disable lockref on arm64
-Message-ID: <201906161429.BCE1083@keescook>
-References: <20190612040933.GA18848@dc5-eodlnx05.marvell.com>
- <20190612093151.GA11554@brain-police>
- <20190614070914.GA21961@dc5-eodlnx05.marvell.com>
- <20190614095846.GC10506@fuggles.cambridge.arm.com>
- <CAKv+Gu_Kdq=UPijjA84FpmO=ZsdEO9EyyF7GeOQ+WmfqtO_hMg@mail.gmail.com>
- <20190614103850.GG10659@fuggles.cambridge.arm.com>
- <201906142026.1BC27EDB1E@keescook>
- <CAKv+Gu_XuhgUCYOeykrbaxJz-wL1HFrc_O+HeZHqaGkMHd2J9Q@mail.gmail.com>
- <201906150654.FF4400F7C8@keescook>
- <CAKv+Gu9-rZ16Nb9t3=knzW0BHu0eNxQoPwWS4c8UMMm=2iqiuw@mail.gmail.com>
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=vZ+O2sBuymz0JFURnyDpv5vD4FvOut6ISgM/pkke4dw=;
+ b=s++Nx5O9/zPNC7t0ggdRtG9QCEOkWDW6q5ZQX5VB/KXJaCrkVslePOtXYjKLId2l4d
+ oMeNtEdbO6tl26jVMzoNbjXSj7uEQvut7S1/ZiDK/oEDtckEoLG6dRVO5nn0QNnH5t1C
+ 9DRk0jw6zNZMAqbZBPd2OfechFGjPXfomyWN9XRqHHRErl60FmeEvJvHwGIdxh3lPVSA
+ dbL3SUq233Qlb8mWew7SHDH2pQ2Zcml2irmirWs0UedchhPrBdDQZsBw16Pz4liW5Q2C
+ jEUkbBwSKt2QPn8tdm6wbPIznLd5aeQxI6jkt504p2/AcPDpi9/OZRpw3WFFxfLMDxei
+ Urag==
+X-Gm-Message-State: APjAAAUM+bpBe9D0nIzhoXtq7CMZhf35/p463lIVGhZ1Rbc8cJfTL7+F
+ q3/dRVwMGt5isml9ABjEtXgsylQP1pE=
+X-Google-Smtp-Source: APXvYqwTMlZO6XCMxxHtHplwA5OucxBuTkfictbWTCctLM1Ebkhp7isI3Si7bhNalfAY9FWHV6XRrw==
+X-Received: by 2002:ac2:5595:: with SMTP id v21mr16571685lfg.54.1560721285960; 
+ Sun, 16 Jun 2019 14:41:25 -0700 (PDT)
+Received: from linux.local (c-d2cd225c.014-348-6c756e10.bbcust.telenor.se.
+ [92.34.205.210])
+ by smtp.gmail.com with ESMTPSA id 11sm1782520ljc.66.2019.06.16.14.41.24
+ (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
+ Sun, 16 Jun 2019 14:41:24 -0700 (PDT)
+From: Linus Walleij <linus.walleij@linaro.org>
+To: linux-arm-kernel@lists.infradead.org,
+ Hans Ulli Kroll <ulli.kroll@googlemail.com>,
+ Florian Fainelli <f.fainelli@gmail.com>
+Subject: [PATCH] ARM: dts: gemini Fix up DNS-313 compatible string
+Date: Sun, 16 Jun 2019 23:41:20 +0200
+Message-Id: <20190616214120.9054-1-linus.walleij@linaro.org>
+X-Mailer: git-send-email 2.21.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CAKv+Gu9-rZ16Nb9t3=knzW0BHu0eNxQoPwWS4c8UMMm=2iqiuw@mail.gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190616_143128_208479_6CC542CD 
-X-CRM114-Status: GOOD (  14.46  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190616_144128_598955_5FF66FD4 
+X-CRM114-Status: GOOD (  11.55  )
+X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:42a listed in]
+ no trust [2a00:1450:4864:20:0:0:0:143 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.1 DKIM_INVALID           DKIM or DK signature exists, but is not valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -103,42 +93,37 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "catalin.marinas@arm.com" <catalin.marinas@arm.com>,
- Jan Glauber <jglauber@marvell.com>, Will Deacon <will.deacon@arm.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Jayachandran Chandrasekharan Nair <jnair@marvell.com>,
- Linus Torvalds <torvalds@linux-foundation.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: Linus Walleij <linus.walleij@linaro.org>,
+ LEDE Development List <openwrt-devel@lists.openwrt.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sat, Jun 15, 2019 at 04:18:21PM +0200, Ard Biesheuvel wrote:
-> Yes, I am using the same saturation point as x86. In this example, I
-> am not entirely sure I understand why it matters, though: the atomics
-> guarantee that the write by CPU2 fails if CPU1 changed the value in
-> the mean time, regardless of which value it wrote.
-> 
-> I think the concern is more related to the likelihood of another CPU
-> doing something nasty between the moment that the refcount overflows
-> and the moment that the handler pins it at INT_MIN/2, e.g.,
-> 
-> > CPU 1                   CPU 2
-> > inc()
-> >   load INT_MAX
-> >   about to overflow?
-> >   yes
-> >
-> >   set to 0
-> >                          <insert exploit here>
-> >   set to INT_MIN/2
+It's a simple typo in the DNS file, which was pretty serious.
+No scripts were working properly. Fix it up.
 
-Ah, gotcha, but the "set to 0" is really "set to INT_MAX+1" (not zero)
-if you're using the same saturation.
+Signed-off-by: Linus Walleij <linus.walleij@linaro.org>
+---
+ arch/arm/boot/dts/gemini-dlink-dns-313.dts | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
+diff --git a/arch/arm/boot/dts/gemini-dlink-dns-313.dts b/arch/arm/boot/dts/gemini-dlink-dns-313.dts
+index b12504e10f0b..360642a02a48 100644
+--- a/arch/arm/boot/dts/gemini-dlink-dns-313.dts
++++ b/arch/arm/boot/dts/gemini-dlink-dns-313.dts
+@@ -11,7 +11,7 @@
+ 
+ / {
+ 	model = "D-Link DNS-313 1-Bay Network Storage Enclosure";
+-	compatible = "dlink,dir-313", "cortina,gemini";
++	compatible = "dlink,dns-313", "cortina,gemini";
+ 	#address-cells = <1>;
+ 	#size-cells = <1>;
+ 
 -- 
-Kees Cook
+2.21.0
+
 
 _______________________________________________
 linux-arm-kernel mailing list
