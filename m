@@ -2,64 +2,97 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 06C2D4741C
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 16 Jun 2019 12:09:30 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D4E2347450
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 16 Jun 2019 13:05:37 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=MdfESkRVtbyT+c8GmYg02rL7Nr04DJz6mMLJhhw6z+8=; b=LJNPKi/oRR56rr
-	6dDKEgFP2p2zitvXZGvXjsOlURsFppc2cIvONEP7rwocpxBoIrfmBjrp1s5DN+En6cSjgfmLOcTNZ
-	KbQMCjZkgdn8B3UcnjhoXEJ7rnJsEGQUm9h6w+dylL2zWPLqKuJukEx0NIPXcQu7JNfFnLgVwgFSu
-	1rR1VRqFddnA/jgm6mLzcZqewqWYZWgKDXvum22ERqcv6tyLv1Gy8jxWXuWTJntoiegcnSC8uufre
-	eL7eDdi+dZtel20RE+SAsvtVokTa98yy7gqVOesHFqBQY/8YzarA4mLFAue3sZ7eG48swLWOHPqzT
-	yBxhT/A9x1nF7kUIhYrA==;
+	List-Owner; bh=GB1rT+pbfmYFdC4rg/Xr9hPx5ewh5oVB1DhTO4bOWaA=; b=nLpYkZmEyVQqu0
+	5eF9zV7LVqeFruJ54zlJecXmp/R+c3hAENwKQHRs3YgSIoTphLIFRMsTD4NU0ZdhFlC39/z6kEOqu
+	iKX78WHep8PX+ieUrCzDXyUfKHds+sgVpHo9t/8AsmIAcPxD7JN8aVzxtOaesPpAnN058PtTpapgi
+	0lVGnHIxChA8XNKShpAUHUsbCvu9MY0K/CAQgYlmxA6GUIf1PMmMwqmH1ETU0I9of3XF1sbNzX/5E
+	f718AVzfDnEMbs1c6gnoe0kpBixG4j74o+7I0HHb8tW1nVqwsAxtq6avDnWMWphQUV8DBU4hkIz97
+	X0fSlaW+rATHU8lqBPtA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hcS6G-0007jq-P8; Sun, 16 Jun 2019 10:09:24 +0000
-Received: from mail7-214.sinamail.sina.com.cn ([202.108.7.214])
- by bombadil.infradead.org with smtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hcS61-0007iB-OP
- for linux-arm-kernel@lists.infradead.org; Sun, 16 Jun 2019 10:09:11 +0000
-Received: from unknown (HELO localhost.localdomain)([123.112.52.116])
- by sina.com with ESMTP
- id 5D061531000056DC; Sun, 16 Jun 2019 18:08:56 +0800 (CST)
-X-Sender: hdanton@sina.com
-X-Auth-ID: hdanton@sina.com
-X-SMAIL-MID: 361051393736
-From: Hillf Danton <hdanton@sina.com>
-To: Christoph Hellwig <hch@lst.de>
-Subject: Re: [PATCH 5/7] dma-direct: handle DMA_ATTR_NON_CONSISTENT in common
- code
-Date: Sun, 16 Jun 2019 18:08:40 +0800
-Message-Id: <20190614144431.21760-6-hch@lst.de>
-In-Reply-To: <20190614144431.21760-1-hch@lst.de>
-References: <20190614144431.21760-1-hch@lst.de>
-X-Mailer: git-send-email 2.20.1
+	id 1hcSyW-0004VI-82; Sun, 16 Jun 2019 11:05:28 +0000
+Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hcSyM-0004Ui-AL
+ for linux-arm-kernel@lists.infradead.org; Sun, 16 Jun 2019 11:05:20 +0000
+Received: by mail-wr1-x441.google.com with SMTP id n4so6817569wrw.13
+ for <linux-arm-kernel@lists.infradead.org>;
+ Sun, 16 Jun 2019 04:05:17 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id:in-reply-to:references
+ :mime-version:content-transfer-encoding;
+ bh=jYpdMxao6pliYnnD2x77IZriJWD7lFq0HxazhfUGYeM=;
+ b=UwFN84U/ghpHYCjJsDjNhvd0IG6uo6P/Ch88x8naJcdJ3LA2P+oVvUyG2OddL1IfWo
+ Txz07ZLzHPkSr8t6uXZYv+JBxeYlPaL1q6TjnJV5i5NsIHi8otj703Hw439tfzCJmkx9
+ bhtZwyBGnDAfKH75NBMd9QFWoSzIRXN7SWKl/tUPS9VsqMtLYoA7ZItlJ0Qe6h6Gc1H4
+ qSmX/Z0FQ6FbVAP6j62fzdvl7Kx7qsJb3yVW+gAouv+ZrB1JfGLTsGPbBCjmTDsQIrUA
+ xMoN/N5HJ9atne/L4VNVvkuBNudrkBYAjRmGwG1yPEPswZ9FqVwy4LkjPSgvi+gf6yz3
+ NADw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references:mime-version:content-transfer-encoding;
+ bh=jYpdMxao6pliYnnD2x77IZriJWD7lFq0HxazhfUGYeM=;
+ b=O/yCOk/alRTH3qkK0UsYayuoa7uPU5r8VkVk0Rr3KCYrjWNOaJKHMA3QU9O7JFXjJW
+ KRO/OZNH+zoe5hFXbHZ4DXaTpAtR/o6FSk5n02vj3kO6DPLdJk/zZQALc6Lk6yFUFCT3
+ yNyo3+73d6qHSC8DwXTNoPBnuz302mJimPVfTy318NrsOqPXco+E9kRjD9rmfdyBf4lS
+ ekypJ9R6wkREPrOVwLNLEf5Ug6gw+/Inbk16d1vS3emi1eB3TSgYNv5sEsSKcCKHnab6
+ c+GtjpQemPMCQcBIGWxklHm83YOLdcvCuQ1hPFDQOznvQLpBaEMNqfnqQWL4jTR8a2pf
+ l+Yg==
+X-Gm-Message-State: APjAAAWDpj+rz5I0VTvuo3uYxMz0lGjiY3//jctPjmrRn2u4TuTOV2Wu
+ PYqHwV773+AbR2nAoqGDd+o=
+X-Google-Smtp-Source: APXvYqzzqx42PAT4ueneqpG+etvE0yFc0vTzd9YPvagfFq04jv7+a+XjTXMN2fn6y898d3uHmGL14w==
+X-Received: by 2002:adf:ef8d:: with SMTP id d13mr55684452wro.60.1560683116461; 
+ Sun, 16 Jun 2019 04:05:16 -0700 (PDT)
+Received: from jernej-laptop.localnet (cpe-86-58-52-202.static.triera.net.
+ [86.58.52.202])
+ by smtp.gmail.com with ESMTPSA id t1sm8457650wra.74.2019.06.16.04.05.13
+ (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
+ Sun, 16 Jun 2019 04:05:14 -0700 (PDT)
+From: Jernej =?utf-8?B?xaBrcmFiZWM=?= <jernej.skrabec@gmail.com>
+To: linux-sunxi@googlegroups.com, megous@megous.com
+Subject: Re: [linux-sunxi] [PATCH v6 5/6] drm: sun4i: Add support for enabling
+ DDC I2C bus to sun8i_dw_hdmi glue
+Date: Sun, 16 Jun 2019 13:05:13 +0200
+Message-ID: <1823986.m04BvQ5ALy@jernej-laptop>
+In-Reply-To: <20190527162237.18495-6-megous@megous.com>
+References: <20190527162237.18495-1-megous@megous.com>
+ <20190527162237.18495-6-megous@megous.com>
 MIME-Version: 1.0
-Precedence: bulk
-X-Mailing-List: linux-kernel@vger.kernel.org
-Archived-At: <https://lore.kernel.org/lkml/20190614144431.21760-6-hch@lst.de/>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190616_030909_993770_C60131DA 
-X-CRM114-Status: GOOD (  16.19  )
-X-Spam-Score: -1.7 (-)
+X-CRM114-CacheID: sfid-20190616_040518_387984_F9F907AF 
+X-CRM114-Status: GOOD (  19.39  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-1.7 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [202.108.7.214 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:441 listed in]
+ [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (hdanton[at]sina.com)
+ provider (jernej.skrabec[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -1.0 MAILING_LIST_MULTI     Multiple indicators imply a widely-seen list
- manager
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ 0.0 FROM_EXCESS_BASE64     From: base64 encoded unnecessarily
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
+Precedence: list
 List-Id: <linux-arm-kernel.lists.infradead.org>
 List-Unsubscribe: <http://lists.infradead.org/mailman/options/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=unsubscribe>
@@ -68,146 +101,178 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Jonas Bonn <jonas@southpole.se>, linux-xtensa@linux-xtensa.org,
- Vladimir Murzin <vladimir.murzin@arm.com>, linux-parisc@vger.kernel.org,
- Vineet Gupta <vgupta@synopsys.com>, Helge Deller <deller@gmx.de>,
- linux-kernel@vger.kernel.org,
- Stefan Kristiansson <stefan.kristiansson@saunalahti.fi>,
- iommu@lists.linux-foundation.org, openrisc@lists.librecores.org,
- Stafford Horne <shorne@gmail.com>, linux-snps-arc@lists.infradead.org,
- linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>, Jose Abreu <joabreu@synopsys.com>,
+ Alexandre Torgue <alexandre.torgue@st.com>, devicetree@vger.kernel.org,
+ Maxime Ripard <maxime.ripard@bootlin.com>, netdev@vger.kernel.org,
+ linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
+ linux-stm32@st-md-mailman.stormreply.com, David Airlie <airlied@linux.ie>,
+ Chen-Yu Tsai <wens@csie.org>, Rob Herring <robh+dt@kernel.org>,
+ linux-arm-kernel@lists.infradead.org, Daniel Vetter <daniel@ffwll.ch>,
+ Giuseppe Cavallaro <peppe.cavallaro@st.com>,
+ "David S. Miller" <davem@davemloft.net>,
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Hi Ondrej!
 
-Hello Christoph
-
-On Fri, 14 Jun 2019 16:44:29 +0200 Christoph Hellwig wrote:
-> Only call into arch_dma_alloc if we require an uncached mapping,
-> and remove the parisc code manually doing normal cached
-> DMA_ATTR_NON_CONSISTENT allocations.
+Dne ponedeljek, 27. maj 2019 ob 18:22:36 CEST je megous via linux-sunxi 
+napisal(a):
+> From: Ondrej Jirman <megous@megous.com>
 > 
-> Signed-off-by: Christoph Hellwig <hch@lst.de>
+> Orange Pi 3 board requires enabling a voltage shifting circuit via GPIO
+> for the DDC bus to be usable.
+> 
+> Add support for hdmi-connector node's optional ddc-en-gpios property to
+> support this use case.
+> 
+> Signed-off-by: Ondrej Jirman <megous@megous.com>
 > ---
->  arch/parisc/kernel/pci-dma.c | 48 ++++++++++--------------------------
->  kernel/dma/direct.c          |  4 +--
->  2 files changed, 15 insertions(+), 37 deletions(-)
+>  drivers/gpu/drm/sun4i/sun8i_dw_hdmi.c | 55 +++++++++++++++++++++++++--
+>  drivers/gpu/drm/sun4i/sun8i_dw_hdmi.h |  3 ++
+>  2 files changed, 55 insertions(+), 3 deletions(-)
 > 
-> diff --git a/arch/parisc/kernel/pci-dma.c b/arch/parisc/kernel/pci-dma.c
-> index 239162355b58..ca35d9a76e50 100644
-> --- a/arch/parisc/kernel/pci-dma.c
-> +++ b/arch/parisc/kernel/pci-dma.c
-> @@ -394,17 +394,20 @@ pcxl_dma_init(void)
->  
->  __initcall(pcxl_dma_init);
->  
-> -static void *pcxl_dma_alloc(struct device *dev, size_t size,
-> -		dma_addr_t *dma_handle, gfp_t flag, unsigned long attrs)
-> +void *arch_dma_alloc(struct device *dev, size_t size,
-> +		dma_addr_t *dma_handle, gfp_t gfp, unsigned long attrs)
->  {
->  	unsigned long vaddr;
->  	unsigned long paddr;
->  	int order;
->  
-> +	if (boot_cpu_data.cpu_type != pcxl2 && boot_cpu_data.cpu_type != pcxl)
-> +		return NULL;
+> diff --git a/drivers/gpu/drm/sun4i/sun8i_dw_hdmi.c
+> b/drivers/gpu/drm/sun4i/sun8i_dw_hdmi.c index 39d8509d96a0..59b81ba02d96
+> 100644
+> --- a/drivers/gpu/drm/sun4i/sun8i_dw_hdmi.c
+> +++ b/drivers/gpu/drm/sun4i/sun8i_dw_hdmi.c
+> @@ -98,6 +98,30 @@ static u32 sun8i_dw_hdmi_find_possible_crtcs(struct
+> drm_device *drm, return crtcs;
+>  }
+> 
+> +static int sun8i_dw_hdmi_find_connector_pdev(struct device *dev,
+> +					     struct 
+platform_device **pdev_out)
+> +{
+> +	struct platform_device *pdev;
+> +	struct device_node *remote;
 > +
-Literally, any cpu (call it cpuW) other than pcx12 and pcx1 will no longer do
-dma alloc for any device with this patch applied. On the other hand, 
-!dev_is_dma_coherent(dev) && !(attrs & DMA_ATTR_NON_CONSISTENT) will ask
-any cpu to do dma alloc, regardless of pcx1. This patch works imo unless cpuW
-plays games only with devices that are dma coherent. I doubt it is true.
+> +	remote = of_graph_get_remote_node(dev->of_node, 1, -1);
+> +	if (!remote)
+> +		return -ENODEV;
+> +
+> +	if (!of_device_is_compatible(remote, "hdmi-connector")) {
+> +		of_node_put(remote);
+> +		return -ENODEV;
+> +	}
+> +
+> +	pdev = of_find_device_by_node(remote);
+> +	of_node_put(remote);
+> +	if (!pdev)
+> +		return -ENODEV;
+> +
+> +	*pdev_out = pdev;
+> +	return 0;
+> +}
+> +
+>  static int sun8i_dw_hdmi_bind(struct device *dev, struct device *master,
+>  			      void *data)
+>  {
+> @@ -151,16 +175,29 @@ static int sun8i_dw_hdmi_bind(struct device *dev,
+> struct device *master, return PTR_ERR(hdmi->regulator);
+>  	}
+> 
+> +	ret = sun8i_dw_hdmi_find_connector_pdev(dev, &hdmi->connector_pdev);
+> +	if (!ret) {
+> +		hdmi->ddc_en = gpiod_get_optional(&hdmi->connector_pdev-
+>dev,
+> +						  "ddc-en", 
+GPIOD_OUT_HIGH);
+> +		if (IS_ERR(hdmi->ddc_en)) {
+> +			platform_device_put(hdmi->connector_pdev);
+> +			dev_err(dev, "Couldn't get ddc-en gpio\n");
+> +			return PTR_ERR(hdmi->ddc_en);
+> +		}
+> +	}
+> +
+>  	ret = regulator_enable(hdmi->regulator);
+>  	if (ret) {
+>  		dev_err(dev, "Failed to enable regulator\n");
+> -		return ret;
+> +		goto err_unref_ddc_en;
+>  	}
+> 
+> +	gpiod_set_value(hdmi->ddc_en, 1);
 
---
-Hillf
->  	order = get_order(size);
->  	size = 1 << (order + PAGE_SHIFT);
->  	vaddr = pcxl_alloc_range(size);
-> -	paddr = __get_free_pages(flag | __GFP_ZERO, order);
-> +	paddr = __get_free_pages(gfp | __GFP_ZERO, order);
->  	flush_kernel_dcache_range(paddr, size);
->  	paddr = __pa(paddr);
->  	map_uncached_pages(vaddr, size, paddr);
-> @@ -421,44 +424,19 @@ static void *pcxl_dma_alloc(struct device *dev, size_t size,
->  	return (void *)vaddr;
->  }
->  
-> -static void *pcx_dma_alloc(struct device *dev, size_t size,
-> -		dma_addr_t *dma_handle, gfp_t flag, unsigned long attrs)
-> -{
-> -	void *addr;
-> -
-> -	if ((attrs & DMA_ATTR_NON_CONSISTENT) == 0)
-> -		return NULL;
-> -
-> -	addr = (void *)__get_free_pages(flag | __GFP_ZERO, get_order(size));
-> -	if (addr)
-> -		*dma_handle = (dma_addr_t)virt_to_phys(addr);
-> -
-> -	return addr;
-> -}
-> -
-> -void *arch_dma_alloc(struct device *dev, size_t size,
-> -		dma_addr_t *dma_handle, gfp_t gfp, unsigned long attrs)
-> -{
-> -
-> -	if (boot_cpu_data.cpu_type == pcxl2 || boot_cpu_data.cpu_type == pcxl)
-> -		return pcxl_dma_alloc(dev, size, dma_handle, gfp, attrs);
-> -	else
-> -		return pcx_dma_alloc(dev, size, dma_handle, gfp, attrs);
-> -}
-> -
->  void arch_dma_free(struct device *dev, size_t size, void *vaddr,
->  		dma_addr_t dma_handle, unsigned long attrs)
->  {
->  	int order = get_order(size);
->  
-> -	if (boot_cpu_data.cpu_type == pcxl2 || boot_cpu_data.cpu_type == pcxl) {
-> -		size = 1 << (order + PAGE_SHIFT);
-> -		unmap_uncached_pages((unsigned long)vaddr, size);
-> -		pcxl_free_range((unsigned long)vaddr, size);
-> +	WARN_ON_ONCE(boot_cpu_data.cpu_type != pcxl2 &&
-> +		     boot_cpu_data.cpu_type != pcxl);
->  
-> -		vaddr = __va(dma_handle);
-> -	}
-> -	free_pages((unsigned long)vaddr, get_order(size));
-> +	size = 1 << (order + PAGE_SHIFT);
-> +	unmap_uncached_pages((unsigned long)vaddr, size);
-> +	pcxl_free_range((unsigned long)vaddr, size);
+Why don't you do that inside if clause where hdmi->ddc_en is assigned? It's 
+not useful otherwise anyway.
+
+Besides, you would then only need to adjust one goto label in error path.
+
 > +
-> +	free_pages((unsigned long)__va(dma_handle), order);
->  }
->  
->  void arch_sync_dma_for_device(struct device *dev, phys_addr_t paddr,
-> diff --git a/kernel/dma/direct.c b/kernel/dma/direct.c
-> index c2893713bf80..fc354f4f490b 100644
-> --- a/kernel/dma/direct.c
-> +++ b/kernel/dma/direct.c
-> @@ -191,7 +191,7 @@ void *dma_direct_alloc(struct device *dev, size_t size,
->  		dma_addr_t *dma_handle, gfp_t gfp, unsigned long attrs)
->  {
->  	if (!IS_ENABLED(CONFIG_ARCH_HAS_UNCACHED_SEGMENT) &&
-> -	    !dev_is_dma_coherent(dev))
-> +	    dma_alloc_need_uncached(dev, attrs))
->  		return arch_dma_alloc(dev, size, dma_handle, gfp, attrs);
->  	return dma_direct_alloc_pages(dev, size, dma_handle, gfp, attrs);
->  }
-> @@ -200,7 +200,7 @@ void dma_direct_free(struct device *dev, size_t size,
->  		void *cpu_addr, dma_addr_t dma_addr, unsigned long attrs)
->  {
->  	if (!IS_ENABLED(CONFIG_ARCH_HAS_UNCACHED_SEGMENT) &&
-> -	    !dev_is_dma_coherent(dev))
-> +	    dma_alloc_need_uncached(dev, attrs))
->  		arch_dma_free(dev, size, cpu_addr, dma_addr, attrs);
->  	else
->  		dma_direct_free_pages(dev, size, cpu_addr, dma_addr, attrs);
-> -- 
-> 2.20.1
+>  	ret = reset_control_deassert(hdmi->rst_ctrl);
+>  	if (ret) {
+>  		dev_err(dev, "Could not deassert ctrl reset 
+control\n");
+> -		goto err_disable_regulator;
+> +		goto err_disable_ddc_en;
+>  	}
 > 
+>  	ret = clk_prepare_enable(hdmi->clk_tmds);
+> @@ -213,8 +250,14 @@ static int sun8i_dw_hdmi_bind(struct device *dev,
+> struct device *master, clk_disable_unprepare(hdmi->clk_tmds);
+>  err_assert_ctrl_reset:
+>  	reset_control_assert(hdmi->rst_ctrl);
+> -err_disable_regulator:
+> +err_disable_ddc_en:
+> +	gpiod_set_value(hdmi->ddc_en, 0);
+>  	regulator_disable(hdmi->regulator);
+> +err_unref_ddc_en:
+> +	if (hdmi->ddc_en)
+> +		gpiod_put(hdmi->ddc_en);
+> +
+> +	platform_device_put(hdmi->connector_pdev);
+> 
+>  	return ret;
+>  }
+> @@ -228,7 +271,13 @@ static void sun8i_dw_hdmi_unbind(struct device *dev,
+> struct device *master, sun8i_hdmi_phy_remove(hdmi);
+>  	clk_disable_unprepare(hdmi->clk_tmds);
+>  	reset_control_assert(hdmi->rst_ctrl);
+> +	gpiod_set_value(hdmi->ddc_en, 0);
+>  	regulator_disable(hdmi->regulator);
+> +
+> +	if (hdmi->ddc_en)
+> +		gpiod_put(hdmi->ddc_en);
+> +
+> +	platform_device_put(hdmi->connector_pdev);
+>  }
+> 
+>  static const struct component_ops sun8i_dw_hdmi_ops = {
+> diff --git a/drivers/gpu/drm/sun4i/sun8i_dw_hdmi.h
+> b/drivers/gpu/drm/sun4i/sun8i_dw_hdmi.h index 720c5aa8adc1..dad66b8301c2
+> 100644
+> --- a/drivers/gpu/drm/sun4i/sun8i_dw_hdmi.h
+> +++ b/drivers/gpu/drm/sun4i/sun8i_dw_hdmi.h
+> @@ -9,6 +9,7 @@
+>  #include <drm/bridge/dw_hdmi.h>
+>  #include <drm/drm_encoder.h>
+>  #include <linux/clk.h>
+> +#include <linux/gpio/consumer.h>
+>  #include <linux/regmap.h>
+>  #include <linux/regulator/consumer.h>
+>  #include <linux/reset.h>
+> @@ -190,6 +191,8 @@ struct sun8i_dw_hdmi {
+>  	struct regulator		*regulator;
+>  	const struct sun8i_dw_hdmi_quirks *quirks;
+>  	struct reset_control		*rst_ctrl;
+> +	struct platform_device		*connector_pdev;
+
+It seems that connector_pdev is needed only during intialization. Why do you 
+store it?
+
+Best regards,
+Jernej
+
+> +	struct gpio_desc		*ddc_en;
+>  };
+> 
+>  static inline struct sun8i_dw_hdmi *
+
+
 
 
 
