@@ -2,74 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0F36A476BC
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 16 Jun 2019 22:28:38 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D44EB476BD
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 16 Jun 2019 22:30:18 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Y6K2OsO/e+DGwytAo/a/i88gRWu1s1y5N5KUEIGKvpg=; b=K+9KPjIFCnyMlD
-	674JQGq/JNxhNLDSGDD3rc41CVNhfT9bYjW7fBawy+StHDdsprMQSMrZDUr/it70wQ4miRw1eZcty
-	ioZvR2IVxtZImSwBkle1uSbjslxUshVru4UUBXlKKbVIl8ftheXSNB1c+15YBxt4xSWTQwi+JCy9e
-	Zqox3He1/UlZHE0gW70Ez7t9KWGlCUrrtGPQUSv5mOuXVOaiRcqW3gV3Qn7ETco3R2TDeTlQk2IDy
-	PpdQYxsTeA7MfKPa5w8P0ixqea4JmrNDIbOaPRadwWqIBZtTgVzyLEoEP1//Zfrp1fof3MX+WBy+W
-	GlYXBOjX9GZgabSK7c5g==;
+	List-Owner; bh=OZEURLemsU29Xugpcy4JLUtazB3JGUecBH2UnONj9gk=; b=SE9UArEwEN2i4R
+	w5cy6HViiMXR4UjY7kN8PclEsZqoODBrVOE0t2wXbIo33zdC3FZNX5eUyuIm+3Jsz619BxW7h9qDh
+	m2GE+wWCW5qagKuWPna+fm2LzLJZErFm9MQxFfHGD2JaQs/Dn0D8mThLKo7mt1t6nYGreH28TpH2m
+	9Se3au2Yc2ujRkR3lRdASNjsWFa/WPl1GyW4Hf770qhXXnFzL0e5f3dd5IdQMvSRHF4a0NCkEdh3d
+	cwBp8YKyV6wnD4pV61GdlBsj7hZUwV69iMdtyUoEU/C8yWhpX/ZT70jPkGLo1hOEOf2pcnAxCUxNA
+	5xvFcaVxaObwniyVHBoQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hcblS-0005jG-Pi; Sun, 16 Jun 2019 20:28:34 +0000
-Received: from mail-io1-xd42.google.com ([2607:f8b0:4864:20::d42])
+	id 1hcbn5-0006rP-4O; Sun, 16 Jun 2019 20:30:15 +0000
+Received: from mail-io1-xd41.google.com ([2607:f8b0:4864:20::d41])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hcblE-0005ix-37
- for linux-arm-kernel@lists.infradead.org; Sun, 16 Jun 2019 20:28:21 +0000
-Received: by mail-io1-xd42.google.com with SMTP id k20so16779510ios.10
+ id 1hcbmj-0006qs-O3
+ for linux-arm-kernel@lists.infradead.org; Sun, 16 Jun 2019 20:29:55 +0000
+Received: by mail-io1-xd41.google.com with SMTP id m24so16958988ioo.2
  for <linux-arm-kernel@lists.infradead.org>;
- Sun, 16 Jun 2019 13:28:19 -0700 (PDT)
+ Sun, 16 Jun 2019 13:29:53 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=lixom-net.20150623.gappssmtp.com; s=20150623;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=TKcNxxKKhhi5YCQ/Pl419pRxPJBD99sELxjgL+BfnfA=;
- b=myjxzjgoXUIupkBaaweKT1ABsInTa/eP6Ad/lNrbPvrZpC7kie0X/X+z7i5zcn6zaA
- vFQoMPql435QTdJ6T1+i0+yuuC7dT8cSPUSjQao/Cw6GVhd1PfZp6Qq80JJFAhGj4kKz
- MI7BbZ62UxthoRRcqNTRK5jH7sXN1IEBEFoKUKxkaZhQqpZh0O0qSVfsQM+vC7n4g6rJ
- GWSHw+D2SkD41L9UrOYsXuPdy47fwgNQNJ/SSyu3l/NQ4PyFqMWCxUzSY0jA2VH5rXwQ
- JcsQVUxPb1SiwMoP1jjntbXwV0YVqdYlqMPvtsZltM4vEbdO+wMwchom4U46IxRwiWBc
- Gc2w==
+ :cc; bh=upaXJCnr3TZ+JthmphQpCne7NGc1pr0hTHsejqtCAXg=;
+ b=liBED9n6Hr8fqMaXOIP6C4W3pImtuqln/YS+pvosulm9+XMeny6PfVfLelLBXrWOax
+ 8TD1yG7Mz+fnfLIoML5SZRoF6hzDHWn+PJzflbVCnyk1TrhUn4Fs6B1WOkuG5Yr3mvzC
+ OUr7u8q/spINzuE1UyD/JPaCXahch+Ct23jtlNvqoUROm9mDWPxObZtYF05Mq90z4tyH
+ /FJPhfosZszYZY/tSsjDHWpa6jYaB+uHijWM6vs+C64melwDGscwyvEFW0pF85WQJmTe
+ c0U/KZHxIrsUElpa5iGUYQQottnWeOHyPsv3Ifrv2m8Zbs3Z2bBRh5OQemsWxkO0zlCM
+ zmlg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=TKcNxxKKhhi5YCQ/Pl419pRxPJBD99sELxjgL+BfnfA=;
- b=FdTRjLkYRHUOd+d9n45N0fdTjNcrVAziYtXySU8PZ/aqzK7Cjp4AaU2dmg+M0jxJyl
- uC/J7fKQFmnkztKDzpBPfSECCuqIYrOzA2nPICSaRH5FQ0h4ErwO4UHbn/Rgl4p6VCCt
- SqhejNvinDo+SdqXBCsINBw/EezlqzO2PAfY7ZroIeE8RGV+XPJ04HrW9jWZLRhY3i9p
- T4bJ/K+PkOunFHkrQAp5DjjOnB3sqFWX9AiEMq5Vy7AaS1JUacz76zt+zpxuQ9k2gux8
- PmThIKZUZcSw/HZG9MF7Ndu9/EV/zHyjKQwfJ5G7YV53cAwj1DVrdegIXT4qYx+vY8Ax
- F1Zw==
-X-Gm-Message-State: APjAAAUPRphHw4II005ikfCgoEeLN381CiKJL4RcTXnAFBdmnW+E84/n
- 1D5gxytbbO/ODMuZy8mm/K6S6Ni1kuOzv/0riTOLJY1a
-X-Google-Smtp-Source: APXvYqx4oKrbeKXzonXiv2aCFoGoAg6IWFHZF3WAkuBSLFqKC1HWrT1XTikb7ENMsriES2AutC/UUlFrA+4IIPsOMRI=
-X-Received: by 2002:a5d:8347:: with SMTP id q7mr12879556ior.277.1560716899194; 
- Sun, 16 Jun 2019 13:28:19 -0700 (PDT)
+ bh=upaXJCnr3TZ+JthmphQpCne7NGc1pr0hTHsejqtCAXg=;
+ b=MR5JYFxz9il85hdlfcWwN/By1ttd0cib/1/HSijRiUYgsVyKKQc1Vjf8JFEaxoE1nM
+ Auf2lW2+ezX2gCVOluIoW6WrBv8szF6rClc8bYYxNt0C1DxJRLKOOkn3p+bQM0/4nQbY
+ 9GJN2eRkpn92baqEsjHBVHGDVJpFasy46Aba6bhwH0wuOmlqBwkTnsG13347drR7zgXc
+ RAnQCB1LFTXTqmBuA/Q5JSnn9qV7cDihWrmTPvGlK2pHHNzfmovsjidjdXxEArEef/9T
+ dBW1cnxDw2FEuea80NhzvMdXmU5DFW5wrjEpJc56Y4dgS4X3BUAy1YlJd+nYLzXJgzSE
+ nQdw==
+X-Gm-Message-State: APjAAAWrVF8sjH1gc9w5T0vP2pbMLUaK7B4ZA6ncpUQW2HDePKD75cRh
+ ejh80w4oi7Q/yT2brXPkZuXVXfAgtJRPal3RnCMc4Q==
+X-Google-Smtp-Source: APXvYqxh/XYofxbbeUrydHCs1n/DpxKYdASJTYL6Umk7aE6Mufkt9n8Pn8zwrrDA9cHJSk9xJ0wdJhokjxBkP6nal0c=
+X-Received: by 2002:a6b:9257:: with SMTP id u84mr13656151iod.278.1560716993072; 
+ Sun, 16 Jun 2019 13:29:53 -0700 (PDT)
 MIME-Version: 1.0
-References: <pull-1559115102-965591@atomide.com>
-In-Reply-To: <pull-1559115102-965591@atomide.com>
+References: <20190520182648.1063-1-f.fainelli@gmail.com>
+ <f03eaba2-f661-f675-ec3f-0a89ac92bb11@gmail.com>
+ <8f8d24f5-57b9-9cf5-3b0c-16c4fbc48921@gmail.com>
+In-Reply-To: <8f8d24f5-57b9-9cf5-3b0c-16c4fbc48921@gmail.com>
 From: Olof Johansson <olof@lixom.net>
-Date: Sun, 16 Jun 2019 13:28:08 -0700
-Message-ID: <CAOesGMhF9_3Y184zAC3bdyRMemnM4CLBiOp-vcRaXQOrtf0E1A@mail.gmail.com>
-Subject: Re: [GIT PULL] mmc voltage and boot issue fixes for omaps for v5.2
-To: Tony Lindgren <tony@atomide.com>
+Date: Sun, 16 Jun 2019 13:29:42 -0700
+Message-ID: <CAOesGMhpkY3e2bCH95BcPsf19AEMJ9rAC0qBcTmTyBAQ_vbvqw@mail.gmail.com>
+Subject: Re: [GIT PULL 1/3] Broadcom devicetree fixes for 5.2
+To: Florian Fainelli <f.fainelli@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190616_132820_137776_8664BC94 
-X-CRM114-Status: GOOD (  15.62  )
+X-CRM114-CacheID: sfid-20190616_132953_783597_A3003915 
+X-CRM114-Status: GOOD (  15.98  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:d42 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:d41 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
@@ -87,54 +89,53 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-omap <linux-omap@vger.kernel.org>,
- ARM-SoC Maintainers <arm@kernel.org>,
- Linux ARM Mailing List <linux-arm-kernel@lists.infradead.org>
+Cc: ARM-SoC Maintainers <arm@kernel.org>,
+ Broadcom Kernel Feedback List <bcm-kernel-feedback-list@broadcom.com>,
+ Linux ARM Mailing List <linux-arm-kernel@lists.infradead.org>,
+ Arnd Bergmann <arnd@arndb.de>, Kevin Hilman <khilman@kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, May 29, 2019 at 12:32 AM Tony Lindgren <tony@atomide.com> wrote:
+On Wed, Jun 5, 2019 at 12:03 PM Florian Fainelli <f.fainelli@gmail.com> wrote:
 >
-> From: "Tony Lindgren" <tony@atomide.com>
 >
-> The following changes since commit a188339ca5a396acc588e5851ed7e19f66b0ebd9:
 >
->   Linux 5.2-rc1 (2019-05-19 15:47:09 -0700)
+> On 5/28/2019 3:34 PM, Florian Fainelli wrote:
+> > On 5/20/19 11:26 AM, Florian Fainelli wrote:
+> >> The following changes since commit a188339ca5a396acc588e5851ed7e19f66b0ebd9:
+> >>
+> >>   Linux 5.2-rc1 (2019-05-19 15:47:09 -0700)
+> >>
+> >> are available in the Git repository at:
+> >>
+> >>   https://github.com/Broadcom/stblinux.git tags/arm-soc/for-5.2/devicetree-fixes
+> >>
+> >> for you to fetch changes up to e8bd76dccd792b371a934336c3e7d8c389755d9f:
+> >>
+> >>   ARM: dts: bcm: Add missing device_type = "memory" property (2019-05-20 09:29:47 -0700)
+> >>
+> >> ----------------------------------------------------------------
+> >> This pull request contains Broadcom ARM-based SoCs Device Tree fixes for
+> >> 5.2-rc1, please pull the following:
+> >>
+> >> - Florian fixes the remaining Broadcom DTS files to have a valid
+> >> device_type = "memory" property which was missed during the removal of
+> >> skeleton.dtsi
+> >>
+> >> ----------------------------------------------------------------
+> >> Florian Fainelli (1):
+> >>       ARM: dts: bcm: Add missing device_type = "memory" property
+> >
+> > Arnd, Olof, Kevinm can this be picked up? I have changes for 5.3 that
+> > depend on those. Thank you!
 >
-> are available in the Git repository at:
+> Ping?
 >
->   git://git.kernel.org/pub/scm/linux/kernel/git/tmlind/linux-omap tags/omap-for-v5.2/fixes-rc2
->
-> for you to fetch changes up to 4ee23cd76c0ce8622976b3da0e2bc89e6d94f6d4:
->
->   Merge branch 'omap-for-v5.2/ti-sysc' into fixes (2019-05-20 08:33:03 -0700)
->
-> ----------------------------------------------------------------
-> Fixes for omap variants for dra7 mmc voltage and boot issues
->
-> This series contains dra7 mmc voltage fixes, and fixes to the recent
-> changes to probe devices with device tree data insteas of legacy
-> platform data:
->
-> - Two fixes for dra7 mmc that needs 1.8V mode disabled as in case of a
->   reset, the bootrom will try to access the mmc card at 3.3V potentially
->   damaging the card
->
-> - Two regression fixes for am335x d_can. We must allow devices with no
->   control registers for ti-sysc interconnect target module driver for
->   at least d_can, and we remove the incorrect control registers for
->   d_can. And we must configure the osc clock for d_can as otherwise
->   register access may fail depending on the bootloader version
->
-> - Four regression fixes for dra7 variant dts files to tag rtc and usb4
->   as disabled for dra71x and dra76x. These SoC variants do not have
->   these devices, and got accidentally enabled when the L4 interconnect
->   got defined in the dra7-l4.dtsi for the dra7 SoC family
 
-
-Merged, thanks!
+As discussed over IRC, basing your branches on these fixes is fine --
+and I've merged it now too.
 
 
 -Olof
