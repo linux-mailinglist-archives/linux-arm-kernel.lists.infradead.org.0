@@ -2,56 +2,96 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EDE3B476DC
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 16 Jun 2019 22:54:21 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 02228476FA
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 16 Jun 2019 23:31:47 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:In-Reply-To:
-	From:Subject:To:Message-Id:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=yQyBK4kVJs7jZIGoRQv4vKplAjv/eRwBs8Hvt+bevo8=; b=sPxitqOPJPymvY
-	NE7ItnyLKxjPMx3M/AusgEI0O5p54lC2fOXStMeVEqRtaa/QMRWXukynAogXfF9/O5kNT4hNcK9ME
-	FZXVK1dbYa5hBwf5Kip6jtcjs5uxaPozxW1B6LIHmdSK4MGmGlLLH/1MmeB5HqoFAf0EN8LGvCW8H
-	uYxU+AeO0KEpqSiqUp7iodnbEWA6AXgigzKSB9p0ive1omdLyWaLKFhGlC/OMvUMwKI2C+1qrNAaC
-	Snh07Cr/CxSKIOuzjF+Nf+4ySAGPHwNZY1iw/k5eMZwui5dXBYTrlJb3ARSzsLuvTfancnVoOg4uU
-	RO050/IqYQyhn6UAJq/w==;
+	List-Owner; bh=+/+qqTExgMCgq8ipzcFybYtGpKwuQ5VUo9030O4/U8g=; b=O0N1XJfED6d3hO
+	n1ifsDp3tdDlujS9ejbvYJLAiaylgdOtsIYmPH+F0lyNUrVluqbUOJK/zFUpyK87zG6PnBeuWaGgt
+	pvwa1yyaGio2yoTpIJ2HTy3UgdMYSKwhAEemSoimV7CksB+2Mt0+7QRcrZfm0ewf1GZl15MTKe5KO
+	I7VtuBVYCjA7QO1Q8h5HIdhAED1bAUPUxyN34wwxZOYFU9LGnX2GbQgAZEfiHidNpEZB5iuav6GNk
+	VQNcuys5m0H6OI7NCLt5TyVRZU0oxegDDjmxP/Slsw9WGa+9YHRUYLYwqrSPng18d1aq1BRFypd24
+	ueNb8GXPh3+et2lny2Dw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hccAM-0008Bm-EU; Sun, 16 Jun 2019 20:54:18 +0000
-Received: from shards.monkeyblade.net ([2620:137:e000::1:9])
+	id 1hcckW-0005Qi-0z; Sun, 16 Jun 2019 21:31:40 +0000
+Received: from mail-pf1-x42a.google.com ([2607:f8b0:4864:20::42a])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hccA8-0008At-SR
- for linux-arm-kernel@lists.infradead.org; Sun, 16 Jun 2019 20:54:06 +0000
-Received: from localhost (unknown [IPv6:2601:601:9f80:35cd::3d5])
- (using TLSv1 with cipher AES256-SHA (256/256 bits))
- (Client did not present a certificate)
- (Authenticated sender: davem-davemloft)
- by shards.monkeyblade.net (Postfix) with ESMTPSA id 85CF9151BF939;
- Sun, 16 Jun 2019 13:53:58 -0700 (PDT)
-Date: Sun, 16 Jun 2019 13:53:57 -0700 (PDT)
-Message-Id: <20190616.135357.658647099528379354.davem@davemloft.net>
-To: martin.blumenstingl@googlemail.com
-Subject: Re: [PATCH net-next v1 0/5] stmmac: cleanups for stmmac_mdio_reset
-From: David Miller <davem@davemloft.net>
-In-Reply-To: <20190615100932.27101-1-martin.blumenstingl@googlemail.com>
-References: <20190615100932.27101-1-martin.blumenstingl@googlemail.com>
-X-Mailer: Mew version 6.8 on Emacs 26.1
-Mime-Version: 1.0
-X-Greylist: Sender succeeded SMTP AUTH, not delayed by milter-greylist-4.5.12
- (shards.monkeyblade.net [149.20.54.216]);
- Sun, 16 Jun 2019 13:53:58 -0700 (PDT)
+ id 1hcckK-0005QP-4b
+ for linux-arm-kernel@lists.infradead.org; Sun, 16 Jun 2019 21:31:29 +0000
+Received: by mail-pf1-x42a.google.com with SMTP id m30so4511935pff.8
+ for <linux-arm-kernel@lists.infradead.org>;
+ Sun, 16 Jun 2019 14:31:27 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to;
+ bh=7VduBeQKV5QqdjaRJMGgAlmp2IHtPHNsUVn3EFkQ16A=;
+ b=NaOJcl+yzjhCeEuveWJCk+ztsn2feghCQVbaTu/DJt/zO+DaY4tFj/CMCQsela+8h+
+ EKmmF2vvjDrJU6JhpZFROJhfuBdfMvQrtx3BxSU/UtzB8jNzHBhvW5ji713pacfpK+ur
+ T/RCfrXIOu2euKG9FHWvlH0SOhLRvANMeGHsY=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to;
+ bh=7VduBeQKV5QqdjaRJMGgAlmp2IHtPHNsUVn3EFkQ16A=;
+ b=IoCZE/Lc4VRcAtXnEBS3pGtYXV6zQnLOJuM7sJ2BoeiAMR4gqalPs3CL5WhELT7zh2
+ KiDWIXOhRG5fQOQEmvAUKYEP5WZmliR5y0qUIoTeK3f52VvGcK1P7uHKFaAQVaNpRlmz
+ 8rJgpLfTN+yzPmGNOmMo+lhI+7ecKE+1mRAFNiB6HkhJp/Cn7dMWXmFlYmeTYsBrpX3p
+ 3eklRakHOZUmDvFaoCJtIW6OCd5/ThkF13Dp3rrvNbBUL7YmAItmwoY3kHpjK2ukJqSb
+ cbwuyGYlIu9rXXc/0gsLASZZdPS11l3pQwDMYnpke1OiY28VAqm+S32PaQLF1kffHIxv
+ pOoQ==
+X-Gm-Message-State: APjAAAXpjOrt+x44YMLo0/qgh7Jo3W8T57tOI/RXiCT+kLtOG1PkOIGV
+ r6X5qXvXYOqkjDaQobBFTW8eWg==
+X-Google-Smtp-Source: APXvYqy5woxSa9sXUW5owSCTm3+vlDqFe+0XmxF8JtpZmxIUt7qyTuJKjIzBbbHvBsWgxujujdFMaA==
+X-Received: by 2002:a65:64d6:: with SMTP id t22mr43708172pgv.406.1560720686430; 
+ Sun, 16 Jun 2019 14:31:26 -0700 (PDT)
+Received: from www.outflux.net (smtp.outflux.net. [198.145.64.163])
+ by smtp.gmail.com with ESMTPSA id f11sm4268923pjg.1.2019.06.16.14.31.25
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Sun, 16 Jun 2019 14:31:25 -0700 (PDT)
+Date: Sun, 16 Jun 2019 14:31:24 -0700
+From: Kees Cook <keescook@chromium.org>
+To: Ard Biesheuvel <ard.biesheuvel@linaro.org>
+Subject: Re: [RFC] Disable lockref on arm64
+Message-ID: <201906161429.BCE1083@keescook>
+References: <20190612040933.GA18848@dc5-eodlnx05.marvell.com>
+ <20190612093151.GA11554@brain-police>
+ <20190614070914.GA21961@dc5-eodlnx05.marvell.com>
+ <20190614095846.GC10506@fuggles.cambridge.arm.com>
+ <CAKv+Gu_Kdq=UPijjA84FpmO=ZsdEO9EyyF7GeOQ+WmfqtO_hMg@mail.gmail.com>
+ <20190614103850.GG10659@fuggles.cambridge.arm.com>
+ <201906142026.1BC27EDB1E@keescook>
+ <CAKv+Gu_XuhgUCYOeykrbaxJz-wL1HFrc_O+HeZHqaGkMHd2J9Q@mail.gmail.com>
+ <201906150654.FF4400F7C8@keescook>
+ <CAKv+Gu9-rZ16Nb9t3=knzW0BHu0eNxQoPwWS4c8UMMm=2iqiuw@mail.gmail.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <CAKv+Gu9-rZ16Nb9t3=knzW0BHu0eNxQoPwWS4c8UMMm=2iqiuw@mail.gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190616_135404_920840_3136B3BC 
-X-CRM114-Status: UNSURE (   8.32  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190616_143128_208479_6CC542CD 
+X-CRM114-Status: GOOD (  14.46  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:42a listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -63,32 +103,42 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: andrew@lunn.ch, alexandre.torgue@st.com, netdev@vger.kernel.org,
- linus.walleij@linaro.org, linux-kernel@vger.kernel.org, joabreu@synopsys.com,
- peppe.cavallaro@st.com, linux-arm-kernel@lists.infradead.org
+Cc: "catalin.marinas@arm.com" <catalin.marinas@arm.com>,
+ Jan Glauber <jglauber@marvell.com>, Will Deacon <will.deacon@arm.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Jayachandran Chandrasekharan Nair <jnair@marvell.com>,
+ Linus Torvalds <torvalds@linux-foundation.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
-Date: Sat, 15 Jun 2019 12:09:27 +0200
+On Sat, Jun 15, 2019 at 04:18:21PM +0200, Ard Biesheuvel wrote:
+> Yes, I am using the same saturation point as x86. In this example, I
+> am not entirely sure I understand why it matters, though: the atomics
+> guarantee that the write by CPU2 fails if CPU1 changed the value in
+> the mean time, regardless of which value it wrote.
+> 
+> I think the concern is more related to the likelihood of another CPU
+> doing something nasty between the moment that the refcount overflows
+> and the moment that the handler pins it at INT_MIN/2, e.g.,
+> 
+> > CPU 1                   CPU 2
+> > inc()
+> >   load INT_MAX
+> >   about to overflow?
+> >   yes
+> >
+> >   set to 0
+> >                          <insert exploit here>
+> >   set to INT_MIN/2
 
-> This is a successor to my previous series "stmmac: honor the GPIO flags
-> for the PHY reset GPIO" from [0]. It contains only the "cleanup"
-> patches from that series plus some additional cleanups on top.
-> 
-> I broke out the actual GPIO flag handling into a separate patch which
-> is already part of net-next: "net: stmmac: use GPIO descriptors in
-> stmmac_mdio_reset" from [1]
-> 
-> I have build and runtime tested this on my ARM Meson8b Odroid-C1.
-> 
-> 
-> [0] https://patchwork.kernel.org/cover/10983801/
-> [1] https://patchwork.ozlabs.org/patch/1114798/
+Ah, gotcha, but the "set to 0" is really "set to INT_MAX+1" (not zero)
+if you're using the same saturation.
 
-Looks good, series applied.
+-- 
+Kees Cook
 
 _______________________________________________
 linux-arm-kernel mailing list
