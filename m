@@ -2,86 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D4E2347450
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 16 Jun 2019 13:05:37 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B3C494745C
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 16 Jun 2019 13:28:21 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=GB1rT+pbfmYFdC4rg/Xr9hPx5ewh5oVB1DhTO4bOWaA=; b=nLpYkZmEyVQqu0
-	5eF9zV7LVqeFruJ54zlJecXmp/R+c3hAENwKQHRs3YgSIoTphLIFRMsTD4NU0ZdhFlC39/z6kEOqu
-	iKX78WHep8PX+ieUrCzDXyUfKHds+sgVpHo9t/8AsmIAcPxD7JN8aVzxtOaesPpAnN058PtTpapgi
-	0lVGnHIxChA8XNKShpAUHUsbCvu9MY0K/CAQgYlmxA6GUIf1PMmMwqmH1ETU0I9of3XF1sbNzX/5E
-	f718AVzfDnEMbs1c6gnoe0kpBixG4j74o+7I0HHb8tW1nVqwsAxtq6avDnWMWphQUV8DBU4hkIz97
-	X0fSlaW+rATHU8lqBPtA==;
+	List-Owner; bh=1xbpJUmpchu23ldcZJ3rvdVnCLVsKGA3yqyMO5IzkLg=; b=hRtY2l0h6SUowF
+	XmnTIlm+on0Svwbkmqi2gVsh5pvUffBdpH3sJtjknacAmYmjy5vO3zQA2YAvhdZKW8V+IHLRSmb6K
+	ERHuzftYGLYinmaiAH/aB31sR0HmrtUFJsZeQIBUH0cFx2vZv/XGNNJZR48lsihh5hH5KqVB/wDq8
+	0kjpwKpdGTEq2PdKtW4Mlg5N6j/Fxqa7xrIHKMEcN86rnR1KyYn4iKV9S+BvGbh3/VfbqvbZMKdzk
+	IPSPWx0xbhGFPRfSjA/qRDEJhBhxUhzWKfhxMEVn9Ep3kLo56CpE5krmpL0O9r7DyHgMVbCQVQqE/
+	ykpWcrCaTZExAXHrdPug==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hcSyW-0004VI-82; Sun, 16 Jun 2019 11:05:28 +0000
-Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
+	id 1hcTKW-0003Qb-SE; Sun, 16 Jun 2019 11:28:13 +0000
+Received: from mail-ot1-x333.google.com ([2607:f8b0:4864:20::333])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hcSyM-0004Ui-AL
- for linux-arm-kernel@lists.infradead.org; Sun, 16 Jun 2019 11:05:20 +0000
-Received: by mail-wr1-x441.google.com with SMTP id n4so6817569wrw.13
+ id 1hcTJs-0003Pn-Rc
+ for linux-arm-kernel@lists.infradead.org; Sun, 16 Jun 2019 11:27:34 +0000
+Received: by mail-ot1-x333.google.com with SMTP id s20so6762321otp.4
  for <linux-arm-kernel@lists.infradead.org>;
- Sun, 16 Jun 2019 04:05:17 -0700 (PDT)
+ Sun, 16 Jun 2019 04:27:31 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=jYpdMxao6pliYnnD2x77IZriJWD7lFq0HxazhfUGYeM=;
- b=UwFN84U/ghpHYCjJsDjNhvd0IG6uo6P/Ch88x8naJcdJ3LA2P+oVvUyG2OddL1IfWo
- Txz07ZLzHPkSr8t6uXZYv+JBxeYlPaL1q6TjnJV5i5NsIHi8otj703Hw439tfzCJmkx9
- bhtZwyBGnDAfKH75NBMd9QFWoSzIRXN7SWKl/tUPS9VsqMtLYoA7ZItlJ0Qe6h6Gc1H4
- qSmX/Z0FQ6FbVAP6j62fzdvl7Kx7qsJb3yVW+gAouv+ZrB1JfGLTsGPbBCjmTDsQIrUA
- xMoN/N5HJ9atne/L4VNVvkuBNudrkBYAjRmGwG1yPEPswZ9FqVwy4LkjPSgvi+gf6yz3
- NADw==
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc:content-transfer-encoding;
+ bh=erfU7rxivGb4lVNGkqCqD0p/OXnXjIQY0I8TQwxXibo=;
+ b=TM6GAxz2tdvGBnARsJ072K6Ip7rmVvVyXjCwqMHF1sxXm4uJa2mKtuuHcOVOJYIQ9c
+ iMxlaszf9XKPbVaCIkH5IuAlMZeeNkLt/NZe352noi5HuFVDuTUIpdWbILcgOLuG8NP4
+ MeEvrslg3/jxe11A+Rf7MZsbvZhRjZljyMcPbnROxkp4jOj2gBIoeLSMp/SjH9/BtkCf
+ 3HzwRt46q2Chfo4B0IFAICokFwBvOdvnVA8bl9yo2kpdq5Q9VRv/3VKYh7i56UQoFigE
+ HNywAt8QPDhVvv3mEfn/1UYRwk29R8hnEr0yv1Ojzf5018wHK3ZzAoZms7dFOCWIPtnH
+ JCVw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=jYpdMxao6pliYnnD2x77IZriJWD7lFq0HxazhfUGYeM=;
- b=O/yCOk/alRTH3qkK0UsYayuoa7uPU5r8VkVk0Rr3KCYrjWNOaJKHMA3QU9O7JFXjJW
- KRO/OZNH+zoe5hFXbHZ4DXaTpAtR/o6FSk5n02vj3kO6DPLdJk/zZQALc6Lk6yFUFCT3
- yNyo3+73d6qHSC8DwXTNoPBnuz302mJimPVfTy318NrsOqPXco+E9kRjD9rmfdyBf4lS
- ekypJ9R6wkREPrOVwLNLEf5Ug6gw+/Inbk16d1vS3emi1eB3TSgYNv5sEsSKcCKHnab6
- c+GtjpQemPMCQcBIGWxklHm83YOLdcvCuQ1hPFDQOznvQLpBaEMNqfnqQWL4jTR8a2pf
- l+Yg==
-X-Gm-Message-State: APjAAAWDpj+rz5I0VTvuo3uYxMz0lGjiY3//jctPjmrRn2u4TuTOV2Wu
- PYqHwV773+AbR2nAoqGDd+o=
-X-Google-Smtp-Source: APXvYqzzqx42PAT4ueneqpG+etvE0yFc0vTzd9YPvagfFq04jv7+a+XjTXMN2fn6y898d3uHmGL14w==
-X-Received: by 2002:adf:ef8d:: with SMTP id d13mr55684452wro.60.1560683116461; 
- Sun, 16 Jun 2019 04:05:16 -0700 (PDT)
-Received: from jernej-laptop.localnet (cpe-86-58-52-202.static.triera.net.
- [86.58.52.202])
- by smtp.gmail.com with ESMTPSA id t1sm8457650wra.74.2019.06.16.04.05.13
- (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Sun, 16 Jun 2019 04:05:14 -0700 (PDT)
-From: Jernej =?utf-8?B?xaBrcmFiZWM=?= <jernej.skrabec@gmail.com>
-To: linux-sunxi@googlegroups.com, megous@megous.com
-Subject: Re: [linux-sunxi] [PATCH v6 5/6] drm: sun4i: Add support for enabling
- DDC I2C bus to sun8i_dw_hdmi glue
-Date: Sun, 16 Jun 2019 13:05:13 +0200
-Message-ID: <1823986.m04BvQ5ALy@jernej-laptop>
-In-Reply-To: <20190527162237.18495-6-megous@megous.com>
-References: <20190527162237.18495-1-megous@megous.com>
- <20190527162237.18495-6-megous@megous.com>
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc:content-transfer-encoding;
+ bh=erfU7rxivGb4lVNGkqCqD0p/OXnXjIQY0I8TQwxXibo=;
+ b=HY0vPZsDNGCd/NsE19cSDON/I4hXvSej8u/Erj2o14O4ddB/LZoJExRto6KZa3pSzr
+ lvdtjwPEBqCrm/IXiObihfoLn+mOGtS1nLk2GtbYd0qR14KuCZHqcov0UKwwD3i6hbIh
+ cqcuM+ZE7rBSahgV9rSjIHbvE1I3RqzTYUQLwGg6pZHv5dOn/6oxWh8OIQYC56PRNtCI
+ zCH7YtHKrbzsG+drLn8uvzaLNJpkdyMP/sA6WvJl2p3dMHKTuT5znD6jbEmdyBQ8RHZT
+ g1OTg95MZYzGOB4yVsj+6eVT2EaZ153nYbkkoCo8y3HsC28F95P3TMhj6gviSQay37K/
+ GjRA==
+X-Gm-Message-State: APjAAAX0Tzkt76Tn0nzbrMUB3gjcNgxmu09hPVtZfzxqQey8IPWkWeuX
+ WP+XA7jUa5mstLeFkfBdNaG41MgTCpZqVN5DU3Q=
+X-Google-Smtp-Source: APXvYqxxlKCJHbqOewgzT68GnL0QEJNSIftErIs6sehSFbNCIVo0qT6trodlTjQ6ngOIEmqb26jrL9hCS3KS0QmHhes=
+X-Received: by 2002:a9d:6959:: with SMTP id p25mr31795546oto.118.1560684451265; 
+ Sun, 16 Jun 2019 04:27:31 -0700 (PDT)
 MIME-Version: 1.0
+References: <1560084198-2930-1-git-send-email-ykaneko0929@gmail.com>
+ <20190611123022.oo4arh76w72vlkg5@verge.net.au>
+ <20190611140252.GL5016@pendragon.ideasonboard.com>
+ <20190612121157.y6iiftulcsv3ty5w@verge.net.au>
+In-Reply-To: <20190612121157.y6iiftulcsv3ty5w@verge.net.au>
+From: Yoshihiro Kaneko <ykaneko0929@gmail.com>
+Date: Sun, 16 Jun 2019 20:27:20 +0900
+Message-ID: <CAH1o70KAnhfvdbXCMeNZxEm9d1pgN7qmuMJBLjjVnPFwAhz48A@mail.gmail.com>
+Subject: Re: [PATCH/RFT] arm64: dts: renesas: r8a77990: Fix register range of
+ display node
+To: Simon Horman <horms@verge.net.au>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190616_040518_387984_F9F907AF 
-X-CRM114-Status: GOOD (  19.39  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190616_042732_895372_0415C256 
+X-CRM114-Status: GOOD (  16.59  )
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:441 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:333 listed in]
  [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (jernej.skrabec[at]gmail.com)
+ provider (ykaneko0929[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (ykaneko0929[at]gmail.com)
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -89,7 +88,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- 0.0 FROM_EXCESS_BASE64     From: base64 encoded unnecessarily
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -101,182 +99,44 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Jose Abreu <joabreu@synopsys.com>,
- Alexandre Torgue <alexandre.torgue@st.com>, devicetree@vger.kernel.org,
- Maxime Ripard <maxime.ripard@bootlin.com>, netdev@vger.kernel.org,
- linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
- linux-stm32@st-md-mailman.stormreply.com, David Airlie <airlied@linux.ie>,
- Chen-Yu Tsai <wens@csie.org>, Rob Herring <robh+dt@kernel.org>,
- linux-arm-kernel@lists.infradead.org, Daniel Vetter <daniel@ffwll.ch>,
- Giuseppe Cavallaro <peppe.cavallaro@st.com>,
- "David S. Miller" <davem@davemloft.net>,
- Maxime Coquelin <mcoquelin.stm32@gmail.com>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Laurent Pinchart <laurent.pinchart+renesas@ideasonboard.com>,
+ Magnus Damm <magnus.damm@gmail.com>,
+ Linux-Renesas <linux-renesas-soc@vger.kernel.org>,
+ Geert Uytterhoeven <geert@linux-m68k.org>,
+ Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Ondrej!
-
-Dne ponedeljek, 27. maj 2019 ob 18:22:36 CEST je megous via linux-sunxi 
-napisal(a):
-> From: Ondrej Jirman <megous@megous.com>
-> 
-> Orange Pi 3 board requires enabling a voltage shifting circuit via GPIO
-> for the DDC bus to be usable.
-> 
-> Add support for hdmi-connector node's optional ddc-en-gpios property to
-> support this use case.
-> 
-> Signed-off-by: Ondrej Jirman <megous@megous.com>
-> ---
->  drivers/gpu/drm/sun4i/sun8i_dw_hdmi.c | 55 +++++++++++++++++++++++++--
->  drivers/gpu/drm/sun4i/sun8i_dw_hdmi.h |  3 ++
->  2 files changed, 55 insertions(+), 3 deletions(-)
-> 
-> diff --git a/drivers/gpu/drm/sun4i/sun8i_dw_hdmi.c
-> b/drivers/gpu/drm/sun4i/sun8i_dw_hdmi.c index 39d8509d96a0..59b81ba02d96
-> 100644
-> --- a/drivers/gpu/drm/sun4i/sun8i_dw_hdmi.c
-> +++ b/drivers/gpu/drm/sun4i/sun8i_dw_hdmi.c
-> @@ -98,6 +98,30 @@ static u32 sun8i_dw_hdmi_find_possible_crtcs(struct
-> drm_device *drm, return crtcs;
->  }
-> 
-> +static int sun8i_dw_hdmi_find_connector_pdev(struct device *dev,
-> +					     struct 
-platform_device **pdev_out)
-> +{
-> +	struct platform_device *pdev;
-> +	struct device_node *remote;
-> +
-> +	remote = of_graph_get_remote_node(dev->of_node, 1, -1);
-> +	if (!remote)
-> +		return -ENODEV;
-> +
-> +	if (!of_device_is_compatible(remote, "hdmi-connector")) {
-> +		of_node_put(remote);
-> +		return -ENODEV;
-> +	}
-> +
-> +	pdev = of_find_device_by_node(remote);
-> +	of_node_put(remote);
-> +	if (!pdev)
-> +		return -ENODEV;
-> +
-> +	*pdev_out = pdev;
-> +	return 0;
-> +}
-> +
->  static int sun8i_dw_hdmi_bind(struct device *dev, struct device *master,
->  			      void *data)
->  {
-> @@ -151,16 +175,29 @@ static int sun8i_dw_hdmi_bind(struct device *dev,
-> struct device *master, return PTR_ERR(hdmi->regulator);
->  	}
-> 
-> +	ret = sun8i_dw_hdmi_find_connector_pdev(dev, &hdmi->connector_pdev);
-> +	if (!ret) {
-> +		hdmi->ddc_en = gpiod_get_optional(&hdmi->connector_pdev-
->dev,
-> +						  "ddc-en", 
-GPIOD_OUT_HIGH);
-> +		if (IS_ERR(hdmi->ddc_en)) {
-> +			platform_device_put(hdmi->connector_pdev);
-> +			dev_err(dev, "Couldn't get ddc-en gpio\n");
-> +			return PTR_ERR(hdmi->ddc_en);
-> +		}
-> +	}
-> +
->  	ret = regulator_enable(hdmi->regulator);
->  	if (ret) {
->  		dev_err(dev, "Failed to enable regulator\n");
-> -		return ret;
-> +		goto err_unref_ddc_en;
->  	}
-> 
-> +	gpiod_set_value(hdmi->ddc_en, 1);
-
-Why don't you do that inside if clause where hdmi->ddc_en is assigned? It's 
-not useful otherwise anyway.
-
-Besides, you would then only need to adjust one goto label in error path.
-
-> +
->  	ret = reset_control_deassert(hdmi->rst_ctrl);
->  	if (ret) {
->  		dev_err(dev, "Could not deassert ctrl reset 
-control\n");
-> -		goto err_disable_regulator;
-> +		goto err_disable_ddc_en;
->  	}
-> 
->  	ret = clk_prepare_enable(hdmi->clk_tmds);
-> @@ -213,8 +250,14 @@ static int sun8i_dw_hdmi_bind(struct device *dev,
-> struct device *master, clk_disable_unprepare(hdmi->clk_tmds);
->  err_assert_ctrl_reset:
->  	reset_control_assert(hdmi->rst_ctrl);
-> -err_disable_regulator:
-> +err_disable_ddc_en:
-> +	gpiod_set_value(hdmi->ddc_en, 0);
->  	regulator_disable(hdmi->regulator);
-> +err_unref_ddc_en:
-> +	if (hdmi->ddc_en)
-> +		gpiod_put(hdmi->ddc_en);
-> +
-> +	platform_device_put(hdmi->connector_pdev);
-> 
->  	return ret;
->  }
-> @@ -228,7 +271,13 @@ static void sun8i_dw_hdmi_unbind(struct device *dev,
-> struct device *master, sun8i_hdmi_phy_remove(hdmi);
->  	clk_disable_unprepare(hdmi->clk_tmds);
->  	reset_control_assert(hdmi->rst_ctrl);
-> +	gpiod_set_value(hdmi->ddc_en, 0);
->  	regulator_disable(hdmi->regulator);
-> +
-> +	if (hdmi->ddc_en)
-> +		gpiod_put(hdmi->ddc_en);
-> +
-> +	platform_device_put(hdmi->connector_pdev);
->  }
-> 
->  static const struct component_ops sun8i_dw_hdmi_ops = {
-> diff --git a/drivers/gpu/drm/sun4i/sun8i_dw_hdmi.h
-> b/drivers/gpu/drm/sun4i/sun8i_dw_hdmi.h index 720c5aa8adc1..dad66b8301c2
-> 100644
-> --- a/drivers/gpu/drm/sun4i/sun8i_dw_hdmi.h
-> +++ b/drivers/gpu/drm/sun4i/sun8i_dw_hdmi.h
-> @@ -9,6 +9,7 @@
->  #include <drm/bridge/dw_hdmi.h>
->  #include <drm/drm_encoder.h>
->  #include <linux/clk.h>
-> +#include <linux/gpio/consumer.h>
->  #include <linux/regmap.h>
->  #include <linux/regulator/consumer.h>
->  #include <linux/reset.h>
-> @@ -190,6 +191,8 @@ struct sun8i_dw_hdmi {
->  	struct regulator		*regulator;
->  	const struct sun8i_dw_hdmi_quirks *quirks;
->  	struct reset_control		*rst_ctrl;
-> +	struct platform_device		*connector_pdev;
-
-It seems that connector_pdev is needed only during intialization. Why do you 
-store it?
-
-Best regards,
-Jernej
-
-> +	struct gpio_desc		*ddc_en;
->  };
-> 
->  static inline struct sun8i_dw_hdmi *
-
-
-
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+SGkgU2ltb24tc2FuLAoKMjAxOeW5tDbmnIgxMuaXpSjmsLQpIDIxOjEyIFNpbW9uIEhvcm1hbiA8
+aG9ybXNAdmVyZ2UubmV0LmF1PjoKPgo+IE9uIFR1ZSwgSnVuIDExLCAyMDE5IGF0IDA1OjAyOjUy
+UE0gKzAzMDAsIExhdXJlbnQgUGluY2hhcnQgd3JvdGU6Cj4gPiBIZWxsbywKPiA+Cj4gPiBPbiBU
+dWUsIEp1biAxMSwgMjAxOSBhdCAwMjozMDoyN1BNICswMjAwLCBTaW1vbiBIb3JtYW4gd3JvdGU6
+Cj4gPiA+ICsgTGF1cmVudAo+ID4gPgo+ID4gPiBPbiBTdW4sIEp1biAwOSwgMjAxOSBhdCAwOTo0
+MzoxOFBNICswOTAwLCBZb3NoaWhpcm8gS2FuZWtvIHdyb3RlOgo+ID4gPiA+IEZyb206IFRha2Vz
+aGkgS2loYXJhIDx0YWtlc2hpLmtpaGFyYS5kZkByZW5lc2FzLmNvbT4KPiA+ID4gPgo+ID4gPiA+
+IFNpbmNlIHRoZSBSOEE3Nzk5MCBTb0MgdXNlcyBEVXswLDF9LCB0aGUgcmFuZ2UgZnJvbSB0aGUg
+YmFzZSBhZGRyZXNzIHRvCj4gPiA+ID4gdGhlIDB4NDAwMCBhZGRyZXNzIGlzIHVzZWQuCj4gPiA+
+ID4gVGhpcyBwYXRjaCBmaXhlZCBpdC4KPiA+ID4gPgo+ID4gPiA+IEZpeGVzOiAxM2VlMmJmYzU0
+NDQgKCJhcm02NDogZHRzOiByZW5lc2FzOiByOGE3Nzk5MDogQWRkIGRpc3BsYXkgb3V0cHV0IHN1
+cHBvcnQiKQo+ID4gPiA+IFNpZ25lZC1vZmYtYnk6IFRha2VzaGkgS2loYXJhIDx0YWtlc2hpLmtp
+aGFyYS5kZkByZW5lc2FzLmNvbT4KPiA+ID4gPiBTaWduZWQtb2ZmLWJ5OiBZb3NoaWhpcm8gS2Fu
+ZWtvIDx5a2FuZWtvMDkyOUBnbWFpbC5jb20+Cj4gPiA+Cj4gPiA+IFRoYW5rcywKPiA+ID4KPiA+
+ID4gVGhpcyBsb29rcyBmaW5lIHRvIG1lIGJ1dCBJIHdpbGwgd2FpdCB0byBzZWUgaWYgdGhlcmUg
+YXJlIG90aGVyIHJldmlld3MKPiA+ID4gYmVmb3JlIGFwcGx5aW5nLgo+ID4gPgo+ID4gPiBSZXZp
+ZXdlZC1ieTogU2ltb24gSG9ybWFuIDxob3JtcytyZW5lc2FzQHZlcmdlLm5ldC5hdT4KPiA+Cj4g
+PiBSZXZpZXdlZC1ieTogTGF1cmVudCBQaW5jaGFydCA8bGF1cmVudC5waW5jaGFydEBpZGVhc29u
+Ym9hcmQuY29tPgo+Cj4gVGhhbmtzLCBJIGhhdmUgYXBwbGllZCB0aGlzIGZvciBpbmNsdXNpb24g
+aW4gdjUuMy4KPgo+ID4gPiBJcyBhIHNpbWlsYXIgZml4IGFsc28gYXBwcm9wcmlhdGUgZm9yIEQz
+IChyOGE3Nzk5NSkKPiA+Cj4gPiBZZXMgaXQgaXMuCj4KPiBOaWNlLgo+Cj4gS2FuZWtvLXNhbiwg
+Y291bGQgeW91IHByZXBhcmUgYSBwYXRjaD8KCkdvdCBpdCwgd2lsbCBkby4KClJlZ2FyZHMsCkth
+bmVrbwoKPgo+ID4gPiBBbmQgYSB2YXJpYW50IHRoYXQgcmVkdWNlcyB0aGUgcmVnaXN0ZXIgc2l6
+ZSB0byAweDUwMDAKPiA+ID4gZm9yIE0zLVcgKHI4YTc3OTY1KS4KPiA+Cj4gPiBNMy1XIGhhcyBy
+ZWdpc3RlcnMgYXQgMHhmZWI2MDAwMC4gWW91IGNvdWxkIHJlZHVjZSB0aGUgc2l6ZSBmcm9tCj4g
+PiAweDgwMDAwIHRvIDB4NzAwMDAgYnV0IEkgZG9uJ3QgdGhpbmsgaXQncyB3b3J0aCBpdC4KPgo+
+IEdvdCBpdCwgbGV0cyBsZWF2ZSBNMy1XIGFzIGlzLgo+Cj4gLi4uCgpfX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcg
+bGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmlu
+ZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
