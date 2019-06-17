@@ -2,89 +2,66 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AD2D247962
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 17 Jun 2019 06:30:59 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B2C4F479AE
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 17 Jun 2019 07:20:09 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=h86c8c115hL6CIXhVjiSeKb1aWTnYzrASXITVerRPvw=; b=JWhDVZUTIFCiIX
-	jpvVrmtvbBPoF+7sjCqURQvaZXMMxazE7iFBlh9kZHgK8Bk2FxQgiNmKe3Mi6Nie+0FCvTTSQmisP
-	7nsgc4CPLUJR7ZwioGul2dpGPbqrc+/OElXmKyZhUwgDcNy7cSrG8Mw8GxmdvjZQbb/1dHln9v/CI
-	ru8ncNU4T39ZbR/Sopgjup4y7GMEKqVVno9JkXRlETn0rGzAXwLoCTlRz/vXaNQXIE1lwWS+dmGhk
-	EM19XC2nSjaCTPLmA6ib3s4nPkE9U37w3ogtYuFMRwCfbKQtvcWBNLFWmZ/B27/l+Qb51VGXeoxCq
-	71pfVVdOEuEj5RHkLeyw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=VpWhVe4wn2U/8QsD7QAyRK0sR5c3N9ii7indkGGTZIE=; b=slyY+74iNLDgBP
+	wkGoZJSeiDv8fpfUosFkP9gbc4WV4Lyd/iUqoZef7FlGWTOqPUH8t49QjN9Ow8qY01eXoWLUnlHrD
+	MMotEOWgNVRYVYk3vJszHaFPphmE3VME232JWD1DHj90CWpentMba9UYXe0g6+5nQSH1luZImgKxN
+	r85PEpsLDoLuHqhlli8gdYmpM2TYIRdpmJbwYxB8px0suB1NciPayiVJjvNLdxlTBd4f9s/kzx/tP
+	z4Ubc/gotg25VbWHdJ1SgOFhKkQRrZKsae/zs7JXO2GViptfwudk/XatnzOANbjSSYdaiRpFRhObB
+	aMqImOfSkQDW1BDFhejA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hcjIE-0001lU-9p; Mon, 17 Jun 2019 04:30:54 +0000
-Received: from lelv0143.ext.ti.com ([198.47.23.248])
+	id 1hck3g-00021o-Jk; Mon, 17 Jun 2019 05:19:56 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hcjHl-0001bm-7Z; Mon, 17 Jun 2019 04:30:26 +0000
-Received: from fllv0035.itg.ti.com ([10.64.41.0])
- by lelv0143.ext.ti.com (8.15.2/8.15.2) with ESMTP id x5H4U4rh055473;
- Sun, 16 Jun 2019 23:30:04 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1560745804;
- bh=ESKXVh9Sq512lPIqthTXEUClTEi6OelQzFKQgNFQ7wM=;
- h=Subject:To:CC:References:From:Date:In-Reply-To;
- b=O+3RFtA3fdfmaj1j/OEZXoOysP1/tfUlSMyvZiC8PYnbYhSaaPvf++0OJeSmhd+uA
- FkMWyld0BDwQiHM1SjnHuwUiSV+LHs5tgvIbPZgqMbLIyHSavD+G8oXUxetR+Gj8dY
- GFqQuKTY1NyJxqD4amy7labW3TVRrE+zNWnedBio=
-Received: from DLEE105.ent.ti.com (dlee105.ent.ti.com [157.170.170.35])
- by fllv0035.itg.ti.com (8.15.2/8.15.2) with ESMTPS id x5H4U4E4103253
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Sun, 16 Jun 2019 23:30:04 -0500
-Received: from DLEE101.ent.ti.com (157.170.170.31) by DLEE105.ent.ti.com
- (157.170.170.35) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5; Sun, 16
- Jun 2019 23:30:03 -0500
-Received: from lelv0326.itg.ti.com (10.180.67.84) by DLEE101.ent.ti.com
- (157.170.170.31) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5 via
- Frontend Transport; Sun, 16 Jun 2019 23:30:03 -0500
-Received: from [172.24.190.89] (ileax41-snat.itg.ti.com [10.172.224.153])
- by lelv0326.itg.ti.com (8.15.2/8.15.2) with ESMTP id x5H4TvCq010286;
- Sun, 16 Jun 2019 23:29:58 -0500
-Subject: Re: [PATCH v5 4/5] dt-bindings: mtd: Add bindings for TI's AM654
- HyperBus memory controller
-To: Sergei Shtylyov <sergei.shtylyov@cogentembedded.com>, David Woodhouse
- <dwmw2@infradead.org>, Brian Norris <computersforpeace@gmail.com>, Boris
- Brezillon <bbrezillon@kernel.org>, Marek Vasut <marek.vasut@gmail.com>,
- Richard Weinberger <richard@nod.at>, Rob Herring <robh+dt@kernel.org>
-References: <20190609103227.24875-1-vigneshr@ti.com>
- <20190609103227.24875-5-vigneshr@ti.com>
- <a808ffca-02a8-14b0-3422-c0905ab212a6@cogentembedded.com>
-From: Vignesh Raghavendra <vigneshr@ti.com>
-Message-ID: <7c7828b9-bcfd-6156-3ddb-cbdde5956675@ti.com>
-Date: Mon, 17 Jun 2019 10:00:45 +0530
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.7.0
+ id 1hck3T-00020K-3t; Mon, 17 Jun 2019 05:19:45 +0000
+X-UUID: 8e1b63b243104fb0a82c4d8602375f29-20190616
+X-UUID: 8e1b63b243104fb0a82c4d8602375f29-20190616
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
+ (envelope-from <ck.hu@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 1542709060; Sun, 16 Jun 2019 21:19:35 -0800
+Received: from mtkmbs07n1.mediatek.inc (172.21.101.16) by
+ MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Sun, 16 Jun 2019 22:19:33 -0700
+Received: from mtkcas07.mediatek.inc (172.21.101.84) by
+ mtkmbs07n1.mediatek.inc (172.21.101.16) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Mon, 17 Jun 2019 13:19:32 +0800
+Received: from [172.21.77.4] (172.21.77.4) by mtkcas07.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
+ Transport; Mon, 17 Jun 2019 13:19:31 +0800
+Message-ID: <1560748771.16762.0.camel@mtksdaap41>
+Subject: Re: [PATCH 44/59] drm/mediatek: Use drm_atomic_helper_wait_for_fences
+From: CK Hu <ck.hu@mediatek.com>
+To: Daniel Vetter <daniel.vetter@ffwll.ch>
+Date: Mon, 17 Jun 2019 13:19:31 +0800
+In-Reply-To: <20190614203615.12639-45-daniel.vetter@ffwll.ch>
+References: <20190614203615.12639-1-daniel.vetter@ffwll.ch>
+ <20190614203615.12639-45-daniel.vetter@ffwll.ch>
+X-Mailer: Evolution 3.10.4-0ubuntu2 
 MIME-Version: 1.0
-In-Reply-To: <a808ffca-02a8-14b0-3422-c0905ab212a6@cogentembedded.com>
-Content-Language: en-US
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190616_213025_377460_81AE9BC9 
-X-CRM114-Status: GOOD (  21.61  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20190616_221943_164545_8F281DEB 
+X-CRM114-Status: GOOD (  17.29  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.23.248 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [216.200.240.184 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -96,132 +73,146 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Tudor Ambarus <Tudor.Ambarus@microchip.com>,
- linux-kernel@vger.kernel.org, Joakim Tjernlund <Joakim.Tjernlund@infinera.com>,
- linux-mtd@lists.infradead.org, Miquel Raynal <miquel.raynal@bootlin.com>,
- Mason Yang <masonccyang@mxic.com.tw>, linux-arm-kernel@lists.infradead.org
+Cc: Intel Graphics Development <intel-gfx@lists.freedesktop.org>,
+ DRI Development <dri-devel@lists.freedesktop.org>,
+ linux-mediatek@lists.infradead.org, Philipp Zabel <p.zabel@pengutronix.de>,
+ Matthias
+ Brugger <matthias.bgg@gmail.com>, Daniel Vetter <daniel.vetter@intel.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi,
+Hi, Daniel:
 
-On 10/06/19 9:55 PM, Sergei Shtylyov wrote:
-> Hello!
-> 
-> On 06/09/2019 01:32 PM, Vignesh Raghavendra wrote:
-> 
->> Add binding documentation for TI's HyperBus memory controller present on
->> AM654 SoC.
->>
->> Signed-off-by: Vignesh Raghavendra <vigneshr@ti.com>
->> ---
->> v5:
->> Update binding example to show MMIO mux
->> Fix reg property for flash slave.
->>
->>  .../devicetree/bindings/mtd/ti,am654-hbmc.txt | 51 +++++++++++++++++++
->>  MAINTAINERS                                   |  1 +
->>  2 files changed, 52 insertions(+)
->>  create mode 100644 Documentation/devicetree/bindings/mtd/ti,am654-hbmc.txt
->>
->> diff --git a/Documentation/devicetree/bindings/mtd/ti,am654-hbmc.txt b/Documentation/devicetree/bindings/mtd/ti,am654-hbmc.txt
->> new file mode 100644
->> index 000000000000..c2a2c2b42a92
->> --- /dev/null
->> +++ b/Documentation/devicetree/bindings/mtd/ti,am654-hbmc.txt
->> @@ -0,0 +1,51 @@
->> +Bindings for HyperBus Memory Controller (HBMC) on TI's K3 family of SoCs
->> +
->> +Required properties:
->> +- compatible : "ti,am654-hbmc" for AM654 SoC
->> +- reg : Two entries:
->> +	First entry pointed to the register space of HBMC controller
->> +	Second entry pointing to the memory map region dedicated for
->> +	MMIO access to attached flash devices
->> +- ranges : Address translation from offset within CS to allocated MMIO
->> +	   space in SoC
->> +
->> +Optional properties:
->> +- mux-controls : phandle to the multiplexer that controls selection of
->> +		 HBMC vs OSPI inside Flash SubSystem. Default is OSPI,
->> +		 if property is absent.
->> +		 See Documentation/devicetree/bindings/mux/reg-mux.txt
->> +		 for mmio-mux binding details
->> +
->> +Example:
->> +
->> +	fss: fss@47000000 {
-> 
->    What's FSS?
+On Fri, 2019-06-14 at 22:36 +0200, Daniel Vetter wrote:
+> If we use the gem fb helper as the prepare_fb hook, plus the
+> drm_prime.c import helpers now automatically setting obj->resv, we can
+> use the shared helpers to wait for fences instead of rolling our own.
+> Note that this relies on mtk setting drm_fb->obj, which is already
+> done in mtk_drm_framebuffer_init().
 
-Flash SubSystem (FSS). Will highlight that in mux control definition above
-
->    Regardless of the answer, the node names should be generic, like "memory-controller@".
-> 
->> +		compatible = "syscon", "simple-mfd";
-> 
->    If it's "sycon", the nme should probably be "system-controller".
-
-FSS is like a subchip that has all Flash controllers like Octal SPI
-controllers and HyperBus controller within it. Some of their controls
-are in the below address range. So I think its more closer to
-"system-controller"
+Reviewed-by: CK Hu <ck.hu@mediatek.com>
 
 > 
->> +		reg = <0x0 0x47000000 0x0 0x100>;
->> +		#address-cells = <2>;
->> +		#size-cells = <2>;
->> +		ranges;
->> +
->> +		hbmc_mux: hbmc-mux {
+> Aside: Probably can use the default commit_tail with this again, but I
+> didn't check for that.
 > 
->    So, just "multiplexor"?
-
-Ok
-
+> Signed-off-by: Daniel Vetter <daniel.vetter@intel.com>
+> Cc: CK Hu <ck.hu@mediatek.com>
+> Cc: Philipp Zabel <p.zabel@pengutronix.de>
+> Cc: Matthias Brugger <matthias.bgg@gmail.com>
+> Cc: linux-arm-kernel@lists.infradead.org
+> Cc: linux-mediatek@lists.infradead.org
+> ---
+>  drivers/gpu/drm/mediatek/mtk_drm_drv.c   | 12 +---------
+>  drivers/gpu/drm/mediatek/mtk_drm_fb.c    | 28 ------------------------
+>  drivers/gpu/drm/mediatek/mtk_drm_fb.h    |  1 -
+>  drivers/gpu/drm/mediatek/mtk_drm_plane.c |  2 ++
+>  4 files changed, 3 insertions(+), 40 deletions(-)
 > 
->> +			compatible = "mmio-mux";
->> +			#mux-control-cells = <1>;
->> +			mux-reg-masks = <0x4 0x2>; /* 0: reg 0x4, bit 1 */
->> +		};
->> +
->> +		hbmc: hbmc@47034000 {
-> 
->    Should be named "memory-controller@47034000", according to the DT spec.
+> diff --git a/drivers/gpu/drm/mediatek/mtk_drm_drv.c b/drivers/gpu/drm/mediatek/mtk_drm_drv.c
+> index dd8dab562500..2d5caf532431 100644
+> --- a/drivers/gpu/drm/mediatek/mtk_drm_drv.c
+> +++ b/drivers/gpu/drm/mediatek/mtk_drm_drv.c
+> @@ -38,22 +38,12 @@ static void mtk_atomic_schedule(struct mtk_drm_private *private,
+>  	schedule_work(&private->commit.work);
+>  }
+>  
+> -static void mtk_atomic_wait_for_fences(struct drm_atomic_state *state)
+> -{
+> -	struct drm_plane *plane;
+> -	struct drm_plane_state *new_plane_state;
+> -	int i;
+> -
+> -	for_each_new_plane_in_state(state, plane, new_plane_state, i)
+> -		mtk_fb_wait(new_plane_state->fb);
+> -}
+> -
+>  static void mtk_atomic_complete(struct mtk_drm_private *private,
+>  				struct drm_atomic_state *state)
+>  {
+>  	struct drm_device *drm = private->drm;
+>  
+> -	mtk_atomic_wait_for_fences(state);
+> +	drm_atomic_helper_wait_for_fences(drm, state, false);
+>  
+>  	/*
+>  	 * Mediatek drm supports runtime PM, so plane registers cannot be
+> diff --git a/drivers/gpu/drm/mediatek/mtk_drm_fb.c b/drivers/gpu/drm/mediatek/mtk_drm_fb.c
+> index 4c3ad7de2d3b..396ba497986d 100644
+> --- a/drivers/gpu/drm/mediatek/mtk_drm_fb.c
+> +++ b/drivers/gpu/drm/mediatek/mtk_drm_fb.c
+> @@ -49,34 +49,6 @@ static struct drm_framebuffer *mtk_drm_framebuffer_init(struct drm_device *dev,
+>  	return fb;
+>  }
+>  
+> -/*
+> - * Wait for any exclusive fence in fb's gem object's reservation object.
+> - *
+> - * Returns -ERESTARTSYS if interrupted, else 0.
+> - */
+> -int mtk_fb_wait(struct drm_framebuffer *fb)
+> -{
+> -	struct drm_gem_object *gem;
+> -	struct reservation_object *resv;
+> -	long ret;
+> -
+> -	if (!fb)
+> -		return 0;
+> -
+> -	gem = fb->obj[0];
+> -	if (!gem || !gem->dma_buf || !gem->dma_buf->resv)
+> -		return 0;
+> -
+> -	resv = gem->dma_buf->resv;
+> -	ret = reservation_object_wait_timeout_rcu(resv, false, true,
+> -						  MAX_SCHEDULE_TIMEOUT);
+> -	/* MAX_SCHEDULE_TIMEOUT on success, -ERESTARTSYS if interrupted */
+> -	if (WARN_ON(ret < 0))
+> -		return ret;
+> -
+> -	return 0;
+> -}
+> -
+>  struct drm_framebuffer *mtk_drm_mode_fb_create(struct drm_device *dev,
+>  					       struct drm_file *file,
+>  					       const struct drm_mode_fb_cmd2 *cmd)
+> diff --git a/drivers/gpu/drm/mediatek/mtk_drm_fb.h b/drivers/gpu/drm/mediatek/mtk_drm_fb.h
+> index 6b80c28e33cf..eb64d26001c6 100644
+> --- a/drivers/gpu/drm/mediatek/mtk_drm_fb.h
+> +++ b/drivers/gpu/drm/mediatek/mtk_drm_fb.h
+> @@ -6,7 +6,6 @@
+>  #ifndef MTK_DRM_FB_H
+>  #define MTK_DRM_FB_H
+>  
+> -int mtk_fb_wait(struct drm_framebuffer *fb);
+>  struct drm_framebuffer *mtk_drm_mode_fb_create(struct drm_device *dev,
+>  					       struct drm_file *file,
+>  					       const struct drm_mode_fb_cmd2 *cmd);
+> diff --git a/drivers/gpu/drm/mediatek/mtk_drm_plane.c b/drivers/gpu/drm/mediatek/mtk_drm_plane.c
+> index f2ef83aed6f9..42cc9823eaaa 100644
+> --- a/drivers/gpu/drm/mediatek/mtk_drm_plane.c
+> +++ b/drivers/gpu/drm/mediatek/mtk_drm_plane.c
+> @@ -8,6 +8,7 @@
+>  #include <drm/drm_atomic.h>
+>  #include <drm/drm_atomic_helper.h>
+>  #include <drm/drm_plane_helper.h>
+> +#include <drm/drm_gem_framebuffer_helper.h>
+>  
+>  #include "mtk_drm_crtc.h"
+>  #include "mtk_drm_ddp_comp.h"
+> @@ -146,6 +147,7 @@ static void mtk_plane_atomic_disable(struct drm_plane *plane,
+>  }
+>  
+>  static const struct drm_plane_helper_funcs mtk_plane_helper_funcs = {
+> +	.prepare_fb = drm_gem_fb_prepare_fb,
+>  	.atomic_check = mtk_plane_atomic_check,
+>  	.atomic_update = mtk_plane_atomic_update,
+>  	.atomic_disable = mtk_plane_atomic_disable,
 
-IMO, since HyperBus is a bus protocol and has a specification, I think
-its should have a separate generic name like SPI etc.
 
-I will change this to "hyperbus@47034000" to common name of spec.
-
-> 
->> +			compatible = "ti,am654-hbmc";
->> +			reg = <0x0 0x47034000 0x0 0x100>,
->> +				<0x5 0x00000000 0x1 0x0000000>;
->> +			power-domains = <&k3_pds 55>;
->> +			#address-cells = <2>;
->> +			#size-cells = <1>;
->> +			ranges = <0x0 0x0 0x5 0x00000000 0x4000000>, /* CS0 - 64MB */
->> +				 <0x1 0x0 0x5 0x04000000 0x4000000>; /* CS1 - 64MB */
->> +			mux-controls = <&hbmc_mux 0>;
->> +
->> +			/* Slave flash node */
->> +			flash@0,0 {
->> +				compatible = "cypress,hyperflash", "cfi-flash";
->> +				reg = <0x0 0x0 0x4000000>;
->> +			};
->> +		};
->> +	};
-> [...]
-> 
-> MBR, Sergei
-> 
-
--- 
-Regards
-Vignesh
 
 _______________________________________________
 linux-arm-kernel mailing list
