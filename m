@@ -2,61 +2,77 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1D36F48B7F
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 17 Jun 2019 20:11:05 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0E6D048C57
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 17 Jun 2019 20:42:07 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=E+P3sxHpPR8frWyJONQ77+D7OtJg+SGy5IwP3K9pxo4=; b=Cut73FuBtS2IMq
-	YFcK+tt3N0/BIxbjWy4TtqDAWVf/NLBbjF8/4dc+h1b5c+jILAw2M+WN81MCEGpisSJn/l6Ra5gFq
-	rIYSG9wir8fRQD4k0h87tEoJ8L7SoPiYZxfDkRbidJ0AAIt1lCf2rv9V5VAJyrnI6TSkqD3tYWK8G
-	84TzaQiAh8ba49Grgv1gx6calm92Xf9W3/X7+094Qom6UhZ9wWvfd49E3l2YjZhKNACcKL3cCQRqD
-	igEqECbIFfcO4Kp0r4sBiAeDZrAPopRs4hjyLgd26sLwFTlX4K3Hn672Iyan2F4vpND1Mj5UvWg/F
-	nsq3YLRE5roT9y1//OvA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=FrBGXr9ZIeWNJH+asJMwoovK2vxi8e7FZOXg7PSQdN4=; b=N2s2VwbbJUJ/EB
+	Bo0SbjU5iTlUBp4+QDnNfYEWukRaUL2KV1/dtosVTQd8TXikFv0d19VXvHCGbPqJW7/yL5urfJDPx
+	NV60uWN2bhoIB65zkDVFMFMn+4iv32oWtURakgDFC64XGD1VJ1cMtXAXMkCEZwoFXE8D5eFDJ3OPL
+	5zPUk5ByoSx+y/vuTN7m3/NVFbUJ6HBco76Zjvti4/urwinuQ3miQ45+7VirJuv6BjV0Xll/gtkEJ
+	fO7l6weRnaQmLegurfc4j9yCgZsUJYnEUd1Q3O5vh3mumMNn5jrPeEwiOaSY5Cxcb369Bv5NRshFO
+	FPQAPvn7ENX0FVfFDczw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hcw5t-0000xm-Q3; Mon, 17 Jun 2019 18:11:01 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1hcwZt-0003HA-7Y; Mon, 17 Jun 2019 18:42:01 +0000
+Received: from lelv0142.ext.ti.com ([198.47.23.249])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hcw5i-0000xB-AC
- for linux-arm-kernel@lists.infradead.org; Mon, 17 Jun 2019 18:10:51 +0000
-Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 7D42B208C0;
- Mon, 17 Jun 2019 18:10:48 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1560795049;
- bh=FUMyawJcKwbgBq1KBzfgBo/OSPZ3Ne48mCmHGmTnYa8=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=jcI1FxBBGA3pU+DeRfee97d7nwghNbUJ6glZCY9nO2A6deGImGozosVBQuYy2Zyib
- /Y+MS2INO9y8v/NC+3rITV+N5RU/Sk/Wwq4E0EcQOtX8bBHgj2aWC3Qf7ZiPH+rQQD
- y0J4qJyt6ukMIvBjxb0fTHJe3Wa81NjhSgw9XkyY=
-Date: Mon, 17 Jun 2019 19:10:45 +0100
-From: Will Deacon <will@kernel.org>
-To: Florian Fainelli <f.fainelli@gmail.com>
-Subject: Re: [PATCH] arm64: Allow user selection of ARM64_MODULE_PLTS
-Message-ID: <20190617181045.fekodnky6un4i723@willie-the-truck>
-References: <20190614025932.533-1-f.fainelli@gmail.com>
- <20190617173241.GM30800@fuggles.cambridge.arm.com>
- <2624ce8b-0206-a217-8793-c1223178246c@gmail.com>
+ id 1hcwZh-0003Gg-0W
+ for linux-arm-kernel@lists.infradead.org; Mon, 17 Jun 2019 18:41:50 +0000
+Received: from fllv0034.itg.ti.com ([10.64.40.246])
+ by lelv0142.ext.ti.com (8.15.2/8.15.2) with ESMTP id x5HIff7a085314;
+ Mon, 17 Jun 2019 13:41:41 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
+ s=ti-com-17Q1; t=1560796901;
+ bh=B3vkuFEUJ6Y+O0/Ge2hah5BykSfysAS/GfgDfsj6bMM=;
+ h=Subject:To:CC:References:From:Date:In-Reply-To;
+ b=EDdKCmHTCHn9AKkRwgMVrf6ak3sB0ko3yysHGWqzNslmzDwDnj2TJzkzWSoMstDHJ
+ 9ronLXuw8GrxcdYsZhuEvLFzd5R9Idzm+INtWI+XiWMnt2SUHLyicvfKdxEHVQF6XQ
+ SCOHMV5NGt126+VXoxFxQd1dKuj0r6k2rAs77jY8=
+Received: from DLEE106.ent.ti.com (dlee106.ent.ti.com [157.170.170.36])
+ by fllv0034.itg.ti.com (8.15.2/8.15.2) with ESMTPS id x5HIffow065358
+ (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
+ Mon, 17 Jun 2019 13:41:41 -0500
+Received: from DLEE110.ent.ti.com (157.170.170.21) by DLEE106.ent.ti.com
+ (157.170.170.36) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5; Mon, 17
+ Jun 2019 13:41:40 -0500
+Received: from fllv0040.itg.ti.com (10.64.41.20) by DLEE110.ent.ti.com
+ (157.170.170.21) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5 via
+ Frontend Transport; Mon, 17 Jun 2019 13:41:40 -0500
+Received: from [128.247.58.153] (ileax41-snat.itg.ti.com [10.172.224.153])
+ by fllv0040.itg.ti.com (8.15.2/8.15.2) with ESMTP id x5HIfeus104041;
+ Mon, 17 Jun 2019 13:41:40 -0500
+Subject: Re: [PATCH v3 -next] firmware: ti_sci: Fix gcc
+ unused-but-set-variable warning
+To: YueHaibing <yuehaibing@huawei.com>, <nm@ti.com>, <t-kristo@ti.com>,
+ <ssantosh@kernel.org>, <santosh.shilimkar@oracle.com>
+References: <20190614154421.17556-1-yuehaibing@huawei.com>
+ <20190615125054.16416-1-yuehaibing@huawei.com>
+From: Suman Anna <s-anna@ti.com>
+Message-ID: <e13fe9fa-4a79-8af5-6968-dfc9364a3c55@ti.com>
+Date: Mon, 17 Jun 2019 13:41:40 -0500
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.6.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <2624ce8b-0206-a217-8793-c1223178246c@gmail.com>
-User-Agent: NeoMutt/20170113 (1.7.2)
+In-Reply-To: <20190615125054.16416-1-yuehaibing@huawei.com>
+Content-Language: en-US
+X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190617_111050_388506_8240E944 
-X-CRM114-Status: GOOD (  22.22  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190617_114149_165226_F09F18EB 
+X-CRM114-Status: GOOD (  14.76  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [198.47.23.249 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -78,77 +94,158 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: ard.biesheuvel@linaro.org, Catalin Marinas <catalin.marinas@arm.com>,
- Will Deacon <will.deacon@arm.com>, open list <linux-kernel@vger.kernel.org>,
- bcm-kernel-feedback-list@Broadcom.com, linux-arm-kernel@vger.kernel.org,
- "moderated list:ARM64 PORT \(AARCH64 ARCHITECTURE\)"
- <linux-arm-kernel@lists.infradead.org>
+Cc: linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Jun 17, 2019 at 11:03:28AM -0700, Florian Fainelli wrote:
-> On 6/17/19 10:32 AM, Will Deacon wrote:
-> > On Thu, Jun 13, 2019 at 07:59:32PM -0700, Florian Fainelli wrote:
-> >> Make ARM64_MODULE_PLTS a selectable Kconfig symbol, since some people
-> >> might have very big modules spilling out of the dedicated module area
-> >> into vmalloc. Help text is copied from the ARM 32-bit counterpart.
-> >>
-> >> Signed-off-by: Florian Fainelli <f.fainelli@gmail.com>
-> >> ---
-> >>  arch/arm64/Kconfig | 14 +++++++++++++-
-> >>  1 file changed, 13 insertions(+), 1 deletion(-)
-> >>
-> >> diff --git a/arch/arm64/Kconfig b/arch/arm64/Kconfig
-> >> index 697ea0510729..36befe987b73 100644
-> >> --- a/arch/arm64/Kconfig
-> >> +++ b/arch/arm64/Kconfig
-> >> @@ -1418,8 +1418,20 @@ config ARM64_SVE
-> >>  	  KVM in the same kernel image.
-> >>  
-> >>  config ARM64_MODULE_PLTS
-> >> -	bool
-> >> +	bool "Use PLTs to allow module memory to spill over into vmalloc area"
-> >>  	select HAVE_MOD_ARCH_SPECIFIC
-> >> +	help
-> >> +	  Allocate PLTs when loading modules so that jumps and calls whose
-> >> +	  targets are too far away for their relative offsets to be encoded
-> >> +	  in the instructions themselves can be bounced via veneers in the
-> >> +	  module's PLT. This allows modules to be allocated in the generic
-> >> +	  vmalloc area after the dedicated module memory area has been
-> >> +	  exhausted. The modules will use slightly more memory, but after
-> >> +	  rounding up to page size, the actual memory footprint is usually
-> >> +	  the same.
-> > 
-> > Isn't the worry really about the runtime performance overhead introduced
-> > by the veneers, as opposed to the memory usage of the module?
+On 6/15/19 7:50 AM, YueHaibing wrote:
+> Fixes gcc '-Wunused-but-set-variable' warning:
 > 
-> The main concern is indeed runtime performance (both added veneers and
-> possibly increased cache trashing) and second could be the increased
-> vmalloc usage. Do you want me to rephrase that part, or drop it?
-
-Whichever you prefer.
-
-> > 
-> >> +	  Disabling this is usually safe for small single-platform
-> >> +	  configurations. If unsure, say y.
-> > 
-> > So should this be on by default?
+> drivers/firmware/ti_sci.c: In function ti_sci_cmd_ring_config:
+> drivers/firmware/ti_sci.c:2035:17: warning: variable dev set but not used [-Wunused-but-set-variable]
+> drivers/firmware/ti_sci.c: In function ti_sci_cmd_ring_get_config:
+> drivers/firmware/ti_sci.c:2104:17: warning: variable dev set but not used [-Wunused-but-set-variable]
+> drivers/firmware/ti_sci.c: In function ti_sci_cmd_rm_udmap_tx_ch_cfg:
+> drivers/firmware/ti_sci.c:2287:17: warning: variable dev set but not used [-Wunused-but-set-variable]
+> drivers/firmware/ti_sci.c: In function ti_sci_cmd_rm_udmap_rx_ch_cfg:
+> drivers/firmware/ti_sci.c:2357:17: warning: variable dev set but not used [-Wunused-but-set-variable]
 > 
-> It is turned on under certain conditions that require it (v2 makes that
-> clearer, based on Ard's feedback), having it turned off by default at
-> least makes people realize (or rather can be used as argument) that the
-> modules are possibly too big.
+> Use the 'dev' variable instead of info->dev to fix this.
 > 
-> Under certain build configurations like test/manufacturing, you might
-> have a set of large modules that should still load, hence this patch.
+> Reported-by: Hulk Robot <hulkci@huawei.com>
+> Signed-off-by: YueHaibing <yuehaibing@huawei.com>
 
-I'm fine with leaving it default off, but then let's not say "If unsure, say
-y". In fact, you can remove that whole "disabling this is usually safe" part
-I reckon.
+Acked-by: Suman Anna <s-anna@ti.com>
 
-Will
+Hi Santosh,
+Can you pick up this patch, goes on top of your for_5.3/driver-soc branch?
+
+regards
+Suman
+
+> ---
+> v3: fix patch title
+> v2: use the 'dev' variable as Suman Anna's suggestion
+> ---
+>  drivers/firmware/ti_sci.c | 24 ++++++++++++------------
+>  1 file changed, 12 insertions(+), 12 deletions(-)
+> 
+> diff --git a/drivers/firmware/ti_sci.c b/drivers/firmware/ti_sci.c
+> index 86b2727..c8da6e2 100644
+> --- a/drivers/firmware/ti_sci.c
+> +++ b/drivers/firmware/ti_sci.c
+> @@ -2046,7 +2046,7 @@ static int ti_sci_cmd_ring_config(const struct ti_sci_handle *handle,
+>  				   sizeof(*req), sizeof(*resp));
+>  	if (IS_ERR(xfer)) {
+>  		ret = PTR_ERR(xfer);
+> -		dev_err(info->dev, "RM_RA:Message config failed(%d)\n", ret);
+> +		dev_err(dev, "RM_RA:Message config failed(%d)\n", ret);
+>  		return ret;
+>  	}
+>  	req = (struct ti_sci_msg_rm_ring_cfg_req *)xfer->xfer_buf;
+> @@ -2062,7 +2062,7 @@ static int ti_sci_cmd_ring_config(const struct ti_sci_handle *handle,
+>  
+>  	ret = ti_sci_do_xfer(info, xfer);
+>  	if (ret) {
+> -		dev_err(info->dev, "RM_RA:Mbox config send fail %d\n", ret);
+> +		dev_err(dev, "RM_RA:Mbox config send fail %d\n", ret);
+>  		goto fail;
+>  	}
+>  
+> @@ -2071,7 +2071,7 @@ static int ti_sci_cmd_ring_config(const struct ti_sci_handle *handle,
+>  
+>  fail:
+>  	ti_sci_put_one_xfer(&info->minfo, xfer);
+> -	dev_dbg(info->dev, "RM_RA:config ring %u ret:%d\n", index, ret);
+> +	dev_dbg(dev, "RM_RA:config ring %u ret:%d\n", index, ret);
+>  	return ret;
+>  }
+>  
+> @@ -2115,7 +2115,7 @@ static int ti_sci_cmd_ring_get_config(const struct ti_sci_handle *handle,
+>  				   sizeof(*req), sizeof(*resp));
+>  	if (IS_ERR(xfer)) {
+>  		ret = PTR_ERR(xfer);
+> -		dev_err(info->dev,
+> +		dev_err(dev,
+>  			"RM_RA:Message get config failed(%d)\n", ret);
+>  		return ret;
+>  	}
+> @@ -2125,7 +2125,7 @@ static int ti_sci_cmd_ring_get_config(const struct ti_sci_handle *handle,
+>  
+>  	ret = ti_sci_do_xfer(info, xfer);
+>  	if (ret) {
+> -		dev_err(info->dev, "RM_RA:Mbox get config send fail %d\n", ret);
+> +		dev_err(dev, "RM_RA:Mbox get config send fail %d\n", ret);
+>  		goto fail;
+>  	}
+>  
+> @@ -2150,7 +2150,7 @@ static int ti_sci_cmd_ring_get_config(const struct ti_sci_handle *handle,
+>  
+>  fail:
+>  	ti_sci_put_one_xfer(&info->minfo, xfer);
+> -	dev_dbg(info->dev, "RM_RA:get config ring %u ret:%d\n", index, ret);
+> +	dev_dbg(dev, "RM_RA:get config ring %u ret:%d\n", index, ret);
+>  	return ret;
+>  }
+>  
+> @@ -2298,7 +2298,7 @@ static int ti_sci_cmd_rm_udmap_tx_ch_cfg(const struct ti_sci_handle *handle,
+>  				   sizeof(*req), sizeof(*resp));
+>  	if (IS_ERR(xfer)) {
+>  		ret = PTR_ERR(xfer);
+> -		dev_err(info->dev, "Message TX_CH_CFG alloc failed(%d)\n", ret);
+> +		dev_err(dev, "Message TX_CH_CFG alloc failed(%d)\n", ret);
+>  		return ret;
+>  	}
+>  	req = (struct ti_sci_msg_rm_udmap_tx_ch_cfg_req *)xfer->xfer_buf;
+> @@ -2323,7 +2323,7 @@ static int ti_sci_cmd_rm_udmap_tx_ch_cfg(const struct ti_sci_handle *handle,
+>  
+>  	ret = ti_sci_do_xfer(info, xfer);
+>  	if (ret) {
+> -		dev_err(info->dev, "Mbox send TX_CH_CFG fail %d\n", ret);
+> +		dev_err(dev, "Mbox send TX_CH_CFG fail %d\n", ret);
+>  		goto fail;
+>  	}
+>  
+> @@ -2332,7 +2332,7 @@ static int ti_sci_cmd_rm_udmap_tx_ch_cfg(const struct ti_sci_handle *handle,
+>  
+>  fail:
+>  	ti_sci_put_one_xfer(&info->minfo, xfer);
+> -	dev_dbg(info->dev, "TX_CH_CFG: chn %u ret:%u\n", params->index, ret);
+> +	dev_dbg(dev, "TX_CH_CFG: chn %u ret:%u\n", params->index, ret);
+>  	return ret;
+>  }
+>  
+> @@ -2368,7 +2368,7 @@ static int ti_sci_cmd_rm_udmap_rx_ch_cfg(const struct ti_sci_handle *handle,
+>  				   sizeof(*req), sizeof(*resp));
+>  	if (IS_ERR(xfer)) {
+>  		ret = PTR_ERR(xfer);
+> -		dev_err(info->dev, "Message RX_CH_CFG alloc failed(%d)\n", ret);
+> +		dev_err(dev, "Message RX_CH_CFG alloc failed(%d)\n", ret);
+>  		return ret;
+>  	}
+>  	req = (struct ti_sci_msg_rm_udmap_rx_ch_cfg_req *)xfer->xfer_buf;
+> @@ -2392,7 +2392,7 @@ static int ti_sci_cmd_rm_udmap_rx_ch_cfg(const struct ti_sci_handle *handle,
+>  
+>  	ret = ti_sci_do_xfer(info, xfer);
+>  	if (ret) {
+> -		dev_err(info->dev, "Mbox send RX_CH_CFG fail %d\n", ret);
+> +		dev_err(dev, "Mbox send RX_CH_CFG fail %d\n", ret);
+>  		goto fail;
+>  	}
+>  
+> @@ -2401,7 +2401,7 @@ static int ti_sci_cmd_rm_udmap_rx_ch_cfg(const struct ti_sci_handle *handle,
+>  
+>  fail:
+>  	ti_sci_put_one_xfer(&info->minfo, xfer);
+> -	dev_dbg(info->dev, "RX_CH_CFG: chn %u ret:%d\n", params->index, ret);
+> +	dev_dbg(dev, "RX_CH_CFG: chn %u ret:%d\n", params->index, ret);
+>  	return ret;
+>  }
+>  
+> 
+
 
 _______________________________________________
 linux-arm-kernel mailing list
