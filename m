@@ -2,60 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 93F1549556
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 18 Jun 2019 00:42:51 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 65BE64955E
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 18 Jun 2019 00:45:02 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
 	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=9oQizHDFPXMxmZGCk9rnTWcoyyiB+yfwhuqxbQG72Bk=; b=gdprIqsFpG+SCF
-	oILbs0fa6jvQh93cZKi05qLbSIjFWPp+iU88lh+xJ2mXFbzvH6gljOIvYVc66OqFbAAdptEwFQ7vl
-	tOC0CyLplWQzXclR2lIqjHGFsTulxasBOmmeDg882S/+07p/BFdbnYKICNX2/1zZj5k2OyIt1+NkK
-	hW2uhsvuVLUZxd3SYI1u2zGtskkVTWA8ektU0PWE3XSghg6LCZjsn31o0o8Wt8XTCC0+5uS2Ueq0b
-	xqKoq0RbdqZECGX3vdv+VEkB4y9g2Zzn1ucNNIfIs7dRaTzGxtxJwNIMB2vTPRtT24QFbTWeHI4a3
-	20xgffOylS8l6hwWIcAQ==;
+	List-Owner; bh=xLtlLXgGm7Pg/dbI8nLhIvVyMz3v5przQfxhBEssdoY=; b=NF+iXI6tOykXeJ
+	OSMJkrdp355Wj7tkPmMX3QAtXcBg0sLOGg5KZyRR/yhWHXrS1lzs86e4DzKxRXI4/4DMJMULSY+0n
+	zUuIM3EyBugVq9IlgbIqXZGWxCt9E6wAbepdwPBpBAjEnaC5LSFK0EUNDDNWVCF80wxfKTtWwO8HX
+	N0ya2aItUC5Q+99eyk780Fb1VWuDjAs9mnITl5aMERIyX4RgEuySbRUR7kHy8aDzaCPvETuBDrFi2
+	tsmuUOa7YewadNZLRUrhtgVwQwlRpYruQkWPal+Zp9FQQFqNuQt3Gv1iG8dWZjaxLS0J/Ro8I3CSE
+	3YTf8tfygM6WVJw6WrXQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hd0Kt-00007n-6S; Mon, 17 Jun 2019 22:42:47 +0000
-Received: from mail-qt1-f193.google.com ([209.85.160.193])
+	id 1hd0Mz-000157-QY; Mon, 17 Jun 2019 22:44:57 +0000
+Received: from mail-qt1-f195.google.com ([209.85.160.195])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hd0Kh-00006R-Pw
- for linux-arm-kernel@lists.infradead.org; Mon, 17 Jun 2019 22:42:37 +0000
-Received: by mail-qt1-f193.google.com with SMTP id m29so12937055qtu.1
+ id 1hd0Mp-0000iw-IU
+ for linux-arm-kernel@lists.infradead.org; Mon, 17 Jun 2019 22:44:48 +0000
+Received: by mail-qt1-f195.google.com with SMTP id i34so7626710qta.6
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 17 Jun 2019 15:42:31 -0700 (PDT)
+ Mon, 17 Jun 2019 15:44:47 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
  :content-transfer-encoding;
- bh=bw9/gZedYD5980KJZent+GQTBWT7ibemqHL7O3rnU9c=;
- b=dwwQzZJS7M7hauGMp3mVM73VEbGZMmEI7M5hGdosIBehcK1MBo39jkcObGCfLoosM8
- Fk17I1cFNOXEx3prr4WojqRIIPbQRGCfHvRvYa+GlNeXADRKBymXYtB63bOhFaYCOPAs
- FgJXbrFYzl1PyzYdPy4pyDpVegwGOJzP4YWkNl/GvxZY6k2M+n8zMZnFTnL9yfusW2XT
- HVsL5O7DakXIDWMoDyhXDyGNE7gihzaQnS9+pwaQhcl39WFysCXEE82zDCp9X/1LSVeu
- cbGLjPF4WMiYJLBC5j6sa9oWTfrcnZHVWyK5kp23F2SQBYmx/T9Yf5FXwLK9jy+CCr0D
- T44g==
-X-Gm-Message-State: APjAAAVlJyQVwO3MEeLsUmI8poR+JRCtbBPF3jfohO1WG9LqB6xH/8L0
- oHP+654ICv5+lfTd5hIasQ==
-X-Google-Smtp-Source: APXvYqyj6jp4wEA64XUXgYgwlrvjLF95s/v4VU9XXCmt1zLcH9Mcti1t44Pq5cdvmc7LhWRffc+oHw==
-X-Received: by 2002:ac8:38d5:: with SMTP id g21mr95189678qtc.52.1560811350629; 
- Mon, 17 Jun 2019 15:42:30 -0700 (PDT)
+ bh=nRzVa7Rxo9onTKHWMxR+EUp51dFEj/RYKU1N172ZZjo=;
+ b=t7oZ8HJtvvACYXU5HgMRD21gGRKk4YKkLdke+SlSDwbHUOoXytR3SXnMj0v8E9o9vN
+ KdSLyN0u1jF/FBk3cTpcG6CNvnzXIXuP2BWeZx4PONkjWQRLE7taJbrQFpoIzr26BLQF
+ Kji/9fCt3IcBDP8Zr9cKAwOdfyskq2Biyse6/nxQdGXSpbGHEgXZ6otsY+JJ4pXLfjy4
+ BF1YKRcfIVuKeat6bHF8th+gpiAAjlBzjhVX2ogfu3iTysmNSbEfwfcj5Qg3t2xI3YdV
+ eT/avDcL9u//Bpx/58O73OzaKaGSCZU4DIe9ve/PQFxsaLapF3wnx568mFo1qaGoYGfN
+ 7XNg==
+X-Gm-Message-State: APjAAAUJE+Umg1lofss8rmZuDSbJPdo0rAdxjrGTuxeLGXJo81u7rDPe
+ 28K2ii//N1OHSgo5soyTQw==
+X-Google-Smtp-Source: APXvYqxk9Ah0pN0gqCu9ZbrDP8GPrr0L2THz+8oXUrhYY4sP046DpeyOnUUu/eGLvJ3bNY6+2E0rhQ==
+X-Received: by 2002:a0c:d237:: with SMTP id m52mr23039036qvh.160.1560811486439; 
+ Mon, 17 Jun 2019 15:44:46 -0700 (PDT)
 Received: from localhost.localdomain ([64.188.179.192])
- by smtp.googlemail.com with ESMTPSA id d31sm9308876qta.39.2019.06.17.15.42.29
+ by smtp.googlemail.com with ESMTPSA id y42sm9918935qtc.66.2019.06.17.15.44.45
  (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Mon, 17 Jun 2019 15:42:30 -0700 (PDT)
+ Mon, 17 Jun 2019 15:44:46 -0700 (PDT)
 From: Rob Herring <robh@kernel.org>
 To: devicetree@vger.kernel.org
-Subject: [PATCH] dt-bindings: arm: fsl: Add back missing i.MX7ULP binding
-Date: Mon, 17 Jun 2019 16:40:28 -0600
-Message-Id: <20190617224028.26974-1-robh@kernel.org>
+Subject: [PATCH] dt-bindings: arm: fsl: Add missing schemas for i.MX1/31/35
+Date: Mon, 17 Jun 2019 16:42:44 -0600
+Message-Id: <20190617224244.30818-1-robh@kernel.org>
 X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190617_154235_845120_8CE65F5C 
-X-CRM114-Status: UNSURE (   8.16  )
+X-CRM114-CacheID: sfid-20190617_154447_621463_5CEB5194 
+X-CRM114-Status: UNSURE (   8.14  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.8 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -63,7 +63,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.160.193 listed in list.dnswl.org]
+ no trust [209.85.160.195 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -72,9 +72,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  in digit (robherring2[at]gmail.com)
  0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
  mail domains are different
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [209.85.160.193 listed in wl.mailspike.net]
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
  0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
  EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -94,31 +91,57 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-In the conversion to DT schema, the addition of the i.MX7ULP binding got
-dropped. Add it to the binding schema.
+The SoC/board bindings for i.MX1/31/35 are undocumented. Add the missing
+bindings to the schema.
 
-Fixes: a1a38e1f4d1d ("dt-bindings: arm: Convert FSL board/soc bindings to json-schema")
 Cc: Shawn Guo <shawnguo@kernel.org>
 Signed-off-by: Rob Herring <robh@kernel.org>
 ---
- Documentation/devicetree/bindings/arm/fsl.yaml | 6 ++++++
- 1 file changed, 6 insertions(+)
+ .../devicetree/bindings/arm/fsl.yaml          | 26 +++++++++++++++++++
+ 1 file changed, 26 insertions(+)
 
 diff --git a/Documentation/devicetree/bindings/arm/fsl.yaml b/Documentation/devicetree/bindings/arm/fsl.yaml
-index fbeb56345b35..0a6b4eba2bb2 100644
+index 0a6b4eba2bb2..e73cc11acdfb 100644
 --- a/Documentation/devicetree/bindings/arm/fsl.yaml
 +++ b/Documentation/devicetree/bindings/arm/fsl.yaml
-@@ -175,6 +175,12 @@ properties:
-           - const: compulab,cl-som-imx7
-           - const: fsl,imx7d
- 
-+      - description: i.MX7ULP based Boards
+@@ -15,6 +15,13 @@ properties:
+     const: '/'
+   compatible:
+     oneOf:
++      - description: i.MX1 based Boards
 +        items:
 +          - enum:
-+              - tq,imx7ulp-evk            # i.MX7ULP Evaluation Kit
-+          - const: fsl,imx7ulp
++              - armadeus,imx1-apf9328
++              - fsl,imx1ads
++          - const: fsl,imx1
 +
-       - description: i.MX8MM based Boards
+       - description: i.MX23 based Boards
+         items:
+           - enum:
+@@ -51,6 +58,25 @@ properties:
+           - const: i2se,duckbill-2
+           - const: fsl,imx28
+ 
++      - description: i.MX31 based Boards
++        items:
++          - enum:
++              - buglabs,imx31-bug
++              - logicpd,imx31-lite
++          - const: fsl,imx31
++
++      - description: i.MX35 based Boards
++        items:
++          - enum:
++              - fsl,imx35-pdk
++          - const: fsl,imx35
++
++      - description: i.MX35 Eukrea CPUIMX35 Board
++        items:
++          - const: eukrea,mbimxsd35-baseboard
++          - const: eukrea,cpuimx35
++          - const: fsl,imx35
++
+       - description: i.MX50 based Boards
          items:
            - enum:
 -- 
