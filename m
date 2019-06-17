@@ -2,81 +2,66 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F33E948572
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 17 Jun 2019 16:32:35 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4EFA54858A
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 17 Jun 2019 16:34:25 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=TE3nDepmlcxXGJkXMoNrrPd5U1tPHwxCB3p23+Yb8/o=; b=Heh4WfQHuQ/RoW
-	WapatHikYjnKkPUuY1mY22FIaqmq5XxgIncrb1E28KpkfCfJeAiaesidnaaErsdExw2jCCATpAsRc
-	W8fQvly5ZhQ1I2085P/0Hys98pYEFewphME64EmD+NsYodj5Bh/WHwfjWQ4Sf6lt7rVi4HIj6f1nX
-	2RiI9btWAHnvI1S/qwfqFCcU2FIE4O2597dMWSi4n4X08XNl4Yz/8FfLkm+bH577qpMkKn1LdS1eN
-	VNhYNgR2FFZs1i51GaAQ/BiZNce+30amu0rmucURaFaUmu42xOiNe7uyIs8fwHlQJNnIgHZj17L2u
-	TVRFRW+SqPG1ALlbyEow==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=Zq8ekrGIyaE4HmlHJtaqM8DWLypAYWQAkUetPuXdqEo=; b=LU0lkd1RQkLzMW
+	5W+3HGFw0UYOF0Jo5ZtVluqr7eavEY+Y7Qp2L4+7GOxf0W4ZZoN25T+XIb6GNhBVWViS6MZoRYeA0
+	pC1VMILqjo/QTmhyBcRpaKRiojLdEGLVbZdwYj2Qir6N06M8wvGjPYGzrjCPrevbbOa439ydlLY6C
+	AAv5YIf3CjmF2VMQ80WTf2DMk5GmxNslBIQITzqsyQw3NkDY8YMNdfz3KuqP6umQhfIaDke8vx9E5
+	d/i2KaeAPKdX2I8up+qMlsqNZfdSUyaurDUfZJx8TVtOQucO/wHW+CaizPUi90m5HXgRRvrmB4obN
+	eNzJQnPZe3uhOZgMh0LA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hcsgR-0003dw-Gb; Mon, 17 Jun 2019 14:32:31 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1hcsiF-0004U3-5c; Mon, 17 Jun 2019 14:34:23 +0000
+Received: from mgwkm03.jp.fujitsu.com ([202.219.69.170])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hcsgC-0003d9-SI
- for linux-arm-kernel@lists.infradead.org; Mon, 17 Jun 2019 14:32:18 +0000
-Received: from mail-qk1-f172.google.com (mail-qk1-f172.google.com
- [209.85.222.172])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 2107121655
+ id 1hcshK-00040b-S7
+ for linux-arm-kernel@lists.infradead.org; Mon, 17 Jun 2019 14:33:29 +0000
+Received: from kw-mxoi2.gw.nic.fujitsu.com (unknown [192.168.231.133]) by
+ mgwkm03.jp.fujitsu.com with smtp
+ id 150a_bbad_7e5cea6b_a5f1_4d15_9f8f_76dba5b8e104;
+ Mon, 17 Jun 2019 23:32:58 +0900
+Received: from g01jpfmpwkw02.exch.g01.fujitsu.local
+ (g01jpfmpwkw02.exch.g01.fujitsu.local [10.0.193.56])
+ by kw-mxoi2.gw.nic.fujitsu.com (Postfix) with ESMTP id 28E85AC009B
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 17 Jun 2019 14:32:15 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1560781935;
- bh=YVeXqhOTacEiBNpdGFxeX6iKuMZYINJ5rCe1iWJz0vE=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=LUUhyHLo9MgYHOLj0zjchSniPPEa++duHCyqMUsC+2KQR5L9XBR8YInRUgb0snjWB
- iy15bMQkEZKLg0uYhznWWOuMC0fTsmusuLUw4keDRmkKstb5StB3z39WZksfDBi5Yc
- oA50f3IAbzHY1Wp6Dtivua5rdlaAkT0sPt7ewcWY=
-Received: by mail-qk1-f172.google.com with SMTP id s22so6257719qkj.12
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 17 Jun 2019 07:32:15 -0700 (PDT)
-X-Gm-Message-State: APjAAAXNUJ46sbIIwdzAb+DfguH20UMbDsPY/4ftl8xuJpy5vFXj7iga
- GmNQJUGvGZmbADDmW1e0XHTtHBdma/pkqDhk5g==
-X-Google-Smtp-Source: APXvYqzypWzH9+FR9vkOBKVJHu+Un0gXYkhnqI88qXB3NL4H9/fIbTzA62+ik8Z0kWUIMebLB0X+tfIaTGYexkCkI1o=
-X-Received: by 2002:a05:620a:5b1:: with SMTP id
- q17mr23213999qkq.174.1560781934347; 
- Mon, 17 Jun 2019 07:32:14 -0700 (PDT)
+ Mon, 17 Jun 2019 23:32:57 +0900 (JST)
+Received: from G01JPEXCHKW15.g01.fujitsu.local
+ (G01JPEXCHKW15.g01.fujitsu.local [10.0.194.54])
+ by g01jpfmpwkw02.exch.g01.fujitsu.local (Postfix) with ESMTP id 46F098B48E8;
+ Mon, 17 Jun 2019 23:32:56 +0900 (JST)
+Received: from localhost.localdomain (10.17.204.146) by
+ G01JPEXCHKW15.g01.fujitsu.local (10.0.194.54) with Microsoft SMTP Server id
+ 14.3.439.0; Mon, 17 Jun 2019 23:32:55 +0900
+From: Takao Indoh <indou.takao@jp.fujitsu.com>
+To: Jonathan Corbet <corbet@lwn.net>, Catalin Marinas
+ <catalin.marinas@arm.com>, Will Deacon <will.deacon@arm.com>
+Subject: [PATCH 0/2] arm64: Introduce boot parameter to disable TLB flush
+ instruction within the same inner shareable domain
+Date: Mon, 17 Jun 2019 23:32:53 +0900
+Message-ID: <20190617143255.10462-1-indou.takao@jp.fujitsu.com>
+X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
-References: <20190614080317.16850-1-andrew.smirnov@gmail.com>
- <20190614080317.16850-2-andrew.smirnov@gmail.com>
-In-Reply-To: <20190614080317.16850-2-andrew.smirnov@gmail.com>
-From: Rob Herring <robh@kernel.org>
-Date: Mon, 17 Jun 2019 08:32:02 -0600
-X-Gmail-Original-Message-ID: <CAL_JsqKqh-iuTk-P7NH2BfEnmnwdB8yMumCd-KeoszCbBNjy7Q@mail.gmail.com>
-Message-ID: <CAL_JsqKqh-iuTk-P7NH2BfEnmnwdB8yMumCd-KeoszCbBNjy7Q@mail.gmail.com>
-Subject: Re: [PATCH 2/2] dt-bindings: arm: fsl: Add support for ZII i.MX7 RMU2
- board
-To: Andrey Smirnov <andrew.smirnov@gmail.com>
+X-SecurityPolicyCheck-GC: OK by FENCE-Mail
+X-TM-AS-GCONF: 00
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190617_073216_932965_4A8E61D8 
-X-CRM114-Status: GOOD (  10.25  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190617_073327_155739_9F9D6547 
+X-CRM114-Status: GOOD (  11.44  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [202.219.69.170 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -88,37 +73,65 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>, devicetree@vger.kernel.org,
- Liang Pan <Liang.Pan@zii.aero>, Shawn Guo <shawnguo@kernel.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Chris Healy <cphealy@gmail.com>, Fabio Estevam <festevam@gmail.com>,
- Bob Langer <Bob.Langer@zii.aero>, Lucas Stach <l.stach@pengutronix.de>
+Cc: Takao Indoh <indou.takao@fujitsu.com>, QI Fuli <qi.fuli@fujitsu.com>,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-doc@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Jun 14, 2019 at 2:03 AM Andrey Smirnov <andrew.smirnov@gmail.com> wrote:
->
-> Add support for ZII i.MX7 RMU2 board.
->
-> Signed-off-by: Andrey Smirnov <andrew.smirnov@gmail.com>
-> Cc: Shawn Guo <shawnguo@kernel.org>
-> Cc: Rob Herring <robh@kernel.org>
-> Cc: Chris Healy <cphealy@gmail.com>
-> Cc: Lucas Stach <l.stach@pengutronix.de>
-> Cc: Fabio Estevam <festevam@gmail.com>
-> Cc: Bob Langer <Bob.Langer@zii.aero>
-> Cc: Liang Pan <Liang.Pan@zii.aero>
-> Cc: linux-arm-kernel@lists.infradead.org
-> Cc: linux-kernel@vger.kernel.org
-> Cc: devicetree@vger.kernel.org
-> ---
->  Documentation/devicetree/bindings/arm/fsl.yaml | 1 +
->  1 file changed, 1 insertion(+)
+From: Takao Indoh <indou.takao@fujitsu.com>
 
-Reviewed-by: Rob Herring <robh@kernel.org>
+I found a performance issue related on the implementation of Linux's TLB
+flush for arm64.
+
+When I run a single-threaded test program on moderate environment, it
+usually takes 39ms to finish its work. However, when I put a small
+apprication, which just calls mprotest() continuously, on one of sibling
+cores and run it simultaneously, the test program slows down significantly.
+It becomes 49ms(125%) on ThunderX2. I also detected the same problem on
+ThunderX1 and Fujitsu A64FX.
+
+I suppose the root cause of this issue is the implementation of Linux's TLB
+flush for arm64, especially use of TLBI-is instruction which is a broadcast
+to all processor core on the system. In case of the above situation,
+TLBI-is is called by mprotect().
+
+This is not a problem for small environment, but this causes a significant
+performance noise for large-scale HPC environment, which has more than
+thousand nodes with low latency interconnect.
+
+To fix this problem, this patch adds new boot parameter
+'disable_tlbflush_is'.  In the case of flush_tlb_mm() *without* this
+parameter, TLB entry is invalidated by __tlbi(aside1is, asid). By this
+instruction, all CPUs within the same inner shareable domain check if there
+are TLB entries which have this ASID, this causes performance noise. OTOH,
+when this new parameter is specified, TLB entry is invalidated by
+__tlbi(aside1, asid) only on the CPUs specified by mm_cpumask(mm).
+Therefore TLB flush is done on minimal CPUs and performance problem does
+not occur. Actually I confirm the performance problem is fixed by this
+patch.
+
+Takao Indoh (2):
+  arm64: mm: Restore mm_cpumask (revert commit 38d96287504a ("arm64: mm:
+    kill mm_cpumask usage"))
+  arm64: tlb: Add boot parameter to disable TLB flush within the same
+    inner shareable domain
+
+ .../admin-guide/kernel-parameters.txt         |   4 +
+ arch/arm64/include/asm/mmu_context.h          |   7 +-
+ arch/arm64/include/asm/tlbflush.h             |  61 ++-----
+ arch/arm64/kernel/Makefile                    |   2 +-
+ arch/arm64/kernel/smp.c                       |   6 +
+ arch/arm64/kernel/tlbflush.c                  | 155 ++++++++++++++++++
+ arch/arm64/mm/context.c                       |   2 +
+ 7 files changed, 186 insertions(+), 51 deletions(-)
+ create mode 100644 arch/arm64/kernel/tlbflush.c
+
+-- 
+2.20.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
