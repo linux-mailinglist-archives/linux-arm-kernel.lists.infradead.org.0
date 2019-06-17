@@ -2,70 +2,90 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 56C44483E1
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 17 Jun 2019 15:26:20 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DF4E9483EA
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 17 Jun 2019 15:28:09 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=f76wuVFu4EWM9YQB4du5UcdILCgPO/mezPv5d62bfdI=; b=Ixx8Riin41+vTE
-	PtpK3yy1XlDALsxiCETgFwUm5C0GllpFJCrWgPER/wI7cqihqBtlmZSbTXxlOuKgMQIMG08v2qUFA
-	ab+hCFPOhpZZDmQaCzt5Tuk0YlJqm3aYEEEYdwfzxUgPhxYM1+1j0cbP+FteapBDy1fLq0FGBMNai
-	zL9/kpjLLe4Rf0cnA9LkCKgOuO/vEn7kScHt+hJoz9HbneRIc7PDVpwzhTv2u6XN9+DoYFv478kcr
-	f2T+sEovWsiqFApMTkn7W8tG9wG9JC5ON9q4BDoFbCelehM435qEF1nx+AEvvxy/0jJaSluIARpxu
-	KQKjbVODMGdZfNiXfODA==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=f+tF+Ns1G6CHC0+adZctx1MJg0qbyezDk+PDddug/1c=; b=RJpVrZHnMJni1i
+	UM2L/12XI2zfwu/2wb0UstuGhjCsugQHIg1H5fpeBm64AIIdE6n2xMeiKp7cJyTWCw8S3WzjWnSjB
+	YNBATW7Dy/b1qnuYYJdzqg7GLWsikgl8FueY6Ef28Fp2E1QJXyYXvI7EFZsYu5F5zPrglpkQ91F5U
+	LJbCnY/P8uIp5ymxcR14i09dTOSybygPcXCLdXwdF3Ldr3LdKO7X0ZGgtJsVDVWwm/S4Mcrt9xbkl
+	WV4qP2sZB39R1HiWXojgIOekb69GsHqnmc5A5mGgAG32K6Fy53HzjeV6DJ9+6n1UPQ9qe1ZMLoIYG
+	wHLAjC36x36n9U1SpUqA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hcreL-0007lG-QX; Mon, 17 Jun 2019 13:26:17 +0000
-Received: from mout.kundenserver.de ([212.227.17.10])
+	id 1hcrg6-0008Kl-Ad; Mon, 17 Jun 2019 13:28:06 +0000
+Received: from mail-ot1-x342.google.com ([2607:f8b0:4864:20::342])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hcreA-0007kg-Ps
- for linux-arm-kernel@lists.infradead.org; Mon, 17 Jun 2019 13:26:08 +0000
-Received: from threadripper.lan ([149.172.19.189]) by mrelayeu.kundenserver.de
- (mreue107 [212.227.15.145]) with ESMTPA (Nemesis) id
- 1MX0TX-1i9gNF0AcT-00XJq8; Mon, 17 Jun 2019 15:25:44 +0200
-From: Arnd Bergmann <arnd@arndb.de>
-To: Corentin Labbe <clabbe.montjoie@gmail.com>,
- Herbert Xu <herbert@gondor.apana.org.au>,
- "David S. Miller" <davem@davemloft.net>
-Subject: [PATCH] crypto: sun4i-ss - reduce stack usage
-Date: Mon, 17 Jun 2019 15:25:17 +0200
-Message-Id: <20190617132538.2759714-1-arnd@arndb.de>
-X-Mailer: git-send-email 2.20.0
+ id 1hcrfw-0008KK-73
+ for linux-arm-kernel@lists.infradead.org; Mon, 17 Jun 2019 13:27:57 +0000
+Received: by mail-ot1-x342.google.com with SMTP id j19so9277625otq.2
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 17 Jun 2019 06:27:55 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=mJsPsjYAC+D3Ahla1gO6b++R1ySTexA3DFmiKdVNKWo=;
+ b=MXkyJQB9PxauZ8mD4qfnd9cMinYSX8UgPaJCqpc2N6NWAP8Do6zPFB0IrVa9ktAWIt
+ aouaZblOwdUXxA3WA+jdAygJITWcfOAl98fr/H4EDsSZVD/ROYlXL+cWBa9mKzk4vHci
+ NKcp7yaAptskxYFgzG59xEIBPx95gfoDuMpqNfLSYJp2jQydPMrrR6H/tsNRBR3muEl5
+ iXWL5M5mwD6Rasyt+fAqcbY/Rpm84bJgDFT+ouTQVvwPCALeItlRvcf9MJ1NYAwL+VeR
+ CCoUD2skfkr3YCSTpRB14BPWTTGRtD6fgC3f+/onHzdO37eawrr8zaYsbJRF46MZCO6q
+ ktYw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=mJsPsjYAC+D3Ahla1gO6b++R1ySTexA3DFmiKdVNKWo=;
+ b=RPJlSFZWSI3eiAbehzzS9un+x29dEaQfVZmufp5Kl7LWz4awZD0sE/2VWnsEL/amD+
+ yvdSqnkIlMSMxrshlenPfOgN7c9F4Dq56H1v2y5sfJbGMfqBvrlpVY/wLV+kPuGFC1tf
+ JNHkEnOzYHHjZD336JKsYiHGE7v/UTV5ywV7v6MWtG4yik+5ITGOnju9IBqcoR6YdqOW
+ 2QVoaafetmL6KA0QjLPJwtw4XL80bE5R+RELk4Sb3oOZkivxn7q8DdVuhK/NZTWR6NHg
+ aX+ziWjkKPIJsKy7tXaiv6rIZDzh5rZTZ8AEq/vzU7Yc5B0BRz29t7Za0cDg4xMhsQ8b
+ QtNA==
+X-Gm-Message-State: APjAAAUT5ksN0x0IPIL4gPuABxfLhWSfY9lZQWJgpAc5rhiaKxvfstlc
+ XB/XRLB92THMnTNxPgUj6+on0JcTANpJoAlw1HuD1IwH
+X-Google-Smtp-Source: APXvYqyhiqkq9CGaDNxwiD6SQeF+F81INxi2lxJi8huCiuSNrRrpuYkOSzLBr6YGnAzUR8mMAtP8t+7zjxH9w00HMOQ=
+X-Received: by 2002:a9d:7650:: with SMTP id o16mr38379346otl.0.1560778073731; 
+ Mon, 17 Jun 2019 06:27:53 -0700 (PDT)
 MIME-Version: 1.0
-X-Provags-ID: V03:K1:dFwYisfe6d2an5iBSpuKsBUEx+RF3JE6zy3kMwlMfCg7C2kZf0c
- PJikbpLoKWB73dg8OZ7imWqut7mlrzfXDcXPVF7ZaYE0RbSUY+R7X/cUixMA94QK8XjJd21
- WZuqEXE7u2uV7j45rFWcWnO0Jk87FpZ1a7nxkWWLEk7FQH7/KbYMNlo+/IEFTtNltB6+9/S
- yJWrQw+tofrEr5PREnDfg==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:exdzb5w2Xvg=:CR0sH9nRwYSNSihZH7/ieP
- PqFOiHTJoHbbDqjQ4h4U4kp9gYCvssxRdDXHNk73s+boKIHlXHfX1VxeTCfAQ1KMxvk4obJbc
- 8DvnpBdS67DPeTimuip5YhBQHQSUFWO+y+hI4daiVknrVFSbSZOnMqbsc9jKoYRUJBMB5J/Jz
- iRLQIml9Y1ukfycCtY6x4Bf8eB7CyGJOe01JAtJZ0RMryNtNJlEBNyMh4YlUSO2OE+5IcJzqR
- B7EX8efA8KNgB2kCXXCbOAjrH+eebd9bHHBwMB908emBwSSW0pelmwQUZntZNbibogvJnIedQ
- wiAlAYa4RXc8eLAc7PUrDuO+QVHxugAnlEo+7f5OriGvDNP6d4Dafb6Q3BFZ0j+aPsmalwSI5
- m/7ZhXzZeN/q0lMp5QuffDXm1ggDDI3lJNvXwyCFwJxVzA9Q7Z8tEHoU9uwyIl6j6YmLtIEF8
- 2i4KeOl4UIhwApvdupvgnElE2J/0Gpd5WAnG4fUhsNQuj3FLeGTioPsNk7U361BNXEAzwgi0h
- JdtidaMv0V+WGpjTYgVG6duYDv1Ajo17MBMkjdSX5CuCMZO6pelE66pBr8luJyCvHsQbhC315
- Ggt3vpGPPepYDU26se02fp4WUTcILALRo4Hp4sn1aVzmO2tQNA/EKHxnDbd95H3WoAA6u6IVC
- Nzi+lXiJJNgp8D6PTYGrh/b4XbTUV0XZ5Ws4+Dw/O75R3OT25AJA6stsiyIuTXTtopOV/IyQR
- SaBO9W4HYbEj3e8+BSysPB5eyxlF2kB56t2dEw==
+References: <20190614083959.37944-1-yibin.gong@nxp.com>
+ <CAOMZO5Do+BsZEX43w283yWed8fQVtTC+zAvoktPLTj4c_f798w@mail.gmail.com>
+ <CAGngYiUWy5FM-zsT55-yY=kahLObZGYw=zU0F9Tzp9T2S3G6LA@mail.gmail.com>
+ <1560765934.30149.26.camel@nxp.com>
+In-Reply-To: <1560765934.30149.26.camel@nxp.com>
+From: Sven Van Asbroeck <thesven73@gmail.com>
+Date: Mon, 17 Jun 2019 09:27:42 -0400
+Message-ID: <CAGngYiU_kxRXbk1vSzV+hBZ=SQdxe2h7TXj3dbK6Q=YyXcDr0g@mail.gmail.com>
+Subject: Re: [PATCH v1] dmaengine: imx-sdma: remove BD_INTR for channel0
+To: Robin Gong <yibin.gong@nxp.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190617_062607_143591_464F7835 
-X-CRM114-Status: GOOD (  15.52  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190617_062756_279948_85F8E8CE 
+X-CRM114-Status: GOOD (  11.52  )
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.227.17.10 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [212.227.17.10 listed in wl.mailspike.net]
+ no trust [2607:f8b0:4864:20:0:0:0:342 listed in]
+ [list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (thesven73[at]gmail.com)
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (thesven73[at]gmail.com)
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -77,136 +97,53 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Arnd Bergmann <arnd@arndb.de>, Eric Biggers <ebiggers@google.com>,
- Maxime Ripard <maxime.ripard@bootlin.com>, linux-kernel@vger.kernel.org,
- Chen-Yu Tsai <wens@csie.org>, linux-crypto@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
+Cc: "festevam@gmail.com" <festevam@gmail.com>,
+ "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
+ "vkoul@kernel.org" <vkoul@kernel.org>, dl-linux-imx <linux-imx@nxp.com>,
+ "kernel@pengutronix.de" <kernel@pengutronix.de>,
+ "dmaengine@vger.kernel.org" <dmaengine@vger.kernel.org>,
+ "dan.j.williams@intel.com" <dan.j.williams@intel.com>,
+ "shawnguo@kernel.org" <shawnguo@kernel.org>,
+ "m.olbrich@pengutronix.de" <m.olbrich@pengutronix.de>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-After the latest addition, the stack usage of sun4i_ss_cipher_poll
-grew beyond the warning limit when KASAN is enabled:
+Hello Robin,
 
-drivers/crypto/sunxi-ss/sun4i-ss-cipher.c:118:12: error: stack frame size of 1152 bytes in function 'sun4i_ss_cipher_poll' [-Werror,-Wframe-larger-than=]
-static int sun4i_ss_cipher_poll(struct skcipher_request *areq)
+On Sun, Jun 16, 2019 at 10:02 PM Robin Gong <yibin.gong@nxp.com> wrote:
+>
+> The default imx defconfig and dts should be ok, because firmware load
+> is delayed after rootfs mounted where firmware located in and before
+> that, some driver which use sdma such as spi/uart/audio may have
+> already enable sdma clock which means channel0 interrupt could be
+> cleared immediately without interrupt storm. That's why I can't
+> reproduce your issue at first, but catch it once I sync with your
+> directly firmware load defconfig. So seems not very must to CC stable
+> tree?
 
-Reduce it in three ways:
+As far as I know, the bug/crash does not happen if you're loading the
+sdma firmware from a filesystem. So the vast majority of users would
+never see the crash.
 
-- split out the new code into a separate function so its stack
-  usage can overlap that of the sun4i_ss_opti_poll() code path
-- mark both special cases as noinline_for_stack, which should
-  ideally result in a tail call that frees the rest of the
-  stack
-- move the buf and obuf variables into the code blocks in
-  which they are used.
+I agree that this is not a high-priority bugfix. But it's worthwhile for the
+stable trees to have it.
 
-The three separate functions now use 144, 640 and 304 bytes of kernel
-stack, respectively.
+> Yes, but Michael's patch is the right direction, at least it fix RT
+> case and meaningless channel0 interrupt storm coming before clearing
+> channel0 interrupt status in sdma_run_channel0(). Now, this patch could
+> fix its minor side-effect.
 
-Fixes: 0ae1f46c55f8 ("crypto: sun4i-ss - fallback when length is not multiple of blocksize")
-Signed-off-by: Arnd Bergmann <arnd@arndb.de>
----
- drivers/crypto/sunxi-ss/sun4i-ss-cipher.c | 47 +++++++++++++++--------
- 1 file changed, 30 insertions(+), 17 deletions(-)
+I'm not suggesting that we should revert or change Michael's patch. Just
+that it would be good for the v2 patch to contain:
 
-diff --git a/drivers/crypto/sunxi-ss/sun4i-ss-cipher.c b/drivers/crypto/sunxi-ss/sun4i-ss-cipher.c
-index 7b0c42882830..4ab14d58e85b 100644
---- a/drivers/crypto/sunxi-ss/sun4i-ss-cipher.c
-+++ b/drivers/crypto/sunxi-ss/sun4i-ss-cipher.c
-@@ -12,7 +12,7 @@
-  */
- #include "sun4i-ss.h"
- 
--static int sun4i_ss_opti_poll(struct skcipher_request *areq)
-+static int noinline_for_stack sun4i_ss_opti_poll(struct skcipher_request *areq)
- {
- 	struct crypto_skcipher *tfm = crypto_skcipher_reqtfm(areq);
- 	struct sun4i_tfm_ctx *op = crypto_skcipher_ctx(tfm);
-@@ -114,6 +114,29 @@ static int sun4i_ss_opti_poll(struct skcipher_request *areq)
- 	return err;
- }
- 
-+
-+static int noinline_for_stack sun4i_ss_cipher_poll_fallback(struct skcipher_request *areq)
-+{
-+	struct crypto_skcipher *tfm = crypto_skcipher_reqtfm(areq);
-+	struct sun4i_tfm_ctx *op = crypto_skcipher_ctx(tfm);
-+	struct sun4i_cipher_req_ctx *ctx = skcipher_request_ctx(areq);
-+	SYNC_SKCIPHER_REQUEST_ON_STACK(subreq, op->fallback_tfm);
-+	int err;
-+
-+	skcipher_request_set_sync_tfm(subreq, op->fallback_tfm);
-+	skcipher_request_set_callback(subreq, areq->base.flags, NULL,
-+				      NULL);
-+	skcipher_request_set_crypt(subreq, areq->src, areq->dst,
-+				   areq->cryptlen, areq->iv);
-+	if (ctx->mode & SS_DECRYPTION)
-+		err = crypto_skcipher_decrypt(subreq);
-+	else
-+		err = crypto_skcipher_encrypt(subreq);
-+	skcipher_request_zero(subreq);
-+
-+	return err;
-+}
-+
- /* Generic function that support SG with size not multiple of 4 */
- static int sun4i_ss_cipher_poll(struct skcipher_request *areq)
- {
-@@ -140,8 +163,6 @@ static int sun4i_ss_cipher_poll(struct skcipher_request *areq)
- 	unsigned int todo;
- 	struct sg_mapping_iter mi, mo;
- 	unsigned int oi, oo;	/* offset for in and out */
--	char buf[4 * SS_RX_MAX];/* buffer for linearize SG src */
--	char bufo[4 * SS_TX_MAX]; /* buffer for linearize SG dst */
- 	unsigned int ob = 0;	/* offset in buf */
- 	unsigned int obo = 0;	/* offset in bufo*/
- 	unsigned int obl = 0;	/* length of data in bufo */
-@@ -178,20 +199,8 @@ static int sun4i_ss_cipher_poll(struct skcipher_request *areq)
- 	if (no_chunk == 1 && !need_fallback)
- 		return sun4i_ss_opti_poll(areq);
- 
--	if (need_fallback) {
--		SYNC_SKCIPHER_REQUEST_ON_STACK(subreq, op->fallback_tfm);
--		skcipher_request_set_sync_tfm(subreq, op->fallback_tfm);
--		skcipher_request_set_callback(subreq, areq->base.flags, NULL,
--					      NULL);
--		skcipher_request_set_crypt(subreq, areq->src, areq->dst,
--					   areq->cryptlen, areq->iv);
--		if (ctx->mode & SS_DECRYPTION)
--			err = crypto_skcipher_decrypt(subreq);
--		else
--			err = crypto_skcipher_encrypt(subreq);
--		skcipher_request_zero(subreq);
--		return err;
--	}
-+	if (need_fallback)
-+		return sun4i_ss_cipher_poll_fallback(areq);
- 
- 	spin_lock_irqsave(&ss->slock, flags);
- 
-@@ -224,6 +233,8 @@ static int sun4i_ss_cipher_poll(struct skcipher_request *areq)
- 
- 	while (oleft) {
- 		if (ileft) {
-+			char buf[4 * SS_RX_MAX];/* buffer for linearize SG src */
-+
- 			/*
- 			 * todo is the number of consecutive 4byte word that we
- 			 * can read from current SG
-@@ -281,6 +292,8 @@ static int sun4i_ss_cipher_poll(struct skcipher_request *areq)
- 				oo = 0;
- 			}
- 		} else {
-+			char bufo[4 * SS_TX_MAX]; /* buffer for linearize SG dst */
-+
- 			/*
- 			 * read obl bytes in bufo, we read at maximum for
- 			 * emptying the device
--- 
-2.20.0
+Fixes: 1d069bfa3c78 ("dmaengine: imx-sdma: ack channel 0 IRQ in the
+interrupt handler")
 
+This should allow stable maintainers to pull in your patch if and only if
+their release already contains 1d069bfa3c78.
 
 _______________________________________________
 linux-arm-kernel mailing list
