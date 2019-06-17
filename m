@@ -2,47 +2,46 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0B5FB48D6E
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 17 Jun 2019 21:05:35 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4B7FC48D70
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 17 Jun 2019 21:05:58 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ZAC+AihEg2VnqUziEZD3MU+II2k5VuUvBiHN9HcNHbM=; b=myZmtrVRjNFSDu
-	kIStkjmmtpXM3jgjP9UTvIfrYhd/jtebqT5LgLIwfLa6DfUjS1fvdcIp896NPULK30hiPHv4v/CHt
-	nJuVeUy/Ik5iMXZMCcD9qOr2CNzBF/6yJdhLGY02UTEFS/PDKVgCW4kNmrznXzONRe2LodVU/lkPA
-	pMfpf26biRC+Rjwwn5u58tgWakhBVVabTCfOZQ+JN7/tgIoYpmWe8k6fxIwc7Lhfc8tNj3rgnnwKt
-	kSB1P++OHvLQGzeQD8dISpFluNtoq1r/KL2VR/dPwywO0FdX33GaXY0e/cnp5IHy8ubDyeztQQU5l
-	KoN9BBIquK1tZzu7/zPw==;
+	List-Owner; bh=Lf5RG8Is7M5b/AdhBptp5aD67llZNk4OK9U2enS2xkY=; b=fxUW5B9HXPYrpt
+	declb6vfksd/xWIe7g6PWNWD8SlGC7wyQSazMUG58GMIz47YJlx4af/EMqhuTpVnRG6VklXfBQ/+P
+	ybcggI2c32VSz+3jhGsdTeC8jzlTdDNfbgEphE5c3R/rF/glY3nCOpH8taooTT3/GoUgmE53H4hN5
+	dSm2FiXWr0a95CfrXvPU771XNY3xFwYmiEY+Tyb3CCQQekmjSGarp2SIhxsscSj+OsO0zk0QiLF3g
+	Qc14LIYwuPkEiL+PA26maUNF6ZQYbaxwQKqKUoQtcujafVDy5t+6HlteBpo3I2HH9g93+8Ahhf8vb
+	298chkI1RdSl0kfPuNwQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hcwwd-0008Ht-9s; Mon, 17 Jun 2019 19:05:31 +0000
+	id 1hcwwz-0000Kf-CU; Mon, 17 Jun 2019 19:05:53 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hcwsZ-0003pX-Rx
- for linux-arm-kernel@lists.infradead.org; Mon, 17 Jun 2019 19:01:21 +0000
+ id 1hcwsb-0003sb-Mi
+ for linux-arm-kernel@lists.infradead.org; Mon, 17 Jun 2019 19:01:23 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 7C69A344;
- Mon, 17 Jun 2019 12:01:19 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 2E8402B;
+ Mon, 17 Jun 2019 12:01:21 -0700 (PDT)
 Received: from e119886-lin.cambridge.arm.com (unknown [10.37.6.20])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 1D15E3F246;
- Mon, 17 Jun 2019 12:01:17 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id C468A3F246;
+ Mon, 17 Jun 2019 12:01:19 -0700 (PDT)
 From: Andrew Murray <andrew.murray@arm.com>
 To: Christoffer Dall <christoffer.dall@arm.com>,
  Marc Zyngier <marc.zyngier@arm.com>
-Subject: [PATCH v10 3/5] KVM: arm/arm64: re-create event when setting counter
- value
-Date: Mon, 17 Jun 2019 20:01:03 +0100
-Message-Id: <20190617190105.4662-4-andrew.murray@arm.com>
+Subject: [PATCH v10 4/5] KVM: arm/arm64: remove pmc->bitmask
+Date: Mon, 17 Jun 2019 20:01:04 +0100
+Message-Id: <20190617190105.4662-5-andrew.murray@arm.com>
 X-Mailer: git-send-email 2.21.0
 In-Reply-To: <20190617190105.4662-1-andrew.murray@arm.com>
 References: <20190617190105.4662-1-andrew.murray@arm.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190617_120120_053338_6C00FA6B 
-X-CRM114-Status: GOOD (  13.48  )
+X-CRM114-CacheID: sfid-20190617_120121_855138_0A5A0E5F 
+X-CRM114-Status: GOOD (  13.95  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -69,102 +68,107 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The perf event sample_period is currently set based upon the current
-counter value, when PMXEVTYPER is written to and the perf event is created.
-However the user may choose to write the type before the counter value in
-which case sample_period will be set incorrectly. Let's instead decouple
-event creation from PMXEVTYPER and (re)create the event in either
-suitation.
+We currently use pmc->bitmask to determine the width of the pmc - however
+it's superfluous as the pmc index already describes if the pmc is a cycle
+counter or event counter. The architecture clearly describes the widths of
+these counters.
+
+Let's remove the bitmask to simplify the code.
 
 Signed-off-by: Andrew Murray <andrew.murray@arm.com>
-Reviewed-by: Julien Thierry <julien.thierry@arm.com>
-Reviewed-by: Suzuki K Poulose <suzuki.poulose@arm.com>
 ---
- virt/kvm/arm/pmu.c | 42 +++++++++++++++++++++++++++++++++---------
- 1 file changed, 33 insertions(+), 9 deletions(-)
+ include/kvm/arm_pmu.h |  1 -
+ virt/kvm/arm/pmu.c    | 30 ++++++++++++++++++++----------
+ 2 files changed, 20 insertions(+), 11 deletions(-)
 
+diff --git a/include/kvm/arm_pmu.h b/include/kvm/arm_pmu.h
+index b73f31baca52..2f0e28dc5a9e 100644
+--- a/include/kvm/arm_pmu.h
++++ b/include/kvm/arm_pmu.h
+@@ -28,7 +28,6 @@
+ struct kvm_pmc {
+ 	u8 idx;	/* index into the pmu->pmc array */
+ 	struct perf_event *perf_event;
+-	u64 bitmask;
+ };
+ 
+ struct kvm_pmu {
 diff --git a/virt/kvm/arm/pmu.c b/virt/kvm/arm/pmu.c
-index 6e7c179103a6..ae1e886d4a1a 100644
+index ae1e886d4a1a..0588ad0ddb77 100644
 --- a/virt/kvm/arm/pmu.c
 +++ b/virt/kvm/arm/pmu.c
-@@ -24,6 +24,7 @@
- #include <kvm/arm_pmu.h>
+@@ -25,6 +25,18 @@
  #include <kvm/arm_vgic.h>
  
-+static void kvm_pmu_create_perf_event(struct kvm_vcpu *vcpu, u64 select_idx);
+ static void kvm_pmu_create_perf_event(struct kvm_vcpu *vcpu, u64 select_idx);
++
++/**
++ * kvm_pmu_idx_is_64bit - determine if select_idx is a 64bit counter
++ * @vcpu: The vcpu pointer
++ * @select_idx: The counter index
++ */
++static bool kvm_pmu_idx_is_64bit(struct kvm_vcpu *vcpu, u64 select_idx)
++{
++	return (select_idx == ARMV8_PMU_CYCLE_IDX &&
++		__vcpu_sys_reg(vcpu, PMCR_EL0) & ARMV8_PMU_PMCR_LC);
++}
++
  /**
   * kvm_pmu_get_counter_value - get PMU counter value
   * @vcpu: The vcpu pointer
-@@ -62,6 +63,9 @@ void kvm_pmu_set_counter_value(struct kvm_vcpu *vcpu, u64 select_idx, u64 val)
- 	reg = (select_idx == ARMV8_PMU_CYCLE_IDX)
- 	      ? PMCCNTR_EL0 : PMEVCNTR0_EL0 + select_idx;
- 	__vcpu_sys_reg(vcpu, reg) += (s64)val - kvm_pmu_get_counter_value(vcpu, select_idx);
+@@ -47,7 +59,10 @@ u64 kvm_pmu_get_counter_value(struct kvm_vcpu *vcpu, u64 select_idx)
+ 		counter += perf_event_read_value(pmc->perf_event, &enabled,
+ 						 &running);
+ 
+-	return counter & pmc->bitmask;
++	if (!kvm_pmu_idx_is_64bit(vcpu, select_idx))
++		counter = lower_32_bits(counter);
 +
-+	/* Recreate the perf event to reflect the updated sample_period */
-+	kvm_pmu_create_perf_event(vcpu, select_idx);
++	return counter;
  }
  
  /**
-@@ -378,23 +382,21 @@ static bool kvm_pmu_counter_is_enabled(struct kvm_vcpu *vcpu, u64 select_idx)
+@@ -113,7 +128,6 @@ void kvm_pmu_vcpu_reset(struct kvm_vcpu *vcpu)
+ 	for (i = 0; i < ARMV8_PMU_MAX_COUNTERS; i++) {
+ 		kvm_pmu_stop_counter(vcpu, &pmu->pmc[i]);
+ 		pmu->pmc[i].idx = i;
+-		pmu->pmc[i].bitmask = 0xffffffffUL;
+ 	}
  }
  
- /**
-- * kvm_pmu_set_counter_event_type - set selected counter to monitor some event
-+ * kvm_pmu_create_perf_event - create a perf event for a counter
-  * @vcpu: The vcpu pointer
-- * @data: The data guest writes to PMXEVTYPER_EL0
-  * @select_idx: The number of selected counter
-- *
-- * When OS accesses PMXEVTYPER_EL0, that means it wants to set a PMC to count an
-- * event with given hardware event number. Here we call perf_event API to
-- * emulate this action and create a kernel perf event for it.
+@@ -348,8 +362,6 @@ void kvm_pmu_software_increment(struct kvm_vcpu *vcpu, u64 val)
   */
--void kvm_pmu_set_counter_event_type(struct kvm_vcpu *vcpu, u64 data,
--				    u64 select_idx)
-+static void kvm_pmu_create_perf_event(struct kvm_vcpu *vcpu, u64 select_idx)
+ void kvm_pmu_handle_pmcr(struct kvm_vcpu *vcpu, u64 val)
  {
- 	struct kvm_pmu *pmu = &vcpu->arch.pmu;
- 	struct kvm_pmc *pmc = &pmu->pmc[select_idx];
- 	struct perf_event *event;
- 	struct perf_event_attr attr;
--	u64 eventsel, counter;
-+	u64 eventsel, counter, reg, data;
-+
-+	reg = (select_idx == ARMV8_PMU_CYCLE_IDX)
-+	      ? PMCCFILTR_EL0 : PMEVTYPER0_EL0 + select_idx;
-+	data = __vcpu_sys_reg(vcpu, reg);
+-	struct kvm_pmu *pmu = &vcpu->arch.pmu;
+-	struct kvm_pmc *pmc;
+ 	u64 mask;
+ 	int i;
  
- 	kvm_pmu_stop_counter(vcpu, pmc);
- 	eventsel = data & ARMV8_PMU_EVTYPE_EVENT;
-@@ -431,6 +433,28 @@ void kvm_pmu_set_counter_event_type(struct kvm_vcpu *vcpu, u64 data,
- 	pmc->perf_event = event;
+@@ -368,11 +380,6 @@ void kvm_pmu_handle_pmcr(struct kvm_vcpu *vcpu, u64 val)
+ 		for (i = 0; i < ARMV8_PMU_CYCLE_IDX; i++)
+ 			kvm_pmu_set_counter_value(vcpu, i, 0);
+ 	}
+-
+-	if (val & ARMV8_PMU_PMCR_LC) {
+-		pmc = &pmu->pmc[ARMV8_PMU_CYCLE_IDX];
+-		pmc->bitmask = 0xffffffffffffffffUL;
+-	}
  }
  
-+/**
-+ * kvm_pmu_set_counter_event_type - set selected counter to monitor some event
-+ * @vcpu: The vcpu pointer
-+ * @data: The data guest writes to PMXEVTYPER_EL0
-+ * @select_idx: The number of selected counter
-+ *
-+ * When OS accesses PMXEVTYPER_EL0, that means it wants to set a PMC to count an
-+ * event with given hardware event number. Here we call perf_event API to
-+ * emulate this action and create a kernel perf event for it.
-+ */
-+void kvm_pmu_set_counter_event_type(struct kvm_vcpu *vcpu, u64 data,
-+				    u64 select_idx)
-+{
-+	u64 reg, event_type = data & ARMV8_PMU_EVTYPE_MASK;
-+
-+	reg = (select_idx == ARMV8_PMU_CYCLE_IDX)
-+	      ? PMCCFILTR_EL0 : PMEVTYPER0_EL0 + select_idx;
-+
-+	__vcpu_sys_reg(vcpu, reg) = event_type;
-+	kvm_pmu_create_perf_event(vcpu, select_idx);
-+}
-+
- bool kvm_arm_support_pmu_v3(void)
- {
- 	/*
+ static bool kvm_pmu_counter_is_enabled(struct kvm_vcpu *vcpu, u64 select_idx)
+@@ -420,7 +427,10 @@ static void kvm_pmu_create_perf_event(struct kvm_vcpu *vcpu, u64 select_idx)
+ 
+ 	counter = kvm_pmu_get_counter_value(vcpu, select_idx);
+ 	/* The initial sample period (overflow count) of an event. */
+-	attr.sample_period = (-counter) & pmc->bitmask;
++	if (kvm_pmu_idx_is_64bit(vcpu, pmc->idx))
++		attr.sample_period = (-counter) & GENMASK(63, 0);
++	else
++		attr.sample_period = (-counter) & GENMASK(31, 0);
+ 
+ 	event = perf_event_create_kernel_counter(&attr, -1, current,
+ 						 kvm_pmu_perf_overflow, pmc);
 -- 
 2.21.0
 
