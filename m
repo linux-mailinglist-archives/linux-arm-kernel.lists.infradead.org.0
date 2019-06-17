@@ -2,68 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8CAA548071
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 17 Jun 2019 13:17:49 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0B4FC48079
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 17 Jun 2019 13:18:40 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=pe716lhw16y64ZPewi1lTdGEFLoml3i23KKY+BPbHyM=; b=hfs4Ny/TbXdid1
-	3+Ip2I0Ns9JYoiesJsVL40sBkI4WR63Se/mrHRd1pyIypCa8SNit+txjgNIDlXbcDNEIABlcQEiEQ
-	+S74/JkGxtEcm1PEGXSijNu6XAe/HtllMP7WqSYQyhjstQed+zlpvaFncRzKAeILc+kYi7Hy9K7Pc
-	ibfBoFuTxGLY7q8OkewuiBSP48eALm1oocTeg6lg7cXzXB8CRPPsxn7xWfprRmTxgoSGmM9n6+u5o
-	2gIM5A6idv8rAWJeZDKRLOyBS1rHdUBQ//ouK75AQHO2bfl+rWF7JV9OlIaI/C16R/Cz/UUOlLJRb
-	HPdz6K2EzMjThakU/iJA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=n2EAYw69QjsMC7OY9r5nXWwkCt/XwdN/zRjMVniAlf8=; b=TDOd6xcYuegGsa
+	YnmmE1Q9ZlxovJnbqYl8QvayS9Da+JJzHuMcEXBg1l3VjHaJX9A1Hc6s1YQAXmT2yWeLe5Jw/p1D9
+	ywYBLSrbxGVggFYZUyCbD48R/NiDObqGSI8lnhd5Jkjs7jvaIbeQaiRuVe7s8b5qnYYVJuqIUjyUF
+	zrQW6ID/dE7g91imUoUJ3mrC6wkBMX7w9oQ8vbN7zvFgIj7djfSV3/DjjlXdOtX1p9vLGFSwP9i+i
+	XTl96xyb9RFhC5rKom59rOzIDQ6yQicF7owEyf4T+WgmQH73JQX5PN8Fmg5Vwqzp0YxFXDrtJsfhm
+	O5G57NSWcHsTDBPf7pJA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hcpdy-0006Z6-5f; Mon, 17 Jun 2019 11:17:46 +0000
-Received: from mout.kundenserver.de ([217.72.192.74])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hcpdl-0006Y5-AH; Mon, 17 Jun 2019 11:17:34 +0000
-Received: from threadripper.lan ([149.172.19.189]) by mrelayeu.kundenserver.de
- (mreue108 [212.227.15.145]) with ESMTPA (Nemesis) id
- 1MsHwC-1iVLw61pjW-00th1H; Mon, 17 Jun 2019 13:17:24 +0200
-From: Arnd Bergmann <arnd@arndb.de>
-To: Maxime Jourdan <mjourdan@baylibre.com>,
- Mauro Carvalho Chehab <mchehab@kernel.org>,
- Kevin Hilman <khilman@baylibre.com>
-Subject: [PATCH 1/3] media: meson: include linux/kthread.h
-Date: Mon, 17 Jun 2019 13:16:51 +0200
-Message-Id: <20190617111718.2277220-1-arnd@arndb.de>
-X-Mailer: git-send-email 2.20.0
+	id 1hcpem-0006xq-KB; Mon, 17 Jun 2019 11:18:36 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hcpea-0006xG-Ul
+ for linux-arm-kernel@lists.infradead.org; Mon, 17 Jun 2019 11:18:26 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 358F6344;
+ Mon, 17 Jun 2019 04:18:24 -0700 (PDT)
+Received: from e121166-lin.cambridge.arm.com (unknown [10.1.196.255])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id B3B5C3F246;
+ Mon, 17 Jun 2019 04:20:08 -0700 (PDT)
+Date: Mon, 17 Jun 2019 12:18:17 +0100
+From: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
+To: Miquel Raynal <miquel.raynal@bootlin.com>
+Subject: Re: [PATCH] PCI: armada8k: Add PHYs support
+Message-ID: <20190617111817.GA24968@e121166-lin.cambridge.arm.com>
+References: <20190401131239.17008-1-miquel.raynal@bootlin.com>
 MIME-Version: 1.0
-X-Provags-ID: V03:K1:mSHisb9SBlgUUulWsfD80t6IakUBYWZsI/Spxa2zTsENfcv0/oL
- wXRwf2cAITNDLjhX5OdADkdf0mkzcN1j9sL2qpnkOOHIYc63+Isk5bje/I7TYvBZHfDGJVA
- r7A0t7lhVt8vsJkJcZAlSHPCCkG2B0cUlkxSCtyTkeBDZivJYXHrZfJrcHVhh8U/NkHVn+G
- z8XIUrkJTFpUT9flwto5A==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:5enVdSaVH3g=:lmcLQZFPDGsXUdZosube+q
- +4bBPYpxQcZH3YRVmoqGVXVMqUPyq8TM7t1NN71zGmMECjpzcIQmLaU7wBehGX3UGiPVgveud
- bZngn+x3mEc1dBYhDKvsXXpaE3OprU81Txg5XLowGYq6isNZ6KIOgJi3tH6dlfn0uObbpEFnB
- 4ahGUcHZnkN5rAZttQtt3MZX4IPADmEW6qUqV2DG/ljWH+HInH0qSuztP0TS86JrXpIR6ePUb
- T9kfGAMH9jVdznB3U2hmjp1OnjUtgCzDYFg8YA6Jo54lmz+kHJ0j5B5DhwrlDxsYQ3wTqGKoo
- tl/Tqaz6zYPScHb1WWULi1QSKdcTUd6rJi1lfl7njBI5S48ulo7ZqtY8ljuokbZG6vFHeUmi5
- dRp3yhAluO/M9XvyQ1PMIop6lgTH1YdxbXROBk48FbCe6K6aGHWoYhBIh/aYUTTNgdrZreBiD
- d4tEKweu7ZsbYbMrbcUuxk6cwHkAcU4KiM2ux1AALq9D51+xFnsXwX3sLjkn6hJdLskd186X5
- nAhmEuYcb7MnoiAOOv3WDlNbTJ9ewCh82N1J2PS0IbKHBlQU6uVmHG3b9gTNNTwcHu9a6rFjN
- a2ovzOzKLSDdWfmAw6B4p9m6nN7wTMN3DAm9rqgQ6nyghjUgg2s1YbddtQiK3Xor9sp6xjfbg
- hGvLWwPgjOhrvGT0k4E5veu8V5wi1NikcQB656On7/8RjcH8m4TpuG8OplhGPBBx0Ssb3EV5h
- +N7WfNq/1vPfUrrjdHG00Z4MX80xwcFKSjHb1A==
+Content-Disposition: inline
+In-Reply-To: <20190401131239.17008-1-miquel.raynal@bootlin.com>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190617_041733_647501_08068D60 
-X-CRM114-Status: UNSURE (   9.43  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190617_041825_075436_BA9F5661 
+X-CRM114-Status: GOOD (  21.48  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [217.72.192.74 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -75,43 +60,155 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devel@driverdev.osuosl.org, Arnd Bergmann <arnd@arndb.de>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-kernel@vger.kernel.org,
- Mauro Carvalho Chehab <mchehab+samsung@kernel.org>,
- linux-media@lists.freedesktop.org, Hans Verkuil <hverkuil-cisco@xs4all.nl>,
- linux-amlogic@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
- linux-media@vger.kernel.org
+Cc: Bjorn Helgaas <bhelgaas@google.com>, linux-pci@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org,
+ Thomas Petazzoni <thomas.petazzoni@bootlin.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Without this header, we get a compilation error in some configurations:
+On Mon, Apr 01, 2019 at 03:12:39PM +0200, Miquel Raynal wrote:
+> Bring PHY support for the Armada8k driver.
+> 
+> The Armada8k IP only supports x1, x2 or x4 link widths. Iterate over
+> the DT 'phys' entries and configure them one by one. Use
+> phy_set_mode_ext() to make use of the submode parameter (initially
+> introduced for Ethernet modes). For PCI configuration, let the submode
+> be the width (1, 2, 4, etc) so that the PHY driver knows how many
+> lanes are bundled. Do not error out in case of error for compatibility
+> reasons.
+> 
+> Signed-off-by: Miquel Raynal <miquel.raynal@bootlin.com>
+> ---
+>  drivers/pci/controller/dwc/pcie-armada8k.c | 82 +++++++++++++++++++++-
+>  1 file changed, 81 insertions(+), 1 deletion(-)
 
-drivers/staging/media/meson/vdec/vdec.c: In function 'vdec_recycle_thread':
-drivers/staging/media/meson/vdec/vdec.c:59:10: error: implicit declaration of function 'kthread_should_stop' [-Werror=implicit-function-declaration]
+Applied to pci/armada for v5.3, thanks.
 
-Fixes: 3e7f51bd9607 ("media: meson: add v4l2 m2m video decoder driver")
-Signed-off-by: Arnd Bergmann <arnd@arndb.de>
----
- drivers/staging/media/meson/vdec/vdec.c | 1 +
- 1 file changed, 1 insertion(+)
+Lorenzo
 
-diff --git a/drivers/staging/media/meson/vdec/vdec.c b/drivers/staging/media/meson/vdec/vdec.c
-index 0a1a04fd5d13..eb335a0f2bdd 100644
---- a/drivers/staging/media/meson/vdec/vdec.c
-+++ b/drivers/staging/media/meson/vdec/vdec.c
-@@ -8,6 +8,7 @@
- #include <linux/clk.h>
- #include <linux/io.h>
- #include <linux/module.h>
-+#include <linux/kthread.h>
- #include <linux/platform_device.h>
- #include <linux/mfd/syscon.h>
- #include <linux/slab.h>
--- 
-2.20.0
-
+> diff --git a/drivers/pci/controller/dwc/pcie-armada8k.c b/drivers/pci/controller/dwc/pcie-armada8k.c
+> index 0c389a30ef5d..e567a7cfa3d7 100644
+> --- a/drivers/pci/controller/dwc/pcie-armada8k.c
+> +++ b/drivers/pci/controller/dwc/pcie-armada8k.c
+> @@ -25,10 +25,14 @@
+>  
+>  #include "pcie-designware.h"
+>  
+> +#define ARMADA8K_PCIE_MAX_LANES PCIE_LNK_X4
+> +
+>  struct armada8k_pcie {
+>  	struct dw_pcie *pci;
+>  	struct clk *clk;
+>  	struct clk *clk_reg;
+> +	struct phy *phy[ARMADA8K_PCIE_MAX_LANES];
+> +	unsigned int phy_count;
+>  };
+>  
+>  #define PCIE_VENDOR_REGS_OFFSET		0x8000
+> @@ -67,6 +71,76 @@ struct armada8k_pcie {
+>  
+>  #define to_armada8k_pcie(x)	dev_get_drvdata((x)->dev)
+>  
+> +static void armada8k_pcie_disable_phys(struct armada8k_pcie *pcie)
+> +{
+> +	int i;
+> +
+> +	for (i = 0; i < ARMADA8K_PCIE_MAX_LANES; i++) {
+> +		phy_power_off(pcie->phy[i]);
+> +		phy_exit(pcie->phy[i]);
+> +	}
+> +}
+> +
+> +static int armada8k_pcie_enable_phys(struct armada8k_pcie *pcie)
+> +{
+> +	int ret;
+> +	int i;
+> +
+> +	for (i = 0; i < ARMADA8K_PCIE_MAX_LANES; i++) {
+> +		ret = phy_init(pcie->phy[i]);
+> +		if (ret)
+> +			return ret;
+> +
+> +		ret = phy_set_mode_ext(pcie->phy[i], PHY_MODE_PCIE,
+> +				       pcie->phy_count);
+> +		if (ret) {
+> +			phy_exit(pcie->phy[i]);
+> +			return ret;
+> +		}
+> +
+> +		ret = phy_power_on(pcie->phy[i]);
+> +		if (ret) {
+> +			phy_exit(pcie->phy[i]);
+> +			return ret;
+> +		}
+> +	}
+> +
+> +	return 0;
+> +}
+> +
+> +static int armada8k_pcie_setup_phys(struct armada8k_pcie *pcie)
+> +{
+> +	struct dw_pcie *pci = pcie->pci;
+> +	struct device *dev = pci->dev;
+> +	struct device_node *node = dev->of_node;
+> +	int ret = 0;
+> +	int i;
+> +
+> +	for (i = 0; i < ARMADA8K_PCIE_MAX_LANES; i++) {
+> +		pcie->phy[i] = devm_of_phy_get_by_index(dev, node, i);
+> +		if (IS_ERR(pcie->phy[i]) &&
+> +		    (PTR_ERR(pcie->phy[i]) == -EPROBE_DEFER))
+> +			return PTR_ERR(pcie->phy[i]);
+> +
+> +		if (IS_ERR(pcie->phy[i])) {
+> +			pcie->phy[i] = NULL;
+> +			continue;
+> +		}
+> +
+> +		pcie->phy_count++;
+> +	}
+> +
+> +	/* Old bindings miss the PHY handle, so just warn if there is no PHY */
+> +	if (!pcie->phy_count)
+> +		dev_warn(dev, "No available PHY\n");
+> +
+> +	ret = armada8k_pcie_enable_phys(pcie);
+> +	if (ret)
+> +		dev_err(dev, "Failed to initialize PHY(s) (%d)\n", ret);
+> +
+> +	return ret;
+> +}
+> +
+>  static int armada8k_pcie_link_up(struct dw_pcie *pci)
+>  {
+>  	u32 reg;
+> @@ -249,14 +323,20 @@ static int armada8k_pcie_probe(struct platform_device *pdev)
+>  		goto fail_clkreg;
+>  	}
+>  
+> +	ret = armada8k_pcie_setup_phys(pcie);
+> +	if (ret)
+> +		goto fail_clkreg;
+> +
+>  	platform_set_drvdata(pdev, pcie);
+>  
+>  	ret = armada8k_add_pcie_port(pcie, pdev);
+>  	if (ret)
+> -		goto fail_clkreg;
+> +		goto disable_phy;
+>  
+>  	return 0;
+>  
+> +disable_phy:
+> +	armada8k_pcie_disable_phys(pcie);
+>  fail_clkreg:
+>  	clk_disable_unprepare(pcie->clk_reg);
+>  fail:
+> -- 
+> 2.19.1
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
