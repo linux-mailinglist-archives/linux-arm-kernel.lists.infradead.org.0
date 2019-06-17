@@ -2,51 +2,46 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 69A464801C
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 17 Jun 2019 13:01:02 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8445D4802F
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 17 Jun 2019 13:05:23 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ISUwP05eGmgLUfeVIBjDymRVqyRV5jYuNTHiR4N8eNs=; b=jRR6L8bXqHAPqH
-	QzesuspZ1DIM0UxzTc79zSF2RLbFmZpXTC/kX5nFtd83bL+0HLY8+chE3CK4ZLAzWbQbUYPjqu8PC
-	JHtfdoq0Z0qM2ZH3YixWFM1U9y7sXDXV8YnVCU4lnj/Z29Gbn1NWYLsKVCsP8svs9NGxkNpHrN52x
-	N+FB1v2UIsFuJWr9ED0yX/E5uBOyhBuGnEwtUqitI9xsdcXfHSqz4hSG6df19izX8NGeu8A3Vzgm8
-	gTvwjb7CWJpdskgWTt6Mv89EQpqf6NhsJWUOqOebUcxIQFBEo0PMKNGcUL9Y7UmE4eMm6FNmLnjcf
-	omqaEeA4BadY+SNunPNQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=NhM/oTLZeE6erUgYoTdlLj1Fhi7ZVVSTjTFy0AlZsY8=; b=YqQvAaNxkacVz4
+	bFUmw3DvfAKeyRRu7fZ3Em4Ct4S7CL2NiKLACR80yyoWUAHI3XCz/vm0+OLjXHAXAPUOmFux/3UiF
+	+eN8nE9p0fNydopmlItrZ5JojPcykNg0JWhZ3y8nqT6bY/HO+8soh4US4IcRHweJOj0zRcal+9y56
+	twx3OWtxV/5UDCNTB2h1kuC/YjSEm43RkQOAL7B/9/DbvtM2sPjTn+yhAi0EztGez6ZHSVJjwiFMM
+	REbnl7SPHlh2xuzx8QSPsAq0eBPYiIc6CNHGOYomWsrRaDnNaq+BPZGDHFSk8TcbkJnPq0tbsKGRL
+	CUKwWDIQneQ8geKNPtYg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hcpNi-00072H-CV; Mon, 17 Jun 2019 11:00:58 +0000
+	id 1hcpRu-0008KM-5O; Mon, 17 Jun 2019 11:05:18 +0000
 Received: from szxga04-in.huawei.com ([45.249.212.190] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hcpNa-00070j-7e
- for linux-arm-kernel@lists.infradead.org; Mon, 17 Jun 2019 11:00:52 +0000
-Received: from DGGEMS403-HUB.china.huawei.com (unknown [172.30.72.60])
- by Forcepoint Email with ESMTP id 48F0D8A34246BE36988C;
- Mon, 17 Jun 2019 19:00:39 +0800 (CST)
-Received: from [127.0.0.1] (10.74.221.148) by DGGEMS403-HUB.china.huawei.com
- (10.3.19.203) with Microsoft SMTP Server id 14.3.439.0; Mon, 17 Jun 2019
- 19:00:35 +0800
-Subject: Re: [PATCH v2] arm64/mm: Correct the cache line size warning with non
- coherent device
-To: Catalin Marinas <catalin.marinas@arm.com>
-References: <20190614131141.4428-1-msys.mizuma@gmail.com>
- <aa445f8f-2576-4f78-a64e-1cde6a2f9593@hisilicon.com>
- <20190617104555.GA1367@arrakis.emea.arm.com>
-From: Zhangshaokun <zhangshaokun@hisilicon.com>
-Message-ID: <7e567399-6f3d-b416-6636-c9f2f37ea407@hisilicon.com>
-Date: Mon, 17 Jun 2019 19:00:34 +0800
-User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:45.0) Gecko/20100101
- Thunderbird/45.1.1
+ id 1hcpRL-00084L-8B
+ for linux-arm-kernel@lists.infradead.org; Mon, 17 Jun 2019 11:04:45 +0000
+Received: from DGGEMS402-HUB.china.huawei.com (unknown [172.30.72.60])
+ by Forcepoint Email with ESMTP id 8A9A6B995AE611DD51A8;
+ Mon, 17 Jun 2019 19:04:39 +0800 (CST)
+Received: from linux-ibm.site (10.175.102.37) by
+ DGGEMS402-HUB.china.huawei.com (10.3.19.202) with Microsoft SMTP Server id
+ 14.3.439.0; Mon, 17 Jun 2019 19:04:28 +0800
+From: Hanjun Guo <guohanjun@huawei.com>
+To: <linux-arm-kernel@lists.infradead.org>, <linux-acpi@vger.kernel.org>
+Subject: [PATCH v2] MAINTAINERS: Update my email address
+Date: Mon, 17 Jun 2019 19:02:15 +0800
+Message-ID: <1560769335-62944-1-git-send-email-guohanjun@huawei.com>
+X-Mailer: git-send-email 1.7.12.4
 MIME-Version: 1.0
-In-Reply-To: <20190617104555.GA1367@arrakis.emea.arm.com>
-X-Originating-IP: [10.74.221.148]
+X-Originating-IP: [10.175.102.37]
 X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190617_040050_498815_69CC4968 
-X-CRM114-Status: GOOD (  12.93  )
+X-CRM114-CacheID: sfid-20190617_040443_627767_372907EB 
+X-CRM114-Status: UNSURE (   9.36  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -67,89 +62,56 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Masayoshi Mizuma <m.mizuma@jp.fujitsu.com>,
- Hidetoshi Seto <seto.hidetoshi@jp.fujitsu.com>,
- Will Deacon <will.deacon@arm.com>, linux-kernel@vger.kernel.org,
- Zhang Lei <zhang.lei@jp.fujitsu.com>, Masayoshi Mizuma <msys.mizuma@gmail.com>,
- Robin Murphy <robin.murphy@arm.com>, linux-arm-kernel@lists.infradead.org
+Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ "Rafael J. Wysocki" <rafael@kernel.org>, Marc
+ Zyngier <marc.zyngier@arm.com>, Catalin Marinas <catalin.marinas@arm.com>,
+ Hanjun Guo <guohanjun@huawei.com>, Sudeep Holla <sudeep.holla@arm.com>,
+ Will Deacon <will@kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Catalin,
+The @linaro.org address is not working and bonucing, so update the
+references.
 
-On 2019/6/17 18:45, Catalin Marinas wrote:
-> On Sat, Jun 15, 2019 at 10:44:33AM +0800, Zhangshaokun wrote:
->> On 2019/6/14 21:11, Masayoshi Mizuma wrote:
->>> diff --git a/arch/arm64/kernel/cacheinfo.c b/arch/arm64/kernel/cacheinfo.c
->>> index 6eaf1c07aa4e..7fa6828bb488 100644
->>> --- a/arch/arm64/kernel/cacheinfo.c
->>> +++ b/arch/arm64/kernel/cacheinfo.c
->>> @@ -19,12 +19,10 @@
->>>  
->>>  int cache_line_size(void)
->>>  {
->>> -	u32 cwg = cache_type_cwg();
->>> -
->>>  	if (coherency_max_size != 0)
->>>  		return coherency_max_size;
->>>  
->>> -	return cwg ? 4 << cwg : ARCH_DMA_MINALIGN;
->>> +	return cache_line_size_of_cpu();
->>>  }
->>
->> How about simplify it as this?
->>
->> int cache_line_size(void)
->> {
->>         return coherency_max_size ? coherency_max_size :
->>                 cache_line_size_of_cpu();
->> }
-> 
-> I don't see this as a simplification, easier to read with explicit 'if'.
-> 
+Signed-off-by: Hanjun Guo <guohanjun@huawei.com>
+---
 
-Okay, I thought it can save some unnecessary lines :-).
+v2: update the .mailmap to redirect the older email address which               
+    is suggested by Marc.
 
->>>  EXPORT_SYMBOL_GPL(cache_line_size);
->>>  
->>> diff --git a/arch/arm64/mm/dma-mapping.c b/arch/arm64/mm/dma-mapping.c
->>> index 1669618db08a..379589dc7113 100644
->>> --- a/arch/arm64/mm/dma-mapping.c
->>> +++ b/arch/arm64/mm/dma-mapping.c
->>> @@ -38,10 +38,6 @@ void arch_dma_prep_coherent(struct page *page, size_t size)
->>>  
->>>  static int __init arm64_dma_init(void)
->>>  {
->>> -	WARN_TAINT(ARCH_DMA_MINALIGN < cache_line_size(),
->>> -		   TAINT_CPU_OUT_OF_SPEC,
->>> -		   "ARCH_DMA_MINALIGN smaller than CTR_EL0.CWG (%d < %d)",
->>> -		   ARCH_DMA_MINALIGN, cache_line_size());
->>>  	return dma_atomic_pool_init(GFP_DMA32, __pgprot(PROT_NORMAL_NC));
->>>  }
->>>  arch_initcall(arm64_dma_init);
->>> @@ -56,7 +52,17 @@ void arch_teardown_dma_ops(struct device *dev)
->>>  void arch_setup_dma_ops(struct device *dev, u64 dma_base, u64 size,
->>>  			const struct iommu_ops *iommu, bool coherent)
->>>  {
->>> +	int cls = cache_line_size_of_cpu();
->>
->> whether we need this local variable, how about use cache_line_size_of_cpu
->> directly in WARN_TAINT just like before.
-> 
-> The reason being?
-> 
+ .mailmap    | 1 +
+ MAINTAINERS | 2 +-
+ 2 files changed, 2 insertions(+), 1 deletion(-)
 
-Since it is inline function,  maybe it is unnecessary, it is trivial.
-
-> Anyway, I'll queue v2 of this patch as is for 5.3. Thanks.
-> 
-
-It's fine.
-
-Thanks,
-Shaokun
+diff --git a/.mailmap b/.mailmap
+index 07a777f..fd9b497 100644
+--- a/.mailmap
++++ b/.mailmap
+@@ -81,6 +81,7 @@ Greg Kroah-Hartman <greg@echidna.(none)>
+ Greg Kroah-Hartman <gregkh@suse.de>
+ Greg Kroah-Hartman <greg@kroah.com>
+ Gregory CLEMENT <gregory.clement@bootlin.com> <gregory.clement@free-electrons.com>
++Hanjun Guo <guohanjun@huawei.com> <hanjun.guo@linaro.org>
+ Henk Vergonet <Henk.Vergonet@gmail.com>
+ Henrik Kretzschmar <henne@nachtwindheim.de>
+ Henrik Rydberg <rydberg@bitmath.org>
+diff --git a/MAINTAINERS b/MAINTAINERS
+index 57f496c..2fed10f 100644
+--- a/MAINTAINERS
++++ b/MAINTAINERS
+@@ -364,7 +364,7 @@ F:	drivers/acpi/fan.c
+ 
+ ACPI FOR ARM64 (ACPI/arm64)
+ M:	Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
+-M:	Hanjun Guo <hanjun.guo@linaro.org>
++M:	Hanjun Guo <guohanjun@huawei.com>
+ M:	Sudeep Holla <sudeep.holla@arm.com>
+ L:	linux-acpi@vger.kernel.org
+ L:	linux-arm-kernel@lists.infradead.org (moderated for non-subscribers)
+-- 
+1.7.12.4
 
 
 _______________________________________________
