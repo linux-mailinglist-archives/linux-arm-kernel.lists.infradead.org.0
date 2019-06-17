@@ -2,91 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F1BEF488AF
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 17 Jun 2019 18:16:49 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E325C488C3
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 17 Jun 2019 18:22:55 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=IXmtvJSMZgYjrlQWoHZawMTRlnjoEGdLX9uG9mdVEGM=; b=njXvzNsOZkEGa3
-	vqtORv4vN3yZRf0WxtGgVz/sEUN+EqXOScaouRrcDb9pntF6IMUgFfTZex3KEfcM657PgEPjdzkMc
-	DLiUsxxzoMdQ3B5TADIeTaFzPubNX8Dl89MnLqLiCi9/OjXaH9vNOcKKETmTYJ6+ElER8dTtf48sI
-	ECsMfQ+a/onj/MZF/dPgMEV98HIR+tMY4/3o5Ja3Ckm2ltiVDbAPhR39QDEaw1mo+9L6BaElQM/S0
-	MCU2rotPdhNGPTf0durPPyI7QCjFRhs44PRKWR5Ycm0IuI5pixv/8/w05Z6iVZG/0WojNWuG+BRjG
-	Zsmc+owdz/XEVzcXIUjA==;
+	List-Owner; bh=49ntNlB2Zc9Z5EJCV3pEIBAYt8cvXF4X+X8mpVXX0pE=; b=p+EDajWl6EZO6p
+	SxkV56CyJ+Gl+8+m8g7PFwpNtdLXuKWCCCndJ63l7/ssBfGg60WwvZJGgkjOCUCFHTJGFgPpUDA8h
+	ToWEkTsQvHcgmv/Na4NuGwfJAipBHKCMBWW+9epi7zqp8hoIsHP0UHbSqVZmEQgJpnA+kI+vlkQBa
+	Gbzv06ph82MRctqypCZHLWt6gcpVWJfq+RF+IfwhC7qN95DjV39deeBwRMLR258lkycWKrnp+2Dgs
+	3onL42r9k/qzBAz8/TjQQvWLh7s/nHrg6Xw2/pFvVmzm0H4PvAEPliYNjlFJpFS7XdgoYkDR3a7Bf
+	2vPiHTkP+LMxmngvc2NQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hcuJK-0005yc-25; Mon, 17 Jun 2019 16:16:46 +0000
-Received: from mail-pf1-x444.google.com ([2607:f8b0:4864:20::444])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hcuJ4-0005xY-M1
- for linux-arm-kernel@lists.infradead.org; Mon, 17 Jun 2019 16:16:32 +0000
-Received: by mail-pf1-x444.google.com with SMTP id d126so5956930pfd.2
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 17 Jun 2019 09:16:30 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=zvibPhwENQ3qc2un3M/Q6u9vfA61QDqGf+AvuS+Jre0=;
- b=ZoqSWmU/lQLp0AxiYiOl4DnE8lGbhiLm4TaGaplykVD8NJT3wL2fFNQtVZ1rhnDefR
- BaZR79IvfuOD5CsEX5Gw7fbGTcYyajcJl9kBZ4M7KE9N1zgzsiE4tOPQV7Ij2cCHZ82h
- EeOCnc0aOXf5zaqOyTsOM7HB6gCUwOMLTttbg=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=zvibPhwENQ3qc2un3M/Q6u9vfA61QDqGf+AvuS+Jre0=;
- b=kWRsGSuoypHHgN1f6b7LRgVOAEuWheTs7vK59zaEJKQ3Odb3Z83LW/cUpHYN/pruDj
- FTmCVhcZQFykDBxgS+S/1EUDxNJN4MKMSbUGc3lDO6Al0gGRD9dwi8LGgy93KO6SJAWg
- TypP/FacuGcWdqKskyPX2n5nqMvZXG6ymC4E/53EOlLxF9HlTejiMenuetM3elJfawoo
- V7yASaRLTSw/+jCidBhhTVWqP3s4cVRq2RnxIbo7ccNxusqNRSRwYUMG8CisE3U4pss2
- TjhYIOtFAANarukVIhdHTRJWHGQjQagmoJd97ew4+1w2HD4Kh9Lsh1CZvuTGxYgBGoWV
- hqGg==
-X-Gm-Message-State: APjAAAUbm3d/Az2LfhqMZKHvSRZWNTc0y1R26fsrsi12HcpOPnBgMkII
- vujyzxl6gMu6HP1r1RDAZZ/OYw==
-X-Google-Smtp-Source: APXvYqw3rc3Tet3QBs9yulULj2UwlZKr/1RY50orF99rzSnjjv2kEBXdw1GPW8ggnZq5hpDRRJ/YNg==
-X-Received: by 2002:a17:90a:b908:: with SMTP id
- p8mr26903360pjr.94.1560788189915; 
- Mon, 17 Jun 2019 09:16:29 -0700 (PDT)
-Received: from localhost ([2620:15c:202:1:75a:3f6e:21d:9374])
- by smtp.gmail.com with ESMTPSA id d12sm12846713pfd.96.2019.06.17.09.16.29
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Mon, 17 Jun 2019 09:16:29 -0700 (PDT)
-Date: Mon, 17 Jun 2019 09:16:25 -0700
-From: Matthias Kaehlcke <mka@chromium.org>
-To: Pavel Machek <pavel@ucw.cz>
-Subject: Re: [PATCH] Revert "ARM: dts: rockchip: set PWM delay backlight
- settings for Minnie"
-Message-ID: <20190617161625.GR137143@google.com>
-References: <20190614224533.169881-1-mka@chromium.org>
- <20190616154143.GA28583@atrey.karlin.mff.cuni.cz>
+	id 1hcuPC-0008Jx-UZ; Mon, 17 Jun 2019 16:22:51 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hcuP0-0008Jd-AU
+ for linux-arm-kernel@lists.infradead.org; Mon, 17 Jun 2019 16:22:39 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id F004A28;
+ Mon, 17 Jun 2019 09:22:36 -0700 (PDT)
+Received: from arrakis.emea.arm.com (arrakis.cambridge.arm.com [10.1.196.78])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
+ B69B33F718; Mon, 17 Jun 2019 09:22:35 -0700 (PDT)
+Date: Mon, 17 Jun 2019 17:22:33 +0100
+From: Catalin Marinas <catalin.marinas@arm.com>
+To: Zhangshaokun <zhangshaokun@hisilicon.com>
+Subject: Re: [PATCH v2] arm64/mm: Correct the cache line size warning with
+ non coherent device
+Message-ID: <20190617162233.GB34565@arrakis.emea.arm.com>
+References: <20190614131141.4428-1-msys.mizuma@gmail.com>
+ <aa445f8f-2576-4f78-a64e-1cde6a2f9593@hisilicon.com>
+ <20190617104555.GA1367@arrakis.emea.arm.com>
+ <7e567399-6f3d-b416-6636-c9f2f37ea407@hisilicon.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190616154143.GA28583@atrey.karlin.mff.cuni.cz>
+In-Reply-To: <7e567399-6f3d-b416-6636-c9f2f37ea407@hisilicon.com>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190617_091630_747217_74BC6B17 
-X-CRM114-Status: GOOD (  16.48  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190617_092238_410610_8A3F82BC 
+X-CRM114-Status: GOOD (  12.81  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:444 listed in]
- [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -98,57 +64,52 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Heiko Stuebner <heiko@sntech.de>, linux-kernel@vger.kernel.org,
- Douglas Anderson <dianders@chromium.org>, linux-rockchip@lists.infradead.org,
- Rob Herring <robh+dt@kernel.org>,
- Enric Balletbo i Serra <enric.balletbo@collabora.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: Masayoshi Mizuma <m.mizuma@jp.fujitsu.com>,
+ Hidetoshi Seto <seto.hidetoshi@jp.fujitsu.com>,
+ Will Deacon <will.deacon@arm.com>, linux-kernel@vger.kernel.org,
+ Zhang Lei <zhang.lei@jp.fujitsu.com>, Masayoshi Mizuma <msys.mizuma@gmail.com>,
+ Robin Murphy <robin.murphy@arm.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Pavel,
-
-On Sun, Jun 16, 2019 at 05:41:43PM +0200, Pavel Machek wrote:
-> Hi!
-> 
-> > This reverts commit 288ceb85b505c19abe1895df068dda5ed20cf482.
+On Mon, Jun 17, 2019 at 07:00:34PM +0800, Zhangshaokun wrote:
+> On 2019/6/17 18:45, Catalin Marinas wrote:
+> > On Sat, Jun 15, 2019 at 10:44:33AM +0800, Zhangshaokun wrote:
+> >> On 2019/6/14 21:11, Masayoshi Mizuma wrote:
+> >>> diff --git a/arch/arm64/mm/dma-mapping.c b/arch/arm64/mm/dma-mapping.c
+> >>> index 1669618db08a..379589dc7113 100644
+> >>> --- a/arch/arm64/mm/dma-mapping.c
+> >>> +++ b/arch/arm64/mm/dma-mapping.c
+> >>> @@ -38,10 +38,6 @@ void arch_dma_prep_coherent(struct page *page, size_t size)
+> >>>  
+> >>>  static int __init arm64_dma_init(void)
+> >>>  {
+> >>> -	WARN_TAINT(ARCH_DMA_MINALIGN < cache_line_size(),
+> >>> -		   TAINT_CPU_OUT_OF_SPEC,
+> >>> -		   "ARCH_DMA_MINALIGN smaller than CTR_EL0.CWG (%d < %d)",
+> >>> -		   ARCH_DMA_MINALIGN, cache_line_size());
+> >>>  	return dma_atomic_pool_init(GFP_DMA32, __pgprot(PROT_NORMAL_NC));
+> >>>  }
+> >>>  arch_initcall(arm64_dma_init);
+> >>> @@ -56,7 +52,17 @@ void arch_teardown_dma_ops(struct device *dev)
+> >>>  void arch_setup_dma_ops(struct device *dev, u64 dma_base, u64 size,
+> >>>  			const struct iommu_ops *iommu, bool coherent)
+> >>>  {
+> >>> +	int cls = cache_line_size_of_cpu();
+> >>
+> >> whether we need this local variable, how about use cache_line_size_of_cpu
+> >> directly in WARN_TAINT just like before.
 > > 
-> > According to the commit message the AUO B101EAN01 panel on minnie
-> > requires a PWM delay of 200 ms, however this is not what the
-> > datasheet says. The datasheet mentions a *max* delay of 200 ms
-> > for T2 ("delay from LCDVDD to black video generation") and T3
-> > ("delay from LCDVDD to HPD high"), which aren't related to the
-> > PWM. The backlight power sequence does not specify min/max
-> > constraints for T15 (time from PWM on to BL enable) or T16
-> > (time from BL disable to PWM off).
-> > 
-> > Signed-off-by: Matthias Kaehlcke <mka@chromium.org>
-> > ---
-> > Enric, if you think I misinterpreted the datasheet please holler!
+> > The reason being?
 > 
-> Was this tested?
+> Since it is inline function,  maybe it is unnecessary, it is trivial.
 
-I performed limited manually testing.
+OTOH, you end up with two reads from the CTR_EL0 register.
 
-minnie ships with the Chrome OS 3.14 downstream, which doesn't include
-this delay, to my knowledge there are no open display related bugs for
-minnie. One could argue that a the configuration without the delay was
-widely field tested
-
-> Does patch being reverted actually break anything?
-
-To my knowledge it doesn't really break anything, however there is a
-short user perceptible delay between switching on the LCD and
-switching on the backlight. It's not the end of the world, but if it's
-not actually needed better avoid it.
-
-> If so, cc stable?
-
-I guess this is an edge case, were you could go either way. I'm fine
-with respinning and cc-ing stable.
+-- 
+Catalin
 
 _______________________________________________
 linux-arm-kernel mailing list
