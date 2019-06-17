@@ -2,86 +2,98 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 89A98477BB
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 17 Jun 2019 03:41:32 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 02AD1477BD
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 17 Jun 2019 03:42:46 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:References:Message-Id:Date:
-	In-Reply-To:From:Subject:Mime-Version:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=h0XvZ83m6OI//oPXzIuFTgNyI6ien+I0xI03uGYEwi0=; b=UNli3P9Wm2d/Qr
-	fnVQXMm2X3kFITfuwGZUvZZQOgl9PfCeVWCArMOvzYifoLJNYEESEufG70nZUv8iBnawYOkoYvH6F
-	Jpnofg1etARoLY7xop9AZQOY+SW+E2GoKbleNP/w/x2ZTr47rFabp8oLB4Ogxlj8MCuuKn80CXEE/
-	UwMzQtUBCpW3m0vry1A1ZWGMmazxzDl3BcDxH6PGwkvmmc0mP3M963QUjAFUVj4cCYWcLkomXEJYZ
-	GJ2Pww/diFJliukBsaUJZcw0LF/n5Qw5770y/rjoB18iSihViN4mK1PcRvuUbyGdBMN+l1hPkAYV6
-	nX7mMRhzt2/3iXf3/8NQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
+	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=3Jz5lVIjqSxvl75QHpiJVobg00BjjME66N6wvs5wcoI=; b=p8W5MVgqMVRxeM
+	M4hSasHa7dKP+H5ymTtPGTkobcWzTB54/y+z7xrIuZ9P+FecwUc0iNppGbGljrYZOXjAmyBjSuinN
+	fRrQlF1gMSoyPlwE/MvxUdBAX/ZiO9+kQFdF/jmFTxE5caOD1ihxM0TDSQ18DQG1IQBz7Mh6i4Brv
+	ZCC9D//3ovlSG1CgSrZo+rtPLXgI+jI9PL0PPu9u7jS/HygZEtnlTjar6dZSZWkMlSvH7PiqoAngY
+	lhulME6kVudZebH07wWAxuHmcMVDB6S+ymqlPh/OzBlh6cRgm1Waw56/ZpAxuAeDvt1Qy1luuof1j
+	iGZxZb6Zhlc7Huvt7SXQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hcgeG-00027p-In; Mon, 17 Jun 2019 01:41:28 +0000
-Received: from mail-qk1-x744.google.com ([2607:f8b0:4864:20::744])
+	id 1hcgfS-0002VB-6v; Mon, 17 Jun 2019 01:42:42 +0000
+Received: from mail-eopbgr60052.outbound.protection.outlook.com ([40.107.6.52]
+ helo=EUR04-DB3-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hcge3-00026q-CA
- for linux-arm-kernel@lists.infradead.org; Mon, 17 Jun 2019 01:41:16 +0000
-Received: by mail-qk1-x744.google.com with SMTP id p144so5233473qke.11
- for <linux-arm-kernel@lists.infradead.org>;
- Sun, 16 Jun 2019 18:41:11 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=lca.pw; s=google;
- h=mime-version:subject:from:in-reply-to:date:cc
- :content-transfer-encoding:message-id:references:to;
- bh=yDNJnnWMnvyj74KJjqDNrTKP8BhcNS3oCZ7kmmIyfm4=;
- b=ElB77QbjwicalLDAC/XLHtEXw3/UU+ToIyPskfkAUH1tIu/U9suKHVBjE+Gra7qlu4
- SfROdnCJnmHBNN1JY8yyqKoevbAf71SEXwBAiHw3MoEKCkCFmzyQIstM4lJPVL9bE8sW
- ol+INiBZwwHD7Vssk4wOLmuefAvt1+xQjPKj2pJEK/KBp0tmoraLJv3cwMQBU5ozFYrL
- xqBlsK9d2XGk7Z//uN9nMV29HByV5hsqpWrEhHX5TfIdxdq9Kf7bd/MVMdbDKuKazbM0
- w5ctKa0w7flVcDSgU+A3S9ntfWhtBXdpMaClcKumhtGa6lxEnKfQttxesKMVHWox44ln
- 1VJA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:subject:from:in-reply-to:date:cc
- :content-transfer-encoding:message-id:references:to;
- bh=yDNJnnWMnvyj74KJjqDNrTKP8BhcNS3oCZ7kmmIyfm4=;
- b=J6xIfnEMLRKj6QL4aqyiQ1wf8BtBkloqaWvJG541ZPBkMdSsGcSEyYggFf5mWAAPvP
- K3vW7gGDY5Pe0lGawPps/4Uxnxl1izJi1ZKsL9sHYT74Ql1HVgUlfEp0pKFKpoE/y+Wm
- LUQg8JW2Cc4BtjzhJ3qr8/UxlOOsLsHlPIZoKL5wb8k9+xr8bSCVD8GmuWUyKYinncfc
- noCMgP5b0tKPVQj2Ql0uO6NJCZL8BXFze7u863qfPWGa/fz8oEnTXBUEAsCbsoV1v4Fs
- S31vqLmY+FFF0GcE/htQhwElgqsKzZCRHZWFntEymj5Fyyaprv+Hi1CbaBE08F4gMgGe
- OOJQ==
-X-Gm-Message-State: APjAAAVsGKXA/CIRrzoyWYdd+S/ek38q8qyH39bzi/Z+6rIXqdjITBlK
- XUWrYS9EESgzixSubZ3/BxIELQ==
-X-Google-Smtp-Source: APXvYqz+ah+V71vGndXB9PVxkYf68i4b83LtgwwezyYhS64hdWj/C2Et4tvVQq+ACar89DMNZAxCaw==
-X-Received: by 2002:a37:4887:: with SMTP id v129mr6511552qka.17.1560735671205; 
- Sun, 16 Jun 2019 18:41:11 -0700 (PDT)
-Received: from [192.168.1.153] (pool-71-184-117-43.bstnma.fios.verizon.net.
- [71.184.117.43])
- by smtp.gmail.com with ESMTPSA id l6sm5718357qkf.83.2019.06.16.18.41.10
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Sun, 16 Jun 2019 18:41:10 -0700 (PDT)
-Mime-Version: 1.0 (Mac OS X Mail 12.4 \(3445.104.11\))
-Subject: Re: LTP hugemmap05 test case failure on arm64 with linux-next
- (next-20190613)
-From: Qian Cai <cai@lca.pw>
-In-Reply-To: <054b6532-a867-ec7c-0a72-6a58d4b2723e@arm.com>
-Date: Sun, 16 Jun 2019 21:41:09 -0400
-Message-Id: <EC704BC3-62FF-4DCE-8127-40279ED50D65@lca.pw>
-References: <1560461641.5154.19.camel@lca.pw>
- <20190614102017.GC10659@fuggles.cambridge.arm.com>
- <1560514539.5154.20.camel@lca.pw>
- <054b6532-a867-ec7c-0a72-6a58d4b2723e@arm.com>
-To: Anshuman Khandual <anshuman.khandual@arm.com>
-X-Mailer: Apple Mail (2.3445.104.11)
+ id 1hcgfF-0002UI-83
+ for linux-arm-kernel@lists.infradead.org; Mon, 17 Jun 2019 01:42:30 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=JnMfmIM4zoL5n2T8UAOE8MqThpp8X6NMfe6LdmNAP7s=;
+ b=pjFMKxZkvPOsx7HJ0+wzHOhVMt04oDXerdISe+5HiSgP5MBdcfoZtlJmLkJlJ8bjQPDKCrxLXK5FAuPo1U3IFwedsoityjzxbSp1bewAOHjjiCUJGJWGB2ab2QN+E+FK306phWvVr+Mb4nYTAq/ikAyIMcvFcr9vTJdvByhHhxU=
+Received: from AM6PR04MB6630.eurprd04.prod.outlook.com (20.179.247.83) by
+ AM6PR04MB4168.eurprd04.prod.outlook.com (52.135.168.26) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.1987.12; Mon, 17 Jun 2019 01:42:24 +0000
+Received: from AM6PR04MB6630.eurprd04.prod.outlook.com
+ ([fe80::7907:11c9:4eaa:4ea4]) by AM6PR04MB6630.eurprd04.prod.outlook.com
+ ([fe80::7907:11c9:4eaa:4ea4%3]) with mapi id 15.20.1987.014; Mon, 17 Jun 2019
+ 01:42:24 +0000
+From: Robin Gong <yibin.gong@nxp.com>
+To: "thesven73@gmail.com" <thesven73@gmail.com>
+Subject: Re: [PATCH v1] dmaengine: imx-sdma: remove BD_INTR for channel0
+Thread-Topic: [PATCH v1] dmaengine: imx-sdma: remove BD_INTR for channel0
+Thread-Index: AQHVIoyD1XkewTwW3U6Cbo4mPhim06abJv8AgAR20wA=
+Date: Mon, 17 Jun 2019 01:42:24 +0000
+Message-ID: <1560764756.30149.5.camel@nxp.com>
+References: <20190614083959.37944-1-yibin.gong@nxp.com>
+ <CAGngYiU_sNiAi0gYFEUg6=TfvUWH+6Nhid9PqYa6x+nb4UkVWA@mail.gmail.com>
+In-Reply-To: <CAGngYiU_sNiAi0gYFEUg6=TfvUWH+6Nhid9PqYa6x+nb4UkVWA@mail.gmail.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-mailer: Evolution 3.18.5.2-0ubuntu3.2 
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=yibin.gong@nxp.com; 
+x-originating-ip: [119.31.174.66]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: 061ca480-5fb1-410f-16f2-08d6f2c50c43
+x-ms-office365-filtering-ht: Tenant
+x-microsoft-antispam: BCL:0; PCL:0;
+ RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600148)(711020)(4605104)(1401327)(4618075)(2017052603328)(7193020);
+ SRVR:AM6PR04MB4168; 
+x-ms-traffictypediagnostic: AM6PR04MB4168:
+x-microsoft-antispam-prvs: <AM6PR04MB4168112658DB361E66F6E46889EB0@AM6PR04MB4168.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:7691;
+x-forefront-prvs: 0071BFA85B
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(396003)(346002)(376002)(39860400002)(366004)(136003)(189003)(199004)(86362001)(76176011)(81166006)(476003)(66066001)(478600001)(1361003)(3846002)(6116002)(14454004)(1411001)(25786009)(103116003)(7416002)(36756003)(2351001)(53936002)(71190400001)(71200400001)(4326008)(2501003)(5660300002)(99286004)(66446008)(64756008)(6486002)(53546011)(6506007)(316002)(11346002)(6512007)(66556008)(26005)(6246003)(54906003)(256004)(91956017)(14444005)(102836004)(5640700003)(76116006)(2906002)(73956011)(2616005)(7736002)(6916009)(486006)(8676002)(186003)(50226002)(229853002)(8936002)(305945005)(6436002)(66946007)(81156014)(66476007)(446003)(68736007)(99106002);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:AM6PR04MB4168;
+ H:AM6PR04MB6630.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; MX:1; A:1; 
+received-spf: None (protection.outlook.com: nxp.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam-message-info: 8Ana/xTy2uIQ3UdsDAUPsjmCddfi69YqyEE6+PfOCSTVlB1TrkfOKg/iqCby2vp8Emuxug+kEi8BexuZFcrPRffTmG31ub155HvgnBzTBkVzyMgqfTOfeXdRgbthq/sovnORJNkZbkdaz+NwQMh5buV4j8rhbE4rn0sdrfzYT/T5B0T9YoA0wNT7ashjeVekoghJetC0H1y4v1xiffrHobqIJSWgFHZsDpTltuF7mfQcyxQ7NuY9XXFE9XG0JrNkRQ9KxawBHHcsnaueKm0wBp3OE3MM3a0ShVcG0suORNXc8LLtupVo40ShdFkZ2ZKO+e8imTUOfrocBqyAoTS+d43RgRHtlSm5yolXdTZ+qDJdilvrz0sc41jZO9C9AUwcsIAco0DUQzuuhRPrPA648NDlFooEq9zHpCehqffSARU=
+Content-ID: <EA32B7B22C84424BAE4031078951904A@eurprd04.prod.outlook.com>
+MIME-Version: 1.0
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 061ca480-5fb1-410f-16f2-08d6f2c50c43
+X-MS-Exchange-CrossTenant-originalarrivaltime: 17 Jun 2019 01:42:24.6427 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: yibin.gong@nxp.com
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM6PR04MB4168
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190616_184115_557717_032D23BE 
-X-CRM114-Status: GOOD (  11.51  )
+X-CRM114-CacheID: sfid-20190616_184229_541314_B27CA8A4 
+X-CRM114-Status: GOOD (  17.21  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:744 listed in]
- [list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ no trust [40.107.6.52 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
@@ -101,53 +113,57 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Catalin Marinas <catalin.marinas@arm.com>,
- Will Deacon <will.deacon@arm.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- linux-arm-kernel@lists.infradead.org,
- "linux-mm@kvack.org" <linux-mm@kvack.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: "festevam@gmail.com" <festevam@gmail.com>,
+ "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
+ "vkoul@kernel.org" <vkoul@kernel.org>, dl-linux-imx <linux-imx@nxp.com>,
+ "kernel@pengutronix.de" <kernel@pengutronix.de>,
+ "dmaengine@vger.kernel.org" <dmaengine@vger.kernel.org>,
+ "dan.j.williams@intel.com" <dan.j.williams@intel.com>,
+ "shawnguo@kernel.org" <shawnguo@kernel.org>,
+ "m.olbrich@pengutronix.de" <m.olbrich@pengutronix.de>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-
-
-> On Jun 16, 2019, at 9:32 PM, Anshuman Khandual <anshuman.khandual@arm.com> wrote:
-> 
-> Hello Qian,
-> 
-> On 06/14/2019 05:45 PM, Qian Cai wrote:
->> On Fri, 2019-06-14 at 11:20 +0100, Will Deacon wrote:
->>> Hi Qian,
->>> 
->>> On Thu, Jun 13, 2019 at 05:34:01PM -0400, Qian Cai wrote:
->>>> LTP hugemmap05 test case [1] could not exit itself properly and then degrade
->>>> the
->>>> system performance on arm64 with linux-next (next-20190613). The bisection
->>>> so
->>>> far indicates,
->>>> 
->>>> BAD:  30bafbc357f1 Merge remote-tracking branch 'arm64/for-next/core'
->>>> GOOD: 0c3d124a3043 Merge remote-tracking branch 'arm64-fixes/for-next/fixes'
->>> 
->>> Did you finish the bisection in the end? Also, what config are you using
->>> (you usually have something fairly esoteric ;)?
->> 
->> No, it is still running.
->> 
->> https://raw.githubusercontent.com/cailca/linux-mm/master/arm64.config
->> 
-> 
-> Were you able to bisect the problem till a particular commit ?
-
-Not yet, it turned out the test case needs to run a few times (usually within 5) to reproduce, so the previous bisection was totally wrong where it assume the bad commit will fail every time. Once reproduced, the test case becomes unkillable stuck in the D state.
-
-I am still in the middle of running a new round of bisection. The current progress is,
-
-35c99ffa20ed GOOD (survived 20 times)
-def0fdae813d BAD
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gMjAxOS0wNi0xNCBhdCAxMzozNSArMDAwMCwgU3ZlbiBWYW4gQXNicm9lY2sgd3JvdGU6DQo+
+IEhpIFJvYmluLCBzZWUgY29tbWVudHMgaW5saW5lLg0KPiANCj4gT24gRnJpLCBKdW4gMTQsIDIw
+MTkgYXQgNDozOCBBTSA8eWliaW4uZ29uZ0BueHAuY29tPiB3cm90ZToNCj4gPiANCj4gPiANCj4g
+PiBkaWZmIC0tZ2l0IGEvZHJpdmVycy9kbWEvaW14LXNkbWEuYyBiL2RyaXZlcnMvZG1hL2lteC1z
+ZG1hLmMNCj4gPiBpbmRleCBkZWVhOWFhLi5iNWExZWUyIDEwMDY0NA0KPiA+IC0tLSBhL2RyaXZl
+cnMvZG1hL2lteC1zZG1hLmMNCj4gPiArKysgYi9kcml2ZXJzL2RtYS9pbXgtc2RtYS5jDQo+ID4g
+QEAgLTc0Miw3ICs3NDIsNyBAQCBzdGF0aWMgaW50IHNkbWFfbG9hZF9zY3JpcHQoc3RydWN0IHNk
+bWFfZW5naW5lDQo+ID4gKnNkbWEsIHZvaWQgKmJ1ZiwgaW50IHNpemUsDQo+ID4gwqDCoMKgwqDC
+oMKgwqDCoHNwaW5fbG9ja19pcnFzYXZlKCZzZG1hLT5jaGFubmVsXzBfbG9jaywgZmxhZ3MpOw0K
+PiA+IA0KPiA+IMKgwqDCoMKgwqDCoMKgwqBiZDAtPm1vZGUuY29tbWFuZCA9IEMwX1NFVFBNOw0K
+PiA+IC3CoMKgwqDCoMKgwqDCoGJkMC0+bW9kZS5zdGF0dXMgPSBCRF9ET05FIHwgQkRfSU5UUiB8
+IEJEX1dSQVAgfCBCRF9FWFREOw0KPiA+ICvCoMKgwqDCoMKgwqDCoGJkMC0+bW9kZS5zdGF0dXMg
+PSBCRF9ET05FIHwgQkRfV1JBUCB8IEJEX0VYVEQ7DQo+IEkgdGVzdGVkIHRoaXMgY2hhbmdlIG9u
+IGl0cyBvd24sIGFuZCBpdCBzZWVtZWQgc3VmZmljaWVudCB0byBtYWtlIHRoZQ0KPiBjcmFzaA0K
+PiBkaXNhcHBlYXIuDQo+IA0KPiA+IA0KPiA+IMKgwqDCoMKgwqDCoMKgwqBiZDAtPm1vZGUuY291
+bnQgPSBzaXplIC8gMjsNCj4gPiDCoMKgwqDCoMKgwqDCoMKgYmQwLT5idWZmZXJfYWRkciA9IGJ1
+Zl9waHlzOw0KPiA+IMKgwqDCoMKgwqDCoMKgwqBiZDAtPmV4dF9idWZmZXJfYWRkciA9IGFkZHJl
+c3M7DQo+ID4gQEAgLTEwNjQsNyArMTA2NCw3IEBAIHN0YXRpYyBpbnQgc2RtYV9sb2FkX2NvbnRl
+eHQoc3RydWN0DQo+ID4gc2RtYV9jaGFubmVsICpzZG1hYykNCj4gPiDCoMKgwqDCoMKgwqDCoMKg
+Y29udGV4dC0+Z1JlZ1s3XSA9IHNkbWFjLT53YXRlcm1hcmtfbGV2ZWw7DQo+ID4gDQo+ID4gwqDC
+oMKgwqDCoMKgwqDCoGJkMC0+bW9kZS5jb21tYW5kID0gQzBfU0VURE07DQo+ID4gLcKgwqDCoMKg
+wqDCoMKgYmQwLT5tb2RlLnN0YXR1cyA9IEJEX0RPTkUgfCBCRF9JTlRSIHwgQkRfV1JBUCB8IEJE
+X0VYVEQ7DQo+ID4gK8KgwqDCoMKgwqDCoMKgYmQwLT5tb2RlLnN0YXR1cyA9IEJEX0RPTkUgfCBC
+RF9XUkFQIHwgQkRfRVhURDsNCj4gVGhpcyBmdW5jdGlvbiBpc24ndCBwYXJ0IG9mIHRoZSBmaXJt
+d2FyZSBsb2FkIHBhdGgsIHNvIGhvdyBjYW4gaXQgYmUNCj4gcmVsYXRlZA0KPiB0byBmaXhpbmcg
+dGhlIGZpcm13YXJlIGNyYXNoPw0KWWVzLCB0aGF0J3Mgbm90IGluIHlvdXIgZmlybXdhcmUgbG9h
+ZCBjYXNlLCBidXQgSSB3YW50IHRvIGtlZXAgdGhlIHNhbWUNCmJlaGF2aW9yIGZvciBhbGwgY2hh
+bm5lbDAgY29uZGl0aW9ucywgZG9uJ3Qgd29ycnksIGhhcm1sZXNzIGhlcmUuwqANCj4gDQo+IElm
+IHRoaXMgaXMgYW4gdW5yZWxhdGVkIGVmZmljaWVuY3kgc2F2aW5nLCBtYXliZSBpdCBzaG91bGQg
+Z28gaW50bw0KPiBpdHMNCj4gb3duIHBhdGNoPw0KPiBNYXliZSB3ZSB3YW50IGJ1Z2ZpeCBwYXRj
+aGVzIHRvIGJlIGFzIHNtYWxsIGFuZCBzcGVjaWZpYyBhcyBwb3NzaWJsZSwNCj4gc28gdGhleQ0K
+PiBjYW4gbW9yZSBlYXNpbHkgYmUgYmFja3BvcnRlZCB0byBvbGRlciBrZXJuZWxzPw0KPiANCj4g
+PiANCj4gPiDCoMKgwqDCoMKgwqDCoMKgYmQwLT5tb2RlLmNvdW50ID0gc2l6ZW9mKCpjb250ZXh0
+KSAvIDQ7DQo+ID4gwqDCoMKgwqDCoMKgwqDCoGJkMC0+YnVmZmVyX2FkZHIgPSBzZG1hLT5jb250
+ZXh0X3BoeXM7DQo+ID4gwqDCoMKgwqDCoMKgwqDCoGJkMC0+ZXh0X2J1ZmZlcl9hZGRyID0gMjA0
+OCArIChzaXplb2YoKmNvbnRleHQpIC8gNCkgKg0KPiA+IGNoYW5uZWw7DQo+ID4gLS0NCj4gPiAy
+LjcuNA0KPiA+IApfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+XwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmlu
+ZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9s
+aW51eC1hcm0ta2VybmVsCg==
