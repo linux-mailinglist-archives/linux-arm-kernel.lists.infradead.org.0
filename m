@@ -2,78 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4A91448667
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 17 Jun 2019 17:02:45 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id EC1E748663
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 17 Jun 2019 17:01:57 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=50ECudstayzs2cx8xg88Wi/MSUkzQhGaH4BANkkqpuo=; b=N/L
-	UmGtEae6rXuIljp0olW+Pu4n6L+r+aWAKfJMizYRZGe/zqBRtRhDQjJIdl7UY1l8OCP5t23wrrtkr
-	J2zsodan8J32efM3YEKMz9KlVnN+KqPALI9yOdLdP7FQZsff2ZRa9iengp3NrMoXuhd1ab4pXyKPC
-	vmsTOagBydW3x0Yuaw5ovOPhmTJd16TtfgGYu6VNpY0kV8R6BuT81wGk0Ae7Ta0yhC2x03U1Slp8s
-	CwXgiMg6UvIbhSURTDIyMITDgzU637juVtEBvCi7UwNKK60VHtJXSj/QdUkjPt5Pog1EqxYu23mM5
-	rBhwqk8hG1MhGD7SVoJxIWTSnxIE63w==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=rHDTEANYTMkClyORRpV8zbdL09Fc4BX105N21VhPnis=; b=XNqzkzue1jueCG
+	vljfrQwjz7ezMOlp6pvttmOuWUXrlwf46JfKKlftOkZZuLn2y9A8ZPPwZWhvZVX8ZBsySgxChSqRX
+	kxlN8/QhN2H8dM1etdp98nctDZ2+97VSg11MbrWdmHbRkU/9I7z/0RcKfQv7utg/m5A1IUYkR0fyC
+	mwUx7OUXhdNY8sJUrPpIiqoCV3jh11a5IvPhOy1mzE4AJIe4pKiPi7nZaTGnNl+1VqrQibXz8KHoa
+	8RDJJsxByjGxWUz/M8Rkgerdt8zB91kSMtwp6DxvW4R6MHst0qCvhMDtwr5i/PxHtUhG5Fez55CH+
+	ojwFMIaXsGvTW1wsjUJA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hct9d-0006KC-Lx; Mon, 17 Jun 2019 15:02:41 +0000
-Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
+	id 1hct8r-0005ZJ-5f; Mon, 17 Jun 2019 15:01:53 +0000
+Received: from mail-oi1-x242.google.com ([2607:f8b0:4864:20::242])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hct8j-0005cP-I4
- for linux-arm-kernel@lists.infradead.org; Mon, 17 Jun 2019 15:01:47 +0000
-Received: by mail-wm1-x341.google.com with SMTP id c66so9658170wmf.0
+ id 1hct7l-0005HM-Lz
+ for linux-arm-kernel@lists.infradead.org; Mon, 17 Jun 2019 15:00:47 +0000
+Received: by mail-oi1-x242.google.com with SMTP id j184so7239399oih.1
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 17 Jun 2019 08:01:44 -0700 (PDT)
+ Mon, 17 Jun 2019 08:00:44 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=from:to:cc:subject:date:message-id;
- bh=Wqsnkrqxuzj4H7GgqM3V2IbbAn/b8Sl0ywChnZlDzVw=;
- b=rMdY7twpWhnHa4cxiVRG0sqvzqelh8jEW8qKBC9Mh3yio6324k7HmjwwEtXpTvNr2R
- +DFsBk4LHWIuDOoZoyzJCTgdyTygIsC4sdUVAV0qxgi4AMRXiwo8weMPCwLqGJkFVlku
- yaMKp1gJiqKlRPFlNh2gaKeFazEqU/fYwAiafOz36gao+DsYGbEBLFN2p4+AgxOKgoe3
- N+sOGCF4y0CdIDfvSGtFSLeS7kNh2falxhVU2bpft01H2HZWnxsVkgJGhmKQkgihIlOK
- J4vPnksJJNIvaVrpeMy4oNDLffgqqHt+4ikCveP52pi7iuEQQgKmInwtNKyJJANIrgbc
- t6wg==
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=HCTvu4IsRueSfr/ouOzLpKJTPljveQ9bZrKF+dWlcZM=;
+ b=uwbCGrWOJj7uHb8U9chaQV92+35YbEsQHRfs0EIj3zQonSjkigUmgSJ+yB0QlglLDg
+ J5upp3iV4K3Yo8E9hkQgeKqmXM8IkJy8NJil+xqiojw+JNkv+miJRtSjnx6x4Ew++/fK
+ oVoR7PKV7oDdUioPLoyf3iYLFong7g8bm7xAKrXUsywCth2hlynXxpsNsoNDXbufDUCS
+ ulGntEJqx3iNu1kvqV0So8fKjob0Oq5tbIkVkezvQcE6W3QgyTGIqdMQR8LE+1zCcSyD
+ H4v7Vp2rd2jLQo+inVrU89jcAf+cEMqkCHy5fgSn/9tmsa4M2H1nUlF4otdZkAzd+saS
+ Sl0w==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=Wqsnkrqxuzj4H7GgqM3V2IbbAn/b8Sl0ywChnZlDzVw=;
- b=Jecdm/1bQ7ItzHLsqrt/JPWG2Jts4hgx7cFy4kMGsiJkt2wmiYM8jWwwtQt5Y6y39K
- dl/rwmJpEBQhkPzj5wPLZB51WJQ9ORZlBoxPVrAYDPASwmxPgikLEX2raECaFJ7U4Ivn
- kYi38OSq0FPFCZa45sH8cXLAMVSmPlwoKtSnT+g+/zzsBbxbXUhUyGp/sQLAvYmmg/fC
- h497/E8lcXduKoKH3/D8XIh/IMOrUUlajhv2BTZoI70gZLl5N92kLvPqDjLYtczBSYYY
- 9RaivTNZVs4r7G9zTjGLoyZL1BCcYY7BmYAAzS/CaCdUZRuLI1z74qGUSRtOIwqXU/Ok
- JX0g==
-X-Gm-Message-State: APjAAAXajM5sFxLJeYoN2Y5YKYwR2T5GmnfHtjJavclTSmgsKMLPOsGM
- bPbwe7rtb2F7YXfWvOI/lkuoYw==
-X-Google-Smtp-Source: APXvYqx0Vpq43qQXCS96ZNcRfKpgn1FVlYwTD2lRr7UkryQBhX1Ha0iT13M9dJRgn/4mVsxYWYK73A==
-X-Received: by 2002:a1c:407:: with SMTP id 7mr20501193wme.113.1560783702741;
- Mon, 17 Jun 2019 08:01:42 -0700 (PDT)
-Received: from localhost.localdomain ([2a01:e0a:f:6020:100d:4d23:a79e:7684])
- by smtp.gmail.com with ESMTPSA id v24sm9045185wmj.26.2019.06.17.08.01.41
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-SHA bits=128/128);
- Mon, 17 Jun 2019 08:01:42 -0700 (PDT)
-From: Vincent Guittot <vincent.guittot@linaro.org>
-To: linux-pm@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux@armlinux.org.uk,
- gregkh@linuxfoundation.org, rafael@kernel.org, viresh.kumar@linaro.org,
- mingo@redhat.com, peterz@infradead.org
-Subject: [PATCH] sched/topology: remove unused sd param from
- arch_scale_cpu_capacity()
-Date: Mon, 17 Jun 2019 17:00:17 +0200
-Message-Id: <1560783617-5827-1-git-send-email-vincent.guittot@linaro.org>
-X-Mailer: git-send-email 2.7.4
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=HCTvu4IsRueSfr/ouOzLpKJTPljveQ9bZrKF+dWlcZM=;
+ b=lyb24jjFEcmglvsc4jLc72qNomXmcmyR6EcSSC89ClCvC6kS5aWdRDD5nmIvr4YDTE
+ CZSLiMRjBiiUrjX887vrP7U1yzPvoPBgrxC/qi5AxThGsR+eRSCsKMZW9kZcPvbi5HGo
+ QEDB1UdFn72gWDzbZRqQDImrhebN3fzyp4w3AVrcn2p+9ecKDIafYKqN4VnB5LMXQ0TH
+ ThetDp9vdQalWe3B1qnLCHEm/naAfJl/Wlws+aM/2VQEovLEcyMgebJSV+20hSDTBDdc
+ euVvQB9KV8oNKHECs39sJcOv2MHulrjQPl+XjLJ2kdvcINcFMqHyd9konnhWVh/7MUKK
+ /iTQ==
+X-Gm-Message-State: APjAAAXCKnSiVfMy0546GxNL9zBGVrJuLte0nFscyJcE6oGFKUOiAUA4
+ e0HHbQJ8lIs48/Abwl30Sp7xcA==
+X-Google-Smtp-Source: APXvYqxB6hbQ4qmXvYCvcf2gLNsvmhgnO3wKEIll6B3DjpTtJQjVe5P+sAtyL5095jrfNPXh+6fxvw==
+X-Received: by 2002:aca:5403:: with SMTP id i3mr9314748oib.132.1560783643964; 
+ Mon, 17 Jun 2019 08:00:43 -0700 (PDT)
+Received: from localhost.localdomain (li964-79.members.linode.com.
+ [45.33.10.79])
+ by smtp.gmail.com with ESMTPSA id q3sm4835969oig.7.2019.06.17.08.00.36
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Mon, 17 Jun 2019 08:00:43 -0700 (PDT)
+From: Leo Yan <leo.yan@linaro.org>
+To: Arnaldo Carvalho de Melo <acme@kernel.org>, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, netdev@vger.kernel.org,
+ bpf@vger.kernel.org
+Subject: [PATCH] perf cs-etm: Improve completeness for kernel address space
+Date: Mon, 17 Jun 2019 23:00:24 +0800
+Message-Id: <20190617150024.11787-1-leo.yan@linaro.org>
+X-Mailer: git-send-email 2.17.1
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190617_080145_641479_7CB7CB0C 
-X-CRM114-Status: GOOD (  17.11  )
+X-CRM114-CacheID: sfid-20190617_080045_728892_5FE02E4D 
+X-CRM114-Status: GOOD (  20.39  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:341 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:242 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -95,291 +97,178 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: quentin.perret@arm.com, Vincent Guittot <vincent.guittot@linaro.org>
-MIME-Version: 1.0
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Mathieu Poirier <mathieu.poirier@linaro.org>,
+ Suzuki Poulouse <suzuki.poulose@arm.com>,
+ Alexander Shishkin <alexander.shishkin@linux.intel.com>,
+ coresight@lists.linaro.org, Peter Zijlstra <peterz@infradead.org>,
+ Leo Yan <leo.yan@linaro.org>, Namhyung Kim <namhyung@kernel.org>,
+ Jiri Olsa <jolsa@redhat.com>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-struct sched_domain *sd parameter is not used anymore in
-arch_scale_cpu_capacity() so we can remove it.
-
-Signed-off-by: Vincent Guittot <vincent.guittot@linaro.org>
----
- arch/arm/kernel/topology.c       |  2 +-
- drivers/base/arch_topology.c     |  6 +++---
- include/linux/arch_topology.h    |  2 +-
- include/linux/energy_model.h     |  2 +-
- include/linux/sched/topology.h   | 14 +++-----------
- kernel/power/energy_model.c      |  2 +-
- kernel/sched/cpufreq_schedutil.c |  2 +-
- kernel/sched/deadline.c          |  2 +-
- kernel/sched/fair.c              |  6 +++---
- kernel/sched/pelt.c              |  2 +-
- kernel/sched/pelt.h              |  2 +-
- kernel/sched/sched.h             |  2 +-
- kernel/sched/topology.c          |  8 ++++----
- 13 files changed, 22 insertions(+), 30 deletions(-)
-
-diff --git a/arch/arm/kernel/topology.c b/arch/arm/kernel/topology.c
-index 60e375c..d17cb1e 100644
---- a/arch/arm/kernel/topology.c
-+++ b/arch/arm/kernel/topology.c
-@@ -169,7 +169,7 @@ static void update_cpu_capacity(unsigned int cpu)
- 	topology_set_cpu_scale(cpu, cpu_capacity(cpu) / middle_capacity);
- 
- 	pr_info("CPU%u: update cpu_capacity %lu\n",
--		cpu, topology_get_cpu_scale(NULL, cpu));
-+		cpu, topology_get_cpu_scale(cpu));
- }
- 
- #else
-diff --git a/drivers/base/arch_topology.c b/drivers/base/arch_topology.c
-index 1739d7e..9b09e31 100644
---- a/drivers/base/arch_topology.c
-+++ b/drivers/base/arch_topology.c
-@@ -43,7 +43,7 @@ static ssize_t cpu_capacity_show(struct device *dev,
- {
- 	struct cpu *cpu = container_of(dev, struct cpu, dev);
- 
--	return sprintf(buf, "%lu\n", topology_get_cpu_scale(NULL, cpu->dev.id));
-+	return sprintf(buf, "%lu\n", topology_get_cpu_scale(cpu->dev.id));
- }
- 
- static void update_topology_flags_workfn(struct work_struct *work);
-@@ -116,7 +116,7 @@ void topology_normalize_cpu_scale(void)
- 			/ capacity_scale;
- 		topology_set_cpu_scale(cpu, capacity);
- 		pr_debug("cpu_capacity: CPU%d cpu_capacity=%lu\n",
--			cpu, topology_get_cpu_scale(NULL, cpu));
-+			cpu, topology_get_cpu_scale(cpu));
- 	}
- }
- 
-@@ -185,7 +185,7 @@ init_cpu_capacity_callback(struct notifier_block *nb,
- 	cpumask_andnot(cpus_to_visit, cpus_to_visit, policy->related_cpus);
- 
- 	for_each_cpu(cpu, policy->related_cpus) {
--		raw_capacity[cpu] = topology_get_cpu_scale(NULL, cpu) *
-+		raw_capacity[cpu] = topology_get_cpu_scale(cpu) *
- 				    policy->cpuinfo.max_freq / 1000UL;
- 		capacity_scale = max(raw_capacity[cpu], capacity_scale);
- 	}
-diff --git a/include/linux/arch_topology.h b/include/linux/arch_topology.h
-index d9bdc1a..1cfe05e 100644
---- a/include/linux/arch_topology.h
-+++ b/include/linux/arch_topology.h
-@@ -18,7 +18,7 @@ DECLARE_PER_CPU(unsigned long, cpu_scale);
- 
- struct sched_domain;
- static inline
--unsigned long topology_get_cpu_scale(struct sched_domain *sd, int cpu)
-+unsigned long topology_get_cpu_scale(int cpu)
- {
- 	return per_cpu(cpu_scale, cpu);
- }
-diff --git a/include/linux/energy_model.h b/include/linux/energy_model.h
-index aa027f7..73f8c3c 100644
---- a/include/linux/energy_model.h
-+++ b/include/linux/energy_model.h
-@@ -89,7 +89,7 @@ static inline unsigned long em_pd_energy(struct em_perf_domain *pd,
- 	 * like schedutil.
- 	 */
- 	cpu = cpumask_first(to_cpumask(pd->cpus));
--	scale_cpu = arch_scale_cpu_capacity(NULL, cpu);
-+	scale_cpu = arch_scale_cpu_capacity(cpu);
- 	cs = &pd->table[pd->nr_cap_states - 1];
- 	freq = map_util_freq(max_util, cs->frequency, scale_cpu);
- 
-diff --git a/include/linux/sched/topology.h b/include/linux/sched/topology.h
-index 53afbe0..e445d37 100644
---- a/include/linux/sched/topology.h
-+++ b/include/linux/sched/topology.h
-@@ -196,14 +196,6 @@ extern void set_sched_topology(struct sched_domain_topology_level *tl);
- # define SD_INIT_NAME(type)
- #endif
- 
--#ifndef arch_scale_cpu_capacity
--static __always_inline
--unsigned long arch_scale_cpu_capacity(struct sched_domain *sd, int cpu)
--{
--	return SCHED_CAPACITY_SCALE;
--}
--#endif
--
- #else /* CONFIG_SMP */
- 
- struct sched_domain_attr;
-@@ -219,16 +211,16 @@ static inline bool cpus_share_cache(int this_cpu, int that_cpu)
- 	return true;
- }
- 
-+#endif	/* !CONFIG_SMP */
-+
- #ifndef arch_scale_cpu_capacity
- static __always_inline
--unsigned long arch_scale_cpu_capacity(void __always_unused *sd, int cpu)
-+unsigned long arch_scale_cpu_capacity(int cpu)
- {
- 	return SCHED_CAPACITY_SCALE;
- }
- #endif
- 
--#endif	/* !CONFIG_SMP */
--
- static inline int task_node(const struct task_struct *p)
- {
- 	return cpu_to_node(task_cpu(p));
-diff --git a/kernel/power/energy_model.c b/kernel/power/energy_model.c
-index 7d66ee6..0a9326f 100644
---- a/kernel/power/energy_model.c
-+++ b/kernel/power/energy_model.c
-@@ -223,7 +223,7 @@ int em_register_perf_domain(cpumask_t *span, unsigned int nr_states,
- 		 * All CPUs of a domain must have the same micro-architecture
- 		 * since they all share the same table.
- 		 */
--		cap = arch_scale_cpu_capacity(NULL, cpu);
-+		cap = arch_scale_cpu_capacity(cpu);
- 		if (prev_cap && prev_cap != cap) {
- 			pr_err("CPUs of %*pbl must have the same capacity\n",
- 							cpumask_pr_args(span));
-diff --git a/kernel/sched/cpufreq_schedutil.c b/kernel/sched/cpufreq_schedutil.c
-index 962cf343..7c4ce69 100644
---- a/kernel/sched/cpufreq_schedutil.c
-+++ b/kernel/sched/cpufreq_schedutil.c
-@@ -276,7 +276,7 @@ static unsigned long sugov_get_util(struct sugov_cpu *sg_cpu)
- {
- 	struct rq *rq = cpu_rq(sg_cpu->cpu);
- 	unsigned long util = cpu_util_cfs(rq);
--	unsigned long max = arch_scale_cpu_capacity(NULL, sg_cpu->cpu);
-+	unsigned long max = arch_scale_cpu_capacity(sg_cpu->cpu);
- 
- 	sg_cpu->max = max;
- 	sg_cpu->bw_dl = cpu_bw_dl(rq);
-diff --git a/kernel/sched/deadline.c b/kernel/sched/deadline.c
-index c1ef308..8b5bb2a 100644
---- a/kernel/sched/deadline.c
-+++ b/kernel/sched/deadline.c
-@@ -1195,7 +1195,7 @@ static void update_curr_dl(struct rq *rq)
- 						 &curr->dl);
- 	} else {
- 		unsigned long scale_freq = arch_scale_freq_capacity(cpu);
--		unsigned long scale_cpu = arch_scale_cpu_capacity(NULL, cpu);
-+		unsigned long scale_cpu = arch_scale_cpu_capacity(cpu);
- 
- 		scaled_delta_exec = cap_scale(delta_exec, scale_freq);
- 		scaled_delta_exec = cap_scale(scaled_delta_exec, scale_cpu);
-diff --git a/kernel/sched/fair.c b/kernel/sched/fair.c
-index 7f8d477..1c151a7 100644
---- a/kernel/sched/fair.c
-+++ b/kernel/sched/fair.c
-@@ -764,7 +764,7 @@ void post_init_entity_util_avg(struct task_struct *p)
- 	struct sched_entity *se = &p->se;
- 	struct cfs_rq *cfs_rq = cfs_rq_of(se);
- 	struct sched_avg *sa = &se->avg;
--	long cpu_scale = arch_scale_cpu_capacity(NULL, cpu_of(rq_of(cfs_rq)));
-+	long cpu_scale = arch_scale_cpu_capacity(cpu_of(rq_of(cfs_rq)));
- 	long cap = (long)(cpu_scale - cfs_rq->avg.util_avg) / 2;
- 
- 	if (cap > 0) {
-@@ -7633,7 +7633,7 @@ static inline void init_sd_lb_stats(struct sd_lb_stats *sds)
- static unsigned long scale_rt_capacity(struct sched_domain *sd, int cpu)
- {
- 	struct rq *rq = cpu_rq(cpu);
--	unsigned long max = arch_scale_cpu_capacity(sd, cpu);
-+	unsigned long max = arch_scale_cpu_capacity(cpu);
- 	unsigned long used, free;
- 	unsigned long irq;
- 
-@@ -7658,7 +7658,7 @@ static void update_cpu_capacity(struct sched_domain *sd, int cpu)
- 	unsigned long capacity = scale_rt_capacity(sd, cpu);
- 	struct sched_group *sdg = sd->groups;
- 
--	cpu_rq(cpu)->cpu_capacity_orig = arch_scale_cpu_capacity(sd, cpu);
-+	cpu_rq(cpu)->cpu_capacity_orig = arch_scale_cpu_capacity(cpu);
- 
- 	if (!capacity)
- 		capacity = 1;
-diff --git a/kernel/sched/pelt.c b/kernel/sched/pelt.c
-index befce29..42ea66b 100644
---- a/kernel/sched/pelt.c
-+++ b/kernel/sched/pelt.c
-@@ -366,7 +366,7 @@ int update_irq_load_avg(struct rq *rq, u64 running)
- 	 * reflect the real amount of computation
- 	 */
- 	running = cap_scale(running, arch_scale_freq_capacity(cpu_of(rq)));
--	running = cap_scale(running, arch_scale_cpu_capacity(NULL, cpu_of(rq)));
-+	running = cap_scale(running, arch_scale_cpu_capacity(cpu_of(rq)));
- 
- 	/*
- 	 * We know the time that has been used by interrupt since last update
-diff --git a/kernel/sched/pelt.h b/kernel/sched/pelt.h
-index 7489d5f..afff644 100644
---- a/kernel/sched/pelt.h
-+++ b/kernel/sched/pelt.h
-@@ -79,7 +79,7 @@ static inline void update_rq_clock_pelt(struct rq *rq, s64 delta)
- 	 * Scale the elapsed time to reflect the real amount of
- 	 * computation
- 	 */
--	delta = cap_scale(delta, arch_scale_cpu_capacity(NULL, cpu_of(rq)));
-+	delta = cap_scale(delta, arch_scale_cpu_capacity(cpu_of(rq)));
- 	delta = cap_scale(delta, arch_scale_freq_capacity(cpu_of(rq)));
- 
- 	rq->clock_pelt += delta;
-diff --git a/kernel/sched/sched.h b/kernel/sched/sched.h
-index 607859a..7a50391 100644
---- a/kernel/sched/sched.h
-+++ b/kernel/sched/sched.h
-@@ -2248,7 +2248,7 @@ unsigned long schedutil_freq_util(int cpu, unsigned long util_cfs,
- 
- static inline unsigned long schedutil_energy_util(int cpu, unsigned long cfs)
- {
--	unsigned long max = arch_scale_cpu_capacity(NULL, cpu);
-+	unsigned long max = arch_scale_cpu_capacity(cpu);
- 
- 	return schedutil_freq_util(cpu, cfs, max, ENERGY_UTIL);
- }
-diff --git a/kernel/sched/topology.c b/kernel/sched/topology.c
-index 63184cf..f751ce0 100644
---- a/kernel/sched/topology.c
-+++ b/kernel/sched/topology.c
-@@ -1874,10 +1874,10 @@ static struct sched_domain_topology_level
- 	unsigned long cap;
- 
- 	/* Is there any asymmetry? */
--	cap = arch_scale_cpu_capacity(NULL, cpumask_first(cpu_map));
-+	cap = arch_scale_cpu_capacity(cpumask_first(cpu_map));
- 
- 	for_each_cpu(i, cpu_map) {
--		if (arch_scale_cpu_capacity(NULL, i) != cap) {
-+		if (arch_scale_cpu_capacity(i) != cap) {
- 			asym = true;
- 			break;
- 		}
-@@ -1892,7 +1892,7 @@ static struct sched_domain_topology_level
- 	 * to everyone.
- 	 */
- 	for_each_cpu(i, cpu_map) {
--		unsigned long max_capacity = arch_scale_cpu_capacity(NULL, i);
-+		unsigned long max_capacity = arch_scale_cpu_capacity(i);
- 		int tl_id = 0;
- 
- 		for_each_sd_topology(tl) {
-@@ -1902,7 +1902,7 @@ static struct sched_domain_topology_level
- 			for_each_cpu_and(j, tl->mask(i), cpu_map) {
- 				unsigned long capacity;
- 
--				capacity = arch_scale_cpu_capacity(NULL, j);
-+				capacity = arch_scale_cpu_capacity(j);
- 
- 				if (capacity <= max_capacity)
- 					continue;
--- 
-2.7.4
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+QXJtIGFuZCBhcm02NCBhcmNoaXRlY3R1cmUgcmVzZXJ2ZSBzb21lIG1lbW9yeSByZWdpb25zIHBy
+aW9yIHRvIHRoZQpzeW1ib2wgJ19zdGV4dCcgYW5kIHRoZXNlIG1lbW9yeSByZWdpb25zIGxhdGVy
+IHdpbGwgYmUgdXNlZCBieSBkZXZpY2UKbW9kdWxlIGFuZCBCUEYgaml0LiAgVGhlIGN1cnJlbnQg
+Y29kZSBtaXNzZXMgdG8gY29uc2lkZXIgdGhlc2UgbWVtb3J5CnJlZ2lvbnMgdGh1cyBhbnkgYWRk
+cmVzcyBpbiB0aGUgcmVnaW9ucyB3aWxsIGJlIHRha2VuIGFzIHVzZXIgc3BhY2UKbW9kZSwgYnV0
+IHBlcmYgY2Fubm90IGZpbmQgdGhlIGNvcnJlc3BvbmRpbmcgZHNvIHdpdGggdGhlIHdyb25nIENQ
+VQptb2RlIHNvIHdlIG1pc3NlcyB0byBnZW5lcmF0ZSBzYW1wbGVzIGZvciBkZXZpY2UgbW9kdWxl
+IGFuZCBCUEYKcmVsYXRlZCB0cmFjZSBkYXRhLgoKVGhpcyBwYXRjaCBwYXJzZSB0aGUgbGluayBz
+Y3JpcHRzIHRvIGdldCB0aGUgbWVtb3J5IHNpemUgcHJpb3IgdG8gc3RhcnQKYWRkcmVzcyBhbmQg
+cmVkdWNlIHRoaXMgc2l6ZSBmcm9tICdldG1xLT5ldG0tPmtlcm5lbF9zdGFydCcsIHRoZW4gY2Fu
+CmdldCBhIGZpeGVkIHVwIGtlcm5lbCBzdGFydCBhZGRyZXNzIHdoaWNoIGNvbnRhaW4gbWVtb3J5
+IHJlZ2lvbnMgZm9yCmRldmljZSBtb2R1bGUgYW5kIEJQRi4gIEZpbmFsbHksIGNzX2V0bV9fY3B1
+X21vZGUoKSBjYW4gcmV0dXJuIHJpZ2h0Cm1vZGUgZm9yIHRoZXNlIG1lbW9yeSByZWdpb25zIGFu
+ZCBwZXJmIGNhbiBzdWNjZXNzZnVsbHkgZ2VuZXJhdGUKc2FtcGxlcy4KClRoZSByZWFzb24gZm9y
+IHBhcnNpbmcgdGhlIGxpbmsgc2NyaXB0cyBpcyBBcm0gYXJjaGl0ZWN0dXJlIGNoYW5nZXMgdGV4
+dApvZmZzZXQgZGVwZW5kZW50IG9uIGRpZmZlcmVudCBwbGF0Zm9ybXMsIHdoaWNoIGRlZmluZSBt
+dWx0aXBsZSB0ZXh0Cm9mZnNldHMgaW4gJGtlcm5lbC9hcmNoL2FybS9NYWtlZmlsZS4gIFRoaXMg
+b2Zmc2V0IGlzIGRlY2lkZWQgd2hlbiBidWlsZAprZXJuZWwgYW5kIHRoZSBmaW5hbCB2YWx1ZSBp
+cyBleHRlbmRlZCBpbiB0aGUgbGluayBzY3JpcHQsIHNvIHdlIGNhbgpleHRyYWN0IHRoZSB1c2Vk
+IHZhbHVlIGZyb20gdGhlIGxpbmsgc2NyaXB0LiAgV2UgdXNlIHRoZSBzYW1lIHdheSB0bwpwYXJz
+ZSBhcm02NCBsaW5rIHNjcmlwdCBhcyB3ZWxsLiAgSWYgZmFpbCB0byBmaW5kIHRoZSBsaW5rIHNj
+cmlwdCwgdGhlCnByZSBzdGFydCBtZW1vcnkgc2l6ZSBpcyBhc3N1bWVkIGFzIHplcm8sIGluIHRo
+aXMgY2FzZSBpdCBoYXMgbm8gYW55CmNoYW5nZSBjYXVzZWQgd2l0aCB0aGlzIHBhdGNoLgoKQmVs
+b3cgaXMgZGV0YWlsZWQgaW5mbyBmb3IgdGVzdGluZyB0aGlzIHBhdGNoOgoKLSBCdWlsZCBMTFZN
+L0NsYW5nIDguMCBvciBsYXRlciB2ZXJzaW9uOwoKLSBDb25maWd1cmUgcGVyZiB3aXRoIH4vLnBl
+cmZjb25maWc6CgogIHJvb3RAZGViaWFuOn4jIGNhdCB+Ly5wZXJmY29uZmlnCiAgIyB0aGlzIGZp
+bGUgaXMgYXV0by1nZW5lcmF0ZWQuCiAgW2xsdm1dCiAgICAgICAgICBjbGFuZy1wYXRoID0gL21u
+dC9idWlsZC9sbHZtLWJ1aWxkL2J1aWxkL2luc3RhbGwvYmluL2NsYW5nCiAgICAgICAgICBrYnVp
+bGQtZGlyID0gL21udC9saW51eC1rZXJuZWwvbGludXgtY3MtZGV2LwogICAgICAgICAgY2xhbmct
+b3B0ID0gIi1ETElOVVhfVkVSU0lPTl9DT0RFPTB4NTAyMDAgLWciCiAgICAgICAgICBkdW1wLW9i
+aiA9IHRydWUKCiAgW3RyYWNlXQogICAgICAgICAgc2hvd196ZXJvcyA9IHllcwogICAgICAgICAg
+c2hvd19kdXJhdGlvbiA9IG5vCiAgICAgICAgICBub19pbmhlcml0ID0geWVzCiAgICAgICAgICBz
+aG93X3RpbWVzdGFtcCA9IG5vCiAgICAgICAgICBzaG93X2FyZ19uYW1lcyA9IG5vCiAgICAgICAg
+ICBhcmdzX2FsaWdubWVudCA9IDQwCiAgICAgICAgICBzaG93X3ByZWZpeCA9IHllcwoKLSBSdW4g
+J3BlcmYgdHJhY2UnIGNvbW1hbmQgd2l0aCBlQlBGIGV2ZW50OgoKICByb290QGRlYmlhbjp+IyBw
+ZXJmIHRyYWNlIC1lIHN0cmluZyBcCiAgICAgIC1lICRrZXJuZWwvdG9vbHMvcGVyZi9leGFtcGxl
+cy9icGYvYXVnbWVudGVkX3Jhd19zeXNjYWxscy5jCgotIFJlYWQgZUJQRiBwcm9ncmFtIG1lbW9y
+eSBtYXBwaW5nIGluIGtlcm5lbDoKCiAgcm9vdEBkZWJpYW46fiMgZWNobyAxID4gL3Byb2Mvc3lz
+L25ldC9jb3JlL2JwZl9qaXRfa2FsbHN5bXMKICByb290QGRlYmlhbjp+IyBjYXQgL3Byb2Mva2Fs
+bHN5bXMgfCBncmVwIC1FICJicGZfcHJvZ18uK19zeXNfW2VudGVyfGV4aXRdIgogIGZmZmYwMDAw
+MDAwODZhODQgdCBicGZfcHJvZ19mMTczMTMzZGMzOGNjZjg3X3N5c19lbnRlciAgW2JwZl0KICBm
+ZmZmMDAwMDAwMDg4NjE4IHQgYnBmX3Byb2dfYzFiZDg1YzA5MmQ2ZTRhYV9zeXNfZXhpdCAgIFti
+cGZdCgotIExhdW5jaCBhbnkgcHJvZ3JhbSB3aGljaCBhY2Nlc3NlcyBmaWxlIHN5c3RlbSBmcmVx
+dWVudGx5IHNvIGNhbiBoaXQKICB0aGUgc3lzdGVtIGNhbGxzIHRyYWNlIGZsb3cgd2l0aCBlQlBG
+IGV2ZW50OwoKLSBDYXB0dXJlIENvcmVTaWdodCB0cmFjZSBkYXRhIHdpdGggZmlsdGVyaW5nIGVC
+UEYgcHJvZ3JhbToKCiAgcm9vdEBkZWJpYW46fiMgcGVyZiByZWNvcmQgLWUgY3NfZXRtL0AyMDA3
+MDAwMC5ldHIvIFwKCSAgLS1maWx0ZXIgJ2ZpbHRlciAweGZmZmYwMDAwMDAwODZhODQvMHg4MDAn
+IC1hIHNsZWVwIDVzCgotIEFubm90YXRlIGZvciBzeW1ib2wgJ2JwZl9wcm9nX2YxNzMxMzNkYzM4
+Y2NmODdfc3lzX2VudGVyJzoKCiAgcm9vdEBkZWJpYW46fiMgcGVyZiByZXBvcnQKICBUaGVuIHNl
+bGVjdCAnYnJhbmNoZXMnIHNhbXBsZXMgYW5kIHByZXNzICdhJyB0byBhbm5vdGF0ZSBzeW1ib2wK
+ICAnYnBmX3Byb2dfZjE3MzEzM2RjMzhjY2Y4N19zeXNfZW50ZXInLCBwcmVzcyAnUCcgdG8gcHJp
+bnQgdG8gdGhlCiAgYnBmX3Byb2dfZjE3MzEzM2RjMzhjY2Y4N19zeXNfZW50ZXIuYW5ub3RhdGlv
+biBmaWxlOgoKICByb290QGRlYmlhbjp+IyBjYXQgYnBmX3Byb2dfZjE3MzEzM2RjMzhjY2Y4N19z
+eXNfZW50ZXIuYW5ub3RhdGlvbgoKICBicGZfcHJvZ19mMTczMTMzZGMzOGNjZjg3X3N5c19lbnRl
+cigpIGJwZl9wcm9nX2YxNzMxMzNkYzM4Y2NmODdfc3lzX2VudGVyCiAgRXZlbnQ6IGJyYW5jaGVz
+CgogIFBlcmNlbnQgICAgICBpbnQgc3lzX2VudGVyKHN0cnVjdCBzeXNjYWxsX2VudGVyX2FyZ3Mg
+KmFyZ3MpCiAgICAgICAgICAgICAgICAgc3RwICB4MjksIHgzMCwgW3NwLCAjLTE2XSEKCiAgICAg
+ICAgICAgICAgIAlpbnQga2V5ID0gMDsKICAgICAgICAgICAgICAgICBtb3YgIHgyOSwgc3AKCiAg
+ICAgICAgICAgICAgICAgICAgICAgYXVnbWVudGVkX2FyZ3MgPSBicGZfbWFwX2xvb2t1cF9lbGVt
+KCZhdWdtZW50ZWRfZmlsZW5hbWVfbWFwLCAma2V5KTsKICAgICAgICAgICAgICAgICBzdHAgIHgx
+OSwgeDIwLCBbc3AsICMtMTZdIQoKICAgICAgICAgICAgICAgICAgICAgICBhdWdtZW50ZWRfYXJn
+cyA9IGJwZl9tYXBfbG9va3VwX2VsZW0oJmF1Z21lbnRlZF9maWxlbmFtZV9tYXAsICZrZXkpOwog
+ICAgICAgICAgICAgICAgIHN0cCAgeDIxLCB4MjIsIFtzcCwgIy0xNl0hCgogICAgICAgICAgICAg
+ICAgIHN0cCAgeDI1LCB4MjYsIFtzcCwgIy0xNl0hCgogICAgICAgICAgICAgICAJcmV0dXJuIGJw
+Zl9nZXRfY3VycmVudF9waWRfdGdpZCgpOwogICAgICAgICAgICAgICAgIG1vdiAgeDI1LCBzcAoK
+ICAgICAgICAgICAgICAgCXJldHVybiBicGZfZ2V0X2N1cnJlbnRfcGlkX3RnaWQoKTsKICAgICAg
+ICAgICAgICAgICBtb3YgIHgyNiwgIzB4MCAgICAgICAgICAgICAgICAgICAJLy8gIzAKCiAgICAg
+ICAgICAgICAgICAgc3ViICBzcCwgc3AsICMweDEwCgogICAgICAgICAgICAgICAJcmV0dXJuIGJw
+Zl9tYXBfbG9va3VwX2VsZW0ocGlkcywgJnBpZCkgIT0gTlVMTDsKICAgICAgICAgICAgICAgICBh
+ZGQgIHgxOSwgeDAsICMweDAKCiAgICAgICAgICAgICAgICAgbW92ICB4MCwgIzB4MCAgICAgICAg
+ICAgICAgICAgICAJLy8gIzAKCiAgICAgICAgICAgICAgICAgbW92ICB4MTAsICMweGZmZmZmZmZm
+ZmZmZmZmZjggICAgCS8vICMtOAoKICAgICAgICAgICAgICAgCWlmIChwaWRfZmlsdGVyX19oYXMo
+JnBpZHNfZmlsdGVyZWQsIGdldHBpZCgpKSkKICAgICAgICAgICAgICAgICBzdHIgIHcwLCBbeDI1
+LCB4MTBdCgogICAgICAgICAgICAgICAJcHJvYmVfcmVhZCgmYXVnbWVudGVkX2FyZ3MtPmFyZ3Ms
+IHNpemVvZihhdWdtZW50ZWRfYXJncy0+YXJncyksIGFyZ3MpOwogICAgICAgICAgICAgICAgIGFk
+ZCAgeDEsIHgyNSwgIzB4MAoKICAgICAgICAgICAgICAgCXByb2JlX3JlYWQoJmF1Z21lbnRlZF9h
+cmdzLT5hcmdzLCBzaXplb2YoYXVnbWVudGVkX2FyZ3MtPmFyZ3MpLCBhcmdzKTsKICAgICAgICAg
+ICAgICAgICBtb3YgIHgxMCwgIzB4ZmZmZmZmZmZmZmZmZmZmOCAgICAJLy8gIy04CgogICAgICAg
+ICAgICAgICAJc3lzY2FsbCA9IGJwZl9tYXBfbG9va3VwX2VsZW0oJnN5c2NhbGxzLCAmYXVnbWVu
+dGVkX2FyZ3MtPmFyZ3Muc3lzY2FsbF9ucik7CiAgICAgICAgICAgICAgICAgYWRkICB4MSwgeDEs
+IHgxMAoKICAgICAgICAgICAgICAgCXN5c2NhbGwgPSBicGZfbWFwX2xvb2t1cF9lbGVtKCZzeXNj
+YWxscywgJmF1Z21lbnRlZF9hcmdzLT5hcmdzLnN5c2NhbGxfbnIpOwogICAgICAgICAgICAgICAg
+IG1vdiAgeDAsICMweGZmZmY4MDA5ZmZmZmZmZmYgICAgCS8vICMtMTQwNjk0NTM4NjgyMzY5Cgog
+ICAgICAgICAgICAgICAgIG1vdmsgeDAsICMweDY2OTgsIGxzbCAjMTYKCiAgICAgICAgICAgICAg
+ICAgbW92ayB4MCwgIzB4M2UwMAoKICAgICAgICAgICAgICAgICBtb3YgIHgxMCwgIzB4ZmZmZmZm
+ZmZmZmZmMTA0MCAgICAJLy8gIy02MTM3NgoKICAgICAgICAgICAgICAgCWlmIChzeXNjYWxsID09
+IE5VTEwgfHwgIXN5c2NhbGwtPmVuYWJsZWQpCiAgICAgICAgICAgICAgICAgbW92ayB4MTAsICMw
+eDEwMjMsIGxzbCAjMTYKCiAgICAgICAgICAgICAgIAlpZiAoc3lzY2FsbCA9PSBOVUxMIHx8ICFz
+eXNjYWxsLT5lbmFibGVkKQogICAgICAgICAgICAgICAgIG1vdmsgeDEwLCAjMHgwLCBsc2wgIzMy
+CgogICAgICAgICAgICAgICAJbG9vcF9pdGVyX2ZpcnN0KCkKICAgIDMuNjkgICAgICAg4oaSIGJs
+ciAgYnBmX3Byb2dfZjE3MzEzM2RjMzhjY2Y4N19zeXNfZW50ZXIKICAgICAgICAgICAgICAgCWxv
+b3BfaXRlcl9maXJzdCgpCiAgICAgICAgICAgICAgICAgYWRkICB4NywgeDAsICMweDAKCiAgICAg
+ICAgICAgICAgIAlsb29wX2l0ZXJfZmlyc3QoKQogICAgICAgICAgICAgICAgIGFkZCAgeDIwLCB4
+NywgIzB4MAoKICAgICAgICAgICAgICAgCWludCBzaXplID0gcHJvYmVfcmVhZF9zdHIoJmF1Z21l
+bnRlZF9maWxlbmFtZS0+dmFsdWUsIGZpbGVuYW1lX2xlbiwgZmlsZW5hbWVfYXJnKTsKICAgICAg
+ICAgICAgICAgICBtb3YgIHgwLCAjMHgxICAgICAgICAgICAgICAgICAgIAkvLyAjMQoKICBbLi4u
+XQoKQ2M6IE1hdGhpZXUgUG9pcmllciA8bWF0aGlldS5wb2lyaWVyQGxpbmFyby5vcmc+CkNjOiBB
+bGV4YW5kZXIgU2hpc2hraW4gPGFsZXhhbmRlci5zaGlzaGtpbkBsaW51eC5pbnRlbC5jb20+CkNj
+OiBKaXJpIE9sc2EgPGpvbHNhQHJlZGhhdC5jb20+CkNjOiBOYW1oeXVuZyBLaW0gPG5hbWh5dW5n
+QGtlcm5lbC5vcmc+CkNjOiBQZXRlciBaaWpsc3RyYSA8cGV0ZXJ6QGluZnJhZGVhZC5vcmc+CkNj
+OiBTdXp1a2kgUG91bG91c2UgPHN1enVraS5wb3Vsb3NlQGFybS5jb20+CkNjOiBjb3Jlc2lnaHRA
+bGlzdHMubGluYXJvLm9yZwpDYzogbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3Jn
+ClNpZ25lZC1vZmYtYnk6IExlbyBZYW4gPGxlby55YW5AbGluYXJvLm9yZz4KLS0tCiB0b29scy9w
+ZXJmL01ha2VmaWxlLmNvbmZpZyB8IDI0ICsrKysrKysrKysrKysrKysrKysrKysrKwogdG9vbHMv
+cGVyZi91dGlsL2NzLWV0bS5jICAgfCAyNiArKysrKysrKysrKysrKysrKysrKysrKysrLQogMiBm
+aWxlcyBjaGFuZ2VkLCA0OSBpbnNlcnRpb25zKCspLCAxIGRlbGV0aW9uKC0pCgpkaWZmIC0tZ2l0
+IGEvdG9vbHMvcGVyZi9NYWtlZmlsZS5jb25maWcgYi90b29scy9wZXJmL01ha2VmaWxlLmNvbmZp
+ZwppbmRleCA1MWRkMDBmNjU3MDkuLjQ3NzZjMmMxZmI2ZCAxMDA2NDQKLS0tIGEvdG9vbHMvcGVy
+Zi9NYWtlZmlsZS5jb25maWcKKysrIGIvdG9vbHMvcGVyZi9NYWtlZmlsZS5jb25maWcKQEAgLTQx
+OCw2ICs0MTgsMzAgQEAgaWZkZWYgQ09SRVNJR0hUCiAgICAgZW5kaWYKICAgICBMREZMQUdTICs9
+ICQoTElCT1BFTkNTRF9MREZMQUdTKQogICAgIEVYVExJQlMgKz0gJChPUEVOQ1NETElCUykKKyAg
+ICBpZm5lcSAoJCh3aWxkY2FyZCAkKHNyY3RyZWUpL2FyY2gvYXJtNjQva2VybmVsL3ZtbGludXgu
+bGRzKSwpCisgICAgICAjIEV4dHJhY3QgaW5mbyBmcm9tIGxkczoKKyAgICAgICMgIC4gPSAoKCgo
+KCgoKDB4ZmZmZmZmZmZmZmZmZmZmZikpIC0gKCgoMSkpIDw8ICg0OCkpICsgMSkgKyAoMCkpICsg
+KDB4MDgwMDAwMDApKSkgKyAoMHgwODAwMDAwMCkpKSArIDB4MDAwODAwMDA7CisgICAgICAjIEFS
+TTY0X1BSRV9TVEFSVF9TSVpFIDo9ICgweDA4MDAwMDAwICsgMHgwODAwMDAwMCArIDB4MDAwODAw
+MDApCisgICAgICBBUk02NF9QUkVfU1RBUlRfU0laRSA6PSAkKHNoZWxsIGVncmVwICcgXC4gXD0g
+XCh7OH0weFswLTlhLWZBLUZdK1wpezJ9JyBcCisgICAgICAgICQoc3JjdHJlZSkvYXJjaC9hcm02
+NC9rZXJuZWwvdm1saW51eC5sZHMgfCBcCisgICAgICAgIHNlZCAtZSAncy9bKHwpfC58PXwrfDx8
+O3wtXS8vZycgLWUgJ3MvIFwrLyAvZycgLWUgJ3MvXlsgXHRdKi8vJyB8IFwKKyAgICAgICAgYXdr
+IC1GJyAnICd7cHJpbnQgIigiJCQ2ICIrIiAgJCQ3ICIrIiAkJDgiKSJ9JyAyPi9kZXYvbnVsbCkK
+KyAgICBlbHNlCisgICAgICBBUk02NF9QUkVfU1RBUlRfU0laRSA6PSAwCisgICAgZW5kaWYKKyAg
+ICBDRkxBR1MgKz0gLURBUk02NF9QUkVfU1RBUlRfU0laRT0iJChBUk02NF9QUkVfU1RBUlRfU0la
+RSkiCisgICAgaWZuZXEgKCQod2lsZGNhcmQgJChzcmN0cmVlKS9hcmNoL2FybS9rZXJuZWwvdm1s
+aW51eC5sZHMpLCkKKyAgICAgICMgRXh0cmFjdCBpbmZvIGZyb20gbGRzOgorICAgICAgIyAgIC4g
+PSAoKDB4QzAwMDAwMDApKSArIDB4MDAyMDgwMDA7CisgICAgICAjIEFSTV9QUkVfU1RBUlRfU0la
+RSA6PSAweDAwMjA4MDAwCisgICAgICBBUk1fUFJFX1NUQVJUX1NJWkUgOj0gJChzaGVsbCBlZ3Jl
+cCAnIFwuIFw9IFwoezJ9MHhbMC05YS1mQS1GXStcKXsyfScgXAorICAgICAgICAkKHNyY3RyZWUp
+L2FyY2gvYXJtL2tlcm5lbC92bWxpbnV4LmxkcyB8IFwKKyAgICAgICAgc2VkIC1lICdzL1sofCl8
+Lnw9fCt8PHw7fC1dLy9nJyAtZSAncy8gXCsvIC9nJyAtZSAncy9eWyBcdF0qLy8nIHwgXAorICAg
+ICAgICBhd2sgLUYnICcgJ3twcmludCAiKCIkJDIiKSJ9JyAyPi9kZXYvbnVsbCkKKyAgICBlbHNl
+CisgICAgICBBUk1fUFJFX1NUQVJUX1NJWkUgOj0gMAorICAgIGVuZGlmCisgICAgQ0ZMQUdTICs9
+IC1EQVJNX1BSRV9TVEFSVF9TSVpFPSIkKEFSTV9QUkVfU1RBUlRfU0laRSkiCiAgICAgJChjYWxs
+IGRldGVjdGVkLENPTkZJR19MSUJPUEVOQ1NEKQogICAgIGlmZGVmIENTVFJBQ0VfUkFXCiAgICAg
+ICBDRkxBR1MgKz0gLURDU19ERUJVR19SQVcKZGlmZiAtLWdpdCBhL3Rvb2xzL3BlcmYvdXRpbC9j
+cy1ldG0uYyBiL3Rvb2xzL3BlcmYvdXRpbC9jcy1ldG0uYwppbmRleCAwYzc3NzZiNTEwNDUuLmFl
+ODMxZjgzNmM3MCAxMDA2NDQKLS0tIGEvdG9vbHMvcGVyZi91dGlsL2NzLWV0bS5jCisrKyBiL3Rv
+b2xzL3BlcmYvdXRpbC9jcy1ldG0uYwpAQCAtNjEzLDEwICs2MTMsMzQgQEAgc3RhdGljIHZvaWQg
+Y3NfZXRtX19mcmVlKHN0cnVjdCBwZXJmX3Nlc3Npb24gKnNlc3Npb24pCiBzdGF0aWMgdTggY3Nf
+ZXRtX19jcHVfbW9kZShzdHJ1Y3QgY3NfZXRtX3F1ZXVlICpldG1xLCB1NjQgYWRkcmVzcykKIHsK
+IAlzdHJ1Y3QgbWFjaGluZSAqbWFjaGluZTsKKwl1NjQgZml4dXBfa2VybmVsX3N0YXJ0ID0gMDsK
+Kwljb25zdCBjaGFyICphcmNoOwogCiAJbWFjaGluZSA9IGV0bXEtPmV0bS0+bWFjaGluZTsKKwlh
+cmNoID0gcGVyZl9lbnZfX2FyY2gobWFjaGluZS0+ZW52KTsKIAotCWlmIChhZGRyZXNzID49IGV0
+bXEtPmV0bS0+a2VybmVsX3N0YXJ0KSB7CisJLyoKKwkgKiBTaW5jZSBhcm0gYW5kIGFybTY0IHNw
+ZWNpZnkgc29tZSBtZW1vcnkgcmVnaW9ucyBwcmlvciB0bworCSAqICdrZXJuZWxfc3RhcnQnLCBr
+ZXJuZWwgYWRkcmVzc2VzIGNhbiBiZSBsZXNzIHRoYW4gJ2tlcm5lbF9zdGFydCcuCisJICoKKwkg
+KiBGb3IgYXJtIGFyY2hpdGVjdHVyZSwgdGhlIDE2TUIgdmlydHVhbCBtZW1vcnkgc3BhY2UgcHJp
+b3IgdG8KKwkgKiAna2VybmVsX3N0YXJ0JyBpcyBhbGxvY2F0ZWQgdG8gZGV2aWNlIG1vZHVsZXMs
+IGEgUE1EIHRhYmxlIGlmCisJICogQ09ORklHX0hJR0hNRU0gaXMgZW5hYmxlZCBhbmQgYSBQR0Qg
+dGFibGUuCisJICoKKwkgKiBGb3IgYXJtNjQgYXJjaGl0ZWN0dXJlLCB0aGUgcm9vdCBQR0QgdGFi
+bGUsIGRldmljZSBtb2R1bGUgbWVtb3J5CisJICogcmVnaW9uIGFuZCBCUEYgaml0IHJlZ2lvbiBh
+cmUgcHJpb3IgdG8gJ2tlcm5lbF9zdGFydCcuCisJICoKKwkgKiBUbyByZWZsZWN0IHRoZSBjb21w
+bGV0ZSBrZXJuZWwgYWRkcmVzcyBzcGFjZSwgY29tcGVuc2F0ZSB0aGVzZQorCSAqIHByZS1kZWZp
+bmVkIHJlZ2lvbnMgZm9yIGtlcm5lbCBzdGFydCBhZGRyZXNzLgorCSAqLworCWlmICghc3RyY21w
+KGFyY2gsICJhcm02NCIpKQorCQlmaXh1cF9rZXJuZWxfc3RhcnQgPSBldG1xLT5ldG0tPmtlcm5l
+bF9zdGFydCAtCisJCQkJICAgICBBUk02NF9QUkVfU1RBUlRfU0laRTsKKwllbHNlIGlmICghc3Ry
+Y21wKGFyY2gsICJhcm0iKSkKKwkJZml4dXBfa2VybmVsX3N0YXJ0ID0gZXRtcS0+ZXRtLT5rZXJu
+ZWxfc3RhcnQgLQorCQkJCSAgICAgQVJNX1BSRV9TVEFSVF9TSVpFOworCisJaWYgKGFkZHJlc3Mg
+Pj0gZml4dXBfa2VybmVsX3N0YXJ0KSB7CiAJCWlmIChtYWNoaW5lX19pc19ob3N0KG1hY2hpbmUp
+KQogCQkJcmV0dXJuIFBFUkZfUkVDT1JEX01JU0NfS0VSTkVMOwogCQllbHNlCi0tIAoyLjE3LjEK
+CgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1h
+cm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5v
+cmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0t
+a2VybmVsCg==
