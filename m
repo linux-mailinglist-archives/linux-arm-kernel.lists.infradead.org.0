@@ -2,71 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 47CE04839F
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 17 Jun 2019 15:14:04 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 462DC483AA
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 17 Jun 2019 15:16:05 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=+aecWU3pauIv8EFwF2OqnqqaqyAP/1stc5Q20gfHmDw=; b=MaKCFalCTgzPwB
-	rvipvjFvOpFeGRgk/4ecd54dsFoSLsKNO4BvgJ6hOxyqT/0rwujofClKyTxLU8gxDpsO2UbcRWtS8
-	+lFn+BURogZyrjcCKTtteq4aEneX3v3oVgEw4NlSYWTRlsiNCjK/i8NIQ6jnU+MSAJ6A4rHxrJeYK
-	sFchGv2fa5Pg+l2evLh3BId4qDgBLDl2MzykKEL3oK+Epl5e9dFrEzJuI+HJeEFyK5XXRuOphCSsG
-	pk9G4kK3GWUXEaQTq7SNE/TI3Dy4PDY0Vee2+kh7ThEtz+qlwr97/BqgI+h//Tb4S37QUXm8FjvlK
-	WljmEtBjAKEw6pstbLCw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=5dXg64t7zLLlV6Rzo4Ms+R1omGS7ykBo4Y39BNvPxf4=; b=S3ye78REQwysrotjVeUX3Wh4z
+	QgoIE2t+zHO8+JS+8Nyv1y9cBBJ2YXvfmnHLttThSGWf8RELaEjRyPxbUTy0wVQ52URn9aVP2GglL
+	h7X8ACdxmfrvi5tcB6C8XBzGefzFRtFEjZZJ+4S6Np1OOHYnswHHj1LmkKCo6NxnBomSu1Fk3/gRP
+	dSyiazQfJj/UC8ZTscrGvESLN0AIFdHCPGue6CJILPsz680hI7VXPYChehlMIkQBoueQN96h9XA5v
+	afTHEfR5JnQJxbWGV5ix/Zg0wQuH9qRW1/xwhAYJrZq/hlcr/MpLA+SmL4WoV9MKAepDbxNVSnZxf
+	O8SF2VcKw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hcrSS-0008NS-UH; Mon, 17 Jun 2019 13:14:00 +0000
-Received: from mout.kundenserver.de ([212.227.126.187])
+	id 1hcrUO-0002Ug-RV; Mon, 17 Jun 2019 13:16:00 +0000
+Received: from smtp113.ord1c.emailsrvr.com ([108.166.43.113])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hcrSK-0008N9-JN
- for linux-arm-kernel@lists.infradead.org; Mon, 17 Jun 2019 13:13:54 +0000
-Received: from threadripper.lan ([149.172.19.189]) by mrelayeu.kundenserver.de
- (mreue012 [212.227.15.129]) with ESMTPA (Nemesis) id
- 1MNOZO-1i0ZUq1BHO-00OktR; Mon, 17 Jun 2019 15:13:34 +0200
-From: Arnd Bergmann <arnd@arndb.de>
-To: Giuseppe Cavallaro <peppe.cavallaro@st.com>,
- Alexandre Torgue <alexandre.torgue@st.com>,
- Jose Abreu <joabreu@synopsys.com>, "David S. Miller" <davem@davemloft.net>,
- Maxime Coquelin <mcoquelin.stm32@gmail.com>
-Subject: [PATCH net-next] net: stmmac: fix unused-variable warning
-Date: Mon, 17 Jun 2019 15:13:03 +0200
-Message-Id: <20190617131327.2227754-1-arnd@arndb.de>
-X-Mailer: git-send-email 2.20.0
+ id 1hcrUG-0002Tp-4D
+ for linux-arm-kernel@lists.infradead.org; Mon, 17 Jun 2019 13:15:53 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=mev.co.uk;
+ s=20190130-41we5z8j; t=1560777347;
+ bh=ZvJvYkjr7iE1RIXRXDlijzKzJL0BitvNBM9T5FqQAmw=;
+ h=Subject:To:From:Date:From;
+ b=Nl+Gx2+KTHlZUrgrlD4OPdHaDIh8UJfTuRA5MZVnySfiilIiWgnddpiJk4/aln5DA
+ OAo8bcON3aHKJNRIUHN2qprmbAq2BRvH2IUzshdVkvRvYeZuB2iOeftPYIjVWn6ziI
+ KuJnFj51kem220yEC5D7kahxijPjmtFu66j0THaY=
+X-Auth-ID: abbotti@mev.co.uk
+Received: by smtp7.relay.ord1c.emailsrvr.com (Authenticated sender:
+ abbotti-AT-mev.co.uk) with ESMTPSA id D9002A01B2; 
+ Mon, 17 Jun 2019 09:15:44 -0400 (EDT)
+X-Sender-Id: abbotti@mev.co.uk
+Received: from [10.0.0.62] (remote.quintadena.com [81.133.34.160])
+ (using TLSv1.2 with cipher AES128-SHA) by 0.0.0.0:465 (trex/5.7.12);
+ Mon, 17 Jun 2019 09:15:47 -0400
+Subject: Re: [PATCH 12/16] staging/comedi: mark as broken
+To: Christoph Hellwig <hch@lst.de>, Greg KH <gregkh@linuxfoundation.org>
+References: <20190614134726.3827-1-hch@lst.de>
+ <20190614134726.3827-13-hch@lst.de> <20190614140239.GA7234@kroah.com>
+ <20190614144857.GA9088@lst.de> <20190614153032.GD18049@kroah.com>
+ <20190614153428.GA10008@lst.de>
+From: Ian Abbott <abbotti@mev.co.uk>
+Organization: MEV Ltd.
+Message-ID: <60c6af3d-d8e4-5745-8d2b-9791a2f4ff56@mev.co.uk>
+Date: Mon, 17 Jun 2019 14:15:43 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.7.0
 MIME-Version: 1.0
-X-Provags-ID: V03:K1:3iQswqHwy9CHF3y1gp7c7xlBW7MRNJ6Fv/0O9bUwjPHV/LWGdIh
- Sg9soT5vhpPfNJhxJsqwCgkwuTEe0AEIYCVllZ3t2UQIugkzeIa/1LuEaIZUloY3QurmxNh
- gczDmibxxnKXOGvclLvdFNkq77keyFmY3/wMG0JJpWlQyapLFJEW43ks+VIlxcOEDqSZwS3
- OARaUsIkb9o2x/pv8mmcw==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:3iQy2mN8gLw=:a/aWCEZLxeIcdIwAmPzzUe
- xGLtrdS/+m+HkJbvQmw4YCcKRq+jjVA4Wtn+HPWhql6rNXFI2OSAEXwdCkt4iIvUgoATCu+57
- GS0GebKolVJMtTG0QEJlFFsIjyGO8m59rwwITRlcQggasDrAK8+rvAmkj0zXDQxH5nOcB/2WQ
- G9c81RQTG3axlhsfWamWceqs0YzM6AfyfS3NtMZWZ3xgTJhILdLuladwA70p/S8/0BnTTu3sS
- KgBZQkXn8EU9dMZSuJhwKGITr+O3U2A0GJnFezlKJmwLcpxABgMy2XseUoS8lYpD+HStwu7MN
- v5Lok7Nv1fo/vD0OPBH7p0XLNlDiRb1rfN2ouloulgNBCsKnL1A9bJ7n6UpOo1exVphGK8Tif
- hYs9W9CfOJzSMWLFoQd0w0JnNBjPYpaoLYfaQRueJ/d42aHeDlXu2KS4QfKp2aOaCDW2nGk42
- CFtLQrArAaoKywY3KbXVgonhi/2dFRFUch79pGpZBX+eX4KT4Qv7sLcRKGltK3ZYuIrvYIC6o
- 4SMRIX3QMKVrsFsdr2IW+8d7+BwLB51x/8nuP82jiswqd2ExGYd0lujY7KUV5oRMDq3y/hipa
- jmjMn/gFYzIcsNHaLFxdR3Pi5aP/QyWpVbZW8FWNTZXLu8QxuM21jnQBn+UAns6Q8ZT5GRUgK
- PMho0FQJnlISs1mGsxCqrIbfXVdpNqvbxqe46DKNwVH93SXxuPwMlpfFho+kgiQ8xftV+c7+/
- PlChMgjnn4hc9Nlo2a5n9L+84eTAkFLeiaSmdA==
+In-Reply-To: <20190614153428.GA10008@lst.de>
+Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190617_061352_939998_71152DBD 
-X-CRM114-Status: GOOD (  12.16  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190617_061552_303819_6657F2E5 
+X-CRM114-Status: GOOD (  17.89  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.227.126.187 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [212.227.126.187 listed in wl.mailspike.net]
+ no trust [108.166.43.113 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -78,56 +83,69 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Andrew Lunn <andrew@lunn.ch>, Florian Fainelli <f.fainelli@gmail.com>,
- linux-kernel@vger.kernel.org, Arnd Bergmann <arnd@arndb.de>,
- Joao Pinto <jpinto@synopsys.com>, netdev@vger.kernel.org,
- Russell King <linux@armlinux.org.uk>, Aaro Koskinen <aaro.koskinen@nokia.com>,
- linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org,
- Heiner Kallweit <hkallweit1@gmail.com>
-Content-Type: text/plain; charset="us-ascii"
+Cc: Maxime Ripard <maxime.ripard@bootlin.com>,
+ Joonas Lahtinen <joonas.lahtinen@linux.intel.com>,
+ dri-devel@lists.freedesktop.org, linux-mm@kvack.org,
+ devel@driverdev.osuosl.org, linux-s390@vger.kernel.org,
+ linux-rdma@vger.kernel.org, David Airlie <airlied@linux.ie>,
+ linux-media@vger.kernel.org, Intel Linux Wireless <linuxwifi@intel.com>,
+ intel-gfx@lists.freedesktop.org,
+ Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
+ Jani Nikula <jani.nikula@linux.intel.com>,
+ Rodrigo Vivi <rodrigo.vivi@intel.com>, Sean Paul <sean@poorly.run>,
+ "moderated list:ARM PORT" <linux-arm-kernel@lists.infradead.org>,
+ netdev@vger.kernel.org, linux-wireless@vger.kernel.org,
+ linux-kernel@vger.kernel.org, H Hartley Sweeten <hsweeten@visionengravers.com>,
+ iommu@lists.linux-foundation.org, Daniel Vetter <daniel@ffwll.ch>
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-When building without CONFIG_OF, we get a harmless build warning:
+On 14/06/2019 16:34, Christoph Hellwig wrote:
+> On Fri, Jun 14, 2019 at 05:30:32PM +0200, Greg KH wrote:
+>> On Fri, Jun 14, 2019 at 04:48:57PM +0200, Christoph Hellwig wrote:
+>>> On Fri, Jun 14, 2019 at 04:02:39PM +0200, Greg KH wrote:
+>>>> Perhaps a hint as to how we can fix this up?  This is the first time
+>>>> I've heard of the comedi code not handling dma properly.
+>>>
+>>> It can be fixed by:
+>>>
+>>>   a) never calling virt_to_page (or vmalloc_to_page for that matter)
+>>>      on dma allocation
+>>>   b) never remapping dma allocation with conflicting cache modes
+>>>      (no remapping should be doable after a) anyway).
+>>
+>> Ok, fair enough, have any pointers of drivers/core code that does this
+>> correctly?  I can put it on my todo list, but might take a week or so...
+> 
+> Just about everyone else.  They just need to remove the vmap and
+> either do one large allocation, or live with the fact that they need
+> helpers to access multiple array elements instead of one net vmap,
+> which most of the users already seem to do anyway, with just a few
+> using the vmap (which might explain why we didn't see blowups yet).
 
-drivers/net/ethernet/stmicro/stmmac/stmmac_main.c: In function 'stmmac_phy_setup':
-drivers/net/ethernet/stmicro/stmmac/stmmac_main.c:973:22: error: unused variable 'node' [-Werror=unused-variable]
-  struct device_node *node = priv->plat->phy_node;
+Avoiding the vmap in comedi should be do-able as it already has other 
+means to get at the buffer pages.
 
-Reword it so we always use the local variable, by making it the
-fwnode pointer instead of the device_node.
+When comedi makes the buffer from DMA coherent memory, it currently 
+allocates it as a series of page-sized chunks.  That cannot be mmap'ed 
+in one go with dma_mmap_coherent(), so I see the following solutions.
 
-Fixes: 74371272f97f ("net: stmmac: Convert to phylink and remove phylib logic")
-Signed-off-by: Arnd Bergmann <arnd@arndb.de>
----
- drivers/net/ethernet/stmicro/stmmac/stmmac_main.c | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
+1. Change the buffer allocation to allocate a single chunk of DMA 
+coherent memory and use dma_mmap_coherent() to mmap it.
 
-diff --git a/drivers/net/ethernet/stmicro/stmmac/stmmac_main.c b/drivers/net/ethernet/stmicro/stmmac/stmmac_main.c
-index 4ca46289a742..a48751989fa6 100644
---- a/drivers/net/ethernet/stmicro/stmmac/stmmac_main.c
-+++ b/drivers/net/ethernet/stmicro/stmmac/stmmac_main.c
-@@ -970,14 +970,14 @@ static int stmmac_init_phy(struct net_device *dev)
- 
- static int stmmac_phy_setup(struct stmmac_priv *priv)
- {
--	struct device_node *node = priv->plat->phylink_node;
-+	struct fwnode_handle *fwnode = of_fwnode_handle(priv->plat->phylink_node);
- 	int mode = priv->plat->interface;
- 	struct phylink *phylink;
- 
- 	priv->phylink_config.dev = &priv->dev->dev;
- 	priv->phylink_config.type = PHYLINK_NETDEV;
- 
--	phylink = phylink_create(&priv->phylink_config, of_fwnode_handle(node),
-+	phylink = phylink_create(&priv->phylink_config, fwnode,
- 				 mode, &stmmac_phylink_mac_ops);
- 	if (IS_ERR(phylink))
- 		return PTR_ERR(phylink);
+2. Call dma_mmap_coherent() in a loop, adjusting vma->vm_start and 
+vma->vm_end for each iteration (vma->vm_pgoff will be 0), and restoring 
+the vma->vm_start and vma->vm_end at the end.
+
+I'm not sure if 2 is a legal option.
+
 -- 
-2.20.0
-
+-=( Ian Abbott <abbotti@mev.co.uk> || Web: www.mev.co.uk )=-
+-=( MEV Ltd. is a company registered in England & Wales. )=-
+-=( Registered number: 02862268.  Registered address:    )=-
+-=( 15 West Park Road, Bramhall, STOCKPORT, SK7 3JZ, UK. )=-
 
 _______________________________________________
 linux-arm-kernel mailing list
