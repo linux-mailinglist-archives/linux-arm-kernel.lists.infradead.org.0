@@ -2,54 +2,70 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AB5E448A28
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 17 Jun 2019 19:33:00 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6898C48A3E
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 17 Jun 2019 19:35:18 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=MqkJmnUgVI1X7+kTisdR/7h1x4BwrfSksk+dIroQvXs=; b=mDxIcTxracp96n
-	f42+l+riFY8TrYebDuCT3EgjYQ8vNhcn5erf3jtkdzN6aGeUIDSQbLXW66baaKHPvp1RduDP8d6WR
-	FLlR84uSS0fafKfBqznGF4BC7yOgTQljogk+jpUO6lhI6Wb9ImtCGswyBoJQFUENm5cGbTWeiT73q
-	F2jmLG2lkFV9YoUew+THNPBpYMwIxfZ3fxJ6hyNEVy4G0w0OmlMpMj3IWTAKd+7Thgzsn9BE9oHqV
-	geNqzegVsIPizLEwXo/RhLajYka+pzzOthJ7vwsb+BTolN0FcbGWpeHSlmlAx0xmLBzcIcqUGwhI8
-	Y8p+8JBZNLNXA8283/og==;
+	List-Owner; bh=cRBTLjgabC41M8fWnC/njNPQCnaPJT5eFB5KXWhV3Sg=; b=LkpJW1bubm/m5B
+	Ht0RegfJxHjGMXkHPvtuDcOCwl98IBHppdhgOKptNuEL78+Ec9ihzyGPekWNhmJOJucxarvUIvYCQ
+	WOtSTZ2N0tw6IuJ4le6384E4Y4nOI5NaYk3GOtYi4Esj12lvAe5fEkJ4ZB91AlbIeoMbRtTl3wdun
+	GoUImb+ti4/nbVQSbfwCMH0JPtsxp0izzHBKuEPzQCXqVqTmvPq3CMWrZc+0TTNKlry6EKXCyTEUW
+	E30/ap/0LZFaG3sqUXI8KPMoYWfeG+FYNEoTrfUIWf9yetg1+FL21Dgd8Q5D5x+vsi9TDvDLnjge2
+	RasLyFqXFOhEqMMJBoIQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hcvV3-0001P2-TK; Mon, 17 Jun 2019 17:32:57 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hcvUr-0001OZ-LA
- for linux-arm-kernel@lists.infradead.org; Mon, 17 Jun 2019 17:32:46 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id CADFE28;
- Mon, 17 Jun 2019 10:32:44 -0700 (PDT)
-Received: from fuggles.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
- [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id C6A293F246;
- Mon, 17 Jun 2019 10:32:43 -0700 (PDT)
-Date: Mon, 17 Jun 2019 18:32:41 +0100
-From: Will Deacon <will.deacon@arm.com>
-To: Florian Fainelli <f.fainelli@gmail.com>
-Subject: Re: [PATCH] arm64: Allow user selection of ARM64_MODULE_PLTS
-Message-ID: <20190617173241.GM30800@fuggles.cambridge.arm.com>
-References: <20190614025932.533-1-f.fainelli@gmail.com>
+	id 1hcvXF-0001oe-Fh; Mon, 17 Jun 2019 17:35:13 +0000
+Received: from mail.kernel.org ([198.145.29.99])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hcvWy-0001o5-7N
+ for linux-arm-kernel@lists.infradead.org; Mon, 17 Jun 2019 17:34:57 +0000
+Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 8EBB3208C0;
+ Mon, 17 Jun 2019 17:34:53 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1560792895;
+ bh=symDztE4rIf+yOC4zerykBnJwFfFwn0B0J9cXzcdILQ=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=Er8LhWad0kevwkXsZpw2EEET+RGTimdxdJQgp2o70QLJbTadmVEKBOlsb0iza0otu
+ twwbMdZVMGf8J+okxBSfvXdqavW4vmOtNB3gcjoDaPtNMqH5c4H5MwubkacRCsIWjs
+ qnllQNIugWRZiacwBWvaGE4UZP/x5J6d6efd2/cE=
+Date: Mon, 17 Jun 2019 18:34:50 +0100
+From: Will Deacon <will@kernel.org>
+To: "Rafael J. Wysocki" <rafael@kernel.org>
+Subject: Re: [PATCH v2] MAINTAINERS: Update my email address
+Message-ID: <20190617173449.4vhgdvllwxo24ovj@willie-the-truck>
+References: <1560769335-62944-1-git-send-email-guohanjun@huawei.com>
+ <CAJZ5v0jyi-ZkcDU=+GJm5LxMGX36ce=a_j169A_7Ph2AG8_C+w@mail.gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190614025932.533-1-f.fainelli@gmail.com>
-User-Agent: Mutt/1.11.1+86 (6f28e57d73f2) ()
+In-Reply-To: <CAJZ5v0jyi-ZkcDU=+GJm5LxMGX36ce=a_j169A_7Ph2AG8_C+w@mail.gmail.com>
+User-Agent: NeoMutt/20170113 (1.7.2)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190617_103245_742722_14ECEBE5 
-X-CRM114-Status: GOOD (  16.55  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190617_103456_280943_0A730CB3 
+X-CRM114-Status: GOOD (  10.40  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -61,54 +77,29 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: ard.biesheuvel@linaro.org, Catalin Marinas <catalin.marinas@arm.com>,
- open list <linux-kernel@vger.kernel.org>,
- bcm-kernel-feedback-list@Broadcom.com, linux-arm-kernel@vger.kernel.org,
- "moderated list:ARM64 PORT \(AARCH64 ARCHITECTURE\)"
- <linux-arm-kernel@lists.infradead.org>
+Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ Marc Zyngier <marc.zyngier@arm.com>, Catalin Marinas <catalin.marinas@arm.com>,
+ Sudeep Holla <sudeep.holla@arm.com>,
+ ACPI Devel Maling List <linux-acpi@vger.kernel.org>,
+ Hanjun Guo <guohanjun@huawei.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Jun 13, 2019 at 07:59:32PM -0700, Florian Fainelli wrote:
-> Make ARM64_MODULE_PLTS a selectable Kconfig symbol, since some people
-> might have very big modules spilling out of the dedicated module area
-> into vmalloc. Help text is copied from the ARM 32-bit counterpart.
+On Mon, Jun 17, 2019 at 01:11:40PM +0200, Rafael J. Wysocki wrote:
+> On Mon, Jun 17, 2019 at 1:04 PM Hanjun Guo <guohanjun@huawei.com> wrote:
+> >
+> > The @linaro.org address is not working and bonucing, so update the
+> > references.
+> >
+> > Signed-off-by: Hanjun Guo <guohanjun@huawei.com>
 > 
-> Signed-off-by: Florian Fainelli <f.fainelli@gmail.com>
-> ---
->  arch/arm64/Kconfig | 14 +++++++++++++-
->  1 file changed, 13 insertions(+), 1 deletion(-)
-> 
-> diff --git a/arch/arm64/Kconfig b/arch/arm64/Kconfig
-> index 697ea0510729..36befe987b73 100644
-> --- a/arch/arm64/Kconfig
-> +++ b/arch/arm64/Kconfig
-> @@ -1418,8 +1418,20 @@ config ARM64_SVE
->  	  KVM in the same kernel image.
->  
->  config ARM64_MODULE_PLTS
-> -	bool
-> +	bool "Use PLTs to allow module memory to spill over into vmalloc area"
->  	select HAVE_MOD_ARCH_SPECIFIC
-> +	help
-> +	  Allocate PLTs when loading modules so that jumps and calls whose
-> +	  targets are too far away for their relative offsets to be encoded
-> +	  in the instructions themselves can be bounced via veneers in the
-> +	  module's PLT. This allows modules to be allocated in the generic
-> +	  vmalloc area after the dedicated module memory area has been
-> +	  exhausted. The modules will use slightly more memory, but after
-> +	  rounding up to page size, the actual memory footprint is usually
-> +	  the same.
+> How do you want this to go it, via ARM or ACPI?
 
-Isn't the worry really about the runtime performance overhead introduced
-by the veneers, as opposed to the memory usage of the module?
-
-> +	  Disabling this is usually safe for small single-platform
-> +	  configurations. If unsure, say y.
-
-So should this be on by default?
+I've already got a MAINTAINERS update queued to send out later this week, so
+I can easily pick this up if you're ok with it?
 
 Will
 
