@@ -2,73 +2,73 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 10DE6480DF
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 17 Jun 2019 13:36:04 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CF61E480E1
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 17 Jun 2019 13:36:18 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=7F7eclx2T1cqGDiYdycT6zJ1vsn/q9XVR4hg4PfcBVk=; b=RvzMhOnedZD5MI
-	8ibbfJyZXJ+4BLIsOCdvu/XWc07en/00/wN63XoGYUrOKIs5Wcj1iV9Er9aKMSpmdlDOUVZqU8rvJ
-	KVtVLATNZaYkufftFut4LaCdy2S0Oo+jgtwgvtRHl4+tkRhfsRmSuJKo9ozzCr2+gCwaWEfB3MUUD
-	HA3CptUJL8Im4Kk3p3vbSoACp+9hdRydaJiintpRoQvSN4FZe5Xmx3n0IuHexellTDUmWt5xQjLbQ
-	UCDc7+oTCQMEBmYmiyH4Y68MdkM8KGwFZKYgWajDHJCjTNOTRozzdxQnnkd4sjy2K0u25DJcfzI3C
-	JoHhojXCTywJAWCX0B0g==;
+	List-Owner; bh=kDdyKf7MANhtFgXLIrU8NIv8hrH89VtkpEfJpCfLu94=; b=ljJqpvi77FFy9p
+	2DVRnXTA/ji6Z0TxbWnUOuhiklib7Finq6P33FiRaYWMErGgD/mB7bm6UGlatRHyWjaTU0CcFpMlX
+	ehEbPCTSlOhIDSFB4erxLVgwOXBtdSx/VqoPZWcB8pAMfa1Oq+7Wt+V2dyG4G5zsWj7lB5uRSAwb1
+	teSFliIw2zh8XHgqAD+SG4AHRYDTBG3MwMXWmo2RE8Q9UudCWfOe7Qz7sk0qTOV7E8K2tjB8ihuTC
+	SjzyLpNRYow8Q3g5ag51Uhmeosg7onJ/jbr50vUC/BaTihHSDMWBskZ5MDXcWLOMJBEj+QXRrR1lX
+	ZxLL6Yz9LsPpgtmdosAw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hcpva-0007UE-5K; Mon, 17 Jun 2019 11:35:58 +0000
-Received: from mail-vs1-xe41.google.com ([2607:f8b0:4864:20::e41])
+	id 1hcpvq-0007js-W5; Mon, 17 Jun 2019 11:36:15 +0000
+Received: from mail-vs1-xe43.google.com ([2607:f8b0:4864:20::e43])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hcpvI-0007Th-TQ
- for linux-arm-kernel@lists.infradead.org; Mon, 17 Jun 2019 11:35:42 +0000
-Received: by mail-vs1-xe41.google.com with SMTP id a186so5876073vsd.7
+ id 1hcpvQ-0007ZL-7n
+ for linux-arm-kernel@lists.infradead.org; Mon, 17 Jun 2019 11:35:49 +0000
+Received: by mail-vs1-xe43.google.com with SMTP id j26so5853361vsn.10
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 17 Jun 2019 04:35:40 -0700 (PDT)
+ Mon, 17 Jun 2019 04:35:47 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=Oarxy7p2A8M3e32Cd3ZGKiQh3eZMCQGravoCB5ouj68=;
- b=JnWxiIKJnHT6irJrl0SZV7N86mxeB7Jog5bebll+L/jQV3DuM2fXmD5S85vgPJAYI4
- xp+XPND9LYJ24EcwVkhr5CbRgW2AQ83dPZ5s3Qxr8RIwzSsgy/pJpKTu3JSn4w9wXSQh
- zRkHooSvQLAR1gJgYp4uv6e2+fZ6pb16OOdtveCojyGEJ4S6PF1d14oFNEY9wgy+XVsI
- lAF6/UPGt1H8OdgAcCw/BPfa60GC1X4Anw7X9uXrHcPasGBWUuBkaFCgCaYGBQ3/XIAB
- 1Z+XkOSQ9252AzTMwiKYPnTo1JVJveshNtwKTiFEnNlEmN+PxsOVxotew2kAaQtc1/y3
- FKJw==
+ :cc; bh=Rdj5y7WUhCyxuRRSk61DK/G2r8mbCnRcx9QGkbHiSrE=;
+ b=ahERndKw2GY6JLEmRsjtiw3oDqIj+mYbgL6lSV96YnKupRUkausE5qwiHJqwzfXqWL
+ v8zneB63ByCBnkQMtgj9MX/cVJ2Ta1DLnfwalFQbkq7fNAWQX2RWu17yMWsbI7u00bmI
+ FgLTp2YvgADDyXx/WXcH96Ux4+qlE1/Kzl4Ckt96KdZ/Nhtm6zpTCbqbiuQYtslkfgQX
+ G1HN8/KI8qxPB7aNZ9FhbpRkO+7vv1f48hCSkyTFAUfz/hUI70RfXJWI7aWkgiCrUg16
+ e2vvJ2hSh9nDfyS4CZA0XmB3CH3x8cpWGUqB32GFVxNJcF5WQZ0bDvgvl7SCqRiUQa6j
+ bBdg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=Oarxy7p2A8M3e32Cd3ZGKiQh3eZMCQGravoCB5ouj68=;
- b=Fq699vWsCc4V0IU7f0QqPbe6OHl+pLB1KJ66fPYxXwFW7zEt6qwPzPFo/e4jBRuGxG
- k3ZvB2T8BUFdH/3ZgNAJf6V3ATyRzvZiuo7VCPQEDQfDhA/Z3RRN0aoBQNUbbO+y7zns
- 7S4SxmviYZg3NKl9clS7OTdwQrRM69j8ezAeXoblkoAU87ctuqGfVX91k7oSt1pQL/L9
- tGqaopZhXrh0UD+uvks28zEOgxhLZU6+K82f+OMjLbGvo1BuMD66tdEN/ixZjwbi8y5r
- XssnwVbILuGu5hd1LWBdE1+xIW6qVNlvKioroPjzl9WbGOtI6IJ7xjG29KzhwrWHxxPt
- ptag==
-X-Gm-Message-State: APjAAAVBR5sqG0+9/FhXlBJjSO0ibY3GQbnyBs6JBBJjb3u4eHSlPbO+
- Hfca+1+DFEcwyGJNpwWFOXfboWvqYnqhvY+TJiD64hoa
-X-Google-Smtp-Source: APXvYqwcHEVwhj3FTseMM1MQYfqpoVrbYJpW+a7vzqtz0JpcbL/XOQHVC14jXXzahRuLm4BZ4JoZKMxnEhMY0YILz0A=
-X-Received: by 2002:a67:ed8b:: with SMTP id d11mr60218560vsp.35.1560771339760; 
- Mon, 17 Jun 2019 04:35:39 -0700 (PDT)
+ bh=Rdj5y7WUhCyxuRRSk61DK/G2r8mbCnRcx9QGkbHiSrE=;
+ b=EnDuO8HWB0x/x/j+0d/jxhVNqlFdlHfgoZOPCJ9OPyAPoVIOD7teU6ncs7YZIFDO1X
+ ARSCNdIhKjeIfswGzm2KCwToOLfUcvZnqyJzzh+9+pMyMtYrI6QZJBOvhZc413rC1hHd
+ aeQPO0FaetpSl89jC7dMijlx5B6wiH1ZWVBlx0D3QzQ/MaGOEM+y4FVeDW7TbrNnWdfi
+ 2mNL8iUAuRESpFvfUXGRIKuKHPhshHelhc4ojpYmRRo0ejGsRmsxLzPY8vSYwMHCdlZk
+ sIst+yMlZwl/5T6LzICXUDczwJTgB0H8H5AI6994fVtbFgkZVoArdkfcfCsnA8Dl/19a
+ QvqA==
+X-Gm-Message-State: APjAAAWKENmVqAcCxQZ9gYFDmf3Hce+SqgfCfpYPrLwYsagyuGvG4axF
+ pZ1GzhlITjpEwDYb13IBFMRzY3uIlSxQ9iIzefHXRA==
+X-Google-Smtp-Source: APXvYqzzGaGuVCedyz80q6rNgp0f0P5Uq2ofFroB+k9lv/ume7i4twtBuzApD3RlCd+N9qQ92YfAsRGk0Fjz+dYV07U=
+X-Received: by 2002:a67:ee16:: with SMTP id f22mr10488350vsp.191.1560771347027; 
+ Mon, 17 Jun 2019 04:35:47 -0700 (PDT)
 MIME-Version: 1.0
-References: <20190604060914.10886-1-faiz_abbas@ti.com>
-In-Reply-To: <20190604060914.10886-1-faiz_abbas@ti.com>
+References: <1560769448-23070-1-git-send-email-jjian.zhou@mediatek.com>
+In-Reply-To: <1560769448-23070-1-git-send-email-jjian.zhou@mediatek.com>
 From: Ulf Hansson <ulf.hansson@linaro.org>
-Date: Mon, 17 Jun 2019 13:35:03 +0200
-Message-ID: <CAPDyKFqt9N+Hn-VhEr0ANv3zXLGyjCDEDiBgEx8FpLFBBzT0EA@mail.gmail.com>
-Subject: Re: [PATCH 0/4] Add Support for MMC in J721E
-To: Faiz Abbas <faiz_abbas@ti.com>
+Date: Mon, 17 Jun 2019 13:35:10 +0200
+Message-ID: <CAPDyKFo5zpoRFMG6U_Y2uMk0qCyypW-Ui1Kha5t9_Rher4CDkw@mail.gmail.com>
+Subject: Re: [PATCH V2 1/2] mmc: mediatek: fix SDIO IRQ interrupt handle flow
+To: Jjian Zhou <jjian.zhou@mediatek.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190617_043540_955964_53C7AF9D 
-X-CRM114-Status: GOOD (  15.55  )
+X-CRM114-CacheID: sfid-20190617_043548_295992_744B4D24 
+X-CRM114-Status: GOOD (  16.88  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:e41 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:e43 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -90,54 +90,129 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Nishanth Menon <nm@ti.com>, DTML <devicetree@vger.kernel.org>,
- Sekhar Nori <nsekhar@ti.com>,
+Cc: srv_heupstream <srv_heupstream@mediatek.com>,
  "linux-mmc@vger.kernel.org" <linux-mmc@vger.kernel.org>,
- Adrian Hunter <adrian.hunter@intel.com>, Rob Herring <robh+dt@kernel.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Yong Mao <yong.mao@mediatek.com>, linux-mediatek@lists.infradead.org,
+ Chaotian Jing <chaotian.jing@mediatek.com>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
  Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, 4 Jun 2019 at 08:09, Faiz Abbas <faiz_abbas@ti.com> wrote:
+On Mon, 17 Jun 2019 at 13:04, Jjian Zhou <jjian.zhou@mediatek.com> wrote:
 >
-> The following patches add driver support for MMC SDHCI interfaces on
-> TI's J721E devices. The 8 bit and 4 bit instances have phys which are
-> different from the am65x interfaces as well as different from each
-> other which leads to 3 different compatibles and a bunch of flags for
-> indicating the differences.
+> From: jjian zhou <jjian.zhou@mediatek.com>
 >
-> Depends on Nishanth's initial J721E patches here:
-> https://lore.kernel.org/patchwork/cover/1077382/
+> SDIO IRQ is triggered by low level. It need disable SDIO IRQ
+> detected function. Otherwise the interrupt register can't be cleared.
+> It will process the interrupt more.
 >
-> Also depends on my fixes for AM65x driver here:
-> https://lore.kernel.org/patchwork/cover/1079924/
->
-> Tested with: j721e-evm and am65x-evm.
->
-> DT patches will be added in a separate series.
->
-> Faiz Abbas (4):
->   dt-bindings: mmc: sdhci-am654: Document bindings for the host
->     controllers on TI's J721E devices.
->   mmc: sdhci_am654: Add Support for 8 bit IP on J721E
->   mmc: sdhci_am654: Add Support for 4 bit IP on J721E
->   arm64: defconfig: Add config for MMC on AM65x and J721E devices
->
->  .../devicetree/bindings/mmc/sdhci-am654.txt   |   9 +-
->  arch/arm64/configs/defconfig                  |   1 +
->  drivers/mmc/host/sdhci_am654.c                | 257 +++++++++++++-----
->  3 files changed, 204 insertions(+), 63 deletions(-)
->
-> --
-> 2.19.2
->
+> Signed-off-by: Jjian Zhou <jjian.zhou@mediatek.com>
+> Signed-off-by: Chaotian Jing <chaotian.jing@mediatek.com>
+> Signed-off-by: Yong Mao <yong.mao@mediatek.com>
 
-Patch 1->3 applied for next, patch is for arm-soc, thanks!
+Applied for fixes and by adding a fixes/stable tag, thanks!
 
 Kind regards
 Uffe
+
+
+> ---
+>  drivers/mmc/host/mtk-sd.c | 37 ++++++++++++++++++++-----------------
+>  1 file changed, 20 insertions(+), 17 deletions(-)
+>
+> diff --git a/drivers/mmc/host/mtk-sd.c b/drivers/mmc/host/mtk-sd.c
+> index c518cc2..fa7d420 100644
+> --- a/drivers/mmc/host/mtk-sd.c
+> +++ b/drivers/mmc/host/mtk-sd.c
+> @@ -1383,24 +1383,25 @@ static void msdc_request_timeout(struct work_struct *work)
+>         }
+>  }
+>
+> -static void __msdc_enable_sdio_irq(struct mmc_host *mmc, int enb)
+> +static void __msdc_enable_sdio_irq(struct msdc_host *host, int enb)
+>  {
+> -       unsigned long flags;
+> -       struct msdc_host *host = mmc_priv(mmc);
+> -
+> -       spin_lock_irqsave(&host->lock, flags);
+> -       if (enb)
+> +       if (enb) {
+>                 sdr_set_bits(host->base + MSDC_INTEN, MSDC_INTEN_SDIOIRQ);
+> -       else
+> +               sdr_set_bits(host->base + SDC_CFG, SDC_CFG_SDIOIDE);
+> +       } else {
+>                 sdr_clr_bits(host->base + MSDC_INTEN, MSDC_INTEN_SDIOIRQ);
+> -       spin_unlock_irqrestore(&host->lock, flags);
+> +               sdr_clr_bits(host->base + SDC_CFG, SDC_CFG_SDIOIDE);
+> +       }
+>  }
+>
+>  static void msdc_enable_sdio_irq(struct mmc_host *mmc, int enb)
+>  {
+> +       unsigned long flags;
+>         struct msdc_host *host = mmc_priv(mmc);
+>
+> -       __msdc_enable_sdio_irq(mmc, enb);
+> +       spin_lock_irqsave(&host->lock, flags);
+> +       __msdc_enable_sdio_irq(host, enb);
+> +       spin_unlock_irqrestore(&host->lock, flags);
+>
+>         if (enb)
+>                 pm_runtime_get_noresume(host->dev);
+> @@ -1422,6 +1423,8 @@ static irqreturn_t msdc_irq(int irq, void *dev_id)
+>                 spin_lock_irqsave(&host->lock, flags);
+>                 events = readl(host->base + MSDC_INT);
+>                 event_mask = readl(host->base + MSDC_INTEN);
+> +               if ((events & event_mask) & MSDC_INT_SDIOIRQ)
+> +                       __msdc_enable_sdio_irq(host, 0);
+>                 /* clear interrupts */
+>                 writel(events & event_mask, host->base + MSDC_INT);
+>
+> @@ -1430,10 +1433,8 @@ static irqreturn_t msdc_irq(int irq, void *dev_id)
+>                 data = host->data;
+>                 spin_unlock_irqrestore(&host->lock, flags);
+>
+> -               if ((events & event_mask) & MSDC_INT_SDIOIRQ) {
+> -                       __msdc_enable_sdio_irq(host->mmc, 0);
+> +               if ((events & event_mask) & MSDC_INT_SDIOIRQ)
+>                         sdio_signal_irq(host->mmc);
+> -               }
+>
+>                 if ((events & event_mask) & MSDC_INT_CDSC) {
+>                         if (host->internal_cd)
+> @@ -1572,10 +1573,7 @@ static void msdc_init_hw(struct msdc_host *host)
+>         sdr_set_bits(host->base + SDC_CFG, SDC_CFG_SDIO);
+>
+>         /* Config SDIO device detect interrupt function */
+> -       if (host->mmc->caps & MMC_CAP_SDIO_IRQ)
+> -               sdr_set_bits(host->base + SDC_CFG, SDC_CFG_SDIOIDE);
+> -       else
+> -               sdr_clr_bits(host->base + SDC_CFG, SDC_CFG_SDIOIDE);
+> +       sdr_clr_bits(host->base + SDC_CFG, SDC_CFG_SDIOIDE);
+>
+>         /* Configure to default data timeout */
+>         sdr_set_field(host->base + SDC_CFG, SDC_CFG_DTOC, 3);
+> @@ -2103,7 +2101,12 @@ static void msdc_hw_reset(struct mmc_host *mmc)
+>
+>  static void msdc_ack_sdio_irq(struct mmc_host *mmc)
+>  {
+> -       __msdc_enable_sdio_irq(mmc, 1);
+> +       unsigned long flags;
+> +       struct msdc_host *host = mmc_priv(mmc);
+> +
+> +       spin_lock_irqsave(&host->lock, flags);
+> +       __msdc_enable_sdio_irq(host, 1);
+> +       spin_unlock_irqrestore(&host->lock, flags);
+>  }
+>
+>  static int msdc_get_cd(struct mmc_host *mmc)
+> --
+> 1.9.1
+>
 
 _______________________________________________
 linux-arm-kernel mailing list
