@@ -2,84 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 30D5749171
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 17 Jun 2019 22:36:14 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8BA2A4916F
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 17 Jun 2019 22:35:45 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=qK9y9lsc207oSiRAqO4fibQuN9ylNQkqP7Q9wFyU818=; b=WRTgyRTsA4vQwE
-	T/+R+rIfI6h1d0cWPPJ3M/M+8zbV+qraJ9qRrrUUNyCTZ9o+u4lAteyrs8Jz9lumNqxLkqcPJDREE
-	nw5mICqWNgxhOwIaMnWE36qqZjpJ6PWefC48aY9clFWE5Yj+vrB4FEQH5QFYRSo+K1hnQNREjjAVH
-	rZfWYnuFH6joo6+C7kh0UkHbgS8iS83uU9WxRYU3M2fLbRpWcX8u0CSg8HoVSoqKF6PMwuXKLKZXe
-	9iXpSWt8bGVn/I0ZbtKVtbEiAjzkjcqJ8Vy407KOH9lWLZPhqP5SP7cA6sjy/PnRaBMDV92pLUox7
-	zExTauJYJATOcZKnhMHg==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=/IaCbkdbN90D8dyqPpYCv77MtRh26XREuUO1I8xfG0M=; b=YIZ
+	qxgvsaQ+yeKsAhthtWeRvD+7dIBL8fw5pguVGIHg/xbCKrGSwea/GN2GXSYau9K9L5KeaVPWd21QQ
+	UyS+/Rpks/UPaF2kduAl5aHWwVKWpRwqV0ZqPpE6iuUe7kCqu9K+zDzQGhMwSPvsMwH5USZdqfHuo
+	/fostvgFnqSVw8YjR+P6nshS0jIAJaLoJmfjFwgtvV7qqR1uH2sEBBC9l2RYRNs+Z8bIQ5YSGK+ku
+	cIRnqF0a7gpnjmh48z46cesoKVpoqnelpKFE5pxQI+mNaXrtSYSzyVCp/HhR2Yx4g8t7aI8Z6zZek
+	C3CWSd4ObII+ngGDXrvx1JR/S4L4mJQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hcyMO-0003DP-MT; Mon, 17 Jun 2019 20:36:12 +0000
-Received: from mail-lf1-x141.google.com ([2a00:1450:4864:20::141])
+	id 1hcyLs-0002mu-Ce; Mon, 17 Jun 2019 20:35:40 +0000
+Received: from emh01.mail.saunalahti.fi ([62.142.5.107])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hcyLg-0002lo-2y
- for linux-arm-kernel@lists.infradead.org; Mon, 17 Jun 2019 20:35:30 +0000
-Received: by mail-lf1-x141.google.com with SMTP id r15so7532978lfm.11
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 17 Jun 2019 13:35:27 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=C+8Y29ORRYleLlB1wrUfstrrAJFwd+4SQzBtYD68a5k=;
- b=eiWbnC3YqbxlnQ6QVYe16X3jCmoH/I2ilfDs5tuXeOO74w702gqAECyRiJXC994mAl
- hwTT2er3ChKzRciIpiy2DxxinA478wV4VllxuousIR07kFRcFIIj2Tn03IKY3wAU0Xnr
- KmgxsxyXlqVOOBtef7uGUudzRUKMtf1S3rR8oqvbkcaD/BiuiF8iHqIRVs+ZyIhw4Ekg
- fM+J7dgabjeK2OOjHiIhTifRvibgPEMJtWoTJQYIpkN8/qBeIBo5Ye0wNXbIhwlhvJ6M
- xwl+BbX4A1ian+HMJu5QgDay+cFWBJ3VFuixbQ6zw1SS3tb3LsFoY9rAF1C+pV6NGY96
- JoVg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=C+8Y29ORRYleLlB1wrUfstrrAJFwd+4SQzBtYD68a5k=;
- b=LlnJBfLOlOFWXcgPgtQqb+VNF7ITd8BxRTJb+/YkENFWtKD5/LRM9ES3JKuRdEwlDp
- /afCtJzB/VfP9b947PO8H3x+4Pz1GRGXcTxQacYmtDI1TbvSuhpoobP7Wx6NilKHw7tO
- VvYQmzYpsWjGuUDr+AbjQMP5vYOhdGlLGP7gCTUEWT1mYqzeuypjrW4CdPJO2Ywirtmo
- qs8Tc2A5KuAvkhA4vK5U2ihxGIccCuPDu01DCMi9EuN44E9FT3CmxWfEG0i20K+MrBkg
- TMHTVHDeDatEB2q4y3xoGajE981EOaIhGNHbetcrSu/4nf+Zd0KhDk2TfjF0qGrRe/zz
- Nm6Q==
-X-Gm-Message-State: APjAAAUvUhVqtQbkb8nYOLW7maOk5xTNgtwfKCoCA+n8R4OOdDQXRlcY
- UVOmNjuNeT5Tse4drrzjqDmzIPN4brePZuQjOZAWb+7T
-X-Google-Smtp-Source: APXvYqxjmIaUtYRRRZvjNXkdaqy6N1U75oVZVYWxFSCI5aaknnw3cDujGi/BnjigqUNNzYB4I1//kAQWF9RpvQbVp8I=
-X-Received: by 2002:a19:7616:: with SMTP id c22mr1912269lff.115.1560803726241; 
- Mon, 17 Jun 2019 13:35:26 -0700 (PDT)
-MIME-Version: 1.0
-References: <CACRpkdYTgA1i_uFC7NVYVmXf4WhoPHucC11-SrTRYFDUWLtXNw@mail.gmail.com>
- <20190617121124.hkzmwesac64utguo@localhost>
-In-Reply-To: <20190617121124.hkzmwesac64utguo@localhost>
-From: Linus Walleij <linus.walleij@linaro.org>
-Date: Mon, 17 Jun 2019 22:35:14 +0200
-Message-ID: <CACRpkdZeV72GdbsYmKBB16e_voYMFJfLkLpmGDjdt8ontxQfDA@mail.gmail.com>
-Subject: Re: [GIT PULL] Delete the mach-netx machine
-To: Olof Johansson <olof@lixom.net>
+ id 1hcyLe-0002lW-Tt
+ for linux-arm-kernel@lists.infradead.org; Mon, 17 Jun 2019 20:35:29 +0000
+Received: from localhost.localdomain (85-76-83-177-nat.elisa-mobile.fi
+ [85.76.83.177])
+ by emh01.mail.saunalahti.fi (Postfix) with ESMTP id 180A72004A;
+ Mon, 17 Jun 2019 23:35:19 +0300 (EEST)
+From: Aaro Koskinen <aaro.koskinen@iki.fi>
+To: Catalin Marinas <catalin.marinas@arm.com>,
+ Will Deacon <will.deacon@arm.com>, James Morse <james.morse@arm.com>,
+ Jayachandran Chandrasekharan Nair <jnair@marvell.com>
+Subject: [PATCH v2 1/2] arm64: Improve parking of stopped CPUs
+Date: Mon, 17 Jun 2019 23:35:18 +0300
+Message-Id: <20190617203519.328-1-aaro.koskinen@iki.fi>
+X-Mailer: git-send-email 2.17.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190617_133528_128832_8EB3D0FD 
-X-CRM114-Status: GOOD (  10.16  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190617_133527_135112_AB8F98E5 
+X-CRM114-Status: UNSURE (   7.93  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:141 listed in]
- [list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ no trust [62.142.5.107 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.7 SPF_NEUTRAL            SPF: sender does not match SPF record (neutral)
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -91,32 +59,50 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: arm-soc <arm@kernel.org>, Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: Aaro Koskinen <aaro.koskinen@nokia.com>,
+ linux-arm-kernel@lists.infradead.org, Aaro Koskinen <aaro.koskinen@iki.fi>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Jun 17, 2019 at 3:05 PM Olof Johansson <olof@lixom.net> wrote:
-> On Tue, May 28, 2019 at 01:21:20PM +0200, Linus Walleij wrote:
+From: Jayachandran C <jnair@caviumnetworks.com>
 
-> > for you to fetch changes up to ceb02dcf676f41d281af84c9d6000fe27651ebb0:
-> >
-> >   ARM: delete netx machine (2019-05-22 13:55:50 +0200)
-> >
-> > ----------------------------------------------------------------
-> > This deletes the NetX 100/500 machine support.
->
-> Merged. You get a C- grade for your tag though -- I brought forward the patch
-> description into the merge commit too. :)
+The current code puts the stopped cpus in an 'yield' instruction loop.
+Using a busy loop here is unnecessary, we can use the cpu_park_loop()
+function here to do a wfi/wfe.
 
-Damned my kids get better grades than me this year :(
+Signed-off-by: Jayachandran C <jnair@caviumnetworks.com>
+Signed-off-by: Aaro Koskinen <aaro.koskinen@nokia.com>
+Acked-by: Will Deacon <will.deacon@arm.com>
+---
 
-They will be much better with this, once I get them to do
-kernel code.
+	v2: Add Acked-by
 
-Thanks!
-Linus Walleij
+	v1: https://patchwork.kernel.org/patch/10988099/
+
+ arch/arm64/kernel/smp.c | 4 +---
+ 1 file changed, 1 insertion(+), 3 deletions(-)
+
+diff --git a/arch/arm64/kernel/smp.c b/arch/arm64/kernel/smp.c
+index bb4b3f07761a..1a1b96a50245 100644
+--- a/arch/arm64/kernel/smp.c
++++ b/arch/arm64/kernel/smp.c
+@@ -854,9 +854,7 @@ static void ipi_cpu_stop(unsigned int cpu)
+ 
+ 	local_daif_mask();
+ 	sdei_mask_local_cpu();
+-
+-	while (1)
+-		cpu_relax();
++	cpu_park_loop();
+ }
+ 
+ #ifdef CONFIG_KEXEC_CORE
+-- 
+2.17.0
+
 
 _______________________________________________
 linux-arm-kernel mailing list
