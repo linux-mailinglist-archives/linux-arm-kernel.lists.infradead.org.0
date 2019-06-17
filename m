@@ -2,56 +2,67 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B6E8748282
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 17 Jun 2019 14:33:22 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D02CE48289
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 17 Jun 2019 14:34:14 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=lOmGl/lEbSzoFkdwHla4+mRPkfQeoXHhEey5tpeOQNU=; b=iogev9jGTFkjEK
-	+qNoiOsE7rMjPVORLNBHGwZ1a2WdVkyVK2XW0GRZIh5JFJlhcfj51jAnqSGhzagVK606QL1tiCr99
-	ug/y2AU2p05Gfma9Ad+PMRPRY/62GEIMfiX7AJxf68WF4yobRXCFc8/rF/TSOu35QDA/aV9H8Q/Nt
-	QOsafXBM36Ik1ll2kBR4TehD27ef1BZ1iq3FcFBE8x56W6h3dkxtBKeH2n9SJJ6GLvQOMWwxMNRWZ
-	cRw+I+ssDPRHZUIrpsqLwZ+Gu0h2LHujF5LFhjSnlJF6hxqqYeFUmiA9SXj51oT19JtmXyoIQSakl
-	lA9j3X4b9UbqxyXyzROg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=9T/1IrKiw8vNyds9vRHACBzzfPl6WUpDZIrFZ9/UmYg=; b=fcCz1G+YQ4TcTU
+	EkdIutJzzzE4BRF8o4omOScGFInm0/OpAY5MYQnH19ZT/bqV6D2pYlEQkj6foYOY6ZiA0nDd86VCK
+	dMdTwB+TVrLQo6l+rqOuCQL9m2qlFMurkUBUyd2ztVW6Ph2sxs9rVIjLOQNwykASv8OTJcqrnuqQJ
+	a4ZSHua5iMJAZaMOZRK9rUHCmUeSEY4qqNAzB6XVyKgxuPEv0rh1d/nugb8rZLTtsIFAQTMeUCif0
+	rcoqYJy9EkU1GE3xYNmQdsUTRg6Fdv01qjk1Uvekcib1yPEJ+V4U4Gom9XKbIDtAZwVfZTZV9diwq
+	Lugdnzf7rEKIOhpcVXTA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hcqp5-0003KD-Oy; Mon, 17 Jun 2019 12:33:19 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hcqow-0003JZ-Gh
- for linux-arm-kernel@lists.infradead.org; Mon, 17 Jun 2019 12:33:11 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id E75C22B;
- Mon, 17 Jun 2019 05:33:07 -0700 (PDT)
-Received: from [10.1.197.45] (e112298-lin.cambridge.arm.com [10.1.197.45])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 8519F3F246;
- Mon, 17 Jun 2019 05:33:02 -0700 (PDT)
-Subject: Re: [PATCH v4.4 20/45] mm: Introduce lm_alias
-To: Viresh Kumar <viresh.kumar@linaro.org>,
- linux-arm-kernel@lists.infradead.org
-References: <cover.1560480942.git.viresh.kumar@linaro.org>
- <8500aeb27596eef7bd952f988c8db0a4b2f655c6.1560480942.git.viresh.kumar@linaro.org>
-From: Julien Thierry <julien.thierry@arm.com>
-Message-ID: <7b682848-d47d-94cc-6eae-7e97a0ca821a@arm.com>
-Date: Mon, 17 Jun 2019 13:33:01 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.2.1
+	id 1hcqpv-0004E6-0H; Mon, 17 Jun 2019 12:34:11 +0000
+Received: from mout.kundenserver.de ([212.227.17.13])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hcqpk-0004DS-Dy
+ for linux-arm-kernel@lists.infradead.org; Mon, 17 Jun 2019 12:34:01 +0000
+Received: from threadripper.lan ([149.172.19.189]) by mrelayeu.kundenserver.de
+ (mreue109 [212.227.15.145]) with ESMTPA (Nemesis) id
+ 1MMoXC-1htQJR3L4G-00Ihzj; Mon, 17 Jun 2019 14:33:53 +0200
+From: Arnd Bergmann <arnd@arndb.de>
+To: Thierry Reding <treding@nvidia.com>,
+	arm@kernel.org
+Subject: [PATCH] firmware: trusted_foundations: add ARMv7 dependency
+Date: Mon, 17 Jun 2019 14:33:23 +0200
+Message-Id: <20190617123352.742876-1-arnd@arndb.de>
+X-Mailer: git-send-email 2.20.0
 MIME-Version: 1.0
-In-Reply-To: <8500aeb27596eef7bd952f988c8db0a4b2f655c6.1560480942.git.viresh.kumar@linaro.org>
-Content-Language: en-US
+X-Provags-ID: V03:K1:lG3EMn7eymquB1lgFAhu0K13XWBEH1PPENGNounZ6Xnzg65KD9H
+ K7KGoA6BDfG56L7Ecrfg52/nh0Wkl9GI4JMqNZ522rVXqelHcL5sgosETiLuFSnJaybdatK
+ tbzVbKcMFSV5HB4ECOima/g+smwK/Y4eXOe3AZLVnAwxeeNFCzZgJMp+Mrq2TcTDhEVbThS
+ MvyiJ2EXg1PGpN8yIODHw==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:cTIULY2r9us=:hIiDtNFP+qCUQBEtaqIitG
+ Us5dRrmiNDw0C8YsTQngg1k9y3yPLuoap1c4pB1wKOYDlGH/Z2b16Bk9xZrFp/FQj1Hiu/wD3
+ M//QdUVAb2bgRCGUtVDdGnG1sa92uumtSpwYWWKhQgN2YefSeDikjXsdBi+R4xq9j2vQCbqU2
+ 48xPo/MG1dT0JIlexAXxXnlvnco/uhOGGwkX8zHvQQN1uiNmlKAKRmnt16kzpsoQ9r0nycTSb
+ C4una3bkX0IpfkSC/TPpiabqZjrr95g6ITZNtT3vTZTpkldeKlbbxA2JjoLLv+o0hYfhAOlZc
+ chciSIdFB3VxMD85YlssJOZ8oWiomVtJA5b2yvI6VkycfpMCZpTaymq9+kUKT8SD4+SF6Oxpd
+ pcpExgIinHqr6rvf1yeYL2+e2TNiwdSYd+x5UEcHbQzGSg9eebgF+8O2o9oda5wFQtL00m5o/
+ sCf3EGTnr8n3tZoLP9c/cY9FT0abxqDdAUADI5pH+kuAmwD/nMSTPVTZkpeTVpcaetJGs05X5
+ k3c2/p7dneTigsuXTqH2zZ6FPxBsaFj3UFzUtrLXsBsPgzCJEBpPMNqWgpJLecJ7+hfmXGN6f
+ wYVUJf4iBTxyZ8qxUiIgBOpyr2ZltJ9RPgysB2b+R6xkawQx0dZ19TGLoyhl0yYx1OhlwuJRS
+ HTZ4GvuOP6kN27rNAr3OccFx6vWj3oQRgPIiVZVLqwx7fPuRlUCc2Wwed25LofcnhyAvURSwK
+ LX6RFXSSMmLOq5noEXwNhKFZiyqJUQXTB03q6Q==
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190617_053310_593440_E18014CB 
-X-CRM114-Status: GOOD (  13.32  )
+X-CRM114-CacheID: sfid-20190617_053400_763435_9A4E1D3B 
+X-CRM114-Status: GOOD (  12.29  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [212.227.17.13 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -63,40 +74,46 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Marc Zyngier <marc.zyngier@arm.com>,
- Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will.deacon@arm.com>,
- stable@vger.kernel.org, mark.brown@arm.com,
- Russell King <rmk+kernel@arm.linux.org.uk>
+Cc: Arnd Bergmann <arnd@arndb.de>, linux-arm-kernel@lists.infradead.org,
+ linux-kernel@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Viresh,
+The "+sec" extension is invalid for older ARM architectures, but
+the code can now be built on any ARM configuration:
 
-On 14/06/2019 04:08, Viresh Kumar wrote:
-> From: Laura Abbott <labbott@redhat.com>
-> 
-> commit 568c5fe5a54f2654f5a4c599c45b8a62ed9a2013 upstream.
-> 
-> Certain architectures may have the kernel image mapped separately to
-> alias the linear map. Introduce a macro lm_alias to translate a kernel
-> image symbol into its linear alias. This is used in part with work to
-> add CONFIG_DEBUG_VIRTUAL support for arm64.
-> 
+/tmp/trusted_foundations-2d0882.s: Assembler messages:
+/tmp/trusted_foundations-2d0882.s:194: Error: architectural extension `sec' is not allowed for the current base architecture
+/tmp/trusted_foundations-2d0882.s:201: Error: selected processor does not support `smc #0' in ARM mode
+/tmp/trusted_foundations-2d0882.s:213: Error: architectural extension `sec' is not allowed for the current base architecture
+/tmp/trusted_foundations-2d0882.s:220: Error: selected processor does not support `smc #0' in ARM mode
 
-I think this commit was backported in 4.9 because one of the commits you
-dropped (6840bdd73d07 arm64: KVM: Use per-CPU vector when BP hardening
-is enabled) depended on it. I have yet to check whether that other
-commit can be just dropped, however on your branch 4.4 branch, lm_alias
-isn't used anywhere, so we probably don't want to backport this
-particular patch (unless we need to actually backport the other patch in
-some way).
+Add a dependency on ARMv7 for the build.
 
-Cheers,
+Fixes: 4cb5d9eca143 ("firmware: Move Trusted Foundations support")
+Signed-off-by: Arnd Bergmann <arnd@arndb.de>
+---
+ drivers/firmware/Kconfig | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
+diff --git a/drivers/firmware/Kconfig b/drivers/firmware/Kconfig
+index 35078c6f334a..53446e39a32c 100644
+--- a/drivers/firmware/Kconfig
++++ b/drivers/firmware/Kconfig
+@@ -256,7 +256,7 @@ config TI_SCI_PROTOCOL
+ 
+ config TRUSTED_FOUNDATIONS
+ 	bool "Trusted Foundations secure monitor support"
+-	depends on ARM
++	depends on ARM && CPU_V7
+ 	help
+ 	  Some devices (including most early Tegra-based consumer devices on
+ 	  the market) are booted with the Trusted Foundations secure monitor
 -- 
-Julien Thierry
+2.20.0
+
 
 _______________________________________________
 linux-arm-kernel mailing list
