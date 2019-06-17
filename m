@@ -2,75 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DA4634837B
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 17 Jun 2019 15:07:00 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2CCE448378
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 17 Jun 2019 15:06:50 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=yBWwAv3fQAlOFfbbb0h1k1/ToQYx5QTY9xNZ05tV9E0=; b=IHsni8523kI1aP
-	KYUhmpGyaW9G868HSGyzFseTzMsct8ATSlkSZGP4tNqk0F5iQa3bHOoi93bTj9o4DmegdXQGiYUKj
-	7/deJxJLVtcq/UKuc/Fk9/VZHU90l8/BDQ675uo00S20HKGSqGQF3tF7HSJSG7ZTV29kyIIgxs6kS
-	cDZpZ00qbTYZlAPPBTwKj97WKh1t3K73PJNja/e+rfa3/QkW47rqlWIsQ+JZTRdqxnGp2g9Chhcgp
-	Jiz9F2AS/SjcLJtNBrVIa03iv1S0bmwt+aF0dVKyIc0NnUVkgTXEjMdVrLXgs7eYceoDBT9tuzFDh
-	onQ6LxPM0s/J40Vpt0Tg==;
+	List-Owner; bh=V67PneJ5TawCnNdKZQIsPih9FjHOGuW6DqUZ3+G/Eb4=; b=Q4OXCmsaSjtcoF
+	kiLTSAiKghExRCoc+E6EU80mZeyybT5G4uD7Fm7pyVo1HZviZ94AaNKPmR3GC6bf19zhvOOUaKOD4
+	J4cJiK49YCEIixkkaE23C4UjuUHfVDfLzQ/lffIu3DRR1OGr3z4AwubLLj3Et1LVmrplU9l47QgNM
+	d2zbpVTg2YTBeEU9LedUHkhDTcHAUoFsZm5BIUEhKpxvli2q+HpjohxS5u4k0oM7IwOkNVVzy9yHz
+	pnJp67NJ0KOBm0HGl4yHy4c8Vw5xwzPmg1SUT0QAIeOphF51itLUbYLfsc4VT+QotazpsMOuGn6Ts
+	kQsM64aOSomYJd0wPovw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hcrLe-0005sd-Lv; Mon, 17 Jun 2019 13:06:58 +0000
+	id 1hcrLS-0005d9-8A; Mon, 17 Jun 2019 13:06:46 +0000
 Received: from mail-lj1-x243.google.com ([2a00:1450:4864:20::243])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hcrKB-0004jC-AY
- for linux-arm-kernel@lists.infradead.org; Mon, 17 Jun 2019 13:05:28 +0000
-Received: by mail-lj1-x243.google.com with SMTP id r9so9226964ljg.5
+ id 1hcrKD-0004lg-AH
+ for linux-arm-kernel@lists.infradead.org; Mon, 17 Jun 2019 13:05:30 +0000
+Received: by mail-lj1-x243.google.com with SMTP id p17so9246543ljg.1
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 17 Jun 2019 06:05:26 -0700 (PDT)
+ Mon, 17 Jun 2019 06:05:29 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=lixom-net.20150623.gappssmtp.com; s=20150623;
  h=date:from:to:cc:subject:message-id:references:mime-version
  :content-disposition:in-reply-to:user-agent;
- bh=sAoimktjBAXiZV9EknYkw+MHFftU4AS8zQL6VuGBjFE=;
- b=rR6Ldo4a+7Jz7GRFTpASbzT1pQ4z0s85fgNHFoo6v0obvSO+HUG9B9xJ/CZHzjs/u6
- jks/IYyVL14wjQ4WpJNbDoUw7HLXPla6xVPwF05sAWQKf1/HNzeRvEYTN087Diw8Z6QQ
- 2d1kLWpP4uD9aZEuEMCTDg0mBHLj9RohE4IXlQHZsiMkBjXiyjetjGidGlQjiVJf39in
- 2y3/nQPV+6j9pqRAF7Z/kAtEhEt10JrxPZQBqDZGxMMM2I273BW+EWvz80e2Bu2pvY56
- TaSGjdWGkljoyarYnlRXmawT+gY8Hp4vGxs/O6Y1vXAqHcD9YVG/4BrDSMY5wdP9ZQzj
- Meow==
+ bh=mvdHu20wxBSx5VDFsQC67sWAK16V3Gtj/wNQ1YO9YVk=;
+ b=nk9siVh81G5JnaRrCPkGyYwpA89hWIdO69zuQ8N5H1ssDvSm3hatsAs+fhwSgC2wIE
+ w0FWU7PHPgr3DbE/2r74Q3wyTUarc/ngfhJHiuj0ilZG40K+CL7Rswpx3nvkHF3hbsEb
+ ksoTbGv+zds2ZjTnRxveTJjjeGyC/dJJEaBrwPBmuZ5q0n6fkBXXo1/XbImtKwWOGhSd
+ 3qf3FyHghXpSVD3ojdBvSdETAsVY1GGwuWqRJFh+8MafVNKcfrQmCnJGbVduu/Sj951P
+ yrgZ4q+RB6pSawsKAEOG+gdrRyfTrihMPO2RSM3rNgqIXxctROcKG4Qdw9pWc3Z7CwpY
+ VDxA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to:user-agent;
- bh=sAoimktjBAXiZV9EknYkw+MHFftU4AS8zQL6VuGBjFE=;
- b=bizOdRLwCwvhxTGgbBO1+bzOHsRT6x5bjIf20sEDoK+b1TYyTNSz0O9IdZFWws5LVA
- e7YGIoQPOOMNKpOmWaqgKBULSuilOpzd3wfsFTwPtn+EI1qvbZYYe97FlV5bbhWX3Bc4
- 7t4isObJJzgfFgG2A0H+VjtW7EoI/yxw1rOnLSp3WkNWWUfkvcoqtSZuZdun+mbDd61m
- IidKy+udzP3JJxTwZv5+4OvuRfuq+wFTC1kwhue3XaCEtqTToVDbEJbgY8fln8H+gBnj
- NNfhu8MjViqQFoZtuBjOxscbFlrLYKzGN1C4xpCLn1Uvrn6DSF04QjX8yTJKHN3gQpVn
- LxlA==
-X-Gm-Message-State: APjAAAU/tOcjIFA2NozlvqSh0z6b0VEl5LU0XkQ9Hx4xofzRqEddyV6P
- 2BrDTO18dfOuUGfoXB11Sgui2UNappsu3A==
-X-Google-Smtp-Source: APXvYqwVuQ8kkNxnBRy784TJg1uf51gSqqqMi2MLdvspQEx07DEtaGihCYUASWpu2FEcynIe5CmtPA==
-X-Received: by 2002:a2e:8849:: with SMTP id z9mr10541424ljj.203.1560776725607; 
- Mon, 17 Jun 2019 06:05:25 -0700 (PDT)
+ bh=mvdHu20wxBSx5VDFsQC67sWAK16V3Gtj/wNQ1YO9YVk=;
+ b=pEh/dEgi6u0og7s4x8ucbrpdzlMSD5QbfKiI9cKtwEMGXWywjrbqts2ZbUSqBn89m5
+ xXEnUrsc0rjOBM0ewnGWP0y/X/6ajfrw8aK14R26XAJHBVUnABiManbsBRQRuBvoux8i
+ gdwOPD0bOkBVJ+w0GfuPr2oQK5Zq9a7L1rBnrkFH4AaiZaeFr+TrdpEO7fttQHp/Znzg
+ 79kh4bzzAAT+xI/b45xKpcEDcVFWqhPf+In7UqRBrjKtp0sM06du1ne2zkx8kzB77BVq
+ rVCiljxq+YRzNvFU6B+HmMKrzkCL9/bTCGiwDqwdzwhUxqpuaK1BJ0xVqX3lAccaPcbc
+ 9mKQ==
+X-Gm-Message-State: APjAAAVCpqklWzQG1t/BbfD1b9Lc3Hrcz/bxR/1IdbigjNvT3rngl75t
+ E8mnuc0/Wz76T5Wt1SIHRHJWpQ==
+X-Google-Smtp-Source: APXvYqzCj9iDOootsPR0RV6qi1G3yRvFWFDRqPqbDBoMudDadtsnQIOz5bY9WRuBVk1pWTIL/LaPjQ==
+X-Received: by 2002:a2e:989a:: with SMTP id b26mr30269890ljj.31.1560776727896; 
+ Mon, 17 Jun 2019 06:05:27 -0700 (PDT)
 Received: from localhost (h85-30-9-151.cust.a3fiber.se. [85.30.9.151])
- by smtp.gmail.com with ESMTPSA id b25sm1757529lff.42.2019.06.17.06.05.24
+ by smtp.gmail.com with ESMTPSA id m26sm1737721lfj.37.2019.06.17.06.05.26
  (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Mon, 17 Jun 2019 06:05:24 -0700 (PDT)
-Date: Mon, 17 Jun 2019 05:16:55 -0700
+ Mon, 17 Jun 2019 06:05:26 -0700 (PDT)
+Date: Mon, 17 Jun 2019 05:17:25 -0700
 From: Olof Johansson <olof@lixom.net>
-To: Florian Fainelli <f.fainelli@gmail.com>
-Subject: Re: [GIT PULL 6/6] Broadcom soc-arm64 changes for 5.3
-Message-ID: <20190617121655.rel3rbrts5glrv2o@localhost>
-References: <20190612025028.13118-1-f.fainelli@gmail.com>
- <20190612025028.13118-6-f.fainelli@gmail.com>
+To: Tony Lindgren <tony@atomide.com>
+Subject: Re: [GIT PULL 1/4] soc changes for omap variants for v5.3
+Message-ID: <20190617121725.tcyrjpoillqh6n6f@localhost>
+References: <pull-1560399818-512977@atomide.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190612025028.13118-6-f.fainelli@gmail.com>
+In-Reply-To: <pull-1560399818-512977@atomide.com>
 User-Agent: NeoMutt/20170113 (1.7.2)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190617_060527_388357_8E5EC478 
-X-CRM114-Status: GOOD (  11.95  )
+X-CRM114-CacheID: sfid-20190617_060529_392041_2709E9A7 
+X-CRM114-Status: GOOD (  12.91  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -95,37 +94,35 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Doug Berger <opendmb@gmail.com>, arm@kernel.org, arnd@arndb.de,
- khilman@kernel.org, Jim Quinlan <jim2101024@gmail.com>,
- bcm-kernel-feedback-list@broadcom.com, linux-arm-kernel@lists.infradead.org
+Cc: linux-omap@vger.kernel.org, arm@kernel.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Jun 11, 2019 at 07:50:28PM -0700, Florian Fainelli wrote:
+On Thu, Jun 13, 2019 at 12:10:50AM -0700, Tony Lindgren wrote:
+> From: "Tony Lindgren" <tony@atomide.com>
+> 
 > The following changes since commit a188339ca5a396acc588e5851ed7e19f66b0ebd9:
 > 
 >   Linux 5.2-rc1 (2019-05-19 15:47:09 -0700)
 > 
 > are available in the Git repository at:
 > 
->   https://github.com/Broadcom/stblinux.git tags/arm-soc/for-5.3/soc-arm64
+>   git://git.kernel.org/pub/scm/linux/kernel/git/tmlind/linux-omap tags/omap-for-v5.3/soc-signed
 > 
-> for you to fetch changes up to 724cf0aecb0d839b0b5865901b02a742dcfa6ea4:
+> for you to fetch changes up to 45450f36e569e5162957df488b0174c9a952e1b0:
 > 
->   arm64: Enable PINCTRL for ARCH_BRCMSTB (2019-05-31 10:34:38 -0700)
+>   soc: ti: pm33xx: Add a print while entering RTC only mode with DDR in self-refresh (2019-06-10 05:19:26 -0700)
 > 
 > ----------------------------------------------------------------
-> This pull request contains Broadcom ARM64-based SoCs Kconfig.platform
-> changes for 5.3, please pull the following:
+> ti-sysc soc changes for v5.3
 > 
-> - Jim adds the ability for ARCH_BRCMSTB to use reset controllers
-> 
-> - Doug adds the ability for ARCH_BRCMSTB to use the PINCTRL framework
-> 
-> - Florian enables the use of the BCM7038 Level 1 interrupt controller
->   for ARCH_BRCMSTB
+> Just two changes to make few platform data functions static, and to
+> call dev_info() if am437x is suspending to RTC-only mode. We want to
+> see this in case of issues as it depends on the board wiring for things
+> like DDR memory.
 
 Merged, thanks!
 
