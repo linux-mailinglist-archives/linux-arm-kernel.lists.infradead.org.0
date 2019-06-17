@@ -2,64 +2,63 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 88C3B489ED
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 17 Jun 2019 19:20:43 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C9B5648A0E
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 17 Jun 2019 19:26:41 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:
-	In-Reply-To:References:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+v4ZIiBI6uTI1xNQuOKHaO4kUuvAnvBBB20sXKFFTy0=; b=nKpzlY4wM0ignn
-	W4xe7/jMgC0phZY4Dr+JhKva8logIwU45PDq99RgTFGIfyG/ujaAWDdKx2wsSLnOUXRA/eiCXTYrB
-	gRmoaJbxvDu+SdtocnAGCdaIT5W4iz6QQe1JCKzpnNEl7v+4tLUN1Ss13tH3jP/YdDXsrxFpXRJ24
-	FvgB3KDFh/fNS2MB5W5ZqefJoHPWTwHWAzt5SPkZ7YQxjodAILbdpzYm7EXk1ijXHqGOOIT2hPOzZ
-	+2fDjcOn9OeehI6aYldAiEcKiNyZHa1qIxvtxBpEJKab4bpQ4aocutoh1CJVSGrB6cQAgYDMGxJjA
-	xkuDkp/y1B7Yj9caCwtQ==;
+	List-Owner; bh=Nx3wl5sOeuQqMnyqVdP34kI9w9kqH51a6YiJmKg0bM0=; b=j0T7jYVNndj4jM
+	4/pL8AAGQNr+Qxc33uiyQvI53rif37l+Gv2jH932hE2q9dx4Nj6t6+s4vWGqKaN8Wt7PkYGymfati
+	w1ogtNnlo1GSeb/MeT53GlRHmYW45PxD5OUMfalDg0dvo+Cs12s1UjDO+f/PCHERyr8dzwoaFvc0E
+	aC2+yKMEfmB3FypaNbznM/OT8uVgDOCgfDo/QevXEwt/711aWgUCh4qtD/txo3/YcHt/zakQoQutg
+	l+hxU8G0XwI5ZC7nC4G8A7AzA9fEHRck+CBnxACg31ApKSwRByIofhwiafdPoJ0K8zN056rZLiqwn
+	8wo4m6TjAIjRMi42l60g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hcvJ8-0003Fa-E2; Mon, 17 Jun 2019 17:20:38 +0000
-Received: from p3plmtsmtp03.prod.phx3.secureserver.net ([184.168.131.16])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hcvIw-0003Ep-74
- for linux-arm-kernel@lists.infradead.org; Mon, 17 Jun 2019 17:20:27 +0000
-Received: from n16.mail01.mtsvc.net ([216.70.64.51]) by :MT-SMTP: with ESMTP
- id cvIOhlTwxu62YcvIOh4voI; Mon, 17 Jun 2019 10:19:52 -0700
-X-SID: cvIOhlTwxu62Y
-Received: from cpe-71-75-202-74.carolina.res.rr.com ([71.75.202.74]:51042
- helo=SBGCLTOFFICE)
- by n16.mail01.mtsvc.net with esmtpsa (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256)
- (Exim 4.92) (envelope-from <tkrantz@stahurabrenner.com>)
- id 1hcvIK-0005or-VZ; Mon, 17 Jun 2019 13:19:52 -0400
-From: "Timothy Krantz" <tkrantz@stahurabrenner.com>
-To: "'Miquel Raynal'" <miquel.raynal@bootlin.com>
-References: <!&!AAAAAAAAAAAuAAAAAAAAAOBWTR25SONAuESb5loyl/sBAMO2jhD3dRHOtM0AqgC7tuYAAAAAAA4AABAAAABB6J1kxOR7T73eMrM92Eq+AQAAAAA=@stahurabrenner.com>	<20190429095727.48de0b7c@xps13>	<!&!AAAAAAAAAAAuAAAAAAAAAOBWTR25SONAuESb5loyl/sBAMO2jhD3dRHOtM0AqgC7tuYAAAAAAA4AABAAAAABdzCVMdZ+R6253dvJGHcXAQAAAAA=@stahurabrenner.com>	<20190617113841.60032387@xps13>
- <20190617114016.10fb9e03@xps13>
-In-Reply-To: <20190617114016.10fb9e03@xps13>
-Subject: RE: espressobin device tree with kernel 5.1 RC
-Date: Mon, 17 Jun 2019 13:19:46 -0400
-Message-ID: <!&!AAAAAAAAAAAuAAAAAAAAAOBWTR25SONAuESb5loyl/sBAMO2jhD3dRHOtM0AqgC7tuYAAAAAAA4AABAAAADly4/rI9w9RYcxQAoCt9xgAQAAAAA=@stahurabrenner.com>
+	id 1hcvOv-00075Q-T4; Mon, 17 Jun 2019 17:26:38 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hcvOi-00073v-Mr
+ for linux-arm-kernel@lists.infradead.org; Mon, 17 Jun 2019 17:26:26 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id D841628;
+ Mon, 17 Jun 2019 10:26:23 -0700 (PDT)
+Received: from fuggles.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
+ [10.121.207.14])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id B94A93F246;
+ Mon, 17 Jun 2019 10:26:22 -0700 (PDT)
+Date: Mon, 17 Jun 2019 18:26:20 +0100
+From: Will Deacon <will.deacon@arm.com>
+To: Ard Biesheuvel <ard.biesheuvel@linaro.org>
+Subject: Re: [RFC] Disable lockref on arm64
+Message-ID: <20190617172620.GK30800@fuggles.cambridge.arm.com>
+References: <20190614070914.GA21961@dc5-eodlnx05.marvell.com>
+ <20190614095846.GC10506@fuggles.cambridge.arm.com>
+ <CAKv+Gu_Kdq=UPijjA84FpmO=ZsdEO9EyyF7GeOQ+WmfqtO_hMg@mail.gmail.com>
+ <20190614103850.GG10659@fuggles.cambridge.arm.com>
+ <201906142026.1BC27EDB1E@keescook>
+ <CAKv+Gu_XuhgUCYOeykrbaxJz-wL1HFrc_O+HeZHqaGkMHd2J9Q@mail.gmail.com>
+ <201906150654.FF4400F7C8@keescook>
+ <CAKv+Gu9-rZ16Nb9t3=knzW0BHu0eNxQoPwWS4c8UMMm=2iqiuw@mail.gmail.com>
+ <201906161429.BCE1083@keescook>
+ <CAKv+Gu_8ibO4D01DZv6KjL2GnvKuVBVnt=doxkN0w=4utJ7NvQ@mail.gmail.com>
 MIME-Version: 1.0
-X-Mailer: Microsoft Outlook 15.0
-Thread-Index: AQHHHNahTQSMuKl1SiqoWXgyzEZ1/QHhLXjKAr/FJm4BlquXjgGHPVqnpn4wKUA=
-Content-Language: en-us
-X-Authenticated-User: 902853 tkrantz@stahurabrenner.com
-X-MT-ID: C1A731F58FEDE20B47E8EFF5D29156B2BFE18A53
-X-CMAE-Envelope: MS4wfO/Yd5pafHyDT60Jmzz/KBty6jXdrG5Jhvh3hAgn70C2SWbh7Wu05RJxqs1XQcYLEmMcLkdNpQ+n91B73lBmee5woU8rQXYxO7GQHc5AHKn78XEGpnZU
- 93E64ZPno8PcGeqhzV89Z/rQxW1EinsjnnGQMR8R/w3HpjlDMsIELUfkmETgNruPRuVjawQNx6JSDzt36bZo/UBCU4RuaPpICGHgEn61MwadE8Z7GhoVUn+e
- agEI6EA6mgw/olM6sJ+WIw==
+Content-Disposition: inline
+In-Reply-To: <CAKv+Gu_8ibO4D01DZv6KjL2GnvKuVBVnt=doxkN0w=4utJ7NvQ@mail.gmail.com>
+User-Agent: Mutt/1.11.1+86 (6f28e57d73f2) ()
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190617_102026_272296_962B5BE3 
-X-CRM114-Status: GOOD (  11.87  )
+X-CRM114-CacheID: sfid-20190617_102624_834397_65DAB71C 
+X-CRM114-Status: GOOD (  21.52  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [184.168.131.16 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -71,38 +70,91 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Kees Cook <keescook@chromium.org>,
+ "catalin.marinas@arm.com" <catalin.marinas@arm.com>,
+ Jan Glauber <jglauber@marvell.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Jayachandran Chandrasekharan Nair <jnair@marvell.com>,
+ Linus Torvalds <torvalds@linux-foundation.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-VGhhbmtzIE1pcXVlbCwKCj4gLS0tLS1PcmlnaW5hbCBNZXNzYWdlLS0tLS0KPiBGcm9tOiBNaXF1
-ZWwgUmF5bmFsIFttYWlsdG86bWlxdWVsLnJheW5hbEBib290bGluLmNvbV0KPiBTZW50OiBNb25k
-YXksIEp1bmUgMTcsIDIwMTkgNTo0MCBBTQo+IFRvOiBUaW1vdGh5IEtyYW50eiA8dGtyYW50ekBz
-dGFodXJhYnJlbm5lci5jb20+Cj4gQ2M6IGxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFk
-Lm9yZwo+IFN1YmplY3Q6IFJlOiBlc3ByZXNzb2JpbiBkZXZpY2UgdHJlZSB3aXRoIGtlcm5lbCA1
-LjEgUkMKPiAKPiBIaSBUaW1vdGh5LAo+IAo+IE1pcXVlbCBSYXluYWwgPG1pcXVlbC5yYXluYWxA
-Ym9vdGxpbi5jb20+IHdyb3RlIG9uIE1vbiwgMTcgSnVuIDIwMTkKPiAxMTozODo0MSArMDIwMDoK
-PiAKPiA+IEhpIFRpbW90aHksCj4gPgo+ID4gUGxlYXNlIGtlZXAgdGhlIExpbnV4IEFSTSBrZXJu
-ZWwgTUwgaW4gY29weS4KPiA+Cj4gPiAiVGltb3RoeSBLcmFudHoiIDx0a3JhbnR6QHN0YWh1cmFi
-cmVubmVyLmNvbT4gd3JvdGUgb24gU2F0LCAxNSBKdW4KPiAyMDE5Cj4gPiAxODo1NjowMCAtMDQw
-MDoKPiA+Cj4gPiA+IEhlbGxvLAo+ID4gPiBJIGFtIHN0aWxsIHVuYWJsZSB0byBnZXQgNS4xIG9y
-IDUuMnJjIGtlcm5lbHMgdG8gYm9vdCB3aXRoIHRoZSBhc3NvY2lhdGVkIGR0Yi4KPiBUaGV5IGFs
-bCBzZWVtIHRvIHdvcmsgZmluZSB3aXRoIHRoZSBvbGRlciBkdGIuCj4gPiA+Cj4gPiA+IEkgYW0g
-Y2VydGFpbiB0aGF0IGl0IGlzIHNvbWV0aGluZyBpbiBteSAuY29uZmlnIHRoYXQgaXMgbm90IHBy
-b3Blcmx5IHNldC4KPiA+ID4KPiA+ID4gSSBkb24ndCBzdXBwb3NlIHlvdSBjYW4gc2VuZCBtZSBh
-IGNvcHkgb2YgeW91ciAuY29uZmlnIHRoYXQgd29ya3Mgc28gdGhhdAo+IEkgY2FuIHRyeSB3aXRo
-IHRoYXQ/Cj4gPgo+ID4gTXlIZXJlIGlzIG15IGNvbmZpZ3VyYXRpb24gZm9yIGEgNS4yLXJjMSBr
-ZXJuZWwuCj4gCj4gSGVyZSBpdCBpcyAtPiBodHRwOi8vY29kZS5idWxpeC5vcmcvbmdkcjh6LTc3
-NDA3MQo+IAo+IFNBVEEgcG9ydCBpcyB3b3JraW5nIHdpdGggdGhpcyBzZXR1cC4KPiAKPiBUaGFu
-a3MsCj4gTWlxdcOobAoKVGhpcyBodHRwczovL3Bhc3RlYmluLmNvbS94UFRNZGJieAoKSXMgd2hh
-dCBJIGdldCB3aXRoIGEga2VybmVsIGNvbmZpZ3VyZWQgd2l0aCB5b3VyIC5jb25maWcuCgpJIHN1
-c3BlY3QgdGhlcmUgaXMgc29tZSBtYWdpYyBpbiAKCkNPTkZJR19JTklUUkFNRlNfU09VUkNFPSIv
-aG9tZS9tcmF5bmFsL2J1aWxkcm9vdC9vdXRwdXQtYXJtL2ltYWdlcy9yb290ZnMuY3BpbyIKCldo
-aWNoIEkgZG8gbm90IGhhdmUgdGhhdCBtYXkgYmUgbWFraW5nIGEgZGlmZmVyZW5jZT8gKHRoYXQg
-aXMgdGhlIG9ubHkgZGlmZmVyZW5jZSBpbiB3aGF0IEkgY29tcGlsZWQgYW5kIHlvdSBzZW50IHRv
-IG1lKS4KClRoYW5rcyBmb3IgYW55IGlucHV0IHlvdSBtaWdodCBoYXZlLgoKVGltCgoKX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5l
-bCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6
-Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
+On Mon, Jun 17, 2019 at 01:33:19PM +0200, Ard Biesheuvel wrote:
+> On Sun, 16 Jun 2019 at 23:31, Kees Cook <keescook@chromium.org> wrote:
+> > On Sat, Jun 15, 2019 at 04:18:21PM +0200, Ard Biesheuvel wrote:
+> > > Yes, I am using the same saturation point as x86. In this example, I
+> > > am not entirely sure I understand why it matters, though: the atomics
+> > > guarantee that the write by CPU2 fails if CPU1 changed the value in
+> > > the mean time, regardless of which value it wrote.
+> > >
+> > > I think the concern is more related to the likelihood of another CPU
+> > > doing something nasty between the moment that the refcount overflows
+> > > and the moment that the handler pins it at INT_MIN/2, e.g.,
+> > >
+> > > > CPU 1                   CPU 2
+> > > > inc()
+> > > >   load INT_MAX
+> > > >   about to overflow?
+> > > >   yes
+> > > >
+> > > >   set to 0
+> > > >                          <insert exploit here>
+> > > >   set to INT_MIN/2
+> >
+> > Ah, gotcha, but the "set to 0" is really "set to INT_MAX+1" (not zero)
+> > if you're using the same saturation.
+> >
+> 
+> Of course. So there is no issue here: whatever manipulations are
+> racing with the overflow handler can never result in the counter to
+> unsaturate.
+> 
+> And actually, moving the checks before the stores is not as trivial as
+> I thought, E.g., for the LSE refcount_add case, we have
+> 
+>         "       ldadd           %w[i], w30, %[cval]\n"                  \
+>         "       adds            %w[i], %w[i], w30\n"                    \
+>         REFCOUNT_PRE_CHECK_ ## pre (w30))                               \
+>         REFCOUNT_POST_CHECK_ ## post                                    \
+> 
+> and changing this into load/test/store defeats the purpose of using
+> the LSE atomics in the first place.
+> 
+> On my single core TX2, the comparative performance is as follows
+> 
+> Baseline: REFCOUNT_TIMING test using REFCOUNT_FULL (LSE cmpxchg)
+>       191057942484      cycles                    #    2.207 GHz
+>       148447589402      instructions              #    0.78  insn per
+> cycle
+> 
+>       86.568269904 seconds time elapsed
+> 
+> Upper bound: ATOMIC_TIMING
+>       116252672661      cycles                    #    2.207 GHz
+>        28089216452      instructions              #    0.24  insn per
+> cycle
+> 
+>       52.689793525 seconds time elapsed
+> 
+> REFCOUNT_TIMING test using LSE atomics
+>       127060259162      cycles                    #    2.207 GHz
+
+Ok, so assuming JC's complaint is valid, then these numbers are compelling.
+In particular, my understanding of this thread is that your optimised
+implementation doesn't actually sacrifice any precision; it just changes
+the saturation behaviour in a way that has no material impact. Kees, is that
+right?
+
+If so, I'm not against having this for arm64, with the premise that we can
+hide the REFCOUNT_FULL option entirely given that it would only serve to
+confuse if exposed.
+
+Will
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
