@@ -2,93 +2,71 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BAA4548D7B
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 17 Jun 2019 21:06:38 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CCBA248DC3
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 17 Jun 2019 21:17:05 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Message-ID:
-	Subject:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
-	List-Owner; bh=ATZcEUyiytSmvcVbYhODpdizg75ILNN6yo7lGzi3DUg=; b=JU73xtS97tCyih
-	9wfXZhA1o4pNQPnjuVOfPJ0T4YrEEi1vfKZxOhPW4z6DJ6kogXoawud6esGvPO5LL1r7D6z+9qkSg
-	iUcNLqx55dvWfPM3Ru4mQFu7cSF64L3+aVEY6C3LvGXUalXF+2J49QWjPXPgr+rSN58l6HGKsiUF3
-	4Z3T3YrhKVWyVyELfQTeYIHYl32Lvzn3q1mmxaCMTTOS9a+3FGwPj8gkAIaYxW0XXzQ79y0fQKNL/
-	yfVQ7BWMmgv94QtFE+frXTAIGN9xc3sN/+DAI5qsczQe0h7l/RJzC3oiQS0uc9IH/vudn4nlCnJeD
-	IP4m7uw8Ayo9hQpgjgYg==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=YEdVVhyO7FZqh2l62kORR9QvDkMVpXPJBPENtWBC+ms=; b=JHPon+06lofzuJ
+	7Vd8w6fYHbNO966XHhUTM5fwfb/bCMO4IA0ep1kn0/0g9sXhXGpWol3v1EXruhaNOYIw53PKPQvgA
+	5JM21m9eXh7LOMH/O/QyK1zjKs+gg0Zf5LCd/sXwS7cF5rDYbH1rphCX/55G6NnGWKLGdbYnhKblx
+	Wb7IWUR29SBiZYqhr4HzdE5ZMx9+FcbT/akRGFCZHfnP08BsX1OtB1irnLbE2Ut/g+6AaJfB93unP
+	CG1xih7wh/3XZ/sKglYsoJQTeMzUwt1VLenki1lVdrVacv8WAIrIan0n6OnTpjg2MOSObSDzz1xA1
+	NtMVQzjKA1Qf/BX3giLg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hcwxe-0001Dj-Su; Mon, 17 Jun 2019 19:06:34 +0000
-Received: from userp2120.oracle.com ([156.151.31.85])
+	id 1hcx7l-0006OX-Qg; Mon, 17 Jun 2019 19:17:01 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hcwxR-0001B8-1b
- for linux-arm-kernel@lists.infradead.org; Mon, 17 Jun 2019 19:06:22 +0000
-Received: from pps.filterd (userp2120.oracle.com [127.0.0.1])
- by userp2120.oracle.com (8.16.0.27/8.16.0.27) with SMTP id x5HJ3dlE006806;
- Mon, 17 Jun 2019 19:06:17 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=oracle.com;
- h=date : from : to : cc
- : subject : message-id : mime-version : content-type : in-reply-to;
- s=corp-2018-07-02; bh=OaHbeR0lOY/DEBGaqTG6p1kztv8w3JP2A32htJKCwpk=;
- b=2mPajXvU+J9LkdGoyF0fTtoih1vrC3SprPxHN7uv4HsbySfuNvTMb6s/CfDyjexfzd6s
- EvXOHmymsiQ1GEXA/73SDyJeimba5snAnfo9eFEsUjXFkucunwSY7O4JLxgbLUP3PXT3
- kcUMM6OyxqFWbcHgR/qcUrA3IhIArNdPZfGJejszE0f7Nfd8Gha1erlHdEk6OU9UFKRo
- cshsbDlc09VoJ/UJto5SiqRhse8e6NPhgUvRFKiOZM9L7oImbTzYYuKLjUiH2NxKRWoh
- RIEkELcWKDeYtCxmmkpxL9INKUxeYfgKDaBKdXsyJW8cdIJ8kY6Jtx/PE2IJeEMN1yEo Mg== 
-Received: from aserp3020.oracle.com (aserp3020.oracle.com [141.146.126.70])
- by userp2120.oracle.com with ESMTP id 2t4saq86qn-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Mon, 17 Jun 2019 19:06:17 +0000
-Received: from pps.filterd (aserp3020.oracle.com [127.0.0.1])
- by aserp3020.oracle.com (8.16.0.27/8.16.0.27) with SMTP id x5HJ4PY0118043;
- Mon, 17 Jun 2019 19:06:16 GMT
-Received: from userv0122.oracle.com (userv0122.oracle.com [156.151.31.75])
- by aserp3020.oracle.com with ESMTP id 2t5mgbh6nu-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Mon, 17 Jun 2019 19:06:16 +0000
-Received: from abhmp0007.oracle.com (abhmp0007.oracle.com [141.146.116.13])
- by userv0122.oracle.com (8.14.4/8.14.4) with ESMTP id x5HJ6ECm024547;
- Mon, 17 Jun 2019 19:06:14 GMT
-Received: from mwanda (/41.57.98.10) by default (Oracle Beehive Gateway v4.0)
- with ESMTP ; Mon, 17 Jun 2019 12:06:13 -0700
-Date: Mon, 17 Jun 2019 22:06:05 +0300
-From: Dan Carpenter <dan.carpenter@oracle.com>
-To: Lee Jones <lee.jones@linaro.org>,
- Linus Torvalds <torvalds@linux-foundation.org>
-Subject: [PATCH] mfd: stmfx: Fix an endian bug in stmfx_irq_handler()
-Message-ID: <20190617190605.GA21332@mwanda>
+ id 1hcx7V-0006Mw-UC
+ for linux-arm-kernel@lists.infradead.org; Mon, 17 Jun 2019 19:16:47 +0000
+Received: from mail-qt1-f173.google.com (mail-qt1-f173.google.com
+ [209.85.160.173])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 8ED98208C0
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 17 Jun 2019 19:16:44 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1560799004;
+ bh=Gt19uq+qmreWDS4gPNgKL+i/1lZeWJVrbTndQXm88hA=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=ygI4mXZ4FK/DIAC0x67TCpM/GLGF7iIf6vOaeEfsnPSMNoQfK28rgck+5RB2qRpEO
+ CMsaZVg4ehzf/O4mj+wCZIvyxGeQNNkRPycGzlVa9w80eY/UyXxP7tixjhKDXtQyHL
+ YyRUpu5ryCwzuA+MoSUQrA/vBH4C2sSnqAWyYbSw=
+Received: by mail-qt1-f173.google.com with SMTP id x47so12131522qtk.11
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 17 Jun 2019 12:16:44 -0700 (PDT)
+X-Gm-Message-State: APjAAAUTWX0PMH2+7uD2S0KeHyv7Dpw7gIb0uAl6AohAYhdhzvLbEjZa
+ vo+ThPJXfBK+aEtt4jR7uqQGd8dBRi9CkNEBeg==
+X-Google-Smtp-Source: APXvYqyVZbh0PlMogbVhE0NULb2YNLy3fCj6PKe8704XokjeEqmm6eZIegjHmk/tzMvMCwl9xNlf5j9cXMv6fjsBPAU=
+X-Received: by 2002:ac8:368a:: with SMTP id a10mr13618835qtc.143.1560799003868; 
+ Mon, 17 Jun 2019 12:16:43 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CAHk-=wgTL5sYCGxX8+xQqyBRWRUE05GAdL58+UTG8bYwjFxMkw@mail.gmail.com>
-X-Mailer: git-send-email haha only kidding
-User-Agent: Mutt/1.10.1 (2018-07-13)
-X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9291
- signatures=668687
-X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 suspectscore=0
- malwarescore=0
- phishscore=0 bulkscore=0 spamscore=0 mlxscore=0 mlxlogscore=999
- adultscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.0.1-1810050000 definitions=main-1906170169
-X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9291
- signatures=668687
-X-Proofpoint-Spam-Details: rule=notspam policy=default score=0
- priorityscore=1501 malwarescore=0
- suspectscore=0 phishscore=0 bulkscore=0 spamscore=0 clxscore=1015
- lowpriorityscore=0 mlxscore=0 impostorscore=0 mlxlogscore=999 adultscore=0
- classifier=spam adjust=0 reason=mlx scancount=1 engine=8.0.1-1810050000
- definitions=main-1906170169
+References: <20190614203144.3850-2-joseph.kogut@gmail.com>
+ <20190614235719.8134-1-joseph.kogut@gmail.com>
+In-Reply-To: <20190614235719.8134-1-joseph.kogut@gmail.com>
+From: Rob Herring <robh+dt@kernel.org>
+Date: Mon, 17 Jun 2019 13:16:31 -0600
+X-Gmail-Original-Message-ID: <CAL_JsqKasi4m7xU2AF1YQk-Tp0Z6=qh51LgTpb=xiZ9g6A3HvA@mail.gmail.com>
+Message-ID: <CAL_JsqKasi4m7xU2AF1YQk-Tp0Z6=qh51LgTpb=xiZ9g6A3HvA@mail.gmail.com>
+Subject: Re: [PATCH v2 2/2] arm: dts: add ARM Mali GPU node for Odroid XU3
+To: Joseph Kogut <joseph.kogut@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190617_120621_229644_D6BBF7CE 
-X-CRM114-Status: GOOD (  16.49  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20190617_121646_270707_0BBE1DA7 
+X-CRM114-Status: GOOD (  16.02  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [156.151.31.85 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -96,8 +74,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
  -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -110,52 +86,81 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Amelie Delaunay <amelie.delaunay@st.com>,
- Alexandre Torgue <alexandre.torgue@st.com>, kernel-janitors@vger.kernel.org,
- Linux List Kernel Mailing <linux-kernel@vger.kernel.org>,
- Maxime Coquelin <mcoquelin.stm32@gmail.com>,
- linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ linux-samsung-soc <linux-samsung-soc@vger.kernel.org>,
+ David Airlie <airlied@linux.ie>, dri-devel <dri-devel@lists.freedesktop.org>,
+ Kukjin Kim <kgene@kernel.org>, Krzysztof Kozlowski <krzk@kernel.org>,
+ Daniel Vetter <daniel@ffwll.ch>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-It's not okay to cast a "u32 *" to "unsigned long *" when you are
-doing a for_each_set_bit() loop because that will break on big
-endian systems.
+On Fri, Jun 14, 2019 at 5:57 PM Joseph Kogut <joseph.kogut@gmail.com> wrote:
+>
+> Add device tree node for mali gpu on Odroid XU3 SoCs.
+>
+> Signed-off-by: Joseph Kogut <joseph.kogut@gmail.com>
+> ---
+>
+> Changes v1 -> v2:
+> - Use interrupt name ordering from binding doc
+> - Specify a single clock for GPU node
+> - Add gpu opp table
+> - Fix warnings from IRQ_TYPE_NONE
+>
+>  .../boot/dts/exynos5422-odroidxu3-common.dtsi | 26 +++++++++++++++++++
+>  1 file changed, 26 insertions(+)
+>
+> diff --git a/arch/arm/boot/dts/exynos5422-odroidxu3-common.dtsi b/arch/arm/boot/dts/exynos5422-odroidxu3-common.dtsi
+> index 93a48f2dda49..b8a4246e3b37 100644
+> --- a/arch/arm/boot/dts/exynos5422-odroidxu3-common.dtsi
+> +++ b/arch/arm/boot/dts/exynos5422-odroidxu3-common.dtsi
+> @@ -48,6 +48,32 @@
+>                 cooling-levels = <0 130 170 230>;
+>         };
+>
+> +       gpu: gpu@11800000 {
+> +               compatible = "samsung,exynos-mali", "arm,mali-t628";
+> +               reg = <0x11800000 0x5000>;
+> +               interrupts = <GIC_SPI 219 IRQ_TYPE_LEVEL_HIGH>,
+> +                            <GIC_SPI 74  IRQ_TYPE_LEVEL_HIGH>,
+> +                            <GIC_SPI 117 IRQ_TYPE_LEVEL_HIGH>;
+> +               interrupt-names = "job", "mmu", "gpu";
+> +               clocks = <&clock CLK_G3D>;
+> +               mali-supply = <&buck4_reg>;
+> +               operating-points-v2 = <&gpu_opp_table>;
+> +       };
+> +
+> +       gpu_opp_table: gpu-opp-table {
 
-Reported-by: Linus Torvalds <torvalds@linux-foundation.org>
-Fixes: 386145601b82 ("mfd: stmfx: Uninitialized variable in stmfx_irq_handler()")
-Signed-off-by: Dan Carpenter <dan.carpenter@oracle.com>
----
- drivers/mfd/stmfx.c | 4 +++-
- 1 file changed, 3 insertions(+), 1 deletion(-)
+Not really a new problem in this file, but you are mixing nodes with
+and without an address and really the gpu node should be under a
+simple-bus node.
 
-diff --git a/drivers/mfd/stmfx.c b/drivers/mfd/stmfx.c
-index 7c419c078688..857991cb3cbb 100644
---- a/drivers/mfd/stmfx.c
-+++ b/drivers/mfd/stmfx.c
-@@ -204,6 +204,7 @@ static struct irq_chip stmfx_irq_chip = {
- static irqreturn_t stmfx_irq_handler(int irq, void *data)
- {
- 	struct stmfx *stmfx = data;
-+	unsigned long bits;
- 	u32 pending, ack;
- 	int n, ret;
- 
-@@ -222,7 +223,8 @@ static irqreturn_t stmfx_irq_handler(int irq, void *data)
- 			return IRQ_NONE;
- 	}
- 
--	for_each_set_bit(n, (unsigned long *)&pending, STMFX_REG_IRQ_SRC_MAX)
-+	bits = pending;
-+	for_each_set_bit(n, &bits, STMFX_REG_IRQ_SRC_MAX)
- 		handle_nested_irq(irq_find_mapping(stmfx->irq_domain, n));
- 
- 	return IRQ_HANDLED;
--- 
-2.20.1
+If the OPP is only for the GPU, I'd make it a child of the gpu node instead.
 
+> +               compatible = "operating-points-v2";
+> +
+> +               opp-177000000 {
+> +                       opp-hz = /bits/ 64 <117000000>;
+> +                       opp-microvolt = <812500>;
+> +               };
+> +
+> +               opp-600000000 {
+> +                       opp-hz = /bits/ 64 <600000000>;
+> +                       opp-microvolt = <1150000>;
+> +               };
+> +       };
+> +
+>         thermal-zones {
+>                 cpu0_thermal: cpu0-thermal {
+>                         thermal-sensors = <&tmu_cpu0 0>;
+> --
+> 2.22.0
+>
 
 _______________________________________________
 linux-arm-kernel mailing list
