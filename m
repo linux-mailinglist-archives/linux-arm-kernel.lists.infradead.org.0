@@ -2,84 +2,77 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B924A47AA2
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 17 Jun 2019 09:18:49 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B4D9D47B95
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 17 Jun 2019 09:48:09 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=3tDX5h1q9ClNTMjnMPa6kwpYsb9hFyj7tAdv4Wj414g=; b=MjjduPU4z9bjFY
-	WkLXAwCrC0CipbCL8OLPfkhVLZ7SvMsF2gCFKiQ0U+ye2/ksdza1DWRqcSituQqC/WgEODtVdKdKa
-	7Iu3MazUUm5Mbf4GGR7vr56ebUlY7vQGqeJTEghAksDBztEYC/96Jx3YlxqrBG8Ai87z/NrbYO0KK
-	Kn0F6dIA4SfyORE1yjQcUBkl/wpsnr/GdL/6Q4OimBHocvAetkAsAi12mXGz7LvPPgNHh+rnbAO9A
-	6sS7WBz/0GlHedECEKgRJNaDSPqiU3fJ7I6eEThtl5T/F9FbPcNzOCLZVNUcRBmj3E/J1ZNFPUZjs
-	GOeKxCQr5RPYtb9Ytgwg==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=CFeEjoLBpOFFSVFArz3r/8BdcwihKcmzS+GQ6o71euA=; b=fHBk06zZgg9nTC
+	nSy5lPh6DwR2/v/+0x4pVZQU9bU82K0+8y3tYwkExyRND1rwXO9L5l+u+EppNqPBRW8rack/aF7mM
+	eij0kThLVB+0id5Pgu7AYyTkbQyAmLNjSdk8BQafgMtnpamp0NPZXjoFhduyR5MADwscubxs2FQPO
+	tcaa9gnYHoqukXJQJZmQWC6kEXMLMH0wC/r4SNPxGX48PMEFiQUa8QcaBG+EbMJENAByWy2o3YyI8
+	ulHnfikmGFyc8sIEENGoKN7Hx2xHGYUsYiY4lx+KtDXpwET0TZNoBtw91jcoxdNP90j2VCMTbETyO
+	gTWG3iNl2blkcs8s7SPQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hcluf-0005wR-9l; Mon, 17 Jun 2019 07:18:45 +0000
-Received: from mx07-00178001.pphosted.com ([62.209.51.94])
+	id 1hcmN4-0005Ri-T6; Mon, 17 Jun 2019 07:48:07 +0000
+Received: from mail-vs1-xe43.google.com ([2607:f8b0:4864:20::e43])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hcluQ-0005vM-8G
- for linux-arm-kernel@lists.infradead.org; Mon, 17 Jun 2019 07:18:32 +0000
-Received: from pps.filterd (m0046037.ppops.net [127.0.0.1])
- by mx07-00178001.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id
- x5H7G0ZS016840; Mon, 17 Jun 2019 09:18:22 +0200
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
- h=from : to : subject :
- date : message-id : mime-version : content-type :
- content-transfer-encoding; s=STMicroelectronics;
- bh=Ia2/UrCUbgT3bw0BUTt336OAmpb+nVhfRSlDq35fcEs=;
- b=djNFXoDB4cGYOdCBR/WaJaQgc3IkLbr6gG3WsKXYywl2EAUpnCglQjTOgMM3NgTdcALz
- RnyxPh/XODS35rQRIAjo1GYk5FJto0TGQ53PiJItJY2wRMFfvAZMdCihDAVFxzhTwpII
- sQ0yUGmVo4AX4apALbfQbpXmJ0vzkqNRS4KYccRtdBEP6MJaCHobWu9Lla2hxtkktYDZ
- CHvFLsHbYqO/4n6bO6cD1IRs51HsaYrmZdKvYANqCjepEBGKuDPgSR9CvfoUbw7G7k97
- RC5yVFldo0CzjKjNEBoaNniM2SmKQ7oJM50d/KITK4TyI5x9OY5n9bngEEOhonkb1mDL rw== 
-Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx07-00178001.pphosted.com with ESMTP id 2t4peu0wyj-1
- (version=TLSv1 cipher=ECDHE-RSA-AES256-SHA bits=256 verify=NOT);
- Mon, 17 Jun 2019 09:18:22 +0200
-Received: from zeta.dmz-eu.st.com (zeta.dmz-eu.st.com [164.129.230.9])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 0C73034;
- Mon, 17 Jun 2019 07:18:20 +0000 (GMT)
-Received: from Webmail-eu.st.com (Safex1hubcas22.st.com [10.75.90.92])
- by zeta.dmz-eu.st.com (STMicroelectronics) with ESMTP id A7417155B;
- Mon, 17 Jun 2019 07:18:20 +0000 (GMT)
-Received: from SAFEX1HUBCAS24.st.com (10.75.90.95) by Safex1hubcas22.st.com
- (10.75.90.92) with Microsoft SMTP Server (TLS) id 14.3.439.0; Mon, 17 Jun
- 2019 09:18:20 +0200
-Received: from localhost (10.201.23.97) by webmail-ga.st.com (10.75.90.48)
- with Microsoft SMTP Server (TLS) id 14.3.439.0; Mon, 17 Jun 2019 09:18:20
- +0200
-From: =?UTF-8?q?Yannick=20Fertr=C3=A9?= <yannick.fertre@st.com>
-To: Yannick Fertre <yannick.fertre@st.com>, Philippe Cornu
- <philippe.cornu@st.com>, Benjamin Gaignard <benjamin.gaignard@st.com>,
- Vincent Abriou <vincent.abriou@st.com>,
- David Airlie <airlied@linux.ie>, Daniel Vetter <daniel@ffwll.ch>,
- Maxime Coquelin <mcoquelin.stm32@gmail.com>,
- Alexandre Torgue <alexandre.torgue@st.com>,
- <dri-devel@lists.freedesktop.org>,
- <linux-stm32@st-md-mailman.stormreply.com>,
- <linux-arm-kernel@lists.infradead.org>, <linux-kernel@vger.kernel.org>
-Subject: [PATCH 1/3] drm/stm: drv: fix suspend/resume
-Date: Mon, 17 Jun 2019 09:18:17 +0200
-Message-ID: <1560755897-5002-1-git-send-email-yannick.fertre@st.com>
-X-Mailer: git-send-email 2.7.4
+ id 1hcmMn-0005PE-2s
+ for linux-arm-kernel@lists.infradead.org; Mon, 17 Jun 2019 07:47:50 +0000
+Received: by mail-vs1-xe43.google.com with SMTP id k9so5523533vso.5
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 17 Jun 2019 00:47:46 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=MY3tGGLQYLdVpFw8r18hUsv6GICSapuyFtcuKuaoUEA=;
+ b=ZYRGE1HFozqJdEnhT1Aq/4xm+obkmNZrwpLYS6CqA8W4IsHsooLzuhUj9jUSZ1pXMC
+ IsXK1DN3/8Mq5xMzyHVJMekFzoPBD2onXipXv6T6czln5mJD7VqZU06BrnLXZaJQIYuY
+ GelMtbVdclV+tc4E1i8u6QZ0XUsBjyZoLoHKm5nJHdI/KqH6iijuAZ5gJJhFzUbF9/Se
+ +d0PwpL9FYuscR3eumeYjxhDhQBzbuINEQC+U6SZeB3RRxCEfIHtq7tM5fHj8IBH+IVM
+ LVPADPXiZyM/rBVAiiOgU2IkNKSgrteIJ3daMDxF7Jks6qjq+ry/Fluln+qx7YV2FdPP
+ QVsQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=MY3tGGLQYLdVpFw8r18hUsv6GICSapuyFtcuKuaoUEA=;
+ b=ZJkntu3tN3bJ+uWpAXhv3MVy9ogn0+twza0PD9UkQUe99vaA9uD/qrNN2pjG6215cm
+ TkdHPRHfKFJnQHcbosFeLNnDfReybEGC1pYu8X8K30Wq4Bu6+jEK43UJk5eb98cpnGbm
+ FsjaqStOtm+4H/MCvG1PaACDVlYvLPzTQZcwN1Dn+TbFo9ACGUdVeYodtBJupfW1FenR
+ 36JSfE1+lpj8Mzml/5W2dgVMIInaY6P9dMlY0wdhrQj0qvZ831YMjjOxHBXc/G67LfWo
+ nzHqFxUc7BVGUXkKyfVV/zVSwNq8QT1QQPpVBisE7wAh8oL/zrqeR87d9Oopfhj/4C6j
+ VHWQ==
+X-Gm-Message-State: APjAAAVSpaoo58NQbbpYjT063hBpTiDUeNNSJVIB5cHEseY1ojx3SAsY
+ rJuprtnFXwQVbcyngxY5JrpE9Sqkz061OKjPsfK5dw==
+X-Google-Smtp-Source: APXvYqyiVUylNuTkYLjx9KI91CAaUXCepGMea+Uy268M4YUvBMxIeXwcC02Sm1UIK2FsXcJpIkuX3opSJ31nZGo10h8=
+X-Received: by 2002:a67:7a90:: with SMTP id
+ v138mr11089584vsc.200.1560757665797; 
+ Mon, 17 Jun 2019 00:47:45 -0700 (PDT)
 MIME-Version: 1.0
-X-Originating-IP: [10.201.23.97]
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:, ,
- definitions=2019-06-17_05:, , signatures=0
+References: <1560489970-30467-1-git-send-email-jjian.zhou@mediatek.com>
+ <CAPDyKFrXU4bpKeB7Aa15j2nHqUCn-bk+YKn9_vkznmi+PS8H7A@mail.gmail.com>
+ <1560751020.3103.25.camel@mhfsdcap03>
+In-Reply-To: <1560751020.3103.25.camel@mhfsdcap03>
+From: Ulf Hansson <ulf.hansson@linaro.org>
+Date: Mon, 17 Jun 2019 09:47:07 +0200
+Message-ID: <CAPDyKFqs2ngPfR_SM2MEssFVDDw=S7G_Oy7V7x-bP9_aFm5XDQ@mail.gmail.com>
+Subject: Re: [PATCH 1/2] mmc: mediatek: fix SDIO IRQ interrupt handle flow
+To: jjian zhou <jjian.zhou@mediatek.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190617_001830_747298_CFCA1745 
-X-CRM114-Status: GOOD (  13.30  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20190617_004749_154549_331E92A1 
+X-CRM114-Status: GOOD (  24.65  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [62.209.51.94 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:e43 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -100,35 +93,140 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: srv_heupstream <srv_heupstream@mediatek.com>,
+ "linux-mmc@vger.kernel.org" <linux-mmc@vger.kernel.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ =?UTF-8?B?WW9uZyBNYW8gKOavm+WLhyk=?= <yong.mao@mediatek.com>,
+ "linux-mediatek@lists.infradead.org" <linux-mediatek@lists.infradead.org>,
+ =?UTF-8?B?Q2hhb3RpYW4gSmluZyAo5LqV5pyd5aSpKQ==?= <Chaotian.Jing@mediatek.com>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-V2l0aG91dCB0aGlzIGZpeCwgdGhlIHN5c3RlbSBjYW4gbm90IGdvIGluICJzdXNwZW5kIiBtb2Rl
-CmR1ZSB0byBhbiBlcnJvciBpbiBkcnZfc3VzcGVuZCBmdW5jdGlvbi4KCkZpeGVzOiAzNWFiNmNm
-ICgiZHJtL3N0bTogc3VwcG9ydCBydW50aW1lIHBvd2VyIG1hbmFnZW1lbnQiKQoKU2lnbmVkLW9m
-Zi1ieTogWWFubmljayBGZXJ0csOpIDx5YW5uaWNrLmZlcnRyZUBzdC5jb20+Ci0tLQogZHJpdmVy
-cy9ncHUvZHJtL3N0bS9kcnYuYyB8IDE1ICsrKysrKysrLS0tLS0tLQogMSBmaWxlIGNoYW5nZWQs
-IDggaW5zZXJ0aW9ucygrKSwgNyBkZWxldGlvbnMoLSkKCmRpZmYgLS1naXQgYS9kcml2ZXJzL2dw
-dS9kcm0vc3RtL2Rydi5jIGIvZHJpdmVycy9ncHUvZHJtL3N0bS9kcnYuYwppbmRleCA1NjU5NTcy
-Li45ZGVlNGU0IDEwMDY0NAotLS0gYS9kcml2ZXJzL2dwdS9kcm0vc3RtL2Rydi5jCisrKyBiL2Ry
-aXZlcnMvZ3B1L2RybS9zdG0vZHJ2LmMKQEAgLTEzNiw4ICsxMzYsNyBAQCBzdGF0aWMgX19tYXli
-ZV91bnVzZWQgaW50IGRydl9zdXNwZW5kKHN0cnVjdCBkZXZpY2UgKmRldikKIAlzdHJ1Y3QgbHRk
-Y19kZXZpY2UgKmxkZXYgPSBkZGV2LT5kZXZfcHJpdmF0ZTsKIAlzdHJ1Y3QgZHJtX2F0b21pY19z
-dGF0ZSAqc3RhdGU7CiAKLQlpZiAoV0FSTl9PTighbGRldi0+c3VzcGVuZF9zdGF0ZSkpCi0JCXJl
-dHVybiAtRU5PRU5UOworCVdBUk5fT04obGRldi0+c3VzcGVuZF9zdGF0ZSk7CiAKIAlzdGF0ZSA9
-IGRybV9hdG9taWNfaGVscGVyX3N1c3BlbmQoZGRldik7CiAJaWYgKElTX0VSUihzdGF0ZSkpCkBA
-IC0xNTUsMTUgKzE1NCwxNyBAQCBzdGF0aWMgX19tYXliZV91bnVzZWQgaW50IGRydl9yZXN1bWUo
-c3RydWN0IGRldmljZSAqZGV2KQogCXN0cnVjdCBsdGRjX2RldmljZSAqbGRldiA9IGRkZXYtPmRl
-dl9wcml2YXRlOwogCWludCByZXQ7CiAKKwlpZiAoV0FSTl9PTighbGRldi0+c3VzcGVuZF9zdGF0
-ZSkpCisJCXJldHVybiAtRU5PRU5UOworCiAJcG1fcnVudGltZV9mb3JjZV9yZXN1bWUoZGV2KTsK
-IAlyZXQgPSBkcm1fYXRvbWljX2hlbHBlcl9yZXN1bWUoZGRldiwgbGRldi0+c3VzcGVuZF9zdGF0
-ZSk7Ci0JaWYgKHJldCkgeworCWlmIChyZXQpCiAJCXBtX3J1bnRpbWVfZm9yY2Vfc3VzcGVuZChk
-ZXYpOwotCQlsZGV2LT5zdXNwZW5kX3N0YXRlID0gTlVMTDsKLQkJcmV0dXJuIHJldDsKLQl9CiAK
-LQlyZXR1cm4gMDsKKwlsZGV2LT5zdXNwZW5kX3N0YXRlID0gTlVMTDsKKworCXJldHVybiByZXQ7
-CiB9CiAKIHN0YXRpYyBfX21heWJlX3VudXNlZCBpbnQgZHJ2X3J1bnRpbWVfc3VzcGVuZChzdHJ1
-Y3QgZGV2aWNlICpkZXYpCi0tIAoyLjcuNAoKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFy
-bS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9t
-YWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
+On Mon, 17 Jun 2019 at 07:57, jjian zhou <jjian.zhou@mediatek.com> wrote:
+>
+> On Fri, 2019-06-14 at 17:46 +0800, Ulf Hansson wrote:
+> > On Fri, 14 Jun 2019 at 07:26, Jjian Zhou <jjian.zhou@mediatek.com> wrote:
+> > >
+> > > From: jjian zhou <jjian.zhou@mediatek.com>
+> > >
+> > > SDIO IRQ is triggered by low level. It need disable SDIO IRQ
+> > > detected function. Otherwise the interrupt register can't be cleared.
+> > > It will process the interrupt more.
+> > >
+> > > Signed-off-by: Jjian Zhou <jjian.zhou@mediatek.com>
+> > > Signed-off-by: Chaotian Jing <chaotian.jing@mediatek.com>
+> > > Signed-off-by: Yong Mao <yong.mao@mediatek.com>
+> > > ---
+> > >  drivers/mmc/host/mtk-sd.c | 13 +++++++------
+> > >  1 file changed, 7 insertions(+), 6 deletions(-)
+> > >
+> > > diff --git a/drivers/mmc/host/mtk-sd.c b/drivers/mmc/host/mtk-sd.c
+> > > index c518cc2..29992ae 100644
+> > > --- a/drivers/mmc/host/mtk-sd.c
+> > > +++ b/drivers/mmc/host/mtk-sd.c
+> > > @@ -1389,10 +1389,12 @@ static void __msdc_enable_sdio_irq(struct mmc_host *mmc, int enb)
+> > >         struct msdc_host *host = mmc_priv(mmc);
+> > >
+> > >         spin_lock_irqsave(&host->lock, flags);
+> > > -       if (enb)
+> > > +       if (enb) {
+> > >                 sdr_set_bits(host->base + MSDC_INTEN, MSDC_INTEN_SDIOIRQ);
+> > > -       else
+> > > +               sdr_set_bits(host->base + SDC_CFG, SDC_CFG_SDIOIDE);
+> > > +       } else {
+> > >                 sdr_clr_bits(host->base + MSDC_INTEN, MSDC_INTEN_SDIOIRQ);
+> >
+> > Rather than clearing SDC_CFG_SDIOIDE in the irq handler, you need to
+> > do it here. As otherwise when the mmc core calls
+> > host->ops->enable_sdio_irq() to disable the SDIO IRQ, it may stay
+> > enabled.
+> >
+>
+> Thank you for your review.
+>
+> I remove the spin lock in "__msdc_enable_sdio_irq" and add
+> spin lock in "msdc_enable_sdio_irq". The modification of
+> "__msdc_enable_sdio_irq" and "msdc_enable_sdio_irq" is as following.
+>
+> static void __msdc_enable_sdio_irq(struct msdc_host *host, int enb)
+> {
+>         if (enb) {
+>                 sdr_set_bits(host->base + MSDC_INTEN, MSDC_INTEN_SDIOIRQ);
+>                 sdr_set_bits(host->base + SDC_CFG, SDC_CFG_SDIOIDE);
+>         } else {
+>                 sdr_clr_bits(host->base + MSDC_INTEN, MSDC_INTEN_SDIOIRQ);
+>                 sdr_clr_bits(host->base + SDC_CFG, SDC_CFG_SDIOIDE);
+>         }
+> }
+>
+> static void msdc_enable_sdio_irq(struct mmc_host *mmc, int enb)
+> {
+>         unsigned long flags;
+>         struct msdc_host *host = mmc_priv(mmc);
+>         spin_lock_irqsave(&host->lock, flags);;
+>         __msdc_enable_sdio_irq(host, enb);
+>         spin_unlock_irqrestore(&host->lock, flags);
+>
+>         if (enb)
+>                 pm_runtime_get_noresume(host->dev);
+>         else
+>                 pm_runtime_get_noidle(host->dev);
+> }
+>
+> > > +       }
+> > >         spin_unlock_irqrestore(&host->lock, flags);
+> > >  }
+> > >
+> > > @@ -1422,6 +1424,8 @@ static irqreturn_t msdc_irq(int irq, void *dev_id)
+> > >                 spin_lock_irqsave(&host->lock, flags);
+> > >                 events = readl(host->base + MSDC_INT);
+> > >                 event_mask = readl(host->base + MSDC_INTEN);
+> > > +               if ((events & event_mask) & MSDC_INT_SDIOIRQ)
+> > > +                       sdr_clr_bits(host->base + SDC_CFG, SDC_CFG_SDIOIDE);
+> >
+> > As stated above, I suggest you move this into __msdc_enable_sdio_irq()
+> > and thus call that function from here instead. Well, that doesn't work
+> > as is, because of the spin lock, so you rather need to make a
+> > sub-function of __msdc_enable_sdio_irq, that don't take/releases the
+> > lock.
+> >
+> > I hope that was clear. If not, I can post a patch to show you what I mean.
+> >
+>
+> I also modify this part handler in msdc_irq.
+>
+>         spin_lock_irqsave(&host->lock, flags);
+>         events = readl(host->base + MSDC_INT);
+>         event_mask = readl(host->base + MSDC_INTEN);
+>         if ((events & event_mask) & MSDC_INT_SDIOIRQ)
+>                 __msdc_enable_sdio_irq(host, 0);
+>         /* clear interrupts */
+>         writel(events & event_mask, host->base + MSDC_INT);
+>
+>         mrq = host->mrq;
+>         cmd = host->cmd;
+>         data = host->data;
+>         spin_unlock_irqrestore(&host->lock, flags);
+>
+>         if ((events & event_mask) & MSDC_INT_SDIOIRQ)
+>                 sdio_signal_irq(host->mmc);
+>
+> I also will add spin lock in the "msdc_ack_sdio_irq".
+>
+> Looking forward to your suggestions.
+
+Seems reasonable, please post a new version, then I will review again.
+
+[...]
+
+Kind regards
+Uffe
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
