@@ -2,55 +2,93 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E38B7480A5
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 17 Jun 2019 13:29:14 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E3C96480BD
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 17 Jun 2019 13:33:46 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3NWEj636MGWoJOMfdiysucklPtj85VO+8Q+Cw5E393U=; b=RUpIoGdw+t8vWW
-	KYRTPlP7E+gVdGx9gLiBSmKkbX08SvKrzhl3mDxIOrWEKtEwM2yLX3vMqBiLOaCCVrFW+t6L6fJOd
-	pXHxHyOIy0LUPM7NHqE7BPREDQhHHoFbhm2uk96K6sbthMMRZ2kdFlKzgtC6w3rDL+vEQOkQ92sKM
-	3JLO0ifneFpKV2bQCwt+SHwfAXlu7mgb5WOpHXn2j+wLZIDqH6yu/9fqJteRtD00DOMrlXL9f+r9I
-	NGG/qCQ47+UrqPa4uzoSWaT1+112KSE28gZ/MfHtFuyemKcGgo47lTUVNueC7pHIcd2OIbj8HbrFr
-	DiLKbJYEGPMe2xFfosDA==;
+	List-Owner; bh=mD6MdOger8phZkGPZWngRo64jurqXpAA8N+WgKWNosk=; b=VGAuiRrQNO/X1q
+	wpAANeDbfihrg66txlN9BtmVHcD6WjaVq2XTe+k8GRdCflyuo+FdwaCMu1yCn+ek6epPMyApNNndd
+	1Mj3hZjmQz37jQ8BKDasksyuv4LqdPO8KftPmxrKGFvomEAcdNiYVIX0e3oE9WUYheLzAAaGOV1mw
+	hdWdQ94I291gcrxIZqWEptVgxly9n2RYCso6PQ9g+RhVGA2nJstDvbRGBd95Yhe/ZS6HsjjfpkGOJ
+	T+Mi3NZtM1v4vICA3hS+tQ48oI9m7xH/SWWn6Ono7YpOctQkTKHos17dGcxe06JsOEVfQHLm05tCY
+	6edF57LzV+i+ktYYThkg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hcpp1-0003AX-Qu; Mon, 17 Jun 2019 11:29:11 +0000
-Received: from s3.sipsolutions.net ([2a01:4f8:191:4433::2]
- helo=sipsolutions.net)
+	id 1hcptP-0005gk-3L; Mon, 17 Jun 2019 11:33:43 +0000
+Received: from mail-io1-xd2a.google.com ([2607:f8b0:4864:20::d2a])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hcpol-0003A3-L5
- for linux-arm-kernel@lists.infradead.org; Mon, 17 Jun 2019 11:28:57 +0000
-Received: by sipsolutions.net with esmtpsa
- (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
- (envelope-from <johannes@sipsolutions.net>)
- id 1hcpoX-0003Tn-Jd; Mon, 17 Jun 2019 13:28:41 +0200
-Message-ID: <066e9b39f937586f0f922abf801351553ec2ba1d.camel@sipsolutions.net>
-Subject: Re: [PATCH v2 00/17] net: introduce Qualcomm IPA driver
-From: Johannes Berg <johannes@sipsolutions.net>
-To: Arnd Bergmann <arnd@arndb.de>
-Date: Mon, 17 Jun 2019 13:28:39 +0200
-In-Reply-To: <CAK8P3a0kV-i7BJJ2X6C=5n65rSGfo8fUiC4J_G-+M8EctYKbkg@mail.gmail.com>
- (sfid-20190611_135708_651569_0097B773)
-References: <380a6185-7ad1-6be0-060b-e6e5d4126917@linaro.org>
- <a94676381a5ca662c848f7a725562f721c43ce76.camel@sipsolutions.net>
- <CAK8P3a0kV-i7BJJ2X6C=5n65rSGfo8fUiC4J_G-+M8EctYKbkg@mail.gmail.com>
- (sfid-20190611_135708_651569_0097B773)
-X-Mailer: Evolution 3.28.5 (3.28.5-2.fc28) 
-Mime-Version: 1.0
+ id 1hcptF-0005g4-7H
+ for linux-arm-kernel@lists.infradead.org; Mon, 17 Jun 2019 11:33:34 +0000
+Received: by mail-io1-xd2a.google.com with SMTP id k8so20461602iot.1
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 17 Jun 2019 04:33:31 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=uTaQurjF4DAEz2YA58sq1itwNB0DAFLlJ/DDxkRjQXs=;
+ b=YlBxHyckiHCNw4pcv1L+3aipakmvWHdfu1oxzwefcQcVWnyNIn5NGlNqYIN/7QC0ey
+ ioGaBXAv5AJACbpMWAaAsdLvLID96zO5uFRnyIa/tNH4W41NImVSVkxrQ0LVv/5lBHZz
+ iEw6edvCS3C/y6wdXkjdsW3dJBbRBA4SU1vFKgiJzgFxZZEW6e1ELjhVW+MpsfItpE7h
+ ZcLT9Ml5vwbXxOJ18xbKM2fo2/VHFZmbasZ2ki93QAjNEpwdH9E6TdwQqBrr5CEXoFeL
+ rxMZ9NE4l66LJ1eS2LKTv6F9j1x+5ianNQxSP60RRxrfI+gX25JRg2p+ejEoCSKNrw9Y
+ sWuw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=uTaQurjF4DAEz2YA58sq1itwNB0DAFLlJ/DDxkRjQXs=;
+ b=EsclvX/o56NzU2YLB247IIhVME0//1DjhghsPwad5em+dtZ7K2E25viuiIlvtthQxx
+ Y1wxtLq9B0EMFbcgRFZOq0yUlw/Gg86GKn3GguIekbQzZJIYKOyEXjlNr+NFt+qm2282
+ OSg+OhdG/3ocH1DktFNRo32WQeOlAKfoBBt44l1OiSpaE/C1pQ6z2gerAZEAB1Y12RfK
+ jXOD8SkGyZdKqwe0TIBWMKY0p5R+Dvkib8+dEF7BuOOSnobl4Vg8bT06FdpubeL/QTO4
+ GjOBGM6ekUvKJOxrd2uWP/kuHiHVo+7njGv6YQ6yzucbXY2KoSZ9uh9sTqM00yNX/48v
+ Z4IQ==
+X-Gm-Message-State: APjAAAWCs2eCL6SG72WUfF771qPsfwdcwM7pZYUdOSq1VALFiv6p8DoE
+ Fab3TImxL07F1bIp3G+zsuIfGZXbInKJ7z65PFfCWg==
+X-Google-Smtp-Source: APXvYqzOD8mZdWMW5nl/G9kBu3RjbewHkgd/pSd8u227vGW4RBm64bgLB0Ejnt8SWGd0xJ5w7k3raGX9tSnxFEfpahY=
+X-Received: by 2002:a02:3308:: with SMTP id c8mr15420974jae.103.1560771211244; 
+ Mon, 17 Jun 2019 04:33:31 -0700 (PDT)
+MIME-Version: 1.0
+References: <20190612040933.GA18848@dc5-eodlnx05.marvell.com>
+ <20190612093151.GA11554@brain-police>
+ <20190614070914.GA21961@dc5-eodlnx05.marvell.com>
+ <20190614095846.GC10506@fuggles.cambridge.arm.com>
+ <CAKv+Gu_Kdq=UPijjA84FpmO=ZsdEO9EyyF7GeOQ+WmfqtO_hMg@mail.gmail.com>
+ <20190614103850.GG10659@fuggles.cambridge.arm.com>
+ <201906142026.1BC27EDB1E@keescook>
+ <CAKv+Gu_XuhgUCYOeykrbaxJz-wL1HFrc_O+HeZHqaGkMHd2J9Q@mail.gmail.com>
+ <201906150654.FF4400F7C8@keescook>
+ <CAKv+Gu9-rZ16Nb9t3=knzW0BHu0eNxQoPwWS4c8UMMm=2iqiuw@mail.gmail.com>
+ <201906161429.BCE1083@keescook>
+In-Reply-To: <201906161429.BCE1083@keescook>
+From: Ard Biesheuvel <ard.biesheuvel@linaro.org>
+Date: Mon, 17 Jun 2019 13:33:19 +0200
+Message-ID: <CAKv+Gu_8ibO4D01DZv6KjL2GnvKuVBVnt=doxkN0w=4utJ7NvQ@mail.gmail.com>
+Subject: Re: [RFC] Disable lockref on arm64
+To: Kees Cook <keescook@chromium.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190617_042855_694885_5758A8D8 
-X-CRM114-Status: GOOD (  34.03  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190617_043333_264897_410583AC 
+X-CRM114-Status: GOOD (  15.87  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:d2a listed in]
+ [list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -62,141 +100,80 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: DTML <devicetree@vger.kernel.org>, syadagir@codeaurora.org,
- Eric Caruso <ejcaruso@google.com>, Dan Williams <dcbw@redhat.com>,
- linux-arm-msm@vger.kernel.org, abhishek.esse@gmail.com,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>, evgreen@chromium.org,
- Bjorn Andersson <bjorn.andersson@linaro.org>,
- Ilias Apalodimas <ilias.apalodimas@linaro.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Alex Elder <elder@linaro.org>,
- Subash Abhinov Kasiviswanathan <subashab@codeaurora.org>,
- Networking <netdev@vger.kernel.org>, linux-soc@vger.kernel.org,
- David Miller <davem@davemloft.net>, cpratapa@codeaurora.org,
- Ben Chan <benchan@google.com>
+Cc: "catalin.marinas@arm.com" <catalin.marinas@arm.com>,
+ Jan Glauber <jglauber@marvell.com>, Will Deacon <will.deacon@arm.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Jayachandran Chandrasekharan Nair <jnair@marvell.com>,
+ Linus Torvalds <torvalds@linux-foundation.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, 2019-06-11 at 13:56 +0200, Arnd Bergmann wrote:
-> On Tue, Jun 11, 2019 at 10:12 AM Johannes Berg
-> <johannes@sipsolutions.net> wrote:
-> 
-> > > As I've made clear before, my work on this has been focused on the IPA transport,
-> > > and some of this higher-level LTE architecture is new to me.  But it
-> > > seems pretty clear that an abstracted WWAN subsystem is a good plan,
-> > > because these devices represent a superset of what a "normal" netdev
-> > > implements.
-> > 
-> > I'm not sure I'd actually call it a superset. By themselves, these
-> > netdevs are actually completely useless to the network stack, AFAICT.
-> > Therefore, the overlap with netdevs you can really use with the network
-> > stack is pretty small?
-> 
-> I think Alex meant the concept of having a type of netdev with a generic
-> user space interface for wwan and similar to a wlan device, as I understood
-> you had suggested as well, as opposed to a stacked device as in
-> rmnet or those drivers it seems to be modeled after (vlan, ip tunnel, ...)/.
+On Sun, 16 Jun 2019 at 23:31, Kees Cook <keescook@chromium.org> wrote:
+>
+> On Sat, Jun 15, 2019 at 04:18:21PM +0200, Ard Biesheuvel wrote:
+> > Yes, I am using the same saturation point as x86. In this example, I
+> > am not entirely sure I understand why it matters, though: the atomics
+> > guarantee that the write by CPU2 fails if CPU1 changed the value in
+> > the mean time, regardless of which value it wrote.
+> >
+> > I think the concern is more related to the likelihood of another CPU
+> > doing something nasty between the moment that the refcount overflows
+> > and the moment that the handler pins it at INT_MIN/2, e.g.,
+> >
+> > > CPU 1                   CPU 2
+> > > inc()
+> > >   load INT_MAX
+> > >   about to overflow?
+> > >   yes
+> > >
+> > >   set to 0
+> > >                          <insert exploit here>
+> > >   set to INT_MIN/2
+>
+> Ah, gotcha, but the "set to 0" is really "set to INT_MAX+1" (not zero)
+> if you're using the same saturation.
+>
 
-I guess. It is indeed currently modelled after the stacked devices, but
-those regular netdevs are inherently useful by themselves, you don't
-*have* to tunnel or use VLANs after all.
+Of course. So there is no issue here: whatever manipulations are
+racing with the overflow handler can never result in the counter to
+unsaturate.
 
-With rmnet, the underlying netdev *isn't* useful by itself, because
-you're always forced to have the stacked rmnet device on top.
+And actually, moving the checks before the stores is not as trivial as
+I thought, E.g., for the LSE refcount_add case, we have
 
+        "       ldadd           %w[i], w30, %[cval]\n"                  \
+        "       adds            %w[i], %w[i], w30\n"                    \
+        REFCOUNT_PRE_CHECK_ ## pre (w30))                               \
+        REFCOUNT_POST_CHECK_ ## post                                    \
 
-> > > HOWEVER I disagree with your suggestion that the IPA code should
-> > > not be committed until after that is all sorted out.  In part it's
-> > > for selfish reasons, but I think there are legitimate reasons to
-> > > commit IPA now *knowing* that it will need to be adapted to fit
-> > > into the generic model that gets defined and developed.  Here
-> > > are some reasons why.
-> > 
-> > I can't really argue with those, though I would point out that the
-> > converse also holds - if we commit to this now, then we will have to
-> > actually keep the API offered by IPA/rmnet today, so we cannot actually
-> > remove the netdev again, even if we do migrate it to offer support for a
-> > WWAN framework in the future.
-> 
-> Right. The interface to support rmnet might be simple enough to keep
-> next to what becomes the generic interface, but it will always continue
-> to be an annoyance.
+and changing this into load/test/store defeats the purpose of using
+the LSE atomics in the first place.
 
-Not easily, because fundamentally it requires an underlying netdev to
-have an ifindex, so it wouldn't just be another API to keep around
-(which I'd classify as an annoyance) but also a whole separate netdev
-that's exposed by this IPA driver, for basically this purpose only.
+On my single core TX2, the comparative performance is as follows
 
-> > I dunno if it really has to be months. I think we can cobble something
-> > together relatively quickly that addresses the needs of IPA more
-> > specifically, and then extend later?
-> > 
-> > But OTOH it may make sense to take a more paced approach and think
-> > about the details more carefully than we have over in the other thread so far.
-> 
-> I would hope that as soon as we can agree on a general approach, it
-> would also be possible to merge a minimal implementation into the kernel
-> along with IPA. Alex already mentioned that IPA in its current state does
-> not actually support more than one data channel, so the necessary
-> setup for it becomes even simpler.
+Baseline: REFCOUNT_TIMING test using REFCOUNT_FULL (LSE cmpxchg)
+      191057942484      cycles                    #    2.207 GHz
+      148447589402      instructions              #    0.78  insn per
+cycle
 
-Interesting, I'm not even sure how the driver can stop multiple channels
-in the rmnet model?
+      86.568269904 seconds time elapsed
 
-> At the moment, the rmnet configuration in include/uapi/linux/if_link.h
-> is almost trivial, with the three pieces of information needed being
-> an IFLA_LINK to point to the real device (not needed if there is only
-> one device per channel, instead of two), the IFLA_RMNET_MUX_ID
-> setting the ID of the muxing channel (not needed if there is only
-> one channel ?), a way to specify software bridging between channels
-> (not useful if there is only one channel) 
+Upper bound: ATOMIC_TIMING
+      116252672661      cycles                    #    2.207 GHz
+       28089216452      instructions              #    0.24  insn per
+cycle
 
-I think the MUX ID is something we *would* want, and we'd probably want
-a channel type as well, so as to not paint ourselves into a corner where
-the default ends up being whatever IPA supports right now.
+      52.689793525 seconds time elapsed
 
-The software bridging is very questionable to start with, I'd advocate
-not supporting that at all but adding tracepoints or similar if needed
-for debugging instead.
+REFCOUNT_TIMING test using LSE atomics
+      127060259162      cycles                    #    2.207 GHz
+                 0      instructions              #    0.00  insn per
+cycle
 
-
-> and a few flags that I assume
-> must match the remote end:
-> 
-> #define RMNET_FLAGS_INGRESS_DEAGGREGATION         (1U << 0)
-> #define RMNET_FLAGS_INGRESS_MAP_COMMANDS          (1U << 1)
-> #define RMNET_FLAGS_INGRESS_MAP_CKSUMV4           (1U << 2)
-> #define RMNET_FLAGS_EGRESS_MAP_CKSUMV4            (1U << 3)
-
-I don't really know about these.
-
-> > If true though, then I think this would be the killer argument *in
-> > favour* of *not* merging this - because that would mean we *don't* have
-> > to actually keep the rmnet API around for all foreseeable future.
-> 
-> I would agree with that. From the code I can see no other driver
-> including the rmnet protocol header (see the discussion about moving
-> the header to include/linux in order to merge ipa), and I don't see
-> any other driver referencing ETH_P_MAP either. My understanding
-> is that any driver used by rmnet would require both, but they are
-> all out-of-tree at the moment.
-
-I guess that would mean we have more work to do here, but it also means
-we don't have to support these interfaces forever.
-
-I'm not *entirely* convinced though. rmnet in itself doesn't really seem
-to require anything from the underlying netdev, so if there's a driver
-that just blindly passes things through to the hardware expecting the
-right configuration, we wouldn't really see it this way?
-
-OTOH, such a driver would probably blow up completely if somebody tried
-to use it without rmnet on top, and so it would at least have to check
-for ETH_P_MAP?
-
-johannes
-
+      57.243690077 seconds time elapsed
 
 _______________________________________________
 linux-arm-kernel mailing list
