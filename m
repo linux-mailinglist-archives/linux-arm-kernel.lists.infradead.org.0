@@ -2,60 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3F12C47D4E
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 17 Jun 2019 10:39:10 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 07E9A47D63
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 17 Jun 2019 10:43:42 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Eo3RKs3NEcX7DlL/HRR+2hutbnpIj+2SBlBg0bGUQmE=; b=fGiGQNLw05m3up
-	JxkxWMtNZJs06CeMN7LyLr3WwFAvQX0Wo2YVso4/zXFupqwHDsNpc8sDMuyZtNXmTtRAy49V8BqkO
-	yMWoVADPbLtbjHAB1ACf/AwF/txFPY0oBibcMakYyj25SfWQuQVhuRzMU7g4AncSOD+G/D3OL60Fn
-	C8F66TZRt5g/TkSxGyiNgI7HbaV0TvrDBMknlt1/3xXq2xtgbAaQZKeQ1Ez8bNZi1DDaLjKGLvmdX
-	47cLewN1gDfp0soHW4UmsRDbHthbC5uLoRXmmnqWmlBWrrJaRCkvaLhvkOiP8BNxl6JLx1QnvTY28
-	KCPkMG9vPosjR1YAm9Ag==;
+	List-Owner; bh=6JSMsBEGgwtebN85I6k90L8noP9LY5izO3qTQjqNeaI=; b=MZniSYHAsAljas
+	zIC/2lVn8Z6v8wJfiieLYo875YHm78aqN1Rx+hPZb05LyUWe19wW8eeaA38nn5UQTXKr3ciANNc1v
+	a0QBAIOmdXkMVPwC9vGfpcchrNm2zg5NACQtvewz//MWBmbbXCAcG5VlvB6idJIRtRc268mecpOqL
+	wsVhrbJYRhFK5IXHHjtEse94EjhXFa3CqYNhx3oNPqt1W0EZvACoU0wHzoAWMG6IAGZhBUDp1n8bz
+	lzqSxWm4N5Kz+EIkbioQksDpB052XuuBC6v7sMzpX86PKMZvhzBmCqD5dma2QbY+8FvCkw6Fl1yAq
+	veAGMc+zTG8Wkr9Xo68A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hcnAQ-0005yh-Gp; Mon, 17 Jun 2019 08:39:06 +0000
-Received: from kirsty.vergenet.net ([202.4.237.240])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hcn91-0004qY-Iv
- for linux-arm-kernel@lists.infradead.org; Mon, 17 Jun 2019 08:37:41 +0000
-Received: from reginn.horms.nl (watermunt.horms.nl [80.127.179.77])
- by kirsty.vergenet.net (Postfix) with ESMTPA id 9CFCA25AED3;
- Mon, 17 Jun 2019 18:37:38 +1000 (AEST)
-Received: by reginn.horms.nl (Postfix, from userid 7100)
- id A2B1C94024A; Mon, 17 Jun 2019 10:37:36 +0200 (CEST)
-Date: Mon, 17 Jun 2019 10:37:36 +0200
-From: Simon Horman <horms@verge.net.au>
-To: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
-Subject: Re: [PATCH/RFT] arm64: dts: renesas: r8a77995: Add cpg reset for
- LVDS Interface
-Message-ID: <20190617083735.thl6r6hduuz7s66y@verge.net.au>
-References: <1560078659-19236-1-git-send-email-ykaneko0929@gmail.com>
- <CAMuHMdV8Mg2ao9EwrLkiHF53Y_a5RKyvaqAv13uPvqTr19K++Q@mail.gmail.com>
- <20190612121556.GK5035@pendragon.ideasonboard.com>
- <20190613100246.qa2lcbcgbyd3zuaz@verge.net.au>
- <20190613100342.GB5259@pendragon.ideasonboard.com>
+	id 1hcnEp-00006j-AC; Mon, 17 Jun 2019 08:43:39 +0000
+Received: from mail-lf1-f66.google.com ([209.85.167.66])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hcnEa-00006J-Lg
+ for linux-arm-kernel@lists.infradead.org; Mon, 17 Jun 2019 08:43:26 +0000
+Received: by mail-lf1-f66.google.com with SMTP id q26so5892915lfc.3
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 17 Jun 2019 01:43:23 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=p4VKAprg7mXUJd6G8Qf2jpLDJEVAi1L24CO1vzj3CGU=;
+ b=Kw+/BA5d1j8ud+dmOfy5FlI1LAkkxpo110e345bhmd0vUhCk9qGON8xv4seLNJ/BQI
+ 2KifIkn2KFG0LkjF4m2noR5VBbUDhkv7EpXs1zewHYOe3PecTjFjVhCDh14d3woZfGoD
+ NSL5goDWTZGJ3DtP/u+8P+xM4RNDuSLc+F9T7BLEmRHsqYhWgcawP+nWXgrWKvgoO6be
+ pHErzve1ipYwZxnE2deRC3KNjBIMq0RlofKvqijwxW53UZUwzpNzCW016+ruTKSWFKra
+ gi8JetL2z5xHp8UDYmqCdF+Azyk8Wk6tBfixjLZbOftGA5RBS/uLjNXEnJU+Q1ovm90u
+ UoIg==
+X-Gm-Message-State: APjAAAWZAxm+is3YFh/G2Ne55Velwc5OLZrt15n91wqqP4VbO1/o0ehy
+ ii42OIGeR+opBEQcQrYKVVMk1v3sfuQdqtahuso=
+X-Google-Smtp-Source: APXvYqyzlinULIwCTQjvK3dU45P5C1mboR5bQEvnqFKJJDzMHrNXC72e93q8r138d5PLeAGt7y20WxK5UyK4E8ydR1k=
+X-Received: by 2002:ac2:597c:: with SMTP id h28mr15739604lfp.90.1560761002181; 
+ Mon, 17 Jun 2019 01:43:22 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190613100342.GB5259@pendragon.ideasonboard.com>
-Organisation: Horms Solutions BV
-User-Agent: NeoMutt/20170113 (1.7.2)
+References: <20190617083704.3941-1-horms+renesas@verge.net.au>
+ <20190617083704.3941-2-horms+renesas@verge.net.au>
+In-Reply-To: <20190617083704.3941-2-horms+renesas@verge.net.au>
+From: Geert Uytterhoeven <geert@linux-m68k.org>
+Date: Mon, 17 Jun 2019 10:43:09 +0200
+Message-ID: <CAMuHMdUu2T2+Ri_xEq+Nr1qD_Dm067TDkfxTDpduX4xia2FGDQ@mail.gmail.com>
+Subject: Re: [PATCH v2 1/2] arm64: dts: renesas: r8a77990: Add cpg reset for
+ LVDS Interface
+To: Simon Horman <horms+renesas@verge.net.au>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190617_013739_925609_561E0E93 
-X-CRM114-Status: GOOD (  25.00  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20190617_014324_713935_827AC0A8 
+X-CRM114-Status: GOOD (  17.85  )
+X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [202.4.237.240 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.167.66 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.167.66 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (geert.uytterhoeven[at]gmail.com)
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -67,74 +83,72 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Laurent Pinchart <laurent.pinchart+renesas@ideasonboard.com>,
+Cc: Takeshi Kihara <takeshi.kihara.df@renesas.com>,
  Yoshihiro Kaneko <ykaneko0929@gmail.com>, Magnus Damm <magnus.damm@gmail.com>,
  Linux-Renesas <linux-renesas-soc@vger.kernel.org>,
- Geert Uytterhoeven <geert@linux-m68k.org>,
+ Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
  Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Jun 13, 2019 at 01:03:42PM +0300, Laurent Pinchart wrote:
-> Hi Simon,
-> 
-> On Thu, Jun 13, 2019 at 12:02:46PM +0200, Simon Horman wrote:
-> > On Wed, Jun 12, 2019 at 03:15:56PM +0300, Laurent Pinchart wrote:
-> > > On Wed, Jun 12, 2019 at 09:37:14AM +0200, Geert Uytterhoeven wrote:
-> > >> On Sun, Jun 9, 2019 at 1:11 PM Yoshihiro Kaneko <ykaneko0929@gmail.com> wrote:
-> > >>> It is necessary to reset the LVDS Interface according to display on/off.
-> > >>> Therefore, this patch adds CPG reset properties in DU device node
-> > >>> for the R8A77995 SoC.
-> > >>>
-> > >>> This patch was inspired by a patch in the BSP by Takeshi Kihara <takeshi.kihara.df@renesas.com>.
-> > >>>
-> > >>> Signed-off-by: Yoshihiro Kaneko <ykaneko0929@gmail.com>
-> > >> 
-> > >> Thanks for your patch!
-> > >> 
-> > >>> --- a/arch/arm64/boot/dts/renesas/r8a77995.dtsi
-> > >>> +++ b/arch/arm64/boot/dts/renesas/r8a77995.dtsi
-> > >>> @@ -1001,6 +1001,8 @@
-> > >>>                         clocks = <&cpg CPG_MOD 724>,
-> > >>>                                  <&cpg CPG_MOD 723>;
-> > >>>                         clock-names = "du.0", "du.1";
-> > >>> +                       resets = <&cpg 724>, <&cpg 724>;
-> > >>> +                       reset-names = "du.0", "du.1";
-> > >> 
-> > >> These are not the LVDS resets, but the (shared) DU channel resets.
-> > >> 
-> > >> The LVDS interface has its own separate device node, so if you want to
-> > >> be able to reset that, you need to add reset properties to the LVDS
-> > >> node instead.
-> > >> 
-> > >> Note that I haven't reposted a new version of "[PATCH v2] dt-bindings:
-> > >> drm: rcar-du: Document optional reset properties"[1] yet, after the
-> > >> split off of the LVDS interface into its own device node. Laurent wanted
-> > >> to wait until the driver gained DU reset support.
-> > >> However, the above differs from my proposal, as it also adds "du.1",
-> > >> pointing to the same (shared) reset.
-> > >> With a fresh look (2 years later ;-), that actually makes sense, so
-> > >> perhaps I should change my proposal and repost? We do have shared
-> > >> resets in other places (e.g. USB).
-> > >> Laurent, what do you think?
-> > > 
-> > > For Gen3 reset is handled at the group level, so I think specifying one
-> > > entry per group is enough. If other SoCs require per-channel reset
-> > > (which would surprise me as it would then imply a big redesign of the DU
-> > > IP core, which may lead to a separate driver) we can always extend the
-> > > bindings accordingly.
-> > > 
-> > >> [1] https://lore.kernel.org/linux-renesas-soc/1488817556-21410-1-git-send-email-geert+renesas@glider.be/
-> > 
-> > Sorry, I'm a little unclear on what the suggested way forwards is here.
-> > 
-> > Is it to add a reset for du.0 but not du.1 ?
-> 
-> Correct.
+Hi Simon,
 
-Thanks, v2 sent.
+On Mon, Jun 17, 2019 at 10:37 AM Simon Horman
+<horms+renesas@verge.net.au> wrote:
+> From: Takeshi Kihara <takeshi.kihara.df@renesas.com>
+>
+> It is necessary to reset the LVDS Interface according to display on/off.
+
+This is not the LVDS interface.
+The LVDS interface has its own device node.
+
+> Therefore, this patch adds CPG reset properties in DU device node
+> for the R8A77990 SoC.
+>
+> According to Laurent Pinchart, R-Car Gen3 reset is handled at the group
+> level so specifying one reset entry per group is sufficient. For this
+> reason <&cpg 724> is not listed as a reset for "du.1" as was the case in an
+> earlier revision of this patch.
+>
+> Signed-off-by: Takeshi Kihara <takeshi.kihara.df@renesas.com>
+> Signed-off-by: Yoshihiro Kaneko <ykaneko0929@gmail.com>
+> Signed-off-by: Simon Horman <horms+renesas@verge.net.au>
+> ---
+> v2 [Simon Horman]
+> - only add one reset entry per group
+>
+> v1 [Yoshihiro Kaneko]
+>
+> v0 [Takeshi Kihara]
+> ---
+>  arch/arm64/boot/dts/renesas/r8a77990.dtsi | 2 ++
+>  1 file changed, 2 insertions(+)
+>
+> diff --git a/arch/arm64/boot/dts/renesas/r8a77990.dtsi b/arch/arm64/boot/dts/renesas/r8a77990.dtsi
+> index b4318661f35e..84d1f58e73e7 100644
+> --- a/arch/arm64/boot/dts/renesas/r8a77990.dtsi
+> +++ b/arch/arm64/boot/dts/renesas/r8a77990.dtsi
+> @@ -1766,6 +1766,8 @@
+>                         clocks = <&cpg CPG_MOD 724>,
+>                                  <&cpg CPG_MOD 723>;
+>                         clock-names = "du.0", "du.1";
+> +                       resets = <&cpg 724>;
+> +                       reset-names = "du.0";
+>                         vsps = <&vspd0 0 &vspd1 0>;
+>                         status = "disabled";
+
+Gr{oetje,eeting}s,
+
+                        Geert
+
+-- 
+Geert Uytterhoeven -- There's lots of Linux beyond ia32 -- geert@linux-m68k.org
+
+In personal conversations with technical people, I call myself a hacker. But
+when I'm talking to journalists I just say "programmer" or something like that.
+                                -- Linus Torvalds
 
 _______________________________________________
 linux-arm-kernel mailing list
