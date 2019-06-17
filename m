@@ -2,58 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 24C0A47E4E
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 17 Jun 2019 11:25:05 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id EFB0B47E69
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 17 Jun 2019 11:29:24 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:References
-	:In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=LUwcv8YppBnarnsG+w2Yx5ozuI19IHSXoz/AghthFM4=; b=XHYdaJk59TVapq
-	T972fWcl5MuEcgf57c2elZT5a2vIBBLn5Js9DznJ/0pFlcdXnBvtFwdATbW/kfQ9lyJG1k26iwblK
-	xSSkjRE2ZTkXDcyrYb2E2gNJ0Q4UvT0aTewjRG1E95LKhMc2eTcZKWvFoc+vJjbA8w2Ei3KAYcBpZ
-	FrGXmcWaZPo3XqBm5MbLxwH1jjRha9mBcgSE/YKQz3Qc/tYpmSGYuaw3rB9nELwQL/Z86jtZJkrcW
-	kWX4Gu0rBZYuHLUD7+lPEHwbcb86/lZ9woCULFZTa9rewrID2f7+YGEdDoyDZcUZ9WwJ02jBuIaxS
-	ZF6v4vSMfjLZ6SFylt2g==;
+	List-Owner; bh=TiBNl3RLkGFDcsycxTlZyYlt/eoQ4QOD26vdczM2Ylw=; b=KfF9Kbv0r5jywu
+	aO5HxuCGkH1whfEhqetP3gsJWV6Ej0Fm0KuLdnxIerW9y24U3P3duqe37IHzwxVTOX1g6wyrkF/uR
+	6j8WX6Um+U2nsj6SKSxodq2rIeB9c70VMq0Lo9k1b5xBvPLCxs8xHUo8c/U4ZEtPJufGBPsulHcdL
+	lm2QsdNZs07YsFNCXXqfAPPWQqXKKsFadzm287NMWPOOLvmGOsX6P+1pD4H6DteLzP43xUe3kdJUF
+	m+VLR5PgEstV1LRwgyKSCnV4dVc0Zr+xUL+qeV1trJMnKqwujIlX0fGeqOO0xffU4Xhm+cAk9wl1m
+	qSdGmVzrtVRPmyTuPpjg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hcnsp-0001Uz-CX; Mon, 17 Jun 2019 09:24:59 +0000
-Received: from mga12.intel.com ([192.55.52.136])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hcnsa-0001UM-TW
- for linux-arm-kernel@lists.infradead.org; Mon, 17 Jun 2019 09:24:46 +0000
-X-Amp-Result: SKIPPED(no attachment in message)
-X-Amp-File-Uploaded: False
-Received: from fmsmga001.fm.intel.com ([10.253.24.23])
- by fmsmga106.fm.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
- 17 Jun 2019 02:24:44 -0700
-X-ExtLoop1: 1
-Received: from jnikula-mobl3.fi.intel.com (HELO localhost) ([10.237.66.150])
- by fmsmga001.fm.intel.com with ESMTP; 17 Jun 2019 02:24:41 -0700
-From: Jani Nikula <jani.nikula@linux.intel.com>
-To: Maxime Ripard <maxime.ripard@bootlin.com>
-Subject: Re: [PATCH v4 02/12] drm/client: Restrict the plane_state scope
-In-Reply-To: <20190614141211.rl7ihqgzllcai634@flea>
-Organization: Intel Finland Oy - BIC 0357606-4 - Westendinkatu 7, 02160 Espoo
-References: <cover.5fc7840dc8fb24744516c13acb8c8aa18e44c0d0.1560514379.git-series.maxime.ripard@bootlin.com>
- <4f6344cb770047cf5808791d849bbc0cbd330e54.1560514379.git-series.maxime.ripard@bootlin.com>
- <87wohouz90.fsf@intel.com> <20190614141211.rl7ihqgzllcai634@flea>
-Date: Mon, 17 Jun 2019 12:27:37 +0300
-Message-ID: <87a7egv9x2.fsf@intel.com>
+	id 1hcnx3-0003Q2-5f; Mon, 17 Jun 2019 09:29:21 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hcnwo-0003Pf-OH
+ for linux-arm-kernel@lists.infradead.org; Mon, 17 Jun 2019 09:29:08 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id EA6A1344;
+ Mon, 17 Jun 2019 02:29:05 -0700 (PDT)
+Received: from e121166-lin.cambridge.arm.com (unknown [10.1.196.255])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id E76ED3F246;
+ Mon, 17 Jun 2019 02:29:03 -0700 (PDT)
+Date: Mon, 17 Jun 2019 10:29:01 +0100
+From: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
+To: "Z.q. Hou" <zhiqiang.hou@nxp.com>
+Subject: Re: [PATCHv5 19/20] PCI: mobiveil: Add 8-bit and 16-bit register
+ accessors
+Message-ID: <20190617092901.GB18020@e121166-lin.cambridge.arm.com>
+References: <20190412083635.33626-1-Zhiqiang.Hou@nxp.com>
+ <20190412083635.33626-20-Zhiqiang.Hou@nxp.com>
+ <20190612135400.GB15747@redmoon>
+ <AM0PR04MB673802CE0891BC898B61EBA384E90@AM0PR04MB6738.eurprd04.prod.outlook.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <AM0PR04MB673802CE0891BC898B61EBA384E90@AM0PR04MB6738.eurprd04.prod.outlook.com>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190617_022444_965478_4C753E42 
-X-CRM114-Status: GOOD (  19.19  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20190617_022906_884070_A2AA6B4F 
+X-CRM114-Status: GOOD (  18.63  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [192.55.52.136 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -65,101 +64,77 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: eben@raspberrypi.org, David Airlie <airlied@linux.ie>,
- Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
- dri-devel@lists.freedesktop.org,
- Paul Kocialkowski <paul.kocialkowski@bootlin.com>,
- Sean Paul <seanpaul@chromium.org>,
- Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
- Daniel Vetter <daniel.vetter@intel.com>, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ Xiaowei Bao <xiaowei.bao@nxp.com>,
+ "linux-pci@vger.kernel.org" <linux-pci@vger.kernel.org>,
+ "l.subrahmanya@mobiveil.co.in" <l.subrahmanya@mobiveil.co.in>,
+ "will.deacon@arm.com" <will.deacon@arm.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Leo Li <leoyang.li@nxp.com>, "M.h. Lian" <minghuan.lian@nxp.com>,
+ "robh+dt@kernel.org" <robh+dt@kernel.org>, Mingkai Hu <mingkai.hu@nxp.com>,
+ "catalin.marinas@arm.com" <catalin.marinas@arm.com>,
+ "bhelgaas@google.com" <bhelgaas@google.com>,
+ "shawnguo@kernel.org" <shawnguo@kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, 14 Jun 2019, Maxime Ripard <maxime.ripard@bootlin.com> wrote:
-> Hi Jani,
->
-> On Fri, Jun 14, 2019 at 03:28:59PM +0300, Jani Nikula wrote:
->> On Fri, 14 Jun 2019, Maxime Ripard <maxime.ripard@bootlin.com> wrote:
->> > The drm_client_modeset_commit_atomic function uses two times the
->> > plane_state variable in inner blocks of code, but the variable has a scope
->> > global to this function.
->> >
->> > This will lead to inadvertent devs to reuse the variable in the second
->> > block with the value left by the first, without any warning from the
->> > compiler since value would have been initialized.
->> >
->> > Fix this by moving the variable declaration to the proper scope.
->>
->> This is an improvement, but I'd consider renaming also to not shadow
->> variables.
->>
->> > Signed-off-by: Maxime Ripard <maxime.ripard@bootlin.com>
->> > ---
->> >  drivers/gpu/drm/drm_client_modeset.c | 5 ++++-
->> >  1 file changed, 4 insertions(+), 1 deletion(-)
->> >
->> > diff --git a/drivers/gpu/drm/drm_client_modeset.c b/drivers/gpu/drm/drm_client_modeset.c
->> > index 006bf7390e7d..8264c3a732b0 100644
->> > --- a/drivers/gpu/drm/drm_client_modeset.c
->> > +++ b/drivers/gpu/drm/drm_client_modeset.c
->> > @@ -861,7 +861,6 @@ EXPORT_SYMBOL(drm_client_panel_rotation);
->> >  static int drm_client_modeset_commit_atomic(struct drm_client_dev *client, bool active)
->> >  {
->> >  	struct drm_device *dev = client->dev;
->> > -	struct drm_plane_state *plane_state;
->> >  	struct drm_plane *plane;
->> >  	struct drm_atomic_state *state;
->> >  	struct drm_modeset_acquire_ctx ctx;
->> > @@ -879,6 +878,8 @@ static int drm_client_modeset_commit_atomic(struct drm_client_dev *client, bool
->> >  	state->acquire_ctx = &ctx;
->> >  retry:
->> >  	drm_for_each_plane(plane, dev) {
->> > +		struct drm_plane_state *plane_state;
->> > +
->> >  		plane_state = drm_atomic_get_plane_state(state, plane);
->> >  		if (IS_ERR(plane_state)) {
->> >  			ret = PTR_ERR(plane_state);
->> > @@ -901,6 +902,8 @@ static int drm_client_modeset_commit_atomic(struct drm_client_dev *client, bool
->> >  		unsigned int rotation;
->> >
->> >  		if (drm_client_panel_rotation(mode_set, &rotation)) {
->> > +			struct drm_plane_state *plane_state;
->> > +
->
-> That's not super clear from that patch, but this variable will not
-> shadow the first one.
->
-> The code layout is pretty much this one:
->
-> loop () {
->   struct drm_plane_state *plane_state;
->
->   [...]
-> }
->
-> loop () {
->   loop () {
->     struct drm_plane_state *plane_state;
->
->     [...]
->   }
-> }
->
-> so the shadowing doesn't exist
-
-Indeed, sorry for the noise.
-
-BR,
-Jani.
-
-
-
--- 
-Jani Nikula, Intel Open Source Graphics Center
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gU2F0LCBKdW4gMTUsIDIwMTkgYXQgMDE6MTM6NDhBTSArMDAwMCwgWi5xLiBIb3Ugd3JvdGU6
+Cj4gSGkgTG9yZW56bywKPiAKPiA+IC0tLS0tT3JpZ2luYWwgTWVzc2FnZS0tLS0tCj4gPiBGcm9t
+OiBMb3JlbnpvIFBpZXJhbGlzaSBbbWFpbHRvOmxvcmVuem8ucGllcmFsaXNpQGFybS5jb21dCj4g
+PiBTZW50OiAyMDE55bm0NuaciDEy5pelIDIxOjU0Cj4gPiBUbzogWi5xLiBIb3UgPHpoaXFpYW5n
+LmhvdUBueHAuY29tPgo+ID4gQ2M6IGxpbnV4LXBjaUB2Z2VyLmtlcm5lbC5vcmc7IGxpbnV4LWFy
+bS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZzsKPiA+IGRldmljZXRyZWVAdmdlci5rZXJuZWwu
+b3JnOyBsaW51eC1rZXJuZWxAdmdlci5rZXJuZWwub3JnOwo+ID4gYmhlbGdhYXNAZ29vZ2xlLmNv
+bTsgcm9iaCtkdEBrZXJuZWwub3JnOyBtYXJrLnJ1dGxhbmRAYXJtLmNvbTsKPiA+IGwuc3VicmFo
+bWFueWFAbW9iaXZlaWwuY28uaW47IHNoYXduZ3VvQGtlcm5lbC5vcmc7IExlbyBMaQo+ID4gPGxl
+b3lhbmcubGlAbnhwLmNvbT47IGNhdGFsaW4ubWFyaW5hc0Bhcm0uY29tOyB3aWxsLmRlYWNvbkBh
+cm0uY29tOwo+ID4gTWluZ2thaSBIdSA8bWluZ2thaS5odUBueHAuY29tPjsgTS5oLiBMaWFuIDxt
+aW5naHVhbi5saWFuQG54cC5jb20+Owo+ID4gWGlhb3dlaSBCYW8gPHhpYW93ZWkuYmFvQG54cC5j
+b20+Cj4gPiBTdWJqZWN0OiBSZTogW1BBVENIdjUgMTkvMjBdIFBDSTogbW9iaXZlaWw6IEFkZCA4
+LWJpdCBhbmQgMTYtYml0IHJlZ2lzdGVyCj4gPiBhY2Nlc3NvcnMKPiA+IAo+ID4gT24gRnJpLCBB
+cHIgMTIsIDIwMTkgYXQgMDg6Mzc6MDVBTSArMDAwMCwgWi5xLiBIb3Ugd3JvdGU6Cj4gPiA+IEZy
+b206IEhvdSBaaGlxaWFuZyA8WmhpcWlhbmcuSG91QG54cC5jb20+Cj4gPiA+Cj4gPiA+IFRoZXJl
+IGFyZSBzb21lIDgtYml0IGFuZCAxNi1iaXQgcmVnaXN0ZXJzIGluIFBDSWUgY29uZmlndXJhdGlv
+biBzcGFjZSwKPiA+ID4gc28gYWRkIGFjY2Vzc29ycyBmb3IgdGhlbS4KPiA+ID4KPiA+ID4gU2ln
+bmVkLW9mZi1ieTogSG91IFpoaXFpYW5nIDxaaGlxaWFuZy5Ib3VAbnhwLmNvbT4KPiA+ID4gUmV2
+aWV3ZWQtYnk6IE1pbmdodWFuIExpYW4gPE1pbmdodWFuLkxpYW5AbnhwLmNvbT4KPiA+ID4gUmV2
+aWV3ZWQtYnk6IFN1YnJhaG1hbnlhIExpbmdhcHBhIDxsLnN1YnJhaG1hbnlhQG1vYml2ZWlsLmNv
+LmluPgo+ID4gPiAtLS0KPiA+ID4gVjU6Cj4gPiA+ICAtIENvcnJlY3RlZCBhbmQgcmV0b3VjaGVk
+IHRoZSBzdWJqZWN0IGFuZCBjaGFuZ2Vsb2cuCj4gPiA+ICAtIE5vIGZ1bmN0aW9uYWxpdHkgY2hh
+bmdlLgo+ID4gPgo+ID4gPiAgZHJpdmVycy9wY2kvY29udHJvbGxlci9wY2llLW1vYml2ZWlsLmMg
+fCAyMCArKysrKysrKysrKysrKysrKysrKwo+ID4gPiAgMSBmaWxlIGNoYW5nZWQsIDIwIGluc2Vy
+dGlvbnMoKykKPiA+ID4KPiA+ID4gZGlmZiAtLWdpdCBhL2RyaXZlcnMvcGNpL2NvbnRyb2xsZXIv
+cGNpZS1tb2JpdmVpbC5jCj4gPiA+IGIvZHJpdmVycy9wY2kvY29udHJvbGxlci9wY2llLW1vYml2
+ZWlsLmMKPiA+ID4gaW5kZXggNDExZTk3NzlkYTEyLi40NTZhZGZlZTM5M2MgMTAwNjQ0Cj4gPiA+
+IC0tLSBhL2RyaXZlcnMvcGNpL2NvbnRyb2xsZXIvcGNpZS1tb2JpdmVpbC5jCj4gPiA+ICsrKyBi
+L2RyaXZlcnMvcGNpL2NvbnRyb2xsZXIvcGNpZS1tb2JpdmVpbC5jCj4gPiA+IEBAIC0yNjgsMTEg
+KzI2OCwzMSBAQCBzdGF0aWMgdTMyIGNzcl9yZWFkbChzdHJ1Y3QgbW9iaXZlaWxfcGNpZSAqcGNp
+ZSwKPiA+IHUzMiBvZmYpCj4gPiA+ICAJcmV0dXJuIGNzcl9yZWFkKHBjaWUsIG9mZiwgMHg0KTsK
+PiA+ID4gIH0KPiA+ID4KPiA+ID4gK3N0YXRpYyB1MzIgY3NyX3JlYWR3KHN0cnVjdCBtb2JpdmVp
+bF9wY2llICpwY2llLCB1MzIgb2ZmKSB7Cj4gPiA+ICsJcmV0dXJuIGNzcl9yZWFkKHBjaWUsIG9m
+ZiwgMHgyKTsKPiA+ID4gK30KPiA+ID4gKwo+ID4gPiArc3RhdGljIHUzMiBjc3JfcmVhZGIoc3Ry
+dWN0IG1vYml2ZWlsX3BjaWUgKnBjaWUsIHUzMiBvZmYpIHsKPiA+ID4gKwlyZXR1cm4gY3NyX3Jl
+YWQocGNpZSwgb2ZmLCAweDEpOwo+ID4gPiArfQo+ID4gPiArCj4gPiA+ICBzdGF0aWMgdm9pZCBj
+c3Jfd3JpdGVsKHN0cnVjdCBtb2JpdmVpbF9wY2llICpwY2llLCB1MzIgdmFsLCB1MzIgb2ZmKQo+
+ID4gPiB7Cj4gPiA+ICAJY3NyX3dyaXRlKHBjaWUsIHZhbCwgb2ZmLCAweDQpOwo+ID4gPiAgfQo+
+ID4gPgo+ID4gPiArc3RhdGljIHZvaWQgY3NyX3dyaXRldyhzdHJ1Y3QgbW9iaXZlaWxfcGNpZSAq
+cGNpZSwgdTMyIHZhbCwgdTMyIG9mZikKPiA+ID4gK3sKPiA+ID4gKwljc3Jfd3JpdGUocGNpZSwg
+dmFsLCBvZmYsIDB4Mik7Cj4gPiA+ICt9Cj4gPiA+ICsKPiA+ID4gK3N0YXRpYyB2b2lkIGNzcl93
+cml0ZWIoc3RydWN0IG1vYml2ZWlsX3BjaWUgKnBjaWUsIHUzMiB2YWwsIHUzMiBvZmYpCj4gPiA+
+ICt7Cj4gPiA+ICsJY3NyX3dyaXRlKHBjaWUsIHZhbCwgb2ZmLCAweDEpOwo+ID4gPiArfQo+ID4g
+PiArCj4gPiAKPiA+IFRoZXkgYXJlIG5vdCB1c2VkIHNvIHlvdSBzaG91bGQgZHJvcCB0aGlzIHBh
+dGNoLgo+IAo+IE5YUCBMYXllcnNjYXBlIFBDSWUgR2VuNCBjb250cm9sbGVyIGRyaXZlciB3aWxs
+IHVzZSB0aGVtLCBzbyBkb24ndAo+IGRyb3AgaXQuCgpZb3UgYWRkIGZ1bmN0aW9ucyB3aGVuIHRo
+ZXkgYXJlIG5lZWRlZCwgc28gZHJvcCB0aGlzIHBhdGNoIGFuZApzcXVhc2ggaXQgdG8gdGhlIHBh
+dGNoIHRoYXQgdXNlIHRoZXNlIGZ1bmN0aW9ucy4KCkxvcmVuem8KCj4gVGhhbmtzLAo+IFpoaXFp
+YW5nCj4gCj4gPiAKPiA+IExvcmVuem8KPiA+IAo+ID4gPiAgc3RhdGljIGJvb2wgbW9iaXZlaWxf
+cGNpZV9saW5rX3VwKHN0cnVjdCBtb2JpdmVpbF9wY2llICpwY2llKSAgewo+ID4gPiAgCXJldHVy
+biAoY3NyX3JlYWRsKHBjaWUsIExUU1NNX1NUQVRVUykgJgo+ID4gPiAtLQo+ID4gPiAyLjE3LjEK
+PiA+ID4KCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxp
+bnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFk
+ZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4
+LWFybS1rZXJuZWwK
