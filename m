@@ -2,81 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0AB0C484B9
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 17 Jun 2019 15:59:06 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 30234484C0
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 17 Jun 2019 16:00:14 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:References:To:From:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=n5+Tr3ShaDhWpPbuc0m6mbI6MJKqdPAb8CuU0iLx8i0=; b=nclN3tqiFSTmM1
-	Bu2WrdTBJ5d4UH95DBq1p4+623jH/GmQ2stsamMklvOaGBAxy8uCX6QTP93+QeSeHPwV5ksGMiiZi
-	mFrHN49M8bOaXTDCJNjsyVM+NbXrex4nFVBnGI2NVfhtOvlIa6sEw3PXp/sLnYcm4Jwanznc4+gUi
-	YB75KNQpKLNFVKBfk5nTyEwJSN3rkHuXwQnNJ44kV+ce5K6ol1BLPLcy/UgWMf2ir9j5Npq3Gmbz6
-	07M6PHtzCW1+f2OqX3i0mLeyyNrN/HB/sbUlAo6xDqB7cbxj3HjwmZ6o7f03LkSnpTDE3UWgaA3dV
-	UibO3u4IVvG3n9SVDYDA==;
+	List-Archive:List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:
+	Subject:To:From:Date:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=pvMKstd11oRH9/6MVGpO/pi4AOPJ59C+GiSnf/OkvDg=; b=Ac0npK+8ebOvb3
+	kAcTRbIYxzgB04y+JjQMDVk9bvFCf3dq478F1jhRNCWQ59kvHrhQM+4ujM7BUzQadyACd/ChzkeXb
+	rrlGtxojF2Mq7s0ySeEv4s68etIRDhm2AH7ZEZVmGEAn1R8KI7Hvi+PpaVr4geASDH0H53Y4yFKAs
+	ZEHebHAfoyXR8528wmPysiP/rv6wiobqiyWdHIrVvEIMRNX2gRFGTQvJ81ocRbPFw6LYSVon449uE
+	VeqaHXiLAMYM//ECx1JwClSN5Tj+Oe93lu4oZQhebDixTHpeNWmdYxKIW7sLUxbckQMTRxdoY69bL
+	JDTDZ5PgLuXdIM7nYppQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hcs9s-00052b-R6; Mon, 17 Jun 2019 13:58:53 +0000
-Received: from fllv0016.ext.ti.com ([198.47.19.142])
+	id 1hcsB5-0005jT-PF; Mon, 17 Jun 2019 14:00:09 +0000
+Received: from mail.kmu-office.ch ([2a02:418:6a02::a2])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hcs7K-0004a3-G9; Mon, 17 Jun 2019 13:56:16 +0000
-Received: from fllv0034.itg.ti.com ([10.64.40.246])
- by fllv0016.ext.ti.com (8.15.2/8.15.2) with ESMTP id x5HDtx3u058057;
- Mon, 17 Jun 2019 08:55:59 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1560779759;
- bh=Z/vHfKIzvy1mzMQ3Xcf2x6pnLGFqPDdrL7jlm1/udo4=;
- h=Subject:From:To:CC:References:Date:In-Reply-To;
- b=w/LFXDw0v2CWmxFe8ZdHyYcL00nPhPro9zXLsVyGzwINMgOZHEdXN0m4btk/Eevd5
- u3CEwXVLXNZz4ih/CdFHR6a1OYt9PXF5G1DgZXxryyAsDLrrT7tHd7AslrDQIwtb96
- av7tACJnUJCq8cdLHI7MHHGUM+ABOx2s79KBXxHA=
-Received: from DFLE104.ent.ti.com (dfle104.ent.ti.com [10.64.6.25])
- by fllv0034.itg.ti.com (8.15.2/8.15.2) with ESMTPS id x5HDtxLT121977
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Mon, 17 Jun 2019 08:55:59 -0500
-Received: from DFLE108.ent.ti.com (10.64.6.29) by DFLE104.ent.ti.com
- (10.64.6.25) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5; Mon, 17
- Jun 2019 08:55:59 -0500
-Received: from lelv0326.itg.ti.com (10.180.67.84) by DFLE108.ent.ti.com
- (10.64.6.29) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5 via
- Frontend Transport; Mon, 17 Jun 2019 08:55:59 -0500
-Received: from [172.24.190.89] (ileax41-snat.itg.ti.com [10.172.224.153])
- by lelv0326.itg.ti.com (8.15.2/8.15.2) with ESMTP id x5HDtsxA120689;
- Mon, 17 Jun 2019 08:55:55 -0500
-Subject: Re: [PATCH v5 3/5] mtd: Add support for HyperBus memory devices
-From: Vignesh Raghavendra <vigneshr@ti.com>
-To: Sergei Shtylyov <sergei.shtylyov@cogentembedded.com>, David Woodhouse
- <dwmw2@infradead.org>, Brian Norris <computersforpeace@gmail.com>, Boris
- Brezillon <bbrezillon@kernel.org>, Marek Vasut <marek.vasut@gmail.com>,
- Richard Weinberger <richard@nod.at>, Rob Herring <robh+dt@kernel.org>
-References: <20190609103227.24875-1-vigneshr@ti.com>
- <20190609103227.24875-4-vigneshr@ti.com>
- <58e9608d-35ff-0436-6075-b2e4ed4b8594@cogentembedded.com>
- <f47d4d57-afb2-3b39-fae9-3ed740a2b8a6@ti.com>
-Message-ID: <a0c770dc-8347-0818-131c-f764fbdfe48a@ti.com>
-Date: Mon, 17 Jun 2019 19:26:40 +0530
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.7.0
+ id 1hcsAP-0005Y6-Rk
+ for linux-arm-kernel@lists.infradead.org; Mon, 17 Jun 2019 13:59:28 +0000
+Received: from webmail.kmu-office.ch (unknown [IPv6:2a02:418:6a02::a3])
+ by mail.kmu-office.ch (Postfix) with ESMTPSA id 4FDC95C2258;
+ Mon, 17 Jun 2019 15:59:20 +0200 (CEST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=agner.ch; s=dkim;
+ t=1560779960;
+ h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+ to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+ content-transfer-encoding:content-transfer-encoding:
+ in-reply-to:in-reply-to:references:references;
+ bh=KhgnWDt7MaNAVpnDtbz9ZJ+MmEsayIckDtW20dx4WZE=;
+ b=s5UlJEMgB8DUD8jd7KL36lnibTs8uY9J+pEaqmCo902/AJPzBhQXdOvQfV1Ob3rjA3t/z2
+ w8A8M5X5meIVVQD7hUm3Vm1xdNnve4RxyZlc7/rcbIzj1GN1YgIw/Ih2GVFcSyjmrlodLg
+ MnsSrk1hmWhA+Pq9eR0+qKD0SAzfDuo=
 MIME-Version: 1.0
-In-Reply-To: <f47d4d57-afb2-3b39-fae9-3ed740a2b8a6@ti.com>
-Content-Language: en-US
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
+Date: Mon, 17 Jun 2019 15:59:20 +0200
+From: Stefan Agner <stefan@agner.ch>
+To: Daniel Vetter <daniel.vetter@ffwll.ch>
+Subject: Re: [PATCH 22/59] drm/mxsfb: Drop drm_gem_prime_export/import
+In-Reply-To: <20190614203615.12639-23-daniel.vetter@ffwll.ch>
+References: <20190614203615.12639-1-daniel.vetter@ffwll.ch>
+ <20190614203615.12639-23-daniel.vetter@ffwll.ch>
+Message-ID: <059b788d46482f3391737a016eb47f58@agner.ch>
+X-Sender: stefan@agner.ch
+User-Agent: Roundcube Webmail/1.3.7
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190617_065614_633707_B7384EF4 
-X-CRM114-Status: GOOD (  33.05  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20190617_065926_535914_44DA72D6 
+X-CRM114-Status: GOOD (  13.78  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.19.142 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -84,7 +64,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -96,267 +75,57 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Tudor Ambarus <Tudor.Ambarus@microchip.com>,
- linux-kernel@vger.kernel.org, Joakim Tjernlund <Joakim.Tjernlund@infinera.com>,
- linux-mtd@lists.infradead.org, Miquel Raynal <miquel.raynal@bootlin.com>,
- Mason Yang <masonccyang@mxic.com.tw>, linux-arm-kernel@lists.infradead.org
+Cc: Marek Vasut <marex@denx.de>, Fabio Estevam <festevam@gmail.com>,
+ Intel Graphics Development <intel-gfx@lists.freedesktop.org>,
+ DRI Development <dri-devel@lists.freedesktop.org>,
+ NXP Linux Team <linux-imx@nxp.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Daniel Vetter <daniel.vetter@intel.com>, Shawn Guo <shawnguo@kernel.org>,
+ Sascha Hauer <s.hauer@pengutronix.de>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On 14.06.2019 22:35, Daniel Vetter wrote:
+> They're the default.
+> 
+> Aside: Would be really nice to switch the others over to
+> drm_gem_object_funcs.
 
+Acked-by: Stefan Agner <stefan@agner.ch>
 
-On 11/06/19 5:27 PM, Vignesh Raghavendra wrote:
-> 
-> 
-> On 10/06/19 11:27 PM, Sergei Shtylyov wrote:
->> On 06/09/2019 01:32 PM, Vignesh Raghavendra wrote:
->>
->>> Cypress' HyperBus is Low Signal Count, High Performance Double Data Rate
->>> Bus interface between a host system master and one or more slave
->>> interfaces. HyperBus is used to connect microprocessor, microcontroller,
->>> or ASIC devices with random access NOR flash memory (called HyperFlash)
->>> or self refresh DRAM (called HyperRAM).
->>>
->>> Its a 8-bit data bus (DQ[7:0]) with  Read-Write Data Strobe (RWDS)
->>> signal and either Single-ended clock(3.0V parts) or Differential clock
->>> (1.8V parts). It uses ChipSelect lines to select b/w multiple slaves.
->>> At bus level, it follows a separate protocol described in HyperBus
->>> specification[1].
->>>
->>> HyperFlash follows CFI AMD/Fujitsu Extended Command Set (0x0002) similar
->>> to that of existing parallel NORs. Since HyperBus is x8 DDR bus,
->>> its equivalent to x16 parallel NOR flash wrt bits per clock cycle. But
->>> HyperBus operates at >166MHz frequencies.
->>> HyperRAM provides direct random read/write access to flash memory
->>> array.
->>>
->>> But, HyperBus memory controllers seem to abstract implementation details
->>> and expose a simple MMIO interface to access connected flash.
->>>
->>> Add support for registering HyperFlash devices with MTD framework. MTD
->>> maps framework along with CFI chip support framework are used to support
->>> communicating with flash.
->>>
->>> Framework is modelled along the lines of spi-nor framework. HyperBus
->>> memory controller (HBMC) drivers calls hyperbus_register_device() to
->>> register a single HyperFlash device. HyperFlash core parses MMIO access
->>> information from DT, sets up the map_info struct, probes CFI flash and
->>> registers it with MTD framework.
->>>
->>> Some HBMC masters need calibration/training sequence[3] to be carried
->>> out, in order for DLL inside the controller to lock, by reading a known
->>> string/pattern. This is done by repeatedly reading CFI Query
->>> Identification String. Calibration needs to be done before trying to detect
->>> flash as part of CFI flash probe.
->>>
->>> HyperRAM is not supported at the moment.
->>>
->>> HyperBus specification can be found at[1]
->>> HyperFlash datasheet can be found at[2]
->>>
->>> [1] https://www.cypress.com/file/213356/download
->>> [2] https://www.cypress.com/file/213346/download
->>> [3] http://www.ti.com/lit/ug/spruid7b/spruid7b.pdf
->>>     Table 12-5741. HyperFlash Access Sequence
->>>
->>> Signed-off-by: Vignesh Raghavendra <vigneshr@ti.com>
->> [...]
->>> diff --git a/drivers/mtd/hyperbus/hyperbus-core.c b/drivers/mtd/hyperbus/hyperbus-core.c
->>> new file mode 100644
->>> index 000000000000..df1f75e10b1a
->>> --- /dev/null
->>> +++ b/drivers/mtd/hyperbus/hyperbus-core.c
->>> @@ -0,0 +1,191 @@
->>> +// SPDX-License-Identifier: GPL-2.0
->>> +//
->>> +// Copyright (C) 2019 Texas Instruments Incorporated - http://www.ti.com/
->>> +// Author: Vignesh Raghavendra <vigneshr@ti.com>
->>> +
->>> +#include <linux/err.h>
->>> +#include <linux/kernel.h>
->>> +#include <linux/module.h>
->>> +#include <linux/mtd/hyperbus.h>
->>> +#include <linux/mtd/map.h>
->>> +#include <linux/mtd/mtd.h>
->>> +#include <linux/mtd/cfi.h>
->>> +#include <linux/of.h>
->>> +#include <linux/of_address.h>
->>> +#include <linux/types.h>
->>> +
->>> +#define HYPERBUS_CALIB_COUNT 25
->>
->>    Mhm, I think I've already protested about this being #define'd here...
->>
-> 
-> I thought you had agreed that default optional calibration routine can
-> be part of core code and thus this #define.
-> 
-> Anyways, what is your preference here? Drop the constant and use a local
-> variable in hyperbus_calibrate()?
-> Or are you suggesting to move hyperbus_calibrate() TI's specific driver?
-> 
-> 
->> [...]
->>> +int hyperbus_register_device(struct hyperbus_device *hbdev)
->>> +{
->>> +	const struct hyperbus_ops *ops;
->>> +	struct hyperbus_ctlr *ctlr;
->>> +	struct device_node *np;
->>> +	struct map_info *map;
->>> +	struct resource res;
->>> +	struct device *dev;
->>> +	int ret;
->>> +
->>> +	if (!hbdev || !hbdev->np || !hbdev->ctlr || !hbdev->ctlr->dev) {
->>> +		pr_err("hyperbus: please fill all the necessary fields!\n");
->>> +		return -EINVAL;
->>> +	}
->>> +
->>> +	np = hbdev->np;
->>> +	ctlr = hbdev->ctlr;
->>> +	if (!of_device_is_compatible(np, "cypress,hyperflash"))
->>> +		return -ENODEV;
->>> +
->>> +	hbdev->memtype = HYPERFLASH;
->>> +
->>> +	if (of_address_to_resource(np, 0, &res))
->>> +		return -EINVAL;
->>
->>    Why not just propagate the error upstream (yeah, I've noticed that
->> it only can be -EINVAL)?
->>
-> 
-> Ok.
-> 
->> [...]
->>> diff --git a/include/linux/mtd/hyperbus.h b/include/linux/mtd/hyperbus.h
->>> new file mode 100644
->>> index 000000000000..ee2eefd822c9
->>> --- /dev/null
->>> +++ b/include/linux/mtd/hyperbus.h
->>> @@ -0,0 +1,91 @@
->>> +/* SPDX-License-Identifier: GPL-2.0
->>> + *
->>> + * Copyright (C) 2019 Texas Instruments Incorporated - http://www.ti.com/
->>> + */
->>> +
->>> +#ifndef __LINUX_MTD_HYPERBUS_H__
->>> +#define __LINUX_MTD_HYPERBUS_H__
->>> +
->>> +#include <linux/mtd/map.h>
->>> +
->>> +enum hyperbus_memtype {
->>> +	HYPERFLASH,
->>> +	HYPERRAM,
->>> +};
->>> +
->>> +/**
->>> + * struct hyperbus_device - struct representing HyperBus slave device
->>> + * @map: map_info struct for accessing MMIO HyperBus flash memory
->>> + * @np:	pointer to HyperBus slave device node
->>           ^
->>    Space needed here, not tab.
->>
-> 
-> Ok
-> 
->>> + * @mtd: pointer to MTD struct
->>> + * @ctlr: pointer to HyperBus controller struct
->>> + * @memtype: type of memory device: HyperFlash or HyperRAM
->>> + * @registered: flag to indicate whether device is registered with MTD core
->>> + */
->>> +
->>> +struct hyperbus_device {
->>> +	struct map_info map;
->>> +	struct device_node *np;
->>> +	struct mtd_info *mtd;
->>> +	struct hyperbus_ctlr *ctlr;
->>> +	enum hyperbus_memtype memtype;
->>> +	bool registered;
->>> +};
->>> +
->>> +/**
->>> + * struct hyperbus_ops - struct representing custom HyperBus operations
->>> + * @read16: read 16 bit of data, usually from register/ID-CFI space
->>> + * @write16: write 16 bit of data, usually to register/ID-CFI space
->>
->>    Usually? How to differ the register/memory transfers if both are possible?
->>
-> 
-> CFI + map framework does not provide a way to differentiate b/w reg
-> access vs memory access. read16()/write16() is used to either access
-> registers or for sending various cmds like lock/unlock etc or for
-> programming a single word.
-> For regular read/writes copy_from() and copy_to() are used.
-> 
-> Looking at HyperBus protocol, controllers would not need to
-> differentiate b/w registers vs memory transfers for HyperFlash devices.
-> So, I think I can drop read16/write16 and redirect these calls to
-> copy_from()/copy_to()
-> 
-
-Sorry, I realized read16/write16() is required to meet 16bit burst
-necessary when writing/reading from HyperFlash non data space or sending
-CFI command sequences. Will update the description to reflect the same
-and clarify not be confused with register space access bit in HyperBus
-protocol.
-
-Regards
-Vignesh
+--
+Stefan
 
 > 
-> I mainly added these functions keeping HyperRAM in mind. Idea was
-> drivers would look at hyperbus_device->memtype and set to register
-> access mode for HyperRAM in case of write16()/read16(). Looks like the
-> interface is not intuitive enough
-> So, will drop these and add it back when adding HyperRAM support.
+> Signed-off-by: Daniel Vetter <daniel.vetter@intel.com>
+> Cc: Marek Vasut <marex@denx.de>
+> Cc: Stefan Agner <stefan@agner.ch>
+> Cc: Shawn Guo <shawnguo@kernel.org>
+> Cc: Sascha Hauer <s.hauer@pengutronix.de>
+> Cc: Pengutronix Kernel Team <kernel@pengutronix.de>
+> Cc: Fabio Estevam <festevam@gmail.com>
+> Cc: NXP Linux Team <linux-imx@nxp.com>
+> Cc: linux-arm-kernel@lists.infradead.org
+> ---
+>  drivers/gpu/drm/mxsfb/mxsfb_drv.c | 2 --
+>  1 file changed, 2 deletions(-)
 > 
-> Does that work for your HW as well?
-> 
->>> + * @copy_from: copy data from flash memory
->>> + * @copy_to: copy data to flash memory
->>> + * @calibrate: calibrate HyperBus controller
->>> + */
->>> +
->>> +struct hyperbus_ops {
->>> +	u16 (*read16)(struct hyperbus_device *hbdev, unsigned long addr);
->>> +	void (*write16)(struct hyperbus_device *hbdev,
->>> +			unsigned long addr, u16 val);
->>> +	void (*copy_from)(struct hyperbus_device *hbdev, void *to,
->>> +			  unsigned long from, ssize_t len);
->>> +	void (*copy_to)(struct hyperbus_device *dev, unsigned long to,
->>> +			const void *from, ssize_t len);
->>> +	int (*calibrate)(struct hyperbus_device *dev);
->>> +};
->>> +
->>> +/**
->>> + * struct hyperbus_ctlr - struct representing HyperBus controller
->>> + * @calibrated: flag to indicate ctlr calibration sequence is complete
->>> + * @ops: HyperBus controller ops
->>
->>    What about @dev?
->>
-> 
-> Will add.
-> 
->>> + */
->>> +struct hyperbus_ctlr {
->>> +	struct device *dev;
->>> +	bool calibrated;
->>> +
->>> +	const struct hyperbus_ops *ops;
->>> +};
->> [...]
->>
->> MBR, Sergei
->>
-> 
-
--- 
-Regards
-Vignesh
+> diff --git a/drivers/gpu/drm/mxsfb/mxsfb_drv.c
+> b/drivers/gpu/drm/mxsfb/mxsfb_drv.c
+> index b5bcaf4036bd..6d6a0b3e2bb0 100644
+> --- a/drivers/gpu/drm/mxsfb/mxsfb_drv.c
+> +++ b/drivers/gpu/drm/mxsfb/mxsfb_drv.c
+> @@ -322,8 +322,6 @@ static struct drm_driver mxsfb_driver = {
+>  	.dumb_create		= drm_gem_cma_dumb_create,
+>  	.prime_handle_to_fd	= drm_gem_prime_handle_to_fd,
+>  	.prime_fd_to_handle	= drm_gem_prime_fd_to_handle,
+> -	.gem_prime_export	= drm_gem_prime_export,
+> -	.gem_prime_import	= drm_gem_prime_import,
+>  	.gem_prime_get_sg_table	= drm_gem_cma_prime_get_sg_table,
+>  	.gem_prime_import_sg_table = drm_gem_cma_prime_import_sg_table,
+>  	.gem_prime_vmap		= drm_gem_cma_prime_vmap,
 
 _______________________________________________
 linux-arm-kernel mailing list
