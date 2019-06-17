@@ -2,55 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E67C84828C
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 17 Jun 2019 14:35:17 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BCA60482B9
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 17 Jun 2019 14:41:17 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=SMyQTeDsVaSev5ov/rHhJlNk2lDUo0LgZzS0OseBJw0=; b=aM9dHiqKd8rDd5
-	dWWEapMKe8/YFyW/HQu744JgPh2E9FvHbDRdgFXbwqm5o433ZSGGPcdJZTmjWwmxKBRUVqtK/2LQQ
-	ONRoYf51MNe1357uVlcEZ+Kit6VGBSfSgxQN2b20/sf0+br6riks8i+gTNQoWQv8fBdmYS+46bkoG
-	1yYnYiJJ1ntO7GNBfZ0J10jAJGVcHI5dt85cblC3OzIs0fajFGBJi9lFFG0FQuAfkCHDnhw3oDmWl
-	RyYKdNCXbCqiW8GzYf4KwXx2c8tGw+vNnm0Nv5GSb6sCkgGvtCFwxUQlyrohVGcvg5V6uQkPZrw+r
-	LamXNbAft0aVBkIu8I2w==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=n8aI4u1VKhIA6f2BxJfnVvka4hkUBft/ANQ//7ouCPo=; b=CK+/Bkk2woDP3g
+	SZ54pr4ZiA78LC4r5X27/wfcM/ZaQeR/G0wLlrtpK/5xukHSdCUxT9mI95N4hcYJl/wU0rAl9XJ3I
+	D3DV+u+AIjjUblSRUxWUgTP3sExDHH44OyKXuQV5ij7BVKR17bsOeqdCZRpihRqrss2MjXh07Zz0t
+	XO8dFpxzJ2sW127g/gq5A0a5AexHezyrO4P5jU9/0FMcMR3f/atK49aIr+jLkJORRTvdddbT5SsW4
+	iR426xiJfF/xr2USRT3ygrW1YQkiFy6W3ErulG0PgKUSMjKr4EY45meg7/R9XeI4JgKtaJlxAZJKs
+	Jiwth9BATlCMn5sJP8BA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hcqqw-0004VJ-5c; Mon, 17 Jun 2019 12:35:14 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hcqqe-0004UK-G7
- for linux-arm-kernel@lists.infradead.org; Mon, 17 Jun 2019 12:34:57 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 048E92B;
- Mon, 17 Jun 2019 05:34:54 -0700 (PDT)
-Received: from [10.1.194.37] (e113632-lin.cambridge.arm.com [10.1.194.37])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id D76BD3F246;
- Mon, 17 Jun 2019 05:34:52 -0700 (PDT)
-Subject: Re: [PATCH v2 1/2] ACPI/PPTT: Add support for ACPI 6.3 thread flag
-To: Jeremy Linton <jeremy.linton@arm.com>, linux-arm-kernel@lists.infradead.org
-References: <20190614223158.49575-1-jeremy.linton@arm.com>
- <20190614223158.49575-2-jeremy.linton@arm.com>
-From: Valentin Schneider <valentin.schneider@arm.com>
-Message-ID: <667f95c0-5aa9-f460-a49a-e6dfefc027d8@arm.com>
-Date: Mon, 17 Jun 2019 13:34:51 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.7.0
+	id 1hcqwj-00082S-E2; Mon, 17 Jun 2019 12:41:13 +0000
+Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hcqwa-00080x-Bw
+ for linux-arm-kernel@lists.infradead.org; Mon, 17 Jun 2019 12:41:06 +0000
+Received: by mail-wr1-x441.google.com with SMTP id n4so9752418wrw.13
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 17 Jun 2019 05:41:03 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=baylibre-com.20150623.gappssmtp.com; s=20150623;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=WOOxpm7ozZave7X/hBH3gYwbNXHHvhxtj5pINcFfpmM=;
+ b=gzjXdC3SyBjROxKdZINhmdO+YOBW7w31ZU3bhz19+zQh6bKN9So0wH9jBV6ITP3QUn
+ ++GtUH3piNFnSVVsYe0do04ZpfDbpYv26fFZeVjgXw4FxfZMuesrcH65TQFpGFp8T2Mp
+ WjsMvhOjYwEJgwznc9B2blDBrgh5Im/R0KZukg1QIvyOQ6bKIAIomK2vt2EHNT694ecI
+ Ki1oy53r5lVNwvL9uYiGc8r3yraGmX7LD06ibLUeaFxuzIjDYoAPXMzGUibsgvm4o1gH
+ I+5Fztidy7Qtl2+7beYTnPuFR0ckvioG+IkKs0zm660+0nvPLoG7vkjcvr9q3kD4cMfL
+ tFqg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=WOOxpm7ozZave7X/hBH3gYwbNXHHvhxtj5pINcFfpmM=;
+ b=q19KnhOThXr7TNWRP/hfoiAdUnyp5no4sZJNMIsD73eE0arflge2hbFXyYxeLJKbT7
+ OgXVAVnJy3/3S7yOn824LElH/Wmdh6ye/vumW6IABILLkDM2LsFAMpbioPkwc62Uh2am
+ rnuhYxs3Uf5acSeOaw1TUFLcwGJ/rRKMFxp83jqhTNmwLWTuBhr7DXzw3rx5GaOkSZRv
+ t74zPF10+e70KPKicGigvApi9CaQ6bY9RjCMHUhohG2ytKJNHAGywIwbo4wFxCmkcc5r
+ TrOJ7aCI5kUnLUUZJn9jgEY41CTULYWWCzmTh/OoVbUdWf4pRGgxZ9JRP33+hzB11GOk
+ 4Bvg==
+X-Gm-Message-State: APjAAAV+yOTzhbZSNxmbcReId/4bGvvD5c7QTvqQtdu3X2266712uIZN
+ UU06iWhWXB7JqcoFpvX+pyO1x42mhZryPKHursvXQg==
+X-Google-Smtp-Source: APXvYqzpuPnI+gsxO4zp+HzWS3tA15wt/2tfOqTOkMZ8lgfnUBjUyQc5aSZTXucpdJWE7KyO86xEbW+pmWZ5wCwQiQ0=
+X-Received: by 2002:a5d:4ec1:: with SMTP id s1mr23708512wrv.19.1560775262236; 
+ Mon, 17 Jun 2019 05:41:02 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <20190614223158.49575-2-jeremy.linton@arm.com>
-Content-Language: en-US
+References: <20190617111718.2277220-1-arnd@arndb.de>
+In-Reply-To: <20190617111718.2277220-1-arnd@arndb.de>
+From: Maxime Jourdan <mjourdan@baylibre.com>
+Date: Mon, 17 Jun 2019 14:40:51 +0200
+Message-ID: <CAMO6nazK5uo3deCqKEAGqB4TfEp9W1u2bkWaMNg_DMtSw=E2YQ@mail.gmail.com>
+Subject: Re: [PATCH 1/3] media: meson: include linux/kthread.h
+To: Arnd Bergmann <arnd@arndb.de>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190617_053456_582232_605C5D95 
-X-CRM114-Status: GOOD (  18.51  )
+X-CRM114-CacheID: sfid-20190617_054104_440038_87E9D9E2 
+X-CRM114-Status: GOOD (  14.81  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:441 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -62,82 +87,58 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: catalin.marinas@arm.com, will.deacon@arm.com, rjw@rjwysocki.net,
- linux-kernel@vger.kernel.org, linux-acpi@vger.kernel.org, sudeep.holla@arm.com,
- lenb@kernel.org
+Cc: devel@driverdev.osuosl.org, Kevin Hilman <khilman@baylibre.com>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Mauro Carvalho Chehab <mchehab+samsung@kernel.org>,
+ linux-media@lists.freedesktop.org,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Hans Verkuil <hverkuil-cisco@xs4all.nl>, linux-amlogic@lists.infradead.org,
+ Mauro Carvalho Chehab <mchehab@kernel.org>,
+ linux-arm-kernel@lists.infradead.org,
+ Linux Media Mailing List <linux-media@vger.kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Jeremy,
+Hello Arnd,
+On Mon, Jun 17, 2019 at 1:17 PM Arnd Bergmann <arnd@arndb.de> wrote:
+>
+> Without this header, we get a compilation error in some configurations:
+>
+> drivers/staging/media/meson/vdec/vdec.c: In function 'vdec_recycle_thread':
+> drivers/staging/media/meson/vdec/vdec.c:59:10: error: implicit declaration of function 'kthread_should_stop' [-Werror=implicit-function-declaration]
+>
+> Fixes: 3e7f51bd9607 ("media: meson: add v4l2 m2m video decoder driver")
+> Signed-off-by: Arnd Bergmann <arnd@arndb.de>
+> ---
+>  drivers/staging/media/meson/vdec/vdec.c | 1 +
+>  1 file changed, 1 insertion(+)
+>
+> diff --git a/drivers/staging/media/meson/vdec/vdec.c b/drivers/staging/media/meson/vdec/vdec.c
+> index 0a1a04fd5d13..eb335a0f2bdd 100644
+> --- a/drivers/staging/media/meson/vdec/vdec.c
+> +++ b/drivers/staging/media/meson/vdec/vdec.c
+> @@ -8,6 +8,7 @@
+>  #include <linux/clk.h>
+>  #include <linux/io.h>
+>  #include <linux/module.h>
+> +#include <linux/kthread.h>
+>  #include <linux/platform_device.h>
+>  #include <linux/mfd/syscon.h>
+>  #include <linux/slab.h>
+> --
+> 2.20.0
+>
 
-Few nits below.
+Thanks for the patch, a similar one has already been sent by Yue
+Haibing and is sitting in media/master at the moment [0]. My apologies
+for this oversight.
 
-Also, I had a look at the other PPTT processor flags that were introduced
-in 6.3, and the only other one being used is ACPI_LEAF_NODE in
-acpi_pptt_leaf_node(). However that one already has a handle on the table
-header, so the check_acpi_cpu_flag() isn't of much help there.
+Regards,
+Maxime
 
-I don't believe the other existing flags will benefit from the helper since
-they are more about describing the PPTT tree, but I think it doesn't hurt
-to keep it around for potential future flags.
-
-On 14/06/2019 23:31, Jeremy Linton wrote:
-[...]
-> @@ -517,6 +517,43 @@ static int find_acpi_cpu_topology_tag(unsigned int cpu, int level, int flag)
->  	return retval;
->  }
->  
-> +/**
-> + * check_acpi_cpu_flag() - Determine if CPU node has a flag set
-> + * @cpu: Kernel logical CPU number
-> + * @rev: The PPTT revision defining the flag
-> + * @flag: The flag itself
-> + *
-> + * Check the node representing a CPU for a given flag.
-> + *
-> + * Return: -ENOENT if the PPTT doesn't exist, the CPU cannot be found or
-> + *	   the table revision isn't new enough.
-> + * Otherwise returns flag value
-> + */
-
-Nit: strictly speaking we're not returning the flag value but its mask
-applied to the flags field. I don't think anyone will care about getting
-the actual flag value, but it should be made obvious in the doc:
-
--ENOENT if ...
-0 if the flag isn't set
-> 0 if it is set.
-
-[...]
-> @@ -581,6 +618,21 @@ int cache_setup_acpi(unsigned int cpu)
->  	return status;
->  }
->  
-> +/**
-> + * acpi_pptt_cpu_is_thread() - Determine if CPU is a thread
-> + * @cpu: Kernel logical CPU number
-> + *
-> + *
-
-Nit: extra newline
-
-> + * Return: 1, a thread
-> + *         0, not a thread
-> + *         -ENOENT ,if the PPTT doesn't exist, the CPU cannot be found or
-> + *         the table revision isn't new enough.
-> + */
-> +int acpi_pptt_cpu_is_thread(unsigned int cpu)
-> +{
-> +	return check_acpi_cpu_flag(cpu, 2, ACPI_PPTT_ACPI_PROCESSOR_IS_THREAD);
-> +}
-> +
->  /**
->   * find_acpi_cpu_topology() - Determine a unique topology value for a given CPU
->   * @cpu: Kernel logical CPU number
-> @@ -641,7 +693,6 @@ int find_acpi_cpu_cache_topology(unsigned int cpu, int level)
-[...]
+[0] https://git.linuxtv.org/media_tree.git/commit/?id=3510c68d32bf3a188c077b5fb87339379f4e6b43
 
 _______________________________________________
 linux-arm-kernel mailing list
