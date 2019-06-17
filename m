@@ -2,83 +2,73 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E3C96480BD
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 17 Jun 2019 13:33:46 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 10DE6480DF
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 17 Jun 2019 13:36:04 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=mD6MdOger8phZkGPZWngRo64jurqXpAA8N+WgKWNosk=; b=VGAuiRrQNO/X1q
-	wpAANeDbfihrg66txlN9BtmVHcD6WjaVq2XTe+k8GRdCflyuo+FdwaCMu1yCn+ek6epPMyApNNndd
-	1Mj3hZjmQz37jQ8BKDasksyuv4LqdPO8KftPmxrKGFvomEAcdNiYVIX0e3oE9WUYheLzAAaGOV1mw
-	hdWdQ94I291gcrxIZqWEptVgxly9n2RYCso6PQ9g+RhVGA2nJstDvbRGBd95Yhe/ZS6HsjjfpkGOJ
-	T+Mi3NZtM1v4vICA3hS+tQ48oI9m7xH/SWWn6Ono7YpOctQkTKHos17dGcxe06JsOEVfQHLm05tCY
-	6edF57LzV+i+ktYYThkg==;
+	List-Owner; bh=7F7eclx2T1cqGDiYdycT6zJ1vsn/q9XVR4hg4PfcBVk=; b=RvzMhOnedZD5MI
+	8ibbfJyZXJ+4BLIsOCdvu/XWc07en/00/wN63XoGYUrOKIs5Wcj1iV9Er9aKMSpmdlDOUVZqU8rvJ
+	KVtVLATNZaYkufftFut4LaCdy2S0Oo+jgtwgvtRHl4+tkRhfsRmSuJKo9ozzCr2+gCwaWEfB3MUUD
+	HA3CptUJL8Im4Kk3p3vbSoACp+9hdRydaJiintpRoQvSN4FZe5Xmx3n0IuHexellTDUmWt5xQjLbQ
+	UCDc7+oTCQMEBmYmiyH4Y68MdkM8KGwFZKYgWajDHJCjTNOTRozzdxQnnkd4sjy2K0u25DJcfzI3C
+	JoHhojXCTywJAWCX0B0g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hcptP-0005gk-3L; Mon, 17 Jun 2019 11:33:43 +0000
-Received: from mail-io1-xd2a.google.com ([2607:f8b0:4864:20::d2a])
+	id 1hcpva-0007UE-5K; Mon, 17 Jun 2019 11:35:58 +0000
+Received: from mail-vs1-xe41.google.com ([2607:f8b0:4864:20::e41])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hcptF-0005g4-7H
- for linux-arm-kernel@lists.infradead.org; Mon, 17 Jun 2019 11:33:34 +0000
-Received: by mail-io1-xd2a.google.com with SMTP id k8so20461602iot.1
+ id 1hcpvI-0007Th-TQ
+ for linux-arm-kernel@lists.infradead.org; Mon, 17 Jun 2019 11:35:42 +0000
+Received: by mail-vs1-xe41.google.com with SMTP id a186so5876073vsd.7
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 17 Jun 2019 04:33:31 -0700 (PDT)
+ Mon, 17 Jun 2019 04:35:40 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=uTaQurjF4DAEz2YA58sq1itwNB0DAFLlJ/DDxkRjQXs=;
- b=YlBxHyckiHCNw4pcv1L+3aipakmvWHdfu1oxzwefcQcVWnyNIn5NGlNqYIN/7QC0ey
- ioGaBXAv5AJACbpMWAaAsdLvLID96zO5uFRnyIa/tNH4W41NImVSVkxrQ0LVv/5lBHZz
- iEw6edvCS3C/y6wdXkjdsW3dJBbRBA4SU1vFKgiJzgFxZZEW6e1ELjhVW+MpsfItpE7h
- ZcLT9Ml5vwbXxOJ18xbKM2fo2/VHFZmbasZ2ki93QAjNEpwdH9E6TdwQqBrr5CEXoFeL
- rxMZ9NE4l66LJ1eS2LKTv6F9j1x+5ianNQxSP60RRxrfI+gX25JRg2p+ejEoCSKNrw9Y
- sWuw==
+ :cc; bh=Oarxy7p2A8M3e32Cd3ZGKiQh3eZMCQGravoCB5ouj68=;
+ b=JnWxiIKJnHT6irJrl0SZV7N86mxeB7Jog5bebll+L/jQV3DuM2fXmD5S85vgPJAYI4
+ xp+XPND9LYJ24EcwVkhr5CbRgW2AQ83dPZ5s3Qxr8RIwzSsgy/pJpKTu3JSn4w9wXSQh
+ zRkHooSvQLAR1gJgYp4uv6e2+fZ6pb16OOdtveCojyGEJ4S6PF1d14oFNEY9wgy+XVsI
+ lAF6/UPGt1H8OdgAcCw/BPfa60GC1X4Anw7X9uXrHcPasGBWUuBkaFCgCaYGBQ3/XIAB
+ 1Z+XkOSQ9252AzTMwiKYPnTo1JVJveshNtwKTiFEnNlEmN+PxsOVxotew2kAaQtc1/y3
+ FKJw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=uTaQurjF4DAEz2YA58sq1itwNB0DAFLlJ/DDxkRjQXs=;
- b=EsclvX/o56NzU2YLB247IIhVME0//1DjhghsPwad5em+dtZ7K2E25viuiIlvtthQxx
- Y1wxtLq9B0EMFbcgRFZOq0yUlw/Gg86GKn3GguIekbQzZJIYKOyEXjlNr+NFt+qm2282
- OSg+OhdG/3ocH1DktFNRo32WQeOlAKfoBBt44l1OiSpaE/C1pQ6z2gerAZEAB1Y12RfK
- jXOD8SkGyZdKqwe0TIBWMKY0p5R+Dvkib8+dEF7BuOOSnobl4Vg8bT06FdpubeL/QTO4
- GjOBGM6ekUvKJOxrd2uWP/kuHiHVo+7njGv6YQ6yzucbXY2KoSZ9uh9sTqM00yNX/48v
- Z4IQ==
-X-Gm-Message-State: APjAAAWCs2eCL6SG72WUfF771qPsfwdcwM7pZYUdOSq1VALFiv6p8DoE
- Fab3TImxL07F1bIp3G+zsuIfGZXbInKJ7z65PFfCWg==
-X-Google-Smtp-Source: APXvYqzOD8mZdWMW5nl/G9kBu3RjbewHkgd/pSd8u227vGW4RBm64bgLB0Ejnt8SWGd0xJ5w7k3raGX9tSnxFEfpahY=
-X-Received: by 2002:a02:3308:: with SMTP id c8mr15420974jae.103.1560771211244; 
- Mon, 17 Jun 2019 04:33:31 -0700 (PDT)
+ bh=Oarxy7p2A8M3e32Cd3ZGKiQh3eZMCQGravoCB5ouj68=;
+ b=Fq699vWsCc4V0IU7f0QqPbe6OHl+pLB1KJ66fPYxXwFW7zEt6qwPzPFo/e4jBRuGxG
+ k3ZvB2T8BUFdH/3ZgNAJf6V3ATyRzvZiuo7VCPQEDQfDhA/Z3RRN0aoBQNUbbO+y7zns
+ 7S4SxmviYZg3NKl9clS7OTdwQrRM69j8ezAeXoblkoAU87ctuqGfVX91k7oSt1pQL/L9
+ tGqaopZhXrh0UD+uvks28zEOgxhLZU6+K82f+OMjLbGvo1BuMD66tdEN/ixZjwbi8y5r
+ XssnwVbILuGu5hd1LWBdE1+xIW6qVNlvKioroPjzl9WbGOtI6IJ7xjG29KzhwrWHxxPt
+ ptag==
+X-Gm-Message-State: APjAAAVBR5sqG0+9/FhXlBJjSO0ibY3GQbnyBs6JBBJjb3u4eHSlPbO+
+ Hfca+1+DFEcwyGJNpwWFOXfboWvqYnqhvY+TJiD64hoa
+X-Google-Smtp-Source: APXvYqwcHEVwhj3FTseMM1MQYfqpoVrbYJpW+a7vzqtz0JpcbL/XOQHVC14jXXzahRuLm4BZ4JoZKMxnEhMY0YILz0A=
+X-Received: by 2002:a67:ed8b:: with SMTP id d11mr60218560vsp.35.1560771339760; 
+ Mon, 17 Jun 2019 04:35:39 -0700 (PDT)
 MIME-Version: 1.0
-References: <20190612040933.GA18848@dc5-eodlnx05.marvell.com>
- <20190612093151.GA11554@brain-police>
- <20190614070914.GA21961@dc5-eodlnx05.marvell.com>
- <20190614095846.GC10506@fuggles.cambridge.arm.com>
- <CAKv+Gu_Kdq=UPijjA84FpmO=ZsdEO9EyyF7GeOQ+WmfqtO_hMg@mail.gmail.com>
- <20190614103850.GG10659@fuggles.cambridge.arm.com>
- <201906142026.1BC27EDB1E@keescook>
- <CAKv+Gu_XuhgUCYOeykrbaxJz-wL1HFrc_O+HeZHqaGkMHd2J9Q@mail.gmail.com>
- <201906150654.FF4400F7C8@keescook>
- <CAKv+Gu9-rZ16Nb9t3=knzW0BHu0eNxQoPwWS4c8UMMm=2iqiuw@mail.gmail.com>
- <201906161429.BCE1083@keescook>
-In-Reply-To: <201906161429.BCE1083@keescook>
-From: Ard Biesheuvel <ard.biesheuvel@linaro.org>
-Date: Mon, 17 Jun 2019 13:33:19 +0200
-Message-ID: <CAKv+Gu_8ibO4D01DZv6KjL2GnvKuVBVnt=doxkN0w=4utJ7NvQ@mail.gmail.com>
-Subject: Re: [RFC] Disable lockref on arm64
-To: Kees Cook <keescook@chromium.org>
+References: <20190604060914.10886-1-faiz_abbas@ti.com>
+In-Reply-To: <20190604060914.10886-1-faiz_abbas@ti.com>
+From: Ulf Hansson <ulf.hansson@linaro.org>
+Date: Mon, 17 Jun 2019 13:35:03 +0200
+Message-ID: <CAPDyKFqt9N+Hn-VhEr0ANv3zXLGyjCDEDiBgEx8FpLFBBzT0EA@mail.gmail.com>
+Subject: Re: [PATCH 0/4] Add Support for MMC in J721E
+To: Faiz Abbas <faiz_abbas@ti.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190617_043333_264897_410583AC 
-X-CRM114-Status: GOOD (  15.87  )
+X-CRM114-CacheID: sfid-20190617_043540_955964_53C7AF9D 
+X-CRM114-Status: GOOD (  15.55  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:d2a listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:e41 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -100,80 +90,54 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "catalin.marinas@arm.com" <catalin.marinas@arm.com>,
- Jan Glauber <jglauber@marvell.com>, Will Deacon <will.deacon@arm.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Jayachandran Chandrasekharan Nair <jnair@marvell.com>,
- Linus Torvalds <torvalds@linux-foundation.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: Nishanth Menon <nm@ti.com>, DTML <devicetree@vger.kernel.org>,
+ Sekhar Nori <nsekhar@ti.com>,
+ "linux-mmc@vger.kernel.org" <linux-mmc@vger.kernel.org>,
+ Adrian Hunter <adrian.hunter@intel.com>, Rob Herring <robh+dt@kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sun, 16 Jun 2019 at 23:31, Kees Cook <keescook@chromium.org> wrote:
+On Tue, 4 Jun 2019 at 08:09, Faiz Abbas <faiz_abbas@ti.com> wrote:
 >
-> On Sat, Jun 15, 2019 at 04:18:21PM +0200, Ard Biesheuvel wrote:
-> > Yes, I am using the same saturation point as x86. In this example, I
-> > am not entirely sure I understand why it matters, though: the atomics
-> > guarantee that the write by CPU2 fails if CPU1 changed the value in
-> > the mean time, regardless of which value it wrote.
-> >
-> > I think the concern is more related to the likelihood of another CPU
-> > doing something nasty between the moment that the refcount overflows
-> > and the moment that the handler pins it at INT_MIN/2, e.g.,
-> >
-> > > CPU 1                   CPU 2
-> > > inc()
-> > >   load INT_MAX
-> > >   about to overflow?
-> > >   yes
-> > >
-> > >   set to 0
-> > >                          <insert exploit here>
-> > >   set to INT_MIN/2
+> The following patches add driver support for MMC SDHCI interfaces on
+> TI's J721E devices. The 8 bit and 4 bit instances have phys which are
+> different from the am65x interfaces as well as different from each
+> other which leads to 3 different compatibles and a bunch of flags for
+> indicating the differences.
 >
-> Ah, gotcha, but the "set to 0" is really "set to INT_MAX+1" (not zero)
-> if you're using the same saturation.
+> Depends on Nishanth's initial J721E patches here:
+> https://lore.kernel.org/patchwork/cover/1077382/
+>
+> Also depends on my fixes for AM65x driver here:
+> https://lore.kernel.org/patchwork/cover/1079924/
+>
+> Tested with: j721e-evm and am65x-evm.
+>
+> DT patches will be added in a separate series.
+>
+> Faiz Abbas (4):
+>   dt-bindings: mmc: sdhci-am654: Document bindings for the host
+>     controllers on TI's J721E devices.
+>   mmc: sdhci_am654: Add Support for 8 bit IP on J721E
+>   mmc: sdhci_am654: Add Support for 4 bit IP on J721E
+>   arm64: defconfig: Add config for MMC on AM65x and J721E devices
+>
+>  .../devicetree/bindings/mmc/sdhci-am654.txt   |   9 +-
+>  arch/arm64/configs/defconfig                  |   1 +
+>  drivers/mmc/host/sdhci_am654.c                | 257 +++++++++++++-----
+>  3 files changed, 204 insertions(+), 63 deletions(-)
+>
+> --
+> 2.19.2
 >
 
-Of course. So there is no issue here: whatever manipulations are
-racing with the overflow handler can never result in the counter to
-unsaturate.
+Patch 1->3 applied for next, patch is for arm-soc, thanks!
 
-And actually, moving the checks before the stores is not as trivial as
-I thought, E.g., for the LSE refcount_add case, we have
-
-        "       ldadd           %w[i], w30, %[cval]\n"                  \
-        "       adds            %w[i], %w[i], w30\n"                    \
-        REFCOUNT_PRE_CHECK_ ## pre (w30))                               \
-        REFCOUNT_POST_CHECK_ ## post                                    \
-
-and changing this into load/test/store defeats the purpose of using
-the LSE atomics in the first place.
-
-On my single core TX2, the comparative performance is as follows
-
-Baseline: REFCOUNT_TIMING test using REFCOUNT_FULL (LSE cmpxchg)
-      191057942484      cycles                    #    2.207 GHz
-      148447589402      instructions              #    0.78  insn per
-cycle
-
-      86.568269904 seconds time elapsed
-
-Upper bound: ATOMIC_TIMING
-      116252672661      cycles                    #    2.207 GHz
-       28089216452      instructions              #    0.24  insn per
-cycle
-
-      52.689793525 seconds time elapsed
-
-REFCOUNT_TIMING test using LSE atomics
-      127060259162      cycles                    #    2.207 GHz
-                 0      instructions              #    0.00  insn per
-cycle
-
-      57.243690077 seconds time elapsed
+Kind regards
+Uffe
 
 _______________________________________________
 linux-arm-kernel mailing list
