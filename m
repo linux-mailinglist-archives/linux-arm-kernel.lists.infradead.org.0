@@ -2,60 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 883D04884D
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 17 Jun 2019 18:05:30 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8B38F4884E
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 17 Jun 2019 18:05:52 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3QuAEWQKItbWBoRtxIqd3oWJbqAR6oFdwRZG4s6H9kM=; b=fIyRdERuhnewMs
-	OiXRjSZMoBbIY1KAfZMX6glSeXiXoKnpIaydSNjZeeUDxSKAPp8KhlTh5PbHR/kMdJVqZlAijLdyV
-	eL9aye4R05gTLF5fXyTt/YZ5GJQUJHnTpwzhZ1RYeanADVJYLSHSjZxb/eIRKo3aQ5HURrKjG/5RU
-	Q0mEbQjMi3mezx98aAL6hNfZ1nzieN0StDw3HvfhBKImswaLPkZIFRm0R/rvqpKMDa+k6UKhyxVwB
-	O99BeNiM3GVnaFGxjypDcT52eDumTCayF7VZ3gz01ePrBEq3uxoa6jmh+WGMC4xy+IaSQyAqWUb9p
-	4EMl1QSx7JWVrmo4HU/w==;
+	List-Owner; bh=vhe862EjtlhJJ6vjq+C1xEKo3TmE64ohsClmPkpW6Dg=; b=XA3i/J8TE5CfFh
+	Vl89iMHuqyCT3Q15mO0xKkqD3uCQmy4HbD/Z20AEgC9/PXPAXv7LuOwxm6FiaEahve7OR/Bug0/jo
+	14vjyhuXGBDaYJwLcsnmvhHFC1l7u60zAiD95ixskLvjAT3kEkBdrZoPC489gm6p9SN9w4V3SOLL7
+	eFGQxjmv11bx72chdhbP8Nsmlo77HD/egrQRGsgleNvlytlvFdSBC2KwvlPKyaNg0MlPthMhpUT2v
+	/nFN/DYZGMlT9Z1UDS84y5QknhkOlAaopziUSKjDFRtJE5IFyE68NTlc6vNKljOqEgHX7WNlrf9hl
+	qgWjfN+AF5fWGalni0Vw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hcu8O-0006zG-2a; Mon, 17 Jun 2019 16:05:28 +0000
-Received: from malenstwo.juszkiewicz.com.pl ([37.187.99.30])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hcu7X-0005FR-4P
- for linux-arm-kernel@lists.infradead.org; Mon, 17 Jun 2019 16:04:36 +0000
-Received: from localhost (localhost [127.0.0.1])
- by malenstwo.juszkiewicz.com.pl (Postfix) with ESMTP id ACFBEC0441;
- Mon, 17 Jun 2019 18:04:28 +0200 (CEST)
-X-Virus-Scanned: Debian amavisd-new at juszkiewicz.com.pl
-Received: from malenstwo.juszkiewicz.com.pl ([127.0.0.1])
- by localhost (mail.juszkiewicz.com.pl [127.0.0.1]) (amavisd-new, port 10024)
- with ESMTP id LCSNEM1qc_0K; Mon, 17 Jun 2019 18:04:26 +0200 (CEST)
-Received: from puchatek.local.com.pl (89-67-26-161.dynamic.chello.pl
- [89.67.26.161])
- by malenstwo.juszkiewicz.com.pl (Postfix) with ESMTPSA id 65D86C05A4;
- Mon, 17 Jun 2019 18:04:25 +0200 (CEST)
-From: Marcin Juszkiewicz <marcin.juszkiewicz@linaro.org>
-To: arm@kernel.org
-Subject: [PATCH 3/3] arm64 defconfig: enable Mellanox cards
-Date: Mon, 17 Jun 2019 18:04:11 +0200
-Message-Id: <20190617160411.24329-3-marcin.juszkiewicz@linaro.org>
-X-Mailer: git-send-email 2.21.0
-In-Reply-To: <20190617160411.24329-1-marcin.juszkiewicz@linaro.org>
-References: <20190617160411.24329-1-marcin.juszkiewicz@linaro.org>
+	id 1hcu8l-0007HS-1U; Mon, 17 Jun 2019 16:05:51 +0000
+Received: from mail-vs1-xe2b.google.com ([2607:f8b0:4864:20::e2b])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hcu7r-0005Uy-Bb
+ for linux-arm-kernel@lists.infradead.org; Mon, 17 Jun 2019 16:04:56 +0000
+Received: by mail-vs1-xe2b.google.com with SMTP id l20so6470845vsp.3
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 17 Jun 2019 09:04:54 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=pnnc1YqqDFPd8WzGDfGgqKol4mW6SfIm1hkAQXkloAQ=;
+ b=FcuH+7EurKK2QioEYceTZLdpXz6DMaf+I3nLQhr1rnEhvteqQRCEdYh9VookY4398q
+ Q5V4dmEg2BL6OgSV1CbZqhFz5NoPB0YmWjp015Yy4iDWwOrZjJ7UFXqHkK4h7XKAOaHv
+ TwGSuEruYPrkT6i4edpcLtmPbgFzxPXSo/OsV5olbaxn6TFZOgMsKA0axRi3ip0pNJsW
+ iJmRApuDDjW2Uuo73o9qc6Fg3OQ4qbIsYz92XcxxJ2PheSoKi8/t4kJ6g0ukJPhRz85s
+ 5M7sKwU2IjER2XwDCQF2X4nFFGx916qmgqqAwVnLIMwAm7Zk+WYB//sshYpWNY5duKyn
+ iD6w==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=pnnc1YqqDFPd8WzGDfGgqKol4mW6SfIm1hkAQXkloAQ=;
+ b=NIQczrZ+lXfikPnCdyD37OOQ4Axf2+cJoPhM3OyOoYVpuJjr1NcYK5R0aXjgV60vZ+
+ xkx2/ZiGz4WUqaqrGdUOUd9lNqwJ5Z2tIlw+kr84+u2ryHpTxS+E4A/OuLPJjrJFBNw8
+ ec5rCHulf2XXT/QhGTgQXFvX4ODD/M9fJmkyIQzwEzE+p6smHx6eYFWEUGxbbrHkAQtY
+ O45KbGgP5jWqW/FmbkiDnp1A8b4PzDYZ7GEfQAgJouhON2by7kv3B5QyGDkEqX27NUgk
+ rDPHLqwL6/G9tB4qjCIDg+5wHyo727wjCFNYSer3W6xa2OuWYzovNgWPwZOqZXYYhDsE
+ 1XXg==
+X-Gm-Message-State: APjAAAXUoFX0dlBSEt0acbOncC5UD/1OnKblupt48/Lt4KUCH1R2FsEX
+ 8uuXSCskjgneguQfsc3GXMh2Ax/hFmhDiusz7pQ=
+X-Google-Smtp-Source: APXvYqxauZ6Wqdr1a6x/fpJLFsVERHU34VPVNMXn1iKL+e4p9OfXuz7VWrsJtK4Kn2WxOdyeEuBc+E97plQbyrlmZx0=
+X-Received: by 2002:a67:e3da:: with SMTP id k26mr20351031vsm.131.1560787493667; 
+ Mon, 17 Jun 2019 09:04:53 -0700 (PDT)
 MIME-Version: 1.0
+References: <20190617153025.12120-1-andrew.smirnov@gmail.com>
+In-Reply-To: <20190617153025.12120-1-andrew.smirnov@gmail.com>
+From: Fabio Estevam <festevam@gmail.com>
+Date: Mon, 17 Jun 2019 13:05:03 -0300
+Message-ID: <CAOMZO5CALFFcUQ7mY6L7DqB+iuJHzk_WKhZ1=BePjHqpT6pOYA@mail.gmail.com>
+Subject: Re: [PATCH v2 1/2] ARM: dts: Add ZII support for ZII i.MX7 RMU2 board
+To: Andrey Smirnov <andrew.smirnov@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190617_090435_339318_BAC1C5DF 
-X-CRM114-Status: UNSURE (   6.09  )
+X-CRM114-CacheID: sfid-20190617_090455_449016_D6674F3E 
+X-CRM114-Status: UNSURE (   7.80  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: -1.3 (-)
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-1.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [37.187.99.30 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:e2b listed in]
+ [list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (festevam[at]gmail.com)
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -67,43 +93,26 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Marcin Juszkiewicz <marcin.juszkiewicz@linaro.org>,
- linux-arm-kernel@lists.infradead.org
+Cc: "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>, Rob Herring <robh@kernel.org>,
+ Liang Pan <Liang.Pan@zii.aero>, linux-kernel <linux-kernel@vger.kernel.org>,
+ "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
+ <devicetree@vger.kernel.org>, Chris Healy <cphealy@gmail.com>,
+ Shawn Guo <shawnguo@kernel.org>, Bob Langer <Bob.Langer@zii.aero>,
+ Lucas Stach <l.stach@pengutronix.de>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Mellanox cards are present in several AArch64 servers.
+On Mon, Jun 17, 2019 at 12:30 PM Andrey Smirnov
+<andrew.smirnov@gmail.com> wrote:
+>
+> Add support for ZII's i.MX7 based Remote Modem Unit 2 (RMU2) board.
+>
+> Signed-off-by: Andrey Smirnov <andrew.smirnov@gmail.com>
 
-Signed-off-by: Marcin Juszkiewicz <marcin.juszkiewicz@linaro.org>
----
- arch/arm64/configs/defconfig | 9 +++++++++
- 1 file changed, 9 insertions(+)
-
-diff --git a/arch/arm64/configs/defconfig b/arch/arm64/configs/defconfig
-index a3b311ea3f13..33f51ddf7d7d 100644
---- a/arch/arm64/configs/defconfig
-+++ b/arch/arm64/configs/defconfig
-@@ -258,6 +258,15 @@ CONFIG_HNS3_ENET=y
- CONFIG_E1000E=y
- CONFIG_IGB=y
- CONFIG_IGBVF=y
-+CONFIG_MLX4_EN=m
-+CONFIG_MLX4_CORE=m
-+CONFIG_MLX4_DEBUG=y
-+CONFIG_MLX4_CORE_GEN2=y
-+CONFIG_MLX5_CORE=m
-+CONFIG_MLX5_CORE_EN=y
-+CONFIG_MLX5_EN_ARFS=y
-+CONFIG_MLX5_EN_RXNFC=y
-+CONFIG_MLX5_MPFS=y
- CONFIG_MVNETA=y
- CONFIG_MVPP2=y
- CONFIG_SKY2=y
--- 
-2.21.0
-
+Reviewed-by: Fabio Estevam <festevam@gmail.com>
 
 _______________________________________________
 linux-arm-kernel mailing list
