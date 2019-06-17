@@ -2,75 +2,75 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6634748179
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 17 Jun 2019 14:02:46 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 946D94817B
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 17 Jun 2019 14:03:04 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=4vEnxRKBFdHtBRTDTqJKMyxj99tmLXGOQ88oUENlGRQ=; b=ntI3g1z1A/CWKl
-	YiA/KyJ19phIviHzz+DFjX/cDcml7Hq1ohTo7yos2iFo8GtOmettcKZuDM0HCYPHK5SLY2GJe0Dch
-	8bTOo0Nu20BSvIZWj9o+VTK00GNR2Tbu/KkAsCoD5T0oam3cNlB52OKj//nbJ0WQVYCbMvLbrupPS
-	zTBsy8lH1mwHocHcD1SHFDlQpJvHTGVAjpL0X/3wkwdRiXZtXd310NdyLJYZI6PMhP0F2OB3hQhoE
-	UguYJiJPgWkM1uyyH8TDo2rfdsrhfNbACC9kmsi3qiQy191LSr1C3g/oqId+StxaZeWql1wcROZKm
-	nL6FmXnVouDynVCcz+jw==;
+	List-Owner; bh=aC3hmqpOMSLBiwcaT24E56BG/YfD9+5cgmGnHbwr9kQ=; b=LolyBhW7BIxYvH
+	fKJHS/7a8U/TJqKo+v1MgLQM7lyWsc7CjTqHc0TDkHBi88pg0J8AQxO3DEQvA52S07EKrH3h1SQiK
+	yn4iLT9g7G3GX+GttGksNK0jWknYVdTgmfSxGaJCNZx+ENiuNz7zxPPP9Lmyo0rHZhIVhHKgQnx87
+	c8pFtWMuUpQZwf51FVewz+F2ILAWts1Q1nneRpwiJ7PpdeZUpW4iQMHrts4QqEgOc6VQVHAIcoefg
+	eGihe78u9LCas4n1PvTsv38AIFTbHH+lYUxKhk7F81LCIOHsFokeqEdQ7G0fW/+lv8DfXMMN6Qyku
+	WpdTKEoDp0ZE8BmAo/LQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hcqLS-0003xt-TA; Mon, 17 Jun 2019 12:02:42 +0000
+	id 1hcqLi-0004C6-1g; Mon, 17 Jun 2019 12:02:58 +0000
 Received: from mail-lj1-x242.google.com ([2a00:1450:4864:20::242])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hcqJn-0002uK-8G
- for linux-arm-kernel@lists.infradead.org; Mon, 17 Jun 2019 12:01:00 +0000
-Received: by mail-lj1-x242.google.com with SMTP id v18so9020027ljh.6
+ id 1hcqJp-0002wp-K2
+ for linux-arm-kernel@lists.infradead.org; Mon, 17 Jun 2019 12:01:03 +0000
+Received: by mail-lj1-x242.google.com with SMTP id s21so9002349lji.8
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 17 Jun 2019 05:00:58 -0700 (PDT)
+ Mon, 17 Jun 2019 05:01:01 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=lixom-net.20150623.gappssmtp.com; s=20150623;
  h=date:from:to:cc:subject:message-id:references:mime-version
  :content-disposition:in-reply-to:user-agent;
- bh=LfLpeuHmQaiTLgbEMWhAqMLDAcRWZpH7xfnejlqZ/MI=;
- b=Zq50HUoh2hPOsan+loEPQPpccKw3aAP+2Jv/UcW7NAHUWPEZD8T/o4/2F2i5Rwy+HG
- uEJ/PZUEdWccQsw4RkTaftFzQXQqZM1K0/CWOtJ+EWVRGkWvQZOrxkuhmbypLEus+gs2
- o75xUjBCFguVXNwb2jcZ9nEkAfxnPuvuMI2mmVcAP4bnLvm4K7fm99rM+5CqhItmwgWm
- r8ml6PxIB2QYNntNLunHFUusd7mSVQn8hvKttcsTiZZPBpZqSL4aaMIQZdMgIDbLMHky
- DJr//m8no6eW8gAO7cGP6WtKjek6mnvfXSPgvM7ubY/RL5SuuTah8piaAaX0W5Zvttt7
- PrQw==
+ bh=1hxMvr3AFMBt/2KDCsNWa1jyIIc9m7a7I03nJY/RIlI=;
+ b=ZLJgvKf4ch9jOUgy8gLGHbioq3uYLN0at1dSCYd4HdoN3e+QgDutShCB3hI+h6cmxJ
+ pwxS0S6cYBFkv05Mcn9UeevqOH8HXKJgeLN0KIec5sTNuJCQBru3bumtFT6HOuCNYnpX
+ J05t4qhnfW64GyGKW5iEkuS/lzsKvvdH8TaBMaHzC8kDBybUiEW9SO1nepPiUjTgccpe
+ IYG8/NRY+VwhSs1UHAUXTZ10Rlso+pbp1qwZXbTvL3v2szVw3kcCnwr7lyVg9exCOSYC
+ LcBfSp5MZ+QUV739E1O6KfyGyKDrFVdb/GunT9fMRusyd0y08WjJrrlqKM5QdhiCk52j
+ jaBg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to:user-agent;
- bh=LfLpeuHmQaiTLgbEMWhAqMLDAcRWZpH7xfnejlqZ/MI=;
- b=HD0LdKnMsrYQ513hcarCpKdkEMXSQoVl9NISFzgoNwn9gF3FAqhE6MGd12gqaYmOwV
- NOOj1/58k7VxJ/75Ge3e8Me4Dxf3VIMD9Gum3vRlkSUIWOxB0OLX9RyMMUP+Yl+ZkFH0
- +4FqFsETwC/+rw7n/y7nreDNDpGPAXHy1qzMPa6eW7aQTtFYnQ6wxRhT7OlD8Y2o6XGK
- L86rEmqmq71XRbW5/gc213gaYHTcXLfYESfjUZVlgAAaU7pI20apNo5PanlMVX0Ud0Yi
- gLh7PuZpzsZrfGkXAf7+7t+D6As60FOzzQ79ed/mutOH0H9v8XJBlGsA5y0HObdyRHtB
- w5Zw==
-X-Gm-Message-State: APjAAAUrLO8zvAChHUaBTQr8QvBvd3z4ARmLWqXDLyMCq9Iu8xrgNseE
- AlRxPUNG9n5JKx5zaCGNTa9GHw==
-X-Google-Smtp-Source: APXvYqz2BySWxhDgh4jKIleBwbpRHsScE6lpgMXW5GMNwoU0gcWMOjz8fJ3N4RyEuf9Zt7aOoFXTbw==
-X-Received: by 2002:a2e:2b57:: with SMTP id q84mr12238860lje.105.1560772857169; 
- Mon, 17 Jun 2019 05:00:57 -0700 (PDT)
+ bh=1hxMvr3AFMBt/2KDCsNWa1jyIIc9m7a7I03nJY/RIlI=;
+ b=VKzqDUyBC8V37hxcx1BJtI7tv0c8mh/VVSb5K/AqbvFWbE0XrS7vbBXEiLAlXsVisk
+ 4XAXI3+eWkUzh7FxEEx9B0XL7qKzEFij+QT8+ruJ7ZLFDVZo1AhyMl78vVc8f0IYF5oM
+ UtbmRIZFxmcWMJkkQvBzuS05EGGDaS9Ebwk08DZP9fBloX0bKtXbxG6g09mujwIJoafa
+ aGv24pV82gBegJxbE6j65pTz3IFJnKcWAF+TwfZQf9x1GPH6EIA5c8FERXNbM25z/aFw
+ 9g/SDEWx98LhNMOuxxODJCF4f/eUqLCr3VTVujap9WyKAcba29uKd7DBxGkkTBBZQK8p
+ aLgA==
+X-Gm-Message-State: APjAAAUP2+euV2VqB036Y6p7qYPeAG139/Ega3xdmOqxelS3TVw3Go0E
+ Nsg0vszzX4O2blh8Wlhj0mEKWA==
+X-Google-Smtp-Source: APXvYqwcBLgdw5efzzeHm6rpocFnUVn9FdBNfs/iye4cCSJhoeAKZDLuJueacDyMzloq/O1LygASjQ==
+X-Received: by 2002:a2e:995a:: with SMTP id r26mr18949264ljj.107.1560772859708; 
+ Mon, 17 Jun 2019 05:00:59 -0700 (PDT)
 Received: from localhost (h85-30-9-151.cust.a3fiber.se. [85.30.9.151])
- by smtp.gmail.com with ESMTPSA id h4sm2118160ljj.31.2019.06.17.05.00.55
+ by smtp.gmail.com with ESMTPSA id q13sm1732255lfk.65.2019.06.17.05.00.57
  (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Mon, 17 Jun 2019 05:00:55 -0700 (PDT)
-Date: Mon, 17 Jun 2019 04:53:10 -0700
+ Mon, 17 Jun 2019 05:00:58 -0700 (PDT)
+Date: Mon, 17 Jun 2019 04:53:52 -0700
 From: Olof Johansson <olof@lixom.net>
-To: Florian Fainelli <f.fainelli@gmail.com>
-Subject: Re: [GIT PULL 3/6] Broadcom drivers changes for 5.3
-Message-ID: <20190617115310.k62wwiatm37566hp@localhost>
-References: <20190612025028.13118-1-f.fainelli@gmail.com>
- <20190612025028.13118-3-f.fainelli@gmail.com>
+To: Tony Lindgren <tony@atomide.com>
+Subject: Re: [GIT PULL 3/4] ti-sysc driver changes for v5.3
+Message-ID: <20190617115352.enwk67aca57fm3im@localhost>
+References: <pull-1560399818-512977@atomide.com>
+ <pull-1560399818-512977@atomide.com-3>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190612025028.13118-3-f.fainelli@gmail.com>
+In-Reply-To: <pull-1560399818-512977@atomide.com-3>
 User-Agent: NeoMutt/20170113 (1.7.2)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190617_050059_312076_68373504 
-X-CRM114-Status: GOOD (  14.42  )
+X-CRM114-CacheID: sfid-20190617_050101_722286_B5A79979 
+X-CRM114-Status: GOOD (  15.02  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -95,36 +95,42 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: arnd@arndb.de, khilman@kernel.org, arm@kernel.org,
- bcm-kernel-feedback-list@broadcom.com, Markus Mayer <mmayer@broadcom.com>,
+Cc: linux-omap@vger.kernel.org, arm@kernel.org,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Jun 11, 2019 at 07:50:25PM -0700, Florian Fainelli wrote:
-> The following changes since commit a188339ca5a396acc588e5851ed7e19f66b0ebd9:
+On Thu, Jun 13, 2019 at 12:10:52AM -0700, Tony Lindgren wrote:
+> From: "Tony Lindgren" <tony@atomide.com>
 > 
->   Linux 5.2-rc1 (2019-05-19 15:47:09 -0700)
+> The following changes since commit 4ee23cd76c0ce8622976b3da0e2bc89e6d94f6d4:
+> 
+>   Merge branch 'omap-for-v5.2/ti-sysc' into fixes (2019-05-20 08:33:03 -0700)
 > 
 > are available in the Git repository at:
 > 
->   https://github.com/Broadcom/stblinux.git tags/arm-soc/for-5.3/drivers
+>   git://git.kernel.org/pub/scm/linux/kernel/git/tmlind/linux-omap tags/omap-for-v5.3/ti-sysc-signed
 > 
-> for you to fetch changes up to e3b7472362ba5ec84642e1c8d2cc8db6781afe4a:
+> for you to fetch changes up to 4e23be473e3063a9d3bc06bb0aee89885fffab0e:
 > 
->   memory: brcmstb: dpfe: introduce DPFE API v3 (2019-05-20 09:32:35 -0700)
+>   bus: ti-sysc: Add support for module specific reset quirks (2019-06-10 04:52:22 -0700)
 > 
 > ----------------------------------------------------------------
-> This pull request contains Broadcom ARM/ARM64/MIPS SoCs drivers changes
-> for 5.3, please pull the following:
+> ti-sysc interconnect target module driver changes for v5.3
 > 
-> - Markus provides a set of updates to the DPFE driver to support a new
->   revision of the API to the firmware (version 3) and provides minor fixes
->   about how the MR4-8 words are read for LPDDR4 devices
+> This series of changes improves probing devices with ti-sysc to the
+> point where we can now probe most devices without the custom dts
+> property "ti,hwmods" and no legacy platform data :)
 > 
-> - Florian removes a print of a virtual address in brcmstb_gisb.c
+> We add support for platform data callbacks for idling and unidling the
+> clockdomain the module belongs to. The rest of the series mostly adds
+> handling for the various quirks needed by old legacy modules such as
+> i2c and watchdog. Some quirk handling is still missing for few modules,
+> but those will be added as they get tested.
+> 
+> The related platform data and dts changes will be sent separately.
 
 Merged, thanks!
 
