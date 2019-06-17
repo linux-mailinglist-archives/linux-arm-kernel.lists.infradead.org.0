@@ -2,69 +2,70 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E4C2E48031
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 17 Jun 2019 13:05:35 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6A17348049
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 17 Jun 2019 13:12:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=47V8Zq+NZ4rLSF8gMmIRNNjnymohrKiwSpA8Y0HKX80=; b=qXtuBx2YlsdSCl
-	YbgOzzE0Ncz87PGqcFhgkAs0HwI15GrnCVBWtthAGl3/rNnI7mjAQN63A8VIWWBWbL1aEVDIXofhp
-	wbRtmR+/ewNcvgtLJLinzgkT78egzJEcn70RfH94L3A1RkHoSy+l3VZHsIO+hv9cj9hc1Ntqe6dg8
-	YMl26RKen5X1tBhtbfxv+jSOL7KSPSu2orAEmg/wljfYyyIVsQ44dwmrk+e5Jsz3qhI+1/zAU6N6y
-	UEI0imY+AjZMqOd3bxhO9cjw7YLPeb0GFh6PpgYsyvQL1JY99bCzBBlGUdrnfbD7IPuvPzxp9Q7c/
-	UTWe7TCnsMtfgxBmrOgw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=EuJUrmHJO5T8/1mZXt5hb9gTrfwcv/BK33PJVFqYojk=; b=F9RGg4NQGoGlzz
+	lCDbQp+2rRM9Q27LQXMkM0kRb5jlC1ZXn5C4xhqXL5+goAQeX5V76Gp7W1f7AZmW2Xf53uU1c7+6u
+	18IvyognT7/jRD/HCY4qHoFA6T0msOvgmYa38nlB+bu2xuRHuRrGLZ2+Vx6R1t/t3KkAljM7sGRIO
+	56e6RVjs7vEOI05P4Moq4Le9sh9lGeLzqvlameaemMxLwUuteGC9DacEhoTQWYzjdBNc3K1aIhMQy
+	MGJ1akUFwLpGT2Zg4ogsKlB5kZGdBzEAu3N/PK5kU4pm2+dBM/5Wodxy5/rlrVy6KHU8ODtGxEovn
+	CK7OcURZyRGKHoSek5CQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hcpS7-0001Mj-9g; Mon, 17 Jun 2019 11:05:31 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
+	id 1hcpYm-0003c8-Ow; Mon, 17 Jun 2019 11:12:24 +0000
+Received: from mout.kundenserver.de ([212.227.126.135])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hcpRo-0001Eo-Oe; Mon, 17 Jun 2019 11:05:14 +0000
-X-UUID: 44ceeb56102240be98beb7f17bb1ad9a-20190617
-X-UUID: 44ceeb56102240be98beb7f17bb1ad9a-20190617
-Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw01.mediatek.com
- (envelope-from <jjian.zhou@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1582929267; Mon, 17 Jun 2019 03:04:29 -0800
-Received: from mtkmbs07n1.mediatek.inc (172.21.101.16) by
- MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Mon, 17 Jun 2019 04:04:27 -0700
-Received: from mtkcas08.mediatek.inc (172.21.101.126) by
- mtkmbs07n1.mediatek.inc (172.21.101.16) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Mon, 17 Jun 2019 19:04:26 +0800
-Received: from localhost.localdomain (10.17.3.153) by mtkcas08.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Mon, 17 Jun 2019 19:04:25 +0800
-From: Jjian Zhou <jjian.zhou@mediatek.com>
-To: <ulf.hansson@linaro.org>, <chaotian.jing@mediatek.com>,
- <matthias.bgg@gmail.com>, <linux-mmc@vger.kernel.org>,
- <linux-arm-kernel@lists.infradead.org>, <linux-mediatek@lists.infradead.org>, 
- <linux-kernel@vger.kernel.org>
-Subject: [PATCH V2 2/2] mmc: mediatek: fix SDIO IRQ detection issue
-Date: Mon, 17 Jun 2019 19:04:08 +0800
-Message-ID: <1560769448-23070-2-git-send-email-jjian.zhou@mediatek.com>
-X-Mailer: git-send-email 1.9.1
-In-Reply-To: <1560769448-23070-1-git-send-email-jjian.zhou@mediatek.com>
-References: <1560769448-23070-1-git-send-email-jjian.zhou@mediatek.com>
+ id 1hcpYU-0003Wv-Ad
+ for linux-arm-kernel@lists.infradead.org; Mon, 17 Jun 2019 11:12:07 +0000
+Received: from threadripper.lan ([149.172.19.189]) by mrelayeu.kundenserver.de
+ (mreue011 [212.227.15.129]) with ESMTPA (Nemesis) id
+ 1N32y5-1idHyv43rh-013RP4; Mon, 17 Jun 2019 13:12:01 +0200
+From: Arnd Bergmann <arnd@arndb.de>
+To: Michael Turquette <mturquette@baylibre.com>,
+ Stephen Boyd <sboyd@kernel.org>, Shawn Guo <shawnguo@kernel.org>,
+ Sascha Hauer <s.hauer@pengutronix.de>
+Subject: [PATCH] clk: imx6q: fix section mismatch warning
+Date: Mon, 17 Jun 2019 13:11:35 +0200
+Message-Id: <20190617111159.2124152-1-arnd@arndb.de>
+X-Mailer: git-send-email 2.20.0
 MIME-Version: 1.0
-X-MTK: N
+X-Provags-ID: V03:K1:luZvn4Kw4EBR3RZaXipNa456cw8n9WOMC2IEWpCkVsAMKIG9gyf
+ Th7DcL93IXtSxW5GN6oGVvRO4qNociCYcoTyC6k9h91t+wCGdSDVEnnK99TtMYieeczzjce
+ TtDhTLgMfYl53zOD+f9PVhF6IwrEPIgWIxTCcOP4Zf5dIvjTSMHxmkpBZda2gbOuYSf2paE
+ RKvO5Om4GSzeijIMxk+HQ==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:M3B5Knar0Ik=:A+6jFaGJ6IonTlxDIyFvi7
+ gEa4cgrbowRmLVoa0iMQU1P1GYnSiU2VRShQMF1ULKS4MZtmzGY7IBMo1dJd9Y1M8qxsaYjrQ
+ wVyx/F2362nHnaj3rKglLoq+Prt92d5dd/D4Nqur0Sz1+s/gVrRN8hz0jYOxGOKWhMkmC9jNv
+ ZZ9lS7KTgc8/wdABoPeaTI+7eVeA2+VvqJJQsrTZOMm2cDhB7BgvwItmUsAAZy6jWI/XHFaZE
+ VJ7FABvEEU9hwK9AKqUOGA0QpSjJ1WlF53J+7B3x1u2ZoNdsbwqouAAQJqljGIiuTIVlvBipk
+ ZNir5dVDGvprYRQVzLlyinh78mFDamwd4fOnyKniEmhKAjfonrt/6RQFPXF6oaHOMsp0DMlv1
+ 21z12ITap2G/izeQTekeLukhqf64x4w65h0jz8Ry3Cc0SceHMDOO9TYgtH39WqroVrY/3eo0p
+ 3xHZ7CGdjNtqoPS0WK/ibk13QYv6iKX/cK7Hx/ywGB2OoUHDC9ivgXAxf8WI7dGwpEfhaccgO
+ i91HiWGI9UQvTD5MFAt1nNt/VBSsgc1j0zW6E2wVRXup1iLl8hbUpzu+s4/+4I+e5GacGAOI7
+ R8W+FofVhOq/qOAuX1BfoSGgytorucDElYDjEZQOyQB2y832ZANXRJNiuIqCzktWVv8Udzk3v
+ CkREuhO7uCqcdV8yXdfkI5yYj1iBg+qu4Dc1mGc6aW+vBD/eM/CEwATLznPECjp3Gy83CPe4p
+ qQnrLatlgY5nAhzrlKagqWXzTjU/xlpv4pbriw==
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190617_040512_828733_1C5AE29D 
-X-CRM114-Status: UNSURE (   7.46  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190617_041206_742106_E47A96DF 
+X-CRM114-Status: GOOD (  10.76  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [216.200.240.184 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ no trust [212.227.126.135 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [212.227.126.135 listed in wl.mailspike.net]
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -76,40 +77,50 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: jjian zhou <jjian.zhou@mediatek.com>, srv_heupstream@mediatek.com,
- yong.mao@mediatek.com
+Cc: Dong Aisheng <aisheng.dong@nxp.com>, Abel Vesa <abel.vesa@nxp.com>,
+ Anson Huang <anson.huang@nxp.com>, linux-kernel@vger.kernel.org,
+ Arnd Bergmann <arnd@arndb.de>, NXP Linux Team <linux-imx@nxp.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Fabio Estevam <festevam@gmail.com>, linux-clk@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, Lucas Stach <l.stach@pengutronix.de>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: jjian zhou <jjian.zhou@mediatek.com>
+The imx6q_obtain_fixed_clk_hw lacks an __init marker, which
+leads to this otherwise harmless warning:
 
-If cmd19 timeout or response crcerr occurs during execute_tuning(),
-it need invoke msdc_reset_hw(). Otherwise SDIO IRQ can't be detected.
+WARNING: vmlinux.o(.text+0x495358): Section mismatch in reference from the function imx6q_obtain_fixed_clk_hw() to the function .init.text:imx_obtain_fixed_clock_hw()
+The function imx6q_obtain_fixed_clk_hw() references
+the function __init imx_obtain_fixed_clock_hw().
+This is often because imx6q_obtain_fixed_clk_hw lacks a __init
+annotation or the annotation of imx_obtain_fixed_clock_hw is wrong.
 
-Signed-off-by: jjian zhou <jjian.zhou@mediatek.com>
-Signed-off-by: Chaotian Jing <chaotian.jing@mediatek.com>
-Signed-off-by: Yong Mao <yong.mao@mediatek.com>
+Fixes: 992b703b5b38 ("clk: imx6q: Switch to clk_hw based API")
+Signed-off-by: Arnd Bergmann <arnd@arndb.de>
 ---
- drivers/mmc/host/mtk-sd.c | 2 ++
- 1 file changed, 2 insertions(+)
+ drivers/clk/imx/clk-imx6q.c | 5 +++--
+ 1 file changed, 3 insertions(+), 2 deletions(-)
 
-diff --git a/drivers/mmc/host/mtk-sd.c b/drivers/mmc/host/mtk-sd.c
-index fa7d420..ba1ad5e 100644
---- a/drivers/mmc/host/mtk-sd.c
-+++ b/drivers/mmc/host/mtk-sd.c
-@@ -1031,6 +1031,8 @@ static void msdc_request_done(struct msdc_host *host, struct mmc_request *mrq)
- 	msdc_track_cmd_data(host, mrq->cmd, mrq->data);
- 	if (mrq->data)
- 		msdc_unprepare_data(host, mrq);
-+	if (host->error)
-+		msdc_reset_hw(host);
- 	mmc_request_done(host->mmc, mrq);
+diff --git a/drivers/clk/imx/clk-imx6q.c b/drivers/clk/imx/clk-imx6q.c
+index 2caa71e91119..a875d0bc12ee 100644
+--- a/drivers/clk/imx/clk-imx6q.c
++++ b/drivers/clk/imx/clk-imx6q.c
+@@ -418,8 +418,9 @@ static void disable_anatop_clocks(void __iomem *anatop_base)
+ 	writel_relaxed(reg, anatop_base + CCM_ANALOG_PLL_VIDEO);
  }
-
---
-1.9.1
+ 
+-static struct clk_hw *imx6q_obtain_fixed_clk_hw(struct device_node *np,
+-						const char *name, unsigned long rate)
++static struct clk_hw * __init imx6q_obtain_fixed_clk_hw(struct device_node *np,
++							const char *name,
++							unsigned long rate)
+ {
+ 	struct clk *clk = of_clk_get_by_name(np, name);
+ 	struct clk_hw *hw;
+-- 
+2.20.0
 
 
 _______________________________________________
