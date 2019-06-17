@@ -2,90 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5EC7247D99
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 17 Jun 2019 10:51:16 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C50C147DE2
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 17 Jun 2019 11:06:53 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jX/mWIylA6FzllmWkmCQTc7EWa2KJccUEWwDb3DOEb8=; b=TXOTbimSNrpYXo
-	L7qEtE/iaCIx3lZEwIiUv9on5lBOxIVwwWjYrhS4VzbAY0xqpj92u43DxcylLcJ92W6Ui3uSyHDAQ
-	iqJbo7LRr5pr9Mc7x9TfjkCQeprfLxuLYElAYbEbw89dmixurT3+Z/VuF33lhwlHyZLj9ilZ6IeoO
-	cu5d5X1xI/FpzdNdBYd0XKqk7UOA8iH1lsrrVkJi4JvAx9qmW6Jdr12AfKIveUX4FvZpvvRvBq3dr
-	oLkLmZ1wsjPRcl8xFj1QtB5UcckWP0I4VLMsEHaOVDvwTpz2UoZ0vapdSFFZmw1eKaxbG7A/VsYNf
-	OzEq11md0M0F7txwG7/g==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=w4p00nDIy0kaSCYaaDN8jiKjO0xF17GWFVFaNbRIxds=; b=EzguguXdkxm1wgfRPtobBwrja
+	g9j4961BylGNdpQrkO831ddfcoOe/YI3OvyVvfrXOK+kDorgX8/keO46wblmopFUkrE3qZVmJofFI
+	KPLprQJP/BWQuyXubpHqsAldtJ6lUAerR6CSjxO9jqySyE79mjUXbbOhX9+jRGOrSrtK1fFoq0ALO
+	rpRhkhcsF/D+HTicRbR+sTshf68CGeAOEnuxeAHKVa7vaj7L16qW0J8HTWOp399LZww9LLoO/7Ot4
+	0KX7ksoD12VSdLzPAQlU/pqeXq8uKa/q7yYWCYPGBzwiwczXagT79BhEM46A0fRgGD7q7Ikyzizqv
+	9VCylYyrg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hcnM8-0005Qk-0Q; Mon, 17 Jun 2019 08:51:12 +0000
-Received: from mx07-00178001.pphosted.com ([62.209.51.94])
+	id 1hcnbG-00038t-Qq; Mon, 17 Jun 2019 09:06:51 +0000
+Received: from szxga06-in.huawei.com ([45.249.212.32] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hcnLg-0005JA-KE
- for linux-arm-kernel@lists.infradead.org; Mon, 17 Jun 2019 08:50:46 +0000
-Received: from pps.filterd (m0046668.ppops.net [127.0.0.1])
- by mx07-00178001.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id
- x5H8faGH018088; Mon, 17 Jun 2019 10:50:33 +0200
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
- h=from : to : cc : subject
- : date : message-id : in-reply-to : references : mime-version :
- content-type; s=STMicroelectronics;
- bh=mKq6aXRt6yPdvv0WN1RsD2U79XJ8Gb1nUEC8uornMGc=;
- b=lXEL++QNAZxVCrBJMcQ3hfh4I5HKtmd5STDTD4YVF6nQjaTCtoEimMpUIUr9lyJhj9v0
- fEMxnPguKtPsD9ZLF6qf3K6Ct6/OkTIaYttCe3EgOljrxllyJoBeoN8517uSjrWWh7ty
- Ior/IDc/F4EM7Ni0o6/bw0kmUP9iE5nz+x0UWtQWIx4bgkkkRjE4YcTAbEY6tC317Xx+
- UWypLPYJZLEL7tVt5VEZVn/V/A0plkgXhZbRJgdUJ08bg/fL25kNA1AdVMMBfkg0yBN1
- D5SL7os/TCvcKZLzdy3zhXGVoGbaroguwZUa9Sr4gMGaPPD7PCdENpgCDZj9FOKOmxkW mQ== 
-Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx07-00178001.pphosted.com with ESMTP id 2t4p519f5m-1
- (version=TLSv1 cipher=ECDHE-RSA-AES256-SHA bits=256 verify=NOT);
- Mon, 17 Jun 2019 10:50:33 +0200
-Received: from zeta.dmz-eu.st.com (zeta.dmz-eu.st.com [164.129.230.9])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 737F538;
- Mon, 17 Jun 2019 08:50:32 +0000 (GMT)
-Received: from Webmail-eu.st.com (Safex1hubcas21.st.com [10.75.90.44])
- by zeta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 4133D246F;
- Mon, 17 Jun 2019 08:50:32 +0000 (GMT)
-Received: from SAFEX1HUBCAS24.st.com (10.75.90.95) by SAFEX1HUBCAS21.st.com
- (10.75.90.44) with Microsoft SMTP Server (TLS) id 14.3.439.0; Mon, 17 Jun
- 2019 10:50:31 +0200
-Received: from localhost (10.201.22.222) by webmail-ga.st.com (10.75.90.48)
- with Microsoft SMTP Server (TLS) id 14.3.439.0; Mon, 17 Jun 2019 10:50:31
- +0200
-From: Christophe Roullier <christophe.roullier@st.com>
-To: <robh@kernel.org>, <davem@davemloft.net>, <joabreu@synopsys.com>,
- <mark.rutland@arm.com>, <mcoquelin.stm32@gmail.com>,
- <alexandre.torgue@st.com>, <peppe.cavallaro@st.com>
-Subject: [PATCH 1/1] ARM: dts: stm32: replace rgmii mode with rgmii-id on
- stm32mp15 boards
-Date: Mon, 17 Jun 2019 10:50:18 +0200
-Message-ID: <20190617085018.20352-2-christophe.roullier@st.com>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20190617085018.20352-1-christophe.roullier@st.com>
-References: <20190617085018.20352-1-christophe.roullier@st.com>
+ id 1hcnb3-00037X-7i
+ for linux-arm-kernel@lists.infradead.org; Mon, 17 Jun 2019 09:06:38 +0000
+Received: from DGGEMS405-HUB.china.huawei.com (unknown [172.30.72.59])
+ by Forcepoint Email with ESMTP id AC84D6217BBE20132385;
+ Mon, 17 Jun 2019 17:06:28 +0800 (CST)
+Received: from [127.0.0.1] (10.202.227.238) by DGGEMS405-HUB.china.huawei.com
+ (10.3.19.205) with Microsoft SMTP Server id 14.3.439.0;
+ Mon, 17 Jun 2019 17:06:16 +0800
+Subject: Re: [PATCH v2 2/5] perf pmu: Support more complex PMU event aliasing
+To: Jiri Olsa <jolsa@redhat.com>
+References: <1560521283-73314-1-git-send-email-john.garry@huawei.com>
+ <1560521283-73314-3-git-send-email-john.garry@huawei.com>
+ <20190616095844.GC2500@krava>
+From: John Garry <john.garry@huawei.com>
+Message-ID: <a27e65b4-b487-9206-6dd0-6f9dcec0f1f5@huawei.com>
+Date: Mon, 17 Jun 2019 10:06:08 +0100
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:45.0) Gecko/20100101
+ Thunderbird/45.3.0
 MIME-Version: 1.0
-X-Originating-IP: [10.201.22.222]
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:, ,
- definitions=2019-06-17_05:, , signatures=0
+In-Reply-To: <20190616095844.GC2500@krava>
+X-Originating-IP: [10.202.227.238]
+X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190617_015045_011254_979410A1 
-X-CRM114-Status: GOOD (  15.42  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20190617_020637_517399_216349B5 
+X-CRM114-Status: GOOD (  16.86  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [62.209.51.94 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [45.249.212.32 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -97,53 +66,129 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, andrew@lunn.ch, netdev@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-stm32@st-md-mailman.stormreply.com,
- christophe.roullier@st.com, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
+Cc: mark.rutland@arm.com, brueckner@linux.ibm.com, mathieu.poirier@linaro.org,
+ peterz@infradead.org, tmricht@linux.ibm.com, will.deacon@arm.com,
+ linux-kernel@vger.kernel.org, acme@kernel.org, linuxarm@huawei.com,
+ zhangshaokun@hisilicon.com, alexander.shishkin@linux.intel.com,
+ mingo@redhat.com, namhyung@kernel.org, ben@decadent.org.uk,
+ linux-arm-kernel@lists.infradead.org, kan.liang@linux.intel.com
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On disco and eval board, Tx and Rx delay are applied (pull-up of 4.7k
-put on VDD) so which correspond to RGMII-ID mode with internal RX and TX
-delays provided by the PHY, the MAC should not add the RX or TX delays
-in this case
+On 16/06/2019 10:58, Jiri Olsa wrote:
+> On Fri, Jun 14, 2019 at 10:08:00PM +0800, John Garry wrote:
+>> The jevent "Unit" field is used for uncore PMU alias definition.
+>>
+>> The form uncore_pmu_example_X is supported, where "X" is a wildcard,
+>> to support multiple instances of the same PMU in a system.
+>>
+>> Unfortunately this format not suitable for all uncore PMUs; take the Hisi
+>> DDRC uncore PMU for example, where the name is in the form
+>> hisi_scclX_ddrcY.
+>>
+>> For the current jevent parsing, we would be required to hardcode an uncore
+>> alias translation for each possible value of X. This is not scalable.
+>>
+>> Instead, add support for "Unit" field in the form "hisi_sccl,ddrc", where
+>> we can match by hisi_scclX and ddrcY. Tokens in Unit field are
+>> delimited by ','.
+>>
+>> Signed-off-by: John Garry <john.garry@huawei.com>
+>> ---
+>>  tools/perf/util/pmu.c | 39 ++++++++++++++++++++++++++++++++++-----
+>>  1 file changed, 34 insertions(+), 5 deletions(-)
+>>
+>> diff --git a/tools/perf/util/pmu.c b/tools/perf/util/pmu.c
+>> index 7e7299fee550..bc71c60589b5 100644
+>> --- a/tools/perf/util/pmu.c
+>> +++ b/tools/perf/util/pmu.c
+>> @@ -700,6 +700,39 @@ struct pmu_events_map *perf_pmu__find_map(struct perf_pmu *pmu)
+>>  	return map;
+>>  }
+>>
+>> +static bool pmu_uncore_alias_match(const char *pmu_name, const char *name)
+>> +{
+>> +	char *tmp, *tok, *str;
+>> +	bool res;
+>> +
+>> +	str = strdup(pmu_name);
+>> +	if (!str)
+>> +		return false;
+>> +
+>> +	/*
+>> +	 * uncore alias may be from different PMU with common
+>> +	 * prefix or matching tokens.
+>> +	 */
+>> +	tok = strtok_r(str, ",", &tmp);
+>> +	if (strncmp(pmu_name, tok, strlen(tok))) {
+>
 
-Signed-off-by: Christophe Roullier <christophe.roullier@st.com>
----
- arch/arm/boot/dts/stm32mp157a-dk1.dts | 2 +-
- arch/arm/boot/dts/stm32mp157c-ev1.dts | 2 +-
- 2 files changed, 2 insertions(+), 2 deletions(-)
+Hi Jirka,
 
-diff --git a/arch/arm/boot/dts/stm32mp157a-dk1.dts b/arch/arm/boot/dts/stm32mp157a-dk1.dts
-index 098dbfb06b61..2c105740dfad 100644
---- a/arch/arm/boot/dts/stm32mp157a-dk1.dts
-+++ b/arch/arm/boot/dts/stm32mp157a-dk1.dts
-@@ -51,7 +51,7 @@
- 	pinctrl-0 = <&ethernet0_rgmii_pins_a>;
- 	pinctrl-1 = <&ethernet0_rgmii_pins_sleep_a>;
- 	pinctrl-names = "default", "sleep";
--	phy-mode = "rgmii";
-+	phy-mode = "rgmii-id";
- 	max-speed = <1000>;
- 	phy-handle = <&phy0>;
- 
-diff --git a/arch/arm/boot/dts/stm32mp157c-ev1.dts b/arch/arm/boot/dts/stm32mp157c-ev1.dts
-index b6aca40b9b90..ab1393caf799 100644
---- a/arch/arm/boot/dts/stm32mp157c-ev1.dts
-+++ b/arch/arm/boot/dts/stm32mp157c-ev1.dts
-@@ -79,7 +79,7 @@
- 	pinctrl-0 = <&ethernet0_rgmii_pins_a>;
- 	pinctrl-1 = <&ethernet0_rgmii_pins_sleep_a>;
- 	pinctrl-names = "default", "sleep";
--	phy-mode = "rgmii";
-+	phy-mode = "rgmii-id";
- 	max-speed = <1000>;
- 	phy-handle = <&phy0>;
- 
--- 
-2.17.1
+> if tok is NULL in here we crash
+>
+
+As I see, tok could not be NULL. If str contains no delimiters, then we 
+just return same as str in tok.
+
+Can you see tok being NULL?
+
+>> +		res = false;
+>> +		goto out;
+>> +	}
+>> +
+>> +	for (; tok; name += strlen(tok), tok = strtok_r(NULL, ",", &tmp)) {
+>
+> why is name shifted in here?
+
+I want to ensure that we match the tokens in order and also guard 
+against possible repeated token matches in 'name'.
+
+Thanks,
+John
+
+>
+> jirka
+>
+>> +		name = strstr(name, tok);
+>> +		if (!name) {
+>> +			res = false;
+>> +			goto out;
+>> +		}
+>> +	}
+>> +
+>> +	res = true;
+>> +out:
+>> +	free(str);
+>> +	return res;
+>> +}
+>> +
+>>  /*
+>>   * From the pmu_events_map, find the table of PMU events that corresponds
+>>   * to the current running CPU. Then, add all PMU events from that table
+>> @@ -730,12 +763,8 @@ static void pmu_add_cpu_aliases(struct list_head *head, struct perf_pmu *pmu)
+>>  			break;
+>>  		}
+>>
+>> -		/*
+>> -		 * uncore alias may be from different PMU
+>> -		 * with common prefix
+>> -		 */
+>>  		if (pmu_is_uncore(name) &&
+>> -		    !strncmp(pname, name, strlen(pname)))
+>> +		    pmu_uncore_alias_match(pname, name))
+>>  			goto new_alias;
+>>
+>>  		if (strcmp(pname, name))
+>> --
+>> 2.17.1
+>>
+>
+> .
+>
+
 
 
 _______________________________________________
