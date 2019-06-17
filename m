@@ -2,53 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 600CA489C3
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 17 Jun 2019 19:11:45 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 162FA489CA
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 17 Jun 2019 19:12:44 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=wtH1JyyNMqcbGTJHnndIGINxq474HBGRauOY+zk0uPA=; b=NDlnaD9PdcXAr7
-	hI5Z6XVOe+avb2q93qKZ7Z3whXIBWo4VodsJvJH/j+ZNT9cqOoEMak24/ksrK7rzoouHtcel9xUR9
-	fTJ3Hzc8yqSIcHBa5RhwyYbSY1Kl4wpt6BbNEge6MD9zxihpfW15Ro8uBCGEkX+w/adEhzExXfhLF
-	+YErxvRShDdrkd5AzcGfqB1cBysrrhWL3RjtIGwrAUdZYFbG34zupUIS1+yO5CvpwHujAhjMafmEJ
-	N0GOC2PndPW1xyZ0VXQMBo3ThspHcwYMjF2Ozu/5b33EKqwBqlR0YWajs5Wp3NFO9tnZTJT9ML6pe
-	Z84WW58KY1eL8/6WpV5g==;
+	List-Owner; bh=YNwjMWckRZCJReoewBaMhIv4+6bH8qnc8GtanU5gRvY=; b=J98LKT/fF7qPzF
+	OlX1DoqL5E27uuMO06e6o55JumqjF6JVd0iEIjS26Y0h+yp1SynbxA37pr5hfbg+Zjp/ImxQQdQof
+	7GIfe6YXAOKprA0ByakHg9Ojf+02g0o8eKwCXjw5RuJ/0+AQLWdQI5cJ1IKOV7rxZHNTfiAIyJk/d
+	rqLQmVPWcBKnoNxzy7Do38/gbMJBHDWMFSVBXsfm4NyCQNzjwD3D3s9q/n9RFfuqfrHNdFXSrhdYq
+	0nGFSsp47A+DzMTZivYHkkEOJZw/SA/4aA5M6JvjK7t7+ydRKsMetsZx67vRee9j/D3fwpaswkwhS
+	FjeAYYt7PyWuUXI1uB+g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hcvAU-0006jO-3V; Mon, 17 Jun 2019 17:11:42 +0000
+	id 1hcvBS-00077L-9e; Mon, 17 Jun 2019 17:12:42 +0000
 Received: from vps0.lunn.ch ([185.16.172.187])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hcvAJ-0006it-4T
- for linux-arm-kernel@lists.infradead.org; Mon, 17 Jun 2019 17:11:32 +0000
+ id 1hcvBF-00076j-QC
+ for linux-arm-kernel@lists.infradead.org; Mon, 17 Jun 2019 17:12:31 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=lunn.ch;
  s=20171124; h=In-Reply-To:Content-Type:MIME-Version:References:Message-ID:
  Subject:Cc:To:From:Date:Sender:Reply-To:Content-Transfer-Encoding:Content-ID:
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=c5jwdu8GrotuWtYtHHNfJH6Olf5e80GT2puWZ5zCwwE=; b=mE8DAWY+i84WUNuU2002K9T7fE
- nT9X+9yzdrd6oDxNeG4Myi1NJMYgCriqqlPpZsOqfkf395lJf9cICEqGySgKSWACmQD2D8aljUUjF
- /y1pjW9dQ2RtYafrrcK8gzf+LDiZigc9UQMMpZECH+Q1YM3M3Xc+7LI88mwr5g4IyuD0=;
+ bh=UiPXLrts3a4GyCng7h+zP+L7X8WFuhV99/2M4gEuIWc=; b=tNF5qudZB7ehWIR+4fkCAiq+fJ
+ NmddZCAQJjuTC3oel8FhhTKIxcCS6NUIpYMxyJ2fi1Qr3q/IO+LckuTLxep2Gqqvo5hUd/6aYmgH/
+ lPmzf0Lw6Cthnb3pnm1i6T5Kddz1/EyjlwnkdQY9Q7TX/P6wC8Vo4u+Zfnoi4MMxOkNU=;
 Received: from andrew by vps0.lunn.ch with local (Exim 4.89)
  (envelope-from <andrew@lunn.ch>)
- id 1hcvA7-0001zg-9f; Mon, 17 Jun 2019 19:11:19 +0200
-Date: Mon, 17 Jun 2019 19:11:19 +0200
+ id 1hcvB7-00021X-AR; Mon, 17 Jun 2019 19:12:21 +0200
+Date: Mon, 17 Jun 2019 19:12:21 +0200
 From: Andrew Lunn <andrew@lunn.ch>
 To: Chris Packham <chris.packham@alliedtelesis.co.nz>
-Subject: Re: [PATCH 3/4] pinctrl: mvebu: Add support for MV98DX1135
-Message-ID: <20190617171119.GH17551@lunn.ch>
+Subject: Re: [PATCH 4/4] clk: kirkwood: Add support for MV98DX1135
+Message-ID: <20190617171221.GI17551@lunn.ch>
 References: <20190617100432.13037-1-chris.packham@alliedtelesis.co.nz>
- <20190617100432.13037-4-chris.packham@alliedtelesis.co.nz>
+ <20190617100432.13037-5-chris.packham@alliedtelesis.co.nz>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190617100432.13037-4-chris.packham@alliedtelesis.co.nz>
+In-Reply-To: <20190617100432.13037-5-chris.packham@alliedtelesis.co.nz>
 User-Agent: Mutt/1.5.23 (2014-03-12)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190617_101131_326210_36CAB70C 
-X-CRM114-Status: UNSURE (   7.62  )
+X-CRM114-CacheID: sfid-20190617_101230_004020_83863A36 
+X-CRM114-Status: UNSURE (   8.04  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -87,9 +87,9 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Jun 17, 2019 at 10:04:31PM +1200, Chris Packham wrote:
+On Mon, Jun 17, 2019 at 10:04:32PM +1200, Chris Packham wrote:
 > The 98DX1135 is a switch chip with an integrated CPU. This is similar to
-> the 98DX4122 except the MPP assignments differ.
+> the 98DX4122 except that the core clock speed is fixed to 166Mhz.
 > 
 > Signed-off-by: Chris Packham <chris.packham@alliedtelesis.co.nz>
 
