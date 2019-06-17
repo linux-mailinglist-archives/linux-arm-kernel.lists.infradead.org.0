@@ -2,55 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F1FD3483BB
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 17 Jun 2019 15:19:36 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C1EA7483D0
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 17 Jun 2019 15:23:05 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=+BjeH/0K/pIknHCbq6tJi3803OCnWVx5JlOOnNTJE1Q=; b=Q7YQZXCS4xb89TbRsTLUuIMQ6
-	yHdKxCVdTt9yi61XWrqXPz+ZfV9LRR782f7eP+klfRqBefAENAMRCFFIrCRGUoAbKXssofZuSje2y
-	rrMaY+qAe3GUgqeugGybcrB7rCT9p57Wj1ite0pYjO3KJBR17WI8jXn89n2sm6AuSxoWWdRwygCzZ
-	PthhgdtCurfElBJ2BaBOElbSZujEJCQy3u7rzNxhZ2wHHbtyR4c8GnwdaAEqzW6XaER1utPZdDJqO
-	rjhk5urs1GH0SSao0e7GNbdcIjbAR3ZbpcGu2uwr4pAF+fssS6rw6OkzWHOA0k2XIuE5sZuUJA8En
-	9mHvDLkKw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=05S0luhusdOdwSithPylDRQLnesfTki3wNPwWx/dqyY=; b=AVnv3dJMeR4bj8
+	M+upRCh/BtZWfE8qi7XrrmoUuv1d/g9I8FrYvUJ401DeUDqtLUVuzeCyAICtnO6T2EUr+Urh6ETz1
+	/D0HDxrk88Id6jlBPsEZkI0VRcB7nxrWBWgEcOXu+AlV3fTYf8mfUNIMjxTnfpi9tlcUS/VfC47rR
+	8YJhevzPTXfdQH9LvGEl6jbuLy/f+2TlWqRvF1WHPBWSxey+avSHGw49qbJHgP/PJOx0lRb0xlY/r
+	D6Qt35lDB1OeEEa0jLABrDK6Q85ypGeZlWECtc4K7/nZG6GmJ/G0HqUXHIHJ9nYfBJyXgnED1s2kl
+	L/sGQrwbfGSsBj//WwNA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hcrXo-0002vY-RE; Mon, 17 Jun 2019 13:19:32 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hcrXe-0002uo-6v
- for linux-arm-kernel@lists.infradead.org; Mon, 17 Jun 2019 13:19:23 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 7BAED28;
- Mon, 17 Jun 2019 06:19:20 -0700 (PDT)
-Received: from [10.1.196.93] (en101.cambridge.arm.com [10.1.196.93])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id C45D13F246;
- Mon, 17 Jun 2019 06:19:19 -0700 (PDT)
-Subject: Re: [PATCH] coresight: platform: add OF/APCI dependency
-To: arnd@arndb.de, mathieu.poirier@linaro.org,
- alexander.shishkin@linux.intel.com
-References: <20190617125908.1674177-1-arnd@arndb.de>
-From: Suzuki K Poulose <suzuki.poulose@arm.com>
-Message-ID: <f91b2cad-a16e-6474-59a6-82ad890a3a54@arm.com>
-Date: Mon, 17 Jun 2019 14:19:15 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.6.1
+	id 1hcrbE-00053p-7j; Mon, 17 Jun 2019 13:23:04 +0000
+Received: from smtp3-g21.free.fr ([2a01:e0c:1:1599::12])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hcrb5-00052o-GO
+ for linux-arm-kernel@lists.infradead.org; Mon, 17 Jun 2019 13:22:57 +0000
+Received: from anisse-station.iliad.local (unknown [213.36.7.13])
+ by smtp3-g21.free.fr (Postfix) with ESMTPS id 6347313F8DA;
+ Mon, 17 Jun 2019 15:22:22 +0200 (CEST)
+From: Anisse Astier <aastier@freebox.fr>
+To: Will Deacon <will.deacon@arm.com>, Dave Martin <Dave.Martin@arm.com>,
+ linux-arm-kernel@lists.infradead.org
+Subject: [PATCH v3 1/2] arm64: ssbd: explicitly depend on <linux/prctl.h>
+Date: Mon, 17 Jun 2019 15:22:21 +0200
+Message-Id: <20190617132222.32182-1-aastier@freebox.fr>
+X-Mailer: git-send-email 2.19.1
+In-Reply-To: <20190617084545.GA38959@anisse-station>
+References: <20190617084545.GA38959@anisse-station>
 MIME-Version: 1.0
-In-Reply-To: <20190617125908.1674177-1-arnd@arndb.de>
-Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190617_061922_301069_340D5138 
-X-CRM114-Status: GOOD (  18.55  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190617_062255_695453_975C0925 
+X-CRM114-Status: UNSURE (   9.88  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.3 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (0.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [2a01:e0c:1:1599:0:0:0:12 listed in] [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -62,59 +60,59 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>, Sasha Levin <sashal@kernel.org>,
+ Anisse Astier <aastier@freebox.fr>, Catalin Marinas <catalin.marinas@arm.com>,
+ Rich Felker <dalias@aerifal.cx>, linux-kernel@vger.kernel.org,
+ Kristina Martsenko <kristina.martsenko@arm.com>,
+ "Dmitry V . Levin" <ldv@altlinux.org>, Ricardo Salveti <ricardo@foundries.io>,
+ Richard Henderson <richard.henderson@linaro.org>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Arnd,
+Fix ssbd.c which depends implicitly on asm/ptrace.h including
+linux/prctl.h (through for example linux/compat.h, then linux/time.h,
+linux/seqlock.h, linux/spinlock.h and linux/irqflags.h), and uses
+PR_SPEC* defines.
 
-On 17/06/2019 13:58, Arnd Bergmann wrote:
-> When neither CONFIG_OF nor CONFIG_ACPI are set, we get a harmless
-> build warning:
-> 
-> drivers/hwtracing/coresight/coresight-platform.c:26:12: error: unused function 'coresight_alloc_conns'
->        [-Werror,-Wunused-function]
-> static int coresight_alloc_conns(struct device *dev,
->             ^
-> drivers/hwtracing/coresight/coresight-platform.c:46:1: error: unused function 'coresight_find_device_by_fwnode'
->        [-Werror,-Wunused-function]
-> coresight_find_device_by_fwnode(struct fwnode_handle *fwnode)
-> 
-> As the code is useless in that configuration anyway, just add
-> a Kconfig dependency that only allows building when at least
-> one of the two is set.
-> 
-> This should not hinder compile-testing, as CONFIG_OF can be
-> enabled on any architecture.
+This is an issue since we'll remove the include in the next commit.
 
-Ok, that justifies why "not using ARM || ARM64" is better.
+Fixes: 9cdc0108baa8 ("arm64: ssbd: Add prctl interface for per-thread mitigation")
+Cc: stable@vger.kernel.org
+Signed-off-by: Anisse Astier <aastier@freebox.fr>
+---
+Contrary to what I said in the previous email, I can reproduce the build
+error on Linus' master when ARM64_SSBD is enabled.
 
+Changes since v2:
+ - fix build when ARM64_SSBD is enabled with additionnal patch
+Changes since v1:
+ - made a bit more explicit that we copied defined symbols, in commit
+   and code.
+ - Use Fixes: tag in commit message
 
-> 
-> Fixes: ac0e232c12f0 ("coresight: platform: Use fwnode handle for device search")
-> Signed-off-by: Arnd Bergmann <arnd@arndb.de>
+Thanks to Dave Martin and Will Deacon for the review, and Sasha Levin
+for the auto-build bot.
+---
+ arch/arm64/kernel/ssbd.c | 1 +
+ 1 file changed, 1 insertion(+)
 
-Reviewed-by: Suzuki K Poulose <suzuki.poulose@arm.com>
+diff --git a/arch/arm64/kernel/ssbd.c b/arch/arm64/kernel/ssbd.c
+index 885f13e58708..52cfc6148355 100644
+--- a/arch/arm64/kernel/ssbd.c
++++ b/arch/arm64/kernel/ssbd.c
+@@ -5,6 +5,7 @@
+ 
+ #include <linux/compat.h>
+ #include <linux/errno.h>
++#include <linux/prctl.h>
+ #include <linux/sched.h>
+ #include <linux/sched/task_stack.h>
+ #include <linux/thread_info.h>
+-- 
+2.19.1
 
-> ---
->   drivers/hwtracing/coresight/Kconfig | 1 +
->   1 file changed, 1 insertion(+)
-> 
-> diff --git a/drivers/hwtracing/coresight/Kconfig b/drivers/hwtracing/coresight/Kconfig
-> index 5487d4a1abc2..14638db4991d 100644
-> --- a/drivers/hwtracing/coresight/Kconfig
-> +++ b/drivers/hwtracing/coresight/Kconfig
-> @@ -4,6 +4,7 @@
->   #
->   menuconfig CORESIGHT
->   	bool "CoreSight Tracing Support"
-> +	depends on OF || ACPI
->   	select ARM_AMBA
->   	select PERF_EVENTS
->   	help
-> 
 
 _______________________________________________
 linux-arm-kernel mailing list
