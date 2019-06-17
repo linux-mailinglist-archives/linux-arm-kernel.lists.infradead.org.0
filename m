@@ -2,85 +2,94 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8B38F4884E
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 17 Jun 2019 18:05:52 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DF17F4884F
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 17 Jun 2019 18:06:20 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=vhe862EjtlhJJ6vjq+C1xEKo3TmE64ohsClmPkpW6Dg=; b=XA3i/J8TE5CfFh
-	Vl89iMHuqyCT3Q15mO0xKkqD3uCQmy4HbD/Z20AEgC9/PXPAXv7LuOwxm6FiaEahve7OR/Bug0/jo
-	14vjyhuXGBDaYJwLcsnmvhHFC1l7u60zAiD95ixskLvjAT3kEkBdrZoPC489gm6p9SN9w4V3SOLL7
-	eFGQxjmv11bx72chdhbP8Nsmlo77HD/egrQRGsgleNvlytlvFdSBC2KwvlPKyaNg0MlPthMhpUT2v
-	/nFN/DYZGMlT9Z1UDS84y5QknhkOlAaopziUSKjDFRtJE5IFyE68NTlc6vNKljOqEgHX7WNlrf9hl
-	qgWjfN+AF5fWGalni0Vw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=jmdSXudvrA5FGrm4iyZYHBRB5//oeg57YZ3LTB+qcNM=; b=BcXhHCsbIRkUw8
+	YWF0Xs3a0sTl4Rmp+YUy6NNFlX9ewIZqh5hc3GT1jns5TzfHUfKXnzgsL4SisqQjGxoQ/jyZJo6bw
+	heA9eV/qk4TbyBbehiyIjsBLlgT0aSWluxlQO82W7H01oTtJh7jLV5POm1squFNZiycbfV2+Huplo
+	Mmz6TgKugSGlqKoc+B+AB59rQJMuoAgQSNTu3EkSPTlb+uYE+YUGM79SrIWHzOEFsge5V8Jeww2lR
+	41ZPGlFsPweoaSYL5uIAiRwRanPeKQiW3RnMeWiae62j+n1ALTgqEexwbHlXSe8XWKYk10LFsYcTK
+	4j3zbNWEn9SVtn2KI/7w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hcu8l-0007HS-1U; Mon, 17 Jun 2019 16:05:51 +0000
-Received: from mail-vs1-xe2b.google.com ([2607:f8b0:4864:20::e2b])
+	id 1hcu9B-0007eL-9g; Mon, 17 Jun 2019 16:06:17 +0000
+Received: from mail-lf1-x143.google.com ([2a00:1450:4864:20::143])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hcu7r-0005Uy-Bb
- for linux-arm-kernel@lists.infradead.org; Mon, 17 Jun 2019 16:04:56 +0000
-Received: by mail-vs1-xe2b.google.com with SMTP id l20so6470845vsp.3
+ id 1hcu8v-0007cf-9n
+ for linux-arm-kernel@lists.infradead.org; Mon, 17 Jun 2019 16:06:02 +0000
+Received: by mail-lf1-x143.google.com with SMTP id z15so6891333lfh.13
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 17 Jun 2019 09:04:54 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=pnnc1YqqDFPd8WzGDfGgqKol4mW6SfIm1hkAQXkloAQ=;
- b=FcuH+7EurKK2QioEYceTZLdpXz6DMaf+I3nLQhr1rnEhvteqQRCEdYh9VookY4398q
- Q5V4dmEg2BL6OgSV1CbZqhFz5NoPB0YmWjp015Yy4iDWwOrZjJ7UFXqHkK4h7XKAOaHv
- TwGSuEruYPrkT6i4edpcLtmPbgFzxPXSo/OsV5olbaxn6TFZOgMsKA0axRi3ip0pNJsW
- iJmRApuDDjW2Uuo73o9qc6Fg3OQ4qbIsYz92XcxxJ2PheSoKi8/t4kJ6g0ukJPhRz85s
- 5M7sKwU2IjER2XwDCQF2X4nFFGx916qmgqqAwVnLIMwAm7Zk+WYB//sshYpWNY5duKyn
- iD6w==
+ Mon, 17 Jun 2019 09:06:00 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=cogentembedded-com.20150623.gappssmtp.com; s=20150623;
+ h=subject:to:cc:references:from:organization:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=Ftr3IF6tEhAQtJEYORdg+72gK/8WB7Tuv1StM+dZuAk=;
+ b=GorSRaYuzb+DQmhSgz3nUmepUzz51+Lyv6smpuuHnpoQIPtwZSpBVP4zk3LrUrQXlO
+ Isd8K4u6O11izNx3bNmHdCC8GtUcTTiSGew6dvzyvns3ODFQ993EppLXwbnyOGhS81lN
+ x0Brxfw7ipJf1iktkzM0o+LpQRAxEcHbDnn/Zlgk4vpkLCWNLWYZlOiXgM2onbNmBgQ8
+ DvoksYUQL0DBgWqQQnS6v4s555bHT1eDk79ZK10zrefEzd7BUxBdPMl7K8iCb5y98vFe
+ 9IISN4PaKDRAckmOUQhTBAd+hYv9DydnF7Jlm9TYY9czpM/B8OqxcRj6tvjbcg5PV/Mc
+ B9yA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=pnnc1YqqDFPd8WzGDfGgqKol4mW6SfIm1hkAQXkloAQ=;
- b=NIQczrZ+lXfikPnCdyD37OOQ4Axf2+cJoPhM3OyOoYVpuJjr1NcYK5R0aXjgV60vZ+
- xkx2/ZiGz4WUqaqrGdUOUd9lNqwJ5Z2tIlw+kr84+u2ryHpTxS+E4A/OuLPJjrJFBNw8
- ec5rCHulf2XXT/QhGTgQXFvX4ODD/M9fJmkyIQzwEzE+p6smHx6eYFWEUGxbbrHkAQtY
- O45KbGgP5jWqW/FmbkiDnp1A8b4PzDYZ7GEfQAgJouhON2by7kv3B5QyGDkEqX27NUgk
- rDPHLqwL6/G9tB4qjCIDg+5wHyo727wjCFNYSer3W6xa2OuWYzovNgWPwZOqZXYYhDsE
- 1XXg==
-X-Gm-Message-State: APjAAAXUoFX0dlBSEt0acbOncC5UD/1OnKblupt48/Lt4KUCH1R2FsEX
- 8uuXSCskjgneguQfsc3GXMh2Ax/hFmhDiusz7pQ=
-X-Google-Smtp-Source: APXvYqxauZ6Wqdr1a6x/fpJLFsVERHU34VPVNMXn1iKL+e4p9OfXuz7VWrsJtK4Kn2WxOdyeEuBc+E97plQbyrlmZx0=
-X-Received: by 2002:a67:e3da:: with SMTP id k26mr20351031vsm.131.1560787493667; 
- Mon, 17 Jun 2019 09:04:53 -0700 (PDT)
+ h=x-gm-message-state:subject:to:cc:references:from:organization
+ :message-id:date:user-agent:mime-version:in-reply-to
+ :content-language:content-transfer-encoding;
+ bh=Ftr3IF6tEhAQtJEYORdg+72gK/8WB7Tuv1StM+dZuAk=;
+ b=K5MZY+nPyZQR+OOMSY45+1qp/jsmPruK0DG0K+IL+gS4N9loxDCR+K4YB5inNn8QY+
+ IMzvCVbST6jlE418R3AaRwVFPcBaPp6N9MvMNsUB6+miDOSG/HAgOpc/xEeOyBUjotmL
+ hBk3KnnUVoVTe91JKjh7psR7D8X3bho3NWBnnYIndew3BODT8CRfC+9a3QX0NM+7+0Ym
+ yw+/zMVYQ3eIuwtYWb5N/4qgEREBKqvjOq6m88vzGUdRq/of4hw653dNZ6M5FYJoIuig
+ 4inuM6gswWx1jBVd5VdLazOoYxnK16p1s/tuR04HQQiwPjMESd9QgInGgcJCrTMmhRw/
+ nWqQ==
+X-Gm-Message-State: APjAAAUpY+yJbuu0+TuC9DjufTnte2c0Yc4jflsRPnLQPP75CydP4XWl
+ HVXsv2yNi/hJDjU0jMbiYBHc4Q==
+X-Google-Smtp-Source: APXvYqxy91RpuobIYehP+3aOoQHmmQtMCXRPP5GVPK8YNQWAOFzrL+2r+mJVUmXGGCJGyYDS5xdg4w==
+X-Received: by 2002:a19:7905:: with SMTP id u5mr55463097lfc.117.1560787559152; 
+ Mon, 17 Jun 2019 09:05:59 -0700 (PDT)
+Received: from wasted.cogentembedded.com ([31.173.84.129])
+ by smtp.gmail.com with ESMTPSA id m17sm2174140lji.16.2019.06.17.09.05.57
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Mon, 17 Jun 2019 09:05:58 -0700 (PDT)
+Subject: Re: [PATCH v4 6/8] ARM: dts: imx7ulp: add imx7ulp USBOTG1 support
+To: Peter Chen <peter.chen@nxp.com>, "balbi@kernel.org" <balbi@kernel.org>,
+ "shawnguo@kernel.org" <shawnguo@kernel.org>
+References: <20190614093544.11730-1-peter.chen@nxp.com>
+ <20190614093544.11730-7-peter.chen@nxp.com>
+ <0dbf01f9-7c5c-ce0b-4feb-378c9147f15a@cogentembedded.com>
+ <VI1PR04MB5327B9EF844F9C7505D337298BEB0@VI1PR04MB5327.eurprd04.prod.outlook.com>
+From: Sergei Shtylyov <sergei.shtylyov@cogentembedded.com>
+Organization: Cogent Embedded
+Message-ID: <7d50357c-64b4-f504-e1b8-0e4542b59d12@cogentembedded.com>
+Date: Mon, 17 Jun 2019 19:05:57 +0300
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101
+ Thunderbird/52.2.1
 MIME-Version: 1.0
-References: <20190617153025.12120-1-andrew.smirnov@gmail.com>
-In-Reply-To: <20190617153025.12120-1-andrew.smirnov@gmail.com>
-From: Fabio Estevam <festevam@gmail.com>
-Date: Mon, 17 Jun 2019 13:05:03 -0300
-Message-ID: <CAOMZO5CALFFcUQ7mY6L7DqB+iuJHzk_WKhZ1=BePjHqpT6pOYA@mail.gmail.com>
-Subject: Re: [PATCH v2 1/2] ARM: dts: Add ZII support for ZII i.MX7 RMU2 board
-To: Andrey Smirnov <andrew.smirnov@gmail.com>
+In-Reply-To: <VI1PR04MB5327B9EF844F9C7505D337298BEB0@VI1PR04MB5327.eurprd04.prod.outlook.com>
+Content-Language: en-MW
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190617_090455_449016_D6674F3E 
-X-CRM114-Status: UNSURE (   7.80  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190617_090601_416996_1A00DD7F 
+X-CRM114-Status: GOOD (  14.23  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:e2b listed in]
+ no trust [2a00:1450:4864:20:0:0:0:143 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (festevam[at]gmail.com)
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -93,26 +102,68 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>, Rob Herring <robh@kernel.org>,
- Liang Pan <Liang.Pan@zii.aero>, linux-kernel <linux-kernel@vger.kernel.org>,
- "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
- <devicetree@vger.kernel.org>, Chris Healy <cphealy@gmail.com>,
- Shawn Guo <shawnguo@kernel.org>, Bob Langer <Bob.Langer@zii.aero>,
- Lucas Stach <l.stach@pengutronix.de>
+Cc: Aisheng Dong <aisheng.dong@nxp.com>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ "linux-usb@vger.kernel.org" <linux-usb@vger.kernel.org>,
+ "chunfeng.yun@mediatek.com" <chunfeng.yun@mediatek.com>,
+ "robh+dt@kernel.org" <robh+dt@kernel.org>, dl-linux-imx <linux-imx@nxp.com>,
+ "kernel@pengutronix.de" <kernel@pengutronix.de>,
+ Fabio Estevam <fabio.estevam@nxp.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Jun 17, 2019 at 12:30 PM Andrey Smirnov
-<andrew.smirnov@gmail.com> wrote:
->
-> Add support for ZII's i.MX7 based Remote Modem Unit 2 (RMU2) board.
->
-> Signed-off-by: Andrey Smirnov <andrew.smirnov@gmail.com>
+Hello!
 
-Reviewed-by: Fabio Estevam <festevam@gmail.com>
+On 06/17/2019 04:13 AM, Peter Chen wrote:
+
+[...]
+>>> Signed-off-by: Peter Chen <peter.chen@nxp.com>
+>>> ---
+>>>   arch/arm/boot/dts/imx7ulp.dtsi | 28 ++++++++++++++++++++++++++++
+>>>   1 file changed, 28 insertions(+)
+>>>
+>>> diff --git a/arch/arm/boot/dts/imx7ulp.dtsi
+>>> b/arch/arm/boot/dts/imx7ulp.dtsi index fca6e50f37c8..5115e47715c3
+>>> 100644
+>>> --- a/arch/arm/boot/dts/imx7ulp.dtsi
+>>> +++ b/arch/arm/boot/dts/imx7ulp.dtsi
+>>> @@ -30,6 +30,7 @@
+>>>   		serial1 = &lpuart5;
+>>>   		serial2 = &lpuart6;
+>>>   		serial3 = &lpuart7;
+>>> +		usbphy0 = &usbphy1;
+>>
+>>     Is that really needed?
+
+> Yes, since the driver code uses aligned id, and the controller number is from 0 at the code.
+> I commented it here: [1]
+
+   Fair enough...
+
+>> [...]
+>>> @@ -133,6 +134,33 @@
+>> [...]
+>>> +		usbphy1: usbphy@0x40350000 {
+>>
+>>     Name it "usb-phy@40350000" please.
+>>
+> 
+> Would you please list binding doc for your suggestion?
+
+   The DT spec v0.2, section 2.2.2:
+
+https://github.com/devicetree-org/devicetree-specification/releases/download/v0.2/devicetree-specification-v0.2.pdf
+
+> 
+> Thanks,
+> Peter
+> 
+> [1] https://patchwork.kernel.org/patch/10920599/
+
+MBR, Sergei
 
 _______________________________________________
 linux-arm-kernel mailing list
