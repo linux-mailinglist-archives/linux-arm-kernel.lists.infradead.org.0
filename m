@@ -2,59 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9D13E48596
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 17 Jun 2019 16:36:32 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A797E485F9
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 17 Jun 2019 16:50:00 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=WTjOUtLEvoF8ymSUsD0GigSTCv4yiZeMqCwUtPmhQF4=; b=Sf4
-	ncwEDFXIA/nvll58t6i8VZORw627pTlrtMl2jXDuNBgr6b9FpynmKf2WR20n48nX+PbeaCg+NYFMy
-	alFKKDbsAMLoJgDaJ6J65j6cEAsIj4hHstTtgSGWIi8UX6FBirlED10qX1rY3q8RXCwlf8O/GN023
-	4szZWg/iusckl0ArMUJzM8PlRjQyqaRPg7kkyrlDNnA1AdcgoiBajd23vMW7MiiofBj7Vd6fZZor0
-	B67gZwscaFPO49qYVeItC/LUAT6FtuE5kGqGfpKdQ1tQSbhG8FXcNpc0wNtIOkvqc4pivp6dHyOwO
-	bVQlCQRi4NLOYjsVWLxVe2GelRYszvQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=BWTa2hurPmeknjLFf/9ejRT3iAfzpm5Oh2Jkt3AbGYo=; b=JhImeTi772YDa1p7ggz7OseR7
+	rQEWYN3bQSDYPLgYIHzvNhrIzpBWf5/qtIcp4Cx8ZSzqaPD/aY+E2UprpoWcMbTBLBAfAZr8Jrort
+	GU/pWsjgStNeX6u8Vy1CUpWLxfEm5kDzRmM9vbhkyWbkJ1ZR8jextj+kkhO5yeF6qxOR45B0aqXU6
+	Gf/iUiMcb2d7dwuBczWfYCQWqx67156xmVUA73vW+Fsnl5IbHFr0y30lta+gefkKzTQ9cRQWaA/WY
+	WL0RJOzaxuX9rR6/z0P4lpGCNZolleRDhmh2CJT1e4L26OrG1Ik/RXwNcsoAszR5B4Fm0I3MDyptW
+	VJQZ+pAZA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hcskI-0006hn-Ba; Mon, 17 Jun 2019 14:36:30 +0000
-Received: from baptiste.telenet-ops.be ([2a02:1800:120:4::f00:13])
+	id 1hcsxJ-0002t3-Ce; Mon, 17 Jun 2019 14:49:57 +0000
+Received: from fllv0016.ext.ti.com ([198.47.19.142])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hcsk0-0006fC-7D
- for linux-arm-kernel@lists.infradead.org; Mon, 17 Jun 2019 14:36:15 +0000
-Received: from ramsan ([84.194.111.163])
- by baptiste.telenet-ops.be with bizsmtp
- id Rqbp2000a3XaVaC01qbpQL; Mon, 17 Jun 2019 16:35:56 +0200
-Received: from rox.of.borg ([192.168.97.57]) by ramsan with esmtp (Exim 4.90_1)
- (envelope-from <geert@linux-m68k.org>)
- id 1hcsjc-0002IZ-NH; Mon, 17 Jun 2019 16:35:48 +0200
-Received: from geert by rox.of.borg with local (Exim 4.90_1)
- (envelope-from <geert@linux-m68k.org>)
- id 1hcsjc-0001F0-M0; Mon, 17 Jun 2019 16:35:48 +0200
-From: Geert Uytterhoeven <geert+renesas@glider.be>
-To: Liviu Dudau <liviu.dudau@arm.com>, Sudeep Holla <sudeep.holla@arm.com>,
- Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
-Subject: [PATCH] ARM: dts: vexpress: Add missing newline at end of file
-Date: Mon, 17 Jun 2019 16:35:47 +0200
-Message-Id: <20190617143547.4721-1-geert+renesas@glider.be>
-X-Mailer: git-send-email 2.17.1
+ id 1hcsx0-0002sT-Qq
+ for linux-arm-kernel@lists.infradead.org; Mon, 17 Jun 2019 14:49:40 +0000
+Received: from fllv0034.itg.ti.com ([10.64.40.246])
+ by fllv0016.ext.ti.com (8.15.2/8.15.2) with ESMTP id x5HEncSo073160;
+ Mon, 17 Jun 2019 09:49:38 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
+ s=ti-com-17Q1; t=1560782978;
+ bh=PThIYnKzWiBgx4IKcZ45yCLr5ztnCcprEnbFD/SZiLo=;
+ h=Subject:To:CC:References:From:Date:In-Reply-To;
+ b=VwF6uu+P4VRhjt+xeIlp+cNVvszMg5d6JN2gxJfakcDPevDW8CQJveqiuMDV3J/1D
+ ru5/ZFhmZh+N/NW1EDLLmNv6XQ432dsSiI5l7pNBPtVgmC1bOPalXtNK7rmLRPQigf
+ EFEhaEXeQDD6zRDwEG33wDrmCtBCIJVL2N+f/ZLU=
+Received: from DFLE100.ent.ti.com (dfle100.ent.ti.com [10.64.6.21])
+ by fllv0034.itg.ti.com (8.15.2/8.15.2) with ESMTPS id x5HEnc9N058086
+ (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
+ Mon, 17 Jun 2019 09:49:38 -0500
+Received: from DFLE109.ent.ti.com (10.64.6.30) by DFLE100.ent.ti.com
+ (10.64.6.21) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5; Mon, 17
+ Jun 2019 09:49:36 -0500
+Received: from fllv0040.itg.ti.com (10.64.41.20) by DFLE109.ent.ti.com
+ (10.64.6.30) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5 via
+ Frontend Transport; Mon, 17 Jun 2019 09:49:36 -0500
+Received: from [127.0.0.1] (ileax41-snat.itg.ti.com [10.172.224.153])
+ by fllv0040.itg.ti.com (8.15.2/8.15.2) with ESMTP id x5HEnZ4J037757;
+ Mon, 17 Jun 2019 09:49:35 -0500
+Subject: Re: [PATCH 0/4] Add MCU SRAM nodes for TI K3 SoCs
+To: Suman Anna <s-anna@ti.com>, Nishanth Menon <nm@ti.com>
+References: <20190605163434.23173-1-s-anna@ti.com>
+From: Tero Kristo <t-kristo@ti.com>
+Message-ID: <e0c07124-3191-13c7-432f-4099c842059b@ti.com>
+Date: Mon, 17 Jun 2019 17:49:34 +0300
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.6.1
+MIME-Version: 1.0
+In-Reply-To: <20190605163434.23173-1-s-anna@ti.com>
+Content-Language: en-US
+X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190617_073613_558602_AB5ADDE0 
-X-CRM114-Status: UNSURE (   8.62  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.4 (/)
+X-CRM114-CacheID: sfid-20190617_074938_969849_F790C9D2 
+X-CRM114-Status: GOOD (  16.12  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.4 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [2a02:1800:120:4:0:0:f00:13 listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [198.47.19.142 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -66,39 +91,52 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Geert Uytterhoeven <geert+renesas@glider.be>, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
-Content-Type: text/plain; charset="us-ascii"
+Cc: devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-"git diff" says:
+On 05/06/2019 19:34, Suman Anna wrote:
+> Hi Tero,
+> 
+> The following series adds the DT nodes for the MCU SRAM present within
+> the MCU domain for both AM65x and J721E SoCs. The first 2 patches enable
+> the MCU SRAM node to be probed properly on AM65x SoCs, and the third
+> patch the equivalent for J721E SoCs. The third patch depends on the
+> base J721E support patch series from Nishanth [1].
+> 
+> The last patch is not related to MCU SRAM, but adds the ranges for the
+> R5F cluster that is also present in the MCU domain in preparation for
+> the R5F nodes.
+> 
+> regards
+> Suman
+> 
+> [1] https://patchwork.kernel.org/project/linux-arm-kernel/list/?series=121189
 
-    \ No newline at end of file
+Queuing patches 1,2 and 4 towards 5.3 thanks.
 
-after modifying the file.
+Patch #3 is waiting until I can sort out j7 dependencies, which should 
+happen later this week.
 
-Signed-off-by: Geert Uytterhoeven <geert+renesas@glider.be>
----
- arch/arm/boot/dts/vexpress-v2m.dtsi | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+-Tero
 
-diff --git a/arch/arm/boot/dts/vexpress-v2m.dtsi b/arch/arm/boot/dts/vexpress-v2m.dtsi
-index 798c97aff7fa3b99..c748893e09ed88ea 100644
---- a/arch/arm/boot/dts/vexpress-v2m.dtsi
-+++ b/arch/arm/boot/dts/vexpress-v2m.dtsi
-@@ -448,4 +448,4 @@
- 			};
- 		};
- 	};
--};
-\ No newline at end of file
-+};
--- 
-2.17.1
+> 
+> Suman Anna (4):
+>    arm64: dts: ti: k3-am65: Add MCU SRAM ranges in interconnect nodes
+>    arm64: dts: ti: k3-am65-mcu: Add the MCU RAM node
+>    arm64: dts: ti: k3-j721e: Add the MCU SRAM node
+>    arm64: dts: ti: k3-am65: Add R5F ranges in interconnect nodes
+> 
+>   arch/arm64/boot/dts/ti/k3-am65-mcu.dtsi         | 8 ++++++++
+>   arch/arm64/boot/dts/ti/k3-am65.dtsi             | 6 ++++++
+>   arch/arm64/boot/dts/ti/k3-j721e-mcu-wakeup.dtsi | 8 ++++++++
+>   3 files changed, 22 insertions(+)
+> 
 
+--
+Texas Instruments Finland Oy, Porkkalankatu 22, 00180 Helsinki. Y-tunnus/Business ID: 0615521-4. Kotipaikka/Domicile: Helsinki
 
 _______________________________________________
 linux-arm-kernel mailing list
