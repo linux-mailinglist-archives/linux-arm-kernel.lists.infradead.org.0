@@ -2,76 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D589F47D67
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 17 Jun 2019 10:44:15 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8770747D6A
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 17 Jun 2019 10:44:57 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=b53mIL3Sibi6BRb1F4a2APJ51c/aqyjsJ/swKxCaTv8=; b=ON2YYxdrB+am0S
-	mCwTQFSYq7r4bFy0YHolBTh70lXfoBt25JtnSe/8zHIaxGkRGCPza83S2X/Ze8qA2fFJTB7l0g75m
-	JNQ5HdHTNNlfEhqvWwOGvENCwElosvpynEIfnu1loxXDBj2SK8CvOWGu9W7ifrA+zaEh/6WP0Phjp
-	7tzv7RN6XX66xsWzwXVpwIenb2mbgT923hisbuCdQIR6LYsXrR9O4zuZjHlv7v37+zFjf6mUULwUk
-	cP86NWptbxUClrcjjZpFbjM6Od+wvhHxC7LbZaRLgx8o/ULsE2R83snhXiBi7Q3GFxEZ8Bj2cjYYu
-	f3gUMcj9VBFY+jdzuIbg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=JLSJruyQFCkY0QVRusrkz4yNcpC9zbgd1EKgIQoThxs=; b=kAO7ZJUXi1fJor
+	oU7n83deAXS2srrenU0D8ySRsLJZzasMcn2UoZ4IfTlRx8qX+FQelMOgkZ5x1PnIGqmtaH1q8B7MD
+	Ap7X4hEmSFKjLH4pMOQTBT3w/Eo/qouyYOFGwe2ck/0Zt4XaIAxeXcYd9PhGCJITQIDMXTxb7FXXE
+	oLLm6ImfQNY6QCHdkpmQwdkSa68VvIHXYRp7TA0ikA0oN/A+dGZh9AnO1mMd/x4MpNU0i2RScBTZh
+	wJXtDkpfLTPH9OtYFpaSYmFagwAmvuhM3kncMgRoMzdi56IADYIZ3WfKuXEtdmuM8+bAjoAWJsoSu
+	Jy4mZJNGMXq6GzlaPTYA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hcnFN-0000cc-H8; Mon, 17 Jun 2019 08:44:13 +0000
-Received: from mail-lj1-f195.google.com ([209.85.208.195])
+	id 1hcnG2-000149-1q; Mon, 17 Jun 2019 08:44:54 +0000
+Received: from szxga06-in.huawei.com ([45.249.212.32] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hcnF8-0000c9-4v
- for linux-arm-kernel@lists.infradead.org; Mon, 17 Jun 2019 08:43:59 +0000
-Received: by mail-lj1-f195.google.com with SMTP id k18so8411612ljc.11
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 17 Jun 2019 01:43:57 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=ZR1yDHqUmbFJgvygvorNZChQNS+ZH5Vm3CebMOqstI8=;
- b=TVL1OUc8r2N1JdbYyCI8l3cW/1ZxW8bBu8r3xwG7GzyHCfnGmosGsExX0QByCj1HIq
- 4+l2qEtiR50hg4IZbBvSQcsSSghPZ/HtxVUM8fDcoOuG+xjIPt5D09OcOeGZSQkx2E0l
- jjLRtarhvHFW8G8JpNeVOskU9nxHK06WfLvUMtI0hcmeh1/zvRXdeoIxsto8OXB1TqnA
- YX3wChBzrSEA0ztKQcbrsZXVLLpFSvDFUZXf98qsjEy8D6vDZmgKbTWvHuxrqgPkYhHS
- NM+JTK4ZBOaKRiTjdOYmosbLQdSoKz59JL5NyLDHj+r6rFBLqTR9KqiUfpFFdzHqTRTM
- U9/A==
-X-Gm-Message-State: APjAAAXXxP6T9fMg+NWHlW35sftK4M4IP+6aMqjgojEX6DYs9C7eV3n1
- hdXrZfW1Bcqz7Llsn91nJ2n0d0IyiLIP/8udihBGh1jm
-X-Google-Smtp-Source: APXvYqzyRsaX9lggOJEIeLixo7B3/WaZ1Swx1xmE7jR3IuhkQ2+ocPE8yYoi6Hw36yqAKgFSNvObaopuU6KByVgUzdk=
-X-Received: by 2002:a2e:2b57:: with SMTP id q84mr11708556lje.105.1560761036254; 
- Mon, 17 Jun 2019 01:43:56 -0700 (PDT)
+ id 1hcnFl-000136-Hl
+ for linux-arm-kernel@lists.infradead.org; Mon, 17 Jun 2019 08:44:39 +0000
+Received: from DGGEMS410-HUB.china.huawei.com (unknown [172.30.72.60])
+ by Forcepoint Email with ESMTP id E0CD46922DA6B0343C85;
+ Mon, 17 Jun 2019 16:44:30 +0800 (CST)
+Received: from [127.0.0.1] (10.177.223.23) by DGGEMS410-HUB.china.huawei.com
+ (10.3.19.210) with Microsoft SMTP Server id 14.3.439.0; Mon, 17 Jun 2019
+ 16:44:30 +0800
+Subject: Re: [PATCH] MAINTAINERS: Update my email address
+To: Marc Zyngier <marc.zyngier@arm.com>
+References: <1560586872-40099-1-git-send-email-guohanjun@huawei.com>
+ <86k1dkpruy.wl-marc.zyngier@arm.com>
+From: Hanjun Guo <guohanjun@huawei.com>
+Message-ID: <3a638192-9ef1-ba4a-9975-6c0b22ce5b64@huawei.com>
+Date: Mon, 17 Jun 2019 16:44:19 +0800
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:52.0) Gecko/20100101
+ Thunderbird/52.5.0
 MIME-Version: 1.0
-References: <20190617083704.3941-1-horms+renesas@verge.net.au>
- <20190617083704.3941-3-horms+renesas@verge.net.au>
-In-Reply-To: <20190617083704.3941-3-horms+renesas@verge.net.au>
-From: Geert Uytterhoeven <geert@linux-m68k.org>
-Date: Mon, 17 Jun 2019 10:43:41 +0200
-Message-ID: <CAMuHMdXVrGDM+zQggk=Enyu_w=waZWkYx9iQDJEuTUz6kOQE0Q@mail.gmail.com>
-Subject: Re: [PATCH v2 2/2] arm64: dts: renesas: r8a77995: Add cpg reset for
- LVDS Interface
-To: Simon Horman <horms+renesas@verge.net.au>
+In-Reply-To: <86k1dkpruy.wl-marc.zyngier@arm.com>
+Content-Language: en-US
+X-Originating-IP: [10.177.223.23]
+X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190617_014358_188480_7F83FD91 
-X-CRM114-Status: GOOD (  16.35  )
-X-Spam-Score: 0.5 (/)
+X-CRM114-CacheID: sfid-20190617_014437_827767_F2F2E1AD 
+X-CRM114-Status: GOOD (  13.45  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.5 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.208.195 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [45.249.212.32 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.208.195 listed in wl.mailspike.net]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (geert.uytterhoeven[at]gmail.com)
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -83,66 +66,54 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Linux-Renesas <linux-renesas-soc@vger.kernel.org>,
- Yoshihiro Kaneko <ykaneko0929@gmail.com>, Magnus Damm <magnus.damm@gmail.com>,
- Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ "Rafael J. Wysocki" <rafael@kernel.org>,
+ Catalin Marinas <catalin.marinas@arm.com>, linux-acpi@vger.kernel.org,
+ Sudeep Holla <sudeep.holla@arm.com>, Will Deacon <will@kernel.org>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Simon,
+Hi Marc,
 
-On Mon, Jun 17, 2019 at 10:37 AM Simon Horman
-<horms+renesas@verge.net.au> wrote:
-> From: Yoshihiro Kaneko <ykaneko0929@gmail.com>
->
-> It is necessary to reset the LVDS Interface according to display on/off.
+On 2019/6/17 15:56, Marc Zyngier wrote:
+> Hi Hanjun,
+> 
+> On Sat, 15 Jun 2019 09:21:12 +0100,
+> Hanjun Guo <guohanjun@huawei.com> wrote:
+>>
+>> The @linaro.org address is not working and bonucing, so update the
+>> references.
+>>
+>> Signed-off-by: Hanjun Guo <guohanjun@huawei.com>
+>> ---
+>>  MAINTAINERS | 2 +-
+>>  1 file changed, 1 insertion(+), 1 deletion(-)
+>>
+>> diff --git a/MAINTAINERS b/MAINTAINERS
+>> index 57f496c..2fed10f 100644
+>> --- a/MAINTAINERS
+>> +++ b/MAINTAINERS
+>> @@ -364,7 +364,7 @@ F:	drivers/acpi/fan.c
+>>  
+>>  ACPI FOR ARM64 (ACPI/arm64)
+>>  M:	Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
+>> -M:	Hanjun Guo <hanjun.guo@linaro.org>
+>> +M:	Hanjun Guo <guohanjun@huawei.com>
+>>  M:	Sudeep Holla <sudeep.holla@arm.com>
+>>  L:	linux-acpi@vger.kernel.org
+>>  L:	linux-arm-kernel@lists.infradead.org (moderated for non-subscribers)
+> 
+> You may also want to consider adding an entry into .mailmap, so that
+> scripts get the right address.
 
-This is not the LVDS interface.
-The LVDS interface has its own device node.
+Thank you for the kind reminder, I will send a updated patch.
 
-> Therefore, this patch adds CPG reset properties in DU device node
-> for the R8A77995 SoC.
->
-> This patch was inspired by a patch in the BSP by Takeshi Kihara
-> <takeshi.kihara.df@renesas.com>.
->
-> According to Laurent Pinchart, R-Car Gen3 reset is handled at the group
-> level so specifying one reset entry per group is sufficient. For
-> this reason <&cpg 724> is not listed as a reset for "du.1" as
-> was the case in an earlier revision of this patch.
->
-> Signed-off-by: Yoshihiro Kaneko <ykaneko0929@gmail.com>
-> Signed-off-by: Simon Horman <horms+renesas@verge.net.au>
-> ---
-> v2 [Simon Horman]
-> - only add one reset entry per group
->
-> v1 [Yoshihiro Kaneko]
+Thanks
+Hanjun
 
-> --- a/arch/arm64/boot/dts/renesas/r8a77995.dtsi
-> +++ b/arch/arm64/boot/dts/renesas/r8a77995.dtsi
-> @@ -1001,6 +1001,8 @@
->                         clocks = <&cpg CPG_MOD 724>,
->                                  <&cpg CPG_MOD 723>;
->                         clock-names = "du.0", "du.1";
-> +                       resets = <&cpg 724>;
-> +                       reset-names = "du.0";
->                         vsps = <&vspd0 0 &vspd1 0>;
->                         status = "disabled";
-
-Gr{oetje,eeting}s,
-
-                        Geert
-
--- 
-Geert Uytterhoeven -- There's lots of Linux beyond ia32 -- geert@linux-m68k.org
-
-In personal conversations with technical people, I call myself a hacker. But
-when I'm talking to journalists I just say "programmer" or something like that.
-                                -- Linus Torvalds
 
 _______________________________________________
 linux-arm-kernel mailing list
