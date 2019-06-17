@@ -2,70 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0F06D47A76
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 17 Jun 2019 09:12:37 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B924A47AA2
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 17 Jun 2019 09:18:49 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=c9VAtMurDf2ibj1KGcb2DCX1wG9Twrws3+62wVqd00M=; b=IrsJJ7vfxBL5ET
-	Tef5EcNq4hfqqLcA7U8GMklaPsiGSKZTw9sNAiwaHsfuXXTrvDyOFyWkrDUQrjgoKp+HwlXxKuvKh
-	B5uPI5O+7Ppf5Qx9FHqsQikq165ASZd5YkZOVycAIR/j6yuaJHL6vH3/Y0SU6LW3U7hDYA4X2YrXG
-	QTUOUGyAmDD81pwNIzWnBEqHxfzLLhbZ9I1G6PPf0UdDsui3S0aaXdBVBfL45HnRDDCdTsB8QqHRf
-	pHVIFGe5EogL800MaRKvsFh/JSzOuXbvgXNgB987QuSM0p1LXJMbOqcw9b17+HPs6b3CAQyzFDhVX
-	hq+7wVmefLZJbQIk+x2Q==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=3tDX5h1q9ClNTMjnMPa6kwpYsb9hFyj7tAdv4Wj414g=; b=MjjduPU4z9bjFY
+	WkLXAwCrC0CipbCL8OLPfkhVLZ7SvMsF2gCFKiQ0U+ye2/ksdza1DWRqcSituQqC/WgEODtVdKdKa
+	7Iu3MazUUm5Mbf4GGR7vr56ebUlY7vQGqeJTEghAksDBztEYC/96Jx3YlxqrBG8Ai87z/NrbYO0KK
+	Kn0F6dIA4SfyORE1yjQcUBkl/wpsnr/GdL/6Q4OimBHocvAetkAsAi12mXGz7LvPPgNHh+rnbAO9A
+	6sS7WBz/0GlHedECEKgRJNaDSPqiU3fJ7I6eEThtl5T/F9FbPcNzOCLZVNUcRBmj3E/J1ZNFPUZjs
+	GOeKxCQr5RPYtb9Ytgwg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hcloc-0003K5-Uk; Mon, 17 Jun 2019 07:12:30 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1hcluf-0005wR-9l; Mon, 17 Jun 2019 07:18:45 +0000
+Received: from mx07-00178001.pphosted.com ([62.209.51.94])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hcloP-0003Jm-AX
- for linux-arm-kernel@lists.infradead.org; Mon, 17 Jun 2019 07:12:18 +0000
-Received: from mail-lj1-f179.google.com (mail-lj1-f179.google.com
- [209.85.208.179])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 0BD29218E0
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 17 Jun 2019 07:12:16 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1560755536;
- bh=auAmcgDb9/BI7xXD6SFrnCeWwfBK8vq66znDTU/qxiE=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=Qs2uqqAu8v+vqQAIjksCHS2nPH9Zl4cZ+Ai0T1xtiD9snX6vO+jyYNN1d0e0gSq92
- ILe9zqcpQL1wTn5pqSUWgIdYvGceHH+DhjfAkg9ezLxnrQyw9ZIEsEHnQmO1vj6Mfv
- YYur0sZUvJzSPFlG2FUf9dKL3kAPlBNbkQaa7PDc=
-Received: by mail-lj1-f179.google.com with SMTP id h10so8223451ljg.0
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 17 Jun 2019 00:12:15 -0700 (PDT)
-X-Gm-Message-State: APjAAAUvXcdT2Qp9JRptxFCt/4YTtuwmrNJIvWKDs9i+bfqBcmR1eI72
- Nt5yCZhzIyxg+dEnzoD3j24hIotEfS9SMEel6hk=
-X-Google-Smtp-Source: APXvYqxYdWi6u8+Af9xm4Ixw0NW9S2cn6fHEduei34f452pIJ4bgKmwQXZSGCJoSV5lYo97OVcCtb7ZtQ5e1o/emiPw=
-X-Received: by 2002:a2e:94c9:: with SMTP id r9mr12365447ljh.210.1560755534293; 
- Mon, 17 Jun 2019 00:12:14 -0700 (PDT)
+ id 1hcluQ-0005vM-8G
+ for linux-arm-kernel@lists.infradead.org; Mon, 17 Jun 2019 07:18:32 +0000
+Received: from pps.filterd (m0046037.ppops.net [127.0.0.1])
+ by mx07-00178001.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id
+ x5H7G0ZS016840; Mon, 17 Jun 2019 09:18:22 +0200
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
+ h=from : to : subject :
+ date : message-id : mime-version : content-type :
+ content-transfer-encoding; s=STMicroelectronics;
+ bh=Ia2/UrCUbgT3bw0BUTt336OAmpb+nVhfRSlDq35fcEs=;
+ b=djNFXoDB4cGYOdCBR/WaJaQgc3IkLbr6gG3WsKXYywl2EAUpnCglQjTOgMM3NgTdcALz
+ RnyxPh/XODS35rQRIAjo1GYk5FJto0TGQ53PiJItJY2wRMFfvAZMdCihDAVFxzhTwpII
+ sQ0yUGmVo4AX4apALbfQbpXmJ0vzkqNRS4KYccRtdBEP6MJaCHobWu9Lla2hxtkktYDZ
+ CHvFLsHbYqO/4n6bO6cD1IRs51HsaYrmZdKvYANqCjepEBGKuDPgSR9CvfoUbw7G7k97
+ RC5yVFldo0CzjKjNEBoaNniM2SmKQ7oJM50d/KITK4TyI5x9OY5n9bngEEOhonkb1mDL rw== 
+Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
+ by mx07-00178001.pphosted.com with ESMTP id 2t4peu0wyj-1
+ (version=TLSv1 cipher=ECDHE-RSA-AES256-SHA bits=256 verify=NOT);
+ Mon, 17 Jun 2019 09:18:22 +0200
+Received: from zeta.dmz-eu.st.com (zeta.dmz-eu.st.com [164.129.230.9])
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 0C73034;
+ Mon, 17 Jun 2019 07:18:20 +0000 (GMT)
+Received: from Webmail-eu.st.com (Safex1hubcas22.st.com [10.75.90.92])
+ by zeta.dmz-eu.st.com (STMicroelectronics) with ESMTP id A7417155B;
+ Mon, 17 Jun 2019 07:18:20 +0000 (GMT)
+Received: from SAFEX1HUBCAS24.st.com (10.75.90.95) by Safex1hubcas22.st.com
+ (10.75.90.92) with Microsoft SMTP Server (TLS) id 14.3.439.0; Mon, 17 Jun
+ 2019 09:18:20 +0200
+Received: from localhost (10.201.23.97) by webmail-ga.st.com (10.75.90.48)
+ with Microsoft SMTP Server (TLS) id 14.3.439.0; Mon, 17 Jun 2019 09:18:20
+ +0200
+From: =?UTF-8?q?Yannick=20Fertr=C3=A9?= <yannick.fertre@st.com>
+To: Yannick Fertre <yannick.fertre@st.com>, Philippe Cornu
+ <philippe.cornu@st.com>, Benjamin Gaignard <benjamin.gaignard@st.com>,
+ Vincent Abriou <vincent.abriou@st.com>,
+ David Airlie <airlied@linux.ie>, Daniel Vetter <daniel@ffwll.ch>,
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ Alexandre Torgue <alexandre.torgue@st.com>,
+ <dri-devel@lists.freedesktop.org>,
+ <linux-stm32@st-md-mailman.stormreply.com>,
+ <linux-arm-kernel@lists.infradead.org>, <linux-kernel@vger.kernel.org>
+Subject: [PATCH 1/3] drm/stm: drv: fix suspend/resume
+Date: Mon, 17 Jun 2019 09:18:17 +0200
+Message-ID: <1560755897-5002-1-git-send-email-yannick.fertre@st.com>
+X-Mailer: git-send-email 2.7.4
 MIME-Version: 1.0
-References: <20190614163635.22413-1-enric.balletbo@collabora.com>
- <20190614163635.22413-11-enric.balletbo@collabora.com>
-In-Reply-To: <20190614163635.22413-11-enric.balletbo@collabora.com>
-From: Krzysztof Kozlowski <krzk@kernel.org>
-Date: Mon, 17 Jun 2019 09:12:03 +0200
-X-Gmail-Original-Message-ID: <CAJKOXPetaMmeQyZWVWRUSzbe1pKMweCpUx=phy8QowVQHTrdLA@mail.gmail.com>
-Message-ID: <CAJKOXPetaMmeQyZWVWRUSzbe1pKMweCpUx=phy8QowVQHTrdLA@mail.gmail.com>
-Subject: Re: [PATCH v2 10/10] arm/arm64: defconfig: Update configs to use the
- new CROS_EC options
-To: Enric Balletbo i Serra <enric.balletbo@collabora.com>
+X-Originating-IP: [10.201.23.97]
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:, ,
+ definitions=2019-06-17_05:, , signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190617_001217_400502_65D00468 
-X-CRM114-Status: GOOD (  17.96  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190617_001830_747298_CFCA1745 
+X-CRM114-Status: GOOD (  13.30  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [62.209.51.94 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -75,7 +89,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -87,140 +100,35 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: gwendal@chromium.org, Geert Uytterhoeven <geert+renesas@glider.be>,
- Tony Lindgren <tony@atomide.com>, Catalin Marinas <catalin.marinas@arm.com>,
- Will Deacon <will.deacon@arm.com>,
- Bjorn Andersson <bjorn.andersson@linaro.org>,
- Miquel Raynal <miquel.raynal@bootlin.com>, Guenter Roeck <groeck@chromium.org>,
- kernel@collabora.com, dtor@chromium.org,
- Marek Szyprowski <m.szyprowski@samsung.com>,
- Maxime Ripard <maxime.ripard@bootlin.com>,
- "linux-samsung-soc@vger.kernel.org" <linux-samsung-soc@vger.kernel.org>,
- Lee Jones <lee.jones@linaro.org>, Daniel Lezcano <daniel.lezcano@linaro.org>,
- Russell King <linux@armlinux.org.uk>, Chanwoo Choi <cw00.choi@samsung.com>,
- Kukjin Kim <kgene@kernel.org>, Jagan Teki <jagan@amarulasolutions.com>,
- Alexandre Torgue <alexandre.torgue@st.com>, Arnd Bergmann <arnd@arndb.de>,
- Robert Jarzmik <robert.jarzmik@free.fr>,
- Simon Horman <horms+renesas@verge.net.au>, Benson Leung <bleung@chromium.org>,
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
- =?UTF-8?Q?Yannick_Fertr=C3=A9?= <yannick.fertre@st.com>,
- Dinh Nguyen <dinguyen@kernel.org>, Olof Johansson <olof@lixom.net>,
- Daniel Mack <daniel@zonque.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, 14 Jun 2019 at 18:37, Enric Balletbo i Serra
-<enric.balletbo@collabora.com> wrote:
->
-> Recently we refactored the CrOS EC drivers moving part of the code from
-> the MFD subsystem to the platform chrome subsystem. During this change
-> we needed to rename some config options, so, update the defconfigs
-> accordingly.
->
-> Signed-off-by: Enric Balletbo i Serra <enric.balletbo@collabora.com>
-> ---
->
-> Changes in v2: None
->
->  arch/arm/configs/exynos_defconfig   | 4 +++-
->  arch/arm/configs/multi_v7_defconfig | 6 ++++--
->  arch/arm/configs/pxa_defconfig      | 4 +++-
->  arch/arm64/configs/defconfig        | 6 ++++--
->  4 files changed, 14 insertions(+), 6 deletions(-)
->
-> diff --git a/arch/arm/configs/exynos_defconfig b/arch/arm/configs/exynos_defconfig
-> index c95c54284da2..03448fba569f 100644
-> --- a/arch/arm/configs/exynos_defconfig
-> +++ b/arch/arm/configs/exynos_defconfig
-> @@ -154,7 +154,9 @@ CONFIG_CPU_THERMAL=y
->  CONFIG_THERMAL_EMULATION=y
->  CONFIG_WATCHDOG=y
->  CONFIG_S3C2410_WATCHDOG=y
-> -CONFIG_MFD_CROS_EC=y
-> +CONFIG_MFD_CROS_EC_DEV=y
-> +CONFIG_CHROME_PLATFORMS=y
-> +CONFIG_CROS_EC=y
->  CONFIG_CROS_EC_I2C=y
->  CONFIG_CROS_EC_SPI=y
->  CONFIG_MFD_MAX14577=y
-
-If you want to take it through mfd, arm-soc or other tree:
-For Exynos:
-Acked-by: Krzysztof Kozlowski <krzk@kernel.org>
-
-Otherwise I could take exynos/multi_v7/arm64 changes but split per arm v7/v8.
-
-Best regards,
-Krzysztof
-
-
-> diff --git a/arch/arm/configs/multi_v7_defconfig b/arch/arm/configs/multi_v7_defconfig
-> index 6b748f214eae..9fe783abf3c5 100644
-> --- a/arch/arm/configs/multi_v7_defconfig
-> +++ b/arch/arm/configs/multi_v7_defconfig
-> @@ -510,10 +510,12 @@ CONFIG_MFD_BCM590XX=y
->  CONFIG_MFD_AC100=y
->  CONFIG_MFD_AXP20X_I2C=y
->  CONFIG_MFD_AXP20X_RSB=y
-> -CONFIG_MFD_CROS_EC=m
-> +CONFIG_MFD_CROS_EC_DEV=m
-> +CONFIG_CHROME_PLATFORMS=y
-> +CONFIG_CROS_EC=m
->  CONFIG_CROS_EC_I2C=m
->  CONFIG_CROS_EC_SPI=m
-> -CONFIG_MFD_CROS_EC_CHARDEV=m
-> +CONFIG_CROS_EC_CHARDEV=m
->  CONFIG_MFD_DA9063=m
->  CONFIG_MFD_MAX14577=y
->  CONFIG_MFD_MAX77686=y
-> diff --git a/arch/arm/configs/pxa_defconfig b/arch/arm/configs/pxa_defconfig
-> index 07ebbdce3645..e335b986cf70 100644
-> --- a/arch/arm/configs/pxa_defconfig
-> +++ b/arch/arm/configs/pxa_defconfig
-> @@ -394,7 +394,9 @@ CONFIG_SA1100_WATCHDOG=m
->  CONFIG_MFD_AS3711=y
->  CONFIG_MFD_BCM590XX=m
->  CONFIG_MFD_AXP20X=y
-> -CONFIG_MFD_CROS_EC=m
-> +CONFIG_MFD_CROS_EC_DEV=m
-> +CONFIG_CHROME_PLATFORMS=y
-> +CONFIG_CROS_EC=m
->  CONFIG_CROS_EC_I2C=m
->  CONFIG_CROS_EC_SPI=m
->  CONFIG_MFD_ASIC3=y
-> diff --git a/arch/arm64/configs/defconfig b/arch/arm64/configs/defconfig
-> index 4d583514258c..b5bba5f04082 100644
-> --- a/arch/arm64/configs/defconfig
-> +++ b/arch/arm64/configs/defconfig
-> @@ -430,8 +430,7 @@ CONFIG_MFD_ALTERA_SYSMGR=y
->  CONFIG_MFD_BD9571MWV=y
->  CONFIG_MFD_AXP20X_I2C=y
->  CONFIG_MFD_AXP20X_RSB=y
-> -CONFIG_MFD_CROS_EC=y
-> -CONFIG_MFD_CROS_EC_CHARDEV=m
-> +CONFIG_MFD_CROS_EC_DEV=y
->  CONFIG_MFD_EXYNOS_LPASS=m
->  CONFIG_MFD_HI6421_PMIC=y
->  CONFIG_MFD_HI655X_PMIC=y
-> @@ -631,8 +630,11 @@ CONFIG_VIRTIO_BALLOON=y
->  CONFIG_VIRTIO_MMIO=y
->  CONFIG_XEN_GNTDEV=y
->  CONFIG_XEN_GRANT_DEV_ALLOC=y
-> +CONFIG_CHROME_PLATFORMS=y
-> +CONFIG_CROS_EC=y
->  CONFIG_CROS_EC_I2C=y
->  CONFIG_CROS_EC_SPI=y
-> +CONFIG_CROS_EC_CHARDEV=m
->  CONFIG_COMMON_CLK_RK808=y
->  CONFIG_COMMON_CLK_SCPI=y
->  CONFIG_COMMON_CLK_CS2000_CP=y
-> --
-> 2.20.1
->
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+V2l0aG91dCB0aGlzIGZpeCwgdGhlIHN5c3RlbSBjYW4gbm90IGdvIGluICJzdXNwZW5kIiBtb2Rl
+CmR1ZSB0byBhbiBlcnJvciBpbiBkcnZfc3VzcGVuZCBmdW5jdGlvbi4KCkZpeGVzOiAzNWFiNmNm
+ICgiZHJtL3N0bTogc3VwcG9ydCBydW50aW1lIHBvd2VyIG1hbmFnZW1lbnQiKQoKU2lnbmVkLW9m
+Zi1ieTogWWFubmljayBGZXJ0csOpIDx5YW5uaWNrLmZlcnRyZUBzdC5jb20+Ci0tLQogZHJpdmVy
+cy9ncHUvZHJtL3N0bS9kcnYuYyB8IDE1ICsrKysrKysrLS0tLS0tLQogMSBmaWxlIGNoYW5nZWQs
+IDggaW5zZXJ0aW9ucygrKSwgNyBkZWxldGlvbnMoLSkKCmRpZmYgLS1naXQgYS9kcml2ZXJzL2dw
+dS9kcm0vc3RtL2Rydi5jIGIvZHJpdmVycy9ncHUvZHJtL3N0bS9kcnYuYwppbmRleCA1NjU5NTcy
+Li45ZGVlNGU0IDEwMDY0NAotLS0gYS9kcml2ZXJzL2dwdS9kcm0vc3RtL2Rydi5jCisrKyBiL2Ry
+aXZlcnMvZ3B1L2RybS9zdG0vZHJ2LmMKQEAgLTEzNiw4ICsxMzYsNyBAQCBzdGF0aWMgX19tYXli
+ZV91bnVzZWQgaW50IGRydl9zdXNwZW5kKHN0cnVjdCBkZXZpY2UgKmRldikKIAlzdHJ1Y3QgbHRk
+Y19kZXZpY2UgKmxkZXYgPSBkZGV2LT5kZXZfcHJpdmF0ZTsKIAlzdHJ1Y3QgZHJtX2F0b21pY19z
+dGF0ZSAqc3RhdGU7CiAKLQlpZiAoV0FSTl9PTighbGRldi0+c3VzcGVuZF9zdGF0ZSkpCi0JCXJl
+dHVybiAtRU5PRU5UOworCVdBUk5fT04obGRldi0+c3VzcGVuZF9zdGF0ZSk7CiAKIAlzdGF0ZSA9
+IGRybV9hdG9taWNfaGVscGVyX3N1c3BlbmQoZGRldik7CiAJaWYgKElTX0VSUihzdGF0ZSkpCkBA
+IC0xNTUsMTUgKzE1NCwxNyBAQCBzdGF0aWMgX19tYXliZV91bnVzZWQgaW50IGRydl9yZXN1bWUo
+c3RydWN0IGRldmljZSAqZGV2KQogCXN0cnVjdCBsdGRjX2RldmljZSAqbGRldiA9IGRkZXYtPmRl
+dl9wcml2YXRlOwogCWludCByZXQ7CiAKKwlpZiAoV0FSTl9PTighbGRldi0+c3VzcGVuZF9zdGF0
+ZSkpCisJCXJldHVybiAtRU5PRU5UOworCiAJcG1fcnVudGltZV9mb3JjZV9yZXN1bWUoZGV2KTsK
+IAlyZXQgPSBkcm1fYXRvbWljX2hlbHBlcl9yZXN1bWUoZGRldiwgbGRldi0+c3VzcGVuZF9zdGF0
+ZSk7Ci0JaWYgKHJldCkgeworCWlmIChyZXQpCiAJCXBtX3J1bnRpbWVfZm9yY2Vfc3VzcGVuZChk
+ZXYpOwotCQlsZGV2LT5zdXNwZW5kX3N0YXRlID0gTlVMTDsKLQkJcmV0dXJuIHJldDsKLQl9CiAK
+LQlyZXR1cm4gMDsKKwlsZGV2LT5zdXNwZW5kX3N0YXRlID0gTlVMTDsKKworCXJldHVybiByZXQ7
+CiB9CiAKIHN0YXRpYyBfX21heWJlX3VudXNlZCBpbnQgZHJ2X3J1bnRpbWVfc3VzcGVuZChzdHJ1
+Y3QgZGV2aWNlICpkZXYpCi0tIAoyLjcuNAoKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFy
+bS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9t
+YWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
