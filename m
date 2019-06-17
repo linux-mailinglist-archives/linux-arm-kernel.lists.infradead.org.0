@@ -2,67 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 52679481FB
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 17 Jun 2019 14:26:34 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5BE3C481F8
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 17 Jun 2019 14:26:10 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=XBLA7Dksjy1uK5cY0ZKdxP0usWGsI8Tv3F8yQvTkJcg=; b=Fqy/0QpNeeS6R/
-	uoEd7XzuRr0pk/TYJBa9U9Rg92FDRG7gYscXQxY3n7ms29Jq7IHIeI2JCSeITITaR1D2YscXJgi/W
-	IH3E0oZlekgSy01yvG3S20M8VoCLi2g82cHsN6dptkoRaYqgjhugdMMGDdMTL3LvY2xCOzhJCeNcQ
-	+LuFUBRpFoCljFTGAh+sou5iOEKDaBmcFg+2YTT2tVBHk2lQfDAE9wHYQ03cutgp8uZYmV3spTvkj
-	PZxrE04g0fSLEtXZf3hydy92WREjjoRA+mQN0lRLVyAr8tHCSov0hTUjG5g/t5alEsQvMpmDzqD9g
-	EI1uYW2sBUu2Y3Pj5Biw==;
+	List-Owner; bh=qDJCTc+Egozhe634INW0ha3X+Ig8UOBUXU7jgLONt0M=; b=STaW1+pcHMSVeD
+	YJbo8UxtKP9vDL3YkAT9ThN13oF9dnFLYRSEM72pbOMXdvQSLSdzRNUq6YJ2IQ5rHGqBtIJijDU3g
+	YQrAdg5ejP6P3Oqh27e8WhiqFZUJ7oufMrxggaT3ya17NIyH61vTwenkLJwr1BxK3N/pvh46P94Ii
+	rw5XcBQ/NmZdaxuhvoebNDiJDcXzS2GEChLUSr1dSwoFDowU3nF3BcjSTMbcPEs5ujg7lkh0l1G3e
+	ORcwBMyBTNaeVKj8iejgb0mPX78FIHTzh31/us3fkcGR6pKajm3QCMCJwIuOtu1t//T2lxNjYLe5K
+	YPUorHDAQ/vDAMEIj1vA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hcqiU-0007u3-Bq; Mon, 17 Jun 2019 12:26:30 +0000
-Received: from mout.kundenserver.de ([212.227.126.133])
+	id 1hcqi5-0007Xa-AN; Mon, 17 Jun 2019 12:26:05 +0000
+Received: from s3.sipsolutions.net ([2a01:4f8:191:4433::2]
+ helo=sipsolutions.net)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hcqhw-0007ex-6x
- for linux-arm-kernel@lists.infradead.org; Mon, 17 Jun 2019 12:25:58 +0000
-Received: from threadripper.lan ([149.172.19.189]) by mrelayeu.kundenserver.de
- (mreue010 [212.227.15.129]) with ESMTPA (Nemesis) id
- 1MhDIw-1iFm1T14Ik-00eILm; Mon, 17 Jun 2019 14:25:53 +0200
-From: Arnd Bergmann <arnd@arndb.de>
-To: arm@kernel.org, Linus Walleij <linusw@kernel.org>,
- Imre Kaloz <kaloz@openwrt.org>, Krzysztof Halasa <khalasa@piap.pl>
-Subject: [PATCH 3/3] ARM: ixp4xx: include irqs.h where needed
-Date: Mon, 17 Jun 2019 14:24:32 +0200
-Message-Id: <20190617122449.457744-3-arnd@arndb.de>
-X-Mailer: git-send-email 2.20.0
-In-Reply-To: <20190617122449.457744-1-arnd@arndb.de>
-References: <20190617122449.457744-1-arnd@arndb.de>
-MIME-Version: 1.0
-X-Provags-ID: V03:K1:ogxG53xxYtKSunk3MRNQJAEkPnjE5pExadqIw1wtkbMkNmusoj9
- aZO36fRS80Wu/8c4ipcqJ+zvnYjQNIkJR4SCcFvTYhva+3LV3IEq749pLMtw8R/r2KrLwWa
- FagBXt9Ly5NshVz8XjZe/q/y+qht9OjYIz8VcckwU498AqLWgRsBAQ2qnmu16n/lhR7Hx0E
- Yb0tA8yzzPP6mO9cbbGOw==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:DfHKUbhazqM=:YDY2/2Alqmy6ferl84BsB7
- aTPywctrbekMzh8cdM3EsbjDQAS4kYQ6x40t3G+jSNk1GCteQrQ9qaT8fJp2mp/2OCVzA8qsW
- kkSILkIdM8OVdMpuPg8+25kNURFM8JYrTL+TcbbHIx7k3Lq9R/vD0y+hU64s2LyqPPPh0slyn
- N3LnzMVWa4B1kQza2oz4IWYFWIhGuw4yPD4JOPm/ad6tagM9LxxM/TnaoBACJTKMLgQb8TpUb
- ZwuBcdk8NzAq9MYq3o0lou2x2/4ai9kFW+slBUVpBA6xGQkKz8+3xtq/OAkrBgrNlqdK++Djz
- tg4ZlQK6DbriSz0wargKxCiKpLafM6pwO28XW7V7aXdrBbcRivhAsohFrX7MqVhdlx9H3uiHN
- /8qILCdsv37YqYuxeFLHlcxdZoOmYpObWiDn3oe28Q0ks48ioZIstBoi6TW34Tk7Yh7LzBDuA
- QIJOBYHK2ybQccAFTmStPaVWx7bCXh44ts0sPkbzmDG/D8T2sq29iHcmy2biGDCeagMYL9H3A
- UI17s4Xo4o/GpKfGrVvHJCMRdchId8Zp79M0FLgG7WmremXejp11NuqPIPOKMgGK7xdmZi0Vq
- orq/NVKHc1ccDZL/aCh5You0KvzNWInt+AIj2ePLJNfiMNWt5Z8Pt7nvlCkDMIrGdKGE4paH8
- xMcxineZ/BYiWyGNDO77IJ5ZD6vqhh/8I54dPAAPmhlaFlGwH/D2bUmg8qz6U0Y9uGF+5CmY3
- gMlxUwAqfuMJLxF4+45prNpvpPB2L/RelpYWQw==
+ id 1hcqhk-0007U2-0j
+ for linux-arm-kernel@lists.infradead.org; Mon, 17 Jun 2019 12:25:45 +0000
+Received: by sipsolutions.net with esmtpsa
+ (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <johannes@sipsolutions.net>)
+ id 1hcqhZ-0004wP-Pj; Mon, 17 Jun 2019 14:25:33 +0200
+Message-ID: <e6ba8a9063e63506c0b88a70418d74ca4efe85cd.camel@sipsolutions.net>
+Subject: Re: [PATCH v2 00/17] net: introduce Qualcomm IPA driver
+From: Johannes Berg <johannes@sipsolutions.net>
+To: Arnd Bergmann <arnd@arndb.de>, Dan Williams <dcbw@redhat.com>
+Date: Mon, 17 Jun 2019 14:25:32 +0200
+In-Reply-To: <dbb32f185d2c3a654083ee0a7188379e1f88d899.camel@sipsolutions.net>
+References: <380a6185-7ad1-6be0-060b-e6e5d4126917@linaro.org>
+ <a94676381a5ca662c848f7a725562f721c43ce76.camel@sipsolutions.net>
+ <CAK8P3a0kV-i7BJJ2X6C=5n65rSGfo8fUiC4J_G-+M8EctYKbkg@mail.gmail.com>
+ <fc0d08912bc10ad089eb74034726308375279130.camel@redhat.com>
+ <36bca57c999f611353fd9741c55bb2a7@codeaurora.org>
+ <153fafb91267147cf22e2bf102dd822933ec823a.camel@redhat.com>
+ <CAK8P3a2Y+tcL1-V57dtypWHndNT3eDJdcKj29c_v+k8o1HHQig@mail.gmail.com>
+ <f4249aa5f5acdd90275eda35aa16f3cfb29d29be.camel@redhat.com>
+ <CAK8P3a2nzZKtshYfomOOSYkqx5HdU15Wr9b+3va0B1euNhFOAg@mail.gmail.com>
+ (sfid-20190612_170637_190349_3B0027EE)
+ <dbb32f185d2c3a654083ee0a7188379e1f88d899.camel@sipsolutions.net>
+X-Mailer: Evolution 3.28.5 (3.28.5-2.fc28) 
+Mime-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190617_052556_626880_863D129C 
-X-CRM114-Status: GOOD (  10.16  )
+X-CRM114-CacheID: sfid-20190617_052544_230376_4F62D84D 
+X-CRM114-Status: GOOD (  22.93  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.227.126.133 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -76,101 +68,267 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Linus Walleij <linus.walleij@linaro.org>,
- linux-arm-kernel@lists.infradead.org, Arnd Bergmann <arnd@arndb.de>,
- linux-kernel@vger.kernel.org
+Cc: DTML <devicetree@vger.kernel.org>, syadagir@codeaurora.org,
+ Eric Caruso <ejcaruso@google.com>, David Miller <davem@davemloft.net>,
+ linux-arm-msm@vger.kernel.org, Ilias Apalodimas <ilias.apalodimas@linaro.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>, evgreen@chromium.org,
+ Bjorn Andersson <bjorn.andersson@linaro.org>,
+ Networking <netdev@vger.kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Alex Elder <elder@linaro.org>,
+ Subash Abhinov Kasiviswanathan <subashab@codeaurora.org>,
+ linux-soc@vger.kernel.org, abhishek.esse@gmail.com, cpratapa@codeaurora.org,
+ Ben Chan <benchan@google.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Multiple ixp4xx specific files require macros from irqs.h that
-were moved out from mach/irqs.h, e.g.:
+On Mon, 2019-06-17 at 13:42 +0200, Johannes Berg wrote:
 
-arch/arm/mach-ixp4xx/vulcan-pci.c:41:19: error: this function declaration is not a prototype [-Werror,-Wstrict-prototypes]
-arch/arm/mach-ixp4xx/vulcan-pci.c:49:10: error: implicit declaration of function 'IXP4XX_GPIO_IRQ' [-Werror,-Wimplicit-function-declaration]
-                return IXP4XX_GPIO_IRQ(INTA);
+> But anyway, as I alluded to above, I had something like this in mind:
 
-Include this header in all files that failed to build because of
-that.
+I forgot to state this here, but this was *heavily* influenced by
+discussions with Dan - many thanks to him.
 
-Fixes: dc8ef8cd3a05 ("ARM: ixp4xx: Convert to SPARSE_IRQ")
-Signed-off-by: Arnd Bergmann <arnd@arndb.de>
----
- arch/arm/mach-ixp4xx/goramo_mlr.c   | 2 ++
- arch/arm/mach-ixp4xx/miccpt-pci.c   | 2 ++
- arch/arm/mach-ixp4xx/omixp-setup.c  | 2 ++
- arch/arm/mach-ixp4xx/vulcan-pci.c   | 2 ++
- arch/arm/mach-ixp4xx/vulcan-setup.c | 2 ++
- 5 files changed, 10 insertions(+)
+> driver_dev
+>   struct device *dev (USB, PCI, ...)
+>   net_device NA
+>   net_device NB
+>   tty TA
+>  ...
+> 
+> (I'm cutting out the rmnet layer here for now)
+> 
+> while having a separate that just links all the pieces together:
+> 
+> wwan_device W
+>   ---> dev
+>   ---> NA
+>   ---> NB
+>   ---> TA
+> 
+> So the driver is still responsible for creating the netdevs (or can of
+> course delegate that to an "rmnet" library), but then all it also does
+> is register the netdevs with the WWAN core like
+> 
+> 	wwan_add_netdev(dev, NA)
+[snip]
 
-diff --git a/arch/arm/mach-ixp4xx/goramo_mlr.c b/arch/arm/mach-ixp4xx/goramo_mlr.c
-index 4d805080020e..a0e0b6b7dc5c 100644
---- a/arch/arm/mach-ixp4xx/goramo_mlr.c
-+++ b/arch/arm/mach-ixp4xx/goramo_mlr.c
-@@ -18,6 +18,8 @@
- #include <asm/mach/pci.h>
- #include <asm/system_info.h>
- 
-+#include "irqs.h"
+So to put some more meat to this, here's an API definition for both
+userspace and internal APIs:
+
+
+diff --git a/include/net/wwan.h b/include/net/wwan.h
+new file mode 100644
+index 000000000000..91413ec01def
+--- /dev/null
++++ b/include/net/wwan.h
+@@ -0,0 +1,104 @@
++// SPDX-License-Identifier: GPL-2.0
++/*
++ * WWAN stack interfaces
++ *
++ * Copyright (C) 2019 Intel Corporation
++ *
++ * This defines the interaction of WWAN drivers with the WWAN stack,
++ * which allows userspace configuration of sessions etc.
++ */
++#ifndef __NET_WWAN_H
++#define __NET_WWAN_H
++#include <linux/list.h>
++#include <linux/types.h>
++#include <linux/device.h>
 +
- #define SLOT_ETHA		0x0B	/* IDSEL = AD21 */
- #define SLOT_ETHB		0x0C	/* IDSEL = AD20 */
- #define SLOT_MPCI		0x0D	/* IDSEL = AD19 */
-diff --git a/arch/arm/mach-ixp4xx/miccpt-pci.c b/arch/arm/mach-ixp4xx/miccpt-pci.c
-index d114ccd2017c..ca889ef068a5 100644
---- a/arch/arm/mach-ixp4xx/miccpt-pci.c
-+++ b/arch/arm/mach-ixp4xx/miccpt-pci.c
-@@ -25,6 +25,8 @@
- #include <mach/hardware.h>
- #include <asm/mach-types.h>
- 
-+#include "irqs.h"
++struct wwan_device {
++	u32 id;
++	void *data;
++/* private: */
++	struct list_head list;
++	struct device *dev;
++	struct wwan_device_ops *ops;
++};
 +
- #define MAX_DEV		4
- #define IRQ_LINES	4
- 
-diff --git a/arch/arm/mach-ixp4xx/omixp-setup.c b/arch/arm/mach-ixp4xx/omixp-setup.c
-index 2d494b454376..c02fa6f48382 100644
---- a/arch/arm/mach-ixp4xx/omixp-setup.c
-+++ b/arch/arm/mach-ixp4xx/omixp-setup.c
-@@ -27,6 +27,8 @@
- 
- #include <mach/hardware.h>
- 
-+#include "irqs.h"
++/**
++ * struct wwan_netdev_config - WWAN netdevice configuration
++ * @pdn: PDN identifier this netdev uses
++ */
++struct wwan_netdev_config {
++	u32 pdn;
++};
 +
- static struct resource omixp_flash_resources[] = {
- 	{
- 		.flags	= IORESOURCE_MEM,
-diff --git a/arch/arm/mach-ixp4xx/vulcan-pci.c b/arch/arm/mach-ixp4xx/vulcan-pci.c
-index a4220fa5e0c3..6e41e5ece4e1 100644
---- a/arch/arm/mach-ixp4xx/vulcan-pci.c
-+++ b/arch/arm/mach-ixp4xx/vulcan-pci.c
-@@ -21,6 +21,8 @@
- #include <asm/mach/pci.h>
- #include <asm/mach-types.h>
- 
-+#include "irqs.h"
++/**
++ * wwan_device_ops - WWAN device operations
++ */
++struct wwan_device_ops {
++	/**
++	 * @add_netdev: Add a new netdev with the given configuration, must
++	 *	return the new netdev pointer but not call wwan_attach_netdev().
++	 */
++	struct net_device *(*add_netdev)(struct wwan_device *wwan,
++					 struct wwan_netdev_config *config);
++	/**
++	 * @remove_netdev: remove the given netdev
++	 */
++	int (*remove_netdev)(struct wwan_device *wwan, struct net_device *dev);
 +
- /* PCI controller GPIO to IRQ pin mappings */
- #define INTA	2
- #define INTB	3
-diff --git a/arch/arm/mach-ixp4xx/vulcan-setup.c b/arch/arm/mach-ixp4xx/vulcan-setup.c
-index 2c03d2f6b647..d2ebb7c675a8 100644
---- a/arch/arm/mach-ixp4xx/vulcan-setup.c
-+++ b/arch/arm/mach-ixp4xx/vulcan-setup.c
-@@ -22,6 +22,8 @@
- #include <asm/mach/arch.h>
- #include <asm/mach/flash.h>
- 
-+#include "irqs.h"
++	/*
++	 * More TBD:
++	 *  - add/remove serial port channels?
++	 *    ideally with some common (library) code to support this
++	 *    Or maybe not - serial is pretty limiting. Perhaps instead:
++	 *  - support something like AF_WWAN sockets for control data
++	 */
++};
 +
- static struct flash_platform_data vulcan_flash_data = {
- 	.map_name	= "cfi_probe",
- 	.width		= 2,
--- 
-2.20.0
++/**
++ * wwan_add - add a WWAN device without preconfigured channels
++ * @dev: underlying struct device
++ * @ops: methods to create new channels
++ * @data: data for the new WWAN device
++ *
++ * Returns: a struct wwan_device pointer, or an ERR_PTR().
++ */
++struct wwan_device *
++wwan_add(struct device *dev, struct wwan_device_ops *ops, void *data);
++
++/**
++ * wwan_remove - remove the given WWAN device
++ * @wwan: WWAN device to remove.
++ *
++ * Note that the WWAN device may not be fully removed if it still has
++ * any channels attached, but nonetheless callers must assume that the
++ * pointer is no longer valid after calling this function.
++ */
++void wwan_remove(struct wwan_device *wwan);
++
++/**
++ * wwan_attach_netdev - attach a preconfigured netdev to the WWAN device
++ * @dev: struct device underlying the WWAN device
++ * @netdev: netdev to attach
++ * @config: configuration for this netdev
++ * @tentative: mark the attachment as tentative, don't consider this as
++ *	part of a WWAN device unless other channels are attached as well.
++ *	Set this to %false in drivers that know they're a WWAN device
++ *	and to %true in generic drivers that may or may not be a WWAN
++ *	device and want to wait for other channels.
++ *
++ * Returns: a struct wwan_device pointer or ERR_PTR(). Note that a valid
++ * pointer is returned even for the tentative case.
++ *
++ * Note that there's no need to detach again, this happens automatically
++ * when the netdev is removed.
++ */
++struct wwan_device *
++wwan_attach_netdev(struct device *dev, struct net_device *netdev,
++		   struct wwan_netdev_config *config, bool tentative);
++
++/* TBD */
++struct wwan_device *
++wwan_attach_tty(struct device *dev, struct tty_port *port, bool tentative);
++void wwan_detach_tty(struct device *dev, struct tty_port *port);
++
++#endif /* __NET_WWAN_H */
+diff --git a/include/uapi/linux/wwan.h b/include/uapi/linux/wwan.h
+new file mode 100644
+index 000000000000..af327aab881c
+--- /dev/null
++++ b/include/uapi/linux/wwan.h
+@@ -0,0 +1,94 @@
++// SPDX-License-Identifier: GPL-2.0 WITH Linux-syscall-note
++/*
++ * WWAN generic netlink interfaces
++ *
++ * Copyright (C) 2019 Intel Corporation
++ *
++ * This defines the WWAN generic netlink family APIs for userspace
++ * to control WWAN devices.
++ */
++#ifndef __UAPI_LINUX_WWAN_H
++#define __UAPI_LINUX_WWAN_H
++#include <linux/types.h>
++
++#define WWAN_NAME "wwan"
++
++enum wwan_commands {
++	WWAN_CMD_UNSPEC,
++
++	WWAN_CMD_GET_DEVICE, /* get or dump */
++	WWAN_CMD_SET_DEVICE, /* set name or similar */
++	WWAN_CMD_NEW_DEVICE, /* notification */
++	WWAN_CMD_DEL_DEVICE, /* notification */
++
++	WWAN_CMD_GET_NETDEV, /* probably not needed - show all data in GET_DEVICE dump? */
++	WWAN_CMD_SET_NETDEV, /* probably not supported? */
++	WWAN_CMD_NEW_NETDEV,
++	WWAN_CMD_DEL_NETDEV,
++};
++
++/* TODO DOCS */
++enum wwan_chan_type {
++	WWAN_CHAN_TYPE_UNDEFINED,
++	WWAN_CHAN_TYPE_NETDEV,
++	WWAN_CHAN_TYPE_TTY,
++	/* ... */
++};
++
++enum wwan_chan_attrs {
++	/**
++	 * @WWAN_CHAN_ATTR_UNSPEC: unused/reserved
++	 */
++	WWAN_CHAN_ATTR_UNSPEC,
++
++	/**
++	 * @WWAN_CHAN_ATTR_TYPE: channel type according to &enum wwan_chan_type
++	 */
++	WWAN_CHAN_ATTR_TYPE,
++
++	/**
++	 * @WWAN_CHAN_ATTR_IFIDX: interface index (for netdev channels)
++	 */
++	WWAN_CHAN_ATTR_IFIDX,
++
++	/* need something for TTY - major/minor number? /dev/ name? */
++
++	/* ... */
++};
++
++enum wwan_attrs {
++	/**
++	 * @WWAN_ATTR_UNSPEC: unused/reserved
++	 */
++	WWAN_ATTR_UNSPEC,
++
++	/**
++	 * @WWAN_ATTR_DEVICE_ID: device ID
++	 */
++	WWAN_ATTR_DEVICE_ID,
++
++	/**
++	 * @WWAN_ATTR_DEVICE_NAME: name of the underlying struct device
++	 */
++	WWAN_ATTR_DEVICE_NAME,
++
++	/**
++	 * @WWAN_ATTR_IFIDX: interface index for %WWAN_CMD_NEW_NETDEV
++	 */
++	WWAN_ATTR_IFIDX,
++
++	/**
++	 * @WWAN_ATTR_PDN: PDN for %WWAN_CMD_NEW_NETDEV
++	 */
++	WWAN_ATTR_PDN,
++
++	/**
++	 * @WWAN_ATTR_CHANNELS: nested array of channels in dump, using
++	 *	the &enum wwan_chan_attrs.
++	 */
++	WWAN_ATTR_CHANNELS,
++
++	/* ... */
++};
++
++#endif /* __UAPI_LINUX_WWAN_H */
 
 
 _______________________________________________
