@@ -2,87 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6DBB5481E2
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 17 Jun 2019 14:22:35 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 11E2B481E1
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 17 Jun 2019 14:22:18 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8tS9KD3os1b5o9xNd7ZWP9fQoBCrOHCFjr5fnoiPKd4=; b=CKNpUj/kAuhv/K
-	clytXnzFnSjtZ7anh61zC1AyUP/nTUwCF+j8o0kiP5ZNdLHZzqtxOYkUES58L41dEEtaFEvGiuh6q
-	3NsOZvWVfgHSy1n3bVgpp5PZmUAPuAT3JK4JSeJyskBxzpLHffLQ0YOgUHIWKh0/7sSHs1QPUaKCG
-	Dr10BoRDLH3sUx7xaS6md6+f8hH34BUBfeoUOtwtpJy0va5/3ab7yORpJ8gPfXdiI5COPIjhreme8
-	y0+7vrPgFWE8Y7VRqZDaMuzRDx+TN5IH9szkjYOrLQ70GG442dWCn0AxPGESUEZ7+hDFKGB7FRyDO
-	IxO1DbE1/3osqFqaSg+w==;
+	List-Owner; bh=25DX9sb7AtHBqvW4pghBEPSORITKtYpsorYScPdGWqQ=; b=PW8UzsbLu3PM9J
+	oSnuEn82esHvpw+E6uvmN/0KokQvXfb78S/veQv5BXYnPDUXYcolx6/hhud9SbkHAMtsh7ny8rs3l
+	RWpjRxErZYRcLFS+ukDcAFJdGLv2WHx0wTzclBpG9rX0ugZCGCUx3UN3VRr0wVzqV8XnnYa6kpB65
+	cQ9XpXMCOMGxvyd8gyrJzeH2ZYIvc32tP8RbBNQ+9JZmBuFV8Twi6XJlHMNMPtzcb7vnNPr9VKmeW
+	a9PoW15OW71PJdVgVpnu9tR+r0PA/C0Y9IQKaYQRBfvtFPKKxNPeaA4OTO3RCHWwG0Xnrqbmbz2cr
+	ZQMru49aVnI02v7jMsYg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hcqec-000570-Nb; Mon, 17 Jun 2019 12:22:30 +0000
-Received: from mail-vs1-xe42.google.com ([2607:f8b0:4864:20::e42])
+	id 1hcqeN-0004xq-8c; Mon, 17 Jun 2019 12:22:15 +0000
+Received: from mail-qt1-f196.google.com ([209.85.160.196])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hcqeF-0004xT-9g
- for linux-arm-kernel@lists.infradead.org; Mon, 17 Jun 2019 12:22:08 +0000
-Received: by mail-vs1-xe42.google.com with SMTP id 190so5950963vsf.9
+ id 1hcqeC-0004x9-Uk
+ for linux-arm-kernel@lists.infradead.org; Mon, 17 Jun 2019 12:22:06 +0000
+Received: by mail-qt1-f196.google.com with SMTP id d23so10402560qto.2
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 17 Jun 2019 05:22:06 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=inGSDUfgy12MnV2jo2D4Nubdqwd8cc039JMXj9GTRrA=;
- b=BaY/Mw4ucNOLlZG6021hvYu+v8OFPCGaf5W2OANB6XPbg0UqT/cgAB3AravOtr3BEF
- yUGEhb38oekQt0UrrCBEpZgcUST8GsaDeV4pe+g7KoeJlRnXUAyDklVTAS8hGgTZTVnY
- A7ZsBtlltgi8+h1kaTi80I2Kbpf6jzD/DnljX9n76hZJmsVDNxJRQTcOl2TKSU6F5crE
- SyA8FgL2RvuBCgYHXHZgDLkut1yb6DaP09n2as2TT836YKODLrQ0ewzsz86A5EIXw8YI
- NjiHJywpoahWsy5SzgYUhCKomVxgX2YyRex2O/fOhOQlTT+Ub10tpaDPZmfd+2GCDERS
- +T5Q==
+ Mon, 17 Jun 2019 05:22:04 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=inGSDUfgy12MnV2jo2D4Nubdqwd8cc039JMXj9GTRrA=;
- b=X/XUjjRNXPdvIWI3D/Le487i9s1cewqLb+OMGvuNLgWGBSUSWUbIK7eBrcx8LG5/DR
- roAWVkj71w7WYYh7spEw+S54ZM3c+kRYXqNVPW2zYk0O49WzzjBNMSSfxtwYZlRKgaHt
- tjsnfdC7/NQhWwBKmIZ9t9MGFxyAJg2iFHM2xVCXItCRJWY3fyhCqcXFk5WNK41LxeEF
- 3VV6EC1VMbOb9fomNOFfV6kZUWtLEUlzKSD+DVsUsUdJCHd12IRqCxQ8LNWNcKX0hxKr
- tmQEG6kDs/0DmgvsenvEnilMYtMnx8evuV8Sz9fcUPtvG3T7YzCZtsldZwmNs0oKJxgF
- lSGA==
-X-Gm-Message-State: APjAAAVeECaUMndJTJO9Coefcaipv78xfpA9fm3L2S3LeDXb2+eqhL3W
- pW+Dm4qhMFSJWblbUaiOe03ox3Kn93a5mU9xR84wfq+qQJc=
-X-Google-Smtp-Source: APXvYqwvsX2qorPP589qYvilkHLdtcwg2ZCmDdhmhV70oupOdc+lud+k/srIUL3u3WxMmegbWHGCs6qQXzT1ePDp16s=
-X-Received: by 2002:a67:3254:: with SMTP id y81mr20750067vsy.34.1560774125745; 
- Mon, 17 Jun 2019 05:22:05 -0700 (PDT)
+ bh=J1D0wRVIBxkLJPdsyEaqbWMW7xmtTDyWae7i+70qMQs=;
+ b=AV2zFpvOw4Wcdl4s5yX1ZFqs4Whv+aCUIP+eynx8Kjr9DFdXGeDWWP+2rL0Qe5RprM
+ /QB3mbI8kUuzzM7xVO68XZBJpTATNj+5x5lMyG99ZdjoCnx7vpt6PTAM0ZfSqY2wXYXA
+ rdH2cR4BDh08FSPmc/DJSbvzNQFSUgCWveAM7TeBjLkmThYrX/2zhM4/swWvNsc4yZcf
+ vOFA33EQggEC1IeSv40kTB5IWzkJjIfHERGnoz9UnB6KRhIP1uEQDwMQi+aistk/eWKS
+ wiAVNtxdx+R0NJ+XMd1/UUhKGnxHdqLGW1eAdrVVqYGFJgpgoVhwN8mGp3Gr0e35n3pT
+ ZB/Q==
+X-Gm-Message-State: APjAAAUNgaL5wbR3ys1QKjitLA9vF/2jTliX6xrN6uTgOLCnOgHMo/t1
+ R6Il8sEueKBkK/ntabKqiDceDjXImznrt7agaLx20stJ0uM=
+X-Google-Smtp-Source: APXvYqzBS9/f+FzXIzoMEx/rQKNZckt6bdT2jsoQ/5V9Nb2UOXwEEV6V5B/6sbBr2C25lfeCYsPalMWFzJMpk3UwffM=
+X-Received: by 2002:a0c:b758:: with SMTP id q24mr21150036qve.45.1560774123691; 
+ Mon, 17 Jun 2019 05:22:03 -0700 (PDT)
 MIME-Version: 1.0
-References: <1560247011-26369-1-git-send-email-manish.narani@xilinx.com>
- <1560247011-26369-4-git-send-email-manish.narani@xilinx.com>
- <CAPDyKFrJwpwUUX_q2kcR9QY_fv9Lgos+ixPmU6JMeJVqJAiFpg@mail.gmail.com>
- <5feac3fb-bef3-b7d1-57d6-81e115e1f555@xilinx.com>
-In-Reply-To: <5feac3fb-bef3-b7d1-57d6-81e115e1f555@xilinx.com>
-From: Ulf Hansson <ulf.hansson@linaro.org>
-Date: Mon, 17 Jun 2019 14:21:28 +0200
-Message-ID: <CAPDyKFp_ZvSjFp2FGonzGsnc9xPyZ7qOCaRnX1SimBxLpfz9-Q@mail.gmail.com>
-Subject: Re: [PATCH 3/3] mmc: sdhci-of-arasan: Add support for ZynqMP Platform
- Tap Delays Setup
-To: Michal Simek <michal.simek@xilinx.com>
+References: <20190617104237.2082388-1-arnd@arndb.de>
+ <20190617112652.GB30800@fuggles.cambridge.arm.com>
+In-Reply-To: <20190617112652.GB30800@fuggles.cambridge.arm.com>
+From: Arnd Bergmann <arnd@arndb.de>
+Date: Mon, 17 Jun 2019 14:21:46 +0200
+Message-ID: <CAK8P3a2aJNiLTyfRDqazJa2sAc-Jf-QShSZ7+4-whHSxKbLUVQ@mail.gmail.com>
+Subject: Re: [PATCH] arm64/sve: fix genksyms generation
+To: Will Deacon <will.deacon@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190617_052207_339932_79A4BE13 
-X-CRM114-Status: GOOD (  36.62  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190617_052204_989619_A4AE39C1 
+X-CRM114-Status: GOOD (  28.19  )
+X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:e42 listed in]
- [list.dnswl.org]
+ no trust [209.85.160.196 listed in list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.160.196 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (arndbergmann[at]gmail.com)
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,168 +83,86 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, DTML <devicetree@vger.kernel.org>,
- rajan.vaja@xilinx.com, nava.manne@xilinx.com,
- "linux-mmc@vger.kernel.org" <linux-mmc@vger.kernel.org>,
- Adrian Hunter <adrian.hunter@intel.com>,
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Peter Maydell <peter.maydell@linaro.org>,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>,
+ Marc Zyngier <marc.zyngier@arm.com>, Catalin Marinas <catalin.marinas@arm.com>,
  Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Olof Johansson <olof@lixom.net>, Rob Herring <robh+dt@kernel.org>,
- Manish Narani <manish.narani@xilinx.com>, jolly.shah@xilinx.com,
+ Julien Grall <julien.grall@arm.com>, Alan Hayward <alan.hayward@arm.com>,
+ Andrew Murray <andrew.murray@arm.com>,
+ =?UTF-8?B?QWxleCBCZW5uw6ll?= <alex.bennee@linaro.org>,
+ Dave Martin <Dave.Martin@arm.com>,
  Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, 17 Jun 2019 at 13:28, Michal Simek <michal.simek@xilinx.com> wrote:
+On Mon, Jun 17, 2019 at 1:26 PM Will Deacon <will.deacon@arm.com> wrote:
 >
-> Hi,
+> Hi Arnd,
 >
-> On 17. 06. 19 13:15, Ulf Hansson wrote:
-> > On Tue, 11 Jun 2019 at 11:57, Manish Narani <manish.narani@xilinx.com> wrote:
-> >>
-> >> Apart from taps set by auto tuning, ZynqMP platform has feature to set
-> >> the tap values manually. Add support to read tap delay values from
-> >> DT and set the same in HW via ZynqMP SoC framework. Reading Tap
-> >> Delays from DT is optional, if the property is not available in DT the
-> >> driver will use the pre-defined Tap Delay Values.
-> >>
-> >> Signed-off-by: Manish Narani <manish.narani@xilinx.com>
-> >> ---
-> >>  drivers/mmc/host/sdhci-of-arasan.c | 173 ++++++++++++++++++++++++++++++++++++-
-> >>  1 file changed, 172 insertions(+), 1 deletion(-)
-> >>
-> >> diff --git a/drivers/mmc/host/sdhci-of-arasan.c b/drivers/mmc/host/sdhci-of-arasan.c
-> >> index b12abf9..7af6cec 100644
-> >> --- a/drivers/mmc/host/sdhci-of-arasan.c
-> >> +++ b/drivers/mmc/host/sdhci-of-arasan.c
-> >> @@ -22,6 +22,7 @@
-> >>  #include <linux/phy/phy.h>
-> >>  #include <linux/regmap.h>
-> >>  #include <linux/of.h>
-> >> +#include <linux/firmware/xlnx-zynqmp.h>
-> >>
-> >>  #include "cqhci.h"
-> >>  #include "sdhci-pltfm.h"
-> >> @@ -32,6 +33,10 @@
-> >>
-> >>  #define PHY_CLK_TOO_SLOW_HZ            400000
-> >>
-> >> +/* Default settings for ZynqMP Tap Delays */
-> >> +#define ZYNQMP_ITAP_DELAYS {0, 0x15, 0x15, 0, 0x15, 0, 0, 0x3D, 0x12, 0, 0}
-> >> +#define ZYNQMP_OTAP_DELAYS {0, 0x5, 0x6, 0, 0x5, 0x3, 0x3, 0x4, 0x6, 0x3, 0}
-> >> +
-> >>  /*
-> >>   * On some SoCs the syscon area has a feature where the upper 16-bits of
-> >>   * each 32-bit register act as a write mask for the lower 16-bits.  This allows
-> >> @@ -81,6 +86,7 @@ struct sdhci_arasan_soc_ctl_map {
-> >>   * @sdcardclk:         Pointer to normal 'struct clock' for sdcardclk_hw.
-> >>   * @soc_ctl_base:      Pointer to regmap for syscon for soc_ctl registers.
-> >>   * @soc_ctl_map:       Map to get offsets into soc_ctl registers.
-> >> + * @of_data:           Platform specific runtime data storage pointer
-> >>   */
-> >>  struct sdhci_arasan_data {
-> >>         struct sdhci_host *host;
-> >> @@ -101,6 +107,15 @@ struct sdhci_arasan_data {
-> >>  /* Controller immediately reports SDHCI_CLOCK_INT_STABLE after enabling the
-> >>   * internal clock even when the clock isn't stable */
-> >>  #define SDHCI_ARASAN_QUIRK_CLOCK_UNSTABLE BIT(1)
-> >> +
-> >> +       void *of_data;
-> >> +};
-> >> +
-> >> +struct sdhci_arasan_zynqmp_data {
-> >> +       void (*set_tap_delay)(struct sdhci_host *host);
-> >> +       const struct zynqmp_eemi_ops *eemi_ops;
-> >> +       u8 tapdly[MMC_TIMING_MMC_HS400 + 1][2]; /* [0] for input delay, */
-> >> +                                               /* [1] for output delay */
-> >>  };
+> On Mon, Jun 17, 2019 at 12:42:11PM +0200, Arnd Bergmann wrote:
+> > genksyms does not understand __uint128_t, so we get a build failure
+> > in the fpsimd module when it cannot export a symbol right:
+>
+> The fpsimd code is builtin, so which module is actually failing? My
+> allmodconfig build succeeds, so I must be missing something.
+
+It happened for me on randconfig builds, you can find one such configuration
+at https://pastebin.com/cU8iQ4ta now. I was building this with clang
+rather than gcc, which may affect the issue, but I assumed not.
+
+> > WARNING: EXPORT symbol "kernel_neon_begin" [vmlinux] version generation failed, symbol will not be versioned.
+> > /home/arnd/cross/x86_64/gcc-8.1.0-nolibc/aarch64-linux/bin/aarch64-linux-ld: arch/arm64/kernel/fpsimd.o: relocation R_AARCH64_ABS32 against `__crc_kernel_neon_begin' can not be used when making a shared object
+> > arch/arm64/kernel/fpsimd.o:(.data+0x0): dangerous relocation: unsupported relocation
+> > arch/arm64/kernel/fpsimd.o:(".discard.addressable"+0x0): dangerous relocation: unsupported relocation
+> > arch/arm64/kernel/fpsimd.o:(".discard.addressable"+0x8): dangerous relocation: unsupported relocation
 > >
-> > Please use two different structs, one for the clock provider data and
-> > one for the mmc variant/platform data. This makes the code more
-> > readable.
->
-> Origin version before sending that out was using two fields.
-> +       u32 itapdly[MMC_TIMING_MMC_HS400 + 1];
-> +       u32 otapdly[MMC_TIMING_MMC_HS400 + 1];
->
-> I did asked for putting it together to two dimensional array for
-> improving readability of this code. The reason was that you need to take
-> care about input/output together.
-> One thing I was also suggesting was to use instead of 2 just enum values
-> to specify IN=0/OUT/MAX to improve readability of this.
-> Do you think that using enum should be enough?
-
-Not sure I understand what you suggest here, sorry. I have no problem
-with the enums.
-
-The important point I am trying to make here, is that we should split
-the clock provider data and the mmc variant data, simply because those
-doesn't really belong to each each other.
-
-Something like this:
-
-struct sdhci_arasan_zynqmp_data {
-         bool tap_delays;
-         u8 tapdly[MMC_TIMING_MMC_HS400 + 1][2]; /* [0] for input
-delay, [1] for output delay */
-         + other variant specific data one may want to put here
-}
-
-These are just regular mmc OF data that are parsed as any other
-property of the mmc device.
-
-The "const struct zynqmp_eemi_ops *eemi_ops; should then be moved into
-a clock provider specific struct, which is assigned when calling
-sdhci_arasan_register_sdclk. I understand that all the clock data is
-folded into struct sdhci_arasan_data today, but I think that should be
-moved into a "sub-struct" for the clock specifics.
-
-Moreover, when registering the clock, we should convert from using
-devm_clk_register() into devm_clk_hw_register() as the first one is
-now deprecated.
-
->
->
-> > In regards to the mmc data part, I suggest to drop the
-> > ->set_tap_delay() callback, but rather use a boolean flag to indicate
-> > whether clock phases needs to be changed for the variant. Potentially
-> > that could even be skipped and instead call clk_set_phase()
-> > unconditionally, as the clock core deals fine with clock providers
-> > that doesn't support the ->set_phase() callback.
->
-> In connection to another version of this driver for latest Xilinx chip
-> it would be better to keep set_tap_delay callback in the driver. The
-> reason is that new chip/ip is capable to setup tap delays directly
-> without asking firmware to do it. That's why for versal IP there is a
-> need to call different setup_tap_delay function.
-
-The ->set_tap_delay() callback is for ZyncMp pointing to
-sdhci_arasan_zynqmp_set_tap_delay(). This function calls the
-clk_set_phase() API.
-
-What does ->set_tap_delay() do for the latest version?
-
->
+> > We could teach genksyms about the type, but it's easier to just
+> > work around it by defining that type locally in a way that genksyms
+> > understands.
 > >
-> > [...]
-> >
-> > Otherwise this looks good to me!
-> >
-> > When it comes to patch1, I need an ack from Michal to pick it up.
+> > Fixes: 41040cf7c5f0 ("arm64/sve: Fix missing SVE/FPSIMD endianness conversions")
 >
-> I am waiting till Rob ack dt binding and then I wanted to talk to you if
-> you want to take it with 1/3 or if you want me to take all of them via
-> my tree.
-> In previous releases I was taking them via my tree because there were
-> several subsystem changing firmware interface. In this cycle there are
-> just small changes to firmware interface that's why taking it via your
-> tree shouldn't be a problem too.
+> I can't see which part of that patch causes the problem, so I'm a bit wary
+> of the fix. We've been using __uint128_t for a while now, and I see there's
+> one in the x86 kvm code as well, so it would be nice to understand what's
+> happening here so that we can avoid running into it in future as well.
 
-Okay, then let's target this via my mmc tree this time.
+The problem is only in files that export a symbol. This is also the
+case in arch/x86/kernel/kvm.c, but it may be lucky because the
+type only appears /after/ the last export in that file.
 
-Kind regards
-Uffe
+> > Signed-off-by: Arnd Bergmann <arnd@arndb.de>
+> > ---
+> >  arch/arm64/kernel/fpsimd.c | 3 +++
+> >  1 file changed, 3 insertions(+)
+> >
+> > diff --git a/arch/arm64/kernel/fpsimd.c b/arch/arm64/kernel/fpsimd.c
+> > index 07f238ef47ae..2aba07cccf50 100644
+> > --- a/arch/arm64/kernel/fpsimd.c
+> > +++ b/arch/arm64/kernel/fpsimd.c
+> > @@ -400,6 +400,9 @@ static int __init sve_sysctl_init(void) { return 0; }
+> >  #define ZREG(sve_state, vq, n) ((char *)(sve_state) +                \
+> >       (SVE_SIG_ZREG_OFFSET(vq, n) - SVE_SIG_REGS_OFFSET))
+> >
+> > +#ifdef __GENKSYMS__
+> > +typedef __u64 __uint128_t[2];
+> > +#endif
+>
+> I suspect I need to figure out what genksyms is doing, but I'm nervous
+> about exposing this as an array type without understanding whether or
+> not that has consequences for its operation.
+
+The entire point is genksyms is to ensure that types of exported symbols
+are compatible. To do this, it has a limited parser for C source code that
+understands the basic types (char, int, long, _Bool, etc) and how to
+aggregate them into structs and function arguments. This process has
+always been fragile, and it clearly breaks when it fails to understand a
+particular type.
+
+          Arnd
 
 _______________________________________________
 linux-arm-kernel mailing list
