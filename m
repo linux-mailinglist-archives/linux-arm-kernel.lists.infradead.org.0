@@ -2,57 +2,89 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 38C8D482DA
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 17 Jun 2019 14:46:05 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 09ABD482FC
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 17 Jun 2019 14:51:25 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	MIME-Version:Message-ID:Date:References:In-Reply-To:Subject:To:From:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=wfywak120/QEjcnuRQmH5LhfDAONMhtZdFNWbVylLok=; b=n9y/x6F0calOoheHuyQb53TxD
-	HzDM6gA2ZvQko6gu4g6Y2m+1xQKunHCZUSmFJc+Xa70NjvP94Vv+iDLQM1oZYJGURaQzPFtdBp0CG
-	m886XW/ZiU0VNkEM54hZNPIZyujcbOJMgOJiEKNK7vPzW4CiulWLzKLr4pmfWdfhguiUbsznoSEpz
-	eTh/P6UQpzPpvXXiBHudkxRKFD1BLHEzrhTWbNuKfpcG0B//OSI4hmoZDfA8tan7Ky5SyomW6k8pV
-	dumofrbhN4sWyTJivhgbmPjUubZjoBITioAY6reJIq8ECuyffe/sm/PH0va6AIyocK/Rec8gZqJdQ
-	Ue+ZQepWw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=+nO5+q/G3VjGnzz7yowi+wnHfEzQ+rIj8nTf18PV+Bc=; b=MxZ
+	d6g87fz1fQCG3QHN2eO7Xp3ynPxYtC4/vmvKqM5urBBlqDd+m2y0v0o1Q2Qjh3OvCbkxRspTa0H42
+	cEVCjwgWJ+Eu2hy/LwirBsLi45Lvqd+Oz7wOLgtUdis+LCM+jJm7KpzfgX+/X44isO1sAmWVS89lE
+	vQnDaxG1dBs8eMP3hI8kddScIrQTjjc6OT4RUwNPIs8MuJyr+pe9RnqJT24LN1dTFifuJiBgmfw3q
+	sFoEx8zAMX72sbTRMnC9nyq1k4+4zGeJ3qem9LwO8Z5AsAqhjWmnhwfp8+U3EntQVJiizhVG2kkRC
+	dvUU4nB/r6bCYyhK9RvHTTyxkDs9l7A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hcr1N-0002x6-Ct; Mon, 17 Jun 2019 12:46:01 +0000
-Received: from mga06.intel.com ([134.134.136.31])
+	id 1hcr6V-0004h4-In; Mon, 17 Jun 2019 12:51:19 +0000
+Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hcr1E-0002wY-MD
- for linux-arm-kernel@lists.infradead.org; Mon, 17 Jun 2019 12:45:53 +0000
-X-Amp-Result: UNSCANNABLE
-X-Amp-File-Uploaded: False
-Received: from orsmga008.jf.intel.com ([10.7.209.65])
- by orsmga104.jf.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
- 17 Jun 2019 05:45:52 -0700
-X-ExtLoop1: 1
-Received: from pipin.fi.intel.com (HELO pipin) ([10.237.72.175])
- by orsmga008.jf.intel.com with ESMTP; 17 Jun 2019 05:45:48 -0700
-From: Felipe Balbi <balbi@kernel.org>
-To: Lee Jones <lee.jones@linaro.org>
-Subject: Re: [PATCH v4 4/6] usb: dwc3: qcom: Add support for booting with ACPI
-In-Reply-To: <20190617124329.GH16364@dell>
-References: <20190612142654.9639-1-lee.jones@linaro.org>
- <20190612142654.9639-5-lee.jones@linaro.org> <20190617102146.GG16364@dell>
- <87y320gzp4.fsf@linux.intel.com> <20190617124329.GH16364@dell>
-Date: Mon, 17 Jun 2019 15:45:44 +0300
-Message-ID: <87r27sgz2f.fsf@linux.intel.com>
-MIME-Version: 1.0
+ id 1hcr6M-0004gE-GA
+ for linux-arm-kernel@lists.infradead.org; Mon, 17 Jun 2019 12:51:11 +0000
+Received: by mail-wr1-x442.google.com with SMTP id c2so9814460wrm.8
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 17 Jun 2019 05:51:09 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=from:to:cc:subject:date:message-id;
+ bh=5bmkX35OV+Un6bMajgKlhe2VCa9szCQ2ZkSqsLoxX0o=;
+ b=SkGqB8nJ/IEWG4IXm6QepVKAPERnunfILKb8Kq1MbhkJjXx3UULfKVudbA72IOKn4f
+ G62Fr3PqgKzQKcNsmyBRXyveUf+dHEtdCXtQsE3gTVZVWnfWkldCrMnFs2slVkltx4Gb
+ 8AATCMbXrzOzWwipup1IO6zK1olLm9TmFGFjp+3h5Yjpcyz6iiNP46kZZ3t5mshsqkkB
+ uUfjeYjyZ9Qx603esC/J+weA9ps0NBpcyLjXqm3f6wYZUVQ8smY0LRF+HMW2KQdWf9ZA
+ 5xqUxmiRTeR1e7KAm+OpIrpAp3jU3t2gdQNZWCNNhR7OlH8K5th6Jk4140PPDGahTHVY
+ aqWg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=5bmkX35OV+Un6bMajgKlhe2VCa9szCQ2ZkSqsLoxX0o=;
+ b=LNfT+dQozeK/ruiqFfBBtwecLzUtHznSK5k/iQHw/GKsEoiAiEHpQxj4eQN2NlvaJZ
+ u2vAZYOdPiTDQ0xXGC6UqfSBKJuK6aoJAGY29PTaLJE03yzSulGDLEmkG2/iSXLJXnJ9
+ JsT8iOz0+MKUJENS36lWDiRqMgmzdB2dj+Toki0CPQe4GbEd0kmIH7KEtkFhZJxLHS7D
+ lx2YNxyCD3q3EkHvtai+FQXv98khIqjKdpjjtIcz7g1veufKhnQC38VtUURgCllU9i7i
+ WZ/pjZvmG8XbSvv10EK539gNKIQaj4JqT2s9Ly2tskUdhSbvzJsYuNV34+yqJD/zEB0M
+ cIEA==
+X-Gm-Message-State: APjAAAUT/sYNslwmETsaGzpPQbAQUCaexPid71PyFLmem/y+nU5DnPrA
+ +Oijvwa4BTIvQ7RdrLjgzleKgw==
+X-Google-Smtp-Source: APXvYqw7cAvvCpSNGdJ5pbIUQp1AMGTBLl023D9nSX8+bxc3wDDiQnF3ftT8PtAoEjuj1WIEl1FdVg==
+X-Received: by 2002:adf:f84f:: with SMTP id d15mr75718744wrq.53.1560775868649; 
+ Mon, 17 Jun 2019 05:51:08 -0700 (PDT)
+Received: from dell.watershed.co.uk ([2.27.35.243])
+ by smtp.gmail.com with ESMTPSA id o11sm10477852wmh.37.2019.06.17.05.51.07
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Mon, 17 Jun 2019 05:51:08 -0700 (PDT)
+From: Lee Jones <lee.jones@linaro.org>
+To: alokc@codeaurora.org, agross@kernel.org, david.brown@linaro.org,
+ bjorn.andersson@linaro.org, balbi@kernel.org, gregkh@linuxfoundation.org,
+ ard.biesheuvel@linaro.org, jlhugo@gmail.com, linux-arm-msm@vger.kernel.org,
+ linux-usb@vger.kernel.org, felipe.balbi@linux.intel.com
+Subject: [RESEND v4 0/4] I2C: DWC3 USB: Add support for ACPI based AArch64
+ Laptops
+Date: Mon, 17 Jun 2019 13:51:01 +0100
+Message-Id: <20190617125105.6186-1-lee.jones@linaro.org>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190617_054552_776993_0F62FE21 
-X-CRM114-Status: GOOD (  16.06  )
-X-Spam-Score: -1.3 (-)
+X-CRM114-CacheID: sfid-20190617_055110_544444_AE48F30E 
+X-CRM114-Status: UNSURE (   8.50  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-1.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [134.134.136.31 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:442 listed in]
+ [list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -64,120 +96,44 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-usb@vger.kernel.org, linux-kernel@vger.kernel.org,
- wsa+renesas@sang-engineering.com, gregkh@linuxfoundation.org,
- linux-gpio@vger.kernel.org, ard.biesheuvel@linaro.org, agross@kernel.org,
- bjorn.andersson@linaro.org, david.brown@linaro.org, alokc@codeaurora.org,
- linux-i2c@vger.kernel.org, linux-arm-msm@vger.kernel.org, jlhugo@gmail.com,
+Cc: Lee Jones <lee.jones@linaro.org>, linux-kernel@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============4276915027000681630=="
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
---===============4276915027000681630==
-Content-Type: multipart/signed; boundary="=-=-=";
-	micalg=pgp-sha256; protocol="application/pgp-signature"
+This patch-set ensures the kernel is bootable on the newly released
+AArch64 based Laptops using ACPI configuration tables.  The Pinctrl
+changes have been accepted, leaving only I2C (keyboard, touchpad,
+touchscreen, fingerprint, etc, HID device) and USB (root filesystem,
+camera, networking, etc) enablement.
 
---=-=-=
-Content-Type: text/plain
-Content-Transfer-Encoding: quoted-printable
+RESEND: Stripped I2C patches as they have also been merged into
+        their respective subsystem.
 
+v4:
+ * Collecting Acks
+ * Adding Andy Gross' new email
+ * Removing applied Pinctrl patches
 
-Hi,
+Lee Jones (4):
+  soc: qcom: geni: Add support for ACPI
+  usb: dwc3: qcom: Add support for booting with ACPI
+  usb: dwc3: qcom: Start USB in 'host mode' on the SDM845
+  usb: dwc3: qcom: Improve error handling
 
-Lee Jones <lee.jones@linaro.org> writes:
-> On Mon, 17 Jun 2019, Felipe Balbi wrote:
->
->> Hi,
->>=20
->> Lee Jones <lee.jones@linaro.org> writes:
->> >> In Linux, the DWC3 core exists as its own independent platform device.
->> >> Thus when describing relationships in Device Tree, the current default
->> >> boot configuration table option, the DWC3 core often resides as a chi=
-ld
->> >> of the platform specific node.  Both of which are given their own
->> >> address space descriptions and the drivers can be mostly agnostic to
->> >> each other.
->> >>=20
->> >> However, other Operating Systems have taken a more monolithic approac=
-h,
->> >> which is evident in the configuration ACPI tables for the Qualcomm
->> >> Snapdragon SDM850, where all DWC3 (core and platform) components are
->> >> described under a single IO memory region.
->> >>=20
->> >> To ensure successful booting using the supplied ACPI tables, we need =
-to
->> >> devise a way to chop up the address regions provided and subsequently
->> >> register the DWC3 core with the resultant information, which is
->> >> precisely what this patch aims to achieve.
->> >>=20
->> >> Signed-off-by: Lee Jones <lee.jones@linaro.org>
->> >> Reviewed-by: Bjorn Andersson <bjorn.andersson@linaro.org>
->> >> ---
->> >>  drivers/usb/dwc3/Kconfig     |   2 +-
->> >>  drivers/usb/dwc3/dwc3-qcom.c | 206 ++++++++++++++++++++++++++++++---=
---
->> >>  2 files changed, 179 insertions(+), 29 deletions(-)
->> >
->> > I'm starting to get a little twitchy about these patches now.  Due to
->> > the release cadence of the larger Linux distros, it's pretty important
->> > that these changes land in v5.3.  Without them, it is impossible to
->> > install Linux on some pretty high profile emerging platforms.
->> >
->> > It's already -rc5 and I'm concerned that we're going to miss the
->> > merge-window.  Would you be kind enough to review these patches
->> > please?  The Pinctrl and I2C parts of the set have already been
->> > merged.
->>=20
->> I don't seem to have this series in my inbox. This is the only email I
->> have in this series.
->
-> I did wonder, which is why I made sure I sent this to your Intel
-> address as well.  Is your @kernel.org address broken?
+ drivers/soc/qcom/qcom-geni-se.c |  21 ++-
+ drivers/usb/dwc3/Kconfig        |   2 +-
+ drivers/usb/dwc3/dwc3-qcom.c    | 221 ++++++++++++++++++++++++++++----
+ 3 files changed, 209 insertions(+), 35 deletions(-)
 
-not really, that drops in a valid inbox. I didn't receive it in either,
-however. :-s
+-- 
+2.17.1
 
-> Will re-send the patches to your Intel address, give me a few
-> minutes.
-
-Thanks.
-
-=2D-=20
-balbi
-
---=-=-=
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQIzBAEBCAAdFiEElLzh7wn96CXwjh2IzL64meEamQYFAl0Hi3gACgkQzL64meEa
-mQY6cw//UR0+y5aHXtLn2hjlVUhYgBlcnFJr3gT/bI+asF95lLJrC5erexaMReya
-oVXaqMIj1FicOrT8LH6BQrAO7pCkK1nzMRa1Zzz0eaP02V+4KBw2rQdY3DqPN2UR
-cFRTPiG3rLyKTtFvjGbbg7T4eA7x5sXsgW95up5xFl3xWNMNvwk0Lhem+sIZgFFW
-SdEyfrkdqOEmKTXvLS+4FuEt3SHvPRjNfqHLR//JRSpRa9JFYak2GvFiSeJUfj1o
-Slw074pz4bcsUa2XGXElFv2FqG0SbsTlYWS2D8u3s5XaKk2zAMo35Be9JT2uFvL5
-kQyHVoNowkSXm27o19tBiqaidyRhEnQUxs8sBLNyVvr5dI7rKzTAbXY3F5zr4nVd
-7BNohgUx1c+UDbagD3hYJ4uP40lGGTgLx8UjU0V/iigzOdIqNJLZm4vJ3CxkBDI4
-OS9Xgvg6keTCk/PwEoM6QevioGBta7+nlLYHkFZD2NaCoRc1u5iQqfLe0TmCuFJh
-pP+m7g0yCXX9BXikm1XnPBcaA4sZ1BsYx7JN9LczYM6paqPm4vWwnxVkAbIv0bwe
-baDR7JtlY9ISajgV40UArHLkcN7+2/XHVNxgrTHfnluw/AFUfGkCl+soPC/CrTg4
-gPuvGPbuYM2oRfaWRGJJNyW/7yz4FUutnBFGdmZqD3JubShRE34=
-=FCzN
------END PGP SIGNATURE-----
---=-=-=--
-
-
---===============4276915027000681630==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============4276915027000681630==--
-
