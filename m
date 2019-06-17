@@ -2,42 +2,45 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8BA2A4916F
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 17 Jun 2019 22:35:45 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 75C8549170
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 17 Jun 2019 22:36:00 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=/IaCbkdbN90D8dyqPpYCv77MtRh26XREuUO1I8xfG0M=; b=YIZ
-	qxgvsaQ+yeKsAhthtWeRvD+7dIBL8fw5pguVGIHg/xbCKrGSwea/GN2GXSYau9K9L5KeaVPWd21QQ
-	UyS+/Rpks/UPaF2kduAl5aHWwVKWpRwqV0ZqPpE6iuUe7kCqu9K+zDzQGhMwSPvsMwH5USZdqfHuo
-	/fostvgFnqSVw8YjR+P6nshS0jIAJaLoJmfjFwgtvV7qqR1uH2sEBBC9l2RYRNs+Z8bIQ5YSGK+ku
-	cIRnqF0a7gpnjmh48z46cesoKVpoqnelpKFE5pxQI+mNaXrtSYSzyVCp/HhR2Yx4g8t7aI8Z6zZek
-	C3CWSd4ObII+ngGDXrvx1JR/S4L4mJQ==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=AJV8M/nXjyPQqv7kjrnYfdlGMzePkE+VKKEHH8lyksQ=; b=RmMO1r9jPWO92Y2ahXeDpCrbuS
+	ZQ4JDDAdpgavFGZAKzujdJB7TBUfHvjrJXzuvz9GLO3Hy2jIjnP2O4yZdqNSB/z2df0ECwVucz8gF
+	O8boHTbgUjyQQmifyRJa8PaKBd/uOq41HaUwirqI0eSsE0ZVxmLZSVVfXRT7s1bb4GJNU0i3t6KRJ
+	I/jGonohkrmeZz1efhnXAAKRC6VLg4HW2f+D9c9nmlPTremFuuaICMd5u//VSq2IJIx6OBtRDJjyH
+	m8Q/LfEFbDs4wWWTMCkwZuwP6qRgb8OyL+1cyjH70ZAx+fRAuVktoSimEX8nSlUPoJeEJblGxBUCV
+	Jo9JlLyg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hcyLs-0002mu-Ce; Mon, 17 Jun 2019 20:35:40 +0000
+	id 1hcyMB-0002wP-0e; Mon, 17 Jun 2019 20:35:59 +0000
 Received: from emh01.mail.saunalahti.fi ([62.142.5.107])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hcyLe-0002lW-Tt
+ id 1hcyLf-0002lY-NJ
  for linux-arm-kernel@lists.infradead.org; Mon, 17 Jun 2019 20:35:29 +0000
 Received: from localhost.localdomain (85-76-83-177-nat.elisa-mobile.fi
  [85.76.83.177])
- by emh01.mail.saunalahti.fi (Postfix) with ESMTP id 180A72004A;
- Mon, 17 Jun 2019 23:35:19 +0300 (EEST)
+ by emh01.mail.saunalahti.fi (Postfix) with ESMTP id BF33D20005;
+ Mon, 17 Jun 2019 23:35:20 +0300 (EEST)
 From: Aaro Koskinen <aaro.koskinen@iki.fi>
 To: Catalin Marinas <catalin.marinas@arm.com>,
  Will Deacon <will.deacon@arm.com>, James Morse <james.morse@arm.com>,
  Jayachandran Chandrasekharan Nair <jnair@marvell.com>
-Subject: [PATCH v2 1/2] arm64: Improve parking of stopped CPUs
-Date: Mon, 17 Jun 2019 23:35:18 +0300
-Message-Id: <20190617203519.328-1-aaro.koskinen@iki.fi>
+Subject: [PATCH v2 2/2] arm64: Implement panic_smp_self_stop()
+Date: Mon, 17 Jun 2019 23:35:19 +0300
+Message-Id: <20190617203519.328-2-aaro.koskinen@iki.fi>
 X-Mailer: git-send-email 2.17.0
+In-Reply-To: <20190617203519.328-1-aaro.koskinen@iki.fi>
+References: <20190617203519.328-1-aaro.koskinen@iki.fi>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190617_133527_135112_AB8F98E5 
-X-CRM114-Status: UNSURE (   7.93  )
+X-CRM114-CacheID: sfid-20190617_133527_927556_91E7D1A3 
+X-CRM114-Status: UNSURE (   8.92  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -67,39 +70,74 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Jayachandran C <jnair@caviumnetworks.com>
+From: Aaro Koskinen <aaro.koskinen@nokia.com>
 
-The current code puts the stopped cpus in an 'yield' instruction loop.
-Using a busy loop here is unnecessary, we can use the cpu_park_loop()
-function here to do a wfi/wfe.
+Currently arm64 uses the default implementation of panic_smp_self_stop()
+where the CPU runs in a cpu_relax() loop unable to receive IPIs anymore.
+As a result, when two CPUs panic() simultaneously we get "SMP: failed to
+stop secondary CPUs" warnings and extra delays before a reset, because
+smp_send_stop() still tries to stop the other paniced CPU.
 
-Signed-off-by: Jayachandran C <jnair@caviumnetworks.com>
+Provide an implementation of panic_smp_self_stop() that is identical to
+the IPI CPU stop handler, so that the online status of stopped CPUs gets
+properly updated.
+
 Signed-off-by: Aaro Koskinen <aaro.koskinen@nokia.com>
-Acked-by: Will Deacon <will.deacon@arm.com>
 ---
 
-	v2: Add Acked-by
+	v2: Update the commit log
+	    Rename ipi_cpu_stop() to local_cpu_stop() and make it void func
+	    Add a comment for panic_smp_self_stop()
 
-	v1: https://patchwork.kernel.org/patch/10988099/
+	v1: https://patchwork.kernel.org/patch/10988103/
 
- arch/arm64/kernel/smp.c | 4 +---
- 1 file changed, 1 insertion(+), 3 deletions(-)
+ arch/arm64/kernel/smp.c | 19 +++++++++++++------
+ 1 file changed, 13 insertions(+), 6 deletions(-)
 
 diff --git a/arch/arm64/kernel/smp.c b/arch/arm64/kernel/smp.c
-index bb4b3f07761a..1a1b96a50245 100644
+index 1a1b96a50245..1ac4aa34ffb6 100644
 --- a/arch/arm64/kernel/smp.c
 +++ b/arch/arm64/kernel/smp.c
-@@ -854,9 +854,7 @@ static void ipi_cpu_stop(unsigned int cpu)
+@@ -845,18 +845,25 @@ void arch_irq_work_raise(void)
+ }
+ #endif
+ 
+-/*
+- * ipi_cpu_stop - handle IPI from smp_send_stop()
+- */
+-static void ipi_cpu_stop(unsigned int cpu)
++static void local_cpu_stop(void)
+ {
+-	set_cpu_online(cpu, false);
++	set_cpu_online(smp_processor_id(), false);
  
  	local_daif_mask();
  	sdei_mask_local_cpu();
--
--	while (1)
--		cpu_relax();
-+	cpu_park_loop();
+ 	cpu_park_loop();
  }
  
++/*
++ * We need to implement panic_smp_self_stop() for parallel panic() calls, so
++ * that cpu_online_mask gets correctly updated and smp_send_stop() can skip
++ * CPUs that have already stopped themselves.
++ */
++void panic_smp_self_stop(void)
++{
++	local_cpu_stop();
++}
++
  #ifdef CONFIG_KEXEC_CORE
+ static atomic_t waiting_for_crash_ipi = ATOMIC_INIT(0);
+ #endif
+@@ -907,7 +914,7 @@ void handle_IPI(int ipinr, struct pt_regs *regs)
+ 
+ 	case IPI_CPU_STOP:
+ 		irq_enter();
+-		ipi_cpu_stop(cpu);
++		local_cpu_stop();
+ 		irq_exit();
+ 		break;
+ 
 -- 
 2.17.0
 
