@@ -2,77 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DF95A4A49F
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 18 Jun 2019 16:57:45 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CD4614A4B1
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 18 Jun 2019 17:02:13 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+eeKgGguh1++yWl0qVqY6xifmv2g33DPJfFF/COHcUs=; b=YNiMCMa4id96xz
-	yNxWL1qYjQoF7zc06VbqVmaBlxjc2oUNsU1wsSRzxDvoEmZhlSY9UZvPhUP473OeCEhDvR7KLYhgB
-	7/9Xa7ZduASxU8ilZoBVLfK134Vvv/X1idMtzckZ5gkqZkH6qcsCBzDPb1I12BbYgu5PFJXkc31Qr
-	JF8XFCit2Z/NbQ04vfbpaHSOZ1J+baCo5zCVfCIsbHG0r25Dv4s0+R1R6JDQj6Jy9/wEfCc+BLp0q
-	hIE8EKaZcJDbPVMpiwC/2iPlI83dWSdilgoRiseKQqJMhyg7Z5bpORwNg/I4WiReneOtfHh+PqFhO
-	eKZyM0gc9scqGZlM3TYA==;
+	List-Owner; bh=rQgsgXsTF3bPncTAtbvOYOcs/WCaZEaOu4yZ1gj8KGk=; b=YKqUn4tTCT/W09
+	7XY1goahUP5Ab9hov2gxjieRobRY14FDDc7qq6wmidTrAkOtyjYw5PM9pccbxi+Otwq9F5+wmPbyJ
+	LtKVyoewU3QC1nH9cr4a8WPqLwna5q+iiXVrFfh6E3bu0+Z1jtt7JuZjx83u19DIKGvZ1e4u6TdTF
+	LFOa4KHCObCnTkl1yeldh/EWMRYu/dG0MOWHgMalUGdDaLl+JDxXWY56PhcIxr3fnhkBFNBEKghjL
+	LKYczagmNG70sfCucfyXrBBRpU+eeRUqLg2IhP+mS/dAALX++4Y28u5BBW8cIkiB+AxTmT38UKzUZ
+	VvnpW4FfGm9woZGb5WYA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hdFYL-0000Aq-77; Tue, 18 Jun 2019 14:57:41 +0000
-Received: from conssluserg-03.nifty.com ([210.131.2.82])
+	id 1hdFcd-0003bW-QC; Tue, 18 Jun 2019 15:02:08 +0000
+Received: from hillosipuli.retiisi.org.uk ([2a01:4f9:c010:4572::81:2])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hdFXv-000079-EK
- for linux-arm-kernel@lists.infradead.org; Tue, 18 Jun 2019 14:57:17 +0000
-Received: from mail-ua1-f50.google.com (mail-ua1-f50.google.com
- [209.85.222.50]) (authenticated)
- by conssluserg-03.nifty.com with ESMTP id x5IEulhH009466
- for <linux-arm-kernel@lists.infradead.org>; Tue, 18 Jun 2019 23:56:48 +0900
-DKIM-Filter: OpenDKIM Filter v2.10.3 conssluserg-03.nifty.com x5IEulhH009466
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nifty.com;
- s=dec2015msa; t=1560869808;
- bh=6dxnBt3fIGFW+ROubfk95PVQRUtkj7Ua/pB+llQ1Ju0=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=UFyDjb+14G6pcwzM0N1YGpjD8LsS7oJHSZ/R7lBwUgfiwxvwQ3UT7CvXrXF+ubFxA
- NxIPZ1Of+iqSsQuc6Iwn3kXLxP/Q5eVHjakfjmY7sJPvDpmewM3jPqNTh8F8Q8dxH6
- 921U1Gl8n5Z5BTv1pmB2QOfkG66epNXapFSIlY2JOTqPpIZC+ZFBWa1STHil8rWSdX
- 1IGZ2B7t+ZdgoZDB7ujiZxxWfL5L+DU4T6KMzDJkaVy8MAUHkOXmJiwOK1WVeiztgy
- 9vBJXCTA9oznqY2IJlxMDpa+CWcNbpy2+ByGkF2cI7ChUeae8Eu4ZqckESqolTneKF
- f9TtQCfHM2FSA==
-X-Nifty-SrcIP: [209.85.222.50]
-Received: by mail-ua1-f50.google.com with SMTP id v20so927391uao.3
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 18 Jun 2019 07:56:48 -0700 (PDT)
-X-Gm-Message-State: APjAAAVjmnrM+a3j05tO3O/TV4k6C6y7scwM+bVaEmtHyBCY/XjXMc2w
- +Q3dCJfy3RD1tXBpIHNVAxptCSoAwFq6CUfwjao=
-X-Google-Smtp-Source: APXvYqyFy7PjzXrke2SGI3Ov1shSEe5A0cTjaMUsuLy2ti7lQsJriQ0xM0+UJqKY02rLhDN4+v5wVdf9p3y6jUchTbc=
-X-Received: by 2002:a67:cd1a:: with SMTP id u26mr24650793vsl.155.1560869807098; 
- Tue, 18 Jun 2019 07:56:47 -0700 (PDT)
+ id 1hdFcP-0001L4-0i
+ for linux-arm-kernel@lists.infradead.org; Tue, 18 Jun 2019 15:01:54 +0000
+Received: from valkosipuli.localdomain (valkosipuli.retiisi.org.uk
+ [IPv6:2a01:4f9:c010:4572::80:2])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by hillosipuli.retiisi.org.uk (Postfix) with ESMTPS id AFB44634C7B;
+ Tue, 18 Jun 2019 17:59:22 +0300 (EEST)
+Received: from sailus by valkosipuli.localdomain with local (Exim 4.89)
+ (envelope-from <sakari.ailus@retiisi.org.uk>)
+ id 1hdFZy-0000tJ-LA; Tue, 18 Jun 2019 17:59:22 +0300
+Date: Tue, 18 Jun 2019 17:59:22 +0300
+From: Sakari Ailus <sakari.ailus@iki.fi>
+To: Vishal Sagar <vsagar@xilinx.com>
+Subject: Re: [PATCH v8 2/2] media: v4l: xilinx: Add Xilinx MIPI CSI-2 Rx
+ Subsystem driver
+Message-ID: <20190618145922.sq4jovxoz2khs3tq@valkosipuli.retiisi.org.uk>
+References: <1559555971-193235-1-git-send-email-vishal.sagar@xilinx.com>
+ <1559555971-193235-3-git-send-email-vishal.sagar@xilinx.com>
+ <20190605124851.xr2hmgyoe46q6xud@kekkonen.localdomain>
+ <CH2PR02MB60889F3BF23FD96BF11053A2A7100@CH2PR02MB6088.namprd02.prod.outlook.com>
 MIME-Version: 1.0
-References: <20190529182324.8140-1-Jason@zx2c4.com>
- <CAK7LNARFUaaJH+g3oGzwFyKnELum72nOzxnvUfMKYBaAoGVkug@mail.gmail.com>
- <CAHmME9rGAUW9hjjZ7ZqNvZvaOCGrVHs3JNhYyr6g2PhZgS3TQg@mail.gmail.com>
-In-Reply-To: <CAHmME9rGAUW9hjjZ7ZqNvZvaOCGrVHs3JNhYyr6g2PhZgS3TQg@mail.gmail.com>
-From: Masahiro Yamada <yamada.masahiro@socionext.com>
-Date: Tue, 18 Jun 2019 23:56:11 +0900
-X-Gmail-Original-Message-ID: <CAK7LNAT4+O=eNoJHnW58pVob0Po0ULj3cEksXZ3w+kTGMNJj2w@mail.gmail.com>
-Message-ID: <CAK7LNAT4+O=eNoJHnW58pVob0Po0ULj3cEksXZ3w+kTGMNJj2w@mail.gmail.com>
-Subject: Re: [PATCH] arm: vdso: pass --be8 to linker if necessary
-To: "Jason A. Donenfeld" <Jason@zx2c4.com>
+Content-Disposition: inline
+In-Reply-To: <CH2PR02MB60889F3BF23FD96BF11053A2A7100@CH2PR02MB6088.namprd02.prod.outlook.com>
+User-Agent: NeoMutt/20170113 (1.7.2)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190618_075715_841586_800A1980 
-X-CRM114-Status: GOOD (  12.06  )
-X-Spam-Score: 1.0 (+)
+X-CRM114-CacheID: sfid-20190618_080153_430139_C051F683 
+X-CRM114-Status: GOOD (  19.05  )
+X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (1.0 points)
+ Content analysis details:   (0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [210.131.2.82 listed in list.dnswl.org]
- 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -84,68 +69,105 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Russell King <rmk+kernel@armlinux.org.uk>, Arnd Bergmann <arnd@arndb.de>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
- Ard Biesheuvel <ard.biesheuvel@linaro.org>
+Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ Jacopo Mondi <jacopo@jmondi.org>, Dinesh Kumar <dineshk@xilinx.com>,
+ Hyun Kwon <hyunk@xilinx.com>, Sandip Kothari <sandipk@xilinx.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "robh+dt@kernel.org" <robh+dt@kernel.org>, Michal Simek <michals@xilinx.com>,
+ "laurent.pinchart@ideasonboard.com" <laurent.pinchart@ideasonboard.com>,
+ Sakari Ailus <sakari.ailus@linux.intel.com>,
+ Vishal Sagar <vishal.sagar@xilinx.com>, Luca Ceresoli <luca@lucaceresoli.net>,
+ "hans.verkuil@cisco.com" <hans.verkuil@cisco.com>,
+ "mchehab@kernel.org" <mchehab@kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ "linux-media@vger.kernel.org" <linux-media@vger.kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi.
+Hi Vishal,
 
-On Fri, May 31, 2019 at 5:20 PM Jason A. Donenfeld <Jason@zx2c4.com> wrote:
->
-> Hey Masahiro,
->
-> I'm not sure exactly. I did just notice another place --be8 is being added:
+On Fri, Jun 07, 2019 at 07:11:47AM +0000, Vishal Sagar wrote:
+...
+> > > +/**
+> > > + * xcsi2rxss_s_ctrl - This is used to set the Xilinx MIPI CSI-2 V4L2 controls
+> > > + * @ctrl: V4L2 control to be set
+> > > + *
+> > > + * This function is used to set the V4L2 controls for the Xilinx MIPI
+> > > + * CSI-2 Rx Subsystem. It is used to set the active lanes in the system.
+> > > + * The event counters can be reset.
+> > > + *
+> > > + * Return: 0 on success, errors otherwise
+> > > + */
+> > > +static int xcsi2rxss_s_ctrl(struct v4l2_ctrl *ctrl)
+> > > +{
+> > > +     struct xcsi2rxss_state *xcsi2rxss =
+> > > +             container_of(ctrl->handler, struct xcsi2rxss_state,
+> > > +                          ctrl_handler);
+> > > +     struct xcsi2rxss_core *core = &xcsi2rxss->core;
+> > > +     int ret = 0;
+> > > +
+> > > +     mutex_lock(&xcsi2rxss->lock);
+> > > +
+> > > +     switch (ctrl->id) {
+> > > +     case V4L2_CID_XILINX_MIPICSISS_ACT_LANES:
+> > > +             /*
+> > > +              * This will be called only when "Enable Active Lanes" parameter
+> > > +              * is set in design
+> > > +              */
+> > 
+> > You generally get the number of lanes from firmware. There's no need to add
+> > a control for it. 
+> > 
+> 
+> I don't understand what firmware means here. There is no other code running.
+> I don't see how to modify the number of lanes apart from using v4l control.
 
-That is not my question.
+It's not the user that provides this information. Again, if you want this
+feature right from the time the driver is merged to mainline, then rebase
+the set on top of Jacopo's frame descriptor set. But it may take a while.
 
-I just asked about your commit log:
-"big-endian ARM was relying on gcc to translate
-its -mbe8 option into ld's --be8 option"
-
-I grepped '-mbe8', but I did not see it anywhere
-in the source tree.
-
-So, I just wondered where it came from.
-
-
-> ifeq ($(CONFIG_CPU_ENDIAN_BE8),y)
-> LDFLAGS_vmlinux += --be8
-> KBUILD_LDFLAGS_MODULE   += --be8
-> endif
->
-> I suppose it's possible that this is kbuild related where one of those
-> isn't winding up in the right place. I did see that the commit that
-> this patch addresses uses "=" instead of the more usual ":=" or "+="
-> for whatever reason.
->
-> Jason
-
-Perhaps, the following will be cleaner:
-
-ldflags-$(CONFIG_CPU_ENDIAN_BE8) += --be8
-ldflags-y += -Bsymbolic --no-undefined -soname=linux-vdso.so.1 \
-            -z max-page-size=4096 -z common-page-size=4096 \
-            -nostdlib -shared \
-            $(call ld-option, --hash-style=sysv) \
-            $(call ld-option, --build-id) \
-            -T
-
-
-I think this fix-up should be applied by Russell.
-Please note he does not pick up patches directly from ML.
-To ask him to pick up patches, you need to put
-patches into his patch tracker.
-(patches@arm.linux.org.uk)
-
+> 
+> > > +             if (core->enable_active_lanes) {
+> > > +                     u32 active_lanes;
+> > > +
+> > > +                     xcsi2rxss_clr_and_set(core, XCSI_PCR_OFFSET,
+> > > +                                           XCSI_PCR_ACTLANES_MASK,
+> > > +                                           ctrl->val - 1);
+> > > +                     /*
+> > > +                      * This delay is to allow the value to reflect as write
+> > > +                      * and read paths are different.
+> > > +                      */
+> > > +                     udelay(1);
+> > > +                     active_lanes = xcsi2rxss_read(core, XCSI_PCR_OFFSET);
+> > > +                     active_lanes &= XCSI_PCR_ACTLANES_MASK;
+> > > +                     active_lanes++;
+> > > +                     if (active_lanes != ctrl->val)
+> > > +                             dev_info(core->dev, "RxByteClkHS absent\n");
+> > > +                     dev_dbg(core->dev, "active lanes = %d\n", ctrl->val);
+> > > +             } else {
+> > > +                     ret = -EINVAL;
+> > > +             }
+> > > +             break;
+> > > +     case V4L2_CID_XILINX_MIPICSISS_RESET_COUNTERS:
+> > > +             xcsi2rxss_reset_event_counters(xcsi2rxss);
+> > > +             break;
+> > > +     default:
+> > > +             ret = -EINVAL;
+> > > +             break;
+> > > +     }
+> > > +
+> > > +     mutex_unlock(&xcsi2rxss->lock);
+> > > +
+> > > +     return ret;
+> > > +}
 
 -- 
-Best Regards
-Masahiro Yamada
+Regards,
+
+Sakari Ailus
 
 _______________________________________________
 linux-arm-kernel mailing list
