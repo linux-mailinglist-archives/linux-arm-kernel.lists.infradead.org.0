@@ -2,106 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 81E8949BFA
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 18 Jun 2019 10:25:22 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9807149C4D
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 18 Jun 2019 10:45:19 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=N8aAzYd2/xrOt3K0lJGGGueGyp+YoQ36GpAPDQxCD6w=; b=fYCp7zBLS8S6By
-	RusfqQRGmkdwO0gue0i4aXOA5AvICOYruG6tljaUFItRzn2MCLe5vjfDnu6MDS0BGpeNC9RtxWmXT
-	AvHZT6JGF+HD/vvfY0xU9V6DY5ogqDdepxfSD838Bi00wgbs5erGQ7cJDZRt+hPgpIIboiSYreVcJ
-	rIzpmtgvoiFzhZsGMf/z/nYQdJCw8GtSpRdboRlMVcfkxsvvdzShhLhm7/ozQgwBvbOOKV8mmR4yF
-	MXHsd+Z0ErX8dOzG5cTtaaY7D6ldN39rbnJjEo+8y+rW3hE5UR/RxV8YEvYOgxMFgh6JgJjD3nDyi
-	Aw8i9iHUogD9pBxLhxlA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	MIME-Version:Message-ID:Date:References:In-Reply-To:Subject:To:From:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=sMBJTrAoG+2KzQ9n92M5h1iT5tsV3KoXSW6Aatzd4bc=; b=I+qtI/ThcBMFhTpS9davXmuDo
+	3gciCzgU8V3SQ1BZK2zWukqYTVVrzqPyL1iUR8yuOYgpjSEi/mmrQHZmjBiNU6ho9QdaSJ0jREzz9
+	tWIRLXVMrE1YK+h3s3j1UVcbiFos87hRW5yCahp2bvvXm8RZM5yTkIjF77EzZ3dE1Y4RHnqSULZbx
+	v3j9VES1pMT+tJgnY2ii+3TC+qnJ0KohdXXbsoy65/UJAZthvCXNGxOqF96W3r2mzEpqR2LzrJU88
+	vnv6/1pXFENzml/O6ukyfdOuD/0ITjwUhTp1TDd/7ukQj5i+85SOY+VkJq8n0dJK+NzKfPf5rphHC
+	npSYF+H4w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hd9Qd-0001vz-Em; Tue, 18 Jun 2019 08:25:19 +0000
-Received: from mail-he1eur01on0605.outbound.protection.outlook.com
- ([2a01:111:f400:fe1e::605]
- helo=EUR01-HE1-obe.outbound.protection.outlook.com)
+	id 1hd9jt-0000fg-Ai; Tue, 18 Jun 2019 08:45:13 +0000
+Received: from mga04.intel.com ([192.55.52.120])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hd9QP-0000rU-Lb
- for linux-arm-kernel@lists.infradead.org; Tue, 18 Jun 2019 08:25:07 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=U3A4FRdUf2IVNqKozwOhlR1B8Z8XBaM4LLFZtI8VkSw=;
- b=ckFrTQGVg4zrxzml3+Ua4Rcuv4MvPRE+eGGka2c6Bm4VHOCOyvS+OE19utPmLv5NIPncyqybhRN0uIiIDXWl7fACrkGHaidL+SQV6yXf4JQOltNdp4uhTGT2/fmgHt0h8KWi+NPLtgNDC7DvhyV4bGKGy1+NvaiYtEutpiYjIrw=
-Received: from DB3PR0402MB3916.eurprd04.prod.outlook.com (52.134.72.18) by
- DB3PR0402MB3788.eurprd04.prod.outlook.com (52.134.72.17) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.1987.11; Tue, 18 Jun 2019 08:24:59 +0000
-Received: from DB3PR0402MB3916.eurprd04.prod.outlook.com
- ([fe80::5835:e874:bd94:fec]) by DB3PR0402MB3916.eurprd04.prod.outlook.com
- ([fe80::5835:e874:bd94:fec%5]) with mapi id 15.20.1987.014; Tue, 18 Jun 2019
- 08:24:59 +0000
-From: Anson Huang <anson.huang@nxp.com>
-To: Shawn Guo <shawnguo@kernel.org>
-Subject: RE: [PATCH] soc: imx: Add i.MX8MN SoC driver support
-Thread-Topic: [PATCH] soc: imx: Add i.MX8MN SoC driver support
-Thread-Index: AQHVH/Up3NdnX/doMEq9SuarUx0FjqahB/qAgAABlMA=
-Date: Tue, 18 Jun 2019 08:24:59 +0000
-Message-ID: <DB3PR0402MB391691EEF083BA6BEF445235F5EA0@DB3PR0402MB3916.eurprd04.prod.outlook.com>
-References: <20190611013125.3434-1-Anson.Huang@nxp.com>
- <20190618070334.GD29881@dragon>
-In-Reply-To: <20190618070334.GD29881@dragon>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=anson.huang@nxp.com; 
-x-originating-ip: [119.31.174.68]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: 9b11e7e0-2ae4-4dd5-83f9-08d6f3c673e1
-x-ms-office365-filtering-ht: Tenant
-x-microsoft-antispam: BCL:0; PCL:0;
- RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600148)(711020)(4605104)(1401327)(4618075)(2017052603328)(7193020);
- SRVR:DB3PR0402MB3788; 
-x-ms-traffictypediagnostic: DB3PR0402MB3788:
-x-microsoft-antispam-prvs: <DB3PR0402MB37880749E35B59107F8D4D2BF5EA0@DB3PR0402MB3788.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:4502;
-x-forefront-prvs: 007271867D
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(366004)(346002)(39860400002)(376002)(396003)(136003)(13464003)(199004)(189003)(2906002)(14444005)(54906003)(8936002)(186003)(3846002)(33656002)(6916009)(102836004)(99286004)(6116002)(256004)(11346002)(66446008)(66476007)(6246003)(73956011)(5660300002)(53546011)(66946007)(305945005)(66066001)(25786009)(478600001)(81166006)(76116006)(71190400001)(71200400001)(486006)(476003)(26005)(316002)(66556008)(64756008)(53936002)(8676002)(9686003)(7696005)(44832011)(74316002)(6506007)(7736002)(55016002)(14454004)(86362001)(6436002)(68736007)(4326008)(52536014)(76176011)(446003)(81156014)(229853002);
- DIR:OUT; SFP:1101; SCL:1; SRVR:DB3PR0402MB3788;
- H:DB3PR0402MB3916.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; A:1; MX:1; 
-received-spf: None (protection.outlook.com: nxp.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: 702YO6AwSzQI6FuJR39eN8dpP44Mub3MZNkUyqnkqOs1bjeAbPbAQspsugAMzvcCXePJAK2TLWIsFTZ1taH3weyAiwex3i0a7K1+S9Dc6tDr6le9yAGQxpGALlX3D9dKpXKDFa1zgVDGSqCMi23T0goa/6x6MY8nA2Rgp7h3wkHSIH5k7SL2jRgU0YasXkPLwkc0TqzG5BboUovX5xkkqZt/AdwYF/qJ92RodqS4NLmwsyTjiNxfRQpoIoh/Swc7PghYPDKm/tqj9+VpT7jdQgx+KKDHOxe3QRN8kle0hA2shcc92ZY72RPtBlH5hLY2fPQxhV2Y4mL0CNFYk4A/NuQMeXKoU9Xt7jbjckyy1Ef5618OaEgidiB+8jawspyjHoMFE7CTybYCWrfCwLCc0WpCd6dKOPpOhBn55PfJgBA=
+ id 1hd9jb-0000f5-Pe
+ for linux-arm-kernel@lists.infradead.org; Tue, 18 Jun 2019 08:44:57 +0000
+X-Amp-Result: UNKNOWN
+X-Amp-Original-Verdict: FILE UNKNOWN
+X-Amp-File-Uploaded: False
+Received: from fmsmga003.fm.intel.com ([10.253.24.29])
+ by fmsmga104.fm.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
+ 18 Jun 2019 01:44:55 -0700
+X-ExtLoop1: 1
+Received: from pipin.fi.intel.com (HELO pipin) ([10.237.72.175])
+ by FMSMGA003.fm.intel.com with ESMTP; 18 Jun 2019 01:44:52 -0700
+From: Felipe Balbi <balbi@kernel.org>
+To: Lee Jones <lee.jones@linaro.org>
+Subject: Re: [RESEND v4 0/4] I2C: DWC3 USB: Add support for ACPI based AArch64
+ Laptops
+In-Reply-To: <20190618080828.GJ16364@dell>
+References: <20190617125105.6186-1-lee.jones@linaro.org>
+ <87lfy0gym0.fsf@linux.intel.com> <20190617132349.GI16364@dell>
+ <87a7efgxw7.fsf@linux.intel.com> <20190618080828.GJ16364@dell>
+Date: Tue, 18 Jun 2019 11:44:48 +0300
+Message-ID: <87wohjffjz.fsf@linux.intel.com>
 MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 9b11e7e0-2ae4-4dd5-83f9-08d6f3c673e1
-X-MS-Exchange-CrossTenant-originalarrivaltime: 18 Jun 2019 08:24:59.1398 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: anson.huang@nxp.com
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB3PR0402MB3788
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190618_012505_793167_CD8A5FE7 
-X-CRM114-Status: GOOD (  21.83  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190618_014455_840639_633628FC 
+X-CRM114-Status: GOOD (  10.87  )
+X-Spam-Score: -1.3 (-)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-1.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a01:111:f400:fe1e:0:0:0:605 listed in]
- [list.dnswl.org]
- 0.0 T_SPF_PERMERROR        SPF: test of record failed (permerror)
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [192.55.52.120 listed in list.dnswl.org]
+ 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -113,111 +66,107 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Abel Vesa <abel.vesa@nxp.com>,
- "viresh.kumar@linaro.org" <viresh.kumar@linaro.org>,
- "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- dl-linux-imx <linux-imx@nxp.com>,
- "kernel@pengutronix.de" <kernel@pengutronix.de>,
- Leonard Crestez <leonard.crestez@nxp.com>,
- "festevam@gmail.com" <festevam@gmail.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: linux-kernel@vger.kernel.org, ard.biesheuvel@linaro.org,
+ gregkh@linuxfoundation.org, linux-usb@vger.kernel.org, agross@kernel.org,
+ bjorn.andersson@linaro.org, david.brown@linaro.org, alokc@codeaurora.org,
+ linux-arm-msm@vger.kernel.org, jlhugo@gmail.com,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: multipart/mixed; boundary="===============8908417747279095453=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi, Shawn
+--===============8908417747279095453==
+Content-Type: multipart/signed; boundary="=-=-=";
+	micalg=pgp-sha256; protocol="application/pgp-signature"
 
-> -----Original Message-----
-> From: Shawn Guo <shawnguo@kernel.org>
-> Sent: Tuesday, June 18, 2019 3:04 PM
-> To: Anson Huang <anson.huang@nxp.com>
-> Cc: s.hauer@pengutronix.de; kernel@pengutronix.de; festevam@gmail.com;
-> Leonard Crestez <leonard.crestez@nxp.com>; viresh.kumar@linaro.org;
-> Abel Vesa <abel.vesa@nxp.com>; linux-arm-kernel@lists.infradead.org;
-> linux-kernel@vger.kernel.org; dl-linux-imx <linux-imx@nxp.com>
-> Subject: Re: [PATCH] soc: imx: Add i.MX8MN SoC driver support
-> 
-> On Tue, Jun 11, 2019 at 09:31:25AM +0800, Anson.Huang@nxp.com wrote:
-> > From: Anson Huang <Anson.Huang@nxp.com>
-> >
-> > This patch adds i.MX8MN SoC driver support:
-> >
-> > root@imx8mnevk:~# cat /sys/devices/soc0/family Freescale i.MX
-> >
-> > root@imx8mnevk:~# cat /sys/devices/soc0/machine NXP i.MX8MNano
-> DDR4
-> > EVK board
-> >
-> > root@imx8mnevk:~# cat /sys/devices/soc0/soc_id i.MX8MN
-> >
-> > root@imx8mnevk:~# cat /sys/devices/soc0/revision
-> > 1.0
-> >
-> > Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
-> > ---
-> >  drivers/soc/imx/soc-imx8.c | 13 ++++++++++++-
-> >  1 file changed, 12 insertions(+), 1 deletion(-)
-> >
-> > diff --git a/drivers/soc/imx/soc-imx8.c b/drivers/soc/imx/soc-imx8.c
-> > index 3842d09..02309a2 100644
-> > --- a/drivers/soc/imx/soc-imx8.c
-> > +++ b/drivers/soc/imx/soc-imx8.c
-> > @@ -55,7 +55,12 @@ static u32 __init imx8mm_soc_revision(void)
-> >  	void __iomem *anatop_base;
-> >  	u32 rev;
-> >
-> > -	np = of_find_compatible_node(NULL, NULL, "fsl,imx8mm-anatop");
-> > +	if (of_machine_is_compatible("fsl,imx8mm"))
-> > +		np = of_find_compatible_node(NULL, NULL, "fsl,imx8mm-
-> anatop");
-> > +	else if (of_machine_is_compatible("fsl,imx8mn"))
-> > +		np = of_find_compatible_node(NULL, NULL, "fsl,imx8mn-
-> anatop");
-> 
-> Can we have this anatop compatible in imx8_soc_data, so that we may save
-> the call to of_machine_is_compatible()?
+--=-=-=
+Content-Type: text/plain
+Content-Transfer-Encoding: quoted-printable
 
-Do you mean adding a variable like " const char *anatop_compat " in imx8_soc_date structure,
-then initialize it according to SoC type, and in imx8mm_soc_revision(), get to soc_data's anatio_compat to
-find the anatop node? If yes, we have to add some code to get the soc_data in this function, or maybe
-we can pass anatop compatible name as .soc_revision's parameter?
 
-static const struct imx8_soc_data imx8mn_soc_data = {
-         .name = "i.MX8MN",
-         .soc_revision = imx8mm_soc_revision,
-         .anatop_compat = "fsl,imx8mn-anatop",
-};
+Hi,
 
-Anson.
-> 
-> Shawn
-> 
-> > +	else
-> > +		np = NULL;
-> >  	if (!np)
-> >  		return 0;
-> >
-> > @@ -79,9 +84,15 @@ static const struct imx8_soc_data imx8mm_soc_data
-> = {
-> >  	.soc_revision = imx8mm_soc_revision,  };
-> >
-> > +static const struct imx8_soc_data imx8mn_soc_data = {
-> > +	.name = "i.MX8MN",
-> > +	.soc_revision = imx8mm_soc_revision, };
-> > +
-> >  static const struct of_device_id imx8_soc_match[] = {
-> >  	{ .compatible = "fsl,imx8mq", .data = &imx8mq_soc_data, },
-> >  	{ .compatible = "fsl,imx8mm", .data = &imx8mm_soc_data, },
-> > +	{ .compatible = "fsl,imx8mn", .data = &imx8mn_soc_data, },
-> >  	{ }
-> >  };
-> >
-> > --
-> > 2.7.4
-> >
+Lee Jones <lee.jones@linaro.org> writes:
+> On Tue, 18 Jun 2019, Felipe Balbi wrote:
+>> Lee Jones <lee.jones@linaro.org> writes:
+>> > On Mon, 17 Jun 2019, Felipe Balbi wrote:
+>> >
+>> >> Lee Jones <lee.jones@linaro.org> writes:
+>> >>=20
+>> >> > This patch-set ensures the kernel is bootable on the newly released
+>> >> > AArch64 based Laptops using ACPI configuration tables.  The Pinctrl
+>> >> > changes have been accepted, leaving only I2C (keyboard, touchpad,
+>> >> > touchscreen, fingerprint, etc, HID device) and USB (root filesystem,
+>> >> > camera, networking, etc) enablement.
+>> >> >
+>> >> > RESEND: Stripped I2C patches as they have also been merged into
+>> >> >         their respective subsystem.
+>> >> >
+>> >> > v4:
+>> >> >  * Collecting Acks
+>> >> >  * Adding Andy Gross' new email
+>> >> >  * Removing applied Pinctrl patches
+>> >> >
+>> >> > Lee Jones (4):
+>> >> >   soc: qcom: geni: Add support for ACPI
+>> >> >   usb: dwc3: qcom: Add support for booting with ACPI
+>> >> >   usb: dwc3: qcom: Start USB in 'host mode' on the SDM845
+>> >> >   usb: dwc3: qcom: Improve error handling
+>> >>=20
+>> >> pushed to testing/next
+>> >
+>> > Sounds promising, thanks Felipe.
+>> >
+>> > OOI, what is your process?
+>> >
+>> > How does do the patches typically sit in there?
+>>=20
+>> I'll probably merge to my 'next' branch today. I leave them in
+>> testing/next for a couple days, usually, so 0-day can run its thing and
+>> I get a chance of at least boot testing on our machines in the lab here.
+>>=20
+>> Since this doesn't touch anything "generic", I don't _have_ to boot
+>> test, so I'll probably merge to 'next' today.
+>
+> You're a star.  Thanks Felipe.
+
+it's in my 'next' now. Should be in tomorrow's linux next.
+
+=2D-=20
+balbi
+
+--=-=-=
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAEBCAAdFiEElLzh7wn96CXwjh2IzL64meEamQYFAl0IpIAACgkQzL64meEa
+mQbfwxAAiJetJXp+PQT5+Erhw0RVJLt2IbC6/mEQKg82EfTN4MVOBIRu0W3HIl6O
+4dCCBxcDa2YvpSIZZTyxfx/2uyrxQo1qctq5GW2uXCutmMBndc6+c3ttvROphyO5
+GYwhzp2bey9uGAO0FsDxXLoeIhJ2wOt30/cgslh2E4a6ql4RHRbCGaTGqQAh+snG
+RT5cZeGCvFtwj0R7NEqutqIqDkXAjf3NmHR5vzeNATpaM9WruHUu1kElsMxpDUhb
+1lK7GS/4KnRqkKnR3SSTGHiAq4XrVl58BGzPFrj/v9Km/C+XYhClb5m3Tr6yQl07
+fIGMmi5oQ3ylEUStFu1aA7U2xWpotPVQak8skMBxTQPGPyZWW6CAOA2dNcYvtJPl
+1SV7PSWppLi66p8ienUDmZWhIa5kXW+p79p5kssnsU9yNy6aR7RCnUR9BInr+siq
+6vZszRKkdcvadUTYS+yTvMGtxDegzPgetX8SI3jnvWpcxwkMSyCh6Dqa8rtKu8fN
+QMzl8eaKXOWCxOPGf87r9irnC+KagFRlKIdpSLJKu2UEHZvLVHCjyEKwwINzyMMz
+f21PMcHPZ/WBsiVqgHiiOC3mV6ELT0wioOI1kSSLC0nvMS8zaIALtt19QonF88uW
+bg1mNfyOz4mqbwn3up4axpMwLnUUgGy+bvuVtWDP3dPcA/LE1TU=
+=iXuK
+-----END PGP SIGNATURE-----
+--=-=-=--
+
+
+--===============8908417747279095453==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============8908417747279095453==--
+
