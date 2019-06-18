@@ -2,66 +2,66 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2629C4A634
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 18 Jun 2019 18:07:06 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C96124A713
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 18 Jun 2019 18:36:19 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jTkfaiJlV+1N84i8w7iOe1rXc7QBNTIXXQs67zPfGuQ=; b=S0vS4INcncmPID
-	XSuVphwqPGKm57ywHP7e7zfoM9vtRIr8HUOg5j/ms/Ko9Kz0uGeOGVAil1bg4dIf5awm9PkXsK1Ff
-	79RgLho79gG0v9AKBGxe7JlJS32CoxrrNSVBLqSFylBGhlZmb71qQRUL1eyOv9PnAKZWnxFMU/2Qj
-	0HX7m5dVM+mS2MsfEGjLc5n7paiPmL9rDOOW+a3ESSSkbwXB0e/Zw24FDmLkXAZnZYRMfQTjYJty8
-	V1TLp6wB4Td3E+MfvmGQ6IheN/44eTapV7zawRAeegeoXSyXnVRQiRwgsZqen1Mv0acj4c0WDffOQ
-	zuLokXiLNortgXaUxi6A==;
+	List-Owner; bh=cCseM7h6Tn13aU/xNF7BE+xcDvj7uQ8iBtbg7lMpMpo=; b=Q7CUADfNgBAy2z
+	p/npJT5ZDmOHXy1jzSMBrOAJgxSaJxBCJFNwc9Ptvn9tZKZquD7v74rQJx01Me7ZH/LoGgLDz23y3
+	2ygHaXTyCfDWQ6qkmwissedCNiPdEwf9o8tFtjcoNLn73b4jVpQ7Bjc35EoA04AaRiXHTcgpPvRiD
+	p6Si3mnmM0VzmCk29ro+sn8dkvx1hbVOm2u/OuGFGUOORtrjWgfomrooqlWWGZJht29mpQIQ1tOng
+	K7FW6pnpPon8lwAjXDKTWx+CA7H5DeThH0RAQpbSupm0IUcHgWR7M2JShHf0aeG79EJ66PLMsHzYu
+	SjdEHXjUTcFzoETJQ7ow==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hdGdU-0001se-JH; Tue, 18 Jun 2019 16:07:04 +0000
+	id 1hdH5l-0008Iy-6W; Tue, 18 Jun 2019 16:36:17 +0000
 Received: from mail-ed1-x542.google.com ([2a00:1450:4864:20::542])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hdGdI-0001pY-8v; Tue, 18 Jun 2019 16:06:54 +0000
-Received: by mail-ed1-x542.google.com with SMTP id e3so22441793edr.10;
- Tue, 18 Jun 2019 09:06:51 -0700 (PDT)
+ id 1hdH5S-0008Ah-3e; Tue, 18 Jun 2019 16:36:00 +0000
+Received: by mail-ed1-x542.google.com with SMTP id k8so22599098edr.11;
+ Tue, 18 Jun 2019 09:35:57 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=subject:to:cc:references:from:openpgp:autocrypt:message-id:date
  :user-agent:mime-version:in-reply-to:content-language
  :content-transfer-encoding;
- bh=f87Xw4Rzwd95kkGfKmA5W8YK1l67DuFasLT6R3IS1pA=;
- b=L+Vf5NYudNY+IU29/0Is5oEChBrBCcuSk14G5Sx6q0MkjXm2DgStsS+GqFEhlg01gz
- 6ME9pr1ScwnUfNYTKkHRcgCsJ6iG2wl3Lvjv/zhio5RLw7ziSl8jYSrmZkAfLyjp6i0r
- s8Pijeb4XjEN/S+lcBZUw3eXCbjJvA5znI+EFTD+fA+G+VECXZWMZ9vM3f9I4PmmMRiB
- AS25ATyi12yDmvbGXa0e/y50uwW2inixaU/ETLVsNzsI+ncGnJ6FyIrGXg/BX6/yeOXV
- 2laUShaKDN29C5Qfw1ReHg2eaoDXa1k2VlzXUZtZm7e2yzzb2YRYR72ipEX0jVICWMT6
- UrqA==
+ bh=gVDiIvOas41EZaikHjmyXPbqJy6brqNxPpm/Ff6faSQ=;
+ b=lHlB8JErMj/yWVB2G6rR1HEC1x/uxDmme8TMmdwjZz9Urutj+SMiIehesuNEknOfnD
+ fioEFmiB3KMlCsdngPY/eJ03xT0gdaui2PA786QdEcdt8OA4p+oJOp/JJVAyWUTgZ7kX
+ 3XlW+rXdHXOxC6S873sW7S6+Z6/ciKvlTIHM5l1VRIU1w7Q8o2JpbF89zlKEVHkj9Jnc
+ ef+UoDbkqw/JyQVmadLmyJtqnsCmIMrQEy1x3qyAxWHB/zgv2gaYHoKS0k6fPyvC43cb
+ 7Cr+wacq4UUIwYgedd111uYrNHRNwSQ/9lK1wqLIp4yoMOHqWd0sjTRk99Ifl6GbQ791
+ ehjw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:subject:to:cc:references:from:openpgp:autocrypt
  :message-id:date:user-agent:mime-version:in-reply-to
  :content-language:content-transfer-encoding;
- bh=f87Xw4Rzwd95kkGfKmA5W8YK1l67DuFasLT6R3IS1pA=;
- b=OWbONHWPHFIFcqKjNfDMmzW2DucCTchmCVTfpotjb54D6xsRTubK0tYXgJtMjoDR1Z
- 3bkLATr5nAEVXTOoxmPAsjf88JZkt9lV008bAB+1D33wvcnimdY1hNYW217d2rjpR4rT
- OYCElrBN9ytvPMl8tXJ2cNh5YB2iO7gD+PdV0+phooATRu3UZ9HIUeCioErxMrl0vfiZ
- xOrumVqZ9jpyaS2OpSP/wEkWebORKfbKuSc41eFlw4zWm33NuprYE1yGQgjynJmY+pC+
- eiL26Agc9z/lHLvk2DT4C11lR+rUguUGbndandIaI1nwcB4vs2m12pW4Ixa1RqRl8ira
- o9sA==
-X-Gm-Message-State: APjAAAWCT5rf7NS4D/3kqGcAPCrTgT4nIcZjFHVQQdwilkMmKnA4GrXL
- S+zQmItLKMRg+qk+mlvtK3k=
-X-Google-Smtp-Source: APXvYqx9gRJ+3diaQtEV6/mlojgTWmCcIns7OO02leVfBRna84DDGvqQem23ZVN23wkf1EmiOjnoiA==
-X-Received: by 2002:a50:b161:: with SMTP id
- l30mr106516265edd.278.1560874010731; 
- Tue, 18 Jun 2019 09:06:50 -0700 (PDT)
+ bh=gVDiIvOas41EZaikHjmyXPbqJy6brqNxPpm/Ff6faSQ=;
+ b=gaIqYs1W/kX+jSy/gcMrJ8cmgzCW+9om4DS2jrBr+Du4mlIoMvpeqZa2Ff7+ebGV6b
+ KXJm1otYb/zQ6ONYcLDd7FJm4I1E+ZwP1aB/giBRH7tvoEschZvqH6Wo9NKlfxMxn6fV
+ YslhdPp1QPjXODHUV20VZfadh5nSqNpT8Z/xllQNpgWWv/vH7ObmU8hZplodjmGqp/vf
+ GQ4Q1Wjsn+ffGcLM1E4ftTRHjYRpTxEUk7R6Uc1Lor/L+jDAHSLYLXPd40Zhe1TQ5zIR
+ YTvvHGJVFJuL+c2cmEWCX0EGG4MwY+H/uItFZYUf6MGJBpXBHPpB8sYKfJ+jPa9SNrfa
+ OSiw==
+X-Gm-Message-State: APjAAAWVc3Mt6I9qQYurTtWQndLbpwe/GNyD2MhpsIdMBc4lX3sNY5WT
+ fOvtGVAwidzaJNMi0LXGzPk=
+X-Google-Smtp-Source: APXvYqxmVtY275bDAzKPPLNtDVRPsVJRxMUOkZ6e8eVG4PKGv1pOeZnEZNNOFTM9xhqTSD3+qsLyoA==
+X-Received: by 2002:a50:92a5:: with SMTP id k34mr100905287eda.90.1560875756744; 
+ Tue, 18 Jun 2019 09:35:56 -0700 (PDT)
 Received: from ziggy.stardust ([37.223.140.27])
- by smtp.gmail.com with ESMTPSA id m6sm4759131ede.2.2019.06.18.09.06.48
+ by smtp.gmail.com with ESMTPSA id d3sm4869774edd.88.2019.06.18.09.35.55
  (version=TLS1_3 cipher=AEAD-AES128-GCM-SHA256 bits=128/128);
- Tue, 18 Jun 2019 09:06:49 -0700 (PDT)
-Subject: Re: [PATCH v7 19/21] iommu/mediatek: Rename enable_4GB to dram_is_4gb
+ Tue, 18 Jun 2019 09:35:56 -0700 (PDT)
+Subject: Re: [PATCH v7 20/21] iommu/mediatek: Fix iova_to_phys PA start for
+ 4GB mode
 To: Yong Wu <yong.wu@mediatek.com>, Joerg Roedel <joro@8bytes.org>,
  Robin Murphy <robin.murphy@arm.com>, Rob Herring <robh+dt@kernel.org>
 References: <1560169080-27134-1-git-send-email-yong.wu@mediatek.com>
- <1560169080-27134-20-git-send-email-yong.wu@mediatek.com>
+ <1560169080-27134-21-git-send-email-yong.wu@mediatek.com>
 From: Matthias Brugger <matthias.bgg@gmail.com>
 Openpgp: preference=signencrypt
 Autocrypt: addr=matthias.bgg@gmail.com; prefer-encrypt=mutual; keydata=
@@ -157,16 +157,16 @@ Autocrypt: addr=matthias.bgg@gmail.com; prefer-encrypt=mutual; keydata=
  pac005PuhxCWkKTJz3gCmznnoat4GCnL5gy/m0Qk45l4PFqwWXVLo9AQg2Kp3mlIFZ6fsEKI
  AN5hxlbNvNb9V2Zo5bFZjPWPFTxOteM0omUAS+QopwU0yPLLGJVf2iCmItHcUXI+r2JwH1CJ
  jrHWeQEI2ucSKsNa8FllDmG/fQ==
-Message-ID: <9bf13c22-0c73-2950-2204-23d577976b03@gmail.com>
-Date: Tue, 18 Jun 2019 18:06:47 +0200
+Message-ID: <db9b3b2f-3206-01bf-f0f9-67251e5ff756@gmail.com>
+Date: Tue, 18 Jun 2019 18:35:54 +0200
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
  Thunderbird/60.6.1
 MIME-Version: 1.0
-In-Reply-To: <1560169080-27134-20-git-send-email-yong.wu@mediatek.com>
+In-Reply-To: <1560169080-27134-21-git-send-email-yong.wu@mediatek.com>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190618_090652_340914_5143E4B4 
-X-CRM114-Status: GOOD (  21.31  )
+X-CRM114-CacheID: sfid-20190618_093558_160335_88690F3A 
+X-CRM114-Status: GOOD (  24.33  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -212,79 +212,88 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 
 On 10/06/2019 14:17, Yong Wu wrote:
-> This patch only rename the variable name from enable_4GB to
-> dram_is_4gb for readable.
+> In the 4GB mode, the physical address is remapped,
+> 
+> Here is the detailed remap relationship.
+> CPU PA         ->    HW PA
+> 0x4000_0000          0x1_4000_0000 (Add bit32)
+> 0x8000_0000          0x1_8000_0000 ...
+> 0xc000_0000          0x1_c000_0000 ...
+> 0x1_0000_0000        0x1_0000_0000 (No change)
+> 
+> Thus, we always add bit32 for PA when entering mtk_iommu_map.
+> But in the iova_to_phys, the CPU don't need this bit32 if the
+> PA is from 0x1_4000_0000 to 0x1_ffff_ffff.
+> This patch discards the bit32 in this iova_to_phys in the 4GB mode.
+> 
+> Fixes: 30e2fccf9512 ("iommu/mediatek: Enlarge the validate PA range
+> for 4GB mode")
+> Signed-off-by: Yong Wu <yong.wu@mediatek.com>
+> ---
+>  drivers/iommu/mtk_iommu.c | 18 ++++++++++++++++++
+>  1 file changed, 18 insertions(+)
+> 
+> diff --git a/drivers/iommu/mtk_iommu.c b/drivers/iommu/mtk_iommu.c
+> index 67cab2d..34f2e40 100644
+> --- a/drivers/iommu/mtk_iommu.c
+> +++ b/drivers/iommu/mtk_iommu.c
+> @@ -119,6 +119,19 @@ struct mtk_iommu_domain {
+>  
+>  static const struct iommu_ops mtk_iommu_ops;
+>  
+> +/*
+> + * In M4U 4GB mode, the physical address is remapped as below:
+> + *  CPU PA         ->   M4U HW PA
+> + *  0x4000_0000         0x1_4000_0000 (Add bit32)
+> + *  0x8000_0000         0x1_8000_0000 ...
+> + *  0xc000_0000         0x1_c000_0000 ...
+> + *  0x1_0000_0000       0x1_0000_0000 (No change)
+> + *
+> + * Thus, We always add BIT32 in the iommu_map and disable BIT32 if PA is >=
+> + * 0x1_4000_0000 in the iova_to_phys.
+> + */
+> +#define MTK_IOMMU_4GB_MODE_PA_140000000     0x140000000UL
+> +
+>  static LIST_HEAD(m4ulist);	/* List all the M4U HWs */
+>  
+>  #define for_each_m4u(data)	list_for_each_entry(data, &m4ulist, list)
+> @@ -415,6 +428,7 @@ static phys_addr_t mtk_iommu_iova_to_phys(struct iommu_domain *domain,
+>  					  dma_addr_t iova)
+>  {
+>  	struct mtk_iommu_domain *dom = to_mtk_domain(domain);
+> +	struct mtk_iommu_data *data = mtk_iommu_get_m4u_data();
+>  	unsigned long flags;
+>  	phys_addr_t pa;
+>  
+> @@ -422,6 +436,10 @@ static phys_addr_t mtk_iommu_iova_to_phys(struct iommu_domain *domain,
+>  	pa = dom->iop->iova_to_phys(dom->iop, iova);
+>  	spin_unlock_irqrestore(&dom->pgtlock, flags);
+>  
+> +	if (data->plat_data->has_4gb_mode && data->dram_is_4gb &&
+> +	    pa >= MTK_IOMMU_4GB_MODE_PA_140000000)
+> +		pa &= ~BIT_ULL(32);
+> +
 
-From my understanding this is true when available RAM > 4GB so I think the name
-should be something like dram_bigger_4gb otherwise it may create confusion again.
-
-Also from my point of view this patch should be done before
+Hm, I wonder if we could fix this as first patch in the series, especially before:
 "[PATCH 06/21] iommu/io-pgtable-arm-v7s: Extend MediaTek 4GB Mode"
+
+This would make it easier for the stable maintainer to cherry-pick the fix.
+Without 100% understanding the code, it seems suspicious to me, that you first
+move the setting of the bit32 and bit33 into v7s and later explicitly clean the
+bits here.
+
+So my take on this is, that patch 6/21 introduced the regression you are trying
+to fix here. As said that is speculation as I don't understand the code in its
+whole.
+
+Any clarification would be useful.
 
 Regards,
 Matthias
 
-> 
-> Signed-off-by: Yong Wu <yong.wu@mediatek.com>
-> Reviewed-by: Evan Green <evgreen@chromium.org>
-> ---
->  drivers/iommu/mtk_iommu.c | 10 +++++-----
->  drivers/iommu/mtk_iommu.h |  2 +-
->  2 files changed, 6 insertions(+), 6 deletions(-)
-> 
-> diff --git a/drivers/iommu/mtk_iommu.c b/drivers/iommu/mtk_iommu.c
-> index 86158d8..67cab2d 100644
-> --- a/drivers/iommu/mtk_iommu.c
-> +++ b/drivers/iommu/mtk_iommu.c
-> @@ -382,7 +382,7 @@ static int mtk_iommu_map(struct iommu_domain *domain, unsigned long iova,
->  	int ret;
+>  	return pa;
+>  }
 >  
->  	/* The "4GB mode" M4U physically can not use the lower remap of Dram. */
-> -	if (data->plat_data->has_4gb_mode && data->enable_4GB)
-> +	if (data->plat_data->has_4gb_mode && data->dram_is_4gb)
->  		paddr |= BIT_ULL(32);
->  
->  	spin_lock_irqsave(&dom->pgtlock, flags);
-> @@ -554,13 +554,13 @@ static int mtk_iommu_hw_init(const struct mtk_iommu_data *data)
->  	writel_relaxed(regval, data->base + REG_MMU_INT_MAIN_CONTROL);
->  
->  	if (data->plat_data->m4u_plat == M4U_MT8173)
-> -		regval = (data->protect_base >> 1) | (data->enable_4GB << 31);
-> +		regval = (data->protect_base >> 1) | (data->dram_is_4gb << 31);
->  	else
->  		regval = lower_32_bits(data->protect_base) |
->  			 upper_32_bits(data->protect_base);
->  	writel_relaxed(regval, data->base + REG_MMU_IVRP_PADDR);
->  
-> -	if (data->enable_4GB && data->plat_data->has_vld_pa_rng) {
-> +	if (data->dram_is_4gb && data->plat_data->has_vld_pa_rng) {
->  		/*
->  		 * If 4GB mode is enabled, the validate PA range is from
->  		 * 0x1_0000_0000 to 0x1_ffff_ffff. here record bit[32:30].
-> @@ -611,8 +611,8 @@ static int mtk_iommu_probe(struct platform_device *pdev)
->  		return -ENOMEM;
->  	data->protect_base = ALIGN(virt_to_phys(protect), MTK_PROTECT_PA_ALIGN);
->  
-> -	/* Whether the current dram is over 4GB */
-> -	data->enable_4GB = !!(max_pfn > (BIT_ULL(32) >> PAGE_SHIFT));
-> +	/* Whether the current dram is 4GB. */
-> +	data->dram_is_4gb = !!(max_pfn > (BIT_ULL(32) >> PAGE_SHIFT));
->  
->  	res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
->  	data->base = devm_ioremap_resource(dev, res);
-> diff --git a/drivers/iommu/mtk_iommu.h b/drivers/iommu/mtk_iommu.h
-> index 753266b..e8114b2 100644
-> --- a/drivers/iommu/mtk_iommu.h
-> +++ b/drivers/iommu/mtk_iommu.h
-> @@ -65,7 +65,7 @@ struct mtk_iommu_data {
->  	struct mtk_iommu_domain		*m4u_dom;
->  	struct iommu_group		*m4u_group;
->  	struct mtk_smi_iommu		smi_imu;      /* SMI larb iommu info */
-> -	bool                            enable_4GB;
-> +	bool                            dram_is_4gb;
->  	bool				tlb_flush_active;
->  
->  	struct iommu_device		iommu;
 > 
 
 _______________________________________________
