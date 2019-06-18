@@ -2,67 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 83ED64A5E5
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 18 Jun 2019 17:53:04 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BAB2B4A603
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 18 Jun 2019 17:59:08 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
-	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=1kXiDLlhxvG33GgxejpoXC0shfrGwuUmY5F+FS6Trqg=; b=NOCDb6JvdxjqKT
-	hqsmIh2d9my1xmn/rt4R4N45unH4PuCmGAYQdbIgzY1Mp/QD0+DucvpdPG8PeqfBrCoyPcU6mOwE1
-	r6IN09jDnct5cWp7x4pdfPLI0gH3dUtXbT1ltJQs4boqAiQU6FdgYhnl3F/OONhfvnTj7lapircMC
-	q6EM+8+JJmDGkDOAxpraOVTl7IGlgECJ0gSz3PmSKSLkVzcn5utqbcYDzSKfwhcl0eoOxw4BqLLD/
-	1xpz++1/x172kQ/r+dT52U30pqKJAO1d6rX/cF036ZJnkx3JL7/SQtoEImXcw+jPDt9iwpee2bduU
-	lYsTvPt3hag+5G1MUvow==;
+	List-Owner; bh=y+fNIrNnnhndq6rb7jXO6bAQRI4wnI7f8+OsCC2a9ZE=; b=c/ZiZ0st7d4Ngt
+	W3YVCK6n6yYx+vrNqFxNZBfHJBgcgpydH/HTTrTpfO1u5balGatdKRv04q9swrA3YKlzaUIndkHX3
+	LvAelKlYi/jdr6SVI7xuAOrrl5qNELTpORRyIqU5j6KmfhagL4wyo/6OUUHy3mRfp7rm4TIaurzvU
+	kfdWFB/Ox4UAsMGmGtEWGRY+uoxMulfNQwfCCoOIMOlQw/lKrUnyF2NiqkjDq0Hq3eTaerDAcHf42
+	5R101XM8Hawb9th9ktWZoU5xzF6mUlIeimBU2ZyHzE5wiGP/+SNCR7TZyYzQHx4OgRYtzuo85T4mP
+	AeqKl1ZFz4NSvwC3I8wQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hdGPt-0003PV-B3; Tue, 18 Jun 2019 15:53:01 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1hdGVl-0005Ja-V5; Tue, 18 Jun 2019 15:59:05 +0000
+Received: from 3.mo178.mail-out.ovh.net ([46.105.44.197])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hdGPh-0003PC-Mh
- for linux-arm-kernel@lists.infradead.org; Tue, 18 Jun 2019 15:52:50 +0000
-Received: from localhost (83-86-89-107.cable.dynamic.v4.ziggo.nl
- [83.86.89.107])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 4C19A206BA;
- Tue, 18 Jun 2019 15:52:48 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1560873168;
- bh=Qp/IJHUjvBQGAHzFEZFsyGZsRYNVu9PbMdYcS3h9VBU=;
- h=Date:From:To:Cc:Subject:From;
- b=vDvXN3HG1yRoUSYBVkno4avdSW0LQlb/3MMH5m3ozEdqTLF9dfBXzj39Vs3VYYZaF
- n67+3908aOVSpHC69Zg5Gu3e3D9yOzdjpUV6MICCLkk79A++sRGJhS9HgdJbh3kpBU
- enA3BhK/oAY9U+zgmoiKQc5+T3yK+/PT2+fJKwbw=
-Date: Tue, 18 Jun 2019 17:52:46 +0200
-From: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
-To: Mathieu Poirier <mathieu.poirier@linaro.org>,
- Suzuki K Poulose <suzuki.poulose@arm.com>,
- Alexander Shishkin <alexander.shishkin@linux.intel.com>
-Subject: [PATCH] coresight: cpu-debug: no need to check return value of
- debugfs_create functions
-Message-ID: <20190618155246.GA17788@kroah.com>
+ id 1hdGVb-0005Iz-J4
+ for linux-arm-kernel@lists.infradead.org; Tue, 18 Jun 2019 15:58:58 +0000
+Received: from player776.ha.ovh.net (unknown [10.108.35.27])
+ by mo178.mail-out.ovh.net (Postfix) with ESMTP id 07FD16C9F8
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 18 Jun 2019 17:58:47 +0200 (CEST)
+Received: from armadeus.com (lfbn-1-7591-179.w90-126.abo.wanadoo.fr
+ [90.126.248.179])
+ (Authenticated sender: sebastien.szymanski@armadeus.com)
+ by player776.ha.ovh.net (Postfix) with ESMTPSA id A37AB6F58780;
+ Tue, 18 Jun 2019 15:58:34 +0000 (UTC)
+From: =?UTF-8?q?S=C3=A9bastien=20Szymanski?= <sebastien.szymanski@armadeus.com>
+To: linux-arm-kernel@lists.infradead.org, devicetree@vger.kernel.org,
+ NXP Linux Team <linux-imx@nxp.com>, Sascha Hauer <s.hauer@pengutronix.de>,
+ Shawn Guo <shawnguo@kernel.org>
+Subject: [PATCH 1/1] ARM: dts: imx6ul: fix PWM[1-4] interrupts
+Date: Tue, 18 Jun 2019 17:58:34 +0200
+Message-Id: <20190618155834.15545-1-sebastien.szymanski@armadeus.com>
+X-Mailer: git-send-email 2.21.0
 MIME-Version: 1.0
-Content-Disposition: inline
-User-Agent: Mutt/1.12.1 (2019-06-15)
+X-Ovh-Tracer-Id: 735494114359399676
+X-VR-SPAMSTATE: OK
+X-VR-SPAMSCORE: -100
+X-VR-SPAMCAUSE: gggruggvucftvghtrhhoucdtuddrgeduvddrtddtgdeiiecutefuodetggdotefrodftvfcurfhrohhfihhlvgemucfqggfjpdevjffgvefmvefgnecuuegrihhlohhuthemucehtddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmd
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190618_085249_755576_79092054 
-X-CRM114-Status: GOOD (  11.81  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20190618_085855_767819_A699D76E 
+X-CRM114-Status: UNSURE (   9.83  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [46.105.44.197 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -74,60 +69,48 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Mark Rutland <mark.rutland@arm.com>, Rob Herring <robh+dt@kernel.org>,
+ Fabio Estevam <festevam@gmail.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-When calling debugfs functions, there is no need to ever check the
-return value.  The function can work or not, but the code logic should
-never do something different based on this.
-
-Cc: Mathieu Poirier <mathieu.poirier@linaro.org>
-Cc: Suzuki K Poulose <suzuki.poulose@arm.com>
-Cc: Alexander Shishkin <alexander.shishkin@linux.intel.com>
-Cc: linux-arm-kernel@lists.infradead.org
-Signed-off-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
----
- drivers/hwtracing/coresight/coresight-cpu-debug.c | 15 ++-------------
- 1 file changed, 2 insertions(+), 13 deletions(-)
-
-diff --git a/drivers/hwtracing/coresight/coresight-cpu-debug.c b/drivers/hwtracing/coresight/coresight-cpu-debug.c
-index e8819d750938..6446ed69ab2f 100644
---- a/drivers/hwtracing/coresight/coresight-cpu-debug.c
-+++ b/drivers/hwtracing/coresight/coresight-cpu-debug.c
-@@ -525,23 +525,12 @@ static const struct file_operations debug_func_knob_fops = {
- 
- static int debug_func_init(void)
- {
--	struct dentry *file;
- 	int ret;
- 
- 	/* Create debugfs node */
- 	debug_debugfs_dir = debugfs_create_dir("coresight_cpu_debug", NULL);
--	if (!debug_debugfs_dir) {
--		pr_err("%s: unable to create debugfs directory\n", __func__);
--		return -ENOMEM;
--	}
--
--	file = debugfs_create_file("enable", 0644, debug_debugfs_dir, NULL,
--				   &debug_func_knob_fops);
--	if (!file) {
--		pr_err("%s: unable to create enable knob file\n", __func__);
--		ret = -ENOMEM;
--		goto err;
--	}
-+	debugfs_create_file("enable", 0644, debug_debugfs_dir, NULL,
-+			    &debug_func_knob_fops);
- 
- 	/* Register function to be called for panic */
- 	ret = atomic_notifier_chain_register(&panic_notifier_list,
--- 
-2.22.0
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+QWNjb3JkaW5nIHRvIHRoZSBpLk1YNlVML0wgUk0sIHRhYmxlIDMuMSAiQVJNIENvcnRleCBBNyBk
+b21haW4gaW50ZXJydXB0CnN1bW1hcnkiLCB0aGUgaW50ZXJydXB0cyBmb3IgdGhlIFBXTVsxLTRd
+IGdvIGZyb20gODMgdG8gODYuCgpGaXhlczogYjk5MDFmZTg0ZjAyICgiQVJNOiBkdHM6IGlteDZ1
+bDogYWRkIHB3bVsxLTRdIG5vZGVzIikKU2lnbmVkLW9mZi1ieTogU8OpYmFzdGllbiBTenltYW5z
+a2kgPHNlYmFzdGllbi5zenltYW5za2lAYXJtYWRldXMuY29tPgotLS0KIGFyY2gvYXJtL2Jvb3Qv
+ZHRzL2lteDZ1bC5kdHNpIHwgOCArKysrLS0tLQogMSBmaWxlIGNoYW5nZWQsIDQgaW5zZXJ0aW9u
+cygrKSwgNCBkZWxldGlvbnMoLSkKCmRpZmYgLS1naXQgYS9hcmNoL2FybS9ib290L2R0cy9pbXg2
+dWwuZHRzaSBiL2FyY2gvYXJtL2Jvb3QvZHRzL2lteDZ1bC5kdHNpCmluZGV4IGJiZjAxMGM3MzMz
+Ni4uYTdmNmQxZDU4ZTIwIDEwMDY0NAotLS0gYS9hcmNoL2FybS9ib290L2R0cy9pbXg2dWwuZHRz
+aQorKysgYi9hcmNoL2FybS9ib290L2R0cy9pbXg2dWwuZHRzaQpAQCAtMzU4LDcgKzM1OCw3IEBA
+CiAJCQlwd20xOiBwd21AMjA4MDAwMCB7CiAJCQkJY29tcGF0aWJsZSA9ICJmc2wsaW14NnVsLXB3
+bSIsICJmc2wsaW14MjctcHdtIjsKIAkJCQlyZWcgPSA8MHgwMjA4MDAwMCAweDQwMDA+OwotCQkJ
+CWludGVycnVwdHMgPSA8R0lDX1NQSSAxMTUgSVJRX1RZUEVfTEVWRUxfSElHSD47CisJCQkJaW50
+ZXJydXB0cyA9IDxHSUNfU1BJIDgzIElSUV9UWVBFX0xFVkVMX0hJR0g+OwogCQkJCWNsb2NrcyA9
+IDwmY2xrcyBJTVg2VUxfQ0xLX1BXTTE+LAogCQkJCQkgPCZjbGtzIElNWDZVTF9DTEtfUFdNMT47
+CiAJCQkJY2xvY2stbmFtZXMgPSAiaXBnIiwgInBlciI7CkBAIC0zNjksNyArMzY5LDcgQEAKIAkJ
+CXB3bTI6IHB3bUAyMDg0MDAwIHsKIAkJCQljb21wYXRpYmxlID0gImZzbCxpbXg2dWwtcHdtIiwg
+ImZzbCxpbXgyNy1wd20iOwogCQkJCXJlZyA9IDwweDAyMDg0MDAwIDB4NDAwMD47Ci0JCQkJaW50
+ZXJydXB0cyA9IDxHSUNfU1BJIDExNiBJUlFfVFlQRV9MRVZFTF9ISUdIPjsKKwkJCQlpbnRlcnJ1
+cHRzID0gPEdJQ19TUEkgODQgSVJRX1RZUEVfTEVWRUxfSElHSD47CiAJCQkJY2xvY2tzID0gPCZj
+bGtzIElNWDZVTF9DTEtfUFdNMj4sCiAJCQkJCSA8JmNsa3MgSU1YNlVMX0NMS19QV00yPjsKIAkJ
+CQljbG9jay1uYW1lcyA9ICJpcGciLCAicGVyIjsKQEAgLTM4MCw3ICszODAsNyBAQAogCQkJcHdt
+MzogcHdtQDIwODgwMDAgewogCQkJCWNvbXBhdGlibGUgPSAiZnNsLGlteDZ1bC1wd20iLCAiZnNs
+LGlteDI3LXB3bSI7CiAJCQkJcmVnID0gPDB4MDIwODgwMDAgMHg0MDAwPjsKLQkJCQlpbnRlcnJ1
+cHRzID0gPEdJQ19TUEkgMTE3IElSUV9UWVBFX0xFVkVMX0hJR0g+OworCQkJCWludGVycnVwdHMg
+PSA8R0lDX1NQSSA4NSBJUlFfVFlQRV9MRVZFTF9ISUdIPjsKIAkJCQljbG9ja3MgPSA8JmNsa3Mg
+SU1YNlVMX0NMS19QV00zPiwKIAkJCQkJIDwmY2xrcyBJTVg2VUxfQ0xLX1BXTTM+OwogCQkJCWNs
+b2NrLW5hbWVzID0gImlwZyIsICJwZXIiOwpAQCAtMzkxLDcgKzM5MSw3IEBACiAJCQlwd200OiBw
+d21AMjA4YzAwMCB7CiAJCQkJY29tcGF0aWJsZSA9ICJmc2wsaW14NnVsLXB3bSIsICJmc2wsaW14
+MjctcHdtIjsKIAkJCQlyZWcgPSA8MHgwMjA4YzAwMCAweDQwMDA+OwotCQkJCWludGVycnVwdHMg
+PSA8R0lDX1NQSSAxMTggSVJRX1RZUEVfTEVWRUxfSElHSD47CisJCQkJaW50ZXJydXB0cyA9IDxH
+SUNfU1BJIDg2IElSUV9UWVBFX0xFVkVMX0hJR0g+OwogCQkJCWNsb2NrcyA9IDwmY2xrcyBJTVg2
+VUxfQ0xLX1BXTTQ+LAogCQkJCQkgPCZjbGtzIElNWDZVTF9DTEtfUFdNND47CiAJCQkJY2xvY2st
+bmFtZXMgPSAiaXBnIiwgInBlciI7Ci0tIAoyLjIxLjAKCgpfX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdAps
+aW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVh
+ZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
