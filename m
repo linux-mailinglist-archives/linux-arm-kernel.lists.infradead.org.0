@@ -2,87 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A91AB4AAFE
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 18 Jun 2019 21:26:39 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 218754AB45
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 18 Jun 2019 21:59:57 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=c3NZNzMSviaZDFKSJTsJUl6Ay7qfdstNEemFSIcaWAo=; b=GDYuEtuC3C5Hc/
-	jf1OZ70zWKmf8hwcOvgAzf3GRT6KuUUmmweQPpODGsMc0MblXf+DefehbKXlJa+jAIDI0d2blOFWl
-	plawQ9Dek8RYHrRqF67PCfG04XISNvlRETMnQnq2y9l8wlvlgiSUH4aRIwGGCH8qMBJ98M0yEtb/U
-	lIostmlCKs6dNhU6E3nd4cfOyJUAUuskIA0xNRQR2K9JMu22seETrOvY2tco40jK8THNeHzf75HbR
-	FyjI/6OacTkNRIWsp7X90QxCb+lyefdf1norrFSav7demtU+cL+/MvTSG4KKveWcRpckCtsxoJ7Aw
-	c4glvLJFeXklIoy6bwPQ==;
+	List-Owner; bh=UkkMxedfviUnZvV9Q6E/Wzet3SlkAkfeeW3Kih9L4bA=; b=CT+SG99NS3npCa
+	DZi1XcYS/7sgWbCuQ8+wEA118qo00lMUva1e0T7O0B3jwKmUnV0cl6fnyP1byyizPBTaojptxdyhR
+	PeiA+6MfbqXV3KeFrsNeclaKDRHifIFcL6zTEcUEqjneSZ2f8jWWuJ0UBJHsajwQk7oGJmdC2v3xc
+	vBTvUpagu/AmegfoUYcxVHfTl28pecwzEIjXYo2JYF6EHljNNT1GSyDY+9h4TLsTFyoUIP9Mc/sMC
+	jhDlou7pshQ7sT5SAoLx6wRi6shMsMu5+Oom9pOXVsDHhlGAryNy0ZbaiaXNIZv3e5OciNk0xcq9Z
+	I37zZvpIExqp6wR09k4Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hdJkb-0005BF-IO; Tue, 18 Jun 2019 19:26:37 +0000
-Received: from mail-io1-xd44.google.com ([2607:f8b0:4864:20::d44])
+	id 1hdKGm-0004o8-Hg; Tue, 18 Jun 2019 19:59:52 +0000
+Received: from mail-qk1-f195.google.com ([209.85.222.195])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hdJkP-00059o-Hc
- for linux-arm-kernel@lists.infradead.org; Tue, 18 Jun 2019 19:26:27 +0000
-Received: by mail-io1-xd44.google.com with SMTP id j6so2876654ioa.5
+ id 1hdKGZ-0004ma-TX
+ for linux-arm-kernel@lists.infradead.org; Tue, 18 Jun 2019 19:59:41 +0000
+Received: by mail-qk1-f195.google.com with SMTP id r6so9452029qkc.0
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 18 Jun 2019 12:26:24 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=NgJ90hORXS90Oe5ovB09aob9346MVDq59vZYNRLstVo=;
- b=IY3fLlgCOmjdGYo/1kqt4pEmlJhcXztX0U2I/cVyH+mAwxTZJPBjtiv5EKbNsrrW78
- X4Nx1JhxJy2EhIEZUn2hFabeuaZyeYScWifnoH9sRiLPI8SV59cKoyaOqaME4D7o2T5Q
- S33Qwr72c9IjuTRZx2hyijfNwhyfHd3kfKcdabxo6K0/qvZQ1yNEdMRei1610T7KAN4B
- d3oSwshTv7n/cDBdVpMRIUJkQtjnrAO54WcL8jflZrZpANVyuEg/M8urEyE5y5OK8qaD
- zdP8ltTTEUEpFaliofgdVq8E67V+BVNRJEB/eWvhEcA1fMCU0zchIpnAY5wBFXuPSO2J
- VRFw==
+ Tue, 18 Jun 2019 12:59:37 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=NgJ90hORXS90Oe5ovB09aob9346MVDq59vZYNRLstVo=;
- b=WZjx8dtufYf/pTmCQOIxpmf7Lndbe/fZVYcioeJ5abVVwNXMQJ+ZOSv18watB0C2Nr
- es+zwgCrzvjqPlrmUtSZ98jPFdWHQs7AwnAMVaz+iZ2xYmgyG5kOgqamGRMzYMDQizFI
- jKSnF8w1YEA445ucS9+xMj8LIdIcd1nxYC8sgt4dv9LtCoSrCUSSJiQX256lQUjcboAO
- ehWU4NvNjDzwgton4ySzCWKtUHgZf2Py1AwmKZhHnl/jDZkSmEfTZbJ6982Ss3t/c5gc
- FNE2X11Z7kF4MMaZGpL4aCmFXna9n3hFRnDyVVIohslbG0otuTGwI7BLF4PlMRUXfJHV
- WVqQ==
-X-Gm-Message-State: APjAAAV+C4s4ILriFxuuulWeQzRaloh3cbbto+h+cfSPS8UjxDdtXtjZ
- OWLH9HEB6beJsyhBZDpdop6BNzUFDnIvXtu6fTsg9g==
-X-Google-Smtp-Source: APXvYqzZawFX8eFurk1vXUKHB3+PLHWu8/39gvLj2J3ShevDkdgizoqUlSno6swbO/xmF6kFl96XLItg3s2KqvBZ3yg=
-X-Received: by 2002:a05:6638:29a:: with SMTP id
- c26mr5211302jaq.98.1560885983992; 
- Tue, 18 Jun 2019 12:26:23 -0700 (PDT)
+ bh=i7s7c5OcKeclqiywXdqj12aC74/yCawdjmwihldgF1s=;
+ b=p+yBo7cNe41B3ohIAmpmM5tEQlMlYdi01FCCMO35FoqYCKuTDgHwvTU2vV060TuXzu
+ ZZTx5MZuPBjVxT2+YnrAeaNT8pVEgtDmRyTU7b4Te8WFYZzR/QRDBIZDEypY84G4afzN
+ V03LgUDmkGkPhIpGIhi0WGwgvUrXHMoLoVeawXO6zNdPwZBe8YxBR+yVeEE9igoUoQ0+
+ et4XNS70wst9Ad4wwcA0c6DnM4MnKRfJOpemos1sJ6k+9WuVzGlmyI0oggTa7To9vjBs
+ JMSutK/tQB7nWzPicQKu6hv34lqXnOfKyt+9CNeWqfTWiZ0dmy5n6aX6kEe6/qBSkkSk
+ ppbA==
+X-Gm-Message-State: APjAAAU7FU9eTi4jpl3PghQhtpDbzUn8iTy+Joo9BgS2VVsf1xlEHzH3
+ Pw6tB/cDLlN1SDgdzqSO3bbW5RXtXALsIi0aAww=
+X-Google-Smtp-Source: APXvYqy6dw17Y5hPbpJB1iwj6Y5EiqPTo9iLm7ZATxD+K27A0WaDVgnTPbaE839sYu0LKjhIqohaX9442ZVn9lHIr6Q=
+X-Received: by 2002:a37:a4d3:: with SMTP id n202mr8102665qke.84.1560887976962; 
+ Tue, 18 Jun 2019 12:59:36 -0700 (PDT)
 MIME-Version: 1.0
-References: <20190618155246.GA17788@kroah.com>
- <CANLsYkzTgwY=EAE8E98jpyO6uVQnKN3SAKhRwSUCRhQTO+rV0w@mail.gmail.com>
- <20190618174637.GC3649@kroah.com>
-In-Reply-To: <20190618174637.GC3649@kroah.com>
-From: Mathieu Poirier <mathieu.poirier@linaro.org>
-Date: Tue, 18 Jun 2019 13:26:12 -0600
-Message-ID: <CANLsYkwjKDP2QOLgeTj=z90jXFjT9d3JXB0TxJU=v12MCi1PFA@mail.gmail.com>
-Subject: Re: [PATCH] coresight: cpu-debug: no need to check return value of
- debugfs_create functions
-To: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+References: <380a6185-7ad1-6be0-060b-e6e5d4126917@linaro.org>
+ <a94676381a5ca662c848f7a725562f721c43ce76.camel@sipsolutions.net>
+ <CAK8P3a0kV-i7BJJ2X6C=5n65rSGfo8fUiC4J_G-+M8EctYKbkg@mail.gmail.com>
+ <066e9b39f937586f0f922abf801351553ec2ba1d.camel@sipsolutions.net>
+ <b3686626-e2d8-bc9c-6dd0-9ebb137715af@linaro.org>
+ <b23a83c18055470c5308fcd1eed018056371fc1d.camel@sipsolutions.net>
+In-Reply-To: <b23a83c18055470c5308fcd1eed018056371fc1d.camel@sipsolutions.net>
+From: Arnd Bergmann <arnd@arndb.de>
+Date: Tue, 18 Jun 2019 21:59:19 +0200
+Message-ID: <CAK8P3a1FeUQR3pgoQxHoRK05JGORyR+TFATVQiijLWtFKTv6OQ@mail.gmail.com>
+Subject: Re: [PATCH v2 00/17] net: introduce Qualcomm IPA driver
+To: Johannes Berg <johannes@sipsolutions.net>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190618_122625_593619_FB8D3B83 
-X-CRM114-Status: GOOD (  27.22  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190618_125939_957692_9C26A633 
+X-CRM114-Status: GOOD (  28.37  )
+X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:d44 listed in]
- [list.dnswl.org]
+ no trust [209.85.222.195 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.222.195 listed in wl.mailspike.net]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (arndbergmann[at]gmail.com)
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,96 +86,100 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Alexander Shishkin <alexander.shishkin@linux.intel.com>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
- Suzuki K Poulose <suzuki.poulose@arm.com>
+Cc: DTML <devicetree@vger.kernel.org>, syadagir@codeaurora.org,
+ Eric Caruso <ejcaruso@google.com>, Dan Williams <dcbw@redhat.com>,
+ linux-arm-msm@vger.kernel.org, abhishek.esse@gmail.com,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>, evgreen@chromium.org,
+ Bjorn Andersson <bjorn.andersson@linaro.org>,
+ Ilias Apalodimas <ilias.apalodimas@linaro.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Alex Elder <elder@linaro.org>,
+ Subash Abhinov Kasiviswanathan <subashab@codeaurora.org>,
+ Networking <netdev@vger.kernel.org>, linux-soc@vger.kernel.org,
+ David Miller <davem@davemloft.net>, cpratapa@codeaurora.org,
+ Ben Chan <benchan@google.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, 18 Jun 2019 at 11:46, Greg Kroah-Hartman
-<gregkh@linuxfoundation.org> wrote:
+On Tue, Jun 18, 2019 at 9:14 PM Johannes Berg <johannes@sipsolutions.net> wrote:
+> On Tue, 2019-06-18 at 08:16 -0500, Alex Elder wrote:
+> > On 6/17/19 6:28 AM, Johannes Berg wrote:
+> > So getting back to your question, the IPA in its current form only
+> > has a single "multiplexed" channel carried over the connection
+> > between the AP and modem.  Previously (and in the future) there
+> > was a way to add or remove channels.
 >
-> On Tue, Jun 18, 2019 at 11:23:25AM -0600, Mathieu Poirier wrote:
-> > Hi Greg,
+> What would those channels do?
+>
+> I've not really been very clear with the differentiation between a
+> channel and what's multiplexed inside of the channel.
+>
+> Using the terminology you defined in your other mail, are you saying
+> that IPA (originally) allowed multiple *connections* to the device, or
+> is there basically just one connection, with multiple (QMAP-muxed)
+> *channels* on top of it?
+>
+> If the latter, why did IPA need ioctls, rather than rmnet?
+
+From my understanding, the ioctl interface would create the lower
+netdev after talking to the firmware, and then user space would use
+the rmnet interface to create a matching upper-level device for that.
+This is an artifact of the strong separation of ipa and rmnet in the
+code.
+
+> > > The software bridging is very questionable to start with, I'd advocate
+> > > not supporting that at all but adding tracepoints or similar if needed
+> > > for debugging instead.
 > >
-> > On Tue, 18 Jun 2019 at 09:52, Greg Kroah-Hartman
-> > <gregkh@linuxfoundation.org> wrote:
-> > >
-> > > When calling debugfs functions, there is no need to ever check the
-> > > return value.  The function can work or not, but the code logic should
-> > > never do something different based on this.
-> >
-> > Looking around in the kernel there is no shortage of instances where
-> > the return value of debugfs functions are checked and the logic
-> > altered based on these values.  But there are also just as many that
-> > don't...  It also seems counter intuitive to ignore the return value
-> > of any function, something that in most case is guaranteed to raise
-> > admonition.
+> > To be honest I don't understand the connection between software
+> > bridging and debugging, but that's OK.
 >
-> In my tree, those instances are almost all gone.  I've also posted over
-> 100+ patches in the past few weeks to clean this up.
+> It's a mess. Basically, AFAICT, the only use for the rmnet bridging is
+> in fact debugging. What it does, again AFAICT, is mirror out all the
+> rmnet packets to the bridge if you attach it to a bridge, so that then
+> you can attach another netdev to the bridge and forward all the rmnet
+> packets to another system for debugging.
 >
-> > That being said I am sure there is a good reason to support your
-> > position - would you mind expanding a little so that I can follow?
->
-> No kernel code should ever care if debugfs works or not.  No user code
-> should ever require it for normal operation either.  debugfs was written
-> to be simple and easy to use, no need to check any return values at all.
->
-> Any return value of a debugfs call can be fed back into another call
-> with no issues at all.
->
-> Also, due to some debugfs core changes a few kernel releases ago, the
-> checks:
->         if (!debug_debugfs_dir) {
-> ...
->         if (!file) {
-> can never trigger as debugfs_create_dir() or debugfs_create_file() can
-> never return NULL (and in the past, it almost never would either).  So
+> It's a very weird way of doing this, IMHO.
 
-That is the rational I was looking for.
+My understanding for this was that the idea is to use it for
+connecting bridging between distinct hardware devices behind
+ipa: if IPA drives both a USB-ether gadget and the 5G modem,
+you can use to talk to Linux running rmnet, but you can also
+use rmnet to provide fast usb tethering to 5g and bypass the
+rest of the network stack. That again may have been a wrong
+guess on my part.
 
-> as it is, that code isn't correct anyway (my fault, I know, hey, I'm
-> trying to fix it!)
+> > I believe the only QMAP commands are for doing essentially
+> > XON/XOFF flow control on a single channel.  In the course of
+> > the e-mail discussion in the past few weeks I've come to see
+> > why that would be necessary.
 >
-> I'm trying to make things simple, and easy, and impossible to get wrong.
-> I know it goes against the normal "robust" kernel development mentality,
-> but there is no need to ever care about debugfs at all.
+> It does make sense, because you only have a single hardware (DMA)
+> channel in these cases, so you implement flow control in software on
+> top.
 >
-> The reason I started all of this is that we have found places where
-> userspace, and the kernel, was depending on the proper operation of
-> debugfs.  In one horrid example, a device would not display the batter
-> level if debugfs was disabled.  In another case, the kernel was actually
-> relying on a debugfs call to fail in order to handle some logic the
-> subsystem should have been doing on its own.  All of that has now been
-> cleaned up, and I am working on making debugfs just not return any
-> values at all to prevent this type of mess happening again.
->
-> And hey, I am removing code, here's my current tree as a diff from
-> what is not already merged into linux-next:
->          301 files changed, 1394 insertions(+), 4637 deletions(-)
-> that's always a good thing :)
->
-> Hopefully this helps explain things better.
+> (As I said before, the Intel modem uses different hardware channels for
+> different sessions, so doesn't need something like this - the hardware
+> ring just fills up and there's your flow control)
 
-It does - thanks for taking the time to write all this.
+ipa definitely has multiple hardware queues, and the Alex'
+driver does implement  the data path on those, just not the
+configuration to enable them.
 
-Do you want me to take the patch through my tree (only to see it
-coming back to you later this week) or you'll add it directly to
-yours?  In the latter case:
+Guessing once more, I suspect the the XON/XOFF flow control
+was a workaround for the fact that rmnet and ipa have separate
+queues. The hardware channel on IPA may fill up, but user space
+talks to rmnet and still add more frames to it because it doesn't
+know IPA is busy.
 
-Reviewed-by: Mathieu Poirier <mathieu.poirier@linaro.org>
-Tested-by: Mathieu Poirier <mathieu.poirier@linaro.org>
+Another possible explanation would be that this is actually
+forwarding state from the base station to tell the driver to
+stop sending data over the air.
 
-Regards,
-Mathieu
-
->
-> thanks,
->
-> greg k-h
+       Arnd
 
 _______________________________________________
 linux-arm-kernel mailing list
