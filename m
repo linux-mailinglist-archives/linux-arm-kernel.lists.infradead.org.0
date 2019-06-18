@@ -2,76 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BEBBC4A330
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 18 Jun 2019 16:01:13 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 68ECC4A33A
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 18 Jun 2019 16:01:31 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=KQh4txEPv3chImoTxkAV9hFQLE5HHTMTzA55yijtOIw=; b=DEhyPVwZ6099mh
-	m/B2G+Iz86yyh672QibzfUCKZE4PB8z4oipwltoMx9ITeYYI9KMC5urMqZl2EMPuZ8kO3snNmhUWp
-	iiel17+grbjdXevIyvn30TdWF8eVyo+430wwmJYXz/invR8+DyP5N9vB2JZhgs0AB93pBYIbgdbE7
-	u7u7SqjRdxPfBnK1iTjMCHDCbmWdrj0yXD+gBEJziuqMBjeDboyse9UihsN2NzmAXc5bw2Pis6Hzl
-	ndvbY0/r5tZ0ksdruxDaC7XuRO61KusagZMNxJ9TWrWYgZ7eyOQTMrS6GXvdm++5jMywxgvaYIblf
-	cVw5bPzTmQSscmXU6qgQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=hlanU+CrQdF0KFZPAQDY0ifv49T9eGrli+WTteDV2b4=; b=Zh82WJQRbKJSWR
+	XZo5huMfLLMwGPEay5FyaoAUu+EIRXgausV4oQ91AqPyykNPUOwSlqMGRwY/lOhqugPaajQvd5JXV
+	onRa584zlvV4FgvJvYEcgAGNRjBuuijS8X7s7REYacSTzm/EFYvPVrca4lqaZe9AWTHV34siEueks
+	LG9dlpQtT0fKGCPiJK/dMG6T/lvZi+JeyIesnGoQ0a5Rm2mXMtkSLvc9v5Xah8cC2WWo8+QrhF7cx
+	Jguf+SMUK2kQoa83hWn2QSECQI98q0aiHXzrIttXROy2wT3Z8qp+DDoZBz3mfhDgx3H/BFLSLYnc9
+	wWsxbvSM3yYmbyO7vlLw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hdEfd-0005Xr-DA; Tue, 18 Jun 2019 14:01:09 +0000
-Received: from mail-lf1-x144.google.com ([2a00:1450:4864:20::144])
+	id 1hdEfy-0005w0-0i; Tue, 18 Jun 2019 14:01:30 +0000
+Received: from mail-io1-xd41.google.com ([2607:f8b0:4864:20::d41])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hdEfN-0005QH-7b
- for linux-arm-kernel@lists.infradead.org; Tue, 18 Jun 2019 14:00:54 +0000
-Received: by mail-lf1-x144.google.com with SMTP id y13so9359567lfh.9
+ id 1hdEfU-0005az-O7
+ for linux-arm-kernel@lists.infradead.org; Tue, 18 Jun 2019 14:01:02 +0000
+Received: by mail-io1-xd41.google.com with SMTP id w25so29962399ioc.8
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 18 Jun 2019 07:00:52 -0700 (PDT)
+ Tue, 18 Jun 2019 07:01:00 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=HdUV7CzfBMqln17zR8zkIO3XNGBpw5OXNtAwnyi4zUU=;
- b=YKASZiZLPnCBby55M8HxvQ3P6hVicwek4YaqtAI8cITJMo4iBFAWa3Yij9dIdVNJQH
- DG1Y36EZ8g1RlQ36fuSZZlWJEos08p8a8NGCJ4ePwoJ/iuXCxhpGJk/5ImxWt9stwQa3
- yzSilSFRMmJXjChN9LX5EyZvKJu7NVi+g7+QVmSVxVxmE9hUq/fjv8eT20WOZ2CX6Gy1
- k+gKh2jDh1GJYeEQ804FDN2kPBVAKd0Ajibuja7XLyFwf9lbnePWZmNBToWcISiz5mD+
- aKQGxa3de+sSqrZXCcZkixnJCx3Go6nC+1fUrTBqDcbfKELH20imaBLJDuj2IuYSDZwJ
- 9DLA==
+ h=subject:to:cc:references:from:message-id:date:user-agent
+ :mime-version:in-reply-to:content-language:content-transfer-encoding;
+ bh=T08//zG45sCSOuqyl+ULwBSrl0f1cak1EG68a6PEKJ8=;
+ b=DCfVfJ+4RhCLmqXG1I+bfNn3kR7BJa6paHvS14hZvfHAQIpw8sApKrLm4OOwt55yRX
+ pUar7QENZ5rVi3vx5xBpoFxAeP7AAkq93rBdji27/dyohyKc32Ip9YAXESCu0LZLO+U+
+ QNLBbnsHtVHcCKHo465UicQL3IhBbM1bwr713lG8frsOCsMS9C1QyL5GZ16MgqszmYrZ
+ Ag/3p1Kqo7TzdO6dBp14GtnIgZA0QhDBM7NfUSf1RZGe1gAl4i0TtLlhUXiXblQHoR5o
+ dlI9cWo5/AWnl4H4pUUbTDN3/cZY2D9M3uCuUQZGsKY2bqlmwj2g8YJMDzWpESxnTyeN
+ yrGQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=HdUV7CzfBMqln17zR8zkIO3XNGBpw5OXNtAwnyi4zUU=;
- b=KcQND5Xi0EruvyUxj2RQEDSBXkVabNyQef6hqeBJAx/YogpoBfK1d+dm7RgFE3/sok
- KTOFhKY3W8hf6pT++dFCwmTGJpE274jLmxxlx9MI446B3n0Y9GSuuRu85HZUwM45wS5l
- Nltp0qX8uJO8rhoOSiI8sHJfYDC1eyaw4bfSfGB800iQhP8a0icDsHjXTFJglSXSPckb
- DPaW7+Jn5OFu55KU5VLy1GmjVy+ELv51yUrtpZKSRhLWA1i0tgX1yBaAcL5wWUY2hGa8
- qa6aGBy7mQySN3nylX5V+4Yddc1Bahz3dSv5psO0+iR+DQZbuGtXAE7/LF87obeOV3em
- kw+w==
-X-Gm-Message-State: APjAAAXNRTn0poeRJGYJuWFxbykxW5PJRv40Krz5nXl1ncwCcKiHIAwK
- 06ti6AAcGXhaK2g7KSBeAU/xwi9cOcmoYMaa8mKovQ==
-X-Google-Smtp-Source: APXvYqxZtj/5LSylMWRwAm5XoxiotJGXmZeOzoZYzvkHtOk3c+tM2Kf0qCRtTO0+6PRAgESjaawSeSGiHoL4zjd1R1U=
-X-Received: by 2002:ac2:5382:: with SMTP id g2mr2936130lfh.92.1560866450515;
- Tue, 18 Jun 2019 07:00:50 -0700 (PDT)
+ h=x-gm-message-state:subject:to:cc:references:from:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=T08//zG45sCSOuqyl+ULwBSrl0f1cak1EG68a6PEKJ8=;
+ b=dRWjB6Hd1SJVsl0BVz0PligEIREnl92SKEyPc0qiLT0PM+a3VpGkN4EfmkCzP5GUDY
+ vVx1/MZ+iQZEPttJEgri0y0ImdpBMIH85n8WNEY0blvMeAQN3y9hOic2rYhI518kmB8/
+ 6o+yLbg5DePcc1dAlvOLRQqMM6u71q4580tPhljaI3D36ug+IQ1N+9LyHSoBdPPRAMx4
+ 7eLivnuKsU8yTE8rlwfTRelcr2jHFhdMMYjya438crO9EK9kwCazjuZKQL5JBsLi5NBb
+ j4czqRWjmmPPHiURIBgbH8PHBiO0AFFgRIvj+0E7hybqq18ZMlLmiSWH1ScENpvl6Fhh
+ 31ng==
+X-Gm-Message-State: APjAAAWGuvBM0mQSU9DOr6Z42SWSSVbihv7QWSEgRMfOFwRbO0OHVRoC
+ P31vW/irfohFgVahOWUjIlrhNw==
+X-Google-Smtp-Source: APXvYqyeM5LvRvVxTEQ8tVA4GnMVkdsL650S6irQ2mz0DzREgjKLrfiwAVj0tKHMvYligiNiFkETlQ==
+X-Received: by 2002:a02:9143:: with SMTP id b3mr2339682jag.12.1560866459394;
+ Tue, 18 Jun 2019 07:00:59 -0700 (PDT)
+Received: from [172.22.22.26] (c-71-195-29-92.hsd1.mn.comcast.net.
+ [71.195.29.92])
+ by smtp.googlemail.com with ESMTPSA id x22sm14207341iob.84.2019.06.18.07.00.57
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Tue, 18 Jun 2019 07:00:58 -0700 (PDT)
+Subject: Re: [PATCH v2 00/17] net: introduce Qualcomm IPA driver
+To: Johannes Berg <johannes@sipsolutions.net>, Arnd Bergmann <arnd@arndb.de>
+References: <380a6185-7ad1-6be0-060b-e6e5d4126917@linaro.org>
+ <a94676381a5ca662c848f7a725562f721c43ce76.camel@sipsolutions.net>
+ <CAK8P3a0kV-i7BJJ2X6C=5n65rSGfo8fUiC4J_G-+M8EctYKbkg@mail.gmail.com>
+ <583907409fad854bd3c18be688ec2724ad7a60e9.camel@sipsolutions.net>
+From: Alex Elder <elder@linaro.org>
+Message-ID: <31c2c94c-c6d3-595b-c138-faa54d0bfc00@linaro.org>
+Date: Tue, 18 Jun 2019 09:00:57 -0500
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.7.0
 MIME-Version: 1.0
-References: <20190615100932.27101-1-martin.blumenstingl@googlemail.com>
- <20190615100932.27101-4-martin.blumenstingl@googlemail.com>
-In-Reply-To: <20190615100932.27101-4-martin.blumenstingl@googlemail.com>
-From: Linus Walleij <linus.walleij@linaro.org>
-Date: Tue, 18 Jun 2019 16:00:39 +0200
-Message-ID: <CACRpkdZ8vY918mzaJyX38gENJtoA_KJq3RLGxVObdQjLKXULSQ@mail.gmail.com>
-Subject: Re: [PATCH net-next v1 3/5] net: stmmac: drop the reset GPIO from
- struct stmmac_mdio_bus_data
-To: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
+In-Reply-To: <583907409fad854bd3c18be688ec2724ad7a60e9.camel@sipsolutions.net>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190618_070053_276323_A71FCB72 
-X-CRM114-Status: UNSURE (   8.13  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190618_070100_914992_DDF3E2A6 
+X-CRM114-Status: GOOD (  19.14  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:144 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:d41 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -93,34 +103,80 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Andrew Lunn <andrew@lunn.ch>, Alexandre TORGUE <alexandre.torgue@st.com>,
- netdev <netdev@vger.kernel.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Jose Abreu <joabreu@synopsys.com>, Giuseppe CAVALLARO <peppe.cavallaro@st.com>,
- "David S. Miller" <davem@davemloft.net>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: DTML <devicetree@vger.kernel.org>, syadagir@codeaurora.org,
+ Eric Caruso <ejcaruso@google.com>, Dan Williams <dcbw@redhat.com>,
+ linux-arm-msm@vger.kernel.org, abhishek.esse@gmail.com,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>, evgreen@chromium.org,
+ Bjorn Andersson <bjorn.andersson@linaro.org>,
+ Ilias Apalodimas <ilias.apalodimas@linaro.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Networking <netdev@vger.kernel.org>,
+ Subash Abhinov Kasiviswanathan <subashab@codeaurora.org>,
+ linux-soc@vger.kernel.org, David Miller <davem@davemloft.net>,
+ cpratapa@codeaurora.org, Ben Chan <benchan@google.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sat, Jun 15, 2019 at 12:09 PM Martin Blumenstingl
-<martin.blumenstingl@googlemail.com> wrote:
+On 6/17/19 7:14 AM, Johannes Berg wrote:
+> On Tue, 2019-06-11 at 13:56 +0200, Arnd Bergmann wrote:
+> 
+> [...]
+> 
+> Looking at the flags again,
 
-> No platform uses the "reset_gpio" field from stmmac_mdio_bus_data
-> anymore. Drop it so we don't get any new consumers either.
->
-> Plain GPIO numbers are being deprecated in favor of GPIO descriptors. If
-> needed any new non-OF platform can add a GPIO descriptor lookup table.
-> devm_gpiod_get_optional() will find the GPIO in that case.
->
-> Suggested-by: Linus Walleij <linus.walleij@linaro.org>
-> Signed-off-by: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
+I sort of talked about this in my message a little earlier, but I
+now see I was partially mistaken.  I thought these flags were
+used in messages but they're real device ("port") configuration
+flags.
 
-Reviewed-by: Linus Walleij <linus.walleij@linaro.org>
+>> #define RMNET_FLAGS_INGRESS_DEAGGREGATION         (1U << 0)
+> 
+> This one I'm not sure I understand - seems weird to have such a
+> fundamental thing as a *configuration* on the channel.
 
-Yours,
-Linus Walleij
+Let me use the term "connection" to refer to the single pathway
+that carries data between the AP and modem.  And "channel" to
+refer to one of several multiplexed data streams carried over
+that connection.  (If there's better terminology, please say
+so; I just want to be clear in what I'm talking about.)
+
+Deaggregation is a connection property, not a channel property.
+And it looks like that's exactly how it's used in the rmnet
+driver.  The hardware is capable of aggregating QMAP packets
+arriving on a connection into a single buffer, so this provides
+a way of requesting it do that.
+
+>> #define RMNET_FLAGS_INGRESS_MAP_COMMANDS          (1U << 1)
+> 
+> Similar here? If you have flow control you probably want to use it?
+
+I agree with that, though perhaps there are cases where it
+is pointless, or can't be supported, so one might want to
+simply *not* implement/advertise the feature.  I don't know.
+
+>> #define RMNET_FLAGS_INGRESS_MAP_CKSUMV4           (1U << 2)
+> 
+> This again looks like a hardware specific feature (ipv4 checksum)? Not
+> sure why this is set by userspace.
+> 
+>> #define RMNET_FLAGS_EGRESS_MAP_CKSUMV4            (1U << 3)
+> 
+> This could be set with ethtool instead, I suppose.
+
+As I said in my earlier message, I think I concur about this.
+I think the IPA driver could easily hide the checksum offload
+capability, and if it can truly be controlled as needed
+using existing methods there's no need to encumber the
+WWAN framework with it.
+
+					-Alex
+
+
+> johannes
+> 
+
 
 _______________________________________________
 linux-arm-kernel mailing list
