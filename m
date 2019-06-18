@@ -2,56 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D92454A3CF
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 18 Jun 2019 16:23:07 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 95A6F4A3DB
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 18 Jun 2019 16:25:02 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=rTG467LBtt6v71HmEu0PxAuMc1njRrDTsaWazepvw+Q=; b=jr+hogE9hWVPwk
-	reSbBuaCIwq7WpIlEUAUcAjy9Noi+sy4p3U5vYRVYp40khb1mmKrKqIwCxSWr/S6NYrIrWNuouHMM
-	J7knEt7b/lICBo0LfG8oCDwBcRrjV6k944J6Iucyq+ufv0WXN9qQurZvBgEYVeb/HSUbDXMZnxm6T
-	g35OtUoHjjt6CiMEVQO0b9AF4oKE+eSRtYplBUFSv7UVO4yUhScfabM98m83UQWPgvE7Elr3Emhii
-	xOw/Uihc6dsyi2R53TqSV75/N+iygaJLjdA/PIa4YJvL8szFvK9E84V52BXkvG60s/1OqkvbcRmBu
-	aYOunYEOeQOxNFT4DUGw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Q5EKZYPhCkndJXJNgP028btAnWznKqU2eqadWwsrpUU=; b=qHRttUwdb9GxTt
+	jSd/3/g2NPxQ7SPeuY1KlWRfsbZ8pnMPObcnBIbi3rUo9URSV2OLyThqTmFi591sLDM+/82oUbB0r
+	ZoSalmzaAqq4HAftTUd98mmr7JVKRuyEC+lJISbtarJEqomsfm/JBlyaWziPYpmJiGL3JT9FeN1L8
+	/2GTHOOe4vWeEqInMEN7lkj+YVbawr/TpOs/M76vY0FFIzxDs3J6RSM2LL/ekV2P2t8DAaNceRKb+
+	m8J+Iu+XscJpFzx1g7nfj2vEsf1b0VedDvgQCnCRD5hcIMZMJLlTQjxXY9kNwpuzuVwFcJcoddONs
+	GQSfv5xyFyinQacM+TUw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hdF0s-0004Z9-1E; Tue, 18 Jun 2019 14:23:06 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hdF0e-0004Ws-KH
- for linux-arm-kernel@lists.infradead.org; Tue, 18 Jun 2019 14:22:54 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id EC3BD2B;
- Tue, 18 Jun 2019 07:22:49 -0700 (PDT)
-Received: from [10.1.196.129] (ostrya.cambridge.arm.com [10.1.196.129])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id AC35F3F718;
- Tue, 18 Jun 2019 07:22:48 -0700 (PDT)
-Subject: Re: [PATCH 1/8] iommu: Add I/O ASID allocator
-To: Jacob Pan <jacob.jun.pan@linux.intel.com>
-References: <20190610184714.6786-1-jean-philippe.brucker@arm.com>
- <20190610184714.6786-2-jean-philippe.brucker@arm.com>
- <20190611103625.00001399@huawei.com>
- <62d1f310-0cba-4d55-0f16-68bba3c64927@arm.com>
- <20190611111333.425ce809@jacob-builder>
-From: Jean-Philippe Brucker <jean-philippe.brucker@arm.com>
-Message-ID: <13e19d8c-8918-a3bb-f398-2ac41c71d307@arm.com>
-Date: Tue, 18 Jun 2019 15:22:20 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.7.0
+	id 1hdF2i-0005CV-6E; Tue, 18 Jun 2019 14:25:00 +0000
+Received: from relay1-d.mail.gandi.net ([217.70.183.193])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hdF2V-0005Bp-Hi
+ for linux-arm-kernel@lists.infradead.org; Tue, 18 Jun 2019 14:24:49 +0000
+X-Originating-IP: 90.88.23.150
+Received: from xps13 (aaubervilliers-681-1-81-150.w90-88.abo.wanadoo.fr
+ [90.88.23.150]) (Authenticated sender: miquel.raynal@bootlin.com)
+ by relay1-d.mail.gandi.net (Postfix) with ESMTPSA id 633AC24000E;
+ Tue, 18 Jun 2019 14:24:29 +0000 (UTC)
+Date: Tue, 18 Jun 2019 16:24:28 +0200
+From: Miquel Raynal <miquel.raynal@bootlin.com>
+To: "Timothy Krantz" <tkrantz@stahurabrenner.com>
+Subject: Re: espressobin device tree with kernel 5.1 RC
+Message-ID: <20190618162428.0417f247@xps13>
+In-Reply-To: <!&!AAAAAAAAAAAuAAAAAAAAAOBWTR25SONAuESb5loyl/sBAMO2jhD3dRHOtM0AqgC7tuYAAAAAAA4AABAAAADKxydx2LOeRKSPqV4VA77dAQAAAAA=@stahurabrenner.com>
+References: <!&!AAAAAAAAAAAuAAAAAAAAAOBWTR25SONAuESb5loyl/sBAMO2jhD3dRHOtM0AqgC7tuYAAAAAAA4AABAAAABB6J1kxOR7T73eMrM92Eq+AQAAAAA=@stahurabrenner.com>
+ <20190429095727.48de0b7c@xps13>
+ <!&!AAAAAAAAAAAuAAAAAAAAAOBWTR25SONAuESb5loyl/sBAMO2jhD3dRHOtM0AqgC7tuYAAAAAAA4AABAAAAABdzCVMdZ+R6253dvJGHcXAQAAAAA=@stahurabrenner.com>
+ <20190617113841.60032387@xps13> <20190617114016.10fb9e03@xps13>
+ <!&!AAAAAAAAAAAuAAAAAAAAAOBWTR25SONAuESb5loyl/sBAMO2jhD3dRHOtM0AqgC7tuYAAAAAAA4AABAAAADly4/rI9w9RYcxQAoCt9xgAQAAAAA=@stahurabrenner.com>
+ <20190618095812.48a2746b@xps13>
+ <!&!AAAAAAAAAAAuAAAAAAAAAOBWTR25SONAuESb5loyl/sBAMO2jhD3dRHOtM0AqgC7tuYAAAAAAA4AABAAAADKxydx2LOeRKSPqV4VA77dAQAAAAA=@stahurabrenner.com>
+Organization: Bootlin
+X-Mailer: Claws Mail 3.17.1 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
 MIME-Version: 1.0
-In-Reply-To: <20190611111333.425ce809@jacob-builder>
-Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190618_072252_717393_A33E15B2 
-X-CRM114-Status: GOOD (  19.41  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190618_072447_896689_CC86582B 
+X-CRM114-Status: GOOD (  16.97  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [217.70.183.193 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -65,76 +67,88 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <Mark.Rutland@arm.com>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- Will Deacon <Will.Deacon@arm.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "iommu@lists.linux-foundation.org" <iommu@lists.linux-foundation.org>,
- "robh+dt@kernel.org" <robh+dt@kernel.org>,
- Jonathan Cameron <jonathan.cameron@huawei.com>,
- Robin Murphy <Robin.Murphy@arm.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 11/06/2019 19:13, Jacob Pan wrote:
->>>> +/**
->>>> + * ioasid_find - Find IOASID data
->>>> + * @set: the IOASID set
->>>> + * @ioasid: the IOASID to find
->>>> + * @getter: function to call on the found object
->>>> + *
->>>> + * The optional getter function allows to take a reference to the
->>>> found object
->>>> + * under the rcu lock. The function can also check if the object
->>>> is still valid:
->>>> + * if @getter returns false, then the object is invalid and NULL
->>>> is returned.
->>>> + *
->>>> + * If the IOASID has been allocated for this set, return the
->>>> private pointer
->>>> + * passed to ioasid_alloc. Private data can be NULL if not set.
->>>> Return an error
->>>> + * if the IOASID is not found or does not belong to the set.  
->>>
->>> Perhaps should make it clear that @set can be null.  
->>
->> Indeed. But I'm not sure allowing @set to be NULL is such a good idea,
->> because the data type associated to an ioasid depends on its set. For
->> example SVA will put an mm_struct in there, and auxiliary domains use
->> some structure private to the IOMMU domain.
->>
-> I am not sure we need to count on @set to decipher data type. Whoever
-> does the allocation and owns the IOASID should knows its own data type.
-> My thought was that @set is only used to group IDs, permission check
-> etc.
-> 
->> Jacob, could me make @set mandatory, or do you see a use for a global
->> search? If @set is NULL, then callers can check if the return pointer
->> is NULL, but will run into trouble if they try to dereference it.
->>
-> A global search use case can be for PRQ. IOMMU driver gets a IOASID
-> (first interrupt then retrieve from a queue), it has no idea which
-> @set it belongs to. But the data types are the same for all IOASIDs
-> used by the IOMMU.
-
-They aren't when we use a generic SVA handler. Following a call to
-iommu_sva_bind_device(), iommu-sva.c allocates an IOASID and store an
-mm_struct. If auxiliary domains are also enabled for the device,
-following a call to iommu_aux_attach_device() the IOMMU driver allocates
-an IOASID and stores some private object.
-
-Now for example the IOMMU driver receives a PPR and calls ioasid_find()
-with @set = NULL. ioasid_find() may return either an mm_struct or a
-private object, and the driver cannot know which it is so the returned
-value is unusable.
-
-Thanks,
-Jean
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+SGkgVGltb3RoeSwKCj4gPiBZb3Ugc2hvdWxkIGFkZCB0cmFjZXMgd2hlcmUgdGhlc2VzIHByaW50
+cyBjb21lIGZyb20gYW5kIGZpbmQgd2hhdCBpcwo+ID4gbWlzc2luZy4KPiA+ICAgCj4gPiA+IElz
+IHdoYXQgSSBnZXQgd2l0aCBhIGtlcm5lbCBjb25maWd1cmVkIHdpdGggeW91ciAuY29uZmlnLgo+
+ID4gPgo+ID4gPiBJIHN1c3BlY3QgdGhlcmUgaXMgc29tZSBtYWdpYyBpbgo+ID4gPgo+ID4gPiBD
+T05GSUdfSU5JVFJBTUZTX1NPVVJDRT0iL2hvbWUvbXJheW5hbC9idWlsZHJvb3Qvb3V0cHV0LSAg
+Cj4gPiBhcm0vaW1hZ2VzL3Jvb3Rmcy5jcGlvIiAgCj4gPiA+Cj4gPiA+IFdoaWNoIEkgZG8gbm90
+IGhhdmUgdGhhdCBtYXkgYmUgbWFraW5nIGEgZGlmZmVyZW5jZT8gKHRoYXQgaXMgdGhlIG9ubHkg
+IAo+ID4gZGlmZmVyZW5jZSBpbiB3aGF0IEkgY29tcGlsZWQgYW5kIHlvdSBzZW50IHRvIG1lKS4K
+PiA+IAo+ID4gTm90IGF0IGFsbCwgdGhpcyBpcyBqdXN0IG15IHJvb3RmcyBhcyBhbiBpbml0cmFt
+ZnMsIG5vdCByZWxhdGVkIHRvIHRoZSBjb250ZW50IG9mCj4gPiB0aGUga2VybmVsIGF0IGFsbC4K
+PiA+IAo+ID4gCj4gPiBHb29kIGx1Y2shCj4gPiBNaXF1w6hsICAKPiAKPiBJIHB1dCBpbiB0aGlz
+IChzaW1wbGlzdGljIGFuZCB1Z2x5KSB0cmFjaW5nOgo+IHN0YXRpYyBpbnQgYWhjaV9tdmVidV9w
+cm9iZShzdHJ1Y3QgcGxhdGZvcm1fZGV2aWNlICpwZGV2KQo+IHsKPiAgICAgICAgIGNvbnN0IHN0
+cnVjdCBhaGNpX212ZWJ1X3BsYXRfZGF0YSAqcGRhdGE7Cj4gICAgICAgICBzdHJ1Y3QgYWhjaV9o
+b3N0X3ByaXYgKmhwcml2Owo+ICAgICAgICAgaW50IHJjOwo+IAo+IHByaW50ayhLRVJOX0lORk8g
+ImluIG12ZWJ1IHByb2JlXG4iKTsKPiAgICAgICAgIHBkYXRhID0gb2ZfZGV2aWNlX2dldF9tYXRj
+aF9kYXRhKCZwZGV2LT5kZXYpOwo+IHByaW50ayhLRVJOX0lORk8gImNoZWNrIGRldmljZSBtYXRj
+aFxuIik7Cj4gICAgICAgICBpZiAoIXBkYXRhKQo+ICAgICAgICAgICAgICAgICByZXR1cm4gLUVJ
+TlZBTDsKPiBwcmludGsoS0VSTl9JTkZPICJkZXZpY2UgZGlkIG1hdGNoXG4iKTsKPiAKPiAgICAg
+ICAgIGhwcml2ID0gYWhjaV9wbGF0Zm9ybV9nZXRfcmVzb3VyY2VzKHBkZXYsIDApOwo+IHByaW50
+ayhLRVJOX0lORk8gImNoZWNrIHJlc291cmNlc1xuIik7Cj4gICAgICAgICBpZiAoSVNfRVJSKGhw
+cml2KSkKPiAgICAgICAgICAgICAgICAgcmV0dXJuIFBUUl9FUlIoaHByaXYpOwo+IAo+IHByaW50
+ayhLRVJOX0lORk8gInJlc291cmNlcyBva1xuIik7Cj4gICAgICAgICBocHJpdi0+ZmxhZ3MgfD0g
+cGRhdGEtPmZsYWdzOwo+ICAgICAgICAgaHByaXYtPnBsYXRfZGF0YSA9ICh2b2lkICopcGRhdGE7
+Cj4gCj4gICAgICAgICByYyA9IGFoY2lfcGxhdGZvcm1fZW5hYmxlX3Jlc291cmNlcyhocHJpdik7
+Cj4gcHJpbnRrKEtFUk5fSU5GTyAiZW5hYmxlIHJlc291cmNlc1xuIik7Cj4gICAgICAgICBpZiAo
+cmMpCj4gICAgICAgICAgICAgICAgIHJldHVybiByYzsKPiAKPiBwcmludGsoS0VSTl9JTkZPICJw
+YXN0IGVuYWJsZSByZXNvdXJjZXNcbiIpOwo+ICAgICAgICAgaHByaXYtPnN0b3BfZW5naW5lID0g
+YWhjaV9tdmVidV9zdG9wX2VuZ2luZTsKPiAKPiAgICAgICAgIHJjID0gcGRhdGEtPnBsYXRfY29u
+ZmlnKGhwcml2KTsKPiBwcmludGsoS0VSTl9JTkZPICJkaXNlbmFibGUgcmVzb3VyY2VzXG4iKTsK
+PiAgICAgICAgIGlmIChyYykKPiAgICAgICAgICAgICAgICAgZ290byBkaXNhYmxlX3Jlc291cmNl
+czsKPiBwcmludGsoS0VSTl9JTkZPICJwYXN0IGRpc2FibGUgcmVzb3VyY2VzXG4iKTsKPiAKPiBw
+cmludGsoS0VSTl9JTkZPICJpbml0IGhvc3RcbiIpOwo+ICAgICAgICAgcmMgPSBhaGNpX3BsYXRm
+b3JtX2luaXRfaG9zdChwZGV2LCBocHJpdiwgJmFoY2lfbXZlYnVfcG9ydF9pbmZvLAo+ICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAmYWhjaV9wbGF0Zm9ybV9zaHQpOwo+IHBy
+aW50ayhLRVJOX0lORk8gInBhc3QgaW5pdCBob3N0XG4iKTsKPiAgICAgICAgIGlmIChyYykKPiAg
+ICAgICAgICAgICAgICAgZ290byBkaXNhYmxlX3Jlc291cmNlczsKPiBwcmludGsoS0VSTl9JTkZP
+ICJwYXN0IHJjIGNoZWNrXG4iKTsKPiAKPiAgICAgICAgIHJldHVybiAwOwo+IAo+IGRpc2FibGVf
+cmVzb3VyY2VzOgo+IHByaW50ayhLRVJOX0lORk8gImluIGRpc2FibGUgcmVzb3VyY2VzXG4iKTsK
+PiAgICAgICAgIGFoY2lfcGxhdGZvcm1fZGlzYWJsZV9yZXNvdXJjZXMoaHByaXYpOwo+ICAgICAg
+ICAgcmV0dXJuIHJjOwo+IH0KPiAKPiAKPiBXaXRoIHRoZSA1LjItcmM1IGRldmljZSB0cmVlIEkg
+Z2V0IDoKPiAKPiBbc25pcF0KPiBbICAgIDQuMjA0MzY2XSBjYWNoZWluZm86IFVuYWJsZSB0byBk
+ZXRlY3QgY2FjaGUgaGllcmFyY2h5IGZvciBDUFUgMAo+IFsgICAgNC4yMTA4NzZdIGluIG12ZWJ1
+IHByb2JlCj4gWyAgICA0LjIxMzYwOF0gY2hlY2sgZGV2aWNlIG1hdGNoCj4gWyAgICA0LjIxNjcx
+MF0gZGV2aWNlIGRpZCBtYXRjaAo+IFsgICAgNC4yMTk3NjJdIGNoZWNrIHJlc291cmNlcwo+IFsg
+ICAgNC4yMjI1NTVdIHJlc291cmNlcyBvawo+IFsgICAgNC4yMjUxNzRdIHBoeSBwaHktZDAwMTgz
+MDAucGh5LjI6IHBoeSBwb3dlcm9uIGZhaWxlZCAtLT4gLTEKPiBbICAgIDQuMjMxMDY5XSBlbmFi
+bGUgcmVzb3VyY2VzCj4gWyAgICA0LjIzNDA1NF0gYWhjaS1tdmVidTogcHJvYmUgb2YgZDAwZTAw
+MDAuc2F0YSBmYWlsZWQgd2l0aCBlcnJvciAtMQo+IFsgICAgNC4yNDA4MDBdIEV0aGVybmV0IENo
+YW5uZWwgQm9uZGluZyBEcml2ZXI6IHYzLjcuMSAoQXByaWwgMjcsIDIwMTEpCj4gWyAgICA0LjI0
+ODczNl0gTUFDc2VjIElFRUUgODAyLjFBRQo+IFsgICAgNC4yNTIzNDRdIGxpYnBoeTogRml4ZWQg
+TURJTyBCdXM6IHByb2JlZAo+IFtzbmlwXQo+IAo+IFdpdGggZXhhY3RseSB0aGUgc2FtZSBrZXJu
+ZWwgYnV0IHRoZSA1LjAgZGV2aWNlIHRyZWUgSSBnZXQgOgo+IAo+IFtzbmlwXQo+IFsgICAgNC4y
+MDM2OTJdIGNhY2hlaW5mbzogVW5hYmxlIHRvIGRldGVjdCBjYWNoZSBoaWVyYXJjaHkgZm9yIENQ
+VSAwCj4gWyAgICA0LjIxMDE5Ml0gaW4gbXZlYnUgcHJvYmUKPiBbICAgIDQuMjEyOTI0XSBjaGVj
+ayBkZXZpY2UgbWF0Y2gKPiBbICAgIDQuMjE2MDI2XSBkZXZpY2UgZGlkIG1hdGNoCj4gWyAgICA0
+LjIxOTA1OF0gY2hlY2sgcmVzb3VyY2VzCj4gWyAgICA0LjIyMTg1OF0gcmVzb3VyY2VzIG9rCj4g
+WyAgICA0LjIyNDQ1OF0gZW5hYmxlIHJlc291cmNlcwo+IFsgICAgNC4yMjc0MDVdIHBhc3QgZW5h
+YmxlIHJlc291cmNlcwo+IFsgICAgNC4yMzA4MTddIGRpc2VuYWJsZSByZXNvdXJjZXMKPiBbICAg
+IDQuMjM0MDQyXSBwYXN0IGRpc2FibGUgcmVzb3VyY2VzCj4gWyAgICA0LjIzNzUzNl0gaW5pdCBo
+b3N0Cj4gWyAgICA0LjIzOTkzMV0gYWhjaS1tdmVidSBkMDBlMDAwMC5zYXRhOiBBSENJIDAwMDEu
+MDMwMCAzMiBzbG90cyAxIHBvcnRzIDYgR2JwcyAweDEgaW1wbCBwbGF0Zm9ybSBtb2RlCj4gWyAg
+ICA0LjI0OTE5Nl0gYWhjaS1tdmVidSBkMDBlMDAwMC5zYXRhOiBmbGFnczogbmNxIHNudGYgbGVk
+IG9ubHkgcG1wIGZicyBwaW8gc2x1bSBwYXJ0IHN4cwo+IFsgICAgNC4yNTg2NDddIHNjc2kgaG9z
+dDA6IGFoY2ktbXZlYnUKPiBbICAgIDQuMjYyNDkxXSBhdGExOiBTQVRBIG1heCBVRE1BLzEzMyBt
+bWlvIFttZW0gMHhkMDBlMDAwMC0weGQwMGUxZmZmXSBwb3J0IDB4MTAwIGlycSAyMQo+IFsgICAg
+NC4yNzA2MDldIHBhc3QgaW5pdCBob3N0Cj4gWyAgICA0LjI3MzM1M10gcGFzdCByYyBjaGVjawo+
+IFsgICAgNC4yNzY0NTVdIEV0aGVybmV0IENoYW5uZWwgQm9uZGluZyBEcml2ZXI6IHYzLjcuMSAo
+QXByaWwgMjcsIDIwMTEpCj4gWyAgICA0LjI4NDQwOF0gTUFDc2VjIElFRUUgODAyLjFBRQo+IFsg
+ICAgNC4yODc5NjVdIGxpYnBoeTogRml4ZWQgTURJTyBCdXM6IHByb2JlZAo+IFtzbmlwXQo+IAo+
+IFVuZm9ydHVuYXRlbHkgdGhhdCBkb2VzIG5vdCB0ZWxsIG1lIG11Y2guICBEb2VzIGl0IHNheSBh
+bnl0aGluZyB0byB5b3U/Cj4gSSBtZWFuIEkgZ3Vlc3MgICAgICAgIHJjID0gYWhjaV9wbGF0Zm9y
+bV9lbmFibGVfcmVzb3VyY2VzKGhwcml2KTsgSXMgZmFpbGluZywgc2hvdWxkIEkgcHV0IHNvbWUg
+dHJhY2VzIGluIHRoYXQ/CgpZZXMsIGluIHBhcnRpY3VsYXIgYXJvdW5kIHRoZSBQSFkgaW5pdGlh
+bGl6YXRpb24sIHVudGlsIHlvdSBmb3VuZCB3aGVyZQppdCBmYWlscyBleGFjdGx5LgoKClRoYW5r
+cywKTWlxdcOobAoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5p
+bmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8v
+bGludXgtYXJtLWtlcm5lbAo=
