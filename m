@@ -2,50 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 38D624A3C6
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 18 Jun 2019 16:21:52 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D92454A3CF
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 18 Jun 2019 16:23:07 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=Mf0SOBfeFEePV73hY+CjIyq0RlCYmetyiIzf9+gePqw=; b=Zq6856jpm47YycI/VL23rxyXK
-	1WxkD2cHDsk8VUqQXg3h9RGPYb4crXXEj4WgF4rs/Ac4pVW5pqev3Dkut28kK4Kj5G+U+Wgp+qTMT
-	EcX2cOG3m0BfDU2jIInRuZfId3BcoBulwfNNMW6klNmZF3zW/3E4cxMykuE0GVUYXJQrQprqoYSyJ
-	gJcxg74KZUEW3UjoPuS68qeR32UI1OKCRv94z6FxZ3NUqNR0d4XR014iGHkYTlDFcGC35Da5XiAvC
-	Oe6ULUz79mCoGAkomMLYbhgMpMKvH5bE+FJXJaU+2/UpODjzDyRVkro1ZsdNmSUW8ImW21fiwJuyE
-	V5wiq40ow==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=rTG467LBtt6v71HmEu0PxAuMc1njRrDTsaWazepvw+Q=; b=jr+hogE9hWVPwk
+	reSbBuaCIwq7WpIlEUAUcAjy9Noi+sy4p3U5vYRVYp40khb1mmKrKqIwCxSWr/S6NYrIrWNuouHMM
+	J7knEt7b/lICBo0LfG8oCDwBcRrjV6k944J6Iucyq+ufv0WXN9qQurZvBgEYVeb/HSUbDXMZnxm6T
+	g35OtUoHjjt6CiMEVQO0b9AF4oKE+eSRtYplBUFSv7UVO4yUhScfabM98m83UQWPgvE7Elr3Emhii
+	xOw/Uihc6dsyi2R53TqSV75/N+iygaJLjdA/PIa4YJvL8szFvK9E84V52BXkvG60s/1OqkvbcRmBu
+	aYOunYEOeQOxNFT4DUGw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hdEzb-0003zp-EC; Tue, 18 Jun 2019 14:21:47 +0000
+	id 1hdF0s-0004Z9-1E; Tue, 18 Jun 2019 14:23:06 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hdEzO-0003oF-EG
- for linux-arm-kernel@lists.infradead.org; Tue, 18 Jun 2019 14:21:35 +0000
+ id 1hdF0e-0004Ws-KH
+ for linux-arm-kernel@lists.infradead.org; Tue, 18 Jun 2019 14:22:54 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 39AF22B;
- Tue, 18 Jun 2019 07:21:29 -0700 (PDT)
-Received: from [192.168.122.164] (U201426.austin.arm.com [10.118.28.29])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 281FC3F718;
- Tue, 18 Jun 2019 07:21:29 -0700 (PDT)
-Subject: Re: [PATCH v2 1/2] ACPI/PPTT: Add support for ACPI 6.3 thread flag
-To: Valentin Schneider <valentin.schneider@arm.com>,
- linux-arm-kernel@lists.infradead.org
-References: <20190614223158.49575-1-jeremy.linton@arm.com>
- <20190614223158.49575-2-jeremy.linton@arm.com>
- <667f95c0-5aa9-f460-a49a-e6dfefc027d8@arm.com>
-From: Jeremy Linton <jeremy.linton@arm.com>
-Message-ID: <2d1b547f-f9ee-391c-c4f3-0232a08a86bc@arm.com>
-Date: Tue, 18 Jun 2019 09:21:21 -0500
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id EC3BD2B;
+ Tue, 18 Jun 2019 07:22:49 -0700 (PDT)
+Received: from [10.1.196.129] (ostrya.cambridge.arm.com [10.1.196.129])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id AC35F3F718;
+ Tue, 18 Jun 2019 07:22:48 -0700 (PDT)
+Subject: Re: [PATCH 1/8] iommu: Add I/O ASID allocator
+To: Jacob Pan <jacob.jun.pan@linux.intel.com>
+References: <20190610184714.6786-1-jean-philippe.brucker@arm.com>
+ <20190610184714.6786-2-jean-philippe.brucker@arm.com>
+ <20190611103625.00001399@huawei.com>
+ <62d1f310-0cba-4d55-0f16-68bba3c64927@arm.com>
+ <20190611111333.425ce809@jacob-builder>
+From: Jean-Philippe Brucker <jean-philippe.brucker@arm.com>
+Message-ID: <13e19d8c-8918-a3bb-f398-2ac41c71d307@arm.com>
+Date: Tue, 18 Jun 2019 15:22:20 +0100
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.6.1
+ Thunderbird/60.7.0
 MIME-Version: 1.0
-In-Reply-To: <667f95c0-5aa9-f460-a49a-e6dfefc027d8@arm.com>
+In-Reply-To: <20190611111333.425ce809@jacob-builder>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190618_072134_524303_C525B973 
-X-CRM114-Status: GOOD (  21.76  )
+X-CRM114-CacheID: sfid-20190618_072252_717393_A33E15B2 
+X-CRM114-Status: GOOD (  19.41  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -64,93 +65,74 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: catalin.marinas@arm.com, will.deacon@arm.com, rjw@rjwysocki.net,
- linux-kernel@vger.kernel.org, linux-acpi@vger.kernel.org, sudeep.holla@arm.com,
- lenb@kernel.org
+Cc: Mark Rutland <Mark.Rutland@arm.com>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ Will Deacon <Will.Deacon@arm.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "iommu@lists.linux-foundation.org" <iommu@lists.linux-foundation.org>,
+ "robh+dt@kernel.org" <robh+dt@kernel.org>,
+ Jonathan Cameron <jonathan.cameron@huawei.com>,
+ Robin Murphy <Robin.Murphy@arm.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 6/17/19 7:34 AM, Valentin Schneider wrote:
-> Hi Jeremy,
+On 11/06/2019 19:13, Jacob Pan wrote:
+>>>> +/**
+>>>> + * ioasid_find - Find IOASID data
+>>>> + * @set: the IOASID set
+>>>> + * @ioasid: the IOASID to find
+>>>> + * @getter: function to call on the found object
+>>>> + *
+>>>> + * The optional getter function allows to take a reference to the
+>>>> found object
+>>>> + * under the rcu lock. The function can also check if the object
+>>>> is still valid:
+>>>> + * if @getter returns false, then the object is invalid and NULL
+>>>> is returned.
+>>>> + *
+>>>> + * If the IOASID has been allocated for this set, return the
+>>>> private pointer
+>>>> + * passed to ioasid_alloc. Private data can be NULL if not set.
+>>>> Return an error
+>>>> + * if the IOASID is not found or does not belong to the set.  
+>>>
+>>> Perhaps should make it clear that @set can be null.  
+>>
+>> Indeed. But I'm not sure allowing @set to be NULL is such a good idea,
+>> because the data type associated to an ioasid depends on its set. For
+>> example SVA will put an mm_struct in there, and auxiliary domains use
+>> some structure private to the IOMMU domain.
+>>
+> I am not sure we need to count on @set to decipher data type. Whoever
+> does the allocation and owns the IOASID should knows its own data type.
+> My thought was that @set is only used to group IDs, permission check
+> etc.
 > 
-> Few nits below.
-> 
-> Also, I had a look at the other PPTT processor flags that were introduced
-> in 6.3, and the only other one being used is ACPI_LEAF_NODE in
-> acpi_pptt_leaf_node(). However that one already has a handle on the table
-> header, so the check_acpi_cpu_flag() isn't of much help there.
-> 
-> I don't believe the other existing flags will benefit from the helper since
-> they are more about describing the PPTT tree, but I think it doesn't hurt
-> to keep it around for potential future flags.
+>> Jacob, could me make @set mandatory, or do you see a use for a global
+>> search? If @set is NULL, then callers can check if the return pointer
+>> is NULL, but will run into trouble if they try to dereference it.
+>>
+> A global search use case can be for PRQ. IOMMU driver gets a IOASID
+> (first interrupt then retrieve from a queue), it has no idea which
+> @set it belongs to. But the data types are the same for all IOASIDs
+> used by the IOMMU.
 
-That was the thought process.
+They aren't when we use a generic SVA handler. Following a call to
+iommu_sva_bind_device(), iommu-sva.c allocates an IOASID and store an
+mm_struct. If auxiliary domains are also enabled for the device,
+following a call to iommu_aux_attach_device() the IOMMU driver allocates
+an IOASID and stores some private object.
 
-> 
-> On 14/06/2019 23:31, Jeremy Linton wrote:
-> [...]
->> @@ -517,6 +517,43 @@ static int find_acpi_cpu_topology_tag(unsigned int cpu, int level, int flag)
->>   	return retval;
->>   }
->>   
->> +/**
->> + * check_acpi_cpu_flag() - Determine if CPU node has a flag set
->> + * @cpu: Kernel logical CPU number
->> + * @rev: The PPTT revision defining the flag
->> + * @flag: The flag itself
->> + *
->> + * Check the node representing a CPU for a given flag.
->> + *
->> + * Return: -ENOENT if the PPTT doesn't exist, the CPU cannot be found or
->> + *	   the table revision isn't new enough.
->> + * Otherwise returns flag value
->> + */
-> 
-> Nit: strictly speaking we're not returning the flag value but its mask
-> applied to the flags field. I don't think anyone will care about getting
-> the actual flag value, but it should be made obvious in the doc:
+Now for example the IOMMU driver receives a PPR and calls ioasid_find()
+with @set = NULL. ioasid_find() may return either an mm_struct or a
+private object, and the driver cannot know which it is so the returned
+value is unusable.
 
-Or I clarify the code to actually do what the comments says. Maybe that 
-is what John G was also pointing out too?
-
-
-> 
-> -ENOENT if ...
-> 0 if the flag isn't set
->> 0 if it is set.
-> 
-> [...]
->> @@ -581,6 +618,21 @@ int cache_setup_acpi(unsigned int cpu)
->>   	return status;
->>   }
->>   
->> +/**
->> + * acpi_pptt_cpu_is_thread() - Determine if CPU is a thread
->> + * @cpu: Kernel logical CPU number
->> + *
->> + *
-> 
-> Nit: extra newline
-> 
->> + * Return: 1, a thread
->> + *         0, not a thread
->> + *         -ENOENT ,if the PPTT doesn't exist, the CPU cannot be found or
->> + *         the table revision isn't new enough.
->> + */
->> +int acpi_pptt_cpu_is_thread(unsigned int cpu)
->> +{
->> +	return check_acpi_cpu_flag(cpu, 2, ACPI_PPTT_ACPI_PROCESSOR_IS_THREAD);
->> +}
->> +
->>   /**
->>    * find_acpi_cpu_topology() - Determine a unique topology value for a given CPU
->>    * @cpu: Kernel logical CPU number
->> @@ -641,7 +693,6 @@ int find_acpi_cpu_cache_topology(unsigned int cpu, int level)
-> [...]
-> 
-
+Thanks,
+Jean
 
 _______________________________________________
 linux-arm-kernel mailing list
