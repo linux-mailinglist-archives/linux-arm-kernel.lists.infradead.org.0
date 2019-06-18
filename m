@@ -2,53 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 76FD349D9E
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 18 Jun 2019 11:41:50 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C126049DA4
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 18 Jun 2019 11:42:11 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=HgG7g7ySGHxo+3RZgUzz/5KT1kWIWF8e0dYkPCWdjPA=; b=GgHdvEPvZMZUEY
-	bJlM3NtUMCAxZ0pEBQOA58W4K5SDjU+ta9c6/gEk2QA/cmmu1oalTF4fhtHTiYVf5u7zE90Wr8Cz1
-	BzgKu0NUmXyR4/l6NHyn1rjqpAJenNZrgkWXLIbiZSbiAKpqkrPfOAIFqPbja36KTcPVKamF+XhAY
-	ItpNNyKowt5IHlXkhvKNjRVRYJZlCzrQi0chmh3KKYAjR0N9VmXSBtiahSFhcCKRYZN/bzLe9z7TE
-	Aiex03nm/EEyeIZQk2jCOgAU+CFmlntFF3VLM40rUA67EyKkaEQ21XItnmJmT11eqPAuLwHgGEoqS
-	PkN5VdzAS14oO9N8EgKA==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=x7j+PY7c2hXCv/6GfMBvkkFrCq5UxFksiHoowPIcakA=; b=mi/
+	ee4Ok41HaC3QRFFu9xGA21EFjq11Zbr6qgz+fIwxKCh4ssRHToZ+7CB0o/+22wjVbnh4TvcGApEhH
+	YIeBDvTql+iwHL3wov+IkZ4aMuIUt9LqQP1Cycc0hAan1SuhprPkyK918stL0ZlefF8VT38Mg7n7b
+	seITCNSImQ9UMfJslxng54jnor/hvd30b6Aott1Ew7dQ+yHyzIsFsIQOEK3oIQUnsuh9vgnmkyrAr
+	YQctlF+6lgxEffBKA5UZOxe9DDhoIwozEP/1bac3fYlYk/j86nKNRwVsby8YGPPeaPTAgr9EpaZIw
+	CJ2E1nkYUbhkg1C8u6Uh2CfNSwSY0Dw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hdAcd-0001A4-3p; Tue, 18 Jun 2019 09:41:47 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hdAcS-00019D-DJ
- for linux-arm-kernel@lists.infradead.org; Tue, 18 Jun 2019 09:41:37 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 186B0344;
- Tue, 18 Jun 2019 02:41:34 -0700 (PDT)
-Received: from [10.1.197.50] (e120937-lin.cambridge.arm.com [10.1.197.50])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 10AEE3F246;
- Tue, 18 Jun 2019 02:43:18 -0700 (PDT)
-Subject: Re: [PATCH] arm64: smp: fix smp_send_stop() behaviour
-To: Will Deacon <will.deacon@arm.com>
-References: <20190613122146.45459-1-cristian.marussi@arm.com>
- <20190617180913.GN30800@fuggles.cambridge.arm.com>
-From: Cristian Marussi <cristian.marussi@arm.com>
-Message-ID: <aeaeffac-b8de-3c99-0ca9-e1f55ba3e29d@arm.com>
-Date: Tue, 18 Jun 2019 10:41:32 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.7.0
-MIME-Version: 1.0
-In-Reply-To: <20190617180913.GN30800@fuggles.cambridge.arm.com>
-Content-Language: en-US
+	id 1hdAcz-0001RC-PA; Tue, 18 Jun 2019 09:42:09 +0000
+Received: from inva021.nxp.com ([92.121.34.21])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hdAcn-0001PN-Re
+ for linux-arm-kernel@lists.infradead.org; Tue, 18 Jun 2019 09:41:59 +0000
+Received: from inva021.nxp.com (localhost [127.0.0.1])
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 4BFD72003B7;
+ Tue, 18 Jun 2019 11:41:55 +0200 (CEST)
+Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
+ [165.114.16.14])
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 2936C200269;
+ Tue, 18 Jun 2019 11:41:51 +0200 (CEST)
+Received: from localhost.localdomain (mega.ap.freescale.net [10.192.208.232])
+ by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id BEF8A402A0;
+ Tue, 18 Jun 2019 17:41:45 +0800 (SGT)
+From: Anson.Huang@nxp.com
+To: shawnguo@kernel.org, s.hauer@pengutronix.de, kernel@pengutronix.de,
+ festevam@gmail.com, leonard.crestez@nxp.com, abel.vesa@nxp.com,
+ linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
+Subject: [PATCH RESEND V2] soc: imx8: Use existing of_root directly
+Date: Tue, 18 Jun 2019 17:43:38 +0800
+Message-Id: <20190618094338.11183-1-Anson.Huang@nxp.com>
+X-Mailer: git-send-email 2.17.1
+X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190618_024136_546988_BDEE6234 
-X-CRM114-Status: GOOD (  21.07  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190618_024158_032603_433F8778 
+X-CRM114-Status: UNSURE (   7.44  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [92.121.34.21 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -62,96 +66,69 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, catalin.marinas@arm.com, james.morse@arm.com,
- dave.martin@arm.com, linux-arm-kernel@lists.infradead.org
+Cc: Linux-imx@nxp.com
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Will
+From: Anson Huang <Anson.Huang@nxp.com>
 
-Thanks for the review.
+There is common of_root for reference, no need to find it
+from DT again, use of_root directly to make driver simple.
 
-On 17/06/2019 19:09, Will Deacon wrote:
-> [+James M]
-> 
-> On Thu, Jun 13, 2019 at 01:21:46PM +0100, Cristian Marussi wrote:
->> On a 2-CPUs system, when one CPU is already online if the other
->> panics while starting-up, smp_send_stop() will fail to send any
->> STOP message to the other already online core, resulting in a
->> system still responsive and alive at the end of the panic procedure.
->> This patch makes smp_send_stop() account also for the online status
->> of the calling CPU while evaluating how many CPUs are effectively
->> online: this way, an adequate number of STOPs is sent, so enforcing
->> a proper freeze of the system at the end of panic even under the
->> above conditions.
->>
->> Reported-by: Dave Martin <Dave.Martin@arm.com>
->> Signed-off-by: Cristian Marussi <cristian.marussi@arm.com>
->> ---
->>
->> This peculiar panic-procedure behaviour was exposed hitting a BUG()
->> while running a KSFT cpu-hotplug test on a 2-core ARMv8 model.
->> Such trigger-BUG() was fixed by a distinct commit already included
->> in Linux 5.2-rc4 [0]
->>
->> [0] https://lore.kernel.org/linux-arm-kernel/1559576102-12156-1-git-send-email-Dave.Martin@arm.com/
->> ---
->>  arch/arm64/kernel/smp.c | 12 +++++++++---
->>  1 file changed, 9 insertions(+), 3 deletions(-)
->>
->> diff --git a/arch/arm64/kernel/smp.c b/arch/arm64/kernel/smp.c
->> index bb4b3f07761a..c7d604427883 100644
->> --- a/arch/arm64/kernel/smp.c
->> +++ b/arch/arm64/kernel/smp.c
->> @@ -971,8 +971,14 @@ void tick_broadcast(const struct cpumask *mask)
->>  void smp_send_stop(void)
->>  {
->>  	unsigned long timeout;
->> +	unsigned int this_cpu_online = cpu_online(smp_processor_id());
->>  
->> -	if (num_online_cpus() > 1) {
->> +	/*
->> +	 * If this CPU isn't fully online, it will not be counted in
->> +	 * num_online_cpus(): on a 2-CPU system this situation will
->> +	 * result in no message being sent to the other already online CPU.
->> +	 */
->> +	if (num_online_cpus() > this_cpu_online) {
->>  		cpumask_t mask;
->>  
->>  		cpumask_copy(&mask, cpu_online_mask);
->> @@ -985,10 +991,10 @@ void smp_send_stop(void)
->>  
->>  	/* Wait up to one second for other CPUs to stop */
->>  	timeout = USEC_PER_SEC;
->> -	while (num_online_cpus() > 1 && timeout--)
->> +	while (num_online_cpus() > this_cpu_online && timeout--)
->>  		udelay(1);
->>  
->> -	if (num_online_cpus() > 1)
->> +	if (num_online_cpus() > this_cpu_online)
->>  		pr_warning("SMP: failed to stop secondary CPUs %*pbl\n",
->>  			   cpumask_pr_args(cpu_online_mask));
-> 
-> Whilst this looks ok to me, I'm worried about whether or not we have this
-> sort of logic elsewhere. For example, do we need to fix
-> crash_smp_send_stop() (and possibly machine_kexec()) too?
+Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
+---
+ drivers/soc/imx/soc-imx8.c | 9 ++-------
+ 1 file changed, 2 insertions(+), 7 deletions(-)
 
-I think we certainly have such logic in crash_smp_send_stop() too at least,
-maybe it is just less easily exposed given the different use case of the function.
-
-This wanted to be just a fix only against the observed troubled panic, but I
-could extend it to cover similar issues spotted by code analysis, if deemed worth.
-
-Thanks
-
-Cristian
-
-
-> 
-> Will
-> 
+diff --git a/drivers/soc/imx/soc-imx8.c b/drivers/soc/imx/soc-imx8.c
+index ef2406f..34ab993 100644
+--- a/drivers/soc/imx/soc-imx8.c
++++ b/drivers/soc/imx/soc-imx8.c
+@@ -94,7 +94,6 @@ static int __init imx8_soc_init(void)
+ {
+ 	struct soc_device_attribute *soc_dev_attr;
+ 	struct soc_device *soc_dev;
+-	struct device_node *root;
+ 	const struct of_device_id *id;
+ 	u32 soc_rev = 0;
+ 	const struct imx8_soc_data *data;
+@@ -106,12 +105,11 @@ static int __init imx8_soc_init(void)
+ 
+ 	soc_dev_attr->family = "Freescale i.MX";
+ 
+-	root = of_find_node_by_path("/");
+-	ret = of_property_read_string(root, "model", &soc_dev_attr->machine);
++	ret = of_property_read_string(of_root, "model", &soc_dev_attr->machine);
+ 	if (ret)
+ 		goto free_soc;
+ 
+-	id = of_match_node(imx8_soc_match, root);
++	id = of_match_node(imx8_soc_match, of_root);
+ 	if (!id) {
+ 		ret = -ENODEV;
+ 		goto free_soc;
+@@ -136,8 +134,6 @@ static int __init imx8_soc_init(void)
+ 		goto free_rev;
+ 	}
+ 
+-	of_node_put(root);
+-
+ 	return 0;
+ 
+ free_rev:
+@@ -145,7 +141,6 @@ static int __init imx8_soc_init(void)
+ 		kfree(soc_dev_attr->revision);
+ free_soc:
+ 	kfree(soc_dev_attr);
+-	of_node_put(root);
+ 	return ret;
+ }
+ device_initcall(imx8_soc_init);
+-- 
+2.7.4
 
 
 _______________________________________________
