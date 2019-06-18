@@ -2,60 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 366E149CD6
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 18 Jun 2019 11:15:56 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 382A449CE2
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 18 Jun 2019 11:17:43 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=PQ8HYeQqzDE+xbH14WKM/3cKKa/Mc8ZjhlulQPAX7KA=; b=MJceWTlY8UYhh1
-	ftQ1kX284ES4AX3pQ68FhtkmDlKR/HN9Orj3mYA+jI8vS45txTnBeLJGbgN2cPkcuSoR2PdZBLYM+
-	/yt4sQUNilHFeA//HsxpNKd2CI2CV2ey5s8RDm65SYOZ0nQSxdkVm2OcnGkHqgJMyRahm7XDAxkfZ
-	UmT5OAZ/acrJ0JcZX7G/SA99rL8rpGnSOEtvGzzDN8F8h1OSRK4gKNktgPF4s7jpWheozT+WLymAQ
-	RevCfG3eVIK9/IqiG29NnJcLjb5Hk7gBQEk/Ek88qHBWw8fH3lwxhcB9XoKkYzTmjHdPd+SKb4bWX
-	v28RQIWi6a76l4qoghPg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=V9mMVk6UZXvKhyOujO+cQhQv/9PC61PPSmpUgxVfF4U=; b=nHdigWaV2v5Y/g
+	wYQYQzJ1uo1QXzKXDKfacNfaLVWtFPIY3T7DtaZxeWaB3MQ2fdexdQ6bCtxyRsOBruDYNb/IWZpQj
+	C3UtJlrlfkG/gdoFqTgnJh60nopmqx3dxFLAAOSgHBLXgNLGJzPeoW8sufp5ChgagUWE8eAriQZwh
+	YcQ/DQMIznHnPxsNMfjgAXEB0KjsXWTp0RTUrlhGZeM1X/94t0auns02kiQ0voRSJmY0BLrzdD87N
+	CMFr+AX3LCcZo9ebZDtBgW61IGdwiU6trIgl5MDNSoJMUQ20+sQ7nqS5IHwklarnmV1EYmCgreSD2
+	uWD/7fpMwF3g02R/zxlA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hdADY-0006zz-9L; Tue, 18 Jun 2019 09:15:52 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1hdAFI-0007Sw-EZ; Tue, 18 Jun 2019 09:17:40 +0000
+Received: from mail-lf1-x142.google.com ([2a00:1450:4864:20::142])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hdADM-0006zS-Bg
- for linux-arm-kernel@lists.infradead.org; Tue, 18 Jun 2019 09:15:41 +0000
-Received: from dragon (li1322-146.members.linode.com [45.79.223.146])
- (using TLSv1.2 with cipher DHE-RSA-AES128-SHA (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 55CE4206BA;
- Tue, 18 Jun 2019 09:15:31 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1560849340;
- bh=gA2YgqZkn0Wi5r13BQk+BBwL1hF7Y6PBm5f+5w9qDqI=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=pp6ieOAEYOEwunUaoY5CXNUYhXinz+c5vNQxqrWJvgbFUtPzEsYuJwy9EBfV3oHKr
- M6OXEtFbG+jD1EGPrZYfF1JCua1MXePEbLHYapmQVdSNnP8bmY3YzL7Mme5OwCe4no
- wHteUl8FhhCoZnjFrT2v3738Im/QqoU1mk6jZjTk=
-Date: Tue, 18 Jun 2019 17:14:45 +0800
-From: Shawn Guo <shawnguo@kernel.org>
-To: Anson.Huang@nxp.com
-Subject: Re: [PATCH V2 2/2] soc: imx8: Use existing of_root directly
-Message-ID: <20190618091442.GM29881@dragon>
-References: <20190614080748.32997-1-Anson.Huang@nxp.com>
- <20190614080748.32997-2-Anson.Huang@nxp.com>
+ id 1hdAF7-0007Rb-Do
+ for linux-arm-kernel@lists.infradead.org; Tue, 18 Jun 2019 09:17:30 +0000
+Received: by mail-lf1-x142.google.com with SMTP id u10so8659873lfm.12
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 18 Jun 2019 02:17:28 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=rJanYe36yi/CmGKqaCrG1otgHpkv5KX5H3hS1IRh33g=;
+ b=RiJtJdWoPD8zAWLrRuFlXYtFDm2X0N6/21V3ItMvPDDbdX9jIMVD2NDDE50Evpd7c5
+ NP91pnFt1FTIfxm71pG+sw/GLrffxSGkjN5FKLqFCZzFnGDzFCMG19dHtlagjO53JVr/
+ 80CRzxaL1cN4BtODGKh0tEiNCVJAKGD2hlezCr0t0JeIi0cngbJDXFeAYYfVdH4xapR0
+ 1nFQQDgIcTIQ1+QHAOYncbIigzuTHyGJIGn5wK5x+yFT1HBY5GkQFMYtVVGMYtPf8zk4
+ 6jr/zmJsnunS/onnUn73MCCqmxxeoLyyYlMOV/H4O9N6tMze7daUZL+ggyMfqPaVWAIO
+ OQZg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=rJanYe36yi/CmGKqaCrG1otgHpkv5KX5H3hS1IRh33g=;
+ b=LCY5t/ZQNotnG2hQ4GWkWGxBDpwbkfoDb5QOxtrNIsIDo07UL8Mwd2Vq2jO11iTE8q
+ HTAvTclAo9F2+JhnOYffc37oJ14p1oiNcts+apbWDsUNyEGsOsp/O7L2JUDeL0jo7hb/
+ hC66KcD5sX6hEzQpxCBF1TfxXPf9C124zWjcEth3v2RRHZPNIvxSqTt6QZwZ/popHzhM
+ fmGe373oQ3YJ5GIMkFJcWngnCrcXx/PTS5clydZ84KKQm1gYnE5Dk4SmidSQB9NsN6/G
+ ka6YnZe7xjrgH9oIqlhH1C9wHQ3z6cfdeChqBn73MdteD/sxx/ZUZScwi576kFkKVX38
+ Rg4g==
+X-Gm-Message-State: APjAAAVBT+TwsuwJa1+rrpBOfgMbBoymBoAGHFkBVcxOxfwE4YdztYrF
+ 4QeVZ002WRb15Xdv5UWuqCPKhA==
+X-Google-Smtp-Source: APXvYqzZIY8KYRJ7T3S77TJbee+KXLTlqzbOJRplLldZUlUxRX5u3jYNnsAy45fO6GHH7GsxDOvD1w==
+X-Received: by 2002:ac2:482d:: with SMTP id 13mr14129676lft.132.1560849447214; 
+ Tue, 18 Jun 2019 02:17:27 -0700 (PDT)
+Received: from localhost.localdomain ([212.45.67.2])
+ by smtp.googlemail.com with ESMTPSA id b9sm2497444ljj.92.2019.06.18.02.17.25
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-SHA bits=128/128);
+ Tue, 18 Jun 2019 02:17:26 -0700 (PDT)
+From: Georgi Djakov <georgi.djakov@linaro.org>
+To: linux-pm@vger.kernel.org
+Subject: [PATCH v2 0/2] interconnect: Add path tagging support
+Date: Tue, 18 Jun 2019 12:17:22 +0300
+Message-Id: <20190618091724.28232-1-georgi.djakov@linaro.org>
+X-Mailer: git-send-email 2.21.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190614080748.32997-2-Anson.Huang@nxp.com>
-User-Agent: Mutt/1.5.21 (2010-09-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190618_021540_422552_E1310875 
-X-CRM114-Status: GOOD (  15.00  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190618_021729_532008_5AD4BB31 
+X-CRM114-Status: GOOD (  10.84  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:142 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -65,7 +83,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -77,81 +94,52 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: abel.vesa@nxp.com, viresh.kumar@linaro.org, s.hauer@pengutronix.de,
- linux-kernel@vger.kernel.org, Linux-imx@nxp.com, kernel@pengutronix.de,
- leonard.crestez@nxp.com, festevam@gmail.com,
+Cc: seansw@qti.qualcomm.com, linux-kernel@vger.kernel.org,
+ daidavid1@codeaurora.org, dianders@chromium.org, evgreen@chromium.org,
+ bjorn.andersson@linaro.org, amit.kucheria@linaro.org,
+ linux-arm-msm@vger.kernel.org, georgi.djakov@linaro.org,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Jun 14, 2019 at 04:07:48PM +0800, Anson.Huang@nxp.com wrote:
-> From: Anson Huang <Anson.Huang@nxp.com>
-> 
-> There is common of_root for reference, no need to find it
-> from DT again, use of_root directly to make driver simple.
-> 
-> Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
-> Reviewed-by: Dong Aisheng <aisheng.dong@nxp.com>
+SoCs that have multiple coexisting CPUs and DSPs, may have shared
+interconnect buses between them. In such cases, each CPU/DSP may have
+different bandwidth needs, depending on whether it is active or sleeping.
+This means that we have to keep different bandwidth configurations for
+the CPU (active/sleep). In such systems, usually there is a way to
+communicate and synchronize this information with some firmware or pass
+it to another processor responsible for monitoring and switching the
+interconnect configurations based on the state of each CPU/DSP.
 
-It cannot be applied.  Please resend by basing on my imx/drivers branch.
+The above problem can be solved by introducing the path tagging concept,
+that allows consumers to optionally attach a tag to each path they use.
+This tag is used to differentiate between the aggregated bandwidth values
+for each state. The tag is generic and how it's handled is up to the
+platform specific interconnect provider drivers.
 
-Shawn
+v2:
+- Store tag with the request. (Evan)
+- Reorganize the code to save bandwidth values into buckets and use the
+  tag as a bitfield. (Evan)
+- Clear the aggregated values after icc_set().
 
-> ---
-> No changes.
-> ---
->  drivers/soc/imx/soc-imx8.c | 9 ++-------
->  1 file changed, 2 insertions(+), 7 deletions(-)
-> 
-> diff --git a/drivers/soc/imx/soc-imx8.c b/drivers/soc/imx/soc-imx8.c
-> index 5c7f330..b459bf2 100644
-> --- a/drivers/soc/imx/soc-imx8.c
-> +++ b/drivers/soc/imx/soc-imx8.c
-> @@ -105,7 +105,6 @@ static int __init imx8_soc_init(void)
->  {
->  	struct soc_device_attribute *soc_dev_attr;
->  	struct soc_device *soc_dev;
-> -	struct device_node *root;
->  	const struct of_device_id *id;
->  	u32 soc_rev = 0;
->  	const struct imx8_soc_data *data;
-> @@ -117,12 +116,11 @@ static int __init imx8_soc_init(void)
->  
->  	soc_dev_attr->family = "Freescale i.MX";
->  
-> -	root = of_find_node_by_path("/");
-> -	ret = of_property_read_string(root, "model", &soc_dev_attr->machine);
-> +	ret = of_property_read_string(of_root, "model", &soc_dev_attr->machine);
->  	if (ret)
->  		goto free_soc;
->  
-> -	id = of_match_node(imx8_soc_match, root);
-> +	id = of_match_node(imx8_soc_match, of_root);
->  	if (!id) {
->  		ret = -ENODEV;
->  		goto free_soc;
-> @@ -147,8 +145,6 @@ static int __init imx8_soc_init(void)
->  		goto free_rev;
->  	}
->  
-> -	of_node_put(root);
-> -
->  	if (IS_ENABLED(CONFIG_ARM_IMX_CPUFREQ_DT))
->  		platform_device_register_simple("imx-cpufreq-dt", -1, NULL, 0);
->  
-> @@ -159,7 +155,6 @@ static int __init imx8_soc_init(void)
->  		kfree(soc_dev_attr->revision);
->  free_soc:
->  	kfree(soc_dev_attr);
-> -	of_node_put(root);
->  	return ret;
->  }
->  device_initcall(imx8_soc_init);
-> -- 
-> 2.7.4
-> 
+v1: https://lore.kernel.org/lkml/20190208172152.1807-1-georgi.djakov@linaro.org/
+
+
+David Dai (1):
+  interconnect: qcom: Add tagging and wake/sleep support for sdm845
+
+Georgi Djakov (1):
+  interconnect: Add support for path tags
+
+ drivers/interconnect/core.c           |  24 ++++-
+ drivers/interconnect/qcom/sdm845.c    | 131 +++++++++++++++++++-------
+ include/linux/interconnect-provider.h |   4 +-
+ include/linux/interconnect.h          |   5 +
+ 4 files changed, 129 insertions(+), 35 deletions(-)
+
 
 _______________________________________________
 linux-arm-kernel mailing list
