@@ -2,78 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CA03C4A73F
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 18 Jun 2019 18:43:43 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9CD254A771
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 18 Jun 2019 18:46:59 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=CM5lCXfem7FxTb/RCJ9H2ww6zFWtMJWsHGJa6GXwLq8=; b=ESYK3YS08kf9Wv
-	0nXFC+tVhBqLqu8iwRe/27pPucs00Z31jyWlkULTJeqbBOMb0ZRIclsmZz2C0kp6ikbC2J37ZJoT8
-	5DjO3VYhviAKucERr8vQMUNQgJgX7YyUOjxRkOEYC8fTjss5TkWGsWG6R33tI8a30oCDHbJzdIjvi
-	k32KcbILoaa0jIn8BNpx8ghDU5lt6MlrrqS4JyTMjUoLVrcFRvkxRjrK/Z1dXJKDEf2iA4iAhhxmH
-	n5edDY6u6nV9o+jqIcVCLB2EcK87N/uaMvvCDx6CSSQdPa2A5/o0Myv4BHAXud+DDpc1rn0bmbcuN
-	EHQanV6uO0eUwPngTI1A==;
+	List-Owner; bh=ZvZVFZVnFP5WXYZYWeGe3pIbr6uoglEwic6e3IMEfqY=; b=EA+E3iKwfESx4/
+	0FA/rZT8zSfoPBv+lyF4sUjJNWvbYQwxikA1EiFiLTn+R1pIekqg5+3Dms+0uvnBom4fWzQIU7nFj
+	h/0TGgmTZEB61ZKkjbmHxSipLkMpkulrjmxknkrVod1LkCdmnQwhtV2mQlEvo+JPax4sXs56oKqhK
+	wGgOD+Ic/teTs/jHusVTjozZt23xwDaJzMPFxd1lBbhGzo6tkr4mBW2XZ2A2j7PW814vZZMV3Brq5
+	6epJNwE5gpk8XG+uYnFrPWaXgtKyLO/lQ6VUupm49jcr9OcvkZL2qNa+r7emQQgrfvvn5Vfg7CZBR
+	MxDneSqwvll02DOq9UNA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hdHCv-0004s4-4d; Tue, 18 Jun 2019 16:43:41 +0000
-Received: from mail-lj1-x243.google.com ([2a00:1450:4864:20::243])
+	id 1hdHG4-0006db-AC; Tue, 18 Jun 2019 16:46:56 +0000
+Received: from mail-io1-xd41.google.com ([2607:f8b0:4864:20::d41])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hdHCj-0004rF-B6
- for linux-arm-kernel@lists.infradead.org; Tue, 18 Jun 2019 16:43:30 +0000
-Received: by mail-lj1-x243.google.com with SMTP id s21so216065lji.8
+ id 1hdHFq-0006d5-VM
+ for linux-arm-kernel@lists.infradead.org; Tue, 18 Jun 2019 16:46:44 +0000
+Received: by mail-io1-xd41.google.com with SMTP id j6so1756588ioa.5
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 18 Jun 2019 09:43:28 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ Tue, 18 Jun 2019 09:46:42 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc:content-transfer-encoding;
- bh=PmUtOKbwJ4eVMkOuhlC0uRgI+GJZ2DiFmkatq42aofs=;
- b=noVIkCDp4DXaUXUJYjJsp7quJyO98EaXAo/9wvAq8keNzIId4a9i4vKnUA+Re+11e4
- ShXLX4ryoM3/+LkuRIOHVHN19KrnICnrAVN4bOzj7AlcbMIee5zkGx2Ta4hGaQjL+cpQ
- tlt0BRnfrvcixg4/oRl3z93KcWQxj+yDXiBTLO/gQw8l9N7YzNjGuePC0Dr0PV3YgJyd
- gddC3zY8TcfVDpIamLrJUlaPXdo8Zj1XVl3xdhA1oy0pLS5P0lgiKJwmpGs+CR7/4JDJ
- rsfYyDjudEYOhLB8CxtNOHeMciHQ6jcxfIoa0OOFSuZys1Vw5I1EmvaJLfne7nvioDKh
- 6Ydw==
+ :cc; bh=gwFihAPGP6wzOK+kBPKAQVi7liUgqZUIPSL5DDnHSPo=;
+ b=m+AzwmOJvaqda0PA4A3kH50zB/aKuXYTJXIq2ncP7kss8pwIRCHarGkn0vn0qekVXg
+ DMvb6pe/4kCyyxBZ0fX6xNUPYpe8TkJznF4Xt5mjwezAwrKDdVHPHi+iGXsTVh1P0fVZ
+ Vqxp87twM29o0lYzD1QiCTokXsk0tq1+P/Gw/KhCbI2C3EuwnBd8nWLPjfxOimKybbu5
+ EBdlMIp+hKFR9yU3ccN5od4zBL16bzc3l8xbpURoquyppmDLUFjdHZbKNucs4GoVV3eS
+ RwEdZXgKKJ8mrz//9UiPKQTRkBIeWaeNORJngOoJEynz57Wh/WpkxK8md8YA59mWm5ok
+ dELQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc:content-transfer-encoding;
- bh=PmUtOKbwJ4eVMkOuhlC0uRgI+GJZ2DiFmkatq42aofs=;
- b=ZomRAptE7TZPmPAsTwDzaWnYYAeyCaaG0oXXZKbk4iDiTtHXadzhWvszPuPdEHJdfr
- al3tFHMh7Y11JBb281yzB0EJlH6J1aSAwjKyEUHlMLxq8huZ1zp9gzHzlSNpeZsgWIZ3
- EZwneT3xB7wFaowFXTeOhXg1GkhL3TbfJ2fasbnWuAoimGcH7ejUFstUnbDUkE8KlT9S
- R4zeeqbsq9pZzodTcucBfvBZUL9odcT1fDLXAEJd+/BAwpD39LUlyVX5f27BaFy/BeNd
- 8d9XmCYpcLrsgfFPErLraXVayZJIFjbNSN290ZFNq1yfv0fLDpXacBgAT4chcY/+h9X3
- Z1zA==
-X-Gm-Message-State: APjAAAW7WFIkXeMcbjafHHxDY599BwpX2Ue9TCK/mM90hWf//6kQ/ZRv
- zGagL3bHcSLweKcdsqT1i+BRflwbu1mOs9BB68s=
-X-Google-Smtp-Source: APXvYqzttCfZEG77i5UhIYcLtVQf6CIc14p1/0gQIwvbf6Qaa3h5awAgK1rwzNrkpz9/uVFGrZM9qO/N3/XXZUSQ4UU=
-X-Received: by 2002:a2e:5d1:: with SMTP id 200mr45338385ljf.10.1560876207427; 
- Tue, 18 Jun 2019 09:43:27 -0700 (PDT)
+ :message-id:subject:to:cc;
+ bh=gwFihAPGP6wzOK+kBPKAQVi7liUgqZUIPSL5DDnHSPo=;
+ b=fCvE9NmFaHWSz6jcQ8Y9AUtgZfhjEwIH4wftatx5qQwP//juRinb2JcbYs2SD/WQsa
+ PAR950ROe4h/8PhEolSSaT38HN1W8S/WshJGHez2W2l4m/TuIdDapS4QKER0/Xau6hAU
+ 0muqb8dNEM7pTW/xAIuk0K3d53Vk6zV/NhWknw7qH3SCdyjjPXEk8kobNMUg9tofhhWl
+ TKEOcKcVn97E8WNYUNfkYmU9OYam4XIQQ+hiEXABMuOJaAMVVrflDdbgFw0ZBt2F53KE
+ jzUsNi1wTp6hCml4xsTCQmbh4y9QvqWridYgs0oyK9gsEW/ZlzK2k/M6/DIQS0Hfb9Fy
+ FuRg==
+X-Gm-Message-State: APjAAAUoxUUP6bhyPiqiRRKPPvxleobmvfd9QiuZ3X8gvD7gW10mzpJr
+ ArdgkDWZ1eBZf5Nc4l+n4DjlfJMRthBxxyLfE4+3cw==
+X-Google-Smtp-Source: APXvYqwfP4H5Qtjk8/J7nRjXv99FeQJa7fltAX57cFgZoswJDUwAV1Fen3fMy8Mm2DooyBSWOFHO5G5QFo8XfTvex1M=
+X-Received: by 2002:a02:1a86:: with SMTP id 128mr91068852jai.95.1560876401463; 
+ Tue, 18 Jun 2019 09:46:41 -0700 (PDT)
 MIME-Version: 1.0
-References: <20190618155834.15545-1-sebastien.szymanski@armadeus.com>
-In-Reply-To: <20190618155834.15545-1-sebastien.szymanski@armadeus.com>
-From: Fabio Estevam <festevam@gmail.com>
-Date: Tue, 18 Jun 2019 13:43:38 -0300
-Message-ID: <CAOMZO5AJbO11Cprr1Pd1qmdWahSVJm5C_-8Y8Y0hWgPK2a=AmA@mail.gmail.com>
-Subject: Re: [PATCH 1/1] ARM: dts: imx6ul: fix PWM[1-4] interrupts
-To: =?UTF-8?Q?S=C3=A9bastien_Szymanski?= <sebastien.szymanski@armadeus.com>
+References: <20190617115454.3226-1-lee.jones@linaro.org>
+In-Reply-To: <20190617115454.3226-1-lee.jones@linaro.org>
+From: Ard Biesheuvel <ard.biesheuvel@linaro.org>
+Date: Tue, 18 Jun 2019 18:46:29 +0200
+Message-ID: <CAKv+Gu_qd9KrXHVSVHCoM42D8ACjU5onzFGJPTTBGOsVJpeayg@mail.gmail.com>
+Subject: Re: [PATCH 1/1] scsi: ufs-qcom: Add support for platforms booting ACPI
+To: Lee Jones <lee.jones@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190618_094329_400360_1D5E6A62 
-X-CRM114-Status: UNSURE (   9.23  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190618_094643_007315_C058CF77 
+X-CRM114-Status: GOOD (  18.86  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:243 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:d41 listed in]
  [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (festevam[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -94,28 +90,103 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
- <devicetree@vger.kernel.org>, Sascha Hauer <s.hauer@pengutronix.de>,
- Rob Herring <robh+dt@kernel.org>, NXP Linux Team <linux-imx@nxp.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Shawn Guo <shawnguo@kernel.org>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: linux-scsi@vger.kernel.org,
+ "Martin K. Petersen" <martin.petersen@oracle.com>, avri.altman@wdc.com,
+ linux-arm-msm <linux-arm-msm@vger.kernel.org>, jejb@linux.ibm.com,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Bjorn Andersson <bjorn.andersson@linaro.org>,
+ David Brown <david.brown@linaro.org>, agross@kernel.org,
+ alim.akhtar@samsung.com, Jeffrey Hugo <jlhugo@gmail.com>,
+ pedrom.sousa@synopsys.com,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-SGkgU8OpYmFzdGllbiwKCk9uIFR1ZSwgSnVuIDE4LCAyMDE5IGF0IDEyOjU4IFBNIFPDqWJhc3Rp
-ZW4gU3p5bWFuc2tpCjxzZWJhc3RpZW4uc3p5bWFuc2tpQGFybWFkZXVzLmNvbT4gd3JvdGU6Cj4K
-PiBBY2NvcmRpbmcgdG8gdGhlIGkuTVg2VUwvTCBSTSwgdGFibGUgMy4xICJBUk0gQ29ydGV4IEE3
-IGRvbWFpbiBpbnRlcnJ1cHQKPiBzdW1tYXJ5IiwgdGhlIGludGVycnVwdHMgZm9yIHRoZSBQV01b
-MS00XSBnbyBmcm9tIDgzIHRvIDg2Lgo+Cj4gRml4ZXM6IGI5OTAxZmU4NGYwMiAoIkFSTTogZHRz
-OiBpbXg2dWw6IGFkZCBwd21bMS00XSBub2RlcyIpCj4gU2lnbmVkLW9mZi1ieTogU8OpYmFzdGll
-biBTenltYW5za2kgPHNlYmFzdGllbi5zenltYW5za2lAYXJtYWRldXMuY29tPgoKR29vZCBjYXRj
-aDoKClJldmlld2VkLWJ5OiBGYWJpbyBFc3RldmFtIDxmZXN0ZXZhbUBnbWFpbC5jb20+CgpfX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2Vy
-bmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0
-cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVs
-Cg==
+On Mon, 17 Jun 2019 at 13:55, Lee Jones <lee.jones@linaro.org> wrote:
+>
+> New Qualcomm AArch64 based laptops are now available which use UFS
+> as their primary data storage medium.  These devices are supplied
+> with ACPI support out of the box.  This patch ensures the Qualcomm
+> UFS driver will be bound when the "QCOM24A5" H/W device is
+> advertised as present.
+>
+> Signed-off-by: Lee Jones <lee.jones@linaro.org>
+
+Reviewed-by: Ard Biesheuvel <ard.biesheuvel@linaro.org>
+
+> ---
+>  drivers/scsi/ufs/ufs-qcom.c | 23 ++++++++++++++++++++---
+>  1 file changed, 20 insertions(+), 3 deletions(-)
+>
+> diff --git a/drivers/scsi/ufs/ufs-qcom.c b/drivers/scsi/ufs/ufs-qcom.c
+> index 3aeadb14aae1..364af6a63e35 100644
+> --- a/drivers/scsi/ufs/ufs-qcom.c
+> +++ b/drivers/scsi/ufs/ufs-qcom.c
+> @@ -12,6 +12,7 @@
+>   *
+>   */
+>
+> +#include <linux/acpi.h>
+>  #include <linux/time.h>
+>  #include <linux/of.h>
+>  #include <linux/platform_device.h>
+> @@ -164,6 +165,9 @@ static int ufs_qcom_init_lane_clks(struct ufs_qcom_host *host)
+>         int err = 0;
+>         struct device *dev = host->hba->dev;
+>
+> +       if (has_acpi_companion(dev))
+> +               return 0;
+> +
+>         err = ufs_qcom_host_clk_get(dev, "rx_lane0_sync_clk",
+>                                         &host->rx_l0_sync_clk, false);
+>         if (err)
+> @@ -1208,9 +1212,13 @@ static int ufs_qcom_init(struct ufs_hba *hba)
+>                         __func__, err);
+>                 goto out_variant_clear;
+>         } else if (IS_ERR(host->generic_phy)) {
+> -               err = PTR_ERR(host->generic_phy);
+> -               dev_err(dev, "%s: PHY get failed %d\n", __func__, err);
+> -               goto out_variant_clear;
+> +               if (has_acpi_companion(dev)) {
+> +                       host->generic_phy = NULL;
+> +               } else {
+> +                       err = PTR_ERR(host->generic_phy);
+> +                       dev_err(dev, "%s: PHY get failed %d\n", __func__, err);
+> +                       goto out_variant_clear;
+> +               }
+>         }
+>
+>         err = ufs_qcom_bus_register(host);
+> @@ -1680,6 +1688,14 @@ static const struct of_device_id ufs_qcom_of_match[] = {
+>  };
+>  MODULE_DEVICE_TABLE(of, ufs_qcom_of_match);
+>
+> +#ifdef CONFIG_ACPI
+> +static const struct acpi_device_id ufs_qcom_acpi_match[] = {
+> +       { "QCOM24A5" },
+> +       { },
+> +};
+> +MODULE_DEVICE_TABLE(acpi, ufs_qcom_acpi_match);
+> +#endif
+> +
+>  static const struct dev_pm_ops ufs_qcom_pm_ops = {
+>         .suspend        = ufshcd_pltfrm_suspend,
+>         .resume         = ufshcd_pltfrm_resume,
+> @@ -1696,6 +1712,7 @@ static struct platform_driver ufs_qcom_pltform = {
+>                 .name   = "ufshcd-qcom",
+>                 .pm     = &ufs_qcom_pm_ops,
+>                 .of_match_table = of_match_ptr(ufs_qcom_of_match),
+> +               .acpi_match_table = ACPI_PTR(ufs_qcom_acpi_match),
+>         },
+>  };
+>  module_platform_driver(ufs_qcom_pltform);
+> --
+> 2.17.1
+>
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
