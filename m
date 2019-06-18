@@ -2,65 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8EFA14AB6B
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 18 Jun 2019 22:08:24 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2DEF84AB7D
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 18 Jun 2019 22:10:21 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:
-	In-Reply-To:References:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8+5kHoglJRfCMKU2X6uJnf93hnW1N5mdqV4T6XEuFWQ=; b=F1iyLOUiyE13qM
-	qC94S5MeE45O7gP8F69DiRYPQgS5cuhj3MOcPj7AuDU/6PJwbjSCeNxpJ55I6ddh++YEgcvGlcHKV
-	eOAqXRtzHYrUV1WeOoA8wXB2gqhdWuEatifB0Oaof+Ysq4jjKSpQ9LxACjNi9b13OvNoezbJ8wzWP
-	4mQjmtMck/SJglRcqiaW4CDjCfBTgioT7vQUETgJOmAWBF9kOf8UgHvV1lW/tyMWAyTFvxFgeh5Mo
-	eVB9vzoFvd7EhR8O0OiaBSudFs1BfpVDvzNn9urNyRAmikFrYHQUBWOpBtDNJsxN5aOHCYdV/PMrS
-	5MYpQEIq5lgmpHJFkv7w==;
+	List-Owner; bh=OTdLI8nnc13il/ZkokmRgS8a0NtDZLEehaM4d0Cki7Q=; b=ZUz0qt9Ywu6QOD
+	G7dvRCSnMoRVtznRDP96z+uWIYrIK11M/lLj35PUe81h3HVAKXINH9WPA9RsyeXePTAmXOqBWd6Ne
+	OED1DYDh3firaJP0BoJbdcA3tmRBJ6oaYfq7slAXF592qgMPVoEiCLW+OCA27fm73gtDrUqIvgYYa
+	zAC2M5Dx2oqVvTnXZtS56LUjLzfjRoH8RqwggWp56kgyZDEViJF6dsGgqsQE5Yp/K2DhbjbUsyrlY
+	CbBvpQNF+GZ5OShEoO5ACfA/xJtlpmZy6LcpGkrSkqab3B2l58N7RhicTiL7E44Mp1MMVXl4c6TgH
+	fe8Roq9xcdpu+0+ibJLw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hdKOz-0000Iz-7y; Tue, 18 Jun 2019 20:08:21 +0000
-Received: from p3plmtsmtp01.prod.phx3.secureserver.net ([184.168.131.12])
+	id 1hdKQq-0000ss-TE; Tue, 18 Jun 2019 20:10:17 +0000
+Received: from mail-qt1-f196.google.com ([209.85.160.196])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hdKOp-0000IG-1W
- for linux-arm-kernel@lists.infradead.org; Tue, 18 Jun 2019 20:08:12 +0000
-Received: from n16.mail01.mtsvc.net ([216.70.64.51]) by :MT-SMTP: with ESMTP
- id dKOHhp894ywc7dKOHhjmg9; Tue, 18 Jun 2019 13:07:37 -0700
-X-SID: dKOHhp894ywc7
-Received: from cpe-71-75-202-74.carolina.res.rr.com ([71.75.202.74]:64756
- helo=SBGCLTOFFICE)
- by n16.mail01.mtsvc.net with esmtpsa (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256)
- (Exim 4.92) (envelope-from <tkrantz@stahurabrenner.com>)
- id 1hdKOG-00035s-Hx; Tue, 18 Jun 2019 16:07:37 -0400
-From: "Timothy Krantz" <tkrantz@stahurabrenner.com>
-To: "'Miquel Raynal'" <miquel.raynal@bootlin.com>
-References: <!&!AAAAAAAAAAAuAAAAAAAAAOBWTR25SONAuESb5loyl/sBAMO2jhD3dRHOtM0AqgC7tuYAAAAAAA4AABAAAABB6J1kxOR7T73eMrM92Eq+AQAAAAA=@stahurabrenner.com>	<20190617113841.60032387@xps13>	<20190617114016.10fb9e03@xps13>	<!&!AAAAAAAAAAAuAAAAAAAAAOBWTR25SONAuESb5loyl/sBAMO2jhD3dRHOtM0AqgC7tuYAAAAAAA4AABAAAADly4/rI9w9RYcxQAoCt9xgAQAAAAA=@stahurabrenner.com>	<20190618095812.48a2746b@xps13>	<!&!AAAAAAAAAAAuAAAAAAAAAOBWTR25SONAuESb5loyl/sBAMO2jhD3dRHOtM0AqgC7tuYAAAAAAA4AABAAAADKxydx2LOeRKSPqV4VA77dAQAAAAA=@stahurabrenner.com>	<20190618162428.0417f247@xps13>	<!&!AAAAAAAAAAAuAAAAAAAAAOBWTR25SONAuESb5loyl/sBAMO2jhD3dRHOtM0AqgC7tuYAAAAAAA4AABAAAACUGsZ5zJFbR6X1CG+aiyUMAQAAAAA=@stahurabrenner.com>	<20190618173604.4958474c@xps13>	<!&!AAAAAAAAAAAuAAAAAAAAAOBWTR25SONAuESb5loyl/sBAMO2jhD3dRHOtM0AqgC7tuYAAAAAAA4AABAAAADpLpjRTgFBSZBSAreF/AshAQAAAAA=@stahurabrenner.com>
- <20190618192635.5118d594@xps13>
-In-Reply-To: <20190618192635.5118d594@xps13>
-Subject: RE: espressobin device tree with kernel 5.1 RC
-Date: Tue, 18 Jun 2019 16:07:34 -0400
-Message-ID: <!&!AAAAAAAAAAAuAAAAAAAAAOBWTR25SONAuESb5loyl/sBAMO2jhD3dRHOtM0AqgC7tuYAAAAAAA4AABAAAADR16E09XXER6uZHU0JciqJAQAAAAA=@stahurabrenner.com>
+ id 1hdKQX-0000s7-SP
+ for linux-arm-kernel@lists.infradead.org; Tue, 18 Jun 2019 20:09:59 +0000
+Received: by mail-qt1-f196.google.com with SMTP id n11so17007995qtl.5
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 18 Jun 2019 13:09:57 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=gnX6xKMGivJziLWPy0MXzH36uFV6fP8h9GWYY0vF4dQ=;
+ b=S7umH65R70viWFN/cswnxsjjp6Wd6jr3BLO4iWNssNB7EQxb1IYdk4VMJxGM428SPT
+ 5UFs89uqdSHLyijC2YYVXDcE+w2VAVpe3hzY8dWPmxIGRXA/2jXscmbt+DM1jZHlShbS
+ RGE+DtWeOf5YGWfhr97GbU9RHrSRcgGLHLcJ9LyUWPFmCcXDHt2D+Fi8ZZqWjl+DENTy
+ P2PuTUH05Tvp6WmURnfRv1AjdlVxWOV+biXjCXVeSAQ4t9QVIWMRL+wG8dXQCOfHSCwZ
+ ULBBJUWQ5lGo198fVV+hRfKco8nLg13Pi9I4EXiKDwMFzsFjoiGkdLl0RksJ9HZy3AIZ
+ bTYg==
+X-Gm-Message-State: APjAAAU4mQdsNK0CEQioZBI+g9hcxwWrQzRH6yLv3cVq59bWXUOXT1U4
+ eI2n1Lq/wVqsswh3ZeexPNe+dxOVPuZ8MzLbAcU=
+X-Google-Smtp-Source: APXvYqzMxSZbNKZMyYx2SIWSteQCuWwP6hDYpVFmbIVCBXlz3S9dXHNlAfNiln2W3gebm9oJkPV+di6FaYLU9Wb0Sxs=
+X-Received: by 2002:a0c:87ab:: with SMTP id 40mr28470984qvj.93.1560888596401; 
+ Tue, 18 Jun 2019 13:09:56 -0700 (PDT)
 MIME-Version: 1.0
-X-Mailer: Microsoft Outlook 15.0
-Thread-Index: AQHHHNahTQSMuKl1SiqoWXgyzEZ1/QGWq5eOAYc9WqcCX/uUgAGxRsSwAsxwW8gCkKrLCgJl7MWBAfprKZcDR7iRIgFP86PkphHFGRA=
-Content-Language: en-us
-X-Authenticated-User: 902853 tkrantz@stahurabrenner.com
-X-MT-ID: C1A731F58FEDE20B47E8EFF5D29156B2BFE18A53
-X-CMAE-Envelope: MS4wfOrb4s5TV2JXEykhKJj4rw3QzG2NBx3aSXrFLLx3+YEm3RZ+H6ABVTF/VmUO+PXalqNVJmdMee2SiNi1baogELLXZS9BGjfshipo0Bq3KfdwFQH0k1CU
- 1hK0qe4aQDkTjcF+92qLm6VJB12sVIrSTGXFJ6Q28kLvEEf63dL6IkcbUR6t9vD/+1ZASu/eaQnJ4izZK91HaBaCXCxdgtb8rz/zp7Wt+dPE8gqylDYsh29Z
- NRWuapfe+R+ygCSQb1k8Ow==
+References: <380a6185-7ad1-6be0-060b-e6e5d4126917@linaro.org>
+ <a94676381a5ca662c848f7a725562f721c43ce76.camel@sipsolutions.net>
+ <CAK8P3a0kV-i7BJJ2X6C=5n65rSGfo8fUiC4J_G-+M8EctYKbkg@mail.gmail.com>
+ <fc0d08912bc10ad089eb74034726308375279130.camel@redhat.com>
+ <36bca57c999f611353fd9741c55bb2a7@codeaurora.org>
+ <153fafb91267147cf22e2bf102dd822933ec823a.camel@redhat.com>
+ <CAK8P3a2Y+tcL1-V57dtypWHndNT3eDJdcKj29c_v+k8o1HHQig@mail.gmail.com>
+ <f4249aa5f5acdd90275eda35aa16f3cfb29d29be.camel@redhat.com>
+ <CAK8P3a2nzZKtshYfomOOSYkqx5HdU15Wr9b+3va0B1euNhFOAg@mail.gmail.com>
+ <dbb32f185d2c3a654083ee0a7188379e1f88d899.camel@sipsolutions.net>
+ <d533b708-c97a-710d-1138-3ae79107f209@linaro.org>
+ <abdfc6b3a9981bcdef40f85f5442a425ce109010.camel@sipsolutions.net>
+In-Reply-To: <abdfc6b3a9981bcdef40f85f5442a425ce109010.camel@sipsolutions.net>
+From: Arnd Bergmann <arnd@arndb.de>
+Date: Tue, 18 Jun 2019 22:09:38 +0200
+Message-ID: <CAK8P3a3ksrFTo2+dLB+doLeY+kPP7rYxv2O7BwvjYgK2cwCTuQ@mail.gmail.com>
+Subject: Re: [PATCH v2 00/17] net: introduce Qualcomm IPA driver
+To: Johannes Berg <johannes@sipsolutions.net>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190618_130811_106411_A35E4ED6 
-X-CRM114-Status: UNSURE (   8.35  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190618_130957_919722_48FB1961 
+X-CRM114-Status: GOOD (  18.54  )
+X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (0.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [184.168.131.12 listed in list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ no trust [209.85.160.196 listed in list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (arndbergmann[at]gmail.com)
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.160.196 listed in wl.mailspike.net]
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -72,102 +93,64 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: DTML <devicetree@vger.kernel.org>, syadagir@codeaurora.org,
+ Eric Caruso <ejcaruso@google.com>, David Miller <davem@davemloft.net>,
+ Dan Williams <dcbw@redhat.com>, linux-arm-msm@vger.kernel.org,
+ Ilias Apalodimas <ilias.apalodimas@linaro.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>, evgreen@chromium.org,
+ Bjorn Andersson <bjorn.andersson@linaro.org>,
+ Networking <netdev@vger.kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Alex Elder <elder@linaro.org>,
+ Subash Abhinov Kasiviswanathan <subashab@codeaurora.org>,
+ linux-soc@vger.kernel.org, abhishek.esse@gmail.com, cpratapa@codeaurora.org,
+ Ben Chan <benchan@google.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-SGkgTWlxdWVsLAoKPiAtLS0tLU9yaWdpbmFsIE1lc3NhZ2UtLS0tLQo+IAo+IEkgZG9uJ3QgdGhp
-bmsgaXQncyBhIGh3IHByb2JsZW0sIHY1IGlzIGZpbmUuIEhhdmUgeW91IHVwZGF0ZWQgeW91ciBm
-aXJtd2FyZQo+IHJlY2VudGx5PyBZb3Ugd2lsbCBuZWVkIGEgcmVjZW50IGZpcm13YXJlIChBVEYp
-IGluIG9yZGVyIHRvIGhhdmUgdGhlIFNNQwo+IGNhbGxzIHRvIHdvcmsuIFlvdSBjYW4gdHJhY2Ug
-dGhlIF9wb3dlcl9vbigpIGZ1bmN0aW9uIHdoaWNoIHByb2JhYmx5IGZhaWxzIGF0Cj4gaXRzIGVu
-ZCBpbiBkcml2ZXJzL3BoeS9tYXJ2ZWxsL3BoeS1tdmVidS1hMzcwMC1jb21waHkuYy4KPiAKPiBH
-b29kIGx1Y2shCj4gTWlxdcOobAoKSSBhZGRlZCB0aGUgZm9sbG93aW5nIHRyYWNlcyB0byBkcml2
-ZXJzL3BoeS9tYXJ2ZWxsL3BoeS1tdmVidS1hMzcwMC1jb21waHkuYyA6CgpzdGF0aWMgaW50IG12
-ZWJ1X2EzNzAwX2NvbXBoeV9zbWModW5zaWduZWQgbG9uZyBmdW5jdGlvbiwgdW5zaWduZWQgbG9u
-ZyBsYW5lLAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgdW5zaWduZWQgbG9uZyBt
-b2RlKQp7CiAgICAgICAgc3RydWN0IGFybV9zbWNjY19yZXMgcmVzOwoKcHJpbnRrKEtFUk5fSU5G
-TyAiaW4gYTM3MDAgY29tcGh5IHNtY1xuIik7CiAgICAgICAgYXJtX3NtY2NjX3NtYyhmdW5jdGlv
-biwgbGFuZSwgbW9kZSwgMCwgMCwgMCwgMCwgMCwgJnJlcyk7CnByaW50ayhLRVJOX0lORk8gInJl
-cy5hMD0lbHhcbiIsIHJlcy5hMCk7CgogICAgICAgIHJldHVybiByZXMuYTA7Cn0KCkFuZCAKc3Rh
-dGljIGludCBtdmVidV9hMzcwMF9jb21waHlfcG93ZXJfb24oc3RydWN0IHBoeSAqcGh5KQp7CiAg
-ICAgICAgc3RydWN0IG12ZWJ1X2EzNzAwX2NvbXBoeV9sYW5lICpsYW5lID0gcGh5X2dldF9kcnZk
-YXRhKHBoeSk7CiAgICAgICAgdTMyIGZ3X3BhcmFtOwogICAgICAgIGludCBmd19tb2RlOwoKICAg
-ICAgICBmd19tb2RlID0gbXZlYnVfYTM3MDBfY29tcGh5X2dldF9md19tb2RlKGxhbmUtPmlkLCBs
-YW5lLT5wb3J0LAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
-ICAgbGFuZS0+bW9kZSwgbGFuZS0+c3VibW9kZSk7CnByaW50ayhLRVJOX0lORk8gImluIHBvd2Vy
-IG9uXG4iKTsKICAgICAgICBpZiAoZndfbW9kZSA8IDApIHsKcHJpbnRrKEtFUk5fSU5GTyAiZndf
-bW9kZSA8IDBcbiIpOwogICAgICAgICAgICAgICAgZGV2X2VycihsYW5lLT5kZXYsICJpbnZhbGlk
-IENPTVBIWSBtb2RlXG4iKTsKICAgICAgICAgICAgICAgIHJldHVybiBmd19tb2RlOwogICAgICAg
-IH0KCnByaW50ayhLRVJOX0lORk8gInN3aXRjaCBsYW5lLT5tb2RlXG4iKTsKICAgICAgICBzd2l0
-Y2ggKGxhbmUtPm1vZGUpIHsKICAgICAgICBjYXNlIFBIWV9NT0RFX1VTQl9IT1NUX1NTOgpwcmlu
-dGsoS0VSTl9JTkZPICJ1c2IgaG9zdFxuIik7CiAgICAgICAgICAgICAgICBkZXZfZGJnKGxhbmUt
-PmRldiwgInNldCBsYW5lICVkIHRvIFVTQjMgaG9zdCBtb2RlXG4iLCBsYW5lLT5pZCk7CiAgICAg
-ICAgICAgICAgICBmd19wYXJhbSA9IENPTVBIWV9GV19NT0RFKGZ3X21vZGUpOwogICAgICAgICAg
-ICAgICAgYnJlYWs7CiAgICAgICAgY2FzZSBQSFlfTU9ERV9TQVRBOgpwcmludGsoS0VSTl9JTkZP
-ICJzYXRhXG4iKTsKICAgICAgICAgICAgICAgIGRldl9kYmcobGFuZS0+ZGV2LCAic2V0IGxhbmUg
-JWQgdG8gU0FUQSBtb2RlXG4iLCBsYW5lLT5pZCk7CiAgICAgICAgICAgICAgICBmd19wYXJhbSA9
-IENPTVBIWV9GV19NT0RFKGZ3X21vZGUpOwogICAgICAgICAgICAgICAgYnJlYWs7CiAgICAgICAg
-Y2FzZSBQSFlfTU9ERV9FVEhFUk5FVDoKICAgICAgICAgICAgICAgIHN3aXRjaCAobGFuZS0+c3Vi
-bW9kZSkgewogICAgICAgICAgICAgICAgY2FzZSBQSFlfSU5URVJGQUNFX01PREVfU0dNSUk6CnBy
-aW50ayhLRVJOX0lORk8gInNnbWlpXG4iKTsKICAgICAgICAgICAgICAgICAgICAgICAgZGV2X2Ri
-ZyhsYW5lLT5kZXYsICJzZXQgbGFuZSAlZCB0byBTR01JSSBtb2RlXG4iLAogICAgICAgICAgICAg
-ICAgICAgICAgICAgICAgICAgIGxhbmUtPmlkKTsKICAgICAgICAgICAgICAgICAgICAgICAgZndf
-cGFyYW0gPSBDT01QSFlfRldfTkVUKGZ3X21vZGUsIGxhbmUtPnBvcnQsCiAgICAgICAgICAgICAg
-ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBDT01QSFlfRldfU1BFRURfMV8yNUcp
-OwogICAgICAgICAgICAgICAgICAgICAgICBicmVhazsKICAgICAgICAgICAgICAgIGNhc2UgUEhZ
-X0lOVEVSRkFDRV9NT0RFXzI1MDBCQVNFWDoKcHJpbnRrKEtFUk5fSU5GTyAiSFMgc2dtaWlcbiIp
-OwogICAgICAgICAgICAgICAgICAgICAgICBkZXZfZGJnKGxhbmUtPmRldiwgInNldCBsYW5lICVk
-IHRvIEhTIFNHTUlJIG1vZGVcbiIsCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgbGFu
-ZS0+aWQpOwogICAgICAgICAgICAgICAgICAgICAgICBmd19wYXJhbSA9IENPTVBIWV9GV19ORVQo
-ZndfbW9kZSwgbGFuZS0+cG9ydCwKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
-ICAgICAgICAgICAgIENPTVBIWV9GV19TUEVFRF8zXzEyNUcpOwogICAgICAgICAgICAgICAgICAg
-ICAgICBicmVhazsKICAgICAgICAgICAgICAgIGRlZmF1bHQ6CnByaW50ayhLRVJOX0lORk8gInVu
-c3VwcG9ydGVkIG1vZGVcbiIpOwogICAgICAgICAgICAgICAgICAgICAgICBkZXZfZXJyKGxhbmUt
-PmRldiwgInVuc3VwcG9ydGVkIFBIWSBzdWJtb2RlICglZClcbiIsCiAgICAgICAgICAgICAgICAg
-ICAgICAgICAgICAgICAgbGFuZS0+c3VibW9kZSk7CiAgICAgICAgICAgICAgICAgICAgICAgIHJl
-dHVybiAtRU5PVFNVUFA7CiAgICAgICAgICAgICAgICB9CiAgICAgICAgICAgICAgICBicmVhazsK
-ICAgICAgICBjYXNlIFBIWV9NT0RFX1BDSUU6CnByaW50ayhLRVJOX0lORk8gInBjaWVcbiIpOwog
-ICAgICAgICAgICAgICAgZGV2X2RiZyhsYW5lLT5kZXYsICJzZXQgbGFuZSAlZCB0byBQQ0llIG1v
-ZGVcbiIsIGxhbmUtPmlkKTsKICAgICAgICAgICAgICAgIGZ3X3BhcmFtID0gQ09NUEhZX0ZXX1BD
-SUUoZndfbW9kZSwgbGFuZS0+cG9ydCwKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
-ICAgICAgICAgQ09NUEhZX0ZXX1NQRUVEXzVHLAogICAgICAgICAgICAgICAgICAgICAgICAgICAg
-ICAgICAgICAgICAgICBwaHktPmF0dHJzLmJ1c193aWR0aCk7CiAgICAgICAgICAgICAgICBicmVh
-azsKICAgICAgICBkZWZhdWx0OgpwcmludGsoS0VSTl9JTkZPICJ1bnN1cHBvcnRlZCAyXG4iKTsK
-ICAgICAgICAgICAgICAgIGRldl9lcnIobGFuZS0+ZGV2LCAidW5zdXBwb3J0ZWQgUEhZIG1vZGUg
-KCVkKVxuIiwgbGFuZS0+bW9kZSk7CiAgICAgICAgICAgICAgICByZXR1cm4gLUVOT1RTVVBQOwog
-ICAgICAgIH0KCiAgICAgICAgcmV0dXJuIG12ZWJ1X2EzNzAwX2NvbXBoeV9zbWMoQ09NUEhZX1NJ
-UF9QT1dFUl9PTiwgbGFuZS0+aWQsIGZ3X3BhcmFtKTsKfQoKUmVzdWx0aW5nIGluIHRoZSBmb2xs
-b3dpbmcgZG1lc2c6CgpbICAgIDQuMjA0NDI5XSBjYWNoZWluZm86IFVuYWJsZSB0byBkZXRlY3Qg
-Y2FjaGUgaGllcmFyY2h5IGZvciBDUFUgMApbICAgIDQuMjEwOTMzXSBpbiBtdmVidSBwcm9iZQpb
-ICAgIDQuMjEzNjY0XSBjaGVjayBkZXZpY2UgbWF0Y2gKWyAgICA0LjIxNjc2NV0gZGV2aWNlIGRp
-ZCBtYXRjaApbICAgIDQuMjE5ODI1XSBjaGVjayByZXNvdXJjZXMKWyAgICA0LjIyMjYxOV0gcmVz
-b3VyY2VzIG9rClsgICAgNC4yMjUyMjVdIGluIHBoeSBpbml0IGJlZm9yZSBjaGVjawpbICAgIDQu
-MjI4ODgxXSBwaHktPmluaXRfY291bnQgMApbICAgIDQuMjMxOTM2XSBwaHktPm9wcy0+aW5pdCAo
-bnVsbCkKWyAgICA0LjIzNTM0Ml0gaW4gcG93ZXIgb24KWyAgICA0LjIzNzg0N10gc3dpdGNoIGxh
-bmUtPm1vZGUKWyAgICA0LjI0MDg4N10gc2F0YQpbICAgIDQuMjQyNzc1XSBpbiBhMzcwMCBjb21w
-aHkgc21jClsgICAgNC4yNDYwMDNdIHJlcy5hMD1mZmZmZmZmZmZmZmZmZmZmClsgICAgNC4yNDk1
-OTNdIHBoeSBwaHktZDAwMTgzMDAucGh5LjI6IHBoeSBwb3dlcm9uIGZhaWxlZCAtLT4gLTEKWyAg
-ICA0LjI1NTUwNF0gZW5hYmxlIHJlc291cmNlcwpbICAgIDQuMjU4NDg3XSBhaGNpLW12ZWJ1OiBw
-cm9iZSBvZiBkMDBlMDAwMC5zYXRhIGZhaWxlZCB3aXRoIGVycm9yIC0xClsgICAgNC4yNjUyMzFd
-IEV0aGVybmV0IENoYW5uZWwgQm9uZGluZyBEcml2ZXI6IHYzLjcuMSAoQXByaWwgMjcsIDIwMTEp
-CgoKU28gWyAgICA0LjI0NjAwM10gcmVzLmEwPWZmZmZmZmZmZmZmZmZmZmYgaXMgdGhlIHBvd2Vy
-IG9uIGZhaWx1cmU/Cgo+IFlvdSB3aWxsIG5lZWQgYSByZWNlbnQgZmlybXdhcmUgKEFURikgaW4g
-b3JkZXIgdG8gaGF2ZSB0aGUgU01DCj4gY2FsbHMgdG8gd29yay4KClRoYXQgc291bmRzIHByb21p
-c2luZy4gIE15IFVCT09UIGlzIG5vdCAqdGhhdCogb2xkOgoKw7xUSU0tMS4wCldUTUktZGV2ZWwt
-MTguMDcuMC02MDUwZmQ1CldUTUk6IHN5c3RlbSBlYXJseS1pbml0CkNQVSBWREQgdm9sdGFnZSBk
-ZWZhdWx0IHZhbHVlOiAxLjE1NVYKTk9USUNFOiAgQm9vdGluZyBUcnVzdGVkIEZpcm13YXJlCk5P
-VElDRTogIEJMMTogdjEuNShyZWxlYXNlKTo3MTFlY2QzIChNYXJ2ZWxsLWFybWFkYS0xOC4wOS40
-KQpOT1RJQ0U6ICBCTDE6IEJ1aWx0IDogMTU6MTE6MzksIFNlcCAgNyAyMDE4Ck5PVElDRTogIEJM
-MTogQm9vdGluZyBCTDIKTk9USUNFOiAgQkwyOiB2MS41KHJlbGVhc2UpOjcxMWVjZDMgKE1hcnZl
-bGwtYXJtYWRhLTE4LjA5LjQpCk5PVElDRTogIEJMMjogQnVpbHQgOiAxNToxMTo0MiwgU2VwICA3
-IDIwMTgKTk9USUNFOiAgQkwxOiBCb290aW5nIEJMMzEKTk9USUNFOiAgQkwzMTogdjEuNShyZWxl
-YXNlKTo3MTFlY2QzIChNYXJ2ZWxsLWFybWFkYS0xOC4wOS40KQpOT1RJQ0U6ICBCTDMxOiBCdWls
-dCA6IDE1OjEKClUtQm9vdCAyMDE3LjAzLWFybWFkYS0xOC4wOS4xLWdhOTJiZDg2LWFybWJpYW4g
-KFNlcCAwNSAyMDE4IC0gMjE6NDk6MzQgKzAyMDApCgpEbyB5b3Uga25vdyB3aGVyZSBJIG1pZ2h0
-IGZpbmQgYSBuZXdlciAocHJlIGJ1aWx0KSB1Ym9vdD8KClRpbQoKCl9fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBs
-aXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5m
-cmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
+On Tue, Jun 18, 2019 at 9:03 PM Johannes Berg <johannes@sipsolutions.net> wrote:
+> On Tue, 2019-06-18 at 08:45 -0500, Alex Elder wrote:
+
+> Really there are two possible ways (and they intersect to some extent).
+>
+> One is the whole multi-function device, where a single WWAN device is
+> composed of channels offered by actually different drivers, e.g. for a
+> typical USB device you might have something like cdc_ether and the
+> usb_wwan TTY driver. In this way, we need to "compose" the WWAN device
+> similarly, e.g. by using the underlying USB device "struct device"
+> pointer to tie it together.
+>
+> The other is something like IPA or the Intel modem driver, where the
+> device is actually a single (e.g. PCIe) device and just has a single
+> driver, but that single driver offers different channels.
+
+I would hope we can simplify this to expect only the second model,
+where you have a 'struct device' corresponding to hardware and the
+driver for it creates one wwan_device that user space talks to.
+
+Clearly the multi-function device hardware has to be handled somehow,
+but it would seem much cleaner in the long run to do that using
+a special workaround rather than putting this into the core interface.
+
+E.g. have a driver that lets you create a wwan_device by passing
+netdev and a tty chardev into a configuration interface, and from that
+point on use the generic wwan abstraction.
+
+> Now, it's not clear to me where IPA actually falls, because so far we've
+> been talking about the IPA driver only as providing *netdevs*, not any
+> control channels, so I'm not actually sure where the control channel is.
+
+The IPA driver today only handles the data path, because Alex removed
+the control channel. IPA is the driver that needs to talk to the hardware,
+both for data and control when finished. rmnet is a pure software construct
+that also contains both a data and control side and is designed to be
+independent of the lower hardware.
+
+      Arnd
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
