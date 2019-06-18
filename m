@@ -2,91 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 454BB49FE9
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 18 Jun 2019 13:57:09 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 76B474A029
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 18 Jun 2019 14:02:42 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Y3VLe8GDbxyan/Ad83lbpenV9RD5AMveewsCkdQ+MqU=; b=E17wjHyzP4uCuO
-	TNLXLm9dXxdwS2P87qnNkJ+MiS3G7K8+Llnigy99TTd8GsuHbAQ+OkLdFl/zjYVKSAznkmTZenc38
-	U5XMisukb3BDMoYXNVQpJhjdpPS1gCQkdIlSWWdcctrXwL/s97imA34XMTWPfBjS0bh/KHQzlxv6R
-	UX2AmWs+yRdjFRlyucF2Drphy+wtHPHQdWypEHKE4TMpVBaAfr2iba+fQCK8XF2BQaPpfCQX0gT2g
-	Cjw1uRv1BrB2PXn6kGb5YNGxDae9TkbQzT46+HnEkCQd3un0xNaDCSKmrPU/ITG/IrGhNUWWA3fDT
-	jCaVviT0DR46vyTuzNdg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=JL2OJj/qXU8YUKDB5ZIWgPV8d6hRwhtJKWQx7ZBV/yI=; b=BC+2Pwwpn9trr8X+pQOifOZVi
+	7PyDiiERHw2bohCAU9CJd67TaiTlxGN1ITgu3DLAQnNic/wkr+pyfuqZY3nm6EouvRhCupeeZgETf
+	D53HxQ/ozw6gecYgkIXuRwTYifbEXFWJeU6UGgvunhYOdI3qY8KgHaDlGT0pAWL2D0Y9nFPstTA7r
+	/PlGCQC5A4Fb0VDbEy619RMQs8WCsSafknlH2XW/uU7dr8bgjIlquo1u+Y6itntCNUDPfDEWgysts
+	GIYQY6aQ/V6H7YTFndxn5YrMi23EYcZqnu+Dy6If9kAysFNv5OHrYxhkPxB5vkJdvD1dd5HLzQPUf
+	8lrRKXJeQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hdCjZ-0005wj-Th; Tue, 18 Jun 2019 11:57:05 +0000
-Received: from mail-ua1-x943.google.com ([2607:f8b0:4864:20::943])
+	id 1hdCov-0000QK-E0; Tue, 18 Jun 2019 12:02:37 +0000
+Received: from atrey.karlin.mff.cuni.cz ([195.113.26.193])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hdCjK-0005vz-Jm
- for linux-arm-kernel@lists.infradead.org; Tue, 18 Jun 2019 11:56:52 +0000
-Received: by mail-ua1-x943.google.com with SMTP id j8so5625867uan.6
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 18 Jun 2019 04:56:49 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=piRTAebFx2FsROFm2zYcU51EDgaGKwKW/nF1spIt1sI=;
- b=mo7//ZZm5CR0ywBO0NeDMxPL71X9bJ2kFFt6G1IOlFmJ9ImsK53ikh7RHrkrW1cWy9
- 16iNhl4WpSQJUkAAbTw5KSaMvEgibjhRAeDdK923fBEpZYNAE20PQW/MvuGIVYjvr3Ly
- PGlsFZh24pJnk4p97S+BlQxGQ5YXakodnK0IFr1Bs6JN3UMFSZC7746dzX1JbDjIEtFl
- 5D7+lIshQcZUkRwA2eOa9jcmCy7QsLu2FCDfbDU8EzbL7pWXZADfQcDYZH0I6ds16AwR
- BbQa3geAipWWpwweByap68mRGunqBK9j3PxpS3+GHbGeM8wXH2f7fbKEAVQS0ldqg9eV
- IXAQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=piRTAebFx2FsROFm2zYcU51EDgaGKwKW/nF1spIt1sI=;
- b=mbOZpKhQVHoc3YGAFbgt072iL90ZgFnnM/mWvPS+yM/sUyKjb9KKdbkyvg7y87204P
- PX9OrpTa5XhOcmKfxkPc26gBzoPoOEY8bXntlPsCSAIH8QCWD2l936JNakgGa8KdH2n5
- kot6zWliCorUZmjyq8yEAKUaKd50Rzla6KejDjfC8mzAvi3VC/UO69KtYcG/b9cCPLal
- rEA0nv6JfDq7oVbDIwWdhYGx9pQzErW7q69FPI5HGy6lRFp5lX3fM555ITgCp/c3sKxC
- XA6UDaZwb1E2RwPEZjjz+mJyfmFtpTm0vEnETYHCsD16XMcRFyNKmiVViUiEbTlLJ/ZT
- F9ig==
-X-Gm-Message-State: APjAAAWtO8x0SLeCC5fvU3JAcGSCSU6h3veiIUuRLj+sxyd/Mg8EJZ62
- GxUqKX95OdM5nr37YmJM2uYFSHPGxMdfyD3hgdo3zA==
-X-Google-Smtp-Source: APXvYqxWE7NU+QUzDoR4u6I5eIyinKhKJ2E54DPFNLSdMDWyWFZV8l2G2R1evmkcZ1mRW3Z8CNDF2/bizF6JGRucbC8=
-X-Received: by 2002:a67:3254:: with SMTP id y81mr24197966vsy.34.1560859009184; 
- Tue, 18 Jun 2019 04:56:49 -0700 (PDT)
+ id 1hdCol-0000P8-8b; Tue, 18 Jun 2019 12:02:29 +0000
+Received: by atrey.karlin.mff.cuni.cz (Postfix, from userid 512)
+ id 8058C80329; Tue, 18 Jun 2019 14:02:11 +0200 (CEST)
+Date: Tue, 18 Jun 2019 14:02:21 +0200
+From: Pavel Machek <pavel@ucw.cz>
+To: Matthias Kaehlcke <mka@chromium.org>
+Subject: Re: [PATCH] Revert "ARM: dts: rockchip: set PWM delay backlight
+ settings for Minnie"
+Message-ID: <20190618120221.GA20524@amd>
+References: <20190614224533.169881-1-mka@chromium.org>
+ <20190616154143.GA28583@atrey.karlin.mff.cuni.cz>
+ <20190617161625.GR137143@google.com>
 MIME-Version: 1.0
-References: <20190513192300.653-1-ulf.hansson@linaro.org>
- <CAJZ5v0gbK3AFCVC1b9LyXeMOM8fKR1=ECXZwaeSYRSqcK0UgYA@mail.gmail.com>
- <CAPDyKFpU3u248Gi+FnrVdY-EWXJQuu14uNV9d3Xs0W-K-EMEhg@mail.gmail.com>
- <20190607154210.GJ15577@e107155-lin> <20190607193407.GB24059@builder>
- <20190610103225.GA26602@e107155-lin>
- <CAPDyKFr31SwmHHAREbR3dWMQ55LzzUyTc4M5FZvNsqWfX7SE8Q@mail.gmail.com>
- <20190610171557.GA4560@redmoon>
- <CAPDyKFqC8+Sv5WRhwOxqphAt8tb_PDisy13Miz5e-PajvwS1ew@mail.gmail.com>
-In-Reply-To: <CAPDyKFqC8+Sv5WRhwOxqphAt8tb_PDisy13Miz5e-PajvwS1ew@mail.gmail.com>
-From: Ulf Hansson <ulf.hansson@linaro.org>
-Date: Tue, 18 Jun 2019 13:56:13 +0200
-Message-ID: <CAPDyKFpo8pJroOq=YkkNkt6+xyOdu3tTovEbsEp2ry0OJUu7JQ@mail.gmail.com>
-Subject: Re: [PATCH 00/18] ARM/ARM64: Support hierarchical CPU arrangement for
- PSCI
-To: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
+In-Reply-To: <20190617161625.GR137143@google.com>
+User-Agent: Mutt/1.5.23 (2014-03-12)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190618_045650_686685_30FF1BF2 
-X-CRM114-Status: GOOD (  24.25  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190618_050227_454332_F492AE38 
+X-CRM114-Status: GOOD (  21.71  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:943 listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [195.113.26.193 listed in list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -98,89 +59,105 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Geert Uytterhoeven <geert+renesas@glider.be>,
- "Rafael J. Wysocki" <rafael@kernel.org>, Stephen Boyd <sboyd@kernel.org>,
- Viresh Kumar <viresh.kumar@linaro.org>, Linux PM <linux-pm@vger.kernel.org>,
- Daniel Lezcano <daniel.lezcano@linaro.org>,
- "Rafael J . Wysocki" <rjw@rjwysocki.net>, Kevin Hilman <khilman@kernel.org>,
- Amit Kucheria <amit.kucheria@linaro.org>,
- Bjorn Andersson <bjorn.andersson@linaro.org>, Tony Lindgren <tony@atomide.com>,
- linux-arm-msm <linux-arm-msm@vger.kernel.org>,
- Lina Iyer <ilina@codeaurora.org>, Sudeep Holla <sudeep.holla@arm.com>,
- Niklas Cassel <niklas.cassel@linaro.org>,
- Souvik Chakravarty <souvik.chakravarty@arm.com>,
- "Raju P . L . S . S . S . N" <rplsssn@codeaurora.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Heiko Stuebner <heiko@sntech.de>, linux-kernel@vger.kernel.org,
+ Douglas Anderson <dianders@chromium.org>, linux-rockchip@lists.infradead.org,
+ Rob Herring <robh+dt@kernel.org>,
+ Enric Balletbo i Serra <enric.balletbo@collabora.com>,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: multipart/mixed; boundary="===============8425051205176634953=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, 10 Jun 2019 at 20:57, Ulf Hansson <ulf.hansson@linaro.org> wrote:
->
-> On Mon, 10 Jun 2019 at 19:16, Lorenzo Pieralisi
-> <lorenzo.pieralisi@arm.com> wrote:
-> >
-> > On Mon, Jun 10, 2019 at 05:54:39PM +0200, Ulf Hansson wrote:
-> >
-> > [...]
-> >
-> > > My summary from the earlier ones, is that because the PSCI spec
-> > > includes support for OSI, we should also support it in the kernel (and
-> > > ATF). In a discussion offlist, Lorenzo agreed that it's okay to add,
-> > > without an apple to apple comparison. Maybe Lorenzo can fill in and
-> > > state this publicly, to save us all some time?
-> >
-> > The comparison should have been made before even requesting PSCI OSI
-> > mode changes to the specifications, so we have a chip on our shoulders
-> > anyway.
-> >
-> > We will enable PSCI OSI but that's not where the problem lies, enabling
-> > PSCI OSI from a firmware perspective should take 10 lines of code,
-> > not:
->
-> Thanks for confirming!
->
-> >
-> >  drivers/firmware/psci/Makefile                |   2 +-
-> >  drivers/firmware/psci/psci.c                  | 219 ++++++++--
-> >  drivers/firmware/psci/psci.h                  |  29 ++
-> >  drivers/firmware/psci/psci_pm_domain.c        | 403 ++++++++++++++++++
-> >
-> > I have some concerns about these changes that I will state in the
-> > relevant patches.
->
-> Most of the above changes isn't for solely for OSI, but to support a
-> hierarchical topology described in the PSCI DT layout. This is for
-> example needed when other resources shares the same power rail as the
-> CPU cluster.
->
-> In other words, the series is orthogonal to whether OSI or PC mode is
-> used for PSCI, just to make that clear. BTW, this is what you
-> requested me to change into, a while ago.
->
-> >
-> > > My final point in regards to the OSI mode support, it's a minor part
-> > > of the series. I don't see how that should hurt from a maintenance
-> > > point of view, or perhaps I am wrong? In any case, I offer my help
-> > > with review/maintenance in any form as you may see need/fit.
-> >
-> > I will go through the series but most of this code should move
-> > to core PM code, it has nothing to do with PSCI.
->
-> I am looking forward to your review - and for sure, I am open to suggestions!
->
-> >
-> > BTW, apologies for the delay, I was away.
 
-Lorenzo, a gentle ping.
+--===============8425051205176634953==
+Content-Type: multipart/signed; micalg=pgp-sha1;
+	protocol="application/pgp-signature"; boundary="3MwIy2ne0vdjdPXF"
+Content-Disposition: inline
 
-Kind regards
-Uffe
+
+--3MwIy2ne0vdjdPXF
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+
+On Mon 2019-06-17 09:16:25, Matthias Kaehlcke wrote:
+> Hi Pavel,
+>=20
+> On Sun, Jun 16, 2019 at 05:41:43PM +0200, Pavel Machek wrote:
+> > Hi!
+> >=20
+> > > This reverts commit 288ceb85b505c19abe1895df068dda5ed20cf482.
+> > >=20
+> > > According to the commit message the AUO B101EAN01 panel on minnie
+> > > requires a PWM delay of 200 ms, however this is not what the
+> > > datasheet says. The datasheet mentions a *max* delay of 200 ms
+> > > for T2 ("delay from LCDVDD to black video generation") and T3
+> > > ("delay from LCDVDD to HPD high"), which aren't related to the
+> > > PWM. The backlight power sequence does not specify min/max
+> > > constraints for T15 (time from PWM on to BL enable) or T16
+> > > (time from BL disable to PWM off).
+> > >=20
+> > > Signed-off-by: Matthias Kaehlcke <mka@chromium.org>
+> > > ---
+> > > Enric, if you think I misinterpreted the datasheet please holler!
+> >=20
+> > Was this tested?
+>=20
+> I performed limited manually testing.
+>=20
+> minnie ships with the Chrome OS 3.14 downstream, which doesn't include
+> this delay, to my knowledge there are no open display related bugs for
+> minnie. One could argue that a the configuration without the delay was
+> widely field tested
+>=20
+> > Does patch being reverted actually break anything?
+>=20
+> To my knowledge it doesn't really break anything, however there is a
+> short user perceptible delay between switching on the LCD and
+> switching on the backlight. It's not the end of the world, but if it's
+> not actually needed better avoid it.
+>=20
+> > If so, cc stable?
+>=20
+> I guess this is an edge case, were you could go either way. I'm fine
+> with respinning and cc-ing stable.
+
+Ok, if it is just a small delay, stable probably does not need to be
+involved.
+
+Thanks,
+								Pavel
+--=20
+(english) http://www.livejournal.com/~pavelmachek
+(cesky, pictures) http://atrey.karlin.mff.cuni.cz/~pavel/picture/horses/blo=
+g.html
+
+--3MwIy2ne0vdjdPXF
+Content-Type: application/pgp-signature; name="signature.asc"
+Content-Description: Digital signature
+
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1
+
+iEYEARECAAYFAl0I0s0ACgkQMOfwapXb+vIDhwCgoXg7BeLdOOaZditUE387gqIo
+RsQAn0zNp/RpUuk4d69n9e90MTNfL8OK
+=uTEM
+-----END PGP SIGNATURE-----
+
+--3MwIy2ne0vdjdPXF--
+
+
+--===============8425051205176634953==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============8425051205176634953==--
+
