@@ -2,85 +2,101 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 07B154A440
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 18 Jun 2019 16:44:07 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A23234A44F
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 18 Jun 2019 16:46:15 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=vZPY068K5c8UNoixEV5srHGjf4By3KTOQHHFGINZ34w=; b=GlO2BTX/pfA2OWrx0UjHwBe8s
-	vM00t6IlzBieMLNUjTrmcjC/GzbFYTfHMnL4nkIClouuXLsve9FQAz/nJXnNHZpx7iQ0zqcWJBR2d
-	nQRob2OSk+xV1nLfbVQSrIyg2voD/0VZ0uZBBbJSmAq7L9ekwGOYJRaDYkwG8BZoxtgmVAFIm2O/r
-	NltpMv/aHT6GOSNZgTF49uRfcLZXuRv8lF2URmvzyUS1xTYT+U0QopFTv/VDZJBYQ54KqjymGL7MR
-	eiNMh+66hfPwiVD0r02xnn2axtzPe4PQZ6rRaWeZdQhHQ6Y1ZIWKJoTlOsCG5ymcB3CY/pJG/fbPq
-	GkuhXSEgw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=9QcGeqdOZMtTD0w5tS+JODo8cbN5nBtI8a5DN8U6P04=; b=LlUGY51J0vbXCK
+	xFY3YZj42GlumPnExiRlOHS3owUwT3KwU3y/PRib/LeGh1umDds3HD/Ncn+iXIBp0W1+29ZhMxsLg
+	7+9HpKmijtLOpbSPhUMy/N4XSN6BLf+iLe2HE0Di0tiBCf3SAauwO83ra/YSgCM8VJxY7wd+S7fOU
+	fbbA5zpOQfq3jcJf+OYZQMTjJE9iLWoikCSkSFfKW6RvWlZmr/e7lRxIDHz5bdeTmmHyJiFCIwRyO
+	i6zw3nuELUbrWQUiash31G5Z+9A1eibJ3Yrtrf0WOog9Gu2jsRxt+MM2Ns6FDDZ8E/NroWcrd5hKm
+	7HhFkMdB3ZAc2Hs1DrXg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hdFLA-0000iV-GD; Tue, 18 Jun 2019 14:44:04 +0000
-Received: from lelv0142.ext.ti.com ([198.47.23.249])
+	id 1hdFNF-0002GV-2l; Tue, 18 Jun 2019 14:46:13 +0000
+Received: from mail-ed1-f66.google.com ([209.85.208.66])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hdFKu-0000hG-8B
- for linux-arm-kernel@lists.infradead.org; Tue, 18 Jun 2019 14:43:50 +0000
-Received: from fllv0034.itg.ti.com ([10.64.40.246])
- by lelv0142.ext.ti.com (8.15.2/8.15.2) with ESMTP id x5IEhlcs118446;
- Tue, 18 Jun 2019 09:43:47 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1560869027;
- bh=bPvWDl2Vi9YLEjn+FrKS5fj4iYwTZRUUg0e1CYrL5iY=;
- h=Subject:To:CC:References:From:Date:In-Reply-To;
- b=E/OoWcdmWePXp/vfcuFUbvEaoqavso7KSdYF1t/V3zWeZDxRhOfTAaoLZLsRTU4s7
- W66S0KAW6rmQ5J+WH7huF/Gd4w986Vy9ZcbwKoTymmV3XaIWqPxrTp32uhsiUyrxeB
- sJouCVymHPng/VGDHGtsSsfea7efhZNle/IKrfbI=
-Received: from DLEE102.ent.ti.com (dlee102.ent.ti.com [157.170.170.32])
- by fllv0034.itg.ti.com (8.15.2/8.15.2) with ESMTPS id x5IEhlXe019388
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Tue, 18 Jun 2019 09:43:47 -0500
-Received: from DLEE108.ent.ti.com (157.170.170.38) by DLEE102.ent.ti.com
- (157.170.170.32) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5; Tue, 18
- Jun 2019 09:43:47 -0500
-Received: from lelv0327.itg.ti.com (10.180.67.183) by DLEE108.ent.ti.com
- (157.170.170.38) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5 via
- Frontend Transport; Tue, 18 Jun 2019 09:43:47 -0500
-Received: from [127.0.0.1] (ileax41-snat.itg.ti.com [10.172.224.153])
- by lelv0327.itg.ti.com (8.15.2/8.15.2) with ESMTP id x5IEhjot016738;
- Tue, 18 Jun 2019 09:43:46 -0500
-Subject: Re: [PATCH 3/4] arm64: dts: ti: k3-j721e: Add the MCU SRAM node
-To: Suman Anna <s-anna@ti.com>, Nishanth Menon <nm@ti.com>
-References: <20190605163434.23173-1-s-anna@ti.com>
- <20190605163434.23173-4-s-anna@ti.com>
-From: Tero Kristo <t-kristo@ti.com>
-Message-ID: <cfcfe8c9-a6dd-648d-8ce2-b0115b558892@ti.com>
-Date: Tue, 18 Jun 2019 17:43:44 +0300
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.6.1
+ id 1hdFN0-0002Fc-EC
+ for linux-arm-kernel@lists.infradead.org; Tue, 18 Jun 2019 14:46:00 +0000
+Received: by mail-ed1-f66.google.com with SMTP id m10so22136598edv.6
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 18 Jun 2019 07:45:55 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=7HE93dhpJxlFYudzQ5xHr1bpHKWKPEWly3PXEgXNTmE=;
+ b=dQcv0Ax/pISwUI+N1vZrtkcJu9atSN0ybQhUGPcpDksbBQ4qKBRWas/Vfrx8WVmBlC
+ VSFOhj9WkyKp4ekk4eahMAVKgwFp1viJvEjn/HejuRpGEnKpan9lg0H8HWZOQwcO7roF
+ p3q6ADLQ7bNdPw5m+UIdA6jPKGCtYm8AJdkl7GCuD3o2q8bFP9oquYhMuEfTzcVDlp0D
+ NTmseq9B+zUA4pQeBVRZhXvr+T3EkFpCUbvg9I4ZGti9GZ0ClSiKXkJLoj5j1N7jG+p9
+ N5bPsk38lqc1OF/zN0lBzF4ENto8/EiCdPfDVjHBLMQydf8IqB2EnNQozIrWZ8CnayDy
+ VETQ==
+X-Gm-Message-State: APjAAAXrxw7eDlLQBwshOww7N+NRGXx63aHUINeeMInzqsApYtQmTZeO
+ MRoo0UqRZD0JUN+48qdts0WqRi3OHTU=
+X-Google-Smtp-Source: APXvYqz3109Qg5/bYYwGx6yoWkxJ/W5pKqZAvgimMeJoF8F7swNFUWeVJDq9b7WG9RI3FkYFLnNZBw==
+X-Received: by 2002:a17:906:1303:: with SMTP id
+ w3mr101290374ejb.196.1560869153716; 
+ Tue, 18 Jun 2019 07:45:53 -0700 (PDT)
+Received: from mail-wm1-f42.google.com (mail-wm1-f42.google.com.
+ [209.85.128.42])
+ by smtp.gmail.com with ESMTPSA id o31sm4900862edb.66.2019.06.18.07.45.52
+ for <linux-arm-kernel@lists.infradead.org>
+ (version=TLS1_3 cipher=AEAD-AES128-GCM-SHA256 bits=128/128);
+ Tue, 18 Jun 2019 07:45:53 -0700 (PDT)
+Received: by mail-wm1-f42.google.com with SMTP id c6so3592742wml.0
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 18 Jun 2019 07:45:52 -0700 (PDT)
+X-Received: by 2002:a7b:c051:: with SMTP id u17mr2155372wmc.25.1560869152086; 
+ Tue, 18 Jun 2019 07:45:52 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <20190605163434.23173-4-s-anna@ti.com>
-Content-Language: en-US
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
+References: <20190520090318.27570-1-jagan@amarulasolutions.com>
+ <20190520090318.27570-2-jagan@amarulasolutions.com>
+ <20190523203407.o5obg2wtj7wwau6a@flea>
+ <CAMty3ZDDYEOvSbi7kmacjJZS6f3whpaGd4xsf4OUkXmBbTE3Qg@mail.gmail.com>
+ <20190529145450.qnitxpmpr2a2xemk@flea>
+ <CAMty3ZB89cPc8AycFPuNTfPC1dot4cNgN87v+rtQVW2zQh8uZg@mail.gmail.com>
+ <20190604100011.cqkhpwmmmwh3vr3y@flea>
+ <CAMty3ZAFdg1Ow8ececmqF2L0ckitkLdqUPmME3fGBoOaP32kzA@mail.gmail.com>
+ <20190613125630.2b2fvvtvrcjlx4lv@flea>
+ <CAMty3ZCNJK+Wcdw3AXKjUQZTD=PWijq9caNsTzpz+pSEqpUy_A@mail.gmail.com>
+ <20190614144526.lorg3saj4wjopgne@flea>
+ <CAMty3ZBuKWFKckPt+C=XeXgvSLtYL6uuyy29vw2C89TSiDs15w@mail.gmail.com>
+ <CAGb2v679C2PRsEJFo_Q+PbKZXvW3B72T28mUJJDe1Sqarjy36A@mail.gmail.com>
+ <CAMty3ZANkmf=ih4snh1xCLxJaFvPoBPvzpD=aZQCiuSM004UVw@mail.gmail.com>
+In-Reply-To: <CAMty3ZANkmf=ih4snh1xCLxJaFvPoBPvzpD=aZQCiuSM004UVw@mail.gmail.com>
+From: Chen-Yu Tsai <wens@csie.org>
+Date: Tue, 18 Jun 2019 22:45:39 +0800
+X-Gmail-Original-Message-ID: <CAGb2v64gBGcgxXDB0Xd1oxE_jX4kWp4dGE0uORFSYW=PAFAEvA@mail.gmail.com>
+Message-ID: <CAGb2v64gBGcgxXDB0Xd1oxE_jX4kWp4dGE0uORFSYW=PAFAEvA@mail.gmail.com>
+Subject: Re: [linux-sunxi] Re: [PATCH v10 01/11] drm/sun4i: dsi: Fix TCON DRQ
+ set bits
+To: Jagan Teki <jagan@amarulasolutions.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190618_074348_377481_0863536D 
-X-CRM114-Status: GOOD (  14.66  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20190618_074558_476067_2D2867F5 
+X-CRM114-Status: GOOD (  31.04  )
+X-Spam-Score: 0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.23.249 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.208.66 listed in list.dnswl.org]
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (wens213[at]gmail.com)
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (wens213[at]gmail.com)
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -92,51 +108,309 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: Bhushan Shah <bshah@mykolab.com>,
+ =?UTF-8?B?5Z2a5a6a5YmN6KGM?= <powerpan@qq.com>,
+ Maxime Ripard <maxime.ripard@bootlin.com>,
+ linux-kernel <linux-kernel@vger.kernel.org>,
+ dri-devel <dri-devel@lists.freedesktop.org>, David Airlie <airlied@linux.ie>,
+ linux-sunxi <linux-sunxi@googlegroups.com>, Daniel Vetter <daniel@ffwll.ch>,
+ Michael Trimarchi <michael@amarulasolutions.com>,
+ linux-amarula <linux-amarula@amarulasolutions.com>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 05/06/2019 19:34, Suman Anna wrote:
-> Add the on-chip SRAM present within the MCU domain as a mmio-sram node.
-> The K3 J721E SoCs have 1 MB of such memory. Any specific memory range
-> within this RAM needed by a driver/software module ought to be reserved
-> using an appropriate child node.
-> 
-> Signed-off-by: Suman Anna <s-anna@ti.com>
+On Tue, Jun 18, 2019 at 8:11 PM Jagan Teki <jagan@amarulasolutions.com> wrote:
+>
+> On Tue, Jun 18, 2019 at 5:13 PM Chen-Yu Tsai <wens@csie.org> wrote:
+> >
+> > On Tue, Jun 18, 2019 at 6:51 PM Jagan Teki <jagan@amarulasolutions.com> wrote:
+> > >
+> > > On Fri, Jun 14, 2019 at 8:15 PM Maxime Ripard <maxime.ripard@bootlin.com> wrote:
+> > > >
+> > > > On Fri, Jun 14, 2019 at 12:03:13PM +0530, Jagan Teki wrote:
+> > > > > On Thu, Jun 13, 2019 at 6:56 PM Maxime Ripard <maxime.ripard@bootlin.com> wrote:
+> > > > > >
+> > > > > > On Wed, Jun 05, 2019 at 01:17:11PM +0530, Jagan Teki wrote:
+> > > > > > > On Tue, Jun 4, 2019 at 3:30 PM Maxime Ripard <maxime.ripard@bootlin.com> wrote:
+> > > > > > > >
+> > > > > > > > On Wed, May 29, 2019 at 11:44:56PM +0530, Jagan Teki wrote:
+> > > > > > > > > On Wed, May 29, 2019 at 8:24 PM Maxime Ripard <maxime.ripard@bootlin.com> wrote:
+> > > > > > > > > >
+> > > > > > > > > > On Fri, May 24, 2019 at 03:48:51PM +0530, Jagan Teki wrote:
+> > > > > > > > > > > On Fri, May 24, 2019 at 2:04 AM Maxime Ripard <maxime.ripard@bootlin.com> wrote:
+> > > > > > > > > > > >
+> > > > > > > > > > > > On Mon, May 20, 2019 at 02:33:08PM +0530, Jagan Teki wrote:
+> > > > > > > > > > > > > According to "DRM kernel-internal display mode structure" in
+> > > > > > > > > > > > > include/drm/drm_modes.h the current driver is trying to include
+> > > > > > > > > > > > > sync timings along with front porch value while checking and
+> > > > > > > > > > > > > computing drq set bits in non-burst mode.
+> > > > > > > > > > > > >
+> > > > > > > > > > > > > mode->hsync_end - mode->hdisplay => horizontal front porch + sync
+> > > > > > > > > > > > >
+> > > > > > > > > > > > > With adding additional sync timings, the dsi controller leads to
+> > > > > > > > > > > > > wrong drq set bits for "bananapi,s070wv20-ct16" panel which indeed
+> > > > > > > > > > > > > trigger panel flip_done timed out as:
+> > > > > > > > > > > > >
+> > > > > > > > > > > > >  WARNING: CPU: 0 PID: 31 at drivers/gpu/drm/drm_atomic_helper.c:1429 drm_atomic_helper_wait_for_vblanks.part.1+0x298/0x2a0
+> > > > > > > > > > > > >  [CRTC:46:crtc-0] vblank wait timed out
+> > > > > > > > > > > > >  Modules linked in:
+> > > > > > > > > > > > >  CPU: 0 PID: 31 Comm: kworker/0:1 Not tainted 5.1.0-next-20190514-00026-g01f0c75b902d-dirty #13
+> > > > > > > > > > > > >  Hardware name: Allwinner sun8i Family
+> > > > > > > > > > > > >  Workqueue: events deferred_probe_work_func
+> > > > > > > > > > > > >  [<c010ed54>] (unwind_backtrace) from [<c010b76c>] (show_stack+0x10/0x14)
+> > > > > > > > > > > > >  [<c010b76c>] (show_stack) from [<c0688c70>] (dump_stack+0x84/0x98)
+> > > > > > > > > > > > >  [<c0688c70>] (dump_stack) from [<c011d9e4>] (__warn+0xfc/0x114)
+> > > > > > > > > > > > >  [<c011d9e4>] (__warn) from [<c011da40>] (warn_slowpath_fmt+0x44/0x68)
+> > > > > > > > > > > > >  [<c011da40>] (warn_slowpath_fmt) from [<c040cd50>] (drm_atomic_helper_wait_for_vblanks.part.1+0x298/0x2a0)
+> > > > > > > > > > > > >  [<c040cd50>] (drm_atomic_helper_wait_for_vblanks.part.1) from [<c040e694>] (drm_atomic_helper_commit_tail_rpm+0x5c/0x6c)
+> > > > > > > > > > > > >  [<c040e694>] (drm_atomic_helper_commit_tail_rpm) from [<c040e4dc>] (commit_tail+0x40/0x6c)
+> > > > > > > > > > > > >  [<c040e4dc>] (commit_tail) from [<c040e5cc>] (drm_atomic_helper_commit+0xbc/0x128)
+> > > > > > > > > > > > >  [<c040e5cc>] (drm_atomic_helper_commit) from [<c0411b64>] (restore_fbdev_mode_atomic+0x1cc/0x1dc)
+> > > > > > > > > > > > >  [<c0411b64>] (restore_fbdev_mode_atomic) from [<c04156f8>] (drm_fb_helper_restore_fbdev_mode_unlocked+0x54/0xa0)
+> > > > > > > > > > > > >  [<c04156f8>] (drm_fb_helper_restore_fbdev_mode_unlocked) from [<c0415774>] (drm_fb_helper_set_par+0x30/0x54)
+> > > > > > > > > > > > >  [<c0415774>] (drm_fb_helper_set_par) from [<c03ad450>] (fbcon_init+0x560/0x5ac)
+> > > > > > > > > > > > >  [<c03ad450>] (fbcon_init) from [<c03eb8a0>] (visual_init+0xbc/0x104)
+> > > > > > > > > > > > >  [<c03eb8a0>] (visual_init) from [<c03ed1b8>] (do_bind_con_driver+0x1b0/0x390)
+> > > > > > > > > > > > >  [<c03ed1b8>] (do_bind_con_driver) from [<c03ed780>] (do_take_over_console+0x13c/0x1c4)
+> > > > > > > > > > > > >  [<c03ed780>] (do_take_over_console) from [<c03ad800>] (do_fbcon_takeover+0x74/0xcc)
+> > > > > > > > > > > > >  [<c03ad800>] (do_fbcon_takeover) from [<c013c9c8>] (notifier_call_chain+0x44/0x84)
+> > > > > > > > > > > > >  [<c013c9c8>] (notifier_call_chain) from [<c013cd20>] (__blocking_notifier_call_chain+0x48/0x60)
+> > > > > > > > > > > > >  [<c013cd20>] (__blocking_notifier_call_chain) from [<c013cd50>] (blocking_notifier_call_chain+0x18/0x20)
+> > > > > > > > > > > > >  [<c013cd50>] (blocking_notifier_call_chain) from [<c03a6e44>] (register_framebuffer+0x1e0/0x2f8)
+> > > > > > > > > > > > >  [<c03a6e44>] (register_framebuffer) from [<c04153c0>] (__drm_fb_helper_initial_config_and_unlock+0x2fc/0x50c)
+> > > > > > > > > > > > >  [<c04153c0>] (__drm_fb_helper_initial_config_and_unlock) from [<c04158c8>] (drm_fbdev_client_hotplug+0xe8/0x1b8)
+> > > > > > > > > > > > >  [<c04158c8>] (drm_fbdev_client_hotplug) from [<c0415a20>] (drm_fbdev_generic_setup+0x88/0x118)
+> > > > > > > > > > > > >  [<c0415a20>] (drm_fbdev_generic_setup) from [<c043f060>] (sun4i_drv_bind+0x128/0x160)
+> > > > > > > > > > > > >  [<c043f060>] (sun4i_drv_bind) from [<c044b598>] (try_to_bring_up_master+0x164/0x1a0)
+> > > > > > > > > > > > >  [<c044b598>] (try_to_bring_up_master) from [<c044b668>] (__component_add+0x94/0x140)
+> > > > > > > > > > > > >  [<c044b668>] (__component_add) from [<c0445e1c>] (sun6i_dsi_probe+0x144/0x234)
+> > > > > > > > > > > > >  [<c0445e1c>] (sun6i_dsi_probe) from [<c0452ef4>] (platform_drv_probe+0x48/0x9c)
+> > > > > > > > > > > > >  [<c0452ef4>] (platform_drv_probe) from [<c04512cc>] (really_probe+0x1dc/0x2c8)
+> > > > > > > > > > > > >  [<c04512cc>] (really_probe) from [<c0451518>] (driver_probe_device+0x60/0x160)
+> > > > > > > > > > > > >  [<c0451518>] (driver_probe_device) from [<c044f7a4>] (bus_for_each_drv+0x74/0xb8)
+> > > > > > > > > > > > >  [<c044f7a4>] (bus_for_each_drv) from [<c045107c>] (__device_attach+0xd0/0x13c)
+> > > > > > > > > > > > >  [<c045107c>] (__device_attach) from [<c0450474>] (bus_probe_device+0x84/0x8c)
+> > > > > > > > > > > > >  [<c0450474>] (bus_probe_device) from [<c0450900>] (deferred_probe_work_func+0x64/0x90)
+> > > > > > > > > > > > >  [<c0450900>] (deferred_probe_work_func) from [<c0135970>] (process_one_work+0x204/0x420)
+> > > > > > > > > > > > >  [<c0135970>] (process_one_work) from [<c013690c>] (worker_thread+0x274/0x5a0)
+> > > > > > > > > > > > >  [<c013690c>] (worker_thread) from [<c013b3d8>] (kthread+0x11c/0x14c)
+> > > > > > > > > > > > >  [<c013b3d8>] (kthread) from [<c01010e8>] (ret_from_fork+0x14/0x2c)
+> > > > > > > > > > > > >  Exception stack(0xde539fb0 to 0xde539ff8)
+> > > > > > > > > > > > >  9fa0:                                     00000000 00000000 00000000 00000000
+> > > > > > > > > > > > >  9fc0: 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000
+> > > > > > > > > > > > >  9fe0: 00000000 00000000 00000000 00000000 00000013 00000000
+> > > > > > > > > > > > >  ---[ end trace b57eb1e5c64c6b8b ]---
+> > > > > > > > > > > > >  random: fast init done
+> > > > > > > > > > > > >  [drm:drm_atomic_helper_wait_for_dependencies] *ERROR* [CRTC:46:crtc-0] flip_done timed out
+> > > > > > > > > > > > >  [drm:drm_atomic_helper_wait_for_dependencies] *ERROR* [CONNECTOR:48:DSI-1] flip_done timed out
+> > > > > > > > > > > > >  [drm:drm_atomic_helper_wait_for_dependencies] *ERROR* [PLANE:30:plane-0] flip_done timed out
+> > > > > > > > > > > > >
+> > > > > > > > > > > > > But according to Allwinner A33, A64 BSP code [1] [3] the TCON DRQ for
+> > > > > > > > > > > > > non-burst DSI mode can be computed based on "horizontal front porch"
+> > > > > > > > > > > > > value only (no sync timings included).
+> > > > > > > > > > > > >
+> > > > > > > > > > > > > Detailed evidence for drq set bits based on A33 BSP [1] [2]
+> > > > > > > > > > > > >
+> > > > > > > > > > > > > => panel->lcd_ht - panel->lcd_x - panel->lcd_hbp - 20
+> > > > > > > > > > > > > => (tt->hor_front_porch + lcdp->panel_info.lcd_hbp +
+> > > > > > > > > > > > > lcdp->panel_info.lcd_x) - panel->lcd_x - panel->lcd_hbp - 20
+> > > > > > > > > > > > > => tt->hor_front_porch - 20
+> > > > > > > > > > > >
+> > > > > > > > > > > > The thing is, while your explanation on the DRM side is sound,
+> > > > > > > > > > > > Allwinner has been using the hbp field of their panel description to
+> > > > > > > > > > > > store what DRM calls the backporch and the sync period.
+> > > > > > > > > > >
+> > > > > > > > > > > Exactly, hbp = backporch + sync
+> > > > > > > > > > > https://github.com/BPI-SINOVOIP/BPI-M2M-bsp/blob/master/linux-sunxi/drivers/video/sunxi/disp/de/disp_lcd.c#L2046
+> > > > > > > > > > >
+> > > > > > > > > > > And the above computation is rely on that as well. If you can see the
+> > > > > > > > > > > final out of the above computation you can get the front porch value
+> > > > > > > > > > > (w/o sync )
+> > > > > > > > > >
+> > > > > > > > > > As I was saying, you are explaining it well for DRM, but in order for
+> > > > > > > > > > your last formula (the one coming from the BSP) to make sense, you
+> > > > > > > > > > have to explain that the horizontal back porch for Allwinner contains
+> > > > > > > > > > the sync period, otherwise your expansion of lcd_ht doesn't make
+> > > > > > > > > > sense.
+> > > > > > > > >
+> > > > > > > > > I'm not sure why we need to take care of back porch since the formula
+> > > > > > > > > clearly evaluating a result as front porch, without sync timing (as
+> > > > > > > > > current code included this sync), I keep the hbp and trying to
+> > > > > > > > > substitute the lcd_ht value so the end result would cancel hbp.
+> > > > > > > >
+> > > > > > > > Because it changes how lcd_ht expands. In the DRM case, it will expand
+> > > > > > > > to the displayed area, the front porch, the sync period and the back
+> > > > > > > > porch.
+> > > > > > > >
+> > > > > > > > In your case, you expand it to the displayed area, the front porch and
+> > > > > > > > the back porch, precisely because in Allwinner's case, the back porch
+> > > > > > > > has the sync period.
+> > > > > > >
+> > > > > > > I understand the point, but technically it matter about the final
+> > > > > > > computation result.  May be we can even manage the same computation in
+> > > > > > > back porch, but I'm not sure. Since the final output doesn't involve
+> > > > > > > any sync length, why we can include that ie what I'm not sure.
+> > > > > >
+> > > > > > We have the following formula:
+> > > > > > lcd_ht - lcd_x - lcd_hbp - 20
+> > > > > >
+> > > > > > Using the concepts as they are defined in DRM, this expands to:
+> > > > > > x + hbp + hsync + hfp - x - hbp - 20
+> > > > >
+> > > > > Here is diff between allwinner hbp vs hbp in DRM.
+> > > > >
+> > > > > Say hbp in DRM can call it hbackporch, so
+> > > > >
+> > > > > => x + hbackporch + hsync + hfp - -x - hbp - 20
+> > > > >
+> > > > > (and here we need to substitute hbp formula from allwinner since the
+> > > > > actual equation would coming from there
+> > > > > https://github.com/BPI-SINOVOIP/BPI-M2M-bsp/blob/master/linux-sunxi/drivers/video/sunxi/disp/de/disp_lcd.c#L2046)
+> > > >
+> > > > And this is precisely what needs to be said, with an explanation about
+> > > > where that hor_back_porch is being used later on, and what impact it
+> > > > could have.
+> > >
+> > > Yes, it an equation and the mathematical equations can be substitute
+> > > to variety kind I did agree with that, whether you can use hbackporch
+> > > or not or use another-way the final resulting value is equivalent to
+> > > the value of front porch. In that case we can solve based on what I
+> > > explained above. If you still dought me, please run BSP and check the
+> > > resulting value on this check, you can get the front porch value.
+> >
+> > Maxime is not doubting you. He is saying that you need to include the
+> > detailed explanation in your commit log, and not just reference pieces
+> > of code. This is separate from the requirement of having a correct patch.
+> >
+> > Providing just a mathematical formula isn't enough either, because it
+> > is not clear to the average reader which term expanded into what. A
+>
+> Not sure whether you see my commit log on this version or not. Each
+> one has it's own way of providing the details and explanation and at
+> the end people in ML should understand it. I'm not proving a simple
+> formula here (like I did it in initial version) instead I'm giving all
+> the respective information along with the bug log, and the bsp links
+> where it comes from etc. This is easier way for everyone to
+> understand.
 
-Queuing for 5.3, thanks.
+I did, and I'm telling you it's not easy to follow.
 
--Tero
+> Just a bit to explain what I've mentioned in the log.
+>
+> Paragraph 1:
+>
+> "
+> According to "DRM kernel-internal display mode structure" in
+> include/drm/drm_modes.h the current driver is trying to include
+> sync timings along with front porch value while checking and
+> computing drq set bits in non-burst mode.
+>
+> mode->hsync_end - mode->hdisplay => horizontal front porch + sync
+> "
+>
+> This paragraph explains what the existing code is using according to
+> DRM, which indeed help new users to understand by providing
+> include/drm/drm_modes.h file.
 
-> ---
->   arch/arm64/boot/dts/ti/k3-j721e-mcu-wakeup.dtsi | 8 ++++++++
->   1 file changed, 8 insertions(+)
-> 
-> diff --git a/arch/arm64/boot/dts/ti/k3-j721e-mcu-wakeup.dtsi b/arch/arm64/boot/dts/ti/k3-j721e-mcu-wakeup.dtsi
-> index b72e033fa159..397ef715e145 100644
-> --- a/arch/arm64/boot/dts/ti/k3-j721e-mcu-wakeup.dtsi
-> +++ b/arch/arm64/boot/dts/ti/k3-j721e-mcu-wakeup.dtsi
-> @@ -44,6 +44,14 @@
->   		pinctrl-single,function-mask = <0xffffffff>;
->   	};
->   
-> +	mcu_ram: sram@41c00000 {
-> +		compatible = "mmio-sram";
-> +		reg = <0x00 0x41c00000 0x00 0x100000>;
-> +		ranges = <0x0 0x00 0x41c00000 0x100000>;
-> +		#address-cells = <1>;
-> +		#size-cells = <1>;
-> +	};
-> +
->   	wkup_uart0: serial@42300000 {
->   		compatible = "ti,j721e-uart", "ti,am654-uart";
->   		reg = <0x00 0x42300000 0x00 0x100>;
-> 
+This at the beginning makes no sense. It would be better placed with
+the formula after
+the bug report
 
---
-Texas Instruments Finland Oy, Porkkalankatu 22, 00180 Helsinki. Y-tunnus/Business ID: 0615521-4. Kotipaikka/Domicile: Helsinki
+> Paragraph 2:
+>
+> "
+> With adding additional sync timings, the dsi controller leads to
+> wrong drq set bits for "bananapi,s070wv20-ct16" panel which indeed
+> trigger panel flip_done timed out as:
+> "
+>
+> This paragraph explains what is the relevant issue with existing change.
+>
+> Paragraph 3:
+>
+> BUG or WARNING log
+
+You should lead with these two. These explain "why".
+
+> Paragraph 4:
+>
+> "
+> But according to Allwinner A33, A64 BSP code [1] [3] the TCON DRQ for
+> non-burst DSI mode can be computed based on "horizontal front porch"
+> value only (no sync timings included).
+> "
+>
+> This paragraph explains what is BSP is using compared with mainline.
+>
+> Paragraph 5:
+>
+> "
+> Detailed evidence for drq set bits based on A33 BSP [1] [2]
+>
+> => panel->lcd_ht - panel->lcd_x - panel->lcd_hbp - 20
+> => (tt->hor_front_porch + lcdp->panel_info.lcd_hbp +
+> lcdp->panel_info.lcd_x) - panel->lcd_x - panel->lcd_hbp - 20
+> => tt->hor_front_porch - 20
+> "
+>
+> This paragraph explains the detailed steps of equation evaluation by
+> providing BSP links.
+
+This actually makes it harder to read. For example it takes a couple passes
+to realize lcd_ht expands to the stuff in the parenthesis. All the while I
+still have no idea what all these variables mean or where they came from.
+As I said, please don't ask users to open links and dig through code.
+
+You should provide a simple explanation about what went wrong. As I
+mentioned, you could have simply stated that when the driver was
+reimplemented, the DRQ formula (which you can provide in its original
+form) was incorrectly expanded because Allwinner's definition of "hbp"
+is actually "hbp + sync" in DRM terms. That is actually the root cause,
+which I believe is what Maxime wants detailed in the commit log.
+This immediately points out what went wrong and how it went wrong,
+without jumping through hoops.
+
+Again the diagram helps immensely. (Well, maybe not for screen readers.)
+It also directly shows why you replaced hsync_end with hsync_start.
+
+> Paragraph 6:
+>
+> "
+> Which is mode->hsync_start - mode->hdisplay as per
+> "DRM kernel-internal display mode structure" in include/drm/drm_modes.h
+> "
+>
+> This paragraph give fix details in according to Linux DRM.
+
+Yes, and first you need to understand the formula you gave, which I
+already mentioned is a bit hard.
+
+On the side, going through the code and understanding it actually is quite
+hard as I already did it a couple times before and it was really taxing.
+
+> So, all the explanation which I'm trying to provide here will help to
+> understand, what is the issue with existing code and BUG log, how it
+> handle in BSP, with justification of equations and links where it
+> refers. Please note that I'm providing bug log and before that I've
+> mentioned this timeout because of additional sync. why is the timeout
+> with additional sync time, which I'm unaware since we don't have
+> associated datasheets for this but we have working BSP's to prove
+> that.
+>
+> Frankly, I still didn't understand what I missed here to explain the
+> issue. request for help if you see any issues on this format or
+> information.
+
+The one thing you missed, and that Maxime requested, was how hbp, and
+the misinterpretation of it plays into all of this. In fact the different
+definitions of terms between DRM and Allwinner code / FEX files is what
+led to all this. The rest is, well, somewhat hard to read. I already
+shared my way of explaining everything above.
+
+ChenYu
 
 _______________________________________________
 linux-arm-kernel mailing list
