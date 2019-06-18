@@ -2,83 +2,65 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4A5094A076
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 18 Jun 2019 14:13:15 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 19B4A4A079
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 18 Jun 2019 14:13:49 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+A4kau+S4oefvf0Qnwuq1QUUE3Kug8VhEdo+iVt2V4k=; b=A8oozY5gvScjxM
-	kLw07qtkZqY6UBedMbxWICUdxKd3EEFmsIn0Rj6wQBvQnCoGKvjHvSAQqZuYqLak2pA3xWcp9P0Lh
-	PuFXYTzAFvpg1qBlcALxzhcNrN23uQb0D0n3BWi8rTxyjA7G2OPy2XyOFuapmnkBsLKmA+rDWlmwC
-	T1yc5UlPtBwO+qyDhxF+Ef8H2Z/mYC2O8bK+3LPxNxaJhXKQNzP/dz5K8YAogRHVia6nj0Jrhs6g1
-	iX18dTmwmjaZIWkMgq7lRoxxD6HH92gTo+6LuoZt0EBWrLeS0+1QVbOXgAi08rdi5pHGLqF5RMV0k
-	VRuAUVrqYKXlzZYoTKTw==;
+	List-Owner; bh=douhHlikqZgzjQdNWP0MXLSRTPMmZ7iCktCZ7utx6Hk=; b=oj/y0xuwKZwcaV
+	aLvD4UlUY32P+T0nhpBOue27z+urhTdPyqZELdPm6UrHt3s4S8t21Y6A4iUUyX0+fl+ZBOlJn6wfT
+	gaDZpMvBCvwnIzjRMOdbwR/HJ7wRZHaDyXTBx63Z4vQss1VgNkP9Bw7Fs6AZHWG3BH36R1pTP5L1/
+	x11uZG9FL92z5GIAgjznVYPZf3yIldjXN4h4Hfn/1Kgc3rWs1mgt+ciWR6tRF9I6i0a24X2oId7cz
+	WMyevRBsezq0DMpbn9p7qZvxbDULrOqj8+rDj/LOA9f5onOJ7LZv2aL/TfqZeP0aIIkJ6wdrdtzqj
+	gmRM/Sux+CX+jkOddr/g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hdCz9-0007N2-60; Tue, 18 Jun 2019 12:13:11 +0000
-Received: from lelv0142.ext.ti.com ([198.47.23.249])
+	id 1hdCzi-0007ts-Mq; Tue, 18 Jun 2019 12:13:46 +0000
+Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hdCvG-0003Fy-7M
- for linux-arm-kernel@lists.infradead.org; Tue, 18 Jun 2019 12:09:12 +0000
-Received: from lelv0266.itg.ti.com ([10.180.67.225])
- by lelv0142.ext.ti.com (8.15.2/8.15.2) with ESMTP id x5IC8gKT077794;
- Tue, 18 Jun 2019 07:08:42 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1560859722;
- bh=y47Dmxqdu2axu8XFuL5chdma5kAOZBKLQnnNccav38w=;
- h=From:To:CC:Subject:Date:In-Reply-To:References;
- b=IQhdQ+2Z3U5v56HD2juwKT/dltQ32THHc0U2z3pBTiYv41L1M35iaFwsK/eMQ7XMj
- hyVMrOUvZLfQiacARHH18TKSnon1IQipeOJOEI8hrf0g8/ZYj8ux+OX+xiqDWw98Iy
- 35JvtEXGFC2nXekNoApPJ5uvyAjy6Ie9jkyPt5HI=
-Received: from DLEE104.ent.ti.com (dlee104.ent.ti.com [157.170.170.34])
- by lelv0266.itg.ti.com (8.15.2/8.15.2) with ESMTPS id x5IC8fAB044902
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Tue, 18 Jun 2019 07:08:42 -0500
-Received: from DLEE107.ent.ti.com (157.170.170.37) by DLEE104.ent.ti.com
- (157.170.170.34) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5; Tue, 18
- Jun 2019 07:08:41 -0500
-Received: from fllv0040.itg.ti.com (10.64.41.20) by DLEE107.ent.ti.com
- (157.170.170.37) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5 via
- Frontend Transport; Tue, 18 Jun 2019 07:08:41 -0500
-Received: from a0393675ula.india.ti.com (ileax41-snat.itg.ti.com
- [10.172.224.153])
- by fllv0040.itg.ti.com (8.15.2/8.15.2) with ESMTP id x5IC89Gi080327;
- Tue, 18 Jun 2019 07:08:39 -0500
-From: Keerthy <j-keerthy@ti.com>
-To: <herbert@gondor.apana.org.au>, <davem@davemloft.net>, <robh+dt@kernel.org>
-Subject: [PATCH 10/10] arm64: dts: k3-am6: Add crypto accelarator node
-Date: Tue, 18 Jun 2019 17:38:43 +0530
-Message-ID: <20190618120843.18777-11-j-keerthy@ti.com>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20190618120843.18777-1-j-keerthy@ti.com>
-References: <20190618120843.18777-1-j-keerthy@ti.com>
+ id 1hdCvg-0003Zy-TG; Tue, 18 Jun 2019 12:09:39 +0000
+X-UUID: 05fe0459355f47219826af3c015669db-20190618
+X-UUID: 05fe0459355f47219826af3c015669db-20190618
+Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw02.mediatek.com
+ (envelope-from <yong.wu@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 1820103004; Tue, 18 Jun 2019 04:09:08 -0800
+Received: from MTKMBS31N2.mediatek.inc (172.27.4.87) by
+ MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Tue, 18 Jun 2019 05:09:06 -0700
+Received: from MTKCAS36.mediatek.inc (172.27.4.186) by MTKMBS31N2.mediatek.inc
+ (172.27.4.87) with Microsoft SMTP Server (TLS) id 15.0.1395.4;
+ Tue, 18 Jun 2019 20:09:04 +0800
+Received: from [10.17.3.153] (172.27.4.253) by MTKCAS36.mediatek.inc
+ (172.27.4.170) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
+ Transport; Tue, 18 Jun 2019 20:09:03 +0800
+Message-ID: <1560859743.8082.23.camel@mhfsdcap03>
+Subject: Re: [PATCH v7 14/21] iommu/mediatek: Add mmu1 support
+From: Yong Wu <yong.wu@mediatek.com>
+To: Tomasz Figa <tfiga@google.com>
+Date: Tue, 18 Jun 2019 20:09:03 +0800
+In-Reply-To: <CAAFQd5A5GUn1Zq1xF2_2V0MReNPd5bra2F=nquvodSAZUua5AQ@mail.gmail.com>
+References: <1560169080-27134-1-git-send-email-yong.wu@mediatek.com>
+ <1560169080-27134-15-git-send-email-yong.wu@mediatek.com>
+ <CAAFQd5A5GUn1Zq1xF2_2V0MReNPd5bra2F=nquvodSAZUua5AQ@mail.gmail.com>
+X-Mailer: Evolution 3.10.4-0ubuntu2 
 MIME-Version: 1.0
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190618_050910_579553_318C26F6 
-X-CRM114-Status: GOOD (  11.92  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20190618_050937_423047_238B2B2D 
+X-CRM114-Status: GOOD (  20.39  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.23.249 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -90,68 +72,122 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: nm@ti.com, devicetree@vger.kernel.org, j-keerthy@ti.com,
- linux-kernel@vger.kernel.org, t-kristo@ti.com,
- linux-arm-kernel@lists.infradead.org
+Cc: youlin.pei@mediatek.com, devicetree@vger.kernel.org,
+ Nicolas Boichat <drinkcat@chromium.org>,
+ srv_heupstream <srv_heupstream@mediatek.com>, Joerg
+ Roedel <joro@8bytes.org>, Will Deacon <will.deacon@arm.com>, Linux Kernel
+ Mailing List <linux-kernel@vger.kernel.org>, Evan Green <evgreen@chromium.org>,
+ "list@263.net:IOMMU DRIVERS
+ <iommu@lists.linux-foundation.org>, Joerg  Roedel <joro@8bytes.org>,
+ " <iommu@lists.linux-foundation.org>, Rob Herring <robh+dt@kernel.org>,
+ "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ Yingjoe Chen =?UTF-8?Q?=28=E9=99=B3=E8=8B=B1=E6=B4=B2=29?=
+ <yingjoe.chen@mediatek.com>, anan.sun@mediatek.com,
+ Robin Murphy <robin.murphy@arm.com>, Matthias
+ Kaehlcke <mka@chromium.org>, "list@263.net:IOMMU DRIVERS
+ <iommu@lists.linux-foundation.org>, Joerg  Roedel <joro@8bytes.org>,
+ " <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add crypto accelarator node. Define the psil specific config
-node as well. This can be used in Packet Mode alone.
+On Tue, 2019-06-18 at 15:19 +0900, Tomasz Figa wrote:
+> On Mon, Jun 10, 2019 at 9:21 PM Yong Wu <yong.wu@mediatek.com> wrote:
+> >
+> > Normally the M4U HW connect EMI with smi. the diagram is like below:
+> >               EMI
+> >                |
+> >               M4U
+> >                |
+> >             smi-common
+> >                |
+> >        -----------------
+> >        |    |    |     |    ...
+> >     larb0 larb1  larb2 larb3
+> >
+> > Actually there are 2 mmu cells in the M4U HW, like this diagram:
+> >
+> >               EMI
+> >            ---------
+> >             |     |
+> >            mmu0  mmu1     <- M4U
+> >             |     |
+> >            ---------
+> >                |
+> >             smi-common
+> >                |
+> >        -----------------
+> >        |    |    |     |    ...
+> >     larb0 larb1  larb2 larb3
+> >
+> > This patch add support for mmu1. In order to get better performance,
+> > we could adjust some larbs go to mmu1 while the others still go to
+> > mmu0. This is controlled by a SMI COMMON register SMI_BUS_SEL(0x220).
+> >
+> > mt2712, mt8173 and mt8183 M4U HW all have 2 mmu cells. the default
+> > value of that register is 0 which means all the larbs go to mmu0
+> > defaultly.
+> >
+> > This is a preparing patch for adjusting SMI_BUS_SEL for mt8183.
+> >
+> > Signed-off-by: Yong Wu <yong.wu@mediatek.com>
+> > Reviewed-by: Evan Green <evgreen@chromium.org>
+> > ---
+> >  drivers/iommu/mtk_iommu.c | 46 +++++++++++++++++++++++++++++-----------------
+> >  1 file changed, 29 insertions(+), 17 deletions(-)
+> >
+> > diff --git a/drivers/iommu/mtk_iommu.c b/drivers/iommu/mtk_iommu.c
+> > index 3a14301..ec4ce74 100644
+> > --- a/drivers/iommu/mtk_iommu.c
+> > +++ b/drivers/iommu/mtk_iommu.c
+> > @@ -72,26 +72,32 @@
+> >  #define F_INT_CLR_BIT                          BIT(12)
+> >
+> >  #define REG_MMU_INT_MAIN_CONTROL               0x124
+> > -#define F_INT_TRANSLATION_FAULT                        BIT(0)
+> > -#define F_INT_MAIN_MULTI_HIT_FAULT             BIT(1)
+> > -#define F_INT_INVALID_PA_FAULT                 BIT(2)
+> > -#define F_INT_ENTRY_REPLACEMENT_FAULT          BIT(3)
+> > -#define F_INT_TLB_MISS_FAULT                   BIT(4)
+> > -#define F_INT_MISS_TRANSACTION_FIFO_FAULT      BIT(5)
+> > -#define F_INT_PRETETCH_TRANSATION_FIFO_FAULT   BIT(6)
+> > +                                               /* mmu0 | mmu1 */
+> > +#define F_INT_TRANSLATION_FAULT                        (BIT(0) | BIT(7))
+> > +#define F_INT_MAIN_MULTI_HIT_FAULT             (BIT(1) | BIT(8))
+> > +#define F_INT_INVALID_PA_FAULT                 (BIT(2) | BIT(9))
+> > +#define F_INT_ENTRY_REPLACEMENT_FAULT          (BIT(3) | BIT(10))
+> > +#define F_INT_TLB_MISS_FAULT                   (BIT(4) | BIT(11))
+> > +#define F_INT_MISS_TRANSACTION_FIFO_FAULT      (BIT(5) | BIT(12))
+> > +#define F_INT_PRETETCH_TRANSATION_FIFO_FAULT   (BIT(6) | BIT(13))
+> 
+> If there are two IOMMUs, shouldn't we have two driver instances handle
+> them, instead of making the driver combine them two internally?
 
-Signed-off-by: Keerthy <j-keerthy@ti.com>
----
- arch/arm64/boot/dts/ti/k3-am65-main.dtsi | 33 ++++++++++++++++++++++++
- 1 file changed, 33 insertions(+)
+Actually it means only one IOMMU(M4U) HW here. Each a M4U HW has two
+small iommu cells which have independent MTLB. As the diagram above, M4U
+contain mmu0 and mmu1.
 
-diff --git a/arch/arm64/boot/dts/ti/k3-am65-main.dtsi b/arch/arm64/boot/dts/ti/k3-am65-main.dtsi
-index 91ca5bfeefc2..5e4f9ec39f01 100644
---- a/arch/arm64/boot/dts/ti/k3-am65-main.dtsi
-+++ b/arch/arm64/boot/dts/ti/k3-am65-main.dtsi
-@@ -91,6 +91,39 @@
- 		power-domains = <&k3_pds 148>;
- 	};
- 
-+	crypto: crypto@4E00000 {
-+		compatible = "ti,sa2ul-crypto";
-+		label = "crypto-aes-gbe";
-+		reg = <0x0 0x4E00000 0x0 0x1200>;
-+
-+		status = "okay";
-+		ti,psil-base = <0x4000>;
-+
-+		/* tx: crypto_pnp-1, rx: crypto_pnp-1 */
-+		dmas = <&main_udmap &crypto 0 UDMA_DIR_TX>,
-+				<&main_udmap &crypto 0 UDMA_DIR_RX>,
-+				<&main_udmap &crypto 1 UDMA_DIR_RX>;
-+		dma-names = "tx", "rx1", "rx2";
-+
-+		ti,psil-config0 {
-+			linux,udma-mode = <UDMA_PKT_MODE>;
-+			ti,needs-epib;
-+			ti,psd-size = <64>;
-+		};
-+
-+		ti,psil-config1 {
-+			linux,udma-mode = <UDMA_PKT_MODE>;
-+			ti,needs-epib;
-+			ti,psd-size = <64>;
-+		};
-+
-+		ti,psil-config2 {
-+			linux,udma-mode = <UDMA_PKT_MODE>;
-+			ti,needs-epib;
-+			ti,psd-size = <64>;
-+		};
-+	};
-+
- 	main_pmx0: pinmux@11c000 {
- 		compatible = "pinctrl-single";
- 		reg = <0x0 0x11c000 0x0 0x2e4>;
--- 
-2.17.1
+MT8173 and MT8183 have only one M4U HW while MT2712 have 2 M4U HWs(two
+driver instances).
+
+> 
+> And, what is even more important from security point of view actually,
+> have two separate page tables (aka IOMMU groups) for them?
+
+Each a IOMMU(M4U) have its own pagetable, thus, mt8183 have only one
+pagetable while mt2712 have two.
+
+> 
+> Best regards,
+> Tomasz
+> 
+> _______________________________________________
+> Linux-mediatek mailing list
+> Linux-mediatek@lists.infradead.org
+> http://lists.infradead.org/mailman/listinfo/linux-mediatek
+
 
 
 _______________________________________________
