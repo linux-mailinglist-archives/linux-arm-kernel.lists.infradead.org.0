@@ -2,62 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 571E04A244
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 18 Jun 2019 15:34:03 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8E2C74A255
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 18 Jun 2019 15:35:31 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=DbcQK6dVaPQXwj46U3t0mZY1zE9s8+gVrwbFEHtmanQ=; b=NrI3aXETU1j5Uk
-	NTcUJyhCBcbGrNOFW3xbEcVaGhN2kIt1MDcTV6xVus0yS2kaafHa+IEAmX77RVA9HvTbG8IYShLDC
-	K8L9eR9lxPeWoKgm/DZmIpnpxhXJmAH+dxscr5q/gMco4J3TH5I6AogUfUa96KA6i7XKaWeAPL13N
-	zwNV9EIhOmWwoy1ZYhf6zAzEdzJttl3VWjzDxVvFgngAbNLM99nM1q0oQjyedCIMu+Mnk/kicHznL
-	HNutHEVft9ymFHvUs1GW6GQiaa8qkyh0ocRm0dO4j72zktEGds6iGHL8BR3SOlPJE+NIDUewV7rU5
-	SgvwQ3aFgoLjK+lsj1Vw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:From:Date:
+	MIME-Version:Subject:To:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=kMhjjqslwqY6Hk4SHqVy3qPC8hsWsV9E7yKIQ10J6Xw=; b=n3QrY7VOLTX3uEpnbBlaXlnz6
+	fpECONnfSz7TeGpr7/lyG53OiR9ThvdUV0MGIKLrfV4QCmbAz+nMnqJNv6wC6GJtH/Nr7p60JB9za
+	Eq0tU3+ogs8t40iW0vXXVQ0BotvjlXwT5l5zeGscowdZXxqmlmAMMm2eC1hxQ2PaEQThrDwhOSMK0
+	FWeaoR1dCxUDj+BTy/slkwKA4dexIasRjRfxL3G1Xxlthlvg00rPus7VP7wypVsRgKFFa+WMOfcfL
+	LpHkxcueptsc4Dv+9bLCim+N5xg3UWc4Ilti8wutXD9Ui7jWhVOcr+S2UWvv1Mb4N/gxnZyGL6DIw
+	QzsLJA4Yw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hdEFM-0006vm-TQ; Tue, 18 Jun 2019 13:34:01 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1hdEGk-000083-Su; Tue, 18 Jun 2019 13:35:26 +0000
+Received: from node.akkea.ca ([192.155.83.177])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hdEDx-0005wz-Fo
- for linux-arm-kernel@lists.infradead.org; Tue, 18 Jun 2019 13:32:35 +0000
-Received: from dragon (li1322-146.members.linode.com [45.79.223.146])
- (using TLSv1.2 with cipher DHE-RSA-AES128-SHA (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 5C86F206BA;
- Tue, 18 Jun 2019 13:32:29 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1560864752;
- bh=8yh3wEkEE2pEndjENjudtwDM8mV43VhghVvvQ6PvEI0=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=IXE5+PY5PzxuTH3qzl20pJTY8iMuOeDmrp/k5MPNoSd4z6VGQBvIfADnJGhUMAlRO
- yOepkYuGCeLoMDKPp6eKP3vdR5wXz+0401XhfBvbUvyRpUf6u7+yMp5fr2SALdoKTx
- q0immnC4tPpKrfboyaqD4N+PseccuQLSf2WX26bw=
-Date: Tue, 18 Jun 2019 21:31:41 +0800
-From: Shawn Guo <shawnguo@kernel.org>
-To: Rob Herring <robh@kernel.org>
-Subject: Re: [PATCH] dt-bindings: arm: fsl: Add back missing i.MX7ULP binding
-Message-ID: <20190618133139.GI1959@dragon>
-References: <20190617224028.26974-1-robh@kernel.org>
- <CAOMZO5DdAKH5N0vDq0tdnjarzWFkJrLg_OfuFoJj=qm7mw+Jzg@mail.gmail.com>
- <CAL_Jsq+nXVB3Pr961N1GAm5Pr-zAkvFPPxQvF18JO2r5N-Qx+g@mail.gmail.com>
+ id 1hdEGU-00007M-Vl
+ for linux-arm-kernel@lists.infradead.org; Tue, 18 Jun 2019 13:35:12 +0000
+Received: by node.akkea.ca (Postfix, from userid 33)
+ id 5C7B94E204B; Tue, 18 Jun 2019 13:35:07 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=akkea.ca; s=mail;
+ t=1560864907; bh=MT3CFRKGsj2MeUNMuZZstm1cs/HxYQ6CLk7N8FsW6TI=;
+ h=To:Subject:Date:From:Cc:In-Reply-To:References;
+ b=cshrEHKb8VA/3+BRVSbDe8LRiQ3m8Gb1GY0AphCO3iN90JSKdZIR1ZsNebFRTP9hp
+ 9lo0Y+2Q/S94BSR+QCMRKwRvGpLBwDZbIsaSLPNgzCyg0z1OzBOVL5jVb++h4k2W+3
+ FieyPybvjGZ0EsbJRzg0FTsX0H/fH/eMp1KTu4xA=
+To: Shawn Guo <shawnguo@kernel.org>
+Subject: Re: [PATCH v16 0/3] Add support for the Purism Librem5 devkit
+X-PHP-Originating-Script: 1000:rcube.php
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CAL_Jsq+nXVB3Pr961N1GAm5Pr-zAkvFPPxQvF18JO2r5N-Qx+g@mail.gmail.com>
-User-Agent: Mutt/1.5.21 (2010-09-15)
+Date: Tue, 18 Jun 2019 07:35:07 -0600
+From: Angus Ainslie <angus@akkea.ca>
+In-Reply-To: <20190618132009.GF1959@dragon>
+References: <20190617135215.550-1-angus@akkea.ca>
+ <20190618132009.GF1959@dragon>
+Message-ID: <a4f077a86cbf6fa38b8d4c8079226abe@www.akkea.ca>
+X-Sender: angus@akkea.ca
+User-Agent: Roundcube Webmail/1.1.3
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190618_063233_580981_69733632 
-X-CRM114-Status: UNSURE (   8.72  )
+X-CRM114-CacheID: sfid-20190618_063511_072706_D3074F7C 
+X-CRM114-Status: UNSURE (   5.84  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: -5.2 (-----)
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -67,7 +61,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -79,30 +72,28 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
- <devicetree@vger.kernel.org>, Fabio Estevam <festevam@gmail.com>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ pavel@ucw.cz, Sascha Hauer <s.hauer@pengutronix.de>,
+ linux-kernel@vger.kernel.org, Rob Herring <robh+dt@kernel.org>,
+ NXP Linux Team <linux-imx@nxp.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>, angus.ainslie@puri.sm,
+ Fabio Estevam <festevam@gmail.com>, linux-arm-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Jun 18, 2019 at 07:11:00AM -0600, Rob Herring wrote:
-> On Mon, Jun 17, 2019 at 8:27 PM Fabio Estevam <festevam@gmail.com> wrote:
-> >
-> > On Mon, Jun 17, 2019 at 7:42 PM Rob Herring <robh@kernel.org> wrote:
-> >
-> > > +      - description: i.MX7ULP based Boards
-> > > +        items:
-> > > +          - enum:
-> > > +              - tq,imx7ulp-evk            # i.MX7ULP Evaluation Kit
-> >
-> > This should be fsl,imx7ulp-evk instead.
+On 2019-06-18 07:20, Shawn Guo wrote:
+> On Mon, Jun 17, 2019 at 07:52:12AM -0600, Angus Ainslie (Purism) wrote:
+>> Angus Ainslie (Purism) (3):
+>>   arm64: dts: fsl: librem5: Add a device tree for the Librem5 devkit
+>>   dt-bindings: Add an entry for Purism SPC
+>>   dt-bindings: arm: fsl: Add the imx8mq boards
 > 
-> Ugg. That was me typing in the wrong window...
+> Applied all, thanks.
 
-Applied with it fixed.
+Thanks Shawn !
+
 
 _______________________________________________
 linux-arm-kernel mailing list
