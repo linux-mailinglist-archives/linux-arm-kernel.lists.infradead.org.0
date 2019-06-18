@@ -2,82 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7312449E29
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 18 Jun 2019 12:21:43 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1AB9F49E50
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 18 Jun 2019 12:34:35 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Kjebl9mnJbM3K6RKjANNiHjOK35BGql2Vo/yDMShCqI=; b=SHf8GY1pF6XPkC
-	E0MPSnmSjr2Ykanb7WLbHGETohEtiiMUiZows3Fg1z2IQrGAvGgSwZupO9ozE5glbmND3d8Fvv4EP
-	Fl5nbl5pIkLG1FRHpHUxLtpLwcUfJ3TnpS0Pkjz1vlz1Esi1wQ5GgqnIf4iPUXd8xdBK3fFqp8uq2
-	YX4UmihClSfFwT5YbCfxfV21HN1TAD3KQdTUjlFBcULm2592JzD5F4xfJPfsXon+4q/3hiOtSUZUB
-	dA54TSmtb6GvczUGFLZhe9YbHFQy+7nuIWkLVpEoMjQu4gCuAjHsKIrGJp2q8xKng8sWOyRL4WNRb
-	e97eSnkZeOMAfbhKD0EA==;
+	List-Owner; bh=nfJx39JYnk8gm61czlYOlIQNmIm4n8DdB2rngtju+Ss=; b=n/Zwnj02SD9pVM
+	yFcGLzjimg59mQea6h97g5Hab1cPce5wxHrMmRzoki6EtM2Yr1D0wE2CobKUCjVDGi+WFPNG8Oj/Y
+	XvFNYWjl9pIGjcm2Nfb50NlKa5tv1qQI49v1n00pSEZsRyngJKn8UJeQDTSsaVwEy5uv/GNxfT7Wz
+	D8YbxS6HQXxzHhfkL3IMM0GJTWfCroZsTMyrUKr+LedCW4FuBB2QP0PJ+7DXj23JQ32BuneFCE4di
+	BeyUlpAATIlBksgbNfIZ9qQtz0lX561Cs/cGH+QnZkdFeWOa+f4/i4q0qNGZ038jf1cDOs42a2P6Y
+	/R2G+hCaUOAss85UKoaw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hdBFD-0006Fn-Ki; Tue, 18 Jun 2019 10:21:39 +0000
-Received: from mail-pl1-x644.google.com ([2607:f8b0:4864:20::644])
+	id 1hdBRg-00032U-P2; Tue, 18 Jun 2019 10:34:32 +0000
+Received: from mail-io1-xd41.google.com ([2607:f8b0:4864:20::d41])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hdBF1-0006FO-6g
- for linux-arm-kernel@lists.infradead.org; Tue, 18 Jun 2019 10:21:28 +0000
-Received: by mail-pl1-x644.google.com with SMTP id c14so5541307plo.0
+ id 1hdBRW-00031W-9f
+ for linux-arm-kernel@lists.infradead.org; Tue, 18 Jun 2019 10:34:24 +0000
+Received: by mail-io1-xd41.google.com with SMTP id u13so28679405iop.0
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 18 Jun 2019 03:21:27 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=AkjQ8u0Q3m/SzCvMdM2EUOK1pzB6kGaGnwLoVIN3KQM=;
- b=KJ1/t/bhwcsT1nteaM2wvu8LoWKMXSPLrUGfybLH37/Xa0uqZBUG6S3Bjsc2jJAup2
- N2DO/9PNBnR5CBG1sMxFiScbGgpnqZ5xpe9oZhQ48pIeps3MTv0TSRPVxrmlv0c6s32f
- 2gpmTsGr/iJfH3R8N25AFnUqYCAt7b+foUG+2xLsu1/Zp6dfDv9mvuC4DedKF9M5IDJK
- mLuilfbjEmFxMSMKqNS+1dU35mvQtOZD3R1qCJXmdKVbBX7pZYUbZ52XWUpf4WD+Kgdb
- bKSObQgqfR3XnrGPQSFuHnFfOILGJonhw9mYVLWhSx5g3FaKguIM2ZydSlG/Tx8Dg03g
- uZgQ==
+ Tue, 18 Jun 2019 03:34:19 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=amarulasolutions.com; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=wpQoG1Wc0XjuCAWhAB/s5GQOkrEUqtdWSybZNMgnLQo=;
+ b=E1YxsQwklgb6VllZvWHSagrfUhBjoGsarhcjZOymEGPZQ99/5hS/nnHF84NGch8SZV
+ CLBAmR5tEXQud+tNxydBa5d9QFQ4l+rZD4kUaGIymeyuVR9+deirqszWB2Id6vl1aXzU
+ h6lw+s3ddlsDTKeC3GqGCMfI2FE4dJ3eSRuLY=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=AkjQ8u0Q3m/SzCvMdM2EUOK1pzB6kGaGnwLoVIN3KQM=;
- b=CrHAhHb5o/oy/FE7IdiNSKRyf7DGzoARelQdoMz8UmkflT1TsWq/HdjfJfjV91Si6e
- W7YVfMzWLWhSVXyIsRHU1+vCuwqy0WtE4QabtcJI6q3FknnCGzSp3yqlAr9fWsq7AYcB
- o4aQJUNliWIE2X3q26c96JRmK1GKpsYXXzsg3SX9bfUQfeUZrDpAepCCMeD9MrJthb4x
- 379chgEH+nG7kmi2CV3C8oiL4ncoc5PiLQ3mf1nJ8b4YaaV24GymdKGza8voVje+1Y+7
- GkWSAPdci2i2qtVZZhaMl42QfiVhG0RCt8Q/rW0fv3DmAnNiCnIZ1cqnP5q3AuhyxQp8
- KZWw==
-X-Gm-Message-State: APjAAAUKx6fm8IMzSDOZR62DPQtJfjmhG4lB/pg636JFnZufKhuNGaNv
- NB8IfZtPRjLaKz9rAK65wXkNhQ==
-X-Google-Smtp-Source: APXvYqzfJHrp9HZA7Ao8ku14aFEpKvPoTVvW1PkWmPKrJEaI1JDGAocXVduGyLaEtQ1vXj/fDxe6Og==
-X-Received: by 2002:a17:902:20e2:: with SMTP id
- v31mr112731954plg.138.1560853286460; 
- Tue, 18 Jun 2019 03:21:26 -0700 (PDT)
-Received: from localhost ([122.172.66.84])
- by smtp.gmail.com with ESMTPSA id h6sm2062381pjs.2.2019.06.18.03.21.24
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Tue, 18 Jun 2019 03:21:24 -0700 (PDT)
-Date: Tue, 18 Jun 2019 15:51:22 +0530
-From: Viresh Kumar <viresh.kumar@linaro.org>
-To: Julien Thierry <julien.thierry@arm.com>
-Subject: Re: [PATCH v4.4 00/45] V4.4 backport of arm64 Spectre patches
-Message-ID: <20190618102122.z52oi37pp3wigqxx@vireshk-i7>
-References: <cover.1560480942.git.viresh.kumar@linaro.org>
- <7329e6d9-140d-59bc-c835-5f6300cf60e0@arm.com>
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=wpQoG1Wc0XjuCAWhAB/s5GQOkrEUqtdWSybZNMgnLQo=;
+ b=CXEyc4Tlgj/QZQx2aYyDBUzAtYot+DMouAOg8mHxDdD0NJlSww13Ad6g0FyXqro39a
+ 4pcwDIR1/fkNXEDpPABnibnsTRsU6BEvw/P9qW2udApNC0ANC7f7jfRlcjFUf6SYTlKM
+ R3Kowgh3/vkylbTgwUipl+YCUhHESjnjxYYe7N9NJ7hN1gkXU+O985xuD4LQxPo88NxF
+ fXs16u5PKY9GYCsMzVkzuRMtQ8ov/Y9z+b/9yO3DMrTNF7mS2cEuKPE4FG88t2k+gI0I
+ Uzaa6Pyj/CP+zYcvpQonjPg79yGx983z4WtnFwcGVaNcG8OVxzTIAlELzNxv+Pm4/Gbj
+ 1Frw==
+X-Gm-Message-State: APjAAAXhOCuw1kHeC4ugq4KG/UBwcfifXlVOKhzv22OOB258PQswz3Hy
+ 5DapQEMCilj3fPTGtAfUJ7IRQlKq9ptjdSFFs8HXPw==
+X-Google-Smtp-Source: APXvYqzO0nEX3fm1soaUqMo2bDslLyQffr3PNruZK0DCUBUy/ns1rEi9fPAESKSl/J4H4H1lmzd5kNngA/KmgcxyfnQ=
+X-Received: by 2002:a5d:9ad6:: with SMTP id x22mr4603238ion.136.1560854058150; 
+ Tue, 18 Jun 2019 03:34:18 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <7329e6d9-140d-59bc-c835-5f6300cf60e0@arm.com>
-User-Agent: NeoMutt/20180716-391-311a52
+References: <20190614164324.9427-1-jagan@amarulasolutions.com>
+ <20190614164324.9427-6-jagan@amarulasolutions.com>
+ <CAGb2v669MprYgy2wc_a7Kz8VpzzNGZxDxsj0z_Ujx5bV25+AWQ@mail.gmail.com>
+ <CAMty3ZDRYBPKrGQxAZoB+trFiDLJ5BxDfNUOnPzgd+UWcpwCoQ@mail.gmail.com>
+ <CAGb2v67uNhie9mb2-m04FGEi4Z7q7TYChOogGj2HgmSmEo4Arg@mail.gmail.com>
+ <CAMty3ZBUrGEi+e62sFe7GkXinK3q076sGLwpEVz67qeoV+1ZeA@mail.gmail.com>
+ <CAGb2v65YRVSv2mFfE2e=vqDOSu4Nie_oLQ-qpaDsTWKJwf-aeA@mail.gmail.com>
+In-Reply-To: <CAGb2v65YRVSv2mFfE2e=vqDOSu4Nie_oLQ-qpaDsTWKJwf-aeA@mail.gmail.com>
+From: Jagan Teki <jagan@amarulasolutions.com>
+Date: Tue, 18 Jun 2019 16:04:06 +0530
+Message-ID: <CAMty3ZA+hV_X0-=b83M3rDUhX=+g5RNC6EU-DzAS_pbvwc54FA@mail.gmail.com>
+Subject: Re: [linux-sunxi] [PATCH v2 5/9] drm/sun4i: tcon_top: Register clock
+ gates in probe
+To: Chen-Yu Tsai <wens@csie.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190618_032127_310246_A50AD275 
-X-CRM114-Status: GOOD (  24.17  )
+X-CRM114-CacheID: sfid-20190618_033422_341855_3E233881 
+X-CRM114-Status: GOOD (  29.97  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:644 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:d41 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -99,100 +95,158 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Marc Zyngier <marc.zyngier@arm.com>,
- Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will.deacon@arm.com>,
- stable@vger.kernel.org, mark.brown@arm.com,
- Russell King <rmk+kernel@arm.linux.org.uk>,
- linux-arm-kernel@lists.infradead.org
+Cc: devicetree <devicetree@vger.kernel.org>,
+ Jernej Skrabec <jernej.skrabec@siol.net>,
+ Maxime Ripard <maxime.ripard@bootlin.com>,
+ linux-kernel <linux-kernel@vger.kernel.org>,
+ dri-devel <dri-devel@lists.freedesktop.org>, David Airlie <airlied@linux.ie>,
+ linux-sunxi <linux-sunxi@googlegroups.com>, Daniel Vetter <daniel@ffwll.ch>,
+ Michael Trimarchi <michael@amarulasolutions.com>,
+ linux-amarula <linux-amarula@amarulasolutions.com>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 17-06-19, 17:03, Julien Thierry wrote:
-> On 14/06/2019 04:07, Viresh Kumar wrote:
-> > Hello,
-> > 
-> > Here is an attempt to backport arm64 spectre patches to v4.4 stable
-> > tree.
-> > 
-> > I have started this backport with Mark Rutland's backport of Spectre to
-> > 4.9 [1] and tried applying the upstream version of them over 4.4 and
-> > resolved conflicts by checking how they have been resolved in 4.9.
-> > 
-> > I had to pick few extra upstream patches to avoid unnecessary conflicts
-> > (upstream commit ids mentioned):
-> > 
-> >   a842789837c0 arm64: remove duplicate macro __KERNEL__ check
-> 
-> I'm a bit unfamiliar with what gets or doesn't get backported. My
-> understanding is that we try to backport only what's necessary to reduce
-> the noise and potential introduction of issues in stable releases.
-> 
-> This commit is just a cleanup and (while valid) doesn't really seem
-> necessary (and potential conflicts from its absence would easily be
-> resolved IMO). So I'm just concerned that this doesn't constitute a
-> candidate for back porting (someone can correct me if I'm wrong).
+On Tue, Jun 18, 2019 at 1:23 PM Chen-Yu Tsai <wens@csie.org> wrote:
+>
+> On Tue, Jun 18, 2019 at 3:45 PM Jagan Teki <jagan@amarulasolutions.com> wrote:
+> >
+> > On Tue, Jun 18, 2019 at 12:49 PM Chen-Yu Tsai <wens@csie.org> wrote:
+> > >
+> > > On Mon, Jun 17, 2019 at 6:30 PM Jagan Teki <jagan@amarulasolutions.com> wrote:
+> > > >
+> > > > On Sun, Jun 16, 2019 at 11:01 AM Chen-Yu Tsai <wens@csie.org> wrote:
+> > > > >
+> > > > > On Sat, Jun 15, 2019 at 12:44 AM Jagan Teki <jagan@amarulasolutions.com> wrote:
+> > > > > >
+> > > > > > TCON TOP have clock gates for TV0, TV1, dsi and right
+> > > > > > now these are register during bind call.
+> > > > > >
+> > > > > > Of which, dsi clock gate would required during DPHY probe
+> > > > > > but same can miss to get since tcon top is not bound at
+> > > > > > that time.
+> > > > > >
+> > > > > > To solve, this circular dependency move the clock gate
+> > > > > > registration from bind to probe so-that DPHY can get the
+> > > > > > dsi gate clock on time.
+> > > > > >
+> > > > > > Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
+> > > > > > ---
+> > > > > >  drivers/gpu/drm/sun4i/sun8i_tcon_top.c | 94 ++++++++++++++------------
+> > > > > >  1 file changed, 49 insertions(+), 45 deletions(-)
+> > > > > >
+> > > > > > diff --git a/drivers/gpu/drm/sun4i/sun8i_tcon_top.c b/drivers/gpu/drm/sun4i/sun8i_tcon_top.c
+> > > > > > index 465e9b0cdfee..a8978b3fe851 100644
+> > > > > > --- a/drivers/gpu/drm/sun4i/sun8i_tcon_top.c
+> > > > > > +++ b/drivers/gpu/drm/sun4i/sun8i_tcon_top.c
+> > > > > > @@ -124,7 +124,53 @@ static struct clk_hw *sun8i_tcon_top_register_gate(struct device *dev,
+> > > > > >  static int sun8i_tcon_top_bind(struct device *dev, struct device *master,
+> > > > > >                                void *data)
+> > > > > >  {
+> > > > > > -       struct platform_device *pdev = to_platform_device(dev);
+> > > > > > +       struct sun8i_tcon_top *tcon_top = dev_get_drvdata(dev);
+> > > > > > +       int ret;
+> > > > > > +
+> > > > > > +       ret = reset_control_deassert(tcon_top->rst);
+> > > > > > +       if (ret) {
+> > > > > > +               dev_err(dev, "Could not deassert ctrl reset control\n");
+> > > > > > +               return ret;
+> > > > > > +       }
+> > > > > > +
+> > > > > > +       ret = clk_prepare_enable(tcon_top->bus);
+> > > > > > +       if (ret) {
+> > > > > > +               dev_err(dev, "Could not enable bus clock\n");
+> > > > > > +               goto err_assert_reset;
+> > > > > > +       }
+> > > > >
+> > > > > You have to de-assert the reset control and enable the clock before the
+> > > > > clocks it provides are registered. Otherwise a consumer may come in and
+> > > > > ask for the provided clock to be enabled, but since the TCON TOP's own
+> > > > > reset and clock are still disabled, you can't actually access the registers
+> > > > > that controls the provided clock.
+> > > >
+> > > > These rst and bus are common reset and bus clocks not tcon top clocks
+> > > > that are trying to register here. ie reason I have not moved it in
+> > > > top.
+> > >
+> > > And you're sure that toggling bits in the TCON TOP block doesn't require
+> > > the reset to be de-asserted and the bus clock enabled?
+> > >
+> > > Somehow I doubt that.
+> > >
+> > > Once the driver register the clocks it provides, they absolutely must work.
+> > > They can't only work after the bind phase when the reset gets de-asserted
+> > > and the bus clock enabled. Or you should provide proper error reporting
+> > > in the clock ops. I doubt you want to go that way either.
+> >
+> > Why would they won't work after bind phase? unlike tcon top gates,
+> > these reset, and bus are common like  what we have in other DE block
+> > so enable them in bind won't be an issue as per as I understand. let
+> > me know if you want me to check in other directions.
+>
+> You misunderstood. When you moved the clock registering parts to the probe
+> phase, but didn't move the clock enable and reset de-assert parts to go with,
+> the clock ops will not work as expected between probe and bind time.
 
-Dropped now.
+If I understand correctly, I have moved tcon clock gates, not the bus
+clock or the reset. Both have independent enablement phase, the bus
+clock is enable in tcon top bind and the clock gate ("dsi") enable in
+init call of phy_ops. is both bus clock and clock gates are same and
+related that is what you are saying?
 
-> >   64f8ebaf115b mm/kasan: add API to check memory regions
-> >   bffe1baff5d5 arm64: kasan: instrument user memory access API
-> >   92406f0cc9e3 arm64: cpufeature: Add scope for capability check
-> >   9eb8a2cdf65c arm64: cputype info for Broadcom Vulcan
-> >   0d90718871fe arm64: cputype: Add MIDR values for Cavium ThunderX2 CPUs
-> >   98dd64f34f47 ARM: 8478/2: arm/arm64: add arm-smccc
-> > 
-> > 
-> > I had to drop few patches as well as they weren't getting applied
-> > properly due to missing files/features (upstream commit id mentioned):
-> > 
-> >   93f339ef4175 arm64: cpufeature: __this_cpu_has_cap() shouldn't stop early
-> >   3c31fa5a06b4 arm64: Run enable method for errata work arounds on late CPUs
-> 
-> Looking at this and at the patches that implement the BP callbacks, we
-> need that patch or an equivalent, otherwise we won't be using the
-> correct vectors for late CPUs...
-> 
-> I appreciate the code has changed, but it might be worth considering
-> 6a6efbb45b7d95c84840010095367eb06a64f342 as a needed dependency for BP
-> hardening.
+>
+> Simple way to verify it: Just use devmem to disable the TCON TOP bus gate
+> and/or assert its reset control. Then try to toggle any of the bits in the
+> TCON TOP block and see if it works, or if the bits stick.
 
-Okay, I had to pick two more patches for a clean rebase.
+Yes I have verified "dsi" gate enablement before via devmem. Below is
+the bus, reset disablement and re-enablement and result is similar for
+the reset, bus clock in bind and even in probe.
 
-d4a7e845dab5 arm64: Introduce cpu_die_early
-7242dbf2e4da arm64: Move cpu_die_early to smp.c
-545fe20330c3 arm64: Verify CPU errata work arounds on hotplugged CPU
-0365babc6c1f arm64: Run enable method for errata work arounds on late CPUs
+00. get the existing value
 
-(You can fetch my tree again to get these commit ids)
+# devmem 0x1c70020
+0x00010000
+# devmem 0x1c20064
+0x44021000
+# devmem 0x1c202c4
+0x44021000
 
-> >   6840bdd73d07 arm64: KVM: Use per-CPU vector when BP hardening is enabled
-> 
-> I don't believe we can do without this patch. Otherwise we're only using
-> the vector that has no mitigation for kvm guests.
-> 
-> In v4.4, it looks like the contents of virt/kvm/arm/arm.c were contained
-> in arch/arm/kvm/arm.c (yes, even for amr64). Are there other reasons
-> this patch was not applying?
+01: disable bus, and assert reset
 
-It was something other than this I believe, I have already used these paths for
-many other patches.
+# devmem 0x1c20064 32 0x4021000
+# devmem 0x1c202c4 32 0x4021000
+# devmem 0x1c20064
+0x04021000
+# devmem 0x1c202c4
+0x04021000
+# devmem 0x1c70020
+0x00000000
 
-Anyway, KVM stuff is mostly dropped now, just that I had to keep the changes to
-arm-smccc.h from those patches.
+02: enable bus, and dessert reset
 
-I have updated the stable/v4.4.y/spectre branch with all the changes you
-suggested and pushed the earlier version to stable/v4.4.y/spectre-v1 branch.
+# devmem 0x1c20064 32 0x44021000
+# devmem 0x1c202c4 32 0x44021000
+# devmem 0x1c20064
+0x44021000
+# devmem 0x1c202c4
+0x44021000
+# devmem 0x1c70020
+0x00000000
 
-Will it be possible for you to have a look at stable/v4.4.y/spectre branch to
-see if it is okay, so I can send the v2 version ? Don't want to spam list
-unnecessary with so many patches :)
+03: enable gate
 
-Thanks for your help Julien, really appreciate it.
+# devmem 0x1c70020 32 0x00010000
+# devmem 0x1c70020
+0x00010000
 
--- 
-viresh
+>
+> Whether another driver actually does so is not the question. It is just bad
+> implementation.
+
+Not sure, I understand this.
 
 _______________________________________________
 linux-arm-kernel mailing list
