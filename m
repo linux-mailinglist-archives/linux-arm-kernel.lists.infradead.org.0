@@ -2,52 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1058949964
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 18 Jun 2019 08:52:27 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 056F449973
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 18 Jun 2019 08:53:31 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=CJi8+R3/IS212s3x4Ed940RIjAK2Sm5dqldDbGJ/aUA=; b=OPSp/WUfhnfoVJ
-	NRHPngBaamK2B5DBp5FpiDVZj5kUPQZFrl2pvWsMkszwosyl/SSF2nprMNuI/AXK/Ln8phl2pazHe
-	AVyCowWKKn7TOoiqx6ia86wDUD6cq3UbtqUgiSU0o0KK/sc2I0uvlbklfr69dF8Nmb1lAtH9HYXLs
-	wHioIzxA3gPM2fWujwGkKZff8C7LWRXRHl2bh3n15EXlhs/E2DGR36UJOz/NkCEOu2oPBOLf3NjWE
-	lTcvBDH1ZMoj4RnXiwkF1g68cHHkjg68o1wF50WBjz0DYavijRYaNvw6cK9g6mlCJ87Zn5Ta0lLtw
-	4aHtYoU10DndIobqOXnQ==;
+	List-Owner; bh=bIF1I7TQvT7oDFbC41xCbPrWezuwUKLL24AFob9OrAA=; b=TcjGtNSdxSkKI5
+	sQqCVjVj9JEx9okLzTQRMQau0+o4lfLv+DtmooGVgrSAhRWiR6l10nRu44j9hOteamUrThOvTMCwV
+	6LIwA9Md5areTLpWuzK9jKcLEncEpHPkzH43xtQUSsTgIM6yZZwZP3ZINiOFPAoH33gkRD1hweLtY
+	57FsYF6prBW6NGE0uWwt+x2w5N7IMgklwE8cBvVG74gCiAW8/1nR2vP4v+bsWGopqJgkmFxG2AD+4
+	S/AXmo7i/ZUCRtCwgWxr32SWFjIqOUDLMxua0B/mwNYPBuq7tOFqrgLP4C9M1Nhkx+NGiT0/zNnP5
+	NHL2ZvN8mlz0YxCVskcg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hd7yg-00019u-VT; Tue, 18 Jun 2019 06:52:22 +0000
+	id 1hd7zi-0001UE-Ds; Tue, 18 Jun 2019 06:53:26 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hd7yW-00019P-9o
- for linux-arm-kernel@lists.infradead.org; Tue, 18 Jun 2019 06:52:13 +0000
+ id 1hd7zX-0001Tr-0g
+ for linux-arm-kernel@lists.infradead.org; Tue, 18 Jun 2019 06:53:16 +0000
 Received: from dragon (li1322-146.members.linode.com [45.79.223.146])
  (using TLSv1.2 with cipher DHE-RSA-AES128-SHA (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 1D39020679;
- Tue, 18 Jun 2019 06:52:03 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id B22A420673;
+ Tue, 18 Jun 2019 06:53:08 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1560840731;
- bh=aCHd527iEyPOQrGtxKzpIz/rVHqvtEEHCM75bJPOonc=;
+ s=default; t=1560840794;
+ bh=8L1sOBtKkOdBG9JnByNFuljhi61mfWOhgOyCwTLXC0w=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=OiTQ44nLfa5pPquo//DDSOvtfEk9pMHAkszfOQdVf6bDJr+dp3yEgN/oBFVFVDFRk
- Xeqtmq5acyTULJq+UNzhMIQ7oe7AT2foIANW1p9z7WG3zO9wvTzCU4GHMv4F75M4MC
- cQ07bkLQKCeeu3Flpf8XiLjLf0pWa7zhbpmm1ujU=
-Date: Tue, 18 Jun 2019 14:51:17 +0800
+ b=fUFegAn05uCokc7L6tkxyWBBinzbsqUPsz+U4qQrCZLo+FCdeopsaML8pxAmFz+KV
+ /avcenHn3FIubbM3hzBbdTHRMLxo5LJ84OSYHhYcKaDEfeoEjj07OzVGQOtwk2oAYG
+ Pzr314E/1fMi0mwnj2Yc2r5bU7Tj8i2vmXAiPCJA=
+Date: Tue, 18 Jun 2019 14:52:22 +0800
 From: Shawn Guo <shawnguo@kernel.org>
 To: Anson.Huang@nxp.com
-Subject: Re: [PATCH 1/2] clk: imx: Remove __init for imx_check_clocks() API
-Message-ID: <20190618065116.GA29881@dragon>
-References: <20190610053634.14339-1-Anson.Huang@nxp.com>
+Subject: Re: [PATCH] clk: imx8mq: Use devm_platform_ioremap_resource()
+ instead of of_iomap()
+Message-ID: <20190618065221.GB29881@dragon>
+References: <20190610053922.30355-1-Anson.Huang@nxp.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190610053634.14339-1-Anson.Huang@nxp.com>
+In-Reply-To: <20190610053922.30355-1-Anson.Huang@nxp.com>
 User-Agent: Mutt/1.5.21 (2010-09-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190617_235212_360738_C7C2696C 
-X-CRM114-Status: UNSURE (   7.76  )
+X-CRM114-CacheID: sfid-20190617_235315_078626_FBAADC40 
+X-CRM114-Status: UNSURE (   7.41  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -87,16 +88,16 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Jun 10, 2019 at 01:36:33PM +0800, Anson.Huang@nxp.com wrote:
+On Mon, Jun 10, 2019 at 01:39:22PM +0800, Anson.Huang@nxp.com wrote:
 > From: Anson Huang <Anson.Huang@nxp.com>
 > 
-> Some of i.MX SoCs' clock driver use platform driver model,
-> and they need to call imx_check_clocks() API, so
-> imx_check_clocks() API should NOT be in .init section.
+> i.MX8MQ clock driver uses platform driver model, better to use
+> devm_platform_ioremap_resource() instead of of_iomap() to get
+> IO base.
 > 
 > Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
 
-Applied both, thanks.
+Applied, thanks.
 
 _______________________________________________
 linux-arm-kernel mailing list
