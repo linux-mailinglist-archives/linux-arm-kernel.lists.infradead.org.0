@@ -2,78 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DB4374AD47
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 18 Jun 2019 23:23:56 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id EDBC54AD5B
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 18 Jun 2019 23:28:50 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=9cxQZjJlGh0lbJqZiBvvjrcpAFD0AWKaeGAZu4NJUkw=; b=FL0l9emVP8XH8v
-	2et/OH6/WXFrUP9JSECnyWUwf8TZfKZzFDc5FTG760zyTqe3bmL6sp1blqeKf4VSlVIoBLNl5jhMj
-	+GGoOVR3sAH4YjLq5XXAYugvqhV82qoHWoOOPb/2KOTSzyumzxHK7PZviUdu2NbPXHMnfjFDot6Ud
-	3yMnqh3BPDX7xrbzWlvPTuDNUw0rbi98n9QkBq2qduHXLAQool81gdOEwePXyYHAy+VOKEHya8hBV
-	sG7rZTR2fj3pdf+n8sF86Gdb5ymfW0aztf1Prrz4v/4lgKPn0RFz4hPGQzQrlXH6sTDgMtWjoaPgb
-	9rE6mhp1uh5Sn3UKXHjg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=WvK/1PeKrQmxuasyU2swFUmBlkZNzZ/6thAtW+iMwGM=; b=KeWSwdywo6JCrdDELF4nVVBUM
+	DwYL/Gj7gzqwTb1HYpQRwkYbuPYajlCfeGHth7YyGgvSeeYencTFXpF4H89cj6dASBRMBw1K57OEX
+	GBMU/ur1ZIvNr/gb35SXd9EUFgSIU/dXruPcaCSjj4zvyLoiVkXg5vRlCegcU4kE8ANWLaCwMWNgW
+	uqQ9Ipk9p1wBCkqaphNQ3EQmHt5CDrJZzM6952nBK6Vqg/mZWyER7ORgXXLZb3wnEHtec3hw0yBO5
+	C8vGh5jRYA0XW2R+JxEL+el0ru/V+vCQWQjYc+MHqu8Jd/jle+oNIEmQvjXCau2hlZKAMYk5D2Cuh
+	HVvnnth8g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hdLa4-0000x3-MF; Tue, 18 Jun 2019 21:23:52 +0000
-Received: from mail-io1-f67.google.com ([209.85.166.67])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hdLYr-0008Vq-Ln
- for linux-arm-kernel@lists.infradead.org; Tue, 18 Jun 2019 21:22:39 +0000
-Received: by mail-io1-f67.google.com with SMTP id e5so33330708iok.4
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 18 Jun 2019 14:22:37 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=d1BYemcbhqptaa8GTNYdPi1AAHcGUKx5lEAq38HGA5M=;
- b=YiRnTst3tQYOKhaWFiHKK0zOSjETBIJ2RVZbOIZhHJ6sL1Zn4agC17ZZBlB0TVRM6N
- WP55hKQJz/ZhAZXA0s2hd7Y39ZRu5GGjO16/Hbs94d5icsnu0Iro4OcLHZ97JmPyfkL/
- G6u7bWrwiD1RYgFEi5RHG/YaA3NtxTqdQ3wIafOldz8MSwzfXHgEdmcBOrQTPPA6n6iM
- xF8HL9GVjPRdhZj4lFm16MKV6DEMi9BDe1rYX0IatVGtG33dFWxfuxZ/IjSHFwIXRYzq
- FKRdrFrB/yWsuYg0GvuN8t2y8m0nuJMdE3+bi62tFdw3igYf2mpqYdPLN4Q+sk4czlct
- 2IXg==
-X-Gm-Message-State: APjAAAVYb5Z+RJG6KqJ9uZ7ONAITDdbjsaFG7LBddYBPnWQO4yc08HED
- eD/taroRVnaaN//ESCveXw==
-X-Google-Smtp-Source: APXvYqyS01JHUkRJhlDLcqAXjBTNzyTXmCBEPsTpmNR6Gc/YdLP4XfUBlAagv4pYlMsdKYO12PUggw==
-X-Received: by 2002:a6b:6b14:: with SMTP id g20mr10087103ioc.28.1560892956980; 
- Tue, 18 Jun 2019 14:22:36 -0700 (PDT)
-Received: from localhost.localdomain ([64.188.179.192])
- by smtp.googlemail.com with ESMTPSA id p9sm13233480ioj.49.2019.06.18.14.22.35
- (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Tue, 18 Jun 2019 14:22:36 -0700 (PDT)
-From: Rob Herring <robh@kernel.org>
-To: devicetree@vger.kernel.org
-Subject: [PATCH] dt-bindings: arm: Convert Conexant Digicolor board/soc
- bindings to json-schema
-Date: Tue, 18 Jun 2019 15:22:29 -0600
-Message-Id: <20190618212229.32302-5-robh@kernel.org>
-X-Mailer: git-send-email 2.20.1
+	id 1hdLeo-0003De-Si; Tue, 18 Jun 2019 21:28:46 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hdLed-0003Ci-Rz
+ for linux-arm-kernel@lists.infradead.org; Tue, 18 Jun 2019 21:28:37 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id DAFCE360;
+ Tue, 18 Jun 2019 14:28:32 -0700 (PDT)
+Received: from [192.168.122.164] (u201426.austin.arm.com [10.118.28.29])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id C84843F718;
+ Tue, 18 Jun 2019 14:28:32 -0700 (PDT)
+Subject: Re: [PATCH v2 1/2] ACPI/PPTT: Add support for ACPI 6.3 thread flag
+To: John Garry <john.garry@huawei.com>,
+ Valentin Schneider <valentin.schneider@arm.com>,
+ linux-arm-kernel@lists.infradead.org
+References: <20190614223158.49575-1-jeremy.linton@arm.com>
+ <20190614223158.49575-2-jeremy.linton@arm.com>
+ <667f95c0-5aa9-f460-a49a-e6dfefc027d8@arm.com>
+ <2d1b547f-f9ee-391c-c4f3-0232a08a86bc@arm.com>
+ <718438d0-8648-897a-83e8-801146a0af86@arm.com>
+ <f6f7f9bb-547d-3fd3-f3f8-1d55181f63d7@huawei.com>
+From: Jeremy Linton <jeremy.linton@arm.com>
+Message-ID: <11fb712f-b3c2-5491-89ee-ea7efb18ddd8@arm.com>
+Date: Tue, 18 Jun 2019 16:28:32 -0500
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.6.1
 MIME-Version: 1.0
+In-Reply-To: <f6f7f9bb-547d-3fd3-f3f8-1d55181f63d7@huawei.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190618_142237_723178_1B1E26D9 
-X-CRM114-Status: GOOD (  10.17  )
-X-Spam-Score: 0.7 (/)
+X-CRM114-CacheID: sfid-20190618_142835_953045_44BAE754 
+X-CRM114-Status: GOOD (  17.14  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.7 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.166.67 listed in list.dnswl.org]
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (robherring2[at]gmail.com)
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (robherring2[at]gmail.com)
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -85,62 +68,46 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Baruch Siach <baruch@tkos.co.il>, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: catalin.marinas@arm.com, will.deacon@arm.com, rjw@rjwysocki.net,
+ linux-kernel@vger.kernel.org, linux-acpi@vger.kernel.org, sudeep.holla@arm.com,
+ lenb@kernel.org
+Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="utf-8"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Convert Conexant Digicolor SoC bindings to DT schema format using json-schema.
-
-Cc: Baruch Siach <baruch@tkos.co.il>
-Signed-off-by: Rob Herring <robh@kernel.org>
----
- .../devicetree/bindings/arm/digicolor.txt        |  6 ------
- .../devicetree/bindings/arm/digicolor.yaml       | 16 ++++++++++++++++
- 2 files changed, 16 insertions(+), 6 deletions(-)
- delete mode 100644 Documentation/devicetree/bindings/arm/digicolor.txt
- create mode 100644 Documentation/devicetree/bindings/arm/digicolor.yaml
-
-diff --git a/Documentation/devicetree/bindings/arm/digicolor.txt b/Documentation/devicetree/bindings/arm/digicolor.txt
-deleted file mode 100644
-index 658553f40b23..000000000000
---- a/Documentation/devicetree/bindings/arm/digicolor.txt
-+++ /dev/null
-@@ -1,6 +0,0 @@
--Conexant Digicolor Platforms Device Tree Bindings
--
--Each device tree must specify which Conexant Digicolor SoC it uses.
--Must be the following compatible string:
--
--  cnxt,cx92755
-diff --git a/Documentation/devicetree/bindings/arm/digicolor.yaml b/Documentation/devicetree/bindings/arm/digicolor.yaml
-new file mode 100644
-index 000000000000..d9c80b827e9b
---- /dev/null
-+++ b/Documentation/devicetree/bindings/arm/digicolor.yaml
-@@ -0,0 +1,16 @@
-+# SPDX-License-Identifier: GPL-2.0
-+%YAML 1.2
-+---
-+$id: http://devicetree.org/schemas/arm/digicolor.yaml#
-+$schema: http://devicetree.org/meta-schemas/core.yaml#
-+
-+title: Conexant Digicolor Platforms Device Tree Bindings
-+
-+maintainers:
-+  - Baruch Siach <baruch@tkos.co.il>
-+
-+properties:
-+  compatible:
-+    const: cnxt,cx92755
-+
-+...
--- 
-2.20.1
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+SGksCgpPbiA2LzE4LzE5IDEyOjIzIFBNLCBKb2huIEdhcnJ5IHdyb3RlOgo+IE9uIDE4LzA2LzIw
+MTkgMTU6NDAsIFZhbGVudGluIFNjaG5laWRlciB3cm90ZToKPj4gT24gMTgvMDYvMjAxOSAxNToy
+MSwgSmVyZW15IExpbnRvbiB3cm90ZToKPj4gWy4uLl0KPj4+Pj4gKyAqIFJldHVybjogLUVOT0VO
+VCBpZiB0aGUgUFBUVCBkb2Vzbid0IGV4aXN0LCB0aGUgQ1BVIGNhbm5vdCBiZSAKPj4+Pj4gZm91
+bmQgb3IKPj4+Pj4gKyAqwqDCoMKgwqDCoMKgIHRoZSB0YWJsZSByZXZpc2lvbiBpc24ndCBuZXcg
+ZW5vdWdoLgo+Pj4+PiArICogT3RoZXJ3aXNlIHJldHVybnMgZmxhZyB2YWx1ZQo+Pj4+PiArICov
+Cj4+Pj4KPj4+PiBOaXQ6IHN0cmljdGx5IHNwZWFraW5nIHdlJ3JlIG5vdCByZXR1cm5pbmcgdGhl
+IGZsYWcgdmFsdWUgYnV0IGl0cyBtYXNrCj4+Pj4gYXBwbGllZCB0byB0aGUgZmxhZ3MgZmllbGQu
+IEkgZG9uJ3QgdGhpbmsgYW55b25lIHdpbGwgY2FyZSBhYm91dCAKPj4+PiBnZXR0aW5nCj4+Pj4g
+dGhlIGFjdHVhbCBmbGFnIHZhbHVlLCBidXQgaXQgc2hvdWxkIGJlIG1hZGUgb2J2aW91cyBpbiB0
+aGUgZG9jOgo+Pj4KPj4+IE9yIEkgY2xhcmlmeSB0aGUgY29kZSB0byBhY3R1YWxseSBkbyB3aGF0
+IHRoZSBjb21tZW50cyBzYXlzLiBNYXliZSAKPj4+IHRoYXQgaXMgd2hhdCBKb2huIEcgd2FzIGFs
+c28gcG9pbnRpbmcgb3V0IHRvbz8KPj4+Cj4gCj4gTm8sIEkgd2FzIGp1c3Qgc2F5aW5nIHRoYXQg
+dGhlIGtlcm5lbCB0b3BvbG9neSBjYW4gYmUgYnJva2VuIHdpdGhvdXQgCj4gdGhpcyBzZXJpZXMu
+Cj4gCj4+Cj4+IE1tbSBJIGRpZG4ndCBmaW5kIGFueSByZXBseSBmcm9tIEpvaG4gcmVnYXJkaW5n
+IHRoaXMgaW4gdjEsIGJ1dCBJIAo+PiB3b3VsZG4ndAo+PiBtaW5kIGVpdGhlciB3YXksIGFzIGxv
+bmcgYXMgdGhlIGRvYyAmIGNvZGUgYXJlIGFsaWduZWQuCj4+Cj4gCj4gQlRXLCB0byBtZSwgZnVu
+Y3Rpb24gYWNwaV9wcHR0X2NwdV9pc190aHJlYWQoKSBzZWVtcyB0byB0cnkgdG8gZG8gdG9vIAo+
+IG11Y2gsIGkuZS4gY2hlY2sgaWYgdGhlIFBQVFQgaXMgbmV3IGVub3VnaCB0byBzdXBwb3J0IHRo
+ZSB0aHJlYWQgZmxhZyAKPiBhbmQgYWxzbyBjaGVjayBpZiBpdCBpcyBzZXQgZm9yIGEgc3BlY2lm
+aWMgY3B1LiBJJ2QgY29uc2lkZXIgc2VwYXJhdGUgCj4gZnVuY3Rpb25zIGhlcmUuCgo/IFlvdXIg
+c3VnZ2VzdGluZyByZXBsYWNpbmcgdGhlCgoKaWYgKHRhYmxlLT5yZXZpc2lvbiA+PSByZXYpCglj
+cHVfbm9kZSA9IGFjcGlfZmluZF9wcm9jZXNzb3Jfbm9kZSh0YWJsZSwgYWNwaV9jcHVfaWQpOwoK
+Y2hlY2sgd2l0aAoKaWYgKHJldmlzaW9uX2NoZWNrKHRhYmxlLCByZXYpKQoJY3B1X25vZGUgPSBh
+Y3BpX2ZpbmRfcHJvY2Vzc29yX25vZGUodGFibGUsIGFjcGlfY3B1X2lkKTsKCgphbmQgYSBmdW5j
+dGlvbiBsaWtlCgpzdGF0aWMgaW50IHJldmlzaW9uX2NoZWNrKGFjcGl4eHh4ICp0YWJsZSwgaW50
+IHJldikKewoJcmV0dXJuICh0YWJsZS0+cmV2aXNpb24gPj0gcmV2KTsKfQoKQWx0aG91Z2gsIGZy
+YW5rbHkgaWYgb25lIHdlcmUgdG8gZG8gdGhpcywgaXQgc2hvdWxkIHByb2JhYmx5IGJlIGEgbWFj
+cm8gCndpdGggdGhlIHRhYmxlIHR5cGUsIGFuZCB1c2VkIGluIHRoZSBkb3plbiBvciBzbyBvdGhl
+ciBwbGFjZXMgSSBmb3VuZCAKZG9pbmcgc2ltaWxhciBjaGVja3MgKHNwY3IsIGlvcnQsIGV0Yyku
+CgpPciBzb21ldGhpbmcgZWxzZT8KCgoKCj4gCj4gdGhhbmtzLAo+IEpvaG4KPiAKPj4gWy4uLl0K
+Pj4KPj4gLgo+Pgo+IAo+IAoKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxA
+bGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xp
+c3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
