@@ -2,75 +2,75 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D514549ECC
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 18 Jun 2019 13:00:26 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1453C49ECF
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 18 Jun 2019 13:00:46 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=OHaTQwhN96H975XhXVolIQkGSoCA5A9NuqG0j2Uxx/g=; b=fMsQmQ1rWgD+6Q
-	cxrZGMWhczd4HHhdesadSwOpGhaZdfwol+CbxwIrKz93oSFrlCiltMG77JWXvDu9+RgOkoxPqJEmo
-	9Rx12L+a7QuSaIgMh1HXfG59dgk2I3gFcgEvIdspL4lDV9Y961aZxHI/VhsvlJwauANJ1TT83ChJF
-	JHhFnk6NFvT10ksX2iGUKdf0FsOH+G7/v+5tekb3+h9dOClphniWic4wQNhhWvC4CHE/rnYda0pVd
-	6RH8is2MxrKgT69lzN07rp1jvXef2r1h9oXpgf95nZiCYAADL92AqKHD5JHQgx1ojgQrJFuiT2nhA
-	obZB9ahIEC5JWpVhNS+w==;
+	List-Owner; bh=9xJ8KOS1alxoCQSwx+t44IJkk+sgLGhbWPtf7RRyQjw=; b=L2cqWF2G3MACbr
+	IL6CcZMFGB2pdaSVziJFv+FZ9xM+7/GL33dQfRDZnoS8FeHJRdxTKAru/qegnq6/PyTud2YVZw1yL
+	ZWDemIAJzVCIMWM5ocdyFb7ICr81pQ12058n1GCwZSSaM3ZJyU6uxm8hD1W7bD9fwBvtVJ4D3rvU+
+	HG2+dBeg4yfMPdLs10+Z2/Igd4TfLQ6QsCt/5MWj3iIK/nWNzTVn2Z22StaDB9Usog7y1wL45OhMV
+	Gh1PnjSVufuBh3ubilbbyDDAKrSCXdNYp4nH3WjSug/z2rdzfz/pYmbRQhT4my9E58ss43g5KPpqE
+	AkF9d+yipEzBH64rf9hA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hdBqh-0007Nz-OA; Tue, 18 Jun 2019 11:00:23 +0000
-Received: from mail-io1-xd42.google.com ([2607:f8b0:4864:20::d42])
+	id 1hdBqy-0007g0-T8; Tue, 18 Jun 2019 11:00:40 +0000
+Received: from mail-io1-xd44.google.com ([2607:f8b0:4864:20::d44])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hdBqS-0006H8-Oq
- for linux-arm-kernel@lists.infradead.org; Tue, 18 Jun 2019 11:00:11 +0000
-Received: by mail-io1-xd42.google.com with SMTP id i10so28603668iol.13
+ id 1hdBqk-0007dT-E1
+ for linux-arm-kernel@lists.infradead.org; Tue, 18 Jun 2019 11:00:27 +0000
+Received: by mail-io1-xd44.google.com with SMTP id u19so28658437ior.9
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 18 Jun 2019 04:00:04 -0700 (PDT)
+ Tue, 18 Jun 2019 04:00:26 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=lixom-net.20150623.gappssmtp.com; s=20150623;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=kO+Ld9oYjzAATMOMgs9ipgnAjY1R155cPSoZsGOuzvw=;
- b=k38HwrCbmC3eCmrmtgABfdfrVM7qEZtCCm57u1eT0iBPWQTRkN9T279vnl54dQsROk
- VZps4HuMSCod0NNe+C0Wx4K7EA3G/tUYAnBoS+itZKD4yvF37EfGtB2zC84Vdt3v3SW7
- l7JR3JfrZmQktJuK5PTfW+Iwj24COPpoDb/VojmW9Rq64ZP2X7bW8YXODnEcG+nBZoW4
- n3IPWiPSnclpe75r5M2CsaVSbPA5QKAiiYlF0WSSH60C3g9Z6PVBS8H2slAvAS5VU7vN
- 9g1Tus6PQ5hO9i3PEBGnTrBcsBrpYX5qjq1KnAU0s/VJIu7LoyzVUCfcrCDtPYCV0Brw
- 57BA==
+ :cc; bh=DaUfQSe+T4PXrUh+yjDH7J9YyQk9TYH+wIjQcd4C0mc=;
+ b=yGFZ4yE2r9iiiOX/b/1l1cS8T4RP7RmwpYwvoN0pX8eO6/FG/A/lK54vD9VAHkPo64
+ K4o3Av5VNGUe2K/m9DRpu4QjqbN8RytMx1y9iBO3Qhyje+JjShVpJBmTXKczis601gxS
+ GjeHDYJpp9lGQM6Qn6Q9U27iczkM2CIXZm8BfKSz2Di8dPRMaS94xGKnptqhxN5dzv0I
+ OMaahuzBHUqjddIUUFwqLeTVNSNnbobMPe4ppXDe253vY/BZs+7UvGsp5Dsge2LRSwbl
+ 0HVlM+8Tf/mb/lZAqWmZcfU+3sXWt9GY6FjhEkeOoloCdijrvdXqB1xjORt4hCG5zl5R
+ +5FA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=kO+Ld9oYjzAATMOMgs9ipgnAjY1R155cPSoZsGOuzvw=;
- b=c5KuoJ4PpcdCZ5IJAldgv5HtyA+z2fBfDsZGHn9OAwdBoF1mtB2NlM09uaqJN5ydQd
- oxJi5RDqtDlqHRvaEgZx3aoSGYtiGpk+MnIWARtgqeX/2HSAouh+X2KdxEb+GesADaDS
- bol4em7LaflN58GpXV9LvPFpWAuPfxtS7RNrUfWV0isVFXL7z8+F/IepuZlD46rXIzGS
- XBCtHSbQGYrxbelYO4TPPluAqZyTQHprHNDDI3+7X3PjlZb6Ij8rTOjUe19Nn0t9v+Ct
- NVpaJFcq4mZsPGlt730mGVaCnEFXabNSMqEYGHRVqSoYe9WanToK+U+T6qm3n+twgejf
- dlFw==
-X-Gm-Message-State: APjAAAX5WlGRrFGcI9omKJI7b6GhqTVhf2hdJ3cRTO8EIvEY9fn9wAs6
- hp1Gbmu7P+WHrk9RXUn5Uv4D4wYlFGIQ3LIlp/SUqw==
-X-Google-Smtp-Source: APXvYqwXvXgzzgcpl5G2fh6wX92HRT8JWqYU42X7PPvD/O88q1XVoNNuNUd+bUFwaXY/YrFLbvjH5EKejj0YJ1h8ZwE=
-X-Received: by 2002:a5d:94d0:: with SMTP id y16mr33611523ior.123.1560855604399; 
- Tue, 18 Jun 2019 04:00:04 -0700 (PDT)
+ bh=DaUfQSe+T4PXrUh+yjDH7J9YyQk9TYH+wIjQcd4C0mc=;
+ b=jgwY6Gzk66Yo6XqSbGWOKTJfvup66XSHLShGzsdc2N5fDuVYKfItZsLittl2misNWd
+ JofDhTwpUN6bo/C9rNU+BF78wOxS0B8I0KOCrm4PJHgkz1Ac7aUKTT1u5i/TiS9ToDPh
+ 1O+o/a2NVxk056vX46v7yjIV0qppoMOfDP1faC56+H+osCYunETCaY1LDhrCKNsNQ+k0
+ oJ0TjVh1+9kOxZAwvzIaS3FtQEPWUpxJyy6fZa/vpNiCMLO7fkas3brt479pKcxo5zwM
+ 27jkbdzpyS6Nshk6IJ5fcHeAzhfXLvce1ADOEFrycUmwj3kbSW6llKmvin1x294Mnyp2
+ fInA==
+X-Gm-Message-State: APjAAAXqijv8CL14AJHrjwdKpviK2v4yiwVprX7BDOl3kbCnND7W5Bwx
+ 9hgFqPKwdxLvIwvrlf5FdtSmweh8+7j0kITcCvLwJw==
+X-Google-Smtp-Source: APXvYqzeoST4FgKipJrRZ7jKQsTY7JIuBYyvJQNh1cSbscvXOHK1EAwHRDXsATV7nI72tqRnIzkcKeO4lNL52R+FSN4=
+X-Received: by 2002:a5d:915a:: with SMTP id y26mr2712336ioq.207.1560855625832; 
+ Tue, 18 Jun 2019 04:00:25 -0700 (PDT)
 MIME-Version: 1.0
 References: <20190617122449.457744-1-arnd@arndb.de>
- <20190617122449.457744-2-arnd@arndb.de>
-In-Reply-To: <20190617122449.457744-2-arnd@arndb.de>
+ <20190617122449.457744-3-arnd@arndb.de>
+In-Reply-To: <20190617122449.457744-3-arnd@arndb.de>
 From: Olof Johansson <olof@lixom.net>
-Date: Tue, 18 Jun 2019 11:59:52 +0100
-Message-ID: <CAOesGMhU9OHg_4xAiGy20KmXXLU62kONQxZ6DV5Tj+PKeBSJTg@mail.gmail.com>
-Subject: Re: [PATCH 2/3] ARM: ixp4xx: mark ixp4xx_irq_setup as __init
+Date: Tue, 18 Jun 2019 12:00:14 +0100
+Message-ID: <CAOesGMgUvT87UzNLM=CpjB6nnuwPGn4+cK85ZW8nPUyOzkse6A@mail.gmail.com>
+Subject: Re: [PATCH 3/3] ARM: ixp4xx: include irqs.h where needed
 To: Arnd Bergmann <arnd@arndb.de>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190618_040008_895712_7298DC28 
-X-CRM114-Status: GOOD (  10.82  )
+X-CRM114-CacheID: sfid-20190618_040026_477037_E4623EAB 
+X-CRM114-Status: GOOD (  10.21  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:d42 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:d44 listed in]
  [list.dnswl.org]
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -91,28 +91,26 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>,
 Cc: Linus Walleij <linusw@kernel.org>,
  Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
  ARM-SoC Maintainers <arm@kernel.org>, Krzysztof Halasa <khalasa@piap.pl>,
- Imre Kaloz <kaloz@openwrt.org>,
+ Imre Kaloz <kaloz@openwrt.org>, Linus Walleij <linus.walleij@linaro.org>,
  Linux ARM Mailing List <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Jun 17, 2019 at 1:25 PM Arnd Bergmann <arnd@arndb.de> wrote:
+On Mon, Jun 17, 2019 at 1:26 PM Arnd Bergmann <arnd@arndb.de> wrote:
 >
-> Kbuild complains about ixp4xx_irq_setup not being __init
-> itself in some configurations:
+> Multiple ixp4xx specific files require macros from irqs.h that
+> were moved out from mach/irqs.h, e.g.:
 >
-> WARNING: vmlinux.o(.text+0x85bae4): Section mismatch in reference from the function ixp4xx_irq_setup() to the function .init.text:set_handle_irq()
-> The function ixp4xx_irq_setup() references
-> the function __init set_handle_irq().
-> This is often because ixp4xx_irq_setup lacks a __init
-> annotation or the annotation of set_handle_irq is wrong.
+> arch/arm/mach-ixp4xx/vulcan-pci.c:41:19: error: this function declaration is not a prototype [-Werror,-Wstrict-prototypes]
+> arch/arm/mach-ixp4xx/vulcan-pci.c:49:10: error: implicit declaration of function 'IXP4XX_GPIO_IRQ' [-Werror,-Wimplicit-function-declaration]
+>                 return IXP4XX_GPIO_IRQ(INTA);
 >
-> I suspect it normally gets inlined, so we get no such warning,
-> but clang makes this obvious when the function is left out
-> of line.
+> Include this header in all files that failed to build because of
+> that.
 >
+> Fixes: dc8ef8cd3a05 ("ARM: ixp4xx: Convert to SPARSE_IRQ")
 > Signed-off-by: Arnd Bergmann <arnd@arndb.de>
 
 Applied to arm/fixes. Thanks!
