@@ -2,52 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7748B49DCD
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 18 Jun 2019 11:52:58 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9CA4949DD6
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 18 Jun 2019 11:55:46 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=gaHBCW1lyjtG7iP5NyPqG3X3DkH1dFGS+ht4Y0YmXuo=; b=nLplCM74uOUrHs
-	G4HJxQC89uwj8H7S6b2Fd6AfpYS2oPteppVsVKSxaQ7xw3aOISLHvLQUg4XkmP8WXXhwu6o4ih3qX
-	P7FadN8879D9NAfKO6MIW4pbDiUAibegnwVhn5gzGDZY38RZ7L482+kqqpwC+Wlh/LeGzW5KRh2xK
-	BRt3zDzbakOK+VWBg/zSHXtDAupPT/0jRP4iP7ONFCGi6hBodl5kPzUcwskC2GeOwH9oUdzqZV2Fb
-	2+d0PaRuKpKtkzt3fthfInUyXJX9YTgISyKjwyHu1PcTsn1tMMGNFZvS+9vsmTyF6s51qmEJ7JxYJ
-	37lsUb8E2MGJ+Tq3gVTw==;
+	List-Owner; bh=qIeE0pRDO7N/ZM+nzXGxdBZIP6KIesCmR0Lra+etcms=; b=Zo8rnhXM3WgkG2
+	G+hSit/bp1gQ6ZoB9KPKNlZWXZB8GDcJzeknJuDPoRMkckx99SD6D1BbBKoApSRLJpLbpNJu4JiQJ
+	pz8OaJbxPXqxvspzbOUE106047rRpf+VUR6eIgB3gXsbNuinBGJfFSgn7hMMviWku4zqTt2WPleVm
+	E5+Mb6WJxqpRJq1sNoRLYsftOYryxo/wZetYkj5o5UnNsGMv85Ygk6lRFhyPdMBTYflOu7zjIKJys
+	EMd1cOFsCUwY1PnAMGxO7bHzTnSD7gGJ7GzVQjcwNrendiwUhBkIFz/effuTCDk/145qtjA5X9FPC
+	Q73/YrICTA7uF/nhxyZg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hdAnP-0007ZM-UT; Tue, 18 Jun 2019 09:52:55 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hdAnE-0007XW-ME
- for linux-arm-kernel@lists.infradead.org; Tue, 18 Jun 2019 09:52:48 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id D116D344;
- Tue, 18 Jun 2019 02:52:42 -0700 (PDT)
-Received: from localhost (unknown [10.37.6.20])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 211323F246;
- Tue, 18 Jun 2019 02:54:27 -0700 (PDT)
-Date: Tue, 18 Jun 2019 10:52:40 +0100
-From: Andrew Murray <andrew.murray@arm.com>
-To: Arnd Bergmann <arnd@arndb.de>
-Subject: Re: [PATCH] clocksource/arm_arch_timer: fix
- arch_timer_set_evtstrm_feature return type
-Message-ID: <20190618095240.GP20984@e119886-lin.cambridge.arm.com>
-References: <20190618094835.3709679-1-arnd@arndb.de>
+	id 1hdAq8-0000rn-LE; Tue, 18 Jun 2019 09:55:44 +0000
+Received: from relay9-d.mail.gandi.net ([217.70.183.199])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hdApw-0000qs-CP
+ for linux-arm-kernel@lists.infradead.org; Tue, 18 Jun 2019 09:55:34 +0000
+X-Originating-IP: 92.137.69.152
+Received: from localhost (alyon-656-1-672-152.w92-137.abo.wanadoo.fr
+ [92.137.69.152])
+ (Authenticated sender: alexandre.belloni@bootlin.com)
+ by relay9-d.mail.gandi.net (Postfix) with ESMTPSA id 95FB3FF81A;
+ Tue, 18 Jun 2019 09:55:22 +0000 (UTC)
+Date: Tue, 18 Jun 2019 11:55:21 +0200
+From: Alexandre Belloni <alexandre.belloni@bootlin.com>
+To: Claudiu.Beznea@microchip.com
+Subject: Re: [PATCH 0/7] clk: at91: sckc: improve error path
+Message-ID: <20190618095521.GE23549@piout.net>
+References: <1560440205-4604-1-git-send-email-claudiu.beznea@microchip.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190618094835.3709679-1-arnd@arndb.de>
-User-Agent: Mutt/1.10.1+81 (426a6c1) (2018-08-26)
+In-Reply-To: <1560440205-4604-1-git-send-email-claudiu.beznea@microchip.com>
+User-Agent: Mutt/1.11.4 (2019-03-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190618_025244_771416_A0918B73 
-X-CRM114-Status: GOOD (  17.64  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190618_025532_586567_D7166105 
+X-CRM114-Status: GOOD (  11.44  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [217.70.183.199 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -61,57 +62,59 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Marc Zyngier <marc.zyngier@arm.com>,
- Daniel Lezcano <daniel.lezcano@linaro.org>, Will Deacon <will.deacon@arm.com>,
- Russell King <linux@armlinux.org.uk>, linux-kernel@vger.kernel.org,
+Cc: sboyd@kernel.org, mturquette@baylibre.com, linux-kernel@vger.kernel.org,
+ claudiu.beznea@gmail.com, linux-clk@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Jun 18, 2019 at 11:48:27AM +0200, Arnd Bergmann wrote:
-> This looks like it was copied incorrectly from arm64:
-
-Hi Arnd,
-
-Yes that's correct. I sent a patch for this yesterday [1], I believe Daniel
-plans to take this through his tree.
-
-[1] https://lkml.org/lkml/2019/6/17/229
-
-Thanks,
-
-Andrew Murray
-
+On 13/06/2019 15:37:06+0000, Claudiu.Beznea@microchip.com wrote:
+> From: Claudiu Beznea <claudiu.beznea@microchip.com>
 > 
-> In file included from /git/arm-soc/drivers/clocksource/arm_arch_timer.c:31:
-> arch/arm/include/asm/arch_timer.h:131:1: error: control reaches end of non-void function [-Werror,-Wreturn-type]
+> Hi,
 > 
-> Change the type to 'void' as it should be.
+> This series tries to improve error path for slow clock registrations
+> by adding functions to free resources and using them on failures.
 > 
-> Fixes: 11e34eca5d0a ("clocksource/arm_arch_timer: Extract elf_hwcap use to arch-helper")
-> Signed-off-by: Arnd Bergmann <arnd@arndb.de>
-> ---
->  arch/arm/include/asm/arch_timer.h | 2 +-
->  1 file changed, 1 insertion(+), 1 deletion(-)
+
+Does the platform even boot when the slow clock is not available? 
+
+The TCB clocksource would fail at:
+
+        tc.slow_clk = of_clk_get_by_name(node->parent, "slow_clk");
+        if (IS_ERR(tc.slow_clk))
+                return PTR_ERR(tc.slow_clk);
+
+
+> It is created on top of patch series at [1].
 > 
-> diff --git a/arch/arm/include/asm/arch_timer.h b/arch/arm/include/asm/arch_timer.h
-> index ae533caec1e9..99175812d903 100644
-> --- a/arch/arm/include/asm/arch_timer.h
-> +++ b/arch/arm/include/asm/arch_timer.h
-> @@ -125,7 +125,7 @@ static inline void arch_timer_set_cntkctl(u32 cntkctl)
->  	isb();
->  }
->  
-> -static inline bool arch_timer_set_evtstrm_feature(void)
-> +static inline void arch_timer_set_evtstrm_feature(void)
->  {
->  	elf_hwcap |= HWCAP_EVTSTRM;
->  }
+> Thank you,
+> Claudiu Beznea
+> 
+> [1] https://lore.kernel.org/lkml/1558433454-27971-1-git-send-email-claudiu.beznea@microchip.com/
+> 
+> Claudiu Beznea (7):
+>   clk: at91: sckc: add support to free slow oscillator
+>   clk: at91: sckc: add support to free slow rc oscillator
+>   clk: at91: sckc: add support to free slow clock osclillator
+>   clk: at91: sckc: improve error path for sam9x5 sck register
+>   clk: at91: sckc: remove unnecessary line
+>   clk: at91: sckc: improve error path for sama5d4 sck registration
+>   clk: at91: sckc: use dedicated functions to unregister clock
+> 
+>  drivers/clk/at91/sckc.c | 122 ++++++++++++++++++++++++++++++++++--------------
+>  1 file changed, 86 insertions(+), 36 deletions(-)
+> 
 > -- 
-> 2.20.0
+> 2.7.4
 > 
+
+-- 
+Alexandre Belloni, Bootlin
+Embedded Linux and Kernel engineering
+https://bootlin.com
 
 _______________________________________________
 linux-arm-kernel mailing list
