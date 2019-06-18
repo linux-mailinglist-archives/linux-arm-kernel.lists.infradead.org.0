@@ -2,67 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 48F3A4A046
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 18 Jun 2019 14:08:46 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9545F4A05E
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 18 Jun 2019 14:09:32 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=kLJ1fb/YOu0eKOIZ3PnXP3kD1SqQVYfbZQ47o+/uWTg=; b=suvDBLy1/iVYRy
-	REwF1ARcDo7QJnb/wfuPzukkzfp01BRH7WXRe68YCYrQDvQfEd8Ca5TAv+Oun37XWBNw/tfMoY5vS
-	umC2HJ5SWmmoHgh+6AM7V/0fIrfbt/CQVa1I9dlsye/K65FSsxhRMXiNN9354qMJ+KCkMiOGRnZvf
-	ucgwcY4n0pxhtV+2vwY11Np3Y9ZwYfUJD8EEKcR04w4Gf4PDOGiZIz3yO6YMfgyno3TN7l7rq4j+b
-	NkFzA8VyFI0iq0fP0C+LtLF3YQjjisBVYwnxqWvLYk0eF28730S9A2ugq6Rgsk8qZftCVNJJwo1Uw
-	u22305ybOl9wgd57FhRQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=1WUAc/A7SgSjwP81s2EoMsgUcNrnUI4mZ/ZEsBlKC48=; b=ZB1thWHqg0WTe+
+	W4gRCOR5BD2/jRd+J/G+IP8c8BncQl9pvfPAIgxz6erc9po3rSTnnVyeImQ+5rZ1KTvvGI8LPYW8i
+	rWsrjnM/mhcsDAwAW+mRM8sQ8yb2FxIyWJjksZ1ClI46xPJpazetLPC1GeptsydAoO8e6uaiDWboT
+	xlpu2tnQSBwHW2WSwAx5s2oRxCfkPEVyAhib/BVGfJOtRPvBfGaH15aKPHgJtN6veKEjLkHgPk9Gy
+	T/i0nWSvm/wBS+gYJNqucPd1q0yP+EkgbpLo8M1eJYltK+CqyRlOtiDTuLlZRg9eq4a6WjqZVL+4G
+	H0lOESUh2Cu1nryA4ipA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hdCun-0002iZ-9q; Tue, 18 Jun 2019 12:08:41 +0000
-Received: from lb1-smtp-cloud7.xs4all.net ([194.109.24.24])
+	id 1hdCva-0003GZ-Lq; Tue, 18 Jun 2019 12:09:30 +0000
+Received: from lelv0143.ext.ti.com ([198.47.23.248])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hdCuV-0002hE-Cs
- for linux-arm-kernel@lists.infradead.org; Tue, 18 Jun 2019 12:08:25 +0000
-Received: from [IPv6:2001:983:e9a7:1:adc3:de20:1618:b14b]
- ([IPv6:2001:983:e9a7:1:adc3:de20:1618:b14b])
- by smtp-cloud7.xs4all.net with ESMTPA
- id dCuBh1OZu5qKadCuEhaGzB; Tue, 18 Jun 2019 14:08:10 +0200
-Subject: Re: [PATCH 2/2] media: v4l: xilinx: Add Xilinx UHD-SDI Rx Subsystem
- driver
-To: Vishal Sagar <vsagar@xilinx.com>
-References: <1559656556-79174-1-git-send-email-vishal.sagar@xilinx.com>
- <1559656556-79174-3-git-send-email-vishal.sagar@xilinx.com>
- <023cf8a6-6fbc-6425-8bca-798045d39e02@xs4all.nl>
- <CH2PR02MB608838E59840F73F00534198A7EE0@CH2PR02MB6088.namprd02.prod.outlook.com>
- <740f44cb-24af-72c4-f227-5323efcee8ac@xs4all.nl>
- <CH2PR02MB60883EDB9B3B2AED8A2555CBA7EA0@CH2PR02MB6088.namprd02.prod.outlook.com>
-From: Hans Verkuil <hverkuil@xs4all.nl>
-Message-ID: <3403eea5-e00e-b813-2db1-1ac6ad71b9ff@xs4all.nl>
-Date: Tue, 18 Jun 2019 14:08:03 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.6.1
+ id 1hdCud-0002ki-JI
+ for linux-arm-kernel@lists.infradead.org; Tue, 18 Jun 2019 12:08:35 +0000
+Received: from fllv0035.itg.ti.com ([10.64.41.0])
+ by lelv0143.ext.ti.com (8.15.2/8.15.2) with ESMTP id x5IC8C6C121232;
+ Tue, 18 Jun 2019 07:08:12 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
+ s=ti-com-17Q1; t=1560859692;
+ bh=uKcw8oU4+FhGXSqf3gZugB8yITGfh5/LWvrWJ4CfFJ4=;
+ h=From:To:CC:Subject:Date;
+ b=BIb7ORKEkQHF3vcndibQSbDMsPFF46M94XWaPZhfSn1L+E+ee2wUPRv7rf9MmQ+s3
+ Bqa9jRvzUcU7jFZm0vRYn27zM5yNCW9uY8mL4Q/SR4m0nRakJZhCFJbFJQ75tQyWDe
+ dNqtb1Pa9BhHnY+YeLMEDJX5xypKUCuW8evR0P0Y=
+Received: from DFLE103.ent.ti.com (dfle103.ent.ti.com [10.64.6.24])
+ by fllv0035.itg.ti.com (8.15.2/8.15.2) with ESMTPS id x5IC8CMq068759
+ (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
+ Tue, 18 Jun 2019 07:08:12 -0500
+Received: from DFLE113.ent.ti.com (10.64.6.34) by DFLE103.ent.ti.com
+ (10.64.6.24) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5; Tue, 18
+ Jun 2019 07:08:12 -0500
+Received: from fllv0040.itg.ti.com (10.64.41.20) by DFLE113.ent.ti.com
+ (10.64.6.34) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5 via
+ Frontend Transport; Tue, 18 Jun 2019 07:08:12 -0500
+Received: from a0393675ula.india.ti.com (ileax41-snat.itg.ti.com
+ [10.172.224.153])
+ by fllv0040.itg.ti.com (8.15.2/8.15.2) with ESMTP id x5IC89GY080327;
+ Tue, 18 Jun 2019 07:08:09 -0500
+From: Keerthy <j-keerthy@ti.com>
+To: <herbert@gondor.apana.org.au>, <davem@davemloft.net>, <robh+dt@kernel.org>
+Subject: [PATCH 00/10] crypto: k3: Add sa2ul driver
+Date: Tue, 18 Jun 2019 17:38:33 +0530
+Message-ID: <20190618120843.18777-1-j-keerthy@ti.com>
+X-Mailer: git-send-email 2.17.1
 MIME-Version: 1.0
-In-Reply-To: <CH2PR02MB60883EDB9B3B2AED8A2555CBA7EA0@CH2PR02MB6088.namprd02.prod.outlook.com>
-Content-Language: en-US
-X-CMAE-Envelope: MS4wfFiQhkp+msbWq8vdEbUa1pDLUPIrLovtaM6BS1Ltvy71czvNt+4ac0uJ8sPBGc6R0M6fytgDEH/9JKlBjApM5IgD0in0j4S59pfs81yWWLWivf66BBQA
- SRvZXB7emIY4jFoF1N9g87UbHN54Lt9PUy10+Eh+vbD4P642II9Qp9KbvhKBC+gQBw8/9+j6zTcaYKDeQHhlMR9SFqsUMK42Qmn+6dsCF86hTIf3CtV2J5DI
- NOzvlFQQlCtkcRBlUh+BBImXkYzPr+htVGIwWsyVZvJYBbqMtSxsF8tJI8hdThpSdCP+Waaw7Otta/cXS4oXEq350/zIMKGiAUUpJ9LDyxRb61TGzYgeVSXm
- Brav+dxz/NnsjmeEsSLk7Pe7CK5k6uNppVG+sNUauKpMjgr7QmKtU7VwNOacSZMG2inC3yhSB2z758p2e5FjSKyKEgWOWAve90QVlu22lfgRjTuTE7M/gXVK
- RYNvA/5wOzcn9VF6rHQV+zZF8N996sK7p9OqR30UnzvlGGLRPxTvhqyE214caYl/7ZRfNft4XY+13I20jnyiYs09zhrAm/9ppatz76YWflaL6PeKQigmJ+B/
- 8RjPf261oWoSnrOm2ERIFK1IXe2ROSZ7FjgwYNiVqBy0H2sjn7MMcY+cKdrr5Mlf496qKjeI6RMAGlDwMD2h5sqJCZA681FApkYwanDuwkDs4tNQGCsU3Agq
- h/e8MXEb6bZuX1bt/6wJ5gTHZhhvwbe/8eYV6jRx8p0OPD2/6IfbM0f3d8WILcK7bJOk9JERkzw=
+X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190618_050823_600495_53E9B092 
-X-CRM114-Status: GOOD (  24.56  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20190618_050831_786509_3F1D6C2A 
+X-CRM114-Status: GOOD (  11.15  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [194.109.24.24 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [198.47.23.248 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -74,225 +88,51 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Sandip Kothari <sandipk@xilinx.com>,
- Mauro Carvalho Chehab <mchehab@kernel.org>, Hyun Kwon <hyunk@xilinx.com>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Rob Herring <robh+dt@kernel.org>, Michal Simek <michals@xilinx.com>,
- Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
- Sakari Ailus <sakari.ailus@linux.intel.com>,
- Vishal Sagar <vishal.sagar@xilinx.com>, Dinesh Kumar <dineshk@xilinx.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- "linux-media@vger.kernel.org" <linux-media@vger.kernel.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: nm@ti.com, devicetree@vger.kernel.org, j-keerthy@ti.com,
+ linux-kernel@vger.kernel.org, t-kristo@ti.com,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 6/18/19 1:51 PM, Vishal Sagar wrote:
-> Hi Hans,
-> 
->> -----Original Message-----
->> From: Hans Verkuil [mailto:hverkuil@xs4all.nl]
->> Sent: Saturday, June 15, 2019 1:25 PM
->> To: Vishal Sagar <vsagar@xilinx.com>
->> Cc: linux-kernel@vger.kernel.org; linux-media@vger.kernel.org; linux-arm-
->> kernel@lists.infradead.org; devicetree@vger.kernel.org; Dinesh Kumar
->> <dineshk@xilinx.com>; Sandip Kothari <sandipk@xilinx.com>; Vishal Sagar
->> <vishal.sagar@xilinx.com>; Hyun Kwon <hyunk@xilinx.com>; Laurent Pinchart
->> <laurent.pinchart@ideasonboard.com>; Mauro Carvalho Chehab
->> <mchehab@kernel.org>; Michal Simek <michals@xilinx.com>; Rob Herring
->> <robh+dt@kernel.org>; Mark Rutland <mark.rutland@arm.com>; Sakari Ailus
->> <sakari.ailus@linux.intel.com>
->> Subject: Re: [PATCH 2/2] media: v4l: xilinx: Add Xilinx UHD-SDI Rx Subsystem
->> driver
->>
->> On 6/14/19 1:44 PM, Vishal Sagar wrote:
->>> Hi Hans,
->>>
->>> Thanks for reviewing this patch.
->>>
->>>> -----Original Message-----
->>>> From: Hans Verkuil [mailto:hverkuil@xs4all.nl]
->>>> Sent: Wednesday, June 05, 2019 6:28 PM
->>>> To: Vishal Sagar <vishal.sagar@xilinx.com>; Hyun Kwon
->> <hyunk@xilinx.com>;
->>>> Laurent Pinchart <laurent.pinchart@ideasonboard.com>; Mauro Carvalho
->>>> Chehab <mchehab@kernel.org>; Michal Simek <michals@xilinx.com>; Rob
->>>> Herring <robh+dt@kernel.org>; Mark Rutland <mark.rutland@arm.com>
->>>> Cc: linux-kernel@vger.kernel.org; linux-media@vger.kernel.org; linux-arm-
->>>> kernel@lists.infradead.org; devicetree@vger.kernel.org; Dinesh Kumar
->>>> <dineshk@xilinx.com>; Sandip Kothari <sandipk@xilinx.com>
->>>> Subject: Re: [PATCH 2/2] media: v4l: xilinx: Add Xilinx UHD-SDI Rx Subsystem
->>>> driver
->>>>
->>>> EXTERNAL EMAIL
->>>>
->>>> On 6/4/19 3:55 PM, Vishal Sagar wrote:
->>>>> The Xilinx UHD-SDI Rx subsystem soft IP is used to capture native SDI
->>>>> streams from SDI sources like SDI broadcast equipment like cameras and
->>>>> mixers. This block outputs either native SDI, native video or
->>>>> AXI4-Stream compliant data stream for further processing. Please refer
->>>>> to PG290 for details.
->>>>>
->>>>> The driver is used to configure the IP to add framer, search for
->>>>> specific modes, get the detected mode, stream parameters, errors, etc.
->>>>> It also generates events for video lock/unlock, bridge over/under flow.
->>>>>
->>>>> The driver supports only 10 bpc YUV 422 media bus format. It also
->>>>> decodes the stream parameters based on the ST352 packet embedded in
->> the
->>>>> stream. In case the ST352 packet isn't present in the stream, the core's
->>>>> detected properties are used to set stream properties.
->>>>>
->>>>> The driver currently supports only the AXI4-Stream configuration.
->>>>>
->>>>> Signed-off-by: Vishal Sagar <vishal.sagar@xilinx.com>
->>>>> ---
->>>>>  drivers/media/platform/xilinx/Kconfig          |   11 +
->>>>>  drivers/media/platform/xilinx/Makefile         |    1 +
->>>>>  drivers/media/platform/xilinx/xilinx-sdirxss.c | 1846
->>>> ++++++++++++++++++++++++
->>>>>  include/uapi/linux/xilinx-sdirxss.h            |   63 +
->>>>>  include/uapi/linux/xilinx-v4l2-controls.h      |   30 +
->>>>>  include/uapi/linux/xilinx-v4l2-events.h        |    9 +
->>
->> <snip>
->>
->>>> I am concerned about this driver: I see that none of the *_dv_timings
->> callbacks
->>>> are implemented. I would expect to see that for a video receiver. There is
->> also
->>>> no g_input_status implemented.
->>>>
->>>> Take a look at another SDI driver: drivers/media/spi/gs1662.c
->>>>
->>>
->>> I had a look at the gs1662 driver for the dv_timings callbacks. The gs1662
->> driver
->>> requires the timings because it is a SDI Transmitter.
->>>
->>> Here the timings are not required as the IP block generates a AXI4 Stream.
->>> I think it may be required only in case of native / parallel video being
->> outputted
->>> as the output stream needs timing information to be decoded.
->>>
->>> Please feel free to correct my understanding if wrong.
->>>
->>> In the current driver, the input stream properties like width, height, frame
->> rate,
->>> progressive/interlaced  are determined from the ST352 packet payload or
->> from the
->>> properties detected by the core.
->>>
->>> See the xsdirx_get_stream_properties() for details.
->>
->> You're wrong. In xsdirx_get_stream_properties() you set the format
->> information.
->> But you can't just change that: if the video resolution changes, then that means
->> that userspace needs to be informed that it has changed at the source, it has to
->> find and set the new timings, update the formats, possibly reallocate memory
->> for
->> the buffers, update other parts of the video pipeline with the new resolution
->> etc.
->>
->> The one thing you cannot do is just pass on the new resolution and hope that
->> the
->> video pipeline can handle it all.
->>
->> The right sequence of events is:
->>
->> 1) When a change is detected at the source the driver sends the
->> SOURCE_CHANGE
->> event and either stops transmitting to the video pipeline or keeps sending the
->> old resolution (some devices have a freewheeling mode where they can do
->> that).
->>
->> 2) Userspace sees the event, calls QUERY_DV_TIMINGS to find a new timings (if
->> any), usually stops streaming, and calls S_DV_TIMINGS to set the detected
->> timings:
->> at that point the driver can configure the output towards the video pipeline
->> with
->> the new timings. Userspace reallocates buffers and resumes streaming with the
->> new
->> resolution.
->>
-> 
-> Thanks for the explanation!
-> 
-> I will remove the extraneous video unlock event and stop the streaming when video lock / unlock interrupt occurs.
-> I will also implement the g_input_status() to return V4L2_IN_ST_NO_SYNC | V4L2_IN_ST_NO_SIGNAL in case video is unlocked.
-> 
-> My assumption is that on SOURCE_CHANGE event, application can stop the pipeline and then 
-> call the G_FORMAT and G_FRAME_INTERVAL to get new frame size, type (progressive / interlaced) and frame rate.
-> Is this assumption correct? 
-
-No :-)
-
-After SOURCE_CHANGE is received an application calls QUERY_DV_TIMINGS. If that
-returns valid timings, then the application calls S_DV_TIMINGS with the
-detected timings. The driver will now update the format, frame interval, etc.
-according to the new timings. And the application can use that to reconfigure
-the video pipeline.
-
-> 
-> Is it mandatory to implement QUERY_DV_TIMINGS with SOURCE_CHANGE event?
-
-Yes.
-
-> 
-> I also don't see any V4L2 framework supported events for overflow and underflow.
-> Is it ok to keep these or should they be removed too? 
-
-under/overflow of what? Internal fifos? You can keep the custom events for that.
-
-Regards,
-
-	Hans
-
-> 
-> Regards
-> 
-> Vishal Sagar
-> 
->> Note that G_DV_TIMINGS returns the last configured timings, not the detected
->> timings: only QUERY_DV_TIMINGS does that.
->>
->> In other words: userspace has to retain control of the full pipeline.
->>
->> Regards,
->>
->> 	Hans
->>
->>>
->>>> Some of the controls you add in this driver can likely be dropped. Especially
->>>> those controls that are not specific to the Xilinx implementation but are
->>>> generic for any SDI receiver, should be looked at closely: those are
->>>> candidates for becoming standard controls.
->>>
->>> I don't know how other SDI Receiver devices function.
->>> So I am assuming all these controls are Xilinx specific implementations.
->>>
->>>>
->>>> But the documentation above is simply insufficient for me to tell what is
->>>> SDI specific and what is implementation specific.
->>>>
->>>
->>> I will add more documentation for these controls.
->>>
->>>> Also, I'm no SDI expert, certainly not for the UHD-SDI.
->>>>
->>>> Regards,
->>>>
->>>>         Hans
->>>
->>> Regards
->>> Vishal Sagar
->>>
-> 
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+VGhlIHNlcmllcyBhZGRzIENyeXB0byBoYXJkd2FyZSBhY2NlbGVyYXRvciBzdXBwb3J0IGZvciBT
+QTJVTC4KU0EyVUwgc3RhbmRzIGZvciBzZWN1cml0eSBhY2NlbGVyYXRvciB1bHRyYSBsaXRlLgoK
+VGhlIFNlY3VyaXR5IEFjY2VsZXJhdG9yIChTQTJfVUwpIHN1YnN5c3RlbSBwcm92aWRlcyBoYXJk
+d2FyZQpjcnlwdG9ncmFwaGljIGFjY2VsZXJhdGlvbiBmb3IgdGhlIGZvbGxvd2luZyB1c2UgY2Fz
+ZXM6CuKAoiBFbmNyeXB0aW9uIGFuZCBhdXRoZW50aWNhdGlvbiBmb3Igc2VjdXJlIGJvb3QK4oCi
+IEVuY3J5cHRpb24gYW5kIGF1dGhlbnRpY2F0aW9uIG9mIGNvbnRlbnQgaW4gYXBwbGljYXRpb25z
+CiAgcmVxdWlyaW5nIERSTSAoZGlnaXRhbCByaWdodHMgbWFuYWdlbWVudCkgYW5kCiAgY29udGVu
+dC9hc3NldCBwcm90ZWN0aW9uClRoZSBkZXZpY2UgaW5jbHVkZXMgb25lIGluc3RhbnRpYXRpb24g
+b2YgU0EyX1VMIG5hbWVkIFNBMl9VTDAKClNBMlVMIG5lZWRzIG9uIHR4IGNoYW5uZWwgYW5kIGEg
+cGFpciBvZiByeCBkbWEgY2hhbm5lbHMuCgpUaGlzIHNlcmllcyBoYXMgZGVwZW5kZW5jeSBvbiBV
+RE1BIHNlcmllcy4gSGVuY2UgaXMgYmFzZWQgb24gdG9wIG9mOgoKaHR0cHM6Ly9wYXRjaHdvcmsu
+a2VybmVsLm9yZy9wcm9qZWN0L2xpbnV4LWRtYWVuZ2luZS9saXN0Lz9zZXJpZXM9MTE0MTA1CgpU
+aGUgYWJvdmUgc2VyaWVzIGFkZHMgY291cGxlIG9mIGRtYWVuZ2luZSBBUElzIHRoYXQgYXJlIHVz
+ZWQKYnkgdGhlIHNhMnVsIGRyaXZlci4gSGVuY2UgdGhlcmUgaXMgYSBoYXJkIGRlcGVuZGVuY3kg
+b24gdGhlCmFib3ZlIHNlcmllcy4KCktlZXJ0aHkgKDEwKToKICBkdC1iaW5kaW5nczogY3J5cHRv
+OiBrMzogQWRkIHNhMnVsIGJpbmRpbmdzIGRvY3VtZW50YXRpb24KICBjcnlwdG86IHNhMnVsOiBB
+ZGQgY3J5cHRvIGRyaXZlcgogIGNyeXB0bzogc2EydWw6IEFkZCBBRVMgRUNCIE1vZGUgc3VwcG9y
+dAogIGNyeXB0bzogc2EydWw6IEFkZCBhZWFkIHN1cHBvcnQgZm9yIGhtYWMoc2hhMSljYmMoYWVz
+KSBhbGdvcml0aG0KICBjcnlwdG86IHNoYTI1Nl9nZW5lcmljOiBFeHBvcnQgdGhlIFRyYW5zZm9y
+bSBmdW5jdGlvbgogIGNyeXB0bzogc2EydWw6IEFkZCBobWFjKHNoYTI1NiljYmMoYWVzKSBBRUFE
+IEFsZ28gc3VwcG9ydAogIGNyeXB0bzogc2EydWw6IEFkZCBobWFjKHNoYTEpIEhNQUMgYWxnb3Jp
+dGhtIHN1cHBvcnQKICBjcnlwdG86IHNhMnVsOiBBZGQgaG1hYyhzaGEyNTYpIEhNQUMgYWxnb3Jp
+dGhtIHN1cHBvcnQKICBzYTJ1bDogQWRkIDNERVMgRUNCICYgQ0JDIE1vZGUgc3VwcG9ydAogIGFy
+bTY0OiBkdHM6IGszLWFtNjogQWRkIGNyeXB0byBhY2NlbGFyYXRvciBub2RlCgogLi4uL2Rldmlj
+ZXRyZWUvYmluZGluZ3MvY3J5cHRvL3NhMnVsLnR4dCAgICAgIHwgICA0NyArCiBhcmNoL2FybTY0
+L2Jvb3QvZHRzL3RpL2szLWFtNjUtbWFpbi5kdHNpICAgICAgfCAgIDMzICsKIGNyeXB0by9zaGEy
+NTZfZ2VuZXJpYy5jICAgICAgICAgICAgICAgICAgICAgICB8ICAgIDMgKy0KIGRyaXZlcnMvY3J5
+cHRvL0tjb25maWcgICAgICAgICAgICAgICAgICAgICAgICB8ICAgMTcgKwogZHJpdmVycy9jcnlw
+dG8vTWFrZWZpbGUgICAgICAgICAgICAgICAgICAgICAgIHwgICAgMSArCiBkcml2ZXJzL2NyeXB0
+by9zYTJ1bC5jICAgICAgICAgICAgICAgICAgICAgICAgfCAyMjMyICsrKysrKysrKysrKysrKysr
+CiBkcml2ZXJzL2NyeXB0by9zYTJ1bC5oICAgICAgICAgICAgICAgICAgICAgICAgfCAgMzg0ICsr
+KwogaW5jbHVkZS9jcnlwdG8vc2hhLmggICAgICAgICAgICAgICAgICAgICAgICAgIHwgICAgMSAr
+CiA4IGZpbGVzIGNoYW5nZWQsIDI3MTcgaW5zZXJ0aW9ucygrKSwgMSBkZWxldGlvbigtKQogY3Jl
+YXRlIG1vZGUgMTAwNjQ0IERvY3VtZW50YXRpb24vZGV2aWNldHJlZS9iaW5kaW5ncy9jcnlwdG8v
+c2EydWwudHh0CiBjcmVhdGUgbW9kZSAxMDA2NDQgZHJpdmVycy9jcnlwdG8vc2EydWwuYwogY3Jl
+YXRlIG1vZGUgMTAwNjQ0IGRyaXZlcnMvY3J5cHRvL3NhMnVsLmgKCi0tIAoyLjE3LjEKCgpfX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2Vy
+bmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0
+cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVs
+Cg==
