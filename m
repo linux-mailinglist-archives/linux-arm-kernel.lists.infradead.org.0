@@ -2,81 +2,95 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7CCFA4AC1C
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 18 Jun 2019 22:56:00 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BA3344AC1E
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 18 Jun 2019 22:56:19 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=tfUE+i9H7W8g2DH7x9Xg6shsM3j4wpX+WFHEGqm8kvM=; b=BQsRGRg0SRCWKQ
-	Wts5AlSMbDKlgoR1H0QX3E2oM2HOn8VjAV27xxu8EGiijmpdRVs9rWzSItTB2FIMRImqKgvP9b8YP
-	W43UwAkwdPMPgnA1bjmF9aE4QLBymMKZcTMW1WXwUOxCdcGoswKXo4MJOOKzwK60hTSrAm9wmAjXc
-	hGQN7kB7TaeVFNr/mutAiN0G+K7zbMS9K5CKgul7P0ymmGAxBFY9ZxD4Gzg45R1RUVwDz8LxKO1rn
-	z+iuvDfjsizjIOP2ILHPB2rWKpxxVtHguW/o9Pnsf4tS/hcwM8DDZkgToJx6YULXC3CT8KHH/cqgi
-	l1CjMFVaDy2bm2gor6FQ==;
+	List-Owner; bh=D09F0poFpfIaQn2sf2WYsZ+5F9k3+j3C8c5ug1NI3Hs=; b=sPFyVRvK88WY8H
+	xMOFjCA6xt0XxGzWgkkyafrqIixs7tK1Fiuf73rQ4hd3DduuxC3GDyDf1fsbCRCwsUr55CMI7BZoV
+	vYYmmrpuZM+DR9ciY7e+4Pz+h49yQUy0/znhS1dHSNa5+WO2oK8SyTFP909YaKIguFK4LxURo5eut
+	QwvpSLLmY8rL5sv64rKve38ahqsYmHaE1bEna9/OIAuiR2asQcsjAocbFqHhwM6TOOx3VSlKhwJwF
+	BhwoHSVaUtILKiVx0Gp+GKJFuAkjrGcwoC1qu6nCsH1gHQ+w5gYeY1s3RSYX2AKt+Q5Ua5WXW6b8x
+	9QEeZaYm6O0GGEisD0JQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hdL93-00024S-UH; Tue, 18 Jun 2019 20:55:58 +0000
-Received: from mail-qk1-f193.google.com ([209.85.222.193])
+	id 1hdL9O-0002KJ-25; Tue, 18 Jun 2019 20:56:18 +0000
+Received: from mail-lj1-x242.google.com ([2a00:1450:4864:20::242])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hdL8p-00023m-6P
- for linux-arm-kernel@lists.infradead.org; Tue, 18 Jun 2019 20:55:44 +0000
-Received: by mail-qk1-f193.google.com with SMTP id t8so9538681qkt.1
+ id 1hdL8v-00027o-Pr
+ for linux-arm-kernel@lists.infradead.org; Tue, 18 Jun 2019 20:55:51 +0000
+Received: by mail-lj1-x242.google.com with SMTP id v18so965067ljh.6
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 18 Jun 2019 13:55:42 -0700 (PDT)
+ Tue, 18 Jun 2019 13:55:48 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=linux-foundation.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=Rgyz2cVF6lciICHj9aRxm3g8t9416ctrHS5B3PoGzGM=;
+ b=er8IX2IUKbXU9cahan+PR49raLMPgXXPPUR2yIHqZPbkQsvl37yRNMqfD0QJCdAjv/
+ Js7XnzEYA+84AFVz+WBmB839fafHCxPz6VNvQMgMq5clTEv658MFIY2euF6/qDtGFn5n
+ /mCm3ynK8OYbMKS6yBEJaYs5AYJ0Te0crzo84=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=z9lpWmnxIWG+yn/Q8Kt9kwRJEp4w7nP1RsHOAevW2cM=;
- b=BCdkcrhFe/GIASpfQn69VdfBZO7pKLdp4ZUhPkyECqnBM9X4FI+7JAEhzQfILNvhDl
- mUc2s5xq7Y8iVBIPDEmk5Q7h4dcyN2wchjodNPjPobxe9HsdCnAxGX8Zy99AatSVqIMn
- YEspOsJrz0vWv3Zv42BqGLU4gdthMVYH/zTj18yi9aqrfIPfCcI46yQ4S9Ly2pB/abce
- 7NWmnL23ax/YGAGrDqYRbdZflraJf/xBAZtZben/MahlrhYkFOuWXpyWQ1v3VuVkTYUA
- O4wN+qnxx4hYCwPG02PHkyKZAw8aazSAwQplpKAmoBkk0NJvd4M3zrGUAa2kr3Nt0uUk
- ZFAA==
-X-Gm-Message-State: APjAAAUhHku5DXOcrZXxULaoHXMrOAeK7UTXIfAi+TI6a7dzrsSnnald
- 2aNnOmbwXBMNEA/5vB2Gy9L8RpGhpY2eXajcwoc=
-X-Google-Smtp-Source: APXvYqzMQnj8mooGUNvWO59G0b2ABKwAdRoB6ahNoB3XWyhRG2+Kc2tlKvSqhoNGKyDN+miPCnbs/N9GlnSM6tCUpFo=
-X-Received: by 2002:a37:a4d3:: with SMTP id n202mr8318000qke.84.1560891341993; 
- Tue, 18 Jun 2019 13:55:41 -0700 (PDT)
+ bh=Rgyz2cVF6lciICHj9aRxm3g8t9416ctrHS5B3PoGzGM=;
+ b=dZAEbcz0XIxnC4K+kIN4nzg0aP70sFpmhf6gaGuS3M3kVbGimkFWUtUA9Knk7R6WEc
+ evv9OZGSvsVZGV7WkSgJsOHr53h9689uYP7/CSmHTu+Z/5V9vxgeJbV7SnwwdQJOH9Ew
+ Afgcyod7t0Q+M8XnFdLUL69eQXztLMj4I5ruPvv68OZ3x1OszNTAaG8iEZliwCviZPzN
+ vE/LJi6I6Hgt1jw57LDutpbmRuTv8g2U8AWctuph7XxB+Cu5qKHEO/1oaK18dOLGx05L
+ 7XYkxPSsK7wedLyH7XyW6Af6GsyW2tZvrTi8JaefGI3ALnsHKdo2fsoxlhHbX8Tw6cqX
+ PN4Q==
+X-Gm-Message-State: APjAAAWLu5Iqo2FJHNMze7cTjCIUM/nxThF1Toj5JOqIPx116BJrrW0e
+ xdTYHKnFFi5Bl9c/zEZFfxXTZTxnr1s=
+X-Google-Smtp-Source: APXvYqyY21ESuacO8KPmwDZGOczJTQb8HcGZ4nR/FKnl5kfFq32JfKOOuLy9YLqLacTMDo2EkMOLNg==
+X-Received: by 2002:a2e:9685:: with SMTP id q5mr15680739lji.227.1560891346789; 
+ Tue, 18 Jun 2019 13:55:46 -0700 (PDT)
+Received: from mail-lf1-f53.google.com (mail-lf1-f53.google.com.
+ [209.85.167.53])
+ by smtp.gmail.com with ESMTPSA id a70sm2555234ljf.57.2019.06.18.13.55.45
+ for <linux-arm-kernel@lists.infradead.org>
+ (version=TLS1_3 cipher=AEAD-AES128-GCM-SHA256 bits=128/128);
+ Tue, 18 Jun 2019 13:55:45 -0700 (PDT)
+Received: by mail-lf1-f53.google.com with SMTP id b11so10350160lfa.5
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 18 Jun 2019 13:55:45 -0700 (PDT)
+X-Received: by 2002:a19:f808:: with SMTP id a8mr6231181lff.29.1560891345414;
+ Tue, 18 Jun 2019 13:55:45 -0700 (PDT)
 MIME-Version: 1.0
-References: <380a6185-7ad1-6be0-060b-e6e5d4126917@linaro.org>
- <a94676381a5ca662c848f7a725562f721c43ce76.camel@sipsolutions.net>
- <CAK8P3a0kV-i7BJJ2X6C=5n65rSGfo8fUiC4J_G-+M8EctYKbkg@mail.gmail.com>
- <066e9b39f937586f0f922abf801351553ec2ba1d.camel@sipsolutions.net>
- <b3686626-e2d8-bc9c-6dd0-9ebb137715af@linaro.org>
- <b23a83c18055470c5308fcd1eed018056371fc1d.camel@sipsolutions.net>
- <CAK8P3a1FeUQR3pgoQxHoRK05JGORyR+TFATVQiijLWtFKTv6OQ@mail.gmail.com>
- <613cdfde488eb23d7207c7ba6258662702d04840.camel@sipsolutions.net>
-In-Reply-To: <613cdfde488eb23d7207c7ba6258662702d04840.camel@sipsolutions.net>
-From: Arnd Bergmann <arnd@arndb.de>
-Date: Tue, 18 Jun 2019 22:55:23 +0200
-Message-ID: <CAK8P3a2onXpxiE4y9PzRwuPM2dh=h_BKz7Eb0=LLPgBbZoK1bQ@mail.gmail.com>
-Subject: Re: [PATCH v2 00/17] net: introduce Qualcomm IPA driver
-To: Johannes Berg <johannes@sipsolutions.net>
+References: <CAHk-=wgTL5sYCGxX8+xQqyBRWRUE05GAdL58+UTG8bYwjFxMkw@mail.gmail.com>
+ <20190617190605.GA21332@mwanda> <20190618081645.GM16364@dell>
+In-Reply-To: <20190618081645.GM16364@dell>
+From: Linus Torvalds <torvalds@linux-foundation.org>
+Date: Tue, 18 Jun 2019 13:55:29 -0700
+X-Gmail-Original-Message-ID: <CAHk-=wghW+AKvRGevUiVWwTqWObygSZSdq6Dz2ad81H73VeuRQ@mail.gmail.com>
+Message-ID: <CAHk-=wghW+AKvRGevUiVWwTqWObygSZSdq6Dz2ad81H73VeuRQ@mail.gmail.com>
+Subject: Re: [PATCH] mfd: stmfx: Fix an endian bug in stmfx_irq_handler()
+To: Lee Jones <lee.jones@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190618_135543_237076_AFFF0FCF 
-X-CRM114-Status: GOOD (  23.61  )
-X-Spam-Score: 0.5 (/)
+X-CRM114-CacheID: sfid-20190618_135549_901471_FAFACA21 
+X-CRM114-Status: UNSURE (   7.27  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.5 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.222.193 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.222.193 listed in wl.mailspike.net]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (arndbergmann[at]gmail.com)
+ no trust [2a00:1450:4864:20:0:0:0:242 listed in]
+ [list.dnswl.org]
  0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
  mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -88,81 +102,27 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: DTML <devicetree@vger.kernel.org>, syadagir@codeaurora.org,
- Eric Caruso <ejcaruso@google.com>, Dan Williams <dcbw@redhat.com>,
- linux-arm-msm@vger.kernel.org, abhishek.esse@gmail.com,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>, evgreen@chromium.org,
- Bjorn Andersson <bjorn.andersson@linaro.org>,
- Ilias Apalodimas <ilias.apalodimas@linaro.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Alex Elder <elder@linaro.org>,
- Subash Abhinov Kasiviswanathan <subashab@codeaurora.org>,
- Networking <netdev@vger.kernel.org>, linux-soc@vger.kernel.org,
- David Miller <davem@davemloft.net>, cpratapa@codeaurora.org,
- Ben Chan <benchan@google.com>
+Cc: Amelie Delaunay <amelie.delaunay@st.com>,
+ Alexandre Torgue <alexandre.torgue@st.com>, kernel-janitors@vger.kernel.org,
+ Linux List Kernel Mailing <linux-kernel@vger.kernel.org>,
+ Dan Carpenter <dan.carpenter@oracle.com>,
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ linux-stm32@st-md-mailman.stormreply.com,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Jun 18, 2019 at 10:36 PM Johannes Berg
-<johannes@sipsolutions.net> wrote:
+On Tue, Jun 18, 2019 at 1:16 AM Lee Jones <lee.jones@linaro.org> wrote:
 >
-> On Tue, 2019-06-18 at 21:59 +0200, Arnd Bergmann wrote:
-> >
-> > From my understanding, the ioctl interface would create the lower
-> > netdev after talking to the firmware, and then user space would use
-> > the rmnet interface to create a matching upper-level device for that.
-> > This is an artifact of the strong separation of ipa and rmnet in the
-> > code.
+> > Reported-by: Linus Torvalds <torvalds@linux-foundation.org>
 >
-> Huh. But if rmnet has muxing, and IPA supports that, why would you ever
-> need multiple lower netdevs?
+> Ideally we can get a review too.
 
-From my reading of the code, there is always exactly a 1:1 relationship
-between an rmnet netdev an an ipa netdev. rmnet does the encapsulation/
-decapsulation of the qmap data and forwards it to the ipa netdev,
-which then just passes data through between a hardware queue and
-its netdevice.
+Looks fine to me, but obviously somebody should actually _test_ it too.
 
-[side note: on top of that, rmnet also does "aggregation", which may
- be a confusing term that only means transferring multiple frames
- at once]
-
-> > ipa definitely has multiple hardware queues, and the Alex'
-> > driver does implement  the data path on those, just not the
-> > configuration to enable them.
->
-> OK, but perhaps you don't actually have enough to use one for each
-> session?
-
-I'm lacking the terminology here, but what I understood was that
-the netdev and queue again map to a session.
-
-> > Guessing once more, I suspect the the XON/XOFF flow control
-> > was a workaround for the fact that rmnet and ipa have separate
-> > queues. The hardware channel on IPA may fill up, but user space
-> > talks to rmnet and still add more frames to it because it doesn't
-> > know IPA is busy.
-> >
-> > Another possible explanation would be that this is actually
-> > forwarding state from the base station to tell the driver to
-> > stop sending data over the air.
->
-> Yeah, but if you actually have a hardware queue per upper netdev then
-> you don't really need this - you just stop the netdev queue when the
-> hardware queue is full, and you have flow control automatically.
->
-> So I really don't see any reason to have these messages going back and
-> forth unless you plan to have multiple sessions muxed on a single
-> hardware queue.
-
-Sure, I definitely understand what you mean, and I agree that would
-be the right way to do it. All I said is that this is not how it was done
-in rmnet (this was again my main concern about the rmnet design
-after I learned it was required for ipa) ;-)
-
-     Arnd
+              Linus
 
 _______________________________________________
 linux-arm-kernel mailing list
