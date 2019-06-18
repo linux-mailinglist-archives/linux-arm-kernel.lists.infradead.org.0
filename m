@@ -2,47 +2,50 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A0F6E4A8A8
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 18 Jun 2019 19:39:55 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3A26D4A8A9
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 18 Jun 2019 19:40:35 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=mQMAG3369f7PUOhAnmkxICEvZutaLMCYDravq/1qDk4=; b=VtnrwWNY9H9Wbp
-	nbUdKu/XU8aKXWcymv+rzDdlL5Lljl2UY+kSdZBwsd4H6kHQq4p6y/SKRmsi/CKNL8j95F4KdgaHe
-	vFRZ06zL2TTqn9tZQAmzEn0nq9vNB5z/rccREGwjD+2QZ08MBEKtAkAoPXo2g/7LAwoN/qvsK8rao
-	cSy8olN9gSXQ794IYg/31gfhX9/OwKwO32Y9ntjSTn5Y0gKGGQKn+UrKRQT1LlmIm15rpOiZxpSjI
-	hf8mqGfEoEEzk2JBr6NXbtyVwbt6EweOfMcaPC5/1mzW19bY9p7S3EO//Fhwa0MyJs2nEU6lrvDEY
-	8gJ+9M5lOQNrFSIPYMjg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=T8rklq80l3bH6GMKqVzcn49br5NfMY95CzqfEfn+EsA=; b=jafNvHZSKVlJOA
+	gskrm65mSBQ4z88hukhEh27it8GnMMgpoFMz+2ZlcZLjgJz2bwPGrLCnIR4OfEAF75GJB1pDinhZ7
+	3uKTvT6t3rkYecWvUDLxd150+HMR4+QRYbvhYeTnzQgbT0RUHfw1bN5GiuLWbX7LyQnRCmLfrxXke
+	7tY2QCqPaHEWBrtFWFkSBIxNHI4ZD1YQOtuEG8Srgsx0hBEIboiQa9rLHOxARCBmh6twj7AyBC2fU
+	6dG0a3WU5THc5Zi6fCb4KmaaRR0pwr5GA5WhZhek4jrllxVUQ2nVJg4c+KFTZZY83GnxvHqtvg3xH
+	lT4a526mkY0MoGPEbLUg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hdI5H-0006xp-JU; Tue, 18 Jun 2019 17:39:51 +0000
+	id 1hdI5x-00005t-8t; Tue, 18 Jun 2019 17:40:33 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hdI50-0006xW-IA
- for linux-arm-kernel@lists.infradead.org; Tue, 18 Jun 2019 17:39:35 +0000
+ id 1hdI5j-00005R-4X
+ for linux-arm-kernel@lists.infradead.org; Tue, 18 Jun 2019 17:40:20 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 3076F344;
- Tue, 18 Jun 2019 10:39:33 -0700 (PDT)
-Received: from fuggles.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
- [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 10F3E3F738;
- Tue, 18 Jun 2019 10:39:31 -0700 (PDT)
-Date: Tue, 18 Jun 2019 18:39:29 +0100
-From: Will Deacon <will.deacon@arm.com>
-To: Bjorn Andersson <bjorn.andersson@linaro.org>
-Subject: Re: [PATCH] iommu: io-pgtable: Support non-coherent page tables
-Message-ID: <20190618173929.GG4270@fuggles.cambridge.arm.com>
-References: <20190515233234.22990-1-bjorn.andersson@linaro.org>
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 3B4BF344;
+ Tue, 18 Jun 2019 10:40:18 -0700 (PDT)
+Received: from [10.1.197.50] (e120937-lin.cambridge.arm.com [10.1.197.50])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 5017E3F738;
+ Tue, 18 Jun 2019 10:40:17 -0700 (PDT)
+Subject: Re: [PATCH] arm64: smp: fix smp_send_stop() behaviour
+To: Russell King - ARM Linux admin <linux@armlinux.org.uk>,
+ Will Deacon <will.deacon@arm.com>
+References: <20190613122146.45459-1-cristian.marussi@arm.com>
+ <20190617180913.GN30800@fuggles.cambridge.arm.com>
+ <20190618125413.7la4mg3mojfshw6n@shell.armlinux.org.uk>
+From: Cristian Marussi <cristian.marussi@arm.com>
+Message-ID: <7100ad3c-9b64-9512-e513-5bf389002c30@arm.com>
+Date: Tue, 18 Jun 2019 18:40:16 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.7.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190515233234.22990-1-bjorn.andersson@linaro.org>
-User-Agent: Mutt/1.11.1+86 (6f28e57d73f2) ()
+In-Reply-To: <20190618125413.7la4mg3mojfshw6n@shell.armlinux.org.uk>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190618_103934_645959_5F85B4F2 
-X-CRM114-Status: GOOD (  15.12  )
+X-CRM114-CacheID: sfid-20190618_104019_266207_A063E762 
+X-CRM114-Status: GOOD (  20.44  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -61,56 +64,97 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm-msm@vger.kernel.org, Joerg Roedel <joro@8bytes.org>,
- Vivek Gautam <vgautam@qti.qualcomm.com>, linux-kernel@vger.kernel.org,
- iommu@lists.linux-foundation.org, Robin Murphy <robin.murphy@arm.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: mark.rutland@arm.com, catalin.marinas@arm.com, james.morse@arm.com,
+ dave.martin@arm.com, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Bjorn,
+Hi
 
-On Wed, May 15, 2019 at 04:32:34PM -0700, Bjorn Andersson wrote:
-> Describe the memory related to page table walks as non-cachable for iommu
-> instances that are not DMA coherent.
+On 18/06/2019 13:54, Russell King - ARM Linux admin wrote:
+> On Mon, Jun 17, 2019 at 07:09:13PM +0100, Will Deacon wrote:
+>> [+James M]
+>>
+>> On Thu, Jun 13, 2019 at 01:21:46PM +0100, Cristian Marussi wrote:
+>>> On a 2-CPUs system, when one CPU is already online if the other
+>>> panics while starting-up, smp_send_stop() will fail to send any
+>>> STOP message to the other already online core, resulting in a
+>>> system still responsive and alive at the end of the panic procedure.
+>>> This patch makes smp_send_stop() account also for the online status
+>>> of the calling CPU while evaluating how many CPUs are effectively
+>>> online: this way, an adequate number of STOPs is sent, so enforcing
+>>> a proper freeze of the system at the end of panic even under the
+>>> above conditions.
+>>>
+>>> Reported-by: Dave Martin <Dave.Martin@arm.com>
+>>> Signed-off-by: Cristian Marussi <cristian.marussi@arm.com>
+>>> ---
+>>>
+>>> This peculiar panic-procedure behaviour was exposed hitting a BUG()
+>>> while running a KSFT cpu-hotplug test on a 2-core ARMv8 model.
+>>> Such trigger-BUG() was fixed by a distinct commit already included
+>>> in Linux 5.2-rc4 [0]
+>>>
+>>> [0] https://lore.kernel.org/linux-arm-kernel/1559576102-12156-1-git-send-email-Dave.Martin@arm.com/
+>>> ---
+>>>  arch/arm64/kernel/smp.c | 12 +++++++++---
+>>>  1 file changed, 9 insertions(+), 3 deletions(-)
+>>>
+>>> diff --git a/arch/arm64/kernel/smp.c b/arch/arm64/kernel/smp.c
+>>> index bb4b3f07761a..c7d604427883 100644
+>>> --- a/arch/arm64/kernel/smp.c
+>>> +++ b/arch/arm64/kernel/smp.c
+>>> @@ -971,8 +971,14 @@ void tick_broadcast(const struct cpumask *mask)
+>>>  void smp_send_stop(void)
+>>>  {
+>>>  	unsigned long timeout;
+>>> +	unsigned int this_cpu_online = cpu_online(smp_processor_id());
+>>>  
+>>> -	if (num_online_cpus() > 1) {
+>>> +	/*
+>>> +	 * If this CPU isn't fully online, it will not be counted in
+>>> +	 * num_online_cpus(): on a 2-CPU system this situation will
+>>> +	 * result in no message being sent to the other already online CPU.
+>>> +	 */
+>>> +	if (num_online_cpus() > this_cpu_online) {
+>>>  		cpumask_t mask;
+>>>  
+>>>  		cpumask_copy(&mask, cpu_online_mask);
+>>> @@ -985,10 +991,10 @@ void smp_send_stop(void)
+>>>  
+>>>  	/* Wait up to one second for other CPUs to stop */
+>>>  	timeout = USEC_PER_SEC;
+>>> -	while (num_online_cpus() > 1 && timeout--)
+>>> +	while (num_online_cpus() > this_cpu_online && timeout--)
+>>>  		udelay(1);
+>>>  
+>>> -	if (num_online_cpus() > 1)
+>>> +	if (num_online_cpus() > this_cpu_online)
+>>>  		pr_warning("SMP: failed to stop secondary CPUs %*pbl\n",
+>>>  			   cpumask_pr_args(cpu_online_mask));
+>>
+>> Whilst this looks ok to me, I'm worried about whether or not we have this
+>> sort of logic elsewhere. For example, do we need to fix
+>> crash_smp_send_stop() (and possibly machine_kexec()) too?
 > 
-> Signed-off-by: Bjorn Andersson <bjorn.andersson@linaro.org>
-> ---
->  drivers/iommu/io-pgtable-arm.c | 12 +++++++++---
->  1 file changed, 9 insertions(+), 3 deletions(-)
+> What about other architectures?  This, or very similar code, is present
+> on other architectures too.
 > 
-> diff --git a/drivers/iommu/io-pgtable-arm.c b/drivers/iommu/io-pgtable-arm.c
-> index 4e21efbc4459..68ff22ffd2cb 100644
-> --- a/drivers/iommu/io-pgtable-arm.c
-> +++ b/drivers/iommu/io-pgtable-arm.c
-> @@ -803,9 +803,15 @@ arm_64_lpae_alloc_pgtable_s1(struct io_pgtable_cfg *cfg, void *cookie)
->  		return NULL;
->  
->  	/* TCR */
-> -	reg = (ARM_LPAE_TCR_SH_IS << ARM_LPAE_TCR_SH0_SHIFT) |
-> -	      (ARM_LPAE_TCR_RGN_WBWA << ARM_LPAE_TCR_IRGN0_SHIFT) |
-> -	      (ARM_LPAE_TCR_RGN_WBWA << ARM_LPAE_TCR_ORGN0_SHIFT);
-> +	if (cfg->quirks & IO_PGTABLE_QUIRK_NO_DMA) {
-> +		reg = (ARM_LPAE_TCR_SH_IS << ARM_LPAE_TCR_SH0_SHIFT) |
-> +		      (ARM_LPAE_TCR_RGN_WBWA << ARM_LPAE_TCR_IRGN0_SHIFT) |
-> +		      (ARM_LPAE_TCR_RGN_WBWA << ARM_LPAE_TCR_ORGN0_SHIFT);
-> +	} else {
-> +		reg = (ARM_LPAE_TCR_SH_IS << ARM_LPAE_TCR_SH0_SHIFT) |
+Thanks for the review,
 
-Nit: this should be outer-shareable (ARM_LPAE_TCR_SH_OS).
+indeed glancing quickly at other arch's, there is a lot of common things and
+subtle differences in handling these situations...potentially some common logic
+to fix once for all and abstract out of arch specific code...(or at least try to
+do it)....so now a question arises to me: is it still worth to properly fix on
+arm64 at first extending this patch (easier and quicker maybe) or should I opt
+directly for the abstraction party ?
 
-> +		      (ARM_LPAE_TCR_RGN_NC << ARM_LPAE_TCR_IRGN0_SHIFT) |
-> +		      (ARM_LPAE_TCR_RGN_NC << ARM_LPAE_TCR_ORGN0_SHIFT);
-> +	}
+Thanks
 
-Should we also be doing something similar for the short-descriptor code
-in io-pgtable-arm-v7s.c? Looks like you just need to use ARM_V7S_RGN_NC
-instead of ARM_V7S_RGN_WBWA when initialising ttbr0 for non-coherent
-SMMUs.
+Cristian
 
-Will
 
 _______________________________________________
 linux-arm-kernel mailing list
