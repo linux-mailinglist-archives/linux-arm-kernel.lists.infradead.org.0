@@ -2,83 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 543D349D15
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 18 Jun 2019 11:26:23 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3AD4749D22
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 18 Jun 2019 11:27:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=DWhQD6wP6MXDSWdaRAWVTQtxFqtLPjRyOpYE/RYsmlE=; b=ic5RPEKNYjFqH8
-	Z2DQHwsvwXNvgEKcGYatgD4pW+vE/JrQHam/72a03j2ypr5qtzSJt2qCz0iu0aoOvuOGHsnPMUnU4
-	vJl6fqReOdgkvOcwQewXJqVILTUUe2ULuNMqHqjejdtzHr/2dGAAbrWEb0MipHiU903Qzz9FzVHJ/
-	0KHvucq9DBCclP6debt+tZnXhTNVP90cCLP1j2gpI2bMW3NfMLp9XQBGdqJuESgS2sj9tgK3PBIS7
-	I0oJ6ddMQeB5XgomgesUiMjvN6u5aOJAEr3wA0f7xYjg9o69t1EnYCqU0wWkCJK97ckBRm41SzXFs
-	e+Fm3GO9CuUk4c6/KeKQ==;
+	List-Owner; bh=c7UwqTIO7xs9GmI9ZQUno4yisO+mvXgDqUmYy3X7lAc=; b=NJEpi92CXd0hy/
+	J0whW3Ame1QKC4HSXdKCCKtbl8vMKBa7YoeQOy8bNhkuV+U3BONnonuIIY4CTPcQkqpIECpMsecyS
+	xCFsA6CXzkzobGGEkWgRSauQ+Gk1KsCoXqtZwl1RY7AdFcXEhwgu0t6jkZdSa/cTmSTqDOyV31T6o
+	ukn8zhjCWP+jcFvr+hEMJRcK+bHHKmyP08ZKi+oh5pPkPHT5DtvAAENRvpn/eZmtiC1u7AVpDUVLh
+	fxrEGwHpmVM/zJ+SH7D5Fz4826zQUD1qCmrz48PTPfeqxY+ckOEaxwisK+szJ9Mc2Ln6t0EkRyIpL
+	mRnG2Vjnv5h6rNWLuNTA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hdANc-0004xO-MB; Tue, 18 Jun 2019 09:26:16 +0000
-Received: from mail-pg1-x541.google.com ([2607:f8b0:4864:20::541])
+	id 1hdAOg-0005lZ-JW; Tue, 18 Jun 2019 09:27:22 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hdANR-0004vl-PP
- for linux-arm-kernel@lists.infradead.org; Tue, 18 Jun 2019 09:26:07 +0000
-Received: by mail-pg1-x541.google.com with SMTP id f25so7344613pgv.10
+ id 1hdAOW-0005kL-4S
+ for linux-arm-kernel@lists.infradead.org; Tue, 18 Jun 2019 09:27:13 +0000
+Received: from mail-lj1-f182.google.com (mail-lj1-f182.google.com
+ [209.85.208.182])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 6EE4C2147A
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 18 Jun 2019 02:26:05 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=ACmcdqOP2gSGSso0d/MiQ00IgAVGq25vQtNqguYCF5w=;
- b=sc0E/8iB4qaqHn9Zp1WR0OtM9S8b0KYzP6oOnRw5yROW6enOifvofAeCtv31AqOYo/
- a8y5opv8HfdW6eTBEHVj7aAJilzMPTo9rmEpF8/79ZrG7Tz2xvc18qbElUHHCqtdm++F
- cgWe47VNKw5H6+E+VSZV3v4mL57BeVLM4cSW1rbq3QY48kquBQpPf519wgWpEDuFkeI9
- 5wKIrFfJbP5sEaQHHdDzIqqTxj4DFbsBHbg91ivq5Y8LquUvB4OHHLku8qEeQXj74meE
- PCPfSLjxdUCAjl0Rk7VQUyPz7sORJR8qPHvNW/rQ7KMTGcpfH5kNpXt8S7IeJz4qC5jr
- wmhQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=ACmcdqOP2gSGSso0d/MiQ00IgAVGq25vQtNqguYCF5w=;
- b=L3rpqKt7Pulj6WoxW4AAdE6//kyhgrvfXZLlQ2OPCzpL2HH4dXW42D+kMSI/uDKgI5
- y27MGCRl/D2VCn0Qw/J1+ut8PXzCCJtC1Lp06c7tyhMsZZqgL+q/P4ALh5d5eE0E9vRA
- JcJh74WTwYXaTg5/538UrumDaCqm80ijry2LK7jVwczQUjCyM4X9aiBWhd3xM3ef3WsS
- fkJpWHQy4xfGSeAgU7EGsNT2G9NeLZxpqip2BkHCWZe8OD+DSqKQlg6I5881D9pJtk+n
- REQeMZpZgpTr1MZJ8l8OkWU3rMKgpNPGrn/21dapd47+BLtaYKk0a2sm5LO6xOUb5bq7
- ijoQ==
-X-Gm-Message-State: APjAAAWUL2dWBppmffVNo1FlPXW6YYwaBzfzWtdv2/V6wBCCa1LW6z5T
- aI1McNXEYSSSnsSqPxwNRcK1yw==
-X-Google-Smtp-Source: APXvYqw7S7g+LxxyGBTPUPd97vZx4Wcl8CWA1Ovr31OCsPH4/P6Iao8SMp+SLw9BjAv0mLfR5zA/5A==
-X-Received: by 2002:a63:ce08:: with SMTP id y8mr1732002pgf.38.1560849964851;
- Tue, 18 Jun 2019 02:26:04 -0700 (PDT)
-Received: from localhost ([122.172.66.84])
- by smtp.gmail.com with ESMTPSA id ci15sm4292839pjb.12.2019.06.18.02.26.03
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Tue, 18 Jun 2019 02:26:04 -0700 (PDT)
-Date: Tue, 18 Jun 2019 14:56:01 +0530
-From: Viresh Kumar <viresh.kumar@linaro.org>
-To: Vincent Guittot <vincent.guittot@linaro.org>
-Subject: Re: [PATCH] sched/topology: remove unused sd param from
- arch_scale_cpu_capacity()
-Message-ID: <20190618092601.2aws7kujvk2pulwt@vireshk-i7>
-References: <1560783617-5827-1-git-send-email-vincent.guittot@linaro.org>
+ Tue, 18 Jun 2019 09:27:11 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1560850031;
+ bh=3d0WB2FWSq617HwBgtInbOFcIijY2d0ifcR6Ea00qN8=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=ImqAUIsomz+S+K3RJ1At8naHxBQ5VKVZ7zN2BeD/fqyI+PN1PHJnllocUrPWLqL9R
+ 4RJoVrM+vEJSIBAnQ89brETmsQokQSFSKDVLkqSdOszPh70zYhR+Ki5IN1H8jvO2tV
+ LgI2Q6sdVSP+1oDmThdaHW4dcWzk0NYRSuQd/mvA=
+Received: by mail-lj1-f182.google.com with SMTP id s21so12353535lji.8
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 18 Jun 2019 02:27:11 -0700 (PDT)
+X-Gm-Message-State: APjAAAW8rmcwaGbQBMN0m+mcLJWONkaLhuji9FcOLECc2ICrID6YfpkX
+ JLO+bBiH+MhGPyyxE6kIYuWGEFS0AXSwkzY8k/8=
+X-Google-Smtp-Source: APXvYqzv7Gbmd6Xf/1K1px/rY6lBV7NSaMJUwamp2eOU1O40f6wjgppWFyx9CidnmsTWpf06LGliW+GVZtXWpi54Tbo=
+X-Received: by 2002:a2e:8155:: with SMTP id t21mr10481642ljg.80.1560850029693; 
+ Tue, 18 Jun 2019 02:27:09 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <1560783617-5827-1-git-send-email-vincent.guittot@linaro.org>
-User-Agent: NeoMutt/20180716-391-311a52
+References: <20190614203144.3850-2-joseph.kogut@gmail.com>
+ <20190614235719.8134-1-joseph.kogut@gmail.com>
+In-Reply-To: <20190614235719.8134-1-joseph.kogut@gmail.com>
+From: Krzysztof Kozlowski <krzk@kernel.org>
+Date: Tue, 18 Jun 2019 11:26:58 +0200
+X-Gmail-Original-Message-ID: <CAJKOXPc-Xztou+xyibb8YZtfz20q3kzr_gTBoE=R3q_CSk9kzQ@mail.gmail.com>
+Message-ID: <CAJKOXPc-Xztou+xyibb8YZtfz20q3kzr_gTBoE=R3q_CSk9kzQ@mail.gmail.com>
+Subject: Re: [PATCH v2 2/2] arm: dts: add ARM Mali GPU node for Odroid XU3
+To: Joseph Kogut <joseph.kogut@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190618_022605_833387_619E2A7C 
-X-CRM114-Status: UNSURE (   8.28  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190618_022712_211098_2639D476 
+X-CRM114-Status: GOOD (  14.38  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:541 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -88,6 +74,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -99,39 +86,78 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: rafael@kernel.org, peterz@infradead.org, gregkh@linuxfoundation.org,
- linux-pm@vger.kernel.org, linux@armlinux.org.uk, linux-kernel@vger.kernel.org,
- quentin.perret@arm.com, mingo@redhat.com, linux-arm-kernel@lists.infradead.org
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
+ "linux-samsung-soc@vger.kernel.org" <linux-samsung-soc@vger.kernel.org>,
+ airlied@linux.ie, dri-devel@lists.freedesktop.org, robh+dt@kernel.org,
+ kgene@kernel.org, daniel@ffwll.ch, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 17-06-19, 17:00, Vincent Guittot wrote:
-> struct sched_domain *sd parameter is not used anymore in
-> arch_scale_cpu_capacity() so we can remove it.
-> 
-> Signed-off-by: Vincent Guittot <vincent.guittot@linaro.org>
+On Sat, 15 Jun 2019 at 01:57, Joseph Kogut <joseph.kogut@gmail.com> wrote:
+>
+> Add device tree node for mali gpu on Odroid XU3 SoCs.
+>
+> Signed-off-by: Joseph Kogut <joseph.kogut@gmail.com>
 > ---
->  arch/arm/kernel/topology.c       |  2 +-
->  drivers/base/arch_topology.c     |  6 +++---
->  include/linux/arch_topology.h    |  2 +-
->  include/linux/energy_model.h     |  2 +-
->  include/linux/sched/topology.h   | 14 +++-----------
->  kernel/power/energy_model.c      |  2 +-
->  kernel/sched/cpufreq_schedutil.c |  2 +-
->  kernel/sched/deadline.c          |  2 +-
->  kernel/sched/fair.c              |  6 +++---
->  kernel/sched/pelt.c              |  2 +-
->  kernel/sched/pelt.h              |  2 +-
->  kernel/sched/sched.h             |  2 +-
->  kernel/sched/topology.c          |  8 ++++----
->  13 files changed, 22 insertions(+), 30 deletions(-)
+>
+> Changes v1 -> v2:
+> - Use interrupt name ordering from binding doc
+> - Specify a single clock for GPU node
+> - Add gpu opp table
+> - Fix warnings from IRQ_TYPE_NONE
+>
+>  .../boot/dts/exynos5422-odroidxu3-common.dtsi | 26 +++++++++++++++++++
+>  1 file changed, 26 insertions(+)
+>
+> diff --git a/arch/arm/boot/dts/exynos5422-odroidxu3-common.dtsi b/arch/arm/boot/dts/exynos5422-odroidxu3-common.dtsi
+> index 93a48f2dda49..b8a4246e3b37 100644
+> --- a/arch/arm/boot/dts/exynos5422-odroidxu3-common.dtsi
+> +++ b/arch/arm/boot/dts/exynos5422-odroidxu3-common.dtsi
+> @@ -48,6 +48,32 @@
+>                 cooling-levels = <0 130 170 230>;
+>         };
+>
+> +       gpu: gpu@11800000 {
+> +               compatible = "samsung,exynos-mali", "arm,mali-t628";
+> +               reg = <0x11800000 0x5000>;
+> +               interrupts = <GIC_SPI 219 IRQ_TYPE_LEVEL_HIGH>,
+> +                            <GIC_SPI 74  IRQ_TYPE_LEVEL_HIGH>,
+> +                            <GIC_SPI 117 IRQ_TYPE_LEVEL_HIGH>;
+> +               interrupt-names = "job", "mmu", "gpu";
+> +               clocks = <&clock CLK_G3D>;
+> +               mali-supply = <&buck4_reg>;
+> +               operating-points-v2 = <&gpu_opp_table>;
+> +       };
+> +
+> +       gpu_opp_table: gpu-opp-table {
 
-Reviewed-by: Viresh Kumar <viresh.kumar@linaro.org>
+One more thing - use "opp_table" as node name (generic class of node,
+matches style with other tables).
 
--- 
-viresh
+Best regards,
+Krzysztof
+
+> +               compatible = "operating-points-v2";
+> +
+> +               opp-177000000 {
+> +                       opp-hz = /bits/ 64 <117000000>;
+> +                       opp-microvolt = <812500>;
+> +               };
+> +
+> +               opp-600000000 {
+> +                       opp-hz = /bits/ 64 <600000000>;
+> +                       opp-microvolt = <1150000>;
+> +               };
+> +       };
+> +
+>         thermal-zones {
+>                 cpu0_thermal: cpu0-thermal {
+>                         thermal-sensors = <&tmu_cpu0 0>;
+> --
+> 2.22.0
+>
 
 _______________________________________________
 linux-arm-kernel mailing list
