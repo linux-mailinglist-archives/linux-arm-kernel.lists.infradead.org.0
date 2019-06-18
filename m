@@ -2,69 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BF5364A8DA
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 18 Jun 2019 19:52:50 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D028E4A8ED
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 18 Jun 2019 19:58:45 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=U6dqMKbAFC1n6kd9rkmJbxDzVwAq9WCIWRG/o5p0XSs=; b=YhKhnq6xji7UKJ
-	MicCW09zV2adIRGhJLRbUpgRz3GlHwZ6ypk0FKuWyKfBAeylemmt4BguezMD3OCx1th/a8nI/1aZR
-	p/WuA2kmon36KCGiaofIm8Ifz1ouY31qlL74sdpTORMjENxyKUHkDOq+04e0xwfhSvljAVQaYz6AI
-	uS3VIpyY2l58cbXpp97ILj9wKtaJrHdQ4gjRRNS0bxKmbH4my5RgO1eGebC21ey/YPFvqVoPFpZB+
-	EMpZUmQWC0ja0XENNeDOM4WpemM7j1epLO6RvGNYZHVXD63iZ0lT/8u5koVYyr+6mWqXBvTRI2TNi
-	GLkVY/cvliHrOomUkhCQ==;
+	List-Owner; bh=PAc3Tt3gZCCzgEdOkBbgHCTMFVBdve3VZz3NGEINBsw=; b=XNGi70BIQri5pZ
+	J5XgokYo5PraCx5cyyeRN+L6LgW9905oOvMDYpNWJD8X68WdUvaUydFDFb/qg8Si7oA5jJpd9McEi
+	0n8vzx75CBmHP3SPjezCby6ihXXJDwNYBoo4RcRNBVVMCTpIomZ72wbWSkc4lj1GI61IdX8M4Pc5L
+	e0A3BF5XVULNOCwrJjAlsSEPGXqDfbYAbUGAIUc4R6Xy4Cos1uK7ifCuarz7hpyhFVbaXO1/UdDMt
+	KnNSQCV81Pft0wQrx7GCDWTVPuDCx0+S+eluYlJonwq34TlWl9r2fe93gQ2FD+RfySgKJUbLN8lS1
+	K31vt8w+ZfKf5fKZ91kw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hdIHo-00051W-OZ; Tue, 18 Jun 2019 17:52:48 +0000
-Received: from mail.kernel.org ([198.145.29.99])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hdIHe-00050n-Ss
- for linux-arm-kernel@lists.infradead.org; Tue, 18 Jun 2019 17:52:40 +0000
-Received: from localhost (83-86-89-107.cable.dynamic.v4.ziggo.nl
- [83.86.89.107])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id D5FE7205F4;
- Tue, 18 Jun 2019 17:52:37 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1560880358;
- bh=CD9xE+ss/20TQL2/AL+mrrt+iM/xjjMdngpvH66c7G8=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=0deQUiET+LBxYSPYZSpPfh9bl8iBX+Qh5WHSBxsqcmGzctHnR0KreG5tJz1yOWNyh
- crgCaO6wgJnf2/NSNlr6Os6acxhTShyxf3cqm0Pu5zuHRB7UM4ss73vAgqxymdMS0V
- JIAKpGYjhFeQSgav93CsryheHpoLWvHTAhKdH90w=
-Date: Tue, 18 Jun 2019 19:52:35 +0200
-From: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
-To: Mathieu Poirier <mathieu.poirier@linaro.org>
-Subject: Re: [PATCH] coresight: cpu-debug: no need to check return value of
- debugfs_create functions
-Message-ID: <20190618175235.GA23154@kroah.com>
-References: <20190618155246.GA17788@kroah.com>
- <CANLsYkzTgwY=EAE8E98jpyO6uVQnKN3SAKhRwSUCRhQTO+rV0w@mail.gmail.com>
- <20190618174637.GC3649@kroah.com>
+	id 1hdINW-0007HQ-8U; Tue, 18 Jun 2019 17:58:42 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hdINI-0007Gs-40
+ for linux-arm-kernel@lists.infradead.org; Tue, 18 Jun 2019 17:58:30 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id D2026344;
+ Tue, 18 Jun 2019 10:58:26 -0700 (PDT)
+Received: from fuggles.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
+ [10.121.207.14])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 2BD9B3F738;
+ Tue, 18 Jun 2019 10:58:25 -0700 (PDT)
+Date: Tue, 18 Jun 2019 18:58:23 +0100
+From: Will Deacon <will.deacon@arm.com>
+To: Zhi Li <lznuaa@gmail.com>
+Subject: Re: [PATCH V12 2/4] drivers/perf: imx_ddr: Add ddr performance
+ counter support
+Message-ID: <20190618175823.GJ4270@fuggles.cambridge.arm.com>
+References: <1556736193-29411-1-git-send-email-Frank.Li@nxp.com>
+ <1556736193-29411-2-git-send-email-Frank.Li@nxp.com>
+ <20190613112320.GA18966@fuggles.cambridge.arm.com>
+ <CAHrpEqRZ0YL9SFk6o7iebJ+diJVMTtyba_9GtujL7H7e4G8qQA@mail.gmail.com>
+ <20190613174436.GG18966@fuggles.cambridge.arm.com>
+ <CAHrpEqS9GEC9Shf-6xLL0_+WJNuwYOdKe=5jtUogLajfcWYMew@mail.gmail.com>
+ <20190614102302.GD10659@fuggles.cambridge.arm.com>
+ <CAHrpEqR+3LETyDosyRq=SBDC=g3tkm72vg-f=550H+TTVLbmcQ@mail.gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190618174637.GC3649@kroah.com>
-User-Agent: Mutt/1.12.1 (2019-06-15)
+In-Reply-To: <CAHrpEqR+3LETyDosyRq=SBDC=g3tkm72vg-f=550H+TTVLbmcQ@mail.gmail.com>
+User-Agent: Mutt/1.11.1+86 (6f28e57d73f2) ()
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190618_105238_965499_75740EF5 
-X-CRM114-Status: GOOD (  25.95  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20190618_105828_250048_3B126F27 
+X-CRM114-Status: GOOD (  21.32  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -76,81 +69,103 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Alexander Shishkin <alexander.shishkin@linux.intel.com>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
- Suzuki K Poulose <suzuki.poulose@arm.com>
+Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
+ Aisheng Dong <aisheng.dong@nxp.com>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ "andrew.smirnov@gmail.com" <andrew.smirnov@gmail.com>,
+ "festevam@gmail.com" <festevam@gmail.com>,
+ "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>, Frank Li <frank.li@nxp.com>,
+ "robh+dt@kernel.org" <robh+dt@kernel.org>, dl-linux-imx <linux-imx@nxp.com>,
+ "kernel@pengutronix.de" <kernel@pengutronix.de>,
+ "shawnguo@kernel.org" <shawnguo@kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Jun 18, 2019 at 07:46:37PM +0200, Greg Kroah-Hartman wrote:
-> On Tue, Jun 18, 2019 at 11:23:25AM -0600, Mathieu Poirier wrote:
-> > Hi Greg,
-> > 
-> > On Tue, 18 Jun 2019 at 09:52, Greg Kroah-Hartman
-> > <gregkh@linuxfoundation.org> wrote:
+On Tue, Jun 18, 2019 at 12:24:19PM -0500, Zhi Li wrote:
+> On Fri, Jun 14, 2019 at 5:23 AM Will Deacon <will.deacon@arm.com> wrote:
+> >
+> > On Thu, Jun 13, 2019 at 02:13:20PM -0500, Zhi Li wrote:
+> > > On Thu, Jun 13, 2019 at 12:44 PM Will Deacon <will.deacon@arm.com> wrote:
+> > > >
+> > > > On Thu, Jun 13, 2019 at 12:04:37PM -0500, Zhi Li wrote:
+> > > > > On Thu, Jun 13, 2019 at 6:23 AM Will Deacon <will.deacon@arm.com> wrote:
+> > > > > >
+> > > > > > On Wed, May 01, 2019 at 06:43:29PM +0000, Frank Li wrote:
+> > > > > > > Add ddr performance monitor support for iMX8QXP
+> > > > > > >
+> > > > > > > There are 4 counters for ddr perfomance events.
+> > > > > > > counter 0 is dedicated for cycles.
+> > > > > > > you choose any up to 3 no cycles events.
+> > > > > > >
+> > > > > > > for example:
+> > > > > > >
+> > > > > > > perf stat -a -e imx8_ddr0/read-cycles/,imx8_ddr0/write-cycles/,imx8_ddr0/precharge/ ls
+> > > > > > > perf stat -a -e imx8_ddr0/cycles/,imx8_ddr0/read-access/,imx8_ddr0/write-access/ ls
+> > > > > >
+> > > > > > I've pushed patches 1, 2 and 4 out with some minor tweaks to:
+> > > > > >
+> > > > > > https://git.kernel.org/pub/scm/linux/kernel/git/will/linux.git/log/?h=for-next/perf
+> > > > > >
+> > > > > > I'll leave the actual .dts change to go via the soc tree, since last time
+> > > > > > I took one of those it just resulted in conflicts.
+> > > > > >
+> > > > > > Frank, Andrey: Please could you try to run the perf fuzzer on this before
+> > > > > > it lands in mainline? It has a good track record of finding nasty PMU driver
+> > > > > > bugs, but it obviously requires access to hardware which implements the PMU:
+> > > > > >
+> > > > > > http://web.eece.maine.edu/~vweaver/projects/perf_events/fuzzer/
+> > > > >
+> > > > > Okay, how long should be run generally?
+> > > > > I need make sure it can pass without my patches at our platform.
+> > > >
+> > > > As you long as you can really, but if it survives a few hours that's usually
+> > > > a good sign. Overnight is even better.
 > > >
-> > > When calling debugfs functions, there is no need to ever check the
-> > > return value.  The function can work or not, but the code logic should
-> > > never do something different based on this.
-> > 
-> > Looking around in the kernel there is no shortage of instances where
-> > the return value of debugfs functions are checked and the logic
-> > altered based on these values.  But there are also just as many that
-> > don't...  It also seems counter intuitive to ignore the return value
-> > of any function, something that in most case is guaranteed to raise
-> > admonition.
+> > > Base on commit f2c7c76c5d0a443053e94adb9f0918fa2fb85c3a
+> > > Author: Linus Torvalds <torvalds@linux-foundation.org>
+> > > Date:   Sun Jun 2 13:55:33 2019 -0700
+> > >
+> > >     Linux 5.2-rc3
+> > >
+> > > RCU report problem:
+> > >
+> > > [ 6048.741784] rcu: INFO: rcu_preempt self-detected stall on CPU
+> > > [ 6048.747550] rcu:     1-....: (5249 ticks this GP)
+> > > idle=c5a/1/0x4000000000000004 softirq=503121/503121 fqs=2425
+> > > [ 6048.757384]  (t=5253 jiffies g=1416105 q=117)
+> > > [ 6048.761745] Task dump for CPU 1:
+> > > [ 6048.764977] perf_fuzzer     R  running task        0 32520    426 0x00000202
+> > > [ 6048.772030] Call trace:
+> > > [ 6048.774493]  dump_backtrace+0x0/0x130
+> > > [ 6048.778159]  show_stack+0x14/0x20
+> > > [ 6048.781477]  sched_show_task+0x108/0x138
+> > > [ 6048.785401]  dump_cpu_task+0x40/0x4c
+> > > [ 6048.788983]  rcu_dump_cpu_stacks+0x94/0xd0
+> > > [ 6048.793082]  rcu_sched_clock_irq+0x5e0/0x918
+> > > [ 6048.797357]  update_process_times+0x2c/0x70
+> > > [ 6048.801545]  tick_sched_handle.isra.6+0x3c/0x50
+> > > [ 6048.806076]  tick_sched_timer+0x48/0x98
+> > > [ 6048.809918]  __hrtimer_run_queues+0x118/0x1a8
+> > > [ 6048.814277]  hrtimer_interrupt+0xe4/0x238
+> > > [ 6048.818296]  arch_timer_handler_phys+0x2c/0x38
+> > > [ 6048.822743]  handle_percpu_devid_irq+0x80/0x140
+> > > [ 6048.827277]  generic_handle_irq+0x24/0x38
+> >
+> > This is the timer interrupt which prompts the RCU splat. Do you have
+> > information about where the CPU was when the interrupt occurred?
+> >
+> > In the meantime, it's still worth leaving the fuzzer running to see what
+> > else it finds.
 > 
-> In my tree, those instances are almost all gone.  I've also posted over
-> 100+ patches in the past few weeks to clean this up.
-> 
-> > That being said I am sure there is a good reason to support your
-> > position - would you mind expanding a little so that I can follow?
-> 
-> No kernel code should ever care if debugfs works or not.  No user code
-> should ever require it for normal operation either.  debugfs was written
-> to be simple and easy to use, no need to check any return values at all.
-> 
-> Any return value of a debugfs call can be fed back into another call
-> with no issues at all.
-> 
-> Also, due to some debugfs core changes a few kernel releases ago, the
-> checks:
-> 	if (!debug_debugfs_dir) {
-> ...
-> 	if (!file) {
-> can never trigger as debugfs_create_dir() or debugfs_create_file() can
-> never return NULL (and in the past, it almost never would either).  So
-> as it is, that code isn't correct anyway (my fault, I know, hey, I'm
-> trying to fix it!)
-> 
-> I'm trying to make things simple, and easy, and impossible to get wrong.
-> I know it goes against the normal "robust" kernel development mentality,
-> but there is no need to ever care about debugfs at all.
-> 
-> The reason I started all of this is that we have found places where
-> userspace, and the kernel, was depending on the proper operation of
-> debugfs.  In one horrid example, a device would not display the batter
-> level if debugfs was disabled.  In another case, the kernel was actually
-> relying on a debugfs call to fail in order to handle some logic the
-> subsystem should have been doing on its own.  All of that has now been
-> cleaned up, and I am working on making debugfs just not return any
-> values at all to prevent this type of mess happening again.
-> 
-> And hey, I am removing code, here's my current tree as a diff from
-> what is not already merged into linux-next:
-> 	 301 files changed, 1394 insertions(+), 4637 deletions(-)
-> that's always a good thing :)
+> Overnight test done, only above rcu problem happen at both with and
+> without ddr perf patches.
 
-Oh, forgot the pointer to the tree:
-	https://git.kernel.org/pub/scm/linux/kernel/git/gregkh/driver-core.git/log/?h=debugfs_cleanup
-this is all public, just not in linux-next as it's being fed through 50+
-different subsystem trees.
+Great, thanks for giving it a go.
 
-thanks,
-
-greg k-h
+Will
 
 _______________________________________________
 linux-arm-kernel mailing list
