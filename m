@@ -2,92 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8AB914A20F
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 18 Jun 2019 15:26:53 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 55CC14A21B
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 18 Jun 2019 15:28:49 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=2TGGspanfzDbug0rYPfzgmZ4nuJW0MPygmPgSCl2toY=; b=OViiIvQRj/mhMc
-	on1rxYYYj5p3W4yx8KIJap4YE2XbjJqN2+SZxRnIu5ABMHzwWeSR8JXQGQ7CEEpp2sMGAjt3/k5+f
-	pVG/lAkPEMJ/9CE+R+cgy5qKwQFDcEZEUZ883CQB0FOUZyNLqNQ/IfxNmEseMQutTCVL/NUbpJWax
-	qdGE9keAxHT158Y14y7LT8xctjwcJaW1ByM3CLiTGZFUGuc4hRn4wWcIcaxuX+tGjucTwQNDm4lnr
-	628pQtXac/GrJEpvadVQCEVu0pCIheEsNBmJjm5E/nZR38mDqNC4WJbaDLqLVOql3Za9q6P4+29Yq
-	QETMgHRRqnFmW8dAW9Iw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=MLVeD/tsWxAGwrRU0V5H8Pf/OGr8P8vvlvItwZCEuy8=; b=Yw7yrPBnUtBRU8wV0kSXbDKwA
+	lQUxa0Rcifgcrg+mguXL3wojnJsLROF2agOLghk+pEz0514w/6RhmbD+R4r7Tjz75D1Rx2+nwvwgC
+	5mJROY/WDttVGTcQA5XGLLaAYFGOX77uUT2XEC9qk/q4bbRlHyO32SDgtvRKHZloQZbnZViVOY+HX
+	IUxvLQNRjbLY/NWSBsxusm39zbKNlSinsvtrMK30CYszK0w2/gyXefMk2BsqXLTXUmOKG2qMS2PU7
+	puCYEk1RpvQlI52ymVbVDMP6hNoIS/TmtI7/v4uK3wysUWeZKfG6dAjYi4ZLxLZubH0ppqScgrZnN
+	HgUA2yTHA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hdE8R-0000Vs-CK; Tue, 18 Jun 2019 13:26:51 +0000
-Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hdDul-0006X9-Pz
- for linux-arm-kernel@lists.infradead.org; Tue, 18 Jun 2019 13:13:15 +0000
-Received: by mail-wr1-x444.google.com with SMTP id m3so13951093wrv.2
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 18 Jun 2019 06:12:38 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=7FALWQ6cOh3JsG038fbVz+yiqqz0f79O0ClChfodEQs=;
- b=Q/DsCxTTpuF0/+fAH5Ad7SkE1PEf7KzB0fJmiSFe3Xjj6DuqgZNMeHGkeInINWD7cJ
- Ikx6ys+AQneaMr5n0KwcWnkfDF5TIxTviUkX6TyvNYtHd9KYqkI7bTSr+LvMGZZyjx2W
- 2XcDJ4eWGtV/3vi+lK6IMdcjIV/k61XxTIETIq4nloIr254y6uadVtTEjrFn3a9oJ5Zl
- ouXDH8nA7WssQ3LS7eJSiMwDMvY5ELgndTHzN/aANZi3r+XuE1NkLuE7ZE/bNWfND0uH
- 5rYsO63g3CRDprdEw7yH9nzGzIeQ4BxagJkD1FsZj+sittr3Dn+TBrqUsJrH5pbz+HYP
- EmyQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=7FALWQ6cOh3JsG038fbVz+yiqqz0f79O0ClChfodEQs=;
- b=EAs/z9A8UXyvtzLy47LLWlyJUz+CPPe96K7Nbkz1SPioxwZVyUMwQ1C8ncPbxDscLS
- N/HfVhbXTfT1749DkggQDxWORGsBG5pv5tx6KnJGAypiSOmgX4S4RJJRLQhZxYCTrrjn
- PVhT6na14HiYm3RJuI+9NmwtSV1kRFNW1H6iXflu2LwvpkiJ+k/lynmvw9lrHzkPaUGV
- 647VzDwu4f7KujBIqEfY2Oi1Rf6U5Dw7O7eWAwNUa/7g8zYqYVhtTGqvktCh6uDDbZCh
- GD/7sxfXmmxcsk79WY724DFHWDPVhkgDxs0qUmI4E46pfiwk+a0IY1K7wgGbfozoScse
- mYuA==
-X-Gm-Message-State: APjAAAVizAr9wMB/T3Y+YemJhTSXpDysf+UtFOrZXYffAO4Gw7qKgt2G
- tiQgRMy4/6fCdq6DQ+EF3kU=
-X-Google-Smtp-Source: APXvYqy1MQ2zlBqmr3KXBZUn3NaMXrsL66L7Sz4lxFaGkx9NZeR8KUFacbmwTj+GSE3ktkFEUI2o6w==
-X-Received: by 2002:adf:eecf:: with SMTP id a15mr7408693wrp.354.1560863557790; 
- Tue, 18 Jun 2019 06:12:37 -0700 (PDT)
-Received: from Red ([2a01:cb1d:147:7200:2e56:dcff:fed2:c6d6])
- by smtp.googlemail.com with ESMTPSA id f2sm21287538wrq.48.2019.06.18.06.12.36
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Tue, 18 Jun 2019 06:12:37 -0700 (PDT)
-Date: Tue, 18 Jun 2019 15:12:34 +0200
-From: Corentin Labbe <clabbe.montjoie@gmail.com>
-To: Arnd Bergmann <arnd@arndb.de>
-Subject: Re: [PATCH] crypto: sun4i-ss - reduce stack usage
-Message-ID: <20190618131234.GA8474@Red>
-References: <20190617132538.2759714-1-arnd@arndb.de>
+	id 1hdEAI-0001R6-Rw; Tue, 18 Jun 2019 13:28:47 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hdDvB-0006bR-4l
+ for linux-arm-kernel@lists.infradead.org; Tue, 18 Jun 2019 13:15:01 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 6A6AC2B;
+ Tue, 18 Jun 2019 06:13:04 -0700 (PDT)
+Received: from [10.1.199.35] (e107154-lin.cambridge.arm.com [10.1.199.35])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id BD0973F718;
+ Tue, 18 Jun 2019 06:13:02 -0700 (PDT)
+Subject: Re: [PATCH v5 1/2] arm64: Define
+ Documentation/arm64/tagged-address-abi.txt
+To: Vincenzo Frascino <vincenzo.frascino@arm.com>,
+ linux-arm-kernel@lists.infradead.org, linux-doc@vger.kernel.org,
+ linux-mm@kvack.org, linux-arch@vger.kernel.org,
+ linux-kselftest@vger.kernel.org, linux-kernel@vger.kernel.org
+References: <cover.1560339705.git.andreyknvl@google.com>
+ <20190613155137.47675-1-vincenzo.frascino@arm.com>
+ <20190613155137.47675-2-vincenzo.frascino@arm.com>
+From: Kevin Brodsky <kevin.brodsky@arm.com>
+Message-ID: <1c55a610-9aa5-4675-f7de-79a1661a660d@arm.com>
+Date: Tue, 18 Jun 2019 14:13:01 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.7.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190617132538.2759714-1-arnd@arndb.de>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <20190613155137.47675-2-vincenzo.frascino@arm.com>
+Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190618_061245_159552_5D0DFF15 
-X-CRM114-Status: GOOD (  25.64  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190618_061311_929168_0DD8EC0B 
+X-CRM114-Status: GOOD (  42.62  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:444 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (clabbe.montjoie[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -99,140 +67,223 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Herbert Xu <herbert@gondor.apana.org.au>,
- Eric Biggers <ebiggers@google.com>, Maxime Ripard <maxime.ripard@bootlin.com>,
- linux-kernel@vger.kernel.org, Chen-Yu Tsai <wens@csie.org>,
- linux-crypto@vger.kernel.org, "David S. Miller" <davem@davemloft.net>,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
+Cc: Catalin Marinas <catalin.marinas@arm.com>,
+ Will Deacon <will.deacon@arm.com>, Alexander Viro <viro@zeniv.linux.org.uk>,
+ Andrey Konovalov <andreyknvl@google.com>
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Jun 17, 2019 at 03:25:17PM +0200, Arnd Bergmann wrote:
-> After the latest addition, the stack usage of sun4i_ss_cipher_poll
-> grew beyond the warning limit when KASAN is enabled:
-> 
-> drivers/crypto/sunxi-ss/sun4i-ss-cipher.c:118:12: error: stack frame size of 1152 bytes in function 'sun4i_ss_cipher_poll' [-Werror,-Wframe-larger-than=]
-> static int sun4i_ss_cipher_poll(struct skcipher_request *areq)
-> 
-> Reduce it in three ways:
-> 
-> - split out the new code into a separate function so its stack
->   usage can overlap that of the sun4i_ss_opti_poll() code path
-> - mark both special cases as noinline_for_stack, which should
->   ideally result in a tail call that frees the rest of the
->   stack
-> - move the buf and obuf variables into the code blocks in
->   which they are used.
-> 
-> The three separate functions now use 144, 640 and 304 bytes of kernel
-> stack, respectively.
-> 
-> Fixes: 0ae1f46c55f8 ("crypto: sun4i-ss - fallback when length is not multiple of blocksize")
-> Signed-off-by: Arnd Bergmann <arnd@arndb.de>
+I'm happy with the ABI overall, but I think we need a few more tweaks.
+
+On 13/06/2019 16:51, Vincenzo Frascino wrote:
+> On arm64 the TCR_EL1.TBI0 bit has been always enabled hence
+> the userspace (EL0) is allowed to set a non-zero value in the
+> top byte but the resulting pointers are not allowed at the
+> user-kernel syscall ABI boundary.
+>
+> With the relaxed ABI proposed through this document, it is now possible
+> to pass tagged pointers to the syscalls, when these pointers are in
+> memory ranges obtained by an anonymous (MAP_ANONYMOUS) mmap().
+>
+> This change in the ABI requires a mechanism to requires the userspace
+> to opt-in to such an option.
+>
+> Specify and document the way in which sysctl and prctl() can be used
+> in combination to allow the userspace to opt-in this feature.
+>
+> Cc: Catalin Marinas <catalin.marinas@arm.com>
+> Cc: Will Deacon <will.deacon@arm.com>
+> CC: Andrey Konovalov <andreyknvl@google.com>
+> Signed-off-by: Vincenzo Frascino <vincenzo.frascino@arm.com>
 > ---
->  drivers/crypto/sunxi-ss/sun4i-ss-cipher.c | 47 +++++++++++++++--------
->  1 file changed, 30 insertions(+), 17 deletions(-)
-> 
-> diff --git a/drivers/crypto/sunxi-ss/sun4i-ss-cipher.c b/drivers/crypto/sunxi-ss/sun4i-ss-cipher.c
-> index 7b0c42882830..4ab14d58e85b 100644
-> --- a/drivers/crypto/sunxi-ss/sun4i-ss-cipher.c
-> +++ b/drivers/crypto/sunxi-ss/sun4i-ss-cipher.c
-> @@ -12,7 +12,7 @@
->   */
->  #include "sun4i-ss.h"
->  
-> -static int sun4i_ss_opti_poll(struct skcipher_request *areq)
-> +static int noinline_for_stack sun4i_ss_opti_poll(struct skcipher_request *areq)
->  {
->  	struct crypto_skcipher *tfm = crypto_skcipher_reqtfm(areq);
->  	struct sun4i_tfm_ctx *op = crypto_skcipher_ctx(tfm);
-> @@ -114,6 +114,29 @@ static int sun4i_ss_opti_poll(struct skcipher_request *areq)
->  	return err;
->  }
->  
+>   Documentation/arm64/tagged-address-abi.txt | 134 +++++++++++++++++++++
+>   1 file changed, 134 insertions(+)
+>   create mode 100644 Documentation/arm64/tagged-address-abi.txt
+>
+> diff --git a/Documentation/arm64/tagged-address-abi.txt b/Documentation/arm64/tagged-address-abi.txt
+> new file mode 100644
+> index 000000000000..0ae900d4bb2d
+> --- /dev/null
+> +++ b/Documentation/arm64/tagged-address-abi.txt
+> @@ -0,0 +1,134 @@
+> +ARM64 TAGGED ADDRESS ABI
+> +========================
 > +
-> +static int noinline_for_stack sun4i_ss_cipher_poll_fallback(struct skcipher_request *areq)
+> +This document describes the usage and semantics of the Tagged Address
+> +ABI on arm64.
+> +
+> +1. Introduction
+> +---------------
+> +
+> +On arm64 the TCR_EL1.TBI0 bit has been always enabled on the kernel, hence
+"been always" -> "always been"
+
+> +the userspace (EL0) is entitled to perform a user memory access through a
+> +64-bit pointer with a non-zero top byte but the resulting pointers are not
+> +allowed at the user-kernel syscall ABI boundary.
+> +
+> +This document describes a relaxation of the ABI that makes it possible to
+> +to pass tagged pointers to the syscalls, when these pointers are in memory
+> +ranges obtained as described in section 2.
+> +
+> +Since it is not desirable to relax the ABI to allow tagged user addresses
+> +into the kernel indiscriminately, arm64 provides a new sysctl interface
+> +(/proc/sys/abi/tagged_addr) that is used to prevent the applications from
+> +enabling the relaxed ABI and a new prctl() interface that can be used to
+> +enable or disable the relaxed ABI.
+> +A detailed description of the newly introduced mechanisms will be provided
+> +in section 2.
+> +
+> +2. ARM64 Tagged Address ABI
+> +---------------------------
+> +
+> +From the kernel syscall interface perspective, we define, for the purposes
+> +of this document, a "valid tagged pointer" as a pointer that either has a
+> +zero value set in the top byte or has a non-zero value, it is in memory
+> +ranges privately owned by a userspace process and it is obtained in one of
+
+Remove all the remaining "it": "a pointer that either [...], is in memory ranges 
+[...] and is obtained..."
+
+> +the following ways:
+> +  - mmap() done by the process itself, where either:
+> +    * flags have MAP_PRIVATE and MAP_ANONYMOUS
+> +    * flags have MAP_PRIVATE and the file descriptor refers to a regular
+> +      file or "/dev/zero"
+> +  - brk() system call done by the process itself (i.e. the heap area between
+> +    the initial location of the program break at process creation and its
+> +    current location).
+> +  - any memory mapped by the kernel in the process's address space during
+> +    creation and following the restrictions presented above (i.e. data, bss,
+> +    stack).
+
+As I commented on v2, the "i.e." is not correct: these 3 sections are not the only 
+ones that are covered by this ABI (.text also is, for instance). Replacing "i.e." 
+with "e.g." would work.
+
+Also, since the rules above say explicitly "done by the process itself", it might be 
+clearer to replace "following the restrictions presented above" with "with the same 
+restrictions as for mmap()".
+
+> +
+> +The ARM64 Tagged Address ABI is an opt-in feature, and an application can
+> +control it using the following:
+> + - /proc/sys/abi/tagged_addr: a new sysctl interface that can be used to
+> +        prevent the applications from enabling the relaxed ABI.
+> +        The sysctl is meant also for testing purposes in order to provide a
+> +        simple way for the userspace to verify the return error checking of
+> +        the prctl() commands without having to reconfigure the kernel.
+> +        The sysctl supports the following configuration options:
+> +         - 0: Disable ARM64 Tagged Address ABI for all the applications.
+> +         - 1 (Default): Enable ARM64 Tagged Address ABI for all the
+> +                        applications.
+
+I find this very confusing, because it suggests that the default value of 
+PR_GET_TAGGED_ADDR_CTRL for new processes will be set to the value of this sysctl, 
+when in fact this sysctl is about restricting the *availability* of the new ABI. 
+Instead of disabling the ABI, I would talk about disabling access to the new ABI here.
+
+> +        If the ARM64 Tagged Address ABI is disabled at a certain point in
+> +        time, all the applications that were using tagging before this event
+> +        occurs, will continue to use tagging.
+> +
+> + - prctl()s:
+> +  - PR_SET_TAGGED_ADDR_CTRL: can be used to enable or disable the Tagged
+> +        Address ABI.
+> +        The (unsigned int) arg2 argument is a bit mask describing the
+> +        control mode used:
+> +          - PR_TAGGED_ADDR_ENABLE: Enable ARM64 Tagged Address ABI.
+> +        The arguments arg3, arg4, and arg5 are ignored.
+
+Have we definitely decided that arg{3,4,5} are ignored? Catalin?
+
+> +
+> +  - PR_GET_TAGGED_ADDR_CTRL: can be used to check the status of the Tagged
+> +        Address ABI.
+> +        The arguments arg2, arg3, arg4, and arg5 are ignored.
+> +
+> +The ABI properties set by the mechanisms described above are inherited by threads
+> +of the same application and fork()'ed children but cleared by execve().
+> +
+> +As a consequence of invoking PR_SET_TAGGED_ADDR_CTRL prctl() by an applications,
+
+I think this is too vague, you can use this prctl() to disable the new ABI, and it 
+can also fail. Maybe it's best to simply say that the process has successfully opted 
+into the new ABI.
+
+> +the ABI guarantees the following behaviours:
+> +
+> +  - Every current or newly introduced syscall can accept any valid tagged
+> +    pointers.
+"pointer". Also, is it really useful to talk about newly introduced syscall? New from 
+which point of view?
+
+> +
+> +  - If a non valid tagged pointer is passed to a syscall then the behaviour
+> +    is undefined.
+> +
+> +  - Every valid tagged pointer is expected to work as an untagged one.
+> +
+> +  - The kernel preserves any valid tagged pointers and returns them to the
+"pointer", "returns it"
+
+> +    userspace unchanged (i.e. on syscall return) in all the cases except the
+> +    ones documented in the "Preserving tags" section of tagged-pointers.txt.
+> +
+> +A definition of the meaning of tagged pointers on arm64 can be found in:
+> +Documentation/arm64/tagged-pointers.txt.
+> +
+> +3. ARM64 Tagged Address ABI Exceptions
+> +--------------------------------------
+> +
+> +The behaviours described in section 2, with particular reference to the
+> +acceptance by the syscalls of any valid tagged pointer are not applicable
+> +to the following cases:
+> +  - mmap() addr parameter.
+> +  - mremap() new_address parameter.
+> +  - prctl_set_mm() struct prctl_map fields.
+> +  - prctl_set_mm_map() struct prctl_map fields.
+
+prctl_set_mm() and prctl_set_mm_map() are internal kernel functions, not syscall 
+names. IIUC, we don't want to allow any address field settable via the PR_SET_MM 
+prctl() to be tagged. Catalin, is that correct? I think this needs rephrasing.
+
+Kevin
+
+> +
+> +Any attempt to use non-zero tagged pointers will lead to undefined behaviour.
+> +
+> +4. Example of correct usage
+> +---------------------------
+> +
+> +void main(void)
 > +{
-> +	struct crypto_skcipher *tfm = crypto_skcipher_reqtfm(areq);
-> +	struct sun4i_tfm_ctx *op = crypto_skcipher_ctx(tfm);
-> +	struct sun4i_cipher_req_ctx *ctx = skcipher_request_ctx(areq);
-> +	SYNC_SKCIPHER_REQUEST_ON_STACK(subreq, op->fallback_tfm);
-> +	int err;
+> +	static int tbi_enabled = 0;
+> +	unsigned long tag = 0;
 > +
-> +	skcipher_request_set_sync_tfm(subreq, op->fallback_tfm);
-> +	skcipher_request_set_callback(subreq, areq->base.flags, NULL,
-> +				      NULL);
-> +	skcipher_request_set_crypt(subreq, areq->src, areq->dst,
-> +				   areq->cryptlen, areq->iv);
-> +	if (ctx->mode & SS_DECRYPTION)
-> +		err = crypto_skcipher_decrypt(subreq);
-> +	else
-> +		err = crypto_skcipher_encrypt(subreq);
-> +	skcipher_request_zero(subreq);
+> +	char *ptr = mmap(NULL, PAGE_SIZE, PROT_READ | PROT_WRITE,
+> +			 MAP_ANONYMOUS, -1, 0);
 > +
-> +	return err;
+> +	if (prctl(PR_SET_TAGGED_ADDR_CTRL, PR_TAGGED_ADDR_ENABLE,
+> +		  0, 0, 0) == 0)
+> +		tbi_enabled = 1;
+> +
+> +	if (ptr == (void *)-1) /* MAP_FAILED */
+> +		return -1;
+> +
+> +	if (tbi_enabled)
+> +		tag = rand() & 0xff;
+> +
+> +	ptr = (char *)((unsigned long)ptr | (tag << TAG_SHIFT));
+> +
+> +	*ptr = 'a';
+> +
+> +	...
 > +}
 > +
->  /* Generic function that support SG with size not multiple of 4 */
->  static int sun4i_ss_cipher_poll(struct skcipher_request *areq)
->  {
-> @@ -140,8 +163,6 @@ static int sun4i_ss_cipher_poll(struct skcipher_request *areq)
->  	unsigned int todo;
->  	struct sg_mapping_iter mi, mo;
->  	unsigned int oi, oo;	/* offset for in and out */
-> -	char buf[4 * SS_RX_MAX];/* buffer for linearize SG src */
-> -	char bufo[4 * SS_TX_MAX]; /* buffer for linearize SG dst */
->  	unsigned int ob = 0;	/* offset in buf */
->  	unsigned int obo = 0;	/* offset in bufo*/
->  	unsigned int obl = 0;	/* length of data in bufo */
-> @@ -178,20 +199,8 @@ static int sun4i_ss_cipher_poll(struct skcipher_request *areq)
->  	if (no_chunk == 1 && !need_fallback)
->  		return sun4i_ss_opti_poll(areq);
->  
-> -	if (need_fallback) {
-> -		SYNC_SKCIPHER_REQUEST_ON_STACK(subreq, op->fallback_tfm);
-> -		skcipher_request_set_sync_tfm(subreq, op->fallback_tfm);
-> -		skcipher_request_set_callback(subreq, areq->base.flags, NULL,
-> -					      NULL);
-> -		skcipher_request_set_crypt(subreq, areq->src, areq->dst,
-> -					   areq->cryptlen, areq->iv);
-> -		if (ctx->mode & SS_DECRYPTION)
-> -			err = crypto_skcipher_decrypt(subreq);
-> -		else
-> -			err = crypto_skcipher_encrypt(subreq);
-> -		skcipher_request_zero(subreq);
-> -		return err;
-> -	}
-> +	if (need_fallback)
-> +		return sun4i_ss_cipher_poll_fallback(areq);
->  
->  	spin_lock_irqsave(&ss->slock, flags);
->  
-> @@ -224,6 +233,8 @@ static int sun4i_ss_cipher_poll(struct skcipher_request *areq)
->  
->  	while (oleft) {
->  		if (ileft) {
-> +			char buf[4 * SS_RX_MAX];/* buffer for linearize SG src */
-> +
->  			/*
->  			 * todo is the number of consecutive 4byte word that we
->  			 * can read from current SG
-> @@ -281,6 +292,8 @@ static int sun4i_ss_cipher_poll(struct skcipher_request *areq)
->  				oo = 0;
->  			}
->  		} else {
-> +			char bufo[4 * SS_TX_MAX]; /* buffer for linearize SG dst */
-> +
->  			/*
->  			 * read obl bytes in bufo, we read at maximum for
->  			 * emptying the device
-> -- 
-> 2.20.0
-> 
 
-Tested-by: Corentin LABBE <clabbe.montjoie@gmail.com>
 
 _______________________________________________
 linux-arm-kernel mailing list
