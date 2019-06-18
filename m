@@ -2,52 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 400684A1EA
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 18 Jun 2019 15:19:55 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0787E4A1EE
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 18 Jun 2019 15:20:50 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=98qSMHibC4zacV6NuQsyTkhHvoWs+yfBDZAyCPkCLdU=; b=XcgL0toY4FCpg7
-	HC1nwfnovsYoGJnL6nb52dRZbXxQagboEYWRkvPOo2XI0z4q5ggnyYl0/p480VlHijT0boOwT4xAn
-	fMNYATNyqvR2xT7a1mdu5GHpG/gcClyJJemOE0x2G7x6DtPmSblprhbATWpNYzc54RCdwj2ck2SLt
-	qKzQfy6Fy8MhQcctcmau1nXobheAQ4IqrhxGji+1Ye6hCSrLDM3tUR+52v7qdcKw70Z3Mz1WcCg9X
-	yTpNmC66IF2HRuJxF1n+AXeIW4P5DORS7O/ZShh6xNCYdunvmaOGsncXAwJsOHRi598viiMwIMT/c
-	r82tAHC9XZAobh5ZsurA==;
+	List-Owner; bh=LWdCWHoQR6SedWCTAnqrqJmSgJvNI0D7tSyLLjXKIM4=; b=Bd0z3dWLJjkKKJ
+	kx3g6hoxAn3u7n9HJ70Rf4dOqOtprf8cImi4w3w5jxMc884nSxCEuNFIOE9HUEYiaM1URgqPearGr
+	4LOMr6mm/5+4kmNYCxUVtlSD5LuVMxMuRw6U5KMlwkxO23+6gP1avduaYIdNcpYYCHMjYRZ9z57YC
+	1G94nm2KL3urjmJlbIb9mSbHFE5nWERe0RjvSenlTBExNn+JlCB2POSirlnKjfemKtKlD1C1vx9nG
+	jm+nWdlX45+5Fw9YOYad7IrDak/liMAzI75d+0TdqEu0Bag+qk5ROxZmq6zLgEbp0pFWjvhJ/9U9I
+	Rogfw79XOEhJ0G76fVYQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hdE1g-0003d2-MU; Tue, 18 Jun 2019 13:19:52 +0000
+	id 1hdE2X-00046l-HM; Tue, 18 Jun 2019 13:20:45 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hdDq6-0006Cy-8r
- for linux-arm-kernel@lists.infradead.org; Tue, 18 Jun 2019 13:08:49 +0000
+ id 1hdDrx-0006Kj-T2
+ for linux-arm-kernel@lists.infradead.org; Tue, 18 Jun 2019 13:10:06 +0000
 Received: from dragon (li1322-146.members.linode.com [45.79.223.146])
  (using TLSv1.2 with cipher DHE-RSA-AES128-SHA (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 70BC12084D;
- Tue, 18 Jun 2019 13:07:37 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id A7B972084D;
+ Tue, 18 Jun 2019 13:09:37 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1560863262;
- bh=VE0S7GCn+EbKWsC3UJVmk1yL5T1BYtNXt8mSBrOsjTM=;
+ s=default; t=1560863388;
+ bh=f9SHC6ue1dvc84vpVLaqwcu3AML1Htt1R+Utuud1GTE=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=Z9bZq/JS3pwdAUtsp5oTPoUmzKUchwKyZg1vrEy+xOf3mOKf4mfP/9SvqEhaw6FoU
- I5H170T2bQGUl9j3fkhLb7VmSnoFzEuHASNL0r2EhTQhyJe1EEQZ2UhKsHKPfGdZnJ
- O0Hr2N9D9pevumRJhlHXpaKu4y4s58hSmnSJKPOo=
-Date: Tue, 18 Jun 2019 21:06:50 +0800
+ b=rPKYFxhGfJdxNynwSUcJvOSB2VvmorxMuALt8f5OBtdiSNMe5kb/Fw86etHgDOW9S
+ xnU+h29Vb1rNycsM+/Wy3zybYASLnmCa3xaECrAwDCPoHvW7f8MDvjc+3QaQ2bTO8A
+ aMijB6RtLVioPsjacen7t8s5XPORJLq6Aqs6T6ck=
+Date: Tue, 18 Jun 2019 21:08:44 +0800
 From: Shawn Guo <shawnguo@kernel.org>
 To: Peng Ma <peng.ma@nxp.com>
-Subject: Re: [PATCH 1/4] arm64: dts: fsl: ls1028a: Add qDMA node
-Message-ID: <20190618130634.GA1959@dragon>
+Subject: Re: [PATCH 4/4] dt-bindings: fsl-qdma: Add LS1028A qDMA bindings
+Message-ID: <20190618130843.GB1959@dragon>
 References: <20190506090344.37784-1-peng.ma@nxp.com>
+ <20190506090344.37784-4-peng.ma@nxp.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190506090344.37784-1-peng.ma@nxp.com>
+In-Reply-To: <20190506090344.37784-4-peng.ma@nxp.com>
 User-Agent: Mutt/1.5.21 (2010-09-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190618_060806_852697_49FD2BE5 
-X-CRM114-Status: UNSURE (   7.63  )
+X-CRM114-CacheID: sfid-20190618_060954_046511_241FCEB7 
+X-CRM114-Status: UNSURE (   6.83  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -86,8 +87,8 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, May 06, 2019 at 09:03:41AM +0000, Peng Ma wrote:
-> Add the qDMA device tree nodes for LS1028A devices
+On Mon, May 06, 2019 at 09:03:44AM +0000, Peng Ma wrote:
+> Add LS1028A qDMA controller bindings to fsl-qdma bindings.
 > 
 > Signed-off-by: Peng Ma <peng.ma@nxp.com>
 
