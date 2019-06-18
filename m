@@ -2,56 +2,88 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C3D0149DE5
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 18 Jun 2019 11:59:03 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8141049E06
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 18 Jun 2019 12:04:24 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fJCKJYi4E0iijUHadcNdtlxHVNF20ukpG6+UxGQyIQI=; b=ILKp9kS4VOWL5n
-	AtGsoDr6gQegxofziMozMQARZ/NJaEHJ4qFt5b94aMQE2d8cYyvQBqcb4DUTUZI73FhpkCLfNvIWy
-	Rk5tkeiTODGlG/GDWUWcAnge3K/V7859CgqJ1rHR/xhXwIunzN1StplU3sE3yjQWcVtp3OZI9+2yY
-	l0kUGKAxV1Cjpg9Cmh+xViYH5I32nSTJdgS6HntzboC0IpVgGtgekgvg3pQn9Uj8dYFhEtW1yuJrO
-	jwt5H2DWsIZAIt/CAwSiaGHOuVcmIb9IE+BNs4i2Uv+SW0/760hY+nhqvbfCwa594NzqUXfM0OULJ
-	QoMNaADLQT7wOt1un8bQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=+V4WMQ32QQY6qFl3mKuQ4ivMba+vmoF1y9VY7bwaSgg=; b=tPS00niPUXNTMh
+	lLfWx1W1Y7xZtZHPWqTPigE29VPSOBSuiGMzMctzJJWYLbjVh/OXjFvf1Qhz/CJB2kcILjadmDu2A
+	d+/AEZR94D6ehfFl3df9fePH7oM4izUXptmjmIBfqJYk7Kn6JzqFkbePeGf42aamri8Ef2oNVAL7+
+	Fv9/tZhdePn+Milm7HGZr++AU5Qol1A0EpCNTMqW09pJ4gv31MLa0YX4cwrCuxff7YZpFJwg6trvU
+	0TO9fR9VQQJ7Xc5HPccwmgoUsRG/YVN+hQl55w/Z0jLViaPM7aQa+6nAhloahb4C8MgOQogKj9SrN
+	IMWAAajiJFmvZd2oyfOQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hdAtJ-0002KH-GV; Tue, 18 Jun 2019 09:59:01 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hdAt6-0002IU-6K
- for linux-arm-kernel@lists.infradead.org; Tue, 18 Jun 2019 09:58:52 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 390A4344;
- Tue, 18 Jun 2019 02:58:47 -0700 (PDT)
-Received: from [10.1.197.50] (e120937-lin.cambridge.arm.com [10.1.197.50])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 2F9DE3F246;
- Tue, 18 Jun 2019 03:00:32 -0700 (PDT)
-Subject: Re: [PATCH] arm64: smp: fix smp_send_stop() behaviour
-To: James Morse <james.morse@arm.com>, Will Deacon <will.deacon@arm.com>
-References: <20190613122146.45459-1-cristian.marussi@arm.com>
- <20190617180913.GN30800@fuggles.cambridge.arm.com>
- <e950e812-221f-237f-06ee-ac6bbd3765b3@arm.com>
-From: Cristian Marussi <cristian.marussi@arm.com>
-Message-ID: <1bdde105-2784-c6b9-e6d7-91c760c3deef@arm.com>
-Date: Tue, 18 Jun 2019 10:58:45 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.7.0
+	id 1hdAyT-0006Bm-Kp; Tue, 18 Jun 2019 10:04:21 +0000
+Received: from mx08-00178001.pphosted.com ([91.207.212.93]
+ helo=mx07-00178001.pphosted.com)
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hdAx8-0004ue-Qo
+ for linux-arm-kernel@lists.infradead.org; Tue, 18 Jun 2019 10:03:00 +0000
+Received: from pps.filterd (m0046661.ppops.net [127.0.0.1])
+ by mx08-00178001.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id
+ x5I9utiI016658; Tue, 18 Jun 2019 12:02:35 +0200
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
+ h=from : to : cc : subject
+ : date : message-id : mime-version : content-type; s=STMicroelectronics;
+ bh=MfAHlgSdxpurzh3a1xtW23vEPvxHZgpi0SmFk2u5Ijk=;
+ b=u3n2tZjQplZWnblLBre5vzHMDdGgJ2eJuZU/7L/a97xCBbZeoK8F53nKy+rI0MQsGNjF
+ JhVClAbzQezkSyKrEyj1ckRug956mgjuZX29a8LtqYkdWNmZ16FVGcpy6I+V7DkdDcKU
+ RpVgcnHWNBwcr6CQkIaFl8GNJpfbv3qa0UTbDo2E0Qn/66w629C6QaPJq9XY3PwVr7lo
+ X+JTqxe1f+/0g3HPxUUQJjzm9YzM2TXKCQrmIjh4UeXn38D9tpH+M/rF9Fqn3EyGzwLg
+ hB7IfV/94mUexzdokIm12TwebK2q0e8yVQPOoZf9FLyG5UOF8jLD28hN7CSx++84idxh nQ== 
+Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
+ by mx08-00178001.pphosted.com with ESMTP id 2t4qjhyq1n-1
+ (version=TLSv1 cipher=ECDHE-RSA-AES256-SHA bits=256 verify=NOT);
+ Tue, 18 Jun 2019 12:02:35 +0200
+Received: from zeta.dmz-eu.st.com (zeta.dmz-eu.st.com [164.129.230.9])
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 2120742;
+ Tue, 18 Jun 2019 10:02:33 +0000 (GMT)
+Received: from Webmail-eu.st.com (Safex1hubcas21.st.com [10.75.90.44])
+ by zeta.dmz-eu.st.com (STMicroelectronics) with ESMTP id E497625DD;
+ Tue, 18 Jun 2019 10:02:32 +0000 (GMT)
+Received: from SAFEX1HUBCAS23.st.com (10.75.90.47) by SAFEX1HUBCAS21.st.com
+ (10.75.90.44) with Microsoft SMTP Server (TLS) id 14.3.439.0; Tue, 18 Jun
+ 2019 12:02:33 +0200
+Received: from localhost (10.201.23.31) by webmail-ga.st.com (10.75.90.48)
+ with Microsoft SMTP Server (TLS) id 14.3.439.0; Tue, 18 Jun 2019 12:02:30
+ +0200
+From: Erwan Le Ray <erwan.leray@st.com>
+To: Greg Kroah-Hartman <gregkh@linuxfoundation.org>, Jiri Slaby
+ <jslaby@suse.com>, Maxime Coquelin <mcoquelin.stm32@gmail.com>, "Alexandre
+ Torgue" <alexandre.torgue@st.com>
+Subject: [PATCH 0/5] STM32 usart FIFO handling
+Date: Tue, 18 Jun 2019 12:02:21 +0200
+Message-ID: <1560852146-3393-1-git-send-email-erwan.leray@st.com>
+X-Mailer: git-send-email 1.9.1
 MIME-Version: 1.0
-In-Reply-To: <e950e812-221f-237f-06ee-ac6bbd3765b3@arm.com>
-Content-Language: en-US
+X-Originating-IP: [10.201.23.31]
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:, ,
+ definitions=2019-06-18_05:, , signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190618_025848_414774_65DB308C 
-X-CRM114-Status: GOOD (  20.17  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190618_030259_173781_463195F6 
+X-CRM114-Status: UNSURE (   8.84  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [91.207.212.93 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -63,88 +95,30 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, catalin.marinas@arm.com, dave.martin@arm.com,
- linux-arm-kernel@lists.infradead.org
+Cc: linux-kernel@vger.kernel.org, Erwan Le Ray <erwan.leray@st.com>,
+ linux-serial@vger.kernel.org, Fabrice Gasnier <fabrice.gasnier@st.com>,
+ linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi James
+This series delivers RX and TX FIFO features to improve system 
+performances during data transfer.
 
-On 18/06/2019 10:36, James Morse wrote:
-> Hi Christian, Will,
-> 
-> On 17/06/2019 19:09, Will Deacon wrote:
->> On Thu, Jun 13, 2019 at 01:21:46PM +0100, Cristian Marussi wrote:
->>> On a 2-CPUs system, when one CPU is already online if the other
->>> panics while starting-up, smp_send_stop() will fail to send any
->>> STOP message to the other already online core, resulting in a
->>> system still responsive and alive at the end of the panic procedure.
->>> This patch makes smp_send_stop() account also for the online status
->>> of the calling CPU while evaluating how many CPUs are effectively
->>> online: this way, an adequate number of STOPs is sent, so enforcing
->>> a proper freeze of the system at the end of panic even under the
->>> above conditions.
-> 
-> 
->>> diff --git a/arch/arm64/kernel/smp.c b/arch/arm64/kernel/smp.c
->>> index bb4b3f07761a..c7d604427883 100644
->>> --- a/arch/arm64/kernel/smp.c
->>> +++ b/arch/arm64/kernel/smp.c
->>> @@ -971,8 +971,14 @@ void tick_broadcast(const struct cpumask *mask)
->>>  void smp_send_stop(void)
->>>  {
->>>  	unsigned long timeout;
->>> +	unsigned int this_cpu_online = cpu_online(smp_processor_id());
->>>  
->>> -	if (num_online_cpus() > 1) {
->>> +	/*
->>> +	 * If this CPU isn't fully online, it will not be counted in
->>> +	 * num_online_cpus(): on a 2-CPU system this situation will
->>> +	 * result in no message being sent to the other already online CPU.
->>> +	 */
->>> +	if (num_online_cpus() > this_cpu_online) {
->>>  		cpumask_t mask;
->>>  
->>>  		cpumask_copy(&mask, cpu_online_mask);
->>> @@ -985,10 +991,10 @@ void smp_send_stop(void)
->>>  
->>>  	/* Wait up to one second for other CPUs to stop */
->>>  	timeout = USEC_PER_SEC;
->>> -	while (num_online_cpus() > 1 && timeout--)
->>> +	while (num_online_cpus() > this_cpu_online && timeout--)
->>>  		udelay(1);
->>>  
->>> -	if (num_online_cpus() > 1)
->>> +	if (num_online_cpus() > this_cpu_online)
->>>  		pr_warning("SMP: failed to stop secondary CPUs %*pbl\n",
->>>  			   cpumask_pr_args(cpu_online_mask));
->>
->> Whilst this looks ok to me, I'm worried about whether or not we have this
->> sort of logic elsewhere. For example, do we need to fix
->> crash_smp_send_stop() (and possibly machine_kexec()) too?
-> 
-> We should do the same in crash_smp_send_stop(), its possible a newly-online core triggers
-> kdump by calling panic() in the same way.
-> 
-> machine_kexec() is called on the last surviving cpu after migrate_to_reboot_cpu() has run.
-> At first glance it looks like this could never happen there, but kexec re-enables
-> cpu-hotplug (commit 011e4b02f1da), and we can reschedule before we start moving memory
-> around, so I'm not convinced its immune...
-> 
-> 
+Erwan Le Ray (5):
+  serial: stm32: add support of timeout interrupt for RX
+  serial: stm32: update PIO transmission
+  serial: stm32: add support of TX FIFO threshold
+  serial: stm32: add support of RX FIFO threshold
+  serial: stm32: add RX and TX FIFO flush
 
-I'll look into machine_kexec() behavior in these regards.
+ drivers/tty/serial/stm32-usart.c | 132 +++++++++++++++++++++++++++++++--------
+ drivers/tty/serial/stm32-usart.h |  19 ++++++
+ 2 files changed, 124 insertions(+), 27 deletions(-)
 
-Thanks for the review !
-
-Cristian
-> 
-> Thanks,
-> 
-> James
-> 
+-- 
+1.9.1
 
 
 _______________________________________________
