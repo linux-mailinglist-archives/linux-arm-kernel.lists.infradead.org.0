@@ -2,60 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 532154A853
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 18 Jun 2019 19:27:05 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id EC4D74A886
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 18 Jun 2019 19:36:27 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=BFNl90CRdE5EBf+SikF5eWvDXLCvHaiKJmfbZJ5pgcI=; b=FvGO5JluCy+tEX
-	xZQoV54FtnLi66KcGsJTkCeRDgWGDa8iePV6olaHmx1tQQvSK7CO6eJ1HrXEBMaAssbqbdqY5rI+H
-	KfMHz+KZ3nRb77yX8UZFuA31rkF1VxxSuW1ZtCnFmAexIbe9597QQCMIU42bACCCmWYhyMgMDxRmp
-	vmZjmEp20Y+eqzvMaJAJzu3xczXNGukdkhbIOqqIRxNmAOJmB2tid8IHTQ/KZSm3h3ZVARPdiTqWK
-	I9lLzUNpoNaMNwYXWNtCM6WVVBzRBOuibnw95+njPr/lRBNW2sbyoWZfoBO30p7ii5xneWDEqXJRQ
-	PpLkCYM1lrXKurF7R0uw==;
+	List-Owner; bh=MJ3JxOsLwdqpTC8cUrqTdU1xsTXZ2cFVw3wkXftwUII=; b=G+mQ+GCSPiAWQ2
+	c09bnTPHfx0MOdjT6Udq/ipw77JHNsLCkXmj9iiotIkWTRtRQAT/EbEF7s11imZ4fD3eWCs90t6gL
+	tui+PBLOcRMBWeqoKyLNbCrBf4tmf64r5tugmSWpSYhZzjXrxddgCSyrPyFJRYIENBboBlhEsCMFp
+	QHPw4yxa4IBZvDD1sCzJLpYvVF2BCHF3lc3TjeAX6g6kV5YByF4aCcoddNXy6CaENZpI4OatIoPGj
+	FrMLE63REav/L0iZKNyNMrIQr7UmQvnDoheyiXhkMSJzbB0VYyoIkHgN3rBfhgdXtRuPo1Kzfb+wv
+	XlgIKfFex3c0Jd+gerFA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hdHst-0002CQ-7A; Tue, 18 Jun 2019 17:27:03 +0000
-Received: from relay5-d.mail.gandi.net ([217.70.183.197])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hdHsg-0002BR-Na
- for linux-arm-kernel@lists.infradead.org; Tue, 18 Jun 2019 17:26:52 +0000
-X-Originating-IP: 91.224.148.103
-Received: from xps13 (unknown [91.224.148.103])
- (Authenticated sender: miquel.raynal@bootlin.com)
- by relay5-d.mail.gandi.net (Postfix) with ESMTPSA id 234C91C000E;
- Tue, 18 Jun 2019 17:26:37 +0000 (UTC)
-Date: Tue, 18 Jun 2019 19:26:35 +0200
-From: Miquel Raynal <miquel.raynal@bootlin.com>
-To: "Timothy Krantz" <tkrantz@stahurabrenner.com>
-Subject: Re: espressobin device tree with kernel 5.1 RC
-Message-ID: <20190618192635.5118d594@xps13>
-In-Reply-To: <!&!AAAAAAAAAAAuAAAAAAAAAOBWTR25SONAuESb5loyl/sBAMO2jhD3dRHOtM0AqgC7tuYAAAAAAA4AABAAAADpLpjRTgFBSZBSAreF/AshAQAAAAA=@stahurabrenner.com>
-References: <!&!AAAAAAAAAAAuAAAAAAAAAOBWTR25SONAuESb5loyl/sBAMO2jhD3dRHOtM0AqgC7tuYAAAAAAA4AABAAAABB6J1kxOR7T73eMrM92Eq+AQAAAAA=@stahurabrenner.com>
- <20190617113841.60032387@xps13> <20190617114016.10fb9e03@xps13>
- <!&!AAAAAAAAAAAuAAAAAAAAAOBWTR25SONAuESb5loyl/sBAMO2jhD3dRHOtM0AqgC7tuYAAAAAAA4AABAAAADly4/rI9w9RYcxQAoCt9xgAQAAAAA=@stahurabrenner.com>
- <20190618095812.48a2746b@xps13>
- <!&!AAAAAAAAAAAuAAAAAAAAAOBWTR25SONAuESb5loyl/sBAMO2jhD3dRHOtM0AqgC7tuYAAAAAAA4AABAAAADKxydx2LOeRKSPqV4VA77dAQAAAAA=@stahurabrenner.com>
- <20190618162428.0417f247@xps13>
- <!&!AAAAAAAAAAAuAAAAAAAAAOBWTR25SONAuESb5loyl/sBAMO2jhD3dRHOtM0AqgC7tuYAAAAAAA4AABAAAACUGsZ5zJFbR6X1CG+aiyUMAQAAAAA=@stahurabrenner.com>
- <20190618173604.4958474c@xps13>
- <!&!AAAAAAAAAAAuAAAAAAAAAOBWTR25SONAuESb5loyl/sBAMO2jhD3dRHOtM0AqgC7tuYAAAAAAA4AABAAAADpLpjRTgFBSZBSAreF/AshAQAAAAA=@stahurabrenner.com>
-Organization: Bootlin
-X-Mailer: Claws Mail 3.17.1 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
+	id 1hdI1x-0006Nv-CF; Tue, 18 Jun 2019 17:36:25 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hdI1m-0006M0-7m
+ for linux-arm-kernel@lists.infradead.org; Tue, 18 Jun 2019 17:36:15 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 8A7BE344;
+ Tue, 18 Jun 2019 10:36:13 -0700 (PDT)
+Received: from e121166-lin.cambridge.arm.com (unknown [10.1.196.255])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 356983F738;
+ Tue, 18 Jun 2019 10:36:12 -0700 (PDT)
+Date: Tue, 18 Jun 2019 18:36:07 +0100
+From: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
+To: Jeremy Linton <jeremy.linton@arm.com>
+Subject: Re: [PATCH 3/4] arm_pmu: acpi: spe: Add initial MADT/SPE probing
+Message-ID: <20190618173607.GA22558@e121166-lin.cambridge.arm.com>
+References: <20190615010910.33921-1-jeremy.linton@arm.com>
+ <20190615010910.33921-4-jeremy.linton@arm.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20190615010910.33921-4-jeremy.linton@arm.com>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190618_102651_085113_2561B5DD 
-X-CRM114-Status: GOOD (  22.38  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20190618_103614_372576_7A9AB8FB 
+X-CRM114-Status: GOOD (  24.59  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.183.197 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -69,110 +61,165 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: mark.rutland@arm.com, will.deacon@arm.com, sudeep.holla@arm.com,
+ rjw@rjwysocki.net, linux-kernel@vger.kernel.org, linux-acpi@vger.kernel.org,
+ catalin.marinas@arm.com, linux-arm-kernel@lists.infradead.org, lenb@kernel.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-SGkgVGltb3RoeSwKCiJUaW1vdGh5IEtyYW50eiIgPHRrcmFudHpAc3RhaHVyYWJyZW5uZXIuY29t
-PiB3cm90ZSBvbiBUdWUsIDE4IEp1biAyMDE5CjEzOjA4OjM5IC0wNDAwOgoKPiBNaXF1ZWwsCj4g
-Cj4gCj4gPiAtLS0tLU9yaWdpbmFsIE1lc3NhZ2UtLS0tLQo+ID4gRnJvbTogTWlxdWVsIFJheW5h
-bCBbbWFpbHRvOm1pcXVlbC5yYXluYWxAYm9vdGxpbi5jb21dCj4gPiBTZW50OiBUdWVzZGF5LCBK
-dW5lIDE4LCAyMDE5IDExOjM2IEFNCj4gPiBUbzogVGltb3RoeSBLcmFudHogPHRrcmFudHpAc3Rh
-aHVyYWJyZW5uZXIuY29tPgo+ID4gQ2M6IGxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFk
-Lm9yZwo+ID4gU3ViamVjdDogUmU6IGVzcHJlc3NvYmluIGRldmljZSB0cmVlIHdpdGgga2VybmVs
-IDUuMSBSQwo+ID4gCj4gPiBIaSBUaW1vdGh5LAo+ID4gICAKPiA+ID4gPiA+IFsgICAgNC4yMDM2
-OTJdIGNhY2hlaW5mbzogVW5hYmxlIHRvIGRldGVjdCBjYWNoZSBoaWVyYXJjaHkgZm9yIENQVSAw
-Cj4gPiA+ID4gPiBbICAgIDQuMjEwMTkyXSBpbiBtdmVidSBwcm9iZQo+ID4gPiA+ID4gWyAgICA0
-LjIxMjkyNF0gY2hlY2sgZGV2aWNlIG1hdGNoCj4gPiA+ID4gPiBbICAgIDQuMjE2MDI2XSBkZXZp
-Y2UgZGlkIG1hdGNoCj4gPiA+ID4gPiBbICAgIDQuMjE5MDU4XSBjaGVjayByZXNvdXJjZXMKPiA+
-ID4gPiA+IFsgICAgNC4yMjE4NThdIHJlc291cmNlcyBvawo+ID4gPiA+ID4gWyAgICA0LjIyNDQ1
-OF0gZW5hYmxlIHJlc291cmNlcwo+ID4gPiA+ID4gWyAgICA0LjIyNzQwNV0gcGFzdCBlbmFibGUg
-cmVzb3VyY2VzCj4gPiA+ID4gPiBbICAgIDQuMjMwODE3XSBkaXNlbmFibGUgcmVzb3VyY2VzCj4g
-PiA+ID4gPiBbICAgIDQuMjM0MDQyXSBwYXN0IGRpc2FibGUgcmVzb3VyY2VzCj4gPiA+ID4gPiBb
-ICAgIDQuMjM3NTM2XSBpbml0IGhvc3QKPiA+ID4gPiA+IFsgICAgNC4yMzk5MzFdIGFoY2ktbXZl
-YnUgZDAwZTAwMDAuc2F0YTogQUhDSSAwMDAxLjAzMDAgMzIgc2xvdHMgMSBwb3J0cyAgCj4gPiA2
-ICAKPiA+ID4gPiBHYnBzIDB4MSBpbXBsIHBsYXRmb3JtIG1vZGUgIAo+ID4gPiA+ID4gWyAgICA0
-LjI0OTE5Nl0gYWhjaS1tdmVidSBkMDBlMDAwMC5zYXRhOiBmbGFnczogbmNxIHNudGYgbGVkIG9u
-bHkgcG1wIGZicyAgCj4gPiBwaW8gIAo+ID4gPiA+IHNsdW0gcGFydCBzeHMgIAo+ID4gPiA+ID4g
-WyAgICA0LjI1ODY0N10gc2NzaSBob3N0MDogYWhjaS1tdmVidQo+ID4gPiA+ID4gWyAgICA0LjI2
-MjQ5MV0gYXRhMTogU0FUQSBtYXggVURNQS8xMzMgbW1pbyBbbWVtIDB4ZDAwZTAwMDAtICAKPiA+
-ID4gPiAweGQwMGUxZmZmXSBwb3J0IDB4MTAwIGlycSAyMSAgCj4gPiA+ID4gPiBbICAgIDQuMjcw
-NjA5XSBwYXN0IGluaXQgaG9zdAo+ID4gPiA+ID4gWyAgICA0LjI3MzM1M10gcGFzdCByYyBjaGVj
-awo+ID4gPiA+ID4gWyAgICA0LjI3NjQ1NV0gRXRoZXJuZXQgQ2hhbm5lbCBCb25kaW5nIERyaXZl
-cjogdjMuNy4xIChBcHJpbCAyNywgMjAxMSkKPiA+ID4gPiA+IFsgICAgNC4yODQ0MDhdIE1BQ3Nl
-YyBJRUVFIDgwMi4xQUUKPiA+ID4gPiA+IFsgICAgNC4yODc5NjVdIGxpYnBoeTogRml4ZWQgTURJ
-TyBCdXM6IHByb2JlZAo+ID4gPiA+ID4gW3NuaXBdCj4gPiA+ID4gPgo+ID4gPiA+ID4gVW5mb3J0
-dW5hdGVseSB0aGF0IGRvZXMgbm90IHRlbGwgbWUgbXVjaC4gIERvZXMgaXQgc2F5IGFueXRoaW5n
-IHRvIHlvdT8KPiA+ID4gPiA+IEkgbWVhbiBJIGd1ZXNzICAgICAgICByYyA9IGFoY2lfcGxhdGZv
-cm1fZW5hYmxlX3Jlc291cmNlcyhocHJpdik7IElzICAKPiA+IGZhaWxpbmcsICAKPiA+ID4gPiBz
-aG91bGQgSSBwdXQgc29tZSB0cmFjZXMgaW4gdGhhdD8KPiA+ID4gPgo+ID4gPiA+IFllcywgaW4g
-cGFydGljdWxhciBhcm91bmQgdGhlIFBIWSBpbml0aWFsaXphdGlvbiwgdW50aWwgeW91IGZvdW5k
-Cj4gPiA+ID4gd2hlcmUgaXQgZmFpbHMgZXhhY3RseS4KPiA+ID4gPgo+ID4gPiA+Cj4gPiA+ID4g
-VGhhbmtzLAo+ID4gPiA+IE1pcXXDqGwgIAo+ID4gPgo+ID4gPiBJIGhhdmUgdHJhY2VkIGl0IGRv
-d24gdG8gcGh5X2luaXQgaW4gcGh5LWNvcmUuYyBhbmQgaGF2ZSBwdXQgaW4gdGhlIGZvbGxvd2lu
-ZyAgCj4gPiB0cmFjZXM6ICAKPiA+ID4KPiA+ID4gaW50IHBoeV9pbml0KHN0cnVjdCBwaHkgKnBo
-eSkKPiA+ID4gewo+ID4gPiAgICAgICAgIGludCByZXQ7Cj4gPiA+Cj4gPiA+ICAgICAgICAgaWYg
-KCFwaHkpCj4gPiA+ICAgICAgICAgICAgICAgICByZXR1cm4gMDsKPiA+ID4KPiA+ID4gICAgICAg
-ICByZXQgPSBwaHlfcG1fcnVudGltZV9nZXRfc3luYyhwaHkpOwo+ID4gPiAgICAgICAgIGlmIChy
-ZXQgPCAwICYmIHJldCAhPSAtRU5PVFNVUFApCj4gPiA+ICAgICAgICAgICAgICAgICByZXR1cm4g
-cmV0Owo+ID4gPiAgICAgICAgIHJldCA9IDA7IC8qIE92ZXJyaWRlIHBvc3NpYmxlIHJldCA9PSAt
-RU5PVFNVUFAgKi8KPiA+ID4KPiA+ID4gICAgICAgICBtdXRleF9sb2NrKCZwaHktPm11dGV4KTsK
-PiA+ID4gcHJpbnRrKEtFUk5fSU5GTyAiaW4gcGh5IGluaXQgYmVmb3JlIGNoZWNrXG4iKTsgcHJp
-bnRrKEtFUk5fSU5GTwo+ID4gPiAicGh5LT5pbml0X2NvdW50ICVkXG4iLCBwaHktPmluaXRfY291
-bnQpOyBwcmludGsoS0VSTl9JTkZPCj4gPiA+ICJwaHktPm9wcy0+aW5pdCAlcHJcbiIsIHBoeS0+
-b3BzLT5pbml0KTsKPiA+ID4gICAgICAgICBpZiAocGh5LT5pbml0X2NvdW50ID09IDAgJiYgcGh5
-LT5vcHMtPmluaXQpIHsgcHJpbnRrKEtFUk5fSU5GTwo+ID4gPiAiaW4gcGh5IGluaXQgcGFzdCBj
-aGVja1xuIik7Cj4gPiA+ICAgICAgICAgICAgICAgICByZXQgPSBwaHktPm9wcy0+aW5pdChwaHkp
-Owo+ID4gPiAgICAgICAgICAgICAgICAgaWYgKHJldCA8IDApIHsKPiA+ID4gcHJpbnRrKEtFUk5f
-SU5GTyAiaW4gcGh5IGluaXQgIHBoeS0+b3BzLT5pbml0KHBoeSkgZmFpbGVkXG4iKTsKPiA+ID4g
-ICAgICAgICAgICAgICAgICAgICAgICAgZGV2X2VycigmcGh5LT5kZXYsICJwaHkgaW5pdCBmYWls
-ZWQgLS0+ICVkXG4iLCByZXQpOwo+ID4gPiAgICAgICAgICAgICAgICAgICAgICAgICBnb3RvIG91
-dDsKPiA+ID4gICAgICAgICAgICAgICAgIH0KPiA+ID4gICAgICAgICB9Cj4gPiA+ICAgICAgICAg
-KytwaHktPmluaXRfY291bnQ7Cj4gPiA+Cj4gPiA+IG91dDoKPiA+ID4gICAgICAgICBtdXRleF91
-bmxvY2soJnBoeS0+bXV0ZXgpOwo+ID4gPiAgICAgICAgIHBoeV9wbV9ydW50aW1lX3B1dChwaHkp
-Owo+ID4gPiAgICAgICAgIHJldHVybiByZXQ7Cj4gPiA+IH0KPiA+ID4KPiA+ID4gV2hpY2ggcHJv
-ZHVjZXMgdGhlIGZvbGxvd2luZyBkbWVzZyA6Cj4gPiA+IFsgICAgNC4xOTQ4MzVdIFNlcmlhbDog
-ODI1MC8xNjU1MCBkcml2ZXIsIDMyIHBvcnRzLCBJUlEgc2hhcmluZyBlbmFibGVkCj4gPiA+IFsg
-ICAgNC4yMDUyNzBdIGNhY2hlaW5mbzogVW5hYmxlIHRvIGRldGVjdCBjYWNoZSBoaWVyYXJjaHkg
-Zm9yIENQVSAwCj4gPiA+IFsgICAgNC4yMTE3NzddIGluIG12ZWJ1IHByb2JlCj4gPiA+IFsgICAg
-NC4yMTQ1MDhdIGNoZWNrIGRldmljZSBtYXRjaAo+ID4gPiBbICAgIDQuMjE3NjA5XSBkZXZpY2Ug
-ZGlkIG1hdGNoCj4gPiA+IFsgICAgNC4yMjA2NjJdIGNoZWNrIHJlc291cmNlcwo+ID4gPiBbICAg
-IDQuMjIzNDU1XSByZXNvdXJjZXMgb2sKPiA+ID4gWyAgICA0LjIyNjA2MV0gaW4gcGh5IGluaXQg
-YmVmb3JlIGNoZWNrCj4gPiA+IFsgICAgNC4yMjk3MThdIHBoeS0+aW5pdF9jb3VudCAwCj4gPiA+
-IFsgICAgNC4yMzI3NzRdIHBoeS0+b3BzLT5pbml0IChudWxsKQo+ID4gPiBbICAgIDQuMjM2MTg4
-XSBwaHkgcGh5LWQwMDE4MzAwLnBoeS4yOiBwaHkgcG93ZXJvbiBmYWlsZWQgLS0+IC0xCj4gPiA+
-IFsgICAgNC4yNDIwOTVdIGVuYWJsZSByZXNvdXJjZXMKPiA+ID4gWyAgICA0LjI0NTA3Ml0gYWhj
-aS1tdmVidTogcHJvYmUgb2YgZDAwZTAwMDAuc2F0YSBmYWlsZWQgd2l0aCBlcnJvciAtMQo+ID4g
-PiBbICAgIDQuMjUxODMxXSBFdGhlcm5ldCBDaGFubmVsIEJvbmRpbmcgRHJpdmVyOiB2My43LjEg
-KEFwcmlsIDI3LCAyMDExKQo+ID4gPiBbICAgIDQuMjU5NzUzXSBNQUNzZWMgSUVFRSA4MDIuMUFF
-Cj4gPiA+IFsgICAgNC4yNjMzNzFdIGxpYnBoeTogRml4ZWQgTURJTyBCdXM6IHByb2JlZAo+ID4g
-PiBbICAgIDQuMjY3Nzc3XSB0dW46IFVuaXZlcnNhbCBUVU4vVEFQIGRldmljZSBkcml2ZXIsIDEu
-Ngo+ID4gPiBbICAgIDQuMjczMzc1XSBsaWJwaHk6IG9yaW9uX21kaW9fYnVzOiBwcm9iZWQKPiA+
-ID4KPiA+ID4gSSBiZWxpZXZlIHRoZSBzaWduaWZpY2FudCBsaW5lIGlzIFsgICAgNC4yMzI3NzRd
-IHBoeS0+b3BzLT5pbml0IChudWxsKQo+ID4gPgo+ID4gPiBJJ20gbm90IHN1cmUgd2hlcmUgdGhh
-dCB3YXMgc3VwcG9zZWQgdG8gaGF2ZSBiZWVuIGluaXRpYWxpemVkIGJ1dCBpdCAgCj4gPiBhcHBh
-cmVudGx5IHdhcyBub3QuCj4gPiAKPiA+IFNvbWV0aGluZyBsb29rcyB3cm9uZyBpbiB5b3VyIGxv
-Z3M6IHlvdSBoYXZlIGluaXRfY291bnQgdG8gMCBhbmQKPiA+IG9wcy0+aW5pdCgpIHRvIE5VTEws
-IGhvdyBjYW4gIihwaHktPmluaXRfY291bnQgPT0gMCAmJiBwaHktPm9wcy0+aW5pdCkiCj4gPiBi
-ZSBldmFsdWF0ZWQgdG8gdHJ1ZT8KPiA+IAo+ID4gTWlxdcOobCAgCj4gCj4gTXkgcHJpb3IgYXNz
-ZXJ0aW9uIHRoYXQgdGhlIGlmIGRpZCBub3QgZXZhbHVhdGUgdHJ1ZSBpcyBiYXNlZCBvbiBub3Qg
-c2VlaW5nIHRoZSA6Cj4gCj4gcHJpbnRrKEtFUk5fSU5GTyAiaW4gcGh5IGluaXQgcGFzdCBjaGVj
-a1xuIik7Cj4gCj4gaW5zaWRlIG9mIHRoZSBpZiBzdGF0ZW1lbnQuCj4gCj4gVGhhdCBiZWluZyBz
-YWlkLiAgSSBoYXZlIDMgZXNwcmVzc29iaW5zLCBvbmUgZnJvbSB0aGUgb3JpZ2luYWwga2lja3N0
-YXJ0LCBvbmUgYm91Z2h0IG9uIGFtYXpvbiBhbmQgcHVycG9ydGVkIHRvIGJlIGEgdjUgYm9hcmQg
-YW5kIG9uZSB2NyBib2FyZCBib3VnaHQgZnJvbSBnbG9iYWxzY2FsZSBkaXJlY3RseS4KPiAKPiBB
-bGwgb2YgdGhlIHRlc3RpbmcgSSBoYXZlIGRvbmUgaGFzIGJlZW4gb24gdGhlIHY1IGJvYXJkLiAg
-SXMgdGhlcmUgYW55IGNoYW5jZSB0aGF0IHRoZXJlIG1pZ2h0IGJlIHNvbWUgZGlmZmVyZW5jZXMg
-aW4gdGhlIHZhcmlvdXMgcmV2aXNpb25zPyAgV2FudCByZXZpc2lvbiBib2FyZCBhcmUgeW91IHRl
-c3Rpbmcgb24/ICBJZiBJIGhhdmUgb25lIHRoYXQgbWF0Y2hlcyBJIHdpbGwgdGVzdCBvbiB0aGF0
-IG9uZSBhcyB3ZWxsLgoKSSBkb24ndCB0aGluayBpdCdzIGEgaHcgcHJvYmxlbSwgdjUgaXMgZmlu
-ZS4gSGF2ZSB5b3UgdXBkYXRlZCB5b3VyCmZpcm13YXJlIHJlY2VudGx5PyBZb3Ugd2lsbCBuZWVk
-IGEgcmVjZW50IGZpcm13YXJlIChBVEYpIGluIG9yZGVyIHRvCmhhdmUgdGhlIFNNQyBjYWxscyB0
-byB3b3JrLiBZb3UgY2FuIHRyYWNlIHRoZSBfcG93ZXJfb24oKSBmdW5jdGlvbgp3aGljaCBwcm9i
-YWJseSBmYWlscyBhdCBpdHMgZW5kIGluCmRyaXZlcnMvcGh5L21hcnZlbGwvcGh5LW12ZWJ1LWEz
-NzAwLWNvbXBoeS5jLgoKR29vZCBsdWNrIQpNaXF1w6hsCgpfX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdAps
-aW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVh
-ZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
+On Fri, Jun 14, 2019 at 08:09:09PM -0500, Jeremy Linton wrote:
+> ACPI 6.3 adds additional fields to the MADT GICC
+> structure to describe SPE PPI's. We pick these out
+> of the cached reference to the madt_gicc structure
+> similarly to the core PMU code. We then create a platform
+> device referring to the IRQ and let the user/module loader
+> decide whether to load the SPE driver.
+> 
+> Signed-off-by: Jeremy Linton <jeremy.linton@arm.com>
+> ---
+>  arch/arm64/include/asm/acpi.h |  3 ++
+>  drivers/perf/arm_pmu_acpi.c   | 75 +++++++++++++++++++++++++++++++++++
+>  include/linux/perf/arm_pmu.h  |  2 +
+>  3 files changed, 80 insertions(+)
+> 
+> diff --git a/arch/arm64/include/asm/acpi.h b/arch/arm64/include/asm/acpi.h
+> index 7628efbe6c12..d10399b9f998 100644
+> --- a/arch/arm64/include/asm/acpi.h
+> +++ b/arch/arm64/include/asm/acpi.h
+> @@ -41,6 +41,9 @@
+>  	(!(entry) || (entry)->header.length < ACPI_MADT_GICC_MIN_LENGTH || \
+>  	(unsigned long)(entry) + (entry)->header.length > (end))
+>  
+> +#define ACPI_MADT_GICC_SPE  (ACPI_OFFSET(struct acpi_madt_generic_interrupt, \
+> +	spe_interrupt) + sizeof(u16))
+> +
+
+Nit: Do we really need this to be in a header file ?
+
+>  /* Basic configuration for ACPI */
+>  #ifdef	CONFIG_ACPI
+>  pgprot_t __acpi_get_mem_attribute(phys_addr_t addr);
+> diff --git a/drivers/perf/arm_pmu_acpi.c b/drivers/perf/arm_pmu_acpi.c
+> index 0f197516d708..f5df100bc4f4 100644
+> --- a/drivers/perf/arm_pmu_acpi.c
+> +++ b/drivers/perf/arm_pmu_acpi.c
+> @@ -74,6 +74,79 @@ static void arm_pmu_acpi_unregister_irq(int cpu)
+>  	acpi_unregister_gsi(gsi);
+>  }
+>  
+> +#if IS_ENABLED(CONFIG_ARM_SPE_PMU)
+> +static struct resource spe_resources[] = {
+> +	{
+> +		/* irq */
+> +		.flags          = IORESOURCE_IRQ,
+> +	}
+> +};
+> +
+> +static struct platform_device spe_dev = {
+> +	.name = ARMV8_SPE_PDEV_NAME,
+> +	.id = -1,
+> +	.resource = spe_resources,
+> +	.num_resources = ARRAY_SIZE(spe_resources)
+> +};
+> +
+> +/*
+> + * For lack of a better place, hook the normal PMU MADT walk
+> + * and create a SPE device if we detect a recent MADT with
+> + * a homogeneous PPI mapping.
+> + */
+> +static int arm_spe_acpi_register_device(void)
+> +{
+> +	int cpu, hetid, irq, ret;
+> +	bool first = true;
+> +	u16 gsi = 0;
+> +
+> +	/*
+> +	 * sanity check all the GICC tables for the same interrupt number
+> +	 * for now we only support homogeneous ACPI/SPE machines.
+> +	 */
+> +	for_each_possible_cpu(cpu) {
+> +		struct acpi_madt_generic_interrupt *gicc;
+> +
+> +		gicc = acpi_cpu_get_madt_gicc(cpu);
+> +		if (gicc->header.length < ACPI_MADT_GICC_SPE)
+> +			return -ENODEV;
+> +
+> +		if (first) {
+> +			gsi = gicc->spe_interrupt;
+> +			if (!gsi)
+> +				return -ENODEV;
+> +			hetid = find_acpi_cpu_topology_hetero_id(cpu);
+> +			first = false;
+> +		} else if ((gsi != gicc->spe_interrupt) ||
+> +			   (hetid != find_acpi_cpu_topology_hetero_id(cpu))) {
+> +			pr_warn("ACPI: SPE must be homogeneous\n");
+> +			return -EINVAL;
+> +		}
+> +	}
+> +
+> +	irq = acpi_register_gsi(NULL, gsi, ACPI_LEVEL_SENSITIVE,
+> +				ACPI_ACTIVE_HIGH);
+> +	if (irq < 0) {
+> +		pr_warn("ACPI: SPE Unable to register interrupt: %d\n", gsi);
+> +		return irq;
+> +	}
+> +
+> +	spe_resources[0].start = irq;
+> +	ret = platform_device_register(&spe_dev);
+> +	if (ret < 0) {
+> +		pr_warn("ACPI: SPE: Unable to register device\n");
+> +		acpi_unregister_gsi(gsi);
+> +	}
+> +
+> +	return ret;
+> +}
+> +#else
+> +static inline int arm_spe_acpi_register_device(void)
+> +{
+> +	return -ENODEV;
+> +}
+> +#endif /* CONFIG_ARM_SPE_PMU */
+> +
+>  static int arm_pmu_acpi_parse_irqs(void)
+>  {
+>  	int irq, cpu, irq_cpu, err;
+> @@ -279,6 +352,8 @@ static int arm_pmu_acpi_init(void)
+>  	if (acpi_disabled)
+>  		return 0;
+>  
+> +	arm_spe_acpi_register_device(); /* failures are expected */
+
+Sounds ominous and it is false, ACPI never fails :)
+
+Nit: if we don't check the return value what's the point of
+returning it.
+
+Nothing problematic, if you manage to update the code before
+merging it is a plus.
+
+Reviewed-by: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
+
+>  	ret = arm_pmu_acpi_parse_irqs();
+>  	if (ret)
+>  		return ret;
+> diff --git a/include/linux/perf/arm_pmu.h b/include/linux/perf/arm_pmu.h
+> index 4641e850b204..784bc58f165a 100644
+> --- a/include/linux/perf/arm_pmu.h
+> +++ b/include/linux/perf/arm_pmu.h
+> @@ -175,4 +175,6 @@ void armpmu_free_irq(int irq, int cpu);
+>  
+>  #endif /* CONFIG_ARM_PMU */
+>  
+> +#define ARMV8_SPE_PDEV_NAME "arm,spe-v1"
+> +
+>  #endif /* __ARM_PMU_H__ */
+> -- 
+> 2.21.0
+> 
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
