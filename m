@@ -2,79 +2,93 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 218754AB45
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 18 Jun 2019 21:59:57 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C698B4AB59
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 18 Jun 2019 22:04:38 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=UkkMxedfviUnZvV9Q6E/Wzet3SlkAkfeeW3Kih9L4bA=; b=CT+SG99NS3npCa
-	DZi1XcYS/7sgWbCuQ8+wEA118qo00lMUva1e0T7O0B3jwKmUnV0cl6fnyP1byyizPBTaojptxdyhR
-	PeiA+6MfbqXV3KeFrsNeclaKDRHifIFcL6zTEcUEqjneSZ2f8jWWuJ0UBJHsajwQk7oGJmdC2v3xc
-	vBTvUpagu/AmegfoUYcxVHfTl28pecwzEIjXYo2JYF6EHljNNT1GSyDY+9h4TLsTFyoUIP9Mc/sMC
-	jhDlou7pshQ7sT5SAoLx6wRi6shMsMu5+Oom9pOXVsDHhlGAryNy0ZbaiaXNIZv3e5OciNk0xcq9Z
-	I37zZvpIExqp6wR09k4Q==;
+	List-Owner; bh=Hf1q4MYiPpnUQfHjt7TZ43mhWldX8zDNKy+n5Acqc08=; b=OgMjmbVzgSoAxs
+	o+/PbaYBeCx0QU/Skc186va+K3uM1ThrGYmF8JqIiFW+lncuNYEQRfxgG7J7TO+YEBcfzC7SXN7ue
+	HRo+bfyAURD9NLFcrnT4udMs27PJwdoRd2I4n2gPGSr4GXUi/PKUNeL8biepfyR1XQzsIwitB/NvO
+	7darpe2ud6JLaAkUPqTz4MLTAvFGUbsXFV2Ij7IxOSs41YaObBIfQ8KXvBfRhG9dUPIBJ5Zue7IuK
+	4IaBUdvpAaK14Fa83CyxErA5Rcz+1YWVn6w055wCbajSeFM2TEYrGvQ3Py9jiknf3A1SAOFXL9n+B
+	tGutdFb4a8RyNU+cioeA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hdKGm-0004o8-Hg; Tue, 18 Jun 2019 19:59:52 +0000
-Received: from mail-qk1-f195.google.com ([209.85.222.195])
+	id 1hdKLN-0006oC-86; Tue, 18 Jun 2019 20:04:37 +0000
+Received: from mail-pg1-x542.google.com ([2607:f8b0:4864:20::542])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hdKGZ-0004ma-TX
- for linux-arm-kernel@lists.infradead.org; Tue, 18 Jun 2019 19:59:41 +0000
-Received: by mail-qk1-f195.google.com with SMTP id r6so9452029qkc.0
+ id 1hdKLE-0006na-33
+ for linux-arm-kernel@lists.infradead.org; Tue, 18 Jun 2019 20:04:29 +0000
+Received: by mail-pg1-x542.google.com with SMTP id f21so8275795pgi.3
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 18 Jun 2019 12:59:37 -0700 (PDT)
+ Tue, 18 Jun 2019 13:04:27 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=vAeqHyw6RagaEliqavOvZJ2tWkD0tQerTi99czZ7j54=;
+ b=Y0SmQ/Q9ZkciYInJWgfVb/m+PnqweV6Vw493C5o0NZIaQlRJgLvkcKIV3z/hZwMUlT
+ 9kY5x67BFTdBJAIUKve2catt0LClJmdpBXSauyMnrGSMj9uBjKdlSjAGX14xL22QJVWi
+ DkVRnLg9/aB/JJg+bV8QbJ6H5VCPnEqpi5h7bldfNl8kJGMxU+aOpqUsPjWmKW8dC0H9
+ /QFVy1hI/pwUr0tvY1VYBQVKPeVcXxHE011OTqRwczN1nFnM4thyC7UQUxPQMJiGKluU
+ kYPRZykIsBCyPDuO/sulFZe397uvd084spd3dckoNkhTz9W+uIOnPE3zUIXmP+LXHyEb
+ W6AA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=i7s7c5OcKeclqiywXdqj12aC74/yCawdjmwihldgF1s=;
- b=p+yBo7cNe41B3ohIAmpmM5tEQlMlYdi01FCCMO35FoqYCKuTDgHwvTU2vV060TuXzu
- ZZTx5MZuPBjVxT2+YnrAeaNT8pVEgtDmRyTU7b4Te8WFYZzR/QRDBIZDEypY84G4afzN
- V03LgUDmkGkPhIpGIhi0WGwgvUrXHMoLoVeawXO6zNdPwZBe8YxBR+yVeEE9igoUoQ0+
- et4XNS70wst9Ad4wwcA0c6DnM4MnKRfJOpemos1sJ6k+9WuVzGlmyI0oggTa7To9vjBs
- JMSutK/tQB7nWzPicQKu6hv34lqXnOfKyt+9CNeWqfTWiZ0dmy5n6aX6kEe6/qBSkkSk
- ppbA==
-X-Gm-Message-State: APjAAAU7FU9eTi4jpl3PghQhtpDbzUn8iTy+Joo9BgS2VVsf1xlEHzH3
- Pw6tB/cDLlN1SDgdzqSO3bbW5RXtXALsIi0aAww=
-X-Google-Smtp-Source: APXvYqy6dw17Y5hPbpJB1iwj6Y5EiqPTo9iLm7ZATxD+K27A0WaDVgnTPbaE839sYu0LKjhIqohaX9442ZVn9lHIr6Q=
-X-Received: by 2002:a37:a4d3:: with SMTP id n202mr8102665qke.84.1560887976962; 
- Tue, 18 Jun 2019 12:59:36 -0700 (PDT)
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=vAeqHyw6RagaEliqavOvZJ2tWkD0tQerTi99czZ7j54=;
+ b=LZqQzqwX7LfB4ceeoAcovmQ7VCHeWodLNXWP5Gnj0LnFQ93W+r/SEFe9pwFw8DLHmj
+ Suvu71Qi5AQUa6xZIT3uZ4xvv8LH13g4ORG+5sUnnWakZPWMUiPsQ3XzihNYzX5jhOwN
+ /BMwUX1SypRRBq0VcqjTKRLZVoshJL6pYcCTlKnd/arrIMHfb6r9s0i2WzgrLlTcN28x
+ NzYQJD18/znjn+oVLQaOYV6Gv+tZT2xtzv8eC/DMKvkXv26HJsphzxr3Cr5rQ91UUcul
+ DrCqQMpIVv6o4ZFkadcH/yy++svp2Gqzo1yltSWhN8NMeajMjEfxeFarTQ62AIyK3xKz
+ pqpg==
+X-Gm-Message-State: APjAAAUrXq2lYH4tGJ7eql6bjNArKHdx1engOMEZxHgVA4vuEpLBDAyL
+ 3NuWw52SL3jn/37w6rcHVQFMVg==
+X-Google-Smtp-Source: APXvYqziW6L+bjnki/hEVBA5wM6lqP9xgFoBR8esg+frVAp27tb7dC/Sks29kliKkIUIwjigjNPdQg==
+X-Received: by 2002:aa7:8acb:: with SMTP id
+ b11mr120623855pfd.115.1560888266696; 
+ Tue, 18 Jun 2019 13:04:26 -0700 (PDT)
+Received: from minitux (104-188-17-28.lightspeed.sndgca.sbcglobal.net.
+ [104.188.17.28])
+ by smtp.gmail.com with ESMTPSA id l13sm2750876pjq.20.2019.06.18.13.04.25
+ (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
+ Tue, 18 Jun 2019 13:04:26 -0700 (PDT)
+Date: Tue, 18 Jun 2019 13:04:24 -0700
+From: Bjorn Andersson <bjorn.andersson@linaro.org>
+To: Marc Gonzalez <marc.w.gonzalez@free.fr>
+Subject: Re: [PATCH] arm64: dts: qcom: msm8996: Rename smmu nodes
+Message-ID: <20190618200424.GH4814@minitux>
+References: <20190618052441.32306-1-bjorn.andersson@linaro.org>
+ <fbe71878-a129-1b11-d978-48a99b292086@free.fr>
 MIME-Version: 1.0
-References: <380a6185-7ad1-6be0-060b-e6e5d4126917@linaro.org>
- <a94676381a5ca662c848f7a725562f721c43ce76.camel@sipsolutions.net>
- <CAK8P3a0kV-i7BJJ2X6C=5n65rSGfo8fUiC4J_G-+M8EctYKbkg@mail.gmail.com>
- <066e9b39f937586f0f922abf801351553ec2ba1d.camel@sipsolutions.net>
- <b3686626-e2d8-bc9c-6dd0-9ebb137715af@linaro.org>
- <b23a83c18055470c5308fcd1eed018056371fc1d.camel@sipsolutions.net>
-In-Reply-To: <b23a83c18055470c5308fcd1eed018056371fc1d.camel@sipsolutions.net>
-From: Arnd Bergmann <arnd@arndb.de>
-Date: Tue, 18 Jun 2019 21:59:19 +0200
-Message-ID: <CAK8P3a1FeUQR3pgoQxHoRK05JGORyR+TFATVQiijLWtFKTv6OQ@mail.gmail.com>
-Subject: Re: [PATCH v2 00/17] net: introduce Qualcomm IPA driver
-To: Johannes Berg <johannes@sipsolutions.net>
+Content-Disposition: inline
+In-Reply-To: <fbe71878-a129-1b11-d978-48a99b292086@free.fr>
+User-Agent: Mutt/1.12.0 (2019-05-25)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190618_125939_957692_9C26A633 
-X-CRM114-Status: GOOD (  28.37  )
-X-Spam-Score: 0.5 (/)
+X-CRM114-CacheID: sfid-20190618_130428_140261_2A60999B 
+X-CRM114-Status: GOOD (  12.36  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.5 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.222.195 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.222.195 listed in wl.mailspike.net]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (arndbergmann[at]gmail.com)
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
+ no trust [2607:f8b0:4864:20:0:0:0:542 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -86,100 +100,76 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: DTML <devicetree@vger.kernel.org>, syadagir@codeaurora.org,
- Eric Caruso <ejcaruso@google.com>, Dan Williams <dcbw@redhat.com>,
- linux-arm-msm@vger.kernel.org, abhishek.esse@gmail.com,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>, evgreen@chromium.org,
- Bjorn Andersson <bjorn.andersson@linaro.org>,
- Ilias Apalodimas <ilias.apalodimas@linaro.org>,
+Cc: MSM <linux-arm-msm@vger.kernel.org>, Andy Gross <agross@kernel.org>,
  Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Alex Elder <elder@linaro.org>,
- Subash Abhinov Kasiviswanathan <subashab@codeaurora.org>,
- Networking <netdev@vger.kernel.org>, linux-soc@vger.kernel.org,
- David Miller <davem@davemloft.net>, cpratapa@codeaurora.org,
- Ben Chan <benchan@google.com>
+ Rob Herring <robh+dt@kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Jun 18, 2019 at 9:14 PM Johannes Berg <johannes@sipsolutions.net> wrote:
-> On Tue, 2019-06-18 at 08:16 -0500, Alex Elder wrote:
-> > On 6/17/19 6:28 AM, Johannes Berg wrote:
-> > So getting back to your question, the IPA in its current form only
-> > has a single "multiplexed" channel carried over the connection
-> > between the AP and modem.  Previously (and in the future) there
-> > was a way to add or remove channels.
->
-> What would those channels do?
->
-> I've not really been very clear with the differentiation between a
-> channel and what's multiplexed inside of the channel.
->
-> Using the terminology you defined in your other mail, are you saying
-> that IPA (originally) allowed multiple *connections* to the device, or
-> is there basically just one connection, with multiple (QMAP-muxed)
-> *channels* on top of it?
->
-> If the latter, why did IPA need ioctls, rather than rmnet?
+On Tue 18 Jun 00:39 PDT 2019, Marc Gonzalez wrote:
 
-From my understanding, the ioctl interface would create the lower
-netdev after talking to the firmware, and then user space would use
-the rmnet interface to create a matching upper-level device for that.
-This is an artifact of the strong separation of ipa and rmnet in the
-code.
+> On 18/06/2019 07:24, Bjorn Andersson wrote:
+> 
+> > Node names shouldn't include "qcom," and should whenever possible use
+> > a generic identifier. Resolve this by renaming the smmu nodes "iommu".
+> 
+> You mention "qcom" here, but the prefix you changed is "arm"
+> /me confused ^_^
+> 
 
-> > > The software bridging is very questionable to start with, I'd advocate
-> > > not supporting that at all but adding tracepoints or similar if needed
-> > > for debugging instead.
-> >
-> > To be honest I don't understand the connection between software
-> > bridging and debugging, but that's OK.
->
-> It's a mess. Basically, AFAICT, the only use for the rmnet bridging is
-> in fact debugging. What it does, again AFAICT, is mirror out all the
-> rmnet packets to the bridge if you attach it to a bridge, so that then
-> you can attach another netdev to the bridge and forward all the rmnet
-> packets to another system for debugging.
->
-> It's a very weird way of doing this, IMHO.
+Thanks for proof reading my patches Marc
+I'll respin this.
 
-My understanding for this was that the idea is to use it for
-connecting bridging between distinct hardware devices behind
-ipa: if IPA drives both a USB-ether gadget and the 5G modem,
-you can use to talk to Linux running rmnet, but you can also
-use rmnet to provide fast usb tethering to 5g and bypass the
-rest of the network stack. That again may have been a wrong
-guess on my part.
+Regards,
+Bjorn
 
-> > I believe the only QMAP commands are for doing essentially
-> > XON/XOFF flow control on a single channel.  In the course of
-> > the e-mail discussion in the past few weeks I've come to see
-> > why that would be necessary.
->
-> It does make sense, because you only have a single hardware (DMA)
-> channel in these cases, so you implement flow control in software on
-> top.
->
-> (As I said before, the Intel modem uses different hardware channels for
-> different sessions, so doesn't need something like this - the hardware
-> ring just fills up and there's your flow control)
-
-ipa definitely has multiple hardware queues, and the Alex'
-driver does implement  the data path on those, just not the
-configuration to enable them.
-
-Guessing once more, I suspect the the XON/XOFF flow control
-was a workaround for the fact that rmnet and ipa have separate
-queues. The hardware channel on IPA may fill up, but user space
-talks to rmnet and still add more frames to it because it doesn't
-know IPA is busy.
-
-Another possible explanation would be that this is actually
-forwarding state from the base station to tell the driver to
-stop sending data over the air.
-
-       Arnd
+> 
+> >  arch/arm64/boot/dts/qcom/msm8996.dtsi | 8 ++++----
+> >  1 file changed, 4 insertions(+), 4 deletions(-)
+> > 
+> > diff --git a/arch/arm64/boot/dts/qcom/msm8996.dtsi b/arch/arm64/boot/dts/qcom/msm8996.dtsi
+> > index 2ecd9d775d61..c934e00434c7 100644
+> > --- a/arch/arm64/boot/dts/qcom/msm8996.dtsi
+> > +++ b/arch/arm64/boot/dts/qcom/msm8996.dtsi
+> > @@ -1163,7 +1163,7 @@
+> >  			};
+> >  		};
+> >  
+> > -		vfe_smmu: arm,smmu@da0000 {
+> > +		vfe_smmu: iommu@da0000 {
+> >  			compatible = "qcom,msm8996-smmu-v2", "qcom,smmu-v2";
+> >  			reg = <0xda0000 0x10000>;
+> >  
+> > @@ -1314,7 +1314,7 @@
+> >  			};
+> >  		};
+> >  
+> > -		adreno_smmu: arm,smmu@b40000 {
+> > +		adreno_smmu: iommu@b40000 {
+> >  			compatible = "qcom,msm8996-smmu-v2", "qcom,smmu-v2";
+> >  			reg = <0xb40000 0x10000>;
+> >  
+> > @@ -1331,7 +1331,7 @@
+> >  			power-domains = <&mmcc GPU_GDSC>;
+> >  		};
+> >  
+> > -		mdp_smmu: arm,smmu@d00000 {
+> > +		mdp_smmu: iommu@d00000 {
+> >  			compatible = "qcom,msm8996-smmu-v2", "qcom,smmu-v2";
+> >  			reg = <0xd00000 0x10000>;
+> >  
+> > @@ -1347,7 +1347,7 @@
+> >  			power-domains = <&mmcc MDSS_GDSC>;
+> >  		};
+> >  
+> > -		lpass_q6_smmu: arm,smmu-lpass_q6@1600000 {
+> > +		lpass_q6_smmu: iommu@1600000 {
+> >  			compatible = "qcom,msm8996-smmu-v2", "qcom,smmu-v2";
+> >  			reg = <0x1600000 0x20000>;
+> >  			#iommu-cells = <1>;
+> > 
 
 _______________________________________________
 linux-arm-kernel mailing list
