@@ -2,52 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 58C534A241
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 18 Jun 2019 15:33:29 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B9AA84A243
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 18 Jun 2019 15:33:46 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=k/eQt3Druz29sEVcuU9nOrVYmcZ62N+YWenI+vg4d5E=; b=B2uv+/L/930VyN
-	hJ5px0P5LeSUg3+2vTrotH8cxcBZXUOkfAtkVOhqg/eqsx6Exy0OVlwwLC1uEOsFvH8GqIfOGrMxd
-	n067w/yEOQmCtKIuyq1Jx9jgOX3J3+1RhPolfsptb+UX2hSbt/nCjcWS0j4phKzZtjACf9Yd9ONsg
-	1XV72S0DhzEJQf6rEF8cPcQz9n0NFb82kW6p3N775ebwLSUK8gnAQWzs5oKiZ2f0irL5jc24uy2MO
-	hvtPmWfcAEu/058OY4mJ9y3QjFA89fknTZuIx9ifGAFPfwGJtIYdvxjjaTHVSCBMKqnajGoP0nJLV
-	49+2fTy8i03WzAOp5CBA==;
+	List-Owner; bh=ihWR7Rsb9nrUtlT9LDM9tkSWRSOrZBltF2vbgTPQXV4=; b=TtG9HKgN+Cwv1L
+	IrGiAx0x7SfRBJh6gXBMgo8QN/jwkWt6bo4i9fPMDcOR0CTVkoebeyVED9T8jZ5gG3MTi2MyPbgXq
+	eo4iN8t3l63qPAtiRzVKjfEoFdSvvZgjNVnsjctbkdoLVUggprjdQJ7Z8FS7AU2gq29+v/g6o/5OV
+	J2lZRf05tEqtZwBvqdty9CxMq4jbIrThrpyeiGoNP/FM1mbrK6+JlmAdxh/4bvggsKO93YuVErDwS
+	nF09o6l93WQJhv+0OWGVPzzCoehnAjZgtI0w2GGnZ7wWrhWy2vXmdVZYqtLwy1+op1LpYrWMceRLd
+	UtB46Q8G/m2DsPTNhk7g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hdEEn-0006PY-47; Tue, 18 Jun 2019 13:33:25 +0000
+	id 1hdEF5-0006fA-9J; Tue, 18 Jun 2019 13:33:43 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hdE9h-0001O8-Im
- for linux-arm-kernel@lists.infradead.org; Tue, 18 Jun 2019 13:28:11 +0000
+ id 1hdEAt-0001xG-FS
+ for linux-arm-kernel@lists.infradead.org; Tue, 18 Jun 2019 13:29:25 +0000
 Received: from dragon (li1322-146.members.linode.com [45.79.223.146])
  (using TLSv1.2 with cipher DHE-RSA-AES128-SHA (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 7B1342085A;
- Tue, 18 Jun 2019 13:28:04 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id B4E3A2085A;
+ Tue, 18 Jun 2019 13:29:20 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1560864489;
- bh=RDwm7cqlA7kxiru7hO8Sr4amKpAdU9f3OR/1UMtFrWo=;
+ s=default; t=1560864563;
+ bh=EUY20L1oreGPJG/z6mb+pYwDrxgzqNc1eCeVk7HRMTc=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=WVSSL5HK1R3vnjfDctoFE3waIkcb/NhczSYPrD/DsZS0GN4oufPLVigDpVDVaGrRU
- aUUuDUkz6EziUmDzVB7/8cd/5G2msenFLrxZ+YN+xZAyRrzfg9STDzluMt1B4f0LP6
- HWE2pCLJddjYTAIbOGzMlffWuB1A+KLHYfOjjP1M=
-Date: Tue, 18 Jun 2019 21:27:14 +0800
+ b=J232LUing57SfpflQ5JzHWMkhyF0JJ5GG6Dq2yla51GFv4Xrmhktx6wss7eZrtmI9
+ JUkjQaq3RfuCML0WWHquv+VuVQakteNCBtSyFSGp1MJ6h4v1ZDkU3vo85rjprEu1oC
+ DH0/58w2J0cPxFHKZmsde1Ft/YQ3PG6aVpr7AD/M=
+Date: Tue, 18 Jun 2019 21:28:33 +0800
 From: Shawn Guo <shawnguo@kernel.org>
-To: Anson.Huang@nxp.com
-Subject: Re: [PATCH RESEND V2] soc: imx8: Use existing of_root directly
-Message-ID: <20190618132713.GG1959@dragon>
-References: <20190618094338.11183-1-Anson.Huang@nxp.com>
+To: Rob Herring <robh@kernel.org>
+Subject: Re: [PATCH] dt-bindings: arm: Move Emtrion i.MX6 board bindings to
+ schema
+Message-ID: <20190618132830.GH1959@dragon>
+References: <20190617204423.2880-1-robh@kernel.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190618094338.11183-1-Anson.Huang@nxp.com>
+In-Reply-To: <20190617204423.2880-1-robh@kernel.org>
 User-Agent: Mutt/1.5.21 (2010-09-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190618_062809_763633_A7B9B527 
-X-CRM114-Status: UNSURE (   7.25  )
+X-CRM114-CacheID: sfid-20190618_062923_770153_4B307E11 
+X-CRM114-Status: UNSURE (   7.81  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -77,21 +78,21 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: abel.vesa@nxp.com, s.hauer@pengutronix.de, linux-kernel@vger.kernel.org,
- Linux-imx@nxp.com, kernel@pengutronix.de, leonard.crestez@nxp.com,
- festevam@gmail.com, linux-arm-kernel@lists.infradead.org
+Cc: devicetree@vger.kernel.org, Jan Tuerk <jan.tuerk@emtrion.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Jun 18, 2019 at 05:43:38PM +0800, Anson.Huang@nxp.com wrote:
-> From: Anson Huang <Anson.Huang@nxp.com>
+On Mon, Jun 17, 2019 at 02:44:23PM -0600, Rob Herring wrote:
+> The Emtrion board bindings landed when the i.MX board/SoC bindings were
+> being converted to DT schema. Add them to the schema and remove the
+> separate file.
 > 
-> There is common of_root for reference, no need to find it
-> from DT again, use of_root directly to make driver simple.
-> 
-> Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
+> Cc: Jan Tuerk <jan.tuerk@emtrion.com>
+> Cc: Shawn Guo <shawnguo@kernel.org>
+> Signed-off-by: Rob Herring <robh@kernel.org>
 
 Applied, thanks.
 
