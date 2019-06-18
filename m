@@ -2,35 +2,35 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 67EB04AC86
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 18 Jun 2019 23:06:11 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A794F4AC8B
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 18 Jun 2019 23:06:43 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=4CILg3o36Mb/swa2KE5o3YvoSkk47teoxHnDfmLxTo8=; b=osAII7R+cTIDF0
-	cmkU2WDxYjyi9aeu+4etsW0Z7Jga57w8tmE7GRcUcva8XkzaKNu4TtQeeCfG8Qq/CcKosMxiKExkc
-	tdlZOToRGJuJlWh39hd+FkTdqXokB0HoZsmneXclP7vxgJl1kpv+Quz/ntfefnubBJ/b0aIEy/rGf
-	msLeyhMB7eO6DYuzo7KRM5n384ev0CxlXkBH1w814pTYx6bnrQtajArz/5vz27ie+d79LK8vHyyD8
-	7UYN1cRWhEy+bzfnyB+bd6kmwhqJA+ENV52m3W5zp59VL2TBYMAGB4RaKHE6Tm4NCg/RFKEr5Lne2
-	Xt2Pqb1Z/bJBhPTbSuCg==;
+	List-Owner; bh=8heAAVb2TOnxk7CgBNQj7BkzyW8L2U36WmdciSs5DZs=; b=Appo8HzzHxoInd
+	2+BpJQXDNnbujhkaf8IhTBH1NVcWKiTOG6Pz0GYrhopTDv9jNTc/VubCzB4cXCFl1w/z3hhLZgsrm
+	olBPfWp9CT+fIyEAmKl9LBoFy9tL3SxQ6baSMaBDdBaurZQnP1IF5//tTwx86z1zZgWK5uAmjcyJ8
+	JsasqHs7VjtSMsBEkjq5lJLslqoDIl68O45Hq1XkaN5l9wK2JL6+XDAjM89/LHD30/SRaP7tnw55f
+	TYU5K9XRkkZ/l9vawDWqM5OaCTATqFGDRPfZ3VUpytk5JYxXHAWU4U0ltb56n/V1WvUdHeRvfywSs
+	4O49l7wVkVA/FnxocjfA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hdLIv-00072g-QI; Tue, 18 Jun 2019 21:06:09 +0000
+	id 1hdLJP-0007M4-T0; Tue, 18 Jun 2019 21:06:40 +0000
 Received: from 177.133.86.196.dynamic.adsl.gvt.net.br ([177.133.86.196]
  helo=bombadil.infradead.org)
  by bombadil.infradead.org with esmtpsa (Exim 4.92 #3 (Red Hat Linux))
- id 1hdLIc-0006yj-4C; Tue, 18 Jun 2019 21:05:50 +0000
+ id 1hdLIc-0006yx-CU; Tue, 18 Jun 2019 21:05:50 +0000
 Received: from mchehab by bombadil.infradead.org with local (Exim 4.92)
  (envelope-from <mchehab@bombadil.infradead.org>)
- id 1hdLIa-0002Cs-2h; Tue, 18 Jun 2019 18:05:48 -0300
+ id 1hdLIa-0002Cw-3f; Tue, 18 Jun 2019 18:05:48 -0300
 From: Mauro Carvalho Chehab <mchehab+samsung@kernel.org>
 To: Linux Doc Mailing List <linux-doc@vger.kernel.org>
-Subject: [PATCH v1 16/22] docs: driver-api: add xilinx driver API documentation
-Date: Tue, 18 Jun 2019 18:05:40 -0300
-Message-Id: <df317331caeb27702ad501bad2d5f46eee7f177e.1560891322.git.mchehab+samsung@kernel.org>
+Subject: [PATCH v1 17/22] docs: add arch doc directories to the index
+Date: Tue, 18 Jun 2019 18:05:41 -0300
+Message-Id: <361595adad058766dd3429db996dd78b5e234621.1560891322.git.mchehab+samsung@kernel.org>
 X-Mailer: git-send-email 2.21.0
 In-Reply-To: <cover.1560891322.git.mchehab+samsung@kernel.org>
 References: <cover.1560891322.git.mchehab+samsung@kernel.org>
@@ -46,61 +46,77 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Jonathan Corbet <corbet@lwn.net>, Michal Simek <michal.simek@xilinx.com>,
- linux-kernel@vger.kernel.org,
+Cc: linux-s390@vger.kernel.org, Albert Ou <aou@eecs.berkeley.edu>,
+ Vasily Gorbik <gor@linux.ibm.com>, Heiko Carstens <heiko.carstens@de.ibm.com>,
+ Jonathan Corbet <corbet@lwn.net>, Catalin Marinas <catalin.marinas@arm.com>,
+ Palmer Dabbelt <palmer@sifive.com>, Will Deacon <will.deacon@arm.com>,
+ linux-kernel@vger.kernel.org, Mauro Carvalho Chehab <mchehab@infradead.org>,
+ Christian Borntraeger <borntraeger@de.ibm.com>,
  Mauro Carvalho Chehab <mchehab+samsung@kernel.org>,
- Mauro Carvalho Chehab <mchehab@infradead.org>,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+ linux-riscv@lists.infradead.org, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The current file there (emmi) provides a description of
-the driver uAPI and kAPI.
-
-Signed-off-by: Mauro Carvalho Chehab <mchehab+samsung@kernel.org>
----
- Documentation/driver-api/index.rst              | 1 +
- Documentation/{ => driver-api}/xilinx/eemi.rst  | 0
- Documentation/{ => driver-api}/xilinx/index.rst | 1 -
- 3 files changed, 1 insertion(+), 1 deletion(-)
- rename Documentation/{ => driver-api}/xilinx/eemi.rst (100%)
- rename Documentation/{ => driver-api}/xilinx/index.rst (94%)
-
-diff --git a/Documentation/driver-api/index.rst b/Documentation/driver-api/index.rst
-index 492b96003af2..6935d973ff5b 100644
---- a/Documentation/driver-api/index.rst
-+++ b/Documentation/driver-api/index.rst
-@@ -124,6 +124,7 @@ available subsections can be seen below.
-    unaligned-memory-access
-    vfio
-    vfio-mediated-device
-+   xilinx/index
-    xillybus
-    xz
-    zorro
-diff --git a/Documentation/xilinx/eemi.rst b/Documentation/driver-api/xilinx/eemi.rst
-similarity index 100%
-rename from Documentation/xilinx/eemi.rst
-rename to Documentation/driver-api/xilinx/eemi.rst
-diff --git a/Documentation/xilinx/index.rst b/Documentation/driver-api/xilinx/index.rst
-similarity index 94%
-rename from Documentation/xilinx/index.rst
-rename to Documentation/driver-api/xilinx/index.rst
-index 01cc1a0714df..13f7589ed442 100644
---- a/Documentation/xilinx/index.rst
-+++ b/Documentation/driver-api/xilinx/index.rst
-@@ -1,4 +1,3 @@
--:orphan:
- 
- ===========
- Xilinx FPGA
--- 
-2.21.0
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+Tm93IHRoYXQgc2V2ZXJhbCBhcmNoIGRvY3VtZW50cyB3ZXJlIGNvbnZlcnRlZCB0byBSZVNULAph
+ZGQgdGhlaXIgaW5kZXhlcyB0byBEb2N1bWVudGF0aW9uL2luZGV4LnJzdCBhbmQgcmVtb3ZlIHRo
+ZQo6b3JwaGFuOiAgZnJvbSB0aGVtLgoKU2lnbmVkLW9mZi1ieTogTWF1cm8gQ2FydmFsaG8gQ2hl
+aGFiIDxtY2hlaGFiK3NhbXN1bmdAa2VybmVsLm9yZz4KLS0tCiBEb2N1bWVudGF0aW9uL2FybS9p
+bmRleC5yc3QgICAgfCAgMiAtLQogRG9jdW1lbnRhdGlvbi9hcm02NC9pbmRleC5yc3QgIHwgIDIg
+LS0KIERvY3VtZW50YXRpb24vaWE2NC9pbmRleC5yc3QgICB8ICAyIC0tCiBEb2N1bWVudGF0aW9u
+L2luZGV4LnJzdCAgICAgICAgfCAxMCArKysrKysrKysrCiBEb2N1bWVudGF0aW9uL202OGsvaW5k
+ZXgucnN0ICAgfCAgMiAtLQogRG9jdW1lbnRhdGlvbi9yaXNjdi9pbmRleC5yc3QgIHwgIDIgLS0K
+IERvY3VtZW50YXRpb24vczM5MC9pbmRleC5yc3QgICB8ICAyIC0tCiBEb2N1bWVudGF0aW9uL3Nw
+YXJjL2luZGV4LnJzdCAgfCAgMiAtLQogRG9jdW1lbnRhdGlvbi94dGVuc2EvaW5kZXgucnN0IHwg
+IDIgLS0KIDkgZmlsZXMgY2hhbmdlZCwgMTAgaW5zZXJ0aW9ucygrKSwgMTYgZGVsZXRpb25zKC0p
+CgpkaWZmIC0tZ2l0IGEvRG9jdW1lbnRhdGlvbi9hcm0vaW5kZXgucnN0IGIvRG9jdW1lbnRhdGlv
+bi9hcm0vaW5kZXgucnN0CmluZGV4IGJkMzE2ZDFhMTgwMi4uOWMyZjc4MWY0Njg1IDEwMDY0NAot
+LS0gYS9Eb2N1bWVudGF0aW9uL2FybS9pbmRleC5yc3QKKysrIGIvRG9jdW1lbnRhdGlvbi9hcm0v
+aW5kZXgucnN0CkBAIC0xLDUgKzEsMyBAQAot77u/Om9ycGhhbjoKLQogPT09PT09PT09PT09PT09
+PQogQVJNIEFyY2hpdGVjdHVyZQogPT09PT09PT09PT09PT09PQpkaWZmIC0tZ2l0IGEvRG9jdW1l
+bnRhdGlvbi9hcm02NC9pbmRleC5yc3QgYi9Eb2N1bWVudGF0aW9uL2FybTY0L2luZGV4LnJzdApp
+bmRleCAwMThiNzgzNmVjYjcuLjk2YjY5NmJhNGU2YyAxMDA2NDQKLS0tIGEvRG9jdW1lbnRhdGlv
+bi9hcm02NC9pbmRleC5yc3QKKysrIGIvRG9jdW1lbnRhdGlvbi9hcm02NC9pbmRleC5yc3QKQEAg
+LTEsNSArMSwzIEBACi06b3JwaGFuOgotCiA9PT09PT09PT09PT09PT09PT0KIEFSTTY0IEFyY2hp
+dGVjdHVyZQogPT09PT09PT09PT09PT09PT09CmRpZmYgLS1naXQgYS9Eb2N1bWVudGF0aW9uL2lh
+NjQvaW5kZXgucnN0IGIvRG9jdW1lbnRhdGlvbi9pYTY0L2luZGV4LnJzdAppbmRleCBhM2UzMDUy
+YWQ2ZTIuLmVmOTk0NzVmNjcyYiAxMDA2NDQKLS0tIGEvRG9jdW1lbnRhdGlvbi9pYTY0L2luZGV4
+LnJzdAorKysgYi9Eb2N1bWVudGF0aW9uL2lhNjQvaW5kZXgucnN0CkBAIC0xLDUgKzEsMyBAQAot
+Om9ycGhhbjoKLQogPT09PT09PT09PT09PT09PT09CiBJQS02NCBBcmNoaXRlY3R1cmUKID09PT09
+PT09PT09PT09PT09PQpkaWZmIC0tZ2l0IGEvRG9jdW1lbnRhdGlvbi9pbmRleC5yc3QgYi9Eb2N1
+bWVudGF0aW9uL2luZGV4LnJzdAppbmRleCAyZjliZjM3Yjg5ODkuLjgyY2Q5NTI4ZGZmMCAxMDA2
+NDQKLS0tIGEvRG9jdW1lbnRhdGlvbi9pbmRleC5yc3QKKysrIGIvRG9jdW1lbnRhdGlvbi9pbmRl
+eC5yc3QKQEAgLTExNiw3ICsxMTYsMTcgQEAgaW1wbGVtZW50YXRpb24uCiAgICA6bWF4ZGVwdGg6
+IDIKIAogICAgc2gvaW5kZXgKKyAgIGFybS9pbmRleAorICAgYXJtNjQvaW5kZXgKKyAgIGlhNjQv
+aW5kZXgKKyAgIG02OGsvaW5kZXgKKyAgIHBvd2VycGMvaW5kZXgKKyAgIHJpc2N2L2luZGV4Cisg
+ICBzMzkwL2luZGV4CisgICBzaC9pbmRleAorICAgc3BhcmMvaW5kZXgKICAgIHg4Ni9pbmRleAor
+ICAgeHRlbnNhL2luZGV4CiAKIEZpbGVzeXN0ZW0gRG9jdW1lbnRhdGlvbgogLS0tLS0tLS0tLS0t
+LS0tLS0tLS0tLS0tCmRpZmYgLS1naXQgYS9Eb2N1bWVudGF0aW9uL202OGsvaW5kZXgucnN0IGIv
+RG9jdW1lbnRhdGlvbi9tNjhrL2luZGV4LnJzdAppbmRleCBmMzI3M2VjMDc1YzMuLmFhMTIxY2Zj
+YmJkOSAxMDA2NDQKLS0tIGEvRG9jdW1lbnRhdGlvbi9tNjhrL2luZGV4LnJzdAorKysgYi9Eb2N1
+bWVudGF0aW9uL202OGsvaW5kZXgucnN0CkBAIC0xLDUgKzEsMyBAQAotOm9ycGhhbjoKLQogPT09
+PT09PT09PT09PT09PT0KIG02OGsgQXJjaGl0ZWN0dXJlCiA9PT09PT09PT09PT09PT09PQpkaWZm
+IC0tZ2l0IGEvRG9jdW1lbnRhdGlvbi9yaXNjdi9pbmRleC5yc3QgYi9Eb2N1bWVudGF0aW9uL3Jp
+c2N2L2luZGV4LnJzdAppbmRleCBjNGI5MDZkOWI1YTcuLmUzY2EwOTIyYThjMiAxMDA2NDQKLS0t
+IGEvRG9jdW1lbnRhdGlvbi9yaXNjdi9pbmRleC5yc3QKKysrIGIvRG9jdW1lbnRhdGlvbi9yaXNj
+di9pbmRleC5yc3QKQEAgLTEsNSArMSwzIEBACi06b3JwaGFuOgotCiA9PT09PT09PT09PT09PT09
+PT09CiBSSVNDLVYgYXJjaGl0ZWN0dXJlCiA9PT09PT09PT09PT09PT09PT09CmRpZmYgLS1naXQg
+YS9Eb2N1bWVudGF0aW9uL3MzOTAvaW5kZXgucnN0IGIvRG9jdW1lbnRhdGlvbi9zMzkwL2luZGV4
+LnJzdAppbmRleCAxYTkxNGRhMmEwN2IuLjQ2MDIzMTI5MDlkMyAxMDA2NDQKLS0tIGEvRG9jdW1l
+bnRhdGlvbi9zMzkwL2luZGV4LnJzdAorKysgYi9Eb2N1bWVudGF0aW9uL3MzOTAvaW5kZXgucnN0
+CkBAIC0xLDUgKzEsMyBAQAotOm9ycGhhbjoKLQogPT09PT09PT09PT09PT09PT0KIHMzOTAgQXJj
+aGl0ZWN0dXJlCiA9PT09PT09PT09PT09PT09PQpkaWZmIC0tZ2l0IGEvRG9jdW1lbnRhdGlvbi9z
+cGFyYy9pbmRleC5yc3QgYi9Eb2N1bWVudGF0aW9uL3NwYXJjL2luZGV4LnJzdAppbmRleCA5MWY3
+ZDY2NDNkZDUuLjcxY2ZmNjIxZjI0MyAxMDA2NDQKLS0tIGEvRG9jdW1lbnRhdGlvbi9zcGFyYy9p
+bmRleC5yc3QKKysrIGIvRG9jdW1lbnRhdGlvbi9zcGFyYy9pbmRleC5yc3QKQEAgLTEsNSArMSwz
+IEBACi06b3JwaGFuOgotCiA9PT09PT09PT09PT09PT09PT0KIFNwYXJjIEFyY2hpdGVjdHVyZQog
+PT09PT09PT09PT09PT09PT09CmRpZmYgLS1naXQgYS9Eb2N1bWVudGF0aW9uL3h0ZW5zYS9pbmRl
+eC5yc3QgYi9Eb2N1bWVudGF0aW9uL3h0ZW5zYS9pbmRleC5yc3QKaW5kZXggNWEyNGUzNjVlMzVm
+Li4yMzljNWYwYTVjNjcgMTAwNjQ0Ci0tLSBhL0RvY3VtZW50YXRpb24veHRlbnNhL2luZGV4LnJz
+dAorKysgYi9Eb2N1bWVudGF0aW9uL3h0ZW5zYS9pbmRleC5yc3QKQEAgLTEsNSArMSwzIEBACi06
+b3JwaGFuOgotCiA9PT09PT09PT09PT09PT09PT09CiBYdGVuc2EgQXJjaGl0ZWN0dXJlCiA9PT09
+PT09PT09PT09PT09PT09Ci0tIAoyLjIxLjAKCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1h
+cm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcv
+bWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
