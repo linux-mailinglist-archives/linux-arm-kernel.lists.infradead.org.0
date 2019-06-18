@@ -2,81 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7FF984A3B4
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 18 Jun 2019 16:19:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 38D624A3C6
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 18 Jun 2019 16:21:52 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=HK7v4NJmqOiOEIwoDwVAmeZSxQWPhhMFnvJ69Fh+gMk=; b=jSN1rf9ueY2jfh
-	N9aBIiWOh9VieTbSi8qtwNdUxkRDlHl8+upWF7dyoW16fg+tBzSvkXi76zemO18E7VCcIKbljBFD2
-	34iZsaZbpiWUga8W2vC1NSyI5aXP8zx2sojXe3ZsVudr8hE+LXr1mt9ot+12HACrbsKockhtj8iIr
-	7gAU+ducfNoti0piA951s2AvuHlEQxJA0QVfxJjU/kfSdq6zdGqBcu85+6j8e6A1ZGlkFQZ9D6bPt
-	SuGmC5vrQzE9UTm8QZmnaHTYLXy23ffdegV/Zq5WtX2vMRi9AV7GpUIyUf6ujuSJfeRQ5azL71pSy
-	sxrJHb5cf1WC98/qL9EQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=Mf0SOBfeFEePV73hY+CjIyq0RlCYmetyiIzf9+gePqw=; b=Zq6856jpm47YycI/VL23rxyXK
+	1WxkD2cHDsk8VUqQXg3h9RGPYb4crXXEj4WgF4rs/Ac4pVW5pqev3Dkut28kK4Kj5G+U+Wgp+qTMT
+	EcX2cOG3m0BfDU2jIInRuZfId3BcoBulwfNNMW6klNmZF3zW/3E4cxMykuE0GVUYXJQrQprqoYSyJ
+	gJcxg74KZUEW3UjoPuS68qeR32UI1OKCRv94z6FxZ3NUqNR0d4XR014iGHkYTlDFcGC35Da5XiAvC
+	Oe6ULUz79mCoGAkomMLYbhgMpMKvH5bE+FJXJaU+2/UpODjzDyRVkro1ZsdNmSUW8ImW21fiwJuyE
+	V5wiq40ow==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hdEwt-0001AB-ML; Tue, 18 Jun 2019 14:18:59 +0000
-Received: from mail.kernel.org ([198.145.29.99])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hdEwf-00019i-Bh
- for linux-arm-kernel@lists.infradead.org; Tue, 18 Jun 2019 14:18:46 +0000
-Received: from mail-qt1-f180.google.com (mail-qt1-f180.google.com
- [209.85.160.180])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id ED33C20B1F
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 18 Jun 2019 14:18:44 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1560867525;
- bh=fmH1HS1i21FXBrdGVVcYis11lRtY96O6Nq7hw7xpuXc=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=JoDrQk3MgbRvSeO+7rtnkhiCNb09N7doFTHOV7WnAsndUpzx+LxFKG5zn2RpjsgeQ
- E8wiAS1v58NskYQsv3sgTFHkFapWDgDYH7WE/SoMd4gryGJpNbrOGyIeLHGGkAnMwt
- FEOhMsVWLZ4cKFsLpkBHVVq21MDiyEMW+ocxBnLQ=
-Received: by mail-qt1-f180.google.com with SMTP id d23so15513610qto.2
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 18 Jun 2019 07:18:44 -0700 (PDT)
-X-Gm-Message-State: APjAAAUtgwhJalNXBhjS2hdJu+FJU1/JRk3nO44uANH/VppevI/CJxUZ
- CiTAg+GmtmHg3ma7pSpcwoUGcZOk0g/3Z7ynNw==
-X-Google-Smtp-Source: APXvYqxqXrhBkfwz+CkmpI6Dnza5Sqa7IVWFgp1FgSWrNioXxep7UkwWRLPmku5uTgQa9FsH0l163BNzQrHu5CpPAQs=
-X-Received: by 2002:aed:3f10:: with SMTP id p16mr35442573qtf.110.1560867524199; 
- Tue, 18 Jun 2019 07:18:44 -0700 (PDT)
+	id 1hdEzb-0003zp-EC; Tue, 18 Jun 2019 14:21:47 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hdEzO-0003oF-EG
+ for linux-arm-kernel@lists.infradead.org; Tue, 18 Jun 2019 14:21:35 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 39AF22B;
+ Tue, 18 Jun 2019 07:21:29 -0700 (PDT)
+Received: from [192.168.122.164] (U201426.austin.arm.com [10.118.28.29])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 281FC3F718;
+ Tue, 18 Jun 2019 07:21:29 -0700 (PDT)
+Subject: Re: [PATCH v2 1/2] ACPI/PPTT: Add support for ACPI 6.3 thread flag
+To: Valentin Schneider <valentin.schneider@arm.com>,
+ linux-arm-kernel@lists.infradead.org
+References: <20190614223158.49575-1-jeremy.linton@arm.com>
+ <20190614223158.49575-2-jeremy.linton@arm.com>
+ <667f95c0-5aa9-f460-a49a-e6dfefc027d8@arm.com>
+From: Jeremy Linton <jeremy.linton@arm.com>
+Message-ID: <2d1b547f-f9ee-391c-c4f3-0232a08a86bc@arm.com>
+Date: Tue, 18 Jun 2019 09:21:21 -0500
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.6.1
 MIME-Version: 1.0
-References: <20190614203144.3850-2-joseph.kogut@gmail.com>
- <20190614235719.8134-1-joseph.kogut@gmail.com>
- <CAJKOXPc-Xztou+xyibb8YZtfz20q3kzr_gTBoE=R3q_CSk9kzQ@mail.gmail.com>
-In-Reply-To: <CAJKOXPc-Xztou+xyibb8YZtfz20q3kzr_gTBoE=R3q_CSk9kzQ@mail.gmail.com>
-From: Rob Herring <robh+dt@kernel.org>
-Date: Tue, 18 Jun 2019 08:18:32 -0600
-X-Gmail-Original-Message-ID: <CAL_Jsq+8s3iNUy5ZCtWW5k-0sa51CR0xdv3Gh_sR=jsVtLmTdQ@mail.gmail.com>
-Message-ID: <CAL_Jsq+8s3iNUy5ZCtWW5k-0sa51CR0xdv3Gh_sR=jsVtLmTdQ@mail.gmail.com>
-Subject: Re: [PATCH v2 2/2] arm: dts: add ARM Mali GPU node for Odroid XU3
-To: Krzysztof Kozlowski <krzk@kernel.org>,
- Joseph Kogut <joseph.kogut@gmail.com>
+In-Reply-To: <667f95c0-5aa9-f460-a49a-e6dfefc027d8@arm.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190618_071845_428174_5240EE30 
-X-CRM114-Status: GOOD (  15.89  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190618_072134_524303_C525B973 
+X-CRM114-Status: GOOD (  21.76  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -88,63 +64,93 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- "linux-samsung-soc@vger.kernel.org" <linux-samsung-soc@vger.kernel.org>,
- David Airlie <airlied@linux.ie>, dri-devel <dri-devel@lists.freedesktop.org>,
- Kukjin Kim <kgene@kernel.org>, Daniel Vetter <daniel@ffwll.ch>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
+Cc: catalin.marinas@arm.com, will.deacon@arm.com, rjw@rjwysocki.net,
+ linux-kernel@vger.kernel.org, linux-acpi@vger.kernel.org, sudeep.holla@arm.com,
+ lenb@kernel.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Jun 18, 2019 at 3:27 AM Krzysztof Kozlowski <krzk@kernel.org> wrote:
->
-> On Sat, 15 Jun 2019 at 01:57, Joseph Kogut <joseph.kogut@gmail.com> wrote:
-> >
-> > Add device tree node for mali gpu on Odroid XU3 SoCs.
-> >
-> > Signed-off-by: Joseph Kogut <joseph.kogut@gmail.com>
-> > ---
-> >
-> > Changes v1 -> v2:
-> > - Use interrupt name ordering from binding doc
-> > - Specify a single clock for GPU node
-> > - Add gpu opp table
-> > - Fix warnings from IRQ_TYPE_NONE
-> >
-> >  .../boot/dts/exynos5422-odroidxu3-common.dtsi | 26 +++++++++++++++++++
-> >  1 file changed, 26 insertions(+)
-> >
-> > diff --git a/arch/arm/boot/dts/exynos5422-odroidxu3-common.dtsi b/arch/arm/boot/dts/exynos5422-odroidxu3-common.dtsi
-> > index 93a48f2dda49..b8a4246e3b37 100644
-> > --- a/arch/arm/boot/dts/exynos5422-odroidxu3-common.dtsi
-> > +++ b/arch/arm/boot/dts/exynos5422-odroidxu3-common.dtsi
-> > @@ -48,6 +48,32 @@
-> >                 cooling-levels = <0 130 170 230>;
-> >         };
-> >
-> > +       gpu: gpu@11800000 {
-> > +               compatible = "samsung,exynos-mali", "arm,mali-t628";
-> > +               reg = <0x11800000 0x5000>;
-> > +               interrupts = <GIC_SPI 219 IRQ_TYPE_LEVEL_HIGH>,
-> > +                            <GIC_SPI 74  IRQ_TYPE_LEVEL_HIGH>,
-> > +                            <GIC_SPI 117 IRQ_TYPE_LEVEL_HIGH>;
-> > +               interrupt-names = "job", "mmu", "gpu";
-> > +               clocks = <&clock CLK_G3D>;
-> > +               mali-supply = <&buck4_reg>;
-> > +               operating-points-v2 = <&gpu_opp_table>;
-> > +       };
-> > +
-> > +       gpu_opp_table: gpu-opp-table {
->
-> One more thing - use "opp_table" as node name (generic class of node,
-> matches style with other tables).
+On 6/17/19 7:34 AM, Valentin Schneider wrote:
+> Hi Jeremy,
+> 
+> Few nits below.
+> 
+> Also, I had a look at the other PPTT processor flags that were introduced
+> in 6.3, and the only other one being used is ACPI_LEAF_NODE in
+> acpi_pptt_leaf_node(). However that one already has a handle on the table
+> header, so the check_acpi_cpu_flag() isn't of much help there.
+> 
+> I don't believe the other existing flags will benefit from the helper since
+> they are more about describing the PPTT tree, but I think it doesn't hurt
+> to keep it around for potential future flags.
 
-'opp-table' as convention is using '-' rather than '_'.
+That was the thought process.
 
-Rob
+> 
+> On 14/06/2019 23:31, Jeremy Linton wrote:
+> [...]
+>> @@ -517,6 +517,43 @@ static int find_acpi_cpu_topology_tag(unsigned int cpu, int level, int flag)
+>>   	return retval;
+>>   }
+>>   
+>> +/**
+>> + * check_acpi_cpu_flag() - Determine if CPU node has a flag set
+>> + * @cpu: Kernel logical CPU number
+>> + * @rev: The PPTT revision defining the flag
+>> + * @flag: The flag itself
+>> + *
+>> + * Check the node representing a CPU for a given flag.
+>> + *
+>> + * Return: -ENOENT if the PPTT doesn't exist, the CPU cannot be found or
+>> + *	   the table revision isn't new enough.
+>> + * Otherwise returns flag value
+>> + */
+> 
+> Nit: strictly speaking we're not returning the flag value but its mask
+> applied to the flags field. I don't think anyone will care about getting
+> the actual flag value, but it should be made obvious in the doc:
+
+Or I clarify the code to actually do what the comments says. Maybe that 
+is what John G was also pointing out too?
+
+
+> 
+> -ENOENT if ...
+> 0 if the flag isn't set
+>> 0 if it is set.
+> 
+> [...]
+>> @@ -581,6 +618,21 @@ int cache_setup_acpi(unsigned int cpu)
+>>   	return status;
+>>   }
+>>   
+>> +/**
+>> + * acpi_pptt_cpu_is_thread() - Determine if CPU is a thread
+>> + * @cpu: Kernel logical CPU number
+>> + *
+>> + *
+> 
+> Nit: extra newline
+> 
+>> + * Return: 1, a thread
+>> + *         0, not a thread
+>> + *         -ENOENT ,if the PPTT doesn't exist, the CPU cannot be found or
+>> + *         the table revision isn't new enough.
+>> + */
+>> +int acpi_pptt_cpu_is_thread(unsigned int cpu)
+>> +{
+>> +	return check_acpi_cpu_flag(cpu, 2, ACPI_PPTT_ACPI_PROCESSOR_IS_THREAD);
+>> +}
+>> +
+>>   /**
+>>    * find_acpi_cpu_topology() - Determine a unique topology value for a given CPU
+>>    * @cpu: Kernel logical CPU number
+>> @@ -641,7 +693,6 @@ int find_acpi_cpu_cache_topology(unsigned int cpu, int level)
+> [...]
+> 
+
 
 _______________________________________________
 linux-arm-kernel mailing list
