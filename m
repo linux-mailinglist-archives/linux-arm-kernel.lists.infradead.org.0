@@ -2,67 +2,103 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3452F4A08A
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 18 Jun 2019 14:15:29 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B04934A0C1
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 18 Jun 2019 14:28:22 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=YfWXWON9OptgXsEp75m9cuA458QlS/8laG57R+udNhk=; b=nkY1k7oI4vEPfr
-	Ut8wnfhvY7UDz5bA0zmPomfD+gVM4+k4FESgJkAXpzzsJZESPx39AJJ5/CnRSW0XMVI5Ckr/RTZFt
-	M4SxIaq3XzOsnM5sTQEQ10Je0iP9xl0O40Pu7l1hqbVFILYODb1nLOMhryWFrO1b3bqaNRX2DBW7A
-	T0KorRKPQEMeA6rQEcG+xFZ+ErCbvoce8BM/yP7R6UtZHH6R+H6NW+NqtuO5gSMQRm7X2M9L1cDOT
-	gpIUNkdVg04Je5vkIIel8/kqWdiysrpnvizv9CizgeMJVkovtKObm5NtUzetiuPSEhHpDmXGQgZqu
-	fHafLeWjVsNRhIkPvuHA==;
+	List-Owner; bh=6xCTyE4Rpb839jKZ6hB0SZM4s0nMukoJZqtbsjqWvXI=; b=ugw7Cq5w7HCaWe
+	puE91q4ikLZ1YkQhUETKgJdMYumzJ5Zy/Az4weMtR1N2lhXECCSRDrxONno8cCwYS8dVq4tP79OfQ
+	ClBPitPAXSwKH86KITZyBGo8H6736HxwXzKFr/l7C99SUCtQsZ4mslHS0+MW0i7KHBVkdlpr9t+K1
+	IzqSyyNxHfMpPSeNzMSW87ZF9P/fG9aEhE3dHnF1QPeviOS5bw5VCsz/eDEGKguVCbZ/ONyNEhWaK
+	acwo1Y0CEYPAkib+sSCq51N+UwRC+EOAkZEJcugQzCBcz/+YQJRBrtgWSBSDUQsIZHK4VQVxT4Kd0
+	tBqZxfA2ZH6lOEcYKFbQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hdD1J-00014W-Ob; Tue, 18 Jun 2019 12:15:25 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
+	id 1hdDDm-0006Oz-7W; Tue, 18 Jun 2019 12:28:18 +0000
+Received: from mail-eopbgr810073.outbound.protection.outlook.com
+ ([40.107.81.73] helo=NAM01-BY2-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hdD0R-0000Q6-Cq; Tue, 18 Jun 2019 12:14:36 +0000
-X-UUID: f9fc298f44d14936a32f2eddc8c73f6f-20190618
-X-UUID: f9fc298f44d14936a32f2eddc8c73f6f-20190618
-Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw01.mediatek.com
- (envelope-from <yong.wu@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 113601896; Tue, 18 Jun 2019 04:14:28 -0800
-Received: from MTKMBS31N1.mediatek.inc (172.27.4.69) by
- MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Tue, 18 Jun 2019 05:14:27 -0700
-Received: from MTKCAS36.mediatek.inc (172.27.4.186) by MTKMBS31N1.mediatek.inc
- (172.27.4.69) with Microsoft SMTP Server (TLS) id 15.0.1395.4;
- Tue, 18 Jun 2019 20:14:25 +0800
-Received: from [10.17.3.153] (172.27.4.253) by MTKCAS36.mediatek.inc
- (172.27.4.170) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Tue, 18 Jun 2019 20:14:24 +0800
-Message-ID: <1560860064.9531.0.camel@mhfsdcap03>
-Subject: Re: [PATCH v2 08/12] drm/mediatek: Get rid of mtk_smi_larb_get/put
-From: Yong Wu <yong.wu@mediatek.com>
-To: CK Hu <ck.hu@mediatek.com>
-Date: Tue, 18 Jun 2019 20:14:24 +0800
-In-Reply-To: <1560839719.3736.0.camel@mtksdaap41>
-References: <1560171313-28299-1-git-send-email-yong.wu@mediatek.com>
- <1560171313-28299-9-git-send-email-yong.wu@mediatek.com>
- <1560839719.3736.0.camel@mtksdaap41>
-X-Mailer: Evolution 3.10.4-0ubuntu2 
+ id 1hdDDb-0006OU-6R
+ for linux-arm-kernel@lists.infradead.org; Tue, 18 Jun 2019 12:28:08 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=xilinx.onmicrosoft.com; s=selector1-xilinx-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=5Zm0jDVCCqDNt3W3hYGDEGAmc01tkRV943G38pqB4Sk=;
+ b=sRKGWk/SCxhS/YV7Q3c+BqvnrQegVnK8Qi+BOiWALDnQVnyitVkldjEhLaKjIKGzIsWMdNbF0K3vc7CFWPfNdJxyvM9zdRwXURTlH94SOJBrxTpjsc6tOnbaz2hvTiMHKaxYALjtYZqBPz5ehU4qh5ySRrqqpgWwjHuiS/3w7hI=
+Received: from CH2PR02MB6453.namprd02.prod.outlook.com (52.132.228.24) by
+ CH2PR02MB6038.namprd02.prod.outlook.com (10.255.156.15) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.1987.12; Tue, 18 Jun 2019 12:28:02 +0000
+Received: from CH2PR02MB6453.namprd02.prod.outlook.com
+ ([fe80::8121:11ae:9021:ba9e]) by CH2PR02MB6453.namprd02.prod.outlook.com
+ ([fe80::8121:11ae:9021:ba9e%7]) with mapi id 15.20.1987.014; Tue, 18 Jun 2019
+ 12:28:02 +0000
+From: Bharat Kumar Gogada <bharatku@xilinx.com>
+To: "lorenzo.pieralisi@arm.com" <lorenzo.pieralisi@arm.com>
+Subject: RE: [PATCH v4] PCI: xilinx-nwl: Fix Multi MSI data programming
+Thread-Topic: [PATCH v4] PCI: xilinx-nwl: Fix Multi MSI data programming
+Thread-Index: AQHVIQgn2G+6s2M/0EWS6kSrcyuXeqafme0AgAHGMRA=
+Date: Tue, 18 Jun 2019 12:28:02 +0000
+Message-ID: <CH2PR02MB6453032A01A540F5E9C58402A5EA0@CH2PR02MB6453.namprd02.prod.outlook.com>
+References: <1560334679-9206-1-git-send-email-bharat.kumar.gogada@xilinx.com>
+ <20190617092108.GA18020@e121166-lin.cambridge.arm.com>
+In-Reply-To: <20190617092108.GA18020@e121166-lin.cambridge.arm.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-Auto-Response-Suppress: DR, RN, NRN, OOF, AutoReply
+X-MS-TNEF-Correlator: 
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=bharatku@xilinx.com; 
+x-originating-ip: [149.199.50.133]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: a8a8c915-509f-4a90-5541-08d6f3e86840
+x-ms-office365-filtering-ht: Tenant
+x-microsoft-antispam: BCL:0; PCL:0;
+ RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600148)(711020)(4605104)(1401327)(4618075)(2017052603328)(7193020);
+ SRVR:CH2PR02MB6038; 
+x-ms-traffictypediagnostic: CH2PR02MB6038:
+x-ld-processed: 657af505-d5df-48d0-8300-c31994686c5c,ExtAddr
+x-microsoft-antispam-prvs: <CH2PR02MB6038D8E2226D32A77D3FD2D0A5EA0@CH2PR02MB6038.namprd02.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:9508;
+x-forefront-prvs: 007271867D
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(396003)(39860400002)(136003)(376002)(346002)(366004)(189003)(199004)(64756008)(102836004)(2351001)(26005)(6506007)(478600001)(66556008)(11346002)(66446008)(73956011)(6436002)(66476007)(7696005)(55016002)(33656002)(66946007)(446003)(76116006)(5640700003)(76176011)(476003)(86362001)(486006)(6246003)(107886003)(186003)(74316002)(4326008)(25786009)(5660300002)(68736007)(7736002)(8676002)(71190400001)(71200400001)(66066001)(2501003)(81166006)(81156014)(14444005)(256004)(6916009)(229853002)(8936002)(6116002)(3846002)(52536014)(9686003)(99286004)(2906002)(316002)(54906003)(53936002)(305945005)(14454004);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:CH2PR02MB6038;
+ H:CH2PR02MB6453.namprd02.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; MX:1; A:1; 
+received-spf: None (protection.outlook.com: xilinx.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam-message-info: WNdCFm0SSUIRPzx9vJ8YYWRjSWAyk+/mprF8p4ksaYl2r5T/Eyb+L/lnTQGILW30TgI7CLFxhafHZpdGztSP3Ww49WrPnUrVRcW4gBbF7tN/gMZKJvTYtCaZG0cR1GjU/7WOVxgCZYTRPvZjYv4BsFcv5FtSdpgr9N5g6mfrahFWNiGkexYKu0tFBj+KAaHnZQ2lDG0neTqj/GZsXE8z0ODHetwS7EBEGieP5sSCcN9o6WQi4IQZ8gK1kef80d4sXO47xwaeobRm0+H0s0JMmT/OOQBNo2L3Opk2s1EV9xNbNPr3A7AnOT2NIlTrEofd0iI311Y+E0aEMoGauAG1DcWHjqE9qbYqMAPnKZQxli0Kb/TO1MZsmAlvRWBqtYQZeYRdKGa2Qije/NZjgEET5ysNmU7soPthTWrTslfLPFk=
 MIME-Version: 1.0
-X-MTK: N
+X-OriginatorOrg: xilinx.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: a8a8c915-509f-4a90-5541-08d6f3e86840
+X-MS-Exchange-CrossTenant-originalarrivaltime: 18 Jun 2019 12:28:02.4873 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 657af505-d5df-48d0-8300-c31994686c5c
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: bharatku@xilinx.com
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: CH2PR02MB6038
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190618_051431_709522_F182176F 
-X-CRM114-Status: GOOD (  16.72  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190618_052807_303998_904B1BEB 
+X-CRM114-Status: GOOD (  19.47  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [216.200.240.184 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ no trust [40.107.81.73 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -74,157 +110,93 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: youlin.pei@mediatek.com, devicetree@vger.kernel.org,
- Nicolas Boichat <drinkcat@chromium.org>, srv_heupstream@mediatek.com,
- Joerg Roedel <joro@8bytes.org>, Will Deacon <will.deacon@arm.com>,
- linux-kernel@vger.kernel.org, Evan Green <evgreen@chromium.org>,
- Tomasz Figa <tfiga@google.com>, iommu@lists.linux-foundation.org,
- Rob Herring <robh+dt@kernel.org>, linux-mediatek@lists.infradead.org,
- Philipp Zabel <p.zabel@pengutronix.de>,
- Matthias Brugger <matthias.bgg@gmail.com>, yingjoe.chen@mediatek.com,
- anan.sun@mediatek.com, Robin
- Murphy <robin.murphy@arm.com>, linux-arm-kernel@lists.infradead.org
+Cc: "marc.zyngier@arm.com" <marc.zyngier@arm.com>,
+ "linux-pci@vger.kernel.org" <linux-pci@vger.kernel.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Ravikiran Gummaluri <rgummal@xilinx.com>,
+ "bhelgaas@google.com" <bhelgaas@google.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, 2019-06-18 at 14:35 +0800, CK Hu wrote:
-> Hi, Yong:
 > 
-> On Mon, 2019-06-10 at 20:55 +0800, Yong Wu wrote:
-> > MediaTek IOMMU has already added the device_link between the consumer
-> > and smi-larb device. If the drm device call the pm_runtime_get_sync,
-> > the smi-larb's pm_runtime_get_sync also be called automatically.
-> > 
-> > CC: CK Hu <ck.hu@mediatek.com>
-> > CC: Philipp Zabel <p.zabel@pengutronix.de>
-> > Signed-off-by: Yong Wu <yong.wu@mediatek.com>
-> > Reviewed-by: Evan Green <evgreen@chromium.org>
+> On Wed, Jun 12, 2019 at 03:47:59PM +0530, Bharat Kumar Gogada wrote:
+> > The current Multi MSI data programming fails if multiple end points
+> > requesting MSI and multi MSI are connected with switch, i.e the
+> > current multi MSI data being given is not considering the number of
+> > vectors being requested in case of multi MSI.
+> > Ex: Two EP's connected via switch, EP1 requesting single MSI first,
+> > EP2 requesting Multi MSI of count four. The current code gives MSI
+> > data 0x0 to EP1 and 0x1 to EP2, but EP2 can modify lower two bits due
+> > to which EP2 also sends interrupt with MSI data 0x0 which results in
+> > always invoking virq of EP1 due to which EP2 MSI interrupt never gets
+> > handled.
+> >
+> > Fix Multi MSI data programming with required alignment by using number
+> > of vectors being requested.
+> >
+> > Fixes: ab597d35ef11 ("PCI: xilinx-nwl: Add support for Xilinx NWL PCIe
+> > Host Controller")
+> >
+> > Signed-off-by: Bharat Kumar Gogada <bharat.kumar.gogada@xilinx.com>
 > > ---
-> >  drivers/gpu/drm/mediatek/mtk_drm_crtc.c     | 11 -----------
-> >  drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.c | 26 --------------------------
-> >  drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.h |  1 -
-> >  3 files changed, 38 deletions(-)
-> > 
-> > diff --git a/drivers/gpu/drm/mediatek/mtk_drm_crtc.c b/drivers/gpu/drm/mediatek/mtk_drm_crtc.c
-> > index acad088..3a21a48 100644
-> > --- a/drivers/gpu/drm/mediatek/mtk_drm_crtc.c
-> > +++ b/drivers/gpu/drm/mediatek/mtk_drm_crtc.c
-> > @@ -18,7 +18,6 @@
-> >  #include <drm/drm_probe_helper.h>
-> >  #include <linux/clk.h>
-> >  #include <linux/pm_runtime.h>
-> > -#include <soc/mediatek/smi.h>
-> >  
-> >  #include "mtk_drm_drv.h"
-> >  #include "mtk_drm_crtc.h"
-> > @@ -371,20 +370,12 @@ static void mtk_drm_crtc_atomic_enable(struct drm_crtc *crtc,
-> >  				       struct drm_crtc_state *old_state)
-> >  {
-> >  	struct mtk_drm_crtc *mtk_crtc = to_mtk_crtc(crtc);
-> > -	struct mtk_ddp_comp *comp = mtk_crtc->ddp_comp[0];
-> >  	int ret;
-> >  
-> >  	DRM_DEBUG_DRIVER("%s %d\n", __func__, crtc->base.id);
-> >  
-> > -	ret = mtk_smi_larb_get(comp->larb_dev);
-> > -	if (ret) {
-> > -		DRM_ERROR("Failed to get larb: %d\n", ret);
-> > -		return;
-> > -	}
-> > -
-> >  	ret = mtk_crtc_ddp_hw_init(mtk_crtc);
-> >  	if (ret) {
-> > -		mtk_smi_larb_put(comp->larb_dev);
-> >  		return;
-> >  	}
+> > V4:
+> >  - Using a different bitmap registration API whcih serves single and multi
+> >    MSI requests.
+> > ---
+> >  drivers/pci/controller/pcie-xilinx-nwl.c | 11 +++++------
+> >  1 file changed, 5 insertions(+), 6 deletions(-)
 > 
-> Remove {}.
+> Applied to pci/xilinx for v5.3, please have a look and check if the commit log
+> I wrote provides a clear description of the issue.
+> 
+> Lorenzo
+Thanks Lorenzo and Marc.
+Lorenzo, can you please point to link for above commit.
 
-Thanks. I will fix in next version.
-
-> 
-> Regards,
-> CK
-> 
-> >  
-> > @@ -396,7 +387,6 @@ static void mtk_drm_crtc_atomic_disable(struct drm_crtc *crtc,
-> >  					struct drm_crtc_state *old_state)
-> >  {
-> >  	struct mtk_drm_crtc *mtk_crtc = to_mtk_crtc(crtc);
-> > -	struct mtk_ddp_comp *comp = mtk_crtc->ddp_comp[0];
+Regards,
+Bharat
+> > diff --git a/drivers/pci/controller/pcie-xilinx-nwl.c
+> > b/drivers/pci/controller/pcie-xilinx-nwl.c
+> > index 81538d7..a9e07b8 100644
+> > --- a/drivers/pci/controller/pcie-xilinx-nwl.c
+> > +++ b/drivers/pci/controller/pcie-xilinx-nwl.c
+> > @@ -483,15 +483,13 @@ static int nwl_irq_domain_alloc(struct
+> irq_domain *domain, unsigned int virq,
 > >  	int i;
-> >  
-> >  	DRM_DEBUG_DRIVER("%s %d\n", __func__, crtc->base.id);
-> > @@ -419,7 +409,6 @@ static void mtk_drm_crtc_atomic_disable(struct drm_crtc *crtc,
-> >  
-> >  	drm_crtc_vblank_off(crtc);
-> >  	mtk_crtc_ddp_hw_fini(mtk_crtc);
-> > -	mtk_smi_larb_put(comp->larb_dev);
-> >  
-> >  	mtk_crtc->enabled = false;
+> >
+> >  	mutex_lock(&msi->lock);
+> > -	bit = bitmap_find_next_zero_area(msi->bitmap, INT_PCI_MSI_NR, 0,
+> > -					 nr_irqs, 0);
+> > -	if (bit >= INT_PCI_MSI_NR) {
+> > +	bit = bitmap_find_free_region(msi->bitmap, INT_PCI_MSI_NR,
+> > +				      get_count_order(nr_irqs));
+> > +	if (bit < 0) {
+> >  		mutex_unlock(&msi->lock);
+> >  		return -ENOSPC;
+> >  	}
+> >
+> > -	bitmap_set(msi->bitmap, bit, nr_irqs);
+> > -
+> >  	for (i = 0; i < nr_irqs; i++) {
+> >  		irq_domain_set_info(domain, virq + i, bit + i, &nwl_irq_chip,
+> >  				domain->host_data, handle_simple_irq, @@
+> -509,7 +507,8 @@ static
+> > void nwl_irq_domain_free(struct irq_domain *domain, unsigned int virq,
+> >  	struct nwl_msi *msi = &pcie->msi;
+> >
+> >  	mutex_lock(&msi->lock);
+> > -	bitmap_clear(msi->bitmap, data->hwirq, nr_irqs);
+> > +	bitmap_release_region(msi->bitmap, data->hwirq,
+> > +			      get_count_order(nr_irqs));
+> >  	mutex_unlock(&msi->lock);
 > >  }
-> > diff --git a/drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.c b/drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.c
-> > index 54ca794..ede15c9 100644
-> > --- a/drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.c
-> > +++ b/drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.c
-> > @@ -265,8 +265,6 @@ int mtk_ddp_comp_init(struct device *dev, struct device_node *node,
-> >  		      const struct mtk_ddp_comp_funcs *funcs)
-> >  {
-> >  	enum mtk_ddp_comp_type type;
-> > -	struct device_node *larb_node;
-> > -	struct platform_device *larb_pdev;
-> >  
-> >  	if (comp_id < 0 || comp_id >= DDP_COMPONENT_ID_MAX)
-> >  		return -EINVAL;
-> > @@ -296,30 +294,6 @@ int mtk_ddp_comp_init(struct device *dev, struct device_node *node,
-> >  	if (IS_ERR(comp->clk))
-> >  		return PTR_ERR(comp->clk);
-> >  
-> > -	/* Only DMA capable components need the LARB property */
-> > -	comp->larb_dev = NULL;
-> > -	if (type != MTK_DISP_OVL &&
-> > -	    type != MTK_DISP_RDMA &&
-> > -	    type != MTK_DISP_WDMA)
-> > -		return 0;
-> > -
-> > -	larb_node = of_parse_phandle(node, "mediatek,larb", 0);
-> > -	if (!larb_node) {
-> > -		dev_err(dev,
-> > -			"Missing mediadek,larb phandle in %pOF node\n", node);
-> > -		return -EINVAL;
-> > -	}
-> > -
-> > -	larb_pdev = of_find_device_by_node(larb_node);
-> > -	if (!larb_pdev) {
-> > -		dev_warn(dev, "Waiting for larb device %pOF\n", larb_node);
-> > -		of_node_put(larb_node);
-> > -		return -EPROBE_DEFER;
-> > -	}
-> > -	of_node_put(larb_node);
-> > -
-> > -	comp->larb_dev = &larb_pdev->dev;
-> > -
-> >  	return 0;
-> >  }
-> >  
-> > diff --git a/drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.h b/drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.h
-> > index 8399229..b8dc17e 100644
-> > --- a/drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.h
-> > +++ b/drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.h
-> > @@ -91,7 +91,6 @@ struct mtk_ddp_comp {
-> >  	struct clk *clk;
-> >  	void __iomem *regs;
-> >  	int irq;
-> > -	struct device *larb_dev;
-> >  	enum mtk_ddp_comp_id id;
-> >  	const struct mtk_ddp_comp_funcs *funcs;
-> >  };
-> 
-> 
-
-
+> >
+> > --
+> > 2.7.4
+> >
 
 _______________________________________________
 linux-arm-kernel mailing list
