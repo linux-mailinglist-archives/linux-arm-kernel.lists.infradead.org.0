@@ -2,90 +2,75 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D9186498D1
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 18 Jun 2019 08:19:45 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 647A3498D3
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 18 Jun 2019 08:20:25 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Cc:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=BtGo7EYqNAI+9BVAqsdrDh2GlG0tkkpzqJXEpdJygs0=; b=KMpc+0c6FIN63z
-	6ZWqFLNhU1Vff3Q692MohtTZWQtuXY995NUvXiy4G4w+qIXJuVOtVGFVTg8FxGrClIqHlW7bz0n/F
-	XRQ6LlAPqsXK7OHFpsRMENW21YvfxywP5V8JVnH/ECK7DH27SRVb+3O5hG5A+eEVQ/GxPDVt3YsBT
-	Oc+UQW9XLscqbNSssfe+PQf1LcbF6dvMkJ0i51lv8VrhswTuJFfNm9/BA6oeSa2Kjs41I7mYSVKH9
-	P3ESQjZz5bEHS6jzF/z/OvFL9WB1CMMPeCop3C2a13ppGfmDKiV+I4P9emPqc2Y9g3JYKxqY/mQQL
-	AZKpJ2L2bwVXPK9Wu7/Q==;
+	List-Owner; bh=OJytxYr58sTU8Owbi8F4glFRVVtz0my1ULYSuZQULdY=; b=kUZhVYWv2qEOiL
+	yc2THxigrkAgYVj6msvcSimg80ErM1PVpP3Wmp6IE1T2shz2gCxdo4dOyNdIo2otEZ64wC6WTzVjU
+	jQ0WrJQ49gv+1/13YRFDZ4Yqx0fJnSztu+L57lnqWk8jw061VXcGi/YGUKdA/POQNV4RL6AJwXoyM
+	UAX75D2KRaqkWN7CArUwL2lv5JbtlwKXg9TdUqDeHVv5YbnDHEj1D2MqQG32uYW2obcPECIUZlH0q
+	YL30+dZQ7wt28bDiEu0ubWV4yFNBJOiADflehF+rJXUJ100H4wP4dD2Dc8Xh5uESRfTXcXT7hZxwR
+	7qNuIewESCwhINOc5+8w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hd7T5-0002JB-Uk; Tue, 18 Jun 2019 06:19:43 +0000
-Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
+	id 1hd7Th-0002bs-Ig; Tue, 18 Jun 2019 06:20:21 +0000
+Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hd7Sm-0002Gr-UC
- for linux-arm-kernel@lists.infradead.org; Tue, 18 Jun 2019 06:19:27 +0000
-Received: by mail-wr1-x443.google.com with SMTP id p13so12478191wru.10
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 17 Jun 2019 23:19:21 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=2qhMEjTGxN0dhDss7cc7zfKbD1VT4IQism6fVgX1NpE=;
- b=dvsdqA01/pZ+815FjjW8tFL5UWf7khLLQ82Ejhqn6TxNO1tCDktEgPtkMa4HNv7OLR
- 1U39nh2EFsrtSmlNZcgDcq/9sa+nGn3SUOMpDbfIAp95GzajjL3XI+3GbjB5ULFzEoSH
- IwACWh8kuOmwu5jEKWjMzofeGDXqP9safEXyJXu8ve2REW9BQaUclrQL8parNOK0OQjD
- B3wkQTkyxFJk8UmfoMVdfQg+Tn/UTwLgckw83gJpr19cDBf/Gz90iGpXy7nsEYrqDA2m
- eZwEj4HpXDoxWiOrmV6yaBfhp8pBtJeFO0hOjxV5cmt7gkv5WG1rUgP3mWcFMvMsVNL0
- dfKw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=2qhMEjTGxN0dhDss7cc7zfKbD1VT4IQism6fVgX1NpE=;
- b=NqnPn8fEGP6hxqpI8srxRaMczbQBJ7/ZCn9gzJ8gBOonTIDkgFfqGOXl6YXtajJWfs
- 99bcFwtjAhi+z90RUa/uReqVpC43tjVsAT7yJ758fgwmhpavMXN/oTttY7q4CfY8ta3U
- UN5zs3rod2NUobaAiTyJ42uaZbo0BLolHUUbEjkvpw7n9AOrV8IboGg9eDLFEn/qfcpw
- qqumCFKpw9qBWSmubL7M2YrgGZ/O/ikB/6ujQ2KRVrbjGWvugegtJglvSmX/4L/u+e/o
- TF6OuDyKOTy92K5YXDfQWAMykc0prtqs4OT/UusLvfex7mIJzN0fRDuBfyWqp0CeXaKl
- h5Lw==
-X-Gm-Message-State: APjAAAX2W1MTIJeUXbDTBfVhs+7dufNPtuQ0mzEhJ5u4Wf8M53k/6w/2
- NEILwmja8zYmkNip4e9BCQCF+Ssp4fppFBIcDTNW2w==
-X-Google-Smtp-Source: APXvYqyc9odfP5kl53sVaAJSFZ9kxou4Lg+4NAUEX3RWJa1eraarQrRn5NVyE6c41JtA+QlG76Va2MCtJMEgh2C9gYE=
-X-Received: by 2002:a5d:4b43:: with SMTP id w3mr14892373wrs.166.1560838760111; 
- Mon, 17 Jun 2019 23:19:20 -0700 (PDT)
+ id 1hd7T9-0002Xs-Bb
+ for linux-arm-kernel@lists.infradead.org; Tue, 18 Jun 2019 06:19:48 +0000
+Received: from ptx.hi.pengutronix.de ([2001:67c:670:100:1d::c0])
+ by metis.ext.pengutronix.de with esmtps
+ (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <mol@pengutronix.de>)
+ id 1hd7T7-0006Xo-Mp; Tue, 18 Jun 2019 08:19:45 +0200
+Received: from mol by ptx.hi.pengutronix.de with local (Exim 4.89)
+ (envelope-from <mol@pengutronix.de>)
+ id 1hd7T7-0007Z2-DK; Tue, 18 Jun 2019 08:19:45 +0200
+Date: Tue, 18 Jun 2019 08:19:45 +0200
+From: "m.olbrich@pengutronix.de" <m.olbrich@pengutronix.de>
+To: kernel@pengutronix.de,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Subject: Re: [PATCH v1] dmaengine: imx-sdma: remove BD_INTR for channel0
+Message-ID: <20190618061945.26xi2gxkohzac65g@pengutronix.de>
+Mail-Followup-To: kernel@pengutronix.de,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+References: <20190614083959.37944-1-yibin.gong@nxp.com>
+ <CAOMZO5Do+BsZEX43w283yWed8fQVtTC+zAvoktPLTj4c_f798w@mail.gmail.com>
+ <CAGngYiUWy5FM-zsT55-yY=kahLObZGYw=zU0F9Tzp9T2S3G6LA@mail.gmail.com>
+ <20190614180913.d66bbjrnw3gxt663@pengutronix.de>
+ <1560766686.30149.36.camel@nxp.com>
+ <20190617101508.47jk72yrtplxpgzs@pengutronix.de>
+ <1560867140.26847.12.camel@nxp.com>
 MIME-Version: 1.0
-References: <1560169080-27134-1-git-send-email-yong.wu@mediatek.com>
- <1560169080-27134-15-git-send-email-yong.wu@mediatek.com>
-In-Reply-To: <1560169080-27134-15-git-send-email-yong.wu@mediatek.com>
-From: Tomasz Figa <tfiga@google.com>
-Date: Tue, 18 Jun 2019 15:19:07 +0900
-Message-ID: <CAAFQd5A5GUn1Zq1xF2_2V0MReNPd5bra2F=nquvodSAZUua5AQ@mail.gmail.com>
-Subject: Re: [PATCH v7 14/21] iommu/mediatek: Add mmu1 support
-To: Yong Wu <yong.wu@mediatek.com>
+Content-Disposition: inline
+In-Reply-To: <1560867140.26847.12.camel@nxp.com>
+X-Sent-From: Pengutronix Hildesheim
+X-URL: http://www.pengutronix.de/
+X-IRC: #ptxdist @freenode
+X-Accept-Language: de,en
+X-Accept-Content-Type: text/plain
+X-Uptime: 08:14:35 up 31 days, 12:32, 77 users,  load average: 0.08, 0.11, 0.09
+User-Agent: NeoMutt/20170113 (1.7.2)
+X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::c0
+X-SA-Exim-Mail-From: mol@pengutronix.de
+X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
+ SAEximRunCond expanded to false
+X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190617_231925_004938_6A0ED6A9 
-X-CRM114-Status: GOOD (  18.55  )
-X-Spam-Score: -15.7 (---------------)
+X-CRM114-CacheID: sfid-20190617_231947_413512_602CDFDD 
+X-CRM114-Status: GOOD (  29.91  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-15.7 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:443 listed in]
- [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
- white-list
- -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
- white-list
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
- Match -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -97,103 +82,113 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: youlin.pei@mediatek.com, devicetree@vger.kernel.org,
- Nicolas Boichat <drinkcat@chromium.org>,
- srv_heupstream <srv_heupstream@mediatek.com>, Joerg Roedel <joro@8bytes.org>,
- Will Deacon <will.deacon@arm.com>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Evan Green <evgreen@chromium.org>,
- "list@263.net:IOMMU DRIVERS <iommu@lists.linux-foundation.org>,
- Joerg Roedel <joro@8bytes.org>, " <iommu@lists.linux-foundation.org>,
- Rob Herring <robh+dt@kernel.org>,
- "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
- Matthias Brugger <matthias.bgg@gmail.com>,
- =?UTF-8?B?WWluZ2pvZSBDaGVuICjpmbPoi7HmtLIp?= <yingjoe.chen@mediatek.com>,
- anan.sun@mediatek.com, Robin Murphy <robin.murphy@arm.com>,
- Matthias Kaehlcke <mka@chromium.org>,
- "list@263.net:IOMMU DRIVERS <iommu@lists.linux-foundation.org>,
- Joerg Roedel <joro@8bytes.org>, " <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Jun 10, 2019 at 9:21 PM Yong Wu <yong.wu@mediatek.com> wrote:
->
-> Normally the M4U HW connect EMI with smi. the diagram is like below:
->               EMI
->                |
->               M4U
->                |
->             smi-common
->                |
->        -----------------
->        |    |    |     |    ...
->     larb0 larb1  larb2 larb3
->
-> Actually there are 2 mmu cells in the M4U HW, like this diagram:
->
->               EMI
->            ---------
->             |     |
->            mmu0  mmu1     <- M4U
->             |     |
->            ---------
->                |
->             smi-common
->                |
->        -----------------
->        |    |    |     |    ...
->     larb0 larb1  larb2 larb3
->
-> This patch add support for mmu1. In order to get better performance,
-> we could adjust some larbs go to mmu1 while the others still go to
-> mmu0. This is controlled by a SMI COMMON register SMI_BUS_SEL(0x220).
->
-> mt2712, mt8173 and mt8183 M4U HW all have 2 mmu cells. the default
-> value of that register is 0 which means all the larbs go to mmu0
-> defaultly.
->
-> This is a preparing patch for adjusting SMI_BUS_SEL for mt8183.
->
-> Signed-off-by: Yong Wu <yong.wu@mediatek.com>
-> Reviewed-by: Evan Green <evgreen@chromium.org>
-> ---
->  drivers/iommu/mtk_iommu.c | 46 +++++++++++++++++++++++++++++-----------------
->  1 file changed, 29 insertions(+), 17 deletions(-)
->
-> diff --git a/drivers/iommu/mtk_iommu.c b/drivers/iommu/mtk_iommu.c
-> index 3a14301..ec4ce74 100644
-> --- a/drivers/iommu/mtk_iommu.c
-> +++ b/drivers/iommu/mtk_iommu.c
-> @@ -72,26 +72,32 @@
->  #define F_INT_CLR_BIT                          BIT(12)
->
->  #define REG_MMU_INT_MAIN_CONTROL               0x124
-> -#define F_INT_TRANSLATION_FAULT                        BIT(0)
-> -#define F_INT_MAIN_MULTI_HIT_FAULT             BIT(1)
-> -#define F_INT_INVALID_PA_FAULT                 BIT(2)
-> -#define F_INT_ENTRY_REPLACEMENT_FAULT          BIT(3)
-> -#define F_INT_TLB_MISS_FAULT                   BIT(4)
-> -#define F_INT_MISS_TRANSACTION_FIFO_FAULT      BIT(5)
-> -#define F_INT_PRETETCH_TRANSATION_FIFO_FAULT   BIT(6)
-> +                                               /* mmu0 | mmu1 */
-> +#define F_INT_TRANSLATION_FAULT                        (BIT(0) | BIT(7))
-> +#define F_INT_MAIN_MULTI_HIT_FAULT             (BIT(1) | BIT(8))
-> +#define F_INT_INVALID_PA_FAULT                 (BIT(2) | BIT(9))
-> +#define F_INT_ENTRY_REPLACEMENT_FAULT          (BIT(3) | BIT(10))
-> +#define F_INT_TLB_MISS_FAULT                   (BIT(4) | BIT(11))
-> +#define F_INT_MISS_TRANSACTION_FIFO_FAULT      (BIT(5) | BIT(12))
-> +#define F_INT_PRETETCH_TRANSATION_FIFO_FAULT   (BIT(6) | BIT(13))
+On Tue, Jun 18, 2019 at 06:08:50AM +0000, Robin Gong wrote:
+> On 2019-06-17 at 12:15 +0200, m.olbrich@pengutronix.de wrote:
+> > On Mon, Jun 17, 2019 at 02:14:34AM +0000, Robin Gong wrote:
+> > > On 2019-06-14 at 18:09 +0000, Michael Olbrich wrote:
+> > > > On Fri, Jun 14, 2019 at 09:25:51AM -0400, Sven Van Asbroeck
+> > > > wrote:
+> > > > > On Fri, Jun 14, 2019 at 6:49 AM Fabio Estevam <festevam@gmail.c
+> > > > > om>
+> > > > > wrote:
+> > > > > > According to the original report from Sven the issue started
+> > > > > > to
+> > > > > > happen
+> > > > > > on 5.0, so it would be good to add a Fixes tag and Cc stable
+> > > > > > so
+> > > > > > that
+> > > > > > this fix could be backported to 5.0/5.1 stable trees.
+> > > > > Good catch !
+> > > > > =
 
-If there are two IOMMUs, shouldn't we have two driver instances handle
-them, instead of making the driver combine them two internally?
+> > > > > However, the issue is highly timing-dependent. It will come and
+> > > > > go
+> > > > > depending
+> > > > > on the kernel version, devicetree and defconfig. If it works
+> > > > > for me
+> > > > > on
+> > > > > 4.19, that
+> > > > > doesn't mean the bug is gone on 4.19.
+> > > > > =
 
-And, what is even more important from security point of view actually,
-have two separate page tables (aka IOMMU groups) for them?
+> > > > > Looking at the commit history, I think the commit below
+> > > > > possibly
+> > > > > introduced the
+> > > > > issue. Until this commit, sdma_run_channel() would wait on the
+> > > > > interrupt
+> > > > > before proceeding. It has been there since 4.8:
+> > > > > =
 
-Best regards,
-Tomasz
+> > > > > Fixes: 1d069bfa3c78 ("dmaengine: imx-sdma: ack channel 0 IRQ in
+> > > > > the
+> > > > > interrupt handler")
+> > > > I think this is correct. Starting with this commit, the interrupt
+> > > > status fr
+> > > > channel 0 is no longer cleared in sdma_run_channel0() and
+> > > > sdma_int_handler() is always called for channel 0.
+> > > > During firmware loading the interrupts are enabled again just
+> > > > before
+> > > > the
+> > > > clocks are disabled. The interrupt is pending at this moment so
+> > > > on a
+> > > > single
+> > > > core system I think this will always work as expected. If the
+> > > > firmware
+> > > > loading and the interrupt handler run on different cores then
+> > > > this is
+> > > > racy.
+> > > > Maybe something else changed to make this more likely?
+> > > > =
+
+> > > > With this new change sdma_int_handler() is no longer called for
+> > > > channel 0
+> > > > right, so you should also remove the special handling there.
+> > > What's 'special handling' should be removed here? Do you mean put
+> > > below
+> > > pieces of your patch back?
+> > > =A0static int sdma_load_script(struct sdma_engine *sdma, void *buf,
+> > > int
+> > > size,
+> > > @@ -727,9 +720,9 @@ static irqreturn_t sdma_int_handler(int irq,
+> > > void
+> > > *dev_id)
+> > > =A0=A0=A0=A0=A0=A0=A0=A0unsigned long stat;
+> > > =A0
+> > > =A0=A0=A0=A0=A0=A0=A0=A0stat =3D readl_relaxed(sdma->regs + SDMA_H_IN=
+TR);
+> > > -=A0=A0=A0=A0=A0=A0=A0/* not interested in channel 0 interrupts */
+> > > -=A0=A0=A0=A0=A0=A0=A0stat &=3D ~1;
+> > > =A0=A0=A0=A0=A0=A0=A0=A0writel_relaxed(stat, sdma->regs + SDMA_H_INTR=
+);
+> > > +=A0=A0=A0=A0=A0=A0=A0/* channel 0 is special and not handled here, s=
+ee
+> > > run_channel0() */
+> > > +=A0=A0=A0=A0=A0=A0=A0stat &=3D ~1;
+> > I think the "stat &=3D ~1;" can be removed completely. This bit should
+> > never
+> > be set, now that the interrupt for channel 0 is disabled.
+> Okay, but that's harmless, moreover, I like your comment '/* channel 0
+> is special and not handled here, see run_channel0() */' which said
+> clearly channel0 interrupt is a special one and NOT handled in
+> sdma_int_handler. So I'd like to keep it... =A0
+
+That's fine with me. I don't have a strong opinion here. It just felt wrong
+to me to silently clear an interrupt that shouldn't occur in the first
+place.
+
+Michael
+
+-- =
+
+Pengutronix e.K.                           |                             |
+Industrial Linux Solutions                 | http://www.pengutronix.de/  |
+Peiner Str. 6-8, 31137 Hildesheim, Germany | Phone: +49-5121-206917-0    |
+Amtsgericht Hildesheim, HRA 2686           | Fax:   +49-5121-206917-5555 |
 
 _______________________________________________
 linux-arm-kernel mailing list
