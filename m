@@ -2,61 +2,92 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EDBC54AD5B
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 18 Jun 2019 23:28:50 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BCE674ADDF
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Jun 2019 00:34:19 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=WvK/1PeKrQmxuasyU2swFUmBlkZNzZ/6thAtW+iMwGM=; b=KeWSwdywo6JCrdDELF4nVVBUM
-	DwYL/Gj7gzqwTb1HYpQRwkYbuPYajlCfeGHth7YyGgvSeeYencTFXpF4H89cj6dASBRMBw1K57OEX
-	GBMU/ur1ZIvNr/gb35SXd9EUFgSIU/dXruPcaCSjj4zvyLoiVkXg5vRlCegcU4kE8ANWLaCwMWNgW
-	uqQ9Ipk9p1wBCkqaphNQ3EQmHt5CDrJZzM6952nBK6Vqg/mZWyER7ORgXXLZb3wnEHtec3hw0yBO5
-	C8vGh5jRYA0XW2R+JxEL+el0ru/V+vCQWQjYc+MHqu8Jd/jle+oNIEmQvjXCau2hlZKAMYk5D2Cuh
-	HVvnnth8g==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=POZmDEY86widFrFZox+1bvGQ2wz07pB2uOGVHc91s08=; b=Iiqocl4BM9T+tP
+	VTUkIaAWnBtnX6CT1QCscor49LxsbhrGpHvM6w0oliUS1MAkXUeT6KV5PVI1S5kTUxdMeuQuqrNb0
+	AvItSMth3JB9+HdB9fRjSKcvt31t+gv6BHYqO5i1sH0bhNW9c6uB5Mn4M4U0bniVfgb0QTb0TGLHU
+	w+G0YNMcDvExFIsrASTD6J9mXlivsyTfEzDBBx85Gv+ap5JfrguxKHr3cQvxQnDgvuu+5UGQ5ehlJ
+	cdqRMAlmW98La4wA219OHhoswWw9kgYXziuAvOAsi2cxUBVUuiYLB3c/kZRvyJNrZOIHPXbJ3cWoL
+	2mR9++uQgHGC3ITmIaXw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hdLeo-0003De-Si; Tue, 18 Jun 2019 21:28:46 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hdLed-0003Ci-Rz
- for linux-arm-kernel@lists.infradead.org; Tue, 18 Jun 2019 21:28:37 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id DAFCE360;
- Tue, 18 Jun 2019 14:28:32 -0700 (PDT)
-Received: from [192.168.122.164] (u201426.austin.arm.com [10.118.28.29])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id C84843F718;
- Tue, 18 Jun 2019 14:28:32 -0700 (PDT)
-Subject: Re: [PATCH v2 1/2] ACPI/PPTT: Add support for ACPI 6.3 thread flag
-To: John Garry <john.garry@huawei.com>,
- Valentin Schneider <valentin.schneider@arm.com>,
- linux-arm-kernel@lists.infradead.org
-References: <20190614223158.49575-1-jeremy.linton@arm.com>
- <20190614223158.49575-2-jeremy.linton@arm.com>
- <667f95c0-5aa9-f460-a49a-e6dfefc027d8@arm.com>
- <2d1b547f-f9ee-391c-c4f3-0232a08a86bc@arm.com>
- <718438d0-8648-897a-83e8-801146a0af86@arm.com>
- <f6f7f9bb-547d-3fd3-f3f8-1d55181f63d7@huawei.com>
-From: Jeremy Linton <jeremy.linton@arm.com>
-Message-ID: <11fb712f-b3c2-5491-89ee-ea7efb18ddd8@arm.com>
-Date: Tue, 18 Jun 2019 16:28:32 -0500
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.6.1
+	id 1hdMgC-0006kt-Ls; Tue, 18 Jun 2019 22:34:16 +0000
+Received: from mail-pg1-x543.google.com ([2607:f8b0:4864:20::543])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hdMg1-0006kX-IL
+ for linux-arm-kernel@lists.infradead.org; Tue, 18 Jun 2019 22:34:07 +0000
+Received: by mail-pg1-x543.google.com with SMTP id n2so8436593pgp.11
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 18 Jun 2019 15:34:05 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=TZMycibYcZan5Gk9jVy7/NB9YYRna/hqRcoxbatoCPE=;
+ b=iMWhOIsPyiPDMMl77cekPEeKeV4nY4jb0sf3RCOZayqCUjkzwK5J+5zNt8/chp6euj
+ IESMbNBtzMMOeXkxzuqBdg9zU6UvyT1SpwLNTEdDeEy0drX2u+roLLa8SntC6fw7lrxT
+ VHKAvpXBIfofm12umDgkd+z8YYjau0z0QDFRBw3Yd0oDtFoN+V317p2Sdik+cWkVO0ls
+ KaOHBjrH8JEroiT2GIWFhaQk8+ooCxdo+FQ5dJHf1PGp4jna6SZYScPSty/p1VTEarpc
+ oqWgadCilQiDLy6mfgfMgDJ+skVW5nFpb2PpVU8iBOwcZZiC/+DtDAKn5kOjXVbHF4qW
+ wG1Q==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=TZMycibYcZan5Gk9jVy7/NB9YYRna/hqRcoxbatoCPE=;
+ b=seUr1aIi7iqL87bbz8a6fIyHx4VHu4AwfwgNcG8leBgj3Ib2EtlBEb4FgUY9sAhfAG
+ 4T58AQARsnSyh2zetnpLyid3jbPIqHieGCjz97T5U+PUL9qWhLb3yxRNk1MAKK3yC/hZ
+ 1PVQPaIREkWvWCnS5DJuua4xgTZziz0gMR1zDHO1fr3J6xSGuz2NwbecE0yiwIlA9rIM
+ EnzeH7ccwcX86sVRV8TRkvZWlD7H/RGjjc+vptVrsL+gmeicw/rxXh8lRyRUBZyVkOcT
+ hA+zJK6cHOawz6IUicSSm1tZqROj7ujGQXaPRCePeDgPaMbRvSKXFLETtklzdem6jd9T
+ bmTw==
+X-Gm-Message-State: APjAAAUN0JPJ6g83SmS2o4oQ5fulMAGAlD9O9Ji87mE8214DodlM1vfd
+ DSWU2/TX+n320lK8JgslZGuA00XAh2J8XA==
+X-Google-Smtp-Source: APXvYqwIxb8QgYKlSvd8CckG8CEwK2KfTbxxVzumrIAft2HV+0KYtTxd+5neRyycyVWi98LpZOuVFw==
+X-Received: by 2002:a63:b1b:: with SMTP id 27mr4672884pgl.244.1560897244673;
+ Tue, 18 Jun 2019 15:34:04 -0700 (PDT)
+Received: from xps15 (S0106002369de4dac.cg.shawcable.net. [68.147.8.254])
+ by smtp.gmail.com with ESMTPSA id d19sm2995373pjs.22.2019.06.18.15.34.03
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Tue, 18 Jun 2019 15:34:04 -0700 (PDT)
+Date: Tue, 18 Jun 2019 16:34:02 -0600
+From: Mathieu Poirier <mathieu.poirier@linaro.org>
+To: Andrew Murray <andrew.murray@arm.com>
+Subject: Re: [PATCH v1 2/5] coresight: etm4x: use explicit barriers on
+ enable/disable
+Message-ID: <20190618223402.GA24894@xps15>
+References: <20190618125433.9739-1-andrew.murray@arm.com>
+ <20190618125433.9739-3-andrew.murray@arm.com>
 MIME-Version: 1.0
-In-Reply-To: <f6f7f9bb-547d-3fd3-f3f8-1d55181f63d7@huawei.com>
-Content-Language: en-US
+Content-Disposition: inline
+In-Reply-To: <20190618125433.9739-3-andrew.murray@arm.com>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190618_142835_953045_44BAE754 
-X-CRM114-Status: GOOD (  17.14  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190618_153405_668034_1DF112F2 
+X-CRM114-Status: GOOD (  18.75  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:543 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -68,46 +99,68 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: catalin.marinas@arm.com, will.deacon@arm.com, rjw@rjwysocki.net,
- linux-kernel@vger.kernel.org, linux-acpi@vger.kernel.org, sudeep.holla@arm.com,
- lenb@kernel.org
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Cc: Alexander Shishkin <alexander.shishkin@linux.intel.com>,
+ linux-arm-kernel@lists.infradead.org,
+ Suzuki K Poulose <suzuki.poulose@arm.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-SGksCgpPbiA2LzE4LzE5IDEyOjIzIFBNLCBKb2huIEdhcnJ5IHdyb3RlOgo+IE9uIDE4LzA2LzIw
-MTkgMTU6NDAsIFZhbGVudGluIFNjaG5laWRlciB3cm90ZToKPj4gT24gMTgvMDYvMjAxOSAxNToy
-MSwgSmVyZW15IExpbnRvbiB3cm90ZToKPj4gWy4uLl0KPj4+Pj4gKyAqIFJldHVybjogLUVOT0VO
-VCBpZiB0aGUgUFBUVCBkb2Vzbid0IGV4aXN0LCB0aGUgQ1BVIGNhbm5vdCBiZSAKPj4+Pj4gZm91
-bmQgb3IKPj4+Pj4gKyAqwqDCoMKgwqDCoMKgIHRoZSB0YWJsZSByZXZpc2lvbiBpc24ndCBuZXcg
-ZW5vdWdoLgo+Pj4+PiArICogT3RoZXJ3aXNlIHJldHVybnMgZmxhZyB2YWx1ZQo+Pj4+PiArICov
-Cj4+Pj4KPj4+PiBOaXQ6IHN0cmljdGx5IHNwZWFraW5nIHdlJ3JlIG5vdCByZXR1cm5pbmcgdGhl
-IGZsYWcgdmFsdWUgYnV0IGl0cyBtYXNrCj4+Pj4gYXBwbGllZCB0byB0aGUgZmxhZ3MgZmllbGQu
-IEkgZG9uJ3QgdGhpbmsgYW55b25lIHdpbGwgY2FyZSBhYm91dCAKPj4+PiBnZXR0aW5nCj4+Pj4g
-dGhlIGFjdHVhbCBmbGFnIHZhbHVlLCBidXQgaXQgc2hvdWxkIGJlIG1hZGUgb2J2aW91cyBpbiB0
-aGUgZG9jOgo+Pj4KPj4+IE9yIEkgY2xhcmlmeSB0aGUgY29kZSB0byBhY3R1YWxseSBkbyB3aGF0
-IHRoZSBjb21tZW50cyBzYXlzLiBNYXliZSAKPj4+IHRoYXQgaXMgd2hhdCBKb2huIEcgd2FzIGFs
-c28gcG9pbnRpbmcgb3V0IHRvbz8KPj4+Cj4gCj4gTm8sIEkgd2FzIGp1c3Qgc2F5aW5nIHRoYXQg
-dGhlIGtlcm5lbCB0b3BvbG9neSBjYW4gYmUgYnJva2VuIHdpdGhvdXQgCj4gdGhpcyBzZXJpZXMu
-Cj4gCj4+Cj4+IE1tbSBJIGRpZG4ndCBmaW5kIGFueSByZXBseSBmcm9tIEpvaG4gcmVnYXJkaW5n
-IHRoaXMgaW4gdjEsIGJ1dCBJIAo+PiB3b3VsZG4ndAo+PiBtaW5kIGVpdGhlciB3YXksIGFzIGxv
-bmcgYXMgdGhlIGRvYyAmIGNvZGUgYXJlIGFsaWduZWQuCj4+Cj4gCj4gQlRXLCB0byBtZSwgZnVu
-Y3Rpb24gYWNwaV9wcHR0X2NwdV9pc190aHJlYWQoKSBzZWVtcyB0byB0cnkgdG8gZG8gdG9vIAo+
-IG11Y2gsIGkuZS4gY2hlY2sgaWYgdGhlIFBQVFQgaXMgbmV3IGVub3VnaCB0byBzdXBwb3J0IHRo
-ZSB0aHJlYWQgZmxhZyAKPiBhbmQgYWxzbyBjaGVjayBpZiBpdCBpcyBzZXQgZm9yIGEgc3BlY2lm
-aWMgY3B1LiBJJ2QgY29uc2lkZXIgc2VwYXJhdGUgCj4gZnVuY3Rpb25zIGhlcmUuCgo/IFlvdXIg
-c3VnZ2VzdGluZyByZXBsYWNpbmcgdGhlCgoKaWYgKHRhYmxlLT5yZXZpc2lvbiA+PSByZXYpCglj
-cHVfbm9kZSA9IGFjcGlfZmluZF9wcm9jZXNzb3Jfbm9kZSh0YWJsZSwgYWNwaV9jcHVfaWQpOwoK
-Y2hlY2sgd2l0aAoKaWYgKHJldmlzaW9uX2NoZWNrKHRhYmxlLCByZXYpKQoJY3B1X25vZGUgPSBh
-Y3BpX2ZpbmRfcHJvY2Vzc29yX25vZGUodGFibGUsIGFjcGlfY3B1X2lkKTsKCgphbmQgYSBmdW5j
-dGlvbiBsaWtlCgpzdGF0aWMgaW50IHJldmlzaW9uX2NoZWNrKGFjcGl4eHh4ICp0YWJsZSwgaW50
-IHJldikKewoJcmV0dXJuICh0YWJsZS0+cmV2aXNpb24gPj0gcmV2KTsKfQoKQWx0aG91Z2gsIGZy
-YW5rbHkgaWYgb25lIHdlcmUgdG8gZG8gdGhpcywgaXQgc2hvdWxkIHByb2JhYmx5IGJlIGEgbWFj
-cm8gCndpdGggdGhlIHRhYmxlIHR5cGUsIGFuZCB1c2VkIGluIHRoZSBkb3plbiBvciBzbyBvdGhl
-ciBwbGFjZXMgSSBmb3VuZCAKZG9pbmcgc2ltaWxhciBjaGVja3MgKHNwY3IsIGlvcnQsIGV0Yyku
-CgpPciBzb21ldGhpbmcgZWxzZT8KCgoKCj4gCj4gdGhhbmtzLAo+IEpvaG4KPiAKPj4gWy4uLl0K
-Pj4KPj4gLgo+Pgo+IAo+IAoKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxA
-bGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xp
-c3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
+On Tue, Jun 18, 2019 at 01:54:30PM +0100, Andrew Murray wrote:
+> Synchronization is recommended before disabling the trace registers
+> to prevent any start or stop points being speculative at the point
+> of disabling the unit (section 7.3.77 of ARM IHI 0064D).
+> 
+> Synchronization is also recommended after programming the trace
+> registers to ensure all updates are committed prior to normal code
+> resuming (section 4.3.7 of ARM IHI 0064D).
+> 
+> Let's ensure these syncronization points are present in the code
+> and clearly commented.
+> 
+> Note that we could rely on the barriers in CS_LOCK and
+> coresight_disclaim_device_unlocked or the context switch to user
+> space - however coresight may be of use in the kernel.
+> 
+> Signed-off-by: Andrew Murray <andrew.murray@arm.com>
+> ---
+>  drivers/hwtracing/coresight/coresight-etm4x.c | 7 ++++++-
+>  1 file changed, 6 insertions(+), 1 deletion(-)
+> 
+> diff --git a/drivers/hwtracing/coresight/coresight-etm4x.c b/drivers/hwtracing/coresight/coresight-etm4x.c
+> index da7cf74d612b..ae623415c431 100644
+> --- a/drivers/hwtracing/coresight/coresight-etm4x.c
+> +++ b/drivers/hwtracing/coresight/coresight-etm4x.c
+> @@ -187,6 +187,10 @@ static int etm4_enable_hw(struct etmv4_drvdata *drvdata)
+>  		dev_err(drvdata->dev,
+>  			"timeout while waiting for Idle Trace Status\n");
+>  
+> +	/* As recommended by 4.3.7 of ARM IHI 0064D */
+> +	dsb(sy);
+> +	isb();
+> +
+>  done:
+>  	CS_LOCK(drvdata->base);
+>  
+> @@ -453,7 +457,8 @@ static void etm4_disable_hw(void *info)
+>  	control &= ~0x1;
+>  
+>  	/* make sure everything completes before disabling */
+> -	mb();
+> +	/* As recommended by 7.3.77 of ARM IHI 0064D */
+> +	dsb(sy);
+
+As far as I can tell mb() is equal to dsb(sy).
+
+>  	isb();
+>  	writel_relaxed(control, drvdata->base + TRCPRGCTLR);
+>  
+> -- 
+> 2.21.0
+> 
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
