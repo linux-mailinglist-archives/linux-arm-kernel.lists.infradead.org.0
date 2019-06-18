@@ -2,58 +2,93 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3FD8C49C51
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 18 Jun 2019 10:45:46 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 637FB49CAF
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 18 Jun 2019 11:08:34 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	MIME-Version:Message-ID:Date:References:In-Reply-To:Subject:To:From:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=9NpZzksz4iyj4pYTgRsfoYKt+Bnie0PnH9snVZERlGg=; b=hdWXWXHItuViGG38KhA/0ei/u
-	VMk/gAaqw/o71BczRm83zZVMOZ/1edbROs9XMoru/jWPhhoIKjfdySAbIduq0D9wP6BnL8/iWKU+t
-	x+TkH34EVdh0Aj7Jwq21M+60I3z1lxP2bM0HT01dA3tKWvSa70Vnt+cWxvqmmxJhpmZAuUaR04Lj9
-	5zBZWZN8NLn6UEXXm68e6kkQzoyf1fFibCfkZPvA5jgNmCb1vQSk1usdkDtSW3KyfMid+8cBVeVCK
-	lYC7M1pjgM6nAbwsdy5YrQY/LehQf9z4lXOGlI+s8wtn/w7mhV9cuABRfZwIdg4oEG7GFW4DqiKej
-	5KHCgXgMQ==;
+	 bh=/k3BBJqeXfkeznAc4Mz3vdwy+GlJZl4AWDRqRJ4tS84=; b=hBxqc0hDzu4cJXxKWAcevp1QX
+	zx50yO/LBdFGAOvQCuOcqAA07ezAZfs5Fv0kXSBJEPdOqVFjF1rk3EtMGtVqM+pJRLcyI5C3IY6rW
+	OfRWjQRnCTdb2U9NG6yO539lVbWQKp/6avYJyJ6Ih8nRXSGSlttEAI3lc2YeP9zUYnUP4tYKXvIDs
+	47hI4naoTUnORsZW4ne1LsKaK7xA7Smfy6IcRpz+nbhW0SV26VdqPF8N6TF1usWi/gDUIhntzpgHq
+	1RwBmqZmZYDybIgZ382jrGcXXX37/3L3ex4y8xR9XJj5HPAtKc+Puo+TfHxSCScibATzY91lP9BLt
+	9uUPg1Kjg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hd9kO-00028l-UT; Tue, 18 Jun 2019 08:45:44 +0000
-Received: from mga11.intel.com ([192.55.52.93])
+	id 1hdA6N-0002Yb-BL; Tue, 18 Jun 2019 09:08:27 +0000
+Received: from lelv0142.ext.ti.com ([198.47.23.249])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hd9kG-00028S-4Z
- for linux-arm-kernel@lists.infradead.org; Tue, 18 Jun 2019 08:45:37 +0000
-X-Amp-Result: UNKNOWN
-X-Amp-Original-Verdict: FILE UNKNOWN
-X-Amp-File-Uploaded: False
-Received: from orsmga008.jf.intel.com ([10.7.209.65])
- by fmsmga102.fm.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
- 18 Jun 2019 01:45:35 -0700
-X-ExtLoop1: 1
-Received: from pipin.fi.intel.com (HELO pipin) ([10.237.72.175])
- by orsmga008.jf.intel.com with ESMTP; 18 Jun 2019 01:45:33 -0700
-From: Felipe Balbi <balbi@kernel.org>
-To: Alexandre Belloni <alexandre.belloni@bootlin.com>
-Subject: Re: [PATCH] usb: gadget: udc: lpc32xx: allocate descriptor with
- GFP_ATOMIC
-In-Reply-To: <20190618074633.GC23549@piout.net>
-References: <20190510124248.2430-1-alexandre.belloni@bootlin.com>
- <87zhmffiui.fsf@linux.intel.com> <20190618074633.GC23549@piout.net>
-Date: Tue, 18 Jun 2019 11:45:29 +0300
-Message-ID: <87tvcnffiu.fsf@linux.intel.com>
+ id 1hdA6C-0002XO-OJ
+ for linux-arm-kernel@lists.infradead.org; Tue, 18 Jun 2019 09:08:19 +0000
+Received: from lelv0266.itg.ti.com ([10.180.67.225])
+ by lelv0142.ext.ti.com (8.15.2/8.15.2) with ESMTP id x5I984Zb035352;
+ Tue, 18 Jun 2019 04:08:04 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
+ s=ti-com-17Q1; t=1560848884;
+ bh=abtG7KfkcUMHnnFWN6H/vrDUdzm1W5X7zfbJG/5wh98=;
+ h=Subject:To:CC:References:From:Date:In-Reply-To;
+ b=smx/tb15A64vVOzIi4eLnANif3D1PJYzquMYOKYyLagBzE2jXAEb4s2oa67Fbrq6i
+ D1b83YmYsGrJe9OPETyqn0KYQpC+AY3MXOqZTB2SOCMu7MqwhWfIXZN34vDpmgT0+u
+ 3gGQtdxROSfrA45fg2prinaPA2O+kNW3tcpS/1yE=
+Received: from DLEE109.ent.ti.com (dlee109.ent.ti.com [157.170.170.41])
+ by lelv0266.itg.ti.com (8.15.2/8.15.2) with ESMTPS id x5I983DY109742
+ (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
+ Tue, 18 Jun 2019 04:08:03 -0500
+Received: from DLEE115.ent.ti.com (157.170.170.26) by DLEE109.ent.ti.com
+ (157.170.170.41) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5; Tue, 18
+ Jun 2019 04:08:03 -0500
+Received: from lelv0326.itg.ti.com (10.180.67.84) by DLEE115.ent.ti.com
+ (157.170.170.26) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5 via
+ Frontend Transport; Tue, 18 Jun 2019 04:08:03 -0500
+Received: from [127.0.0.1] (ileax41-snat.itg.ti.com [10.172.224.153])
+ by lelv0326.itg.ti.com (8.15.2/8.15.2) with ESMTP id x5I97wXE095650;
+ Tue, 18 Jun 2019 04:07:59 -0500
+Subject: Re: [RFC PATCH 2/2] soc: ti: Add Support for the TI Page-based
+ Address Translator (PAT)
+To: "Andrew F. Davis" <afd@ti.com>, Rob Herring <robh+dt@kernel.org>, Mark
+ Rutland <mark.rutland@arm.com>, Santosh Shilimkar <ssantosh@kernel.org>,
+ Will Deacon <will.deacon@arm.com>,
+ Robin Murphy <robin.murphy@arm.com>, Joerg Roedel <joro@8bytes.org>,
+ David Airlie <airlied@linux.ie>, Daniel Vetter <daniel@ffwll.ch>,
+ William Mills <wmills@ti.com>, Tomi Valkeinen <tomi.valkeinen@ti.com>,
+ Sumit Semwal <sumit.semwal@linaro.org>, John Stultz
+ <john.stultz@linaro.org>
+References: <20190607193523.25700-1-afd@ti.com>
+ <20190607193523.25700-3-afd@ti.com>
+From: Tero Kristo <t-kristo@ti.com>
+Message-ID: <28dea95d-8ae6-431c-ca88-149972d26502@ti.com>
+Date: Tue, 18 Jun 2019 12:07:58 +0300
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.6.1
 MIME-Version: 1.0
+In-Reply-To: <20190607193523.25700-3-afd@ti.com>
+Content-Language: en-US
+X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190618_014536_196556_F34B73DA 
-X-CRM114-Status: GOOD (  13.48  )
-X-Spam-Score: -4.0 (----)
+X-CRM114-CacheID: sfid-20190618_020817_086533_5FDA9BBE 
+X-CRM114-Status: GOOD (  28.78  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-4.0 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [192.55.52.93 listed in list.dnswl.org]
- 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [198.47.23.249 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -65,103 +100,265 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-usb@vger.kernel.org,
- linux-kernel@vger.kernel.org, Vladimir Zapolskiy <vz@mleia.com>,
- James Grant <james.grant@jci.com>, Sylvain Lemieux <slemieux.tyco@gmail.com>,
- linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============2262504069123460245=="
+Cc: devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+ dri-devel@lists.freedesktop.org, linaro-mm-sig@lists.linaro.org,
+ iommu@lists.linux-foundation.org, linux-arm-kernel@lists.infradead.org,
+ linux-media@vger.kernel.org
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
---===============2262504069123460245==
-Content-Type: multipart/signed; boundary="=-=-=";
-	micalg=pgp-sha256; protocol="application/pgp-signature"
+On 07/06/2019 22:35, Andrew F. Davis wrote:
+> This patch adds a driver for the Page-based Address Translator (PAT)
+> present on various TI SoCs. A PAT device performs address translation
+> using tables stored in an internal SRAM. Each PAT supports a set number
+> of pages, each occupying a programmable 4KB, 16KB, 64KB, or 1MB of
+> addresses in a window for which an incoming transaction will be
+> translated.
+> 
+> Signed-off-by: Andrew F. Davis <afd@ti.com>
+> ---
+>   drivers/soc/ti/Kconfig      |   9 +
+>   drivers/soc/ti/Makefile     |   1 +
+>   drivers/soc/ti/ti-pat.c     | 569 ++++++++++++++++++++++++++++++++++++
+>   include/uapi/linux/ti-pat.h |  44 +++
+>   4 files changed, 623 insertions(+)
+>   create mode 100644 drivers/soc/ti/ti-pat.c
+>   create mode 100644 include/uapi/linux/ti-pat.h
+> 
+> diff --git a/drivers/soc/ti/Kconfig b/drivers/soc/ti/Kconfig
+> index f0be35d3dcba..b838ae74d01f 100644
+> --- a/drivers/soc/ti/Kconfig
+> +++ b/drivers/soc/ti/Kconfig
+> @@ -86,4 +86,13 @@ config TI_SCI_INTA_MSI_DOMAIN
+>   	help
+>   	  Driver to enable Interrupt Aggregator specific MSI Domain.
+>   
+> +config TI_PAT
+> +	tristate "TI PAT DMA-BUF exporter"
+> +	select REGMAP
 
---=-=-=
-Content-Type: text/plain
-Content-Transfer-Encoding: quoted-printable
+What is the reasoning for using regmap for internal register access? Why 
+not just use direct readl/writel for everything? To me it seems this is 
+only used during probe time also...
 
+> +	help
+> +	  Driver for TI Page-based Address Translator (PAT). This driver
+> +	  provides the an API allowing the remapping of a non-contiguous
+> +	  DMA-BUF into a contiguous one that is sutable for devices needing
+> +	  coniguous memory.
 
-Hi,
+Minor typo: contiguous.
 
-Alexandre Belloni <alexandre.belloni@bootlin.com> writes:
-> Hi,
->
-> On 18/06/2019 10:33:41+0300, Felipe Balbi wrote:
->> Alexandre Belloni <alexandre.belloni@bootlin.com> writes:
->>=20
->> > Gadget drivers may queue request in interrupt context. This would lead=
- to
->> > a descriptor allocation in that context. In that case we would hit
->> > BUG_ON(in_interrupt()) in __get_vm_area_node.
->> >
->> > Signed-off-by: Alexandre Belloni <alexandre.belloni@bootlin.com>
->> > ---
->> >  drivers/usb/gadget/udc/lpc32xx_udc.c | 2 +-
->> >  1 file changed, 1 insertion(+), 1 deletion(-)
->> >
->> > diff --git a/drivers/usb/gadget/udc/lpc32xx_udc.c b/drivers/usb/gadget=
-/udc/lpc32xx_udc.c
->> > index d8f1c60793ed..b706d9c85a35 100644
->> > --- a/drivers/usb/gadget/udc/lpc32xx_udc.c
->> > +++ b/drivers/usb/gadget/udc/lpc32xx_udc.c
->> > @@ -938,7 +938,7 @@ static struct lpc32xx_usbd_dd_gad *udc_dd_alloc(st=
-ruct lpc32xx_udc *udc)
->> >  	struct lpc32xx_usbd_dd_gad	*dd;
->> >=20=20
->> >  	dd =3D (struct lpc32xx_usbd_dd_gad *) dma_pool_alloc(
->> > -			udc->dd_cache, (GFP_KERNEL | GFP_DMA), &dma);
->> > +			udc->dd_cache, (GFP_ATOMIC | GFP_DMA), &dma);
->>=20
->> doesn't apply:
->>=20
->> checking file drivers/usb/gadget/udc/lpc32xx_udc.c
->> Hunk #1 FAILED at 938.
->>=20
->
-> You already applied it for v5.2-rc5
+> +
+>   endif # SOC_TI
+> diff --git a/drivers/soc/ti/Makefile b/drivers/soc/ti/Makefile
+> index b3868d392d4f..1369642b40c3 100644
+> --- a/drivers/soc/ti/Makefile
+> +++ b/drivers/soc/ti/Makefile
+> @@ -9,3 +9,4 @@ obj-$(CONFIG_AMX3_PM)			+= pm33xx.o
+>   obj-$(CONFIG_WKUP_M3_IPC)		+= wkup_m3_ipc.o
+>   obj-$(CONFIG_TI_SCI_PM_DOMAINS)		+= ti_sci_pm_domains.o
+>   obj-$(CONFIG_TI_SCI_INTA_MSI_DOMAIN)	+= ti_sci_inta_msi.o
+> +obj-$(CONFIG_TI_PAT)			+= ti-pat.o
+> diff --git a/drivers/soc/ti/ti-pat.c b/drivers/soc/ti/ti-pat.c
+> new file mode 100644
+> index 000000000000..7359ea0f7ccf
+> --- /dev/null
+> +++ b/drivers/soc/ti/ti-pat.c
+> @@ -0,0 +1,569 @@
+> +// SPDX-License-Identifier: GPL-2.0
+> +/*
+> + * TI PAT mapped DMA-BUF memory re-exporter
+> + *
+> + * Copyright (C) 2018-2019 Texas Instruments Incorporated - http://www.ti.com/
+> + *	Andrew F. Davis <afd@ti.com>
+> + */
+> +
+> +#include <linux/fs.h>
+> +#include <linux/module.h>
+> +#include <linux/platform_device.h>
+> +#include <linux/mod_devicetable.h>
+> +#include <linux/uaccess.h>
+> +#include <linux/miscdevice.h>
+> +#include <linux/regmap.h>
+> +#include <linux/dma-buf.h>
+> +#include <linux/genalloc.h>
+> +#include <linux/vmalloc.h>
+> +#include <linux/slab.h>
+> +
+> +#include <linux/ti-pat.h>
+> +
+> +#define TI_PAT_DRIVER_NAME	"ti-pat"
 
-d'oh!
+Why do you have a define for this seeing it is only used in single location?
 
-Guess I haven't looked at my inbox in a while :-p
+> +
+> +/* TI PAT MMRS registers */
+> +#define TI_PAT_MMRS_PID		0x0 /* Revision Register */
+> +#define TI_PAT_MMRS_CONFIG	0x4 /* Config Register */
+> +#define TI_PAT_MMRS_CONTROL	0x10 /* Control Register */
+> +
+> +/* TI PAT CONTROL register field values */
+> +#define TI_PAT_CONTROL_ARB_MODE_UF	0x0 /* Updates first */
+> +#define TI_PAT_CONTROL_ARB_MODE_RR	0x2 /* Round-robin */
+> +
+> +#define TI_PAT_CONTROL_PAGE_SIZE_4KB	0x0
+> +#define TI_PAT_CONTROL_PAGE_SIZE_16KB	0x1
+> +#define TI_PAT_CONTROL_PAGE_SIZE_64KB	0x2
+> +#define TI_PAT_CONTROL_PAGE_SIZE_1MB	0x3
+> +
+> +static unsigned int ti_pat_page_sizes[] = {
+> +	[TI_PAT_CONTROL_PAGE_SIZE_4KB]  = 4 * 1024,
+> +	[TI_PAT_CONTROL_PAGE_SIZE_16KB] = 16 * 1024,
+> +	[TI_PAT_CONTROL_PAGE_SIZE_64KB] = 64 * 1024,
+> +	[TI_PAT_CONTROL_PAGE_SIZE_1MB]  = 1024 * 1024,
+> +};
+> +
+> +enum ti_pat_mmrs_fields {
+> +	/* Revision */
+> +	F_PID_MAJOR,
+> +	F_PID_MINOR,
+> +
+> +	/* Controls */
+> +	F_CONTROL_ARB_MODE,
+> +	F_CONTROL_PAGE_SIZE,
+> +	F_CONTROL_REPLACE_OID_EN,
+> +	F_CONTROL_EN,
+> +
+> +	/* sentinel */
+> +	F_MAX_FIELDS
+> +};
+> +
+> +static const struct reg_field ti_pat_mmrs_reg_fields[] = {
+> +	/* Revision */
+> +	[F_PID_MAJOR]			= REG_FIELD(TI_PAT_MMRS_PID, 8, 10),
+> +	[F_PID_MINOR]			= REG_FIELD(TI_PAT_MMRS_PID, 0, 5),
+> +	/* Controls */
+> +	[F_CONTROL_ARB_MODE]		= REG_FIELD(TI_PAT_MMRS_CONTROL, 6, 7),
+> +	[F_CONTROL_PAGE_SIZE]		= REG_FIELD(TI_PAT_MMRS_CONTROL, 4, 5),
+> +	[F_CONTROL_REPLACE_OID_EN]	= REG_FIELD(TI_PAT_MMRS_CONTROL, 1, 1),
+> +	[F_CONTROL_EN]			= REG_FIELD(TI_PAT_MMRS_CONTROL, 0, 0),
+> +};
+> +
+> +/**
+> + * struct ti_pat_data - PAT device instance data
+> + * @dev: PAT device structure
+> + * @mdev: misc device
+> + * @mmrs_map: Register map of MMRS region
+> + * @table_base: Base address of TABLE region
 
-thanks
+Please add kerneldoc comments for all fields.
 
-=2D-=20
-balbi
+> + */
+> +struct ti_pat_data {
+> +	struct device *dev;
+> +	struct miscdevice mdev;
+> +	struct regmap *mmrs_map;
+> +	struct regmap_field *mmrs_fields[F_MAX_FIELDS];
+> +	void __iomem *table_base;
+> +	unsigned int page_count;
+> +	unsigned int page_size;
+> +	phys_addr_t window_base;
+> +	struct gen_pool *pool;
+> +};
+> +
 
---=-=-=
-Content-Type: application/pgp-signature; name="signature.asc"
+Kerneldoc comments for below structs would be also useful, especially 
+for ti_pat_buffer.
 
------BEGIN PGP SIGNATURE-----
+> +struct ti_pat_dma_buf_attachment {
+> +	struct device *dev;
+> +	struct sg_table *table;
+> +	struct ti_pat_buffer *buffer;
+> +	struct list_head list;
+> +};
+> +
+> +struct ti_pat_buffer {
+> +	struct ti_pat_data *pat;
+> +	struct dma_buf *i_dma_buf;
+> +	size_t size;
+> +	unsigned long offset;
+> +	struct dma_buf *e_dma_buf;
+> +
+> +	struct dma_buf_attachment *attachment;
+> +	struct sg_table *sgt;
+> +
+> +	struct list_head attachments;
+> +	int map_count;
+> +
+> +	struct mutex lock;
+> +};
+> +
+> +static const struct regmap_config ti_pat_regmap_config = {
+> +	.reg_bits = 32,
+> +	.val_bits = 32,
+> +	.reg_stride = 4,
+> +};
+> +
+> +static int ti_pat_dma_buf_attach(struct dma_buf *dmabuf,
+> +				 struct dma_buf_attachment *attachment)
+> +{
+> +	struct ti_pat_dma_buf_attachment *a;
+> +	struct ti_pat_buffer *buffer = dmabuf->priv;
+> +
+> +	a = kzalloc(sizeof(*a), GFP_KERNEL);
+> +	if (!a)
+> +		return -ENOMEM;
+> +
+> +	a->dev = attachment->dev;
+> +	a->buffer = buffer;
+> +	INIT_LIST_HEAD(&a->list);
+> +
+> +	a->table = kzalloc(sizeof(*a->table), GFP_KERNEL);
+> +	if (!a->table) {
+> +		kfree(a);
+> +		return -ENOMEM;
+> +	}
+> +
+> +	if (sg_alloc_table(a->table, 1, GFP_KERNEL)) {
+> +		kfree(a->table);
+> +		kfree(a);
+> +		return -ENOMEM;
+> +	}
+> +
+> +	sg_set_page(a->table->sgl, pfn_to_page(PFN_DOWN(buffer->offset)), buffer->size, 0);
+> +
+> +	attachment->priv = a;
+> +
+> +	mutex_lock(&buffer->lock);
+> +	/* First time attachment we attach to parent */
+> +	if (list_empty(&buffer->attachments)) {
+> +		buffer->attachment = dma_buf_attach(buffer->i_dma_buf, buffer->pat->dev);
+> +		if (IS_ERR(buffer->attachment)) {
+> +			dev_err(buffer->pat->dev, "Unable to attach to parent DMA-BUF\n");
+> +			mutex_unlock(&buffer->lock);
+> +			kfree(a->table);
+> +			kfree(a);
+> +			return PTR_ERR(buffer->attachment);
+> +		}
+> +	}
+> +	list_add(&a->list, &buffer->attachments);
+> +	mutex_unlock(&buffer->lock);
+> +
+> +	return 0;
+> +}
+> +
+> +static void ti_pat_dma_buf_detatch(struct dma_buf *dmabuf,
+> +				   struct dma_buf_attachment *attachment)
 
-iQIzBAEBCAAdFiEElLzh7wn96CXwjh2IzL64meEamQYFAl0IpKkACgkQzL64meEa
-mQYO4RAAitET6cBuDxzFobV4YHrYjjF73rGS7yNKbAtd+M+GXQ8pNAoxCtlGal7l
-q4b49b11QVDgEKuXse4fKPkywviIDJdjkpzt0nO4/MLiMj3+3KRHlgazy5fMdJa2
-Z9qkf8mSXR6VA2jrSbQRDwl1TcVZYj8cGivfsXGoX4PkNyplprXnphPpnaMEIfwq
-97SEYUb7XnoUeMLcvxqGdCJRsuC5qaTuwmfjVeO4g7MHw2t6qc+ApAmLw4D2MfHj
-td6eDfgyzhFDfm+qVQ74G/wYAVghNx5x7+MpUhDKCUX/VmcpWE9jodOQCzBTJEgM
-BINzvBgdN/X/lu9S6aKkmEboRERbMUyub6JB5kZIWJF6wM8RfOA9izTb20eNkB+4
-2koU6Pjl3C044HM0WR/MFK+TlMSOm+bGdXASCgMt2VwqsSqP3KPhLDwnKMVRyJyA
-8y5xM3H/Tn5rxHqWIWzwX/hTo2bA+WyL5SM21K+BEXaJE4gbCiR8oUJG8ZHkbgi9
-b/Ptky/Ss37Jbsjq5Sn2srSmDV3SGH4YNGoiZIfxrGgyRY4UqJgmgs1Y0KnJP0YA
-BixOhFb1Vnub7jkhgNtQ7iilO2gpY6hptmrdbV/LRQqkSfKgzh9dtFp2IecZ34Zf
-oL3TsbxVuhm/Wmf3sujdRsScVH0CjjKwpl2iV4Hr3k4mXTqGjNU=
-=KroP
------END PGP SIGNATURE-----
---=-=-=--
+Func name should be ti_pat_dma_buf_detach instead?
 
+Other than that, I can't see anything obvious with my limited experience 
+with dma_buf. Is there a simple way to test this driver btw?
 
---===============2262504069123460245==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+-Tero
+
+--
+Texas Instruments Finland Oy, Porkkalankatu 22, 00180 Helsinki. Y-tunnus/Business ID: 0615521-4. Kotipaikka/Domicile: Helsinki
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============2262504069123460245==--
-
