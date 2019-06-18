@@ -2,64 +2,91 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A8A864AA93
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 18 Jun 2019 21:03:59 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 332494AA9A
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 18 Jun 2019 21:04:48 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=WKLQb+GztX6AVIbt5sbYjx2sTs1vsMFeSDyDO84wv3g=; b=DtSk3SSMiFL1d2
-	Klw4JCgwiayHi6MTGXlQG4MgIpI0pDQrTM3REDth4lohVIhio9rFTi7AjoTefAFmx0gY0TfXWe9Us
-	3DoA/WkY8gUHLjqPEW4jr4mWrru7EIJjqkQoUPrBPhvQ15UdNLxAObAbWlX0Yon3nAlRwzQtHQ3nW
-	J4/26bT5FuJRV/SyvuBxQmVWBo1C3cBN1v+YW4Tv65fFZV52upYDjf1Y8p4PmODhsHbVuNzJhKwUi
-	B7v8IKLv188mp7DwinSXxpwyzr3DrunJPQoAXc/rTmnMeCzgKDcqBLgpnoCo43MBp+0sK5qCydKUl
-	IBL6bgDZPRK+pkbRWzpg==;
+	List-Owner; bh=j5JMAHFhAz4KsgUZ1naDethV1zw25s6Tpl7WxJJp4PQ=; b=d8NAe+g01T5M81
+	9notNoD+UEdl/Phja7TBBKrmkcYG5uRhQp4fRWeFaReWsqM+dfrfo+7aV1TUpwcDVRzD1hgYENQC/
+	FZlWBRAuv71uLEA4DM5vJF1PoHvLtWMPyVe50tHEvuS7S2r8xpjT3FPteZyHASPG/iyrBCgNP2/9o
+	OATRF8sEIyqw8S3G/L80OT09VWiMcXQljuuqmx85RjCmwRp200rRkgzUY0qF8S7UfbtRcvknL0ecc
+	em3G6cEg3gY0lkO+pJ4NdMRBHWGmNq3qamEUuqpVpQxcGG/IxVfz42xVrjU4AVtVsFKC8CGjk/FZc
+	nT6dYFQjjGYkAUEDOh2Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hdJOd-0001oj-Q6; Tue, 18 Jun 2019 19:03:55 +0000
-Received: from s3.sipsolutions.net ([2a01:4f8:191:4433::2]
- helo=sipsolutions.net)
+	id 1hdJPS-00026N-Ih; Tue, 18 Jun 2019 19:04:46 +0000
+Received: from mail-io1-xd42.google.com ([2607:f8b0:4864:20::d42])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hdJOT-0001oQ-ON
- for linux-arm-kernel@lists.infradead.org; Tue, 18 Jun 2019 19:03:47 +0000
-Received: by sipsolutions.net with esmtpsa
- (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
- (envelope-from <johannes@sipsolutions.net>)
- id 1hdJOJ-000510-0v; Tue, 18 Jun 2019 21:03:35 +0200
-Message-ID: <abdfc6b3a9981bcdef40f85f5442a425ce109010.camel@sipsolutions.net>
-Subject: Re: [PATCH v2 00/17] net: introduce Qualcomm IPA driver
-From: Johannes Berg <johannes@sipsolutions.net>
-To: Alex Elder <elder@linaro.org>, Arnd Bergmann <arnd@arndb.de>, Dan
- Williams <dcbw@redhat.com>
-Date: Tue, 18 Jun 2019 21:03:31 +0200
-In-Reply-To: <d533b708-c97a-710d-1138-3ae79107f209@linaro.org>
- (sfid-20190618_154530_836620_A8CD82A2)
-References: <380a6185-7ad1-6be0-060b-e6e5d4126917@linaro.org>
- <a94676381a5ca662c848f7a725562f721c43ce76.camel@sipsolutions.net>
- <CAK8P3a0kV-i7BJJ2X6C=5n65rSGfo8fUiC4J_G-+M8EctYKbkg@mail.gmail.com>
- <fc0d08912bc10ad089eb74034726308375279130.camel@redhat.com>
- <36bca57c999f611353fd9741c55bb2a7@codeaurora.org>
- <153fafb91267147cf22e2bf102dd822933ec823a.camel@redhat.com>
- <CAK8P3a2Y+tcL1-V57dtypWHndNT3eDJdcKj29c_v+k8o1HHQig@mail.gmail.com>
- <f4249aa5f5acdd90275eda35aa16f3cfb29d29be.camel@redhat.com>
- <CAK8P3a2nzZKtshYfomOOSYkqx5HdU15Wr9b+3va0B1euNhFOAg@mail.gmail.com>
- <dbb32f185d2c3a654083ee0a7188379e1f88d899.camel@sipsolutions.net>
- <d533b708-c97a-710d-1138-3ae79107f209@linaro.org>
- (sfid-20190618_154530_836620_A8CD82A2)
-X-Mailer: Evolution 3.28.5 (3.28.5-2.fc28) 
-Mime-Version: 1.0
+ id 1hdJPE-000262-Jl
+ for linux-arm-kernel@lists.infradead.org; Tue, 18 Jun 2019 19:04:34 +0000
+Received: by mail-io1-xd42.google.com with SMTP id r185so26396050iod.6
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 18 Jun 2019 12:04:31 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=a/uPUQoJ6eu9AxAlNMMd5WX6nBQBlPI8ohAXNes42aw=;
+ b=bXsdOgNNhHUU2Rh39DVh//DYSa8wLO17UKjyb5/VQukQMLaldrf+4dIX59LX69TnYN
+ K3WlokHw19Le+wRnE5hPEsWSMb2KbaNDx5aQ+C7b7g5d9yDelAgekAyu8ertsRj+QOT3
+ guCRjWqHYE+PLmbZPW3w3AonMOFEZxCC6+RetJ7CfwQSLIkUVWb/FJnImmatNF3vq349
+ fbNv1IfWTHrF6RCtOhKB+5LKmi1QtyGn5XN1Ti6YIvMVc6IkJkfULVAYcZ5EvLqVk6na
+ ndPSUblNdlZ3TZRg7jeFrHSRj7Rcwi2SpNUAZ8Ww8069HASVMOREAOYZwsIDziRy2bDW
+ HlYQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=a/uPUQoJ6eu9AxAlNMMd5WX6nBQBlPI8ohAXNes42aw=;
+ b=o1fg3xK2AEsjYjSylVO6kYl1PT4vB05gnwOQW0ubU2jiwH30jYGMEAGU59WolAIlZO
+ aY0TnxHIUiINlIVozpkGfc5rRndSLTnuvunyioAnk5d78G6bv8YpzC3cI9l4BgRFjMgS
+ UPuVmOKaC3+C0M9wQ2kV7N88LnvIEplFX3QkT3PSZ0I1ugRLP0+cJBZdcLGdchc/Dmun
+ ZX8R1lClgaq/vqqyParSmo2xHSPPfLdTnourLf7o8D/oree2YQHDi0e5MjvssvSNK6UA
+ k5gfvudsOQjWrQ0jmBmrD6bTkDgQAzMJsqPMBRCpvAcUnqBzp+HNjskf2UlB5/MOkF3Q
+ 6X8Q==
+X-Gm-Message-State: APjAAAVOjzGVRDsD8+PWroZNeFgnA3MAuIuUyQ8oO3dVaCAPnX6c9+LB
+ OrwgW+eLVWXYhz2H0YI1FBAjFZjG4OPr9CGdmIY=
+X-Google-Smtp-Source: APXvYqyuCjkE0XkrMs+AVF+eYtg4xPIL2ITAp0mwmOnta8bq2cWffxL5pzIh0ImORxmb0xK8gWevVNC32cPKk+1JltA=
+X-Received: by 2002:a5e:8e42:: with SMTP id r2mr26795246ioo.305.1560884669745; 
+ Tue, 18 Jun 2019 12:04:29 -0700 (PDT)
+MIME-Version: 1.0
+References: <20190525181329.18657-1-tiny.windzz@gmail.com>
+ <20190525181329.18657-2-tiny.windzz@gmail.com>
+ <CA+E=qVdh1E8Y7dZO0JSS4DJE2bo=98MuSKRt7nmeFg-td7Ua9Q@mail.gmail.com>
+ <CAEExFWtjNridLsMXOnBe2mJOPhUOYJ6G3wGF3gx=0oQoQROOGg@mail.gmail.com>
+ <CA+E=qVeOSw=_z4OiQ4++z8g-KN29UYVXGicNd3PtHobg4xaG+w@mail.gmail.com>
+ <CAEExFWs58UNcVcQNnwK3dk5cpmfQRnjdRWAmYs5M1t_ONr1Bpw@mail.gmail.com>
+ <CA+E=qVf-_2DWbf55bCnjbkZH9N4a1_K16OxN9=o=NrZAV7GXPA@mail.gmail.com>
+In-Reply-To: <CA+E=qVf-_2DWbf55bCnjbkZH9N4a1_K16OxN9=o=NrZAV7GXPA@mail.gmail.com>
+From: Frank Lee <tiny.windzz@gmail.com>
+Date: Wed, 19 Jun 2019 03:04:18 +0800
+Message-ID: <CAEExFWtcNUVKc1-9MVgwoq0QErn3nhSHWTpzQNpcydQRPh9uqw@mail.gmail.com>
+Subject: Re: [PATCH v3 1/3] thermal: sun8i: add thermal driver for h6
+To: Vasily Khoruzhick <anarsoul@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190618_120345_797979_6AE78ACE 
-X-CRM114-Status: GOOD (  24.31  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190618_120432_644155_61AD9ED2 
+X-CRM114-Status: GOOD (  12.55  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:d42 listed in]
+ [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (tiny.windzz[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -71,135 +98,37 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: DTML <devicetree@vger.kernel.org>, syadagir@codeaurora.org,
- Eric Caruso <ejcaruso@google.com>, linux-arm-msm@vger.kernel.org,
- abhishek.esse@gmail.com,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>, evgreen@chromium.org,
- Bjorn Andersson <bjorn.andersson@linaro.org>,
- Ilias Apalodimas <ilias.apalodimas@linaro.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Networking <netdev@vger.kernel.org>,
- Subash Abhinov Kasiviswanathan <subashab@codeaurora.org>,
- linux-soc@vger.kernel.org, David Miller <davem@davemloft.net>,
- cpratapa@codeaurora.org, Ben Chan <benchan@google.com>
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ devicetree <devicetree@vger.kernel.org>, Linux PM <linux-pm@vger.kernel.org>,
+ Maxime Ripard <maxime.ripard@bootlin.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Linus Walleij <linus.walleij@linaro.org>,
+ Daniel Lezcano <daniel.lezcano@linaro.org>,
+ linux-kernel <linux-kernel@vger.kernel.org>,
+ Eduardo Valentin <edubezval@gmail.com>, Chen-Yu Tsai <wens@csie.org>,
+ Rob Herring <robh+dt@kernel.org>,
+ Mauro Carvalho Chehab <mchehab+samsung@kernel.org>, rui.zhang@intel.com,
+ paulmck@linux.ibm.com, "David S. Miller" <davem@davemloft.net>,
+ arm-linux <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, 2019-06-18 at 08:45 -0500, Alex Elder wrote:
+On Sat, Jun 15, 2019 at 7:08 AM Vasily Khoruzhick <anarsoul@gmail.com> wrote:
+>
+> On Wed, Jun 12, 2019 at 9:50 AM Frank Lee <tiny.windzz@gmail.com> wrote:
+> >
+> > > If you have a git tree I'll be happy to contribute A64 support. IIRC
+> > > it was quite similar to H3.
+> >
+> > I built a ths branch and I will do some work later.
+> >
+> > https://github.com/TinyWindzz/linux/tree/ths
+>
+> Looks like you forgot to add your patches to this branch.
 
-> If it had a well-defined way of creating new channels to be
-> multiplexed over the connection to the modem, the IPA driver
-> (rather than the rmnet driver) could present network interfaces
-> for each and perform the multiplexing.  
-
-Right. That's what I was thinking of.
-
-I actually expect this to fare much better going forward with 5G around
-the corner, since you'll want to eventually take advantage of multi-
-queue TX or RSS for RX, queue size control and what not, as speeds
-increase.
-
-Because of these things I think the whole "layered netdev" approach is
-actually *wrong* rather than just inconvenient.
-
-In particular, in the Intel driver, you're going to have multiple
-hardware queues, one for each ongoing session. This means that
-multiplexing it over a layered netdev like rmnet or something like VLAN
-(which some driver does too) actually prevents us from doing this
-properly - it means we need to implement ndo_select_queue() and multiple
-queues on the underlying netdev etc., and then we no longer have the
-ability to use actual multi-queue. It becomes messy very very quickly.
-
-> As I think Arnd
-> suggested, this could at least partially be done with library
-> code (to be shared with other "back-end" interfaces) rather
-> than using a layered driver.  This applies to aggregation,
-> channel flow control, and checksum offload as well.
-
-Right.
-
-> But I'm only familiar with IPA; I don't know whether the above
-> statements make any sense for other "back-end" drivers.
-
-I think they do, in different ways. Intel probably wouldn't have a
-library - there isn't actually much of a MUX header because there are
-different hardware queues for the different sessions.
-
-> This is great.  The start of a more concrete discussion of the
-> pieces that are missing...
-
-:-)
-
-I think I said before - it should be pretty easy to mold some code
-around the API I proposed there and have something reasonably functional
-soon.
-
-> That would be nice.  I believe you're saying that (in my case)
-> the IPA driver creates and owns the netdevices.
-
-Yes.
-
-> But I think the IPA driver would register with the WWAN core as
-> a "provider," and then the WWAN core would subsequently request
-> that it instantiate netdevices to represent channels on demand
-> (rather than registering them).
-
-Yeah, I guess you could call it that way.
-
-Really there are two possible ways (and they intersect to some extent).
-
-One is the whole multi-function device, where a single WWAN device is
-composed of channels offered by actually different drivers, e.g. for a
-typical USB device you might have something like cdc_ether and the
-usb_wwan TTY driver. In this way, we need to "compose" the WWAN device
-similarly, e.g. by using the underlying USB device "struct device"
-pointer to tie it together.
-
-The other is something like IPA or the Intel modem driver, where the
-device is actually a single (e.g. PCIe) device and just has a single
-driver, but that single driver offers different channels.
-
-Now, it's not clear to me where IPA actually falls, because so far we've
-been talking about the IPA driver only as providing *netdevs*, not any
-control channels, so I'm not actually sure where the control channel is.
-
-For the Intel device, however, the control channel is definitely
-provided by exactly the same driver as the data channels (netdevs).
-
-"provider" is a good word, and in fact the Intel driver would also be a
-provider for a GNSS channel (TBD how to represent, a tty?), one or
-multiple debug/tracing channels, data channels (netdevs), AT command
-channels (mbim, ...?) (again tbd how to represent, ttys?), etc.
-
-What I showed in the header files I posted so far was the provider only
-having "data channel" ops (create/remove a netdev) but for each channel
-type we either want a new method there, or we just change the method to
-be something like
-
-	int (*create_channel)(..., enum wwan_chan_type chan_type, ...);
-
-and simply require that the channel is attached to the wwan device with
-the representation-specific call (wwan_attach_netdev, wwan_attach_tty,
-...).
-
-This is a bit less comfortable because then it's difficult to know what
-was actually created upon the request, so it's probably better to have
-different methods for the different types of representations (like I had
-- add_netdev, add_tty, ...).
-
-Note also that I said "representation-specific", while passing a
-"channel type", so for this we'd actually need a convention on what
-channel type has what kind of representation, which again gets awkward.
-Better to make it explicit.
-
-(And even then, we might be able to let userspace have some control,
-e.g. the driver might be able to create a debug channel as both a TTY or
-something else)
-
-johannes
-
+Done.
 
 _______________________________________________
 linux-arm-kernel mailing list
