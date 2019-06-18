@@ -2,82 +2,67 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 332494AA9A
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 18 Jun 2019 21:04:48 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B73F04AAA9
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 18 Jun 2019 21:05:59 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=j5JMAHFhAz4KsgUZ1naDethV1zw25s6Tpl7WxJJp4PQ=; b=d8NAe+g01T5M81
-	9notNoD+UEdl/Phja7TBBKrmkcYG5uRhQp4fRWeFaReWsqM+dfrfo+7aV1TUpwcDVRzD1hgYENQC/
-	FZlWBRAuv71uLEA4DM5vJF1PoHvLtWMPyVe50tHEvuS7S2r8xpjT3FPteZyHASPG/iyrBCgNP2/9o
-	OATRF8sEIyqw8S3G/L80OT09VWiMcXQljuuqmx85RjCmwRp200rRkgzUY0qF8S7UfbtRcvknL0ecc
-	em3G6cEg3gY0lkO+pJ4NdMRBHWGmNq3qamEUuqpVpQxcGG/IxVfz42xVrjU4AVtVsFKC8CGjk/FZc
-	nT6dYFQjjGYkAUEDOh2Q==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=IYXtPJptcz3mpTeEj8OC8FXmjWB9hF2rzHvANzCF4w4=; b=KRm
+	ChD/s2kxVs/viFjYP1GAdGUWdHQlGyRMh1Zljlfwob+kJwNsbvTU2VziH9ogXUJ4eKccL1fym7b+C
+	+SKzPp+6umuFlRK6qnbQ7tJLKHpHPJuSd5FsiTUEjitxXkINdFl+XNWmLJBhQVGiUpxcBrZqDa7LD
+	L1iWMZ+QM0Ac8cDUwUJx+jNFR4b29WDENmuF6XFkq4Fgv6RdpUb/OdYQOwIZ9HNXA35c7pynAnWn/
+	5Ym4UR6lxLmlrOaDKTqT/hrpNgDNj/xQOIw/DdKWzyoONQxSAUO/Mhi2t+GtATfxu/DpsZ/ftIhTZ
+	BhZiQeoLaJ4lsC6AcexUJyYJhElWG8A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hdJPS-00026N-Ih; Tue, 18 Jun 2019 19:04:46 +0000
-Received: from mail-io1-xd42.google.com ([2607:f8b0:4864:20::d42])
+	id 1hdJQa-0003bI-QN; Tue, 18 Jun 2019 19:05:56 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hdJPE-000262-Jl
- for linux-arm-kernel@lists.infradead.org; Tue, 18 Jun 2019 19:04:34 +0000
-Received: by mail-io1-xd42.google.com with SMTP id r185so26396050iod.6
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 18 Jun 2019 12:04:31 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=a/uPUQoJ6eu9AxAlNMMd5WX6nBQBlPI8ohAXNes42aw=;
- b=bXsdOgNNhHUU2Rh39DVh//DYSa8wLO17UKjyb5/VQukQMLaldrf+4dIX59LX69TnYN
- K3WlokHw19Le+wRnE5hPEsWSMb2KbaNDx5aQ+C7b7g5d9yDelAgekAyu8ertsRj+QOT3
- guCRjWqHYE+PLmbZPW3w3AonMOFEZxCC6+RetJ7CfwQSLIkUVWb/FJnImmatNF3vq349
- fbNv1IfWTHrF6RCtOhKB+5LKmi1QtyGn5XN1Ti6YIvMVc6IkJkfULVAYcZ5EvLqVk6na
- ndPSUblNdlZ3TZRg7jeFrHSRj7Rcwi2SpNUAZ8Ww8069HASVMOREAOYZwsIDziRy2bDW
- HlYQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=a/uPUQoJ6eu9AxAlNMMd5WX6nBQBlPI8ohAXNes42aw=;
- b=o1fg3xK2AEsjYjSylVO6kYl1PT4vB05gnwOQW0ubU2jiwH30jYGMEAGU59WolAIlZO
- aY0TnxHIUiINlIVozpkGfc5rRndSLTnuvunyioAnk5d78G6bv8YpzC3cI9l4BgRFjMgS
- UPuVmOKaC3+C0M9wQ2kV7N88LnvIEplFX3QkT3PSZ0I1ugRLP0+cJBZdcLGdchc/Dmun
- ZX8R1lClgaq/vqqyParSmo2xHSPPfLdTnourLf7o8D/oree2YQHDi0e5MjvssvSNK6UA
- k5gfvudsOQjWrQ0jmBmrD6bTkDgQAzMJsqPMBRCpvAcUnqBzp+HNjskf2UlB5/MOkF3Q
- 6X8Q==
-X-Gm-Message-State: APjAAAVOjzGVRDsD8+PWroZNeFgnA3MAuIuUyQ8oO3dVaCAPnX6c9+LB
- OrwgW+eLVWXYhz2H0YI1FBAjFZjG4OPr9CGdmIY=
-X-Google-Smtp-Source: APXvYqyuCjkE0XkrMs+AVF+eYtg4xPIL2ITAp0mwmOnta8bq2cWffxL5pzIh0ImORxmb0xK8gWevVNC32cPKk+1JltA=
-X-Received: by 2002:a5e:8e42:: with SMTP id r2mr26795246ioo.305.1560884669745; 
- Tue, 18 Jun 2019 12:04:29 -0700 (PDT)
-MIME-Version: 1.0
-References: <20190525181329.18657-1-tiny.windzz@gmail.com>
- <20190525181329.18657-2-tiny.windzz@gmail.com>
- <CA+E=qVdh1E8Y7dZO0JSS4DJE2bo=98MuSKRt7nmeFg-td7Ua9Q@mail.gmail.com>
- <CAEExFWtjNridLsMXOnBe2mJOPhUOYJ6G3wGF3gx=0oQoQROOGg@mail.gmail.com>
- <CA+E=qVeOSw=_z4OiQ4++z8g-KN29UYVXGicNd3PtHobg4xaG+w@mail.gmail.com>
- <CAEExFWs58UNcVcQNnwK3dk5cpmfQRnjdRWAmYs5M1t_ONr1Bpw@mail.gmail.com>
- <CA+E=qVf-_2DWbf55bCnjbkZH9N4a1_K16OxN9=o=NrZAV7GXPA@mail.gmail.com>
-In-Reply-To: <CA+E=qVf-_2DWbf55bCnjbkZH9N4a1_K16OxN9=o=NrZAV7GXPA@mail.gmail.com>
-From: Frank Lee <tiny.windzz@gmail.com>
-Date: Wed, 19 Jun 2019 03:04:18 +0800
-Message-ID: <CAEExFWtcNUVKc1-9MVgwoq0QErn3nhSHWTpzQNpcydQRPh9uqw@mail.gmail.com>
-Subject: Re: [PATCH v3 1/3] thermal: sun8i: add thermal driver for h6
-To: Vasily Khoruzhick <anarsoul@gmail.com>
+ id 1hdJQO-0003as-8c
+ for linux-arm-kernel@lists.infradead.org; Tue, 18 Jun 2019 19:05:45 +0000
+Received: from localhost.localdomain (unknown [194.230.155.186])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 9939220B1F;
+ Tue, 18 Jun 2019 19:05:38 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1560884744;
+ bh=vK8tc7Kd1ER0oaq0T5vbExeB1V5IbhRIZBrXithdRSM=;
+ h=From:To:Cc:Subject:Date:From;
+ b=gFY5e132yO4yupLmLmnqzmDydMEQ4VP+fUPR85du/PyG0jwiZmvr1iSWYTUiTRtAK
+ z4i3BdnIg3UmIccOouDtHfQ6KI/izeu1wMHR/y6EbSarhsOPoHYIYCWMjI3/wG7Hoz
+ hFvxW+ldZQGwE5xx/t/7C5DY17w8/U+ekqdHTsj4=
+From: Krzysztof Kozlowski <krzk@kernel.org>
+To: David Airlie <airlied@linux.ie>, Daniel Vetter <daniel@ffwll.ch>,
+ Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
+ Kukjin Kim <kgene@kernel.org>, Catalin Marinas <catalin.marinas@arm.com>,
+ Will Deacon <will.deacon@arm.com>,
+ Sylwester Nawrocki <s.nawrocki@samsung.com>,
+ Tomasz Figa <tomasz.figa@gmail.com>, Chanwoo Choi <cw00.choi@samsung.com>,
+ Michael Turquette <mturquette@baylibre.com>,
+ Stephen Boyd <sboyd@kernel.org>,
+ Marek Szyprowski <m.szyprowski@samsung.com>,
+ Olof Johansson <olof@lixom.net>, dri-devel@lists.freedesktop.org,
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-samsung-soc@vger.kernel.org,
+ linux-clk@vger.kernel.org
+Subject: [RFT 00/10] ARM/arm64: dts: exynos: Add support for Mali
+Date: Tue, 18 Jun 2019 21:05:24 +0200
+Message-Id: <20190618190534.4951-1-krzk@kernel.org>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190618_120432_644155_61AD9ED2 
-X-CRM114-Status: GOOD (  12.55  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190618_120544_331691_AFB4627F 
+X-CRM114-Status: GOOD (  13.71  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:d42 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (tiny.windzz[at]gmail.com)
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -87,6 +72,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -98,37 +84,74 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- devicetree <devicetree@vger.kernel.org>, Linux PM <linux-pm@vger.kernel.org>,
- Maxime Ripard <maxime.ripard@bootlin.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Linus Walleij <linus.walleij@linaro.org>,
- Daniel Lezcano <daniel.lezcano@linaro.org>,
- linux-kernel <linux-kernel@vger.kernel.org>,
- Eduardo Valentin <edubezval@gmail.com>, Chen-Yu Tsai <wens@csie.org>,
- Rob Herring <robh+dt@kernel.org>,
- Mauro Carvalho Chehab <mchehab+samsung@kernel.org>, rui.zhang@intel.com,
- paulmck@linux.ibm.com, "David S. Miller" <davem@davemloft.net>,
- arm-linux <linux-arm-kernel@lists.infradead.org>
+Cc: Joseph Kogut <joseph.kogut@gmail.com>, Inki Dae <inki.dae@samsung.com>,
+ Krzysztof Kozlowski <krzk@kernel.org>, Arnd Bergmann <arnd@arndb.de>,
+ Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sat, Jun 15, 2019 at 7:08 AM Vasily Khoruzhick <anarsoul@gmail.com> wrote:
->
-> On Wed, Jun 12, 2019 at 9:50 AM Frank Lee <tiny.windzz@gmail.com> wrote:
-> >
-> > > If you have a git tree I'll be happy to contribute A64 support. IIRC
-> > > it was quite similar to H3.
-> >
-> > I built a ths branch and I will do some work later.
-> >
-> > https://github.com/TinyWindzz/linux/tree/ths
->
-> Looks like you forgot to add your patches to this branch.
+Hi,
 
-Done.
+Inspired by patch from Joseph Kogut [1], let's add support for Mali GPUs
+to most of other boards.  However it was tested only on Odroid U3
+(Exynos4412) and not fully because requirement of special Mesa drivers
+with Lima support.
+
+Even without tests it brings full description of hardware and replaces
+some out-of-tree downstream code (e.g. in Tizen).
+
+Comments and tests are welcomed.
+
+[1] https://patchwork.kernel.org/patch/10996887/
+
+Best regards,
+Krzysztof
+
+
+Krzysztof Kozlowski (10):
+  dt-bindings: gpu: mali: Add Samsung compatibles for Midgard and Utgard
+  clk: samsung: Add bus clock for GPU/G3D on Exynos4412
+  ARM: dts: exynos: Fix language typo and indentation
+  ARM: dts: exynos: Add GPU/Mali 400 node to Exynos3250
+  ARM: dts: exynos: Add GPU/Mali 400 node to Exynos4
+  arm64: dts: exynos: Add GPU/Mali T760 node to Exynos5433
+  arm64: dts: exynos: Add GPU/Mali T760 node to Exynos7
+  ARM: multi_v7_defconfig: Enable Panfrost and LIMA drivers
+  ARM: exynos_defconfig: Enable Panfrost and LIMA drivers
+  arm64: defconfig: Enable Panfrost driver
+
+ .../bindings/gpu/arm,mali-midgard.txt         |  1 +
+ .../bindings/gpu/arm,mali-utgard.txt          |  1 +
+ arch/arm/boot/dts/exynos3250-artik5.dtsi      |  5 ++
+ arch/arm/boot/dts/exynos3250-monk.dts         |  5 ++
+ arch/arm/boot/dts/exynos3250-rinato.dts       |  5 ++
+ arch/arm/boot/dts/exynos3250.dtsi             | 33 ++++++++++++
+ arch/arm/boot/dts/exynos4.dtsi                | 29 +++++++++++
+ arch/arm/boot/dts/exynos4210-origen.dts       |  5 ++
+ arch/arm/boot/dts/exynos4210-trats.dts        |  4 ++
+ .../boot/dts/exynos4210-universal_c210.dts    |  5 ++
+ arch/arm/boot/dts/exynos4210.dtsi             | 36 +++++++++++--
+ .../boot/dts/exynos4412-itop-scp-core.dtsi    |  5 ++
+ arch/arm/boot/dts/exynos4412-midas.dtsi       |  5 ++
+ .../boot/dts/exynos4412-odroid-common.dtsi    |  5 ++
+ arch/arm/boot/dts/exynos4412.dtsi             | 32 ++++++++++++
+ arch/arm/configs/exynos_defconfig             |  3 +-
+ arch/arm/configs/multi_v7_defconfig           |  3 +-
+ .../dts/exynos/exynos5433-tm2-common.dtsi     |  5 ++
+ arch/arm64/boot/dts/exynos/exynos5433.dtsi    | 51 +++++++++++++++++++
+ .../boot/dts/exynos/exynos7-espresso.dts      |  5 ++
+ arch/arm64/boot/dts/exynos/exynos7.dtsi       | 11 ++++
+ arch/arm64/configs/defconfig                  |  2 +-
+ drivers/clk/samsung/clk-exynos4.c             |  1 +
+ include/dt-bindings/clock/exynos4.h           |  1 +
+ 24 files changed, 251 insertions(+), 7 deletions(-)
+
+-- 
+2.17.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
