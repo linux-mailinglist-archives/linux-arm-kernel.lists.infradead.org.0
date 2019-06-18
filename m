@@ -2,89 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 846A84AD0D
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 18 Jun 2019 23:09:33 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6FF6B4AD0E
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 18 Jun 2019 23:09:54 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+2ge6zotSAirx+IWiNgrWvg8vyjngCYt/xEvK0Zm+40=; b=NxkfWxDcU6NsWS
-	wPVFCkljS5u3+5G7hutL5Hiqzc2Goews2bwZ9Y2n3t17nO05V0oPZdxN5XNlzOC8lpIYxPARHxCqp
-	SPe+Fnm9JsuFaPuZ3U7A0aoMELEWoytqt7ZBXPzTv6/8lkcr0O5ojlb7Dvi+blZ16EuQJkLV3Ctj/
-	kyCG161qpA8yibtKAQbSp8dpvLuXzOjQePsIVOW/fWFBxeWorcfHNXIyK5fypdqU1eT5GlxRT5xhv
-	4E2HOF4tZLWfM/VFOTLhW4HgPGQZsqfBtG2gIf2ZEuqfOuanKh/qtRev3XqdQrsdCiWrnzZYz79M+
-	Nr9LvXIrepoAMGjzdffw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=3dvM4MmN0+THZR0NNGYgs8vbFF23y7B+bhtwLldX9/A=; b=lSkocNLglOrVaM
+	gi+AWwjoi1Ldhf6YlQ4F1FDKrCrORC33FG4fOZF1TyNAsyo2hXlAcg1uD41mbqKsG0X8dm42cwNyG
+	fD20YlrEFu4OIhKxHCkyb1D6hQyLBM4qMuwAAmRpzAAs4f7uq7o4QryMQz2asLJvSS3NiH65ucA0q
+	aK3g6S5Rnjz2wK5UWoFPRFIEsSaN3gLnUt2PBclsUOVBsuyvynY36fDRDzO4m0kBGF8kkt/nmS9Q+
+	phARRliB4HBqd+N9bC0MTjTWG6QfKys6CCfo2+6oIBd8Wy5yojrJK/BhazlaTrqINGfUUrjTGY3bk
+	gS39YedJgFG/nf4ervJg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hdLM9-0001F5-RO; Tue, 18 Jun 2019 21:09:29 +0000
-Received: from mail-qk1-f193.google.com ([209.85.222.193])
+	id 1hdLMT-0001U8-Iy; Tue, 18 Jun 2019 21:09:49 +0000
+Received: from bhuna.collabora.co.uk ([46.235.227.227])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hdLJY-0007qI-8I
- for linux-arm-kernel@lists.infradead.org; Tue, 18 Jun 2019 21:06:50 +0000
-Received: by mail-qk1-f193.google.com with SMTP id a27so9539203qkk.5
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 18 Jun 2019 14:06:48 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=PhQShykXloliKPMckMupDfwZ8pnrhdgE2i1x2GgfEmI=;
- b=Gh7by3bZzbayE9gu+ay68toQAYmdCnnN0NTnoX5L+tIt4dfnHgt6kXo68p252pPyjQ
- 4l40bubAeC7jxDyCO5ff80mD7PgFP7mTCpx0o/NAC/+pQgqjJl79uHZYFzagbT4/xCwW
- BTNlfPDtpbgFFJOUeAGQg90obvV4IkHxw3fq/AFV1PrETI7YcQM+8R0CKfYDZJGZ2O5p
- 5xTSxSKBFSf/HjGxYog+7kZcLNrHx+PStAGwGMbVWnK6J4+D2bTHxm64bho28/FWzcZ7
- VdvzmEkJ+V3DUXUD/sm65U8fhBYt4g2e9CvcPsHIUyg6GdJECwRJCT0YrXXjUWqTz41Q
- ZCZw==
-X-Gm-Message-State: APjAAAX8mpNaLqsKtk1lxYAC0Nx2aYBNbT7zuASy7aW+db6altqGjpSv
- +eERoPL13/mtZYzrpkjkOVnXbcryh7pk07R9qzU=
-X-Google-Smtp-Source: APXvYqyldOckhcLwc1fQrwZ7LnDDOLS2W9t7zPz5YSzYHLSMEwkWyDge/ONSs2cFdXB+lyGj7IX6kT1wQZim1MIdYpE=
-X-Received: by 2002:ae9:e608:: with SMTP id z8mr87456546qkf.182.1560892007052; 
- Tue, 18 Jun 2019 14:06:47 -0700 (PDT)
+ id 1hdLJv-00088d-0Y
+ for linux-arm-kernel@lists.infradead.org; Tue, 18 Jun 2019 21:07:15 +0000
+Received: from [127.0.0.1] (localhost [127.0.0.1])
+ (Authenticated sender: gtucker) with ESMTPSA id EFF1D285136
+Subject: Re: next/master boot bisection: next-20190617 on
+ sun8i-h2-plus-orangepi-zero
+To: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
+References: <5d089fb6.1c69fb81.4f92.9134@mx.google.com>
+ <7hr27qdedo.fsf@baylibre.com>
+ <CAFBinCCrpQNU_JtL0SwEGbwWZ2Qy-b2m5rdjuE0__nDRORGTiQ@mail.gmail.com>
+ <7d0a9da1-0b42-d4e9-0690-32d58a6d27de@collabora.com>
+ <CAFBinCA7gMLJ=jPqgRgHcBABBvC7bWVt8VJhLZ5uN=03WL1UWQ@mail.gmail.com>
+From: Guillaume Tucker <guillaume.tucker@collabora.com>
+Message-ID: <2af9b9a5-cdf8-afce-5a75-d66c99eb82a2@collabora.com>
+Date: Tue, 18 Jun 2019 22:07:06 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.7.0
 MIME-Version: 1.0
-References: <380a6185-7ad1-6be0-060b-e6e5d4126917@linaro.org>
- <a94676381a5ca662c848f7a725562f721c43ce76.camel@sipsolutions.net>
- <CAK8P3a0kV-i7BJJ2X6C=5n65rSGfo8fUiC4J_G-+M8EctYKbkg@mail.gmail.com>
- <fc0d08912bc10ad089eb74034726308375279130.camel@redhat.com>
- <36bca57c999f611353fd9741c55bb2a7@codeaurora.org>
- <153fafb91267147cf22e2bf102dd822933ec823a.camel@redhat.com>
- <CAK8P3a2Y+tcL1-V57dtypWHndNT3eDJdcKj29c_v+k8o1HHQig@mail.gmail.com>
- <f4249aa5f5acdd90275eda35aa16f3cfb29d29be.camel@redhat.com>
- <CAK8P3a2nzZKtshYfomOOSYkqx5HdU15Wr9b+3va0B1euNhFOAg@mail.gmail.com>
- <dbb32f185d2c3a654083ee0a7188379e1f88d899.camel@sipsolutions.net>
- <d533b708-c97a-710d-1138-3ae79107f209@linaro.org>
- <abdfc6b3a9981bcdef40f85f5442a425ce109010.camel@sipsolutions.net>
- <CAK8P3a3ksrFTo2+dLB+doLeY+kPP7rYxv2O7BwvjYgK2cwCTuQ@mail.gmail.com>
- <97cbfb3723607c95d78e25785262ae7b0acdb11c.camel@sipsolutions.net>
- <CAK8P3a29+JKbDdS9ikhgaKa-AJ1qd1sDMTAfzivGh5wN4VL88A@mail.gmail.com>
- <54a5acb6cf26ebc6447f8ebcbdcb8e0eed693ab3.camel@sipsolutions.net>
-In-Reply-To: <54a5acb6cf26ebc6447f8ebcbdcb8e0eed693ab3.camel@sipsolutions.net>
-From: Arnd Bergmann <arnd@arndb.de>
-Date: Tue, 18 Jun 2019 23:06:29 +0200
-Message-ID: <CAK8P3a3r95gXMdq7s9GF=37v6t4kR+-2iyC6bnmUDVuM+bn80Q@mail.gmail.com>
-Subject: Re: [PATCH v2 00/17] net: introduce Qualcomm IPA driver
-To: Johannes Berg <johannes@sipsolutions.net>
+In-Reply-To: <CAFBinCA7gMLJ=jPqgRgHcBABBvC7bWVt8VJhLZ5uN=03WL1UWQ@mail.gmail.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190618_140648_337640_93DB74B5 
-X-CRM114-Status: GOOD (  12.98  )
-X-Spam-Score: 0.5 (/)
+X-CRM114-CacheID: sfid-20190618_140711_586017_D4671431 
+X-CRM114-Status: GOOD (  16.26  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.5 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.222.193 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.222.193 listed in wl.mailspike.net]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (arndbergmann[at]gmail.com)
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ no trust [46.235.227.227 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -96,50 +66,75 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: DTML <devicetree@vger.kernel.org>, syadagir@codeaurora.org,
- Eric Caruso <ejcaruso@google.com>, David Miller <davem@davemloft.net>,
- Dan Williams <dcbw@redhat.com>, linux-arm-msm@vger.kernel.org,
- Ilias Apalodimas <ilias.apalodimas@linaro.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>, evgreen@chromium.org,
- Bjorn Andersson <bjorn.andersson@linaro.org>,
- Networking <netdev@vger.kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Alex Elder <elder@linaro.org>,
- Subash Abhinov Kasiviswanathan <subashab@codeaurora.org>,
- linux-soc@vger.kernel.org, abhishek.esse@gmail.com, cpratapa@codeaurora.org,
- Ben Chan <benchan@google.com>
+Cc: Jose Abreu <joabreu@synopsys.com>,
+ Alexandre Torgue <alexandre.torgue@st.com>, tomeu.vizoso@collabora.com,
+ Andrew Lunn <andrew@lunn.ch>, Kevin Hilman <khilman@baylibre.com>,
+ Linus Walleij <linus.walleij@linaro.org>, linux-kernel@vger.kernel.org,
+ linux-stm32@st-md-mailman.stormreply.com, broonie@kernel.org,
+ matthew.hart@linaro.org, Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ mgalka@collabora.com, enric.balletbo@collabora.com,
+ Giuseppe Cavallaro <peppe.cavallaro@st.com>, netdev@vger.kernel.org,
+ "David S. Miller" <davem@davemloft.net>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Jun 18, 2019 at 10:39 PM Johannes Berg
-<johannes@sipsolutions.net> wrote:
-> On Tue, 2019-06-18 at 22:33 +0200, Arnd Bergmann wrote:
+Hi Martin,
 
-> It seems to me though that this is far more complex than what I'm
-> proposing? What I'm proposing there doesn't even need any userspace
-> involvement, as long as all the pieces are in the different sub-drivers,
-> they'd fall out automatically.
->
-> And realistically, the wwan_device falls out anyway at some point, the
-> only question is if we really make one specific driver be the "owner" of
-> it. I'm suggesting that we don't, and just make its lifetime depend on
-> the links to parts it has (unless something like IPA actually wants to
-> be an owner).
+On 18/06/2019 21:58, Martin Blumenstingl wrote:
+> Hi Guillaume,
+> 
+> On Tue, Jun 18, 2019 at 10:53 PM Guillaume Tucker
+> <guillaume.tucker@collabora.com> wrote:
+>>
+>> On 18/06/2019 21:42, Martin Blumenstingl wrote:
+>>> On Tue, Jun 18, 2019 at 6:53 PM Kevin Hilman <khilman@baylibre.com> wrote:
+>>> [...]
+>>>> This seems to have broken on several sunxi SoCs, but also a MIPS SoC
+>>>> (pistachio_marduk):
+>>>>
+>>>> https://storage.kernelci.org/next/master/next-20190618/mips/pistachio_defconfig/gcc-8/lab-baylibre-seattle/boot-pistachio_marduk.html
+>>> today I learned why initializing arrays on the stack is important
+>>> too bad gcc didn't warn that I was about to shoot myself (or someone
+>>> else) in the foot :/
+>>>
+>>> I just sent a fix: [0]
+>>>
+>>> sorry for this issue and thanks to Kernel CI for even pointing out the
+>>> offending commit (this makes things a lot easier than just yelling
+>>> that "something is broken")
+>>
+>> Glad that helped :)
+>>
+>> If you would be so kind as to credit our robot friend in your
+>> patch, it'll be forever grateful:
+>>
+>>   Reported-by: "kernelci.org bot" <bot@kernelci.org>
+> sure
+> do you want me to re-send my other patch or should I just reply to it
+> adding the Reported-by tag and hope that Dave will catch it when
+> applying the patch?
 
-My feeling so far is that having the wwan_device be owned by a device
-gives a nicer abstraction model that is also simpler for the common
-case. A device driver like ipa would end up with a probe() function
-that does does wwan_device_alloc/wwan_device_register, corresponding
-to alloc_etherdev/register_netdev, and then communicates through
-callbacks.
+Well that's no big deal so replying would already be great.  The
+important part is that the fix gets applied.
 
-I agree the compound device case would get more complex by
-shoehorning it into this model, but that can be a valid tradeoff
-if it's the exceptional case rather than the common one.
+> in either case: I did mention in the patch description that Kernel CI caught it
 
-      Arnd
+I see, thanks!
+
+> by the way: I didn't know how to credit the Kernel CI bot.
+> syzbot / syzkaller makes that bit easy as it's mentioned in the
+> generated email, see [0] for a (random) example
+> have you considered adding the Reported-by to the generated email?
+
+Yes, we've got some bugs to fix first but that will be added to
+the email report soon (next week I guess).  Thanks for the
+suggestion though.
+
+Guillaume
+
+> [0] https://lkml.org/lkml/2019/4/19/638
 
 _______________________________________________
 linux-arm-kernel mailing list
