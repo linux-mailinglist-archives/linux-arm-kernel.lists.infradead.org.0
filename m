@@ -2,55 +2,90 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8EB1A4A97C
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 18 Jun 2019 20:09:10 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4988B4A9FE
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 18 Jun 2019 20:35:22 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=qBkrch8AK/GtmDsSvmoXj+9meNsN58ymjqZa8Xbz4bY=; b=GobFdmzzxbJINI
-	VoNKNPxavBrARiKztJxR59LqfiAxRCZVP0/eYHvvfBaz+hycqTnlqwnKZemettkxjo7oxZhDMgOFp
-	W6v4ppbgVeWchGCL68opIy3YyLWiPDBziMVurEB3VK0FGRB9O+7EcBe2tgsU/BdLjDBPH1F9v1OIu
-	T+aRGGUGxJILTKMHvTLeueiq9fQReq/dDkJRbXSjAvOLVLTv+/KWrP7S5y+mdSXtNCkfFL9wBi7Je
-	CzI0PvyDyeMckeWNZJ8h+nOoshYnrr5sQoBGSiMavDCk4rURDwywhK06OCCPHUNTbdUjNrt9oinp4
-	C2ri0B021CAskR1mrPJA==;
+	List-Owner; bh=EtC4VtozaTfBGvwiBdNHbprbe8NjI/3/JlaPcruy8nI=; b=c2NNMiJMJLRPE3
+	vRi5xCciOmVo9QIF/FWlxgEhAtKiSOStTv1nsyVweKTNG5Z9NYf0kXrU4u1IvD9AFQWzNOMG4Zo1k
+	WwkDC4w+UV4OIqlzTqAGBkIJIRHNNjZs8T4HkBr7VuZwao7bPFF02egqMCmb/uRIAhNcONO+M3r5R
+	7taLOOlGJIIPIBwM7Eci9HzDRknEwDoWoDWYHMXim04bV5b5Rip3R28GlcpRP5zk4yBeFv1SibyeX
+	6l+pWF+dTEu/CSB6CCDW6/UQR6UyILHcO0fyQkCy4aq96Td4GTlzOuojGgyHDx4u9B+x4RkfiwOmY
+	knLsRFvDAM7KGvEcNWTw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hdIXb-0005H4-4Z; Tue, 18 Jun 2019 18:09:07 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hdIXP-0005GB-PA
- for linux-arm-kernel@lists.infradead.org; Tue, 18 Jun 2019 18:08:57 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 91FB9344;
- Tue, 18 Jun 2019 11:08:54 -0700 (PDT)
-Received: from fuggles.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
- [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 2194F3F738;
- Tue, 18 Jun 2019 11:08:53 -0700 (PDT)
-Date: Tue, 18 Jun 2019 19:08:51 +0100
-From: Will Deacon <will.deacon@arm.com>
-To: Jean-Philippe Brucker <jean-philippe.brucker@arm.com>
-Subject: Re: [PATCH 3/8] iommu/arm-smmu-v3: Support platform SSID
-Message-ID: <20190618180851.GK4270@fuggles.cambridge.arm.com>
-References: <20190610184714.6786-1-jean-philippe.brucker@arm.com>
- <20190610184714.6786-4-jean-philippe.brucker@arm.com>
+	id 1hdIww-00082Z-TZ; Tue, 18 Jun 2019 18:35:18 +0000
+Received: from mail-pg1-x542.google.com ([2607:f8b0:4864:20::542])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hdIwe-0007je-2C
+ for linux-arm-kernel@lists.infradead.org; Tue, 18 Jun 2019 18:35:01 +0000
+Received: by mail-pg1-x542.google.com with SMTP id f25so8136996pgv.10
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 18 Jun 2019 11:34:59 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=6kNZlMyc+BT+bVh0V15w4cgbur+weciC7/ZsAv2IV7U=;
+ b=bm7i7c5f2/GAPKW27PQz1CiDRmYmVVba0JO3/GX7R8G+fkjmqzIIjlSd4nI38HMNiO
+ JG+isnGj0iq6Ofd/6L/6Az0kLFKN3KBe+DUwfNJZrmXGBX8SDqz9yFi5xBVYZhRXZvx8
+ pJQsKXZRSuhhm6WH3KSC1QPvrSbAjRWmtJKOA=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=6kNZlMyc+BT+bVh0V15w4cgbur+weciC7/ZsAv2IV7U=;
+ b=YG0qs5Js4iCMx0vhsaalNIqkEWSdMvUM5qjDIJIK8r0NMKXRYtHjO8nyBRXdk+HZMw
+ HJS/b4AvXka0gbTq3b5OVRaz2aEMxtkJpM5XuZZB8u08p0awKyk9nBsVP/K7VmhGnw7n
+ X5bkLHwvcS2mylF0afN+NtH8xll7kOfd6H38qNjBF8KHcEQ3eLNRk25vFcPB0O1/cep8
+ ukOAopjENFFPrty+Vimo7uIWYpC2mrFG8dS3JnGMf6T7g/QVp9ZeeVMIxVyfyCJr1aB4
+ 9j0IAc9bXnME+26zyYfBYVYX3TrUZBBYkvezxbJLVYGmYW7Jh7DUWrJf8MwFl7y0U1ew
+ A0+Q==
+X-Gm-Message-State: APjAAAUJo7TrrJ1smWjS0jLh0A1fv0+8/Mi9NxJ9JB33+7mNZVih6msn
+ RfFVmGRe72FuD5fvd8oQNt/yiQ==
+X-Google-Smtp-Source: APXvYqy+QvRjs4Drmi2FUQIv8wv4fenqIqrDebMofryze6kGt+JsmRV9NB16VTZPs4PMvqJusTHJsA==
+X-Received: by 2002:a65:654f:: with SMTP id a15mr3860571pgw.73.1560882898990; 
+ Tue, 18 Jun 2019 11:34:58 -0700 (PDT)
+Received: from localhost ([2620:15c:202:1:75a:3f6e:21d:9374])
+ by smtp.gmail.com with ESMTPSA id e16sm22768169pga.11.2019.06.18.11.34.58
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Tue, 18 Jun 2019 11:34:58 -0700 (PDT)
+Date: Tue, 18 Jun 2019 11:34:55 -0700
+From: Matthias Kaehlcke <mka@chromium.org>
+To: Enric Balletbo i Serra <enric.balletbo@collabora.com>
+Subject: Re: [PATCH] Revert "ARM: dts: rockchip: set PWM delay backlight
+ settings for Minnie"
+Message-ID: <20190618183455.GU137143@google.com>
+References: <20190614224533.169881-1-mka@chromium.org>
+ <45f94c6a-5bd7-92b0-d23f-ae7e0481935f@collabora.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190610184714.6786-4-jean-philippe.brucker@arm.com>
-User-Agent: Mutt/1.11.1+86 (6f28e57d73f2) ()
+In-Reply-To: <45f94c6a-5bd7-92b0-d23f-ae7e0481935f@collabora.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190618_110855_856698_D50BC51C 
-X-CRM114-Status: GOOD (  20.06  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190618_113500_099616_5376D080 
+X-CRM114-Status: GOOD (  14.94  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:542 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -62,81 +97,46 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
- jacob.jun.pan@linux.intel.com, joro@8bytes.org, linux-kernel@vger.kernel.org,
- eric.auger@redhat.com, iommu@lists.linux-foundation.org, robh+dt@kernel.org,
- robin.murphy@arm.com, linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Heiko Stuebner <heiko@sntech.de>, linux-kernel@vger.kernel.org,
+ Douglas Anderson <dianders@chromium.org>, linux-rockchip@lists.infradead.org,
+ Rob Herring <robh+dt@kernel.org>, Pavel Machek <pavel@ucw.cz>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Jun 10, 2019 at 07:47:09PM +0100, Jean-Philippe Brucker wrote:
-> For platform devices that support SubstreamID (SSID), firmware provides
-> the number of supported SSID bits. Restrict it to what the SMMU supports
-> and cache it into master->ssid_bits.
+Hi Enric,
+
+On Tue, Jun 18, 2019 at 10:21:52AM +0200, Enric Balletbo i Serra wrote:
+> Hi Matthias,
 > 
-> Signed-off-by: Jean-Philippe Brucker <jean-philippe.brucker@arm.com>
-> ---
->  drivers/iommu/arm-smmu-v3.c | 11 +++++++++++
->  drivers/iommu/of_iommu.c    |  6 +++++-
->  include/linux/iommu.h       |  1 +
->  3 files changed, 17 insertions(+), 1 deletion(-)
+> On 15/6/19 0:45, Matthias Kaehlcke wrote:
+> > This reverts commit 288ceb85b505c19abe1895df068dda5ed20cf482.
+> > 
+> > According to the commit message the AUO B101EAN01 panel on minnie
+> > requires a PWM delay of 200 ms, however this is not what the
+> > datasheet says. The datasheet mentions a *max* delay of 200 ms
+> > for T2 ("delay from LCDVDD to black video generation") and T3
+> > ("delay from LCDVDD to HPD high"), which aren't related to the
+> > PWM. The backlight power sequence does not specify min/max
+> > constraints for T15 (time from PWM on to BL enable) or T16
+> > (time from BL disable to PWM off).
+> > 
 > 
-> diff --git a/drivers/iommu/arm-smmu-v3.c b/drivers/iommu/arm-smmu-v3.c
-> index 4d5a694f02c2..3254f473e681 100644
-> --- a/drivers/iommu/arm-smmu-v3.c
-> +++ b/drivers/iommu/arm-smmu-v3.c
-> @@ -604,6 +604,7 @@ struct arm_smmu_master {
->  	struct list_head		domain_head;
->  	u32				*sids;
->  	unsigned int			num_sids;
-> +	unsigned int			ssid_bits;
->  	bool				ats_enabled		:1;
->  };
->  
-> @@ -2097,6 +2098,16 @@ static int arm_smmu_add_device(struct device *dev)
->  		}
->  	}
->  
-> +	master->ssid_bits = min(smmu->ssid_bits, fwspec->num_pasid_bits);
-> +
-> +	/*
-> +	 * If the SMMU doesn't support 2-stage CD, limit the linear
-> +	 * tables to a reasonable number of contexts, let's say
-> +	 * 64kB / sizeof(ctx_desc) = 1024 = 2^10
-> +	 */
-> +	if (!(smmu->features & ARM_SMMU_FEAT_2_LVL_CDTAB))
-> +		master->ssid_bits = min(master->ssid_bits, 10U);
+> Could you point from where the confusion comes from? I think will be helpful for
+> the record. B101EAN01.8 vs B101EAN01.1
 
-Please introduce a #define for the 10, so that it is computed in the way
-you describe in the comment (a bit like we do for things like queue sizes).
+sounds good
 
-> +
->  	group = iommu_group_get_for_dev(dev);
->  	if (!IS_ERR(group)) {
->  		iommu_group_put(group);
-> diff --git a/drivers/iommu/of_iommu.c b/drivers/iommu/of_iommu.c
-> index f04a6df65eb8..04f4f6b95d82 100644
-> --- a/drivers/iommu/of_iommu.c
-> +++ b/drivers/iommu/of_iommu.c
-> @@ -206,8 +206,12 @@ const struct iommu_ops *of_iommu_configure(struct device *dev,
->  			if (err)
->  				break;
->  		}
-> -	}
->  
-> +		fwspec = dev_iommu_fwspec_get(dev);
-> +		if (!err && fwspec)
-> +			of_property_read_u32(master_np, "pasid-num-bits",
-> +					     &fwspec->num_pasid_bits);
-> +	}
+> > Signed-off-by: Matthias Kaehlcke <mka@chromium.org>
+> 
+> With the above added:
+> 
+> Reviewed-by: Enric Balletbo i Serra <enric.balletbo@collabora.com>
 
-Hmm. Do you know if there's anything in ACPI for this?
-
-Otherwise, patch looks fine. Thanks.
-
-Will
+Thanks!
 
 _______________________________________________
 linux-arm-kernel mailing list
