@@ -2,102 +2,90 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BAD4E498C5
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 18 Jun 2019 08:13:28 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D9186498D1
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 18 Jun 2019 08:19:45 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Message-Id:In-Reply-To:MIME-Version:
-	References:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=kF+nEANiRuQxERUeFu7JrZqeShqC3Stuc6CtPWERSC4=; b=rYiyr6RUjGitAb
-	sqJ8ZP8d2ICzhHBbhEIXLiz+xctoZ0uqyU7Q9vV+TtoxiQ90k0C4AvEV6Y/tcgm5fo6SHvj1GO6IU
-	LTCSwAGUorw7Z7PZ2p/syaPx/k0bwghK1o4RxT7Ov0L3Ia4oWdLLCsPDK5VW6b9fXABK7u1qtFCle
-	UdKokuwKLV5wBp6Pbv0isi38MfPhbIsxTck8v5wNJsNS4VGpRZ7E0pK4Y2i69ZkOlTkqjQwdZC0fD
-	1lTHNpCzEngMFqhVyvpWBOZcxwQcPgVH9A0c6IZnMqlwdghjKRMt8CwbUli37HS743gak8jUIJ+Bt
-	Lb6zbV09IsDV2lyVZblg==;
+	List-Owner; bh=BtGo7EYqNAI+9BVAqsdrDh2GlG0tkkpzqJXEpdJygs0=; b=KMpc+0c6FIN63z
+	6ZWqFLNhU1Vff3Q692MohtTZWQtuXY995NUvXiy4G4w+qIXJuVOtVGFVTg8FxGrClIqHlW7bz0n/F
+	XRQ6LlAPqsXK7OHFpsRMENW21YvfxywP5V8JVnH/ECK7DH27SRVb+3O5hG5A+eEVQ/GxPDVt3YsBT
+	Oc+UQW9XLscqbNSssfe+PQf1LcbF6dvMkJ0i51lv8VrhswTuJFfNm9/BA6oeSa2Kjs41I7mYSVKH9
+	P3ESQjZz5bEHS6jzF/z/OvFL9WB1CMMPeCop3C2a13ppGfmDKiV+I4P9emPqc2Y9g3JYKxqY/mQQL
+	AZKpJ2L2bwVXPK9Wu7/Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hd7My-0007wh-Rl; Tue, 18 Jun 2019 06:13:24 +0000
-Received: from mx0b-001b2d01.pphosted.com ([148.163.158.5]
- helo=mx0a-001b2d01.pphosted.com)
+	id 1hd7T5-0002JB-Uk; Tue, 18 Jun 2019 06:19:43 +0000
+Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hd7Mo-0007wK-98
- for linux-arm-kernel@lists.infradead.org; Tue, 18 Jun 2019 06:13:15 +0000
-Received: from pps.filterd (m0098420.ppops.net [127.0.0.1])
- by mx0b-001b2d01.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id
- x5I67n0P165648
- for <linux-arm-kernel@lists.infradead.org>; Tue, 18 Jun 2019 02:13:10 -0400
-Received: from e06smtp02.uk.ibm.com (e06smtp02.uk.ibm.com [195.75.94.98])
- by mx0b-001b2d01.pphosted.com with ESMTP id 2t6nt18ehj-1
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=NOT)
- for <linux-arm-kernel@lists.infradead.org>; Tue, 18 Jun 2019 02:13:10 -0400
-Received: from localhost
- by e06smtp02.uk.ibm.com with IBM ESMTP SMTP Gateway: Authorized Use Only!
- Violators will be prosecuted
- for <linux-arm-kernel@lists.infradead.org> from <rppt@linux.ibm.com>;
- Tue, 18 Jun 2019 07:13:08 +0100
-Received: from b06cxnps3075.portsmouth.uk.ibm.com (9.149.109.195)
- by e06smtp02.uk.ibm.com (192.168.101.132) with IBM ESMTP SMTP Gateway:
- Authorized Use Only! Violators will be prosecuted; 
- (version=TLSv1/SSLv3 cipher=AES256-GCM-SHA384 bits=256/256)
- Tue, 18 Jun 2019 07:13:03 +0100
-Received: from d06av23.portsmouth.uk.ibm.com (d06av23.portsmouth.uk.ibm.com
- [9.149.105.59])
- by b06cxnps3075.portsmouth.uk.ibm.com (8.14.9/8.14.9/NCO v10.0) with ESMTP id
- x5I6D2jD61210840
- (version=TLSv1/SSLv3 cipher=DHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Tue, 18 Jun 2019 06:13:02 GMT
-Received: from d06av23.portsmouth.uk.ibm.com (unknown [127.0.0.1])
- by IMSVA (Postfix) with ESMTP id 79475A4040;
- Tue, 18 Jun 2019 06:13:02 +0000 (GMT)
-Received: from d06av23.portsmouth.uk.ibm.com (unknown [127.0.0.1])
- by IMSVA (Postfix) with ESMTP id 7A0E8A4051;
- Tue, 18 Jun 2019 06:13:01 +0000 (GMT)
-Received: from rapoport-lnx (unknown [9.148.8.53])
- by d06av23.portsmouth.uk.ibm.com (Postfix) with ESMTPS;
- Tue, 18 Jun 2019 06:13:01 +0000 (GMT)
-Date: Tue, 18 Jun 2019 09:12:59 +0300
-From: Mike Rapoport <rppt@linux.ibm.com>
-To: Will Deacon <will.deacon@arm.com>
-Subject: Re: [PATCH -next] arm64/mm: fix a bogus GFP flag in pgd_alloc()
-References: <1559656836-24940-1-git-send-email-cai@lca.pw>
- <20190604142338.GC24467@lakrids.cambridge.arm.com>
- <20190610114326.GF15979@fuggles.cambridge.arm.com>
- <1560187575.6132.70.camel@lca.pw>
- <20190611100348.GB26409@lakrids.cambridge.arm.com>
- <20190613121100.GB25164@rapoport-lnx>
- <20190617151252.GF16810@rapoport-lnx>
- <20190617163630.GH30800@fuggles.cambridge.arm.com>
+ id 1hd7Sm-0002Gr-UC
+ for linux-arm-kernel@lists.infradead.org; Tue, 18 Jun 2019 06:19:27 +0000
+Received: by mail-wr1-x443.google.com with SMTP id p13so12478191wru.10
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 17 Jun 2019 23:19:21 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=2qhMEjTGxN0dhDss7cc7zfKbD1VT4IQism6fVgX1NpE=;
+ b=dvsdqA01/pZ+815FjjW8tFL5UWf7khLLQ82Ejhqn6TxNO1tCDktEgPtkMa4HNv7OLR
+ 1U39nh2EFsrtSmlNZcgDcq/9sa+nGn3SUOMpDbfIAp95GzajjL3XI+3GbjB5ULFzEoSH
+ IwACWh8kuOmwu5jEKWjMzofeGDXqP9safEXyJXu8ve2REW9BQaUclrQL8parNOK0OQjD
+ B3wkQTkyxFJk8UmfoMVdfQg+Tn/UTwLgckw83gJpr19cDBf/Gz90iGpXy7nsEYrqDA2m
+ eZwEj4HpXDoxWiOrmV6yaBfhp8pBtJeFO0hOjxV5cmt7gkv5WG1rUgP3mWcFMvMsVNL0
+ dfKw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=2qhMEjTGxN0dhDss7cc7zfKbD1VT4IQism6fVgX1NpE=;
+ b=NqnPn8fEGP6hxqpI8srxRaMczbQBJ7/ZCn9gzJ8gBOonTIDkgFfqGOXl6YXtajJWfs
+ 99bcFwtjAhi+z90RUa/uReqVpC43tjVsAT7yJ758fgwmhpavMXN/oTttY7q4CfY8ta3U
+ UN5zs3rod2NUobaAiTyJ42uaZbo0BLolHUUbEjkvpw7n9AOrV8IboGg9eDLFEn/qfcpw
+ qqumCFKpw9qBWSmubL7M2YrgGZ/O/ikB/6ujQ2KRVrbjGWvugegtJglvSmX/4L/u+e/o
+ TF6OuDyKOTy92K5YXDfQWAMykc0prtqs4OT/UusLvfex7mIJzN0fRDuBfyWqp0CeXaKl
+ h5Lw==
+X-Gm-Message-State: APjAAAX2W1MTIJeUXbDTBfVhs+7dufNPtuQ0mzEhJ5u4Wf8M53k/6w/2
+ NEILwmja8zYmkNip4e9BCQCF+Ssp4fppFBIcDTNW2w==
+X-Google-Smtp-Source: APXvYqyc9odfP5kl53sVaAJSFZ9kxou4Lg+4NAUEX3RWJa1eraarQrRn5NVyE6c41JtA+QlG76Va2MCtJMEgh2C9gYE=
+X-Received: by 2002:a5d:4b43:: with SMTP id w3mr14892373wrs.166.1560838760111; 
+ Mon, 17 Jun 2019 23:19:20 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190617163630.GH30800@fuggles.cambridge.arm.com>
-User-Agent: Mutt/1.5.24 (2015-08-30)
-X-TM-AS-GCONF: 00
-x-cbid: 19061806-0008-0000-0000-000002F4A996
-X-IBM-AV-DETECTION: SAVI=unused REMOTE=unused XFE=unused
-x-cbparentid: 19061806-0009-0000-0000-00002261BF41
-Message-Id: <20190618061259.GB15497@rapoport-lnx>
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:, ,
- definitions=2019-06-18_03:, , signatures=0
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- priorityscore=1501
- malwarescore=0 suspectscore=27 phishscore=0 bulkscore=0 spamscore=0
- clxscore=1015 lowpriorityscore=0 mlxscore=0 impostorscore=0
- mlxlogscore=929 adultscore=0 classifier=spam adjust=0 reason=mlx
- scancount=1 engine=8.0.1-1810050000 definitions=main-1906180050
+References: <1560169080-27134-1-git-send-email-yong.wu@mediatek.com>
+ <1560169080-27134-15-git-send-email-yong.wu@mediatek.com>
+In-Reply-To: <1560169080-27134-15-git-send-email-yong.wu@mediatek.com>
+From: Tomasz Figa <tfiga@google.com>
+Date: Tue, 18 Jun 2019 15:19:07 +0900
+Message-ID: <CAAFQd5A5GUn1Zq1xF2_2V0MReNPd5bra2F=nquvodSAZUua5AQ@mail.gmail.com>
+Subject: Re: [PATCH v7 14/21] iommu/mediatek: Add mmu1 support
+To: Yong Wu <yong.wu@mediatek.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190617_231314_444986_A57BE30E 
-X-CRM114-Status: GOOD (  28.49  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20190617_231925_004938_6A0ED6A9 
+X-CRM114-Status: GOOD (  18.55  )
+X-Spam-Score: -15.7 (---------------)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-15.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [148.163.158.5 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:443 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
+ white-list
+ -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
+ white-list
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
+ Match -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -109,68 +97,103 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, catalin.marinas@arm.com,
- linux-kernel@vger.kernel.org, mhocko@kernel.org, linux-mm@kvack.org,
- Qian Cai <cai@lca.pw>, vdavydov.dev@gmail.com, hannes@cmpxchg.org,
- cgroups@vger.kernel.org, akpm@linux-foundation.org,
- Roman Gushchin <guro@fb.com>, linux-arm-kernel@lists.infradead.org
+Cc: youlin.pei@mediatek.com, devicetree@vger.kernel.org,
+ Nicolas Boichat <drinkcat@chromium.org>,
+ srv_heupstream <srv_heupstream@mediatek.com>, Joerg Roedel <joro@8bytes.org>,
+ Will Deacon <will.deacon@arm.com>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Evan Green <evgreen@chromium.org>,
+ "list@263.net:IOMMU DRIVERS <iommu@lists.linux-foundation.org>,
+ Joerg Roedel <joro@8bytes.org>, " <iommu@lists.linux-foundation.org>,
+ Rob Herring <robh+dt@kernel.org>,
+ "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ =?UTF-8?B?WWluZ2pvZSBDaGVuICjpmbPoi7HmtLIp?= <yingjoe.chen@mediatek.com>,
+ anan.sun@mediatek.com, Robin Murphy <robin.murphy@arm.com>,
+ Matthias Kaehlcke <mka@chromium.org>,
+ "list@263.net:IOMMU DRIVERS <iommu@lists.linux-foundation.org>,
+ Joerg Roedel <joro@8bytes.org>, " <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Jun 17, 2019 at 05:36:30PM +0100, Will Deacon wrote:
-> Hi Mike,
-> 
-> On Mon, Jun 17, 2019 at 06:12:52PM +0300, Mike Rapoport wrote:
-> > Andrew, can you please add the patch below as an incremental fix?
-> > 
-> > With this the arm64::pgd_alloc() should be in the right shape.
-> > 
-> > 
-> > From 1c1ef0bc04c655689c6c527bd03b140251399d87 Mon Sep 17 00:00:00 2001
-> > From: Mike Rapoport <rppt@linux.ibm.com>
-> > Date: Mon, 17 Jun 2019 17:37:43 +0300
-> > Subject: [PATCH] arm64/mm: don't initialize pgd_cache twice
-> > 
-> > When PGD_SIZE != PAGE_SIZE, arm64 uses kmem_cache for allocation of PGD
-> > memory. That cache was initialized twice: first through
-> > pgtable_cache_init() alias and then as an override for weak
-> > pgd_cache_init().
-> > 
-> > After enabling accounting for the PGD memory, this created a confusion for
-> > memcg and slub sysfs code which resulted in the following errors:
-> > 
-> > [   90.608597] kobject_add_internal failed for pgd_cache(13:init.scope) (error: -2 parent: cgroup)
-> > [   90.678007] kobject_add_internal failed for pgd_cache(13:init.scope) (error: -2 parent: cgroup)
-> > [   90.713260] kobject_add_internal failed for pgd_cache(21:systemd-tmpfiles-setup.service) (error: -2 parent: cgroup)
-> > 
-> > Removing the alias from pgtable_cache_init() and keeping the only pgd_cache
-> > initialization in pgd_cache_init() resolves the problem and allows
-> > accounting of PGD memory.
-> > 
-> > Reported-by: Qian Cai <cai@lca.pw>
-> > Signed-off-by: Mike Rapoport <rppt@linux.ibm.com>
-> > ---
-> >  arch/arm64/include/asm/pgtable.h | 3 +--
-> >  arch/arm64/mm/pgd.c              | 5 +----
-> >  2 files changed, 2 insertions(+), 6 deletions(-)
-> 
-> Looks like this actually fixes caa841360134 ("x86/mm: Initialize PGD cache
-> during mm initialization") due to an unlucky naming conflict!
-> 
-> In which case, I'd actually prefer to take this fix asap via the arm64
-> tree. Is that ok?
+On Mon, Jun 10, 2019 at 9:21 PM Yong Wu <yong.wu@mediatek.com> wrote:
+>
+> Normally the M4U HW connect EMI with smi. the diagram is like below:
+>               EMI
+>                |
+>               M4U
+>                |
+>             smi-common
+>                |
+>        -----------------
+>        |    |    |     |    ...
+>     larb0 larb1  larb2 larb3
+>
+> Actually there are 2 mmu cells in the M4U HW, like this diagram:
+>
+>               EMI
+>            ---------
+>             |     |
+>            mmu0  mmu1     <- M4U
+>             |     |
+>            ---------
+>                |
+>             smi-common
+>                |
+>        -----------------
+>        |    |    |     |    ...
+>     larb0 larb1  larb2 larb3
+>
+> This patch add support for mmu1. In order to get better performance,
+> we could adjust some larbs go to mmu1 while the others still go to
+> mmu0. This is controlled by a SMI COMMON register SMI_BUS_SEL(0x220).
+>
+> mt2712, mt8173 and mt8183 M4U HW all have 2 mmu cells. the default
+> value of that register is 0 which means all the larbs go to mmu0
+> defaultly.
+>
+> This is a preparing patch for adjusting SMI_BUS_SEL for mt8183.
+>
+> Signed-off-by: Yong Wu <yong.wu@mediatek.com>
+> Reviewed-by: Evan Green <evgreen@chromium.org>
+> ---
+>  drivers/iommu/mtk_iommu.c | 46 +++++++++++++++++++++++++++++-----------------
+>  1 file changed, 29 insertions(+), 17 deletions(-)
+>
+> diff --git a/drivers/iommu/mtk_iommu.c b/drivers/iommu/mtk_iommu.c
+> index 3a14301..ec4ce74 100644
+> --- a/drivers/iommu/mtk_iommu.c
+> +++ b/drivers/iommu/mtk_iommu.c
+> @@ -72,26 +72,32 @@
+>  #define F_INT_CLR_BIT                          BIT(12)
+>
+>  #define REG_MMU_INT_MAIN_CONTROL               0x124
+> -#define F_INT_TRANSLATION_FAULT                        BIT(0)
+> -#define F_INT_MAIN_MULTI_HIT_FAULT             BIT(1)
+> -#define F_INT_INVALID_PA_FAULT                 BIT(2)
+> -#define F_INT_ENTRY_REPLACEMENT_FAULT          BIT(3)
+> -#define F_INT_TLB_MISS_FAULT                   BIT(4)
+> -#define F_INT_MISS_TRANSACTION_FIFO_FAULT      BIT(5)
+> -#define F_INT_PRETETCH_TRANSATION_FIFO_FAULT   BIT(6)
+> +                                               /* mmu0 | mmu1 */
+> +#define F_INT_TRANSLATION_FAULT                        (BIT(0) | BIT(7))
+> +#define F_INT_MAIN_MULTI_HIT_FAULT             (BIT(1) | BIT(8))
+> +#define F_INT_INVALID_PA_FAULT                 (BIT(2) | BIT(9))
+> +#define F_INT_ENTRY_REPLACEMENT_FAULT          (BIT(3) | BIT(10))
+> +#define F_INT_TLB_MISS_FAULT                   (BIT(4) | BIT(11))
+> +#define F_INT_MISS_TRANSACTION_FIFO_FAULT      (BIT(5) | BIT(12))
+> +#define F_INT_PRETETCH_TRANSATION_FIFO_FAULT   (BIT(6) | BIT(13))
 
-I suppose so, it just won't apply as is. Would you like a patch against the
-current upstream?
+If there are two IOMMUs, shouldn't we have two driver instances handle
+them, instead of making the driver combine them two internally?
 
-> Will
+And, what is even more important from security point of view actually,
+have two separate page tables (aka IOMMU groups) for them?
 
--- 
-Sincerely yours,
-Mike.
-
+Best regards,
+Tomasz
 
 _______________________________________________
 linux-arm-kernel mailing list
