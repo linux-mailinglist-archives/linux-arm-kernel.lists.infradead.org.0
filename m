@@ -2,96 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F38E049DAB
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 18 Jun 2019 11:44:53 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5903049DB4
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 18 Jun 2019 11:46:17 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ut7Z4vBMDGfTE4+h1haM0iMeUOPKEbvmQZ6Z88UyRj8=; b=CEBlZa3i7dK63J
-	jCulXR1pAhxCTCQNkb0uMb8aY7ZQbTw4vk/AhJDgemKqUkXI/kw0SY+vQSz1jX+YPhMVO4Ic6L0m/
-	tpi7oFw/nG/mBNhjeeJqc/ydMKYF6UB1ZlUdON3U36dG0ZrQTjFfWq/g6PkGTKQDK/aB4mF59FNqn
-	jXwuKa+ndO1NhDdJm7+1Dax06DvBO9mB7dS8hAGfYojdjjY9mwBW8ChX7brdqD+623eg0x6HHCWAi
-	mP5HLpGzcjiDMaWNW62ojfiHfACb9AmkSsZTU7qD2ZG9f2FOPYYrj6I7JbXx//EO1Hb+oqgK8H7Je
-	ZNI+Lj8an94+WTCtjXZA==;
+	List-Owner; bh=JzQ30X44Xjjqb7uf0owoumRrxZ54R6HcMCuQtKIoM3Q=; b=HcR4IMjYjUJFCG
+	8xwvpNUhsexwQAuu68NO41z7IoxNkjSm0bULNUNssOkGKYn8Zcvey7Zg+dA1U4LeSy1gSqNQcgPDS
+	CmzN+zxhTKd4RDY/iSy7ZQoLwtdd3QiwoR+iXn07mTu/QvWu59NlJ+mCu1FAX0CDKQUtrEyOY4Nsy
+	yzo+AtHzLSRWTI1mwNVMeozmhCegSRi1pc9Skza8tyFhWgDrbljQXHODDvBZ8xzVJFj2GQHfqI6z1
+	sOiUw5s7UpIvuMenS7z6Omz6P3tkNssJryOOvIA1pjvH6OalowjTdEmPtCsNJ+psvne3lwfmGsN2M
+	CnVy1J8FLlQEqYQV354A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hdAfb-00029p-MN; Tue, 18 Jun 2019 09:44:51 +0000
-Received: from mail-eopbgr30047.outbound.protection.outlook.com ([40.107.3.47]
- helo=EUR03-AM5-obe.outbound.protection.outlook.com)
+	id 1hdAgv-00046Q-O1; Tue, 18 Jun 2019 09:46:13 +0000
+Received: from mail-lj1-x242.google.com ([2a00:1450:4864:20::242])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hdAfP-00023U-PL
- for linux-arm-kernel@lists.infradead.org; Tue, 18 Jun 2019 09:44:41 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=0H89k2AoZhrV0TSzPJzRfK3OJx5SjnZPRp/rdgl1/Bc=;
- b=heJV77SzxSJRtj0PwvnaesafTc27dHk4+QscRgZF2nU6hjLVng1DM29iMvENdR0XaQLaORdX5UifOZ8bEyfAibTwNKboL/vTk1R9iAUQfGudE6l9rd09/zgGqyXtoZkQjJdlrkv2p7MS2XgNk7FT6a6kHVw/9r+ixWc5ukTnVcA=
-Received: from DB3PR0402MB3916.eurprd04.prod.outlook.com (52.134.72.18) by
- DB3PR0402MB3641.eurprd04.prod.outlook.com (52.134.69.140) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.1987.12; Tue, 18 Jun 2019 09:44:35 +0000
-Received: from DB3PR0402MB3916.eurprd04.prod.outlook.com
- ([fe80::5835:e874:bd94:fec]) by DB3PR0402MB3916.eurprd04.prod.outlook.com
- ([fe80::5835:e874:bd94:fec%5]) with mapi id 15.20.1987.014; Tue, 18 Jun 2019
- 09:44:35 +0000
-From: Anson Huang <anson.huang@nxp.com>
-To: Shawn Guo <shawnguo@kernel.org>
-Subject: RE: [PATCH V2 2/2] soc: imx8: Use existing of_root directly
-Thread-Topic: [PATCH V2 2/2] soc: imx8: Use existing of_root directly
-Thread-Index: AQHVIogDK1yz8od2k06kc5I/LWM47qahJ3qAgAAHn0A=
-Date: Tue, 18 Jun 2019 09:44:35 +0000
-Message-ID: <DB3PR0402MB3916AF21E4C4199E083790A1F5EA0@DB3PR0402MB3916.eurprd04.prod.outlook.com>
-References: <20190614080748.32997-1-Anson.Huang@nxp.com>
- <20190614080748.32997-2-Anson.Huang@nxp.com> <20190618091442.GM29881@dragon>
-In-Reply-To: <20190618091442.GM29881@dragon>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=anson.huang@nxp.com; 
-x-originating-ip: [119.31.174.68]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: 95f21d7a-63bf-4292-ee75-08d6f3d192f3
-x-ms-office365-filtering-ht: Tenant
-x-microsoft-antispam: BCL:0; PCL:0;
- RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600148)(711020)(4605104)(1401327)(4618075)(2017052603328)(7193020);
- SRVR:DB3PR0402MB3641; 
-x-ms-traffictypediagnostic: DB3PR0402MB3641:
-x-microsoft-antispam-prvs: <DB3PR0402MB36411B7D585F53306811BBF7F5EA0@DB3PR0402MB3641.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:6108;
-x-forefront-prvs: 007271867D
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(396003)(136003)(376002)(39860400002)(346002)(366004)(13464003)(189003)(199004)(476003)(446003)(11346002)(5660300002)(9686003)(53936002)(55016002)(6246003)(3846002)(53546011)(54906003)(76176011)(44832011)(33656002)(486006)(66556008)(66946007)(7736002)(6506007)(6916009)(8936002)(305945005)(74316002)(25786009)(102836004)(73956011)(6436002)(4326008)(8676002)(81166006)(76116006)(7696005)(256004)(99286004)(66066001)(66476007)(6116002)(64756008)(186003)(66446008)(26005)(71200400001)(52536014)(68736007)(316002)(229853002)(71190400001)(2906002)(478600001)(14454004)(81156014)(86362001);
- DIR:OUT; SFP:1101; SCL:1; SRVR:DB3PR0402MB3641;
- H:DB3PR0402MB3916.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; MX:1; A:1; 
-received-spf: None (protection.outlook.com: nxp.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: EU8P6xdtiXe+znPd2l12sbjJWCizeywZR/ZZAASl/yPLqaHAOAat45i8C9g25Sotv8BvEbxFiN1YCUPV237ly4bEcyOu59/BQoUgyl8EFNyIYGCJHLV4Dq7/RCV+MamuFyyqy1qD+jzeqCnLg6NJJTH2MSUapyf92CezHXf2Z5E2CZt5dAyZuENnv9OQt6ppePmcbuu99c0kbAM6P2574XvE6EXUqetwe+Ukzf5hX3rj0T9PAwrQvj9ZhYPiT7jnAT1Iwv8cdJRfHPpqPj2CPJgPlg5mE/UkuBO0Kjejmh4++WiPbPEj5tCmMQ7lyQo8ImXIF5cTxpDYleB6fWcqz9iuWclXpuGvB/yuHsdf3ADm2Vgk3bKrlFk0ewWGH8TBTt+7QDjKHVFQnoDxNGoRpJaQUNJ9Ri5Xbko9akDsctA=
+ id 1hdAgn-00045l-0R
+ for linux-arm-kernel@lists.infradead.org; Tue, 18 Jun 2019 09:46:06 +0000
+Received: by mail-lj1-x242.google.com with SMTP id k18so12372193ljc.11
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 18 Jun 2019 02:46:04 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=dFNO/LKvYXvmFansFhyqwV2emff3osiWobNFjm+LOZY=;
+ b=KoP3nBVtEN46bstqiMPFdsUTbbPqY93iN7frcTYWr8sCkKcBebn35gCjj5jqcvfKhd
+ fAuG3oSUIsxzueLCci8XKFWf5vyJEcjs8vc/tenn/7tedfBJnIjkrUS2emDtyh1XcVKN
+ oJDo3aSm0I9kNs8kSqe8S7BpxGPY/S1XIGyrpqJwXiVoAjJ21EkDkul6gD/j+g2k7chV
+ 1q8IYd1jAabrLTjzTFW+sNKXtfxKxoVVe4Tv2xbq9ilJGzSX2Xwu1c6FkoVxQK/B9d7O
+ 5xswsVa1q7duPRYnUKJhxEn70tEaolrLmQiQYoN4UFh8A5Cuug+J++VyRPd/hcvZEWkl
+ 4ciw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=dFNO/LKvYXvmFansFhyqwV2emff3osiWobNFjm+LOZY=;
+ b=CMYJT9nAaUmtTsycZnZH9uPI6wALzfndt6cMxzlSe+CcRyp9MeuFmZ6qzgdojgLmEC
+ kDiZcIdG3wxnnaiviGt7MutX/LaQgzjM8jFskVxFekY8/Nxf+lGshViV6EwIXxmSkPNY
+ n4QOM3JrpitoIT92zFWkAiX9fD7uHONPHgpJU3xQiwADPqn1TlWhoxPwafnB6rLLOBea
+ jc4WK+oq1l/E7jZmHVHJB/6FcGgxAY5NmsohIGYIom9FifxwiGkQzr47uzaO9+HHyhz1
+ KLkt3K1GE0FWyohgEc2fhQgAqiX8QTpRlzQ8IbIm2Xxn8Prf8P9kVHT4KMzONVpZ9dtD
+ UbRw==
+X-Gm-Message-State: APjAAAWz1drG75T/xATn03m7NQSV51bQTt0yEoznNy8W6hLbYAlBlyRD
+ d9F0HBWJcualqKFOowZ9X39A3LMH2pR2SeUDQY4JxQ==
+X-Google-Smtp-Source: APXvYqwLdmo7/UQzJICTwX7MmW1II8rP/12ROJHu2fbSKBjfNIwSirb55B1kWr5B7bMLEWjTiNO044PrL3t15XUYJ7U=
+X-Received: by 2002:a2e:1290:: with SMTP id 16mr43089752ljs.88.1560851163194; 
+ Tue, 18 Jun 2019 02:46:03 -0700 (PDT)
 MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 95f21d7a-63bf-4292-ee75-08d6f3d192f3
-X-MS-Exchange-CrossTenant-originalarrivaltime: 18 Jun 2019 09:44:35.6909 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: anson.huang@nxp.com
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB3PR0402MB3641
+References: <1560783617-5827-1-git-send-email-vincent.guittot@linaro.org>
+ <c8030f30-0899-070b-df3c-3839ec7e1909@arm.com>
+ <20190618093453.GN3436@hirez.programming.kicks-ass.net>
+In-Reply-To: <20190618093453.GN3436@hirez.programming.kicks-ass.net>
+From: Vincent Guittot <vincent.guittot@linaro.org>
+Date: Tue, 18 Jun 2019 11:45:52 +0200
+Message-ID: <CAKfTPtAcV-CS_6hibJa0N6U925KASw1Eg7OSDcBt-Hw_frQkXw@mail.gmail.com>
+Subject: Re: [PATCH] sched/topology: remove unused sd param from
+ arch_scale_cpu_capacity()
+To: Peter Zijlstra <peterz@infradead.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190618_024439_903153_EAD39C1E 
-X-CRM114-Status: GOOD (  18.94  )
+X-CRM114-CacheID: sfid-20190618_024605_052325_75585C13 
+X-CRM114-Status: GOOD (  12.95  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.3.47 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ no trust [2a00:1450:4864:20:0:0:0:242 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
@@ -111,107 +93,55 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Abel Vesa <abel.vesa@nxp.com>,
- "viresh.kumar@linaro.org" <viresh.kumar@linaro.org>,
- "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- dl-linux-imx <linux-imx@nxp.com>,
- "kernel@pengutronix.de" <kernel@pengutronix.de>,
- Leonard Crestez <leonard.crestez@nxp.com>,
- "festevam@gmail.com" <festevam@gmail.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: "open list:THERMAL" <linux-pm@vger.kernel.org>,
+ "gregkh@linuxfoundation.org" <gregkh@linuxfoundation.org>,
+ "Rafael J. Wysocki" <rafael@kernel.org>, Russell King <linux@armlinux.org.uk>,
+ linux-kernel <linux-kernel@vger.kernel.org>,
+ Quentin Perret <quentin.perret@arm.com>, Ingo Molnar <mingo@redhat.com>,
+ viresh kumar <viresh.kumar@linaro.org>,
+ Valentin Schneider <valentin.schneider@arm.com>,
+ LAK <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi, Shawn
+On Tue, 18 Jun 2019 at 11:34, Peter Zijlstra <peterz@infradead.org> wrote:
+>
+> On Mon, Jun 17, 2019 at 06:07:29PM +0100, Valentin Schneider wrote:
+> > Hi,
+> >
+> > On 17/06/2019 16:00, Vincent Guittot wrote:
+> > > struct sched_domain *sd parameter is not used anymore in
+> > > arch_scale_cpu_capacity() so we can remove it.
+> > >
+> >
+> > I think it can't hurt to give a bit of background. The *sd parameter used
+> > to be there for smt_gain, which got snipped out by:
+> >
+> >   765d0af19f5f ("sched/topology: Remove the ::smt_gain field from 'struct sched_domain'")
+> >
+> > I'd appreciate having that commit mentioned in the log.
+> >
+> > > Signed-off-by: Vincent Guittot <vincent.guittot@linaro.org>
+> >
+> > Other than that, the changes look fine to me.
+> >
+> > Reviewed-by: Valentin Schneider <valentin.schneider@arm.com>
+>
+> The commit log now reads:
+>
+> ---
+> The 'struct sched_domain *sd' argument to arch_scale_cpu_capacity() is
+> unused since commit:
+>
+>   765d0af19f5f ("sched/topology: Remove the ::smt_gain field from 'struct sched_domain'")
+>
+> remove it.
+> ---
 
-> -----Original Message-----
-> From: Shawn Guo <shawnguo@kernel.org>
-> Sent: Tuesday, June 18, 2019 5:15 PM
-> To: Anson Huang <anson.huang@nxp.com>
-> Cc: s.hauer@pengutronix.de; kernel@pengutronix.de; festevam@gmail.com;
-> Leonard Crestez <leonard.crestez@nxp.com>; viresh.kumar@linaro.org;
-> Abel Vesa <abel.vesa@nxp.com>; linux-arm-kernel@lists.infradead.org;
-> linux-kernel@vger.kernel.org; dl-linux-imx <linux-imx@nxp.com>
-> Subject: Re: [PATCH V2 2/2] soc: imx8: Use existing of_root directly
-> 
-> On Fri, Jun 14, 2019 at 04:07:48PM +0800, Anson.Huang@nxp.com wrote:
-> > From: Anson Huang <Anson.Huang@nxp.com>
-> >
-> > There is common of_root for reference, no need to find it from DT
-> > again, use of_root directly to make driver simple.
-> >
-> > Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
-> > Reviewed-by: Dong Aisheng <aisheng.dong@nxp.com>
-> 
-> It cannot be applied.  Please resend by basing on my imx/drivers branch.
+Thanks
 
-OK, just resent, there is a soc driver patch in linux-next, previously I did it based on it.
-Now I change it to your git repo, you could meet conflict during merge.
-
-Thanks,
-Anson
-
-> 
-> Shawn
-> 
-> > ---
-> > No changes.
-> > ---
-> >  drivers/soc/imx/soc-imx8.c | 9 ++-------
-> >  1 file changed, 2 insertions(+), 7 deletions(-)
-> >
-> > diff --git a/drivers/soc/imx/soc-imx8.c b/drivers/soc/imx/soc-imx8.c
-> > index 5c7f330..b459bf2 100644
-> > --- a/drivers/soc/imx/soc-imx8.c
-> > +++ b/drivers/soc/imx/soc-imx8.c
-> > @@ -105,7 +105,6 @@ static int __init imx8_soc_init(void)  {
-> >  	struct soc_device_attribute *soc_dev_attr;
-> >  	struct soc_device *soc_dev;
-> > -	struct device_node *root;
-> >  	const struct of_device_id *id;
-> >  	u32 soc_rev = 0;
-> >  	const struct imx8_soc_data *data;
-> > @@ -117,12 +116,11 @@ static int __init imx8_soc_init(void)
-> >
-> >  	soc_dev_attr->family = "Freescale i.MX";
-> >
-> > -	root = of_find_node_by_path("/");
-> > -	ret = of_property_read_string(root, "model", &soc_dev_attr-
-> >machine);
-> > +	ret = of_property_read_string(of_root, "model",
-> > +&soc_dev_attr->machine);
-> >  	if (ret)
-> >  		goto free_soc;
-> >
-> > -	id = of_match_node(imx8_soc_match, root);
-> > +	id = of_match_node(imx8_soc_match, of_root);
-> >  	if (!id) {
-> >  		ret = -ENODEV;
-> >  		goto free_soc;
-> > @@ -147,8 +145,6 @@ static int __init imx8_soc_init(void)
-> >  		goto free_rev;
-> >  	}
-> >
-> > -	of_node_put(root);
-> > -
-> >  	if (IS_ENABLED(CONFIG_ARM_IMX_CPUFREQ_DT))
-> >  		platform_device_register_simple("imx-cpufreq-dt", -1, NULL,
-> 0);
-> >
-> > @@ -159,7 +155,6 @@ static int __init imx8_soc_init(void)
-> >  		kfree(soc_dev_attr->revision);
-> >  free_soc:
-> >  	kfree(soc_dev_attr);
-> > -	of_node_put(root);
-> >  	return ret;
-> >  }
-> >  device_initcall(imx8_soc_init);
-> > --
-> > 2.7.4
-> >
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
