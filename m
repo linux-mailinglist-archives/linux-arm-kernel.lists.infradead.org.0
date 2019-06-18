@@ -2,74 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7941649EC2
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 18 Jun 2019 12:59:38 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6552A49EC7
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 18 Jun 2019 13:00:01 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+YalUlmLLBWyYS5gRpsYJIlG0iRtqIbld5iibKlIqw0=; b=toeQadywkYUWI8
-	bBknLxQ7iGHh8DstKTMDyR+yXIpRIw1tVzgbuoj8S3zeA9vNUnmmYd79AYjyBky3REtBYPYbTLyHX
-	+YzGXmoCrwZtLP/ztpFkgh4nHFizJAE/n04xfB1G7CcOJVjLIlQiC7EYpErl5KGavTBc4m7XYJZNT
-	VHysg1ekECRoz6XCbkUvXNx0wSR6xTJeMlX0n5B8fHhPIDei+aM+WEDI0Yv9v0R5F+yKRiDMGpWK0
-	HemBlgi3xOzBDtVygQ6FoQ9ewbo8uFubAOaceQKlQkOWHrUll296aW4EjSSvxiSEr8yv6U8UQiwiW
-	gI83Bc6S9tEd9qdbguuA==;
+	List-Owner; bh=1e7I+1iohIXvrveBl85KmRoq70zHrg5i7btRgVJtHu8=; b=ZNhxsH7gimItZK
+	4OSeWIkvnst+RuamT3N7NedTZJYfl+XvV7cMG/D96nS79wGZpa0lyBFy/ytOmnMcu2Q7i5loRt6gx
+	tXQgGqrO/1jUIVOgQ+sYSS2fRdEG7ihLfLxe+05NXebq/hdF+I8QTWKTuNnR1Qgo4EtJSiF0+ekbU
+	Uip/Ga4SDMke0izvRBBSXw15L4d4MSKVUIroaJ5jqLc9deYlUvYVzik6vt/fmkqdLyGejna0Az4k9
+	qmB28LRaZlOvmfbRZqo3+0aA9TgAl23q87AmSGOTlt0oMxMUn1mZ0uD/iJHnN46r42y/CYihRxeo2
+	r0ifnfxK8jLALfrOcaog==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hdBpw-0004sq-DV; Tue, 18 Jun 2019 10:59:36 +0000
-Received: from mail-io1-xd44.google.com ([2607:f8b0:4864:20::d44])
+	id 1hdBqJ-0005VA-HL; Tue, 18 Jun 2019 10:59:59 +0000
+Received: from mail-io1-xd43.google.com ([2607:f8b0:4864:20::d43])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hdBpk-0004sR-Dr
- for linux-arm-kernel@lists.infradead.org; Tue, 18 Jun 2019 10:59:25 +0000
-Received: by mail-io1-xd44.google.com with SMTP id n5so28687113ioc.7
+ id 1hdBq5-0005Fp-UY
+ for linux-arm-kernel@lists.infradead.org; Tue, 18 Jun 2019 10:59:48 +0000
+Received: by mail-io1-xd43.google.com with SMTP id w25so28648806ioc.8
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 18 Jun 2019 03:59:24 -0700 (PDT)
+ Tue, 18 Jun 2019 03:59:45 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=lixom-net.20150623.gappssmtp.com; s=20150623;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=wDeuVf27dsWWQyi/G9Z1cR/nnFqjHy2XRRgIkWDwa+w=;
- b=T1wUG2r/CYW88UkEOUiQ7rn3R1tausZPc1kdqBEQIfxIQ9SSbgVOaTVYT/BDN6Z0Am
- hYXDY1Zib0Da5pwz+bxOXhsIs1AC7/iyzbrD6oihoif/2Rnd+FaZFJQYpHF1VLgYpKXo
- O6tD8pDILAHb9l68gGlzhLCUoZsRZY4jOGlPY/Rn2nMREMwL1N+U2BidEBPQUNfXWUYz
- 2NkneM3j9QBpX2/lr9Rzjo9cX1ohCBkXmbjI8Vb0X8uNy0cTN4e8NwQedi7v+OHHRoZL
- 4sBXCMpNc3bqtjIMZ22yHkjrRzfMvvcVrzyQc5JTtmBsGspb8vHTNwY1Yq5c0W7aSHhz
- 223Q==
+ :cc; bh=zE+SX6SmJuqniQ7NjAmJGscRWAHfDF73kRsg3p1vW/I=;
+ b=ZRA8R31dARjasR829hrnWSoWnChAdV/Q4AnU2qy6oX7CcVMxtq2xlkRcVwLc0YoXCk
+ uoKI6z+j33CzVT9lUiD/FxtpEtT1/pjthqE6evUlvx3z7DZpW3m11ZgIOm5umqWxKR0H
+ 5iJljS0EZ6Tz9nnkzZcclLjU46FHU9nc8v4+gbWcimyLnTNlwy2NVYiqx/z3uCLMAdaf
+ N50hrnatqW8la1sYYWWTPFRX/es0ErzyJJ0uBodBxdc44Ipu5acCz6QlcrCQW0/Gwva0
+ fj5AD1MbNn6ozSckHKhLzkZ4Qd0ERLxg9QKjT+wA32PNehHQUlPCbxTlqtmpisAwpQuc
+ Zi+g==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=wDeuVf27dsWWQyi/G9Z1cR/nnFqjHy2XRRgIkWDwa+w=;
- b=JS9XGrEjSO8DXFlFFGO3RQ0kqJGOeY34+xSwtarum94Cm+dDTGfaMjh8ot4WJcGXwA
- ij5rAhaPUJhOa63BoYMv5Nr5E8y4IiKtpiGFk8MAH1d6N3RVP7jcqNrwJbD9J9IQ6I0B
- /9fojFK1/4220PMCoitAdOQJhA7eyWVc7xNx3pZm+8t/3OZSiArJLkihTCFeqDu4AVyZ
- gbYp+oNrg3qwOOl6aJCDwjCoo/Xc4J6dZTaTSWnUK8e4z4nDVOcoXh7Nk4hn9CmNn0uw
- WrU4PnPO5ZU2DtPJHSxXsW95kZFCW+vxQN8gt7vFTzVOOHMny8Aiw2UVVmjGLhLOmP77
- 9uXg==
-X-Gm-Message-State: APjAAAVGi/PPGfu8FQHScujBwZroS0i2KFLX+ro/DuyYVR7eNEPxP0Ja
- +1sYE8xC7nyq93pGrk1GRbTteb7Q2edJ4mBgLtB4Ww==
-X-Google-Smtp-Source: APXvYqygUc9NtkUKqHAZsrJLDcE1z7TbO5n2M0BkA4Kg2xoRZpQqn8fUKR360iFU7smgRnci3PL6o8QOmteT2MwzdH8=
-X-Received: by 2002:a6b:9257:: with SMTP id u84mr2859483iod.278.1560855563794; 
- Tue, 18 Jun 2019 03:59:23 -0700 (PDT)
+ bh=zE+SX6SmJuqniQ7NjAmJGscRWAHfDF73kRsg3p1vW/I=;
+ b=QAsI6VacjllCEo2JS6HtpcYqV1bMB5JrAO/lG+Oon7Hu/e8wEaLwXAJgUFf8lI0XmY
+ oov1b8XBVZcTcWYQLc3dp8+l0aic2UbcmLsHgBIXHOPy8t9K3FGXaCu9eB9IPa8IOd+U
+ Xowx1t3/jx3huU6IW/txtsM8LSC+vUE+GbxsylYidRBXLPASyKK38w9/arXvMvPzje1V
+ v/TvdN1HNeQ1lhdOAOSoMilp7KC7Z4OaXEDGcvz589zcaMHvDI4B9/7P6/5q8QR4T5ny
+ J3NGUceghCmULy0usNHqPCogFqt7fKZTIQxFOnVAyVUr8smK6txOhToaKUA2l0byWMG+
+ 0WNQ==
+X-Gm-Message-State: APjAAAU3uCJM+pvHVEz/9B46cGAsgd8rVXmj2JuK3B0Hzn5GRX3VDqsG
+ 0FhCwvoaJrzovMDBWYn+npcKcQuWql75RRTL933B8w==
+X-Google-Smtp-Source: APXvYqzjhXGg+TvQJGun9Olmz9fMYejbvTP9+tvJZTNfj66Ln++Fr+249qMlKBOev8QrSa5z7CguoXzfCqnyT5uNyfs=
+X-Received: by 2002:a02:c519:: with SMTP id s25mr9785849jam.11.1560855584996; 
+ Tue, 18 Jun 2019 03:59:44 -0700 (PDT)
 MIME-Version: 1.0
-References: <20190617123352.742876-1-arnd@arndb.de>
-In-Reply-To: <20190617123352.742876-1-arnd@arndb.de>
+References: <20190617122449.457744-1-arnd@arndb.de>
+In-Reply-To: <20190617122449.457744-1-arnd@arndb.de>
 From: Olof Johansson <olof@lixom.net>
-Date: Tue, 18 Jun 2019 11:59:12 +0100
-Message-ID: <CAOesGMjEwQw05g7ARDddQNgfnuk9yUXkmVz7BTOEe8FKknSL4A@mail.gmail.com>
-Subject: Re: [PATCH] firmware: trusted_foundations: add ARMv7 dependency
+Date: Tue, 18 Jun 2019 11:59:33 +0100
+Message-ID: <CAOesGMgx2OrKnLyQAu748eoqx9a4N9BhjiFw6qkHFYmWbTMvrg@mail.gmail.com>
+Subject: Re: [PATCH 1/3] ARM: ixp4xx: don't select SERIAL_OF_PLATFORM
 To: Arnd Bergmann <arnd@arndb.de>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190618_035924_497542_D200A024 
-X-CRM114-Status: GOOD (  10.43  )
+X-CRM114-CacheID: sfid-20190618_035946_003706_1BC2D7DB 
+X-CRM114-Status: GOOD (  10.55  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:d44 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:d43 listed in]
  [list.dnswl.org]
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -87,28 +87,29 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Thierry Reding <treding@nvidia.com>, ARM-SoC Maintainers <arm@kernel.org>,
- Linux ARM Mailing List <linux-arm-kernel@lists.infradead.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>
+Cc: Linus Walleij <linusw@kernel.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ ARM-SoC Maintainers <arm@kernel.org>, Krzysztof Halasa <khalasa@piap.pl>,
+ Imre Kaloz <kaloz@openwrt.org>, Linus Walleij <linus.walleij@linaro.org>,
+ Linux ARM Mailing List <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Jun 17, 2019 at 1:34 PM Arnd Bergmann <arnd@arndb.de> wrote:
+On Mon, Jun 17, 2019 at 1:25 PM Arnd Bergmann <arnd@arndb.de> wrote:
 >
-> The "+sec" extension is invalid for older ARM architectures, but
-> the code can now be built on any ARM configuration:
+> Platforms should not normally select all the device drivers, leave that
+> up to the user and the defconfig file.
 >
-> /tmp/trusted_foundations-2d0882.s: Assembler messages:
-> /tmp/trusted_foundations-2d0882.s:194: Error: architectural extension `sec' is not allowed for the current base architecture
-> /tmp/trusted_foundations-2d0882.s:201: Error: selected processor does not support `smc #0' in ARM mode
-> /tmp/trusted_foundations-2d0882.s:213: Error: architectural extension `sec' is not allowed for the current base architecture
-> /tmp/trusted_foundations-2d0882.s:220: Error: selected processor does not support `smc #0' in ARM mode
+> In this case, we get a warning for randconfig builds:
 >
-> Add a dependency on ARMv7 for the build.
+> WARNING: unmet direct dependencies detected for SERIAL_OF_PLATFORM
+>   Depends on [n]: TTY [=y] && HAS_IOMEM [=y] && SERIAL_8250 [=n] && OF [=y]
+>   Selected by [y]:
+>   - MACH_IXP4XX_OF [=y] && ARCH_IXP4XX [=y]
 >
-> Fixes: 4cb5d9eca143 ("firmware: Move Trusted Foundations support")
+> Fixes: 9540724ca29d ("ARM: ixp4xx: Add device tree boot support")
 > Signed-off-by: Arnd Bergmann <arnd@arndb.de>
 
 Applied to arm/fixes. Thanks!
