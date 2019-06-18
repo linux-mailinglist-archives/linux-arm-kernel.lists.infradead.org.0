@@ -2,64 +2,65 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DA2284AD2C
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 18 Jun 2019 23:16:24 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B27DE4AD33
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 18 Jun 2019 23:19:00 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=PiDPvs3T91fbJRlb3JRpr5P/B0A1e6lV0yvFVKF9jpM=; b=gRJhy+1N1E2Fv9
-	OXqNJlkr6v6q8OPdYYsNy95H3+LS0kF244xHpMo7Yb22T6NtsuNaorf07EEmQkpWJAhC5Y14PD977
-	cxfjsuUmngHpU84frxWZrtU7025gq8TLl/z+pSUk15CTPgo0bN8EtCsW0/EZ2T34l1GNrYCPrCZ0J
-	kKqqo/wzzzTWhcQRzDFt8GzeSF6Crd0EbH/oZTTUwuIv7yWOPEsPkQN0b3lYfphJ3Tix+gJDyZL7r
-	OjKgY8E3LWdk7J6e7mIvONH9zh8pd91JAuV/TGV7BU44zrknMCtPhxj4xEZCBaNS4RxKT7ayGWVG3
-	BfB1RnYJd4u/jE3+Zosw==;
+	List-Owner; bh=DXsTNP0wqJrrXqDxWJbj0MmDdwT5Gjq8Z4xUGM133xU=; b=VHPdCd8ssXFEDy
+	neYf4IzGZZH8HYOhhMJenrkqBzKq9NO9MhXq62ZHyeavop+H4avTLEkg8HIoD6IkJqeDokMjmvIzH
+	Jvr7cOj4Z9AeW/NLz9rKOsFt4WlfX57vAI643EW/lmgbQbViau0r0a+Sh6h2oFvEI6zjRUhFgsicI
+	UfU8WDArBY3hM8hCQIuNo4ZmwnlF/ngIwtmN3+mbLV+jrdlE+hhyRSCVAoJYXm0FMrbgID4MKHmWm
+	DuJmUsYQMu0Sw79ck5ZoV8dSQrH2emTSb956jWHtPF5ZPagepNuykonrvOrmExEpgp+afQrdl+sqj
+	VqTwMqMfBrZYIAxLrQSA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hdLSn-0006JB-3u; Tue, 18 Jun 2019 21:16:21 +0000
-Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
+	id 1hdLVL-0006jH-1P; Tue, 18 Jun 2019 21:18:59 +0000
+Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hdLSW-0006FC-1Z; Tue, 18 Jun 2019 21:16:06 +0000
-Received: by mail-wr1-x442.google.com with SMTP id p13so990035wru.10;
- Tue, 18 Jun 2019 14:16:03 -0700 (PDT)
+ id 1hdLV9-0006hq-QR; Tue, 18 Jun 2019 21:18:49 +0000
+Received: by mail-wr1-x444.google.com with SMTP id m3so1054890wrv.2;
+ Tue, 18 Jun 2019 14:18:46 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=subject:to:cc:references:from:openpgp:autocrypt:message-id:date
  :user-agent:mime-version:in-reply-to:content-language
  :content-transfer-encoding;
- bh=0C0jT9iSf5FF63vE9PckgM8fv2rkddV1qsUxaXzERIw=;
- b=X+1a/vqeE9x5vcnyMJ9NefvEof1RguZxjUsljTwNz6KdCco+bjGatqoaLyqEiML/hR
- Yf+shjgSzBlPuZm77rI2C19wWaPe3aZfuHwOqG7ayDeDWdQhHZ0bjP4gVN1OzzExClR4
- xLzQJ/L/KHd6jvJRzDbrkaPr5bSR8YPs966X9L1ydNB7xLF3VRDdRcus6hn7jI4uNJBa
- BaP3uIkXOT2mLjGXiouVfWqklFF1zmHF7wKtNvEuJFKluK4OQ7y9zqlEYy2XjYR0cxw7
- FZTBB0X/43ZvPclklMHcxFtriLvmpEf/yTzT0C8jNLPP/5E9NOAqlbIliaY4nRegut4Q
- JNWQ==
+ bh=6KBwZ77vx+Ug72rN2lArM79k8txlJdN6M61O8g98a74=;
+ b=aZFj62IN2vZIXZvTDaPcwKiArUlNvRMNR6+HlHBb9xIb967N1rIFDTITx+pKwXNbpA
+ Duh0luTZvgd/ziOCnUAHiO5GqI59oxNxV9Yr8/R/wsKoGLwCtUDv0b1F/rwSzQQN+gzb
+ HaNrfm0twwgsU0X2pOJJ7EIinE5SRwX9IpTX2HQUoh3dBiSnsKS5BaRxTUq8bv4jrLce
+ C9JWX4f+/5QO6MHMYrhejPolbcN/+KKtnDU8NmramYN/hCL8C0dhcmdrX7h/VKi2FZib
+ t/JazsOZ9JAoG4hR1mTevjgMahICJTdV9lhC6pbV1gsAVxeD0u5Rd9unBGJWnRU65RTy
+ 9JeA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:subject:to:cc:references:from:openpgp:autocrypt
  :message-id:date:user-agent:mime-version:in-reply-to
  :content-language:content-transfer-encoding;
- bh=0C0jT9iSf5FF63vE9PckgM8fv2rkddV1qsUxaXzERIw=;
- b=jVol27k/Lpf9Dio1O6PnqUcGbtRKB+3gnLQqaHdpH/deDxNh2Ug+rionSoeQSvZ8x8
- sin/wxSpSYT8lFODA/q4l6YjJcSoBLBp2rSxmVSzwFi9jXTTJFuLy7TeWH5xp3Flkam0
- 20OH2BFhE/OjCTj/hP9+Xwiw5rJhv73UW6fTXjspB6tblZhEn14KPd/pUsHVH3owrsKZ
- 8r8i4OaiJbSn1FC2Wjq+EzVrvJw8tAtjLiF2FDUokWDMaRJUVZtWflmRDTlBMI2fxt3L
- V2+9aMWtZf/eAEsOpsMrFZrFQXXinBm2nv3i8kiGyRY9NscVDeL60U2o/+8L3WU109D2
- tnCg==
-X-Gm-Message-State: APjAAAWFNQIaaBZqVQC6rIadN0Il9QJYy7GkZrluBS4GQ0L1yoLrw0Bl
- V1FdnCTZofaKsrGk/VkWMjs=
-X-Google-Smtp-Source: APXvYqzF3cS/cnWXb1bDaeXNIwYntDSYJHqw0AHv/UqFBRLJk3bHNgFkSu3ux18GlkWxsSwrQ9fP2g==
-X-Received: by 2002:adf:dc4b:: with SMTP id m11mr21945146wrj.51.1560892562582; 
- Tue, 18 Jun 2019 14:16:02 -0700 (PDT)
+ bh=6KBwZ77vx+Ug72rN2lArM79k8txlJdN6M61O8g98a74=;
+ b=XGe8f+ByqW3XbKw7B2zGjIyE/pENbiQvnog5XFdkGF4f8FB4IGqOUPqr9byU27U0hP
+ aMMrvs4P4h6inhVzr6Gv2x/BeM4Wtcig3z88kLc3yCwNSoGVpeRiWiJPRg9v2iocxjeQ
+ qZYCIeCtiGiKAsIojJESnLYoIwPDeGi4aNCQqqgjfLgIbStCb7Br5ZkkPgbcUwueeSe8
+ 0Y16az9NQhcmHEYt9N24kyFdFLUfP3scgrFxbWfPlwTzNUzTNIdVSo8mj0NUnuZorSQy
+ GePNLYDKQYR5Z23LfhTZsXoMLEO1D641Z8mmQJEjE7GkxqjC+i4Wt/yreAtbwOLb4URi
+ 1LXA==
+X-Gm-Message-State: APjAAAVe+WDRZWXIBF/eghSBo3+1hezEkUu1W9RCvjrhO/ZqKBQlBLL+
+ O9rFoiWImJg08N5HHwX00MU=
+X-Google-Smtp-Source: APXvYqyiIDxZ3fIw7Bhztp3fOsuq4vMXo9bl5mh9gJ6oFlR1CTHzsxcEYs+OIzGqwCFjAKWxf5C0tA==
+X-Received: by 2002:a5d:6a05:: with SMTP id m5mr29918004wru.161.1560892725335; 
+ Tue, 18 Jun 2019 14:18:45 -0700 (PDT)
 Received: from ziggy.stardust ([95.169.230.25])
- by smtp.gmail.com with ESMTPSA id b5sm16273115wru.69.2019.06.18.14.16.01
+ by smtp.gmail.com with ESMTPSA id f1sm3417833wml.28.2019.06.18.14.18.44
  (version=TLS1_3 cipher=AEAD-AES128-GCM-SHA256 bits=128/128);
- Tue, 18 Jun 2019 14:16:01 -0700 (PDT)
-Subject: Re: [PATCH 1/2] mfd: mt6397: Use PLATFORM_DEVID_NONE macro instead of
- -1
+ Tue, 18 Jun 2019 14:18:44 -0700 (PDT)
+Subject: Re: [PATCH 2/2] mfd: mt6397: use DEFINE_RES_* helpers to define RTC
+ resources
 To: Fabien Parent <fparent@baylibre.com>, lee.jones@linaro.org
 References: <20190618154347.16991-1-fparent@baylibre.com>
+ <20190618154347.16991-2-fparent@baylibre.com>
 From: Matthias Brugger <matthias.bgg@gmail.com>
 Openpgp: preference=signencrypt
 Autocrypt: addr=matthias.bgg@gmail.com; prefer-encrypt=mutual; keydata=
@@ -155,23 +156,23 @@ Autocrypt: addr=matthias.bgg@gmail.com; prefer-encrypt=mutual; keydata=
  pac005PuhxCWkKTJz3gCmznnoat4GCnL5gy/m0Qk45l4PFqwWXVLo9AQg2Kp3mlIFZ6fsEKI
  AN5hxlbNvNb9V2Zo5bFZjPWPFTxOteM0omUAS+QopwU0yPLLGJVf2iCmItHcUXI+r2JwH1CJ
  jrHWeQEI2ucSKsNa8FllDmG/fQ==
-Message-ID: <15f5e052-69f5-274b-20e9-3ccf71b6651a@gmail.com>
-Date: Tue, 18 Jun 2019 23:16:01 +0200
+Message-ID: <6bf2d5a0-a768-b178-80c7-4f28f7db212c@gmail.com>
+Date: Tue, 18 Jun 2019 23:18:44 +0200
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
  Thunderbird/60.6.1
 MIME-Version: 1.0
-In-Reply-To: <20190618154347.16991-1-fparent@baylibre.com>
+In-Reply-To: <20190618154347.16991-2-fparent@baylibre.com>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190618_141604_145579_970B0FD3 
-X-CRM114-Status: GOOD (  15.53  )
+X-CRM114-CacheID: sfid-20190618_141847_858614_07765FBF 
+X-CRM114-Status: GOOD (  15.65  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:442 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:444 listed in]
  [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider (matthias.bgg[at]gmail.com)
@@ -205,47 +206,40 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 
 On 18/06/2019 17:43, Fabien Parent wrote:
-> Use the correct macro when adding the MFD devices instead of using
-> directly '-1' value.
+> Use the DEFINE_RES_{MEM,IRQ} to define the RTC reosurce for the MT6397
+> PMIC.
 > 
 > Signed-off-by: Fabien Parent <fparent@baylibre.com>
 
 Reviewed-by: Matthias Brugger <matthias.bgg@gmail.com>
 
 > ---
->  drivers/mfd/mt6397-core.c | 12 ++++++------
->  1 file changed, 6 insertions(+), 6 deletions(-)
+>  drivers/mfd/mt6397-core.c | 12 ++----------
+>  1 file changed, 2 insertions(+), 10 deletions(-)
 > 
 > diff --git a/drivers/mfd/mt6397-core.c b/drivers/mfd/mt6397-core.c
-> index 337bcccdb914..190ed86ad93e 100644
+> index 190ed86ad93e..1e315712870b 100644
 > --- a/drivers/mfd/mt6397-core.c
 > +++ b/drivers/mfd/mt6397-core.c
-> @@ -299,9 +299,9 @@ static int mt6397_probe(struct platform_device *pdev)
->  		if (ret)
->  			return ret;
+> @@ -23,16 +23,8 @@
+>  #define MT6397_CID_CODE		0x97
 >  
-> -		ret = devm_mfd_add_devices(&pdev->dev, -1, mt6323_devs,
-> -					   ARRAY_SIZE(mt6323_devs), NULL,
-> -					   0, pmic->irq_domain);
-> +		ret = devm_mfd_add_devices(&pdev->dev, PLATFORM_DEVID_NONE,
-> +					   mt6323_devs, ARRAY_SIZE(mt6323_devs),
-> +					   NULL, 0, pmic->irq_domain);
->  		break;
+>  static const struct resource mt6397_rtc_resources[] = {
+> -	{
+> -		.start = MT6397_RTC_BASE,
+> -		.end   = MT6397_RTC_BASE + MT6397_RTC_SIZE,
+> -		.flags = IORESOURCE_MEM,
+> -	},
+> -	{
+> -		.start = MT6397_IRQ_RTC,
+> -		.end   = MT6397_IRQ_RTC,
+> -		.flags = IORESOURCE_IRQ,
+> -	},
+> +	DEFINE_RES_MEM(MT6397_RTC_BASE, MT6397_RTC_SIZE),
+> +	DEFINE_RES_IRQ(MT6397_IRQ_RTC),
+>  };
 >  
->  	case MT6397_CID_CODE:
-> @@ -314,9 +314,9 @@ static int mt6397_probe(struct platform_device *pdev)
->  		if (ret)
->  			return ret;
->  
-> -		ret = devm_mfd_add_devices(&pdev->dev, -1, mt6397_devs,
-> -					   ARRAY_SIZE(mt6397_devs), NULL,
-> -					   0, pmic->irq_domain);
-> +		ret = devm_mfd_add_devices(&pdev->dev, PLATFORM_DEVID_NONE,
-> +					   mt6397_devs, ARRAY_SIZE(mt6397_devs),
-> +					   NULL, 0, pmic->irq_domain);
->  		break;
->  
->  	default:
+>  static const struct resource mt6323_keys_resources[] = {
 > 
 
 _______________________________________________
