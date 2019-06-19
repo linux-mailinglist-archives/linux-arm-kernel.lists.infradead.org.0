@@ -2,90 +2,70 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EB5B34BCA2
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Jun 2019 17:17:55 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8F2574BCC0
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Jun 2019 17:27:21 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=soeHyGVYwygUPZNZ85WIw08FaQAohh7JHu16NO3p9ow=; b=MOeLquXYZZmBEZ
-	NHnFfQGm9hD1k1Cw61eTuCQLvqiq1pDld7wymhk2nAju/aWklNqI3ZuHBzeDzgYAxNu7woDP5iO/a
-	g/vU0c1sOh7WPr3hEf6YNRUqZubJI9XNA90M87y5UXy1v54ZTDHxiv8cIa1UH4YHOz+8ZZXBv/Uo8
-	axxJNwBBsGmrU4ixxr8QeZkItgIP9alQfRWT85SzcPovWuS/M3wtxbbhJBM51vTqDaQZJ1tzXtab/
-	f+x/4uGYwyV/Ts+rh0sm3kfGgcxAEuUHSM7p4TThigZiPIHHxP2Et1pfhi++jPe41nnHq28Mf6tPW
-	LI9FjjyuL/4ofl1+Kpug==;
+	List-Owner; bh=8kKkjgiAZuuxUt3bykvsaKG0NR7voKHttYJaVcAa8QQ=; b=oHLBArYgnuLdF+
+	ZMa3rRnrKGFvdfPuNOCgMYzb/Vy0/z62OJiQsowIqrrc6rxyuuFy7Y0W9vxOh9KJuZ4tsV3r/xFNb
+	09kLlmPIv4WLuO3pV3LJTLrcpGgIDJ7q0FvIu3s1FyKJad+c9RrQooF3NcEM7tNKmi9NOIZVmKdM9
+	PXrgx4ulG5KN/b4E+Jjwbr60ReAE7hsRicwpQ3JOdi918pcUMYUCdDDE7nYeo/2AQMFkKAZVZ0YCx
+	cleYmE8U/2J1y/TJY4BEEmNrIqIzRmaexwt8/ZfHLajfxEHHyIgWsAWH/B97t63cNzLvf5fxDnzT/
+	j6ET+bjZi9Wt6Oi2Icbg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hdcLR-0000fr-9K; Wed, 19 Jun 2019 15:17:53 +0000
-Received: from mail-ua1-x944.google.com ([2607:f8b0:4864:20::944])
+	id 1hdcUY-0004uK-CK; Wed, 19 Jun 2019 15:27:18 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hdcLL-0000fK-4T
- for linux-arm-kernel@lists.infradead.org; Wed, 19 Jun 2019 15:17:48 +0000
-Received: by mail-ua1-x944.google.com with SMTP id j8so10223647uan.6
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 19 Jun 2019 08:17:46 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=Y3W31eT4pjnEE9VumU700qhsrfgm3ej+hMlDN8GbJRU=;
- b=iyBAkwkWJj1+Aw13vY7fCF+blFJGykJyavfB2eMwITvxzAB144ff0wRE3tgEkNWEBF
- hxXtdJ1Qub7oJphAZ4nogBgMeM9uGHymppWIfKEbGHAYoVdouvQkgjOqfKDp6mj8iehQ
- OuywrdJFZlgN1p7KIULRqiw12TsvkbsUV3SA+EYRbng++P0/EoIB3b17k7O0lPdwwRc5
- KD2L4N1LAidT+01zEt0+/gs72VcZJlyG2r21IuJY7DnEEalr8NWoGlpml8EfRwTsKhqD
- L9n/REmLSyfE+BmiK4ex+kwTkqIMeH+Hosxo8zEeVJboON6PAMPS6w0rvrVJXoQbUp6K
- Ij6g==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=Y3W31eT4pjnEE9VumU700qhsrfgm3ej+hMlDN8GbJRU=;
- b=Ru5qfdz7NlOnUoicpWmAkbSv+qgmJxHIzVdfS/g1KFrlMNGWOxbeN7DMTazqyinW7v
- IV9R4wPNecPVTTThSOIC2iG1tK6b+Sys4La95QynwGNhgEKPBAfRy9S3fVMYJl/xQg5y
- HKfzZBTINLN53fiHD8EwOEsMYNNSK+YM0gp4uKPzfT843eOo+vqXJ3N+XrEgE8Ww7Mqv
- UREeFuNvxeshA9jR5z5iiZLND/trUCSQbmawqqeQYUE3i6YjyCLdO9ZToesZtHJa72YB
- jAkU55IbVx4XfutatDQCUsanqxe6KYzofzidyEN0nOnCCnKtOzaN8+OzybiL/WPjlbhN
- Wnqw==
-X-Gm-Message-State: APjAAAVrzxYjb2Y6HxNSfCvubyCltIVSZMFdIAJ4Mc2ZOWmJWQpzH7LE
- m+/qcGXW18x74f2RgFiyN7OveHBcjFHIA8VK4Oc=
-X-Google-Smtp-Source: APXvYqwQFXiKBQhKIgxQWpWN0iV3lA9cGQ+Hkpj2dsp1L/4TSPbcNmuVqNJnISoxxObtW2bKXn3xtrfX6S2seJNuz2E=
-X-Received: by 2002:a67:320c:: with SMTP id y12mr827714vsy.30.1560957465295;
- Wed, 19 Jun 2019 08:17:45 -0700 (PDT)
+ id 1hdcUO-0004tk-K9
+ for linux-arm-kernel@lists.infradead.org; Wed, 19 Jun 2019 15:27:10 +0000
+Received: from localhost (83-86-89-107.cable.dynamic.v4.ziggo.nl
+ [83.86.89.107])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id BD2032084B;
+ Wed, 19 Jun 2019 15:27:07 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1560958028;
+ bh=qsrl5puqMFOzja1issKmXbHOQByg3LGAz+2DpOGIukY=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=p7jKAbFFFtNi6ZDpUbaSA7x7bz/dRNXKZerwDy2Vv0bOyV+DLqlp4IRShOdS+VPAc
+ BxBda4Zfz5GFOPDEe0h4Oijxd/2/oCubLmcUmXU+idI9J+Ffa3Op+j5KGDef8O6Kvb
+ 2v2E68BFIR1PRqxYnzQXPDqRFIQ3Nzf4oJ7WSzII=
+Date: Wed, 19 Jun 2019 17:27:05 +0200
+From: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+To: Mathieu Poirier <mathieu.poirier@linaro.org>
+Subject: Re: [PATCH] coresight: cpu-debug: no need to check return value of
+ debugfs_create functions
+Message-ID: <20190619152705.GD29425@kroah.com>
+References: <20190618155246.GA17788@kroah.com>
+ <CANLsYkzTgwY=EAE8E98jpyO6uVQnKN3SAKhRwSUCRhQTO+rV0w@mail.gmail.com>
+ <20190618174637.GC3649@kroah.com>
+ <CANLsYkwjKDP2QOLgeTj=z90jXFjT9d3JXB0TxJU=v12MCi1PFA@mail.gmail.com>
 MIME-Version: 1.0
-References: <CAOuPNLiBA9VjEoG_D2y2O5mKiqsDNW1VZXOk1eWXpGY+h86acg@mail.gmail.com>
- <CAOMZO5BcLaS0gXUPi6oN6vjqagS5yf+rHh+EUjmi-Wi1OX7vqQ@mail.gmail.com>
- <CAOuPNLgEEfDca4aeT1+q8GfUfGzbJ4x6JwGf-ROB1pgpXUBHSw@mail.gmail.com>
- <CAOMZO5BY8JcLNMCRCC_d=emy8HR6kE=dB9f5qfZ=ci_c+Jak0w@mail.gmail.com>
- <CAOuPNLjYhkP_kL+q-ZpiDZMMpOHrU88BFBc2agtnCzXt8dihOg@mail.gmail.com>
- <20190619150406.GB19346@kroah.com>
-In-Reply-To: <20190619150406.GB19346@kroah.com>
-From: Pintu Agarwal <pintu.ping@gmail.com>
-Date: Wed, 19 Jun 2019 20:47:34 +0530
-Message-ID: <CAOuPNLgYN3FDvNsaWqom45h7aFz=HczDdL-QoHOc_Sreqf8T2g@mail.gmail.com>
-Subject: Re: [IMX] [DRM]: suspend/resume support
-To: Greg KH <greg@kroah.com>
+Content-Disposition: inline
+In-Reply-To: <CANLsYkwjKDP2QOLgeTj=z90jXFjT9d3JXB0TxJU=v12MCi1PFA@mail.gmail.com>
+User-Agent: Mutt/1.12.1 (2019-06-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190619_081747_197854_A34A56B3 
-X-CRM114-Status: GOOD (  10.99  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190619_082708_698477_8DEBFD59 
+X-CRM114-Status: GOOD (  30.30  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:944 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (pintu.ping[at]gmail.com)
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -97,34 +77,93 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Kernelnewbies <kernelnewbies@kernelnewbies.org>,
- Fabio Estevam <festevam@gmail.com>, open list <linux-kernel@vger.kernel.org>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>, linux-pm@vger.kernel.org
+Cc: Alexander Shishkin <alexander.shishkin@linux.intel.com>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
+ Suzuki K Poulose <suzuki.poulose@arm.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Jun 19, 2019 at 8:34 PM Greg KH <greg@kroah.com> wrote:
->
-> On Wed, Jun 19, 2019 at 07:03:39PM +0530, Pintu Agarwal wrote:
-> > You can think that the version I am using right now is almost 4.9 itself.
-> > Upgrading again to higher kernel version is again difficult, also
-> > customer does not want it.
->
-> They don't want a secure and supported kernel over the lifetime of their
-> device?  That sounds really odd.
-No I mean to say, there are lots of features and customization already
-done on this version and stabilized.
-Upgrading again may require months of effort.
-Of course upgrading is planned for later products.
+On Tue, Jun 18, 2019 at 01:26:12PM -0600, Mathieu Poirier wrote:
+> On Tue, 18 Jun 2019 at 11:46, Greg Kroah-Hartman
+> <gregkh@linuxfoundation.org> wrote:
+> >
+> > On Tue, Jun 18, 2019 at 11:23:25AM -0600, Mathieu Poirier wrote:
+> > > Hi Greg,
+> > >
+> > > On Tue, 18 Jun 2019 at 09:52, Greg Kroah-Hartman
+> > > <gregkh@linuxfoundation.org> wrote:
+> > > >
+> > > > When calling debugfs functions, there is no need to ever check the
+> > > > return value.  The function can work or not, but the code logic should
+> > > > never do something different based on this.
+> > >
+> > > Looking around in the kernel there is no shortage of instances where
+> > > the return value of debugfs functions are checked and the logic
+> > > altered based on these values.  But there are also just as many that
+> > > don't...  It also seems counter intuitive to ignore the return value
+> > > of any function, something that in most case is guaranteed to raise
+> > > admonition.
+> >
+> > In my tree, those instances are almost all gone.  I've also posted over
+> > 100+ patches in the past few weeks to clean this up.
+> >
+> > > That being said I am sure there is a good reason to support your
+> > > position - would you mind expanding a little so that I can follow?
+> >
+> > No kernel code should ever care if debugfs works or not.  No user code
+> > should ever require it for normal operation either.  debugfs was written
+> > to be simple and easy to use, no need to check any return values at all.
+> >
+> > Any return value of a debugfs call can be fed back into another call
+> > with no issues at all.
+> >
+> > Also, due to some debugfs core changes a few kernel releases ago, the
+> > checks:
+> >         if (!debug_debugfs_dir) {
+> > ...
+> >         if (!file) {
+> > can never trigger as debugfs_create_dir() or debugfs_create_file() can
+> > never return NULL (and in the past, it almost never would either).  So
+> 
+> That is the rational I was looking for.
+> 
+> > as it is, that code isn't correct anyway (my fault, I know, hey, I'm
+> > trying to fix it!)
+> >
+> > I'm trying to make things simple, and easy, and impossible to get wrong.
+> > I know it goes against the normal "robust" kernel development mentality,
+> > but there is no need to ever care about debugfs at all.
+> >
+> > The reason I started all of this is that we have found places where
+> > userspace, and the kernel, was depending on the proper operation of
+> > debugfs.  In one horrid example, a device would not display the batter
+> > level if debugfs was disabled.  In another case, the kernel was actually
+> > relying on a debugfs call to fail in order to handle some logic the
+> > subsystem should have been doing on its own.  All of that has now been
+> > cleaned up, and I am working on making debugfs just not return any
+> > values at all to prevent this type of mess happening again.
+> >
+> > And hey, I am removing code, here's my current tree as a diff from
+> > what is not already merged into linux-next:
+> >          301 files changed, 1394 insertions(+), 4637 deletions(-)
+> > that's always a good thing :)
+> >
+> > Hopefully this helps explain things better.
+> 
+> It does - thanks for taking the time to write all this.
+> 
+> Do you want me to take the patch through my tree (only to see it
+> coming back to you later this week) or you'll add it directly to
+> yours?  In the latter case:
+> 
+> Reviewed-by: Mathieu Poirier <mathieu.poirier@linaro.org>
+> Tested-by: Mathieu Poirier <mathieu.poirier@linaro.org>
 
-> Never create a new device using the 4.9.y kernel tree unless you have someone else doing the support for it
-> (i.e. a SoC vendor that you are paying support from).
->
-Actually, this is not a new device. Its an older device itself.
-This is an experimental activity.
+I can just take it directly, thanks!
+
+greg k-h
 
 _______________________________________________
 linux-arm-kernel mailing list
