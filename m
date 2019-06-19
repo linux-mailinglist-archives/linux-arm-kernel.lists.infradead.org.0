@@ -2,85 +2,92 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F350B4AE4D
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Jun 2019 00:56:09 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id AD42B4AF21
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Jun 2019 02:41:46 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=lBgMqsiflUJfaSpy3PtzfX3YX2OIkkFK5w8eUhYd9kg=; b=bPYzDKqbFj3lyT
-	TPtHJHgmIXfadZ2cd42NRwEPX3n34XoB9Ey/Cs0+FzFZdrU+RczQaK4ExRGrbOzTigY9yrBkpjjOg
-	hOfsrvMvT/UxRHJrIkSfjLAc3RnjO+RnS5WYZpsyFQ69xW6VOY1iPNcju1rtK4BxNzYRlD7lrPzy6
-	WxeGALNq0Z4RFoq942MNWrL+mLhjN33T3ZYr0l7ZCzZ7cjVMcZPq8JvcypBppstpY8vutukxQDM9g
-	lZ3Fhs9Z4kAqghqqtXE5uKiAS18tc4OUvs2ChPzKgsRkeGqA3+6F7IyWHqnkozergwshAN8fEcVO+
-	+f8sxhIgVUc3juRbZUWg==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:To:From:Date:References:
+	In-Reply-To:Message-Id:Mime-Version:Reply-To:Cc:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=b8vp+sL/F10K3ozi2bkZhOAwSPOeDgO4eWqGk9vBQoE=; b=g6N3cRjOeNlzZE1zFd6nqQIBbM
+	KYy7HvHUNkkf/+jlzyVHkfSvlfVl1dxRVKHog2z9NvWng0JM7pia32O5+g+mCDEw39H6RTt432LNz
+	PkM7yHUXKi+Jm62dT/uo2ViILdyTrqs1DJbYuNqGg0KXtF97ilY6qLiSLtDbSpByYmTsD6p8xBlKB
+	NWABaH54uSA0b5uQzpiHj87M6ZwHPxMTUJWS81EDRgplchAcayKncpDWx4svloBrv+y9UwDycYy8x
+	M83Fe2YhtG6GIgOjiJBg4C66TZT8N+gOShDZOq22SKqF7lDx5gSWDLxHrvF+mDdT4q+SQb5uqHbG0
+	AGD81vlQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hdN1L-0005x7-3n; Tue, 18 Jun 2019 22:56:07 +0000
-Received: from mail-pf1-x442.google.com ([2607:f8b0:4864:20::442])
+	id 1hdOfS-0001YI-0v; Wed, 19 Jun 2019 00:41:38 +0000
+Received: from out3-smtp.messagingengine.com ([66.111.4.27])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hdN19-0005we-H8
- for linux-arm-kernel@lists.infradead.org; Tue, 18 Jun 2019 22:55:58 +0000
-Received: by mail-pf1-x442.google.com with SMTP id d126so8494264pfd.2
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 18 Jun 2019 15:55:52 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=wSBE89u2Fv4HB+aVCSWXy4RLHqh2h9oyu+cjADBpQhE=;
- b=ymf9bxiOFDg4RbgZypbP80Hqt3/jvRVe1nFfHfzYCxZDeqeIX0+BknQVmIdP8KAcDU
- 15VMdqXXrIOQc/K+9H2gTumgWzDyS7ie21X39xvVo2tEk0HL5vt0zFiidnfx6A/3oHu+
- 4VxfqyNFm6XeOUyPSs1IKv11fjEPrQMbBgESc73SX4ANuiSXK7vUjHQVlJPRiAI91eGq
- jfX1mXkrBspRjCd7t2n47C89iMWygZ/rUioWriEEOeQshz6rM88bExeKKlY3nEMF/G8h
- EHkvJRpO7GH8fdofXRvvRsZl+j8wM94NimIVDbiBqe2R5cE6z0EGvG/eAHVFlxkgAZV5
- UIEg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=wSBE89u2Fv4HB+aVCSWXy4RLHqh2h9oyu+cjADBpQhE=;
- b=dhHGlZxCBwMnwOmsneDP3a05GWJHv/+EEoo9vrTCjdK8CXBcDKs7HWHa/wNQdEVKB8
- AYvV++TUiJ+NF4i88rkdYQF9i7+Y8DolHxWrxOGbc3lkf17m76/XBSD4i3wSmmNDnzgo
- cmYgzb4hw6Q2HOsZ6nN6y0FTVhc02wBLZ1p3ni/2g9BwJFjtUIifH+kuTX872LAV+2NB
- lqB/l/aPpboh7+oGphCvcS//c3NQGiymxb6+gSRiALs7nE9AzFNLTZNsw/qjg+ntLvM9
- tZ5g2QN/ewgcbsVq4stZkP0keqFBUjKvB6Mwi3Pdg2azuxIaZ+A9QbYzFHom/7BiIPlG
- mKkw==
-X-Gm-Message-State: APjAAAUZl2rgotq+waqt6oRzlDEgsDqIJZX2drFyciYlGtK8Y4ChkFHi
- WbQ3l3Im+S60Xw5DhMPNvIA4Ww==
-X-Google-Smtp-Source: APXvYqx3KnLfryHsuJZT8CBaW6i2h4GPDJzuljPqoRMbj5FQ1rXCy8M0+r2/RaibPYDMrBjgN1QKaA==
-X-Received: by 2002:a17:90a:dc86:: with SMTP id
- j6mr7268538pjv.141.1560898551885; 
- Tue, 18 Jun 2019 15:55:51 -0700 (PDT)
-Received: from xps15 (S0106002369de4dac.cg.shawcable.net. [68.147.8.254])
- by smtp.gmail.com with ESMTPSA id p27sm28814186pfq.136.2019.06.18.15.55.50
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Tue, 18 Jun 2019 15:55:51 -0700 (PDT)
-Date: Tue, 18 Jun 2019 16:55:49 -0600
-From: Mathieu Poirier <mathieu.poirier@linaro.org>
-To: Andrew Murray <andrew.murray@arm.com>
-Subject: Re: [PATCH v1 5/5] coresight: etm4x: save/restore state across CPU
- low power states
-Message-ID: <20190618225549.GB24894@xps15>
-References: <20190618125433.9739-1-andrew.murray@arm.com>
- <20190618125433.9739-6-andrew.murray@arm.com>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190618125433.9739-6-andrew.murray@arm.com>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+ id 1hdOfH-0001X2-Fg
+ for linux-arm-kernel@lists.infradead.org; Wed, 19 Jun 2019 00:41:29 +0000
+Received: from compute4.internal (compute4.nyi.internal [10.202.2.44])
+ by mailout.nyi.internal (Postfix) with ESMTP id 6089622393;
+ Tue, 18 Jun 2019 20:41:18 -0400 (EDT)
+Received: from imap2 ([10.202.2.52])
+ by compute4.internal (MEProxy); Tue, 18 Jun 2019 20:41:18 -0400
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=aj.id.au; h=
+ mime-version:message-id:in-reply-to:references:date:from:to
+ :subject:content-type; s=fm3; bh=+gHRX6cTDmHSKWNNEZDiaV7fmTx8VY6
+ 71JKMUQ7FfmQ=; b=Xol0YMadH0jNDydD1NfwOaNXlsouExZ4M1/9uyj0CJJ/jpZ
+ LNZvwztse1Y6jz3OP1zBUL0mJnRBH4otttEY/lzAyWs0lnJ7BtmEidtyfwZKq6GB
+ cumXGBzbtN2GPt8CSgoRe9u2TnBB2dAixuA8mKav6I9BRIm2bl4+KJ5m+eTYNbzm
+ URuxKfgvOf+uYiBbmKOJzJBOaF7WBjNnVJ05e/6py/S5soA6qTSJ2otMxaz9gXDK
+ vvxYo2ixeKftG2c11bfIv6MeqU3F1d8QFKsV3kv5IcbY6kMbmaUWXOvB1ggeGOWB
+ eIfKvP7lgNkpa8HEhkCf9G4cbvCx9RAnOe/nzZA==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
+ messagingengine.com; h=content-type:date:from:in-reply-to
+ :message-id:mime-version:references:subject:to:x-me-proxy
+ :x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm3; bh=+gHRX6
+ cTDmHSKWNNEZDiaV7fmTx8VY671JKMUQ7FfmQ=; b=rzs8gDE7sglQ0dagm6cfWP
+ QZ1hyCLw1DVZdOJ0txMIFdOBWwC5rxieibF2JFGcbOfXGhbJGeZoiQjtcT3vDaqi
+ jy7al+DQgCaIJ8aSwTXgNCruIYnm+4d6oXksOS9bqDNoLXx9yj5v8i0J70TYBH0E
+ l/poxoJsgAbHwLXnu0qXmja+Ncxo7uMJTrCKvdSVgwKqqLLndUO0sMnd78aR0Bh5
+ wR4SwMGqoADMlHkRPSa6wD6MSHSL23CSQrdIqwxt2Ww6H1oLk6U4W6Hn5n0a4LTu
+ siDDcnpbkmyl8/XXjs9hQDcBtQz1MX/jI+hdpg/PZ/7ET7yrwZHPaQ8kpb74u2Pg
+ ==
+X-ME-Sender: <xms:rYQJXa-A0RY1be8EltPd6m24OKzg4pp6JUVwSMzwVIBXG7ux2cfKdw>
+X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduvddrtddugdefiecutefuodetggdotefrodftvf
+ curfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfghnecu
+ uegrihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmdenuc
+ fjughrpefofgggkfgjfhffhffvufgtsehttdertderredtnecuhfhrohhmpedftehnughr
+ vgifucflvghffhgvrhihfdcuoegrnhgurhgvfiesrghjrdhiugdrrghuqeenucfrrghrrg
+ hmpehmrghilhhfrhhomheprghnughrvgifsegrjhdrihgurdgruhenucevlhhushhtvghr
+ ufhiiigvpedt
+X-ME-Proxy: <xmx:rYQJXRBI4ygcgye6OIWFLY_yQKTMsCXKYOUiVR79cwKYovE7uVkj-g>
+ <xmx:rYQJXctlfABcHf2rCDF4pjv5OISMtr_llb2bmbraEhfO_GNeOXYxcg>
+ <xmx:rYQJXREyR9Fq_ux5MV_uCxuV26L3guGYh9Xm5Wucd697lLaXUpEa_A>
+ <xmx:roQJXVYnljDdqWJlVb4MbfpeVUxSo-2sRru08PzriJHXlgl4mpwubQ>
+Received: by mailuser.nyi.internal (Postfix, from userid 501)
+ id 0505FE00A2; Tue, 18 Jun 2019 20:41:17 -0400 (EDT)
+X-Mailer: MessagingEngine.com Webmail Interface
+User-Agent: Cyrus-JMAP/3.1.6-666-gb2312fa-fmstable-20190614v4
+Mime-Version: 1.0
+Message-Id: <d201fadc-0b8e-48df-8e50-bccd5d5019c7@www.fastmail.com>
+In-Reply-To: <20190618042421.1227372-1-taoren@fb.com>
+References: <20190618042421.1227372-1-taoren@fb.com>
+Date: Wed, 19 Jun 2019 10:11:16 +0930
+From: "Andrew Jeffery" <andrew@aj.id.au>
+To: "Tao Ren" <taoren@fb.com>, "Rob Herring" <robh+dt@kernel.org>,
+ "Mark Rutland" <mark.rutland@arm.com>, "Joel Stanley" <joel@jms.id.au>,
+ devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-aspeed@lists.ozlabs.org, linux-kernel@vger.kernel.org,
+ openbmc@lists.ozlabs.org
+Subject: Re: [PATCH] ARM: dts: aspeed: Add Facebook Minipack BMC
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190618_155556_276524_9F66F70C 
-X-CRM114-Status: GOOD (  26.59  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190618_174127_666868_529AD628 
+X-CRM114-Status: GOOD (  16.30  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:442 listed in]
- [list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [66.111.4.27 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
@@ -100,494 +107,478 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Alexander Shishkin <alexander.shishkin@linux.intel.com>,
- linux-arm-kernel@lists.infradead.org,
- Suzuki K Poulose <suzuki.poulose@arm.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Jun 18, 2019 at 01:54:33PM +0100, Andrew Murray wrote:
-> Some hardware will ignore bit TRCPDCR.PU which is used to signal
-> to hardware that power should not be removed from the trace unit.
-> Let's mitigate against this by saving and restoring the trace
-> unit state when the CPU enters low power states.
+
+
+On Tue, 18 Jun 2019, at 13:54, Tao Ren wrote:
+> Add initial version of device tree for Facebook Minipack ast2500 BMC.
 > 
-> To provide the benefit to both self-hosted and external debuggers
-> we save/restore the entire state which includes etmv4_config data
-> and dynamic data such as inflight counter values, sequencer
-> states, etc.
-> 
-> To reduce CPU suspend/resume latency the state is only saved or
-> restored if coresight is in use as determined by the claimset
-> registers.
-> 
-> To aid debug of CPU suspend/resume a disable_pm_save parameter
-> is provided to disable this feature.
-> 
-> Signed-off-by: Andrew Murray <andrew.murray@arm.com>
+> Signed-off-by: Tao Ren <taoren@fb.com>
+
+Reviewed-by: Andrew Jeffery <andrew@aj.id.au>
+
 > ---
->  drivers/hwtracing/coresight/coresight-etm4x.c | 245 ++++++++++++++++++
->  drivers/hwtracing/coresight/coresight-etm4x.h |  66 ++++-
->  drivers/hwtracing/coresight/coresight.c       |   2 +-
->  include/linux/coresight.h                     |   7 +
->  4 files changed, 318 insertions(+), 2 deletions(-)
+>  arch/arm/boot/dts/Makefile                    |   1 +
+>  .../boot/dts/aspeed-bmc-facebook-minipack.dts | 429 ++++++++++++++++++
+>  2 files changed, 430 insertions(+)
+>  create mode 100644 arch/arm/boot/dts/aspeed-bmc-facebook-minipack.dts
 > 
-> diff --git a/drivers/hwtracing/coresight/coresight-etm4x.c b/drivers/hwtracing/coresight/coresight-etm4x.c
-> index bda90d4cd62b..d27c5e0d9aec 100644
-> --- a/drivers/hwtracing/coresight/coresight-etm4x.c
-> +++ b/drivers/hwtracing/coresight/coresight-etm4x.c
-> @@ -18,6 +18,7 @@
->  #include <linux/stat.h>
->  #include <linux/clk.h>
->  #include <linux/cpu.h>
-> +#include <linux/cpu_pm.h>
->  #include <linux/coresight.h>
->  #include <linux/coresight-pmu.h>
->  #include <linux/pm_wakeup.h>
-> @@ -36,6 +37,9 @@
->  static int boot_enable;
->  module_param_named(boot_enable, boot_enable, int, 0444);
->  
-> +static int disable_pm_save;
-> +module_param_named(disable_pm_save, disable_pm_save, int, 0444);
+> diff --git a/arch/arm/boot/dts/Makefile b/arch/arm/boot/dts/Makefile
+> index 323fb7f13438..4c94e4c8de1e 100644
+> --- a/arch/arm/boot/dts/Makefile
+> +++ b/arch/arm/boot/dts/Makefile
+> @@ -1267,6 +1267,7 @@ dtb-$(CONFIG_ARCH_ASPEED) += \
+>  	aspeed-bmc-arm-centriq2400-rep.dtb \
+>  	aspeed-bmc-arm-stardragon4800-rep2.dtb \
+>  	aspeed-bmc-facebook-cmm.dtb \
+> +	aspeed-bmc-facebook-minipack.dtb \
+>  	aspeed-bmc-facebook-tiogapass.dtb \
+>  	aspeed-bmc-facebook-yamp.dtb \
+>  	aspeed-bmc-intel-s2600wf.dtb \
+> diff --git a/arch/arm/boot/dts/aspeed-bmc-facebook-minipack.dts 
+> b/arch/arm/boot/dts/aspeed-bmc-facebook-minipack.dts
+> new file mode 100644
+> index 000000000000..c05478296446
+> --- /dev/null
+> +++ b/arch/arm/boot/dts/aspeed-bmc-facebook-minipack.dts
+> @@ -0,0 +1,429 @@
+> +// SPDX-License-Identifier: GPL-2.0+
+> +// Copyright (c) 2018 Facebook Inc.
+> +/dts-v1/;
 > +
->  /* The number of ETMv4 currently registered */
->  static int etm4_count;
->  static struct etmv4_drvdata *etmdrvdata[NR_CPUS];
-> @@ -53,6 +57,14 @@ static void etm4_os_unlock(struct etmv4_drvdata *drvdata)
->  	isb();
->  }
->  
-> +static void etm4_os_lock(struct etmv4_drvdata *drvdata)
-> +{
-> +	/* Writing 0x1 to TRCOSLAR unlocks the trace registers */
-> +	writel_relaxed(0x1, drvdata->base + TRCOSLAR);
-> +	drvdata->os_unlock = false;
-> +	isb();
-> +}
+> +#include "aspeed-g5.dtsi"
 > +
->  static bool etm4_arch_supported(u8 arch)
->  {
->  	/* Mask out the minor version number */
-> @@ -1076,6 +1088,235 @@ static void etm4_init_trace_id(struct etmv4_drvdata *drvdata)
->  	drvdata->trcid = coresight_get_trace_id(drvdata->cpu);
->  }
->  
-> +#ifdef CONFIG_CPU_PM
-> +static void etm4_cpu_save(struct etmv4_drvdata *drvdata)
-> +{
-> +	int i;
-> +	u32 control;
-> +	struct etmv4_save_state *state;
-
-Before going any further I would make sure the CPU this is running on it equal
-to drvdata->cpu.  Otherwise something very wrong happened.
-
+> +/ {
+> +	model = "Facebook Minipack 100 BMC";
+> +	compatible = "facebook,minipack-bmc", "aspeed,ast2500";
 > +
-> +	/* As recommended by 3.4.1 of ARM IHI 0064D */
-> +	dsb(sy);
-> +	isb();
+> +	aliases {
+> +		/*
+> +		 * Override the default serial aliases to avoid breaking
+> +		 * the legacy applications.
+> +		 */
+> +		serial0 = &uart5;
+> +		serial1 = &uart1;
+> +		serial2 = &uart2;
+> +		serial3 = &uart3;
+> +		serial4 = &uart4;
 > +
-> +	CS_UNLOCK(drvdata->base);
-> +	etm4_os_lock(drvdata);
-
-Please add a comment to explain that you are using the OS lock to disable
-external debugger access to the trace registers while the unit is powered down.
-Otherwise people will get confused and will submit patches that changes
-etm4_os_lock() to etm4_os_unlock().
-
+> +		/*
+> +		 * i2c switch 2-0070, pca9548, 8 child channels assigned
+> +		 * with bus number 16-23.
+> +		 */
+> +		i2c16 = &imux16;
+> +		i2c17 = &imux17;
+> +		i2c18 = &imux18;
+> +		i2c19 = &imux19;
+> +		i2c20 = &imux20;
+> +		i2c21 = &imux21;
+> +		i2c22 = &imux22;
+> +		i2c23 = &imux23;
 > +
-> +	/* wait for TRCSTATR.PMSTABLE to go up */
-> +	if (coresight_timeout(drvdata->base, TRCSTATR,
-> +					TRCSTATR_PMSTABLE_BIT, 1))
-> +		dev_err(drvdata->dev,
-> +			"timeout while waiting for Idle Trace Status\n");
-
-The above comment is not accurate since we are waiting for the PMSTABLE bit.
-
+> +		/*
+> +		 * i2c switch 8-0070, pca9548, 8 child channels assigned
+> +		 * with bus number 24-31.
+> +		 */
+> +		i2c24 = &imux24;
+> +		i2c25 = &imux25;
+> +		i2c26 = &imux26;
+> +		i2c27 = &imux27;
+> +		i2c28 = &imux28;
+> +		i2c29 = &imux29;
+> +		i2c30 = &imux30;
+> +		i2c31 = &imux31;
 > +
-> +	state = &drvdata->save_state;
+> +		/*
+> +		 * i2c switch 9-0070, pca9548, 8 child channels assigned
+> +		 * with bus number 32-39.
+> +		 */
+> +		i2c32 = &imux32;
+> +		i2c33 = &imux33;
+> +		i2c34 = &imux34;
+> +		i2c35 = &imux35;
+> +		i2c36 = &imux36;
+> +		i2c37 = &imux37;
+> +		i2c38 = &imux38;
+> +		i2c39 = &imux39;
 > +
-> +	state->trcprgctlr = readl(drvdata->base + TRCPRGCTLR);
-> +	state->trcprocselr = readl(drvdata->base + TRCPROCSELR);
-> +	state->trcconfigr = readl(drvdata->base + TRCCONFIGR);
-> +	state->trcauxctlr = readl(drvdata->base + TRCAUXCTLR);
-> +	state->trceventctl0r = readl(drvdata->base + TRCEVENTCTL0R);
-> +	state->trceventctl1r = readl(drvdata->base + TRCEVENTCTL1R);
-> +	state->trcstallctlr = readl(drvdata->base + TRCSTALLCTLR);
-> +	state->trctsctlr = readl(drvdata->base + TRCTSCTLR);
-> +	state->trcsyncpr = readl(drvdata->base + TRCSYNCPR);
-> +	state->trcccctlr = readl(drvdata->base + TRCCCCTLR);
-> +	state->trcbbctlr = readl(drvdata->base + TRCBBCTLR);
-> +	state->trctraceidr = readl(drvdata->base + TRCTRACEIDR);
-> +	state->trcqctlr = readl(drvdata->base + TRCQCTLR);
+> +		/*
+> +		 * i2c switch 11-0070, pca9548, 8 child channels assigned
+> +		 * with bus number 40-47.
+> +		 */
+> +		i2c40 = &imux40;
+> +		i2c41 = &imux41;
+> +		i2c42 = &imux42;
+> +		i2c43 = &imux43;
+> +		i2c44 = &imux44;
+> +		i2c45 = &imux45;
+> +		i2c46 = &imux46;
+> +		i2c47 = &imux47;
+> +	};
 > +
-> +	state->trcvictlr = readl(drvdata->base + TRCVICTLR);
-> +	state->trcviiectlr = readl(drvdata->base + TRCVIIECTLR);
-> +	state->trcvissctlr = readl(drvdata->base + TRCVISSCTLR);
-> +	state->trcvipcssctlr = readl(drvdata->base + TRCVIPCSSCTLR);
-> +	state->trcvdctlr = readl(drvdata->base + TRCVDCTLR);
-> +	state->trcvdsacctlr = readl(drvdata->base + TRCVDSACCTLR);
-> +	state->trcvdarcctlr = readl(drvdata->base + TRCVDARCCTLR);
+> +	chosen {
+> +		stdout-path = &uart1;
+> +		bootargs = "debug console=ttyS1,9600n8 root=/dev/ram rw";
+> +	};
 > +
-> +	for (i = 0; i < drvdata->nrseqstate; i++)
-> +		state->trcseqevr[i] = readl(drvdata->base + TRCSEQEVRn(i));
-> +
-> +	state->trcseqrstevr = readl(drvdata->base + TRCSEQRSTEVR);
-> +	state->trcseqstr = readl(drvdata->base + TRCSEQSTR);
-> +	state->trcextinselr = readl(drvdata->base + TRCEXTINSELR);
-> +
-> +	for (i = 0; i < drvdata->nr_cntr; i++) {
-> +		state->trccntrldvr[i] = readl(drvdata->base + TRCCNTRLDVRn(i));
-> +		state->trccntctlr[i] = readl(drvdata->base + TRCCNTCTLRn(i));
-> +		state->trccntvr[i] = readl(drvdata->base + TRCCNTVRn(i));
-> +	}
-> +
-> +	for (i = 0; i < drvdata->nr_resource * 2; i++)
-> +		state->trcrsctlr[i] = readl(drvdata->base + TRCRSCTLRn(i));
-> +
-> +	for (i = 0; i < drvdata->nr_ss_cmp; i++) {
-> +		state->trcssccr[i] = readl(drvdata->base + TRCSSCCRn(i));
-> +		state->trcsscsr[i] = readl(drvdata->base + TRCSSCSRn(i));
-> +		state->trcsspcicr[i] = readl(drvdata->base + TRCSSPCICRn(i));
-> +	}
-> +
-> +	for (i = 0; i < drvdata->nr_addr_cmp * 2; i++) {
-> +		state->trcacvr[i] = readl(drvdata->base + TRCACVRn(i));
-> +		state->trcacatr[i] = readl(drvdata->base + TRCACATRn(i));
-> +	}
-> +
-> +	for (i = 0; i < drvdata->numcidc; i++)
-> +		state->trccidcvr[i] = readl(drvdata->base + TRCCIDCVRn(i));
-> +
-> +	for (i = 0; i < drvdata->numvmidc; i++)
-> +		state->trcvmidcvr[i] = readl(drvdata->base + TRCVMIDCVRn(i));
-> +
-> +	state->trccidcctlr0 = readl(drvdata->base + TRCCIDCCTLR0);
-> +	state->trccidcctlr1 = readl(drvdata->base + TRCCIDCCTLR1);
-> +
-> +	state->trcvmidcctlr0 = readl(drvdata->base + TRCVMIDCCTLR0);
-> +	state->trcvmidcctlr0 = readl(drvdata->base + TRCVMIDCCTLR1);
-> +
-> +	state->trcclaimset = readl(drvdata->base + TRCCLAIMCLR);
-> +
-> +	/* wait for TRCSTATR.IDLE to go up */
-> +	if (coresight_timeout(drvdata->base, TRCSTATR, TRCSTATR_IDLE_BIT, 1))
-> +		dev_err(drvdata->dev,
-> +			"timeout while waiting for Idle Trace Status\n");
-> +
-> +	/* power can be removed from the trace unit now */
-> +	control = readl_relaxed(drvdata->base + TRCPDCR);
-> +	control &= ~TRCPDCR_PU;
-> +	writel_relaxed(control, drvdata->base + TRCPDCR);
-> +
-> +	CS_LOCK(drvdata->base);
-> +}
-> +
-> +static void etm4_cpu_restore(struct etmv4_drvdata *drvdata)
-> +{
-> +	int i;
-> +	struct etmv4_save_state *state;
-> +
-> +	state = &drvdata->save_state;
-
-Same comment as above about the running CPU.
-
-> +
-> +	CS_UNLOCK(drvdata->base);
-> +
-> +	writel_relaxed(state->trcclaimset, drvdata->base + TRCCLAIMSET);
-> +
-> +	writel_relaxed(state->trcprgctlr, drvdata->base + TRCPRGCTLR);
-> +	writel_relaxed(state->trcprocselr, drvdata->base + TRCPROCSELR);
-> +	writel_relaxed(state->trcconfigr, drvdata->base + TRCCONFIGR);
-> +	writel_relaxed(state->trcauxctlr, drvdata->base + TRCAUXCTLR);
-> +	writel_relaxed(state->trceventctl0r, drvdata->base + TRCEVENTCTL0R);
-> +	writel_relaxed(state->trceventctl1r, drvdata->base + TRCEVENTCTL1R);
-> +	writel_relaxed(state->trcstallctlr, drvdata->base + TRCSTALLCTLR);
-> +	writel_relaxed(state->trctsctlr, drvdata->base + TRCTSCTLR);
-> +	writel_relaxed(state->trcsyncpr, drvdata->base + TRCSYNCPR);
-> +	writel_relaxed(state->trcccctlr, drvdata->base + TRCCCCTLR);
-> +	writel_relaxed(state->trcbbctlr, drvdata->base + TRCBBCTLR);
-> +	writel_relaxed(state->trctraceidr, drvdata->base + TRCTRACEIDR);
-> +	writel_relaxed(state->trcqctlr, drvdata->base + TRCQCTLR);
-> +
-> +	writel_relaxed(state->trcvictlr, drvdata->base + TRCVICTLR);
-> +	writel_relaxed(state->trcviiectlr, drvdata->base + TRCVIIECTLR);
-> +	writel_relaxed(state->trcvissctlr, drvdata->base + TRCVISSCTLR);
-> +	writel_relaxed(state->trcvipcssctlr, drvdata->base + TRCVIPCSSCTLR);
-> +	writel_relaxed(state->trcvdctlr, drvdata->base + TRCVDCTLR);
-> +	writel_relaxed(state->trcvdsacctlr, drvdata->base + TRCVDSACCTLR);
-> +	writel_relaxed(state->trcvdarcctlr, drvdata->base + TRCVDARCCTLR);
-> +
-> +	for (i = 0; i < drvdata->nrseqstate; i++)
-> +		writel_relaxed(state->trcseqevr[i],
-> +					drvdata->base + TRCSEQEVRn(i));
-> +
-> +	writel_relaxed(state->trcseqrstevr, drvdata->base + TRCSEQRSTEVR);
-> +	writel_relaxed(state->trcseqstr, drvdata->base + TRCSEQSTR);
-> +	writel_relaxed(state->trcextinselr, drvdata->base + TRCEXTINSELR);
-> +
-> +	for (i = 0; i < drvdata->nr_cntr; i++) {
-> +		writel_relaxed(state->trccntrldvr[i],
-> +					drvdata->base + TRCCNTRLDVRn(i));
-> +		writel_relaxed(state->trccntctlr[i],
-> +					drvdata->base + TRCCNTCTLRn(i));
-> +		writel_relaxed(state->trccntvr[i],
-> +					drvdata->base + TRCCNTVRn(i));
-> +	}
-> +
-> +	for (i = 0; i < drvdata->nr_resource * 2; i++)
-> +		writel_relaxed(state->trcrsctlr[i],
-> +					drvdata->base + TRCRSCTLRn(i));
-> +
-> +	for (i = 0; i < drvdata->nr_ss_cmp; i++) {
-> +		writel_relaxed(state->trcssccr[i],
-> +					drvdata->base + TRCSSCCRn(i));
-> +		writel_relaxed(state->trcsscsr[i],
-> +					drvdata->base + TRCSSCSRn(i));
-> +		writel_relaxed(state->trcsspcicr[i],
-> +					drvdata->base + TRCSSPCICRn(i));
-> +	}
-> +
-> +	for (i = 0; i < drvdata->nr_addr_cmp * 2; i++) {
-> +		writel_relaxed(state->trcacvr[i],
-> +					drvdata->base + TRCACVRn(i));
-> +		writel_relaxed(state->trcacatr[i],
-> +					drvdata->base + TRCACATRn(i));
-> +	}
-> +
-> +	for (i = 0; i < drvdata->numcidc; i++)
-> +		writel_relaxed(state->trccidcvr[i],
-> +					drvdata->base + TRCCIDCVRn(i));
-> +
-> +	for (i = 0; i < drvdata->numvmidc; i++)
-> +		writel_relaxed(state->trcvmidcvr[i],
-> +					drvdata->base + TRCVMIDCVRn(i));
-> +
-> +	writel_relaxed(state->trccidcctlr0, drvdata->base + TRCCIDCCTLR0);
-> +	writel_relaxed(state->trccidcctlr1, drvdata->base + TRCCIDCCTLR1);
-> +
-> +	writel_relaxed(state->trcvmidcctlr0, drvdata->base + TRCVMIDCCTLR0);
-> +	writel_relaxed(state->trcvmidcctlr0, drvdata->base + TRCVMIDCCTLR1);
-> +
-> +	writel_relaxed(state->trcclaimset, drvdata->base + TRCCLAIMSET);
-> +
-> +	/* As recommended by 4.3.7 of ARM IHI 0064D */
-> +	dsb(sy);
-> +	isb();
-> +
-> +	etm4_os_unlock(drvdata);
-
-Same comment as above.
-
-> +	CS_LOCK(drvdata->base);
-> +}
-> +
-> +static int etm4_cpu_pm_notify(struct notifier_block *nb, unsigned long cmd,
-> +			      void *v)
-> +{
-> +	struct etmv4_drvdata *drvdata = container_of(nb,
-> +					struct etmv4_drvdata, nb);
-> +
-> +	if (disable_pm_save)
-> +		return NOTIFY_OK;
-> +
-> +	switch (cmd) {
-> +	case CPU_PM_ENTER:
-> +		/* save the state if coresight is in use */
-> +		if (coresight_is_claimed_any(drvdata->base))
-
-claimed_any()? At this point if coresight_is_claimed_self_hosted() == false an
-external agent is competing with the framework and we should abdicate.
-
-> +			etm4_cpu_save(drvdata);
-> +		break;
-> +	case CPU_PM_EXIT:
-> +	case CPU_PM_ENTER_FAILED:
-> +		/* trcclaimset is set when there is state to restore */
-> +		if (drvdata->save_state.trcclaimset)
-> +			etm4_cpu_restore(drvdata);
-> +		break;
-> +	default:
-> +		return NOTIFY_DONE;
-> +	}
-> +
-> +	return NOTIFY_OK;
-> +}
-> +
-> +static int etm4_cpu_pm_register(struct etmv4_drvdata *drvdata)
-> +{
-> +	drvdata->nb.notifier_call = etm4_cpu_pm_notify;
-> +	return cpu_pm_register_notifier(&drvdata->nb);
-> +}
-> +#else
-> +static int etm4_cpu_pm_register(struct etmv4_drvdata *drvdata) { return 0; }
-> +#endif
-> +
->  static int etm4_probe(struct amba_device *adev, const struct amba_id *id)
->  {
->  	int ret;
-> @@ -1141,6 +1382,10 @@ static int etm4_probe(struct amba_device *adev, const struct amba_id *id)
->  	etm4_init_trace_id(drvdata);
->  	etm4_set_default(&drvdata->config);
->  
-> +	ret = etm4_cpu_pm_register(drvdata);
-> +	if (ret)
-> +		goto err_arch_supported;
-> +
->  	desc.type = CORESIGHT_DEV_TYPE_SOURCE;
->  	desc.subtype.source_subtype = CORESIGHT_DEV_SUBTYPE_SOURCE_PROC;
->  	desc.ops = &etm4_cs_ops;
-> diff --git a/drivers/hwtracing/coresight/coresight-etm4x.h b/drivers/hwtracing/coresight/coresight-etm4x.h
-> index 52786e9d8926..f4cff447c8a1 100644
-> --- a/drivers/hwtracing/coresight/coresight-etm4x.h
-> +++ b/drivers/hwtracing/coresight/coresight-etm4x.h
-> @@ -174,7 +174,8 @@
->  					 ETM_MODE_EXCL_KERN | \
->  					 ETM_MODE_EXCL_USER)
->  
-> -#define TRCSTATR_IDLE_BIT		0
-> +#define TRCSTATR_IDLE_BIT		BIT(0)
-> +#define TRCSTATR_PMSTABLE_BIT		BIT(1)
->  #define ETM_DEFAULT_ADDR_COMP		0
->  
->  /* PowerDown Control Register bits */
-> @@ -281,6 +282,65 @@ struct etmv4_config {
->  	u32				ext_inp;
->  };
->  
-> +/**
-> + * struct etm4_save_state - state to be preserved when ETM is without power
-> + */
-> +struct etmv4_save_state {
-> +	u32	trcprgctlr;
-> +	u32	trcprocselr;
-> +	u32	trcconfigr;
-> +	u32	trcauxctlr;
-> +	u32	trceventctl0r;
-> +	u32	trceventctl1r;
-> +	u32	trcstallctlr;
-> +	u32	trctsctlr;
-> +	u32	trcsyncpr;
-> +	u32	trcccctlr;
-> +	u32	trcbbctlr;
-> +	u32	trctraceidr;
-> +	u32	trcqctlr;
-> +
-> +	u32	trcvictlr;
-> +	u32	trcviiectlr;
-> +	u32	trcvissctlr;
-> +	u32	trcvipcssctlr;
-> +	u32	trcvdctlr;
-> +	u32	trcvdsacctlr;
-> +	u32	trcvdarcctlr;
-> +
-> +	u32	trcseqevr[ETM_MAX_SEQ_STATES];
-> +	u32	trcseqrstevr;
-> +	u32	trcseqstr;
-> +	u32	trcextinselr;
-> +	u32	trccntrldvr[ETMv4_MAX_CNTR];
-> +	u32	trccntctlr[ETMv4_MAX_CNTR];
-> +	u32	trccntvr[ETMv4_MAX_CNTR];
-> +
-> +	u32	trcrsctlr[ETM_MAX_RES_SEL * 2];
-> +
-> +	u32	trcssccr[ETM_MAX_SS_CMP];
-> +	u32	trcsscsr[ETM_MAX_SS_CMP];
-> +	u32	trcsspcicr[ETM_MAX_SS_CMP];
-> +
-> +	u64	trcacvr[ETM_MAX_SINGLE_ADDR_CMP];
-> +	u64	trcacatr[ETM_MAX_SINGLE_ADDR_CMP];
-> +	u64	trcdvcvr[ETM_MAX_DATA_VAL_CMP];
-> +	u64	trcdvcmr[ETM_MAX_DATA_VAL_CMP];
-> +	u64	trccidcvr[ETMv4_MAX_CTXID_CMP];
-> +	u32	trcvmidcvr[ETM_MAX_VMID_CMP];
-> +	u32	trccidcctlr0;
-> +	u32	trccidcctlr1;
-> +	u32	trcvmidcctlr0;
-> +	u32	trcvmidcctlr1;
-> +
-> +	u32	trcclaimset;
-> +
-> +	u32	cntr_val[ETMv4_MAX_CNTR];
-> +	u32	seq_state;
-> +	u32	vinst_ctrl;
-> +	u32	ss_status[ETM_MAX_SS_CMP];
+> +	memory@80000000 {
+> +		reg = <0x80000000 0x20000000>;
+> +	};
 > +};
 > +
->  /**
->   * struct etm4_drvdata - specifics associated to an ETM component
->   * @base:       Memory mapped base address for this component.
-> @@ -337,6 +397,8 @@ struct etmv4_config {
->   * @atbtrig:	If the implementation can support ATB triggers
->   * @lpoverride:	If the implementation can support low-power state over.
->   * @config:	structure holding configuration parameters.
-> + * @save_state:	State to be preserved across power loss
-> + * @nb:		CPU PM notifier
->   */
->  struct etmv4_drvdata {
->  	void __iomem			*base;
-> @@ -383,6 +445,8 @@ struct etmv4_drvdata {
->  	bool				atbtrig;
->  	bool				lpoverride;
->  	struct etmv4_config		config;
-> +	struct etmv4_save_state		save_state;
-> +	struct notifier_block		nb;
->  };
->  
->  /* Address comparator access types */
-> diff --git a/drivers/hwtracing/coresight/coresight.c b/drivers/hwtracing/coresight/coresight.c
-> index 4b130281236a..e85d09e597a0 100644
-> --- a/drivers/hwtracing/coresight/coresight.c
-> +++ b/drivers/hwtracing/coresight/coresight.c
-> @@ -140,7 +140,7 @@ static inline bool coresight_is_claimed_self_hosted(void __iomem *base)
->  	return coresight_read_claim_tags(base) == CORESIGHT_CLAIM_SELF_HOSTED;
->  }
->  
-> -static inline bool coresight_is_claimed_any(void __iomem *base)
-> +bool coresight_is_claimed_any(void __iomem *base)
->  {
->  	return coresight_read_claim_tags(base) != 0;
->  }
-> diff --git a/include/linux/coresight.h b/include/linux/coresight.h
-> index 62a520df8add..4f7ba923ffc4 100644
-> --- a/include/linux/coresight.h
-> +++ b/include/linux/coresight.h
-> @@ -268,6 +268,8 @@ extern int coresight_claim_device_unlocked(void __iomem *base);
->  extern void coresight_disclaim_device(void __iomem *base);
->  extern void coresight_disclaim_device_unlocked(void __iomem *base);
->  
-> +extern bool coresight_is_claimed_any(void __iomem *base);
+> +&wdt1 {
+> +	status = "okay";
+> +	aspeed,reset-type = "system";
+> +};
 > +
->  #else
->  static inline struct coresight_device *
->  coresight_register(struct coresight_desc *desc) { return NULL; }
-> @@ -290,6 +292,11 @@ static inline int coresight_claim_device(void __iomem *base)
->  static inline void coresight_disclaim_device(void __iomem *base) {}
->  static inline void coresight_disclaim_device_unlocked(void __iomem *base) {}
->  
-> +static inline bool coresight_is_claimed_any(void __iomem *base)
-> +{
-> +	return false;
-> +}
+> +&wdt2 {
+> +	status = "okay";
+> +	aspeed,reset-type = "system";
+> +};
 > +
-
-I wanted to test your code but it doesn't apply on the CS next branch:
-
-https://git.linaro.org/kernel/coresight.git/log/?h=next
-
-Thanks,
-Mathieu
-
->  #endif
->  
->  #ifdef CONFIG_OF
+> +&fmc {
+> +	status = "okay";
+> +	flash@0 {
+> +		status = "okay";
+> +		m25p,fast-read;
+> +		label = "bmc";
+> +#include "facebook-bmc-flash-layout.dtsi"
+> +	};
+> +};
+> +
+> +&uart1 {
+> +	status = "okay";
+> +	pinctrl-names = "default";
+> +	pinctrl-0 = <&pinctrl_txd1_default
+> +		     &pinctrl_rxd1_default
+> +		     &pinctrl_ncts1_default
+> +		     &pinctrl_ndsr1_default
+> +		     &pinctrl_ndtr1_default
+> +		     &pinctrl_nrts1_default>;
+> +};
+> +
+> +&uart2 {
+> +	status = "okay";
+> +	pinctrl-names = "default";
+> +	pinctrl-0 = <&pinctrl_txd2_default
+> +		     &pinctrl_rxd2_default>;
+> +};
+> +
+> +&uart3 {
+> +	status = "okay";
+> +	pinctrl-names = "default";
+> +	pinctrl-0 = <&pinctrl_txd3_default
+> +		     &pinctrl_rxd3_default>;
+> +};
+> +
+> +&uart4 {
+> +	status = "okay";
+> +	pinctrl-names = "default";
+> +	pinctrl-0 = <&pinctrl_txd4_default
+> +		     &pinctrl_rxd4_default>;
+> +};
+> +
+> +&uart5 {
+> +	status = "okay";
+> +};
+> +
+> +&mac1 {
+> +	status = "okay";
+> +	no-hw-checksum;
+> +	pinctrl-names = "default";
+> +	pinctrl-0 = <&pinctrl_rgmii2_default &pinctrl_mdio2_default>;
+> +};
+> +
+> +&i2c0 {
+> +	status = "okay";
+> +	bus-frequency = <400000>;
+> +	multi-master;
+> +};
+> +
+> +&i2c1 {
+> +	status = "okay";
+> +};
+> +
+> +&i2c2 {
+> +	status = "okay";
+> +
+> +	i2c-switch@70 {
+> +		compatible = "nxp,pca9548";
+> +		#address-cells = <1>;
+> +		#size-cells = <0>;
+> +		reg = <0x70>;
+> +
+> +		imux16: i2c@0 {
+> +			#address-cells = <1>;
+> +			#size-cells = <0>;
+> +			reg = <0>;
+> +		};
+> +
+> +		imux17: i2c@1 {
+> +			#address-cells = <1>;
+> +			#size-cells = <0>;
+> +			reg = <1>;
+> +		};
+> +
+> +		imux18: i2c@2 {
+> +			#address-cells = <1>;
+> +			#size-cells = <0>;
+> +			reg = <2>;
+> +		};
+> +
+> +		imux19: i2c@3 {
+> +			#address-cells = <1>;
+> +			#size-cells = <0>;
+> +			reg = <3>;
+> +		};
+> +
+> +		imux20: i2c@4 {
+> +			#address-cells = <1>;
+> +			#size-cells = <0>;
+> +			reg = <4>;
+> +		};
+> +
+> +		imux21: i2c@5 {
+> +			#address-cells = <1>;
+> +			#size-cells = <0>;
+> +			reg = <5>;
+> +		};
+> +
+> +		imux22: i2c@6 {
+> +			#address-cells = <1>;
+> +			#size-cells = <0>;
+> +			reg = <6>;
+> +		};
+> +
+> +		imux23: i2c@7 {
+> +			#address-cells = <1>;
+> +			#size-cells = <0>;
+> +			reg = <7>;
+> +		};
+> +	};
+> +};
+> +
+> +&i2c3 {
+> +	status = "okay";
+> +};
+> +
+> +&i2c4 {
+> +	status = "okay";
+> +	multi-master;
+> +};
+> +
+> +&i2c5 {
+> +	status = "okay";
+> +};
+> +
+> +&i2c6 {
+> +	status = "okay";
+> +};
+> +
+> +&i2c7 {
+> +	status = "okay";
+> +};
+> +
+> +&i2c8 {
+> +	status = "okay";
+> +
+> +	i2c-switch@70 {
+> +		compatible = "nxp,pca9548";
+> +		#address-cells = <1>;
+> +		#size-cells = <0>;
+> +		reg = <0x70>;
+> +
+> +		imux24: i2c@0 {
+> +			#address-cells = <1>;
+> +			#size-cells = <0>;
+> +			reg = <0>;
+> +		};
+> +
+> +		imux25: i2c@1 {
+> +			#address-cells = <1>;
+> +			#size-cells = <0>;
+> +			reg = <1>;
+> +		};
+> +
+> +		imux26: i2c@2 {
+> +			#address-cells = <1>;
+> +			#size-cells = <0>;
+> +			reg = <2>;
+> +		};
+> +
+> +		imux27: i2c@3 {
+> +			#address-cells = <1>;
+> +			#size-cells = <0>;
+> +			reg = <3>;
+> +		};
+> +
+> +		imux28: i2c@4 {
+> +			#address-cells = <1>;
+> +			#size-cells = <0>;
+> +			reg = <4>;
+> +		};
+> +
+> +		imux29: i2c@5 {
+> +			#address-cells = <1>;
+> +			#size-cells = <0>;
+> +			reg = <5>;
+> +		};
+> +
+> +		imux30: i2c@6 {
+> +			#address-cells = <1>;
+> +			#size-cells = <0>;
+> +			reg = <6>;
+> +		};
+> +
+> +		imux31: i2c@7 {
+> +			#address-cells = <1>;
+> +			#size-cells = <0>;
+> +			reg = <7>;
+> +		};
+> +	};
+> +};
+> +
+> +&i2c9 {
+> +	status = "okay";
+> +
+> +	i2c-switch@70 {
+> +		compatible = "nxp,pca9548";
+> +		#address-cells = <1>;
+> +		#size-cells = <0>;
+> +		reg = <0x70>;
+> +
+> +		imux32: i2c@0 {
+> +			#address-cells = <1>;
+> +			#size-cells = <0>;
+> +			reg = <0>;
+> +		};
+> +
+> +		imux33: i2c@1 {
+> +			#address-cells = <1>;
+> +			#size-cells = <0>;
+> +			reg = <1>;
+> +		};
+> +
+> +		imux34: i2c@2 {
+> +			#address-cells = <1>;
+> +			#size-cells = <0>;
+> +			reg = <2>;
+> +		};
+> +
+> +		imux35: i2c@3 {
+> +			#address-cells = <1>;
+> +			#size-cells = <0>;
+> +			reg = <3>;
+> +		};
+> +
+> +		imux36: i2c@4 {
+> +			#address-cells = <1>;
+> +			#size-cells = <0>;
+> +			reg = <4>;
+> +		};
+> +
+> +		imux37: i2c@5 {
+> +			#address-cells = <1>;
+> +			#size-cells = <0>;
+> +			reg = <5>;
+> +		};
+> +
+> +		imux38: i2c@6 {
+> +			#address-cells = <1>;
+> +			#size-cells = <0>;
+> +			reg = <6>;
+> +		};
+> +
+> +		imux39: i2c@7 {
+> +			#address-cells = <1>;
+> +			#size-cells = <0>;
+> +			reg = <7>;
+> +		};
+> +	};
+> +};
+> +
+> +&i2c10 {
+> +	status = "okay";
+> +};
+> +
+> +&i2c11 {
+> +	status = "okay";
+> +
+> +	i2c-switch@70 {
+> +		compatible = "nxp,pca9548";
+> +		#address-cells = <1>;
+> +		#size-cells = <0>;
+> +		reg = <0x70>;
+> +
+> +		imux40: i2c@0 {
+> +			#address-cells = <1>;
+> +			#size-cells = <0>;
+> +			reg = <0>;
+> +		};
+> +
+> +		imux41: i2c@1 {
+> +			#address-cells = <1>;
+> +			#size-cells = <0>;
+> +			reg = <1>;
+> +		};
+> +
+> +		imux42: i2c@2 {
+> +			#address-cells = <1>;
+> +			#size-cells = <0>;
+> +			reg = <2>;
+> +		};
+> +
+> +		imux43: i2c@3 {
+> +			#address-cells = <1>;
+> +			#size-cells = <0>;
+> +			reg = <3>;
+> +		};
+> +
+> +		imux44: i2c@4 {
+> +			#address-cells = <1>;
+> +			#size-cells = <0>;
+> +			reg = <4>;
+> +		};
+> +
+> +		imux45: i2c@5 {
+> +			#address-cells = <1>;
+> +			#size-cells = <0>;
+> +			reg = <5>;
+> +		};
+> +
+> +		imux46: i2c@6 {
+> +			#address-cells = <1>;
+> +			#size-cells = <0>;
+> +			reg = <6>;
+> +		};
+> +
+> +		imux47: i2c@7 {
+> +			#address-cells = <1>;
+> +			#size-cells = <0>;
+> +			reg = <7>;
+> +		};
+> +	};
+> +};
+> +
+> +&i2c12 {
+> +	status = "okay";
+> +};
+> +
+> +&i2c13 {
+> +	status = "okay";
+> +};
+> +
+> +&vhub {
+> +	status = "okay";
+> +};
 > -- 
-> 2.21.0
+> 2.17.1
 > 
+>
 
 _______________________________________________
 linux-arm-kernel mailing list
