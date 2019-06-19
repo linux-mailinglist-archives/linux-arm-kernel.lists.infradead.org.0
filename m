@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6C8224C1E9
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Jun 2019 21:58:26 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 85B1F4C1EC
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Jun 2019 21:58:52 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,70 +11,70 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=TgNiRp4hW6FT4aXaqE1sSfzXPdhtc83qvYHIEOl67Ro=; b=bKeTcT63pmgWzRuKF0+cr28RbG
-	Nwq7whNLvxzbyHt6vyF0xEngCk4vcIMHalengAXCsbTRARkDweyYo7NGvXZt50KvjsUf5edFQjmKc
-	/4c6SIQMsRqrGnh/bSG/IBb6xuRuf3+HJzAOQgvywnKxGjj6R2EXE48Q9QTyGcphO+fuBxKG7JgpM
-	Zex3KZlfscAf20EEx0lFGTU2bTlyNmru7ev6OA/jHSBPby4NhZFOuAAGiI0Az225qVaJ9B3QlTZ9+
-	e7XF/XRiOWlfnZU4vY58O2t1anOz8gYCkXjWWJcHqPMfNNwPU7/PcZ9Qi3o2l/PhGnNv9GyM+ny8K
-	L0ubS+ag==;
+	bh=BYSqHX6GvtEctJPVrLl82GuaUXxj0KRDBSX+Bs6evOY=; b=KXaxqMtgORw3b3QBJUmYMT86pd
+	KY0EqgSrwCERgEUzka/8W9llNczRx44fm6+Bq3zn6pneuoBOB3lo07F4LsXJ6e8GXj3O0hEfaa8Or
+	7mvdjLLE9YhnvRhqFwX6mE9OAOHrve7SvbshvHwvz6sa4FNTT3YjxdWv7LQKH3vJ9VsxwpwmAEVSO
+	bjiOcKYKkSf/wyGGe1HoPv93YJQ3hGlK3Q3tBLaJ/OEG05AQ9opF4RK3pu2e9N812x+CLUbU6Uv1L
+	dLAeItHjZklVvwYNL3znNu48ScpTsiiCUEfdm+6RapF8/rC8wJTXU1aNKWl+TUaCyJcHJSd/O5OPD
+	bNnqUeEA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hdgis-0002wt-AB; Wed, 19 Jun 2019 19:58:22 +0000
-Received: from mail-pf1-x443.google.com ([2607:f8b0:4864:20::443])
+	id 1hdgjK-0003FC-Vj; Wed, 19 Jun 2019 19:58:50 +0000
+Received: from mail-pf1-x441.google.com ([2607:f8b0:4864:20::441])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hdgeD-0006VZ-8k
- for linux-arm-kernel@lists.infradead.org; Wed, 19 Jun 2019 19:53:34 +0000
-Received: by mail-pf1-x443.google.com with SMTP id d126so220230pfd.2
+ id 1hdgeE-0006Wk-1u
+ for linux-arm-kernel@lists.infradead.org; Wed, 19 Jun 2019 19:53:36 +0000
+Received: by mail-pf1-x441.google.com with SMTP id d126so220253pfd.2
  for <linux-arm-kernel@lists.infradead.org>;
  Wed, 19 Jun 2019 12:53:33 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=rpOaaV9d83fotu4AxFyBdRWe6I4s8YAmRXD80aehfeA=;
- b=bmP9qbeD5XbBeUp57OyrV7rSRDZKxCT98sCMhmCNt16p1xD1X9uEMfGOV3TmK1Od5o
- SVwqCvNyir0QK5UhUQ1V9X6XSghseuK/5gK3sC4RFsQXS6h3QrUZquuT0FX0gwLaKUQU
- qzMCym40dvZvExUBv3AzfbboIfXRNKzVZb3zAhyfaZnJupURk1fANFzEZxnupn9fNYpR
- Y8phHlnvXwP2nIUEy6wpsIh4vJON0gT5T1NZe3ohI8K3GAhohszkF2GMcrRz8BrqAuWx
- 9AhnsCbjnlbv3sl20T9Efm6ilKNyClNpoEsMciNi5siBdKdr3d3XQLrVr33j4VY5QG2X
- dtEQ==
+ bh=7YDLpLX/Ao2epAEvhkSMe8zwQunMhzBFxABY8GfNG7c=;
+ b=CMSCRwHPae452XI5A8N8Hu/LXZVdF6lKfw/B/nDoofVEAfwrG+rh9A6MTk1XF9IeTr
+ QC/P/PFmAFwwLWue7YpLxdMmOLApYgS1br119oHjvefzfO5x38v6aDHxndAm1tkDHmNB
+ +4oYSo6i+LoU3bWo8iWGvOD8QLo9iJjU4OCUFpI+cW9MbUBZfsQKfGkgq1YjQE+y67Eq
+ pxtnRxBntRJk44KCDo5BlnqjLsn91sgv0dIrljJKHbT7TfeTphAk6BM5RwyNEIif3qZ1
+ W2LLuscW8oebBqE/JDvrdMu7bOoHU/3SxW1xQkX67/1fCcY/B4E6fciW3/Y87ddej8xc
+ SiQQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=rpOaaV9d83fotu4AxFyBdRWe6I4s8YAmRXD80aehfeA=;
- b=A6HsSMIjzbcZYjAYnNLZvvhVKI4RILbg3rk5rfudUiMEQmCr1EPXHlC4YPNJL/Zxqi
- M+QqLJBMZh3a5VpLw0zGLTrIzzJ+Rp084UVmraA3EmkPkq+ez26yo22nIgkoBX2G00LN
- P8T7QOBBvW79GnPRKy4Vk6wu1U6CX+ZFESwMg0VR03LovULzqqCmdSNWFJUNYss+0Stm
- 9AjwD5/fzR3tU1ynobYPKwKIKWr4zMkkQcz6CgCUrrQ2lMgSKHfcjCMKajqXzvsKgW/c
- 3ZSpgsLPhfWX6g6RgRHyK5nMwohqxvCBJ1CwPpEy0jWJz/iGIdf+wRZX//dlM9+t3oSv
- faeA==
-X-Gm-Message-State: APjAAAUy41wsR3iGam7u5795UUhV+pmFqok+grcyZoTJ029eJeSB92ld
- AUFntk6W1M/FUAnuUb6dU0b6Jhhuu8Oz/g==
-X-Google-Smtp-Source: APXvYqySwJbYU50Z8Ybidn0rVAyyocWt0yP70mmfwEIi09QwTHRveGkZLV0iY1jOw7eaZYdGkn1yUg==
-X-Received: by 2002:a63:3008:: with SMTP id w8mr9388855pgw.11.1560974011869;
- Wed, 19 Jun 2019 12:53:31 -0700 (PDT)
+ bh=7YDLpLX/Ao2epAEvhkSMe8zwQunMhzBFxABY8GfNG7c=;
+ b=ofjp+CpRShJ/C6RW88QgYWZ3Z6CDT6zWrbew7p84qwCdnJEfELrFwu7tt63vXNQEL0
+ irBfhsYmNBq7aBrkKIfn76zeQy8bUwicqNozyX0FK/hZ4ncP3ATVpu063AJT9dB0Te4W
+ SrueEdXRwFE2cwo1o8/AwbrP7VtrNFhNZadBwo7Dx2FRlMIGwew38pQHTe6zYcm2OzQs
+ sVrUFKnD0JQ9gyFQjsgsXwS1ONQltSeb8DPKtVmD2elrJjSS/MqAbF/PEOe/JTGBdRKQ
+ Kff2Ad/oXFFzEL8x9sjoROwk9N0mHM+LQ2OBW6Us6ybaXboPRtk1R9eMpvRbTnRABgqG
+ TMmg==
+X-Gm-Message-State: APjAAAVKfJ9JwBtQKHMOfkS9z1N3nm+P/QOok4tBxnuDUm/+MPZ6aFlw
+ tz8UwHqrz50RrsXwPd4SLsOpSQ==
+X-Google-Smtp-Source: APXvYqzHZyhDqiCNwL/0Eud/yUfEU4f6sR3Y+h/i+tz4opxEKBnDGl01rqrpttr3QMS6Yf7be1UHgg==
+X-Received: by 2002:a63:e250:: with SMTP id y16mr9036108pgj.392.1560974012988; 
+ Wed, 19 Jun 2019 12:53:32 -0700 (PDT)
 Received: from xps15.cg.shawcable.net (S0106002369de4dac.cg.shawcable.net.
  [68.147.8.254])
  by smtp.gmail.com with ESMTPSA id j14sm21615993pfn.120.2019.06.19.12.53.31
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Wed, 19 Jun 2019 12:53:31 -0700 (PDT)
+ Wed, 19 Jun 2019 12:53:32 -0700 (PDT)
 From: Mathieu Poirier <mathieu.poirier@linaro.org>
 To: gregkh@linuxfoundation.org
-Subject: [PATCH 12/28] coresight: platform: Use fwnode handle for device search
-Date: Wed, 19 Jun 2019 13:53:02 -0600
-Message-Id: <20190619195318.19254-13-mathieu.poirier@linaro.org>
+Subject: [PATCH 13/28] coresight: Use fwnode handle instead of device names
+Date: Wed, 19 Jun 2019 13:53:03 -0600
+Message-Id: <20190619195318.19254-14-mathieu.poirier@linaro.org>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20190619195318.19254-1-mathieu.poirier@linaro.org>
 References: <20190619195318.19254-1-mathieu.poirier@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190619_125333_399886_0394DC77 
-X-CRM114-Status: GOOD (  15.05  )
+X-CRM114-CacheID: sfid-20190619_125334_373368_5F363D1A 
+X-CRM114-Status: GOOD (  23.03  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:443 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:441 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -105,78 +105,188 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Suzuki K Poulose <suzuki.poulose@arm.com>
 
-We match of_node while searching for a device. Make this
-more generic in preparation for the ACPI support by using
-fwnode_handle.
+We rely on the device names to find a CoreSight device on the
+coresight bus. The device name however is obtained from the platform,
+which is bound to the real platform/amba device. As we are about
+to use different naming scheme for the coresight devices, we can't
+rely on the platform device name to find the corresponding
+coresight device. Instead we use the platform agnostic
+"fwnode handle" of the parent device to find the devices.
+We also reuse the same fwnode as the parent for the Coresight
+device we create.
 
 Signed-off-by: Suzuki K Poulose <suzuki.poulose@arm.com>
 Signed-off-by: Mathieu Poirier <mathieu.poirier@linaro.org>
 ---
- drivers/hwtracing/coresight/coresight-platform.c | 16 +++++++++-------
- 1 file changed, 9 insertions(+), 7 deletions(-)
+ .../hwtracing/coresight/coresight-platform.c  | 14 +++++--
+ drivers/hwtracing/coresight/coresight-priv.h  |  6 +--
+ drivers/hwtracing/coresight/coresight.c       | 42 +++++++++++++++----
+ include/linux/coresight.h                     |  4 +-
+ 4 files changed, 49 insertions(+), 17 deletions(-)
 
 diff --git a/drivers/hwtracing/coresight/coresight-platform.c b/drivers/hwtracing/coresight/coresight-platform.c
-index 53d6eed44a20..4394095ad224 100644
+index 4394095ad224..49112a58478e 100644
 --- a/drivers/hwtracing/coresight/coresight-platform.c
 +++ b/drivers/hwtracing/coresight/coresight-platform.c
-@@ -36,14 +36,13 @@ static int coresight_alloc_conns(struct device *dev,
+@@ -36,7 +36,7 @@ static int coresight_alloc_conns(struct device *dev,
  	return 0;
  }
  
--#ifdef CONFIG_OF
--static int of_dev_node_match(struct device *dev, void *data)
-+static int coresight_device_fwnode_match(struct device *dev, void *fwnode)
+-static int coresight_device_fwnode_match(struct device *dev, void *fwnode)
++int coresight_device_fwnode_match(struct device *dev, void *fwnode)
  {
--	return dev->of_node == data;
-+	return dev_fwnode(dev) == fwnode;
+ 	return dev_fwnode(dev) == fwnode;
+ }
+@@ -219,9 +219,15 @@ static int of_coresight_parse_endpoint(struct device *dev,
+ 		}
+ 
+ 		conn->outport = endpoint.port;
+-		conn->child_name = devm_kstrdup(dev,
+-						dev_name(rdev),
+-						GFP_KERNEL);
++		/*
++		 * Hold the refcount to the target device. This could be
++		 * released via:
++		 * 1) coresight_release_platform_data() if the probe fails or
++		 *    this device is unregistered.
++		 * 2) While removing the target device via
++		 *    coresight_remove_match()
++		 */
++		conn->child_fwnode = fwnode_handle_get(rdev_fwnode);
+ 		conn->child_port = rendpoint.port;
+ 		/* Connection record updated */
+ 		ret = 1;
+diff --git a/drivers/hwtracing/coresight/coresight-priv.h b/drivers/hwtracing/coresight/coresight-priv.h
+index c21642114fc3..8b07fe55395a 100644
+--- a/drivers/hwtracing/coresight/coresight-priv.h
++++ b/drivers/hwtracing/coresight/coresight-priv.h
+@@ -200,8 +200,8 @@ static inline void *coresight_get_uci_data(const struct amba_id *id)
+ 	return 0;
  }
  
- static struct device *
--of_coresight_get_endpoint_device(struct device_node *endpoint)
-+coresight_find_device_by_fwnode(struct fwnode_handle *fwnode)
+-static inline void
+-coresight_release_platform_data(struct coresight_platform_data *pdata)
+-{}
++void coresight_release_platform_data(struct coresight_platform_data *pdata);
++
++int coresight_device_fwnode_match(struct device *dev, void *fwnode);
+ 
+ #endif
+diff --git a/drivers/hwtracing/coresight/coresight.c b/drivers/hwtracing/coresight/coresight.c
+index 526141c2f876..1287778c3be5 100644
+--- a/drivers/hwtracing/coresight/coresight.c
++++ b/drivers/hwtracing/coresight/coresight.c
+@@ -978,6 +978,7 @@ static void coresight_device_release(struct device *dev)
  {
- 	struct device *dev = NULL;
+ 	struct coresight_device *csdev = to_coresight_device(dev);
  
-@@ -52,7 +51,7 @@ of_coresight_get_endpoint_device(struct device_node *endpoint)
- 	 * platform bus.
- 	 */
- 	dev = bus_find_device(&platform_bus_type, NULL,
--			      endpoint, of_dev_node_match);
-+			      fwnode, coresight_device_fwnode_match);
- 	if (dev)
- 		return dev;
- 
-@@ -61,9 +60,10 @@ of_coresight_get_endpoint_device(struct device_node *endpoint)
- 	 * looking for the device that matches the endpoint node.
- 	 */
- 	return bus_find_device(&amba_bustype, NULL,
--			       endpoint, of_dev_node_match);
-+			       fwnode, coresight_device_fwnode_match);
++	fwnode_handle_put(csdev->dev.fwnode);
+ 	kfree(csdev->refcnt);
+ 	kfree(csdev);
  }
+@@ -1009,13 +1010,11 @@ static int coresight_orphan_match(struct device *dev, void *data)
+ 		/* We have found at least one orphan connection */
+ 		if (conn->child_dev == NULL) {
+ 			/* Does it match this newly added device? */
+-			if (conn->child_name &&
+-			    !strcmp(dev_name(&csdev->dev), conn->child_name)) {
++			if (conn->child_fwnode == csdev->dev.fwnode)
+ 				conn->child_dev = csdev;
+-			} else {
++			else
+ 				/* This component still has an orphan */
+ 				still_orphan = true;
+-			}
+ 		}
+ 	}
  
-+#ifdef CONFIG_OF
- static inline bool of_coresight_legacy_ep_is_input(struct device_node *ep)
+@@ -1047,9 +1046,9 @@ static void coresight_fixup_device_conns(struct coresight_device *csdev)
+ 		struct coresight_connection *conn = &csdev->pdata->conns[i];
+ 		struct device *dev = NULL;
+ 
+-		if (conn->child_name)
+-			dev = bus_find_device_by_name(&coresight_bustype, NULL,
+-						      conn->child_name);
++		dev = bus_find_device(&coresight_bustype, NULL,
++				      (void *)conn->child_fwnode,
++				      coresight_device_fwnode_match);
+ 		if (dev) {
+ 			conn->child_dev = to_coresight_device(dev);
+ 			/* and put reference from 'bus_find_device()' */
+@@ -1084,9 +1083,15 @@ static int coresight_remove_match(struct device *dev, void *data)
+ 		if (conn->child_dev == NULL)
+ 			continue;
+ 
+-		if (!strcmp(dev_name(&csdev->dev), conn->child_name)) {
++		if (csdev->dev.fwnode == conn->child_fwnode) {
+ 			iterator->orphan = true;
+ 			conn->child_dev = NULL;
++			/*
++			 * Drop the reference to the handle for the remote
++			 * device acquired in parsing the connections from
++			 * platform data.
++			 */
++			fwnode_handle_put(conn->child_fwnode);
+ 			/* No need to continue */
+ 			break;
+ 		}
+@@ -1166,6 +1171,22 @@ static int __init coresight_init(void)
+ }
+ postcore_initcall(coresight_init);
+ 
++/*
++ * coresight_release_platform_data: Release references to the devices connected
++ * to the output port of this device.
++ */
++void coresight_release_platform_data(struct coresight_platform_data *pdata)
++{
++	int i;
++
++	for (i = 0; i < pdata->nr_outport; i++) {
++		if (pdata->conns[i].child_fwnode) {
++			fwnode_handle_put(pdata->conns[i].child_fwnode);
++			pdata->conns[i].child_fwnode = NULL;
++		}
++	}
++}
++
+ struct coresight_device *coresight_register(struct coresight_desc *desc)
  {
- 	return of_property_read_bool(ep, "slave-mode");
-@@ -191,6 +191,7 @@ static int of_coresight_parse_endpoint(struct device *dev,
- 	struct device_node *rparent = NULL;
- 	struct device_node *rep = NULL;
- 	struct device *rdev = NULL;
-+	struct fwnode_handle *rdev_fwnode;
+ 	int ret;
+@@ -1210,6 +1231,11 @@ struct coresight_device *coresight_register(struct coresight_desc *desc)
+ 	csdev->dev.parent = desc->dev;
+ 	csdev->dev.release = coresight_device_release;
+ 	csdev->dev.bus = &coresight_bustype;
++	/*
++	 * Hold the reference to our parent device. This will be
++	 * dropped only in coresight_device_release().
++	 */
++	csdev->dev.fwnode = fwnode_handle_get(dev_fwnode(desc->dev));
+ 	dev_set_name(&csdev->dev, "%s", desc->name);
  
- 	do {
- 		/* Parse the local port details */
-@@ -209,8 +210,9 @@ static int of_coresight_parse_endpoint(struct device *dev,
- 		if (of_graph_parse_endpoint(rep, &rendpoint))
- 			break;
+ 	ret = device_register(&csdev->dev);
+diff --git a/include/linux/coresight.h b/include/linux/coresight.h
+index b67d5074ece0..b40544bc06fe 100644
+--- a/include/linux/coresight.h
++++ b/include/linux/coresight.h
+@@ -126,15 +126,15 @@ struct coresight_desc {
+ /**
+  * struct coresight_connection - representation of a single connection
+  * @outport:	a connection's output port number.
+- * @chid_name:	remote component's name.
+  * @child_port:	remote component's port number @output is connected to.
++ * @chid_fwnode: remote component's fwnode handle.
+  * @child_dev:	a @coresight_device representation of the component
+ 		connected to @outport.
+  */
+ struct coresight_connection {
+ 	int outport;
+-	const char *child_name;
+ 	int child_port;
++	struct fwnode_handle *child_fwnode;
+ 	struct coresight_device *child_dev;
+ };
  
-+		rdev_fwnode = of_fwnode_handle(rparent);
- 		/* If the remote device is not available, defer probing */
--		rdev = of_coresight_get_endpoint_device(rparent);
-+		rdev = coresight_find_device_by_fwnode(rdev_fwnode);
- 		if (!rdev) {
- 			ret = -EPROBE_DEFER;
- 			break;
 -- 
 2.17.1
 
