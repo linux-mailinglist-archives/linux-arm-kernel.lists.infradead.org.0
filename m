@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7D22A4BFBB
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Jun 2019 19:35:33 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 417434BFB4
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Jun 2019 19:34:51 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,71 +11,70 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=fOp2/oOk7Zz9ZjAZ6Zc2e0BwUlGOhM3hQYY0PAKzhxk=; b=n4kMNRjYTVFm3OMAKirzcqV/IS
-	qf2i3XMTODCpoPBodhe+urx/vzFN+ONe4+hvGGpJELk+msGKzrobAVg1BY81Gbx2/l3uuVVrDUT/I
-	eRse1FJxgMmx3WvyxjDwwvf0u7m+53hfWAONqV7g1x9IP2FRlnoj9pbVoixOq1oTH+ed9+vaRqjsx
-	WhR6fyXode0ZssOac0SXlAegWz3JKO6pIyWerbofU/5gFpNDQT5gIlXRfuYsbNx0exefAKW6GoPJd
-	dOBCyFxlr6VlszzSooub5KzYKeK5XH0fbQKVPhZ5siyV2sihXmEIQxqGnqG/uvAlRaRUlLaNUVheD
-	m+s9xQgg==;
+	bh=tM+9UJO0AtaMtIxVAvvs7wnocYIIUCELPxwPH6EUo8k=; b=JrD/viMucltB2+4haCUgBz3l1F
+	dIWJCEU8BIZAJWHtAl4siw6m5y3Vgt4y5/9KRnvaQg9tNXcymt2j+rF03U5/zmKBZUUgf7IJyijw0
+	cg+czVxnP5qKMybzGyvSSzuFysQsl8fzyoSMr+Fk3ZvWdNe9RKC40Nnr7LyDn5pMbkltaFl5lyWk8
+	pF4+v1qtY1Py9rBg9WHCArJIW1ciIgfM4Zi7jwzRz8oH4/TAxtaKqX3Uctj7OvzevyJCqIHFSTvjd
+	ww3RWLVPrlwv6hn8cmyGItGpCZhxU8YSgiD5HJV9DrJV288VAJgJ+jB/iJYHv4esJ7mv7/3YKn1lG
+	Gl6iIMWw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hdeUa-0004xX-H8; Wed, 19 Jun 2019 17:35:28 +0000
-Received: from mail-pl1-x641.google.com ([2607:f8b0:4864:20::641])
+	id 1hdeTx-0003D8-Rs; Wed, 19 Jun 2019 17:34:49 +0000
+Received: from mail-pg1-x543.google.com ([2607:f8b0:4864:20::543])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hdePO-0007Kz-Dr
+ id 1hdePO-0007Re-OT
  for linux-arm-kernel@lists.infradead.org; Wed, 19 Jun 2019 17:30:12 +0000
-Received: by mail-pl1-x641.google.com with SMTP id cl9so83930plb.10
+Received: by mail-pg1-x543.google.com with SMTP id n2so32508pgp.11
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 19 Jun 2019 10:30:04 -0700 (PDT)
+ Wed, 19 Jun 2019 10:30:05 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=lvgzx4njTfDigJ2kDesfu5Opq/+bwO83R2/El41gk9k=;
- b=BBSQ3HqJUV596JN2ghSG7u3nSDPnDYJ4RUAwuEsBZtCqlY8a3O5uHlXcaZzPDkuv0v
- UHH2WPAzHFN+oWktHIxdZRw2Ry2ABen/htfSbtbjvpycPyh+QqoMXtlqjkBOz2L+ojSB
- /viY3iA0yp69rkLprs+1B/GTjtoVt8RQWdAaMSEgA9B5kdaDc1OUnWgNvLa6FLrdL58N
- 8xMewUb9Vu26H3HYObmk4tgEnDctjUwUiW2MkbI2p2Ih2TPhS3dZKta0vpFsgznK808x
- 5cHkGDgxRaCs7ay0Da2/39vcUAWxsHfOnC566iyChsv0bR71VaUAedFhkOGX8pmeMdxD
- 86vg==
+ bh=i9B/70j+KVPtpl7paUqbm+CZkyeg3RB2d1/vlpd8aOo=;
+ b=bERDPwdOXjw0QYqaffDK6yPuqd5LEDEpg/DdWM69lI6Vqdv6a/o0y9xika88EXEWvk
+ khX+zTwTF+FC8MIHibbrCJRioWbOhxzKC+9HmQ42fBXLSCaVdphl0la8NdIbTs1uQ6Yz
+ sKYeZukdt+AB2+M+Gfs4i9F5sxBGNQf+7BZjXGS74ofG5YWPR3XrWcWXKoUi1a8eBGyI
+ WrNy1vIQup9nJK7pE7OpMjIuRuNCTCZfx2EgrGsVezH+e0OxoIHWVh20nuiGl/OQxXT3
+ Zwk/dneVdPgNa112ujg1LyIcRjmSAk8YQDwlzwOmT5TnwEDYjXCE+mZmUbWgkD9jmyEk
+ O9+w==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=lvgzx4njTfDigJ2kDesfu5Opq/+bwO83R2/El41gk9k=;
- b=mVAE/RCwtYvrUcxw2Yd04le+UepOJoa1A3C8Hd+MlTaZsXadknu1IGl9EVMWvTOOnL
- sGnKFjGt7O2TAnudzmDOu38KGHpB4v7CzxFvPvH9zqhcDwkxSGzM6zW8bQXq+Bpg+wAZ
- MVYYMjD0p4/p1R9NHNX+RZ2GXkhH/27kRQQwf+XSrwGIlwPTyJ2FV9N+pa2DUsYPUzGe
- EBHk6ZJENfp4nV63bWqTxn61piBKHYiDmNPBJOPGO8A67zErXXtcwBNFv3Qgb3wEGqqz
- fpcX2wDfZ1ZbJsdvX6EB7oGtiDEtZKTW2Dx8x7aFKxJKZ/JAXTMK0wIDYXusbgHDE044
- 1F7Q==
-X-Gm-Message-State: APjAAAUf4wlCKeTMavcsvky60StSebGXXc7Jld6GjRTkGopoKPsbcd8O
- IIWq2IGFAA2ylxV0bnCnoA0OS/ZHGTbz8Q==
-X-Google-Smtp-Source: APXvYqwuz+047K8HunEGAwBw4iwyc7Yi6l3Q33Sj6LWkGDDL9MU0GSxPrru0h+RvJAtEGtyQeIeOew==
-X-Received: by 2002:a17:902:2a69:: with SMTP id
- i96mr111387111plb.108.1560965402940; 
- Wed, 19 Jun 2019 10:30:02 -0700 (PDT)
+ bh=i9B/70j+KVPtpl7paUqbm+CZkyeg3RB2d1/vlpd8aOo=;
+ b=K0uu2Exl38X5uD386HiB7GF7Mct1dWxrWwb4h/8xjGeg2tL0G1ZXXe4jho2pQtkA3h
+ U0F4Jj7TKAmVWe8z4kK89EZuTPpJZqOxyL0JKcIHKUfYOoIOG0u0m66eilP6F8+Hi2Yk
+ dFp0oEUajfa+k5RCfkTJizlr7xbthicGthqRKwkGXfGxlOBEOOaL3kJCtnbQjo+y/See
+ sDSRI10JWKSAY+QLEHr2sofSBgq550A9EbpIJZ7X2Sh3nCgZ9Fg1BJQ44ZsgzPodXi0G
+ +ENnEHW9lWBMtnpJ4SU9zdcwzOflHTO9E2pAB9YACihjJ7nTjs3NRU5fchGZHCkq52Ap
+ DoDg==
+X-Gm-Message-State: APjAAAV9gxmbcvjYE3N6xcGslM0JgZLEapvKTO9pYtpuymmMqy7b9CIH
+ TjHvg/sPRlXpYUVeuHhxBzrVeJ+dqDuBMQ==
+X-Google-Smtp-Source: APXvYqwc6JwNBqLYwKk6hE+gYkgsjxacrL6CTDBrvQ6mQsO9R0rTAFjetL3uZlRGEse2QNeX9jdmnA==
+X-Received: by 2002:a65:6541:: with SMTP id a1mr8638481pgw.409.1560965403969; 
+ Wed, 19 Jun 2019 10:30:03 -0700 (PDT)
 Received: from xps15.cg.shawcable.net (S0106002369de4dac.cg.shawcable.net.
  [68.147.8.254])
- by smtp.gmail.com with ESMTPSA id g2sm31348406pfb.95.2019.06.19.10.30.01
+ by smtp.gmail.com with ESMTPSA id g2sm31348406pfb.95.2019.06.19.10.30.02
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Wed, 19 Jun 2019 10:30:02 -0700 (PDT)
+ Wed, 19 Jun 2019 10:30:03 -0700 (PDT)
 From: Mathieu Poirier <mathieu.poirier@linaro.org>
 To: gregkh@linuxfoundation.org
-Subject: [PATCH 12/45] coresight: etm: Clean up device specific data
-Date: Wed, 19 Jun 2019 11:29:16 -0600
-Message-Id: <20190619172949.4522-13-mathieu.poirier@linaro.org>
+Subject: [PATCH 13/45] coresight: etb10: Clean up device specific data
+Date: Wed, 19 Jun 2019 11:29:17 -0600
+Message-Id: <20190619172949.4522-14-mathieu.poirier@linaro.org>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20190619172949.4522-1-mathieu.poirier@linaro.org>
 References: <20190619172949.4522-1-mathieu.poirier@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190619_103006_804197_0E7CE154 
-X-CRM114-Status: GOOD (  16.17  )
+X-CRM114-CacheID: sfid-20190619_103007_160886_012193EB 
+X-CRM114-Status: GOOD (  14.14  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:641 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:543 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -111,314 +110,170 @@ Track the coresight device instead of the real device.
 Signed-off-by: Suzuki K Poulose <suzuki.poulose@arm.com>
 Signed-off-by: Mathieu Poirier <mathieu.poirier@linaro.org>
 ---
- drivers/hwtracing/coresight/coresight-etm.h   |  6 ++---
- .../coresight/coresight-etm3x-sysfs.c         | 12 +++++-----
- drivers/hwtracing/coresight/coresight-etm3x.c | 22 ++++++++++---------
- drivers/hwtracing/coresight/coresight-etm4x.c | 17 +++++++-------
- drivers/hwtracing/coresight/coresight-etm4x.h |  2 --
- 5 files changed, 29 insertions(+), 30 deletions(-)
+ drivers/hwtracing/coresight/coresight-etb10.c | 32 +++++++++----------
+ 1 file changed, 16 insertions(+), 16 deletions(-)
 
-diff --git a/drivers/hwtracing/coresight/coresight-etm.h b/drivers/hwtracing/coresight/coresight-etm.h
-index 79e1ad860d8a..f3ab96eaf44e 100644
---- a/drivers/hwtracing/coresight/coresight-etm.h
-+++ b/drivers/hwtracing/coresight/coresight-etm.h
-@@ -208,7 +208,6 @@ struct etm_config {
+diff --git a/drivers/hwtracing/coresight/coresight-etb10.c b/drivers/hwtracing/coresight/coresight-etb10.c
+index 516d67cd7759..0c9161fe4233 100644
+--- a/drivers/hwtracing/coresight/coresight-etb10.c
++++ b/drivers/hwtracing/coresight/coresight-etb10.c
+@@ -66,7 +66,6 @@
  /**
-  * struct etm_drvdata - specifics associated to an ETM component
+  * struct etb_drvdata - specifics associated to an ETB component
   * @base:	memory mapped base address for this component.
 - * @dev:	the device entity associated to this component.
-  * @atclk:	optional clock for the core parts of the ETM.
+  * @atclk:	optional clock for the core parts of the ETB.
   * @csdev:	component vitals needed by the framework.
-  * @spinlock:	only one at a time pls.
-@@ -232,7 +231,6 @@ struct etm_config {
+  * @miscdev:	specifics to handle "/dev/xyz.etb" entry.
+@@ -81,7 +80,6 @@
   */
- struct etm_drvdata {
- 	void __iomem			*base;
--	struct device			*dev;
- 	struct clk			*atclk;
- 	struct coresight_device		*csdev;
- 	spinlock_t			spinlock;
-@@ -260,7 +258,7 @@ static inline void etm_writel(struct etm_drvdata *drvdata,
+ struct etb_drvdata {
+ 	void __iomem		*base;
+-	struct device		*dev;
+ 	struct clk		*atclk;
+ 	struct coresight_device	*csdev;
+ 	struct miscdevice	miscdev;
+@@ -227,7 +225,6 @@ static int etb_enable_perf(struct coresight_device *csdev, void *data)
+ static int etb_enable(struct coresight_device *csdev, u32 mode, void *data)
  {
- 	if (drvdata->use_cp14) {
- 		if (etm_writel_cp14(off, val)) {
--			dev_err(drvdata->dev,
-+			dev_err(&drvdata->csdev->dev,
- 				"invalid CP14 access to ETM reg: %#x", off);
- 		}
- 	} else {
-@@ -274,7 +272,7 @@ static inline unsigned int etm_readl(struct etm_drvdata *drvdata, u32 off)
+ 	int ret;
+-	struct etb_drvdata *drvdata = dev_get_drvdata(csdev->dev.parent);
  
- 	if (drvdata->use_cp14) {
- 		if (etm_readl_cp14(off, &val)) {
--			dev_err(drvdata->dev,
-+			dev_err(&drvdata->csdev->dev,
- 				"invalid CP14 access to ETM reg: %#x", off);
- 		}
- 	} else {
-diff --git a/drivers/hwtracing/coresight/coresight-etm3x-sysfs.c b/drivers/hwtracing/coresight/coresight-etm3x-sysfs.c
-index 75487b3fad86..e8c7649f123e 100644
---- a/drivers/hwtracing/coresight/coresight-etm3x-sysfs.c
-+++ b/drivers/hwtracing/coresight/coresight-etm3x-sysfs.c
-@@ -48,7 +48,7 @@ static ssize_t etmsr_show(struct device *dev,
- 	unsigned long flags, val;
- 	struct etm_drvdata *drvdata = dev_get_drvdata(dev->parent);
+ 	switch (mode) {
+ 	case CS_MODE_SYSFS:
+@@ -244,13 +241,14 @@ static int etb_enable(struct coresight_device *csdev, u32 mode, void *data)
+ 	if (ret)
+ 		return ret;
  
--	pm_runtime_get_sync(drvdata->dev);
-+	pm_runtime_get_sync(dev->parent);
- 	spin_lock_irqsave(&drvdata->spinlock, flags);
+-	dev_dbg(drvdata->dev, "ETB enabled\n");
++	dev_dbg(&csdev->dev, "ETB enabled\n");
+ 	return 0;
+ }
+ 
+ static void __etb_disable_hw(struct etb_drvdata *drvdata)
+ {
+ 	u32 ffcr;
++	struct device *dev = &drvdata->csdev->dev;
+ 
  	CS_UNLOCK(drvdata->base);
  
-@@ -56,7 +56,7 @@ static ssize_t etmsr_show(struct device *dev,
+@@ -263,7 +261,7 @@ static void __etb_disable_hw(struct etb_drvdata *drvdata)
+ 	writel_relaxed(ffcr, drvdata->base + ETB_FFCR);
  
- 	CS_LOCK(drvdata->base);
- 	spin_unlock_irqrestore(&drvdata->spinlock, flags);
--	pm_runtime_put(drvdata->dev);
-+	pm_runtime_put(dev->parent);
- 
- 	return sprintf(buf, "%#lx\n", val);
- }
-@@ -131,7 +131,7 @@ static ssize_t mode_store(struct device *dev,
- 
- 	if (config->mode & ETM_MODE_STALL) {
- 		if (!(drvdata->etmccr & ETMCCR_FIFOFULL)) {
--			dev_warn(drvdata->dev, "stall mode not supported\n");
-+			dev_warn(dev, "stall mode not supported\n");
- 			ret = -EINVAL;
- 			goto err_unlock;
- 		}
-@@ -141,7 +141,7 @@ static ssize_t mode_store(struct device *dev,
- 
- 	if (config->mode & ETM_MODE_TIMESTAMP) {
- 		if (!(drvdata->etmccer & ETMCCER_TIMESTAMP)) {
--			dev_warn(drvdata->dev, "timestamp not supported\n");
-+			dev_warn(dev, "timestamp not supported\n");
- 			ret = -EINVAL;
- 			goto err_unlock;
- 		}
-@@ -945,7 +945,7 @@ static ssize_t seq_curr_state_show(struct device *dev,
- 		goto out;
+ 	if (coresight_timeout(drvdata->base, ETB_FFCR, ETB_FFCR_BIT, 0)) {
+-		dev_err(drvdata->dev,
++		dev_err(dev,
+ 		"timeout while waiting for completion of Manual Flush\n");
  	}
  
--	pm_runtime_get_sync(drvdata->dev);
-+	pm_runtime_get_sync(dev->parent);
- 	spin_lock_irqsave(&drvdata->spinlock, flags);
+@@ -271,7 +269,7 @@ static void __etb_disable_hw(struct etb_drvdata *drvdata)
+ 	writel_relaxed(0x0, drvdata->base + ETB_CTL_REG);
+ 
+ 	if (coresight_timeout(drvdata->base, ETB_FFSR, ETB_FFSR_BIT, 1)) {
+-		dev_err(drvdata->dev,
++		dev_err(dev,
+ 			"timeout while waiting for Formatter to Stop\n");
+ 	}
+ 
+@@ -286,6 +284,7 @@ static void etb_dump_hw(struct etb_drvdata *drvdata)
+ 	u32 read_data, depth;
+ 	u32 read_ptr, write_ptr;
+ 	u32 frame_off, frame_endoff;
++	struct device *dev = &drvdata->csdev->dev;
  
  	CS_UNLOCK(drvdata->base);
-@@ -953,7 +953,7 @@ static ssize_t seq_curr_state_show(struct device *dev,
- 	CS_LOCK(drvdata->base);
  
+@@ -295,10 +294,10 @@ static void etb_dump_hw(struct etb_drvdata *drvdata)
+ 	frame_off = write_ptr % ETB_FRAME_SIZE_WORDS;
+ 	frame_endoff = ETB_FRAME_SIZE_WORDS - frame_off;
+ 	if (frame_off) {
+-		dev_err(drvdata->dev,
++		dev_err(dev,
+ 			"write_ptr: %lu not aligned to formatter frame size\n",
+ 			(unsigned long)write_ptr);
+-		dev_err(drvdata->dev, "frameoff: %lu, frame_endoff: %lu\n",
++		dev_err(dev, "frameoff: %lu, frame_endoff: %lu\n",
+ 			(unsigned long)frame_off, (unsigned long)frame_endoff);
+ 		write_ptr += frame_endoff;
+ 	}
+@@ -365,7 +364,7 @@ static int etb_disable(struct coresight_device *csdev)
+ 	drvdata->mode = CS_MODE_DISABLED;
  	spin_unlock_irqrestore(&drvdata->spinlock, flags);
--	pm_runtime_put(drvdata->dev);
-+	pm_runtime_put(dev->parent);
- out:
- 	return sprintf(buf, "%#lx\n", val);
- }
-diff --git a/drivers/hwtracing/coresight/coresight-etm3x.c b/drivers/hwtracing/coresight/coresight-etm3x.c
-index be302ec5f66b..9c92491d3fb2 100644
---- a/drivers/hwtracing/coresight/coresight-etm3x.c
-+++ b/drivers/hwtracing/coresight/coresight-etm3x.c
-@@ -165,7 +165,7 @@ static void etm_set_prog(struct etm_drvdata *drvdata)
- 	 */
- 	isb();
- 	if (coresight_timeout_etm(drvdata, ETMSR, ETMSR_PROG_BIT, 1)) {
--		dev_err(drvdata->dev,
-+		dev_err(&drvdata->csdev->dev,
- 			"%s: timeout observed when probing at offset %#x\n",
- 			__func__, ETMSR);
- 	}
-@@ -184,7 +184,7 @@ static void etm_clr_prog(struct etm_drvdata *drvdata)
- 	 */
- 	isb();
- 	if (coresight_timeout_etm(drvdata, ETMSR, ETMSR_PROG_BIT, 0)) {
--		dev_err(drvdata->dev,
-+		dev_err(&drvdata->csdev->dev,
- 			"%s: timeout observed when probing at offset %#x\n",
- 			__func__, ETMSR);
- 	}
-@@ -425,7 +425,7 @@ static int etm_enable_hw(struct etm_drvdata *drvdata)
- done:
- 	CS_LOCK(drvdata->base);
  
--	dev_dbg(drvdata->dev, "cpu: %d enable smp call done: %d\n",
-+	dev_dbg(&drvdata->csdev->dev, "cpu: %d enable smp call done: %d\n",
- 		drvdata->cpu, rc);
- 	return rc;
+-	dev_dbg(drvdata->dev, "ETB disabled\n");
++	dev_dbg(&csdev->dev, "ETB disabled\n");
+ 	return 0;
  }
-@@ -455,6 +455,7 @@ int etm_get_trace_id(struct etm_drvdata *drvdata)
- {
- 	unsigned long flags;
- 	int trace_id = -1;
-+	struct device *etm_dev = drvdata->csdev->dev.parent;
  
+@@ -460,7 +459,7 @@ static unsigned long etb_update_buffer(struct coresight_device *csdev,
+ 	 * chance to fix things.
+ 	 */
+ 	if (write_ptr % ETB_FRAME_SIZE_WORDS) {
+-		dev_err(drvdata->dev,
++		dev_err(&csdev->dev,
+ 			"write_ptr: %lu not aligned to formatter frame size\n",
+ 			(unsigned long)write_ptr);
+ 
+@@ -594,7 +593,7 @@ static void etb_dump(struct etb_drvdata *drvdata)
+ 	}
+ 	spin_unlock_irqrestore(&drvdata->spinlock, flags);
+ 
+-	dev_dbg(drvdata->dev, "ETB dumped\n");
++	dev_dbg(&drvdata->csdev->dev, "ETB dumped\n");
+ }
+ 
+ static int etb_open(struct inode *inode, struct file *file)
+@@ -605,7 +604,7 @@ static int etb_open(struct inode *inode, struct file *file)
+ 	if (local_cmpxchg(&drvdata->reading, 0, 1))
+ 		return -EBUSY;
+ 
+-	dev_dbg(drvdata->dev, "%s: successfully opened\n", __func__);
++	dev_dbg(&drvdata->csdev->dev, "%s: successfully opened\n", __func__);
+ 	return 0;
+ }
+ 
+@@ -615,6 +614,7 @@ static ssize_t etb_read(struct file *file, char __user *data,
+ 	u32 depth;
+ 	struct etb_drvdata *drvdata = container_of(file->private_data,
+ 						   struct etb_drvdata, miscdev);
++	struct device *dev = &drvdata->csdev->dev;
+ 
+ 	etb_dump(drvdata);
+ 
+@@ -623,13 +623,14 @@ static ssize_t etb_read(struct file *file, char __user *data,
+ 		len = depth * 4 - *ppos;
+ 
+ 	if (copy_to_user(data, drvdata->buf + *ppos, len)) {
+-		dev_dbg(drvdata->dev, "%s: copy_to_user failed\n", __func__);
++		dev_dbg(dev,
++			"%s: copy_to_user failed\n", __func__);
+ 		return -EFAULT;
+ 	}
+ 
+ 	*ppos += len;
+ 
+-	dev_dbg(drvdata->dev, "%s: %zu bytes copied, %d bytes left\n",
++	dev_dbg(dev, "%s: %zu bytes copied, %d bytes left\n",
+ 		__func__, len, (int)(depth * 4 - *ppos));
+ 	return len;
+ }
+@@ -640,7 +641,7 @@ static int etb_release(struct inode *inode, struct file *file)
+ 						   struct etb_drvdata, miscdev);
+ 	local_set(&drvdata->reading, 0);
+ 
+-	dev_dbg(drvdata->dev, "%s: released\n", __func__);
++	dev_dbg(&drvdata->csdev->dev, "%s: released\n", __func__);
+ 	return 0;
+ }
+ 
+@@ -744,7 +745,6 @@ static int etb_probe(struct amba_device *adev, const struct amba_id *id)
  	if (!drvdata)
- 		goto out;
-@@ -462,7 +463,7 @@ int etm_get_trace_id(struct etm_drvdata *drvdata)
- 	if (!local_read(&drvdata->mode))
- 		return drvdata->traceid;
- 
--	pm_runtime_get_sync(drvdata->dev);
-+	pm_runtime_get_sync(etm_dev);
- 
- 	spin_lock_irqsave(&drvdata->spinlock, flags);
- 
-@@ -471,7 +472,7 @@ int etm_get_trace_id(struct etm_drvdata *drvdata)
- 	CS_LOCK(drvdata->base);
- 
- 	spin_unlock_irqrestore(&drvdata->spinlock, flags);
--	pm_runtime_put(drvdata->dev);
-+	pm_runtime_put(etm_dev);
- 
- out:
- 	return trace_id;
-@@ -526,7 +527,7 @@ static int etm_enable_sysfs(struct coresight_device *csdev)
- 	spin_unlock(&drvdata->spinlock);
- 
- 	if (!ret)
--		dev_dbg(drvdata->dev, "ETM tracing enabled\n");
-+		dev_dbg(&csdev->dev, "ETM tracing enabled\n");
- 	return ret;
- }
- 
-@@ -581,7 +582,8 @@ static void etm_disable_hw(void *info)
- 
- 	CS_LOCK(drvdata->base);
- 
--	dev_dbg(drvdata->dev, "cpu: %d disable smp call done\n", drvdata->cpu);
-+	dev_dbg(&drvdata->csdev->dev,
-+		"cpu: %d disable smp call done\n", drvdata->cpu);
- }
- 
- static void etm_disable_perf(struct coresight_device *csdev)
-@@ -628,7 +630,7 @@ static void etm_disable_sysfs(struct coresight_device *csdev)
- 	spin_unlock(&drvdata->spinlock);
- 	cpus_read_unlock();
- 
--	dev_dbg(drvdata->dev, "ETM tracing disabled\n");
-+	dev_dbg(&csdev->dev, "ETM tracing disabled\n");
- }
- 
- static void etm_disable(struct coresight_device *csdev,
-@@ -803,7 +805,6 @@ static int etm_probe(struct amba_device *adev, const struct amba_id *id)
- 		drvdata->use_cp14 = of_property_read_bool(np, "arm,cp14");
- 	}
+ 		return -ENOMEM;
  
 -	drvdata->dev = &adev->dev;
- 	dev_set_drvdata(dev, drvdata);
- 
- 	/* Validity for the resource is already checked by the AMBA core */
-@@ -871,7 +872,8 @@ static int etm_probe(struct amba_device *adev, const struct amba_id *id)
- 	}
- 
- 	pm_runtime_put(&adev->dev);
--	dev_info(dev, "%s initialized\n", (char *)coresight_get_uci_data(id));
-+	dev_info(&drvdata->csdev->dev,
-+		 "%s initialized\n", (char *)coresight_get_uci_data(id));
- 	if (boot_enable) {
- 		coresight_enable(drvdata->csdev);
- 		drvdata->boot_enable = true;
-diff --git a/drivers/hwtracing/coresight/coresight-etm4x.c b/drivers/hwtracing/coresight/coresight-etm4x.c
-index 8bb0092c7ec2..77d1d837da52 100644
---- a/drivers/hwtracing/coresight/coresight-etm4x.c
-+++ b/drivers/hwtracing/coresight/coresight-etm4x.c
-@@ -88,6 +88,7 @@ static int etm4_enable_hw(struct etmv4_drvdata *drvdata)
- {
- 	int i, rc;
- 	struct etmv4_config *config = &drvdata->config;
-+	struct device *etm_dev = &drvdata->csdev->dev;
- 
- 	CS_UNLOCK(drvdata->base);
- 
-@@ -102,7 +103,7 @@ static int etm4_enable_hw(struct etmv4_drvdata *drvdata)
- 
- 	/* wait for TRCSTATR.IDLE to go up */
- 	if (coresight_timeout(drvdata->base, TRCSTATR, TRCSTATR_IDLE_BIT, 1))
--		dev_err(drvdata->dev,
-+		dev_err(etm_dev,
- 			"timeout while waiting for Idle Trace Status\n");
- 
- 	writel_relaxed(config->pe_sel, drvdata->base + TRCPROCSELR);
-@@ -184,13 +185,13 @@ static int etm4_enable_hw(struct etmv4_drvdata *drvdata)
- 
- 	/* wait for TRCSTATR.IDLE to go back down to '0' */
- 	if (coresight_timeout(drvdata->base, TRCSTATR, TRCSTATR_IDLE_BIT, 0))
--		dev_err(drvdata->dev,
-+		dev_err(etm_dev,
- 			"timeout while waiting for Idle Trace Status\n");
- 
- done:
- 	CS_LOCK(drvdata->base);
- 
--	dev_dbg(drvdata->dev, "cpu: %d enable smp call done: %d\n",
-+	dev_dbg(etm_dev, "cpu: %d enable smp call done: %d\n",
- 		drvdata->cpu, rc);
- 	return rc;
- }
-@@ -400,7 +401,7 @@ static int etm4_enable_sysfs(struct coresight_device *csdev)
- 	spin_unlock(&drvdata->spinlock);
- 
- 	if (!ret)
--		dev_dbg(drvdata->dev, "ETM tracing enabled\n");
-+		dev_dbg(&csdev->dev, "ETM tracing enabled\n");
- 	return ret;
- }
- 
-@@ -461,7 +462,8 @@ static void etm4_disable_hw(void *info)
- 
- 	CS_LOCK(drvdata->base);
- 
--	dev_dbg(drvdata->dev, "cpu: %d disable smp call done\n", drvdata->cpu);
-+	dev_dbg(&drvdata->csdev->dev,
-+		"cpu: %d disable smp call done\n", drvdata->cpu);
- }
- 
- static int etm4_disable_perf(struct coresight_device *csdev,
-@@ -511,7 +513,7 @@ static void etm4_disable_sysfs(struct coresight_device *csdev)
- 	spin_unlock(&drvdata->spinlock);
- 	cpus_read_unlock();
- 
--	dev_dbg(drvdata->dev, "ETM tracing disabled\n");
-+	dev_dbg(&csdev->dev, "ETM tracing disabled\n");
- }
- 
- static void etm4_disable(struct coresight_device *csdev,
-@@ -1095,7 +1097,6 @@ static int etm4_probe(struct amba_device *adev, const struct amba_id *id)
- 		adev->dev.platform_data = pdata;
- 	}
- 
--	drvdata->dev = &adev->dev;
- 	dev_set_drvdata(dev, drvdata);
- 
- 	/* Validity for the resource is already checked by the AMBA core */
-@@ -1157,7 +1158,7 @@ static int etm4_probe(struct amba_device *adev, const struct amba_id *id)
- 	}
- 
- 	pm_runtime_put(&adev->dev);
--	dev_info(dev, "CPU%d: ETM v%d.%d initialized\n",
-+	dev_info(&drvdata->csdev->dev, "CPU%d: ETM v%d.%d initialized\n",
- 		 drvdata->cpu, drvdata->arch >> 4, drvdata->arch & 0xf);
- 
- 	if (boot_enable) {
-diff --git a/drivers/hwtracing/coresight/coresight-etm4x.h b/drivers/hwtracing/coresight/coresight-etm4x.h
-index 52786e9d8926..4523f10ddd0f 100644
---- a/drivers/hwtracing/coresight/coresight-etm4x.h
-+++ b/drivers/hwtracing/coresight/coresight-etm4x.h
-@@ -284,7 +284,6 @@ struct etmv4_config {
- /**
-  * struct etm4_drvdata - specifics associated to an ETM component
-  * @base:       Memory mapped base address for this component.
-- * @dev:        The device entity associated to this component.
-  * @csdev:      Component vitals needed by the framework.
-  * @spinlock:   Only one at a time pls.
-  * @mode:	This tracer's mode, i.e sysFS, Perf or disabled.
-@@ -340,7 +339,6 @@ struct etmv4_config {
-  */
- struct etmv4_drvdata {
- 	void __iomem			*base;
--	struct device			*dev;
- 	struct coresight_device		*csdev;
- 	spinlock_t			spinlock;
- 	local_t				mode;
+ 	drvdata->atclk = devm_clk_get(&adev->dev, "atclk"); /* optional */
+ 	if (!IS_ERR(drvdata->atclk)) {
+ 		ret = clk_prepare_enable(drvdata->atclk);
 -- 
 2.17.1
 
