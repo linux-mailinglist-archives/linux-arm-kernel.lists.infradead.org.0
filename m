@@ -2,66 +2,66 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E02524B33C
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Jun 2019 09:43:33 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 492AB4B33F
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Jun 2019 09:43:55 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
 	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
 	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=GNPaDp5smnIc5/wYIDdNA3EPqeQF9crFKoRMXV8hd5Q=; b=W9x
-	2bEeAcjCRs3oZRxHfhvEApim/4Mmmkv/QSWVObVh+89Jh0+KJnMjbm8Wm3Hh2uEb6L9va1QRw4NfP
-	H54/V/eK+ZmerzKuUNCThqOCbJ6ncOudJmHcaVF8xmLT3c8iveg0WCUSV4WFC/k3tUX1KTXHMh6e9
-	HQaeQ/rxe4sUJBQG6bIiGVdIqjDIvTHCLeK9pYTVjnI6CdDf4oSyqNyr2yMzXXM73T+/aNU7/nrPS
-	jy8S3kONJLeR1Kk1xP6r5GXWGHXvNm67qpFyJ20Pb2CtVq3yo42wIKpvLsDqIF2o/meiYn9EYSfUI
-	DVSjR3izbqvYbo9RKO4Zwq3vYM//i5w==;
+	References:List-Owner; bh=GNPaDp5smnIc5/wYIDdNA3EPqeQF9crFKoRMXV8hd5Q=; b=FQY
+	SSjKhNaF2WOMVAYTUs3WOntCN+XHqyfpSI2IBF1PDAHjN59mcQkW0e000/3Ztnw8uPfHfeIzSMEes
+	CKIy4guIGFnuHrzcIQx5vfZmGVzhx/JNWbY5TZwN3w2S4mLQT7gyXqN4IDFGzY/WHOSpguO7/10TN
+	TxZBaubS6ZGiKZ0qfqWLgu7UUsz0QKBXjgT60g5V+xnY0auNEEY9B8YhPHp8RqfURNov5ZhO+V2QO
+	mDMZp2DPyULk7neN6tvv8Uo/aoFsiaCCvaEdk6tURQw8h9JklDVF5jjLtxvqT5Ei7ELGOcUjy+QU5
+	z8k62MN7i8kaJpzJ3D8Ynr7WCjGaIVQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hdVFg-0001Bz-FI; Wed, 19 Jun 2019 07:43:28 +0000
-Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
+	id 1hdVG3-0001Li-03; Wed, 19 Jun 2019 07:43:51 +0000
+Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hdVFU-0001AD-7Q
- for linux-arm-kernel@lists.infradead.org; Wed, 19 Jun 2019 07:43:18 +0000
-Received: by mail-wm1-x342.google.com with SMTP id z23so616862wma.4
+ id 1hdVFU-0001Ab-OG
+ for linux-arm-kernel@lists.infradead.org; Wed, 19 Jun 2019 07:43:19 +0000
+Received: by mail-wr1-x444.google.com with SMTP id f9so2144284wre.12
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 19 Jun 2019 00:43:14 -0700 (PDT)
+ Wed, 19 Jun 2019 00:43:16 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id;
  bh=Adcr10UeqAe+Bb0IaDYg7VcUvqeXYymighOgZdeVEK0=;
- b=caxducxX7PV6jsPJSHuhsGUWagdYBRY6pX31nucFls82co/VtMXpKcPUfCuWNJJ0MU
- W4IzHov5qoIjO2nEoc3ulHp2I+gmhkRC4lAGdFQGT1BMDSFgji6jLZa9ldEHDsogFnqI
- xmY18YQ3WL/hmAlM0fzzpEo/mjvE+hvoR87BX6Yubvm0i9oAgmzo8HrMjGB7Rg4K5DzL
- JM1PuL5NYKcNMz8faN7EhEvvRRFwxMO7MBKVliZb46co4uqq+5BG6rhcAmnaijWpYAsE
- SbkrGRPLK/dtkaR8SkbhybLRPd/CgZsK4xWfj6qOTo6AuG42vfLPyMMXF6mW/DK3QXpd
- lKVA==
+ b=Z8d5TC2oTGs7s6gdPdB3ighhA9ecP+X5zcxUu5RLjknHDL2xUusFzk5+FQPn26tAyq
+ 6bWsXJC40TMWE5ABWU1Ad6EsdixQPaSMwyHOd5n3j5eqYbQGVjZqmMRrRK+scOPBS5XB
+ 5qDTl5oLdwHQpSL87ZGKjpEx3ddcb/ndil+yAzOPh709jVW9oq7V1yHTG/E6S7coIivh
+ zQLR3hUusoLjW20hiEQeY1UIs42Fl21hgrO28YFXqaMbN4UxEVW5M8Laon4wf6f+vNPE
+ /RkK48gVtf6P6SsS6jcVp8Vnwn7ULQUXhPNgm+0izRg7cExb1XkIwggsSk1Auo3dGqqx
+ vhbQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id;
  bh=Adcr10UeqAe+Bb0IaDYg7VcUvqeXYymighOgZdeVEK0=;
- b=DEcG49kYFP8gTp+Qxhu65G3/+1YriM7TedIur8eQ5UCkQWV8A6JmF9DtkGsCL1EWzV
- kVZvqAYYbpOPUV0iswmAksD0G9Ifz//iBYCyPyrLoQ+Mw3ghObHP9ItwH+WrB+9jkNs4
- nEOv97fJ3psNO/ol13YDd3R+GwzQIYR4oY2osyRUd6eF16AYOK0mG1V5CmWaq6/KswXg
- nAAN3Z4+np9JbMXx2K/Tvlpbuy7wCBfI4w4xQV7nT2AKkN5ylhldxSgSaM6FemF9F6qd
- yF86BxJ2y2csMHBBwzNIWIt+NPvPO0UkfEdieqJ+Ctf8Km60K1LrbWrLeRMIoZZdfjHn
- qBEA==
-X-Gm-Message-State: APjAAAVaqKiTZTsPt78uVRo93FIHLmhF9cmy/QCiqxVEqX5+9mz5P/At
- 5TeLg3cKPMYaFfzjHfY0oYg=
-X-Google-Smtp-Source: APXvYqyXXdtUC16vcDx+Z7OCFfsxHwELx+VnwR7AbiVWG/TYtZOaerGMSjHpobBYsSGIjA4jtiGLEA==
-X-Received: by 2002:a1c:dc45:: with SMTP id t66mr7155684wmg.63.1560930193178; 
- Wed, 19 Jun 2019 00:43:13 -0700 (PDT)
+ b=VCEzy6HH4B84CYyPLSFA4G+cRRMtQV0QH8BTMCKakf5kDL1iaLsJqQmg0v551EQaGc
+ 1zV9mzjQkn1eszz2dTtLgEni7JY78HZkpkBZndLVetp0SUoJaX4dnARvI3boPW9jUBp5
+ VlSKSr9MVh0rJI1XVcdIMzeGCD4+PQ1Vi7VLYlJA0EOvwNX0q1lEmveyhIvvzlhQNso5
+ IBAS9ElcG3fZRoN9yceYA75L6o3Ai8d12CWzrQuMVSvKySCdzT4MViy5lK4+HCz0pIg4
+ LZFbbUANbF0QFx79imfv6ITxOGQdcCKv/iGLo1BMXS8oxfsdS01v9jjTKAGCMpDyqRLV
+ at9g==
+X-Gm-Message-State: APjAAAXVHUxYO91pJkH7ITkm5n2Q3SYkUOfoMuN87Yb87qDB1bc/xoYK
+ 5XGVvGiHPiZ5uLFk3sEbhRE=
+X-Google-Smtp-Source: APXvYqycgQxt++WmfZ94LGdZplmgnryEumwqIoHLZ8mrWTw6TwUU9PavpDbQb1DpAILCWHgjO0ovTg==
+X-Received: by 2002:adf:dd51:: with SMTP id u17mr68835836wrm.218.1560930194867; 
+ Wed, 19 Jun 2019 00:43:14 -0700 (PDT)
 Received: from localhost ([193.47.161.132])
- by smtp.gmail.com with ESMTPSA id f12sm23984841wrg.5.2019.06.19.00.43.11
+ by smtp.gmail.com with ESMTPSA id 32sm35570654wra.35.2019.06.19.00.43.13
  (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Wed, 19 Jun 2019 00:43:12 -0700 (PDT)
+ Wed, 19 Jun 2019 00:43:14 -0700 (PDT)
 From: Oliver Graute <oliver.graute@gmail.com>
-To: mail@example.com
+To: sboyd@kernel.org
 Subject: [PATCHv2] clk: add imx8 clk defines
-Date: Wed, 19 Jun 2019 09:34:13 +0200
-Message-Id: <20190619073420.28426-1-oliver.graute@gmail.com>
+Date: Wed, 19 Jun 2019 09:39:52 +0200
+Message-Id: <20190619074000.30852-1-oliver.graute@gmail.com>
 X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190619_004316_308065_3E970642 
+X-CRM114-CacheID: sfid-20190619_004316_800448_A5BFB855 
 X-CRM114-Status: GOOD (  11.03  )
 X-Spam-Score: 0.6 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -69,7 +69,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:342 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:444 listed in]
  [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider (oliver.graute[at]gmail.com)
@@ -95,12 +95,13 @@ List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: Mark Rutland <mark.rutland@arm.com>, Aisheng Dong <aisheng.dong@nxp.com>,
- Ulf Hansson <ulf.hansson@linaro.org>, devicetree@vger.kernel.org,
- Shawn Guo <shawnguo@kernel.org>,
- Oliver Graute <oliver.graute@kococonnector.com>, linux-kernel@vger.kernel.org,
+ Ulf Hansson <ulf.hansson@linaro.org>, Sascha Hauer <s.hauer@pengutronix.de>,
+ devicetree@vger.kernel.org, Shawn Guo <shawnguo@kernel.org>,
+ mturquette@baylibre.com, linux-kernel@vger.kernel.org,
  Rob Herring <robh+dt@kernel.org>, NXP Linux Team <linux-imx@nxp.com>,
  Pengutronix Kernel Team <kernel@pengutronix.de>,
- Fabio Estevam <festevam@gmail.com>, Sascha Hauer <s.hauer@pengutronix.de>,
+ Fabio Estevam <festevam@gmail.com>,
+ Oliver Graute <oliver.graute@kococonnector.com>,
  linux-arm-kernel@lists.infradead.org
 MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
