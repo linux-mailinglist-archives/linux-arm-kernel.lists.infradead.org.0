@@ -2,124 +2,75 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9A3A04C2A2
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Jun 2019 23:00:19 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5799C4C2E6
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Jun 2019 23:23:57 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=GYXFwZ4NC9KjSiQwKXBt/vphvzhzSF3Z/iYBvAr0uHc=; b=KGyOXuDKaoB1af
-	YyysLmwqD1/LtW9fVJOC+8IVne6udUAidlyNd4N5OoYAF6FWpOnCI/WaRqyqdkKYvth6Q/8DfB5Gc
-	2Ds/Z/QXMAKyhGaEF6SihBMOQHFeo4Fynhf73KXysPIcVFcmxZ2s1bJBGuUJSRDIzsoGRbj7eLJbJ
-	noVwSy9KWRdOm3mHDs2Tb2eHNwRV5yM407fLcvkASI3SK4+LMg0XeKN2/bo+IZta4J3s/MX/a+rSb
-	CAqHi8XXHky5C0mmR4557pVrw8aTnPzXu7AwjKrrTVGrcQXRSRCtKoZMgtgGKaiNj3ThbhPf6my+T
-	8Me/OHP5CuS0BTjIw1GQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:MIME-Version:Date:Message-ID:Subject:From:To:
+	Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
+	:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=Ln/pX7HzZaojxJ5MT/KtwSOfJUoOPcGUdqfXKS5gMT8=; b=NokSiIEetvpyCUcXsEsRiND/K8
+	nqLR6t4JmGgj65pTShVXdVbIkkc1/G5s6Zql08qYOezJcnebRfgGQLZ9A3yZg0MbtDEbP4k4DPa4/
+	8J3+mRTWW+rlFTRbxRExChQL4nNHW/RSxFhwOLWmxmSXZY5x1B7dpmCS+wEBgShCWWRJp78W7DnL+
+	7aUskOjRwZuHIC7p5gUTJ795kxlfCuc/1UvQcrGeiQkyhFMyCNCBZQfF2kI5oUMaBzYzygEuT/qx3
+	lKiG//ACqu97eO5uZqdyCZY1wqU2TV+NuQEJwEx/JxaJ/IE09hh5Xz4bqpu7ts9jTrvbkDdw2JIer
+	0o9jfmeA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hdhgk-000168-Rj; Wed, 19 Jun 2019 21:00:14 +0000
-Received: from mail-eopbgr770052.outbound.protection.outlook.com
- ([40.107.77.52] helo=NAM02-SN1-obe.outbound.protection.outlook.com)
+	id 1hdi3d-0001an-5D; Wed, 19 Jun 2019 21:23:53 +0000
+Received: from mail-pf1-f176.google.com ([209.85.210.176])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hdhgU-00015O-Ab
- for linux-arm-kernel@lists.infradead.org; Wed, 19 Jun 2019 20:59:59 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=xilinx.onmicrosoft.com; s=selector1-xilinx-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=DTHGYOhpatmnEqkiw9CQVzMRW8PafcxSLjZyEiD7N64=;
- b=CxlshnxovhlTt/G0xAgrLQ5pdxXnsE/jSIx+STMI4KRAIzw0yeFnD1AMNxFa5Mu52v0aulKxhSM/JMkwNxEfyh/Wg1+jU8WqjgV6Y+/faM+c8BHqbPsC2VUy5kOQ0YHj3p6uXwGMFGVOCahjLhzTYVOWTn6S+3YxVMGK2gGNcZA=
-Received: from BL0PR02CA0040.namprd02.prod.outlook.com (2603:10b6:207:3d::17)
- by DM6PR02MB6234.namprd02.prod.outlook.com (2603:10b6:5:1d1::24) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.1987.11; Wed, 19 Jun
- 2019 20:59:54 +0000
-Received: from CY1NAM02FT014.eop-nam02.prod.protection.outlook.com
- (2a01:111:f400:7e45::207) by BL0PR02CA0040.outlook.office365.com
- (2603:10b6:207:3d::17) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.1965.14 via Frontend
- Transport; Wed, 19 Jun 2019 20:59:54 +0000
-Authentication-Results: spf=pass (sender IP is 149.199.60.100)
- smtp.mailfrom=xilinx.com; vger.kernel.org; dkim=none (message not signed)
- header.d=none;vger.kernel.org; dmarc=bestguesspass action=none
- header.from=xilinx.com;
-Received-SPF: Pass (protection.outlook.com: domain of xilinx.com designates
- 149.199.60.100 as permitted sender) receiver=protection.outlook.com;
- client-ip=149.199.60.100; helo=xsj-pvapsmtpgw02;
-Received: from xsj-pvapsmtpgw02 (149.199.60.100) by
- CY1NAM02FT014.mail.protection.outlook.com (10.152.75.142) with Microsoft SMTP
- Server (version=TLS1_0, cipher=TLS_RSA_WITH_AES_256_CBC_SHA) id 15.20.1987.11
- via Frontend Transport; Wed, 19 Jun 2019 20:59:53 +0000
-Received: from unknown-38-66.xilinx.com ([149.199.38.66]:34414
- helo=xsj-pvapsmtp01) by xsj-pvapsmtpgw02 with esmtp (Exim 4.63)
- (envelope-from <jolly.shah@xilinx.com>)
- id 1hdhgP-0002H1-Al; Wed, 19 Jun 2019 13:59:53 -0700
-Received: from [127.0.0.1] (helo=localhost)
- by xsj-pvapsmtp01 with smtp (Exim 4.63)
- (envelope-from <jolly.shah@xilinx.com>)
- id 1hdhgK-0001oK-6L; Wed, 19 Jun 2019 13:59:48 -0700
-Received: from xsj-pvapsmtp01 (mailhub.xilinx.com [149.199.38.66])
- by xsj-smtp-dlp1.xlnx.xilinx.com (8.13.8/8.13.1) with ESMTP id x5JKxauR005191; 
- Wed, 19 Jun 2019 13:59:37 -0700
-Received: from [172.19.2.91] (helo=xsjjollys50.xilinx.com)
- by xsj-pvapsmtp01 with esmtp (Exim 4.63)
- (envelope-from <jolly.shah@xilinx.com>)
- id 1hdhg8-0001ng-P6; Wed, 19 Jun 2019 13:59:36 -0700
-From: Jolly Shah <jolly.shah@xilinx.com>
-To: ard.biesheuvel@linaro.org, mingo@kernel.org, gregkh@linuxfoundation.org,
- matt@codeblueprint.co.uk, sudeep.holla@arm.com, hkallweit1@gmail.com,
- keescook@chromium.org, dmitry.torokhov@gmail.com, michal.simek@xilinx.com
-Subject: [PATCH] firmware: xilinx: zynqmp: Remove unused macro
-Date: Wed, 19 Jun 2019 13:59:34 -0700
-Message-Id: <1560977974-6267-1-git-send-email-jolly.shah@xilinx.com>
-X-Mailer: git-send-email 2.7.4
-X-RCIS-Action: ALLOW
-X-TM-AS-Product-Ver: IMSS-7.1.0.1224-8.2.0.1013-23620.005
-X-TM-AS-User-Approved-Sender: Yes;Yes
-X-EOPAttributedMessage: 0
-X-MS-Office365-Filtering-HT: Tenant
-X-Forefront-Antispam-Report: CIP:149.199.60.100; IPV:NLI; CTRY:US; EFV:NLI;
- SFV:NSPM;
- SFS:(10009020)(346002)(376002)(39860400002)(136003)(396003)(2980300002)(199004)(189003)(486006)(70586007)(48376002)(356004)(126002)(476003)(50466002)(63266004)(336012)(70206006)(9786002)(426003)(478600001)(14444005)(72206003)(107886003)(6636002)(4326008)(2906002)(16586007)(2616005)(44832011)(305945005)(8936002)(50226002)(36386004)(36756003)(7696005)(51416003)(316002)(47776003)(8676002)(54906003)(186003)(5660300002)(106002)(26005)(81156014)(81166006)(4744005)(7416002)(77096007)(5001870100001);
- DIR:OUT; SFP:1101; SCL:1; SRVR:DM6PR02MB6234; H:xsj-pvapsmtpgw02; FPR:;
- SPF:Pass; LANG:en; PTR:unknown-60-100.xilinx.com,xapps1.xilinx.com; A:1; MX:1;
+ id 1hdi3O-0001a7-OZ
+ for linux-arm-kernel@lists.infradead.org; Wed, 19 Jun 2019 21:23:40 +0000
+Received: by mail-pf1-f176.google.com with SMTP id r7so339601pfl.3
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 19 Jun 2019 14:23:35 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:to:cc:from:subject:message-id:date:user-agent
+ :mime-version:content-language:content-transfer-encoding;
+ bh=h5Ao3cB9S/7tCUZ4ud6lKhdXu9/luXHGivc+ajaSUZM=;
+ b=HgkTE3Q9lkzzovg8GInZAmDiH5JpvPV/bu6Io36temkzqT8AwS3L2Wy6eXeAmcEIi6
+ T+YzBWNsZ9pv7KnOezKxfL2BYlbnL5JXGvrqLht7BwUFHoeQ3UnrhcPopPVMU1rdHFtA
+ pUVnqlznMrtCaC1q4kMCbrMd2kch+bJ4MrX7BwcAgRX5wA24pdbNx8fzxRPLYbktIF4N
+ czBGlzRPQ2hjjEGGDZG/vaKQ4rfuClnPCfeJ3OkhNjcRsl1Ee6ZOlwYSsrH5bQqrnixq
+ Rq/uDAFzBrzT0bcL3FxU8d1MS99cJJyroH1/h2LeF5W/eFxG4vWqvqTgAYbCkpP1cMFv
+ djbA==
+X-Gm-Message-State: APjAAAW3V1JDQmrFjoUcMlbA6NdQ+925v2kdpIzfXz3Xz8UakhJWSYWa
+ uLlLpRqUxWAZgJZwpeDhwf4DEg==
+X-Google-Smtp-Source: APXvYqyj6Cfbp8/VKPj+doGb/mW9y1hTBU7vUVIYj9cLd9dPrw3lPzXd1/aKLkCKKL2YujWVYKNn8w==
+X-Received: by 2002:a63:1450:: with SMTP id 16mr9910814pgu.52.1560979414817;
+ Wed, 19 Jun 2019 14:23:34 -0700 (PDT)
+Received: from localhost.localdomain ([182.69.193.115])
+ by smtp.gmail.com with ESMTPSA id d6sm2320615pjo.32.2019.06.19.14.23.30
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Wed, 19 Jun 2019 14:23:33 -0700 (PDT)
+To: "linux-arm-kernel@lists.infradead.org"
+ <linux-arm-kernel@lists.infradead.org>, Will Deacon <will.deacon@arm.com>
+From: Bhupesh Sharma <bhsharma@redhat.com>
+Subject: [Query] arm64: Right approach to support Image.gz file type via
+ kexec_file_load()
+Message-ID: <9d54bb1e-7371-5163-69b0-0af0426ee4a0@redhat.com>
+Date: Thu, 20 Jun 2019 02:53:26 +0530
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101
+ Thunderbird/52.2.1
 MIME-Version: 1.0
-X-MS-PublicTrafficType: Email
-X-MS-Office365-Filtering-Correlation-Id: 90178417-2cde-445f-b72d-08d6f4f91449
-X-Microsoft-Antispam: BCL:0; PCL:0;
- RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600148)(711020)(4605104)(4709080)(1401327)(2017052603328);
- SRVR:DM6PR02MB6234; 
-X-MS-TrafficTypeDiagnostic: DM6PR02MB6234:
-X-Auto-Response-Suppress: DR, RN, NRN, OOF, AutoReply
-X-Microsoft-Antispam-PRVS: <DM6PR02MB6234D26C8ADBE5DD066DEF63B8E50@DM6PR02MB6234.namprd02.prod.outlook.com>
-X-MS-Oob-TLC-OOBClassifiers: OLM:873;
-X-Forefront-PRVS: 0073BFEF03
-X-MS-Exchange-SenderADCheck: 1
-X-Microsoft-Antispam-Message-Info: EdWSZxSpjtW0TITjbQ4sPnxodwfUt3NN5Qe5d7N5RuBaA8U+++E+yJuYxC0gy3wGcsK2w68779dEXS/7gE1az/iC/RUlsQlanOHsLUeyTN6nEgl9S+2rUcCqsZZqfdcSO0PGOL3oFlGQG00B9j0zOWTeEMYjO02XyveyumiyF3orzvBnvQKfvVwoS4RBvLaIk6oRmtre03VJIpRPwXNReIos+31H+ALVR+8Cq3EEGotcB75AHjNAVdQ8wWiERIUjp6a0Xrr4QWBxPWqUdYguelI0MNk9NZoOCFtX8w4I5t1+6RulkoKSo1wNjlvfyJdEA4+1jWcuGEfnSKKxkE38C+MVvuuPt1OfVwwG4fezuSkAC82Qpa3UL80qFFdX/IvSig4z3flBBtoyJmvVXFC3DHAvFp5pM4r1Snqf7pZUNLg=
-X-OriginatorOrg: xilinx.com
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 19 Jun 2019 20:59:53.8198 (UTC)
-X-MS-Exchange-CrossTenant-Network-Message-Id: 90178417-2cde-445f-b72d-08d6f4f91449
-X-MS-Exchange-CrossTenant-Id: 657af505-d5df-48d0-8300-c31994686c5c
-X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=657af505-d5df-48d0-8300-c31994686c5c; Ip=[149.199.60.100];
- Helo=[xsj-pvapsmtpgw02]
-X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DM6PR02MB6234
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190619_135958_367345_DA02DE43 
-X-CRM114-Status: UNSURE (   8.82  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190619_142338_803444_FCEC485F 
+X-CRM114-Status: GOOD (  16.75  )
 X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.77.52 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ no trust [209.85.210.176 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.210.176 listed in wl.mailspike.net]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -131,39 +82,101 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Jolly Shah <jolly.shah@xilinx.com>, Tejas Patel <tejas.patel@xilinx.com>,
- rajanv@xilinx.com, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
+Cc: Mark Rutland <mark.rutland@arm.com>, matthewgarrett@google.com,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ "kexec@lists.infradead.org" <kexec@lists.infradead.org>,
+ AKASHI Takahiro <takahiro.akashi@linaro.org>,
+ James Morse <james.morse@arm.com>, Bhupesh SHARMA <bhupesh.linux@gmail.com>
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-ZYNQMP_PM_CAPABILITY_POWER capability is not supported by firmware
-and hence needs to be removed
+Hi,
 
-Signed-off-by: Tejas Patel <tejas.patel@xilinx.com>
-Signed-off-by: Michal Simek <michal.simek@xilinx.com>
-Signed-off-by: Jolly Shah <jolly.shah@xilinx.com>
----
- include/linux/firmware/xlnx-zynqmp.h | 1 -
- 1 file changed, 1 deletion(-)
+Since most distributions use 'make zinstall' rule inside 
+'arch/arm64/boot/Makefile' (see [1] for details) to install the arm64 
+Image.gz compressed file inside the boot destination directory (for e.g. 
+/boot), currently we cannot use kexec_file_load() to load vmlinuz (or 
+Image.gz):
 
-diff --git a/include/linux/firmware/xlnx-zynqmp.h b/include/linux/firmware/xlnx-zynqmp.h
-index 1262ea6..778abbb 100644
---- a/include/linux/firmware/xlnx-zynqmp.h
-+++ b/include/linux/firmware/xlnx-zynqmp.h
-@@ -46,7 +46,6 @@
- #define	ZYNQMP_PM_CAPABILITY_ACCESS	0x1U
- #define	ZYNQMP_PM_CAPABILITY_CONTEXT	0x2U
- #define	ZYNQMP_PM_CAPABILITY_WAKEUP	0x4U
--#define	ZYNQMP_PM_CAPABILITY_POWER	0x8U
- 
- /*
-  * Firmware FPGA Manager flags
--- 
-2.7.4
+# file /boot/vmlinuz
+/boot/vmlinuz: gzip compressed data, was "Image", <..snip..>, max 
+compression, from Unix, original size 21945120
 
+Now, since via kexec_file_load() we pass the 'fd' of Image.gz 
+(compressed file) via the following command line ...
+
+# kexec -s -l /boot/vmlinuz-`uname -r` --initrd=/boot/initramfs-`uname 
+-r`.img --reuse-cmdline
+
+... kernel returns -EINVAL error value, as it is not able to locate the 
+magic number  =0x644d5241, which is expected in the 64-byte header of 
+the decompressed kernel image (see [2] for details):
+
+The decompressed kernel image contains a 64-byte header as follows:
+<..snip..>
+   u32 magic	= 0x644d5241;	/* Magic number, little endian, "ARM\x64" */
+<..snip..>
+
+I can figure out two ways to address this:
+
+1. Add support in user-space kexec-tools (for which I have a RFC patch 
+ready), which handles an 'Image.gz' being passed via kexec_file_load(), 
+using an approach as follows:
+
+a). Copy the contents of Image.gz to a temporary file.
+b). Decompress (gunzip-decompress) the contents inside the temporary file.
+c). Pass the 'fd' of the temporary file to the kernel space. So 
+basically the kernel space still gets a decompressed kernel image to 
+load via kexec_tools
+
+This seems to have the following pros and cons, which I can think of:
+
+Pros:
+  - Changes can be handled in the user-space (kexec_tools) and no 
+changes are required in kernel space for handling the 
+unsigned/non-secure boot case.
+
+Cons:
+  - One obvious issue is how to handle the signed kernel Image.gz, 
+because signature verification is managed inside the kernel, so handling 
+a signed Image.gz would require kernel intervention eventually.
+  - Passing decompressed image from user-space requires the kernel to 
+read large amount of data from the user-space.
+
+2. Add support in kernel (for which I have a RFC patch ready), which 
+handles an 'Image.gz' being passed via kexec_file_load(), using an 
+approach as follows:
+
+a). Define a 'arch_kexec_kernel_image_probe' for arm64, which overrides 
+the __weak definition in 'kernel/kexec_file.c'
+b). Inside 'arch_kexec_kernel_image_probe' for arm64, check if we have 
+been passed a  magic header  0x1f, 0x8b (\037 \213) which indicates a 
+'gzip format' Image file.
+b). Decompress the contents inside a buffer using a decompress_kernel() 
+-> gunzip() -> inflate() logic.
+
+This seems to have the following pros and cons, which I can think of:
+
+Pros:
+  - Handling signed Image.gz becomes easier in the kernel itself.
+
+Cons:
+  - One needs to add a decompress_kernel() -> gunzip() -> inflate() 
+kind-of logic in kernel space to handle gzipp'ed image for arm64.
+
+So, I was wondering which approach should be more suitable - fixing this 
+in user-space v/s fix this in kernel-space.
+
+Please let me know so that I can send out a RFC patch for the same.
+
+[1]. https://github.com/torvalds/linux/blob/master/arch/arm64/boot/Makefile
+[2]. https://www.kernel.org/doc/Documentation/arm64/booting.txt
+
+Thanks,
+Bhupesh
 
 _______________________________________________
 linux-arm-kernel mailing list
