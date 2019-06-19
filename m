@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6C09B4C009
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Jun 2019 19:44:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E0E634C00E
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Jun 2019 19:44:45 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,72 +11,71 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=4TFkK9QcVxFd3XuH9JarhYL+Hm2tRHyR8eF6s1kPa+k=; b=IeQGdHYqDWIKFCKhSk+ezZtj7F
-	LdRp1o1dXbtxrrxKgY2uFzJM4ac+8aoSJ4tqf89/7vlm6A2JQypGX8kbWInS7/L+/IJMzTDyLkrS0
-	uO6Q5jl+kPLOzAeaMi4k0TXsm3462nCoM36xjH3DNP0tHj9H2Nbp89rZM912xSweFeecahBkL2Xt5
-	WwJCS3BjBY3tfq2Qu6B0a8Y8K8hn8drLL6E/TIMnYuYqs0sbzSbNNuEW0BaU4R+SQxLkUOa8X+SOk
-	QuJTssdffuMVZl7wRYZuvqXOnquMK41csw5xWiOQPhsCMK1a42ik/SV9UJQHFGlD9lXaC417leYpZ
-	zKlTgf0w==;
+	bh=Z6tLJRWKrMfTjjT063aPSyCtl4+qcccqWj+YCGa07eM=; b=Pct7/h1KYi3ju3CwYo3+Z+dDze
+	9cq1uFejT/OUIf1XsinXQjKxt8XXqvhvKUueKnS2bZDFoTokVZ9umooPIG2CSNK8ecECXSWiFlyoW
+	fDJ1eMIfnjUe1Ikr+Q8ky/DOXrULl1YiIfwgFcOMfX7OcKkH5TNVnV0VplI4U1ij1NvSS/rD8f4rb
+	oqBl3FLXSn4bqOEArq17zFaow0pbLMo8DZ8n2EXkAMwEVBzE1qIILR4EPQ4yVoIjXHZdaymiAJ1rm
+	pbpnrUil6ySPwruLCqF1fgBvkPYjGL/uQIkofMhKDNbBPyvCPUl37zi7SCP/sgzhqLXRUDl3Q7yuH
+	rkaKmvUw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hdecp-0007OA-I8; Wed, 19 Jun 2019 17:43:59 +0000
-Received: from mail-pf1-x443.google.com ([2607:f8b0:4864:20::443])
+	id 1hdedY-00088w-0q; Wed, 19 Jun 2019 17:44:44 +0000
+Received: from mail-pg1-x541.google.com ([2607:f8b0:4864:20::541])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hdePn-0000Dz-Q7
+ id 1hdePo-0000Ex-Ce
  for linux-arm-kernel@lists.infradead.org; Wed, 19 Jun 2019 17:30:40 +0000
-Received: by mail-pf1-x443.google.com with SMTP id j2so3650pfe.6
+Received: by mail-pg1-x541.google.com with SMTP id f25so35632pgv.10
  for <linux-arm-kernel@lists.infradead.org>;
  Wed, 19 Jun 2019 10:30:31 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=ZB/QEA/K3clWkDbM4qhRU5KEkoHlA3Iglne8yOGj5AU=;
- b=QcODEJ84zMKBUPy7MU9JLoqZbWUGOZnN/aJ6C6bKq0TSnJXXbjdAfcRiaj+CgjMcK5
- RmUsBa+qNayYqQzhL3wqqOKGwIF5tL97njrwOxs+et37l5v0sLnII2QysImpntV9bpyv
- s9RIXOQwADaF7ssw7IeRsOqZ06W97ZEhxJWUGPKilMuWbFRC4Pw+VfJvxpi+7VKxD9wi
- 5kcUiwajuOycemYtBq2aMXZxRKuImj5NxKFNsPqh5Y7y434m3Yaxi4fsjllluTXrLbax
- WTg/iybifnKP5gVaXLOtEoZEZ+T4+KqI1T4a7CLqyqs168BYJNOXNpmv4i2rKSAOicRx
- GJFg==
+ bh=eVDBdMkApj9sKJLqD9SjgtJkupY/dvzVE0zp0XjJG6s=;
+ b=Gs7LQ1SNavZhD84PpA2ZIRxbNydD8V86LavwZdjIWkbaJbr1YopRI+Vy8M/PgGDAIY
+ IZRLvWKtZhXPGmLh29cQ9+3w8X4zmYtCRjvlmacT994vFS2SkGvkyDKJ0Q3adjT/6LtO
+ qdBdtSZ0C8pK5Z5s1/8OQ9Z4qEuy9DtNFofgoeHXdybHLRdLvfqcxK3c/YX3SDc8O5Lo
+ PiIQXKJazE3NGBXVR/upVb7ND8YUgSX3Xq1v7zV9grSuoyr1yXD42vyVihyiZQcZ0r5I
+ bHDVWM2VsQSPtkimT5cOpbEFEkNhjNZyAeHk9JjbX4V8XCZC6JDogUNiMXGMfsC27VYQ
+ UzeA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=ZB/QEA/K3clWkDbM4qhRU5KEkoHlA3Iglne8yOGj5AU=;
- b=s7nz+jmFXmQmy25sRnb/Ip6J37ewpT5aTFZahL8E/RmnXAyG5B7hBVlDs2r5Cl5Gr4
- uVTFUH8gdkUxXcwyEHfjrbISAPaWwlBmyK8JCpAaLQNQdSMwwlzbOhwiBKwcm1Eex+VJ
- G9IvqgjDfHQPJGDlZjAfE8kRVAkQ8QzahNpslRsiL50TEDWOZM8QUqvjZ2shLZoLHU6U
- TEQjuEJHQj0xrTz5t+qn6RBelTC3OQ2+Fon4giuP1DOup9opk7mbs7DuKZ/KTh5VJh73
- nir8KbCMFeBD1VoIgHq3IWFFpZuL6P7dAk7y0W2pyNwVU65NHMxS3jTsIN62y43iypFS
- NKUg==
-X-Gm-Message-State: APjAAAU9dVrmz4Fm0tRTc68t4Qc5fACMcV8jYCv0J/jgNsDUpE1e3fMQ
- y6rOaZJzXHczq7cIgcU77oZb6Q==
-X-Google-Smtp-Source: APXvYqxyQ5hbhuTMzw/xgUs1RsAXMnyGGtqRAYCz9fMRvk6IpUj82HnnNjXztaud2FeBHZSSYCYAkw==
-X-Received: by 2002:a62:1b0c:: with SMTP id
- b12mr123160088pfb.230.1560965430143; 
- Wed, 19 Jun 2019 10:30:30 -0700 (PDT)
+ bh=eVDBdMkApj9sKJLqD9SjgtJkupY/dvzVE0zp0XjJG6s=;
+ b=c//XMR0QW2F14ZuZ1gGlcpl4l0jEKIjAE+/DG1T7xlCxEAUzt9F5NDA1sytan/wVMe
+ ajXZjcTxmXbsxemSHmFrgig1UtPNFmlzGTEZCAsg2DlJXGQJe/FqziKq2tiyEgzv6hkM
+ NJp7zHQMGMoqtd12ly9zRY90fqY7+eR5pl5dlorvqxfmW6dklObgcewM0bzgqDRYzqSc
+ Enp007R196a+rpPfDervYGzJHmvaPvnHOEl378VAZw2AGb/w8epJzpmXcndptA+lkaIA
+ jygsyezDVUIlOCqI7ip8aLhuTM4Dake80iFTiQub2GVLmEGiK3jRBhB4XGIt/c9xOwf4
+ wGOg==
+X-Gm-Message-State: APjAAAXafLYeypG2ziMoCIQE3WSDZKbRVleDLRKoSaHxj31aWmEdQ6Ly
+ X9Yl+/vU05RTJ7/9icb9FO+v3w==
+X-Google-Smtp-Source: APXvYqwU9yO6eME2CW4xirO4im0SAo3i5ckxnsCY6VgEQ8ncGNsHlfScTCsiClrkMwE4zm+zcAt4kg==
+X-Received: by 2002:a63:4813:: with SMTP id v19mr8564005pga.124.1560965431017; 
+ Wed, 19 Jun 2019 10:30:31 -0700 (PDT)
 Received: from xps15.cg.shawcable.net (S0106002369de4dac.cg.shawcable.net.
  [68.147.8.254])
- by smtp.gmail.com with ESMTPSA id g2sm31348406pfb.95.2019.06.19.10.30.29
+ by smtp.gmail.com with ESMTPSA id g2sm31348406pfb.95.2019.06.19.10.30.30
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Wed, 19 Jun 2019 10:30:29 -0700 (PDT)
+ Wed, 19 Jun 2019 10:30:30 -0700 (PDT)
 From: Mathieu Poirier <mathieu.poirier@linaro.org>
 To: gregkh@linuxfoundation.org
-Subject: [PATCH 42/45] coresight: etm3x: Smatch: Fix potential NULL pointer
+Subject: [PATCH 43/45] coresight: tmc: Smatch: Fix potential NULL pointer
  dereference
-Date: Wed, 19 Jun 2019 11:29:46 -0600
-Message-Id: <20190619172949.4522-43-mathieu.poirier@linaro.org>
+Date: Wed, 19 Jun 2019 11:29:47 -0600
+Message-Id: <20190619172949.4522-44-mathieu.poirier@linaro.org>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20190619172949.4522-1-mathieu.poirier@linaro.org>
 References: <20190619172949.4522-1-mathieu.poirier@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190619_103031_904073_57132968 
-X-CRM114-Status: GOOD (  12.83  )
+X-CRM114-CacheID: sfid-20190619_103032_556021_303F1AB6 
+X-CRM114-Status: GOOD (  13.32  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:443 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:541 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -107,54 +106,56 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Suzuki K Poulose <suzuki.poulose@arm.com>
 
-Based on the following report from  Smatch tool, make sure we have a
-valid drvdata before we dereference it to find the real dev.
+Based on the following report from Smatch, fix the potential
+NULL pointer dereference check.
 
-The patch 21d26b905c05: "coresight: etm: Clean up device specific
+The patch 743256e214e8: "coresight: tmc: Clean up device specific
 data" from May 22, 2019, leads to the following Smatch complaint:
 
-    ./drivers/hwtracing/coresight/coresight-etm3x.c:460 etm_get_trace_id()
-    warn: variable dereferenced before check 'drvdata' (see line 458)
+    drivers/hwtracing/coresight/coresight-tmc-etr.c:625 tmc_etr_free_flat_buf()
+    warn: variable dereferenced before check 'flat_buf' (see line 623)
 
-./drivers/hwtracing/coresight/coresight-etm3x.c
-   457		int trace_id = -1;
-   458		struct device *etm_dev = drvdata->csdev->dev.parent;
-                                         ^^^^^^^^^
-New dereference
+drivers/hwtracing/coresight/coresight-tmc-etr.c
+   622		struct etr_flat_buf *flat_buf = etr_buf->private;
+   623		struct device *real_dev = flat_buf->dev->parent;
+                                          ^^^^^^^^^^
+The patch introduces a new NULL check
 
-   459
-   460		if (!drvdata)
+   624
+   625		if (flat_buf && flat_buf->daddr)
                     ^^^^^^^^
-Checked too late.  Delete the check?
+but the existing code assumed it can be NULL.
 
-   461			goto out;
-   462
+   626			dma_free_coherent(real_dev, flat_buf->size,
+   627					  flat_buf->vaddr, flat_buf->daddr);
 
-Cc: Mathieu Poirier <mathieu.poirier@linaro.org>
 Cc: Dan Carpenter <dan.carpenter@oracle.com>
+Cc: Mathieu Poirier <mathieu.poirier@linaro.org>
 Signed-off-by: Suzuki K Poulose <suzuki.poulose@arm.com>
 Signed-off-by: Mathieu Poirier <mathieu.poirier@linaro.org>
 ---
- drivers/hwtracing/coresight/coresight-etm3x.c | 3 ++-
- 1 file changed, 2 insertions(+), 1 deletion(-)
+ drivers/hwtracing/coresight/coresight-tmc-etr.c | 6 ++++--
+ 1 file changed, 4 insertions(+), 2 deletions(-)
 
-diff --git a/drivers/hwtracing/coresight/coresight-etm3x.c b/drivers/hwtracing/coresight/coresight-etm3x.c
-index bed729140718..225c2982e4fe 100644
---- a/drivers/hwtracing/coresight/coresight-etm3x.c
-+++ b/drivers/hwtracing/coresight/coresight-etm3x.c
-@@ -455,11 +455,12 @@ int etm_get_trace_id(struct etm_drvdata *drvdata)
+diff --git a/drivers/hwtracing/coresight/coresight-tmc-etr.c b/drivers/hwtracing/coresight/coresight-tmc-etr.c
+index 5d2bf6d18961..17006705287a 100644
+--- a/drivers/hwtracing/coresight/coresight-tmc-etr.c
++++ b/drivers/hwtracing/coresight/coresight-tmc-etr.c
+@@ -620,11 +620,13 @@ static int tmc_etr_alloc_flat_buf(struct tmc_drvdata *drvdata,
+ static void tmc_etr_free_flat_buf(struct etr_buf *etr_buf)
  {
- 	unsigned long flags;
- 	int trace_id = -1;
--	struct device *etm_dev = drvdata->csdev->dev.parent;
-+	struct device *etm_dev;
+ 	struct etr_flat_buf *flat_buf = etr_buf->private;
+-	struct device *real_dev = flat_buf->dev->parent;
  
- 	if (!drvdata)
- 		goto out;
- 
-+	etm_dev = drvdata->csdev->dev.parent;
- 	if (!local_read(&drvdata->mode))
- 		return drvdata->traceid;
+-	if (flat_buf && flat_buf->daddr)
++	if (flat_buf && flat_buf->daddr) {
++		struct device *real_dev = flat_buf->dev->parent;
++
+ 		dma_free_coherent(real_dev, flat_buf->size,
+ 				  flat_buf->vaddr, flat_buf->daddr);
++	}
+ 	kfree(flat_buf);
+ }
  
 -- 
 2.17.1
