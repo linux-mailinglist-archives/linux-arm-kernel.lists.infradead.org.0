@@ -2,79 +2,70 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EB9194C0EB
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Jun 2019 20:38:09 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C3EBD4C0F1
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Jun 2019 20:39:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=pIQ90h3QvaBzru12ft6oS4Y7k9y3xczlVnFbb0TjutY=; b=AZy7QkH0W9kh3o
-	W+Oasigy75Q9+4ndoB1d0G1nK+8BGjyYYWx0KuIbSv1w1aLHAdO3cN1OGYw4ISSXjyqrrjlxp+dMH
-	vMD5Tjct8kNh4gqtPkVAlNZFwj70JU2XK/D8CHjWGBT3//aHB9MPC39/2se4LYVE/1JqXRCnKmctV
-	bd3TFsKLGjsdGiNRcvso7gZBfe45Fk1SjmLaca+1gU3d+sPEpq4mF4hdj9UHzMLYZFx2gZDRI1r5X
-	u1oIomXEcy+ExkiYyw8TJ3WOq/Yh5JwpVZ/9ytM9OI/vfRuyFZAl/Dfagxqd81tsi/P7/a4gSiLqb
-	KXBu2j/tVvRoT1DRePug==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=asvrEJZKot5x5AAHJ0LJkJzErY4IeVMN22EWsTmqMx4=; b=GBTDDgGoAbp0qW
+	maI8Z22FLbaLXN8R5j9NVw33WyYuyV8h7YLWzW7JYgzvqVLimOnf+ekKd8GhFqYREv0ZpURASZsmo
+	UtiIDiLbV3EV3FwC/aglrvDB6w0wnq4ytv0pySKgOaAHd0gxlKvxQLwSmRN+2F6ETATRCrRGQ/FeU
+	vLP5yaW9MOIX01AKy+/Y7uDS8DfyhH9P2YlKUcYXq9Wnrt7EtoEEg44XV6zChjQal11e9NcyNySVd
+	c1yBL+KCQ6Ux/ulYt3wJHPybKdsMJtE2VEGNI9M5cyE3BXiIf9IcNRXxfK5uoQmuOOq1YE2JJtSsj
+	w2APl7BbpXk8kQFTCs6w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hdfTD-00062Q-9f; Wed, 19 Jun 2019 18:38:07 +0000
-Received: from mail-pl1-x641.google.com ([2607:f8b0:4864:20::641])
+	id 1hdfUR-0006Kg-N0; Wed, 19 Jun 2019 18:39:23 +0000
+Received: from mo6-p00-ob.smtp.rzone.de ([2a01:238:20a:202:5300::9])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hdfSt-00060q-MI
- for linux-arm-kernel@lists.infradead.org; Wed, 19 Jun 2019 18:37:48 +0000
-Received: by mail-pl1-x641.google.com with SMTP id e5so155911pls.13
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 19 Jun 2019 11:37:46 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=2UHrTE7B5XpI1WvMqZiW3y+ZVgQqpXieqgBOuUL3YDY=;
- b=nXaidQykLu0h3v+pNAwd13wc4DhE5worNOflID9Mf2valzfpNLEoz/00pn7rrU7Dmn
- FxeUrAO5yA7lCOSKq1jd1jzQ4O1aY0TxEMX08ip6aEoG4HxpImTpVC6VSk+69Kpzm6Ys
- gmqahyhRmADeRLd6d+ldLEDrNFb2uHKhQjwM8=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=2UHrTE7B5XpI1WvMqZiW3y+ZVgQqpXieqgBOuUL3YDY=;
- b=NoFLcKQJkKVAKwfJ8cYelSWtGBWkhDDbNOuZm0QgU/45zwz3U41eNGQhpFQjx+5crk
- v7ge05g/No3WUSH0w6Jev1QZMkHRDaNLZXvtboZlOA/MdF6FVSGehCtSABRDtqloRRRn
- 5TEyc9JHh8SILIaiwY4zcjLv5zwTicLSzsOVbja0b4AJ0YBByt1oGqzwIGU8FCg0nI3v
- gWEffKF/9TKD1D+zKe1p0upttE8X7NiqMxvFsGJzwxTRzSdGQ+yJmUPMEKDTDoiHw2xr
- r3AL83frHKCYZyFZpEZHEKuhct4A8C1zwFLDK5VaEtxutx4nlzUYOfWXd+CIuJTiECIl
- FKjA==
-X-Gm-Message-State: APjAAAUlLyOfs39Wu9/iPZNLJzQ9FV9Bif/NSlsgOjPOuvfC2+vTWG8i
- EnTx/3aaD0pYVyZjNAMmSNfHCg==
-X-Google-Smtp-Source: APXvYqw3w3u7xuqL2IUmlLYdr5iRpyNBWMi+c4rhFrkhqFLsCOFAK3UzXw/uPna24Mybo1ZWf+lnpA==
-X-Received: by 2002:a17:902:7e0e:: with SMTP id
- b14mr96610234plm.257.1560969466479; 
- Wed, 19 Jun 2019 11:37:46 -0700 (PDT)
-Received: from tictac2.mtv.corp.google.com
- ([2620:15c:202:1:24fa:e766:52c9:e3b2])
- by smtp.gmail.com with ESMTPSA id j16sm2681463pjz.31.2019.06.19.11.37.45
- (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Wed, 19 Jun 2019 11:37:46 -0700 (PDT)
-From: Douglas Anderson <dianders@chromium.org>
-To: heiko@sntech.de
-Subject: [PATCH] ARM: dts: rockchip: Configure BT_DEV_WAKE in on rk3288-veyron
-Date: Wed, 19 Jun 2019 11:34:25 -0700
-Message-Id: <20190619183425.149470-1-dianders@chromium.org>
-X-Mailer: git-send-email 2.22.0.410.gd8fdbe21b5-goog
+ id 1hdfUB-0006KG-LM
+ for linux-arm-kernel@lists.infradead.org; Wed, 19 Jun 2019 18:39:09 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; t=1560969545;
+ s=strato-dkim-0002; d=gerhold.net;
+ h=In-Reply-To:References:Message-ID:Subject:Cc:To:From:Date:
+ X-RZG-CLASS-ID:X-RZG-AUTH:From:Subject:Sender;
+ bh=yE9t/HpOhUCCw92yGlKlu+arbDgwr4eDSSJxIXUUaY0=;
+ b=ZkHVKPK7jcxsewNjULrLMPbxeABqnHziLoCrr2T3ojot+NCPEPnSlEnuqahgZ3uetD
+ wBpktQl8875oRGY9PNHSIibkeJfbMzw83AE0/F8H/zYk8rbB8mXJS5TAtOgvp8GCCTAu
+ WRHVVWEOlADAsG0XcQpntdACurPCcqr6D26vhW4hSdnmi0S2BAf1vL/GBOg5tRzyVPK2
+ kvGzzJoO1wIlAZHXccNw+1gpZwX/394UFXQ6rxhhWOfg3zahlJ2dp6aN+bUfQXSO4QX5
+ 3dgXPLW3nshxK89XDH5nW8T8W+ru71eBlPDMjcFGofA7PxAP7y/na/Lud6b2rhuH3iF+
+ mz1A==
+X-RZG-AUTH: ":P3gBZUipdd93FF5ZZvYFPugejmSTVR2nRPhVOQ/OcYgojyw4j34+u267EpF+OQRc4oDXF5yRxHE="
+X-RZG-CLASS-ID: mo00
+Received: from gerhold.net by smtp.strato.de (RZmta 44.24 AUTH)
+ with ESMTPSA id m0a13fv5JId57Jh
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (curve secp521r1 with
+ 521 ECDH bits, eq. 15360 bits RSA))
+ (Client did not present a certificate);
+ Wed, 19 Jun 2019 20:39:05 +0200 (CEST)
+Date: Wed, 19 Jun 2019 20:39:04 +0200
+From: Stephan Gerhold <stephan@gerhold.net>
+To: Suzuki K Poulose <suzuki.poulose@arm.com>
+Subject: Re: Coresight causes synchronous external abort on msm8916
+Message-ID: <20190619183904.GB937@gerhold.net>
+References: <20190618202623.GA53651@gerhold.net>
+ <a51f117f-c48d-d3f4-c3d1-9b584e3a055f@arm.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <a51f117f-c48d-d3f4-c3d1-9b584e3a055f@arm.com>
+User-Agent: Mutt/1.12.0 (2019-05-25)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190619_113747_725055_D21960D0 
-X-CRM114-Status: GOOD (  15.97  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190619_113908_303278_53F90A48 
+X-CRM114-Status: GOOD (  22.26  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:641 listed in]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [2a01:238:20a:202:5300:0:0:9 listed in]
  [list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -82,7 +73,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,104 +84,77 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Douglas Anderson <dianders@chromium.org>, linux-kernel@vger.kernel.org,
- linux-rockchip@lists.infradead.org, Rob Herring <robh+dt@kernel.org>,
- mka@chromium.org, linux-arm-kernel@lists.infradead.org
+Cc: david.brown@linaro.org, agross@kernel.org,
+ linux-arm-kernel@lists.infradead.org, mathieu.poirier@linaro.org,
+ linux-arm-msm@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This is the other half of the hacky solution from commit f497ab6b4bb8
-("ARM: dts: rockchip: Configure BT_HOST_WAKE as wake-up signal on
-veyron").  Specifically the LPM driver that the Broadcom Bluetooth
-expects to have (but is missing in mainline) has two halves of the
-equation: BT_HOST_WAKE and BT_DEV_WAKE.  The BT_HOST_WAKE (which was
-handled in the previous commit) is the one that lets the Bluetooth
-wake the system up.  The BT_DEV_WAKE (this patch) tells the Bluetooth
-that it's OK to go into a low power mode.  That means we were burning
-a bit of extra power in S3 without this patch.  Measurements are a bit
-noisy, but it appears to be a few mA worth of difference.
+Hi,
 
-NOTE: Though these pins don't do much on systems with Marvell
-Bluetooth, downstream kernels set it on all veyron boards so we'll do
-the same.
+On Wed, Jun 19, 2019 at 09:49:03AM +0100, Suzuki K Poulose wrote:
+> Hi Stephan,
+> 
+> On 18/06/2019 21:26, Stephan Gerhold wrote:
+> > Hi,
+> > 
+> > I'm trying to run mainline Linux on a smartphone with MSM8916 SoC.
+> > It works surprisingly well, but the coresight devices seem to cause the
+> > following crash shortly after userspace starts:
+> > 
+> >      Internal error: synchronous external abort: 96000010 [#1] PREEMPT SMP
+> 
+> ...
+> 
+> 
+> > 
+> > In this case I'm using a simple device tree similar to apq8016-sbc,
+> > but it also happens using something as simple as msm8916-mtp.dts
+> > on this particular device.
+> >    (Attached: dmesg log with msm8916-mtp.dts and arm64 defconfig)
+> > 
+> > I can avoid the crash and boot without any further problems by disabling
+> > every coresight device defined in msm8916.dtsi, e.g.:
+> > 
+> > 	tpiu@820000 { status = "disabled"; };
+> 
+> ...
+> 
+> > 
+> > I don't have any use for coresight at the moment,
+> > but it seems somewhat odd to put this in the device specific dts.
+> > 
+> > Any idea what could be causing this crash?
+> 
+> This is mostly due to the missing power domain support. The CoreSight
+> components are usually in a debug power domain. So unless that is turned on,
+> (either by specifying proper power domain ids for power management protocol
+> supported by the firmware OR via other hacks - e.g, connecting a DS-5 to
+> keep the debug power domain turned on , this works on Juno -).
 
-Signed-off-by: Douglas Anderson <dianders@chromium.org>
----
+Interesting, thanks a lot!
 
- .../boot/dts/rk3288-veyron-chromebook.dtsi    |  2 ++
- arch/arm/boot/dts/rk3288-veyron.dtsi          | 20 +++++++++++++++++++
- 2 files changed, 22 insertions(+)
+In this case I'm wondering how it works on the Dragonboard 410c.
+Does it enable these power domains in the firmware?
+  (Assuming it boots without this error...)
 
-diff --git a/arch/arm/boot/dts/rk3288-veyron-chromebook.dtsi b/arch/arm/boot/dts/rk3288-veyron-chromebook.dtsi
-index 5727017f34b2..1cadb522fd0d 100644
---- a/arch/arm/boot/dts/rk3288-veyron-chromebook.dtsi
-+++ b/arch/arm/boot/dts/rk3288-veyron-chromebook.dtsi
-@@ -237,6 +237,7 @@
- 
- 		/* Wake only */
- 		&suspend_l_wake
-+		&bt_dev_wake_awake
- 	>;
- 	pinctrl-1 = <
- 		/* Common for sleep and wake, but no owners */
-@@ -246,6 +247,7 @@
- 
- 		/* Sleep only */
- 		&suspend_l_sleep
-+		&bt_dev_wake_sleep
- 	>;
- 
- 	backlight {
-diff --git a/arch/arm/boot/dts/rk3288-veyron.dtsi b/arch/arm/boot/dts/rk3288-veyron.dtsi
-index e2635ad574e7..53d2f2452868 100644
---- a/arch/arm/boot/dts/rk3288-veyron.dtsi
-+++ b/arch/arm/boot/dts/rk3288-veyron.dtsi
-@@ -485,12 +485,18 @@
- 		&ddr0_retention
- 		&ddrio_pwroff
- 		&global_pwroff
-+
-+		/* Wake only */
-+		&bt_dev_wake_awake
- 	>;
- 	pinctrl-1 = <
- 		/* Common for sleep and wake, but no owners */
- 		&ddr0_retention
- 		&ddrio_pwroff
- 		&global_pwroff
-+
-+		/* Sleep only */
-+		&bt_dev_wake_sleep
- 	>;
- 
- 	pcfg_pull_none_drv_8ma: pcfg-pull-none-drv-8ma {
-@@ -596,6 +602,20 @@
- 		sdio0_clk: sdio0-clk {
- 			rockchip,pins = <4 RK_PD1 1 &pcfg_pull_none_drv_8ma>;
- 		};
-+
-+		/*
-+		 * These pins are only present on very new veyron boards; on
-+		 * older boards bt_dev_wake is simply always high.  Note that
-+		 * gpio4_D2 is a NC on old veyron boards, so it doesn't hurt
-+		 * to map this pin everywhere
-+		 */
-+		bt_dev_wake_sleep: bt-dev-wake-sleep {
-+			rockchip,pins = <4 RK_PD2 RK_FUNC_GPIO &pcfg_output_low>;
-+		};
-+
-+		bt_dev_wake_awake: bt-dev-wake-awake {
-+			rockchip,pins = <4 RK_PD2 RK_FUNC_GPIO &pcfg_output_high>;
-+		};
- 	};
- 
- 	tpm {
--- 
-2.22.0.410.gd8fdbe21b5-goog
+If coresight is not working properly on all/most msm8916 devices,
+shouldn't coresight be disabled by default in msm8916.dtsi?
+At least until those power domains can be set up by the kernel.
 
+If this is a device-specific issue, what would be an acceptable solution
+for mainline?
+Can I turn on these power domains from the kernel?
+Or is it fine to disable coresight for this device with the snippet above?
+
+I'm not actually trying to use coresight, I just want the device to boot :)
+And since I am considering submitting my device tree for inclusion in
+mainline, I want to ask in advance how I should tackle this problem.
+
+Thanks!
+Stephan
 
 _______________________________________________
 linux-arm-kernel mailing list
