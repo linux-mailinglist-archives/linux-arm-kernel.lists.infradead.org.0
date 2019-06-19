@@ -2,34 +2,34 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7F1D74BDC7
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Jun 2019 18:12:30 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 26BCC4BDCC
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Jun 2019 18:12:50 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=rFKq+fTKcWin3X1OirgtW8hgGvKvEdCF/CoT7iwq8zs=; b=kQ8wGdqsZcQOU6
-	GIfrrHV4dro7W1rruNPt5grATfDoNj1kl2Q4uKhErCvac5x/pJtCvlBLzQxPtampmolwi2H9mYxcr
-	ji5A0Rxmql4+0A2XGAamBoUPnHKGZo5/v0M2wmq11PdykG5j3gQ85hli6EFGBNI6vOp27xWkgNuqb
-	LGDtG3kTQ2E0SroQcX42ntqE9z0+gKP4jS/OtrcksLF3Am0m067mgrFAaGhSN9hmr3RFCY598J8/M
-	k3OgyodCRGaLymyrDa0D7H0eLmwcjqaMkSpZ9Gt0y46AzOAYy43aeyCBas2jYsUtgiaB1K8mpfjUP
-	6CFwh/Kk+x8e/BahatkQ==;
+	List-Owner; bh=rFKq+fTKcWin3X1OirgtW8hgGvKvEdCF/CoT7iwq8zs=; b=YX9c5ZbH9Hs2ib
+	OV9GAF6O0HrqpKHJjFNQr2Oel+sP0glqyuYkZqgtgh5hNHL5qlDUGnVAjrAOTYEYEuMEdQDWfVn2r
+	2CACycQmY6mHz0HvAudfcrLDYRnzoTCK+OwhBq8tguAMGB1apKh8fbqPgrnabsw+1jgsPJOVZJH3y
+	dnI0rPrNQCxkW/DTUwkpB/z9zbegKbGx9OMNuwXDC8IWpRPu5lmP8ji1/ZZ29TngUUtj80AouZBBH
+	V+3ZKL9uw+7lHuV5B25cBmxEXeEA9aPablz+dCgu3SiXRHt93VgMOQYl4GYBqNekGGVLZi0uVVgXV
+	wwIKk5B9aqxYKC5rhFdw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hddCH-0005r7-0V; Wed, 19 Jun 2019 16:12:29 +0000
+	id 1hddCX-00065e-Nx; Wed, 19 Jun 2019 16:12:45 +0000
 Received: from lhrrgout.huawei.com ([185.176.76.210] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hddC6-0005pK-D1
- for linux-arm-kernel@lists.infradead.org; Wed, 19 Jun 2019 16:12:20 +0000
-Received: from lhreml707-cah.china.huawei.com (unknown [172.18.7.106])
- by Forcepoint Email with ESMTP id 1F98AD9B5587FB2C3542;
- Wed, 19 Jun 2019 17:12:05 +0100 (IST)
-Received: from [127.0.0.1] (10.202.227.157) by lhreml707-cah.china.huawei.com
- (10.201.108.48) with Microsoft SMTP Server id 14.3.408.0;
- Wed, 19 Jun 2019 17:12:00 +0100
-Subject: Re: [PATCH v2 07/11] arm64: dts: hi6220: Update coresight DT bindings
+ id 1hddCM-00063O-Ng
+ for linux-arm-kernel@lists.infradead.org; Wed, 19 Jun 2019 16:12:36 +0000
+Received: from LHREML711-CAH.china.huawei.com (unknown [172.18.7.108])
+ by Forcepoint Email with ESMTP id 6F02E688331B27644478;
+ Wed, 19 Jun 2019 17:12:33 +0100 (IST)
+Received: from [127.0.0.1] (10.202.227.157) by LHREML711-CAH.china.huawei.com
+ (10.201.108.34) with Microsoft SMTP Server id 14.3.408.0;
+ Wed, 19 Jun 2019 17:12:31 +0100
+Subject: Re: [PATCH v2 01/11] ARM: dts: hip04: Update coresight DT bindings
 To: Leo Yan <leo.yan@linaro.org>, Rob Herring <robh+dt@kernel.org>, "Mark
  Rutland" <mark.rutland@arm.com>, Suzuki K Poulose <suzuki.poulose@arm.com>,
  Mathieu Poirier <mathieu.poirier@linaro.org>, Mike Leach
@@ -44,20 +44,20 @@ To: Leo Yan <leo.yan@linaro.org>, Rob Herring <robh+dt@kernel.org>, "Mark
  <linux-arm-kernel@lists.infradead.org>, <devicetree@vger.kernel.org>,
  <linux-kernel@vger.kernel.org>, <linux-arm-msm@vger.kernel.org>
 References: <20190508021902.10358-1-leo.yan@linaro.org>
- <20190508021902.10358-8-leo.yan@linaro.org>
+ <20190508021902.10358-2-leo.yan@linaro.org>
 From: Wei Xu <xuwei5@hisilicon.com>
-Message-ID: <bab80295-7c83-3a3f-cb76-aa64fb93a5e7@hisilicon.com>
-Date: Wed, 19 Jun 2019 17:11:59 +0100
+Message-ID: <ee33f0b2-e016-7c2f-feca-6b9e2bfe1e43@hisilicon.com>
+Date: Wed, 19 Jun 2019 17:12:31 +0100
 User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:60.0) Gecko/20100101
  Thunderbird/60.4.0
 MIME-Version: 1.0
-In-Reply-To: <20190508021902.10358-8-leo.yan@linaro.org>
+In-Reply-To: <20190508021902.10358-2-leo.yan@linaro.org>
 Content-Language: en-US
 X-Originating-IP: [10.202.227.157]
 X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190619_091219_207493_B968DEED 
-X-CRM114-Status: GOOD (  10.07  )
+X-CRM114-CacheID: sfid-20190619_091234_954891_4FD852AD 
+X-CRM114-Status: GOOD (  10.37  )
 X-Spam-Score: -2.1 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.1 points)
