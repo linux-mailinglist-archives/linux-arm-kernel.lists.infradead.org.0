@@ -2,82 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CDF594BA2B
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Jun 2019 15:39:21 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id F220F4BA35
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Jun 2019 15:39:47 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=NYPKypt0WRwLj16UTkBqv8duGdCI+Yycg+yyUbnDfIM=; b=QYw+6r+ogsIFdJ
-	hwrlmlam5CCOK/3OPwwncsshIr9SzxGlN0B20kaqFUKpmr204NYlXBz/NBb8wHcIbZ3ZqMJ58N8Eb
-	JZjtf+dTy/Bt75fey/IrUFiVW9M5h+jRcZFkpTHsLN9EfxmaYS3dCkk2cJdA5/Ay2fSdljXXfCPb7
-	p/cP4zT+vdJfKAlMuB4Xg74C9Zpmvrn8t+CFN6FHZyGLocLSmwZ+gkWvFOvy0a4IspystHPmpInDN
-	Cv8wfbzyT/FM57fBqjkYsjt/6nuWMMd88Z332jP5yhPMi7D5+bNR12vU3jQzDgbrpIcaumOrq86Ax
-	dNc2RfPGmbnQQ4HC/Adw==;
+	List-Owner; bh=4VpIhk+y50pYyMHPpRu9zyx/dpInQWRat3bNdvaHU14=; b=mtp7/PKYd1I+F0
+	3zjPQgGqpKZcHRa8N7IUJj2ECb9yTNhqqMgrgPb6A0QztvRxLzEc20aZQ/NnLZgtDGgO1iuRciRzk
+	llyql+YFzeMfAi+BHJetwTycCkK744e9Aykhmq4E12WYUmOKvmoqt5wYLAw3ccGa+iz+q7uK3I+Ui
+	agZ1wOgwj8DArc+cLRc9HS7HwT4JVy0nfJ6jI/TomAowq7C5t/P2krACCbzJLKgcTn0MI4ebh/9WV
+	QzRfJWWAlMzmoyG86REOBN/lywr6Vj+UaBPtMcoEUObxa7CgLFM3kIBVYlaSs/cHC0pPUJOoxPNH/
+	9lcmLClxmG7Q/wspE8JA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hdao3-0007T0-ES; Wed, 19 Jun 2019 13:39:19 +0000
-Received: from mail-lj1-x234.google.com ([2a00:1450:4864:20::234])
+	id 1hdaoQ-0007h1-Ew; Wed, 19 Jun 2019 13:39:42 +0000
+Received: from mail-lf1-x143.google.com ([2a00:1450:4864:20::143])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hdann-0007Ro-OU
+ id 1hdano-0007Rp-JN
  for linux-arm-kernel@lists.infradead.org; Wed, 19 Jun 2019 13:39:05 +0000
-Received: by mail-lj1-x234.google.com with SMTP id i21so3317821ljj.3
+Received: by mail-lf1-x143.google.com with SMTP id r15so12143736lfm.11
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 19 Jun 2019 06:39:02 -0700 (PDT)
+ Wed, 19 Jun 2019 06:39:03 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=lixom-net.20150623.gappssmtp.com; s=20150623;
  h=date:from:to:cc:subject:message-id:references:mime-version
  :content-disposition:in-reply-to:user-agent;
- bh=TZTsu054fFhjvBbOLNzhEneSIKF1BiUqY++x6OWY7jY=;
- b=QELy8CA6pBNAZuC+pDDNj2K1yyRt/C0hFMobgxkOPsERU03mDrFGaXXJ8e8CCZFfv/
- Nxb5ZE2/MiQ1tXXCMq0DVN1EetW5b7PP5O6Bu3/zjL8CS6pqrcSOhla1+igmwiniWVu1
- YyafP04BtIsrg6MUVr6QW1othYst71Hqs3zpxw8PpZGhJvN+CYq5Xmn9YLqW6OU2ygpt
- DlCAqjcmuHe5bZ5hu+AXjs3M4QpHkmv4q0isYWT7cpsKAP87i7JExtnn7iAnBo/dPakl
- eGeSoPl5AjZHA4RHPPsthCdPAXi74Aw/uW4fbVRY7bJ+Wgg423s75HvF+Fo/Le8uOF8k
- iX7Q==
+ bh=QKggU93Ov3OGvJTHnvBvpp3+c/GovGceSumOJbG5Kag=;
+ b=g90t1pfGMsBwZkO7WMEchWQcZ+/SFokkE8pEWUuLCb4C3gYFVxXCamqCaOHb0oU86f
+ hKn1mrowaUHFrQhDAjQgFXxbg41JHSzq1WOEiWnerS2ucghntb6bKh1mc/92iTFACbbV
+ ir2tYsqSxKSCptkKdrbEiwPCf9vRVMh1WzcZoJzreE9lvPIWSArEMNbxvXH55EY0eHMJ
+ VCWVsBapJ5f1S4WGzeGFZvGIZYVs77NHAMs9895hD1WvrARdnQgxMzX8XwB7QkNTXyNw
+ TOcsiylUCckRO1mfm2IvdhpoopFTotV8sg8FNECsAi3P4PrzuPz1rGptQlH9L7wHUg96
+ QsHg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to:user-agent;
- bh=TZTsu054fFhjvBbOLNzhEneSIKF1BiUqY++x6OWY7jY=;
- b=BKjWa2++PTC/8iWTE6F8giQsnS41sMrME+AZLScjwSNe8qroa1QMq8IJl6AIHkXDYM
- JZXXQ184fFRKHe2ux8Bzqk8iAUuHDCopyD+VF4xToSYDtAjL9upL2nlp86/JmpMdQtGR
- skpOM9ZCC2yp3RpJvRpnU9jxrilZhKKww9qD0JHXGWV2BwXOLRbRcgo96T79u4B//58G
- QNenA3DCiwxNZDNpeLVPN3fSHw+QWmOvBISPUppoT6yzONcjcyxTBjYL5HnPZcuzdChO
- vvHKO7cRY0wkpOHEF4v9tC1Qp14VlRJLrVG1+zsQrF3GnW/PHGMQnzWT6b9lpgRoAvJo
- 9+vw==
-X-Gm-Message-State: APjAAAVBcdc9W2lYaXE590iVTUYlSoI6Pfc7rVwGJy4i618T7w3zB2rT
- oExUy+j7Fvrb+rdggFbXt67YYw==
-X-Google-Smtp-Source: APXvYqz0gJjEwx6KWU5GUHXIoLM5DU/Q5mc5o5x9ahjbu4X8dSqFa0BsMsMQBj7QoTX7nEtFP+qk1g==
-X-Received: by 2002:a2e:5c88:: with SMTP id
- q130mr38478713ljb.176.1560951539796; 
- Wed, 19 Jun 2019 06:38:59 -0700 (PDT)
+ bh=QKggU93Ov3OGvJTHnvBvpp3+c/GovGceSumOJbG5Kag=;
+ b=TEs2Ykpt80sGHJpHI9Vs7DHd0qhV6r0VpRFVARp6n94ADYb+MmiCqC0vdbNUTLrdql
+ msIPnWJd/9QffoJbszLJlj6aBY4qfJBqOawAAECSSjoe+tXZedEeIkF+HKnRcQs1e2fE
+ BIxCsSw+xpO6IRdH48+NWFtv2t9zKNHWARzO1o17WCjT58LJ2xyb53v06o5r6PLrA/6l
+ IuQYtI8u336VnoWaKIdBSJg+reYsz1uYfR5XNIgITCHPKBnjgijWCIWPoS1iZ31o5LBX
+ zroi46VhpPsfigT8dAZygQwuSEx+XKSTGFBIuAOiLmB+1tru5kvZPnhcdIPfz6TGyuu4
+ V82w==
+X-Gm-Message-State: APjAAAWu6yStGcKawQNkEhW2aLr3oYkc4rVLAepH5+7W8jFsxOjUqsEE
+ kqHZUZVPd5V6p3rD4mxTkKE2EA==
+X-Google-Smtp-Source: APXvYqzy1/85AoVZe5aXzHxGKPGMI3YKh1i1xTNcGjAlPkxkPNjoWmNiF/UkKqbk9mR2Jw4m3oq8iA==
+X-Received: by 2002:a19:9156:: with SMTP id y22mr16577964lfj.43.1560951542029; 
+ Wed, 19 Jun 2019 06:39:02 -0700 (PDT)
 Received: from localhost (h85-30-9-151.cust.a3fiber.se. [85.30.9.151])
- by smtp.gmail.com with ESMTPSA id g76sm3058439lje.43.2019.06.19.06.38.58
+ by smtp.gmail.com with ESMTPSA id c15sm3082664lja.79.2019.06.19.06.39.00
  (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Wed, 19 Jun 2019 06:38:58 -0700 (PDT)
-Date: Wed, 19 Jun 2019 06:15:59 -0700
+ Wed, 19 Jun 2019 06:39:00 -0700 (PDT)
+Date: Wed, 19 Jun 2019 06:16:59 -0700
 From: Olof Johansson <olof@lixom.net>
-To: Linus Walleij <linus.walleij@linaro.org>
-Subject: Re: [GIT PULL] Integrator DTS updates for v5.3
-Message-ID: <20190619131559.7x5mbfwlzp6psjql@localhost>
-References: <CACRpkdYLcCB6zA2dYj9A0bJU-gQF3QuhmFd0oGt++oa+gSE_Cw@mail.gmail.com>
+To: Baolin Wang <baolin.wang@linaro.org>
+Subject: Re: [PATCH v2 9/9] arm64: dts: sprd: Add Spreadtrum SD host
+ controller support
+Message-ID: <20190619131659.vjw5kgepe6pz5inz@localhost>
+References: <cover.1559635435.git.baolin.wang@linaro.org>
+ <3ca273e341f2f5f66b121d411428c60afd412586.1559635435.git.baolin.wang@linaro.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <CACRpkdYLcCB6zA2dYj9A0bJU-gQF3QuhmFd0oGt++oa+gSE_Cw@mail.gmail.com>
+In-Reply-To: <3ca273e341f2f5f66b121d411428c60afd412586.1559635435.git.baolin.wang@linaro.org>
 User-Agent: NeoMutt/20170113 (1.7.2)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190619_063903_941759_F5AE9AB9 
-X-CRM114-Status: GOOD (  12.75  )
+X-CRM114-CacheID: sfid-20190619_063904_633765_FA12D889 
+X-CRM114-Status: UNSURE (   8.79  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:234 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:143 listed in]
  [list.dnswl.org]
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -95,35 +97,22 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: arm-soc <arm@kernel.org>, Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, ulf.hansson@linaro.org,
+ arm@kernel.org, arnd@arndb.de, zhang.lyra@gmail.com, linux-mmc@vger.kernel.org,
+ adrian.hunter@intel.com, linux-kernel@vger.kernel.org, robh+dt@kernel.org,
+ orsonzhai@gmail.com, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, May 27, 2019 at 11:19:00AM +0200, Linus Walleij wrote:
-> Hi ARM SoC people,
+On Tue, Jun 04, 2019 at 04:14:29PM +0800, Baolin Wang wrote:
+> Add one Spreadtrum SD host controller to support eMMC card for Spreadtrum
+> SC9860 platform.
 > 
-> please pull in these DTS changes to set the flash partition information
-> right on the Integrator boards for kernel v5.3.
-> 
-> Yours,
-> Linus Walleij
-> 
-> The following changes since commit a188339ca5a396acc588e5851ed7e19f66b0ebd9:
-> 
->   Linux 5.2-rc1 (2019-05-19 15:47:09 -0700)
-> 
-> are available in the Git repository at:
-> 
->   git://git.kernel.org/pub/scm/linux/kernel/git/linusw/linux-integrator.git
-> tags/integrator-dts-v5.3-arm-soc
-> 
-> for you to fetch changes up to 62a5017bf825c9e4d3176eb975a01c329a9f364b:
-> 
->   ARM: dts: vexpress: specify AFS partition (2019-05-20 16:40:38 +0200)
+> Signed-off-by: Baolin Wang <baolin.wang@linaro.org>
 
-Merged, thanks!
+Applied, thanks!
 
 
 -Olof
