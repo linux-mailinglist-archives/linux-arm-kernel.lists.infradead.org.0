@@ -2,57 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8E0174B466
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Jun 2019 10:54:44 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 191104B4B7
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Jun 2019 11:12:33 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=KA9tnA001BjSC+Cvs0YkiPeH3yl086NvKxSWlU6NfJc=; b=XXddj3Ja2nhtQYyYNKym8bNn7
-	MmJgz/6UJeZGSXLjXaiwj71gH6nnl+XMENb20ziv8IjL2A0LDDP+ne9c5rpV9Hgn0encFeYQxw7V2
-	RhYpNgd9xuZ9tZ3CLTij2zGAThLRK8YUvok2Ty/QdVMYRpc56ESQVjLWBgEPAHF7dJy7S8FeleEpx
-	dO7NancIxUK1O39YaJ3X7/Trqj2Prn9X13Jd45GUNoxdUNAZTy2HFAg6z0i123hWtwz2f0bzJs+YD
-	sQbims0h+yXVGo5u7coe6lF5aZnJyp3B2fWJqV3wSyRVtws0oqTIoj29ImWq22z8i72Tr4+fa9yKS
-	9CL1Rkc6Q==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=fw/CbuIDuvwWQXbRpNfmnjxFHr6aympz8ZyR98TX1/Y=; b=hjzAeMg8/Gy5ol
+	VZFsr61EEph8TaRnPSgLYEFimnDyDxRKQa5aaaeP2Pk8J3OZNTCYXbqoSeAB0Z1Z87BBqTa1VLXNj
+	gJ4FOSJHRAisLgafrMDVMjzzYczHQoCINowgeBGxGfkFbJbeQMbEmcIA0oyN4d6OqgkudoOEW2DjC
+	hkaLliU2zzadxF7wvJoctc0eCqq+J+07hqftEM96sRHMGiOMNKaxQkUV5GOrh2lQhX/YNDZPdX1SJ
+	xd+rvYcXUeHrhEjIAOWUP7C8zGhXNKkHdQDoqSk/fTP6zob/hkpbGyVm77NcGYdZKLnZkfaAIShsS
+	kLf7ZrOQwmndd50Ca4pQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hdWMb-00067e-Ua; Wed, 19 Jun 2019 08:54:41 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hdWMQ-00066X-3Y; Wed, 19 Jun 2019 08:54:31 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 8981ECFC;
- Wed, 19 Jun 2019 01:54:27 -0700 (PDT)
-Received: from [10.37.12.160] (unknown [10.37.12.160])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 3A5CD3F246;
- Wed, 19 Jun 2019 01:54:22 -0700 (PDT)
-Subject: Re: [PATCH RFC 11/14] arm64: Move the ASID allocator code in a
- separate file
-To: Guo Ren <guoren@kernel.org>
-References: <20190321163623.20219-1-julien.grall@arm.com>
- <20190321163623.20219-12-julien.grall@arm.com>
- <0dfe120b-066a-2ac8-13bc-3f5a29e2caa3@arm.com>
- <CAJF2gTTXHHgDboaexdHA284y6kNZVSjLis5-Q2rDnXCxr4RSmA@mail.gmail.com>
-From: Julien Grall <julien.grall@arm.com>
-Message-ID: <c871a5ae-914f-a8bb-9474-1dcfec5d45bf@arm.com>
-Date: Wed, 19 Jun 2019 09:54:21 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.7.0
+	id 1hdWdq-0005Bc-H7; Wed, 19 Jun 2019 09:12:30 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hdWdc-00059s-Hg; Wed, 19 Jun 2019 09:12:18 +0000
+X-UUID: bdb7ec5cbab64320a822b8d066555a56-20190619
+X-UUID: bdb7ec5cbab64320a822b8d066555a56-20190619
+Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw01.mediatek.com
+ (envelope-from <weiyi.lu@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 212289159; Wed, 19 Jun 2019 01:12:06 -0800
+Received: from MTKMBS01N2.mediatek.inc (172.21.101.79) by
+ MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Wed, 19 Jun 2019 02:12:04 -0700
+Received: from mtkcas08.mediatek.inc (172.21.101.126) by
+ mtkmbs01n2.mediatek.inc (172.21.101.79) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Wed, 19 Jun 2019 17:11:55 +0800
+Received: from [172.21.77.4] (172.21.77.4) by mtkcas08.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
+ Transport; Wed, 19 Jun 2019 17:11:55 +0800
+Message-ID: <1560935516.2158.2.camel@mtksdaap41>
+Subject: Re: [PATCH v5 04/14] soc: mediatek: Refactor polling timeout and
+ documentation
+From: Weiyi Lu <weiyi.lu@mediatek.com>
+To: Nicolas Boichat <drinkcat@chromium.org>
+Date: Wed, 19 Jun 2019 17:11:56 +0800
+In-Reply-To: <CANMq1KCLQaFg3bOrHnXzbjU9KM5Ny2rRX9bP4xg17jOYirxxig@mail.gmail.com>
+References: <20190319080140.24055-1-weiyi.lu@mediatek.com>
+ <20190319080140.24055-5-weiyi.lu@mediatek.com>
+ <CANMq1KCLQaFg3bOrHnXzbjU9KM5Ny2rRX9bP4xg17jOYirxxig@mail.gmail.com>
+X-Mailer: Evolution 3.10.4-0ubuntu2 
 MIME-Version: 1.0
-In-Reply-To: <CAJF2gTTXHHgDboaexdHA284y6kNZVSjLis5-Q2rDnXCxr4RSmA@mail.gmail.com>
-Content-Language: en-US
+X-TM-SNTS-SMTP: FEF713524511270A67FE0C1B2152E937E6EDF13A65FACB2F23DD324F98A8FFCE2000:8
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190619_015430_197915_F6B421B4 
-X-CRM114-Status: GOOD (  13.31  )
+X-CRM114-CacheID: sfid-20190619_021216_595410_3DD13DE0 
+X-CRM114-Status: GOOD (  15.59  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [216.200.240.184 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -64,45 +76,76 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: julien.thierry@arm.com, aou@eecs.berkeley.edu, james.morse@arm.com,
- suzuki.poulose@arm.com, Marc Zyngier <marc.zyngier@arm.com>,
- catalin.marinas@arm.com, Anup Patel <anup.Patel@wdc.com>, will.deacon@arm.com,
- linux-kernel@vger.kernel.org, rppt@linux.ibm.com, hch@infradead.org,
- Atish.Patra@wdc.com, Palmer Dabbelt <palmer@sifive.com>, gary@garyguo.net,
- paul.walmsley@sifive.com, christoffer.dall@arm.com,
- linux-riscv@lists.infradead.org, kvmarm@lists.cs.columbia.edu,
- linux-arm-kernel@lists.infradead.org
+Cc: Rob Herring <robh@kernel.org>, srv_heupstream <srv_heupstream@mediatek.com>,
+ James Liao <jamesjj.liao@mediatek.com>, lkml <linux-kernel@vger.kernel.org>,
+ Fan Chen <fan.chen@mediatek.com>, "moderated
+ list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ linux-arm Mailing List <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-
-
-On 6/19/19 9:07 AM, Guo Ren wrote:
-> Hi Julien,
-
-Hi,
-
+On Tue, 2019-03-19 at 19:45 +0800, Nicolas Boichat wrote:
+> On Tue, Mar 19, 2019 at 4:02 PM Weiyi Lu <weiyi.lu@mediatek.com> wrote:
+> >
+> > Use USEC_PER_SEC to indicate the polling timeout directly.
+> > And add documentation of scp_domain_data.
+> >
+> > Signed-off-by: Weiyi Lu <weiyi.lu@mediatek.com>
+> > ---
+> >  drivers/soc/mediatek/mtk-scpsys.c | 14 +++++++++++++-
+> >  1 file changed, 13 insertions(+), 1 deletion(-)
+> >
+> > diff --git a/drivers/soc/mediatek/mtk-scpsys.c b/drivers/soc/mediatek/mtk-scpsys.c
+> > index 9f52f501178b..2855111b221a 100644
+> > --- a/drivers/soc/mediatek/mtk-scpsys.c
+> > +++ b/drivers/soc/mediatek/mtk-scpsys.c
+> > @@ -21,7 +21,7 @@
+> >  #include <dt-bindings/power/mt8173-power.h>
+> >
+> >  #define MTK_POLL_DELAY_US   10
+> > -#define MTK_POLL_TIMEOUT    (jiffies_to_usecs(HZ))
+> > +#define MTK_POLL_TIMEOUT    USEC_PER_SEC
+> >
+> >  #define MTK_SCPD_ACTIVE_WAKEUP         BIT(0)
+> >  #define MTK_SCPD_FWAIT_SRAM            BIT(1)
+> > @@ -108,6 +108,18 @@ static const char * const clk_names[] = {
+> >
+> >  #define MAX_CLKS       3
+> >
+> > +/**
+> > + * struct scp_domain_data - scp domain data for power on/off flow
+> > + * @name: The domain name.
+> > + * @sta_mask: The mask for power on/off status bit.
+> > + * @ctl_offs: The offset for main power control register.
+> > + * @sram_pdn_bits: The mask for sram power control bits.
+> > + * @sram_pdn_ack_bits: The mask for sram power control acked bits.
+> > + * @bus_prot_mask: The mask for single step bus protection.
+> > + * @clk_id: The basic clock needs to be enabled before enabling certain
+> > + *          power domains.
 > 
-> You forgot CCing C-SKY folks :P
-
-I wasn't aware you could be interested :).
-
+> I assume these are the clock*s* that *this* scp_domain requires?
 > 
-> Move arm asid allocator code in a generic one is a agood idea, I've
-> made a patchset for C-SKY and test is on processing, See:
-> https://lore.kernel.org/linux-csky/1560930553-26502-1-git-send-email-guoren@kernel.org/
+> So maybe just: "The basic clocks required by this power domain." ?
 > 
-> If you plan to seperate it into generic one, I could co-work with you.
+Thanks for revision. I'll update in next version.
+> > + * @caps: The flag for active wake-up action.
+> > + */
+> >  struct scp_domain_data {
+> >         const char *name;
+> >         u32 sta_mask;
+> > --
+> > 2.18.0
+> >
+> 
+> _______________________________________________
+> Linux-mediatek mailing list
+> Linux-mediatek@lists.infradead.org
+> http://lists.infradead.org/mailman/listinfo/linux-mediatek
 
-Was the ASID allocator work out of box on C-Sky? If so, I can easily 
-move the code in a generic place (maybe lib/asid.c).
 
-Cheers,
-
--- 
-Julien Grall
 
 _______________________________________________
 linux-arm-kernel mailing list
