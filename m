@@ -2,87 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3CCF24BA0F
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Jun 2019 15:34:10 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C9C904BA58
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Jun 2019 15:42:57 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Bf1zj4KmDbCS7hejntIdM+EFtr/vufVn4V5MFtN10QY=; b=eTXBBZmXIFn8So
-	oeBuk77Eo6mF5RSMa2oclnrAiM4c5QM1vjit7Nniw842niySdcGJToDA3kfD+ElPM5oxCWl7EPb4i
-	BKnqyClt9kybL9veE9znU8Dgpht7Xtd4Z5O4HpyVjwO3qrD1/EOhF5XzdOZug66HxCuNB0sLAX4FN
-	ruCbU13eIsDXQsDtNNOxhhP34X9BHY2zRWtatYJvgHeUNeXT09nP2vfrSQcmT28d3WrdzYHQJj3Gz
-	gyXTLIc9WJ2ENQQjk0M1xTlvh3QkHvMQBcNXR3a/Fh3HaPHtXZ8Am0TRtqam+5JhQ+s8Tj0ZjP6Y+
-	SIl6Akjz7QbmbZ9pvAkA==;
+	List-Owner; bh=A2zAswivVyHv0pGLZSzslZkKzqVW2s01HaiaOYUlOzQ=; b=sK7YTsiW4YJwgR
+	3CeRdRXSsTKkuchZHDD1x1wi7QwJ7K5ElrrgE6GF0IsZAl0YheA60JriTXQUD5ty9OG67fZ3A5EmS
+	tcbrlxy1PG1lsEtarLoWO+uW92xssSVMFl9AB7yTccCfiGrItxQyJ0Y23MFWpEIycCbCdJM6sAVj+
+	j63utMy1UaKlX1QWp/+HM5RP8ebWfE3Jts8OApmd6CDPZlDfG2yf7vdri6DPOfhOc6Axl+B43c/0e
+	TXoduhQbBfWMQL0mUSJruZ2PDK1SSuaNx5+jilB5Yh2zxIthtoEfty1/Gd8pfQ0xVIHXiHfE1BMG1
+	9zLIPpDFGn4owLEvMHcA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hdaiz-0005b1-Bn; Wed, 19 Jun 2019 13:34:05 +0000
-Received: from mail-ua1-x942.google.com ([2607:f8b0:4864:20::942])
+	id 1hdarX-0003Wx-CY; Wed, 19 Jun 2019 13:42:55 +0000
+Received: from mail-lj1-x244.google.com ([2a00:1450:4864:20::244])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hdaio-0005aH-91
- for linux-arm-kernel@lists.infradead.org; Wed, 19 Jun 2019 13:33:55 +0000
-Received: by mail-ua1-x942.google.com with SMTP id z13so9822499uaa.4
+ id 1hdaoB-0007mj-Jp
+ for linux-arm-kernel@lists.infradead.org; Wed, 19 Jun 2019 13:39:30 +0000
+Received: by mail-lj1-x244.google.com with SMTP id h10so3342496ljg.0
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 19 Jun 2019 06:33:53 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=/hOvNsnkdNjDa+A6/yfZ/Thg3iaWZ4X1bBVE79rdUH4=;
- b=ra8QE7eBnzaOXjOx0RMs0LZQe2kPZTC6xR1Rt/o70uPhVeniKXcCavDC3PrQDG92pU
- ErmTmVNphJLe6VZA2E7mn+lz4XP2Hn3Ji2Cdx9QWjH/COc1dbYOt0+uPQFwwzEzMXp8e
- 6Jj9ID6vXj/RGBIMl0BSHp9hJqpX8Z+7HM1tpHFG9eYWrQJcSWJszuCedusibuJmFTpE
- i9HIKEvITQsMqq8gOYlNfKCUqAcMK/IoydTG2YSBI9duQVaA5JX7MoE1cKslCGoH8HxB
- fq+n3cIcrKOae3POoib/yOj4IxWA4FqsIoc48CljZJfyOTagnzo8yQHI/J0LW8zpNYd2
- hNtw==
+ Wed, 19 Jun 2019 06:39:27 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=lixom-net.20150623.gappssmtp.com; s=20150623;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=6cfr75PYkhImaJ7XOt+alqHVOPI9CGIlZsta+QO7igY=;
+ b=dzHlcp2kPtqUwK7RKt17G4fCyMp2t4QnmB+R6Yv3tJqRPYeM95AHtoDHKDGiTPMctE
+ ROU/eGEffj1je2EHsz31XEeq4XjwEKcY8dwXxw2nlk/gjXBuYrqXkQ5gJtQOssdXZnGm
+ f1YzHWINmTS1JU3snNzv5DeRk+Uj57kgTGVizRzIBLLXin1od4ENGyE4csKlkPUyP4dp
+ UO7hq6BKNn/1z02tuSQYSo3X710up3NZdi+VNkCNDzPfNX3GV1snTY+WOlwlCQTdKsWu
+ u9GVdUiBMp2kCSfIVMA9NTDYL7CMGuYIhLQOWkEJ79dBDXD2UWCT7bp54aDO8WfxtqYa
+ s3YQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=/hOvNsnkdNjDa+A6/yfZ/Thg3iaWZ4X1bBVE79rdUH4=;
- b=fBgDEA7iJRlxsiLImlPq2yrBdkK0uMPuTtEftYj17pcu9c+DwGZ8h2NzQP955QxpoB
- bovf/4qw5+m1E11GecLogWM6Kq5D7LHkGZFRmjxJAuRwt6UYJFKIoeSwXDztMaWz+sKC
- 3hMtaFP4Taj/wAfV6nwU2Mlh1sS9VfMw2lLjeUw8ekkKKwVP3VIY+04iRKoH73yhqj/Y
- DctNpEHRE2skz5qqDkIjYGbxMuM5DTvCvqb74cNlN/pzAIxV918ebkxK/CZ0nZAmXV3a
- fzUfzQCIolvfjls6JU6cyaiTyee0w1zi1PbjFg7gbuCpHCFNiN6aZlw34FQ+Ckmk8Ev2
- XVSQ==
-X-Gm-Message-State: APjAAAUyBRBvB6Q9gNkoM3ed7SGQonn0jLn93uAZiJCOXsMEthyoBUZ1
- FRErPO2pFydZriIWEN5aJauVdpU+te6nx8NFZR0A74TI
-X-Google-Smtp-Source: APXvYqzXc0QxvHUX0+Zq6+MSDbGCxesWmtXJbSYuo788EfEdCW+LbJBYo7MWWKhK0YKIbtRHuEZqD16YL5NCdT/noa4=
-X-Received: by 2002:ab0:6988:: with SMTP id t8mr22144122uaq.49.1560951231950; 
- Wed, 19 Jun 2019 06:33:51 -0700 (PDT)
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=6cfr75PYkhImaJ7XOt+alqHVOPI9CGIlZsta+QO7igY=;
+ b=DP8udiCVRfaV4PmRh7odEh+jgkBf+Jmbtq8JzjMiCs5J5TSxrdcvPFYng2sK5gUtlx
+ cCDX1aNp87wPQAPCEyLn0pI7eQzEXZo3I2mtCySXoD6jj+KlSXZGE8WTuYZ13zbU63ID
+ dV9UwCR3bju2/xPyyWgiww9tSWfUUDHhHzCRv0iZkh4BA/q4Y/4Vl/iIpgBD/Q1iBH8A
+ 6+T9rRI7QUP2GG9Q3hN9XyVPLDUMvVKmppwgKuzbcFSm+VsOrGD3c/s0jOS9UHyOdg5l
+ r0fj9Kw3n2yYkOc52efdH8h1YkqbhCbmWl5WAjsMKavmRqBA0S1UMAPV6r6TIz2bv43R
+ z8AA==
+X-Gm-Message-State: APjAAAU7fmti5ew+9qFMWGJt3kc/T5m0mHUNhhmNvjicigpB4lcBghVf
+ duOQlKsf9hJ31g9pq/Ng35OrRQ==
+X-Google-Smtp-Source: APXvYqyM+xKsJN4hrNkIs4PZgKa4NSAJKmOKIioVA3ZIzdG5pPcie9Dvw/8TrUd+UPjWP3b6FDEy7g==
+X-Received: by 2002:a2e:89ca:: with SMTP id c10mr7510192ljk.106.1560951565271; 
+ Wed, 19 Jun 2019 06:39:25 -0700 (PDT)
+Received: from localhost (h85-30-9-151.cust.a3fiber.se. [85.30.9.151])
+ by smtp.gmail.com with ESMTPSA id h22sm3111044ljj.105.2019.06.19.06.39.24
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Wed, 19 Jun 2019 06:39:24 -0700 (PDT)
+Date: Wed, 19 Jun 2019 06:35:38 -0700
+From: Olof Johansson <olof@lixom.net>
+To: Florian Fainelli <f.fainelli@gmail.com>
+Subject: Re: [GIT PULL 1/6] Broadcom devicetree changes for 5.3
+Message-ID: <20190619133538.64htegz3xepd2mu7@localhost>
+References: <20190612025028.13118-1-f.fainelli@gmail.com>
 MIME-Version: 1.0
-References: <CAOuPNLiBA9VjEoG_D2y2O5mKiqsDNW1VZXOk1eWXpGY+h86acg@mail.gmail.com>
- <CAOMZO5BcLaS0gXUPi6oN6vjqagS5yf+rHh+EUjmi-Wi1OX7vqQ@mail.gmail.com>
- <CAOuPNLgEEfDca4aeT1+q8GfUfGzbJ4x6JwGf-ROB1pgpXUBHSw@mail.gmail.com>
- <CAOMZO5BY8JcLNMCRCC_d=emy8HR6kE=dB9f5qfZ=ci_c+Jak0w@mail.gmail.com>
-In-Reply-To: <CAOMZO5BY8JcLNMCRCC_d=emy8HR6kE=dB9f5qfZ=ci_c+Jak0w@mail.gmail.com>
-From: Pintu Agarwal <pintu.ping@gmail.com>
-Date: Wed, 19 Jun 2019 19:03:39 +0530
-Message-ID: <CAOuPNLjYhkP_kL+q-ZpiDZMMpOHrU88BFBc2agtnCzXt8dihOg@mail.gmail.com>
-Subject: Re: [IMX] [DRM]: suspend/resume support
-To: Fabio Estevam <festevam@gmail.com>
+Content-Disposition: inline
+In-Reply-To: <20190612025028.13118-1-f.fainelli@gmail.com>
+User-Agent: NeoMutt/20170113 (1.7.2)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190619_063354_346313_E8617634 
-X-CRM114-Status: GOOD (  19.77  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190619_063927_853410_FE0C7E31 
+X-CRM114-Status: GOOD (  17.07  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:942 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:244 listed in]
  [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (pintu.ping[at]gmail.com)
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -95,93 +94,70 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-pm@vger.kernel.org, open list <linux-kernel@vger.kernel.org>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>,
- Kernelnewbies <kernelnewbies@kernelnewbies.org>
+Cc: linux-arm-kernel@lists.infradead.org, arm@kernel.org, arnd@arndb.de,
+ Kevin Hilman <khilman@kernel.org>, Eric Anholt <eric@anholt.net>,
+ Lukas Wunner <lukas@wunner.de>, bcm-kernel-feedback-list@broadcom.com,
+ Stefan Wahren <wahrenst@gmx.net>, Martin Sperl <kernel@martin.sperl.org>,
+ Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Jun 18, 2019 at 8:39 PM Fabio Estevam <festevam@gmail.com> wrote:
->
-> On Tue, Jun 18, 2019 at 11:46 AM Pintu Agarwal <pintu.ping@gmail.com> wrote:
->
-> > Thank you so much for your reply.
-> > Yes, I already checked the latest mainline kernel changes until 5.2-**.
-> > I see that there are many cleanup related changes, but still I see
-> > that suspend/resume functions are missing in dw_hdmi-imx driver.
->
-> Please see this recently submitted patch:
-> https://lore.kernel.org/patchwork/patch/1084057/
->
-Okay. Thank you for this reference. This can be definitely helpful.
-But a quick look may be feel, this is slightly different.
-Anyways, I will have a deeper look.
+On Tue, Jun 11, 2019 at 07:50:23PM -0700, Florian Fainelli wrote:
+> The following changes since commit a188339ca5a396acc588e5851ed7e19f66b0ebd9:
+> 
+>   Linux 5.2-rc1 (2019-05-19 15:47:09 -0700)
+> 
+> are available in the Git repository at:
+> 
+>   https://github.com/Broadcom/stblinux.git tags/arm-soc/for-5.3/devicetree
+> 
+> for you to fetch changes up to 34b1441452e550169b4d3647a4f851d9332d4b76:
+> 
+>   ARM: dts: BCM5301X: Fix most DTC W=1 warnings (2019-06-11 15:07:56 -0700)
+> 
+> ----------------------------------------------------------------
+> This pull request contain Broadcom ARM-based SoCs Device Tree changes
+> for 5.3 please pull the following:
+> 
+> - Lukas enables DMA support for the BCM2835 (Raspberry Pi) SPI
+>   controller
+> 
+> - Florian fixes a number of dtc W=1 warnings in the Broadcom DTS files
+>   and provides a fix for devices failing to boot after the removal of
+>   skelton.dtsi (that commit has been submitted as a separate fix)
+> 
+> ----------------------------------------------------------------
+> Florian Fainelli (9):
+>       Merge tag 'tags/bcm2835-dt-next-2019-06-01' into devicetree/next
+>       ARM: dts: bcm: Add missing device_type = "memory" property
+>       ARM: dts: Fix BCM7445 DTC warnings
+>       ARM: dts: Cygnus: Fix most DTC W=1 warnings
+>       ARM: dts: bcm-mobile: Fix most DTC W=1 warnings
+>       ARM: dts: BCM53573: Fix DTC W=1 warnings
+>       ARM: dts: BCM63xx: Fix DTC W=1 warnings
+>       ARM: dts: NSP: Fix the bulk of W=1 DTC warnings
+>       ARM: dts: BCM5301X: Fix most DTC W=1 warnings
+> 
+> Lukas Wunner (1):
+>       ARM: bcm283x: Enable DMA support for SPI controller
 
-> > So, I am trying to implement myself.
-> > Also, I see that suspend/resume is missing even in :
-> > drivers/gpu/drm/imx/ipuv3-crtc.c
-> > I am trying this also (not sure if we need this as well).
-> >
-> > Can you point out some specific patches which can be helpful ?
-> >
-> > Currently, what I observed is that hdmi bind() functions are not getting called.
-> > Not sure who is responsible for triggering this bind function.
-> > Or, irq remains disabled after resume, and we need to enable it back
-> > again (but how ?)
-> > Or, we may need to enable vblank events and thus irqs can be enabled.
-> >
-> > So, I am exploring many possibilities.
-> > If you have any suggestions please let me know.
->
-> The suggestion I have is to try to use latest mainline kernel. If you
-> see any issues with it, please report.
->
-> The combination you mentioned in a prior thread (kernel 3.10 +
-> backported drm patches 4.9) is not really something the community can
-> help you.
+Something went wrong here. I merged your pull request for the missing
+device_type that had commit e8bd76dccd79 for that patch.
 
-You can think that the version I am using right now is almost 4.9 itself.
-Upgrading again to higher kernel version is again difficult, also
-customer does not want it.
-BTW, I am not talking about runtime suspend/resume.
-I know it works normally.
+Here you have the same patch here as 0e9e8c404ec2. While git normally handles
+this alright, in this case the warning removals changes the line above so you
+get a merge conflict for every file and that's a lot to fix up.
 
-I just need some approach and pointers.
-Like someone said rightly, I may need to re-implement bind() function
-again in resume path.
-I already tried doing hdmi_power_on/off and with that I could invoke
-hdmi_setup() function, but the system hang after that.
+Would you mind rebuilding this branch on top of your fixes to keep that patch
+at the same commit?
 
-Another approach I tried is, installing hdmi {dw-hdmi.ko,
-dw_hdmi-imx.ko} as a module, just after the resume.
-With this also system hangs during installation of dw_hdmi-imx.ko at
-below location:
 
-imx_drm_driver_load(..)
-|
-|--> component_bind_all(...)
-     |
-     |-> component_bind(ipu)
-         |
-         |
-         ipu_drm_bind(..)
-         |
-         |-> ipu_crtc_init(..)
-             |
-             |-> ipu_plane_irq(..)
-             |
-             | ----> << __HANGS HERE__ >>
-             |
-             |-> devm_request_irq(ipu_irq_handler)
+Thanks,
 
-So, ipu_drm_bind() never returns, and hangs.
-----------
-So, my question is, which approach is better (as a first trial):
-1) Installing hdmi as a module, after resume ?
-2) Or, implementing the suspend/resume itself ?
+
+-Olof
 
 _______________________________________________
 linux-arm-kernel mailing list
