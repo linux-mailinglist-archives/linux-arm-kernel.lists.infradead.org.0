@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F15094BFC6
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Jun 2019 19:36:44 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 696704BFCE
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Jun 2019 19:37:59 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,71 +11,71 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=1/DsfR8o8CLWuMNPXn9BiLJ3vn+DCaUU7w9U1HwWTIY=; b=DWYE5U6HBccEDTEZtTbVpIKg+S
-	++OCR3MC/wZ6dG60oR7yoqYWL+P/IFr4EcNXzK06n7UeG0Whc5F0Z4DtXuOwhhsiWLCisvDfdwScU
-	bs4AEtYvwFfa53NYvmbzPXDrpVaw4eWLwCTtppg4BQlgtkMWejXiKTLBluS1Gq0g0XGN5LWDj2rwh
-	hfCN81B3d9+9pYjStraQaNlC3K4KL56M59HQweHjfsW7FAu8Us6pbAx/TWBruA/qHksvvqCnsW0+8
-	adHAgL+bo4SAaRRpR++t+kc0OM8Nb3TMmOfNIR+SCHuMenbQnnuX9F7150YMzUC9aQP4NkDFPuynD
-	N7TE5kRg==;
+	bh=noXKls5VRq76zZMKstRTDzGS8SA+7SleCAI/20+HEjc=; b=XFikOiV4EIyZHDsXx4qPkXYwU6
+	PJsCNp/Kuro/eLPGI6v/TrWd9vFNyzOWMj8GnM0jyT+hGWSWNjRm+l8/HlcscGY4aVxW0G/Elfv8g
+	S/LCHJUgZl1bDbgeyvVF2gxKTw00zOCRUYvs1pi3AQBZpph6nRsmUcUFsj2/CARtpKhhYeJOEt/Yn
+	yWmVEkEMYfj1DarubYoN/VKY2JvOEbvqFJwNkcPbLcvWoDbxat/RKysUlFFkMMFcV/PYLW4MIU2lo
+	GdgXXoHFC4yrKhRMolizwqM4E3hOdrBpGJotvx5YSwjh0tKAxsZMq2jadTg/1e442SwSSquodf0az
+	1gtRhJ9A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hdeVm-0005vm-VL; Wed, 19 Jun 2019 17:36:43 +0000
-Received: from mail-pg1-x541.google.com ([2607:f8b0:4864:20::541])
+	id 1hdeWw-00071P-CA; Wed, 19 Jun 2019 17:37:54 +0000
+Received: from mail-pf1-x442.google.com ([2607:f8b0:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hdePT-0007qf-Is
- for linux-arm-kernel@lists.infradead.org; Wed, 19 Jun 2019 17:30:16 +0000
-Received: by mail-pg1-x541.google.com with SMTP id v11so49258pgl.5
+ id 1hdePX-00086w-8h
+ for linux-arm-kernel@lists.infradead.org; Wed, 19 Jun 2019 17:30:19 +0000
+Received: by mail-pf1-x442.google.com with SMTP id r7so11943pfl.3
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 19 Jun 2019 10:30:10 -0700 (PDT)
+ Wed, 19 Jun 2019 10:30:13 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=f0OEP82lk9pN05bJgvTcbMJBT6vO9afCPfXu5DFNwE8=;
- b=fN6+0lL9DoTPEw6XbkRt0gDsma+YO28KxU2llsh5uwvJgI5XTddd0XHrdoXDmOvGVK
- r7GeE1KvK63FR5YZDEYi0BJx2boyPL+9yTDz1abKzVBXxzdSa+AQNi1SxsvSpTji+MLX
- fhbEQALRbn8O1XJF+aAqIZTX7sO9NbaaLHqVmPe7kEYdcDaz7dfnrQXlDDqPIJ0ZZgJG
- vcHkRYByd8Ot+sKQqObB/wQQs6AdZhd+5zPNT0w+tvH2bXtO4GFnJFY7HV/9PetDT5wC
- BcwtkAgLXX34hyrhMgWXmsbucsx71zFWkf5FOjT4xRnbXtvJ7iqYSyYPA64XBLrY5Pk8
- f5Dg==
+ bh=P8HOcu/iy58r97z1ZeEK9hZTcUyQU9lbtvmBDEqsK0c=;
+ b=j+vwQNKrlxU0pB2aMYfXLTrSXtIol5Z5NrZcceuavtkupVjU8t8XpwO2kpWWYmCrog
+ 8Np0B/qhoAYgf8mu1huXxDEwcaCc3BWfxTPfk1h62NUqiEV9eSKA23BKAwUtmJsfklv0
+ Ln/Lkxcb5nurTLFXR89FtYprIxEFGzFJQzkMDnzTRwE3It41Iaq55zLL4hXXBIJwLYHA
+ fwFmSdxK9zyHjp4d7BIt89Bpke6JuDM9eoY3qDbxiA4M6iuoxQ43cqHj/Im1Qn/3Up56
+ zRLadea8O1Rue4uXiknyw0W8t1V0n7u1/NZaw1kQ222T0StxPD8J8u3HAoj4l4fBmkp0
+ 9uMg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=f0OEP82lk9pN05bJgvTcbMJBT6vO9afCPfXu5DFNwE8=;
- b=W2kwTs0h0rYSNFFT0WZ5taV1xs98rnd8z/R0k5JqT7/gpl90lep75CN8t6d7sIF/Ri
- auP1LplFXKpp3VVIA5RJJCM/oZCe2ZW1ynke3aWUEWBgeuJjSTzoDvHRdIqmCzlGAgny
- TFrNTehueOTCUd3ShilIAZnEBK32C4B19y+gjeqpU1LbUKkJ0xHKcO8qVbioh9ggs5rI
- db6bZbTACrtyWglxYma6kMyplQeT2bVtCvk2PiUvh+34W1t5jD9lCSlBGboZU7Kaeoy+
- Q7mv0AuOYAjL/Y2XeARx/Kj0jZn/DVy1kn5PZ5Mahj+8MJyUAU8+OdZ5+yoKi0uVSJ+N
- P4yw==
-X-Gm-Message-State: APjAAAVaxEDbTHg0QkBendIATIu7BwHcCb3uG7cIUGNZUXuS+LZ12eS3
- DQV1HdHdMU2y4zHuxeCwGvPIPg==
-X-Google-Smtp-Source: APXvYqxEQNTxospyi5LZA9x+QYioaJ/Nki48e9z/nrANNd64z4iPi0efySfVH6Tyd7KRWnCFhT4Yhw==
-X-Received: by 2002:a62:e806:: with SMTP id c6mr16449905pfi.158.1560965408517; 
- Wed, 19 Jun 2019 10:30:08 -0700 (PDT)
+ bh=P8HOcu/iy58r97z1ZeEK9hZTcUyQU9lbtvmBDEqsK0c=;
+ b=ND6YNn3tTiPGsP9jlSZL1RDio3py2b9UAepv7TAuzQFcJdYDZ/hyNRbg+LzDI5HMOh
+ oVojId7Gr7gSTE13Slb2lcx2KxCsMAsNxr7axCbhW7yk2iMYWou6uCdaWzmqZ9hBf59a
+ Hm9SQT7BS8njZAt6h8manbT7qNFRDw/25nuXrzXfvzUMA9t2GQVDGJWuTYPUKRDYtKUO
+ e4ZUkyghW3agvT/mKQG4Ro7pNalD7wdJR5dHSUdQzdY9spUt7uHK3m4xaBTofrwoGr4J
+ lgL3DA1eq95KTRetTyTspnSNpJQ98zU3g496o8m2efJbezTbBXSRu6iuqgQqkFsf7BsM
+ AK0Q==
+X-Gm-Message-State: APjAAAUu6QDdQmveYm0muZD33+dRe/Vx/wQGz5h8zzp/3PNXXdufdr3D
+ TbWavNE8jXaNEkvesK4exzJDJA==
+X-Google-Smtp-Source: APXvYqw0WmRFdcNA37h3eEdFVwC7qHM3Cwg7PD/8zJDmC77AHVz9oLFcJzbPAND/Cu7FmI40yJ6nzg==
+X-Received: by 2002:aa7:9a8a:: with SMTP id w10mr10792808pfi.66.1560965409280; 
+ Wed, 19 Jun 2019 10:30:09 -0700 (PDT)
 Received: from xps15.cg.shawcable.net (S0106002369de4dac.cg.shawcable.net.
  [68.147.8.254])
- by smtp.gmail.com with ESMTPSA id g2sm31348406pfb.95.2019.06.19.10.30.07
+ by smtp.gmail.com with ESMTPSA id g2sm31348406pfb.95.2019.06.19.10.30.08
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Wed, 19 Jun 2019 10:30:07 -0700 (PDT)
+ Wed, 19 Jun 2019 10:30:08 -0700 (PDT)
 From: Mathieu Poirier <mathieu.poirier@linaro.org>
 To: gregkh@linuxfoundation.org
-Subject: [PATCH 18/45] coresight: tmc-etr: Rearrange probing default buffer
- size
-Date: Wed, 19 Jun 2019 11:29:22 -0600
-Message-Id: <20190619172949.4522-19-mathieu.poirier@linaro.org>
+Subject: [PATCH 19/45] coresight: platform: Make memory allocation helper
+ generic
+Date: Wed, 19 Jun 2019 11:29:23 -0600
+Message-Id: <20190619172949.4522-20-mathieu.poirier@linaro.org>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20190619172949.4522-1-mathieu.poirier@linaro.org>
 References: <20190619172949.4522-1-mathieu.poirier@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190619_103012_129652_57357B25 
-X-CRM114-Status: GOOD (  15.09  )
+X-CRM114-CacheID: sfid-20190619_103015_554966_8D65B9C4 
+X-CRM114-Status: GOOD (  14.20  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:541 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:442 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -106,55 +106,75 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Suzuki K Poulose <suzuki.poulose@arm.com>
 
-As we are about to refactor the platform specific handling,
-make the default buffer size probing generic.
+Rename the of_coresight_alloc_memory() => coresight_alloc_conns()
+as it is independent of the underlying firmware type. This is in
+preparation for the ACPI support.
 
 Signed-off-by: Suzuki K Poulose <suzuki.poulose@arm.com>
 Signed-off-by: Mathieu Poirier <mathieu.poirier@linaro.org>
 ---
- drivers/hwtracing/coresight/coresight-tmc.c | 21 ++++++++++++---------
- 1 file changed, 12 insertions(+), 9 deletions(-)
+ .../hwtracing/coresight/coresight-platform.c  | 34 +++++++++++--------
+ 1 file changed, 19 insertions(+), 15 deletions(-)
 
-diff --git a/drivers/hwtracing/coresight/coresight-tmc.c b/drivers/hwtracing/coresight/coresight-tmc.c
-index 3b39f43c583d..9c5e615c1486 100644
---- a/drivers/hwtracing/coresight/coresight-tmc.c
-+++ b/drivers/hwtracing/coresight/coresight-tmc.c
-@@ -378,6 +378,15 @@ static int tmc_etr_setup_caps(struct device *parent, u32 devid, void *dev_caps)
- 	return rc;
- }
+diff --git a/drivers/hwtracing/coresight/coresight-platform.c b/drivers/hwtracing/coresight/coresight-platform.c
+index 514cc2b67c36..4c31299607cf 100644
+--- a/drivers/hwtracing/coresight/coresight-platform.c
++++ b/drivers/hwtracing/coresight/coresight-platform.c
+@@ -17,6 +17,24 @@
+ #include <linux/cpumask.h>
+ #include <asm/smp_plat.h>
  
-+static u32 tmc_etr_get_default_buffer_size(struct device *dev)
++/*
++ * coresight_alloc_conns: Allocate connections record for each output
++ * port from the device.
++ */
++static int coresight_alloc_conns(struct device *dev,
++				 struct coresight_platform_data *pdata)
 +{
-+	u32 size;
++	if (pdata->nr_outport) {
++		pdata->conns = devm_kzalloc(dev, pdata->nr_outport *
++					    sizeof(*pdata->conns),
++					    GFP_KERNEL);
++		if (!pdata->conns)
++			return -ENOMEM;
++	}
 +
-+	if (fwnode_property_read_u32(dev->fwnode, "arm,buffer-size", &size))
-+		size = SZ_1M;
-+	return size;
++	return 0;
 +}
 +
- static int tmc_probe(struct amba_device *adev, const struct amba_id *id)
+ #ifdef CONFIG_OF
+ static int of_dev_node_match(struct device *dev, void *data)
  {
- 	int ret = 0;
-@@ -423,16 +432,10 @@ static int tmc_probe(struct amba_device *adev, const struct amba_id *id)
- 	/* This device is not associated with a session */
- 	drvdata->pid = -1;
+@@ -133,20 +151,6 @@ static void of_coresight_get_ports(const struct device_node *node,
+ 	}
+ }
  
--	if (drvdata->config_type == TMC_CONFIG_TYPE_ETR) {
--		if (np)
--			ret = of_property_read_u32(np,
--						   "arm,buffer-size",
--						   &drvdata->size);
--		if (ret)
--			drvdata->size = SZ_1M;
--	} else {
-+	if (drvdata->config_type == TMC_CONFIG_TYPE_ETR)
-+		drvdata->size = tmc_etr_get_default_buffer_size(dev);
-+	else
- 		drvdata->size = readl_relaxed(drvdata->base + TMC_RSZ) * 4;
+-static int of_coresight_alloc_memory(struct device *dev,
+-			struct coresight_platform_data *pdata)
+-{
+-	if (pdata->nr_outport) {
+-		pdata->conns = devm_kzalloc(dev, pdata->nr_outport *
+-					    sizeof(*pdata->conns),
+-					    GFP_KERNEL);
+-		if (!pdata->conns)
+-			return -ENOMEM;
 -	}
+-
+-	return 0;
+-}
+-
+ int of_coresight_get_cpu(const struct device_node *node)
+ {
+ 	int cpu;
+@@ -252,7 +256,7 @@ of_get_coresight_platform_data(struct device *dev,
+ 	if (!pdata->nr_outport)
+ 		return pdata;
  
- 	desc.pdata = pdata;
- 	desc.dev = dev;
+-	ret = of_coresight_alloc_memory(dev, pdata);
++	ret = coresight_alloc_conns(dev, pdata);
+ 	if (ret)
+ 		return ERR_PTR(ret);
+ 
 -- 
 2.17.1
 
