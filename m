@@ -2,68 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C3E2F4BAAA
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Jun 2019 16:03:45 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0C48C4BC66
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Jun 2019 17:06:44 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=i4jjjfmeHGiXGbFoP25uUABGd7C1/aWk75LJGQwAt+g=; b=PfaVHgIFEOecKX
-	SIeXpMJTIt5dMvt+W8TtLLr55OJRQXxCi/iKMT9g2vzqJzObxtP0TPWj2W5pPlb78SCrRcAGu1Pqf
-	aR729eo2zQ3DTGmyUHKnUPWRosGr/r2pxvpKEAh1RsT3v9irwxnjlhiDpe12rguT2uHPYppULrDYn
-	Jr3fvMwqXZvF11TyVBsfXwjHAFqKbMaLm5yialqHm+A3TE3xOywirdV61O5chRGbMnm2Wp9L1LaEm
-	wxQOVJg4OhpNxdVIGoSoU+1RwMGFddpr0QXf4mp0CIGET1hgRbMrwVzzmaBG+GYEuyI94ULwJmdUn
-	aQ7zsSIjw9PI3KeP2iZA==;
+	List-Owner; bh=dKQePRUzmI3DwMEPjy0htFFOHVBwt9VgNyIBJ/rdBec=; b=qfzVpu81C9SbD/
+	gpXtDFEscKG6gHA1L2cb6pyMBYzkUdreK1vdQgFQfWi+qoFSvX/Zyw7/VDWpqQOMzmN7HLX7HV71i
+	/9WOGsWWHgcm6OcYzmag3a/TZ63z0B1wgHAUUu0Yye4B2ECuG5NwyQ1/F+HT6u9S+aopyrSSkC9iD
+	rZJD8QLXSobLWYsX7/IVfRjVQ9YbFRb14WvkmYfPoftaQtoRVgZX5BC8cQulJa7ItD4F8UZL1kJeh
+	4km6+drjj+qRqhF88S5tzyTipvLXNgOukQ3R1+dGlHq0lFjCSORkLTJuKFiKoq4DE3t3d7/1k7IoW
+	Oyf/3VxoctJh+e/BwmOA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hdbBd-0003x2-VM; Wed, 19 Jun 2019 14:03:41 +0000
-Received: from vps0.lunn.ch ([185.16.172.187])
+	id 1hdcAc-0002Tg-7o; Wed, 19 Jun 2019 15:06:42 +0000
+Received: from mail-lf1-x141.google.com ([2a00:1450:4864:20::141])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hdbBT-0003vo-MZ
- for linux-arm-kernel@lists.infradead.org; Wed, 19 Jun 2019 14:03:33 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=lunn.ch;
- s=20171124; h=In-Reply-To:Content-Type:MIME-Version:References:Message-ID:
- Subject:Cc:To:From:Date:Sender:Reply-To:Content-Transfer-Encoding:Content-ID:
- Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
- :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
- List-Post:List-Owner:List-Archive;
- bh=g/6LlihmMyA9edalIxizKqgeDYFzECLoXeUK/dZh79M=; b=5MzChjyZGap1Y6rGKxn+CiNR/P
- 34z6le3HpVkCKRfX2P6R5Fuv+EcVLn/CkrSkFlu70ZkNck4VhFnPTz3pRFR3oA8GM/mAjItrM4Kav
- z/YpNbdI/CmKi6uaqf/30+8Rto7w75+NYufMlHfTW6R2Z1sZUtWqMHmTK7YuHZc/OBMM=;
-Received: from andrew by vps0.lunn.ch with local (Exim 4.89)
- (envelope-from <andrew@lunn.ch>)
- id 1hdbBD-0001kz-0q; Wed, 19 Jun 2019 16:03:15 +0200
-Date: Wed, 19 Jun 2019 16:03:14 +0200
-From: Andrew Lunn <andrew@lunn.ch>
-To: Maxime Ripard <maxime.ripard@bootlin.com>
-Subject: Re: [PATCH v3 01/16] dt-bindings: net: Add YAML schemas for the
- generic Ethernet options
-Message-ID: <20190619140314.GC18352@lunn.ch>
-References: <27aeb33cf5b896900d5d11bd6957eda268014f0c.1560937626.git-series.maxime.ripard@bootlin.com>
+ id 1hdc9r-00026j-AW
+ for linux-arm-kernel@lists.infradead.org; Wed, 19 Jun 2019 15:05:56 +0000
+Received: by mail-lf1-x141.google.com with SMTP id d11so12413447lfb.4
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 19 Jun 2019 08:05:54 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=lixom-net.20150623.gappssmtp.com; s=20150623;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=rLIkqlGn9cUlPf38s8MiT2bIRqxvXG+Su9LV/bpHzd0=;
+ b=A80Z3wePQk+3ikueP3DX3ZYZi5GH6ORG5QlDkVy+ZFzIpC7UJEN2CEyfM87XGy2Kml
+ UMB7BDT2oVm8cajDJkV6PAUOakeu+92GVcs/QkoaiNhn/gyGbY1QZCMs1B9TvgOdWxqN
+ kR8/cuu487HIgBWxwrnQWUUEwU8bLwivUxGncg0azOcql7GuF8DDnk2ML030xCGds8uG
+ jIdqharE+JH/Fw1qdVwPBC2R4uFcaSsIHy+nmcqynRMdH5ro5KP8E/ITzF2H4yDnD1A5
+ nuY6r5xUO9S09bTcjrPtGb66vRplTzhfcWwTa5rLXbmBJ2/P0VLWpkbh5axjvezbhd0c
+ EIow==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=rLIkqlGn9cUlPf38s8MiT2bIRqxvXG+Su9LV/bpHzd0=;
+ b=X0qUhNXT2XKHlOQzh/dL41jbC0Xu42sZK1MhoN8myMBnNuy3Uh9iB0xaSI2auMBiKL
+ er+RT7RvqgbijTxpfZzFLYlFYpM7DQizwu0bzq1w0ydrS1qPDrctmUlWriroIq6KJzon
+ loOz1F8gp0TlErseB3IRWi+bopsCrN9kxwBwjLfIpEJ8s1v/6bEuGWzpX+A9pz/hEFVl
+ 1bCwulbg1EI35NTHPChkIY88j8UPBrn3VRPa9etJqHbq8oOj2TJu6CulqKPIjk1UPgPx
+ a/XCH35v6Xmj++a1AD5t7wmsIHhXFlGmuCBQOIlt3V4gFRE2dlggobPsDuBIIPAabpTm
+ YDbg==
+X-Gm-Message-State: APjAAAXMpr4Re/BEVtNyQHijAlH48RbSLo+d+BQEhvAZ56l5VMvD/U//
+ a33JgGPJM0npxXybfMDsGiSjdfORFGXA/g==
+X-Google-Smtp-Source: APXvYqxmdNV7xq5YR13Vg4a3/65Jiq4IWvBSJdIVrPquKzCKn0zJgudmzb7b2ZjN0LydNtOJs2ajbA==
+X-Received: by 2002:a19:710b:: with SMTP id m11mr56799598lfc.135.1560956753593; 
+ Wed, 19 Jun 2019 08:05:53 -0700 (PDT)
+Received: from localhost (h85-30-9-151.cust.a3fiber.se. [85.30.9.151])
+ by smtp.gmail.com with ESMTPSA id y18sm3123964ljh.1.2019.06.19.08.05.52
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Wed, 19 Jun 2019 08:05:52 -0700 (PDT)
+Date: Wed, 19 Jun 2019 07:03:51 -0700
+From: Olof Johansson <olof@lixom.net>
+To: Krzysztof Kozlowski <krzk@kernel.org>
+Subject: Re: [PATCH] arm64: configs: Remove useless UEVENT_HELPER_PATH
+Message-ID: <20190619140351.okscbbzudzwv5gup@localhost>
+References: <1559634748-19546-1-git-send-email-krzk@kernel.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <27aeb33cf5b896900d5d11bd6957eda268014f0c.1560937626.git-series.maxime.ripard@bootlin.com>
-User-Agent: Mutt/1.5.23 (2014-03-12)
+In-Reply-To: <1559634748-19546-1-git-send-email-krzk@kernel.org>
+User-Agent: NeoMutt/20170113 (1.7.2)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190619_070331_891656_852213A2 
-X-CRM114-Status: GOOD (  14.44  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190619_080555_359016_2795F7C6 
+X-CRM114-Status: GOOD (  11.36  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [185.16.172.187 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ no trust [2a00:1450:4864:20:0:0:0:141 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -76,101 +94,32 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Florian Fainelli <f.fainelli@gmail.com>,
- Alexandre Torgue <alexandre.torgue@st.com>, Rob Herring <robh@kernel.org>,
- Antoine =?iso-8859-1?Q?T=E9nart?= <antoine.tenart@bootlin.com>,
- netdev@vger.kernel.org, linux-stm32@st-md-mailman.stormreply.com,
- Chen-Yu Tsai <wens@csie.org>, Rob Herring <robh+dt@kernel.org>,
- Maxime Coquelin <mcoquelin.stm32@gmail.com>,
- Maxime Chevallier <maxime.chevallier@bootlin.com>,
- Frank Rowand <frowand.list@gmail.com>,
- "David S . Miller" <davem@davemloft.net>, linux-arm-kernel@lists.infradead.org,
- Heiner Kallweit <hkallweit1@gmail.com>
+Cc: Geert Uytterhoeven <geert+renesas@glider.be>, Arnd Bergmann <arnd@arndb.de>,
+ Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will.deacon@arm.com>,
+ linux-kernel@vger.kernel.org, arm@kernel.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Maxime
+On Tue, Jun 04, 2019 at 09:52:28AM +0200, Krzysztof Kozlowski wrote:
+> Remove the CONFIG_UEVENT_HELPER_PATH because:
+> 1. It is disabled since commit 1be01d4a5714 ("driver: base: Disable
+>    CONFIG_UEVENT_HELPER by default") as its dependency (UEVENT_HELPER) was
+>    made default to 'n',
+> 2. It is not recommended (help message: "This should not be used today
+>    [...] creates a high system load") and was kept only for ancient
+>    userland,
+> 3. Certain userland specifically requests it to be disabled (systemd
+>    README: "Legacy hotplug slows down the system and confuses udev").
+> 
+> Signed-off-by: Krzysztof Kozlowski <krzk@kernel.org>
 
-> +  phy-connection-type:
-> +    description:
-> +      Operation mode of the PHY interface
-> +    enum:
-> +      # There is not a standard bus between the MAC and the PHY,
-> +      # something proprietary is being used to embed the PHY in the
-> +      # MAC.
+Applied, thanks.
 
-...
 
-> +
-> +  phy-mode:
-> +    $ref: "#/properties/phy-connection-type"
-> +    deprecated: true
-
-I don't think phy-mode is actually deprecated. ethernet.txt actually says:
-
-"This is now a de-facto standard property;" and no mentions that is
-should not be used. Looking at actual device trees, phy-mode is by far
-more popular than phy-connection-type.
-
-fwnode_get_phy_mode() first looks for phy-mode and only falls back to
-phy-connection-type if it is not present. The same is true for
-of_get_phy_mode().
-
-> +  fixed-link:
-> +    allOf:
-> +      - if:
-> +          type: array
-> +        then:
-> +          minItems: 1
-> +          maxItems: 1
-> +          items:
-> +            items:
-> +              - minimum: 0
-> +                maximum: 31
-> +                description:
-> +                  Emulated PHY ID, choose any but unique to the all
-> +                  specified fixed-links
-> +
-> +              - enum: [0, 1]
-> +                description:
-> +                  Duplex configuration. 0 for half duplex or 1 for
-> +                  full duplex
-> +
-> +              - enum: [10, 100, 1000]
-> +                description:
-> +                  Link speed in Mbits/sec.
-> +
-> +              - enum: [0, 1]
-> +                description:
-> +                  Pause configuration. 0 for no pause, 1 for pause
-> +
-> +              - enum: [0, 1]
-> +                description:
-> +                  Asymmetric pause configuration. 0 for no asymmetric
-> +                  pause, 1 for asymmetric pause
-> +
-
-This array of 5 values format should be marked as deprecated.
-
-> +
-> +      - if:
-> +          type: object
-> +        then:
-> +          properties:
-> +            speed:
-> +              allOf:
-> +                - $ref: /schemas/types.yaml#definitions/uint32
-> +                - enum: [10, 100, 1000]
-
-This recently changed, depending on context. If PHYLINK is being used,
-any speed is allowed. If phylib is used, then only these speeds are
-allowed. And we are starting to see some speeds other than listed
-here.
-
-	Andrew
+-Olof
 
 _______________________________________________
 linux-arm-kernel mailing list
