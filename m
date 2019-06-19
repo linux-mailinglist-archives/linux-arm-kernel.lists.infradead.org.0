@@ -2,49 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E01A64B40C
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Jun 2019 10:29:17 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 02B0D4B41A
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Jun 2019 10:33:12 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	MIME-Version:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=7ko8uOgllELC3jPdBFdUHaZiB4jI8Dl1TlQkdjv+IHo=; b=WG4
-	EL5Vfgc10jL4gfVd/LsjXMWEdHFgHwBm1ENmZFlvNGng1CoUPUDsxGxIRyvbrvdnFkPGu8dhJIEMg
-	CU5+jsUoIgrWvqltHwoyGuJSwWb4vrFho4L6R9Go8Vspot/RE8lOeEEDHKJWp9MB+E5MYhQQg47RE
-	UMXvxCkZSjrtczf34K+J6Pnho3JwPa9T3GEhQdYuPSKooFQQlAhceldxMBfgxrjNKWUIxExVBiAhK
-	M0OGUl92pwIbURWXuyMDpFRENnyxr4prN5pc8KZQtIG+xB0wmQt+h/pKymTh6oGnlqGNNkUzB2o9c
-	4ryeYjk51anqG1m6fJkAdfaPRCbmQ/w==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=du8m/lK0oJTs6RtH5DJilB7nonNfZAHGWaqsqD8cDp8=; b=GDJuu/b0za3H3ejD5Jj8LYiy5
+	JUZwI5oo+W3ZCg7+ExxpXBGiUet6y/1P554yerlWACgN5J8iTLpy5x1xkG2fXmYpHyHFrzpH6GLTU
+	kltT+JY+2umx3DztgeQa3nGFFaWUnurkuD2mg3V4ScJuD/QVXr+MwjMk6mRjVzFHvXypbpf2rDPT+
+	AVv2ggUpCAlq9M81FLqn8tsKwR/dWHtHsBizP15aCRxb3+4TapXaQMj8X9KeFJ8804yAkpQewHE7G
+	FY1LFAFS/GYtpGyUlBqujCVNuOf6COZViwLV5vL31039JKV0ASfry8m0q1uL9GDRR+euSmBxEx3O8
+	DonIsflTQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hdVxy-0004hA-SL; Wed, 19 Jun 2019 08:29:14 +0000
-Received: from mirror2.csie.ntu.edu.tw ([140.112.30.76] helo=wens.tw)
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hdVxp-0004ge-Qw
- for linux-arm-kernel@lists.infradead.org; Wed, 19 Jun 2019 08:29:07 +0000
-Received: by wens.tw (Postfix, from userid 1000)
- id D29C15FCE5; Wed, 19 Jun 2019 16:23:07 +0800 (CST)
-Date: Wed, 19 Jun 2019 16:23:07 +0800
-From: Chen-Yu Tsai <wens@kernel.org>
-To: Michael Turquette <mturquette@baylibre.com>,
- Stephen Boyd <sboyd@kernel.org>
-Subject: [GIT PULL] clk: sunxi-ng: clk parent rewrite part 1
-Message-ID: <20190619082307.GA27382@wens.csie.org>
+	id 1hdW1k-0006VT-RC; Wed, 19 Jun 2019 08:33:08 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hdW1c-0006Us-S3
+ for linux-arm-kernel@lists.infradead.org; Wed, 19 Jun 2019 08:33:02 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 73C01CFC;
+ Wed, 19 Jun 2019 01:32:58 -0700 (PDT)
+Received: from [10.1.196.93] (en101.cambridge.arm.com [10.1.196.93])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id D86863F246;
+ Wed, 19 Jun 2019 01:32:57 -0700 (PDT)
+Subject: Re: [PATCH v1 2/5] coresight: etm4x: use explicit barriers on
+ enable/disable
+To: mathieu.poirier@linaro.org, andrew.murray@arm.com
+References: <20190618125433.9739-1-andrew.murray@arm.com>
+ <20190618125433.9739-3-andrew.murray@arm.com> <20190618223402.GA24894@xps15>
+From: Suzuki K Poulose <suzuki.poulose@arm.com>
+Message-ID: <e5b288ad-91bd-8854-469a-bee44bf202cf@arm.com>
+Date: Wed, 19 Jun 2019 09:32:56 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.7.0
 MIME-Version: 1.0
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <20190618223402.GA24894@xps15>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190619_012906_141717_3376618D 
-X-CRM114-Status: GOOD (  10.56  )
-X-Spam-Score: 0.3 (/)
+X-CRM114-CacheID: sfid-20190619_013300_951676_0113D7E7 
+X-CRM114-Status: GOOD (  19.12  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- 0.0 T_SPF_HELO_PERMERROR   SPF: test of HELO record failed (permerror)
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -56,152 +63,75 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Maxime Ripard <maxime.ripard@bootlin.com>, Chen-Yu Tsai <wens@kernel.org>,
- linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============9029278921142115269=="
+Cc: alexander.shishkin@linux.intel.com, linux-arm-kernel@lists.infradead.org
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 
---===============9029278921142115269==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="wRRV7LY7NUeQGEoC"
-Content-Disposition: inline
+
+On 18/06/2019 23:34, Mathieu Poirier wrote:
+> On Tue, Jun 18, 2019 at 01:54:30PM +0100, Andrew Murray wrote:
+>> Synchronization is recommended before disabling the trace registers
+>> to prevent any start or stop points being speculative at the point
+>> of disabling the unit (section 7.3.77 of ARM IHI 0064D).
+>>
+>> Synchronization is also recommended after programming the trace
+>> registers to ensure all updates are committed prior to normal code
+>> resuming (section 4.3.7 of ARM IHI 0064D).
+>>
+>> Let's ensure these syncronization points are present in the code
+>> and clearly commented.
+>>
+>> Note that we could rely on the barriers in CS_LOCK and
+>> coresight_disclaim_device_unlocked or the context switch to user
+>> space - however coresight may be of use in the kernel.
+>>
+>> Signed-off-by: Andrew Murray <andrew.murray@arm.com>
+>> ---
+>>   drivers/hwtracing/coresight/coresight-etm4x.c | 7 ++++++-
+>>   1 file changed, 6 insertions(+), 1 deletion(-)
+>>
+>> diff --git a/drivers/hwtracing/coresight/coresight-etm4x.c b/drivers/hwtracing/coresight/coresight-etm4x.c
+>> index da7cf74d612b..ae623415c431 100644
+>> --- a/drivers/hwtracing/coresight/coresight-etm4x.c
+>> +++ b/drivers/hwtracing/coresight/coresight-etm4x.c
+>> @@ -187,6 +187,10 @@ static int etm4_enable_hw(struct etmv4_drvdata *drvdata)
+>>   		dev_err(drvdata->dev,
+>>   			"timeout while waiting for Idle Trace Status\n");
+>>   
+>> +	/* As recommended by 4.3.7 of ARM IHI 0064D */
+>> +	dsb(sy);
+>> +	isb();
+>> +
+
+I think this should go to stable. Please Cc stable in the next version. or 
+alternately you may add a "fixes" tag.
+
+>>   done:
+>>   	CS_LOCK(drvdata->base);
+>>   
+>> @@ -453,7 +457,8 @@ static void etm4_disable_hw(void *info)
+>>   	control &= ~0x1;
+>>   
+>>   	/* make sure everything completes before disabling */
+>> -	mb();
+>> +	/* As recommended by 7.3.77 of ARM IHI 0064D */
+>> +	dsb(sy);
+> 
+> As far as I can tell mb() is equal to dsb(sy).
+
+Yes, however, given that etm4x is for armv8 cores, having the explicit dsb()
+make sense to avoid someone looking up again to see what mb() translates to.
+I suggested the dsb() over mb(), so that it is evident to someone who is trying
+to correlate the TRM vs the code.
 
 
---wRRV7LY7NUeQGEoC
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-
-The following changes since commit a188339ca5a396acc588e5851ed7e19f66b0ebd9:
-
-  Linux 5.2-rc1 (2019-05-19 15:47:09 -0700)
-
-are available in the Git repository at:
-
-  https://git.kernel.org/pub/scm/linux/kernel/git/sunxi/linux.git tags/sunxi-ng-parent-rewrite-part-1
-
-for you to fetch changes up to 594d7e8fbe906ad3162ad84ae74acfbdcf8fa3a5:
-
-  clk: sunxi-ng: sun8i-r: Use local parent references for SUNXI_CCU_GATE (2019-06-18 19:53:33 +0800)
-
-----------------------------------------------------------------
-Allwinner sunxi-ng clk driver parent relation rewrite part 1
-
-The first part of ongoing work to convert the sunxi-ng clk driver from
-using global clock name strings to describe clk parenting, to having
-direct struct clk_hw pointers, or local names based on clock-names from
-the device tree binding.
-
-This is based on Stephen Boyd's recent work allowing clk drivers to
-specify clk parents using struct clk_hw * or parsing DT phandles in the
-clk node.
-
-This series can be split into a few major parts:
-
-1) The first patch is a small fix for clk debugfs representation.
-
-2) A bunch of CLK_HW_INIT_* helper macros are added. These cover the
-   situations I encountered, or assume I will encounter, such as single
-   internal (struct clk_hw *) parent, single DT (struct clk_parent_data
-   .fw_name), multiple internal parents, and multiple mixed (internal +
-   DT) parents. A special variant for just an internal single parent is
-   added, CLK_HW_INIT_HWS, which lets the driver share the singular
-   list, instead of having the compiler create a compound literal every
-   time. It might even make sense to only keep this variant.
-
-3) A bunch of CLK_FIXED_FACTOR_* helper macros are added. The rationale
-   is the same as the single parent CLK_HW_INIT_* helpers.
-
-4) Bulk conversion of CLK_FIXED_FACTOR to use local parent references,
-   either struct clk_hw * or DT .fw_name types, whichever the hardware
-   requires.
-
-5) The beginning of SUNXI_CCU_GATE conversion to local parent
-   references. This part is not done. They are included as justification
-   and examples for the shared list of clk parents case.
-
-----------------------------------------------------------------
-Chen-Yu Tsai (25):
-      clk: Fix debugfs clk_possible_parents for clks without parent string names
-      clk: Add CLK_HW_INIT_* macros using .parent_hws
-      clk: Add CLK_HW_INIT_FW_NAME macro using .fw_name in .parent_data
-      clk: Add CLK_HW_INIT_PARENT_DATA macro using .parent_data
-      clk: fixed-factor: Add CLK_FIXED_FACTOR_HW which takes clk_hw pointer as parent
-      clk: fixed-factor: Add CLK_FIXED_FACTOR_HWS which takes list of struct clk_hw *
-      clk: fixed-factor: Add CLK_FIXED_FACTOR_FW_NAME for DT clock-names parent
-      clk: sunxi-ng: switch to of_clk_hw_register() for registering clks
-      clk: sunxi-ng: sun8i-r: Use local parent references for CLK_HW_INIT_*
-      clk: sunxi-ng: a10: Use local parent references for CLK_FIXED_FACTOR
-      clk: sunxi-ng: sun5i: Use local parent references for CLK_FIXED_FACTOR
-      clk: sunxi-ng: a31: Use local parent references for CLK_FIXED_FACTOR
-      clk: sunxi-ng: a23: Use local parent references for CLK_FIXED_FACTOR
-      clk: sunxi-ng: a33: Use local parent references for CLK_FIXED_FACTOR
-      clk: sunxi-ng: h3: Use local parent references for CLK_FIXED_FACTOR
-      clk: sunxi-ng: r40: Use local parent references for CLK_FIXED_FACTOR
-      clk: sunxi-ng: v3s: Use local parent references for CLK_FIXED_FACTOR
-      clk: sunxi-ng: sun8i-r: Use local parent references for CLK_FIXED_FACTOR
-      clk: sunxi-ng: f1c100s: Use local parent references for CLK_FIXED_FACTOR
-      clk: sunxi-ng: a64: Use local parent references for CLK_FIXED_FACTOR
-      clk: sunxi-ng: h6: Use local parent references for CLK_FIXED_FACTOR
-      clk: sunxi-ng: h6-r: Use local parent references for CLK_FIXED_FACTOR
-      clk: sunxi-ng: gate: Add macros for referencing local clock parents
-      clk: sunxi-ng: a80-usb: Use local parent references for SUNXI_CCU_GATE
-      clk: sunxi-ng: sun8i-r: Use local parent references for SUNXI_CCU_GATE
-
- drivers/clk/clk.c                        |  44 ++++++++++++-
- drivers/clk/sunxi-ng/ccu-sun4i-a10.c     |  39 +++++++-----
- drivers/clk/sunxi-ng/ccu-sun50i-a64.c    |  41 +++++++-----
- drivers/clk/sunxi-ng/ccu-sun50i-h6-r.c   |   2 +-
- drivers/clk/sunxi-ng/ccu-sun50i-h6.c     |  69 ++++++++++++--------
- drivers/clk/sunxi-ng/ccu-sun5i.c         |  34 ++++++----
- drivers/clk/sunxi-ng/ccu-sun6i-a31.c     |  39 +++++++-----
- drivers/clk/sunxi-ng/ccu-sun8i-a23.c     |  34 ++++++----
- drivers/clk/sunxi-ng/ccu-sun8i-a33.c     |  34 ++++++----
- drivers/clk/sunxi-ng/ccu-sun8i-h3.c      |  29 ++++++---
- drivers/clk/sunxi-ng/ccu-sun8i-r.c       | 104 +++++++++++++++----------------
- drivers/clk/sunxi-ng/ccu-sun8i-r40.c     |  46 +++++++++-----
- drivers/clk/sunxi-ng/ccu-sun8i-v3s.c     |  29 ++++++---
- drivers/clk/sunxi-ng/ccu-sun9i-a80-usb.c |  32 ++++++----
- drivers/clk/sunxi-ng/ccu-suniv-f1c100s.c |  29 ++++++---
- drivers/clk/sunxi-ng/ccu_common.c        |   2 +-
- drivers/clk/sunxi-ng/ccu_gate.h          |  53 ++++++++++++++++
- include/linux/clk-provider.h             |  89 ++++++++++++++++++++++++++
- 18 files changed, 526 insertions(+), 223 deletions(-)
-
---wRRV7LY7NUeQGEoC
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQIzBAABCgAdFiEE2nN1m/hhnkhOWjtHOJpUIZwPJDAFAl0J8OcACgkQOJpUIZwP
-JDCCmg/9HW6NnKS0UZglMd9JbGim0X19fvnaG66N5OKSiynJVuKlrjW1KRBjV1yP
-f4co5cU9y1eS6yTs4Wat/4iW52Kc88YvT/KZQJFOw36h00zFipGenNPoG5MCnHxE
-gNQb/BNKvcNDJp7IIfuddK3zAjtGORQ0HUf/ZbjkacfYKDQ0TbUYpfWlvaGnLSoh
-OyL6pww1Tj9zkfRNH4BmFWa1AhCD7ThDfbq4qjGzTSLPbLYTh4IeKDnDnkBU6sif
-EZPaRqvwpvpHIJdG3WCL8lmH6TpxO6DK/FnPfkxzNLDD/JtAHJavOx5qQdgJZjuG
-hz//AG7OFGmdoSI0Fw0dYabhPJZN6zw/VtapbIMToXHy81Sne9soLlvWfEI1eRgR
-Zd63iABZbKoD+HYdEqQea9N4Xqt/pu/Mvy3tzRgXkG2GDyfoyc2SiiGy2abAgTNW
-5q7LV6cq+YQQIUIbLA26KmK/NFPDdHoqMObSPiaiC5cQEXTidNsgaqKUigBiTdRN
-/0WWF/wtHL2E01OpixYxY5FMb7ciSztJ8VIcAYSbkIVzRgDr4wq1XrYHQPLW9AAu
-+ArMNlVyNMyFYXnLBbMkFGZlk2TqZUoo8D4pa29qPIdGSUSSpnA7vWQDAzztiZFQ
-v7cnn+hQT7GGB16nSdYsJxdkE8DVMc2YRnz3qOFdYqQahV+wFXs=
-=PiPo
------END PGP SIGNATURE-----
-
---wRRV7LY7NUeQGEoC--
-
-
---===============9029278921142115269==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+Cheers
+Suzuki
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============9029278921142115269==--
-
