@@ -2,82 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B36E34B189
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Jun 2019 07:42:44 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 89F3A4B18F
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Jun 2019 07:43:31 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=uzmtYIod2m2Fjsai0JkeymqkpHKo6Yz2OtMqLWuqs/0=; b=sjHTLssToOfmBc
-	hgk4oCF4f6vUHFF8kA0jjeH7GnXIEC7EsoOoNgSyCBoz/X+b/BCbWL8wCP9HsYmZeoQ73zD+pPwsB
-	fq88HW6FdSLOzLiXHr2mUYb2dkUidbjFE7H7+2DFZstdY7D/Wz5s9ujbSOUQ3D6cM79jjRb8cUh0Y
-	gBTB4FP+4tweuPh+Fng0g9k5Bjug2E1Vl4YYQAUNnj5bfKyfP93gbkV+R8+xc3EoeIJK4L/Cba7e0
-	X1IKU6MgzRn6XMtEkFoymkNbIi7UvehIy2vnnTEmdwC7K8DsKeO9x+xVEhV+/nkMAV3f4tYLjH3om
-	qthVK95FQjKDR/CcMwLQ==;
+	List-Owner; bh=oIIPW33Esufgef5th9frumt4LYAN2Lama99NEn4ZWt4=; b=fSqTJ6BNVIlKTx
+	cLxhzk1n43kJd4zCUPoUe129R0Vaf3ByDh/lpOPrDp3gJiev1rTctcWbwDjHstKyVDPy1t22oO/al
+	palAJBEbxADaHE4pQNPruYvEZeQAp8qtJM5GYaRnq3VI5czogDD532Di+MO3po77GgY7dfk/UjS8n
+	/lc8JVMkYj9KguzhpclIvJ4kUTFVUFVTiKdOon5SayCv/nfed7rXiHrT9Q1Ol+ko8Ccrn1WzOwgyA
+	BneReVOMRDaKcydyeRwio6hqhSkWim3Hu7KhYrBumYfgMbU0Cz0UCvDbEXYQwbUjWfp3ci1mTv1mt
+	9A+oW8laZqiFFWGlxkpw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hdTMn-0007fz-Mt; Wed, 19 Jun 2019 05:42:41 +0000
-Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
+	id 1hdTNa-000835-8q; Wed, 19 Jun 2019 05:43:30 +0000
+Received: from mail-pl1-x644.google.com ([2607:f8b0:4864:20::644])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hdTMb-0007f0-Q5
- for linux-arm-kernel@lists.infradead.org; Wed, 19 Jun 2019 05:42:31 +0000
-Received: by mail-wm1-x343.google.com with SMTP id 207so299234wma.1
+ id 1hdTNO-00082l-0z
+ for linux-arm-kernel@lists.infradead.org; Wed, 19 Jun 2019 05:43:19 +0000
+Received: by mail-pl1-x644.google.com with SMTP id p1so6722165plo.2
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 18 Jun 2019 22:42:26 -0700 (PDT)
+ Tue, 18 Jun 2019 22:43:17 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:content-transfer-encoding:in-reply-to
- :user-agent; bh=/cpf3zq+TFw4UEIBZS68FxYFecgYH1xkj5zf5lev0W8=;
- b=cCHl/gxL/zXc4WXMsveXwVsU3cxUW+ACFRX97VZSnWNLVolF18pOwLb4cZ5wfy5RnJ
- 3REAqJcFK/oGI2QJKcdjOZzJo77brsZ933bk0GZFC6Yb2FeFRu/ZUcdxus4jSMt5QMmv
- cb5mKHlWsJqPkUdz1B5NnEwJWJoHUrL5L43sT51FshRXu6kSGA18KFYUDbdIq3gciajm
- RcT5NEUePlSW1DD27FCL//Db+0LRRjSYEJXPvbTgus3ZYx7ERKnhVKaedqbEpQlbN+J+
- As7P0XNVfOhDqFB3DaVhv4y3AmIyWNhEna4XviYfA0OCDgHVzB72f+z0351/UGM/LxtR
- RG9g==
+ :content-disposition:in-reply-to:user-agent;
+ bh=RcMrhNV2rA8CLALBPr7bDQwyiJXyMuKwxFa8vNfUS7I=;
+ b=LPLVcncCQs9OSVRTUCWqEJNKz0UKrN7gDxzSi2ofWu/7iy/NAVMPbpK4CBtIjhI9iR
+ /T64O1dhPTXBGQkFAN0qw59FwQ8wsOYayBbkU9vsY7lznOvYYj2a/S4fvTWeOSGBvmvw
+ RfXXtWINQHMHeJXJxKrnBVK7SbMYMzwxr0cqX/hB+lGeNjFF5Rbf6ETkvhUPfzMciqMT
+ Ukdj0XgDCpUiJ/xag6fRqCk5/RWe5UM73SCm3ehcPXWO7kPf/X15XT0nniOkyWNnH1hY
+ PTb2uehPnlTTxPms5OhFL37oAViZKA/LNjKIup6lcHKt9Bn3DZE+X32m3ZQLnXjKoQEW
+ s8LA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:content-transfer-encoding
- :in-reply-to:user-agent;
- bh=/cpf3zq+TFw4UEIBZS68FxYFecgYH1xkj5zf5lev0W8=;
- b=Y+myNnJ2yHrgYYvJzNfxcaGuULtZjhuXMBu22Ch5t2pMNO0oE+iI886DikvrroNwT1
- Wh2x3x/hwHwAJDTh8lZ9c6DJQqOcMh7JFgtVhpCDq7m+wq4n4Q/TZBAlOrTxPv20A2+Q
- ZfL6rSw9nw2fTxYk3k1Ri1e2sPoLB5RuCYzS4PhhP7sjb3rWfZoaWBLNW5tn8UxzYNuH
- 4yBpiIig9PLMKzjGxqL3JSRne+AaAQ6qmvbUuLhm7TX5gKcQ3UT6VqgWcqFIV1qZ6+Y4
- HRG/UCYTTV0QjJ6Y/fLJSOUhyKMFBsqJmBtkQT6QAZ6bpt7p8GaJqJOLIN3idYeLSr+6
- V40Q==
-X-Gm-Message-State: APjAAAWwS0yycrNfQ6uYtf3V+vswtlwIII0dbtc9hl90pDSnW96zv6MX
- d7sy1skQaKkrKxPRi8db/CTMdQ==
-X-Google-Smtp-Source: APXvYqz1GbEe2qolDZxYNYoUdvQZ5fsE8k6qQo1nlTIumvRmIvonzAOQdnQDSY6CuatAS38KNkwUlw==
-X-Received: by 2002:a1c:6c0a:: with SMTP id h10mr6205898wmc.40.1560922945130; 
- Tue, 18 Jun 2019 22:42:25 -0700 (PDT)
-Received: from dell ([2.27.35.243])
- by smtp.gmail.com with ESMTPSA id u18sm293652wmd.19.2019.06.18.22.42.24
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Tue, 18 Jun 2019 22:42:24 -0700 (PDT)
-Date: Wed, 19 Jun 2019 06:42:22 +0100
-From: Lee Jones <lee.jones@linaro.org>
-To: "Martin K. Petersen" <martin.petersen@oracle.com>
-Subject: Re: [PATCH 1/1] scsi: ufs-qcom: Add support for platforms booting ACPI
-Message-ID: <20190619054222.GE18371@dell>
-References: <20190617115454.3226-1-lee.jones@linaro.org>
- <yq1zhmeuvst.fsf@oracle.com>
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=RcMrhNV2rA8CLALBPr7bDQwyiJXyMuKwxFa8vNfUS7I=;
+ b=X5PxOy8D1SUrpLJept6aTJpYfhl/ATgn1F6FxeB1Td9dz1/gtwAJTkFzJzNdDzx0sy
+ SKPc8mr7MGvpqtU/6htzEd/GkBp1vf+8QgvtxhbcVgEqpAV6TUV1zeXamtuzXWkKN+Kj
+ zewc0LiwjFXEBNZSPeoPfZkLlCYOpJ1XifzdF6GYK81o8s6eNDTCt27W6YpRq4u3cHVM
+ cA+sBsFA74MJ4Kwu9w4w5aGNy4kXQn8LSwWwAuG84P+yBrKsc1j3lCI50fOlBURQ3zDK
+ BCMM7+PAeX2qpdhhLzHesK0cYb1/TVisqiGikqe1DHGUC241+lt1LFEVMCM5G86b60GH
+ ygig==
+X-Gm-Message-State: APjAAAWCqnKTkHR6Wvo/TgHlh/0IH+kIxQ+XnyGVtBrUnJrsfqPmp7WE
+ 4KJq/DMCqK98Tj9NejtYntUGMg==
+X-Google-Smtp-Source: APXvYqwQeIEFEJ28689Z3bGKlhY9VryoQA0Cf7rC3shUrKuMbmxfKOaXEntcBMTxDNNw8iuz5EjbVQ==
+X-Received: by 2002:a17:902:4a:: with SMTP id
+ 68mr118225810pla.235.1560922996994; 
+ Tue, 18 Jun 2019 22:43:16 -0700 (PDT)
+Received: from minitux (104-188-17-28.lightspeed.sndgca.sbcglobal.net.
+ [104.188.17.28])
+ by smtp.gmail.com with ESMTPSA id 25sm17432761pfp.76.2019.06.18.22.43.15
+ (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
+ Tue, 18 Jun 2019 22:43:16 -0700 (PDT)
+Date: Tue, 18 Jun 2019 22:43:14 -0700
+From: Bjorn Andersson <bjorn.andersson@linaro.org>
+To: Lee Jones <lee.jones@linaro.org>
+Subject: Re: [PATCH v4 3/6] soc: qcom: geni: Add support for ACPI
+Message-ID: <20190619054314.GJ4814@minitux>
+References: <20190612142654.9639-1-lee.jones@linaro.org>
+ <20190612142654.9639-4-lee.jones@linaro.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <yq1zhmeuvst.fsf@oracle.com>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+In-Reply-To: <20190612142654.9639-4-lee.jones@linaro.org>
+User-Agent: Mutt/1.12.0 (2019-05-25)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190618_224229_849622_E5B88D4F 
-X-CRM114-Status: GOOD (  10.77  )
+X-CRM114-CacheID: sfid-20190618_224318_065919_7273D863 
+X-CRM114-Status: GOOD (  16.16  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:343 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:644 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -99,28 +100,92 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-scsi@vger.kernel.org, avri.altman@wdc.com,
- linux-arm-msm@vger.kernel.org, jejb@linux.ibm.com, ard.biesheuvel@linaro.org,
- linux-kernel@vger.kernel.org, bjorn.andersson@linaro.org,
- david.brown@linaro.org, agross@kernel.org, alim.akhtar@samsung.com,
- jlhugo@gmail.com, pedrom.sousa@synopsys.com,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: balbi@kernel.org, wsa+renesas@sang-engineering.com,
+ gregkh@linuxfoundation.org, linux-gpio@vger.kernel.org,
+ ard.biesheuvel@linaro.org, agross@kernel.org, linux-kernel@vger.kernel.org,
+ david.brown@linaro.org, alokc@codeaurora.org, linux-i2c@vger.kernel.org,
+ linux-arm-msm@vger.kernel.org, jlhugo@gmail.com,
+ linux-arm-kernel@lists.infradead.org, linux-usb@vger.kernel.or
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-QXJkLCBNYXJ0aW4sCgpPbiBUdWUsIDE4IEp1biAyMDE5LCBNYXJ0aW4gSy4gUGV0ZXJzZW4gd3Jv
-dGU6Cj4gPiBOZXcgUXVhbGNvbW0gQUFyY2g2NCBiYXNlZCBsYXB0b3BzIGFyZSBub3cgYXZhaWxh
-YmxlIHdoaWNoIHVzZSBVRlMKPiA+IGFzIHRoZWlyIHByaW1hcnkgZGF0YSBzdG9yYWdlIG1lZGl1
-bS4gIFRoZXNlIGRldmljZXMgYXJlIHN1cHBsaWVkCj4gPiB3aXRoIEFDUEkgc3VwcG9ydCBvdXQg
-b2YgdGhlIGJveC4gIFRoaXMgcGF0Y2ggZW5zdXJlcyB0aGUgUXVhbGNvbW0KPiA+IFVGUyBkcml2
-ZXIgd2lsbCBiZSBib3VuZCB3aGVuIHRoZSAiUUNPTTI0QTUiIEgvVyBkZXZpY2UgaXMKPiA+IGFk
-dmVydGlzZWQgYXMgcHJlc2VudC4KPiAKPiBBcHBsaWVkIHRvIDUuMy9zY3NpLXF1ZXVlLiBUaGFu
-a3MhCgpJZGVhbC4gIFRoYW5rcyBmb3IgeW91ciBoZWxwLgoKLS0gCkxlZSBKb25lcyBb5p2O55C8
-5pavXQpMaW5hcm8gU2VydmljZXMgVGVjaG5pY2FsIExlYWQKTGluYXJvLm9yZyDilIIgT3BlbiBz
-b3VyY2Ugc29mdHdhcmUgZm9yIEFSTSBTb0NzCkZvbGxvdyBMaW5hcm86IEZhY2Vib29rIHwgVHdp
-dHRlciB8IEJsb2cKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMu
-aW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZv
-L2xpbnV4LWFybS1rZXJuZWwK
+On Wed 12 Jun 07:26 PDT 2019, Lee Jones wrote:
+
+> When booting with ACPI as the active set of configuration tables,
+> all; clocks, regulators, pin functions ect are expected to be at
+> their ideal values/levels/rates, thus the associated frameworks
+> are unavailable.  Ensure calls to these APIs are shielded when
+> ACPI is enabled.
+> 
+
+Reviewed-by: Bjorn Andersson <bjorn.andersson@linaro.org>
+
+> Signed-off-by: Lee Jones <lee.jones@linaro.org>
+> Acked-by: Ard Biesheuvel <ard.biesheuvel@linaro.org>
+> ---
+>  drivers/soc/qcom/qcom-geni-se.c | 21 +++++++++++++++------
+>  1 file changed, 15 insertions(+), 6 deletions(-)
+> 
+> diff --git a/drivers/soc/qcom/qcom-geni-se.c b/drivers/soc/qcom/qcom-geni-se.c
+> index 6b8ef01472e9..d5cf953b4337 100644
+> --- a/drivers/soc/qcom/qcom-geni-se.c
+> +++ b/drivers/soc/qcom/qcom-geni-se.c
+> @@ -1,6 +1,7 @@
+>  // SPDX-License-Identifier: GPL-2.0
+>  // Copyright (c) 2017-2018, The Linux Foundation. All rights reserved.
+>  
+> +#include <linux/acpi.h>
+>  #include <linux/clk.h>
+>  #include <linux/slab.h>
+>  #include <linux/dma-mapping.h>
+> @@ -450,6 +451,9 @@ int geni_se_resources_off(struct geni_se *se)
+>  {
+>  	int ret;
+>  
+> +	if (has_acpi_companion(se->dev))
+> +		return 0;
+> +
+>  	ret = pinctrl_pm_select_sleep_state(se->dev);
+>  	if (ret)
+>  		return ret;
+> @@ -487,6 +491,9 @@ int geni_se_resources_on(struct geni_se *se)
+>  {
+>  	int ret;
+>  
+> +	if (has_acpi_companion(se->dev))
+> +		return 0;
+> +
+>  	ret = geni_se_clks_on(se);
+>  	if (ret)
+>  		return ret;
+> @@ -724,12 +731,14 @@ static int geni_se_probe(struct platform_device *pdev)
+>  	if (IS_ERR(wrapper->base))
+>  		return PTR_ERR(wrapper->base);
+>  
+> -	wrapper->ahb_clks[0].id = "m-ahb";
+> -	wrapper->ahb_clks[1].id = "s-ahb";
+> -	ret = devm_clk_bulk_get(dev, NUM_AHB_CLKS, wrapper->ahb_clks);
+> -	if (ret) {
+> -		dev_err(dev, "Err getting AHB clks %d\n", ret);
+> -		return ret;
+> +	if (!has_acpi_companion(&pdev->dev)) {
+> +		wrapper->ahb_clks[0].id = "m-ahb";
+> +		wrapper->ahb_clks[1].id = "s-ahb";
+> +		ret = devm_clk_bulk_get(dev, NUM_AHB_CLKS, wrapper->ahb_clks);
+> +		if (ret) {
+> +			dev_err(dev, "Err getting AHB clks %d\n", ret);
+> +			return ret;
+> +		}
+>  	}
+>  
+>  	dev_set_drvdata(dev, wrapper);
+> -- 
+> 2.17.1
+> 
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
