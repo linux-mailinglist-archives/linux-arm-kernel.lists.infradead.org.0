@@ -2,50 +2,50 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6DE394B661
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Jun 2019 12:44:07 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E2C444B66E
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Jun 2019 12:46:24 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
 	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
 	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=rSRC0CgHL6eqGQzZ8BBnBmHvBPt9Uk+LQp1iA9FDBic=; b=elcpawXQsMbtTwe+DgkD6AimX
-	5UD8imbzXczIfJq+DDtTzcxE9lZoK0ZtikDMLq8/a+viSiBpxiKyYdgp6/Pe1CZtWrG6cKYIdqJjs
-	THOEnO8f7i+Z7HriyCom3dzukOfJdTnGoamQUyyP+si0NMNdgDxfwmpw1giblmAYZcugk4S8lR6Rc
-	tQfuDxSpYNBj8McjDkw9FUfK+NrI9fqqcO8nKkLuaBEgVSnVn5SVrs0Jz4Z4W5u1QT1IMQlOEPRtI
-	/a3v5Dq/uhoq1I6j0l37UXSy5eFi+skKIb397UKJNfDKn6wjMVk192ZphADwHYGPwt60wtVG+QVcH
-	V0JdKduhA==;
+	 bh=Z4lC3NFwqLKLmBzrCIH6Tj5HAd4X1K6eVGX6O6JV8IE=; b=Sjb9iJPmFWxyspT4ka8sPjzuN
+	cqt1y/kHIpKyxd6TQSgFilStBEDyYNHxO7tDDndHLS0FNZbfxd2RV7+vJf1eBBkTNRBM4MkMumyyW
+	h15b57O65WjytT07DgZFbKD0JLwcZYV6elMELs44gRgLdEO70GA5iXhkS1ksbH5rlXlGF5HzlZ11r
+	cryFFlUpMgsrCLDIIs7PnZVf3rWLtuz8pfA32I6hlWFsgnxlZGGMxCDESAIvUss3rC0HLQdtpMQCI
+	6ifZMD6GUj79v6gzUm1Z8nr7zmnT3hulWlRXYdwdbUezj4c6lxCR1MxY9pRPqbfY1arG3cK9f5Kzx
+	o1v47sw+w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hdY4T-0006C7-QT; Wed, 19 Jun 2019 10:44:05 +0000
+	id 1hdY6c-0007pV-E5; Wed, 19 Jun 2019 10:46:18 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hdY4K-0006Bn-I0
- for linux-arm-kernel@lists.infradead.org; Wed, 19 Jun 2019 10:43:57 +0000
+ id 1hdY6T-0007p4-Bs
+ for linux-arm-kernel@lists.infradead.org; Wed, 19 Jun 2019 10:46:10 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id E6B1A360;
- Wed, 19 Jun 2019 03:43:55 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id B3690C0A;
+ Wed, 19 Jun 2019 03:46:08 -0700 (PDT)
 Received: from [10.1.196.93] (en101.cambridge.arm.com [10.1.196.93])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id A51393F738;
- Wed, 19 Jun 2019 03:45:41 -0700 (PDT)
-Subject: Re: [PATCH v1 3/5] coresight: etm4x: use octal permissions for
- module_params
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 714213F738;
+ Wed, 19 Jun 2019 03:47:54 -0700 (PDT)
+Subject: Re: [PATCH v1 4/5] coresight: etm4x: improve clarity of
+ etm4_os_unlock comment
 To: andrew.murray@arm.com, mathieu.poirier@linaro.org,
  alexander.shishkin@linux.intel.com
 References: <20190618125433.9739-1-andrew.murray@arm.com>
- <20190618125433.9739-4-andrew.murray@arm.com>
+ <20190618125433.9739-5-andrew.murray@arm.com>
 From: Suzuki K Poulose <suzuki.poulose@arm.com>
-Message-ID: <df266416-99a9-b5f6-343f-9213f46c7665@arm.com>
-Date: Wed, 19 Jun 2019 11:43:54 +0100
+Message-ID: <c4064f38-9699-219e-706e-2fdfa8277a62@arm.com>
+Date: Wed, 19 Jun 2019 11:46:07 +0100
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
  Thunderbird/60.7.0
 MIME-Version: 1.0
-In-Reply-To: <20190618125433.9739-4-andrew.murray@arm.com>
+In-Reply-To: <20190618125433.9739-5-andrew.murray@arm.com>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190619_034356_643903_B6570B3E 
-X-CRM114-Status: GOOD (  15.20  )
+X-CRM114-CacheID: sfid-20190619_034609_452526_210405E1 
+X-CRM114-Status: GOOD (  17.58  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -73,8 +73,13 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 
 On 18/06/2019 13:54, Andrew Murray wrote:
-> Checkpatch indicates that octal permissions are preferred for
-> module parameters. Let's use octal permissions instead.
+> To improve clarity, let's update the comment for etm4_os_unlock
+> to use the name of the register as per the ETM architecture
+> specification.
+
+nit: It also "fixes" the comment. Writing any value doesn't unlock
+the trace unit. It must be "0".
+
 > 
 > Signed-off-by: Andrew Murray <andrew.murray@arm.com>
 > ---
@@ -82,15 +87,20 @@ On 18/06/2019 13:54, Andrew Murray wrote:
 >   1 file changed, 1 insertion(+), 1 deletion(-)
 > 
 > diff --git a/drivers/hwtracing/coresight/coresight-etm4x.c b/drivers/hwtracing/coresight/coresight-etm4x.c
-> index ae623415c431..885c4f2c691c 100644
+> index 885c4f2c691c..bda90d4cd62b 100644
 > --- a/drivers/hwtracing/coresight/coresight-etm4x.c
 > +++ b/drivers/hwtracing/coresight/coresight-etm4x.c
-> @@ -34,7 +34,7 @@
->   #include "coresight-etm-perf.h"
+> @@ -47,7 +47,7 @@ static enum cpuhp_state hp_online;
 >   
->   static int boot_enable;
-> -module_param_named(boot_enable, boot_enable, int, S_IRUGO);
-> +module_param_named(boot_enable, boot_enable, int, 0444);
+>   static void etm4_os_unlock(struct etmv4_drvdata *drvdata)
+>   {
+> -	/* Writing any value to ETMOSLAR unlocks the trace registers */
+> +	/* Writing 0 to TRCOSLAR unlocks the trace registers */
+>   	writel_relaxed(0x0, drvdata->base + TRCOSLAR);
+>   	drvdata->os_unlock = true;
+>   	isb();
+
+With the above :
 
 Reviewed-by: Suzuki K Poulose <suzuki.poulose@arm.com>
 
