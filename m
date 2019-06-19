@@ -2,75 +2,75 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 282BD4BA45
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Jun 2019 15:41:28 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C73724BA46
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Jun 2019 15:41:40 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=5XyetqVjyKLooK3CAiZ0ajLssjjDJLcL5IlRKyarCE4=; b=lZqAerdoTkWZR/
-	fP6qBvTp/SaqGhy4TTL+Ifqh9L01GNR6X3bRM3r+Ft5S9ORLmynDUGuHte99yJ8zkBbH4cFKWqHqV
-	0cwRy6GYY9jpR+LaZnyrlaZ5iUPngvq10rdC1yJ9ouuK7vpwJySpo/OAkqW9bvMMFESWLIoV+vcTj
-	K9C1/Q9coUp22sqX3kCPpiGBR4TXyqj5xNkWeDpCzYQaH/EVNWjtXxEAk51jlVDMYtTXkRDH3zDb9
-	KaHMznZE99bM3KLrApCS54EyQi30DNHsZdFjBV03bU9MeqVv68UPezAomkccFNwlB1vfdRvxAqMXA
-	+OO6kkpk/LZA87tjeSWQ==;
+	List-Owner; bh=ReHADCuoioxLCEgzj96cXUfKcgoWhEE0ndRPHBuF8sY=; b=ZN2AbZft9N7Pdh
+	2Vejj5RqorFxZa18HURYaD1IU67chiWOhGRNdc91Hxue6DtjPKIDB45XFH/oAwuPi+pm6n3H7Csg4
+	+DbgzPbimQr+4saSNLXSKpA4+cUhnNmOPHk43Y6KsmfhWmRn1PhbNUH4F2GCp8Ryv4j9Ihm53I/yB
+	PKgwvvvwhD+3VAZ1DEV68XThCFdTz+jIpKcTfT3Oyy0qpykVUCb/wRAwp67whSfaUY8G9nKQvdlzx
+	aCFFJTSnMCQqnJDCrJPCKyqD88oYZvOJqK0nXfdd2RR0CifmbIpBLGW1rLlgndsOyd3o50TbAPOYc
+	sSoTudyiYyIe6V0zWLkQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hdaq2-0001pG-Os; Wed, 19 Jun 2019 13:41:22 +0000
+	id 1hdaqI-0002G1-DJ; Wed, 19 Jun 2019 13:41:38 +0000
 Received: from mail-lj1-x244.google.com ([2a00:1450:4864:20::244])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hdanx-0007YZ-9h
- for linux-arm-kernel@lists.infradead.org; Wed, 19 Jun 2019 13:39:14 +0000
-Received: by mail-lj1-x244.google.com with SMTP id v18so3299359ljh.6
+ id 1hdany-0007aI-RT
+ for linux-arm-kernel@lists.infradead.org; Wed, 19 Jun 2019 13:39:16 +0000
+Received: by mail-lj1-x244.google.com with SMTP id r9so3311566ljg.5
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 19 Jun 2019 06:39:12 -0700 (PDT)
+ Wed, 19 Jun 2019 06:39:14 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=lixom-net.20150623.gappssmtp.com; s=20150623;
  h=date:from:to:cc:subject:message-id:references:mime-version
  :content-disposition:in-reply-to:user-agent;
- bh=Ucx3vBIr9v/KB3jQduDgpxTSJPXoyxluhkSPQYUaMPk=;
- b=CzBA7UNWneOhTeb3OKYUCJhJgZdwuoQTqvhbTiQVLI4lJdIQKi+uTQ9bQkjfCtgQum
- yO7nGDnc3RWR3P7wxoJW+XR1p9Rt+T7IhBr3jkeMAtknV3JrxRKh8VqSSHC1i5TZyCto
- IKpeAQ+RrklnJvOzfNn0ayKHXMsiH+EtmXPo2KLeRhGbtJSEk1rer3Pbh7dsTflTVAjv
- avnSzd55cdDF9lcMMuoQ3T6DcLwJDqWcLnhVVFjrJENgmut+Op1VBz3bm4DyEBsuiizc
- R2wB2GR/gczzTucTclUgW9LEWQhMfiL0rWxwrOQ1rpQDev9k+Regtxacu51ZxuPaU+M0
- X1NA==
+ bh=I8Nrwj4ElZXBcf5FVzV3Tn26XcGAm+m+0urFxFQjV6U=;
+ b=N0wVLI3jKk4wObXwz8cGz+NvM5k9FfBKEJGf2fNZDS9Juh5qYLFbZZ+7lPUw6YRIze
+ mbrYkXj5x7m0+q2W4L0/oJFqtsuETgjfmQbQDnszyH5WzhPOhj1RLZ3LPwS6TRyYD9EG
+ mEB3QJb+hALovKwsDjoHPja1+dZ0Yy/fa4AMgmZtOnSrByejKpa1i8hDlhIx8BGVN8BU
+ W6gtnle9d1Czq7W/jiNq3W3nIPle3u6x1GHTVksOFl1+SoC5e7Odg0KnuYXiGyR+WfAA
+ gleCahfGsWUuLOPJhxVzEyuUeoa/635yMuILmCB547Uf/zjeQEw0nlzH+6viwTZUqFgQ
+ 8eDg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to:user-agent;
- bh=Ucx3vBIr9v/KB3jQduDgpxTSJPXoyxluhkSPQYUaMPk=;
- b=QkkP7K/kKLejiRaXrUzpraUgJwcCTTJC31xU87IH8q/Ay8RZkSJml8P0pbgGK0Do0t
- MeNhCWhXXEMCAbkE5KdOQCfpkDRfd7Uo4edp/UZ7g2HsUeXpcA+7mwV8w2c1047PfS6E
- g4Pmz4it8cjNowKmSCvHH3svTVRg8gmvAp6t17p6bo5mLKYW7RryNZwjZ57sjUnOH1Wc
- Xu7Qtk6mfwK0OFqKKU5ukxbQJl/uxscXwBMhc43IXadD6bO/8NeuNH1sKM5pHQvO3kAv
- jQ0/6KDfR8nfsIISFAaaC4LmfojqzRRQSMHrO9qd6gar1pnCxPQN5lIYm//nQ8wPk5jv
- /JmA==
-X-Gm-Message-State: APjAAAXX9E3VskNEExpPDf1PXoA8xvD5pxdW75do8zwYFI2hi4aPD3vR
- l9MYXLSihTsjXsSKvv4/vVxCzA==
-X-Google-Smtp-Source: APXvYqzF6ftEwUF4UOu1qXVU1V1XOYc21DNc7IRBvfAs1yExyq55IblUzGnKvFPbDSQCpEgy9/eqKA==
-X-Received: by 2002:a2e:8ed2:: with SMTP id e18mr20245561ljl.235.1560951551146; 
- Wed, 19 Jun 2019 06:39:11 -0700 (PDT)
+ bh=I8Nrwj4ElZXBcf5FVzV3Tn26XcGAm+m+0urFxFQjV6U=;
+ b=eOz5qbeQniy2nzlx2Cb5QtU/LOGAfyEBggiAH9nWIJVAvQ/Aadt/BgzNdGfuQ735xt
+ 4s9UpqUIJbOTjvEKoXm+bV2nZJjb/R6C8Srjqt/x0FOWuHXrYhdg3PslbJY/w+hHNwsj
+ A5JdRT00jd5DJ5dP8R/M9SthL3ds6Yw3YzIQgVmzxweileWeMB3GOREME6Syh8ZfjVTo
+ FakAK2MGbzFl2AntGBQKsQqvVxFC7fvZNJzEiqSunO3tJjKJwRlfVwwOwfx4sr7fDxGw
+ U2b7aRggh3sTLUdeaCNdE1hWW02OCE3EHxiMMYGsZfSafB88uVVOkqMguBcpBbK/TCPl
+ W7tQ==
+X-Gm-Message-State: APjAAAULY5hgli6d/uFErErNYNnub/Tv8zHOHFoG4yPF80tf9VDFMTV7
+ PnV3k2T4bfMcB5SrJevisPC4+MZ4VoQVzg==
+X-Google-Smtp-Source: APXvYqweauG+YK6x1oUHhM2R/NzXwxeZlWtJjJkH915o9vNzhAi8CToRGyd13k1Te0NB02ORTjn97w==
+X-Received: by 2002:a2e:9ad1:: with SMTP id p17mr35460317ljj.34.1560951553415; 
+ Wed, 19 Jun 2019 06:39:13 -0700 (PDT)
 Received: from localhost (h85-30-9-151.cust.a3fiber.se. [85.30.9.151])
- by smtp.gmail.com with ESMTPSA id 2sm624474lji.94.2019.06.19.06.39.09
+ by smtp.gmail.com with ESMTPSA id b6sm3020618lfa.54.2019.06.19.06.39.11
  (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Wed, 19 Jun 2019 06:39:09 -0700 (PDT)
-Date: Wed, 19 Jun 2019 06:25:09 -0700
+ Wed, 19 Jun 2019 06:39:12 -0700 (PDT)
+Date: Wed, 19 Jun 2019 06:25:43 -0700
 From: Olof Johansson <olof@lixom.net>
-To: Florian Fainelli <f.fainelli@gmail.com>
-Subject: Re: [GIT PULL 2/6] Broadcom devicetree-arm64 changes for 5.3
-Message-ID: <20190619132509.ax3ze24jgsypicgv@localhost>
-References: <20190612025028.13118-1-f.fainelli@gmail.com>
- <20190612025028.13118-2-f.fainelli@gmail.com>
+To: Tony Lindgren <tony@atomide.com>
+Subject: Re: [GIT PULL 2/4] dts changes for omap variants for v5.3
+Message-ID: <20190619132543.ojwfslo7rbmznsog@localhost>
+References: <pull-1560399818-512977@atomide.com>
+ <pull-1560399818-512977@atomide.com-2>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190612025028.13118-2-f.fainelli@gmail.com>
+In-Reply-To: <pull-1560399818-512977@atomide.com-2>
 User-Agent: NeoMutt/20170113 (1.7.2)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190619_063913_366822_B73A6923 
-X-CRM114-Status: GOOD (  12.79  )
+X-CRM114-CacheID: sfid-20190619_063915_037100_3C482F90 
+X-CRM114-Status: GOOD (  13.16  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -95,46 +95,41 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: arnd@arndb.de, Scott Branden <scott.branden@broadcom.com>,
- Rayagonda Kokatanur <rayagonda.kokatanur@broadcom.com>, khilman@kernel.org,
- Pramod Kumar <pramod.kumar@broadcom.com>, arm@kernel.org,
- Srinath Mannam <srinath.mannam@broadcom.com>,
- bcm-kernel-feedback-list@broadcom.com, Ray Jui <ray.jui@broadcom.com>,
+Cc: linux-omap@vger.kernel.org, arm@kernel.org,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Jun 11, 2019 at 07:50:24PM -0700, Florian Fainelli wrote:
+On Thu, Jun 13, 2019 at 12:10:51AM -0700, Tony Lindgren wrote:
+> From: "Tony Lindgren" <tony@atomide.com>
+> 
 > The following changes since commit a188339ca5a396acc588e5851ed7e19f66b0ebd9:
 > 
 >   Linux 5.2-rc1 (2019-05-19 15:47:09 -0700)
 > 
 > are available in the Git repository at:
 > 
->   https://github.com/Broadcom/stblinux.git tags/arm-soc/for-5.3/devicetree-arm64
+>   git://git.kernel.org/pub/scm/linux/kernel/git/tmlind/linux-omap tags/omap-for-v5.3/dt-signed
 > 
-> for you to fetch changes up to f8526c2d99ca87ccbc0a3da00555d6d08e25d058:
+> for you to fetch changes up to 8f62581f820d32eec9698e477ddff21ebfbe0541:
 > 
->   arm64: dts: Stingray: Add NIC i2c device node (2019-05-20 09:31:35 -0700)
+>   Merge branch 'baltos' into omap-for-v5.3/dt (2019-06-12 00:57:27 -0700)
 > 
 > ----------------------------------------------------------------
-> This pull request contains Broadcom ARM64-based SoCs Device Tree changes
-> for 5.3, please pull the following:
+> dts changes for omap variants for v5.3
 > 
-> - Pramod adds the Device Tree nodes for thermal support on Stingray
+> This series of changes improves support for few boards:
 > 
-> - Srinath adds the Device Tree nodes for both XHCI (host) and BDC
->   (device) modes
+> - configure another lcd type for logicpd torpedo devkit
 > 
-> - Rayagonda adds the Device Tree node for slave I2C operation when
->   Stingray operates as a SmartNIC
+> - a series of updates for am335x phytec boards
+> 
+> - configure mmc card detect pin for am335x-baltos
 
-Olof merges this branch to arm/dt. Olof thanks Florian.
+Merged, thanks!
 
-
-:-)
 
 -Olof
 
