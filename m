@@ -2,77 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F220F4BA35
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Jun 2019 15:39:47 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5E3CC4BA3E
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Jun 2019 15:41:03 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=4VpIhk+y50pYyMHPpRu9zyx/dpInQWRat3bNdvaHU14=; b=mtp7/PKYd1I+F0
-	3zjPQgGqpKZcHRa8N7IUJj2ECb9yTNhqqMgrgPb6A0QztvRxLzEc20aZQ/NnLZgtDGgO1iuRciRzk
-	llyql+YFzeMfAi+BHJetwTycCkK744e9Aykhmq4E12WYUmOKvmoqt5wYLAw3ccGa+iz+q7uK3I+Ui
-	agZ1wOgwj8DArc+cLRc9HS7HwT4JVy0nfJ6jI/TomAowq7C5t/P2krACCbzJLKgcTn0MI4ebh/9WV
-	QzRfJWWAlMzmoyG86REOBN/lywr6Vj+UaBPtMcoEUObxa7CgLFM3kIBVYlaSs/cHC0pPUJOoxPNH/
-	9lcmLClxmG7Q/wspE8JA==;
+	List-Owner; bh=f9whu9+325T2Oh62Clpqv2ICek4oU3I/Q8pkZWMG1gY=; b=R/V+9hzhUnUEl/
+	SWo0qr3ThpC7559o6fTCxRXwrqMzS0I2qlG/S/aoDZkgNyKuBVVMtQs+9gJC4OAIxuqEUnbq4r+Jb
+	jmus/RwuFBYG7LtyJoowipGK2XBl4icvCkPORgjes36Fu7WbDppp2lQuDcaeGRs5o4cd6P7raePwf
+	0MO93n2dWlJTB5utae7EcYioAiDyUbQ/ncM6VejhFPHY7DKvlhwkWm2NQXmNere6UkKO+Oj1mY6o0
+	fw+BEeTdcju5aVbdH5g0fxCQQutedzslLUfNAsUydCzQPiFjOhx+xQ19HX9vNSjkA3GQMlHfn9tlM
+	veZPFQsMxqjNA0b/sSFw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hdaoQ-0007h1-Ew; Wed, 19 Jun 2019 13:39:42 +0000
+	id 1hdapg-0001cy-Vg; Wed, 19 Jun 2019 13:41:00 +0000
 Received: from mail-lf1-x143.google.com ([2a00:1450:4864:20::143])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hdano-0007Rp-JN
- for linux-arm-kernel@lists.infradead.org; Wed, 19 Jun 2019 13:39:05 +0000
-Received: by mail-lf1-x143.google.com with SMTP id r15so12143736lfm.11
+ id 1hdanq-0007SS-6x
+ for linux-arm-kernel@lists.infradead.org; Wed, 19 Jun 2019 13:39:07 +0000
+Received: by mail-lf1-x143.google.com with SMTP id a25so12160456lfg.2
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 19 Jun 2019 06:39:03 -0700 (PDT)
+ Wed, 19 Jun 2019 06:39:06 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=lixom-net.20150623.gappssmtp.com; s=20150623;
  h=date:from:to:cc:subject:message-id:references:mime-version
  :content-disposition:in-reply-to:user-agent;
- bh=QKggU93Ov3OGvJTHnvBvpp3+c/GovGceSumOJbG5Kag=;
- b=g90t1pfGMsBwZkO7WMEchWQcZ+/SFokkE8pEWUuLCb4C3gYFVxXCamqCaOHb0oU86f
- hKn1mrowaUHFrQhDAjQgFXxbg41JHSzq1WOEiWnerS2ucghntb6bKh1mc/92iTFACbbV
- ir2tYsqSxKSCptkKdrbEiwPCf9vRVMh1WzcZoJzreE9lvPIWSArEMNbxvXH55EY0eHMJ
- VCWVsBapJ5f1S4WGzeGFZvGIZYVs77NHAMs9895hD1WvrARdnQgxMzX8XwB7QkNTXyNw
- TOcsiylUCckRO1mfm2IvdhpoopFTotV8sg8FNECsAi3P4PrzuPz1rGptQlH9L7wHUg96
- QsHg==
+ bh=0VIXks4JVJi6NW7o9HNww47+bDvO8ASarITv0RvaBUo=;
+ b=TqIC1pHo984jnhUkBBpDE0frE4b7fL4HoMZfMOx6EY0sGxeCVv0XkMOMEFBvyjOgmQ
+ JHVJ9qYUVIZmg76cGOylZeRwyVluGLhfQiLWSM0tF/Kzq0GhtEsWFpjrsAqv2nj5kWa4
+ 1mtTk7zYKgzyt1hptU5230z6b5TZIVaqRuAbPeVnL1rEtW1W5Tclzj0SHw8QxQyrsGuY
+ 1D7ox+dUdrqpErS+26V31uEc+jk97Bywe+Wo7/szLRJwuSUF2OJiskKzTxy2ME4QO484
+ TQ36ueN6d7/Zz6G1J0tF3dMAF8UJaow8GIwibn1c3Hh2Nr3toVeaDHJwpJFX5xZm003n
+ a9Rg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to:user-agent;
- bh=QKggU93Ov3OGvJTHnvBvpp3+c/GovGceSumOJbG5Kag=;
- b=TEs2Ykpt80sGHJpHI9Vs7DHd0qhV6r0VpRFVARp6n94ADYb+MmiCqC0vdbNUTLrdql
- msIPnWJd/9QffoJbszLJlj6aBY4qfJBqOawAAECSSjoe+tXZedEeIkF+HKnRcQs1e2fE
- BIxCsSw+xpO6IRdH48+NWFtv2t9zKNHWARzO1o17WCjT58LJ2xyb53v06o5r6PLrA/6l
- IuQYtI8u336VnoWaKIdBSJg+reYsz1uYfR5XNIgITCHPKBnjgijWCIWPoS1iZ31o5LBX
- zroi46VhpPsfigT8dAZygQwuSEx+XKSTGFBIuAOiLmB+1tru5kvZPnhcdIPfz6TGyuu4
- V82w==
-X-Gm-Message-State: APjAAAWu6yStGcKawQNkEhW2aLr3oYkc4rVLAepH5+7W8jFsxOjUqsEE
- kqHZUZVPd5V6p3rD4mxTkKE2EA==
-X-Google-Smtp-Source: APXvYqzy1/85AoVZe5aXzHxGKPGMI3YKh1i1xTNcGjAlPkxkPNjoWmNiF/UkKqbk9mR2Jw4m3oq8iA==
-X-Received: by 2002:a19:9156:: with SMTP id y22mr16577964lfj.43.1560951542029; 
- Wed, 19 Jun 2019 06:39:02 -0700 (PDT)
+ bh=0VIXks4JVJi6NW7o9HNww47+bDvO8ASarITv0RvaBUo=;
+ b=VG197X6h9mwLQ4ZwSMhBDHrlktCTA/oW79MG18hVXNLPc0nJ80cPUHPDj1GqN0Wxha
+ 5eNLHc8qnDElccs4ae4oCVQmNjhb5MxKpKbMjZxAFmbh4tQKRZE6uqSg69kASEk9EnH+
+ w/bKMaQ8N+WTEA4E7GejmK6VGeg2AXvnulIRsLZBytoj8e0Pba3mrkgjQXqggvbTRFW8
+ BJf3rdTZZBZRCi/04wvWoLs5BEPQMW37bzKz0FOPx64eAhLKWPSU+7LMp5qRo4B7RqIK
+ yH3fOQ4qrXhE7/UIABqipafgVF+2d3Q+x/dgnQT7gvKjBbaWRPvWPfCu9l0V87FfORXr
+ lA6Q==
+X-Gm-Message-State: APjAAAXpxGvh5ev81c9LtUrL/1sXFJvgLJoegzlJCZUSfgYVOEJUJoHv
+ jogy1sfSFQ/1Ysk+1EWCzJ3L6Q==
+X-Google-Smtp-Source: APXvYqzr/XXLfjI7uNapd/di0jPGKmIFm17xwjLoTuYr6O6ArJTj+H64hYp1vfV66Fz4Kz20uLWHkQ==
+X-Received: by 2002:a19:4a49:: with SMTP id x70mr24014323lfa.151.1560951544755; 
+ Wed, 19 Jun 2019 06:39:04 -0700 (PDT)
 Received: from localhost (h85-30-9-151.cust.a3fiber.se. [85.30.9.151])
- by smtp.gmail.com with ESMTPSA id c15sm3082664lja.79.2019.06.19.06.39.00
+ by smtp.gmail.com with ESMTPSA id q13sm2665763lfk.65.2019.06.19.06.39.02
  (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Wed, 19 Jun 2019 06:39:00 -0700 (PDT)
-Date: Wed, 19 Jun 2019 06:16:59 -0700
+ Wed, 19 Jun 2019 06:39:03 -0700 (PDT)
+Date: Wed, 19 Jun 2019 06:17:44 -0700
 From: Olof Johansson <olof@lixom.net>
-To: Baolin Wang <baolin.wang@linaro.org>
-Subject: Re: [PATCH v2 9/9] arm64: dts: sprd: Add Spreadtrum SD host
- controller support
-Message-ID: <20190619131659.vjw5kgepe6pz5inz@localhost>
-References: <cover.1559635435.git.baolin.wang@linaro.org>
- <3ca273e341f2f5f66b121d411428c60afd412586.1559635435.git.baolin.wang@linaro.org>
+To: Andy Gross <agross@kernel.org>
+Subject: Re: [PATCH] arm64: qcom: qcs404: Add reset-cells to GCC node
+Message-ID: <20190619131744.qk56iqqd4cxttdxp@localhost>
+References: <1560053972-32273-1-git-send-email-agross@kernel.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <3ca273e341f2f5f66b121d411428c60afd412586.1559635435.git.baolin.wang@linaro.org>
+In-Reply-To: <1560053972-32273-1-git-send-email-agross@kernel.org>
 User-Agent: NeoMutt/20170113 (1.7.2)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190619_063904_633765_FA12D889 
-X-CRM114-Status: UNSURE (   8.79  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190619_063906_284114_619FD28A 
+X-CRM114-Status: GOOD (  11.08  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -97,22 +94,32 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, ulf.hansson@linaro.org,
- arm@kernel.org, arnd@arndb.de, zhang.lyra@gmail.com, linux-mmc@vger.kernel.org,
- adrian.hunter@intel.com, linux-kernel@vger.kernel.org, robh+dt@kernel.org,
- orsonzhai@gmail.com, linux-arm-kernel@lists.infradead.org
+Cc: linux-arm-msm@vger.kernel.org, arm@kernel.org,
+ linux-arm-kernel@lists.infradead.org,
+ Bjorn Andersson <bjorn.andersson@linaro.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Jun 04, 2019 at 04:14:29PM +0800, Baolin Wang wrote:
-> Add one Spreadtrum SD host controller to support eMMC card for Spreadtrum
-> SC9860 platform.
+On Sat, Jun 08, 2019 at 11:19:32PM -0500, Andy Gross wrote:
+> This patch adds a reset-cells property to the gcc controller on the QCS404.
+> Without this in place, we get warnings like the following if nodes reference
+> a gcc reset:
 > 
-> Signed-off-by: Baolin Wang <baolin.wang@linaro.org>
+> arch/arm64/boot/dts/qcom/qcs404.dtsi:261.38-310.5: Warning (resets_property):
+> /soc@0/remoteproc@b00000: Missing property '#reset-cells' in node
+> /soc@0/clock-controller@1800000 or bad phandle (referred from resets[0])
+>   also defined at arch/arm64/boot/dts/qcom/qcs404-evb.dtsi:82.18-84.3
+>   DTC     arch/arm64/boot/dts/qcom/qcs404-evb-4000.dtb
+> arch/arm64/boot/dts/qcom/qcs404.dtsi:261.38-310.5: Warning (resets_property):
+> /soc@0/remoteproc@b00000: Missing property '#reset-cells' in node
+> /soc@0/clock-controller@1800000 or bad phandle (referred from resets[0])
+>   also defined at arch/arm64/boot/dts/qcom/qcs404-evb.dtsi:82.18-84.3
+> 
+> Signed-off-by: Andy Gross <agross@kernel.org>
 
-Applied, thanks!
+Applied to arm/dt. Thanks!
 
 
 -Olof
