@@ -2,80 +2,88 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E20F64BB21
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Jun 2019 16:18:40 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 656E14BC7C
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Jun 2019 17:08:45 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=JlzZFg7yviJ3F+kjV/JnK56XTYR0Z6SpnOfBd334Q1Q=; b=iCM/yrDZYbz2SF
-	gjdQ8+SGhYS/3WotTMzD1cAvt5thPSqKMPXVggXE1dYCP8BU/GOnrEfgDSQf4mD+NTokGmZGJ3tsg
-	oWAhvkXW+TixsnzRY6AL0cbrpf3dIcHQRKnXNiRc7HT8EpkBpy1S2Gx3LPb9xYcFJF6naH0ggPJuw
-	ogGkvKVorgqcRtaQ9RlLC6NLedFeipHldg8hsvNzvr1iTU77PwNpTv6JZKgLd0OHc9+IHbll8chXm
-	Cm8a4pS+87dn3hdflhk3KJ0CamYivZg9vluwqenSvq/TOssZoLyQsqOKRjFb7XeDhuCPNOax3oNP5
-	NIKDklRt80UwhGYPRdkg==;
+	List-Owner; bh=D/RWuWnBVNM2Dslmwc1qx+jHKKrwnVWNhpm16avgJo0=; b=uT5jv4a8xia5Uf
+	7RsKwFXmLvZ2EpdMx4TT3zdNV2wa9LmTOUpz0rcgrCqqYIxycS7DzsjMgT0q/QW1VDxAK2lLuzOr1
+	snarYEobZ7dRNzHjfOc3GnE+m0COlO0YZBWCwVKcgiwLA1X3ha3jEBa+B7RuV7jyeULw/BgPjZcX+
+	pdqBgdyI4yHnB9kgkv6Ahys3TV2LGNr/bpEOG4KFDp7u+quYlZFwrsYk/5la6ncqFdsuPYcMKctNi
+	AzRVjDl5soQ3NX2O7i8xy5Y3h52mboukF+Tv6Xc19nfZgiIkLUNicVIeNW3OiODt7qu7YL9rkIEIz
+	9OvCMdrgBYVlGbIt8A+A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hdbQ7-00044y-0D; Wed, 19 Jun 2019 14:18:39 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1hdcCa-0003yN-0V; Wed, 19 Jun 2019 15:08:44 +0000
+Received: from mail-lf1-x142.google.com ([2a00:1450:4864:20::142])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hdbPZ-0003lu-U0
- for linux-arm-kernel@lists.infradead.org; Wed, 19 Jun 2019 14:18:08 +0000
-Received: from mail-qt1-f170.google.com (mail-qt1-f170.google.com
- [209.85.160.170])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 514DA21882
+ id 1hdcA6-0002Mg-QG
+ for linux-arm-kernel@lists.infradead.org; Wed, 19 Jun 2019 15:06:12 +0000
+Received: by mail-lf1-x142.google.com with SMTP id y17so12433658lfe.0
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 19 Jun 2019 14:18:05 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1560953885;
- bh=cR/H6G5KIVj2Tl/rlffCQ7FS2/cGJNh3qbq5IZ8GGd4=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=IBG26sgsHejava7dMMDKid2azDT1wXKb5y0e/Tb2WqRj/64CY4K3+VD8Cg3mJp3CH
- Jr8HP0mlnWjNb2LWK2jeYt7TL/mwbaqBQOWYLqqI3cbAjcnIrcSng4TXf/yAhJwaK9
- uGkmdqEDwjxszz8qp+wv2io8n85Hhiz8nrR+bWYY=
-Received: by mail-qt1-f170.google.com with SMTP id p15so20082433qtl.3
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 19 Jun 2019 07:18:05 -0700 (PDT)
-X-Gm-Message-State: APjAAAW15GuAvYSeUI4WKXVfwUE/odM0cl4RWN0qvz0UWMvYSiME/Nen
- F9Z6CE+knc3oCN1Xyk0sOZIzTqSYq0kJXa3xHw==
-X-Google-Smtp-Source: APXvYqyhdR1ApTNT0vTQ+yPM+vLDBBgTJuYVuRc+czCo8t7Z44TCthCHxu3q6kJsso6WcEaPhLDuWuqve5Eszjay4Ug=
-X-Received: by 2002:a0c:b627:: with SMTP id f39mr34384022qve.72.1560953884410; 
- Wed, 19 Jun 2019 07:18:04 -0700 (PDT)
+ Wed, 19 Jun 2019 08:06:10 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=lixom-net.20150623.gappssmtp.com; s=20150623;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=bi/NrYG+8sOnuxk9q70QkcnFR1MkzWvqPkJLzNB9EUY=;
+ b=bkynCYDZirwIrahFMCwUlYTHjTAyuCDr5SeJY6dLXr4s5kETTWeNYIkUC2JCIHgjXd
+ hTR18j+Vq+TjLDHN7RAjmoT95KMKsHGv/g8kEKouOuVTPWFCu2xAf4r+t5rcB6V60pV1
+ q8YKqP98KHr/LFnX5XuAHmo8AIWk2hjZ0vo2H9c8Ai9BGHZu9beLZ/GVBo+fHz0BLe+O
+ Jii8meli6T2ciJV+5hhEQywiCj6ngKyAP4ojML+sNjaeH/Sd63oTvcuprq+L/RcsHJ7p
+ 70p07j37cX2UdHPgjgt9NhpdOZ1CD58Npafqa0WiNQJLstZDbDpo+GJRtm4W5R6hd2KS
+ o6/g==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=bi/NrYG+8sOnuxk9q70QkcnFR1MkzWvqPkJLzNB9EUY=;
+ b=B/HyAyhH48zEBeXXlVdjPle/L9Ik4zDVSXxFSKknG1Pq8BO1ZNcbCiUizeJQZPrbB9
+ LSX7ye1RZTQGot9q2trZYOrWhqwD4KPziMqVx5GS2I7A7QZ1PRQTvNapMwhoMjHyVbP2
+ ewD9qPbMhXsBVpQiq2tH0eGGvynyD2jHDubSd77Cw0dUOy7Bh12JxlrsVnzd03epyajb
+ zeCos2vQ92OWJfesVJXlarRRN5KHquk37ciHH700IMVzRXw5XeSNBhcWzGYe+1xql/qd
+ wQsMpbvz8tEM2Lf3/3MkWRdJ7CM8v7kHgi5SWRMG+2KSiIO1b6OAf6HAKlb1ebxAnYuP
+ qY1Q==
+X-Gm-Message-State: APjAAAWeKEUuAXJ5ebmBIRj54Zr5XOYd19WbKrOjD8RjanP4V2/xr4im
+ Q2V7l+7CXc1963RVjOhVzrBPOg==
+X-Google-Smtp-Source: APXvYqyiBsf9vdQVTu7mhmXMLSLNX4OELuXE3oFCKOSyKLuJ/4ZLE4f8StUo2YggWubm0wcbIy7+TQ==
+X-Received: by 2002:ac2:5981:: with SMTP id w1mr41997022lfn.48.1560956768945; 
+ Wed, 19 Jun 2019 08:06:08 -0700 (PDT)
+Received: from localhost (h85-30-9-151.cust.a3fiber.se. [85.30.9.151])
+ by smtp.gmail.com with ESMTPSA id f16sm3047807lfc.81.2019.06.19.08.06.06
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Wed, 19 Jun 2019 08:06:06 -0700 (PDT)
+Date: Wed, 19 Jun 2019 07:18:22 -0700
+From: Olof Johansson <olof@lixom.net>
+To: Neil Armstrong <narmstrong@baylibre.com>
+Subject: Re: [PATCH 2/2] ARM: multi_v7_defconfig: enable Lima driver
+Message-ID: <20190619141822.vwcfyhatlsa5x4cn@localhost>
+References: <20190606085645.31642-1-narmstrong@baylibre.com>
+ <20190606085645.31642-2-narmstrong@baylibre.com>
 MIME-Version: 1.0
-References: <27aeb33cf5b896900d5d11bd6957eda268014f0c.1560937626.git-series.maxime.ripard@bootlin.com>
- <89b834af795fa6ad5ba1f04a5a61c54204bf4f96.1560937626.git-series.maxime.ripard@bootlin.com>
-In-Reply-To: <89b834af795fa6ad5ba1f04a5a61c54204bf4f96.1560937626.git-series.maxime.ripard@bootlin.com>
-From: Rob Herring <robh+dt@kernel.org>
-Date: Wed, 19 Jun 2019 08:17:52 -0600
-X-Gmail-Original-Message-ID: <CAL_JsqKeGrXEECmP8Gec5DdLTikyx0xS+kaopRXNQ7RUEJbx4g@mail.gmail.com>
-Message-ID: <CAL_JsqKeGrXEECmP8Gec5DdLTikyx0xS+kaopRXNQ7RUEJbx4g@mail.gmail.com>
-Subject: Re: [PATCH v3 03/16] dt-bindings: net: Add a YAML schemas for the
- generic MDIO options
-To: Maxime Ripard <maxime.ripard@bootlin.com>
+Content-Disposition: inline
+In-Reply-To: <20190606085645.31642-2-narmstrong@baylibre.com>
+User-Agent: NeoMutt/20170113 (1.7.2)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190619_071806_016837_BB05AE87 
-X-CRM114-Status: GOOD (  23.19  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190619_080610_932056_1A92FA84 
+X-CRM114-Status: GOOD (  12.17  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:142 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -87,148 +95,27 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Florian Fainelli <f.fainelli@gmail.com>,
- Alexandre Torgue <alexandre.torgue@st.com>, Andrew Lunn <andrew@lunn.ch>,
- =?UTF-8?Q?Antoine_T=C3=A9nart?= <antoine.tenart@bootlin.com>,
- netdev <netdev@vger.kernel.org>, linux-stm32@st-md-mailman.stormreply.com,
- Chen-Yu Tsai <wens@csie.org>, Maxime Coquelin <mcoquelin.stm32@gmail.com>,
- Maxime Chevallier <maxime.chevallier@bootlin.com>,
- Frank Rowand <frowand.list@gmail.com>,
- "David S . Miller" <davem@davemloft.net>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>, Heiner Kallweit <hkallweit1@gmail.com>
+Cc: linux-arm-kernel@lists.infradead.org, arm@kernel.org,
+ linux-kernel@vger.kernel.org, arnd@arndb.de
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Jun 19, 2019 at 3:47 AM Maxime Ripard <maxime.ripard@bootlin.com> wrote:
->
-> The MDIO buses have a number of available device tree properties that can
-> be used in their device tree node. Add a YAML schemas for those.
->
-> Suggested-by: Andrew Lunn <andrew@lunn.ch>
-> Signed-off-by: Maxime Ripard <maxime.ripard@bootlin.com>
->
+On Thu, Jun 06, 2019 at 10:56:45AM +0200, Neil Armstrong wrote:
+> A bunch of armv7 boards can now use the Lima driver, let's enable it
+> in defconfig, it will be useful to have it enabled for KernelCI
+> boot and runtime testing.
+> 
+> Signed-off-by: Neil Armstrong <narmstrong@baylibre.com>
 > ---
->
-> Changes from v2:
->   - New patch
-> ---
->  Documentation/devicetree/bindings/net/mdio.txt  | 38 +-------------
->  Documentation/devicetree/bindings/net/mdio.yaml | 51 ++++++++++++++++++-
->  2 files changed, 52 insertions(+), 37 deletions(-)
->  create mode 100644 Documentation/devicetree/bindings/net/mdio.yaml
->
-> diff --git a/Documentation/devicetree/bindings/net/mdio.txt b/Documentation/devicetree/bindings/net/mdio.txt
-> index e3e1603f256c..cf8a0105488e 100644
-> --- a/Documentation/devicetree/bindings/net/mdio.txt
-> +++ b/Documentation/devicetree/bindings/net/mdio.txt
-> @@ -1,37 +1 @@
-> -Common MDIO bus properties.
-> -
-> -These are generic properties that can apply to any MDIO bus.
-> -
-> -Optional properties:
-> -- reset-gpios: One GPIO that control the RESET lines of all PHYs on that MDIO
-> -  bus.
-> -- reset-delay-us: RESET pulse width in microseconds.
-> -
-> -A list of child nodes, one per device on the bus is expected. These
-> -should follow the generic phy.txt, or a device specific binding document.
-> -
-> -The 'reset-delay-us' indicates the RESET signal pulse width in microseconds and
-> -applies to all PHY devices. It must therefore be appropriately determined based
-> -on all PHY requirements (maximum value of all per-PHY RESET pulse widths).
-> -
-> -Example :
-> -This example shows these optional properties, plus other properties
-> -required for the TI Davinci MDIO driver.
-> -
-> -       davinci_mdio: ethernet@5c030000 {
-> -               compatible = "ti,davinci_mdio";
-> -               reg = <0x5c030000 0x1000>;
-> -               #address-cells = <1>;
-> -               #size-cells = <0>;
-> -
-> -               reset-gpios = <&gpio2 5 GPIO_ACTIVE_LOW>;
-> -               reset-delay-us = <2>;
-> -
-> -               ethphy0: ethernet-phy@1 {
-> -                       reg = <1>;
-> -               };
-> -
-> -               ethphy1: ethernet-phy@3 {
-> -                       reg = <3>;
-> -               };
-> -       };
-> +This file has moved to mdio.yaml.
-> diff --git a/Documentation/devicetree/bindings/net/mdio.yaml b/Documentation/devicetree/bindings/net/mdio.yaml
-> new file mode 100644
-> index 000000000000..8f4f9d0a2882
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/net/mdio.yaml
-> @@ -0,0 +1,51 @@
-> +# SPDX-License-Identifier: GPL-2.0
-> +%YAML 1.2
-> +---
-> +$id: http://devicetree.org/schemas/net/mdio.yaml#
-> +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> +
-> +title: MDIO Bus Generic Binding
-> +
-> +maintainers:
-> +  - Andrew Lunn <andrew@lunn.ch>
-> +  - Florian Fainelli <f.fainelli@gmail.com>
-> +  - Heiner Kallweit <hkallweit1@gmail.com>
-> +
-> +description:
-> +  These are generic properties that can apply to any MDIO bus. Any
-> +  MDIO bus must have a list of child nodes, one per device on the
-> +  bus. These should follow the generic ethernet-phy.yaml document, or
-> +  a device specific binding document.
-> +
-> +properties:
-> +  reset-gpios:
-> +    maxItems: 1
-> +    description:
-> +      The phandle and specifier for the GPIO that controls the RESET
-> +      lines of all PHYs on that MDIO bus.
-> +
-> +  reset-delay-us:
-> +    description:
-> +      RESET pulse width in microseconds. It applies to all PHY devices
-> +      and must therefore be appropriately determined based on all PHY
-> +      requirements (maximum value of all per-PHY RESET pulse widths).
-> +
-> +examples:
-> +  - |
-> +    davinci_mdio: ethernet@5c030000 {
+>  arch/arm/configs/multi_v7_defconfig | 1 +
+>  1 file changed, 1 insertion(+)
 
-Shouldn't this be mdio@... ?
+Applied, thanks!
 
-> +        compatible = "ti,davinci_mdio";
-> +        reg = <0x5c030000 0x1000>;
-> +        #address-cells = <1>;
-> +        #size-cells = <0>;
-> +
-> +        reset-gpios = <&gpio2 5 1>;
-> +        reset-delay-us = <2>;
-> +
-> +        ethphy0: ethernet-phy@1 {
 
-Would be good to have some unit-address checks. Could be a follow-up though.
-
-> +            reg = <1>;
-> +        };
-> +
-> +        ethphy1: ethernet-phy@3 {
-> +            reg = <3>;
-> +        };
-> +    };
-> --
-> git-series 0.9.1
+-Olof
 
 _______________________________________________
 linux-arm-kernel mailing list
