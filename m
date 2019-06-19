@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C0BAC4BFF5
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Jun 2019 19:42:10 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B5B2E4BFFF
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Jun 2019 19:42:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,71 +11,72 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=zH8jAP4zQxOhcDzFtK8dJU45o5BvNx49jZPJSsQ5ky8=; b=f3I0HvuqDlbFyCiF4lJKQrzNVf
-	z7QW2niK2pFCgxOHYarJ6X/vIEL5dO/z5kwTwyPqoKHT8ggcEDukrQ80cucvWndbt+LYbOJAa3gQK
-	6XMMKt40ai9d8A2Ms4UJ5mZEL2nIDL0gZZTcbD4nkM6TzQn9GY/FyvEIhQijBaLDX1cfoBBrLsuln
-	4OMdh2Lto6bbSKS06RF8p9CLsBMDM/i6oyyIuUGqjRt4OqW8lXEbWKU26YFrsXwJr8eh4dTRQuZ6N
-	6fmmnEdGdivE0FQT+kRcXFsm62Drv21N1lVLNjU9o1XrjJpocuCMyKR7zcxvdMjKN/tXvDM8I0qJz
-	eBVPqE6g==;
+	bh=I+3U2VXt2rPWTADHakjQk1gBLJXS7I4+qt2u7Xw1jm4=; b=R2N39/9I7SijaNBl+v35EGC4mf
+	IPuMKh5ZA3v+xJ9/n/FusRuUmPl7TnEedWVwMtnAFis1wNn8tOkgc2O1QnnGgyKpbbPVAxdKUphKw
+	uhUicFvFY31cTzEr5PgUt4Bg9F0b5X4mNFS+SUZeLOn0Mud83xsDSJxu9qedGKa2xMhzYQuzLtf6I
+	v7NMPFAAC5wnvG/+nJBhz1UPpqE0s7L3fafXxSrxqlwRZfsZQHTkjDTNEqpPpg3rpQPUVnvtCt4oj
+	Ly45PDt3XTD1fn1HCYw0cg92WXPYcvK7vWGoSI5Yhhv9A457rvKJL2x7+ltCw0npIbOBzSYvN1ITC
+	ynvgDo9Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hdeb0-0005Z8-II; Wed, 19 Jun 2019 17:42:06 +0000
-Received: from mail-pl1-x643.google.com ([2607:f8b0:4864:20::643])
+	id 1hdebJ-0005pU-1f; Wed, 19 Jun 2019 17:42:25 +0000
+Received: from mail-pl1-x641.google.com ([2607:f8b0:4864:20::641])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hdePh-00009w-1V
+ id 1hdePh-0000AW-L6
  for linux-arm-kernel@lists.infradead.org; Wed, 19 Jun 2019 17:30:35 +0000
-Received: by mail-pl1-x643.google.com with SMTP id c14so106144plo.0
+Received: by mail-pl1-x641.google.com with SMTP id ay6so85444plb.9
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 19 Jun 2019 10:30:24 -0700 (PDT)
+ Wed, 19 Jun 2019 10:30:25 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=f6b6EF22LZj9j5GmFlrz6dxNen9pTHUz+onNfHBegq0=;
- b=ElIPXGxgNK90oGAeKnp1F+vnvFzR095a4S4NoiXEDks3600RRaqzGjWkpRRrfEvbmj
- ha4UARUqJ78/py9st2e1/lEXJR6LBVpIDEHKNcd/YqWKrokRUyX6cd+5D4LE0iy6lM1h
- w9mQGzBDqZCUGDCmwFMVXNZX56BneGXvy64Kiuvwwj4Fa87ibJU63D1S7yp6XERQg8Ay
- L316uCN5SYHweOAaH0WgQkVCsVMNnNpTd+qnXaLXBiJ1GSxbedSJOHmhlEvqg98dLI+W
- SFrLrauH30K+fzW4zgxkd7vPn5i6NdDiJwJ2eFBNIrb7qGQGWSDXdWX+es9W3l4S5wfF
- TgPg==
+ bh=TV+NMprqoFfwSyp0QoUYpBDwrINgLFtHUcekXEvVDhU=;
+ b=sBpo5CFqXRXLDhCv8y62pUR5V7GZgSVA03X0GZk67zTB3ho1ducCBLwhTvly1KHNmh
+ i/YwqSfZgrBOl1sGaeY1mjoOuWmA9tLRkSUFLcHTr6hwA/UV+ifx2dW9u/4WQKHWVD57
+ 3iOp0gDsitnJQpoAMuvZDN1JvIhAa1jdeFu1Ml5UdCAFolGgOaaoD5JHVS9gEly+ipZm
+ mG0KRE3KC73UFd9aHq42rZU0STVGjdvvZcmQtu/Qzz2HlYDBkhDB2hZlYuYgxi86U50W
+ yBHen+fjXp1WSGCiuGLjpojnsGgZ49HR/TscBoVQXnSaGjFseAiRqSTmtol2k2sCH3pT
+ ez5Q==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=f6b6EF22LZj9j5GmFlrz6dxNen9pTHUz+onNfHBegq0=;
- b=QisoOx0UpGkUy21A+ndv3z+kWK0ZlW6VoNrjmKQxrXkGP9K9VrW9HiLzjeY4IVw4sb
- +I7mcrkhcTgfD4iYD8MaaeyHvzNdskt78VQZFkwXmRONlxbxpcidb5uY8FvaBn9tTy8j
- ++NwzIuKU1jmQ907Jo2PlxGw1ET3kTLf50Rng4aJK7xpwEc2Yjsc5oic6Fd2hIVyjTG/
- tmTZGHPgwyFx3dqpqWrt3xnIt6gWuI0nLXOYIhWtU/o0cFOHru4NHfNlfbDJaQQmqXZM
- uU/YohefduvpU35WJSUoQVHvTW8tXlzu+YObvvnok6+TuEv/OPJ0qVmtojuLv117C3qS
- +50g==
-X-Gm-Message-State: APjAAAW5EFZxAqk3ENbouga7woSXWZiv2xyPnGFthl8SPjMecCzWZu8F
- +L4DWiRpUg/3jRhZ9hympX9j4Q==
-X-Google-Smtp-Source: APXvYqxXjzug4NAMBjqidGI7fWaxp5Wyur1jEIFE4NwUBFSZN7xr06lmY2dRJ0Dra5jCHSVKuVBhOw==
-X-Received: by 2002:a17:902:bb97:: with SMTP id
- m23mr54159476pls.141.1560965424299; 
- Wed, 19 Jun 2019 10:30:24 -0700 (PDT)
+ bh=TV+NMprqoFfwSyp0QoUYpBDwrINgLFtHUcekXEvVDhU=;
+ b=QVfhdml6aK1K+zWhvgnqC0QHSwgzvPZgziUgtj+Q+V1+k5qWuchouYlxyHOTB5K4mn
+ LhGAsgS++V4SfFtcpF4ZN3Hf3e6UTi//5YJh+2kWMB+LB/sAW+RcPZj3pgsrZVHTP5tL
+ mx7N5vTYL+aJIKFrT1gydGn407z+ORlnsVQzBmOwEReOnwlRusaZkXTf30eybatOt7BQ
+ axvV2QgQoX+uJSLWJjT70EtlFJcXB6ROvbnN1rSdIzSbnlncyKg84RTeTS5dwCTlGUB+
+ Bfe1UuQZd6I3V3UE0Sg6pk57yUdgH6DjA/D2LwXp6u/i2a8eFSIi7SnCn7+iLJkqbnBB
+ LaTQ==
+X-Gm-Message-State: APjAAAUqIaw9qb1f3HmzFJ4Q7CPmXlDU3K3XmlWpcyIpGi4j6CvoE1u4
+ 8CTXusCwJ2Zh/MRSUIShuXtwEA==
+X-Google-Smtp-Source: APXvYqyfMoUypJOJ2YTeNWcgddITRAmy7V80Ob6ua2a/Ytaw+9PXpgs1DsivzdeAO+15b11X851YBQ==
+X-Received: by 2002:a17:902:70cb:: with SMTP id
+ l11mr3381579plt.151.1560965425069; 
+ Wed, 19 Jun 2019 10:30:25 -0700 (PDT)
 Received: from xps15.cg.shawcable.net (S0106002369de4dac.cg.shawcable.net.
  [68.147.8.254])
- by smtp.gmail.com with ESMTPSA id g2sm31348406pfb.95.2019.06.19.10.30.23
+ by smtp.gmail.com with ESMTPSA id g2sm31348406pfb.95.2019.06.19.10.30.24
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Wed, 19 Jun 2019 10:30:23 -0700 (PDT)
+ Wed, 19 Jun 2019 10:30:24 -0700 (PDT)
 From: Mathieu Poirier <mathieu.poirier@linaro.org>
 To: gregkh@linuxfoundation.org
-Subject: [PATCH 35/45] coresight: acpi: Support for platform devices
-Date: Wed, 19 Jun 2019 11:29:39 -0600
-Message-Id: <20190619172949.4522-36-mathieu.poirier@linaro.org>
+Subject: [PATCH 36/45] coresight: Add dummy definition for
+ of_coresight_get_cpu()
+Date: Wed, 19 Jun 2019 11:29:40 -0600
+Message-Id: <20190619172949.4522-37-mathieu.poirier@linaro.org>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20190619172949.4522-1-mathieu.poirier@linaro.org>
 References: <20190619172949.4522-1-mathieu.poirier@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190619_103025_196722_0FE1D6CD 
-X-CRM114-Status: GOOD (  13.26  )
+X-CRM114-CacheID: sfid-20190619_103025_783212_389B39C1 
+X-CRM114-Status: GOOD (  10.75  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:643 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:641 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -106,48 +107,32 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Suzuki K Poulose <suzuki.poulose@arm.com>
 
-Add support for platform devices which do not appear on the AMBA
-bus.
+For !CONFIG_OF case, add a dummy definition for the of_coresight_get_cpu().
 
-Cc: "Rafael J. Wysocki" <rjw@rjwysocki.net>
+Reported-by: Mike Leach <mike.leach@linaro.org>
+Cc: Mathieu Poirier <mathieu.poirier@linaro.org>
 Signed-off-by: Suzuki K Poulose <suzuki.poulose@arm.com>
 Signed-off-by: Mathieu Poirier <mathieu.poirier@linaro.org>
 ---
- drivers/hwtracing/coresight/coresight-replicator.c | 10 +++++++++-
- 1 file changed, 9 insertions(+), 1 deletion(-)
+ drivers/hwtracing/coresight/coresight-platform.c | 5 +++++
+ 1 file changed, 5 insertions(+)
 
-diff --git a/drivers/hwtracing/coresight/coresight-replicator.c b/drivers/hwtracing/coresight/coresight-replicator.c
-index c0e42253dfe7..542952759941 100644
---- a/drivers/hwtracing/coresight/coresight-replicator.c
-+++ b/drivers/hwtracing/coresight/coresight-replicator.c
-@@ -5,6 +5,7 @@
-  * Description: CoreSight Replicator driver
-  */
- 
-+#include <linux/acpi.h>
- #include <linux/amba/bus.h>
- #include <linux/kernel.h>
- #include <linux/device.h>
-@@ -296,11 +297,18 @@ static const struct of_device_id static_replicator_match[] = {
- 	{}
- };
- 
-+#ifdef CONFIG_ACPI
-+static const struct acpi_device_id static_replicator_acpi_ids[] = {
-+	{"ARMHC985", 0}, /* ARM CoreSight Static Replicator */
-+};
-+#endif
+diff --git a/drivers/hwtracing/coresight/coresight-platform.c b/drivers/hwtracing/coresight/coresight-platform.c
+index 6fef8732eea5..3c5ceda8db24 100644
+--- a/drivers/hwtracing/coresight/coresight-platform.c
++++ b/drivers/hwtracing/coresight/coresight-platform.c
+@@ -307,6 +307,11 @@ of_get_coresight_platform_data(struct device *dev,
+ {
+ 	return -ENOENT;
+ }
 +
- static struct platform_driver static_replicator_driver = {
- 	.probe          = static_replicator_probe,
- 	.driver         = {
- 		.name   = "coresight-static-replicator",
--		.of_match_table = static_replicator_match,
-+		.of_match_table = of_match_ptr(static_replicator_match),
-+		.acpi_match_table = ACPI_PTR(static_replicator_acpi_ids),
- 		.pm	= &replicator_dev_pm_ops,
- 		.suppress_bind_attrs = true,
- 	},
++static inline int of_coresight_get_cpu(struct device *dev)
++{
++	return 0;
++}
+ #endif
+ 
+ #ifdef CONFIG_ACPI
 -- 
 2.17.1
 
