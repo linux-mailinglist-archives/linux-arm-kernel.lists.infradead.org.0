@@ -2,75 +2,75 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A6DF74BC88
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Jun 2019 17:09:24 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 91EA84BC89
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Jun 2019 17:09:40 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1e5oGCIz0xJLDFntXqrJT/SJB8obw9UZ/sbo4jnyQ98=; b=MIUNg1qIIoGlUb
-	QU+subTtRQMkRSBirRdVVAdUu7C7Iu7TgfR2bzK0CI1y9CHupFIcud1RHoFZtupaDLbW7/JZsfmU7
-	E2qFuv+NDnZxvBq/Eluyqz6j5AuLv20ncE1KFCuLk+v2S+Mp1mdkUu4qAAAZqtv+LtNNIJ7mayhSE
-	0w0euD97NgYzNaMYC/MHhmQzp6sYT3fvh6VXNSl+AR35sBtQIMbE6JhyPPynV3f3q3zUQCl6zTI0/
-	tqPG1iiLd2Fx6ZPsY65yLPDo6N3ecsVI7CbvuRNVEYKMMxP3fBvRyMPZ5m5XbgJ6w6ppYIqdruTHX
-	XNAGh9nS21XMBgU8qrhg==;
+	List-Owner; bh=EBZ7Xef+6fnXxWizsl3qWe80waEldGWD8dSOYELlHqE=; b=oWZoYl9cTW3qp+
+	XqpphRS6YLuxzLIFPiNrfqpkFnzFaBw1mylF1Lnj6GJ0hPIT5D5UirQ6g3SDlzQhRyLGU9zxlIvj2
+	71GUdkm9CsFEd/DDC+5hLmOD7vSq13kso2d5VuyBpxuCyH8hQDUuRSYEtlbwDc4uhLlt0NYhi7aFj
+	mut74YUg4nT946NNxYYkV6n5NSxU2/KcqSA7NW690/D8gMxmHAKDDkBOK5sEflelP/VfVxTtUE4t2
+	lRwiBCPPz44yGi2Sef/jVoGTjon65LFpzDNSe/P7CWMoY7imBJyJhczrYm4YDuAxnfjPiXJ0pWbDI
+	ZGazQ6rTpqDXpK9YAFQw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hdcDC-0004VS-V4; Wed, 19 Jun 2019 15:09:23 +0000
+	id 1hdcDQ-0004jx-92; Wed, 19 Jun 2019 15:09:36 +0000
 Received: from mail-lj1-x243.google.com ([2a00:1450:4864:20::243])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hdcAB-0002Po-EJ
- for linux-arm-kernel@lists.infradead.org; Wed, 19 Jun 2019 15:06:16 +0000
-Received: by mail-lj1-x243.google.com with SMTP id m23so3573215lje.12
+ id 1hdcAD-0002QX-F6
+ for linux-arm-kernel@lists.infradead.org; Wed, 19 Jun 2019 15:06:18 +0000
+Received: by mail-lj1-x243.google.com with SMTP id v24so3572400ljg.13
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 19 Jun 2019 08:06:15 -0700 (PDT)
+ Wed, 19 Jun 2019 08:06:17 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=lixom-net.20150623.gappssmtp.com; s=20150623;
  h=date:from:to:cc:subject:message-id:references:mime-version
  :content-disposition:in-reply-to:user-agent;
- bh=mRYZZKvve9T8Ondn1fgPi8xQcQFqvebsWsdA8NQmTx4=;
- b=yhk7xbaV9wsjRha6EI2eJmCT5s3WE2GLRnWo4CQJkRD+bH4DvdCEiWGytHdUnhVN5H
- wCYF8E+PqgXeDDBEO+KiulutL3NPlpoCAa9IO/4mEyjhpK14wkOYPi9i5l2LErK3RIIM
- puxWc0m2piaenHjFeaRFI1VEdX1ANmMyJfDdmhB9Dx95rXJlIJYg+WzdFfpUrgUC/UVw
- KcOf6t2jW4x9sKKQmZROjif99Avw4mxxyM0Dxt36Sb7HEQnD/fpWP5dbgYjiEcrEKPbQ
- oZCiEYyyWIS+vaJ/lGBtvWGgjlS0unywWIkdN4cTZGUTbMRLRQBUU5/V4BFGxp05Gv5V
- WjiQ==
+ bh=Bx5BQWbx/bpdzU5SEuxKkQ+ScxkdKO+3jLa8dwWvM3M=;
+ b=SUmuCsYI3Df2tk88DVDc18eEJMMuEowDVlJASjdBp9L8GwbG6F44H/BcsmFvWtmM/+
+ DpOw4e1vJ44GbCkF6dHs6wD9Bw7UtYeBQiA4khOKoSN6lwSL4lN4iepALg3Yl32dNi6v
+ aJ2jyKhh5M/4iDm9L9GdEtaFb96pWT5YBPcRC/20FTVLiKS1GqJ60Qn0/ox5zyiENffz
+ SqWoHY51F6nreHyrmkotdER6nMx7EH2TdeC7ycuWKyCw+ujpsPy8hEpnAmHqyvM5F9Y7
+ RsNcao1xM4cQQpzmVJFgDIdrrx21c83/pSTMcxS2V8xcqSnIkjB2P3dv7acyPZjvB5RI
+ uRzA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to:user-agent;
- bh=mRYZZKvve9T8Ondn1fgPi8xQcQFqvebsWsdA8NQmTx4=;
- b=qmq5MxnoAzcpuUFiUVH3oe1su68C9t8R8/M2EERbk8acbwjmLIXGQ3/Lftxx1oN0Go
- kcbCDXHDPekYZSaUE+oevJR7f2XZ0wixo6CghCLfY9PCODr1stC5UEmYNWeZFlkbjCD7
- gCLLtMtI5HcMCF4zQx+68CWljBx179ic/rCuuX3Gs7eupKVo4hxQJsawXZmpeaju1KPb
- vJxg7Gg5e6jwp4rag1CEm90673pFi22TXU3K7Zv5JqfKYIjSN0kd40vTJyES8GApn9UX
- oqo9oCc5X6+4mMO9bec6myV2Fkjcse/TAXAyTyG5GVFCeeVu36sUl+HntBirKaPwroxf
- gTkg==
-X-Gm-Message-State: APjAAAVBZXbm8Ij0+XExIOpnCXMMn1+bT67cMiGCabe7QkC2hS8+lIbg
- 6jme69weZfi2OVKmERgUyfIpXw==
-X-Google-Smtp-Source: APXvYqzRbHEWYjCG4eoB84GdeGOwMj3B4U2sIA472AAJy3Ej9NPxrpDedSXLqIATW/LWQtUjPf1DlA==
-X-Received: by 2002:a2e:3a01:: with SMTP id h1mr1463637lja.132.1560956774118; 
- Wed, 19 Jun 2019 08:06:14 -0700 (PDT)
+ bh=Bx5BQWbx/bpdzU5SEuxKkQ+ScxkdKO+3jLa8dwWvM3M=;
+ b=pspdorj7LlgBJs8DbDjJqnNMtzaPgSEPCzIPpp5o2A07rXNTn15HdMs3jUpMD80Akg
+ cMdpa99KbDIzI7xKxSvldlnGlinpIVZn7PChdmqZHkhb+xfLxWFkoS8Lkl3+yUO/NlgB
+ lpcK4506jCFRSKX3cIfk3TgIRjJAHQJQLr5mw2sVPHbUKJ9Gkn8w03tkX95Xp0I3NNU1
+ SwTVkQJAfwVcA4VUoGfkDKIIr8p/593fuR2orTZKbRCYEGkqpmD7SY5tEbIrjf8OaF3M
+ 2cznhsmvsECHYenWJNx/71rIU9mHlJdlCrHqXQo3EpP5Do3YDlyqlqE3whYh0QvMQ6HX
+ IkSA==
+X-Gm-Message-State: APjAAAUrZL7GvphlSvqz7qLo2cBzHVZo8t+tt5wCHN5/16oPvFimrJVU
+ 5iGklG13FG3YZMMvlN379TCnHQ==
+X-Google-Smtp-Source: APXvYqz7lEJqatEKVhpxLxBVzzbAZtobDIPBrxPQeOaeOz3Ms3j+e8Kle39rp/aOWbg1wWbK7KZc/A==
+X-Received: by 2002:a2e:658e:: with SMTP id e14mr36149687ljf.147.1560956776142; 
+ Wed, 19 Jun 2019 08:06:16 -0700 (PDT)
 Received: from localhost (h85-30-9-151.cust.a3fiber.se. [85.30.9.151])
- by smtp.gmail.com with ESMTPSA id d15sm2673324lfq.76.2019.06.19.08.06.12
+ by smtp.gmail.com with ESMTPSA id p29sm3132568ljp.87.2019.06.19.08.06.14
  (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Wed, 19 Jun 2019 08:06:12 -0700 (PDT)
-Date: Wed, 19 Jun 2019 07:22:06 -0700
+ Wed, 19 Jun 2019 08:06:15 -0700 (PDT)
+Date: Wed, 19 Jun 2019 07:22:22 -0700
 From: Olof Johansson <olof@lixom.net>
 To: Marcin Juszkiewicz <marcin.juszkiewicz@linaro.org>
-Subject: Re: [PATCH 2/3] arm64 defconfig: enable MPT3 SAS and BNX2X drivers
-Message-ID: <20190619142206.3bszkryiuhs7j7sa@localhost>
+Subject: Re: [PATCH 3/3] arm64 defconfig: enable Mellanox cards
+Message-ID: <20190619142222.lvj2dd7oxzfc3m6b@localhost>
 References: <20190617160411.24329-1-marcin.juszkiewicz@linaro.org>
- <20190617160411.24329-2-marcin.juszkiewicz@linaro.org>
+ <20190617160411.24329-3-marcin.juszkiewicz@linaro.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190617160411.24329-2-marcin.juszkiewicz@linaro.org>
+In-Reply-To: <20190617160411.24329-3-marcin.juszkiewicz@linaro.org>
 User-Agent: NeoMutt/20170113 (1.7.2)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190619_080615_548062_38AFAF50 
-X-CRM114-Status: UNSURE (   8.39  )
+X-CRM114-CacheID: sfid-20190619_080617_531533_5598AE4D 
+X-CRM114-Status: UNSURE (   8.59  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -102,16 +102,13 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Jun 17, 2019 at 06:04:10PM +0200, Marcin Juszkiewicz wrote:
-> ThunderX2 server requires both to provide storage and network.
-> 
-> 05:00.0 Ethernet controller [0200]: Broadcom Limited BCM57840 NetXtreme II 10 Gigabit Ethernet [14e4:16a1] (rev 11)
-> 05:00.1 Ethernet controller [0200]: Broadcom Limited BCM57840 NetXtreme II 10 Gigabit Ethernet [14e4:16a1] (rev 11)
-> 8d:00.0 Serial Attached SCSI controller [0107]: LSI Logic / Symbios Logic SAS3224 PCI-Express Fusion-MPT SAS-3 [1000:00c4] (rev 01)
+On Mon, Jun 17, 2019 at 06:04:11PM +0200, Marcin Juszkiewicz wrote:
+> Mellanox cards are present in several AArch64 servers.
 > 
 > Signed-off-by: Marcin Juszkiewicz <marcin.juszkiewicz@linaro.org>
 
-Applied, thanks.
+
+Applied, thanks!
 
 
 -Olof
