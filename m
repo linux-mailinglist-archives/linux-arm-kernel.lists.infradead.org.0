@@ -2,92 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 03FE64BC4C
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Jun 2019 17:04:31 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E86314BC4D
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Jun 2019 17:04:52 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=4fxI8eOnWTh5sEoeTzocSXwrDx9+4tA8Ittvyb0VSGk=; b=hLVWE+vE+9gSZ8
-	TPLxfCRJD7K5GEBPT5PMKYCQgei9eTsLgQzPaMoiDulbJw5Vj8Uy3tv/bSVkDtF2t3jiuBqkPS37M
-	06b8x9dDGj1zsbcSRmzQ437CIQQ+OodL93/4rDWCHUxIctMHEH2m/EA6JEjaup5KI8R2g5CGRutay
-	PJrgdDRiL9kCGy2y9qSl2VjLlyEp5kGQmfVXwaQf8UQLxuvS3E41/EcbhcgweQUmfsy1ru/EAToY3
-	qqV3FGq6VKcsHcDTjvwIkcpztcTy2eV0AaMi+rpM8ARekEjHFjFWscJPGjZUIUztTLSBAqhWAWUT2
-	/IlvmAoHTRwutCjcToOg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=plQf2pgY4CMkOB3ua/sC8OeFpULzu8QcwSt2F904Gs4=; b=FlEbKiaR39LIA1
+	reWmCJ0YoG5ZweTrzNIfdTIXHmjZuUjhCTh1Ub4VHgTb5TBsJzO6ZBl5U7CXqYdHdDyQZE9Dc0y3I
+	GeSWA7MlQQClJvFw8qLEK+kpyW5BqsQ2bBY12KmMAY2rltRVGMbcuen1Xq+KJV775LXAJOXC1Q4SZ
+	oGSTD1gdTNLEznpGPu7oMkpRudKvvf60BHL/R5pDsNQLQo19oJsFJR1EbmfcSASXQevhFDeIX0ZNc
+	X9Q3k374igkCL/XfiED1gvIdyyblqgNNWZ8Tho2nKJiTUXDbVFSG9yeGUlyOYEXpHbsrEBysePwAe
+	x5PzEIi2MpjxSA6MDuoQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hdc8P-0008RX-Jw; Wed, 19 Jun 2019 15:04:25 +0000
-Received: from out2-smtp.messagingengine.com ([66.111.4.26])
+	id 1hdc8o-0000Jj-Vv; Wed, 19 Jun 2019 15:04:51 +0000
+Received: from mx07-00178001.pphosted.com ([62.209.51.94])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hdc8F-0008QV-2e
- for linux-arm-kernel@lists.infradead.org; Wed, 19 Jun 2019 15:04:16 +0000
-Received: from compute6.internal (compute6.nyi.internal [10.202.2.46])
- by mailout.nyi.internal (Postfix) with ESMTP id BCB6B21FDF;
- Wed, 19 Jun 2019 11:04:09 -0400 (EDT)
-Received: from mailfrontend2 ([10.202.2.163])
- by compute6.internal (MEProxy); Wed, 19 Jun 2019 11:04:09 -0400
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kroah.com; h=
- date:from:to:cc:subject:message-id:references:mime-version
- :content-type:in-reply-to; s=fm1; bh=bByssVIB1EYoVBDtjxIgtcfTwUo
- glLh/NnUiLiEfkX0=; b=oAFnIERq3L6VDbDxgRBBWjQ3xY8j90qhh8vJHUTGZLB
- CDK1/u6VgadXtYMWVQPAYl3Quw/McWO8vaTywD5voBB4W8OWaAo0H7BxugSmHeJV
- RDvBpDn/SctaSD/bTizzqKdmjh37q1c7WJVUYZc1ylKPWkOQEcGUQxbbdgXgB5kF
- 77rjm6vwX6TfTsX51Y3o+j8R446XRr7/jJpZ+MvXr5DE+6LDnqOE3vCd7uncKb8B
- UH7oFOdRCsolueXNhohrcxqJvDZCSufOHt9zPJwSH4UPu3XJhU0dojb1GvUExo4S
- +pSFxGcEIUdYxAJNKx5W01lQbMZdk7mb0jdHbzJKMMg==
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
- messagingengine.com; h=cc:content-type:date:from:in-reply-to
- :message-id:mime-version:references:subject:to:x-me-proxy
- :x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm3; bh=bByssV
- IB1EYoVBDtjxIgtcfTwUoglLh/NnUiLiEfkX0=; b=KhgbnI6HfVWgDdDXLGSBZu
- 97dInziUuc/uOJvVd4riwn0K1f+viDCRp2UVytIwUbJhYRdv5z+QkO5VC2f4GXYq
- vhGnKUsASfQ3bJuKMi6jN2/Wnad+VViEIpC7HH58eezowtjLjYJa69ovdUa/Frvq
- RY2KriZeJiiiY/wB9qXkA7JTzUk3MiHWb2sMAY912YrjaXFDXvjcWA8niiYcfLDh
- bZSsLuJZIdxZfsY6ra8cL9tz0e3VYUsm1z87IJYnj5xB/r6v6d0SB4yeSis7wxUO
- rXf2bjH43FJbrEHHYpqSKWJX4iRrVZ7Cc3xqL4+3D+puoIUP9hBavWxpdLOwiwKA
- ==
-X-ME-Sender: <xms:6U4KXXAPRUrSpmonf1WRmD5QzscjnUFx_TWVM9csytjNyxeYVTvcSA>
-X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduvddrtddvgdehkecutefuodetggdotefrodftvf
- curfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfghnecu
- uegrihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmdenuc
- fjughrpeffhffvuffkfhggtggujggfsehttdertddtredvnecuhfhrohhmpefirhgvghcu
- mffjuceoghhrvghgsehkrhhorghhrdgtohhmqeenucfkphepkeefrdekiedrkeelrddutd
- ejnecurfgrrhgrmhepmhgrihhlfhhrohhmpehgrhgvgheskhhrohgrhhdrtghomhenucev
- lhhushhtvghrufhiiigvpedt
-X-ME-Proxy: <xmx:6U4KXb7Nnl0Ge13Rmi0udpXmPHguTqGX_flvhiLe9SKd07EGtpn-Hw>
- <xmx:6U4KXapZrks3Q3sdLyQXcrwqCJI7hAF28FnXPW-1UfmDav6hWdRY7g>
- <xmx:6U4KXe9pZOoKj8fQ9ccN7c5oHzMFR6HfCHcoFe5Qpfi5V44Gbp-KIA>
- <xmx:6U4KXU5Z0zlnbhiGMIx1it26ccBG8_Dqki0dDwlmNt-4-9YFHV0G4g>
-Received: from localhost (83-86-89-107.cable.dynamic.v4.ziggo.nl
- [83.86.89.107])
- by mail.messagingengine.com (Postfix) with ESMTPA id E37AE380085;
- Wed, 19 Jun 2019 11:04:08 -0400 (EDT)
-Date: Wed, 19 Jun 2019 17:04:06 +0200
-From: Greg KH <greg@kroah.com>
-To: Pintu Agarwal <pintu.ping@gmail.com>
-Subject: Re: [IMX] [DRM]: suspend/resume support
-Message-ID: <20190619150406.GB19346@kroah.com>
-References: <CAOuPNLiBA9VjEoG_D2y2O5mKiqsDNW1VZXOk1eWXpGY+h86acg@mail.gmail.com>
- <CAOMZO5BcLaS0gXUPi6oN6vjqagS5yf+rHh+EUjmi-Wi1OX7vqQ@mail.gmail.com>
- <CAOuPNLgEEfDca4aeT1+q8GfUfGzbJ4x6JwGf-ROB1pgpXUBHSw@mail.gmail.com>
- <CAOMZO5BY8JcLNMCRCC_d=emy8HR6kE=dB9f5qfZ=ci_c+Jak0w@mail.gmail.com>
- <CAOuPNLjYhkP_kL+q-ZpiDZMMpOHrU88BFBc2agtnCzXt8dihOg@mail.gmail.com>
+ id 1hdc8a-0000Ha-HZ
+ for linux-arm-kernel@lists.infradead.org; Wed, 19 Jun 2019 15:04:38 +0000
+Received: from pps.filterd (m0046037.ppops.net [127.0.0.1])
+ by mx07-00178001.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id
+ x5JF1doV024433; Wed, 19 Jun 2019 17:04:30 +0200
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
+ h=subject : to : references
+ : cc : from : message-id : date : mime-version : in-reply-to :
+ content-type : content-transfer-encoding; s=STMicroelectronics;
+ bh=pmo1Bv+ES9tIvk0vtUKa8hC+z8yY1GRb510dQ0/+90Q=;
+ b=IOlJAYb/oqA9f2QUTJJmwqoMPmAYrRr/f32Fu04/AM4HGOA8va0zctT+WjGZRLaSLcJA
+ XKXJXaHQMZLhCwvJkjIYeR6cpMuATUB1G0WCoY+ZiNXXGtpUyAEUPAITiKKpBb2G2iqf
+ u5l/Ub/ySXFkSxxdgrI7y1esXOgCgBIKLEhPOxUYr42LluLOY7HoZ9/cBDnuimJj3hJc
+ n0XowaEZ1sFiHHRlLj9YZ9AEJyl7JLCnvZ0gYYK6VK+OWIIwZ7LbzvFOfXgOBg/wBC6J
+ BrI6ziGDfLc0FWrDgTQQZaGeCo0kx3773cgl6Dzx3wkDEljZ+j6+3y33fB3zBNe822qK mw== 
+Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
+ by mx07-00178001.pphosted.com with ESMTP id 2t781a4jbv-1
+ (version=TLSv1 cipher=ECDHE-RSA-AES256-SHA bits=256 verify=NOT);
+ Wed, 19 Jun 2019 17:04:30 +0200
+Received: from zeta.dmz-eu.st.com (zeta.dmz-eu.st.com [164.129.230.9])
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 3BD9834;
+ Wed, 19 Jun 2019 15:04:30 +0000 (GMT)
+Received: from Webmail-eu.st.com (sfhdag5node3.st.com [10.75.127.15])
+ by zeta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 1AB4E2AED;
+ Wed, 19 Jun 2019 15:04:30 +0000 (GMT)
+Received: from [10.48.0.167] (10.75.127.48) by SFHDAG5NODE3.st.com
+ (10.75.127.15) with Microsoft SMTP Server (TLS) id 15.0.1473.3; Wed, 19 Jun
+ 2019 17:04:29 +0200
+Subject: Re: [PATCH 0/5] iio: adc: stm32-dfsdm: fix and improve output data
+ managementiio: adc: stm32-dfsdm: fix and improve output data management
+To: Olivier Moysan <olivier.moysan@st.com>
+References: <1560949431-22948-1-git-send-email-olivier.moysan@st.com>
+From: Fabrice Gasnier <fabrice.gasnier@st.com>
+Message-ID: <5a7c1aed-16fa-d13f-b1b4-7847319f62ec@st.com>
+Date: Wed, 19 Jun 2019 17:04:29 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.7.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CAOuPNLjYhkP_kL+q-ZpiDZMMpOHrU88BFBc2agtnCzXt8dihOg@mail.gmail.com>
-User-Agent: Mutt/1.12.1 (2019-06-15)
+In-Reply-To: <1560949431-22948-1-git-send-email-olivier.moysan@st.com>
+Content-Language: en-US
+X-Originating-IP: [10.75.127.48]
+X-ClientProxiedBy: SFHDAG1NODE2.st.com (10.75.127.2) To SFHDAG5NODE3.st.com
+ (10.75.127.15)
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:, ,
+ definitions=2019-06-19_09:, , signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190619_080415_262101_9619422E 
-X-CRM114-Status: UNSURE (   6.18  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190619_080436_918074_ADA5B3CE 
+X-CRM114-Status: GOOD (  13.53  )
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [62.209.51.94 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
@@ -96,8 +85,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [66.111.4.26 listed in list.dnswl.org]
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -109,28 +96,45 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Kernelnewbies <kernelnewbies@kernelnewbies.org>,
- Fabio Estevam <festevam@gmail.com>, open list <linux-kernel@vger.kernel.org>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>, linux-pm@vger.kernel.org
+Cc: lars@metafoo.de, alexandre.torgue@st.com, linux-iio@vger.kernel.org,
+ pmeerw@pmeerw.net, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, mcoquelin.stm32@gmail.com,
+ knaack.h@gmx.de, linux-stm32@st-md-mailman.stormreply.com, jic23@kernel.org,
+ benjamin.gaignard@st.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Jun 19, 2019 at 07:03:39PM +0530, Pintu Agarwal wrote:
-> You can think that the version I am using right now is almost 4.9 itself.
-> Upgrading again to higher kernel version is again difficult, also
-> customer does not want it.
+On 6/19/19 3:03 PM, Olivier Moysan wrote:
+> This patch-set provides some fixes and improvements regarding output data format
+> for STM32 DFSDM.
+> - Fix output data resolution and saturation management in continuous mode
+> - Fix data type
+> - Apply same processing on data in continuous and triggered mode
+> - Add fast mode support to get better resolution for output data
+> - Add a comment about 16 bits data transfers
+> 
+> Olivier Moysan (5):
+>   iio: adc: stm32-dfsdm: fix output resolution
+>   iio: adc: stm32-dfsdm: fix data type
+>   iio: adc: stm32-dfsdm: manage data resolution in trigger mode
+>   iio: adc: stm32-dfsdm: add fast mode support
+>   iio: adc: stm32-dfsdm: add comment for 16 bits record
 
-They don't want a secure and supported kernel over the lifetime of their
-device?  That sounds really odd.  Never create a new device using the
-4.9.y kernel tree unless you have someone else doing the support for it
-(i.e. a SoC vendor that you are paying support from).
+Hi Olivier,
 
-good luck!
+For the series,
+Acked-by: Fabrice Gasnier <fabrice.gasnier@st.com>
 
-greg k-h
+Thanks,
+Best Regards,
+Fabrice
+> 
+>  drivers/iio/adc/stm32-dfsdm-adc.c | 233 +++++++++++++++++++++++++++++++-------
+>  drivers/iio/adc/stm32-dfsdm.h     |  24 +++-
+>  2 files changed, 208 insertions(+), 49 deletions(-)
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
