@@ -2,82 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C257A4BBDC
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Jun 2019 16:41:30 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 92A0D4BBE4
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Jun 2019 16:42:42 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=2z/5+TZLKcLLMJlFYV88Zc8WzhzO+bsAAmSmKjL4yww=; b=CMDwtAJdKE2NOa
-	FMpYiYdzu+rvi6rUUBE3zAyDNx9IumUvDEcazJo7ZreT+ufIq1XAtzw3inQ3hBQ1sMOdMIk/LaK+P
-	ePHbRWq0VJ4jcfASuy3qPS7W3xsHMTLWSkF79XWI8Ci9bkKMUUOa9hfNrdn56bV1A/BQhf3LO2/6N
-	/Q7uhZPiVXJmAqw+Ncuo8E0XgkGSfKFaINdrSMAIGh/Gmcs5E4kqw+WI4UUWbxg92TSe4kAGIJfok
-	wyWI2msLwfd5cEhLN+/8KLdkdCW86dDs3FQBetPB+Cx3bp6zTsaiE8oUkY65kRbU0L4+fDBvYRzn/
-	U23gZ0UerGqe2wioRMcA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Supi6fFQG8R9e2nnLcUU5K7V7NuUJ7tWrHJ0ei85FQQ=; b=mNxlaNk2IsY0Hh
+	S7uIilWBOt+kt6xT/2nneqYp1Ad88t17PXAbO5t1ToEdH0JiZam2uDOjHna4A83U8SKlVO0A8p0lS
+	ovI5XyEq40ky0Vsdg95CHdQuxjlrfUv6ci7M+YZzcmmv+ctbFDTMGcQDmIbVuj5w4Hroqdc0ZzcAb
+	MYnFhHEx6z6mMDS91ztNBtXpk9e/K5R/nJdRy4oqOKWZ63WLA027NAG3jidClpJPV9VtU1sLhsSbG
+	XOu4pvZaWYZwVIQWa6pDCpDd0deRnK0KTtWkxRG+J/7tbYQ+3jnufjCLIF0kur2fRmeIjGD5oAHMp
+	Sx54nzICJOcPZtC4jFFQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hdbm8-0007gC-21; Wed, 19 Jun 2019 14:41:24 +0000
-Received: from mail-ua1-x941.google.com ([2607:f8b0:4864:20::941])
+	id 1hdbnI-0007zv-Gz; Wed, 19 Jun 2019 14:42:36 +0000
+Received: from smtp.codeaurora.org ([198.145.29.96])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hdbly-0007et-7B
- for linux-arm-kernel@lists.infradead.org; Wed, 19 Jun 2019 14:41:16 +0000
-Received: by mail-ua1-x941.google.com with SMTP id 8so10042935uaz.11
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 19 Jun 2019 07:41:13 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=OuL65TuVUonkfDYC+yc+qXGA89Xa2MqrM+C9nMr53yk=;
- b=z50UkcJ9gf1Qmb0DTS3m0F60LXoKl9Uj4ZE8Y69bTITcVx9kxGwD+yUakZDgenUpMM
- MiLeZcvrSH41/V/cUogSecHNER0CvlIhvkiHNy5EJfw26PP0BzvukiV/lUlbZwUKN1In
- ueCcx0vPNC99LiCjH2KzgxVVXbor3azuonwTyx42gSTn7BQS+ALSzjZln+iIwctYArf4
- 3PRJSa5Dp8WSlmBfV833+QccgrJMI9y5SZ8VmxWswoUCIlYbonz8KYJeQkUn6dxgz9Fl
- CYuWXwN2IGOrGGpCkJQIqsLEV/9T5TYERWJuRM5ICOL/hkav+FCiKs++ovFs8Mxev8Qs
- /U0Q==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=OuL65TuVUonkfDYC+yc+qXGA89Xa2MqrM+C9nMr53yk=;
- b=PqnKvAwzak8gea1x+5TekB0m8nHrTqwsd8TPnakl9QJWPq+KIuBpF/C3m5Y//PtLS4
- MjWmLW3znTaueEVr1zK/vhQ+SS+vIipHDTwylqoWLWAjqIce//4jmqYjf/iIeDpbDz6Q
- ezVYkMwv9BwDGCeeBro7CxAm7j0gEaN5e3tHjfadZM+I4tnvbscYdnUizibmAmBF2YBT
- UZBJ/RNzSmc4h7XSRqVt0EmEDPYZ+N/1D0yeV+oFR4OMoPOOTUsE/ekok8EjrjGhAbiU
- JfQL+TVsT7bW1Q0cQyIjavya/FaYn6JuNN8JFgdnkeJFUTAASU7JVJ5Dz973OYGUmQh1
- u67A==
-X-Gm-Message-State: APjAAAX+42ClYfK2Sp2K4+0d5y7NGN+2pHewkibylm/5fpSGEyC4SMgp
- HquzOgKp7BheVwvjHZC3MlTQpomY26hi+AUD4LlMkw==
-X-Google-Smtp-Source: APXvYqxiOhYGOm5J4KhiAdkkQECEzQdtrbEE+lhxjuEjI6r6F96s8L3Sc7YMCWr6KJmrx0p+YMydPuX3sCUGg9bvjMI=
-X-Received: by 2002:a9f:31a2:: with SMTP id v31mr14379202uad.15.1560955272797; 
- Wed, 19 Jun 2019 07:41:12 -0700 (PDT)
+ id 1hdbn4-0007zK-Il
+ for linux-arm-kernel@lists.infradead.org; Wed, 19 Jun 2019 14:42:24 +0000
+Received: by smtp.codeaurora.org (Postfix, from userid 1000)
+ id AFFCB6063F; Wed, 19 Jun 2019 14:42:21 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=codeaurora.org;
+ s=default; t=1560955341;
+ bh=4Woo/FF3dlHOGyzaHE1L/DZSPxQjCPfX17CEgLOTkH0=;
+ h=Subject:To:Cc:References:From:Date:In-Reply-To:From;
+ b=dyst9HMcmjczgK59mnR8STHlHcXemY32KBcBExALTdCZiT5FOLMsE4jkYYZPTcstN
+ WpvO6YJ3qUnbjeDNRI8SCNlVMe29JyjuLMuKeH9qNpfNykoTXnSjORr0017vyx7yLP
+ O8MOezdcWG6rjK/ohCd4H/d4fJgV897mtjyf/GsU=
+X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
+ pdx-caf-mail.web.codeaurora.org
+X-Spam-Level: 
+X-Spam-Status: No, score=-2.7 required=2.0 tests=ALL_TRUSTED,BAYES_00,
+ DKIM_INVALID,DKIM_SIGNED,SPF_NONE autolearn=no autolearn_force=no
+ version=3.4.0
+Received: from [192.168.1.5] (unknown [106.201.161.155])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ (Authenticated sender: sricharan@smtp.codeaurora.org)
+ by smtp.codeaurora.org (Postfix) with ESMTPSA id 76F1A602F2;
+ Wed, 19 Jun 2019 14:42:15 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=codeaurora.org;
+ s=default; t=1560955341;
+ bh=4Woo/FF3dlHOGyzaHE1L/DZSPxQjCPfX17CEgLOTkH0=;
+ h=Subject:To:Cc:References:From:Date:In-Reply-To:From;
+ b=dyst9HMcmjczgK59mnR8STHlHcXemY32KBcBExALTdCZiT5FOLMsE4jkYYZPTcstN
+ WpvO6YJ3qUnbjeDNRI8SCNlVMe29JyjuLMuKeH9qNpfNykoTXnSjORr0017vyx7yLP
+ O8MOezdcWG6rjK/ohCd4H/d4fJgV897mtjyf/GsU=
+DMARC-Filter: OpenDMARC Filter v1.3.2 smtp.codeaurora.org 76F1A602F2
+Authentication-Results: pdx-caf-mail.web.codeaurora.org;
+ dmarc=none (p=none dis=none) header.from=codeaurora.org
+Authentication-Results: pdx-caf-mail.web.codeaurora.org;
+ spf=none smtp.mailfrom=sricharan@codeaurora.org
+Subject: Re: [PATCH 5/6] arm64: dts: Add ipq6018 SoC and CP01 board support
+To: Christian Lamparter <chunkeey@gmail.com>
+References: <1559754961-26783-1-git-send-email-sricharan@codeaurora.org>
+ <4056907.DrFocau5Ix@debian64>
+ <1a00e8c8-d07c-3b02-8ea5-6d5f3e2c7b1a@codeaurora.org>
+ <1981742.H2rzviYcjI@debian64>
+From: Sricharan R <sricharan@codeaurora.org>
+Message-ID: <96fd8992-e333-6b3b-15c0-2845984120aa@codeaurora.org>
+Date: Wed, 19 Jun 2019 20:12:11 +0530
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:60.0) Gecko/20100101
+ Thunderbird/60.7.0
 MIME-Version: 1.0
-References: <1560247011-26369-1-git-send-email-manish.narani@xilinx.com>
- <1560247011-26369-4-git-send-email-manish.narani@xilinx.com>
- <CAPDyKFrJwpwUUX_q2kcR9QY_fv9Lgos+ixPmU6JMeJVqJAiFpg@mail.gmail.com>
- <5feac3fb-bef3-b7d1-57d6-81e115e1f555@xilinx.com>
- <CAPDyKFp_ZvSjFp2FGonzGsnc9xPyZ7qOCaRnX1SimBxLpfz9-Q@mail.gmail.com>
- <948514a0-e310-75fd-e8a8-6ef8bb14e41f@xilinx.com>
- <CAPDyKFp6O8rPZDZS4iKJam2+tXeen_ZMOXKw=WVzJNpBXcSc9g@mail.gmail.com>
- <MN2PR02MB60296837F9D1B3088667BE59C1EA0@MN2PR02MB6029.namprd02.prod.outlook.com>
-In-Reply-To: <MN2PR02MB60296837F9D1B3088667BE59C1EA0@MN2PR02MB6029.namprd02.prod.outlook.com>
-From: Ulf Hansson <ulf.hansson@linaro.org>
-Date: Wed, 19 Jun 2019 16:40:36 +0200
-Message-ID: <CAPDyKFqC7aGX+BSP7U162Viq8qoL_df+N=zP_6P9xbzSZseipw@mail.gmail.com>
-Subject: Re: [PATCH 3/3] mmc: sdhci-of-arasan: Add support for ZynqMP Platform
- Tap Delays Setup
-To: Manish Narani <MNARANI@xilinx.com>
+In-Reply-To: <1981742.H2rzviYcjI@debian64>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190619_074114_259051_8CB1E891 
-X-CRM114-Status: GOOD (  18.99  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190619_074222_660900_5D57E790 
+X-CRM114-Status: GOOD (  25.96  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:941 listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [198.145.29.96 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -98,72 +100,161 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, DTML <devicetree@vger.kernel.org>,
- Nava kishore Manne <navam@xilinx.com>,
- "linux-mmc@vger.kernel.org" <linux-mmc@vger.kernel.org>,
- Adrian Hunter <adrian.hunter@intel.com>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Jolly Shah <JOLLYS@xilinx.com>, Rajan Vaja <RAJANV@xilinx.com>,
- Rob Herring <robh+dt@kernel.org>, Michal Simek <michals@xilinx.com>,
- Olof Johansson <olof@lixom.net>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: devicetree <devicetree@vger.kernel.org>, Stephen Boyd <sboyd@kernel.org>,
+ linux-arm-msm@vger.kernel.org, Linus Walleij <linus.walleij@linaro.org>,
+ agross@kernel.org, linux-kernel <linux-kernel@vger.kernel.org>,
+ =?UTF-8?B?0J/QsNCy0LXQuw==?= <be.dissent@gmail.com>,
+ "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
+ Rob Herring <robh+dt@kernel.org>, linux-soc@vger.kernel.org,
+ linux-clk@vger.kernel.org,
+ linux-arm Mailing List <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, 18 Jun 2019 at 06:59, Manish Narani <MNARANI@xilinx.com> wrote:
->
-> Hi Uffe,
->
-> Thanks for the review. Please find my comments below.
->
-> > -----Original Message-----
-> > From: Ulf Hansson <ulf.hansson@linaro.org>
-> > Sent: Monday, June 17, 2019 8:29 PM
-> > To: Michal Simek <michals@xilinx.com>
-> > Cc: Manish Narani <MNARANI@xilinx.com>; Rob Herring
-> > <robh+dt@kernel.org>; Mark Rutland <mark.rutland@arm.com>; Adrian
-> > Hunter <adrian.hunter@intel.com>; Rajan Vaja <RAJANV@xilinx.com>; Jolly
-> > Shah <JOLLYS@xilinx.com>; Nava kishore Manne <navam@xilinx.com>; Olof
-> > Johansson <olof@lixom.net>; linux-mmc@vger.kernel.org; DTML
-> > <devicetree@vger.kernel.org>; Linux Kernel Mailing List <linux-
-> > kernel@vger.kernel.org>; Linux ARM <linux-arm-kernel@lists.infradead.org>
-> > Subject: Re: [PATCH 3/3] mmc: sdhci-of-arasan: Add support for ZynqMP
-> > Platform Tap Delays Setup
-> >
-> > [...]
-> >
-> > > >>
-> > > >>
-> > > >>> In regards to the mmc data part, I suggest to drop the
-> > > >>> ->set_tap_delay() callback, but rather use a boolean flag to indicate
-> > > >>> whether clock phases needs to be changed for the variant. Potentially
-> > > >>> that could even be skipped and instead call clk_set_phase()
-> > > >>> unconditionally, as the clock core deals fine with clock providers
-> > > >>> that doesn't support the ->set_phase() callback.
->
-> In the current implementation, I am taking care of both the input and
-> output clock delays with the single clock (which is output clock) registration
-> and differentiating these tap delays based on their values
-> (<256 then input delay and  >= 256 then output delay), because that is
-> zynqmp specific. If we want to make this generic, we may need to
-> register 'another' clock which will be there as an input (sampling) clock
-> and then we can make this 'clk_set_phase()' be called unconditionally
-> each for both the clocks and let the platforms handle their clock part.
-> What's your take on this?
+Hi Christian,
 
-Not sure exactly what you are suggesting, but my gut feeling says it
-sounds good.
+On 6/15/2019 2:11 AM, Christian Lamparter wrote:
+> On Wednesday, June 12, 2019 11:48:48 AM CEST Sricharan R wrote:
+>> Hi Christian,
+>>
+>> On 6/10/2019 5:45 PM, Christian Lamparter wrote:
+>>> On Monday, June 10, 2019 12:09:56 PM CEST Sricharan R wrote:
+>>>> Hi Christian,
+>>>>
+>>>> On 6/6/2019 2:11 AM, Christian Lamparter wrote:
+>>>>> On Wed, Jun 5, 2019 at 7:16 PM Sricharan R <sricharan@codeaurora.org> wrote:
+>>>>>>
+>>>>>> Add initial device tree support for the Qualcomm IPQ6018 SoC and
+>>>>>> CP01 evaluation board.
+>>>>>>
+>>>>>> Signed-off-by: Sricharan R <sricharan@codeaurora.org>
+>>>>>> Signed-off-by: Abhishek Sahu <absahu@codeaurora.org>
+>>>>>> --- /dev/null
+>>>>>> +++ b/arch/arm64/boot/dts/qcom/ipq6018.dtsi
+>>>>>>
+>>>>>> +       clocks {
+>>>>>> +               sleep_clk: sleep_clk {
+>>>>>> +                       compatible = "fixed-clock";
+>>>>>> +                       clock-frequency = <32000>;
+>>>>>> +                       #clock-cells = <0>;
+>>>>>> +               };
+>>>>>> +
+>>>>> Recently-ish, we ran into an issue with the clock-frequency of the sleep_clk
+>>>>> on older IPQ40XX (and IPQ806x) on the OpenWrt Github and ML.
+>>>>> From what I know, the external "32KHz" crystals have 32768 Hz, but the QSDK
+>>>>> declares them at 32000 Hz. Since you probably have access to the BOM and
+>>>>> datasheets. Can you please confirm what's the real clock frequency for
+>>>>> the IPQ6018.
+>>>>> (And maybe also for the sleep_clk of the IPQ4018 as well?).
+>>>>>
+>>>>
+>>>> What exactly is the issue that you faced ?
+>>>> Looking in to the docs, it is <32000> only on ipq6018 and ipq40xx as well.
+>>>
+>>> We need just a confirmation.
+>>>
+>>> Then again, Currently the qcom-ipq4019.dtsi is using 32768 Hz.
+>>>
+>>> |		sleep_clk: sleep_clk {
+>>> |			compatible = "fixed-clock";
+>>> |			clock-frequency = <32768>;
+>>> |			#clock-cells = <0>;
+>>> |		};
+>>>
+>>> <https://github.com/torvalds/linux/blob/master/arch/arm/boot/dts/qcom-ipq4019.dtsi#L144>
+>>>
+>>> Which makes sense, because all previous Qualcomm Atheros MIPS and the
+>>> future IPQ8072 SoCs have been either using or deriving a 32768 Hz clock.
+>>>
+>>> For example: The AR9344 derives the clock from the 25MHz/40MHz external
+>>> oscillator. This is explained in "8.16.9 Derived RTC Clock (DERIVED_RTC_CLK)".
+>>> Which mentions that the "32KHz" clock interval is 30.5 usec / 30.48 usec
+>>> depending whenever the external reference crystal has 40MHz or 25MHz.
+>>> (1/30.5usec = 32.7868852 kilohertz!). The QCA9558 datasheet says the same
+>>> in "10.19.11 Derived RTC Clock". 
+>>>
+>>> For IPQ8072: I point to the post by Sven Eckelmann on the OpenWrt ML:
+>>> <http://lists.infradead.org/pipermail/openwrt-devel/2019-May/017131.html>
+>>> "I was only able to verify for IPQ8072 that it had a 32.768 KHz
+>>> sleep clock." 
+>>>
+>>> So this is pretty much "why there is an issue", it's confusing.
+>>> Is possible can you please look if there are (fixed) divisors values
+>>> listed in the documentation or the registers and bits that the values
+>>> are stored in? Because then we could just calculate it. 
+>>>
+>>
+>> Really sorry for the confusion. So looking little more, SLEEP_CLK is derived
+>> from an external 38.4MHZ crystal, it is 32.768 KHZ.
+> That's really valuable information to have. Thank you!
+> 
+>> Somehow the clk freq plan etc seems to mention them only as .032 MHZ and misses
+>> out. That means i will correct the patch for 32768 and probably the
+>> ipq8074.dtsi as well
+> 
+> Ok, there's one more issue that Paul found (at least with the IPQ4019),
+> https://patchwork.ozlabs.org/patch/1099482
+> 
+> it seems that the "sleep_clk" node in the qcom-ipq4019.dtsi is not used by
+> the gcc-ipq4019.c clk driver. this causes both wifi rtc_clks and the usb sleep
+> clks to dangle in the /sys/kernel/debug/clk/clk_summary (from a RT-AC58U)
+> 
+>    clock                         enable_cnt  prepare_cnt        rate   accuracy   phase
+> ----------------------------------------------------------------------------------------
+>  xo                                       9            9    48000000          0 0
+>  [...]
+>  sleep_clk                                1            1       32768          0 0  
+>  gcc_wcss5g_rtc_clk                       1            1           0          0 0  
+>  gcc_wcss2g_rtc_clk                       1            1           0          0 0  
+>  gcc_usb3_sleep_clk                       1            1           0          0 0  
+>  gcc_usb2_sleep_clk                       1            1           0          0 0  
+> 
+> with his patch the /sys/kernel/debug/clk/clk_summary looks "better" 
+> 
+> (something like this:)
+> 
+>    clock                         enable_cnt  prepare_cnt        rate   accuracy   phase
+> ----------------------------------------------------------------------------------------
+>  xo                                       9            9    48000000          0 0
+>  [...] 
+>  gcc_sleep_clk_src                        5            5       32000          0 0  
+>     gcc_wcss5g_rtc_clk                    1            1       32000          0 0  
+>     gcc_wcss2g_rtc_clk                    1            1       32000          0 0  
+>     gcc_usb3_sleep_clk                    1            1       32000          0 0  
+>     gcc_usb2_sleep_clk                    1            1       32000          0 0  
+> 
+> but judging from your comment "SLEEP_CLK is derived from an
+> external 38.4MHZ crystal" the gcc_sleep_clk_src / sleep_clk
+> should have xo as the parent. so the ideal output should be:
+> 
+>    clock                         enable_cnt  prepare_cnt        rate   accuracy   phase
+> ----------------------------------------------------------------------------------------
+>  xo                                      10           10    48000000          0 0
+>  [...] 
+>     gcc_sleep_clk                         5            5       32768          0 0  
+>        gcc_wcss5g_rtc_clk                 1            1       32768          0 0  
+>        gcc_wcss2g_rtc_clk                 1            1       32768          0 0  
+>        gcc_usb3_sleep_clk                 1            1       32768          0 0  
+>        gcc_usb2_sleep_clk                 1            1       32768          0 0  
+> 
+> or am I missing/skipping over something important? 
+> 
 
-How is tap delays managed for both the input clock and the output
-clock? Is some managed by the clock provider (which is probably
-firmware in your case) and some managed by the MMC controller?
+Sorry for the delayed response. So what i said above (32768 clk) looks
+like true only for ipq8074. For ipq4019, looks like 32000.
 
-[...]
+That means, there is still some thing unclear. I am checking for precise
+information from HW team for ipq4019/8074/6018. Please hang on, will
+update you asap.
 
-Kind regards
-Uffe
+Regards,
+ Sricharan
+
+
+-- 
+"QUALCOMM INDIA, on behalf of Qualcomm Innovation Center, Inc. is a member of Code Aurora Forum, hosted by The Linux Foundation
 
 _______________________________________________
 linux-arm-kernel mailing list
