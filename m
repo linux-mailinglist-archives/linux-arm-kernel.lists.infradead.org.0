@@ -2,90 +2,102 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 033B44BE21
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Jun 2019 18:29:21 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id EAB164BE71
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Jun 2019 18:41:58 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=SePPs3AZY9dJxuuLCMut0E2oTbR5Vhm36pVUpbnGLtE=; b=hkqijP3Y1Keh85
-	bxJGWPOno8I0kt6vItjhY+js9IXi7YLXQEJ0MnsYi+c4aaBKg4uG4cz4ytRkvvzPjBaxDqiyfpRVL
-	tIHDZf/Oo8Z8cji9wKBPyJuMTee3nwG9JdiP64LGb/kqTt7c+KgO8m0NCDqnlnT48Edr5AGXMjHtF
-	DFEJ5qCsrz5MSojsC6Iv10u8M4SeAx7S2GH99mW6PfUEwoVdm1sagMRbERKqg6noOEhnZbm4MeFn2
-	j3OnMU5KfANE6P/x4kJliprPuna+FVFCDdOmlXaKHOR4AWRY4KcGBfZarvJ03zLlXvYhTsMbXwKwg
-	G/J5Ml5mW2hgKWdYJlOA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=XdiUBt7AmjLLKNabDM8yF+zQLcFNwOL3SZcQJd0WFTg=; b=cCN5ktx+1PiZMG
+	BLQGXGdgxzluTK+Xu/MZ1+hHH06ciW+IJ7YhEGJ4NA20uK6JS/LaDFHg85Dd0vClROZ35P/gS6hKB
+	7t/IwzYMgJ8ZCiAVgvFY9cS6uMZotn1YXtAhFbAghG42KMxBUF0mUznV+gEKM7qS1kNfYt4zyhRoC
+	3Z20DmOIGxT0c65fiWNu3Ns1fYxbHqazUJCM6KwuPkvQJOLehXw13OSB6OXYveaI4IWA6VmZIPNO0
+	CKtF6L/qZXk2WihytmWzqKL6vK2cRa/M+TbQPdJb9EX08DMdRkAp4EJqat3GMdB1RMdIR9Wzf4fkb
+	lPXmApZ9JghSMYU8hcxQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hddSX-0006IB-Co; Wed, 19 Jun 2019 16:29:17 +0000
-Received: from mail-qk1-x743.google.com ([2607:f8b0:4864:20::743])
+	id 1hddej-00045Q-93; Wed, 19 Jun 2019 16:41:53 +0000
+Received: from userp2130.oracle.com ([156.151.31.86])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hddSM-0006HB-AC
- for linux-arm-kernel@lists.infradead.org; Wed, 19 Jun 2019 16:29:07 +0000
-Received: by mail-qk1-x743.google.com with SMTP id r6so11347104qkc.0
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 19 Jun 2019 09:29:05 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ziepe.ca; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=qnUOwWGBCAXAVLri1Ul0fDjUeERWKjKVp0Rio+t6Mw0=;
- b=Mu7sgXi6O1BEfTzeAxDFiZq9WYAU+8GuA+frzMgX9hRk0/2Eo2VPU9VKN7SPqn7GLw
- BMmvCbBlMZt8BrrdyjrzJb5mIwmN+Un5ohC6uh52oLeiu3fM9lYGSfsBxw2N/in8YFn5
- 94JBdMTWXqhPkHC5ogDkAk30Vj3tK2OB7FH+D8RuRjkNrh4KSwvNzZkKLQDt1o6UXnKk
- akxzg79p5LQYrNgI6wQWhEDCa4i3Wr2Q3GuDm1M6C6XhuTkbEI5dQ8Rzs09QxzMXG/yv
- 86i6u7h1UReQ+1KLg8ARX3o5vtg8COFFdiinD/3xnzFLxOpaxmET6WHLpP1penmwv6Fz
- qw4w==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=qnUOwWGBCAXAVLri1Ul0fDjUeERWKjKVp0Rio+t6Mw0=;
- b=LqnGdKSIIKqHZ5zcA9RUjYyJxydx5oh9EpXzsTtGUzrFKHxA/mxddH8Y7u9vztTAC8
- NQlBxLbyDZNP6ZOdA0aulpduOsJl5bjNm57qIuV+eSpaRlGs/pKBQSCnOYZjLnJN02qx
- 4+HkoAiH3875a3BUVJnRDNWYOXFS7j4GCW7OzMYajB3WsbEUFWQPzp7TNsX7iAj3NOVu
- 6Y5/wKt0wRZGecC4tdwUQybsryTERwRaFECY4Q8ppXiOkhR5A723G8MILfoUkVYFTnJB
- Tx7FAmkVeBxENYLMUdZ5qWqbNQKKDfge11o3r9V28X1e6kqd0c3DPcVQjzQzHDBgzHze
- rJLA==
-X-Gm-Message-State: APjAAAWPxcBVjm6cHOJA46adQ85lW49js073+BDP1n3g0t39Ve3kvPfo
- PvMdmih2QaMHDnyH1YHXcBLynA==
-X-Google-Smtp-Source: APXvYqxI2A2AbFb1+ZoFRIh7H3fg512a+PNV8rhMF80/TQ7Ui3RJ5j2fJJDqC3jWu2+hRHD8V09puw==
-X-Received: by 2002:a37:5444:: with SMTP id i65mr23556982qkb.263.1560961744340; 
- Wed, 19 Jun 2019 09:29:04 -0700 (PDT)
-Received: from ziepe.ca
- (hlfxns017vw-156-34-55-100.dhcp-dynamic.fibreop.ns.bellaliant.net.
- [156.34.55.100])
- by smtp.gmail.com with ESMTPSA id n5sm11854916qta.29.2019.06.19.09.29.03
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Wed, 19 Jun 2019 09:29:03 -0700 (PDT)
-Received: from jgg by mlx.ziepe.ca with local (Exim 4.90_1)
- (envelope-from <jgg@ziepe.ca>)
- id 1hddSJ-0001sf-Di; Wed, 19 Jun 2019 13:29:03 -0300
-Date: Wed, 19 Jun 2019 13:29:03 -0300
-From: Jason Gunthorpe <jgg@ziepe.ca>
-To: Christoph Hellwig <hch@lst.de>,
-	Potnuri Bharat Teja <bharat@chelsio.com>
-Subject: Re: use exact allocation for dma coherent memory
-Message-ID: <20190619162903.GF9360@ziepe.ca>
-References: <20190614134726.3827-1-hch@lst.de> <20190617082148.GF28859@kadam>
- <20190617083342.GA7883@lst.de>
+ id 1hddeZ-00043h-ON
+ for linux-arm-kernel@lists.infradead.org; Wed, 19 Jun 2019 16:41:45 +0000
+Received: from pps.filterd (userp2130.oracle.com [127.0.0.1])
+ by userp2130.oracle.com (8.16.0.27/8.16.0.27) with SMTP id x5JGZ3BA139193;
+ Wed, 19 Jun 2019 16:41:19 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=oracle.com;
+ h=subject : to : cc :
+ references : from : message-id : date : mime-version : in-reply-to :
+ content-type : content-transfer-encoding; s=corp-2018-07-02;
+ bh=4T5a0glbRa2aBSKkc/pjnTjMsTPHECFT1E9bbL1l2HM=;
+ b=iM3Ngn2x6aaNg+8wMaz2TYv3kwfBr7esbrJ8PsegJPNksN4Z/YjPTI3TmHcIUAH5xIxd
+ gAnjdNn//nUURYK/24P/Mz+8CWzLw/ldkJ0Ah8cTKTN8TsQstYz7Wc1JokBHslvlpojt
+ t58Ckn54FcLS6JnUQMgNT/8sCvOqKf+qXUPK2SC5pwHYaAG2DxzZEfDTOmnxSxjRlk17
+ 81k1k3JZIHS9isv6MaXvl6eghbedIhy09UL0UJZ7M5tLa9EvLThKgTnTshAaPgND2Tmz
+ VORmseouIshgIQ+DfXX2+2Cq67n27+huaukcohM59RMNDmLVIT4WZNeTT5o/4WBjQ22r Kg== 
+Received: from aserp3020.oracle.com (aserp3020.oracle.com [141.146.126.70])
+ by userp2130.oracle.com with ESMTP id 2t7809ckb0-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Wed, 19 Jun 2019 16:41:19 +0000
+Received: from pps.filterd (aserp3020.oracle.com [127.0.0.1])
+ by aserp3020.oracle.com (8.16.0.27/8.16.0.27) with SMTP id x5JGeTfm168992;
+ Wed, 19 Jun 2019 16:41:18 GMT
+Received: from aserv0122.oracle.com (aserv0122.oracle.com [141.146.126.236])
+ by aserp3020.oracle.com with ESMTP id 2t77ynxysy-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Wed, 19 Jun 2019 16:41:18 +0000
+Received: from abhmp0018.oracle.com (abhmp0018.oracle.com [141.146.116.24])
+ by aserv0122.oracle.com (8.14.4/8.14.4) with ESMTP id x5JGfFiP008310;
+ Wed, 19 Jun 2019 16:41:16 GMT
+Received: from [10.65.164.174] (/10.65.164.174)
+ by default (Oracle Beehive Gateway v4.0)
+ with ESMTP ; Wed, 19 Jun 2019 09:41:15 -0700
+Subject: Re: [PATCH v17 05/15] mm, arm64: untag user pointers in mm/gup.c
+To: Andrey Konovalov <andreyknvl@google.com>,
+ linux-arm-kernel@lists.infradead.org, linux-mm@kvack.org,
+ linux-kernel@vger.kernel.org, amd-gfx@lists.freedesktop.org,
+ dri-devel@lists.freedesktop.org, linux-rdma@vger.kernel.org,
+ linux-media@vger.kernel.org, kvm@vger.kernel.org,
+ linux-kselftest@vger.kernel.org
+References: <cover.1560339705.git.andreyknvl@google.com>
+ <8f65548bef8544d49980a92d221b74440d544c1e.1560339705.git.andreyknvl@google.com>
+From: Khalid Aziz <khalid.aziz@oracle.com>
+Organization: Oracle Corp
+Message-ID: <dbf2dd46-0240-f8a9-203c-4f1234c16825@oracle.com>
+Date: Wed, 19 Jun 2019 10:41:12 -0600
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.7.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190617083342.GA7883@lst.de>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+In-Reply-To: <8f65548bef8544d49980a92d221b74440d544c1e.1560339705.git.andreyknvl@google.com>
+Content-Language: en-US
+X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9293
+ signatures=668687
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 suspectscore=0
+ malwarescore=0
+ phishscore=0 bulkscore=0 spamscore=0 mlxscore=0 mlxlogscore=999
+ adultscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.0.1-1810050000 definitions=main-1906190134
+X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9293
+ signatures=668687
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0
+ priorityscore=1501 malwarescore=0
+ suspectscore=0 phishscore=0 bulkscore=0 spamscore=0 clxscore=1015
+ lowpriorityscore=0 mlxscore=0 impostorscore=0 mlxlogscore=999 adultscore=0
+ classifier=spam adjust=0 reason=mlx scancount=1 engine=8.0.1-1810050000
+ definitions=main-1906190134
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190619_092906_534801_C1D26960 
-X-CRM114-Status: GOOD (  11.76  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190619_094143_930945_1EA52D6C 
+X-CRM114-Status: GOOD (  22.62  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:743 listed in]
- [list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [156.151.31.86 listed in list.dnswl.org]
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -93,6 +105,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -104,50 +117,79 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Maxime Ripard <maxime.ripard@bootlin.com>,
- Joonas Lahtinen <joonas.lahtinen@linux.intel.com>,
- dri-devel@lists.freedesktop.org, linux-mm@kvack.org,
- devel@driverdev.osuosl.org, linux-s390@vger.kernel.org,
- linux-rdma@vger.kernel.org, David Airlie <airlied@linux.ie>,
- Dan Carpenter <dan.carpenter@oracle.com>, linux-media@vger.kernel.org,
- Intel Linux Wireless <linuxwifi@intel.com>, intel-gfx@lists.freedesktop.org,
- Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
- Jani Nikula <jani.nikula@linux.intel.com>, Ian Abbott <abbotti@mev.co.uk>,
- Rodrigo Vivi <rodrigo.vivi@intel.com>, Sean Paul <sean@poorly.run>,
- "moderated list:ARM PORT" <linux-arm-kernel@lists.infradead.org>,
- netdev@vger.kernel.org, linux-wireless@vger.kernel.org,
- linux-kernel@vger.kernel.org, H Hartley Sweeten <hsweeten@visionengravers.com>,
- iommu@lists.linux-foundation.org, Daniel Vetter <daniel@ffwll.ch>
+Cc: Mark Rutland <mark.rutland@arm.com>, Szabolcs Nagy <Szabolcs.Nagy@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will.deacon@arm.com>,
+ Kostya Serebryany <kcc@google.com>, Felix Kuehling <Felix.Kuehling@amd.com>,
+ Vincenzo Frascino <vincenzo.frascino@arm.com>,
+ Jacob Bramley <Jacob.Bramley@arm.com>, Leon Romanovsky <leon@kernel.org>,
+ Christoph Hellwig <hch@infradead.org>, Jason Gunthorpe <jgg@ziepe.ca>,
+ Dave Martin <Dave.Martin@arm.com>, Evgeniy Stepanov <eugenis@google.com>,
+ Kevin Brodsky <kevin.brodsky@arm.com>, Kees Cook <keescook@chromium.org>,
+ Ruben Ayrapetyan <Ruben.Ayrapetyan@arm.com>,
+ Ramana Radhakrishnan <Ramana.Radhakrishnan@arm.com>,
+ Alex Williamson <alex.williamson@redhat.com>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>, Dmitry Vyukov <dvyukov@google.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Yishai Hadas <yishaih@mellanox.com>,
+ Jens Wiklander <jens.wiklander@linaro.org>, Lee Smith <Lee.Smith@arm.com>,
+ Alexander Deucher <Alexander.Deucher@amd.com>,
+ Andrew Morton <akpm@linux-foundation.org>, enh <enh@google.com>,
+ Robin Murphy <robin.murphy@arm.com>,
+ Christian Koenig <Christian.Koenig@amd.com>,
+ Luc Van Oostenryck <luc.vanoostenryck@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Jun 17, 2019 at 10:33:42AM +0200, Christoph Hellwig wrote:
-> > drivers/infiniband/hw/cxgb4/qp.c
-> >    129  static int alloc_host_sq(struct c4iw_rdev *rdev, struct t4_sq *sq)
-> >    130  {
-> >    131          sq->queue = dma_alloc_coherent(&(rdev->lldi.pdev->dev), sq->memsize,
-> >    132                                         &(sq->dma_addr), GFP_KERNEL);
-> >    133          if (!sq->queue)
-> >    134                  return -ENOMEM;
-> >    135          sq->phys_addr = virt_to_phys(sq->queue);
-> >    136          dma_unmap_addr_set(sq, mapping, sq->dma_addr);
-> >    137          return 0;
-> >    138  }
-> > 
-> > Is this a bug?
+On 6/12/19 5:43 AM, Andrey Konovalov wrote:
+> This patch is a part of a series that extends arm64 kernel ABI to allow to
+> pass tagged user pointers (with the top byte set to something else other
+> than 0x00) as syscall arguments.
 > 
-> Yes.  This will blow up badly on many platforms, as sq->queue
-> might be vmapped, ioremapped, come from a pool without page backing.
+> mm/gup.c provides a kernel interface that accepts user addresses and
+> manipulates user pages directly (for example get_user_pages, that is used
+> by the futex syscall). Since a user can provided tagged addresses, we need
+> to handle this case.
+> 
+> Add untagging to gup.c functions that use user addresses for vma lookups.
+> 
+> Reviewed-by: Kees Cook <keescook@chromium.org>
+> Reviewed-by: Catalin Marinas <catalin.marinas@arm.com>
+> Signed-off-by: Andrey Konovalov <andreyknvl@google.com>
+> ---
 
-Gah, this addr gets fed into io_remap_pfn_range/remap_pfn_range too..
+Reviewed-by: Khalid Aziz <khalid.aziz@oracle.com>
 
-Potnuri, you should fix this.. 
 
-You probably need to use dma_mmap_from_dev_coherent() in the mmap ?
+>  mm/gup.c | 4 ++++
+>  1 file changed, 4 insertions(+)
+> 
+> diff --git a/mm/gup.c b/mm/gup.c
+> index ddde097cf9e4..c37df3d455a2 100644
+> --- a/mm/gup.c
+> +++ b/mm/gup.c
+> @@ -802,6 +802,8 @@ static long __get_user_pages(struct task_struct *tsk, struct mm_struct *mm,
+>  	if (!nr_pages)
+>  		return 0;
+>  
+> +	start = untagged_addr(start);
+> +
+>  	VM_BUG_ON(!!pages != !!(gup_flags & FOLL_GET));
+>  
+>  	/*
+> @@ -964,6 +966,8 @@ int fixup_user_fault(struct task_struct *tsk, struct mm_struct *mm,
+>  	struct vm_area_struct *vma;
+>  	vm_fault_t ret, major = 0;
+>  
+> +	address = untagged_addr(address);
+> +
+>  	if (unlocked)
+>  		fault_flags |= FAULT_FLAG_ALLOW_RETRY;
+>  
+> 
 
-Jason
+
 
 _______________________________________________
 linux-arm-kernel mailing list
