@@ -2,87 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0E46A4BA55
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Jun 2019 15:42:42 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2BE2F4B9FB
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Jun 2019 15:31:44 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=JwqGhfu6j7KyDiRhHk/K7aHPUeKim2nZw/sk/qsQvJM=; b=EYTHF8/vnpUSU/
-	Iz9rMx6Vzz9wKMeuIIQPR7chWAtBXtGICGAvOM0YZSS7LreXbnOcp4bTw1B9Mn+pKYCnXIpnPnCk+
-	j+SW6e0Vtwm0QlwV1BfW+Z+W47Smggzch7IVpzQkgpvWDXvBAJ3nyjEyWKI1gVHWsoXz+W74SXpmQ
-	O2zyHU5ygKcclssm+I+3sKm4aA3YeUFyx9AHy1Lg0O0AwqnuCB7lVSLOtoBKXwQhR07y4gQ9nM3UQ
-	QMXszI7LaAW3O4ce1WjGEW5VfdTMq4mgxqyVSPCXr4Hr4KDE1sNA676heWUJ7nzPZizIWOPwoYQfQ
-	dDsqE9xMZEVMZuroK8Xw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=dx59W3Wpa0fOyDO3aXfwT16iB91N96Drg2lAb/8svKI=; b=Th2E2GzAa38xmj
+	u9xfrNKfkKYqn8aF2BlVmKFabJ79bhjzGk/oDc5fLWWJ2KZ1X8QXZmf21TNlPiMYlaXGuhOnOhVtU
+	nT1XC7IYppylsXNEERuZeSqMQAfzm2+MzStOesF1/jjv8KVn99SNsgOy8j7pfmWEZWb+TRJG/0SFm
+	PBrJbeMCTxTf2SiQqXEhmiCWQfTX7VYfihPqBQ78wGvZrJmzwwCxe1IQvg3LXe6G6bsojU5Foc4n1
+	CsqWuPTNiFxgmprGwk1p4O1DtmAtrn0lbNYVguYWlsw3QJ3o/GJRz1usBls5MBJTLeKwl4kVQ1gtA
+	s3pMAJr3dA623c6bgQnQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hdarI-0003FY-GT; Wed, 19 Jun 2019 13:42:40 +0000
-Received: from mail-lf1-x143.google.com ([2a00:1450:4864:20::143])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hdao8-0007ji-Rc
- for linux-arm-kernel@lists.infradead.org; Wed, 19 Jun 2019 13:39:26 +0000
-Received: by mail-lf1-x143.google.com with SMTP id y13so12152777lfh.9
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 19 Jun 2019 06:39:24 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=lixom-net.20150623.gappssmtp.com; s=20150623;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=poQTjuhtDsupGdVClN0ALov7TDRSULG2jSa2vmjVCU4=;
- b=l0/gF9/OzFgtGmzu7Ddh94ZXY54MyG2jXNCKTSFXAdsBC/fnoN5fG8IjW/eOgNukxP
- Ge373wE/T0YzSFbHLkXp6XkrtHU9mUmwjk7EHw+f2TeVxkgML3d9iDSEvjNajpa+6746
- yQdmuYz36CveVabg5LDbdCLwdMklqodT2SjIvIpGoP+x6PzsZNlG8/lox1bj7i/NL2Ki
- N0gSC8rBoz7T5YInhwaB6YKHfeP5/SMeNjw1NWhrKZXNSem0XOZ/OOLbEFF1/+nnrBFQ
- n3mN0QBoDJo4oGA+e2ID+94wEft9iVNHGoVAxH/PiA6Y39yWM+Mc57ZyDDFsez8ElW+R
- QzuA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=poQTjuhtDsupGdVClN0ALov7TDRSULG2jSa2vmjVCU4=;
- b=PWW+L1CRVYSxps+NpxCGr5gjLVqmNuP3THNZKuKFTry+rbFtO4N6/1bPhYlVN4IJG8
- 0LcNFHVkRszss/cudHF5kECyNCb5ny+5MW66/kPYs4iICu9cLq7AtCcxY5jnvXDtk8aM
- EQQyvXkLPIRDlZIgJbFFfUPtT+e7G9GkdFfbuxkxBFCGPFzgSIC+OzwDliLRUcnauNqe
- htYoBDHWJ1dwRziGnS6P/2OHv8JKn3mOnlbBVMSj/3fKXm/1Whm9SEj0Zpnk43+/pJxR
- CO8pHuJSQWCEyIy+vWiLHGFeYGrdNrUJiRScJpikYjAbq4BVTdod3HSCK7BVUdYCJW3Q
- rZ7w==
-X-Gm-Message-State: APjAAAU/BrHBdUHhWibe0P4Fn7VqPiApKkWozWSN5oQrZ966CdKvB/0/
- reNcFc5CHtmMdSGCADZKhILBHQ==
-X-Google-Smtp-Source: APXvYqxKjnVwguoOB08XOnRxBMmddtcMtOfbSZXzkSUZWCk4zT6Htfabazmn5u6TTmwmpHl9zyBoRA==
-X-Received: by 2002:a19:491d:: with SMTP id w29mr45756307lfa.149.1560951563329; 
- Wed, 19 Jun 2019 06:39:23 -0700 (PDT)
-Received: from localhost (h85-30-9-151.cust.a3fiber.se. [85.30.9.151])
- by smtp.gmail.com with ESMTPSA id n1sm2648220lfl.77.2019.06.19.06.39.21
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Wed, 19 Jun 2019 06:39:22 -0700 (PDT)
-Date: Wed, 19 Jun 2019 06:27:50 -0700
-From: Olof Johansson <olof@lixom.net>
-To: Krzysztof Kozlowski <krzk@kernel.org>
-Subject: Re: [GIT PULL] ARM: dts: exynos: Pull for v5.3
-Message-ID: <20190619132750.crkv5cvdt2w5jt3h@localhost>
-References: <20190616175513.3681-1-krzk@kernel.org>
+	id 1hdagd-0004uZ-2s; Wed, 19 Jun 2019 13:31:39 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hdagR-0004u7-JS
+ for linux-arm-kernel@lists.infradead.org; Wed, 19 Jun 2019 13:31:29 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id A3B60344;
+ Wed, 19 Jun 2019 06:31:26 -0700 (PDT)
+Received: from [10.1.196.105] (eglon.cambridge.arm.com [10.1.196.105])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 3D7953F738;
+ Wed, 19 Jun 2019 06:31:24 -0700 (PDT)
+Subject: Re: [RFC PATCH 2/2] ACPI / PPTT: cacheinfo: Label caches based on
+ fw_token
+To: Shameerali Kolothum Thodi <shameerali.kolothum.thodi@huawei.com>
+References: <20181005150235.13846-1-james.morse@arm.com>
+ <20181005150235.13846-3-james.morse@arm.com>
+ <5FC3163CFD30C246ABAA99954A238FA83F295ABF@lhreml524-mbb.china.huawei.com>
+From: James Morse <james.morse@arm.com>
+Message-ID: <4a8a2576-5a17-3897-ba5b-b81a172f1c82@arm.com>
+Date: Wed, 19 Jun 2019 14:31:22 +0100
+User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
+ Thunderbird/60.7.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190616175513.3681-1-krzk@kernel.org>
-User-Agent: NeoMutt/20170113 (1.7.2)
+In-Reply-To: <5FC3163CFD30C246ABAA99954A238FA83F295ABF@lhreml524-mbb.china.huawei.com>
+Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190619_063924_990341_D75C4C3E 
-X-CRM114-Status: GOOD (  13.64  )
+X-CRM114-CacheID: sfid-20190619_063127_734700_C0E7CFBF 
+X-CRM114-Status: GOOD (  19.48  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:143 listed in]
- [list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,43 +64,132 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-samsung-soc@vger.kernel.org, Arnd Bergmann <arnd@arndb.de>,
- linux-kernel@vger.kernel.org, arm@kernel.org, Kukjin Kim <kgene@kernel.org>,
- linux-arm-kernel@lists.infradead.org
+Cc: Vijaya Kumar K <vkilari@codeaurora.org>,
+ Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ Tomasz Nowicki <Tomasz.Nowicki@cavium.com>,
+ Jeffrey Hugo <jhugo@codeaurora.org>,
+ "Guohanjun \(Hanjun Guo\)" <guohanjun@huawei.com>,
+ Linuxarm <linuxarm@huawei.com>, Jeremy Linton <jeremy.linton@arm.com>,
+ "linux-acpi@vger.kernel.org" <linux-acpi@vger.kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ Sudeep Holla <sudeep.holla@arm.com>,
+ "wangxiongfeng \(C\)" <wangxiongfeng2@huawei.com>,
+ Richard Ruigrok <rruigrok@qti.qualcomm.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sun, Jun 16, 2019 at 07:55:13PM +0200, Krzysztof Kozlowski wrote:
-> The following changes since commit a188339ca5a396acc588e5851ed7e19f66b0ebd9:
-> 
->   Linux 5.2-rc1 (2019-05-19 15:47:09 -0700)
-> 
-> are available in the Git repository at:
-> 
->   https://git.kernel.org/pub/scm/linux/kernel/git/krzk/linux.git tags/samsung-dt-5.3
-> 
-> for you to fetch changes up to d2cac68e0d9b038da7207c0b63e1399c4f9f60c4:
-> 
->   ARM: dts: exynos: Add ADC node to Exynos5410 and Odroid XU (2019-06-11 20:37:21 +0200)
-> 
-> ----------------------------------------------------------------
-> Samsung DTS ARM changes for v5.3
-> 
-> 1. Fixes for minor warnings.
-> 2. Enable ADC on Exynos5410 Odroid XU board.
-> 
-> ----------------------------------------------------------------
-> Krzysztof Kozlowski (3):
->       ARM: dts: exynos: Move CPU OPP tables out of SoC node on Exynos5420
->       ARM: dts: exynos: Raise maximum buck regulator voltages on Arndale Octa
->       ARM: dts: exynos: Add ADC node to Exynos5410 and Odroid XU
+Hi Shameer,
 
-Merged, thanks!
+On 17/06/2019 09:28, Shameerali Kolothum Thodi wrote:
+>> -----Original Message-----
+
+>> The resctrl ABI requires caches to have a unique id. This number must be
+>> unique across all caches at this level, but doesn't need to be contiguous. (there
+>> may be gaps, it may not start at 0).
+>> See Documentation/x86/intel_rdt_ui.txt::Cache IDs
+>>
+>> We want a value that is the same over reboots, and should be the same on
+>> identical hardware, even if the PPTT is generated in a different order. The
+>> hardware doesn't give us any indication of which caches are shared, so this
+>> information must come from firmware tables.
+>>
+>> Starting with a cacheinfo's fw_token, we walk the table to find all CPUs that
+>> share this cpu_node (and thus cache), and take the lowest physical id to use as
+>> the id for the cache. On arm64 this value corresponds to the MPIDR.
+>>
+>> This is only done for unified caches, as instruction/data caches would generate
+>> the same id using this scheme.
 
 
--Olof
+>> diff --git a/drivers/acpi/pptt.c b/drivers/acpi/pptt.c index
+>> d1e26cb599bf..9478f8c28158 100644
+>> --- a/drivers/acpi/pptt.c
+>> +++ b/drivers/acpi/pptt.c
+>> @@ -341,6 +341,84 @@ static struct acpi_pptt_cache
+>> +/**
+>> + * acpi_pptt_min_physid_from_cpu_node() - Recursivly find @min_physid
+>> +for all
+>> + * leaf CPUs below @cpu_node.
+>> + * @table_hdr:	Pointer to the head of the PPTT table
+>> + * @cpu_node:	The point in the toplogy to start the walk
+>> + * @min_physid:	The min_physid to update with leaf CPUs.
+>> + */
+>> +void acpi_pptt_min_physid_from_cpu_node(struct acpi_table_header
+>> *table_hdr,
+>> +					struct acpi_pptt_processor *cpu_node,
+>> +					phys_cpuid_t *min_physid)
+>> +{
+>> +	bool leaf = true;
+>> +	u32 acpi_processor_id;
+>> +	phys_cpuid_t cpu_node_phys_id;
+>> +	struct acpi_subtable_header *iter;
+>> +	struct acpi_pptt_processor *iter_node;
+>> +	u32 target_node = ACPI_PTR_DIFF(cpu_node, table_hdr);
+>> +	u32 proc_sz = sizeof(struct acpi_pptt_processor *);
+>> +	unsigned long table_end = (unsigned long)table_hdr +
+>> +table_hdr->length;
+>> +
+>> +	/*
+>> +	 * Walk the PPTT, looking for nodes that reference cpu_node
+>> +	 * as parent.
+>> +	 */
+>> +	iter = ACPI_ADD_PTR(struct acpi_subtable_header, table_hdr,
+>> +			     sizeof(struct acpi_table_pptt));
+>> +
+>> +	while ((unsigned long)iter + proc_sz < table_end) {
+>> +		iter_node = (struct acpi_pptt_processor *)iter;
+>> +
+>> +		if (iter->type == ACPI_PPTT_TYPE_PROCESSOR &&
+>> +		    iter_node->parent == target_node) {
+>> +			leaf = false;
+>> +			acpi_pptt_min_physid_from_cpu_node(table_hdr, iter_node,
+>> +							   min_physid);
+>> +		}
+>> +
+>> +		if (iter->length == 0)
+>> +			return;
+>> +		iter = ACPI_ADD_PTR(struct acpi_subtable_header, iter,
+>> +				    iter->length);
+>> +	}
+>> +
+>> +	if (leaf && cpu_node->flags & ACPI_PPTT_ACPI_PROCESSOR_ID_VALID) {
+>> +		acpi_processor_id = cpu_node->acpi_processor_id;
+>> +		cpu_node_phys_id = acpi_id_to_phys_cpuid(acpi_processor_id);
+>> +		*min_physid = min(*min_physid, cpu_node_phys_id);
+>> +	}
+>> +}
+
+> I was just trying out the latest public MPAM branch available here[1]
+
+Great!
+
+
+> and noted that
+> on our HiSilicon platform all the L3 cache were labeled with the same Id. Debugging> revealed that the above leaf node check was removed in this branch[2] which makes
+> the min_physid calculation going wrong.
+
+Thanks for debugging this,
+
+> Just wondering is there any particular reason
+> for removing the check or the branch is not carrying the latest patch?
+
+Nope, that's a bug.
+
+Jeremy Linton's review feedback[0] was that that PROCESSOR_ID_VALID flag can't be relied
+on. It looks like I over-zealously removed the whole if(), and this doesn't cause a
+problem with my pptt so I didn't notice.
+
+I've fixed it locally, I've also pushed a fix to those branches, but it will get folded in
+next time I push a branch.
+
+
+Thanks!
+
+James
+
+[0] lore.kernel.org/r/a68abfd2-1e28-d9e7-919a-8b3133db4d20@arm.com
 
 _______________________________________________
 linux-arm-kernel mailing list
