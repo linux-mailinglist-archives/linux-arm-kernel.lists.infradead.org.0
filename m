@@ -2,51 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2B6AE4B2BC
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Jun 2019 09:11:20 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D82B74B2C5
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Jun 2019 09:11:36 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=lSxRUogLOxT505rGr+jsoPqGRElkgC3I+qPFlv1KsdM=; b=kqP
-	A1oS8inCTuR+3hyXHPXoXEeBeZWkaOJ5V2F0LPJwNQWh9v14RDmdmSgBGQjP43HM0bKi/2O2/UKkW
-	oR7D9KmsnqFQHK1dKQO7wbv4OY6V0Bs9rgCkRbobGPogh/0rS/WsPpx6I1eT5v7toHOLugei6hcNn
-	I7oDJVfQjFr3zdVXgEuqLyfwV/0YUL6hNgp08nauYldHtaWbiAfXE0skyhYVVqQvj8sRM6aFVsWrj
-	UWnQ3y6847+8mllgk+9SAZRHEFGlreCN2SyciDTDHB1a3b7VdG42S8Sp06pkZIe1vYb0CyWO0umTK
-	6IJ8+iWrexISP8+X6qvKmvL9TnaL7Sg==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=UeSEWu1ZwlEGKUHv+/mo0e05tU+s3w1xbFXSr2Mfnck=; b=RoHdSocMBObWzeDjIREuunyIxG
+	b+lyjNjD2q0H8fDkiWtdZ4kX30uWpwHxID5FtwdGHasRbT+DsOoEW1tIr3GD1u5NbMknfdy5rdO7P
+	JxrRvM7WMgMn1SFfcssraGUUzQUFV9wh4MNtsrMLjqmjK76hPDPx3RkDJQC0aJVqas5MOLF0MNjQM
+	O4Zl5NB9DaTlYX5ayO/AqaTxKuwES4jZWEZcswRuI5SiHD09nfupYdn+uM1zU2fbDe1em9dT9wJAl
+	w42vyFbeI31TBySUNDA3alNCQ2+GdYvodHW0u1C7v+w2l6+1wsNBPqa6dAaU0Yup+tF0DXU961/+w
+	le9SNjNQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hdUkX-0005rl-9E; Wed, 19 Jun 2019 07:11:17 +0000
-Received: from inva020.nxp.com ([92.121.34.13])
+	id 1hdUkp-00063k-BB; Wed, 19 Jun 2019 07:11:35 +0000
+Received: from inva021.nxp.com ([92.121.34.21])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hdUkG-0005r2-Uj
+ id 1hdUkH-0005r6-K2
  for linux-arm-kernel@lists.infradead.org; Wed, 19 Jun 2019 07:11:02 +0000
-Received: from inva020.nxp.com (localhost [127.0.0.1])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 3FBA61A05A1;
- Wed, 19 Jun 2019 09:10:58 +0200 (CEST)
+Received: from inva021.nxp.com (localhost [127.0.0.1])
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 9E26120017D;
+ Wed, 19 Jun 2019 09:10:59 +0200 (CEST)
 Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
  [165.114.16.14])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 2B68A1A05A3;
- Wed, 19 Jun 2019 09:10:52 +0200 (CEST)
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 881702005B3;
+ Wed, 19 Jun 2019 09:10:53 +0200 (CEST)
 Received: from localhost.localdomain (mega.ap.freescale.net [10.192.208.232])
- by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 6BD8D402F0;
- Wed, 19 Jun 2019 15:10:44 +0800 (SGT)
+ by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id C70FC402F6;
+ Wed, 19 Jun 2019 15:10:45 +0800 (SGT)
 From: Anson.Huang@nxp.com
 To: mturquette@baylibre.com, sboyd@kernel.org, shawnguo@kernel.org,
  s.hauer@pengutronix.de, kernel@pengutronix.de, festevam@gmail.com,
  abel.vesa@nxp.com, ccaione@baylibre.com, leonard.crestez@nxp.com,
  aisheng.dong@nxp.com, linux-clk@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
-Subject: [PATCH 1/2] clk: imx: Remove __init for imx_register_uart_clocks() API
-Date: Wed, 19 Jun 2019 15:12:39 +0800
-Message-Id: <20190619071240.38503-1-Anson.Huang@nxp.com>
+Subject: [PATCH 2/2] clk: imx8mq: Keep uart clocks on during system boot
+Date: Wed, 19 Jun 2019 15:12:40 +0800
+Message-Id: <20190619071240.38503-2-Anson.Huang@nxp.com>
 X-Mailer: git-send-email 2.17.1
+In-Reply-To: <20190619071240.38503-1-Anson.Huang@nxp.com>
+References: <20190619071240.38503-1-Anson.Huang@nxp.com>
 X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190619_001101_139235_438259F2 
-X-CRM114-Status: UNSURE (   7.79  )
+X-CRM114-CacheID: sfid-20190619_001101_799394_B17CE876 
+X-CRM114-Status: UNSURE (   9.17  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -54,7 +57,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [92.121.34.13 listed in list.dnswl.org]
+ medium trust [92.121.34.21 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -77,39 +80,42 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Anson Huang <Anson.Huang@nxp.com>
 
-Some of i.MX SoCs' clock driver use platform driver model,
-and they need to call imx_register_uart_clocks() API, so
-imx_register_uart_clocks() API should NOT be in .init section.
+Call imx_register_uart_clocks() API to keep uart clocks enabled
+when earlyprintk or earlycon is active.
 
 Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
 ---
- drivers/clk/imx/clk.c | 6 +++---
- 1 file changed, 3 insertions(+), 3 deletions(-)
+ drivers/clk/imx/clk-imx8mq.c | 10 ++++++++++
+ 1 file changed, 10 insertions(+)
 
-diff --git a/drivers/clk/imx/clk.c b/drivers/clk/imx/clk.c
-index f241189..76457b2 100644
---- a/drivers/clk/imx/clk.c
-+++ b/drivers/clk/imx/clk.c
-@@ -123,8 +123,8 @@ void imx_cscmr1_fixup(u32 *val)
- 	return;
+diff --git a/drivers/clk/imx/clk-imx8mq.c b/drivers/clk/imx/clk-imx8mq.c
+index 5fbc2a7..d407a07 100644
+--- a/drivers/clk/imx/clk-imx8mq.c
++++ b/drivers/clk/imx/clk-imx8mq.c
+@@ -272,6 +272,14 @@ static const char * const imx8mq_clko2_sels[] = {"osc_25m", "sys2_pll_200m", "sy
+ 
+ static struct clk_onecell_data clk_data;
+ 
++static struct clk ** const uart_clks[] = {
++	&clks[IMX8MQ_CLK_UART1_ROOT],
++	&clks[IMX8MQ_CLK_UART2_ROOT],
++	&clks[IMX8MQ_CLK_UART3_ROOT],
++	&clks[IMX8MQ_CLK_UART4_ROOT],
++	NULL
++};
++
+ static int imx8mq_clocks_probe(struct platform_device *pdev)
+ {
+ 	struct device *dev = &pdev->dev;
+@@ -555,6 +563,8 @@ static int imx8mq_clocks_probe(struct platform_device *pdev)
+ 	err = of_clk_add_provider(np, of_clk_src_onecell_get, &clk_data);
+ 	WARN_ON(err);
+ 
++	imx_register_uart_clocks(uart_clks);
++
+ 	return err;
  }
  
--static int imx_keep_uart_clocks __initdata;
--static struct clk ** const *imx_uart_clocks __initdata;
-+static int imx_keep_uart_clocks;
-+static struct clk ** const *imx_uart_clocks;
- 
- static int __init imx_keep_uart_clocks_param(char *str)
- {
-@@ -137,7 +137,7 @@ __setup_param("earlycon", imx_keep_uart_earlycon,
- __setup_param("earlyprintk", imx_keep_uart_earlyprintk,
- 	      imx_keep_uart_clocks_param, 0);
- 
--void __init imx_register_uart_clocks(struct clk ** const clks[])
-+void imx_register_uart_clocks(struct clk ** const clks[])
- {
- 	if (imx_keep_uart_clocks) {
- 		int i;
 -- 
 2.7.4
 
