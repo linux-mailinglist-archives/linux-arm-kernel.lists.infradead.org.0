@@ -2,87 +2,70 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0E1284BC6C
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Jun 2019 17:07:43 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 325D14BADC
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Jun 2019 16:11:44 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=z41AXpYkLG8RxQe2xmv389v1nwIKBCsskWnuysLjdw0=; b=Hr0rrRRTyj9+IQ
-	qEs01ijQXd50fWWmdSrWVieBriRrgqReXrurY8ATqgCJz/XJ3vlW9ot6exSvUIwgbcHovIxUPW9jb
-	w95MpS2uxzHSJ+00uRdi4aGHp2q69MH8476y1DvU/oFvNpjl/ggTe8O/MaZ+3cOV6RQk2mRMgXYN6
-	t4x75JIJaI0co4aXLVgQjQ7tr6ZxM5wWVq+LIRwCbOP/1GSyJ6/J4iZDuM7ZRbZCdOO/tuqMKGXq/
-	/dadDg9o/loMUS68PScz7zAVdETgttmQ1s5Q1IpI73t4TYceFA/qdQmoiTVUB+U/XOM408NOVJ3WG
-	gvIpPOhU0MLSVpYXcqXQ==;
+	List-Owner; bh=0LnNw/fn1vbR3Z9aOrzRUrwi6PcKujQXCunawJPPHUg=; b=lkFUNRpIyUIY6R
+	Fefh2WjLFCSp7ypXkg/YvMV2+++5NicPm+2aUFjUZJro8D7845aeO00CvllayytFfOaLhVXtUP8yB
+	KXXjpbqaKm9PkBRe8/QoUhjUOY4RliLBnRQNI9Mv/w5gAugzn7XPNJv5lSkbOqKcXM5Y7gZF84Czg
+	XjVc0/rc+/AfoSTav7BrMiJov1iNnTa+Iy/QWQNT6YuOI320GKhYxwusBSgmYrWwZ15xEHlGIweGo
+	N8llELeUlbIw0z8IrfvCGN1PKzAyL0dNKggh/rlGE5/8fTjYaF/1qXGETaMNVALMoVkoAfXhUBHp9
+	2/8ep8YHtNuTXfNoDBIg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hdcBZ-0003BN-9s; Wed, 19 Jun 2019 15:07:41 +0000
-Received: from mail-lf1-x143.google.com ([2a00:1450:4864:20::143])
+	id 1hdbJM-0008MB-HP; Wed, 19 Jun 2019 14:11:40 +0000
+Received: from vps0.lunn.ch ([185.16.172.187])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hdc9y-0002Ds-S1
- for linux-arm-kernel@lists.infradead.org; Wed, 19 Jun 2019 15:06:05 +0000
-Received: by mail-lf1-x143.google.com with SMTP id y17so12433217lfe.0
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 19 Jun 2019 08:06:02 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=lixom-net.20150623.gappssmtp.com; s=20150623;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=qo3e63HL3BzDtfqkQiaY62IQlXV/H1BFP1jalf87HMc=;
- b=uxSUY3ZxDLYKi6tP3oJ+OgL02Da5xhLsw2kgcnf8dWSKkxZx49Yn1Rf2dhRqASNOR/
- uyih413YiGOdufoC2Snp1BzgYJC7TdUj02oLV4BzEw0y0Eqp8FHEJwShX4bIIR46JIGY
- e28m8kq6Bl4T6bkFAW0JExXNp4chY1fjQG+WkQc3TekfEdcDkJoVxe9T01/Yx2RHNolX
- u4BEJARBt+s9uJLbn3LzlBSwkWaaiLSonuChC6KyJDxUz79E5vJ1FPIk7jYsRIM2E8d5
- /yWbFFNvtSTqaW1eELAl9/WAgUqgbHmU56MWfH0+/mFNHV15iBrJhe1ME2/XCjKbefMx
- YL+Q==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=qo3e63HL3BzDtfqkQiaY62IQlXV/H1BFP1jalf87HMc=;
- b=lOYc83tUktnMmMvdUy7r3/hTcr4eXonJwAJCYnVYCf/rc6gYTd0CY0xIX7etqA2ylv
- x8y+gHs+A0zHsIFQz70EekICnj3yXFjqD8QgsNrEIAFgdCPTQLE0zKK5c2y603F19v+A
- Hsxt86MO2V02cutOB7nczy+OWiOaLP/Tlf9niz/j5PUdmmOyasexSBLaYt5vO8Z5530e
- ugTr3KtLj5jf5AEB8xWmuBwMR6wclnwJd3eWbn8LgzvaRXWkxcKIuoSTczAvn3XyvfK5
- 5+ht4Ii1RLmwJ6tV2Zwujn3UmYPP2FHeoHw/E2bbmglDQT12lTlq2put6h75N6kL5vIO
- 9hFw==
-X-Gm-Message-State: APjAAAVF9aRfZkLw6QQPUQcjweav1cY+20RH5khrmTiiRqzOutfEeW1h
- woYxog6s5UsE5x8RqVlYb84raw==
-X-Google-Smtp-Source: APXvYqx2OQTjYY91I+p4ttJwT1ZdJWsfYL5Dxi2KwgLxgOydHZgkuJM1ooIblOIa8NRl8LMbuo6YMA==
-X-Received: by 2002:ac2:494f:: with SMTP id o15mr33066277lfi.84.1560956760977; 
- Wed, 19 Jun 2019 08:06:00 -0700 (PDT)
-Received: from localhost (h85-30-9-151.cust.a3fiber.se. [85.30.9.151])
- by smtp.gmail.com with ESMTPSA id g14sm3001223lja.23.2019.06.19.08.05.59
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Wed, 19 Jun 2019 08:06:00 -0700 (PDT)
-Date: Wed, 19 Jun 2019 07:11:12 -0700
-From: Olof Johansson <olof@lixom.net>
-To: Tomeu Vizoso <tomeu.vizoso@collabora.com>
-Subject: Re: [PATCH 2/2] arm64: defconfig: add Panfrost driver
-Message-ID: <20190619141112.lvw2ibyrqr53livv@localhost>
-References: <20190604112003.31813-1-tomeu.vizoso@collabora.com>
- <20190604112003.31813-2-tomeu.vizoso@collabora.com>
+ id 1hdbJA-0008LW-QE
+ for linux-arm-kernel@lists.infradead.org; Wed, 19 Jun 2019 14:11:31 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=lunn.ch;
+ s=20171124; h=In-Reply-To:Content-Type:MIME-Version:References:Message-ID:
+ Subject:Cc:To:From:Date:Sender:Reply-To:Content-Transfer-Encoding:Content-ID:
+ Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+ :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
+ List-Post:List-Owner:List-Archive;
+ bh=v0kj21FKTfc8hI0Hhv3Jpr9qgTaeqZ90JjRurjLbLxE=; b=aJW4ugajucQKu9Yyy9ttcxLUbB
+ /OMtxcJOC9W9XEDDqR5MHfWCpOiBiRNCkdDCCcFQ8QwEcWC1OGDIZ3P/ln8CWphBQqcIU32s1MFqI
+ 85ao32RIPpUllKTmvCc8SsxJDxiRkXmohQ4E6ID7RzulnFWX2s6mBzFc2CNy8ESYZZ28=;
+Received: from andrew by vps0.lunn.ch with local (Exim 4.89)
+ (envelope-from <andrew@lunn.ch>)
+ id 1hdbJ2-0001ul-Hn; Wed, 19 Jun 2019 16:11:20 +0200
+Date: Wed, 19 Jun 2019 16:11:20 +0200
+From: Andrew Lunn <andrew@lunn.ch>
+To: Maxime Ripard <maxime.ripard@bootlin.com>
+Subject: Re: [PATCH v3 14/16] ARM: dts: sunxi: Switch from phy-mode to
+ phy-connection-type
+Message-ID: <20190619141120.GD18352@lunn.ch>
+References: <27aeb33cf5b896900d5d11bd6957eda268014f0c.1560937626.git-series.maxime.ripard@bootlin.com>
+ <50f869f466acb110c5924d7e8a67087fd97106fd.1560937626.git-series.maxime.ripard@bootlin.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190604112003.31813-2-tomeu.vizoso@collabora.com>
-User-Agent: NeoMutt/20170113 (1.7.2)
+In-Reply-To: <50f869f466acb110c5924d7e8a67087fd97106fd.1560937626.git-series.maxime.ripard@bootlin.com>
+User-Agent: Mutt/1.5.23 (2014-03-12)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190619_080602_933197_95612B35 
-X-CRM114-Status: GOOD (  10.28  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190619_071129_892167_02F60405 
+X-CRM114-Status: UNSURE (   9.01  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:143 listed in]
- [list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ no trust [185.16.172.187 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -95,30 +78,38 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Arnd Bergmann <arnd@arndb.de>, Maxime Ripard <maxime.ripard@bootlin.com>,
- Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will.deacon@arm.com>,
- linux-kernel@vger.kernel.org, Bjorn Andersson <bjorn.andersson@linaro.org>,
- Dinh Nguyen <dinguyen@kernel.org>, arm@kernel.org,
- Jagan Teki <jagan@amarulasolutions.com>,
- Enric Balletbo i Serra <enric.balletbo@collabora.com>,
- Simon Horman <horms+renesas@verge.net.au>,
- "moderated list:ARM64 PORT \(AARCH64 ARCHITECTURE\)"
- <linux-arm-kernel@lists.infradead.org>
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Florian Fainelli <f.fainelli@gmail.com>,
+ Alexandre Torgue <alexandre.torgue@st.com>,
+ Antoine =?iso-8859-1?Q?T=E9nart?= <antoine.tenart@bootlin.com>,
+ netdev@vger.kernel.org, linux-stm32@st-md-mailman.stormreply.com,
+ Chen-Yu Tsai <wens@csie.org>, Rob Herring <robh+dt@kernel.org>,
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ Maxime Chevallier <maxime.chevallier@bootlin.com>,
+ Frank Rowand <frowand.list@gmail.com>,
+ "David S . Miller" <davem@davemloft.net>, linux-arm-kernel@lists.infradead.org,
+ Heiner Kallweit <hkallweit1@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Jun 04, 2019 at 01:20:02PM +0200, Tomeu Vizoso wrote:
-> With the goal of making it easier for CI services such as KernelCI to
-> run tests for it.
-> 
-> Signed-off-by: Tomeu Vizoso <tomeu.vizoso@collabora.com>
+On Wed, Jun 19, 2019 at 11:47:23AM +0200, Maxime Ripard wrote:
+> The phy-mode device tree property has been deprecated in favor of
+> phy-connection-type, let's replace it.
 
-Applied, thanks!
+Hi Maxime
 
+net/ethernet/stmicro/stmmac/dwmac-mediatek.c:		dev_err(plat->dev, "not find phy-mode\n");
+net/ethernet/stmicro/stmmac/dwmac-anarion.c:		dev_err(&pdev->dev, "Unsupported phy-mode (%d)\n",
+net/ethernet/stmicro/stmmac/dwmac-meson8b.c:		dev_err(dwmac->dev, "fail to set phy-mode %s\n",
+net/ethernet/stmicro/stmmac/dwmac-meson8b.c:		dev_err(dwmac->dev, "fail to set phy-mode %s\n",
+net/ethernet/stmicro/stmmac/dwmac-meson8b.c:		dev_err(dwmac->dev, "unsupported phy-mode %s\n",
+net/ethernet/stmicro/stmmac/dwmac-meson8b.c:		dev_err(&pdev->dev, "missing phy-mode property\n");
 
--Olof
+As a follow up patch, you might want to change these error messages.
+
+   Andrew
 
 _______________________________________________
 linux-arm-kernel mailing list
