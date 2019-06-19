@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9DA2C4BFAC
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Jun 2019 19:32:35 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4B4E34BFAD
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Jun 2019 19:32:57 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,71 +11,71 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=JhAIHCKrVwKM4w+kXIcBVGW4S9qkgnkT9fsppXed1V4=; b=ry4EtQPnzmJmgHV89NyGq8Gx80
-	UrdUj0UiDMgwPmUgrditfv4X7gguJx84CsZwPzmxp3sUhIqhZQxaIt/O3nSPC7QLXXSbHCRpixMVV
-	coHlABWvoxOJIqxWTkMa/NpJDfci3ZbdWzLisCeAiAJMUqN2CdVI6NNMvwfaXI0mt+kuotnxvyrrT
-	a9dy+C/ao3XJymRKZWkiI4bVcL3T+VzavRvH4I1MXC2EwbZ/A8eBjH8W99n4ATjLpcAXym+VBf5Hv
-	SVvFoAO8NpG30UV/xY0wgPzyP9B1IqTDB97O25JPIsBii4FnHPR5ftgkgw2WJAaXI0gVuQqVvyYDM
-	FccBBXIw==;
+	bh=tuUCai124IWtJ236/9mmYo5SgCs+cmk1DeNChdDkTZc=; b=T3Y0Zz9MyZiLNicyH8rC54gLWw
+	D6lkKUdAe4HYadnAlcweBD35UU7BzO9plTsqHHJoBnNT4rAvqr9GnR2Om0OTXFukIWr3X1uuCdXRC
+	ZtRo9qgspD5ZsvsvFYaGCRCbsz4/VopoU+ZSgSGWXD+cOrrI0J9vpc7qrUavuZgGYv6Ktn9lX7qjP
+	HfZqUQeETuOt/Dm0IORo0pY5ZnumAsL8q6Z+Odn/LxkQ0m+P2YNfPFf0KIPQMAadmJbB28FgrFwkn
+	1fOljxXCtttfR9Xc58lRqzHQFiBYSfmMQ0ShlR7RQFLWln+bNLcRyzlgnLIkFGxlN0EU3Pqvx7FZn
+	4CkQOQNA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hdeRl-0001SX-0k; Wed, 19 Jun 2019 17:32:33 +0000
-Received: from mail-pl1-x643.google.com ([2607:f8b0:4864:20::643])
+	id 1hdeS7-0001jk-FP; Wed, 19 Jun 2019 17:32:55 +0000
+Received: from mail-pl1-x644.google.com ([2607:f8b0:4864:20::644])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hdePF-00074w-Lp
- for linux-arm-kernel@lists.infradead.org; Wed, 19 Jun 2019 17:29:59 +0000
-Received: by mail-pl1-x643.google.com with SMTP id t7so80567plr.11
+ id 1hdePG-00075u-HR
+ for linux-arm-kernel@lists.infradead.org; Wed, 19 Jun 2019 17:30:00 +0000
+Received: by mail-pl1-x644.google.com with SMTP id bi6so78480plb.12
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 19 Jun 2019 10:29:57 -0700 (PDT)
+ Wed, 19 Jun 2019 10:29:58 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=AgYewqbl8iSJQRrA3NRCvtvG59aXYoMecD7NpQO4c4M=;
- b=Mnb5DfKw9t5I4GT8GQd8zyP2p/jZpeYyEMsPLL++qR3PoJptYomk0tePj3MaEPXFn2
- rPi+pDsoqORrp4Vyj5vI8uWkABh62YmGcQ9wBn9Bs//B3cmsajbvTa5rcsUBwuUm3ulv
- vV91hUiOwYla/M2Gmgpu9dIE7whTWQ6u9nKyxglpvySyosD1L4UO8+wNqnezcSuVPtnZ
- UrjfLYohn+60nlZiEx/ugixfPs00nlROTk93eBZcrPbUk/9peDQl2m4sQpGjyPPmHlkd
- WC83E//J1zVfd2aSEFXGSqs1RKHnIS+5m1ec0JHHJBZLBA+BNyusneibeCbqysCpohGn
- rlag==
+ bh=DThV8U7/6lnQCq1brl48bQF0wGungTqjO3Krt6EpRiA=;
+ b=RhyWi9l+o7wI5kCTCaRehz+yAK2h424fzerS8WhKkd5a7lQx5pqMqPNPInZVJuIfRe
+ hBVoiJ9WgYmyeD0uW+dUUwugoWyPIRIw7e8zusF+PnQmz1e+6YUWtrcjvdz2e1Z3KX6L
+ D9H6GLWmG2i3zmMl8amG3lvSEsEt3wi8sCJw6J3hQT0oN+IBsp4Hg22dLOwzJ9owTOIp
+ imJ09vqJOTfxkjVgIAMTJZVcvJHHE6Bqdt6D9DPZZVOKDf5v7gYSDTNvpeDi+AatqBec
+ TGBfKmscz/8UtOptSijJzti6dzWt6RB43u5+73KvzK3F0+R/5WgdqTlHjqHijliUIYzn
+ rs9A==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=AgYewqbl8iSJQRrA3NRCvtvG59aXYoMecD7NpQO4c4M=;
- b=AWJ4LrfvAdsqtcNm+6i+5O24r2Sy1Xx8uQAKCQcroIFUEmVgwqPsgEMgYy/Sz1Ehzv
- xJZ3VuROT4kf6jvQQT+r2TZLvidNJ2Pa2GlQlkkLOFeyGvth5esi7r6NU/Bu+q4xP2ZG
- NCkpQzxM5ozr3xCjQ8zwJar+8HZaA5s6d/KiWIN6yHwI2l4cJO2ISdIwj9VM2j1QWFXC
- OBqbp47grW89F7Aj0DaEZIqof2cGfX8xT8sqFdMBNTU7byXk1HGBQLeLuxjeo60q1BKe
- 2KMPzzG6S6wrcTfEDxHerCDFTUoVH5LHHg3v3/3oRsd9T78nt7B6suEg3QS5gDsS7e7S
- VIgA==
-X-Gm-Message-State: APjAAAUyXEvuhK9fBZa8DdzexxfFAKO9I+gQMdAUuPV/ydHHoSWAMgxG
- 7UvcKAAtKffX9rZjXmjMvXW4NgMuqIuOdA==
-X-Google-Smtp-Source: APXvYqx6VKCXT6TVD/0dK/+sgOUkYHjS5u79v5XhW/RfgZPyDElf185Pf4OdVcLUpon7X/gzI5HV4A==
-X-Received: by 2002:a17:902:7687:: with SMTP id
- m7mr38585711pll.310.1560965396915; 
- Wed, 19 Jun 2019 10:29:56 -0700 (PDT)
+ bh=DThV8U7/6lnQCq1brl48bQF0wGungTqjO3Krt6EpRiA=;
+ b=oFo/zEOADLcWIUavNfN01ob1gnua5a2nM0wQev8EBZRNsLskn2MYH77CelDs+0K4f4
+ HBxDihNdgIU/rky6BkV87En8lDoG6B2JH3+z7UY0MDY+L+h7TW9srR/uL7L553bmKYbm
+ vasqu3HyUJV60Trehrvy2nAR++Hs81lhCVMr7QvG01k5wmsZi05tfeVOxS0MCZLoQmE9
+ CiQK4Ao8bFkXIhEFNq3EvmbZzLP6NMxEYKRP3vHnnNnvUP3Xk6x0q4NHqgpADolQr1Pn
+ dNIK2KGUkWtboKS4txBoFSyKuJIT9C87Qn5q4BjunnEK5OQvI54ZIRgVuV0QIHsjj6Km
+ 8sQA==
+X-Gm-Message-State: APjAAAXlyCcfuO8D+jaZ7Iw6Pgc3oqplMvWtr4HXsADb6feOQHiVjqpQ
+ D6KKGstHDyFK8GaKWcTIsPMFUg==
+X-Google-Smtp-Source: APXvYqwtiLzdAwA7+IaOCZ5aYz0L7FZAypRW8ANASPO5Dbk3vF6DUcRCRXnVjYIJviprg3H1gQJwkQ==
+X-Received: by 2002:a17:902:24c:: with SMTP id
+ 70mr119602547plc.2.1560965397883; 
+ Wed, 19 Jun 2019 10:29:57 -0700 (PDT)
 Received: from xps15.cg.shawcable.net (S0106002369de4dac.cg.shawcable.net.
  [68.147.8.254])
  by smtp.gmail.com with ESMTPSA id g2sm31348406pfb.95.2019.06.19.10.29.56
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Wed, 19 Jun 2019 10:29:56 -0700 (PDT)
+ Wed, 19 Jun 2019 10:29:57 -0700 (PDT)
 From: Mathieu Poirier <mathieu.poirier@linaro.org>
 To: gregkh@linuxfoundation.org
-Subject: [PATCH 06/45] coresight: funnel: Clean up device book keeping
-Date: Wed, 19 Jun 2019 11:29:10 -0600
-Message-Id: <20190619172949.4522-7-mathieu.poirier@linaro.org>
+Subject: [PATCH 07/45] coresight: replicator: Cleanup device tracking
+Date: Wed, 19 Jun 2019 11:29:11 -0600
+Message-Id: <20190619172949.4522-8-mathieu.poirier@linaro.org>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20190619172949.4522-1-mathieu.poirier@linaro.org>
 References: <20190619172949.4522-1-mathieu.poirier@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190619_102957_720928_1435E53A 
-X-CRM114-Status: GOOD (  14.54  )
+X-CRM114-CacheID: sfid-20190619_102958_652637_6FE4DC1E 
+X-CRM114-Status: GOOD (  15.58  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:643 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:644 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -107,7 +107,7 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 From: Suzuki K Poulose <suzuki.poulose@arm.com>
 
 In preparation to use a consistent device naming scheme,
-clean up the device link tracking in funnel driver.
+clean up the device link tracking in replicator driver.
 Use the "coresight" device instead of the "real" parent device
 for all internal purposes. All other requests (e.g, power management,
 DMA operations) must use the "real" device which is the parent device.
@@ -115,61 +115,46 @@ DMA operations) must use the "real" device which is the parent device.
 Signed-off-by: Suzuki K Poulose <suzuki.poulose@arm.com>
 Signed-off-by: Mathieu Poirier <mathieu.poirier@linaro.org>
 ---
- drivers/hwtracing/coresight/coresight-funnel.c | 11 ++++-------
- 1 file changed, 4 insertions(+), 7 deletions(-)
+ drivers/hwtracing/coresight/coresight-replicator.c | 7 ++-----
+ 1 file changed, 2 insertions(+), 5 deletions(-)
 
-diff --git a/drivers/hwtracing/coresight/coresight-funnel.c b/drivers/hwtracing/coresight/coresight-funnel.c
-index 16b0c0e1e43a..6236a847bb0b 100644
---- a/drivers/hwtracing/coresight/coresight-funnel.c
-+++ b/drivers/hwtracing/coresight/coresight-funnel.c
-@@ -32,14 +32,12 @@
- /**
-  * struct funnel_drvdata - specifics associated to a funnel component
-  * @base:	memory mapped base address for this component.
-- * @dev:	the device entity associated to this component.
-  * @atclk:	optional clock for the core parts of the funnel.
-  * @csdev:	component vitals needed by the framework.
-  * @priority:	port selection order.
+diff --git a/drivers/hwtracing/coresight/coresight-replicator.c b/drivers/hwtracing/coresight/coresight-replicator.c
+index 8c9ce74498e1..ee6ad34061a5 100644
+--- a/drivers/hwtracing/coresight/coresight-replicator.c
++++ b/drivers/hwtracing/coresight/coresight-replicator.c
+@@ -26,13 +26,11 @@
+  * struct replicator_drvdata - specifics associated to a replicator component
+  * @base:	memory mapped base address for this component. Also indicates
+  *		whether this one is programmable or not.
+- * @dev:	the device entity associated with this component
+  * @atclk:	optional clock for the core parts of the replicator.
+  * @csdev:	component vitals needed by the framework
   */
- struct funnel_drvdata {
+ struct replicator_drvdata {
  	void __iomem		*base;
 -	struct device		*dev;
  	struct clk		*atclk;
  	struct coresight_device	*csdev;
- 	unsigned long		priority;
-@@ -80,7 +78,7 @@ static int funnel_enable(struct coresight_device *csdev, int inport,
- 		rc = dynamic_funnel_enable_hw(drvdata, inport);
- 
+ };
+@@ -100,7 +98,7 @@ static int replicator_enable(struct coresight_device *csdev, int inport,
+ 	if (drvdata->base)
+ 		rc = dynamic_replicator_enable(drvdata, inport, outport);
  	if (!rc)
--		dev_dbg(drvdata->dev, "FUNNEL inport %d enabled\n", inport);
-+		dev_dbg(&csdev->dev, "FUNNEL inport %d enabled\n", inport);
+-		dev_dbg(drvdata->dev, "REPLICATOR enabled\n");
++		dev_dbg(&csdev->dev, "REPLICATOR enabled\n");
  	return rc;
  }
  
-@@ -110,7 +108,7 @@ static void funnel_disable(struct coresight_device *csdev, int inport,
+@@ -139,7 +137,7 @@ static void replicator_disable(struct coresight_device *csdev, int inport,
+ 
  	if (drvdata->base)
- 		dynamic_funnel_disable_hw(drvdata, inport);
- 
--	dev_dbg(drvdata->dev, "FUNNEL inport %d disabled\n", inport);
-+	dev_dbg(&csdev->dev, "FUNNEL inport %d disabled\n", inport);
+ 		dynamic_replicator_disable(drvdata, inport, outport);
+-	dev_dbg(drvdata->dev, "REPLICATOR disabled\n");
++	dev_dbg(&csdev->dev, "REPLICATOR disabled\n");
  }
  
- static const struct coresight_ops_link funnel_link_ops = {
-@@ -165,11 +163,11 @@ static ssize_t funnel_ctrl_show(struct device *dev,
- 	u32 val;
- 	struct funnel_drvdata *drvdata = dev_get_drvdata(dev->parent);
- 
--	pm_runtime_get_sync(drvdata->dev);
-+	pm_runtime_get_sync(dev->parent);
- 
- 	val = get_funnel_ctrl_hw(drvdata);
- 
--	pm_runtime_put(drvdata->dev);
-+	pm_runtime_put(dev->parent);
- 
- 	return sprintf(buf, "%#x\n", val);
- }
-@@ -205,7 +203,6 @@ static int funnel_probe(struct device *dev, struct resource *res)
+ static const struct coresight_ops_link replicator_link_ops = {
+@@ -196,7 +194,6 @@ static int replicator_probe(struct device *dev, struct resource *res)
  	if (!drvdata)
  		return -ENOMEM;
  
