@@ -2,95 +2,77 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 238C14C2A9
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Jun 2019 23:01:38 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6584E4C29A
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Jun 2019 22:57:29 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=snOTiEN4M5agnb0uo1vmLdZSafRaWZZ4keU8E3UI3Tg=; b=dW8hNrzz1hOsw7
-	kp9USVdWBOM7/U6+jKvdcEBnZcMOM6tk9MB4/yuYOYros0flPEIrdK/FBvetNPOKLAdpL9d/tR/2n
-	AwExP08aDOcFF6UuHA2zmlo78nSW9/KJ9b8/ejBOzuAjmezxsVybZ433mghAqKFnX4pAB02CYNqHg
-	9Fjbm99/ITx2isyWd3yRTWIhVTYa0xVVr+panuo1vbvoZdxMA8ZH9eAh2zNRtrWJoRTf9i+PzEXHN
-	uzx6fRfAskvUuZl8LlYNyLaP85bJsRU1Jdlf8V/dZzguqpxkAhakV0pYSYMInfTjBeVQyS1SDiK1m
-	tAA4X8Bly2wUZtaB6pVA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=um0f6L74Bju6JrBI/tUxrdkFk9x5oJuY8uwGSHnF6LU=; b=a8iVrEGYI5+BBb
+	0lcMG/rmatFLzwgbno7EbXJ5kYUh/miVVOcr6fA4Avq1poLD0scNnb1auSuBCOFfEmoSHOXv5PnZI
+	5ck80Gm32Od/GGzHyxfRo/0dmGHzPtKCLC/FxIYbZehRI10cuItfdNTYaEC5mPTDjIVeXnOsZU3uc
+	BxIkYNVUSEa/68fYciktHm6uoA4lYHcHpCHlf2eOhOIAgO4lp7CEBrBlwnoRryB+DHxuHirtILsRJ
+	WimNHNsQvwSkF7Ex+LkRQNyJ1JQm5Dj20Ev7mUX+eOuGeQFrKU6DRn0aER5ChsEX1nzg5WYZAS+Qw
+	DMEy9ZoxjH/udJkenYUw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hdhi4-0002sY-37; Wed, 19 Jun 2019 21:01:36 +0000
-Received: from mx0b-00082601.pphosted.com ([67.231.153.30]
- helo=mx0a-00082601.pphosted.com)
+	id 1hdhe1-0000fE-GR; Wed, 19 Jun 2019 20:57:25 +0000
+Received: from mx1.redhat.com ([209.132.183.28])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hdhhR-0002Z9-8G
- for linux-arm-kernel@lists.infradead.org; Wed, 19 Jun 2019 21:00:58 +0000
-Received: from pps.filterd (m0089730.ppops.net [127.0.0.1])
- by m0089730.ppops.net (8.16.0.27/8.16.0.27) with SMTP id x5JKwoZg030674
- for <linux-arm-kernel@lists.infradead.org>; Wed, 19 Jun 2019 14:00:56 -0700
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=fb.com;
- h=from : to : cc : subject
- : date : message-id : mime-version : content-type; s=facebook;
- bh=r7JuZr+R8cAQf0CwlWsiXVI+rKV4iYlulYGHumQSQ9g=;
- b=YEo/HSPdagpqcGICFuaSTAyHkPgRUBPjoNMQ2s2nfb3/la8NjZddgvcFr1gO/34e/CfL
- Poh00ndBUE5okev6A7HsCD0p4z//Xa7tx6FiKFW8v0rEmL2cljJxb4gTuAmPcZlHK66M
- a9jJ7Wwf0LQMKcuRd5daPN7q+/lVovgCX94= 
-Received: from mail.thefacebook.com (mailout.thefacebook.com [199.201.64.23])
- by m0089730.ppops.net with ESMTP id 2t7s8xgrwf-7
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-SHA384 bits=256 verify=NOT)
- for <linux-arm-kernel@lists.infradead.org>; Wed, 19 Jun 2019 14:00:56 -0700
-Received: from mx-out.facebook.com (2620:10d:c081:10::13) by
- mail.thefacebook.com (2620:10d:c081:35::128) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA) id 15.1.1713.5;
- Wed, 19 Jun 2019 14:00:52 -0700
-Received: by devvm24792.prn1.facebook.com (Postfix, from userid 150176)
- id 3183D164B5293; Wed, 19 Jun 2019 13:50:20 -0700 (PDT)
-Smtp-Origin-Hostprefix: devvm
-From: Tao Ren <taoren@fb.com>
-Smtp-Origin-Hostname: devvm24792.prn1.facebook.com
-To: Brendan Higgins <brendanhiggins@google.com>, Benjamin Herrenschmidt
- <benh@kernel.crashing.org>, Joel Stanley <joel@jms.id.au>, Andrew Jeffery
- <andrew@aj.id.au>, Rob Herring <robh+dt@kernel.org>, Mark Rutland
- <mark.rutland@arm.com>,
- <linux-i2c@vger.kernel.org>, <openbmc@lists.ozlabs.org>,
- <linux-arm-kernel@lists.infradead.org>,
- <linux-aspeed@lists.ozlabs.org>, <linux-kernel@vger.kernel.org>,
- <devicetree@vger.kernel.org>
-Smtp-Origin-Cluster: prn1c35
-Subject: [PATCH 2/2] dt-bindings: i2c: aspeed: add base-clock-divisor property
-Date: Wed, 19 Jun 2019 13:50:18 -0700
-Message-ID: <20190619205018.4177192-1-taoren@fb.com>
-X-Mailer: git-send-email 2.17.1
-X-FB-Internal: Safe
+ id 1hdhdn-0000eQ-QJ
+ for linux-arm-kernel@lists.infradead.org; Wed, 19 Jun 2019 20:57:13 +0000
+Received: from smtp.corp.redhat.com (int-mx03.intmail.prod.int.phx2.redhat.com
+ [10.5.11.13])
+ (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
+ (No client certificate requested)
+ by mx1.redhat.com (Postfix) with ESMTPS id A385B30C1330;
+ Wed, 19 Jun 2019 20:57:06 +0000 (UTC)
+Received: from ovpn-112-53.rdu2.redhat.com (ovpn-112-53.rdu2.redhat.com
+ [10.10.112.53])
+ by smtp.corp.redhat.com (Postfix) with ESMTP id DACED608A7;
+ Wed, 19 Jun 2019 20:56:59 +0000 (UTC)
+Message-ID: <414bc504bf62ea8de2ad195c00ce64dc0acb773c.camel@redhat.com>
+Subject: Re: [PATCH v2 00/17] net: introduce Qualcomm IPA driver
+From: Dan Williams <dcbw@redhat.com>
+To: Arnd Bergmann <arnd@arndb.de>, Johannes Berg <johannes@sipsolutions.net>
+Date: Wed, 19 Jun 2019 15:56:58 -0500
+In-Reply-To: <CAK8P3a3r95gXMdq7s9GF=37v6t4kR+-2iyC6bnmUDVuM+bn80Q@mail.gmail.com>
+References: <380a6185-7ad1-6be0-060b-e6e5d4126917@linaro.org>
+ <a94676381a5ca662c848f7a725562f721c43ce76.camel@sipsolutions.net>
+ <CAK8P3a0kV-i7BJJ2X6C=5n65rSGfo8fUiC4J_G-+M8EctYKbkg@mail.gmail.com>
+ <fc0d08912bc10ad089eb74034726308375279130.camel@redhat.com>
+ <36bca57c999f611353fd9741c55bb2a7@codeaurora.org>
+ <153fafb91267147cf22e2bf102dd822933ec823a.camel@redhat.com>
+ <CAK8P3a2Y+tcL1-V57dtypWHndNT3eDJdcKj29c_v+k8o1HHQig@mail.gmail.com>
+ <f4249aa5f5acdd90275eda35aa16f3cfb29d29be.camel@redhat.com>
+ <CAK8P3a2nzZKtshYfomOOSYkqx5HdU15Wr9b+3va0B1euNhFOAg@mail.gmail.com>
+ <dbb32f185d2c3a654083ee0a7188379e1f88d899.camel@sipsolutions.net>
+ <d533b708-c97a-710d-1138-3ae79107f209@linaro.org>
+ <abdfc6b3a9981bcdef40f85f5442a425ce109010.camel@sipsolutions.net>
+ <CAK8P3a3ksrFTo2+dLB+doLeY+kPP7rYxv2O7BwvjYgK2cwCTuQ@mail.gmail.com>
+ <97cbfb3723607c95d78e25785262ae7b0acdb11c.camel@sipsolutions.net>
+ <CAK8P3a29+JKbDdS9ikhgaKa-AJ1qd1sDMTAfzivGh5wN4VL88A@mail.gmail.com>
+ <54a5acb6cf26ebc6447f8ebcbdcb8e0eed693ab3.camel@sipsolutions.net>
+ <CAK8P3a3r95gXMdq7s9GF=37v6t4kR+-2iyC6bnmUDVuM+bn80Q@mail.gmail.com>
+User-Agent: Evolution 3.30.5 (3.30.5-1.fc29) 
 MIME-Version: 1.0
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:, ,
- definitions=2019-06-19_13:, , signatures=0
-X-Proofpoint-Spam-Details: rule=fb_default_notspam policy=fb_default score=0
- priorityscore=1501
- malwarescore=0 suspectscore=0 phishscore=0 bulkscore=0 spamscore=0
- clxscore=1015 lowpriorityscore=0 mlxscore=0 impostorscore=0
- mlxlogscore=531 adultscore=0 classifier=spam adjust=0 reason=mlx
- scancount=1 engine=8.0.1-1810050000 definitions=main-1906190172
-X-FB-Internal: deliver
+X-Scanned-By: MIMEDefang 2.79 on 10.5.11.13
+X-Greylist: Sender IP whitelisted, not delayed by milter-greylist-4.5.16
+ (mx1.redhat.com [10.5.110.45]); Wed, 19 Jun 2019 20:57:07 +0000 (UTC)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190619_140057_415120_32B31542 
-X-CRM114-Status: GOOD (  13.08  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20190619_135711_884360_6BE700DF 
+X-CRM114-Status: GOOD (  21.76  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [67.231.153.30 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [209.132.183.28 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -102,41 +84,67 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Tao Ren <taoren@fb.com>
+Cc: DTML <devicetree@vger.kernel.org>, syadagir@codeaurora.org,
+ Eric Caruso <ejcaruso@google.com>, David Miller <davem@davemloft.net>,
+ linux-arm-msm@vger.kernel.org, Ilias Apalodimas <ilias.apalodimas@linaro.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>, evgreen@chromium.org,
+ Bjorn Andersson <bjorn.andersson@linaro.org>,
+ Networking <netdev@vger.kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Alex Elder <elder@linaro.org>,
+ Subash Abhinov Kasiviswanathan <subashab@codeaurora.org>,
+ linux-soc@vger.kernel.org, abhishek.esse@gmail.com, cpratapa@codeaurora.org,
+ Ben Chan <benchan@google.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-"base-clock-divisor" allows people to customize ASPEED I2C Controller's
-Base Clock, which in turn adjusts all other I2C AC timing settings.
+On Tue, 2019-06-18 at 23:06 +0200, Arnd Bergmann wrote:
+> On Tue, Jun 18, 2019 at 10:39 PM Johannes Berg
+> <johannes@sipsolutions.net> wrote:
+> > On Tue, 2019-06-18 at 22:33 +0200, Arnd Bergmann wrote:
+> > It seems to me though that this is far more complex than what I'm
+> > proposing? What I'm proposing there doesn't even need any userspace
+> > involvement, as long as all the pieces are in the different sub-
+> > drivers,
+> > they'd fall out automatically.
+> > 
+> > And realistically, the wwan_device falls out anyway at some point,
+> > the
+> > only question is if we really make one specific driver be the
+> > "owner" of
+> > it. I'm suggesting that we don't, and just make its lifetime depend
+> > on
+> > the links to parts it has (unless something like IPA actually wants
+> > to
+> > be an owner).
+> 
+> My feeling so far is that having the wwan_device be owned by a device
+> gives a nicer abstraction model that is also simpler for the common
+> case. A device driver like ipa would end up with a probe() function
+> that does does wwan_device_alloc/wwan_device_register, corresponding
+> to alloc_etherdev/register_netdev, and then communicates through
+> callbacks.
+> 
+> I agree the compound device case would get more complex by
+> shoehorning it into this model, but that can be a valid tradeoff
+> if it's the exceptional case rather than the common one.
 
-Signed-off-by: Tao Ren <taoren@fb.com>
----
- Documentation/devicetree/bindings/i2c/i2c-aspeed.txt | 8 +++++---
- 1 file changed, 5 insertions(+), 3 deletions(-)
+In my experience, the compound device model is by far the most
+prevalent for regular Linux distros or anything *not* running on an SoC
+with an integrated modem.
 
-diff --git a/Documentation/devicetree/bindings/i2c/i2c-aspeed.txt b/Documentation/devicetree/bindings/i2c/i2c-aspeed.txt
-index 8fbd8633a387..0c08df847c6f 100644
---- a/Documentation/devicetree/bindings/i2c/i2c-aspeed.txt
-+++ b/Documentation/devicetree/bindings/i2c/i2c-aspeed.txt
-@@ -13,9 +13,11 @@ Required Properties:
- - interrupts		: interrupt number
- 
- Optional Properties:
--- bus-frequency	: frequency of the bus clock in Hz defaults to 100 kHz when not
--		  specified
--- multi-master	: states that there is another master active on this bus.
-+- bus-frequency		: frequency of the bus clock in Hz defaults to 100 kHz
-+			  when not specified
-+- multi-master		: states that there is another master active on this bus.
-+- base-clock-divisor	: the divisor defines the frequency of Base Clock which
-+			  is divided from APB bus clock. Valid values are 0-15.
- 
- Example:
- 
--- 
-2.17.1
+But it's also quite common for Android, no? drivers/net/ethernet/msm/
+has rmnet and IPA ethernet drivers while arch/arm/mach-msm/ has various
+SMD-related control channel drivers like smd_tty.c and smd_qmi.c and
+smd_nmea.c. At least that's how I remember older SMD-based devices
+being in the 8xxx and 9xxx time.
+
+Ideally those setups can benefit from this framework as well, without
+having to write entirely new composite drivers for those devices.
+
+Dan
 
 
 _______________________________________________
