@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B98364BFB3
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Jun 2019 19:34:38 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8C2144BFC4
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Jun 2019 19:36:28 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,70 +11,71 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=1Y6DP6NZ022P9C/JTSaTxnfdcK3rFrHjP4IVnjaCQwI=; b=Kf/ghVj1EHTt67e5yD3iq7vORm
-	i+cghTiXlDAESaE5cPiFLo1lK51utYxYIsFfG1KvF3S5KhE8zyaNmysFM1boOlyY5HcxoaxFZ0qPf
-	Ue4yevreo7w0bsSOxybzDUEm0BKPjcbSBjUbxHsoHynJQ5QaERx+6GDUrJ9M4mV9BhDGLj0c28YfY
-	wKIFc0Jd6+/zx6Gf2+cw85ecPoPJD7jlayBZeCmf/jZQsozE3ciYD9RgrQC+u52YRXh+8M8e9wmpg
-	nnWxhm2vcI+lcQ6XMh/WHzMUMUE7Hl8gCfcnuxbQnrQi9yFVVvFK1vjxIQCt8DQBbQvHpMF/+EW8O
-	pGZEv/AQ==;
+	bh=lCdK5TZiIn0f+T2aUUMLOGhazs11ar/N43HAylT4G0Q=; b=KZpZCF3ni4Re4cXp0L8f8/n27N
+	U2puQ089ZrF26HDm8FN43Dz/LHowMDePB6yN9hgjjXgXtai121sOlLSXZeWzE53YfVrLOy0RFZakV
+	0alkOqxSzGHlloQ6ARhSDiCposx23ScVxfBfSZh4MQ8Bv6livIBqG0NJDqtcmfXdaSGYBgDALOd88
+	IxLf02a0LrjJdLSc8z87SrtjsrUpqIiMwYIAPDPryHCTxJaMxlnYuhcp1a77jTw+iurAOAErSq4Ch
+	p7yLySVcATM51A7qcMANatiWx/kcs/L73eLsmS0Gqigrk4Vg2xgP3JaIxXiMU8tDyksCQcxfHi2JL
+	D3+qcUIQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hdeTj-00030Q-Im; Wed, 19 Jun 2019 17:34:35 +0000
-Received: from mail-pf1-x443.google.com ([2607:f8b0:4864:20::443])
+	id 1hdeVX-0005gL-3S; Wed, 19 Jun 2019 17:36:27 +0000
+Received: from mail-pg1-x541.google.com ([2607:f8b0:4864:20::541])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hdePQ-0007bT-B4
- for linux-arm-kernel@lists.infradead.org; Wed, 19 Jun 2019 17:30:13 +0000
-Received: by mail-pf1-x443.google.com with SMTP id x15so21845pfq.0
+ id 1hdePR-0007gy-LG
+ for linux-arm-kernel@lists.infradead.org; Wed, 19 Jun 2019 17:30:15 +0000
+Received: by mail-pg1-x541.google.com with SMTP id f25so35024pgv.10
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 19 Jun 2019 10:30:07 -0700 (PDT)
+ Wed, 19 Jun 2019 10:30:08 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=bUxFfPS39P9fdU4kY1BrfLqP1exnSRK81MEC3yDEPu0=;
- b=mI5HlunS1Zl4dApBNACKFOMxFMjwRL01V7dJfcljXwL7g4an/CGfsy9xi5001tN8Xl
- BtiVhdW0EbX96BlnIORI9eBF6tf1KS2v3qe6BO92DwGY/nj2Z882eBuU3N0dfoLWOXtg
- qMPAYO0l5HDCY6rgM2AVYa3E3Wnn2tGH1kwW8HFQ4AsjtWMjob89uoB1KDaLiuZQLpR/
- s5vwW18MwDku3Rj+DFK6zxX36vw/Zc58JunI2hO7JkuAf3zEZo/hZRcXYHL89fcRMjdQ
- 1bCZJJQUzwdJdcA/9VIYyO4DInbqlCFvb6nAHPRS4eLJ+nr+U2eGbZbtkEkBvIXqVScM
- AO8Q==
+ bh=prwAII+ZGtojVUuaXNz0SCoaMA6E9CoFK+EWZu9cgw8=;
+ b=s9Fe7VHL9KBzy6CsGS5e6Qn+rQ6tQgjBqnBuCyLjiEo+b+wDqTaXrJu9bqAARnoj3Z
+ L2zU2tR5yEncgSWWAWk/8Q/xlNuoe6ZKWkwacid6LANFuwCd0bgLnKWo3TrKc/UNplKd
+ D6KjqCWnQSw5Ps4Tz55M3yFubX9r7yNb3JRdcJGNnjwqiOjWCJcy/RRgF/p2dyHut++k
+ rmVuS840X2wLtBo/hmtzcRGkHr8nbT205qJRT4oS/vZ0gRvLDxyRIveNMjYoHINQcftr
+ 24kqNvun9dcx4bMMJQHsl1wXqdQn4zZCXJArqgV58+5JwUIND+qPKDi5u1LmUr75UrYZ
+ YMQw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=bUxFfPS39P9fdU4kY1BrfLqP1exnSRK81MEC3yDEPu0=;
- b=dcU6ptBoOvWPmCJlNBA0xf350kLyGWe9yzNggD4OiQGanCLDFx807OE3hWo2bC61IG
- YrFE/f7zDe8SLq8YIbvL1a2GeMQTJ36OONLgCBQLQPufxchgxNiiYOcmtMsrQBDercSf
- TGkdGJBp9cjpLo34E/MxJ4cIkVY5jLKI3iIu6JXnzfEc04aNF1AFwBifIYEOwoDNfq/F
- qk8Q6ZcmObbnKr+fP0W/vF2bn2hwkVQSHTsJVhftSXheqGzeoHwHBekX22gg7QkSlxwj
- v6EWUrEltL2gU6f6R5dzcxJKNqVBwXHXKUvrMqX3o56fdF0KZ52M82hWmvDA0G5e1AQ5
- KpRg==
-X-Gm-Message-State: APjAAAW/r5xfi4meQRp6tjlC51KTgkyBkS3DH+ckbsQkV2Hy48lLOE52
- 2bu8701a8WLCyC8yMixmz4qnzTL12uUEGg==
-X-Google-Smtp-Source: APXvYqxKuUXJHQwgNUp0GvkNZoW8yDkDBhQH6SLvUIRN/+cdQSskwMEa25VCKgvu9Hj+5CoV+BHB2Q==
-X-Received: by 2002:aa7:83d4:: with SMTP id j20mr130779372pfn.90.1560965405824; 
- Wed, 19 Jun 2019 10:30:05 -0700 (PDT)
+ bh=prwAII+ZGtojVUuaXNz0SCoaMA6E9CoFK+EWZu9cgw8=;
+ b=M+aV41cljbqbJXjUz2BhZCFQuAWz0oQbktOvUCipJvOEE+PY4NuL6MIGcVrgqy+gV7
+ 8btt6tArWULHgtTYKmzk/F6GThLAJwyYmOiT4jQ4HB/NRzOTmDjaECYcJEEHjH2fptnV
+ qA6iZwLyAlX1gCSDNjB0E7N940FPWgjUXSN/JoF7gIcqe4F6WEInBW4qemw5H7/gIkOP
+ 0WeJdS/8pReDs8Zpnc2dm4mBSoPUZDw4NxtFMOB+JeSmn+8HPlxZeWaI6yuJxH0YUK20
+ WfyWdJJEwKIyIu72EWiOayLb6+8tCnVChXxHPgzR3LXxvnurWMZ9R97rbZrmRzRTr0eE
+ wjXw==
+X-Gm-Message-State: APjAAAU3W8BS87V8tMq3EzFTWCw1DUE3RmmV2MhgKNd3R++kguAWvsGV
+ u0iw6km3Vfwbh7wstjWbmLNqCKoBMxagaQ==
+X-Google-Smtp-Source: APXvYqyrQtjUmiZrlYv5ebeeSSnbptnwGGapYTRB2F7uvoXj9xSsyd1PSpAWKvGK7vzycX5oaBUw4g==
+X-Received: by 2002:a17:90a:3247:: with SMTP id
+ k65mr3591993pjb.49.1560965406693; 
+ Wed, 19 Jun 2019 10:30:06 -0700 (PDT)
 Received: from xps15.cg.shawcable.net (S0106002369de4dac.cg.shawcable.net.
  [68.147.8.254])
  by smtp.gmail.com with ESMTPSA id g2sm31348406pfb.95.2019.06.19.10.30.05
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Wed, 19 Jun 2019 10:30:05 -0700 (PDT)
+ Wed, 19 Jun 2019 10:30:06 -0700 (PDT)
 From: Mathieu Poirier <mathieu.poirier@linaro.org>
 To: gregkh@linuxfoundation.org
-Subject: [PATCH 15/45] coresight: Rename of_coresight to coresight-platform
-Date: Wed, 19 Jun 2019 11:29:19 -0600
-Message-Id: <20190619172949.4522-16-mathieu.poirier@linaro.org>
+Subject: [PATCH 16/45] coresight: etm3x: Rearrange cp14 access detection
+Date: Wed, 19 Jun 2019 11:29:20 -0600
+Message-Id: <20190619172949.4522-17-mathieu.poirier@linaro.org>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20190619172949.4522-1-mathieu.poirier@linaro.org>
 References: <20190619172949.4522-1-mathieu.poirier@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190619_103008_850095_E1DBFF25 
-X-CRM114-Status: GOOD (  12.27  )
+X-CRM114-CacheID: sfid-20190619_103010_054034_A72BF4D5 
+X-CRM114-Status: GOOD (  13.18  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:443 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:541 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -105,56 +106,30 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Suzuki K Poulose <suzuki.poulose@arm.com>
 
-Rename the firmware handling file to a more generic
-name, in preparation for adding ACPI support. Right now
-we only support DT and we have all the platform handling
-code in of_coresight.c. Let us rename the file to
-coresight-platform.c in order to keep the platform handling
-in a single place for DT and the upcoming ACPI support.
+As we are about to refactor the platform specific handling,
+move the DT property handling to generic helpers.
 
 Signed-off-by: Suzuki K Poulose <suzuki.poulose@arm.com>
 Signed-off-by: Mathieu Poirier <mathieu.poirier@linaro.org>
 ---
- drivers/hwtracing/coresight/Makefile                           | 3 +--
- .../coresight/{of_coresight.c => coresight-platform.c}         | 3 ++-
- 2 files changed, 3 insertions(+), 3 deletions(-)
- rename drivers/hwtracing/coresight/{of_coresight.c => coresight-platform.c} (99%)
+ drivers/hwtracing/coresight/coresight-etm3x.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/drivers/hwtracing/coresight/Makefile b/drivers/hwtracing/coresight/Makefile
-index 3b435aa42af5..3c0ac421e211 100644
---- a/drivers/hwtracing/coresight/Makefile
-+++ b/drivers/hwtracing/coresight/Makefile
-@@ -2,8 +2,7 @@
- #
- # Makefile for CoreSight drivers.
- #
--obj-$(CONFIG_CORESIGHT) += coresight.o coresight-etm-perf.o
--obj-$(CONFIG_OF) += of_coresight.o
-+obj-$(CONFIG_CORESIGHT) += coresight.o coresight-etm-perf.o coresight-platform.o
- obj-$(CONFIG_CORESIGHT_LINK_AND_SINK_TMC) += coresight-tmc.o \
- 					     coresight-tmc-etf.o \
- 					     coresight-tmc-etr.o
-diff --git a/drivers/hwtracing/coresight/of_coresight.c b/drivers/hwtracing/coresight/coresight-platform.c
-similarity index 99%
-rename from drivers/hwtracing/coresight/of_coresight.c
-rename to drivers/hwtracing/coresight/coresight-platform.c
-index 7045930fc958..514cc2b67c36 100644
---- a/drivers/hwtracing/coresight/of_coresight.c
-+++ b/drivers/hwtracing/coresight/coresight-platform.c
-@@ -17,7 +17,7 @@
- #include <linux/cpumask.h>
- #include <asm/smp_plat.h>
+diff --git a/drivers/hwtracing/coresight/coresight-etm3x.c b/drivers/hwtracing/coresight/coresight-etm3x.c
+index 9c92491d3fb2..fa2f1417cafb 100644
+--- a/drivers/hwtracing/coresight/coresight-etm3x.c
++++ b/drivers/hwtracing/coresight/coresight-etm3x.c
+@@ -802,9 +802,9 @@ static int etm_probe(struct amba_device *adev, const struct amba_id *id)
+ 			return PTR_ERR(pdata);
  
--
-+#ifdef CONFIG_OF
- static int of_dev_node_match(struct device *dev, void *data)
- {
- 	return dev->of_node == data;
-@@ -295,3 +295,4 @@ of_get_coresight_platform_data(struct device *dev,
- 	return pdata;
- }
- EXPORT_SYMBOL_GPL(of_get_coresight_platform_data);
-+#endif
+ 		adev->dev.platform_data = pdata;
+-		drvdata->use_cp14 = of_property_read_bool(np, "arm,cp14");
+ 	}
+ 
++	drvdata->use_cp14 = fwnode_property_read_bool(dev->fwnode, "arm,cp14");
+ 	dev_set_drvdata(dev, drvdata);
+ 
+ 	/* Validity for the resource is already checked by the AMBA core */
 -- 
 2.17.1
 
