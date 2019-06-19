@@ -2,67 +2,77 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A76064C041
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Jun 2019 19:49:56 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 89E4E4C049
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Jun 2019 19:50:27 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=e3KQnPULjoFR5rpsvu+uRlFVWN7EbrWCyusQtAH8yl8=; b=FKDUENkwUoU/lJ
-	MDL2Io9PBpAw3uiSqU1qVGcKfsXpa69Oadu1ucKyf3MoqkJYqBwLzwbwIi0U+HPztKxC8/mp/CAmy
-	eurIUkPisRJdFEEg/N++Y/Zxho6NCXgEcdkBXNzg87AbiXiMJyTuepp6ReSsFOc+bce28B015K4b1
-	s3/yoiUFJPfhLjHQty6DSHibHFlwsjVMlUhAfl2wBF7BAwNrCg+KlU0YAVGDWu919zUSfftBjKnFP
-	z1lLIT8aMup48W+H6FItnMUI4Np1Bzf7CElwYiQBeeVWSVf/6yVBQ8YaiSqbgOadmJghup0c2R0ve
-	Bg9aUvUC76qUUcrZWUGA==;
+	List-Owner; bh=js3zDwudUDOZ9+3WAtvbplz4kqrAqUMQv5s1k3hfxOU=; b=fJ/BIM9++8rvo3
+	pUYvNHBkaZNmpvqZnkPKQyCWnygshDbxtfZWCZ721SQPnBYEWu91oqPmDwIVeFzXZyuCnPS/a2tgT
+	uww7PW0BoQW++DHvxoGS0rZl0ibl68IvGin+4QCFY91PfFgbgiFx3QmtoT4BIpHGquVVvq7d1PzQN
+	S91v9g0ynKuXtbrKARlUDoZEgGaeoFhFmqK7o89PRRlmKxVBjltJFwc/mWaJxhv7wJ1ynKYFEzN7r
+	squictBzXAnr36NshV0iN7Kj0IVA04/4LAE1hpZGjktQgtD9xBq0fH31wTomtXFd4OuBb4WZ/UMvq
+	QvsaTZJ8WW1QPiPJMiDw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hdeiY-0005Px-T6; Wed, 19 Jun 2019 17:49:54 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1hdej1-00073x-3C; Wed, 19 Jun 2019 17:50:23 +0000
+Received: from mo6-p00-ob.smtp.rzone.de ([2a01:238:20a:202:5300::5])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hdeX6-0007Q4-6j; Wed, 19 Jun 2019 17:38:05 +0000
-Received: from localhost (83-86-89-107.cable.dynamic.v4.ziggo.nl
- [83.86.89.107])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 0B30921744;
- Wed, 19 Jun 2019 17:38:03 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1560965883;
- bh=jknSe5jW3bcaltB/kyMG6IREECByf4zxqPgnYI39H6I=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=A7y4JpuNEob+dMW/flJ37Q1UplBw77V0kcriLi9MVJ7KwtU2DRpoEES5eLippmSzJ
- xIwPzqeMFfemyirPsvGBRCIC+EzxOgm+gfFoNqmORlz9zxg5IVH/zrcbkKCk45p9EP
- Y04Z2hWVJSTFRpabjgboL7uF+iAFiP4hRE04veEA=
-Date: Wed, 19 Jun 2019 19:38:01 +0200
-From: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
-To: Atish Patra <atish.patra@wdc.com>
-Subject: Re: [PATCH v7 3/7] cpu-topology: Move cpu topology code to common
- code.
-Message-ID: <20190619173801.GB20916@kroah.com>
-References: <20190617185920.29581-1-atish.patra@wdc.com>
- <20190617185920.29581-4-atish.patra@wdc.com>
+ id 1hdeYQ-0000NH-7D
+ for linux-arm-kernel@lists.infradead.org; Wed, 19 Jun 2019 17:39:29 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; t=1560965963;
+ s=strato-dkim-0002; d=gerhold.net;
+ h=In-Reply-To:References:Message-ID:Subject:Cc:To:From:Date:
+ X-RZG-CLASS-ID:X-RZG-AUTH:From:Subject:Sender;
+ bh=XYYSEo8xkLqEkhoToj39ayE5dpK53KVud0IYJso7SWw=;
+ b=FBx5jYWRWVuJ50BD7PgU+DegKsBcMQ4GJzUO+XWwpWwNfUm2fsMLxpZ5xvbrE10kkd
+ mDfbgTOuS2ttkKpLFJzCSsGy5XXITJRpYvOFFFb09r1mluSY8+RQHt0Id597IzG55Kb9
+ IrCanHKW6lgPpL6XareYYlGYkxI6nkYtMLic7lXDTsiWZvQNnSG9ol/gFf9YZAdlxDK5
+ 7FmbpO/8QzVTuATVQhxWI2j0NQHc/LZRHot+QIvAnUbZpbtTSidFjaqLMxGoiThmOItD
+ dGjEQ1rNjQQxM6/DV+zAC9/VXt8mLdQtbIGXaCaSk6xgpFP1UDQT+frMxKz1vZE9y1P8
+ a1vQ==
+X-RZG-AUTH: ":P3gBZUipdd93FF5ZZvYFPugejmSTVR2nRPhVOQ/OcYgojyw4j34+u267EpF+OQRc4oDXF5yRxHE="
+X-RZG-CLASS-ID: mo00
+Received: from gerhold.net by smtp.strato.de (RZmta 44.24 AUTH)
+ with ESMTPSA id m0a13fv5JHdM7Dr
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (curve secp521r1 with
+ 521 ECDH bits, eq. 15360 bits RSA))
+ (Client did not present a certificate);
+ Wed, 19 Jun 2019 19:39:22 +0200 (CEST)
+Date: Wed, 19 Jun 2019 19:39:12 +0200
+From: Stephan Gerhold <stephan@gerhold.net>
+To: Mathieu Poirier <mathieu.poirier@linaro.org>
+Subject: Re: Coresight causes synchronous external abort on msm8916
+Message-ID: <20190619173743.GA937@gerhold.net>
+References: <20190618202623.GA53651@gerhold.net>
+ <CANLsYkyViZmpwAPyd7huMC=QRvH3sd0VchJuL-E4+vuYnb0g9A@mail.gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190617185920.29581-4-atish.patra@wdc.com>
-User-Agent: Mutt/1.12.1 (2019-06-15)
+In-Reply-To: <CANLsYkyViZmpwAPyd7huMC=QRvH3sd0VchJuL-E4+vuYnb0g9A@mail.gmail.com>
+User-Agent: Mutt/1.12.0 (2019-05-25)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190619_103804_313439_DB812260 
-X-CRM114-Status: GOOD (  11.07  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20190619_103927_044973_645D85CD 
+X-CRM114-Status: GOOD (  21.25  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [2a01:238:20a:202:5300:0:0:5 listed in]
+ [list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -74,43 +84,113 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- "Rafael J. Wysocki" <rafael@kernel.org>,
- "Peter Zijlstra \(Intel\)" <peterz@infradead.org>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Linus Walleij <linus.walleij@linaro.org>, Palmer Dabbelt <palmer@sifive.com>,
- Will Deacon <will.deacon@arm.com>, Richard Fontana <rfontana@redhat.com>,
- Mauro Carvalho Chehab <mchehab+samsung@kernel.org>,
- linux-riscv@lists.infradead.org, Morten Rasmussen <morten.rasmussen@arm.com>,
- Jeffrey Hugo <jhugo@codeaurora.org>, Anup Patel <anup@brainfault.org>,
- Russell King <linux@armlinux.org.uk>, Ingo Molnar <mingo@kernel.org>,
- devicetree@vger.kernel.org, Albert Ou <aou@eecs.berkeley.edu>,
- Rob Herring <robh+dt@kernel.org>, Paul Walmsley <paul.walmsley@sifive.com>,
- Jonathan Cameron <Jonathan.Cameron@huawei.com>,
- Thomas Gleixner <tglx@linutronix.de>, linux-arm-kernel@lists.infradead.org,
- linux-kernel@vger.kernel.org, Otto Sabart <ottosabart@seberm.com>,
- Sudeep Holla <sudeep.holla@arm.com>, "David S. Miller" <davem@davemloft.net>
+Cc: David Brown <david.brown@linaro.org>,
+ linux-arm-msm <linux-arm-msm@vger.kernel.org>, Andy Gross <agross@kernel.org>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
+ Suzuki K Poulose <suzuki.poulose@arm.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Jun 17, 2019 at 11:59:16AM -0700, Atish Patra wrote:
-> Both RISC-V & ARM64 are using cpu-map device tree to describe
-> their cpu topology. It's better to move the relevant code to
-> a common place instead of duplicate code.
+On Tue, Jun 18, 2019 at 02:40:06PM -0600, Mathieu Poirier wrote:
+> On Tue, 18 Jun 2019 at 14:26, Stephan Gerhold <stephan@gerhold.net> wrote:
+> >
+> > Hi,
+> >
+> > I'm trying to run mainline Linux on a smartphone with MSM8916 SoC.
+> > It works surprisingly well, but the coresight devices seem to cause the
+> > following crash shortly after userspace starts:
+> >
+> >     Internal error: synchronous external abort: 96000010 [#1] PREEMPT SMP
+> >     Modules linked in:
+> >     CPU: 0 PID: 32 Comm: kworker/0:1 Not tainted 5.2.0-rc5 #7
+> >     Hardware name: Samsung Galaxy A5 (SM-A500FU) (DT)
+> >     Workqueue: events amba_deferred_retry_func
+> >     pstate: 60000005 (nZCv daif -PAN -UAO)
+> >     pc : amba_device_try_add+0x104/0x2f0
+> >     lr : amba_device_try_add+0xf0/0x2f0
+> >     sp : ffff00001181bd40
+> >     x29: ffff00001181bd40 x28: 0000000000000000
+> >     x27: ffff80007b258b38 x26: ffff000010f490a0
+> >     x25: 0000000000000000 x24: ffff000011b35000
+> >     x23: 0000000000000000 x22: ffff80007b316ed8
+> >     x21: 0000000000001000 x20: 0000000000000000
+> >     x19: ffff80007b316c00 x18: 0000000000000000
+> >     x17: 0000000000000000 x16: 0000000000000000
+> >     x15: 0000000000000000 x14: ffffffffffffffff
+> >     x13: 0000000000000000 x12: 0000000000000001
+> >     x11: 0000000000000000 x10: 0000000000000980
+> >     x9 : ffff00001181ba00 x8 : ffff80007b126a20
+> >     x7 : ffff80007a5e0500 x6 : ffff80007b126040
+> >     x5 : 0000000000000002 x4 : ffff80007db85ba0
+> >     x3 : 0000000000000000 x2 : ffff000011b35fe0
+> >     x1 : 0000000000000000 x0 : 0000000000000000
+> >     Call trace:
+> >      amba_device_try_add+0x104/0x2f0
+> >      amba_deferred_retry_func+0x48/0xc8
+> >      process_one_work+0x1e0/0x320
+> >      worker_thread+0x40/0x428
+> >      kthread+0x120/0x128
+> >      ret_from_fork+0x10/0x18
+> >     Code: 35000ac0 d10082a2 52800001 8b020302 (b9400040)
+> >     ---[ end trace b664cbefc1cb2294 ]---
+> >
+> > In this case I'm using a simple device tree similar to apq8016-sbc,
+> > but it also happens using something as simple as msm8916-mtp.dts
+> > on this particular device.
+> >   (Attached: dmesg log with msm8916-mtp.dts and arm64 defconfig)
+> >
+> > I can avoid the crash and boot without any further problems by disabling
+> > every coresight device defined in msm8916.dtsi, e.g.:
+> >
+> >         tpiu@820000 { status = "disabled"; };
+> >         funnel@821000 { status = "disabled"; };
+> >         replicator@824000 { status = "disabled"; };
+> >         etf@825000 { status = "disabled"; };
+> >         etr@826000 { status = "disabled"; };
+> >         funnel@841000 { status = "disabled"; };
+> >         debug@850000 { status = "disabled"; };
+> >         debug@852000 { status = "disabled"; };
+> >         debug@854000 { status = "disabled"; };
+> >         debug@856000 { status = "disabled"; };
+> >         etm@85c000 { status = "disabled"; };
+> >         etm@85d000 { status = "disabled"; };
+> >         etm@85e000 { status = "disabled"; };
+> >         etm@85f000 { status = "disabled"; };
+> >
+> > I don't have any use for coresight at the moment,
+> > but it seems somewhat odd to put this in the device specific dts.
+> >
+> > Any idea what could be causing this crash?
 > 
-> To: Will Deacon <will.deacon@arm.com>
-> To: Catalin Marinas <catalin.marinas@arm.com>
-> Signed-off-by: Atish Patra <atish.patra@wdc.com>
-> [Tested on QDF2400]
-> Tested-by: Jeffrey Hugo <jhugo@codeaurora.org>
-> [Tested on Juno and other embedded platforms.]
-> Tested-by: Sudeep Holla <sudeep.holla@arm.com>
-> Reviewed-by: Sudeep Holla <sudeep.holla@arm.com>
-> Acked-by: Will Deacon <will.deacon@arm.com>
+> CS and CPUidle don't play well together on most boards, something I am
+> actively looking into at this very moment.  To avoid the problem
+> either disable CS or CPUidle.
 
-Acked-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+Thanks for the very quick suggestion!
+
+In my case, CPUidle seems unlikely to be the cause - unfortunately all
+the msm8916 phones and tablets were released with a firmware that does
+not support PSCI. Therefore cpuidle is not working properly either. :(
+
+To be absolutely sure I have attempted to disable cpuidle by commenting
+out related parts in the device tree. I booted with cpuidle.off=1 on the
+kernel command line but the error persists.
+
+> 
+> Mathieu
+> 
+> > I'm not sure if this is a device-specific issue or possibly some kind of
+> > configuration problem.
+> >   Or is this feature only working on development boards?
+> >
+> > Thanks in advance!
+> > Stephan
+> > _______________________________________________
+> > linux-arm-kernel mailing list
+> > linux-arm-kernel@lists.infradead.org
+> > http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
 
 _______________________________________________
 linux-arm-kernel mailing list
