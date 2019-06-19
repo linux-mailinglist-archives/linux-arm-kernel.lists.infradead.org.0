@@ -2,80 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6F4544BB3B
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Jun 2019 16:20:46 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 62A9B4BB4C
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Jun 2019 16:21:08 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=QIj7RioTjlWNwWzIVFUxXsury0TQvALBqZe9QuauBUA=; b=axGBdJLRyUQShJ
-	WcE6e08gRXYXBSnSGLH6ObwP76Vj5ibb+LPy/s0mS9BnAoCLD+CW9/3FwwKGd6sHmXVi/T0sFGGK5
-	eCpOssizp+5bG7T5hs7CzOJTd+UERgFPGVY7bGxInzb2vlihqiTcAuBj6Lkb8PnfJodP4c32yycN4
-	QbAsY67Ix7oCdXfBqc3ryVf7ZHOATa7gygngobh7OBO+Ao/hnojnqRiScxZDvGpX4udz3UMunh+4r
-	ZL/27/+dh+VTZsRxqR8HavcDJif1oA/cg+FyvGtzT/VyfSpsRSPaJzBDByXshUX+0r/5k+dO5+H0t
-	wFk+OBwx0UtmZdfLxDnw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=BrL7hjEgBwhqti14jC37Zg6aaDoLoHHUvdbucBy1Des=; b=XmYk9sw0zOG8+g
+	aRbX4adHRdFrXCHfT9bYjIdgFLfHGS2k5p/PAVh9e3KPdfFVLmN3xk3nA9Ao/4FWX0hZethmE3Spq
+	9Wm42+UfAjrB8oho8S18BvaxumS9gFZvSgrIAsTSSeo4FYh63fhBPDHcUC4J48jrlIM8FCXI0X9eW
+	24vRedrF3XoS1uAyJy1nyxWxo8c5XezEXoAe37TBqirB+s0nzDWg9Zw2JPVTnd0kOH1+ApgCVOrMV
+	jzdqW2vCgaQJbnCd/OiaIvmuv3c5DRf93IFHBwDg5ZqahkHBxh1UOj/FvzNg5Dd97UT5T8b3s+acR
+	45c5cnvreUFCHpKXR1qw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hdbS6-00065k-2n; Wed, 19 Jun 2019 14:20:42 +0000
-Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
+	id 1hdbSU-0006Tx-OV; Wed, 19 Jun 2019 14:21:06 +0000
+Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hdbRj-00061C-Oy
- for linux-arm-kernel@lists.infradead.org; Wed, 19 Jun 2019 14:20:21 +0000
-Received: by mail-wm1-x343.google.com with SMTP id f17so2052298wme.2
+ id 1hdbRk-00061W-Ve
+ for linux-arm-kernel@lists.infradead.org; Wed, 19 Jun 2019 14:20:24 +0000
+Received: by mail-wm1-x341.google.com with SMTP id c66so2032837wmf.0
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 19 Jun 2019 07:20:19 -0700 (PDT)
+ Wed, 19 Jun 2019 07:20:20 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=baylibre-com.20150623.gappssmtp.com; s=20150623;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=Xe8Z7G8xOvRe6JhL6dXMu61WRA0y1QcBsLv7BXFLXu8=;
- b=llwcE/vozsWWrzWhJC9CO+SJiPMgZWnVaC4ILiC18AVKVObOtbHqSSD55EKh2GLEEr
- yW9kTMVwvXP0MW/YcvnEzOedwNkcQ2D6Cxmo+AS0urgcS1z0zlUcceMrzXx2kxIcjkSe
- rg0kUNgaJK0dkzvGoo3D8exmVpbm6fWRJy4NnAcO/IwjxmoZ1uk2SjFKEcmvTM1uZ9xv
- yWPWThjFu9RrEyhJQztu3gNLR0VQhk5HqJBiUqcFL8ffaWx1BlPizsHiRlsW2nPl5iyA
- QKRJyQJuHOE0l/qMKvWfFtsaYJ0knEMonny7dmoUcVIIV9Xu6mn+9Sc+psaIdyOuFPsd
- bCqQ==
+ h=from:to:cc:subject:date:message-id:in-reply-to:references
+ :mime-version:content-transfer-encoding;
+ bh=Hv7ZvPZLzbUiYKzhVJVhDN03cgoBQvQ1P83x7kmqqJ8=;
+ b=eYmRx+bKnD598q4hqdSi0PiIUrmAzqgGVk2K3pRGvtiy+dhRjaB4BHPUsgQsGnuvWM
+ AxkiWg3izNaKbGLuH3VqxYY9TH0qI+U+mpXEHlf3Xc6Fnmq/e/zoC0MjASR5dDfCJ6qK
+ Ut+Oh4Sc6wjJQo0Uw6+4sPCYj3vyCJjPH9Rx9trMk5aNaWe3imhPVNQNBDPOoIRw/7Gi
+ CYY6yrw4dLOmdP/Nf92GgsNmJQdeqB1w9v3xsn8r+gzlYqUgf5lITHtNKGbEhhRZNIXB
+ dwELjvWP++c96kRlY5DzkAqbbQJwr/ucAqbRSTnuuiA0Ae0sH6y4XxWJ42C2a4jlWFAk
+ 367w==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=Xe8Z7G8xOvRe6JhL6dXMu61WRA0y1QcBsLv7BXFLXu8=;
- b=j+XUuqxEn1llvxF4Ebb5v89TKh838l9w2EBsPtxEbZ03lsI7QALIeYzR7gQJdouphh
- eePWwjRIuMArzvTcy897CkvUry6wKBJk117IQd5tiwk6qlCtAF+EP93ylLehtFZPEshU
- taXTZkHwdoHhlb735vHKQ115QPPwKb8uCJB60nxKNp4vegB2t7vy8SwdVOLfM9uXz2rX
- CyuHJdrNLWx575pbsyXq4qgR9oNmDP2G6897zZshwvLer1PMyWzR53/NF4f5ClUPQcXx
- eeVJ4gzgdpM0GP7bxYrs9F7JTuJnm+VDq0MTu3vDJ6kdL1jA+hsk/+Nu5RpGylaESsmA
- cmwg==
-X-Gm-Message-State: APjAAAUjcStkihk25mU7+CEkK+btEV8xnk0V1Z/o/JuJ6+ep285JRqxg
- 9Bt6OESkDi+Jnc55TguQb35sHg==
-X-Google-Smtp-Source: APXvYqzUYdb3XhMJ78/mGb9h4pNZliClNr3lXrzr0m0AXlFqRlXutMI0MOSuI04PSQl09GOwpUpkgQ==
-X-Received: by 2002:a1c:7c11:: with SMTP id x17mr8111575wmc.22.1560954017792; 
- Wed, 19 Jun 2019 07:20:17 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references:mime-version:content-transfer-encoding;
+ bh=Hv7ZvPZLzbUiYKzhVJVhDN03cgoBQvQ1P83x7kmqqJ8=;
+ b=XF0dh4fwHBvkwKF6aG4WG5/4y1St7TQajY+quG1dvB+BUiWrBOiaha9u1/+vcZK0tl
+ noR9saQ6yYyzTaKx22wyeiZIaCLb9QFjYmvJ1qKxvgWyXbXLun8ugX5ljtal6GotU8mr
+ XW5hc2toLLMQLBbz6MgMe9f7omYmoMX5WWncPbMdPTe3tBAdh/Fo9vJLiQ7km8ziszNI
+ SUR2gua43ajQCMqGO8uZ70v7cnicpaL0pLnOBZcw5PBg7MsXEGSGIKaOAQXQ1FpWIIHV
+ gqkaK2IqXJf+bBnzOQWAaAAjpsPTsMTXh/DAvi6w+hrHEzdEQu4yUKg51hWC3aDTiM2H
+ E5Ug==
+X-Gm-Message-State: APjAAAVwl0aKhRMkKFcEh7QUJO80zG2DvN+DX9ZNmDZkCTsUE8W/glX5
+ qmT284pJoP8+zM1XBfHaYxBK4Q==
+X-Google-Smtp-Source: APXvYqycDpy+mhEb93slqG8ihTC/TRXZlI+GDOjc7RwZpphQm68sYJiL/3RQGqxXnadbjDxsHSk4uA==
+X-Received: by 2002:a1c:751a:: with SMTP id o26mr8531174wmc.13.1560954018908; 
+ Wed, 19 Jun 2019 07:20:18 -0700 (PDT)
 Received: from localhost.localdomain
  (amontpellier-652-1-281-69.w109-210.abo.wanadoo.fr. [109.210.96.69])
- by smtp.gmail.com with ESMTPSA id o20sm24209979wrh.8.2019.06.19.07.20.16
+ by smtp.gmail.com with ESMTPSA id o20sm24209979wrh.8.2019.06.19.07.20.17
  (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Wed, 19 Jun 2019 07:20:17 -0700 (PDT)
+ Wed, 19 Jun 2019 07:20:18 -0700 (PDT)
 From: Fabien Parent <fparent@baylibre.com>
 To: robh+dt@kernel.org, mark.rutland@arm.com, matthias.bgg@gmail.com,
  lee.jones@linaro.org, lgirdwood@gmail.com, broonie@kernel.org
-Subject: [PATCH v4 0/7] mt6392: Add support for MediaTek MT6392 PMIC
-Date: Wed, 19 Jun 2019 16:20:06 +0200
-Message-Id: <20190619142013.20913-1-fparent@baylibre.com>
+Subject: [PATCH v4 1/7] dt-bindings: regulator: add support for MT6392
+Date: Wed, 19 Jun 2019 16:20:07 +0200
+Message-Id: <20190619142013.20913-2-fparent@baylibre.com>
 X-Mailer: git-send-email 2.20.1
+In-Reply-To: <20190619142013.20913-1-fparent@baylibre.com>
+References: <20190619142013.20913-1-fparent@baylibre.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190619_072019_834747_366DB61C 
-X-CRM114-Status: GOOD (  11.38  )
+X-CRM114-CacheID: sfid-20190619_072021_017362_E3491041 
+X-CRM114-Status: GOOD (  11.52  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:343 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:341 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -93,52 +95,263 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, dmitry.torokhov@gmail.com,
- linux-kernel@vger.kernel.org, Fabien Parent <fparent@baylibre.com>,
- linux-mediatek@lists.infradead.org, linux-input@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
+Cc: devicetree@vger.kernel.org, Rob Herring <robh@kernel.org>,
+ dmitry.torokhov@gmail.com, linux-kernel@vger.kernel.org,
+ Fabien Parent <fparent@baylibre.com>, linux-mediatek@lists.infradead.org,
+ linux-input@vger.kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This patch series aims at bringing support for the MediaTek MT6392 PMIC. This
-PMIC is used on the MT8516 Pumpkin board.
+Add binding documentation of the regulator for MT6392 SoCs.
 
-This patch series adds support for the following features:
- * PMIC keys
- * regulator
- * RTC
+Signed-off-by: Fabien Parent <fparent@baylibre.com>
+Reviewed-by: Rob Herring <robh@kernel.org>
+---
 
-Fabien Parent (7):
-  dt-bindings: regulator: add support for MT6392
-  dt-bindings: mfd: mt6397: Add bindings for MT6392 PMIC
-  dt-bindings: input: mtk-pmic-keys: add MT6392 binding definition
-  mfd: mt6397: Add support for MT6392 pmic
-  regulator: mt6392: Add support for MT6392 regulator
-  input: keyboard: mtk-pmic-keys: add MT6392 support
-  arm64: dts: mt6392: Add PMIC mt6392 dtsi
+v4:
+	* No change
 
- .../bindings/input/mtk-pmic-keys.txt          |  11 +-
- .../devicetree/bindings/mfd/mt6397.txt        |  12 +-
- .../bindings/regulator/mt6392-regulator.txt   | 220 ++++++++
- arch/arm64/boot/dts/mediatek/mt6392.dtsi      | 208 ++++++++
- drivers/input/keyboard/mtk-pmic-keys.c        |  14 +
- drivers/mfd/mt6397-core.c                     |  47 ++
- drivers/regulator/Kconfig                     |   9 +
- drivers/regulator/Makefile                    |   1 +
- drivers/regulator/mt6392-regulator.c          | 490 ++++++++++++++++++
- include/linux/mfd/mt6392/core.h               |  42 ++
- include/linux/mfd/mt6392/registers.h          | 487 +++++++++++++++++
- include/linux/regulator/mt6392-regulator.h    |  40 ++
- 12 files changed, 1575 insertions(+), 6 deletions(-)
+v3:
+	* No change
+
+v2:
+	* Use 'pmic' as node name for the pmic.
+	* Use 'regulators' as node name for the regulators
+	* use dash instead of underscore for regulator's node names.
+
+---
+ .../bindings/regulator/mt6392-regulator.txt   | 220 ++++++++++++++++++
+ 1 file changed, 220 insertions(+)
  create mode 100644 Documentation/devicetree/bindings/regulator/mt6392-regulator.txt
- create mode 100644 arch/arm64/boot/dts/mediatek/mt6392.dtsi
- create mode 100644 drivers/regulator/mt6392-regulator.c
- create mode 100644 include/linux/mfd/mt6392/core.h
- create mode 100644 include/linux/mfd/mt6392/registers.h
- create mode 100644 include/linux/regulator/mt6392-regulator.h
 
+diff --git a/Documentation/devicetree/bindings/regulator/mt6392-regulator.txt b/Documentation/devicetree/bindings/regulator/mt6392-regulator.txt
+new file mode 100644
+index 000000000000..d03c0707fabc
+--- /dev/null
++++ b/Documentation/devicetree/bindings/regulator/mt6392-regulator.txt
+@@ -0,0 +1,220 @@
++Mediatek MT6392 Regulator
++
++Required properties:
++- compatible: "mediatek,mt6392-regulator"
++- mt6392regulator: List of regulators provided by this controller. It is named
++  according to its regulator type, buck_<name> and ldo_<name>.
++  The definition for each of these nodes is defined using the standard binding
++  for regulators at Documentation/devicetree/bindings/regulator/regulator.txt.
++
++The valid names for regulators are::
++BUCK:
++  buck_vproc, buck_vsys, buck_vcore
++LDO:
++  ldo_vxo22, ldo_vaud22, ldo_vcama, ldo_vaud28, ldo_vadc18, ldo_vcn35,
++  ldo_vio28. ldo_vusb, ldo_vmc, ldo_vmch, ldo_vemc3v3, ldo_vgp1, ldo_vgp2,
++  ldo_vcn18, ldo_vcamaf, ldo_vm, ldo_vio18, ldo_vcamd, ldo_vcamio, ldo_vm25,
++  ldo_vefuse
++
++Example:
++	pmic {
++		compatible = "mediatek,mt6392", "mediatek,mt6323";
++		mediatek,system-power-controller;
++
++		regulator {
++			compatible = "mediatek,mt6392-regulator";
++
++			mt6392_vproc_reg: buck-vproc {
++				regulator-name = "buck_vproc";
++				regulator-min-microvolt = < 700000>;
++				regulator-max-microvolt = <1350000>;
++				regulator-ramp-delay = <12500>;
++				regulator-always-on;
++				regulator-boot-on;
++			};
++
++			mt6392_vsys_reg: buck-vsys {
++				regulator-name = "buck_vsys";
++				regulator-min-microvolt = <1400000>;
++				regulator-max-microvolt = <2987500>;
++				regulator-ramp-delay = <25000>;
++				regulator-always-on;
++				regulator-boot-on;
++			};
++
++			mt6392_vcore_reg: buck-vcore {
++				regulator-name = "buck_vcore";
++				regulator-min-microvolt = < 700000>;
++				regulator-max-microvolt = <1350000>;
++				regulator-ramp-delay = <12500>;
++				regulator-always-on;
++				regulator-boot-on;
++			};
++
++			mt6392_vxo22_reg: ldo-vxo22 {
++				regulator-name = "ldo_vxo22";
++				regulator-min-microvolt = <2200000>;
++				regulator-max-microvolt = <2200000>;
++				regulator-enable-ramp-delay = <110>;
++				regulator-always-on;
++				regulator-boot-on;
++			};
++
++			mt6392_vaud22_reg: ldo-vaud22 {
++				regulator-name = "ldo_vaud22";
++				regulator-min-microvolt = <1800000>;
++				regulator-max-microvolt = <2200000>;
++				regulator-enable-ramp-delay = <264>;
++				regulator-always-on;
++				regulator-boot-on;
++			};
++
++			mt6392_vcama_reg: ldo-vcama {
++				regulator-name = "ldo_vcama";
++				regulator-min-microvolt = <2800000>;
++				regulator-max-microvolt = <2800000>;
++				regulator-enable-ramp-delay = <264>;
++			};
++
++			mt6392_vaud28_reg: ldo-vaud28 {
++				regulator-name = "ldo_vaud28";
++				regulator-min-microvolt = <2800000>;
++				regulator-max-microvolt = <2800000>;
++				regulator-enable-ramp-delay = <264>;
++				regulator-always-on;
++				regulator-boot-on;
++			};
++
++			mt6392_vadc18_reg: ldo-vadc18 {
++				regulator-name = "ldo_vadc18";
++				regulator-min-microvolt = <1800000>;
++				regulator-max-microvolt = <1800000>;
++				regulator-enable-ramp-delay = <264>;
++				regulator-always-on;
++				regulator-boot-on;
++			};
++
++			mt6392_vcn35_reg: ldo-vcn35 {
++				regulator-name = "ldo_vcn35";
++				regulator-min-microvolt = <3300000>;
++				regulator-max-microvolt = <3600000>;
++				regulator-enable-ramp-delay = <264>;
++			};
++
++			mt6392_vio28_reg: ldo-vio28 {
++				regulator-name = "ldo_vio28";
++				regulator-min-microvolt = <2800000>;
++				regulator-max-microvolt = <2800000>;
++				regulator-enable-ramp-delay = <264>;
++				regulator-always-on;
++				regulator-boot-on;
++			};
++
++			mt6392_vusb_reg: ldo-vusb {
++				regulator-name = "ldo_vusb";
++				regulator-min-microvolt = <3300000>;
++				regulator-max-microvolt = <3300000>;
++				regulator-enable-ramp-delay = <264>;
++				regulator-always-on;
++				regulator-boot-on;
++			};
++
++			mt6392_vmc_reg: ldo-vmc {
++				regulator-name = "ldo_vmc";
++				regulator-min-microvolt = <1800000>;
++				regulator-max-microvolt = <3300000>;
++				regulator-enable-ramp-delay = <264>;
++				regulator-boot-on;
++			};
++
++			mt6392_vmch_reg: ldo-vmch {
++				regulator-name = "ldo_vmch";
++				regulator-min-microvolt = <3000000>;
++				regulator-max-microvolt = <3300000>;
++				regulator-enable-ramp-delay = <264>;
++				regulator-boot-on;
++			};
++
++			mt6392_vemc3v3_reg: ldo-vemc3v3 {
++				regulator-name = "ldo_vemc3v3";
++				regulator-min-microvolt = <3000000>;
++				regulator-max-microvolt = <3300000>;
++				regulator-enable-ramp-delay = <264>;
++				regulator-boot-on;
++			};
++
++			mt6392_vgp1_reg: ldo-vgp1 {
++				regulator-name = "ldo_vgp1";
++				regulator-min-microvolt = <1200000>;
++				regulator-max-microvolt = <3300000>;
++				regulator-enable-ramp-delay = <264>;
++			};
++
++			mt6392_vgp2_reg: ldo-vgp2 {
++				regulator-name = "ldo_vgp2";
++				regulator-min-microvolt = <1200000>;
++				regulator-max-microvolt = <3300000>;
++				regulator-enable-ramp-delay = <264>;
++			};
++
++			mt6392_vcn18_reg: ldo-vcn18 {
++				regulator-name = "ldo_vcn18";
++				regulator-min-microvolt = <1800000>;
++				regulator-max-microvolt = <1800000>;
++				regulator-enable-ramp-delay = <264>;
++			};
++
++			mt6392_vcamaf_reg: ldo-vcamaf {
++				regulator-name = "ldo_vcamaf";
++				regulator-min-microvolt = <1200000>;
++				regulator-max-microvolt = <3300000>;
++				regulator-enable-ramp-delay = <264>;
++			};
++
++			mt6392_vm_reg: ldo-vm {
++				regulator-name = "ldo_vm";
++				regulator-min-microvolt = <1240000>;
++				regulator-max-microvolt = <1390000>;
++				regulator-enable-ramp-delay = <264>;
++				regulator-always-on;
++				regulator-boot-on;
++			};
++
++			mt6392_vio18_reg: ldo-vio18 {
++				regulator-name = "ldo_vio18";
++				regulator-min-microvolt = <1800000>;
++				regulator-max-microvolt = <1800000>;
++				regulator-enable-ramp-delay = <264>;
++				regulator-always-on;
++				regulator-boot-on;
++			};
++
++			mt6392_vcamd_reg: ldo-vcamd {
++				regulator-name = "ldo_vcamd";
++				regulator-min-microvolt = <1200000>;
++				regulator-max-microvolt = <1800000>;
++				regulator-enable-ramp-delay = <264>;
++			};
++
++			mt6392_vcamio_reg: ldo-vcamio {
++				regulator-name = "ldo_vcamio";
++				regulator-min-microvolt = <1800000>;
++				regulator-max-microvolt = <1800000>;
++				regulator-enable-ramp-delay = <264>;
++			};
++
++			mt6392_vm25_reg: ldo-vm25 {
++				regulator-name = "ldo_vm25";
++				regulator-min-microvolt = <2500000>;
++				regulator-max-microvolt = <2500000>;
++				regulator-enable-ramp-delay = <264>;
++			};
++
++			mt6392_vefuse_reg: ldo-vefuse {
++				regulator-name = "ldo_vefuse";
++				regulator-min-microvolt = <1800000>;
++				regulator-max-microvolt = <2000000>;
++				regulator-enable-ramp-delay = <264>;
++			};
++		};
++	};
 -- 
 2.20.1
 
