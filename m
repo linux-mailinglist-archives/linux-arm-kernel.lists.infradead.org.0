@@ -2,83 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5E5134BF79
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Jun 2019 19:19:35 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 087364BFA1
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Jun 2019 19:30:27 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=uMVp0w3ifCetLpdgFNzIxoY9RzqR4H4VYMYAlsCj3pM=; b=Q2AwGVugwTyGBd
-	tR9bOblPrCZT515U1kfN105VRaZPHRu61VHs3gkA8/CXd5obdwaHlg/1m8FhfD0DvtDSTwjI1M5On
-	zw8KdqvvsdDJbMeFHI7eGIw/BVJlnQlb9VLOsVll7mDCicpJwWCPggGbYYSd/VUbuAbeIlYSZmIlT
-	f7DZq7agt08IydTJdV3xZll3TyZo9UoMQH/mIpQp3DyDKHLNb69knExffjjU5kEKhS7s201MjKU41
-	4TpTdKfsRsmGhO0aNbZV6ueRBZgGoav92bdbeBRF9xD5Vo04GCsxtriifvV/fqzL+97w8V8yVMfZw
-	eYFplWHRFgIufjvFfVlg==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=Ii0Uv6CG/u8vzDT8Owx2o4o9XXiSedk0fM9yPdqNtaM=; b=IMN
+	qE8p4zV5MuaPqNU2XBTgushgVougsary7V8oa1ROF/MM6vEX9b6iFY+FymZT8F4RMdv2ibvg5HvQj
+	KEJ45k/1YyCAKsqnIFT70Lu6fAtmPflsKTWRgWzZEbmx9e58qIJqFtF6JydtoShGtWiIEfuV4y4jQ
+	zxj/P+tObb/v1pOV3as/jtsLZTzD8L3qnNluRPPHO1whb7cdv/j3phDMfledkNLxF7cjdtv0P3tsM
+	Y/S+wvCimwJ3ZuPb9c+ON9Rm0MisSI9+z68Ngw6qfROG4FmkXWdvQPXRsgK3ke+KQeSOlYvYABEEd
+	gokc0yv5YAP+SXatlUrLw6m8HVIrr8Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hdeF9-0002rp-7l; Wed, 19 Jun 2019 17:19:31 +0000
-Received: from mail-wr1-f68.google.com ([209.85.221.68])
+	id 1hdePg-00072f-6b; Wed, 19 Jun 2019 17:30:24 +0000
+Received: from mail-pg1-x536.google.com ([2607:f8b0:4864:20::536])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hdeF1-0002rO-1c
- for linux-arm-kernel@lists.infradead.org; Wed, 19 Jun 2019 17:19:24 +0000
-Received: by mail-wr1-f68.google.com with SMTP id x17so59316wrl.9
+ id 1hdeP9-000719-VW
+ for linux-arm-kernel@lists.infradead.org; Wed, 19 Jun 2019 17:29:53 +0000
+Received: by mail-pg1-x536.google.com with SMTP id f25so34682pgv.10
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 19 Jun 2019 10:19:22 -0700 (PDT)
+ Wed, 19 Jun 2019 10:29:51 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=from:to:cc:subject:date:message-id;
+ bh=oP0aTjMbfF7JmtnE+SXwgb+qHNolCe1d9zIVqsRs9Ng=;
+ b=sR/yZJ5o6p13zsBxCBQo1oUQjWtK8kA7ApzzkKr+9DSVhD6uf/331yYwByysZ7iBtK
+ LH8n6U0i8A3u894rv8Et2+TeQKqksin60eD9GVj0t8CJMhQItyDhlnCH7MvoU8BYYeaj
+ 5CPiqQ+G0MXPLInV5/I775b89xaoRcPAQpvds73KgCv8H+2Rr9V7QsN/uhSdZ3RIn4WM
+ +bMaulE/vIEF1ttSC12Fa/X2P77ag4Y86yOCLDNY8gUqo0aOUO2xuRiW0sx8PptFRzx4
+ LCMtcRfgNXlWpw7q64OMGQJ4saRUMFlyJWklsOVzKU7oEf/7CsRoDDPOaC9O1Tqt+hn6
+ WUHg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=YSHXApb/QZTy9FH4NqMivJMJI0my9DBc54bc3V6ZLlU=;
- b=ikWuyT6IbPI1SHBgWiMeBLpNW+ms5BYZlnJk/xDw+JJOMx9RXYcJr4eNwCPtL1jkR/
- 6JEdUtKVUxYRcGNfC36z6HA1Tl8IThcyhchkvDxcLeqdu3e5UOGNNUkJrzbVHQfv2ktf
- 1ZUmTbcgPweRsac8LboVySjROarRchjYZwFZqBStflORivws8TjGwl4wdZHSJ6AoTWQV
- dz/umdCx7Uogo/E4djd1Mrmazc4bVQVYvvvts71CSeVHjbWGV75KPvWBsBqlfshh/vIu
- LWJ2dcM9is0YB5CFCPDCDlTQ0sS9TT+7GWd38MvDi5ll1Waqvm9mJv1DGIkCf7rx9/WJ
- wLOQ==
-X-Gm-Message-State: APjAAAXjhJjfQuDezsCAn7s64qvudOOe0bVxvGz5EKCjmWu9Fcm+I3bx
- ATxDA/pPGhvOh+rI8i4K3FA=
-X-Google-Smtp-Source: APXvYqwty5Jfr1k3SfjRZOwaKl9aqzAMOMJYJNBmXyW+H/bMRuMbgg5Saekb/fuB24oIyl8AT3kc9w==
-X-Received: by 2002:a05:6000:1203:: with SMTP id
- e3mr22889711wrx.300.1560964760735; 
- Wed, 19 Jun 2019 10:19:20 -0700 (PDT)
-Received: from kozik-lap ([194.230.155.186])
- by smtp.googlemail.com with ESMTPSA id z126sm1166666wmb.32.2019.06.19.10.19.19
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Wed, 19 Jun 2019 10:19:19 -0700 (PDT)
-Date: Wed, 19 Jun 2019 19:19:18 +0200
-From: Krzysztof Kozlowski <krzk@kernel.org>
-To: Denis 'GNUtoo' Carikli <GNUtoo@cyberdimension.org>
-Subject: Re: [PATCH][v2] ARM: dts: exynos: add flash support to galaxy-s3
- boards
-Message-ID: <20190619171918.GA24076@kozik-lap>
-References: <20190615170428.GA3447@kozik-lap>
- <20190618001742.2828-1-GNUtoo@cyberdimension.org>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190618001742.2828-1-GNUtoo@cyberdimension.org>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=oP0aTjMbfF7JmtnE+SXwgb+qHNolCe1d9zIVqsRs9Ng=;
+ b=uiTz3bZ3u5qpkH6ROvbtkM4qCIIJUcZuJH5MTHPJSuwkoFP2h6+NHCTQjtXCfW8dcH
+ dNdLNqBMkWn+Sr9A8FeAlBjPogKSxKkjP+cT7Hg5moGqZ7ScRZXTKub7mU9vRPQAup8X
+ eMIZR+Ep2jr867mf59CAmMtMaPfNdrXvWz1Rkfmnq/R8XQ7tMBFxTnKEi2gAJoyXxEHa
+ enB3w2YPTGrwxwCD6A3eU1TEspHP5cJqQLtagLO1t2r07l98SpIpn5Vr6vkmL5yI3JUD
+ 9aOBdn56fF8adSQVhkOYsEiqsCl+Ko9JeRYwcvQr5UFiaHml1CgEbK532ez/2syNVFIV
+ Wb9A==
+X-Gm-Message-State: APjAAAW9YH4tyBR1db26Wjdwra0bZQW9UqoRntQ/tb51OiXT4jSSNI3b
+ YrB60zH2jyOrGzxuW3t0fDqx+jzHm33wkw==
+X-Google-Smtp-Source: APXvYqxfFptsy1QCgQSGQIgT0hCRp3MNgFkBIfvnSN24/qxBZNLggQO+XPbbMhSBWOpRX+1lfC8tjw==
+X-Received: by 2002:a65:44c8:: with SMTP id g8mr8706586pgs.443.1560965391078; 
+ Wed, 19 Jun 2019 10:29:51 -0700 (PDT)
+Received: from xps15.cg.shawcable.net (S0106002369de4dac.cg.shawcable.net.
+ [68.147.8.254])
+ by smtp.gmail.com with ESMTPSA id g2sm31348406pfb.95.2019.06.19.10.29.50
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Wed, 19 Jun 2019 10:29:50 -0700 (PDT)
+From: Mathieu Poirier <mathieu.poirier@linaro.org>
+To: gregkh@linuxfoundation.org
+Subject: [PATCH 00/45] coresight: next v5.2-rc5
+Date: Wed, 19 Jun 2019 11:29:04 -0600
+Message-Id: <20190619172949.4522-1-mathieu.poirier@linaro.org>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190619_101923_289961_7B2A64B5 
-X-CRM114-Status: GOOD (  12.90  )
-X-Spam-Score: 0.5 (/)
+X-CRM114-CacheID: sfid-20190619_102952_046667_D93CCDB0 
+X-CRM114-Status: GOOD (  12.85  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.5 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (k.kozlowski.k[at]gmail.com)
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:536 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.221.68 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.221.68 listed in wl.mailspike.net]
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -90,30 +92,111 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Paul Kocialkowski <paul.kocialkowski@bootlin.com>,
- linux-samsung-soc@vger.kernel.org, Kukjin Kim <kgene@kernel.org>,
- Simon Shields <simon@lineageos.org>, linux-arm-kernel@lists.infradead.org
+Cc: linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Jun 18, 2019 at 02:17:42AM +0200, Denis 'GNUtoo' Carikli wrote:
-> From: Simon Shields <simon@lineageos.org>
-> 
-> The galaxy s3 boards use an aat1290 to control the flash LED.
-> This patch adds the relevant device tree configuration to use it.
-> 
-> Signed-off-by: Simon Shields <simon@lineageos.org>
-> Signed-off-by: Denis 'GNUtoo' Carikli <GNUtoo@cyberdimension.org> [rebase]
-> ---
->  arch/arm/boot/dts/exynos4412-galaxy-s3.dtsi | 32 +++++++++++++++++++++
->  1 file changed, 32 insertions(+)
+Good morning,
 
-Thanks, applied.
+These are the patches I have collected for the 5.3 cycle.  Please consider
+having a look when you have the opportunity.
 
-Best regards,
-Krzysztof
+Applies cleanly on your char-misc-next branch (312d362c6ae4).
+
+Thanks,
+Mathieu
+
+Arnd Bergmann (1):
+  coresight: platform: add OF/APCI dependency
+
+Dan Carpenter (1):
+  coresight: Potential uninitialized variable in probe()
+
+Mathieu Poirier (6):
+  coresight: etb10: Properly set AUX buffer head in snapshot mode
+  coresight: tmc-etr: Properly set AUX buffer head in snapshot mode
+  coresight: tmc-etf: Properly set AUX buffer head in snapshot mode
+  coresight: tmc-etf: Fix snapshot mode update function
+  coresight: perf: Don't set the truncated flag in snapshot mode
+  coresight: Use coresight device names for sinks in PMU attribute
+
+Suzuki K Poulose (36):
+  coresight: funnel: Clean up device book keeping
+  coresight: replicator: Cleanup device tracking
+  coresight: tmc: Clean up device specific data
+  coresight: catu: Cleanup device specific data
+  coresight: tpiu: Clean up device specific data
+  coresight: stm: Cleanup device specific data
+  coresight: etm: Clean up device specific data
+  coresight: etb10: Clean up device specific data
+  coresight: Rename of_coresight to coresight-platform
+  coresight: etm3x: Rearrange cp14 access detection
+  coresight: stm: Rearrange probing the stimulus area
+  coresight: tmc-etr: Rearrange probing default buffer size
+  coresight: platform: Make memory allocation helper generic
+  coresight: Make sure device uses DT for obsolete compatible check
+  coresight: Introduce generic platform data helper
+  coresight: Make device to CPU mapping generic
+  coresight: Remove cpu field from platform data
+  coresight: Remove name from platform description
+  coresight: Cleanup coresight_remove_conns
+  coresight: Reuse platform data structure for connection tracking
+  coresight: Rearrange platform data probing
+  coresight: Add support for releasing platform specific data
+  coresight: platform: Use fwnode handle for device search
+  coresight: Use fwnode handle instead of device names
+  coresight: Use platform agnostic names
+  coresight: stm: ACPI support for parsing stimulus base
+  coresight: Support for ACPI bindings
+  coresight: acpi: Support for AMBA components
+  coresight: acpi: Support for platform devices
+  coresight: Add dummy definition for of_coresight_get_cpu()
+  coresight: tmc-etr: Do not call smp_processor_id() from preemptible
+  coresight: tmc-etr: alloc_perf_buf: Do not call smp_processor_id from
+    preemptible
+  coresight: tmc-etf: Do not call smp_processor_id from preemptible
+  coresight: etb10: Do not call smp_processor_id from preemptible
+  coresight: etm3x: Smatch: Fix potential NULL pointer dereference
+  coresight: tmc: Smatch: Fix potential NULL pointer dereference
+
+Wei Yongjun (1):
+  coresight: replicator: Add terminate entry for acpi_device_id tables
+
+ drivers/acpi/acpi_amba.c                      |   9 +
+ drivers/hwtracing/coresight/Kconfig           |   1 +
+ drivers/hwtracing/coresight/Makefile          |   3 +-
+ drivers/hwtracing/coresight/coresight-catu.c  |  40 +-
+ drivers/hwtracing/coresight/coresight-catu.h  |   1 -
+ .../hwtracing/coresight/coresight-cpu-debug.c |   3 +-
+ drivers/hwtracing/coresight/coresight-etb10.c |  78 +-
+ .../hwtracing/coresight/coresight-etm-perf.c  |   8 +-
+ drivers/hwtracing/coresight/coresight-etm.h   |   6 +-
+ .../coresight/coresight-etm3x-sysfs.c         |  12 +-
+ drivers/hwtracing/coresight/coresight-etm3x.c |  46 +-
+ drivers/hwtracing/coresight/coresight-etm4x.c |  37 +-
+ drivers/hwtracing/coresight/coresight-etm4x.h |   2 -
+ .../hwtracing/coresight/coresight-funnel.c    |  36 +-
+ .../hwtracing/coresight/coresight-platform.c  | 815 ++++++++++++++++++
+ drivers/hwtracing/coresight/coresight-priv.h  |   4 +
+ .../coresight/coresight-replicator.c          |  43 +-
+ drivers/hwtracing/coresight/coresight-stm.c   | 118 ++-
+ .../hwtracing/coresight/coresight-tmc-etf.c   |  43 +-
+ .../hwtracing/coresight/coresight-tmc-etr.c   |  80 +-
+ drivers/hwtracing/coresight/coresight-tmc.c   |  96 ++-
+ drivers/hwtracing/coresight/coresight-tmc.h   |   2 -
+ drivers/hwtracing/coresight/coresight-tpiu.c  |  24 +-
+ drivers/hwtracing/coresight/coresight.c       | 164 +++-
+ drivers/hwtracing/coresight/of_coresight.c    | 297 -------
+ include/linux/coresight.h                     |  61 +-
+ 26 files changed, 1398 insertions(+), 631 deletions(-)
+ create mode 100644 drivers/hwtracing/coresight/coresight-platform.c
+ delete mode 100644 drivers/hwtracing/coresight/of_coresight.c
+
+-- 
+2.17.1
 
 
 _______________________________________________
