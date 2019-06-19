@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 038334C203
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Jun 2019 22:03:07 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B96D44C204
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Jun 2019 22:03:24 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,72 +11,71 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=Z6tLJRWKrMfTjjT063aPSyCtl4+qcccqWj+YCGa07eM=; b=mcVCSvaezJJSQ6BlJfPyVcnFyK
-	kMjlL9r7ftlRHLchSAZ9hMVsJvNqvufwSzCDat/Tw5TnE6KtHpYxjmu1+o+ltGV8DYcxa4Icxbixf
-	SzE1WZ6tZPcMI0ye3MXZP221hxZzANYg73E0wVuEbvo+u2ohaxxPGMv8pKSK1Rc1xQyCYiH56OXDJ
-	nyhfjrfMxVymBgpb9XsvcvyA7H7fG8BgusYrmwJjk912vfPdCzLO1dqdFx9/BV7n9TV8tb6wxaWL1
-	mm5/IQiPVLiX5eLY3H+QPnlpmbHP7Sq/BFRDs2j1ZRRpM/3pRFI6T3Agmb2Ww5bLgnFspcp9jq0pk
-	kCOJ5KVw==;
+	bh=E3cPg6TBrenfG9Rzhhl3qj76+PnLE9aEKWGwJn2YDog=; b=AsOWZVid8Ruc+UtiEe/oR53KYZ
+	ZdNtTU2VxBgflg1+olaZdzpbrYTNETsQja5nzEatoNlQOV3g4oNeFoYyeoJw0SOtnnX4c5EU5EYu6
+	28+o0jjV+wdmP2DVo2C5ps1//E9P8Ro/ZjYx0UFbTadEvviX0SsUmRzEEU1HY7FmeZnR7lVc9+/iS
+	mIX0uCSWb07NwrrrlbjeJTjIvpR8WpNwke0Tg7K0Av+SrQ+W85eR5zVwXKY+gA+GF35A4XvBhAze8
+	ARNfCM2a9NLgM6sIIJ/DtSFMLLeRXMimcjooKi5Vn+vTY92SirxJ9tncoVLimyvHgTDPUNlHlOPvZ
+	0bM/+9Vg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hdgnQ-0008K1-Ur; Wed, 19 Jun 2019 20:03:05 +0000
-Received: from mail-pg1-x544.google.com ([2607:f8b0:4864:20::544])
+	id 1hdgnj-0000Am-7A; Wed, 19 Jun 2019 20:03:23 +0000
+Received: from mail-pl1-x643.google.com ([2607:f8b0:4864:20::643])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hdgeR-0006ij-Hf
- for linux-arm-kernel@lists.infradead.org; Wed, 19 Jun 2019 19:53:51 +0000
-Received: by mail-pg1-x544.google.com with SMTP id 196so237601pgc.6
+ id 1hdgeR-0006jQ-O7
+ for linux-arm-kernel@lists.infradead.org; Wed, 19 Jun 2019 19:53:53 +0000
+Received: by mail-pl1-x643.google.com with SMTP id g4so260096plb.5
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 19 Jun 2019 12:53:46 -0700 (PDT)
+ Wed, 19 Jun 2019 12:53:47 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=eVDBdMkApj9sKJLqD9SjgtJkupY/dvzVE0zp0XjJG6s=;
- b=aQQlsUcm3Z24V7Z+EWx61qTLfxCs7b7nH/xaftbC8HtMCpQAnLXbjP5yu7nIY3OOMZ
- CWA74omKQQSUAV5Ys0yftxpQKRXldjo2onAV8EIU3AeQnPuxeON0dECL3ydE1PH09+yY
- wFbMBOaKWXfcZa3WIbZJ3D5TsMud7z3k4UjsHZ66OSXsfZ9iM3ajIiV84SUQXn6Ol6BM
- B0PmuDhsYrDLVWCWlPpzCVUaSg+ILgZjjvNe22vx+OJdg1DdY8jB4Vn5Kq/Bwewsp/DQ
- KVwIbz/z0Gh5FH995SXch8vblMRhaTqGc2mlT4ur0eSw7GXLpK7jNaDAejNCviAW+i+H
- B2+w==
+ bh=cNm/Gnvmoe8OMqI3hroQMow+nr0a1GxGDg/6aibpR2w=;
+ b=lYveENuveuYI0BwZo80/qaUKHohljulL0oA0gaWK1utjfSxuKzmV0U60eiZH5x4sgI
+ efWHxuiV7tZcV1tx4SMGwUre8UPH+YQEDHHGryHG5LM0q966Am6YGV8v3jq1FFcj6s5f
+ 0v9u2UE0+FYdEkopGEaku41rRt7/6kGbyWIfyQAYi+R3UZ9S0sVN5fbulmhWPKKubDYd
+ IE86DrE3fEzEb8B+GQso5lDbV9IXF/jz9cKvjolNASyLVOl6/MFV2uQtu4x1J/KAO5iO
+ rthmcTQMQfN4x855g3Sgr6qqCJg2HtWrrdplIPcU2N0H+CWBae40bCNWeo+orczPgjsj
+ Zmbw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=eVDBdMkApj9sKJLqD9SjgtJkupY/dvzVE0zp0XjJG6s=;
- b=qaoqwF9ItUN3vxfKnW/eGb0WrCBXDrGP8CF0xiLigDvsIhQ56bGxr8bHweuMhXUAJo
- Z1h8iuQNmStma3DksHmQ+qChl8BZZ7WLeJwWYYMwA2OhcrTzSOvh56AHfSFS5KnkX1EB
- yHndYeiexN3Jti+Oifa/bmq/W5XPjihTm9x7F1hPMRO3p6HxjZOOmZ4NpOTYwqFBf4xQ
- eAuizpyq6lN6vlBXRs68QfpxgPRkpKg0QhKNN0h76tC4qiqam2bE+Julcp8ZPn+7VH5t
- otCJB1ceEqkKuL57AxX10wMouHj2Ik6LdezNTY1aC/WdmTThQXcVShji78xseVRvPBvg
- UrCg==
-X-Gm-Message-State: APjAAAWIvuI7T+m2blr3kdFwtm20v+9x+m7gHXBOuvo9YR5vyGt2CZmU
- U5J1BFpaNKuTiVUxjhqj5s04Eg==
-X-Google-Smtp-Source: APXvYqynFm4Gi6dwkGLGuDzG63Gvpmx2XwUU8Ox0vdU1H16fpEH0Kdh8q/Dd8SGWkXesbFP8rrtCHA==
-X-Received: by 2002:a17:90a:214e:: with SMTP id
- a72mr13374261pje.0.1560974025457; 
- Wed, 19 Jun 2019 12:53:45 -0700 (PDT)
+ bh=cNm/Gnvmoe8OMqI3hroQMow+nr0a1GxGDg/6aibpR2w=;
+ b=GBiJYx+K6DvacJLlHuQR7oUCzfEZ707O2hrlNQlTYs9ECUFomEDDXppIYwLCUIDKCG
+ BqLP20f8uYM8MfMXmnmwwZ67ofeNpOXHwLYmgth+h0oKK4pawa6VqahmC+fQ+g9JlE6/
+ eIoo5KspLD4P8fZbIa8j1gjDue4h7ExJuqe+h/CJle3ZDYUyNmxgicNWj5ZzpymBcx+v
+ 5bhX56hHZyL5fvDt40kWQTUg9Fd8RRIKLzlJQ+6ss+IMF3h4M+o76KEpNgCKiGD1wf7u
+ QwJJENq1fvGv6FZj5Lnympjz63SQLJmNarthstXI4tTGbHveTqVY432nL5mUOFA4y8jg
+ 4DPg==
+X-Gm-Message-State: APjAAAXfoYlNCKHRIN13LuIv9Ag9vnrzZ52VWwVTd9wBw/C0ZgYr0b3B
+ gLkWtyo7htFdi2fdcqigpMUgkg==
+X-Google-Smtp-Source: APXvYqwajCF/Ni2gYINk1Q8O6nrrwAeA+V/tjYktZunbZSuTYgWkByf1KHH3R+MryZ7lvygLLpsd5Q==
+X-Received: by 2002:a17:902:1e6:: with SMTP id
+ b93mr77214955plb.295.1560974026261; 
+ Wed, 19 Jun 2019 12:53:46 -0700 (PDT)
 Received: from xps15.cg.shawcable.net (S0106002369de4dac.cg.shawcable.net.
  [68.147.8.254])
- by smtp.gmail.com with ESMTPSA id j14sm21615993pfn.120.2019.06.19.12.53.44
+ by smtp.gmail.com with ESMTPSA id j14sm21615993pfn.120.2019.06.19.12.53.45
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
  Wed, 19 Jun 2019 12:53:45 -0700 (PDT)
 From: Mathieu Poirier <mathieu.poirier@linaro.org>
 To: gregkh@linuxfoundation.org
-Subject: [PATCH 26/28] coresight: tmc: Smatch: Fix potential NULL pointer
- dereference
-Date: Wed, 19 Jun 2019 13:53:16 -0600
-Message-Id: <20190619195318.19254-27-mathieu.poirier@linaro.org>
+Subject: [PATCH 27/28] coresight: platform: add OF/APCI dependency
+Date: Wed, 19 Jun 2019 13:53:17 -0600
+Message-Id: <20190619195318.19254-28-mathieu.poirier@linaro.org>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20190619195318.19254-1-mathieu.poirier@linaro.org>
 References: <20190619195318.19254-1-mathieu.poirier@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190619_125347_834649_4DE11B68 
-X-CRM114-Status: GOOD (  13.32  )
+X-CRM114-CacheID: sfid-20190619_125347_974021_EB0D7E67 
+X-CRM114-Status: GOOD (  13.14  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:544 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:643 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -105,59 +104,46 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Suzuki K Poulose <suzuki.poulose@arm.com>
+From: Arnd Bergmann <arnd@arndb.de>
 
-Based on the following report from Smatch, fix the potential
-NULL pointer dereference check.
+When neither CONFIG_OF nor CONFIG_ACPI are set, we get a harmless
+build warning:
 
-The patch 743256e214e8: "coresight: tmc: Clean up device specific
-data" from May 22, 2019, leads to the following Smatch complaint:
+drivers/hwtracing/coresight/coresight-platform.c:26:12: error: unused function 'coresight_alloc_conns'
+      [-Werror,-Wunused-function]
+static int coresight_alloc_conns(struct device *dev,
+           ^
+drivers/hwtracing/coresight/coresight-platform.c:46:1: error: unused function 'coresight_find_device_by_fwnode'
+      [-Werror,-Wunused-function]
+coresight_find_device_by_fwnode(struct fwnode_handle *fwnode)
 
-    drivers/hwtracing/coresight/coresight-tmc-etr.c:625 tmc_etr_free_flat_buf()
-    warn: variable dereferenced before check 'flat_buf' (see line 623)
+As the code is useless in that configuration anyway, just add
+a Kconfig dependency that only allows building when at least
+one of the two is set.
 
-drivers/hwtracing/coresight/coresight-tmc-etr.c
-   622		struct etr_flat_buf *flat_buf = etr_buf->private;
-   623		struct device *real_dev = flat_buf->dev->parent;
-                                          ^^^^^^^^^^
-The patch introduces a new NULL check
+This should not hinder compile-testing, as CONFIG_OF can be
+enabled on any architecture.
 
-   624
-   625		if (flat_buf && flat_buf->daddr)
-                    ^^^^^^^^
-but the existing code assumed it can be NULL.
-
-   626			dma_free_coherent(real_dev, flat_buf->size,
-   627					  flat_buf->vaddr, flat_buf->daddr);
-
-Cc: Dan Carpenter <dan.carpenter@oracle.com>
-Cc: Mathieu Poirier <mathieu.poirier@linaro.org>
-Signed-off-by: Suzuki K Poulose <suzuki.poulose@arm.com>
+Fixes: ac0e232c12f0 ("coresight: platform: Use fwnode handle for device search")
+Signed-off-by: Arnd Bergmann <arnd@arndb.de>
+Reviewed-by: Suzuki K Poulose <suzuki.poulose@arm.com>
 Signed-off-by: Mathieu Poirier <mathieu.poirier@linaro.org>
 ---
- drivers/hwtracing/coresight/coresight-tmc-etr.c | 6 ++++--
- 1 file changed, 4 insertions(+), 2 deletions(-)
+ drivers/hwtracing/coresight/Kconfig | 1 +
+ 1 file changed, 1 insertion(+)
 
-diff --git a/drivers/hwtracing/coresight/coresight-tmc-etr.c b/drivers/hwtracing/coresight/coresight-tmc-etr.c
-index 5d2bf6d18961..17006705287a 100644
---- a/drivers/hwtracing/coresight/coresight-tmc-etr.c
-+++ b/drivers/hwtracing/coresight/coresight-tmc-etr.c
-@@ -620,11 +620,13 @@ static int tmc_etr_alloc_flat_buf(struct tmc_drvdata *drvdata,
- static void tmc_etr_free_flat_buf(struct etr_buf *etr_buf)
- {
- 	struct etr_flat_buf *flat_buf = etr_buf->private;
--	struct device *real_dev = flat_buf->dev->parent;
- 
--	if (flat_buf && flat_buf->daddr)
-+	if (flat_buf && flat_buf->daddr) {
-+		struct device *real_dev = flat_buf->dev->parent;
-+
- 		dma_free_coherent(real_dev, flat_buf->size,
- 				  flat_buf->vaddr, flat_buf->daddr);
-+	}
- 	kfree(flat_buf);
- }
- 
+diff --git a/drivers/hwtracing/coresight/Kconfig b/drivers/hwtracing/coresight/Kconfig
+index 5487d4a1abc2..14638db4991d 100644
+--- a/drivers/hwtracing/coresight/Kconfig
++++ b/drivers/hwtracing/coresight/Kconfig
+@@ -4,6 +4,7 @@
+ #
+ menuconfig CORESIGHT
+ 	bool "CoreSight Tracing Support"
++	depends on OF || ACPI
+ 	select ARM_AMBA
+ 	select PERF_EVENTS
+ 	help
 -- 
 2.17.1
 
