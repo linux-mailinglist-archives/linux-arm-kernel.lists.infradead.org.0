@@ -2,134 +2,65 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8E2EB4B4CF
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Jun 2019 11:18:13 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D89C04B4D5
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Jun 2019 11:20:25 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:MIME-Version:
-	Date:Message-ID:From:To:Subject:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=dB8UrRhY9LfHI1plTmHwx+LJtsb3MhwI968bHyuNkUo=; b=PG2QUSOvcbuxUu
-	+MIvxnvm8ha/4dQezotaGBZXyvb8V1ItADZwISbP+oOBOyizPvCDf5g/Xmd1oXiIZ5xtzRcwOD/i4
-	pW/m+vgdIeYAMwGq10xSiAVIa7iVWu6tJMEkGs4nRQYZHcLxBRuJv24sIz9NEcf9nc3+0pTMsa+Ie
-	FB2OpwykZ/VMsqNwnlY0MZKO1L3PV9y4gx5E1dPkuLeFcWHHZCxLwPVrMHsB+YuadICzG+4hAg3rc
-	pmmKQpKbAXFtYi+uEdGAQ3De8Y1arefhevUoc+01UKjsEvglqS0cPKulNWY82zNPQgfIofgJZkw2h
-	3VpAPoIiB5MYJJh97x9w==;
+	List-Owner; bh=+64jA6dLJ/imNSzFA2QD0qdmphEXK4Dlm1RxxWo55Uw=; b=tfz6041WxH3jks
+	NWI8ujfwaebZjGuZIu8tQ9Xqtq3gKs1CXfeCDuV88E3ETLyaRs5ukX5OgJYqeJlOzOrTJSzRHkqBe
+	jKrZ585JPaJs5kGWti8fq/p/6A2qQNkimwBK9/Ks5qy7dRKVfMBXZfpIzNlUor1lAN8W2buM6ChPQ
+	V9gkLAEliD9gjyJmO5mOXRANHSPCeQIw6NYkd4SdTH6fKHab8ZBq2izFfXuEtE/ogfAx+d4eHEBma
+	GUiQd96IiUTfGPUEwFRrPPhETkVhBBpd1gCL+sBgmGKKy9VflGbCJ9dDrBCaV9XMoq0SW1nK16x4b
+	rZZr10mAerMs8BkwbxIA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hdWjJ-0008MU-C1; Wed, 19 Jun 2019 09:18:09 +0000
-Received: from mailout1.w1.samsung.com ([210.118.77.11])
+	id 1hdWlR-0001pN-Ra; Wed, 19 Jun 2019 09:20:21 +0000
+Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hdWj9-0008M5-Eb
- for linux-arm-kernel@lists.infradead.org; Wed, 19 Jun 2019 09:18:01 +0000
-Received: from eucas1p1.samsung.com (unknown [182.198.249.206])
- by mailout1.w1.samsung.com (KnoxPortal) with ESMTP id
- 20190619091756euoutp0175c7d4fd750745adfd37ab9bb6a2c5d5~pjujVe9T71182811828euoutp01M
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 19 Jun 2019 09:17:56 +0000 (GMT)
-DKIM-Filter: OpenDKIM Filter v2.11.0 mailout1.w1.samsung.com
- 20190619091756euoutp0175c7d4fd750745adfd37ab9bb6a2c5d5~pjujVe9T71182811828euoutp01M
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
- s=mail20170921; t=1560935876;
- bh=tkIJ6Zdk/r4opylr6EAzPBGo0oQmTLvcNpJPcBJpEcA=;
- h=Subject:To:Cc:From:Date:In-Reply-To:References:From;
- b=boobkESBTTT8izIV5hAugqN3CjPDR0jVkm8uDBSWwKrvS49mWUY6GiSGr4x3IfTmB
- HFPkylAIygkGnfCg630V2rvIPzAQDM0D4Id+1lXCUbiggHAnv0G31IaXc034NyzyLI
- y2kk55jjXDWjmdNqLzXSez/fHKwFWYWcg6T8aofo=
-Received: from eusmges2new.samsung.com (unknown [203.254.199.244]) by
- eucas1p2.samsung.com (KnoxPortal) with ESMTP id
- 20190619091755eucas1p2c7036ec9b6c8be09b2cf2f8a5ae6f103~pjuihnVfu2998329983eucas1p2G;
- Wed, 19 Jun 2019 09:17:55 +0000 (GMT)
-Received: from eucas1p2.samsung.com ( [182.198.249.207]) by
- eusmges2new.samsung.com (EUCPMTA) with SMTP id DA.9D.04377.3CDF90D5; Wed, 19
- Jun 2019 10:17:55 +0100 (BST)
-Received: from eusmtrp1.samsung.com (unknown [182.198.249.138]) by
- eucas1p2.samsung.com (KnoxPortal) with ESMTPA id
- 20190619091754eucas1p2edbfee21d2ec8feacc183927de9a0eae~pjuhufNCy2132521325eucas1p2l;
- Wed, 19 Jun 2019 09:17:54 +0000 (GMT)
-Received: from eusmgms2.samsung.com (unknown [182.198.249.180]) by
- eusmtrp1.samsung.com (KnoxPortal) with ESMTP id
- 20190619091754eusmtrp196587f03ea943b7a4b68b6e3d4d171c5~pjuhfdH3d0190801908eusmtrp1L;
- Wed, 19 Jun 2019 09:17:54 +0000 (GMT)
-X-AuditID: cbfec7f4-12dff70000001119-0a-5d09fdc3d42f
-Received: from eusmtip1.samsung.com ( [203.254.199.221]) by
- eusmgms2.samsung.com (EUCPMTA) with SMTP id A9.B8.04140.2CDF90D5; Wed, 19
- Jun 2019 10:17:54 +0100 (BST)
-Received: from [106.120.51.75] (unknown [106.120.51.75]) by
- eusmtip1.samsung.com (KnoxPortal) with ESMTPA id
- 20190619091753eusmtip1fa0a4c315cf7b4226f56c37589e72378~pjugkhlax2980129801eusmtip1b;
- Wed, 19 Jun 2019 09:17:53 +0000 (GMT)
-Subject: Re: [RFT 02/10] clk: samsung: Add bus clock for GPU/G3D on Exynos4412
-To: Krzysztof Kozlowski <krzk@kernel.org>
-From: Sylwester Nawrocki <s.nawrocki@samsung.com>
-Message-ID: <97cf3337-44da-b5b0-0b45-e44ef5c90615@samsung.com>
-Date: Wed, 19 Jun 2019 11:17:56 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.7.0
+ id 1hdWlG-0001nl-1d; Wed, 19 Jun 2019 09:20:11 +0000
+X-UUID: db19d800f7d5414981d56231040ca53b-20190619
+X-UUID: db19d800f7d5414981d56231040ca53b-20190619
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
+ (envelope-from <weiyi.lu@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 1871408692; Wed, 19 Jun 2019 01:19:50 -0800
+Received: from MTKMBS01N1.mediatek.inc (172.21.101.68) by
+ MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Wed, 19 Jun 2019 02:19:49 -0700
+Received: from mtkcas08.mediatek.inc (172.21.101.126) by
+ mtkmbs01n1.mediatek.inc (172.21.101.68) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Wed, 19 Jun 2019 17:19:47 +0800
+Received: from [172.21.77.4] (172.21.77.4) by mtkcas08.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
+ Transport; Wed, 19 Jun 2019 17:19:47 +0800
+Message-ID: <1560935987.2158.8.camel@mtksdaap41>
+Subject: Re: [PATCH v5 06/14] soc: mediatek: Refactor clock control
+From: Weiyi Lu <weiyi.lu@mediatek.com>
+To: Nicolas Boichat <drinkcat@chromium.org>
+Date: Wed, 19 Jun 2019 17:19:47 +0800
+In-Reply-To: <CANMq1KCxhnn+fKaxS1RbpYYJ7pcXzD8XkqTBJHiauHbfrYVTGA@mail.gmail.com>
+References: <20190319080140.24055-1-weiyi.lu@mediatek.com>
+ <20190319080140.24055-7-weiyi.lu@mediatek.com>
+ <CANMq1KCxhnn+fKaxS1RbpYYJ7pcXzD8XkqTBJHiauHbfrYVTGA@mail.gmail.com>
+X-Mailer: Evolution 3.10.4-0ubuntu2 
 MIME-Version: 1.0
-In-Reply-To: <20190618190534.4951-3-krzk@kernel.org>
-Content-Language: en-GB
-X-Brightmail-Tracker: H4sIAAAAAAAAA01SaUxTWRj19q0Fiq8FwxecjGOjiZiouOZGjdHESd4/ifNDU0O06hMN0Gof
- RdEQEUShrcqgE51ChIgIVg1aCEgVFwQKkoANCAbEusW6IWLrymbbVyO5f879vnPuOSe5LKE6
- R8eyu3RpgkGnTVHTYWRty/fOeffG5InxtUWAj3W0yfBYYQuDr52povDQBQvCvT4PhSdq/yVw
- SVMHhbs/D9G40F1AYsvRUQqfePGOwJ2dVxlsf9FD4WHLEwp3OYppfKbzlgxfaRpgcHmvS4Zd
- 9//G93u9NM5taGLweM81Etscowi/GW4lVwN/+exlxI/8KET80KNchm/4Ukry9dYBhrfb8mm+
- 7stTinebnTK++vxBvrs1m+KP19gQ77X/mRChCVu5XUjZlS4YFqzaErazaNBD7i5B++pvPkdZ
- /mNCcha4JdDv+c6YUBir4ioRNA9bCeniQ9BRZw6yVJwXQUlf+i/FwLc+JJEqEHi7ykKKQQTv
- i1voACuKS4D3+e+oAI7m4qB37CsVIBGci4aRLjMZWNDcQjjWfDxooeBWwfilHFkAk9xs+Hiq
- J/jQNG4j+OrtIY4S2v5/GdTK/THOPssLcgguBrJ9FykJz4C6weJgIuAes3Dz4SGZlHstmKpc
- odZR8NZZw0j4D2g/aSElQQ4Cy41+RroUIHA7S0OKFXDP6fJbsH6LOKhyLJDGa6C5/QMZGAMX
- CY8GlVKISCisPU1IYwXkHVFJ7FkwYjsdihML5pcTZAFSWydVs06qY51Ux/rbtxSRNhQjGMXU
- JEFcpBP2zhe1qaJRlzR/mz7Vjvw/t33c6buOHKNbGxHHInWEgvOyiSpKmy5mpDYiYAl1tCI8
- R56oUmzXZuwXDPrNBmOKIDai6SypjlEcmPJ0k4pL0qYJyYKwWzD82spYeWwW0lQsDb/zsVy5
- OK+oIX/TbWrm5w3L64+a1fod6w9nxP+X2ZHVvawyd0tEfE3PMs+JU/80RbUaybLItMyE6PRP
- 1Zk1erZa09Vnyp1z8Ea2vU/vKHe47657KJIXpyaLylee/ornE0Weeev3/GVi4pQzdA+S28I1
- FZqcI5Wl7teevYJRTYo7tQvnEgZR+xPtrR3etQMAAA==
-X-Brightmail-Tracker: H4sIAAAAAAAAA02Sa0hTURzAObuP3VmD21Q8GGRdiDJoNnXtGCZ9ES5GURkUltitLiq6zXY3
- yz6UVPYwNV1WNs2tSCN7zlapOKGL+SpaPpplLp8gIWZl2UutzRHI+fKD/+/HOQf+FKZwEKFU
- us7IG3RcJkMG4C/mWj1rxVlZ8rrH3WGo8FW7BM2aW6TIXvaAQJPVBQD1fhsj0N8nJRiyNr8i
- UM/3SRKZB4pxVHBmhkAXRsYx5HI9lKLaETeBvhR8IFB3QwWJylxNEnSv2SNFVb2dEtTZEY86
- eqdIlOdslqI5tx1HNQ0zAH380oZvguzdyruA/fPbDNjJt3lS1jltw9l6i0fK1tacI9mn04ME
- O3C+VcI+unmc7Wk7QbBFjhrATtUu27Y4SRlr0JuM/PI0vWDcyOxRoUilKgYpI6NjlKooTfKG
- SDUTERd7kM9Mz+YNEXH7lGnlE2N4lhUcqW8cBrnekw9kFKSjoednn5cDKAVdBWCRWIrlA8o7
- CIXWU4zfCYQz7nzS74wDeOX1MOEbBNJb4cV3/RIfB9HhsHf2B+GTMPoNCW+Jbwh/YQewrGAY
- 81kkrYKFz4vmr5bTcXDuzsn5GqdXws+lbtLHwfRuWN6Qi/udJbD96ug8y7xPrRw6O+9g9Co4
- U9mF+TkEnvh2m/BzGHw6UYEVA4VlQW5ZkFgWJJYFiQ3gNSCINwnaVK0QqRQ4rWDSpSoP6LW1
- wLsxT1p+OepA/qdEEdAUYBbL6z5TyQqCyxZytCKAFMYEyRedlCUr5Ae5nKO8QZ9iMGXyggjU
- 3s+VYKHBB/Te/dMZU1RqlQbFqDRRmqj1iAmRn6Wf7VXQqZyRz+D5LN7wv5NQstBcUJEqjnwP
- cVS3JXQ7u4OtN0wZMcUR239nfV1eGV2iv2w/HNLXyt1fe8dqtbcZpxN6LomaXeJU4NIq86Bt
- s3l112B4Y9oml8Rmix9LURx6vyKg0910Xbf/fWbfosIzOTsCkzhh8nRYoro/TDmalHhtKO+R
- Z3RLF0M6jyW+3KmmnAwupHGqNZhB4P4BuA4FGkcDAAA=
-X-CMS-MailID: 20190619091754eucas1p2edbfee21d2ec8feacc183927de9a0eae
-X-Msg-Generator: CA
-X-RootMTR: 20190618190558epcas3p211c71991aba4f3a2273be82be41324a8
-X-EPHeader: CA
-CMS-TYPE: 201P
-X-CMS-RootMailID: 20190618190558epcas3p211c71991aba4f3a2273be82be41324a8
-References: <20190618190534.4951-1-krzk@kernel.org>
- <CGME20190618190558epcas3p211c71991aba4f3a2273be82be41324a8@epcas3p2.samsung.com>
- <20190618190534.4951-3-krzk@kernel.org>
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190619_021759_793656_A3392254 
-X-CRM114-Status: GOOD (  12.10  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190619_022010_099647_DF4B8407 
+X-CRM114-Status: GOOD (  19.32  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [210.118.77.11 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -141,28 +72,149 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, David Airlie <airlied@linux.ie>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Michael Turquette <mturquette@baylibre.com>, Will Deacon <will.deacon@arm.com>,
- Tomasz Figa <tomasz.figa@gmail.com>, dri-devel@lists.freedesktop.org,
- linux-clk@vger.kernel.org, Marek Szyprowski <m.szyprowski@samsung.com>,
- Joseph Kogut <joseph.kogut@gmail.com>, linux-samsung-soc@vger.kernel.org,
- Chanwoo Choi <cw00.choi@samsung.com>, Kukjin Kim <kgene@kernel.org>,
- devicetree@vger.kernel.org, Arnd Bergmann <arnd@arndb.de>,
- Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>,
- Inki Dae <inki.dae@samsung.com>, Rob Herring <robh+dt@kernel.org>,
- linux-arm-kernel@lists.infradead.org, Stephen Boyd <sboyd@kernel.org>,
- linux-kernel@vger.kernel.org, Daniel Vetter <daniel@ffwll.ch>,
- Olof Johansson <olof@lixom.net>
+Cc: Rob Herring <robh@kernel.org>, srv_heupstream <srv_heupstream@mediatek.com>,
+ James Liao <jamesjj.liao@mediatek.com>, lkml <linux-kernel@vger.kernel.org>,
+ Fan Chen <fan.chen@mediatek.com>,
+ "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ linux-arm Mailing List <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 6/18/19 21:05, Krzysztof Kozlowski wrote:
-> Add ID and gate for bus clock for GPU (Mali 400) on Exynos4412.
+On Tue, 2019-03-19 at 20:02 +0800, Nicolas Boichat wrote:
+> On Tue, Mar 19, 2019 at 4:02 PM Weiyi Lu <weiyi.lu@mediatek.com> wrote:
+> >
+> > Put clock enable and disable control in separate function.
+> >
+> > Signed-off-by: Weiyi Lu <weiyi.lu@mediatek.com>
+> > ---
+> >  drivers/soc/mediatek/mtk-scpsys.c | 49 ++++++++++++++++++++-----------
+> >  1 file changed, 32 insertions(+), 17 deletions(-)
+> >
+> > diff --git a/drivers/soc/mediatek/mtk-scpsys.c b/drivers/soc/mediatek/mtk-scpsys.c
+> > index 765ad4a5e5df..3e9be07a2627 100644
+> > --- a/drivers/soc/mediatek/mtk-scpsys.c
+> > +++ b/drivers/soc/mediatek/mtk-scpsys.c
+> > @@ -208,6 +208,33 @@ static int scpsys_regulator_disable(struct scp_domain *scpd)
+> >         return regulator_disable(scpd->supply);
+> >  }
+> >
+> > +static int scpsys_clk_enable(struct clk *clk[], int max_num)
+> > +{
+> > +       int i, ret = 0;
+> > +
+> > +       for (i = 0; i < max_num && clk[i]; i++) {
+> > +               ret = clk_prepare_enable(clk[i]);
+> > +               if (ret) {
+> > +                       for (--i; i >= 0; i--)
+> > +                               clk_disable_unprepare(clk[i]);
+> 
+> Would it be simpler to just call scpsys_clk_disable(clk, i) ?
+> 
 
-Patch applied to clk/samsung tree, thanks.
+OK, I'll try.
+
+> > +
+> > +                       break;
+> > +               }
+> > +       }
+> > +
+> > +       return ret;
+> > +}
+> 
+> Maybe not for this series, but could you use clk_bulk_prepare_enable
+> instead? The only issue is that it'd still call clk_prepare_enable on
+> NULL clocks, but that does nothing, so it's just a little less
+> efficient...
+> 
+
+OK, I'll try after this series.
+
+> > +
+> > +static void scpsys_clk_disable(struct clk *clk[], int max_num)
+> > +{
+> > +       int i;
+> > +
+> > +       for (i = max_num - 1; i >= 0; i--) {
+> > +               if (clk[i])
+> 
+> if test not needed, clk_disable_unprepare ignores NULL parameters.
+> 
+
+You're right. Supposed it's not needed, I'll test.
+
+> > +                       clk_disable_unprepare(clk[i]);
+> > +       }
+> > +}
+> 
+> ditto: clk_bulk_disable_unprepare
+> 
+> > +
+> >  static int scpsys_power_on(struct generic_pm_domain *genpd)
+> >  {
+> >         struct scp_domain *scpd = container_of(genpd, struct scp_domain, genpd);
+> > @@ -216,21 +243,14 @@ static int scpsys_power_on(struct generic_pm_domain *genpd)
+> >         u32 pdn_ack = scpd->data->sram_pdn_ack_bits;
+> >         u32 val;
+> >         int ret, tmp;
+> > -       int i;
+> >
+> >         ret = scpsys_regulator_enable(scpd);
+> >         if (ret < 0)
+> >                 return ret;
+> >
+> > -       for (i = 0; i < MAX_CLKS && scpd->clk[i]; i++) {
+> > -               ret = clk_prepare_enable(scpd->clk[i]);
+> > -               if (ret) {
+> > -                       for (--i; i >= 0; i--)
+> > -                               clk_disable_unprepare(scpd->clk[i]);
+> > -
+> > -                       goto err_clk;
+> > -               }
+> > -       }
+> > +       ret = scpsys_clk_enable(scpd->clk, MAX_CLKS);
+> > +       if (ret)
+> > +               goto err_clk;
+> >
+> >         val = readl(ctl_addr);
+> >         val |= PWR_ON_BIT;
+> > @@ -283,10 +303,7 @@ static int scpsys_power_on(struct generic_pm_domain *genpd)
+> >         return 0;
+> >
+> >  err_pwr_ack:
+> > -       for (i = MAX_CLKS - 1; i >= 0; i--) {
+> > -               if (scpd->clk[i])
+> > -                       clk_disable_unprepare(scpd->clk[i]);
+> > -       }
+> > +       scpsys_clk_disable(scpd->clk, MAX_CLKS);
+> >  err_clk:
+> >         scpsys_regulator_disable(scpd);
+> >
+> > @@ -303,7 +320,6 @@ static int scpsys_power_off(struct generic_pm_domain *genpd)
+> >         u32 pdn_ack = scpd->data->sram_pdn_ack_bits;
+> >         u32 val;
+> >         int ret, tmp;
+> > -       int i;
+> >
+> >         if (scpd->data->bus_prot_mask) {
+> >                 ret = mtk_infracfg_set_bus_protection(scp->infracfg,
+> > @@ -344,8 +360,7 @@ static int scpsys_power_off(struct generic_pm_domain *genpd)
+> >         if (ret < 0)
+> >                 goto out;
+> >
+> > -       for (i = 0; i < MAX_CLKS && scpd->clk[i]; i++)
+> > -               clk_disable_unprepare(scpd->clk[i]);
+> > +       scpsys_clk_disable(scpd->clk, MAX_CLKS);
+> >
+> >         ret = scpsys_regulator_disable(scpd);
+> >         if (ret < 0)
+> > --
+> > 2.18.0
+> >
+
+
 
 _______________________________________________
 linux-arm-kernel mailing list
