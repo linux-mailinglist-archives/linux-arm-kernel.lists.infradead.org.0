@@ -2,82 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D11484BB4D
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Jun 2019 16:21:25 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 289664BB4E
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Jun 2019 16:21:43 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=DMyTUjPDiqmIBd2n/I/ybZfzHJCliX8oe+q9tf7jvfs=; b=cA4Uo1bYeUIltl
-	PIsMy/TSFmGeIkIMeWI2yzcwY5jERn3icTUz/91P6ulgkJFr4zFnyqdYUcp4wmRkUCPFYCdd5lTnM
-	dosQeOFB7j0j1zBoffIstSYZd1F1+WDWKcgIM/nJxh+souxeO2QhLPRPDj0GWXbah3OKMDTxrN/JE
-	5iASAXWip55X0O6wLEDeWkdXL4cwEC8nAQmFft8fMLaxU/kVN1S5IzE3OcCStk0a5Ze7zUiis2gIx
-	76Y8FI4QXLuZS/+lM7z+9w6zQDfwlUuD5VE/jkd1KINGMSeZpM9pnxhc9Yveb9yqSvlPiHGaANDEs
-	7NiwFkmPD91MWmu+/r7Q==;
+	List-Owner; bh=jMIefABkBJIQtnmTyGHgNSthhYdMIkqRYkmxq9rt68A=; b=ptGBqvNGVmOypI
+	PK0sLgMMOm5m7LpyDfi0FoCxyUu3oEPRfNt2EJr8zpf9dHWxsPSExt9aeOyjaKO2HfXc9oNqty3Jl
+	jdLvPnveeBGZX2Ia/PFgkGObHYc/4f0udFSI2Ck1219a0aqUPCn9B83Edat4tzdGhkzYaK0qGXoxD
+	Qk3LSwsle2d8BGex2GTPFAKT5gubxyEa/q4JrPsVP9//K/Hbujw/EQTvtv/AidJM3mXUGYo3MQGoG
+	eNfmFxtZdkR0K/t/lIdqDPQWT48rQZjo0AxKT7DmLv7GH+ECgS5oonhJBeapNNg4CdPtTe3AigcB2
+	5Sz5rRiOAa+vmu+wtNkA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hdbSl-0006nU-TF; Wed, 19 Jun 2019 14:21:23 +0000
-Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
+	id 1hdbT1-00072b-4u; Wed, 19 Jun 2019 14:21:39 +0000
+Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hdbRm-00062b-5l
- for linux-arm-kernel@lists.infradead.org; Wed, 19 Jun 2019 14:20:24 +0000
-Received: by mail-wr1-x442.google.com with SMTP id n4so3639178wrs.3
+ id 1hdbRm-00063G-I2
+ for linux-arm-kernel@lists.infradead.org; Wed, 19 Jun 2019 14:20:26 +0000
+Received: by mail-wm1-x341.google.com with SMTP id v19so2047757wmj.5
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 19 Jun 2019 07:20:21 -0700 (PDT)
+ Wed, 19 Jun 2019 07:20:22 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=baylibre-com.20150623.gappssmtp.com; s=20150623;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=kT6C5gE5FK+KfGlZUIPAV8YPgNwsfj0frh0Wye9Nflo=;
- b=sSRIPzPK+cPvn1MTMZBkX0cP7V4UYFS/H/JmGFKmf/qben3Z21FjOkPBh/Mfe8nKNv
- CGx+fG8LX4MzmhIqhLYyXlOL+6TEFHSgwR323FP/RdYc3LOK+Ja6Nq4I5qe73LXMZ25N
- JgWj297MqgpUtnqnioJrYPlJZmETPT/Mo54B5Ogyc1wo0HsuHp6qSctXAtn6eWBz9bho
- dtKKpDftYUiYmJNRo6g89JTDnkReLn0x6XYFhLuRG8Geqlj4husJAfw2UOOu+TsTrrYq
- ZXeRmyUHlllMdiqiJ+oMyirBtcf+50WcH+dooZG4mWyhLEnZDDUEJXoiJNaKWFih8OaS
- pgTw==
+ bh=ZRfugtSiNnnWHk67X3XyWfWdW41BFsMrlORgFvQpHB8=;
+ b=x2KfGd6nmTs2XlXpPmXh7Bn5s/ja/yB+ssgQg0K8PWsdCScEmLdoLMyeXSoFjpaU2c
+ 4vLChCMeHfz8s5eFGW5PWmUuBW+WhFnm6MdC8XbYfCgCgrqb/neFu7MUF5Aphbv3FJbY
+ 3rpX7PLEp7KhW+13YKd2whUbI7ot5zYfNoe0B2rQHZ3QXyi33+xLFOjUBeH9m9QtCWlg
+ 0dtmZYSnjUWrEjEN8p6g2UDu0QraU68hCPFzX4gYdLGA+VpECer59BYjvNHnwkbq8+Zq
+ MnvCWzR162k/zGLHSPwXFrA2UV+fLwDGOQ+FMLWoIkohfJQbSjqNZ+e5o/kif2t2GPlQ
+ tMrA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=kT6C5gE5FK+KfGlZUIPAV8YPgNwsfj0frh0Wye9Nflo=;
- b=X81hHfIi+n4nAu+s3MJ0+Q0CgTAbuAISSB9v/V9Zln/gMHwq5h0CbPniZ14GQhzMYh
- 0y6JiNFjl9KkMva5sk8BsDi6TfFYE0dDr+fEmurA0lddvMkHo+sMOCycX+C0GbTPLd7H
- 7w8UPZTH/ScUZM2t0+PAez5r9Pb3mT2D9YIL2/SIjlg8xgwcrOxo3zoCYBUGsNLyJwof
- cyzpgbn6LSE1SHgMjzz96fSmPgNiJYVbI0I62aMVrCjc3heuYO7Y6nZHteOvhnj/PGSJ
- +r/vdebX76KrxbRFexJbUwKOts6ei87J8JDV0664/J/Ch0Hw19/vBYkEMUHKWQZ6cKLb
- jBXg==
-X-Gm-Message-State: APjAAAWOtc1io5u5pWgMbXbxUy9/vHvx2GHGYjyWY25anA3Ru2jS1SfE
- CL/WAIIILzh0JoG3rJVDcTJ4Nw==
-X-Google-Smtp-Source: APXvYqy2BRCb05/k/zzKqZd8m/UIuZO+uW8jfzrNFlV7AFJWIlz2oU4yN1NtUSCIidGEmkuu4fzypg==
-X-Received: by 2002:adf:dc81:: with SMTP id r1mr3516215wrj.298.1560954020155; 
- Wed, 19 Jun 2019 07:20:20 -0700 (PDT)
+ bh=ZRfugtSiNnnWHk67X3XyWfWdW41BFsMrlORgFvQpHB8=;
+ b=TCFUpbp687Dsvy25IrSr3V7Qcff9NVja97GAtrz/82eZkGeXqZYKSAs1QV/GNhnM36
+ CaEDaNcg9LgDwxbGZMJdsme5xcZljxrBuOPDhb1wSDOutF1hE3pXD+JFfLOSHnYU2R0Y
+ blDZ0JneQEBvPpYIdV5M3Fbn5aSDOGJwk/jL0MbHm97iQXB6CRtJQ1DfaA8Dg09EQorI
+ mtyZr9Y+yOUdp1G1W3yt0BwMa8pL9gVUIKD+rTnDLwOGF6Hpk/P5AHTwfitjXzyPMzvR
+ 4E2IvmlQPAY24VKZamKlOfbSVPQ9/G3Y6JcbUAnv2Jx3YGzUPW/cS4ZUhec44pMpFGha
+ cPAg==
+X-Gm-Message-State: APjAAAWz/g76MNllLiIfG2MfFo3xXGEMfdRjReDCfpWLcfG/2qesVscr
+ LIZugE24RrUeY3aykLdEDQiBJA==
+X-Google-Smtp-Source: APXvYqxviKVJH2mGeoI0M+JIBXaftgWG3sqGHPq1gzdOJBj4y7cCwom3d0P0PUFpn9jhuZU7bp+zXg==
+X-Received: by 2002:a1c:4184:: with SMTP id o126mr8614067wma.68.1560954021233; 
+ Wed, 19 Jun 2019 07:20:21 -0700 (PDT)
 Received: from localhost.localdomain
  (amontpellier-652-1-281-69.w109-210.abo.wanadoo.fr. [109.210.96.69])
- by smtp.gmail.com with ESMTPSA id o20sm24209979wrh.8.2019.06.19.07.20.18
+ by smtp.gmail.com with ESMTPSA id o20sm24209979wrh.8.2019.06.19.07.20.20
  (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Wed, 19 Jun 2019 07:20:19 -0700 (PDT)
+ Wed, 19 Jun 2019 07:20:20 -0700 (PDT)
 From: Fabien Parent <fparent@baylibre.com>
 To: robh+dt@kernel.org, mark.rutland@arm.com, matthias.bgg@gmail.com,
  lee.jones@linaro.org, lgirdwood@gmail.com, broonie@kernel.org
-Subject: [PATCH v4 2/7] dt-bindings: mfd: mt6397: Add bindings for MT6392 PMIC
-Date: Wed, 19 Jun 2019 16:20:08 +0200
-Message-Id: <20190619142013.20913-3-fparent@baylibre.com>
+Subject: [PATCH v4 3/7] dt-bindings: input: mtk-pmic-keys: add MT6392 binding
+ definition
+Date: Wed, 19 Jun 2019 16:20:09 +0200
+Message-Id: <20190619142013.20913-4-fparent@baylibre.com>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20190619142013.20913-1-fparent@baylibre.com>
 References: <20190619142013.20913-1-fparent@baylibre.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190619_072022_247106_DEBFEE5D 
-X-CRM114-Status: GOOD (  10.91  )
+X-CRM114-CacheID: sfid-20190619_072022_633383_0A361BC0 
+X-CRM114-Status: GOOD (  10.08  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:442 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:341 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -104,64 +105,48 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add the currently supported bindings for the MT6392 PMIC.
+Add the binding documentation of the mtk-pmic-keys for the MT6392 PMICs.
 
 Signed-off-by: Fabien Parent <fparent@baylibre.com>
 Reviewed-by: Rob Herring <robh@kernel.org>
-Acked-for-MFD-by: Lee Jones <lee.jones@linaro.org>
 ---
 
-V4:
+v4:
 
-	* No change
-
-V3:
-	* No change
-
-V2:
-	* New patch
+	* Patch was previously sent separately but merge to this patch series
+	  since there is a hard dependency on the MFD patch.
 
 ---
- Documentation/devicetree/bindings/mfd/mt6397.txt | 12 ++++++++++--
- 1 file changed, 10 insertions(+), 2 deletions(-)
+ .../devicetree/bindings/input/mtk-pmic-keys.txt       | 11 +++++++----
+ 1 file changed, 7 insertions(+), 4 deletions(-)
 
-diff --git a/Documentation/devicetree/bindings/mfd/mt6397.txt b/Documentation/devicetree/bindings/mfd/mt6397.txt
-index 0ebd08af777d..aa6d2eb0eb19 100644
---- a/Documentation/devicetree/bindings/mfd/mt6397.txt
-+++ b/Documentation/devicetree/bindings/mfd/mt6397.txt
-@@ -17,7 +17,10 @@ Documentation/devicetree/bindings/soc/mediatek/pwrap.txt
- This document describes the binding for MFD device and its sub module.
+diff --git a/Documentation/devicetree/bindings/input/mtk-pmic-keys.txt b/Documentation/devicetree/bindings/input/mtk-pmic-keys.txt
+index 2888d07c2ef0..858f78e7262c 100644
+--- a/Documentation/devicetree/bindings/input/mtk-pmic-keys.txt
++++ b/Documentation/devicetree/bindings/input/mtk-pmic-keys.txt
+@@ -1,15 +1,18 @@
+-MediaTek MT6397/MT6323 PMIC Keys Device Driver
++MediaTek MT6397/MT6392/MT6323 PMIC Keys Device Driver
+ 
+-There are two key functions provided by MT6397/MT6323 PMIC, pwrkey
++There are two key functions provided by MT6397/MT6392/MT6323 PMIC, pwrkey
+ and homekey. The key functions are defined as the subnode of the function
+ node provided by MT6397/MT6323 PMIC that is being defined as one kind
+ of Muti-Function Device (MFD)
+ 
+-For MT6397/MT6323 MFD bindings see:
++For MT6397/MT6392/MT6323 MFD bindings see:
+ Documentation/devicetree/bindings/mfd/mt6397.txt
  
  Required properties:
--compatible: "mediatek,mt6397" or "mediatek,mt6323"
-+compatible: Should be one of:
-+	- "mediatek,mt6397"
-+	- "mediatek,mt6392"
-+	- "mediatek,mt6323"
+-- compatible: "mediatek,mt6397-keys" or "mediatek,mt6323-keys"
++- compatible: Should be one of:
++	- "mediatek,mt6397-keys"
++	- "mediatek,mt6392-keys"
++	- "mediatek,mt6323-keys"
+ - linux,keycodes: See Documentation/devicetree/bindings/input/keys.txt
  
- Optional subnodes:
- 
-@@ -28,6 +31,8 @@ Optional subnodes:
- 	Required properties:
- 		- compatible: "mediatek,mt6397-regulator"
- 	see Documentation/devicetree/bindings/regulator/mt6397-regulator.txt
-+		- compatible: "mediatek,mt6392-regulator"
-+	see Documentation/devicetree/bindings/regulator/mt6392-regulator.txt
- 		- compatible: "mediatek,mt6323-regulator"
- 	see Documentation/devicetree/bindings/regulator/mt6323-regulator.txt
- - codec
-@@ -43,7 +48,10 @@ Optional subnodes:
- 
- - keys
- 	Required properties:
--		- compatible: "mediatek,mt6397-keys" or "mediatek,mt6323-keys"
-+		- compatible: Should be one of:
-+			- "mediatek,mt6397-keys"
-+			- "mediatek,mt6392-keys"
-+			- "mediatek,mt6323-keys"
- 	see Documentation/devicetree/bindings/input/mtk-pmic-keys.txt
- 
- Example:
+ Optional Properties:
 -- 
 2.20.1
 
