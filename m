@@ -2,81 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8C9D74BDB6
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Jun 2019 18:09:12 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 42C434BDBB
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Jun 2019 18:09:34 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=X3mBqwRs5jZhxOI6SeZBIHDZcsrd/8OTfU68Dm6SmVg=; b=mqhlW+zoR+uT0t
-	dePyO7AeDXrE5v73R6z94L9kjNEV8Htu4wX4VAwK0767fjHGngU4GAS9RK7qW81fUcQ2jiyT0lqlb
-	ZLI7MdatbqpjV0Ey5TEWYDQhsbtMEExmVOuhrDnXgRV7XFnqTvUHojfjUCWY2Kgc5NKacm1pNCmyY
-	QXPDXGz8gfR2zQ3FXG7Ra1LtKQCpLlFS9E7qGxqZcMNh40aAL/k9LzPxxDM2ejFgEsrNVg7UhMrF4
-	vHUct2Z+Sz/2gO2eHv67B3whyDM60saPuomsxxrxh4PgrBGMNv8vTVvV29OWqB3rUobibdJ+DoCCj
-	jgrVTXmXWdZyjLsdZ4DQ==;
+	List-Owner; bh=GH3yHJ4efIoblxmkyH/J9XNcLHXGnlUMIoDVsnvgmRE=; b=lpav+wRsT6Fhdt
+	TudPEJakG7UK12/Lq9XMQGU8+pzqIkzZXzcxbHakyEOc+o4JxRMsgBf3OicunVGugQwExJ1JmxRMq
+	v8DCgKhKYVhuiP3d6ZS/5VJIibWHC14FUK2DfpZHzrgBJuFt3qP1Fv0YEcDefKyky54m7RA7ON2cm
+	OK6CyV2BTLx7j3mEr1xkNzKTVAMHHm7RQz9NLHFEF57a097zgQgS9ywCBX+anP8HnwbityukMvgWH
+	5VSFMEQotPZpBf9zb7IyLruCFBCjBfo2eo+TNBEgJt+KEmfGw77qaM8M3Xpyjnfigxrjtxux9u5Qh
+	LlsKhKn9xFXc2c4iV9hA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hdd93-0003L1-0f; Wed, 19 Jun 2019 16:09:09 +0000
-Received: from mail-lf1-x12c.google.com ([2a00:1450:4864:20::12c])
+	id 1hdd9O-0003Zs-D6; Wed, 19 Jun 2019 16:09:30 +0000
+Received: from mail-lj1-x241.google.com ([2a00:1450:4864:20::241])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hdd8r-0003KQ-RS
- for linux-arm-kernel@lists.infradead.org; Wed, 19 Jun 2019 16:08:59 +0000
-Received: by mail-lf1-x12c.google.com with SMTP id q26so57569lfc.3
+ id 1hdd8w-0003Kr-OI
+ for linux-arm-kernel@lists.infradead.org; Wed, 19 Jun 2019 16:09:04 +0000
+Received: by mail-lj1-x241.google.com with SMTP id 131so3842337ljf.4
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 19 Jun 2019 09:08:56 -0700 (PDT)
+ Wed, 19 Jun 2019 09:09:00 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=lixom-net.20150623.gappssmtp.com; s=20150623;
  h=date:from:to:cc:subject:message-id:references:mime-version
  :content-disposition:in-reply-to:user-agent;
- bh=Kt1F+WdS1T/qQLktXMS+CF0PUJliuuDz482m2jmkTQQ=;
- b=t2uhJgDviFzz7ksJ/jkIqoEu5/wRi0k2PYxDyavNfqWDIQSeiHOjo2Rk+dOrUXPsEO
- 3RDHynYPWl4RXCnygKtL73pfACZL8F1JCLa7JirYR35I49SjMUE70DzG9AlSTL6dVXY3
- x+e3BC/L7f/FFSlVE43i5Bo2JkN1XwdcjmYv2oakd4XDpM+aXWiKfECaT5TLXYmVDHuF
- L3WPX9R622ldbQWQ14tdrGbjUAWSJgwl12rMaV/OPBAbFNweIf/FOL63ONs3kbf601tk
- 6lZ5sc5GTgU9dAobygsu/l/O6dnwK5K54v6VodVPcBidzodATgZ7dPmnNWxkbwfObVrR
- rNFA==
+ bh=EV7Nd8ArFTdSsnM2yNQ22mJq4w9w0n+rqtDMUrqyLjM=;
+ b=Xo6LWNf2yW8bsdWQcU/oU567sPXnlZCujiLaOIOOP1Y8fQk1Ug7fgb3Ehn+NqQe1C0
+ Im0wRTB19X9kj9Tsl8KdUSjD9ysDk78nLuPoHqVZPEtHv3dZ4292JPwc0dMoLPBwyQrI
+ 1gbhS6/kuz2tM+XUgRhC02EnGaZzP034GfWdwwWPF206n992N1YqKspXdKhSJGJ61ESw
+ uLRJdmJPVNOIPuASNhFSpGeAycunZRDnL67AZ47C2DitlbNKLIlLxz81bxDxTfAEggdZ
+ acg/NAGAlYe/uYQ2BsoiC+nEQ12cUe61mY1gNmv+HLSUwX7kcHJ4dlMdu7H7W9+Bhrq8
+ yN0w==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to:user-agent;
- bh=Kt1F+WdS1T/qQLktXMS+CF0PUJliuuDz482m2jmkTQQ=;
- b=E+yr4r1euEsQW+Y2fw1CkOJiQz04UMnKbSZ33DmZIX8HOy+l/WWO9WIZWMy3lOMnBZ
- qC1erfGsYTkFThn8fzGWYpr7i8sn/XLayTONiHRRTA4nzdnIP7DfeNlc70r1hKf0W3kc
- 5W1V/2QHEFu8SFnSIa5rTnltilrNkJ4v4j+cgtJ8guKBID6JlFyqnK7jIXDSTkqqGaPB
- 9+j4z1/OQFS+1GIvs8vdwas5TRMkSODWvCbIhmP5Hmgcq6GKpDG5bDeWldbC+1ezyUrg
- S1Uv8b2FF5ZeGMhwszeFTUQ9Kg4xoNbkbKaFEHVCI/iq+Dt6iFo1+UaIgyedDsiVY3vr
- l5uw==
-X-Gm-Message-State: APjAAAX6PRPlbG8a3YIwq5NhEU3x3UJatC48/nbrCe2G8RyCZyXkTiXU
- bN9+fmwjr7BVv263yy0sxGH25K7YBNZ1fQ==
-X-Google-Smtp-Source: APXvYqynHgfDV6hdfs2k+4rN/h/uTeJT2KQwjn/wk/OtNq3i/yij/mr1HK5DwPBtUgfhfK+G8l3k8g==
-X-Received: by 2002:ac2:5b0c:: with SMTP id v12mr50231724lfn.184.1560960535367; 
- Wed, 19 Jun 2019 09:08:55 -0700 (PDT)
+ bh=EV7Nd8ArFTdSsnM2yNQ22mJq4w9w0n+rqtDMUrqyLjM=;
+ b=sUv0R+RXcAj93ELLAvAMrrY6hauR8i4OCzaKENkvBFSZHA62wU/biVXnJd06TTb7YT
+ 2qsLqVpGnyYeK/iFEeTntUrJVknl3SAxwhkwlhCUz93/GrEaJgsdLwPQyfWRLhWAk/Oz
+ IJVKH9DRCNnfwVJqGA3OHQE1WLn24QdmaK1sS5xoizFDudq2r5wPIiAFty9QIo5mqtaA
+ cuvlw/tQzUiMz7uUwIRwi63BOCK1x4mRc91pp8/qLT/X278PIwy2D0xHfpenidOCOl/0
+ pQ+i1L+W/Ud4fSUbccUmx0yiZHwe1K+3iHTf4Y5cLfeen0yyUerw9hXoUxgr2PzUY478
+ NEcQ==
+X-Gm-Message-State: APjAAAV1ehXaf7Nmdt2aqtMK7FW0z1zcYBZsWSDD7CK8Lp0et27MZ95O
+ iyH9Qg17R7eZ3HkIsrb/Tfrs9w==
+X-Google-Smtp-Source: APXvYqzFHehp6jLxcD5jNWdD2OG4cJNUp3yrxOQ9It+m0Y+iLtkPEadbsk97iPVl1BSg7AO+I/lQow==
+X-Received: by 2002:a2e:8696:: with SMTP id l22mr8123756lji.201.1560960537936; 
+ Wed, 19 Jun 2019 09:08:57 -0700 (PDT)
 Received: from localhost (h85-30-9-151.cust.a3fiber.se. [85.30.9.151])
- by smtp.gmail.com with ESMTPSA id x19sm3175007ljb.6.2019.06.19.09.08.53
+ by smtp.gmail.com with ESMTPSA id k12sm3050356lfm.90.2019.06.19.09.08.56
  (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Wed, 19 Jun 2019 09:08:53 -0700 (PDT)
-Date: Wed, 19 Jun 2019 09:01:09 -0700
+ Wed, 19 Jun 2019 09:08:56 -0700 (PDT)
+Date: Wed, 19 Jun 2019 09:03:12 -0700
 From: Olof Johansson <olof@lixom.net>
-To: Dinh Nguyen <dinguyen@kernel.org>
-Subject: Re: [GIT PULL] SoCFPGA DTS updates for v5.3
-Message-ID: <20190619160109.adimn6f4tfjrkikl@localhost>
-References: <20190610153445.17215-1-dinguyen@kernel.org>
+To: Santosh Shilimkar <santosh.shilimkar@oracle.com>
+Subject: Re: [GIT PULL] ARM: TI SOC updates for v5.3
+Message-ID: <20190619160312.l2yfxrmzs4nygi4s@localhost>
+References: <1560919218-3847-1-git-send-email-santosh.shilimkar@oracle.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190610153445.17215-1-dinguyen@kernel.org>
+In-Reply-To: <1560919218-3847-1-git-send-email-santosh.shilimkar@oracle.com>
 User-Agent: NeoMutt/20170113 (1.7.2)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190619_090857_917256_CA541308 
-X-CRM114-Status: GOOD (  15.09  )
+X-CRM114-CacheID: sfid-20190619_090902_820207_84A0F216 
+X-CRM114-Status: GOOD (  14.24  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:12c listed in]
+ no trust [2a00:1450:4864:20:0:0:0:241 listed in]
  [list.dnswl.org]
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -94,49 +94,37 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: arm@kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: linux-kernel@vger.kernel.org, arm@kernel.org, arnd@arndb.de,
+ linux-arm-kernel@lists.infradead.org, khilman@kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Jun 10, 2019 at 10:34:45AM -0500, Dinh Nguyen wrote:
-> Hi Arnd, Kevin, and Olof:
+On Tue, Jun 18, 2019 at 09:40:18PM -0700, Santosh Shilimkar wrote:
+> The following changes since commit cd6c84d8f0cdc911df435bb075ba22ce3c605b07:
 > 
-> Please pull in these SoCFPGA DTS updates for v5.3.
+>   Linux 5.2-rc2 (2019-05-26 16:49:19 -0700)
 > 
-> Thanks,
-> Dinh
+> are available in the git repository at:
 > 
-> The following changes since commit a188339ca5a396acc588e5851ed7e19f66b0ebd9:
+>   git://git.kernel.org/pub/scm/linux/kernel/git/ssantosh/linux-keystone.git tags/drivers_soc_for_5.3
 > 
->   Linux 5.2-rc1 (2019-05-19 15:47:09 -0700)
+> for you to fetch changes up to 4c960505df44b94001178575a505dd8315086edc:
 > 
-> are available in the Git repository at:
-> 
->   git://git.kernel.org/pub/scm/linux/kernel/git/dinguyen/linux.git tags/socfpga_dts_updates_for_v5.3
-> 
-> for you to fetch changes up to c946feaabbdd05b949756cd209ac3937f98aa148:
-> 
->   ARM: dts: arria10: Add EMAC OCP reset property (2019-06-10 09:49:37 -0500)
+>   firmware: ti_sci: Fix gcc unused-but-set-variable warning (2019-06-18 21:32:25 -0700)
 > 
 > ----------------------------------------------------------------
-> SoCFPGA DTS updates for v5.3
-> - Use the new "altr,socfpga-stmmac-a10-s10" for the EMAC controllers on
->   Arria10/Stratix10
-> - Add the ltc2497 i2c entry on the Arria10 devkit
-> - Add the EMAC OCP reset property on the Arria10
+> SOC: TI SCI updates for v5.3
 > 
-> ----------------------------------------------------------------
-> Alan Tull (1):
->       ARM: dts: socfpga: add ltc2497 on arria10 devkit
-> 
-> Dinh Nguyen (3):
->       ARM: dts: socfpga: use the "altr,socfpga-stmmac-a10-s10" binding
->       arm64: dts: stratix10: use the "altr,socfpga-stmmac-a10-s10" binding
->       ARM: dts: arria10: Add EMAC OCP reset property
+> - Couple of fixes to handle resource ranges and
+>   requesting response always from firmware;
+> - Add processor control
+> - Add support APIs for DMA
+> - Fix the SPDX license plate
+> - Unused varible warning fix
 
-Merged, thanks!
+Merged to arm/drivers. Thanks.
 
 
 -Olof
