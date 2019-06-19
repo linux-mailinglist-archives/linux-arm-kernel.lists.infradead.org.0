@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B3D204BFAA
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Jun 2019 19:31:57 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9DA2C4BFAC
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Jun 2019 19:32:35 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,72 +11,71 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=JBByjoYJtLuVu0ENVKyXlm1OB1KqjuOYdx/IWp5yd8c=; b=KWTIid9aLOgEfRWVZoE+Ne60i/
-	+RQKUgp7MIAokzrCXXXXdd00aqmsKX7UNSsT9xZD3/P5hsOVyJjVf2/X9sDaWo5UHcJur4sMG5pF+
-	K+n6E01KTHMrXZQmsM7T0PnT//8mwnbybXvicwO8Hi4fUIcFycvVd4+5ptE1kcZHsu3luiL5pmoTj
-	NFOeuesVm2oOoK5J4bofmGb3e42h1BekY7Zy+t+8tcHwMI1dSoD49WWADD/JvzAqWeOC6PscjNbm5
-	qqWHPphr90oFdstu6Y5IUwWPjV6rPyfUDkxkfMrD3avrrvxH2TL2jRZJ0LEGTecV+dTfZGoDHr3Qm
-	+eqClDFQ==;
+	bh=JhAIHCKrVwKM4w+kXIcBVGW4S9qkgnkT9fsppXed1V4=; b=ry4EtQPnzmJmgHV89NyGq8Gx80
+	UrdUj0UiDMgwPmUgrditfv4X7gguJx84CsZwPzmxp3sUhIqhZQxaIt/O3nSPC7QLXXSbHCRpixMVV
+	coHlABWvoxOJIqxWTkMa/NpJDfci3ZbdWzLisCeAiAJMUqN2CdVI6NNMvwfaXI0mt+kuotnxvyrrT
+	a9dy+C/ao3XJymRKZWkiI4bVcL3T+VzavRvH4I1MXC2EwbZ/A8eBjH8W99n4ATjLpcAXym+VBf5Hv
+	SVvFoAO8NpG30UV/xY0wgPzyP9B1IqTDB97O25JPIsBii4FnHPR5ftgkgw2WJAaXI0gVuQqVvyYDM
+	FccBBXIw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hdeR7-0000yS-TD; Wed, 19 Jun 2019 17:31:53 +0000
-Received: from mail-pl1-x644.google.com ([2607:f8b0:4864:20::644])
+	id 1hdeRl-0001SX-0k; Wed, 19 Jun 2019 17:32:33 +0000
+Received: from mail-pl1-x643.google.com ([2607:f8b0:4864:20::643])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hdePE-00073e-Ia
- for linux-arm-kernel@lists.infradead.org; Wed, 19 Jun 2019 17:29:58 +0000
-Received: by mail-pl1-x644.google.com with SMTP id bh12so96589plb.4
+ id 1hdePF-00074w-Lp
+ for linux-arm-kernel@lists.infradead.org; Wed, 19 Jun 2019 17:29:59 +0000
+Received: by mail-pl1-x643.google.com with SMTP id t7so80567plr.11
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 19 Jun 2019 10:29:56 -0700 (PDT)
+ Wed, 19 Jun 2019 10:29:57 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=g7AMxzETUjdQhAYV0qKHvB+BIVp8O1/Fn7xIZVqRJ+Q=;
- b=y1962C3eL4xm9Ks9S0Sgk0nA5KeFxYUg90Gfu4ziiZfMe6D6zFg+52XzwrdyZEwUnM
- +uIHegLtiMrJlExn44ULReSqjDXLV9/Lt1tWUE8Q/PBv0nWUFuP9LchByF5hnPmz/nlU
- jFoyYoX3wkXhizpMDdz6yPagTGtFI7k+dX4QOpOiN6ivmCJjdQltx+Zd0Y7BblLUm4XY
- EJY8pRVQ6MWQBltkg5yvqJB2NxmO8dgbqgr3sve//jBpyX7padtirTzuDkB87jorN+Ye
- CMaDUgpVmwV4NGPYUGCfd4AGg84vEZmY+Dsju0Z5T6/ylsmwNXzgXurADPY7b6SxlrDg
- 1EtQ==
+ bh=AgYewqbl8iSJQRrA3NRCvtvG59aXYoMecD7NpQO4c4M=;
+ b=Mnb5DfKw9t5I4GT8GQd8zyP2p/jZpeYyEMsPLL++qR3PoJptYomk0tePj3MaEPXFn2
+ rPi+pDsoqORrp4Vyj5vI8uWkABh62YmGcQ9wBn9Bs//B3cmsajbvTa5rcsUBwuUm3ulv
+ vV91hUiOwYla/M2Gmgpu9dIE7whTWQ6u9nKyxglpvySyosD1L4UO8+wNqnezcSuVPtnZ
+ UrjfLYohn+60nlZiEx/ugixfPs00nlROTk93eBZcrPbUk/9peDQl2m4sQpGjyPPmHlkd
+ WC83E//J1zVfd2aSEFXGSqs1RKHnIS+5m1ec0JHHJBZLBA+BNyusneibeCbqysCpohGn
+ rlag==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=g7AMxzETUjdQhAYV0qKHvB+BIVp8O1/Fn7xIZVqRJ+Q=;
- b=d6Qn4mU251jZhs7LYkGrnlqms8UH3h5UxBzOEx5/id02/rT8Vkl1Vif0EvyJBqznOZ
- IH9zfC/0Y8tvYHpoN4n2TzrIElyh/WSwVXkGqlD/tsI7mHlyPAV23kijLzgd70/P+t1o
- 9SwLGohodRSmiBFsn47UEOL1wQjyRMMZZNHIst5aUJDxT/bhoS10oUTjzap7/OkmMjdb
- vDyrjVd3lttCsfJWJYNznrmQOAIDX5SkugsL5eA9HhT2Mwt0obmeOB8Czhct2Zrr7KHL
- 6HWQepzAE0hOrz9owuYdgJH9Ir3r3gTUlQSSwg6lA9+zlQzl402VxMH8FHXKi45W6HJa
- LKgg==
-X-Gm-Message-State: APjAAAVe4Qo3uX3H1fX1IgKb/xC4m4QziMoPrUv1SbRUL7XLiPl0EGiS
- 0veBSjgNpJD8ZVpSx/eb8dvEe+Efkw9sBw==
-X-Google-Smtp-Source: APXvYqzUT5vlNPd4b/FSCo4mVNhX+uvg7icV06Cj95CunAiCCGxeBiBXf1mwFsbM9HUlNp95h1JWjA==
-X-Received: by 2002:a17:902:e582:: with SMTP id
- cl2mr105723202plb.60.1560965396104; 
+ bh=AgYewqbl8iSJQRrA3NRCvtvG59aXYoMecD7NpQO4c4M=;
+ b=AWJ4LrfvAdsqtcNm+6i+5O24r2Sy1Xx8uQAKCQcroIFUEmVgwqPsgEMgYy/Sz1Ehzv
+ xJZ3VuROT4kf6jvQQT+r2TZLvidNJ2Pa2GlQlkkLOFeyGvth5esi7r6NU/Bu+q4xP2ZG
+ NCkpQzxM5ozr3xCjQ8zwJar+8HZaA5s6d/KiWIN6yHwI2l4cJO2ISdIwj9VM2j1QWFXC
+ OBqbp47grW89F7Aj0DaEZIqof2cGfX8xT8sqFdMBNTU7byXk1HGBQLeLuxjeo60q1BKe
+ 2KMPzzG6S6wrcTfEDxHerCDFTUoVH5LHHg3v3/3oRsd9T78nt7B6suEg3QS5gDsS7e7S
+ VIgA==
+X-Gm-Message-State: APjAAAUyXEvuhK9fBZa8DdzexxfFAKO9I+gQMdAUuPV/ydHHoSWAMgxG
+ 7UvcKAAtKffX9rZjXmjMvXW4NgMuqIuOdA==
+X-Google-Smtp-Source: APXvYqx6VKCXT6TVD/0dK/+sgOUkYHjS5u79v5XhW/RfgZPyDElf185Pf4OdVcLUpon7X/gzI5HV4A==
+X-Received: by 2002:a17:902:7687:: with SMTP id
+ m7mr38585711pll.310.1560965396915; 
  Wed, 19 Jun 2019 10:29:56 -0700 (PDT)
 Received: from xps15.cg.shawcable.net (S0106002369de4dac.cg.shawcable.net.
  [68.147.8.254])
- by smtp.gmail.com with ESMTPSA id g2sm31348406pfb.95.2019.06.19.10.29.54
+ by smtp.gmail.com with ESMTPSA id g2sm31348406pfb.95.2019.06.19.10.29.56
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Wed, 19 Jun 2019 10:29:55 -0700 (PDT)
+ Wed, 19 Jun 2019 10:29:56 -0700 (PDT)
 From: Mathieu Poirier <mathieu.poirier@linaro.org>
 To: gregkh@linuxfoundation.org
-Subject: [PATCH 05/45] coresight: perf: Don't set the truncated flag in
- snapshot mode
-Date: Wed, 19 Jun 2019 11:29:09 -0600
-Message-Id: <20190619172949.4522-6-mathieu.poirier@linaro.org>
+Subject: [PATCH 06/45] coresight: funnel: Clean up device book keeping
+Date: Wed, 19 Jun 2019 11:29:10 -0600
+Message-Id: <20190619172949.4522-7-mathieu.poirier@linaro.org>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20190619172949.4522-1-mathieu.poirier@linaro.org>
 References: <20190619172949.4522-1-mathieu.poirier@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190619_102956_628578_E9374251 
-X-CRM114-Status: GOOD (  11.79  )
+X-CRM114-CacheID: sfid-20190619_102957_720928_1435E53A 
+X-CRM114-Status: GOOD (  14.54  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:644 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:643 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -105,79 +104,79 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This patch avoids setting the truncated flag when operating in snapshot
-mode since the trace buffer is expected to be truncated and discontinuous
-from one snapshot to another.  Moreover when the truncated flag is set
-the perf core stops enabling the event, waiting for user space to consume
-the data.  In snapshot mode this is clearly not what we want since it
-results in stale data.
+From: Suzuki K Poulose <suzuki.poulose@arm.com>
 
+In preparation to use a consistent device naming scheme,
+clean up the device link tracking in funnel driver.
+Use the "coresight" device instead of the "real" parent device
+for all internal purposes. All other requests (e.g, power management,
+DMA operations) must use the "real" device which is the parent device.
+
+Signed-off-by: Suzuki K Poulose <suzuki.poulose@arm.com>
 Signed-off-by: Mathieu Poirier <mathieu.poirier@linaro.org>
-Reviewed-by: Suzuki K Poulose <suzuki.poulose@arm.com>
-Tested-by: Leo Yan <leo.yan@linaro.org>
 ---
- drivers/hwtracing/coresight/coresight-etb10.c   | 8 +++++++-
- drivers/hwtracing/coresight/coresight-tmc-etf.c | 8 +++++++-
- drivers/hwtracing/coresight/coresight-tmc-etr.c | 8 +++++++-
- 3 files changed, 21 insertions(+), 3 deletions(-)
+ drivers/hwtracing/coresight/coresight-funnel.c | 11 ++++-------
+ 1 file changed, 4 insertions(+), 7 deletions(-)
 
-diff --git a/drivers/hwtracing/coresight/coresight-etb10.c b/drivers/hwtracing/coresight/coresight-etb10.c
-index 60e753b1768d..516d67cd7759 100644
---- a/drivers/hwtracing/coresight/coresight-etb10.c
-+++ b/drivers/hwtracing/coresight/coresight-etb10.c
-@@ -512,7 +512,13 @@ static unsigned long etb_update_buffer(struct coresight_device *csdev,
- 		lost = true;
- 	}
+diff --git a/drivers/hwtracing/coresight/coresight-funnel.c b/drivers/hwtracing/coresight/coresight-funnel.c
+index 16b0c0e1e43a..6236a847bb0b 100644
+--- a/drivers/hwtracing/coresight/coresight-funnel.c
++++ b/drivers/hwtracing/coresight/coresight-funnel.c
+@@ -32,14 +32,12 @@
+ /**
+  * struct funnel_drvdata - specifics associated to a funnel component
+  * @base:	memory mapped base address for this component.
+- * @dev:	the device entity associated to this component.
+  * @atclk:	optional clock for the core parts of the funnel.
+  * @csdev:	component vitals needed by the framework.
+  * @priority:	port selection order.
+  */
+ struct funnel_drvdata {
+ 	void __iomem		*base;
+-	struct device		*dev;
+ 	struct clk		*atclk;
+ 	struct coresight_device	*csdev;
+ 	unsigned long		priority;
+@@ -80,7 +78,7 @@ static int funnel_enable(struct coresight_device *csdev, int inport,
+ 		rc = dynamic_funnel_enable_hw(drvdata, inport);
  
--	if (lost)
-+	/*
-+	 * Don't set the TRUNCATED flag in snapshot mode because 1) the
-+	 * captured buffer is expected to be truncated and 2) a full buffer
-+	 * prevents the event from being re-enabled by the perf core,
-+	 * resulting in stale data being send to user space.
-+	 */
-+	if (!buf->snapshot && lost)
- 		perf_aux_output_flag(handle, PERF_AUX_FLAG_TRUNCATED);
- 
- 	/* finally tell HW where we want to start reading from */
-diff --git a/drivers/hwtracing/coresight/coresight-tmc-etf.c b/drivers/hwtracing/coresight/coresight-tmc-etf.c
-index 31d41e2ad955..bd5f3b57eebd 100644
---- a/drivers/hwtracing/coresight/coresight-tmc-etf.c
-+++ b/drivers/hwtracing/coresight/coresight-tmc-etf.c
-@@ -518,7 +518,13 @@ static unsigned long tmc_update_etf_buffer(struct coresight_device *csdev,
- 		lost = true;
- 	}
- 
--	if (lost)
-+	/*
-+	 * Don't set the TRUNCATED flag in snapshot mode because 1) the
-+	 * captured buffer is expected to be truncated and 2) a full buffer
-+	 * prevents the event from being re-enabled by the perf core,
-+	 * resulting in stale data being send to user space.
-+	 */
-+	if (!buf->snapshot && lost)
- 		perf_aux_output_flag(handle, PERF_AUX_FLAG_TRUNCATED);
- 
- 	cur = buf->cur;
-diff --git a/drivers/hwtracing/coresight/coresight-tmc-etr.c b/drivers/hwtracing/coresight/coresight-tmc-etr.c
-index cc8401c76c39..1fc3db8045e1 100644
---- a/drivers/hwtracing/coresight/coresight-tmc-etr.c
-+++ b/drivers/hwtracing/coresight/coresight-tmc-etr.c
-@@ -1511,7 +1511,13 @@ tmc_update_etr_buffer(struct coresight_device *csdev,
- 
- 	lost |= etr_buf->full;
- out:
--	if (lost)
-+	/*
-+	 * Don't set the TRUNCATED flag in snapshot mode because 1) the
-+	 * captured buffer is expected to be truncated and 2) a full buffer
-+	 * prevents the event from being re-enabled by the perf core,
-+	 * resulting in stale data being send to user space.
-+	 */
-+	if (!etr_perf->snapshot && lost)
- 		perf_aux_output_flag(handle, PERF_AUX_FLAG_TRUNCATED);
- 	return size;
+ 	if (!rc)
+-		dev_dbg(drvdata->dev, "FUNNEL inport %d enabled\n", inport);
++		dev_dbg(&csdev->dev, "FUNNEL inport %d enabled\n", inport);
+ 	return rc;
  }
+ 
+@@ -110,7 +108,7 @@ static void funnel_disable(struct coresight_device *csdev, int inport,
+ 	if (drvdata->base)
+ 		dynamic_funnel_disable_hw(drvdata, inport);
+ 
+-	dev_dbg(drvdata->dev, "FUNNEL inport %d disabled\n", inport);
++	dev_dbg(&csdev->dev, "FUNNEL inport %d disabled\n", inport);
+ }
+ 
+ static const struct coresight_ops_link funnel_link_ops = {
+@@ -165,11 +163,11 @@ static ssize_t funnel_ctrl_show(struct device *dev,
+ 	u32 val;
+ 	struct funnel_drvdata *drvdata = dev_get_drvdata(dev->parent);
+ 
+-	pm_runtime_get_sync(drvdata->dev);
++	pm_runtime_get_sync(dev->parent);
+ 
+ 	val = get_funnel_ctrl_hw(drvdata);
+ 
+-	pm_runtime_put(drvdata->dev);
++	pm_runtime_put(dev->parent);
+ 
+ 	return sprintf(buf, "%#x\n", val);
+ }
+@@ -205,7 +203,6 @@ static int funnel_probe(struct device *dev, struct resource *res)
+ 	if (!drvdata)
+ 		return -ENOMEM;
+ 
+-	drvdata->dev = dev;
+ 	drvdata->atclk = devm_clk_get(dev, "atclk"); /* optional */
+ 	if (!IS_ERR(drvdata->atclk)) {
+ 		ret = clk_prepare_enable(drvdata->atclk);
 -- 
 2.17.1
 
