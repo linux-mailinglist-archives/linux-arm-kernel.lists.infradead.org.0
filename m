@@ -2,75 +2,89 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5799C4C2E6
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Jun 2019 23:23:57 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 62FF14C2ED
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Jun 2019 23:26:00 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:MIME-Version:Date:Message-ID:Subject:From:To:
-	Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
-	:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=Ln/pX7HzZaojxJ5MT/KtwSOfJUoOPcGUdqfXKS5gMT8=; b=NokSiIEetvpyCUcXsEsRiND/K8
-	nqLR6t4JmGgj65pTShVXdVbIkkc1/G5s6Zql08qYOezJcnebRfgGQLZ9A3yZg0MbtDEbP4k4DPa4/
-	8J3+mRTWW+rlFTRbxRExChQL4nNHW/RSxFhwOLWmxmSXZY5x1B7dpmCS+wEBgShCWWRJp78W7DnL+
-	7aUskOjRwZuHIC7p5gUTJ795kxlfCuc/1UvQcrGeiQkyhFMyCNCBZQfF2kI5oUMaBzYzygEuT/qx3
-	lKiG//ACqu97eO5uZqdyCZY1wqU2TV+NuQEJwEx/JxaJ/IE09hh5Xz4bqpu7ts9jTrvbkDdw2JIer
-	0o9jfmeA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=zQX0+oSsJJQ8ORAwFhvQcQlDIpDQK15DDogde+49F9Q=; b=CVR0JUESq3xP4O
+	XTM+4bjQxeSRl3UBmNAiYejv3pfbu/9QVfBV6dISbGUa+UVDQs6MPOSIyHPhhAf1N0TqgoE7cob+/
+	U4t8ePpUdonV8QMWT6YFt8kAkZde1LZvNrv7wRSEjHNFNCX1moG5szGZ05OuZKU6003ynZ1tbE3x2
+	nYUN+OXFul3ck0G7dIfG/IWoV7NMbBc+kKe2M8Ftsix2XTXLk3buL4NkgTfUcA3Ev4ItMk6eUjauO
+	7WzvnWfvexxiDlDTNVMDWJIe8wKTJohQPrgA68EYtsG2UOOAAq9556gZ9qIM2MGtkKphu4V/5krNM
+	37FhgAXmf2/xwBG4jsCQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hdi3d-0001an-5D; Wed, 19 Jun 2019 21:23:53 +0000
-Received: from mail-pf1-f176.google.com ([209.85.210.176])
+	id 1hdi5c-0003AW-NQ; Wed, 19 Jun 2019 21:25:56 +0000
+Received: from mail-pf1-x443.google.com ([2607:f8b0:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hdi3O-0001a7-OZ
- for linux-arm-kernel@lists.infradead.org; Wed, 19 Jun 2019 21:23:40 +0000
-Received: by mail-pf1-f176.google.com with SMTP id r7so339601pfl.3
+ id 1hdi5Q-00039d-PR
+ for linux-arm-kernel@lists.infradead.org; Wed, 19 Jun 2019 21:25:46 +0000
+Received: by mail-pf1-x443.google.com with SMTP id x15so353395pfq.0
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 19 Jun 2019 14:23:35 -0700 (PDT)
+ Wed, 19 Jun 2019 14:25:41 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=y9mMQK9sKtWkYVn2tTLrqE2pA0vjVcq3E0qdtFwjDm0=;
+ b=P5V/sT+i6r81AGxDHVHYVwgTBdH9hf/mud3jTlfe52eCS6W+5ngfmHBS5Z0sHkjZdw
+ P/hyp+SElxNTgemRSGOtbTDIUYWWHxkBwrIyTDtPXANTdBjE7SWyRMT0/BHQiAkYqtPc
+ CSlOqLbY6l+1vYT1oVdeGzUXQmPLiA74Y4dL0y1Zj8En/UvVab1vDGuLxQtsk4rddVhb
+ OcAr5e4o52ldWylZ/rrctkX2uy8M7eUQyGn8gsZDMCHYREcdFW24LXs34IwCBkBGl5ae
+ N8iqEYxxI6acRivHQIYSUz5sAU6zqbAlhwwRES74c0CoBDLOtl1msA3bIVAvdRuQwNoZ
+ KoRw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:to:cc:from:subject:message-id:date:user-agent
- :mime-version:content-language:content-transfer-encoding;
- bh=h5Ao3cB9S/7tCUZ4ud6lKhdXu9/luXHGivc+ajaSUZM=;
- b=HgkTE3Q9lkzzovg8GInZAmDiH5JpvPV/bu6Io36temkzqT8AwS3L2Wy6eXeAmcEIi6
- T+YzBWNsZ9pv7KnOezKxfL2BYlbnL5JXGvrqLht7BwUFHoeQ3UnrhcPopPVMU1rdHFtA
- pUVnqlznMrtCaC1q4kMCbrMd2kch+bJ4MrX7BwcAgRX5wA24pdbNx8fzxRPLYbktIF4N
- czBGlzRPQ2hjjEGGDZG/vaKQ4rfuClnPCfeJ3OkhNjcRsl1Ee6ZOlwYSsrH5bQqrnixq
- Rq/uDAFzBrzT0bcL3FxU8d1MS99cJJyroH1/h2LeF5W/eFxG4vWqvqTgAYbCkpP1cMFv
- djbA==
-X-Gm-Message-State: APjAAAW3V1JDQmrFjoUcMlbA6NdQ+925v2kdpIzfXz3Xz8UakhJWSYWa
- uLlLpRqUxWAZgJZwpeDhwf4DEg==
-X-Google-Smtp-Source: APXvYqyj6Cfbp8/VKPj+doGb/mW9y1hTBU7vUVIYj9cLd9dPrw3lPzXd1/aKLkCKKL2YujWVYKNn8w==
-X-Received: by 2002:a63:1450:: with SMTP id 16mr9910814pgu.52.1560979414817;
- Wed, 19 Jun 2019 14:23:34 -0700 (PDT)
-Received: from localhost.localdomain ([182.69.193.115])
- by smtp.gmail.com with ESMTPSA id d6sm2320615pjo.32.2019.06.19.14.23.30
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Wed, 19 Jun 2019 14:23:33 -0700 (PDT)
-To: "linux-arm-kernel@lists.infradead.org"
- <linux-arm-kernel@lists.infradead.org>, Will Deacon <will.deacon@arm.com>
-From: Bhupesh Sharma <bhsharma@redhat.com>
-Subject: [Query] arm64: Right approach to support Image.gz file type via
- kexec_file_load()
-Message-ID: <9d54bb1e-7371-5163-69b0-0af0426ee4a0@redhat.com>
-Date: Thu, 20 Jun 2019 02:53:26 +0530
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101
- Thunderbird/52.2.1
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=y9mMQK9sKtWkYVn2tTLrqE2pA0vjVcq3E0qdtFwjDm0=;
+ b=U9pM5FZd7LxO5V25F5Bu14rRKQTd8a/Kkat7T2J6QQcLK6IMCv7CgfqYK5ZuzCefab
+ Kp0wSSwypOw/TanlUl9T0WOQYWxGIMiq3f4p/xMplRnCiPYfyYvuOX7gvhlOq54rCtmc
+ MjzC+UBBj6LWSSXLn6u6mQIH93PXDe6UGTAjaoRvQ2+mRKbSsUHPNrMaJh/ZEXT1mE78
+ KFA/Y7MrTSLikmcHw1iFtkTjVDCUsjRd2Gna02iLXic6BbH+ca8FDzESePPQvTD4pw2P
+ 7p4I6J6ia/o+vOdpHlUjRnexzpFif9fA/NQVLKWh7UX/XCPqhYvqgvAUmPwQ8CvNMX1q
+ Z8vQ==
+X-Gm-Message-State: APjAAAV1aevvp05iffFTbbJXyHOae+JXVAwSqGwxqTrwT89K3Zho9l2P
+ oLZV0WfnJjvoB0GrTR5Rk1D+RxrFOghjVBC+wX90/A==
+X-Google-Smtp-Source: APXvYqztE1b64ddvyGSTrs/viqOnx1s8V4PiJRCg0njvbgRaqHL43xEmtPe+sNLTtcWqmb9QiWUsUoMuerCidUN8TiA=
+X-Received: by 2002:a63:c94f:: with SMTP id y15mr9670654pgg.159.1560979540781; 
+ Wed, 19 Jun 2019 14:25:40 -0700 (PDT)
 MIME-Version: 1.0
-Content-Language: en-US
+References: <20190619205009.4176588-1-taoren@fb.com>
+In-Reply-To: <20190619205009.4176588-1-taoren@fb.com>
+From: Brendan Higgins <brendanhiggins@google.com>
+Date: Wed, 19 Jun 2019 14:25:29 -0700
+Message-ID: <CAFd5g45TMtXcuqONdkpN_K+c0O+wUw8wkGzcQfV+sO8p5Krc9w@mail.gmail.com>
+Subject: Re: [PATCH 1/2] i2c: aspeed: allow to customize base clock divisor
+To: Tao Ren <taoren@fb.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190619_142338_803444_FCEC485F 
-X-CRM114-Status: GOOD (  16.75  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20190619_142544_851429_EDFA9E66 
+X-CRM114-Status: GOOD (  13.49  )
+X-Spam-Score: -15.7 (---------------)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-15.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.210.176 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.210.176 listed in wl.mailspike.net]
+ no trust [2607:f8b0:4864:20:0:0:0:443 listed in]
+ [list.dnswl.org]
+ -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
+ white-list
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
+ white-list
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
+ Match -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -82,101 +96,47 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, matthewgarrett@google.com,
- Ard Biesheuvel <ard.biesheuvel@linaro.org>,
- Catalin Marinas <catalin.marinas@arm.com>,
- "kexec@lists.infradead.org" <kexec@lists.infradead.org>,
- AKASHI Takahiro <takahiro.akashi@linaro.org>,
- James Morse <james.morse@arm.com>, Bhupesh SHARMA <bhupesh.linux@gmail.com>
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ devicetree <devicetree@vger.kernel.org>, linux-aspeed@lists.ozlabs.org,
+ Andrew Jeffery <andrew@aj.id.au>,
+ Benjamin Herrenschmidt <benh@kernel.crashing.org>,
+ OpenBMC Maillist <openbmc@lists.ozlabs.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Rob Herring <robh+dt@kernel.org>, Joel Stanley <joel@jms.id.au>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>, linux-i2c@vger.kernel.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi,
+On Wed, Jun 19, 2019 at 2:00 PM Tao Ren <taoren@fb.com> wrote:
+>
+> Some intermittent I2C transaction failures are observed on Facebook CMM and
+> Minipack (ast2500) BMC platforms, because slave devices (such as CPLD, BIC
+> and etc.) NACK the address byte sometimes. The issue can be resolved by
+> increasing base clock divisor which affects ASPEED I2C Controller's base
+> clock and other AC timing parameters.
+>
+> This patch allows to customize ASPEED I2C Controller's base clock divisor
+> in device tree.
 
-Since most distributions use 'make zinstall' rule inside 
-'arch/arm64/boot/Makefile' (see [1] for details) to install the arm64 
-Image.gz compressed file inside the boot destination directory (for e.g. 
-/boot), currently we cannot use kexec_file_load() to load vmlinuz (or 
-Image.gz):
+First off, are you sure you actually need this?
 
-# file /boot/vmlinuz
-/boot/vmlinuz: gzip compressed data, was "Image", <..snip..>, max 
-compression, from Unix, original size 21945120
+You should be able to achieve an effectively equivalent result by just
+lowering the `bus-frequency` property specified in the DT. The
+`bus-frequency` property ultimately determines all the register
+values, and you should be able to set it to whatever you want by
+refering to the Aspeed documentation.
 
-Now, since via kexec_file_load() we pass the 'fd' of Image.gz 
-(compressed file) via the following command line ...
+Nevertheless, the code that determines the correct dividers from the
+frequency is based on the tables in the Aspeed documentation. I don't
+think the equation makes sense when the base_clk_divisor is fixed; I
+mean it will probably just set the other divisor to max or min
+depending on the values chosen. I think if someone really wants to
+program this parameter manually, they probably want to set the other
+parameters manually too.
 
-# kexec -s -l /boot/vmlinuz-`uname -r` --initrd=/boot/initramfs-`uname 
--r`.img --reuse-cmdline
-
-... kernel returns -EINVAL error value, as it is not able to locate the 
-magic number  =0x644d5241, which is expected in the 64-byte header of 
-the decompressed kernel image (see [2] for details):
-
-The decompressed kernel image contains a 64-byte header as follows:
-<..snip..>
-   u32 magic	= 0x644d5241;	/* Magic number, little endian, "ARM\x64" */
-<..snip..>
-
-I can figure out two ways to address this:
-
-1. Add support in user-space kexec-tools (for which I have a RFC patch 
-ready), which handles an 'Image.gz' being passed via kexec_file_load(), 
-using an approach as follows:
-
-a). Copy the contents of Image.gz to a temporary file.
-b). Decompress (gunzip-decompress) the contents inside the temporary file.
-c). Pass the 'fd' of the temporary file to the kernel space. So 
-basically the kernel space still gets a decompressed kernel image to 
-load via kexec_tools
-
-This seems to have the following pros and cons, which I can think of:
-
-Pros:
-  - Changes can be handled in the user-space (kexec_tools) and no 
-changes are required in kernel space for handling the 
-unsigned/non-secure boot case.
-
-Cons:
-  - One obvious issue is how to handle the signed kernel Image.gz, 
-because signature verification is managed inside the kernel, so handling 
-a signed Image.gz would require kernel intervention eventually.
-  - Passing decompressed image from user-space requires the kernel to 
-read large amount of data from the user-space.
-
-2. Add support in kernel (for which I have a RFC patch ready), which 
-handles an 'Image.gz' being passed via kexec_file_load(), using an 
-approach as follows:
-
-a). Define a 'arch_kexec_kernel_image_probe' for arm64, which overrides 
-the __weak definition in 'kernel/kexec_file.c'
-b). Inside 'arch_kexec_kernel_image_probe' for arm64, check if we have 
-been passed a  magic header  0x1f, 0x8b (\037 \213) which indicates a 
-'gzip format' Image file.
-b). Decompress the contents inside a buffer using a decompress_kernel() 
--> gunzip() -> inflate() logic.
-
-This seems to have the following pros and cons, which I can think of:
-
-Pros:
-  - Handling signed Image.gz becomes easier in the kernel itself.
-
-Cons:
-  - One needs to add a decompress_kernel() -> gunzip() -> inflate() 
-kind-of logic in kernel space to handle gzipp'ed image for arm64.
-
-So, I was wondering which approach should be more suitable - fixing this 
-in user-space v/s fix this in kernel-space.
-
-Please let me know so that I can send out a RFC patch for the same.
-
-[1]. https://github.com/torvalds/linux/blob/master/arch/arm64/boot/Makefile
-[2]. https://www.kernel.org/doc/Documentation/arm64/booting.txt
-
-Thanks,
-Bhupesh
+[snip]
 
 _______________________________________________
 linux-arm-kernel mailing list
