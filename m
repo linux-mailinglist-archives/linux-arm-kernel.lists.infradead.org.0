@@ -2,106 +2,68 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CCD974B509
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Jun 2019 11:36:58 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0A99F4B526
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Jun 2019 11:44:14 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=qP9iZMY7nQb9M1JZTBjTw6nuqc0Ae0GUTlMmrtZmYg8=; b=m5h6nUJtNWveaU
-	ts0yxMyXYpQsC/gCHlmsfXKsOxYUMFpuNjFfPBl/q+FsWH+IoHg9E0azxgFnhBc24B3v4+MVKleU3
-	HTDCDi08RiKwlfA0xmY8y71Js3kgBlbyd7wyPi9nI6Y+C52LthosJ54JnhaaKKyQD2gh5MJAk+NPL
-	wrj7BwNnxPjv+mVl1iKKxaPZeHoYFKrDLoUqWRoZYX1J9u12Jz1SeYuIoNIxroEvPFiojuX0bDL9A
-	nnyVmAgM4pKYne9C069Gdg4IJHVPaa3cZYGlu6XYKoudX+oWPUGegDt7poMT9GpwNAUUTQ7qQTyA9
-	he5laLxsjQ21wQ9chL8A==;
+	List-Owner; bh=uz8BXCEOpVB3PiC4E8305TKMAWGzb8Xj92ECnQVt8ig=; b=t2bM4X01SNm7H4
+	oLTUMLK1RHFe2MWfjQrPTDexZ2P4um8LwHTntdDXRVG/FqdQDA+ySRNM/hYysQQSfFpoF61fMFWgL
+	cElkYQbEy506U3dF/t3knMgigrMrcxxd3meRvFkNzHDXEBCiSvINoZYvkRthPVGjZqAvBqMrMHCzX
+	Eve9iGbq8NPfPmY0zPKdt7ql19iKe0T7GVdhIWA2HTJ6+cQ3GExrQr42YELTEniqLb/3zraJNMMyl
+	SIoxviftKsfI6VBqxjVM77rJYEb1GtbgWB1SF7TopbmATP19HXrqOiWUbqqpxQtYSMAQHfzJ45Hgf
+	Vio5GqCYCo5jskvZsxWw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hdX1S-0007tL-TM; Wed, 19 Jun 2019 09:36:54 +0000
-Received: from mail-eopbgr20064.outbound.protection.outlook.com ([40.107.2.64]
- helo=EUR02-VE1-obe.outbound.protection.outlook.com)
+	id 1hdX8T-0001xw-UB; Wed, 19 Jun 2019 09:44:09 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hdX17-0007aw-B9
- for linux-arm-kernel@lists.infradead.org; Wed, 19 Jun 2019 09:36:39 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=yNBuzmlPjAt3HItsdXiyAdHm2GJkn6nVc80tD9V0/2k=;
- b=lmOjRpt3USmutmzpKo8euFc1pFK9psF04rMm9EB1W3vjDdCvOgkAviqf6sdkwj8So4tvnigByiMCU7rezu5YDQLoytFYHiEdZCf00TC1HF8z4Wom4P+lJ5Qt5oxiksa5qCNj8+RL/PB16RiG9m8rkQEqCl5oe0XzC0YNYsq6uLY=
-Received: from VE1PR04MB6655.eurprd04.prod.outlook.com (20.179.235.94) by
- VE1PR04MB6672.eurprd04.prod.outlook.com (20.179.235.145) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.1987.12; Wed, 19 Jun 2019 09:36:27 +0000
-Received: from VE1PR04MB6655.eurprd04.prod.outlook.com
- ([fe80::e127:7fe9:ab91:c552]) by VE1PR04MB6655.eurprd04.prod.outlook.com
- ([fe80::e127:7fe9:ab91:c552%7]) with mapi id 15.20.1987.014; Wed, 19 Jun 2019
- 09:36:28 +0000
-From: Ran Wang <ran.wang_1@nxp.com>
-To: "Rafael J. Wysocki" <rjw@rjwysocki.net>
-Subject: RE: [PATCH v4 1/3] PM: wakeup: Add routine to help fetch wakeup
- source object.
-Thread-Topic: [PATCH v4 1/3] PM: wakeup: Add routine to help fetch wakeup
- source object.
-Thread-Index: AQHVDvGJHigpnFjbr0+iCnHCepvpt6aiMPUAgACuisA=
-Date: Wed, 19 Jun 2019 09:36:27 +0000
-Message-ID: <VE1PR04MB66556830530B0B3488FE5DA6F1E50@VE1PR04MB6655.eurprd04.prod.outlook.com>
-References: <20190520095238.29210-1-ran.wang_1@nxp.com>
- <3448272.3g8bHhgBA9@kreacher>
-In-Reply-To: <3448272.3g8bHhgBA9@kreacher>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=ran.wang_1@nxp.com; 
-x-originating-ip: [92.121.36.197]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: 0030911f-d6cc-45df-6f5e-08d6f4999a96
-x-ms-office365-filtering-ht: Tenant
-x-microsoft-antispam: BCL:0; PCL:0;
- RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600148)(711020)(4605104)(1401327)(4618075)(2017052603328)(7193020);
- SRVR:VE1PR04MB6672; 
-x-ms-traffictypediagnostic: VE1PR04MB6672:
-x-microsoft-antispam-prvs: <VE1PR04MB6672A5435CE84ADB07FCE56AF1E50@VE1PR04MB6672.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:4941;
-x-forefront-prvs: 0073BFEF03
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(346002)(39860400002)(366004)(136003)(396003)(376002)(189003)(199004)(54534003)(66446008)(8936002)(81166006)(25786009)(66066001)(186003)(66946007)(76116006)(73956011)(7696005)(64756008)(68736007)(52536014)(86362001)(5024004)(99286004)(5660300002)(316002)(53936002)(71190400001)(6246003)(71200400001)(33656002)(6116002)(14444005)(7416002)(74316002)(66476007)(6506007)(8676002)(3846002)(76176011)(305945005)(53546011)(256004)(26005)(66556008)(6436002)(54906003)(11346002)(7736002)(446003)(478600001)(2906002)(6916009)(4326008)(81156014)(476003)(486006)(102836004)(55016002)(14454004)(229853002)(9686003);
- DIR:OUT; SFP:1101; SCL:1; SRVR:VE1PR04MB6672;
- H:VE1PR04MB6655.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; MX:1; A:1; 
-received-spf: None (protection.outlook.com: nxp.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: XkbMvpKlQdyfWKTUWvaKj6q/wP8eKl98WasGmzd0Ahx7PlFD2yN0a+uYpbaeqQexZI25Tu0B6uM7PbbWI7O4okoIDRAYKtH9R23fhu2w9hLu/YOzrljlvejBJKSMaXmNRRp6Dgn3KzuqADxuEVSxARCih0p8whdhMEmz0CKG2IBEu7THcTAzkZM+sSvPUGhyJGVXAkrN65BKwxGUA8YTqC0jxkQTDWUAA+pOtfQEl9IPBD8NmxpA3HR/cEfRzZtcu09WHWrP0Kn4FV4fj2uRiipmVrKtylMF5xhkMvaAqk8hSnuqPEtQgIVdrIUe2p1tHjjm46ksI/AwGOI3MM13ucHcelQ/lIs4ePdmxmtUUDbmGyOR4RiP3JZvbW6g1JsnFJgWcsAjbktPjSvE2aPAhD/wj2F4BdV0+b2kZa5VDVI=
+ id 1hdX8I-0001wJ-28; Wed, 19 Jun 2019 09:44:00 +0000
+X-UUID: d26c45334e63455ea47928ac37f7b3e9-20190619
+X-UUID: d26c45334e63455ea47928ac37f7b3e9-20190619
+Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw01.mediatek.com
+ (envelope-from <weiyi.lu@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 1818388162; Wed, 19 Jun 2019 01:43:51 -0800
+Received: from MTKMBS01N1.mediatek.inc (172.21.101.68) by
+ MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Wed, 19 Jun 2019 02:43:49 -0700
+Received: from MTKCAS06.mediatek.inc (172.21.101.30) by
+ mtkmbs01n1.mediatek.inc (172.21.101.68) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Wed, 19 Jun 2019 17:43:41 +0800
+Received: from [172.21.77.4] (172.21.77.4) by MTKCAS06.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
+ Transport; Wed, 19 Jun 2019 17:43:42 +0800
+Message-ID: <1560937422.2158.22.camel@mtksdaap41>
+Subject: Re: [PATCH v5 10/14] soc: mediatek: Add multiple step bus
+ protection control
+From: Weiyi Lu <weiyi.lu@mediatek.com>
+To: Nicolas Boichat <drinkcat@chromium.org>
+Date: Wed, 19 Jun 2019 17:43:42 +0800
+In-Reply-To: <CANMq1KAU4o1ad+CM09QtPTGey+mzheg3bR4+iDXpcW+znRC9fQ@mail.gmail.com>
+References: <20190319080140.24055-1-weiyi.lu@mediatek.com>
+ <20190319080140.24055-11-weiyi.lu@mediatek.com>
+ <CANMq1KAU4o1ad+CM09QtPTGey+mzheg3bR4+iDXpcW+znRC9fQ@mail.gmail.com>
+X-Mailer: Evolution 3.10.4-0ubuntu2 
 MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 0030911f-d6cc-45df-6f5e-08d6f4999a96
-X-MS-Exchange-CrossTenant-originalarrivaltime: 19 Jun 2019 09:36:27.9018 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: ran.wang_1@nxp.com
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: VE1PR04MB6672
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190619_023633_697401_370C7D4A 
-X-CRM114-Status: GOOD (  26.50  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190619_024358_113235_61C3A60C 
+X-CRM114-Status: GOOD (  29.02  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.2.64 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ no trust [216.200.240.184 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -113,174 +75,315 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Len Brown <len.brown@intel.com>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- "linux-pm@vger.kernel.org" <linux-pm@vger.kernel.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Leo Li <leoyang.li@nxp.com>, Rob Herring <robh+dt@kernel.org>,
- Pavel Machek <pavel@ucw.cz>,
- "linuxppc-dev@lists.ozlabs.org" <linuxppc-dev@lists.ozlabs.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: Rob Herring <robh@kernel.org>, srv_heupstream <srv_heupstream@mediatek.com>,
+ James Liao <jamesjj.liao@mediatek.com>, lkml <linux-kernel@vger.kernel.org>,
+ Fan Chen <fan.chen@mediatek.com>,
+ "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ linux-arm Mailing List <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Rafael,
-
-On Wednesday, June 19, 2019 06:45, Rafael J. Wysocki wrote:
-> 
-> On Monday, May 20, 2019 11:52:36 AM CEST Ran Wang wrote:
-> > Some user might want to go through all registered wakeup sources and
-> > doing things accordingly. For example, SoC PM driver might need to do
-> > HW programming to prevent powering down specific IP which wakeup
-> > source depending on. And is user's responsibility to identify if this
-> > wakeup source he is interested in.
-> 
-> I guess the idea here is that you need to walk wakeup devices and you noticed
-> that there was a wakeup source object for each of them and those wakeup
-> source objects were on a list, so you could walk wakeup devices by walking the
-> list of wakeup source objects.
-> 
-> That is fair enough, but the changelog above doesn't even talk about that.
-
-How about this:
-"Providing a API for helping walk through all registered wakeup devices on the list.
-It will be useful for SoC PMU driver to know which device will work as a wakeup
-source then do specific HW programming for them."
-
-> > Signed-off-by: Ran Wang <ran.wang_1@nxp.com>
+On Thu, 2019-03-21 at 13:57 +0800, Nicolas Boichat wrote:
+> On Tue, Mar 19, 2019 at 4:02 PM Weiyi Lu <weiyi.lu@mediatek.com> wrote:
+> >
+> > Both MT8183 & MT6765 have more control steps of bus protection
+> > than previous project. And there add more bus protection registers
+> > reside at infracfg & smi-common. Also add new APIs for multiple
+> > step bus protection control with more customize arguments.
+> >
+> > Signed-off-by: Weiyi Lu <weiyi.lu@mediatek.com>
 > > ---
-> > Change in v4:
-> > 	- None.
+> >  drivers/soc/mediatek/Makefile           |  2 +-
+> >  drivers/soc/mediatek/mtk-scpsys-ext.c   | 99 +++++++++++++++++++++++++
+> >  drivers/soc/mediatek/mtk-scpsys.c       | 24 ++++++
+> >  include/linux/soc/mediatek/scpsys-ext.h | 39 ++++++++++
+> >  4 files changed, 163 insertions(+), 1 deletion(-)
+> >  create mode 100644 drivers/soc/mediatek/mtk-scpsys-ext.c
+> >  create mode 100644 include/linux/soc/mediatek/scpsys-ext.h
 > >
-> > Change in v3:
-> > 	- Adjust indentation of *attached_dev;.
-> >
-> > Change in v2:
-> > 	- None.
-> >
-> >  drivers/base/power/wakeup.c |   18 ++++++++++++++++++
-> >  include/linux/pm_wakeup.h   |    3 +++
-> >  2 files changed, 21 insertions(+), 0 deletions(-)
-> >
-> > diff --git a/drivers/base/power/wakeup.c b/drivers/base/power/wakeup.c
-> > index 5b2b6a0..6904485 100644
-> > --- a/drivers/base/power/wakeup.c
-> > +++ b/drivers/base/power/wakeup.c
-> > @@ -14,6 +14,7 @@
-> >  #include <linux/suspend.h>
-> >  #include <linux/seq_file.h>
-> >  #include <linux/debugfs.h>
-> > +#include <linux/of_device.h>
-> >  #include <linux/pm_wakeirq.h>
-> >  #include <trace/events/power.h>
-> >
-> > @@ -226,6 +227,22 @@ void wakeup_source_unregister(struct
-> wakeup_source *ws)
-> >  	}
-> >  }
-> >  EXPORT_SYMBOL_GPL(wakeup_source_unregister);
-> > +/**
-> > + * wakeup_source_get_next - Get next wakeup source from the list
-> > + * @ws: Previous wakeup source object, null means caller want first one.
+> > diff --git a/drivers/soc/mediatek/Makefile b/drivers/soc/mediatek/Makefile
+> > index 64ce5eeaba32..b9dbad6b12f9 100644
+> > --- a/drivers/soc/mediatek/Makefile
+> > +++ b/drivers/soc/mediatek/Makefile
+> > @@ -1,4 +1,4 @@
+> >  obj-$(CONFIG_MTK_CMDQ) += mtk-cmdq-helper.o
+> > -obj-$(CONFIG_MTK_INFRACFG) += mtk-infracfg.o
+> > +obj-$(CONFIG_MTK_INFRACFG) += mtk-infracfg.o mtk-scpsys-ext.o
+> >  obj-$(CONFIG_MTK_PMIC_WRAP) += mtk-pmic-wrap.o
+> >  obj-$(CONFIG_MTK_SCPSYS) += mtk-scpsys.o
+> > diff --git a/drivers/soc/mediatek/mtk-scpsys-ext.c b/drivers/soc/mediatek/mtk-scpsys-ext.c
+> > new file mode 100644
+> > index 000000000000..f630edb2f65d
+> > --- /dev/null
+> > +++ b/drivers/soc/mediatek/mtk-scpsys-ext.c
+> > @@ -0,0 +1,99 @@
+> > +// SPDX-License-Identifier: GPL-2.0
+> > +/*
+> > + * Copyright (c) 2018 MediaTek Inc.
+> > + * Author: Owen Chen <Owen.Chen@mediatek.com>
 > > + */
-> > +struct wakeup_source *wakeup_source_get_next(struct wakeup_source
-> > +*ws) {
-> > +	struct list_head *ws_head = &wakeup_sources;
+> > +#include <linux/ktime.h>
+> > +#include <linux/mfd/syscon.h>
+> > +#include <linux/of_device.h>
+> > +#include <linux/regmap.h>
+> > +#include <linux/soc/mediatek/scpsys-ext.h>
 > > +
-> > +	if (ws)
-> > +		return list_next_or_null_rcu(ws_head, &ws->entry,
-> > +				struct wakeup_source, entry);
-> > +	else
-> > +		return list_entry_rcu(ws_head->next,
-> > +				struct wakeup_source, entry);
+> > +#define MTK_POLL_DELAY_US   10
+> > +#define MTK_POLL_TIMEOUT    USEC_PER_SEC
+> > +
+> > +static int set_bus_protection(struct regmap *map, u32 mask, u32 ack_mask,
+> > +               u32 reg_set, u32 reg_sta, u32 reg_en)
+> > +{
+> > +       u32 val;
+> > +
+> > +       if (reg_set)
+> > +               regmap_write(map, reg_set, mask);
+> > +       else
+> > +               regmap_update_bits(map, reg_en, mask, mask);
+> > +
+> > +       return regmap_read_poll_timeout(map, reg_sta,
+> > +                       val, (val & ack_mask) == ack_mask,
+> > +                       MTK_POLL_DELAY_US, MTK_POLL_TIMEOUT);
 > > +}
-> > +EXPORT_SYMBOL_GPL(wakeup_source_get_next);
+> > +
+> > +static int clear_bus_protection(struct regmap *map, u32 mask, u32 ack_mask,
+> > +               u32 reg_clr, u32 reg_sta, u32 reg_en)
+> > +{
+> > +       u32 val;
+> > +
+> > +       if (reg_clr)
+> > +               regmap_write(map, reg_clr, mask);
+> > +       else
+> > +               regmap_update_bits(map, reg_en, mask, 0);
+> > +
+> > +       return regmap_read_poll_timeout(map, reg_sta,
+> > +                       val, !(val & ack_mask),
+> > +                       MTK_POLL_DELAY_US, MTK_POLL_TIMEOUT);
+> > +}
+> > +
+> > +int mtk_scpsys_ext_set_bus_protection(const struct bus_prot *bp_table,
+> > +       struct regmap *infracfg, struct regmap *smi_common)
+> > +{
+> > +       int i;
+> > +
+> > +       for (i = 0; i < MAX_STEPS && bp_table[i].mask; i++) {
+> > +               struct regmap *map;
+> > +               int ret;
+> > +
+> > +               if (bp_table[i].type == IFR_TYPE)
+> > +                       map = infracfg;
+> > +               else if (bp_table[i].type == SMI_TYPE)
+> > +                       map = smi_common;
+> > +               else
+> > +                       return -EINVAL;
+> > +
+> > +               ret = set_bus_protection(map,
+> > +                               bp_table[i].mask, bp_table[i].mask,
+> > +                               bp_table[i].set_ofs, bp_table[i].sta_ofs,
+> > +                               bp_table[i].en_ofs);
+> > +
+> > +               if (ret)
+> > +                       return ret;
 > 
-> This needs to be arranged along the lines of
-> wakeup_sources_stats_seq_start/next/stop()
-> because of the SRCU protection of the list.
+> Should you undo the rest of the operations and clear bus protection on
+> the ones that were already enabled?
+> 
 
-Got it, how about this:
- 230 /**                                                                              
- 231  * wakeup_source_get_next - Get next wakeup source from the list                 
- 232  * @ws: Previous wakeup source object, null means caller want first one.         
- 233  */                                                                              
- 234 struct wakeup_source *wakeup_source_get_next(struct wakeup_source *ws)           
- 235 {                                                                                
- 236         struct list_head *ws_head = &wakeup_sources;                             
- 237         struct wakeup_source *next_ws = NULL;                                    
- 238         int idx;                                                                 
- 239                                                                                  
- 240         idx = srcu_read_lock(&wakeup_srcu);                                      
- 241         if (ws)                                                                                                                
- 242                 next_ws = list_next_or_null_rcu(ws_head, &ws->entry,             
- 243                                 struct wakeup_source, entry);                    
- 244         else                                                                     
- 245                 next_ws = list_entry_rcu(ws_head->next,                          
- 246                                 struct wakeup_source, entry);                    
- 247         srcu_read_unlock(&wakeup_srcu, idx);                                     
- 248                                                                                  
- 249         return next_ws;                                                          
- 250 }                                                                                
- 251 EXPORT_SYMBOL_GPL(wakeup_source_get_next);   
+Actually we assume all bus protection operations need to be done
+successfully, undo might not be a very useful error handling here. But
+I'll consider it carefully.
 
+
+> > +       }
+> > +
+> > +       return 0;
+> > +}
+> > +
+> > +int mtk_scpsys_ext_clear_bus_protection(const struct bus_prot *bp_table,
+> > +       struct regmap *infracfg, struct regmap *smi_common)
+> > +{
+> > +       int i;
+> > +
+> > +       for (i = MAX_STEPS - 1; i >= 0; i--) {
+> 
+> So when you set protection, you stop at the first bp_table[i].mask ==
+> 0, but when you clear it, you call clear_bus_protection for those, as
+> well. You should just skip over the ones when bp_table[i].mask == 0?
+> 
+> e.g.
+> if (!bp_table[i].mask)
+>    continue;
+> 
+
+I'll use the idea of INVALID_TYPE = 0 to fix.
+
+> > +               struct regmap *map;
+> > +               int ret;
+> > +
+> > +               if (bp_table[i].type == IFR_TYPE)
+> > +                       map = infracfg;
+> > +               else if (bp_table[i].type == SMI_TYPE)
+> > +                       map = smi_common;
+> > +               else
+> > +                       return -EINVAL;
+> > +
+> > +               ret = clear_bus_protection(map,
+> > +                               bp_table[i].mask, bp_table[i].clr_ack_mask,
+> > +                               bp_table[i].clr_ofs, bp_table[i].sta_ofs,
+> > +                               bp_table[i].en_ofs);
+> > +
+> > +               if (ret)
+> > +                       return ret;
+> 
+> Similar question, is it ok to just abort? Or should you try to clear
+> the protection on all others, too?
+> 
+> > +       }
+> > +
+> > +       return 0;
+> > +}
+> > diff --git a/drivers/soc/mediatek/mtk-scpsys.c b/drivers/soc/mediatek/mtk-scpsys.c
+> > index c6360de4e41e..181bf7bce591 100644
+> > --- a/drivers/soc/mediatek/mtk-scpsys.c
+> > +++ b/drivers/soc/mediatek/mtk-scpsys.c
+> > @@ -12,6 +12,7 @@
+> >  #include <linux/pm_domain.h>
+> >  #include <linux/regulator/consumer.h>
+> >  #include <linux/soc/mediatek/infracfg.h>
+> > +#include <linux/soc/mediatek/scpsys-ext.h>
 > >
-> >  /**
-> >   * device_wakeup_attach - Attach a wakeup source object to a device object.
-> > @@ -242,6 +259,7 @@ static int device_wakeup_attach(struct device *dev,
-> struct wakeup_source *ws)
-> >  		return -EEXIST;
-> >  	}
-> >  	dev->power.wakeup = ws;
-> > +	ws->attached_dev = dev;
-> >  	if (dev->power.wakeirq)
-> >  		device_wakeup_attach_irq(dev, dev->power.wakeirq);
-> >  	spin_unlock_irq(&dev->power.lock);
-> > diff --git a/include/linux/pm_wakeup.h b/include/linux/pm_wakeup.h
-> > index 0ff134d..913b2fb 100644
-> > --- a/include/linux/pm_wakeup.h
-> > +++ b/include/linux/pm_wakeup.h
-> > @@ -50,6 +50,7 @@
-> >   * @wakeup_count: Number of times the wakeup source might abort suspend.
-> >   * @active: Status of the wakeup source.
-> >   * @has_timeout: The wakeup source has been activated with a timeout.
-> > + * @attached_dev: The device it attached to
+> >  #include <dt-bindings/power/mt2701-power.h>
+> >  #include <dt-bindings/power/mt2712-power.h>
+> > @@ -121,6 +122,7 @@ static const char * const clk_names[] = {
+> >   * @basic_clk_name: provide the same purpose with field "clk_id"
+> >   *                  by declaring basic clock prefix name rather than clk_id.
+> >   * @caps: The flag for active wake-up action.
+> > + * @bp_table: The mask table for multiple step bus protection.
 > >   */
-> >  struct wakeup_source {
-> >  	const char 		*name;
-> > @@ -70,6 +71,7 @@ struct wakeup_source {
-> >  	unsigned long		wakeup_count;
-> >  	bool			active:1;
-> >  	bool			autosleep_enabled:1;
-> > +	struct device		*attached_dev;
-> 
-> Please (a) call it just dev and (b) move it up (before wakeirq, say)
-
-Got it, will update in next version.
-
-Thanks & Regards,
-Ran
-> 
+> >  struct scp_domain_data {
+> >         const char *name;
+> > @@ -132,6 +134,7 @@ struct scp_domain_data {
+> >         enum clk_id clk_id[MAX_CLKS];
+> >         const char *basic_clk_name[MAX_CLKS];
+> >         u8 caps;
+> > +       struct bus_prot bp_table[MAX_STEPS];
 > >  };
 > >
-> >  #ifdef CONFIG_PM_SLEEP
-> > @@ -101,6 +103,7 @@ static inline void device_set_wakeup_path(struct
-> > device *dev)  extern void wakeup_source_remove(struct wakeup_source
-> > *ws);  extern struct wakeup_source *wakeup_source_register(const char
-> > *name);  extern void wakeup_source_unregister(struct wakeup_source
-> > *ws);
-> > +extern struct wakeup_source *wakeup_source_get_next(struct
-> > +wakeup_source *ws);
-> >  extern int device_wakeup_enable(struct device *dev);  extern int
-> > device_wakeup_disable(struct device *dev);  extern void
-> > device_set_wakeup_capable(struct device *dev, bool capable);
+> >  struct scp;
+> > @@ -155,6 +158,7 @@ struct scp {
+> >         struct device *dev;
+> >         void __iomem *base;
+> >         struct regmap *infracfg;
+> > +       struct regmap *smi_common;
+> >         struct scp_ctrl_reg ctrl_reg;
+> >         bool bus_prot_reg_update;
+> >  };
+> > @@ -291,6 +295,10 @@ static int scpsys_bus_protect_enable(struct scp_domain *scpd)
+> >                 ret = mtk_infracfg_set_bus_protection(scp->infracfg,
+> >                                 scpd->data->bus_prot_mask,
+> >                                 scp->bus_prot_reg_update);
+> > +       } else if (scpd->data->bp_table[0].mask) {
+> > +               ret = mtk_scpsys_ext_set_bus_protection(scpd->data->bp_table,
+> > +                               scp->infracfg,
+> > +                               scp->smi_common);
+> >         }
 > >
+> >         return ret;
+> > @@ -305,6 +313,11 @@ static int scpsys_bus_protect_disable(struct scp_domain *scpd)
+> >                 ret = mtk_infracfg_clear_bus_protection(scp->infracfg,
+> >                                 scpd->data->bus_prot_mask,
+> >                                 scp->bus_prot_reg_update);
+> > +       } else if (scpd->data->bp_table[0].mask) {
+> > +               ret = mtk_scpsys_ext_clear_bus_protection(
+> > +                               scpd->data->bp_table,
+> > +                               scp->infracfg,
+> > +                               scp->smi_common);
+> >         }
+> >
+> >         return ret;
+> > @@ -475,6 +488,17 @@ static struct scp *init_scp(struct platform_device *pdev,
+> >                 return ERR_CAST(scp->infracfg);
+> >         }
+> >
+> > +       scp->smi_common = syscon_regmap_lookup_by_phandle(pdev->dev.of_node,
+> > +                       "smi_comm");
+> > +
+> > +       if (scp->smi_common == ERR_PTR(-ENODEV)) {
+> > +               scp->smi_common = NULL;
+> > +       } else if (IS_ERR(scp->smi_common)) {
+> > +               dev_err(&pdev->dev, "Cannot find smi_common controller: %ld\n",
+> > +                               PTR_ERR(scp->smi_common));
+> > +               return ERR_CAST(scp->smi_common);
+> > +       }
+> > +
+> >         for (i = 0; i < num; i++) {
+> >                 struct scp_domain *scpd = &scp->domains[i];
+> >                 const struct scp_domain_data *data = &scp_domain_data[i];
+> > diff --git a/include/linux/soc/mediatek/scpsys-ext.h b/include/linux/soc/mediatek/scpsys-ext.h
+> > new file mode 100644
+> > index 000000000000..d0ed295c88a7
+> > --- /dev/null
+> > +++ b/include/linux/soc/mediatek/scpsys-ext.h
+> > @@ -0,0 +1,39 @@
+> > +/* SPDX-License-Identifier: GPL-2.0 */
+> > +#ifndef __SOC_MEDIATEK_SCPSYS_EXT_H
+> > +#define __SOC_MEDIATEK_SCPSYS_EXT_H
+> > +
+> > +#define MAX_STEPS      4
+> > +
+> > +#define BUS_PROT(_type, _set_ofs, _clr_ofs,                    \
+> > +               _en_ofs, _sta_ofs, _mask, _clr_ack_mask) {      \
+> > +               .type = _type,                                  \
+> > +               .set_ofs = _set_ofs,                            \
+> > +               .clr_ofs = _clr_ofs,                            \
+> > +               .en_ofs = _en_ofs,                              \
+> > +               .sta_ofs = _sta_ofs,                            \
+> > +               .mask = _mask,                                  \
+> > +               .clr_ack_mask = _clr_ack_mask,                  \
+> > +       }
+> > +
+> > +enum regmap_type {
 > 
+> Maybe add INVALID_TYPE = 0, so that you can skip over those when
+> looping over them, instead of checking if mask is 0?
 > 
+
+Thanks for advise. I'll use it in next version.
+
+> > +       IFR_TYPE,
+> > +       SMI_TYPE,
+> > +       MAX_REGMAP_TYPE,
 > 
+> This is not used, right? Do you really need it?
+> 
+
+I'll remove it.
+
+> > +};
+> > +
+> > +struct bus_prot {
+> > +       enum regmap_type type;
+> > +       u32 set_ofs;
+> > +       u32 clr_ofs;
+> > +       u32 en_ofs;
+> > +       u32 sta_ofs;
+> > +       u32 mask;
+> > +       u32 clr_ack_mask;
+> > +};
+> > +
+> > +int mtk_scpsys_ext_set_bus_protection(const struct bus_prot *bp_table,
+> > +       struct regmap *infracfg, struct regmap *smi_common);
+> > +int mtk_scpsys_ext_clear_bus_protection(const struct bus_prot *bp_table,
+> > +       struct regmap *infracfg, struct regmap *smi_common);
+> > +
+> > +#endif /* __SOC_MEDIATEK_SCPSYS_EXT_H */
+> > --
+> > 2.18.0
+> >
+
 
 
 _______________________________________________
