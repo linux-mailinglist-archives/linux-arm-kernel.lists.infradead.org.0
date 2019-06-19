@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6601F4BFD1
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Jun 2019 19:38:17 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id AA96A4BFD3
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Jun 2019 19:38:29 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,71 +11,70 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=2yEE7MpCHqNQU7cW7V70akiM8YMXt7fGKK+VZS/ezzg=; b=dvsi5Y8IwKD5L/gXLja2BfOoLW
-	UgqzFb4dEqKHyS7ixwZXntVxgOaLzUQFPUnm5zXIfULKuIwGJHcp6PT5AY+tqcDjIvYiwRB5Dgdkb
-	ck1RRrckh0EleoqK29fhZYBir4ngu84LSfZ9lfqWHEi3owe5pz5X9DFK5Y6hFRk3GiTPIikIm5y4u
-	gonN3m5ucK1UOhLr5y3ZI7mB9jtP8LAycoSv5HxNYpAwC/ApedD6Ya3vlp2k/d2FV01kNhsw4Y7DH
-	hgqSq+c4v303X3zhzmO29oVcpbmoYN9j2xxkUEiYr7Wzq5Wz/G1kMNmH88ejzsB5AzuhRbui/YtrY
-	0YQE8DWw==;
+	bh=Zqs+Y5XTNMp6yavwN4ewRP4ilpfnOZQ3TzKh07BCI/4=; b=mOmq1YS5c+hjExVdBAvT3NkIrw
+	qfb3EkJPDbDuTtNhPipN4fpTmbf2fJrfJ/jfhtJ8CAfIWMBQ1I2wauXH+RNqBATweofKMqolxcZua
+	ipXDGAYQPU/cNPa4gYDiAItRlGKBEisqflkatn+67VCZrm/pY+cTkiLf9wiqNn+nJtGQIgx8bMjD9
+	A/xN2u+opQ9OSlfUf0WxyZmOGAlcOkKzo1A1JdWCdDxaAiFva0KamcbDe5Xi2T7UrUNlzLP8SfQUG
+	lBSaiap0m32/oF/13HhEArC6EfztGHqpvzppbP7Q/yVP1Vv6N2k5vendRmat5ydQw1eanuC9vx2GD
+	E6RFSpdA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hdeXH-0007JS-2q; Wed, 19 Jun 2019 17:38:15 +0000
-Received: from mail-pg1-x544.google.com ([2607:f8b0:4864:20::544])
+	id 1hdeXU-0007aJ-6z; Wed, 19 Jun 2019 17:38:28 +0000
+Received: from mail-pf1-x441.google.com ([2607:f8b0:4864:20::441])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hdePX-0008Cn-2w
- for linux-arm-kernel@lists.infradead.org; Wed, 19 Jun 2019 17:30:19 +0000
-Received: by mail-pg1-x544.google.com with SMTP id k187so63920pga.0
+ id 1hdePX-0008IH-Sw
+ for linux-arm-kernel@lists.infradead.org; Wed, 19 Jun 2019 17:30:24 +0000
+Received: by mail-pf1-x441.google.com with SMTP id p184so186pfp.7
  for <linux-arm-kernel@lists.infradead.org>;
  Wed, 19 Jun 2019 10:30:14 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=3FNM7irOGkHJQx+HodJo4nth9GnuaBbG1lJL4fmhw34=;
- b=a7mihi4J+oTITqcMQOmSnrsxCw9JBQNy/j3baJHuaaOFZaY2VIdn6qNWLDRWfNqkHa
- bvtID88voosR7JeRM3trRKARvqRhjGtOU+rAcZ/8IZyc9wcN2nWEBc0y9GgwG19nn/0t
- f1PL3mLU+evnUwhwyyl3fP5bdxxoaH39SLUXv6pdXM5IPSgx3hCm4Wuxd3lsRHQfQFHh
- 4JgUJHPLymJRyaEfD8iKKyHb9GaR0L+IZv/AAvefQBCC1rsp2xf3KwEiMTSyej14Lt4p
- T43tixIdjxT2Fl5Lj4qC7Q/QORgyw23N37d7v8Hs0ILtZRJJwD7zb/6tjU/CAJi3S+/G
- 6V7g==
+ bh=tiXUTbhpb8QTXLfXKxw0xlSbjGmKnd5NIC4uXUkTfag=;
+ b=SDlxCsR/oPQJdWKgl/yHmZHp661cNQzR2fZ+qa7GdeyUThhntMfyMfKMjaRlS50m5j
+ eePMit6ml3fj2Avm5esx7jiv+VV482/mieg1hSY42WaC59JuWgEFCi8gMR/aRSrbtOlD
+ NYhLa6oOjcykv1he/SFHf7PqrUt26Uv58FJffh0I3y2fyGE1O85UQSsjrQYbW6w8l3og
+ CR6muw7gCbUu1I4AjImgTDosN/pTKiawaIkMeLUrsZB6lY8DeHmax0/PTB0H9+l54HuW
+ KrxKIzyjMc1cQyL21vAcWaPXtzUVty2VZ7QRHQHf8LPLZCk/jHMMujDhw51FYoy7iD5+
+ cCZg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=3FNM7irOGkHJQx+HodJo4nth9GnuaBbG1lJL4fmhw34=;
- b=Ua5AO2gCLnnRbvC9GV9gCtNHLJGdDdAordr7QG6JjL6TfytOMjQT+VUODsY+uXYQjc
- pew8/y6qCeJc72CAmqiIcjCzpznyRlnBkpPa99uaOtC0ojqUMxeNoWXfMj5s32PoYo+9
- 9ttf1R9zD51i0Neb13pIc3xczvXOGaiZ7gDykgZvzfzohpBJly6CeZ6hWInl9KalByq8
- NbM6ssmH+aP6xVbs110tUenXBNAHEc5vTK4KDsLUlS5aMaBkFOU/jMSUddmRBg2/mGea
- O/AOJH9KDJocjiBKHMXiLRMDkn5TsBtfT8OZT0BlN+GVgpxmGqoPRPyuhkqxyU5f1T5F
- rrxQ==
-X-Gm-Message-State: APjAAAXBaskbFAixLcEIcHZGR/QQYQZpntU+gM23vNgKUDf/eZEmdk/z
- Locro9Y7ah1g0xFRao/3o50vNw==
-X-Google-Smtp-Source: APXvYqxL6E8l8j0RESM2w0kipOADrPl+klya4JKIJuDnvk/HwBo+MhDh6bo1z5IvCMu+srggyRduTQ==
-X-Received: by 2002:a17:90a:a505:: with SMTP id
- a5mr12506460pjq.27.1560965412795; 
- Wed, 19 Jun 2019 10:30:12 -0700 (PDT)
+ bh=tiXUTbhpb8QTXLfXKxw0xlSbjGmKnd5NIC4uXUkTfag=;
+ b=T36qDtZd4WoDDOLgRZc0uWPmmP27Dupg5GXcHiXbK3mtQLxjsvIDGiicpmKosqZJwg
+ yeamRfNZjNp1gfwKmq0wPg9f+dkifXkaolvFnwrvVeSL5Uc7liHXhaIOOfQtrRVFvXVN
+ ahlAAmkpSr4Lfwiwyo6odVfNoBvjIG87vTi5QM4KDwoQNDYA2YnXrD1hPxretxyx0Gb/
+ XPklE9d5guYjTjDKMJS5nIfMEnyZuo9z3xZXjB5BouibvWH0tgr9YiwCbUJ7hrf+L71o
+ xV+5JuRRJfu4tYa67E8a56/6fP2wbfCq6nmlkemTp58+mAtruRXxFEtpNzz1dOcO+0mE
+ ZmvA==
+X-Gm-Message-State: APjAAAUI7GgbGhENqs1AY62cjY9aPTwZC1McmTbsVVsbMLFGaaEaqQ4Y
+ PAr5NBm4g7us/VJMO2Z07bmxaqpOxKaVBA==
+X-Google-Smtp-Source: APXvYqz4dYeG2vic1CiFnmIt6llrNqojEMYhjwRiL/OzOqpCJxdzxMYB3YNoS27obAN3iwD6PYODKg==
+X-Received: by 2002:a63:d24f:: with SMTP id t15mr7841276pgi.301.1560965413624; 
+ Wed, 19 Jun 2019 10:30:13 -0700 (PDT)
 Received: from xps15.cg.shawcable.net (S0106002369de4dac.cg.shawcable.net.
  [68.147.8.254])
- by smtp.gmail.com with ESMTPSA id g2sm31348406pfb.95.2019.06.19.10.30.11
+ by smtp.gmail.com with ESMTPSA id g2sm31348406pfb.95.2019.06.19.10.30.12
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Wed, 19 Jun 2019 10:30:12 -0700 (PDT)
+ Wed, 19 Jun 2019 10:30:13 -0700 (PDT)
 From: Mathieu Poirier <mathieu.poirier@linaro.org>
 To: gregkh@linuxfoundation.org
-Subject: [PATCH 23/45] coresight: Remove cpu field from platform data
-Date: Wed, 19 Jun 2019 11:29:27 -0600
-Message-Id: <20190619172949.4522-24-mathieu.poirier@linaro.org>
+Subject: [PATCH 24/45] coresight: Remove name from platform description
+Date: Wed, 19 Jun 2019 11:29:28 -0600
+Message-Id: <20190619172949.4522-25-mathieu.poirier@linaro.org>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20190619172949.4522-1-mathieu.poirier@linaro.org>
 References: <20190619172949.4522-1-mathieu.poirier@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190619_103015_345586_80740BFA 
-X-CRM114-Status: GOOD (  15.57  )
+X-CRM114-CacheID: sfid-20190619_103017_400454_6A72A844 
+X-CRM114-Status: GOOD (  18.03  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:544 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:441 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -106,77 +105,230 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Suzuki K Poulose <suzuki.poulose@arm.com>
 
-CPU field is only used by ETMs and there is a separate API
-for fetching the same. So, let us use that instead of using
-the common platform probing helper. Also, remove it from the
-platform_data.
+We are about to use a name independent of the parent AMBA device
+name. As such, there is no need to have it in the platform description.
+Let us move this to coresight description instead.
 
 Signed-off-by: Suzuki K Poulose <suzuki.poulose@arm.com>
 Signed-off-by: Mathieu Poirier <mathieu.poirier@linaro.org>
 ---
- drivers/hwtracing/coresight/coresight-etm3x.c    | 2 +-
- drivers/hwtracing/coresight/coresight-etm4x.c    | 2 +-
- drivers/hwtracing/coresight/coresight-platform.c | 1 -
- include/linux/coresight.h                        | 2 --
- 4 files changed, 2 insertions(+), 5 deletions(-)
+ drivers/hwtracing/coresight/coresight-catu.c       | 2 ++
+ drivers/hwtracing/coresight/coresight-etb10.c      | 3 ++-
+ drivers/hwtracing/coresight/coresight-etm3x.c      | 1 +
+ drivers/hwtracing/coresight/coresight-etm4x.c      | 1 +
+ drivers/hwtracing/coresight/coresight-funnel.c     | 1 +
+ drivers/hwtracing/coresight/coresight-platform.c   | 3 ---
+ drivers/hwtracing/coresight/coresight-replicator.c | 2 ++
+ drivers/hwtracing/coresight/coresight-stm.c        | 1 +
+ drivers/hwtracing/coresight/coresight-tmc.c        | 5 +++--
+ drivers/hwtracing/coresight/coresight-tpiu.c       | 1 +
+ drivers/hwtracing/coresight/coresight.c            | 2 +-
+ include/linux/coresight.h                          | 8 ++++----
+ 12 files changed, 19 insertions(+), 11 deletions(-)
 
+diff --git a/drivers/hwtracing/coresight/coresight-catu.c b/drivers/hwtracing/coresight/coresight-catu.c
+index 799ba1dd877e..05c73045532a 100644
+--- a/drivers/hwtracing/coresight/coresight-catu.c
++++ b/drivers/hwtracing/coresight/coresight-catu.c
+@@ -551,6 +551,8 @@ static int catu_probe(struct amba_device *adev, const struct amba_id *id)
+ 	catu_desc.type = CORESIGHT_DEV_TYPE_HELPER;
+ 	catu_desc.subtype.helper_subtype = CORESIGHT_DEV_SUBTYPE_HELPER_CATU;
+ 	catu_desc.ops = &catu_ops;
++	catu_desc.name = dev_name(dev);
++
+ 	drvdata->csdev = coresight_register(&catu_desc);
+ 	if (IS_ERR(drvdata->csdev))
+ 		ret = PTR_ERR(drvdata->csdev);
+diff --git a/drivers/hwtracing/coresight/coresight-etb10.c b/drivers/hwtracing/coresight/coresight-etb10.c
+index cb8cb03e0cdb..8726d6c7663c 100644
+--- a/drivers/hwtracing/coresight/coresight-etb10.c
++++ b/drivers/hwtracing/coresight/coresight-etb10.c
+@@ -777,12 +777,13 @@ static int etb_probe(struct amba_device *adev, const struct amba_id *id)
+ 	desc.ops = &etb_cs_ops;
+ 	desc.pdata = pdata;
+ 	desc.dev = dev;
++	desc.name = dev_name(dev);
+ 	desc.groups = coresight_etb_groups;
+ 	drvdata->csdev = coresight_register(&desc);
+ 	if (IS_ERR(drvdata->csdev))
+ 		return PTR_ERR(drvdata->csdev);
+ 
+-	drvdata->miscdev.name = pdata->name;
++	drvdata->miscdev.name = desc.name;
+ 	drvdata->miscdev.minor = MISC_DYNAMIC_MINOR;
+ 	drvdata->miscdev.fops = &etb_fops;
+ 	ret = misc_register(&drvdata->miscdev);
 diff --git a/drivers/hwtracing/coresight/coresight-etm3x.c b/drivers/hwtracing/coresight/coresight-etm3x.c
-index fa2164ff07c2..722fab9632ef 100644
+index 722fab9632ef..101fb01e20de 100644
 --- a/drivers/hwtracing/coresight/coresight-etm3x.c
 +++ b/drivers/hwtracing/coresight/coresight-etm3x.c
-@@ -819,7 +819,7 @@ static int etm_probe(struct amba_device *adev, const struct amba_id *id)
- 			return ret;
- 	}
- 
--	drvdata->cpu = pdata ? pdata->cpu : 0;
-+	drvdata->cpu = coresight_get_cpu(dev);
- 
- 	cpus_read_lock();
- 	etmdrvdata[drvdata->cpu] = drvdata;
+@@ -854,6 +854,7 @@ static int etm_probe(struct amba_device *adev, const struct amba_id *id)
+ 	desc.ops = &etm_cs_ops;
+ 	desc.pdata = pdata;
+ 	desc.dev = dev;
++	desc.name = dev_name(dev);
+ 	desc.groups = coresight_etm_groups;
+ 	drvdata->csdev = coresight_register(&desc);
+ 	if (IS_ERR(drvdata->csdev)) {
 diff --git a/drivers/hwtracing/coresight/coresight-etm4x.c b/drivers/hwtracing/coresight/coresight-etm4x.c
-index 4355b2e8c308..03576f3ed22d 100644
+index 03576f3ed22d..8adc1485cd89 100644
 --- a/drivers/hwtracing/coresight/coresight-etm4x.c
 +++ b/drivers/hwtracing/coresight/coresight-etm4x.c
-@@ -1105,7 +1105,7 @@ static int etm4_probe(struct amba_device *adev, const struct amba_id *id)
- 
- 	spin_lock_init(&drvdata->spinlock);
- 
--	drvdata->cpu = pdata ? pdata->cpu : 0;
-+	drvdata->cpu = coresight_get_cpu(dev);
- 
- 	cpus_read_lock();
- 	etmdrvdata[drvdata->cpu] = drvdata;
+@@ -1142,6 +1142,7 @@ static int etm4_probe(struct amba_device *adev, const struct amba_id *id)
+ 	desc.pdata = pdata;
+ 	desc.dev = dev;
+ 	desc.groups = coresight_etmv4_groups;
++	desc.name = dev_name(dev);
+ 	drvdata->csdev = coresight_register(&desc);
+ 	if (IS_ERR(drvdata->csdev)) {
+ 		ret = PTR_ERR(drvdata->csdev);
+diff --git a/drivers/hwtracing/coresight/coresight-funnel.c b/drivers/hwtracing/coresight/coresight-funnel.c
+index fc033fdb6cd5..ded33f5e7d43 100644
+--- a/drivers/hwtracing/coresight/coresight-funnel.c
++++ b/drivers/hwtracing/coresight/coresight-funnel.c
+@@ -229,6 +229,7 @@ static int funnel_probe(struct device *dev, struct resource *res)
+ 	desc.ops = &funnel_cs_ops;
+ 	desc.pdata = pdata;
+ 	desc.dev = dev;
++	desc.name = dev_name(dev);
+ 	drvdata->csdev = coresight_register(&desc);
+ 	if (IS_ERR(drvdata->csdev)) {
+ 		ret = PTR_ERR(drvdata->csdev);
 diff --git a/drivers/hwtracing/coresight/coresight-platform.c b/drivers/hwtracing/coresight/coresight-platform.c
-index ba8c14635c6b..541e500a83c2 100644
+index 541e500a83c2..f500de61e7f9 100644
 --- a/drivers/hwtracing/coresight/coresight-platform.c
 +++ b/drivers/hwtracing/coresight/coresight-platform.c
-@@ -325,7 +325,6 @@ coresight_get_platform_data(struct device *dev)
+@@ -323,9 +323,6 @@ coresight_get_platform_data(struct device *dev)
+ 		goto error;
+ 	}
  
- 	/* Use device name as sysfs handle */
- 	pdata->name = dev_name(dev);
--	pdata->cpu = coresight_get_cpu(dev);
- 
+-	/* Use device name as sysfs handle */
+-	pdata->name = dev_name(dev);
+-
  	if (is_of_node(fwnode))
  		ret = of_get_coresight_platform_data(dev, pdata);
+ 
+diff --git a/drivers/hwtracing/coresight/coresight-replicator.c b/drivers/hwtracing/coresight/coresight-replicator.c
+index 054b33554695..f28bafd98995 100644
+--- a/drivers/hwtracing/coresight/coresight-replicator.c
++++ b/drivers/hwtracing/coresight/coresight-replicator.c
+@@ -220,6 +220,8 @@ static int replicator_probe(struct device *dev, struct resource *res)
+ 	desc.ops = &replicator_cs_ops;
+ 	desc.pdata = dev->platform_data;
+ 	desc.dev = dev;
++	desc.name = dev_name(dev);
++
+ 	drvdata->csdev = coresight_register(&desc);
+ 	if (IS_ERR(drvdata->csdev)) {
+ 		ret = PTR_ERR(drvdata->csdev);
+diff --git a/drivers/hwtracing/coresight/coresight-stm.c b/drivers/hwtracing/coresight/coresight-stm.c
+index 9faa1ed01500..02031d93fb8b 100644
+--- a/drivers/hwtracing/coresight/coresight-stm.c
++++ b/drivers/hwtracing/coresight/coresight-stm.c
+@@ -871,6 +871,7 @@ static int stm_probe(struct amba_device *adev, const struct amba_id *id)
+ 	desc.ops = &stm_cs_ops;
+ 	desc.pdata = pdata;
+ 	desc.dev = dev;
++	desc.name = dev_name(dev);
+ 	desc.groups = coresight_stm_groups;
+ 	drvdata->csdev = coresight_register(&desc);
+ 	if (IS_ERR(drvdata->csdev)) {
+diff --git a/drivers/hwtracing/coresight/coresight-tmc.c b/drivers/hwtracing/coresight/coresight-tmc.c
+index be0bd98ca8c1..44a571988219 100644
+--- a/drivers/hwtracing/coresight/coresight-tmc.c
++++ b/drivers/hwtracing/coresight/coresight-tmc.c
+@@ -437,6 +437,7 @@ static int tmc_probe(struct amba_device *adev, const struct amba_id *id)
+ 	desc.pdata = pdata;
+ 	desc.dev = dev;
+ 	desc.groups = coresight_tmc_groups;
++	desc.name = dev_name(dev);
+ 
+ 	switch (drvdata->config_type) {
+ 	case TMC_CONFIG_TYPE_ETB:
+@@ -461,7 +462,7 @@ static int tmc_probe(struct amba_device *adev, const struct amba_id *id)
+ 		desc.ops = &tmc_etf_cs_ops;
+ 		break;
+ 	default:
+-		pr_err("%s: Unsupported TMC config\n", pdata->name);
++		pr_err("%s: Unsupported TMC config\n", desc.name);
+ 		ret = -EINVAL;
+ 		goto out;
+ 	}
+@@ -472,7 +473,7 @@ static int tmc_probe(struct amba_device *adev, const struct amba_id *id)
+ 		goto out;
+ 	}
+ 
+-	drvdata->miscdev.name = pdata->name;
++	drvdata->miscdev.name = desc.name;
+ 	drvdata->miscdev.minor = MISC_DYNAMIC_MINOR;
+ 	drvdata->miscdev.fops = &tmc_fops;
+ 	ret = misc_register(&drvdata->miscdev);
+diff --git a/drivers/hwtracing/coresight/coresight-tpiu.c b/drivers/hwtracing/coresight/coresight-tpiu.c
+index aec0ed7bf924..d8a2e3991c7e 100644
+--- a/drivers/hwtracing/coresight/coresight-tpiu.c
++++ b/drivers/hwtracing/coresight/coresight-tpiu.c
+@@ -157,6 +157,7 @@ static int tpiu_probe(struct amba_device *adev, const struct amba_id *id)
+ 	desc.ops = &tpiu_cs_ops;
+ 	desc.pdata = pdata;
+ 	desc.dev = dev;
++	desc.name = dev_name(dev);
+ 	drvdata->csdev = coresight_register(&desc);
+ 
+ 	if (!IS_ERR(drvdata->csdev)) {
+diff --git a/drivers/hwtracing/coresight/coresight.c b/drivers/hwtracing/coresight/coresight.c
+index 4b130281236a..04b5d3c2bb3a 100644
+--- a/drivers/hwtracing/coresight/coresight.c
++++ b/drivers/hwtracing/coresight/coresight.c
+@@ -1199,7 +1199,7 @@ struct coresight_device *coresight_register(struct coresight_desc *desc)
+ 	csdev->dev.parent = desc->dev;
+ 	csdev->dev.release = coresight_device_release;
+ 	csdev->dev.bus = &coresight_bustype;
+-	dev_set_name(&csdev->dev, "%s", desc->pdata->name);
++	dev_set_name(&csdev->dev, "%s", desc->name);
+ 
+ 	ret = device_register(&csdev->dev);
+ 	if (ret) {
 diff --git a/include/linux/coresight.h b/include/linux/coresight.h
-index 98a4440dea3e..bf241dbf99c5 100644
+index bf241dbf99c5..298db20ba8ce 100644
 --- a/include/linux/coresight.h
 +++ b/include/linux/coresight.h
-@@ -91,14 +91,12 @@ union coresight_dev_subtype {
+@@ -91,13 +91,11 @@ union coresight_dev_subtype {
  
  /**
   * struct coresight_platform_data - data harvested from the DT specification
-- * @cpu:	the CPU a source belongs to. Only applicable for ETM/PTMs.
-  * @name:	name of the component as shown under sysfs.
+- * @name:	name of the component as shown under sysfs.
   * @nr_inport:	number of input ports for this component.
   * @nr_outport:	number of output ports for this component.
   * @conns:	Array of nr_outport connections from this component
   */
  struct coresight_platform_data {
--	int cpu;
- 	const char *name;
+-	const char *name;
  	int nr_inport;
  	int nr_outport;
+ 	struct coresight_connection *conns;
+@@ -108,11 +106,12 @@ struct coresight_platform_data {
+  * @type:	as defined by @coresight_dev_type.
+  * @subtype:	as defined by @coresight_dev_subtype.
+  * @ops:	generic operations for this component, as defined
+-		by @coresight_ops.
++ *		by @coresight_ops.
+  * @pdata:	platform data collected from DT.
+  * @dev:	The device entity associated to this component.
+  * @groups:	operations specific to this component. These will end up
+-		in the component's sysfs sub-directory.
++ *		in the component's sysfs sub-directory.
++ * @name:	name for the coresight device, also shown under sysfs.
+  */
+ struct coresight_desc {
+ 	enum coresight_dev_type type;
+@@ -121,6 +120,7 @@ struct coresight_desc {
+ 	struct coresight_platform_data *pdata;
+ 	struct device *dev;
+ 	const struct attribute_group **groups;
++	const char *name;
+ };
+ 
+ /**
 -- 
 2.17.1
 
