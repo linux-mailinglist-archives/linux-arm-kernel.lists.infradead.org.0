@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B33334BFB9
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Jun 2019 19:35:15 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B98364BFB3
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Jun 2019 19:34:38 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,71 +11,70 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=YAAlbDemzDo0sQptMMRx9uhi1c7oeIlWeBm9TKbIVT8=; b=eAAESiwXSiWXvRuMih3lXtj+H2
-	hacz9dPUrzUr+W6cB3k1F6c8n+HznKoHYuHH5jEjZ2tunbWMqx9iU0a/skPqwIW0go47Mr2tJealA
-	OrelP4XxRXHk7CK6ABk6eEZjuEu6iLBdWWq1EtOxZ84ABFZfdFlpLo0709qtfW+1RfBlNXraM8bbt
-	qGhQ2Sefmpmf8lc6mGeRn3DtrrHVSFyFAPMLP3KgUWz9hTv0SbssRa/kNtucoMNz2DKcgBIO46a1i
-	dpn9nBbYS5oy98J4eW47LOZ3aHd3y/VMKnc+/ILOO+Eq0Cd0b6qvLYdfjMzlcFGhVT/YUZR/HP33/
-	MkvMiDLA==;
+	bh=1Y6DP6NZ022P9C/JTSaTxnfdcK3rFrHjP4IVnjaCQwI=; b=Kf/ghVj1EHTt67e5yD3iq7vORm
+	i+cghTiXlDAESaE5cPiFLo1lK51utYxYIsFfG1KvF3S5KhE8zyaNmysFM1boOlyY5HcxoaxFZ0qPf
+	Ue4yevreo7w0bsSOxybzDUEm0BKPjcbSBjUbxHsoHynJQ5QaERx+6GDUrJ9M4mV9BhDGLj0c28YfY
+	wKIFc0Jd6+/zx6Gf2+cw85ecPoPJD7jlayBZeCmf/jZQsozE3ciYD9RgrQC+u52YRXh+8M8e9wmpg
+	nnWxhm2vcI+lcQ6XMh/WHzMUMUE7Hl8gCfcnuxbQnrQi9yFVVvFK1vjxIQCt8DQBbQvHpMF/+EW8O
+	pGZEv/AQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hdeUL-0003SO-JO; Wed, 19 Jun 2019 17:35:13 +0000
-Received: from mail-pf1-x444.google.com ([2607:f8b0:4864:20::444])
+	id 1hdeTj-00030Q-Im; Wed, 19 Jun 2019 17:34:35 +0000
+Received: from mail-pf1-x443.google.com ([2607:f8b0:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hdePP-0007WV-NS
+ id 1hdePQ-0007bT-B4
  for linux-arm-kernel@lists.infradead.org; Wed, 19 Jun 2019 17:30:13 +0000
-Received: by mail-pf1-x444.google.com with SMTP id 19so8981pfa.4
+Received: by mail-pf1-x443.google.com with SMTP id x15so21845pfq.0
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 19 Jun 2019 10:30:06 -0700 (PDT)
+ Wed, 19 Jun 2019 10:30:07 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=YiiXxjdGItwuAF+iuZlgiXWIyVvrN8mFr1/a4zBxeWE=;
- b=hD6CxMf4ROlRMtggcqf9YjAAo2onCZrLji5WJHTEYDm2MeFB2hL57T5sT3vuY08vVj
- /AlR6y3rW4RVxGRzMX1jrqphJ106Qu4naY4PrsX/qMyA+uYtPhhPwGCHlInuQAAowcKs
- Z3oH2rq98VH0QKOe++LWJX4w39o7VhviaJRO4EFGiwdBUQXQLgaera8ocHlAhoBf1VRj
- A40pn44t+LQcv0KtPLMPABtyt45xg1TDnNNuN3lNPYKyJetkWTdcGj3Qmk+aPtKfyOON
- oiiLY0liO4gHXJsHsLYJOXMGR1TCwwUCUZjaRPZo3ycsucsp81KEpSGs+3rTL5ERU1rl
- gutQ==
+ bh=bUxFfPS39P9fdU4kY1BrfLqP1exnSRK81MEC3yDEPu0=;
+ b=mI5HlunS1Zl4dApBNACKFOMxFMjwRL01V7dJfcljXwL7g4an/CGfsy9xi5001tN8Xl
+ BtiVhdW0EbX96BlnIORI9eBF6tf1KS2v3qe6BO92DwGY/nj2Z882eBuU3N0dfoLWOXtg
+ qMPAYO0l5HDCY6rgM2AVYa3E3Wnn2tGH1kwW8HFQ4AsjtWMjob89uoB1KDaLiuZQLpR/
+ s5vwW18MwDku3Rj+DFK6zxX36vw/Zc58JunI2hO7JkuAf3zEZo/hZRcXYHL89fcRMjdQ
+ 1bCZJJQUzwdJdcA/9VIYyO4DInbqlCFvb6nAHPRS4eLJ+nr+U2eGbZbtkEkBvIXqVScM
+ AO8Q==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=YiiXxjdGItwuAF+iuZlgiXWIyVvrN8mFr1/a4zBxeWE=;
- b=lFonUqnzRckpz4oWWKl4n8V4IjarG6eyLCB5Ce62kJgKgl0l6eyO9jsnwybj9AoVsX
- aSrW4FB0T/bsSIKEgpyRVkvgM5kooHFPPjBqJVqyslWJtw+LTPdoEcX3PQuQw3Rz1A+b
- S1occtvIDkBVeXVXzEBA9bySBJtz6yu5uovUknpl75OEx9mPeWjRJPvJyKQjjjfKZst7
- 5PZkBngglPLWP+IOwwJMJd0T1f01rc9poyIEt7PGZR0E3Sp0QSzvGfCuFKiTSQarkwx5
- wSwDhaRyplK03mDi0irAHU9+S/OLalEldBne1qcec8vNTkNW9pdyZyyO4Y1WDJFi+bRC
- XELg==
-X-Gm-Message-State: APjAAAVx00ZjbPWGPdjp0axn1xxW4eedCPZfebqGy6n0J8SslU+hCSGE
- sB2fzfxaFIpSaxVSGbXWI3lfa/mmC7v75g==
-X-Google-Smtp-Source: APXvYqz9eX40+g6xlY6jeaLeH4KFf5GQFIZXzE+Wc0EB0/SxiALn6Mx4prcGoyEI62v43UijFW9EtQ==
-X-Received: by 2002:a62:640c:: with SMTP id y12mr19989074pfb.166.1560965404999; 
- Wed, 19 Jun 2019 10:30:04 -0700 (PDT)
+ bh=bUxFfPS39P9fdU4kY1BrfLqP1exnSRK81MEC3yDEPu0=;
+ b=dcU6ptBoOvWPmCJlNBA0xf350kLyGWe9yzNggD4OiQGanCLDFx807OE3hWo2bC61IG
+ YrFE/f7zDe8SLq8YIbvL1a2GeMQTJ36OONLgCBQLQPufxchgxNiiYOcmtMsrQBDercSf
+ TGkdGJBp9cjpLo34E/MxJ4cIkVY5jLKI3iIu6JXnzfEc04aNF1AFwBifIYEOwoDNfq/F
+ qk8Q6ZcmObbnKr+fP0W/vF2bn2hwkVQSHTsJVhftSXheqGzeoHwHBekX22gg7QkSlxwj
+ v6EWUrEltL2gU6f6R5dzcxJKNqVBwXHXKUvrMqX3o56fdF0KZ52M82hWmvDA0G5e1AQ5
+ KpRg==
+X-Gm-Message-State: APjAAAW/r5xfi4meQRp6tjlC51KTgkyBkS3DH+ckbsQkV2Hy48lLOE52
+ 2bu8701a8WLCyC8yMixmz4qnzTL12uUEGg==
+X-Google-Smtp-Source: APXvYqxKuUXJHQwgNUp0GvkNZoW8yDkDBhQH6SLvUIRN/+cdQSskwMEa25VCKgvu9Hj+5CoV+BHB2Q==
+X-Received: by 2002:aa7:83d4:: with SMTP id j20mr130779372pfn.90.1560965405824; 
+ Wed, 19 Jun 2019 10:30:05 -0700 (PDT)
 Received: from xps15.cg.shawcable.net (S0106002369de4dac.cg.shawcable.net.
  [68.147.8.254])
- by smtp.gmail.com with ESMTPSA id g2sm31348406pfb.95.2019.06.19.10.30.04
+ by smtp.gmail.com with ESMTPSA id g2sm31348406pfb.95.2019.06.19.10.30.05
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Wed, 19 Jun 2019 10:30:04 -0700 (PDT)
+ Wed, 19 Jun 2019 10:30:05 -0700 (PDT)
 From: Mathieu Poirier <mathieu.poirier@linaro.org>
 To: gregkh@linuxfoundation.org
-Subject: [PATCH 14/45] coresight: Use coresight device names for sinks in PMU
- attribute
-Date: Wed, 19 Jun 2019 11:29:18 -0600
-Message-Id: <20190619172949.4522-15-mathieu.poirier@linaro.org>
+Subject: [PATCH 15/45] coresight: Rename of_coresight to coresight-platform
+Date: Wed, 19 Jun 2019 11:29:19 -0600
+Message-Id: <20190619172949.4522-16-mathieu.poirier@linaro.org>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20190619172949.4522-1-mathieu.poirier@linaro.org>
 References: <20190619172949.4522-1-mathieu.poirier@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190619_103007_994773_7651CDE1 
-X-CRM114-Status: GOOD (  11.72  )
+X-CRM114-CacheID: sfid-20190619_103008_850095_E1DBFF25 
+X-CRM114-Status: GOOD (  12.27  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:444 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:443 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -104,47 +103,58 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Move to using the coresight device name instead of the parent
-device name for SINK attribute for PMU.
+From: Suzuki K Poulose <suzuki.poulose@arm.com>
 
-Signed-off-by: Mathieu Poirier <mathieu.poirier@linaro.org>
+Rename the firmware handling file to a more generic
+name, in preparation for adding ACPI support. Right now
+we only support DT and we have all the platform handling
+code in of_coresight.c. Let us rename the file to
+coresight-platform.c in order to keep the platform handling
+in a single place for DT and the upcoming ACPI support.
+
 Signed-off-by: Suzuki K Poulose <suzuki.poulose@arm.com>
+Signed-off-by: Mathieu Poirier <mathieu.poirier@linaro.org>
 ---
- drivers/hwtracing/coresight/coresight-etm-perf.c | 8 ++++----
- 1 file changed, 4 insertions(+), 4 deletions(-)
+ drivers/hwtracing/coresight/Makefile                           | 3 +--
+ .../coresight/{of_coresight.c => coresight-platform.c}         | 3 ++-
+ 2 files changed, 3 insertions(+), 3 deletions(-)
+ rename drivers/hwtracing/coresight/{of_coresight.c => coresight-platform.c} (99%)
 
-diff --git a/drivers/hwtracing/coresight/coresight-etm-perf.c b/drivers/hwtracing/coresight/coresight-etm-perf.c
-index 3c6294432748..5c1ca0df5cb0 100644
---- a/drivers/hwtracing/coresight/coresight-etm-perf.c
-+++ b/drivers/hwtracing/coresight/coresight-etm-perf.c
-@@ -523,7 +523,7 @@ int etm_perf_add_symlink_sink(struct coresight_device *csdev)
- 	unsigned long hash;
- 	const char *name;
- 	struct device *pmu_dev = etm_pmu.dev;
--	struct device *pdev = csdev->dev.parent;
-+	struct device *dev = &csdev->dev;
- 	struct dev_ext_attribute *ea;
+diff --git a/drivers/hwtracing/coresight/Makefile b/drivers/hwtracing/coresight/Makefile
+index 3b435aa42af5..3c0ac421e211 100644
+--- a/drivers/hwtracing/coresight/Makefile
++++ b/drivers/hwtracing/coresight/Makefile
+@@ -2,8 +2,7 @@
+ #
+ # Makefile for CoreSight drivers.
+ #
+-obj-$(CONFIG_CORESIGHT) += coresight.o coresight-etm-perf.o
+-obj-$(CONFIG_OF) += of_coresight.o
++obj-$(CONFIG_CORESIGHT) += coresight.o coresight-etm-perf.o coresight-platform.o
+ obj-$(CONFIG_CORESIGHT_LINK_AND_SINK_TMC) += coresight-tmc.o \
+ 					     coresight-tmc-etf.o \
+ 					     coresight-tmc-etr.o
+diff --git a/drivers/hwtracing/coresight/of_coresight.c b/drivers/hwtracing/coresight/coresight-platform.c
+similarity index 99%
+rename from drivers/hwtracing/coresight/of_coresight.c
+rename to drivers/hwtracing/coresight/coresight-platform.c
+index 7045930fc958..514cc2b67c36 100644
+--- a/drivers/hwtracing/coresight/of_coresight.c
++++ b/drivers/hwtracing/coresight/coresight-platform.c
+@@ -17,7 +17,7 @@
+ #include <linux/cpumask.h>
+ #include <asm/smp_plat.h>
  
- 	if (csdev->type != CORESIGHT_DEV_TYPE_SINK &&
-@@ -536,15 +536,15 @@ int etm_perf_add_symlink_sink(struct coresight_device *csdev)
- 	if (!etm_perf_up)
- 		return -EPROBE_DEFER;
- 
--	ea = devm_kzalloc(pdev, sizeof(*ea), GFP_KERNEL);
-+	ea = devm_kzalloc(dev, sizeof(*ea), GFP_KERNEL);
- 	if (!ea)
- 		return -ENOMEM;
- 
--	name = dev_name(pdev);
-+	name = dev_name(dev);
- 	/* See function coresight_get_sink_by_id() to know where this is used */
- 	hash = hashlen_hash(hashlen_string(NULL, name));
- 
--	ea->attr.attr.name = devm_kstrdup(pdev, name, GFP_KERNEL);
-+	ea->attr.attr.name = devm_kstrdup(dev, name, GFP_KERNEL);
- 	if (!ea->attr.attr.name)
- 		return -ENOMEM;
- 
+-
++#ifdef CONFIG_OF
+ static int of_dev_node_match(struct device *dev, void *data)
+ {
+ 	return dev->of_node == data;
+@@ -295,3 +295,4 @@ of_get_coresight_platform_data(struct device *dev,
+ 	return pdata;
+ }
+ EXPORT_SYMBOL_GPL(of_get_coresight_platform_data);
++#endif
 -- 
 2.17.1
 
