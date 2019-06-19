@@ -2,76 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 409C44B167
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Jun 2019 07:29:22 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B36E34B189
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Jun 2019 07:42:44 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Myb5W2VHfPNqaj3O4HYukanU6A2hVu4qMnFtllTmwNE=; b=aLmSUVyAOC1NpU
-	118ttK/ZQdnfrTH4T7bdkeU1Xr0mwUy8G+m4f1SsUIicUJc85jDrGQ9ES4qd/DSM2HVtjnQb+uQzT
-	eADF0xdkrtwMLEgUrRpPpRy9lcFyAtKAMo9JSw14xAIs8iJN8BGLMATNA1G/YK2gyZpqOG2v54Xcs
-	Qu4s3lT2LB12F+AEpIkLZHr9lLVX+l8K+XdSIe0UGQlOvy1HKdbycOjgk1wEHYhTauta8bbWuw7PI
-	sgix/opYjuTmXSXNsEvK9A7K9K27GCa8UyctpMkGjYs/G0z9U2poWs56/XH8ziIqz+00dtL7lzjY8
-	DAStrF90CBhRJY5sGf9g==;
+	List-Owner; bh=uzmtYIod2m2Fjsai0JkeymqkpHKo6Yz2OtMqLWuqs/0=; b=sjHTLssToOfmBc
+	hgk4oCF4f6vUHFF8kA0jjeH7GnXIEC7EsoOoNgSyCBoz/X+b/BCbWL8wCP9HsYmZeoQ73zD+pPwsB
+	fq88HW6FdSLOzLiXHr2mUYb2dkUidbjFE7H7+2DFZstdY7D/Wz5s9ujbSOUQ3D6cM79jjRb8cUh0Y
+	gBTB4FP+4tweuPh+Fng0g9k5Bjug2E1Vl4YYQAUNnj5bfKyfP93gbkV+R8+xc3EoeIJK4L/Cba7e0
+	X1IKU6MgzRn6XMtEkFoymkNbIi7UvehIy2vnnTEmdwC7K8DsKeO9x+xVEhV+/nkMAV3f4tYLjH3om
+	qthVK95FQjKDR/CcMwLQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hdT9o-0003A7-PC; Wed, 19 Jun 2019 05:29:16 +0000
-Received: from mail-lj1-x244.google.com ([2a00:1450:4864:20::244])
+	id 1hdTMn-0007fz-Mt; Wed, 19 Jun 2019 05:42:41 +0000
+Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hdT9c-00039b-4c
- for linux-arm-kernel@lists.infradead.org; Wed, 19 Jun 2019 05:29:05 +0000
-Received: by mail-lj1-x244.google.com with SMTP id x25so1951270ljh.2
+ id 1hdTMb-0007f0-Q5
+ for linux-arm-kernel@lists.infradead.org; Wed, 19 Jun 2019 05:42:31 +0000
+Received: by mail-wm1-x343.google.com with SMTP id 207so299234wma.1
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 18 Jun 2019 22:29:03 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=mobiveil.co.in; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=uCUAPV+QexPTMtFpELNiq1RlIWLicRq4oH7TLWUppok=;
- b=06W/Y3cSZGK9qGdIkrRKae6GS83CtZgvcpLyiEYX/CH8oiz2QMNEnRHq9tkOe8Vhlv
- AaYmyZRoz+2JGbAkSTfAL+lYDZe+EKPXLD87Ug+rDiga9JVBb1lAfYm/OHzqIe7QQ4sg
- GNFRhx6EP/7BdHkzpUDQfWkORZMvcOicpDZ60=
+ Tue, 18 Jun 2019 22:42:26 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:content-transfer-encoding:in-reply-to
+ :user-agent; bh=/cpf3zq+TFw4UEIBZS68FxYFecgYH1xkj5zf5lev0W8=;
+ b=cCHl/gxL/zXc4WXMsveXwVsU3cxUW+ACFRX97VZSnWNLVolF18pOwLb4cZ5wfy5RnJ
+ 3REAqJcFK/oGI2QJKcdjOZzJo77brsZ933bk0GZFC6Yb2FeFRu/ZUcdxus4jSMt5QMmv
+ cb5mKHlWsJqPkUdz1B5NnEwJWJoHUrL5L43sT51FshRXu6kSGA18KFYUDbdIq3gciajm
+ RcT5NEUePlSW1DD27FCL//Db+0LRRjSYEJXPvbTgus3ZYx7ERKnhVKaedqbEpQlbN+J+
+ As7P0XNVfOhDqFB3DaVhv4y3AmIyWNhEna4XviYfA0OCDgHVzB72f+z0351/UGM/LxtR
+ RG9g==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=uCUAPV+QexPTMtFpELNiq1RlIWLicRq4oH7TLWUppok=;
- b=G/KwUScDwAnFA1h7dN9A5PXlx69Uf3e6xfchXgQZGLGc8ab9GH0SOo4IBk+sQxG2kz
- Ag/ljcGb8Q0HrMUeBzenVK9sHETolhqt3fdaep87pHq6bqdfV0ByYtPKurwHWtuHfohm
- KARqsa5K8ghln9bxmC5DTC5PcZfq8esDrLKYacQETLk8URt7yANZkc8vrf4LpMYJlVMj
- 9FV677j+iNaW/uW8fJpxyKx+xfUCBaN6tNrbq1eYMpdv1Ka22Wso3pIsTNuohl/ykJPQ
- I9eSjcD6MbU93xWPM2yxiqsYrlOjIs+1gyrLL6AJbm31w9qgE6J9grlpuWq3l//7NxmL
- OrRw==
-X-Gm-Message-State: APjAAAXnnRMHFUxKYTGss9PvVjGkTrl5OM9sgXbFt+BFtmKNQdov8EgL
- 7LaP4a2kS5jD5qBYnapkMIVobTMNGU3zWZmZ47yAcCJMOsRZ7so+Cricul7jC+AncfnsbSU6a+x
- M8VsOHUuslEOZa+jrfvmlOUrpr88KOPmI8kxYUWuTKCwc
-X-Google-Smtp-Source: APXvYqzKCWyYVYljVoUu5JGomTGSMvq1652NRLfxnluH9rE+ab0jIubi+Ogd2Mw26Jaq0Y4Uxj/yFkRHTtCXrWX8zDQ=
-X-Received: by 2002:a2e:9bc6:: with SMTP id w6mr22630705ljj.156.1560922141583; 
- Tue, 18 Jun 2019 22:29:01 -0700 (PDT)
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:content-transfer-encoding
+ :in-reply-to:user-agent;
+ bh=/cpf3zq+TFw4UEIBZS68FxYFecgYH1xkj5zf5lev0W8=;
+ b=Y+myNnJ2yHrgYYvJzNfxcaGuULtZjhuXMBu22Ch5t2pMNO0oE+iI886DikvrroNwT1
+ Wh2x3x/hwHwAJDTh8lZ9c6DJQqOcMh7JFgtVhpCDq7m+wq4n4Q/TZBAlOrTxPv20A2+Q
+ ZfL6rSw9nw2fTxYk3k1Ri1e2sPoLB5RuCYzS4PhhP7sjb3rWfZoaWBLNW5tn8UxzYNuH
+ 4yBpiIig9PLMKzjGxqL3JSRne+AaAQ6qmvbUuLhm7TX5gKcQ3UT6VqgWcqFIV1qZ6+Y4
+ HRG/UCYTTV0QjJ6Y/fLJSOUhyKMFBsqJmBtkQT6QAZ6bpt7p8GaJqJOLIN3idYeLSr+6
+ V40Q==
+X-Gm-Message-State: APjAAAWwS0yycrNfQ6uYtf3V+vswtlwIII0dbtc9hl90pDSnW96zv6MX
+ d7sy1skQaKkrKxPRi8db/CTMdQ==
+X-Google-Smtp-Source: APXvYqz1GbEe2qolDZxYNYoUdvQZ5fsE8k6qQo1nlTIumvRmIvonzAOQdnQDSY6CuatAS38KNkwUlw==
+X-Received: by 2002:a1c:6c0a:: with SMTP id h10mr6205898wmc.40.1560922945130; 
+ Tue, 18 Jun 2019 22:42:25 -0700 (PDT)
+Received: from dell ([2.27.35.243])
+ by smtp.gmail.com with ESMTPSA id u18sm293652wmd.19.2019.06.18.22.42.24
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Tue, 18 Jun 2019 22:42:24 -0700 (PDT)
+Date: Wed, 19 Jun 2019 06:42:22 +0100
+From: Lee Jones <lee.jones@linaro.org>
+To: "Martin K. Petersen" <martin.petersen@oracle.com>
+Subject: Re: [PATCH 1/1] scsi: ufs-qcom: Add support for platforms booting ACPI
+Message-ID: <20190619054222.GE18371@dell>
+References: <20190617115454.3226-1-lee.jones@linaro.org>
+ <yq1zhmeuvst.fsf@oracle.com>
 MIME-Version: 1.0
-References: <20190412083635.33626-1-Zhiqiang.Hou@nxp.com>
- <20190412083635.33626-11-Zhiqiang.Hou@nxp.com>
- <20190612150819.GD15747@redmoon>
- <CAKnKUHFMH6=ox=qdaUR1kNEhETDCVyu3jQZEj+taEbbMRBRuYA@mail.gmail.com>
- <20190614104351.GA29955@e121166-lin.cambridge.arm.com>
-In-Reply-To: <20190614104351.GA29955@e121166-lin.cambridge.arm.com>
-From: Karthikeyan Mitran <m.karthikeyan@mobiveil.co.in>
-Date: Wed, 19 Jun 2019 10:58:49 +0530
-Message-ID: <CAKnKUHHTAsjMoMkqaWq5z6r30JUGCpxSaYwyp8AuE3H5R0vBig@mail.gmail.com>
-Subject: Re: [PATCHv5 10/20] PCI: mobiveil: Fix the INTx process errors
-To: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
+Content-Disposition: inline
+In-Reply-To: <yq1zhmeuvst.fsf@oracle.com>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190618_222904_251330_7F4E6931 
-X-CRM114-Status: GOOD (  26.29  )
+X-CRM114-CacheID: sfid-20190618_224229_849622_E5B88D4F 
+X-CRM114-Status: GOOD (  10.77  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:244 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:343 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -93,144 +99,28 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- Xiaowei Bao <xiaowei.bao@nxp.com>,
- "linux-pci@vger.kernel.org" <linux-pci@vger.kernel.org>,
- "Z.q. Hou" <zhiqiang.hou@nxp.com>,
- "l.subrahmanya@mobiveil.co.in" <l.subrahmanya@mobiveil.co.in>,
- "will.deacon@arm.com" <will.deacon@arm.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Leo Li <leoyang.li@nxp.com>, "M.h. Lian" <minghuan.lian@nxp.com>,
- "robh+dt@kernel.org" <robh+dt@kernel.org>, Mingkai Hu <mingkai.hu@nxp.com>,
- "catalin.marinas@arm.com" <catalin.marinas@arm.com>,
- "bhelgaas@google.com" <bhelgaas@google.com>,
- "shawnguo@kernel.org" <shawnguo@kernel.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: linux-scsi@vger.kernel.org, avri.altman@wdc.com,
+ linux-arm-msm@vger.kernel.org, jejb@linux.ibm.com, ard.biesheuvel@linaro.org,
+ linux-kernel@vger.kernel.org, bjorn.andersson@linaro.org,
+ david.brown@linaro.org, agross@kernel.org, alim.akhtar@samsung.com,
+ jlhugo@gmail.com, pedrom.sousa@synopsys.com,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Jun 14, 2019 at 4:14 PM Lorenzo Pieralisi
-<lorenzo.pieralisi@arm.com> wrote:
->
-> On Fri, Jun 14, 2019 at 12:38:51PM +0530, Karthikeyan Mitran wrote:
-> > Hi Lorenzo and Hou Zhiqiang
-> >  PAB_INTP_AMBA_MISC_STAT does have other status in the higher bits, it
-> > should have been masked before checking for the status
->
-> You are the maintainer for this driver, so if there is something to be
-> changed you must post a patch to that extent, I do not understand what
-> the above means, write the code to fix it, I won't do it.
->
-> I am getting a bit annoyed with this Mobiveil driver so either you guys
-> sort this out or I will have to remove it from the kernel.
->
-> > Acked-by: Karthikeyan Mitran <m.karthikeyan@mobiveil.co.in>
->
-> Ok I assume this means you tested it but according to what you
-> say above, are there still issues with this code path ? Should
-> we update the patch ?
-Tested-by: Karthikeyan Mitran <m.karthikeyan@mobiveil.co.in>
-This patch fixes the INTx status extraction and handling,
-I don't see any need to update this patch.
->
-> Moreover:
->
-> https://kernelnewbies.org/PatchCulture
->
-> Please read it and never top-post.
-Thank you very much, for the information.
-
->
-> Thanks,
-> Lorenzo
->
-> > On Wed, Jun 12, 2019 at 8:38 PM Lorenzo Pieralisi
-> > <lorenzo.pieralisi@arm.com> wrote:
-> > >
-> > > On Fri, Apr 12, 2019 at 08:36:12AM +0000, Z.q. Hou wrote:
-> > > > From: Hou Zhiqiang <Zhiqiang.Hou@nxp.com>
-> > > >
-> > > > In the loop block, there is not code to update the loop key,
-> > > > this patch updates the loop key by re-read the INTx status
-> > > > register.
-> > > >
-> > > > This patch also add the clearing of the handled INTx status.
-> > > >
-> > > > Note: Need MV to test this fix.
-> > >
-> > > This means INTX were never tested and current code handling them is,
-> > > AFAICS, an infinite loop which is very very bad.
-> > >
-> > > This is a gross bug and must be fixed as soon as possible.
-> > >
-> > > I want Karthikeyan ACK and Tested-by on this patch.
-> > >
-> > > Lorenzo
-> > >
-> > > > Fixes: 9af6bcb11e12 ("PCI: mobiveil: Add Mobiveil PCIe Host Bridge IP driver")
-> > > > Signed-off-by: Hou Zhiqiang <Zhiqiang.Hou@nxp.com>
-> > > > Reviewed-by: Minghuan Lian <Minghuan.Lian@nxp.com>
-> > > > Reviewed-by: Subrahmanya Lingappa <l.subrahmanya@mobiveil.co.in>
-> > > > ---
-> > > > V5:
-> > > >  - Corrected and retouched the subject and changelog.
-> > > >
-> > > >  drivers/pci/controller/pcie-mobiveil.c | 13 +++++++++----
-> > > >  1 file changed, 9 insertions(+), 4 deletions(-)
-> > > >
-> > > > diff --git a/drivers/pci/controller/pcie-mobiveil.c b/drivers/pci/controller/pcie-mobiveil.c
-> > > > index 4ba458474e42..78e575e71f4d 100644
-> > > > --- a/drivers/pci/controller/pcie-mobiveil.c
-> > > > +++ b/drivers/pci/controller/pcie-mobiveil.c
-> > > > @@ -361,6 +361,7 @@ static void mobiveil_pcie_isr(struct irq_desc *desc)
-> > > >       /* Handle INTx */
-> > > >       if (intr_status & PAB_INTP_INTX_MASK) {
-> > > >               shifted_status = csr_readl(pcie, PAB_INTP_AMBA_MISC_STAT);
-> > > > +             shifted_status &= PAB_INTP_INTX_MASK;
-> > > >               shifted_status >>= PAB_INTX_START;
-> > > >               do {
-> > > >                       for_each_set_bit(bit, &shifted_status, PCI_NUM_INTX) {
-> > > > @@ -372,12 +373,16 @@ static void mobiveil_pcie_isr(struct irq_desc *desc)
-> > > >                                       dev_err_ratelimited(dev, "unexpected IRQ, INT%d\n",
-> > > >                                                           bit);
-> > > >
-> > > > -                             /* clear interrupt */
-> > > > -                             csr_writel(pcie,
-> > > > -                                        shifted_status << PAB_INTX_START,
-> > > > +                             /* clear interrupt handled */
-> > > > +                             csr_writel(pcie, 1 << (PAB_INTX_START + bit),
-> > > >                                          PAB_INTP_AMBA_MISC_STAT);
-> > > >                       }
-> > > > -             } while ((shifted_status >> PAB_INTX_START) != 0);
-> > > > +
-> > > > +                     shifted_status = csr_readl(pcie,
-> > > > +                                                PAB_INTP_AMBA_MISC_STAT);
-> > > > +                     shifted_status &= PAB_INTP_INTX_MASK;
-> > > > +                     shifted_status >>= PAB_INTX_START;
-> > > > +             } while (shifted_status != 0);
-> > > >       }
-> > > >
-> > > >       /* read extra MSI status register */
-> > > > --
-> > > > 2.17.1
-> > > >
-> >
-> >
-> >
-> >
-
--- 
-Mobiveil INC., CONFIDENTIALITY NOTICE: This e-mail message, including any 
-attachments, is for the sole use of the intended recipient(s) and may 
-contain proprietary confidential or privileged information or otherwise be 
-protected by law. Any unauthorized review, use, disclosure or distribution 
-is prohibited. If you are not the intended recipient, please notify the 
-sender and destroy all copies and the original message.
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+QXJkLCBNYXJ0aW4sCgpPbiBUdWUsIDE4IEp1biAyMDE5LCBNYXJ0aW4gSy4gUGV0ZXJzZW4gd3Jv
+dGU6Cj4gPiBOZXcgUXVhbGNvbW0gQUFyY2g2NCBiYXNlZCBsYXB0b3BzIGFyZSBub3cgYXZhaWxh
+YmxlIHdoaWNoIHVzZSBVRlMKPiA+IGFzIHRoZWlyIHByaW1hcnkgZGF0YSBzdG9yYWdlIG1lZGl1
+bS4gIFRoZXNlIGRldmljZXMgYXJlIHN1cHBsaWVkCj4gPiB3aXRoIEFDUEkgc3VwcG9ydCBvdXQg
+b2YgdGhlIGJveC4gIFRoaXMgcGF0Y2ggZW5zdXJlcyB0aGUgUXVhbGNvbW0KPiA+IFVGUyBkcml2
+ZXIgd2lsbCBiZSBib3VuZCB3aGVuIHRoZSAiUUNPTTI0QTUiIEgvVyBkZXZpY2UgaXMKPiA+IGFk
+dmVydGlzZWQgYXMgcHJlc2VudC4KPiAKPiBBcHBsaWVkIHRvIDUuMy9zY3NpLXF1ZXVlLiBUaGFu
+a3MhCgpJZGVhbC4gIFRoYW5rcyBmb3IgeW91ciBoZWxwLgoKLS0gCkxlZSBKb25lcyBb5p2O55C8
+5pavXQpMaW5hcm8gU2VydmljZXMgVGVjaG5pY2FsIExlYWQKTGluYXJvLm9yZyDilIIgT3BlbiBz
+b3VyY2Ugc29mdHdhcmUgZm9yIEFSTSBTb0NzCkZvbGxvdyBMaW5hcm86IEZhY2Vib29rIHwgVHdp
+dHRlciB8IEJsb2cKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMu
+aW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZv
+L2xpbnV4LWFybS1rZXJuZWwK
