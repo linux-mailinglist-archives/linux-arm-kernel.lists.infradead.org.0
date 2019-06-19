@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E208F4C1D3
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Jun 2019 21:55:58 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D1C964C1D6
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Jun 2019 21:56:21 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,70 +11,70 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=MpzfYU/cIAMRtdX3uMNENFwu/NcXL0W8+cFkC/8WRIc=; b=qHC0Rss+xxMcI+JWIpgsqYLuo7
-	q2RZhEpdiwVHvW6LHEK+OxwlvI0f5Y6NWBQ+dLQab8j+q7tJg1Y5gPUhRa8A0dq75iISGXJeOELl7
-	XsLyILQ1kNI2OeVCnfy2vq77rfeVTnLdyyAz+kbrB4Mzx70EoIvBQBCKXJItEQ1RQm2dRHiHdh8Wv
-	X2HtdRKWdkrdw+0BMqc2aWjrHWZXAybYK1Dfb+b/jc2znwixCdUmZ7uZ9wRSxBurolTx9Mxfj1akC
-	vU+LSaFNfizYPioecmzgdNt7ojr1K5WcoOmXmGa7jky6Yk6lyfN6u0P8dzJVrE8ATbBvzG1ij/dO+
-	WzY6Xh6g==;
+	bh=2yEE7MpCHqNQU7cW7V70akiM8YMXt7fGKK+VZS/ezzg=; b=cyrQXeyBJYXsK6iqJDGJmh1ua4
+	r7kZLY2WjDOuZCuGOvMycVfpXIsv+k6LloYdma34ca6PYEjmzY6565O5MuxjbUxI8Lg24KEzgAzic
+	WSkSKcY6huQGtUEUKpI1vhDkdMPlWdroPNaJqfHVtR136UMKOOoKTjpqYIGrM32OdUOuN+GVu9WB/
+	V56f2z6DzMYtlzWHTbf+S2SHuis50H0lRvYUvAnaPdM6ZDOQVFJsSszKL2qELV8E/VfuOwXPHGGNf
+	Uv5CgULvGO+DisPM/0S+a7mS9jHqiVf04CHCZrGcRRjTnuX+/2EhDj1OOplukNsWBcQmvG4G/cDj4
+	9uT4N4ZQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hdggU-0000ph-8D; Wed, 19 Jun 2019 19:55:54 +0000
-Received: from mail-pg1-x541.google.com ([2607:f8b0:4864:20::541])
+	id 1hdggq-000192-Lv; Wed, 19 Jun 2019 19:56:16 +0000
+Received: from mail-pf1-x442.google.com ([2607:f8b0:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hdge6-0006O5-3a
- for linux-arm-kernel@lists.infradead.org; Wed, 19 Jun 2019 19:53:27 +0000
-Received: by mail-pg1-x541.google.com with SMTP id 196so237172pgc.6
+ id 1hdge6-0006P8-WB
+ for linux-arm-kernel@lists.infradead.org; Wed, 19 Jun 2019 19:53:28 +0000
+Received: by mail-pf1-x442.google.com with SMTP id r7so216288pfl.3
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 19 Jun 2019 12:53:25 -0700 (PDT)
+ Wed, 19 Jun 2019 12:53:26 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=ZsHMhd4UvtNqVCHiYk9E1/62IJNBdhITI8cjZrmiFqs=;
- b=KVQIxFbnPPq0SSfglY+vWoHc2q2YBZcJBK4ntdkpPvCj4zXz+fpKVHA3Ie9VZppwpn
- nIfX+cgSobA/holvlugjVAjhE8wyatCzY0qHJJeZU15iThxFQsl0ETbg/TkH9J4GnByP
- uTud1Xc25Y84uW+0ZMbYy0oEHPCCGtO53TW8eCRzQc5hZr8HNoIzOWEdQZfvUOFsWivY
- GznMrmWhkx5FvLLx21YHCOn6G4y5a7T5UvolKVvnid7kbnFruOe80U381SUoOU8cmbzh
- hVKDU0jYipD56gJ9LJSDdbBgxwHu/twlzJm4jQtcL1i0/o4+poQFVUMlf8zyTFhw9qZs
- Gb2g==
+ bh=3FNM7irOGkHJQx+HodJo4nth9GnuaBbG1lJL4fmhw34=;
+ b=PsznvdRhHsdAZMVITq/4kn/w3emBGYGGs9HF1FuMuvGKQE8bjhlbJM95qDZ2WKCwLQ
+ N1rEZbibA4dIIXU940k40/fkhdL/DJr+s6FdcS89FjGwKd/lDatVg0QEoAXJRddGPZxw
+ C2oZMCx8pY2EsfadRoQnjbH6ojLvN4dI/oB5YgIwVr/gm+G3LVmaI82fzfPDav6Y5ZCY
+ mmxSWg6qggo8scnE94b6fW8x2I9oMz9XUuPVXwHLfB4Jq/MeioNcPd9RZcpJBGe8M+bm
+ /wyY1504aqEhvF6OstPGkTziNUsNZ4P1SQ335FVNWgZYwoLI+D0KFBmsl0FLVcn3EU5W
+ ORUw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=ZsHMhd4UvtNqVCHiYk9E1/62IJNBdhITI8cjZrmiFqs=;
- b=m+gFVElNISt8czKV3rgvkn+sex7I/s5JNipvw1sM0Oa6wrRfkH+BkDGCa0omtT0XdM
- wfm0teSq+UX+/nPoVXxSoJXjbZ7tQvPP30pEP95Cs4jmx2fP/EUUXhFY+O4JtR/D0twP
- Gg2ii1IztoI+tpAElmQxjt2ibNISs+IXdORDTQwvsXwhx0m7XBrcdztfwxhN83m7DboD
- CabpiahnT2LwDPla5H53Gnk3oL535+Gl2DgMKUXHeRJH4JsOl435/i46mFkaVna7n6wN
- DnXFBpH6aW9MVc7S98eQAMcF/pOdlmpJ6KdjW+LaTjgDVyFoHtwuB6UjkQfTx1iwr/N8
- QZgA==
-X-Gm-Message-State: APjAAAU/g8BTOS1oYB9if3LjbcpI7JVwCuV/364yMh807X5tanLlnFAB
- kUchIFnF+u+DtVt0+04heUhS8PbmGaVb8A==
-X-Google-Smtp-Source: APXvYqxOSOTbixpp5kg+m6yC6tF6uuhEMwF8gEJvZn6ksYCIkY31D0pxCh9zUFFppDmXm2zhMeoFWg==
-X-Received: by 2002:a63:d950:: with SMTP id e16mr9678047pgj.271.1560974005068; 
- Wed, 19 Jun 2019 12:53:25 -0700 (PDT)
+ bh=3FNM7irOGkHJQx+HodJo4nth9GnuaBbG1lJL4fmhw34=;
+ b=TENgAnktWhoD18U8PaYU3l2hCPqptk/VE3H1IsVVsf9e6eRjGGHJjtS87wAH03oU51
+ cSLNc5F3qh+TCFxPPOkKlSHQEr3C9H3djCYLOV+eeDrgH730iiD/Hv5Aru4KN8J0hfu2
+ O0NtXxnDG/BczJ8Gr6m090NfT8OgAdwD906UyK6YuBjaepfTknfANnOJYrgWbsKCsg/V
+ 0oSEGublHJb7toce2ztngJjSIlnfOGv+x4TLAxjUAkbDFPukjSOmbrskFQZfzRratcF+
+ sewY7hDzuuA+0qMy4yQJkbhDNJc8NOyc/MY7qD41P7yboWCSWWpeivjozsXSMGFUBffx
+ MdAQ==
+X-Gm-Message-State: APjAAAV/DcGKGR8AW8Dso1WOYlnhtTQC1GyFt1tv3rHbkjE3QFUsaCud
+ YQ3NA4BRITSlcarpSTvw/BAiqw==
+X-Google-Smtp-Source: APXvYqxnKijOhLxbaeOFhyUy7Q4c311Yx9bAJ1qw0LaB7tjR17rNx4VKIrmnu+kstjNZJsLr4+5VHg==
+X-Received: by 2002:a63:364f:: with SMTP id d76mr9152262pga.147.1560974006069; 
+ Wed, 19 Jun 2019 12:53:26 -0700 (PDT)
 Received: from xps15.cg.shawcable.net (S0106002369de4dac.cg.shawcable.net.
  [68.147.8.254])
- by smtp.gmail.com with ESMTPSA id j14sm21615993pfn.120.2019.06.19.12.53.24
+ by smtp.gmail.com with ESMTPSA id j14sm21615993pfn.120.2019.06.19.12.53.25
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Wed, 19 Jun 2019 12:53:24 -0700 (PDT)
+ Wed, 19 Jun 2019 12:53:25 -0700 (PDT)
 From: Mathieu Poirier <mathieu.poirier@linaro.org>
 To: gregkh@linuxfoundation.org
-Subject: [PATCH 05/28] coresight: Make device to CPU mapping generic
-Date: Wed, 19 Jun 2019 13:52:55 -0600
-Message-Id: <20190619195318.19254-6-mathieu.poirier@linaro.org>
+Subject: [PATCH 06/28] coresight: Remove cpu field from platform data
+Date: Wed, 19 Jun 2019 13:52:56 -0600
+Message-Id: <20190619195318.19254-7-mathieu.poirier@linaro.org>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20190619195318.19254-1-mathieu.poirier@linaro.org>
 References: <20190619195318.19254-1-mathieu.poirier@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190619_125326_182680_7832E5E0 
-X-CRM114-Status: GOOD (  15.62  )
+X-CRM114-CacheID: sfid-20190619_125327_080189_DE2E4908 
+X-CRM114-Status: GOOD (  15.57  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:541 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:442 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -105,117 +105,77 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Suzuki K Poulose <suzuki.poulose@arm.com>
 
-The CoreSight components ETM and CPU-Debug are always associated
-with CPUs. Replace the of_coresight_get_cpu() with a platform
-agnostic helper, in preparation to add ACPI support.
+CPU field is only used by ETMs and there is a separate API
+for fetching the same. So, let us use that instead of using
+the common platform probing helper. Also, remove it from the
+platform_data.
 
 Signed-off-by: Suzuki K Poulose <suzuki.poulose@arm.com>
 Signed-off-by: Mathieu Poirier <mathieu.poirier@linaro.org>
 ---
- .../hwtracing/coresight/coresight-cpu-debug.c  |  3 +--
- .../hwtracing/coresight/coresight-platform.c   | 18 +++++++++++++-----
- include/linux/coresight.h                      |  7 +------
- 3 files changed, 15 insertions(+), 13 deletions(-)
+ drivers/hwtracing/coresight/coresight-etm3x.c    | 2 +-
+ drivers/hwtracing/coresight/coresight-etm4x.c    | 2 +-
+ drivers/hwtracing/coresight/coresight-platform.c | 1 -
+ include/linux/coresight.h                        | 2 --
+ 4 files changed, 2 insertions(+), 5 deletions(-)
 
-diff --git a/drivers/hwtracing/coresight/coresight-cpu-debug.c b/drivers/hwtracing/coresight/coresight-cpu-debug.c
-index e8819d750938..07a1367c733f 100644
---- a/drivers/hwtracing/coresight/coresight-cpu-debug.c
-+++ b/drivers/hwtracing/coresight/coresight-cpu-debug.c
-@@ -572,14 +572,13 @@ static int debug_probe(struct amba_device *adev, const struct amba_id *id)
- 	struct device *dev = &adev->dev;
- 	struct debug_drvdata *drvdata;
- 	struct resource *res = &adev->res;
--	struct device_node *np = adev->dev.of_node;
- 	int ret;
+diff --git a/drivers/hwtracing/coresight/coresight-etm3x.c b/drivers/hwtracing/coresight/coresight-etm3x.c
+index fa2164ff07c2..722fab9632ef 100644
+--- a/drivers/hwtracing/coresight/coresight-etm3x.c
++++ b/drivers/hwtracing/coresight/coresight-etm3x.c
+@@ -819,7 +819,7 @@ static int etm_probe(struct amba_device *adev, const struct amba_id *id)
+ 			return ret;
+ 	}
  
- 	drvdata = devm_kzalloc(dev, sizeof(*drvdata), GFP_KERNEL);
- 	if (!drvdata)
- 		return -ENOMEM;
- 
--	drvdata->cpu = np ? of_coresight_get_cpu(np) : 0;
+-	drvdata->cpu = pdata ? pdata->cpu : 0;
 +	drvdata->cpu = coresight_get_cpu(dev);
- 	if (per_cpu(debug_drvdata, drvdata->cpu)) {
- 		dev_err(dev, "CPU%d drvdata has already been initialized\n",
- 			drvdata->cpu);
+ 
+ 	cpus_read_lock();
+ 	etmdrvdata[drvdata->cpu] = drvdata;
+diff --git a/drivers/hwtracing/coresight/coresight-etm4x.c b/drivers/hwtracing/coresight/coresight-etm4x.c
+index 4355b2e8c308..03576f3ed22d 100644
+--- a/drivers/hwtracing/coresight/coresight-etm4x.c
++++ b/drivers/hwtracing/coresight/coresight-etm4x.c
+@@ -1105,7 +1105,7 @@ static int etm4_probe(struct amba_device *adev, const struct amba_id *id)
+ 
+ 	spin_lock_init(&drvdata->spinlock);
+ 
+-	drvdata->cpu = pdata ? pdata->cpu : 0;
++	drvdata->cpu = coresight_get_cpu(dev);
+ 
+ 	cpus_read_lock();
+ 	etmdrvdata[drvdata->cpu] = drvdata;
 diff --git a/drivers/hwtracing/coresight/coresight-platform.c b/drivers/hwtracing/coresight/coresight-platform.c
-index 5d78f4fbd97d..ba8c14635c6b 100644
+index ba8c14635c6b..541e500a83c2 100644
 --- a/drivers/hwtracing/coresight/coresight-platform.c
 +++ b/drivers/hwtracing/coresight/coresight-platform.c
-@@ -151,12 +151,14 @@ static void of_coresight_get_ports(const struct device_node *node,
- 	}
- }
- 
--int of_coresight_get_cpu(const struct device_node *node)
-+static int of_coresight_get_cpu(struct device *dev)
- {
- 	int cpu;
- 	struct device_node *dn;
- 
--	dn = of_parse_phandle(node, "cpu", 0);
-+	if (!dev->of_node)
-+		return 0;
-+	dn = of_parse_phandle(dev->of_node, "cpu", 0);
- 	/* Affinity defaults to CPU0 */
- 	if (!dn)
- 		return 0;
-@@ -166,7 +168,6 @@ int of_coresight_get_cpu(const struct device_node *node)
- 	/* Affinity to CPU0 if no cpu nodes are found */
- 	return (cpu < 0) ? 0 : cpu;
- }
--EXPORT_SYMBOL_GPL(of_coresight_get_cpu);
- 
- /*
-  * of_coresight_parse_endpoint : Parse the given output endpoint @ep
-@@ -240,8 +241,6 @@ static int of_get_coresight_platform_data(struct device *dev,
- 	bool legacy_binding = false;
- 	struct device_node *node = dev->of_node;
- 
--	pdata->cpu = of_coresight_get_cpu(node);
--
- 	/* Get the number of input and output port for this component */
- 	of_coresight_get_ports(node, &pdata->nr_inport, &pdata->nr_outport);
- 
-@@ -300,6 +299,14 @@ of_get_coresight_platform_data(struct device *dev,
- }
- #endif
- 
-+int coresight_get_cpu(struct device *dev)
-+{
-+	if (is_of_node(dev->fwnode))
-+		return of_coresight_get_cpu(dev);
-+	return 0;
-+}
-+EXPORT_SYMBOL_GPL(coresight_get_cpu);
-+
- struct coresight_platform_data *
- coresight_get_platform_data(struct device *dev)
- {
-@@ -318,6 +325,7 @@ coresight_get_platform_data(struct device *dev)
+@@ -325,7 +325,6 @@ coresight_get_platform_data(struct device *dev)
  
  	/* Use device name as sysfs handle */
  	pdata->name = dev_name(dev);
-+	pdata->cpu = coresight_get_cpu(dev);
+-	pdata->cpu = coresight_get_cpu(dev);
  
  	if (is_of_node(fwnode))
  		ret = of_get_coresight_platform_data(dev, pdata);
 diff --git a/include/linux/coresight.h b/include/linux/coresight.h
-index e2b95e05e0be..98a4440dea3e 100644
+index 98a4440dea3e..bf241dbf99c5 100644
 --- a/include/linux/coresight.h
 +++ b/include/linux/coresight.h
-@@ -292,12 +292,7 @@ static inline void coresight_disclaim_device_unlocked(void __iomem *base) {}
+@@ -91,14 +91,12 @@ union coresight_dev_subtype {
  
- #endif
- 
--#ifdef CONFIG_OF
--extern int of_coresight_get_cpu(const struct device_node *node);
--#else
--static inline int of_coresight_get_cpu(const struct device_node *node)
--{ return 0; }
--#endif
-+extern int coresight_get_cpu(struct device *dev);
- 
- struct coresight_platform_data *coresight_get_platform_data(struct device *dev);
- 
+ /**
+  * struct coresight_platform_data - data harvested from the DT specification
+- * @cpu:	the CPU a source belongs to. Only applicable for ETM/PTMs.
+  * @name:	name of the component as shown under sysfs.
+  * @nr_inport:	number of input ports for this component.
+  * @nr_outport:	number of output ports for this component.
+  * @conns:	Array of nr_outport connections from this component
+  */
+ struct coresight_platform_data {
+-	int cpu;
+ 	const char *name;
+ 	int nr_inport;
+ 	int nr_outport;
 -- 
 2.17.1
 
