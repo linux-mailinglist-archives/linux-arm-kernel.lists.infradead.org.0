@@ -2,80 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7B80E4B766
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Jun 2019 13:51:29 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2768D4B76C
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Jun 2019 13:52:01 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Njn7rUAz+IAP++O3lVc59WVLJv0EGbRht3uSLqfBwuI=; b=F6BBKo+pyLamn0
-	2qaj9IKOo8Lgn88U8ZqxpSIJYVPnjkUNrjIU210BYTk7NZaGUJWbKQfy0gESE4KX2pnCMlYhGb8gL
-	0WfryCm7Zy/VigmTrtpm9nrpU9SJYHYTuGBTLrnx0NdENlGBrcts/km7ZZ+d/9PYbeCjExQu+Qutl
-	Z7bm0P2/bgKRRGe5+TsvadGSwLov1xce8UqNkD5JkBGah/SkZjK/BTumwV15pwtLwpnde9jmlCufm
-	toV89KGGvsJOQALKsWjxnAJoo6oTFExYFaroWWDCaoa6YkX0wWLYjg9s9qxHTmtFFvnesekmAD9xQ
-	1xSCF1Z7hhJ4NQAZNfag==;
+	List-Owner; bh=X+TZFRbwJpGjlPpVXdKoDC0L6gAVvwrJDNzhTjea5as=; b=lkg9PN3Cr1C5qU
+	kDi1iKP5hGLIeVcvonGK3W0IiayHdh4QoYTbYqGEict3Q0cKAeJacO4reuGKqeOgEH2iSe8lgdFPl
+	nWyOPNOHcdxwaUcjgusHH4mODTZwqbfFIFNtqdSW1VA8iFyanRWmvjplG+wetqFNquCXnAEiLohRu
+	hZfXTqLCNve9OEvs2XGgVU1ufLOxHHuWYAneNnwcsQ+aRIwek2wZTvnGAv85GmuN54Bq2r6fKgnL9
+	KDTCDJ8RS/IUogsPErv5anFQIM9ZfmCYQBHGc6sbE1Z7AcHQjqM/C1XacnAGxptmqQRgaYBpud9a6
+	bSURBb8t3SU9gL2ZS8ew==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hdZ7f-0003Nz-Ar; Wed, 19 Jun 2019 11:51:27 +0000
-Received: from mail.kernel.org ([198.145.29.99])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hdZ7V-0003NN-2i; Wed, 19 Jun 2019 11:51:18 +0000
-Received: from mail-wr1-f47.google.com (mail-wr1-f47.google.com
- [209.85.221.47])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 228FA2166E;
- Wed, 19 Jun 2019 11:51:16 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1560945076;
- bh=I9GUMrpXQQ4kP+XRlQm8nsuNTpCDLDeTZGuUV6StNpU=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=EmwB9jSneP5zvx+aO02e5ajh7HUMAmZwr7xBYZDziZHiVUbMqpfSn8oGPrp0ASWB1
- sAvfxTB1iTWoia0261g0Sybv0xAczcIdmA2GuWCcWniP/g8jQtbG7aTs0gHCmOwBgQ
- YLpwwQIAR7bV4++qpk+nQNV5GnVE/J+aFsVTa1nU=
-Received: by mail-wr1-f47.google.com with SMTP id k11so3092413wrl.1;
- Wed, 19 Jun 2019 04:51:16 -0700 (PDT)
-X-Gm-Message-State: APjAAAUeAof8K9aNr1meOAYplsWqTCrUsgHwbtIs3jg/mYODTnO/QB3O
- /ZynSqcNxXv23oE/OKsP2s5+ycs1eakv1gM2B+Y=
-X-Google-Smtp-Source: APXvYqy+0U1Ub7AMCGJu+3bTvhBYfZ23ab1bs8cRs50+HW9TdRv1m5YTdwBFzYfP6I5ojcMFW3AyuYO4S1RyjAIIWQ0=
-X-Received: by 2002:adf:f28a:: with SMTP id k10mr4144332wro.343.1560945074589; 
- Wed, 19 Jun 2019 04:51:14 -0700 (PDT)
+	id 1hdZ89-0003id-KT; Wed, 19 Jun 2019 11:51:57 +0000
+Received: from kirsty.vergenet.net ([202.4.237.240])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hdZ7y-0003hd-LK
+ for linux-arm-kernel@lists.infradead.org; Wed, 19 Jun 2019 11:51:48 +0000
+Received: from reginn.horms.nl (watermunt.horms.nl [80.127.179.77])
+ by kirsty.vergenet.net (Postfix) with ESMTPA id 5F7BE25B262;
+ Wed, 19 Jun 2019 21:51:43 +1000 (AEST)
+Received: by reginn.horms.nl (Postfix, from userid 7100)
+ id 5F64D9409FF; Wed, 19 Jun 2019 13:51:41 +0200 (CEST)
+Date: Wed, 19 Jun 2019 13:51:41 +0200
+From: Simon Horman <horms@verge.net.au>
+To: Geert Uytterhoeven <geert+renesas@glider.be>
+Subject: Re: [PATCH] ARM: shmobile: defconfig: Refresh for v5.2-rc1
+Message-ID: <20190619115141.wwze45px5qinll2j@verge.net.au>
+References: <20190618124714.15120-1-geert+renesas@glider.be>
 MIME-Version: 1.0
-References: <20190321163623.20219-1-julien.grall@arm.com>
- <20190321163623.20219-12-julien.grall@arm.com>
- <0dfe120b-066a-2ac8-13bc-3f5a29e2caa3@arm.com>
- <CAJF2gTTXHHgDboaexdHA284y6kNZVSjLis5-Q2rDnXCxr4RSmA@mail.gmail.com>
- <c871a5ae-914f-a8bb-9474-1dcfec5d45bf@arm.com>
-In-Reply-To: <c871a5ae-914f-a8bb-9474-1dcfec5d45bf@arm.com>
-From: Guo Ren <guoren@kernel.org>
-Date: Wed, 19 Jun 2019 19:51:03 +0800
-X-Gmail-Original-Message-ID: <CAJF2gTStSR7Jmu7=HaO5Wxz=Zn8A5-RD8ktori3oKEhM9vozAA@mail.gmail.com>
-Message-ID: <CAJF2gTStSR7Jmu7=HaO5Wxz=Zn8A5-RD8ktori3oKEhM9vozAA@mail.gmail.com>
-Subject: Re: [PATCH RFC 11/14] arm64: Move the ASID allocator code in a
- separate file
-To: Julien Grall <julien.grall@arm.com>
+Content-Disposition: inline
+In-Reply-To: <20190618124714.15120-1-geert+renesas@glider.be>
+Organisation: Horms Solutions BV
+User-Agent: NeoMutt/20170113 (1.7.2)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190619_045117_140022_6B68E342 
-X-CRM114-Status: GOOD (  14.38  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190619_045146_848792_56873B59 
+X-CRM114-Status: UNSURE (   8.29  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [202.4.237.240 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -87,59 +63,25 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: julien.thierry@arm.com, aou@eecs.berkeley.edu, james.morse@arm.com,
- suzuki.poulose@arm.com, Marc Zyngier <marc.zyngier@arm.com>,
- catalin.marinas@arm.com, Anup Patel <anup.Patel@wdc.com>, will.deacon@arm.com,
- linux-kernel@vger.kernel.org, rppt@linux.ibm.com, hch@infradead.org,
- Atish.Patra@wdc.com, Palmer Dabbelt <palmer@sifive.com>, gary@garyguo.net,
- paul.walmsley@sifive.com, christoffer.dall@arm.com,
- linux-riscv@lists.infradead.org, kvmarm@lists.cs.columbia.edu,
+Cc: linux-renesas-soc@vger.kernel.org, Magnus Damm <magnus.damm@gmail.com>,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Jun 19, 2019 at 4:54 PM Julien Grall <julien.grall@arm.com> wrote:
->
->
->
-> On 6/19/19 9:07 AM, Guo Ren wrote:
-> > Hi Julien,
->
-> Hi,
->
-> >
-> > You forgot CCing C-SKY folks :P
->
-> I wasn't aware you could be interested :).
->
-> >
-> > Move arm asid allocator code in a generic one is a agood idea, I've
-> > made a patchset for C-SKY and test is on processing, See:
-> > https://lore.kernel.org/linux-csky/1560930553-26502-1-git-send-email-guoren@kernel.org/
-> >
-> > If you plan to seperate it into generic one, I could co-work with you.
->
-> Was the ASID allocator work out of box on C-Sky?
-Almost done, but one question:
-arm64 remove the code in switch_mm:
-  cpumask_clear_cpu(cpu, mm_cpumask(prev));
-  cpumask_set_cpu(cpu, mm_cpumask(next));
+On Tue, Jun 18, 2019 at 02:47:14PM +0200, Geert Uytterhoeven wrote:
+> Update the defconfig for Renesas ARM boards:
+>   - Drop CONFIG_GENERIC_PHY=y (selected by PHY_RCAR_GEN3_USB2).
+> 
+> Signed-off-by: Geert Uytterhoeven <geert+renesas@glider.be>
 
-Why? Although arm64 cache operations could affect all harts with CTC
-method of interconnect, I think we should
-keep these code for primitive integrity in linux. Because cpu_bitmap
-is in mm_struct instead of mm->context.
+Hi Geert,
 
-In current csky's patches I've also removed the codes the same as
-arm64, but I'll add it back at next version.
+I believe this duplicates the following patch which is present
+in renesas-next.
 
-> If so, I can easily move the code in a generic place (maybe lib/asid.c).
-I think it's OK.
-
-Best Regards
- Guo Ren
+b995421faef5 ("ARM: shmobile: Remove GENERIC_PHY from shmobile_defconfig")
 
 _______________________________________________
 linux-arm-kernel mailing list
