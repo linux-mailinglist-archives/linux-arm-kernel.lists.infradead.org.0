@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 417434BFB4
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Jun 2019 19:34:51 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B33334BFB9
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Jun 2019 19:35:15 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,70 +11,71 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=tM+9UJO0AtaMtIxVAvvs7wnocYIIUCELPxwPH6EUo8k=; b=JrD/viMucltB2+4haCUgBz3l1F
-	dIWJCEU8BIZAJWHtAl4siw6m5y3Vgt4y5/9KRnvaQg9tNXcymt2j+rF03U5/zmKBZUUgf7IJyijw0
-	cg+czVxnP5qKMybzGyvSSzuFysQsl8fzyoSMr+Fk3ZvWdNe9RKC40Nnr7LyDn5pMbkltaFl5lyWk8
-	pF4+v1qtY1Py9rBg9WHCArJIW1ciIgfM4Zi7jwzRz8oH4/TAxtaKqX3Uctj7OvzevyJCqIHFSTvjd
-	ww3RWLVPrlwv6hn8cmyGItGpCZhxU8YSgiD5HJV9DrJV288VAJgJ+jB/iJYHv4esJ7mv7/3YKn1lG
-	Gl6iIMWw==;
+	bh=YAAlbDemzDo0sQptMMRx9uhi1c7oeIlWeBm9TKbIVT8=; b=eAAESiwXSiWXvRuMih3lXtj+H2
+	hacz9dPUrzUr+W6cB3k1F6c8n+HznKoHYuHH5jEjZ2tunbWMqx9iU0a/skPqwIW0go47Mr2tJealA
+	OrelP4XxRXHk7CK6ABk6eEZjuEu6iLBdWWq1EtOxZ84ABFZfdFlpLo0709qtfW+1RfBlNXraM8bbt
+	qGhQ2Sefmpmf8lc6mGeRn3DtrrHVSFyFAPMLP3KgUWz9hTv0SbssRa/kNtucoMNz2DKcgBIO46a1i
+	dpn9nBbYS5oy98J4eW47LOZ3aHd3y/VMKnc+/ILOO+Eq0Cd0b6qvLYdfjMzlcFGhVT/YUZR/HP33/
+	MkvMiDLA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hdeTx-0003D8-Rs; Wed, 19 Jun 2019 17:34:49 +0000
-Received: from mail-pg1-x543.google.com ([2607:f8b0:4864:20::543])
+	id 1hdeUL-0003SO-JO; Wed, 19 Jun 2019 17:35:13 +0000
+Received: from mail-pf1-x444.google.com ([2607:f8b0:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hdePO-0007Re-OT
- for linux-arm-kernel@lists.infradead.org; Wed, 19 Jun 2019 17:30:12 +0000
-Received: by mail-pg1-x543.google.com with SMTP id n2so32508pgp.11
+ id 1hdePP-0007WV-NS
+ for linux-arm-kernel@lists.infradead.org; Wed, 19 Jun 2019 17:30:13 +0000
+Received: by mail-pf1-x444.google.com with SMTP id 19so8981pfa.4
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 19 Jun 2019 10:30:05 -0700 (PDT)
+ Wed, 19 Jun 2019 10:30:06 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=i9B/70j+KVPtpl7paUqbm+CZkyeg3RB2d1/vlpd8aOo=;
- b=bERDPwdOXjw0QYqaffDK6yPuqd5LEDEpg/DdWM69lI6Vqdv6a/o0y9xika88EXEWvk
- khX+zTwTF+FC8MIHibbrCJRioWbOhxzKC+9HmQ42fBXLSCaVdphl0la8NdIbTs1uQ6Yz
- sKYeZukdt+AB2+M+Gfs4i9F5sxBGNQf+7BZjXGS74ofG5YWPR3XrWcWXKoUi1a8eBGyI
- WrNy1vIQup9nJK7pE7OpMjIuRuNCTCZfx2EgrGsVezH+e0OxoIHWVh20nuiGl/OQxXT3
- Zwk/dneVdPgNa112ujg1LyIcRjmSAk8YQDwlzwOmT5TnwEDYjXCE+mZmUbWgkD9jmyEk
- O9+w==
+ bh=YiiXxjdGItwuAF+iuZlgiXWIyVvrN8mFr1/a4zBxeWE=;
+ b=hD6CxMf4ROlRMtggcqf9YjAAo2onCZrLji5WJHTEYDm2MeFB2hL57T5sT3vuY08vVj
+ /AlR6y3rW4RVxGRzMX1jrqphJ106Qu4naY4PrsX/qMyA+uYtPhhPwGCHlInuQAAowcKs
+ Z3oH2rq98VH0QKOe++LWJX4w39o7VhviaJRO4EFGiwdBUQXQLgaera8ocHlAhoBf1VRj
+ A40pn44t+LQcv0KtPLMPABtyt45xg1TDnNNuN3lNPYKyJetkWTdcGj3Qmk+aPtKfyOON
+ oiiLY0liO4gHXJsHsLYJOXMGR1TCwwUCUZjaRPZo3ycsucsp81KEpSGs+3rTL5ERU1rl
+ gutQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=i9B/70j+KVPtpl7paUqbm+CZkyeg3RB2d1/vlpd8aOo=;
- b=K0uu2Exl38X5uD386HiB7GF7Mct1dWxrWwb4h/8xjGeg2tL0G1ZXXe4jho2pQtkA3h
- U0F4Jj7TKAmVWe8z4kK89EZuTPpJZqOxyL0JKcIHKUfYOoIOG0u0m66eilP6F8+Hi2Yk
- dFp0oEUajfa+k5RCfkTJizlr7xbthicGthqRKwkGXfGxlOBEOOaL3kJCtnbQjo+y/See
- sDSRI10JWKSAY+QLEHr2sofSBgq550A9EbpIJZ7X2Sh3nCgZ9Fg1BJQ44ZsgzPodXi0G
- +ENnEHW9lWBMtnpJ4SU9zdcwzOflHTO9E2pAB9YACihjJ7nTjs3NRU5fchGZHCkq52Ap
- DoDg==
-X-Gm-Message-State: APjAAAV9gxmbcvjYE3N6xcGslM0JgZLEapvKTO9pYtpuymmMqy7b9CIH
- TjHvg/sPRlXpYUVeuHhxBzrVeJ+dqDuBMQ==
-X-Google-Smtp-Source: APXvYqwc6JwNBqLYwKk6hE+gYkgsjxacrL6CTDBrvQ6mQsO9R0rTAFjetL3uZlRGEse2QNeX9jdmnA==
-X-Received: by 2002:a65:6541:: with SMTP id a1mr8638481pgw.409.1560965403969; 
- Wed, 19 Jun 2019 10:30:03 -0700 (PDT)
+ bh=YiiXxjdGItwuAF+iuZlgiXWIyVvrN8mFr1/a4zBxeWE=;
+ b=lFonUqnzRckpz4oWWKl4n8V4IjarG6eyLCB5Ce62kJgKgl0l6eyO9jsnwybj9AoVsX
+ aSrW4FB0T/bsSIKEgpyRVkvgM5kooHFPPjBqJVqyslWJtw+LTPdoEcX3PQuQw3Rz1A+b
+ S1occtvIDkBVeXVXzEBA9bySBJtz6yu5uovUknpl75OEx9mPeWjRJPvJyKQjjjfKZst7
+ 5PZkBngglPLWP+IOwwJMJd0T1f01rc9poyIEt7PGZR0E3Sp0QSzvGfCuFKiTSQarkwx5
+ wSwDhaRyplK03mDi0irAHU9+S/OLalEldBne1qcec8vNTkNW9pdyZyyO4Y1WDJFi+bRC
+ XELg==
+X-Gm-Message-State: APjAAAVx00ZjbPWGPdjp0axn1xxW4eedCPZfebqGy6n0J8SslU+hCSGE
+ sB2fzfxaFIpSaxVSGbXWI3lfa/mmC7v75g==
+X-Google-Smtp-Source: APXvYqz9eX40+g6xlY6jeaLeH4KFf5GQFIZXzE+Wc0EB0/SxiALn6Mx4prcGoyEI62v43UijFW9EtQ==
+X-Received: by 2002:a62:640c:: with SMTP id y12mr19989074pfb.166.1560965404999; 
+ Wed, 19 Jun 2019 10:30:04 -0700 (PDT)
 Received: from xps15.cg.shawcable.net (S0106002369de4dac.cg.shawcable.net.
  [68.147.8.254])
- by smtp.gmail.com with ESMTPSA id g2sm31348406pfb.95.2019.06.19.10.30.02
+ by smtp.gmail.com with ESMTPSA id g2sm31348406pfb.95.2019.06.19.10.30.04
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Wed, 19 Jun 2019 10:30:03 -0700 (PDT)
+ Wed, 19 Jun 2019 10:30:04 -0700 (PDT)
 From: Mathieu Poirier <mathieu.poirier@linaro.org>
 To: gregkh@linuxfoundation.org
-Subject: [PATCH 13/45] coresight: etb10: Clean up device specific data
-Date: Wed, 19 Jun 2019 11:29:17 -0600
-Message-Id: <20190619172949.4522-14-mathieu.poirier@linaro.org>
+Subject: [PATCH 14/45] coresight: Use coresight device names for sinks in PMU
+ attribute
+Date: Wed, 19 Jun 2019 11:29:18 -0600
+Message-Id: <20190619172949.4522-15-mathieu.poirier@linaro.org>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20190619172949.4522-1-mathieu.poirier@linaro.org>
 References: <20190619172949.4522-1-mathieu.poirier@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190619_103007_160886_012193EB 
-X-CRM114-Status: GOOD (  14.14  )
+X-CRM114-CacheID: sfid-20190619_103007_994773_7651CDE1 
+X-CRM114-Status: GOOD (  11.72  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:543 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:444 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -103,177 +104,47 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Suzuki K Poulose <suzuki.poulose@arm.com>
+Move to using the coresight device name instead of the parent
+device name for SINK attribute for PMU.
 
-Track the coresight device instead of the real device.
-
-Signed-off-by: Suzuki K Poulose <suzuki.poulose@arm.com>
 Signed-off-by: Mathieu Poirier <mathieu.poirier@linaro.org>
+Signed-off-by: Suzuki K Poulose <suzuki.poulose@arm.com>
 ---
- drivers/hwtracing/coresight/coresight-etb10.c | 32 +++++++++----------
- 1 file changed, 16 insertions(+), 16 deletions(-)
+ drivers/hwtracing/coresight/coresight-etm-perf.c | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
 
-diff --git a/drivers/hwtracing/coresight/coresight-etb10.c b/drivers/hwtracing/coresight/coresight-etb10.c
-index 516d67cd7759..0c9161fe4233 100644
---- a/drivers/hwtracing/coresight/coresight-etb10.c
-+++ b/drivers/hwtracing/coresight/coresight-etb10.c
-@@ -66,7 +66,6 @@
- /**
-  * struct etb_drvdata - specifics associated to an ETB component
-  * @base:	memory mapped base address for this component.
-- * @dev:	the device entity associated to this component.
-  * @atclk:	optional clock for the core parts of the ETB.
-  * @csdev:	component vitals needed by the framework.
-  * @miscdev:	specifics to handle "/dev/xyz.etb" entry.
-@@ -81,7 +80,6 @@
-  */
- struct etb_drvdata {
- 	void __iomem		*base;
--	struct device		*dev;
- 	struct clk		*atclk;
- 	struct coresight_device	*csdev;
- 	struct miscdevice	miscdev;
-@@ -227,7 +225,6 @@ static int etb_enable_perf(struct coresight_device *csdev, void *data)
- static int etb_enable(struct coresight_device *csdev, u32 mode, void *data)
- {
- 	int ret;
--	struct etb_drvdata *drvdata = dev_get_drvdata(csdev->dev.parent);
+diff --git a/drivers/hwtracing/coresight/coresight-etm-perf.c b/drivers/hwtracing/coresight/coresight-etm-perf.c
+index 3c6294432748..5c1ca0df5cb0 100644
+--- a/drivers/hwtracing/coresight/coresight-etm-perf.c
++++ b/drivers/hwtracing/coresight/coresight-etm-perf.c
+@@ -523,7 +523,7 @@ int etm_perf_add_symlink_sink(struct coresight_device *csdev)
+ 	unsigned long hash;
+ 	const char *name;
+ 	struct device *pmu_dev = etm_pmu.dev;
+-	struct device *pdev = csdev->dev.parent;
++	struct device *dev = &csdev->dev;
+ 	struct dev_ext_attribute *ea;
  
- 	switch (mode) {
- 	case CS_MODE_SYSFS:
-@@ -244,13 +241,14 @@ static int etb_enable(struct coresight_device *csdev, u32 mode, void *data)
- 	if (ret)
- 		return ret;
+ 	if (csdev->type != CORESIGHT_DEV_TYPE_SINK &&
+@@ -536,15 +536,15 @@ int etm_perf_add_symlink_sink(struct coresight_device *csdev)
+ 	if (!etm_perf_up)
+ 		return -EPROBE_DEFER;
  
--	dev_dbg(drvdata->dev, "ETB enabled\n");
-+	dev_dbg(&csdev->dev, "ETB enabled\n");
- 	return 0;
- }
- 
- static void __etb_disable_hw(struct etb_drvdata *drvdata)
- {
- 	u32 ffcr;
-+	struct device *dev = &drvdata->csdev->dev;
- 
- 	CS_UNLOCK(drvdata->base);
- 
-@@ -263,7 +261,7 @@ static void __etb_disable_hw(struct etb_drvdata *drvdata)
- 	writel_relaxed(ffcr, drvdata->base + ETB_FFCR);
- 
- 	if (coresight_timeout(drvdata->base, ETB_FFCR, ETB_FFCR_BIT, 0)) {
--		dev_err(drvdata->dev,
-+		dev_err(dev,
- 		"timeout while waiting for completion of Manual Flush\n");
- 	}
- 
-@@ -271,7 +269,7 @@ static void __etb_disable_hw(struct etb_drvdata *drvdata)
- 	writel_relaxed(0x0, drvdata->base + ETB_CTL_REG);
- 
- 	if (coresight_timeout(drvdata->base, ETB_FFSR, ETB_FFSR_BIT, 1)) {
--		dev_err(drvdata->dev,
-+		dev_err(dev,
- 			"timeout while waiting for Formatter to Stop\n");
- 	}
- 
-@@ -286,6 +284,7 @@ static void etb_dump_hw(struct etb_drvdata *drvdata)
- 	u32 read_data, depth;
- 	u32 read_ptr, write_ptr;
- 	u32 frame_off, frame_endoff;
-+	struct device *dev = &drvdata->csdev->dev;
- 
- 	CS_UNLOCK(drvdata->base);
- 
-@@ -295,10 +294,10 @@ static void etb_dump_hw(struct etb_drvdata *drvdata)
- 	frame_off = write_ptr % ETB_FRAME_SIZE_WORDS;
- 	frame_endoff = ETB_FRAME_SIZE_WORDS - frame_off;
- 	if (frame_off) {
--		dev_err(drvdata->dev,
-+		dev_err(dev,
- 			"write_ptr: %lu not aligned to formatter frame size\n",
- 			(unsigned long)write_ptr);
--		dev_err(drvdata->dev, "frameoff: %lu, frame_endoff: %lu\n",
-+		dev_err(dev, "frameoff: %lu, frame_endoff: %lu\n",
- 			(unsigned long)frame_off, (unsigned long)frame_endoff);
- 		write_ptr += frame_endoff;
- 	}
-@@ -365,7 +364,7 @@ static int etb_disable(struct coresight_device *csdev)
- 	drvdata->mode = CS_MODE_DISABLED;
- 	spin_unlock_irqrestore(&drvdata->spinlock, flags);
- 
--	dev_dbg(drvdata->dev, "ETB disabled\n");
-+	dev_dbg(&csdev->dev, "ETB disabled\n");
- 	return 0;
- }
- 
-@@ -460,7 +459,7 @@ static unsigned long etb_update_buffer(struct coresight_device *csdev,
- 	 * chance to fix things.
- 	 */
- 	if (write_ptr % ETB_FRAME_SIZE_WORDS) {
--		dev_err(drvdata->dev,
-+		dev_err(&csdev->dev,
- 			"write_ptr: %lu not aligned to formatter frame size\n",
- 			(unsigned long)write_ptr);
- 
-@@ -594,7 +593,7 @@ static void etb_dump(struct etb_drvdata *drvdata)
- 	}
- 	spin_unlock_irqrestore(&drvdata->spinlock, flags);
- 
--	dev_dbg(drvdata->dev, "ETB dumped\n");
-+	dev_dbg(&drvdata->csdev->dev, "ETB dumped\n");
- }
- 
- static int etb_open(struct inode *inode, struct file *file)
-@@ -605,7 +604,7 @@ static int etb_open(struct inode *inode, struct file *file)
- 	if (local_cmpxchg(&drvdata->reading, 0, 1))
- 		return -EBUSY;
- 
--	dev_dbg(drvdata->dev, "%s: successfully opened\n", __func__);
-+	dev_dbg(&drvdata->csdev->dev, "%s: successfully opened\n", __func__);
- 	return 0;
- }
- 
-@@ -615,6 +614,7 @@ static ssize_t etb_read(struct file *file, char __user *data,
- 	u32 depth;
- 	struct etb_drvdata *drvdata = container_of(file->private_data,
- 						   struct etb_drvdata, miscdev);
-+	struct device *dev = &drvdata->csdev->dev;
- 
- 	etb_dump(drvdata);
- 
-@@ -623,13 +623,14 @@ static ssize_t etb_read(struct file *file, char __user *data,
- 		len = depth * 4 - *ppos;
- 
- 	if (copy_to_user(data, drvdata->buf + *ppos, len)) {
--		dev_dbg(drvdata->dev, "%s: copy_to_user failed\n", __func__);
-+		dev_dbg(dev,
-+			"%s: copy_to_user failed\n", __func__);
- 		return -EFAULT;
- 	}
- 
- 	*ppos += len;
- 
--	dev_dbg(drvdata->dev, "%s: %zu bytes copied, %d bytes left\n",
-+	dev_dbg(dev, "%s: %zu bytes copied, %d bytes left\n",
- 		__func__, len, (int)(depth * 4 - *ppos));
- 	return len;
- }
-@@ -640,7 +641,7 @@ static int etb_release(struct inode *inode, struct file *file)
- 						   struct etb_drvdata, miscdev);
- 	local_set(&drvdata->reading, 0);
- 
--	dev_dbg(drvdata->dev, "%s: released\n", __func__);
-+	dev_dbg(&drvdata->csdev->dev, "%s: released\n", __func__);
- 	return 0;
- }
- 
-@@ -744,7 +745,6 @@ static int etb_probe(struct amba_device *adev, const struct amba_id *id)
- 	if (!drvdata)
+-	ea = devm_kzalloc(pdev, sizeof(*ea), GFP_KERNEL);
++	ea = devm_kzalloc(dev, sizeof(*ea), GFP_KERNEL);
+ 	if (!ea)
  		return -ENOMEM;
  
--	drvdata->dev = &adev->dev;
- 	drvdata->atclk = devm_clk_get(&adev->dev, "atclk"); /* optional */
- 	if (!IS_ERR(drvdata->atclk)) {
- 		ret = clk_prepare_enable(drvdata->atclk);
+-	name = dev_name(pdev);
++	name = dev_name(dev);
+ 	/* See function coresight_get_sink_by_id() to know where this is used */
+ 	hash = hashlen_hash(hashlen_string(NULL, name));
+ 
+-	ea->attr.attr.name = devm_kstrdup(pdev, name, GFP_KERNEL);
++	ea->attr.attr.name = devm_kstrdup(dev, name, GFP_KERNEL);
+ 	if (!ea->attr.attr.name)
+ 		return -ENOMEM;
+ 
 -- 
 2.17.1
 
