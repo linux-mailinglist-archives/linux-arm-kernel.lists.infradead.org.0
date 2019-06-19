@@ -2,92 +2,68 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B71DA4B953
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Jun 2019 15:05:21 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E081E4B968
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Jun 2019 15:06:16 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Cc:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fyxgp9J+Ax0hkNX0hLUSP6N2hPGxISwPTHf2Jwp7Jdg=; b=eiLS7axf6fPbIm
-	awon3yY02a6CEuYJODbj51Dw9vGkveX9RG1bmAxnwAi7MAt1kETqJ01ah0/7Sj2hiimYz4zlm/gzz
-	7CNbVW6R98SaQdFmlDxZrD9KzLa8PWu5yYtSq/RXw+c7C9yulgUN33ghs369pglG7vwFTA86MWG2b
-	qesswzVU0Ud2knfsS9AjTDkDaBt8+KF33lZ3V+FR9yBhRK6RWLQkx48j/kgI5zYF+U9hTu/g9mk03
-	oaJUN5Mc/4ukJpDXhAkyIkcwOsvg4XT4CswdDWaNhWlrpksLpVjX9yLiMy7PA9zweHZpJIP+p7eFF
-	yre/3WwklZs3mhQhsHzg==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=VuwMfCoH66UWzLVa9XU5gYS4KlC8QBUgRoLHmtRYy2g=; b=Bkt15WRvWj1tM3
+	IjRiEUfWmkqOyGSurBlcRryrlrJoaw6LNRJ7Op+XYEd+jV6G/84hky1BifaN0SWlMAAZ64vZh62I7
+	eZt4GX78AeEM4sH8047ZYIrU4N/47JLTff/tFGaYBXRplmgekZ54YbMwYz6OK8sxKDJ9iLkCIIqqk
+	N9YpulN5Z3W/u9x7XXy/5f32wc65/5YKZ9PODNp/pBYyDAtDtBs9Kqv+2B/c0DEfkB20sjIF00I4K
+	DaSMhubEp4aSakCLTj86CPSWIscJKj+vEAKMqucYdGXt8VoLgCwo6IbzM7M8RFsGo2ub0GYRwcY3e
+	uqOI8EVQSw29TNLtXFAA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hdaH9-0001fL-IS; Wed, 19 Jun 2019 13:05:19 +0000
-Received: from mx07-00178001.pphosted.com ([62.209.51.94])
+	id 1hdaI1-00033V-2b; Wed, 19 Jun 2019 13:06:13 +0000
+Received: from mout.kundenserver.de ([212.227.17.10])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hdaG0-0000GV-Dp
- for linux-arm-kernel@lists.infradead.org; Wed, 19 Jun 2019 13:04:10 +0000
-Received: from pps.filterd (m0046668.ppops.net [127.0.0.1])
- by mx07-00178001.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id
- x5JCu1vs023624; Wed, 19 Jun 2019 15:04:03 +0200
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
- h=from : to : subject :
- date : message-id : in-reply-to : references : mime-version :
- content-type; s=STMicroelectronics;
- bh=1RIed4PSnLNoF/Qg8Sp7JJ0Sajo64o3gdxbSWUs/b4M=;
- b=0xenS9bcGVcF8713j77nhv9uVF0N+3rssP3bIA4M00CmyUSAdrwem78TNJJNHfTMdReb
- hibMRJP0HII90WclTnhXFen799MWDD/raHoZnqsHbOBbPWUJFplV8tYCsdK8h7BOWAgB
- xk1FVwbkGYx828MwMagijwfaNOg1olBktgZfIZ5utfW8B/d5l+iFdSI+juK5e5c9iuKR
- x4dpT76VUixZ5pa0Yz+5LRtRPnSyXKu7GCWx+etdZhJt7Ei2O0LF3lXSLgV/jD/V4e1U
- Rs27nGZcFT54Z0W4601g8h6Ui5MHlqxcEanwRD+C6rqGePLtRs9XHJiNAg7pWbj8FW+J cA== 
-Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx07-00178001.pphosted.com with ESMTP id 2t7813c0aq-1
- (version=TLSv1 cipher=ECDHE-RSA-AES256-SHA bits=256 verify=NOT);
- Wed, 19 Jun 2019 15:04:03 +0200
-Received: from zeta.dmz-eu.st.com (zeta.dmz-eu.st.com [164.129.230.9])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id DC7D638;
- Wed, 19 Jun 2019 13:04:02 +0000 (GMT)
-Received: from Webmail-eu.st.com (Safex1hubcas23.st.com [10.75.90.46])
- by zeta.dmz-eu.st.com (STMicroelectronics) with ESMTP id B5A452834;
- Wed, 19 Jun 2019 13:04:02 +0000 (GMT)
-Received: from SAFEX1HUBCAS21.st.com (10.75.90.45) by SAFEX1HUBCAS23.st.com
- (10.75.90.46) with Microsoft SMTP Server (TLS) id 14.3.439.0; Wed, 19 Jun
- 2019 15:04:02 +0200
-Received: from localhost (10.201.23.16) by Webmail-ga.st.com (10.75.90.48)
- with Microsoft SMTP Server (TLS) id 14.3.439.0; Wed, 19 Jun 2019 15:04:02
- +0200
-From: Olivier Moysan <olivier.moysan@st.com>
-To: <jic23@kernel.org>, <knaack.h@gmx.de>, <lars@metafoo.de>,
- <pmeerw@pmeerw.net>, <mcoquelin.stm32@gmail.com>,
- <alexandre.torgue@st.com>, <fabrice.gasnier@st.com>,
- <linux-iio@vger.kernel.org>, <linux-stm32@st-md-mailman.stormreply.com>,
- <linux-arm-kernel@lists.infradead.org>, <linux-kernel@vger.kernel.org>,
- <benjamin.gaignard@st.com>, <olivier.moysan@st.com>
-Subject: [PATCH 5/5] iio: adc: stm32-dfsdm: add comment for 16 bits record
-Date: Wed, 19 Jun 2019 15:03:51 +0200
-Message-ID: <1560949431-22948-6-git-send-email-olivier.moysan@st.com>
-X-Mailer: git-send-email 2.7.4
-In-Reply-To: <1560949431-22948-1-git-send-email-olivier.moysan@st.com>
-References: <1560949431-22948-1-git-send-email-olivier.moysan@st.com>
+ id 1hdaHc-0002vB-5W
+ for linux-arm-kernel@lists.infradead.org; Wed, 19 Jun 2019 13:05:49 +0000
+Received: from threadripper.lan ([149.172.19.189]) by mrelayeu.kundenserver.de
+ (mreue107 [212.227.15.145]) with ESMTPA (Nemesis) id
+ 1M7s1M-1hhPlr438s-0051Nk; Wed, 19 Jun 2019 15:05:38 +0200
+From: Arnd Bergmann <arnd@arndb.de>
+To: arm@kernel.org
+Subject: [PATCH] ARM: omap2: remove incorrect __init annotation
+Date: Wed, 19 Jun 2019 15:04:54 +0200
+Message-Id: <20190619130529.1502322-1-arnd@arndb.de>
+X-Mailer: git-send-email 2.20.0
 MIME-Version: 1.0
-X-Originating-IP: [10.201.23.16]
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:, ,
- definitions=2019-06-19_07:, , signatures=0
+X-Provags-ID: V03:K1:dnAraIqnAFKO4Ee+PXPJF/LL3WFx+kBCx35hS/zH3XPenx1T9Ys
+ kgXaZ8E4MOrxh9YQWe2g5fxpnQBAjZAJiNm8/rhI/Q9x58NdE5suxhAdEY176sJhbxqO0ZU
+ 0dwSTg4Gvhn+nxBMPKr9Wz38owbJx2ueOa5DEA60MCmTAC8sdf7kVmXLR/nWg7mc692p9Le
+ BvoIQPBnyZctUKgIRs8/g==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:0mRlXBkSslw=:FoLq8ELxMpa2ObJt7RxxZ7
+ QQJlQ/XyvjcJchlJGmvbu+7W4CFnMm5z4zxQ1TwUtjrpriuekVOwMyX0PdzUFJ7fXpmHcF/ZW
+ yjCB7+ZOpMJj+0ECdwIc0Pd9O0t3fYDc1ahzT9prtfhu/uu4/kd6/jSuXvKKbcE9IdoX3iIkA
+ ZAFlq9IT9R+8iOEvGQG7iGZiJAjbBA1MfTwMuxlvDkv7tBZR1ezHdDQjwg4shzvEvIDVl7hEg
+ WlPAfmpIvWKIyqR7KHkYlbjHCHvt/gmpzfzsCYJQIEHKW9LSAESmDmoVDV7v8Om9kXBh9BwQT
+ ZH0bhfooDV5RhLKH6euGrIeQEl1DeNKGp3DP/huqIiEYezEH0k1KCdkBRduZr9EHFAvEUJChY
+ rhMi6qLhqnzdUHUcdc7jpaunWTtFbN7hvCinLppWvCEUCjxHfnlxnoCAIHhBTSlIjusySXLhM
+ jftrcky1AQcVoBAgxOGxxnvT1B9qA8y0R9PU/Tfdw34KZ9oUz2P3n0heMcClgTD/qoDKorXGy
+ Z27RxBCvyruSt90PIPKW5mSl7huKCyW3u4tDQWwATKwZlHvA3nt6aJtxeAawRaHn6rITq5JXm
+ FvTuguSX2tcSG8yNuTNTJ/6iE45AJ222Mr4tj+JbceubmXOsFyceBnZ5iNa5efEIAdwW7oJu9
+ Wvj8eI0QnD9UHilbLOp7yk63PY/iCCHOOWdCc6VQoyE460y7ceIEvWFYYO8F86sTz1OjTNA6B
+ FxGgg1lfBa7KgEULX59U37Mgu4FH1j2G2JzutA==
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190619_060408_773655_5EC9B88E 
-X-CRM114-Status: GOOD (  13.04  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20190619_060548_568308_BBB6A365 
+X-CRM114-Status: GOOD (  11.62  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [62.209.51.94 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [212.227.17.10 listed in list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [212.227.17.10 listed in wl.mailspike.net]
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -99,36 +75,49 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
+Cc: Paul Walmsley <paul@pwsan.com>, Rajendra Nayak <rnayak@codeaurora.org>,
+ Arnd Bergmann <arnd@arndb.de>, Tony Lindgren <tony@atomide.com>,
+ linux-kernel@vger.kernel.org, Nathan Chancellor <natechancellor@gmail.com>,
+ linux-omap@vger.kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add a comment on DMA configuration for 16 bits record.
+omap3xxx_prm_enable_io_wakeup() is marked __init, but its caller is not, so
+we get a warning with clang-8:
 
-Signed-off-by: Olivier Moysan <olivier.moysan@st.com>
+WARNING: vmlinux.o(.text+0x343c8): Section mismatch in reference from the function omap3xxx_prm_late_init() to the function .init.text:omap3xxx_prm_enable_io_wakeup()
+The function omap3xxx_prm_late_init() references
+the function __init omap3xxx_prm_enable_io_wakeup().
+This is often because omap3xxx_prm_late_init lacks a __init
+annotation or the annotation of omap3xxx_prm_enable_io_wakeup is wrong.
+
+When building with gcc, omap3xxx_prm_enable_io_wakeup() is always
+inlined, so we never noticed in the past.
+
+Signed-off-by: Arnd Bergmann <arnd@arndb.de>
+Reviewed-by: Nathan Chancellor <natechancellor@gmail.com>
+Acked-by: Tony Lindgren <tony@atomide.com>
 ---
- drivers/iio/adc/stm32-dfsdm-adc.c | 5 +++++
- 1 file changed, 5 insertions(+)
+ arch/arm/mach-omap2/prm3xxx.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/drivers/iio/adc/stm32-dfsdm-adc.c b/drivers/iio/adc/stm32-dfsdm-adc.c
-index d855a605eab6..ee1e0569d0e1 100644
---- a/drivers/iio/adc/stm32-dfsdm-adc.c
-+++ b/drivers/iio/adc/stm32-dfsdm-adc.c
-@@ -918,6 +918,11 @@ static void stm32_dfsdm_dma_buffer_done(void *data)
- static int stm32_dfsdm_adc_dma_start(struct iio_dev *indio_dev)
+diff --git a/arch/arm/mach-omap2/prm3xxx.c b/arch/arm/mach-omap2/prm3xxx.c
+index 05858f966f7d..dfa65fc2c82b 100644
+--- a/arch/arm/mach-omap2/prm3xxx.c
++++ b/arch/arm/mach-omap2/prm3xxx.c
+@@ -433,7 +433,7 @@ static void omap3_prm_reconfigure_io_chain(void)
+  * registers, and omap3xxx_prm_reconfigure_io_chain() must be called.
+  * No return value.
+  */
+-static void __init omap3xxx_prm_enable_io_wakeup(void)
++static void omap3xxx_prm_enable_io_wakeup(void)
  {
- 	struct stm32_dfsdm_adc *adc = iio_priv(indio_dev);
-+	/*
-+	 * The DFSDM supports half-word transfers. However, for 16 bits record,
-+	 * 4 bytes buswidth is kept, to avoid losing samples LSBs when left
-+	 * shift is required.
-+	 */
- 	struct dma_slave_config config = {
- 		.src_addr = (dma_addr_t)adc->dfsdm->phys_base,
- 		.src_addr_width = DMA_SLAVE_BUSWIDTH_4_BYTES,
+ 	if (prm_features & PRM_HAS_IO_WAKEUP)
+ 		omap2_prm_set_mod_reg_bits(OMAP3430_EN_IO_MASK, WKUP_MOD,
 -- 
-2.7.4
+2.20.0
 
 
 _______________________________________________
