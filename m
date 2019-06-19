@@ -2,68 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0A99F4B526
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Jun 2019 11:44:14 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 20ECA4B545
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Jun 2019 11:48:07 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=uz8BXCEOpVB3PiC4E8305TKMAWGzb8Xj92ECnQVt8ig=; b=t2bM4X01SNm7H4
-	oLTUMLK1RHFe2MWfjQrPTDexZ2P4um8LwHTntdDXRVG/FqdQDA+ySRNM/hYysQQSfFpoF61fMFWgL
-	cElkYQbEy506U3dF/t3knMgigrMrcxxd3meRvFkNzHDXEBCiSvINoZYvkRthPVGjZqAvBqMrMHCzX
-	Eve9iGbq8NPfPmY0zPKdt7ql19iKe0T7GVdhIWA2HTJ6+cQ3GExrQr42YELTEniqLb/3zraJNMMyl
-	SIoxviftKsfI6VBqxjVM77rJYEb1GtbgWB1SF7TopbmATP19HXrqOiWUbqqpxQtYSMAQHfzJ45Hgf
-	Vio5GqCYCo5jskvZsxWw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=tS0PUT62zxzZ10tMmXnVW64S8tqGtAne67hAMqhZ/T0=; b=IKWgwDkN5TRhcz
+	lILBTIh8c4HngEKa3tlK2llkC8C1TA74ZqRGdmLGj+jDnfaIc+qLLFB0yc/QptDgIDqQA4k0jmGE4
+	hK3PVQLShuyvbqodpkEbLE/4AvgR4TscsmcTnxZDpl8cnSug8JsUsZwHhTwLkGThVnB9nrjPYDgBT
+	qYXfu/ttfjjdccg21vSH1iClCVmbGJm58LYDG61H1DaRQOCy10gkZoYshc06ExkP/HUkAr52cidA8
+	vEKg6QPeJleGiAS+P+el5ryPmYsDpFdzO2pNRzh60Z1pftfqN1bREl+PjgtYzELL6ftWBRpPfOXun
+	i/yUjrtB2J0N+hAnVm6Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hdX8T-0001xw-UB; Wed, 19 Jun 2019 09:44:09 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
+	id 1hdXCG-0003bf-3L; Wed, 19 Jun 2019 09:48:04 +0000
+Received: from relay4-d.mail.gandi.net ([217.70.183.196])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hdX8I-0001wJ-28; Wed, 19 Jun 2019 09:44:00 +0000
-X-UUID: d26c45334e63455ea47928ac37f7b3e9-20190619
-X-UUID: d26c45334e63455ea47928ac37f7b3e9-20190619
-Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw01.mediatek.com
- (envelope-from <weiyi.lu@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1818388162; Wed, 19 Jun 2019 01:43:51 -0800
-Received: from MTKMBS01N1.mediatek.inc (172.21.101.68) by
- MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Wed, 19 Jun 2019 02:43:49 -0700
-Received: from MTKCAS06.mediatek.inc (172.21.101.30) by
- mtkmbs01n1.mediatek.inc (172.21.101.68) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Wed, 19 Jun 2019 17:43:41 +0800
-Received: from [172.21.77.4] (172.21.77.4) by MTKCAS06.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Wed, 19 Jun 2019 17:43:42 +0800
-Message-ID: <1560937422.2158.22.camel@mtksdaap41>
-Subject: Re: [PATCH v5 10/14] soc: mediatek: Add multiple step bus
- protection control
-From: Weiyi Lu <weiyi.lu@mediatek.com>
-To: Nicolas Boichat <drinkcat@chromium.org>
-Date: Wed, 19 Jun 2019 17:43:42 +0800
-In-Reply-To: <CANMq1KAU4o1ad+CM09QtPTGey+mzheg3bR4+iDXpcW+znRC9fQ@mail.gmail.com>
-References: <20190319080140.24055-1-weiyi.lu@mediatek.com>
- <20190319080140.24055-11-weiyi.lu@mediatek.com>
- <CANMq1KAU4o1ad+CM09QtPTGey+mzheg3bR4+iDXpcW+znRC9fQ@mail.gmail.com>
-X-Mailer: Evolution 3.10.4-0ubuntu2 
+ id 1hdXBw-0003ak-VO
+ for linux-arm-kernel@lists.infradead.org; Wed, 19 Jun 2019 09:47:47 +0000
+X-Originating-IP: 90.88.23.150
+Received: from localhost (aaubervilliers-681-1-81-150.w90-88.abo.wanadoo.fr
+ [90.88.23.150]) (Authenticated sender: maxime.ripard@bootlin.com)
+ by relay4-d.mail.gandi.net (Postfix) with ESMTPSA id 0D17BE0018;
+ Wed, 19 Jun 2019 09:47:26 +0000 (UTC)
+From: Maxime Ripard <maxime.ripard@bootlin.com>
+To: Mark Rutland <mark.rutland@arm.com>, Rob Herring <robh+dt@kernel.org>,
+ Frank Rowand <frowand.list@gmail.com>,
+ "David S . Miller" <davem@davemloft.net>, Chen-Yu Tsai <wens@csie.org>,
+ Maxime Ripard <maxime.ripard@bootlin.com>
+Subject: [PATCH v3 01/16] dt-bindings: net: Add YAML schemas for the generic
+ Ethernet options
+Date: Wed, 19 Jun 2019 11:47:10 +0200
+Message-Id: <27aeb33cf5b896900d5d11bd6957eda268014f0c.1560937626.git-series.maxime.ripard@bootlin.com>
+X-Mailer: git-send-email 2.21.0
 MIME-Version: 1.0
-X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190619_024358_113235_61C3A60C 
-X-CRM114-Status: GOOD (  29.02  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190619_024745_328258_ECBACBF1 
+X-CRM114-Status: GOOD (  25.04  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [216.200.240.184 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [217.70.183.196 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -75,316 +62,390 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Rob Herring <robh@kernel.org>, srv_heupstream <srv_heupstream@mediatek.com>,
- James Liao <jamesjj.liao@mediatek.com>, lkml <linux-kernel@vger.kernel.org>,
- Fan Chen <fan.chen@mediatek.com>,
- "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
- Matthias Brugger <matthias.bgg@gmail.com>,
- linux-arm Mailing List <linux-arm-kernel@lists.infradead.org>
+Cc: Rob Herring <robh@kernel.org>, devicetree@vger.kernel.org,
+ Florian Fainelli <f.fainelli@gmail.com>,
+ Alexandre Torgue <alexandre.torgue@st.com>, Andrew Lunn <andrew@lunn.ch>,
+ =?UTF-8?q?Antoine=20T=C3=A9nart?= <antoine.tenart@bootlin.com>,
+ netdev@vger.kernel.org, Maxime Chevallier <maxime.chevallier@bootlin.com>,
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org,
+ Heiner Kallweit <hkallweit1@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, 2019-03-21 at 13:57 +0800, Nicolas Boichat wrote:
-> On Tue, Mar 19, 2019 at 4:02 PM Weiyi Lu <weiyi.lu@mediatek.com> wrote:
-> >
-> > Both MT8183 & MT6765 have more control steps of bus protection
-> > than previous project. And there add more bus protection registers
-> > reside at infracfg & smi-common. Also add new APIs for multiple
-> > step bus protection control with more customize arguments.
-> >
-> > Signed-off-by: Weiyi Lu <weiyi.lu@mediatek.com>
-> > ---
-> >  drivers/soc/mediatek/Makefile           |  2 +-
-> >  drivers/soc/mediatek/mtk-scpsys-ext.c   | 99 +++++++++++++++++++++++++
-> >  drivers/soc/mediatek/mtk-scpsys.c       | 24 ++++++
-> >  include/linux/soc/mediatek/scpsys-ext.h | 39 ++++++++++
-> >  4 files changed, 163 insertions(+), 1 deletion(-)
-> >  create mode 100644 drivers/soc/mediatek/mtk-scpsys-ext.c
-> >  create mode 100644 include/linux/soc/mediatek/scpsys-ext.h
-> >
-> > diff --git a/drivers/soc/mediatek/Makefile b/drivers/soc/mediatek/Makefile
-> > index 64ce5eeaba32..b9dbad6b12f9 100644
-> > --- a/drivers/soc/mediatek/Makefile
-> > +++ b/drivers/soc/mediatek/Makefile
-> > @@ -1,4 +1,4 @@
-> >  obj-$(CONFIG_MTK_CMDQ) += mtk-cmdq-helper.o
-> > -obj-$(CONFIG_MTK_INFRACFG) += mtk-infracfg.o
-> > +obj-$(CONFIG_MTK_INFRACFG) += mtk-infracfg.o mtk-scpsys-ext.o
-> >  obj-$(CONFIG_MTK_PMIC_WRAP) += mtk-pmic-wrap.o
-> >  obj-$(CONFIG_MTK_SCPSYS) += mtk-scpsys.o
-> > diff --git a/drivers/soc/mediatek/mtk-scpsys-ext.c b/drivers/soc/mediatek/mtk-scpsys-ext.c
-> > new file mode 100644
-> > index 000000000000..f630edb2f65d
-> > --- /dev/null
-> > +++ b/drivers/soc/mediatek/mtk-scpsys-ext.c
-> > @@ -0,0 +1,99 @@
-> > +// SPDX-License-Identifier: GPL-2.0
-> > +/*
-> > + * Copyright (c) 2018 MediaTek Inc.
-> > + * Author: Owen Chen <Owen.Chen@mediatek.com>
-> > + */
-> > +#include <linux/ktime.h>
-> > +#include <linux/mfd/syscon.h>
-> > +#include <linux/of_device.h>
-> > +#include <linux/regmap.h>
-> > +#include <linux/soc/mediatek/scpsys-ext.h>
-> > +
-> > +#define MTK_POLL_DELAY_US   10
-> > +#define MTK_POLL_TIMEOUT    USEC_PER_SEC
-> > +
-> > +static int set_bus_protection(struct regmap *map, u32 mask, u32 ack_mask,
-> > +               u32 reg_set, u32 reg_sta, u32 reg_en)
-> > +{
-> > +       u32 val;
-> > +
-> > +       if (reg_set)
-> > +               regmap_write(map, reg_set, mask);
-> > +       else
-> > +               regmap_update_bits(map, reg_en, mask, mask);
-> > +
-> > +       return regmap_read_poll_timeout(map, reg_sta,
-> > +                       val, (val & ack_mask) == ack_mask,
-> > +                       MTK_POLL_DELAY_US, MTK_POLL_TIMEOUT);
-> > +}
-> > +
-> > +static int clear_bus_protection(struct regmap *map, u32 mask, u32 ack_mask,
-> > +               u32 reg_clr, u32 reg_sta, u32 reg_en)
-> > +{
-> > +       u32 val;
-> > +
-> > +       if (reg_clr)
-> > +               regmap_write(map, reg_clr, mask);
-> > +       else
-> > +               regmap_update_bits(map, reg_en, mask, 0);
-> > +
-> > +       return regmap_read_poll_timeout(map, reg_sta,
-> > +                       val, !(val & ack_mask),
-> > +                       MTK_POLL_DELAY_US, MTK_POLL_TIMEOUT);
-> > +}
-> > +
-> > +int mtk_scpsys_ext_set_bus_protection(const struct bus_prot *bp_table,
-> > +       struct regmap *infracfg, struct regmap *smi_common)
-> > +{
-> > +       int i;
-> > +
-> > +       for (i = 0; i < MAX_STEPS && bp_table[i].mask; i++) {
-> > +               struct regmap *map;
-> > +               int ret;
-> > +
-> > +               if (bp_table[i].type == IFR_TYPE)
-> > +                       map = infracfg;
-> > +               else if (bp_table[i].type == SMI_TYPE)
-> > +                       map = smi_common;
-> > +               else
-> > +                       return -EINVAL;
-> > +
-> > +               ret = set_bus_protection(map,
-> > +                               bp_table[i].mask, bp_table[i].mask,
-> > +                               bp_table[i].set_ofs, bp_table[i].sta_ofs,
-> > +                               bp_table[i].en_ofs);
-> > +
-> > +               if (ret)
-> > +                       return ret;
-> 
-> Should you undo the rest of the operations and clear bus protection on
-> the ones that were already enabled?
-> 
+The Ethernet controllers have a good number of generic options that can be
+needed in a device tree. Add a YAML schemas for those.
 
-Actually we assume all bus protection operations need to be done
-successfully, undo might not be a very useful error handling here. But
-I'll consider it carefully.
+Reviewed-by: Rob Herring <robh@kernel.org>
+Signed-off-by: Maxime Ripard <maxime.ripard@bootlin.com>
 
+---
 
-> > +       }
-> > +
-> > +       return 0;
-> > +}
-> > +
-> > +int mtk_scpsys_ext_clear_bus_protection(const struct bus_prot *bp_table,
-> > +       struct regmap *infracfg, struct regmap *smi_common)
-> > +{
-> > +       int i;
-> > +
-> > +       for (i = MAX_STEPS - 1; i >= 0; i--) {
-> 
-> So when you set protection, you stop at the first bp_table[i].mask ==
-> 0, but when you clear it, you call clear_bus_protection for those, as
-> well. You should just skip over the ones when bp_table[i].mask == 0?
-> 
-> e.g.
-> if (!bp_table[i].mask)
->    continue;
-> 
+Changes from v2:
+  - Add back the deprecated properties using the deprecated keyword
 
-I'll use the idea of INVALID_TYPE = 0 to fix.
+Changes from v1:
+  - Use an enum for phy-connection-types
+  - Validate the items for the fixed-link array
+  - Set the number of valid items for link-gpios to 1
+  - Removed deprecated properties (phy-mode, phy, phy-device)
+---
+ Documentation/devicetree/bindings/net/ethernet-controller.yaml | 204 +++++++-
+ Documentation/devicetree/bindings/net/ethernet.txt             |  69 +--
+ Documentation/devicetree/bindings/net/fixed-link.txt           |  55 +--
+ 3 files changed, 206 insertions(+), 122 deletions(-)
+ create mode 100644 Documentation/devicetree/bindings/net/ethernet-controller.yaml
 
-> > +               struct regmap *map;
-> > +               int ret;
-> > +
-> > +               if (bp_table[i].type == IFR_TYPE)
-> > +                       map = infracfg;
-> > +               else if (bp_table[i].type == SMI_TYPE)
-> > +                       map = smi_common;
-> > +               else
-> > +                       return -EINVAL;
-> > +
-> > +               ret = clear_bus_protection(map,
-> > +                               bp_table[i].mask, bp_table[i].clr_ack_mask,
-> > +                               bp_table[i].clr_ofs, bp_table[i].sta_ofs,
-> > +                               bp_table[i].en_ofs);
-> > +
-> > +               if (ret)
-> > +                       return ret;
-> 
-> Similar question, is it ok to just abort? Or should you try to clear
-> the protection on all others, too?
-> 
-> > +       }
-> > +
-> > +       return 0;
-> > +}
-> > diff --git a/drivers/soc/mediatek/mtk-scpsys.c b/drivers/soc/mediatek/mtk-scpsys.c
-> > index c6360de4e41e..181bf7bce591 100644
-> > --- a/drivers/soc/mediatek/mtk-scpsys.c
-> > +++ b/drivers/soc/mediatek/mtk-scpsys.c
-> > @@ -12,6 +12,7 @@
-> >  #include <linux/pm_domain.h>
-> >  #include <linux/regulator/consumer.h>
-> >  #include <linux/soc/mediatek/infracfg.h>
-> > +#include <linux/soc/mediatek/scpsys-ext.h>
-> >
-> >  #include <dt-bindings/power/mt2701-power.h>
-> >  #include <dt-bindings/power/mt2712-power.h>
-> > @@ -121,6 +122,7 @@ static const char * const clk_names[] = {
-> >   * @basic_clk_name: provide the same purpose with field "clk_id"
-> >   *                  by declaring basic clock prefix name rather than clk_id.
-> >   * @caps: The flag for active wake-up action.
-> > + * @bp_table: The mask table for multiple step bus protection.
-> >   */
-> >  struct scp_domain_data {
-> >         const char *name;
-> > @@ -132,6 +134,7 @@ struct scp_domain_data {
-> >         enum clk_id clk_id[MAX_CLKS];
-> >         const char *basic_clk_name[MAX_CLKS];
-> >         u8 caps;
-> > +       struct bus_prot bp_table[MAX_STEPS];
-> >  };
-> >
-> >  struct scp;
-> > @@ -155,6 +158,7 @@ struct scp {
-> >         struct device *dev;
-> >         void __iomem *base;
-> >         struct regmap *infracfg;
-> > +       struct regmap *smi_common;
-> >         struct scp_ctrl_reg ctrl_reg;
-> >         bool bus_prot_reg_update;
-> >  };
-> > @@ -291,6 +295,10 @@ static int scpsys_bus_protect_enable(struct scp_domain *scpd)
-> >                 ret = mtk_infracfg_set_bus_protection(scp->infracfg,
-> >                                 scpd->data->bus_prot_mask,
-> >                                 scp->bus_prot_reg_update);
-> > +       } else if (scpd->data->bp_table[0].mask) {
-> > +               ret = mtk_scpsys_ext_set_bus_protection(scpd->data->bp_table,
-> > +                               scp->infracfg,
-> > +                               scp->smi_common);
-> >         }
-> >
-> >         return ret;
-> > @@ -305,6 +313,11 @@ static int scpsys_bus_protect_disable(struct scp_domain *scpd)
-> >                 ret = mtk_infracfg_clear_bus_protection(scp->infracfg,
-> >                                 scpd->data->bus_prot_mask,
-> >                                 scp->bus_prot_reg_update);
-> > +       } else if (scpd->data->bp_table[0].mask) {
-> > +               ret = mtk_scpsys_ext_clear_bus_protection(
-> > +                               scpd->data->bp_table,
-> > +                               scp->infracfg,
-> > +                               scp->smi_common);
-> >         }
-> >
-> >         return ret;
-> > @@ -475,6 +488,17 @@ static struct scp *init_scp(struct platform_device *pdev,
-> >                 return ERR_CAST(scp->infracfg);
-> >         }
-> >
-> > +       scp->smi_common = syscon_regmap_lookup_by_phandle(pdev->dev.of_node,
-> > +                       "smi_comm");
-> > +
-> > +       if (scp->smi_common == ERR_PTR(-ENODEV)) {
-> > +               scp->smi_common = NULL;
-> > +       } else if (IS_ERR(scp->smi_common)) {
-> > +               dev_err(&pdev->dev, "Cannot find smi_common controller: %ld\n",
-> > +                               PTR_ERR(scp->smi_common));
-> > +               return ERR_CAST(scp->smi_common);
-> > +       }
-> > +
-> >         for (i = 0; i < num; i++) {
-> >                 struct scp_domain *scpd = &scp->domains[i];
-> >                 const struct scp_domain_data *data = &scp_domain_data[i];
-> > diff --git a/include/linux/soc/mediatek/scpsys-ext.h b/include/linux/soc/mediatek/scpsys-ext.h
-> > new file mode 100644
-> > index 000000000000..d0ed295c88a7
-> > --- /dev/null
-> > +++ b/include/linux/soc/mediatek/scpsys-ext.h
-> > @@ -0,0 +1,39 @@
-> > +/* SPDX-License-Identifier: GPL-2.0 */
-> > +#ifndef __SOC_MEDIATEK_SCPSYS_EXT_H
-> > +#define __SOC_MEDIATEK_SCPSYS_EXT_H
-> > +
-> > +#define MAX_STEPS      4
-> > +
-> > +#define BUS_PROT(_type, _set_ofs, _clr_ofs,                    \
-> > +               _en_ofs, _sta_ofs, _mask, _clr_ack_mask) {      \
-> > +               .type = _type,                                  \
-> > +               .set_ofs = _set_ofs,                            \
-> > +               .clr_ofs = _clr_ofs,                            \
-> > +               .en_ofs = _en_ofs,                              \
-> > +               .sta_ofs = _sta_ofs,                            \
-> > +               .mask = _mask,                                  \
-> > +               .clr_ack_mask = _clr_ack_mask,                  \
-> > +       }
-> > +
-> > +enum regmap_type {
-> 
-> Maybe add INVALID_TYPE = 0, so that you can skip over those when
-> looping over them, instead of checking if mask is 0?
-> 
+diff --git a/Documentation/devicetree/bindings/net/ethernet-controller.yaml b/Documentation/devicetree/bindings/net/ethernet-controller.yaml
+new file mode 100644
+index 000000000000..501ea658b319
+--- /dev/null
++++ b/Documentation/devicetree/bindings/net/ethernet-controller.yaml
+@@ -0,0 +1,204 @@
++# SPDX-License-Identifier: GPL-2.0
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/net/ethernet-controller.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
++
++title: Ethernet Controller Generic Binding
++
++maintainers:
++  - David S. Miller <davem@davemloft.net>
++
++properties:
++  $nodename:
++    pattern: "^ethernet(@.*)?$"
++
++  local-mac-address:
++    allOf:
++      - $ref: /schemas/types.yaml#definitions/uint8-array
++      - minItems: 6
++        maxItems: 6
++    description:
++      Specifies the MAC address that was assigned to the network device.
++
++  mac-address:
++    allOf:
++      - $ref: /schemas/types.yaml#definitions/uint8-array
++      - minItems: 6
++        maxItems: 6
++    description:
++      Specifies the MAC address that was last used by the boot
++      program; should be used in cases where the MAC address assigned
++      to the device by the boot program is different from the
++      local-mac-address property.
++
++  max-frame-size:
++    $ref: /schemas/types.yaml#definitions/uint32
++    description:
++      Maximum transfer unit (IEEE defined MTU), rather than the
++      maximum frame size (there\'s contradiction in the Devicetree
++      Specification).
++
++  max-speed:
++    $ref: /schemas/types.yaml#definitions/uint32
++    description:
++      Specifies maximum speed in Mbit/s supported by the device.
++
++  nvmem-cells:
++    maxItems: 1
++    description:
++      Reference to an nvmem node for the MAC address
++
++  nvmem-cells-names:
++    const: mac-address
++
++  phy-connection-type:
++    description:
++      Operation mode of the PHY interface
++    enum:
++      # There is not a standard bus between the MAC and the PHY,
++      # something proprietary is being used to embed the PHY in the
++      # MAC.
++      - internal
++      - mii
++      - gmii
++      - sgmii
++      - qsgmii
++      - tbi
++      - rev-mii
++      - rmii
++
++      # RX and TX delays are added by the MAC when required
++      - rgmii
++
++      # RGMII with internal RX and TX delays provided by the PHY,
++      # the MAC should not add the RX or TX delays in this case
++      - rgmii-id
++
++      # RGMII with internal RX delay provided by the PHY, the MAC
++      # should not add an RX delay in this case
++      - rgmii-rxid
++
++      # RGMII with internal TX delay provided by the PHY, the MAC
++      # should not add an TX delay in this case
++      - rgmii-txid
++      - rtbi
++      - smii
++      - xgmii
++      - trgmii
++      - 1000base-x
++      - 2500base-x
++      - rxaui
++      - xaui
++
++      # 10GBASE-KR, XFI, SFI
++      - 10gbase-kr
++      - usxgmii
++
++  phy-mode:
++    $ref: "#/properties/phy-connection-type"
++    deprecated: true
++
++  phy-handle:
++    $ref: /schemas/types.yaml#definitions/phandle
++    description:
++      Specifies a reference to a node representing a PHY device.
++
++  phy:
++    $ref: "#/properties/phy-handle"
++    deprecated: true
++
++  phy-device:
++    $ref: "#/properties/phy-handle"
++    deprecated: true
++
++  rx-fifo-depth:
++    $ref: /schemas/types.yaml#definitions/uint32
++    description:
++      The size of the controller\'s receive fifo in bytes. This is used
++      for components that can have configurable receive fifo sizes,
++      and is useful for determining certain configuration settings
++      such as flow control thresholds.
++
++  tx-fifo-depth:
++    $ref: /schemas/types.yaml#definitions/uint32
++    description:
++      The size of the controller\'s transmit fifo in bytes. This
++      is used for components that can have configurable fifo sizes.
++
++  managed:
++    allOf:
++      - $ref: /schemas/types.yaml#definitions/string
++      - default: auto
++        enum:
++          - auto
++          - in-band-status
++    description:
++      Specifies the PHY management type. If auto is set and fixed-link
++      is not specified, it uses MDIO for management.
++
++  fixed-link:
++    allOf:
++      - if:
++          type: array
++        then:
++          minItems: 1
++          maxItems: 1
++          items:
++            items:
++              - minimum: 0
++                maximum: 31
++                description:
++                  Emulated PHY ID, choose any but unique to the all
++                  specified fixed-links
++
++              - enum: [0, 1]
++                description:
++                  Duplex configuration. 0 for half duplex or 1 for
++                  full duplex
++
++              - enum: [10, 100, 1000]
++                description:
++                  Link speed in Mbits/sec.
++
++              - enum: [0, 1]
++                description:
++                  Pause configuration. 0 for no pause, 1 for pause
++
++              - enum: [0, 1]
++                description:
++                  Asymmetric pause configuration. 0 for no asymmetric
++                  pause, 1 for asymmetric pause
++
++
++      - if:
++          type: object
++        then:
++          properties:
++            speed:
++              allOf:
++                - $ref: /schemas/types.yaml#definitions/uint32
++                - enum: [10, 100, 1000]
++              description:
++                Link speed.
++
++            full-duplex:
++              $ref: /schemas/types.yaml#definitions/flag
++              description:
++                Indicates that full-duplex is used. When absent, half
++                duplex is assumed.
++
++            asym-pause:
++              $ref: /schemas/types.yaml#definitions/flag
++              description:
++                Indicates that asym_pause should be enabled.
++
++            link-gpios:
++              maxItems: 1
++              description:
++                GPIO to determine if the link is up
++
++          required:
++            - speed
++
++...
+diff --git a/Documentation/devicetree/bindings/net/ethernet.txt b/Documentation/devicetree/bindings/net/ethernet.txt
+index 5475682bf06e..5df413d01be2 100644
+--- a/Documentation/devicetree/bindings/net/ethernet.txt
++++ b/Documentation/devicetree/bindings/net/ethernet.txt
+@@ -1,68 +1 @@
+-The following properties are common to the Ethernet controllers:
+-
+-NOTE: All 'phy*' properties documented below are Ethernet specific. For the
+-generic PHY 'phys' property, see
+-Documentation/devicetree/bindings/phy/phy-bindings.txt.
+-
+-- mac-address: array of 6 bytes, specifies the MAC address that was last used by
+-  the boot program; should be used in cases where the MAC address assigned to
+-  the device by the boot program is different from the "local-mac-address"
+-  property;
+-- local-mac-address: array of 6 bytes, specifies the MAC address that was
+-  assigned to the network device;
+-- nvmem-cells: phandle, reference to an nvmem node for the MAC address
+-- nvmem-cell-names: string, should be "mac-address" if nvmem is to be used
+-- max-speed: number, specifies maximum speed in Mbit/s supported by the device;
+-- max-frame-size: number, maximum transfer unit (IEEE defined MTU), rather than
+-  the maximum frame size (there's contradiction in the Devicetree
+-  Specification).
+-- phy-mode: string, operation mode of the PHY interface. This is now a de-facto
+-  standard property; supported values are:
+-  * "internal" (Internal means there is not a standard bus between the MAC and
+-     the PHY, something proprietary is being used to embed the PHY in the MAC.)
+-  * "mii"
+-  * "gmii"
+-  * "sgmii"
+-  * "qsgmii"
+-  * "tbi"
+-  * "rev-mii"
+-  * "rmii"
+-  * "rgmii" (RX and TX delays are added by the MAC when required)
+-  * "rgmii-id" (RGMII with internal RX and TX delays provided by the PHY, the
+-     MAC should not add the RX or TX delays in this case)
+-  * "rgmii-rxid" (RGMII with internal RX delay provided by the PHY, the MAC
+-     should not add an RX delay in this case)
+-  * "rgmii-txid" (RGMII with internal TX delay provided by the PHY, the MAC
+-     should not add an TX delay in this case)
+-  * "rtbi"
+-  * "smii"
+-  * "xgmii"
+-  * "trgmii"
+-  * "1000base-x",
+-  * "2500base-x",
+-  * "rxaui"
+-  * "xaui"
+-  * "10gbase-kr" (10GBASE-KR, XFI, SFI)
+-  * "usxgmii"
+-- phy-connection-type: the same as "phy-mode" property but described in the
+-  Devicetree Specification;
+-- phy-handle: phandle, specifies a reference to a node representing a PHY
+-  device; this property is described in the Devicetree Specification and so
+-  preferred;
+-- phy: the same as "phy-handle" property, not recommended for new bindings.
+-- phy-device: the same as "phy-handle" property, not recommended for new
+-  bindings.
+-- rx-fifo-depth: the size of the controller's receive fifo in bytes. This
+-  is used for components that can have configurable receive fifo sizes,
+-  and is useful for determining certain configuration settings such as
+-  flow control thresholds.
+-- tx-fifo-depth: the size of the controller's transmit fifo in bytes. This
+-  is used for components that can have configurable fifo sizes.
+-- managed: string, specifies the PHY management type. Supported values are:
+-  "auto", "in-band-status". "auto" is the default, it usess MDIO for
+-  management if fixed-link is not specified.
+-
+-Child nodes of the Ethernet controller are typically the individual PHY devices
+-connected via the MDIO bus (sometimes the MDIO bus controller is separate).
+-They are described in the phy.txt file in this same directory.
+-For non-MDIO PHY management see fixed-link.txt.
++This file has moved to ethernet-controller.yaml.
+diff --git a/Documentation/devicetree/bindings/net/fixed-link.txt b/Documentation/devicetree/bindings/net/fixed-link.txt
+index ec5d889fe3d8..5df413d01be2 100644
+--- a/Documentation/devicetree/bindings/net/fixed-link.txt
++++ b/Documentation/devicetree/bindings/net/fixed-link.txt
+@@ -1,54 +1 @@
+-Fixed link Device Tree binding
+-------------------------------
+-
+-Some Ethernet MACs have a "fixed link", and are not connected to a
+-normal MDIO-managed PHY device. For those situations, a Device Tree
+-binding allows to describe a "fixed link".
+-
+-Such a fixed link situation is described by creating a 'fixed-link'
+-sub-node of the Ethernet MAC device node, with the following
+-properties:
+-
+-* 'speed' (integer, mandatory), to indicate the link speed. Accepted
+-  values are 10, 100 and 1000
+-* 'full-duplex' (boolean, optional), to indicate that full duplex is
+-  used. When absent, half duplex is assumed.
+-* 'pause' (boolean, optional), to indicate that pause should be
+-  enabled.
+-* 'asym-pause' (boolean, optional), to indicate that asym_pause should
+-  be enabled.
+-* 'link-gpios' ('gpio-list', optional), to indicate if a gpio can be read
+-  to determine if the link is up.
+-
+-Old, deprecated 'fixed-link' binding:
+-
+-* A 'fixed-link' property in the Ethernet MAC node, with 5 cells, of the
+-  form <a b c d e> with the following accepted values:
+-  - a: emulated PHY ID, choose any but but unique to the all specified
+-    fixed-links, from 0 to 31
+-  - b: duplex configuration: 0 for half duplex, 1 for full duplex
+-  - c: link speed in Mbits/sec, accepted values are: 10, 100 and 1000
+-  - d: pause configuration: 0 for no pause, 1 for pause
+-  - e: asymmetric pause configuration: 0 for no asymmetric pause, 1 for
+-    asymmetric pause
+-
+-Examples:
+-
+-ethernet@0 {
+-	...
+-	fixed-link {
+-	      speed = <1000>;
+-	      full-duplex;
+-	};
+-	...
+-};
+-
+-ethernet@1 {
+-	...
+-	fixed-link {
+-	      speed = <1000>;
+-	      pause;
+-	      link-gpios = <&gpio0 12 GPIO_ACTIVE_HIGH>;
+-	};
+-	...
+-};
++This file has moved to ethernet-controller.yaml.
 
-Thanks for advise. I'll use it in next version.
-
-> > +       IFR_TYPE,
-> > +       SMI_TYPE,
-> > +       MAX_REGMAP_TYPE,
-> 
-> This is not used, right? Do you really need it?
-> 
-
-I'll remove it.
-
-> > +};
-> > +
-> > +struct bus_prot {
-> > +       enum regmap_type type;
-> > +       u32 set_ofs;
-> > +       u32 clr_ofs;
-> > +       u32 en_ofs;
-> > +       u32 sta_ofs;
-> > +       u32 mask;
-> > +       u32 clr_ack_mask;
-> > +};
-> > +
-> > +int mtk_scpsys_ext_set_bus_protection(const struct bus_prot *bp_table,
-> > +       struct regmap *infracfg, struct regmap *smi_common);
-> > +int mtk_scpsys_ext_clear_bus_protection(const struct bus_prot *bp_table,
-> > +       struct regmap *infracfg, struct regmap *smi_common);
-> > +
-> > +#endif /* __SOC_MEDIATEK_SCPSYS_EXT_H */
-> > --
-> > 2.18.0
-> >
-
-
+base-commit: f08776cae7f5ab26f0f239b9ec58aa60fdbb9a1a
+-- 
+git-series 0.9.1
 
 _______________________________________________
 linux-arm-kernel mailing list
