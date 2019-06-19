@@ -2,75 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 087364BFA1
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Jun 2019 19:30:27 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id ACC544BFA5
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Jun 2019 19:31:16 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=Ii0Uv6CG/u8vzDT8Owx2o4o9XXiSedk0fM9yPdqNtaM=; b=IMN
-	qE8p4zV5MuaPqNU2XBTgushgVougsary7V8oa1ROF/MM6vEX9b6iFY+FymZT8F4RMdv2ibvg5HvQj
-	KEJ45k/1YyCAKsqnIFT70Lu6fAtmPflsKTWRgWzZEbmx9e58qIJqFtF6JydtoShGtWiIEfuV4y4jQ
-	zxj/P+tObb/v1pOV3as/jtsLZTzD8L3qnNluRPPHO1whb7cdv/j3phDMfledkNLxF7cjdtv0P3tsM
-	Y/S+wvCimwJ3ZuPb9c+ON9Rm0MisSI9+z68Ngw6qfROG4FmkXWdvQPXRsgK3ke+KQeSOlYvYABEEd
-	gokc0yv5YAP+SXatlUrLw6m8HVIrr8Q==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=+sKPTS8Q9g1ZQ9vTc5BSH+taZi9bJ3C4umPB6ZjOX18=; b=tnEUGFnGTJHxRkzvX+SMJ0ZkLF
+	zy9+jJ69aldMxTa97vYuL8od+DYHF22/OqPsx1uhJhqjxUrp7wM2w7zepf7HZBY+LXNr9LzXR9adp
+	3E2Ugc55AdyeiA8slmQEuvESd5QxWhO7+gnblLgxIsf79TGU2yw9Q5gWaOf9brytvk/WK9OSJ5ezy
+	d1MRkzesEWMRvXZh9CU5yOF6prI7H5xlyFuN+M2h2Y7dfQiJopAK2rBOJ61lyODemdreAgYU3lqxn
+	B8ljNtGX+bfu6A7bi9rltMa09Djw80z8OmTGAquAsP9jg3XZ8Co9wQwzOAvV3WQc6PO+MPKxLLXCI
+	Vub4mf0g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hdePg-00072f-6b; Wed, 19 Jun 2019 17:30:24 +0000
-Received: from mail-pg1-x536.google.com ([2607:f8b0:4864:20::536])
+	id 1hdeQQ-0000S9-TI; Wed, 19 Jun 2019 17:31:10 +0000
+Received: from mail-pg1-x541.google.com ([2607:f8b0:4864:20::541])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hdeP9-000719-VW
- for linux-arm-kernel@lists.infradead.org; Wed, 19 Jun 2019 17:29:53 +0000
-Received: by mail-pg1-x536.google.com with SMTP id f25so34682pgv.10
+ id 1hdePB-00071W-D1
+ for linux-arm-kernel@lists.infradead.org; Wed, 19 Jun 2019 17:29:54 +0000
+Received: by mail-pg1-x541.google.com with SMTP id v11so48908pgl.5
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 19 Jun 2019 10:29:51 -0700 (PDT)
+ Wed, 19 Jun 2019 10:29:53 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=from:to:cc:subject:date:message-id;
- bh=oP0aTjMbfF7JmtnE+SXwgb+qHNolCe1d9zIVqsRs9Ng=;
- b=sR/yZJ5o6p13zsBxCBQo1oUQjWtK8kA7ApzzkKr+9DSVhD6uf/331yYwByysZ7iBtK
- LH8n6U0i8A3u894rv8Et2+TeQKqksin60eD9GVj0t8CJMhQItyDhlnCH7MvoU8BYYeaj
- 5CPiqQ+G0MXPLInV5/I775b89xaoRcPAQpvds73KgCv8H+2Rr9V7QsN/uhSdZ3RIn4WM
- +bMaulE/vIEF1ttSC12Fa/X2P77ag4Y86yOCLDNY8gUqo0aOUO2xuRiW0sx8PptFRzx4
- LCMtcRfgNXlWpw7q64OMGQJ4saRUMFlyJWklsOVzKU7oEf/7CsRoDDPOaC9O1Tqt+hn6
- WUHg==
+ h=from:to:cc:subject:date:message-id:in-reply-to:references;
+ bh=qltR8cfVnuvR/vnmhmjDlPUX6JMRjkKXDYkgNNI9oR0=;
+ b=bDdm8XwtacWvLf9KoGjr7mQPFlpr7qp3Yev9o7XnudlvpCMGwMGpIFUq3c8jJcX+qS
+ zSxxUknUKriKvi494yk8jwab6c9/Ns50uY3EQ+S+T27UI/kbDQ6co6lUf72e6I0X6Ag8
+ frX6C2a1L8sHJpQ5/CBQBnks05yJod2C1alZ0Wsduu92TXP4cxg3nVE7TWTPNDGFmHLc
+ Rr6dyH014fyN/eP/hFQXaOuKdBlxQKhuolExIKolytddMEEl7Ld1axfMTCdoIhU3rYZM
+ bSNJwWEnMn3Grz0dpZDJ8YiwFBFaL4LVEaudQMqVFaXN0mTQaj7M4Udvp+o3j01xjo6X
+ ZLZQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=oP0aTjMbfF7JmtnE+SXwgb+qHNolCe1d9zIVqsRs9Ng=;
- b=uiTz3bZ3u5qpkH6ROvbtkM4qCIIJUcZuJH5MTHPJSuwkoFP2h6+NHCTQjtXCfW8dcH
- dNdLNqBMkWn+Sr9A8FeAlBjPogKSxKkjP+cT7Hg5moGqZ7ScRZXTKub7mU9vRPQAup8X
- eMIZR+Ep2jr867mf59CAmMtMaPfNdrXvWz1Rkfmnq/R8XQ7tMBFxTnKEi2gAJoyXxEHa
- enB3w2YPTGrwxwCD6A3eU1TEspHP5cJqQLtagLO1t2r07l98SpIpn5Vr6vkmL5yI3JUD
- 9aOBdn56fF8adSQVhkOYsEiqsCl+Ko9JeRYwcvQr5UFiaHml1CgEbK532ez/2syNVFIV
- Wb9A==
-X-Gm-Message-State: APjAAAW9YH4tyBR1db26Wjdwra0bZQW9UqoRntQ/tb51OiXT4jSSNI3b
- YrB60zH2jyOrGzxuW3t0fDqx+jzHm33wkw==
-X-Google-Smtp-Source: APXvYqxfFptsy1QCgQSGQIgT0hCRp3MNgFkBIfvnSN24/qxBZNLggQO+XPbbMhSBWOpRX+1lfC8tjw==
-X-Received: by 2002:a65:44c8:: with SMTP id g8mr8706586pgs.443.1560965391078; 
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references;
+ bh=qltR8cfVnuvR/vnmhmjDlPUX6JMRjkKXDYkgNNI9oR0=;
+ b=XftsTxe4/MGq9n+IbsOiPcX5R6XrsmY2R+S9v/BjLocqGKdJGnj2gFRIrK5C2GJVMx
+ fBzItyaU4qzp+S4oziJKkwN5jpYHAZIZN60AWf6HiW0fZpmnL9Wv/UVHp9aDUXfGs5vh
+ 49bIyeJiDt8RwabbyB2D6vEKqDfYZSwP0Rs04z7Ov5Ry9ynIf4J/KMS/Ux9/L/FIwsX+
+ GjIABjX6A1valkr/P+qBuDsaZErTcmizw4GG0xDR/k10SnIPB7zp7M3CaRWP2lHn0wbO
+ BqassVD0dccYsy1VcxLgUwf3VDusceEVMoMXrM/l4cHRZD3/hMXDb0c8I8nV5Ypmd8nq
+ 1sIA==
+X-Gm-Message-State: APjAAAWKdxXtJ/QwtfKJtpjttxuUziH51opFLywYpJY/CQDz/peVFfwS
+ CdJo1iMRyfV4QTQY5pml8tjKTg==
+X-Google-Smtp-Source: APXvYqw9TAAW6kjBKuo7BtHsWKko/yqBtDqxA8WyxomxQQtoGcAXnIVVNhx2R4/E1WvpNDKiAMm2/A==
+X-Received: by 2002:a63:4e10:: with SMTP id c16mr8575609pgb.214.1560965391976; 
  Wed, 19 Jun 2019 10:29:51 -0700 (PDT)
 Received: from xps15.cg.shawcable.net (S0106002369de4dac.cg.shawcable.net.
  [68.147.8.254])
- by smtp.gmail.com with ESMTPSA id g2sm31348406pfb.95.2019.06.19.10.29.50
+ by smtp.gmail.com with ESMTPSA id g2sm31348406pfb.95.2019.06.19.10.29.51
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Wed, 19 Jun 2019 10:29:50 -0700 (PDT)
+ Wed, 19 Jun 2019 10:29:51 -0700 (PDT)
 From: Mathieu Poirier <mathieu.poirier@linaro.org>
 To: gregkh@linuxfoundation.org
-Subject: [PATCH 00/45] coresight: next v5.2-rc5
-Date: Wed, 19 Jun 2019 11:29:04 -0600
-Message-Id: <20190619172949.4522-1-mathieu.poirier@linaro.org>
+Subject: [PATCH 01/45] coresight: etb10: Properly set AUX buffer head in
+ snapshot mode
+Date: Wed, 19 Jun 2019 11:29:05 -0600
+Message-Id: <20190619172949.4522-2-mathieu.poirier@linaro.org>
 X-Mailer: git-send-email 2.17.1
+In-Reply-To: <20190619172949.4522-1-mathieu.poirier@linaro.org>
+References: <20190619172949.4522-1-mathieu.poirier@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190619_102952_046667_D93CCDB0 
-X-CRM114-Status: GOOD (  12.85  )
+X-CRM114-CacheID: sfid-20190619_102953_440245_B686C12B 
+X-CRM114-Status: GOOD (  13.36  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:536 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:541 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -99,102 +104,42 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Good morning,
+Unify amongst sink drivers how the AUX ring buffer head is communicated
+to user space.  That way the same algorithm in user space can be used to
+determine where the latest data is and how much of it to access.
 
-These are the patches I have collected for the 5.3 cycle.  Please consider
-having a look when you have the opportunity.
+Signed-off-by: Mathieu Poirier <mathieu.poirier@linaro.org>
+Reviewed-by: Suzuki K Poulose <suzuki.poulose@arm.com>
+Tested-by: Leo Yan <leo.yan@linaro.org>
+---
+ drivers/hwtracing/coresight/coresight-etb10.c | 13 +++++++------
+ 1 file changed, 7 insertions(+), 6 deletions(-)
 
-Applies cleanly on your char-misc-next branch (312d362c6ae4).
-
-Thanks,
-Mathieu
-
-Arnd Bergmann (1):
-  coresight: platform: add OF/APCI dependency
-
-Dan Carpenter (1):
-  coresight: Potential uninitialized variable in probe()
-
-Mathieu Poirier (6):
-  coresight: etb10: Properly set AUX buffer head in snapshot mode
-  coresight: tmc-etr: Properly set AUX buffer head in snapshot mode
-  coresight: tmc-etf: Properly set AUX buffer head in snapshot mode
-  coresight: tmc-etf: Fix snapshot mode update function
-  coresight: perf: Don't set the truncated flag in snapshot mode
-  coresight: Use coresight device names for sinks in PMU attribute
-
-Suzuki K Poulose (36):
-  coresight: funnel: Clean up device book keeping
-  coresight: replicator: Cleanup device tracking
-  coresight: tmc: Clean up device specific data
-  coresight: catu: Cleanup device specific data
-  coresight: tpiu: Clean up device specific data
-  coresight: stm: Cleanup device specific data
-  coresight: etm: Clean up device specific data
-  coresight: etb10: Clean up device specific data
-  coresight: Rename of_coresight to coresight-platform
-  coresight: etm3x: Rearrange cp14 access detection
-  coresight: stm: Rearrange probing the stimulus area
-  coresight: tmc-etr: Rearrange probing default buffer size
-  coresight: platform: Make memory allocation helper generic
-  coresight: Make sure device uses DT for obsolete compatible check
-  coresight: Introduce generic platform data helper
-  coresight: Make device to CPU mapping generic
-  coresight: Remove cpu field from platform data
-  coresight: Remove name from platform description
-  coresight: Cleanup coresight_remove_conns
-  coresight: Reuse platform data structure for connection tracking
-  coresight: Rearrange platform data probing
-  coresight: Add support for releasing platform specific data
-  coresight: platform: Use fwnode handle for device search
-  coresight: Use fwnode handle instead of device names
-  coresight: Use platform agnostic names
-  coresight: stm: ACPI support for parsing stimulus base
-  coresight: Support for ACPI bindings
-  coresight: acpi: Support for AMBA components
-  coresight: acpi: Support for platform devices
-  coresight: Add dummy definition for of_coresight_get_cpu()
-  coresight: tmc-etr: Do not call smp_processor_id() from preemptible
-  coresight: tmc-etr: alloc_perf_buf: Do not call smp_processor_id from
-    preemptible
-  coresight: tmc-etf: Do not call smp_processor_id from preemptible
-  coresight: etb10: Do not call smp_processor_id from preemptible
-  coresight: etm3x: Smatch: Fix potential NULL pointer dereference
-  coresight: tmc: Smatch: Fix potential NULL pointer dereference
-
-Wei Yongjun (1):
-  coresight: replicator: Add terminate entry for acpi_device_id tables
-
- drivers/acpi/acpi_amba.c                      |   9 +
- drivers/hwtracing/coresight/Kconfig           |   1 +
- drivers/hwtracing/coresight/Makefile          |   3 +-
- drivers/hwtracing/coresight/coresight-catu.c  |  40 +-
- drivers/hwtracing/coresight/coresight-catu.h  |   1 -
- .../hwtracing/coresight/coresight-cpu-debug.c |   3 +-
- drivers/hwtracing/coresight/coresight-etb10.c |  78 +-
- .../hwtracing/coresight/coresight-etm-perf.c  |   8 +-
- drivers/hwtracing/coresight/coresight-etm.h   |   6 +-
- .../coresight/coresight-etm3x-sysfs.c         |  12 +-
- drivers/hwtracing/coresight/coresight-etm3x.c |  46 +-
- drivers/hwtracing/coresight/coresight-etm4x.c |  37 +-
- drivers/hwtracing/coresight/coresight-etm4x.h |   2 -
- .../hwtracing/coresight/coresight-funnel.c    |  36 +-
- .../hwtracing/coresight/coresight-platform.c  | 815 ++++++++++++++++++
- drivers/hwtracing/coresight/coresight-priv.h  |   4 +
- .../coresight/coresight-replicator.c          |  43 +-
- drivers/hwtracing/coresight/coresight-stm.c   | 118 ++-
- .../hwtracing/coresight/coresight-tmc-etf.c   |  43 +-
- .../hwtracing/coresight/coresight-tmc-etr.c   |  80 +-
- drivers/hwtracing/coresight/coresight-tmc.c   |  96 ++-
- drivers/hwtracing/coresight/coresight-tmc.h   |   2 -
- drivers/hwtracing/coresight/coresight-tpiu.c  |  24 +-
- drivers/hwtracing/coresight/coresight.c       | 164 +++-
- drivers/hwtracing/coresight/of_coresight.c    | 297 -------
- include/linux/coresight.h                     |  61 +-
- 26 files changed, 1398 insertions(+), 631 deletions(-)
- create mode 100644 drivers/hwtracing/coresight/coresight-platform.c
- delete mode 100644 drivers/hwtracing/coresight/of_coresight.c
-
+diff --git a/drivers/hwtracing/coresight/coresight-etb10.c b/drivers/hwtracing/coresight/coresight-etb10.c
+index 4ee4c80a4354..60e753b1768d 100644
+--- a/drivers/hwtracing/coresight/coresight-etb10.c
++++ b/drivers/hwtracing/coresight/coresight-etb10.c
+@@ -548,13 +548,14 @@ static unsigned long etb_update_buffer(struct coresight_device *csdev,
+ 	writel_relaxed(0x0, drvdata->base + ETB_RAM_WRITE_POINTER);
+ 
+ 	/*
+-	 * In snapshot mode we have to update the handle->head to point
+-	 * to the new location.
++	 * In snapshot mode we simply increment the head by the number of byte
++	 * that were written.  User space function  cs_etm_find_snapshot() will
++	 * figure out how many bytes to get from the AUX buffer based on the
++	 * position of the head.
+ 	 */
+-	if (buf->snapshot) {
+-		handle->head = (cur * PAGE_SIZE) + offset;
+-		to_read = buf->nr_pages << PAGE_SHIFT;
+-	}
++	if (buf->snapshot)
++		handle->head += to_read;
++
+ 	__etb_enable_hw(drvdata);
+ 	CS_LOCK(drvdata->base);
+ out:
 -- 
 2.17.1
 
