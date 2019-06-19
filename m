@@ -2,111 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BC26E4BEE6
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Jun 2019 18:49:17 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5E5134BF79
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Jun 2019 19:19:35 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Ppv97+ylRUPcEgZJCZwUL0M/e51Y8kf2GAmcxdnkiWY=; b=Qtlm97epY41baM
-	Sd/bQSMsy5WmMwYDCvYvCxSydkhwTh344ThvRZ0ceC9RGJrdgHthgTX24ENZraE/JcsTfv14D4qzM
-	kZybycKjCa7WD7JD0Kx2ACY/1k7tzl1fXe7JSWpBdds9KqeGT3chmbEcp6HZHqujeI/8sAv4oWXvc
-	q1LjL7YudH4K3CMRof8UOoOeyebC18rnAt8MLHsQ2D0+ewEv9ex9/TzuSuEme3VfMJGqBvr/zyt5V
-	SXiRnVdQA3E+tEvOzWm9U/uiRTRlWyQo9PBsvHYYfp1trtjSZz8q75IH1w9XZIOZLlHUzQI3L8Vs7
-	t4ABNwIIoLT9vn44WJgQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=uMVp0w3ifCetLpdgFNzIxoY9RzqR4H4VYMYAlsCj3pM=; b=Q2AwGVugwTyGBd
+	tR9bOblPrCZT515U1kfN105VRaZPHRu61VHs3gkA8/CXd5obdwaHlg/1m8FhfD0DvtDSTwjI1M5On
+	zw8KdqvvsdDJbMeFHI7eGIw/BVJlnQlb9VLOsVll7mDCicpJwWCPggGbYYSd/VUbuAbeIlYSZmIlT
+	f7DZq7agt08IydTJdV3xZll3TyZo9UoMQH/mIpQp3DyDKHLNb69knExffjjU5kEKhS7s201MjKU41
+	4TpTdKfsRsmGhO0aNbZV6ueRBZgGoav92bdbeBRF9xD5Vo04GCsxtriifvV/fqzL+97w8V8yVMfZw
+	eYFplWHRFgIufjvFfVlg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hddlq-000733-4t; Wed, 19 Jun 2019 16:49:14 +0000
-Received: from aserp2120.oracle.com ([141.146.126.78])
+	id 1hdeF9-0002rp-7l; Wed, 19 Jun 2019 17:19:31 +0000
+Received: from mail-wr1-f68.google.com ([209.85.221.68])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hddlf-00072M-Mi
- for linux-arm-kernel@lists.infradead.org; Wed, 19 Jun 2019 16:49:05 +0000
-Received: from pps.filterd (aserp2120.oracle.com [127.0.0.1])
- by aserp2120.oracle.com (8.16.0.27/8.16.0.27) with SMTP id x5JGmaMG059359;
- Wed, 19 Jun 2019 16:48:44 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=oracle.com;
- h=subject : to : cc :
- references : from : message-id : date : mime-version : in-reply-to :
- content-type : content-transfer-encoding; s=corp-2018-07-02;
- bh=LsU3zeuc/mQbMeWhWbxSsUGJ/a+JywecUJTpLD/kSKk=;
- b=FFTbHZpNpzyDwT0Eazo9mrp8/3iEXjHoS/+pgViSDegRiIT56LXTiOpOiVuZY+ZQJp61
- m4sxzqaSIXQJ/SNqXXdUE75HtjKtsGvWt+m0angb4oDvjsPt3ChVFepvLTUMeYu2AmQA
- KOIThCjgEPdAHaZQr8fjpYFx6RuSpFV664Ojvx7dJzjFYaZgZ8v+ut+4wPEKrogGjNl+
- i1EU20jY+j7nwoouOiJoyAdRJ+fRlBREi0LRdxAlvFYskldgAWupL25hV8oWKRFcveIM
- gaA0dcncPMEcbPFyAma5BHgtCt0ok39bxE3HWcxWo0yWTh+lwriwAD1pX2NKsRtjZpiB xg== 
-Received: from userp3020.oracle.com (userp3020.oracle.com [156.151.31.79])
- by aserp2120.oracle.com with ESMTP id 2t7809cjn6-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Wed, 19 Jun 2019 16:48:44 +0000
-Received: from pps.filterd (userp3020.oracle.com [127.0.0.1])
- by userp3020.oracle.com (8.16.0.27/8.16.0.27) with SMTP id x5JGlKWG054029;
- Wed, 19 Jun 2019 16:48:44 GMT
-Received: from userv0122.oracle.com (userv0122.oracle.com [156.151.31.75])
- by userp3020.oracle.com with ESMTP id 2t77yn71um-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Wed, 19 Jun 2019 16:48:43 +0000
-Received: from abhmp0002.oracle.com (abhmp0002.oracle.com [141.146.116.8])
- by userv0122.oracle.com (8.14.4/8.14.4) with ESMTP id x5JGmfkY007697;
- Wed, 19 Jun 2019 16:48:41 GMT
-Received: from [10.65.164.174] (/10.65.164.174)
- by default (Oracle Beehive Gateway v4.0)
- with ESMTP ; Wed, 19 Jun 2019 09:48:41 -0700
-Subject: Re: [PATCH v17 06/15] mm, arm64: untag user pointers in
- get_vaddr_frames
-To: Andrey Konovalov <andreyknvl@google.com>,
- linux-arm-kernel@lists.infradead.org, linux-mm@kvack.org,
- linux-kernel@vger.kernel.org, amd-gfx@lists.freedesktop.org,
- dri-devel@lists.freedesktop.org, linux-rdma@vger.kernel.org,
- linux-media@vger.kernel.org, kvm@vger.kernel.org,
- linux-kselftest@vger.kernel.org
-References: <cover.1560339705.git.andreyknvl@google.com>
- <4c0b9a258e794437a1c6cec97585b4b5bd2d3bba.1560339705.git.andreyknvl@google.com>
-From: Khalid Aziz <khalid.aziz@oracle.com>
-Organization: Oracle Corp
-Message-ID: <39b03c1b-d09c-4b29-0f62-337bf2382eb5@oracle.com>
-Date: Wed, 19 Jun 2019 10:48:38 -0600
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.7.0
+ id 1hdeF1-0002rO-1c
+ for linux-arm-kernel@lists.infradead.org; Wed, 19 Jun 2019 17:19:24 +0000
+Received: by mail-wr1-f68.google.com with SMTP id x17so59316wrl.9
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 19 Jun 2019 10:19:22 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=YSHXApb/QZTy9FH4NqMivJMJI0my9DBc54bc3V6ZLlU=;
+ b=ikWuyT6IbPI1SHBgWiMeBLpNW+ms5BYZlnJk/xDw+JJOMx9RXYcJr4eNwCPtL1jkR/
+ 6JEdUtKVUxYRcGNfC36z6HA1Tl8IThcyhchkvDxcLeqdu3e5UOGNNUkJrzbVHQfv2ktf
+ 1ZUmTbcgPweRsac8LboVySjROarRchjYZwFZqBStflORivws8TjGwl4wdZHSJ6AoTWQV
+ dz/umdCx7Uogo/E4djd1Mrmazc4bVQVYvvvts71CSeVHjbWGV75KPvWBsBqlfshh/vIu
+ LWJ2dcM9is0YB5CFCPDCDlTQ0sS9TT+7GWd38MvDi5ll1Waqvm9mJv1DGIkCf7rx9/WJ
+ wLOQ==
+X-Gm-Message-State: APjAAAXjhJjfQuDezsCAn7s64qvudOOe0bVxvGz5EKCjmWu9Fcm+I3bx
+ ATxDA/pPGhvOh+rI8i4K3FA=
+X-Google-Smtp-Source: APXvYqwty5Jfr1k3SfjRZOwaKl9aqzAMOMJYJNBmXyW+H/bMRuMbgg5Saekb/fuB24oIyl8AT3kc9w==
+X-Received: by 2002:a05:6000:1203:: with SMTP id
+ e3mr22889711wrx.300.1560964760735; 
+ Wed, 19 Jun 2019 10:19:20 -0700 (PDT)
+Received: from kozik-lap ([194.230.155.186])
+ by smtp.googlemail.com with ESMTPSA id z126sm1166666wmb.32.2019.06.19.10.19.19
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Wed, 19 Jun 2019 10:19:19 -0700 (PDT)
+Date: Wed, 19 Jun 2019 19:19:18 +0200
+From: Krzysztof Kozlowski <krzk@kernel.org>
+To: Denis 'GNUtoo' Carikli <GNUtoo@cyberdimension.org>
+Subject: Re: [PATCH][v2] ARM: dts: exynos: add flash support to galaxy-s3
+ boards
+Message-ID: <20190619171918.GA24076@kozik-lap>
+References: <20190615170428.GA3447@kozik-lap>
+ <20190618001742.2828-1-GNUtoo@cyberdimension.org>
 MIME-Version: 1.0
-In-Reply-To: <4c0b9a258e794437a1c6cec97585b4b5bd2d3bba.1560339705.git.andreyknvl@google.com>
-Content-Language: en-US
-X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9293
- signatures=668687
-X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 suspectscore=0
- malwarescore=0
- phishscore=0 bulkscore=0 spamscore=0 mlxscore=0 mlxlogscore=999
- adultscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.0.1-1810050000 definitions=main-1906190135
-X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9293
- signatures=668687
-X-Proofpoint-Spam-Details: rule=notspam policy=default score=0
- priorityscore=1501 malwarescore=0
- suspectscore=0 phishscore=0 bulkscore=0 spamscore=0 clxscore=1015
- lowpriorityscore=0 mlxscore=0 impostorscore=0 mlxlogscore=999 adultscore=0
- classifier=spam adjust=0 reason=mlx scancount=1 engine=8.0.1-1810050000
- definitions=main-1906190136
+Content-Disposition: inline
+In-Reply-To: <20190618001742.2828-1-GNUtoo@cyberdimension.org>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190619_094903_831916_7BC55E81 
-X-CRM114-Status: GOOD (  21.79  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20190619_101923_289961_7B2A64B5 
+X-CRM114-Status: GOOD (  12.90  )
+X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (0.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [141.146.126.78 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (k.kozlowski.k[at]gmail.com)
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.221.68 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.221.68 listed in wl.mailspike.net]
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -118,67 +90,30 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Szabolcs Nagy <Szabolcs.Nagy@arm.com>,
- Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will.deacon@arm.com>,
- Kostya Serebryany <kcc@google.com>, Felix Kuehling <Felix.Kuehling@amd.com>,
- Vincenzo Frascino <vincenzo.frascino@arm.com>,
- Jacob Bramley <Jacob.Bramley@arm.com>, Leon Romanovsky <leon@kernel.org>,
- Christoph Hellwig <hch@infradead.org>, Jason Gunthorpe <jgg@ziepe.ca>,
- Dave Martin <Dave.Martin@arm.com>, Evgeniy Stepanov <eugenis@google.com>,
- Kevin Brodsky <kevin.brodsky@arm.com>, Kees Cook <keescook@chromium.org>,
- Ruben Ayrapetyan <Ruben.Ayrapetyan@arm.com>,
- Ramana Radhakrishnan <Ramana.Radhakrishnan@arm.com>,
- Alex Williamson <alex.williamson@redhat.com>,
- Mauro Carvalho Chehab <mchehab@kernel.org>, Dmitry Vyukov <dvyukov@google.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Yishai Hadas <yishaih@mellanox.com>,
- Jens Wiklander <jens.wiklander@linaro.org>, Lee Smith <Lee.Smith@arm.com>,
- Alexander Deucher <Alexander.Deucher@amd.com>,
- Andrew Morton <akpm@linux-foundation.org>, enh <enh@google.com>,
- Robin Murphy <robin.murphy@arm.com>,
- Christian Koenig <Christian.Koenig@amd.com>,
- Luc Van Oostenryck <luc.vanoostenryck@gmail.com>
+Cc: Paul Kocialkowski <paul.kocialkowski@bootlin.com>,
+ linux-samsung-soc@vger.kernel.org, Kukjin Kim <kgene@kernel.org>,
+ Simon Shields <simon@lineageos.org>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 6/12/19 5:43 AM, Andrey Konovalov wrote:
-> This patch is a part of a series that extends arm64 kernel ABI to allow to
-> pass tagged user pointers (with the top byte set to something else other
-> than 0x00) as syscall arguments.
+On Tue, Jun 18, 2019 at 02:17:42AM +0200, Denis 'GNUtoo' Carikli wrote:
+> From: Simon Shields <simon@lineageos.org>
 > 
-> get_vaddr_frames uses provided user pointers for vma lookups, which can
-> only by done with untagged pointers. Instead of locating and changing
-> all callers of this function, perform untagging in it.
+> The galaxy s3 boards use an aat1290 to control the flash LED.
+> This patch adds the relevant device tree configuration to use it.
 > 
-> Acked-by: Catalin Marinas <catalin.marinas@arm.com>
-> Reviewed-by: Kees Cook <keescook@chromium.org>
-> Signed-off-by: Andrey Konovalov <andreyknvl@google.com>
+> Signed-off-by: Simon Shields <simon@lineageos.org>
+> Signed-off-by: Denis 'GNUtoo' Carikli <GNUtoo@cyberdimension.org> [rebase]
 > ---
+>  arch/arm/boot/dts/exynos4412-galaxy-s3.dtsi | 32 +++++++++++++++++++++
+>  1 file changed, 32 insertions(+)
 
-With the suggested change to commit log in my previous email:
+Thanks, applied.
 
-Reviewed-by: Khalid Aziz <khalid.aziz@oracle.com>
-
->  mm/frame_vector.c | 2 ++
->  1 file changed, 2 insertions(+)
-> 
-> diff --git a/mm/frame_vector.c b/mm/frame_vector.c
-> index c64dca6e27c2..c431ca81dad5 100644
-> --- a/mm/frame_vector.c
-> +++ b/mm/frame_vector.c
-> @@ -46,6 +46,8 @@ int get_vaddr_frames(unsigned long start, unsigned int nr_frames,
->  	if (WARN_ON_ONCE(nr_frames > vec->nr_allocated))
->  		nr_frames = vec->nr_allocated;
->  
-> +	start = untagged_addr(start);
-> +
->  	down_read(&mm->mmap_sem);
->  	locked = 1;
->  	vma = find_vma_intersection(mm, start, start + 1);
-> 
-
+Best regards,
+Krzysztof
 
 
 _______________________________________________
