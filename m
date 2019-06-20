@@ -2,85 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 104C24C655
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 20 Jun 2019 06:48:49 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7CADE4C66D
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 20 Jun 2019 07:02:09 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ypnhf2rkuNNOTsAZEgT5/raeSWPRBQA0JVuZKNg2KKI=; b=YPg5xg23kufpWO
-	cuenSj2UZDs6qSCGp7UoJsefp392/xET5Cg5Zi0L6btXdhn/nGCIjssqBXiKCQI4A79OLp1j8fyxW
-	yLGLy6P6Tpe80hM9jQmNcok5tSVBbVLi222cFRg+rT5ZtH8bKtrF38CtwXDW3sA7zZq09uMZAj4bd
-	kZop2VZHx9jbGFjHMfHPPszHlTxR9nE2jv3xWpobhTV1nnyS5CWH5yF0NI2E1Cp8sbYzsBtrr3/I3
-	x/uNyQIT98adHl4gpxek1WBj9aIB1YOBU1GdKscgEUhmXOSnL7if9Ztn1B8/2EmPE6ss8GTTPLKIg
-	Uv0nPOdFB+LBRkZl0YJw==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=FEirm9TvqwTOOxI0RaZPBewECWe9AUDznaVBMVrfQLs=; b=TKq
+	4/cKTBzTqEhSODDCPTPZbu9hHXJyM8thF/X5FmI0smi+kk1B52yw3pNgzRcJ/+U2ailPfDpNg9sT4
+	3WR7ao9xfY58PfzhddRsqwmmCq+H7nLO2lWa/OiOfPv6K8fqDZ+BhhSCLyattELV3hROwVfnOy/st
+	+9M0TOEygo0rAG3MukYSHd+TyqnHmKhKf00AgURBMFYlezpXJmR17b9k2lJLgMhlQ5yaSk0oitfo2
+	jIzWk3/NFnX5yrGo6UmuD3lYhKZmS/huvkuRD+nyF8obtluS4/nldAV9tjGiLQOHgmgbolZ1N8SMY
+	in50oOLsOWc5nqE1ItxqlIbJGiumsSQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hdp08-0000y6-0i; Thu, 20 Jun 2019 04:48:44 +0000
-Received: from mail-oi1-x241.google.com ([2607:f8b0:4864:20::241])
+	id 1hdpD4-0005d9-Bj; Thu, 20 Jun 2019 05:02:06 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hdozv-0000x4-F6
- for linux-arm-kernel@lists.infradead.org; Thu, 20 Jun 2019 04:48:32 +0000
-Received: by mail-oi1-x241.google.com with SMTP id a128so1200030oib.1
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 19 Jun 2019 21:48:30 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=AJXIcsGFO5lMWZGuEosbW/Dq3JALel5VCKCAbEtYs6Y=;
- b=Yl5NlZzQPUN5Tci0Gf50JsXP4Oo8dpYdihclnZeT66LEb3dxzRiJhHirLoaUqRkGN3
- nd7drf2dBhfS2HA3AMSoOGDADxhZ4nLpQMvB1T2hAahMGJBa0/7+xUJ7aJ0B4ypcW6e5
- BSNJ2PwbPrdk+BCyPhpWGOWiUVhuLmDA6DGw0=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=AJXIcsGFO5lMWZGuEosbW/Dq3JALel5VCKCAbEtYs6Y=;
- b=MFo8RmZBG0Cfp99ju4oSBsET1z605wvlEw6lenBJCN/e8TdGZNjtYyUiTZg8OeJ1wf
- 6ePwq13mEgAWu/J1aoHuCWZTM/G3+QGrL+4+mSJ8qMUXBUCdzesEG+qEcEb6Uj2u2TqE
- Mov5KCRL4/FMfHD6+L8OjPwoUailSppkAuuik8DfEj4ycz0SV0nbtOZ2MXwZywGymDN8
- hC/2IYYA67c7x/q+Z+NdSFRihYRYGDmXLAzvQ0afQD1k9aW5OLzp82833PH3hyXvHDwi
- d8OG1iQ7Pj23SLWKw+d7qpO0vifu4zoD4TTpxdlDzIlamFv2Cr40DkPc/OUNj72q9x8r
- 0GXA==
-X-Gm-Message-State: APjAAAU3xSnnmeeBYlP1aNOn6mcusIOnKTbZ8bA91rqBpGdcj1u8lC8s
- Ed74h47RXvgYjVnDJ/nlfmw4TaywYzLgCQ==
-X-Google-Smtp-Source: APXvYqxjbxLKdDwNRXuuFnbImBbeAtiMa1kDq/lX10i5rVt4L4jsmdHqbtQVplmVaLCjfR0v9bviLQ==
-X-Received: by 2002:aca:490d:: with SMTP id w13mr4878291oia.8.1561006108922;
- Wed, 19 Jun 2019 21:48:28 -0700 (PDT)
-Received: from mail-ot1-f46.google.com (mail-ot1-f46.google.com.
- [209.85.210.46])
- by smtp.gmail.com with ESMTPSA id b2sm7367193otf.48.2019.06.19.21.48.27
- for <linux-arm-kernel@lists.infradead.org>
- (version=TLS1_3 cipher=AEAD-AES128-GCM-SHA256 bits=128/128);
- Wed, 19 Jun 2019 21:48:28 -0700 (PDT)
-Received: by mail-ot1-f46.google.com with SMTP id j19so1465379otq.2
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 19 Jun 2019 21:48:27 -0700 (PDT)
-X-Received: by 2002:a9d:3ee:: with SMTP id f101mr10192019otf.311.1561006107360; 
- Wed, 19 Jun 2019 21:48:27 -0700 (PDT)
-MIME-Version: 1.0
-References: <20190516032332.56844-1-daoyuan.huang@mediatek.com>
- <20190516032332.56844-5-daoyuan.huang@mediatek.com>
- <20190604112039.GA12168@chromium.org>
-In-Reply-To: <20190604112039.GA12168@chromium.org>
-From: Alexandre Courbot <acourbot@chromium.org>
-Date: Thu, 20 Jun 2019 13:48:15 +0900
-X-Gmail-Original-Message-ID: <CAPBb6MUCYK3eyk5Oq_p8yBvFh1EszzPDcvbB0VLTu_KKzCLTMA@mail.gmail.com>
-Message-ID: <CAPBb6MUCYK3eyk5Oq_p8yBvFh1EszzPDcvbB0VLTu_KKzCLTMA@mail.gmail.com>
-Subject: Re: [RFC v2 4/4] media: platform: mtk-mdp3: Add Mediatek MDP3 driver
-To: Tomasz Figa <tfiga@chromium.org>
+ id 1hdpCs-0005c4-Nb
+ for linux-arm-kernel@lists.infradead.org; Thu, 20 Jun 2019 05:01:56 +0000
+Received: from hector.attlocal.net
+ (107-207-74-175.lightspeed.austtx.sbcglobal.net [107.207.74.175])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 131A6208CB;
+ Thu, 20 Jun 2019 05:01:52 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1561006913;
+ bh=phnydbrve6D9xWDJP0v1HDzHr04Ms8FK11DaWWwlAs4=;
+ h=From:To:Cc:Subject:Date:From;
+ b=obsCth2fJ+sYkH022X1dCT2N735J26yg3H/XHCPb+ieerpVgDdtmkjy0969DG9YJR
+ SSCsVA9A4Mr31pUX4F0o8mflebca1itWNk+g3O5gsjxDqLxSZr2ULjVRpVWm1G/MR3
+ e9+RKx0A8tVtmt61XxjIYbMkwdI5adwqgOIrqyqg=
+From: Andy Gross <agross@kernel.org>
+To: arm@kernel.org
+Subject: [GIT PULL] Qualcomm ARM64 DT updates for 5.3
+Date: Thu, 20 Jun 2019 00:01:48 -0500
+Message-Id: <1561006911-28519-1-git-send-email-agross@kernel.org>
+X-Mailer: git-send-email 2.7.4
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190619_214831_508893_7EC9946A 
-X-CRM114-Status: GOOD (  20.78  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190619_220154_803001_98DF5180 
+X-CRM114-Status: GOOD (  13.34  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:241 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -102,135 +73,130 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Sean.Cheng@mediatek.com,
- Laurent Pinchart <laurent.pinchart+renesas@ideasonboard.com>,
- Rynn.Wu@mediatek.com, christie.yu@mediatek.com, srv_heupstream@mediatek.com,
- Daoyuan Huang <daoyuan.huang@mediatek.com>, holmes.chiou@mediatek.com,
- Jerry-ch.Chen@mediatek.com, jungo.lin@mediatek.com,
- Sj Huang <sj.huang@mediatek.com>, yuzhao@chromium.org,
- Hans Verkuil <hans.verkuil@cisco.com>,
- Ping-Hsun Wu <ping-hsun.wu@mediatek.com>, zwisler@chromium.org,
- frederic.chen@mediatek.com, matthias.bgg@gmail.com,
- linux-mediatek@lists.infradead.org, Mauro Carvalho Chehab <mchehab@kernel.org>,
- linux-arm-kernel@lists.infradead.org,
- Linux Media Mailing List <linux-media@vger.kernel.org>
+Cc: Arnd Bergmann <arnd@arndb.de>, linux-arm-msm@vger.kernel.org,
+ Bjorn Andersson <bjorn.andersson@linaro.org>,
+ Kevin Hilman <khilman@baylibre.com>, Olof Johansson <olof@lixom.net>,
+ linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Jun 4, 2019 at 8:20 PM Tomasz Figa <tfiga@chromium.org> wrote:
-> > +
-> > +     ret = mdp_vpu_get_locked(mdp);
-> > +     if (ret < 0)
-> > +             goto err_load_vpu;
->
-> This shouldn't happen in open(), but rather the latest possible point in
-> time. If one needs to keep the VPU running for the time of streaming, then
-> it should be start_streaming. If one can safely turn the VPU off if there is
-> no frame queued for long time, it should be just in m2m job_run.
->
-> Generally the userspace should be able to
-> just open an m2m device for querying it, without any side effects like
-> actually powering on the hardware or grabbing a hardware instance (which
-> could block some other processes, trying to grab one too).
+The following changes since commit a188339ca5a396acc588e5851ed7e19f66b0ebd9:
 
-OTOH looking at the code of mdp_vpu_get_locked(), we do the whole
-rproc_boot and VPU init procedure if we were the only user. So I can
-understand we want to avoid doing this too often.
+  Linux 5.2-rc1 (2019-05-19 15:47:09 -0700)
 
-Maybe mdp_vpu_get_locked() can be reorganized in a better way. I feel
-like the call to mdp_vpu_register() should be done in probe, and maybe
-we can use runtime PM (with a reasonable timeout) to control the rproc
-and VPU init?
+are available in the git repository at:
 
+  git://git.kernel.org/pub/scm/linux/kernel/git/qcom/linux.git tags/qcom-arm64-for-5.3
 
->
-> > +
-> > +     mutex_unlock(&mdp->m2m_lock);
-> > +
-> > +     mdp_dbg(0, "%s [%d]", dev_name(&mdp->pdev->dev), ctx->id);
-> > +
-> > +     return 0;
-> > +
-> > +err_load_vpu:
-> > +     mdp_frameparam_release(ctx->curr_param);
-> > +err_param_init:
-> > +     v4l2_m2m_ctx_release(ctx->m2m_ctx);
-> > +err_m2m_ctx:
-> > +     v4l2_ctrl_handler_free(&ctx->ctrl_handler);
-> > +     v4l2_fh_del(&ctx->fh);
-> > +err_ctrls_create:
-> > +     v4l2_fh_exit(&ctx->fh);
-> > +     mutex_unlock(&mdp->m2m_lock);
-> > +err_lock:
->
-> Incorrect naming of all the error labels here.
->
-> > +     kfree(ctx);
-> > +
-> > +     return ret;
-> > +}
-> [snip]
-> > +enum mdp_ycbcr_profile mdp_map_ycbcr_prof_mplane(struct v4l2_format *f,
-> > +                                              u32 mdp_color)
-> > +{
-> > +     struct v4l2_pix_format_mplane *pix_mp = &f->fmt.pix_mp;
-> > +
-> > +     if (MDP_COLOR_IS_RGB(mdp_color))
-> > +             return MDP_YCBCR_PROFILE_FULL_BT601;
-> > +
-> > +     switch (pix_mp->colorspace) {
-> > +     case V4L2_COLORSPACE_JPEG:
-> > +             return MDP_YCBCR_PROFILE_JPEG;
-> > +     case V4L2_COLORSPACE_REC709:
-> > +     case V4L2_COLORSPACE_DCI_P3:
-> > +             if (pix_mp->quantization == V4L2_QUANTIZATION_FULL_RANGE)
-> > +                     return MDP_YCBCR_PROFILE_FULL_BT709;
-> > +             return MDP_YCBCR_PROFILE_BT709;
-> > +     case V4L2_COLORSPACE_BT2020:
-> > +             if (pix_mp->quantization == V4L2_QUANTIZATION_FULL_RANGE)
-> > +                     return MDP_YCBCR_PROFILE_FULL_BT2020;
-> > +             return MDP_YCBCR_PROFILE_BT2020;
-> > +     }
-> > +     /* V4L2_COLORSPACE_SRGB or else */
-> > +     if (pix_mp->quantization == V4L2_QUANTIZATION_FULL_RANGE)
-> > +             return MDP_YCBCR_PROFILE_FULL_BT601;
-> > +     return MDP_YCBCR_PROFILE_BT601;
->
-> Putting this under the default clause of the switch statement would be
-> cleaner and the comment wouldn't be needed.
->
-> [snip]
-> > +struct mdp_frameparam *mdp_frameparam_init(void)
-> > +{
-> > +     struct mdp_frameparam *param;
-> > +     struct mdp_frame *frame;
-> > +
-> > +     param = kzalloc(sizeof(*param), GFP_KERNEL);
-> > +     if (!param)
-> > +             return ERR_PTR(-ENOMEM);
->
-> We could just embed mdp_frameparam into the mdp_m2m_ctx struct and then
-> wouldn't need any dynamic allocation here anymore. And as a side effect, the
-> function could be just made void, because it couldn't fail.
->
-> > +
-> > +     INIT_LIST_HEAD(&param->list);
-> > +     mutex_init(&param->lock);
-> > +     param->state = 0;
-> > +     param->limit = &mdp_def_limit;
-> > +     param->type = MDP_STREAM_TYPE_UNKNOWN;
->
-> We always seem to use MDP_STREAM_TYPE_BITBLT in this driver.
->
-> > +     param->frame_no = 0;
->
-> No need for explicit initialization to 0.
->
-> Best regards,
-> Tomasz
->
+for you to fetch changes up to 2410fd450c09a126aefefc9106b4652285b5d60f:
+
+  arm64: dts: qcom: qcs404-evb: fix vdd_apc supply (2019-06-19 23:50:52 -0500)
+
+----------------------------------------------------------------
+Qualcomm ARM64 Updates for v5.3
+
+* Switch to use second gen PON on PM8998
+* Add PSCI cupidle states for MSM8996, MSM8998,and SDM845
+* Add MSM8996 UFS phy reset controller
+* Add propre cpu capacity scaling on MSM8996
+* Fixups for APR domain, legacy clocks, and PSCI entry latency on MSM8996
+* Enable SMMUs on MSM8996
+* Add Dragonboard 845C
+* Add Q6V5, GPU, GMU, and AOSS QMP node on SDM845
+* Fixup CPU topology on SDM845
+* Change USB1 to be peripheral on SDM845 MTP
+* Add PCIe Phy, RC nodes, ANOC1 SMMU, and RPMPD node on MSM8998
+* Update coresight bindings for MSM8916
+* Update idle state names and entry-method on MSM8916
+* Add PCIe, RPMPD, LPASS, Q6, TCSR, TuringCC, PSCI cpuidle states,
+  and CDSP on QCS404
+* Add reset-cells property to QCS404 GCC node
+* Fixup s3 max voltage, l3 min voltage, drive strength typo, and
+  s3 supply definition on QCS404-evb
+* Fixup ADC outputs and VADC calibration on PMS405
+
+----------------------------------------------------------------
+Amit Kucheria (8):
+      arm64: dts: sdm845: Fix up CPU topology
+      arm64: dts: qcom: pms405: calibrate the VADC correctly
+      arm64: dts: qcom: pms405: Rename adc outputs as per schematics
+      arm64: dts: qcom: msm8916: Add entry-method property for the idle-states node
+      arm64: dts: qcom: msm8916: Use more generic idle state names
+      arm64: dts: qcom: msm8996: Add PSCI cpuidle low power states
+      arm64: dts: msm8996: Add proper capacity scaling for the cpus
+      arm64: dts: qcom: msm8998: Add PSCI cpuidle low power states
+
+Andy Gross (1):
+      arm64: dts: qcom-qcs404: Add reset-cells to GCC node
+
+Bjorn Andersson (14):
+      arm64: dts: qcom: sdm845-mtp: Make USB1 peripheral
+      arm64: dts: qcom: qcs404: Add turingcc node
+      arm64: dts: qcom: qcs404-evb: Mark CDSP clocks protected
+      arm64: dts: qcom: qcs404: Add TCSR node
+      arm64: dts: qcom: qcs404: Fully describe the CDSP
+      arm64: dts: qcom: qcs404: Move lpass and q6 into soc
+      arm64: dts: qcom: qcs404: Add rpmpd node
+      arm64: dts: qcom: Add AOSS QMP node
+      arm64: dts: qcom: msm8996: Stop using legacy clock names
+      arm64: dts: qcom: qcs404: Add PCIe related nodes
+      arm64: dts: qcom: qcs404-evb: Enable PCIe
+      arm64: dts: qcom: Add Dragonboard 845c
+      arm64: dts: qcom: msm8996: Correct apr-domain property
+      arm64: dts: qcom: msm8996: Enable SMMUs
+
+Evan Green (1):
+      arm64: dts: msm8996: Add UFS PHY reset controller
+
+John Stultz (1):
+      arm64: dts: qcom: pm8998: Use qcom,pm8998-pon binding for second gen pon
+
+Jordan Crouse (2):
+      arm64: dts: sdm845: Add gpu and gmu device nodes
+      arm64: dts: sdm845: Add zap shader region for GPU
+
+Jorge Ramirez-Ortiz (1):
+      arm64: dts: qcom: qcs404-evb: fix vdd_apc supply
+
+Leo Yan (1):
+      arm64: dts: qcom-msm8916: Update coresight DT bindings
+
+Marc Gonzalez (2):
+      arm64: dts: qcom: msm8998: Add ANOC1 SMMU node
+      arm64: dts: qcom: msm8998: Add PCIe PHY and RC nodes
+
+Niklas Cassel (4):
+      arm64: dts: qcom: qcs404-evb: fix l3 min voltage
+      arm64: dts: qcom: qcs404-evb: increase s3 max voltage
+      arm64: dts: qcom: qcs404: Add PSCI cpuidle low power states
+      arm64: dts: msm8996: fix PSCI entry-latency-us
+
+Raju P.L.S.S.S.N (1):
+      arm64: dts: qcom: sdm845: Add PSCI cpuidle low power states
+
+Sibi Sankar (2):
+      arm64: dts: qcom: msm8998: Add rpmpd node
+      arm64: dts: qcom: sdm845: Add Q6V5 MSS node
+
+Vinod Koul (1):
+      arm64: dts: qcom: qcs404-evb: Fix typo
+
+ arch/arm64/boot/dts/qcom/Makefile          |   1 +
+ arch/arm64/boot/dts/qcom/msm8916.dtsi      |  17 +-
+ arch/arm64/boot/dts/qcom/msm8996.dtsi      |  59 +--
+ arch/arm64/boot/dts/qcom/msm8998.dtsi      | 185 ++++++++++
+ arch/arm64/boot/dts/qcom/pm8998.dtsi       |   2 +-
+ arch/arm64/boot/dts/qcom/pms405.dtsi       |  20 +-
+ arch/arm64/boot/dts/qcom/qcs404-evb.dtsi   |  43 ++-
+ arch/arm64/boot/dts/qcom/qcs404.dtsi       | 364 ++++++++++++++-----
+ arch/arm64/boot/dts/qcom/sdm845-db845c.dts | 557 +++++++++++++++++++++++++++++
+ arch/arm64/boot/dts/qcom/sdm845-mtp.dts    |   4 +-
+ arch/arm64/boot/dts/qcom/sdm845.dtsi       | 283 ++++++++++++++-
+ 11 files changed, 1393 insertions(+), 142 deletions(-)
+ create mode 100644 arch/arm64/boot/dts/qcom/sdm845-db845c.dts
 
 _______________________________________________
 linux-arm-kernel mailing list
