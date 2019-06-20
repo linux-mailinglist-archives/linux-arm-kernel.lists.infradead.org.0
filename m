@@ -2,91 +2,50 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E8E314C4AE
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 20 Jun 2019 02:58:55 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 382FD4C4BA
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 20 Jun 2019 03:02:51 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=orkEu3ELLa71oDVcDNYOZD0kd0QrNWWVjksKHwcq4RA=; b=MuB1+7DQKD40bZ
-	1k54Yw/ij6d4t7mDTwyKAmT2s9nrWsmBFmrWLequ6fcswpOxymwYrznRR0Xwd5hVhjQHyA8HeBcsw
-	V6Xf1DgsNY2UMp0z6ZdkYpAEjN/TIA62GjggTjD9MdTHYGl3bksou5QpLXIkoVHIj/Ml9AAHHQmlI
-	IUpk3S0BNejwnjbAB9O+K75VscJNR/nfpzvY8yEUa9L3ZnLh43PHsuxwJ+1K5T12zlzAt+FtQ22dY
-	e5QLnip6uw75KqL7y2HgCShg24uqOt+Br7wu0ivD9qovn/yB5iUS32QNrEBYsaVj5cFQ7JeLLFmEE
-	biKuyuS0DrYN29sOO4zw==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=BNIeWdv/c1GrcWkUvncSJ1q6xTMuVOzJnxRfQIoxU54=; b=Pcb
+	GaVoXIMYmFzywEg456EAt+7B3EkEB/4NGet3AsHESHD8hzUpK/1GIVe1S0l8tNlGwU7QCM/zYeMbQ
+	3GhdSbhRVIzxI0hoFZU7uh+3qE3z0D7HNLy0N1TiRDWrFgAJ6M3DDKHSR1rwI3H0BGoPjHCSjdQhM
+	FdSZvZFRUruynaDRptyiwXppc/RT/zKWr6m4QDSWT5GgYyA+dWjIJh0DkSd//XzymUhdiCR0PgTQd
+	zZFPrFI9g21LLCd+KQnuSCgoETbA3rr1oDcpof/eZBwlDihRa9i7xxcFp2LiBRlrzd/8S39IRAaeV
+	bcFL3NOG6ZnwC3X0wUrb6YgovX9cHtQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hdlPg-0007by-Am; Thu, 20 Jun 2019 00:58:52 +0000
-Received: from mail-ot1-x344.google.com ([2607:f8b0:4864:20::344])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hdlPS-0007be-4L
- for linux-arm-kernel@lists.infradead.org; Thu, 20 Jun 2019 00:58:39 +0000
-Received: by mail-ot1-x344.google.com with SMTP id b7so970463otl.11
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 19 Jun 2019 17:58:38 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=Pv6DYs/rgMUhmFVTIlv6mQtmI4/e3SRdgmeYYSiE/gY=;
- b=oTUnU1I9Q3P6mnwGmSHo8VtVE9FzfceDm8JYzas75iB8Vpe9bONAVPH2S3TkqM2T1F
- AfMa+uPb+HeX3Uw62WFDmNKu7P8wioRQ2b3H0FBzHxKQnhgOOWvrNf5guNAdwAaDrF/I
- xpJ/tV30aZvykXO0oOcH6KE4RQNKoOOFP/boZ/cieuj+impdRqlqR+E45fvl9LeIx1Md
- p91138c9GCF1m2LJIz2xmLR3PzI9z8/c1OIFmPjKktYAjHDR16lNQgi3V8PXARwSA4Tr
- pDxI9ygK81Mrd5QIssaBJhkHuqk1eXDNVLVe7aTsXm1Oyh8sR7oGawQguh8x4lYDolkK
- OGhQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=Pv6DYs/rgMUhmFVTIlv6mQtmI4/e3SRdgmeYYSiE/gY=;
- b=TFzFUBFJYGVZsB/ibzQElcQzxO+lbl9hZNQdtur8ELKiNFTqiyGqw/OVTK5VeIy7dT
- 8JHg6oxvC/4FyXi6RrK0/9SjpIUBaiQwnHAFryF+9AzlQtD+psUsLHZyTdHJCxuwpbTX
- 4Qv4AhN9C+OWDhCT1hzcuiH+QiKmofHzK/E5Ta2WbdJe7QDWW6oKvxlQKp5k9gld/0nW
- rMzxYkD954ykjYcIdIygTfO1TxkgyWnj6cHqq12AQZYAYFmYCinvhTd296nyFiU9l+x8
- w4H9CdRjT+blD6Gnk41oGiJ3RyWZQaj//+RO6MBoCZhKSWjeLzL+FN4OkJyser3jWUhM
- HzZg==
-X-Gm-Message-State: APjAAAUjStdBqw3CXgfzNSBee9pmNO2HCxnhli/1EPHP9bVhwxJkmBfL
- xI9voach/6ZI5CQSu0DUF32dJA==
-X-Google-Smtp-Source: APXvYqyGWcBsRjlJt5apXMRax/dVlTZbIM5JD9/pIw5q+E7QvXP98lnAmkC5vhNUCGfuVZN3B0sKsA==
-X-Received: by 2002:a9d:7d05:: with SMTP id v5mr8624081otn.245.1560992317485; 
- Wed, 19 Jun 2019 17:58:37 -0700 (PDT)
-Received: from leoy-ThinkPad-X240s (li964-79.members.linode.com. [45.33.10.79])
- by smtp.gmail.com with ESMTPSA id j135sm1940279oib.19.2019.06.19.17.58.32
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Wed, 19 Jun 2019 17:58:36 -0700 (PDT)
-Date: Thu, 20 Jun 2019 08:58:29 +0800
-From: Leo Yan <leo.yan@linaro.org>
-To: Mathieu Poirier <mathieu.poirier@linaro.org>
-Subject: Re: [PATCH] perf cs-etm: Improve completeness for kernel address space
-Message-ID: <20190620005829.GH24549@leoy-ThinkPad-X240s>
-References: <20190617150024.11787-1-leo.yan@linaro.org>
- <CANLsYkyMW=WG+=yWTLSyMT3JXqd_2kvsrx9c-EwCoKEnRZvErA@mail.gmail.com>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CANLsYkyMW=WG+=yWTLSyMT3JXqd_2kvsrx9c-EwCoKEnRZvErA@mail.gmail.com>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+	id 1hdlTT-0001MK-8G; Thu, 20 Jun 2019 01:02:47 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hdlTG-0001Ln-QH
+ for linux-arm-kernel@lists.infradead.org; Thu, 20 Jun 2019 01:02:36 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 40347360;
+ Wed, 19 Jun 2019 18:02:31 -0700 (PDT)
+Received: from localhost.localdomain (unknown [172.31.20.19])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 096333F718;
+ Wed, 19 Jun 2019 18:02:29 -0700 (PDT)
+From: Andre Przywara <andre.przywara@arm.com>
+To: Maxime Ripard <maxime.ripard@bootlin.com>,
+	Chen-Yu Tsai <wens@csie.org>
+Subject: [PATCH] arm64: dts: allwinner: properly connect USB PHY to port 0
+Date: Thu, 20 Jun 2019 02:01:27 +0100
+Message-Id: <20190620010127.12071-1-andre.przywara@arm.com>
+X-Mailer: git-send-email 2.14.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190619_175838_180585_441B10A0 
-X-CRM114-Status: GOOD (  19.67  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190619_180234_943393_22409306 
+X-CRM114-Status: GOOD (  13.67  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:344 listed in]
- [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -98,118 +57,151 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Suzuki Poulouse <suzuki.poulose@arm.com>,
- Alexander Shishkin <alexander.shishkin@linux.intel.com>,
- netdev@vger.kernel.org, Coresight ML <coresight@lists.linaro.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Arnaldo Carvalho de Melo <acme@kernel.org>,
- Peter Zijlstra <peterz@infradead.org>, Namhyung Kim <namhyung@kernel.org>,
- bpf@vger.kernel.org, Jiri Olsa <jolsa@redhat.com>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Cc: Mark Rutland <mark.rutland@arm.com>, Rob Herring <robh@kernel.org>,
+ linux-sunxi@googlegroups.com, linux-arm-kernel@lists.infradead.org,
+ devicetree@vger.kernel.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Mathieu,
+In recent Allwinner SoCs the first USB host controller (HCI0) shares
+the first PHY with the MUSB controller. Probably to make this sharing
+work, we were avoiding to declare this in the DT. This has two
+shortcomings:
+- U-Boot (which uses the same .dts) cannot use this port without a PHY
+  linked, so we were loosing one USB port there.
+- It requires the MUSB driver to be enabled and loaded, although we
+  don't actually use it.
 
-On Wed, Jun 19, 2019 at 11:49:44AM -0600, Mathieu Poirier wrote:
+For those (64-bit) boards which use an USB-A socket for HCI0/MUSB, add
+a "phys" property pointing to the USB PHY 0.
 
-[...]
+This makes it work in U-Boot, also improves compatiblity when no MUSB
+driver is loaded (for instance in distribution installers).
 
-> > diff --git a/tools/perf/Makefile.config b/tools/perf/Makefile.config
-> > index 51dd00f65709..4776c2c1fb6d 100644
-> > --- a/tools/perf/Makefile.config
-> > +++ b/tools/perf/Makefile.config
-> > @@ -418,6 +418,30 @@ ifdef CORESIGHT
-> >      endif
-> >      LDFLAGS += $(LIBOPENCSD_LDFLAGS)
-> >      EXTLIBS += $(OPENCSDLIBS)
-> > +    ifneq ($(wildcard $(srctree)/arch/arm64/kernel/vmlinux.lds),)
-> > +      # Extract info from lds:
-> > +      #  . = ((((((((0xffffffffffffffff)) - (((1)) << (48)) + 1) + (0)) + (0x08000000))) + (0x08000000))) + 0x00080000;
-> > +      # ARM64_PRE_START_SIZE := (0x08000000 + 0x08000000 + 0x00080000)
-> > +      ARM64_PRE_START_SIZE := $(shell egrep ' \. \= \({8}0x[0-9a-fA-F]+\){2}' \
-> > +        $(srctree)/arch/arm64/kernel/vmlinux.lds | \
-> > +        sed -e 's/[(|)|.|=|+|<|;|-]//g' -e 's/ \+/ /g' -e 's/^[ \t]*//' | \
-> > +        awk -F' ' '{print "("$$6 "+"  $$7 "+" $$8")"}' 2>/dev/null)
-> > +    else
-> > +      ARM64_PRE_START_SIZE := 0
-> > +    endif
-> > +    CFLAGS += -DARM64_PRE_START_SIZE="$(ARM64_PRE_START_SIZE)"
-> > +    ifneq ($(wildcard $(srctree)/arch/arm/kernel/vmlinux.lds),)
-> > +      # Extract info from lds:
-> > +      #   . = ((0xC0000000)) + 0x00208000;
-> > +      # ARM_PRE_START_SIZE := 0x00208000
-> > +      ARM_PRE_START_SIZE := $(shell egrep ' \. \= \({2}0x[0-9a-fA-F]+\){2}' \
-> > +        $(srctree)/arch/arm/kernel/vmlinux.lds | \
-> > +        sed -e 's/[(|)|.|=|+|<|;|-]//g' -e 's/ \+/ /g' -e 's/^[ \t]*//' | \
-> > +        awk -F' ' '{print "("$$2")"}' 2>/dev/null)
-> > +    else
-> > +      ARM_PRE_START_SIZE := 0
-> > +    endif
-> > +    CFLAGS += -DARM_PRE_START_SIZE="$(ARM_PRE_START_SIZE)"
-> >      $(call detected,CONFIG_LIBOPENCSD)
-> >      ifdef CSTRACE_RAW
-> >        CFLAGS += -DCS_DEBUG_RAW
-> > diff --git a/tools/perf/util/cs-etm.c b/tools/perf/util/cs-etm.c
-> > index 0c7776b51045..ae831f836c70 100644
-> > --- a/tools/perf/util/cs-etm.c
-> > +++ b/tools/perf/util/cs-etm.c
-> > @@ -613,10 +613,34 @@ static void cs_etm__free(struct perf_session *session)
-> >  static u8 cs_etm__cpu_mode(struct cs_etm_queue *etmq, u64 address)
-> >  {
-> >         struct machine *machine;
-> > +       u64 fixup_kernel_start = 0;
-> > +       const char *arch;
-> >
-> >         machine = etmq->etm->machine;
-> > +       arch = perf_env__arch(machine->env);
-> >
-> > -       if (address >= etmq->etm->kernel_start) {
-> > +       /*
-> > +        * Since arm and arm64 specify some memory regions prior to
-> > +        * 'kernel_start', kernel addresses can be less than 'kernel_start'.
-> > +        *
-> > +        * For arm architecture, the 16MB virtual memory space prior to
-> > +        * 'kernel_start' is allocated to device modules, a PMD table if
-> > +        * CONFIG_HIGHMEM is enabled and a PGD table.
-> > +        *
-> > +        * For arm64 architecture, the root PGD table, device module memory
-> > +        * region and BPF jit region are prior to 'kernel_start'.
-> > +        *
-> > +        * To reflect the complete kernel address space, compensate these
-> > +        * pre-defined regions for kernel start address.
-> > +        */
-> > +       if (!strcmp(arch, "arm64"))
-> > +               fixup_kernel_start = etmq->etm->kernel_start -
-> > +                                    ARM64_PRE_START_SIZE;
-> > +       else if (!strcmp(arch, "arm"))
-> > +               fixup_kernel_start = etmq->etm->kernel_start -
-> > +                                    ARM_PRE_START_SIZE;
-> 
-> I will test your work but from a quick look wouldn't it be better to
-> have a single define name here?  From looking at the modifications you
-> did to Makefile.config there doesn't seem to be a reason to have two.
+Signed-off-by: Andre Przywara <andre.przywara@arm.com>
+---
+Hi,
 
-Thanks for suggestion.  I changed to use single define
-ARM_PRE_START_SIZE and sent patch v2 [1].
-
-If possible, please test patch v2.
+I have the feeling this belongs into the .dtsi, but cant't tell for sure
+how this interacts with the MUSB driver. If need be, we can always pull
+this up later, I guess.
 
 Thanks,
-Leo Yan
+Andre
 
-[1] https://lore.kernel.org/linux-arm-kernel/20190620005428.20883-1-leo.yan@linaro.org/T/#u
+ arch/arm64/boot/dts/allwinner/sun50i-a64-pine64.dts           | 2 ++
+ arch/arm64/boot/dts/allwinner/sun50i-a64-sopine-baseboard.dts | 2 ++
+ arch/arm64/boot/dts/allwinner/sun50i-h5-nanopi-neo-plus2.dts  | 2 ++
+ arch/arm64/boot/dts/allwinner/sun50i-h6-beelink-gs1.dts       | 2 ++
+ arch/arm64/boot/dts/allwinner/sun50i-h6-pine-h64.dts          | 2 ++
+ 5 files changed, 10 insertions(+)
 
-> > +
-> > +       if (address >= fixup_kernel_start) {
-> >                 if (machine__is_host(machine))
-> >                         return PERF_RECORD_MISC_KERNEL;
-> >                 else
-> > --
-> > 2.17.1
-> >
+diff --git a/arch/arm64/boot/dts/allwinner/sun50i-a64-pine64.dts b/arch/arm64/boot/dts/allwinner/sun50i-a64-pine64.dts
+index 409523cb0950..b23e827a6065 100644
+--- a/arch/arm64/boot/dts/allwinner/sun50i-a64-pine64.dts
++++ b/arch/arm64/boot/dts/allwinner/sun50i-a64-pine64.dts
+@@ -93,6 +93,7 @@
+ };
+ 
+ &ehci0 {
++	phys = <&usbphy 0>;
+ 	status = "okay";
+ };
+ 
+@@ -147,6 +148,7 @@
+ };
+ 
+ &ohci0 {
++	phys = <&usbphy 0>;
+ 	status = "okay";
+ };
+ 
+diff --git a/arch/arm64/boot/dts/allwinner/sun50i-a64-sopine-baseboard.dts b/arch/arm64/boot/dts/allwinner/sun50i-a64-sopine-baseboard.dts
+index e6fb9683f213..b422bef19fff 100644
+--- a/arch/arm64/boot/dts/allwinner/sun50i-a64-sopine-baseboard.dts
++++ b/arch/arm64/boot/dts/allwinner/sun50i-a64-sopine-baseboard.dts
+@@ -105,6 +105,7 @@
+ };
+ 
+ &ehci0 {
++	phys = <&usbphy 0>;
+ 	status = "okay";
+ };
+ 
+@@ -151,6 +152,7 @@
+ };
+ 
+ &ohci0 {
++	phys = <&usbphy 0>;
+ 	status = "okay";
+ };
+ 
+diff --git a/arch/arm64/boot/dts/allwinner/sun50i-h5-nanopi-neo-plus2.dts b/arch/arm64/boot/dts/allwinner/sun50i-h5-nanopi-neo-plus2.dts
+index 9887948d5c86..5da9cdfb4f48 100644
+--- a/arch/arm64/boot/dts/allwinner/sun50i-h5-nanopi-neo-plus2.dts
++++ b/arch/arm64/boot/dts/allwinner/sun50i-h5-nanopi-neo-plus2.dts
+@@ -124,6 +124,7 @@
+ };
+ 
+ &ehci0 {
++	phys = <&usbphy 0>;
+ 	status = "okay";
+ };
+ 
+@@ -179,6 +180,7 @@
+ };
+ 
+ &ohci0 {
++	phys = <&usbphy 0>;
+ 	status = "okay";
+ };
+ 
+diff --git a/arch/arm64/boot/dts/allwinner/sun50i-h6-beelink-gs1.dts b/arch/arm64/boot/dts/allwinner/sun50i-h6-beelink-gs1.dts
+index 0dc33c90dd60..293f66c44032 100644
+--- a/arch/arm64/boot/dts/allwinner/sun50i-h6-beelink-gs1.dts
++++ b/arch/arm64/boot/dts/allwinner/sun50i-h6-beelink-gs1.dts
+@@ -58,6 +58,7 @@
+ };
+ 
+ &ehci0 {
++	phys = <&usb2phy 0>;
+ 	status = "okay";
+ };
+ 
+@@ -104,6 +105,7 @@
+ };
+ 
+ &ohci0 {
++	phys = <&usb2phy 0>;
+ 	status = "okay";
+ };
+ 
+diff --git a/arch/arm64/boot/dts/allwinner/sun50i-h6-pine-h64.dts b/arch/arm64/boot/dts/allwinner/sun50i-h6-pine-h64.dts
+index 9e464d40cbff..577f8133181e 100644
+--- a/arch/arm64/boot/dts/allwinner/sun50i-h6-pine-h64.dts
++++ b/arch/arm64/boot/dts/allwinner/sun50i-h6-pine-h64.dts
+@@ -96,6 +96,7 @@
+ };
+ 
+ &ehci0 {
++	phys = <&usb2phy 0>;
+ 	status = "okay";
+ };
+ 
+@@ -120,6 +121,7 @@
+ };
+ 
+ &ohci0 {
++	phys = <&usb2phy 0>;
+ 	status = "okay";
+ };
+ 
+-- 
+2.14.5
+
 
 _______________________________________________
 linux-arm-kernel mailing list
