@@ -2,86 +2,116 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 316644C77E
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 20 Jun 2019 08:29:39 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9128B4C7AF
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 20 Jun 2019 08:53:18 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=mUg3JiZ/anHDrSRxVsBqNIv3xgXh0lgFwvZpxNh1sho=; b=FDOiEd2izyf5ooO0axMxxFA8P
-	z/lDbQq09m7r4e8nquCD0vTEOTdwPpiS9O6FowaFaKFJykxy/bMLId+zvl5bRV+QjnD8isNIfh8hM
-	NhhrUAfDJuEWyLnTI3bXp0Ckt0RvU++I4G+DTwoo57IchvVs+l6TU+Q7YhpQruQnSAMwdQVNPIYP9
-	b8q7YbcWuhHUA2cUwRUVjN/WzBjHnLT7qrgRVaf/FwvuhsNyRyuRtT1O6nkruJ+Qadrv7mybHjELq
-	ruf7mzbquTM5Ay6qfdp2Qk8d31NIc2VxYiCmwe40j8aSyNLSTC0ImVAQNjfNZvoVubADjH4UroudV
-	h6TwXHL8w==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	In-Reply-To:List-Owner; bh=db1BorpxakiiKrxWpOeCdoWxP4KfKdmpwo1h5NFL9kI=; b=nA
+	u1prz8XvxB9+1XbAu2dIVrByYpPz8vMntDJXydToTsnvv3+EHFbDkUPBHOiShfW8GKj/wPhIo+m8V
+	c5X7HlSZF3xkjG0KL3wLlJHsVoGfKFeTEsdvPf+KRtNgpHqs/x6wx4nOyUp/H905ZKevXqkG+1IXO
+	F23olNjzZw/qBba1+lzF9tVD44OhRqiiMNtM9m/gm7LB93NVCVmLL1C2W3eyJwb82ksg1Njhgc1Fv
+	x3Ik4zNNNd3JMBXjeNeqceSUBJQtzedjXjoxRpS+1asmBb47nApjM+A0euajF4AVxpMcN0fVbOKIY
+	ErAtWIyYdveCAUhFUOGT0XPURq/WtsKw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hdqZg-0001eT-Bs; Thu, 20 Jun 2019 06:29:32 +0000
-Received: from smtp.codeaurora.org ([198.145.29.96])
+	id 1hdqwa-0001XG-4R; Thu, 20 Jun 2019 06:53:12 +0000
+Received: from mailout2.samsung.com ([203.254.224.25])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hdqZU-0001e4-AQ
- for linux-arm-kernel@lists.infradead.org; Thu, 20 Jun 2019 06:29:21 +0000
-Received: by smtp.codeaurora.org (Postfix, from userid 1000)
- id 742E260850; Thu, 20 Jun 2019 06:29:19 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=codeaurora.org;
- s=default; t=1561012159;
- bh=NZEClqzVfuNrG0u2LnRVLKZy/0ZXM/ymvg5lvsVu97c=;
- h=Subject:To:Cc:References:From:Date:In-Reply-To:From;
- b=eQvlepuJTyTBaS7/xbRkg6REHSoGkbQ8tvHEQNQj1pnI08wmEsj32xKBQGXO4Bii1
- u/iTyCT1tQVlWIGMpdYWS9Td62oJRMnBobG/Goc654kXOf9RO0dU+ViDjyHX/ll20a
- VorGo9miKzOFpBtr9Oq0j33sxFPSwgXmVPOBwkUI=
-X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
- pdx-caf-mail.web.codeaurora.org
-X-Spam-Level: 
-X-Spam-Status: No, score=-2.7 required=2.0 tests=ALL_TRUSTED,BAYES_00,
- DKIM_INVALID,DKIM_SIGNED,SPF_NONE autolearn=no autolearn_force=no
- version=3.4.0
-Received: from [10.79.136.27]
- (blr-bdr-fw-01_globalnat_allzones-outside.qualcomm.com [103.229.18.19])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- (Authenticated sender: saiprakash.ranjan@smtp.codeaurora.org)
- by smtp.codeaurora.org (Postfix) with ESMTPSA id B7ACF60790;
- Thu, 20 Jun 2019 06:29:15 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=codeaurora.org;
- s=default; t=1561012158;
- bh=NZEClqzVfuNrG0u2LnRVLKZy/0ZXM/ymvg5lvsVu97c=;
- h=Subject:To:Cc:References:From:Date:In-Reply-To:From;
- b=Z9HG38za9BwP6TCnqYNrkTCLXJndecYgqvqZpNdho+EXDVCLr3K4y9xGnFpLdEjZG
- i04T+tcuzLeemwIsDdkuik4PmeoyHQR29S3oIfAk29LxJoOTuB6HVxrBIX2GvSKrG5
- ApGMovDptgme8bwA8VIrlFI03NmOOuCIIEz+lbzU=
-DMARC-Filter: OpenDMARC Filter v1.3.2 smtp.codeaurora.org B7ACF60790
-Authentication-Results: pdx-caf-mail.web.codeaurora.org;
- dmarc=none (p=none dis=none) header.from=codeaurora.org
-Authentication-Results: pdx-caf-mail.web.codeaurora.org; spf=none
- smtp.mailfrom=saiprakash.ranjan@codeaurora.org
-Subject: Re: Coresight causes synchronous external abort on msm8916
-To: Stephan Gerhold <stephan@gerhold.net>,
- Suzuki K Poulose <suzuki.poulose@arm.com>, mathieu.poirier@linaro.org
-References: <20190618202623.GA53651@gerhold.net>
- <a51f117f-c48d-d3f4-c3d1-9b584e3a055f@arm.com>
- <20190619183904.GB937@gerhold.net>
-From: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>
-Message-ID: <0dcea9a1-999d-7d85-267e-c3bfcfcfa95a@codeaurora.org>
-Date: Thu, 20 Jun 2019 11:59:13 +0530
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:60.0) Gecko/20100101
- Thunderbird/60.7.0
-MIME-Version: 1.0
-In-Reply-To: <20190619183904.GB937@gerhold.net>
-Content-Language: en-US
+ id 1hdqwN-0001Wv-Sd
+ for linux-arm-kernel@lists.infradead.org; Thu, 20 Jun 2019 06:53:01 +0000
+Received: from epcas1p3.samsung.com (unknown [182.195.41.47])
+ by mailout2.samsung.com (KnoxPortal) with ESMTP id
+ 20190620065255epoutp0283dfec2bcc82be07ba83ee763c68b638~p1ZOXugQ41189811898epoutp02Z
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 20 Jun 2019 06:52:55 +0000 (GMT)
+DKIM-Filter: OpenDKIM Filter v2.11.0 mailout2.samsung.com
+ 20190620065255epoutp0283dfec2bcc82be07ba83ee763c68b638~p1ZOXugQ41189811898epoutp02Z
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
+ s=mail20170921; t=1561013575;
+ bh=8kAK/UeCnQfaOcRotO5/7t7udyRnGpmBdJuYeqb91lU=;
+ h=From:To:Cc:Subject:Date:References:From;
+ b=dpfYxnH6+dwz6MLEJfOeN9iGLSbqgD+eGkbXwTCtjdlH4yOFgaDPBHIcI0ww/a7iV
+ FvD3H8hBxhWCPBNtrnv2g1U/eEQ1d+w6vv9n5RCe8jhWmX/gtKynb1729iDl3vBLBM
+ 066vpmPxVzriAJX/NPqfHjzBI5l0eS2tBlkZ5gIA=
+Received: from epsmges1p3.samsung.com (unknown [182.195.40.163]) by
+ epcas1p3.samsung.com (KnoxPortal) with ESMTP id
+ 20190620065254epcas1p3ce6112836d061178ca65b1ce17063d33~p1ZNHQkr30190301903epcas1p3R;
+ Thu, 20 Jun 2019 06:52:54 +0000 (GMT)
+Received: from epcas1p1.samsung.com ( [182.195.41.45]) by
+ epsmges1p3.samsung.com (Symantec Messaging Gateway) with SMTP id
+ EA.20.04143.64D2B0D5; Thu, 20 Jun 2019 15:52:54 +0900 (KST)
+Received: from epsmtrp2.samsung.com (unknown [182.195.40.14]) by
+ epcas1p4.samsung.com (KnoxPortal) with ESMTPA id
+ 20190620065254epcas1p48539060e94433cc254a1650cdc359ac4~p1ZM1Um_T2298422984epcas1p4o;
+ Thu, 20 Jun 2019 06:52:54 +0000 (GMT)
+Received: from epsmgms1p1new.samsung.com (unknown [182.195.42.41]) by
+ epsmtrp2.samsung.com (KnoxPortal) with ESMTP id
+ 20190620065254epsmtrp2dac2ae93b73dd2ec22d067bca15c9279~p1ZMx571L3115131151epsmtrp2U;
+ Thu, 20 Jun 2019 06:52:54 +0000 (GMT)
+X-AuditID: b6c32a37-394199c00000102f-cd-5d0b2d46e9e6
+Received: from epsmtip2.samsung.com ( [182.195.34.31]) by
+ epsmgms1p1new.samsung.com (Symantec Messaging Gateway) with SMTP id
+ 30.75.03692.54D2B0D5; Thu, 20 Jun 2019 15:52:53 +0900 (KST)
+Received: from U16PB1-0090.tn.corp.samsungelectronics.net (unknown
+ [10.253.235.20]) by epsmtip2.samsung.com (KnoxPortal) with ESMTPA id
+ 20190620065253epsmtip25f61d1eaa1b462c1f86d599f734f296c~p1ZMkIFK11529915299epsmtip2c;
+ Thu, 20 Jun 2019 06:52:53 +0000 (GMT)
+From: jinho lim <jordan.lim@samsung.com>
+To: will.deacon@arm.com
+Subject: [PATCH v2] arm64: rename dump_instr as dump_kernel_instr
+Date: Thu, 20 Jun 2019 15:52:49 +0900
+Message-Id: <20190620065249.24112-1-jordan.lim@samsung.com>
+X-Mailer: git-send-email 2.17.1
+X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFvrAKsWRmVeSWpSXmKPExsWy7bCmrq6bLneswe+tYhY9u3cyWew7kWzx
+ f1sLu8WNZWEWmx5fY7W4vGsOm8XfO//YLJZev8hk8XlZG4vFy48nWBy4PNbMW8PosXPWXXaP
+ BZtKPTYvqffo27KK0ePzJjmPKYfaWQLYo3JsMlITU1KLFFLzkvNTMvPSbZW8g+Od403NDAx1
+ DS0tzJUU8hJzU22VXHwCdN0yc4BuU1IoS8wpBQoFJBYXK+nb2RTll5akKmTkF5fYKqUWpOQU
+ GBoU6BUn5haX5qXrJefnWhkaGBiZAlUm5GTc+NvEWvCUr2L1v3WMDYyfuLsYOTkkBEwkZr79
+ ytLFyMUhJLCDUWLSu+/sEM4nRomF628zg1QJCXxjlHi6KbaLkQOsY8qjTIiavYwSy6ctYINw
+ OpgkGj+uZwVpYBPQkHiweAELiC0iIC5xZuIWJhCbWeAHo8T0HZIgtrCAo0TnrDuMIDaLgKrE
+ /ynX2UFsXgFrieYVE9kgzpOXWL3hADPIAgmBFWwSM3cfZIS4wkVi9modiBphiVfHt7BD2FIS
+ n9/tZYOob2aUOHDqHVRzA6PErEtfoKYaS/T2XGAGGcQsoCmxfpc+RFhRYufvuYwQh/JJvPva
+ wwqxi1eio00IwlSR+LO8DmbV7x5QYIGEPSTOHFKABFWsxKv1r9gmMMrOQhi/gJFxFaNYakFx
+ bnpqsWGBMXIUbWIEpzYt8x2MG875HGIU4GBU4uE9ocUVK8SaWFZcmXuIUYKDWUmE9ykjd6wQ
+ b0piZVVqUX58UWlOavEhRlNg2E1klhJNzgem3bySeENTI2NjYwsTM3MzU2Mlcd547psxQgLp
+ iSWp2ampBalFMH1MHJxSDYzKP09d0DSsY7+x8HNw8qwDcpz2Zs+M903+Y3ffyqVb9drrT5EK
+ y31uRQXufli/e6NPiaoJP/eZSZvu1bcobSr/UT1hjd49f6uL6qc21eYvVTJ7/fTErDU/y3Zw
+ PVj91XblVye+xmNLfDStcgqr32x+sz0y4/+C50tWN2cea7kpk9SbGRTosUFSiaU4I9FQi7mo
+ OBEAAyscWIMDAAA=
+X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFlrALMWRmVeSWpSXmKPExsWy7bCSvK6rLnesQetSc4ue3TuZLPadSLb4
+ v62F3eLGsjCLTY+vsVpc3jWHzeLvnX9sFkuvX2Sy+LysjcXi5ccTLA5cHmvmrWH02DnrLrvH
+ gk2lHpuX1Hv0bVnF6PF5k5zHlEPtLAHsUVw2Kak5mWWpRfp2CVwZN/42sRY85atY/W8dYwPj
+ J+4uRg4OCQETiSmPMrsYuTiEBHYzSszevYexi5ETKC4l8fF3NzNEjbDE4cPFEDVtTBJ/L01h
+ BalhE9CQeLB4AQuILSIgLnFm4hYmkCJmgSYmia/rfjKDJIQFHCU6Z90BG8oioCrxf8p1dhCb
+ V8BaonnFRDaIZfISqzccYJ7AyLOAkWEVo2RqQXFuem6xYYFhXmq5XnFibnFpXrpecn7uJkZw
+ uGlp7mC8vCT+EKMAB6MSD+8JLa5YIdbEsuLK3EOMEhzMSiK8Txm5Y4V4UxIrq1KL8uOLSnNS
+ iw8xSnOwKInzPs07FikkkJ5YkpqdmlqQWgSTZeLglGpgnOtpX6c8T33a3MPcoem/1Kf6rWn1
+ 0c336d+w7saVbeyPn89g7t+qeU+J/xgf+8eH5zJTPnSqpJ//teSr9Gdx3vkKusfafxic2m9k
+ kvJEWUErrfN3hu56hXnOL0Ju3LRNzp+lMzlu4qVYH+GphybZGdXOnHBtrpjeRImPYpKXj+5y
+ sC0NqFzAqcRSnJFoqMVcVJwIACTf+6EzAgAA
+X-CMS-MailID: 20190620065254epcas1p48539060e94433cc254a1650cdc359ac4
+X-Msg-Generator: CA
+X-Sendblock-Type: SVC_REQ_APPROVE
+CMS-TYPE: 101P
+DLP-Filter: Pass
+X-CFilter-Loop: Reflected
+X-CMS-RootMailID: 20190620065254epcas1p48539060e94433cc254a1650cdc359ac4
+References: <CGME20190620065254epcas1p48539060e94433cc254a1650cdc359ac4@epcas1p4.samsung.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190619_232920_401096_A984562E 
-X-CRM114-Status: GOOD (  30.89  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20190619_235300_256516_B1985D0D 
+X-CRM114-Status: GOOD (  15.84  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.145.29.96 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [203.254.224.25 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
@@ -90,6 +120,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -101,152 +132,90 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Rajendra Nayak <rnayak@codeaurora.org>, mathieu.poirier@linaro.org,
- linux-arm-msm@vger.kernel.org, david.brown@linaro.org, agross@kernel.org,
- Sibi Sankar <sibis@codeaurora.org>, Vivek Gautam <vivek.gautam@codeaurora.org>,
+Cc: mark.rutland@arm.com, anshuman.khandual@arm.com, marc.zyngier@arm.com,
+ andreyknvl@google.com, linux-kernel@vger.kernel.org, seroto7@gmail.com,
+ jinho lim <jordan.lim@samsung.com>, ebiederm@xmission.com,
  linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Stephan,
+[v2]
+dump_kernel_instr does not work for user mode.
+rename dump_instr function and remove __dump_instr.
 
-On 6/20/2019 12:09 AM, Stephan Gerhold wrote:
-> Hi,
-> 
-> On Wed, Jun 19, 2019 at 09:49:03AM +0100, Suzuki K Poulose wrote:
->> Hi Stephan,
->>
->> On 18/06/2019 21:26, Stephan Gerhold wrote:
->>> Hi,
->>>
->>> I'm trying to run mainline Linux on a smartphone with MSM8916 SoC.
->>> It works surprisingly well, but the coresight devices seem to cause the
->>> following crash shortly after userspace starts:
->>>
->>>       Internal error: synchronous external abort: 96000010 [#1] PREEMPT SMP
->>
->> ...
->>
->>
->>>
->>> In this case I'm using a simple device tree similar to apq8016-sbc,
->>> but it also happens using something as simple as msm8916-mtp.dts
->>> on this particular device.
->>>     (Attached: dmesg log with msm8916-mtp.dts and arm64 defconfig)
->>>
->>> I can avoid the crash and boot without any further problems by disabling
->>> every coresight device defined in msm8916.dtsi, e.g.:
->>>
->>> 	tpiu@820000 { status = "disabled"; };
->>
->> ...
->>
->>>
->>> I don't have any use for coresight at the moment,
->>> but it seems somewhat odd to put this in the device specific dts.
->>>
->>> Any idea what could be causing this crash?
->>
->> This is mostly due to the missing power domain support. The CoreSight
->> components are usually in a debug power domain. So unless that is turned on,
->> (either by specifying proper power domain ids for power management protocol
->> supported by the firmware OR via other hacks - e.g, connecting a DS-5 to
->> keep the debug power domain turned on , this works on Juno -).
-> 
-> Interesting, thanks a lot!
-> 
-> In this case I'm wondering how it works on the Dragonboard 410c.
-> Does it enable these power domains in the firmware?
->    (Assuming it boots without this error...)
-> 
-> If coresight is not working properly on all/most msm8916 devices,
-> shouldn't coresight be disabled by default in msm8916.dtsi?
-> At least until those power domains can be set up by the kernel.
-> 
-> If this is a device-specific issue, what would be an acceptable solution
-> for mainline?
-> Can I turn on these power domains from the kernel?
-> Or is it fine to disable coresight for this device with the snippet above?
-> 
-> I'm not actually trying to use coresight, I just want the device to boot :)
-> And since I am considering submitting my device tree for inclusion in
-> mainline, I want to ask in advance how I should tackle this problem.
-> 
-> Thanks!
-> Stephan
-> 
+Signed-off-by: jinho lim <jordan.lim@samsung.com>
+---
 
-This doesn't seem like cpuidle or debug power domain issue, but looks
-like cpu affinity issue. Can you please try out this patch and let us
-know?
+Thanks for review, I rename dump_instr function and merge __dump_instr in it.
 
-diff --git a/drivers/hwtracing/coresight/coresight-cpu-debug.c 
-b/drivers/hwtracing/coresight/coresight-cpu-debug.c
-index e8819d750938..9acf9f190d42 100644
---- a/drivers/hwtracing/coresight/coresight-cpu-debug.c
-+++ b/drivers/hwtracing/coresight/coresight-cpu-debug.c
-@@ -579,7 +579,11 @@ static int debug_probe(struct amba_device *adev, 
-const struct amba_id *id)
-  	if (!drvdata)
-  		return -ENOMEM;
+ arch/arm64/kernel/traps.c | 29 ++++++++++++++---------------
+ 1 file changed, 14 insertions(+), 15 deletions(-)
 
--	drvdata->cpu = np ? of_coresight_get_cpu(np) : 0;
-+	drvdata->cpu = np ? of_coresight_get_cpu(np) : -ENODEV;
-+	if (drvdata->cpu == -ENODEV) {
-+		return -ENODEV;
-+	}
+diff --git a/arch/arm64/kernel/traps.c b/arch/arm64/kernel/traps.c
+index ccc13b45d9b1..7053165cb31a 100644
+--- a/arch/arm64/kernel/traps.c
++++ b/arch/arm64/kernel/traps.c
+@@ -66,11 +66,20 @@ static void dump_backtrace_entry(unsigned long where)
+ 	printk(" %pS\n", (void *)where);
+ }
+ 
+-static void __dump_instr(const char *lvl, struct pt_regs *regs)
++static void dump_kernel_instr(const char *lvl, struct pt_regs *regs)
+ {
+-	unsigned long addr = instruction_pointer(regs);
++	unsigned long addr;
+ 	char str[sizeof("00000000 ") * 5 + 2 + 1], *p = str;
+ 	int i;
++	mm_segment_t fs;
 +
-  	if (per_cpu(debug_drvdata, drvdata->cpu)) {
-  		dev_err(dev, "CPU%d drvdata has already been initialized\n",
-  			drvdata->cpu);
-diff --git a/drivers/hwtracing/coresight/coresight-etm4x.c 
-b/drivers/hwtracing/coresight/coresight-etm4x.c
-index 8bb0092c7ec2..660432acbac0 100644
---- a/drivers/hwtracing/coresight/coresight-etm4x.c
-+++ b/drivers/hwtracing/coresight/coresight-etm4x.c
-@@ -1107,7 +1107,10 @@ static int etm4_probe(struct amba_device *adev, 
-const struct amba_id *id)
-
-  	spin_lock_init(&drvdata->spinlock);
-
--	drvdata->cpu = pdata ? pdata->cpu : 0;
-+	drvdata->cpu = pdata ? pdata->cpu : -ENODEV;
-+	if (drvdata->cpu == -ENODEV) {
-+		return -ENODEV;
-+       }
-
-  	cpus_read_lock();
-  	etmdrvdata[drvdata->cpu] = drvdata;
-diff --git a/drivers/hwtracing/coresight/of_coresight.c 
-b/drivers/hwtracing/coresight/of_coresight.c
-index 7045930fc958..8c1b90ba233c 100644
---- a/drivers/hwtracing/coresight/of_coresight.c
-+++ b/drivers/hwtracing/coresight/of_coresight.c
-@@ -153,14 +153,14 @@ int of_coresight_get_cpu(const struct device_node 
-*node)
-  	struct device_node *dn;
-
-  	dn = of_parse_phandle(node, "cpu", 0);
--	/* Affinity defaults to CPU0 */
-+	/* Affinity defaults to invalid */
-  	if (!dn)
--		return 0;
-+		return -ENODEV;
-  	cpu = of_cpu_node_to_id(dn);
-  	of_node_put(dn);
-
--	/* Affinity to CPU0 if no cpu nodes are found */
--	return (cpu < 0) ? 0 : cpu;
-+	/* Affinity to invalid if no cpu nodes are found */
-+	return (cpu < 0) ? -ENODEV : cpu;
-  }
-  EXPORT_SYMBOL_GPL(of_coresight_get_cpu);
-
++	if (user_mode(regs))
++		return;
++
++	addr = instruction_pointer(regs);
++
++	fs = get_fs();
++	set_fs(KERNEL_DS);
+ 
+ 	for (i = -4; i < 1; i++) {
+ 		unsigned int val, bad;
+@@ -84,19 +93,10 @@ static void __dump_instr(const char *lvl, struct pt_regs *regs)
+ 			break;
+ 		}
+ 	}
++
+ 	printk("%sCode: %s\n", lvl, str);
+-}
+ 
+-static void dump_instr(const char *lvl, struct pt_regs *regs)
+-{
+-	if (!user_mode(regs)) {
+-		mm_segment_t fs = get_fs();
+-		set_fs(KERNEL_DS);
+-		__dump_instr(lvl, regs);
+-		set_fs(fs);
+-	} else {
+-		__dump_instr(lvl, regs);
+-	}
++	set_fs(fs);
+ }
+ 
+ void dump_backtrace(struct pt_regs *regs, struct task_struct *tsk)
+@@ -182,8 +182,7 @@ static int __die(const char *str, int err, struct pt_regs *regs)
+ 	print_modules();
+ 	show_regs(regs);
+ 
+-	if (!user_mode(regs))
+-		dump_instr(KERN_EMERG, regs);
++	dump_kernel_instr(KERN_EMERG, regs);
+ 
+ 	return ret;
+ }
 -- 
-QUALCOMM INDIA, on behalf of Qualcomm Innovation Center, Inc. is a member
-of Code Aurora Forum, hosted by The Linux Foundation
+2.17.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
