@@ -2,67 +2,94 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0B8104D59D
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 20 Jun 2019 20:00:05 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C059F4D5B3
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 20 Jun 2019 20:00:41 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9QJvKSq238hcyurZPfDSIjttVnzqIHKS9PVazncKgxc=; b=mhwUn6xuOFDuZL
-	gnoO/mLKmmm3ejsN5zURcwXPko7XMJDb+wsD1WBURqw21MlLbUDmwKXQB5V0bK3PZ/8oZo2vwzyF5
-	VQTII+Drl7TIcE9OmJoNYQTHjojWq7ovOrTYU7Tda+aXPgqouA2ZM9rnxf08b4dg/sHDSiuFkhu6x
-	bBGpxh4bHQS0AKzHr6l7Ee1iFpcmpb4wPPJjvGB6IPTu+6m/c0w78+PuqZnzonAmPpPat3cBov8yO
-	10Dr+p+8XCGM8+MgR/n4P2xmJEUGG2FcYRqTGzCQryuJQaMFkUw8jv/SqKEn5qAMpEL9gDiIuuJPl
-	rkLh6NOV8YiixYQ5z5/Q==;
+	List-Owner; bh=+g3mbo3DScAcaFVz9fCJrf/5APsFuPS61Amj3HzlJHQ=; b=W6GMwDu+RgFpDN
+	BsI1xCyKWj05jP+EefhYc37P+cN4ptSpX7j/6eyk8186qVXeFrgZZRDv13FywBtBQCAm1TzvfT9sQ
+	oTdhkVMb2nVFZ0dxB4loAgCNyTqdVTIvqexNiPFrZj0SqhrBqyoknR+lkT+vmj0UyofdYVbmpntI/
+	mpyt09X5HOFHLN7j5Nui9tH56r1Cjb5yxF41BUtTaB+YXazXG/pbHOr1ILLtkq+Zc4lYj5QjPBPzD
+	392n7j3hwyNkTF50gRxHUo0xsG1DintAtCZIpOR03O0GQEBzdgsCjxICV5F0CAZCKZVGlc1NJnSUX
+	LG69wCwcJaXjQtbHYPVw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1he1Lu-0007HI-Ro; Thu, 20 Jun 2019 18:00:03 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1he1MU-0000cU-1u; Thu, 20 Jun 2019 18:00:38 +0000
+Received: from mail-io1-xd44.google.com ([2607:f8b0:4864:20::d44])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1he1L1-0006kd-RS
- for linux-arm-kernel@lists.infradead.org; Thu, 20 Jun 2019 17:59:09 +0000
-Received: from localhost (83-86-89-107.cable.dynamic.v4.ziggo.nl
- [83.86.89.107])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 104112084A;
- Thu, 20 Jun 2019 17:59:07 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1561053547;
- bh=/0WH4uHs/A+ra6mDSAaIyKeRR9oPoZo77d2r4bA8WFg=;
- h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=lteTcv3x/Js+EsD/AjXuoET0hJtjahchDc+BjqTKP6p1/J+cyZE/9kzMRP0fI30Mz
- +eDKbYO4nYOIi+d7AtSCl2Z6nVfgqUlqE8ua9Z80Pw5HbWV/CU7bP1bzMCtEheU8y1
- JUTGsKcLzn1KE32vG+mixxzlk2pHP/qy+RgWmWnE=
-From: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
-To: linux-kernel@vger.kernel.org
-Subject: [PATCH 4.4 26/84] ARM: dts: imx6qdl: Specify IMX6QDL_CLK_IPG as "ipg"
- clock to SDMA
-Date: Thu, 20 Jun 2019 19:56:23 +0200
-Message-Id: <20190620174341.592434056@linuxfoundation.org>
-X-Mailer: git-send-email 2.22.0
-In-Reply-To: <20190620174337.538228162@linuxfoundation.org>
-References: <20190620174337.538228162@linuxfoundation.org>
-User-Agent: quilt/0.66
+ id 1he1MA-0000bf-1H
+ for linux-arm-kernel@lists.infradead.org; Thu, 20 Jun 2019 18:00:19 +0000
+Received: by mail-io1-xd44.google.com with SMTP id r185so6104774iod.6
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 20 Jun 2019 11:00:17 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=a6gHYMn4DiYjx4+x0P+0mU7HYYsU9Qn0hhfuvOOPEWI=;
+ b=KX+c9HUvfPrXpnsPKBhMvQGL5pJxU0Ji2ByV4ojgRcfewSBdfj5dLd0l8Q2r1AJxAL
+ mqL1LcgLYZLxCeJVToTvpr/UjFXcN6cawjcVRTiDyyo+FVrWLC8+FhUtlx3+eKOWIDTo
+ HvaOSXw5HlX7OKPSSRoxtc7CRSXTknmv/puhg67HkgC4/KXSqPZKG6Rkien+k3Pf9512
+ AAiq1B7WY8EQ0yz18i6gS8K+NAsDrPqppIZsquYwrSenk3gofH8+dHT6jYs/zrNsGHJM
+ WCcrpiGchFcL3yIKd8ok4vDOcE+0+Uj2HicKBFmU7gOvzJjE/UFMgGOCKIHT6h6aNIoh
+ AlUQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=a6gHYMn4DiYjx4+x0P+0mU7HYYsU9Qn0hhfuvOOPEWI=;
+ b=LHDpU0jLpIyrViiYK0gUPCObZUjwhOuSWWRtaaS8PpWOmv46DcQ6rX6eoLB83pM8Nn
+ UHfhfONvciCSrv++p9+PGZlY89kFgQTvePTXI5I1E5keSr0/kW4Hn/YLBXiVZNiS7/jY
+ 49YzobyfpXBpFUDLm+95LSdLpeo12oDw3sxWBJeixmMefv8RNbItir6vtUKr5//0PovM
+ 6vjtir+038vhIjg3sU1mmcU5yrfQLJweg3dfDOvEZ7fv+WoHbEiaGpGR34NkuPHTTGfL
+ HnuGyx0wg7//5yCIhBcmKITIowrbNiFG/olPmb+Wah94DxQfwIlvKClrBtE2wsoZJvOt
+ w6hA==
+X-Gm-Message-State: APjAAAWITvhlAlso47ys977SbPSEXz0nK4rX4xLf36iDFXJ13JQuonBX
+ ec+rbRy4LujhhHIhcX//6oxofeG9Byli9VdVPzZgGQ==
+X-Google-Smtp-Source: APXvYqxDzT7XumVudrxn6lRbX5870VezXlE6TO6jD8Idf1m5gVSSqB5JKeypi1AkIctmM4ok4+oXJh58aXnURbbgvpA=
+X-Received: by 2002:a6b:2c96:: with SMTP id s144mr80006774ios.57.1561053616966; 
+ Thu, 20 Jun 2019 11:00:16 -0700 (PDT)
 MIME-Version: 1.0
+References: <15ef45d4-ee1a-3c45-878d-f08f0a84cfeb@arm.com>
+ <20190619110749.GD1360@e107155-lin>
+ <CANLsYkw-KhMVgTfyBSF4-uv4wxQBBQfzyvVbAnaFSqHhkgX6Mg@mail.gmail.com>
+ <20190620114116.GE20984@e119886-lin.cambridge.arm.com>
+ <20190620154154.GB25273@e107155-lin>
+ <CANLsYkxSBuqKJZQLqR238TGe1p5y7QPyLHSZTAOF++=uzGUJjg@mail.gmail.com>
+ <20190620163426.GC25273@e107155-lin>
+ <CANLsYkymTnxRX61StUGvKGeiQV6P6YbCg81PSYeBpXLsX5tpiw@mail.gmail.com>
+ <20190620165427.GH20984@e119886-lin.cambridge.arm.com>
+ <9adb65af-a898-462b-ecbc-af972d9331a6@arm.com>
+ <20190620171102.GF25273@e107155-lin>
+In-Reply-To: <20190620171102.GF25273@e107155-lin>
+From: Mathieu Poirier <mathieu.poirier@linaro.org>
+Date: Thu, 20 Jun 2019 12:00:06 -0600
+Message-ID: <CANLsYkyBTZHt0CcOWOpkpFMPXh+JXFdU=bAkC9VjpQHF3Xm6Fg@mail.gmail.com>
+Subject: Re: [PATCH v1 5/5] coresight: etm4x: save/restore state across CPU
+ low power states
+To: Sudeep Holla <sudeep.holla@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190620_105907_950074_423C648B 
-X-CRM114-Status: GOOD (  12.36  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20190620_110018_117982_15A6FC24 
+X-CRM114-Status: GOOD (  16.46  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:d44 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -74,62 +101,68 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, Andrey Smirnov <andrew.smirnov@gmail.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- "Angus Ainslie \(Purism\)" <angus@akkea.ca>, stable@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, Fabio Estevam <fabio.estevam@nxp.com>,
- Adam Ford <aford173@gmail.com>, Shawn Guo <shawnguo@kernel.org>,
- Chris Healy <cphealy@gmail.com>, Lucas Stach <l.stach@pengutronix.de>
+Cc: Al Grant <Al.Grant@arm.com>, Suzuki K Poulose <suzuki.poulose@arm.com>,
+ Alexander Shishkin <alexander.shishkin@linux.intel.com>,
+ Andrew Murray <andrew.murray@arm.com>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
+ Mike Leach <mike.leach@linaro.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-[ Upstream commit b14c872eebc501b9640b04f4a152df51d6eaf2fc ]
+On Thu, 20 Jun 2019 at 11:11, Sudeep Holla <sudeep.holla@arm.com> wrote:
+>
+> On Thu, Jun 20, 2019 at 06:00:48PM +0100, Suzuki K Poulose wrote:
+> >
+> >
+> > On 20/06/2019 17:54, Andrew Murray wrote:
+> > > On Thu, Jun 20, 2019 at 10:47:38AM -0600, Mathieu Poirier wrote:
+> > > > On Thu, 20 Jun 2019 at 10:34, Sudeep Holla <sudeep.holla@arm.com> wrote:
+> > > > >
+> > > > > On Thu, Jun 20, 2019 at 10:14:04AM -0600, Mathieu Poirier wrote:
+> > > > > > On Thu, 20 Jun 2019 at 09:41, Sudeep Holla <sudeep.holla@arm.com> wrote:
+> >
+> > ...
+> >
+> > > > Then all we have to do is make the ACPI/DT property that indicate the
+> > > > method used to deal with tracer idling mandatory.  That way people are
+> > > > conscious of the choice they are making.  To be backward compatible
+> > > > with current systems we default to the TRCPDCR.PU method but print a
+> > > > warning message, just like we do for obsolete DT bindings.
+> > >
+> > > I'll respin the series based on this approach. I'll also flip the
+> > > 'disable_pm_save' module option to 'enable_pm_save' - thus allowing any
+> > > one to use software save/restore if they wish.
+> >
+> > If you are going to add a firmware property, please get a consensus on the
+> > name here, before respinning to avoid another churn :-). How about one of :
+> >
+> > "arm,coresight-etm-looses-state"
+> > "arm,coresight-etm-needs-save-restore"
+> >
+>
+> Just to be more clear, I am fine with just kernel command/module parameter
+> approach and DT bindings may not be required. If at all it is decided to
+> take DT approach, then you really don't need command/module parameter IMO.
+> I will leave that to you and Mathieu, wanted to make sure I am not
+> contributing to the confusion yet again.
 
-Since 25aaa75df1e6 SDMA driver uses clock rates of "ipg" and "ahb"
-clock to determine if it needs to configure the IP block as operating
-at 1:1 or 1:2 clock ratio (ACR bit in SDMAARM_CONFIG). Specifying both
-clocks as IMX6QDL_CLK_SDMA results in driver incorrectly thinking that
-ratio is 1:1 which results in broken SDMA funtionality(this at least
-breaks RAVE SP serdev driver on RDU2). Fix the code to specify
-IMX6QDL_CLK_IPG as "ipg" clock for SDMA, to avoid detecting incorrect
-clock ratio.
+Both DT/ACPI and module parameters are needed.
 
-Signed-off-by: Andrey Smirnov <andrew.smirnov@gmail.com>
-Reviewed-by: Lucas Stach <l.stach@pengutronix.de>
-Cc: Angus Ainslie (Purism) <angus@akkea.ca>
-Cc: Chris Healy <cphealy@gmail.com>
-Cc: Lucas Stach <l.stach@pengutronix.de>
-Cc: Fabio Estevam <fabio.estevam@nxp.com>
-Cc: Shawn Guo <shawnguo@kernel.org>
-Cc: linux-arm-kernel@lists.infradead.org
-Cc: linux-kernel@vger.kernel.org
-Tested-by: Adam Ford <aford173@gmail.com>
-Signed-off-by: Shawn Guo <shawnguo@kernel.org>
-Signed-off-by: Sasha Levin <sashal@kernel.org>
----
- arch/arm/boot/dts/imx6qdl.dtsi | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+The module parameter is there to overwrite the default setting for
+debugging purposes when using the notifiers method and assumes cores
+have been prevented from idling - otherwise the system will crash.
+The DT/ACPI property is needed to tell coresight which method to use,
+i.e architected of notifiers, to avoid latency issues when possible.
 
-diff --git a/arch/arm/boot/dts/imx6qdl.dtsi b/arch/arm/boot/dts/imx6qdl.dtsi
-index e6af41c4bbc1..3992b8ea1c48 100644
---- a/arch/arm/boot/dts/imx6qdl.dtsi
-+++ b/arch/arm/boot/dts/imx6qdl.dtsi
-@@ -853,7 +853,7 @@
- 				compatible = "fsl,imx6q-sdma", "fsl,imx35-sdma";
- 				reg = <0x020ec000 0x4000>;
- 				interrupts = <0 2 IRQ_TYPE_LEVEL_HIGH>;
--				clocks = <&clks IMX6QDL_CLK_SDMA>,
-+				clocks = <&clks IMX6QDL_CLK_IPG>,
- 					 <&clks IMX6QDL_CLK_SDMA>;
- 				clock-names = "ipg", "ahb";
- 				#dma-cells = <3>;
--- 
-2.20.1
+Thanks,
+Mathieu
 
-
-
+>
+> --
+> Regards,
+> Sudeep
 
 _______________________________________________
 linux-arm-kernel mailing list
