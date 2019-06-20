@@ -2,39 +2,39 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9A4FF4D445
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 20 Jun 2019 18:52:43 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 43F864D456
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 20 Jun 2019 18:54:48 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=wkrQYuSW1xLCI75Db0AKLx2139GbaUpAl5OE/MizKIE=; b=WWk0276dd7S+WG
-	Oo3XAY2lTcVIl8FD+6sboChOoJOvwTxcLiDxkkOQ2iHhj1rkk0igUUcIpQ10MDPRayV/opRajOj54
-	+0tJ7i5SrP6ZCCAwAyEHfYuUAA1nm2VLMdQfGg2cUZX0sdb+4JpEFsIojwmzAOv3F/FaMT5lqcRDb
-	4kAZbPdOnm7a74uJ3K2h+gAePjBIp3UXy8pakwM4L7QpH6mUXwDm1/qD4lDsppy7kN6hnfwA+AJoh
-	a3rWWbvr66oGiJY9fQCl2XnJ3UqqoAbHNvYvnGm8x+fRKz9DsAezKUvmIFwZEbv6Xlz6pzixaMt+j
-	G/IudzjMa3+Tq4lhFZ/g==;
+	List-Owner; bh=zv38iNFy7HXqIA33JTggrFpuHjZ8egdyLT3VhDZrvSk=; b=TWA29MuUbXdccx
+	g/444BYydoG5cG324ZOp6/Xxb1fovEkCt3e5NsXrl5jbuQF+UkOR7trrjkN7RM7vvHO7yrzOxLYyA
+	9/IQUH9OnWvAilVkwd5PEaYYC09DmLYT7Ayh3yu+MGhyl3tKknr0VksOJ72ktzkzcJk6Xv4hQKmAO
+	N18Fkgtz7m0vi+aMkfACY3eu4VCBii3Jx2kfdEbV8gV7NiESKy7NQTtI9hy3Khl/0vCX9nPwFCoTS
+	BKxrxYZNw/ixXQ2PykCWCSHNW1qLEMvOcPEmtKp93rniZYLW3x0d0K8/uc/XamXEue9YfdVN6LrIP
+	2rjWN2nTyOBsiZZqekmQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1he0Ik-0003Ot-05; Thu, 20 Jun 2019 16:52:42 +0000
+	id 1he0Kk-0003kJ-0i; Thu, 20 Jun 2019 16:54:46 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1he0IV-0003OE-4s
- for linux-arm-kernel@lists.infradead.org; Thu, 20 Jun 2019 16:52:28 +0000
+ id 1he0KV-0003jZ-B8
+ for linux-arm-kernel@lists.infradead.org; Thu, 20 Jun 2019 16:54:32 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 555642B;
- Thu, 20 Jun 2019 09:52:21 -0700 (PDT)
-Received: from e107155-lin (e107155-lin.cambridge.arm.com [10.1.196.42])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 36F003F246;
- Thu, 20 Jun 2019 09:52:20 -0700 (PDT)
-Date: Thu, 20 Jun 2019 17:52:18 +0100
-From: Sudeep Holla <sudeep.holla@arm.com>
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id B68722B;
+ Thu, 20 Jun 2019 09:54:29 -0700 (PDT)
+Received: from localhost (unknown [10.37.6.20])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 38CF63F246;
+ Thu, 20 Jun 2019 09:54:29 -0700 (PDT)
+Date: Thu, 20 Jun 2019 17:54:27 +0100
+From: Andrew Murray <andrew.murray@arm.com>
 To: Mathieu Poirier <mathieu.poirier@linaro.org>
 Subject: Re: [PATCH v1 5/5] coresight: etm4x: save/restore state across CPU
  low power states
-Message-ID: <20190620165218.GE25273@e107155-lin>
+Message-ID: <20190620165427.GH20984@e119886-lin.cambridge.arm.com>
 References: <20190618125433.9739-6-andrew.murray@arm.com>
  <20190618132159.GA18121@e107155-lin>
  <15ef45d4-ee1a-3c45-878d-f08f0a84cfeb@arm.com>
@@ -48,10 +48,10 @@ References: <20190618125433.9739-6-andrew.murray@arm.com>
 MIME-Version: 1.0
 Content-Disposition: inline
 In-Reply-To: <CANLsYkymTnxRX61StUGvKGeiQV6P6YbCg81PSYeBpXLsX5tpiw@mail.gmail.com>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+User-Agent: Mutt/1.10.1+81 (426a6c1) (2018-08-26)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190620_095227_280065_4176B50F 
-X-CRM114-Status: GOOD (  23.65  )
+X-CRM114-CacheID: sfid-20190620_095431_641792_6F310FDE 
+X-CRM114-Status: GOOD (  23.50  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -72,7 +72,7 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>,
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: Al Grant <Al.Grant@arm.com>, Suzuki K Poulose <suzuki.poulose@arm.com>,
  Alexander Shishkin <alexander.shishkin@linux.intel.com>,
- Sudeep Holla <sudeep.holla@arm.com>, Andrew Murray <andrew.murray@arm.com>,
+ Sudeep Holla <sudeep.holla@arm.com>,
  linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
  Mike Leach <mike.leach@linaro.org>
 Content-Type: text/plain; charset="us-ascii"
@@ -124,22 +124,30 @@ On Thu, Jun 20, 2019 at 10:47:38AM -0600, Mathieu Poirier wrote:
 > > compared to others definitely does. So I am fine if this needs to be
 > > advertised *not broken* but *by design*, sure go for it.
 > >
->
+> 
 > Then all we have to do is make the ACPI/DT property that indicate the
 > method used to deal with tracer idling mandatory.  That way people are
 > conscious of the choice they are making.  To be backward compatible
 > with current systems we default to the TRCPDCR.PU method but print a
 > warning message, just like we do for obsolete DT bindings.
->
 
-If you are happy with kernel module/command line parameters, I am fine
-by that too. I missed that earlier, sorry for the noise. But I still
-need to keep the default disabled and platforms needing it must enable
-it. If not architectural argument, I am still concerned with latency :)
+I'll respin the series based on this approach. I'll also flip the
+'disable_pm_save' module option to 'enable_pm_save' - thus allowing any
+one to use software save/restore if they wish.
 
---
-Regards,
-Sudeep
+Thanks for the feedback everyone.
+
+Thanks,
+
+Andrew Murray
+
+> 
+> > My main concern was additional latency that this introduces for platforms
+> > that don't require.
+> >
+> > --
+> > Regards,
+> > Sudeep
 
 _______________________________________________
 linux-arm-kernel mailing list
