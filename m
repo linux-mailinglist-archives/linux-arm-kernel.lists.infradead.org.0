@@ -2,46 +2,48 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E8B034CF74
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 20 Jun 2019 15:48:44 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 059F34CF81
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 20 Jun 2019 15:49:07 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=alZVLhz06TvmfRyDEY2JZB35knbrcnlu3RNJdyHiH5c=; b=bszJnpIGeA0KWx
-	6P6wLhscJlr0QMmlgSk84JbOLN9RPXcOT6L8Fb6H6qZVWsKK0deqVEoIYl5ZVmjxw6IbUlzrog3Aw
-	DZlQKse3G2P21hig+SIMOz9TWhM9jgNkKLNOFgoJB6Mo6qHxqExLfQZsr9ugMvBrOTMIawrPUgJhN
-	8EoF+HLbLphyR1u0AQaiVwVMiDPkxhf3C1b3czrpvnF0+gSNl1ne8wgOEmBSQeJLEEbjbt3XIN3pW
-	erhdvO12MVJvscqtHM1XYBUrbVFWDpgSubUl7v8l6GZXSFHeX1pdAYM+DYxRPxQyuw9U8mMwL5jIS
-	G/YpzmrcneQxNl9hyCyw==;
+	List-Owner; bh=viAkCq09gpKyoY2Z+kSVl4kTP3xmZrvDf5w9qtHvuiY=; b=hdoei38wBMupmK
+	7sOT2Ix/FKww5X2EPhRzVkYl3FJ7PzY8dyiJGjCTCVjux2jIh7px4D2ERtLOu2DS7Fv1CIq+9XuZw
+	Y+bYm4d1BPxVJcQ/BZ9jtQ9ndGodn9lyEByLZoYSJtcgY6jHC3osTX8NVmCUEk3G45H0aZnn2jkRm
+	eArRo3j/crzkfKivt0WLweCrnHqh3r2PhfQhlzXVMjjccUl8sL28hPYEbTczIAtwbzFbkf/djHX8m
+	UTP6oD4k2x499sI/0FMLf/Dt/zq0wkDXNHOkMaZNFpRwTAwgDnKjivKttRuvj5+vI/ZcArADfKe2S
+	m7OIbh8nr+mM4ewYmobQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hdxQe-000264-C9; Thu, 20 Jun 2019 13:48:40 +0000
+	id 1hdxR3-0002Rz-90; Thu, 20 Jun 2019 13:49:05 +0000
 Received: from vps.xff.cz ([195.181.215.36])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hdxPw-0001mI-25
+ id 1hdxPw-0001mL-Lq
  for linux-arm-kernel@lists.infradead.org; Thu, 20 Jun 2019 13:47:59 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=megous.com; s=mail;
- t=1561038472; bh=eZIRAtXh9rUuple04Feis2vfaVq0NzLnMtCBPANF3QE=;
+ t=1561038473; bh=1WLK5mVFKFuv1g4gs40+VCmjvdPbojsyFq5tU/7xRNw=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=bAhK2MP3Kh5GZrPNtnMejVPrBMjh8lwMFXb/z7Wbhw1+zyqU4iDdc9WAYTbOC2Wt2
- uv8OXEZMSVT1OSeAI5tCGGCAp1Wl4Dj4AqBiDEZF32gUoCD9nSSaiVuHIvdm8ByNQg
- l87cBKEEK1nkWPsoleFNmDa01nNBQJpjAm1THZ34=
+ b=svueeyeboGX9r7VcaCtB9qn8TWZCNBYJyBCgsuZcn5ttxs0cqtSZkKZpwQAaTpZRv
+ g3wM6EY4kBdAXwWTSsKCjYQncRqQ5amzABcvfxGYM/SoUvYhw/0al+x6t3TVv2n4Qx
+ sJinn6G3EW0MiPrGlke0PEtPbwLEMTPTcU8fn4EE=
 From: megous@megous.com
 To: linux-sunxi@googlegroups.com, Maxime Ripard <maxime.ripard@bootlin.com>,
  Chen-Yu Tsai <wens@csie.org>, Rob Herring <robh+dt@kernel.org>,
  =?UTF-8?q?Jernej=20=C5=A0krabec?= <jernej.skrabec@gmail.com>
-Subject: [PATCH v7 3/6] arm64: dts: allwinner: orange-pi-3: Enable ethernet
-Date: Thu, 20 Jun 2019 15:47:45 +0200
-Message-Id: <20190620134748.17866-4-megous@megous.com>
+Subject: [PATCH v7 4/6] dt-bindings: display: hdmi-connector: Support DDC bus
+ enable
+Date: Thu, 20 Jun 2019 15:47:46 +0200
+Message-Id: <20190620134748.17866-5-megous@megous.com>
 In-Reply-To: <20190620134748.17866-1-megous@megous.com>
 References: <20190620134748.17866-1-megous@megous.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190620_064756_613365_A6082754 
-X-CRM114-Status: GOOD (  11.97  )
+X-CRM114-CacheID: sfid-20190620_064756_878556_45EF1205 
+X-CRM114-Status: UNSURE (   8.46  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -73,7 +75,7 @@ Cc: Ondrej Jirman <megous@megous.com>, Mark Rutland <mark.rutland@arm.com>,
  linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
  linux-stm32@st-md-mailman.stormreply.com, Jose Abreu <joabreu@synopsys.com>,
  linux-arm-kernel@lists.infradead.org, Daniel Vetter <daniel@ffwll.ch>,
- Giuseppe Cavallaro <peppe.cavallaro@st.com>,
+ Giuseppe Cavallaro <peppe.cavallaro@st.com>, Rob Herring <robh@kernel.org>,
  "David S. Miller" <davem@davemloft.net>,
  Maxime Coquelin <mcoquelin.stm32@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
@@ -83,91 +85,31 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Ondrej Jirman <megous@megous.com>
 
-Orange Pi 3 has two regulators that power the Realtek RTL8211E. According
-to the phy datasheet, both regulators need to be enabled at the same time,
-but we can only specify a single phy-supply in the DT.
+Some Allwinner SoC using boards (Orange Pi 3 for example) need to enable
+on-board voltage shifting logic for the DDC bus using a gpio to be able
+to access DDC bus. Use ddc-en-gpios property on the hdmi-connector to
+model this.
 
-This can be achieved by making one regulator depedning on the other via
-vin-supply. While it's not a technically correct description of the
-hardware, it achieves the purpose.
-
-All values of RX/TX delay were tested exhaustively and a middle one of the
-working values was chosen.
+Add binding documentation for optional ddc-en-gpios property.
 
 Signed-off-by: Ondrej Jirman <megous@megous.com>
+Reviewed-by: Rob Herring <robh@kernel.org>
 ---
- .../dts/allwinner/sun50i-h6-orangepi-3.dts    | 44 +++++++++++++++++++
- 1 file changed, 44 insertions(+)
+ .../devicetree/bindings/display/connector/hdmi-connector.txt     | 1 +
+ 1 file changed, 1 insertion(+)
 
-diff --git a/arch/arm64/boot/dts/allwinner/sun50i-h6-orangepi-3.dts b/arch/arm64/boot/dts/allwinner/sun50i-h6-orangepi-3.dts
-index 17d496990108..2c6807b74ff6 100644
---- a/arch/arm64/boot/dts/allwinner/sun50i-h6-orangepi-3.dts
-+++ b/arch/arm64/boot/dts/allwinner/sun50i-h6-orangepi-3.dts
-@@ -15,6 +15,7 @@
+diff --git a/Documentation/devicetree/bindings/display/connector/hdmi-connector.txt b/Documentation/devicetree/bindings/display/connector/hdmi-connector.txt
+index 508aee461e0d..aeb07c4bd703 100644
+--- a/Documentation/devicetree/bindings/display/connector/hdmi-connector.txt
++++ b/Documentation/devicetree/bindings/display/connector/hdmi-connector.txt
+@@ -9,6 +9,7 @@ Optional properties:
+ - label: a symbolic name for the connector
+ - hpd-gpios: HPD GPIO number
+ - ddc-i2c-bus: phandle link to the I2C controller used for DDC EDID probing
++- ddc-en-gpios: signal to enable DDC bus
  
- 	aliases {
- 		serial0 = &uart0;
-+		ethernet0 = &emac;
- 	};
- 
- 	chosen {
-@@ -44,6 +45,27 @@
- 		regulator-max-microvolt = <5000000>;
- 		regulator-always-on;
- 	};
-+
-+	/*
-+	 * The board uses 2.5V RGMII signalling. Power sequence to enable
-+	 * the phy is to enable GMAC-2V5 and GMAC-3V (aldo2) power rails
-+	 * at the same time and to wait 100ms.
-+	 */
-+	reg_gmac_2v5: gmac-2v5 {
-+		compatible = "regulator-fixed";
-+		regulator-name = "gmac-2v5";
-+		regulator-min-microvolt = <2500000>;
-+		regulator-max-microvolt = <2500000>;
-+		startup-delay-us = <100000>;
-+		enable-active-high;
-+		gpio = <&pio 3 6 GPIO_ACTIVE_HIGH>; /* PD6 */
-+
-+		/* The real parent of gmac-2v5 is reg_vcc5v, but we need to
-+		 * enable two regulators to power the phy. This is one way
-+		 * to achieve that.
-+		 */
-+		vin-supply = <&reg_aldo2>; /* GMAC-3V */
-+	};
- };
- 
- &cpu0 {
-@@ -58,6 +80,28 @@
- 	status = "okay";
- };
- 
-+&emac {
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&ext_rgmii_pins>;
-+	phy-mode = "rgmii";
-+	phy-handle = <&ext_rgmii_phy>;
-+	phy-supply = <&reg_gmac_2v5>;
-+	allwinner,rx-delay-ps = <1500>;
-+	allwinner,tx-delay-ps = <700>;
-+	status = "okay";
-+};
-+
-+&mdio {
-+	ext_rgmii_phy: ethernet-phy@1 {
-+		compatible = "ethernet-phy-ieee802.3-c22";
-+		reg = <1>;
-+
-+		reset-gpios = <&pio 3 14 GPIO_ACTIVE_LOW>; /* PD14 */
-+		reset-assert-us = <15000>;
-+		reset-deassert-us = <40000>;
-+	};
-+};
-+
- &mmc0 {
- 	vmmc-supply = <&reg_cldo1>;
- 	cd-gpios = <&pio 5 6 GPIO_ACTIVE_LOW>; /* PF6 */
+ Required nodes:
+ - Video port for HDMI input
 -- 
 2.22.0
 
