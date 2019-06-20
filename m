@@ -2,56 +2,89 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 65DCF4C989
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 20 Jun 2019 10:33:42 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 973424C9D5
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 20 Jun 2019 10:50:56 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=xO0k8uZsb8gls8JhWQLBwYlnkSSWN817ibjdBW5sTCU=; b=pLqvwlFGci0Utk
-	LCtX9tpiJkE/2aVBPTLk3USD8qxaYgZXEqLTMuyiTbu7iIO5xGpkCQcjdVGKoUiihIDgOxBdDlCds
-	eRlRj5Afdm6ErY+RDNuedcycIyObuDOU2+zP48rifA2Y5JzRKiVeywpOl8RK9QM2octqYsUUnIJIY
-	ucEKRCSg1KE1BCdkd6gA50jZmikcJwo+7eQrZEfQADPXltQr98EpyqY7h5+FFv/TR44a2sHcrkaI7
-	OapUvThu6aTy9aVC8Q9+lmbMIokws1LIzUzDXoecTFG/aiL0bnFMTrwpHfWPl7ie54NhoQXvXdDWY
-	sJFFD7nSSe4ZxzsTwn0w==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:References:To:From:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=B+1lvLmVyTRlh1ETjn2EEA+Hu8gZi9IIOHu742KAwQQ=; b=bAa0luJOlxFih/
+	UK3r9AOxqBQ0cbhQTH6lgMyBPSDdgzltvpJApA7Ii2VAQqCt4juHmSBHV/UACrnW+NjOdNO1YmM2W
+	KexrY2Ex5FbeKmtjr8gGGmZNuGb5bBl8o4n/rklgIyXlZ9ATFzby+BF6DbrnuALO2NP+HlFyd26Qv
+	WH1T8nfWwUce+CNIh7CIUyjhUk0TeIetbcffYe54IBBaVOvDZIW+QUpSVcYgiyASbcRzY9n61UNZL
+	6Pyx38d05JUcKCqnHLP72qiHl7w63XsnC68CZYzD4Y4lnVO7WclILIeNSPA3zLhmYGiGDb0w78Gfa
+	i6vJYZwaByhtavAnO1Pg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hdsVo-0007jE-1v; Thu, 20 Jun 2019 08:33:40 +0000
-Received: from relay2-d.mail.gandi.net ([217.70.183.194])
+	id 1hdsmT-0005hy-0p; Thu, 20 Jun 2019 08:50:53 +0000
+Received: from fllv0015.ext.ti.com ([198.47.19.141])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hdsVZ-0007ig-Er
- for linux-arm-kernel@lists.infradead.org; Thu, 20 Jun 2019 08:33:27 +0000
-X-Originating-IP: 92.137.69.152
-Received: from localhost (alyon-656-1-672-152.w92-137.abo.wanadoo.fr
- [92.137.69.152])
- (Authenticated sender: alexandre.belloni@bootlin.com)
- by relay2-d.mail.gandi.net (Postfix) with ESMTPSA id 05CC440011;
- Thu, 20 Jun 2019 08:33:10 +0000 (UTC)
-Date: Thu, 20 Jun 2019 10:33:09 +0200
-From: Alexandre Belloni <alexandre.belloni@bootlin.com>
-To: Ken Sloat <KSloat@aampglobal.com>
-Subject: Re: [PATCH v2 1/1] watchdog: atmel: atmel-sama5d4-wdt: Disable
- watchdog on system suspend
-Message-ID: <20190620083309.GU23549@piout.net>
-References: <20190614125310.29458-1-ksloat@aampglobal.com>
+ id 1hdsm9-0005hf-N0
+ for linux-arm-kernel@lists.infradead.org; Thu, 20 Jun 2019 08:50:35 +0000
+Received: from fllv0034.itg.ti.com ([10.64.40.246])
+ by fllv0015.ext.ti.com (8.15.2/8.15.2) with ESMTP id x5K8oPWT013042;
+ Thu, 20 Jun 2019 03:50:25 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
+ s=ti-com-17Q1; t=1561020625;
+ bh=ZvdTayQSZVxrbxnmLhuudH8+x8XODmTbZSOFAYzkOH0=;
+ h=Subject:From:To:CC:References:Date:In-Reply-To;
+ b=yQcQxeYXgas589nX61LGHgsETt9+I5jlLjqKaFQO/0cV80Umo8zpuMb9/74EeQj+W
+ pvcqdtOdUQsiPDP7w3uwKlyIXJzO7jrnZSRr+749ZIwZW5UpiNi2dr+dy5UG6528JU
+ YkxAWMVgKoblEXhXllSZe43sV0TPyezzuTVh1UXc=
+Received: from DFLE109.ent.ti.com (dfle109.ent.ti.com [10.64.6.30])
+ by fllv0034.itg.ti.com (8.15.2/8.15.2) with ESMTPS id x5K8oPQN092929
+ (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
+ Thu, 20 Jun 2019 03:50:25 -0500
+Received: from DFLE104.ent.ti.com (10.64.6.25) by DFLE109.ent.ti.com
+ (10.64.6.30) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5; Thu, 20
+ Jun 2019 03:50:25 -0500
+Received: from fllv0040.itg.ti.com (10.64.41.20) by DFLE104.ent.ti.com
+ (10.64.6.25) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5 via
+ Frontend Transport; Thu, 20 Jun 2019 03:50:25 -0500
+Received: from [172.24.190.233] (ileax41-snat.itg.ti.com [10.172.224.153])
+ by fllv0040.itg.ti.com (8.15.2/8.15.2) with ESMTP id x5K8oIqb044496;
+ Thu, 20 Jun 2019 03:50:19 -0500
+Subject: Re: [PATCH v11 2/2] phy: Add driver for mixel mipi dphy found on
+ NXP's i.MX8 SoCs
+From: Kishon Vijay Abraham I <kishon@ti.com>
+To: Fabio Estevam <festevam@gmail.com>, =?UTF-8?Q?Guido_G=c3=bcnther?=
+ <agx@sigxcpu.org>
+References: <cover.1557657814.git.agx@sigxcpu.org>
+ <2000bc4564175abd7966207a5e9fbb9bb7d82059.1557657814.git.agx@sigxcpu.org>
+ <CAOMZO5BaFYJxh1v46n2mdPyc+-jg6LgvoGR1rTE+yHZg_0Z8PA@mail.gmail.com>
+ <69fcb327-8b51-df9e-12d9-d75751974bce@ti.com>
+Message-ID: <9a872f5b-1544-32a0-bd93-1d6333468114@ti.com>
+Date: Thu, 20 Jun 2019 14:18:53 +0530
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.7.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190614125310.29458-1-ksloat@aampglobal.com>
-User-Agent: Mutt/1.11.4 (2019-03-13)
+In-Reply-To: <69fcb327-8b51-df9e-12d9-d75751974bce@ti.com>
+Content-Language: en-US
+X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190620_013325_660483_9E3E60F6 
-X-CRM114-Status: GOOD (  19.54  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20190620_015033_885789_34B3376B 
+X-CRM114-Status: GOOD (  18.70  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.183.194 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [198.47.19.141 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -63,91 +96,58 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "linux-watchdog@vger.kernel.org" <linux-watchdog@vger.kernel.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "ludovic.desroches@microchip.com" <ludovic.desroches@microchip.com>,
- "linux@roeck-us.net" <linux@roeck-us.net>,
- "wim@linux-watchdog.org" <wim@linux-watchdog.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ "open list:OPEN FIRMWARE AND FLATTENED DEVICE
+ TREE BINDINGS" <devicetree@vger.kernel.org>, Li Jun <jun.li@nxp.com>,
+ Heiko Stuebner <heiko@sntech.de>, Sam Ravnborg <sam@ravnborg.org>,
+ Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
+ linux-kernel <linux-kernel@vger.kernel.org>,
+ Sascha Hauer <s.hauer@pengutronix.de>, Johan Hovold <johan@kernel.org>,
+ DRI mailing list <dri-devel@lists.freedesktop.org>,
+ Abel Vesa <abel.vesa@nxp.com>, Maxime Ripard <maxime.ripard@bootlin.com>,
+ Rob Herring <robh+dt@kernel.org>, NXP Linux Team <linux-imx@nxp.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Robert Chiras <robert.chiras@nxp.com>, Thierry Reding <treding@nvidia.com>,
+ Shawn Guo <shawnguo@kernel.org>,
+ =?UTF-8?Q?Andreas_F=c3=a4rber?= <afaerber@suse.de>,
+ "moderated list:ARM/FREESCALE
+ IMX / MXC ARM ARCHITECTURE" <linux-arm-kernel@lists.infradead.org>,
+ Lucas Stach <l.stach@pengutronix.de>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 14/06/2019 12:53:22+0000, Ken Sloat wrote:
-> From: Ken Sloat <ksloat@aampglobal.com>
-> 
-> Currently, the atmel-sama5d4-wdt continues to run after system suspend.
-> Unless the system resumes within the watchdog timeout period so the
-> userspace can kick it, the system will be reset. This change disables
-> the watchdog on suspend if it is active and re-enables on resume. These
-> actions occur during the late and early phases of suspend and resume
-> respectively to minimize chances where a lock could occur while the
-> watchdog is disabled.
-> 
-> Signed-off-by: Ken Sloat <ksloat@aampglobal.com>
-Acked-by: Alexandre Belloni <alexandre.belloni@bootlin.com>
-
-> ---
->  Changes in v2:
->  -Consolidate resume and resume early statements.
-> 
->  drivers/watchdog/sama5d4_wdt.c | 21 ++++++++++++++++++---
->  1 file changed, 18 insertions(+), 3 deletions(-)
-> 
-> diff --git a/drivers/watchdog/sama5d4_wdt.c b/drivers/watchdog/sama5d4_wdt.c
-> index 111695223aae..0d123f8cbcc6 100644
-> --- a/drivers/watchdog/sama5d4_wdt.c
-> +++ b/drivers/watchdog/sama5d4_wdt.c
-> @@ -280,7 +280,17 @@ static const struct of_device_id sama5d4_wdt_of_match[] = {
->  MODULE_DEVICE_TABLE(of, sama5d4_wdt_of_match);
->  
->  #ifdef CONFIG_PM_SLEEP
-> -static int sama5d4_wdt_resume(struct device *dev)
-> +static int sama5d4_wdt_suspend_late(struct device *dev)
-> +{
-> +	struct sama5d4_wdt *wdt = dev_get_drvdata(dev);
-> +
-> +	if (watchdog_active(&wdt->wdd))
-> +		sama5d4_wdt_stop(&wdt->wdd);
-> +
-> +	return 0;
-> +}
-> +
-> +static int sama5d4_wdt_resume_early(struct device *dev)
->  {
->  	struct sama5d4_wdt *wdt = dev_get_drvdata(dev);
->  
-> @@ -291,12 +301,17 @@ static int sama5d4_wdt_resume(struct device *dev)
->  	 */
->  	sama5d4_wdt_init(wdt);
->  
-> +	if (watchdog_active(&wdt->wdd))
-> +		sama5d4_wdt_start(&wdt->wdd);
-> +
->  	return 0;
->  }
->  #endif
->  
-> -static SIMPLE_DEV_PM_OPS(sama5d4_wdt_pm_ops, NULL,
-> -			 sama5d4_wdt_resume);
-> +static const struct dev_pm_ops sama5d4_wdt_pm_ops = {
-> +	SET_LATE_SYSTEM_SLEEP_PM_OPS(sama5d4_wdt_suspend_late,
-> +			sama5d4_wdt_resume_early)
-> +};
->  
->  static struct platform_driver sama5d4_wdt_driver = {
->  	.probe		= sama5d4_wdt_probe,
-> -- 
-> 2.17.1
-> 
-
--- 
-Alexandre Belloni, Bootlin
-Embedded Linux and Kernel engineering
-https://bootlin.com
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+SGksCgpPbiAyNC8wNS8xOSA5OjMxIFBNLCBLaXNob24gVmlqYXkgQWJyYWhhbSBJIHdyb3RlOgo+
+IEhpLAo+IAo+IE9uIDI0LzA1LzE5IDU6NTMgUE0sIEZhYmlvIEVzdGV2YW0gd3JvdGU6Cj4+IEhp
+IEtpc2hvbiwKPj4KPj4gT24gU3VuLCBNYXkgMTIsIDIwMTkgYXQgNzo0OSBBTSBHdWlkbyBHw7xu
+dGhlciA8YWd4QHNpZ3hjcHUub3JnPiB3cm90ZToKPj4+Cj4+PiBUaGlzIGFkZHMgc3VwcG9ydCBm
+b3IgdGhlIE1peGVsIERQSFkgYXMgZm91bmQgb24gaS5NWDggQ1BVcyBidXQgc2luY2UKPj4+IHRo
+aXMgaXMgYW4gSVAgY29yZSBpdCB3aWxsIGxpa2VseSBiZSBmb3VuZCBvbiBvdGhlcnMgaW4gdGhl
+IGZ1dHVyZS4gU28KPj4+IGluc3RlYWQgb2YgYWRkaW5nIHRoaXMgdG8gdGhlIG53bCBob3N0IGRy
+aXZlciBtYWtlIGl0IGEgZ2VuZXJpYyBQSFkKPj4+IGRyaXZlci4KPj4+Cj4+PiBUaGUgZHJpdmVy
+IHN1cHBvcnRzIHRoZSBpLk1YOE1RLiBTdXBwb3J0IGZvciBpLk1YOFFNIGFuZCBpLk1YOFFYUCBj
+YW4gYmUKPj4+IGFkZGVkIG9uY2UgdGhlIG5lY2Vzc2FyeSBzeXN0ZW0gY29udHJvbGxlciBiaXRz
+IGFyZSBpbiB2aWEKPj4+IG1peGVsX2RwaHlfZGV2ZGF0YS4KPj4+Cj4+PiBTaWduZWQtb2ZmLWJ5
+OiBHdWlkbyBHw7xudGhlciA8YWd4QHNpZ3hjcHUub3JnPgo+Pj4gQ28tZGV2ZWxvcGVkLWJ5OiBS
+b2JlcnQgQ2hpcmFzIDxyb2JlcnQuY2hpcmFzQG54cC5jb20+Cj4+PiBTaWduZWQtb2ZmLWJ5OiBS
+b2JlcnQgQ2hpcmFzIDxyb2JlcnQuY2hpcmFzQG54cC5jb20+Cj4+PiBSZXZpZXdlZC1ieTogRmFi
+aW8gRXN0ZXZhbSA8ZmVzdGV2YW1AZ21haWwuY29tPgo+Pj4gUmV2aWV3ZWQtYnk6IFNhbSBSYXZu
+Ym9yZyA8c2FtQHJhdm5ib3JnLm9yZz4KPj4KPj4gV291bGQgeW91IGhhdmUgYW55IGNvbW1lbnRz
+IG9uIHRoaXMgc2VyaWVzLCBwbGVhc2U/Cj4gCj4gSSBkb24ndCBoYXZlIGFueSBjb21tZW50cy4g
+SSdsbCBxdWV1ZSB0aGlzIG9uY2UgSSBzdGFydCBxdWV1aW5nIHBhdGNoZXMgZm9yIHRoZQo+IG5l
+eHQgbWVyZ2Ugd2luZG93LgoKQ2FuIHlvdSBmaXggdGhlIGZvbGxvd2luZyBjaGVja3BhdGNoIHdh
+cm5pbmcgYW5kIHJlcG9zdD8KV0FSTklORzogcXVvdGVkIHN0cmluZyBzcGxpdCBhY3Jvc3MgbGlu
+ZXMKIzQyMDogRklMRTogZHJpdmVycy9waHkvZnJlZXNjYWxlL3BoeS1mc2wtaW14OC1taXBpLWRw
+aHkuYzoyODA6CisJZGV2X2RiZygmcGh5LT5kZXYsICJoc19wcmVwYXJlOiAldSwgY2xrX3ByZXBh
+cmU6ICV1LCAiCisJCSJoc196ZXJvOiAldSwgY2xrX3plcm86ICV1LCAiCgpXQVJOSU5HOiBxdW90
+ZWQgc3RyaW5nIHNwbGl0IGFjcm9zcyBsaW5lcwojNDIxOiBGSUxFOiBkcml2ZXJzL3BoeS9mcmVl
+c2NhbGUvcGh5LWZzbC1pbXg4LW1pcGktZHBoeS5jOjI4MToKKwkJImhzX3plcm86ICV1LCBjbGtf
+emVybzogJXUsICIKKwkJImhzX3RyYWlsOiAldSwgY2xrX3RyYWlsOiAldSwgIgoKV0FSTklORzog
+cXVvdGVkIHN0cmluZyBzcGxpdCBhY3Jvc3MgbGluZXMKIzQyMjogRklMRTogZHJpdmVycy9waHkv
+ZnJlZXNjYWxlL3BoeS1mc2wtaW14OC1taXBpLWRwaHkuYzoyODI6CisJCSJoc190cmFpbDogJXUs
+IGNsa190cmFpbDogJXUsICIKKwkJInJ4aHNfc2V0dGxlOiAldVxuIiwKClRoYW5rcwpLaXNob24K
+Cl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFy
+bS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9y
+ZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1r
+ZXJuZWwK
