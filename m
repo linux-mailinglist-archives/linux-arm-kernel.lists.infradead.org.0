@@ -2,55 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 889C34C714
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 20 Jun 2019 08:04:52 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4A2DB4C716
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 20 Jun 2019 08:05:23 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1zpkhTzY8ewm8GbHPEXtuERAOmeDso07Z1IYVX6vyxI=; b=fN5V9/L9gas/vb
-	hbToW8WIbnINRGGd2HpjNBYMl0ghjMEdMK+BGL0onB5r7B9ktQ4ZGQSxq+rAEigdocCrEX+sOBJ/m
-	r7Gaf/k7XzPi1QHWlZ+ws4nBezfQ/27x/5ap+eA+6J8sM9vv+xY0m2mAVqTXejtc2MzrLExqTI2kF
-	zEOvdfvmdQKOzRtqwMMjS9PzYGgVLH/HL3/m5BgDBmM1JRCIt0QEjDcACEIVdsW057444yM2u0LG0
-	++ltWaQeRLd2G7IwxVqS1RNwv/bLWDFJUgLtf6gNaMZyj7WEIjJ/I7wwhw8cs4TwSeNGaip5mmYKo
-	PmNNy8lAkG2ZflzaW7sg==;
+	List-Owner; bh=Q7RrxrqgmFdT4fkeYHecuGc2Vm3NAz9VArPQSTt+ynM=; b=cUsgS3w6xaWhSA
+	5ad9Fz2owea+4edIdBifA8R/suAQ+aczDm50zoJNlRR1Em6eiGpddy2h3z6buIRmLlRSoIg+5MEXe
+	UNttxnyv+FJR+F5V8mWfTsVLtfKIdAzGbPA4zPMfjix4w/JhTpfeGn1CWvPU3zG4xLn1hhlhbqtO0
+	CgaWwl3hwhW3J+lz1+HJqwDChLglj46Xmgw2mK51rJh5dvImpBchRDzThDNUUXc9btk2j6ROEPa3X
+	iKSHIR7iXOl6ofAOn3dJm/m1y4A8rNAS40sREiVt67rD9y/DG8cyBt96hVHfUExyeL3jtSwLbFtIQ
+	Xq1LPZK7qLmSS67RCrJg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hdqBl-0000xZ-8w; Thu, 20 Jun 2019 06:04:49 +0000
+	id 1hdqCF-0001ro-Nh; Thu, 20 Jun 2019 06:05:19 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hdqBS-0000uU-81
- for linux-arm-kernel@lists.infradead.org; Thu, 20 Jun 2019 06:04:32 +0000
+ id 1hdqBy-0001QM-BN
+ for linux-arm-kernel@lists.infradead.org; Thu, 20 Jun 2019 06:05:03 +0000
 Received: from localhost (83-86-89-107.cable.dynamic.v4.ziggo.nl
  [83.86.89.107])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 6975D20B1F;
- Thu, 20 Jun 2019 06:04:29 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 8E3AB20B1F;
+ Thu, 20 Jun 2019 06:05:01 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1561010669;
- bh=bjMarei0fGk6sul762FB4Tz8hOqKyjXu9friWs0xqsI=;
+ s=default; t=1561010702;
+ bh=JxSBMAnuVjwaDaLG39Kh0Z+is/lXGybcgQprRrj5mk4=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=a3w70onmlnmkrp/kTiOsyNA6OvfVrSopxHo1fm913ttOumAmy3Z6WTBzCp1bqcp8b
- g/vnrJxQ1g7DXo9M3NPlPoGsE7Uv5I367br58hB99SLJmYAHCGEw7H0ExUGRIMHIrG
- 3OyEk4qZ+GyOm7uTG3uJTkmW3bna9+/ar3qSOKHE=
-Date: Thu, 20 Jun 2019 08:04:27 +0200
+ b=HdaqC/eZukFxGK735GcvEtjnNS+ktAAR5MrFATmBXzjr7fK0C2Ym1FCqq8DoG6NK/
+ Zq3UZ1N0DHVSOj9a48kBQ53Kf0KRhEmdp0NpozPIPN6oeqm1d9I9WpVaQR59XbpOlh
+ tn6ktBRS8ISuW1w8mVFI03RjIE2ypgFtyTsZTAA8=
+Date: Thu, 20 Jun 2019 08:04:59 +0200
 From: Greg KH <gregkh@linuxfoundation.org>
 To: Mathieu Poirier <mathieu.poirier@linaro.org>
-Subject: Re: [PATCH 24/28] coresight: Potential uninitialized variable in
- probe()
-Message-ID: <20190620060427.GE26319@kroah.com>
+Subject: Re: [PATCH 25/28] coresight: etm3x: Smatch: Fix potential NULL
+ pointer dereference
+Message-ID: <20190620060459.GF26319@kroah.com>
 References: <20190619195318.19254-1-mathieu.poirier@linaro.org>
- <20190619195318.19254-25-mathieu.poirier@linaro.org>
+ <20190619195318.19254-26-mathieu.poirier@linaro.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190619195318.19254-25-mathieu.poirier@linaro.org>
+In-Reply-To: <20190619195318.19254-26-mathieu.poirier@linaro.org>
 User-Agent: Mutt/1.12.1 (2019-06-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190619_230430_487892_3FC3EDF0 
-X-CRM114-Status: GOOD (  10.91  )
+X-CRM114-CacheID: sfid-20190619_230502_426229_EFDE8B92 
+X-CRM114-Status: GOOD (  16.97  )
 X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.0 points)
@@ -81,22 +81,63 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Jun 19, 2019 at 01:53:14PM -0600, Mathieu Poirier wrote:
-> From: Dan Carpenter <dan.carpenter@oracle.com>
+On Wed, Jun 19, 2019 at 01:53:15PM -0600, Mathieu Poirier wrote:
+> From: Suzuki K Poulose <suzuki.poulose@arm.com>
 > 
-> The "drvdata->atclk" clock is optional, but if it gets set to an error
-> pointer then we're accidentally return an uninitialized variable instead
-> of success.
+> Based on the following report from  Smatch tool, make sure we have a
+> valid drvdata before we dereference it to find the real dev.
 > 
-> Fixes: 78e6427b4e7b ("coresight: funnel: Support static funnel")
-> Signed-off-by: Dan Carpenter <dan.carpenter@oracle.com>
+> The patch 21d26b905c05: "coresight: etm: Clean up device specific
+> data" from May 22, 2019, leads to the following Smatch complaint:
+> 
+>     ./drivers/hwtracing/coresight/coresight-etm3x.c:460 etm_get_trace_id()
+>     warn: variable dereferenced before check 'drvdata' (see line 458)
+> 
+> ./drivers/hwtracing/coresight/coresight-etm3x.c
+>    457		int trace_id = -1;
+>    458		struct device *etm_dev = drvdata->csdev->dev.parent;
+>                                          ^^^^^^^^^
+> New dereference
+> 
+>    459
+>    460		if (!drvdata)
+>                     ^^^^^^^^
+> Checked too late.  Delete the check?
+> 
+>    461			goto out;
+>    462
+> 
+> Cc: Mathieu Poirier <mathieu.poirier@linaro.org>
+> Cc: Dan Carpenter <dan.carpenter@oracle.com>
+> Signed-off-by: Suzuki K Poulose <suzuki.poulose@arm.com>
 > Signed-off-by: Mathieu Poirier <mathieu.poirier@linaro.org>
 > ---
->  drivers/hwtracing/coresight/coresight-funnel.c | 1 +
->  1 file changed, 1 insertion(+)
+>  drivers/hwtracing/coresight/coresight-etm3x.c | 3 ++-
+>  1 file changed, 2 insertions(+), 1 deletion(-)
+> 
+> diff --git a/drivers/hwtracing/coresight/coresight-etm3x.c b/drivers/hwtracing/coresight/coresight-etm3x.c
+> index bed729140718..225c2982e4fe 100644
+> --- a/drivers/hwtracing/coresight/coresight-etm3x.c
+> +++ b/drivers/hwtracing/coresight/coresight-etm3x.c
+> @@ -455,11 +455,12 @@ int etm_get_trace_id(struct etm_drvdata *drvdata)
+>  {
+>  	unsigned long flags;
+>  	int trace_id = -1;
+> -	struct device *etm_dev = drvdata->csdev->dev.parent;
+> +	struct device *etm_dev;
+>  
+>  	if (!drvdata)
+>  		goto out;
+>  
+> +	etm_dev = drvdata->csdev->dev.parent;
+>  	if (!local_read(&drvdata->mode))
+>  		return drvdata->traceid;
+>  
+> -- 
+> 2.17.1
+> 
 
-5.2-final please.
-
+Looks like 5.2 and possibly stable material, right?
 
 _______________________________________________
 linux-arm-kernel mailing list
