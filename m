@@ -2,49 +2,72 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 382FD4C4BA
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 20 Jun 2019 03:02:51 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 747E94C4F1
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 20 Jun 2019 03:25:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=BNIeWdv/c1GrcWkUvncSJ1q6xTMuVOzJnxRfQIoxU54=; b=Pcb
-	GaVoXIMYmFzywEg456EAt+7B3EkEB/4NGet3AsHESHD8hzUpK/1GIVe1S0l8tNlGwU7QCM/zYeMbQ
-	3GhdSbhRVIzxI0hoFZU7uh+3qE3z0D7HNLy0N1TiRDWrFgAJ6M3DDKHSR1rwI3H0BGoPjHCSjdQhM
-	FdSZvZFRUruynaDRptyiwXppc/RT/zKWr6m4QDSWT5GgYyA+dWjIJh0DkSd//XzymUhdiCR0PgTQd
-	zZFPrFI9g21LLCd+KQnuSCgoETbA3rr1oDcpof/eZBwlDihRa9i7xxcFp2LiBRlrzd/8S39IRAaeV
-	bcFL3NOG6ZnwC3X0wUrb6YgovX9cHtQ==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=AeSxJsSXwcfGsxgfstZPsIQc4869Iv9m1cie2yEpmEw=; b=GmIWK0N5iG/n+a
+	7wrAX8jNpEh5nGWVaz1CdfNigR5SKwwSNvww/Pewlbxoj4n5/wWUsmZa+nNqmkEjFG3V7qMJ+x5OL
+	NjF4Pkxf96Z+8C4SFgIJiJ04ZPm5rj1AuU2g7JlGHAOpmen0nOr6IinQ89GHdcVosJsxdV+GOuipm
+	M3qmagBIpEBXpUqdZL4mujx9WzsbR9gqQ+sedZzroeJI6biG153k7tEEZuRSuIaGcNDfUy7xHZeIy
+	9j3E73gF9zCoynW3LA1GDeJ/l3kU1naPtOJHaJGbPQCtvHVAzyvCgpm9sXJCA3yDoY/NfT/D16i1F
+	hyWYVCv7YIKTO7ZwRYJA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hdlTT-0001MK-8G; Thu, 20 Jun 2019 01:02:47 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hdlTG-0001Ln-QH
- for linux-arm-kernel@lists.infradead.org; Thu, 20 Jun 2019 01:02:36 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 40347360;
- Wed, 19 Jun 2019 18:02:31 -0700 (PDT)
-Received: from localhost.localdomain (unknown [172.31.20.19])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 096333F718;
- Wed, 19 Jun 2019 18:02:29 -0700 (PDT)
-From: Andre Przywara <andre.przywara@arm.com>
-To: Maxime Ripard <maxime.ripard@bootlin.com>,
-	Chen-Yu Tsai <wens@csie.org>
-Subject: [PATCH] arm64: dts: allwinner: properly connect USB PHY to port 0
-Date: Thu, 20 Jun 2019 02:01:27 +0100
-Message-Id: <20190620010127.12071-1-andre.przywara@arm.com>
-X-Mailer: git-send-email 2.14.1
+	id 1hdlpP-0000eH-Pp; Thu, 20 Jun 2019 01:25:27 +0000
+Received: from mx1.redhat.com ([209.132.183.28])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hdlpE-0000dx-Eg
+ for linux-arm-kernel@lists.infradead.org; Thu, 20 Jun 2019 01:25:17 +0000
+Received: from smtp.corp.redhat.com (int-mx07.intmail.prod.int.phx2.redhat.com
+ [10.5.11.22])
+ (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
+ (No client certificate requested)
+ by mx1.redhat.com (Postfix) with ESMTPS id C2744307D925;
+ Thu, 20 Jun 2019 01:25:15 +0000 (UTC)
+Received: from ovpn-112-53.rdu2.redhat.com (ovpn-112-53.rdu2.redhat.com
+ [10.10.112.53])
+ by smtp.corp.redhat.com (Postfix) with ESMTP id 5B4E81001DD2;
+ Thu, 20 Jun 2019 01:25:12 +0000 (UTC)
+Message-ID: <7c0e8909cee17623565ef88445b0497d5504fe1c.camel@redhat.com>
+Subject: Re: [PATCH v2 00/17] net: introduce Qualcomm IPA driver
+From: Dan Williams <dcbw@redhat.com>
+To: Subash Abhinov Kasiviswanathan <subashab@codeaurora.org>, Arnd Bergmann
+ <arnd@arndb.de>
+Date: Wed, 19 Jun 2019 20:25:11 -0500
+In-Reply-To: <2926e45fd7ff62fd7c4af9b338bf0caa@codeaurora.org>
+References: <380a6185-7ad1-6be0-060b-e6e5d4126917@linaro.org>
+ <a94676381a5ca662c848f7a725562f721c43ce76.camel@sipsolutions.net>
+ <CAK8P3a0kV-i7BJJ2X6C=5n65rSGfo8fUiC4J_G-+M8EctYKbkg@mail.gmail.com>
+ <066e9b39f937586f0f922abf801351553ec2ba1d.camel@sipsolutions.net>
+ <b3686626-e2d8-bc9c-6dd0-9ebb137715af@linaro.org>
+ <b23a83c18055470c5308fcd1eed018056371fc1d.camel@sipsolutions.net>
+ <CAK8P3a1FeUQR3pgoQxHoRK05JGORyR+TFATVQiijLWtFKTv6OQ@mail.gmail.com>
+ <613cdfde488eb23d7207c7ba6258662702d04840.camel@sipsolutions.net>
+ <CAK8P3a2onXpxiE4y9PzRwuPM2dh=h_BKz7Eb0=LLPgBbZoK1bQ@mail.gmail.com>
+ <6c70950d0c78bc02a3d016918ec3929e@codeaurora.org>
+ <CAK8P3a3e+U85yHTeE4dHa4okLVHgBd8Kke9=FytzvMwz+wB0sQ@mail.gmail.com>
+ <2926e45fd7ff62fd7c4af9b338bf0caa@codeaurora.org>
+User-Agent: Evolution 3.30.5 (3.30.5-1.fc29) 
+MIME-Version: 1.0
+X-Scanned-By: MIMEDefang 2.84 on 10.5.11.22
+X-Greylist: Sender IP whitelisted, not delayed by milter-greylist-4.5.16
+ (mx1.redhat.com [10.5.110.48]); Thu, 20 Jun 2019 01:25:16 +0000 (UTC)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190619_180234_943393_22409306 
-X-CRM114-Status: GOOD (  13.67  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190619_182516_513345_1E334A8E 
+X-CRM114-Status: GOOD (  17.54  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [209.132.183.28 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -57,150 +80,46 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Rob Herring <robh@kernel.org>,
- linux-sunxi@googlegroups.com, linux-arm-kernel@lists.infradead.org,
- devicetree@vger.kernel.org
-MIME-Version: 1.0
+Cc: DTML <devicetree@vger.kernel.org>, syadagir@codeaurora.org,
+ Eric Caruso <ejcaruso@google.com>, David Miller <davem@davemloft.net>,
+ linux-arm-msm@vger.kernel.org, Ilias Apalodimas <ilias.apalodimas@linaro.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>, evgreen@chromium.org,
+ Bjorn Andersson <bjorn.andersson@linaro.org>,
+ Networking <netdev@vger.kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Alex Elder <elder@linaro.org>, Johannes Berg <johannes@sipsolutions.net>,
+ linux-soc@vger.kernel.org, abhishek.esse@gmail.com, cpratapa@codeaurora.org,
+ Ben Chan <benchan@google.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-In recent Allwinner SoCs the first USB host controller (HCI0) shares
-the first PHY with the MUSB controller. Probably to make this sharing
-work, we were avoiding to declare this in the DT. This has two
-shortcomings:
-- U-Boot (which uses the same .dts) cannot use this port without a PHY
-  linked, so we were loosing one USB port there.
-- It requires the MUSB driver to be enabled and loaded, although we
-  don't actually use it.
+On Wed, 2019-06-19 at 12:47 -0600, Subash Abhinov Kasiviswanathan
+wrote:
+> > > There is a n:1 relationship between rmnet and IPA.
+> > > rmnet does the de-muxing to multiple netdevs based on the mux id
+> > > in the MAP header for RX packets and vice versa.
+> > 
+> > Oh, so you mean that even though IPA supports multiple channels
+> > and multiple netdev instances for a physical device, all the
+> > rmnet devices end up being thrown into a single channel in IPA?
+> > 
+> > What are the other channels for in IPA? I understand that there
+> > is one channel for commands that is separate, while the others
+> > are for network devices, but that seems to make no sense if
+> > we only use a single channel for rmnet data.
+> > 
+> 
+> AFAIK, the other channels are for use cases like tethering.
+> There is only a single channel which is used for RX
+> data which is then de-muxed using rmnet.
 
-For those (64-bit) boards which use an USB-A socket for HCI0/MUSB, add
-a "phys" property pointing to the USB PHY 0.
+That seems odd, since tethering is no different than any other data
+channel in QMI, just that it may have a different APN and QoS
+guarantees.
 
-This makes it work in U-Boot, also improves compatiblity when no MUSB
-driver is loaded (for instance in distribution installers).
-
-Signed-off-by: Andre Przywara <andre.przywara@arm.com>
----
-Hi,
-
-I have the feeling this belongs into the .dtsi, but cant't tell for sure
-how this interacts with the MUSB driver. If need be, we can always pull
-this up later, I guess.
-
-Thanks,
-Andre
-
- arch/arm64/boot/dts/allwinner/sun50i-a64-pine64.dts           | 2 ++
- arch/arm64/boot/dts/allwinner/sun50i-a64-sopine-baseboard.dts | 2 ++
- arch/arm64/boot/dts/allwinner/sun50i-h5-nanopi-neo-plus2.dts  | 2 ++
- arch/arm64/boot/dts/allwinner/sun50i-h6-beelink-gs1.dts       | 2 ++
- arch/arm64/boot/dts/allwinner/sun50i-h6-pine-h64.dts          | 2 ++
- 5 files changed, 10 insertions(+)
-
-diff --git a/arch/arm64/boot/dts/allwinner/sun50i-a64-pine64.dts b/arch/arm64/boot/dts/allwinner/sun50i-a64-pine64.dts
-index 409523cb0950..b23e827a6065 100644
---- a/arch/arm64/boot/dts/allwinner/sun50i-a64-pine64.dts
-+++ b/arch/arm64/boot/dts/allwinner/sun50i-a64-pine64.dts
-@@ -93,6 +93,7 @@
- };
- 
- &ehci0 {
-+	phys = <&usbphy 0>;
- 	status = "okay";
- };
- 
-@@ -147,6 +148,7 @@
- };
- 
- &ohci0 {
-+	phys = <&usbphy 0>;
- 	status = "okay";
- };
- 
-diff --git a/arch/arm64/boot/dts/allwinner/sun50i-a64-sopine-baseboard.dts b/arch/arm64/boot/dts/allwinner/sun50i-a64-sopine-baseboard.dts
-index e6fb9683f213..b422bef19fff 100644
---- a/arch/arm64/boot/dts/allwinner/sun50i-a64-sopine-baseboard.dts
-+++ b/arch/arm64/boot/dts/allwinner/sun50i-a64-sopine-baseboard.dts
-@@ -105,6 +105,7 @@
- };
- 
- &ehci0 {
-+	phys = <&usbphy 0>;
- 	status = "okay";
- };
- 
-@@ -151,6 +152,7 @@
- };
- 
- &ohci0 {
-+	phys = <&usbphy 0>;
- 	status = "okay";
- };
- 
-diff --git a/arch/arm64/boot/dts/allwinner/sun50i-h5-nanopi-neo-plus2.dts b/arch/arm64/boot/dts/allwinner/sun50i-h5-nanopi-neo-plus2.dts
-index 9887948d5c86..5da9cdfb4f48 100644
---- a/arch/arm64/boot/dts/allwinner/sun50i-h5-nanopi-neo-plus2.dts
-+++ b/arch/arm64/boot/dts/allwinner/sun50i-h5-nanopi-neo-plus2.dts
-@@ -124,6 +124,7 @@
- };
- 
- &ehci0 {
-+	phys = <&usbphy 0>;
- 	status = "okay";
- };
- 
-@@ -179,6 +180,7 @@
- };
- 
- &ohci0 {
-+	phys = <&usbphy 0>;
- 	status = "okay";
- };
- 
-diff --git a/arch/arm64/boot/dts/allwinner/sun50i-h6-beelink-gs1.dts b/arch/arm64/boot/dts/allwinner/sun50i-h6-beelink-gs1.dts
-index 0dc33c90dd60..293f66c44032 100644
---- a/arch/arm64/boot/dts/allwinner/sun50i-h6-beelink-gs1.dts
-+++ b/arch/arm64/boot/dts/allwinner/sun50i-h6-beelink-gs1.dts
-@@ -58,6 +58,7 @@
- };
- 
- &ehci0 {
-+	phys = <&usb2phy 0>;
- 	status = "okay";
- };
- 
-@@ -104,6 +105,7 @@
- };
- 
- &ohci0 {
-+	phys = <&usb2phy 0>;
- 	status = "okay";
- };
- 
-diff --git a/arch/arm64/boot/dts/allwinner/sun50i-h6-pine-h64.dts b/arch/arm64/boot/dts/allwinner/sun50i-h6-pine-h64.dts
-index 9e464d40cbff..577f8133181e 100644
---- a/arch/arm64/boot/dts/allwinner/sun50i-h6-pine-h64.dts
-+++ b/arch/arm64/boot/dts/allwinner/sun50i-h6-pine-h64.dts
-@@ -96,6 +96,7 @@
- };
- 
- &ehci0 {
-+	phys = <&usb2phy 0>;
- 	status = "okay";
- };
- 
-@@ -120,6 +121,7 @@
- };
- 
- &ohci0 {
-+	phys = <&usb2phy 0>;
- 	status = "okay";
- };
- 
--- 
-2.14.5
+Dan
 
 
 _______________________________________________
