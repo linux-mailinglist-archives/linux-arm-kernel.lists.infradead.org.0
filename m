@@ -2,86 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D48134CCC0
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 20 Jun 2019 13:18:17 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 700DD4CCD3
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 20 Jun 2019 13:23:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Vj4YUisW8sxYE+dxH3ElNGj0nYDrGnufZiN73X1FLGk=; b=AN/zxa8MODtyWF
-	YR/CzOF7/IpNqHECmHIHhK1b9+Qw4l13WOJP1jDe8Lcd5gOnlAEYIV2Ntf1Ok+Rnszlg1H56iAykD
-	ORamwnoBjkd13dRw4tNt9qwo5mKN505WM87+yeBFApZ0G++rCSwFjmegTpLvmzjb638UGEWMAWrxQ
-	3hg+6cQjcVEgdq3gs4MwY6BkHKma8D2JDqow2d0cRXujDgBqCIMzAK9oSVt0qC6EQkwxJ/TCRxyXU
-	tU1xYIxY0GIYXfM6j299TcSogevRKH8QQnvKDAb0TAdvVkISHCJNEJxSGGMTOOnj1dwyHzx3plm69
-	Pu3J26bkxBnFRdnm5xGQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=MdyZ6AHdwdYH0yhmorD3K+1zOzJzt+besZ/sauEBsKw=; b=uGtgylFwmar1cb
+	Y5O72+TOs1vyppQ1sgHnPH/ZwL2waN1vyAwbMyryH/SvWOlhhAvbkrb9Ii072RTWwCyy643f93uj9
+	KzKRRc/TpjO7XGA8j88UtU5VmuV2NBcdr1uGfaGwjBLz4qJ8SRnPSvJQzKTe0yFinKFSLuX5DsBYC
+	Dfvl4LrY/glDvAoHLe8TpdU5r8Ufd1ostfeDo3I8PCfSUVJ2Ex++LhEUPG9iqudYP07dC4AeGhNwy
+	Vxw0W6kQ28Lx1rIefUDKCcm8W1s6l2mObx4kgAX9XNRUETA8OjSos5tfxPXEGzXfIZwaCVKoSK8VV
+	SjN98LWYO3G2C9N9qkkw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hdv54-0000gQ-8D; Thu, 20 Jun 2019 11:18:14 +0000
-Received: from lelv0142.ext.ti.com ([198.47.23.249])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hdv4q-0000g7-8v
- for linux-arm-kernel@lists.infradead.org; Thu, 20 Jun 2019 11:18:01 +0000
-Received: from lelv0265.itg.ti.com ([10.180.67.224])
- by lelv0142.ext.ti.com (8.15.2/8.15.2) with ESMTP id x5KBHDSm116464;
- Thu, 20 Jun 2019 06:17:13 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1561029433;
- bh=9YIcG6AiHgUmr37CnjME814rjWmvhSgfnmVxwIR8FZY=;
- h=Subject:To:CC:References:From:Date:In-Reply-To;
- b=L9LJI8sJnky8khbmqas5ZDeiHiDXo11y+9jcgT7uimAmqQi/qvYB2xbTZBDG3x3Hf
- OS5m45mojrqexLp+HGwxH3mq0YFFwJVbzlDXt+8xUL5wMwIr1ZMdeOlz5Bo9ECLOBj
- WvuYK591iU6VcdafLzusWf0qD18nJs7aTjx0FvD8=
-Received: from DLEE115.ent.ti.com (dlee115.ent.ti.com [157.170.170.26])
- by lelv0265.itg.ti.com (8.15.2/8.15.2) with ESMTPS id x5KBHDMO108408
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Thu, 20 Jun 2019 06:17:13 -0500
-Received: from DLEE111.ent.ti.com (157.170.170.22) by DLEE115.ent.ti.com
- (157.170.170.26) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5; Thu, 20
- Jun 2019 06:17:13 -0500
-Received: from fllv0039.itg.ti.com (10.64.41.19) by DLEE111.ent.ti.com
- (157.170.170.22) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5 via
- Frontend Transport; Thu, 20 Jun 2019 06:17:13 -0500
-Received: from [172.24.190.172] (ileax41-snat.itg.ti.com [10.172.224.153])
- by fllv0039.itg.ti.com (8.15.2/8.15.2) with ESMTP id x5KBH9Xm081448;
- Thu, 20 Jun 2019 06:17:10 -0500
-Subject: Re: [RESEND PATCH v5 0/5] ARM: da850: enable cpufreq in DT mode
-To: Bartosz Golaszewski <brgl@bgdev.pl>, Kevin Hilman <khilman@kernel.org>,
- Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
- David Lechner <david@lechnology.com>, Adam Ford <aford173@gmail.com>
-References: <20190527082259.29237-1-brgl@bgdev.pl>
-From: Sekhar Nori <nsekhar@ti.com>
-Message-ID: <2ac90e9b-5434-0f68-7b59-3c75264ae54e@ti.com>
-Date: Thu, 20 Jun 2019 16:47:09 +0530
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.7.0
+	id 1hdvA7-0002RT-3f; Thu, 20 Jun 2019 11:23:27 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hdv9s-0002QB-FS
+ for linux-arm-kernel@lists.infradead.org; Thu, 20 Jun 2019 11:23:13 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 26A53360;
+ Thu, 20 Jun 2019 04:23:11 -0700 (PDT)
+Received: from filthy-habits.cambridge.arm.com
+ (filthy-habits.cambridge.arm.com [10.1.197.61])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id A77BC3F718;
+ Thu, 20 Jun 2019 04:23:09 -0700 (PDT)
+From: Marc Zyngier <marc.zyngier@arm.com>
+To: Paolo Bonzini <pbonzini@redhat.com>,
+ =?UTF-8?q?Radim=20Kr=C4=8Dm=C3=A1=C5=99?= <rkrcmar@redhat.com>
+Subject: [GIT PULL] KVM/arm fixes for 5.2-rc6
+Date: Thu, 20 Jun 2019 12:22:57 +0100
+Message-Id: <20190620112301.138137-1-marc.zyngier@arm.com>
+X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
-In-Reply-To: <20190527082259.29237-1-brgl@bgdev.pl>
-Content-Language: en-US
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190620_041800_361121_017FE920 
-X-CRM114-Status: GOOD (  10.54  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20190620_042312_568221_E13CCD53 
+X-CRM114-Status: UNSURE (   9.24  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.23.249 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,30 +60,62 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org,
- Bartosz Golaszewski <bgolaszewski@baylibre.com>
+Cc: Andrew Jones <drjones@redhat.com>, kvm@vger.kernel.org,
+ Suzuki K Poulose <suzuki.poulose@arm.com>,
+ Viresh Kumar <viresh.kumar@linaro.org>,
+ Julien Thierry <julien.thierry@arm.com>, kvmarm@lists.cs.columbia.edu,
+ James Morse <james.morse@arm.com>, Dave Martin <Dave.Martin@arm.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 27/05/19 1:52 PM, Bartosz Golaszewski wrote:
-> From: Bartosz Golaszewski <bgolaszewski@baylibre.com>
-> 
-> Note: resending rebased on top of v5.2-rc2
-> 
-> ===
-> 
-> This series adds cpufreq-dt operating points for da850 boards supported
-> with device tree (da850-lcdk, da850-lego-ev3, da850-evm).
-> 
-> Last patch enables CPUFREQ_DT in davinci_all_defconfig.
+Paolo, Radim,
 
-Series applied and pull request sent for v5.3
+Here's the second (and hopefully last) set of fixes for v5.2. We have
+our usual timer fix (we obviously will never get it right), a memory
+leak plug, a sysreg reporting fix, and an small SVE cleanup.
 
-Thanks,
-Sekhar
+Please pull.
+
+	M.
+
+The following changes since commit 623e1528d4090bd1abaf93ec46f047dee9a6fb32:
+
+  KVM: arm/arm64: Move cc/it checks under hyp's Makefile to avoid instrumentation (2019-05-24 14:53:20 +0100)
+
+are available in the Git repository at:
+
+  git://git.kernel.org/pub/scm/linux/kernel/git/kvmarm/kvmarm.git tags/kvmarm-fixes-for-5.2-2
+
+for you to fetch changes up to e4e5a865e9a9e8e47ac1959b629e9f3ae3b062f2:
+
+  KVM: arm/arm64: Fix emulated ptimer irq injection (2019-06-19 15:47:52 +0100)
+
+----------------------------------------------------------------
+KVM/arm fixes for 5.2, take #2
+
+- SVE cleanup killing a warning with ancient GCC versions
+- Don't report non-existent system registers to userspace
+- Fix memory leak when freeing the vgic ITS
+- Properly lower the interrupt on the emulated physical timer
+
+----------------------------------------------------------------
+Andrew Jones (1):
+      KVM: arm/arm64: Fix emulated ptimer irq injection
+
+Dave Martin (2):
+      KVM: arm64: Filter out invalid core register IDs in KVM_GET_REG_LIST
+      KVM: arm/arm64: vgic: Fix kvm_device leak in vgic_its_destroy
+
+Viresh Kumar (1):
+      KVM: arm64: Implement vq_present() as a macro
+
+ arch/arm64/kvm/guest.c       | 65 +++++++++++++++++++++++++++++---------------
+ virt/kvm/arm/arch_timer.c    |  5 ++--
+ virt/kvm/arm/vgic/vgic-its.c |  1 +
+ 3 files changed, 47 insertions(+), 24 deletions(-)
 
 _______________________________________________
 linux-arm-kernel mailing list
