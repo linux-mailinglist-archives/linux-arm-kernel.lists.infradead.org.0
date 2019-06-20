@@ -2,47 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C5DB04CF8C
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 20 Jun 2019 15:50:33 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CE0554CF8B
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 20 Jun 2019 15:50:14 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=JcjrUMd/3Azbn9m1KsPWDy8KzB8eeRZ/cMcT7Qztvlk=; b=sHOMOvzDKkD6bX
-	rD5+gc4PoFkpSTwZIucWtkHzfoEeU95JC1qgsv5odhOBZFIbLIhb5WXFKJ5U4tlG02jhTqgRIZ+Yw
-	Tjs3WwKQuV/HFBqawGGCDs+vomGsZw5o/1ploIGz5PEdgPK/7YZ7ycVJtohEYle/77NPKhm1ifQUJ
-	JMeggHo7HkTRlozbyMhntpX9ZDJmrYaYveEq1l6X3lMili7el3SviX9b03gWyyyHIHPZEaXfIKrUE
-	Kc70owf5csSP/I7pqxfd12ISO2xgYd0ptMN4HUZsBD/77e3M5f9WGZ8EXcQ4TNuLn6Hp2+v2TwOqM
-	Rx4BD9ycNvrX/C3eIn6g==;
+	List-Owner; bh=fJHmmazKWoRk06b3QVWXCAASuzru3/8z3RcX9CnjOyQ=; b=px0RZcAPj7755h
+	azQQfpzERADFN/Dslx+LAIi0Gdc9v2fCS6B7PTpVYjQ/eqWF+H6cXz7+MvxC/JEI0XxebdV3gDh6j
+	/ihixK3CuVhBFCf/4hqmlkfXKOyYzmmyBftT9CQ1dO/9HMtt0gFspuTiiCIUqw1rv1AguGyvDPsv4
+	LpfxXqSHFt/ITq1yMieSmMExISzodyQA5cPQ8jxWPX3NX4uw01WtZDSI4unHphQ89YpRXHPk5E2J3
+	CZreMAj5dBbJSXb3kwSai9zY6qzxUyFg4l750jHY+witZbOaR2bxdMTXSJNi92JRGqp37ItxIng0/
+	z20WuAXUFJLBmSGmaNTg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hdxSR-0004wY-RB; Thu, 20 Jun 2019 13:50:31 +0000
+	id 1hdxS9-0003So-4f; Thu, 20 Jun 2019 13:50:13 +0000
 Received: from vps.xff.cz ([195.181.215.36])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hdxPz-0001oB-DF
- for linux-arm-kernel@lists.infradead.org; Thu, 20 Jun 2019 13:48:01 +0000
+ id 1hdxPz-0001oC-Cl
+ for linux-arm-kernel@lists.infradead.org; Thu, 20 Jun 2019 13:48:00 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=megous.com; s=mail;
- t=1561038473; bh=huDbYqisR3sxN2nAvxyMjakfXzK8aN/kVX68o7cgDVg=;
+ t=1561038474; bh=hF73OcLMSBQTt85tuavHzM/b80WjbO/5pa+6hf7Ij0Q=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=i0XljY6H4sEaHNF4Iii6TXLcdRyF49kU4mwUvtAEpTdFnoOKDO0z4RIaOYns6TmF/
- rz5fAqfqKtS+B7VxPANrvsyiR4Yd+AMbcuENAgEBiEcH+BOvwLA+NO1MeBVxvKgfpF
- kACkzZGXY0T4EEcDvvdcdB09YzPQCY4mSF0awx4A=
+ b=noEunnlcospPPWmjHUXPetOyu/+2FB8divTxcfSNffF1qXaNywuT6NPLqUPsNfP6Z
+ XbVMwyrhk+LyQCakLpsHYj2kSgGbLG1LEnBphnhBSkeHiylA9WTIF4iTGv/aYEhyuA
+ LQnygb9mxfx6WzZ+pRG0fRDQjcKaG9BMW7TKQ9NA=
 From: megous@megous.com
 To: linux-sunxi@googlegroups.com, Maxime Ripard <maxime.ripard@bootlin.com>,
  Chen-Yu Tsai <wens@csie.org>, Rob Herring <robh+dt@kernel.org>,
  =?UTF-8?q?Jernej=20=C5=A0krabec?= <jernej.skrabec@gmail.com>
-Subject: [PATCH v7 5/6] drm: sun4i: Add support for enabling DDC I2C bus to
- sun8i_dw_hdmi glue
-Date: Thu, 20 Jun 2019 15:47:47 +0200
-Message-Id: <20190620134748.17866-6-megous@megous.com>
+Subject: [PATCH v7 6/6] arm64: dts: allwinner: orange-pi-3: Enable HDMI output
+Date: Thu, 20 Jun 2019 15:47:48 +0200
+Message-Id: <20190620134748.17866-7-megous@megous.com>
 In-Reply-To: <20190620134748.17866-1-megous@megous.com>
 References: <20190620134748.17866-1-megous@megous.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190620_064759_865465_AB765FBC 
-X-CRM114-Status: GOOD (  13.82  )
+X-CRM114-CacheID: sfid-20190620_064759_614499_531C67CC 
+X-CRM114-Status: UNSURE (   9.23  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -84,137 +84,66 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Ondrej Jirman <megous@megous.com>
 
-Orange Pi 3 board requires enabling a voltage shifting circuit via GPIO
-for the DDC bus to be usable.
-
-Add support for hdmi-connector node's optional ddc-en-gpios property to
-support this use case.
+Orange Pi 3 has a DDC_CEC_EN signal connected to PH2, that enables the DDC
+I2C bus voltage shifter. Before EDID can be read, we need to pull PH2 high.
+This is realized by the ddc-en-gpios property.
 
 Signed-off-by: Ondrej Jirman <megous@megous.com>
 ---
- drivers/gpu/drm/sun4i/sun8i_dw_hdmi.c | 54 +++++++++++++++++++++++++--
- drivers/gpu/drm/sun4i/sun8i_dw_hdmi.h |  2 +
- 2 files changed, 52 insertions(+), 4 deletions(-)
+ .../dts/allwinner/sun50i-h6-orangepi-3.dts    | 26 +++++++++++++++++++
+ 1 file changed, 26 insertions(+)
 
-diff --git a/drivers/gpu/drm/sun4i/sun8i_dw_hdmi.c b/drivers/gpu/drm/sun4i/sun8i_dw_hdmi.c
-index 39d8509d96a0..6733bfc9c2d6 100644
---- a/drivers/gpu/drm/sun4i/sun8i_dw_hdmi.c
-+++ b/drivers/gpu/drm/sun4i/sun8i_dw_hdmi.c
-@@ -98,10 +98,34 @@ static u32 sun8i_dw_hdmi_find_possible_crtcs(struct drm_device *drm,
- 	return crtcs;
- }
+diff --git a/arch/arm64/boot/dts/allwinner/sun50i-h6-orangepi-3.dts b/arch/arm64/boot/dts/allwinner/sun50i-h6-orangepi-3.dts
+index 2c6807b74ff6..01bb1bafe284 100644
+--- a/arch/arm64/boot/dts/allwinner/sun50i-h6-orangepi-3.dts
++++ b/arch/arm64/boot/dts/allwinner/sun50i-h6-orangepi-3.dts
+@@ -22,6 +22,18 @@
+ 		stdout-path = "serial0:115200n8";
+ 	};
  
-+static int sun8i_dw_hdmi_find_connector_pdev(struct device *dev,
-+					     struct platform_device **pdev_out)
-+{
-+	struct platform_device *pdev;
-+	struct device_node *remote;
++	connector {
++		compatible = "hdmi-connector";
++		ddc-en-gpios = <&pio 7 2 GPIO_ACTIVE_HIGH>; /* PH2 */
++		type = "a";
 +
-+	remote = of_graph_get_remote_node(dev->of_node, 1, -1);
-+	if (!remote)
-+		return -ENODEV;
++		port {
++			hdmi_con_in: endpoint {
++				remote-endpoint = <&hdmi_out_con>;
++			};
++		};
++	};
 +
-+	if (!of_device_is_compatible(remote, "hdmi-connector")) {
-+		of_node_put(remote);
-+		return -ENODEV;
-+	}
-+
-+	pdev = of_find_device_by_node(remote);
-+	of_node_put(remote);
-+	if (!pdev)
-+		return -ENODEV;
-+
-+	*pdev_out = pdev;
-+	return 0;
-+}
-+
- static int sun8i_dw_hdmi_bind(struct device *dev, struct device *master,
- 			      void *data)
- {
--	struct platform_device *pdev = to_platform_device(dev);
-+	struct platform_device *pdev = to_platform_device(dev), *connector_pdev;
- 	struct dw_hdmi_plat_data *plat_data;
- 	struct drm_device *drm = data;
- 	struct device_node *phy_node;
-@@ -151,16 +175,30 @@ static int sun8i_dw_hdmi_bind(struct device *dev, struct device *master,
- 		return PTR_ERR(hdmi->regulator);
- 	}
+ 	leds {
+ 		compatible = "gpio-leds";
  
-+	ret = sun8i_dw_hdmi_find_connector_pdev(dev, &connector_pdev);
-+	if (!ret) {
-+		hdmi->ddc_en = gpiod_get_optional(&connector_pdev->dev,
-+						  "ddc-en", GPIOD_OUT_HIGH);
-+		platform_device_put(connector_pdev);
-+
-+		if (IS_ERR(hdmi->ddc_en)) {
-+			dev_err(dev, "Couldn't get ddc-en gpio\n");
-+			return PTR_ERR(hdmi->ddc_en);
-+		}
-+	}
-+
- 	ret = regulator_enable(hdmi->regulator);
- 	if (ret) {
- 		dev_err(dev, "Failed to enable regulator\n");
--		return ret;
-+		goto err_unref_ddc_en;
- 	}
- 
-+	gpiod_set_value(hdmi->ddc_en, 1);
-+
- 	ret = reset_control_deassert(hdmi->rst_ctrl);
- 	if (ret) {
- 		dev_err(dev, "Could not deassert ctrl reset control\n");
--		goto err_disable_regulator;
-+		goto err_disable_ddc_en;
- 	}
- 
- 	ret = clk_prepare_enable(hdmi->clk_tmds);
-@@ -213,8 +251,12 @@ static int sun8i_dw_hdmi_bind(struct device *dev, struct device *master,
- 	clk_disable_unprepare(hdmi->clk_tmds);
- err_assert_ctrl_reset:
- 	reset_control_assert(hdmi->rst_ctrl);
--err_disable_regulator:
-+err_disable_ddc_en:
-+	gpiod_set_value(hdmi->ddc_en, 0);
- 	regulator_disable(hdmi->regulator);
-+err_unref_ddc_en:
-+	if (hdmi->ddc_en)
-+		gpiod_put(hdmi->ddc_en);
- 
- 	return ret;
- }
-@@ -228,7 +270,11 @@ static void sun8i_dw_hdmi_unbind(struct device *dev, struct device *master,
- 	sun8i_hdmi_phy_remove(hdmi);
- 	clk_disable_unprepare(hdmi->clk_tmds);
- 	reset_control_assert(hdmi->rst_ctrl);
-+	gpiod_set_value(hdmi->ddc_en, 0);
- 	regulator_disable(hdmi->regulator);
-+
-+	if (hdmi->ddc_en)
-+		gpiod_put(hdmi->ddc_en);
- }
- 
- static const struct component_ops sun8i_dw_hdmi_ops = {
-diff --git a/drivers/gpu/drm/sun4i/sun8i_dw_hdmi.h b/drivers/gpu/drm/sun4i/sun8i_dw_hdmi.h
-index 720c5aa8adc1..d707c9171824 100644
---- a/drivers/gpu/drm/sun4i/sun8i_dw_hdmi.h
-+++ b/drivers/gpu/drm/sun4i/sun8i_dw_hdmi.h
-@@ -9,6 +9,7 @@
- #include <drm/bridge/dw_hdmi.h>
- #include <drm/drm_encoder.h>
- #include <linux/clk.h>
-+#include <linux/gpio/consumer.h>
- #include <linux/regmap.h>
- #include <linux/regulator/consumer.h>
- #include <linux/reset.h>
-@@ -190,6 +191,7 @@ struct sun8i_dw_hdmi {
- 	struct regulator		*regulator;
- 	const struct sun8i_dw_hdmi_quirks *quirks;
- 	struct reset_control		*rst_ctrl;
-+	struct gpio_desc		*ddc_en;
+@@ -72,6 +84,10 @@
+ 	cpu-supply = <&reg_dcdca>;
  };
  
- static inline struct sun8i_dw_hdmi *
++&de {
++	status = "okay";
++};
++
+ &ehci0 {
+ 	status = "okay";
+ };
+@@ -91,6 +107,16 @@
+ 	status = "okay";
+ };
+ 
++&hdmi {
++	status = "okay";
++};
++
++&hdmi_out {
++	hdmi_out_con: endpoint {
++		remote-endpoint = <&hdmi_con_in>;
++	};
++};
++
+ &mdio {
+ 	ext_rgmii_phy: ethernet-phy@1 {
+ 		compatible = "ethernet-phy-ieee802.3-c22";
 -- 
 2.22.0
 
