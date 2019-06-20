@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 01F614DD4A
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 21 Jun 2019 00:13:35 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 684954DD4C
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 21 Jun 2019 00:13:52 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,72 +11,72 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=728zgjUbDxnoX91dFIEmnt4BIBEFY1CS76RXNEShq2Y=; b=gehqESnsie1lvmm5lhz0QVh21O
-	loPUkcrdXP3tWAFJmm80wa220oj3ezzMIKpIKU74Eh7i5VMzwZWHVInErvi5PWZy4NAUt5+8frKMX
-	4ZWuuKqBh1FPdTbqDzc3+3Z+YglRX3kLbKH9qdJ51zAQQVgRhJag/WKIVqcQrLa6rQi735huCPqXf
-	cbIOlLGvbHwwj4FKrGCCJ6kg7YYE3Lyh/xuQxy6dfPn3p0mEje6tm19s/bYPk/lgEZ8YgDmu6hzrJ
-	2HmOUZu9Xovmo4VRGvss+aLD10SccgWf2ZSw3BCMwJjwnAVrdbrE7/ArDnyvDnc157y/GRmnon8zm
-	YLWOgHBw==;
+	bh=wWWELGJ8rEmg13a7Mol9J7yy1/cu8vsHvLvZodv7FLk=; b=s6aQJ9O/UxZgialOGyeRIrdbuE
+	LUEnbKED9gYNvZb2cxS1f70xtPksS9nm5bgzJR5rUxtgrkmHVdb4VIr6i1YswVLKhHPWOdut77Pra
+	PJh7DrmKl0mvblDJgxIsHJYeXzGYJafv7bKM27HGma9CUhReHhWvbcEDda4vuj7sLu7TbGfUefNzH
+	nqvdzOOI+9RzHu8Z6NBIqhvmmKuS2e94uW2gPg4ccrBL/dwFXl/uU0MIOMnfFYCsEMotn1cafglri
+	8R+WAZO/LuD4u/QC9Dd/G0L4Yg6Ml/cK9M1J7ccZhPZJLK+IayEQ2v9b35KlJyaXFfcoIWHXqsngu
+	i3iQdVOw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1he5JF-0001tm-MA; Thu, 20 Jun 2019 22:13:33 +0000
-Received: from mail-pf1-x442.google.com ([2607:f8b0:4864:20::442])
+	id 1he5JU-00028w-F0; Thu, 20 Jun 2019 22:13:48 +0000
+Received: from mail-pf1-x441.google.com ([2607:f8b0:4864:20::441])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1he5IP-0001Hd-A3
- for linux-arm-kernel@lists.infradead.org; Thu, 20 Jun 2019 22:12:42 +0000
-Received: by mail-pf1-x442.google.com with SMTP id 19so2451487pfa.4
+ id 1he5IR-0001I1-BJ
+ for linux-arm-kernel@lists.infradead.org; Thu, 20 Jun 2019 22:12:44 +0000
+Received: by mail-pf1-x441.google.com with SMTP id r1so2431444pfq.12
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 20 Jun 2019 15:12:41 -0700 (PDT)
+ Thu, 20 Jun 2019 15:12:42 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=j4aNe1rIqaAwjoc7tlrjsp5QRUVkJOX1GccjZR4hNpM=;
- b=UX0t/idDH0oR6ByW6kbbd9RAUo4jyFHX3vi7xwn6dlWJF9+AJvFr9isLSAsUfBOj7Q
- yyOyN0fO2vkWtNWcgWv4vQKAM9pxjkj8lECH6sPE4oLSRUkViZEkxttaIZEHZlyrfuj/
- IAg100WVXIUm+GyVn1ll6WtkqfSLEu8Z1o/35wnqY7d73XFNGICJwpac7fLcmaIj1tsO
- q2LuUYzJrymwQzJR8Jr9SlmOxti5M5/55x1D8fQa0gaidyP2xhXhEuMeQH7RtI+HsTnl
- daVZkAlWrPFmpZVmv5DlFLKFJKmi+WfLj3qW09vTLeC68ofrvu2MpZGGXyO9m1Flgk4a
- jD7A==
+ bh=9oc8QygCb8ggPn+H3Fd5IukoXHijgHATKhnf6mfsKcY=;
+ b=HU4yFjC/659KEUTmad1K7s/ZNbVutm6aGP6xDevTK3I8nCTMMZnvNGSSe+YdJiHEQ5
+ AIj/1HjIRPRLU9xv+E+ZaIfI/kE0LroOmhdU84i8O4idm7umHjFJBWgQYgfybXZEQ4mF
+ nmfRBBg+iX7Y37xHY+5LkllZovw478dvVHaZjPQU5yAIvhGBAnjnHXvp2wcoWTiHoxyW
+ XAP4NDAtp3RNV+d4IjYym2Ie+iw1rCK/RzeZAlv98racCme/O8rMIujn/Ibj02Q30Bl2
+ 8NmzzAJS+y/1GSzeCXfBhB7tJnmKWizcZN/An2z5NxhqrZIwVHaJ7wONR7p4hFwtZCc6
+ VP9A==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=j4aNe1rIqaAwjoc7tlrjsp5QRUVkJOX1GccjZR4hNpM=;
- b=coPu/0Goc+sCf633h+/uJ+mvG8mzSutV+Ez20qs028LkZkqaBRTVVC5rxmXL4wh0Fw
- QZis7MYKYr82xsx4IFH8qxmkIOPuBTG62uoUc3+OSZOW6b5Q6A7idh1I4uwoKccCBwmp
- g1KNppo1H8n/0cD4JLm3UjqiCYu2HDXLchpjLSyARF60HZU3ahS/9c8jrsBno/p101Wt
- VJQw6q5+p19W7XFW5qGd7/vNmSOZsDHhiLeJxOUcrAQrE0xfg0wmYj5TEij6rGMlg8H5
- Or4TTiM6/4Iz3SB3vYiI4QH5IghdxDlbdkPNXzgdGnfrdD7nkh3xwCsIYcXH4h35Mo3V
- vQgw==
-X-Gm-Message-State: APjAAAVQUOL4Rb5SiV3VqHr7rSezSNNqbSBBQ+mrnE/CwJfRh6VyRR1H
- VTFe3XJvOKs/ipyUftZjhd/jjQ==
-X-Google-Smtp-Source: APXvYqydRXocyuNB1pJNnqLzyFVuPhnRH3kKYclIhMwPsq+1zlkiDyax/aKyiWE96e+LK/h4qIvbZw==
-X-Received: by 2002:a17:90a:23a4:: with SMTP id
- g33mr1961318pje.115.1561068760699; 
- Thu, 20 Jun 2019 15:12:40 -0700 (PDT)
+ bh=9oc8QygCb8ggPn+H3Fd5IukoXHijgHATKhnf6mfsKcY=;
+ b=PDHUH8FzhkH61w3poqzaqkU7RST7yLlYXi/cn0DYG0zO3vjQpLC68bO4fVL1PaTvWY
+ JE509FkAWt00unvYi1Sq0NW9Eu3YML/lTAL3+mNg9r9n3wPS3X3CLukJxiaRXJX8Kcp3
+ T8hBC/S36WbB+qe8bBGPuyJcYiDQvlNIY9atbuk7pgo3Gh0/wyfUQ3qaOIfgQjmkdv9U
+ 6bPV2aKwFSQl68U20L2WpaCDLwI751g4ggpBvfPlf6KM4Mc9Rfgkn4qF9Yz01EakqM5m
+ dXjcUrFTiEyW5TD/UyNXyKE9t9Ny+YhdoPFGGU8FvORjc40pZggx/yCCNjiI11JAj6VO
+ a9WQ==
+X-Gm-Message-State: APjAAAXtqKfU1C2dUApoP4wsfCW9Wek9M9BDVBQG/CZNdBng3+gTfadq
+ H7LDH15T0g1u6YDndHT2pGN5FJCKI84A0w==
+X-Google-Smtp-Source: APXvYqwCmJaNb6VpTzUCYM2a9OIibNo9Vu5RXGk17EABZL0LDRsZDjTbhvF7jTRXjRMEKyl/Sho4YA==
+X-Received: by 2002:a17:90a:ad86:: with SMTP id
+ s6mr1972685pjq.42.1561068761578; 
+ Thu, 20 Jun 2019 15:12:41 -0700 (PDT)
 Received: from xps15.cg.shawcable.net (S0106002369de4dac.cg.shawcable.net.
  [68.147.8.254])
- by smtp.gmail.com with ESMTPSA id x25sm450636pfm.48.2019.06.20.15.12.39
+ by smtp.gmail.com with ESMTPSA id x25sm450636pfm.48.2019.06.20.15.12.40
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Thu, 20 Jun 2019 15:12:40 -0700 (PDT)
+ Thu, 20 Jun 2019 15:12:41 -0700 (PDT)
 From: Mathieu Poirier <mathieu.poirier@linaro.org>
 To: gregkh@linuxfoundation.org
-Subject: [PATCH 2/5] coresight: tmc-etr: alloc_perf_buf: Do not call
- smp_processor_id from preemptible
-Date: Thu, 20 Jun 2019 16:12:34 -0600
-Message-Id: <20190620221237.3536-3-mathieu.poirier@linaro.org>
+Subject: [PATCH 3/5] coresight: tmc-etf: Do not call smp_processor_id from
+ preemptible
+Date: Thu, 20 Jun 2019 16:12:35 -0600
+Message-Id: <20190620221237.3536-4-mathieu.poirier@linaro.org>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20190620221237.3536-1-mathieu.poirier@linaro.org>
 References: <20190620221237.3536-1-mathieu.poirier@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190620_151241_348725_1C3B10F9 
-X-CRM114-Status: GOOD (  14.71  )
+X-CRM114-CacheID: sfid-20190620_151243_418118_2781210B 
+X-CRM114-Status: GOOD (  14.15  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:442 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:441 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -112,16 +112,16 @@ with the CPU the event is bound to. If it is not bound to a CPU, we
 use the current CPU node, using smp_processor_id(). However this is unsafe
 in a pre-emptible context and could generate the splats as below :
 
- BUG: using smp_processor_id() in preemptible [00000000] code: perf/1743
- caller is tmc_alloc_etr_buffer+0x1bc/0x1f0
- CPU: 1 PID: 1743 Comm: perf Not tainted 5.1.0-rc6-147786-g116841e #344
+ BUG: using smp_processor_id() in preemptible [00000000] code: perf/2544
+ caller is tmc_alloc_etf_buffer+0x5c/0x60
+ CPU: 2 PID: 2544 Comm: perf Not tainted 5.1.0-rc6-147786-g116841e #344
  Hardware name: ARM LTD ARM Juno Development Platform/ARM Juno Development Platform, BIOS EDK II Feb  1 2019
  Call trace:
   dump_backtrace+0x0/0x150
   show_stack+0x14/0x20
   dump_stack+0x9c/0xc4
   debug_smp_processor_id+0x10c/0x110
-  tmc_alloc_etr_buffer+0x1bc/0x1f0
+  tmc_alloc_etf_buffer+0x5c/0x60
   etm_setup_aux+0x1c4/0x230
   rb_alloc_aux+0x1b8/0x2b8
   perf_mmap+0x35c/0x478
@@ -136,36 +136,34 @@ in a pre-emptible context and could generate the splats as below :
 Use NUMA_NO_NODE hint instead of using the current node for events
 not bound to CPUs.
 
-Fixes: 22f429f19c4135d51e9 ("coresight: etm-perf: Add support for ETR backend")
+Fixes: 2e499bbc1a929ac ("coresight: tmc: implementing TMC-ETF AUX space API")
 Cc: Mathieu Poirier <mathieu.poirier@linaro.org>
 Signed-off-by: Suzuki K Poulose <suzuki.poulose@arm.com>
-Cc: stable <stable@vger.kernel.org> # 4.20+
+Cc: stable <stable@vger.kernel.org> # 4.7+
 Signed-off-by: Mathieu Poirier <mathieu.poirier@linaro.org>
 ---
- drivers/hwtracing/coresight/coresight-tmc-etr.c | 7 ++-----
- 1 file changed, 2 insertions(+), 5 deletions(-)
+ drivers/hwtracing/coresight/coresight-tmc-etf.c | 6 ++----
+ 1 file changed, 2 insertions(+), 4 deletions(-)
 
-diff --git a/drivers/hwtracing/coresight/coresight-tmc-etr.c b/drivers/hwtracing/coresight/coresight-tmc-etr.c
-index c6a36897924f..9f293b9dce8c 100644
---- a/drivers/hwtracing/coresight/coresight-tmc-etr.c
-+++ b/drivers/hwtracing/coresight/coresight-tmc-etr.c
-@@ -1178,14 +1178,11 @@ static struct etr_buf *
- alloc_etr_buf(struct tmc_drvdata *drvdata, struct perf_event *event,
- 	      int nr_pages, void **pages, bool snapshot)
+diff --git a/drivers/hwtracing/coresight/coresight-tmc-etf.c b/drivers/hwtracing/coresight/coresight-tmc-etf.c
+index 2527b5d3b65e..8de109de171f 100644
+--- a/drivers/hwtracing/coresight/coresight-tmc-etf.c
++++ b/drivers/hwtracing/coresight/coresight-tmc-etf.c
+@@ -378,12 +378,10 @@ static void *tmc_alloc_etf_buffer(struct coresight_device *csdev,
+ 				  struct perf_event *event, void **pages,
+ 				  int nr_pages, bool overwrite)
  {
 -	int node, cpu = event->cpu;
 +	int node;
- 	struct etr_buf *etr_buf;
- 	unsigned long size;
+ 	struct cs_buffers *buf;
  
 -	if (cpu == -1)
 -		cpu = smp_processor_id();
 -	node = cpu_to_node(cpu);
--
 +	node = (event->cpu == -1) ? NUMA_NO_NODE : cpu_to_node(event->cpu);
- 	/*
- 	 * Try to match the perf ring buffer size if it is larger
- 	 * than the size requested via sysfs.
+ 
+ 	/* Allocate memory structure for interaction with Perf */
+ 	buf = kzalloc_node(sizeof(struct cs_buffers), GFP_KERNEL, node);
 -- 
 2.17.1
 
