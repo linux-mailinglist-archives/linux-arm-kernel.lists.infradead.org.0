@@ -2,77 +2,75 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C83BD4C3F3
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 20 Jun 2019 01:06:52 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6A6084C474
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 20 Jun 2019 02:33:22 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=E61wWjKcbf4HEogQE7logJZvRFhMDzVUwyTGKpLZREo=; b=RWkHkXIgYYRlh4
-	mSvC1H8k9IrC1EipJ5sfnujsbrRxDVl1zMsQFbvklsk57On5STkreb44MHoRvlM8bMA2HeFDt61Qq
-	w8HPzTpt6OnzrEt2FN8cHouuwodZGtoMHoNW+ZUyjtLOlzSYBo/NK2AOS86zxvHR3QyRhngTey/fq
-	d6fULWVcifF1xi3Q1sIEXShkQ66wWbFYZxpBT2Qkq0lCIFKNauYcUtesHAppJqBYo2EzG4W/pmbqL
-	krDHIQzbaLqVTggu3bZkhPpKSHjgMxoUboZulmk/+RTJ3tuDiHLzylWsg4eKbi6GuQBY5ToTUA6mM
-	+3vwcAn4wPW3ci6btJ5g==;
+	List-Archive:List-Unsubscribe:List-Id:To:From:Subject:Mime-Version:Message-Id
+	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=U1km/G5HV94ZWxF+J6PZ7gCX4j5rzRjZHEJkzvWchm0=; b=FdMK91G5fQ9eW1
+	Ipr6KDutXQBo4VmSqL7Ten4j5RoJaqwyzP8RME5vm3GRkwxcGq8qN2H6Dyq3gSQG8fidImj2b2z5N
+	knD9MeytrA8gkFROfKnWC9K6s7XfPWUoSp51kueTNTfUoWqq4YXYUkP0GXC34apPPuSM6XvTM9rgm
+	oK2InojP3DaeOQ/rwBS5ymOizUwRi49QzXWu18vnVa3vWTz5v+5kBHiFP/i2NvkLRQRo3ELB+xxaq
+	nhfJG8KiSkcKtZHc5n2pa0ErgihFUJhAaVXREYb+JjOytCzTFrRdPFofrNE3MRlmU8TZPwnRoylTi
+	Nm/ZViRuluXOs9uCFXmw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hdjfG-00087S-9X; Wed, 19 Jun 2019 23:06:50 +0000
-Received: from mail-lf1-x141.google.com ([2a00:1450:4864:20::141])
+	id 1hdl0v-0008Je-SE; Thu, 20 Jun 2019 00:33:18 +0000
+Received: from mail-pf1-x449.google.com ([2607:f8b0:4864:20::449])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hdjf2-00086z-K0
- for linux-arm-kernel@lists.infradead.org; Wed, 19 Jun 2019 23:06:37 +0000
-Received: by mail-lf1-x141.google.com with SMTP id z15so879311lfh.13
+ id 1hdl0l-0008JM-A2
+ for linux-arm-kernel@lists.infradead.org; Thu, 20 Jun 2019 00:33:08 +0000
+Received: by mail-pf1-x449.google.com with SMTP id 5so701172pff.11
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 19 Jun 2019 16:06:35 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=w4Y7npehQHkGR9ZyNktH8C9uASvmvTBedkhISQvIZ9k=;
- b=Fcq06cp1h0q0diFEOmLP4HyLdcxpztf2pxFD7eZk/FNLGFoGQTR4vk1WfwUcVVGg0U
- RXFC+R7dG4dBu/zzP0vxDcz8NTxCOuk3Sfzg34d7M7UEfPUv51Ux3y64hYB//jKOAC8d
- XWq3CsV6aiAEOJGXfRMDLksIW/5n6j6y+SGDa5AtOpaEMv29nvp7RR1vTkspX3HRo3Lp
- NxzF/ce2xuBrsI174TNraQqpUOm/+POA/I4WDKalmtHKdLMY8d+SnrmwYPWF8UQ67H1A
- DoJ5i7aDG57ie0lmXDqyc8J5ORmgP6ulKNmmrTlWoHdo1qeDz11lB1RuadmxdxEF4kOJ
- iuDg==
+ Wed, 19 Jun 2019 17:33:05 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
+ h=date:message-id:mime-version:subject:from:to:cc;
+ bh=X+mFn9cHNXrPrO08PdLE+GlXqr2sZ9XFcYjGhCDrNT0=;
+ b=TLklH9nLFOLMs3R7W5xVsUqCq48qjSe8I/QtOVXqNxfoDMw3JYAV9hS2AoxjNp5+CB
+ P+5fc9CT6LeOC4KIoIwilv2R9vkqTZTyCQYo9aRk0BdzYMScE4Drq/06MqlWTUBH0noF
+ P9NZUhFfIufeB+GQvEtwZN/1VqLYsC7DaEerdpUZYvDpBP3awLFB5AfFoYxkuQ5tUhFX
+ n26KPlYJq0rUlyP6s2+t0zipmQFe0aNJ6+8TvgrGf/yuCdrpSwRfOkklvyFRzFxt88Rf
+ oxhk4tG/H09xDMRJT0BZYbQj93Re6a488AbXmg4GVGV1HHS+sERPR5GVQ+7petvwmKlA
+ Ml9Q==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=w4Y7npehQHkGR9ZyNktH8C9uASvmvTBedkhISQvIZ9k=;
- b=nZlSSTWmvr8TM8/qUFR1krcS8x3nE/FhCFp36v8MJBKn/zxdiypAIruPBz0bqz/x/4
- gLQ7CGFQLIX/RK8cck0HfvJpfF/PPibuIa8JiALeL/dwJNdIAqXuBOrZhayr8dXeCCeT
- Ypk0SJUBqKwWS6WvtZ8UH7EZhnn0PZBSalFPcHb6BlviRucyUSBMSlwFLdYGaIdy9ti2
- DEkHN/CNxtn1TkAXT4Ck+2U0c+26HmVlFPG2ApdKbeZLuBpPItjvckQQAcZvntoG0GjD
- 4czqrSiFKf4fk0h6KbzW/kOaQw4brRWuc7beUjopGFYHOww4zGCY/8rf0meaCC+n105W
- JolA==
-X-Gm-Message-State: APjAAAXSojFX7zYEBHu7XOjbYT3i+l3/7gqy1Si/hVMDc8sYHiKRHTy4
- eFBxbYQoqE1hmsdeqk8EdIA1JMXa6OWuHZo6UQc=
-X-Google-Smtp-Source: APXvYqz5qNp7bQl4P1c94Sxwx1VfLG74iLG2769221cs07F85IKx7mRaN69wQlVZ6VkqJUxd0h7cL2WMAyZrkdMu8E8=
-X-Received: by 2002:a19:5044:: with SMTP id z4mr3011881lfj.80.1560985594396;
- Wed, 19 Jun 2019 16:06:34 -0700 (PDT)
-MIME-Version: 1.0
-References: <E1hdjBO-0007Yt-9M@rmk-PC.armlinux.org.uk>
- <20190619223727.zgfypqxg7bpxtduh@shell.armlinux.org.uk>
-In-Reply-To: <20190619223727.zgfypqxg7bpxtduh@shell.armlinux.org.uk>
-From: Fabio Estevam <festevam@gmail.com>
-Date: Wed, 19 Jun 2019 20:06:49 -0300
-Message-ID: <CAOMZO5BfbGoh6N42xsv2WBz3cHot8VOqa-4rx0Y8YczC2Xzz0g@mail.gmail.com>
-Subject: Re: [PATCH] ARM: dts: imx6qdl-sr-som: fix AR8035 phy interface mode
-To: Russell King - ARM Linux admin <linux@armlinux.org.uk>
+ h=x-gm-message-state:date:message-id:mime-version:subject:from:to:cc;
+ bh=X+mFn9cHNXrPrO08PdLE+GlXqr2sZ9XFcYjGhCDrNT0=;
+ b=YEwLlx9a+OLt4TuZ6Ne+BtFoL53Mxn2Ib+6HKU89YKFskWFrgOdGizo5ROPIHUT7F/
+ A4BmsQ3X9ynN8e7vufSHjM3tLDvrCPJ7xajVOfgwrb2RTsJAGo0+ADsvWttYtPYzh40k
+ W8M3e3PyyD5genIfeSq4uKnMk/Se99Y/yqtv5qDVFo7Zzz5qsosDunj+0dSLIQ0yQLpp
+ WOk0B1ZjQ3ET9xz+Aw5sHEaSrdmsAyJrhvSiVv6l/oOTlCn+HVRk4ec5UT4NuFe0kn99
+ YeUHllbC/sJx67e7b+hwU5TdVg4w+ZQ9xv3fZxE9p7wzDtzTDD7mE8ucWTEGG/y5hR7e
+ IyVA==
+X-Gm-Message-State: APjAAAW2rrnVXCKhMgAJT5qQIvv1MfS7Cgi0ahK6gfrNYyhLlL5KIgDP
+ M87c++0nHe7DgiKJAw2WOVuaaDBCwgNvz+Xucy8=
+X-Google-Smtp-Source: APXvYqzzVUV/nQqA+fJUnmpuX9ZNJBhzK4erSvtXYXSI6WT/je4RvhDA6zk5vGGhUNaR2ayYvRuDeBXmvoaoQxBxT1I=
+X-Received: by 2002:a63:231c:: with SMTP id j28mr10162444pgj.430.1560990784744; 
+ Wed, 19 Jun 2019 17:33:04 -0700 (PDT)
+Date: Wed, 19 Jun 2019 17:32:42 -0700
+Message-Id: <20190620003244.261595-1-ndesaulniers@google.com>
+Mime-Version: 1.0
+X-Mailer: git-send-email 2.22.0.410.gd8fdbe21b5-goog
+Subject: [PATCH] arm64: defconfig: update and enable CONFIG_RANDOMIZE_BASE
+From: Nick Desaulniers <ndesaulniers@google.com>
+To: catalin.marinas@arm.com, will.deacon@arm.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190619_160636_712816_202593C0 
-X-CRM114-Status: GOOD (  13.96  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190619_173307_377039_3E414492 
+X-CRM114-Status: UNSURE (   9.56  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -6.9 (------)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-6.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:141 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:449 listed in]
  [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (festevam[at]gmail.com)
+ -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
+ white-list
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -82,6 +80,8 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.8 UPPERCASE_50_75        message body is 50-75% uppercase
+ -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,41 +93,96 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
- <devicetree@vger.kernel.org>, Sascha Hauer <s.hauer@pengutronix.de>,
- Rob Herring <robh+dt@kernel.org>, NXP Linux Team <linux-imx@nxp.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Shawn Guo <shawnguo@kernel.org>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>
+Cc: mark.rutland@arm.com, Enric Balletbo i Serra <enric.balletbo@collabora.com>,
+ Arnd Bergmann <arnd@arndb.de>, ard.biesheuvel@linaro.org,
+ Maxime Ripard <maxime.ripard@bootlin.com>,
+ Nick Desaulniers <ndesaulniers@google.com>, linux-kernel@vger.kernel.org,
+ Bjorn Andersson <bjorn.andersson@linaro.org>,
+ Dinh Nguyen <dinguyen@kernel.org>, broonie@kernel.org,
+ Jagan Teki <jagan@amarulasolutions.com>, Olof Johansson <olof@lixom.net>,
+ Shawn Guo <shawnguo@kernel.org>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Russell,
+Generated via:
+$ ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- make defconfig
+$ ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- make menuconfig
+<enable CONFIG_RANDOMIZE_BASE aka KASLR>
+$ ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- make savedefconfig
+$ mv defconfig arch/arm64/configs/defconfig
 
-On Wed, Jun 19, 2019 at 7:37 PM Russell King - ARM Linux admin
-<linux@armlinux.org.uk> wrote:
->
-> On Wed, Jun 19, 2019 at 11:35:58PM +0100, Russell King wrote:
-> > A change to the AT803x driver fixed the handling of the phy interface
-> > mode, but this breaks all platforms that use "rgmii" as the mode in
-> > their DT.  Fix the Solidrun platforms.
-> >
-> > Fixes: 6d4cd041f0af ("net: phy: at803x: disable delay only for RGMII mode")
-> > Signed-off-by: Russell King <rmk+kernel@armlinux.org.uk>
->
-> Note that without this, SolidRun Hummingboard and Cubox-i platforms
-> have no working ethernet with at least 5.1 kernels, which is a
-> regression.
+Removes explicit enablement of:
+CONFIG_TI_SCI_PROTOCOL
+CONFIG_TI_MESSAGE_MANAGER
+CONFIG_SOC_TI
+CONFIG_DEVFREQ_GOV_SIMPLE_ONDEMAND
 
-Commit 0672d22a1924 ("ARM: dts: imx: Fix the AR803X phy-mode") fixes
-this issue in mainline and it has already been applied to the 5.1
-stable tree as well.
+Signed-off-by: Nick Desaulniers <ndesaulniers@google.com>
+---
+ arch/arm64/configs/defconfig | 8 ++------
+ 1 file changed, 2 insertions(+), 6 deletions(-)
 
-Thanks
+diff --git a/arch/arm64/configs/defconfig b/arch/arm64/configs/defconfig
+index 4d583514258c..54d35e847836 100644
+--- a/arch/arm64/configs/defconfig
++++ b/arch/arm64/configs/defconfig
+@@ -68,6 +68,7 @@ CONFIG_KEXEC=y
+ CONFIG_CRASH_DUMP=y
+ CONFIG_XEN=y
+ CONFIG_COMPAT=y
++CONFIG_RANDOMIZE_BASE=y
+ CONFIG_HIBERNATION=y
+ CONFIG_WQ_POWER_EFFICIENT_DEFAULT=y
+ CONFIG_ARM_CPUIDLE=y
+@@ -86,7 +87,6 @@ CONFIG_ARM_TEGRA186_CPUFREQ=y
+ CONFIG_ARM_SCPI_PROTOCOL=y
+ CONFIG_RASPBERRYPI_FIRMWARE=y
+ CONFIG_INTEL_STRATIX10_SERVICE=y
+-CONFIG_TI_SCI_PROTOCOL=y
+ CONFIG_EFI_CAPSULE_LOADER=y
+ CONFIG_IMX_SCU=y
+ CONFIG_IMX_SCU_PD=y
+@@ -191,7 +191,6 @@ CONFIG_PCIE_QCOM=y
+ CONFIG_PCIE_ARMADA_8K=y
+ CONFIG_PCIE_KIRIN=y
+ CONFIG_PCIE_HISI_STB=y
+-CONFIG_UEVENT_HELPER_PATH="/sbin/hotplug"
+ CONFIG_DEVTMPFS=y
+ CONFIG_DEVTMPFS_MOUNT=y
+ CONFIG_HISILICON_LPC=y
+@@ -365,8 +364,8 @@ CONFIG_SPI_PL022=y
+ CONFIG_SPI_ROCKCHIP=y
+ CONFIG_SPI_QUP=y
+ CONFIG_SPI_S3C64XX=y
+-CONFIG_SPI_SPIDEV=m
+ CONFIG_SPI_SUN6I=y
++CONFIG_SPI_SPIDEV=m
+ CONFIG_SPMI=y
+ CONFIG_PINCTRL_SINGLE=y
+ CONFIG_PINCTRL_MAX77620=y
+@@ -658,7 +657,6 @@ CONFIG_ARM_MHU=y
+ CONFIG_IMX_MBOX=y
+ CONFIG_PLATFORM_MHU=y
+ CONFIG_BCM2835_MBOX=y
+-CONFIG_TI_MESSAGE_MANAGER=y
+ CONFIG_QCOM_APCS_IPC=y
+ CONFIG_ROCKCHIP_IOMMU=y
+ CONFIG_TEGRA_IOMMU_SMMU=y
+@@ -696,9 +694,7 @@ CONFIG_ARCH_TEGRA_210_SOC=y
+ CONFIG_ARCH_TEGRA_186_SOC=y
+ CONFIG_ARCH_TEGRA_194_SOC=y
+ CONFIG_ARCH_K3_AM6_SOC=y
+-CONFIG_SOC_TI=y
+ CONFIG_TI_SCI_PM_DOMAINS=y
+-CONFIG_DEVFREQ_GOV_SIMPLE_ONDEMAND=y
+ CONFIG_EXTCON_USB_GPIO=y
+ CONFIG_EXTCON_USBC_CROS_EC=y
+ CONFIG_MEMORY=y
+-- 
+2.22.0.410.gd8fdbe21b5-goog
+
 
 _______________________________________________
 linux-arm-kernel mailing list
