@@ -2,85 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9526D4C4F7
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 20 Jun 2019 03:28:27 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6EBF14C501
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 20 Jun 2019 03:34:52 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=5Cudb2HKAj9G4rzo9vbm+9sAQM6fy6mi4hhXDZpRiiA=; b=NUuM/Tvnc9Fwt8
-	41xYhmeQIDXil/Tw4HGObiXi9teo+dSEDPuGI+NGZ/scGbLlWPCOkfsZOHY4U+R3Doyo0VfTiaQnz
-	HHvTh5YRj0sdGyyE2eOlFaC+q/Y7GJRzw4XCc52pA8mVrF07Kg8rCpZNGXf86kCVPAL93Q1V0ttk2
-	NC+8JgRE6f2mXeAd0txQFL0BfKEzwL9h5kfAB5iPkH9mVwcuTx/6tkKmTW+7hd0xmRkBXp1U7R1Qi
-	NFVHp+sTTXs81X6WOnvuLwZXsgZTzD741fQfnvySp4fYhL/MXdWIgSwOA1g3BdRPKd8TSODxY8yzU
-	iH1zSfFYkH1iaJ0WGujA==;
+	List-Owner; bh=bf0T6j8Cw+kIYkWm6UJrZYRVnD/aeGWpvZrQqWgVb6M=; b=IU9wPGz5+9B6on
+	nf5QPJI0S7VUFDUU1CcLir3P+Z/MvEbF1G5QqgAOd3YYSBc6Zkn4L9vgofZykoh7eO0JbtEwYv8zj
+	QQaKOKygcreFkrZpLxfKVEtuJybhhwx0VslXPSaCZR1JLF4tqHej0ZJrmMSfXhoMyTvhH6DGrjjys
+	NBcsju8avJ9m2+x8sdzLrgyQpD51/6BRXL6nhKpN+IXJimCzVvGxd7bXFypRe0ychL+0UMcGP/rsh
+	Uq+l72fvCY5p2XSSvOvjy0Mc6O31ZqANdVA1a3O0jLptJXW4L2a2vkjZ0m2sAfN6xMyHsqHBnZEQC
+	iMwhOo40Q5k4OD5Cjj3g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hdlsH-00010T-4s; Thu, 20 Jun 2019 01:28:25 +0000
-Received: from mail-io1-xd43.google.com ([2607:f8b0:4864:20::d43])
+	id 1hdlyQ-0002h2-H5; Thu, 20 Jun 2019 01:34:46 +0000
+Received: from mail-oi1-x242.google.com ([2607:f8b0:4864:20::242])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hdls4-0000zo-MG
- for linux-arm-kernel@lists.infradead.org; Thu, 20 Jun 2019 01:28:13 +0000
-Received: by mail-io1-xd43.google.com with SMTP id w25so1316424ioc.8
+ id 1hdlyD-0002gg-I0
+ for linux-arm-kernel@lists.infradead.org; Thu, 20 Jun 2019 01:34:35 +0000
+Received: by mail-oi1-x242.google.com with SMTP id s184so875567oie.9
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 19 Jun 2019 18:28:11 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
+ Wed, 19 Jun 2019 18:34:30 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=googlemail.com; s=20161025;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=K+lJ3CLPTlV9tpNBKFgd0Xmeaz/SJ4QdPFY55va1FCk=;
- b=T9qVefZXg/l4TY1fZ5t4+FBcV8bawtYd7X1iwe2XqARuiVY+xJvg4NGnhUnJ/dR/K1
- Y9cB1lnaFpB2sOYEZkpB8u1dWTE9wM6t07kCXXzXW3SqvSe6lqHfvnhmN3QyN0W4IRi9
- CTTi0MmuSSPbmAZXhKPRSNz3zuDNzA0674j2o=
+ :cc; bh=nYuOW5lyxxT0zsgk7qqZi/7w20Oi72vHiGCqLTnTrl8=;
+ b=XxxTCKxD/5Hh4mP6+R4KSzkOEhkkx9EXfAH8omqHrIeXVmLMBa406JF09S5I9/dOxR
+ wc9h4G7Dflde6RcyDAZnRIMTkl43HRI69tjffugAWRVlUFXSiEWEbbvf1v8Dkv333ACz
+ fPBTlaPJtNz1tic4Y8+juQsuQ6mnFj5eYHNiMilXbbr3elf5dvc2xJrALVZVKGSFd1iZ
+ efEFfZAArnZa7GOg/IseyJDpc7KuRCJF8XYefzt5VhBC48jDwJGyC0kRcJOnDLUKC0In
+ eFPF3hEUJBXxsibzw51TwqvsjDFIP78hjGH3zMbetl9Rq5+bOJEMbbz3Y1EtDIbZufot
+ ZLMQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=K+lJ3CLPTlV9tpNBKFgd0Xmeaz/SJ4QdPFY55va1FCk=;
- b=HltNiwcqZWFyxSy84Txc+d8Po2616iID+5HCM+uJq3m7l1V3XHsliaHs5zQR3deQxc
- KJRydWaSPlWsQheMM8mxuV9JWWjSJbnVnT5ankYojSx8dh79DZeDydQM9jraeO8LOYVc
- mUMfGin7sNPoPLhYznYa43esabtIwOWTewiiKoUlSa57qMfgD+D2GR9AIps8QwPVg2mp
- Xzu8PJfsRRovUs5m73d8niFsFAnj8KGzXr5gSioiNseCMpigfq+Cs0b1NPKp7AUsk6pP
- 02h56uJPf7oBj44nDjtWZpd1Lwui9BvFwyimEAAPZTOCuOrb9zbCSLIrcveI5UhBDTdf
- Ju3w==
-X-Gm-Message-State: APjAAAWEZ7GWLbSLD+0BMAj0tkwAtiMdeg48RVPtsoDxv7Sp9Ahk9/BU
- 8F1CbxjbODJykJcjL5I7iOoERBc+2y0=
-X-Google-Smtp-Source: APXvYqzUHmyoYtLUFtf58m8O//X6Q84DN8l/HfGbxrv2dALuXaKB6x8L7gqGnY05Cf9X2DV+DiYlKA==
-X-Received: by 2002:a5d:9d42:: with SMTP id k2mr2110940iok.45.1560994091135;
- Wed, 19 Jun 2019 18:28:11 -0700 (PDT)
-Received: from mail-io1-f45.google.com (mail-io1-f45.google.com.
- [209.85.166.45])
- by smtp.gmail.com with ESMTPSA id e26sm17443083iod.10.2019.06.19.18.28.10
- for <linux-arm-kernel@lists.infradead.org>
- (version=TLS1_3 cipher=AEAD-AES128-GCM-SHA256 bits=128/128);
- Wed, 19 Jun 2019 18:28:10 -0700 (PDT)
-Received: by mail-io1-f45.google.com with SMTP id s7so1005726iob.11
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 19 Jun 2019 18:28:10 -0700 (PDT)
-X-Received: by 2002:a5e:d615:: with SMTP id w21mr12594037iom.0.1560994089873; 
- Wed, 19 Jun 2019 18:28:09 -0700 (PDT)
+ bh=nYuOW5lyxxT0zsgk7qqZi/7w20Oi72vHiGCqLTnTrl8=;
+ b=ug+SLldfx3/SXrUYg35OzX8JSJEFVeshQZcrVJlRLDYG6FLBa77KMf7i7ZwXG0cPrd
+ F5VxxrOmtrXk+xaeSwtlllRpOruthsKvsKra+uQBgHcBP8hv/TVNIFuuY9QTjtLiTV2Z
+ gMRQCoAcnIooSRKIifMst9/PPYtVXoRvv5ObOhXRZgJGFQnKjX5tKoCB9Ea5cxrMHsEM
+ Qm8GFqKqv3LHvdGC0TPOdhPcs6pVJpjxGrEiA48rcgrN9EdWV4p3Cu5mWPUkdlvsW2ee
+ iw1JKWWdoqpewY7R4QcOYk+61tfSwjcmwhTVya3l0btHxlJeJEkm57qHd2rsyYoTaI11
+ O0cg==
+X-Gm-Message-State: APjAAAVUnOKTG+8twnXhZX78J/ErQIRdcpvvOMvD7c2N/i63JkQUCWqO
+ HkmkautHfqQjA3/c6EK7E/Itrjmq7HvZ2dGcsZI=
+X-Google-Smtp-Source: APXvYqwrykrLtbD0pG9V8vBrsbsTo35v6Soy95FKONjQ0aI87GQhODvgpXAK5RhK2mM0+AszFXum8RjavMf7MOSMXic=
+X-Received: by 2002:aca:4403:: with SMTP id r3mr4853308oia.39.1560994469747;
+ Wed, 19 Jun 2019 18:34:29 -0700 (PDT)
 MIME-Version: 1.0
-References: <1458265206-15733-1-git-send-email-heiko@sntech.de>
- <1458265206-15733-5-git-send-email-heiko@sntech.de>
-In-Reply-To: <1458265206-15733-5-git-send-email-heiko@sntech.de>
-From: Doug Anderson <dianders@chromium.org>
-Date: Wed, 19 Jun 2019 18:27:55 -0700
-X-Gmail-Original-Message-ID: <CAD=FV=U23+5pcze=6zDTx0dAYF8HTmbR8s8zem93VhgYgaZeGQ@mail.gmail.com>
-Message-ID: <CAD=FV=U23+5pcze=6zDTx0dAYF8HTmbR8s8zem93VhgYgaZeGQ@mail.gmail.com>
-Subject: Re: [PATCH 04/10] ARM: dts: rockchip: add startup delay to
- rk3288-veyron panel-regulators
-To: "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>
+References: <20190617165836.4673-1-colin.king@canonical.com>
+ <20190619051308.23582-1-martin.blumenstingl@googlemail.com>
+ <92f9e5a6-d2a2-6bf2-ff8a-2430fe977f93@canonical.com>
+In-Reply-To: <92f9e5a6-d2a2-6bf2-ff8a-2430fe977f93@canonical.com>
+From: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
+Date: Thu, 20 Jun 2019 03:34:18 +0200
+Message-ID: <CAFBinCDmYVPDMcwAAYhMfxxuTsG=xunduN58_8e20zE_Mhmb7Q@mail.gmail.com>
+Subject: Re: [PATCH] net: stmmac: add sanity check to
+ device_property_read_u32_array call
+To: Colin Ian King <colin.king@canonical.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190619_182812_756585_F41D67B2 
-X-CRM114-Status: GOOD (  15.12  )
+X-CRM114-CacheID: sfid-20190619_183433_622783_BCBF189A 
+X-CRM114-Status: GOOD (  18.71  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:d43 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:242 listed in]
  [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (martin.blumenstingl[at]googlemail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -90,7 +85,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -102,43 +96,57 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Heiko Stuebner <heiko@sntech.de>, LKML <linux-kernel@vger.kernel.org>,
- Matthias Kaehlcke <mka@chromium.org>, Yakir Yang <ykk@rock-chips.com>,
- Enric Balletbo i Serra <enric.balletbo@collabora.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: alexandre.torgue@st.com, netdev@vger.kernel.org,
+ kernel-janitors@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-stm32@st-md-mailman.stormreply.com, joabreu@synopsys.com,
+ mcoquelin.stm32@gmail.com, peppe.cavallaro@st.com, davem@davemloft.net,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi,
+Hi Colin,
 
-On Wed, Fri, 18 Mar 2016 Heiko Stuebner <heiko@sntech.de> wrote:
+On Wed, Jun 19, 2019 at 8:55 AM Colin Ian King <colin.king@canonical.com> wrote:
 >
-> The panels need a bit of time to actually turn on. If this isn't
-> observed, this results in problems when trying talk to the panels
-> and thus produces detection errors. 100ms seem to be a safe value
-> for the time being.
->
-> Signed-off-by: Heiko Stuebner <heiko@sntech.de>
-> ---
->  arch/arm/boot/dts/rk3288-veyron-jaq.dts    | 1 +
->  arch/arm/boot/dts/rk3288-veyron-jerry.dts  | 1 +
->  arch/arm/boot/dts/rk3288-veyron-minnie.dts | 1 +
->  arch/arm/boot/dts/rk3288-veyron-speedy.dts | 1 +
->  4 files changed, 4 insertions(+)
-
-I know it was 3 years ago, but any idea how to reproduce the problems
-you were seeing without this patch?  I believe the downstream kernel
-never had any delay like this and I'm not aware of any issues.
-
-I wonder if the need for this extra 100 ms delay is no longer there
-now that we have:
-
-3157694d8c7f pwm-backlight: Add support for PWM delays proprieties.
-5fb5caee92ba pwm-backlight: Enable/disable the PWM before/after LCD
-enable toggle.
-6d5922dd0d60 ARM: dts: rockchip: set PWM delay backlight settings for Veyron
+> On 19/06/2019 06:13, Martin Blumenstingl wrote:
+> > Hi Colin,
+> >
+> >> Currently the call to device_property_read_u32_array is not error checked
+> >> leading to potential garbage values in the delays array that are then used
+> >> in msleep delays.  Add a sanity check to the property fetching.
+> >>
+> >> Addresses-Coverity: ("Uninitialized scalar variable")
+> >> Signed-off-by: Colin Ian King <colin.king@canonical.com>
+> > I have also sent a patch [0] to fix initialize the array.
+> > can you please look at my patch so we can work out which one to use?
+> >
+> > my concern is that the "snps,reset-delays-us" property is optional,
+> > the current dt-bindings documentation states that it's a required
+> > property. in reality it isn't, there are boards (two examples are
+> > mentioned in my patch: [0]) without it.
+> >
+> > so I believe that the resulting behavior has to be:
+> > 1. don't delay if this property is missing (instead of delaying for
+> >    <garbage value> ms)
+> > 2. don't error out if this property is missing
+> >
+> > your patch covers #1, can you please check whether #2 is also covered?
+> > I tested case #2 when submitting my patch and it worked fine (even
+> > though I could not reproduce the garbage values which are being read
+> > on some boards)
+> >
+> >
+> > Thank you!
+> > Martin
+> >
+> >
+> > [0] https://lkml.org/lkml/2019/4/19/638
+> >
+> Is that the correct link?
+sorry, that is a totally unrelated link
+the correct link is: https://patchwork.ozlabs.org/patch/1118313/
 
 _______________________________________________
 linux-arm-kernel mailing list
