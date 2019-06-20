@@ -2,76 +2,77 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 147844DCF2
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 20 Jun 2019 23:42:48 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D64734DD48
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 21 Jun 2019 00:12:56 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=DRoKiEBYzl6E+C4+IQxzgcO29N5nJf/lObbZdePuQys=; b=Xnof61vT/Ii2Ls
-	i45T83wrdBuVuwJn/7PdPTeXpz3QZv56XgpSnUxYDhrgn4eNNI9Za82Hd3HE1gMW+9x5zF0iWu91p
-	slFABossUjgo0SKyNBVsKNe3vryVlsm9N6pjBjjk9Z/3i2jHJgiFyhkS1BBkGX5Iy1MK15SdlNxuY
-	pngZpZrKBZnb61MwhVQkQX0rgjDxyfMTimMBFBCt/oxGGwNoPkQ5otlLoTX7RTVt6kjBpWJlLNqQZ
-	2LrjSeLb5Lur3Vp0oR5X+ZB+pf49zZBkPQ6/OnYRvs37YfBarPaRVvO1+iy3Gd/ilZuFqfKw87kyW
-	QFf85M4jYHdgFS/Q84mw==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=qyxLUemiWS1vPuEEoW7mnurip1Rcj9RDAF/pTgL4v5c=; b=Lko
+	UJgqg9jM6JeKqtj4QWw/y8mGUjx/2Cl6M2dmRgqVmqFtFQ1fHBA47/sFC+FdoXvZjIze/PLVsg1CY
+	HF3wXEo2BrqVEBh4RUSHB9LxdJ1y7NrXdCav1SZ7Drv5MjQtpoblVBT/gOcL+4tK64/oWO3SEYpg4
+	i3NH25nplBhVyRUQ47QwS8meHKuP8tiIjq2dPf5ZghKE0cd1zr75GxPqyXJ71bn/bm4bzYK2Yswy1
+	4iqPOQsYzKCeJ44Brwp1nZGxfDKq4ecrpWbUBPPGZ+aO31k2u9TsvMb5XNLeXPVi19kqugoJIudkS
+	jgDlWfSBWOVMp9XX30UeS+r9YfkPG5A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1he4pR-0007AI-Rk; Thu, 20 Jun 2019 21:42:45 +0000
-Received: from mail-io1-xd42.google.com ([2607:f8b0:4864:20::d42])
+	id 1he5Ia-0001I5-9X; Thu, 20 Jun 2019 22:12:52 +0000
+Received: from mail-pl1-x642.google.com ([2607:f8b0:4864:20::642])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1he4pC-00079L-2z
- for linux-arm-kernel@lists.infradead.org; Thu, 20 Jun 2019 21:42:33 +0000
-Received: by mail-io1-xd42.google.com with SMTP id u19so290459ior.9
+ id 1he5IN-0001HC-Ur
+ for linux-arm-kernel@lists.infradead.org; Thu, 20 Jun 2019 22:12:41 +0000
+Received: by mail-pl1-x642.google.com with SMTP id m7so1938661pls.8
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 20 Jun 2019 14:42:29 -0700 (PDT)
+ Thu, 20 Jun 2019 15:12:39 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=L5PXkyhy8ccO/rU+9mbs3S++2/3ZYkLPR99yAF51MaQ=;
- b=TV0Dg1ZI2wljp/AWx8h3OzmM9x3bMSGEh7HpAV62ElXRDXihmbx8gwzWsphXUgiMEz
- /KGBbT4kZ8utVLXCMP5mrKMc46wdMwsQ+JjsciPPX2q2RfnIYjZKfF/4qX8kfo+kaNUn
- xpWGDPnDZ6QZ72QigQIQA8yHQyh3/ZI1KSFOvO1mK0ZnIpUahyGVYEmfJYFsi82nybm3
- m1kMSJkl9f6SKp+U+pQaTPjOuYexvLIwkFdRNg6/TCcj2GKlYWEC5J/H+qJoqqDUgqlx
- ryw8F+5oZ9QgVgC66ge0GYdoFSTb1vPglNRaY+1BTlNl54hoi4TpUIT2rRa+0G9w5sov
- ZFyw==
+ h=from:to:cc:subject:date:message-id;
+ bh=dXuNxncjf3uHoTCqccXPqxROqKCYiNRUk7V6g2Jaeo4=;
+ b=bkYTaBbi30WKTPtHAIUDF36UBbsuRZYDyeA787XaLZEqQsmK0jJoseMV/bIPjDZhsF
+ gs9ThmEc8xvdrHRd7ifYnRyAHudyxvY/MyiYUSU3YE1qBKRkrrVO8rBOPhizUPAKgd59
+ kVMqc17Ndw1D08ri0uCRlrFWO0ttrKn+yJXmlLeGfWKLqVMmCCCeZWJuoLYGibqJtQ7t
+ 54s+Q4FrnGEM5ffpnTlrvhvLiixxKt+PP7tXHsKAUHbWsZJ2mu+jUH80hlP6Hi4sbZza
+ WuTgDBg0H8V4Q2cMRUrStV5eiCsw+UuhCNRxt9RyQ3u7A4IcW7xeRCme15FPLt2W3AmD
+ 6UXQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=L5PXkyhy8ccO/rU+9mbs3S++2/3ZYkLPR99yAF51MaQ=;
- b=qQ6wmwlS2JAtaol0Fq+uW5/EEtvdi71NpPJOlzCocmXf07vDpphhxocmhqSvf3bBov
- Zz5rDOhI8Ihqa7dURaIBuLcm+RTgLvmtPCBWtDzovowmqoIO5+ClPQzY4MuNwor5YWCC
- YMmM7g97GnqqpzuY6k4UNEl3Iwk7rdMT2FN27vdtGDcWIZvG2E2BlbYvLut8PVB5GXUS
- khU0zPOeVU/vBHXO+S+46KfnYwDd2uQylD+ywFO8eCNX4CAKV9W8OqbBGxFomml+5aLM
- CewsT82sazCUmt2C7zY4HMZoX17xFxREX6YI3NfIAi+5Sr9frRl1syTb11ok3XptquzL
- q5Dg==
-X-Gm-Message-State: APjAAAWEi/eiIjrYbaVNRlFzzq+17pjPkd+MCvj6N+kdWe76El+CGf8W
- 6ny5kHGTpguHgPEjS9z40yllnY32OHvzK6P0Ifcq/A==
-X-Google-Smtp-Source: APXvYqxe4EnG9x8nkGUwWsXY0VGlOw7ZKhzlAEgRZddrOENAiLhbNnXeBB2rD4icJGMFPBsD1JYx261zvNgKftFk8Qo=
-X-Received: by 2002:a6b:7d49:: with SMTP id d9mr32493807ioq.50.1561066949071; 
- Thu, 20 Jun 2019 14:42:29 -0700 (PDT)
-MIME-Version: 1.0
-References: <20190619195318.19254-1-mathieu.poirier@linaro.org>
- <20190619195318.19254-27-mathieu.poirier@linaro.org>
- <20190620060521.GG26319@kroah.com>
-In-Reply-To: <20190620060521.GG26319@kroah.com>
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=dXuNxncjf3uHoTCqccXPqxROqKCYiNRUk7V6g2Jaeo4=;
+ b=ie4iyfgrM/+Bx0h1xra6PKHqemPIG7TUFmy11KrCySLl2k77/ICWD+pqMkMauZKRpv
+ mysUqcKLQRyxtFhOT5sh/Lkz5i7bkcQ/e4Kil76g+7PM9eAB15MOqCchzA0HBOnDJsma
+ 9ugZRSkqZGU/aIf7LTvYVejBQ4cusRiaSzuTFwmifrHJhtcybhuDs8pjDgclb3dWOzcL
+ nXRzM1Ci8HanjAr4UnVjUz+9c73fFLgITpbUf8izkRLEnjrNijX6TAve2m3Fst6kL8Z+
+ pHzfDmW0V9CMxoUqUwAaWVA9Xtm7rhKumbHUHkVNiR3damB/ejpinI7BodHgwVEWEjdb
+ ZFNA==
+X-Gm-Message-State: APjAAAW0MmcP8oP7CUeUcQlA7EVlsbQIO503ICTQqEr8YVfUxMf9mYos
+ JiZOi9VGjVnxdjsuEuiqawxh7w==
+X-Google-Smtp-Source: APXvYqzYQFmjNWY0iEgzbJ2LEYQ3stBu93YkqHKNKhVj+FnmKrGtodIEvzWS6Ab/VK2mt9Np0YZaeg==
+X-Received: by 2002:a17:902:5ac4:: with SMTP id
+ g4mr51081580plm.80.1561068759010; 
+ Thu, 20 Jun 2019 15:12:39 -0700 (PDT)
+Received: from xps15.cg.shawcable.net (S0106002369de4dac.cg.shawcable.net.
+ [68.147.8.254])
+ by smtp.gmail.com with ESMTPSA id x25sm450636pfm.48.2019.06.20.15.12.38
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Thu, 20 Jun 2019 15:12:38 -0700 (PDT)
 From: Mathieu Poirier <mathieu.poirier@linaro.org>
-Date: Thu, 20 Jun 2019 15:42:18 -0600
-Message-ID: <CANLsYkysqjzkBWRUeWrBmves2D-H3Sb=PoYr1VD3B9i7kXO8tg@mail.gmail.com>
-Subject: Re: [PATCH 26/28] coresight: tmc: Smatch: Fix potential NULL pointer
- dereference
-To: Greg KH <gregkh@linuxfoundation.org>
+To: gregkh@linuxfoundation.org
+Subject: [PATCH 0/5] coresight: Fixes for v5.2-rc5 
+Date: Thu, 20 Jun 2019 16:12:32 -0600
+Message-Id: <20190620221237.3536-1-mathieu.poirier@linaro.org>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190620_144231_588726_E57DDE05 
-X-CRM114-Status: GOOD (  19.05  )
+X-CRM114-CacheID: sfid-20190620_151240_007391_10D2922F 
+X-CRM114-Status: UNSURE (   7.22  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:d42 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:642 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -93,81 +94,38 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Cc: linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, 20 Jun 2019 at 00:05, Greg KH <gregkh@linuxfoundation.org> wrote:
->
-> On Wed, Jun 19, 2019 at 01:53:16PM -0600, Mathieu Poirier wrote:
-> > From: Suzuki K Poulose <suzuki.poulose@arm.com>
-> >
-> > Based on the following report from Smatch, fix the potential
-> > NULL pointer dereference check.
-> >
-> > The patch 743256e214e8: "coresight: tmc: Clean up device specific
-> > data" from May 22, 2019, leads to the following Smatch complaint:
-> >
-> >     drivers/hwtracing/coresight/coresight-tmc-etr.c:625 tmc_etr_free_flat_buf()
-> >     warn: variable dereferenced before check 'flat_buf' (see line 623)
-> >
-> > drivers/hwtracing/coresight/coresight-tmc-etr.c
-> >    622                struct etr_flat_buf *flat_buf = etr_buf->private;
-> >    623                struct device *real_dev = flat_buf->dev->parent;
-> >                                           ^^^^^^^^^^
-> > The patch introduces a new NULL check
-> >
-> >    624
-> >    625                if (flat_buf && flat_buf->daddr)
-> >                     ^^^^^^^^
-> > but the existing code assumed it can be NULL.
-> >
-> >    626                        dma_free_coherent(real_dev, flat_buf->size,
-> >    627                                          flat_buf->vaddr, flat_buf->daddr);
-> >
-> > Cc: Dan Carpenter <dan.carpenter@oracle.com>
-> > Cc: Mathieu Poirier <mathieu.poirier@linaro.org>
-> > Signed-off-by: Suzuki K Poulose <suzuki.poulose@arm.com>
-> > Signed-off-by: Mathieu Poirier <mathieu.poirier@linaro.org>
-> > ---
-> >  drivers/hwtracing/coresight/coresight-tmc-etr.c | 6 ++++--
-> >  1 file changed, 4 insertions(+), 2 deletions(-)
-> >
-> > diff --git a/drivers/hwtracing/coresight/coresight-tmc-etr.c b/drivers/hwtracing/coresight/coresight-tmc-etr.c
-> > index 5d2bf6d18961..17006705287a 100644
-> > --- a/drivers/hwtracing/coresight/coresight-tmc-etr.c
-> > +++ b/drivers/hwtracing/coresight/coresight-tmc-etr.c
-> > @@ -620,11 +620,13 @@ static int tmc_etr_alloc_flat_buf(struct tmc_drvdata *drvdata,
-> >  static void tmc_etr_free_flat_buf(struct etr_buf *etr_buf)
-> >  {
-> >       struct etr_flat_buf *flat_buf = etr_buf->private;
-> > -     struct device *real_dev = flat_buf->dev->parent;
-> >
-> > -     if (flat_buf && flat_buf->daddr)
-> > +     if (flat_buf && flat_buf->daddr) {
-> > +             struct device *real_dev = flat_buf->dev->parent;
-> > +
-> >               dma_free_coherent(real_dev, flat_buf->size,
-> >                                 flat_buf->vaddr, flat_buf->daddr);
-> > +     }
-> >       kfree(flat_buf);
-> >  }
-> >
-> > --
-> > 2.17.1
-> >
->
-> Again, 5.2-final and stable...
-
-So is this one, if addresses a deficiency introduced in patch 8/45
-[1].  I have a new set ready for the other ones you flagged.
+As requested here is a set to fix problems found up to now in this
+cycle, supplemented with stable tags where applicable.
 
 Thanks,
-Mathieu
+Mathieu 
 
-[1]. https://www.spinics.net/lists/arm-kernel/msg736144.html
+Dan Carpenter (1):
+  coresight: Potential uninitialized variable in probe()
+
+Suzuki K Poulose (4):
+  coresight: tmc-etr: Do not call smp_processor_id() from preemptible
+  coresight: tmc-etr: alloc_perf_buf: Do not call smp_processor_id from
+    preemptible
+  coresight: tmc-etf: Do not call smp_processor_id from preemptible
+  coresight: etb10: Do not call smp_processor_id from preemptible
+
+ drivers/hwtracing/coresight/coresight-etb10.c   |  6 ++----
+ drivers/hwtracing/coresight/coresight-funnel.c  |  1 +
+ drivers/hwtracing/coresight/coresight-tmc-etf.c |  6 ++----
+ drivers/hwtracing/coresight/coresight-tmc-etr.c | 13 ++++---------
+ 4 files changed, 9 insertions(+), 17 deletions(-)
+
+-- 
+2.17.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
