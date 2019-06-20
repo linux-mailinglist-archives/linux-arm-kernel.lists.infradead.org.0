@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 41C604D975
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 20 Jun 2019 20:36:58 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 534AF4D976
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 20 Jun 2019 20:37:13 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,31 +11,31 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=UAwTYRnu19gD3nBi0bTS/z7O2+DdDsKEM43/IDYSOnE=; b=gKuy7xaeHXPiEsI1BPpyIpS3Pe
-	/5RPiatC2z7FEPtiAN21quyICHeW51oOzmj+jRn8c7wsKJl8oTbNLw/YAyf+AmK8QgwJE9CyeLqsc
-	P+Q/Tf60j2skf9XRFg06szNTiBVz+uvef99FsZmXK0D0zmdnpqTcxF7Z6otMlu3nuNA2FFTvRRX6X
-	uuryusPM60gFg3/gV9Zt/Q7rIHCPdIP1bXL3tXMVmUHO0JrJtBQSo93qI+gHkcq9ClOiYcBNnosiD
-	VSjBpreZkDJbW4MwzYgJJLXtKjXRKSRo30Eyc6K6My1LZncZwMgaFW07iwr7CT8OYn4+CGBqyux+3
-	6/leceug==;
+	bh=EWXVKM0ik0qHrzy7iecDgmALyIJU7OwF/NS5JHaKucQ=; b=Ol5bfLAMpghDygK2FKlBkbYmhF
+	EaCtusSm9bugC+k3R0vxgnSxYjTkd+PWBsfR27WVjOWAnAd0qqNZmhf/Auozksn7iHZCuorlGpBAQ
+	9UCUMfCWTdT/5vQDjKZm1jn9QVK21z9xpySv8zyAKak4I+mm63qe7imaaeoIO0MzrRGL6rnDi6MH2
+	bV1Zn1j03pD0fkyj+xxx7WiLbT5aErIhnNM3IrG7MeVxcxBZwMRZQHzZEAGcEr9VOAiEwjR3UPEoF
+	IjuLguuVz4xdmwCMBxVPD0rZ9xGdpBrhJV0UDwSpx7S15ZYAM3NUQ0y3tjnoUd97p96RSCiNW8eEy
+	9wLGwFnw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1he1vb-0001VJ-Le; Thu, 20 Jun 2019 18:36:55 +0000
+	id 1he1vr-0001mJ-6s; Thu, 20 Jun 2019 18:37:11 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1he1ub-00012g-8d
- for linux-arm-kernel@lists.infradead.org; Thu, 20 Jun 2019 18:35:55 +0000
+ id 1he1ue-00015X-Id
+ for linux-arm-kernel@lists.infradead.org; Thu, 20 Jun 2019 18:35:58 +0000
 Received: from localhost.localdomain (unknown [194.230.155.186])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id B02FC206BF;
- Thu, 20 Jun 2019 18:35:49 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 60C4E20B1F;
+ Thu, 20 Jun 2019 18:35:53 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1561055752;
- bh=uEWMFYio0WY05yLNxWgzEXOwSUlRF13te6Ozn/Tepk4=;
+ s=default; t=1561055756;
+ bh=pWNqjq23LV4OCadPPMnSFJ7l4+RDhwdpKiMigfnoDsA=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=GDNdM/KdMqP8pQh9GL/7yCz0dPylR8hmSdQDNCf9ywNG37WKngYp/UbZN9nA0rgPb
- rr/QR+KkQvLmvqwOvAM1gaqXWcllG4OWDluYqi5/T2BOi7y3iqKO8Os0qNZZv6p9ME
- E8vbBMb8Dc4jCUjAgjd8MZFfUv/J56gSLvPhcNsQ=
+ b=ArKD+osVVUCx1Xg8iO5/g16dCnO+81fwD3iXgV5xMciGAZHjEz8i4uk9wdv62Ckwg
+ HANuTP62Sc3teFIBNuyld5YCiqXcKdPAB68NQb55PEtL8Ch52VCczKMt8B9vNoh7Zm
+ WmT3OABtGqxmVCeVR6DpMsirhfXuSmx25kMApBgI=
 From: Krzysztof Kozlowski <krzk@kernel.org>
 To: Kukjin Kim <kgene@kernel.org>, Krzysztof Kozlowski <krzk@kernel.org>,
  Sangbeom Kim <sbkim73@samsung.com>,
@@ -44,16 +44,16 @@ To: Kukjin Kim <kgene@kernel.org>, Krzysztof Kozlowski <krzk@kernel.org>,
  Lee Jones <lee.jones@linaro.org>, devicetree@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org, linux-samsung-soc@vger.kernel.org,
  linux-kernel@vger.kernel.org
-Subject: [PATCH 3/6] regulator: s2mps11: Add support for disabling S2MPS11
- regulators in suspend
-Date: Thu, 20 Jun 2019 20:35:27 +0200
-Message-Id: <20190620183530.5386-3-krzk@kernel.org>
+Subject: [PATCH 4/6] ARM: dts: exynos: Disable unused buck10 regulator on
+ Odroid HC1 board
+Date: Thu, 20 Jun 2019 20:35:28 +0200
+Message-Id: <20190620183530.5386-4-krzk@kernel.org>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20190620183530.5386-1-krzk@kernel.org>
 References: <20190620183530.5386-1-krzk@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190620_113553_392042_020772B6 
-X-CRM114-Status: GOOD (  18.46  )
+X-CRM114-CacheID: sfid-20190620_113556_833521_BDC0B18F 
+X-CRM114-Status: GOOD (  12.64  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -90,313 +90,48 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The driver supported turning off regulators in suspend only for S2MPS14
-device.  However this makes also sense for S2MPS11 and can reduce the
-power consumption during suspend to RAM.
+The eMMC memory on Odroid XU3/XU4 boards is supplied by two regulators
+LDO18 and buck10 (and LDO13 for the host interface).
+
+However the Odroid HC1 board does not have eMMC connector so this
+regulator does not have to be always on.
 
 Signed-off-by: Krzysztof Kozlowski <krzk@kernel.org>
 ---
- drivers/regulator/s2mps11.c         | 210 +++++++++++++++-------------
- include/linux/mfd/samsung/s2mps11.h |   5 +
- 2 files changed, 120 insertions(+), 95 deletions(-)
+ arch/arm/boot/dts/exynos5422-odroid-core.dtsi      | 2 --
+ arch/arm/boot/dts/exynos5422-odroidxu3-common.dtsi | 6 ++++++
+ 2 files changed, 6 insertions(+), 2 deletions(-)
 
-diff --git a/drivers/regulator/s2mps11.c b/drivers/regulator/s2mps11.c
-index da3a746e65dc..6a83960822d4 100644
---- a/drivers/regulator/s2mps11.c
-+++ b/drivers/regulator/s2mps11.c
-@@ -34,7 +34,7 @@ struct s2mps11_info {
- 	enum sec_device_type dev_type;
- 
- 	/*
--	 * One bit for each S2MPS13/S2MPS14/S2MPU02 regulator whether
-+	 * One bit for each S2MPS11/S2MPS13/S2MPS14/S2MPU02 regulator whether
- 	 * the suspend mode was enabled.
- 	 */
- 	DECLARE_BITMAP(suspend_state, S2MPS_REGULATOR_MAX);
-@@ -225,27 +225,133 @@ static int s2mps11_set_ramp_delay(struct regulator_dev *rdev, int ramp_delay)
- 				  1 << enable_shift, 0);
- }
- 
-+static int s2mps11_regulator_enable(struct regulator_dev *rdev)
-+{
-+	struct s2mps11_info *s2mps11 = rdev_get_drvdata(rdev);
-+	int rdev_id = rdev_get_id(rdev);
-+	unsigned int val;
-+
-+	switch (s2mps11->dev_type) {
-+	case S2MPS11X:
-+		if (test_bit(rdev_id, s2mps11->suspend_state))
-+			val = S2MPS14_ENABLE_SUSPEND;
-+		else
-+			val = rdev->desc->enable_mask;
-+		break;
-+	case S2MPS13X:
-+	case S2MPS14X:
-+		if (test_bit(rdev_id, s2mps11->suspend_state))
-+			val = S2MPS14_ENABLE_SUSPEND;
-+		else if (s2mps11->ext_control_gpiod[rdev_id])
-+			val = S2MPS14_ENABLE_EXT_CONTROL;
-+		else
-+			val = rdev->desc->enable_mask;
-+		break;
-+	case S2MPU02:
-+		if (test_bit(rdev_id, s2mps11->suspend_state))
-+			val = S2MPU02_ENABLE_SUSPEND;
-+		else
-+			val = rdev->desc->enable_mask;
-+		break;
-+	default:
-+		return -EINVAL;
-+	}
-+
-+	return regmap_update_bits(rdev->regmap, rdev->desc->enable_reg,
-+			rdev->desc->enable_mask, val);
-+}
-+
-+static int s2mps11_regulator_set_suspend_disable(struct regulator_dev *rdev)
-+{
-+	int ret;
-+	unsigned int val, state;
-+	struct s2mps11_info *s2mps11 = rdev_get_drvdata(rdev);
-+	int rdev_id = rdev_get_id(rdev);
-+
-+	/* Below LDO should be always on or does not support suspend mode. */
-+	switch (s2mps11->dev_type) {
-+	case S2MPS11X:
-+		switch (rdev_id) {
-+		case S2MPS11_LDO2:
-+		case S2MPS11_LDO36:
-+		case S2MPS11_LDO37:
-+		case S2MPS11_LDO38:
-+			return 0;
-+		default:
-+			state = S2MPS14_ENABLE_SUSPEND;
-+			break;
-+		}
-+		break;
-+	case S2MPS13X:
-+	case S2MPS14X:
-+		switch (rdev_id) {
-+		case S2MPS14_LDO3:
-+			return 0;
-+		default:
-+			state = S2MPS14_ENABLE_SUSPEND;
-+			break;
-+		}
-+		break;
-+	case S2MPU02:
-+		switch (rdev_id) {
-+		case S2MPU02_LDO13:
-+		case S2MPU02_LDO14:
-+		case S2MPU02_LDO15:
-+		case S2MPU02_LDO17:
-+		case S2MPU02_BUCK7:
-+			state = S2MPU02_DISABLE_SUSPEND;
-+			break;
-+		default:
-+			state = S2MPU02_ENABLE_SUSPEND;
-+			break;
-+		}
-+		break;
-+	default:
-+		return -EINVAL;
-+	}
-+
-+	ret = regmap_read(rdev->regmap, rdev->desc->enable_reg, &val);
-+	if (ret < 0)
-+		return ret;
-+
-+	set_bit(rdev_id, s2mps11->suspend_state);
-+	/*
-+	 * Don't enable suspend mode if regulator is already disabled because
-+	 * this would effectively for a short time turn on the regulator after
-+	 * resuming.
-+	 * However we still want to toggle the suspend_state bit for regulator
-+	 * in case if it got enabled before suspending the system.
-+	 */
-+	if (!(val & rdev->desc->enable_mask))
-+		return 0;
-+
-+	return regmap_update_bits(rdev->regmap, rdev->desc->enable_reg,
-+				  rdev->desc->enable_mask, state);
-+}
-+
- static const struct regulator_ops s2mps11_ldo_ops = {
- 	.list_voltage		= regulator_list_voltage_linear,
- 	.map_voltage		= regulator_map_voltage_linear,
- 	.is_enabled		= regulator_is_enabled_regmap,
--	.enable			= regulator_enable_regmap,
-+	.enable			= s2mps11_regulator_enable,
- 	.disable		= regulator_disable_regmap,
- 	.get_voltage_sel	= regulator_get_voltage_sel_regmap,
- 	.set_voltage_sel	= regulator_set_voltage_sel_regmap,
- 	.set_voltage_time_sel	= regulator_set_voltage_time_sel,
-+	.set_suspend_disable	= s2mps11_regulator_set_suspend_disable,
+diff --git a/arch/arm/boot/dts/exynos5422-odroid-core.dtsi b/arch/arm/boot/dts/exynos5422-odroid-core.dtsi
+index 25d95de15c9b..0f967259ad29 100644
+--- a/arch/arm/boot/dts/exynos5422-odroid-core.dtsi
++++ b/arch/arm/boot/dts/exynos5422-odroid-core.dtsi
+@@ -490,8 +490,6 @@
+ 				regulator-name = "vdd_vmem";
+ 				regulator-min-microvolt = <2850000>;
+ 				regulator-max-microvolt = <2850000>;
+-				regulator-always-on;
+-				regulator-boot-on;
+ 			};
+ 		};
+ 	};
+diff --git a/arch/arm/boot/dts/exynos5422-odroidxu3-common.dtsi b/arch/arm/boot/dts/exynos5422-odroidxu3-common.dtsi
+index 93a48f2dda49..838872037493 100644
+--- a/arch/arm/boot/dts/exynos5422-odroidxu3-common.dtsi
++++ b/arch/arm/boot/dts/exynos5422-odroidxu3-common.dtsi
+@@ -360,6 +360,12 @@
+ 	};
  };
  
- static const struct regulator_ops s2mps11_buck_ops = {
- 	.list_voltage		= regulator_list_voltage_linear,
- 	.map_voltage		= regulator_map_voltage_linear,
- 	.is_enabled		= regulator_is_enabled_regmap,
--	.enable			= regulator_enable_regmap,
-+	.enable			= s2mps11_regulator_enable,
- 	.disable		= regulator_disable_regmap,
- 	.get_voltage_sel	= regulator_get_voltage_sel_regmap,
- 	.set_voltage_sel	= regulator_set_voltage_sel_regmap,
- 	.set_voltage_time_sel	= s2mps11_regulator_set_voltage_time_sel,
- 	.set_ramp_delay		= s2mps11_set_ramp_delay,
-+	.set_suspend_disable	= s2mps11_regulator_set_suspend_disable,
- };
- 
- #define regulator_desc_s2mps11_ldo(num, step) {		\
-@@ -501,102 +607,16 @@ static const struct regulator_desc s2mps13_regulators[] = {
- 	regulator_desc_s2mps13_buck8_10(10, MIN_500_MV,  STEP_6_25_MV, 0x10),
- };
- 
--static int s2mps14_regulator_enable(struct regulator_dev *rdev)
--{
--	struct s2mps11_info *s2mps11 = rdev_get_drvdata(rdev);
--	int rdev_id = rdev_get_id(rdev);
--	unsigned int val;
--
--	switch (s2mps11->dev_type) {
--	case S2MPS13X:
--	case S2MPS14X:
--		if (test_bit(rdev_id, s2mps11->suspend_state))
--			val = S2MPS14_ENABLE_SUSPEND;
--		else if (s2mps11->ext_control_gpiod[rdev_id])
--			val = S2MPS14_ENABLE_EXT_CONTROL;
--		else
--			val = rdev->desc->enable_mask;
--		break;
--	case S2MPU02:
--		if (test_bit(rdev_id, s2mps11->suspend_state))
--			val = S2MPU02_ENABLE_SUSPEND;
--		else
--			val = rdev->desc->enable_mask;
--		break;
--	default:
--		return -EINVAL;
--	}
--
--	return regmap_update_bits(rdev->regmap, rdev->desc->enable_reg,
--			rdev->desc->enable_mask, val);
--}
--
--static int s2mps14_regulator_set_suspend_disable(struct regulator_dev *rdev)
--{
--	int ret;
--	unsigned int val, state;
--	struct s2mps11_info *s2mps11 = rdev_get_drvdata(rdev);
--	int rdev_id = rdev_get_id(rdev);
--
--	/* Below LDO should be always on or does not support suspend mode. */
--	switch (s2mps11->dev_type) {
--	case S2MPS13X:
--	case S2MPS14X:
--		switch (rdev_id) {
--		case S2MPS14_LDO3:
--			return 0;
--		default:
--			state = S2MPS14_ENABLE_SUSPEND;
--			break;
--		}
--		break;
--	case S2MPU02:
--		switch (rdev_id) {
--		case S2MPU02_LDO13:
--		case S2MPU02_LDO14:
--		case S2MPU02_LDO15:
--		case S2MPU02_LDO17:
--		case S2MPU02_BUCK7:
--			state = S2MPU02_DISABLE_SUSPEND;
--			break;
--		default:
--			state = S2MPU02_ENABLE_SUSPEND;
--			break;
--		}
--		break;
--	default:
--		return -EINVAL;
--	}
--
--	ret = regmap_read(rdev->regmap, rdev->desc->enable_reg, &val);
--	if (ret < 0)
--		return ret;
--
--	set_bit(rdev_id, s2mps11->suspend_state);
--	/*
--	 * Don't enable suspend mode if regulator is already disabled because
--	 * this would effectively for a short time turn on the regulator after
--	 * resuming.
--	 * However we still want to toggle the suspend_state bit for regulator
--	 * in case if it got enabled before suspending the system.
--	 */
--	if (!(val & rdev->desc->enable_mask))
--		return 0;
--
--	return regmap_update_bits(rdev->regmap, rdev->desc->enable_reg,
--			rdev->desc->enable_mask, state);
--}
--
- static const struct regulator_ops s2mps14_reg_ops = {
- 	.list_voltage		= regulator_list_voltage_linear,
- 	.map_voltage		= regulator_map_voltage_linear,
- 	.is_enabled		= regulator_is_enabled_regmap,
--	.enable			= s2mps14_regulator_enable,
-+	.enable			= s2mps11_regulator_enable,
- 	.disable		= regulator_disable_regmap,
- 	.get_voltage_sel	= regulator_get_voltage_sel_regmap,
- 	.set_voltage_sel	= regulator_set_voltage_sel_regmap,
- 	.set_voltage_time_sel	= regulator_set_voltage_time_sel,
--	.set_suspend_disable	= s2mps14_regulator_set_suspend_disable,
-+	.set_suspend_disable	= s2mps11_regulator_set_suspend_disable,
- };
- 
- #define regulator_desc_s2mps14_ldo(num, min, step) {	\
-@@ -889,24 +909,24 @@ static const struct regulator_ops s2mpu02_ldo_ops = {
- 	.list_voltage		= regulator_list_voltage_linear,
- 	.map_voltage		= regulator_map_voltage_linear,
- 	.is_enabled		= regulator_is_enabled_regmap,
--	.enable			= s2mps14_regulator_enable,
-+	.enable			= s2mps11_regulator_enable,
- 	.disable		= regulator_disable_regmap,
- 	.get_voltage_sel	= regulator_get_voltage_sel_regmap,
- 	.set_voltage_sel	= regulator_set_voltage_sel_regmap,
- 	.set_voltage_time_sel	= regulator_set_voltage_time_sel,
--	.set_suspend_disable	= s2mps14_regulator_set_suspend_disable,
-+	.set_suspend_disable	= s2mps11_regulator_set_suspend_disable,
- };
- 
- static const struct regulator_ops s2mpu02_buck_ops = {
- 	.list_voltage		= regulator_list_voltage_linear,
- 	.map_voltage		= regulator_map_voltage_linear,
- 	.is_enabled		= regulator_is_enabled_regmap,
--	.enable			= s2mps14_regulator_enable,
-+	.enable			= s2mps11_regulator_enable,
- 	.disable		= regulator_disable_regmap,
- 	.get_voltage_sel	= regulator_get_voltage_sel_regmap,
- 	.set_voltage_sel	= regulator_set_voltage_sel_regmap,
- 	.set_voltage_time_sel	= regulator_set_voltage_time_sel,
--	.set_suspend_disable	= s2mps14_regulator_set_suspend_disable,
-+	.set_suspend_disable	= s2mps11_regulator_set_suspend_disable,
- 	.set_ramp_delay		= s2mpu02_set_ramp_delay,
- };
- 
-diff --git a/include/linux/mfd/samsung/s2mps11.h b/include/linux/mfd/samsung/s2mps11.h
-index 6e7668a389a1..f6c035eb87be 100644
---- a/include/linux/mfd/samsung/s2mps11.h
-+++ b/include/linux/mfd/samsung/s2mps11.h
-@@ -188,4 +188,9 @@ enum s2mps11_regulators {
- #define S2MPS11_BUCK6_RAMP_EN_SHIFT	0
- #define S2MPS11_PMIC_EN_SHIFT	6
- 
-+/*
-+ * Bits for "enable suspend" (On/Off controlled by PWREN)
-+ * are the same as in S2MPS14: S2MPS14_ENABLE_SUSPEND
-+ */
++&buck10_reg {
++	/* Supplies vmmc-supply of mmc_0 */
++	regulator-always-on;
++	regulator-boot-on;
++};
 +
- #endif /*  __LINUX_MFD_S2MPS11_H */
+ &hdmi {
+ 	status = "okay";
+ 	ddc = <&i2c_2>;
 -- 
 2.17.1
 
