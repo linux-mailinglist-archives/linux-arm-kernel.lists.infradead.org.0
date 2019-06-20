@@ -2,72 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9B2334D254
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 20 Jun 2019 17:42:15 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 61F254D255
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 20 Jun 2019 17:42:34 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=PNH0t5cNRKL2yEu4ljWo9tbec28+chVFr4d1ILUhwds=; b=Nd0Gd+Gdgn1KtfleEcdhn89Wf
-	BbEbGZLbLsCPMTFlzYhNemdPXR/GUIiOghcump8vILOOBr1bfE32EFhFg9F7EQhFiHQRTo9ZEQNGf
-	ho4lgpp6P99pEmB1OZ8az4EJYLtyt26vD4niiYuDGs2mh6HoMzwNsw1BWy/m8Vt4O5bWl9OZBhZnQ
-	4KBZoNHePRpy3QtRAlnACYHc73fv54S2Zx0o64Pk0kf+N7pV9FDSu4GEeLet62gLPTizGsXA92SFt
-	bDBWSb7PEyQeD3M019QPw5ZOug/8JSoq33yp2i3NgdXIAs3d01Yy/hJGdqP+JmKW7HYjo6jxLa7Vo
-	sYgfw/c3w==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=8feXx9XL9xHrBgxi4bpK8kfoIsybLvmoDX7sr7rq+GE=; b=nDD8KBU17J0bJL
+	b6MXLeGxfz0bi4PyzpAhNZZmsSNw9BkahcVYD7qtTRxozInJs3abxVVql5FKDdA7VoW2lQy0RLQMq
+	hWG0DTsXaolPjFtGJspDvtvyrPn8O/9KbJX3uK4K24q+gbk/8bikqY41KPj3SfQxVomc5PgJ/IZI6
+	u+wSG3FIaUMPO5m/OMgRcLp8tOjp/t6+1kYSH8FuCgpVl5Q89bni+TvFUoHhv7IMA4GSB3fOM09zI
+	RkSLeHyb1GUwKqVAIrWHo9p7z/ZMrTprno+E8kxI2/Q0Fp8TCijGO+VwAIN/OzELX7gzZQueqXjoQ
+	XSReoFWDH9uUvPNYL8rQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hdzCW-0000bP-4U; Thu, 20 Jun 2019 15:42:12 +0000
-Received: from heliosphere.sirena.org.uk ([2a01:7e01::f03c:91ff:fed4:a3b6])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hdzCI-0000al-49; Thu, 20 Jun 2019 15:41:59 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sirena.org.uk; s=20170815-heliosphere; h=In-Reply-To:Content-Type:
- MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
- Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
- List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=6s6aZu8b9dqDAqPoq81Bk78Hj/YlZ9Zu2gddBiQR0jA=; b=jov01KPU7Ey0HCtDvL/bMfUvM
- q+kHss2+okCgunU54lbz7AUEXxS2cz7t6hVp3TCiDXLIBSddCYMcK66KsNAYrByHqXzLdYmj5E8ms
- s98+kDkEwIFNMnhf/WgI7uAcAm8nRSMA5EA0gm8aA9dNtYxJ/3JhRSD6SoNS961M86AwU=;
-Received: from [2001:470:1f1d:6b5:7e7a:91ff:fede:4a45]
- (helo=finisterre.sirena.org.uk)
- by heliosphere.sirena.org.uk with esmtpsa
- (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.89)
- (envelope-from <broonie@sirena.org.uk>)
- id 1hdzCB-0000qH-N9; Thu, 20 Jun 2019 15:41:51 +0000
-Received: by finisterre.sirena.org.uk (Postfix, from userid 1000)
- id AF546440046; Thu, 20 Jun 2019 16:41:50 +0100 (BST)
-Date: Thu, 20 Jun 2019 16:41:50 +0100
-From: Mark Brown <broonie@kernel.org>
-To: Enric Balletbo i Serra <enric.balletbo@collabora.com>
-Subject: Re: [PATCH] ASoC: rk3399_gru_sound: Support 32, 44.1 and 88.2 kHz
- sample rates
-Message-ID: <20190620154150.GE5316@sirena.org.uk>
-References: <20190620134708.28311-1-enric.balletbo@collabora.com>
+	id 1hdzCo-0000lR-2i; Thu, 20 Jun 2019 15:42:30 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hdzCI-0000am-1o
+ for linux-arm-kernel@lists.infradead.org; Thu, 20 Jun 2019 15:41:59 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 4E65428;
+ Thu, 20 Jun 2019 08:41:57 -0700 (PDT)
+Received: from e107155-lin (e107155-lin.cambridge.arm.com [10.1.196.42])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 2DDF23F246;
+ Thu, 20 Jun 2019 08:41:56 -0700 (PDT)
+Date: Thu, 20 Jun 2019 16:41:54 +0100
+From: Sudeep Holla <sudeep.holla@arm.com>
+To: Andrew Murray <andrew.murray@arm.com>
+Subject: Re: [PATCH v1 5/5] coresight: etm4x: save/restore state across CPU
+ low power states
+Message-ID: <20190620154154.GB25273@e107155-lin>
+References: <20190618125433.9739-1-andrew.murray@arm.com>
+ <20190618125433.9739-6-andrew.murray@arm.com>
+ <20190618132159.GA18121@e107155-lin>
+ <15ef45d4-ee1a-3c45-878d-f08f0a84cfeb@arm.com>
+ <20190619110749.GD1360@e107155-lin>
+ <CANLsYkw-KhMVgTfyBSF4-uv4wxQBBQfzyvVbAnaFSqHhkgX6Mg@mail.gmail.com>
+ <20190620114116.GE20984@e119886-lin.cambridge.arm.com>
 MIME-Version: 1.0
-In-Reply-To: <20190620134708.28311-1-enric.balletbo@collabora.com>
-X-Cookie: Editing is a rewording activity.
-User-Agent: Mutt/1.10.1 (2018-07-13)
+Content-Disposition: inline
+In-Reply-To: <20190620114116.GE20984@e119886-lin.cambridge.arm.com>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190620_084158_311935_FE51591C 
-X-CRM114-Status: UNSURE (   9.29  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.2 (/)
+X-CRM114-CacheID: sfid-20190620_084158_188004_722DBF86 
+X-CRM114-Status: GOOD (  24.83  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -79,67 +67,95 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: alsa-devel@alsa-project.org, Heiko Stuebner <heiko@sntech.de>,
- Xing Zheng <zhengxing@rock-chips.com>, Liam Girdwood <lgirdwood@gmail.com>,
- Takashi Iwai <tiwai@suse.com>, linux-kernel@vger.kernel.org,
- Jaroslav Kysela <perex@perex.cz>, linux-rockchip@lists.infradead.org,
- Collabora Kernel ML <kernel@collabora.com>, Benson Leung <bleung@chromium.org>,
- linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============1431034691895443451=="
+Cc: Al Grant <Al.Grant@arm.com>, Mathieu Poirier <mathieu.poirier@linaro.org>,
+ Suzuki K Poulose <suzuki.poulose@arm.com>,
+ Alexander Shishkin <alexander.shishkin@linux.intel.com>,
+ Sudeep Holla <sudeep.holla@arm.com>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
+ Mike Leach <mike.leach@linaro.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On Thu, Jun 20, 2019 at 12:41:17PM +0100, Andrew Murray wrote:
+> On Wed, Jun 19, 2019 at 10:22:58AM -0600, Mathieu Poirier wrote:
+> > On Wed, 19 Jun 2019 at 05:07, Sudeep Holla <sudeep.holla@arm.com> wrote:
+> > >
+> > > On Wed, Jun 19, 2019 at 11:38:12AM +0100, Suzuki K Poulose wrote:
+> > > > Cc: Al Grant, Mike Leach
+> > > >
+> > > > Hi Sudeep,
+> > > >
+> > > > On 18/06/2019 14:21, Sudeep Holla wrote:
+> > > > > On Tue, Jun 18, 2019 at 01:54:33PM +0100, Andrew Murray wrote:
+> > > > > > Some hardware will ignore bit TRCPDCR.PU which is used to signal
+> > > > > > to hardware that power should not be removed from the trace unit.
+> > > > >
+> > > > > So, how or can we identify or discover such system ? DT/ACPI ?
+> > > > >
+> > > >
+> > > > I don't think there is a mechanism at the moment to identify such
+> > > > systems. But if we really need to know this information, we could
+> > > > always think about it.
+> > > >
+> > >
+> > > I prefer that as we shouldn't systems that are not broken.
+> > >
+> > > > > > Let's mitigate against this by saving and restoring the trace
+> > > > > > unit state when the CPU enters low power states.
+> > > > > >
+> > > > >
+> > > > > I prefer to do this conditionally. It's unnecessary on systems which
+> > > > > don't ignore the TRCPDCR.PU and I really don't like them to be penalised
+> > > > > while we want to add this support for *broken* systems.
+> > > >
+> > > > It is conditional. i.e, you may disable the operation using a kernel/module
+> > > > parameter, which I think should be mentioned in the description here.
+> > > >
+> > >
+> > > Why should the user of coresight need to know if the corresponding
+> > > hardware module is broken or not. I prefer the firmware tell OS.
+> >
+> > I think using ACPI/DT is the best and simplest solution.
+>
+> I certainly agree that it feels wrong to have a default level of support
+> which is targeted at broken systems. However the penalty (latency) for doing so
+> doesn't seem high - seeing as this only effects users that are actively using
+> coresight (I assume self hosted mode is only used as a debug tool, rather than to
+> obtain metrics during normal use?).
+>
 
---===============1431034691895443451==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="rOnZ5ITIX7GHaQD9"
-Content-Disposition: inline
+Do we have numbers ? It's always helpful to have lowest latencies possible
+for wakeup and adding extra notifiers will always add some latencies,
+so it's not 0. We always want to reduce there notifiers and hopefully
+move save/restore to hardware/firmware in future.
 
+> Adding some broken tag in ACPI/DT seems like a good solution - assuming it will
+> get adopted and used in systems. The existing "disable_pm_save" module option
+> can be renamed to "enable_pm_save" for those that have less control of their
+> firmware.
+>
+> Unless of course we think it's unlikely we'll ever see hardware that isn't
+> broken - I don't have enough knowledge of how likely or not this is.
+>
 
---rOnZ5ITIX7GHaQD9
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
+Sorry but even then I prefer it not to be default and force extra work
+to the people who add support and constantly be reminded that it's
+broken and they are deviating from default behaviour in the kernel
+which may come and latency penalty.
 
-On Thu, Jun 20, 2019 at 03:47:08PM +0200, Enric Balletbo i Serra wrote:
-> According to the datasheet the max98357a also supports 32, 44.1 and
-> 88.2 kHz sample rate. This support was also introduced recently by
-> commit fdf34366d324 ("ASoC: max98357a: add missing supported rates").
-> This patch adds support for these rates also for the machine driver so
-> we get rid of the errors like the below and we are able to play files
-> using these sample rates.
+Making it default may hide the problem if Linux is used for some validation.
 
-Does the machine actually need to validate this at all?  The component
-drivers can all apply whatever constraints are needed and do their own
-validation, the machine driver is just getting in the way here.
+Also we hardly have 3-4 platforms in upstream that support coresight,
+and many are broken except Juno. But that doesn't imply all others
+are broken and we just can't derive that unless we have more information.
 
---rOnZ5ITIX7GHaQD9
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAl0LqT0ACgkQJNaLcl1U
-h9Aomwf+IWYRVucBBZvhsm/gdBVe/B8CpBjmp/2qlcOTbdBRiwV3TGlwjFiWqyNF
-a/7criDs2zMUCDb4Ad2Xh7FoRj24dC+1QikkP64iwyN/Y5wJLwQhRRDuM60vjRGp
-waQP/rQ86h14cWtTi/+IE8Rm3nFcs/0J0S+87SVuW8kIifVcEAzUGYH8fhTwgkki
-SerVWbkR+weSZLJVq/cvR2CKQvt4qPaQ2AT2V7W9pCRzBJRza8CLIg+t7jaFUuLP
-EefouE+9/aOgtVf4NT+BPfcy7pptkMZwAsbX0Obcm6+1dmIpjffWRdRzki4AVnJD
-wUUi0N6O0HWIkSLhMnqzgBaOrZBMjg==
-=cr78
------END PGP SIGNATURE-----
-
---rOnZ5ITIX7GHaQD9--
-
-
---===============1431034691895443451==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+--
+Regards,
+Sudeep
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============1431034691895443451==--
-
