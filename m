@@ -2,146 +2,108 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DB8E44C92C
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 20 Jun 2019 10:14:51 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 07A8F4C92B
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 20 Jun 2019 10:14:32 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
-	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=NmJ4U8Em2jVUuDXHwXlgW8Br8dxGZMomzvddzpvSORM=; b=hHpMFLxxQsoBRD
-	Gj8bgAbOuur3hAEPXK686y3dvbi9RfNmF806bp0MtKwKfm6yDDzB6WQP8lKgQ1kCB9xqhRYndiHUu
-	IbyFh+qOUikqqZygrL2PNhvGPm+5fmpEUFH6uSRog45VQoN3w7r2CFYlBZOZunHQKojFo6bYWzYfB
-	MHNqTOxf5BC/OnuPmsiqi+qJ5yzq/B1xFttR+Cer9RgGZZvjWdbcikhRNeX8aL681VCfyTFl80gFY
-	AOjhn6D8zNwxvwOWr84Yj67zA+mwDgJlXCKClptyKAxPlSKlgWd6pjs64+1M/B1RNB9MK00I0efzj
-	dMcWwqyvZKWxqffh92nw==;
+	List-Owner; bh=zw5JCUeVnvyPk+v9qvsoLV7YzQE2uODhOGlx7YvP8Kk=; b=E4lQmbxTbJ15O4
+	5Egf5nJZV81SzuLUfWNGgO7IMGhJJqahCnJEh5NFXdQvKML/QT2VGEaG/Yz0ePuDDZl/Zw+b9Ia09
+	3RF82GljbIGK23tlcGBB9hpOIlHdqk2LspwhuEc7wt9YUE0lKdTxGgkbaYPEA0Cbe/Og5awF87jU7
+	UDjWmUQVdQ19vJoCt/UjXU5SrFso0MuR1WmeSDB06LD6FNaWqB6h7jJUipKUPd/5sNl6L65uoOgKQ
+	l1Sv+FvjW4gA9vlqXluklHo7NbM5l2EZ4C7whzlwWzWRHqRPCOKVYaooxGCLFiGcHV1yptrj7RuZD
+	6+wbfvty3QmxOZULMOVA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hdsDa-0007oM-0v; Thu, 20 Jun 2019 08:14:50 +0000
-Received: from mx0b-00082601.pphosted.com ([67.231.153.30]
- helo=mx0a-00082601.pphosted.com)
+	id 1hdsDE-0007Z0-5Q; Thu, 20 Jun 2019 08:14:28 +0000
+Received: from mail-eopbgr690059.outbound.protection.outlook.com
+ ([40.107.69.59] helo=NAM04-CO1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hdsCy-0007Yz-37
- for linux-arm-kernel@lists.infradead.org; Thu, 20 Jun 2019 08:14:13 +0000
-Received: from pps.filterd (m0001255.ppops.net [127.0.0.1])
- by mx0b-00082601.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id
- x5K8Ck6q022125; Thu, 20 Jun 2019 01:14:03 -0700
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=fb.com;
- h=from : to : cc : subject
- : date : message-id : references : in-reply-to : content-type : content-id
- : content-transfer-encoding : mime-version; s=facebook;
- bh=PTeG8r4X+BCl2HeeRUWzqOvMIOdO8nDfaT9DPMPtAB0=;
- b=lrGKbH6yLNeoxyhlqwU4hgUoVjn4GIbgEycxayszCGXgXLA398iWncusZo6rdMNaqkF0
- iYMsY+dzM4jlkc36APluPK6TIbK70aRv5bq4tagbQfGNRX8tCvPBehsRwuXw1KXLsrS4
- yUdTg3Lu6Ky19B/so2B+ZMOeCF0wjV1zjAY= 
-Received: from maileast.thefacebook.com ([163.114.130.16])
- by mx0b-00082601.pphosted.com with ESMTP id 2t7rex2qdk-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT);
- Thu, 20 Jun 2019 01:14:03 -0700
-Received: from ash-exhub101.TheFacebook.com (2620:10d:c0a8:82::e) by
- ash-exhub102.TheFacebook.com (2620:10d:c0a8:82::f) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
- 15.1.1713.5; Thu, 20 Jun 2019 01:14:00 -0700
-Received: from NAM04-SN1-obe.outbound.protection.outlook.com (100.104.31.183)
- by o365-in.thefacebook.com (100.104.35.173) with Microsoft SMTP
- Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.1713.5
- via Frontend Transport; Thu, 20 Jun 2019 01:14:00 -0700
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=fb.onmicrosoft.com;
- s=selector1-fb-onmicrosoft-com;
+ id 1hdsCu-0007YK-Vt
+ for linux-arm-kernel@lists.infradead.org; Thu, 20 Jun 2019 08:14:10 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=xilinx.onmicrosoft.com; s=selector1-xilinx-onmicrosoft-com;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=PTeG8r4X+BCl2HeeRUWzqOvMIOdO8nDfaT9DPMPtAB0=;
- b=QwMLrZFoeSnyeoxRlpCVaC6bzlAhxujWICnXQmxYCYwBPpZEN2WTWSrEj3t30zhJs/1g0UtEF4cFHmqWEVkr0DL7zNxSftWnGDCAiFgdsqL4qdktImTdyjgsSCexqhSsghTprsJ0/4EJ6ozvTP+7tqyKR5FWjWoWQPps2V8aBg4=
-Received: from MWHPR15MB1216.namprd15.prod.outlook.com (10.175.2.17) by
- MWHPR15MB1422.namprd15.prod.outlook.com (10.173.234.18) with Microsoft SMTP
+ bh=5s9j+QmbOasbgR8+aqoPraZvCb+NNKosgOJU7KsJYLE=;
+ b=1EkRwQkskLmAnc0Mjf/CdGX9rNf9GyjzPt+bt/U1sMK6u4hzIkIf+nbIavK2KJih8jRVLrQKb+GlK0CjdUyn4Hnj8Li0cDcmsY7XK65bzlueXWb36AMQ9Frq3M1f0kbL+lPeuPwOL3G1qpoRROZ8WcSJ+4OdO9YgYSs5370ut/g=
+Received: from MN2PR02MB6029.namprd02.prod.outlook.com (10.255.7.10) by
+ MN2PR02MB5886.namprd02.prod.outlook.com (20.179.86.12) with Microsoft SMTP
  Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.1987.13; Thu, 20 Jun 2019 08:13:59 +0000
-Received: from MWHPR15MB1216.namprd15.prod.outlook.com
- ([fe80::d51f:8f19:e2b5:3ae8]) by MWHPR15MB1216.namprd15.prod.outlook.com
- ([fe80::d51f:8f19:e2b5:3ae8%6]) with mapi id 15.20.1987.014; Thu, 20 Jun 2019
- 08:13:59 +0000
-From: Tao Ren <taoren@fb.com>
-To: Ryan Chen <ryan_chen@aspeedtech.com>, Brendan Higgins
- <brendanhiggins@google.com>
-Subject: Re: [PATCH 1/2] i2c: aspeed: allow to customize base clock divisor
-Thread-Topic: [PATCH 1/2] i2c: aspeed: allow to customize base clock divisor
-Thread-Index: AQHVJuIcteG+E70PmUey9PLXreYJ5KajfUSAgAASwwCAAJYbgIAAB62AgAABSgCAAANYAA==
-Date: Thu, 20 Jun 2019 08:13:59 +0000
-Message-ID: <56ff5fa8-091a-2cbc-dfa3-b912cf328695@fb.com>
-References: <20190619205009.4176588-1-taoren@fb.com>
- <CAFd5g45TMtXcuqONdkpN_K+c0O+wUw8wkGzcQfV+sO8p5Krc9w@mail.gmail.com>
- <18565fcf-3dc1-b671-f826-e4417e4ad284@fb.com>
- <c610ecede7494c189a92a9a3f6d0fd16@TWMBX02.aspeed.com>
- <bdd53adb-6987-1b91-adde-298839b2c066@fb.com>
- <195bb56028d04001bbaf835cc17e032e@TWMBX02.aspeed.com>
-In-Reply-To: <195bb56028d04001bbaf835cc17e032e@TWMBX02.aspeed.com>
+ 15.20.1987.11; Thu, 20 Jun 2019 08:14:02 +0000
+Received: from MN2PR02MB6029.namprd02.prod.outlook.com
+ ([fe80::e55a:e2d1:953f:ed3b]) by MN2PR02MB6029.namprd02.prod.outlook.com
+ ([fe80::e55a:e2d1:953f:ed3b%4]) with mapi id 15.20.1987.014; Thu, 20 Jun 2019
+ 08:14:02 +0000
+From: Manish Narani <MNARANI@xilinx.com>
+To: Ulf Hansson <ulf.hansson@linaro.org>
+Subject: RE: [PATCH 3/3] mmc: sdhci-of-arasan: Add support for ZynqMP Platform
+ Tap Delays Setup
+Thread-Topic: [PATCH 3/3] mmc: sdhci-of-arasan: Add support for ZynqMP
+ Platform Tap Delays Setup
+Thread-Index: AQHVIDwWKZKZdF95gUaFGq/oqBvspKafu1mAgAADioCAAA8FAIAC5KtwgABVmICAARvKAA==
+Date: Thu, 20 Jun 2019 08:14:02 +0000
+Message-ID: <MN2PR02MB602935234A2A779B5A05CD63C1E40@MN2PR02MB6029.namprd02.prod.outlook.com>
+References: <1560247011-26369-1-git-send-email-manish.narani@xilinx.com>
+ <1560247011-26369-4-git-send-email-manish.narani@xilinx.com>
+ <CAPDyKFrJwpwUUX_q2kcR9QY_fv9Lgos+ixPmU6JMeJVqJAiFpg@mail.gmail.com>
+ <5feac3fb-bef3-b7d1-57d6-81e115e1f555@xilinx.com>
+ <CAPDyKFp_ZvSjFp2FGonzGsnc9xPyZ7qOCaRnX1SimBxLpfz9-Q@mail.gmail.com>
+ <MN2PR02MB6029DB87CEE32655B0F1E794C1E50@MN2PR02MB6029.namprd02.prod.outlook.com>
+ <CAPDyKFqb3uRU1XbrioSw6UZ5atZ8WwZNhQ_yq2+3JfxXZCxr7g@mail.gmail.com>
+In-Reply-To: <CAPDyKFqb3uRU1XbrioSw6UZ5atZ8WwZNhQ_yq2+3JfxXZCxr7g@mail.gmail.com>
 Accept-Language: en-US
 Content-Language: en-US
 X-MS-Has-Attach: 
+X-Auto-Response-Suppress: DR, RN, NRN, OOF, AutoReply
 X-MS-TNEF-Correlator: 
-x-clientproxiedby: MW2PR2101CA0025.namprd21.prod.outlook.com
- (2603:10b6:302:1::38) To MWHPR15MB1216.namprd15.prod.outlook.com
- (2603:10b6:320:22::17)
-user-agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.7.0
-x-ms-exchange-messagesentrepresentingtype: 1
-x-originating-ip: [2620:10d:c090:180::1:56ae]
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=MNARANI@xilinx.com; 
+x-originating-ip: [149.199.50.133]
 x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: 9f54f7fd-6526-49d0-91ca-08d6f5573f31
+x-ms-office365-filtering-correlation-id: e50c468d-1619-474f-cb56-08d6f5574169
+x-ms-office365-filtering-ht: Tenant
 x-microsoft-antispam: BCL:0; PCL:0;
- RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600148)(711020)(4605104)(1401327)(2017052603328)(7193020);
- SRVR:MWHPR15MB1422; 
-x-ms-traffictypediagnostic: MWHPR15MB1422:
-x-microsoft-antispam-prvs: <MWHPR15MB14221E2E6B210AA6FE8F33F8B2E40@MWHPR15MB1422.namprd15.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:6430;
+ RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600148)(711020)(4605104)(1401327)(4618075)(2017052603328)(7193020);
+ SRVR:MN2PR02MB5886; 
+x-ms-traffictypediagnostic: MN2PR02MB5886:
+x-microsoft-antispam-prvs: <MN2PR02MB5886996A1A802060B683F8A2C1E40@MN2PR02MB5886.namprd02.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:10000;
 x-forefront-prvs: 0074BBE012
 x-forefront-antispam-report: SFV:NSPM;
- SFS:(10019020)(366004)(346002)(376002)(39860400002)(136003)(396003)(189003)(199004)(14454004)(7736002)(305945005)(7416002)(4326008)(14444005)(53546011)(66946007)(66556008)(256004)(6506007)(386003)(31686004)(66446008)(64756008)(66476007)(478600001)(73956011)(6512007)(229853002)(110136005)(25786009)(54906003)(36756003)(58126008)(316002)(31696002)(86362001)(6246003)(71200400001)(71190400001)(65826007)(81156014)(6486002)(81166006)(8936002)(52116002)(446003)(4744005)(476003)(76176011)(6116002)(99286004)(2616005)(11346002)(64126003)(486006)(68736007)(5660300002)(6436002)(46003)(102836004)(65806001)(65956001)(2906002)(186003)(53936002)(8676002);
- DIR:OUT; SFP:1102; SCL:1; SRVR:MWHPR15MB1422;
- H:MWHPR15MB1216.namprd15.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ SFS:(10009020)(346002)(136003)(376002)(39860400002)(366004)(396003)(51444003)(13464003)(189003)(199004)(8936002)(99286004)(6506007)(53546011)(76176011)(66066001)(229853002)(81156014)(81166006)(8676002)(2906002)(486006)(4326008)(71190400001)(26005)(53936002)(86362001)(102836004)(71200400001)(25786009)(478600001)(11346002)(316002)(446003)(186003)(74316002)(64756008)(66556008)(66476007)(66946007)(76116006)(66446008)(73956011)(7736002)(305945005)(14454004)(6246003)(256004)(5660300002)(476003)(55016002)(33656002)(6916009)(9686003)(6116002)(68736007)(72206003)(3846002)(6436002)(54906003)(7696005)(52536014);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:MN2PR02MB5886;
+ H:MN2PR02MB6029.namprd02.prod.outlook.com; FPR:; SPF:None; LANG:en;
  PTR:InfoNoRecords; MX:1; A:1; 
-received-spf: None (protection.outlook.com: fb.com does not designate
+received-spf: None (protection.outlook.com: xilinx.com does not designate
  permitted sender hosts)
 x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: Vlpo+x+lsH6HgRrgw7iM35NSF9+4nbtjJgSAsUnjAK8AHdM69/fxMllVl0H1VtB5s6SForlK30ZGgiXfRX6//gm2DaWcMAvx0GyzL4+be/tpMVp0azFLiffhTO1a4k2Y3aAGfPVLrUjy62z9Kq+6dXCP7ZiZ6YYGtJUIDPwXXcvdEVaHvnFWqUUJWbR3cLUKUNssPjDRN3V+jv4w2YQB/K39nockZumTeeFLrUcOGJ96ObVKuvIXCCw4+M1D+TligFf7zSJbEKU0nzIKtf+E3Kgwwu1lPQuOsAM5yJMqpun0XM5ib8bRAr2273GlXSFZ2q+r0AxPzT4GXBEqcQdzwQINuxSyKz9MXtalkWT9ShApP8qZTnDtYSWpBgB0rjw6dgLdICb0th2usrUSs2zxM+x24VTeSw/u5gQEkfaKvz8=
-Content-ID: <C26BC355B528F04297AFB94D467A3AFA@namprd15.prod.outlook.com>
+x-microsoft-antispam-message-info: 9xq48dJTl7+Rs7iHxnN6D79arCW+vHV+6fzSVflXJQQjauC1p90arUhPEVmzuu+mubxM1kR7nIwVz67M5mWkCTKxt5hA/bQGfO5a2Gk2YohaiqTcYwoDFWuLmjmWDsgC7IU+VkYtoU5xW+81fmEQoujG8mwbbt8VowPn3D+y0WE0FWzuc7VtTo90FTwFXdTbhE65h4uOvhGBNJohfkf1XyH4A52pB0gfKkafStgXiztIokZZ/5fab20F9Ith8g+e8gxLFlgTyrViAhuAFL97JxqMqxxqHvT0TXr+VoGGB6j6HLqMrSxz2GlUj0ZjTybRJpEE4i3ntaMbStjBTRJ/A4L3n7/6i4zy2Abskr+s3kZxnScQ2ogCeJUyk/Vh+35+zYi9XZ4z7M2xB+5iMOVD6JQQqiCiNUXaQB89EIzvZMc=
 MIME-Version: 1.0
-X-MS-Exchange-CrossTenant-Network-Message-Id: 9f54f7fd-6526-49d0-91ca-08d6f5573f31
-X-MS-Exchange-CrossTenant-originalarrivaltime: 20 Jun 2019 08:13:59.4590 (UTC)
+X-OriginatorOrg: xilinx.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: e50c468d-1619-474f-cb56-08d6f5574169
+X-MS-Exchange-CrossTenant-originalarrivaltime: 20 Jun 2019 08:14:02.5367 (UTC)
 X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 8ae927fe-1255-47a7-a2af-5f3a069daaa2
+X-MS-Exchange-CrossTenant-id: 657af505-d5df-48d0-8300-c31994686c5c
 X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: taoren@fb.com
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: MWHPR15MB1422
-X-OriginatorOrg: fb.com
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:, ,
- definitions=2019-06-20_06:, , signatures=0
-X-Proofpoint-Spam-Details: rule=fb_default_notspam policy=fb_default score=0
- priorityscore=1501
- malwarescore=0 suspectscore=0 phishscore=0 bulkscore=0 spamscore=0
- clxscore=1015 lowpriorityscore=0 mlxscore=0 impostorscore=0
- mlxlogscore=999 adultscore=0 classifier=spam adjust=0 reason=mlx
- scancount=1 engine=8.0.1-1810050000 definitions=main-1906200064
-X-FB-Internal: deliver
+X-MS-Exchange-CrossTenant-userprincipalname: mnarani@xilinx.com
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: MN2PR02MB5886
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190620_011412_272236_8D5BF4E6 
-X-CRM114-Status: GOOD (  14.52  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20190620_011409_026835_99121E42 
+X-CRM114-Status: GOOD (  23.24  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [67.231.153.30 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [40.107.69.59 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -154,35 +116,140 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- devicetree <devicetree@vger.kernel.org>,
- "linux-aspeed@lists.ozlabs.org" <linux-aspeed@lists.ozlabs.org>,
- OpenBMC Maillist <openbmc@lists.ozlabs.org>,
+Cc: Mark Rutland <mark.rutland@arm.com>, DTML <devicetree@vger.kernel.org>,
+ Nava kishore Manne <navam@xilinx.com>,
+ "linux-mmc@vger.kernel.org" <linux-mmc@vger.kernel.org>,
+ Adrian Hunter <adrian.hunter@intel.com>,
  Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Rob Herring <robh+dt@kernel.org>,
- "linux-i2c@vger.kernel.org" <linux-i2c@vger.kernel.org>,
+ Jolly Shah <JOLLYS@xilinx.com>, Rajan Vaja <RAJANV@xilinx.com>,
+ Rob Herring <robh+dt@kernel.org>, Michal Simek <michals@xilinx.com>,
+ Olof Johansson <olof@lixom.net>,
  Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 6/20/19 1:01 AM, Ryan Chen wrote:
-> Hello Tao,
-> 	Let me more clear. When you set (3, 15, 14) the device sometimes response nack. 
-> 	but when you set (4, 7, 7), the device always ack. Am I right? 
-> Ryan
-
-Hello Ryan,
-
-It's correct. We have seen the problem on 2 Facebook BMC platforms so far. Given the other ~10 Facebook BMC platforms are still running kernel 4.1 (with (4, 7, 7) settings), I'd assume more platforms will be impacted after upgrading to the latest kernel.
-
-Thank you for spending time on this!
+Hi Uffe,
 
 
-Cheers,
+> -----Original Message-----
+> From: Ulf Hansson <ulf.hansson@linaro.org>
+> Sent: Wednesday, June 19, 2019 7:09 PM
+> To: Manish Narani <MNARANI@xilinx.com>
+> Cc: Michal Simek <michals@xilinx.com>; Rob Herring <robh+dt@kernel.org>;
+> Mark Rutland <mark.rutland@arm.com>; Adrian Hunter
+> <adrian.hunter@intel.com>; Rajan Vaja <RAJANV@xilinx.com>; Jolly Shah
+> <JOLLYS@xilinx.com>; Nava kishore Manne <navam@xilinx.com>; Olof
+> Johansson <olof@lixom.net>; linux-mmc@vger.kernel.org; DTML
+> <devicetree@vger.kernel.org>; Linux Kernel Mailing List <linux-
+> kernel@vger.kernel.org>; Linux ARM <linux-arm-kernel@lists.infradead.org>
+> Subject: Re: [PATCH 3/3] mmc: sdhci-of-arasan: Add support for ZynqMP
+> Platform Tap Delays Setup
+> 
+> On Wed, 19 Jun 2019 at 10:40, Manish Narani <MNARANI@xilinx.com> wrote:
+> >
+> > Hi Uffe,
+> >
+> >
+> > > -----Original Message-----
+> > > From: Ulf Hansson <ulf.hansson@linaro.org>
+> > > Sent: Monday, June 17, 2019 5:51 PM
+> > [...]
+> > >
+> > > The "const struct zynqmp_eemi_ops *eemi_ops; should then be moved into
+> > > a clock provider specific struct, which is assigned when calling
+> > > sdhci_arasan_register_sdclk. I understand that all the clock data is
+> > > folded into struct sdhci_arasan_data today, but I think that should be
+> > > moved into a "sub-struct" for the clock specifics.
+> > >
+> > > Moreover, when registering the clock, we should convert from using
+> > > devm_clk_register() into devm_clk_hw_register() as the first one is
+> > > now deprecated.
+> >
+> > Just a query here:
+> > When we switch to using devm_clk_hw_register() here, it will register the
+> clk_hw and return int.
+> > Is there a way we can get the clk (related to the clk_hw registered) from the
+> > clock framework?
+> > I am asking this because we will need that clk pointer while calling
+> clk_set_phase() function.
+> 
+> I assume devm_clk_get() should work fine?
 
-Tao
+This clock does not come through ZynqMP Clock framework. We are initializing it in this 'sdhci-of-arasan' driver and getting only the clock name from "clock_output_names" property. So I think devm_clk_get() will not work here for our case.
+I have gone through the clock framework and I found one function which may be used to create clock from clock hw, that is ' clk_hw_create_clk()' which can be used from our driver, however this needs change in the clock framework as below :
+
+---
+diff --git a/drivers/clk/clk.c b/drivers/clk/clk.c
+index aa51756..4dc69ff 100644
+--- a/drivers/clk/clk.c
++++ b/drivers/clk/clk.c
+@@ -3420,6 +3420,7 @@ struct clk *clk_hw_create_clk(struct device *dev, struct clk_hw *hw,
+ 
+        return clk;
+ }
++EXPORT_SYMBOL_GPL(clk_hw_create_clk);
+ 
+ static int clk_cpy_name(const char **dst_p, const char *src, bool must_exist)
+ {
+diff --git a/drivers/clk/clk.h b/drivers/clk/clk.h
+index d8400d6..2319899 100644
+--- a/drivers/clk/clk.h
++++ b/drivers/clk/clk.h
+@@ -22,17 +22,9 @@ static inline struct clk_hw *of_clk_get_hw(struct device_node *np,
+ struct clk_hw *clk_find_hw(const char *dev_id, const char *con_id);
+ 
+ #ifdef CONFIG_COMMON_CLK
+-struct clk *clk_hw_create_clk(struct device *dev, struct clk_hw *hw,
+-                             const char *dev_id, const char *con_id);
+ void __clk_put(struct clk *clk);
+ #else
+ /* All these casts to avoid ifdefs in clkdev... */
+-static inline struct clk *
+-clk_hw_create_clk(struct device *dev, struct clk_hw *hw, const char *dev_id,
+-                 const char *con_id)
+-{
+-       return (struct clk *)hw;
+-}
+ static struct clk_hw *__clk_get_hw(struct clk *clk)
+ {
+        return (struct clk_hw *)clk;
+diff --git a/include/linux/clk.h b/include/linux/clk.h
+index f689fc5..d3f60fe 100644
+--- a/include/linux/clk.h
++++ b/include/linux/clk.h
+@@ -18,6 +18,7 @@
+ 
+ struct device;
+ struct clk;
++struct clk_hw;
+ struct device_node;
+ struct of_phandle_args;
+ 
+@@ -934,4 +935,15 @@ static inline struct clk *of_clk_get_from_provider(struct of_phandle_args *clksp
+ }
+ #endif
+ 
++#ifdef CONFIG_COMMON_CLK
++struct clk *clk_hw_create_clk(struct device *dev, struct clk_hw *hw,
++                             const char *dev_id, const char *con_id);
++#else
++static inline struct clk *
++clk_hw_create_clk(struct device *dev, struct clk_hw *hw, const char *dev_id,
++                 const char *con_id)
++{
++       return (struct clk *)hw;
++}
++#endif
+ #endif
+---
+
+This change should help other drivers (outside 'drivers/clk/') as well for getting the clock created from clk_hw.
+Is this fine to do?
+
+Thanks,
+Manish
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
