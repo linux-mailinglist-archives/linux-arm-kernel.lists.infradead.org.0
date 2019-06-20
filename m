@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 55F854D97C
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 20 Jun 2019 20:37:35 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 650BA4D980
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 20 Jun 2019 20:38:00 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,31 +11,31 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=rkLdX1VophxAxaNWKwQXy95iph1bZAWZ0Rsj+QsEg64=; b=hTInB/AYEqa1hN/WRYsQioL73f
-	l+5LKrD60Uiq8XPFt8qN4Hdut1jUaYHl2iu90q7TfRnSE0NZYzA2XR1kRUL9bnAm+jHWdZHZ3zUAD
-	7EzJsC0mpLHnJJacJupI4JsHZRvoClyiVBvUFH5hthSJfOMdytUulMUhpDIfXdRmqMMdtyg53Raeo
-	eyUe1rPRRp2IjqBBjuCumfb70S3JhMclxAj6GQkq4bgQeHnQS+NWPvIOzrqAXkJZFXj/Bkbb4lNbW
-	JyJOUxHZfmmXXnxwVOj1AjC28x1f/sd5DpPuPgMH5rmyJLXXDmbyf6XOMVskykmJOP6C5Z8r2dG32
-	2zUOqtHw==;
+	bh=9RGW4V6B1pYDdm5EPm0th2rakMOzo0NVc4errROnKmo=; b=SZ8x+/cHv9D+CStOFrdnIeI2Bp
+	Mz+uzHD9w7iuLxbjvZbL/J9/cRzA6Rje0IsMVXJf/9Z0MA9QCQ599tP2PV0G0Wu4j5nCrPJ+2PLut
+	3NJn6cmpBn5Hjwu75Kh0tP2eCSJepwkmSOxkFkSRE63jyL3/YIB1cFnB4SfpkSdxss+E7nzqA1mBq
+	SKnnEiD899PTYzSADdrkRQo2XnLMSkg9Wu/huess67/AzlkHi32g0GQfR8wnEt2sCm01DYPs83ySP
+	11rmicBNmfWNmaJjhg7ArLE8b6Fw1F8T1rC3IuVKIh1yc/QCX8eJHNrQuOlYf2nD6jpFC7SrZP5jf
+	qBDCb3pQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1he1wB-0001zs-42; Thu, 20 Jun 2019 18:37:31 +0000
+	id 1he1wZ-0002L1-Ey; Thu, 20 Jun 2019 18:37:55 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1he1ui-000184-4R
- for linux-arm-kernel@lists.infradead.org; Thu, 20 Jun 2019 18:36:01 +0000
+ id 1he1ul-0001BG-EL
+ for linux-arm-kernel@lists.infradead.org; Thu, 20 Jun 2019 18:36:05 +0000
 Received: from localhost.localdomain (unknown [194.230.155.186])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id ABCB62089C;
- Thu, 20 Jun 2019 18:35:56 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 36EE82177B;
+ Thu, 20 Jun 2019 18:36:00 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1561055759;
- bh=si0C0hwqFoNJpgG15iD13hG7RKrfo/vp616+yeNXYPQ=;
+ s=default; t=1561055763;
+ bh=kp0Ym7RBUa/Ame7nXc54MxBMlWqqzDQXi6Ppdfk6C0U=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=j+Jx6nVsybz+s7tgpto5HwbYR0lmR7xkegBEZc+aEONpbueq52vus9Es2UqeXMQZy
- b5YOvp8FYnLiUJFbjee+A1rr1cs6b0Ou5wTStWswUXTd87nAiujlAHXX94HvVzpLOc
- TfpqkRqXJ/pNy37jv2+stxLG5SrCj4eFfraNgAqo=
+ b=x5vaCipwG/wItTi/FEIr6jj1LA2r0bmIw1S7OSlB/oGbLBNadKt3NsPpNSoLvt2gR
+ 5bq+4ohyYHkumJnSUbcaqSXLg1Kc09QGDNOQm4sQbbk3qRPXEt1LIGbL6gJEuIFUTA
+ 6vkdSnIyZpiDtXW+m9BIOED6i/GdexHBT3SId3II=
 From: Krzysztof Kozlowski <krzk@kernel.org>
 To: Kukjin Kim <kgene@kernel.org>, Krzysztof Kozlowski <krzk@kernel.org>,
  Sangbeom Kim <sbkim73@samsung.com>,
@@ -44,16 +44,16 @@ To: Kukjin Kim <kgene@kernel.org>, Krzysztof Kozlowski <krzk@kernel.org>,
  Lee Jones <lee.jones@linaro.org>, devicetree@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org, linux-samsung-soc@vger.kernel.org,
  linux-kernel@vger.kernel.org
-Subject: [PATCH 5/6] ARM: dts: exynos: Add regulator suspend configuration to
- Arndale Octa board
-Date: Thu, 20 Jun 2019 20:35:29 +0200
-Message-Id: <20190620183530.5386-5-krzk@kernel.org>
+Subject: [PATCH 6/6] ARM: dts: exynos: Add regulator suspend configuration to
+ Odroid XU3/XU4/HC1 family
+Date: Thu, 20 Jun 2019 20:35:30 +0200
+Message-Id: <20190620183530.5386-6-krzk@kernel.org>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20190620183530.5386-1-krzk@kernel.org>
 References: <20190620183530.5386-1-krzk@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190620_113600_332812_5D14B054 
-X-CRM114-Status: GOOD (  12.27  )
+X-CRM114-CacheID: sfid-20190620_113603_639591_3BA47F26 
+X-CRM114-Status: GOOD (  11.22  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -90,25 +90,113 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add the PMIC regulator suspend configuration to Arndale Octa board to
-reduce power usage during suspend and keep necessary regulators on.  The
-configuration is based on vendor (Insignal) reference kernel.
-
-This is purely for hardware description because board does not support
-Suspend to RAM and the S2MPS11 driver does not support
-"regulator-on-in-suspend" property.
+Add the PMIC regulator suspend configuration to entire Odroid
+XU3/XU4/HC1 family of boards to reduce power usage during suspend.  The
+configuration is based on vendor (Hardkernel) reference kernel.
 
 Signed-off-by: Krzysztof Kozlowski <krzk@kernel.org>
----
- arch/arm/boot/dts/exynos5420-arndale-octa.dts | 48 +++++++++++++++++++
- 1 file changed, 48 insertions(+)
 
-diff --git a/arch/arm/boot/dts/exynos5420-arndale-octa.dts b/arch/arm/boot/dts/exynos5420-arndale-octa.dts
-index dc9162a17475..4463af8fa79d 100644
---- a/arch/arm/boot/dts/exynos5420-arndale-octa.dts
-+++ b/arch/arm/boot/dts/exynos5420-arndale-octa.dts
-@@ -451,6 +451,10 @@
- 				regulator-name = "PVDD_APIO_MMCOFF_2V8";
+---
+
+Tested on XU3 and HC1 with SD card.
+---
+ arch/arm/boot/dts/exynos5422-odroid-core.dtsi | 92 +++++++++++++++++++
+ 1 file changed, 92 insertions(+)
+
+diff --git a/arch/arm/boot/dts/exynos5422-odroid-core.dtsi b/arch/arm/boot/dts/exynos5422-odroid-core.dtsi
+index 0f967259ad29..5a4f7dd2568b 100644
+--- a/arch/arm/boot/dts/exynos5422-odroid-core.dtsi
++++ b/arch/arm/boot/dts/exynos5422-odroid-core.dtsi
+@@ -177,6 +177,10 @@
+ 				regulator-name = "vdd_adc";
+ 				regulator-min-microvolt = <1800000>;
+ 				regulator-max-microvolt = <1800000>;
++
++				regulator-state-mem {
++					regulator-off-in-suspend;
++				};
+ 			};
+ 
+ 			ldo5_reg: LDO5 {
+@@ -184,6 +188,10 @@
+ 				regulator-min-microvolt = <1800000>;
+ 				regulator-max-microvolt = <1800000>;
+ 				regulator-always-on;
++
++				regulator-state-mem {
++					regulator-off-in-suspend;
++				};
+ 			};
+ 
+ 			ldo6_reg: LDO6 {
+@@ -191,6 +199,10 @@
+ 				regulator-min-microvolt = <1000000>;
+ 				regulator-max-microvolt = <1000000>;
+ 				regulator-always-on;
++
++				regulator-state-mem {
++					regulator-off-in-suspend;
++				};
+ 			};
+ 
+ 			ldo7_reg: LDO7 {
+@@ -198,6 +210,10 @@
+ 				regulator-min-microvolt = <1800000>;
+ 				regulator-max-microvolt = <1800000>;
+ 				regulator-always-on;
++
++				regulator-state-mem {
++					regulator-off-in-suspend;
++				};
+ 			};
+ 
+ 			ldo8_reg: LDO8 {
+@@ -205,6 +221,10 @@
+ 				regulator-min-microvolt = <1800000>;
+ 				regulator-max-microvolt = <1800000>;
+ 				regulator-always-on;
++
++				regulator-state-mem {
++					regulator-off-in-suspend;
++				};
+ 			};
+ 
+ 			ldo9_reg: LDO9 {
+@@ -212,6 +232,10 @@
+ 				regulator-min-microvolt = <3000000>;
+ 				regulator-max-microvolt = <3000000>;
+ 				regulator-always-on;
++
++				regulator-state-mem {
++					regulator-off-in-suspend;
++				};
+ 			};
+ 
+ 			ldo10_reg: LDO10 {
+@@ -219,6 +243,10 @@
+ 				regulator-min-microvolt = <1800000>;
+ 				regulator-max-microvolt = <1800000>;
+ 				regulator-always-on;
++
++				regulator-state-mem {
++					regulator-off-in-suspend;
++				};
+ 			};
+ 
+ 			ldo11_reg: LDO11 {
+@@ -226,6 +254,10 @@
+ 				regulator-min-microvolt = <1000000>;
+ 				regulator-max-microvolt = <1000000>;
+ 				regulator-always-on;
++
++				regulator-state-mem {
++					regulator-off-in-suspend;
++				};
+ 			};
+ 
+ 			ldo12_reg: LDO12 {
+@@ -239,6 +271,10 @@
+ 				regulator-name = "vddq_mmc2";
  				regulator-min-microvolt = <1800000>;
  				regulator-max-microvolt = <2800000>;
 +
@@ -118,29 +206,39 @@ index dc9162a17475..4463af8fa79d 100644
  			};
  
  			ldo14_reg: LDO14 {
-@@ -464,12 +468,20 @@
- 				regulator-name = "PVDD_PERI_2V8";
+@@ -253,6 +289,10 @@
  				regulator-min-microvolt = <3300000>;
  				regulator-max-microvolt = <3300000>;
+ 				regulator-always-on;
 +
 +				regulator-state-mem {
-+					regulator-on-in-suspend;
++					regulator-off-in-suspend;
 +				};
  			};
  
  			ldo16_reg: LDO16 {
- 				regulator-name = "PVDD_PERI_3V3";
- 				regulator-min-microvolt = <2200000>;
- 				regulator-max-microvolt = <2200000>;
+@@ -267,18 +307,30 @@
+ 				regulator-min-microvolt = <3300000>;
+ 				regulator-max-microvolt = <3300000>;
+ 				regulator-always-on;
 +
 +				regulator-state-mem {
-+					regulator-on-in-suspend;
++					regulator-off-in-suspend;
 +				};
  			};
  
- 			ldo17_reg: LDO17 {
-@@ -489,6 +501,10 @@
- 				regulator-name = "PVDD_TFLASH_2V8";
+ 			ldo18_reg: LDO18 {
+ 				regulator-name = "vdd_emmc_1V8";
+ 				regulator-min-microvolt = <1800000>;
+ 				regulator-max-microvolt = <1800000>;
++
++				regulator-state-mem {
++					regulator-off-in-suspend;
++				};
+ 			};
+ 
+ 			ldo19_reg: LDO19 {
+ 				regulator-name = "vdd_sd";
  				regulator-min-microvolt = <2800000>;
  				regulator-max-microvolt = <2800000>;
 +
@@ -150,42 +248,54 @@ index dc9162a17475..4463af8fa79d 100644
  			};
  
  			ldo20_reg: LDO20 {
-@@ -515,12 +531,20 @@
- 				regulator-min-microvolt = <800000>;
+@@ -307,6 +359,10 @@
+ 				regulator-min-microvolt = <1100000>;
  				regulator-max-microvolt = <1100000>;
  				regulator-always-on;
 +
 +				regulator-state-mem {
-+					regulator-on-in-suspend;
++					regulator-off-in-suspend;
 +				};
  			};
  
  			ldo24_reg: LDO24 {
- 				regulator-name = "PVDD_CAM1_AVDD_2V8";
- 				regulator-min-microvolt = <2800000>;
- 				regulator-max-microvolt = <2800000>;
+@@ -328,6 +384,10 @@
+ 				regulator-name = "vdd_ldo26";
+ 				regulator-min-microvolt = <800000>;
+ 				regulator-max-microvolt = <3950000>;
 +
 +				regulator-state-mem {
-+					regulator-on-in-suspend;
++					regulator-off-in-suspend;
 +				};
  			};
  
- 			ldo25_reg: LDO25 {
-@@ -540,6 +564,10 @@
- 				regulator-name = "PVDD_G3DS_1V0";
- 				regulator-min-microvolt = <800000>;
- 				regulator-max-microvolt = <1100000>;
+ 			ldo27_reg: LDO27 {
+@@ -335,6 +395,10 @@
+ 				regulator-min-microvolt = <1000000>;
+ 				regulator-max-microvolt = <1000000>;
+ 				regulator-always-on;
 +
 +				regulator-state-mem {
-+					regulator-on-in-suspend;
++					regulator-off-in-suspend;
 +				};
  			};
  
  			ldo28_reg: LDO28 {
-@@ -617,6 +645,10 @@
+@@ -342,6 +406,10 @@
+ 				regulator-name = "vdd_ldo28";
  				regulator-min-microvolt = <800000>;
+ 				regulator-max-microvolt = <3950000>;
++
++				regulator-state-mem {
++					regulator-off-in-suspend;
++				};
+ 			};
+ 
+ 			ldo29_reg: LDO29 {
+@@ -420,6 +488,10 @@
  				regulator-max-microvolt = <1300000>;
  				regulator-always-on;
+ 				regulator-boot-on;
 +
 +				regulator-state-mem {
 +					regulator-off-in-suspend;
@@ -193,10 +303,10 @@ index dc9162a17475..4463af8fa79d 100644
  			};
  
  			buck2_reg: BUCK2 {
-@@ -624,6 +656,10 @@
- 				regulator-min-microvolt = <800000>;
+@@ -428,6 +500,10 @@
  				regulator-max-microvolt = <1500000>;
  				regulator-always-on;
+ 				regulator-boot-on;
 +
 +				regulator-state-mem {
 +					regulator-off-in-suspend;
@@ -204,10 +314,10 @@ index dc9162a17475..4463af8fa79d 100644
  			};
  
  			buck3_reg: BUCK3 {
-@@ -631,12 +667,20 @@
- 				regulator-min-microvolt = <800000>;
+@@ -436,6 +512,10 @@
  				regulator-max-microvolt = <1400000>;
  				regulator-always-on;
+ 				regulator-boot-on;
 +
 +				regulator-state-mem {
 +					regulator-off-in-suspend;
@@ -215,9 +325,10 @@ index dc9162a17475..4463af8fa79d 100644
  			};
  
  			buck4_reg: BUCK4 {
- 				regulator-name = "PVDD_G3D_1V0";
- 				regulator-min-microvolt = <800000>;
+@@ -444,6 +524,10 @@
  				regulator-max-microvolt = <1400000>;
+ 				regulator-always-on;
+ 				regulator-boot-on;
 +
 +				regulator-state-mem {
 +					regulator-off-in-suspend;
@@ -225,10 +336,10 @@ index dc9162a17475..4463af8fa79d 100644
  			};
  
  			buck5_reg: BUCK5 {
-@@ -651,6 +695,10 @@
- 				regulator-min-microvolt = <800000>;
+@@ -460,6 +544,10 @@
  				regulator-max-microvolt = <1500000>;
  				regulator-always-on;
+ 				regulator-boot-on;
 +
 +				regulator-state-mem {
 +					regulator-off-in-suspend;
@@ -236,6 +347,17 @@ index dc9162a17475..4463af8fa79d 100644
  			};
  
  			buck7_reg: BUCK7 {
+@@ -490,6 +578,10 @@
+ 				regulator-name = "vdd_vmem";
+ 				regulator-min-microvolt = <2850000>;
+ 				regulator-max-microvolt = <2850000>;
++
++				regulator-state-mem {
++					regulator-off-in-suspend;
++				};
+ 			};
+ 		};
+ 	};
 -- 
 2.17.1
 
