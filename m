@@ -2,89 +2,100 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D8F074CB9E
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 20 Jun 2019 12:17:25 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 190104CBAF
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 20 Jun 2019 12:21:35 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:
-	In-Reply-To:MIME-Version:Date:Message-ID:From:References:To:Subject:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=Izvbv2vQCFn7DSBRzr2g0IODen2OBMQ4vCRklNBp00g=; b=L1PrN34GzNE2CeF19tSEfdYtr
-	pVTm60/ndlR12sW3y0Iglcm6rEmsWrImuxJs7kbhmhPEBS8bUwjAnN5S9C/5d0CB1+Xx/PAIcsyYy
-	n+zXNUFkkwkd7sGD8e8rXPy3a8G6C5z8wflsg+AA7u0IihlQWp1YqNbl4RyjUXaKigrcQgdVHrQED
-	MKfPqZwu5PaLj3tuFNp1zunQ003QrM6v7cLGGt/xHjzAAFvX3xQ0a5UHDWlUGms4tulVtvA6PJ2hF
-	HURAzZ/f+yc2Fbc9ErxoFbnp1e4v7PjWlsAS7DRYrCr8utP5/WPagqwjD/Auci82MFKo0p5b9T5Z5
-	FyPWwzx5A==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=+/cPE/vm2AV+egHMuVgAKxQyOKt2CrIeaUKk3MmfPKg=; b=CUAqMsTGglPFco
+	CQHVR9DcPncJNMoJ+0gb0fZIpbHGEZU4+8GSXC/DreUC+XKFZ7xhfNS7CO5eYKfNsIHRj4b+OCPea
+	ZNLVXet+1nrrBdBDlUuj/apqB/iwGKtVeG12m3Wa53nzDU0scFYjvWVxFwkxHedAPtEjCE/PZ/o0b
+	8+gJ1IsvvlORYHipuMYaeLHkpZk68e9rm+oobfycn3jdN35kQoo0BR8X25KWEaInZ7GPFZHUq1961
+	+LljoQ1QcZuK4k4WmP5YlF4RWZXKbhZ+fS8WK6FSVXm8SPwUSHYsXFX4fwGslaOxcvlIH79s4OnaM
+	bzfQYSJ4dRbt6XsULJQQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hdu8B-0001fs-0h; Thu, 20 Jun 2019 10:17:23 +0000
-Received: from mail-lf1-x143.google.com ([2a00:1450:4864:20::143])
+	id 1hduCB-0003Vp-SR; Thu, 20 Jun 2019 10:21:32 +0000
+Received: from mail-db5eur01on0613.outbound.protection.outlook.com
+ ([2a01:111:f400:fe02::613]
+ helo=EUR01-DB5-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hdu7y-0001f7-Hu
- for linux-arm-kernel@lists.infradead.org; Thu, 20 Jun 2019 10:17:11 +0000
-Received: by mail-lf1-x143.google.com with SMTP id y17so2052454lfe.0
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 20 Jun 2019 03:17:09 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=subject:to:cc:references:from:organization:message-id:date
- :user-agent:mime-version:in-reply-to:content-language;
- bh=fkvnN57867z9SDQtn3TTY+GhvxFM0G+zqJqv3DBmXnM=;
- b=AYkcQYi1fysTbByE7FRFUTzJIo5Qk8gVkQZklsTygWB0XBj1Ml9VJ8lUDUMHGiV9r6
- jPYeFlnNKbcsJZNfEN7eDQH14AZ38D5te2WakYNz76riMi1kaZV6wwZBF0HFhOAm9d9e
- 6Ik8PYy9M7kH2djHv4uYE71+HyPqu8TNk+kvOs/nfWOgb1N/ywbfBf8rXIFp89GEhX0N
- 2Ae2LJ5bcK4Z53O/eqxG8OYE97YjzSC+oe8ThawkVR+4Pthr/Gna+hcO5NzQcvUWDM1m
- swSJoh2KmbjnfKlrbzLiXRPPboRqK8m13CjqrMjLlhMfO3FyGKVypEBZOxXM56YDjIUy
- ZKdQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:organization
- :message-id:date:user-agent:mime-version:in-reply-to
- :content-language;
- bh=fkvnN57867z9SDQtn3TTY+GhvxFM0G+zqJqv3DBmXnM=;
- b=uZL7Nm/kKd1YHa9VMO+mYDN+fXLItdWxUn3P940C6e6TRJ7wQMMg0OqtVHePvfHn7w
- tPAkgk6FGdKmgFVyilD3qB9MoVVzPLMPaGLsjxTBEWHqVdfqJdomzfs4a5BtdEgAEtLM
- eDIH9LGzbhi476LC/Q6w2q0l9O2DXEf84fPnTrWx4JImjZgv451WXvM/8RMjN7aHUbVi
- 5a/hjUi+ePYfzyW6D31lYUuGxuxrX8wLYTXg6TDgY7kMacetM00ukAn+qJDmqvczGGk5
- 4EmNsbrKSiHnw/NtUfTLUtj3HmzJ6Da14P/ZNwlpRgFSnRYH2koM0BTYg4zDGnvwplu8
- L7gQ==
-X-Gm-Message-State: APjAAAX4SiSQIQAIKGLG3dNm/YqlYvG+UX/TExMXu8sOwAlbwrAMbkO2
- tma8wgA5ib78vnwdd6Ho1dJjE2cjy6C891qh
-X-Google-Smtp-Source: APXvYqyxEbUyiihJJF90YL/53xdPshHXX9anAoXvMaVfMikCOhGrgmQRjZUwMDGnRKi/T4/jBe04EA==
-X-Received: by 2002:ac2:5446:: with SMTP id d6mr2434221lfn.138.1561025827955; 
- Thu, 20 Jun 2019 03:17:07 -0700 (PDT)
-Received: from puchatek.local (89-67-26-161.dynamic.chello.pl. [89.67.26.161])
- by smtp.gmail.com with ESMTPSA id
- b6sm3460820lfa.54.2019.06.20.03.17.06
- (version=TLS1_3 cipher=AEAD-AES128-GCM-SHA256 bits=128/128);
- Thu, 20 Jun 2019 03:17:07 -0700 (PDT)
-Subject: Re: [PATCH 1/3] arm64 defconfig: enable LVM support
-To: Olof Johansson <olof@lixom.net>
-References: <20190617160411.24329-1-marcin.juszkiewicz@linaro.org>
- <20190619142142.52stwnyucxa7g3rz@localhost>
-From: Marcin Juszkiewicz <marcin.juszkiewicz@linaro.org>
-Organization: Linaro
-Message-ID: <d1138486-4078-e838-ae49-fc9b038fc61c@linaro.org>
-Date: Thu, 20 Jun 2019 12:17:06 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.7.0
+ id 1hduBw-0003Uj-0p
+ for linux-arm-kernel@lists.infradead.org; Thu, 20 Jun 2019 10:21:18 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=UIOpYSodBkqE4589Tv6vQLFnhgp51jM04awtfJuqltU=;
+ b=fJ1und6rgvc/Vapd/mKbdSleOiEVGVa82iD6NN1AdMj9P5KzcfXY2DhQDVuFxN95pnyX4eMLRG0g7h3PxHI2FxO1g8u3dzIlgezJtmA9GqdlTv9MpFZDQQV8zcB/EtRHJmIqBfOwbKP1RXC+UEUDmPkH9qoKYxoKMURVTbCYe3U=
+Received: from AM0PR04MB4481.eurprd04.prod.outlook.com (52.135.147.15) by
+ AM0PR04MB4833.eurprd04.prod.outlook.com (20.176.215.30) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.1987.15; Thu, 20 Jun 2019 10:21:09 +0000
+Received: from AM0PR04MB4481.eurprd04.prod.outlook.com
+ ([fe80::6090:1f0b:b85b:8015]) by AM0PR04MB4481.eurprd04.prod.outlook.com
+ ([fe80::6090:1f0b:b85b:8015%3]) with mapi id 15.20.1987.014; Thu, 20 Jun 2019
+ 10:21:09 +0000
+From: Peng Fan <peng.fan@nxp.com>
+To: Sudeep Holla <sudeep.holla@arm.com>
+Subject: RE: [PATCH V2 2/2] mailbox: introduce ARM SMC based mailbox
+Thread-Topic: [PATCH V2 2/2] mailbox: introduce ARM SMC based mailbox
+Thread-Index: AQHVGeZUO66GnquMY06cfK/cKOI4kaakX7aAgAAODnA=
+Date: Thu, 20 Jun 2019 10:21:09 +0000
+Message-ID: <AM0PR04MB4481203DE76D290F311E3BFA88E40@AM0PR04MB4481.eurprd04.prod.outlook.com>
+References: <20190603083005.4304-1-peng.fan@nxp.com>
+ <20190603083005.4304-3-peng.fan@nxp.com> <20190620092301.GD1248@e107155-lin>
+In-Reply-To: <20190620092301.GD1248@e107155-lin>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=peng.fan@nxp.com; 
+x-originating-ip: [119.31.174.71]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: e7c47a8b-e1ec-4fa8-1fd9-08d6f5690358
+x-ms-office365-filtering-ht: Tenant
+x-microsoft-antispam: BCL:0; PCL:0;
+ RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600148)(711020)(4605104)(1401327)(4618075)(2017052603328)(7193020);
+ SRVR:AM0PR04MB4833; 
+x-ms-traffictypediagnostic: AM0PR04MB4833:
+x-ms-exchange-purlcount: 1
+x-microsoft-antispam-prvs: <AM0PR04MB4833D97B5D5A9771324B7EB688E40@AM0PR04MB4833.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:8273;
+x-forefront-prvs: 0074BBE012
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(396003)(366004)(136003)(39860400002)(376002)(346002)(189003)(199004)(14454004)(99286004)(446003)(66946007)(6506007)(25786009)(102836004)(476003)(66476007)(66556008)(8936002)(11346002)(64756008)(7416002)(316002)(76116006)(86362001)(73956011)(81166006)(7696005)(15650500001)(71200400001)(74316002)(71190400001)(6116002)(81156014)(4326008)(486006)(305945005)(54906003)(7736002)(6246003)(26005)(76176011)(186003)(66446008)(8676002)(53936002)(229853002)(9686003)(2906002)(52536014)(14444005)(44832011)(3846002)(6436002)(5660300002)(966005)(6916009)(33656002)(66066001)(68736007)(55016002)(478600001)(45080400002)(256004)(6306002);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:AM0PR04MB4833;
+ H:AM0PR04MB4481.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; MX:1; A:1; 
+received-spf: None (protection.outlook.com: nxp.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam-message-info: X9HVBPs15QWEkL1NqcgIW5WlVhz9MaeTSSi67c0KHggLa/ZhY7rpC0r2854TpoBg1tHHSeF+Be+qM3QMTR+tmXjYcvxBkEzxY5JPVsZEFCKNVpeTfwzwrrA3Km4pPGu66IrpUb/GBUpXoyS7e8o2zB+TGdhg9yshK8RK8P4TW1rqWPve/MbtfKqtm2HJuDiQdxmZWRAZWidr/RJwQHPbgj3DpGyOTxPOY1leoas1qgJhjPUSiXa0ww0qF9+EM+OT1CYZ6qUZaYLX78AMCM5R2c953U/k1BCTXPvNcEgOYU81xwsE9gaiar8ZNN4WnxKmdJhISr/KIZPXFYble/djMvO67cDqeKlDWpguXDRz0BaWWjC0RAbxk1UD9M/N0RGU+fb7hnZrrsSY/TJWpsH782dzg5P9VyZ4hhf75XJOpow=
 MIME-Version: 1.0
-In-Reply-To: <20190619142142.52stwnyucxa7g3rz@localhost>
-Content-Type: multipart/mixed; boundary="------------39BD46887CBC361D0D5957E9"
-Content-Language: en-GB
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: e7c47a8b-e1ec-4fa8-1fd9-08d6f5690358
+X-MS-Exchange-CrossTenant-originalarrivaltime: 20 Jun 2019 10:21:09.4922 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: peng.fan@nxp.com
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM0PR04MB4833
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190620_031710_600811_62DFC133 
-X-CRM114-Status: GOOD (  12.95  )
+X-CRM114-CacheID: sfid-20190620_032116_225243_A7015B81 
+X-CRM114-Status: GOOD (  27.60  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:143 listed in]
+ no trust [2a01:111:f400:fe02:0:0:0:613 listed in]
  [list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 T_SPF_PERMERROR        SPF: test of record failed (permerror)
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -103,76 +114,183 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: arm@kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ "f.fainelli@gmail.com" <f.fainelli@gmail.com>,
+ "festevam@gmail.com" <festevam@gmail.com>,
+ "jassisinghbrar@gmail.com" <jassisinghbrar@gmail.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "robh+dt@kernel.org" <robh+dt@kernel.org>, dl-linux-imx <linux-imx@nxp.com>,
+ "kernel@pengutronix.de" <kernel@pengutronix.de>,
+ "andre.przywara@arm.com" <andre.przywara@arm.com>,
+ "van.freenix@gmail.com" <van.freenix@gmail.com>,
+ "shawnguo@kernel.org" <shawnguo@kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This is a multi-part message in MIME format.
---------------39BD46887CBC361D0D5957E9
-Content-Type: text/plain; charset=utf-8
-Content-Transfer-Encoding: 8bit
+Hi Sudeep,
 
-W dniu 19.06.2019 o 16:21, Olof Johansson pisze:
-> On Mon, Jun 17, 2019 at 06:04:09PM +0200, Marcin Juszkiewicz wrote:
->> Follow x86-64 defconfig on enabling basic LVM support.
->>
->> Signed-off-by: Marcin Juszkiewicz <marcin.juszkiewicz@linaro.org>
+> Subject: Re: [PATCH V2 2/2] mailbox: introduce ARM SMC based mailbox
 > 
-> Do you need this to be =y? If you use LVM, you usually boot with a ramdisk that
-> will hold modules.
+> On Mon, Jun 03, 2019 at 04:30:05PM +0800, peng.fan@nxp.com wrote:
+> > From: Peng Fan <peng.fan@nxp.com>
+> >
+> > This mailbox driver implements a mailbox which signals transmitted
+> > data via an ARM smc (secure monitor call) instruction. The mailbox
+> > receiver is implemented in firmware and can synchronously return data
+> > when it returns execution to the non-secure world again.
+> > An asynchronous receive path is not implemented.
+> > This allows the usage of a mailbox to trigger firmware actions on SoCs
+> > which either don't have a separate management processor or on which
+> > such a core is not available. A user of this mailbox could be the SCP
+> > interface.
+> >
+> > Modified from Andre Przywara's v2 patch
+> > https://eur01.safelinks.protection.outlook.com/?url=https%3A%2F%2Flore
+> > .kernel.org%2Fpatchwork%2Fpatch%2F812999%2F&amp;data=02%7C01%7
+> Cpeng.fa
+> >
+> n%40nxp.com%7C6b37f78032e446be750e08d6f560e707%7C686ea1d3bc2b4
+> c6fa92cd
+> >
+> 99c5c301635%7C0%7C0%7C636966193913988679&amp;sdata=UNM4MTPs
+> brqoMqWStEy
+> > YzzwMEWTmX7hHO3TeNEz%2BOAw%3D&amp;reserved=0
+> >
+> > Cc: Andre Przywara <andre.przywara@arm.com>
+> > Signed-off-by: Peng Fan <peng.fan@nxp.com>
+> > ---
+> >
+> > V2:
+> >  Add interrupts notification support.
+> >
+> >  drivers/mailbox/Kconfig                 |   7 ++
+> >  drivers/mailbox/Makefile                |   2 +
+> >  drivers/mailbox/arm-smc-mailbox.c       | 190
+> ++++++++++++++++++++++++++++++++
+> >  include/linux/mailbox/arm-smc-mailbox.h |  10 ++
+> >  4 files changed, 209 insertions(+)
+> >  create mode 100644 drivers/mailbox/arm-smc-mailbox.c  create mode
+> > 100644 include/linux/mailbox/arm-smc-mailbox.h
+> >
+> > diff --git a/drivers/mailbox/Kconfig b/drivers/mailbox/Kconfig index
+> > 595542bfae85..c3bd0f1ddcd8 100644
+> > --- a/drivers/mailbox/Kconfig
+> > +++ b/drivers/mailbox/Kconfig
+> > @@ -15,6 +15,13 @@ config ARM_MHU
+> >  	  The controller has 3 mailbox channels, the last of which can be
+> >  	  used in Secure mode only.
+> >
+> > +config ARM_SMC_MBOX
+> > +	tristate "Generic ARM smc mailbox"
+> > +	depends on OF && HAVE_ARM_SMCCC
+> > +	help
+> > +	  Generic mailbox driver which uses ARM smc calls to call into
+> > +	  firmware for triggering mailboxes.
+> > +
+> >  config IMX_MBOX
+> >  	tristate "i.MX Mailbox"
+> >  	depends on ARCH_MXC || COMPILE_TEST
+> > diff --git a/drivers/mailbox/Makefile b/drivers/mailbox/Makefile index
+> > c22fad6f696b..93918a84c91b 100644
+> > --- a/drivers/mailbox/Makefile
+> > +++ b/drivers/mailbox/Makefile
+> > @@ -7,6 +7,8 @@ obj-$(CONFIG_MAILBOX_TEST)	+= mailbox-test.o
+> >
+> >  obj-$(CONFIG_ARM_MHU)	+= arm_mhu.o
+> >
+> > +obj-$(CONFIG_ARM_SMC_MBOX)	+= arm-smc-mailbox.o
+> > +
+> >  obj-$(CONFIG_IMX_MBOX)	+= imx-mailbox.o
+> >
+> >  obj-$(CONFIG_ARMADA_37XX_RWTM_MBOX)	+=
+> armada-37xx-rwtm-mailbox.o
+> > diff --git a/drivers/mailbox/arm-smc-mailbox.c
+> > b/drivers/mailbox/arm-smc-mailbox.c
+> > new file mode 100644
+> > index 000000000000..fef6e38d8b98
+> > --- /dev/null
+> > +++ b/drivers/mailbox/arm-smc-mailbox.c
+> > @@ -0,0 +1,190 @@
+> > +// SPDX-License-Identifier: GPL-2.0
+> > +/*
+> > + * Copyright (C) 2016,2017 ARM Ltd.
+> > + * Copyright 2019 NXP
+> > + */
+> > +
+> > +#include <linux/arm-smccc.h>
+> > +#include <linux/device.h>
+> > +#include <linux/kernel.h>
+> > +#include <linux/interrupt.h>
+> > +#include <linux/mailbox_controller.h> #include
+> > +<linux/mailbox/arm-smc-mailbox.h>
+> > +#include <linux/module.h>
+> > +#include <linux/platform_device.h>
+> > +
+> > +#define ARM_SMC_MBOX_USE_HVC	BIT(0)
+> > +#define ARM_SMC_MBOX_USB_IRQ	BIT(1)
+> > +
+> > +struct arm_smc_chan_data {
+> > +	u32 function_id;
+> > +	u32 flags;
+> > +	int irq;
+> > +};
+> > +
+> > +static int arm_smc_send_data(struct mbox_chan *link, void *data) {
+> > +	struct arm_smc_chan_data *chan_data = link->con_priv;
+> > +	struct arm_smccc_mbox_cmd *cmd = data;
+> > +	struct arm_smccc_res res;
+> > +	u32 function_id;
+> > +
+> > +	if (chan_data->function_id != UINT_MAX)
+> > +		function_id = chan_data->function_id;
+> > +	else
+> > +		function_id = cmd->a0;
+> > +
+> > +	if (chan_data->flags & ARM_SMC_MBOX_USE_HVC)
+> > +		arm_smccc_hvc(function_id, cmd->a1, cmd->a2, cmd->a3,
+> cmd->a4,
+> > +			      cmd->a5, cmd->a6, cmd->a7, &res);
+> > +	else
+> > +		arm_smccc_smc(function_id, cmd->a1, cmd->a2, cmd->a3,
+> cmd->a4,
+> > +			      cmd->a5, cmd->a6, cmd->a7, &res);
+> > +
+> 
+> So how will the SMC/HVC handler in EL3/2 find which mailbox is being
+> referred with this command ? I prefer 2nd argument to be the mailbox
+> number.
+You mean channel number as following?
 
-Right. Forgot to change.
+@@ -37,10 +38,10 @@ static int arm_smc_send_data(struct mbox_chan *link, void *data)
+                function_id = cmd->a0;
 
+        if (chan_data->flags & ARM_SMC_MBOX_USE_HVC)
+-               arm_smccc_hvc(function_id, cmd->a1, cmd->a2, cmd->a3, cmd->a4,
++               arm_smccc_hvc(function_id, chan_data->chan_id, cmd->a2, cmd->a3, cmd->a4,
+                              cmd->a5, cmd->a6, cmd->a7, &res);
+        else
+-               arm_smccc_smc(function_id, cmd->a1, cmd->a2, cmd->a3, cmd->a4,
++               arm_smccc_smc(function_id, chan_data->chan_id, cmd->a2, cmd->a3, cmd->a4,
+                              cmd->a5, cmd->a6, cmd->a7, &res);
 
---------------39BD46887CBC361D0D5957E9
-Content-Type: text/x-patch;
- name="0001-arm64-defconfig-enable-LVM-support.patch"
-Content-Transfer-Encoding: 7bit
-Content-Disposition: attachment;
- filename="0001-arm64-defconfig-enable-LVM-support.patch"
+Or should that be passed from firmware driver?
 
-From 63003d0047062949a1231f67e1efdcb96b54323a Mon Sep 17 00:00:00 2001
-From: Marcin Juszkiewicz <marcin.juszkiewicz@linaro.org>
-Date: Mon, 27 May 2019 20:14:34 +0200
-Subject: [PATCH 1/3] arm64 defconfig: enable LVM support
+If not from firmware driver, just as above, I do not have a good idea which should be passed to smc,
+from cmd->a1 to a5 or from cmd->a2 to a6.
 
-Follow x86-64 defconfig on enabling basic LVM support.
+Thanks,
+Peng.
 
-Signed-off-by: Marcin Juszkiewicz <marcin.juszkiewicz@linaro.org>
----
- arch/arm64/configs/defconfig | 5 +++++
- 1 file changed, 5 insertions(+)
-
-diff --git a/arch/arm64/configs/defconfig b/arch/arm64/configs/defconfig
-index 4d583514258c..864800307e2f 100644
---- a/arch/arm64/configs/defconfig
-+++ b/arch/arm64/configs/defconfig
-@@ -230,6 +230,11 @@ CONFIG_SATA_SIL24=y
- CONFIG_SATA_RCAR=y
- CONFIG_PATA_PLATFORM=y
- CONFIG_PATA_OF_PLATFORM=y
-+CONFIG_MD=y
-+CONFIG_BLK_DEV_MD=m
-+CONFIG_BLK_DEV_DM=m
-+CONFIG_DM_MIRROR=m
-+CONFIG_DM_ZERO=m
- CONFIG_NETDEVICES=y
- CONFIG_MACVLAN=m
- CONFIG_MACVTAP=m
--- 
-2.21.0
-
-
---------------39BD46887CBC361D0D5957E9
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+> 
+> --
+> Regards,
+> Sudeep
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---------------39BD46887CBC361D0D5957E9--
-
