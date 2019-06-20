@@ -2,84 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5DE804C97E
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 20 Jun 2019 10:30:08 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 65DCF4C989
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 20 Jun 2019 10:33:42 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Ed4oI3NcvsboN0PlsNMCdF5BypybWS9wNnjyoXfWGK0=; b=LWFePH3dGxyt8j
-	ArXnogYrPIUZXeZ8/rUoIfeysUQ/6BZ3umo1PcRi9jS0h1UEiA6961Jtl/G0k5dk7BDTCMFQfZn2x
-	oshGfWfNgPh9ULRB7ql6cXMnpbO382Oyfu+JzHlfdWFB69bIOw/L4cMuCtOZjrolEw1rpYy+meY4m
-	THuoxqQd/AGOJmbniiEkURFuuhSt12p7nIOvnuR6q27DEUxAE6EPVGIaDUsJUxsE1ScZz3uYna8jx
-	NwCtt7SSBJDpnahpe5sIxMIQpNgmxJyhkxxNwCvacSsCBW3eLFPrS++QFcXNegBIh/odcSvcVl+4D
-	io7pE1Sm8WlzrveBW5OQ==;
+	List-Owner; bh=xO0k8uZsb8gls8JhWQLBwYlnkSSWN817ibjdBW5sTCU=; b=pLqvwlFGci0Utk
+	LCtX9tpiJkE/2aVBPTLk3USD8qxaYgZXEqLTMuyiTbu7iIO5xGpkCQcjdVGKoUiihIDgOxBdDlCds
+	eRlRj5Afdm6ErY+RDNuedcycIyObuDOU2+zP48rifA2Y5JzRKiVeywpOl8RK9QM2octqYsUUnIJIY
+	ucEKRCSg1KE1BCdkd6gA50jZmikcJwo+7eQrZEfQADPXltQr98EpyqY7h5+FFv/TR44a2sHcrkaI7
+	OapUvThu6aTy9aVC8Q9+lmbMIokws1LIzUzDXoecTFG/aiL0bnFMTrwpHfWPl7ie54NhoQXvXdDWY
+	sJFFD7nSSe4ZxzsTwn0w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hdsSL-00066G-2g; Thu, 20 Jun 2019 08:30:05 +0000
-Received: from mail-qt1-x843.google.com ([2607:f8b0:4864:20::843])
+	id 1hdsVo-0007jE-1v; Thu, 20 Jun 2019 08:33:40 +0000
+Received: from relay2-d.mail.gandi.net ([217.70.183.194])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hdsS6-00065w-4e
- for linux-arm-kernel@lists.infradead.org; Thu, 20 Jun 2019 08:29:51 +0000
-Received: by mail-qt1-x843.google.com with SMTP id p15so2395268qtl.3
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 20 Jun 2019 01:29:49 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=jms.id.au; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=6+LDECNzk7Ax81lY+NTXinI2CggAW7FJancdnXbish8=;
- b=CtuzE3XrAV1rVmsdqj11M6pmKHISAnlRUomi1TlE3HzkVaVNorKLX2wW/stFBg1Bv6
- DyIHp3jITT2jE0rKVoCLPQ360+74LzXT6mmKu2+NrX5JQsoKH9lgwciuIWycQoNxySYe
- E/CSxBpptpTlZ//LZbwz0Wkz4IVdBnFrG+bkQ=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=6+LDECNzk7Ax81lY+NTXinI2CggAW7FJancdnXbish8=;
- b=U1uaw8rPwD9E50HjPt9Ga0Fy6U+FzG0J62t0tnlC21D4BKvDQxzPzBp1rA7lfTk++z
- Z7UEPhORjIV4Lh30WENEVF8l/DY5JNjPkskfKL0MnZ4lULE3y6Dgb1GxTLikTnlOE1BL
- pdG7mNImOqsZnT64QN/L3xXzDsiGB8r8zwgdvxpXVZkYTbSZjPUEIFKJUR5DuDEQmzPj
- w2TUNJN+olPoosjGmokFJWzgOeGNsTJZUDjhQNhtoQzAJ069RcI+jOzC21JpHIgDi0q1
- XhhuRC/6JxKLsYVouM4cL+zXqB9RxbBK9oBkn6BQD282HFUQ3QyQAZcktwwYTcw4NXiU
- BhsQ==
-X-Gm-Message-State: APjAAAWmEZ6iJr6Y9ud+8Mag+3a5l+eK6XNmhB1n/JvDA92jUgVGkniW
- 9l/AKedbuYvFofgdD/Chg68JhpQ7fg/ZfN4CYW0=
-X-Google-Smtp-Source: APXvYqz9ktCSXKcc8gJFwqeG+AN29q9x2gYJJMH1Lf+t9yZGIz77JKqmMdeqFF/zzNE+Y8nQBNbxTH4cVcRoubKl5l0=
-X-Received: by 2002:a0c:afd5:: with SMTP id t21mr38274708qvc.105.1561019389077; 
- Thu, 20 Jun 2019 01:29:49 -0700 (PDT)
+ id 1hdsVZ-0007ig-Er
+ for linux-arm-kernel@lists.infradead.org; Thu, 20 Jun 2019 08:33:27 +0000
+X-Originating-IP: 92.137.69.152
+Received: from localhost (alyon-656-1-672-152.w92-137.abo.wanadoo.fr
+ [92.137.69.152])
+ (Authenticated sender: alexandre.belloni@bootlin.com)
+ by relay2-d.mail.gandi.net (Postfix) with ESMTPSA id 05CC440011;
+ Thu, 20 Jun 2019 08:33:10 +0000 (UTC)
+Date: Thu, 20 Jun 2019 10:33:09 +0200
+From: Alexandre Belloni <alexandre.belloni@bootlin.com>
+To: Ken Sloat <KSloat@aampglobal.com>
+Subject: Re: [PATCH v2 1/1] watchdog: atmel: atmel-sama5d4-wdt: Disable
+ watchdog on system suspend
+Message-ID: <20190620083309.GU23549@piout.net>
+References: <20190614125310.29458-1-ksloat@aampglobal.com>
 MIME-Version: 1.0
-References: <20190619125636.1109665-1-arnd@arndb.de>
-In-Reply-To: <20190619125636.1109665-1-arnd@arndb.de>
-From: Joel Stanley <joel@jms.id.au>
-Date: Thu, 20 Jun 2019 08:29:36 +0000
-Message-ID: <CACPK8Xe0Ppr8QjPSTPyNSHEbSXvuZLjC04hqP6ATTSystY888w@mail.gmail.com>
-Subject: Re: [PATCH] soc: aspeed: fix probe error handling
-To: Arnd Bergmann <arnd@arndb.de>
+Content-Disposition: inline
+In-Reply-To: <20190614125310.29458-1-ksloat@aampglobal.com>
+User-Agent: Mutt/1.11.4 (2019-03-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190620_012950_183669_A969F33E 
-X-CRM114-Status: GOOD (  18.55  )
-X-Spam-Score: 0.4 (/)
+X-CRM114-CacheID: sfid-20190620_013325_660483_9E3E60F6 
+X-CRM114-Status: GOOD (  19.54  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.4 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:843 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (joel.stan[at]gmail.com)
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [217.70.183.194 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -91,76 +63,89 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-aspeed@lists.ozlabs.org, Andrew Jeffery <andrew@aj.id.au>,
- Patrick Venture <venture@google.com>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Vijay Khemka <vijaykhemka@fb.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: "linux-watchdog@vger.kernel.org" <linux-watchdog@vger.kernel.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "ludovic.desroches@microchip.com" <ludovic.desroches@microchip.com>,
+ "linux@roeck-us.net" <linux@roeck-us.net>,
+ "wim@linux-watchdog.org" <wim@linux-watchdog.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, 19 Jun 2019 at 12:56, Arnd Bergmann <arnd@arndb.de> wrote:
->
-> gcc warns that a mising "flash" phandle node leads to undefined
-> behavior later:
->
-> drivers/soc/aspeed/aspeed-lpc-ctrl.c: In function 'aspeed_lpc_ctrl_probe':
-> drivers/soc/aspeed/aspeed-lpc-ctrl.c:201:18: error: '*((void *)&resm+8)' may be used uninitialized in this function [-Werror=maybe-uninitialized]
->
-> The device cannot work without this node, so just error out here.
->
-> Signed-off-by: Arnd Bergmann <arnd@arndb.de>
-
-Thanks Arnd. This looks like it applies on top of Vijay's recent patch?
-
-The intent of that change was to make the driver usable for systems
-that do not want to depend on the flash phandle. I think the fix we
-want looks like this:
-
---- a/drivers/soc/aspeed/aspeed-lpc-ctrl.c
-+++ b/drivers/soc/aspeed/aspeed-lpc-ctrl.c
-@@ -224,10 +224,11 @@ static int aspeed_lpc_ctrl_probe(struct
-platform_device *pdev)
-                        dev_err(dev, "Couldn't address to resource for
-flash\n");
-                        return rc;
-                }
-+
-+               lpc_ctrl->pnor_size = resource_size(&resm);
-+               lpc_ctrl->pnor_base = resm.start;
-        }
-
--       lpc_ctrl->pnor_size = resource_size(&resm);
--       lpc_ctrl->pnor_base = resm.start;
-
-
-Vijay, do you agree?
-
-Cheers,
-
-Joel
+On 14/06/2019 12:53:22+0000, Ken Sloat wrote:
+> From: Ken Sloat <ksloat@aampglobal.com>
+> 
+> Currently, the atmel-sama5d4-wdt continues to run after system suspend.
+> Unless the system resumes within the watchdog timeout period so the
+> userspace can kick it, the system will be reset. This change disables
+> the watchdog on suspend if it is active and re-enables on resume. These
+> actions occur during the late and early phases of suspend and resume
+> respectively to minimize chances where a lock could occur while the
+> watchdog is disabled.
+> 
+> Signed-off-by: Ken Sloat <ksloat@aampglobal.com>
+Acked-by: Alexandre Belloni <alexandre.belloni@bootlin.com>
 
 > ---
->  drivers/soc/aspeed/aspeed-lpc-ctrl.c | 1 +
->  1 file changed, 1 insertion(+)
->
-> diff --git a/drivers/soc/aspeed/aspeed-lpc-ctrl.c b/drivers/soc/aspeed/aspeed-lpc-ctrl.c
-> index 239520bb207e..81109d22af6a 100644
-> --- a/drivers/soc/aspeed/aspeed-lpc-ctrl.c
-> +++ b/drivers/soc/aspeed/aspeed-lpc-ctrl.c
-> @@ -212,6 +212,7 @@ static int aspeed_lpc_ctrl_probe(struct platform_device *pdev)
->         node = of_parse_phandle(dev->of_node, "flash", 0);
->         if (!node) {
->                 dev_dbg(dev, "Didn't find host pnor flash node\n");
-> +               return -ENXIO;
->         } else {
->                 rc = of_address_to_resource(node, 1, &resm);
->                 of_node_put(node);
-> --
-> 2.20.0
->
+>  Changes in v2:
+>  -Consolidate resume and resume early statements.
+> 
+>  drivers/watchdog/sama5d4_wdt.c | 21 ++++++++++++++++++---
+>  1 file changed, 18 insertions(+), 3 deletions(-)
+> 
+> diff --git a/drivers/watchdog/sama5d4_wdt.c b/drivers/watchdog/sama5d4_wdt.c
+> index 111695223aae..0d123f8cbcc6 100644
+> --- a/drivers/watchdog/sama5d4_wdt.c
+> +++ b/drivers/watchdog/sama5d4_wdt.c
+> @@ -280,7 +280,17 @@ static const struct of_device_id sama5d4_wdt_of_match[] = {
+>  MODULE_DEVICE_TABLE(of, sama5d4_wdt_of_match);
+>  
+>  #ifdef CONFIG_PM_SLEEP
+> -static int sama5d4_wdt_resume(struct device *dev)
+> +static int sama5d4_wdt_suspend_late(struct device *dev)
+> +{
+> +	struct sama5d4_wdt *wdt = dev_get_drvdata(dev);
+> +
+> +	if (watchdog_active(&wdt->wdd))
+> +		sama5d4_wdt_stop(&wdt->wdd);
+> +
+> +	return 0;
+> +}
+> +
+> +static int sama5d4_wdt_resume_early(struct device *dev)
+>  {
+>  	struct sama5d4_wdt *wdt = dev_get_drvdata(dev);
+>  
+> @@ -291,12 +301,17 @@ static int sama5d4_wdt_resume(struct device *dev)
+>  	 */
+>  	sama5d4_wdt_init(wdt);
+>  
+> +	if (watchdog_active(&wdt->wdd))
+> +		sama5d4_wdt_start(&wdt->wdd);
+> +
+>  	return 0;
+>  }
+>  #endif
+>  
+> -static SIMPLE_DEV_PM_OPS(sama5d4_wdt_pm_ops, NULL,
+> -			 sama5d4_wdt_resume);
+> +static const struct dev_pm_ops sama5d4_wdt_pm_ops = {
+> +	SET_LATE_SYSTEM_SLEEP_PM_OPS(sama5d4_wdt_suspend_late,
+> +			sama5d4_wdt_resume_early)
+> +};
+>  
+>  static struct platform_driver sama5d4_wdt_driver = {
+>  	.probe		= sama5d4_wdt_probe,
+> -- 
+> 2.17.1
+> 
+
+-- 
+Alexandre Belloni, Bootlin
+Embedded Linux and Kernel engineering
+https://bootlin.com
 
 _______________________________________________
 linux-arm-kernel mailing list
