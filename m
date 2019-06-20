@@ -2,37 +2,37 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id ACD484C589
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 20 Jun 2019 04:40:52 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 435174C588
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 20 Jun 2019 04:40:38 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=TH77PulJKR+NFiYchrUrhpafEBfv4nF3aglarGNC6DQ=; b=UmAe4gXLbcJdhc
-	tNreodiRyVLqK640MXoXixySCmGgAoGltvqCK97M9uq6kdHwylHBgGDZ1LbAHJmK395+frI7yqToi
-	qCD7ku2gOIEFQrxMFziiMuF2xCYtpmXFDqIr3sh5+AmO0Kmu3THhS1afk47B9nYN27xtr15piNG4A
-	mZlDC+2SE+7DzTq650+T5q9KswbeaVQtQJY8t2QrxtzluSfizNp3kzf5TwcQ8FosnuGeIQTUx4etm
-	mHzmh8WsYcaB0M93/UGBf0+bOzD7hmhKDYpiowlcjJbll2MmyUTxRbUPrR/Ut5U8WWLVnaH3V2t3S
-	bLJ69rPkPGCRuUTPuyFA==;
+	List-Owner; bh=4U0R/wr0KToJD4bmvFdLvXne883T3LN9Me6OOMCmvTo=; b=UqvUzkwtTsatUu
+	J0aGBKp3SFvIrOtU/CoSENLe0Z+W2caVO7sF8C3T73I2KV01Z/NPkuhrYroHfz9/lUy6hBM+E5FYQ
+	2fugW+e98miQDyJwmW0mxxbGcxFljrJ0UjXxJS33wXsqzAV8oxqICYZph6JSmWCkP5e32gs4PquBl
+	9ppvohHyHer0aF/2q3wVsIDVNW8A9ghEXwDAjRxy4hYv4FZIWHg51/zxrgE7QmVETIGQwKHlNntF3
+	F9gbePVZeRc5QM73pPeQEf9yeG2L3vuOW11oqS191+2B/bTfUmb3NW6yyFoC7un3zRBzGuWcjIOGj
+	V7vLTY34kc0PS1n0TrSQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hdn0M-0000PU-Re; Thu, 20 Jun 2019 02:40:50 +0000
+	id 1hdn06-00009u-8W; Thu, 20 Jun 2019 02:40:34 +0000
 Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hdmyG-0006Au-3J; Thu, 20 Jun 2019 02:38:43 +0000
-X-UUID: 319acfa9a943439082eba5133b274024-20190619
-X-UUID: 319acfa9a943439082eba5133b274024-20190619
+ id 1hdmyH-0006Ax-Jz; Thu, 20 Jun 2019 02:38:43 +0000
+X-UUID: 15c34778c2394c6b9cdb86bb78507730-20190619
+X-UUID: 15c34778c2394c6b9cdb86bb78507730-20190619
 Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw02.mediatek.com
  (envelope-from <weiyi.lu@mediatek.com>)
  (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 2047695003; Wed, 19 Jun 2019 18:38:29 -0800
-Received: from MTKMBS01N2.mediatek.inc (172.21.101.79) by
- MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Wed, 19 Jun 2019 19:38:28 -0700
+ with ESMTP id 1809246515; Wed, 19 Jun 2019 18:38:25 -0800
+Received: from MTKMBS01N1.mediatek.inc (172.21.101.68) by
+ MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Wed, 19 Jun 2019 19:38:24 -0700
 Received: from mtkcas09.mediatek.inc (172.21.101.178) by
- mtkmbs01n2.mediatek.inc (172.21.101.79) with Microsoft SMTP Server (TLS) id
+ mtkmbs01n1.mediatek.inc (172.21.101.68) with Microsoft SMTP Server (TLS) id
  15.0.1395.4; Thu, 20 Jun 2019 10:38:20 +0800
 Received: from mtksdccf07.mediatek.inc (172.21.84.99) by mtkcas09.mediatek.inc
  (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via
@@ -40,19 +40,17 @@ Received: from mtksdccf07.mediatek.inc (172.21.84.99) by mtkcas09.mediatek.inc
 From: Weiyi Lu <weiyi.lu@mediatek.com>
 To: Nicolas Boichat <drinkcat@chromium.org>, Matthias Brugger
  <matthias.bgg@gmail.com>, Rob Herring <robh@kernel.org>
-Subject: [PATCH v6 11/14] soc: mediatek: Add subsys clock control for bus
- protection
-Date: Thu, 20 Jun 2019 10:38:03 +0800
-Message-ID: <1560998286-9189-12-git-send-email-weiyi.lu@mediatek.com>
+Subject: [PATCH v6 12/14] soc: mediatek: Add extra sram control
+Date: Thu, 20 Jun 2019 10:38:04 +0800
+Message-ID: <1560998286-9189-13-git-send-email-weiyi.lu@mediatek.com>
 X-Mailer: git-send-email 1.8.1.1.dirty
 In-Reply-To: <1560998286-9189-1-git-send-email-weiyi.lu@mediatek.com>
 References: <1560998286-9189-1-git-send-email-weiyi.lu@mediatek.com>
 MIME-Version: 1.0
-X-TM-SNTS-SMTP: CFCB15F0882297BCA3C41951AA04628326A59D99DB6A680D3F3D0153A15FAA4E2000:8
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190619_193840_151849_DE87E6C2 
-X-CRM114-Status: GOOD (  14.68  )
+X-CRM114-CacheID: sfid-20190619_193841_672291_E66E1588 
+X-CRM114-Status: GOOD (  10.81  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -82,162 +80,77 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add subsys CG control flow before/after the bus protect control
-due to bus protection need SMI bus relative CGs enabled to feedback
-its ack.
+For some power domains like vpu_core on MT8183 whose sram need to
+do clock and internal isolation while power on/off sram.
+We add a flag "sram_iso_ctrl" in scp_domain_data to judge if we
+need to do the extra sram isolation control or not.
 
 Signed-off-by: Weiyi Lu <weiyi.lu@mediatek.com>
 ---
- drivers/soc/mediatek/mtk-scpsys.c | 72 +++++++++++++++++++++++++++++++++++++--
- 1 file changed, 70 insertions(+), 2 deletions(-)
+ drivers/soc/mediatek/mtk-scpsys.c | 22 ++++++++++++++++++++++
+ 1 file changed, 22 insertions(+)
 
 diff --git a/drivers/soc/mediatek/mtk-scpsys.c b/drivers/soc/mediatek/mtk-scpsys.c
-index 10c2440..74fd981 100644
+index 74fd981..d3fdb3f 100644
 --- a/drivers/soc/mediatek/mtk-scpsys.c
 +++ b/drivers/soc/mediatek/mtk-scpsys.c
-@@ -108,6 +108,7 @@ enum clk_id {
- };
+@@ -57,6 +57,8 @@
+ #define PWR_ON_BIT			BIT(2)
+ #define PWR_ON_2ND_BIT			BIT(3)
+ #define PWR_CLK_DIS_BIT			BIT(4)
++#define PWR_SRAM_CLKISO_BIT		BIT(5)
++#define PWR_SRAM_ISOINT_B_BIT		BIT(6)
  
- #define MAX_CLKS	3
-+#define MAX_SUBSYS_CLKS 10
- 
- /**
-  * struct scp_domain_data - scp domain data for power on/off flow
-@@ -120,6 +121,8 @@ enum clk_id {
-  * @clk_id: The basic clocks required by this power domain.
-  * @basic_clk_id: provide the same purpose with field "clk_id"
-  *                by declaring basic clock prefix name rather than clk_id.
-+ * @subsys_clk_prefix: The prefix name of the clocks need to be enabled
-+ *                     before releasing bus protection.
-  * @caps: The flag for active wake-up action.
-  * @bp_table: The mask table for multiple step bus protection.
-  */
-@@ -132,6 +135,7 @@ struct scp_domain_data {
+ #define PWR_STATUS_CONN			BIT(1)
+ #define PWR_STATUS_DISP			BIT(3)
+@@ -115,6 +117,8 @@ enum clk_id {
+  * @name: The domain name.
+  * @sta_mask: The mask for power on/off status bit.
+  * @ctl_offs: The offset for main power control register.
++ * @sram_iso_ctrl: The flag to judge if the power domain need to do
++ *                 the extra sram isolation control.
+  * @sram_pdn_bits: The mask for sram power control bits.
+  * @sram_pdn_ack_bits: The mask for sram power control acked bits.
+  * @bus_prot_mask: The mask for single step bus protection.
+@@ -130,6 +134,7 @@ struct scp_domain_data {
+ 	const char *name;
+ 	u32 sta_mask;
+ 	int ctl_offs;
++	bool sram_iso_ctrl;
+ 	u32 sram_pdn_bits;
+ 	u32 sram_pdn_ack_bits;
  	u32 bus_prot_mask;
- 	enum clk_id clk_id[MAX_CLKS];
- 	const char *basic_clk_id[MAX_CLKS];
-+	const char *subsys_clk_prefix;
- 	u8 caps;
- 	struct bus_prot bp_table[MAX_STEPS];
- };
-@@ -142,6 +146,7 @@ struct scp_domain {
- 	struct generic_pm_domain genpd;
- 	struct scp *scp;
- 	struct clk *clk[MAX_CLKS];
-+	struct clk *subsys_clk[MAX_SUBSYS_CLKS];
- 	const struct scp_domain_data *data;
- 	struct regulator *supply;
- };
-@@ -347,16 +352,22 @@ static int scpsys_power_on(struct generic_pm_domain *genpd)
- 	val |= PWR_RST_B_BIT;
- 	writel(val, ctl_addr);
+@@ -268,6 +273,14 @@ static int scpsys_sram_enable(struct scp_domain *scpd, void __iomem *ctl_addr)
+ 			return ret;
+ 	}
  
--	ret = scpsys_sram_enable(scpd, ctl_addr);
-+	ret = scpsys_clk_enable(scpd->subsys_clk, MAX_SUBSYS_CLKS);
- 	if (ret < 0)
- 		goto err_pwr_ack;
- 
-+	ret = scpsys_sram_enable(scpd, ctl_addr);
-+	if (ret < 0)
-+		goto err_sram;
++	if (scpd->data->sram_iso_ctrl)	{
++		val = readl(ctl_addr) | PWR_SRAM_ISOINT_B_BIT;
++		writel(val, ctl_addr);
++		udelay(1);
++		val &= ~PWR_SRAM_CLKISO_BIT;
++		writel(val, ctl_addr);
++	}
 +
- 	ret = scpsys_bus_protect_disable(scpd);
- 	if (ret < 0)
--		goto err_pwr_ack;
-+		goto err_sram;
- 
  	return 0;
- 
-+err_sram:
-+	scpsys_clk_disable(scpd->subsys_clk, MAX_SUBSYS_CLKS);
- err_pwr_ack:
- 	scpsys_clk_disable(scpd->clk, MAX_CLKS);
- err_clk:
-@@ -383,6 +394,8 @@ static int scpsys_power_off(struct generic_pm_domain *genpd)
- 	if (ret < 0)
- 		goto out;
- 
-+	scpsys_clk_disable(scpd->subsys_clk, MAX_SUBSYS_CLKS);
-+
- 	/* subsys power off */
- 	val = readl(ctl_addr) | PWR_ISO_BIT;
- 	writel(val, ctl_addr);
-@@ -419,6 +432,48 @@ static int scpsys_power_off(struct generic_pm_domain *genpd)
- 	return ret;
  }
  
-+static int init_subsys_clks(struct platform_device *pdev,
-+		const char *prefix, struct clk **clk)
-+{
-+	struct device_node *node = pdev->dev.of_node;
-+	u32 prefix_len, sub_clk_cnt = 0;
-+	struct property *prop;
-+	const char *clk_name;
-+
-+	if (!node) {
-+		dev_err(&pdev->dev, "Cannot find scpsys node: %ld\n",
-+			PTR_ERR(node));
-+		return PTR_ERR(node);
+@@ -277,6 +290,15 @@ static int scpsys_sram_disable(struct scp_domain *scpd, void __iomem *ctl_addr)
+ 	u32 pdn_ack = scpd->data->sram_pdn_ack_bits;
+ 	int tmp;
+ 
++	if (scpd->data->sram_iso_ctrl)	{
++		val = readl(ctl_addr);
++		val |= PWR_SRAM_CLKISO_BIT;
++		writel(val, ctl_addr);
++		val &= ~PWR_SRAM_ISOINT_B_BIT;
++		writel(val, ctl_addr);
++		udelay(1);
 +	}
 +
-+	prefix_len = strlen(prefix);
-+
-+	of_property_for_each_string(node, "clock-names", prop, clk_name) {
-+		if (!strncmp(clk_name, prefix, prefix_len) &&
-+				(clk_name[prefix_len] == '-')) {
-+			if (sub_clk_cnt >= MAX_SUBSYS_CLKS) {
-+				dev_err(&pdev->dev,
-+					"subsys clk out of range %d\n",
-+					sub_clk_cnt);
-+				return -ENOMEM;
-+			}
-+
-+			clk[sub_clk_cnt] = devm_clk_get(&pdev->dev,
-+						clk_name);
-+
-+			if (IS_ERR(clk)) {
-+				dev_err(&pdev->dev,
-+					"Subsys clk read fail %ld\n",
-+					PTR_ERR(clk));
-+				return PTR_ERR(clk);
-+			}
-+			sub_clk_cnt++;
-+		}
-+	}
-+
-+	return sub_clk_cnt;
-+}
-+
- static void init_clks(struct platform_device *pdev, struct clk **clk)
- {
- 	int i;
-@@ -506,6 +561,7 @@ static struct scp *init_scp(struct platform_device *pdev,
- 		struct scp_domain *scpd = &scp->domains[i];
- 		struct generic_pm_domain *genpd = &scpd->genpd;
- 		const struct scp_domain_data *data = &scp_domain_data[i];
-+		int clk_cnt;
+ 	val = readl(ctl_addr) | scpd->data->sram_pdn_bits;
+ 	writel(val, ctl_addr);
  
- 		pd_data->domains[i] = genpd;
- 		scpd->scp = scp;
-@@ -534,6 +590,18 @@ static struct scp *init_scp(struct platform_device *pdev,
- 						data->basic_clk_id[j]);
- 		}
- 
-+		if (data->subsys_clk_prefix) {
-+			clk_cnt = init_subsys_clks(pdev,
-+					data->subsys_clk_prefix,
-+					scpd->subsys_clk);
-+			if (clk_cnt < 0) {
-+				dev_err(&pdev->dev,
-+					"%s: subsys clk unavailable\n",
-+					data->name);
-+				return ERR_PTR(clk_cnt);
-+			}
-+		}
-+
- 		genpd->name = data->name;
- 		genpd->power_off = scpsys_power_off;
- 		genpd->power_on = scpsys_power_on;
 -- 
 1.8.1.1.dirty
 
