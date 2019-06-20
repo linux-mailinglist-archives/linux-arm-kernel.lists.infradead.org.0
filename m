@@ -2,48 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 469AA4CCD8
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 20 Jun 2019 13:24:31 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 089EE4CCD9
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 20 Jun 2019 13:24:48 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=4g/Z3sSKX1Ay/9ODkuGB4iKs5qfiVDfDLvMwTBshQtw=; b=ZgFbzDv6EU6itP
-	zk7MeqADZbJWRJ+Bye2BRSt6QvV8aclWSpa/WUHsi8sS/xU8QpBb8RXtdVm6PBStcRDzUVyM0iQ9F
-	zAdhHTvfFf60+1DZVRr4azyCYhR9xgIEwN9eWbVk+azXZWTEUIPlc/HY/vzIAjVKkaTuAEKdLhaxo
-	CbProaHruzypQJsWKGCwZGkse6G+D5U4hDzObBcgIJI6UpNjdmORuGIrP4JzYIMVzY2J0Chuaf1xk
-	C3ngfOWoh1O4Tx9uk+xLPMWAxarEk9fDZLdydH39KKIfwgWeYzcpBVbtd+DZEwox2xaIqGkhzwydC
-	ZLLaImhgx4V49dUz6zBw==;
+	List-Owner; bh=IsBol8Hl+XnAj1+eWWURg1palXRaILKZ7oQiZmqEJB0=; b=KJOV95uuOjhk4T
+	gvg2lXH98p9pS128rAzTT8Gtqp8MZXtQ5h8UsMpa5RDT+h79Ck3y5eNWVbHlQ1Qx782MiqiddgDC5
+	tYBbW6V0wHd0akSI5kdC2pAq8hbSholBRa2WYvLYdLCUu6Yep2MdHn2Giu72xPWyjhkehYECtmex0
+	qMNjWwxBl4Sfn2nFsdgRBMFtToXhmKmgsy6Ni9r4TdIAZk1ZrVl2DfQp+cFlbNKYpeb4aVYZhzG1f
+	irTpYGvi+fPXHhEZVERV9lw3ETf64WVsSp+UBWjWB6UzBIKMWE8KQJ2Y7+cPRDlinN/Opfl535DLR
+	D3mNK9QIPzXKPF/zdjrg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hdvB5-00039u-Ds; Thu, 20 Jun 2019 11:24:27 +0000
+	id 1hdvBO-0003Q4-Eu; Thu, 20 Jun 2019 11:24:46 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hdv9w-0002S7-Kr
- for linux-arm-kernel@lists.infradead.org; Thu, 20 Jun 2019 11:23:18 +0000
+ id 1hdv9y-0002S7-8Q
+ for linux-arm-kernel@lists.infradead.org; Thu, 20 Jun 2019 11:23:19 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 3033F142F;
- Thu, 20 Jun 2019 04:23:16 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id D93F91515;
+ Thu, 20 Jun 2019 04:23:17 -0700 (PDT)
 Received: from filthy-habits.cambridge.arm.com
  (filthy-habits.cambridge.arm.com [10.1.197.61])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id AE9A83F718;
- Thu, 20 Jun 2019 04:23:14 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 641BF3F73F;
+ Thu, 20 Jun 2019 04:23:16 -0700 (PDT)
 From: Marc Zyngier <marc.zyngier@arm.com>
 To: Paolo Bonzini <pbonzini@redhat.com>,
  =?UTF-8?q?Radim=20Kr=C4=8Dm=C3=A1=C5=99?= <rkrcmar@redhat.com>
-Subject: [PATCH 3/4] KVM: arm/arm64: vgic: Fix kvm_device leak in
- vgic_its_destroy
-Date: Thu, 20 Jun 2019 12:23:00 +0100
-Message-Id: <20190620112301.138137-4-marc.zyngier@arm.com>
+Subject: [PATCH 4/4] KVM: arm/arm64: Fix emulated ptimer irq injection
+Date: Thu, 20 Jun 2019 12:23:01 +0100
+Message-Id: <20190620112301.138137-5-marc.zyngier@arm.com>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20190620112301.138137-1-marc.zyngier@arm.com>
 References: <20190620112301.138137-1-marc.zyngier@arm.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190620_042316_818729_FEE95BEA 
-X-CRM114-Status: GOOD (  10.16  )
+X-CRM114-CacheID: sfid-20190620_042318_503722_BCC87035 
+X-CRM114-Status: GOOD (  11.70  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -73,42 +72,45 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Dave Martin <Dave.Martin@arm.com>
+From: Andrew Jones <drjones@redhat.com>
 
-kvm_device->destroy() seems to be supposed to free its kvm_device
-struct, but vgic_its_destroy() is not currently doing this,
-resulting in a memory leak, resulting in kmemleak reports such as
-the following:
+The emulated ptimer needs to track the level changes, otherwise the
+the interrupt will never get deasserted, resulting in the guest getting
+stuck in an interrupt storm if it enables ptimer interrupts. This was
+found with kvm-unit-tests; the ptimer tests hung as soon as interrupts
+were enabled. Typical Linux guests don't have a problem as they prefer
+using the virtual timer.
 
-unreferenced object 0xffff800aeddfe280 (size 128):
-  comm "qemu-system-aar", pid 13799, jiffies 4299827317 (age 1569.844s)
-  [...]
-  backtrace:
-    [<00000000a08b80e2>] kmem_cache_alloc+0x178/0x208
-    [<00000000dcad2bd3>] kvm_vm_ioctl+0x350/0xbc0
-
-Fix it.
-
-Cc: Andre Przywara <andre.przywara@arm.com>
-Fixes: 1085fdc68c60 ("KVM: arm64: vgic-its: Introduce new KVM ITS device")
-Signed-off-by: Dave Martin <Dave.Martin@arm.com>
+Fixes: bee038a674875 ("KVM: arm/arm64: Rework the timer code to use a timer_map")
+Signed-off-by: Andrew Jones <drjones@redhat.com>
+[Simplified the patch to res we only care about emulated timers here]
 Signed-off-by: Marc Zyngier <marc.zyngier@arm.com>
 ---
- virt/kvm/arm/vgic/vgic-its.c | 1 +
- 1 file changed, 1 insertion(+)
+ virt/kvm/arm/arch_timer.c | 5 +++--
+ 1 file changed, 3 insertions(+), 2 deletions(-)
 
-diff --git a/virt/kvm/arm/vgic/vgic-its.c b/virt/kvm/arm/vgic/vgic-its.c
-index 44ceaccb18cf..8c9fe831bce4 100644
---- a/virt/kvm/arm/vgic/vgic-its.c
-+++ b/virt/kvm/arm/vgic/vgic-its.c
-@@ -1734,6 +1734,7 @@ static void vgic_its_destroy(struct kvm_device *kvm_dev)
- 
- 	mutex_unlock(&its->its_lock);
- 	kfree(its);
-+	kfree(kvm_dev);/* alloc by kvm_ioctl_create_device, free by .destroy */
+diff --git a/virt/kvm/arm/arch_timer.c b/virt/kvm/arm/arch_timer.c
+index 7fc272ecae16..1b1c449ceaf4 100644
+--- a/virt/kvm/arm/arch_timer.c
++++ b/virt/kvm/arm/arch_timer.c
+@@ -321,14 +321,15 @@ static void kvm_timer_update_irq(struct kvm_vcpu *vcpu, bool new_level,
+ 	}
  }
  
- static int vgic_its_has_attr_regs(struct kvm_device *dev,
++/* Only called for a fully emulated timer */
+ static void timer_emulate(struct arch_timer_context *ctx)
+ {
+ 	bool should_fire = kvm_timer_should_fire(ctx);
+ 
+ 	trace_kvm_timer_emulate(ctx, should_fire);
+ 
+-	if (should_fire) {
+-		kvm_timer_update_irq(ctx->vcpu, true, ctx);
++	if (should_fire != ctx->irq.level) {
++		kvm_timer_update_irq(ctx->vcpu, should_fire, ctx);
+ 		return;
+ 	}
+ 
 -- 
 2.20.1
 
