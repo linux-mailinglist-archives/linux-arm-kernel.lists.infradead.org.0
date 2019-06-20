@@ -2,79 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 78A0F4D0BC
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 20 Jun 2019 16:48:39 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9F9B74D0BD
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 20 Jun 2019 16:48:58 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=qQcBs76/1N+X7WkRF7bE4FQPfcmkuPPk1F4dtb1nZ8E=; b=VffLaI/msIrcWV
-	DrZIRzP3DRGWGo1sSbGmnBevoEKvYWwA/eOaX5GKxOgYokqmHrOcN/07jQkCUQWV5wifaBgkLspDQ
-	Sqq66QNFjIL0SYmCo8LkYDmzvDhsG8VkYQQ5jqT/L5bpHj0gjcJ3ubIrMzZwkwlfMiKCZtcjRdSkU
-	M47PioX7ZZkt5VAxq1CA/CNyhFR5/p3ZKt34gtvp39KzTOeSIGJbaQbTmohD1o2E+RBC0N1o4lIIe
-	+gXp6rxj5EMNPz4+vX2zOT7J36mf5E1+ZRAk6AYX+ozfYYRJbKKYvI3RH1iLHq4LJA3C7ZJB1T3oQ
-	vGtjoG9+ymZQkBweQpww==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=Ve2ZXChfkCywBwo2Nr1l6wXPgX1y/GKog2Ubuk3HjWA=; b=RC8g30JEBJYT3L38reBJ7DxmAX
+	VDff0DLWPIpAbYxFGRHROF1NLjdHYz/Sc87IbKLOYPTIbMEYIiFcpvb6Y2X0ijDwBqg+0Ubctig1I
+	xvYmJh+GHrN6v9i5Yf1j868tD/DD+nrZ6uS9Y6colwzXkPtqdnewlVFpHsAFpbDDyxwq9DIau0QHV
+	OH/GV/DzKXfKbHO2sebTXBUtOWP/zPNiyLRqlHNYlgKAqOTHGicYaqGwYxn1w3ISw6JYAY78bg8f5
+	hrX/UTRt98FS0bj7HXNdTyHUvP625MWnS+UXGpWe6f89KY2aPZRe6eBokdOPkjs2rmusFY4hg+FJh
+	Q/2BAhoA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hdyMd-0003lw-HY; Thu, 20 Jun 2019 14:48:35 +0000
-Received: from mail-lj1-x244.google.com ([2a00:1450:4864:20::244])
+	id 1hdyMz-00042q-4Q; Thu, 20 Jun 2019 14:48:57 +0000
+Received: from mail-lj1-x243.google.com ([2a00:1450:4864:20::243])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hdyMC-0003iL-Q2
+ id 1hdyMD-0003ix-LW
  for linux-arm-kernel@lists.infradead.org; Thu, 20 Jun 2019 14:48:10 +0000
-Received: by mail-lj1-x244.google.com with SMTP id v24so2928431ljg.13
+Received: by mail-lj1-x243.google.com with SMTP id 16so2948725ljv.10
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 20 Jun 2019 07:48:08 -0700 (PDT)
+ Thu, 20 Jun 2019 07:48:09 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=GrUwatgKfRETWcIOI87bY9cay5YKvy8zjzEuCkPjsuY=;
- b=a/o6N+hTwZ+lrx5CJoloqhlv1pHvXMtuoxcloninxKoLN0WQs14UVYgEdzCYSH7Pcz
- plJWpf8NGVOLqb5GNQd6RLqbQxiUrPEvjlMwlc56+w2MP+olNvYvNZpPWPH7gF1f9h/y
- 4ROsSck7mpEnLBhsWqC+FOrhRjqCjA17/vuGJkv3LW7ufo+KI+XjKD8AXRuRVciENi9t
- 7NuBb4EVUXd5XDJG3ClAtIpdyOqwkSy58s3/eGN1UzQ9C9tTYYGjyqtKUWG9tEP47B5h
- UZ5ATVAI5G1PyYn0Tz72gvseK6ws9wJLN2vBsYq2H3PdAzk+wp6d9Gok3IRWsI9bmxmk
- YJLg==
+ h=from:to:cc:subject:date:message-id:in-reply-to:references;
+ bh=SMvfNXrBGoXH5Rlv9ONYJ/L8T8ix7gsLxKZmilMNxjo=;
+ b=aqRlB+88y7te1IyXTJCENFWgDaJpY4yVvKtbZbxKe26ehEh2Xo9cv16sRswEyd1jD3
+ DtKwsymBxxPKb1vvY8jYXdo6bo6sgsQFjIlwHGGgcsLOMEWMQW1b2kP/+VP8FQI24AKL
+ mbm54fHZ9EqlQC76uDpkj430XOanlM7xc1lxJQi81T+4l1SmY1bTj3yuW65KdPkJXD5I
+ 5yvmA8XLP7qkEHuvHbm7XhJtPUQACMxxWUeIZ4KCTM/ktS61iRM+Jsnvggo0XHG1gczY
+ IiOYjKMOtcOrILvlt8XDH34ictcBvOi+O4R5oB6oFREYtUgiFxhLD7lO3RJsen1Gs25k
+ y3HQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=GrUwatgKfRETWcIOI87bY9cay5YKvy8zjzEuCkPjsuY=;
- b=GYyLx2aFIo3kJk8fnbQbXZlCDjG7aRfR7Fnf13r4KX2p+i2VIFARbW8P257F4ttxru
- eJWccAg7RU8l4Y2LW5dyCL+FGvhXNHLVSLwM9ghlFsb9xLZShnbGctYLA4MZ1/Zmp08o
- Xuu65rkLzUdtJ0B8/zF+XIF3wPZX9nAvHhNTifyBGG4XWsx3fsFjM0yqUOVldiA51SEd
- BWuljxZGI/qI/1sQhSgNy6DJdIbb9o0MTPPSBQXMRVBFFsVDFq9uj7F4ODMnk7WXHhbm
- Jv/JhrdkrC2xxJv8B40HCHuGCWnZiXskP1axp/TetCiIrl9XaciRiVZCcd9qQmLXmQtQ
- RY6g==
-X-Gm-Message-State: APjAAAVvYhPHOvYNtHretsDlNk6cdcJVWHOgTFZec3I9z7Tpu1gORSjc
- l8MGjPTNGoTbr3h1pbnrlDQ=
-X-Google-Smtp-Source: APXvYqyK/pqyU6S3QbQf7S/2Ho1sMdLUU9XqeUG1Z4xZ49ccKg246cCv6SsEfL0ddj1t4c2Em2upYg==
-X-Received: by 2002:a2e:8613:: with SMTP id a19mr8732452lji.163.1561042086924; 
- Thu, 20 Jun 2019 07:48:06 -0700 (PDT)
+ :references;
+ bh=SMvfNXrBGoXH5Rlv9ONYJ/L8T8ix7gsLxKZmilMNxjo=;
+ b=QFHaunApYoOkiKeLkir0ZFvwqBZzQQrv3MN/s8olEhHUlPalS9HoZlcfCeW0WXhmXh
+ 1Iw6ezTBCmtdaVzvNRSbPdTcBgKWsEuGLOyOJJ0RybGpumKm2xIuPD0XNWm3aMUwifxZ
+ ppZfI5iihzlRLRx2K7lgPb9Xa4qxiEdaIMWOM6rgbnzxnXJabAv0MonotSh+t/AdgpSk
+ iiSSF1oDKqaiMJS9Tb6Fs4mektlwCL6Olq2qbb4ceIUp+lZ2bMhqlgpP7YO9jZcVK+Am
+ FUVY4VgBv1mRULCqFP91y3R8XHZXDNMN44Qp7oeoJNLepv+0rILTtL5yXAumd0VSR8fG
+ wTxQ==
+X-Gm-Message-State: APjAAAWQxx/SjBbCxyFwqx9xoL3cgkq/Kx2istDSmyzAw9jOOYiYB6oi
+ j6vU8XH78HBOHl8ZZkTBOiI=
+X-Google-Smtp-Source: APXvYqzDfRIywJKMMIfRolNAT3UYVW4ndj63y5PejziUGG/Me/WSmmsouEJI9FwyllAa+MIvX/MpGA==
+X-Received: by 2002:a2e:8559:: with SMTP id u25mr22892247ljj.224.1561042087903; 
+ Thu, 20 Jun 2019 07:48:07 -0700 (PDT)
 Received: from osv.localdomain ([89.175.180.246])
  by smtp.gmail.com with ESMTPSA id f10sm3577768ljk.95.2019.06.20.07.48.06
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-SHA bits=128/128);
- Thu, 20 Jun 2019 07:48:06 -0700 (PDT)
+ Thu, 20 Jun 2019 07:48:07 -0700 (PDT)
 From: Sergey Organov <sorganov@gmail.com>
 To: Sascha Hauer <s.hauer@pengutronix.de>
-Subject: [PATCH RFC v1 0/7] serial: imx: fix RTS and RTS/CTS handling
-Date: Thu, 20 Jun 2019 17:47:46 +0300
-Message-Id: <1561042073-617-1-git-send-email-sorganov@gmail.com>
+Subject: [PATCH RFC v1 1/7] serial: imx: fix locking in set_termios()
+Date: Thu, 20 Jun 2019 17:47:47 +0300
+Message-Id: <1561042073-617-2-git-send-email-sorganov@gmail.com>
 X-Mailer: git-send-email 2.1.4
-In-Reply-To: <20190614072801.3187-1-s.hauer@pengutronix.de>
+In-Reply-To: <1561042073-617-1-git-send-email-sorganov@gmail.com>
 References: <20190614072801.3187-1-s.hauer@pengutronix.de>
-MIME-Version: 1.0
+ <1561042073-617-1-git-send-email-sorganov@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190620_074808_887917_91609855 
-X-CRM114-Status: GOOD (  10.09  )
+X-CRM114-CacheID: sfid-20190620_074809_712419_AFB0C152 
+X-CRM114-Status: GOOD (  13.52  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:244 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:243 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -102,39 +102,92 @@ Cc: Pengutronix Kernel Team <kernel@pengutronix.de>,
  NXP Linux Team <linux-imx@nxp.com>, linux-arm-kernel@lists.infradead.org,
  linux-serial@vger.kernel.org,
  =?UTF-8?q?Uwe=20Kleine-K=C3=B6nig?= <u.kleine-koenig@pengutronix.de>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-VGhlIHBhdGNoZXMgYXJlIG5vdCB0ZXN0ZWQgeWV0LCBzbyB0aGUgUkZDIGluIHRoZSBoZWFkZXIu
-IEknbGwgcmUtcm9sbAp3aXRob3V0IFJGQyBvbmNlIFNhc2hhIEhhdWVyIHRlc3RzIHRoZW0uCgpT
-YXNoYSwgaW4gYWRkaXRpb24gdG8gYWxyZWFkeSBkaXNjdXNzZWQgZml4ZXMsIEkndmUgYWxzbyBy
-ZW9yZGVyZWQgMgpwYXRjaGVzIHNvIHRoYXQgdGhlIHNlcXVlbmNlIG1ha2VzIHNlbnNlLgoKQ2hh
-bmdlbG9nOgoKICB2MToKCiAgICAgICogRml4ZWQgaW4gInNlcmlhbDogaW14OiBzZXRfdGVybWlv
-cygpOiBwcmVzZXJ2ZSBSVFMgc3RhdGUiCgotKwl1Y3IyID0gVUNSMl9TUlNUIHwgVUNSMl9JUlRT
-OworKwl1Y3IyIHw9IFVDUjJfU1JTVCB8IFVDUjJfSVJUUzsKICAgICAgCiAgICAgICAgYXMgbm90
-aWNlZCBieSBMb3RoYXIgV2HDn21hbm4gPExXQEtBUk8tZWxlY3Ryb25pY3MuZGU+CgogICAgICAq
-IEZpeGVkIGluICJzZXJpYWw6IGlteDogc2V0X3Rlcm1pb3MoKTogcHJlc2VydmUgUlRTIHN0YXRl
-IgogICAgICAKLSsJdWNyMiA9IG9sZF91Y3IyICYgKFVDUjJfVFhFTiB8IFVDUjJfUlhFTiB8IFVD
-UjJfQVRFTiB8IFVDUjJfQ1RTQyk7CisrCXVjcjIgPSBvbGRfdWNyMiAmIChVQ1IyX1RYRU4gfCBV
-Q1IyX1JYRU4gfCBVQ1IyX0FURU4gfCBVQ1IyX0NUUyk7CgogICAgICAgIGFzIHRoZSBmaXggZm9y
-IHRoZSBwcm9ibGVtIGZvdW5kIGJ5IFNhc2NoYSBIYXVlcgogICAgICAgIDxzLmhhdWVyQHBlbmd1
-dHJvbml4LmRlPgoKICAgICAgKiBSZW9yZGVyZWQ6CgogICAgICAgIHNlcmlhbDogaW14OiBzZXRf
-dGVybWlvcygpOiBwcmVzZXJ2ZSBSVFMgc3RhdGUKICAgICAgICBzZXJpYWw6IGlteDogc2V0X3Rl
-cm1pb3MoKTogZG8gbm90IGVuYWJsZSBhdXRvUlRTIGlmIFJUUyBpcyB1bnNldAoKICAgICAgICBh
-cyB0aGUgbGF0dGVyIG1ha2VzIHNlbnNlIG9ubHkgcHJvdmlkZWQgdGhlIGZvcm1lciBpcyBhbHJl
-YWR5IGFwcGxpZWQuCiAgICAgIAoKU2VyZ2V5IE9yZ2Fub3YgKDcpOgogIHNlcmlhbDogaW14OiBm
-aXggbG9ja2luZyBpbiBzZXRfdGVybWlvcygpCiAgc2VyaWFsOiBpbXg6IHNldF90ZXJtaW9zKCk6
-IGZhY3Rvci1vdXQgJ3VjcjInIGluaXRpYWwgdmFsdWUKICBzZXJpYWw6IGlteDogc2V0X3Rlcm1p
-b3MoKTogY2xhcmlmeSBSVFMvQ1RTIGJpdHMgY2FsY3VsYXRpb24KICBzZXJpYWw6IGlteDogc2V0
-X3Rlcm1pb3MoKTogcHJlc2VydmUgUlRTIHN0YXRlCiAgc2VyaWFsOiBpbXg6IHNldF90ZXJtaW9z
-KCk6IGRvIG5vdCBlbmFibGUgYXV0b1JUUyBpZiBSVFMgaXMgdW5zZXQKICBzZXJpYWw6IGlteDog
-c2V0X21jdHJsKCk6IGNvcnJlY3RseSByZXN0b3JlIGF1dG9SVFMgc3RhdGUKICBzZXJpYWw6IGlt
-eDogZ2V0IHJpZCBvZiBpbXhfdWFydF9ydHNfYXV0bygpCgogZHJpdmVycy90dHkvc2VyaWFsL2lt
-eC5jIHwgOTMgKysrKysrKysrKysrKysrKysrKysrKysrLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0t
-CiAxIGZpbGUgY2hhbmdlZCwgNDcgaW5zZXJ0aW9ucygrKSwgNDYgZGVsZXRpb25zKC0pCgotLQoy
-LjEwLjAuMS5nNTdiMDFhMwoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBs
-aXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlz
-dGluZm8vbGludXgtYXJtLWtlcm5lbAo=
+imx_uart_set_termios() called imx_uart_rts_active(), or
+imx_uart_rts_inactive() before taking port->port.lock.
+
+As a consequence, sport->port.mctrl that these functions modify
+could have been changed without holding port->port.lock.
+
+Moved locking of port->port.lock above the calls to fix the issue.
+
+Signed-off-by: Sergey Organov <sorganov@gmail.com>
+---
+ drivers/tty/serial/imx.c | 23 +++++++++++++----------
+ 1 file changed, 13 insertions(+), 10 deletions(-)
+
+diff --git a/drivers/tty/serial/imx.c b/drivers/tty/serial/imx.c
+index dff75dc..1055124 100644
+--- a/drivers/tty/serial/imx.c
++++ b/drivers/tty/serial/imx.c
+@@ -383,6 +383,7 @@ static void imx_uart_ucrs_restore(struct imx_port *sport,
+ }
+ #endif
+ 
++/* called with port.lock taken and irqs caller dependent */
+ static void imx_uart_rts_active(struct imx_port *sport, u32 *ucr2)
+ {
+ 	*ucr2 &= ~(UCR2_CTSC | UCR2_CTS);
+@@ -391,6 +392,7 @@ static void imx_uart_rts_active(struct imx_port *sport, u32 *ucr2)
+ 	mctrl_gpio_set(sport->gpios, sport->port.mctrl);
+ }
+ 
++/* called with port.lock taken and irqs caller dependent */
+ static void imx_uart_rts_inactive(struct imx_port *sport, u32 *ucr2)
+ {
+ 	*ucr2 &= ~UCR2_CTSC;
+@@ -400,6 +402,7 @@ static void imx_uart_rts_inactive(struct imx_port *sport, u32 *ucr2)
+ 	mctrl_gpio_set(sport->gpios, sport->port.mctrl);
+ }
+ 
++/* called with port.lock taken and irqs caller dependent */
+ static void imx_uart_rts_auto(struct imx_port *sport, u32 *ucr2)
+ {
+ 	*ucr2 |= UCR2_CTSC;
+@@ -1550,6 +1553,16 @@ imx_uart_set_termios(struct uart_port *port, struct ktermios *termios,
+ 		old_csize = CS8;
+ 	}
+ 
++	del_timer_sync(&sport->timer);
++
++	/*
++	 * Ask the core to calculate the divisor for us.
++	 */
++	baud = uart_get_baud_rate(port, termios, old, 50, port->uartclk / 16);
++	quot = uart_get_divisor(port, baud);
++
++	spin_lock_irqsave(&sport->port.lock, flags);
++
+ 	if ((termios->c_cflag & CSIZE) == CS8)
+ 		ucr2 = UCR2_WS | UCR2_SRST | UCR2_IRTS;
+ 	else
+@@ -1593,16 +1606,6 @@ imx_uart_set_termios(struct uart_port *port, struct ktermios *termios,
+ 			ucr2 |= UCR2_PROE;
+ 	}
+ 
+-	del_timer_sync(&sport->timer);
+-
+-	/*
+-	 * Ask the core to calculate the divisor for us.
+-	 */
+-	baud = uart_get_baud_rate(port, termios, old, 50, port->uartclk / 16);
+-	quot = uart_get_divisor(port, baud);
+-
+-	spin_lock_irqsave(&sport->port.lock, flags);
+-
+ 	sport->port.read_status_mask = 0;
+ 	if (termios->c_iflag & INPCK)
+ 		sport->port.read_status_mask |= (URXD_FRMERR | URXD_PRERR);
+-- 
+2.10.0.1.g57b01a3
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
