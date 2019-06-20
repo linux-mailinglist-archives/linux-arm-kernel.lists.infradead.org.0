@@ -2,59 +2,63 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 04E534CD0C
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 20 Jun 2019 13:41:37 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 041764CD18
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 20 Jun 2019 13:48:44 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=mgqbQy0ChKhpJEgIJavod6IRviEZJ/eXHD6Xf2SLBKw=; b=sIWt5LCJw3nqy4
-	1PPe21+x5VDrxJ965drhHzNTl11aL0v9r9dAqYaIouCHHfdxz44TMnUrvmA3zC83MlDZ8cM6+NraG
-	FddVpHzSEtQypiki+jpgFhJO29azh3r6C4GIV3wMCWkjEMlITlN1ou3HFeF90D4hFL+s31lBtp2gC
-	Rzr3wKx7r6w0eiQpkcurySwobEc6dgmIpKS2EyUJt4ErnikISJgfGlH3hh7mpbgUZQZp39eiv19mn
-	uk07pyJzbZOAB8ixsk7VEfjmgSBokQDCK8jZaoqe7t40AWx/m/Uq8ZHgA83V2SvPv+p+CLjK5/zaX
-	SRAsSHmRvXG9f510pj8A==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=O7ii6U/WbxfrK0ncU9Lu/WO1NOLViWJjl0zERaO+8KA=; b=J2G83SxKNzt6nn
+	W023cSeO87NvzV4rC1Kh4bYYt/R2Nxn0R1K3zlbvReyFreWPC/z9/96CD9aZh6QV4ydVXtSAFRrjH
+	jgD4wQrkyKJgtHGPPSB+Z69iChN27t+DKte6pZtmIGtkHBINU/X9Be4oQr6dl1N5Psn0/0PRThVWA
+	JMj9PAOlNKC++pBlkC0Txxff8PmSzOlM4t58IHM15mWmkW4n5ju9auBKAPTHF0C9HyF2IRr2Pa3WQ
+	GPdBckiR2RaclFSsskfPu8Yrb6MuEM96wO4vzzTuHPVT6XfpRv5k1IUz3YPXhKTDxmr/yTWKDL6iE
+	hUwQCZtVgoUyPuAsaxUQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hdvRe-0001a4-NA; Thu, 20 Jun 2019 11:41:35 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hdvRQ-0001Ze-1b
- for linux-arm-kernel@lists.infradead.org; Thu, 20 Jun 2019 11:41:21 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 672BF360;
- Thu, 20 Jun 2019 04:41:19 -0700 (PDT)
-Received: from localhost (unknown [10.37.6.20])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id DAB893F718;
- Thu, 20 Jun 2019 04:41:18 -0700 (PDT)
-Date: Thu, 20 Jun 2019 12:41:17 +0100
-From: Andrew Murray <andrew.murray@arm.com>
-To: Mathieu Poirier <mathieu.poirier@linaro.org>
-Subject: Re: [PATCH v1 5/5] coresight: etm4x: save/restore state across CPU
- low power states
-Message-ID: <20190620114116.GE20984@e119886-lin.cambridge.arm.com>
-References: <20190618125433.9739-1-andrew.murray@arm.com>
- <20190618125433.9739-6-andrew.murray@arm.com>
- <20190618132159.GA18121@e107155-lin>
- <15ef45d4-ee1a-3c45-878d-f08f0a84cfeb@arm.com>
- <20190619110749.GD1360@e107155-lin>
- <CANLsYkw-KhMVgTfyBSF4-uv4wxQBBQfzyvVbAnaFSqHhkgX6Mg@mail.gmail.com>
+	id 1hdvYX-0003WX-DI; Thu, 20 Jun 2019 11:48:41 +0000
+Received: from shell.v3.sk ([90.176.6.54])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hdvYK-0003VU-Bw
+ for linux-arm-kernel@lists.infradead.org; Thu, 20 Jun 2019 11:48:30 +0000
+Received: from localhost (localhost [127.0.0.1])
+ by zimbra.v3.sk (Postfix) with ESMTP id E3BB0CC114;
+ Thu, 20 Jun 2019 13:48:21 +0200 (CEST)
+Received: from shell.v3.sk ([127.0.0.1])
+ by localhost (zimbra.v3.sk [127.0.0.1]) (amavisd-new, port 10032)
+ with ESMTP id mjjGVXUkeHZO; Thu, 20 Jun 2019 13:48:19 +0200 (CEST)
+Received: from localhost (localhost [127.0.0.1])
+ by zimbra.v3.sk (Postfix) with ESMTP id A4BABCC073;
+ Thu, 20 Jun 2019 13:48:19 +0200 (CEST)
+X-Virus-Scanned: amavisd-new at zimbra.v3.sk
+Received: from shell.v3.sk ([127.0.0.1])
+ by localhost (zimbra.v3.sk [127.0.0.1]) (amavisd-new, port 10026)
+ with ESMTP id yRqnqWP2PzPw; Thu, 20 Jun 2019 13:48:18 +0200 (CEST)
+Received: from belphegor.brq.redhat.com (nat-pool-brq-t.redhat.com
+ [213.175.37.10])
+ by zimbra.v3.sk (Postfix) with ESMTPSA id 973DACC12B;
+ Thu, 20 Jun 2019 13:48:18 +0200 (CEST)
+From: Lubomir Rintel <lkundrak@v3.sk>
+To: Olof Johansson <olof@lixom.net>
+Subject: [PATCH] ARM: multi_v7_defconfig: enable MMP2 platform
+Date: Thu, 20 Jun 2019 13:48:16 +0200
+Message-Id: <20190620114816.1387881-1-lkundrak@v3.sk>
+X-Mailer: git-send-email 2.21.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CANLsYkw-KhMVgTfyBSF4-uv4wxQBBQfzyvVbAnaFSqHhkgX6Mg@mail.gmail.com>
-User-Agent: Mutt/1.10.1+81 (426a6c1) (2018-08-26)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190620_044120_178650_7DC0B550 
-X-CRM114-Status: GOOD (  34.67  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190620_044828_568476_73C32733 
+X-CRM114-Status: UNSURE (   5.49  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.8 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (0.8 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.8 UPPERCASE_50_75        message body is 50-75% uppercase
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -66,140 +70,96 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Al Grant <Al.Grant@arm.com>, Suzuki K Poulose <suzuki.poulose@arm.com>,
- Alexander Shishkin <alexander.shishkin@linux.intel.com>,
- Sudeep Holla <sudeep.holla@arm.com>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
- Mike Leach <mike.leach@linaro.org>
+Cc: Lubomir Rintel <lkundrak@v3.sk>, Russell King <linux@armlinux.org.uk>,
+ linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Jun 19, 2019 at 10:22:58AM -0600, Mathieu Poirier wrote:
-> On Wed, 19 Jun 2019 at 05:07, Sudeep Holla <sudeep.holla@arm.com> wrote:
-> >
-> > On Wed, Jun 19, 2019 at 11:38:12AM +0100, Suzuki K Poulose wrote:
-> > > Cc: Al Grant, Mike Leach
-> > >
-> > > Hi Sudeep,
-> > >
-> > > On 18/06/2019 14:21, Sudeep Holla wrote:
-> > > > On Tue, Jun 18, 2019 at 01:54:33PM +0100, Andrew Murray wrote:
-> > > > > Some hardware will ignore bit TRCPDCR.PU which is used to signal
-> > > > > to hardware that power should not be removed from the trace unit.
-> > > >
-> > > > So, how or can we identify or discover such system ? DT/ACPI ?
-> > > >
-> > >
-> > > I don't think there is a mechanism at the moment to identify such
-> > > systems. But if we really need to know this information, we could
-> > > always think about it.
-> > >
-> >
-> > I prefer that as we shouldn't systems that are not broken.
-> >
-> > > > > Let's mitigate against this by saving and restoring the trace
-> > > > > unit state when the CPU enters low power states.
-> > > > >
-> > > >
-> > > > I prefer to do this conditionally. It's unnecessary on systems which
-> > > > don't ignore the TRCPDCR.PU and I really don't like them to be penalised
-> > > > while we want to add this support for *broken* systems.
-> > >
-> > > It is conditional. i.e, you may disable the operation using a kernel/module
-> > > parameter, which I think should be mentioned in the description here.
-> > >
-> >
-> > Why should the user of coresight need to know if the corresponding
-> > hardware module is broken or not. I prefer the firmware tell OS.
-> 
-> I think using ACPI/DT is the best and simplest solution.
+Marvell MMP/PXA/MMP2 platforms seem to be excluded from the defconfig
+for no good reasons. Enable the DT-based boards and the modules for
+their peripherals.
 
-I certainly agree that it feels wrong to have a default level of support
-which is targeted at broken systems. However the penalty (latency) for doing so
-doesn't seem high - seeing as this only effects users that are actively using
-coresight (I assume self hosted mode is only used as a debug tool, rather than to
-obtain metrics during normal use?).
+Signed-off-by: Lubomir Rintel <lkundrak@v3.sk>
+---
+ arch/arm/configs/multi_v7_defconfig | 11 +++++++++++
+ 1 file changed, 11 insertions(+)
 
-Adding some broken tag in ACPI/DT seems like a good solution - assuming it will
-get adopted and used in systems. The existing "disable_pm_save" module option
-can be renamed to "enable_pm_save" for those that have less control of their
-firmware.
+diff --git a/arch/arm/configs/multi_v7_defconfig b/arch/arm/configs/multi_v7_defconfig
+index 6b748f214eae..ef91f41bd48a 100644
+--- a/arch/arm/configs/multi_v7_defconfig
++++ b/arch/arm/configs/multi_v7_defconfig
+@@ -51,6 +51,8 @@ CONFIG_ARCH_MEDIATEK=y
+ CONFIG_ARCH_MESON=y
+ CONFIG_ARCH_MILBEAUT=y
+ CONFIG_ARCH_MILBEAUT_M10V=y
++CONFIG_ARCH_MMP=y
++CONFIG_MACH_MMP2_DT=y
+ CONFIG_ARCH_MVEBU=y
+ CONFIG_MACH_ARMADA_370=y
+ CONFIG_MACH_ARMADA_375=y
+@@ -278,6 +280,7 @@ CONFIG_INPUT_EVDEV=y
+ CONFIG_KEYBOARD_QT1070=m
+ CONFIG_KEYBOARD_GPIO=y
+ CONFIG_KEYBOARD_TEGRA=y
++CONFIG_KEYBOARD_PXA27x=m
+ CONFIG_KEYBOARD_SAMSUNG=m
+ CONFIG_KEYBOARD_ST_KEYSCAN=y
+ CONFIG_KEYBOARD_SPEAR=y
+@@ -312,6 +315,7 @@ CONFIG_SERIAL_8250_EM=y
+ CONFIG_SERIAL_8250_OMAP=y
+ CONFIG_SERIAL_8250_MT6577=y
+ CONFIG_SERIAL_8250_UNIPHIER=y
++CONFIG_SERIAL_8250_PXA=m
+ CONFIG_SERIAL_OF_PLATFORM=y
+ CONFIG_SERIAL_AMBA_PL011=y
+ CONFIG_SERIAL_AMBA_PL011_CONSOLE=y
+@@ -589,6 +593,7 @@ CONFIG_VIDEO_V4L2_SUBDEV_API=y
+ CONFIG_MEDIA_USB_SUPPORT=y
+ CONFIG_USB_VIDEO_CLASS=m
+ CONFIG_V4L_PLATFORM_DRIVERS=y
++CONFIG_VIDEO_MMP_CAMERA=m
+ CONFIG_VIDEO_STM32_DCMI=m
+ CONFIG_VIDEO_SAMSUNG_EXYNOS4_IS=m
+ CONFIG_VIDEO_S5P_FIMC=m
+@@ -681,6 +686,9 @@ CONFIG_SND_ATMEL_SOC_PDMIC=m
+ CONFIG_SND_ATMEL_SOC_I2S=m
+ CONFIG_SND_BCM2835_SOC_I2S=m
+ CONFIG_SND_SOC_FSL_SAI=m
++CONFIG_SND_MMP_SOC=y
++CONFIG_SND_PXA_SOC_SSP=m
++CONFIG_SND_PXA910_SOC=m
+ CONFIG_SND_SOC_ROCKCHIP=m
+ CONFIG_SND_SOC_ROCKCHIP_SPDIF=m
+ CONFIG_SND_SOC_ROCKCHIP_MAX98090=m
+@@ -719,6 +727,7 @@ CONFIG_USB_EHCI_HCD=y
+ CONFIG_USB_EHCI_HCD_STI=y
+ CONFIG_USB_EHCI_TEGRA=y
+ CONFIG_USB_EHCI_EXYNOS=y
++CONFIG_USB_EHCI_MV=m
+ CONFIG_USB_OHCI_HCD=y
+ CONFIG_USB_OHCI_HCD_STI=y
+ CONFIG_USB_OHCI_EXYNOS=m
+@@ -788,6 +797,7 @@ CONFIG_MMC_SDHCI_DOVE=y
+ CONFIG_MMC_SDHCI_TEGRA=y
+ CONFIG_MMC_SDHCI_S3C=y
+ CONFIG_MMC_SDHCI_PXAV3=y
++CONFIG_MMC_SDHCI_PXAV2=m
+ CONFIG_MMC_SDHCI_SPEAR=y
+ CONFIG_MMC_SDHCI_S3C_DMA=y
+ CONFIG_MMC_SDHCI_BCM_KONA=y
+@@ -853,6 +863,7 @@ CONFIG_RTC_DRV_DA9063=m
+ CONFIG_RTC_DRV_EFI=m
+ CONFIG_RTC_DRV_DIGICOLOR=m
+ CONFIG_RTC_DRV_S3C=m
++CONFIG_RTC_DRV_SA1100=m
+ CONFIG_RTC_DRV_PL031=y
+ CONFIG_RTC_DRV_AT91RM9200=m
+ CONFIG_RTC_DRV_AT91SAM9=m
+-- 
+2.21.0
 
-Unless of course we think it's unlikely we'll ever see hardware that isn't
-broken - I don't have enough knowledge of how likely or not this is.
-
-Another solution might be to enable save/restore by default (as it is now),
-and then on resume we read the hardware registers to determine if state was
-lost. If it wasn't lost then we can disable the save/restore feature. (Though
-is it possible for systems to be partly broken, e.g. working for some CPUs
-but not others?). With this approach on good systems you only get penalised
-once.
-
-> 
-> >
-> > > >
-> > > > This is generally most useful to debug CPU suspend/resume exercising
-> > > > the code path completely with emulated CPU power on/off as most of the
-> > > > systems have the trace unit and the CPUs in the same power domain.
-> > >
-> > > I understand, which is specifically why this comes with an option to handle
-> > > such cases.
-> > >
-> >
-> > OK
-
-I'll update the cover letter and commit messages to reflect that this
-option is present. (And likewise for conditionally saving/restoring the
-registers only if coresight is in use).
-
-> >
-> > > >
-> > > > Just curious if this reported on any platforms ?
-> > > >
-> > >
-> > > I have heard people complaining about this, but not sure about the exact
-> > > platform(s) affected.
-> 
-> Are you referring to platforms that ignore the TRCPDCR.PU bit?  If so
-> Juno is the only one that does _not_ ignore it, hence the need to find
-> another solution.
-> 
-> > >
-> >
-> > One we add mechanism in place, platform need to advertise that it's
-> > broken in firmware(DT/ACPI). Or just have a blacklist if we don't
-> > want to add anything extra to the firmware(DT/ACPI) ?
-> >
-> > > > I wounder if we can use TRCPDSR(Power Down Status Register) to check the
-> > > > status. I know on Juno, it doesn't loose context rather the power down
-> > > > is emulated and saving/restoring may not be needed at all. Have you
-> > > > tested on Juno with and without these patches and seen any difference ?
-> > >
-> > > The problem is trace unit looses power the moment CPU goes to low power mode
-> > > and if we try to read this register, it could cause unexpected side-effects.
-> > >
-> >
-> > No I meant before CPU loose power i.e. in CPU_ENTER case. However I do
-> > remember you/Andrew mentioning that even that may be bogus on broken
-> > systems, so firmware is only way to avoid penalising all platforms IMO.
-> 
-> I wouldn't assume that anything is working properly.
-
-Thanks,
-
-Andrew Murray
-
-> 
-> >
-> > Or other option is to stop the coresight tracing session like we do
-> > for PMUs or not entering idle when there's any active coresight session
-> > in progress on such platforms.
-> >
-> > --
-> > Regards,
-> > Sudeep
 
 _______________________________________________
 linux-arm-kernel mailing list
