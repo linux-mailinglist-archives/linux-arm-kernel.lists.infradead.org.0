@@ -2,89 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 857BA4CE9A
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 20 Jun 2019 15:25:08 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DD48D4CECF
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 20 Jun 2019 15:34:34 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:In-Reply-To:
-	Date:References:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=KZn1S8GVwmcjVuwSlxaew7tvaZde74o8c+AHmIGoIDA=; b=DRCePZ4NOQxlk/
-	PFjF6idMFAzHrZ2nKMTXm9JZAo403VkHmAVeADiOpUoT41ShrQUE8MJjPDpgUsXIGG9SGRrMD2xAl
-	+39KYbeAbap6bvZIVeBAYHvJQ5zANkiHw7cEcZ4Fai6h4dxlNIp5nQlsvulRE58tFh03KtGi1j8xc
-	hNZIQA2Unv73rbyeKC4BLSxTfbw4W4a2aXamsZsuHYWJCh4NTKqmRVszO8txNbp8h0mM3LCFQBLOo
-	RkFaQQ6CI/uOYKXjnahjfKefUe3m19NSOjncVRyjtzEkC3gr9+OB9khiCsa20env/5Gwz86OUGHKu
-	uOPajGmoMT2jBn3c6CLw==;
+	List-Owner; bh=nWx85fJyK18jC0dglKFGQmVJULWpTKaP9dYfqk/7ikU=; b=oopGfthMgHyRq0
+	VJDbCFpBK9GzLjLMgVcT9hcwNCzVdx0gJGTZAwVwbkh9S7x+2F/DXtPMje02SQuES4FrXNOIcftep
+	UflbC51T1+xXx5H1U54zvIZ0AodJe7W0OGtpkdGvYGKT1+RryBHKWN7hEBCUEKFnT3WZbF5oPv1oN
+	afDaEf1z8kws6NILyIeVkSwoXKlnWiRiX/0AmKTCR/OBMSaRjaOuqkmPJpF6XtMD4Vnf01FskNk15
+	hvQlc13MzwV/MXZdRFYiMh6R2YJg5Nbb7UD2qQVfiQkKPHh5cxPmUMwEs0mPfap7KhXr85tOX/xl0
+	aUk9Y55/jJhJzZjA2Z3A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hdx3p-0006Q7-Tn; Thu, 20 Jun 2019 13:25:06 +0000
-Received: from mail-lj1-x242.google.com ([2a00:1450:4864:20::242])
+	id 1hdxCx-0001oW-0u; Thu, 20 Jun 2019 13:34:31 +0000
+Received: from mail-vs1-xe43.google.com ([2607:f8b0:4864:20::e43])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hdx3H-0006KY-4r
- for linux-arm-kernel@lists.infradead.org; Thu, 20 Jun 2019 13:24:35 +0000
-Received: by mail-lj1-x242.google.com with SMTP id m23so2652106lje.12
+ id 1hdxCg-0001nj-0M
+ for linux-arm-kernel@lists.infradead.org; Thu, 20 Jun 2019 13:34:15 +0000
+Received: by mail-vs1-xe43.google.com with SMTP id v129so1536435vsb.11
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 20 Jun 2019 06:24:30 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:references:date:in-reply-to:message-id
- :user-agent:mime-version;
- bh=HhLOhhYqBLdrOA1DogbXLLJ4Nwua7/IpCpsFyqMX/RE=;
- b=OQbS3l0nVh3zF87ojg/qhcxYenR8iup8Vtb90TVGwu7UHWK9XJmK3vl7W6Nbr/Ul7E
- UW4yi7cZY8ucWwstC0y1RilHdjcFDrJal+CFfKyI5agxLcq4eLSvt3zmIQ9K2ePEuTaq
- fNhv5CU5SDBdmy8ZRhbpkzU17kxPBq8oOP9ryIXnS2pJB/xkGSSIgK9rdPJ8Mj+NATFu
- 8g38rpQtBir3QgBe9RduxuIEHM7knENHWJzpocotTrwXsbMtPsmbJLDx5JvcvgBl+tmh
- ezH0/fUvxi34Svds5r64S8+f39zxVPzD0oIODrxGozpyx5nUbb15ZEbB4JYR7DFIR7IA
- 7bUA==
+ Thu, 20 Jun 2019 06:34:12 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=lc/q2X+pawBjOcnjA6oAKxvqiYph1jdqY4goob1kTPs=;
+ b=tdvbkHw9yUtnvDH/DJ4qWmkXoSxhraltCRvY1X1IFBEL7iCTQy4CP1dWXT+/akyp6q
+ JVcDjnV1Zb2+jCu7Z8+abWILa4iswW67/+nL0CtxhU62ToEpO6cshXSsn5K2lqTqKXLe
+ yysxyF4XMeEWHl51FGMFhtRL5QaJzYFtKNX2N2aX4eXe79A5KNyH7+CttCOsIC2I5EoJ
+ iBe301EIgQtd/7pUFr9efWvPmIqELB2tSqtUyaHsdojov0JtFBfBCUv5RFCWK8AtGL9K
+ n2owLAiOq75ICmeuyg+YvAqD57IyxLsFZAQg7BeIGNYjiZn4pRme4hDDuobgtTT8ky0T
+ OH4A==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:references:date:in-reply-to
- :message-id:user-agent:mime-version;
- bh=HhLOhhYqBLdrOA1DogbXLLJ4Nwua7/IpCpsFyqMX/RE=;
- b=AOn3ze6mKeVc9fj7KSShGTCG1+hIAJ9ufMZknsclkR5+PIiqFTGV81GjbWQaJ23Ylh
- 3Xbe1rcFW+RAybXlsPITNxyLzU+ZApxjxBD4fOxvHXl1Zmz0OhWvn0wM1sWzHfKk5o1c
- eCZBfjE0LAyMERGoIczrRM+hLSuKp3Z379pGkkpH5XhNWqlkclb6s2ma5iSkZY6w+/gp
- Tmu/Qfwncu2tvYZgiWPuMneOq/StaJts4KzOf5HjIx/EFFEpBdNO+k9Ljg8g1jhf+Kwf
- lPnug2AhlMbG1mAOGQC7ZPV70zEYMwkn8n3y8dXmNJDITW55ffPP4oFYAWeIJH3rUvNS
- M9/Q==
-X-Gm-Message-State: APjAAAVyJ16puFXnz39e8JPrWo5/gOu7Vrbp8GDktzCtO6d0d8VJzaJL
- 9y+yoSrEuyZg2v+0G+swhyZYTAe7
-X-Google-Smtp-Source: APXvYqxLp7uwN2DyekkN7tJ03qheCXl7cZFSbRu8UAZUOK7xPINLgUChqIQltc0w/492yjLwIwE61A==
-X-Received: by 2002:a2e:635d:: with SMTP id x90mr60580619ljb.140.1561037068945; 
- Thu, 20 Jun 2019 06:24:28 -0700 (PDT)
-Received: from osv.localdomain ([89.175.180.246])
- by smtp.gmail.com with ESMTPSA id x1sm3511078ljx.61.2019.06.20.06.24.27
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Thu, 20 Jun 2019 06:24:28 -0700 (PDT)
-From: Sergey Organov <sorganov@gmail.com>
-To: Sascha Hauer <s.hauer@pengutronix.de>
-Subject: Re: [PATCH RFC 4/7] serial: imx: set_termios(): do not enable autoRTS
- if RTS is unset
-References: <20190614072801.3187-1-s.hauer@pengutronix.de>
- <1560514294-29111-1-git-send-email-sorganov@gmail.com>
- <1560514294-29111-5-git-send-email-sorganov@gmail.com>
- <20190620093741.7wom6a475be2byob@pengutronix.de>
-Date: Thu, 20 Jun 2019 16:24:27 +0300
-In-Reply-To: <20190620093741.7wom6a475be2byob@pengutronix.de> (Sascha Hauer's
- message of "Thu, 20 Jun 2019 11:37:41 +0200")
-Message-ID: <878stwjsok.fsf@osv.gnss.ru>
-User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/24.4 (gnu/linux)
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=lc/q2X+pawBjOcnjA6oAKxvqiYph1jdqY4goob1kTPs=;
+ b=S2o4ZdMuMKi8SjWQALBZq8nQKdCYw/LujZh1cCGp8dB2dovrKjHr2wxGBLnai4BpMA
+ 1r6xhmEpAff91lCZsEHrcXMITzKgs0sqtV2UWhsEyfJfAV8a6NsVdIz55vxlG6g+WReW
+ Iw4CsZi8v4Fwvb3URWct67nMWri31owAlRBkUCDle22ttayOYjWKpl1v7paA+faWdjGb
+ 3HkOsnvbIJXIE0C+NniFo9DFjxyV3bKHLTPIyh6MNOjAhVcWvrARdPQoNhyA/KWVJ+Az
+ n8Hu7ba9aIWMFF2ZG2V16zOffCRLTJQT3YKM+sbFVwNjzHMQTHb4cYH4Kyuh5KlZ59L+
+ 2p3g==
+X-Gm-Message-State: APjAAAVvGr6NeyxL7Rlg7xPbANrg+fqCMQk/ac7ENZi1UkcywOVHcUn+
+ XkNYn4mQzL4eAmXWqJLP6BaUPC74zkG9lo57D0B0tZSLwpw=
+X-Google-Smtp-Source: APXvYqyVxyq7u8zNpM4Beo3pE18Ytv/hNPQHDG2Iz7I2nebi3e7qnCAQv4cYrfQ+b9EBhFO/oJjbJ1VfrfyqTZOoADI=
+X-Received: by 2002:a67:ee16:: with SMTP id f22mr21368556vsp.191.1561037651820; 
+ Thu, 20 Jun 2019 06:34:11 -0700 (PDT)
 MIME-Version: 1.0
+References: <1560247011-26369-1-git-send-email-manish.narani@xilinx.com>
+ <1560247011-26369-4-git-send-email-manish.narani@xilinx.com>
+ <CAPDyKFrJwpwUUX_q2kcR9QY_fv9Lgos+ixPmU6JMeJVqJAiFpg@mail.gmail.com>
+ <5feac3fb-bef3-b7d1-57d6-81e115e1f555@xilinx.com>
+ <CAPDyKFp_ZvSjFp2FGonzGsnc9xPyZ7qOCaRnX1SimBxLpfz9-Q@mail.gmail.com>
+ <MN2PR02MB6029DB87CEE32655B0F1E794C1E50@MN2PR02MB6029.namprd02.prod.outlook.com>
+ <CAPDyKFqb3uRU1XbrioSw6UZ5atZ8WwZNhQ_yq2+3JfxXZCxr7g@mail.gmail.com>
+ <MN2PR02MB602935234A2A779B5A05CD63C1E40@MN2PR02MB6029.namprd02.prod.outlook.com>
+In-Reply-To: <MN2PR02MB602935234A2A779B5A05CD63C1E40@MN2PR02MB6029.namprd02.prod.outlook.com>
+From: Ulf Hansson <ulf.hansson@linaro.org>
+Date: Thu, 20 Jun 2019 15:33:34 +0200
+Message-ID: <CAPDyKFqwe7ss6r99Dxg_OFjKUmCYK_k3pyfYAe62BM7H=a4A7w@mail.gmail.com>
+Subject: Re: [PATCH 3/3] mmc: sdhci-of-arasan: Add support for ZynqMP Platform
+ Tap Delays Setup
+To: Manish Narani <MNARANI@xilinx.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190620_062431_203117_A41CD7B6 
-X-CRM114-Status: GOOD (  22.29  )
+X-CRM114-CacheID: sfid-20190620_063414_056381_FCB929C1 
+X-CRM114-Status: GOOD (  29.19  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:242 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:e43 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (sorganov[at]gmail.com)
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -103,92 +98,155 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm-kernel@lists.infradead.org,
- Uwe =?utf-8?Q?Kleine-K=C3=B6nig?= <u.kleine-koenig@pengutronix.de>,
- NXP Linux Team <linux-imx@nxp.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>, linux-serial@vger.kernel.org
+Cc: Mark Rutland <mark.rutland@arm.com>, DTML <devicetree@vger.kernel.org>,
+ Nava kishore Manne <navam@xilinx.com>,
+ "linux-mmc@vger.kernel.org" <linux-mmc@vger.kernel.org>,
+ Adrian Hunter <adrian.hunter@intel.com>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Jolly Shah <JOLLYS@xilinx.com>, Rajan Vaja <RAJANV@xilinx.com>,
+ Rob Herring <robh+dt@kernel.org>, Michal Simek <michals@xilinx.com>,
+ Olof Johansson <olof@lixom.net>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Sasha,
-
-Sascha Hauer <s.hauer@pengutronix.de> writes:
-
-> Hi Sergey,
+On Thu, 20 Jun 2019 at 10:14, Manish Narani <MNARANI@xilinx.com> wrote:
 >
-> On Fri, Jun 14, 2019 at 03:11:31PM +0300, Sergey Organov wrote:
->> set_termios() shouldn't set UCR2_CTSC bit if UCR2_CTS (=TIOCM_RTS) is
->> cleared. Added corresponding check in imx_uart_rts_auto() to fix this.
->> 
->> Signed-off-by: Sergey Organov <sorganov@gmail.com>
->> ---
->>  drivers/tty/serial/imx.c | 3 ++-
->>  1 file changed, 2 insertions(+), 1 deletion(-)
->> 
->> diff --git a/drivers/tty/serial/imx.c b/drivers/tty/serial/imx.c
->> index 17e2322..8ee910f 100644
->> --- a/drivers/tty/serial/imx.c
->> +++ b/drivers/tty/serial/imx.c
->> @@ -405,7 +405,8 @@ static void imx_uart_rts_inactive(struct imx_port *sport, u32 *ucr2)
->>  /* called with port.lock taken and irqs caller dependent */
->>  static void imx_uart_rts_auto(struct imx_port *sport, u32 *ucr2)
->>  {
->> -	*ucr2 |= UCR2_CTSC;
->> +	if (*ucr2 & UCR2_CTS)
->> +		*ucr2 |= UCR2_CTSC;
->>  }
+> Hi Uffe,
 >
-> *ucr2 is set like this in imx_uart_set_termios():
 >
-> 	ucr2 = UCR2_SRST | UCR2_IRTS;
-> 	if ((termios->c_cflag & CSIZE) == CS8)
-> 		ucr2 |= UCR2_WS;
-> 	...
-> 	imx_uart_rts_auto(sport, &ucr2);
+> > -----Original Message-----
+> > From: Ulf Hansson <ulf.hansson@linaro.org>
+> > Sent: Wednesday, June 19, 2019 7:09 PM
+> > To: Manish Narani <MNARANI@xilinx.com>
+> > Cc: Michal Simek <michals@xilinx.com>; Rob Herring <robh+dt@kernel.org>;
+> > Mark Rutland <mark.rutland@arm.com>; Adrian Hunter
+> > <adrian.hunter@intel.com>; Rajan Vaja <RAJANV@xilinx.com>; Jolly Shah
+> > <JOLLYS@xilinx.com>; Nava kishore Manne <navam@xilinx.com>; Olof
+> > Johansson <olof@lixom.net>; linux-mmc@vger.kernel.org; DTML
+> > <devicetree@vger.kernel.org>; Linux Kernel Mailing List <linux-
+> > kernel@vger.kernel.org>; Linux ARM <linux-arm-kernel@lists.infradead.org>
+> > Subject: Re: [PATCH 3/3] mmc: sdhci-of-arasan: Add support for ZynqMP
+> > Platform Tap Delays Setup
+> >
+> > On Wed, 19 Jun 2019 at 10:40, Manish Narani <MNARANI@xilinx.com> wrote:
+> > >
+> > > Hi Uffe,
+> > >
+> > >
+> > > > -----Original Message-----
+> > > > From: Ulf Hansson <ulf.hansson@linaro.org>
+> > > > Sent: Monday, June 17, 2019 5:51 PM
+> > > [...]
+> > > >
+> > > > The "const struct zynqmp_eemi_ops *eemi_ops; should then be moved into
+> > > > a clock provider specific struct, which is assigned when calling
+> > > > sdhci_arasan_register_sdclk. I understand that all the clock data is
+> > > > folded into struct sdhci_arasan_data today, but I think that should be
+> > > > moved into a "sub-struct" for the clock specifics.
+> > > >
+> > > > Moreover, when registering the clock, we should convert from using
+> > > > devm_clk_register() into devm_clk_hw_register() as the first one is
+> > > > now deprecated.
+> > >
+> > > Just a query here:
+> > > When we switch to using devm_clk_hw_register() here, it will register the
+> > clk_hw and return int.
+> > > Is there a way we can get the clk (related to the clk_hw registered) from the
+> > > clock framework?
+> > > I am asking this because we will need that clk pointer while calling
+> > clk_set_phase() function.
+> >
+> > I assume devm_clk_get() should work fine?
 >
-> So the UCR2_CTS bit is never set, hence UCR2_CTSC will never be set.
-> You meant to pass in the actual register value of the UCR2 register.
+> This clock does not come through ZynqMP Clock framework. We are initializing it in this 'sdhci-of-arasan' driver and getting only the clock name from "clock_output_names" property. So I think devm_clk_get() will not work here for our case.
+
+Well, I guess you need to register an OF clock provider to allow the
+clock lookup to work. Apologize, but I don't have the time, currently
+to point you in the exact direction.
+
+However, in principle, my point is, there should be no difference
+whether the clock is registered via the "ZynqMP Clock framework" or
+via the mmc driver. The *clk_get() thing need to work, otherwise I
+consider the clock registration in the mmc driver to be a hack. If you
+see what I mean.
+
+> I have gone through the clock framework and I found one function which may be used to create clock from clock hw, that is ' clk_hw_create_clk()' which can be used from our driver, however this needs change in the clock framework as below :
 >
-> This is shifted around a bit in the following patches, as an end result
-> we have:
+> ---
+> diff --git a/drivers/clk/clk.c b/drivers/clk/clk.c
+> index aa51756..4dc69ff 100644
+> --- a/drivers/clk/clk.c
+> +++ b/drivers/clk/clk.c
+> @@ -3420,6 +3420,7 @@ struct clk *clk_hw_create_clk(struct device *dev, struct clk_hw *hw,
 >
-> 	old_ucr2 = imx_uart_readl(sport, UCR2);
-> 	ucr2 = old_ucr2 & (UCR2_TXEN | UCR2_RXEN | UCR2_ATEN | UCR2_CTSC);
-
-This is rather the typo problem in my patches right here: it should have
-been:
-
-> 	ucr2 = old_ucr2 & (UCR2_TXEN | UCR2_RXEN | UCR2_ATEN | UCR2_CTS);
-
-as we need to preserve RTS bit state USR2_CTS, not hardware handshake bit
-UCR2_CCTS.
-
-> 	...
-> 	if (ucr2 & UCR2_CTS)
-> 		ucr2 |= UCR2_CTSC;
+>         return clk;
+>  }
+> +EXPORT_SYMBOL_GPL(clk_hw_create_clk);
 >
-> Again the test can never be true, it should probably be if (old_ucr2 &
-> UCR2_CTS).
-
-No, I believe it's different mistake on my part, see above.
-
+>  static int clk_cpy_name(const char **dst_p, const char *src, bool must_exist)
+>  {
+> diff --git a/drivers/clk/clk.h b/drivers/clk/clk.h
+> index d8400d6..2319899 100644
+> --- a/drivers/clk/clk.h
+> +++ b/drivers/clk/clk.h
+> @@ -22,17 +22,9 @@ static inline struct clk_hw *of_clk_get_hw(struct device_node *np,
+>  struct clk_hw *clk_find_hw(const char *dev_id, const char *con_id);
 >
-> With this issue and the one Lothar has found fixed this series works for
-> me.
+>  #ifdef CONFIG_COMMON_CLK
+> -struct clk *clk_hw_create_clk(struct device *dev, struct clk_hw *hw,
+> -                             const char *dev_id, const char *con_id);
+>  void __clk_put(struct clk *clk);
+>  #else
+>  /* All these casts to avoid ifdefs in clkdev... */
+> -static inline struct clk *
+> -clk_hw_create_clk(struct device *dev, struct clk_hw *hw, const char *dev_id,
+> -                 const char *con_id)
+> -{
+> -       return (struct clk *)hw;
+> -}
+>  static struct clk_hw *__clk_get_hw(struct clk *clk)
+>  {
+>         return (struct clk_hw *)clk;
+> diff --git a/include/linux/clk.h b/include/linux/clk.h
+> index f689fc5..d3f60fe 100644
+> --- a/include/linux/clk.h
+> +++ b/include/linux/clk.h
+> @@ -18,6 +18,7 @@
 >
-> With these issues fixed I'd be happy to test this series and apply it in
-> favour of my patch.
+>  struct device;
+>  struct clk;
+> +struct clk_hw;
+>  struct device_node;
+>  struct of_phandle_args;
+>
+> @@ -934,4 +935,15 @@ static inline struct clk *of_clk_get_from_provider(struct of_phandle_args *clksp
+>  }
+>  #endif
+>
+> +#ifdef CONFIG_COMMON_CLK
+> +struct clk *clk_hw_create_clk(struct device *dev, struct clk_hw *hw,
+> +                             const char *dev_id, const char *con_id);
+> +#else
+> +static inline struct clk *
+> +clk_hw_create_clk(struct device *dev, struct clk_hw *hw, const char *dev_id,
+> +                 const char *con_id)
+> +{
+> +       return (struct clk *)hw;
+> +}
+> +#endif
+>  #endif
+> ---
+>
+> This change should help other drivers (outside 'drivers/clk/') as well for getting the clock created from clk_hw.
+> Is this fine to do?
 
-Thanks a lot for reviewing and volunteering to test! It's even more
-appreciated as I can't easily test either on recent kernels and/or
-without heavy patching of the kernel, and patching would diminish
-applicability of my test results to mainstream kernel.
+I think this is the wrong approach, see why further above.
 
-I think I'll better re-roll the series with these 2 corrections, right?
-
--- Sergey.
+Kind regards
+Uffe
 
 _______________________________________________
 linux-arm-kernel mailing list
