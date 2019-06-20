@@ -2,65 +2,73 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0C3D54D470
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 20 Jun 2019 19:01:12 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4B7B74D47F
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 20 Jun 2019 19:05:10 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=uxfRYtk1AJofkbsZzXlD89Wz9bIywbiXXpdOKpUU+lk=; b=L+1IfCIdsqx75FHBH6/vORr22
-	zhFIzWpc8Rk1tvJS5pa9gz5eCg7NKD+ors0L9UBwck+ANT/xQ8MzTgtopnS2H2Hp3uDpYRKYNFBuc
-	VeYsmX0+RqudsWtakXJigqgemSK+h7ww/S7Nrcnhd/oevSre/c7hD+yVs/lU1AtNIPWxwY+kDGaLA
-	5rhB2o1IPiHNZ2uR4xdVQK+JMozoQaGz9PxxValvMlpEn8EOlCIpzQdtysZcJJGE05nCMXIr4R50B
-	K6z0cAwcRwi2SvrTT15vFs2Dodbw9krswtCeSOc3TlEZBFBr7JcdWZNWc2N3WGsvI8A6+GuWI9Rwm
-	uRnPS9y7A==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=teE+mdQMIdobisFmmW7tGkv0SQxbHKg55MrDUlijXXg=; b=anO
+	aR9tc8zF5YpCzkYIMyl6i1dkhjFvws0riLSfWrh69tzx9UOlU+nkSPuvPkglg6wHqdLZTgS/4Vd0f
+	eBA9QjGWzgTQ6LYyxy6sNDfajjHQLyJUTWbJoI2pCGh+C2Kh6ScO6tJlhAkiqDaeXKfVcjWrkr+GH
+	g3bATtlaPV80CV3uwmB8GvqhDitMOfscJlIPukUIFVroIoKzd8wn2M1Ywt1pOSMygPm2LUXOiTi58
+	z+zjSfgaTLV3dsnzaLOugw36ZxXNCuFaRFAVmTtaDJPCXHEHOiPtvqtWJTk8BUc9Efrs8jGQt+pKW
+	yI6sQBJOuWaLfZDb2fGn/aE8pVGULGQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1he0Qv-0007bp-6y; Thu, 20 Jun 2019 17:01:09 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1he0Qe-0007bL-Ty
- for linux-arm-kernel@lists.infradead.org; Thu, 20 Jun 2019 17:00:54 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 266F92B;
- Thu, 20 Jun 2019 10:00:51 -0700 (PDT)
-Received: from [10.1.196.93] (en101.cambridge.arm.com [10.1.196.93])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 151683F246;
- Thu, 20 Jun 2019 10:00:49 -0700 (PDT)
-Subject: Re: [PATCH v1 5/5] coresight: etm4x: save/restore state across CPU
- low power states
-To: andrew.murray@arm.com, mathieu.poirier@linaro.org
-References: <20190618125433.9739-6-andrew.murray@arm.com>
- <20190618132159.GA18121@e107155-lin>
- <15ef45d4-ee1a-3c45-878d-f08f0a84cfeb@arm.com>
- <20190619110749.GD1360@e107155-lin>
- <CANLsYkw-KhMVgTfyBSF4-uv4wxQBBQfzyvVbAnaFSqHhkgX6Mg@mail.gmail.com>
- <20190620114116.GE20984@e119886-lin.cambridge.arm.com>
- <20190620154154.GB25273@e107155-lin>
- <CANLsYkxSBuqKJZQLqR238TGe1p5y7QPyLHSZTAOF++=uzGUJjg@mail.gmail.com>
- <20190620163426.GC25273@e107155-lin>
- <CANLsYkymTnxRX61StUGvKGeiQV6P6YbCg81PSYeBpXLsX5tpiw@mail.gmail.com>
- <20190620165427.GH20984@e119886-lin.cambridge.arm.com>
-From: Suzuki K Poulose <suzuki.poulose@arm.com>
-Message-ID: <9adb65af-a898-462b-ecbc-af972d9331a6@arm.com>
-Date: Thu, 20 Jun 2019 18:00:48 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.7.0
-MIME-Version: 1.0
-In-Reply-To: <20190620165427.GH20984@e119886-lin.cambridge.arm.com>
-Content-Language: en-US
+	id 1he0Uk-00081O-Ir; Thu, 20 Jun 2019 17:05:06 +0000
+Received: from node.akkea.ca ([192.155.83.177])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1he0UU-00080X-MQ
+ for linux-arm-kernel@lists.infradead.org; Thu, 20 Jun 2019 17:04:51 +0000
+Received: from localhost (localhost [127.0.0.1])
+ by node.akkea.ca (Postfix) with ESMTP id AC02D4E204D;
+ Thu, 20 Jun 2019 17:04:48 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=akkea.ca; s=mail;
+ t=1561050288; bh=AS2pgKIGsJ0biwMjPOOxiQ+3/xJul3EqWR67+O8CU7w=;
+ h=From:To:Cc:Subject:Date;
+ b=o/XivuCq99sKxBwg5SGBs+LJl82Zu8IO/2JLO/QYxckEtWOzWXhzwMc6G409QUZ4Y
+ mbenT5NaCb2Y7E7wkUDpt4LDBF2CU1FIXGd2tw6GUdk6ZAPRetrKC30XsyMk13ENxr
+ +AAFyvYnxwszwLeq5AEn4/tMuj/J39+gs3S8I96Q=
+X-Virus-Scanned: Debian amavisd-new at mail.akkea.ca
+Received: from node.akkea.ca ([127.0.0.1])
+ by localhost (mail.akkea.ca [127.0.0.1]) (amavisd-new, port 10024)
+ with ESMTP id jV7O3S7XKWV1; Thu, 20 Jun 2019 17:04:48 +0000 (UTC)
+Received: from localhost.localdomain (198-48-167-13.cpe.pppoe.ca
+ [198.48.167.13])
+ by node.akkea.ca (Postfix) with ESMTPSA id 3A2D04E204B;
+ Thu, 20 Jun 2019 17:04:47 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=akkea.ca; s=mail;
+ t=1561050288; bh=AS2pgKIGsJ0biwMjPOOxiQ+3/xJul3EqWR67+O8CU7w=;
+ h=From:To:Cc:Subject:Date;
+ b=o/XivuCq99sKxBwg5SGBs+LJl82Zu8IO/2JLO/QYxckEtWOzWXhzwMc6G409QUZ4Y
+ mbenT5NaCb2Y7E7wkUDpt4LDBF2CU1FIXGd2tw6GUdk6ZAPRetrKC30XsyMk13ENxr
+ +AAFyvYnxwszwLeq5AEn4/tMuj/J39+gs3S8I96Q=
+From: "Angus Ainslie (Purism)" <angus@akkea.ca>
+To: angus.ainslie@puri.sm
+Subject: [PATCH] arm64: dts: fsl: librem5: Limit the USB to 5V
+Date: Thu, 20 Jun 2019 11:04:39 -0600
+Message-Id: <20190620170439.18762-1-angus@akkea.ca>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190620_100053_010425_770AF917 
-X-CRM114-Status: GOOD (  12.26  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190620_100450_781183_16E04E24 
+X-CRM114-Status: GOOD (  10.38  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -72,44 +80,43 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: alexander.shishkin@linux.intel.com, mike.leach@linaro.org, Al.Grant@arm.com,
- linux-arm-kernel@lists.infradead.org, Sudeep.Holla@arm.com
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Pavel Machek <pavel@ucw.cz>, Shawn Guo <shawnguo@kernel.org>,
+ Sascha Hauer <s.hauer@pengutronix.de>,
+ "Angus Ainslie \(Purism\)" <angus@akkea.ca>, linux-kernel@vger.kernel.org,
+ Rob Herring <robh+dt@kernel.org>, NXP Linux Team <linux-imx@nxp.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Fabio Estevam <festevam@gmail.com>, linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+The charge controller can handle 14V but the PTC on the devkit can only
+handle 6V so limit the negotiated voltage to 5V.
 
+Signed-off-by: Angus Ainslie (Purism) <angus@akkea.ca>
+---
+ arch/arm64/boot/dts/freescale/imx8mq-librem5-devkit.dts | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-On 20/06/2019 17:54, Andrew Murray wrote:
-> On Thu, Jun 20, 2019 at 10:47:38AM -0600, Mathieu Poirier wrote:
->> On Thu, 20 Jun 2019 at 10:34, Sudeep Holla <sudeep.holla@arm.com> wrote:
->>>
->>> On Thu, Jun 20, 2019 at 10:14:04AM -0600, Mathieu Poirier wrote:
->>>> On Thu, 20 Jun 2019 at 09:41, Sudeep Holla <sudeep.holla@arm.com> wrote:
+diff --git a/arch/arm64/boot/dts/freescale/imx8mq-librem5-devkit.dts b/arch/arm64/boot/dts/freescale/imx8mq-librem5-devkit.dts
+index 3f4736fd3cea..ec85ada77955 100644
+--- a/arch/arm64/boot/dts/freescale/imx8mq-librem5-devkit.dts
++++ b/arch/arm64/boot/dts/freescale/imx8mq-librem5-devkit.dts
+@@ -353,7 +353,7 @@
+ 			sink-pdos = <PDO_FIXED(5000, 2000, PDO_FIXED_USB_COMM |
+ 				PDO_FIXED_DUAL_ROLE |
+ 				PDO_FIXED_DATA_SWAP )
+-			     PDO_VAR(5000, 12000, 2000)>;
++			     PDO_VAR(5000, 3000, 3000)>;
+ 			op-sink-microwatt = <10000000>;
+ 
+ 			ports {
+-- 
+2.17.1
 
-...
-
->> Then all we have to do is make the ACPI/DT property that indicate the
->> method used to deal with tracer idling mandatory.  That way people are
->> conscious of the choice they are making.  To be backward compatible
->> with current systems we default to the TRCPDCR.PU method but print a
->> warning message, just like we do for obsolete DT bindings.
-> 
-> I'll respin the series based on this approach. I'll also flip the
-> 'disable_pm_save' module option to 'enable_pm_save' - thus allowing any
-> one to use software save/restore if they wish.
-
-If you are going to add a firmware property, please get a consensus on the
-name here, before respinning to avoid another churn :-). How about one of :
-
-"arm,coresight-etm-looses-state"
-"arm,coresight-etm-needs-save-restore"
-
-or something better long the line.
-
-Cheers
-Suzuki
 
 _______________________________________________
 linux-arm-kernel mailing list
