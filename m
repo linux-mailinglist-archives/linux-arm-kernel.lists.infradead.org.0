@@ -2,57 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B6F6E4C6D3
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 20 Jun 2019 07:36:07 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 671914C70D
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 20 Jun 2019 08:03:09 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=GqzFWoS215gaSpfSVE0XB4WT+LBddk51rG0Brsn5DK0=; b=usvp4y7AsMwsjd
-	Rr7U7UTF1vZsrIe0fQqkRyJY/XgyN5HbuQMJ9zNgXeu9eSL0kqJDFbp1upFTmcuMTE1K/6ffbKEgB
-	onc5dSoks/fo25wpMEaEZFsL9vpbbSgIeFLSlE7xkzfgUk9RQJc0MGonnCAoKGJgfp57FEptfQLH6
-	pTpqEDZuN1bcis76XT4SP58SBMglkZNeJ+jWlnDxwBtroAG+UZ3+mE5EaRbPzqJ4tVGPfsBqVAlPB
-	n2Zsy3vMvzZDF63boEeRLEHm97jJJ0bXVJk4xVtt0AoUJNvbrd/XDPtapUlRZARpyYKcdKjVlP+PL
-	D7EQwAiufMpUnLCXhM7w==;
+	List-Owner; bh=8PpgLeHkT3nHHanPv1sCu6A5DRfNSywzqn/sGruBjsk=; b=YrS68zQFnFgSYM
+	XUUyGW25gCGJo5QBP0tEfXDL2cpDdc1Olo1BoiKkbpggom05rnolxwsdmA+xy2F7l2P4ywRH945vg
+	dyKRjLMwqigIg/fc6kEWGcp6ZvabAg7pL39xOJpeyXYd7FCfjJ3iGHicXuI4viU8O+RzvuBHmk1xe
+	IIWpl36or8xHsF1QgnCpJUo0e6Q5PpRC1hi0VZd+AbDPiajPW8UKv8tS/f/iAfAb4nNq2D36zWXFO
+	qtA98qBA8tMB1mzHXQzrGKltcocZmC0eEh0v2uGfGGh5rikjsWPBrtYcXdaqVDRrKkeDgcI5DLxNz
+	RDJXbDf76po1m/hN/qkA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hdpjr-0000jj-I5; Thu, 20 Jun 2019 05:35:59 +0000
+	id 1hdqA4-0008Ix-OC; Thu, 20 Jun 2019 06:03:04 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hdpjf-0000jL-98
- for linux-arm-kernel@lists.infradead.org; Thu, 20 Jun 2019 05:35:48 +0000
+ id 1hdq9v-0008IT-Uh
+ for linux-arm-kernel@lists.infradead.org; Thu, 20 Jun 2019 06:02:57 +0000
 Received: from localhost (83-86-89-107.cable.dynamic.v4.ziggo.nl
  [83.86.89.107])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 286A62147A;
- Thu, 20 Jun 2019 05:35:45 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id BE3BF20B1F;
+ Thu, 20 Jun 2019 06:02:52 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1561008946;
- bh=XjsKtpGuEeEkIweJfbBWoI8xxrNxKJFbdJfHPBTz3zI=;
+ s=default; t=1561010573;
+ bh=wcAr+780Ny2oqChydp8V0jb0itzjGRPIq6ZstMdsFhs=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=nMLGSe+POBhOpIMqf1dZiME0rWel6F+XdFUTqt2RLJGCsUwg4ZNFvuQg+3H668jom
- hBwMMBfZu1RuOPn+r7WVgUS0csKZvS5Awx++5ucsRfanYB6ssIsGw6e4gtr8IMqk1l
- vZI7TlbpTCFHXG6qTncljvL5+YUD4KYGdzmBNQXY=
-Date: Thu, 20 Jun 2019 07:35:44 +0200
+ b=q/QSx2oA5nn0fX7A9/cygM+vQJe/iGGdwcNqlHDVTxA1NYe7nLHOVlp8mt7QGu1l9
+ LCNvMPEvAWU+z/kZKcAihcQvoKFpCyO5kjgYHN1gIUeaTM15XukBQboRj3fGGnIvSJ
+ NW4icyIs6rY7FH2g1ZB3apQfl8z3IwxBXz7y2Gm4=
+Date: Thu, 20 Jun 2019 08:02:50 +0200
 From: Greg KH <gregkh@linuxfoundation.org>
 To: Mathieu Poirier <mathieu.poirier@linaro.org>
-Subject: Re: [PATCH 19/45] coresight: platform: Make memory allocation helper
- generic
-Message-ID: <20190620053544.GB4154@kroah.com>
-References: <20190619172949.4522-1-mathieu.poirier@linaro.org>
- <20190619172949.4522-20-mathieu.poirier@linaro.org>
- <20190619183128.GA6735@kroah.com>
- <CANLsYky+qPPtuhdCNxrPBPO9gjGEc3CZevef9FQNbKhJMYwh2w@mail.gmail.com>
+Subject: Re: [PATCH 20/28] coresight: tmc-etr: Do not call smp_processor_id()
+ from preemptible
+Message-ID: <20190620060250.GA26319@kroah.com>
+References: <20190619195318.19254-1-mathieu.poirier@linaro.org>
+ <20190619195318.19254-21-mathieu.poirier@linaro.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <CANLsYky+qPPtuhdCNxrPBPO9gjGEc3CZevef9FQNbKhJMYwh2w@mail.gmail.com>
+In-Reply-To: <20190619195318.19254-21-mathieu.poirier@linaro.org>
 User-Agent: Mutt/1.12.1 (2019-06-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190619_223547_339925_68038485 
-X-CRM114-Status: GOOD (  16.54  )
+X-CRM114-CacheID: sfid-20190619_230256_009038_CA090EE1 
+X-CRM114-Status: GOOD (  14.27  )
 X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.0 points)
@@ -77,48 +75,57 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Cc: linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Jun 19, 2019 at 01:09:36PM -0600, Mathieu Poirier wrote:
-> On Wed, 19 Jun 2019 at 12:31, Greg KH <gregkh@linuxfoundation.org> wrote:
-> >
-> > On Wed, Jun 19, 2019 at 11:29:23AM -0600, Mathieu Poirier wrote:
-> > > From: Suzuki K Poulose <suzuki.poulose@arm.com>
-> > >
-> > > Rename the of_coresight_alloc_memory() => coresight_alloc_conns()
-> > > as it is independent of the underlying firmware type. This is in
-> > > preparation for the ACPI support.
-> > >
-> > > Signed-off-by: Suzuki K Poulose <suzuki.poulose@arm.com>
-> > > Signed-off-by: Mathieu Poirier <mathieu.poirier@linaro.org>
-> > > ---
-> > >  .../hwtracing/coresight/coresight-platform.c  | 34 +++++++++++--------
-> > >  1 file changed, 19 insertions(+), 15 deletions(-)
-> >
-> > This file is not in my tree.
-> >
-> > Did you forget to send me the commit:
-> >         coresight: Rename of_coresight to coresight-platform
-> > ???
+On Wed, Jun 19, 2019 at 01:53:10PM -0600, Mathieu Poirier wrote:
+> From: Suzuki K Poulose <suzuki.poulose@arm.com>
 > 
-> What ?!?
+> During a perf session we try to allocate buffers on the "node" associated
+> with the CPU the event is bound to. If it's not bound to a CPU, we use
+> the current CPU node, using smp_processor_id(). However this is unsafe
+> in a pre-emptible context and could generate the splats as below :
 > 
-> >
-> > I applied all patches up to here, can you rebase and resend the
-> > remaining ones?
+>  BUG: using smp_processor_id() in preemptible [00000000] code: perf/1743
+>  caller is alloc_etr_buf.isra.6+0x80/0xa0
+>  CPU: 1 PID: 1743 Comm: perf Not tainted 5.1.0-rc6-147786-g116841e #344
+>  Hardware name: ARM LTD ARM Juno Development Platform/ARM Juno Development Platform, BIOS EDK II Feb  1 2019
+>   Call trace:
+>    dump_backtrace+0x0/0x150
+>    show_stack+0x14/0x20
+>    dump_stack+0x9c/0xc4
+>    debug_smp_processor_id+0x10c/0x110
+>    alloc_etr_buf.isra.6+0x80/0xa0
+>    tmc_alloc_etr_buffer+0x12c/0x1f0
+>    etm_setup_aux+0x1c4/0x230
+>    rb_alloc_aux+0x1b8/0x2b8
+>    perf_mmap+0x35c/0x478
+>    mmap_region+0x34c/0x4f0
+>    do_mmap+0x2d8/0x418
+>    vm_mmap_pgoff+0xd0/0xf8
+>    ksys_mmap_pgoff+0x88/0xf8
+>    __arm64_sys_mmap+0x28/0x38
+>    el0_svc_handler+0xd8/0x138
+>    el0_svc+0x8/0xc
 > 
-> Obviously something went wrong - let me look into it.
+> Use NUMA_NO_NODE hint instead of using the current node for events
+> not bound to CPUs.
 > 
-> Sorry for the mess and thanks for the patience.
+> Fixes: 855ab61c16bf70b646 ("coresight: tmc-etr: Refactor function tmc_etr_setup_perf_buf()")
+> Cc: Mathieu Poirier <mathieu.poirier@linaro.org>
+> Signed-off-by: Suzuki K Poulose <suzuki.poulose@arm.com>
+> Signed-off-by: Mathieu Poirier <mathieu.poirier@linaro.org>
+> ---
+>  drivers/hwtracing/coresight/coresight-tmc-etr.c | 6 ++----
+>  1 file changed, 2 insertions(+), 4 deletions(-)
 
-Now it showed up :(
+Why isn't this being submitted for 5.2-final?  Why wait until 5.3 to fix
+this?
 
-Anyway, thanks for the patches, will go queue the rest up after my
-morning coffee kicks in...
+thanks,
 
 greg k-h
 
