@@ -2,46 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 700DD4CCD3
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 20 Jun 2019 13:23:30 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1662E4CCD4
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 20 Jun 2019 13:23:53 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=MdyZ6AHdwdYH0yhmorD3K+1zOzJzt+besZ/sauEBsKw=; b=uGtgylFwmar1cb
-	Y5O72+TOs1vyppQ1sgHnPH/ZwL2waN1vyAwbMyryH/SvWOlhhAvbkrb9Ii072RTWwCyy643f93uj9
-	KzKRRc/TpjO7XGA8j88UtU5VmuV2NBcdr1uGfaGwjBLz4qJ8SRnPSvJQzKTe0yFinKFSLuX5DsBYC
-	Dfvl4LrY/glDvAoHLe8TpdU5r8Ufd1ostfeDo3I8PCfSUVJ2Ex++LhEUPG9iqudYP07dC4AeGhNwy
-	Vxw0W6kQ28Lx1rIefUDKCcm8W1s6l2mObx4kgAX9XNRUETA8OjSos5tfxPXEGzXfIZwaCVKoSK8VV
-	SjN98LWYO3G2C9N9qkkw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=v/jQIJeBaqjN5pbrAYGpSLnJ4Jfy1MwGe9qqD0GQIUs=; b=CSeFi3qqipEoJA
+	/1eAY4cr+B4HIqUiuFKgkGwzZGQBgb3ek1ZeLhiCpBxmFDquKv7b2NZo3S0CqmLr5i7pvM6ph0iUO
+	nmsaqD8zGEGHftGixbHPontRKMVlh57PaGZgVuj0z9U97mUFka+m6xUQ2HIzRE6YSwkvHFgiwIUFc
+	cTIDr70UsikAoJzh75uZpG/mw8tQup+ZmRCPyLCOC79m3ZkhaskKUmMEpgTXWZNTmhmboC+nndm5u
+	sT4ob9tH2j1j+TfnTkt7TK5+fW9UJAQuDIsDSwdlErO/K8J1nR7RfEh0fHWdmZoxpcpGc8q/umpAw
+	sRHuXmSPOvFgBcoG8rNg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hdvA7-0002RT-3f; Thu, 20 Jun 2019 11:23:27 +0000
+	id 1hdvAV-0002eI-Kk; Thu, 20 Jun 2019 11:23:51 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hdv9s-0002QB-FS
- for linux-arm-kernel@lists.infradead.org; Thu, 20 Jun 2019 11:23:13 +0000
+ id 1hdv9t-0002QO-Bc
+ for linux-arm-kernel@lists.infradead.org; Thu, 20 Jun 2019 11:23:14 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 26A53360;
- Thu, 20 Jun 2019 04:23:11 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id C7EA8C0A;
+ Thu, 20 Jun 2019 04:23:12 -0700 (PDT)
 Received: from filthy-habits.cambridge.arm.com
  (filthy-habits.cambridge.arm.com [10.1.197.61])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id A77BC3F718;
- Thu, 20 Jun 2019 04:23:09 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 57FE23F718;
+ Thu, 20 Jun 2019 04:23:11 -0700 (PDT)
 From: Marc Zyngier <marc.zyngier@arm.com>
 To: Paolo Bonzini <pbonzini@redhat.com>,
  =?UTF-8?q?Radim=20Kr=C4=8Dm=C3=A1=C5=99?= <rkrcmar@redhat.com>
-Subject: [GIT PULL] KVM/arm fixes for 5.2-rc6
-Date: Thu, 20 Jun 2019 12:22:57 +0100
-Message-Id: <20190620112301.138137-1-marc.zyngier@arm.com>
+Subject: [PATCH 1/4] KVM: arm64: Implement vq_present() as a macro
+Date: Thu, 20 Jun 2019 12:22:58 +0100
+Message-Id: <20190620112301.138137-2-marc.zyngier@arm.com>
 X-Mailer: git-send-email 2.20.1
+In-Reply-To: <20190620112301.138137-1-marc.zyngier@arm.com>
+References: <20190620112301.138137-1-marc.zyngier@arm.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190620_042312_568221_E13CCD53 
-X-CRM114-Status: UNSURE (   9.24  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190620_042313_440655_95076BBC 
+X-CRM114-Status: GOOD (  10.66  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -71,51 +72,59 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Paolo, Radim,
+From: Viresh Kumar <viresh.kumar@linaro.org>
 
-Here's the second (and hopefully last) set of fixes for v5.2. We have
-our usual timer fix (we obviously will never get it right), a memory
-leak plug, a sysreg reporting fix, and an small SVE cleanup.
+This routine is a one-liner and doesn't really need to be function and
+can be implemented as a macro.
 
-Please pull.
+Suggested-by: Dave Martin <Dave.Martin@arm.com>
+Reviewed-by: Dave Martin <Dave.Martin@arm.com>
+Signed-off-by: Viresh Kumar <viresh.kumar@linaro.org>
+Signed-off-by: Marc Zyngier <marc.zyngier@arm.com>
+---
+ arch/arm64/kvm/guest.c | 12 +++---------
+ 1 file changed, 3 insertions(+), 9 deletions(-)
 
-	M.
+diff --git a/arch/arm64/kvm/guest.c b/arch/arm64/kvm/guest.c
+index 3ae2f82fca46..ae734fcfd4ea 100644
+--- a/arch/arm64/kvm/guest.c
++++ b/arch/arm64/kvm/guest.c
+@@ -207,13 +207,7 @@ static int set_core_reg(struct kvm_vcpu *vcpu, const struct kvm_one_reg *reg)
+ 
+ #define vq_word(vq) (((vq) - SVE_VQ_MIN) / 64)
+ #define vq_mask(vq) ((u64)1 << ((vq) - SVE_VQ_MIN) % 64)
+-
+-static bool vq_present(
+-	const u64 (*const vqs)[KVM_ARM64_SVE_VLS_WORDS],
+-	unsigned int vq)
+-{
+-	return (*vqs)[vq_word(vq)] & vq_mask(vq);
+-}
++#define vq_present(vqs, vq) ((vqs)[vq_word(vq)] & vq_mask(vq))
+ 
+ static int get_sve_vls(struct kvm_vcpu *vcpu, const struct kvm_one_reg *reg)
+ {
+@@ -258,7 +252,7 @@ static int set_sve_vls(struct kvm_vcpu *vcpu, const struct kvm_one_reg *reg)
+ 
+ 	max_vq = 0;
+ 	for (vq = SVE_VQ_MIN; vq <= SVE_VQ_MAX; ++vq)
+-		if (vq_present(&vqs, vq))
++		if (vq_present(vqs, vq))
+ 			max_vq = vq;
+ 
+ 	if (max_vq > sve_vq_from_vl(kvm_sve_max_vl))
+@@ -272,7 +266,7 @@ static int set_sve_vls(struct kvm_vcpu *vcpu, const struct kvm_one_reg *reg)
+ 	 * maximum:
+ 	 */
+ 	for (vq = SVE_VQ_MIN; vq <= max_vq; ++vq)
+-		if (vq_present(&vqs, vq) != sve_vq_available(vq))
++		if (vq_present(vqs, vq) != sve_vq_available(vq))
+ 			return -EINVAL;
+ 
+ 	/* Can't run with no vector lengths at all: */
+-- 
+2.20.1
 
-The following changes since commit 623e1528d4090bd1abaf93ec46f047dee9a6fb32:
-
-  KVM: arm/arm64: Move cc/it checks under hyp's Makefile to avoid instrumentation (2019-05-24 14:53:20 +0100)
-
-are available in the Git repository at:
-
-  git://git.kernel.org/pub/scm/linux/kernel/git/kvmarm/kvmarm.git tags/kvmarm-fixes-for-5.2-2
-
-for you to fetch changes up to e4e5a865e9a9e8e47ac1959b629e9f3ae3b062f2:
-
-  KVM: arm/arm64: Fix emulated ptimer irq injection (2019-06-19 15:47:52 +0100)
-
-----------------------------------------------------------------
-KVM/arm fixes for 5.2, take #2
-
-- SVE cleanup killing a warning with ancient GCC versions
-- Don't report non-existent system registers to userspace
-- Fix memory leak when freeing the vgic ITS
-- Properly lower the interrupt on the emulated physical timer
-
-----------------------------------------------------------------
-Andrew Jones (1):
-      KVM: arm/arm64: Fix emulated ptimer irq injection
-
-Dave Martin (2):
-      KVM: arm64: Filter out invalid core register IDs in KVM_GET_REG_LIST
-      KVM: arm/arm64: vgic: Fix kvm_device leak in vgic_its_destroy
-
-Viresh Kumar (1):
-      KVM: arm64: Implement vq_present() as a macro
-
- arch/arm64/kvm/guest.c       | 65 +++++++++++++++++++++++++++++---------------
- virt/kvm/arm/arch_timer.c    |  5 ++--
- virt/kvm/arm/vgic/vgic-its.c |  1 +
- 3 files changed, 47 insertions(+), 24 deletions(-)
 
 _______________________________________________
 linux-arm-kernel mailing list
