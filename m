@@ -2,65 +2,93 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6CAC94CD5B
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 20 Jun 2019 14:02:19 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2F2764CDB0
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 20 Jun 2019 14:26:13 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=LDTpTr6UbJAZsKHVhhKGNybijnMHNnBZXFouI5+3TKE=; b=VmDRRkc6Gtbjn9
-	wN8q58sFq0/GeigOq/87bZZ8qGTZpR/OAN+I5Sq7g+kEI+/iT/W68imW5iS43mEIvDdn5/B4Epc3h
-	hg0OI1VHDQLKIV6SUV++uIlry7xdhj5Kwpz3CYGH0NAK5kJHBAksY3Ae9DsmH9KV3SjFNeJZiaCjy
-	vC1KQHd/98VCXakfWAt+VJppWWq+/9/EoK2d9/zM3w5R9Ufl1ri0kv9h/CYtUSB0xELWmw3UQ4msn
-	XA1bq9mwuZc+I/VsyD1DPkJLw5uwHS0H3vuKIINMLFG9vugfQCmIbx5Dbz3GiXV/JEsrvAEmK6b10
-	tJEKd8dcgA6aXaIkbPOA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=70TyePQ3OlApW02x+7Tf/JRLiSBFYUjVGveWPO8qomo=; b=VHUn1QBLKXUxpg
+	PdF9Xg9yH6bM2C0FT0B4C3CS1CUPVGTf2wFrQq5OT6MQaSB7fLtni/gDzsaFv1Pt2Z6u7Z/7AZxtA
+	W+zB7f7Q4JKwEQldigSNTAZkgZMiCACeRmvFhkjs9opeMF5oFxmYDBXCUhOEM9LZrIOrmSVhCftym
+	/YnXjIHY+PpQmAfrGMHM/bim9/mrbpn82OBrpPv/XiGKOEO/6v0hjX9N3EF3DVy+igxfyvz8RN1S+
+	PejA7Lj6ff+egkfWPd1/LQ+sfDAbcrgy4QLJVuAAberDCAkv4SDuCb7ZmImVh3RFQQysU/7tkd1TG
+	AFqkbHUPvMoJxogaWQPg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hdvlg-0000G5-N3; Thu, 20 Jun 2019 12:02:16 +0000
-Received: from lb1-smtp-cloud9.xs4all.net ([194.109.24.22])
+	id 1hdw8o-0000R7-Sd; Thu, 20 Jun 2019 12:26:10 +0000
+Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hdvlR-0000ES-WF
- for linux-arm-kernel@lists.infradead.org; Thu, 20 Jun 2019 12:02:04 +0000
-Received: from [IPv6:2001:983:e9a7:1:4588:eede:a2a7:f8e]
- ([IPv6:2001:983:e9a7:1:4588:eede:a2a7:f8e])
- by smtp-cloud9.xs4all.net with ESMTPA
- id dvlAhagzHSfvXdvlDhuoEV; Thu, 20 Jun 2019 14:01:51 +0200
-Subject: Re: [PATCH v2 2/3] media: stm32-dcmi: add media controller support
-To: Hugues Fruchet <hugues.fruchet@st.com>,
- Alexandre Torgue <alexandre.torgue@st.com>,
- Mauro Carvalho Chehab <mchehab@kernel.org>,
- Sakari Ailus <sakari.ailus@linux.intel.com>
-References: <1560242912-17138-1-git-send-email-hugues.fruchet@st.com>
- <1560242912-17138-3-git-send-email-hugues.fruchet@st.com>
-From: Hans Verkuil <hverkuil@xs4all.nl>
-Message-ID: <0ad39c36-5636-b2a6-8098-a1b38e7f907d@xs4all.nl>
-Date: Thu, 20 Jun 2019 14:01:44 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.6.1
+ id 1hdw8Z-0000QV-83
+ for linux-arm-kernel@lists.infradead.org; Thu, 20 Jun 2019 12:25:56 +0000
+Received: by mail-wm1-x341.google.com with SMTP id a15so2868763wmj.5
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 20 Jun 2019 05:25:54 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:content-transfer-encoding:in-reply-to
+ :user-agent; bh=nGbwT1fOo/WcjbkFQ3vvfod2lQownHb8jwDrl6e2Yzk=;
+ b=CoPiD8NXuY79eSws3YaYvFv5PqRMRItqh+Yea5nAQAhZwlCElCUngtM6Yt5DY0rkf1
+ oYiIsFQ5dFh1bKoP9oWtH3jQeEq9nzihwUW7FxVj9/D84o1ZYLTEeNk44akVaNP4ZPof
+ XIdOkl+JLPTNaMVtUCV+PYg0sDn8YE2Ok4ag/ZI4UVLZ4+IFcc1FbH+2BZP147R9UUqB
+ 36p40GNpJbb0T9UOPjamUUuvHoCeM0jsuwUz2C7Rh4/P2GzyvUD+Yt+3QG9Nm5Tx7vqx
+ T4YWi58KKkGszAsVYNp8XLrfW/9JUVLK+gHQnf8UB32GOJqblFrDZXuu2uN6p6xwY6GY
+ SEqg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:content-transfer-encoding
+ :in-reply-to:user-agent;
+ bh=nGbwT1fOo/WcjbkFQ3vvfod2lQownHb8jwDrl6e2Yzk=;
+ b=iQfNKUQFbraqlIpOkFnl9tQasUnGlnQ9fLESy2kNJ0dTptZYQTLkUolOuvZ3Yq9OPO
+ KpoXSYppTq+qQ5zE0ieT6GU51Zf8uL2z2vqUQe7nGo5XEFfWQp2bNFh/ReiCGQ4N0OEY
+ 7yBfomhcSATclxeqoE1q5MP2RJPpFanLRzXTO61Kkc986kN8T2tEodlB/YWKr3khEWK9
+ FdwVflJki1BPq3R7qCnRUYxDFLtFRQElbn6XeSvanfHrxOUbGeEZonbtLARUVPCn7wps
+ MbU1UVKs4Iqs9FJ9h+yujwPS8qBqGwzkNmM57KBTXXH5oHClF7jRUwCPQdBysuhB6Ujf
+ Kkfg==
+X-Gm-Message-State: APjAAAUycQaM5uTkyQjahDa7L+rkEErss1+KN2jS/ibUu0yVcT/9UOPS
+ wAusH8ybmPoqY60rGE1auHu6wg==
+X-Google-Smtp-Source: APXvYqz6jnLBVywer3zqPeTDaiXVrGtBx8wKm76F0MgDMf6oUh3M5VIM8YxAxe12Bk0fOIKqMpgUlA==
+X-Received: by 2002:a1c:a842:: with SMTP id r63mr2705755wme.117.1561033553765; 
+ Thu, 20 Jun 2019 05:25:53 -0700 (PDT)
+Received: from dell ([2.27.35.243])
+ by smtp.gmail.com with ESMTPSA id p26sm21241456wrp.58.2019.06.20.05.25.52
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Thu, 20 Jun 2019 05:25:53 -0700 (PDT)
+Date: Thu, 20 Jun 2019 13:25:51 +0100
+From: Lee Jones <lee.jones@linaro.org>
+To: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
+Subject: Re: [RFC PATCH] acpi/arm64: ignore 5.1 FADTs that are reported as 5.0
+Message-ID: <20190620122551.GC4699@dell>
+References: <20190619121831.7614-1-ard.biesheuvel@linaro.org>
+ <20190619122434.GA25656@e107155-lin> <20190620075732.GB4699@dell>
+ <20190620094937.GB20872@e121166-lin.cambridge.arm.com>
 MIME-Version: 1.0
-In-Reply-To: <1560242912-17138-3-git-send-email-hugues.fruchet@st.com>
-Content-Language: en-US
-X-CMAE-Envelope: MS4wfMuT9MZWw84m+HPjf2ZLoTRPZNu9nSJQqRP6UsbmQN1wtPOfW18byDclmW0QkYHEHCjF2jzyDX4GaELr2qSrZrOPBfViS9Ku8P/kF8nTI19cec2L63UG
- 8AFN6Pm9VncG6Gv52lcLG5fcYUgwbpX6cBmwZKCpOY/rkbOVL0uBm+AZu/5orWCk/hoPBBq1rAHciNoQSOuHT1yANhm1CzN+lLiaKXQ/b8ryZsHpZaONz2Fm
- 6GUN5ImcoEm0PVl3RT6xA6uU4k7/Jp/xb1SMUe4tcHTDR082Df1R11Lwld2Uw5AweNX6+TI5ODrFI9kscmG8VCwmc7g+a7DhLWgWX+EuR6Q5L7jcFZd4Gbf2
- 3cJuEqoHXq1g93hDrRuTZCk/oa5VTtZzqRt/i/srUKGjEnoPiAcSGArj9KT6RAvH3XxAbqIK/2FOeadu9LmgZ4RTCKEK020RqEkY3xYTyIahk6t0ac3xwlBm
- 1H4wqYmNTrG4sqN6GcLGMNEELHLWWXrtWJXuGzpQz3F2y4Nra4AOeKlE2F6D7ztmiBaordsvC7dRPms6F5BEGD6HAfgYUIiVHSAJ4DYxry0h5sP6o1AzFAh3
- nGxattgWPtyb57pT2tR4W46UTOhHLpcFz66c8DN77iu1vgzRcuzJJXUfsuRwHc334NI6O2GsFdY2PqhZRPRumqobYpVEsFRZMWVQvdIMlRJVuRvw1wdNZpaf
- PoD5pEAFlW0=
+Content-Disposition: inline
+In-Reply-To: <20190620094937.GB20872@e121166-lin.cambridge.arm.com>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190620_050202_203789_0B7B7894 
-X-CRM114-Status: GOOD (  22.65  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20190620_052555_353289_846F5E6E 
+X-CRM114-Status: GOOD (  15.99  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [194.109.24.22 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:341 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -72,220 +100,36 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mickael GUENE <mickael.guene@st.com>, linux-kernel@vger.kernel.org,
- Philippe CORNU <philippe.cornu@st.com>, Yannick Fertre <yannick.fertre@st.com>,
- Benjamin Gaignard <benjamin.gaignard@linaro.org>,
- linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org,
- linux-media@vger.kernel.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Ard Biesheuvel <ard.biesheuvel@linaro.org>, catalin.marinas@arm.com,
+ will.deacon@arm.com, leif.lindholm@linaro.org, linux-acpi@vger.kernel.org,
+ Sudeep Holla <sudeep.holla@arm.com>, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 6/11/19 10:48 AM, Hugues Fruchet wrote:
-> Add media controller support to dcmi.
-> 
-> Signed-off-by: Hugues Fruchet <hugues.fruchet@st.com>
-> ---
->  drivers/media/platform/Kconfig            |  2 +-
->  drivers/media/platform/stm32/stm32-dcmi.c | 83 +++++++++++++++++++++++--------
->  2 files changed, 63 insertions(+), 22 deletions(-)
-> 
-> diff --git a/drivers/media/platform/Kconfig b/drivers/media/platform/Kconfig
-> index 8a19654..de7e21f 100644
-> --- a/drivers/media/platform/Kconfig
-> +++ b/drivers/media/platform/Kconfig
-> @@ -121,7 +121,7 @@ config VIDEO_S3C_CAMIF
->  
->  config VIDEO_STM32_DCMI
->  	tristate "STM32 Digital Camera Memory Interface (DCMI) support"
-> -	depends on VIDEO_V4L2 && OF
-> +	depends on VIDEO_V4L2 && OF && MEDIA_CONTROLLER
->  	depends on ARCH_STM32 || COMPILE_TEST
->  	select VIDEOBUF2_DMA_CONTIG
->  	select V4L2_FWNODE
-> diff --git a/drivers/media/platform/stm32/stm32-dcmi.c b/drivers/media/platform/stm32/stm32-dcmi.c
-> index 7a4d559..3a69783 100644
-> --- a/drivers/media/platform/stm32/stm32-dcmi.c
-> +++ b/drivers/media/platform/stm32/stm32-dcmi.c
-> @@ -170,6 +170,9 @@ struct stm32_dcmi {
->  
->  	/* Ensure DMA operations atomicity */
->  	struct mutex			dma_lock;
-> +
-> +	struct media_device		mdev;
-> +	struct media_pad		vid_cap_pad;
->  };
->  
->  static inline struct stm32_dcmi *notifier_to_dcmi(struct v4l2_async_notifier *n)
-> @@ -1545,21 +1548,12 @@ static int dcmi_graph_notify_complete(struct v4l2_async_notifier *notifier)
->  		dev_err(dcmi->dev, "Could not get sensor bounds\n");
->  		return ret;
->  	}
-> -
->  	ret = dcmi_set_default_fmt(dcmi);
->  	if (ret) {
->  		dev_err(dcmi->dev, "Could not set default format\n");
->  		return ret;
->  	}
->  
-> -	ret = video_register_device(dcmi->vdev, VFL_TYPE_GRABBER, -1);
-> -	if (ret) {
-> -		dev_err(dcmi->dev, "Failed to register video device\n");
-> -		return ret;
-> -	}
-
-Why was this moved to probe()? Off-hand I see no reason for that.
-
-Regards,
-
-	Hans
-
-> -
-> -	dev_dbg(dcmi->dev, "Device registered as %s\n",
-> -		video_device_node_name(dcmi->vdev));
->  	return 0;
->  }
->  
-> @@ -1648,6 +1642,12 @@ static int dcmi_graph_init(struct stm32_dcmi *dcmi)
->  	return 0;
->  }
->  
-> +static void dcmi_graph_deinit(struct stm32_dcmi *dcmi)
-> +{
-> +	v4l2_async_notifier_unregister(&dcmi->notifier);
-> +	v4l2_async_notifier_cleanup(&dcmi->notifier);
-> +}
-> +
->  static int dcmi_probe(struct platform_device *pdev)
->  {
->  	struct device_node *np = pdev->dev.of_node;
-> @@ -1752,10 +1752,27 @@ static int dcmi_probe(struct platform_device *pdev)
->  
->  	q = &dcmi->queue;
->  
-> +	dcmi->v4l2_dev.mdev = &dcmi->mdev;
-> +
-> +	/* Initialize media device */
-> +	strscpy(dcmi->mdev.model, DRV_NAME, sizeof(dcmi->mdev.model));
-> +	snprintf(dcmi->mdev.bus_info, sizeof(dcmi->mdev.bus_info),
-> +		 "platform:%s", DRV_NAME);
-> +	dcmi->mdev.dev = &pdev->dev;
-> +	media_device_init(&dcmi->mdev);
-> +
-> +	/* Register the media device */
-> +	ret = media_device_register(&dcmi->mdev);
-> +	if (ret) {
-> +		dev_err(dcmi->dev, "Failed to register media device (%d)\n",
-> +			ret);
-> +		goto err_media_device_cleanup;
-> +	}
-> +
->  	/* Initialize the top-level structure */
->  	ret = v4l2_device_register(&pdev->dev, &dcmi->v4l2_dev);
->  	if (ret)
-> -		goto err_dma_release;
-> +		goto err_media_device_unregister;
->  
->  	dcmi->vdev = video_device_alloc();
->  	if (!dcmi->vdev) {
-> @@ -1775,6 +1792,25 @@ static int dcmi_probe(struct platform_device *pdev)
->  				  V4L2_CAP_READWRITE;
->  	video_set_drvdata(dcmi->vdev, dcmi);
->  
-> +	/* Media entity pads */
-> +	dcmi->vid_cap_pad.flags = MEDIA_PAD_FL_SINK;
-> +	ret = media_entity_pads_init(&dcmi->vdev->entity,
-> +				     1, &dcmi->vid_cap_pad);
-> +	if (ret) {
-> +		dev_err(dcmi->dev, "Failed to init media entity pad\n");
-> +		goto err_device_unregister;
-> +	}
-> +	dcmi->vdev->entity.flags |= MEDIA_ENT_FL_DEFAULT;
-> +
-> +	ret = video_register_device(dcmi->vdev, VFL_TYPE_GRABBER, -1);
-> +	if (ret) {
-> +		dev_err(dcmi->dev, "Failed to register video device\n");
-> +		goto err_media_entity_cleanup;
-> +	}
-> +
-> +	dev_dbg(dcmi->dev, "Device registered as %s\n",
-> +		video_device_node_name(dcmi->vdev));
-> +
->  	/* Buffer queue */
->  	q->type = V4L2_BUF_TYPE_VIDEO_CAPTURE;
->  	q->io_modes = VB2_MMAP | VB2_READ | VB2_DMABUF;
-> @@ -1790,18 +1826,18 @@ static int dcmi_probe(struct platform_device *pdev)
->  	ret = vb2_queue_init(q);
->  	if (ret < 0) {
->  		dev_err(&pdev->dev, "Failed to initialize vb2 queue\n");
-> -		goto err_device_release;
-> +		goto err_media_entity_cleanup;
->  	}
->  
->  	ret = dcmi_graph_init(dcmi);
->  	if (ret < 0)
-> -		goto err_device_release;
-> +		goto err_media_entity_cleanup;
->  
->  	/* Reset device */
->  	ret = reset_control_assert(dcmi->rstc);
->  	if (ret) {
->  		dev_err(&pdev->dev, "Failed to assert the reset line\n");
-> -		goto err_cleanup;
-> +		goto err_graph_deinit;
->  	}
->  
->  	usleep_range(3000, 5000);
-> @@ -1809,7 +1845,7 @@ static int dcmi_probe(struct platform_device *pdev)
->  	ret = reset_control_deassert(dcmi->rstc);
->  	if (ret) {
->  		dev_err(&pdev->dev, "Failed to deassert the reset line\n");
-> -		goto err_cleanup;
-> +		goto err_graph_deinit;
->  	}
->  
->  	dev_info(&pdev->dev, "Probe done\n");
-> @@ -1820,13 +1856,16 @@ static int dcmi_probe(struct platform_device *pdev)
->  
->  	return 0;
->  
-> -err_cleanup:
-> -	v4l2_async_notifier_cleanup(&dcmi->notifier);
-> -err_device_release:
-> -	video_device_release(dcmi->vdev);
-> +err_graph_deinit:
-> +	dcmi_graph_deinit(dcmi);
-> +err_media_entity_cleanup:
-> +	media_entity_cleanup(&dcmi->vdev->entity);
->  err_device_unregister:
->  	v4l2_device_unregister(&dcmi->v4l2_dev);
-> -err_dma_release:
-> +err_media_device_unregister:
-> +	media_device_unregister(&dcmi->mdev);
-> +err_media_device_cleanup:
-> +	media_device_cleanup(&dcmi->mdev);
->  	dma_release_channel(dcmi->dma_chan);
->  
->  	return ret;
-> @@ -1838,9 +1877,11 @@ static int dcmi_remove(struct platform_device *pdev)
->  
->  	pm_runtime_disable(&pdev->dev);
->  
-> -	v4l2_async_notifier_unregister(&dcmi->notifier);
-> -	v4l2_async_notifier_cleanup(&dcmi->notifier);
-> +	dcmi_graph_deinit(dcmi);
-> +	media_entity_cleanup(&dcmi->vdev->entity);
->  	v4l2_device_unregister(&dcmi->v4l2_dev);
-> +	media_device_unregister(&dcmi->mdev);
-> +	media_device_cleanup(&dcmi->mdev);
->  
->  	dma_release_channel(dcmi->dma_chan);
->  
-> 
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gVGh1LCAyMCBKdW4gMjAxOSwgTG9yZW56byBQaWVyYWxpc2kgd3JvdGU6Cgo+IE9uIFRodSwg
+SnVuIDIwLCAyMDE5IGF0IDA4OjU3OjMyQU0gKzAxMDAsIExlZSBKb25lcyB3cm90ZToKPiA+IE9u
+IFdlZCwgMTkgSnVuIDIwMTksIFN1ZGVlcCBIb2xsYSB3cm90ZToKPiA+IAo+ID4gPiBPbiBXZWQs
+IEp1biAxOSwgMjAxOSBhdCAwMjoxODozMVBNICswMjAwLCBBcmQgQmllc2hldXZlbCB3cm90ZToK
+PiA+ID4gPiBTb21lIFF1YWxjb21tIFNuYXBkcmFnb24gYmFzZWQgbGFwdG9wcyBidWlsdCB0byBy
+dW4gTWljcm9zb2Z0IFdpbmRvd3MKPiA+ID4gPiBhcmUgY2xlYXJseSBBQ1BJIDUuMSBiYXNlZCwg
+Z2l2ZW4gdGhhdCB0aGF0IGlzIHRoZSBmaXJzdCBBQ1BJIHJldmlzaW9uCj4gPiA+ID4gdGhhdCBz
+dXBwb3J0cyBBUk0sIGFuZCBpbnRyb2R1Y2VkIHRoZSBGQURUICdhcm1fYm9vdF9mbGFncycgZmll
+bGQsCj4gPiA+ID4gd2hpY2ggaGFzIGEgbm9uLXplcm8gZmllbGQgb24gdGhvc2Ugc3lzdGVtcy4K
+PiA+ID4gPiAKPiA+ID4gPiBTbyBpbiB0aGVzZSBjYXNlcywgaW5mZXIgZnJvbSB0aGUgQVJNIGJv
+b3QgZmxhZ3MgdGhhdCB0aGUgRkFEVCBtdXN0IGJlCj4gPiA+ID4gNS4xIG9yIGxhdGVyLCBhbmQg
+dHJlYXQgaXQgYXMgNS4xLgo+ID4gPiA+IAo+ID4gPiAKPiA+ID4gTWFrZXMgc2Vuc2UgYW5kIGxv
+b2tzIHNpbXBsZSB0byBtZS4KPiA+ID4gCj4gPiA+IEFja2VkLWJ5OiBTdWRlZXAgSG9sbGEgPHN1
+ZGVlcC5ob2xsYUBhcm0uY29tPgo+ID4gCj4gPiBDb3VsZCB3ZSBwbGVlZWVlYXNlIGhhdmUgdGhp
+cyBpbiBmb3IgdjUuMz8KPiA+IAo+ID4gV2UgaGF2ZSBhdmFpbGFibGUsIGNvbnN1bWVyLWxldmVs
+IHBsYXRmb3JtcyB0aGF0IHJlbHkgb24gdGhpcyBjaGFuZ2UuCj4gCj4gQnV0IHdlIGRvIG5vdCBo
+YXZlIHRoZSBrZXJuZWwgaW5mcmFzdHJ1Y3R1cmUgdG8gc3VwcG9ydCB0aGVtIHNvCj4gSSBhbSBm
+aW5lIHdpdGggaXQgYnV0IHVyZ2VuY3kgaXMgcXVlc3Rpb25hYmxlIGFzIGZhciBhcyBJIGFtCj4g
+Y29uY2VybmVkLgoKWWVzIHdlIGRvLiAgQXQgbGVhc3QsIHdlIHdpbGwgaW4gdjUuMy4KCi0tIApM
+ZWUgSm9uZXMgW+adjueQvOaWr10KTGluYXJvIFNlcnZpY2VzIFRlY2huaWNhbCBMZWFkCkxpbmFy
+by5vcmcg4pSCIE9wZW4gc291cmNlIHNvZnR3YXJlIGZvciBBUk0gU29DcwpGb2xsb3cgTGluYXJv
+OiBGYWNlYm9vayB8IFR3aXR0ZXIgfCBCbG9nCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1h
+cm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcv
+bWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
