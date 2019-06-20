@@ -2,72 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 847574DC60
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 20 Jun 2019 23:18:36 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7479B4DC7F
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 20 Jun 2019 23:29:11 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=WnBRQn09UWIrLIz+s0QF86BETkbRprudUW1hH/7w2sQ=; b=gJQwGzJqOnydts
-	0UoNpuYbCY2lAoCjaFrZeqPX0v+NGFe1hhb25tzDz2LwXGUGqjENu8R45OvPAA+I2EvdSQt8XpN5o
-	p5eSsUtTd1c+/l2EWAkZPcPZF+B875tD/Jvvmsd95ZwZVrOEN7QpSTFYpqCLYIxyef7CtwCyEEeQd
-	Tiy+9OWL5iA+vxaihK5fycD6bYv3xGb1oWixmGaLRULjloVEpXQQ9ZUNTZrr7SaDYjyZvUZDr93tC
-	ROFYhsauR/uCBigDttY64T8Lk994tfxRK+DQgZXTUR5D+f8eSn6OU0Z8+1JqfltBeL7KHVkiK865j
-	ooFEEAJznp+x5pc8n9jg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=MOR+VfhO1zrH6AtIW1XNiQ0vKhV/b+kRHUyGg61wBL8=; b=MEu3LwmlfA5tLo
+	zG9o7cz2u5+0XNpXrRL1mzXMbtXNFDKjPwh8cM3kiDdCIxEn4goDWAkAIPo8cltpbE2K7T0OK3+zw
+	NsGbxnsOBdtI+p6vzxcWwCTZyTGzFYDYB7NjggWzEgaQm03fJiveLSZNsme+eiz/zG4lA9EXnVmxT
+	yFsBxmc4j7zYJXs0fKtI0QuzOxwOkHdSJTR79p+TAU2M/wmRmIBYbWnOdVrmBG8sfuzpW+XOYoE1E
+	LsgcCMNijycp6q5no2Xk9DYnNyaja6h40Y7ITOlcv0Rg/GQfbY2H0uTL6y4dkJ75VJWYIZe3W3NyA
+	ykEdvRk2PiSF9TjyNxAQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1he4S1-0003nG-Dz; Thu, 20 Jun 2019 21:18:33 +0000
-Received: from casper.infradead.org ([2001:8b0:10b:1236::1])
+	id 1he4cF-0006zZ-9E; Thu, 20 Jun 2019 21:29:07 +0000
+Received: from mail-pg1-x541.google.com ([2607:f8b0:4864:20::541])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1he4Rj-0003m5-Mg; Thu, 20 Jun 2019 21:18:15 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=infradead.org; s=casper.20170209; h=In-Reply-To:Content-Type:MIME-Version:
- References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
- Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
- List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=CgfSr6OXpUyqvm3UTW7jbZ0Gfdfs29YwkHCNmm8OMhA=; b=G1zhdoz2AQEleJNPzDZEUV9+4
- qTqFFBkO/XhhIcIKKxUaYDW3QnPt+1YtHlXtMEG9L50lx3SgzemvB/wejqkuWoogzz7IbWwMUh6RF
- ABspNvjxA9cL6kBlx0c8OfIL/v7jArqdNkQqIhJMZjvUl4RUz3aDeDObSbcKLeVJ3g1Usv/V8sHrp
- cm03WqevHZfgFVPT58O9QkzqWGxp3CHGQOcf/mEqLU/4XuA4MeLHmHM7mVaaZ9tWxzVuGk5fYfvA/
- UterMgq0v3mKYQipBk+39N/J67Om3LVpGC9XwjLoG2KRtkcOw6cw65U/cG1ooopq+F9pzXmjBuPWx
- hdWQNvRQw==;
-Received: from relay6-d.mail.gandi.net ([217.70.183.198])
- by casper.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1he4Rh-000676-7Y; Thu, 20 Jun 2019 21:18:15 +0000
-X-Originating-IP: 90.65.161.137
-Received: from localhost (lfbn-1-1545-137.w90-65.abo.wanadoo.fr
- [90.65.161.137])
- (Authenticated sender: alexandre.belloni@bootlin.com)
- by relay6-d.mail.gandi.net (Postfix) with ESMTPSA id D39F9C0003;
- Thu, 20 Jun 2019 21:17:36 +0000 (UTC)
-Date: Thu, 20 Jun 2019 23:17:36 +0200
-From: Alexandre Belloni <alexandre.belloni@bootlin.com>
-To: Kevin Hilman <khilman@kernel.org>
-Subject: Re: [PATCH 2/2] rtc: Add Amlogic Virtual Wake RTC
-Message-ID: <20190620211736.GF23549@piout.net>
-References: <20190607194343.18359-1-khilman@kernel.org>
- <20190607194343.18359-2-khilman@kernel.org>
+ id 1he4c0-0006y7-5k
+ for linux-arm-kernel@lists.infradead.org; Thu, 20 Jun 2019 21:28:54 +0000
+Received: by mail-pg1-x541.google.com with SMTP id 145so2240027pgh.4
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 20 Jun 2019 14:28:51 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=baylibre-com.20150623.gappssmtp.com; s=20150623;
+ h=from:to:cc:subject:date:message-id:mime-version;
+ bh=/usBuInchiYIkwEINC5m7qI2XdY9h5Mq7M9FS6qjXCs=;
+ b=SJIyAPLBhJlQowM14RD/peLXS/0YoDcTdl5W4u6mWKFY7oRNNeYT4Q5pJhhmSaMTNR
+ KJ79e1Zedw10eV0fsBVpo8AFkDVZ+4JWnWi0AT1fO0swEtvXOFmSXkQ8ehAZ7y+izZLy
+ 4tOr1yJ0+8G2bXNX/2H0zukPC7g4+OzfZDGPMqguNCbijb4vvcw0SjcwyF/FnPbKxY8g
+ poSWejekEDmCSLO/hxM99U0N+1bS8WQazl21iwdaOwbDGitdxBMui0eHQiT3V8lqu+zE
+ dn1Ry9CH84dcJLYOoBxeJ9bUUVLXfjG6S8Hb6hvH+JrFhMuTl+wiVhnErMSvlH9OHFcA
+ L5gA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version;
+ bh=/usBuInchiYIkwEINC5m7qI2XdY9h5Mq7M9FS6qjXCs=;
+ b=qC3/AYO3fHvxodM1UHvlxgaTUVT/ujuqBqURVqAw6rJ1Aep+Zcn/rmbE5osN7Z4e8Z
+ +XIfmo4LyQZ7EfoEOY7Ai2IRESBXhOUhbIEgo1YsVxzjh+dNiwpfVJYK233OEXIJiXBB
+ 8PLZBXeaf6a2I9GFRWvWJSBWnfh+J0f/7vVIRzSFLh7rilblUTYtnavbQHJSSptj2hP9
+ gnmDVk3TxAUr5/dzvTuH5/DxJWM4wYUbmWWuqzzxSALL//DF51MmQCg22psjQ1dxtmy8
+ Kv6BG7I+UtLpJJsIYV0usxLWAUsy25CkP0Q0D+zfmWwzwBaqNQgBUbAjwtZHA+nIJiS1
+ UbLA==
+X-Gm-Message-State: APjAAAUhg6YMMLWNJVaePD/znzoDZbt2UMDYhi3Q1oH2UEdwPdNox0F3
+ qVU4UKbRCWgf1vcmWMYUwHiJKQ==
+X-Google-Smtp-Source: APXvYqy8N+WcXxQciDvLrtmoM55a2GQCBddWrnqNBsUsf3/2NW1H5U24nFsOKvDFD7duyi5xv/mBKQ==
+X-Received: by 2002:a63:6f0b:: with SMTP id k11mr14459048pgc.342.1561066131167; 
+ Thu, 20 Jun 2019 14:28:51 -0700 (PDT)
+Received: from localhost (c-71-197-186-152.hsd1.wa.comcast.net.
+ [71.197.186.152])
+ by smtp.googlemail.com with ESMTPSA id w16sm410689pfj.85.2019.06.20.14.28.50
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Thu, 20 Jun 2019 14:28:50 -0700 (PDT)
+From: Kevin Hilman <khilman@baylibre.com>
+To: arm@kernel.org
+Subject: [GIT PULL] Amlogic fixes for v5.2
+Date: Thu, 20 Jun 2019 14:28:47 -0700
+Message-ID: <7hr27oeyk0.fsf@baylibre.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190607194343.18359-2-khilman@kernel.org>
-User-Agent: Mutt/1.11.4 (2019-03-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190620_221813_346607_76606D0A 
-X-CRM114-Status: GOOD (  17.08  )
-X-Spam-Score: -0.7 (/)
-X-Spam-Report: SpamAssassin version 3.4.2 on casper.infradead.org summary:
- Content analysis details:   (-0.7 points, 5.0 required)
+X-CRM114-CacheID: sfid-20190620_142852_247417_4C1E22A0 
+X-CRM114-Status: GOOD (  10.33  )
+X-Spam-Score: 0.0 (/)
+X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.183.198 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [217.70.183.198 listed in wl.mailspike.net]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:541 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -79,143 +89,38 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-rtc@vger.kernel.org, devicetree@vger.kernel.org,
- Neil Armstrong <narmstrong@baylibre.com>, Kevin Hilman <khilman@baylibre.com>,
- linux-kernel@vger.kernel.org, linux-amlogic@lists.infradead.org,
- linux-arm-kernel@lists.infradead.org
+Cc: Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
+ linux-amlogic@lists.infradead.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hello Kevin,
+The following changes since commit a188339ca5a396acc588e5851ed7e19f66b0ebd9:
 
-On 07/06/2019 12:43:43-0700, Kevin Hilman wrote:
-> +static int meson_vrtc_read_time(struct device *dev, struct rtc_time *tm)
-> +{
-> +	unsigned long local_time;
-> +	struct timespec64 time;
-> +
-> +	ktime_get_raw_ts64(&time);
-> +	local_time = time.tv_sec - (sys_tz.tz_minuteswest * 60);
-The RTC is supposed to be set to UTC so the TZ adjustment is not
-necessary.
+  Linux 5.2-rc1 (2019-05-19 15:47:09 -0700)
 
-> +	rtc_time_to_tm(local_time, tm);
-> +
+are available in the git repository at:
 
-Please use the 64 bit version.
+  https://git.kernel.org/pub/scm/linux/kernel/git/khilman/linux-amlogic.git tags/amlogic-fixes
 
-> +	return 0;
-> +}
-> +
-> +static void meson_vrtc_set_wakeup_time(struct meson_vrtc_data *vrtc,
-> +				       unsigned long time)
-> +{
-> +	writel_relaxed(time, vrtc->io_alarm);
-> +
-> +	dev_dbg(&vrtc->pdev->dev, "set_wakeup_time: %lu\n", time);
-> +}
-> +
-> +static int meson_vrtc_set_alarm(struct device *dev, struct rtc_wkalrm *alarm)
-> +{
-> +	struct meson_vrtc_data *vrtc = dev_get_drvdata(dev);
-> +	struct timespec64 time;
-> +	unsigned long local_time;
-> +	unsigned long alarm_secs;
-> +	int ret;
-> +
-> +	if (alarm->enabled) {
-> +		ret = rtc_tm_to_time(&alarm->time, &alarm_secs);
-> +		if (ret)
-> +			return ret;
-> +
+for you to fetch changes up to 26d65140e92a626e39c73c9abf769fd174bf5076:
 
-Use the 64bit version which makes it clear that it never fails (checking
-ret is useless).
+  ARM: dts: meson8b: fix the operating voltage of the Mali GPU (2019-05-20 09:58:38 -0700)
 
-> +		ktime_get_raw_ts64(&time);
-> +		local_time = time.tv_sec - (sys_tz.tz_minuteswest * 60);
-> +
-> +		vrtc->alarm_time = alarm_secs;
-> +
-> +		if (alarm_secs >= local_time) {
+----------------------------------------------------------------
+ARM: dts: Amlogic fixes for v5.2-rc
+- fix GPU interrupts and operating voltage
 
-This is already ensured by the core so no need to check here.
+----------------------------------------------------------------
+Martin Blumenstingl (3):
+      ARM: dts: meson8: fix GPU interrupts and drop an undocumented property
+      ARM: dts: meson8b: drop undocumented property from the Mali GPU node
+      ARM: dts: meson8b: fix the operating voltage of the Mali GPU
 
-> +			alarm_secs = alarm_secs - local_time;
-> +
-> +			meson_vrtc_set_wakeup_time(vrtc, alarm_secs);
-> +
-> +			pr_debug("system will wakeup %lus later\n", alarm_secs);
-> +		}
-> +	} else {
-> +		vrtc->alarm_time = 0;
-> +		meson_vrtc_set_wakeup_time(vrtc, 0);
-> +	}
-> +
-> +	return 0;
-> +}
-> +
-> +static int meson_vrtc_read_alarm(struct device *dev, struct rtc_wkalrm *alm)
-> +{
-> +	struct meson_vrtc_data *vrtc = dev_get_drvdata(dev);
-> +
-> +	if (!vrtc->alarm_time) {
-
-I think this test is inverted.
-
-> +		alm->enabled = true;
-> +
-> +		rtc_time_to_tm(vrtc->alarm_time, &alm->time);
-> +	}
-> +
-> +	return 0;
-> +}
-> +
-> +static const struct rtc_class_ops meson_vrtc_ops = {
-> +	.read_time = meson_vrtc_read_time,
-> +	.set_alarm = meson_vrtc_set_alarm,
-> +	.read_alarm = meson_vrtc_read_alarm,
-> +};
-> +
-> +static int meson_vrtc_probe(struct platform_device *pdev)
-> +{
-> +	struct meson_vrtc_data *vrtc;
-> +	struct resource *res;
-> +
-> +	vrtc = devm_kzalloc(&pdev->dev, sizeof(*vrtc), GFP_KERNEL);
-> +	if (!vrtc)
-> +		return -ENOMEM;
-> +
-> +	vrtc->pdev = pdev;
-> +
-> +	/* Alarm registers */
-> +	res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
-> +	vrtc->io_alarm = devm_ioremap_resource(&pdev->dev, res);
-> +	if (IS_ERR(vrtc->io_alarm))
-> +		return PTR_ERR(vrtc->io_alarm);
-> +
-> +	device_init_wakeup(&pdev->dev, 1);
-> +
-> +	platform_set_drvdata(pdev, vrtc);
-> +
-> +	vrtc->rtc = devm_rtc_device_register(&pdev->dev, "meson-vrtc",
-> +					     &meson_vrtc_ops, THIS_MODULE);
-> +	if (IS_ERR(vrtc->rtc))
-> +		return PTR_ERR(vrtc->rtc);
-> +
-
-Please use devm_rtc_allocate_device and rtc_register_device. This
-doesn't help much but my plan is to get rid of devm_rtc_device_register.
-
-I suppose you don't get any interrupt for the alarm?
-
-
--- 
-Alexandre Belloni, Bootlin
-Embedded Linux and Kernel engineering
-https://bootlin.com
+ arch/arm/boot/dts/meson8.dtsi  |  5 ++---
+ arch/arm/boot/dts/meson8b.dtsi | 11 +++++------
+ 2 files changed, 7 insertions(+), 9 deletions(-)
 
 _______________________________________________
 linux-arm-kernel mailing list
