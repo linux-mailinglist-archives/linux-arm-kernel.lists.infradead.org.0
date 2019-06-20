@@ -2,83 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3F71B4D187
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 20 Jun 2019 17:05:04 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 992394D189
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 20 Jun 2019 17:05:31 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=z5GlQA8q+sASHSjqrSc31TqT55RIqE+KDG+FkQwM6vE=; b=sgu/x3tAsIA2ng
-	zWqLiG0tpjb6a4O/cvyT0tgJbo4+6cV4GzKMnMEALOPBPJ0G30GrO0W1Yl1TFgh3g1j0em/AHfgBp
-	n3t8lIppXThFGas6LRZIVB7px3yHSDD1MNS5JSPxK2smyAxWmCH+Tv18ckCfUxe28MbtbKTbqDWNr
-	EUvLXue/m3N9v5vMd+gd1zEr0TS0nc6GABtMZafVCFn33snFGWzqso0zjMG7iz8RpozmxWCicEvhM
-	OZYWLkocK4KGHNgZyJVarX3adD9eyMTqupRO1vLRZjEfP5K6zYrtIIr/Sq5TbjJsZbyl8/+H84WKC
-	GiopBcgrJkHKk8suLAEg==;
+	List-Owner; bh=3iuiDS6TGyNRhCPcuNgRmSUWaaIx+8e1AEjywgpNbNo=; b=cSmoMCKgxO8VHZ
+	v9PoR8wKBhhLKn4adSB9jFMUo8V9T1BcI7B3ty5pDpaFucqsVGbbQ6mzcXP2FuszDNZR9mWjLb2px
+	H51CuCWkCBKSK5iw9yBRZd9BoDd7VHU/1Ot0oXZvmvF7642Zx2bwrMk/m4pwT+cThhYlZFJwc9zb0
+	iHBOR8NYz/gaFoI9Be65SzgosB7XiFp4nO2bTNOZMpBDATNuhh8Y/OcnsAJqyh53ydSKsqe3BboiN
+	65e5V6yxZkAfODGjgF6J+bk47IXme3LsSY9dm/8haRDaWAJPbQp0YkId9UufTYrB6cRH7AoFI2slU
+	/hkyQnCaxr1ksg9PkJ5w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hdycX-0006VW-0L; Thu, 20 Jun 2019 15:05:01 +0000
-Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
+	id 1hdycx-0007mD-RP; Thu, 20 Jun 2019 15:05:28 +0000
+Received: from mail-wr1-x42f.google.com ([2a00:1450:4864:20::42f])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hdyYD-0003Hj-57
- for linux-arm-kernel@lists.infradead.org; Thu, 20 Jun 2019 15:00:35 +0000
-Received: by mail-wm1-x342.google.com with SMTP id 207so3418842wma.1
+ id 1hdyYE-0003IQ-Q2
+ for linux-arm-kernel@lists.infradead.org; Thu, 20 Jun 2019 15:00:38 +0000
+Received: by mail-wr1-x42f.google.com with SMTP id x17so3357608wrl.9
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 20 Jun 2019 08:00:33 -0700 (PDT)
+ Thu, 20 Jun 2019 08:00:34 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=baylibre-com.20150623.gappssmtp.com; s=20150623;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=eF8xBGeTljvvRz8oIGPjn0ZgbNxxAvWP0tXIK0uht64=;
- b=G+jGjIMvhLDlHlsS6ZUQa62iQPcD1g9joTMkE88tdYoN0qASnjniGNFYJPZU+MLSCX
- H7EPMSh7fkUYj/ww1ZZ4miAqZl1duvLB+21CLWFEY9BOKNgXt9caf9pxRR0j94gTykle
- oZzT0WdZTg3PVn2yUYMarDfak4tAp1QeolW/5s6jNYm8aZxbPu/oQRZCVsjn8zZDkjR3
- g9qrP/pXJWwTpDIiKG3L5k4I7FRfpiQ4v2MH31zO/f3/tgspZsezciharlR3DlUw9mXJ
- 0aaBOLMZUcIGomlBEMSR0QE/fZONdiICEkN1HZ0hE/PFo6spyeh0+0S+2jraLAi9vYs1
- AMQA==
+ bh=C68d+qcYguHz3zXhv5eHfQ0ZAq7PycGdrc5Cah7BDk8=;
+ b=q7N99tjjzhN3+LiLDy4XSG+Gx7+YBnKRo480RP/3ZjsunVDNZDHveRkH/fnqlxH7gD
+ /1G4pCqT4MeJ18eq9ir+0HgAJR6JKyYdRD/DbF7xBlUXfI3t/UajywczG0oY1fICNK2H
+ MrCPZmxutbZ6yCXVV7t3gsjA8tRtZzj4Y0ONAzVb4wRs4BMP/bReGXley9Sqo/XsjzoP
+ 4wTPRi8VIIjf7kiySou96AwTW4CNtm3OWC3TSQj37L/SSNqyG/wYegbtv47GTVgBvlFT
+ azXZdbCCDMP6bb1j/ehf5HawzD+uHHfihTOUcox/C/pq/+k783QM/nhqc9ytGfdacg8O
+ MzVg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=eF8xBGeTljvvRz8oIGPjn0ZgbNxxAvWP0tXIK0uht64=;
- b=Q70tr5FpET54G4BzE0gyps2jayqGIsDjSQdgV79tIDxbIAzHaDvZKVKbpXJ+bgK8YE
- wAePZP4SOJ01WbJgkq8SQzL+pW4ptiabCva+ZKCT9bn0pP8PNS2q3kOH1RwYeVR55+Eg
- Y7wzwG3l/VHbLR1cm/Gg/xaFY/ZHcr59RCtKDtK+A7zdjTYXGKh7/3n3CmA5QbBfg53i
- cPK7IafD+8aImTiCEYX5NVg57AUmxgtQ4eyODSVsAH0Vx6cM4s8C6iOL8w5V/g7kJxhd
- G6pE/FlUh/lA3hdQzcaIwDFe0x0bzMaUkKFseZVRtQNpzOyzq8nEMDiWaDuiAjAaolAk
- fBIg==
-X-Gm-Message-State: APjAAAXVVFYJ9Uh5cG0KAn3ecchDs5GH3QvhG5EwhlLvH5WB8rGCizW+
- 79/NIg6z7y/CtPbS0TkLhDFDXA==
-X-Google-Smtp-Source: APXvYqyB0M/8J7elbFZ7JqzPsyIKsmt8dD5yRCndjrBFTtmLDZMEgDCJQgbv0JCT6BR9I/9CVeq96w==
-X-Received: by 2002:a1c:1fc2:: with SMTP id f185mr56296wmf.154.1561042831759; 
- Thu, 20 Jun 2019 08:00:31 -0700 (PDT)
+ bh=C68d+qcYguHz3zXhv5eHfQ0ZAq7PycGdrc5Cah7BDk8=;
+ b=qr4EPtHyD3stFkktx/8gd4W8144JfyY86eyMm+pYDoZFd9wj6JoyeiXpLlYMjniDwi
+ 8vYRwCttGU7Y3E26VSQhcdKydWDhCngZyZIUOaqDa5mfSIA9H64jcrQCmTKz5DpzMARG
+ C22gsUgbiDuiO4KhQZ26a20lfL23uaI5lDw7uHTMO3XnOEuwTdXEhayrY88mnj2Ob+e3
+ zXAyqXfi1GCGqh4epNTXuh0xggNjFWyL4IPLUThn9PK/8VvH9OKjUw7zRCzL+3jrbQNl
+ pPjAu8DE4HbAXBPcTTajQCBUXcVvecEcFQZjKje1s5wpg1O6+zNUbnWWYzHImNdYVjtQ
+ pr/w==
+X-Gm-Message-State: APjAAAU/SkuRALyvsrQBWWMT7qO7TNUYnWBtNXp9SG39g9jhGnba1wXm
+ 7zZXP86GgkcsEsf9IBv1/R1bCw==
+X-Google-Smtp-Source: APXvYqzErbqy4BohHinkppm/dPifMbl7dbPGdWxW8WZ7N66gJ3ZM2HTJNXQ2nC2N7QCBPq1HW1MRaA==
+X-Received: by 2002:adf:f6cb:: with SMTP id y11mr4725863wrp.245.1561042832953; 
+ Thu, 20 Jun 2019 08:00:32 -0700 (PDT)
 Received: from bender.baylibre.local
  (lmontsouris-657-1-212-31.w90-63.abo.wanadoo.fr. [90.63.244.31])
- by smtp.gmail.com with ESMTPSA id o126sm6802520wmo.1.2019.06.20.08.00.30
+ by smtp.gmail.com with ESMTPSA id o126sm6802520wmo.1.2019.06.20.08.00.31
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-SHA bits=128/128);
- Thu, 20 Jun 2019 08:00:31 -0700 (PDT)
+ Thu, 20 Jun 2019 08:00:32 -0700 (PDT)
 From: Neil Armstrong <narmstrong@baylibre.com>
 To: jbrunet@baylibre.com,
 	khilman@baylibre.com
-Subject: [RFC/RFT 10/14] arm64: dts: meson-g12-common: add pwm_a on GPIOE_2
- pinmux
-Date: Thu, 20 Jun 2019 17:00:09 +0200
-Message-Id: <20190620150013.13462-11-narmstrong@baylibre.com>
+Subject: [RFC/RFT 11/14] arm64: dts: meson-g12a: add cpus OPP table
+Date: Thu, 20 Jun 2019 17:00:10 +0200
+Message-Id: <20190620150013.13462-12-narmstrong@baylibre.com>
 X-Mailer: git-send-email 2.21.0
 In-Reply-To: <20190620150013.13462-1-narmstrong@baylibre.com>
 References: <20190620150013.13462-1-narmstrong@baylibre.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190620_080033_204365_4D60C4B4 
-X-CRM114-Status: GOOD (  10.71  )
+X-CRM114-CacheID: sfid-20190620_080034_845471_E044E0A4 
+X-CRM114-Status: GOOD (  13.32  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:342 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:42f listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -105,32 +104,104 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add the ao_pinctrl subnode for the pwm_a function on GPIOE_2.
+Add the OPP table taken from the vendor u200 and u211 DTS.
+
+The Amlogic G12A SoC seems to available in 3 types :
+- low-speed: up to 1,8GHz
+- mid-speed: up to 1,908GHz
+- high-speed: up to 2.1GHz
+
+And the S905X2 opp voltages are slightly higher than the S905D2
+OPP voltages for the low-speed table.
+
+This adds the conservative OPP table with the S905X2 higher voltages
+and the maximum low-speed OPP frequency.
+
+The values were tested to be stable on an Amlogic U200 Reference Board,
+SeiRobotics SEI510 and X96 Max Set-Top-Boxes running the arm64 cpuburn
+at [1] and cycling between all the possible cpufreq translations and
+checking the final frequency using the clock-measurer, script at [2].
+
+[1] https://github.com/ssvb/cpuburn-arm/blob/master/cpuburn-a53.S
+[2] https://gist.github.com/superna9999/d4de964dbc0f84b7d527e1df2ddea25f
 
 Signed-off-by: Neil Armstrong <narmstrong@baylibre.com>
 ---
- arch/arm64/boot/dts/amlogic/meson-g12-common.dtsi | 8 ++++++++
- 1 file changed, 8 insertions(+)
+ arch/arm64/boot/dts/amlogic/meson-g12a.dtsi | 62 ++++++++++++++++++++-
+ 1 file changed, 59 insertions(+), 3 deletions(-)
 
-diff --git a/arch/arm64/boot/dts/amlogic/meson-g12-common.dtsi b/arch/arm64/boot/dts/amlogic/meson-g12-common.dtsi
-index 2baa04303762..76484801478d 100644
---- a/arch/arm64/boot/dts/amlogic/meson-g12-common.dtsi
-+++ b/arch/arm64/boot/dts/amlogic/meson-g12-common.dtsi
-@@ -1984,6 +1984,14 @@
- 						};
- 					};
+diff --git a/arch/arm64/boot/dts/amlogic/meson-g12a.dtsi b/arch/arm64/boot/dts/amlogic/meson-g12a.dtsi
+index ac15967bb7fa..ba9aab39fd95 100644
+--- a/arch/arm64/boot/dts/amlogic/meson-g12a.dtsi
++++ b/arch/arm64/boot/dts/amlogic/meson-g12a.dtsi
+@@ -48,8 +48,64 @@
+ 			compatible = "cache";
+ 		};
+ 	};
+-};
  
-+					pwm_a_e_pins: pwm-a-e {
-+						mux {
-+							groups = "pwm_a_e";
-+							function = "pwm_a_e";
-+							bias-disable;
-+						};
-+					};
+-&sd_emmc_a {
+-	amlogic,dram-access-quirk;
++	cpu_opp_table: opp-table {
++		compatible = "operating-points-v2";
++		opp-shared;
 +
- 					pwm_ao_a_pins: pwm-ao-a {
- 						mux {
- 							groups = "pwm_ao_a";
++		opp-100000000 {
++			opp-hz = /bits/ 64 <100000000>;
++			opp-microvolt = <731000>;
++		};
++
++		opp-250000000 {
++			opp-hz = /bits/ 64 <250000000>;
++			opp-microvolt = <731000>;
++		};
++
++		opp-500000000 {
++			opp-hz = /bits/ 64 <500000000>;
++			opp-microvolt = <731000>;
++		};
++
++		opp-667000000 {
++			opp-hz = /bits/ 64 <666666666>;
++			opp-microvolt = <731000>;
++		};
++
++		opp-1000000000 {
++			opp-hz = /bits/ 64 <1000000000>;
++			opp-microvolt = <731000>;
++		};
++
++		opp-1200000000 {
++			opp-hz = /bits/ 64 <1200000000>;
++			opp-microvolt = <731000>;
++		};
++
++		opp-1398000000 {
++			opp-hz = /bits/ 64 <1398000000>;
++			opp-microvolt = <761000>;
++		};
++
++		opp-1512000000 {
++			opp-hz = /bits/ 64 <1512000000>;
++			opp-microvolt = <791000>;
++		};
++
++		opp-1608000000 {
++			opp-hz = /bits/ 64 <1608000000>;
++			opp-microvolt = <831000>;
++		};
++
++		opp-1704000000 {
++			opp-hz = /bits/ 64 <1704000000>;
++			opp-microvolt = <861000>;
++		};
++
++		opp-1800000000 {
++			opp-hz = /bits/ 64 <1800000000>;
++			opp-microvolt = <981000>;
++		};
++	};
+ };
 -- 
 2.21.0
 
