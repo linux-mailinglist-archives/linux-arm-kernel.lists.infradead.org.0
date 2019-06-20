@@ -2,62 +2,50 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 61D6C4CB0F
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 20 Jun 2019 11:38:05 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7171C4CB11
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 20 Jun 2019 11:39:05 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=rbut4wTerKRw/4rG/w/Y2jDOIbU3juCNa9TmI7/6Kao=; b=JoQnZrXTSnFovT
-	xOqtlhHINIerB9Sqbj9QQKw4ZVnKAU5eSlj0/QxgIvPmk2bwqSF+mRK6SOeVkTMFWSdlFZgQJNCwH
-	/R2S80p2o/K5KcCRGlu1wbnHyV3FK4D8kt0hIny/83FCN8R804xN5Jk7cLpEqVhS6DHkp1+MChd9W
-	962C6oNBlH5Rv7F4UaU3LKFrrDurOj1Ei0KIfn3qevWFlcpcKqnC9Uq6XuqIrAVmW/PaXRZ69T3ba
-	oMmNOeGG/jEz0hlj+j2hn089jIu66QpPf3Zl4+GIRtLNsdNpcfPFoiR4n8BvsDdtA0VqZU0iLHMo2
-	ECcj/eztYoMpUs51QmqA==;
+	List-Owner; bh=pMvP6u2oN9CC6EOInbh/BHX4PuG03EuJ7J0UioxHWDU=; b=tmMnaH2jkYk3Xg
+	UHs6GZefF41zDOQ3fp3Som2N5MFADt70nSF/24U6Rc/KjJiuj2Bb/e4MsCqnIZG+P29kueJWGoymb
+	AiaJZVJaeOV3CGbG6qL5D1SI6S1c8sQHLipzYXg34UVLhvxI3t+KNz1bX8iyASwT/+K6in1d+fIqo
+	wcapjn/tWh/cdhZ2MJZcYOSSkmWUvipx8oUaCyMftPNE+hFsUT4QA839Hs793vlMAqrAPy4SZP8ka
+	5HJg9nOtYZZhmSZaj1zx0o1VUQiHUJ1Ps1anKuboCiOU+lyPzAmnLoKlj9/CS2CR+yjqfCytbBwJ2
+	fkE1XvyA1eoI+dyOOU9w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hdtW7-0001Hl-A6; Thu, 20 Jun 2019 09:38:03 +0000
-Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hdtVr-0001HN-Dj
- for linux-arm-kernel@lists.infradead.org; Thu, 20 Jun 2019 09:37:49 +0000
-Received: from ptx.hi.pengutronix.de ([2001:67c:670:100:1d::c0])
- by metis.ext.pengutronix.de with esmtps
- (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
- (envelope-from <sha@pengutronix.de>)
- id 1hdtVm-0000y0-PQ; Thu, 20 Jun 2019 11:37:42 +0200
-Received: from sha by ptx.hi.pengutronix.de with local (Exim 4.89)
- (envelope-from <sha@pengutronix.de>)
- id 1hdtVl-0006tP-6J; Thu, 20 Jun 2019 11:37:41 +0200
-Date: Thu, 20 Jun 2019 11:37:41 +0200
-From: Sascha Hauer <s.hauer@pengutronix.de>
-To: Sergey Organov <sorganov@gmail.com>
-Subject: Re: [PATCH RFC 4/7] serial: imx: set_termios(): do not enable
- autoRTS if RTS is unset
-Message-ID: <20190620093741.7wom6a475be2byob@pengutronix.de>
-References: <20190614072801.3187-1-s.hauer@pengutronix.de>
- <1560514294-29111-1-git-send-email-sorganov@gmail.com>
- <1560514294-29111-5-git-send-email-sorganov@gmail.com>
+	id 1hdtX3-0001ZD-6S; Thu, 20 Jun 2019 09:39:01 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hdtWp-0001Yd-BP
+ for linux-arm-kernel@lists.infradead.org; Thu, 20 Jun 2019 09:38:48 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 6D696360;
+ Thu, 20 Jun 2019 02:38:46 -0700 (PDT)
+Received: from e107155-lin (e107155-lin.cambridge.arm.com [10.1.196.42])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 4F15B3F246;
+ Thu, 20 Jun 2019 02:38:45 -0700 (PDT)
+Date: Thu, 20 Jun 2019 10:38:43 +0100
+From: Sudeep Holla <sudeep.holla@arm.com>
+To: Suzuki K Poulose <suzuki.poulose@arm.com>
+Subject: Re: Coresight causes synchronous external abort on msm8916
+Message-ID: <20190620093843.GF1248@e107155-lin>
+References: <20190618202623.GA53651@gerhold.net>
+ <a51f117f-c48d-d3f4-c3d1-9b584e3a055f@arm.com>
+ <20190619183904.GB937@gerhold.net>
+ <CANLsYkxaX2=Bp_BWWUFimC-UmP3L5g=CU7tqjd+xoFVcWG38tA@mail.gmail.com>
+ <6bb74dcc-62e4-5310-5884-9c4b82ce5be9@arm.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <1560514294-29111-5-git-send-email-sorganov@gmail.com>
-X-Sent-From: Pengutronix Hildesheim
-X-URL: http://www.pengutronix.de/
-X-IRC: #ptxdist @freenode
-X-Accept-Language: de,en
-X-Accept-Content-Type: text/plain
-X-Uptime: 11:26:57 up 33 days, 15:45, 91 users,  load average: 0.07, 0.10, 0.12
-User-Agent: NeoMutt/20170113 (1.7.2)
-X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::c0
-X-SA-Exim-Mail-From: sha@pengutronix.de
-X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
- SAEximRunCond expanded to false
-X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
+In-Reply-To: <6bb74dcc-62e4-5310-5884-9c4b82ce5be9@arm.com>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190620_023747_464323_5CEE1C40 
-X-CRM114-Status: GOOD (  17.61  )
+X-CRM114-CacheID: sfid-20190620_023847_439188_449D8283 
+X-CRM114-Status: GOOD (  29.86  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -76,76 +64,77 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm-kernel@lists.infradead.org,
- Uwe =?iso-8859-15?Q?Kleine-K=F6nig?= <u.kleine-koenig@pengutronix.de>,
- NXP Linux Team <linux-imx@nxp.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>, linux-serial@vger.kernel.org
+Cc: mathieu.poirier@linaro.org, stephan@gerhold.net,
+ linux-arm-msm@vger.kernel.org, david.brown@linaro.org, agross@kernel.org,
+ Sudeep Holla <sudeep.holla@arm.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Sergey,
+On Thu, Jun 20, 2019 at 09:53:30AM +0100, Suzuki K Poulose wrote:
+> Hi Mathieu,
+>
+> On 19/06/2019 21:16, Mathieu Poirier wrote:
+> > On Wed, 19 Jun 2019 at 12:39, Stephan Gerhold <stephan@gerhold.net> wrote:
+>
+> > > In this case I'm wondering how it works on the Dragonboard 410c.
+> >
+> > There can be two problems:
+> >
+> > 1) CPUidle is enabled on your platform and as I pointed out before,
+> > that won't work.  There are patches circulating[1] to fix that problem
+> > but it still needs a little bit of work.
+> >
+> > 2) As Suzuki pointed out the debug power domain may not be enabled by
+> > default on your platform, something I would understand if it is a
+> > production device.  There is nothing I can do on that front.
+> >
+> > [1]. https://www.spinics.net/lists/arm-kernel/msg735707.html
+> >
+> > > Does it enable these power domains in the firmware?
+> > >    (Assuming it boots without this error...)
+> >
+> > The debug power domain is enabled by default on the 410c and the board
+> > boots without error.
+> >
+> > >
+> > > If coresight is not working properly on all/most msm8916 devices,
+> > > shouldn't coresight be disabled by default in msm8916.dtsi?
+> >
+> > It is in the defconfig for arm64, as such it shouldn't bother you.
+> >
+> > > At least until those power domains can be set up by the kernel.
+> > >
+> > > If this is a device-specific issue, what would be an acceptable solution
+> > > for mainline?
+> > > Can I turn on these power domains from the kernel?
+> >
+> > Yes, if you have the SoC's TRM.
+> >
+> > > Or is it fine to disable coresight for this device with the snippet above?
+> > >
+> > > I'm not actually trying to use coresight, I just want the device to boot :)
+> > > And since I am considering submitting my device tree for inclusion in
+> > > mainline, I want to ask in advance how I should tackle this problem.
+> >
+> > Simply don't enable coresight in the kernel config if the code isn't
+> > mature enough to properly handle the relevant power domains using the
+> > PM runtime API.
+>
+> I don't think disabling the Coresight in kernel config will hide it.
+> Since the coresight components have the AMBA compatible, the AMBA bus
+> driver will definitely try to probe the PIDs via amba_device_try_add(),
+> as shown by the backtrace. I assume that is causing the problem.
+>
 
-On Fri, Jun 14, 2019 at 03:11:31PM +0300, Sergey Organov wrote:
-> set_termios() shouldn't set UCR2_CTSC bit if UCR2_CTS (=TIOCM_RTS) is
-> cleared. Added corresponding check in imx_uart_rts_auto() to fix this.
-> 
-> Signed-off-by: Sergey Organov <sorganov@gmail.com>
-> ---
->  drivers/tty/serial/imx.c | 3 ++-
->  1 file changed, 2 insertions(+), 1 deletion(-)
-> 
-> diff --git a/drivers/tty/serial/imx.c b/drivers/tty/serial/imx.c
-> index 17e2322..8ee910f 100644
-> --- a/drivers/tty/serial/imx.c
-> +++ b/drivers/tty/serial/imx.c
-> @@ -405,7 +405,8 @@ static void imx_uart_rts_inactive(struct imx_port *sport, u32 *ucr2)
->  /* called with port.lock taken and irqs caller dependent */
->  static void imx_uart_rts_auto(struct imx_port *sport, u32 *ucr2)
->  {
-> -	*ucr2 |= UCR2_CTSC;
-> +	if (*ucr2 & UCR2_CTS)
-> +		*ucr2 |= UCR2_CTSC;
->  }
+Indeed, all the devices are added on boot irrespective of the configuration.
+So either enable the power domain before boot if the kernel configuration
+is disabling the runtime PM or any other power domain related configurations.
 
-*ucr2 is set like this in imx_uart_set_termios():
-
-	ucr2 = UCR2_SRST | UCR2_IRTS;
-	if ((termios->c_cflag & CSIZE) == CS8)
-		ucr2 |= UCR2_WS;
-	...
-	imx_uart_rts_auto(sport, &ucr2);
-
-So the UCR2_CTS bit is never set, hence UCR2_CTSC will never be set.
-You meant to pass in the actual register value of the UCR2 register.
-
-This is shifted around a bit in the following patches, as an end result
-we have:
-
-	old_ucr2 = imx_uart_readl(sport, UCR2);
-	ucr2 = old_ucr2 & (UCR2_TXEN | UCR2_RXEN | UCR2_ATEN | UCR2_CTSC);
-	...
-	if (ucr2 & UCR2_CTS)
-		ucr2 |= UCR2_CTSC;
-
-Again the test can never be true, it should probably be if (old_ucr2 &
-UCR2_CTS).
-
-With this issue and the one Lothar has found fixed this series works for
-me.
-
-With these issues fixed I'd be happy to test this series and apply it in
-favour of my patch.
-
-Sascha
-
-
--- 
-Pengutronix e.K.                           |                             |
-Industrial Linux Solutions                 | http://www.pengutronix.de/  |
-Peiner Str. 6-8, 31137 Hildesheim, Germany | Phone: +49-5121-206917-0    |
-Amtsgericht Hildesheim, HRA 2686           | Fax:   +49-5121-206917-5555 |
+--
+Regards,
+Sudeep
 
 _______________________________________________
 linux-arm-kernel mailing list
