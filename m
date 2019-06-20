@@ -2,63 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A8A914D49C
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 20 Jun 2019 19:11:24 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 058BC4D4A0
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 20 Jun 2019 19:12:29 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=GGvIKE3tzfrAXCLTjJ48WPoFgXB6ICKclMhbCuX7RiM=; b=kXqf8ue3xp073h
-	4UMI1NBGSM1WloYd27z3HwGIXuSuYMUhD3exGBX9/PxTyrxe9GDkXms+PotSU13sVHDpDzS67ZZxS
-	8jQOtcMlDgRBiCSYFmyFeFhkuz4qCy2jfrpheBxlfFdQ6aWaOL1QPqorXCCvWS7/rmIGVWBvuQjfv
-	l4fubsFaLvWITHbZNUn4MsE9Xbyi7N0LjRB/xJShvw6nfHXJWEvzkMfbOYozDqlgmSmLa9KJcSrrT
-	dfVMi1tJWJkBuwaFPXY8zYWiieXC3bajmHrUkqGBaJxXtqJ4HufXtWb1aOn8iE/1BoJzNjKcw/5K/
-	H+p+TSJA42MPzfahKlAg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:
+	In-reply-to:Subject:To:From:References:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=peK2KH7Q9NA8pHxstR711BtiX41owz/GRLeWlj5y8GE=; b=EZGCFcj8BV9NT4uDsdHXUD7L0n
+	2amtcveApdztlnthoZiB5WJ7GCCtCrfD4bNC+oywGNwCIxUbNQKUrozMHZWCK37k6vRP5uMgjMjdx
+	rkpPRNPLZwLT/N020mkFPXZYq92HebxoEGCA1CMbFEd4pzzPc058CLiYmEKVnG5SPPkAZKPfBZMyv
+	cpDMcsHgG7F98OSXE7LMtR5hgvaB3VmfXjS1AKW7x5wiAeK39d7729WTxrpIgACFeGBCdWAdjiXVP
+	ffUlq754wOaXzN+r/xlpG/jcQtdVIVA/Q2Qy/0xFLMib16XijlzFo8aW89YFfwb84vXXBe1cvoyjA
+	NBiUvLCg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1he0ap-0003QJ-46; Thu, 20 Jun 2019 17:11:23 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1he0aZ-0003PK-0F
- for linux-arm-kernel@lists.infradead.org; Thu, 20 Jun 2019 17:11:08 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id AEAEC2B;
- Thu, 20 Jun 2019 10:11:05 -0700 (PDT)
-Received: from e107155-lin (e107155-lin.cambridge.arm.com [10.1.196.42])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id AB3393F246;
- Thu, 20 Jun 2019 10:11:04 -0700 (PDT)
-Date: Thu, 20 Jun 2019 18:11:02 +0100
-From: Sudeep Holla <sudeep.holla@arm.com>
-To: Suzuki K Poulose <suzuki.poulose@arm.com>
-Subject: Re: [PATCH v1 5/5] coresight: etm4x: save/restore state across CPU
- low power states
-Message-ID: <20190620171102.GF25273@e107155-lin>
-References: <15ef45d4-ee1a-3c45-878d-f08f0a84cfeb@arm.com>
- <20190619110749.GD1360@e107155-lin>
- <CANLsYkw-KhMVgTfyBSF4-uv4wxQBBQfzyvVbAnaFSqHhkgX6Mg@mail.gmail.com>
- <20190620114116.GE20984@e119886-lin.cambridge.arm.com>
- <20190620154154.GB25273@e107155-lin>
- <CANLsYkxSBuqKJZQLqR238TGe1p5y7QPyLHSZTAOF++=uzGUJjg@mail.gmail.com>
- <20190620163426.GC25273@e107155-lin>
- <CANLsYkymTnxRX61StUGvKGeiQV6P6YbCg81PSYeBpXLsX5tpiw@mail.gmail.com>
- <20190620165427.GH20984@e119886-lin.cambridge.arm.com>
- <9adb65af-a898-462b-ecbc-af972d9331a6@arm.com>
+	id 1he0bq-0003s2-Sn; Thu, 20 Jun 2019 17:12:26 +0000
+Received: from guitar.tcltek.co.il ([192.115.133.116] helo=mx.tkos.co.il)
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1he0bb-0003rZ-Dt
+ for linux-arm-kernel@lists.infradead.org; Thu, 20 Jun 2019 17:12:13 +0000
+Received: from tarshish (unknown [10.0.8.4])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mx.tkos.co.il (Postfix) with ESMTPS id BC234440209;
+ Thu, 20 Jun 2019 20:12:05 +0300 (IDT)
+References: <20190618212229.32302-5-robh@kernel.org>
+User-agent: mu4e 1.0; emacs 26.1
+From: Baruch Siach <baruch@tkos.co.il>
+To: Rob Herring <robh@kernel.org>
+Subject: Re: [PATCH] dt-bindings: arm: Convert Conexant Digicolor board/soc
+ bindings to json-schema
+In-reply-to: <20190618212229.32302-5-robh@kernel.org>
+Date: Thu, 20 Jun 2019 20:12:05 +0300
+Message-ID: <87a7ecqize.fsf@tarshish>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <9adb65af-a898-462b-ecbc-af972d9331a6@arm.com>
-User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190620_101107_093162_632B2969 
-X-CRM114-Status: GOOD (  13.74  )
+X-CRM114-CacheID: sfid-20190620_101211_693534_C3EDC03B 
+X-CRM114-Status: GOOD (  11.48  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -70,52 +60,73 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Al.Grant@arm.com, mathieu.poirier@linaro.org,
- alexander.shishkin@linux.intel.com, andrew.murray@arm.com,
- linux-arm-kernel@lists.infradead.org, mike.leach@linaro.org
+Cc: devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Jun 20, 2019 at 06:00:48PM +0100, Suzuki K Poulose wrote:
->
->
-> On 20/06/2019 17:54, Andrew Murray wrote:
-> > On Thu, Jun 20, 2019 at 10:47:38AM -0600, Mathieu Poirier wrote:
-> > > On Thu, 20 Jun 2019 at 10:34, Sudeep Holla <sudeep.holla@arm.com> wrote:
-> > > >
-> > > > On Thu, Jun 20, 2019 at 10:14:04AM -0600, Mathieu Poirier wrote:
-> > > > > On Thu, 20 Jun 2019 at 09:41, Sudeep Holla <sudeep.holla@arm.com> wrote:
->
-> ...
->
-> > > Then all we have to do is make the ACPI/DT property that indicate the
-> > > method used to deal with tracer idling mandatory.  That way people are
-> > > conscious of the choice they are making.  To be backward compatible
-> > > with current systems we default to the TRCPDCR.PU method but print a
-> > > warning message, just like we do for obsolete DT bindings.
-> >
-> > I'll respin the series based on this approach. I'll also flip the
-> > 'disable_pm_save' module option to 'enable_pm_save' - thus allowing any
-> > one to use software save/restore if they wish.
->
-> If you are going to add a firmware property, please get a consensus on the
-> name here, before respinning to avoid another churn :-). How about one of :
->
-> "arm,coresight-etm-looses-state"
-> "arm,coresight-etm-needs-save-restore"
->
+Hi Rob,
 
-Just to be more clear, I am fine with just kernel command/module parameter
-approach and DT bindings may not be required. If at all it is decided to
-take DT approach, then you really don't need command/module parameter IMO.
-I will leave that to you and Mathieu, wanted to make sure I am not
-contributing to the confusion yet again.
+On Wed, Jun 19 2019, Rob Herring wrote:
 
---
-Regards,
-Sudeep
+> Convert Conexant Digicolor SoC bindings to DT schema format using json-schema.
+>
+> Cc: Baruch Siach <baruch@tkos.co.il>
+> Signed-off-by: Rob Herring <robh@kernel.org>
+
+Acked-by: Baruch Siach <baruch@tkos.co.il>
+
+Thanks,
+baruch
+
+> ---
+>  .../devicetree/bindings/arm/digicolor.txt        |  6 ------
+>  .../devicetree/bindings/arm/digicolor.yaml       | 16 ++++++++++++++++
+>  2 files changed, 16 insertions(+), 6 deletions(-)
+>  delete mode 100644 Documentation/devicetree/bindings/arm/digicolor.txt
+>  create mode 100644 Documentation/devicetree/bindings/arm/digicolor.yaml
+>
+> diff --git a/Documentation/devicetree/bindings/arm/digicolor.txt b/Documentation/devicetree/bindings/arm/digicolor.txt
+> deleted file mode 100644
+> index 658553f40b23..000000000000
+> --- a/Documentation/devicetree/bindings/arm/digicolor.txt
+> +++ /dev/null
+> @@ -1,6 +0,0 @@
+> -Conexant Digicolor Platforms Device Tree Bindings
+> -
+> -Each device tree must specify which Conexant Digicolor SoC it uses.
+> -Must be the following compatible string:
+> -
+> -  cnxt,cx92755
+> diff --git a/Documentation/devicetree/bindings/arm/digicolor.yaml b/Documentation/devicetree/bindings/arm/digicolor.yaml
+> new file mode 100644
+> index 000000000000..d9c80b827e9b
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/arm/digicolor.yaml
+> @@ -0,0 +1,16 @@
+> +# SPDX-License-Identifier: GPL-2.0
+> +%YAML 1.2
+> +---
+> +$id: http://devicetree.org/schemas/arm/digicolor.yaml#
+> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> +
+> +title: Conexant Digicolor Platforms Device Tree Bindings
+> +
+> +maintainers:
+> +  - Baruch Siach <baruch@tkos.co.il>
+> +
+> +properties:
+> +  compatible:
+> +    const: cnxt,cx92755
+> +
+> +...
+
+
+-- 
+     http://baruch.siach.name/blog/                  ~. .~   Tk Open Systems
+=}------------------------------------------------ooO--U--Ooo------------{=
+   - baruch@tkos.co.il - tel: +972.52.368.4656, http://www.tkos.co.il -
 
 _______________________________________________
 linux-arm-kernel mailing list
