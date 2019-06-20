@@ -2,66 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 114674C57A
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 20 Jun 2019 04:39:07 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 178FA4C5D7
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 20 Jun 2019 05:36:18 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:References
+	:In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=a4CTH4Fn4JTRbph0oHdmXObMPgpcovnGyOlQMMUvKpc=; b=raCPSqM6M9Z2Hl
-	tgltTzTL2BxJ3sHNK/lGlS14rYKMejPVVzuYgAT+MoUJR+QX0T5v4DQTN6yZpo2Q1JcBBBS/UTSyc
-	Pney4D37Mk4rRXuqnHTADBdHs/NO94TKLYoVxd2RfjfTbCSQNayFEqeq3AuC9DmVt3G/b8f2HgBFS
-	F4RNfOrdrgVdDfpSULaXyXAJA9ZwJfwp6ClaTOQ0FzfK4WUbeTrTncht94EW8Ccyci7qpOEJ0yhOu
-	mUqnes2SCDw76KL5+ra3yqP++2JViNIIK8BtI/lFv7GNk7iH/YN3uUYFGOyHoqQHOUy2A1h7+jBbh
-	n87VqjlodExLcIv5hBbQ==;
+	List-Owner; bh=K/J4hH3H+NI3t006y/4GvJPw8wn30HFdA5nQqrntzYk=; b=GkBc/wM6G9yrNf
+	C+YjQ0/XTQtCuwoQmhz1RV3A1L3yiSu3Im9mrrjGUuUN9j9vxs7HIJcy7cS8BOAVB8PReXOTeOq24
+	RcsFVWN1GOuQBo5Id5eJcEg9VwONlyEYuScIQhjx6JygPj8zF3L5F8TzAbWomWBBUW9GNQtzFPsPm
+	9ZQZ+n63ftlhYzCLR1KXOk4p8+zFPIJN3KVMWuCtBeaVyg3rnBNr95GJr8zliyH57KGQdf1zFN+d/
+	yoMhzoX2+mfyl+4iHevW+6DB2oiYuJD0lL4Ti7TAcbCKqFT3MpoVsLgQ3TmxF80v+NeqgUjkUZUqD
+	7Vv3mbD5EsSqkos5raOA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hdmya-0006Ch-Qf; Thu, 20 Jun 2019 02:39:00 +0000
-Received: from mailgw02.mediatek.com ([216.200.240.185])
+	id 1hdnry-0003vd-GR; Thu, 20 Jun 2019 03:36:14 +0000
+Received: from mail-pf1-x442.google.com ([2607:f8b0:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hdmyG-0006Ax-3T; Thu, 20 Jun 2019 02:38:41 +0000
-X-UUID: d7af853dedc1480c98157bc02ccc129c-20190619
-X-UUID: d7af853dedc1480c98157bc02ccc129c-20190619
-Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw02.mediatek.com
- (envelope-from <weiyi.lu@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1138453857; Wed, 19 Jun 2019 18:38:29 -0800
-Received: from MTKMBS02N1.mediatek.inc (172.21.101.77) by
- MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Wed, 19 Jun 2019 19:38:28 -0700
-Received: from mtkcas09.mediatek.inc (172.21.101.178) by
- mtkmbs02n1.mediatek.inc (172.21.101.77) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Thu, 20 Jun 2019 10:38:20 +0800
-Received: from mtksdccf07.mediatek.inc (172.21.84.99) by mtkcas09.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via
- Frontend Transport; Thu, 20 Jun 2019 10:38:20 +0800
-From: Weiyi Lu <weiyi.lu@mediatek.com>
-To: Nicolas Boichat <drinkcat@chromium.org>, Matthias Brugger
- <matthias.bgg@gmail.com>, Rob Herring <robh@kernel.org>
-Subject: [PATCH v6 14/14] arm64: dts: Add power controller device node of
- MT8183
-Date: Thu, 20 Jun 2019 10:38:06 +0800
-Message-ID: <1560998286-9189-15-git-send-email-weiyi.lu@mediatek.com>
-X-Mailer: git-send-email 1.8.1.1.dirty
-In-Reply-To: <1560998286-9189-1-git-send-email-weiyi.lu@mediatek.com>
-References: <1560998286-9189-1-git-send-email-weiyi.lu@mediatek.com>
+ id 1hdnrN-0003fP-70
+ for linux-arm-kernel@lists.infradead.org; Thu, 20 Jun 2019 03:35:39 +0000
+Received: by mail-pf1-x442.google.com with SMTP id x15so849629pfq.0
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 19 Jun 2019 20:35:33 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=baylibre-com.20150623.gappssmtp.com; s=20150623;
+ h=from:to:cc:subject:in-reply-to:references:date:message-id
+ :mime-version; bh=HOSCj25pO6a386fSVkhPsk9edlxIx4b0dfihdZfuotE=;
+ b=R24VUbUFz5qZKeynsTUrq4c3dB1nc/QoAc5x5U+zHBRKmgP4irX+Qd/uz+TvIn9Dde
+ 8hzyvekv6Gzm2FKO8q3HSyEgq8Vud578ah6rtzQ3QyhfF5il00SiTGRbeo9J2kI61H8l
+ DMJK9uVuztUlxcdwCN4uQbImQDCa4vCH+p4Ik6/xlqe2I/Xw/gE2bLIDTnJTSR+Y4tqu
+ 8gHa8kqfrF68JmH/Ra/8/AFn7cJw4OyG1GD5rh5Ao3DrXQ12KqDFI/Zb0oyBe3+S23fW
+ A9aA+b8dH+CO2S4ymvs047VKJGaK3Gxqu0jofHWcLZ38fOEqvft10X5TfRunYq1TrEN+
+ lZKQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:in-reply-to:references:date
+ :message-id:mime-version;
+ bh=HOSCj25pO6a386fSVkhPsk9edlxIx4b0dfihdZfuotE=;
+ b=jxisJJ5Gd1izfFEz51AmeSQfoEyg0cEK5egGOIVUGUFxyjt8oT0vnwWWua5cXKaalM
+ uZnihxt4/rgP11upIgs0h+c69xAkxat59l0y8UJFpVdx5gvzki7cEeUCkx+05MxLYDEt
+ t+ORztrwQYtAzHGfQbcs4kl/hsPI49sb1h9ry2k9GL6/owWoalK644qdd3JbLCpkFrs+
+ RdxdQQQK9W4/CpjHZt+5IkyCHkOWOyFcXyMwhIHu1J6wF31zyKaUQ8YoK0QJVsBoqi1y
+ o9j4D6ug1GH6TUUYEvrRXUpGytIZjyR9qZqS9CVnNABLN6jdfxv+aTRvFVavTM2CCgxq
+ Voag==
+X-Gm-Message-State: APjAAAWrWAhrDZtWKDPuJy2mYBSgNYMiUsbvvuVzZ0Qnu4O86gD1GOid
+ WHKD7b8SY5ohQKMDtDlUFawpRg==
+X-Google-Smtp-Source: APXvYqymLvsH5Jne+eK0EsJ3Q4/Y0qf5ZzWcO17TxweQkCCIYK/LjuDERiWhe89FjMEwwQO+ynf3Mw==
+X-Received: by 2002:a63:df46:: with SMTP id h6mr10696443pgj.181.1561001732439; 
+ Wed, 19 Jun 2019 20:35:32 -0700 (PDT)
+Received: from localhost ([2601:602:9200:a1a5:ec6a:e4cb:28b2:e322])
+ by smtp.googlemail.com with ESMTPSA id 133sm23896859pfa.92.2019.06.19.20.35.30
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Wed, 19 Jun 2019 20:35:31 -0700 (PDT)
+From: Kevin Hilman <khilman@baylibre.com>
+To: Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
+ linux-amlogic@lists.infradead.org
+Subject: Re: [PATCH v3 0/4] Ethernet PHY reset GPIO updates for Amlogic SoCs
+In-Reply-To: <20190615103832.5126-1-martin.blumenstingl@googlemail.com>
+References: <20190615103832.5126-1-martin.blumenstingl@googlemail.com>
+Date: Wed, 19 Jun 2019 20:35:27 -0700
+Message-ID: <7hh88lhqtc.fsf@baylibre.com>
 MIME-Version: 1.0
-X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190619_193840_151779_F127DC59 
-X-CRM114-Status: UNSURE (   8.57  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190619_203537_276064_9CEA09FF 
+X-CRM114-Status: GOOD (  18.73  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:442 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -73,114 +92,77 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: James Liao <jamesjj.liao@mediatek.com>, Weiyi Lu <weiyi.lu@mediatek.com>,
- srv_heupstream@mediatek.com, linux-kernel@vger.kernel.org,
- Fan Chen <fan.chen@mediatek.com>, linux-mediatek@lists.infradead.org,
- Yong Wu <yong.wu@mediatek.com>, linux-arm-kernel@lists.infradead.org
+Cc: andrew@lunn.ch, narmstrong@baylibre.com,
+ Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
+ netdev@vger.kernel.org, linus.walleij@linaro.org, linux-kernel@vger.kernel.org,
+ robin.murphy@arm.com, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add power controller node and smi-common node for MT8183
-In scpsys node, it contains clocks and regmapping of
-infracfg and smi-common for bus protection.
+Martin Blumenstingl <martin.blumenstingl@googlemail.com> writes:
 
-Signed-off-by: Weiyi Lu <weiyi.lu@mediatek.com>
----
- arch/arm64/boot/dts/mediatek/mt8183.dtsi | 62 ++++++++++++++++++++++++++++++++
- 1 file changed, 62 insertions(+)
+> While trying to add the Ethernet PHY interrupt on the X96 Max I found
+> that the current reset line definition is incorrect. Patch #1 fixes
+> this.
+>
+> Since the fix requires moving from the deprecated "snps,reset-gpio"
+> property to the generic Ethernet PHY reset bindings I decided to move
+> all Amlogic boards over to the non-deprecated bindings. That's what
+> patches #2 and #3 do.
+>
+> Finally I found that Odroid-N2 doesn't define the Ethernet PHY's reset
+> GPIO yet. I don't have that board so I can't test whether it really
+> works but based on the schematics it should. 
+>
+> This series is a partial successor to "stmmac: honor the GPIO flags
+> for the PHY reset GPIO" from [0]. I decided not to take Linus W.'s
+> Reviewed-by from patch #4 of that series because I had to change the
+> wording and I want to be sure that he's happy with that now.
+>
+> One quick note regarding patches #1 and #4: I decided to violate the
+> "max 80 characters per line" (by 4 characters) limit because I find
+> that the result is easier to read then it would be if I split the
+> line.
+>
+>
+> Changes since v1 at [1]:
+> - fixed the reset deassert delay for RTL8211F PHYs - spotted by Robin
+>   Murphy (thank you). according to the public RTL8211E datasheet the
+>   correct values seem to be: 10ms assert, 30ms deassert
+> - fixed the reset assert and deassert delays for IP101GR PHYs. There
+>   are two values given in the public datasheet, use the higher one
+>   (10ms instead of 2.5)
+> - update the patch descriptions to quote the datasheets (the RTL8211F
+>   quotes are taken from the public RTL8211E datasheet because as far
+>   as I can tell the reset sequence is identical on both PHYs)
+>
+> Changes since v2 at [2]:
+> - add Neil's Reviewed/Acked/Tested-by's (thank you!)
+> - rebased on top of "arm64: dts: meson-g12a-x96-max: add sound card"
+>
+>
+> [0] https://patchwork.kernel.org/cover/10983801/
+> [1] https://patchwork.kernel.org/cover/10985155/
+> [2] https://patchwork.kernel.org/cover/10990863/
 
-diff --git a/arch/arm64/boot/dts/mediatek/mt8183.dtsi b/arch/arm64/boot/dts/mediatek/mt8183.dtsi
-index 08274bf..75c4881 100644
---- a/arch/arm64/boot/dts/mediatek/mt8183.dtsi
-+++ b/arch/arm64/boot/dts/mediatek/mt8183.dtsi
-@@ -8,6 +8,7 @@
- #include <dt-bindings/clock/mt8183-clk.h>
- #include <dt-bindings/interrupt-controller/arm-gic.h>
- #include <dt-bindings/interrupt-controller/irq.h>
-+#include <dt-bindings/power/mt8183-power.h>
- 
- / {
- 	compatible = "mediatek,mt8183";
-@@ -196,6 +197,62 @@
- 			#clock-cells = <1>;
- 		};
- 
-+		scpsys: syscon@10006000 {
-+			compatible = "mediatek,mt8183-scpsys", "syscon";
-+			#power-domain-cells = <1>;
-+			reg = <0 0x10006000 0 0x1000>;
-+			clocks = <&topckgen CLK_TOP_MUX_AUD_INTBUS>,
-+				 <&infracfg CLK_INFRA_AUDIO>,
-+				 <&infracfg CLK_INFRA_AUDIO_26M_BCLK>,
-+				 <&topckgen CLK_TOP_MUX_MFG>,
-+				 <&topckgen CLK_TOP_MUX_MM>,
-+				 <&topckgen CLK_TOP_MUX_CAM>,
-+				 <&topckgen CLK_TOP_MUX_IMG>,
-+				 <&topckgen CLK_TOP_MUX_IPU_IF>,
-+				 <&topckgen CLK_TOP_MUX_DSP>,
-+				 <&topckgen CLK_TOP_MUX_DSP1>,
-+				 <&topckgen CLK_TOP_MUX_DSP2>,
-+				 <&mmsys CLK_MM_SMI_COMMON>,
-+				 <&mmsys CLK_MM_SMI_LARB0>,
-+				 <&mmsys CLK_MM_SMI_LARB1>,
-+				 <&mmsys CLK_MM_GALS_COMM0>,
-+				 <&mmsys CLK_MM_GALS_COMM1>,
-+				 <&mmsys CLK_MM_GALS_CCU2MM>,
-+				 <&mmsys CLK_MM_GALS_IPU12MM>,
-+				 <&mmsys CLK_MM_GALS_IMG2MM>,
-+				 <&mmsys CLK_MM_GALS_CAM2MM>,
-+				 <&mmsys CLK_MM_GALS_IPU2MM>,
-+				 <&imgsys CLK_IMG_LARB5>,
-+				 <&imgsys CLK_IMG_LARB2>,
-+				 <&camsys CLK_CAM_LARB6>,
-+				 <&camsys CLK_CAM_LARB3>,
-+				 <&camsys CLK_CAM_SENINF>,
-+				 <&camsys CLK_CAM_CAMSV0>,
-+				 <&camsys CLK_CAM_CAMSV1>,
-+				 <&camsys CLK_CAM_CAMSV2>,
-+				 <&camsys CLK_CAM_CCU>,
-+				 <&ipu_conn CLK_IPU_CONN_IPU>,
-+				 <&ipu_conn CLK_IPU_CONN_AHB>,
-+				 <&ipu_conn CLK_IPU_CONN_AXI>,
-+				 <&ipu_conn CLK_IPU_CONN_ISP>,
-+				 <&ipu_conn CLK_IPU_CONN_CAM_ADL>,
-+				 <&ipu_conn CLK_IPU_CONN_IMG_ADL>;
-+			clock-names = "audio", "audio1", "audio2",
-+				      "mfg", "mm", "cam",
-+				      "isp", "vpu", "vpu1",
-+				      "vpu2", "vpu3", "mm-0",
-+				      "mm-1", "mm-2", "mm-3",
-+				      "mm-4", "mm-5", "mm-6",
-+				      "mm-7", "mm-8", "mm-9",
-+				      "isp-0", "isp-1", "cam-0",
-+				      "cam-1", "cam-2", "cam-3",
-+				      "cam-4", "cam-5", "cam-6",
-+				      "vpu-0", "vpu-1", "vpu-2",
-+				      "vpu-3", "vpu-4", "vpu-5";
-+			infracfg = <&infracfg>;
-+			smi_comm = <&smi_common>;
-+		};
-+
- 		apmixedsys: syscon@1000c000 {
- 			compatible = "mediatek,mt8183-apmixedsys", "syscon";
- 			reg = <0 0x1000c000 0 0x1000>;
-@@ -260,6 +317,11 @@
- 			#clock-cells = <1>;
- 		};
- 
-+		smi_common: smi@14019000 {
-+			compatible = "mediatek,mt8183-smi-common", "syscon";
-+			reg = <0 0x14019000 0 0x1000>;
-+		};
-+
- 		imgsys: syscon@15020000 {
- 			compatible = "mediatek,mt8183-imgsys", "syscon";
- 			reg = <0 0x15020000 0 0x1000>;
--- 
-1.8.1.1.dirty
+Queued for v5.3...
 
+> Martin Blumenstingl (4):
+>   arm64: dts: meson: g12a: x96-max: fix the Ethernet PHY reset line
+>   ARM: dts: meson: switch to the generic Ethernet PHY reset bindings
+
+...in branch v5.3/dt
+
+>   arm64: dts: meson: use the generic Ethernet PHY reset GPIO bindings
+>   arm64: dts: meson: g12b: odroid-n2: add the Ethernet PHY reset line
+
+The other 3 in v5.3/dt64,
+
+Thanks,
+
+Kevin
 
 _______________________________________________
 linux-arm-kernel mailing list
