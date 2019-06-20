@@ -2,62 +2,63 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 932DE4CFC3
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 20 Jun 2019 16:00:18 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 272AD4CFCE
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 20 Jun 2019 16:00:51 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=2PVX+tFvVCL+iKNhiwdQiuYVy9Woopy5eWKAUUEoapE=; b=YImblGArGybsyJ
-	ndRFMzWxfB9f/jaKNPnoE2aDqcB/Qyg6RKh8qqHq6p7Rn7Cpo0gws68aR4CAbXdIInZq5tLgpCgyx
-	WeQ33OzXOFICzqAdcoxMxJ7FpKsAR0TYAuir6Kx2M98OAQPj6dxcq1ygfcJsveOh9ss0bcc1uWWAw
-	MNHoOCqBfhfyRzpjYHt7bkKF/4ZMQww4jbSdz6ddYQIMrUNTrbAnrJklmCrD/B0EOCgZxPh71bth9
-	+NiVMcz1ucZZSM1nh8c2K1HIEEPTNEK2sz3BbU+Sxq27ZeFYZPecov6gMicCydc9AbbFzcuTrBsI0
-	qKcptQf9PTia+wXSXxPA==;
+	List-Owner; bh=vsn0p0dqFEsaVL5JWPG26NhqYtRx8bzlfo7Sk354tYY=; b=uQEaf7cOgoE9uY
+	tXqZYFawn/I7Y5UOHa9GtEmFP2fnhD5jqmdB3Es5IvH/wiSpoUJqC+sA9Wu632Hp8x3HGcTPbaIpf
+	ulZC6C0QpjQAQjwFCE/RZG335rrY78gcpbRdG+47bkPoTXbqQSGL8aH7jNg50vu2o3LJJXb1RrfoB
+	Z6zHKwzXQ+89fAgK+1/O+zE1F/nu4rHRFPaSUEszhh+hdvK1YcSfDXbj7mw0iZYWvfZVpDFZdU4kO
+	Y3Z+KxbE4FLun/jMzZ4Ltu3d6zSTf8gO7QoE2TvNX24hIYdDxqb3DYuDI50S6/m0I7en4CnB1Gl9x
+	uy9RqZUIwlw+iEZKv65g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hdxbq-0000Pr-JM; Thu, 20 Jun 2019 14:00:14 +0000
-Received: from mailgw02.mediatek.com ([216.200.240.185])
+	id 1hdxcO-0001yj-IG; Thu, 20 Jun 2019 14:00:48 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hdxbQ-0000Jn-OW; Thu, 20 Jun 2019 13:59:50 +0000
-X-UUID: 7c9b8b4ab83e4e458dda4ced8f4583cd-20190620
-X-UUID: 7c9b8b4ab83e4e458dda4ced8f4583cd-20190620
-Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw02.mediatek.com
+ id 1hdxc3-0001us-L0; Thu, 20 Jun 2019 14:00:29 +0000
+X-UUID: e91e1e0e14cd4a73890d3f0d39bb2905-20190620
+X-UUID: e91e1e0e14cd4a73890d3f0d39bb2905-20190620
+Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw01.mediatek.com
  (envelope-from <yong.wu@mediatek.com>)
  (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 487367123; Thu, 20 Jun 2019 05:59:42 -0800
-Received: from MTKMBS31DR.mediatek.inc (172.27.6.102) by
+ with ESMTP id 2027458671; Thu, 20 Jun 2019 05:59:57 -0800
+Received: from MTKMBS31N1.mediatek.inc (172.27.4.69) by
  MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Thu, 20 Jun 2019 06:59:40 -0700
-Received: from MTKCAS36.mediatek.inc (172.27.4.186) by MTKMBS31DR.mediatek.inc
- (172.27.6.102) with Microsoft SMTP Server (TLS) id 15.0.1395.4;
- Thu, 20 Jun 2019 21:59:37 +0800
+ 15.0.1395.4; Thu, 20 Jun 2019 06:59:55 -0700
+Received: from MTKCAS36.mediatek.inc (172.27.4.186) by MTKMBS31N1.mediatek.inc
+ (172.27.4.69) with Microsoft SMTP Server (TLS) id 15.0.1395.4;
+ Thu, 20 Jun 2019 21:59:53 +0800
 Received: from [10.17.3.153] (172.27.4.253) by MTKCAS36.mediatek.inc
  (172.27.4.170) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Thu, 20 Jun 2019 21:59:36 +0800
-Message-ID: <1561039176.4021.21.camel@mhfsdcap03>
-Subject: Re: [PATCH v7 17/21] memory: mtk-smi: Get rid of need_larbid
+ Transport; Thu, 20 Jun 2019 21:59:52 +0800
+Message-ID: <1561039192.4021.23.camel@mhfsdcap03>
+Subject: Re: [PATCH v7 19/21] iommu/mediatek: Rename enable_4GB to dram_is_4gb
 From: Yong Wu <yong.wu@mediatek.com>
 To: Matthias Brugger <matthias.bgg@gmail.com>
-Date: Thu, 20 Jun 2019 21:59:36 +0800
-In-Reply-To: <1af7b67a-b73a-efb9-e1f8-5701f05a4af0@gmail.com>
+Date: Thu, 20 Jun 2019 21:59:52 +0800
+In-Reply-To: <9bf13c22-0c73-2950-2204-23d577976b03@gmail.com>
 References: <1560169080-27134-1-git-send-email-yong.wu@mediatek.com>
- <1560169080-27134-18-git-send-email-yong.wu@mediatek.com>
- <1af7b67a-b73a-efb9-e1f8-5701f05a4af0@gmail.com>
+ <1560169080-27134-20-git-send-email-yong.wu@mediatek.com>
+ <9bf13c22-0c73-2950-2204-23d577976b03@gmail.com>
 X-Mailer: Evolution 3.10.4-0ubuntu2 
 MIME-Version: 1.0
-X-TM-SNTS-SMTP: 2CA6D34368F87003217514E1A5818323AB156BC86301E5B7347A400EECEBE2612000:8
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190620_065948_804136_90A99716 
-X-CRM114-Status: GOOD (  26.37  )
+X-CRM114-CacheID: sfid-20190620_070027_711025_2660F7AF 
+X-CRM114-Status: GOOD (  22.30  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [216.200.240.184 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
@@ -87,155 +88,106 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, 2019-06-18 at 15:45 +0200, Matthias Brugger wrote:
+On Tue, 2019-06-18 at 18:06 +0200, Matthias Brugger wrote:
 > 
 > On 10/06/2019 14:17, Yong Wu wrote:
-> > The "mediatek,larb-id" has already been parsed in MTK IOMMU driver.
-> > It's no need to parse it again in SMI driver. Only clean some codes.
-> > This patch is fit for all the current mt2701, mt2712, mt7623, mt8173
-> > and mt8183.
-> > 
-> > After this patch, the "mediatek,larb-id" only be needed for mt2712
-> > which have 2 M4Us. In the other SoCs, we can get the larb-id from M4U
-> > in which the larbs in the "mediatek,larbs" always are ordered.
-> > 
-> > Correspondingly, the larb_nr in the "struct mtk_smi_iommu" could also
-> > be deleted.
-> > 
+> > This patch only rename the variable name from enable_4GB to
+> > dram_is_4gb for readable.
 > 
-> I think we can get rid of struct mtk_smi_iommu and just add the
-> struct mtk_smi_larb_iommu larb_imu[MTK_LARB_NR_MAX] directly to mtk_iommu_data,
-> passing just that array to the components bind function.
+> From my understanding this is true when available RAM > 4GB so I think the name
+> should be something like dram_bigger_4gb otherwise it may create confusion again.
 
-Thanks. I will try this in a new patch.
+Strictly, It is not "dram_bigger_4gb". actually if the dram size is over
+3GB (the first 1GB is the register space), the "4GB mode" will be
+enabled. then how about the name "dram_enable_32bit"?(the PA 32bit will
+be enabled in the 4GB mode.)
+     
+There is another option, please see the last part in [1] suggested by
+Evan, something like below:
+----
+data->enable_4GB = !!(max_pfn > (BIT_ULL(32) >> PAGE_SHIFT));
+if (!data->plat_data->has_4gb_mode)
+    data->enable_4GB = false;
+Then mtk_iommu_map would only have:
+    if (data->enable_4GB)
+         paddr |= BIT_ULL(32);
+----
+
+Which one do you prefer?      
+      
+[1] https://lore.kernel.org/patchwork/patch/1028421/
 
 > 
-> Never the less this patch looks fine:
-> Reviewed-by: Matthias Brugger <matthias.bgg@gmail.com>
+> Also from my point of view this patch should be done before
+> "[PATCH 06/21] iommu/io-pgtable-arm-v7s: Extend MediaTek 4GB Mode"
 
-Really appreciate for reviewing so many patches.
+OK.
 
 > 
-> > CC: Matthias Brugger <matthias.bgg@gmail.com>
+> Regards,
+> Matthias
+> 
+> > 
 > > Signed-off-by: Yong Wu <yong.wu@mediatek.com>
 > > Reviewed-by: Evan Green <evgreen@chromium.org>
 > > ---
-> >  drivers/iommu/mtk_iommu.c    |  1 -
-> >  drivers/iommu/mtk_iommu_v1.c |  2 --
-> >  drivers/memory/mtk-smi.c     | 26 ++------------------------
-> >  include/soc/mediatek/smi.h   |  1 -
-> >  4 files changed, 2 insertions(+), 28 deletions(-)
+> >  drivers/iommu/mtk_iommu.c | 10 +++++-----
+> >  drivers/iommu/mtk_iommu.h |  2 +-
+> >  2 files changed, 6 insertions(+), 6 deletions(-)
 > > 
 > > diff --git a/drivers/iommu/mtk_iommu.c b/drivers/iommu/mtk_iommu.c
-> > index ec4ce74..6053b8b 100644
+> > index 86158d8..67cab2d 100644
 > > --- a/drivers/iommu/mtk_iommu.c
 > > +++ b/drivers/iommu/mtk_iommu.c
-> > @@ -634,7 +634,6 @@ static int mtk_iommu_probe(struct platform_device *pdev)
-> >  					     "mediatek,larbs", NULL);
-> >  	if (larb_nr < 0)
-> >  		return larb_nr;
-> > -	data->smi_imu.larb_nr = larb_nr;
+> > @@ -382,7 +382,7 @@ static int mtk_iommu_map(struct iommu_domain *domain, unsigned long iova,
+> >  	int ret;
 > >  
-> >  	for (i = 0; i < larb_nr; i++) {
-> >  		struct device_node *larbnode;
-> > diff --git a/drivers/iommu/mtk_iommu_v1.c b/drivers/iommu/mtk_iommu_v1.c
-> > index 52b01e3..73308ad 100644
-> > --- a/drivers/iommu/mtk_iommu_v1.c
-> > +++ b/drivers/iommu/mtk_iommu_v1.c
-> > @@ -624,8 +624,6 @@ static int mtk_iommu_probe(struct platform_device *pdev)
-> >  		larb_nr++;
-> >  	}
+> >  	/* The "4GB mode" M4U physically can not use the lower remap of Dram. */
+> > -	if (data->plat_data->has_4gb_mode && data->enable_4GB)
+> > +	if (data->plat_data->has_4gb_mode && data->dram_is_4gb)
+> >  		paddr |= BIT_ULL(32);
 > >  
-> > -	data->smi_imu.larb_nr = larb_nr;
-> > -
-> >  	platform_set_drvdata(pdev, data);
+> >  	spin_lock_irqsave(&dom->pgtlock, flags);
+> > @@ -554,13 +554,13 @@ static int mtk_iommu_hw_init(const struct mtk_iommu_data *data)
+> >  	writel_relaxed(regval, data->base + REG_MMU_INT_MAIN_CONTROL);
 > >  
-> >  	ret = mtk_iommu_hw_init(data);
-> > diff --git a/drivers/memory/mtk-smi.c b/drivers/memory/mtk-smi.c
-> > index 08cf40d..10e6493 100644
-> > --- a/drivers/memory/mtk-smi.c
-> > +++ b/drivers/memory/mtk-smi.c
-> > @@ -67,7 +67,6 @@ struct mtk_smi_common_plat {
-> >  };
+> >  	if (data->plat_data->m4u_plat == M4U_MT8173)
+> > -		regval = (data->protect_base >> 1) | (data->enable_4GB << 31);
+> > +		regval = (data->protect_base >> 1) | (data->dram_is_4gb << 31);
+> >  	else
+> >  		regval = lower_32_bits(data->protect_base) |
+> >  			 upper_32_bits(data->protect_base);
+> >  	writel_relaxed(regval, data->base + REG_MMU_IVRP_PADDR);
 > >  
-> >  struct mtk_smi_larb_gen {
-> > -	bool need_larbid;
-> >  	int port_in_larb[MTK_LARB_NR_MAX + 1];
-> >  	void (*config_port)(struct device *);
-> >  	unsigned int larb_direct_to_common_mask;
-> > @@ -153,18 +152,9 @@ void mtk_smi_larb_put(struct device *larbdev)
-> >  	struct mtk_smi_iommu *smi_iommu = data;
-> >  	unsigned int         i;
+> > -	if (data->enable_4GB && data->plat_data->has_vld_pa_rng) {
+> > +	if (data->dram_is_4gb && data->plat_data->has_vld_pa_rng) {
+> >  		/*
+> >  		 * If 4GB mode is enabled, the validate PA range is from
+> >  		 * 0x1_0000_0000 to 0x1_ffff_ffff. here record bit[32:30].
+> > @@ -611,8 +611,8 @@ static int mtk_iommu_probe(struct platform_device *pdev)
+> >  		return -ENOMEM;
+> >  	data->protect_base = ALIGN(virt_to_phys(protect), MTK_PROTECT_PA_ALIGN);
 > >  
-> > -	if (larb->larb_gen->need_larbid) {
-> > -		larb->mmu = &smi_iommu->larb_imu[larb->larbid].mmu;
-> > -		return 0;
-> > -	}
-> > -
-> > -	/*
-> > -	 * If there is no larbid property, Loop to find the corresponding
-> > -	 * iommu information.
-> > -	 */
-> > -	for (i = 0; i < smi_iommu->larb_nr; i++) {
-> > +	for (i = 0; i < MTK_LARB_NR_MAX; i++) {
-> >  		if (dev == smi_iommu->larb_imu[i].dev) {
-> > -			/* The 'mmu' may be updated in iommu-attach/detach. */
-> > +			larb->larbid = i;
-> >  			larb->mmu = &smi_iommu->larb_imu[i].mmu;
-> >  			return 0;
-> >  		}
-> > @@ -243,7 +233,6 @@ static void mtk_smi_larb_config_port_gen1(struct device *dev)
-> >  };
+> > -	/* Whether the current dram is over 4GB */
+> > -	data->enable_4GB = !!(max_pfn > (BIT_ULL(32) >> PAGE_SHIFT));
+> > +	/* Whether the current dram is 4GB. */
+> > +	data->dram_is_4gb = !!(max_pfn > (BIT_ULL(32) >> PAGE_SHIFT));
 > >  
-> >  static const struct mtk_smi_larb_gen mtk_smi_larb_mt2701 = {
-> > -	.need_larbid = true,
-> >  	.port_in_larb = {
-> >  		LARB0_PORT_OFFSET, LARB1_PORT_OFFSET,
-> >  		LARB2_PORT_OFFSET, LARB3_PORT_OFFSET
-> > @@ -252,7 +241,6 @@ static void mtk_smi_larb_config_port_gen1(struct device *dev)
-> >  };
+> >  	res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
+> >  	data->base = devm_ioremap_resource(dev, res);
+> > diff --git a/drivers/iommu/mtk_iommu.h b/drivers/iommu/mtk_iommu.h
+> > index 753266b..e8114b2 100644
+> > --- a/drivers/iommu/mtk_iommu.h
+> > +++ b/drivers/iommu/mtk_iommu.h
+> > @@ -65,7 +65,7 @@ struct mtk_iommu_data {
+> >  	struct mtk_iommu_domain		*m4u_dom;
+> >  	struct iommu_group		*m4u_group;
+> >  	struct mtk_smi_iommu		smi_imu;      /* SMI larb iommu info */
+> > -	bool                            enable_4GB;
+> > +	bool                            dram_is_4gb;
+> >  	bool				tlb_flush_active;
 > >  
-> >  static const struct mtk_smi_larb_gen mtk_smi_larb_mt2712 = {
-> > -	.need_larbid = true,
-> >  	.config_port                = mtk_smi_larb_config_port_gen2_general,
-> >  	.larb_direct_to_common_mask = BIT(8) | BIT(9),      /* bdpsys */
-> >  };
-> > @@ -291,7 +279,6 @@ static int mtk_smi_larb_probe(struct platform_device *pdev)
-> >  	struct device *dev = &pdev->dev;
-> >  	struct device_node *smi_node;
-> >  	struct platform_device *smi_pdev;
-> > -	int err;
-> >  
-> >  	larb = devm_kzalloc(dev, sizeof(*larb), GFP_KERNEL);
-> >  	if (!larb)
-> > @@ -321,15 +308,6 @@ static int mtk_smi_larb_probe(struct platform_device *pdev)
-> >  	}
-> >  	larb->smi.dev = dev;
-> >  
-> > -	if (larb->larb_gen->need_larbid) {
-> > -		err = of_property_read_u32(dev->of_node, "mediatek,larb-id",
-> > -					   &larb->larbid);
-> > -		if (err) {
-> > -			dev_err(dev, "missing larbid property\n");
-> > -			return err;
-> > -		}
-> > -	}
-> > -
-> >  	smi_node = of_parse_phandle(dev->of_node, "mediatek,smi", 0);
-> >  	if (!smi_node)
-> >  		return -EINVAL;
-> > diff --git a/include/soc/mediatek/smi.h b/include/soc/mediatek/smi.h
-> > index 5201e90..a65324d 100644
-> > --- a/include/soc/mediatek/smi.h
-> > +++ b/include/soc/mediatek/smi.h
-> > @@ -29,7 +29,6 @@ struct mtk_smi_larb_iommu {
-> >  };
-> >  
-> >  struct mtk_smi_iommu {
-> > -	unsigned int larb_nr;
-> >  	struct mtk_smi_larb_iommu larb_imu[MTK_LARB_NR_MAX];
-> >  };
-> >  
+> >  	struct iommu_device		iommu;
 > > 
 
 
