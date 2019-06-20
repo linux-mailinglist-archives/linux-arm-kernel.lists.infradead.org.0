@@ -2,85 +2,125 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 280D74CC90
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 20 Jun 2019 13:03:40 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id AB7204CC94
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 20 Jun 2019 13:04:33 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=rXPrwJm/WTGI0GODkMPMxReVaFuH0EMEp7Yd6rjxNYs=; b=ASFYASPUY/9YDpb4ONLgDzrwr
-	PrkItjc5rilP7kcR6lpmj0hU/cR9GXHExWvVCrYoU0U0t3re1BarAJPKlxtNieHQ7CBDRS8dF7QK9
-	8/5iYfdGQGoWa7jlEm64NKhzJP5m/75MF5kfhk03dOIlWoHorXcAKGWk/cPJAWkS+zSrkEa0cOJLf
-	ckGNGpAx2SIZqqa8C2ixBMoArmJ5E+EAPALs6SC6Ble6e+NgOe5UqAo9yXr5Ip5H+RbEFWlgmEGDe
-	jPBXGGb9EnUqcEL0HdNhrR1aSukBNYJp6xWy+/HQSKLSL4pTYg0I1vzn5jdlTCKIzFUGFHZU6/aH7
-	bcNilLUpQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
+	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=necOZOIUYyC3PbQoUl2zzKiYuU9oBvtudsF3sRPAWko=; b=NIQ7gmYlWnDbkx
+	9wyUx+8W/+1mvySJ8aLSRBx1hje6GdtbTs8QebtVUcFjonZ+sr2GDLSHeZA0Iq0cq8z3mheaAsoLi
+	YYi55qtHLN8CngpkVYn3q37Vi9BO0XvsbUbSHWXXNNSWxjb7obNwuQwdyZS5SkgLj2Jdep7VZU71t
+	8hpaR3dQMWut2GHpMb+uI+sbfzIfQbjvdXbxX/dLFTwyVOSWMDhCKL41FUxb1t3g1crjXdcRlimIV
+	2yhXGO7qwhyu1UD4b+vskwtxCofRXASf6h+lY71byHOO7TJC34COj+dknpYkGFqSJtYBJl7mSMH5r
+	l4k56AJPduL+A0zk0hug==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hduqv-0002Xq-Qh; Thu, 20 Jun 2019 11:03:37 +0000
-Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
+	id 1hdurn-0002vg-Te; Thu, 20 Jun 2019 11:04:32 +0000
+Received: from mx0b-0016f401.pphosted.com ([67.231.156.173])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hduqc-0002Ws-Ka
- for linux-arm-kernel@lists.infradead.org; Thu, 20 Jun 2019 11:03:19 +0000
-Received: by mail-wm1-x342.google.com with SMTP id s15so2706454wmj.3
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 20 Jun 2019 04:03:18 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=VSz5A8epBUVmpw04i+7PmcLUxz8iUrkIJ6W9aJ7sNBE=;
- b=MFwhnOXLZ9GpiBBqLEqgfUgzF9H/T5lernAK18SVhj8NxXDQFPuD9JGtL0gZ6gbMKf
- SLubkvRBu88LJI4iW9/byraIUBJrQrskeK0CjVhVfsI/Fb1lcyytEQVgcGSKTB9vnQs0
- YaGGYz2vRetRoUvgZpuwBFdmITslKVXqNr9vPQDyvnFp0q0xHvwYp3esf/bNp9dgR1+v
- JkXPZPGh2uZW5LaHvTgFrS5HMBta5HsSD4RfNKF1QSdISKM9larovbZSm3opX5ZpAn1n
- GJTTeB7GvFKBULMmrQWAMue/EV3yOOLgC21WQXUbGFjJLmLuUyOR1kG4dVw7vpsQcaC2
- 8hUw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=VSz5A8epBUVmpw04i+7PmcLUxz8iUrkIJ6W9aJ7sNBE=;
- b=Qmt4aP614zNovFXd3bOmHHIx8HXSNpyo+6s7TZUxFecAdm5jYTT8lXuU6qHyvY1jB2
- 7hUF5hiCXGA391ybxZe6VOlBFzVV+y0eRXHynVa466xiRuuZ7W/qXVBo3CHwNhftBnIG
- 3+W6LNfI/QNrpMtcYfnSYpztWnUaOrfloTLhkpl/EJrYvBqOlffw1cn4cLbpcg4dKb7U
- sJAvuf+k2AvfCpfBMVMoFPZRzvo2Krxc0ukj13wb5mZ2cekfR3Zr56SIPa5nQ4IcX7Cm
- Eho1y/jqAWsmCig6i8+qJPGl8ncBnRJPx4rpz0wgX1etqn4gJXtw0Qqbb7j/dDGN7Fgb
- AoKA==
-X-Gm-Message-State: APjAAAUIQrbMpgyYs4AjHItoeDt8sF/vD9Ovn6cHtNNGp6jaU41w6sAy
- 2X6EbXR8NBFJ2nNBFcjgBBA=
-X-Google-Smtp-Source: APXvYqxNm1K3WSG5KtignpG+L+f5Z30baasXSgC4QDQcxHwU0lotsXxcZhOn1TedVwCsHtN2jLY3KA==
-X-Received: by 2002:a1c:8049:: with SMTP id b70mr2364726wmd.33.1561028596768; 
- Thu, 20 Jun 2019 04:03:16 -0700 (PDT)
-Received: from localhost (p2E5BEF36.dip0.t-ipconnect.de. [46.91.239.54])
- by smtp.gmail.com with ESMTPSA id s10sm5934353wmf.8.2019.06.20.04.03.15
- (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Thu, 20 Jun 2019 04:03:15 -0700 (PDT)
-Date: Thu, 20 Jun 2019 13:03:14 +0200
-From: Thierry Reding <thierry.reding@gmail.com>
-To: Vidya Sagar <vidyas@nvidia.com>
-Subject: Re: [PATCH V10 15/15] arm64: Add Tegra194 PCIe driver to defconfig
-Message-ID: <20190620110314.GC15892@ulmo>
-References: <20190612095339.20118-1-vidyas@nvidia.com>
- <20190612095339.20118-16-vidyas@nvidia.com>
+ id 1hdurW-0002vF-Qz
+ for linux-arm-kernel@lists.infradead.org; Thu, 20 Jun 2019 11:04:16 +0000
+Received: from pps.filterd (m0045851.ppops.net [127.0.0.1])
+ by mx0b-0016f401.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id
+ x5KAtZmQ013531; Thu, 20 Jun 2019 04:03:59 -0700
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=marvell.com;
+ h=from : to : cc :
+ subject : date : message-id : references : in-reply-to : content-type :
+ content-id : content-transfer-encoding : mime-version; s=pfpt0818;
+ bh=pOkZim8xYBMJcNKum28qzWA78cqgAJfAqBwvWLccqj4=;
+ b=q/FYdescVefUJjcFiKVOJYiG5WSp0/ZQr30hqCayixGIQj5tisB5+pJxfqIPgIhsOk7n
+ 7VS8SVzwO7CPeZSEd01iiQ97pKBbwIXmDnfQpWoKc6YSIoOYDrMPXYjTEHF/EzAFejVd
+ u0VCpYgmEZsSr5u2LPIChW/FruQOz1U+6H8GaHGF/VOhvjf0YgzJ3SyxuUTRmv4aiQy6
+ LgvWoVrXSu5uimP1q0yuGVXfA4tYvGACTm9nI26nWgeYXh2X2UxKg/+t1dD+moE//w/u
+ /ck7JXH8Ik5KXzefQ1AlBLrNZ8REmiR6njx+lJot82nOM3tvCMlltnkvNB+XmsMhwFyI Pw== 
+Received: from sc-exch02.marvell.com ([199.233.58.182])
+ by mx0b-0016f401.pphosted.com with ESMTP id 2t7vrk2bgb-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-SHA384 bits=256 verify=NOT);
+ Thu, 20 Jun 2019 04:03:59 -0700
+Received: from SC-EXCH01.marvell.com (10.93.176.81) by SC-EXCH02.marvell.com
+ (10.93.176.82) with Microsoft SMTP Server (TLS) id 15.0.1367.3; Thu, 20 Jun
+ 2019 04:03:57 -0700
+Received: from NAM05-CO1-obe.outbound.protection.outlook.com (104.47.48.57) by
+ SC-EXCH01.marvell.com (10.93.176.81) with Microsoft SMTP Server
+ (TLS) id
+ 15.0.1367.3 via Frontend Transport; Thu, 20 Jun 2019 04:03:57 -0700
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=marvell.onmicrosoft.com; s=selector2-marvell-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=pOkZim8xYBMJcNKum28qzWA78cqgAJfAqBwvWLccqj4=;
+ b=eyzbQR3uJwt+rdyKzwlMDfpIuwO8OtUXYWL4D/OLRchCw+5w8x+kAdEzL5+o9pGN1bNU8Prtzbw8H5xtUCUAx1stbrgaEW2IwTFtb2mrHPOntUTCNvLtxaJf2dZ/iqdaFKc6Sul92XpBhh8ktYk/a83CW78T92Z5YOG6L4McyeQ=
+Received: from BL0PR18MB2339.namprd18.prod.outlook.com (52.132.30.139) by
+ BL0SPR01MB0027.namprd18.prod.outlook.com (52.132.24.138) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2008.13; Thu, 20 Jun 2019 11:03:52 +0000
+Received: from BL0PR18MB2339.namprd18.prod.outlook.com
+ ([fe80::985d:732e:687f:23af]) by BL0PR18MB2339.namprd18.prod.outlook.com
+ ([fe80::985d:732e:687f:23af%6]) with mapi id 15.20.1987.014; Thu, 20 Jun 2019
+ 11:03:52 +0000
+From: Jan Glauber <jglauber@marvell.com>
+To: Ard Biesheuvel <ard.biesheuvel@linaro.org>
+Subject: Re: [PATCH v5] arm64: kernel: implement fast refcount checking
+Thread-Topic: [PATCH v5] arm64: kernel: implement fast refcount checking
+Thread-Index: AQHVJ1fYnbZMk7JN4E+qwGbYAty2oQ==
+Date: Thu, 20 Jun 2019 11:03:52 +0000
+Message-ID: <20190620110344.GA11817@hc>
+References: <20190619105431.2630-1-ard.biesheuvel@linaro.org>
+ <CAKv+Gu-eWP7BNSgYzQgrKGdsEHj1pvv9wAhW9jrorj775DJ_-g@mail.gmail.com>
+In-Reply-To: <CAKv+Gu-eWP7BNSgYzQgrKGdsEHj1pvv9wAhW9jrorj775DJ_-g@mail.gmail.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-clientproxiedby: VI1P195CA0069.EURP195.PROD.OUTLOOK.COM
+ (2603:10a6:802:59::22) To BL0PR18MB2339.namprd18.prod.outlook.com
+ (2603:10b6:207:44::11)
+x-ms-exchange-messagesentrepresentingtype: 1
+x-originating-ip: [2a02:8070:8782:2d00:d8e3:25b5:8d22:a2ca]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: 8a2c68e1-9481-4e4d-644e-08d6f56efa61
+x-microsoft-antispam: BCL:0; PCL:0;
+ RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600148)(711020)(4605104)(1401327)(2017052603328)(7193020);
+ SRVR:BL0SPR01MB0027; 
+x-ms-traffictypediagnostic: BL0SPR01MB0027:
+x-microsoft-antispam-prvs: <BL0SPR01MB00271330D91D590A17AB3E3FD8E40@BL0SPR01MB0027.namprd18.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:9508;
+x-forefront-prvs: 0074BBE012
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(7916004)(136003)(396003)(39850400004)(376002)(346002)(366004)(199004)(189003)(8936002)(6916009)(386003)(6436002)(102836004)(76176011)(52116002)(6506007)(68736007)(486006)(446003)(11346002)(476003)(86362001)(4326008)(14444005)(256004)(25786009)(99286004)(6486002)(53936002)(6512007)(9686003)(7736002)(186003)(2906002)(305945005)(6246003)(5660300002)(33656002)(1076003)(71200400001)(71190400001)(66476007)(229853002)(478600001)(14454004)(81166006)(66946007)(73956011)(33716001)(66446008)(54906003)(46003)(64756008)(66556008)(6116002)(81156014)(316002)(8676002);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:BL0SPR01MB0027;
+ H:BL0PR18MB2339.namprd18.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; A:1; MX:1; 
+received-spf: None (protection.outlook.com: marvell.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam-message-info: gaLSansSGb55svRboxuJmlfnvS/ADNNUfPrN9VexIN0TnKVAK5FmQijYB2YFe9bZrzNNcsIwSxg0WDDEpCmcFKKcm/1885vFfQ3Q3jaomCIQcDjOIFQDL83oq65Y+24saCQaAgZLYljCqf82aZLmGn3Te83f3QmeU8D7pWjqgsKACbTe0Epp0pvs79bKwX6VSMv16UNZWZvf7jx+0y0pR1XDb6Q9GrLlUSq7mbUbneaisDk7zfHn5J3BStaNI1azuv61xzTorn1LxgiEpxsD788lvPrtboarGsNUItXPXyRmEx0HP5q+/jQyNo645zdIFpzrrAWAY3NoIyXgHh8xUusAlsJllKPMpPjvNbHZS1c5QcOvSG0XQCBUWAo1rv4ZZnzj11J7+/GXky6R3KAogMXiEhpuaeQimGQmeOOliAY=
+Content-ID: <438F9EBE7E9D7742B17AEC4FC6B0D427@namprd18.prod.outlook.com>
 MIME-Version: 1.0
-In-Reply-To: <20190612095339.20118-16-vidyas@nvidia.com>
-User-Agent: Mutt/1.11.4 (2019-03-13)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 8a2c68e1-9481-4e4d-644e-08d6f56efa61
+X-MS-Exchange-CrossTenant-originalarrivaltime: 20 Jun 2019 11:03:52.1964 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 70e1fb47-1155-421d-87fc-2e58f638b6e0
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: jglauber@marvell.com
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: BL0SPR01MB0027
+X-OriginatorOrg: marvell.com
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:, ,
+ definitions=2019-06-20_07:, , signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190620_040318_680421_46C6405D 
-X-CRM114-Status: GOOD (  12.77  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190620_040415_071365_CA9F0385 
+X-CRM114-Status: GOOD (  22.38  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:342 listed in]
- [list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [67.231.156.173 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (thierry.reding[at]gmail.com)
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -99,118 +139,80 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, lorenzo.pieralisi@arm.com,
- mperttunen@nvidia.com, mmaddireddy@nvidia.com, linux-pci@vger.kernel.org,
- catalin.marinas@arm.com, will.deacon@arm.com, linux-kernel@vger.kernel.org,
- kthota@nvidia.com, kishon@ti.com, linux-tegra@vger.kernel.org,
- robh+dt@kernel.org, gustavo.pimentel@synopsys.com, jingoohan1@gmail.com,
- bhelgaas@google.com, digetx@gmail.com, jonathanh@nvidia.com,
- linux-arm-kernel@lists.infradead.org, sagar.tv@gmail.com
-Content-Type: multipart/mixed; boundary="===============3245212905290089106=="
+Cc: Kees Cook <keescook@chromium.org>,
+ Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will.deacon@arm.com>,
+ Jayachandran Chandrasekharan Nair <jnair@marvell.com>,
+ Hanjun Guo <guohanjun@huawei.com>, Andrew Murray <andrew.murray@arm.com>,
+ Linus Torvalds <torvalds@linux-foundation.org>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On Wed, Jun 19, 2019 at 12:56:41PM +0200, Ard Biesheuvel wrote:
+> (add Andrew, who has been looking at the atomics code as well)
+> 
+> On Wed, 19 Jun 2019 at 12:54, Ard Biesheuvel <ard.biesheuvel@linaro.org> wrote:
+> >
+> > This adds support to arm64 for fast refcount checking, as contributed
+> > by Kees for x86 based on the implementation by grsecurity/PaX.
+> >
+> > The general approach is identical: the existing atomic_t helpers are
+> > cloned for refcount_t, with the arithmetic instruction modified to set
+> > the PSTATE flags, and one or two branch instructions added that jump to
+> > an out of line handler if overflow, decrement to zero or increment from
+> > zero are detected.
+> >
+> > One complication that we have to deal with on arm64 is the fact that
+> > it has two atomics implementations: the original LL/SC implementation
+> > using load/store exclusive loops, and the newer LSE one that does mostly
+> > the same in a single instruction. So we need to clone some parts of
+> > both for the refcount handlers, but we also need to deal with the way
+> > LSE builds fall back to LL/SC at runtime if the hardware does not
+> > support it.
+> >
+> > As is the case with the x86 version, the performance gain is substantial
+> > (ThunderX2 @ 2.2 GHz, using LSE), even though the arm64 implementation
+> > incorporates an add-from-zero check as well:
+> >
+> > perf stat -B -- echo ATOMIC_TIMING >/sys/kernel/debug/provoke-crash/DIRECT
+> >
+> >       116252672661      cycles                    #    2.207 GHz
+> >
+> >       52.689793525 seconds time elapsed
+> >
+> > perf stat -B -- echo REFCOUNT_TIMING >/sys/kernel/debug/provoke-crash/DIRECT
+> >
+> >       127060259162      cycles                    #    2.207 GHz
+> >
+> >       57.243690077 seconds time elapsed
+> >
+> > For comparison, the numbers below were captured using CONFIG_REFCOUNT_FULL,
+> > which uses the validation routines implemented in C using cmpxchg():
+> >
+> > perf stat -B -- echo REFCOUNT_TIMING >/sys/kernel/debug/provoke-crash/DIRECT
+> >
+> >  Performance counter stats for 'cat /dev/fd/63':
+> >
+> >       191057942484      cycles                    #    2.207 GHz
+> >
+> >       86.568269904 seconds time elapsed
+> >
+> > As a bonus, this code has been found to perform significantly better on
+> > systems with many CPUs, due to the fact that it no longer relies on the
+> > load/compare-and-swap combo performed in a tight loop, which is what we
+> > emit for cmpxchg() on arm64.
 
---===============3245212905290089106==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="LwW0XdcUbUexiWVK"
-Content-Disposition: inline
+Great work! With that series refcount is no longer the top spot for the
+open-close testcase on TX2 (with a distro-like config).
 
+Minor unrelated nit - shouldn't the new refcount.h use the modern
+SPDX-License-Identifier thing?
 
---LwW0XdcUbUexiWVK
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
-
-On Wed, Jun 12, 2019 at 03:23:39PM +0530, Vidya Sagar wrote:
-> Add PCIe host controller driver for DesignWare core based
-> PCIe controller IP present in Tegra194.
->=20
-> Signed-off-by: Vidya Sagar <vidyas@nvidia.com>
-> ---
-> Changes since [v9]:
-> * None
->=20
-> Changes since [v8]:
-> * None
->=20
-> Changes since [v7]:
-> * None
->=20
-> Changes since [v6]:
-> * None
->=20
-> Changes since [v5]:
-> * None
->=20
-> Changes since [v4]:
-> * None
->=20
-> Changes since [v3]:
-> * None
->=20
-> Changes since [v2]:
-> * None
->=20
-> Changes since [v1]:
-> * Changed CONFIG_PCIE_TEGRA194 from 'y' to 'm'
->=20
->  arch/arm64/configs/defconfig | 1 +
->  1 file changed, 1 insertion(+)
-
-Applied to for-5.3/arm64/defconfig, thanks.
-
-Thierry
-
-> diff --git a/arch/arm64/configs/defconfig b/arch/arm64/configs/defconfig
-> index bb0705e1f52e..6462a4dbac87 100644
-> --- a/arch/arm64/configs/defconfig
-> +++ b/arch/arm64/configs/defconfig
-> @@ -192,6 +192,7 @@ CONFIG_PCIE_QCOM=3Dy
->  CONFIG_PCIE_ARMADA_8K=3Dy
->  CONFIG_PCIE_KIRIN=3Dy
->  CONFIG_PCIE_HISI_STB=3Dy
-> +CONFIG_PCIE_TEGRA194=3Dm
->  CONFIG_UEVENT_HELPER_PATH=3D"/sbin/hotplug"
->  CONFIG_DEVTMPFS=3Dy
->  CONFIG_DEVTMPFS_MOUNT=3Dy
-> --=20
-> 2.17.1
->=20
-
---LwW0XdcUbUexiWVK
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQIzBAABCAAdFiEEiOrDCAFJzPfAjcif3SOs138+s6EFAl0LZ/IACgkQ3SOs138+
-s6HnVQ//V0AiVK2T4Zt26dMdZRhdje5rcfQvqSvS26yAWlB19a4K+KnSpeO7nTt8
-i6xPCg/PJR7n4dZixeneI2T9CbseVldNr3S1pYDhZkauq6BjAdC83QHLsp9Qi7tX
-DEFCr7Q7S5Kydzm2qWiHqEH0RkU4uS3aHLYqmQgjwegLS70jCaQZ6YKbgOcPbukl
-O8+1Dh62jUJWf4aQrk2td+MtfjSkY3/w+J/ath9tZ2mUgyU3DnLXcX8bl2p2iL3e
-v/fxv6TunUNh4qfxNoPxe+RKYV58eYgYdTx4/iYWWBvmuqGGfDsPibgO/PB2aueu
-7GZu7HlOyAww4ZZyJZq+V59eusRVVdfOmBYNH0V7s4cZ5uylcXjo0OyVxcPaLagc
-+4QAQvFvffG8dJ/EtbECoLMp2Yztw1Uq1SVLnt8MBod7DbAYL022NVBIjMB86lLj
-JiWpkweF8hOdUS1adn+j5gsgRVBMR62wBKtkQ8qYx8f4pX0Vl1VEIY2ZnEq44Q7E
-e1uqUuVaLcwszTaFO+CEsPDrdvWqUKyu8F01G+Qx+xC8rgh/g6b8AqDNK/y/x1q9
-z+3DzwdYbUtxw9G2iL4jk76dNnJnGDAKKiDeEmxeO1qYsxEIHdBgySs/eNHvdoRh
-Z1TuJN879ifWwPHgEOB95zZ8Ed5CByYQXa+JT+eDqZuumu8eU2w=
-=BWCx
------END PGP SIGNATURE-----
-
---LwW0XdcUbUexiWVK--
-
-
---===============3245212905290089106==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+--Jan
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============3245212905290089106==--
-
