@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1E9744E467
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 21 Jun 2019 11:44:10 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 665E14E474
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 21 Jun 2019 11:46:03 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,35 +11,37 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=VuW91ZvwgBJTmyQSHEDud6sq1cRaqpMvwLluXxWJJYE=; b=dPAJIGYyCVWEh72Ea8lxXQuPSw
-	lUNCuV2s8YS6u+87xGi8ps4YCi++yxd0MUKXeOwX4OTe0m67f7bVtpRJKo/cBbOElvicxR8MXaRON
-	jRSnHzINe8jWPPYKVYYdUUR3YMvI0FlDNQy1g6C25mZV4a+BzGtcyCOIiL5JSjQ10mdlg/DiFSjJB
-	mBbAEihQjSxU/CTWQQ31MMICOUUdGsB0nVyeL3b4GDIDcDc1Zsbdo9ju/bkTN/TIjjrs64nJDSOma
-	Spzr8Zja8hSR8jht0RUpBdxtU7+5BJQjo0gJbKgQrknBb356sMzPFulN8/TdUbeT3XsTFNzecNvXe
-	rdtpw96g==;
+	bh=8HkuR1m5zsAR/BXBQuJEF3aWgWLoNz8RfrfCUJ2eQmY=; b=WO2e/4dDMxMvH/IAtvCfZ03YKN
+	Cr6kIhAcz38Nz2pr53Tg+v5wOgmg1O27QonBVy0KUsjLNx3IKLoJMDa5SZ5PFDwSHMnbi5YVp6f/a
+	/i7jGf6h1Yfe4Jjo3DBN61ZPh1FYcQSP+dK1uZJRRIG61nbIYNdxbvF1R8K4yVeQMHQioLM5awHhq
+	OULHGnZT3Q6hI6UwKUUVh6LehuH8uE6G3qWj+G0QdmXi+atqOnDK3YMiemrzigTo1nyg/wiXuTi4h
+	YYAAh0xF6IuiO7gOomCEICcuAQvFge3/z6l6vuRhmFEgTJkj28mwcoY0CCdLhW/P0ieMN8+aIdymF
+	oScH2j5g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1heG5X-00035Z-Uy; Fri, 21 Jun 2019 09:44:07 +0000
+	id 1heG7N-0005Vc-S4; Fri, 21 Jun 2019 09:46:02 +0000
 Received: from kirsty.vergenet.net ([202.4.237.240])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1heFgP-0002tV-Ll
- for linux-arm-kernel@lists.infradead.org; Fri, 21 Jun 2019 09:18:11 +0000
+ id 1heFgZ-0002tV-QT
+ for linux-arm-kernel@lists.infradead.org; Fri, 21 Jun 2019 09:18:21 +0000
 Received: from reginn.horms.nl (watermunt.horms.nl [80.127.179.77])
- by kirsty.vergenet.net (Postfix) with ESMTPA id 5C7B825BEA9;
+ by kirsty.vergenet.net (Postfix) with ESMTPA id 5EFE625BEAE;
  Fri, 21 Jun 2019 19:16:39 +1000 (AEST)
 Received: by reginn.horms.nl (Postfix, from userid 7100)
- id A6A2694351D; Fri, 21 Jun 2019 11:16:35 +0200 (CEST)
+ id B61DB94351E; Fri, 21 Jun 2019 11:16:35 +0200 (CEST)
 From: Simon Horman <horms+renesas@verge.net.au>
 To: linux-renesas-soc@vger.kernel.org
-Subject: [PATCH 46/53] arm64: dts: renesas: hihope-common: Add LEDs support
-Date: Fri, 21 Jun 2019 11:16:24 +0200
-Message-Id: <1485b6353a9940c5ac5d3f90880207ac95b4e350.1561107232.git.horms+renesas@verge.net.au>
+Subject: [PATCH 47/53] arm64: dts: renesas: r8a774a1: Add CPU topology on
+ r8a774a1 SoC
+Date: Fri, 21 Jun 2019 11:16:25 +0200
+Message-Id: <7b996955e514bd3639419c1e725bc3b69c96bd05.1561107232.git.horms+renesas@verge.net.au>
 X-Mailer: git-send-email 2.11.0
 In-Reply-To: <cover.1561107232.git.horms+renesas@verge.net.au>
 References: <cover.1561107232.git.horms+renesas@verge.net.au>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190621_021810_077217_E3D49DD9 
-X-CRM114-Status: GOOD (  10.22  )
+X-CRM114-CacheID: sfid-20190621_021820_023048_6EE5C882 
+X-CRM114-Status: UNSURE (   9.11  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.0 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.0 points)
@@ -62,62 +64,65 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Fabrizio Castro <fabrizio.castro@bp.renesas.com>,
- Simon Horman <horms+renesas@verge.net.au>, Magnus Damm <magnus.damm@gmail.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: Simon Horman <horms+renesas@verge.net.au>,
+ Magnus Damm <magnus.damm@gmail.com>, linux-arm-kernel@lists.infradead.org,
+ Biju Das <biju.das@bp.renesas.com>
 MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Fabrizio Castro <fabrizio.castro@bp.renesas.com>
+From: Biju Das <biju.das@bp.renesas.com>
 
-This patch adds LEDs support to the HiHope RZ/G2[MN] Main Board
-common device tree.
+This patch adds the "cpu-map" into r8a774a1 composed of multi-cluster. This
+definition is used to parse the cpu topology.
 
-Signed-off-by: Fabrizio Castro <fabrizio.castro@bp.renesas.com>
-Reviewed-by: Simon Horman <horms+renesas@verge.net.au>
+Based on work by Gaku Inami <gaku.inami.xw@bp.renesas.com> for r8a7796 SoC.
+
+Signed-off-by: Biju Das <biju.das@bp.renesas.com>
 Signed-off-by: Simon Horman <horms+renesas@verge.net.au>
 ---
- arch/arm64/boot/dts/renesas/hihope-common.dtsi | 24 ++++++++++++++++++++++++
- 1 file changed, 24 insertions(+)
+ arch/arm64/boot/dts/renesas/r8a774a1.dtsi | 26 ++++++++++++++++++++++++++
+ 1 file changed, 26 insertions(+)
 
-diff --git a/arch/arm64/boot/dts/renesas/hihope-common.dtsi b/arch/arm64/boot/dts/renesas/hihope-common.dtsi
-index 6a45c49c24dc..625c3aaead14 100644
---- a/arch/arm64/boot/dts/renesas/hihope-common.dtsi
-+++ b/arch/arm64/boot/dts/renesas/hihope-common.dtsi
-@@ -17,6 +17,30 @@
- 		stdout-path = "serial0:115200n8";
- 	};
+diff --git a/arch/arm64/boot/dts/renesas/r8a774a1.dtsi b/arch/arm64/boot/dts/renesas/r8a774a1.dtsi
+index f4aeb9bdeeb0..b06d7149e5fa 100644
+--- a/arch/arm64/boot/dts/renesas/r8a774a1.dtsi
++++ b/arch/arm64/boot/dts/renesas/r8a774a1.dtsi
+@@ -102,6 +102,32 @@
+ 		#address-cells = <1>;
+ 		#size-cells = <0>;
  
-+	leds {
-+		compatible = "gpio-leds";
++		cpu-map {
++			cluster0 {
++				core0 {
++					cpu = <&a57_0>;
++				};
++				core1 {
++					cpu = <&a57_1>;
++				};
++			};
 +
-+		led0 {
-+			gpios = <&gpio6 11 GPIO_ACTIVE_HIGH>;
-+			label = "LED0";
++			cluster1 {
++				core0 {
++					cpu = <&a53_0>;
++				};
++				core1 {
++					cpu = <&a53_1>;
++				};
++				core2 {
++					cpu = <&a53_2>;
++				};
++				core3 {
++					cpu = <&a53_3>;
++				};
++			};
 +		};
 +
-+		led1 {
-+			gpios = <&gpio6 12 GPIO_ACTIVE_HIGH>;
-+			label = "LED1";
-+		};
-+
-+		led2 {
-+			gpios = <&gpio6 13 GPIO_ACTIVE_HIGH>;
-+			label = "LED2";
-+		};
-+
-+		led3 {
-+			gpios = <&gpio0  0 GPIO_ACTIVE_HIGH>;
-+			label = "LED3";
-+		};
-+	};
-+
- 	reg_1p8v: regulator0 {
- 		compatible = "regulator-fixed";
- 		regulator-name = "fixed-1.8V";
+ 		a57_0: cpu@0 {
+ 			compatible = "arm,cortex-a57";
+ 			reg = <0x0>;
 -- 
 2.11.0
 
