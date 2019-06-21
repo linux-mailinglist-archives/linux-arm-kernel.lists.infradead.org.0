@@ -2,73 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9EFCD4E63F
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 21 Jun 2019 12:37:47 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BBCAE4E641
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 21 Jun 2019 12:38:12 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=eZFVDmMeTdpgsUHA2Q9zYUWK8HDmfCd5FmeGPChl0VU=; b=Votn6IGBKsJHsHX65ICMNRZ3pM
-	f2ZiCXUp4AAT4+cbdaMimaRjC1Pt0jCpebSQtMUXCpIuAATbozfRiq4ZZQygzB7Qpr0qov4hQhggF
-	5tL2NubTQDZcQVLNufW7IteWXPF4De7n8z6ays/2/HPcYnkOUEqPXz3vD15g5TcAm4oQBI7vGMgVF
-	KX25xYndplUNvFqHB187dVTtrXK4X5a0MckH00GfhB/NivMlbASmoa3VLfkA5DdRWxVCqh48UUbBe
-	jih5DHJvk2Cr6lHXqa+KTzRSUii1/4c0VzNluI6OHmVMnpX7K7I5RdTIMwHE+gqaodr8TEBfWHgiQ
-	qUF6XT9A==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=/SM+sn9ulyoBA3JqvBJqNx1GXjGwjcIndUS9vWw99HU=; b=SH8hdPEa9OpmDK
+	X5xmoxd5azZTQcd7XqyYvgvEyftmys8XrD/6v8IIv3EJdw35tHJuE7PJGgQBK9mhTXHr/o+8DzCtO
+	h8Bl6f+5cE3fG0IoSDqGvmz0y/lEMe2nAj6S1ZiepDBR8A1mpUtnxF+GhS/PqcrtqWUg+ZfDTxG4k
+	IJJbq+1OBLSM6hsmosvXGxZC7aGiweCYJnU+IjxN9bZXyCw6vfRjUB/42qUquGnUdtLaQXLnWvWEG
+	7suEBLoA9Vn6tfvdewWNyaq8YEbbi9Jlz3m4JyCuatoXvck+NqQdL8J+gTuO6jkHX22aFtFGzxKmV
+	e+o8B1xpcCnNg1CT5BzA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1heGvQ-0005M8-1G; Fri, 21 Jun 2019 10:37:44 +0000
-Received: from lucky1.263xmail.com ([211.157.147.132])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1heGsX-0001nq-3y; Fri, 21 Jun 2019 10:34:50 +0000
-Received: from tony.xie?rock-chips.com (unknown [192.168.167.209])
- by lucky1.263xmail.com (Postfix) with ESMTP id 08F045683A;
- Fri, 21 Jun 2019 18:34:43 +0800 (CST)
-X-263anti-spam: KSV:0;BIG:0;
-X-MAIL-GRAY: 1
-X-MAIL-DELIVERY: 0
-X-KSVirus-check: 0
-X-ADDR-CHECKED4: 1
-X-ABS-CHECKED: 1
-X-SKE-CHECKED: 1
-X-ANTISPAM-LEVEL: 2
-Received: from localhost.localdomain (unknown [58.22.7.114])
- by smtp.263.net (postfix) whith ESMTP id
- P15277T140572333438720S1561113280887162_; 
- Fri, 21 Jun 2019 18:34:42 +0800 (CST)
-X-IP-DOMAINF: 1
-X-UNIQUE-TAG: <a36fbe699d367dd9b39e64f60b280e0c>
-X-RL-SENDER: tony.xie@rock-chips.com
-X-SENDER: xxx@rock-chips.com
-X-LOGIN-NAME: tony.xie@rock-chips.com
-X-FST-TO: heiko@sntech.de
-X-SENDER-IP: 58.22.7.114
-X-ATTACHMENT-NUM: 0
-X-DNS-TYPE: 0
-From: Tony Xie <tony.xie@rock-chips.com>
-To: heiko@sntech.de
-Subject: [PATCH v10 5/6] rtc: rk808: add RK809 and RK817 support.
-Date: Fri, 21 Jun 2019 06:34:38 -0400
-Message-Id: <20190621103438.8237-1-tony.xie@rock-chips.com>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20190621103258.8154-1-tony.xie@rock-chips.com>
-References: <20190621103258.8154-1-tony.xie@rock-chips.com>
+	id 1heGvq-0005el-JW; Fri, 21 Jun 2019 10:38:10 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1heGsf-0001vn-7q
+ for linux-arm-kernel@lists.infradead.org; Fri, 21 Jun 2019 10:34:54 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id AE43E142F;
+ Fri, 21 Jun 2019 03:34:52 -0700 (PDT)
+Received: from e103592.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
+ [10.121.207.14])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id E19CC3F718;
+ Fri, 21 Jun 2019 03:34:51 -0700 (PDT)
+Date: Fri, 21 Jun 2019 11:34:49 +0100
+From: Dave Martin <Dave.Martin@arm.com>
+To: Cristian Marussi <cristian.marussi@arm.com>
+Subject: Re: [PATCH 01/13] kselftest: arm64: introduce new boilerplate code
+Message-ID: <20190621103449.GI2790@e103592.cambridge.arm.com>
+References: <20190613111335.7645-1-cristian.marussi@arm.com>
+ <20190613111335.7645-2-cristian.marussi@arm.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20190613111335.7645-2-cristian.marussi@arm.com>
+User-Agent: Mutt/1.5.23 (2014-03-12)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190621_033445_614174_66EBE73C 
-X-CRM114-Status: GOOD (  18.30  )
-X-Spam-Score: 1.5 (+)
+X-CRM114-CacheID: sfid-20190621_033453_393418_C6926E28 
+X-CRM114-Status: GOOD (  18.24  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (1.5 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 1.5 RCVD_IN_SORBS_WEB      RBL: SORBS: sender is an abusable web server
- [58.22.7.114 listed in dnsbl.sorbs.net]
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [211.157.147.132 listed in list.dnswl.org]
- 0.0 T_SPF_PERMERROR        SPF: test of record failed (permerror)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -80,243 +62,130 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, a.zummo@towertech.it, alexandre.belloni@bootlin.com,
- tony.xie@rock-chips.com, huangtao@rock-chips.com, devicetree@vger.kernel.org,
- sboyd@kernel.org, zhangqing@rock-chips.com, linux-kernel@vger.kernel.org,
- robh+dt@kernel.org, xsf@rock-chips.com, linux-rockchip@lists.infradead.org,
- broonie@kernel.org, chenjh@rock-chips.com, lee.jones@linaro.org,
- linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-rtc@vger.kernel.org
-MIME-Version: 1.0
+Cc: andreyknvl@google.com, shuah@kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-kselftest@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-RK809 and RK817 are power management IC chips for multimedia products.
-Most of their functions and registers are same, including the rtc.
+On Thu, Jun 13, 2019 at 12:13:23PM +0100, Cristian Marussi wrote:
+> Added a new arm64-specific empty subsystem amongst TARGETS of KSFT build
+> framework; once populated with testcases, it will be possible to build
+> and invoke the new KSFT TARGETS=arm64 related tests from the toplevel
+> Makefile in the usual ways.
+> 
+> Signed-off-by: Cristian Marussi <cristian.marussi@arm.com>
+> ---
+>  tools/testing/selftests/Makefile       |  1 +
+>  tools/testing/selftests/arm64/Makefile | 51 ++++++++++++++++++++++++++
+>  tools/testing/selftests/arm64/README   | 44 ++++++++++++++++++++++
+>  3 files changed, 96 insertions(+)
+>  create mode 100644 tools/testing/selftests/arm64/Makefile
+>  create mode 100644 tools/testing/selftests/arm64/README
+> 
+> diff --git a/tools/testing/selftests/Makefile b/tools/testing/selftests/Makefile
+> index 9781ca79794a..4ff0b41ead8a 100644
+> --- a/tools/testing/selftests/Makefile
+> +++ b/tools/testing/selftests/Makefile
+> @@ -1,5 +1,6 @@
+>  # SPDX-License-Identifier: GPL-2.0
+>  TARGETS = android
+> +TARGETS += arm64
+>  TARGETS += bpf
+>  TARGETS += breakpoints
+>  TARGETS += capabilities
+> diff --git a/tools/testing/selftests/arm64/Makefile b/tools/testing/selftests/arm64/Makefile
+> new file mode 100644
+> index 000000000000..03a0d4f71218
+> --- /dev/null
+> +++ b/tools/testing/selftests/arm64/Makefile
+> @@ -0,0 +1,51 @@
+> +# SPDX-License-Identifier: GPL-2.0
+> +# Copyright (C) 2019 ARM Limited
+> +
+> +# When ARCH not overridden for crosscompiling, lookup machine
+> +ARCH ?= $(shell uname -m)
+> +ARCH := $(shell echo $(ARCH) | sed -e s/aarch64/arm64/)
+> +
+> +ifeq ("x$(ARCH)", "xarm64")
+> +SUBDIRS :=
+> +else
+> +SUBDIRS :=
+> +endif
+> +
+> +CFLAGS := -Wall -O2 -g
+> +
+> +export CC
+> +export CFLAGS
+> +
+> +all:
+> +	@for DIR in $(SUBDIRS); do				\
+> +		BUILD_TARGET=$(OUTPUT)/$$DIR;			\
+> +		mkdir -p $$BUILD_TARGET;			\
+> +		make OUTPUT=$$BUILD_TARGET -C $$DIR $@;		\
+> +	done
+> +
+> +install: all
+> +	@for DIR in $(SUBDIRS); do				\
+> +		BUILD_TARGET=$(OUTPUT)/$$DIR;			\
+> +		make OUTPUT=$$BUILD_TARGET -C $$DIR $@;		\
+> +	done
+> +
+> +run_tests: all
+> +	@for DIR in $(SUBDIRS); do				\
+> +		BUILD_TARGET=$(OUTPUT)/$$DIR;			\
+> +		make OUTPUT=$$BUILD_TARGET -C $$DIR $@;		\
+> +	done
+> +
+> +# Avoid any output on non arm64 on emit_tests
+> +emit_tests: all
+> +	@for DIR in $(SUBDIRS); do				\
+> +		BUILD_TARGET=$(OUTPUT)/$$DIR;			\
+> +		make OUTPUT=$$BUILD_TARGET -C $$DIR $@;		\
+> +	done
+> +
+> +clean:
+> +	@for DIR in $(SUBDIRS); do				\
+> +		BUILD_TARGET=$(OUTPUT)/$$DIR;			\
+> +		make OUTPUT=$$BUILD_TARGET -C $$DIR $@;		\
+> +	done
+> +
+> +.PHONY: all clean install run_tests emit_tests
+> diff --git a/tools/testing/selftests/arm64/README b/tools/testing/selftests/arm64/README
+> new file mode 100644
+> index 000000000000..d5aa7a2eda78
+> --- /dev/null
+> +++ b/tools/testing/selftests/arm64/README
+> @@ -0,0 +1,44 @@
+> +KSelfTest ARM64
+> +===============
+> +
+> +- These tests are arm64 specific and so not built or run but just skipped
+> +  completely when env-variable ARCH is found to be different than 'arm64'
+> +  and `uname -m` reports other than 'aarch64'.
+> +
+> +- Holding true the above, ARM64 KSFT tests can be run:
+> +
+> +   + as standalone (example for signal tests)
+> +
+> +      $ make -C tools/testing/selftest/arm64/signal clean
+> +      $ make -C tools/testing/selftest/arm64/signal \
+> +		INSTALL_PATH=<your-installation-path> install
+> +
+> +      and then launching on the target device inside the installed path:
+> +
+> +      device# cd <your-installed-path> && ./test_arm64_signals.sh [-k | -v]
 
-Signed-off-by: Tony Xie <tony.xie@rock-chips.com>
-Acked-by: Alexandre Belloni <alexandre.belloni@bootlin.com>
----
- drivers/rtc/Kconfig     |  4 +--
- drivers/rtc/rtc-rk808.c | 68 ++++++++++++++++++++++++++++++++---------
- 2 files changed, 56 insertions(+), 16 deletions(-)
+(Similar nits to those on the arm64-specific documentation in the next
+patch.)
 
-diff --git a/drivers/rtc/Kconfig b/drivers/rtc/Kconfig
-index a819ef07b7ec..8c34f7ec0a59 100644
---- a/drivers/rtc/Kconfig
-+++ b/drivers/rtc/Kconfig
-@@ -363,11 +363,11 @@ config RTC_DRV_MAX77686
- 	  will be called rtc-max77686.
- 
- config RTC_DRV_RK808
--	tristate "Rockchip RK805/RK808/RK818 RTC"
-+	tristate "Rockchip RK805/RK808/RK809/RK817/RK818 RTC"
- 	depends on MFD_RK808
- 	help
- 	  If you say yes here you will get support for the
--	  RTC of RK805, RK808 and RK818 PMIC.
-+	  RTC of RK805, RK809 and RK817, RK808 and RK818 PMIC.
- 
- 	  This driver can also be built as a module. If so, the module
- 	  will be called rk808-rtc.
-diff --git a/drivers/rtc/rtc-rk808.c b/drivers/rtc/rtc-rk808.c
-index 739c0d42e835..5bacdafb7b21 100644
---- a/drivers/rtc/rtc-rk808.c
-+++ b/drivers/rtc/rtc-rk808.c
-@@ -50,9 +50,18 @@
- #define NUM_TIME_REGS	(RK808_WEEKS_REG - RK808_SECONDS_REG + 1)
- #define NUM_ALARM_REGS	(RK808_ALARM_YEARS_REG - RK808_ALARM_SECONDS_REG + 1)
- 
-+struct rk_rtc_compat_reg {
-+	unsigned int ctrl_reg;
-+	unsigned int status_reg;
-+	unsigned int alarm_seconds_reg;
-+	unsigned int int_reg;
-+	unsigned int seconds_reg;
-+};
-+
- struct rk808_rtc {
- 	struct rk808 *rk808;
- 	struct rtc_device *rtc;
-+	struct rk_rtc_compat_reg *creg;
- 	int irq;
- };
- 
-@@ -101,7 +110,7 @@ static int rk808_rtc_readtime(struct device *dev, struct rtc_time *tm)
- 	int ret;
- 
- 	/* Force an update of the shadowed registers right now */
--	ret = regmap_update_bits(rk808->regmap, RK808_RTC_CTRL_REG,
-+	ret = regmap_update_bits(rk808->regmap, rk808_rtc->creg->ctrl_reg,
- 				 BIT_RTC_CTRL_REG_RTC_GET_TIME,
- 				 BIT_RTC_CTRL_REG_RTC_GET_TIME);
- 	if (ret) {
-@@ -115,7 +124,7 @@ static int rk808_rtc_readtime(struct device *dev, struct rtc_time *tm)
- 	 * 32khz. If we clear the GET_TIME bit here, the time of i2c transfer
- 	 * certainly more than 31.25us: 16 * 2.5us at 400kHz bus frequency.
- 	 */
--	ret = regmap_update_bits(rk808->regmap, RK808_RTC_CTRL_REG,
-+	ret = regmap_update_bits(rk808->regmap, rk808_rtc->creg->ctrl_reg,
- 				 BIT_RTC_CTRL_REG_RTC_GET_TIME,
- 				 0);
- 	if (ret) {
-@@ -123,7 +132,7 @@ static int rk808_rtc_readtime(struct device *dev, struct rtc_time *tm)
- 		return ret;
- 	}
- 
--	ret = regmap_bulk_read(rk808->regmap, RK808_SECONDS_REG,
-+	ret = regmap_bulk_read(rk808->regmap, rk808_rtc->creg->seconds_reg,
- 			       rtc_data, NUM_TIME_REGS);
- 	if (ret) {
- 		dev_err(dev, "Failed to bulk read rtc_data: %d\n", ret);
-@@ -166,7 +175,7 @@ static int rk808_rtc_set_time(struct device *dev, struct rtc_time *tm)
- 	rtc_data[6] = bin2bcd(tm->tm_wday);
- 
- 	/* Stop RTC while updating the RTC registers */
--	ret = regmap_update_bits(rk808->regmap, RK808_RTC_CTRL_REG,
-+	ret = regmap_update_bits(rk808->regmap, rk808_rtc->creg->ctrl_reg,
- 				 BIT_RTC_CTRL_REG_STOP_RTC_M,
- 				 BIT_RTC_CTRL_REG_STOP_RTC_M);
- 	if (ret) {
-@@ -174,14 +183,14 @@ static int rk808_rtc_set_time(struct device *dev, struct rtc_time *tm)
- 		return ret;
- 	}
- 
--	ret = regmap_bulk_write(rk808->regmap, RK808_SECONDS_REG,
-+	ret = regmap_bulk_write(rk808->regmap, rk808_rtc->creg->seconds_reg,
- 				rtc_data, NUM_TIME_REGS);
- 	if (ret) {
- 		dev_err(dev, "Failed to bull write rtc_data: %d\n", ret);
- 		return ret;
- 	}
- 	/* Start RTC again */
--	ret = regmap_update_bits(rk808->regmap, RK808_RTC_CTRL_REG,
-+	ret = regmap_update_bits(rk808->regmap, rk808_rtc->creg->ctrl_reg,
- 				 BIT_RTC_CTRL_REG_STOP_RTC_M, 0);
- 	if (ret) {
- 		dev_err(dev, "Failed to update RTC control: %d\n", ret);
-@@ -199,8 +208,13 @@ static int rk808_rtc_readalarm(struct device *dev, struct rtc_wkalrm *alrm)
- 	uint32_t int_reg;
- 	int ret;
- 
--	ret = regmap_bulk_read(rk808->regmap, RK808_ALARM_SECONDS_REG,
-+	ret = regmap_bulk_read(rk808->regmap,
-+			       rk808_rtc->creg->alarm_seconds_reg,
- 			       alrm_data, NUM_ALARM_REGS);
-+	if (ret) {
-+		dev_err(dev, "Failed to read RTC alarm date REG: %d\n", ret);
-+		return ret;
-+	}
- 
- 	alrm->time.tm_sec = bcd2bin(alrm_data[0] & SECONDS_REG_MSK);
- 	alrm->time.tm_min = bcd2bin(alrm_data[1] & MINUTES_REG_MAK);
-@@ -210,7 +224,7 @@ static int rk808_rtc_readalarm(struct device *dev, struct rtc_wkalrm *alrm)
- 	alrm->time.tm_year = (bcd2bin(alrm_data[5] & YEARS_REG_MSK)) + 100;
- 	rockchip_to_gregorian(&alrm->time);
- 
--	ret = regmap_read(rk808->regmap, RK808_RTC_INT_REG, &int_reg);
-+	ret = regmap_read(rk808->regmap, rk808_rtc->creg->int_reg, &int_reg);
- 	if (ret) {
- 		dev_err(dev, "Failed to read RTC INT REG: %d\n", ret);
- 		return ret;
-@@ -231,7 +245,7 @@ static int rk808_rtc_stop_alarm(struct rk808_rtc *rk808_rtc)
- 	struct rk808 *rk808 = rk808_rtc->rk808;
- 	int ret;
- 
--	ret = regmap_update_bits(rk808->regmap, RK808_RTC_INT_REG,
-+	ret = regmap_update_bits(rk808->regmap, rk808_rtc->creg->int_reg,
- 				 BIT_RTC_INTERRUPTS_REG_IT_ALARM_M, 0);
- 
- 	return ret;
-@@ -242,7 +256,7 @@ static int rk808_rtc_start_alarm(struct rk808_rtc *rk808_rtc)
- 	struct rk808 *rk808 = rk808_rtc->rk808;
- 	int ret;
- 
--	ret = regmap_update_bits(rk808->regmap, RK808_RTC_INT_REG,
-+	ret = regmap_update_bits(rk808->regmap, rk808_rtc->creg->int_reg,
- 				 BIT_RTC_INTERRUPTS_REG_IT_ALARM_M,
- 				 BIT_RTC_INTERRUPTS_REG_IT_ALARM_M);
- 
-@@ -274,7 +288,8 @@ static int rk808_rtc_setalarm(struct device *dev, struct rtc_wkalrm *alrm)
- 	alrm_data[4] = bin2bcd(alrm->time.tm_mon + 1);
- 	alrm_data[5] = bin2bcd(alrm->time.tm_year - 100);
- 
--	ret = regmap_bulk_write(rk808->regmap, RK808_ALARM_SECONDS_REG,
-+	ret = regmap_bulk_write(rk808->regmap,
-+				rk808_rtc->creg->alarm_seconds_reg,
- 				alrm_data, NUM_ALARM_REGS);
- 	if (ret) {
- 		dev_err(dev, "Failed to bulk write: %d\n", ret);
-@@ -318,7 +333,7 @@ static irqreturn_t rk808_alarm_irq(int irq, void *data)
- 	struct i2c_client *client = rk808->i2c;
- 	int ret;
- 
--	ret = regmap_write(rk808->regmap, RK808_RTC_STATUS_REG,
-+	ret = regmap_write(rk808->regmap, rk808_rtc->creg->status_reg,
- 			   RTC_STATUS_MASK);
- 	if (ret) {
- 		dev_err(&client->dev,
-@@ -371,6 +386,22 @@ static int rk808_rtc_resume(struct device *dev)
- static SIMPLE_DEV_PM_OPS(rk808_rtc_pm_ops,
- 	rk808_rtc_suspend, rk808_rtc_resume);
- 
-+static struct rk_rtc_compat_reg rk808_creg = {
-+	.ctrl_reg = RK808_RTC_CTRL_REG,
-+	.status_reg = RK808_RTC_STATUS_REG,
-+	.alarm_seconds_reg = RK808_ALARM_SECONDS_REG,
-+	.int_reg = RK808_RTC_INT_REG,
-+	.seconds_reg = RK808_SECONDS_REG,
-+};
-+
-+static struct rk_rtc_compat_reg rk817_creg = {
-+	.ctrl_reg = RK817_RTC_CTRL_REG,
-+	.status_reg = RK817_RTC_STATUS_REG,
-+	.alarm_seconds_reg = RK817_ALARM_SECONDS_REG,
-+	.int_reg = RK817_RTC_INT_REG,
-+	.seconds_reg = RK817_SECONDS_REG,
-+};
-+
- static int rk808_rtc_probe(struct platform_device *pdev)
- {
- 	struct rk808 *rk808 = dev_get_drvdata(pdev->dev.parent);
-@@ -381,11 +412,20 @@ static int rk808_rtc_probe(struct platform_device *pdev)
- 	if (rk808_rtc == NULL)
- 		return -ENOMEM;
- 
-+	switch (rk808->variant) {
-+	case RK809_ID:
-+	case RK817_ID:
-+		rk808_rtc->creg = &rk817_creg;
-+		break;
-+	default:
-+		rk808_rtc->creg = &rk808_creg;
-+		break;
-+	}
- 	platform_set_drvdata(pdev, rk808_rtc);
- 	rk808_rtc->rk808 = rk808;
- 
- 	/* start rtc running by default, and use shadowed timer. */
--	ret = regmap_update_bits(rk808->regmap, RK808_RTC_CTRL_REG,
-+	ret = regmap_update_bits(rk808->regmap, rk808_rtc->creg->ctrl_reg,
- 				 BIT_RTC_CTRL_REG_STOP_RTC_M |
- 				 BIT_RTC_CTRL_REG_RTC_READSEL_M,
- 				 BIT_RTC_CTRL_REG_RTC_READSEL_M);
-@@ -395,7 +435,7 @@ static int rk808_rtc_probe(struct platform_device *pdev)
- 		return ret;
- 	}
- 
--	ret = regmap_write(rk808->regmap, RK808_RTC_STATUS_REG,
-+	ret = regmap_write(rk808->regmap, rk808_rtc->creg->status_reg,
- 			   RTC_STATUS_MASK);
- 	if (ret) {
- 		dev_err(&pdev->dev,
--- 
-2.17.1
+Otherwise, this looks sensible.
 
+[...]
 
-
+Cheers
+---Dave
 
 _______________________________________________
 linux-arm-kernel mailing list
