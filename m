@@ -2,55 +2,73 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BBCAE4E641
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 21 Jun 2019 12:38:12 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 65BDF4E642
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 21 Jun 2019 12:38:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/SM+sn9ulyoBA3JqvBJqNx1GXjGwjcIndUS9vWw99HU=; b=SH8hdPEa9OpmDK
-	X5xmoxd5azZTQcd7XqyYvgvEyftmys8XrD/6v8IIv3EJdw35tHJuE7PJGgQBK9mhTXHr/o+8DzCtO
-	h8Bl6f+5cE3fG0IoSDqGvmz0y/lEMe2nAj6S1ZiepDBR8A1mpUtnxF+GhS/PqcrtqWUg+ZfDTxG4k
-	IJJbq+1OBLSM6hsmosvXGxZC7aGiweCYJnU+IjxN9bZXyCw6vfRjUB/42qUquGnUdtLaQXLnWvWEG
-	7suEBLoA9Vn6tfvdewWNyaq8YEbbi9Jlz3m4JyCuatoXvck+NqQdL8J+gTuO6jkHX22aFtFGzxKmV
-	e+o8B1xpcCnNg1CT5BzA==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=woONEhXbAPot3+gpROl6C1vSRtGKjre/Y3DDH2nF2Ck=; b=eQb8kBuIBgxaNzfRHJDG5LmLi1
+	b4rdizROndnREKPKVu6i2v6rkazFjkjzZk7P92pYHCPWQhw30+6nWuQqg+tb+GMj/fL6A2rAUFFoU
+	prs5Xktxj+JEwkUPl6nzh+d7pVj3EKAh9TjzR4Bmv6PNEs+d0GJL7zVs/QCs32IKyMae1gPqWbzLj
+	G8SJX7patuqCa8hB83ULIIKEpJn7BU7hMbiPQr6JMEd4se5nnb9k6rUzami4LDk9SD7OgMVSBe4pk
+	jfNrciTXG9XPQUEPKWpj4Lv7Bnwa8lBbRGEqg2Gx1tmzPCk3oy5ToyLmyCYYdNF7X+rd7E3HO7FbH
+	v70L+L3Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1heGvq-0005el-JW; Fri, 21 Jun 2019 10:38:10 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1heGsf-0001vn-7q
- for linux-arm-kernel@lists.infradead.org; Fri, 21 Jun 2019 10:34:54 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id AE43E142F;
- Fri, 21 Jun 2019 03:34:52 -0700 (PDT)
-Received: from e103592.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
- [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id E19CC3F718;
- Fri, 21 Jun 2019 03:34:51 -0700 (PDT)
-Date: Fri, 21 Jun 2019 11:34:49 +0100
-From: Dave Martin <Dave.Martin@arm.com>
-To: Cristian Marussi <cristian.marussi@arm.com>
-Subject: Re: [PATCH 01/13] kselftest: arm64: introduce new boilerplate code
-Message-ID: <20190621103449.GI2790@e103592.cambridge.arm.com>
-References: <20190613111335.7645-1-cristian.marussi@arm.com>
- <20190613111335.7645-2-cristian.marussi@arm.com>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190613111335.7645-2-cristian.marussi@arm.com>
-User-Agent: Mutt/1.5.23 (2014-03-12)
+	id 1heGw7-0005xh-SJ; Fri, 21 Jun 2019 10:38:27 +0000
+Received: from lucky1.263xmail.com ([211.157.147.134])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1heGso-00022d-E4; Fri, 21 Jun 2019 10:35:06 +0000
+Received: from tony.xie?rock-chips.com (unknown [192.168.167.234])
+ by lucky1.263xmail.com (Postfix) with ESMTP id 0CD9538753;
+ Fri, 21 Jun 2019 18:34:59 +0800 (CST)
+X-263anti-spam: KSV:0;BIG:0;
+X-MAIL-GRAY: 1
+X-MAIL-DELIVERY: 0
+X-KSVirus-check: 0
+X-ADDR-CHECKED4: 1
+X-ABS-CHECKED: 1
+X-SKE-CHECKED: 1
+X-ANTISPAM-LEVEL: 2
+Received: from localhost.localdomain (unknown [58.22.7.114])
+ by smtp.263.net (postfix) whith ESMTP id
+ P8407T139759443769088S1561113296058606_; 
+ Fri, 21 Jun 2019 18:34:57 +0800 (CST)
+X-IP-DOMAINF: 1
+X-UNIQUE-TAG: <68853aa28a350f80205b3cfab4ccfa75>
+X-RL-SENDER: tony.xie@rock-chips.com
+X-SENDER: xxx@rock-chips.com
+X-LOGIN-NAME: tony.xie@rock-chips.com
+X-FST-TO: heiko@sntech.de
+X-SENDER-IP: 58.22.7.114
+X-ATTACHMENT-NUM: 0
+X-DNS-TYPE: 0
+From: Tony Xie <tony.xie@rock-chips.com>
+To: heiko@sntech.de
+Subject: [PATCH v10 6/6] clk: RK808: add RK809 and RK817 support.
+Date: Fri, 21 Jun 2019 06:34:55 -0400
+Message-Id: <20190621103455.8294-1-tony.xie@rock-chips.com>
+X-Mailer: git-send-email 2.17.1
+In-Reply-To: <20190621103258.8154-1-tony.xie@rock-chips.com>
+References: <20190621103258.8154-1-tony.xie@rock-chips.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190621_033453_393418_C6926E28 
-X-CRM114-Status: GOOD (  18.24  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190621_033502_860016_D1B74A96 
+X-CRM114-Status: GOOD (  15.21  )
+X-Spam-Score: 1.5 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (1.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ 1.5 RCVD_IN_SORBS_WEB      RBL: SORBS: sender is an abusable web server
+ [58.22.7.114 listed in dnsbl.sorbs.net]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [211.157.147.134 listed in list.dnswl.org]
+ 0.0 T_SPF_PERMERROR        SPF: test of record failed (permerror)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -62,130 +80,139 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: andreyknvl@google.com, shuah@kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-kselftest@vger.kernel.org
+Cc: mark.rutland@arm.com, a.zummo@towertech.it, alexandre.belloni@bootlin.com,
+ tony.xie@rock-chips.com, huangtao@rock-chips.com, devicetree@vger.kernel.org,
+ sboyd@kernel.org, zhangqing@rock-chips.com, linux-kernel@vger.kernel.org,
+ robh+dt@kernel.org, xsf@rock-chips.com, linux-rockchip@lists.infradead.org,
+ broonie@kernel.org, chenjh@rock-chips.com, lee.jones@linaro.org,
+ linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-rtc@vger.kernel.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Jun 13, 2019 at 12:13:23PM +0100, Cristian Marussi wrote:
-> Added a new arm64-specific empty subsystem amongst TARGETS of KSFT build
-> framework; once populated with testcases, it will be possible to build
-> and invoke the new KSFT TARGETS=arm64 related tests from the toplevel
-> Makefile in the usual ways.
-> 
-> Signed-off-by: Cristian Marussi <cristian.marussi@arm.com>
-> ---
->  tools/testing/selftests/Makefile       |  1 +
->  tools/testing/selftests/arm64/Makefile | 51 ++++++++++++++++++++++++++
->  tools/testing/selftests/arm64/README   | 44 ++++++++++++++++++++++
->  3 files changed, 96 insertions(+)
->  create mode 100644 tools/testing/selftests/arm64/Makefile
->  create mode 100644 tools/testing/selftests/arm64/README
-> 
-> diff --git a/tools/testing/selftests/Makefile b/tools/testing/selftests/Makefile
-> index 9781ca79794a..4ff0b41ead8a 100644
-> --- a/tools/testing/selftests/Makefile
-> +++ b/tools/testing/selftests/Makefile
-> @@ -1,5 +1,6 @@
->  # SPDX-License-Identifier: GPL-2.0
->  TARGETS = android
-> +TARGETS += arm64
->  TARGETS += bpf
->  TARGETS += breakpoints
->  TARGETS += capabilities
-> diff --git a/tools/testing/selftests/arm64/Makefile b/tools/testing/selftests/arm64/Makefile
-> new file mode 100644
-> index 000000000000..03a0d4f71218
-> --- /dev/null
-> +++ b/tools/testing/selftests/arm64/Makefile
-> @@ -0,0 +1,51 @@
-> +# SPDX-License-Identifier: GPL-2.0
-> +# Copyright (C) 2019 ARM Limited
-> +
-> +# When ARCH not overridden for crosscompiling, lookup machine
-> +ARCH ?= $(shell uname -m)
-> +ARCH := $(shell echo $(ARCH) | sed -e s/aarch64/arm64/)
-> +
-> +ifeq ("x$(ARCH)", "xarm64")
-> +SUBDIRS :=
-> +else
-> +SUBDIRS :=
-> +endif
-> +
-> +CFLAGS := -Wall -O2 -g
-> +
-> +export CC
-> +export CFLAGS
-> +
-> +all:
-> +	@for DIR in $(SUBDIRS); do				\
-> +		BUILD_TARGET=$(OUTPUT)/$$DIR;			\
-> +		mkdir -p $$BUILD_TARGET;			\
-> +		make OUTPUT=$$BUILD_TARGET -C $$DIR $@;		\
-> +	done
-> +
-> +install: all
-> +	@for DIR in $(SUBDIRS); do				\
-> +		BUILD_TARGET=$(OUTPUT)/$$DIR;			\
-> +		make OUTPUT=$$BUILD_TARGET -C $$DIR $@;		\
-> +	done
-> +
-> +run_tests: all
-> +	@for DIR in $(SUBDIRS); do				\
-> +		BUILD_TARGET=$(OUTPUT)/$$DIR;			\
-> +		make OUTPUT=$$BUILD_TARGET -C $$DIR $@;		\
-> +	done
-> +
-> +# Avoid any output on non arm64 on emit_tests
-> +emit_tests: all
-> +	@for DIR in $(SUBDIRS); do				\
-> +		BUILD_TARGET=$(OUTPUT)/$$DIR;			\
-> +		make OUTPUT=$$BUILD_TARGET -C $$DIR $@;		\
-> +	done
-> +
-> +clean:
-> +	@for DIR in $(SUBDIRS); do				\
-> +		BUILD_TARGET=$(OUTPUT)/$$DIR;			\
-> +		make OUTPUT=$$BUILD_TARGET -C $$DIR $@;		\
-> +	done
-> +
-> +.PHONY: all clean install run_tests emit_tests
-> diff --git a/tools/testing/selftests/arm64/README b/tools/testing/selftests/arm64/README
-> new file mode 100644
-> index 000000000000..d5aa7a2eda78
-> --- /dev/null
-> +++ b/tools/testing/selftests/arm64/README
-> @@ -0,0 +1,44 @@
-> +KSelfTest ARM64
-> +===============
-> +
-> +- These tests are arm64 specific and so not built or run but just skipped
-> +  completely when env-variable ARCH is found to be different than 'arm64'
-> +  and `uname -m` reports other than 'aarch64'.
-> +
-> +- Holding true the above, ARM64 KSFT tests can be run:
-> +
-> +   + as standalone (example for signal tests)
-> +
-> +      $ make -C tools/testing/selftest/arm64/signal clean
-> +      $ make -C tools/testing/selftest/arm64/signal \
-> +		INSTALL_PATH=<your-installation-path> install
-> +
-> +      and then launching on the target device inside the installed path:
-> +
-> +      device# cd <your-installed-path> && ./test_arm64_signals.sh [-k | -v]
+RK809 and RK817 are power management IC chips for multimedia products.
+most of their functions and registers are same, including the clkout
+funciton.
 
-(Similar nits to those on the arm64-specific documentation in the next
-patch.)
+Signed-off-by: Tony Xie <tony.xie@rock-chips.com>
+Acked-by: Stephen Boyd <sboyd@kernel.org>
+---
+ drivers/clk/Kconfig     |  9 +++---
+ drivers/clk/clk-rk808.c | 64 ++++++++++++++++++++++++++++++++++++++++-
+ 2 files changed, 67 insertions(+), 6 deletions(-)
 
-Otherwise, this looks sensible.
+diff --git a/drivers/clk/Kconfig b/drivers/clk/Kconfig
+index e5b2fe80eab4..532ab112fa8a 100644
+--- a/drivers/clk/Kconfig
++++ b/drivers/clk/Kconfig
+@@ -52,13 +52,12 @@ config COMMON_CLK_MAX9485
+ 	  This driver supports Maxim 9485 Programmable Audio Clock Generator
+ 
+ config COMMON_CLK_RK808
+-	tristate "Clock driver for RK805/RK808/RK818"
++	tristate "Clock driver for RK805/RK808/RK809/RK817/RK818"
+ 	depends on MFD_RK808
+ 	---help---
+-	  This driver supports RK805, RK808 and RK818 crystal oscillator clock. These
+-	  multi-function devices have two fixed-rate oscillators,
+-	  clocked at 32KHz each. Clkout1 is always on, Clkout2 can off
+-	  by control register.
++	  This driver supports RK805, RK809 and RK817, RK808 and RK818 crystal oscillator clock.
++	  These multi-function devices have two fixed-rate oscillators, clocked at 32KHz each.
++	  Clkout1 is always on, Clkout2 can off by control register.
+ 
+ config COMMON_CLK_HI655X
+ 	tristate "Clock driver for Hi655x" if EXPERT
+diff --git a/drivers/clk/clk-rk808.c b/drivers/clk/clk-rk808.c
+index 8d90bdf5b946..75f2cf0dfc9f 100644
+--- a/drivers/clk/clk-rk808.c
++++ b/drivers/clk/clk-rk808.c
+@@ -96,6 +96,68 @@ of_clk_rk808_get(struct of_phandle_args *clkspec, void *data)
+ 	return idx ? &rk808_clkout->clkout2_hw : &rk808_clkout->clkout1_hw;
+ }
+ 
++static int rk817_clkout2_enable(struct clk_hw *hw, bool enable)
++{
++	struct rk808_clkout *rk808_clkout = container_of(hw,
++							 struct rk808_clkout,
++							 clkout2_hw);
++	struct rk808 *rk808 = rk808_clkout->rk808;
++
++	return regmap_update_bits(rk808->regmap, RK817_SYS_CFG(1),
++				  RK817_CLK32KOUT2_EN,
++				  enable ? RK817_CLK32KOUT2_EN : 0);
++}
++
++static int rk817_clkout2_prepare(struct clk_hw *hw)
++{
++	return rk817_clkout2_enable(hw, true);
++}
++
++static void rk817_clkout2_unprepare(struct clk_hw *hw)
++{
++	rk817_clkout2_enable(hw, false);
++}
++
++static int rk817_clkout2_is_prepared(struct clk_hw *hw)
++{
++	struct rk808_clkout *rk808_clkout = container_of(hw,
++							 struct rk808_clkout,
++							 clkout2_hw);
++	struct rk808 *rk808 = rk808_clkout->rk808;
++	unsigned int val;
++
++	int ret = regmap_read(rk808->regmap, RK817_SYS_CFG(1), &val);
++
++	if (ret < 0)
++		return 0;
++
++	return (val & RK817_CLK32KOUT2_EN) ? 1 : 0;
++}
++
++static const struct clk_ops rk817_clkout2_ops = {
++	.prepare = rk817_clkout2_prepare,
++	.unprepare = rk817_clkout2_unprepare,
++	.is_prepared = rk817_clkout2_is_prepared,
++	.recalc_rate = rk808_clkout_recalc_rate,
++};
++
++static const struct clk_ops *rkpmic_get_ops(long variant)
++{
++	switch (variant) {
++	case RK809_ID:
++	case RK817_ID:
++		return &rk817_clkout2_ops;
++	/*
++	 * For the default case, it match the following PMIC type.
++	 * RK805_ID
++	 * RK808_ID
++	 * RK818_ID
++	 */
++	default:
++		return &rk808_clkout2_ops;
++	}
++}
++
+ static int rk808_clkout_probe(struct platform_device *pdev)
+ {
+ 	struct rk808 *rk808 = dev_get_drvdata(pdev->dev.parent);
+@@ -127,7 +189,7 @@ static int rk808_clkout_probe(struct platform_device *pdev)
+ 		return ret;
+ 
+ 	init.name = "rk808-clkout2";
+-	init.ops = &rk808_clkout2_ops;
++	init.ops = rkpmic_get_ops(rk808->variant);
+ 	rk808_clkout->clkout2_hw.init = &init;
+ 
+ 	/* optional override of the clockname */
+-- 
+2.17.1
 
-[...]
 
-Cheers
----Dave
+
 
 _______________________________________________
 linux-arm-kernel mailing list
