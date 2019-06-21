@@ -2,47 +2,48 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3C7074E559
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 21 Jun 2019 12:04:51 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 43EEA4E55B
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 21 Jun 2019 12:05:12 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=G/vzm4wo1OlQgf1hZRs7qs/lkLGFgwgiJRhWxT3IZBI=; b=qqg8TXb2yveuHm
-	DiuHSNZyBvLcoIipaH2Cvx+rnqn8RrbRBaBzgd19mO5K1Jo5bgHEa5Vheh/MSHp9R8M3hN2P/wTya
-	m2usJQurvOubcTSTSiK3eniJRYxpKJegzlyVphYWwKxZNG/VUKJxmcPeYckODuMMNlHvqa+2ZpLOI
-	+XOtzk+nSehObuxSWUeKg2YkyFD7USotZJ0MXoYgZHKEuLGKLymDyuJVepkArZtgojrn+cKsLPqR7
-	9HsAg0wSUJ9wghztd1vxfk4QHcb201KEx2l0zjGjATGRhvm/xrnilkrDWHRLw+jDqbAyhA84nyBzK
-	OwUaaB2WTf4XBZPwCUag==;
+	List-Owner; bh=5p7s/QQcpcjyuE58zY7kmtAvEShNVZENjmomeqPRQ5I=; b=GqPGJEO4jJ7E/4
+	ssAxK+UcgmVjnFkfnsqzrEtodPNGrMQ9whHPAj//90rEAr348C5kzJaOrrZoGgmYt3MKOfbyCnplW
+	ke1NsNwUgQoJzTsIEj8qsgZoe/8PySOg3zA+mhbOtS30ZgXmwKcjelUP7SK0T8YdkZkhOMPvwxzNF
+	S4OFRtoD75m9MNKg3H8q0cC7oSlrOygtJlWzRas0uEOh6hX3ZUyv3oivOCgtWe6L6Nyb3rPuRRdDY
+	Hm0tT49sp+/cwsR2/TinRRwYJ+70/tJixHhTqSzLld0k7bE+Sf7Viv6vcwMcg6HC43ZXuzhYvj117
+	vs0TYkyYY2FXu9hX7yhA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1heGPX-0007Q8-MW; Fri, 21 Jun 2019 10:04:47 +0000
+	id 1heGPu-0007gg-R9; Fri, 21 Jun 2019 10:05:10 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1heG1a-0007Gm-Rx
- for linux-arm-kernel@lists.infradead.org; Fri, 21 Jun 2019 09:40:04 +0000
+ id 1heG1d-0007mT-FL
+ for linux-arm-kernel@lists.infradead.org; Fri, 21 Jun 2019 09:40:10 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id A60AF1478;
- Fri, 21 Jun 2019 02:40:02 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 3C3B3147A;
+ Fri, 21 Jun 2019 02:40:04 -0700 (PDT)
 Received: from filthy-habits.cambridge.arm.com
  (filthy-habits.cambridge.arm.com [10.1.197.61])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 524333F246;
- Fri, 21 Jun 2019 02:40:01 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id DB53A3F246;
+ Fri, 21 Jun 2019 02:40:02 -0700 (PDT)
 From: Marc Zyngier <marc.zyngier@arm.com>
 To: linux-arm-kernel@lists.infradead.org, kvmarm@lists.cs.columbia.edu,
  kvm@vger.kernel.org
-Subject: [PATCH 32/59] KVM: arm64: nv: Hide RAS from nested guests
-Date: Fri, 21 Jun 2019 10:38:16 +0100
-Message-Id: <20190621093843.220980-33-marc.zyngier@arm.com>
+Subject: [PATCH 33/59] KVM: arm64: nv: Pretend we only support
+ larger-than-host page sizes
+Date: Fri, 21 Jun 2019 10:38:17 +0100
+Message-Id: <20190621093843.220980-34-marc.zyngier@arm.com>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20190621093843.220980-1-marc.zyngier@arm.com>
 References: <20190621093843.220980-1-marc.zyngier@arm.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190621_024003_042592_C55E4A7E 
-X-CRM114-Status: GOOD (  11.93  )
+X-CRM114-CacheID: sfid-20190621_024005_652478_D1A5757F 
+X-CRM114-Status: GOOD (  14.82  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -71,91 +72,104 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-We don't want to expose complicated features to guests until we have
-a good grasp on the basic CPU emulation. So let's pretend that RAS,
-just like SVE, doesn't exist in a nested guest.
+From: Jintack Lim <jintack.lim@linaro.org>
 
+Exposing memory management support to the virtual EL2 as is exposed to
+the host hypervisor would make the implementation too complex and
+inefficient. Therefore expose limited memory management support for the
+following two cases.
+
+We expose same or larger page granules than the one host uses.  We can
+theoretically support a guest hypervisor having smaller-than-host
+granularities but it is not worth it since it makes the implementation
+complicated and it would waste memory.
+
+We expose 40 bits of physical address range to the virtual EL2, because
+we only support a 40bit IPA for the guest. Eventually, this will change.
+
+  [ This was only trapping on the 32-bit encoding, also using the
+    current target register value as a base for the sanitisation.
+
+    Use as the handler for the 64-bit sysreg as well, also load the
+    sanitised version of the sysreg before clearing and setting bits.
+
+    -- Andre Przywara ]
+
+Signed-off-by: Jintack Lim <jintack.lim@linaro.org>
+Signed-off-by: Andre Przywara <andre.przywara@arm.com>
 Signed-off-by: Marc Zyngier <marc.zyngier@arm.com>
 ---
- arch/arm64/kvm/sys_regs.c | 32 +++++++++++++++++++++++++++++---
- 1 file changed, 29 insertions(+), 3 deletions(-)
+ arch/arm64/kvm/sys_regs.c | 50 ++++++++++++++++++++++++++++++++++++++-
+ 1 file changed, 49 insertions(+), 1 deletion(-)
 
 diff --git a/arch/arm64/kvm/sys_regs.c b/arch/arm64/kvm/sys_regs.c
-index 34f1b79f7856..ec34b81da936 100644
+index ec34b81da936..cc994ec3c121 100644
 --- a/arch/arm64/kvm/sys_regs.c
 +++ b/arch/arm64/kvm/sys_regs.c
-@@ -577,6 +577,14 @@ static bool trap_raz_wi(struct kvm_vcpu *vcpu,
- 		return read_zero(vcpu, p);
- }
- 
-+static bool trap_undef(struct kvm_vcpu *vcpu,
-+		       struct sys_reg_params *p,
-+		       const struct sys_reg_desc *r)
-+{
-+	kvm_inject_undefined(vcpu);
-+	return false;
-+}
-+
- /*
-  * ARMv8.1 mandates at least a trivial LORegion implementation, where all the
-  * RW registers are RES0 (which we can implement as RAZ/WI). On an ARMv8.0
-@@ -1601,13 +1609,15 @@ static bool access_ccsidr(struct kvm_vcpu *vcpu, struct sys_reg_params *p,
- }
- 
- /* sys_reg_desc initialiser for known cpufeature ID registers */
--#define ID_SANITISED(name) {			\
-+#define ID_SANITISED_FN(name, fn) {		\
- 	SYS_DESC(SYS_##name),			\
--	.access	= access_id_reg,		\
-+	.access	= fn,				\
- 	.get_user = get_id_reg,			\
- 	.set_user = set_id_reg,			\
- }
- 
-+#define ID_SANITISED(name) 	ID_SANITISED_FN(name, access_id_reg)
-+
- /*
-  * sys_reg_desc initialiser for architecturally unallocated cpufeature ID
-  * register with encoding Op0=3, Op1=0, CRn=0, CRm=crm, Op2=op2
-@@ -1700,6 +1710,21 @@ static bool access_spsr_el2(struct kvm_vcpu *vcpu,
+@@ -1710,6 +1710,54 @@ static bool access_spsr_el2(struct kvm_vcpu *vcpu,
  	return true;
  }
  
-+static bool access_id_aa64pfr0_el1(struct kvm_vcpu *v,
-+				   struct sys_reg_params *p,
-+				   const struct sys_reg_desc *r)
++static bool access_id_aa64mmfr0_el1(struct kvm_vcpu *v,
++				    struct sys_reg_params *p,
++				    const struct sys_reg_desc *r)
 +{
 +	u64 val;
 +
-+	if (!nested_virt_in_use(v) || p->is_write)
-+		return access_id_reg(v, p, r);
++	if (p->is_write)
++		return write_to_read_only(v, p, r);
 +
-+	val = read_sanitised_ftr_reg(SYS_ID_AA64PFR0_EL1);
-+	p->regval = val & ~(0xf << ID_AA64PFR0_RAS_SHIFT);
++	val = read_id_reg(v, r, false);
++
++	if (!nested_virt_in_use(v))
++		goto out;
++
++	/*
++	 * Don't expose granules smaller than the host's granule to the guest.
++	 * We can theoretically support a guest hypervisor having
++	 * smaller-than-host granularities but it is not worth it since it
++	 * makes the implementation complicated and it would waste memory.
++	 */
++	switch (PAGE_SIZE) {
++	case SZ_64K:
++		/* 16KB granule not supported */
++		val &= ~(0xf << ID_AA64MMFR0_TGRAN16_SHIFT);
++		val |= (ID_AA64MMFR0_TGRAN16_NI << ID_AA64MMFR0_TGRAN16_SHIFT);
++		/* fall through */
++	case SZ_16K:
++		/* 4KB granule not supported */
++		val &= ~(0xf << ID_AA64MMFR0_TGRAN4_SHIFT);
++		val |= (ID_AA64MMFR0_TGRAN4_NI << ID_AA64MMFR0_TGRAN4_SHIFT);
++		break;
++	case SZ_4K:
++		/* All granule sizes are supported */
++		break;
++	default:
++		unreachable();
++	}
++
++	/* Expose only 40 bits physical address range to the guest hypervisor */
++	val &= ~(0xf << ID_AA64MMFR0_PARANGE_SHIFT);
++	val |= (0x2 << ID_AA64MMFR0_PARANGE_SHIFT); /* 40 bits */
++
++out:
++	p->regval = val;
 +
 +	return true;
 +}
 +
- /*
-  * Architected system registers.
-  * Important: Must be sorted ascending by Op0, Op1, CRn, CRm, Op2
-@@ -1791,7 +1816,7 @@ static const struct sys_reg_desc sys_reg_descs[] = {
+ static bool access_id_aa64pfr0_el1(struct kvm_vcpu *v,
+ 				   struct sys_reg_params *p,
+ 				   const struct sys_reg_desc *r)
+@@ -1846,7 +1894,7 @@ static const struct sys_reg_desc sys_reg_descs[] = {
+ 	ID_UNALLOCATED(6,7),
  
- 	/* AArch64 ID registers */
- 	/* CRm=4 */
--	ID_SANITISED(ID_AA64PFR0_EL1),
-+	ID_SANITISED_FN(ID_AA64PFR0_EL1, access_id_aa64pfr0_el1),
- 	ID_SANITISED(ID_AA64PFR1_EL1),
- 	ID_UNALLOCATED(4,2),
- 	ID_UNALLOCATED(4,3),
-@@ -2032,6 +2057,7 @@ static const struct sys_reg_desc sys_reg_descs[] = {
- 	{ SYS_DESC(SYS_VBAR_EL2), access_rw, reset_val, VBAR_EL2, 0 },
- 	{ SYS_DESC(SYS_RVBAR_EL2), access_rw, reset_val, RVBAR_EL2, 0 },
- 	{ SYS_DESC(SYS_RMR_EL2), access_rw, reset_val, RMR_EL2, 0 },
-+	{ SYS_DESC(SYS_VDISR_EL2), trap_undef },
- 
- 	{ SYS_DESC(SYS_CONTEXTIDR_EL2), access_rw, reset_val, CONTEXTIDR_EL2, 0 },
- 	{ SYS_DESC(SYS_TPIDR_EL2), access_rw, reset_val, TPIDR_EL2, 0 },
+ 	/* CRm=7 */
+-	ID_SANITISED(ID_AA64MMFR0_EL1),
++	ID_SANITISED_FN(ID_AA64MMFR0_EL1, access_id_aa64mmfr0_el1),
+ 	ID_SANITISED(ID_AA64MMFR1_EL1),
+ 	ID_SANITISED(ID_AA64MMFR2_EL1),
+ 	ID_UNALLOCATED(7,3),
 -- 
 2.20.1
 
