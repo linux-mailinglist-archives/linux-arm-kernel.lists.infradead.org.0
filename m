@@ -2,44 +2,45 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C7F534F0E8
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 22 Jun 2019 00:59:06 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 575B44F0F0
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 22 Jun 2019 01:01:27 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:In-Reply-To:
 	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=stxNz7oJq1zh40m2bRC4QDeemNBSHMH/2WCWYyE7lLI=; b=QaCqgIiyO8rwhc
-	+Vj/V/GxOv0B/K5FuK3Z4CpUmGu9rdKByxC9by5QjOwxbIG1q7cR07SRPxUFbKsALvXQ80LEecON1
-	5aSWVsqtYPyMvYg/jXwLSG8bdwn4qMEwjA0GJ2oCqXou9nFw02Upu9pf1s/Lm3rbZhclcnI0sOadY
-	oBLsz16UUukAItF7xBN0NAuNpuH+mJcXbKWtmZE+suR8oK4RzvUR36k1Cl57AlPBMIaekNnYIHfpX
-	SgrRFkNotNz4ErQoVYUFZ1sqd0R1Iyd3GYjefWLK+ECeawWE7XLEYf1xjoRLfDGADY6K5SmkbZsHL
-	KU/BBfy1+IiXTDIgIR8w==;
+	List-Owner; bh=0thh4S9lmEa5OWfkF5Lu5EUDF6W6jfxAa75GfrqK3xU=; b=rI6oNitEqHkdKq
+	y8jOeA8rx+oOXD+HNq46/rIM7tZaJGIhziy4NVI/UvrV62SKRSpMI3zSvsaAvz5mZR9/WpwvxQ/E1
+	w8tQan5SEF7K6aME0mz0Hyedi33nXLAHq9u/vmY4pF9rJE2MbaZZ5Mx5oBmh51czI4zTWOeRjbYK9
+	snLkzr+LytrqHo28R6UEOou1d57TeVdDh7TWqu879cATjeurEcCNFZHlqry1LNarzeY7+haXbJpr0
+	oeUxzzYXWO02UaOLwLtKB9LvzCu47Z/AzNpDHVjDm275qIu7fcF1ZlLYc0TpJ+D+kKaVEEt58gWUO
+	2i6cM/CSql315PBekvNw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1heSUq-0007HO-0A; Fri, 21 Jun 2019 22:59:04 +0000
+	id 1heSX7-0000dX-9s; Fri, 21 Jun 2019 23:01:25 +0000
 Received: from gate.crashing.org ([63.228.1.57])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1heSUd-0007Gx-Rx
- for linux-arm-kernel@lists.infradead.org; Fri, 21 Jun 2019 22:58:53 +0000
+ id 1heSWt-0000dA-Vy
+ for linux-arm-kernel@lists.infradead.org; Fri, 21 Jun 2019 23:01:13 +0000
 Received: from localhost (localhost.localdomain [127.0.0.1])
- by gate.crashing.org (8.14.1/8.14.1) with ESMTP id x5LMwGXK028050;
- Fri, 21 Jun 2019 17:58:35 -0500
-Message-ID: <4d758a3bfff0fbcec94f51cf1872b649108170db.camel@kernel.crashing.org>
+ by gate.crashing.org (8.14.1/8.14.1) with ESMTP id x5LN0o4V028115;
+ Fri, 21 Jun 2019 18:00:52 -0500
+Message-ID: <43b27f7fc83a90dc3d1345ee3771fcce337f6bb8.camel@kernel.crashing.org>
 Subject: Re: [PATCH 1/4] arm64: pci: acpi: Use
  pci_assign_unassigned_root_bus_resources()
 From: Benjamin Herrenschmidt <benh@kernel.crashing.org>
 To: Bjorn Helgaas <helgaas@kernel.org>
-Date: Sat, 22 Jun 2019 08:58:16 +1000
+Date: Sat, 22 Jun 2019 09:00:50 +1000
 In-Reply-To: <20190621204839.GF127746@google.com>
 References: <20190615002359.29577-1-benh@kernel.crashing.org>
  <20190621204839.GF127746@google.com>
 X-Mailer: Evolution 3.28.5-0ubuntu0.18.04.1 
 Mime-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190621_155852_055406_CE67AC91 
-X-CRM114-Status: GOOD (  14.69  )
+X-CRM114-CacheID: sfid-20190621_160112_183719_C4D81010 
+X-CRM114-Status: UNSURE (   2.73  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -70,56 +71,18 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, 2019-06-21 at 15:48 -0500, Bjorn Helgaas wrote:
-> On Sat, Jun 15, 2019 at 10:23:56AM +1000, Benjamin Herrenschmidt
-> wrote:
-> > Instead of the simpler
-> > 
-> > 	pci_bus_size_bridges(bus);
-> > 	pci_bus_assign_resources(bus);
-> > 
-> > Use pci_assign_unassigned_root_bus_resources(). This should have no
-> > effect
-> > as long as we are reassigning everything. Once we start honoring FW
-> > resource allocations, this will bring up the "reallocation" feature
-> > which can help making room for SR-IOV when necessary.
-> > 
-> > Signed-off-by: Benjamin Herrenschmidt <benh@kernel.crashing.org>
-> 
-> I applied these to pci/resource, with my comments and acks from
-> Lorenzo and Ard.  Let me know if I was too aggressive or got
-> something
-> wrong; I consider these branches malleable until the merge window.
-> 
-> Thanks for the first step on this long journey :)
+BTW...
 
-Heh thanks :-)
+You probably want to swap those 2:
+
+2 hours	PCI/ACPI: Evaluate PCI Boot Configuration _DSM	Benjamin Herrenschmidt	3	-3/+18
+2 hours	PCI: Don't auto-realloc if we're preserving firmware config
+
+As "Don't auto-realloc..." tests a flag that is only created by "Evaluate PCI Boot..."
 
 Cheers,
 Ben.
 
-> > ---
-> >  arch/arm64/kernel/pci.c | 3 +--
-> >  1 file changed, 1 insertion(+), 2 deletions(-)
-> > 
-> > diff --git a/arch/arm64/kernel/pci.c b/arch/arm64/kernel/pci.c
-> > index bb85e2f4603f..1419b1b4e9b9 100644
-> > --- a/arch/arm64/kernel/pci.c
-> > +++ b/arch/arm64/kernel/pci.c
-> > @@ -193,8 +193,7 @@ struct pci_bus *pci_acpi_scan_root(struct
-> > acpi_pci_root *root)
-> >  	if (!bus)
-> >  		return NULL;
-> >  
-> > -	pci_bus_size_bridges(bus);
-> > -	pci_bus_assign_resources(bus);
-> > +	pci_assign_unassigned_root_bus_resources(bus);
-> >  
-> >  	list_for_each_entry(child, &bus->children, node)
-> >  		pcie_bus_configure_settings(child);
-> > -- 
-> > 2.17.1
-> > 
 
 
 _______________________________________________
