@@ -2,48 +2,48 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 926054E645
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 21 Jun 2019 12:39:10 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7A4444E648
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 21 Jun 2019 12:39:41 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=GRkbEYH+2ezGNVG9ip45A29ABWFj3sYsqS+LyVwGHXU=; b=dmcp7n7mVKcU1C
-	QGSi5MtLf6Y/mf/7RWj9efx7Q25oBly7tVT+mID1XHU+VyMkeDDiDHEEHLM8ZxSDe9lXnJha1zqe3
-	H4bL2MXQEd8jE6v4mO7wXSVoTtu1tMj4vp0xW1lewDqylHYnPOrL4XOk+1weYE6Tng/wR5IKzuswu
-	5ikNJM7vbJI8zfaXvGmMvCJPZukQPlYUDaw5wcTgVCnBj+M79gJZ92yBiTE87j1nsRyBzXhTwJu/c
-	nGHccMhSFOcvhDA7xqBlWqiIlC1fJEfnZGolO8nIAj3RGkK48hEEH0hnY6AkE4i59w41C6+/qDr5r
-	vkdnD1Yl0ApEML2on2jw==;
+	List-Owner; bh=lnzcuSKZ9o+yXjAdF37C5qIc8MccUuwKpwowwt/Yv10=; b=E0fpetHShp9gZV
+	Kj7JWsSTXjThfe/uB4lofKxVeSME+A9lmMvQB9Hdh3CTDPYA8cb5J2aJE53l+dfodHnne5AInbygb
+	erU/b/vCw+MaJQVYke2ajlGavpX1mEI8teVbSGYHxTw+db72Mq7fbwQMbBe+VE/BPdWqTUf9BWQcJ
+	GifuvV7aE79u6PoyTcGdrp7NIgihJimAOp5wqhGOn4jcDS5vqyskRku9tr2eN1Awr+qEJSjUW5L1F
+	y7Ku4Ktr30tvKtwgPdsWvJXdP+lZAUCYd6q2u532tKH7T6IM1koOUPbcfy6LH9keedpsXjGHGseEe
+	oDd0c5TtyXO+G+dyMzug==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1heGwm-0006ae-Ah; Fri, 21 Jun 2019 10:39:08 +0000
+	id 1heGxF-000781-8z; Fri, 21 Jun 2019 10:39:37 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1heGt8-0003Qi-As
- for linux-arm-kernel@lists.infradead.org; Fri, 21 Jun 2019 10:35:36 +0000
+ id 1heGtF-0003Un-Hr
+ for linux-arm-kernel@lists.infradead.org; Fri, 21 Jun 2019 10:35:38 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id D427028;
- Fri, 21 Jun 2019 03:35:21 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 047EE1478;
+ Fri, 21 Jun 2019 03:35:29 -0700 (PDT)
 Received: from e103592.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
  [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 12F2E3F718;
- Fri, 21 Jun 2019 03:35:20 -0700 (PDT)
-Date: Fri, 21 Jun 2019 11:35:19 +0100
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 373F03F718;
+ Fri, 21 Jun 2019 03:35:28 -0700 (PDT)
+Date: Fri, 21 Jun 2019 11:35:26 +0100
 From: Dave Martin <Dave.Martin@arm.com>
 To: Cristian Marussi <cristian.marussi@arm.com>
-Subject: Re: [PATCH 03/13] kselftest: arm64: mangle_sp_misaligned
-Message-ID: <20190621103518.GK2790@e103592.cambridge.arm.com>
+Subject: Re: [PATCH 04/13] kselftest: arm64: mangle_pc_invalid
+Message-ID: <20190621103526.GL2790@e103592.cambridge.arm.com>
 References: <20190613111335.7645-1-cristian.marussi@arm.com>
- <20190613111335.7645-4-cristian.marussi@arm.com>
+ <20190613111335.7645-5-cristian.marussi@arm.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190613111335.7645-4-cristian.marussi@arm.com>
+In-Reply-To: <20190613111335.7645-5-cristian.marussi@arm.com>
 User-Agent: Mutt/1.5.23 (2014-03-12)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190621_033522_673848_76A382D7 
-X-CRM114-Status: GOOD (  15.64  )
+X-CRM114-CacheID: sfid-20190621_033529_676327_564F9662 
+X-CRM114-Status: GOOD (  18.07  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -69,31 +69,31 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Jun 13, 2019 at 12:13:25PM +0100, Cristian Marussi wrote:
+On Thu, Jun 13, 2019 at 12:13:26PM +0100, Cristian Marussi wrote:
 > Added a simple mangle testcase which messes with the ucontext_t
-> from within the sig_handler, trying to badly modify and misalign the SP.
-> Expects SIGBUS on test PASS.
+> from within the sig_handler, trying to badly modify the PC to point
+> toward Kernel land.
+> Expects SIGSEGV on test PASS.
 > 
 > Signed-off-by: Cristian Marussi <cristian.marussi@arm.com>
 > ---
 >  .../arm64/signal/testcases/.gitignore         |  1 +
->  .../signal/testcases/mangle_sp_misaligned.c   | 24 +++++++++++++++++++
+>  .../signal/testcases/mangle_pc_invalid.c      | 24 +++++++++++++++++++
 >  2 files changed, 25 insertions(+)
->  create mode 100644 tools/testing/selftests/arm64/signal/testcases/.gitignore
->  create mode 100644 tools/testing/selftests/arm64/signal/testcases/mangle_sp_misaligned.c
+>  create mode 100644 tools/testing/selftests/arm64/signal/testcases/mangle_pc_invalid.c
 > 
 > diff --git a/tools/testing/selftests/arm64/signal/testcases/.gitignore b/tools/testing/selftests/arm64/signal/testcases/.gitignore
-> new file mode 100644
-> index 000000000000..7f7414d241f2
-> --- /dev/null
+> index 7f7414d241f2..a87fb0f0d2cf 100644
+> --- a/tools/testing/selftests/arm64/signal/testcases/.gitignore
 > +++ b/tools/testing/selftests/arm64/signal/testcases/.gitignore
-> @@ -0,0 +1 @@
-> +mangle_sp_misaligned
-> diff --git a/tools/testing/selftests/arm64/signal/testcases/mangle_sp_misaligned.c b/tools/testing/selftests/arm64/signal/testcases/mangle_sp_misaligned.c
+> @@ -1 +1,2 @@
+>  mangle_sp_misaligned
+> +mangle_pc_invalid
+> diff --git a/tools/testing/selftests/arm64/signal/testcases/mangle_pc_invalid.c b/tools/testing/selftests/arm64/signal/testcases/mangle_pc_invalid.c
 > new file mode 100644
-> index 000000000000..41bd27312e54
+> index 000000000000..0024032528bc
 > --- /dev/null
-> +++ b/tools/testing/selftests/arm64/signal/testcases/mangle_sp_misaligned.c
+> +++ b/tools/testing/selftests/arm64/signal/testcases/mangle_pc_invalid.c
 > @@ -0,0 +1,24 @@
 > +/* SPDX-License-Identifier: GPL-2.0 */
 > +/* Copyright (C) 2019 ARM Limited */
@@ -101,33 +101,28 @@ On Thu, Jun 13, 2019 at 12:13:25PM +0100, Cristian Marussi wrote:
 > +#include "test_signals_utils.h"
 > +#include "testcases.h"
 > +
-> +static int mangle_misaligned_sp_run(struct tdescr *td, siginfo_t *si,
-> +				    ucontext_t *uc)
+> +static int mangle_invalid_pc_run(struct tdescr *td, siginfo_t *si,
+> +				 ucontext_t *uc)
 > +{
 > +	ASSERT_GOOD_CONTEXT(uc);
 > +
-> +	uc->uc_mcontext.sp += 3;
+> +	uc->uc_mcontext.pc = 0xffffffffcccccccc;
 
-What are we testing here?
+Similarly to the previous test, I don't think this is testing the
+sigreturn behaviour: the kernel just restores the bogus PC value and
+returns to userspace.  We then rely on the architecture to generate a
+prefetch abort when trying to fetch from the bogus PC.
 
-It is archietcturally permitted (if unusual) to have a misaligned sp in
-userspace.
+Am I missing anything?
 
-So are we just getting a SIGBUS after the sigreturn, when the thread
-tries to dereference sp?  If so, we aren't really testing anything about
-sigreturn here -- I don't see any check in the kernel when restoring sp
-in sigreturn.
-
-Even if there were no SIGBUS, the thread stack is now corrupt (due to
-wrong sp), so the interrupted code is unlikely to continue running
-successfully.
-
-Am I missing something?
+Could we have a test that points SP to kernel memory and the calls
+sigreturn: there is a real behaviour to test there: we must not be able
+to trick the kernel into interpreting kernel memory as a signal frame.
 
 [...]
 
 Cheers
----Dave
+--Dave
 
 _______________________________________________
 linux-arm-kernel mailing list
