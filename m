@@ -2,79 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7DED84EB7D
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 21 Jun 2019 17:03:19 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4D9984EB7E
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 21 Jun 2019 17:03:39 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=CFxoczpHs8krm/n4Sbs72R/hSSYITFgw2n2b6Swfxj0=; b=MCY9eWQWGEl2Z2
-	NO0nLiNFS4d9dwaSD8zEsYK7ts/CH80GvmhJPLnddePDsqKpPUmPOao7BoQsN80cRf4SSIafk84Vb
-	DJXq6ZxXeq2jmIRokYtDoQH2oERfg6BtKAVbwWg0oLWj1ZjRwF3wyCor3+Y44+wPa2g8vvTp00y9n
-	ghjaY7oMbjWz6MMwMH8f/DlseLWtz55xKxZ1I6ufSLpy4l5fNrirXhfYvEBi6sDdH0D0F2NW/xJTO
-	30UT2qNLkodbAynvmEGD2H4M3zWGb5N9vZOWgLXq4DXbtyxCcOIxiQvXJjkTACQrIWwCMTM0Ekoxn
-	uxb+44K4JPWYPk3poMzQ==;
+	List-Owner; bh=BkNoJny3xbXEkaSm9u+ZBimOXhCeY0TpNSykYmYi0fg=; b=hsIOxina9jyn6R
+	igkpTdcY71lqqq6EoERXUdAicqFlNzzfHgJOL2TTk7rcfEGYW+3AgIBGu3c/Tvbpb4JAR9669/KPf
+	rWVCp9UH+CNmVT6ZmvU6ColoJmEI2i0Xqh6vnI3DxBmTQAYqT0Mo3ly0hgeVGLds7+i+Qv6fjtmA+
+	3II9WqzrhCY9a85p/gps/DF6uAyV7wJ/1/7UEbMmT7Nik+m5gBIGFHbTo3oQJSonev0YIVVT2bpOz
+	YUPwa+tgGmZnT1oHois2jrRdTWf3pwXzbPIu7oIEKCBeI0ubkB+Gr6CFbMOoy+7uX228uMyHiyOCP
+	D08CFSGFzveIckW08BfQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1heL4Q-0005C7-2o; Fri, 21 Jun 2019 15:03:18 +0000
-Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
+	id 1heL4h-0005RA-LB; Fri, 21 Jun 2019 15:03:35 +0000
+Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1heL3O-0004Vp-Pe
- for linux-arm-kernel@lists.infradead.org; Fri, 21 Jun 2019 15:02:16 +0000
-Received: by mail-wr1-x444.google.com with SMTP id d18so6920632wrs.5
+ id 1heL3Q-0004XZ-Cx
+ for linux-arm-kernel@lists.infradead.org; Fri, 21 Jun 2019 15:02:17 +0000
+Received: by mail-wm1-x342.google.com with SMTP id x15so6607092wmj.3
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 21 Jun 2019 08:02:14 -0700 (PDT)
+ Fri, 21 Jun 2019 08:02:15 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=YrLivGcQuzCRORO001qD3KWZx8yDGr4VW8kByjQhyLI=;
- b=h3ozZ654DLC58KvzyUm3cL02rDLG+wkPlC3LroL8eOqBMP294aX+nCzBjj5v+7pCex
- x/9E61jJhjm+/wWdNP5xHiKfosrAZkEGTwfQ2fxGyXeI9wuIyTu0qPHi/dsfSLMb05Rf
- BiNKt+/UbdftMDajZnBYgawv74ArJuiiAQ6VFNQGHFI8KhewNK26Q0Jf9+zYq5nzBj3d
- aYN483sfdJZ2ZV4ycwIKdiE6/E2qHP5rtBgYbyHmmcX2LLOwkSpnGt/M8YvgFtV4pxxz
- LaRv0oFTUP6rduFPzfYk1sX+IyXCN1M8VJ/UQuUC3zzgSdbd8qM9lXigXaGu4dBh6F43
- kN1w==
+ bh=Z3UeGamx7c3i5DciUxpfKXFQToGYb6ITzbTJ2tjH9HM=;
+ b=rQoopX6LnMVcryE1dU5rVYgemXNJgmzk3+sClBd7FcWOeIScFvWP6EM20KquW2iLc3
+ e+fXk+Yvp5SwnT8iihBznhZ6bMHZ3DZCX7rJsKdgX6HhwoZp9M4JFPIoRXryiYyuw1tQ
+ OsZp7xyNRcn5xFpW7aHglr2h2Zw+WfR7ZIwPqog6ITNOGJl/I6/nGuRBi79RvgU6w9sV
+ l7vA55ycc33DEAB836icliZj3LJf6lhyqVOdv+9ils1vRHqhgvC5qZgLM3CgHEbs3F/w
+ TrFAZpUnkNe3snB01fKHUPU7R6jA6fJ9kixHw/Cku8LAvJg8jPnHjstfF4Hl/7Z0uv69
+ CW6A==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=YrLivGcQuzCRORO001qD3KWZx8yDGr4VW8kByjQhyLI=;
- b=oK2eOmQKdk7qlY3pmG+8f6CMIj8d3pCe3Ynh9OMvXFlviD8/5EecushUSFgjHaPnsI
- MO62ExgJ6j67XI5XwEGCgv+UQYTeKXOZ0ItuTMqqWjWjgaGI/L9kIR10ur6k565GkvpG
- aQg+gCbpGBu1sGuS1TEIrHbwfiHg0ml1zkwf/kLTccl8oYbmqDbuMPQC37In+mb5sk/n
- ys0NnOurF5HcV2Z26nC7rbfv4TfkAx5sIdnFKd4JtTVpyekyY84J0+7Y/jWMfdgexbrz
- cG+dBj3Pc5jA9OuGJDddFuhYWgwR/L/bK+OtYWYnAwxaw1Yy+LqQUgaQoumjZwkHRrhs
- nGGw==
-X-Gm-Message-State: APjAAAVorD9CQdKiVfSzvVJnlwQJnejpOEn7sIFpv2SFL74e0SOmA9zZ
- EuB3Uzk6KoH6Ea6pVJy0hv8=
-X-Google-Smtp-Source: APXvYqxxLVqBQXTLzyjlvI95xYsfP4eyC/fVGpGAtc91t8WshHndVfuFnsPqeciei5aF9WH8jzx3ow==
-X-Received: by 2002:adf:db12:: with SMTP id s18mr43506778wri.335.1561129333071; 
- Fri, 21 Jun 2019 08:02:13 -0700 (PDT)
+ bh=Z3UeGamx7c3i5DciUxpfKXFQToGYb6ITzbTJ2tjH9HM=;
+ b=HS+cfXeG/aC3KYruZxyfphEg4XexAAE87Q+2funK1SEFUpZwhTqNaJFDnSs6Fyk6LV
+ I8Eq6lkyY6JLVbgjJMjm5xY4/U4Pvr6XES/qJXAASaEAabz4Fx8C+wgweOl1Z2sC8buY
+ tEo2DG/XOJOe0Qx33XMYFYKbTHp9mRLIEahr4ZvIOxnQMrM+D495AkzZ6O0Oa6fvxAaL
+ dNd4SUV6IEZPD1/xC/Vd1GaEPKPjSgKrg+sKMtC3JWz65ryjCNf2o49DLrTVKwqhXy0A
+ vtk8j80DoTLd2U2A8/g8oAhkwfddE9dfnEZrz2E6XmiCesJDUxbXT1JEPVIr6Il0zb14
+ qwEw==
+X-Gm-Message-State: APjAAAVaBUEs0Y+fIjB+PUUM/EZCND/d1CHcLUKUdvHck6ZrzbtVN8D+
+ Zyu56H6C15AcnfQTFmy4aME=
+X-Google-Smtp-Source: APXvYqx3VCD+nt0wDF4LLAqtpSJToQRhAceziOok3sr5oX+Y1epf+0oK6xiMhICzMDnXNvoJXiGrBw==
+X-Received: by 2002:a1c:e0c4:: with SMTP id x187mr4270395wmg.177.1561129334499; 
+ Fri, 21 Jun 2019 08:02:14 -0700 (PDT)
 Received: from localhost (p2E5BEF36.dip0.t-ipconnect.de. [46.91.239.54])
- by smtp.gmail.com with ESMTPSA id o185sm2758735wmo.45.2019.06.21.08.02.12
+ by smtp.gmail.com with ESMTPSA id r5sm5717363wrg.10.2019.06.21.08.02.13
  (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Fri, 21 Jun 2019 08:02:12 -0700 (PDT)
+ Fri, 21 Jun 2019 08:02:14 -0700 (PDT)
 From: Thierry Reding <thierry.reding@gmail.com>
 To: arm@kernel.org
-Subject: [GIT PULL 4/5] arm64: tegra: Device tree changes for v5.3-rc1
-Date: Fri, 21 Jun 2019 17:02:05 +0200
-Message-Id: <20190621150206.19037-4-thierry.reding@gmail.com>
+Subject: [GIT PULL 5/5] arm64: tegra: Default configuration changes for
+ v5.3-rc1
+Date: Fri, 21 Jun 2019 17:02:06 +0200
+Message-Id: <20190621150206.19037-5-thierry.reding@gmail.com>
 X-Mailer: git-send-email 2.21.0
 In-Reply-To: <20190621150206.19037-1-thierry.reding@gmail.com>
 References: <20190621150206.19037-1-thierry.reding@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190621_080214_910962_009BED1D 
-X-CRM114-Status: GOOD (  12.48  )
+X-CRM114-CacheID: sfid-20190621_080216_467658_FAB01C0B 
+X-CRM114-Status: GOOD (  10.63  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:444 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:342 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -113,80 +114,30 @@ The following changes since commit a188339ca5a396acc588e5851ed7e19f66b0ebd9:
 
 are available in the Git repository at:
 
-  git://git.kernel.org/pub/scm/linux/kernel/git/tegra/linux.git tags/tegra-for-5.3-arm64-dt
+  git://git.kernel.org/pub/scm/linux/kernel/git/tegra/linux.git tags/tegra-for-5.3-arm64-defconfig
 
-for you to fetch changes up to a586c88eab65619f3654194dc90d46c98e712af2:
+for you to fetch changes up to 01d6fb565b4a7858af1699727f25da2279d75deb:
 
-  arm64: tegra: Enable PCIe slots in P2972-0000 board (2019-06-21 16:06:00 +0200)
+  arm64: defconfig: Add Tegra194 PCIe driver (2019-06-20 13:02:27 +0200)
 
 Thanks,
 Thierry
 
 ----------------------------------------------------------------
-arm64: tegra: Device tree changes for v5.3-rc1
+arm64: tegra: Default configuration changes for v5.3-rc1
 
-This contains the bulk of the Tegra changes this cycle. It has a bunch
-of improvements across almost all boards. These are mostly small and not
-too exciting additions.
-
-Most notably perhaps is the continuation of Jetson Nano support, which
-is now mostly on feature parity with Jetson TX1.
+This enables the INA3221 power monitoring driver that is used on many of
+the Jetson boards as well as Tegra194 PCIe support.
 
 ----------------------------------------------------------------
-Jon Hunter (3):
-      arm64: tegra: Fix AGIC register range
-      arm64: tegra: Update Jetson TX1 GPU regulator timings
-      arm64: tegra: Fix Jetson Nano GPU regulator
-
-Joseph Lo (1):
-      arm64: tegra: Add CPU cache topology for Tegra186
-
-Manikanta Maddireddy (1):
-      arm64: tegra: Add PEX DPD states as pinctrl properties
-
 Nicolin Chen (1):
-      arm64: tegra: Add INA3221 channel info for Jetson TX2
+      arm64: defconfig: Add HWMON INA3221 support
 
-Sameer Pujar (2):
-      arm64: tegra: Add ACONNECT, ADMA and AGIC nodes
-      arm64: tegra: Enable ACONNECT, ADMA and AGIC
+Vidya Sagar (1):
+      arm64: defconfig: Add Tegra194 PCIe driver
 
-Thierry Reding (18):
-      arm64: tegra: Use TEGRA186_ prefix for GPIOs
-      dt-bindings: tegra186-gpio: Remove unused definitions
-      arm64: tegra: Clarify that P2771 is the Jetson TX2 Developer Kit
-      arm64: tegra: Clarify that P3310 is the Jetson TX2
-      arm64: tegra: Clarify that P2888 is the Jetson AGX Xavier
-      arm64: tegra: Make DT model property consistent
-      arm64: tegra: Add VCC supply for GPIO expanders on Jetson TX2
-      arm64: tegra: Add pin control states for I2C on Tegra186
-      arm64: tegra: Mark architected timer as always on
-      arm64: tegra: Don't use architected timer for suspend on Tegra210
-      arm64: tegra: Add ID EEPROM for Jetson TX1 module
-      arm64: tegra: Add ID EEPROM for Jetson TX1 Developer Kit
-      arm64: tegra: Add ID EEPROM for Jetson TX2 module
-      arm64: tegra: Add ID EEPROM for Jetson TX2 Developer Kit
-      arm64: tegra: Add ID EEPROMs on Jetson Nano
-      arm64: tegra: Enable CPU sleep on Jetson Nano
-      arm64: tegra: Enable PWM on Jetson Nano
-      arm64: tegra: Sort device tree nodes alphabetically
-
-Vidya Sagar (2):
-      arm64: tegra: Add P2U and PCIe controller nodes to Tegra194 DT
-      arm64: tegra: Enable PCIe slots in P2972-0000 board
-
- arch/arm64/boot/dts/nvidia/tegra186-p2771-0000.dts |  75 ++-
- arch/arm64/boot/dts/nvidia/tegra186-p3310.dtsi     |  53 ++-
- arch/arm64/boot/dts/nvidia/tegra186.dtsi           | 176 ++++++-
- arch/arm64/boot/dts/nvidia/tegra194-p2888.dtsi     |   4 +-
- arch/arm64/boot/dts/nvidia/tegra194-p2972-0000.dts |  55 ++-
- arch/arm64/boot/dts/nvidia/tegra194.dtsi           | 509 +++++++++++++++++++++
- arch/arm64/boot/dts/nvidia/tegra210-p2180.dtsi     |  16 +-
- arch/arm64/boot/dts/nvidia/tegra210-p2371-2180.dts |  13 +
- arch/arm64/boot/dts/nvidia/tegra210-p3450-0000.dts |  52 ++-
- arch/arm64/boot/dts/nvidia/tegra210.dtsi           |  22 +-
- include/dt-bindings/gpio/tegra186-gpio.h           |  41 --
- 11 files changed, 937 insertions(+), 79 deletions(-)
+ arch/arm64/configs/defconfig | 2 ++
+ 1 file changed, 2 insertions(+)
 
 _______________________________________________
 linux-arm-kernel mailing list
