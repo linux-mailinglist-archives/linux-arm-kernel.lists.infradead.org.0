@@ -2,137 +2,101 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0F2804E6E0
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 21 Jun 2019 13:14:19 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A18D34E70C
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 21 Jun 2019 13:22:28 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:MIME-Version:
-	Date:Message-ID:From:To:Subject:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=gRDpdPNVdsMDpZon4txRseBhBr+kKSjaJx0gOB1lfCo=; b=hzze+z1yMGAFlw
-	YTkWkgdeTUVMvzstxKeQ5j92I/zrNsg7dvf6PJ33btwh0X8Yd67gtlOBJPleMqZiuPWxbqoe+VmTh
-	aGNhP3pyzJ6Gexxr7ufR088ZJZj58BqK4LuG1Vxp7mhpH9+bGils4MLL0GmioZtmaOHq3PIecVOJ6
-	N+3WEmrKxnJJ57VwLUtd/ukDYLbr5QbTkXo22Fi/ZEK/3ceyPwk2sdJGuI+3VbswKj70+uzQ78Mox
-	wmCOLB6HthiF+/xlWjQBOcL2XlQaoX0GVLtUvhrDDlFsFZxESui9sDZVwNxNSp3mmyaQ8Mcpag/EG
-	G4yRPHOKaKIsKNVDcCRA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=4W8mtig2rMIV4lRU2Uy0UHzVWn7QjUegYavskr7xv8U=; b=BaZGi52+T4CruL
+	Wib7n5Cj6kBm/kbKZ6m2A80IK6BK5AbTT1A4tMT0a4k9vLuxEBhcDwtliAI+vAkOGP+lZvRJuzGD5
+	CD0p2bdiNpkulMpZRaPEuLwMbBoAicbvS+KIc55egXMD3g+idpCzPXPFGDJyhSITuLUs7sb9Ptn5Q
+	24xSml7iXFl6l7PHSyEuKMbPs2kBNF+t/ZGCYy/BCdscSX60gsiZuSQNi7hENIm9fAbrGRBUBnOUD
+	lauMWSxuOqGDYMhPwUC45WBa9nfHGrBCir8TTT7QckOdmV2WwUiROOrpOv8bLoY4uVHpFoV6ZHra4
+	AIcJ1BZOnG0iv8FMVHHQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1heHUh-0008K0-QG; Fri, 21 Jun 2019 11:14:12 +0000
-Received: from mailout2.w1.samsung.com ([210.118.77.12])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1heHU8-0008Is-9I
- for linux-arm-kernel@lists.infradead.org; Fri, 21 Jun 2019 11:13:40 +0000
-Received: from eucas1p2.samsung.com (unknown [182.198.249.207])
- by mailout2.w1.samsung.com (KnoxPortal) with ESMTP id
- 20190621111332euoutp02dd5f7a283822b9d0af52abdce506dfe8~qMmDQJEZy2215822158euoutp02N
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 21 Jun 2019 11:13:32 +0000 (GMT)
-DKIM-Filter: OpenDKIM Filter v2.11.0 mailout2.w1.samsung.com
- 20190621111332euoutp02dd5f7a283822b9d0af52abdce506dfe8~qMmDQJEZy2215822158euoutp02N
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
- s=mail20170921; t=1561115612;
- bh=6YJ5/kKdrsFfr6ePqP4K2aX5RK675ibIPIClqnEDFTg=;
- h=Subject:To:Cc:From:Date:In-Reply-To:References:From;
- b=a9yTj1x25LEtKQdweIiN+h2QxoPfzI89zPwg5lkGUubmka74/Fc1+mQ01+TT8dUdr
- xNyq6owQ7EatBB5ac0JSIpUFQr9O1Xo09nEU8AKrk2z1MwE4wMpQhi5SIYuzdcf8DK
- xYOX37UXxmVCC321aLCM1Zco0715/rwZW3XmKCDw=
-Received: from eusmges2new.samsung.com (unknown [203.254.199.244]) by
- eucas1p2.samsung.com (KnoxPortal) with ESMTP id
- 20190621111331eucas1p22263058629410ced3220f604ff8ac6cc~qMmCZClap0071500715eucas1p2D;
- Fri, 21 Jun 2019 11:13:31 +0000 (GMT)
-Received: from eucas1p2.samsung.com ( [182.198.249.207]) by
- eusmges2new.samsung.com (EUCPMTA) with SMTP id F7.4C.04377.BDBBC0D5; Fri, 21
- Jun 2019 12:13:31 +0100 (BST)
-Received: from eusmtrp1.samsung.com (unknown [182.198.249.138]) by
- eucas1p1.samsung.com (KnoxPortal) with ESMTPA id
- 20190621111330eucas1p1de6ddd3651f42f621a5e88f0b834f850~qMmBo0P0P1225112251eucas1p1A;
- Fri, 21 Jun 2019 11:13:30 +0000 (GMT)
-Received: from eusmgms1.samsung.com (unknown [182.198.249.179]) by
- eusmtrp1.samsung.com (KnoxPortal) with ESMTP id
- 20190621111330eusmtrp1da8482e721d281479c2526efc4819249~qMmBST1Yj0558805588eusmtrp1v;
- Fri, 21 Jun 2019 11:13:30 +0000 (GMT)
-X-AuditID: cbfec7f4-113ff70000001119-9d-5d0cbbdb0cbc
-Received: from eusmtip1.samsung.com ( [203.254.199.221]) by
- eusmgms1.samsung.com (EUCPMTA) with SMTP id 27.CB.04146.ADBBC0D5; Fri, 21
- Jun 2019 12:13:30 +0100 (BST)
-Received: from [106.120.50.25] (unknown [106.120.50.25]) by
- eusmtip1.samsung.com (KnoxPortal) with ESMTPA id
- 20190621111329eusmtip17f30fdcc8f6f7feae71cee195c7f8f7f~qMmAruyuf0278702787eusmtip1R;
- Fri, 21 Jun 2019 11:13:29 +0000 (GMT)
-Subject: Re: [PATCH 6/6] ARM: dts: exynos: Add regulator suspend
- configuration to Odroid XU3/XU4/HC1 family
-To: Krzysztof Kozlowski <krzk@kernel.org>, Kukjin Kim <kgene@kernel.org>,
- Sangbeom Kim <sbkim73@samsung.com>, Bartlomiej Zolnierkiewicz
- <b.zolnierkie@samsung.com>, Liam Girdwood <lgirdwood@gmail.com>, Mark Brown
- <broonie@kernel.org>, Lee Jones <lee.jones@linaro.org>,
- devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-samsung-soc@vger.kernel.org, linux-kernel@vger.kernel.org
-From: Marek Szyprowski <m.szyprowski@samsung.com>
-Message-ID: <3e5320aa-ac26-3d69-7a8c-35c2c36b0f76@samsung.com>
-Date: Fri, 21 Jun 2019 13:13:28 +0200
-User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:60.0) Gecko/20100101
- Thunderbird/60.7.2
+	id 1heHcc-0003O1-G5; Fri, 21 Jun 2019 11:22:22 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1heHc6-0003Nk-7t
+ for linux-arm-kernel@lists.infradead.org; Fri, 21 Jun 2019 11:21:51 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id A1B8A360;
+ Fri, 21 Jun 2019 04:21:42 -0700 (PDT)
+Received: from [10.1.197.61] (usa-sjc-imap-foss1.foss.arm.com [10.121.207.14])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
+ F0FCC3F718; Fri, 21 Jun 2019 04:21:37 -0700 (PDT)
+Subject: Re: [PATCH 00/59] KVM: arm64: ARMv8.3 Nested Virtualization support
+To: Itaru Kitayama <itaru.kitayama@gmail.com>
+References: <20190621093843.220980-1-marc.zyngier@arm.com>
+ <CANW9uyssDm_0ysC_pnvhHRrnsmFZik+3_ENmFz7L2GCmtH09fw@mail.gmail.com>
+From: Marc Zyngier <marc.zyngier@arm.com>
+Openpgp: preference=signencrypt
+Autocrypt: addr=marc.zyngier@arm.com; prefer-encrypt=mutual; keydata=
+ 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
+ Z46HaNmN2hZS/oJ69c1DI5Rcww==
+Organization: ARM Ltd
+Message-ID: <e1ac5543-7c2c-175f-29ec-bb114c5b2428@arm.com>
+Date: Fri, 21 Jun 2019 12:21:36 +0100
+User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
+ Thunderbird/60.7.0
 MIME-Version: 1.0
-In-Reply-To: <20190620183530.5386-6-krzk@kernel.org>
+In-Reply-To: <CANW9uyssDm_0ysC_pnvhHRrnsmFZik+3_ENmFz7L2GCmtH09fw@mail.gmail.com>
 Content-Language: en-US
-X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFjrHKsWRmVeSWpSXmKPExsWy7djP87q3d/PEGkxcx2yxccZ6VoupD5+w
- Wcw/co7Vov/xa2aL8+c3sFvc/3qU0eLblQ4mi02Pr7FaXN41h81ixvl9TBZXHv9jtbi44guT
- RfvTl8wOvB47Z91l99i0qpPN4861PWwem5fUe/RtWcXo8XmTXABbFJdNSmpOZllqkb5dAlfG
- 5hPrmQqWW1Tc6vnN1sB4Ur2LkZNDQsBEYtO+LSxdjFwcQgIrGCXmvG2Acr4wSpzofscK4Xxm
- lHjbd58VpqX53Et2iMRyRolTOz5AtbxllLjeuZoZpEpYIFfiR9tZsISIwHRmiQ/XlzCCJJgF
- HCQeX+pjA7HZBAwlut52gdm8AnYS+9/1gzWzCKhK3N0yG8wWFYiReDj/DlSNoMTJmU9YQGxO
- oDN+7bzIBDFTXmL72znMELa4xK0n85kgTn3ELnH4GT+E7SIx8+R3dghbWOLV8S1QtozE6ck9
- YIdKCDQzSjw8t5YdwulhlLjcNIMRospa4vDxi8AA4ADaoCmxfpc+RNhRYmXHX0aQsIQAn8SN
- t4IQN/BJTNo2nRkizCvR0SYEUa0mMev4Ori1By9cYp7AqDQLyWezkHwzC8k3sxD2LmBkWcUo
- nlpanJueWmyUl1quV5yYW1yal66XnJ+7iRGYyk7/O/5lB+OuP0mHGAU4GJV4eA/M4o4VYk0s
- K67MPcQowcGsJMLLk8MTK8SbklhZlVqUH19UmpNafIhRmoNFSZy3muFBtJBAemJJanZqakFq
- EUyWiYNTqoGxSfrusd9RtqcNE+fdFylfqzfp9f9/Dv3/WWxW63tJ7lql/qiZ59vedv1Hsume
- NocfP1SdX1g77c/kZ7Eib3ec0Nx9LtZ5c9223yqaHovnNO29GXvhYdlFZoGj17blbX4ioFe4
- 1mWd5fag+zNdGKZ/cCqXbVnq5+ugFyr3xlX9Puvli8Xf37fkK7EUZyQaajEXFScCAPcN51Zh
- AwAA
-X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFnrIIsWRmVeSWpSXmKPExsVy+t/xu7q3dvPEGqy5yGKxccZ6VoupD5+w
- Wcw/co7Vov/xa2aL8+c3sFvc/3qU0eLblQ4mi02Pr7FaXN41h81ixvl9TBZXHv9jtbi44guT
- RfvTl8wOvB47Z91l99i0qpPN4861PWwem5fUe/RtWcXo8XmTXABblJ5NUX5pSapCRn5xia1S
- tKGFkZ6hpYWekYmlnqGxeayVkamSvp1NSmpOZllqkb5dgl7G5hPrmQqWW1Tc6vnN1sB4Ur2L
- kZNDQsBEovncS/YuRi4OIYGljBLnHy5nhUjISJyc1gBlC0v8udbFBlH0mlFi/qsjTCAJYYFc
- if195xlBEiICM5klnjy6ywySYBZwkHh8qQ+qYyOjxOZJ6xlBEmwChhJdb0FGcXLwCthJ7H/X
- D9bAIqAqcXfLbDBbVCBGomvqTxaIGkGJkzOfgNmcQLf+2nmRCWKBmcS8zQ+hlslLbH87B8oW
- l7j1ZD7TBEahWUjaZyFpmYWkZRaSlgWMLKsYRVJLi3PTc4sN9YoTc4tL89L1kvNzNzECo3fb
- sZ+bdzBe2hh8iFGAg1GJh/fALO5YIdbEsuLK3EOMEhzMSiK8PDk8sUK8KYmVValF+fFFpTmp
- xYcYTYGem8gsJZqcD0wseSXxhqaG5haWhubG5sZmFkrivB0CB2OEBNITS1KzU1MLUotg+pg4
- OKUaGA0t7d1PeLcE2R9xeyVTznvb7uDCfU97NgTfXGHxSpNjuVG51oonhZueP99lclbQK7Zm
- h8njEsY5ho//9Dsf+2wiaWwXtu7cqpK59w0FX/SdqH+r/CyMJbJrZ9jGjRutt1oWXrK+c6zu
- rtlhNt+JYs4bf7XalOjdfa9useLaeqacq6JfZdZd3qjEUpyRaKjFXFScCABX2wNR9AIAAA==
-X-CMS-MailID: 20190621111330eucas1p1de6ddd3651f42f621a5e88f0b834f850
-X-Msg-Generator: CA
-X-RootMTR: 20190620183612epcas2p17aa8e12a10b92891ab2228abca402e0c
-X-EPHeader: CA
-CMS-TYPE: 201P
-X-CMS-RootMailID: 20190620183612epcas2p17aa8e12a10b92891ab2228abca402e0c
-References: <20190620183530.5386-1-krzk@kernel.org>
- <CGME20190620183612epcas2p17aa8e12a10b92891ab2228abca402e0c@epcas2p1.samsung.com>
- <20190620183530.5386-6-krzk@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190621_041337_177858_4D6F800E 
-X-CRM114-Status: GOOD (  16.78  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190621_042150_380148_B38042FE 
+X-CRM114-Status: UNSURE (   8.45  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [210.118.77.12 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -144,295 +108,31 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sylwester Nawrocki <snawrocki@kernel.org>, notify@kernel.org
+Cc: kvmarm@lists.cs.columbia.edu, kvm@vger.kernel.org,
+ Julien Thierry <julien.thierry@arm.com>,
+ Andre Przywara <andre.przywara@arm.com>,
+ Suzuki K Poulose <suzuki.poulose@arm.com>,
+ Christoffer Dall <christoffer.dall@arm.com>, Dave Martin <Dave.Martin@arm.com>,
+ James Morse <james.morse@arm.com>, Jintack Lim <jintack@cs.columbia.edu>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi,
+On 21/06/2019 10:57, Itaru Kitayama wrote:
+> Marc,
+> Only possible way to test this series is to get
+> on Fast Model?
 
-On 2019-06-20 20:35, Krzysztof Kozlowski wrote:
-> Add the PMIC regulator suspend configuration to entire Odroid
-> XU3/XU4/HC1 family of boards to reduce power usage during suspend.  The
-> configuration is based on vendor (Hardkernel) reference kernel.
->
-> Signed-off-by: Krzysztof Kozlowski <krzk@kernel.org>
+Unless you have some ARMv8.3-capable hardware lying around, yes.
+Note that the Foundation model is also a good option.
 
-On XU4 (booted either from eMMC or SD) this reduces power consumption in 
-suspend-to-ram from 120mA to about 87mA (@5V). Suspend-to-RAM also works 
-fine on XU3, XU3lite and HC1.
+Thanks,
 
-Tested-by: Marek Szyprowski <m.szyprowski@samsung.com>
-
-> ---
->
-> Tested on XU3 and HC1 with SD card.
-> ---
->   arch/arm/boot/dts/exynos5422-odroid-core.dtsi | 92 +++++++++++++++++++
->   1 file changed, 92 insertions(+)
->
-> diff --git a/arch/arm/boot/dts/exynos5422-odroid-core.dtsi b/arch/arm/boot/dts/exynos5422-odroid-core.dtsi
-> index 0f967259ad29..5a4f7dd2568b 100644
-> --- a/arch/arm/boot/dts/exynos5422-odroid-core.dtsi
-> +++ b/arch/arm/boot/dts/exynos5422-odroid-core.dtsi
-> @@ -177,6 +177,10 @@
->   				regulator-name = "vdd_adc";
->   				regulator-min-microvolt = <1800000>;
->   				regulator-max-microvolt = <1800000>;
-> +
-> +				regulator-state-mem {
-> +					regulator-off-in-suspend;
-> +				};
->   			};
->   
->   			ldo5_reg: LDO5 {
-> @@ -184,6 +188,10 @@
->   				regulator-min-microvolt = <1800000>;
->   				regulator-max-microvolt = <1800000>;
->   				regulator-always-on;
-> +
-> +				regulator-state-mem {
-> +					regulator-off-in-suspend;
-> +				};
->   			};
->   
->   			ldo6_reg: LDO6 {
-> @@ -191,6 +199,10 @@
->   				regulator-min-microvolt = <1000000>;
->   				regulator-max-microvolt = <1000000>;
->   				regulator-always-on;
-> +
-> +				regulator-state-mem {
-> +					regulator-off-in-suspend;
-> +				};
->   			};
->   
->   			ldo7_reg: LDO7 {
-> @@ -198,6 +210,10 @@
->   				regulator-min-microvolt = <1800000>;
->   				regulator-max-microvolt = <1800000>;
->   				regulator-always-on;
-> +
-> +				regulator-state-mem {
-> +					regulator-off-in-suspend;
-> +				};
->   			};
->   
->   			ldo8_reg: LDO8 {
-> @@ -205,6 +221,10 @@
->   				regulator-min-microvolt = <1800000>;
->   				regulator-max-microvolt = <1800000>;
->   				regulator-always-on;
-> +
-> +				regulator-state-mem {
-> +					regulator-off-in-suspend;
-> +				};
->   			};
->   
->   			ldo9_reg: LDO9 {
-> @@ -212,6 +232,10 @@
->   				regulator-min-microvolt = <3000000>;
->   				regulator-max-microvolt = <3000000>;
->   				regulator-always-on;
-> +
-> +				regulator-state-mem {
-> +					regulator-off-in-suspend;
-> +				};
->   			};
->   
->   			ldo10_reg: LDO10 {
-> @@ -219,6 +243,10 @@
->   				regulator-min-microvolt = <1800000>;
->   				regulator-max-microvolt = <1800000>;
->   				regulator-always-on;
-> +
-> +				regulator-state-mem {
-> +					regulator-off-in-suspend;
-> +				};
->   			};
->   
->   			ldo11_reg: LDO11 {
-> @@ -226,6 +254,10 @@
->   				regulator-min-microvolt = <1000000>;
->   				regulator-max-microvolt = <1000000>;
->   				regulator-always-on;
-> +
-> +				regulator-state-mem {
-> +					regulator-off-in-suspend;
-> +				};
->   			};
->   
->   			ldo12_reg: LDO12 {
-> @@ -239,6 +271,10 @@
->   				regulator-name = "vddq_mmc2";
->   				regulator-min-microvolt = <1800000>;
->   				regulator-max-microvolt = <2800000>;
-> +
-> +				regulator-state-mem {
-> +					regulator-off-in-suspend;
-> +				};
->   			};
->   
->   			ldo14_reg: LDO14 {
-> @@ -253,6 +289,10 @@
->   				regulator-min-microvolt = <3300000>;
->   				regulator-max-microvolt = <3300000>;
->   				regulator-always-on;
-> +
-> +				regulator-state-mem {
-> +					regulator-off-in-suspend;
-> +				};
->   			};
->   
->   			ldo16_reg: LDO16 {
-> @@ -267,18 +307,30 @@
->   				regulator-min-microvolt = <3300000>;
->   				regulator-max-microvolt = <3300000>;
->   				regulator-always-on;
-> +
-> +				regulator-state-mem {
-> +					regulator-off-in-suspend;
-> +				};
->   			};
->   
->   			ldo18_reg: LDO18 {
->   				regulator-name = "vdd_emmc_1V8";
->   				regulator-min-microvolt = <1800000>;
->   				regulator-max-microvolt = <1800000>;
-> +
-> +				regulator-state-mem {
-> +					regulator-off-in-suspend;
-> +				};
->   			};
->   
->   			ldo19_reg: LDO19 {
->   				regulator-name = "vdd_sd";
->   				regulator-min-microvolt = <2800000>;
->   				regulator-max-microvolt = <2800000>;
-> +
-> +				regulator-state-mem {
-> +					regulator-off-in-suspend;
-> +				};
->   			};
->   
->   			ldo20_reg: LDO20 {
-> @@ -307,6 +359,10 @@
->   				regulator-min-microvolt = <1100000>;
->   				regulator-max-microvolt = <1100000>;
->   				regulator-always-on;
-> +
-> +				regulator-state-mem {
-> +					regulator-off-in-suspend;
-> +				};
->   			};
->   
->   			ldo24_reg: LDO24 {
-> @@ -328,6 +384,10 @@
->   				regulator-name = "vdd_ldo26";
->   				regulator-min-microvolt = <800000>;
->   				regulator-max-microvolt = <3950000>;
-> +
-> +				regulator-state-mem {
-> +					regulator-off-in-suspend;
-> +				};
->   			};
->   
->   			ldo27_reg: LDO27 {
-> @@ -335,6 +395,10 @@
->   				regulator-min-microvolt = <1000000>;
->   				regulator-max-microvolt = <1000000>;
->   				regulator-always-on;
-> +
-> +				regulator-state-mem {
-> +					regulator-off-in-suspend;
-> +				};
->   			};
->   
->   			ldo28_reg: LDO28 {
-> @@ -342,6 +406,10 @@
->   				regulator-name = "vdd_ldo28";
->   				regulator-min-microvolt = <800000>;
->   				regulator-max-microvolt = <3950000>;
-> +
-> +				regulator-state-mem {
-> +					regulator-off-in-suspend;
-> +				};
->   			};
->   
->   			ldo29_reg: LDO29 {
-> @@ -420,6 +488,10 @@
->   				regulator-max-microvolt = <1300000>;
->   				regulator-always-on;
->   				regulator-boot-on;
-> +
-> +				regulator-state-mem {
-> +					regulator-off-in-suspend;
-> +				};
->   			};
->   
->   			buck2_reg: BUCK2 {
-> @@ -428,6 +500,10 @@
->   				regulator-max-microvolt = <1500000>;
->   				regulator-always-on;
->   				regulator-boot-on;
-> +
-> +				regulator-state-mem {
-> +					regulator-off-in-suspend;
-> +				};
->   			};
->   
->   			buck3_reg: BUCK3 {
-> @@ -436,6 +512,10 @@
->   				regulator-max-microvolt = <1400000>;
->   				regulator-always-on;
->   				regulator-boot-on;
-> +
-> +				regulator-state-mem {
-> +					regulator-off-in-suspend;
-> +				};
->   			};
->   
->   			buck4_reg: BUCK4 {
-> @@ -444,6 +524,10 @@
->   				regulator-max-microvolt = <1400000>;
->   				regulator-always-on;
->   				regulator-boot-on;
-> +
-> +				regulator-state-mem {
-> +					regulator-off-in-suspend;
-> +				};
->   			};
->   
->   			buck5_reg: BUCK5 {
-> @@ -460,6 +544,10 @@
->   				regulator-max-microvolt = <1500000>;
->   				regulator-always-on;
->   				regulator-boot-on;
-> +
-> +				regulator-state-mem {
-> +					regulator-off-in-suspend;
-> +				};
->   			};
->   
->   			buck7_reg: BUCK7 {
-> @@ -490,6 +578,10 @@
->   				regulator-name = "vdd_vmem";
->   				regulator-min-microvolt = <2850000>;
->   				regulator-max-microvolt = <2850000>;
-> +
-> +				regulator-state-mem {
-> +					regulator-off-in-suspend;
-> +				};
->   			};
->   		};
->   	};
-
-Best regards
+	M.
 -- 
-Marek Szyprowski, PhD
-Samsung R&D Institute Poland
-
+Jazz is not dead. It just smells funny...
 
 _______________________________________________
 linux-arm-kernel mailing list
