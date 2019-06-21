@@ -2,49 +2,49 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B5CB34EC15
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 21 Jun 2019 17:33:35 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3CE004EC16
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 21 Jun 2019 17:34:00 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Wuqk/3tpkN4+1Z38rxUN+BRv9n+hSrDdjAZnGZx/WiY=; b=hmtom/lmJFAudy
-	XMs8AtwlbBPrZlnclwvCIXXcvTM3MQxboV2IVm2YKxhIr6TXrDXxKYJPmOzcs/aPkyibuZfxmgt6Q
-	+ZzKTzPEYz0n2aGamkdKMUN+f9VYMuKnWiThDoZMhh9mQ/szkkluptWxuxXD8U3hG3oMWGo/nRR/K
-	4ikM0ts5I3mdcs5iElhBvCsp0igpUCxGvrwZCNkoSwTBV1biXk8neR8f86in2glB2oYuk89Fz7iY/
-	PGPX7xK2vsfoNN+9BTNaWspi4pb6O6897N1YhxQswJ7iUu85pB3DbTVhHQxLb4uPrxyTIgkfEIgg2
-	FLjWA0TVT0KSR66cwzrA==;
+	List-Owner; bh=Uv5TUC7LKEkM4DRsaZtU9fTloqESYIrwwJU7+z/IoYE=; b=GnHYhloWdWq26g
+	FwY56ybSx0/QA8Ar16pQewCiN2GwW6ZQRodmKwypQ104KckNXdmEJAfMwbYQeHJZevX9eZGsxjVdK
+	wxyLVFMwFi7PRiLht0NNmdskGgSm8d3r/LCOLd/iyobsCzv9/puAAZ8v0RIgPTg277CnWO5FMROy3
+	s4s20mC1HtExwvRTI0BPQvefz/fjeO4M0pQwp8WcFeLOB/wz62D5OYWveEI4gKPOy+46bDjbIhl9Y
+	dhC6HnWIwuBxtCOVybRw+9NIBDz4MzNyOzHW58/hkIWKgXItuEsLSa9ctZZrKDgdpfKHvcheQ9Fob
+	iL89d2dHkclT1Z4iu47g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1heLXi-0000WH-9X; Fri, 21 Jun 2019 15:33:34 +0000
+	id 1heLY3-0000m5-JT; Fri, 21 Jun 2019 15:33:55 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1heLWv-00005f-M2
- for linux-arm-kernel@lists.infradead.org; Fri, 21 Jun 2019 15:32:49 +0000
+ id 1heLX7-0000EM-B0
+ for linux-arm-kernel@lists.infradead.org; Fri, 21 Jun 2019 15:32:58 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 0ED9C1509;
- Fri, 21 Jun 2019 08:32:45 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id A955B344;
+ Fri, 21 Jun 2019 08:32:56 -0700 (PDT)
 Received: from e103592.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
  [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id C8BAD3F575;
- Fri, 21 Jun 2019 08:32:43 -0700 (PDT)
-Date: Fri, 21 Jun 2019 16:32:41 +0100
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 6FE723F575;
+ Fri, 21 Jun 2019 08:32:55 -0700 (PDT)
+Date: Fri, 21 Jun 2019 16:32:53 +0100
 From: Dave Martin <Dave.Martin@arm.com>
 To: Julien Grall <julien.grall@arm.com>
-Subject: Re: [RFC PATCH v2 3/8] arm64/fpsimdmacros: Allow the macro "for" to
- be used in more cases
-Message-ID: <20190621153241.GY2790@e103592.cambridge.arm.com>
+Subject: Re: [RFC PATCH v2 4/8] arm64/fpsimdmacros: Introduce a macro to
+ update ZCR_EL1.LEN
+Message-ID: <20190621153253.GZ2790@e103592.cambridge.arm.com>
 References: <20190613161656.20765-1-julien.grall@arm.com>
- <20190613161656.20765-4-julien.grall@arm.com>
+ <20190613161656.20765-5-julien.grall@arm.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190613161656.20765-4-julien.grall@arm.com>
+In-Reply-To: <20190613161656.20765-5-julien.grall@arm.com>
 User-Agent: Mutt/1.5.23 (2014-03-12)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190621_083245_951274_BAC3DCFF 
-X-CRM114-Status: GOOD (  21.02  )
+X-CRM114-CacheID: sfid-20190621_083257_482549_1AA00CF3 
+X-CRM114-Status: GOOD (  15.38  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -71,91 +71,58 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Jun 13, 2019 at 05:16:51PM +0100, Julien Grall wrote:
-> The current version of the macro "for" is only able to work when the
-> counter is used to generate registers using mnemonics. This is because
-
-[*] Is this backwards?  Previously, we _can't_ substitute register
-numbers directly into proper instruction mnemonics: we have to use
-.insn with an expression to generate the opcode directly instead
-(possibly via a macro).
-
-With this change we can paste the _for number straight into human-
-readable assembler mnemonics.
-
-> gas is not able to evaluate the expression generated if used in
-> registers name (i.e x\n).
-
-Nit: maybe: "a register name" or "a register's name"
-
-> Gas offers a way to evaluate macro arguments by using % in front of
-> them under the alternate macro mode [1].
-
-This reference is obviously useful to reviewers, but I'm not sure about
-the life expectancy of such a URL.  It probably belongs after the
-tearoff line rather than in the commit message.
-
-> The implementation of "for" is updated to use the alternate macro mode
-> and %, so we can use the macro in more cases. As the alternate macro mode
-> may have side-effect, this is disabled when generating the body.
-
-Nit: side-effects
-
-Nit: I'd probably say "expanding the body", to be consistent with gas's
-own terminology.
-
-(These are pedantic, and inessential to fix.)
-
-> While it is enough to prefix the argument of the macro "__for_body" with
-> %, the arguments of "__for" are also prefixed to get a more bearable
-> value in case of compilation error.
+On Thu, Jun 13, 2019 at 05:16:52PM +0100, Julien Grall wrote:
+> A follow-up patch will need to update ZCR_EL1.LEN.
 > 
-> [1] https://sourceware.org/binutils/docs/as/Altmacro.html
+> Add a macro that could be re-used in the current and new places to
+> avoid code duplication.
 > 
-> Suggested-by: Dave Martin <dave.martin@arm.com>
 > Signed-off-by: Julien Grall <julien.grall@arm.com>
 > 
 > ---
 >     Changes in v2:
 >         - Fix typo in the commit message
 > ---
->  arch/arm64/include/asm/fpsimdmacros.h | 10 +++++++---
->  1 file changed, 7 insertions(+), 3 deletions(-)
+>  arch/arm64/include/asm/fpsimdmacros.h | 19 ++++++++++++-------
+>  1 file changed, 12 insertions(+), 7 deletions(-)
 > 
 > diff --git a/arch/arm64/include/asm/fpsimdmacros.h b/arch/arm64/include/asm/fpsimdmacros.h
-> index 46843515d77b..e2ab77dd9b4f 100644
+> index e2ab77dd9b4f..5e291d9c1ba0 100644
 > --- a/arch/arm64/include/asm/fpsimdmacros.h
 > +++ b/arch/arm64/include/asm/fpsimdmacros.h
-> @@ -177,19 +177,23 @@
->  
->  .macro __for from:req, to:req
->  	.if (\from) == (\to)
-> -		_for__body \from
-> +		_for__body %\from
->  	.else
-> -		__for \from, (\from) + ((\to) - (\from)) / 2
-> -		__for (\from) + ((\to) - (\from)) / 2 + 1, \to
-> +		__for %\from, %((\from) + ((\to) - (\from)) / 2)
-> +		__for %((\from) + ((\to) - (\from)) / 2 + 1), %\to
->  	.endif
->  .endm
->  
->  .macro _for var:req, from:req, to:req, insn:vararg
->  	.macro _for__body \var:req
-> +		.noaltmacro
->  		\insn
-> +		.altmacro
->  	.endm
->  
-> +	.altmacro
->  	__for \from, \to
-> +	.noaltmacro
->  
+> @@ -198,6 +198,17 @@
 >  	.purgem _for__body
 >  .endm
-
-Looks OK to me.  With [*] addressed as appropriate, and modulo others'
-comments (if any):
+>  
+> +/* Update ZCR_EL1.LEN with the new VQ */
+> +.macro sve_load_vq xvqminus1, xtmp, xtmp2
+> +		mrs_s		\xtmp, SYS_ZCR_EL1
+> +		bic		\xtmp2, \xtmp, ZCR_ELx_LEN_MASK
+> +		orr		\xtmp2, \xtmp2, \xvqminus1
+> +		cmp		\xtmp2, \xtmp
+> +		b.eq		921f
+> +		msr_s		SYS_ZCR_EL1, \xtmp2	//self-synchronising
+> +921:
+> +.endm
+> +
+>  .macro sve_save nxbase, xpfpsr, nxtmp
+>   _for n, 0, 31,	_sve_str_v	\n, \nxbase, \n - 34
+>   _for n, 0, 15,	_sve_str_p	\n, \nxbase, \n - 16
+> @@ -212,13 +223,7 @@
+>  .endm
+>  
+>  .macro sve_load nxbase, xpfpsr, xvqminus1, nxtmp, xtmp2
+> -		mrs_s		x\nxtmp, SYS_ZCR_EL1
+> -		bic		\xtmp2, x\nxtmp, ZCR_ELx_LEN_MASK
+> -		orr		\xtmp2, \xtmp2, \xvqminus1
+> -		cmp		\xtmp2, x\nxtmp
+> -		b.eq		921f
+> -		msr_s		SYS_ZCR_EL1, \xtmp2	// self-synchronising
+> -921:
+> +		sve_load_vq	\xvqminus1, x\nxtmp, \xtmp2
+>   _for n, 0, 31,	_sve_ldr_v	\n, \nxbase, \n - 34
+>  		_sve_ldr_p	0, \nxbase
+>  		_sve_wrffr	0
 
 Reviewed-by: Dave Martin <Dave.Martin@arm.com>
 
