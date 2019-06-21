@@ -2,80 +2,95 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7B86C4EE76
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 21 Jun 2019 20:13:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id ED96B4EFA9
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 21 Jun 2019 21:52:27 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=yW5M/hEW9xBkKPzfAjUiUgu5kUe8G4kZdgaPwlsjs1Y=; b=RuHwlYfJsxDqcs
-	yTZeftCLWM88Or1PztRDF7nkVnztlOBDpdv5wv4s3UKHnK2pnqvcdpdjZ4LvU1Ec9JkjEyt5bnOrL
-	KFGNxIrKskW8ACwq7Yhg/tayHvfQxqtMU21QE1gfPqhkrQa/Q8CxexSy6qUUxDVLiSNlxGwpPTvzQ
-	zd2Uk5gSPFoTKO4SPzI4EjtNLNJbw+6cKEuWPjfeb4RjJqYzvdtjzYPLnfAUv9FT8du1UncmRbxf5
-	rRvSjcbNdNsZE6rReYArVH5YtRNAhcM+khyXz613Fvx4M3PMc3m/eBbentyHi37QsYwM3jrEd/k+9
-	nMqW3dYwp+lEbXvwjdwQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:References:To:Subject:From:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=fTqIz9vUMoekhPv3oSBGuNoKvkJvt7MWCMWVkz7qbY0=; b=MQkBcwGf6ImpTN
+	g33ozOxcKQAeb7n4wx7uuQz99iGET2IKvHiYcPlIjvvTCUi8j9ksaY7u4b7bk2aQLRqGSmt0cd1Pv
+	aadMg/SiX3Y4FQpRY73emMCXGLgMGP/08/GWtcTemEsRIXjBgELlVCpZ+tWoU88A66fl8TpR0TCWW
+	xUCKF7OROjkcG3BMVPemVDA6A4aJAvTykdbTlOOQmLAViV1owGYAL71meiZSSZowTzgiW5V15XBQR
+	y9fqXVclQB1CPHGKRuZiv8KOg/ePuUmlC5c+ZaBfHiGN3EplRATOTLbN15M0PW9XepNZzaUy4aaFk
+	xXPXjy0RyrHuV0kd3tQg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1heO1y-0001Cm-06; Fri, 21 Jun 2019 18:12:58 +0000
-Received: from mail-wm1-f67.google.com ([209.85.128.67])
+	id 1hePaB-0002j5-Ck; Fri, 21 Jun 2019 19:52:23 +0000
+Received: from mail-lf1-x143.google.com ([2a00:1450:4864:20::143])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1heO1o-0001CL-0B
- for linux-arm-kernel@lists.infradead.org; Fri, 21 Jun 2019 18:12:49 +0000
-Received: by mail-wm1-f67.google.com with SMTP id a15so7123441wmj.5
+ id 1hePZx-0002hi-Ct
+ for linux-arm-kernel@lists.infradead.org; Fri, 21 Jun 2019 19:52:11 +0000
+Received: by mail-lf1-x143.google.com with SMTP id b11so5904393lfa.5
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 21 Jun 2019 11:12:46 -0700 (PDT)
+ Fri, 21 Jun 2019 12:52:07 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=cogentembedded-com.20150623.gappssmtp.com; s=20150623;
+ h=from:subject:to:cc:references:organization:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=wso9AT0PLE8YSVz4mFagGPGoqkgjnJ4hhl/knflL07M=;
+ b=Ew+e7GQyGGn3VMUMvlmlNk529darBgRUJ/dcJFSuTVhcptTW0Osp8jReJotYp3YmKA
+ f6eeGrLRGAbz3L8Of3mQVbcQDLORcn3KXYXhPmuLEmtkhvEZh+lMjKapiefa6/uiNl2W
+ sMOLt5EglU5sNbD9GTGtO5A5tcs2ho6YQ53d4IWO8ykmDYB7C1u0OYGN4kKeIMmQbB8t
+ sCsUfdPPmodLtBotaF1sfyp3QcvscC+eoN6kkXc3skMo0VaCzrVmg+NLHLSyIaA9tmok
+ kdq69iSb8NJ1pNNEYW3c7xUwEyznK+nW7o7MOGRmdKVvN+I8ayYLDei7JYMyJxs3C0XZ
+ O92A==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=K8ZqNlSRzlw+iByGaPZNdN2szcR/O2ehXG6DihUgi5k=;
- b=StXkfua6NPz/F2w/Ix9t+lU+WENFfY6VKjwSKM4VH+boYWeLRLr+pckGHZ1z2NrAw8
- OQLU+3zL+CX7o2Ej9MNzXcrziSKfH98ZMsUJ+hbXoU4Tvm/5WQXnqZNA9APtMPrx7FEi
- IFv8bXwXWDwvmIFrC1eHZ8o1eR5y/1OPsHfRwll2HHxvsKnIRmHEWcqF+Osud3nky8Yl
- tZjtaMrnYDWIv3y5ugLaB5dxF16f3juomR7SmeV3a6rXSsO+iS8pLlPNel7Oi5eM4FES
- MiYVP1kfBxct37vkuduKsOgcXt08+5moGKIMQJD4rwrLzKWkmXLT/k20dCoILBU4kwoy
- 487w==
-X-Gm-Message-State: APjAAAVb/owbcIY9Q8JX6HLKaKaNPpefs1HdkOAhXtpATw0/HizgmC0K
- RJZobbjiT31ktOGvMeTZvKY=
-X-Google-Smtp-Source: APXvYqxxO+HkCjrMZC9y5KfK+BU2nNihU5fwC/SA7zEcs/MVwbeu/GDip2tz7utkxVE97ewJTt8utg==
-X-Received: by 2002:a1c:1947:: with SMTP id 68mr4932544wmz.171.1561140765354; 
- Fri, 21 Jun 2019 11:12:45 -0700 (PDT)
-Received: from kozik-lap ([194.230.155.186])
- by smtp.googlemail.com with ESMTPSA id h90sm4746092wrh.15.2019.06.21.11.12.44
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Fri, 21 Jun 2019 11:12:44 -0700 (PDT)
-Date: Fri, 21 Jun 2019 20:12:42 +0200
-From: Krzysztof Kozlowski <krzk@kernel.org>
-To: Arnd Bergmann <arnd@arndb.de>
-Subject: Re: [PATCH] ARM: exynos: only build mcpm support if used
-Message-ID: <20190621181242.GA18341@kozik-lap>
-References: <20190619125545.1087023-1-arnd@arndb.de>
+ h=x-gm-message-state:from:subject:to:cc:references:organization
+ :message-id:date:user-agent:mime-version:in-reply-to
+ :content-language:content-transfer-encoding;
+ bh=wso9AT0PLE8YSVz4mFagGPGoqkgjnJ4hhl/knflL07M=;
+ b=CDa1BHO63lsNl3gvdFM0EDfO8gc+rvymE6ot4r5naDg09H7weHmwbXwqXvIJBgR+K6
+ fUQQAMdUfEz83YgcLnyqOY5EwmdBkC0OzaI4e2AJjvymizzeG6ThrpWKO8kAjmNtyqUl
+ T0RycMWrI0nx9/ZNVU/PGCJtwJ5/Fr6iF646J+Ddn8FrgpZ3eP5ZA8ba7c20v4sCchuq
+ 9KXmES3TQ1/MmdKh1laOgs1PVE8yY6n18VONKrm5OXM9k7f+Az4BCMvHvUASSSAK7pSD
+ UjmecnoF07BAbs0VoVibBs/EGg7hRyDBA6vraS60W7CbZQotKjO56TkUtmIkcej3QwN5
+ FKdA==
+X-Gm-Message-State: APjAAAX3OCQf3oO80DbFmESVVX07w3zhWXnutApBip8DX0ry+ndD9rnU
+ 48a/LYdFzzxODlaFr4Qk3h6sXw==
+X-Google-Smtp-Source: APXvYqx3uKDLsq5HSFMYR5JCV7tpvJVm6zODfloD79xoOac4SxateHkoi4zxVApNcx1Fez+sYLEylg==
+X-Received: by 2002:a19:ca1e:: with SMTP id a30mr3669450lfg.163.1561146725828; 
+ Fri, 21 Jun 2019 12:52:05 -0700 (PDT)
+Received: from wasted.cogentembedded.com ([31.173.87.14])
+ by smtp.gmail.com with ESMTPSA id n3sm513817lfh.3.2019.06.21.12.52.04
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Fri, 21 Jun 2019 12:52:05 -0700 (PDT)
+From: Sergei Shtylyov <sergei.shtylyov@cogentembedded.com>
+Subject: Re: [PATCH v7 3/5] mtd: Add support for HyperBus memory devices
+To: Vignesh Raghavendra <vigneshr@ti.com>,
+ Boris Brezillon <bbrezillon@kernel.org>, Marek Vasut
+ <marek.vasut@gmail.com>, Richard Weinberger <richard@nod.at>,
+ Rob Herring <robh+dt@kernel.org>
+References: <20190620172250.9102-1-vigneshr@ti.com>
+ <20190620172250.9102-4-vigneshr@ti.com>
+Organization: Cogent Embedded
+Message-ID: <4d17e914-cd1f-c6fe-b70a-6aae02e0cf4e@cogentembedded.com>
+Date: Fri, 21 Jun 2019 22:52:03 +0300
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101
+ Thunderbird/52.2.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190619125545.1087023-1-arnd@arndb.de>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+In-Reply-To: <20190620172250.9102-4-vigneshr@ti.com>
+Content-Language: en-MW
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190621_111248_044895_39134E3D 
-X-CRM114-Status: GOOD (  12.02  )
-X-Spam-Score: 0.5 (/)
+X-CRM114-CacheID: sfid-20190621_125209_856760_9FBF6BF2 
+X-CRM114-Status: GOOD (  24.37  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.5 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.128.67 listed in list.dnswl.org]
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
+ no trust [2a00:1450:4864:20:0:0:0:143 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (k.kozlowski.k[at]gmail.com)
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.128.67 listed in wl.mailspike.net]
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -87,36 +102,91 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-samsung-soc@vger.kernel.org,
- Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>,
- linux-kernel@vger.kernel.org, Tomasz Figa <tomasz.figa@gmail.com>,
- Russell King <linux@armlinux.org.uk>, Kukjin Kim <kgene@kernel.org>,
- linux-arm-kernel@lists.infradead.org,
- Marek Szyprowski <m.szyprowski@samsung.com>
+Cc: devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-mtd@lists.infradead.org, Miquel Raynal <miquel.raynal@bootlin.com>,
+ Mason Yang <masonccyang@mxic.com.tw>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Jun 19, 2019 at 02:55:29PM +0200, Arnd Bergmann wrote:
-> We get a link error for configurations that enable an exynos
-> SoC that does not require mcpm, but then manually enable
-> mcpm anyway wihtout also turning on the arm-cci:
-> 
-> arch/arm/mach-exynos/mcpm-exynos.o: In function `exynos_pm_power_up_setup':
-> mcpm-exynos.c:(.text+0x8): undefined reference to `cci_enable_port_for_self'
-> 
-> Change it back to only build the code we actually need, by
-> introducing a CONFIG_EXYNOS_MCPM that serves the same purpose
-> as the older CONFIG_EXYNOS5420_MCPM.
-> 
-> Fixes: 2997520c2d4e ("ARM: exynos: Set MCPM as mandatory for Exynos542x/5800 SoCs")
+Hello!
 
-Thanks, applied.
+On 06/20/2019 08:22 PM, Vignesh Raghavendra wrote:
 
-Best regards,
-Krzysztof
+> Cypress' HyperBus is Low Signal Count, High Performance Double Data Rate
+> Bus interface between a host system master and one or more slave
+> interfaces. HyperBus is used to connect microprocessor, microcontroller,
+> or ASIC devices with random access NOR flash memory (called HyperFlash)
+> or self refresh DRAM (called HyperRAM).
+> 
+> Its a 8-bit data bus (DQ[7:0]) with  Read-Write Data Strobe (RWDS)
+> signal and either Single-ended clock(3.0V parts) or Differential clock
+> (1.8V parts). It uses ChipSelect lines to select b/w multiple slaves.
+> At bus level, it follows a separate protocol described in HyperBus
+> specification[1].
+> 
+> HyperFlash follows CFI AMD/Fujitsu Extended Command Set (0x0002) similar
+> to that of existing parallel NORs. Since HyperBus is x8 DDR bus,
+> its equivalent to x16 parallel NOR flash wrt bits per clock cycle. But
+> HyperBus operates at >166MHz frequencies.
 
+   s/wrt/WRT/.
+
+> HyperRAM provides direct random read/write access to flash memory
+> array.
+> 
+> But, HyperBus memory controllers seem to abstract implementation details
+> and expose a simple MMIO interface to access connected flash.
+> 
+> Add support for registering HyperFlash devices with MTD framework. MTD
+> maps framework along with CFI chip support framework are used to support
+> communicating with flash.
+> 
+> Framework is modelled along the lines of spi-nor framework. HyperBus
+> memory controller (HBMC) drivers calls hyperbus_register_device() to
+> register a single HyperFlash device. HyperFlash core parses MMIO access
+> information from DT, sets up the map_info struct, probes CFI flash and
+> registers it with MTD framework.
+> 
+> Some HBMC masters need calibration/training sequence[3] to be carried
+> out, in order for DLL inside the controller to lock, by reading a known
+> string/pattern. This is done by repeatedly reading CFI Query
+> Identification String. Calibration needs to be done before trying to detect
+> flash as part of CFI flash probe.
+> 
+> HyperRAM is not supported at the moment.
+> 
+> HyperBus specification can be found at[1]
+> HyperFlash datasheet can be found at[2]
+> 
+> [1] https://www.cypress.com/file/213356/download
+> [2] https://www.cypress.com/file/213346/download
+> [3] http://www.ti.com/lit/ug/spruid7b/spruid7b.pdf
+>     Table 12-5741. HyperFlash Access Sequence
+> 
+> Signed-off-by: Vignesh Raghavendra <vigneshr@ti.com>
+[...]
+> diff --git a/include/linux/mtd/hyperbus.h b/include/linux/mtd/hyperbus.h
+> new file mode 100644
+> index 000000000000..ead969aad35b
+> --- /dev/null
+> +++ b/include/linux/mtd/hyperbus.h
+> @@ -0,0 +1,86 @@
+[...]
+> +/**
+> + * struct hyperbus_ops - struct representing custom HyperBus operations
+> + * @read16: read 16 bit of data to flash in a single burst. Used to read
+
+   s/to flash/from flash/.
+
+[...]
+> +#endif /* __LINUX_MTD_HYPERBUS_H__ */
+
+   I thought you agreed to add the #defines for the HF commands. Well, I can add them
+as well...
+
+MBR, Sergei
 
 _______________________________________________
 linux-arm-kernel mailing list
