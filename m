@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 22A754E37F
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 21 Jun 2019 11:26:40 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id F16454E380
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 21 Jun 2019 11:26:57 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,35 +11,36 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=kUazfJXFgwiCzJwNYDf9sI6w9Lp+HJlwcmgVj3Y50q4=; b=kOXJ6rn0UH/UHVZasRYhWiifIN
-	eVSmlHwceHi6HVjrMZPtWBfEJbOUEicPxZ8Q//99pauKd+GDXvuZaR1zW+ydoVmDnGSpPFHu1Fv5f
-	VUHD/i3kr0qM18DKsGjT3aty1zFbIy+jRMuLO4STtjiME9T599jgGSNUGw2cG7l8Jy/TXQdFGjEXT
-	XJotsyTJ4Mw3zKHBPHEvzJw9bffVvlQFSA1H1rn8S8WgpLIH8BrGbzw0zBqhhLsQpP8Nm9w/uj2jg
-	zGDoFFqqqPnYiUBa2Wopts1og++bqZRHSspaytyEqHb1e13TvWfHVF6wTXrJX1hgaz8k1/ohqMKrE
-	HEsRNxng==;
+	bh=P6YfgmKiEnYnZaxYUInkN8+5VTZYJUZHDqecL0hHkqQ=; b=oEaq2qX9q6elzafxHCy7OeqPcW
+	qVEK0+jsa56bkkWQY39yg6MfY+byin33K0MvxA46MjfLfOY3cRhBpNvc51kHsv9FVkKardk8qo25Y
+	dqSO/xZoViKDBWxYngxpuBW71kDXc3hGEeNAAe2dI5b2UiVdJfF2eQJd7TFEknImX6EASNBxy6nSa
+	l69q2tRIzv+PgWHmzggHyZpl4M++0/cgD7oDn4ArpJUC8pGBnrFFD2Y9GoZHJsCYuGyotqxWfdJWx
+	c0ehuOOEp4RunEh006j4AFSBEksWjA4mB+mkTU7TGacRMJb81JPGiPj7V63u+47psJxN695opsLeP
+	LFXtcnVg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1heFoc-0003iJ-Dp; Fri, 21 Jun 2019 09:26:38 +0000
+	id 1heFou-0003y0-5E; Fri, 21 Jun 2019 09:26:56 +0000
 Received: from kirsty.vergenet.net ([202.4.237.240])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1heFdC-0008OY-Er
- for linux-arm-kernel@lists.infradead.org; Fri, 21 Jun 2019 09:14:54 +0000
+ id 1heFdG-0008OY-MB
+ for linux-arm-kernel@lists.infradead.org; Fri, 21 Jun 2019 09:14:56 +0000
 Received: from reginn.horms.nl (watermunt.horms.nl [80.127.179.77])
- by kirsty.vergenet.net (Postfix) with ESMTPA id 3531925AD85;
- Fri, 21 Jun 2019 19:13:56 +1000 (AEST)
+ by kirsty.vergenet.net (Postfix) with ESMTPA id CE67725AEE7;
+ Fri, 21 Jun 2019 19:13:57 +1000 (AEST)
 Received: by reginn.horms.nl (Postfix, from userid 7100)
- id F28BF942ED9; Fri, 21 Jun 2019 11:13:51 +0200 (CEST)
+ id 12A78942F33; Fri, 21 Jun 2019 11:13:52 +0200 (CEST)
 From: Simon Horman <horms+renesas@verge.net.au>
 To: linux-renesas-soc@vger.kernel.org
-Subject: [PATCH 21/22] ARM: dts: iwg23s-sbc: Fix SDHI2 VccQ regulator
-Date: Fri, 21 Jun 2019 11:13:48 +0200
-Message-Id: <7eef616f1cec623bc9e79123b51d0c2ca134d87c.1561104194.git.horms+renesas@verge.net.au>
+Subject: [PATCH 22/22] ARM: dts: r8a7792: Add CMT0 and CMT1 to r8a7792
+Date: Fri, 21 Jun 2019 11:13:49 +0200
+Message-Id: <9dd6f7c484fd2aaa468dfdf5087425ea9e4c7bf8.1561104194.git.horms+renesas@verge.net.au>
 X-Mailer: git-send-email 2.11.0
 In-Reply-To: <cover.1561104194.git.horms+renesas@verge.net.au>
 References: <cover.1561104194.git.horms+renesas@verge.net.au>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190621_021450_681450_A849C08D 
-X-CRM114-Status: GOOD (  13.76  )
+X-CRM114-CacheID: sfid-20190621_021454_954252_3CF4786D 
+X-CRM114-Status: UNSURE (   8.92  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.0 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.0 points)
@@ -62,46 +63,71 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Fabrizio Castro <fabrizio.castro@bp.renesas.com>,
- Simon Horman <horms+renesas@verge.net.au>, Magnus Damm <magnus.damm@gmail.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: Magnus Damm <damm+renesas@opensource.se>,
+ Magnus Damm <magnus.damm@gmail.com>, linux-arm-kernel@lists.infradead.org,
+ Simon Horman <horms+renesas@verge.net.au>
 MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Fabrizio Castro <fabrizio.castro@bp.renesas.com>
+From: Magnus Damm <damm+renesas@opensource.se>
 
-SDR50 isn't working anymore because the GPIO regulator
-driver is using descriptors since
-commit d6cd33ad7102 ("regulator: gpio: Convert to use descriptors")
-which in turn causes the system to use the polarity of the
-GPIOs (as specified in the DT) for selecting the states,
-but the polarity specified in the DT is wrong.
-This patch fixes the regulator DT definition, and that fixes
-SDR50.
+Add CMT0 and CMT1 to the R-Car Gen2 V2H (r8a7792) SoC.
 
-Fixes: 9eb36b945b5c ("ARM: dts: iwg23s-sbc: Add uSD and eMMC support")
-Signed-off-by: Fabrizio Castro <fabrizio.castro@bp.renesas.com>
+Signed-off-by: Magnus Damm <damm+renesas@opensource.se>
+Reviewed-by: Geert Uytterhoeven <geert+renesas@glider.be>
 Signed-off-by: Simon Horman <horms+renesas@verge.net.au>
 ---
- arch/arm/boot/dts/r8a77470-iwg23s-sbc.dts | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+ arch/arm/boot/dts/r8a7792.dtsi | 34 ++++++++++++++++++++++++++++++++++
+ 1 file changed, 34 insertions(+)
 
-diff --git a/arch/arm/boot/dts/r8a77470-iwg23s-sbc.dts b/arch/arm/boot/dts/r8a77470-iwg23s-sbc.dts
-index af78e77a4778..450efe923008 100644
---- a/arch/arm/boot/dts/r8a77470-iwg23s-sbc.dts
-+++ b/arch/arm/boot/dts/r8a77470-iwg23s-sbc.dts
-@@ -63,7 +63,7 @@
- 		regulator-min-microvolt = <1800000>;
- 		regulator-max-microvolt = <3300000>;
+diff --git a/arch/arm/boot/dts/r8a7792.dtsi b/arch/arm/boot/dts/r8a7792.dtsi
+index 38fb43d11b27..c4ea2d676030 100644
+--- a/arch/arm/boot/dts/r8a7792.dtsi
++++ b/arch/arm/boot/dts/r8a7792.dtsi
+@@ -875,6 +875,40 @@
+ 			compatible = "renesas,prr";
+ 			reg = <0 0xff000044 0 4>;
+ 		};
++
++		cmt0: timer@ffca0000 {
++			compatible = "renesas,r8a7792-cmt0",
++				     "renesas,rcar-gen2-cmt0";
++			reg = <0 0xffca0000 0 0x1004>;
++			interrupts = <GIC_SPI 142 IRQ_TYPE_LEVEL_HIGH>,
++				     <GIC_SPI 143 IRQ_TYPE_LEVEL_HIGH>;
++			clocks = <&cpg CPG_MOD 124>;
++			clock-names = "fck";
++			power-domains = <&sysc R8A7792_PD_ALWAYS_ON>;
++			resets = <&cpg 124>;
++
++			status = "disabled";
++		};
++
++		cmt1: timer@e6130000 {
++			compatible = "renesas,r8a7792-cmt1",
++				     "renesas,rcar-gen2-cmt1";
++			reg = <0 0xe6130000 0 0x1004>;
++			interrupts = <GIC_SPI 120 IRQ_TYPE_LEVEL_HIGH>,
++				     <GIC_SPI 121 IRQ_TYPE_LEVEL_HIGH>,
++				     <GIC_SPI 122 IRQ_TYPE_LEVEL_HIGH>,
++				     <GIC_SPI 123 IRQ_TYPE_LEVEL_HIGH>,
++				     <GIC_SPI 124 IRQ_TYPE_LEVEL_HIGH>,
++				     <GIC_SPI 125 IRQ_TYPE_LEVEL_HIGH>,
++				     <GIC_SPI 126 IRQ_TYPE_LEVEL_HIGH>,
++				     <GIC_SPI 127 IRQ_TYPE_LEVEL_HIGH>;
++			clocks = <&cpg CPG_MOD 329>;
++			clock-names = "fck";
++			power-domains = <&sysc R8A7792_PD_ALWAYS_ON>;
++			resets = <&cpg 329>;
++
++			status = "disabled";
++		};
+ 	};
  
--		gpios = <&gpio2 24 GPIO_ACTIVE_LOW>;
-+		gpios = <&gpio2 24 GPIO_ACTIVE_HIGH>;
- 		gpios-states = <1>;
- 		states = <3300000 1
- 			  1800000 0>;
+ 	timer {
 -- 
 2.11.0
 
