@@ -2,48 +2,48 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0A8064E5B9
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 21 Jun 2019 12:17:48 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7A7C94E5BA
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 21 Jun 2019 12:18:01 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ye6LWh3xplxk23c7movqtANqTJUlZcvdwYbilC8PSi0=; b=oJU6EpV+PX89Cq
-	A0VYQbqtRtDHE900aL9oWhR88fKBcbfyG17J6G8VzQFLEnP1cpuJnwW175RYLR7pU0uzzXcp07V5s
-	i3gBZyz/hS+yKRhZq7bbGvPL0CR3Nc2B6T4mfFAneL1b53YKhWDPOmV5rVG2ap3262zJw2DrQFGWj
-	FKMLTLSqKrEf2vOhsbqxiHaJUJJK/1jQdd6h/slSoCpE1dH3ObS+0FBNNNSuBVRg0KI1K4LhRJ+H9
-	3IRlmDeq7NslC1PVX39kOfaYc/O5b/qhMEs+FGRj0KjLxtvVQymSKIVlRg9FWIU+t2WTNF94D8XgW
-	z98qowzlMaHjGCSEXnGQ==;
+	List-Owner; bh=9ri7r7CKsKjgqrYoIBCa8psQG+N7cRJy9Wobx2+YTNI=; b=nKmHot+BsJnEIe
+	vc9IeHHLE9MUScbMNzi/UmK2Lbu6/n8y3G7qZ9fQ+JdF3x0Cg7K3+tm0RRIZSpOeA9ScV1joNgDpI
+	tnVU1+d3mXasTlBipKC0xk6rkkL8OBfz9v8+FQdPWK2EnePIIeRCTceGtkWlYdKdHOmrCo9LI3xrm
+	nHj57teEFoeTsdw++BHAklISJAusEJ+LY6/ecCboS7NFP4VvHuVIOLgQfnfH4gDOc5op7YGOen80u
+	pMnU/U5L5oQdyH7v8eVjkil19arMFpiitCZ6uNkS2V45e7o+vlIwJhHtxIL3RNMtIjjtz9LXaQLDL
+	4k5/nc3LMCMdMbGQMTPQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1heGc5-00054A-OS; Fri, 21 Jun 2019 10:17:46 +0000
+	id 1heGcK-0005J7-60; Fri, 21 Jun 2019 10:18:00 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1heGEc-0003x3-0l
- for linux-arm-kernel@lists.infradead.org; Fri, 21 Jun 2019 09:53:32 +0000
+ id 1heGEe-0003zU-MP
+ for linux-arm-kernel@lists.infradead.org; Fri, 21 Jun 2019 09:53:34 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 88B871500;
- Fri, 21 Jun 2019 02:53:29 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 5443914F6;
+ Fri, 21 Jun 2019 02:53:32 -0700 (PDT)
 Received: from e119884-lin.cambridge.arm.com (e119884-lin.cambridge.arm.com
  [10.1.196.72])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id F37303F246;
- Fri, 21 Jun 2019 02:53:26 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id BEC4D3F246;
+ Fri, 21 Jun 2019 02:53:29 -0700 (PDT)
 From: Vincenzo Frascino <vincenzo.frascino@arm.com>
 To: linux-arch@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
  linux-kernel@vger.kernel.org, linux-mips@vger.kernel.org,
  linux-kselftest@vger.kernel.org
-Subject: [PATCH v7 08/25] arm64: compat: Generate asm offsets for signals
-Date: Fri, 21 Jun 2019 10:52:35 +0100
-Message-Id: <20190621095252.32307-9-vincenzo.frascino@arm.com>
+Subject: [PATCH v7 09/25] lib: vdso: Add compat support
+Date: Fri, 21 Jun 2019 10:52:36 +0100
+Message-Id: <20190621095252.32307-10-vincenzo.frascino@arm.com>
 X-Mailer: git-send-email 2.21.0
 In-Reply-To: <20190621095252.32307-1-vincenzo.frascino@arm.com>
 References: <20190621095252.32307-1-vincenzo.frascino@arm.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190621_025330_123802_0864AD1F 
-X-CRM114-Status: UNSURE (   9.51  )
+X-CRM114-CacheID: sfid-20190621_025333_015037_C03767A5 
+X-CRM114-Status: UNSURE (   9.90  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -78,11 +78,10 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Update asm-offsets for arm64 to generate the correct offsets for
-compat signals.
+Some 64 bit architectures have support for 32 bit applications that
+require a separate version of the vDSOs.
 
-They will be useful for the implementation of the compat sigreturn
-trampolines in vDSO context.
+Add support to the generic code for compat fallback functions.
 
 Cc: Catalin Marinas <catalin.marinas@arm.com>
 Cc: Will Deacon <will.deacon@arm.com>
@@ -90,33 +89,25 @@ Signed-off-by: Vincenzo Frascino <vincenzo.frascino@arm.com>
 Tested-by: Shijith Thotton <sthotton@marvell.com>
 Tested-by: Andre Przywara <andre.przywara@arm.com>
 ---
- arch/arm64/kernel/asm-offsets.c | 6 ++++++
- 1 file changed, 6 insertions(+)
+ lib/vdso/gettimeofday.c | 4 ++++
+ 1 file changed, 4 insertions(+)
 
-diff --git a/arch/arm64/kernel/asm-offsets.c b/arch/arm64/kernel/asm-offsets.c
-index 9e4b7ccbab2f..c0d8b9f40022 100644
---- a/arch/arm64/kernel/asm-offsets.c
-+++ b/arch/arm64/kernel/asm-offsets.c
-@@ -30,6 +30,7 @@
- #include <asm/fixmap.h>
- #include <asm/thread_info.h>
- #include <asm/memory.h>
-+#include <asm/signal32.h>
- #include <asm/smp_plat.h>
- #include <asm/suspend.h>
- #include <linux/kbuild.h>
-@@ -77,6 +78,11 @@ int main(void)
-   DEFINE(S_STACKFRAME,		offsetof(struct pt_regs, stackframe));
-   DEFINE(S_FRAME_SIZE,		sizeof(struct pt_regs));
-   BLANK();
-+#ifdef CONFIG_COMPAT
-+  DEFINE(COMPAT_SIGFRAME_REGS_OFFSET,		offsetof(struct compat_sigframe, uc.uc_mcontext.arm_r0));
-+  DEFINE(COMPAT_RT_SIGFRAME_REGS_OFFSET,	offsetof(struct compat_rt_sigframe, sig.uc.uc_mcontext.arm_r0));
-+  BLANK();
-+#endif
-   DEFINE(MM_CONTEXT_ID,		offsetof(struct mm_struct, context.id.counter));
-   BLANK();
-   DEFINE(VMA_VM_MM,		offsetof(struct vm_area_struct, vm_mm));
+diff --git a/lib/vdso/gettimeofday.c b/lib/vdso/gettimeofday.c
+index 473e2dda0220..fc43f457ed2c 100644
+--- a/lib/vdso/gettimeofday.c
++++ b/lib/vdso/gettimeofday.c
+@@ -21,7 +21,11 @@
+  * - clock_gettime_fallback(): fallback for clock_gettime.
+  * - clock_getres_fallback(): fallback for clock_getres.
+  */
++#ifdef ENABLE_COMPAT_VDSO
++#include <asm/vdso/compat_gettimeofday.h>
++#else
+ #include <asm/vdso/gettimeofday.h>
++#endif /* ENABLE_COMPAT_VDSO */
+ 
+ static int do_hres(const struct vdso_data *vd,
+ 		   clockid_t clk,
 -- 
 2.21.0
 
