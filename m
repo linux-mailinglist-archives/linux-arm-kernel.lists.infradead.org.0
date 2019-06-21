@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 28EB74E2F1
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 21 Jun 2019 11:15:19 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 79FDE4E2F8
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 21 Jun 2019 11:16:04 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,37 +11,35 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=9I2wq2iPRUhkB84v2sJuwx4NpGH4sGwZkhgdcPqBjUU=; b=U1kBt8XUYxCmg5qRB5nUyeN/Tk
-	99/3YcCLbzVL8Vd7BoIv6SRu0eoXHZ2OUEpPgMlclNEmX3M/K25dEVNvZDgzp489Cv8o2ENZ9vfz4
-	2kL1svRb44ypTbMZoAJlUXHWwpA4UaKyeylSD4MLuZf2OjVEEzaLFfFhdo5xvHvEkHoxHDnYAW8uP
-	n5Zp3YTRn3advnUvyA0Z06hjX68sKK7kHTxOV57nFbgZid4PLBEu6D9tFZkAsr4WnWHn35lyOJLvS
-	1uzBkUouYc06CwH40RNrLAS/Z1XU8L8t3QkYGGgF9WO2kqm9Lu3rE0ZhVcA5jHazMqVkGG/xqiZ0c
-	jG1xwA0A==;
+	bh=5zyBgqnr5DapabYZGYuWxhr8iPJ69enaoRItSp7zkuA=; b=AJ6Gm2OleBkrrPDxTvR6qybc8R
+	WTUfOIGyM5NJH53T3+R92T/zad7sxZJKcG7vsne4ASf/zoONmLKPuRKXfkCy4+dvzmczNXLnhO6l8
+	MGGU+lPFry8RzJ1aNIsFtO14EtWE6Sf8xhcqLCEqkKJN1lRWIRXu7aEKIQ8rpHPRl2uNtlcUleIBT
+	n5gTGBJxiJaU7o2R/pW8K22EjuFRevBMzpRo1gRtEai5dw5PtSF32e/wEsblCUGJgg8zBsLEK0Ldx
+	HVnd8llCDZbTk5McmhDjcwipS2vu/WbNUgA5X+7U7PCvWfHVAgtVeYLJdDvZvXi7JSYqn95P37BbD
+	tPRTOEvA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1heFdd-0000fh-41; Fri, 21 Jun 2019 09:15:17 +0000
+	id 1heFeM-0002Z7-RO; Fri, 21 Jun 2019 09:16:02 +0000
 Received: from kirsty.vergenet.net ([202.4.237.240])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1heFaA-00075F-Ku
- for linux-arm-kernel@lists.infradead.org; Fri, 21 Jun 2019 09:11:44 +0000
+ id 1heFaF-00075F-2Y
+ for linux-arm-kernel@lists.infradead.org; Fri, 21 Jun 2019 09:11:49 +0000
 Received: from reginn.horms.nl (watermunt.horms.nl [80.127.179.77])
- by kirsty.vergenet.net (Postfix) with ESMTPA id 181CD25BE34;
+ by kirsty.vergenet.net (Postfix) with ESMTPA id 25EBF25BE3A;
  Fri, 21 Jun 2019 19:11:23 +1000 (AEST)
 Received: by reginn.horms.nl (Postfix, from userid 7100)
- id 43C43940DEA; Fri, 21 Jun 2019 11:11:19 +0200 (CEST)
+ id 502A1940CB2; Fri, 21 Jun 2019 11:11:19 +0200 (CEST)
 From: Simon Horman <horms+renesas@verge.net.au>
 To: linux-renesas-soc@vger.kernel.org
-Subject: [PATCH 8/9] dt-bindings: timer: renesas,
- cmt: Document r8a779{5|65|90} CMT support
-Date: Fri, 21 Jun 2019 11:11:15 +0200
-Message-Id: <ac97aea7df7b97ff56d50861404c7a8491b03d87.1561107729.git.horms+renesas@verge.net.au>
+Subject: [PATCH 9/9] dt-bindings: display: renesas: Add r8a774a1 support
+Date: Fri, 21 Jun 2019 11:11:16 +0200
+Message-Id: <74a22e8f4350a9e096c84fc9e88cf72abf71887c.1561107729.git.horms+renesas@verge.net.au>
 X-Mailer: git-send-email 2.11.0
 In-Reply-To: <cover.1561107729.git.horms+renesas@verge.net.au>
 References: <cover.1561107729.git.horms+renesas@verge.net.au>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190621_021142_978017_41FDB3C1 
-X-CRM114-Status: UNSURE (   8.29  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190621_021147_818169_8EEFB917 
+X-CRM114-Status: GOOD (  10.05  )
 X-Spam-Score: -2.0 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.0 points)
@@ -64,7 +62,7 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Cao Van Dong <cv-dong@jinso.co.jp>,
+Cc: Fabrizio Castro <fabrizio.castro@bp.renesas.com>,
  Daniel Lezcano <daniel.lezcano@linaro.org>,
  Magnus Damm <magnus.damm@gmail.com>, Simon Horman <horms+renesas@verge.net.au>,
  "David S . Miller" <davem@davemloft.net>, linux-arm-kernel@lists.infradead.org
@@ -74,42 +72,35 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Cao Van Dong <cv-dong@jinso.co.jp>
+From: Fabrizio Castro <fabrizio.castro@bp.renesas.com>
 
-Document SoC specific bindings for R-Car H3/M3-N/E3 SoCs.
+Document RZ/G2M (R8A774A1) SoC bindings.
 
-Signed-off-by: Cao Van Dong <cv-dong@jinso.co.jp>
-Reviewed-by: Rob Herring <robh@kernel.org>
-Reviewed-by: Geert Uytterhoeven <geert+renesas@glider.be>
-Acked-by: Daniel Lezcano <daniel.lezcano@linaro.org>
+Signed-off-by: Fabrizio Castro <fabrizio.castro@bp.renesas.com>
+Reviewed-by: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
 Signed-off-by: Simon Horman <horms+renesas@verge.net.au>
 ---
- Documentation/devicetree/bindings/timer/renesas,cmt.txt | 6 ++++++
- 1 file changed, 6 insertions(+)
+ Documentation/devicetree/bindings/display/bridge/renesas,dw-hdmi.txt | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
 
-diff --git a/Documentation/devicetree/bindings/timer/renesas,cmt.txt b/Documentation/devicetree/bindings/timer/renesas,cmt.txt
-index c0594450e9ef..c5220bcd852b 100644
---- a/Documentation/devicetree/bindings/timer/renesas,cmt.txt
-+++ b/Documentation/devicetree/bindings/timer/renesas,cmt.txt
-@@ -42,12 +42,18 @@ Required Properties:
-     - "renesas,r8a7793-cmt1" for the 48-bit CMT1 device included in r8a7793.
-     - "renesas,r8a7794-cmt0" for the 32-bit CMT0 device included in r8a7794.
-     - "renesas,r8a7794-cmt1" for the 48-bit CMT1 device included in r8a7794.
-+    - "renesas,r8a7795-cmt0" for the 32-bit CMT0 device included in r8a7795.
-+    - "renesas,r8a7795-cmt1" for the 48-bit CMT1 device included in r8a7795.
-     - "renesas,r8a7796-cmt0" for the 32-bit CMT0 device included in r8a7796.
-     - "renesas,r8a7796-cmt1" for the 48-bit CMT1 device included in r8a7796.
-+    - "renesas,r8a77965-cmt0" for the 32-bit CMT0 device included in r8a77965.
-+    - "renesas,r8a77965-cmt1" for the 48-bit CMT1 device included in r8a77965.
-     - "renesas,r8a77970-cmt0" for the 32-bit CMT0 device included in r8a77970.
-     - "renesas,r8a77970-cmt1" for the 48-bit CMT1 device included in r8a77970.
-     - "renesas,r8a77980-cmt0" for the 32-bit CMT0 device included in r8a77980.
-     - "renesas,r8a77980-cmt1" for the 48-bit CMT1 device included in r8a77980.
-+    - "renesas,r8a77990-cmt0" for the 32-bit CMT0 device included in r8a77990.
-+    - "renesas,r8a77990-cmt1" for the 48-bit CMT1 device included in r8a77990.
+diff --git a/Documentation/devicetree/bindings/display/bridge/renesas,dw-hdmi.txt b/Documentation/devicetree/bindings/display/bridge/renesas,dw-hdmi.txt
+index a41d280c3f9f..db680413e89c 100644
+--- a/Documentation/devicetree/bindings/display/bridge/renesas,dw-hdmi.txt
++++ b/Documentation/devicetree/bindings/display/bridge/renesas,dw-hdmi.txt
+@@ -12,10 +12,12 @@ following device-specific properties.
+ Required properties:
  
-     - "renesas,rcar-gen2-cmt0" for 32-bit CMT0 devices included in R-Car Gen2
- 		and RZ/G1.
+ - compatible : Shall contain one or more of
++  - "renesas,r8a774a1-hdmi" for R8A774A1 (RZ/G2M) compatible HDMI TX
+   - "renesas,r8a7795-hdmi" for R8A7795 (R-Car H3) compatible HDMI TX
+   - "renesas,r8a7796-hdmi" for R8A7796 (R-Car M3-W) compatible HDMI TX
+   - "renesas,r8a77965-hdmi" for R8A77965 (R-Car M3-N) compatible HDMI TX
+-  - "renesas,rcar-gen3-hdmi" for the generic R-Car Gen3 compatible HDMI TX
++  - "renesas,rcar-gen3-hdmi" for the generic R-Car Gen3 and RZ/G2 compatible
++			     HDMI TX
+ 
+     When compatible with generic versions, nodes must list the SoC-specific
+     version corresponding to the platform first, followed by the
 -- 
 2.11.0
 
