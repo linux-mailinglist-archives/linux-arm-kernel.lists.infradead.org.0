@@ -2,65 +2,70 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DB4674ED3B
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 21 Jun 2019 18:40:17 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2875D4ED69
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 21 Jun 2019 18:50:24 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=9hqV4d5v0HUB+C+/WFClWVImYx2pCm54nw5AC8U23kw=; b=SsD
-	Y6ly1MwK5Sm0zvziKg/sAfLi1gfYr2n7ygMpWq9A2bMmr66IygdGD7ZJu5V3e1Qa3ZA2rbQx/tv16
-	Oi8T90r+qhA8eFWlUU+ONPVg5of0GKhNTM5+7RMohPv0RLVbCvmTE5mEYq1qEbJa3alUMjz0nt3Iw
-	UXbVOV/ckBSYFv2D+EiIzOESvwmvvolFcAhE5VfUyNAgFiJrVZW6TGuk7u4AbZRJ6V8zSX9ZQob2O
-	GynV8BBLAd41riKAxAScYKL72pgE97bsU5Sj32FrP3ScPVb7f9XZBIRe8S2C2bJDw3PYC6NH5OPYX
-	fSSSZr3paPxLkoO1qJtagpz0DPDMa5g==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=vLpud2edvcn+UeqRGWIr5ndk4YCY2fucC4lF7H10od4=; b=Cx50ilw3LTozO0
+	b1IXBwnIBJoe+0GiwUazfFLKIXXXGRrU/kqZYQnMujK2uYiCOQ+A7z7zuu5R2RbzASFOnCreQfixg
+	cBzqB2N/o0LpwrAgrMTVwV5aYPlIv3YiCvnMvpDBjOys1O3F/gzjqY5YJm5mpWR/LCNJCVQVlESne
+	2IZootdLZ1kjS08QgPUcdIpNebNc+rHQAw7UFaAY0U5LM6KjwNzfoUqtoO8kUUp6biC6v+l7cT6+U
+	kJRKoB8Y/710y1Te4yaj2Rj/nUmrWTyWBuS2Jhd5MmAYCUtvczv0mBR4uoK1xrtyLUGJeEhQ5VVwK
+	X4tRu0wuf/wDD8y+4KLA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1heMaF-0005fN-Fs; Fri, 21 Jun 2019 16:40:15 +0000
-Received: from conuserg-12.nifty.com ([210.131.2.79])
+	id 1heMjz-0001t2-P3; Fri, 21 Jun 2019 16:50:19 +0000
+Received: from vps0.lunn.ch ([185.16.172.187])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1heMZu-0005e7-68; Fri, 21 Jun 2019 16:39:56 +0000
-Received: from grover.flets-west.jp (softbank126125154139.bbtec.net
- [126.125.154.139]) (authenticated)
- by conuserg-12.nifty.com with ESMTP id x5LGdXbA030778;
- Sat, 22 Jun 2019 01:39:33 +0900
-DKIM-Filter: OpenDKIM Filter v2.10.3 conuserg-12.nifty.com x5LGdXbA030778
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nifty.com;
- s=dec2015msa; t=1561135174;
- bh=ozhNqk/jJbRlOJsA1fVCfpWIUlNkHQWb4qUWtLdFnnk=;
- h=From:To:Cc:Subject:Date:From;
- b=eIkfdIS+O26Z2YOKvyyUQPDJEfS8R4Fhs0ivGILBOqSQUUm5uWKbiPvKnX/+WtwFg
- bR6tU9HZ4+pLdiRnLxprJkokHFgCtkFoMktC1DDnmtum2THZ3CVntvFIDae0PqQwJz
- UKsDDf8vlHPw6lhKvHOC5bPX9K+MKp9Zup6GlavY83airXFt5PwUrWGHKBwQLMLuVU
- kmDNdZ4svkbDbE9jeS3mqKjBXcv5ohpvAiAgS9EWfEq5D4E5/eDRtcyqvkzithnuhb
- xtCZFMEJe7KxegEtkFkx2ypPYLJzg/fgwsSocOPsVDT+rg+2BXnDFsGwl+LcF3XH9e
- bZh+TEYRkfgHg==
-X-Nifty-SrcIP: [126.125.154.139]
-From: Masahiro Yamada <yamada.masahiro@socionext.com>
-To: linux-kbuild@vger.kernel.org
-Subject: [PATCH] kbuild: compile-test global headers to ensure they are
- self-contained
-Date: Sat, 22 Jun 2019 01:39:31 +0900
-Message-Id: <20190621163931.19397-1-yamada.masahiro@socionext.com>
-X-Mailer: git-send-email 2.17.1
+ id 1heMjp-0000rc-0C
+ for linux-arm-kernel@lists.infradead.org; Fri, 21 Jun 2019 16:50:10 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=lunn.ch;
+ s=20171124; h=In-Reply-To:Content-Type:MIME-Version:References:Message-ID:
+ Subject:Cc:To:From:Date:Sender:Reply-To:Content-Transfer-Encoding:Content-ID:
+ Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+ :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
+ List-Post:List-Owner:List-Archive;
+ bh=P71o6R9PwKrxfUlkCzThaAEbYlO5haANQ4Qx+hoNZ6s=; b=vkm8kqtoslv3JIikaTIBorlbNH
+ s88aHYfIZiSu8Iii2S8nQ6MYb1TCC1gZzo2J9oJ+pcto5nZNRyAlbFNKPNqXuNMX4uS+ZLqNRJNUx
+ Pw48ymqe6jF+YDuGxPHtBN6EDChwUDieXpmGsG1Epj6zOsfoE4hAABWRKgxb5GFI8WgI=;
+Received: from andrew by vps0.lunn.ch with local (Exim 4.89)
+ (envelope-from <andrew@lunn.ch>)
+ id 1heMjM-0007Ft-HQ; Fri, 21 Jun 2019 18:49:40 +0200
+Date: Fri, 21 Jun 2019 18:49:40 +0200
+From: Andrew Lunn <andrew@lunn.ch>
+To: Claudiu Manoil <claudiu.manoil@nxp.com>
+Subject: Re: [PATCH net-next 4/6] arm64: dts: fsl: ls1028a: Add Felix switch
+ port DT node
+Message-ID: <20190621164940.GL31306@lunn.ch>
+References: <1561131532-14860-1-git-send-email-claudiu.manoil@nxp.com>
+ <1561131532-14860-5-git-send-email-claudiu.manoil@nxp.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <1561131532-14860-5-git-send-email-claudiu.manoil@nxp.com>
+User-Agent: Mutt/1.5.23 (2014-03-12)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190621_093954_556610_37188B3A 
-X-CRM114-Status: UNSURE (   8.03  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 1.0 (+)
+X-CRM114-CacheID: sfid-20190621_095009_203619_A2174952 
+X-CRM114-Status: GOOD (  10.41  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (1.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [210.131.2.79 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
+ no trust [185.16.172.187 listed in list.dnswl.org]
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -72,80 +77,73 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Michal Marek <michal.lkml@markovi.net>, linux-kernel@vger.kernel.org,
- Masahiro Yamada <yamada.masahiro@socionext.com>,
- linux-mediatek@lists.infradead.org, Matthias Brugger <matthias.bgg@gmail.com>,
+Cc: devicetree@vger.kernel.org,
+ Alexandre Belloni <alexandre.belloni@bootlin.com>, netdev@vger.kernel.org,
+ alexandru.marginean@nxp.com, linux-kernel@vger.kernel.org,
+ UNGLinuxDriver@microchip.com, Allan Nielsen <Allan.Nielsen@microsemi.com>,
+ Rob Herring <robh+dt@kernel.org>, "David S . Miller" <davem@davemloft.net>,
  linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Make as many headers self-contained as possible so that they can be
-included without relying on a specific include order.
+On Fri, Jun 21, 2019 at 06:38:50PM +0300, Claudiu Manoil wrote:
+> The switch device features 6 ports, 4 with external links
+> and 2 internally facing to the ls1028a SoC and connected via
+> fixed links to 2 internal enetc ethernet controller ports.
 
-This commit compiles only a few headers, but it is a good start point.
+Hi Claudiu
 
-Signed-off-by: Masahiro Yamada <yamada.masahiro@socionext.com>
----
+> +			switch@0,5 {
+> +				compatible = "mscc,felix-switch";
+> +				reg = <0x000500 0 0 0 0>;
+> +
+> +				ethernet-ports {
+> +					#address-cells = <1>;
+> +					#size-cells = <0>;
+> +
+> +					/* external ports */
+> +					switch_port0: port@0 {
+> +						reg = <0>;
+> +					};
+> +					switch_port1: port@1 {
+> +						reg = <1>;
+> +					};
+> +					switch_port2: port@2 {
+> +						reg = <2>;
+> +					};
+> +					switch_port3: port@3 {
+> +						reg = <3>;
+> +					};
+> +					/* internal to-cpu ports */
+> +					port@4 {
+> +						reg = <4>;
+> +						fixed-link {
+> +							speed = <1000>;
+> +							full-duplex;
+> +						};
+> +					};
+> +					port@5 {
+> +						reg = <5>;
+> +						fixed-link {
+> +							speed = <1000>;
+> +							full-duplex;
+> +						};
+> +					};
+> +				};
+> +			};
 
- Makefile         |  1 +
- include/Makefile | 31 +++++++++++++++++++++++++++++++
- 2 files changed, 32 insertions(+)
- create mode 100644 include/Makefile
+This sounds like a DSA setup, where you have SoC ports connected to
+the switch. With DSA, the CPU ports of the switch are special. We
+don't create netdev's for them, the binding explicitly list which SoC
+interface they are bound to, etc.
 
-diff --git a/Makefile b/Makefile
-index c23f5e8381ad..82c1722dd9e9 100644
---- a/Makefile
-+++ b/Makefile
-@@ -610,6 +610,7 @@ drivers-y	:= drivers/ sound/
- drivers-$(CONFIG_SAMPLES) += samples/
- net-y		:= net/
- libs-y		:= lib/
-+libs-$(CONFIG_HEADER_TEST) += include/
- core-y		:= usr/
- virt-y		:= virt/
- endif # KBUILD_EXTMOD
-diff --git a/include/Makefile b/include/Makefile
-new file mode 100644
-index 000000000000..68a76ac732c3
---- /dev/null
-+++ b/include/Makefile
-@@ -0,0 +1,31 @@
-+# SPDX-License-Identifier: GPL-2.0-only
-+
-+# extend the test coverage when existing errors are fixed
-+
-+header-test += linux/w*.h
-+header-test += linux/x*.h
-+header-test += linux/y*.h
-+header-test += ras/*.h
-+header-test += soc/at91/*.h
-+header-test += soc/bcm2835/*.h
-+header-test += soc/mediatek/*.h
-+header-test += soc/sa1100/*.h
-+
-+all-headers = $(patsubst $(srctree)/include/%,%,\
-+	    $(wildcard $(addprefix $(srctree)/include/, $(header-test))))
-+
-+# Do not include directly
-+no-header-test += linux/compiler-clang.h
-+no-header-test += linux/compiler-gcc.h
-+no-header-test += linux/patchkey.h
-+no-header-test += linux/rwlock_api_smp.h
-+no-header-test += linux/spinlock_types_up.h
-+no-header-test += linux/spinlock_up.h
-+no-header-test += linux/wimax/debug.h
-+no-header-test += rdma/uverbs_named_ioctl.h
-+
-+# Conditionally included
-+no-header-test += linux/byteorder/big_endian.h
-+no-header-test += linux/byteorder/little_endian.h
-+
-+header-test-y = $(filter-out $(no-header-test), $(all-headers))
--- 
-2.17.1
+What model are you using here? I'm just trying to understand the setup
+to ensure it is consistent with the swichdev model.
+
+   Thanks
+	Andrew
 
 
 _______________________________________________
