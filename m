@@ -2,47 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 802F14E537
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 21 Jun 2019 11:58:36 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 20F134E539
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 21 Jun 2019 11:58:52 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=vBFgvHmEOjdMXyymK4R7fLctuurGPY1j5pcNvVXGOwk=; b=NrNP/semhfEwQ0
-	xadO8tGBwjiKmr0uxyRzTUzpAcihxMYYyrCoX+/nBwc7NkBtnAqPuVkLBPN4xFpkq95axpCJUVFjp
-	t9YVVvWFNri/z0YliqA3r0/J5rM0EC5Ljq0otb3q6yVY1Z//bkxu3t1iZwSj8Pl4dDeR9o2N2v7LB
-	Ef1gV9MIHaTQ1UeNFTKhkPzEmrWu9wg7LyMkB7EHlSnWzTCH9m7UxaDa81repKztOwwajBozJl4I3
-	bt5jcinP8gH2PQYzqEJ3MMN2nagE1TipkzScFl77VfkLjJPDeXBMTW3XFahHrmEmn9H9kRQRGD4Gb
-	fa/1UxyBun8Sg+o7VBAg==;
+	List-Owner; bh=zeXL4Vo0bCLLMmoQ1Vvb7Alvt6UXMBPrVKe2aPxA2Sk=; b=tTdw0MPxVOl3n5
+	9DyJG6NcHkVg0lsKnAFDmZFoNY3HUSTBPaIImxeKgjDJaeVkChpSddw8r2HgRu60Tb8KDZ1zQZXqs
+	j+lk5imbliJADw5joas8zRKwI9RjOvPjik7gAQtN/NiEXnyQ+GRIeTZHpcXjYs8qAedkBpBA/FPXQ
+	D1C16+23mqutf73oLvTK1giSpSGvHK0Y1JFSzW8gUAaZWHNd6+b7qxXq7p1L8YS6hKp+bozjLoyS6
+	X9KhFebHxWVe8XCyaLsZv5Gw3UqfV51OdOf5TS3JLvep0Qkrm9q6Y7ELQVnsl2mZ1Eg4kXKuJ87w+
+	ktcScr44MW7Ybkywf5Qw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1heGJW-0000PT-VX; Fri, 21 Jun 2019 09:58:35 +0000
+	id 1heGJm-0000el-F2; Fri, 21 Jun 2019 09:58:50 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1heG14-00078E-Fn
- for linux-arm-kernel@lists.infradead.org; Fri, 21 Jun 2019 09:39:32 +0000
+ id 1heG15-00071o-NC
+ for linux-arm-kernel@lists.infradead.org; Fri, 21 Jun 2019 09:39:34 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id C5D481478;
- Fri, 21 Jun 2019 02:39:29 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 5A06B147A;
+ Fri, 21 Jun 2019 02:39:31 -0700 (PDT)
 Received: from filthy-habits.cambridge.arm.com
  (filthy-habits.cambridge.arm.com [10.1.197.61])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 7236A3F246;
- Fri, 21 Jun 2019 02:39:28 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 0660F3F246;
+ Fri, 21 Jun 2019 02:39:29 -0700 (PDT)
 From: Marc Zyngier <marc.zyngier@arm.com>
 To: linux-arm-kernel@lists.infradead.org, kvmarm@lists.cs.columbia.edu,
  kvm@vger.kernel.org
-Subject: [PATCH 11/59] KVM: arm64: nv: Inject HVC exceptions to the virtual EL2
-Date: Fri, 21 Jun 2019 10:37:55 +0100
-Message-Id: <20190621093843.220980-12-marc.zyngier@arm.com>
+Subject: [PATCH 12/59] KVM: arm64: nv: Handle trapped ERET from virtual EL2
+Date: Fri, 21 Jun 2019 10:37:56 +0100
+Message-Id: <20190621093843.220980-13-marc.zyngier@arm.com>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20190621093843.220980-1-marc.zyngier@arm.com>
 References: <20190621093843.220980-1-marc.zyngier@arm.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190621_023930_867536_0CACBC77 
-X-CRM114-Status: GOOD (  11.44  )
+X-CRM114-CacheID: sfid-20190621_023931_941520_3BA8A58E 
+X-CRM114-Status: GOOD (  11.98  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -71,44 +71,73 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Jintack Lim <jintack.lim@linaro.org>
+From: Christoffer Dall <christoffer.dall@arm.com>
 
-Now that the psci call is done by the smc instruction when nested
-virtualization is enabled, it is clear that all hvc instruction from the
-VM (including from the virtual EL2) are supposed to handled in the
-virtual EL2.
+When a guest hypervisor running virtual EL2 in EL1 executes an ERET
+instruction, we will have set HCR_EL2.NV which traps ERET to EL2, so
+that we can emulate the exception return in software.
 
-Signed-off-by: Jintack Lim <jintack.lim@linaro.org>
+Signed-off-by: Christoffer Dall <christoffer.dall@arm.com>
 Signed-off-by: Marc Zyngier <marc.zyngier@arm.com>
 ---
- arch/arm64/kvm/handle_exit.c | 7 +++++++
- 1 file changed, 7 insertions(+)
+ arch/arm64/include/asm/esr.h     | 3 ++-
+ arch/arm64/include/asm/kvm_arm.h | 2 +-
+ arch/arm64/kvm/handle_exit.c     | 8 ++++++++
+ 3 files changed, 11 insertions(+), 2 deletions(-)
 
+diff --git a/arch/arm64/include/asm/esr.h b/arch/arm64/include/asm/esr.h
+index 0e27fe91d5ea..f85aa269082c 100644
+--- a/arch/arm64/include/asm/esr.h
++++ b/arch/arm64/include/asm/esr.h
+@@ -45,7 +45,8 @@
+ #define ESR_ELx_EC_SMC64	(0x17)	/* EL2 and above */
+ #define ESR_ELx_EC_SYS64	(0x18)
+ #define ESR_ELx_EC_SVE		(0x19)
+-/* Unallocated EC: 0x1A - 0x1E */
++#define ESR_ELx_EC_ERET		(0x1A)  /* EL2 only */
++/* Unallocated EC: 0x1B - 0x1E */
+ #define ESR_ELx_EC_IMP_DEF	(0x1f)	/* EL3 only */
+ #define ESR_ELx_EC_IABT_LOW	(0x20)
+ #define ESR_ELx_EC_IABT_CUR	(0x21)
+diff --git a/arch/arm64/include/asm/kvm_arm.h b/arch/arm64/include/asm/kvm_arm.h
+index 9d70a5362fbb..b2e363ac624d 100644
+--- a/arch/arm64/include/asm/kvm_arm.h
++++ b/arch/arm64/include/asm/kvm_arm.h
+@@ -333,7 +333,7 @@
+ 	ECN(SP_ALIGN), ECN(FP_EXC32), ECN(FP_EXC64), ECN(SERROR), \
+ 	ECN(BREAKPT_LOW), ECN(BREAKPT_CUR), ECN(SOFTSTP_LOW), \
+ 	ECN(SOFTSTP_CUR), ECN(WATCHPT_LOW), ECN(WATCHPT_CUR), \
+-	ECN(BKPT32), ECN(VECTOR32), ECN(BRK64)
++	ECN(BKPT32), ECN(VECTOR32), ECN(BRK64), ECN(ERET)
+ 
+ #define CPACR_EL1_FPEN		(3 << 20)
+ #define CPACR_EL1_TTA		(1 << 28)
 diff --git a/arch/arm64/kvm/handle_exit.c b/arch/arm64/kvm/handle_exit.c
-index 516aead3c2a9..6c0ac52b34cc 100644
+index 6c0ac52b34cc..2517711f034f 100644
 --- a/arch/arm64/kvm/handle_exit.c
 +++ b/arch/arm64/kvm/handle_exit.c
-@@ -30,6 +30,7 @@
- #include <asm/kvm_coproc.h>
- #include <asm/kvm_emulate.h>
- #include <asm/kvm_mmu.h>
-+#include <asm/kvm_nested.h>
- #include <asm/debug-monitors.h>
- #include <asm/traps.h>
- 
-@@ -52,6 +53,12 @@ static int handle_hvc(struct kvm_vcpu *vcpu, struct kvm_run *run)
- 			    kvm_vcpu_hvc_get_imm(vcpu));
- 	vcpu->stat.hvc_exit_stat++;
- 
-+	/* Forward hvc instructions to the virtual EL2 if the guest has EL2. */
-+	if (nested_virt_in_use(vcpu)) {
-+		kvm_inject_nested_sync(vcpu, kvm_vcpu_get_hsr(vcpu));
-+		return 1;
-+	}
+@@ -177,6 +177,13 @@ static int handle_sve(struct kvm_vcpu *vcpu, struct kvm_run *run)
+ {
+ 	/* Until SVE is supported for guests: */
+ 	kvm_inject_undefined(vcpu);
 +
- 	ret = kvm_hvc_call_handler(vcpu);
- 	if (ret < 0) {
- 		vcpu_set_reg(vcpu, 0, ~0UL);
++	return 1;
++}
++
++static int kvm_handle_eret(struct kvm_vcpu *vcpu, struct kvm_run *run)
++{
++	kvm_emulate_nested_eret(vcpu);
+ 	return 1;
+ }
+ 
+@@ -231,6 +238,7 @@ static exit_handle_fn arm_exit_handlers[] = {
+ 	[ESR_ELx_EC_SMC64]	= handle_smc,
+ 	[ESR_ELx_EC_SYS64]	= kvm_handle_sys_reg,
+ 	[ESR_ELx_EC_SVE]	= handle_sve,
++	[ESR_ELx_EC_ERET]	= kvm_handle_eret,
+ 	[ESR_ELx_EC_IABT_LOW]	= kvm_handle_guest_abort,
+ 	[ESR_ELx_EC_DABT_LOW]	= kvm_handle_guest_abort,
+ 	[ESR_ELx_EC_SOFTSTP_LOW]= kvm_handle_guest_debug,
 -- 
 2.20.1
 
