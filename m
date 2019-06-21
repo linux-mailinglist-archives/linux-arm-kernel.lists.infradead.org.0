@@ -2,55 +2,73 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C48E64F102
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 22 Jun 2019 01:08:09 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 635664F105
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 22 Jun 2019 01:16:12 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Jv/+Ml/o2Gf66KbLPFDxSDBsmrDTSkIdh+qenox43m8=; b=J6mQ3nwkJbeqpr
-	/mqfRMQryOLJS9SJjMqR3t/BCEa4Bg+yL+Yj4/iMSIX4JSDX7J5DpVLQl22BRdtAK9rdGSxCSWt2C
-	ZxyXAi8DlOHYWqbmtI8Dw27gfryY3syGNHoCHLnVEDRAtdxsvv1yT4GON7SaUSxa/zznTc664gOhI
-	Apfhbeo7x5KiyBAButNVWDP0zIyCHHLv/uMZc9pLSVv9ofo5FM6EjK9InWc11Lh1i6Z+eayx1C4cd
-	3Do2XYJ1P3TvxJfhQ45N+SQjG4L0GFIOT7GyaX0ap7ng+vfES9nNnvmdPfYRDof2R5Srysy3X+kXN
-	57+Ml2o61YEWBd2E3+Ag==;
+	List-Owner; bh=hwPVfI93iKpWRX3v/GmiKn9Gy7XncU/tk0D+Cdd/r5s=; b=UfB5S1p6da6TyM
+	yhpAa1UGEFnnpbsJr6nkzd+3JZTUhys7G4UPRzXGICsef9BnCg42StC1EuAfB01hOmGP+uvmgVBFw
+	bjsLeDmxFSRvYkN3E65AdbwDz1czPCrhSuRgaULwPwaHtq8a4KCXryS1aIyt8bQQOVCP2GZrRC3TG
+	gKhfGGGSV/aaSyBUaq4WNEpCL9A71Y9befvCY1FUauMJdePH7J4fRz2Aerha0+8kQTuXYlLgKmE4s
+	E/WNIh0vp+Y4CBzGY9i3Mn7dgqEK/lT+IWFD6ou8NyXFczWsPQunp4ZNXuPiBDiSPlpPIpkfBeyN/
+	2aN0WfwXkC+7ONBEQ/KQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1heSdb-0005az-FP; Fri, 21 Jun 2019 23:08:07 +0000
-Received: from gate.crashing.org ([63.228.1.57])
+	id 1heSlM-0000Wo-LH; Fri, 21 Jun 2019 23:16:08 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1heSdQ-0005aB-RO
- for linux-arm-kernel@lists.infradead.org; Fri, 21 Jun 2019 23:07:58 +0000
-Received: from localhost (localhost.localdomain [127.0.0.1])
- by gate.crashing.org (8.14.1/8.14.1) with ESMTP id x5LN7WPQ028266;
- Fri, 21 Jun 2019 18:07:36 -0500
-Message-ID: <b5101b74da1c5b9feba5e95e8ed14ec8ed82bd24.camel@kernel.crashing.org>
-Subject: Re: [PATCH 4/4] arm64: pci: acpi: Preserve PCI resources
- configuration when asked by ACPI
-From: Benjamin Herrenschmidt <benh@kernel.crashing.org>
-To: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
-Date: Sat, 22 Jun 2019 09:07:32 +1000
-In-Reply-To: <20190621145752.GC21807@e121166-lin.cambridge.arm.com>
+ id 1heSlA-0000W1-Rf
+ for linux-arm-kernel@lists.infradead.org; Fri, 21 Jun 2019 23:15:58 +0000
+Received: from localhost (unknown [69.71.4.100])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 05CE42089E;
+ Fri, 21 Jun 2019 23:15:54 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1561158956;
+ bh=UsUK6BcgifrsKuTNAhqJUC3cA2uP1+uOK9k3Xj/O2Dg=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=ngKEYUmt4jw8+l9KnRKjVUC3YBuHElaIufqBDzqH3DxUhB5t3XMBoADfmqqJsR1i4
+ KIkqdOlaRMzD2kv9myOrPSS4hWfEoJlB1orwKZk4GO2xPwok+pmGtifozXJK5lm7iA
+ 2K+YDkwbcAQ/lD97RnUtgvTb16wthwA5vs3ngYbE=
+Date: Fri, 21 Jun 2019 18:15:51 -0500
+From: Bjorn Helgaas <helgaas@kernel.org>
+To: Benjamin Herrenschmidt <benh@kernel.crashing.org>
+Subject: Re: [PATCH 1/4] arm64: pci: acpi: Use
+ pci_assign_unassigned_root_bus_resources()
+Message-ID: <20190621231551.GG127746@google.com>
 References: <20190615002359.29577-1-benh@kernel.crashing.org>
- <20190615002359.29577-4-benh@kernel.crashing.org>
- <20190621145752.GC21807@e121166-lin.cambridge.arm.com>
-X-Mailer: Evolution 3.28.5-0ubuntu0.18.04.1 
-Mime-Version: 1.0
+ <20190621204839.GF127746@google.com>
+ <43b27f7fc83a90dc3d1345ee3771fcce337f6bb8.camel@kernel.crashing.org>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <43b27f7fc83a90dc3d1345ee3771fcce337f6bb8.camel@kernel.crashing.org>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190621_160757_044225_5F3A859A 
-X-CRM114-Status: UNSURE (   9.30  )
+X-CRM114-CacheID: sfid-20190621_161556_914376_B54B0FDD 
+X-CRM114-Status: UNSURE (   7.31  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [63.228.1.57 listed in list.dnswl.org]
- 0.0 T_SPF_PERMERROR        SPF: test of record failed (permerror)
- 0.0 T_SPF_HELO_PERMERROR   SPF: test of HELO record failed (permerror)
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -62,38 +80,27 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Ard Biesheuvel <ard.biesheuvel@linaro.org>, linux-pci@vger.kernel.org,
+Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>, linux-pci@vger.kernel.org,
  Sinan Kaya <okaya@kernel.org>, Zeev Zilberman <zeev@amazon.com>,
  linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
- Bjorn Helgaas <helgaas@kernel.org>, Ali Saidi <alisaidi@amazon.com>
+ Ali Saidi <alisaidi@amazon.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, 2019-06-21 at 15:57 +0100, Lorenzo Pieralisi wrote:
-> >        pci_assign_unassigned_root_bus_resources(bus);
-> >   
-> >        list_for_each_entry(child, &bus->children, node)
+On Sat, Jun 22, 2019 at 09:00:50AM +1000, Benjamin Herrenschmidt wrote:
+> BTW...
 > 
-> This is fine as far as we acknowledge that claiming resources
-> on a bus is what should be done to make them immutable.
+> You probably want to swap those 2:
+> 
+> 2 hours	PCI/ACPI: Evaluate PCI Boot Configuration _DSM	Benjamin Herrenschmidt	3	-3/+18
+> 2 hours	PCI: Don't auto-realloc if we're preserving firmware config
+> 
+> As "Don't auto-realloc..." tests a flag that is only created by "Evaluate PCI Boot..."
 
-Well, as immuatable as it gets today. It's not perfect but it's a step
-in the right direction. With the previous change in the series that
-prevents auto-realloc when preserve_config is set, it will be
-equivalent, in the current state of the code.
-
-As part of my ongoing rework, I plan to look at making
-IORESOURCE_PCI_FIXED more generally useful/robust, in which case we
-could add that on top as well. That said, if we go down that path, I'm
-keen on also adding a cmdline arg to ignore _DSM #5, if anything as a
-test/diag tool when chasing problems caused by buggy BIOSes.
-
-Cheers,
-Ben.
-
-
+Ouch, thanks.  I don't know how I managed to swap those.
 
 _______________________________________________
 linux-arm-kernel mailing list
