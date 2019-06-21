@@ -2,56 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A6CC64EC35
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 21 Jun 2019 17:39:23 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 692994EC4A
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 21 Jun 2019 17:40:02 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=W68AtJD9+aarnQAIG/iL2SOGl8wfGdNnLCbEZ/wicho=; b=D9z
-	vx97MPUJiOODniDIygUYEKyuB9O9wNxFNIOrlIjxheLy/tqBKoJwezU07/J3zWlFSXkfGHQibAApz
-	LiOOMBxt6M6sONlZOISfVWDj4DEk9sWOu9mlVpCvhcdx8oR3SCDtfIVMynXVRyL9WHnTVUavYkg84
-	THPUPzG4P6WsP20G5b/U8ZZEa9NL3Mmt9wKLGIuI9ixZvQrSvlRQqvnmM0LJ+LFyjcizndvwgQpcE
-	Or3qJI5u2kQqkATGHrX2U2jLlI7jGKvefQdE0HXAL35KY2UF0coDHss+C9zv7Ycsvcge7AOurN6h6
-	juYgazk0bKRXGZ8SuzCh86LNPgTTfQg==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=Xmu+4ERnTFLyVskUtSVluLTuAIfSp9q09N38PGt3f6Y=; b=OWgQnWjVUJHs/gIiOMEi+oJUfp
+	QNvIcUHWgpa01a20XA7TYYAvSw0sxNAsSKpYdGuGQ5ld35nji9C/w/p4OkyejU5e8Ji4kbcuTr1kh
+	h2yX+7hhAbOMjHdqCkx5JOKYYS85vV1S3C7qiyj/F7FKjwwsW9+SQDP81AoS6JuNwegOlYEmxYz1p
+	k6ToUJMNvw58WFh6JgeIs4KWCTh5SNK2hjUje8FRVeSXifKO+oFS5gG6N/zr66/ayOCLkaqdDDaJP
+	vJ/TlWzrQ2K8hlTikX7SlBlky2oxtqSr99YLdvZqKbqfcFI9iT3CU4JPu7MZtf7nzTBRoVFEmGMY5
+	kNbQUjhg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1heLdJ-0003qK-2S; Fri, 21 Jun 2019 15:39:21 +0000
-Received: from inva020.nxp.com ([92.121.34.13])
+	id 1heLdu-0004NT-Vj; Fri, 21 Jun 2019 15:39:58 +0000
+Received: from inva021.nxp.com ([92.121.34.21])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1heLcw-0003i2-7l
- for linux-arm-kernel@lists.infradead.org; Fri, 21 Jun 2019 15:39:00 +0000
-Received: from inva020.nxp.com (localhost [127.0.0.1])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 5A5C81A0A88;
+ id 1heLcw-0003ig-F2
+ for linux-arm-kernel@lists.infradead.org; Fri, 21 Jun 2019 15:39:03 +0000
+Received: from inva021.nxp.com (localhost [127.0.0.1])
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id DC5782009F8;
  Fri, 21 Jun 2019 17:38:54 +0200 (CEST)
 Received: from inva024.eu-rdc02.nxp.com (inva024.eu-rdc02.nxp.com
  [134.27.226.22])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 4CBD71A0A85;
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id CC560200071;
  Fri, 21 Jun 2019 17:38:54 +0200 (CEST)
 Received: from fsr-ub1664-016.ea.freescale.net
  (fsr-ub1664-016.ea.freescale.net [10.171.71.216])
- by inva024.eu-rdc02.nxp.com (Postfix) with ESMTP id D183820629;
- Fri, 21 Jun 2019 17:38:53 +0200 (CEST)
+ by inva024.eu-rdc02.nxp.com (Postfix) with ESMTP id 5D36820629;
+ Fri, 21 Jun 2019 17:38:54 +0200 (CEST)
 From: Claudiu Manoil <claudiu.manoil@nxp.com>
 To: "David S . Miller" <davem@davemloft.net>
-Subject: [PATCH net-next 0/6] Microsemi Felix switch support
-Date: Fri, 21 Jun 2019 18:38:46 +0300
-Message-Id: <1561131532-14860-1-git-send-email-claudiu.manoil@nxp.com>
+Subject: [PATCH net-next 1/6] ocelot: Filter out ocelot SoC specific PCS
+ config from common path
+Date: Fri, 21 Jun 2019 18:38:47 +0300
+Message-Id: <1561131532-14860-2-git-send-email-claudiu.manoil@nxp.com>
 X-Mailer: git-send-email 2.7.4
+In-Reply-To: <1561131532-14860-1-git-send-email-claudiu.manoil@nxp.com>
+References: <1561131532-14860-1-git-send-email-claudiu.manoil@nxp.com>
 X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190621_083858_430458_6BDA441C 
-X-CRM114-Status: UNSURE (   8.03  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190621_083858_824316_D12853FE 
+X-CRM114-Status: GOOD (  10.58  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [92.121.34.13 listed in list.dnswl.org]
+ medium trust [92.121.34.21 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -76,44 +79,99 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This device is an ethernet switch core from Microsemi (VSC9959)
-integrated as PCIe endpoint into the LS1028a SoC.
+The adjust_link routine should be generic enough to be (re)used by
+any SoC that integrates a switch core compatible with the Ocelot
+core switch driver.  Currently all configurations are generic except
+for the PCS settings that are SoC specific.  Move these out to the
+Ocelot SoC/board instance.
 
-Though this switch core has some particularities (i.e. 6 ports,
-some register mapping differences), functionally this driver relies
-entirely on the Ocelot switch driver providing all the features,
-and is basically an instance of the Ocelot core driver.
+Signed-off-by: Claudiu Manoil <claudiu.manoil@nxp.com>
+---
+ drivers/net/ethernet/mscc/ocelot.c      | 17 ++---------------
+ drivers/net/ethernet/mscc/ocelot.h      |  2 ++
+ drivers/net/ethernet/mscc/ocelot_regs.c | 21 +++++++++++++++++++++
+ 3 files changed, 25 insertions(+), 15 deletions(-)
 
-The first 3 patches are minor refactoring of the common Ocelot code
-(core driver).  The rest provide the integration code of the switch
-as a PCIe device, the register mapping, corresponding ls1028a DT
-nodes (for switch ports link configuration).  There are also few
-particularities described by individual patch messages.
-
-Claudiu Manoil (6):
-  ocelot: Filter out ocelot SoC specific PCS config from common path
-  ocelot: Refactor common ocelot probing code to ocelot_init
-  ocelot: Factor out resource ioremap and regmap init common code
-  arm64: dts: fsl: ls1028a: Add Felix switch port DT node
-  dt-bindings: net: Add DT bindings for Microsemi Felix Switch
-  net/mssc/ocelot: Add basic Felix switch driver
-
- .../devicetree/bindings/net/mscc-felix.txt    |  77 +++
- .../arm64/boot/dts/freescale/fsl-ls1028a.dtsi |  58 ++-
- drivers/net/ethernet/mscc/Kconfig             |   8 +
- drivers/net/ethernet/mscc/Makefile            |   9 +-
- drivers/net/ethernet/mscc/felix_board.c       | 392 +++++++++++++++
- drivers/net/ethernet/mscc/felix_regs.c        | 448 ++++++++++++++++++
- drivers/net/ethernet/mscc/ocelot.c            |  23 +-
- drivers/net/ethernet/mscc/ocelot.h            |  13 +-
- drivers/net/ethernet/mscc/ocelot_board.c      |  16 +-
- drivers/net/ethernet/mscc/ocelot_io.c         |  14 +-
- drivers/net/ethernet/mscc/ocelot_regs.c       |  21 +
- 11 files changed, 1041 insertions(+), 38 deletions(-)
- create mode 100644 Documentation/devicetree/bindings/net/mscc-felix.txt
- create mode 100644 drivers/net/ethernet/mscc/felix_board.c
- create mode 100644 drivers/net/ethernet/mscc/felix_regs.c
-
+diff --git a/drivers/net/ethernet/mscc/ocelot.c b/drivers/net/ethernet/mscc/ocelot.c
+index b71e4ecbe469..66cf57e6fd76 100644
+--- a/drivers/net/ethernet/mscc/ocelot.c
++++ b/drivers/net/ethernet/mscc/ocelot.c
+@@ -405,21 +405,8 @@ static void ocelot_port_adjust_link(struct net_device *dev)
+ 	ocelot_port_writel(port, DEV_MAC_HDX_CFG_LATE_COL_POS(67),
+ 			   DEV_MAC_HDX_CFG);
+ 
+-	/* Disable HDX fast control */
+-	ocelot_port_writel(port, DEV_PORT_MISC_HDX_FAST_DIS, DEV_PORT_MISC);
+-
+-	/* SGMII only for now */
+-	ocelot_port_writel(port, PCS1G_MODE_CFG_SGMII_MODE_ENA, PCS1G_MODE_CFG);
+-	ocelot_port_writel(port, PCS1G_SD_CFG_SD_SEL, PCS1G_SD_CFG);
+-
+-	/* Enable PCS */
+-	ocelot_port_writel(port, PCS1G_CFG_PCS_ENA, PCS1G_CFG);
+-
+-	/* No aneg on SGMII */
+-	ocelot_port_writel(port, 0, PCS1G_ANEG_CFG);
+-
+-	/* No loopback */
+-	ocelot_port_writel(port, 0, PCS1G_LB_CFG);
++	if (ocelot->port_pcs_init)
++		ocelot->port_pcs_init(port);
+ 
+ 	/* Set Max Length and maximum tags allowed */
+ 	ocelot_port_writel(port, VLAN_ETH_FRAME_LEN, DEV_MAC_MAXLEN_CFG);
+diff --git a/drivers/net/ethernet/mscc/ocelot.h b/drivers/net/ethernet/mscc/ocelot.h
+index f7eeb4806897..e21a6fb22ef8 100644
+--- a/drivers/net/ethernet/mscc/ocelot.h
++++ b/drivers/net/ethernet/mscc/ocelot.h
+@@ -442,6 +442,8 @@ struct ocelot {
+ 	u64 *stats;
+ 	struct delayed_work stats_work;
+ 	struct workqueue_struct *stats_queue;
++
++	void (*port_pcs_init)(struct ocelot_port *port);
+ };
+ 
+ struct ocelot_port {
+diff --git a/drivers/net/ethernet/mscc/ocelot_regs.c b/drivers/net/ethernet/mscc/ocelot_regs.c
+index 6c387f994ec5..000c43984858 100644
+--- a/drivers/net/ethernet/mscc/ocelot_regs.c
++++ b/drivers/net/ethernet/mscc/ocelot_regs.c
+@@ -412,6 +412,26 @@ static void ocelot_pll5_init(struct ocelot *ocelot)
+ 		     HSIO_PLL5G_CFG2_AMPC_SEL(0x10));
+ }
+ 
++static void ocelot_port_pcs_init(struct ocelot_port *port)
++{
++	/* Disable HDX fast control */
++	ocelot_port_writel(port, DEV_PORT_MISC_HDX_FAST_DIS, DEV_PORT_MISC);
++
++	/* SGMII only for now */
++	ocelot_port_writel(port, PCS1G_MODE_CFG_SGMII_MODE_ENA,
++			   PCS1G_MODE_CFG);
++	ocelot_port_writel(port, PCS1G_SD_CFG_SD_SEL, PCS1G_SD_CFG);
++
++	/* Enable PCS */
++	ocelot_port_writel(port, PCS1G_CFG_PCS_ENA, PCS1G_CFG);
++
++	/* No aneg on SGMII */
++	ocelot_port_writel(port, 0, PCS1G_ANEG_CFG);
++
++	/* No loopback */
++	ocelot_port_writel(port, 0, PCS1G_LB_CFG);
++}
++
+ int ocelot_chip_init(struct ocelot *ocelot)
+ {
+ 	int ret;
+@@ -420,6 +440,7 @@ int ocelot_chip_init(struct ocelot *ocelot)
+ 	ocelot->stats_layout = ocelot_stats_layout;
+ 	ocelot->num_stats = ARRAY_SIZE(ocelot_stats_layout);
+ 	ocelot->shared_queue_sz = 224 * 1024;
++	ocelot->port_pcs_init = ocelot_port_pcs_init;
+ 
+ 	ret = ocelot_regfields_init(ocelot, ocelot_regfields);
+ 	if (ret)
 -- 
 2.17.1
 
