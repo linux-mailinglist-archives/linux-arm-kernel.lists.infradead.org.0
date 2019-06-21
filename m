@@ -2,45 +2,41 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F16454E380
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 21 Jun 2019 11:26:57 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E8D424E381
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 21 Jun 2019 11:27:17 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=P6YfgmKiEnYnZaxYUInkN8+5VTZYJUZHDqecL0hHkqQ=; b=oEaq2qX9q6elzafxHCy7OeqPcW
-	qVEK0+jsa56bkkWQY39yg6MfY+byin33K0MvxA46MjfLfOY3cRhBpNvc51kHsv9FVkKardk8qo25Y
-	dqSO/xZoViKDBWxYngxpuBW71kDXc3hGEeNAAe2dI5b2UiVdJfF2eQJd7TFEknImX6EASNBxy6nSa
-	l69q2tRIzv+PgWHmzggHyZpl4M++0/cgD7oDn4ArpJUC8pGBnrFFD2Y9GoZHJsCYuGyotqxWfdJWx
-	c0ehuOOEp4RunEh006j4AFSBEksWjA4mB+mkTU7TGacRMJb81JPGiPj7V63u+47psJxN695opsLeP
-	LFXtcnVg==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=cbXUAaYGhX7zhCeDA/6p7Cc79RvizHeINAmoHVBsa4I=; b=X3i
+	YJM6nKzq08eUIKc/MAc7Fvqjdnoio2Vsbeb0NX5Wu/k1e7ziLWq9gdJkl12hCshOZJ2ezIEXzONgn
+	QWU3ZClvcjZwYR+KGZKZrYRoa9j2qQ3he4ory6cUYPDmzpu8Td5Dc+5gW3YhGUVG4kJfFThSapHK3
+	FTAUECpagm/jEcGiz+gO7PUQs0H0/eGVlXYkxmgTNFzRiuG1L1/ydOhsV8uAarlwHfhut6yKi4W/8
+	+sST5G4PfDSZgVedwSpaci90/bsUGKzlBctbU9IMs4v2HhCyeE8rDuExR38NXxOwrOcbxVWfH8cjx
+	zAtG5jcPgnn4SSH29wOXZv+dqYEFkcA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1heFou-0003y0-5E; Fri, 21 Jun 2019 09:26:56 +0000
+	id 1heFpB-0004DA-Ao; Fri, 21 Jun 2019 09:27:13 +0000
 Received: from kirsty.vergenet.net ([202.4.237.240])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1heFdG-0008OY-MB
- for linux-arm-kernel@lists.infradead.org; Fri, 21 Jun 2019 09:14:56 +0000
+ id 1heFdJ-0008OY-Cq
+ for linux-arm-kernel@lists.infradead.org; Fri, 21 Jun 2019 09:14:59 +0000
 Received: from reginn.horms.nl (watermunt.horms.nl [80.127.179.77])
- by kirsty.vergenet.net (Postfix) with ESMTPA id CE67725AEE7;
- Fri, 21 Jun 2019 19:13:57 +1000 (AEST)
+ by kirsty.vergenet.net (Postfix) with ESMTPA id ABDE025BE7A;
+ Fri, 21 Jun 2019 19:14:04 +1000 (AEST)
 Received: by reginn.horms.nl (Postfix, from userid 7100)
- id 12A78942F33; Fri, 21 Jun 2019 11:13:52 +0200 (CEST)
+ id B06829408C4; Fri, 21 Jun 2019 11:14:02 +0200 (CEST)
 From: Simon Horman <horms+renesas@verge.net.au>
-To: linux-renesas-soc@vger.kernel.org
-Subject: [PATCH 22/22] ARM: dts: r8a7792: Add CMT0 and CMT1 to r8a7792
-Date: Fri, 21 Jun 2019 11:13:49 +0200
-Message-Id: <9dd6f7c484fd2aaa468dfdf5087425ea9e4c7bf8.1561104194.git.horms+renesas@verge.net.au>
+To: arm@kernel.org
+Subject: [GIT PULL] Renesas ARM Based SoC Defconfig Updates for v5.3
+Date: Fri, 21 Jun 2019 11:14:01 +0200
+Message-Id: <cover.1561101309.git.horms+renesas@verge.net.au>
 X-Mailer: git-send-email 2.11.0
-In-Reply-To: <cover.1561104194.git.horms+renesas@verge.net.au>
-References: <cover.1561104194.git.horms+renesas@verge.net.au>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190621_021454_954252_3CF4786D 
-X-CRM114-Status: UNSURE (   8.92  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190621_021458_292277_3BBB1E79 
+X-CRM114-Status: GOOD (  10.01  )
 X-Spam-Score: -2.0 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.0 points)
@@ -63,74 +59,44 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Magnus Damm <damm+renesas@opensource.se>,
- Magnus Damm <magnus.damm@gmail.com>, linux-arm-kernel@lists.infradead.org,
- Simon Horman <horms+renesas@verge.net.au>
+Cc: Arnd Bergmann <arnd@arndb.de>, Kevin Hilman <khilman@kernel.org>,
+ Magnus Damm <magnus.damm@gmail.com>, linux-renesas-soc@vger.kernel.org,
+ Olof Johansson <olof@lixom.net>, Simon Horman <horms+renesas@verge.net.au>,
+ linux-arm-kernel@lists.infradead.org
 MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Magnus Damm <damm+renesas@opensource.se>
+Hi Olof, Hi Kevin, Hi Arnd,
 
-Add CMT0 and CMT1 to the R-Car Gen2 V2H (r8a7792) SoC.
+Please consider these Renesas ARM based SoC defconfig updates for v5.3.
 
-Signed-off-by: Magnus Damm <damm+renesas@opensource.se>
-Reviewed-by: Geert Uytterhoeven <geert+renesas@glider.be>
-Signed-off-by: Simon Horman <horms+renesas@verge.net.au>
----
- arch/arm/boot/dts/r8a7792.dtsi | 34 ++++++++++++++++++++++++++++++++++
- 1 file changed, 34 insertions(+)
 
-diff --git a/arch/arm/boot/dts/r8a7792.dtsi b/arch/arm/boot/dts/r8a7792.dtsi
-index 38fb43d11b27..c4ea2d676030 100644
---- a/arch/arm/boot/dts/r8a7792.dtsi
-+++ b/arch/arm/boot/dts/r8a7792.dtsi
-@@ -875,6 +875,40 @@
- 			compatible = "renesas,prr";
- 			reg = <0 0xff000044 0 4>;
- 		};
-+
-+		cmt0: timer@ffca0000 {
-+			compatible = "renesas,r8a7792-cmt0",
-+				     "renesas,rcar-gen2-cmt0";
-+			reg = <0 0xffca0000 0 0x1004>;
-+			interrupts = <GIC_SPI 142 IRQ_TYPE_LEVEL_HIGH>,
-+				     <GIC_SPI 143 IRQ_TYPE_LEVEL_HIGH>;
-+			clocks = <&cpg CPG_MOD 124>;
-+			clock-names = "fck";
-+			power-domains = <&sysc R8A7792_PD_ALWAYS_ON>;
-+			resets = <&cpg 124>;
-+
-+			status = "disabled";
-+		};
-+
-+		cmt1: timer@e6130000 {
-+			compatible = "renesas,r8a7792-cmt1",
-+				     "renesas,rcar-gen2-cmt1";
-+			reg = <0 0xe6130000 0 0x1004>;
-+			interrupts = <GIC_SPI 120 IRQ_TYPE_LEVEL_HIGH>,
-+				     <GIC_SPI 121 IRQ_TYPE_LEVEL_HIGH>,
-+				     <GIC_SPI 122 IRQ_TYPE_LEVEL_HIGH>,
-+				     <GIC_SPI 123 IRQ_TYPE_LEVEL_HIGH>,
-+				     <GIC_SPI 124 IRQ_TYPE_LEVEL_HIGH>,
-+				     <GIC_SPI 125 IRQ_TYPE_LEVEL_HIGH>,
-+				     <GIC_SPI 126 IRQ_TYPE_LEVEL_HIGH>,
-+				     <GIC_SPI 127 IRQ_TYPE_LEVEL_HIGH>;
-+			clocks = <&cpg CPG_MOD 329>;
-+			clock-names = "fck";
-+			power-domains = <&sysc R8A7792_PD_ALWAYS_ON>;
-+			resets = <&cpg 329>;
-+
-+			status = "disabled";
-+		};
- 	};
- 
- 	timer {
--- 
-2.11.0
+The following changes since commit a188339ca5a396acc588e5851ed7e19f66b0ebd9:
 
+  Linux 5.2-rc1 (2019-05-19 15:47:09 -0700)
+
+are available in the git repository at:
+
+  https://git.kernel.org/pub/scm/linux/kernel/git/horms/renesas.git tags/renesas-arm-defconfig-for-v5.3
+
+for you to fetch changes up to b995421faef5b24ee8ec60d66b356b57ca0c8b77:
+
+  ARM: shmobile: Remove GENERIC_PHY from shmobile_defconfig (2019-05-20 13:24:06 +0200)
+
+----------------------------------------------------------------
+Renesas ARM Based SoC Defconfig Updates for v5.3
+
+* Remove GENERIC_PHY from shmobile_defconfig as it is now selected
+
+----------------------------------------------------------------
+Biju Das (1):
+      ARM: shmobile: Remove GENERIC_PHY from shmobile_defconfig
+
+ arch/arm/configs/shmobile_defconfig | 1 -
+ 1 file changed, 1 deletion(-)
 
 _______________________________________________
 linux-arm-kernel mailing list
