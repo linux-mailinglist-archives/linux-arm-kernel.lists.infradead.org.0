@@ -2,77 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CAD454EB78
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 21 Jun 2019 17:02:27 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B48D54EB79
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 21 Jun 2019 17:02:44 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=kiqnjjdF7ttXyYjrKbhsTW/EhpWNf31ORP0xMoaVV+E=; b=jjI0SApvn7hiQv
-	RlrsxmNd3slmKQ9dKviqpRXhF61a/zy66PfazsdetbTgX9nB55lGam7w2ffvCCQiNPzocT0syaC5i
-	N9FSid/kdnMKhlZgKLbOWRfAN8mraTvEFTwL5Iawz9rCbPjjfPDZ1C3u/hl3NDpVf3yfVLQSdvt5N
-	dILvlNRElWQXA7kb1RVFmB2gOcRD+mGwQznVkcmNA5F723ELkcOzbObRd8PTyPdlifcDPgba52P44
-	q/7NMeyXK0LKFOhn7Cnj9gI66xs9EhVQBNV2MJJMd/G9c4iQErOHFznItJCTf+zLRdMXb8X3rwcO5
-	unFwdkg5fly3cvNCl5/w==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=RZkHo0UOPeShNX3jCJ5+MvKAJXHHMIBRzTKIEwQ+T8I=; b=kHY/UdvBvKRPPR
+	gN686fbYFf0leT7rLtbY6uO/Uh8c8a5dGzbtqBVEF55QD4CO4jYqNuiD2LaR7yVO14kxIGYtWRn3C
+	Yaj+ZjmB8tk8SJn7TzVl4igwM5nOqmTrT3ZuudcoUPMuNDCivXzTnuOx8GrB8ZuXYSd/K3ZpPvBj6
+	z4Sh4WL5mwICrImE4fjqcKJ8f4BBUuh1AosJtrtIB3cXbn5VB5hOZCNU0Sa1LgDpYcmz9ZSBdELT5
+	G16XpK/MMXO6Jg6tf+x6B5wrMEj+6zPpPjvXjwkUJhnOsPSCmOb3wrVck/2gAxnIKmCqkMsFOJXle
+	11vedvUw94IRhB4+6FSQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1heL3X-0004Vh-TB; Fri, 21 Jun 2019 15:02:23 +0000
-Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
+	id 1heL3q-0004he-Iu; Fri, 21 Jun 2019 15:02:42 +0000
+Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1heL3K-0004UK-Jb
- for linux-arm-kernel@lists.infradead.org; Fri, 21 Jun 2019 15:02:11 +0000
-Received: by mail-wr1-x442.google.com with SMTP id n9so6964360wru.0
+ id 1heL3L-0004UW-Pj
+ for linux-arm-kernel@lists.infradead.org; Fri, 21 Jun 2019 15:02:13 +0000
+Received: by mail-wr1-x443.google.com with SMTP id n4so5715707wrs.3
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 21 Jun 2019 08:02:09 -0700 (PDT)
+ Fri, 21 Jun 2019 08:02:11 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=L6dQv323Ey+4JIjdvTNU3vCXrozzKoZF5cqgk/Zii2Q=;
- b=oYMXiTi7gTsFbaVkl8bkK3VjNmg7W75D+0HSYCtoAyztnBevEe5ZWBUQG3WHE4TNYG
- ipVqnCwkcMCZyWysCr+/CEbO1N0yg8Ei/ZPxQTFuxGEl/gu5IS0Hov8Kd6Do3SpjNeua
- Q6lGBpIKXF6c4DDK2q9BZ1OgALbfNW/qxK5lfUUI3jfeMfOfsIbAPtp3obpEMugyP86V
- GfX58CtHxFd7r232R9GoXestxkX9RBpYDAfeRq5pYLTgdhutGRnKoLnQOX4APs4uLZml
- 1oQBPdfr78yIR0VK3bwF9Cj3D/QqrKKonBYE2x5URiSGLslEWsYqd1pz+2LsHmSu4IFo
- qTDw==
+ h=from:to:cc:subject:date:message-id:in-reply-to:references
+ :mime-version:content-transfer-encoding;
+ bh=1h6XJ5OhQWJ9WnLTMAcYwIqIRZbHQHwK183NqHTTkqE=;
+ b=L8qdZ67/uqfvi3TBYrRdLx/FaNFulsbj6J7nviPrp1E8/9PQ5WhjW858T2IRH7X/P/
+ zmUpU83OKDEDlbAqQwStA9QWsm6Z6n0+mFfOOrsGwcqg/MGWS9oB59JeBioZv2RcTKhu
+ SLEBvVm3nuTxQpf2RlmWPRikhDCgAOrnEczxzM+1KFf/4JmYL60q34zcuMIv0IzdmdJA
+ APKnuC5h5p3sbn0M7U/QbqyEOBJ5E2JFpKVk/+Qo7jY7HlkUgXzdAjAozKoP32ZtyU0A
+ hbhVtjxAMzhgoxfsh37CBoP2YsKG4/Uvjr2MvZRXBWrIBcuv6cW7OCEzLd9dG05017vO
+ qB2Q==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=L6dQv323Ey+4JIjdvTNU3vCXrozzKoZF5cqgk/Zii2Q=;
- b=kN+42pXEJ9H4K++oT0IZ2JPlZpfFi7qlgWdB6aA9XWd58KSKwgMloZiHWeoDAQImMj
- Fp0QyFXjh5jxHlAKBY/pfr22oc3q/fw9ZXWctio90aifxMVARrsDeZjIVQIvYZyRP6Of
- U0GlhPY6foF45VRR2WhDiIp04yb4d9gMJcauM2vBBwYoGNbg3yudNIYc1exbHbLkAJHv
- dBLrm3zFCEO0++Gzu5vmphR2tu8CVVJXmiVL70kiN5Gli9PABbY1YMsBfitI9DkqEAUh
- CMB28ukVlcnLScuveDL7MIlpPHZDCkN6xckXZcOL8Fpu+cP0Kkk9WhIU8cniOnrxEyBM
- NKHg==
-X-Gm-Message-State: APjAAAXvj+8uSJ0OeXA5j2+SwApD2txnrMK30lMiS+gJKr443+3SlVo7
- S1iZOgj/axjAFoI7BTDoTdI=
-X-Google-Smtp-Source: APXvYqyywkuCCQ4TzzIszhPEqQRM4uPekw8uBNBNrr0JsRaa4vg+ysnSPdvzNSky7V2AqMVkXRxlyA==
-X-Received: by 2002:a5d:508a:: with SMTP id a10mr27908816wrt.59.1561129328516; 
- Fri, 21 Jun 2019 08:02:08 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references:mime-version:content-transfer-encoding;
+ bh=1h6XJ5OhQWJ9WnLTMAcYwIqIRZbHQHwK183NqHTTkqE=;
+ b=OfF/FuJBFyyELmOOPkp9M1SDymx+UzIoj3dNS9LZr9503FG64VSol7FaSjohaz1Z4p
+ +94e1d9rSb0MpwKLEUiu8CrN8G5WfIrXM1DLUqSlQ1bIallyxmNb+tS0pS5bxGik7vi9
+ rXPwJazgEg/Ywf877jfQIxK9bMbDcScKYdEHPq6ssOOKYzLNGvtkN7FvEQGg9G9nrpCL
+ jxSQ4oZ6pRXn6fueXbIafaLVMRckYW+ym35wuNRdXiybiuzyg7mrIYWLBtbxCvFcMWgi
+ mttVw1EthNT1J403YEe6GhHNcvsl7/YHZuyIyZAARO1N1ETrgPXmcS8bvlaHgnnqDVgw
+ XyJw==
+X-Gm-Message-State: APjAAAWSblrkdjdbML7SDZGuBIKB4A6SAI6EjLWDM99VwXLHFmtSHj/a
+ F2V89PEojaZ/RFghzRgf74c=
+X-Google-Smtp-Source: APXvYqyorCk4OcXIKyoPbn3x/xMcQPSmgP9su2DFFoV31EmJZwmwiqzkHUBVKVS8aGsESSc10C91ww==
+X-Received: by 2002:adf:c541:: with SMTP id s1mr294725wrf.44.1561129330076;
+ Fri, 21 Jun 2019 08:02:10 -0700 (PDT)
 Received: from localhost (p2E5BEF36.dip0.t-ipconnect.de. [46.91.239.54])
- by smtp.gmail.com with ESMTPSA id x129sm2241343wmg.44.2019.06.21.08.02.07
+ by smtp.gmail.com with ESMTPSA id l17sm3684989wrq.37.2019.06.21.08.02.09
  (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Fri, 21 Jun 2019 08:02:07 -0700 (PDT)
+ Fri, 21 Jun 2019 08:02:09 -0700 (PDT)
 From: Thierry Reding <thierry.reding@gmail.com>
 To: arm@kernel.org
-Subject: [GIT PULL 1/5] firmware: tegra: Changes for v5.3-rc1
-Date: Fri, 21 Jun 2019 17:02:02 +0200
-Message-Id: <20190621150206.19037-1-thierry.reding@gmail.com>
+Subject: [GIT PULL 2/5] memory: tegra: Changes for v5.3-rc1
+Date: Fri, 21 Jun 2019 17:02:03 +0200
+Message-Id: <20190621150206.19037-2-thierry.reding@gmail.com>
 X-Mailer: git-send-email 2.21.0
+In-Reply-To: <20190621150206.19037-1-thierry.reding@gmail.com>
+References: <20190621150206.19037-1-thierry.reding@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190621_080210_673259_62C91D71 
-X-CRM114-Status: GOOD (  10.48  )
+X-CRM114-CacheID: sfid-20190621_080211_832756_1E7A9C19 
+X-CRM114-Status: GOOD (  10.50  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:442 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:443 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -111,28 +113,27 @@ The following changes since commit a188339ca5a396acc588e5851ed7e19f66b0ebd9:
 
 are available in the Git repository at:
 
-  git://git.kernel.org/pub/scm/linux/kernel/git/tegra/linux.git tags/tegra-for-5.3-firmware
+  git://git.kernel.org/pub/scm/linux/kernel/git/tegra/linux.git tags/tegra-for-5.3-memory
 
-for you to fetch changes up to 61ed7ef952fc482ec8d4a966ed0d1e32df276c59:
+for you to fetch changes up to 76ce48bdb303afa6e33cfbadca9d6bee23a4f559:
 
-  firmware: tegra: Early resume BPMP (2019-06-14 17:45:17 +0200)
+  memory: tegra: Fix -Wunused-const-variable (2019-06-14 18:02:02 +0200)
 
 Thanks,
 Thierry
 
 ----------------------------------------------------------------
-firmware: tegra: Changes for v5.3-rc1
+memory: tegra: Changes for v5.3-rc1
 
-This contains a single, simple change that resumes the BPMP driver early
-so that it is available when the various consumers want to enable their
-clocks.
+A single fix for an unused constant variable, due to it being declared
+outside the only #ifdef that it was being used from.
 
 ----------------------------------------------------------------
-Bitan Biswas (1):
-      firmware: tegra: Early resume BPMP
+Nathan Huckleberry (1):
+      memory: tegra: Fix -Wunused-const-variable
 
- drivers/firmware/tegra/bpmp.c | 4 +++-
- 1 file changed, 3 insertions(+), 1 deletion(-)
+ drivers/memory/tegra/tegra124.c | 44 ++++++++++++++++++++---------------------
+ 1 file changed, 22 insertions(+), 22 deletions(-)
 
 _______________________________________________
 linux-arm-kernel mailing list
