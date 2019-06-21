@@ -2,42 +2,45 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DC0CE4E33F
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 21 Jun 2019 11:17:53 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id F08FB4E340
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 21 Jun 2019 11:18:15 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=ssc3kFrm/2V1qRNCPQTjXm976m+6Pry0Aq+4SItEyig=; b=PeT
-	SwFs9ox16xcuUL+f63i6gLmAsiELvuKPxvorDtrUCCdjv73rx55OEJkCMfNZRheSqND4V68OJKwm+
-	c16wFXxnfKeo5r64kmrCFuRxtgSSnE39YK9ZCydfFio/Z8sxQYFW88rgaGPgKSgkKkR2SOsp8pePo
-	EC53o3YmYQOtUzEFhXbLxQP2JiTlb4Tomuz2FE9BR5g1R80wCuEGHRT/K11IdLUJKOXxu3XoHWRaZ
-	u2/XWqYvfrz4nFbxmOfWmlewthCGLd8X1iTMlWvFpzTUMly/sy8Z5q82XFvCAtyRwbTvU/NEMntkt
-	LRTLqUn7+ywU5YQs+/IKxgyyXEU9jJA==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=qiIedXm1MqPSVbXKNMRbjigkub8NnB2NVRkPYh7OGhM=; b=aYMgI390xXZrdYjl7pdpj/VX//
+	1ZSXYeuemJYnbsnDp3Zma48IwtRvGyhqrSn2vidWmTGr9vdwRL0wOuWD8imbAr+pMimVQj6u4GZUt
+	BQSU8BGUGzZcmSZf9aQVL/uh2tUvwEwJNp6tQv3Ar3d4i4SwIyOjGGH3dFpAxZCr4lJDohOySNSgW
+	7v+NM9xUo/S7D5hMtpsi5ZSbzuKBOTCBtvl0dOSRQSntDn79v4IGslVDfrNpqvHENuMoT9PI1QWyp
+	OVi0/+rTqyT7nQaXY66zKnRztN7zDxMqxoANUG8t+ooBpold/AMH3L0xL7VKE48ivbO3+hvOamLPb
+	cKyDSS4Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1heFg5-0003Dh-QN; Fri, 21 Jun 2019 09:17:49 +0000
+	id 1heFgU-0003Wu-7b; Fri, 21 Jun 2019 09:18:14 +0000
 Received: from kirsty.vergenet.net ([202.4.237.240])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1heFae-0007RN-25
- for linux-arm-kernel@lists.infradead.org; Fri, 21 Jun 2019 09:12:13 +0000
+ id 1heFag-0007TL-EV
+ for linux-arm-kernel@lists.infradead.org; Fri, 21 Jun 2019 09:12:16 +0000
 Received: from reginn.horms.nl (watermunt.horms.nl [80.127.179.77])
- by kirsty.vergenet.net (Postfix) with ESMTPA id 29ABA25AEE7;
- Fri, 21 Jun 2019 19:12:11 +1000 (AEST)
+ by kirsty.vergenet.net (Postfix) with ESMTPA id 0E47025AD85;
+ Fri, 21 Jun 2019 19:12:13 +1000 (AEST)
 Received: by reginn.horms.nl (Postfix, from userid 7100)
- id 309569408C4; Fri, 21 Jun 2019 11:12:09 +0200 (CEST)
+ id 14588940954; Fri, 21 Jun 2019 11:12:11 +0200 (CEST)
 From: Simon Horman <horms+renesas@verge.net.au>
-To: arm@kernel.org
-Subject: [GIT PULL] Renesas ARM Based SoC Updates for v5.3
-Date: Fri, 21 Jun 2019 11:12:04 +0200
-Message-Id: <cover.1561105093.git.horms+renesas@verge.net.au>
+To: linux-renesas-soc@vger.kernel.org
+Subject: [PATCH 1/2] ARM: mach-shmobile: Don't init CNTVOFF/counter if PSCI is
+ available
+Date: Fri, 21 Jun 2019 11:12:08 +0200
+Message-Id: <51a0daf64dee78dacaecc7bec3d36e0b2f49c7a1.1561105093.git.horms+renesas@verge.net.au>
 X-Mailer: git-send-email 2.11.0
+In-Reply-To: <cover.1561105093.git.horms+renesas@verge.net.au>
+References: <cover.1561105093.git.horms+renesas@verge.net.au>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190621_021212_409144_79629C43 
-X-CRM114-Status: UNSURE (   9.59  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190621_021214_974757_CDE57E60 
+X-CRM114-Status: GOOD (  12.76  )
 X-Spam-Score: -2.0 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.0 points)
@@ -60,49 +63,86 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Arnd Bergmann <arnd@arndb.de>, Kevin Hilman <khilman@kernel.org>,
- Magnus Damm <magnus.damm@gmail.com>, linux-renesas-soc@vger.kernel.org,
- Olof Johansson <olof@lixom.net>, Simon Horman <horms+renesas@verge.net.au>,
- linux-arm-kernel@lists.infradead.org
+Cc: Oleksandr Tyshchenko <oleksandr_tyshchenko@epam.com>,
+ Magnus Damm <magnus.damm@gmail.com>, linux-arm-kernel@lists.infradead.org,
+ Simon Horman <horms+renesas@verge.net.au>
 MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Olof, Hi Kevin, Hi Arnd,
+From: Oleksandr Tyshchenko <oleksandr_tyshchenko@epam.com>
 
-Please consider these Renesas ARM based SoC updates for v5.3.
+If PSCI is available then most likely we are running on PSCI-enabled
+U-Boot which, we assume, has already taken care of resetting CNTVOFF
+and updating counter module before switching to non-secure mode
+and we don't need to.
 
+As the psci_smp_available() helper always returns false if CONFIG_SMP
+is disabled, it can't be used safely as an indicator of PSCI usage.
+For that reason, we check for the mandatory PSCI operation to be
+available.
 
-The following changes since commit a188339ca5a396acc588e5851ed7e19f66b0ebd9:
+Please note, an extra check to prevent secure_cntvoff_init() from
+being called for secondary CPUs in headsmp-apmu.S is not needed,
+as SMP code for APMU based system is not executed if PSCI is in use.
 
-  Linux 5.2-rc1 (2019-05-19 15:47:09 -0700)
-
-are available in the git repository at:
-
-  https://git.kernel.org/pub/scm/linux/kernel/git/horms/renesas.git tags/renesas-arm-soc-for-v5.3
-
-for you to fetch changes up to 02af9f90941b6cce5fb672ee058c142adcc11a2f:
-
-  soc: renesas: Enable RZ/A1 IRQC on RZ/A1H and RZ/A2M (2019-06-06 10:37:06 +0200)
-
-----------------------------------------------------------------
-Renesas ARM Based SoC Updates for v5.3
-
-* Auto-enable RZ/A1 IRQC on RZ/A1H and RZ/A2M
-* Don't init CNTVOFF/counter if PSCI is available
-
-----------------------------------------------------------------
-Geert Uytterhoeven (1):
-      soc: renesas: Enable RZ/A1 IRQC on RZ/A1H and RZ/A2M
-
-Oleksandr Tyshchenko (1):
-      ARM: mach-shmobile: Don't init CNTVOFF/counter if PSCI is available
-
+Signed-off-by: Oleksandr Tyshchenko <oleksandr_tyshchenko@epam.com>
+Reviewed-by: Geert Uytterhoeven <geert+renesas@glider.be>
+Signed-off-by: Simon Horman <horms+renesas@verge.net.au>
+---
  arch/arm/mach-shmobile/setup-rcar-gen2.c | 17 +++++++++++++++++
- drivers/soc/renesas/Kconfig              |  4 +++-
- 2 files changed, 20 insertions(+), 1 deletion(-)
+ 1 file changed, 17 insertions(+)
+
+diff --git a/arch/arm/mach-shmobile/setup-rcar-gen2.c b/arch/arm/mach-shmobile/setup-rcar-gen2.c
+index eea60b20c6b4..9e4bc1865f84 100644
+--- a/arch/arm/mach-shmobile/setup-rcar-gen2.c
++++ b/arch/arm/mach-shmobile/setup-rcar-gen2.c
+@@ -17,6 +17,7 @@
+ #include <linux/of.h>
+ #include <linux/of_fdt.h>
+ #include <linux/of_platform.h>
++#include <linux/psci.h>
+ #include <asm/mach/arch.h>
+ #include <asm/secure_cntvoff.h>
+ #include "common.h"
+@@ -60,9 +61,24 @@ static unsigned int __init get_extal_freq(void)
+ 
+ void __init rcar_gen2_timer_init(void)
+ {
++	bool need_update = true;
+ 	void __iomem *base;
+ 	u32 freq;
+ 
++	/*
++	 * If PSCI is available then most likely we are running on PSCI-enabled
++	 * U-Boot which, we assume, has already taken care of resetting CNTVOFF
++	 * and updating counter module before switching to non-secure mode
++	 * and we don't need to.
++	 */
++#ifdef CONFIG_ARM_PSCI_FW
++	if (psci_ops.cpu_on)
++		need_update = false;
++#endif
++
++	if (need_update == false)
++		goto skip_update;
++
+ 	secure_cntvoff_init();
+ 
+ 	if (of_machine_is_compatible("renesas,r8a7745") ||
+@@ -102,6 +118,7 @@ void __init rcar_gen2_timer_init(void)
+ 
+ 	iounmap(base);
+ 
++skip_update:
+ 	of_clk_init(NULL);
+ 	timer_probe();
+ }
+-- 
+2.11.0
+
 
 _______________________________________________
 linux-arm-kernel mailing list
