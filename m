@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 396BC4E2CB
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 21 Jun 2019 11:12:27 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 54B884E2CD
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 21 Jun 2019 11:12:49 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,35 +11,35 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=Pu4L2VwzFldfxhBj3Be2mof8YVCOeynG7sVj69Sk0HM=; b=IJg31TD3b6UbLUQaGdy2SMwQV7
-	5I8xLgMRB3rb+3XqBxqt9Gt4P8no9j0NwsSpLe/64N8GgspOlQI5A0nqSrstsKOqCbDBls9czQJyo
-	NJXfNIQy/ehpwqOhZxfsxeHKAQXIJoZw8nNoA9SH14FgJU5hFuynzHUC+apEOCbaH615NajeW7L3r
-	BunpFteo6fqxK9bjbT9f34TJb74E4TWpIFezapNRf5NLS0B7QOxqFI2MjzXMhDA90PhouuYX1DTOH
-	Xa16xlrnMotElWZwihPxn3tuxY6NklqVDgD3ei5IbMqigaYEKZAPAZk2EzCMYgdNmHhuOAQD9Pioi
-	8iH/Ac4Q==;
+	bh=/nfd1dDpYvWIB0sNSV9bcO9VpSHi2JgiUF/MoZk7BdA=; b=oQNR/fvp7Zg/4lwrQUoaM/IRrO
+	v0qFbEDqwpq3RnNcuT3H0M2r5Ae2YG0JsODuDLZ0JECYmC6ceND+j8zrNpo0y4LSw629s3WNYUdYf
+	vQWJFYebTe7PJoj/xS5RKWIxMas4HmE7cJKm3yI0WZ+QT7i2l1F+Cagz0V8Xm/FYNi74h5DwsxZnf
+	gk4UtZpCFh6LYTPP777NUNGIw8aZhfjCpy7csNxZJLAk2zTaiTtrTKq5+TZpmIzgw/k22yBb0JLo/
+	GvXrAcZX6x/gOFDj6yTV/D1qdHdpheLbW41Y06M7+Zeow2yuxuJEh8ApDLdstmbq4EEXWhstffm2T
+	G1nzbNCw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1heFap-0007Gw-7v; Fri, 21 Jun 2019 09:12:23 +0000
+	id 1heFbD-0007cD-D2; Fri, 21 Jun 2019 09:12:47 +0000
 Received: from kirsty.vergenet.net ([202.4.237.240])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1heFZw-00075F-H3
- for linux-arm-kernel@lists.infradead.org; Fri, 21 Jun 2019 09:11:30 +0000
+ id 1heFZz-00075F-5R
+ for linux-arm-kernel@lists.infradead.org; Fri, 21 Jun 2019 09:11:32 +0000
 Received: from reginn.horms.nl (watermunt.horms.nl [80.127.179.77])
- by kirsty.vergenet.net (Postfix) with ESMTPA id B323D25AEE7;
+ by kirsty.vergenet.net (Postfix) with ESMTPA id C12A025AEEC;
  Fri, 21 Jun 2019 19:11:20 +1000 (AEST)
 Received: by reginn.horms.nl (Postfix, from userid 7100)
- id B5BEF940954; Fri, 21 Jun 2019 11:11:18 +0200 (CEST)
+ id C006B940396; Fri, 21 Jun 2019 11:11:18 +0200 (CEST)
 From: Simon Horman <horms+renesas@verge.net.au>
 To: linux-renesas-soc@vger.kernel.org
-Subject: [PATCH 1/9] dt-bindings: arm: renesas: Add HopeRun RZ/G2[M] boards
-Date: Fri, 21 Jun 2019 11:11:08 +0200
-Message-Id: <70ac79f5d1ef95e61b174e95192b3555a4caef2f.1561107729.git.horms+renesas@verge.net.au>
+Subject: [PATCH 2/9] dt-bindings: Add vendor prefix for HopeRun
+Date: Fri, 21 Jun 2019 11:11:09 +0200
+Message-Id: <9d79b2f1aed4909988ecd8b370c7919856639699.1561107729.git.horms+renesas@verge.net.au>
 X-Mailer: git-send-email 2.11.0
 In-Reply-To: <cover.1561107729.git.horms+renesas@verge.net.au>
 References: <cover.1561107729.git.horms+renesas@verge.net.au>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190621_021128_866668_B492B599 
-X-CRM114-Status: UNSURE (   9.72  )
+X-CRM114-CacheID: sfid-20190621_021131_382476_7757FE16 
+X-CRM114-Status: UNSURE (   9.12  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.0 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -75,47 +75,32 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Fabrizio Castro <fabrizio.castro@bp.renesas.com>
 
-This patch adds board HiHope RZ/G2M (the main board, powered by
-the R8A774A1) and board HiHope RZ/G2 EX (the expansion board
-that sits on top of the HiHope RZ/G2M). Both boards are made
-by Jiangsu HopeRun Software Co., Ltd. (a.k.a. HopeRun).
+Add "Jiangsu HopeRun Software Co., Ltd." to the list of devicetree
+vendor prefixes as "hoperun".
 
-Useful links:
-http://hihope.org/product/detail/rzg2
-https://item.taobao.com/item.htm?spm=a2oq0.12575281.0.0.6bcf1debQpzkRS&ft=t&id=592177498472
-http://www.hoperun.com/Cn/news/id/379
-
-We already know that the HiHope RZ/G2 EX will also sit on the
-HiHope RZ/G2N, even though the HiHope RZ/G2N doesn't exist just
-yet.
+Website: http://www.hoperun.com/en
 
 Signed-off-by: Fabrizio Castro <fabrizio.castro@bp.renesas.com>
 Reviewed-by: Chris Paterson <Chris.Paterson2@renesas.com>
 Reviewed-by: Rob Herring <robh@kernel.org>
 Signed-off-by: Simon Horman <horms+renesas@verge.net.au>
 ---
- Documentation/devicetree/bindings/arm/renesas.yaml | 8 ++++++++
- 1 file changed, 8 insertions(+)
+ Documentation/devicetree/bindings/vendor-prefixes.yaml | 2 ++
+ 1 file changed, 2 insertions(+)
 
-diff --git a/Documentation/devicetree/bindings/arm/renesas.yaml b/Documentation/devicetree/bindings/arm/renesas.yaml
-index 19f379863d50..08c923f8c257 100644
---- a/Documentation/devicetree/bindings/arm/renesas.yaml
-+++ b/Documentation/devicetree/bindings/arm/renesas.yaml
-@@ -106,6 +106,14 @@ properties:
- 
-       - description: RZ/G2M (R8A774A1)
-         items:
-+          - enum:
-+              - hoperun,hihope-rzg2m # HopeRun HiHope RZ/G2M platform
-+          - const: renesas,r8a774a1
-+
-+      - items:
-+          - enum:
-+              - hoperun,hihope-rzg2-ex # HopeRun expansion board for HiHope RZ/G2 platforms
-+          - const: hoperun,hihope-rzg2m
-           - const: renesas,r8a774a1
- 
-       - description: RZ/G2E (R8A774C0)
+diff --git a/Documentation/devicetree/bindings/vendor-prefixes.yaml b/Documentation/devicetree/bindings/vendor-prefixes.yaml
+index 33a65a45e319..83ca4816a78b 100644
+--- a/Documentation/devicetree/bindings/vendor-prefixes.yaml
++++ b/Documentation/devicetree/bindings/vendor-prefixes.yaml
+@@ -371,6 +371,8 @@ patternProperties:
+     description: Holt Integrated Circuits, Inc.
+   "^honeywell,.*":
+     description: Honeywell
++  "^hoperun,.*":
++    description: Jiangsu HopeRun Software Co., Ltd.
+   "^hp,.*":
+     description: Hewlett Packard
+   "^holtek,.*":
 -- 
 2.11.0
 
