@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1359F4E3B2
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 21 Jun 2019 11:37:50 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9B4594E499
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 21 Jun 2019 11:50:34 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,35 +11,36 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=OlOHp8x1UdRX+DXigpEK5OK0bDmqvOvZc/ccuZUxzDk=; b=qFGQCKAjw7ZYXwzLun4C+8L+WU
-	j2OdciXUYb3ZdXleE9gR79hN9gstV7PQl6YTT+NeIVoh209Wll+ma+LufFhAQKO38rusOFykdVmlI
-	Bhkngb8r2SmTovPUYEovwAmrz7iq2Uv2VPcGr1xkCmU958dimZFABCrFkLXaEk9xxC673DTucQ5We
-	wMyXPfNNyHkiTLJ7h23IFu/Ar8dwjJbUj2/x+WzbeFfynaSYOVbJUfCOUneIAQJqB0p7g85eG0ZoW
-	K7JAqf+26Pb0jThHRT0Gg8WWFiO82VqNJmwKYd0U44mC+Hc0qZFiWvMOg7gqdl1iuhCA6zPhz41v3
-	BYIAN7MQ==;
+	bh=Yw25CNqWi6PpCUeq7WC+B0NY8ZtkSg8NGWIrwF+SKsA=; b=Od9dDW1yTOHp9olYFSkP3G3W0j
+	hZsRCWC/2xe4GU4oRcqba4z1ZJho29d/jDev9AS44/sZbHDslBwMqa9Ktlqrj0E6U7GHSiyWuGHRo
+	r+O7QHQCD22/z4VKCMR2qvgpCGYDHBdAgFATh8jAE+JlgmMubfWjyJMfTqJbOz77kk7gQ351m1fq/
+	stbtmw9zsntP5esk/YWIPq29lR9mabgwjPJkD5hxVcLFPqq6XLzadILEIN2pp8YxF8klum+Cuo/Md
+	KWXkNdBjGEotnzydzRCt5sBMjITi2s9jB3t5g1jSjaPdUKcSi76c9XwtYnfecwiTMp51VxKX1azMr
+	5pctqv7g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1heFzQ-0005Og-ET; Fri, 21 Jun 2019 09:37:48 +0000
+	id 1heGBh-0000kE-EU; Fri, 21 Jun 2019 09:50:29 +0000
 Received: from kirsty.vergenet.net ([202.4.237.240])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1heFfn-0002tV-Kw
- for linux-arm-kernel@lists.infradead.org; Fri, 21 Jun 2019 09:17:33 +0000
+ id 1heFgu-0002tV-Pc
+ for linux-arm-kernel@lists.infradead.org; Fri, 21 Jun 2019 09:18:42 +0000
 Received: from reginn.horms.nl (watermunt.horms.nl [80.127.179.77])
- by kirsty.vergenet.net (Postfix) with ESMTPA id AFBF425BE64;
- Fri, 21 Jun 2019 19:16:37 +1000 (AEST)
+ by kirsty.vergenet.net (Postfix) with ESMTPA id 9949D25BED0;
+ Fri, 21 Jun 2019 19:16:43 +1000 (AEST)
 Received: by reginn.horms.nl (Postfix, from userid 7100)
- id 46B889430DA; Fri, 21 Jun 2019 11:16:34 +0200 (CEST)
+ id 5310D9430D4; Fri, 21 Jun 2019 11:16:34 +0200 (CEST)
 From: Simon Horman <horms+renesas@verge.net.au>
 To: linux-renesas-soc@vger.kernel.org
-Subject: [PATCH 28/53] arm64: dts: renesas: r8a774a1: Add operating points
-Date: Fri, 21 Jun 2019 11:16:06 +0200
-Message-Id: <800037e815b91d8c9ad67906d18129e79a2cfcba.1561107232.git.horms+renesas@verge.net.au>
+Subject: [PATCH 29/53] arm64: dts: renesas: Add HiHope RZ/G2M main board
+ support
+Date: Fri, 21 Jun 2019 11:16:07 +0200
+Message-Id: <438419ebd3f86221390e481f84db61fd7c5aa2b9.1561107232.git.horms+renesas@verge.net.au>
 X-Mailer: git-send-email 2.11.0
 In-Reply-To: <cover.1561107232.git.horms+renesas@verge.net.au>
 References: <cover.1561107232.git.horms+renesas@verge.net.au>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190621_021732_235735_1A371C0D 
-X-CRM114-Status: GOOD (  10.81  )
+X-CRM114-CacheID: sfid-20190621_021841_062546_A73CBF81 
+X-CRM114-Status: GOOD (  13.69  )
 X-Spam-Score: -2.0 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.0 points)
@@ -62,149 +63,118 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Fabrizio Castro <fabrizio.castro@bp.renesas.com>,
- Simon Horman <horms+renesas@verge.net.au>, Magnus Damm <magnus.damm@gmail.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: Simon Horman <horms+renesas@verge.net.au>,
+ Magnus Damm <magnus.damm@gmail.com>, linux-arm-kernel@lists.infradead.org,
+ Biju Das <biju.das@bp.renesas.com>
 MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Fabrizio Castro <fabrizio.castro@bp.renesas.com>
+From: Biju Das <biju.das@bp.renesas.com>
 
-The RZ/G2M (a.k.a. r8a774a1) comes with two clusters of
-processors, similarly to the r8a7796.
-The first cluster is made of A57s, the second cluster is
-made of A53s.
+Basic support for the HiHope RZ/G2M main board:
+  - Memory,
+  - Main crystal,
+  - Serial console
 
-The operating points for the cluster with the A57s are:
+This patch also includes a dtsi common to both HiHope RZ/G2M
+and RZ/G2N main boards.
 
- Frequency | Voltage
------------|---------
- 500 MHz   | 0.82V
- 1.0 GHz   | 0.82V
- 1.5 GHz   | 0.82V
-
-The operating points for the cluster with the A53s are:
-
- Frequency | Voltage
------------|---------
- 800 MHz   | 0.82V
- 1.0 GHz   | 0.82V
- 1.2 GHz   | 0.82V
-
-This patch adds the definitions for the operating points
-to the SoC specific DT.
-
-Signed-off-by: Fabrizio Castro <fabrizio.castro@bp.renesas.com>
+Signed-off-by: Biju Das <biju.das@bp.renesas.com>
 Reviewed-by: Chris Paterson <Chris.Paterson2@renesas.com>
+Reviewed-by: Geert Uytterhoeven <geert+renesas@glider.be>
 Signed-off-by: Simon Horman <horms+renesas@verge.net.au>
 ---
- arch/arm64/boot/dts/renesas/r8a774a1.dtsi | 48 +++++++++++++++++++++++++++++++
- 1 file changed, 48 insertions(+)
+ arch/arm64/boot/dts/renesas/Makefile               |  1 +
+ arch/arm64/boot/dts/renesas/hihope-common.dtsi     | 33 ++++++++++++++++++++++
+ .../boot/dts/renesas/r8a774a1-hihope-rzg2m.dts     | 26 +++++++++++++++++
+ 3 files changed, 60 insertions(+)
+ create mode 100644 arch/arm64/boot/dts/renesas/hihope-common.dtsi
+ create mode 100644 arch/arm64/boot/dts/renesas/r8a774a1-hihope-rzg2m.dts
 
-diff --git a/arch/arm64/boot/dts/renesas/r8a774a1.dtsi b/arch/arm64/boot/dts/renesas/r8a774a1.dtsi
-index c2d99f5aaf74..4b1332feaae5 100644
---- a/arch/arm64/boot/dts/renesas/r8a774a1.dtsi
-+++ b/arch/arm64/boot/dts/renesas/r8a774a1.dtsi
-@@ -56,6 +56,48 @@
- 		clock-frequency = <0>;
- 	};
- 
-+	cluster0_opp: opp_table0 {
-+		compatible = "operating-points-v2";
-+		opp-shared;
+diff --git a/arch/arm64/boot/dts/renesas/Makefile b/arch/arm64/boot/dts/renesas/Makefile
+index 6cde526547e4..aa33074b7360 100644
+--- a/arch/arm64/boot/dts/renesas/Makefile
++++ b/arch/arm64/boot/dts/renesas/Makefile
+@@ -1,4 +1,5 @@
+ # SPDX-License-Identifier: GPL-2.0
++dtb-$(CONFIG_ARCH_R8A774A1) += r8a774a1-hihope-rzg2m.dtb
+ dtb-$(CONFIG_ARCH_R8A774C0) += r8a774c0-cat874.dtb r8a774c0-ek874.dtb
+ dtb-$(CONFIG_ARCH_R8A7795) += r8a7795-salvator-x.dtb r8a7795-h3ulcb.dtb
+ dtb-$(CONFIG_ARCH_R8A7795) += r8a7795-h3ulcb-kf.dtb
+diff --git a/arch/arm64/boot/dts/renesas/hihope-common.dtsi b/arch/arm64/boot/dts/renesas/hihope-common.dtsi
+new file mode 100644
+index 000000000000..5baf5328124a
+--- /dev/null
++++ b/arch/arm64/boot/dts/renesas/hihope-common.dtsi
+@@ -0,0 +1,33 @@
++// SPDX-License-Identifier: GPL-2.0
++/*
++ * Device Tree Source for the HiHope RZ/G2[MN] main board common parts
++ *
++ * Copyright (C) 2019 Renesas Electronics Corp.
++ */
 +
-+		opp-500000000 {
-+			opp-hz = /bits/ 64 <500000000>;
-+			opp-microvolt = <820000>;
-+			clock-latency-ns = <300000>;
-+		};
-+		opp-1000000000 {
-+			opp-hz = /bits/ 64 <1000000000>;
-+			opp-microvolt = <820000>;
-+			clock-latency-ns = <300000>;
-+		};
-+		opp-1500000000 {
-+			opp-hz = /bits/ 64 <1500000000>;
-+			opp-microvolt = <820000>;
-+			clock-latency-ns = <300000>;
-+		};
++/ {
++	aliases {
++		serial0 = &scif2;
 +	};
 +
-+	cluster1_opp: opp_table1 {
-+		compatible = "operating-points-v2";
-+		opp-shared;
++	chosen {
++		bootargs = "ignore_loglevel";
++		stdout-path = "serial0:115200n8";
++	};
++};
 +
-+		opp-800000000 {
-+			opp-hz = /bits/ 64 <800000000>;
-+			opp-microvolt = <820000>;
-+			clock-latency-ns = <300000>;
-+		};
-+		opp-1000000000 {
-+			opp-hz = /bits/ 64 <1000000000>;
-+			opp-microvolt = <820000>;
-+			clock-latency-ns = <300000>;
-+		};
-+		opp-1200000000 {
-+			opp-hz = /bits/ 64 <1200000000>;
-+			opp-microvolt = <820000>;
-+			clock-latency-ns = <300000>;
-+		};
++&extal_clk {
++	clock-frequency = <16666666>;
++};
++
++&extalr_clk {
++	clock-frequency = <32768>;
++};
++
++&scif2 {
++	status = "okay";
++};
++
++&scif_clk {
++	clock-frequency = <14745600>;
++};
+diff --git a/arch/arm64/boot/dts/renesas/r8a774a1-hihope-rzg2m.dts b/arch/arm64/boot/dts/renesas/r8a774a1-hihope-rzg2m.dts
+new file mode 100644
+index 000000000000..93ca973c856c
+--- /dev/null
++++ b/arch/arm64/boot/dts/renesas/r8a774a1-hihope-rzg2m.dts
+@@ -0,0 +1,26 @@
++// SPDX-License-Identifier: GPL-2.0
++/*
++ * Device Tree Source for the HiHope RZ/G2M main board
++ *
++ * Copyright (C) 2019 Renesas Electronics Corp.
++ */
++
++/dts-v1/;
++#include "r8a774a1.dtsi"
++#include "hihope-common.dtsi"
++
++/ {
++	model = "HopeRun HiHope RZ/G2M main board based on r8a774a1";
++	compatible = "hoperun,hihope-rzg2m", "renesas,r8a774a1";
++
++	memory@48000000 {
++		device_type = "memory";
++		/* first 128MB is reserved for secure area. */
++		reg = <0x0 0x48000000 0x0 0x78000000>;
 +	};
 +
- 	cpus {
- 		#address-cells = <1>;
- 		#size-cells = <0>;
-@@ -68,6 +110,7 @@
- 			next-level-cache = <&L2_CA57>;
- 			enable-method = "psci";
- 			clocks = <&cpg CPG_CORE R8A774A1_CLK_Z>;
-+			operating-points-v2 = <&cluster0_opp>;
- 		};
- 
- 		a57_1: cpu@1 {
-@@ -78,6 +121,7 @@
- 			next-level-cache = <&L2_CA57>;
- 			enable-method = "psci";
- 			clocks = <&cpg CPG_CORE R8A774A1_CLK_Z>;
-+			operating-points-v2 = <&cluster0_opp>;
- 		};
- 
- 		a53_0: cpu@100 {
-@@ -88,6 +132,7 @@
- 			next-level-cache = <&L2_CA53>;
- 			enable-method = "psci";
- 			clocks = <&cpg CPG_CORE R8A774A1_CLK_Z2>;
-+			operating-points-v2 = <&cluster1_opp>;
- 		};
- 
- 		a53_1: cpu@101 {
-@@ -98,6 +143,7 @@
- 			next-level-cache = <&L2_CA53>;
- 			enable-method = "psci";
- 			clocks = <&cpg CPG_CORE R8A774A1_CLK_Z2>;
-+			operating-points-v2 = <&cluster1_opp>;
- 		};
- 
- 		a53_2: cpu@102 {
-@@ -108,6 +154,7 @@
- 			next-level-cache = <&L2_CA53>;
- 			enable-method = "psci";
- 			clocks = <&cpg CPG_CORE R8A774A1_CLK_Z2>;
-+			operating-points-v2 = <&cluster1_opp>;
- 		};
- 
- 		a53_3: cpu@103 {
-@@ -118,6 +165,7 @@
- 			next-level-cache = <&L2_CA53>;
- 			enable-method = "psci";
- 			clocks = <&cpg CPG_CORE R8A774A1_CLK_Z2>;
-+			operating-points-v2 = <&cluster1_opp>;
- 		};
- 
- 		L2_CA57: cache-controller-0 {
++	memory@600000000 {
++		device_type = "memory";
++		reg = <0x6 0x00000000 0x0 0x80000000>;
++	};
++};
 -- 
 2.11.0
 
