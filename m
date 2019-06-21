@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8B0554EE69
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 21 Jun 2019 20:04:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 77A474EE6A
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 21 Jun 2019 20:04:18 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,31 +11,31 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=n+L0/meajOZI/D4jFU36tCMsvTuUhRwZ8lfPkjKHRpw=; b=T08xkkDeQlevWQERllMdqQnCUx
-	pUgj09qxY7PdxFIrub0Ibdbf9W/eeI/zIVMPwLBUMPz3LJ5yuGLL7qXQnls+fhvfqJlMJej4jSrsv
-	EcGcYex3N54DzvyNeT/vvpYI0KnqQ60jjrtBqvg3uC9if3pFRmgnECOwz2Q9rs/t+VOFswCt+fHUV
-	HXlnqkSqzQ9wizy9RTUBcPp0ZmkB+K8dkuPNPqfcaVd6XLlmlbrKHr5uzjetD/VDwfSzlD8zGNC1y
-	Eqi4SpfEkC/9h4DRD+tH6gq2Ee2pXx0i9r7kYP2cqRutiWUpU4sLJvuPFiEiTuh/eci9RQACVjP/D
-	n1faQr6A==;
+	bh=pr5ve+fRxlRR4AFG8Xrqk6YOL0R0ZOyh9tpC6R32E40=; b=clcf8Wn1QorzzwFZC2QTmR2JNY
+	gd6dNviUyTlGKKB1/F1XyOqrwON625eK7bS6x9jkmltyi2b4j/IXjKvXamWC8TdOomANnfv+BC7vM
+	UEa55OHcvwru7BHpGJ0wlLTIImv2eNvgsFwtdhjFXpkPKsjQGHfwT0pJfdHMAvP0Sw2hF97rYryHO
+	c+nMmBhpkMc3XEXRODc1/NytKhJhKlJ63zdTNJ6lTrzICiw943815JQNgwT7N6KFB/rZWm5SV0A07
+	jwixHjvzdu2xNXIB3/0a+wHTKZRbtENPzbz+Q3slpyWrV/gw6gQ74JdcWxlF2bLwfl2/3b5aj3FBP
+	f/I66CTQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1heNtH-0005wy-OA; Fri, 21 Jun 2019 18:03:59 +0000
+	id 1heNtY-0006Cq-PU; Fri, 21 Jun 2019 18:04:16 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1heNs0-0004zJ-Q9
- for linux-arm-kernel@lists.infradead.org; Fri, 21 Jun 2019 18:02:42 +0000
+ id 1heNs4-000534-9x
+ for linux-arm-kernel@lists.infradead.org; Fri, 21 Jun 2019 18:02:45 +0000
 Received: from localhost.localdomain (unknown [194.230.155.186])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id EAFA52070B;
- Fri, 21 Jun 2019 18:02:36 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id B0C83208CA;
+ Fri, 21 Jun 2019 18:02:40 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1561140160;
- bh=2wnQ8i3NYcQ9J1JMVR+A7WUBA/fd4Zl0nFfrCWSgsPo=;
+ s=default; t=1561140164;
+ bh=CvZyrR2uu/YrajtA2B0IDF6FEcw3v8UHZ82/kiQbr2k=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=rC/7v63lLOEnueDwA6BIwyHF2CGHH4Xu6ZOriH+Nfe+TYod7v9wZvqult8LveTxRJ
- P/+ss3fHbO5LMEPTjSILKDobSo4jMXs4nZZweANshxNR5ewcGw2MXPRXL3Hb+s8JRQ
- e6p0aUtcQTSN7w9RkB7xeTMzjnsrgJh4HBorIUbg=
+ b=MMYQJpVwThGB2qR3YcKu3wtgKDfIpNhOZreotpvyjY6NGtKg8fVYBvWki03yKB/s5
+ CH6RVUyWWapjxY4NzY7xrCxwvznhl2JfH5vr8ulmJw5vOx3lR979vjgPRYFDKtLwv0
+ d6OkAh86L82WADkWL0ykWeVbUheZAn0sYu+CqNfk=
 From: Krzysztof Kozlowski <krzk@kernel.org>
 To: Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
  Kukjin Kim <kgene@kernel.org>, Krzysztof Kozlowski <krzk@kernel.org>,
@@ -46,16 +46,15 @@ To: Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
  Arnd Bergmann <arnd@arndb.de>, devicetree@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org, linux-samsung-soc@vger.kernel.org,
  linux-kernel@vger.kernel.org
-Subject: [PATCH v2 5/7] ARM: multi_v7_defconfig: Enable Panfrost and LIMA
- drivers
-Date: Fri, 21 Jun 2019 20:02:06 +0200
-Message-Id: <20190621180208.25361-5-krzk@kernel.org>
+Subject: [PATCH v2 6/7] ARM: exynos_defconfig: Enable Panfrost and LIMA drivers
+Date: Fri, 21 Jun 2019 20:02:07 +0200
+Message-Id: <20190621180208.25361-6-krzk@kernel.org>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20190621180208.25361-1-krzk@kernel.org>
 References: <20190621180208.25361-1-krzk@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190621_110240_977049_CB3F0ADE 
-X-CRM114-Status: GOOD (  13.46  )
+X-CRM114-CacheID: sfid-20190621_110244_637573_5CF41873 
+X-CRM114-Status: GOOD (  13.28  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -97,35 +96,32 @@ Exynos chipsets come with Mali GPUs:
 1. Mali 400 (Exynos3250, Exynos4210, Exynos4412),
 2. Mali T628 (Exynos542x).
 
-As Mali GPU is quite popular among ARM vendors, other platforms will
-benefit as well.
-
 Signed-off-by: Krzysztof Kozlowski <krzk@kernel.org>
 ---
- arch/arm/configs/multi_v7_defconfig | 3 ++-
+ arch/arm/configs/exynos_defconfig | 3 ++-
  1 file changed, 2 insertions(+), 1 deletion(-)
 
-diff --git a/arch/arm/configs/multi_v7_defconfig b/arch/arm/configs/multi_v7_defconfig
-index 6b748f214eae..268161911fc9 100644
---- a/arch/arm/configs/multi_v7_defconfig
-+++ b/arch/arm/configs/multi_v7_defconfig
-@@ -656,6 +656,8 @@ CONFIG_DRM_VC4=m
- CONFIG_DRM_ETNAVIV=m
- CONFIG_DRM_MXSFB=m
- CONFIG_DRM_PL111=m
-+CONFIG_DRM_LIMA=m
-+CONFIG_DRM_PANFROST=m
- CONFIG_FB_EFI=y
- CONFIG_FB_WM8505=y
- CONFIG_FB_SH_MOBILE_LCDC=y
-@@ -940,7 +942,6 @@ CONFIG_ARCH_TEGRA_2x_SOC=y
- CONFIG_ARCH_TEGRA_3x_SOC=y
- CONFIG_ARCH_TEGRA_114_SOC=y
- CONFIG_ARCH_TEGRA_124_SOC=y
+diff --git a/arch/arm/configs/exynos_defconfig b/arch/arm/configs/exynos_defconfig
+index 8d08eed99aa1..f140532ddca7 100644
+--- a/arch/arm/configs/exynos_defconfig
++++ b/arch/arm/configs/exynos_defconfig
+@@ -212,6 +212,8 @@ CONFIG_DRM_NXP_PTN3460=y
+ CONFIG_DRM_PARADE_PS8622=y
+ CONFIG_DRM_SII9234=y
+ CONFIG_DRM_TOSHIBA_TC358764=y
++CONFIG_DRM_LIMA=y
++CONFIG_DRM_PANFROST=y
+ CONFIG_LCD_CLASS_DEVICE=y
+ CONFIG_LCD_PLATFORM=y
+ CONFIG_BACKLIGHT_PWM=y
+@@ -284,7 +286,6 @@ CONFIG_CROS_EC_SPI=y
+ CONFIG_COMMON_CLK_MAX77686=y
+ CONFIG_COMMON_CLK_S2MPS11=y
+ CONFIG_EXYNOS_IOMMU=y
 -CONFIG_PM_DEVFREQ=y
- CONFIG_ARM_TEGRA_DEVFREQ=m
- CONFIG_TI_AEMIF=y
- CONFIG_IIO=y
+ CONFIG_DEVFREQ_GOV_PERFORMANCE=y
+ CONFIG_DEVFREQ_GOV_POWERSAVE=y
+ CONFIG_DEVFREQ_GOV_USERSPACE=y
 -- 
 2.17.1
 
