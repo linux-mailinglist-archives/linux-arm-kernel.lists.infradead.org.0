@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 94B654E463
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 21 Jun 2019 11:43:05 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1E9744E467
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 21 Jun 2019 11:44:10 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,36 +11,35 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=mdr8z6LK9BWnUOqPr+hNOZ26BWaXcmy+Fpe6xF0mUZs=; b=RQgPr1AwoLoqdkFiHnDWhxAXHQ
-	J6xgYT0NfkdOjjbjq2Ts8khe2XwelrOmslCr4XZgyKDeqhMyLDsO3Y2raOP/aTA8giK6YTiKxjSP/
-	hzT1QoaGEvsZGDxgiFft4hehc3aLYAlhfiE//8kd3TigywA6qsPNfc7ubwbQ7MmDCJIvGSEeITI/H
-	9QAK+/ZaXKI3JU5xIQVo828YV/ZpPAWnl6iuMkGqFw9FWq3aE67cDxWqun9NBVIoqKW0aTXEtALoi
-	Tcp9P81Jbh8Ryf6NcF/vjOXWrhfrau6PNTR+ktEFtkYlv/4KOJUtM/LyTfgr1d/S1579zYFLE88tL
-	flJrAQMw==;
+	bh=VuW91ZvwgBJTmyQSHEDud6sq1cRaqpMvwLluXxWJJYE=; b=dPAJIGYyCVWEh72Ea8lxXQuPSw
+	lUNCuV2s8YS6u+87xGi8ps4YCi++yxd0MUKXeOwX4OTe0m67f7bVtpRJKo/cBbOElvicxR8MXaRON
+	jRSnHzINe8jWPPYKVYYdUUR3YMvI0FlDNQy1g6C25mZV4a+BzGtcyCOIiL5JSjQ10mdlg/DiFSjJB
+	mBbAEihQjSxU/CTWQQ31MMICOUUdGsB0nVyeL3b4GDIDcDc1Zsbdo9ju/bkTN/TIjjrs64nJDSOma
+	Spzr8Zja8hSR8jht0RUpBdxtU7+5BJQjo0gJbKgQrknBb356sMzPFulN8/TdUbeT3XsTFNzecNvXe
+	rdtpw96g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1heG4T-0002HV-01; Fri, 21 Jun 2019 09:43:01 +0000
+	id 1heG5X-00035Z-Uy; Fri, 21 Jun 2019 09:44:07 +0000
 Received: from kirsty.vergenet.net ([202.4.237.240])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1heFgI-0002tV-V8
- for linux-arm-kernel@lists.infradead.org; Fri, 21 Jun 2019 09:18:04 +0000
+ id 1heFgP-0002tV-Ll
+ for linux-arm-kernel@lists.infradead.org; Fri, 21 Jun 2019 09:18:11 +0000
 Received: from reginn.horms.nl (watermunt.horms.nl [80.127.179.77])
- by kirsty.vergenet.net (Postfix) with ESMTPA id C26F025BE94;
- Fri, 21 Jun 2019 19:16:38 +1000 (AEST)
+ by kirsty.vergenet.net (Postfix) with ESMTPA id 5C7B825BEA9;
+ Fri, 21 Jun 2019 19:16:39 +1000 (AEST)
 Received: by reginn.horms.nl (Postfix, from userid 7100)
- id 9065B9434EB; Fri, 21 Jun 2019 11:16:35 +0200 (CEST)
+ id A6A2694351D; Fri, 21 Jun 2019 11:16:35 +0200 (CEST)
 From: Simon Horman <horms+renesas@verge.net.au>
 To: linux-renesas-soc@vger.kernel.org
-Subject: [PATCH 45/53] arm64: dts: renesas: hihope-common: Enable USB3.0
-Date: Fri, 21 Jun 2019 11:16:23 +0200
-Message-Id: <3ba27637d8019d5bfea4ca25302b0d08bb6a1736.1561107232.git.horms+renesas@verge.net.au>
+Subject: [PATCH 46/53] arm64: dts: renesas: hihope-common: Add LEDs support
+Date: Fri, 21 Jun 2019 11:16:24 +0200
+Message-Id: <1485b6353a9940c5ac5d3f90880207ac95b4e350.1561107232.git.horms+renesas@verge.net.au>
 X-Mailer: git-send-email 2.11.0
 In-Reply-To: <cover.1561107232.git.horms+renesas@verge.net.au>
 References: <cover.1561107232.git.horms+renesas@verge.net.au>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190621_021803_392487_4EC8C7EF 
-X-CRM114-Status: UNSURE (   9.20  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190621_021810_077217_E3D49DD9 
+X-CRM114-Status: GOOD (  10.22  )
 X-Spam-Score: -2.0 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.0 points)
@@ -63,70 +62,62 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Simon Horman <horms+renesas@verge.net.au>,
- Magnus Damm <magnus.damm@gmail.com>, linux-arm-kernel@lists.infradead.org,
- Biju Das <biju.das@bp.renesas.com>
+Cc: Fabrizio Castro <fabrizio.castro@bp.renesas.com>,
+ Simon Horman <horms+renesas@verge.net.au>, Magnus Damm <magnus.damm@gmail.com>,
+ linux-arm-kernel@lists.infradead.org
 MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Biju Das <biju.das@bp.renesas.com>
+From: Fabrizio Castro <fabrizio.castro@bp.renesas.com>
 
-This patch enables USB3.0 host/peripheral device node for the HiHope
-RZ/G2M board.
+This patch adds LEDs support to the HiHope RZ/G2[MN] Main Board
+common device tree.
 
-Signed-off-by: Biju Das <biju.das@bp.renesas.com>
+Signed-off-by: Fabrizio Castro <fabrizio.castro@bp.renesas.com>
+Reviewed-by: Simon Horman <horms+renesas@verge.net.au>
 Signed-off-by: Simon Horman <horms+renesas@verge.net.au>
 ---
- arch/arm64/boot/dts/renesas/hihope-common.dtsi | 29 ++++++++++++++++++++++++++
- 1 file changed, 29 insertions(+)
+ arch/arm64/boot/dts/renesas/hihope-common.dtsi | 24 ++++++++++++++++++++++++
+ 1 file changed, 24 insertions(+)
 
 diff --git a/arch/arm64/boot/dts/renesas/hihope-common.dtsi b/arch/arm64/boot/dts/renesas/hihope-common.dtsi
-index 18763ca553f7..6a45c49c24dc 100644
+index 6a45c49c24dc..625c3aaead14 100644
 --- a/arch/arm64/boot/dts/renesas/hihope-common.dtsi
 +++ b/arch/arm64/boot/dts/renesas/hihope-common.dtsi
-@@ -150,6 +150,11 @@
- 			bias-pull-up;
- 		};
+@@ -17,6 +17,30 @@
+ 		stdout-path = "serial0:115200n8";
  	};
+ 
++	leds {
++		compatible = "gpio-leds";
 +
-+	usb30_pins: usb30 {
-+		groups = "usb30";
-+		function = "usb30";
++		led0 {
++			gpios = <&gpio6 11 GPIO_ACTIVE_HIGH>;
++			label = "LED0";
++		};
++
++		led1 {
++			gpios = <&gpio6 12 GPIO_ACTIVE_HIGH>;
++			label = "LED1";
++		};
++
++		led2 {
++			gpios = <&gpio6 13 GPIO_ACTIVE_HIGH>;
++			label = "LED2";
++		};
++
++		led3 {
++			gpios = <&gpio0  0 GPIO_ACTIVE_HIGH>;
++			label = "LED3";
++		};
 +	};
- };
- 
- &rwdt {
-@@ -213,3 +218,27 @@
- 
- 	status = "okay";
- };
 +
-+&usb3_peri0 {
-+	phys = <&usb3_phy0>;
-+	phy-names = "usb";
-+
-+	companion = <&xhci0>;
-+
-+	status = "okay";
-+};
-+
-+&usb3_phy0 {
-+	status = "okay";
-+};
-+
-+&usb3s0_clk {
-+	clock-frequency = <100000000>;
-+};
-+
-+&xhci0 {
-+	pinctrl-0 = <&usb30_pins>;
-+	pinctrl-names = "default";
-+
-+	status = "okay";
-+};
+ 	reg_1p8v: regulator0 {
+ 		compatible = "regulator-fixed";
+ 		regulator-name = "fixed-1.8V";
 -- 
 2.11.0
 
