@@ -2,58 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 690444E67B
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 21 Jun 2019 12:53:54 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 65C1E4E67A
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 21 Jun 2019 12:53:33 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=cpXz43w+H4NrtldSwxhKxjw126nTq0hcjnc/eOZpKFQ=; b=toh0OnRz7aC+2X
-	ayoi1tL3BNUGupyoaEvwAAqZoyzrLboc5dsG0QVirbd9LkfQH2fuevEeHUHRFkE50yYgHjXWJSDeU
-	uP/BjSlqXGVO75Gptln9Q4szk55OtfI4ZIolInqd57fZeQoqsBJPZsa9lUMtAWab4XD2ZLnTDPb8c
-	9Sysca7mDGi1kSYd1BXw2lNDl+popwdffpX64CUZyZGw3ilWgYSr/EY6s6KmW8OQP+k/iJwU8/RBm
-	S6p0o1ap/hqm6ckeFyFsckVMdXpbM2pgLzlRXA2Lg1YkFDArEbjKV7Hw7Zai+3bJAfavJKayNsTRZ
-	TrXhwEC1hG+7HaqCtpeg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=wG4cOCIvtDI/u8a0DYAqq2jlNAD5++LnnAII5sKGyiU=; b=pJXabY8PIkkmU7
+	l6/lVae/5aLSDLvbXbvGfd6iZlH53kzbDpIH9I4dQyjQWo+mSQsgzOfDaQA0TCuaMk6DnKYBZcdNI
+	6VBqq9vbk+HYPCbopjmYpihUYxhbC/ElCD3aVe2OpYvCj6uML0pO41gvwBVVhSPK0OxFB03RN4eta
+	GMM6xRlnWCEhicQ9CNjFBS4psntPkAchhWdrhQZaCyNtHT19Xoj57dzPzRfVQQGb7sPwPaX2VPADu
+	Kodyw9sUza0esintfUfDcKBKrcddfhbtmDVxfaVXg2AUYzmGmvSmd+IHccPZneU5zcAPDv2397Dg1
+	BU2hCz+q6ALzFcXgF67A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1heHB2-00074b-Qw; Fri, 21 Jun 2019 10:53:52 +0000
+	id 1heHAg-0006s7-LG; Fri, 21 Jun 2019 10:53:30 +0000
 Received: from smtp121.iad3b.emailsrvr.com ([146.20.161.121])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1heHAU-0006qW-J5; Fri, 21 Jun 2019 10:53:20 +0000
+ id 1heHAU-0006qX-J7; Fri, 21 Jun 2019 10:53:20 +0000
 Received: from smtp24.relay.iad3b.emailsrvr.com (localhost [127.0.0.1])
- by smtp24.relay.iad3b.emailsrvr.com (SMTP Server) with ESMTP id 6C74C40101;
- Fri, 21 Jun 2019 06:53:15 -0400 (EDT)
+ by smtp24.relay.iad3b.emailsrvr.com (SMTP Server) with ESMTP id E12D44009E;
+ Fri, 21 Jun 2019 06:53:16 -0400 (EDT)
 X-SMTPDoctor-Processed: csmtpprox beta
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=g001.emailsrvr.com;
- s=20190322-9u7zjiwi; t=1561114395;
- bh=sq67qECzciHcysXU6QW4+AWhIlJ5q5EgWY3WTdVjfdo=;
+ s=20190322-9u7zjiwi; t=1561114396;
+ bh=lV2bfiKsrsCHwVyTTU5OqwVm0y5wd6eyI9O1PfwzpQA=;
  h=From:To:Subject:Date:From;
- b=PCGhT/8YcmoSxQHcv8TDBQPom2zk1MjPN4ntOyz6oAddHcFpEKPrlqWrCmYMxUf4h
- Ygtd8yJYQOLTswQM+XCri4NPVYX+3BvkJdV5Z+xkFr1F7OiljV6UE+Ssvh5LyTB8Fh
- elVX1O6NSl8g8OSqFiFsJASRpPHdJilaOZaniyUw=
+ b=u6vzPBTngG+KiVZ/YIymkvv49EWY1A7zcjitAMkROEQnPul9o6NX6OJpiSWdfbXpK
+ nm0enxQJIhwSCAMmuG3jYBz7P6Z2Xj8qy7A4bz/21zoJgPKlrZox6QneigzGBG3Dpk
+ CDgxdwFEiIHmUcdQjVFE5NIcRKtmOp4S33R1nKi4=
 X-Auth-ID: mcdermj@xenotropic.com
 Received: by smtp24.relay.iad3b.emailsrvr.com (Authenticated sender:
- mcdermj-AT-xenotropic.com) with ESMTPSA id 2414540127; 
- Fri, 21 Jun 2019 06:53:14 -0400 (EDT)
+ mcdermj-AT-xenotropic.com) with ESMTPSA id 9C1D440127; 
+ Fri, 21 Jun 2019 06:53:15 -0400 (EDT)
 X-Sender-Id: mcdermj@xenotropic.com
 Received: from commune.xenotropic.com (c-73-96-52-102.hsd1.or.comcast.net
  [73.96.52.102]) (using TLSv1.2 with cipher DHE-RSA-AES128-GCM-SHA256)
- by 0.0.0.0:25 (trex/5.7.12); Fri, 21 Jun 2019 06:53:15 -0400
+ by 0.0.0.0:25 (trex/5.7.12); Fri, 21 Jun 2019 06:53:16 -0400
 From: Annaliese McDermond <nh6z@nh6z.net>
 To: eric@anholt.net, wahrenst@gmx.net, f.fainelli@gmail.com, wsa@the-dreams.de,
  swarren@wwwdotorg.org, linux-i2c@vger.kernel.org,
  linux-rpi-kernel@lists.infradead.org, linux-arm-kernel@lists.infradead.org
-Subject: [PATCH v2 0/2] i2c: bcm2835: Fixes for clock changes in probe function
-Date: Fri, 21 Jun 2019 03:52:48 -0700
-Message-Id: <20190621105250.19858-1-nh6z@nh6z.net>
+Subject: [PATCH v2 1/2] i2c: bcm2835: Move IRQ request after clock code in
+ probe
+Date: Fri, 21 Jun 2019 03:52:49 -0700
+Message-Id: <20190621105250.19858-2-nh6z@nh6z.net>
 X-Mailer: git-send-email 2.19.1
+In-Reply-To: <20190621105250.19858-1-nh6z@nh6z.net>
+References: <20190621105250.19858-1-nh6z@nh6z.net>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190621_035318_748288_79766D93 
-X-CRM114-Status: UNSURE (   9.53  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190621_035318_749902_E1B85577 
+X-CRM114-Status: GOOD (  11.15  )
 X-Spam-Score: 1.0 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (1.0 points)
@@ -83,30 +85,65 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-An issue was reported in [1] and [2] that the latest version of the i2c
-driver was not properly loading.  After analysis it was determined that
-the new clock code was failiing because the i2c driver was trying to
-load before the bcm2835-clk driver when not loaded as a module. This is
-fixed by actually attempting to grab a reference to the clock and failing
-out with a EPROBE_DEFER if it's not there.  This gives the other drivers
-an opportunity to load.
+If any of the clock code in the probe fails and returns, the IRQ
+will not be freed.  Moving the IRQ request to last allows it to
+be freed on any errors further up in the probe function.  devm_
+calls can apparently not be used because there are some potential
+race conditions that will arise.
 
-This series also fixes a related bug where the clock setup code in the
-probe function could cause an issue where the IRQ would be requested
-by the driver and never freed in case of some clock setup failure.  The
-patch moves this IRQ code to the end of the probe function where it will
-not cause this issue.
+Fixes: bebff81fb8b9 ("i2c: bcm2835: Model Divider in CCF")
 
-[1] - https://www.raspberrypi.org/forums/viewtopic.php?f=44&t=242856
-[2] - https://archlinuxarm.org/forum/viewtopic.php?f=23&t=13719
+Signed-off-by: Annaliese McDermond <nh6z@nh6z.net>
+---
+ drivers/i2c/busses/i2c-bcm2835.c | 28 ++++++++++++++--------------
+ 1 file changed, 14 insertions(+), 14 deletions(-)
 
-Annaliese McDermond (2):
-  i2c: bcm2835: Move IRQ request after clock code in probe
-  i2c: bcm2835: Ensure clock exists when probing
-
- drivers/i2c/busses/i2c-bcm2835.c | 42 +++++++++++++++++++-------------
- 1 file changed, 25 insertions(+), 17 deletions(-)
-
+diff --git a/drivers/i2c/busses/i2c-bcm2835.c b/drivers/i2c/busses/i2c-bcm2835.c
+index 108d2ae4632c..27b2f204c693 100644
+--- a/drivers/i2c/busses/i2c-bcm2835.c
++++ b/drivers/i2c/busses/i2c-bcm2835.c
+@@ -521,20 +521,6 @@ static int bcm2835_i2c_probe(struct platform_device *pdev)
+ 	if (IS_ERR(i2c_dev->regs))
+ 		return PTR_ERR(i2c_dev->regs);
+ 
+-	irq = platform_get_resource(pdev, IORESOURCE_IRQ, 0);
+-	if (!irq) {
+-		dev_err(&pdev->dev, "No IRQ resource\n");
+-		return -ENODEV;
+-	}
+-	i2c_dev->irq = irq->start;
+-
+-	ret = request_irq(i2c_dev->irq, bcm2835_i2c_isr, IRQF_SHARED,
+-			  dev_name(&pdev->dev), i2c_dev);
+-	if (ret) {
+-		dev_err(&pdev->dev, "Could not request IRQ\n");
+-		return -ENODEV;
+-	}
+-
+ 	mclk_name = of_clk_get_parent_name(pdev->dev.of_node, 0);
+ 
+ 	bus_clk = bcm2835_i2c_register_div(&pdev->dev, mclk_name, i2c_dev);
+@@ -564,6 +550,20 @@ static int bcm2835_i2c_probe(struct platform_device *pdev)
+ 		return ret;
+ 	}
+ 
++	irq = platform_get_resource(pdev, IORESOURCE_IRQ, 0);
++	if (!irq) {
++		dev_err(&pdev->dev, "No IRQ resource\n");
++		return -ENODEV;
++	}
++	i2c_dev->irq = irq->start;
++
++	ret = request_irq(i2c_dev->irq, bcm2835_i2c_isr, IRQF_SHARED,
++			  dev_name(&pdev->dev), i2c_dev);
++	if (ret) {
++		dev_err(&pdev->dev, "Could not request IRQ\n");
++		return -ENODEV;
++	}
++
+ 	adap = &i2c_dev->adapter;
+ 	i2c_set_adapdata(adap, i2c_dev);
+ 	adap->owner = THIS_MODULE;
 -- 
 2.19.1
 
