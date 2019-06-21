@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1D0BA4E38F
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 21 Jun 2019 11:29:14 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 24DFD4E391
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 21 Jun 2019 11:29:52 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,35 +11,36 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=9Raa0UcHYH8xtNogeFoYOhnn6R31RRQwqIwHpFaLj8g=; b=YqFP9p7zXtPGCv9FCmB8ZqSvRs
-	moIGOyiUt5hcwI1vt2Z9Njr4HUxRYOLtdpANb2eDBoBq7yQAVV+pibthPu1u+0V7YcntMgjwWvME8
-	H04QcC9d4DhPXcDxoXr+VAVAhc4sB+ZmSOeqDry1fpg/jlXaqlVyLPqZa3z/2prgWplUEuSK371fa
-	K1yOaNIOhBZrxXdXlVCaSOm/8xQgndvwxU5c+Aj+p61r2IQetjICZzlJc9mavPYdbmtsPWmSR92L1
-	r1h21d5jcskLBW48dUrc0eTOKDnAsBt1t7D21OdcoAtFSH1t1801iOo0HLCP77zGZ4rWVYmOHfbOJ
-	mccYJs4A==;
+	bh=Cdlo6ea7L6RLTm2JjStReo9CR1LGgFZz4/fFaUYZ/5c=; b=nIaJDa6pV0UpgK37ezIx3qlOE2
+	6pXTD8rmPkqsnJJpnnuiNnggZZi+WE9+/ufOV0nT8CKbHvzqjWKCMYmissnGaXrc5K2K8BwGhq1PH
+	OQbmXL+UPx/KUdg01MIZmPacPREXlf7q5PFeqY/b9acSZeMkxLKSWWPICnUJwzmq4MzYGGT+oasPm
+	REQqb1m8RRn1e8+3jxbEx49TthmoBofmv3z2gJC0TMun2KHpPl/WKPnj5sKbrf1A3g9KVdK7aGreD
+	+cXfx0oyxSblzYZtQIfJTy5YklceQvkZk5c7esJCSIt4m/nAVa9O/IMZN12PoQ+bE4P5HF1HEhDFg
+	wRki0iZA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1heFr5-0005j0-PX; Fri, 21 Jun 2019 09:29:11 +0000
+	id 1heFrb-0005yu-6p; Fri, 21 Jun 2019 09:29:43 +0000
 Received: from kirsty.vergenet.net ([202.4.237.240])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1heFex-0002tV-3S
- for linux-arm-kernel@lists.infradead.org; Fri, 21 Jun 2019 09:16:40 +0000
+ id 1heFey-0002tV-S6
+ for linux-arm-kernel@lists.infradead.org; Fri, 21 Jun 2019 09:16:42 +0000
 Received: from reginn.horms.nl (watermunt.horms.nl [80.127.179.77])
- by kirsty.vergenet.net (Postfix) with ESMTPA id 5FA0125B7B1;
+ by kirsty.vergenet.net (Postfix) with ESMTPA id 6E96E25B7E0;
  Fri, 21 Jun 2019 19:16:34 +1000 (AEST)
 Received: by reginn.horms.nl (Postfix, from userid 7100)
- id 5C574940A59; Fri, 21 Jun 2019 11:16:32 +0200 (CEST)
+ id 75523940ACC; Fri, 21 Jun 2019 11:16:32 +0200 (CEST)
 From: Simon Horman <horms+renesas@verge.net.au>
 To: linux-renesas-soc@vger.kernel.org
-Subject: [PATCH 03/53] arm64: dts: renesas: r8a774a1: Add FDP1 instance
-Date: Fri, 21 Jun 2019 11:15:41 +0200
-Message-Id: <466f475f63d1889c192c751f53ab1030e4dd829c.1561107232.git.horms+renesas@verge.net.au>
+Subject: [PATCH 04/53] arm64: dts: renesas: r8a774a1: Tie SYS-DMAC to
+ IPMMU-DS0/1
+Date: Fri, 21 Jun 2019 11:15:42 +0200
+Message-Id: <c3362a74d977f2509b5523afddc9887b3831279f.1561107232.git.horms+renesas@verge.net.au>
 X-Mailer: git-send-email 2.11.0
 In-Reply-To: <cover.1561107232.git.horms+renesas@verge.net.au>
 References: <cover.1561107232.git.horms+renesas@verge.net.au>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190621_021639_298079_0D4DB52B 
-X-CRM114-Status: UNSURE (   9.71  )
+X-CRM114-CacheID: sfid-20190621_021641_056882_CC93B3AD 
+X-CRM114-Status: UNSURE (   8.13  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.0 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -74,36 +75,67 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Biju Das <biju.das@bp.renesas.com>
 
-The r8a774a1 has a single FDP1 instance similar to r8a7796.
+Hook up r8a774a1 DMAC nodes to the IPMMUs. In particular SYS-DMAC0
+gets tied to IPMMU-DS0, and SYS-DMAC1 and SYS-DMAC2 get tied to IPMMU-DS1.
+
+Based on work for the r8a7796 by Magnus Damm.
 
 Signed-off-by: Biju Das <biju.das@bp.renesas.com>
 Reviewed-by: Geert Uytterhoeven <geert+renesas@glider.be>
 Signed-off-by: Simon Horman <horms+renesas@verge.net.au>
 ---
- arch/arm64/boot/dts/renesas/r8a774a1.dtsi | 10 ++++++++++
- 1 file changed, 10 insertions(+)
+ arch/arm64/boot/dts/renesas/r8a774a1.dtsi | 24 ++++++++++++++++++++++++
+ 1 file changed, 24 insertions(+)
 
 diff --git a/arch/arm64/boot/dts/renesas/r8a774a1.dtsi b/arch/arm64/boot/dts/renesas/r8a774a1.dtsi
-index e7759ba46a66..3156bfbb5e9c 100644
+index 3156bfbb5e9c..92b5e92427af 100644
 --- a/arch/arm64/boot/dts/renesas/r8a774a1.dtsi
 +++ b/arch/arm64/boot/dts/renesas/r8a774a1.dtsi
-@@ -1825,6 +1825,16 @@
- 			resets = <&cpg 408>;
+@@ -686,6 +686,14 @@
+ 			resets = <&cpg 219>;
+ 			#dma-cells = <1>;
+ 			dma-channels = <16>;
++			iommus = <&ipmmu_ds0 0>, <&ipmmu_ds0 1>,
++			       <&ipmmu_ds0 2>, <&ipmmu_ds0 3>,
++			       <&ipmmu_ds0 4>, <&ipmmu_ds0 5>,
++			       <&ipmmu_ds0 6>, <&ipmmu_ds0 7>,
++			       <&ipmmu_ds0 8>, <&ipmmu_ds0 9>,
++			       <&ipmmu_ds0 10>, <&ipmmu_ds0 11>,
++			       <&ipmmu_ds0 12>, <&ipmmu_ds0 13>,
++			       <&ipmmu_ds0 14>, <&ipmmu_ds0 15>;
  		};
  
-+		fdp1@fe940000 {
-+			compatible = "renesas,fdp1";
-+			reg = <0 0xfe940000 0 0x2400>;
-+			interrupts = <GIC_SPI 262 IRQ_TYPE_LEVEL_HIGH>;
-+			clocks = <&cpg CPG_MOD 119>;
-+			power-domains = <&sysc R8A774A1_PD_A3VC>;
-+			resets = <&cpg 119>;
-+			renesas,fcp = <&fcpf0>;
-+		};
-+
- 		fcpf0: fcp@fe950000 {
- 			compatible = "renesas,fcpf";
- 			reg = <0 0xfe950000 0 0x200>;
+ 		dmac1: dma-controller@e7300000 {
+@@ -720,6 +728,14 @@
+ 			resets = <&cpg 218>;
+ 			#dma-cells = <1>;
+ 			dma-channels = <16>;
++			iommus = <&ipmmu_ds1 0>, <&ipmmu_ds1 1>,
++			       <&ipmmu_ds1 2>, <&ipmmu_ds1 3>,
++			       <&ipmmu_ds1 4>, <&ipmmu_ds1 5>,
++			       <&ipmmu_ds1 6>, <&ipmmu_ds1 7>,
++			       <&ipmmu_ds1 8>, <&ipmmu_ds1 9>,
++			       <&ipmmu_ds1 10>, <&ipmmu_ds1 11>,
++			       <&ipmmu_ds1 12>, <&ipmmu_ds1 13>,
++			       <&ipmmu_ds1 14>, <&ipmmu_ds1 15>;
+ 		};
+ 
+ 		dmac2: dma-controller@e7310000 {
+@@ -754,6 +770,14 @@
+ 			resets = <&cpg 217>;
+ 			#dma-cells = <1>;
+ 			dma-channels = <16>;
++			iommus = <&ipmmu_ds1 16>, <&ipmmu_ds1 17>,
++			       <&ipmmu_ds1 18>, <&ipmmu_ds1 19>,
++			       <&ipmmu_ds1 20>, <&ipmmu_ds1 21>,
++			       <&ipmmu_ds1 22>, <&ipmmu_ds1 23>,
++			       <&ipmmu_ds1 24>, <&ipmmu_ds1 25>,
++			       <&ipmmu_ds1 26>, <&ipmmu_ds1 27>,
++			       <&ipmmu_ds1 28>, <&ipmmu_ds1 29>,
++			       <&ipmmu_ds1 30>, <&ipmmu_ds1 31>;
+ 		};
+ 
+ 		ipmmu_ds0: mmu@e6740000 {
 -- 
 2.11.0
 
