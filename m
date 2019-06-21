@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9FA8A4E46C
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 21 Jun 2019 11:44:37 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 868614E490
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 21 Jun 2019 11:48:37 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,36 +11,37 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=fI1e+oqqKL5+TAfvjOXm/dzUie38JfDRHrJKAmQaxrM=; b=Xz4/Iw2qGaSWKZLgpwYPZ+Ej0P
-	LSfoR5bdj+JYiVj1Fs1Lq3sYil+TmiEN+lPPCTnsz3/2wk6Laa0WCIZbH0mXi2cxb77n0WxOINmJp
-	uPaCxsGypAeYvr7UAn47XmyW0FSkRHjOsOs6p5l+bRRWzLitaEwPLf6VV1fT+DL+Al9DpirxPpAdv
-	AH9KLb/V2a0geB6THOwKu82VbslCYNehFe6hT8r0e1l9NhTAcJeE2jFUmJDd89xY91W+4lwFup9Z6
-	Vf5eQUuPUYj4a7XmyyIE+fWPQTY9jtCmBIXDNe/Cuke2+n8yTTBRdgwOtjMDK3FsxpctZBY9LP7+n
-	NyXKnXZA==;
+	bh=LKQTHnhAOF/4GpvIq7w7As/49Jme46EtOG2IBUuZ0us=; b=DyWtH/Ju3ln2aP0LzWn0b81zTp
+	wCuVWzYm9iZbJu+ncM8fSWCLDQmjNh4wxLVovnsjjVGdtxJn+hi++/BmPheNCvorxGg37+lzCHFkN
+	vZx7AlbUYgfyIUt6S+T/f++t8OOyJPn0+dMEXnGqd3poXnwnASIJnzxlS58hoxAuvO9934GzXHtpY
+	gpZI1ptcu4bzxTjJzdDgGcFoAycDRua4BR89LZXa+oYQa5WQnBeXpg9ZKQg8Uc7/UELvSoXhvSPot
+	M4zNaBvq0tu5K2TG+sXmdrewmh9Hrs9upf77IG2xJGE4RwgiL7sMHnmQKhdTSdFdYuTRJcswOAK2r
+	jmL8/mLg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1heG5z-0003Kc-OA; Fri, 21 Jun 2019 09:44:35 +0000
+	id 1heG9o-0006Uq-N8; Fri, 21 Jun 2019 09:48:32 +0000
 Received: from kirsty.vergenet.net ([202.4.237.240])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1heFgR-0002tV-Lv
- for linux-arm-kernel@lists.infradead.org; Fri, 21 Jun 2019 09:18:13 +0000
+ id 1heFgh-0002tV-BT
+ for linux-arm-kernel@lists.infradead.org; Fri, 21 Jun 2019 09:18:28 +0000
 Received: from reginn.horms.nl (watermunt.horms.nl [80.127.179.77])
- by kirsty.vergenet.net (Postfix) with ESMTPA id 5E8B025BEAC;
+ by kirsty.vergenet.net (Postfix) with ESMTPA id 7D54525BEB4;
  Fri, 21 Jun 2019 19:16:39 +1000 (AEST)
 Received: by reginn.horms.nl (Postfix, from userid 7100)
- id E00DF94352A; Fri, 21 Jun 2019 11:16:35 +0200 (CEST)
+ id 078CE943539; Fri, 21 Jun 2019 11:16:35 +0200 (CEST)
 From: Simon Horman <horms+renesas@verge.net.au>
 To: linux-renesas-soc@vger.kernel.org
-Subject: [PATCH 49/53] arm64: dts: renesas: r8a774a1: Create thermal zone to
- support IPA
-Date: Fri, 21 Jun 2019 11:16:27 +0200
-Message-Id: <06a928fb5805d1bb80a87c557ac487b916adc50d.1561107232.git.horms+renesas@verge.net.au>
+Subject: [PATCH 50/53] arm64: dts: renesas: r8a774a1: Add dynamic power
+ coefficient
+Date: Fri, 21 Jun 2019 11:16:28 +0200
+Message-Id: <9e35f49cf7037c3fe3fe4d51aec6d492741cddbe.1561107232.git.horms+renesas@verge.net.au>
 X-Mailer: git-send-email 2.11.0
 In-Reply-To: <cover.1561107232.git.horms+renesas@verge.net.au>
 References: <cover.1561107232.git.horms+renesas@verge.net.au>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190621_021812_235652_2A07938A 
-X-CRM114-Status: GOOD (  10.65  )
+X-CRM114-CacheID: sfid-20190621_021827_638830_47B7E371 
+X-CRM114-Status: UNSURE (   8.86  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.0 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.0 points)
@@ -74,103 +75,36 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Biju Das <biju.das@bp.renesas.com>
 
-Setup a thermal zone driven by SoC temperature sensor. Create passive trip
-points and bind them to CPUFreq cooling device that supports power
-extension.
+Describe the dynamic power coefficient of A57 and A53 CPUs.
 
-Based on work by Dien Pham <dien.pham.ry@renesas.com> for r8a7796 SoC.
+Based on work by Gaku Inami <gaku.inami.xw@bp.renesas.com> and others.
 
 Signed-off-by: Biju Das <biju.das@bp.renesas.com>
 Signed-off-by: Simon Horman <horms+renesas@verge.net.au>
 ---
- arch/arm64/boot/dts/renesas/r8a774a1.dtsi | 25 ++++++++++++++++++++++++-
- 1 file changed, 24 insertions(+), 1 deletion(-)
+ arch/arm64/boot/dts/renesas/r8a774a1.dtsi | 2 ++
+ 1 file changed, 2 insertions(+)
 
 diff --git a/arch/arm64/boot/dts/renesas/r8a774a1.dtsi b/arch/arm64/boot/dts/renesas/r8a774a1.dtsi
-index 21fb7919d3bb..7d5e19c8cbd5 100644
+index 7d5e19c8cbd5..b437edc04712 100644
 --- a/arch/arm64/boot/dts/renesas/r8a774a1.dtsi
 +++ b/arch/arm64/boot/dts/renesas/r8a774a1.dtsi
-@@ -138,6 +138,7 @@
+@@ -135,6 +135,7 @@
+ 			power-domains = <&sysc R8A774A1_PD_CA57_CPU0>;
+ 			next-level-cache = <&L2_CA57>;
+ 			enable-method = "psci";
++			dynamic-power-coefficient = <854>;
  			clocks = <&cpg CPG_CORE R8A774A1_CLK_Z>;
  			operating-points-v2 = <&cluster0_opp>;
  			capacity-dmips-mhz = <1024>;
-+			#cooling-cells = <2>;
- 		};
- 
- 		a57_1: cpu@1 {
-@@ -150,6 +151,7 @@
- 			clocks = <&cpg CPG_CORE R8A774A1_CLK_Z>;
- 			operating-points-v2 = <&cluster0_opp>;
- 			capacity-dmips-mhz = <1024>;
-+			#cooling-cells = <2>;
- 		};
- 
- 		a53_0: cpu@100 {
-@@ -159,6 +161,7 @@
- 			power-domains = <&sysc R8A774A1_PD_CA53_CPU0>;
+@@ -162,6 +163,7 @@
  			next-level-cache = <&L2_CA53>;
  			enable-method = "psci";
-+			#cooling-cells = <2>;
+ 			#cooling-cells = <2>;
++			dynamic-power-coefficient = <277>;
  			clocks = <&cpg CPG_CORE R8A774A1_CLK_Z2>;
  			operating-points-v2 = <&cluster1_opp>;
  			capacity-dmips-mhz = <560>;
-@@ -2437,6 +2440,7 @@
- 			polling-delay-passive = <250>;
- 			polling-delay = <1000>;
- 			thermal-sensors = <&tsc 0>;
-+			sustainable-power = <3874>;
- 
- 			trips {
- 				sensor1_crit: sensor1-crit {
-@@ -2451,6 +2455,7 @@
- 			polling-delay-passive = <250>;
- 			polling-delay = <1000>;
- 			thermal-sensors = <&tsc 1>;
-+			sustainable-power = <3874>;
- 
- 			trips {
- 				sensor2_crit: sensor2-crit {
-@@ -2459,21 +2464,39 @@
- 					type = "critical";
- 				};
- 			};
--
- 		};
- 
- 		sensor_thermal3: sensor-thermal3 {
- 			polling-delay-passive = <250>;
- 			polling-delay = <1000>;
- 			thermal-sensors = <&tsc 2>;
-+			sustainable-power = <3874>;
- 
- 			trips {
-+				target: trip-point1 {
-+					temperature = <100000>;
-+					hysteresis = <1000>;
-+					type = "passive";
-+				};
-+
- 				sensor3_crit: sensor3-crit {
- 					temperature = <120000>;
- 					hysteresis = <1000>;
- 					type = "critical";
- 				};
- 			};
-+			cooling-maps {
-+				map0 {
-+					trip = <&target>;
-+					cooling-device = <&a57_0 0 2>;
-+					contribution = <1024>;
-+				};
-+				map1 {
-+					trip = <&target>;
-+					cooling-device = <&a53_0 0 2>;
-+					contribution = <1024>;
-+				};
-+			};
- 		};
- 	};
- 
 -- 
 2.11.0
 
