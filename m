@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7CB554E2F7
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 21 Jun 2019 11:15:44 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 28EB74E2F1
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 21 Jun 2019 11:15:19 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,35 +11,37 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=+YfjAEztr5PTM/Rpf6xEzVX3Az8mS8D7jdAPC+MqEp4=; b=mmVVyMulKhYjnP//o6/Bedtphx
-	qZPPaUurwIIO5jAIxrvpkebUK0KAfAJcCTh/wZ7nnl/h5VFkwFQW/+beRG8v+06rOhK4D4BbYqytP
-	280EDMBUrWIpkVjsKKf/mr4h0/NXjtMZBT9XRZ83nXHmJDZ1eggAE9G89Z22T11+WbpllAi2MDaiw
-	upSKPYkElj5bZR5HH1HpSrAfZCvyVbOeyuP0bRfhd2KgQt5OcT3sF3UywP825VbsMw2sGq+w6hD7V
-	oQC9qhwzgD0MbxNqDzu+OYTDxK3Ixqkl9HA1J3Z1gNfaK6RLNEc9AMCPbkDqKMkAYiNthxOi/Qddx
-	uG+NfNzw==;
+	bh=9I2wq2iPRUhkB84v2sJuwx4NpGH4sGwZkhgdcPqBjUU=; b=U1kBt8XUYxCmg5qRB5nUyeN/Tk
+	99/3YcCLbzVL8Vd7BoIv6SRu0eoXHZ2OUEpPgMlclNEmX3M/K25dEVNvZDgzp489Cv8o2ENZ9vfz4
+	2kL1svRb44ypTbMZoAJlUXHWwpA4UaKyeylSD4MLuZf2OjVEEzaLFfFhdo5xvHvEkHoxHDnYAW8uP
+	n5Zp3YTRn3advnUvyA0Z06hjX68sKK7kHTxOV57nFbgZid4PLBEu6D9tFZkAsr4WnWHn35lyOJLvS
+	1uzBkUouYc06CwH40RNrLAS/Z1XU8L8t3QkYGGgF9WO2kqm9Lu3rE0ZhVcA5jHazMqVkGG/xqiZ0c
+	jG1xwA0A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1heFdz-0002IA-4g; Fri, 21 Jun 2019 09:15:39 +0000
+	id 1heFdd-0000fh-41; Fri, 21 Jun 2019 09:15:17 +0000
 Received: from kirsty.vergenet.net ([202.4.237.240])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1heFaD-00075F-10
- for linux-arm-kernel@lists.infradead.org; Fri, 21 Jun 2019 09:11:46 +0000
+ id 1heFaA-00075F-Ku
+ for linux-arm-kernel@lists.infradead.org; Fri, 21 Jun 2019 09:11:44 +0000
 Received: from reginn.horms.nl (watermunt.horms.nl [80.127.179.77])
- by kirsty.vergenet.net (Postfix) with ESMTPA id 1D76C25BE36;
+ by kirsty.vergenet.net (Postfix) with ESMTPA id 181CD25BE34;
  Fri, 21 Jun 2019 19:11:23 +1000 (AEST)
 Received: by reginn.horms.nl (Postfix, from userid 7100)
- id 2B0D4940C81; Fri, 21 Jun 2019 11:11:19 +0200 (CEST)
+ id 43C43940DEA; Fri, 21 Jun 2019 11:11:19 +0200 (CEST)
 From: Simon Horman <horms+renesas@verge.net.au>
 To: linux-renesas-soc@vger.kernel.org
-Subject: [PATCH 7/9] dt-bindings: can: rcar_canfd: document r8a774c0 support
-Date: Fri, 21 Jun 2019 11:11:14 +0200
-Message-Id: <c908fd08692b8b4d87524762218652df6922386d.1561107729.git.horms+renesas@verge.net.au>
+Subject: [PATCH 8/9] dt-bindings: timer: renesas,
+ cmt: Document r8a779{5|65|90} CMT support
+Date: Fri, 21 Jun 2019 11:11:15 +0200
+Message-Id: <ac97aea7df7b97ff56d50861404c7a8491b03d87.1561107729.git.horms+renesas@verge.net.au>
 X-Mailer: git-send-email 2.11.0
 In-Reply-To: <cover.1561107729.git.horms+renesas@verge.net.au>
 References: <cover.1561107729.git.horms+renesas@verge.net.au>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190621_021145_296312_96BB2100 
-X-CRM114-Status: GOOD (  11.64  )
+X-CRM114-CacheID: sfid-20190621_021142_978017_41FDB3C1 
+X-CRM114-Status: UNSURE (   8.29  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.0 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.0 points)
@@ -62,7 +64,7 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Fabrizio Castro <fabrizio.castro@bp.renesas.com>,
+Cc: Cao Van Dong <cv-dong@jinso.co.jp>,
  Daniel Lezcano <daniel.lezcano@linaro.org>,
  Magnus Damm <magnus.damm@gmail.com>, Simon Horman <horms+renesas@verge.net.au>,
  "David S . Miller" <davem@davemloft.net>, linux-arm-kernel@lists.infradead.org
@@ -72,53 +74,42 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Fabrizio Castro <fabrizio.castro@bp.renesas.com>
+From: Cao Van Dong <cv-dong@jinso.co.jp>
 
-Document the support for rcar_canfd on R8A774C0 SoC devices.
+Document SoC specific bindings for R-Car H3/M3-N/E3 SoCs.
 
-Signed-off-by: Fabrizio Castro <fabrizio.castro@bp.renesas.com>
-Reviewed-by: Chris Paterson <Chris.Paterson2@renesas.com>
+Signed-off-by: Cao Van Dong <cv-dong@jinso.co.jp>
 Reviewed-by: Rob Herring <robh@kernel.org>
-Acked-by: David S. Miller <davem@davemloft.net>
+Reviewed-by: Geert Uytterhoeven <geert+renesas@glider.be>
+Acked-by: Daniel Lezcano <daniel.lezcano@linaro.org>
 Signed-off-by: Simon Horman <horms+renesas@verge.net.au>
 ---
- Documentation/devicetree/bindings/net/can/rcar_canfd.txt | 16 +++++++++-------
- 1 file changed, 9 insertions(+), 7 deletions(-)
+ Documentation/devicetree/bindings/timer/renesas,cmt.txt | 6 ++++++
+ 1 file changed, 6 insertions(+)
 
-diff --git a/Documentation/devicetree/bindings/net/can/rcar_canfd.txt b/Documentation/devicetree/bindings/net/can/rcar_canfd.txt
-index 41049fed5872..32f051f6d338 100644
---- a/Documentation/devicetree/bindings/net/can/rcar_canfd.txt
-+++ b/Documentation/devicetree/bindings/net/can/rcar_canfd.txt
-@@ -3,7 +3,8 @@ Renesas R-Car CAN FD controller Device Tree Bindings
+diff --git a/Documentation/devicetree/bindings/timer/renesas,cmt.txt b/Documentation/devicetree/bindings/timer/renesas,cmt.txt
+index c0594450e9ef..c5220bcd852b 100644
+--- a/Documentation/devicetree/bindings/timer/renesas,cmt.txt
++++ b/Documentation/devicetree/bindings/timer/renesas,cmt.txt
+@@ -42,12 +42,18 @@ Required Properties:
+     - "renesas,r8a7793-cmt1" for the 48-bit CMT1 device included in r8a7793.
+     - "renesas,r8a7794-cmt0" for the 32-bit CMT0 device included in r8a7794.
+     - "renesas,r8a7794-cmt1" for the 48-bit CMT1 device included in r8a7794.
++    - "renesas,r8a7795-cmt0" for the 32-bit CMT0 device included in r8a7795.
++    - "renesas,r8a7795-cmt1" for the 48-bit CMT1 device included in r8a7795.
+     - "renesas,r8a7796-cmt0" for the 32-bit CMT0 device included in r8a7796.
+     - "renesas,r8a7796-cmt1" for the 48-bit CMT1 device included in r8a7796.
++    - "renesas,r8a77965-cmt0" for the 32-bit CMT0 device included in r8a77965.
++    - "renesas,r8a77965-cmt1" for the 48-bit CMT1 device included in r8a77965.
+     - "renesas,r8a77970-cmt0" for the 32-bit CMT0 device included in r8a77970.
+     - "renesas,r8a77970-cmt1" for the 48-bit CMT1 device included in r8a77970.
+     - "renesas,r8a77980-cmt0" for the 32-bit CMT0 device included in r8a77980.
+     - "renesas,r8a77980-cmt1" for the 48-bit CMT1 device included in r8a77980.
++    - "renesas,r8a77990-cmt0" for the 32-bit CMT0 device included in r8a77990.
++    - "renesas,r8a77990-cmt1" for the 48-bit CMT1 device included in r8a77990.
  
- Required properties:
- - compatible: Must contain one or more of the following:
--  - "renesas,rcar-gen3-canfd" for R-Car Gen3 compatible controller.
-+  - "renesas,rcar-gen3-canfd" for R-Car Gen3 and RZ/G2 compatible controllers.
-+  - "renesas,r8a774c0-canfd" for R8A774C0 (RZ/G2E) compatible controller.
-   - "renesas,r8a7795-canfd" for R8A7795 (R-Car H3) compatible controller.
-   - "renesas,r8a7796-canfd" for R8A7796 (R-Car M3-W) compatible controller.
-   - "renesas,r8a77965-canfd" for R8A77965 (R-Car M3-N) compatible controller.
-@@ -28,12 +29,13 @@ The name of the child nodes are "channel0" and "channel1" respectively. Each
- child node supports the "status" property only, which is used to
- enable/disable the respective channel.
- 
--Required properties for "renesas,r8a7795-canfd", "renesas,r8a7796-canfd",
--"renesas,r8a77965-canfd" and "renesas,r8a77990-canfd" compatible:
--In R8A7795, R8A7796, R8A77965 and R8A77990 SoCs, canfd clock is a div6 clock
--and can be used by both CAN and CAN FD controller at the same time. It needs
--to be scaled to maximum frequency if any of these controllers use it. This is
--done using the below properties:
-+Required properties for "renesas,r8a774c0-canfd", "renesas,r8a7795-canfd",
-+"renesas,r8a7796-canfd", "renesas,r8a77965-canfd", and "renesas,r8a77990-canfd"
-+compatible:
-+In R8A774C0, R8A7795, R8A7796, R8A77965, and R8A77990 SoCs, canfd clock is a
-+div6 clock and can be used by both CAN and CAN FD controller at the same time.
-+It needs to be scaled to maximum frequency if any of these controllers use it.
-+This is done using the below properties:
- 
- - assigned-clocks: phandle of canfd clock.
- - assigned-clock-rates: maximum frequency of this clock.
+     - "renesas,rcar-gen2-cmt0" for 32-bit CMT0 devices included in R-Car Gen2
+ 		and RZ/G1.
 -- 
 2.11.0
 
