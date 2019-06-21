@@ -2,96 +2,73 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B75C44E5EF
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 21 Jun 2019 12:31:54 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 909A94E613
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 21 Jun 2019 12:34:19 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=M5/X1IMO8QfGV2UdtPbbAj/U7mXsD1cqmC5Vyb1pVQc=; b=Kc1TDkE2cCOPU0T3opKfognF5
-	YrIl+6u0OEqgaW9o69IfTszITAqrT/qB4Iw2JIL5G2PspJ68W/Zq+NmCkiMB6eAPAqG9glg9bGPD5
-	A7OJvWf8QrELXfQC3DOoM0URlFnlW2Q8qcGUUqHHgmU4JG20nxXdjl1ugio4M8KNw8I+V6TVhDwzD
-	P1goqlwCBk7ivazO5zBqqm/jVflJ1UQYJ8ZJ1tIYZyoga8LPNEJu1QoZYGRbEBdMT1ZJjib5FOfOr
-	HGKNhNL617JVseb7Mz8b8r20lY+h7MkYRIWIQfTKZIwF17A0rkDMaVob/uM4xXbrgYbmB4nuqZmR7
-	5ICKSef9g==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=05Fi1phfd0Jg1qJg04eAdO/hqC8kKCrZGNmXvE0LHxo=; b=RTIccPh+jC5Dtz
+	eCwBqAvVE4oAltaHplyIalf6zEc0ZbGzJEmxul39HSVRV5yN3Bsnla9bV3RY7Xw5evpygK9ttoxMm
+	xLr2qNZ2P7vfH+C48oZlTYBzCDhIuJq2z3dEpnYAo0hjL8QAM5QOLdkQRDzZ0REPVOiCNOMYklms3
+	CVYyfshso7lhgJUzi2KutJ3K7xJB9661lELHkwQLO33Es7Y8vVmOkxSHc9xC57qXrhS+WxYUpsuHV
+	OsesYNLlMP6C8rlKDmnZVPqGnAzjzNK8VpTlOLRs4cfhdXytzRa4RA05+b5l35/aJozS45y1rzX40
+	kVLVOSLDrNR11g9ATkQg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1heGpk-00086Z-Er; Fri, 21 Jun 2019 10:31:52 +0000
-Received: from smtp.codeaurora.org ([198.145.29.96])
+	id 1heGs5-00017I-Ec; Fri, 21 Jun 2019 10:34:17 +0000
+Received: from lucky1.263xmail.com ([211.157.147.130])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1heGpS-000854-P6
- for linux-arm-kernel@lists.infradead.org; Fri, 21 Jun 2019 10:31:36 +0000
-Received: by smtp.codeaurora.org (Postfix, from userid 1000)
- id 3B1E260A97; Fri, 21 Jun 2019 10:31:32 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=codeaurora.org;
- s=default; t=1561113093;
- bh=83saP5agyCLRXJFITOAnGb07C5NHBmkBg6UjpUVttgY=;
- h=Subject:To:Cc:References:From:Date:In-Reply-To:From;
- b=XK3OmDbiGqcrSHWfrgYDgdZeDeTuKusvrdvOqek9PdlK9A+QPGfIW/dfyqG1zeWol
- 6+/dwqOnMXgnLcJUwInGC4TOKQI1qUS/kUvbq0q7YHinqrBkWphjckGyXJPzPs3J1Q
- GsE6SQzsXDJFTq0cQWyfYE0wBBAnDgGaF5hmQT0c=
-X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
- pdx-caf-mail.web.codeaurora.org
-X-Spam-Level: 
-X-Spam-Status: No, score=-2.7 required=2.0 tests=ALL_TRUSTED,BAYES_00,
- DKIM_INVALID,DKIM_SIGNED,SPF_NONE autolearn=no autolearn_force=no
- version=3.4.0
-Received: from [10.79.136.27]
- (blr-bdr-fw-01_globalnat_allzones-outside.qualcomm.com [103.229.18.19])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- (Authenticated sender: saiprakash.ranjan@smtp.codeaurora.org)
- by smtp.codeaurora.org (Postfix) with ESMTPSA id 17BFC60A97;
- Fri, 21 Jun 2019 10:31:25 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=codeaurora.org;
- s=default; t=1561113091;
- bh=83saP5agyCLRXJFITOAnGb07C5NHBmkBg6UjpUVttgY=;
- h=Subject:To:Cc:References:From:Date:In-Reply-To:From;
- b=axloNVl89+yy34mWOOy+ow2feDwzdwCo3bq5O8XkPeD0V00sUYEE7FdmvD27I7bKy
- GrWorYJktFH3kn4yPv4yaKpZPt4GJ/pqGJu8ZKIiqbJQ3t8Hsc7Tm6Y2ZLR2vUGyxR
- 1GJ+wioETU4/lFl9rSksdTUGen1YpAYl49oBLyto=
-DMARC-Filter: OpenDMARC Filter v1.3.2 smtp.codeaurora.org 17BFC60A97
-Authentication-Results: pdx-caf-mail.web.codeaurora.org;
- dmarc=none (p=none dis=none) header.from=codeaurora.org
-Authentication-Results: pdx-caf-mail.web.codeaurora.org; spf=none
- smtp.mailfrom=saiprakash.ranjan@codeaurora.org
-Subject: Re: [PATCHv2 2/2] coresight: Abort probe if cpus are not available
-To: Suzuki K Poulose <suzuki.poulose@arm.com>, mathieu.poirier@linaro.org,
- leo.yan@linaro.org, robh+dt@kernel.org, devicetree@vger.kernel.org,
- alexander.shishkin@linux.intel.com, david.brown@linaro.org,
- mark.rutland@arm.com
-References: <cover.1561054498.git.saiprakash.ranjan@codeaurora.org>
- <65050e4cb2b0433f3cb9b1ca0bf6ec49d0751086.1561054498.git.saiprakash.ranjan@codeaurora.org>
- <d6e6a32e-4e15-5bc8-42f9-6cfe72fc0910@arm.com>
-From: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>
-Message-ID: <01e1758f-7574-7735-f129-f072f93aeca6@codeaurora.org>
-Date: Fri, 21 Jun 2019 16:01:23 +0530
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:60.0) Gecko/20100101
- Thunderbird/60.7.1
+ id 1heGr1-0000Ns-RO; Fri, 21 Jun 2019 10:33:14 +0000
+Received: from tony.xie?rock-chips.com (unknown [192.168.167.192])
+ by lucky1.263xmail.com (Postfix) with ESMTP id 234D66046C;
+ Fri, 21 Jun 2019 18:33:03 +0800 (CST)
+X-263anti-spam: KSV:0;BIG:0;
+X-MAIL-GRAY: 1
+X-MAIL-DELIVERY: 0
+X-KSVirus-check: 0
+X-ADDR-CHECKED4: 1
+X-ABS-CHECKED: 1
+X-SKE-CHECKED: 1
+X-ANTISPAM-LEVEL: 2
+Received: from localhost.localdomain (unknown [58.22.7.114])
+ by smtp.263.net (postfix) whith ESMTP id
+ P14435T140356020590336S1561113180405822_; 
+ Fri, 21 Jun 2019 18:33:02 +0800 (CST)
+X-IP-DOMAINF: 1
+X-UNIQUE-TAG: <04c7dc5c9d5192e128507c3f7918b156>
+X-RL-SENDER: tony.xie@rock-chips.com
+X-SENDER: xxx@rock-chips.com
+X-LOGIN-NAME: tony.xie@rock-chips.com
+X-FST-TO: heiko@sntech.de
+X-SENDER-IP: 58.22.7.114
+X-ATTACHMENT-NUM: 0
+X-DNS-TYPE: 0
+From: Tony Xie <tony.xie@rock-chips.com>
+To: heiko@sntech.de
+Subject: [PATCH v10 0/6] support a new type of PMIC,
+ including two chips(rk817 and rk809)
+Date: Fri, 21 Jun 2019 06:32:52 -0400
+Message-Id: <20190621103258.8154-1-tony.xie@rock-chips.com>
+X-Mailer: git-send-email 2.17.1
 MIME-Version: 1.0
-In-Reply-To: <d6e6a32e-4e15-5bc8-42f9-6cfe72fc0910@arm.com>
-Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190621_033134_979002_9EFE5DD0 
-X-CRM114-Status: GOOD (  19.95  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20190621_033312_243444_E753B46B 
+X-CRM114-Status: UNSURE (   8.62  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 1.5 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (1.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.145.29.96 listed in list.dnswl.org]
+ 1.5 RCVD_IN_SORBS_WEB      RBL: SORBS: sender is an abusable web server
+ [58.22.7.114 listed in dnsbl.sorbs.net]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [211.157.147.130 listed in list.dnswl.org]
+ 0.0 T_SPF_PERMERROR        SPF: test of record failed (permerror)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -103,61 +80,94 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: rnayak@codeaurora.org, linux-arm-msm@vger.kernel.org,
- linux-kernel@vger.kernel.org, sibis@codeaurora.org,
- vivek.gautam@codeaurora.org, linux-arm-kernel@lists.infradead.org
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Cc: mark.rutland@arm.com, a.zummo@towertech.it, alexandre.belloni@bootlin.com,
+ tony.xie@rock-chips.com, huangtao@rock-chips.com, devicetree@vger.kernel.org,
+ sboyd@kernel.org, zhangqing@rock-chips.com, linux-kernel@vger.kernel.org,
+ robh+dt@kernel.org, xsf@rock-chips.com, linux-rockchip@lists.infradead.org,
+ broonie@kernel.org, chenjh@rock-chips.com, lee.jones@linaro.org,
+ linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-rtc@vger.kernel.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-SGkgU3V6dWtpLAoKT24gNi8yMS8yMDE5IDM6MTAgUE0sIFN1enVraSBLIFBvdWxvc2Ugd3JvdGU6
-Cj4gT24gMDYvMjAvMjAxOSAwNzozMSBQTSwgU2FpIFByYWthc2ggUmFuamFuIHdyb3RlOgo+PiBD
-dXJyZW50bHkgY29yZXNpZ2h0IGV0bSBhbmQgY3B1LWRlYnVnIHdpbGwgZ28gYWhlYWQgd2l0aAo+
-PiB0aGUgcHJvYmUgZXZlbiB3aGVuIGNvcnJlc3BvbmRpbmcgY3B1cyBhcmUgbm90IGF2YWlsYWJs
-ZQo+PiBhbmQgZXJyb3Igb3V0IGxhdGVyIGluIHRoZSBwcm9iZSBwYXRoLiBJbiBzdWNoIGNhc2Vz
-LCBpdAo+PiBpcyBiZXR0ZXIgdG8gYWJvcnQgdGhlIHByb2JlIGVhcmxpZXIuCj4+Cj4+IFdpdGhv
-dXQgdGhpcywgc2V0dGluZyAqbm9zbXAqIHdpbGwgdGhyb3cgYmVsb3cgZXJyb3JzOgo+Pgo+PiDC
-oCBbwqDCoMKgIDUuOTEwNjIyXSBjb3Jlc2lnaHQtY3B1LWRlYnVnIDg1MDAwMC5kZWJ1ZzogQ29y
-ZXNpZ2h0IAo+PiBkZWJ1Zy1DUFUwIGluaXRpYWxpemVkCj4+IMKgIFvCoMKgwqAgNS45MTQyNjZd
-IGNvcmVzaWdodC1jcHUtZGVidWcgODUyMDAwLmRlYnVnOiBDUFUxIGRlYnVnIGFyY2ggCj4+IGlu
-aXQgZmFpbGVkCj4+IMKgIFvCoMKgwqAgNS45MjE0NzRdIGNvcmVzaWdodC1jcHUtZGVidWcgODU0
-MDAwLmRlYnVnOiBDUFUyIGRlYnVnIGFyY2ggCj4+IGluaXQgZmFpbGVkCj4+IMKgIFvCoMKgwqAg
-NS45MjgzMjhdIGNvcmVzaWdodC1jcHUtZGVidWcgODU2MDAwLmRlYnVnOiBDUFUzIGRlYnVnIGFy
-Y2ggCj4+IGluaXQgZmFpbGVkCj4+IMKgIFvCoMKgwqAgNS45MzUzMzBdIGNvcmVzaWdodCBldG0w
-OiBDUFUwOiBFVE0gdjQuMCBpbml0aWFsaXplZAo+PiDCoCBbwqDCoMKgIDUuOTQxODc1XSBjb3Jl
-c2lnaHQtZXRtNHggODVkMDAwLmV0bTogRVRNIGFyY2ggaW5pdCBmYWlsZWQKPj4gwqAgW8KgwqDC
-oCA1Ljk0Njc5NF0gY29yZXNpZ2h0LWV0bTR4OiBwcm9iZSBvZiA4NWQwMDAuZXRtIGZhaWxlZCB3
-aXRoIAo+PiBlcnJvciAtMjIKPj4gwqAgW8KgwqDCoCA1Ljk1MjcwN10gY29yZXNpZ2h0LWV0bTR4
-IDg1ZTAwMC5ldG06IEVUTSBhcmNoIGluaXQgZmFpbGVkCj4+IMKgIFvCoMKgwqAgNS45NTg5NDVd
-IGNvcmVzaWdodC1ldG00eDogcHJvYmUgb2YgODVlMDAwLmV0bSBmYWlsZWQgd2l0aCAKPj4gZXJy
-b3IgLTIyCj4+IMKgIFvCoMKgwqAgNS45NjQ4NTNdIGNvcmVzaWdodC1ldG00eCA4NWYwMDAuZXRt
-OiBFVE0gYXJjaCBpbml0IGZhaWxlZAo+PiDCoCBbwqDCoMKgIDUuOTcxMDk2XSBjb3Jlc2lnaHQt
-ZXRtNHg6IHByb2JlIG9mIDg1ZjAwMC5ldG0gZmFpbGVkIHdpdGggCj4+IGVycm9yIC0yMgo+IAo+
-IFRoYXQgaXMgZXhwZWN0ZWQuIFdoYXQgZWxzZSBkbyB5b3UgZXhwZWN0ID8KPiAKPj4KPj4gU2ln
-bmVkLW9mZi1ieTogU2FpIFByYWthc2ggUmFuamFuIDxzYWlwcmFrYXNoLnJhbmphbkBjb2RlYXVy
-b3JhLm9yZz4KPj4gLS0tCj4+IMKgIGRyaXZlcnMvaHd0cmFjaW5nL2NvcmVzaWdodC9jb3Jlc2ln
-aHQtcGxhdGZvcm0uYyB8IDMgKysrCj4+IMKgIDEgZmlsZSBjaGFuZ2VkLCAzIGluc2VydGlvbnMo
-KykKPj4KPj4gZGlmZiAtLWdpdCBhL2RyaXZlcnMvaHd0cmFjaW5nL2NvcmVzaWdodC9jb3Jlc2ln
-aHQtcGxhdGZvcm0uYyAKPj4gYi9kcml2ZXJzL2h3dHJhY2luZy9jb3Jlc2lnaHQvY29yZXNpZ2h0
-LXBsYXRmb3JtLmMKPj4gaW5kZXggOGIwM2ZhNTczNjg0Li4zZjQ1NTk1OTZjNmIgMTAwNjQ0Cj4+
-IC0tLSBhL2RyaXZlcnMvaHd0cmFjaW5nL2NvcmVzaWdodC9jb3Jlc2lnaHQtcGxhdGZvcm0uYwo+
-PiArKysgYi9kcml2ZXJzL2h3dHJhY2luZy9jb3Jlc2lnaHQvY29yZXNpZ2h0LXBsYXRmb3JtLmMK
-Pj4gQEAgLTE2OCw2ICsxNjgsOSBAQCBzdGF0aWMgaW50IG9mX2NvcmVzaWdodF9nZXRfY3B1KHN0
-cnVjdCBkZXZpY2UgKmRldikKPj4gwqDCoMKgwqDCoCBjcHUgPSBvZl9jcHVfbm9kZV90b19pZChk
-bik7Cj4+IMKgwqDCoMKgwqAgb2Zfbm9kZV9wdXQoZG4pOwo+PiArwqDCoMKgIGlmIChudW1fb25s
-aW5lX2NwdXMoKSA8PSBjcHUpCj4+ICvCoMKgwqDCoMKgwqDCoCByZXR1cm4gLUVOT0RFVjsKPiAK
-PiBUaGF0IGlzIGEgcG9pbnRsZXNzIGFuZCB0ZXJyaWJseSB3cm9uZyBjaGVjay4gV2hhdCBpZiB5
-b3UgaGF2ZSBvbmx5IDIKPiBvbmxpbmUgQ1BVcyAoQ1BVMCBhbmQgQ1BVNCkgYW5kIHlvdSB3ZXJl
-IHByb2Nlc3NpbmcgdGhlIEVUTSBmb3IgQ1BVNCA/Cj4KClNvcnJ5LCBJIGRpZCBub3QgY29uc2lk
-ZXIgc3VjaCBjYXNlcy4KCj4gTW9yZSBvdmVyIHlvdSBzaG91bGQgc2ltcGx5IGxldCB0aGUgZHJp
-dmVyIGhhbmRsZSBhIGNhc2Ugd2hlcmUgdGhlIENQVQo+IGlzIG5vdCBvbmxpbmUuIE1heSBiZSB0
-aGUgZHJpdmVyIGNvdWxkIHJlZ2lzdGVyIGEgaG90cGx1ZyBub3RpZmllciBhbmQKPiBicmluZyBp
-dHNlbGYgdXAgd2hlbiB0aGUgQ1BVIGNvbWVzIG9ubGluZS4KPiAKPiBTbywgcGxlYXNlIGRyb3Ag
-dGhpcyBwYXRjaC4KPiAKClN1cmUgSSB3aWxsIGRyb3AgdGhpcyBwYXRjaC4KClRoYW5rcywKU2Fp
-CgotLSAKUVVBTENPTU0gSU5ESUEsIG9uIGJlaGFsZiBvZiBRdWFsY29tbSBJbm5vdmF0aW9uIENl
-bnRlciwgSW5jLiBpcyBhIG1lbWJlcgpvZiBDb2RlIEF1cm9yYSBGb3J1bSwgaG9zdGVkIGJ5IFRo
-ZSBMaW51eCBGb3VuZGF0aW9uCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVs
-QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9s
-aXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
+Most of functions and registers of the rk817 and rk808 are the same,
+so they can share allmost all codes.
+
+Their specifications are as follows:
+  1) The RK809 and RK809 consist of 5 DCDCs, 9 LDOs and have the same
+registers
+     for these components except dcdc5.
+  2) The dcdc5 is a boost dcdc for RK817 and is a buck for RK809.
+  3) The RK817 has one switch but The Rk809 has two.
+
+Changes in V2:
+1. initialize the pm_pwroff_fn to NULL.
+2. use EXPORT_SYMBOL_GPL to export pm_power_off_prepare.
+3. change patch 2/3/4/5 subjects.
+
+Changes in V3
+1. change patch 4 subjects
+2. replace pr_ with dev_ for printing in patch 2
+3. modify switch1 and switch2 configs in patch 2
+4. explain gpio information for rk809 and rk817 in patch 4
+
+Changes in V4:
+1. modify some codes for patch 2 and patch 5 according to comments
+2. add reviewer mail lists for patch 3 and 4
+
+Changes in V5:
+modify some codes for patch 1 according to reveiw comments for v3.
+ 1) remove the pm_power_off_prepare() and replace with shutdown
+call-back from syscore
+ 2) move the macro REGMAP_IRQ_M into the regmap.h and rename it
+REGMAP_IRQ_LINE
+ 3) make some dev_warn() log clear
+
+Changes in V6:
+modify some codes according to reveiw comments for v5.
+
+Changes in V7:
+modify some codes for patch 2 according to reveiw comments.
+
+Changes in V8:
+For helping me promote this work, Heiko send the V8
+
+Changes in V9:
+1.base on the V8
+2.modify some codes according to reveiw comments for V8 from Mark Brown
+
+Changes in V10:
+And Ack from Mark Brown <broonie@kernel.org> for parch 3
+
+Tony Xie (6):
+  mfd: rk808: remove the id_table
+  mfd: rk808: Add RK817 and RK809 support
+  regulator: rk808: add RK809 and RK817 support.
+  dt-bindings: mfd: rk808: Add binding information for RK809 and RK817.
+  rtc: rk808: add RK809 and RK817 support.
+  clk: RK808: add RK809 and RK817 support.
+
+ .../devicetree/bindings/mfd/rk808.txt         |  44 ++
+ drivers/clk/Kconfig                           |   9 +-
+ drivers/clk/clk-rk808.c                       |  64 +-
+ drivers/mfd/Kconfig                           |   6 +-
+ drivers/mfd/rk808.c                           | 199 +++++-
+ drivers/regulator/Kconfig                     |   4 +-
+ drivers/regulator/rk808-regulator.c           | 646 +++++++++++++++++-
+ drivers/rtc/Kconfig                           |   4 +-
+ drivers/rtc/rtc-rk808.c                       |  68 +-
+ include/linux/mfd/rk808.h                     | 175 +++++
+ 10 files changed, 1155 insertions(+), 64 deletions(-)
+
+-- 
+2.17.1
+
+
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
