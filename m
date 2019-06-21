@@ -2,46 +2,44 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 528814E396
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 21 Jun 2019 11:31:47 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 493874E398
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 21 Jun 2019 11:32:33 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=MoKDCgIpxcg4uH5lrngf/qj0FyAmwR51q9wiCU7Lc1s=; b=RXjFZwFi4o67xZ
-	vp+Kgb92U/uosGVbO3VngRNtRTeTBmLRytZzFN57MC9gDrgHRZC7nXpA1dRJ3soN4gpZljfoycnn0
-	jt86fZLFNhKa4pzyqkq3MLCZR7lfIipSp59ztX236wo742JSmVm+1+0SBEpDDFRIUySymsbk7fFWQ
-	bh0qEyDRBqBBedGgDOJXqjU6DHXr80B+fT0yc/SHjxG6/80ELJdI1mV6hkxbZyrkphWsM2jWKq9l2
-	k8YbdBZ8991ZuacnBkFgsdcjpM5Dafswr8Psui0EzofeJ1JmYQAk/QVkZ8j2ewJuPBHG1vV5aEXNG
-	1L6a30OquWw2mFG6GUOA==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=o0DIORjcy+k4c/rfwmhyi4UuGsJd363Mgv+RtWMIz7w=; b=WmYOcj+Dl6SFTtGEkZxqoI6B3y
+	MEs1+/+BuJ/IPhs24pnxEC2npuZ/e3dMjUZQ/yn8Vw2E+G/Qva8FYe0ylGw36WML7nrHNOL0oCCLt
+	4RqwoSPpoDGdsUbucee1ChYjYy4eE9EL2HIDhwra1RG4lnc4ikecy8Ginenf585SUT7rZVMcSkOKK
+	tU/mMs9uif++ym/29wsBKlomsM8NU3XZFwYkxVcK4ZoxVOYTKqtVbmdSnwsBrQ8laeE6U03ehU2uq
+	dn7H4p8CAtnP88xDwEhQR0NIWasPxT04GclMdmkxb+PRzt5lyTZ3/VtYTXkRI9bE+bpzgrYLtnkYn
+	h10GB9WA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1heFtZ-0008N9-EL; Fri, 21 Jun 2019 09:31:45 +0000
+	id 1heFuG-0000Vn-T1; Fri, 21 Jun 2019 09:32:29 +0000
 Received: from kirsty.vergenet.net ([202.4.237.240])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1heFf6-0002tV-38
- for linux-arm-kernel@lists.infradead.org; Fri, 21 Jun 2019 09:16:49 +0000
+ id 1heFfI-0002tV-3A
+ for linux-arm-kernel@lists.infradead.org; Fri, 21 Jun 2019 09:17:01 +0000
 Received: from reginn.horms.nl (watermunt.horms.nl [80.127.179.77])
- by kirsty.vergenet.net (Postfix) with ESMTPA id ACC2325BE36;
+ by kirsty.vergenet.net (Postfix) with ESMTPA id BCE3F25BE3A;
  Fri, 21 Jun 2019 19:16:36 +1000 (AEST)
 Received: by reginn.horms.nl (Postfix, from userid 7100)
- id D621D940F24; Fri, 21 Jun 2019 11:16:32 +0200 (CEST)
+ id E2874940DEA; Fri, 21 Jun 2019 11:16:32 +0200 (CEST)
 From: Simon Horman <horms+renesas@verge.net.au>
 To: linux-renesas-soc@vger.kernel.org
-Subject: [PATCH 09/53] arm64: dts: renesas: draak: Remove unnecessary index
- from vin4 port
-Date: Fri, 21 Jun 2019 11:15:47 +0200
-Message-Id: <c7d4df305ca4ddd8747691f9133b9611579d0b4e.1561107232.git.horms+renesas@verge.net.au>
+Subject: [PATCH 10/53] arm64: dts: renesas: ulcb-kf: Add support for TI WL1837
+Date: Fri, 21 Jun 2019 11:15:48 +0200
+Message-Id: <95ff4aab4173fce010832756b8bea3a7cba3238d.1561107232.git.horms+renesas@verge.net.au>
 X-Mailer: git-send-email 2.11.0
 In-Reply-To: <cover.1561107232.git.horms+renesas@verge.net.au>
 References: <cover.1561107232.git.horms+renesas@verge.net.au>
-MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190621_021648_299156_96EF14C4 
-X-CRM114-Status: UNSURE (   9.88  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190621_021700_468811_569DDA3F 
+X-CRM114-Status: GOOD (  10.77  )
 X-Spam-Score: -2.0 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.0 points)
@@ -65,35 +63,111 @@ List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: Simon Horman <horms+renesas@verge.net.au>,
+ Spyridon Papageorgiou <spapageorgiou@de.adit-jv.com>,
  Magnus Damm <magnus.damm@gmail.com>, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-VGhlIHBvcnRzIG5vZGUgb2YgdmluNCBvbmx5IGhhcyBvbmUgc3ViLW5vZGUgYW5kIHRodXMgZG9l
-cwpub3QgbmVlZCAjYWRkcmVzcy1jZWxscy8jc2l6ZS1jZWxscyBhbmQgdGhlIHN1Yi1ub2RlIGRv
-ZXMKbm90IG5lZWQgYW4gZXhpdC4KClRoaXMgYWRkcmVzc2VzIHRoZSBmb2xsb3dpbmcgd2Fybmlu
-ZzoKCiAjIG1ha2UgZHRicyBXPTEKIC4uLgogYXJjaC9hcm02NC9ib290L2R0cy9yZW5lc2FzL3I4
-YTc3OTk1LWRyYWFrLmR0czo0OTIuOC01MDMuNDogV2FybmluZyAoZ3JhcGhfY2hpbGRfYWRkcmVz
-cyk6IC9zb2MvdmlkZW9AZTZlZjQwMDAvcG9ydHM6IGdyYXBoIG5vZGUgaGFzIHNpbmdsZSBjaGls
-ZCBub2RlICdwb3J0QDAnLCAjYWRkcmVzcy1jZWxscy8jc2l6ZS1jZWxscyBhcmUgbm90IG5lY2Vz
-c2FyeQoKRml4ZXM6IDZhMDk0MmMyMGY1YyAoImFybTY0OiBkdHM6IHJlbmVzYXM6IGRyYWFrOiBE
-ZXNjcmliZSBDVkJTIGlucHV0IikKQ2M6IEphY29wbyBNb25kaSA8amFjb3BvK3JlbmVzYXNAam1v
-bmRpLm9yZz4KU2lnbmVkLW9mZi1ieTogU2ltb24gSG9ybWFuIDxob3JtcytyZW5lc2FzQHZlcmdl
-Lm5ldC5hdT4KVGVzdGVkLWJ5OiBMYXVyZW50IFBpbmNoYXJ0IDxsYXVyZW50LnBpbmNoYXJ0QGlk
-ZWFzb25ib2FyZC5jb20+ClJldmlld2VkLWJ5OiBOaWtsYXMgU8O2ZGVybHVuZCA8bmlrbGFzLnNv
-ZGVybHVuZCtyZW5lc2FzQHJhZ25hdGVjaC5zZT4KLS0tCiBhcmNoL2FybTY0L2Jvb3QvZHRzL3Jl
-bmVzYXMvcjhhNzc5OTUtZHJhYWsuZHRzIHwgNyArLS0tLS0tCiAxIGZpbGUgY2hhbmdlZCwgMSBp
-bnNlcnRpb24oKyksIDYgZGVsZXRpb25zKC0pCgpkaWZmIC0tZ2l0IGEvYXJjaC9hcm02NC9ib290
-L2R0cy9yZW5lc2FzL3I4YTc3OTk1LWRyYWFrLmR0cyBiL2FyY2gvYXJtNjQvYm9vdC9kdHMvcmVu
-ZXNhcy9yOGE3Nzk5NS1kcmFhay5kdHMKaW5kZXggYTdkYzExZTM2ZmQ5Li42MTg5YTU1ZGU5OTkg
-MTAwNjQ0Ci0tLSBhL2FyY2gvYXJtNjQvYm9vdC9kdHMvcmVuZXNhcy9yOGE3Nzk5NS1kcmFhay5k
-dHMKKysrIGIvYXJjaC9hcm02NC9ib290L2R0cy9yZW5lc2FzL3I4YTc3OTk1LWRyYWFrLmR0cwpA
-QCAtNTExLDEyICs1MTEsNyBAQAogCXN0YXR1cyA9ICJva2F5IjsKIAogCXBvcnRzIHsKLQkJI2Fk
-ZHJlc3MtY2VsbHMgPSA8MT47Ci0JCSNzaXplLWNlbGxzID0gPDA+OwotCi0JCXBvcnRAMCB7Ci0J
-CQlyZWcgPSA8MD47Ci0KKwkJcG9ydCB7CiAJCQl2aW40X2luOiBlbmRwb2ludCB7CiAJCQkJcmVt
-b3RlLWVuZHBvaW50ID0gPCZhZHY3MTgwX291dD47CiAJCQl9OwotLSAKMi4xMS4wCgoKX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5l
-bCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6
-Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
+From: Spyridon Papageorgiou <spapageorgiou@de.adit-jv.com>
+
+This patch adds description of TI WL1837 and links interfaces
+to communicate with the IC, namely the SDIO interface to WLAN.
+
+Signed-off-by: Spyridon Papageorgiou <spapageorgiou@de.adit-jv.com>
+Signed-off-by: Simon Horman <horms+renesas@verge.net.au>
+---
+ arch/arm64/boot/dts/renesas/ulcb-kf.dtsi | 49 ++++++++++++++++++++++++++++++++
+ 1 file changed, 49 insertions(+)
+
+diff --git a/arch/arm64/boot/dts/renesas/ulcb-kf.dtsi b/arch/arm64/boot/dts/renesas/ulcb-kf.dtsi
+index 7a09576b3112..27851a77f538 100644
+--- a/arch/arm64/boot/dts/renesas/ulcb-kf.dtsi
++++ b/arch/arm64/boot/dts/renesas/ulcb-kf.dtsi
+@@ -38,6 +38,18 @@
+ 		regulator-min-microvolt = <5000000>;
+ 		regulator-max-microvolt = <5000000>;
+ 	};
++
++	wlan_en: regulator-wlan_en {
++		compatible = "regulator-fixed";
++		regulator-name = "wlan-en-regulator";
++
++		regulator-min-microvolt = <3300000>;
++		regulator-max-microvolt = <3300000>;
++
++		gpio = <&gpio_exp_74 4 GPIO_ACTIVE_HIGH>;
++		startup-delay-us = <70000>;
++		enable-active-high;
++	};
+ };
+ 
+ &can0 {
+@@ -88,6 +100,13 @@
+ 			line-name = "Audio_Out_OFF";
+ 		};
+ 
++		sd-wifi-mux {
++			gpio-hog;
++			gpios = <5 GPIO_ACTIVE_HIGH>;
++			output-low;	/* Connect WL1837 */
++			line-name = "SD WiFi mux";
++		};
++
+ 		hub_pwen {
+ 			gpio-hog;
+ 			gpios = <6 GPIO_ACTIVE_HIGH>;
+@@ -254,6 +273,12 @@
+ 		function = "scif1";
+ 	};
+ 
++	sdhi3_pins: sdhi3 {
++		groups = "sdhi3_data4", "sdhi3_ctrl";
++		function = "sdhi3";
++		power-source = <3300>;
++	};
++
+ 	usb0_pins: usb0 {
+ 		groups = "usb0";
+ 		function = "usb0";
+@@ -273,6 +298,30 @@
+ 	status = "okay";
+ };
+ 
++&sdhi3 {
++	pinctrl-0 = <&sdhi3_pins>;
++	pinctrl-names = "default";
++
++	vmmc-supply = <&wlan_en>;
++	vqmmc-supply = <&wlan_en>;
++	bus-width = <4>;
++	no-1-8-v;
++	non-removable;
++	cap-power-off-card;
++	keep-power-in-suspend;
++	max-frequency = <26000000>;
++	status = "okay";
++
++	#address-cells = <1>;
++	#size-cells = <0>;
++	wlcore: wlcore@2 {
++		compatible = "ti,wl1837";
++		reg = <2>;
++		interrupt-parent = <&gpio1>;
++		interrupts = <25 IRQ_TYPE_EDGE_FALLING>;
++	};
++};
++
+ &usb2_phy0 {
+ 	pinctrl-0 = <&usb0_pins>;
+ 	pinctrl-names = "default";
+-- 
+2.11.0
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
