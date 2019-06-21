@@ -2,70 +2,105 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A29924EE01
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 21 Jun 2019 19:41:19 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 309B04EE26
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 21 Jun 2019 19:50:03 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=7E6NIDawH6LDk9pXxq+e+NZXHaoI2lxQMiMhqrUvP/8=; b=ETkeIMQkLlieuB
-	T67HGKJKJJ7pMi0HTfjJLYJPY5e/WqnTgDDdbek5+WKO1J5sQIlmprwmREHkEmW0Fv7OUW89RlAqV
-	9Iy+q0kQ1gdGRxyeH+SwWx1NOACf17mO+oTj0uUhVmnXUD1AAQ6fA3eZZASGc06HN2kqBfuuGNHBP
-	2aSVLPzC4VCwiVt4SoctnJUChydKZBd47uPVQp/CZ1p1VBX7UfU60DoYnj83nxDogjmoC3Z0BI8GP
-	rb10E/py3CagiuxiqiWh3ok3Sv4encqmbOK1y5IUOIddfB2jxYaIVluCb3+OYS+7OsgBwHjMAxQ/e
-	2szoxcp1g2YxPySSSq7w==;
+	List-Owner; bh=IFyXRa4A9ae82418NYvBN5BKzL8GUxz3LJ+C4mjYbjY=; b=MFcNyD+86NY0CI
+	BCH2Y1D44Sp8sEPE96qkazOf916IjWyFSFSjw57WmfZG2apIGQZr2dCMN/WgdbV15PzJHLHX1Tao6
+	uxIHQ7NGdBGiFs9ZPoqxGc2Pj3L8edGJ5N6mX1WRUC8Q1Me1+y8g2P/5k6otBYjnUfnUSYIjvIfsU
+	jHfkkJpze6TxtIAsNbHUy1xyJTMEzjsBArIxQkxEUM75q+NOV8QQwNiA3WHsu5j2J8dA0HHsxUGJZ
+	1xhzK9KiPFyTMNg+KYGfGrrcuGsln1nQR/+M2FLilKmdOunOyCyDcIsXZw+nco9+MV5bGKBUbzIfj
+	qQ/TnpB0HniLCga91Vqw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1heNXJ-0003zw-Ad; Fri, 21 Jun 2019 17:41:17 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1heNfj-0006YL-Uv; Fri, 21 Jun 2019 17:49:59 +0000
+Received: from mail-by2nam01on060c.outbound.protection.outlook.com
+ ([2a01:111:f400:fe42::60c]
+ helo=NAM01-BY2-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1heNX5-0003zH-Cz
- for linux-arm-kernel@lists.infradead.org; Fri, 21 Jun 2019 17:41:05 +0000
-Received: from quaco.ghostprotocols.net (187-26-104-93.3g.claro.net.br
- [187.26.104.93])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id D8FA6208C3;
- Fri, 21 Jun 2019 17:40:52 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1561138863;
- bh=QPJHaL3OS0GzfeK6O1ZxuGW8Vz75KPhsoGFuVduABng=;
- h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=wN1itsimpustKG30e0ueI6HXePSqD0jBieAjifNXTLIKDv96oumJMz4CnYPlN0F2T
- odHpXrDIn9m/RD6inXUwepvT5w1AmwYEX3WH3oxf4ayImFqnkKy57jKboPi1UOTXIR
- VgHmCfsFgqP+xi/zcLZGnZMi+MRDRVp8vtIWzcss=
-From: Arnaldo Carvalho de Melo <acme@kernel.org>
-To: Ingo Molnar <mingo@kernel.org>,
-	Thomas Gleixner <tglx@linutronix.de>
-Subject: [PATCH 19/25] perf pmu: Fix uncore PMU alias list for ARM64
-Date: Fri, 21 Jun 2019 14:38:25 -0300
-Message-Id: <20190621173831.13780-20-acme@kernel.org>
-X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20190621173831.13780-1-acme@kernel.org>
-References: <20190621173831.13780-1-acme@kernel.org>
+ id 1heNfY-0006Xw-8z
+ for linux-arm-kernel@lists.infradead.org; Fri, 21 Jun 2019 17:49:50 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=xilinx.onmicrosoft.com; s=selector1-xilinx-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=dPw6yeHMLDYvjXmsiCQ6cOs0ouwkU25bVG31upgwIic=;
+ b=L/GFTKifEV0NYKeY7IAOpVqCqWBoWJz8nVJGgDGEhmzMl0WxmKNytgMXFvFnec+WZXbJaLU6w693Zzt2j5xczHrrQSXXAZ82CW57o6GuSYdImaQPSfJ076KB6T+YG5J1Jsw7ncGleO3DfPbayJYoUeEXZ9ZRPmKyql0ayUDarsE=
+Received: from CH2PR02MB6359.namprd02.prod.outlook.com (52.132.231.93) by
+ CH2PR02MB6344.namprd02.prod.outlook.com (52.132.231.86) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.1987.15; Fri, 21 Jun 2019 17:49:46 +0000
+Received: from CH2PR02MB6359.namprd02.prod.outlook.com
+ ([fe80::b9dd:11e0:7fca:ba55]) by CH2PR02MB6359.namprd02.prod.outlook.com
+ ([fe80::b9dd:11e0:7fca:ba55%5]) with mapi id 15.20.1987.014; Fri, 21 Jun 2019
+ 17:49:45 +0000
+From: Dragan Cvetic <draganc@xilinx.com>
+To: Greg KH <gregkh@linuxfoundation.org>
+Subject: RE: [PATCH V7 00/11] misc: xilinx sd-fec drive
+Thread-Topic: [PATCH V7 00/11] misc: xilinx sd-fec drive
+Thread-Index: AQHVIHtLLdGbOE767U2XbDHU36aibaamNrSAgAA5XPA=
+Date: Fri, 21 Jun 2019 17:49:45 +0000
+Message-ID: <CH2PR02MB635999D7374378CEA096FE72CBE70@CH2PR02MB6359.namprd02.prod.outlook.com>
+References: <1560274185-264438-1-git-send-email-dragan.cvetic@xilinx.com>
+ <20190621141553.GA16650@kroah.com>
+In-Reply-To: <20190621141553.GA16650@kroah.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-Auto-Response-Suppress: DR, RN, NRN, OOF, AutoReply
+X-MS-TNEF-Correlator: 
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=draganc@xilinx.com; 
+x-originating-ip: [149.199.80.133]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: e3b7eb22-b9a7-4d72-d7c5-08d6f670d92c
+x-ms-office365-filtering-ht: Tenant
+x-microsoft-antispam: BCL:0; PCL:0;
+ RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600148)(711020)(4605104)(1401327)(4618075)(2017052603328)(7193020);
+ SRVR:CH2PR02MB6344; 
+x-ms-traffictypediagnostic: CH2PR02MB6344:
+x-ms-exchange-purlcount: 1
+x-microsoft-antispam-prvs: <CH2PR02MB6344DEA04135533B6CF9995BCBE70@CH2PR02MB6344.namprd02.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:8273;
+x-forefront-prvs: 0075CB064E
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(366004)(396003)(346002)(39860400002)(136003)(376002)(189003)(52314003)(199004)(51914003)(13464003)(53546011)(76116006)(6116002)(66066001)(25786009)(73956011)(53936002)(486006)(6246003)(52536014)(66946007)(478600001)(6506007)(71200400001)(5660300002)(9686003)(107886003)(8936002)(68736007)(14454004)(55016002)(99286004)(8676002)(81166006)(4326008)(71190400001)(7696005)(6916009)(7736002)(76176011)(33656002)(6306002)(81156014)(14444005)(11346002)(256004)(74316002)(64756008)(66446008)(66556008)(476003)(26005)(3846002)(66476007)(86362001)(316002)(966005)(305945005)(2906002)(54906003)(229853002)(102836004)(446003)(6436002)(186003);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:CH2PR02MB6344;
+ H:CH2PR02MB6359.namprd02.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; MX:1; A:1; 
+received-spf: None (protection.outlook.com: xilinx.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam-message-info: AfVR0KQFt3r0fVp8NnJVct55M/Nicu968ob9SKLi+zN6/UUZPXLpPdqKV5UeP5Am41NhjpTZnpYbSluYY5e8m0lKV7QMV3uJHncF9JHMeU5MZW0o+wvKobuk1R0T56ZKJp9tuh5vwRMoPMhJwZEK77ZuymoRh/3p14AxjTU/yUnCh8QErX00RQDsn5YxJD3ZrHHvbBZ/gsjG3J+aapDuAojALOglzTFVMfbcXw5J6QlUbfA0Zn4uGP6EHym80GmD8ZqgVowg/GIAKzPyTqrt1HNYlFfHh7SEe1JHFlUAlM4VxfZCdZL8r/q12W/aUw0FLGOOJr62pxUgbNyFEqUBc+7oNjmx4HXvr9uiCXa1DO6oWp90B6inhNST63McP6LpA+z6Wrc1RSZw+/Rq+oxaxAOJZn2y9HGh1CthQLwt2wI=
 MIME-Version: 1.0
+X-OriginatorOrg: xilinx.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: e3b7eb22-b9a7-4d72-d7c5-08d6f670d92c
+X-MS-Exchange-CrossTenant-originalarrivaltime: 21 Jun 2019 17:49:45.8319 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 657af505-d5df-48d0-8300-c31994686c5c
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: draganc@xilinx.com
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: CH2PR02MB6344
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190621_104103_478031_1B608C79 
-X-CRM114-Status: GOOD (  12.07  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190621_104948_322206_28365B7B 
+X-CRM114-Status: GOOD (  17.51  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a01:111:f400:fe42:0:0:0:60c listed in]
+ [list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -77,114 +112,92 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- Shaokun Zhang <zhangshaokun@hisilicon.com>,
- Hendrik Brueckner <brueckner@linux.ibm.com>,
- Arnaldo Carvalho de Melo <acme@redhat.com>,
- Mathieu Poirier <mathieu.poirier@linaro.org>,
- Thomas Richter <tmricht@linux.ibm.com>, Clark Williams <williams@redhat.com>,
- Jiri Olsa <jolsa@redhat.com>, John Garry <john.garry@huawei.com>,
- Will Deacon <will.deacon@arm.com>, linux-kernel@vger.kernel.org,
- stable@vger.kernel.org, linuxarm@huawei.com, linux-perf-users@vger.kernel.org,
- Alexander Shishkin <alexander.shishkin@linux.intel.com>,
- Peter Zijlstra <peterz@infradead.org>, Jiri Olsa <jolsa@kernel.org>,
- Namhyung Kim <namhyung@kernel.org>, Ben Hutchings <ben@decadent.org.uk>,
- linux-arm-kernel@lists.infradead.org, Kan Liang <kan.liang@linux.intel.com>
+Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ "arnd@arndb.de" <arnd@arndb.de>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "robh+dt@kernel.org" <robh+dt@kernel.org>, Michal Simek <michals@xilinx.com>,
+ Derek Kiernan <dkiernan@xilinx.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: John Garry <john.garry@huawei.com>
 
-In commit 292c34c10249 ("perf pmu: Fix core PMU alias list for X86
-platform"), we fixed the issue of CPU events being aliased to uncore
-events.
 
-Fix this same issue for ARM64, since the said commit left the (broken)
-behaviour untouched for ARM64.
+> -----Original Message-----
+> From: Greg KH [mailto:gregkh@linuxfoundation.org]
+> Sent: Friday 21 June 2019 15:16
+> To: Dragan Cvetic <draganc@xilinx.com>
+> Cc: arnd@arndb.de; Michal Simek <michals@xilinx.com>; linux-arm-kernel@lists.infradead.org; robh+dt@kernel.org;
+> mark.rutland@arm.com; devicetree@vger.kernel.org; linux-kernel@vger.kernel.org; Derek Kiernan <dkiernan@xilinx.com>
+> Subject: Re: [PATCH V7 00/11] misc: xilinx sd-fec drive
+> 
+> On Tue, Jun 11, 2019 at 06:29:34PM +0100, Dragan Cvetic wrote:
+> > This patchset is adding the full Soft Decision Forward Error
+> > Correction (SD-FEC) driver implementation, driver DT binding and
+> > driver documentation.
+> >
+> > Forward Error Correction (FEC) codes such as Low Density Parity
+> > Check (LDPC) and turbo codes provide a means to control errors in
+> > data transmissions over unreliable or noisy communication
+> > channels. The SD-FEC Integrated Block is an optimized block for
+> > soft-decision decoding of these codes. Fixed turbo codes are
+> > supported directly, whereas custom and standardized LDPC codes
+> > are supported through the ability to specify the parity check
+> > matrix through an AXI4-Lite bus or using the optional programmable
+> > (PL)-based support logic. For the further information see
+> > https://www.xilinx.com/support/documentation/ip_documentation/
+> > sd_fec/v1_1/pg256-sdfec-integrated-block.pdf
+> >
+> > This driver is a platform device driver which supports SDFEC16
+> > (16nm) IP. SD-FEC driver supports LDPC decoding and encoding and
+> > Turbo code decoding. LDPC codes can be specified on
+> > a codeword-by-codeword basis, also a custom LDPC code can be used.
+> >
+> > The SD-FEC driver exposes a char device interface and supports
+> > file operations: open(), close(), poll() and ioctl(). The driver
+> > allows only one usage of the device, open() limits the number of
+> > driver instances. The driver also utilize Common Clock Framework
+> > (CCF).
+> >
+> > The control and monitoring is supported over ioctl system call.
+> > The features supported by ioctl():
+> > - enable or disable data pipes to/from device
+> > - configure the FEC algorithm parameters
+> > - set the order of data
+> > - provide a control of a SDFEC bypass option
+> > - activates/deactivates SD-FEC
+> > - collect and provide statistical data
+> > - enable/disable interrupt mode
+> 
+> Is there any userspace tool that talks to this device using these custom
+> ioctls yet?
+> 
+Tools no, but could be the customer who is using the driver.
 
-Signed-off-by: John Garry <john.garry@huawei.com>
-Cc: Alexander Shishkin <alexander.shishkin@linux.intel.com>
-Cc: Ben Hutchings <ben@decadent.org.uk>
-Cc: Hendrik Brueckner <brueckner@linux.ibm.com>
-Cc: Jiri Olsa <jolsa@redhat.com>
-Cc: Kan Liang <kan.liang@linux.intel.com>
-Cc: Mark Rutland <mark.rutland@arm.com>
-Cc: Mathieu Poirier <mathieu.poirier@linaro.org>
-Cc: Namhyung Kim <namhyung@kernel.org>
-Cc: Peter Zijlstra <peterz@infradead.org>
-Cc: Shaokun Zhang <zhangshaokun@hisilicon.com>
-Cc: Thomas Richter <tmricht@linux.ibm.com>
-Cc: Will Deacon <will.deacon@arm.com>
-Cc: linux-arm-kernel@lists.infradead.org
-Cc: linuxarm@huawei.com
-Cc: stable@vger.kernel.org
-Fixes: 292c34c10249 ("perf pmu: Fix core PMU alias list for X86 platform")
-Link: http://lkml.kernel.org/r/1560521283-73314-2-git-send-email-john.garry@huawei.com
-Signed-off-by: Arnaldo Carvalho de Melo <acme@redhat.com>
----
- tools/perf/util/pmu.c | 28 ++++++++++++----------------
- 1 file changed, 12 insertions(+), 16 deletions(-)
 
-diff --git a/tools/perf/util/pmu.c b/tools/perf/util/pmu.c
-index e0429f4ef335..faa8eb231e1b 100644
---- a/tools/perf/util/pmu.c
-+++ b/tools/perf/util/pmu.c
-@@ -709,9 +709,7 @@ static void pmu_add_cpu_aliases(struct list_head *head, struct perf_pmu *pmu)
- {
- 	int i;
- 	struct pmu_events_map *map;
--	struct pmu_event *pe;
- 	const char *name = pmu->name;
--	const char *pname;
- 
- 	map = perf_pmu__find_map(pmu);
- 	if (!map)
-@@ -722,28 +720,26 @@ static void pmu_add_cpu_aliases(struct list_head *head, struct perf_pmu *pmu)
- 	 */
- 	i = 0;
- 	while (1) {
-+		const char *cpu_name = is_arm_pmu_core(name) ? name : "cpu";
-+		struct pmu_event *pe = &map->table[i++];
-+		const char *pname = pe->pmu ? pe->pmu : cpu_name;
- 
--		pe = &map->table[i++];
- 		if (!pe->name) {
- 			if (pe->metric_group || pe->metric_name)
- 				continue;
- 			break;
- 		}
- 
--		if (!is_arm_pmu_core(name)) {
--			pname = pe->pmu ? pe->pmu : "cpu";
--
--			/*
--			 * uncore alias may be from different PMU
--			 * with common prefix
--			 */
--			if (pmu_is_uncore(name) &&
--			    !strncmp(pname, name, strlen(pname)))
--				goto new_alias;
-+		/*
-+		 * uncore alias may be from different PMU
-+		 * with common prefix
-+		 */
-+		if (pmu_is_uncore(name) &&
-+		    !strncmp(pname, name, strlen(pname)))
-+			goto new_alias;
- 
--			if (strcmp(pname, name))
--				continue;
--		}
-+		if (strcmp(pname, name))
-+			continue;
- 
- new_alias:
- 		/* need type casts to override 'const' */
--- 
-2.20.1
+> Doing a one-off ioctl api is always a risky thing, you are pretty much
+> just creating brand new system calls for one piece of hardware.
+> 
 
+Why is that wrong and what is the risk?
+What would you propose?
+Definitely, I have to read about this.
+
+> Anyway, I took the first 3 patches here because they looked sane.  and
+> stopped when I ran into the ioctl problem...
+> 
+
+
+Thanks for these 3
+
+Dragan
+
+> thanks,
+> 
+> greg k-h
 
 _______________________________________________
 linux-arm-kernel mailing list
