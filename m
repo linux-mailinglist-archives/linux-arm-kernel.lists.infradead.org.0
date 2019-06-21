@@ -2,66 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AD4004EA5C
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 21 Jun 2019 16:16:14 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A71184EA60
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 21 Jun 2019 16:16:41 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=lBRuvDLv8krl5TNrM69vLEcbAB53tx616atP2KMMnjk=; b=eo+u7fRgZ/BtkU
-	8PB3WO4iZck/kf3krR0X3fZf07bYwMFXFFgfJJeSFij6Dwes9Rs7WkVeh3Ff7DxDpF8bH4276yyAu
-	TkD8Zd0ZesZJ0U8AJkfLHTjAkF8FLzBWAKLxKQ3pAc7RBmnP6QplE9y1wBiF68y6LgtdV3QkgKA4N
-	bFmgdI9hsB7QePcUgwbisXhIXUayg9WwIrHKHaMA/QCxayRz2LDd2LnZn/NrWSuL07Qssg4keTejv
-	iZMo4+VEtY71yu2dOLN7z6+lvzPPA1L0e5w54Z9fzid69RjZH85bRKqX7l9rOsQO1R0EhzfkWsfA+
-	+JxVlNVu+Yd1znOk5Y+Q==;
+	List-Owner; bh=s7L5tvUp/qECpN9OcyCFSusKEmoJTo2QOtJWJVlKNfo=; b=cE0jN700rUrEDr
+	x6EBvVTmzJyEA80p4xBNOYRWAY1LfVglq6xgsfq3vw+Vs4qeNl8khjZeMfo0OumK1SAVdO4S6Oo/m
+	h6CKFuuYGr17iwY63Qen1W+vaUOXl2USdiMVUPzLKU+GShqRW62vGIx2NjIojlvQ3yVKMk2PQLdnC
+	TfUPHZXh7PDrqMz2iHTdNawFXdDsy9w2SecNbJA+RV2lgEe8cfFt8qjNBevBIHIFyOHpX2yF0LKph
+	uHUwh5x010OGJScwaSrc7gnN/E9v9y/3BXopMDpvDTqeD+FC3v7ppKZae5jTtkdC6rxqSndQ0Kv8G
+	hBNFmwlFG2rLGbFovI8w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1heKKq-0001tb-4M; Fri, 21 Jun 2019 14:16:12 +0000
-Received: from mail.kernel.org ([198.145.29.99])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1heKKa-0001kG-HO
- for linux-arm-kernel@lists.infradead.org; Fri, 21 Jun 2019 14:15:58 +0000
-Received: from localhost (83-86-89-107.cable.dynamic.v4.ziggo.nl
- [83.86.89.107])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id A38C12083B;
- Fri, 21 Jun 2019 14:15:55 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1561126556;
- bh=KnheiynqKeoZwoHdCdEweRfN/gvyS/gjMvNh7Bd20eE=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=zWVUnpPZJ6u936vpwxIZB5uRenD2hXnnNmZsh6i9lHoSSfk8z8IG6f/5l4FNXo9hX
- uki+1fApoZuYR4y6sKBVHHcCkkV/bMN4VzVtIT07SN2VO92alMF7LA5jOGiD1lnHKt
- SW4n3+4UZVS//VzA3YqSXo+EBntGNX8cSBHEJbqk=
-Date: Fri, 21 Jun 2019 16:15:53 +0200
-From: Greg KH <gregkh@linuxfoundation.org>
-To: Dragan Cvetic <dragan.cvetic@xilinx.com>
-Subject: Re: [PATCH V7 00/11] misc: xilinx sd-fec drive
-Message-ID: <20190621141553.GA16650@kroah.com>
-References: <1560274185-264438-1-git-send-email-dragan.cvetic@xilinx.com>
+	id 1heKLI-0002AO-9F; Fri, 21 Jun 2019 14:16:40 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1heKKv-000263-8l; Fri, 21 Jun 2019 14:16:18 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 55BFB28;
+ Fri, 21 Jun 2019 07:16:12 -0700 (PDT)
+Received: from arrakis.emea.arm.com (arrakis.cambridge.arm.com [10.1.196.78])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
+ D8FA43F575; Fri, 21 Jun 2019 07:16:09 -0700 (PDT)
+Date: Fri, 21 Jun 2019 15:16:07 +0100
+From: Catalin Marinas <catalin.marinas@arm.com>
+To: Guo Ren <guoren@kernel.org>
+Subject: Re: [PATCH RFC 11/14] arm64: Move the ASID allocator code in a
+ separate file
+Message-ID: <20190621141606.GF18954@arrakis.emea.arm.com>
+References: <20190321163623.20219-1-julien.grall@arm.com>
+ <20190321163623.20219-12-julien.grall@arm.com>
+ <0dfe120b-066a-2ac8-13bc-3f5a29e2caa3@arm.com>
+ <CAJF2gTTXHHgDboaexdHA284y6kNZVSjLis5-Q2rDnXCxr4RSmA@mail.gmail.com>
+ <c871a5ae-914f-a8bb-9474-1dcfec5d45bf@arm.com>
+ <CAJF2gTStSR7Jmu7=HaO5Wxz=Zn8A5-RD8ktori3oKEhM9vozAA@mail.gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <1560274185-264438-1-git-send-email-dragan.cvetic@xilinx.com>
-User-Agent: Mutt/1.12.1 (2019-06-15)
+In-Reply-To: <CAJF2gTStSR7Jmu7=HaO5Wxz=Zn8A5-RD8ktori3oKEhM9vozAA@mail.gmail.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190621_071556_596059_313E83D9 
-X-CRM114-Status: GOOD (  14.75  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20190621_071617_404678_C81A2ED2 
+X-CRM114-Status: GOOD (  17.86  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -73,64 +65,71 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, arnd@arndb.de,
- michal.simek@xilinx.com, linux-kernel@vger.kernel.org, robh+dt@kernel.org,
- Derek Kiernan <derek.kiernan@xilinx.com>, linux-arm-kernel@lists.infradead.org
+Cc: julien.thierry@arm.com, aou@eecs.berkeley.edu, james.morse@arm.com,
+ suzuki.poulose@arm.com, Marc Zyngier <marc.zyngier@arm.com>,
+ Anup Patel <anup.Patel@wdc.com>, will.deacon@arm.com,
+ linux-kernel@vger.kernel.org, rppt@linux.ibm.com, hch@infradead.org,
+ Atish.Patra@wdc.com, Julien Grall <julien.grall@arm.com>,
+ Palmer Dabbelt <palmer@sifive.com>, gary@garyguo.net, paul.walmsley@sifive.com,
+ christoffer.dall@arm.com, linux-riscv@lists.infradead.org,
+ kvmarm@lists.cs.columbia.edu, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Jun 11, 2019 at 06:29:34PM +0100, Dragan Cvetic wrote:
-> This patchset is adding the full Soft Decision Forward Error
-> Correction (SD-FEC) driver implementation, driver DT binding and
-> driver documentation.
+On Wed, Jun 19, 2019 at 07:51:03PM +0800, Guo Ren wrote:
+> On Wed, Jun 19, 2019 at 4:54 PM Julien Grall <julien.grall@arm.com> wrote:
+> > On 6/19/19 9:07 AM, Guo Ren wrote:
+> > > Move arm asid allocator code in a generic one is a agood idea, I've
+> > > made a patchset for C-SKY and test is on processing, See:
+> > > https://lore.kernel.org/linux-csky/1560930553-26502-1-git-send-email-guoren@kernel.org/
+> > >
+> > > If you plan to seperate it into generic one, I could co-work with you.
+> >
+> > Was the ASID allocator work out of box on C-Sky?
 > 
-> Forward Error Correction (FEC) codes such as Low Density Parity
-> Check (LDPC) and turbo codes provide a means to control errors in
-> data transmissions over unreliable or noisy communication
-> channels. The SD-FEC Integrated Block is an optimized block for
-> soft-decision decoding of these codes. Fixed turbo codes are
-> supported directly, whereas custom and standardized LDPC codes
-> are supported through the ability to specify the parity check
-> matrix through an AXI4-Lite bus or using the optional programmable
-> (PL)-based support logic. For the further information see
-> https://www.xilinx.com/support/documentation/ip_documentation/
-> sd_fec/v1_1/pg256-sdfec-integrated-block.pdf
+> Almost done, but one question:
+> arm64 remove the code in switch_mm:
+>   cpumask_clear_cpu(cpu, mm_cpumask(prev));
+>   cpumask_set_cpu(cpu, mm_cpumask(next));
 > 
-> This driver is a platform device driver which supports SDFEC16
-> (16nm) IP. SD-FEC driver supports LDPC decoding and encoding and
-> Turbo code decoding. LDPC codes can be specified on
-> a codeword-by-codeword basis, also a custom LDPC code can be used.
-> 
-> The SD-FEC driver exposes a char device interface and supports
-> file operations: open(), close(), poll() and ioctl(). The driver
-> allows only one usage of the device, open() limits the number of
-> driver instances. The driver also utilize Common Clock Framework
-> (CCF).
-> 
-> The control and monitoring is supported over ioctl system call.
-> The features supported by ioctl():
-> - enable or disable data pipes to/from device
-> - configure the FEC algorithm parameters
-> - set the order of data
-> - provide a control of a SDFEC bypass option
-> - activates/deactivates SD-FEC
-> - collect and provide statistical data
-> - enable/disable interrupt mode
+> Why? Although arm64 cache operations could affect all harts with CTC
+> method of interconnect, I think we should keep these code for
+> primitive integrity in linux. Because cpu_bitmap is in mm_struct
+> instead of mm->context.
 
-Is there any userspace tool that talks to this device using these custom
-ioctls yet?
+We didn't have a use for this in the arm64 code, so no point in
+maintaining the mm_cpumask. On some arm32 systems (ARMv6) with no
+hardware broadcast of some TLB/cache operations, we use it to track
+where the task has run to issue IPI for TLB invalidation or some
+deferred I-cache invalidation.
 
-Doing a one-off ioctl api is always a risky thing, you are pretty much
-just creating brand new system calls for one piece of hardware.
+(there was also a potential optimisation on arm64 to avoid broadcast
+TLBI if the task only ran on a single CPU but Will found that was rarely
+the case on an SMP system because of rebalancing happening during
+execve(), ending up with two bits set in the mm_cpumask)
 
-Anyway, I took the first 3 patches here because they looked sane.  and
-stopped when I ran into the ioctl problem...
+The way you use it on csky is different from how it is done on arm. It
+seems to clear the mask for the scheduled out (prev) task but this
+wouldn't work on arm(64) since the TLB still contains prev entries
+tagged with the scheduled out ASID. Whether it matters, I guess it
+depends on the specifics of your hardware.
 
-thanks,
+While the algorithm may seem fairly generic, the semantics have a few
+corner cases specific to each architecture. See [1] for a description of
+the semantics we need on arm64 (CnP is a feature where the hardware
+threads of the same core can share the TLB; the original algorithm
+violated the requirements when this feature was enabled).
 
-greg k-h
+BTW, if you find the algorithm fairly straightforward ;), see this
+bug-fix which took a formal model to identify: a8ffaaa060b8 ("arm64:
+asid: Do not replace active_asids if already 0").
+
+[1] https://git.kernel.org/pub/scm/linux/kernel/git/cmarinas/kernel-tla.git/tree/asidalloc.tla#n79
+
+-- 
+Catalin
 
 _______________________________________________
 linux-arm-kernel mailing list
