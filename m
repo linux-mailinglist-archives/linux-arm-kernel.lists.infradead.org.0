@@ -2,95 +2,70 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id ED96B4EFA9
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 21 Jun 2019 21:52:27 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D87014EFD1
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 21 Jun 2019 22:07:00 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:References:To:Subject:From:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fTqIz9vUMoekhPv3oSBGuNoKvkJvt7MWCMWVkz7qbY0=; b=MQkBcwGf6ImpTN
-	g33ozOxcKQAeb7n4wx7uuQz99iGET2IKvHiYcPlIjvvTCUi8j9ksaY7u4b7bk2aQLRqGSmt0cd1Pv
-	aadMg/SiX3Y4FQpRY73emMCXGLgMGP/08/GWtcTemEsRIXjBgELlVCpZ+tWoU88A66fl8TpR0TCWW
-	xUCKF7OROjkcG3BMVPemVDA6A4aJAvTykdbTlOOQmLAViV1owGYAL71meiZSSZowTzgiW5V15XBQR
-	y9fqXVclQB1CPHGKRuZiv8KOg/ePuUmlC5c+ZaBfHiGN3EplRATOTLbN15M0PW9XepNZzaUy4aaFk
-	xXPXjy0RyrHuV0kd3tQg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=GXMM/axSLShDf2ICYkOnHAQdTTAp8zFjKAkDXVoNDP4=; b=kGzKOt5RTviXAA
+	Z96LmIaf00sl/0GlYu7vBAbgAHm8bJ9ylJaDNEXY+rgBHY9JexwF4HduJHwMalbVEWXV6SObfPh+j
+	GLBmtv1LUrb3Mfs+wdSrDlGDTMfXVB4f3Dl8JmOaoANwvS+xZo86iQwHLqThwIgZoAWwlolQJfgIF
+	Zwq3DOnSsyS0KWeKYUYDOEy99uyBsPCeH3yFEoGgAgnuabkIkqTjPsZ8zwDlNDMBoIq00rdN2vgqL
+	w6zS9ouNVbJu+6toT9fsvrxgpMG+x2TjPdAwzIte7PfagZ7e74YJz0U/YoRv6eKALEUGeXGjByep6
+	Xe2GQbAmkiK85A0JzDjA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hePaB-0002j5-Ck; Fri, 21 Jun 2019 19:52:23 +0000
-Received: from mail-lf1-x143.google.com ([2a00:1450:4864:20::143])
+	id 1hePoH-0007Y3-Lx; Fri, 21 Jun 2019 20:06:58 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hePZx-0002hi-Ct
- for linux-arm-kernel@lists.infradead.org; Fri, 21 Jun 2019 19:52:11 +0000
-Received: by mail-lf1-x143.google.com with SMTP id b11so5904393lfa.5
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 21 Jun 2019 12:52:07 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=cogentembedded-com.20150623.gappssmtp.com; s=20150623;
- h=from:subject:to:cc:references:organization:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=wso9AT0PLE8YSVz4mFagGPGoqkgjnJ4hhl/knflL07M=;
- b=Ew+e7GQyGGn3VMUMvlmlNk529darBgRUJ/dcJFSuTVhcptTW0Osp8jReJotYp3YmKA
- f6eeGrLRGAbz3L8Of3mQVbcQDLORcn3KXYXhPmuLEmtkhvEZh+lMjKapiefa6/uiNl2W
- sMOLt5EglU5sNbD9GTGtO5A5tcs2ho6YQ53d4IWO8ykmDYB7C1u0OYGN4kKeIMmQbB8t
- sCsUfdPPmodLtBotaF1sfyp3QcvscC+eoN6kkXc3skMo0VaCzrVmg+NLHLSyIaA9tmok
- kdq69iSb8NJ1pNNEYW3c7xUwEyznK+nW7o7MOGRmdKVvN+I8ayYLDei7JYMyJxs3C0XZ
- O92A==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:subject:to:cc:references:organization
- :message-id:date:user-agent:mime-version:in-reply-to
- :content-language:content-transfer-encoding;
- bh=wso9AT0PLE8YSVz4mFagGPGoqkgjnJ4hhl/knflL07M=;
- b=CDa1BHO63lsNl3gvdFM0EDfO8gc+rvymE6ot4r5naDg09H7weHmwbXwqXvIJBgR+K6
- fUQQAMdUfEz83YgcLnyqOY5EwmdBkC0OzaI4e2AJjvymizzeG6ThrpWKO8kAjmNtyqUl
- T0RycMWrI0nx9/ZNVU/PGCJtwJ5/Fr6iF646J+Ddn8FrgpZ3eP5ZA8ba7c20v4sCchuq
- 9KXmES3TQ1/MmdKh1laOgs1PVE8yY6n18VONKrm5OXM9k7f+Az4BCMvHvUASSSAK7pSD
- UjmecnoF07BAbs0VoVibBs/EGg7hRyDBA6vraS60W7CbZQotKjO56TkUtmIkcej3QwN5
- FKdA==
-X-Gm-Message-State: APjAAAX3OCQf3oO80DbFmESVVX07w3zhWXnutApBip8DX0ry+ndD9rnU
- 48a/LYdFzzxODlaFr4Qk3h6sXw==
-X-Google-Smtp-Source: APXvYqx3uKDLsq5HSFMYR5JCV7tpvJVm6zODfloD79xoOac4SxateHkoi4zxVApNcx1Fez+sYLEylg==
-X-Received: by 2002:a19:ca1e:: with SMTP id a30mr3669450lfg.163.1561146725828; 
- Fri, 21 Jun 2019 12:52:05 -0700 (PDT)
-Received: from wasted.cogentembedded.com ([31.173.87.14])
- by smtp.gmail.com with ESMTPSA id n3sm513817lfh.3.2019.06.21.12.52.04
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Fri, 21 Jun 2019 12:52:05 -0700 (PDT)
-From: Sergei Shtylyov <sergei.shtylyov@cogentembedded.com>
-Subject: Re: [PATCH v7 3/5] mtd: Add support for HyperBus memory devices
-To: Vignesh Raghavendra <vigneshr@ti.com>,
- Boris Brezillon <bbrezillon@kernel.org>, Marek Vasut
- <marek.vasut@gmail.com>, Richard Weinberger <richard@nod.at>,
- Rob Herring <robh+dt@kernel.org>
-References: <20190620172250.9102-1-vigneshr@ti.com>
- <20190620172250.9102-4-vigneshr@ti.com>
-Organization: Cogent Embedded
-Message-ID: <4d17e914-cd1f-c6fe-b70a-6aae02e0cf4e@cogentembedded.com>
-Date: Fri, 21 Jun 2019 22:52:03 +0300
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101
- Thunderbird/52.2.1
+ id 1hePo4-0007Xb-2P
+ for linux-arm-kernel@lists.infradead.org; Fri, 21 Jun 2019 20:06:45 +0000
+Received: from localhost (unknown [69.71.4.100])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 2F36620673;
+ Fri, 21 Jun 2019 20:06:43 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1561147603;
+ bh=4Q+RFCpdW2sWFHYDR6CaEb8dLMWyiQ24AKk3JVhgTc4=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=niInD/1ACc2tCSDVeaqiAMarUOMqAUFTDnSdC2VuCBdoSt83DJwWtg+RwP1CoAbXB
+ MYdKJKyDuvdUesMUQHgKBLBYEPrcdwVh7mq5CHbRPGdNW7WIrRevMyidGrqqg2Gp4o
+ aX7baCouS+jszHQECG1ZwtOuubQkBo59I4wI+7Ug=
+Date: Fri, 21 Jun 2019 15:06:41 -0500
+From: Bjorn Helgaas <helgaas@kernel.org>
+To: Benjamin Herrenschmidt <benh@kernel.crashing.org>
+Subject: Re: [PATCH 1/4] arm64: pci: acpi: Use
+ pci_assign_unassigned_root_bus_resources()
+Message-ID: <20190621200641.GB127746@google.com>
+References: <20190615002359.29577-1-benh@kernel.crashing.org>
 MIME-Version: 1.0
-In-Reply-To: <20190620172250.9102-4-vigneshr@ti.com>
-Content-Language: en-MW
+Content-Disposition: inline
+In-Reply-To: <20190615002359.29577-1-benh@kernel.crashing.org>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190621_125209_856760_9FBF6BF2 
-X-CRM114-Status: GOOD (  24.37  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190621_130644_131346_79EF9097 
+X-CRM114-Status: GOOD (  15.40  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:143 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -102,91 +77,81 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-mtd@lists.infradead.org, Miquel Raynal <miquel.raynal@bootlin.com>,
- Mason Yang <masonccyang@mxic.com.tw>, linux-arm-kernel@lists.infradead.org
+Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>, linux-pci@vger.kernel.org,
+ Sinan Kaya <okaya@kernel.org>, Zeev Zilberman <zeev@amazon.com>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
+ Ali Saidi <alisaidi@amazon.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hello!
+Match the subject line convention, e.g.,
 
-On 06/20/2019 08:22 PM, Vignesh Raghavendra wrote:
+  arm64: PCI: Use pci_assign_unassigned_root_bus_resources()
 
-> Cypress' HyperBus is Low Signal Count, High Performance Double Data Rate
-> Bus interface between a host system master and one or more slave
-> interfaces. HyperBus is used to connect microprocessor, microcontroller,
-> or ASIC devices with random access NOR flash memory (called HyperFlash)
-> or self refresh DRAM (called HyperRAM).
-> 
-> Its a 8-bit data bus (DQ[7:0]) with  Read-Write Data Strobe (RWDS)
-> signal and either Single-ended clock(3.0V parts) or Differential clock
-> (1.8V parts). It uses ChipSelect lines to select b/w multiple slaves.
-> At bus level, it follows a separate protocol described in HyperBus
-> specification[1].
-> 
-> HyperFlash follows CFI AMD/Fujitsu Extended Command Set (0x0002) similar
-> to that of existing parallel NORs. Since HyperBus is x8 DDR bus,
-> its equivalent to x16 parallel NOR flash wrt bits per clock cycle. But
-> HyperBus operates at >166MHz frequencies.
+But the function name doesn't really tell us anything unless we already
+know how everything works.  I think the point is that
+pci_assign_unassigned_root_bus_resources() gives us the possibility of
+reallocating things if necessary.  A subject that hints at that would be
+good.
 
-   s/wrt/WRT/.
+On Sat, Jun 15, 2019 at 10:23:56AM +1000, Benjamin Herrenschmidt wrote:
+> Instead of the simpler
+> 
+> 	pci_bus_size_bridges(bus);
+> 	pci_bus_assign_resources(bus);
+> 
+> Use pci_assign_unassigned_root_bus_resources(). This should have no
+> effect as long as we are reassigning everything. 
 
-> HyperRAM provides direct random read/write access to flash memory
-> array.
-> 
-> But, HyperBus memory controllers seem to abstract implementation details
-> and expose a simple MMIO interface to access connected flash.
-> 
-> Add support for registering HyperFlash devices with MTD framework. MTD
-> maps framework along with CFI chip support framework are used to support
-> communicating with flash.
-> 
-> Framework is modelled along the lines of spi-nor framework. HyperBus
-> memory controller (HBMC) drivers calls hyperbus_register_device() to
-> register a single HyperFlash device. HyperFlash core parses MMIO access
-> information from DT, sets up the map_info struct, probes CFI flash and
-> registers it with MTD framework.
-> 
-> Some HBMC masters need calibration/training sequence[3] to be carried
-> out, in order for DLL inside the controller to lock, by reading a known
-> string/pattern. This is done by repeatedly reading CFI Query
-> Identification String. Calibration needs to be done before trying to detect
-> flash as part of CFI flash probe.
-> 
-> HyperRAM is not supported at the moment.
-> 
-> HyperBus specification can be found at[1]
-> HyperFlash datasheet can be found at[2]
-> 
-> [1] https://www.cypress.com/file/213356/download
-> [2] https://www.cypress.com/file/213346/download
-> [3] http://www.ti.com/lit/ug/spruid7b/spruid7b.pdf
->     Table 12-5741. HyperFlash Access Sequence
-> 
-> Signed-off-by: Vignesh Raghavendra <vigneshr@ti.com>
-[...]
-> diff --git a/include/linux/mtd/hyperbus.h b/include/linux/mtd/hyperbus.h
-> new file mode 100644
-> index 000000000000..ead969aad35b
-> --- /dev/null
-> +++ b/include/linux/mtd/hyperbus.h
-> @@ -0,0 +1,86 @@
-[...]
-> +/**
-> + * struct hyperbus_ops - struct representing custom HyperBus operations
-> + * @read16: read 16 bit of data to flash in a single burst. Used to read
+  pci_bus_size_bridges(bus) == __pci_bus_size_bridges(bus, NULL)
+  pci_bus_assign_resources(bus) == __pci_bus_assign_resources(bus, NULL, NULL)
 
-   s/to flash/from flash/.
+and we have:
 
-[...]
-> +#endif /* __LINUX_MTD_HYPERBUS_H__ */
+  pci_assign_unassigned_root_bus_resources()
+  {
+    ...
+    __pci_bus_size_bridges(bus, add_list);
+    __pci_bus_assign_resources(bus, add_list, &fail_head);
 
-   I thought you agreed to add the #defines for the HF commands. Well, I can add them
-as well...
+so I guess this should have no effect as long as we were able to
+assign everything.  If we were unable to assign something, previously
+we did nothing and left it unassigned, but after this patch, we will
+attempt to do some reallocation.  Right?
 
-MBR, Sergei
+> Once we start honoring FW resource allocations, this will bring up
+> the "reallocation" feature which can help making room for SR-IOV
+> when necessary.
+
+I think this should be reordered so it's immediately before the patch
+that checks hb->preserve_config, i.e., the patch that honors FW
+assignments.
+
+> Signed-off-by: Benjamin Herrenschmidt <benh@kernel.crashing.org>
+> ---
+>  arch/arm64/kernel/pci.c | 3 +--
+>  1 file changed, 1 insertion(+), 2 deletions(-)
+> 
+> diff --git a/arch/arm64/kernel/pci.c b/arch/arm64/kernel/pci.c
+> index bb85e2f4603f..1419b1b4e9b9 100644
+> --- a/arch/arm64/kernel/pci.c
+> +++ b/arch/arm64/kernel/pci.c
+> @@ -193,8 +193,7 @@ struct pci_bus *pci_acpi_scan_root(struct acpi_pci_root *root)
+>  	if (!bus)
+>  		return NULL;
+>  
+> -	pci_bus_size_bridges(bus);
+> -	pci_bus_assign_resources(bus);
+> +	pci_assign_unassigned_root_bus_resources(bus);
+>  
+>  	list_for_each_entry(child, &bus->children, node)
+>  		pcie_bus_configure_settings(child);
+> -- 
+> 2.17.1
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
