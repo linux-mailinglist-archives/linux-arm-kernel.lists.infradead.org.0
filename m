@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E2DE94E38C
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 21 Jun 2019 11:28:49 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1D0BA4E38F
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 21 Jun 2019 11:29:14 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,35 +11,35 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=zeXN96w53jpaJwtFDfx+gzvXQ4HsKK2Y0ftTwz1iX/k=; b=q71QUcUKFw6Rde+3YGLZKz1L0z
-	HwTL67juwoh4uaxoqlkdn99D1xBzE+wf2e5Hl0/egtiqms1GwdBV1QR+RxzKJWLEJESBsCUYD27cD
-	YW9kxjd/DynO9B2C6sBxbKWzWH2sP6bMACp1B3n0yfYTshUNl2Jcbyu7QH323hM/Ns7QQOQ7kPqNf
-	o+I6jqM383K3vZDSK6QnsJvoK1hPSjZA9G/uXxv2Wv3Roncpv5EdmtpwU4iQkX0BPSGiqBCleyuFW
-	9N2L1PCk0q8eh7cE+lvW3BP+xR/Qgbc70aIUEur8zg0oZOQhtkEEMKy/3Cs/wQRIkkrj3aafJYbZY
-	/G0Tv9Hg==;
+	bh=9Raa0UcHYH8xtNogeFoYOhnn6R31RRQwqIwHpFaLj8g=; b=YqFP9p7zXtPGCv9FCmB8ZqSvRs
+	moIGOyiUt5hcwI1vt2Z9Njr4HUxRYOLtdpANb2eDBoBq7yQAVV+pibthPu1u+0V7YcntMgjwWvME8
+	H04QcC9d4DhPXcDxoXr+VAVAhc4sB+ZmSOeqDry1fpg/jlXaqlVyLPqZa3z/2prgWplUEuSK371fa
+	K1yOaNIOhBZrxXdXlVCaSOm/8xQgndvwxU5c+Aj+p61r2IQetjICZzlJc9mavPYdbmtsPWmSR92L1
+	r1h21d5jcskLBW48dUrc0eTOKDnAsBt1t7D21OdcoAtFSH1t1801iOo0HLCP77zGZ4rWVYmOHfbOJ
+	mccYJs4A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1heFqh-0005S7-MT; Fri, 21 Jun 2019 09:28:48 +0000
+	id 1heFr5-0005j0-PX; Fri, 21 Jun 2019 09:29:11 +0000
 Received: from kirsty.vergenet.net ([202.4.237.240])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1heFev-0002tV-8f
- for linux-arm-kernel@lists.infradead.org; Fri, 21 Jun 2019 09:16:38 +0000
+ id 1heFex-0002tV-3S
+ for linux-arm-kernel@lists.infradead.org; Fri, 21 Jun 2019 09:16:40 +0000
 Received: from reginn.horms.nl (watermunt.horms.nl [80.127.179.77])
- by kirsty.vergenet.net (Postfix) with ESMTPA id 54ED225AEEC;
+ by kirsty.vergenet.net (Postfix) with ESMTPA id 5FA0125B7B1;
  Fri, 21 Jun 2019 19:16:34 +1000 (AEST)
 Received: by reginn.horms.nl (Postfix, from userid 7100)
- id 4FD09940396; Fri, 21 Jun 2019 11:16:32 +0200 (CEST)
+ id 5C574940A59; Fri, 21 Jun 2019 11:16:32 +0200 (CEST)
 From: Simon Horman <horms+renesas@verge.net.au>
 To: linux-renesas-soc@vger.kernel.org
-Subject: [PATCH 02/53] arm64: dts: renesas: r8a774a1: Add DU device to DT
-Date: Fri, 21 Jun 2019 11:15:40 +0200
-Message-Id: <c4f223b419ba3fe44822d3180d3b9e5e6cb33c2e.1561107232.git.horms+renesas@verge.net.au>
+Subject: [PATCH 03/53] arm64: dts: renesas: r8a774a1: Add FDP1 instance
+Date: Fri, 21 Jun 2019 11:15:41 +0200
+Message-Id: <466f475f63d1889c192c751f53ab1030e4dd829c.1561107232.git.horms+renesas@verge.net.au>
 X-Mailer: git-send-email 2.11.0
 In-Reply-To: <cover.1561107232.git.horms+renesas@verge.net.au>
 References: <cover.1561107232.git.horms+renesas@verge.net.au>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190621_021637_495012_4A04597A 
-X-CRM114-Status: UNSURE (   8.89  )
+X-CRM114-CacheID: sfid-20190621_021639_298079_0D4DB52B 
+X-CRM114-Status: UNSURE (   9.71  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.0 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -74,88 +74,36 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Biju Das <biju.das@bp.renesas.com>
 
-Add the DU device to r8a774a1.dtsi in a disabled state.
+The r8a774a1 has a single FDP1 instance similar to r8a7796.
 
 Signed-off-by: Biju Das <biju.das@bp.renesas.com>
+Reviewed-by: Geert Uytterhoeven <geert+renesas@glider.be>
 Signed-off-by: Simon Horman <horms+renesas@verge.net.au>
 ---
- arch/arm64/boot/dts/renesas/r8a774a1.dtsi | 63 +++++++++++++++++++++++++++++++
- 1 file changed, 63 insertions(+)
+ arch/arm64/boot/dts/renesas/r8a774a1.dtsi | 10 ++++++++++
+ 1 file changed, 10 insertions(+)
 
 diff --git a/arch/arm64/boot/dts/renesas/r8a774a1.dtsi b/arch/arm64/boot/dts/renesas/r8a774a1.dtsi
-index f71bd2231882..e7759ba46a66 100644
+index e7759ba46a66..3156bfbb5e9c 100644
 --- a/arch/arm64/boot/dts/renesas/r8a774a1.dtsi
 +++ b/arch/arm64/boot/dts/renesas/r8a774a1.dtsi
-@@ -2043,6 +2043,69 @@
- 			};
+@@ -1825,6 +1825,16 @@
+ 			resets = <&cpg 408>;
  		};
  
-+		du: display@feb00000 {
-+			compatible = "renesas,du-r8a774a1";
-+			reg = <0 0xfeb00000 0 0x70000>;
-+			interrupts = <GIC_SPI 256 IRQ_TYPE_LEVEL_HIGH>,
-+				     <GIC_SPI 268 IRQ_TYPE_LEVEL_HIGH>,
-+				     <GIC_SPI 269 IRQ_TYPE_LEVEL_HIGH>;
-+			clocks = <&cpg CPG_MOD 724>,
-+				 <&cpg CPG_MOD 723>,
-+				 <&cpg CPG_MOD 722>;
-+			clock-names = "du.0", "du.1", "du.2";
-+			status = "disabled";
-+
-+			vsps = <&vspd0 &vspd1 &vspd2>;
-+
-+			ports {
-+				#address-cells = <1>;
-+				#size-cells = <0>;
-+
-+				port@0 {
-+					reg = <0>;
-+					du_out_rgb: endpoint {
-+					};
-+				};
-+				port@1 {
-+					reg = <1>;
-+					du_out_hdmi0: endpoint {
-+					};
-+				};
-+				port@2 {
-+					reg = <2>;
-+					du_out_lvds0: endpoint {
-+						remote-endpoint = <&lvds0_in>;
-+					};
-+				};
-+			};
++		fdp1@fe940000 {
++			compatible = "renesas,fdp1";
++			reg = <0 0xfe940000 0 0x2400>;
++			interrupts = <GIC_SPI 262 IRQ_TYPE_LEVEL_HIGH>;
++			clocks = <&cpg CPG_MOD 119>;
++			power-domains = <&sysc R8A774A1_PD_A3VC>;
++			resets = <&cpg 119>;
++			renesas,fcp = <&fcpf0>;
 +		};
 +
-+		lvds0: lvds@feb90000 {
-+			compatible = "renesas,r8a774a1-lvds";
-+			reg = <0 0xfeb90000 0 0x14>;
-+			clocks = <&cpg CPG_MOD 727>;
-+			power-domains = <&sysc R8A774A1_PD_ALWAYS_ON>;
-+			resets = <&cpg 727>;
-+			status = "disabled";
-+
-+			ports {
-+				#address-cells = <1>;
-+				#size-cells = <0>;
-+
-+				port@0 {
-+					reg = <0>;
-+					lvds0_in: endpoint {
-+						remote-endpoint = <&du_out_lvds0>;
-+					};
-+				};
-+				port@1 {
-+					reg = <1>;
-+					lvds0_out: endpoint {
-+					};
-+				};
-+			};
-+		};
-+
- 		prr: chipid@fff00044 {
- 			compatible = "renesas,prr";
- 			reg = <0 0xfff00044 0 4>;
+ 		fcpf0: fcp@fe950000 {
+ 			compatible = "renesas,fcpf";
+ 			reg = <0 0xfe950000 0 0x200>;
 -- 
 2.11.0
 
