@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 003F34EC4F
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 21 Jun 2019 17:40:28 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CBE314EC52
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 21 Jun 2019 17:41:03 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,43 +11,43 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=dvIz9J0FDJ2uY8x5voHBGscsA+vFFCmqgb1gte4iblI=; b=KV6t7QLTn0MgXKvgZ9W6OFJiL4
-	XZEVhMRHigIRaCrBnropqy2c9hcDVLoSbQSkg/ICGTzJR0/hUikSia0IPP8gGPKNKMHUlUb4+L/fE
-	ktjwZTD+9y5OYcAzKximnwaPdPirp2v+AE5nX1EI8mJQeLeAkRtvvPhrYrlOiLtDgLJCeZxDHgdm1
-	jJo/3lKlww7YUkTiaRZtJBN1q98bL2jIgkSXVlhzkRC8jTDIk/JIpsMAvDVeiil4KbeNhNLarsbPu
-	BwNonHYoqQOSJktOjkVYSUafWqovLXnBLYaoWCHaF5niq8u7iE0s5Cx+l1LQRC3ae4RYz2bBbJw42
-	dL4aUEXA==;
+	bh=c5dDCEqo07cudbfGPA0rQu20LLDlsoR4jGuMYcEn8t8=; b=qsbOEHgh/tMxifFWRQTrtehjIs
+	3V6eEvgxbMEDvFHlz0XKDeRQb/OjBTEWs1n+73WjBgH+b0Z84bRbtfP3kheRs0YZS1ZCJYrK/GQ0c
+	GkcCQviInZuG8bbK3/6yHXfrkM86Kt7g3wTPcu/skeO0Ybq0EjkSz7JCCBvSqC5ZIjr9jnQ2QRXLx
+	i3jLJuTPdE21PYIcCakzOY6Jn/YWLHXTG54TssY73j9HiuDO4iKQt9lHREsmbx2DU8wZoSToOZx+K
+	4ARN6Cdq9kvZPx5d+nllUT0Jl/XjS7PXiYFzSrG51e/6Ux9kH4TcO8qdqLpgd2pEUECbJ0/qheezm
+	dsL6A6jg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1heLeM-0004cQ-Ue; Fri, 21 Jun 2019 15:40:26 +0000
+	id 1heLew-0006L0-9S; Fri, 21 Jun 2019 15:41:02 +0000
 Received: from inva021.nxp.com ([92.121.34.21])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1heLcx-0003jM-69
- for linux-arm-kernel@lists.infradead.org; Fri, 21 Jun 2019 15:39:02 +0000
+ id 1heLcx-0003jv-VU
+ for linux-arm-kernel@lists.infradead.org; Fri, 21 Jun 2019 15:39:04 +0000
 Received: from inva021.nxp.com (localhost [127.0.0.1])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id E6F852009FA;
- Fri, 21 Jun 2019 17:38:55 +0200 (CEST)
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 730822009FC;
+ Fri, 21 Jun 2019 17:38:56 +0200 (CEST)
 Received: from inva024.eu-rdc02.nxp.com (inva024.eu-rdc02.nxp.com
  [134.27.226.22])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id D78B0200071;
- Fri, 21 Jun 2019 17:38:55 +0200 (CEST)
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 6502C200071;
+ Fri, 21 Jun 2019 17:38:56 +0200 (CEST)
 Received: from fsr-ub1664-016.ea.freescale.net
  (fsr-ub1664-016.ea.freescale.net [10.171.71.216])
- by inva024.eu-rdc02.nxp.com (Postfix) with ESMTP id 6847920629;
+ by inva024.eu-rdc02.nxp.com (Postfix) with ESMTP id E7B4B20629;
  Fri, 21 Jun 2019 17:38:55 +0200 (CEST)
 From: Claudiu Manoil <claudiu.manoil@nxp.com>
 To: "David S . Miller" <davem@davemloft.net>
-Subject: [PATCH net-next 3/6] ocelot: Factor out resource ioremap and regmap
- init common code
-Date: Fri, 21 Jun 2019 18:38:49 +0300
-Message-Id: <1561131532-14860-4-git-send-email-claudiu.manoil@nxp.com>
+Subject: [PATCH net-next 4/6] arm64: dts: fsl: ls1028a: Add Felix switch port
+ DT node
+Date: Fri, 21 Jun 2019 18:38:50 +0300
+Message-Id: <1561131532-14860-5-git-send-email-claudiu.manoil@nxp.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1561131532-14860-1-git-send-email-claudiu.manoil@nxp.com>
 References: <1561131532-14860-1-git-send-email-claudiu.manoil@nxp.com>
 X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190621_083859_536483_0F9AB03E 
-X-CRM114-Status: GOOD (  10.18  )
+X-CRM114-CacheID: sfid-20190621_083900_421119_65A87A52 
+X-CRM114-Status: GOOD (  10.00  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -79,97 +79,105 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Let's make this ioremap and regmap init code common.  It should not
-be platform dependent as it should be usable by PCI devices too.
-Use better names where necessary to avoid clashes.
+Add the switch device node, available on PF5, so that the
+switch port sub-nodes (net devices) can be linked to
+corresponding board specific phy nodes (external ports) or
+have their link mode defined (internal ports).
+The switch device features 6 ports, 4 with external links
+and 2 internally facing to the ls1028a SoC and connected via
+fixed links to 2 internal enetc ethernet controller ports.
+Add the corresponding enetc internal port device nodes,
+mapped to PF2 and PF6 PCIe functions.
+And don't forget to enable the 4MB BAR4 in the root complex
+ECAM space, where the switch registers are mapped.
 
 Signed-off-by: Claudiu Manoil <claudiu.manoil@nxp.com>
 ---
- drivers/net/ethernet/mscc/ocelot.h       |  4 +---
- drivers/net/ethernet/mscc/ocelot_board.c | 12 ++++++++----
- drivers/net/ethernet/mscc/ocelot_io.c    | 14 +++++---------
- 3 files changed, 14 insertions(+), 16 deletions(-)
+ .../arm64/boot/dts/freescale/fsl-ls1028a.dtsi | 58 ++++++++++++++++++-
+ 1 file changed, 57 insertions(+), 1 deletion(-)
 
-diff --git a/drivers/net/ethernet/mscc/ocelot.h b/drivers/net/ethernet/mscc/ocelot.h
-index e21a6fb22ef8..4235d7294772 100644
---- a/drivers/net/ethernet/mscc/ocelot.h
-+++ b/drivers/net/ethernet/mscc/ocelot.h
-@@ -493,9 +493,7 @@ void ocelot_port_writel(struct ocelot_port *port, u32 val, u32 reg);
+diff --git a/arch/arm64/boot/dts/freescale/fsl-ls1028a.dtsi b/arch/arm64/boot/dts/freescale/fsl-ls1028a.dtsi
+index 4cdf84c63320..2462dd936212 100644
+--- a/arch/arm64/boot/dts/freescale/fsl-ls1028a.dtsi
++++ b/arch/arm64/boot/dts/freescale/fsl-ls1028a.dtsi
+@@ -421,7 +421,9 @@
+ 				  /* PF1: VF0-1 BAR0 - non-prefetchable memory */
+ 				  0x82000000 0x0 0x00000000  0x1 0xf8210000  0x0 0x020000
+ 				  /* PF1: VF0-1 BAR2 - prefetchable memory */
+-				  0xc2000000 0x0 0x00000000  0x1 0xf8230000  0x0 0x020000>;
++				  0xc2000000 0x0 0x00000000  0x1 0xf8230000  0x0 0x020000
++				  /* BAR4 (PF5) - non-prefetchable memory */
++				  0x82000000 0x0 0x00000000  0x1 0xfc000000  0x0 0x400000>;
  
- int ocelot_regfields_init(struct ocelot *ocelot,
- 			  const struct reg_field *const regfields);
--struct regmap *ocelot_io_platform_init(struct ocelot *ocelot,
--				       struct platform_device *pdev,
--				       const char *name);
-+struct regmap *ocelot_io_init(struct ocelot *ocelot, struct resource *res);
- 
- #define ocelot_field_write(ocelot, reg, val) regmap_field_write((ocelot)->regfields[(reg)], (val))
- #define ocelot_field_read(ocelot, reg, val) regmap_field_read((ocelot)->regfields[(reg)], (val))
-diff --git a/drivers/net/ethernet/mscc/ocelot_board.c b/drivers/net/ethernet/mscc/ocelot_board.c
-index 2a6ee4edb858..489177058d9e 100644
---- a/drivers/net/ethernet/mscc/ocelot_board.c
-+++ b/drivers/net/ethernet/mscc/ocelot_board.c
-@@ -182,7 +182,7 @@ static int mscc_ocelot_probe(struct platform_device *pdev)
- 	struct {
- 		enum ocelot_target id;
- 		char *name;
--	} res[] = {
-+	} io_target[] = {
- 		{ SYS, "sys" },
- 		{ REW, "rew" },
- 		{ QSYS, "qsys" },
-@@ -201,14 +201,18 @@ static int mscc_ocelot_probe(struct platform_device *pdev)
- 	platform_set_drvdata(pdev, ocelot);
- 	ocelot->dev = &pdev->dev;
- 
--	for (i = 0; i < ARRAY_SIZE(res); i++) {
-+	for (i = 0; i < ARRAY_SIZE(io_target); i++) {
- 		struct regmap *target;
-+		struct resource *res;
+ 			enetc_port0: ethernet@0,0 {
+ 				compatible = "fsl,enetc";
+@@ -431,12 +433,66 @@
+ 				compatible = "fsl,enetc";
+ 				reg = <0x000100 0 0 0 0>;
+ 			};
++			ethernet@0,2 {
++				compatible = "fsl,enetc";
++				reg = <0x000200 0 0 0 0>;
++				fixed-link {
++					speed = <1000>;
++					full-duplex;
++				};
++			};
+ 			ethernet@0,4 {
+ 				compatible = "fsl,enetc-ptp";
+ 				reg = <0x000400 0 0 0 0>;
+ 				clocks = <&clockgen 4 0>;
+ 				little-endian;
+ 			};
++			switch@0,5 {
++				compatible = "mscc,felix-switch";
++				reg = <0x000500 0 0 0 0>;
 +
-+		res = platform_get_resource_byname(pdev, IORESOURCE_MEM,
-+						   io_target[i].name);
- 
--		target = ocelot_io_platform_init(ocelot, pdev, res[i].name);
-+		target = ocelot_io_init(ocelot, res);
- 		if (IS_ERR(target))
- 			return PTR_ERR(target);
- 
--		ocelot->targets[res[i].id] = target;
-+		ocelot->targets[io_target[i].id] = target;
- 	}
- 
- 	hsio = syscon_regmap_lookup_by_compatible("mscc,ocelot-hsio");
-diff --git a/drivers/net/ethernet/mscc/ocelot_io.c b/drivers/net/ethernet/mscc/ocelot_io.c
-index c6db8ad31fdf..9a9a6766c231 100644
---- a/drivers/net/ethernet/mscc/ocelot_io.c
-+++ b/drivers/net/ethernet/mscc/ocelot_io.c
-@@ -97,20 +97,16 @@ static struct regmap_config ocelot_regmap_config = {
- 	.reg_stride	= 4,
++				ethernet-ports {
++					#address-cells = <1>;
++					#size-cells = <0>;
++
++					/* external ports */
++					switch_port0: port@0 {
++						reg = <0>;
++					};
++					switch_port1: port@1 {
++						reg = <1>;
++					};
++					switch_port2: port@2 {
++						reg = <2>;
++					};
++					switch_port3: port@3 {
++						reg = <3>;
++					};
++					/* internal to-cpu ports */
++					port@4 {
++						reg = <4>;
++						fixed-link {
++							speed = <1000>;
++							full-duplex;
++						};
++					};
++					port@5 {
++						reg = <5>;
++						fixed-link {
++							speed = <1000>;
++							full-duplex;
++						};
++					};
++				};
++			};
++			ethernet@0,6 {
++				compatible = "fsl,enetc";
++				reg = <0x000600 0 0 0 0>;
++				fixed-link {
++					speed = <1000>;
++					full-duplex;
++				};
++			};
+ 		};
+ 	};
  };
- 
--struct regmap *ocelot_io_platform_init(struct ocelot *ocelot,
--				       struct platform_device *pdev,
--				       const char *name)
-+struct regmap *ocelot_io_init(struct ocelot *ocelot, struct resource *res)
- {
--	struct resource *res;
- 	void __iomem *regs;
- 
--	res = platform_get_resource_byname(pdev, IORESOURCE_MEM, name);
- 	regs = devm_ioremap_resource(ocelot->dev, res);
- 	if (IS_ERR(regs))
- 		return ERR_CAST(regs);
- 
--	ocelot_regmap_config.name = name;
--	return devm_regmap_init_mmio(ocelot->dev, regs,
--				     &ocelot_regmap_config);
-+	ocelot_regmap_config.name = res->name;
-+
-+	return devm_regmap_init_mmio(ocelot->dev, regs, &ocelot_regmap_config);
- }
--EXPORT_SYMBOL(ocelot_io_platform_init);
-+EXPORT_SYMBOL(ocelot_io_init);
 -- 
 2.17.1
 
