@@ -2,88 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F12344EB47
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 21 Jun 2019 16:56:06 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 76F794EB53
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 21 Jun 2019 16:58:15 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=wNMGCW7K9M+8lSrZgkmgXiB4PEovlFMQ2vgRsiNF0Fw=; b=lMHIh9sDKK2dSi
-	w9O38OJ8L7ZSe4S7LhWgEHzX8kOu16YNwrmLFRjJZCZRGcIlDVuPQzPN24FeLsFgpDVWszzDQVTyk
-	glRzJKtqQCA3PbFrXNoUvmut/LiRDxz2muwoRjfBQCbMtqGSWlu7aOBIaAJvWbp9+KWnV/grjvWaG
-	yLTTM1ATHG5Wi7Ybrzx2WxevbsQhip1xMC2w2pJXXG5+/h3A/sqZcMkXl6i8ldURlkaBi0G1P5Uin
-	788/delWlm6Po2VZ2l4nGN4ZalRi4LIrbQoObl2vE241sWiStCpDHkTVtQwznUVrmWmGIvd/lkro1
-	TD/NYa6UbcBI4cor8ozQ==;
+	List-Owner; bh=hmUIFUdYGVTM786sLxwFcoRIqBWdVFdASXJWg+cPSsU=; b=BFHOhQSGZDgfrE
+	DmbcRDRbQJgOyPMPFZR0WNuHD2zyAHp+wY8Ie8L20ZNpkP1Zx/I3PEQ1UAHCaka7/rL4atUh9bbZ8
+	5IHgxeyj4PbGFamd6cXyWkimE2oruSSYvF50L2WqByekyrIzUjCG/sVsxYNmbgNSyAdvfUfL/RJ35
+	RYnKGKvmMSaQExb4C3+aR3zYGeWRcZwHaggAWVjhKD44yjESwjwPaI3A+mHgOxRjFjxrNsQ7EYKFV
+	OsgTBfsuzftWoSr5laB8OBw90IKB7grN5DkgERr3K3B04wGvmN2XhL2V01jlcU5nJsC/pn08PNrJ0
+	qUGu5NYRkeEbnRPh7Kkg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1heKxP-0001lj-8O; Fri, 21 Jun 2019 14:56:03 +0000
-Received: from mail-vk1-xa41.google.com ([2607:f8b0:4864:20::a41])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1heKxE-0001lL-45
- for linux-arm-kernel@lists.infradead.org; Fri, 21 Jun 2019 14:55:53 +0000
-Received: by mail-vk1-xa41.google.com with SMTP id b69so1352900vkb.3
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 21 Jun 2019 07:55:50 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=McASa29lxjZpj0oJ3ZfQEaOaFXbUU/UG3+m1x1GG8co=;
- b=X3xAV4NyA3y9UzA2IA/Mk+qrbdrPKZIojhR+endGbpMJCR38xtZNqJ9k22djG6EF8T
- lgeu4QQxt/tsghp0XWw3YgkSmM36uLQez2tVp4MN+NadgIHC0T2hblyRbSo9szBtCly7
- Wl/mDoc9QOORA8aKlSOXdTAQ2mVhqtKyuShPZOn9t5BGSWAGAHhGSbwIAFb5WEVoeR7E
- kP+EjwXcBAkzjawd196Z/h9+budQycSYG4WoqpHICVdO3OTu0jmpgEthvef+K46SvBJp
- k+whefb30M+1PGYlpvNw5ZQWAt4m/unHVMNLGpia4S28NYrHiRibidO0Ao1/uRPdY6o9
- rBaQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=McASa29lxjZpj0oJ3ZfQEaOaFXbUU/UG3+m1x1GG8co=;
- b=Co9GRQB52Xsbv//ttlw9jAQ0Omlpj12B5aOclCPvO0Dvp4NrP5/xV5RRjmnB/xMeUV
- kP6fiPhMNInfxbM/LBFd2kSKk+XLHU9EQPDjp66osbUsMjWMFDrA+BPSyh8cv579qFWN
- Stb8YVmwPAd7MAAuizI/KmZnW8ZJCoquivstzQLi2699bJ5vKiYPLVgUciDHv9rHeLQc
- e+4MftHn7Nw7kKlpOg6B8tEVL5+qSjizaP7CycfGsrLiycKZYNQwC+Xo0sfWye3FoCJ7
- ZOqXBJSOqxo2EaVkTgktXEa3zI2r8V0FDGFwD6xStjyZPRs84d01MfykyCgx/uxZb+b+
- dBIA==
-X-Gm-Message-State: APjAAAV+fGk6DPNtGwyby4uyHhxCATj78ZtJTKbYSgzzyZXFG5Ha8uDJ
- PULwozVOW9ds+g7poGo6nKRM4BsaD1Ur+OvrB6U=
-X-Google-Smtp-Source: APXvYqxCcxQEXetp+8qxWOCkYRfCFeSjQTr5ue+VK7qlD1hltuVYOFpeQY0fPGUN+r8Luu/8sd8vTD7bA2pcXXHSCQ0=
-X-Received: by 2002:a1f:14c1:: with SMTP id 184mr9771787vku.69.1561128950035; 
- Fri, 21 Jun 2019 07:55:50 -0700 (PDT)
+	id 1heKzT-00029J-1M; Fri, 21 Jun 2019 14:58:11 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1heKzG-00028d-7o
+ for linux-arm-kernel@lists.infradead.org; Fri, 21 Jun 2019 14:57:59 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id CC8D728;
+ Fri, 21 Jun 2019 07:57:55 -0700 (PDT)
+Received: from e121166-lin.cambridge.arm.com (unknown [10.1.196.255])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id AC1B63F575;
+ Fri, 21 Jun 2019 07:57:54 -0700 (PDT)
+Date: Fri, 21 Jun 2019 15:57:52 +0100
+From: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
+To: Benjamin Herrenschmidt <benh@kernel.crashing.org>
+Subject: Re: [PATCH 4/4] arm64: pci: acpi: Preserve PCI resources
+ configuration when asked by ACPI
+Message-ID: <20190621145752.GC21807@e121166-lin.cambridge.arm.com>
+References: <20190615002359.29577-1-benh@kernel.crashing.org>
+ <20190615002359.29577-4-benh@kernel.crashing.org>
 MIME-Version: 1.0
-References: <1560755897-5002-1-git-send-email-yannick.fertre@st.com>
- <CACvgo50vSNCTTTKp9D_07tazOE9YkU-zKAsDywvWe6h0NgcEmQ@mail.gmail.com>
- <2c169739-febb-12a9-0fa1-d5da053ded67@st.com>
-In-Reply-To: <2c169739-febb-12a9-0fa1-d5da053ded67@st.com>
-From: Emil Velikov <emil.l.velikov@gmail.com>
-Date: Fri, 21 Jun 2019 15:53:32 +0100
-Message-ID: <CACvgo52tK2Gaz7wzJ0Cw1rKsTog6PbGF4G8at=cO-oyiEZ4EUg@mail.gmail.com>
-Subject: Re: [PATCH 1/3] drm/stm: drv: fix suspend/resume
-To: Yannick FERTRE <yannick.fertre@st.com>
+Content-Disposition: inline
+In-Reply-To: <20190615002359.29577-4-benh@kernel.crashing.org>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190621_075552_191352_224FB4E2 
-X-CRM114-Status: UNSURE (   8.91  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190621_075758_327076_EF6B17AD 
+X-CRM114-Status: GOOD (  15.31  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:a41 listed in]
- [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (emil.l.velikov[at]gmail.com)
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -95,39 +62,66 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Daniel Vetter <daniel@ffwll.ch>, David Airlie <airlied@linux.ie>,
- Philippe CORNU <philippe.cornu@st.com>,
- ML dri-devel <dri-devel@lists.freedesktop.org>,
- "Linux-Kernel@Vger. Kernel. Org" <linux-kernel@vger.kernel.org>,
- Alexandre TORGUE <alexandre.torgue@st.com>,
- Maxime Coquelin <mcoquelin.stm32@gmail.com>,
- Vincent ABRIOU <vincent.abriou@st.com>,
- "linux-stm32@st-md-mailman.stormreply.com"
- <linux-stm32@st-md-mailman.stormreply.com>,
- LAKML <linux-arm-kernel@lists.infradead.org>,
- Benjamin GAIGNARD <benjamin.gaignard@st.com>
+Cc: Ard Biesheuvel <ard.biesheuvel@linaro.org>, linux-pci@vger.kernel.org,
+ Sinan Kaya <okaya@kernel.org>, Zeev Zilberman <zeev@amazon.com>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
+ Bjorn Helgaas <helgaas@kernel.org>, Ali Saidi <alisaidi@amazon.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, 21 Jun 2019 at 15:01, Yannick FERTRE <yannick.fertre@st.com> wrote:
->
-> Hi Emil,
->
-> The msm driver tests the return value & set state to NULL if no error is
-> detected.
->
-> the ltdc driver tests the return value & force to suspend if an error is
-> detected.
->
-> It's not exactly the same.
->
-D'oh I've misread that patch as pm_runtime_force_suspend() being
-called when the atomic helper succeeds.
+On Sat, Jun 15, 2019 at 10:23:59AM +1000, Benjamin Herrenschmidt wrote:
+> When _DSM #5 returns 0 for a host bridge, we need to claim the existing
 
-Thanks for the correction :-)
-Emil
+Nit: technically we do not know whether it is a _DSM #5 setting
+hb->preserve_config or not, it is just a matter of rewording the log.
+
+> resources rather than reassign everything.
+> 
+> Signed-off-by: Benjamin Herrenschmidt <benh@kernel.crashing.org>
+> ---
+>  arch/arm64/kernel/pci.c | 11 +++++++++++
+>  1 file changed, 11 insertions(+)
+> 
+> diff --git a/arch/arm64/kernel/pci.c b/arch/arm64/kernel/pci.c
+> index 1419b1b4e9b9..a2c608a3fc41 100644
+> --- a/arch/arm64/kernel/pci.c
+> +++ b/arch/arm64/kernel/pci.c
+> @@ -168,6 +168,7 @@ struct pci_bus *pci_acpi_scan_root(struct acpi_pci_root *root)
+>  	struct acpi_pci_generic_root_info *ri;
+>  	struct pci_bus *bus, *child;
+>  	struct acpi_pci_root_ops *root_ops;
+> +	struct pci_host_bridge *hb;
+>  
+>  	ri = kzalloc(sizeof(*ri), GFP_KERNEL);
+>  	if (!ri)
+> @@ -193,6 +194,16 @@ struct pci_bus *pci_acpi_scan_root(struct acpi_pci_root *root)
+>  	if (!bus)
+>  		return NULL;
+>  
+> +	hb = pci_find_host_bridge(bus);
+
+to_pci_host_bridge(bus->bridge) would do but it is probably better to
+leave it as-is.
+
+> +
+> +	/* If ACPI tells us to preserve the resource configuration, claim now */
+> +	if (hb->preserve_config)
+> +		pci_bus_claim_resources(bus);
+> +
+> +	/*
+> +	 * Assign whatever was left unassigned. If we didn't claim above, this will
+> +	 * reassign everything.
+> +	 */
+>  	pci_assign_unassigned_root_bus_resources(bus);
+>  
+>  	list_for_each_entry(child, &bus->children, node)
+
+This is fine as far as we acknowledge that claiming resources
+on a bus is what should be done to make them immutable.
+
+Acked-by: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
 
 _______________________________________________
 linux-arm-kernel mailing list
