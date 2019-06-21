@@ -2,76 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 28B184DF75
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 21 Jun 2019 05:57:57 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6C8434DF7C
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 21 Jun 2019 06:03:54 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1vWq5DUio2mhHaWjv4aRK94+UbvJOxJMcNaQinqDYMM=; b=k0uXlYpYAgdrf5
-	P5boBla/dNw4B5c638Xh+1/2fb2hWcEtmTXyVRdGzqTh5aUk0GD/rlJvyAg8srIb8hv7h3HqAe2fX
-	NkmsJGOkxYwjTO71H8RL0ktr2nxKHOvUE3qO7uAElLJaFkmxC5GcKTxhXE8ESCDukbacVqH1Wpxya
-	3A0kRPKvrzzhl1nOhZ/mi57Jh+a/S467aLJkIVoZD8Q+D1uDSxBuPEVIwdk1GtqAiXTxbENLiSkPQ
-	Xa3WbUTmfs2wiBzyOVdsssuC7nWSFa1xgKMeMtBAdRtLrYP0b6kzjEwWMPa0bERTxNyTAs3ezSZTS
-	jpZ/QTRxJizT4zMA0mWw==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=M1ObBArBf9/b3D9qrs/FXVT87oTwXkUKs82v2Y8TSBU=; b=DqxunVYCDJ+gqf
+	nSFNg9ryhzfcxvXK5o34ZqJpZ4QJ1X03jxFG9qV5hwaYzYcIRJecqSFgIVXAc4cQWM4ICvz0M7Jvw
+	czk3lz6tu/mTjWB6ACI+cNxotTbdsZFiqB26ztpFErfu8Zs46ZN3BAw4SJDMf+vuksN0Sv1LKRHjm
+	LqCCuxTD0OGeVhgwvLmNvnXH0+tkTITlIoE/ucylvBQCFdd/p+l7fiNwNvZqdb0nyRoYCXigH2e5y
+	Dqt8LmldXufQN7x0Wi/bap18o3ENdaUxk5lR+kt3d/JS1tj+tLS2v+lFp+5LEAzqVc1sX4sS56391
+	O5At0GeUx1FJ+H0NBzjA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1heAgV-0003Ij-6r; Fri, 21 Jun 2019 03:57:55 +0000
-Received: from mail-ed1-x543.google.com ([2a00:1450:4864:20::543])
+	id 1heAmG-0005DE-5X; Fri, 21 Jun 2019 04:03:52 +0000
+Received: from gate2.alliedtelesis.co.nz ([2001:df5:b000:5::4])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1heAgF-0003Gk-TG
- for linux-arm-kernel@lists.infradead.org; Fri, 21 Jun 2019 03:57:41 +0000
-Received: by mail-ed1-x543.google.com with SMTP id z25so7900612edq.9
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 20 Jun 2019 20:57:38 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=CzpQ3kjwujWtzVv4DPV/tCEIfc/FEWMVjTdzmC0X/us=;
- b=jzfqpCbIoHgGVRtBrF7lF9LbFU0bamZ0XcWct6qlfHV/QwB10qU/rA1lxfbJzreE4d
- 1Eb9Q3vlujL0JdKQ0P5PUa4L684fqSj0w+5LfiZXn3ZB6Ey+OfAyIYoMpv3x967xmxah
- owqCTatdEiWnrqAb92DE1FkUfv1WWYVD9h1fE=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=CzpQ3kjwujWtzVv4DPV/tCEIfc/FEWMVjTdzmC0X/us=;
- b=XkRQ2r4aUBoy3JiwUFKf8dlsYSe7/yS4Yti+QMTdJscC21WXcFEHcA5lFqt++bWh6v
- AsBpp0xRnCMDA9WiqITn+22PYi3jD2SKOny06U3u+Z+UwBdSdHubCrxKkSMSvZJbgWb/
- cc6PcyyZyTwqQa7t0Vpf9QwTpZbCYYw6nvRMQHdV6dCgxU/zfYCjPYbzH6AizOjcVGCd
- TCdpHvd/I+tel5x9Tj5UUI4qPrnaTTOG6y8ws1rDcRZxFnfrz9KGXGyUKoHqCHG+CGmL
- +S+EnDYf/ue3nB9vzdoubdurFFQlnSJUcFml9AmZaum8H2pFiXlZ7g3O3MPy8CdGNRon
- 9bcw==
-X-Gm-Message-State: APjAAAWFh71hqo26x4SOOUcIvNvmy0MQny730t0652SFo1nmV1tawFS4
- zYUsIYjaS15jUk7eiAVjc0jx9+uxaI008OiP3k26Dg==
-X-Google-Smtp-Source: APXvYqxtQU/h9lU9BT7NNPLBVdxBj0QGosKYc3X2ZtxZ8KnWLpi5Bn5SLQLGMx+FINNzLp0Eu0dm/II4xxlh1U/V53Y=
-X-Received: by 2002:a50:b561:: with SMTP id z30mr89337967edd.87.1561089457646; 
- Thu, 20 Jun 2019 20:57:37 -0700 (PDT)
+ id 1heAm4-0005CA-SO
+ for linux-arm-kernel@lists.infradead.org; Fri, 21 Jun 2019 04:03:43 +0000
+Received: from mmarshal3.atlnz.lc (mmarshal3.atlnz.lc [10.32.18.43])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (Client did not present a certificate)
+ by gate2.alliedtelesis.co.nz (Postfix) with ESMTPS id 9F6FC806A8;
+ Fri, 21 Jun 2019 16:03:28 +1200 (NZST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=alliedtelesis.co.nz;
+ s=mail181024; t=1561089808;
+ bh=DAK5yPtszayhwjnlTmBc3QE84ABr3J9qrB+j9wai8/U=;
+ h=From:To:Subject:Date;
+ b=CVXLgrRQjsbJfXD/0VBKrS9Y2Ml7wN6I8sMiz3AN1/RrzxW/+MH8Lz8MV2q/05/Tz
+ LD5JHSXjt5+aQZKf9yXzapBpXw4ocA1SHfBQMJGEj7BZykMgHdVhPKp4NR7piiloBU
+ 10kQnDowcLz2X1mPjhO4COv/KfsbZgstTzIu/tq2aUkDKr33PJbqEFEu66uchqgyXN
+ oQLt/RON+sdaJf+op30kgTcTyvnsICCV5QHVhNlaT7Yd4aND1d955RtiTfrNqiy9tf
+ c/7jt6P3bVgeyA2uBGSHSJdD4Z/oy7zV6DYN5hGF9s1dUHtlrk4xkuRp3YFTlWbhPq
+ /BNsJI2dwoTUQ==
+Received: from svr-chch-ex1.atlnz.lc (Not Verified[10.32.16.77]) by
+ mmarshal3.atlnz.lc with Trustwave SEG (v7, 5, 8, 10121)
+ id <B5d0c57100000>; Fri, 21 Jun 2019 16:03:28 +1200
+Received: from svr-chch-ex1.atlnz.lc (2001:df5:b000:bc8::77) by
+ svr-chch-ex1.atlnz.lc (2001:df5:b000:bc8::77) with Microsoft SMTP Server
+ (TLS) id 15.0.1156.6; Fri, 21 Jun 2019 16:03:28 +1200
+Received: from svr-chch-ex1.atlnz.lc ([fe80::409d:36f5:8899:92e8]) by
+ svr-chch-ex1.atlnz.lc ([fe80::409d:36f5:8899:92e8%12]) with mapi id
+ 15.00.1156.000; Fri, 21 Jun 2019 16:03:28 +1200
+From: Chris Packham <Chris.Packham@alliedtelesis.co.nz>
+To: Thomas Petazzoni <thomas.petazzoni@bootlin.com>, Jason Cooper
+ <jason@lakedaemon.net>, Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>, "Bjorn
+ Helgaas" <bhelgaas@google.com>, "linux-pci@vger.kernel.org"
+ <linux-pci@vger.kernel.org>, "linux-arm-kernel@lists.infradead.org"
+ <linux-arm-kernel@lists.infradead.org>, "linux-kernel@vger.kernel.org"
+ <linux-kernel@vger.kernel.org>
+Subject: Kirkwood PCI Express and bridges
+Thread-Topic: Kirkwood PCI Express and bridges
+Thread-Index: AQHVJ+ZHqWcIqP7kgUutSbOlaor9TQ==
+Date: Fri, 21 Jun 2019 04:03:27 +0000
+Message-ID: <403548ec3a7543b08ca32e47a1465e70@svr-chch-ex1.atlnz.lc>
+Accept-Language: en-NZ, en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-ms-exchange-transport-fromentityheader: Hosted
+x-originating-ip: [2001:df5:b000:22:3a2c:4aff:fe70:2b02]
 MIME-Version: 1.0
-References: <1560169080-27134-1-git-send-email-yong.wu@mediatek.com>
- <1560169080-27134-17-git-send-email-yong.wu@mediatek.com>
- <CANdKZ0d873PJ2u=Hn_aUJBu3dDiNyueVwBv94-VXHGLJBvAbGg@mail.gmail.com>
- <eee15db0-e43f-de9b-28a0-93bdd04836d7@gmail.com>
- <effb4fff-da83-708f-ca10-50f2645c91c6@gmail.com>
-In-Reply-To: <effb4fff-da83-708f-ca10-50f2645c91c6@gmail.com>
-From: Pi-Hsun Shih <pihsun@chromium.org>
-Date: Fri, 21 Jun 2019 11:57:01 +0800
-Message-ID: <CANdKZ0cr=SMtQOTVduKZBOtw5E6ZOpShf3q2McDX=rFWbfB03A@mail.gmail.com>
-Subject: Re: [PATCH v7 16/21] memory: mtk-smi: Add bus_sel for mt8183
-To: Matthias Brugger <matthias.bgg@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190620_205739_975210_A96ABD8A 
-X-CRM114-Status: GOOD (  29.33  )
+X-CRM114-CacheID: sfid-20190620_210341_304125_F02D570D 
+X-CRM114-Status: UNSURE (   7.90  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:543 listed in]
- [list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -80,7 +84,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -92,177 +95,215 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: =?UTF-8?B?WW91bGluIFBlaSAo6KO05Y+L5p6XKQ==?= <youlin.pei@mediatek.com>,
- "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
- <devicetree@vger.kernel.org>, Nicolas Boichat <drinkcat@chromium.org>,
- srv_heupstream@mediatek.com, Joerg Roedel <joro@8bytes.org>,
- Will Deacon <will.deacon@arm.com>, open list <linux-kernel@vger.kernel.org>,
- Evan Green <evgreen@chromium.org>, Tomasz Figa <tfiga@google.com>,
- iommu@lists.linux-foundation.org, Rob Herring <robh+dt@kernel.org>,
- "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
- "moderated list:ARM/Mediatek SoC support"
- <linux-arm-kernel@lists.infradead.org>, Sascha Hauer <kernel@pengutronix.de>,
- =?UTF-8?B?WWluZ2pvZSBDaGVuICjpmbPoi7HmtLIp?= <yingjoe.chen@mediatek.com>,
- anan.sun@mediatek.com, Robin Murphy <robin.murphy@arm.com>,
- Matthias Kaehlcke <mka@chromium.org>, Yong Wu <yong.wu@mediatek.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Jun 20, 2019 at 7:38 PM Matthias Brugger <matthias.bgg@gmail.com> wrote:
->
-> CCing Sascha
->
-> On 20/06/2019 11:35, Matthias Brugger wrote:
-> >
-> >
-> > On 13/06/2019 10:14, Pi-Hsun Shih wrote:
-> >> Hi,
-> >> When I tested this patch series (Based on linux 5.2.0-rc2, and with
-> >> various other patch series about MT8183) with lockdep enabled, and I'm
-> >> seeing the following lockdep warning on boot.
-> >>
-> >> By bisecting the commits, the first commit that introduce this warning
-> >> is this patch. The warning also doesn't appear if
-> >> https://lore.kernel.org/patchwork/patch/1086582/ and
-> >> https://lore.kernel.org/patchwork/patch/1086583/ are not applied.
-> >>
-> >> Do anyone have idea on why this is happening, or any suggestion on
-> >> which part I should be digging into to figure this out? Thanks.
-> >>
-> >> [    4.664194] ======================================================
-> >> [    4.670368] WARNING: possible circular locking dependency detected
-> >> [    4.676545] 5.2.0-rc2-next-20190528-44527-g6c94b6475c04 #20 Tainted: G S
-> >> [    4.684539] ------------------------------------------------------
-> >> [    4.690714] kworker/4:1/51 is trying to acquire lock:
-> >> [    4.695760] (____ptrval____) (regulator_list_mutex){+.+.},
-> >> at:regulator_lock_dependent+0xdc/0x6c4
-> >> [    4.704732]
-> >> [    4.704732] but task is already holding lock:
-> >> [    4.710556] (____ptrval____) (&genpd->mlock/1){+.+.},
-> >> at:genpd_lock_nested_mtx+0x24/0x30
-> >> [    4.718740]
-> >> [    4.718740] which lock already depends on the new lock.
-> >> [    4.718740]
-> >> [    4.726908]
-> >> [    4.726908] the existing dependency chain (in reverse order) is:
-> >> [    4.734382]
-> >> [    4.734382] -> #4 (&genpd->mlock/1){+.+.}:
-> >> [    4.739963]        __mutex_lock_common+0x1a0/0x1fe8
-> >> [    4.744836]        mutex_lock_nested+0x40/0x50
-> >> [    4.749275]        genpd_lock_nested_mtx+0x24/0x30
-> >> [    4.754063]        genpd_add_subdomain+0x150/0x524
-> >> [    4.758850]        pm_genpd_add_subdomain+0x3c/0x5c
-> >> [    4.763723]        scpsys_probe+0x520/0xe78
-> >> [    4.767902]        platform_drv_probe+0xf4/0x134
-> >> [    4.772517]        really_probe+0x214/0x4dc
-> >> [    4.776696]        driver_probe_device+0xcc/0x1d4
-> >> [    4.781396]        __device_attach_driver+0x10c/0x180
-> >> [    4.786442]        bus_for_each_drv+0x124/0x184
-> >> [    4.790968]        __device_attach+0x1c0/0x2d8
-> >> [    4.795407]        device_initial_probe+0x20/0x2c
-> >> [    4.800106]        bus_probe_device+0x80/0x16c
-> >> [    4.804546]        deferred_probe_work_func+0x120/0x168
-> >> [    4.809767]        process_one_work+0x858/0x1208
-> >> [    4.814379]        worker_thread+0x9ec/0xcb8
-> >> [    4.818644]        kthread+0x2b8/0x2d0
-> >> [    4.822391]        ret_from_fork+0x10/0x18
-> >> [    4.826480]
-> >> [    4.826480] -> #3 (&genpd->mlock){+.+.}:
-> >> [    4.831880]        __mutex_lock_common+0x1a0/0x1fe8
-> >> [    4.836752]        mutex_lock_nested+0x40/0x50
-> >> [    4.841190]        genpd_lock_mtx+0x20/0x2c
-> >> [    4.845369]        genpd_runtime_resume+0x140/0x434
-> >> [    4.850241]        __rpm_callback+0xb0/0x1e4
-> >> [    4.854506]        rpm_callback+0x54/0x1a8
-> >> [    4.858597]        rpm_resume+0xc6c/0x10c4
-> >> [    4.862689]        __pm_runtime_resume+0xb4/0x124
-> >> [    4.867387]        device_link_add+0x598/0x8d0
-> >
-> > For this looks as if you have also patch
-> > [PATCH v2 04/12] memory: mtk-smi: Add device-link between smi-larb and smi-common
-> > from series
-> > [PATCH v2 00/12] Clean up "mediatek,larb" after adding device_link
-> > applied.
-> >
->
-> My guess is, that we run into this, because we call genpd_runtime_resume before
-> we have finished the subdomain registration in scpsys_probe.
-> That implies that you also have the scpsys series for mt8183 added to your tree.
->
-> Anyway it looks to me as if we have to add the subdomains before we call
-> of_genpd_add_provider_onecell().
->
-> Regards,
-> Matthias
+Hi All,
 
-Yes I do have scpsys series for mt8183 added in my tree. (I have about
-125 patches from list on top of 531b0a360899 "Add linux-next specific
-files for 20190528" to make the board boot)
-However the exact same warning still exists after I changed the order
-of of_genpd_add_provider_onecell and pm_genpd_add_subdomain, patch as
-follow:
-(Patch is based on commit f4788d37bc84 "Add linux-next specific files
-for 20190614")
+I'm in the process of updating the kernel version used on our products 
+from 4.4 -> 5.1.
 
-diff --git a/drivers/soc/mediatek/mtk-scpsys.c
-b/drivers/soc/mediatek/mtk-scpsys.c
-index 503222d0d0da..0cd9bdd4004e 100644
---- a/drivers/soc/mediatek/mtk-scpsys.c
-+++ b/drivers/soc/mediatek/mtk-scpsys.c
-@@ -440,8 +440,7 @@ static struct scp *init_scp(struct platform_device *pdev,
- static void mtk_register_power_domains(struct platform_device *pdev,
-  struct scp *scp, int num)
- {
-- struct genpd_onecell_data *pd_data;
-- int i, ret;
-+ int i;
+We have one product that uses a Kirkwood CPU, IDT PCI bridge and Marvell 
+Switch ASIC. The Switch ASIC presents as multiple PCI devices.
 
-  for (i = 0; i < num; i++) {
-  struct scp_domain *scpd = &scp->domains[i];
-@@ -457,18 +456,6 @@ static void mtk_register_power_domains(struct
-platform_device *pdev,
+The hardware setup looks like this
+                                        __________
+[ Kirkwood ] --- [ IDT 5T5 ] ---+---  |          |
+                                 +---  |  Switch  |
+                                 +---  |          |
+                                 +---  |__________|
 
-  pm_genpd_init(genpd, NULL, false);
-  }
--
-- /*
-- * We are not allowed to fail here since there is no way to unregister
-- * a power domain. Once registered above we have to keep the domains
-- * valid.
-- */
--
-- pd_data = &scp->pd_data;
--
-- ret = of_genpd_add_provider_onecell(pdev->dev.of_node, pd_data);
-- if (ret)
-- dev_err(&pdev->dev, "Failed to add OF provider: %d\n", ret);
- }
+On the 4.4 based kernel things are fine
 
- /*
-@@ -1053,6 +1040,16 @@ static int scpsys_probe(struct platform_device *pdev)
-  ret);
-  }
+[root@awplus flash]# lspci -t
+-[0000:00]---01.0-[01-06]----00.0-[02-06]--+-02.0-[03]----00.0
+                                            +-03.0-[04]----00.0
+                                            +-04.0-[05]----00.0
+                                            \-05.0-[06]----00.0
 
-+ /*
-+ * We are not allowed to fail here since there is no way to unregister
-+ * a power domain. Once registered above we have to keep the domains
-+ * valid.
-+ */
-+
-+ ret = of_genpd_add_provider_onecell(pdev->dev.of_node, pd_data);
-+ if (ret)
-+ dev_err(&pdev->dev, "Failed to add OF provider: %d\n", ret);
-+
-  return 0;
- }
+But on the 5.1 based kernel things get a little weird
 
->
->
-> > Regards,
-> > Matthias
-> >
+[root@awplus flash]# lspci -t
+-[0000:00]---01.0-[01-06]--+-00.0-[02-06]--
+                            +-01.0
+                            +-02.0-[02-06]--
+                            +-03.0-[02-06]--
+                            +-04.0-[02-06]--
+                            +-05.0-[02-06]--
+                            +-06.0-[02-06]--
+                            +-07.0-[02-06]--
+                            +-08.0-[02-06]--
+                            +-09.0-[02-06]--
+                            +-0a.0-[02-06]--
+                            +-0b.0-[02-06]--
+                            +-0c.0-[02-06]--
+                            +-0d.0-[02-06]--
+                            +-0e.0-[02-06]--
+                            +-0f.0-[02-06]--
+                            +-10.0-[02-06]--
+                            +-11.0-[02-06]--
+                            +-12.0-[02-06]--
+                            +-13.0-[02-06]--
+                            +-14.0-[02-06]--
+                            +-15.0-[02-06]--
+                            +-16.0-[02-06]--
+                            +-17.0-[02-06]--
+                            +-18.0-[02-06]--
+                            +-19.0-[02-06]--
+                            +-1a.0-[02-06]--
+                            +-1b.0-[02-06]--
+                            +-1c.0-[02-06]--
+                            +-1d.0-[02-06]--
+                            +-1e.0-[02-06]--
+                            \-1f.0-[02-06]--+-02.0-[03]----00.0
+                                            +-03.0-[04]----00.0
+                                            +-04.0-[05]----00.0
+                                            \-05.0-[06]----00.0
+
+
+I'll start bisecting to see where things started going wrong. I just 
+wondered if this rings any bells for anyone.
+
+The startup output also seems to be quite unhappy
+
+Detected board: alliedtelesis,SBx81GC40
+Booting into Linux kernel ...
+** 143 printk messages dropped **
+pci 0000:01:19.0: PME# supported from D0 D3hot D3cold
+pci 0000:01:1a.0: [111d:803c] type 01 class 0x060400
+pci 0000:01:1a.0: PME# supported from D0 D3hot D3cold
+pci 0000:01:1b.0: [111d:803c] type 01 class 0x060400
+pci 0000:01:1b.0: PME# supported from D0 D3hot D3cold
+pci 0000:01:1c.0: [111d:803c] type 01 class 0x060400
+pci 0000:01:1c.0: PME# supported from D0 D3hot D3cold
+pci 0000:01:1d.0: [111d:803c] type 01 class 0x060400
+pci 0000:01:1d.0: PME# supported from D0 D3hot D3cold
+pci 0000:01:1e.0: [111d:803c] type 01 class 0x060400
+pci 0000:01:1e.0: PME# supported from D0 D3hot D3cold
+pci 0000:01:1f.0: [111d:803c] type 01 class 0x060400
+pci 0000:01:1f.0: PME# supported from D0 D3hot D3cold
+PCI: bus1: Fast back to back transfers disabled
+pci 0000:01:00.0: bridge configuration invalid ([bus 00-00]), reconfiguring
+pci 0000:01:02.0: bridge configuration invalid ([bus 00-00]), reconfiguring
+pci 0000:01:03.0: bridge configuration invalid ([bus 00-00]), reconfiguring
+pci 0000:01:04.0: bridge configuration invalid ([bus 00-00]), reconfiguring
+pci 0000:01:05.0: bridge configuration invalid ([bus 00-00]), reconfiguring
+pci 0000:01:06.0: bridge configuration invalid ([bus 00-00]), reconfiguring
+pci 0000:01:07.0: bridge configuration invalid ([bus 00-00]), reconfiguring
+pci 0000:01:08.0: bridge configuration invalid ([bus 00-00]), reconfiguring
+pci 0000:01:09.0: bridge configuration invalid ([bus 00-00]), reconfiguring
+pci 0000:01:0a.0: bridge configuration invalid ([bus 00-00]), reconfiguring
+pci 0000:01:0b.0: bridge configuration invalid ([bus 00-00]), reconfiguring
+pci 0000:01:0c.0: bridge configuration invalid ([bus 00-00]), reconfiguring
+pci 0000:01:0d.0: bridge configuration invalid ([bus 00-00]), reconfiguring
+pci 0000:01:0e.0: bridge configuration invalid ([bus 00-00]), reconfiguring
+pci 0000:01:0f.0: bridge configuration invalid ([bus 00-00]), reconfiguring
+pci 0000:01:10.0: bridge configuration invalid ([bus 00-00]), reconfiguring
+pci 0000:01:11.0: bridge configuration invalid ([bus 00-00]), reconfiguring
+pci 0000:01:12.0: bridge configuration invalid ([bus 00-00]), reconfiguring
+pci 0000:01:13.0: bridge configuration invalid ([bus 00-00]), reconfiguring
+pci 0000:01:14.0: bridge configuration invalid ([bus 00-00]), reconfiguring
+pci 0000:01:15.0: bridge configuration invalid ([bus 00-00]), reconfiguring
+pci 0000:01:16.0: bridge configuration invalid ([bus 00-00]), reconfiguring
+pci 0000:01:17.0: bridge configuration invalid ([bus 00-00]), reconfiguring
+pci 0000:01:18.0: bridge configuration invalid ([bus 00-00]), reconfiguring
+pci 0000:01:19.0: bridge configuration invalid ([bus 00-00]), reconfiguring
+pci 0000:01:1a.0: bridge configuration invalid ([bus 00-00]), reconfiguring
+pci 0000:01:1b.0: bridge configuration invalid ([bus 00-00]), reconfiguring
+pci 0000:01:1c.0: bridge configuration invalid ([bus 00-00]), reconfiguring
+pci 0000:01:1d.0: bridge configuration invalid ([bus 00-00]), reconfiguring
+pci 0000:01:1e.0: bridge configuration invalid ([bus 00-00]), reconfiguring
+pci 0000:01:1f.0: bridge configuration invalid ([bus 00-00]), reconfiguring
+pci 0000:02:02.0: [111d:803c] type 01 class 0x060400
+pci 0000:02:02.0: enabling Extended Tags
+pci 0000:02:02.0: PME# supported from D0 D3hot D3cold
+pci 0000:02:03.0: [111d:803c] type 01 class 0x060400
+pci 0000:02:03.0: enabling Extended Tags
+pci 0000:02:03.0: PME# supported from D0 D3hot D3cold
+pci 0000:02:04.0: [111d:803c] type 01 class 0x060400
+pci 0000:02:04.0: enabling Extended Tags
+pci 0000:02:04.0: PME# supported from D0 D3hot D3cold
+pci 0000:02:05.0: [111d:803c] type 01 class 0x060400
+pci 0000:02:05.0: enabling Extended Tags
+pci 0000:02:05.0: PME# supported from D0 D3hot D3cold
+PCI: bus2: Fast back to back transfers disabled
+pci 0000:02:02.0: bridge configuration invalid ([bus 00-00]), reconfiguring
+pci 0000:02:03.0: bridge configuration invalid ([bus 00-00]), reconfiguring
+pci 0000:02:04.0: bridge configuration invalid ([bus 00-00]), reconfiguring
+pci 0000:02:05.0: bridge configuration invalid ([bus 00-00]), reconfiguring
+pci 0000:03:00.0: [11ab:e023] type 00 class 0x058000
+pci 0000:03:00.0: reg 0x10: [mem 0xd0000000-0xd00fffff 64bit pref]
+pci 0000:03:00.0: reg 0x18: [mem 0x00000000-0x03ffffff 64bit]
+PCI: bus3: Fast back to back transfers disabled
+pci_bus 0000:03: busn_res: [bus 03-ff] end is updated to 03
+pci 0000:04:00.0: [11ab:e023] type 00 class 0x058000
+pci 0000:04:00.0: reg 0x10: [mem 0xd0000000-0xd00fffff 64bit pref]
+pci 0000:04:00.0: reg 0x18: [mem 0x00000000-0x03ffffff 64bit]
+PCI: bus4: Fast back to back transfers disabled
+pci_bus 0000:04: busn_res: [bus 04-ff] end is updated to 04
+pci 0000:05:00.0: [11ab:e023] type 00 class 0x058000
+pci 0000:05:00.0: reg 0x10: [mem 0xd0000000-0xd00fffff 64bit pref]
+pci 0000:05:00.0: reg 0x18: [mem 0x00000000-0x03ffffff 64bit]
+PCI: bus5: Fast back to back transfers disabled
+pci_bus 0000:05: busn_res: [bus 05-ff] end is updated to 05
+pci 0000:06:00.0: [11ab:e023] type 00 class 0x058000
+pci 0000:06:00.0: reg 0x10: [mem 0xd0000000-0xd00fffff 64bit pref]
+pci 0000:06:00.0: reg 0x18: [mem 0x00000000-0x03ffffff 64bit]
+PCI: bus6: Fast back to back transfers disabled
+pci_bus 0000:06: busn_res: [bus 06-ff] end is updated to 06
+pci_bus 0000:02: busn_res: [bus 02-ff] end is updated to 06
+pci_bus 0000:01: busn_res: [bus 01-ff] end is updated to 06
+pci 0000:00:01.0: BAR 8: no space for [mem size 0x1c000000]
+pci 0000:00:01.0: BAR 8: failed to assign [mem size 0x1c000000]
+pci 0000:00:01.0: BAR 6: assigned [mem 0xe0000000-0xe00007ff pref]
+pci 0000:01:01.0: BAR 2: no space for [mem size 0x08000000]
+pci 0000:01:01.0: BAR 2: failed to assign [mem size 0x08000000]
+pci 0000:01:00.0: BAR 8: no space for [mem size 0x10000000]
+pci 0000:01:00.0: BAR 8: failed to assign [mem size 0x10000000]
+pci 0000:01:00.0: BAR 9: no space for [mem size 0x00400000 64bit pref]
+pci 0000:01:00.0: BAR 9: failed to assign [mem size 0x00400000 64bit pref]
+pci 0000:01:01.0: BAR 0: no space for [mem size 0x00100000 64bit pref]
+pci 0000:01:01.0: BAR 0: failed to assign [mem size 0x00100000 64bit pref]
+pci 0000:02:02.0: BAR 8: no space for [mem size 0x04000000]
+pci 0000:02:02.0: BAR 8: failed to assign [mem size 0x04000000]
+pci 0000:02:03.0: BAR 8: no space for [mem size 0x04000000]
+pci 0000:02:03.0: BAR 8: failed to assign [mem size 0x04000000]
+pci 0000:02:04.0: BAR 8: no space for [mem size 0x04000000]
+pci 0000:02:04.0: BAR 8: failed to assign [mem size 0x04000000]
+pci 0000:02:05.0: BAR 8: no space for [mem size 0x04000000]
+pci 0000:02:05.0: BAR 8: failed to assign [mem size 0x04000000]
+pci 0000:02:02.0: BAR 9: no space for [mem size 0x00100000 64bit pref]
+pci 0000:02:02.0: BAR 9: failed to assign [mem size 0x00100000 64bit pref]
+pci 0000:02:03.0: BAR 9: no space for [mem size 0x00100000 64bit pref]
+pci 0000:02:03.0: BAR 9: failed to assign [mem size 0x00100000 64bit pref]
+pci 0000:02:04.0: BAR 9: no space for [mem size 0x00100000 64bit pref]
+pci 0000:02:04.0: BAR 9: failed to assign [mem size 0x00100000 64bit pref]
+pci 0000:02:05.0: BAR 9: no space for [mem size 0x00100000 64bit pref]
+pci 0000:02:05.0: BAR 9: failed to assign [mem size 0x00100000 64bit pref]
+pci 0000:03:00.0: BAR 2: no space for [mem size 0x04000000 64bit]
+pci 0000:03:00.0: BAR 2: failed to assign [mem size 0x04000000 64bit]
+pci 0000:03:00.0: BAR 0: no space for [mem size 0x00100000 64bit pref]
+pci 0000:03:00.0: BAR 0: failed to assign [mem size 0x00100000 64bit pref]
+pci 0000:02:02.0: PCI bridge to [bus 03]
+pci 0000:04:00.0: BAR 2: no space for [mem size 0x04000000 64bit]
+pci 0000:04:00.0: BAR 2: failed to assign [mem size 0x04000000 64bit]
+pci 0000:04:00.0: BAR 0: no space for [mem size 0x00100000 64bit pref]
+pci 0000:04:00.0: BAR 0: failed to assign [mem size 0x00100000 64bit pref]
+pci 0000:02:03.0: PCI bridge to [bus 04]
+pci 0000:05:00.0: BAR 2: no space for [mem size 0x04000000 64bit]
+pci 0000:05:00.0: BAR 2: failed to assign [mem size 0x04000000 64bit]
+pci 0000:05:00.0: BAR 0: no space for [mem size 0x00100000 64bit pref]
+pci 0000:05:00.0: BAR 0: failed to assign [mem size 0x00100000 64bit pref]
+pci 0000:02:04.0: PCI bridge to [bus 05]
+pci 0000:06:00.0: BAR 2: no space for [mem size 0x04000000 64bit]
+pci 0000:06:00.0: BAR 2: failed to assign [mem size 0x04000000 64bit]
+pci 0000:06:00.0: BAR 0: no space for [mem size 0x00100000 64bit pref]
+pci 0000:06:00.0: BAR 0: failed to assign [mem size 0x00100000 64bit pref]
+pci 0000:02:05.0: PCI bridge to [bus 06]
+pci 0000:01:00.0: PCI bridge to [bus 02-06]
+pci 0000:00:01.0: PCI bridge to [bus 01-06]
 
 _______________________________________________
 linux-arm-kernel mailing list
