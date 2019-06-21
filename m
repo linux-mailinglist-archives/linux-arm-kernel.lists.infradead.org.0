@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A79144E1E2
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 21 Jun 2019 10:27:37 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BF8E24E1E3
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 21 Jun 2019 10:27:51 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,29 +11,29 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=QQBu8j4bpN9/MxMvr5QSf9DN30xHqKODP9hwQt76OU8=; b=Hit/4u+J++Vm+YOkFQzESoXxWz
-	qb7StY000QxGfef2520F7C2RPDe6RhY0IrHsgfObRxTp6v1iqnzdHyiUkTbthlI+l3Mda22VTIx0T
-	RuRQKQM5/x/UrFfIxNHUB9HfeIuHK/jaZGa/EjCu7YnhBeMC1hAFuPdumZBLwrnsrCLS8t7M1+ggB
-	VszCInOGC60Xn0M0o6oFDYmPUX2ULUfjAyXnx2ONhgIKq/YOk4m0gAYzEgPAABFLqaBARJilrx9Jh
-	tpX8hgDt/ZdRqgMyqeJcDLkVF1mILIljLS6NBpGjQ44hIPw/kjp9vyEcZR5Cg3nY/9Tlok5qmuEyx
-	KsoERM5w==;
+	bh=B6+vH9SvbhwAHouBeMmQCa9kbNW76gWuepEhH1YMg58=; b=c5QK+h82Jsd9ffsY/U2xPaplN6
+	0dEHFlo4Sh9LQ7KqEEUb2RLh9fRBpL9QfPdhNm1BDwUcn3a27hgLeuMdsfhfQKrKAoaQ6Qe0I5ggd
+	vdKfzNvuBSpvbd1YzpH2Yadbzsta2T5io2/0bd38AKxpzEgojbg8l+jFVJxqIQCeprEXBoj5CmLWc
+	j1ZHjilfF23bVR74BAEmHzbPT3KaMG4aRqMvDuMNO1Xjy/1bUfhdIV42SF0a876x9KYlpgnvVrcTe
+	2BcyUhcDeHkITNQUfq+bsXFDZkkwzbGQWLvvnNgi8+x4uRTNZlJxfRJOrJyjeFIfJvGcG9ake/Xji
+	qJ6ThCpw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1heEtR-00043l-K1; Fri, 21 Jun 2019 08:27:33 +0000
+	id 1heEti-0004JQ-Em; Fri, 21 Jun 2019 08:27:50 +0000
 Received: from inva020.nxp.com ([92.121.34.13])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1heEsq-0003qB-JA
- for linux-arm-kernel@lists.infradead.org; Fri, 21 Jun 2019 08:26:58 +0000
+ id 1heEss-0003qb-52
+ for linux-arm-kernel@lists.infradead.org; Fri, 21 Jun 2019 08:26:59 +0000
 Received: from inva020.nxp.com (localhost [127.0.0.1])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 469931A09B4;
- Fri, 21 Jun 2019 10:26:55 +0200 (CEST)
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id E5B571A09A7;
+ Fri, 21 Jun 2019 10:26:56 +0200 (CEST)
 Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
  [165.114.16.14])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 63F011A09BD;
- Fri, 21 Jun 2019 10:26:46 +0200 (CEST)
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 138531A0206;
+ Fri, 21 Jun 2019 10:26:48 +0200 (CEST)
 Received: from mega.ap.freescale.net (mega.ap.freescale.net [10.192.208.232])
- by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 827DF402E0;
- Fri, 21 Jun 2019 16:26:35 +0800 (SGT)
+ by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 2B70C402F1;
+ Fri, 21 Jun 2019 16:26:37 +0800 (SGT)
 From: Anson.Huang@nxp.com
 To: daniel.lezcano@linaro.org, tglx@linutronix.de, robh+dt@kernel.org,
  mark.rutland@arm.com, shawnguo@kernel.org, s.hauer@pengutronix.de,
@@ -41,16 +41,16 @@ To: daniel.lezcano@linaro.org, tglx@linutronix.de, robh+dt@kernel.org,
  abel.vesa@nxp.com, ccaione@baylibre.com, angus@akkea.ca,
  andrew.smirnov@gmail.com, agx@sigxcpu.org, linux-kernel@vger.kernel.org,
  devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org
-Subject: [PATCH 2/3] clocksource: imx-sysctr: Add of_clk skip option
-Date: Fri, 21 Jun 2019 16:28:37 +0800
-Message-Id: <20190621082838.12630-2-Anson.Huang@nxp.com>
+Subject: [PATCH 3/3] arm64: dts: imx8mq: Add system counter node
+Date: Fri, 21 Jun 2019 16:28:38 +0800
+Message-Id: <20190621082838.12630-3-Anson.Huang@nxp.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20190621082838.12630-1-Anson.Huang@nxp.com>
 References: <20190621082838.12630-1-Anson.Huang@nxp.com>
 X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190621_012656_874982_3AF6A0F2 
-X-CRM114-Status: UNSURE (   9.94  )
+X-CRM114-CacheID: sfid-20190621_012658_334979_8E1C4DC9 
+X-CRM114-Status: UNSURE (   6.57  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -81,43 +81,33 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Anson Huang <Anson.Huang@nxp.com>
 
-On some i.MX8M platforms, clock driver uses platform driver
-model and it is NOT ready during timer initialization phase,
-the clock operations will fail and system counter driver will
-fail too. As all the i.MX8M platforms' system counter clock
-are from OSC which is always enabled, so it is no need to enable
-clock for system counter driver, the ONLY thing is to pass
-clock frequence to driver.
-
-This patch adds an option of skipping of_clk operation for
-system counter driver, an optional property "clock-frequency"
-is introduced to pass the frequency value to system counter
-driver and indicate driver to skip of_clk operations.
+Add i.MX8MQ system counter node to enable timer-imx-sysctr
+broadcast timer driver.
 
 Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
 ---
- drivers/clocksource/timer-imx-sysctr.c | 8 ++++++++
+ arch/arm64/boot/dts/freescale/imx8mq.dtsi | 8 ++++++++
  1 file changed, 8 insertions(+)
 
-diff --git a/drivers/clocksource/timer-imx-sysctr.c b/drivers/clocksource/timer-imx-sysctr.c
-index fd7d680..8ff3d7e 100644
---- a/drivers/clocksource/timer-imx-sysctr.c
-+++ b/drivers/clocksource/timer-imx-sysctr.c
-@@ -129,6 +129,14 @@ static void __init sysctr_clockevent_init(void)
- static int __init sysctr_timer_init(struct device_node *np)
- {
- 	int ret = 0;
-+	u32 rate;
+diff --git a/arch/arm64/boot/dts/freescale/imx8mq.dtsi b/arch/arm64/boot/dts/freescale/imx8mq.dtsi
+index d09b808..9d99191 100644
+--- a/arch/arm64/boot/dts/freescale/imx8mq.dtsi
++++ b/arch/arm64/boot/dts/freescale/imx8mq.dtsi
+@@ -635,6 +635,14 @@
+ 				#pwm-cells = <2>;
+ 				status = "disabled";
+ 			};
 +
-+	if (!of_property_read_u32(np, "clock-frequency",
-+				  &rate)) {
-+		to_sysctr.of_clk.rate = rate;
-+		to_sysctr.of_clk.period = DIV_ROUND_UP(rate, HZ);
-+		to_sysctr.flags &= ~TIMER_OF_CLOCK;
-+	}
++			system_counter: timer@306a0000 {
++				compatible = "nxp,sysctr-timer";
++				reg = <0x306a0000 0x30000>;
++				interrupts = <GIC_SPI 47 IRQ_TYPE_LEVEL_HIGH>,
++					     <GIC_SPI 48 IRQ_TYPE_LEVEL_HIGH>;
++				clock-frequency = <8333333>;
++			};
+ 		};
  
- 	ret = timer_of_init(np, &to_sysctr);
- 	if (ret)
+ 		bus@30800000 { /* AIPS3 */
 -- 
 2.7.4
 
