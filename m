@@ -2,70 +2,73 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A3CEC4EE2F
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 21 Jun 2019 19:52:22 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C2EDE4EE31
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 21 Jun 2019 19:52:40 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=NS+06As3eIv75GyhTZFgWR/kjeScQ+qjaXxtFDFxCOI=; b=sca
-	jBiMoOMQz77BOVKhvO2rYOv5Sgbvux8i2fFw/ZnOC1UsQPWhS1ub4NF88ae2fgGjtt1GhhA/cPSDc
-	+Wyt5OX6VskKJTTDA8BD/fpOisUqhrJtdSzvr1jfjKEkzmv+FmIVFsnH0xSJZBhDuc+ZyUPA290qh
-	vKdaEtopO7B39GJt4/e/BvO/OLs3nA9pJ0XaIK9ZjAMqYUWNytq4eVl0PQl+zwcfLmzRWIaV5becL
-	surcqVWdV/plszjTcZfonJDqvgAxZzYF1fW5zsyN5tXVZ4uYfkMF47baPs1EqNyu1sFsDCFOjydWJ
-	SGHi741yc0mGf1/nm6J2N/iG1pBTMtg==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=4TFkK9QcVxFd3XuH9JarhYL+Hm2tRHyR8eF6s1kPa+k=; b=TyjUIvk1tcSOBDJ0blmhL7eMTd
+	rLkUPK+8s7IIGzdJP9qTNZhAjF/4pjt4W3UgMIjZJZ6Zno3oKB0xhOn28ZPFpfFjvgpu93DBoBOZC
+	zV66u4XlP+Nfhr8gpx/p57W/6GdwtgtodUCcCD1VkSKmW7qWQh9XAdcSMEYR/e/te6g6knq1UgAzm
+	+7euxDMLrT/eK0qGG+a1UvrGjfs3ud3/yACRbKFVJIi3o6FQ+ujWRD69uOVUJcoanKDA5lQS1uRTJ
+	NghwYy9m8f3eAA2P0L9/qx6T+uuANEWQppYcY/DMCB6fLsru70OSAfvigs+KoRJmQTL1OCKTNV3e2
+	Che981CQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1heNi0-0000Mg-LN; Fri, 21 Jun 2019 17:52:20 +0000
+	id 1heNiJ-0000ZM-GA; Fri, 21 Jun 2019 17:52:39 +0000
 Received: from mail-pf1-x443.google.com ([2607:f8b0:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1heNhn-0000Kp-EZ
- for linux-arm-kernel@lists.infradead.org; Fri, 21 Jun 2019 17:52:08 +0000
-Received: by mail-pf1-x443.google.com with SMTP id t16so3962667pfe.11
+ id 1heNho-0000LO-3x
+ for linux-arm-kernel@lists.infradead.org; Fri, 21 Jun 2019 17:52:09 +0000
+Received: by mail-pf1-x443.google.com with SMTP id t16so3962690pfe.11
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 21 Jun 2019 10:52:07 -0700 (PDT)
+ Fri, 21 Jun 2019 10:52:08 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=from:to:cc:subject:date:message-id;
- bh=4j1jgb60+vjl+kPBTjylj5qPTzQMqAf23bwaYlsk9H8=;
- b=QPl1s1XNi1YMvLUgHHbaR/3broUshaZNwQzeV+u+bMj6zzwYKoLdCqMDU5rGm6Xsd4
- cBsn0GoEqme6e854wOOzayakbz+vlZwiZFX1Uiniofppp+hYTnxHRzvLNF0KfgFR+JhN
- HtDXKpP3zs1wX6bHWqv3ecq8oEOHGFpLiCLnp8wxd8tepvycNzi+fLUnUxVQfED2GQGL
- RH9VtcJ2+0plXKzA/CqODJwt7hOUN3C2lCTNdMFA8zBIRbHBHgbEDbKXoSyf3hhTU79f
- D+5gZt/zEJRZP3vrI8rdKZIpJTweOdX6r9y1gyZdbTUFb8SZTdpc4r55UwYo5EPYsmjh
- oqoQ==
+ h=from:to:cc:subject:date:message-id:in-reply-to:references;
+ bh=ZB/QEA/K3clWkDbM4qhRU5KEkoHlA3Iglne8yOGj5AU=;
+ b=iTIUWqsoU12Tvqa0aExnW7y3oEJw/5vcH4D7VO9h8yiEl9TujJtWLfTfg9skwgS67B
+ yBnitIFNIbHLhW9ZnapxeQ0Agrv4836sWZ7ewk2KXg169IKqnRzZVwzYYhVZb2qbGOnL
+ BytT2IWR/dizPmCFINJY5SYRoeyPzPnkjhU7/YT/QKsqHxCRQQun4+RRZWDbUwF3YjM9
+ MNR6Z+T/APlg+D+/+ucFrpUeGitPlvQXgZb46R5vhOpbVFeICXtS9720YaBkWLdQrr7L
+ HcfJl6tGg3mDv1HquHx7Ftp3mikeu3yawPypb5E5oGNVkw6J3bIrPldjBzlHN2budhT/
+ jBTw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=4j1jgb60+vjl+kPBTjylj5qPTzQMqAf23bwaYlsk9H8=;
- b=J4mwn4kw8Zt/LUsuiCKXZuHkPQ0sdzmpavpKsJvu4/MyLUip7Vgksc9J5XsSqkJYKs
- uMtHRI5RPwwowGTSCTo87k+/QSt577Vv+/+/CqJQ0R4UdVrVcrsKNwf96nYuUdDc/qMt
- 7spm3mbHK96DtLvZ1qHOPKrY174ASijNc7ONjQHVi774I87cFQySjkc4nZ9hqMrRgIin
- qDVIEU7MWLyTiJ44Ixs/XMpqnuhudg8GZPlNbUCss7FpDBXzxTpmKDEiUSQ0Tec4fnxA
- bxrEtAVfy2f3TZSrq71R5FeW0gLHF254fAWTci0WecAA5+C9m0vf4IbOtIDiQVaBsQAz
- mh5w==
-X-Gm-Message-State: APjAAAUVPdBcpE+Tt7cFR6u7U5cRqBBZab/zBn5c9bWQ9RPBon4U+aYy
- cFTYy213GxSWB/7AhLYwIl4syFb++AAl1g==
-X-Google-Smtp-Source: APXvYqzfBR3pdrkArDInUcFokCzP/JAVp2Dpb/fraFhhn1XS1frL4QKVU8DsK+gwfSdGU31R0VXO2Q==
-X-Received: by 2002:a17:90a:2385:: with SMTP id
- g5mr8446286pje.12.1561139526882; 
- Fri, 21 Jun 2019 10:52:06 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references;
+ bh=ZB/QEA/K3clWkDbM4qhRU5KEkoHlA3Iglne8yOGj5AU=;
+ b=ZtW5ukrpjjkwnJDnhX0LDFyKYTf5J+aCY4Oep8lNtHsR/MWkZyN9HX6JXnJ96P6auV
+ Cqi8JLvJTud47ozNe6IOOej2xY4kEwfP2nomCvochcCrjQ8gRG8v7+S8Fosw/iBKuWAM
+ zVZ49hgXjTge/vvX32h6kFlYThllk2bq5gamzieodMZvlfius2BtmpCOlb7aMmQExdpW
+ plyfCI9yvSUtBSX8bwz5oAgYOs3hLbCR06zO0MlouVn0XbVlvDky59s9FdDDy5GfgYfS
+ BcIw4oVHcjDbQUCDt50/1R/C2hKKdenMW8x3x+QCTnu/UloHukrzaspUvB6qHgvqJUhZ
+ Aj/Q==
+X-Gm-Message-State: APjAAAXXXP6HZXL00ecqLPLBRRbZkyIpw5RBzUEms5Fht6S2YzymTdB6
+ 9Vqv0gLiD5XmZgmpifWk4pyQxG6O0nNWDw==
+X-Google-Smtp-Source: APXvYqyJyBZ39uTFFbC//U31ABdP2wCeU+mwtjx2+PPLr3K0iv4dpPUFsBFj3tl2WCAnnEfWFwqIzw==
+X-Received: by 2002:a63:5152:: with SMTP id r18mr19645487pgl.324.1561139527640; 
+ Fri, 21 Jun 2019 10:52:07 -0700 (PDT)
 Received: from xps15.cg.shawcable.net (S0106002369de4dac.cg.shawcable.net.
  [68.147.8.254])
  by smtp.gmail.com with ESMTPSA id f17sm3378490pgv.16.2019.06.21.10.52.06
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Fri, 21 Jun 2019 10:52:06 -0700 (PDT)
+ Fri, 21 Jun 2019 10:52:07 -0700 (PDT)
 From: Mathieu Poirier <mathieu.poirier@linaro.org>
 To: gregkh@linuxfoundation.org
-Subject: [PATCH 0/2] coresight: next v5.2-rc5 (Part 2)	 
-Date: Fri, 21 Jun 2019 11:52:03 -0600
-Message-Id: <20190621175205.24551-1-mathieu.poirier@linaro.org>
+Subject: [PATCH 1/2] coresight: etm3x: Smatch: Fix potential NULL pointer
+ dereference
+Date: Fri, 21 Jun 2019 11:52:04 -0600
+Message-Id: <20190621175205.24551-2-mathieu.poirier@linaro.org>
 X-Mailer: git-send-email 2.17.1
+In-Reply-To: <20190621175205.24551-1-mathieu.poirier@linaro.org>
+References: <20190621175205.24551-1-mathieu.poirier@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190621_105207_492025_917964A5 
-X-CRM114-Status: UNSURE (   6.79  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190621_105208_168396_6FFD6833 
+X-CRM114-Status: GOOD (  12.01  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -101,26 +104,57 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Good morning,
+From: Suzuki K Poulose <suzuki.poulose@arm.com>
 
-As requested these are two patches that were part of the original tally[1]
-that should go on your char-misc-next for the 5.3 cycle.
+Based on the following report from  Smatch tool, make sure we have a
+valid drvdata before we dereference it to find the real dev.
 
-Applies cleanly on char-misc-next (1a044213fc64).
+The patch 21d26b905c05: "coresight: etm: Clean up device specific
+data" from May 22, 2019, leads to the following Smatch complaint:
 
-Thanks,
-Mathieu
+    ./drivers/hwtracing/coresight/coresight-etm3x.c:460 etm_get_trace_id()
+    warn: variable dereferenced before check 'drvdata' (see line 458)
 
-[1]. https://www.spinics.net/lists/arm-kernel/msg736135.html 
+./drivers/hwtracing/coresight/coresight-etm3x.c
+   457		int trace_id = -1;
+   458		struct device *etm_dev = drvdata->csdev->dev.parent;
+                                         ^^^^^^^^^
+New dereference
 
-Suzuki K Poulose (2):
-  coresight: etm3x: Smatch: Fix potential NULL pointer dereference
-  coresight: tmc: Smatch: Fix potential NULL pointer dereference
+   459
+   460		if (!drvdata)
+                    ^^^^^^^^
+Checked too late.  Delete the check?
 
- drivers/hwtracing/coresight/coresight-etm3x.c   | 3 ++-
- drivers/hwtracing/coresight/coresight-tmc-etr.c | 6 ++++--
- 2 files changed, 6 insertions(+), 3 deletions(-)
+   461			goto out;
+   462
 
+Cc: Mathieu Poirier <mathieu.poirier@linaro.org>
+Cc: Dan Carpenter <dan.carpenter@oracle.com>
+Signed-off-by: Suzuki K Poulose <suzuki.poulose@arm.com>
+Signed-off-by: Mathieu Poirier <mathieu.poirier@linaro.org>
+---
+ drivers/hwtracing/coresight/coresight-etm3x.c | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+diff --git a/drivers/hwtracing/coresight/coresight-etm3x.c b/drivers/hwtracing/coresight/coresight-etm3x.c
+index bed729140718..225c2982e4fe 100644
+--- a/drivers/hwtracing/coresight/coresight-etm3x.c
++++ b/drivers/hwtracing/coresight/coresight-etm3x.c
+@@ -455,11 +455,12 @@ int etm_get_trace_id(struct etm_drvdata *drvdata)
+ {
+ 	unsigned long flags;
+ 	int trace_id = -1;
+-	struct device *etm_dev = drvdata->csdev->dev.parent;
++	struct device *etm_dev;
+ 
+ 	if (!drvdata)
+ 		goto out;
+ 
++	etm_dev = drvdata->csdev->dev.parent;
+ 	if (!local_read(&drvdata->mode))
+ 		return drvdata->traceid;
+ 
 -- 
 2.17.1
 
