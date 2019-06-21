@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E5B864E3B8
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 21 Jun 2019 11:38:11 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C68DA4E49F
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 21 Jun 2019 11:51:29 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,37 +11,35 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=zXOxiHkRnv+I2CrPUMMqBPBsfaCsU6wJtFQcVeDuokc=; b=YMazdVguEQTGDK8eeBCqRWBm4n
-	ZUYJmd9DZ/RsOOQIG2xA7uD3lU5C2nrhaGcpP6ChPsuGmi90SmQk9QMKClQCv7kEQZdrqPnQIPm/X
-	679YZ//CvH5W2Dg4kQbj/mBLqBn91EEOdtJPxYKdi0MjxVg+dMOUh13rCRKWMObS0GrRzoqB+wA6j
-	dFEBVuTX82M3Fl9g9v3tsyibiiK9bTLYaDFFrweMhLbtBYgONF6KchrQk53zzxJVSPYMFN2Zvjv+e
-	3k+U3Qad+9ibaBVuV/DmiCSqRgmR1p2hbfJNH8r2bABLGlaP3OFCFZoMHnINnB6d+jsP9sYpp3xhb
-	Rr78conw==;
+	bh=DP83cohoVco7X0t99qzIpwbDokkGN3q4vRZP1PMpDrM=; b=NzY5beOS6w5nMa+UX7OQYfTuCV
+	tDzBUYP8LRtWc3zLL2+Jw5EZ+aTRWQAPAUBRyN92/LQxQj4SGlMoueo1tTdgmReioHoFnSXtHxqLR
+	aJV1hIovKtL3mZnKjZ5vvlOin2zc5hkoAFAhqWUZoVlEONGRl2DyYTMJ9QfUSKmsoPsvQUBSTAVcu
+	xTtUvACl/PsBzEZW9Sao//Aep5uxv77B5b90p1kS8TsQzvg6QVgo8thXi2jXXfO2+z31xiapqOQsX
+	t45nbLB9U9w/r4XaSU8kJHy7EXHx/UbfHnIwzP2eEaAN/99kBLXkzUYjMUCAK168g1GQQ+GbTHk43
+	JLF3rC9Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1heFzk-0005eF-5a; Fri, 21 Jun 2019 09:38:08 +0000
+	id 1heGCb-0001s4-4i; Fri, 21 Jun 2019 09:51:25 +0000
 Received: from kirsty.vergenet.net ([202.4.237.240])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1heFfp-0002tV-VI
- for linux-arm-kernel@lists.infradead.org; Fri, 21 Jun 2019 09:17:36 +0000
+ id 1heFgy-0002tV-UY
+ for linux-arm-kernel@lists.infradead.org; Fri, 21 Jun 2019 09:18:46 +0000
 Received: from reginn.horms.nl (watermunt.horms.nl [80.127.179.77])
- by kirsty.vergenet.net (Postfix) with ESMTPA id B35B725BE67;
- Fri, 21 Jun 2019 19:16:37 +1000 (AEST)
+ by kirsty.vergenet.net (Postfix) with ESMTPA id 97E7625BECE;
+ Fri, 21 Jun 2019 19:16:43 +1000 (AEST)
 Received: by reginn.horms.nl (Postfix, from userid 7100)
- id 61A6F943294; Fri, 21 Jun 2019 11:16:34 +0200 (CEST)
+ id 7ED0394333F; Fri, 21 Jun 2019 11:16:34 +0200 (CEST)
 From: Simon Horman <horms+renesas@verge.net.au>
 To: linux-renesas-soc@vger.kernel.org
-Subject: [PATCH 30/53] arm64: dts: renesas: hihope-common: Add pincontrol
- support to scif2/scif clock
-Date: Fri, 21 Jun 2019 11:16:08 +0200
-Message-Id: <871c13a443de63c18c26f5ad725da58fc8e19f13.1561107232.git.horms+renesas@verge.net.au>
+Subject: [PATCH 31/53] arm64: dts: renesas: Add HiHope RZ/G2M sub board support
+Date: Fri, 21 Jun 2019 11:16:09 +0200
+Message-Id: <7433f1fb8ec8fe40d069215ae431d5c33235bfb5.1561107232.git.horms+renesas@verge.net.au>
 X-Mailer: git-send-email 2.11.0
 In-Reply-To: <cover.1561107232.git.horms+renesas@verge.net.au>
 References: <cover.1561107232.git.horms+renesas@verge.net.au>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190621_021734_907249_4AFF3932 
-X-CRM114-Status: UNSURE (   9.57  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190621_021845_324623_55386C35 
+X-CRM114-Status: GOOD (  13.33  )
 X-Spam-Score: -2.0 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.0 points)
@@ -75,46 +73,129 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Biju Das <biju.das@bp.renesas.com>
 
-This patch adds pincontrol support to scif2/scif clock.
+The HiHope RZ/G2M sub board sits below the HiHope RZ/G2M main board.
+This patch also adds ethernet support along with a dtsi common to
+both HiHope RZ/G2M and RZ/G2N sub boards.
 
 Signed-off-by: Biju Das <biju.das@bp.renesas.com>
 Reviewed-by: Chris Paterson <Chris.Paterson2@renesas.com>
 Reviewed-by: Geert Uytterhoeven <geert+renesas@glider.be>
 Signed-off-by: Simon Horman <horms+renesas@verge.net.au>
 ---
- arch/arm64/boot/dts/renesas/hihope-common.dtsi | 18 ++++++++++++++++++
- 1 file changed, 18 insertions(+)
+ arch/arm64/boot/dts/renesas/Makefile               |  1 +
+ arch/arm64/boot/dts/renesas/hihope-common.dtsi     |  2 +
+ arch/arm64/boot/dts/renesas/hihope-rzg2-ex.dtsi    | 55 ++++++++++++++++++++++
+ .../boot/dts/renesas/r8a774a1-hihope-rzg2m-ex.dts  | 15 ++++++
+ 4 files changed, 73 insertions(+)
+ create mode 100644 arch/arm64/boot/dts/renesas/hihope-rzg2-ex.dtsi
+ create mode 100644 arch/arm64/boot/dts/renesas/r8a774a1-hihope-rzg2m-ex.dts
 
+diff --git a/arch/arm64/boot/dts/renesas/Makefile b/arch/arm64/boot/dts/renesas/Makefile
+index aa33074b7360..42b74c283289 100644
+--- a/arch/arm64/boot/dts/renesas/Makefile
++++ b/arch/arm64/boot/dts/renesas/Makefile
+@@ -1,5 +1,6 @@
+ # SPDX-License-Identifier: GPL-2.0
+ dtb-$(CONFIG_ARCH_R8A774A1) += r8a774a1-hihope-rzg2m.dtb
++dtb-$(CONFIG_ARCH_R8A774A1) += r8a774a1-hihope-rzg2m-ex.dtb
+ dtb-$(CONFIG_ARCH_R8A774C0) += r8a774c0-cat874.dtb r8a774c0-ek874.dtb
+ dtb-$(CONFIG_ARCH_R8A7795) += r8a7795-salvator-x.dtb r8a7795-h3ulcb.dtb
+ dtb-$(CONFIG_ARCH_R8A7795) += r8a7795-h3ulcb-kf.dtb
 diff --git a/arch/arm64/boot/dts/renesas/hihope-common.dtsi b/arch/arm64/boot/dts/renesas/hihope-common.dtsi
-index 5baf5328124a..de206b7ae4e0 100644
+index de206b7ae4e0..4cc924d38cf6 100644
 --- a/arch/arm64/boot/dts/renesas/hihope-common.dtsi
 +++ b/arch/arm64/boot/dts/renesas/hihope-common.dtsi
-@@ -24,7 +24,25 @@
- 	clock-frequency = <32768>;
- };
+@@ -5,6 +5,8 @@
+  * Copyright (C) 2019 Renesas Electronics Corp.
+  */
  
++#include <dt-bindings/gpio/gpio.h>
++
+ / {
+ 	aliases {
+ 		serial0 = &scif2;
+diff --git a/arch/arm64/boot/dts/renesas/hihope-rzg2-ex.dtsi b/arch/arm64/boot/dts/renesas/hihope-rzg2-ex.dtsi
+new file mode 100644
+index 000000000000..b1e459447d1a
+--- /dev/null
++++ b/arch/arm64/boot/dts/renesas/hihope-rzg2-ex.dtsi
+@@ -0,0 +1,55 @@
++// SPDX-License-Identifier: GPL-2.0
++/*
++ * Device Tree Source for the RZ/G2[MN] HiHope sub board common parts
++ *
++ * Copyright (C) 2019 Renesas Electronics Corp.
++ */
++
++/ {
++	aliases {
++		ethernet0 = &avb;
++	};
++
++	chosen {
++		bootargs = "ignore_loglevel rw root=/dev/nfs ip=on";
++	};
++};
++
++&avb {
++	pinctrl-0 = <&avb_pins>;
++	pinctrl-names = "default";
++	phy-handle = <&phy0>;
++	phy-mode = "rgmii-txid";
++	status = "okay";
++
++	phy0: ethernet-phy@0 {
++		rxc-skew-ps = <1500>;
++		reg = <0>;
++		interrupt-parent = <&gpio2>;
++		interrupts = <11 IRQ_TYPE_LEVEL_LOW>;
++		reset-gpios = <&gpio2 10 GPIO_ACTIVE_LOW>;
++	};
++};
++
 +&pfc {
 +	pinctrl-0 = <&scif_clk_pins>;
 +	pinctrl-names = "default";
 +
-+	scif2_pins: scif2 {
-+		groups = "scif2_data_a";
-+		function = "scif2";
-+	};
++	avb_pins: avb {
++		mux {
++			groups = "avb_link", "avb_mdio", "avb_mii";
++			function = "avb";
++		};
 +
-+	scif_clk_pins: scif_clk {
-+		groups = "scif_clk_a";
-+		function = "scif_clk";
++		pins_mdio {
++			groups = "avb_mdio";
++			drive-strength = <24>;
++		};
++
++		pins_mii_tx {
++			pins = "PIN_AVB_TX_CTL", "PIN_AVB_TXC", "PIN_AVB_TD0",
++			       "PIN_AVB_TD1", "PIN_AVB_TD2", "PIN_AVB_TD3";
++			drive-strength = <12>;
++		};
 +	};
 +};
+diff --git a/arch/arm64/boot/dts/renesas/r8a774a1-hihope-rzg2m-ex.dts b/arch/arm64/boot/dts/renesas/r8a774a1-hihope-rzg2m-ex.dts
+new file mode 100644
+index 000000000000..6e33a3b27706
+--- /dev/null
++++ b/arch/arm64/boot/dts/renesas/r8a774a1-hihope-rzg2m-ex.dts
+@@ -0,0 +1,15 @@
++// SPDX-License-Identifier: GPL-2.0
++/*
++ * Device Tree Source for the HiHope RZ/G2M sub board
++ *
++ * Copyright (C) 2019 Renesas Electronics Corp.
++ */
 +
- &scif2 {
-+	pinctrl-0 = <&scif2_pins>;
-+	pinctrl-names = "default";
++#include "r8a774a1-hihope-rzg2m.dts"
++#include "hihope-rzg2-ex.dtsi"
 +
- 	status = "okay";
- };
- 
++/ {
++	model = "HopeRun HiHope RZ/G2M with sub board";
++	compatible = "hoperun,hihope-rzg2-ex", "hoperun,hihope-rzg2m",
++		     "renesas,r8a774a1";
++};
 -- 
 2.11.0
 
