@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 00F694E35A
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 21 Jun 2019 11:21:27 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DA87E4E355
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 21 Jun 2019 11:21:05 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,36 +11,35 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=Bv07Qu0B49yFu6Ybsc3PsHQAYJ+D/mLqhedPYCtTpN8=; b=X9AG+21spu9eY/YEsbXB/h79Rq
-	sjwqi53lRo+U5WNp/7lrDfHM5uO/QpG/gc+qL1n1SQ+ZgqLrx3OEq4Zedfado3DaYijeFXucSVMys
-	I3H9Q5qisEjAKguU1D6pbRtLraEMfduybQwLg5UlHx27ElgtzGvcGX2xzLKEi3Gkd0nNLcTJTA62Q
-	+RAskom1Lmq639nHyLWK5Xm6QKZEyde1Ilhr9Tjficxyz16+W98bEdT3xMN4OLSn4WYqJZnP6j1ZR
-	XXsrqehPdz0vNJ3rO2PgymhyG8pEp2kRiWWOWFvL019r7W32RSQ1aS4XEXVo94qeSVkuVWTAsqvyP
-	vRLBiTVQ==;
+	bh=D1mt+yhnSX53703DuNELa1ZT0hy2Gsk6OzJ/7JfD3oY=; b=ov9CsUoqo1guRyhdtiRkcFqqPJ
+	PbgB3ljUd/OorQWFLBYIgqVTmvIA/LgHhbvt0n7u2oFgi5/cjBW+/93Olp1gILRZ7pi7Q4K6JLBNG
+	eTLqlwBQI9fFCsBSa1dM8NRBmdWf38kL1uPuXHKcIqZ3eZOTPLkDs8GcNuog4niPoOJPJkyG8wdqP
+	4Qccz7raJUgJFf5sTNOhoqtc61iL09vbQ/5sTEwJNCm+eWzsZN5ydkI60PtxLsxOPQNJG6mODoOVy
+	flND7Du2/IEY28hhM5r0JjwrnY+1PT0kt96AW0f4XaES2mUxCqchrqyjsOVRCaI/thm2ZDoX+VmzZ
+	o4u7K2pQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1heFjZ-0006y2-3S; Fri, 21 Jun 2019 09:21:25 +0000
+	id 1heFjD-0006gT-Ff; Fri, 21 Jun 2019 09:21:03 +0000
 Received: from kirsty.vergenet.net ([202.4.237.240])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1heFcY-0008OY-Ku
- for linux-arm-kernel@lists.infradead.org; Fri, 21 Jun 2019 09:14:12 +0000
+ id 1heFcW-0008OY-HT
+ for linux-arm-kernel@lists.infradead.org; Fri, 21 Jun 2019 09:14:10 +0000
 Received: from reginn.horms.nl (watermunt.horms.nl [80.127.179.77])
- by kirsty.vergenet.net (Postfix) with ESMTPA id DFCD925BE02;
+ by kirsty.vergenet.net (Postfix) with ESMTPA id E169825BE05;
  Fri, 21 Jun 2019 19:13:52 +1000 (AEST)
 Received: by reginn.horms.nl (Postfix, from userid 7100)
- id C99C3940C81; Fri, 21 Jun 2019 11:13:50 +0200 (CEST)
+ id D5FF6940B38; Fri, 21 Jun 2019 11:13:50 +0200 (CEST)
 From: Simon Horman <horms+renesas@verge.net.au>
 To: linux-renesas-soc@vger.kernel.org
-Subject: [PATCH 05/22] ARM: dts: rza2mevb: Add Ethernet support
-Date: Fri, 21 Jun 2019 11:13:32 +0200
-Message-Id: <c5dab2e9a90a75ad839764c777a8da091215eee8.1561104194.git.horms+renesas@verge.net.au>
+Subject: [PATCH 06/22] ARM: dts: rza2mevb: Add SDHI support
+Date: Fri, 21 Jun 2019 11:13:33 +0200
+Message-Id: <c2fad09c28ace81f149afe74a8c378c4824b2b27.1561104194.git.horms+renesas@verge.net.au>
 X-Mailer: git-send-email 2.11.0
 In-Reply-To: <cover.1561104194.git.horms+renesas@verge.net.au>
 References: <cover.1561104194.git.horms+renesas@verge.net.au>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190621_021410_845974_6E0894C4 
-X-CRM114-Status: UNSURE (   9.62  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190621_021408_966424_7FD8D9CF 
+X-CRM114-Status: GOOD (  10.02  )
 X-Spam-Score: -2.0 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.0 points)
@@ -74,82 +73,54 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Chris Brandt <chris.brandt@renesas.com>
 
-The RZ/A2M EVB sub board has 2 Ethernet jacks on it.
-
-Set switch SW6_4	to ON to use Ethernet Ch-0
-Set switch SW6_5	to ON to use Ethernet Ch-1
+The RZ/A2M EVB supports 2 SD card slots. A micro SD slot on the CPU
+board, and a full SD card slot on the sub board.
 
 Signed-off-by: Chris Brandt <chris.brandt@renesas.com>
 Reviewed-by: Geert Uytterhoeven <geert+renesas@glider.be>
 Signed-off-by: Simon Horman <horms+renesas@verge.net.au>
 ---
- arch/arm/boot/dts/r7s9210-rza2mevb.dts | 50 ++++++++++++++++++++++++++++++++++
- 1 file changed, 50 insertions(+)
+ arch/arm/boot/dts/r7s9210-rza2mevb.dts | 24 ++++++++++++++++++++++++
+ 1 file changed, 24 insertions(+)
 
 diff --git a/arch/arm/boot/dts/r7s9210-rza2mevb.dts b/arch/arm/boot/dts/r7s9210-rza2mevb.dts
-index 991e09de1219..1544f3bab3f8 100644
+index 1544f3bab3f8..a328426a0409 100644
 --- a/arch/arm/boot/dts/r7s9210-rza2mevb.dts
 +++ b/arch/arm/boot/dts/r7s9210-rza2mevb.dts
-@@ -62,6 +62,34 @@
- 		pinmux = <RZA2_PINMUX(PORT9, 0, 4)>,	/* TxD4 */
- 			 <RZA2_PINMUX(PORT9, 1, 4)>;	/* RxD4 */
+@@ -90,6 +90,16 @@
+ 			 <RZA2_PINMUX(PORT3, 4, 1)>, /* ET1_MDIO */
+ 			 <RZA2_PINMUX(PORTL, 1, 5)>; /* IRQ5 */
  	};
 +
-+	eth0_pins: eth0 {
-+		pinmux = <RZA2_PINMUX(PORTE, 0, 7)>, /* REF50CK0 */
-+			 <RZA2_PINMUX(PORT6, 1, 7)>, /* RMMI0_TXDEN */
-+			 <RZA2_PINMUX(PORT6, 2, 7)>, /* RMII0_TXD0 */
-+			 <RZA2_PINMUX(PORT6, 3, 7)>, /* RMII0_TXD1 */
-+			 <RZA2_PINMUX(PORTE, 4, 7)>, /* RMII0_CRSDV */
-+			 <RZA2_PINMUX(PORTE, 1, 7)>, /* RMII0_RXD0 */
-+			 <RZA2_PINMUX(PORTE, 2, 7)>, /* RMII0_RXD1 */
-+			 <RZA2_PINMUX(PORTE, 3, 7)>, /* RMII0_RXER */
-+			 <RZA2_PINMUX(PORTE, 5, 1)>, /* ET0_MDC */
-+			 <RZA2_PINMUX(PORTE, 6, 1)>, /* ET0_MDIO */
-+			 <RZA2_PINMUX(PORTL, 0, 5)>; /* IRQ4 */
++	sdhi0_pins: sdhi0 {
++		pinmux = <RZA2_PINMUX(PORT5, 0, 3)>,	/* SD0_CD */
++			 <RZA2_PINMUX(PORT5, 1, 3)>;	/* SD0_WP */
 +	};
 +
-+	eth1_pins: eth1 {
-+		pinmux = <RZA2_PINMUX(PORTK, 3, 7)>, /* REF50CK1 */
-+			 <RZA2_PINMUX(PORTK, 0, 7)>, /* RMMI1_TXDEN */
-+			 <RZA2_PINMUX(PORTK, 1, 7)>, /* RMII1_TXD0 */
-+			 <RZA2_PINMUX(PORTK, 2, 7)>, /* RMII1_TXD1 */
-+			 <RZA2_PINMUX(PORT3, 2, 7)>, /* RMII1_CRSDV */
-+			 <RZA2_PINMUX(PORTK, 4, 7)>, /* RMII1_RXD0 */
-+			 <RZA2_PINMUX(PORT3, 5, 7)>, /* RMII1_RXD1 */
-+			 <RZA2_PINMUX(PORT3, 1, 7)>, /* RMII1_RXER */
-+			 <RZA2_PINMUX(PORT3, 3, 1)>, /* ET1_MDC */
-+			 <RZA2_PINMUX(PORT3, 4, 1)>, /* ET1_MDIO */
-+			 <RZA2_PINMUX(PORTL, 1, 5)>; /* IRQ5 */
++	sdhi1_pins: sdhi1 {
++		pinmux = <RZA2_PINMUX(PORT5, 4, 3)>,	/* SD1_CD */
++			 <RZA2_PINMUX(PORT5, 5, 3)>;	/* SD1_WP */
 +	};
  };
  
  /* High resolution System tick timers */
-@@ -80,3 +108,25 @@
- 
- 	status = "okay";
+@@ -130,3 +140,17 @@
+ 		reg = <0>;
+ 	};
  };
 +
-+&ether0 {
++&sdhi0 {
 +	pinctrl-names = "default";
-+	pinctrl-0 = <&eth0_pins>;
++	pinctrl-0 = <&sdhi0_pins>;
++	bus-width = <4>;
 +	status = "okay";
-+	renesas,no-ether-link;
-+	phy-handle = <&phy0>;
-+	phy0: ethernet-phy@0 {
-+		reg = <0>;
-+	};
 +};
 +
-+&ether1 {
++&sdhi1 {
 +	pinctrl-names = "default";
-+	pinctrl-0 = <&eth1_pins>;
++	pinctrl-0 = <&sdhi1_pins>;
++	bus-width = <4>;
 +	status = "okay";
-+	renesas,no-ether-link;
-+	phy-handle = <&phy1>;
-+	phy1: ethernet-phy@1 {
-+		reg = <0>;
-+	};
 +};
 -- 
 2.11.0
