@@ -2,55 +2,65 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7D1A94ED32
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 21 Jun 2019 18:37:42 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DB4674ED3B
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 21 Jun 2019 18:40:17 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=lAZmXgFqfxsSNf3vSikE4270psX36vi89KGEuVh8BQY=; b=XkrXK8ld+VsRvF
-	IJtmZixLQ2smk7S5hFkZnB0W4zFlCeBx82QtREdfakWHata5IiV0lV+fJpRHd2jWW+T+sDJJuzfpp
-	3ByfFEoapzzdueyrQ/OqP4aR0V7jWo2Bjddw1YVZCd1c0KY8+EfCrI+xGSlXO1OzrUUPh7Ev/ijYp
-	Lin0IltCoukSNi34ArtmC8Wm6+k+MytOSoNT7q5Mk/va8dSD4DG4J5H/Rzpw/4xEHYnuUBQCcaugh
-	/DNzWAh40BS1aUUJaoLJzSsKrLKMKsx7NwFWHTb65y00S2GMSCaUxdbck6bAGSHNhPMnugk85LoWr
-	vt1ydsF2we5+AlHFxm+w==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=9hqV4d5v0HUB+C+/WFClWVImYx2pCm54nw5AC8U23kw=; b=SsD
+	Y6ly1MwK5Sm0zvziKg/sAfLi1gfYr2n7ygMpWq9A2bMmr66IygdGD7ZJu5V3e1Qa3ZA2rbQx/tv16
+	Oi8T90r+qhA8eFWlUU+ONPVg5of0GKhNTM5+7RMohPv0RLVbCvmTE5mEYq1qEbJa3alUMjz0nt3Iw
+	UXbVOV/ckBSYFv2D+EiIzOESvwmvvolFcAhE5VfUyNAgFiJrVZW6TGuk7u4AbZRJ6V8zSX9ZQob2O
+	GynV8BBLAd41riKAxAScYKL72pgE97bsU5Sj32FrP3ScPVb7f9XZBIRe8S2C2bJDw3PYC6NH5OPYX
+	fSSSZr3paPxLkoO1qJtagpz0DPDMa5g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1heMXk-0005Es-Cz; Fri, 21 Jun 2019 16:37:40 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1heMXW-0005EE-6A
- for linux-arm-kernel@lists.infradead.org; Fri, 21 Jun 2019 16:37:27 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id A23C7344;
- Fri, 21 Jun 2019 09:37:24 -0700 (PDT)
-Received: from e103592.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
- [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id B7E0F3F575;
- Fri, 21 Jun 2019 09:37:23 -0700 (PDT)
-Date: Fri, 21 Jun 2019 17:37:21 +0100
-From: Dave Martin <Dave.Martin@arm.com>
-To: Mark Rutland <mark.rutland@arm.com>
-Subject: Re: [PATCH 3/3] arm64: stacktrace: better handle corrupted stacks
-Message-ID: <20190621163721.GF2790@e103592.cambridge.arm.com>
-References: <20190606125402.10229-1-mark.rutland@arm.com>
- <20190606125402.10229-4-mark.rutland@arm.com>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190606125402.10229-4-mark.rutland@arm.com>
-User-Agent: Mutt/1.5.23 (2014-03-12)
+	id 1heMaF-0005fN-Fs; Fri, 21 Jun 2019 16:40:15 +0000
+Received: from conuserg-12.nifty.com ([210.131.2.79])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1heMZu-0005e7-68; Fri, 21 Jun 2019 16:39:56 +0000
+Received: from grover.flets-west.jp (softbank126125154139.bbtec.net
+ [126.125.154.139]) (authenticated)
+ by conuserg-12.nifty.com with ESMTP id x5LGdXbA030778;
+ Sat, 22 Jun 2019 01:39:33 +0900
+DKIM-Filter: OpenDKIM Filter v2.10.3 conuserg-12.nifty.com x5LGdXbA030778
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nifty.com;
+ s=dec2015msa; t=1561135174;
+ bh=ozhNqk/jJbRlOJsA1fVCfpWIUlNkHQWb4qUWtLdFnnk=;
+ h=From:To:Cc:Subject:Date:From;
+ b=eIkfdIS+O26Z2YOKvyyUQPDJEfS8R4Fhs0ivGILBOqSQUUm5uWKbiPvKnX/+WtwFg
+ bR6tU9HZ4+pLdiRnLxprJkokHFgCtkFoMktC1DDnmtum2THZ3CVntvFIDae0PqQwJz
+ UKsDDf8vlHPw6lhKvHOC5bPX9K+MKp9Zup6GlavY83airXFt5PwUrWGHKBwQLMLuVU
+ kmDNdZ4svkbDbE9jeS3mqKjBXcv5ohpvAiAgS9EWfEq5D4E5/eDRtcyqvkzithnuhb
+ xtCZFMEJe7KxegEtkFkx2ypPYLJzg/fgwsSocOPsVDT+rg+2BXnDFsGwl+LcF3XH9e
+ bZh+TEYRkfgHg==
+X-Nifty-SrcIP: [126.125.154.139]
+From: Masahiro Yamada <yamada.masahiro@socionext.com>
+To: linux-kbuild@vger.kernel.org
+Subject: [PATCH] kbuild: compile-test global headers to ensure they are
+ self-contained
+Date: Sat, 22 Jun 2019 01:39:31 +0900
+Message-Id: <20190621163931.19397-1-yamada.masahiro@socionext.com>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190621_093726_318236_740A6F00 
-X-CRM114-Status: GOOD (  25.18  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190621_093954_556610_37188B3A 
+X-CRM114-Status: UNSURE (   8.03  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 1.0 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (1.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [210.131.2.79 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -62,199 +72,81 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: catalin.marinas@arm.com, tengfeif@codeaurora.org, will.deacon@arm.com,
- james.morse@arm.com, linux-arm-kernel@lists.infradead.org
+Cc: Michal Marek <michal.lkml@markovi.net>, linux-kernel@vger.kernel.org,
+ Masahiro Yamada <yamada.masahiro@socionext.com>,
+ linux-mediatek@lists.infradead.org, Matthias Brugger <matthias.bgg@gmail.com>,
+ linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Jun 06, 2019 at 01:54:02PM +0100, Mark Rutland wrote:
-> The arm64 stacktrace code is careful to only dereference frame records
-> in valid stack ranges, ensuring that a corrupted frame record won't
-> result in a faulting access.
-> 
-> However, it's still possible for corrupt frame records to result in
-> infinite loops in the stacktrace code, which is also undesirable.
-> 
-> This patch ensures that we complete a stacktrace in finite time, by
-> keeping track of which stacks we have already completed unwinding, and
-> verifying that if the next frame record is on the same stack, it is at a
-> higher address.
-> 
-> Signed-off-by: Mark Rutland <mark.rutland@arm.com>
-> Cc: Catalin Marinas <catalin.marinas@arm.com>
-> Cc: Dave Martin <dave.martin@arm.com>
-> Cc: James Morse <james.morse@arm.com>
-> Cc: Tengfei Fan <tengfeif@codeaurora.org>
-> Cc: Will Deacon <will.deacon@arm.com>
-> ---
->  arch/arm64/include/asm/stacktrace.h | 34 ++++++++++++++++++++++++++--------
->  arch/arm64/kernel/process.c         |  2 +-
->  arch/arm64/kernel/stacktrace.c      | 16 +++++++++++++++-
->  arch/arm64/kernel/time.c            |  2 +-
->  arch/arm64/kernel/traps.c           |  4 ++--
->  5 files changed, 45 insertions(+), 13 deletions(-)
-> 
-> diff --git a/arch/arm64/include/asm/stacktrace.h b/arch/arm64/include/asm/stacktrace.h
-> index 18f90bf1385c..4ebf8a8997b0 100644
-> --- a/arch/arm64/include/asm/stacktrace.h
-> +++ b/arch/arm64/include/asm/stacktrace.h
-> @@ -19,19 +19,12 @@
->  #include <linux/percpu.h>
->  #include <linux/sched.h>
->  #include <linux/sched/task_stack.h>
-> +#include <linux/types.h>
->  
->  #include <asm/memory.h>
->  #include <asm/ptrace.h>
->  #include <asm/sdei.h>
->  
-> -struct stackframe {
-> -	unsigned long fp;
-> -	unsigned long pc;
-> -#ifdef CONFIG_FUNCTION_GRAPH_TRACER
-> -	int graph;
-> -#endif
-> -};
-> -
->  enum stack_type {
->  	STACK_TYPE_UNKNOWN,
->  	STACK_TYPE_TASK,
-> @@ -39,6 +32,7 @@ enum stack_type {
->  	STACK_TYPE_OVERFLOW,
->  	STACK_TYPE_SDEI_NORMAL,
->  	STACK_TYPE_SDEI_CRITICAL,
-> +	__NR_STACK_TYPES
+Make as many headers self-contained as possible so that they can be
+included without relying on a specific include order.
 
-The number of stack types is actually 1 less than this, and the zeroth
-bit in stacks_done doesn't get used if we use this enum as an index.
+This commit compiles only a few headers, but it is a good start point.
 
-Would STACK_TYPE_UNKNOWN = 0 fix this, or would that break something
-elsewhere?
+Signed-off-by: Masahiro Yamada <yamada.masahiro@socionext.com>
+---
 
->  };
->  
->  struct stack_info {
-> @@ -47,6 +41,16 @@ struct stack_info {
->  	enum stack_type type;
->  };
->  
-> +struct stackframe {
-> +	unsigned long fp;
-> +	unsigned long pc;
-> +#ifdef CONFIG_FUNCTION_GRAPH_TRACER
-> +	int graph;
-> +#endif
-> +	DECLARE_BITMAP(stacks_done, __NR_STACK_TYPES);
-> +	enum stack_type stack_current;
-> +};
-> +
->  extern int unwind_frame(struct task_struct *tsk, struct stackframe *frame);
->  extern void walk_stackframe(struct task_struct *tsk, struct stackframe *frame,
->  			    int (*fn)(struct stackframe *, void *), void *data);
-> @@ -128,6 +132,9 @@ static inline bool on_accessible_stack(const struct task_struct *tsk,
->  				       unsigned long sp,
->  				       struct stack_info *info)
->  {
-> +	if (info)
-> +		info->type = STACK_TYPE_UNKNOWN;
-> +
->  	if (on_task_stack(tsk, sp, info))
->  		return true;
->  	if (tsk != current || preemptible())
-> @@ -143,13 +150,24 @@ static inline bool on_accessible_stack(const struct task_struct *tsk,
->  }
->  
->  static inline void start_backtrace(struct stackframe *frame,
-> +				   struct task_struct *tsk,
->  				   unsigned long fp, unsigned long pc)
->  {
-> +	struct stack_info info;
-> +
->  	frame->fp = fp;
->  	frame->pc = pc;
->  #ifdef CONFIG_FUNCTION_GRAPH_TRACER
->  	frame->graph = 0;
->  #endif
-> +	bitmap_zero(frame->stacks_done, __NR_STACK_TYPES);
-> +
-> +	/*
-> +	 * We need to prime stack_current for the first unwind, but we can
-> +	 * ignore the accessibility until the unwind occurs.
-> +	 */
-> +	on_accessible_stack(tsk, fp, &info);
-> +	frame->stack_current = info.type;
->  }
->  
->  #endif	/* __ASM_STACKTRACE_H */
-> diff --git a/arch/arm64/kernel/process.c b/arch/arm64/kernel/process.c
-> index 122d88fccd13..ba9441982573 100644
-> --- a/arch/arm64/kernel/process.c
-> +++ b/arch/arm64/kernel/process.c
-> @@ -509,7 +509,7 @@ unsigned long get_wchan(struct task_struct *p)
->  	if (!stack_page)
->  		return 0;
->  
-> -	start_backtrace(&frame, thread_saved_fp(p), thread_saved_pc(p));
-> +	start_backtrace(&frame, p, thread_saved_fp(p), thread_saved_pc(p));
->  	do {
->  		if (unwind_frame(p, &frame))
->  			goto out;
-> diff --git a/arch/arm64/kernel/stacktrace.c b/arch/arm64/kernel/stacktrace.c
-> index b00ec7d483d1..1c45b33c7474 100644
-> --- a/arch/arm64/kernel/stacktrace.c
-> +++ b/arch/arm64/kernel/stacktrace.c
-> @@ -43,6 +43,8 @@
->  int notrace unwind_frame(struct task_struct *tsk, struct stackframe *frame)
->  {
->  	unsigned long fp = frame->fp;
-> +	bool changed_stack = false;
-> +	struct stack_info info;
->  
->  	if (fp & 0xf)
->  		return -EINVAL;
-> @@ -50,12 +52,24 @@ int notrace unwind_frame(struct task_struct *tsk, struct stackframe *frame)
->  	if (!tsk)
->  		tsk = current;
->  
-> -	if (!on_accessible_stack(tsk, fp, NULL))
-> +	if (!on_accessible_stack(tsk, fp, &info))
->  		return -EINVAL;
->  
-> +	if (test_bit(info.type, frame->stacks_done))
-> +		return -EINVAL;
+ Makefile         |  1 +
+ include/Makefile | 31 +++++++++++++++++++++++++++++++
+ 2 files changed, 32 insertions(+)
+ create mode 100644 include/Makefile
 
-Doesn't this fire when we unwind a sequence of frames on the same stack
-(i.e., the common case)?
+diff --git a/Makefile b/Makefile
+index c23f5e8381ad..82c1722dd9e9 100644
+--- a/Makefile
++++ b/Makefile
+@@ -610,6 +610,7 @@ drivers-y	:= drivers/ sound/
+ drivers-$(CONFIG_SAMPLES) += samples/
+ net-y		:= net/
+ libs-y		:= lib/
++libs-$(CONFIG_HEADER_TEST) += include/
+ core-y		:= usr/
+ virt-y		:= virt/
+ endif # KBUILD_EXTMOD
+diff --git a/include/Makefile b/include/Makefile
+new file mode 100644
+index 000000000000..68a76ac732c3
+--- /dev/null
++++ b/include/Makefile
+@@ -0,0 +1,31 @@
++# SPDX-License-Identifier: GPL-2.0-only
++
++# extend the test coverage when existing errors are fixed
++
++header-test += linux/w*.h
++header-test += linux/x*.h
++header-test += linux/y*.h
++header-test += ras/*.h
++header-test += soc/at91/*.h
++header-test += soc/bcm2835/*.h
++header-test += soc/mediatek/*.h
++header-test += soc/sa1100/*.h
++
++all-headers = $(patsubst $(srctree)/include/%,%,\
++	    $(wildcard $(addprefix $(srctree)/include/, $(header-test))))
++
++# Do not include directly
++no-header-test += linux/compiler-clang.h
++no-header-test += linux/compiler-gcc.h
++no-header-test += linux/patchkey.h
++no-header-test += linux/rwlock_api_smp.h
++no-header-test += linux/spinlock_types_up.h
++no-header-test += linux/spinlock_up.h
++no-header-test += linux/wimax/debug.h
++no-header-test += rdma/uverbs_named_ioctl.h
++
++# Conditionally included
++no-header-test += linux/byteorder/big_endian.h
++no-header-test += linux/byteorder/little_endian.h
++
++header-test-y = $(filter-out $(no-header-test), $(all-headers))
+-- 
+2.17.1
 
-I may be missing something obvious here.
-
-> +
-> +	if (frame->stack_current != info.type) {
-> +		set_bit(frame->stack_current, frame->stacks_done);
-
-Oh, right, stacks_done is the set of stacks we have been on, excluding
-the current one?  If so, a comment somewhere explaining that, or some
-more explicit name, like "past_stacks" might make sense.
-
-> +		frame->stack_current = info.type;
-> +		changed_stack = true;
-> +	}
-> +
->  	frame->fp = READ_ONCE_NOCHECK(*(unsigned long *)(fp));
->  	frame->pc = READ_ONCE_NOCHECK(*(unsigned long *)(fp + 8));
->  
-> +	if (!changed_stack && frame->fp <= fp)
-> +		return -EINVAL;
-> +
-
-[...]
-
-Otherwise, seems to make sense.
-
-Cheers
----Dave
 
 _______________________________________________
 linux-arm-kernel mailing list
