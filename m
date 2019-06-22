@@ -2,114 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F3C634F502
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 22 Jun 2019 11:55:22 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 281DB4F574
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 22 Jun 2019 13:05:31 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:References:To:From:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1LzebX0qK/I2TiZCVUb1PJ8adOPCJwMYrcpJ6itaH9I=; b=DITmA6HiyH8HS5
-	qo53lLDdt9E4krqWon/udwuxlTDu9A+yUmisvXfzIoRqf0aoJ15w8GObOXSAbHlHzZPn4/P7GEkGL
-	W4a2c7/N5ZIUaG1jgThHuUO/rYDcl/vKM1748Yffxmc8k/8iePCRpHtb59uy2ZNRFnT73Eyh7Styj
-	rKzKLwLDSm3shDiMjl2rgviunzRgBkHeu91lFZSjst0UptdulROrnhxtV9u/mqMj/N/YgP8RQ5eYq
-	K05PbI004uyYCF/e9aSi9NGTPBJ5O8fJOPxFeSOMt0WEeBH8Pe/OiINlOGaGlFJop/iw+FYyCzhJK
-	BK9LbpAqJPC2M4aipxIg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=xd7Ce4Op8w8Vaw8yIhkDJWoL3wk1GWrQ1Q9E/jTxjP4=; b=SiWpsIWM3HWK6P
+	mpU9HAceCICmrp2VmOsyIgWdfEVwYOjYokSRsVdiRkFAihK//B5TJbjGimkU2tq1vz+NOdKdBJNCa
+	xazU/11gidfJ6tL4NlCLw3e9+G+MXQphHU+y1bAPvPxKIRR7fIpIPRK9HHzdQa5tZwFYB5Rozfjga
+	C5VXudpvd5fpj8RMlAWflhEuUtlxz3SQ+TRDU/xLlQVqi3/saQOVxeP3OVmQ4SVfJBgv2WnoNAKwO
+	es1XlqolXlNAzzSDfe1HEuRwo1zKKmMB1Ju62akL8FqOF0/4uzDmjw2VzPGBB4HfzeRSzyAWpM1NK
+	sKrsFWrqB1LmQ1dZiBWw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hecjv-0003tG-Vh; Sat, 22 Jun 2019 09:55:19 +0000
-Received: from mout.kundenserver.de ([212.227.17.13])
+	id 1hedpl-000113-T6; Sat, 22 Jun 2019 11:05:25 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hecjk-00037b-0O; Sat, 22 Jun 2019 09:55:09 +0000
-Received: from [192.168.1.162] ([37.4.249.111]) by mrelayeu.kundenserver.de
- (mreue106 [212.227.15.183]) with ESMTPSA (Nemesis) id
- 1MG9wg-1hoT1Z3SrE-00GYeg; Sat, 22 Jun 2019 11:54:49 +0200
-Subject: Re: [PATCH v4 0/7] cpufreq support for Raspberry Pi
-From: Stefan Wahren <stefan.wahren@i2se.com>
-To: Stephen Boyd <sboyd@kernel.org>, Mike Turquette <mturquette@baylibre.com>
-References: <20190612182500.4097-1-nsaenzjulienne@suse.de>
- <6a9e1450-80ad-a13c-59d2-d0b39f25f67e@gmail.com>
- <7acfd967-0a82-5429-4eed-8b802e6620f5@i2se.com>
-Openpgp: preference=signencrypt
-Autocrypt: addr=stefan.wahren@i2se.com; keydata=
- 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 AQ==
-Message-ID: <d8b20179-45ef-479a-47dc-390a4a2dfddf@i2se.com>
-Date: Sat, 22 Jun 2019 11:54:47 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.7.1
+ id 1hedpc-00010M-7G
+ for linux-arm-kernel@lists.infradead.org; Sat, 22 Jun 2019 11:05:18 +0000
+Received: from archlinux (cpc149474-cmbg20-2-0-cust94.5-4.cable.virginm.net
+ [82.4.196.95])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 1950C2070B;
+ Sat, 22 Jun 2019 11:05:12 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1561201515;
+ bh=coSF7lUUUoxoKk7PJ/blfVziC8roqU2es3HSlaUS9X8=;
+ h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
+ b=p+uvwiheF6myrYZ9VKdtbBsSq0sAskz4r2jBxi4LavkLcrdCj4ypyzB80w+agKuNl
+ UGrE9+ZNSn9NjkBCKUlPRgohApjsRXjVKWXQrVjSZNV59Pr4qFdtuYUPn9bJUYKwuP
+ u4e+6Xrcz25tr4TOBeIrA2P9CWD1/PL3sOK1lCLs=
+Date: Sat, 22 Jun 2019 12:05:10 +0100
+From: Jonathan Cameron <jic23@kernel.org>
+To: Fabrice Gasnier <fabrice.gasnier@st.com>
+Subject: Re: [PATCH 2/3] iio: adc: stm32-adc: add analog switches supply
+ control
+Message-ID: <20190622120510.2215e8cc@archlinux>
+In-Reply-To: <5ea9f65d-2feb-1ec5-1ca1-0cfd2964f160@st.com>
+References: <1560324276-681-1-git-send-email-fabrice.gasnier@st.com>
+ <1560324276-681-3-git-send-email-fabrice.gasnier@st.com>
+ <20190616160732.124a1eb9@archlinux>
+ <f1d4b47a-5910-53fe-5d63-d51da429dacd@st.com>
+ <5ea9f65d-2feb-1ec5-1ca1-0cfd2964f160@st.com>
+X-Mailer: Claws Mail 3.17.3 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
 MIME-Version: 1.0
-In-Reply-To: <7acfd967-0a82-5429-4eed-8b802e6620f5@i2se.com>
-Content-Language: en-US
-X-Provags-ID: V03:K1:kNVNWkAjuEb7vVPkGdiQQKKmCJU8LtLX0sh+gtr0KzMusrY4L1K
- WyeiwBUxZtVlmhaLqVUZkU865SX7UDf78Q+0dQ2L2wKmqwMhCSPNpqlYL7GHgb4CSrkewru
- EkvEVQlUmXu0zESbj+3YvSykrgtvGogfULKzeWL/31pQ+iqSakaY4pcTVvqcgOip1ViKSo3
- HJQZUEPr/2G+/NI2n1SDA==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:4OBIfy33c0Q=:sW/r3Ga/IfW0VsTiAv6ve/
- xYL0+TlPU1HSAZaE3jL9vbAvIpe0zwOOlJUtIKra2OkwV6r73fLvbKw3M6BHtwVqXlVyrjGeO
- +UGUtSbTWXOtRXPnV1TnSqs04JnRZyInCYqN08opCGsy11/3imhIoo/UsL3glMUYr+djkOTQi
- yJB7udc+6zSEIhj8Tc+/Q2pD7ooWYuhN/rMqjDRk0oAyLPhPWNhrDfQ5TSC6NXhrmR/F1g03Z
- fQMzSyuPyveUuXiSh1hRcQQt2rGm4P7nnD2RPlFjDNqwrLd8rMRFXEOf9JTo4cEdoNwQeVuOA
- NC/owZOW0/KmiOC/vUhFqTmef4ELCMs6wsbR8dKJbRJavzc68CPq8MqQjlUvuzRzkm3RxmXq6
- KMQsOhGkacGoZLGaVE1WmrkNoe+hHXWK8SnD/iMJJsK5K4spmAaepIVLM5tEwuTEBYAAgyUF8
- GB6nFPs1fGqEWKxIIU98MJWJCMXOFEocqMB0U+r0E9BR24Tc+mz16SDLtXpXhPT8jkCaDFjDG
- Kkruupffgf4kkX1QURUS6CEr44W677rCEcORWszvZg/zBo7mSTcQFW0vKK3/RtgNeP6Wtxp56
- 4z740VPg0lfNVXuLGMiJIb90WsHn0hypWcWjAO2XcU1rnAKQGhoycfhLAx3MDiuJGjSfoFYiu
- wEx6rXbBV/sTIzdUR8K2Cfd7EUwisqJ5nuJNQ1cAZBBUa59j+AKk1v3xBAmZBetuM4gngObs1
- FVJO94Ics+gfHODofTZvPoWntmJ2UBmNTlx/Q1q5HYycMxGDdfg/b2Aum+4=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190622_025508_370147_6B7AED22 
-X-CRM114-Status: GOOD (  12.68  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190622_040516_298237_8EFD57B2 
+X-CRM114-Status: GOOD (  32.25  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.227.17.13 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -121,56 +81,440 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm-kernel@lists.infradead.org,
- Florian Fainelli <f.fainelli@gmail.com>, ptesarik@suse.com,
- viresh.kumar@linaro.org, linux-pm@vger.kernel.org, rjw@rjwysocki.net,
- linux-kernel@vger.kernel.org, eric@anholt.net,
- bcm-kernel-feedback-list@broadcom.com, mbrugger@suse.de, ssuloev@orpaltech.com,
- linux-clk@vger.kernel.org, Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
- linux-rpi-kernel@lists.infradead.org
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, lars@metafoo.de,
+ alexandre.torgue@st.com, linux-iio@vger.kernel.org, pmeerw@pmeerw.net,
+ linux-kernel@vger.kernel.org, robh+dt@kernel.org, mcoquelin.stm32@gmail.com,
+ knaack.h@gmx.de, linux-stm32@st-md-mailman.stormreply.com,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Stephen,
-hi Mike,
+On Wed, 19 Jun 2019 14:38:42 +0200
+Fabrice Gasnier <fabrice.gasnier@st.com> wrote:
 
-Am 13.06.19 um 06:31 schrieb Stefan Wahren:
-> Hi Florian,
-> hi Stephen,
->
-> Am 13.06.19 um 05:31 schrieb Florian Fainelli:
->> On 6/12/2019 11:24 AM, Nicolas Saenz Julienne wrote:
->>> Hi all,
->>> this aims at adding cpufreq support to the Raspberry Pi family of
->>> boards.
->>>
->>> The series first factors out 'pllb' from clk-bcm2385 and creates a new
->>> clk driver that operates it over RPi's firmware interface[1]. We are
->>> forced to do so as the firmware 'owns' the pll and we're not allowed to
->>> change through the register interface directly as we might race with the
->>> over-temperature and under-voltage protections provided by the firmware.
->>>
->>> Next it creates a minimal cpufreq driver that populates the CPU's opp
->>> table, and registers cpufreq-dt. Which is needed as the firmware
->>> controls the max and min frequencies available.
->>>
->>> This was tested on a RPi3b+ and RPI2b, both using multi_v7_defconfig and
->>> arm64's defconfig.
->> How do we go about merging this? Stefan, will you pick up patch 3, 6 and
->> 7 and submit them for 5.3/5.4? Viresh has already picked up patch 4.
-> is it possible to let patches 1,2, 3 and 5 go via clk-tree?
->
-> I would take care of 6 and 7.
->
-> Stefan
-are you fine with the series, since Viresh already picked up patch 4?
+> On 6/17/19 2:43 PM, Fabrice Gasnier wrote:
+> > On 6/16/19 5:07 PM, Jonathan Cameron wrote:  
+> >> On Wed, 12 Jun 2019 09:24:35 +0200
+> >> Fabrice Gasnier <fabrice.gasnier@st.com> wrote:
+> >>  
+> >>> On stm32h7 and stm32mp1, the ADC inputs are multiplexed with analog
+> >>> switches which have reduced performances when their supply is below 2.7V
+> >>> (vdda by default):
+> >>> - vdd supply can be selected if above 2.7V by setting ANASWVDD syscfg bit
+> >>>   (STM32MP1 only).
+> >>> - Voltage booster can be used, to get full ADC performances by setting
+> >>>   BOOSTE/EN_BOOSTER syscfg bit (increases power consumption).
+> >>>
+> >>> Make this optional, since this is a trade-off between analog performance
+> >>> and power consumption.
+> >>>
+> >>> Note: STM32H7 syscfg has a set and clear register for "BOOSTE" control.
+> >>> STM32MP1 has separate set and clear registers pair to control EN_BOOSTER
+> >>> and ANASWVDD bits.
+> >>>
+> >>> Signed-off-by: Fabrice Gasnier <fabrice.gasnier@st.com>  
+> >>
+> >> A few minor bits inline, but mostly seems fine to me.
+> >>
+> >> Jonathan
+> >>  
+> >>> ---
+> >>>  drivers/iio/adc/stm32-adc-core.c | 232 ++++++++++++++++++++++++++++++++++++++-
+> >>>  1 file changed, 230 insertions(+), 2 deletions(-)
+> >>>
+> >>> diff --git a/drivers/iio/adc/stm32-adc-core.c b/drivers/iio/adc/stm32-adc-core.c
+> >>> index 2327ec1..9d41b16 100644
+> >>> --- a/drivers/iio/adc/stm32-adc-core.c
+> >>> +++ b/drivers/iio/adc/stm32-adc-core.c
+> >>> @@ -14,9 +14,11 @@
+> >>>  #include <linux/irqchip/chained_irq.h>
+> >>>  #include <linux/irqdesc.h>
+> >>>  #include <linux/irqdomain.h>
+> >>> +#include <linux/mfd/syscon.h>
+> >>>  #include <linux/module.h>
+> >>>  #include <linux/of_device.h>
+> >>>  #include <linux/pm_runtime.h>
+> >>> +#include <linux/regmap.h>
+> >>>  #include <linux/regulator/consumer.h>
+> >>>  #include <linux/slab.h>
+> >>>  
+> >>> @@ -51,6 +53,20 @@
+> >>>  
+> >>>  #define STM32_ADC_CORE_SLEEP_DELAY_MS	2000
+> >>>  
+> >>> +/* SYSCFG registers */
+> >>> +#define STM32H7_SYSCFG_PMCR		0x04
+> >>> +#define STM32MP1_SYSCFG_PMCSETR		0x04
+> >>> +#define STM32MP1_SYSCFG_PMCCLRR		0x44
+> >>> +
+> >>> +/* SYSCFG bit fields */
+> >>> +#define STM32H7_SYSCFG_BOOSTE_MASK	BIT(8)
+> >>> +#define STM32MP1_SYSCFG_ANASWVDD_MASK	BIT(9)
+> >>> +
+> >>> +/* SYSCFG capability flags */
+> >>> +#define HAS_VBOOSTER		BIT(0)
+> >>> +#define HAS_ANASWVDD		BIT(1)
+> >>> +#define HAS_CLEAR_REG		BIT(2)
+> >>> +
+> >>>  /**
+> >>>   * stm32_adc_common_regs - stm32 common registers, compatible dependent data
+> >>>   * @csr:	common status register offset
+> >>> @@ -58,6 +74,11 @@
+> >>>   * @eoc1:	adc1 end of conversion flag in @csr
+> >>>   * @eoc2:	adc2 end of conversion flag in @csr
+> >>>   * @eoc3:	adc3 end of conversion flag in @csr
+> >>> + * @has_syscfg: SYSCFG capability flags
+> >>> + * @pmcr:	SYSCFG_PMCSETR/SYSCFG_PMCR register offset
+> >>> + * @pmcc:	SYSCFG_PMCCLRR clear register offset
+> >>> + * @booste_msk:	SYSCFG BOOSTE / EN_BOOSTER bitmask in PMCR & PMCCLRR
+> >>> + * @anaswvdd_msk: SYSCFG ANASWVDD bitmask in PMCR & PMCCLRR
+> >>>   */
+> >>>  struct stm32_adc_common_regs {
+> >>>  	u32 csr;
+> >>> @@ -65,6 +86,11 @@ struct stm32_adc_common_regs {
+> >>>  	u32 eoc1_msk;
+> >>>  	u32 eoc2_msk;
+> >>>  	u32 eoc3_msk;
+> >>> +	unsigned int has_syscfg;
+> >>> +	u32 pmcr;
+> >>> +	u32 pmcc;
+> >>> +	u32 booste_msk;
+> >>> +	u32 anaswvdd_msk;
+> >>>  };
+> >>>  
+> >>>  struct stm32_adc_priv;
+> >>> @@ -87,20 +113,26 @@ struct stm32_adc_priv_cfg {
+> >>>   * @domain:		irq domain reference
+> >>>   * @aclk:		clock reference for the analog circuitry
+> >>>   * @bclk:		bus clock common for all ADCs, depends on part used
+> >>> + * @vdd:		vdd supply reference
+> >>> + * @vdda:		vdda supply reference
+> >>>   * @vref:		regulator reference
+> >>>   * @cfg:		compatible configuration data
+> >>>   * @common:		common data for all ADC instances
+> >>>   * @ccr_bak:		backup CCR in low power mode
+> >>> + * @syscfg:		reference to syscon, system control registers
+> >>>   */
+> >>>  struct stm32_adc_priv {
+> >>>  	int				irq[STM32_ADC_MAX_ADCS];
+> >>>  	struct irq_domain		*domain;
+> >>>  	struct clk			*aclk;
+> >>>  	struct clk			*bclk;
+> >>> +	struct regulator		*vdd;
+> >>> +	struct regulator		*vdda;
+> >>>  	struct regulator		*vref;
+> >>>  	const struct stm32_adc_priv_cfg	*cfg;
+> >>>  	struct stm32_adc_common		common;
+> >>>  	u32				ccr_bak;
+> >>> +	struct regmap			*syscfg;
+> >>>  };
+> >>>  
+> >>>  static struct stm32_adc_priv *to_stm32_adc_priv(struct stm32_adc_common *com)
+> >>> @@ -284,6 +316,22 @@ static const struct stm32_adc_common_regs stm32h7_adc_common_regs = {
+> >>>  	.ccr = STM32H7_ADC_CCR,
+> >>>  	.eoc1_msk = STM32H7_EOC_MST,
+> >>>  	.eoc2_msk = STM32H7_EOC_SLV,
+> >>> +	.has_syscfg = HAS_VBOOSTER,
+> >>> +	.pmcr = STM32H7_SYSCFG_PMCR,
+> >>> +	.booste_msk = STM32H7_SYSCFG_BOOSTE_MASK,
+> >>> +};
+> >>> +
+> >>> +/* STM32MP1 common registers definitions */
+> >>> +static const struct stm32_adc_common_regs stm32mp1_adc_common_regs = {
+> >>> +	.csr = STM32H7_ADC_CSR,
+> >>> +	.ccr = STM32H7_ADC_CCR,
+> >>> +	.eoc1_msk = STM32H7_EOC_MST,
+> >>> +	.eoc2_msk = STM32H7_EOC_SLV,
+> >>> +	.has_syscfg =  HAS_VBOOSTER | HAS_ANASWVDD | HAS_CLEAR_REG,  
+> >>
+> >> Extra space after =  
+> > 
+> > Hi Jonathan,
+> > 
+> > Oops, I'll fix it in v2.
+> >   
+> >>
+> >>  
+> >>> +	.pmcr = STM32MP1_SYSCFG_PMCSETR,
+> >>> +	.pmcc = STM32MP1_SYSCFG_PMCCLRR,
+> >>> +	.booste_msk = STM32H7_SYSCFG_BOOSTE_MASK,
+> >>> +	.anaswvdd_msk = STM32MP1_SYSCFG_ANASWVDD_MASK,
+> >>>  };
+> >>>  
+> >>>  /* ADC common interrupt for all instances */
+> >>> @@ -388,16 +436,145 @@ static void stm32_adc_irq_remove(struct platform_device *pdev,
+> >>>  	}
+> >>>  }
+> >>>  
+> >>> +static int stm32_adc_core_switches_supply_en(struct device *dev)
+> >>> +{
+> >>> +	struct stm32_adc_common *common = dev_get_drvdata(dev);
+> >>> +	struct stm32_adc_priv *priv = to_stm32_adc_priv(common);
+> >>> +	const struct stm32_adc_common_regs *regs = priv->cfg->regs;
+> >>> +	int ret, vdda, vdd = 0;
+> >>> +	u32 mask, clrmask, setmask = 0;
+> >>> +
+> >>> +	/*
+> >>> +	 * On STM32H7 and STM32MP1, the ADC inputs are multiplexed with analog
+> >>> +	 * switches (via PCSEL) which have reduced performances when their
+> >>> +	 * supply is below 2.7V (vdda by default):
+> >>> +	 * - Voltage booster can be used, to get full ADC performances
+> >>> +	 *   (increases power consumption).
+> >>> +	 * - Vdd can be used to supply them, if above 2.7V (STM32MP1 only).
+> >>> +	 *
+> >>> +	 * This is optional, as this is a trade-off between analog performance
+> >>> +	 * and power consumption.
+> >>> +	 */
+> >>> +	if (!regs->has_syscfg || !priv->vdda || !priv->syscfg) {
+> >>> +		dev_dbg(dev, "Not configuring analog switches\n");
+> >>> +		return 0;
+> >>> +	}
+> >>> +
+> >>> +	ret = regulator_enable(priv->vdda);
+> >>> +	if (ret < 0) {
+> >>> +		dev_err(dev, "vdda enable failed %d\n", ret);
+> >>> +		return ret;
+> >>> +	}
+> >>> +
+> >>> +	ret = regulator_get_voltage(priv->vdda);
+> >>> +	if (ret < 0) {
+> >>> +		dev_err(dev, "vdda get voltage failed %d\n", ret);
+> >>> +		goto vdda_dis;
+> >>> +	}
+> >>> +	vdda = ret;
+> >>> +  
+> >> We only need to do the following block if vdaa is too low.  Should probably
+> >> not turn on vdd if there is not chance we are going to use it?  
+> > 
+> > You're right, then I probably need to move the regulator_get_voltage()
+> > call at probe time, to avoid enabling it for nothing at runtime. (e.g.
+> > to figure out it's not going to be used).
+> > In fact, vdd is used also for other things on the platform (I/Os, other
+> > supplies...), and is marked "always-on" in the device tree. But I
+> > understand your point.
+> > 
+> > I'll rework this and send a v2.  
+> 
+> Hi Jonathan,
+> 
+> When reworking this part, I figured out the vdda should be described as
+> required supply for the STM32 ADC. So I pushed out a fix series to
+> address this "Add missing vdda-supply to STM32 ADC". I'll resume v2 of
+> this series that has some dependencies on the fix series .
 
-are you okay with my suggestion above?
+Cool. Given timing  I'm taking fixes and new stuff through the togreg
+branch anyway at the moment so dependencies on fixes are easier than
+normal for the next week or so ;)
 
-Stefan
+Jonathan
 
+> 
+> Thanks
+> Best Regards,
+> Fabrice
+> 
+> > 
+> > Thanks,
+> > Fabrice
+> >   
+> >>  
+> >>> +	if (priv->vdd && regs->has_syscfg & HAS_ANASWVDD) {
+> >>> +		ret = regulator_enable(priv->vdd);
+> >>> +		if (ret < 0) {
+> >>> +			dev_err(dev, "vdd enable failed %d\n", ret);
+> >>> +			goto vdda_dis;
+> >>> +		}
+> >>> +
+> >>> +		ret = regulator_get_voltage(priv->vdd);
+> >>> +		if (ret < 0) {
+> >>> +			dev_err(dev, "vdd get voltage failed %d\n", ret);
+> >>> +			goto vdd_dis;
+> >>> +		}
+> >>> +		vdd = ret;
+> >>> +	}
+> >>> +
+> >>> +	/*
+> >>> +	 * Recommended settings for ANASWVDD and EN_BOOSTER:
+> >>> +	 * - vdda < 2.7V but vdd > 2.7V: ANASWVDD = 1, EN_BOOSTER = 0 (stm32mp1)
+> >>> +	 * - vdda < 2.7V and vdd < 2.7V: ANASWVDD = 0, EN_BOOSTER = 1
+> >>> +	 * - vdda >= 2.7V:               ANASWVDD = 0, EN_BOOSTER = 0 (default)
+> >>> +	 */
+> >>> +	if (vdda < 2700000) {
+> >>> +		if (vdd > 2700000) {
+> >>> +			dev_dbg(dev, "analog switches supplied by vdd\n");
+> >>> +			setmask = regs->anaswvdd_msk;
+> >>> +			clrmask = regs->booste_msk;
+> >>> +		} else {
+> >>> +			dev_dbg(dev, "Enabling voltage booster\n");
+> >>> +			setmask = regs->booste_msk;
+> >>> +			clrmask = regs->anaswvdd_msk;
+> >>> +		}
+> >>> +	} else {
+> >>> +		dev_dbg(dev, "analog switches supplied by vdda\n");
+> >>> +		clrmask = regs->booste_msk | regs->anaswvdd_msk;
+> >>> +	}
+> >>> +
+> >>> +	mask = regs->booste_msk | regs->anaswvdd_msk;
+> >>> +	if (regs->has_syscfg & HAS_CLEAR_REG) {
+> >>> +		ret = regmap_write(priv->syscfg, regs->pmcc, clrmask);
+> >>> +		if (ret) {
+> >>> +			dev_err(dev, "syscfg clear failed, %d\n", ret);
+> >>> +			goto vdd_dis;
+> >>> +		}
+> >>> +		mask = setmask;
+> >>> +	}
+> >>> +
+> >>> +	ret = regmap_update_bits(priv->syscfg, regs->pmcr, mask, setmask);
+> >>> +	if (ret) {
+> >>> +		dev_err(dev, "syscfg update failed, %d\n", ret);
+> >>> +		goto vdd_dis;
+> >>> +	}
+> >>> +
+> >>> +	/* Booster voltage can take up to 50 us to stabilize */
+> >>> +	if (setmask & regs->booste_msk)
+> >>> +		usleep_range(50, 100);
+> >>> +
+> >>> +	return ret;
+> >>> +
+> >>> +vdd_dis:
+> >>> +	if (priv->vdd && (regs->has_syscfg & HAS_ANASWVDD))
+> >>> +		regulator_disable(priv->vdd);
+> >>> +vdda_dis:
+> >>> +	regulator_disable(priv->vdda);
+> >>> +
+> >>> +	return ret;
+> >>> +}
+> >>> +
+> >>> +static void stm32_adc_core_switches_supply_dis(struct device *dev)
+> >>> +{
+> >>> +	struct stm32_adc_common *common = dev_get_drvdata(dev);
+> >>> +	struct stm32_adc_priv *priv = to_stm32_adc_priv(common);
+> >>> +	const struct stm32_adc_common_regs *regs = priv->cfg->regs;
+> >>> +	u32 mask = regs->booste_msk | regs->anaswvdd_msk;
+> >>> +
+> >>> +	if (!regs->has_syscfg || !priv->vdda || !priv->syscfg)
+> >>> +		return;
+> >>> +
+> >>> +	if (regs->has_syscfg & HAS_CLEAR_REG)
+> >>> +		regmap_write(priv->syscfg, regs->pmcc, mask);
+> >>> +	else
+> >>> +		regmap_update_bits(priv->syscfg, regs->pmcr, mask, 0);
+> >>> +
+> >>> +	if (priv->vdd && (regs->has_syscfg & HAS_ANASWVDD))
+> >>> +		regulator_disable(priv->vdd);
+> >>> +
+> >>> +	regulator_disable(priv->vdda);
+> >>> +}
+> >>> +
+> >>>  static int stm32_adc_core_hw_start(struct device *dev)
+> >>>  {
+> >>>  	struct stm32_adc_common *common = dev_get_drvdata(dev);
+> >>>  	struct stm32_adc_priv *priv = to_stm32_adc_priv(common);
+> >>>  	int ret;
+> >>>  
+> >>> +	ret = stm32_adc_core_switches_supply_en(dev);
+> >>> +	if (ret < 0)
+> >>> +		return ret;
+> >>> +
+> >>>  	ret = regulator_enable(priv->vref);
+> >>>  	if (ret < 0) {
+> >>>  		dev_err(dev, "vref enable failed\n");
+> >>> -		return ret;
+> >>> +		goto err_switches_disable;
+> >>>  	}
+> >>>  
+> >>>  	if (priv->bclk) {
+> >>> @@ -425,6 +602,8 @@ static int stm32_adc_core_hw_start(struct device *dev)
+> >>>  		clk_disable_unprepare(priv->bclk);
+> >>>  err_regulator_disable:
+> >>>  	regulator_disable(priv->vref);
+> >>> +err_switches_disable:
+> >>> +	stm32_adc_core_switches_supply_dis(dev);
+> >>>  
+> >>>  	return ret;
+> >>>  }
+> >>> @@ -441,6 +620,24 @@ static void stm32_adc_core_hw_stop(struct device *dev)
+> >>>  	if (priv->bclk)
+> >>>  		clk_disable_unprepare(priv->bclk);
+> >>>  	regulator_disable(priv->vref);
+> >>> +	stm32_adc_core_switches_supply_dis(dev);
+> >>> +}
+> >>> +
+> >>> +static int stm32_adc_core_syscfg_probe(struct device_node *np,
+> >>> +				       struct stm32_adc_priv *priv)
+> >>> +{
+> >>> +	if (!priv->cfg->regs->has_syscfg)
+> >>> +		return 0;
+> >>> +
+> >>> +	priv->syscfg = syscon_regmap_lookup_by_phandle(np, "st,syscfg");
+> >>> +	if (IS_ERR(priv->syscfg)) {
+> >>> +		/* Optional */
+> >>> +		if (PTR_ERR(priv->syscfg) != -ENODEV)
+> >>> +			return PTR_ERR(priv->syscfg);
+> >>> +		priv->syscfg = NULL;
+> >>> +	}
+> >>> +
+> >>> +	return 0;
+> >>>  }
+> >>>  
+> >>>  static int stm32_adc_probe(struct platform_device *pdev)
+> >>> @@ -475,6 +672,30 @@ static int stm32_adc_probe(struct platform_device *pdev)
+> >>>  		return ret;
+> >>>  	}
+> >>>  
+> >>> +	priv->vdda = devm_regulator_get_optional(&pdev->dev, "vdda");
+> >>> +	if (IS_ERR(priv->vdda)) {
+> >>> +		ret = PTR_ERR(priv->vdda);
+> >>> +		if (ret != -ENODEV) {
+> >>> +			if (ret != -EPROBE_DEFER)
+> >>> +				dev_err(&pdev->dev, "vdda get failed, %d\n",
+> >>> +					ret);
+> >>> +			return ret;
+> >>> +		}
+> >>> +		priv->vdda = NULL;
+> >>> +	}
+> >>> +
+> >>> +	priv->vdd = devm_regulator_get_optional(&pdev->dev, "vdd");
+> >>> +	if (IS_ERR(priv->vdd)) {
+> >>> +		ret = PTR_ERR(priv->vdd);
+> >>> +		if (ret != -ENODEV) {
+> >>> +			if (ret != -EPROBE_DEFER)
+> >>> +				dev_err(&pdev->dev, "vdd get failed, %d\n",
+> >>> +					ret);
+> >>> +			return ret;
+> >>> +		}
+> >>> +		priv->vdd = NULL;
+> >>> +	}
+> >>> +
+> >>>  	priv->aclk = devm_clk_get(&pdev->dev, "adc");
+> >>>  	if (IS_ERR(priv->aclk)) {
+> >>>  		ret = PTR_ERR(priv->aclk);
+> >>> @@ -495,6 +716,13 @@ static int stm32_adc_probe(struct platform_device *pdev)
+> >>>  		priv->bclk = NULL;
+> >>>  	}
+> >>>  
+> >>> +	ret = stm32_adc_core_syscfg_probe(np, priv);
+> >>> +	if (ret) {
+> >>> +		if (ret != -EPROBE_DEFER)
+> >>> +			dev_err(&pdev->dev, "Can't probe syscfg: %d\n", ret);
+> >>> +		return ret;
+> >>> +	}
+> >>> +
+> >>>  	pm_runtime_get_noresume(dev);
+> >>>  	pm_runtime_set_active(dev);
+> >>>  	pm_runtime_set_autosuspend_delay(dev, STM32_ADC_CORE_SLEEP_DELAY_MS);
+> >>> @@ -595,7 +823,7 @@ static const struct stm32_adc_priv_cfg stm32h7_adc_priv_cfg = {
+> >>>  };
+> >>>  
+> >>>  static const struct stm32_adc_priv_cfg stm32mp1_adc_priv_cfg = {
+> >>> -	.regs = &stm32h7_adc_common_regs,
+> >>> +	.regs = &stm32mp1_adc_common_regs,
+> >>>  	.clk_sel = stm32h7_adc_clk_sel,
+> >>>  	.max_clk_rate_hz = 40000000,
+> >>>  };  
+> >>  
 
 
 _______________________________________________
