@@ -2,95 +2,114 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4E5B84F4D2
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 22 Jun 2019 11:42:56 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id F3C634F502
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 22 Jun 2019 11:55:22 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Message-Id:MIME-Version:In-Reply-To:
-	References:To:Subject:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=f9NSJ4BTTNsfdeow8uyke3nAAALDm855f3xfqlXUmVM=; b=fuM9ltBU76KwsG
-	JfIHO5cbQy/D4RFoTed+pLD5P8CJHnzEwM5fBjdvJrXVvm4NRlMaF+unRXF/eGIcM73x/R3EXtxgN
-	Cw+32FSkHf9tkN08GYcN+y2afI/wpNcllxs/X38N4aAvRgkBleV4y1jXQ2RMrLTu2k5I+X1yAqjOV
-	zUwDPBiGjL2jT5KhvnRaj+Vcrvg3chYPSwrLU0yD/37w7iJS3fxDrXGKw+79MeoEiWat+qceiLFYO
-	MF9yDzOF+y/DBUMLeKq+kEhOuTXV7G2QR7x5J/4Sb7jKA+7ys3pokxekjMNR3Sncho5BiuGW6LPdr
-	DOjKTQ1rdayLu/GRvxRw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:References:To:From:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=1LzebX0qK/I2TiZCVUb1PJ8adOPCJwMYrcpJ6itaH9I=; b=DITmA6HiyH8HS5
+	qo53lLDdt9E4krqWon/udwuxlTDu9A+yUmisvXfzIoRqf0aoJ15w8GObOXSAbHlHzZPn4/P7GEkGL
+	W4a2c7/N5ZIUaG1jgThHuUO/rYDcl/vKM1748Yffxmc8k/8iePCRpHtb59uy2ZNRFnT73Eyh7Styj
+	rKzKLwLDSm3shDiMjl2rgviunzRgBkHeu91lFZSjst0UptdulROrnhxtV9u/mqMj/N/YgP8RQ5eYq
+	K05PbI004uyYCF/e9aSi9NGTPBJ5O8fJOPxFeSOMt0WEeBH8Pe/OiINlOGaGlFJop/iw+FYyCzhJK
+	BK9LbpAqJPC2M4aipxIg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hecXu-0007YO-7g; Sat, 22 Jun 2019 09:42:54 +0000
-Received: from mail-pl1-x643.google.com ([2607:f8b0:4864:20::643])
+	id 1hecjv-0003tG-Vh; Sat, 22 Jun 2019 09:55:19 +0000
+Received: from mout.kundenserver.de ([212.227.17.13])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hecXj-0007Xt-Ne
- for linux-arm-kernel@lists.infradead.org; Sat, 22 Jun 2019 09:42:45 +0000
-Received: by mail-pl1-x643.google.com with SMTP id m7so4155674pls.8
- for <linux-arm-kernel@lists.infradead.org>;
- Sat, 22 Jun 2019 02:42:41 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=date:from:subject:to:cc:references:in-reply-to:mime-version
- :user-agent:message-id:content-transfer-encoding;
- bh=9j2IX/8es+MUtSvRFN6FI7AtAfO00jHDIvuYq49EqJ4=;
- b=Ts6AebvHzxuEt7R7gbjgIxoo4iHiicCl3sDn4pN1BZckM0bNb7iQ8db/Rnc5ojI7xK
- Am+VjjmHYsPZbH04bvBDUkevdmvWbmB55qd4JuzFg+Q8g6DWFXiBeRG0YJ8kfK47u1E5
- gCDQyJUhaIPouxgkcfbIzWNh/6fXNX8kqLTqqOF70gPYZfR7sxojn2F2JJpeBIZ+HhWj
- O2dcWwu/QL4xRGvJnSU2bUZjB/JjJXmLYQ7IdYz5WMBhHxfGJeJpBjwg6QhLDy06qTKq
- uDtBFAh4z95tU/HD9nzcWJKhKIH5rtr/zdiK2fZahh/MeJc3voiawu/7zXQTk8tI0Dgv
- QQ9Q==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:subject:to:cc:references:in-reply-to
- :mime-version:user-agent:message-id:content-transfer-encoding;
- bh=9j2IX/8es+MUtSvRFN6FI7AtAfO00jHDIvuYq49EqJ4=;
- b=p9RJpEre49VKXwCkk6uFTTOzKm+QcEtMkgPYjdi7ARF26CbSnCUujSmuB1Fskg2r0u
- PkrByOAfXg2bSGgbezEYxrBrM0nRI7yaHcwBNEh86OhKaT0xHOnudZV3lIn+niz+yKED
- oH7IPLjZuFhixcqZBy/FtBuPrC3tt7jgVjA8q01jr3blbXWS+wuoELkVur19YgCT986I
- AXx1KrhAfgmlq1WegJEgR2EDsSvu19M8WyONShu1D9T7YfigmHsD2F7oH3s+9ti3YQqJ
- GRJUXYy+C2Sx4p69Wggw1aT4BwibhKqVTYBuDqha645XlJiRUxwbsPr2LDZjLT2KdP1v
- s7Rg==
-X-Gm-Message-State: APjAAAVmkDxQGT0YJ4i5dcyCzsv+p9ASXh+90Vo7+HygQmDVRsikHPzW
- 7d9XKpzf3JLGpTEhLmDSrx0=
-X-Google-Smtp-Source: APXvYqxQoSAjvHvNNS187noku0m+vdYzBFRilcXKyC8mBY29vB2ASuYueJN/FrkjmvvwxZV72kH54g==
-X-Received: by 2002:a17:902:5ac4:: with SMTP id
- g4mr60474836plm.80.1561196561489; 
- Sat, 22 Jun 2019 02:42:41 -0700 (PDT)
-Received: from localhost ([1.144.215.73])
- by smtp.gmail.com with ESMTPSA id u5sm4782194pgp.19.2019.06.22.02.42.39
- (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Sat, 22 Jun 2019 02:42:40 -0700 (PDT)
-Date: Sat, 22 Jun 2019 19:42:16 +1000
-From: Nicholas Piggin <npiggin@gmail.com>
-Subject: Re: [PATCH 1/4] mm: Move ioremap page table mapping function to mm/
-To: Christophe Leroy <christophe.leroy@c-s.fr>, linux-mm@kvack.org
-References: <20190610043838.27916-1-npiggin@gmail.com>
- <86991f76-2101-8087-37db-d939d5d744fa@c-s.fr>
- <1560915576.aqf69c3nf8.astroid@bobo.none>
- <7218a243-0d9c-ad90-d409-87663893799e@c-s.fr>
-In-Reply-To: <7218a243-0d9c-ad90-d409-87663893799e@c-s.fr>
+ id 1hecjk-00037b-0O; Sat, 22 Jun 2019 09:55:09 +0000
+Received: from [192.168.1.162] ([37.4.249.111]) by mrelayeu.kundenserver.de
+ (mreue106 [212.227.15.183]) with ESMTPSA (Nemesis) id
+ 1MG9wg-1hoT1Z3SrE-00GYeg; Sat, 22 Jun 2019 11:54:49 +0200
+Subject: Re: [PATCH v4 0/7] cpufreq support for Raspberry Pi
+From: Stefan Wahren <stefan.wahren@i2se.com>
+To: Stephen Boyd <sboyd@kernel.org>, Mike Turquette <mturquette@baylibre.com>
+References: <20190612182500.4097-1-nsaenzjulienne@suse.de>
+ <6a9e1450-80ad-a13c-59d2-d0b39f25f67e@gmail.com>
+ <7acfd967-0a82-5429-4eed-8b802e6620f5@i2se.com>
+Openpgp: preference=signencrypt
+Autocrypt: addr=stefan.wahren@i2se.com; keydata=
+ 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 AQ==
+Message-ID: <d8b20179-45ef-479a-47dc-390a4a2dfddf@i2se.com>
+Date: Sat, 22 Jun 2019 11:54:47 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.7.1
 MIME-Version: 1.0
-User-Agent: astroid/0.14.0 (https://github.com/astroidmail/astroid)
-Message-Id: <1561196381.zbgk3puxhu.astroid@bobo.none>
+In-Reply-To: <7acfd967-0a82-5429-4eed-8b802e6620f5@i2se.com>
+Content-Language: en-US
+X-Provags-ID: V03:K1:kNVNWkAjuEb7vVPkGdiQQKKmCJU8LtLX0sh+gtr0KzMusrY4L1K
+ WyeiwBUxZtVlmhaLqVUZkU865SX7UDf78Q+0dQ2L2wKmqwMhCSPNpqlYL7GHgb4CSrkewru
+ EkvEVQlUmXu0zESbj+3YvSykrgtvGogfULKzeWL/31pQ+iqSakaY4pcTVvqcgOip1ViKSo3
+ HJQZUEPr/2G+/NI2n1SDA==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:4OBIfy33c0Q=:sW/r3Ga/IfW0VsTiAv6ve/
+ xYL0+TlPU1HSAZaE3jL9vbAvIpe0zwOOlJUtIKra2OkwV6r73fLvbKw3M6BHtwVqXlVyrjGeO
+ +UGUtSbTWXOtRXPnV1TnSqs04JnRZyInCYqN08opCGsy11/3imhIoo/UsL3glMUYr+djkOTQi
+ yJB7udc+6zSEIhj8Tc+/Q2pD7ooWYuhN/rMqjDRk0oAyLPhPWNhrDfQ5TSC6NXhrmR/F1g03Z
+ fQMzSyuPyveUuXiSh1hRcQQt2rGm4P7nnD2RPlFjDNqwrLd8rMRFXEOf9JTo4cEdoNwQeVuOA
+ NC/owZOW0/KmiOC/vUhFqTmef4ELCMs6wsbR8dKJbRJavzc68CPq8MqQjlUvuzRzkm3RxmXq6
+ KMQsOhGkacGoZLGaVE1WmrkNoe+hHXWK8SnD/iMJJsK5K4spmAaepIVLM5tEwuTEBYAAgyUF8
+ GB6nFPs1fGqEWKxIIU98MJWJCMXOFEocqMB0U+r0E9BR24Tc+mz16SDLtXpXhPT8jkCaDFjDG
+ Kkruupffgf4kkX1QURUS6CEr44W677rCEcORWszvZg/zBo7mSTcQFW0vKK3/RtgNeP6Wtxp56
+ 4z740VPg0lfNVXuLGMiJIb90WsHn0hypWcWjAO2XcU1rnAKQGhoycfhLAx3MDiuJGjSfoFYiu
+ wEx6rXbBV/sTIzdUR8K2Cfd7EUwisqJ5nuJNQ1cAZBBUa59j+AKk1v3xBAmZBetuM4gngObs1
+ FVJO94Ics+gfHODofTZvPoWntmJ2UBmNTlx/Q1q5HYycMxGDdfg/b2Aum+4=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190622_024243_800349_81C49007 
-X-CRM114-Status: GOOD (  10.39  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190622_025508_370147_6B7AED22 
+X-CRM114-Status: GOOD (  12.68  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (npiggin[at]gmail.com)
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [212.227.17.13 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:643 listed in]
- [list.dnswl.org]
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -102,47 +121,59 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linuxppc-dev@lists.ozlabs.org, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: linux-arm-kernel@lists.infradead.org,
+ Florian Fainelli <f.fainelli@gmail.com>, ptesarik@suse.com,
+ viresh.kumar@linaro.org, linux-pm@vger.kernel.org, rjw@rjwysocki.net,
+ linux-kernel@vger.kernel.org, eric@anholt.net,
+ bcm-kernel-feedback-list@broadcom.com, mbrugger@suse.de, ssuloev@orpaltech.com,
+ linux-clk@vger.kernel.org, Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
+ linux-rpi-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Q2hyaXN0b3BoZSBMZXJveSdzIG9uIEp1bmUgMTksIDIwMTkgMTE6MTggcG06Cj4gCj4gCj4gTGUg
-MTkvMDYvMjAxOSDDoCAwNTo0MywgTmljaG9sYXMgUGlnZ2luIGEgw6ljcml0wqA6Cj4+IENocmlz
-dG9waGUgTGVyb3kncyBvbiBKdW5lIDExLCAyMDE5IDM6MjQgcG06Cj4+Pgo+Pj4KPj4+IExlIDEw
-LzA2LzIwMTkgw6AgMDY6MzgsIE5pY2hvbGFzIFBpZ2dpbiBhIMOpY3JpdMKgOgo+IAo+IFtzbmlw
-XQo+IAo+Pj4+IGRpZmYgLS1naXQgYS9pbmNsdWRlL2xpbnV4L3ZtYWxsb2MuaCBiL2luY2x1ZGUv
-bGludXgvdm1hbGxvYy5oCj4+Pj4gaW5kZXggNTFlMTMxMjQ1Mzc5Li44MTJiZWE1ODY2ZDYgMTAw
-NjQ0Cj4+Pj4gLS0tIGEvaW5jbHVkZS9saW51eC92bWFsbG9jLmgKPj4+PiArKysgYi9pbmNsdWRl
-L2xpbnV4L3ZtYWxsb2MuaAo+Pj4+IEBAIC0xNDcsNiArMTQ3LDkgQEAgZXh0ZXJuIHN0cnVjdCB2
-bV9zdHJ1Y3QgKmZpbmRfdm1fYXJlYShjb25zdCB2b2lkICphZGRyKTsKPj4+PiAgICBleHRlcm4g
-aW50IG1hcF92bV9hcmVhKHN0cnVjdCB2bV9zdHJ1Y3QgKmFyZWEsIHBncHJvdF90IHByb3QsCj4+
-Pj4gICAgCQkJc3RydWN0IHBhZ2UgKipwYWdlcyk7Cj4+Pj4gICAgI2lmZGVmIENPTkZJR19NTVUK
-Pj4+PiArZXh0ZXJuIGludCB2bWFwX3JhbmdlKHVuc2lnbmVkIGxvbmcgYWRkciwKPj4+PiArCQkg
-ICAgICAgdW5zaWduZWQgbG9uZyBlbmQsIHBoeXNfYWRkcl90IHBoeXNfYWRkciwgcGdwcm90X3Qg
-cHJvdCwKPj4+PiArCQkgICAgICAgdW5zaWduZWQgaW50IG1heF9wYWdlX3NoaWZ0KTsKPj4+Cj4+
-PiBEcm9wIGV4dGVybiBrZXl3b3JkIGhlcmUuCj4+IAo+PiBJIGRvbid0IGtub3cgaWYgSSB3YXMg
-Z29pbmcgY3JhenkgYnV0IGF0IG9uZSBwb2ludCBJIHdhcyBnZXR0aW5nCj4+IGR1cGxpY2F0ZSBz
-eW1ib2wgZXJyb3JzIHRoYXQgd2VyZSBmaXhlZCBieSBhZGRpbmcgZXh0ZXJuIHNvbWV3aGVyZS4K
-PiAKPiBwcm9iYWJseSBub3Qgb24gYSBmdW5jdGlvbiBuYW1lIC4uLgoKSSBrbm93IGl0IHNvdW5k
-cyBjcmF6eSA6UAoKPj4+IEFzIGNoZWNrcGF0Y2ggdGVsbHMgeW91LCAnQ0hFQ0s6QVZPSURfRVhU
-RVJOUzogZXh0ZXJuIHByb3RvdHlwZXMgc2hvdWxkCj4+PiBiZSBhdm9pZGVkIGluIC5oIGZpbGVz
-Jwo+PiAKPj4gSSBwcmVmZXIgdG8gZm9sbG93IGV4aXN0aW5nIHN0eWxlIGluIHN1cnJvdW5kaW5n
-IGNvZGUgYXQgdGhlIGV4cGVuc2UKPj4gb2Ygc29tZSBjaGVja3BhdGNoIHdhcm5pbmdzLiBJZiBz
-b21lYm9keSBsYXRlciB3YW50cyB0byAiZml4IiBpdAo+PiB0aGF0J3MgZmluZS4KPiAKPiBJIGRv
-bid0IHRoaW5rIHRoYXQncyBmaW5lIHRvICdmaXgnIGxhdGVyIHRoaW5ncyB0aGF0IGNvdWxkIGJl
-IGRvbmUgcmlnaHQgCj4gZnJvbSB0aGUgYmVnaW5pbmcuICdDb3NtZXRpYyBvbmx5JyBmaXhlcyBu
-ZXZlciBoYXBwZW4gYmVjYXVzZSB0aGV5IGFyZSBhIAo+IG5pZ2h0bWFyZSBmb3IgYmFja3BvcnRz
-LCBhbmQgYSBzaGFtZSBmb3IgJ2dpdCBibGFtZScuCj4gCj4gSW4gc29tZSBwYXRjaGVzLCB5b3Ug
-YWRkIGNsZWFudXBzIHRvIG1ha2UgdGhlIGNvZGUgbG9vayBuaWNlciwgYW5kIGhlcmUgCj4geW91
-IGhhdmUgdGhlIG9wcG9ydHVuaXR5IHRvIG1ha2UgdGhlIGNvZGUgbmljZSBmcm9tIHRoZSBiZWdp
-bmluZyBhbmQgeW91IAo+IHByZWZlciByZXBlYXRpbmcgdGhlIGVycm9ycyBkb25lIGluIHRoZSBw
-YXN0ID8gWW91J3JlIHN1cnByaXNpbmcgbWUuCgpXZWxsIEkgbmV2ZXIgY2xhaW1lZCB0byBiZSBj
-b25zaXN0ZW50LiBJIGFjdHVhbGx5IGRvbid0IG1pbmQgdGhlCmV4dGVybiBrZXl3b3JkIHNvIGl0
-J3MgcHJvYmFibHkganVzdCBteSBwZXJzb25hbCBwcmVmZXJlbmNlIHRoYXQKbWFrZXMgbWUgbm90
-aWNlIHNvbWV0aGluZyBuZWFyYnkuIEkgaGF2ZSBkcm9wcGVkIHRob3NlICJjbGVhbnVwIgpjaGFu
-Z2VzIHRob3VnaCwgc28gdGhlcmUuCgpUaGFua3MsCk5pY2sKCl9fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0
-CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFk
-ZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
+Hi Stephen,
+hi Mike,
+
+Am 13.06.19 um 06:31 schrieb Stefan Wahren:
+> Hi Florian,
+> hi Stephen,
+>
+> Am 13.06.19 um 05:31 schrieb Florian Fainelli:
+>> On 6/12/2019 11:24 AM, Nicolas Saenz Julienne wrote:
+>>> Hi all,
+>>> this aims at adding cpufreq support to the Raspberry Pi family of
+>>> boards.
+>>>
+>>> The series first factors out 'pllb' from clk-bcm2385 and creates a new
+>>> clk driver that operates it over RPi's firmware interface[1]. We are
+>>> forced to do so as the firmware 'owns' the pll and we're not allowed to
+>>> change through the register interface directly as we might race with the
+>>> over-temperature and under-voltage protections provided by the firmware.
+>>>
+>>> Next it creates a minimal cpufreq driver that populates the CPU's opp
+>>> table, and registers cpufreq-dt. Which is needed as the firmware
+>>> controls the max and min frequencies available.
+>>>
+>>> This was tested on a RPi3b+ and RPI2b, both using multi_v7_defconfig and
+>>> arm64's defconfig.
+>> How do we go about merging this? Stefan, will you pick up patch 3, 6 and
+>> 7 and submit them for 5.3/5.4? Viresh has already picked up patch 4.
+> is it possible to let patches 1,2, 3 and 5 go via clk-tree?
+>
+> I would take care of 6 and 7.
+>
+> Stefan
+are you fine with the series, since Viresh already picked up patch 4?
+
+are you okay with my suggestion above?
+
+Stefan
+
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
