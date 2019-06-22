@@ -2,71 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 13B174F7BE
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 22 Jun 2019 20:10:55 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0BC2B4F7D2
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 22 Jun 2019 20:43:03 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=oP7wcl/1HBJ/1BXllrk7wK2a90Vu9XUuLIcWFMSM/74=; b=KPHw0Gs+MOv+VO
-	YgAlC6dQifSvYFqbyrfQAtuZyv4kZ4GzFl2DcEfltdWqc3izYnarmsj91GQ1si9kuHX5z9CrmG6ni
-	BmzgUAyl1glA+la2f5wrIOL/OzksKf2cb1DbLKetJ11vcKqulc/vE8K4/rL7OT3znZWz+iynkCusF
-	m4sQU+tRgV6ILMJGJI6kqoaMxYJXoTB1QaKI8K9mT8NQ+FjikHn4/XRlmxb6uxAXRGlm4i7V+cXA5
-	2ZpJPAgW/glTMO4GKuVSA1jvY+7EqEaSyyiWv/tWq4N1njiJhAA8sLQZeLdM6ij9iCHt+jeJf3Io0
-	3BR1CXiO/KPgdFCy9Aow==;
+	List-Owner; bh=RHhgzcC3PLU+OzDzoT9S9Q5BfZtivO+pGj+lLXqrGUY=; b=mGJBfnZFTJDbpW
+	aqoVbsUfUS6tLmN0WclRKdRAmKkBeWHdjimaPuMiBsOReaBbuybSNbBFtrpitOeP5wZzjQao1vndT
+	GaFscFdedvusXzZn3HBXjoLvTV1w4uLnCDInkFmohwOAEVohBb2hCN66Cj51l8RZ0e5ucJD0/gNYS
+	Ltg+YhIEP97tgrQNPSuUilNEGdkTxlGCVhAZC6BSJi26Q4+ErKpKl1Rcx1xfHyJQ9jZgTqzu8BBdA
+	96m03RtVuKM1bZ+Qc/zATtiB7vhsxR5VtL7+hOyZ0yvlFF3/xb4xaExuT9r4adeldHlHa3HtPtr4a
+	KQOwQdRH0VnjmP56L4RQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hekTT-0004gW-TQ; Sat, 22 Jun 2019 18:10:51 +0000
-Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
+	id 1hekyb-0005Y8-53; Sat, 22 Jun 2019 18:43:01 +0000
+Received: from pandora.armlinux.org.uk
+ ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hekTI-0004fv-2O
- for linux-arm-kernel@lists.infradead.org; Sat, 22 Jun 2019 18:10:41 +0000
-Received: from ptx.hi.pengutronix.de ([2001:67c:670:100:1d::c0])
- by metis.ext.pengutronix.de with esmtps
- (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
- (envelope-from <mol@pengutronix.de>)
- id 1hekT8-0005Xe-EE; Sat, 22 Jun 2019 20:10:30 +0200
-Received: from mol by ptx.hi.pengutronix.de with local (Exim 4.89)
- (envelope-from <mol@pengutronix.de>)
- id 1hekT7-0003ug-1g; Sat, 22 Jun 2019 20:10:29 +0200
-Date: Sat, 22 Jun 2019 20:10:29 +0200
-From: Michael Olbrich <m.olbrich@pengutronix.de>
-To: Russell King - ARM Linux admin <linux@armlinux.org.uk>
+ id 1hekyR-0005XL-I7
+ for linux-arm-kernel@lists.infradead.org; Sat, 22 Jun 2019 18:42:53 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:
+ Content-Transfer-Encoding:Content-Type:MIME-Version:References:Message-ID:
+ Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=eGtI+SBCNPuMoZ5QNUSXud9bLq8Mn52T/EQZOyRDgEI=; b=JqvR7m3NDnraa4vdiEUFU9xja
+ L5KGqkdQjoiDWxCdkcZkjdPLGDXNXQ4DaQddyfO/DCYVkfKbpYDlE2HPdAzcjfMiXoYSqSOIP/PyW
+ l4jwgK+a0UuiZvBF6rRLJ5FN7nsKgjIgHIIGOTcvCJiOYClGEYYjPSz0nKJvQ+KETFAbRGnMQYF4z
+ waoKPqUgoKb3VxahTy4deZLjM2Q90UrLC0x1XDEm64BY1xDdgT1iaRBtaHUlURS8xqxRpY5Un/ZuC
+ ro2/O0iH32xxxtx4EqzzrO3COWLUU7AD15tdBX0IRCYP09H11DnF2Hjt1gpxNru9OEo7EcuwVnb+6
+ jpvFRTW2w==;
+Received: from shell.armlinux.org.uk
+ ([fd8f:7570:feb6:1:5054:ff:fe00:4ec]:59890)
+ by pandora.armlinux.org.uk with esmtpsa
+ (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
+ (envelope-from <linux@armlinux.org.uk>)
+ id 1hekyH-0005IY-J2; Sat, 22 Jun 2019 19:42:41 +0100
+Received: from linux by shell.armlinux.org.uk with local (Exim 4.89)
+ (envelope-from <linux@shell.armlinux.org.uk>)
+ id 1hekyD-0004Ng-7l; Sat, 22 Jun 2019 19:42:37 +0100
+Date: Sat, 22 Jun 2019 19:42:37 +0100
+From: Russell King - ARM Linux admin <linux@armlinux.org.uk>
+To: Michael Olbrich <m.olbrich@pengutronix.de>
 Subject: Re: [BUG] imx-sdma: readl_relaxed_poll_timeout_atomic() conversion
-Message-ID: <20190622181029.iy72xkz3xcomwjtl@pengutronix.de>
-Mail-Followup-To: Russell King - ARM Linux admin <linux@armlinux.org.uk>,
- Lucas Stach <l.stach@pengutronix.de>,
- Vinod Koul <vinod.koul@intel.com>,
- linux-arm-kernel@lists.infradead.org, dmaengine@vger.kernel.org
+Message-ID: <20190622184237.ld7xwc5kk7sbghae@shell.armlinux.org.uk>
 References: <20190622165318.bgyun52hssqmdv4n@shell.armlinux.org.uk>
+ <20190622181029.iy72xkz3xcomwjtl@pengutronix.de>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190622165318.bgyun52hssqmdv4n@shell.armlinux.org.uk>
-X-Sent-From: Pengutronix Hildesheim
-X-URL: http://www.pengutronix.de/
-X-IRC: #ptxdist @freenode
-X-Accept-Language: de,en
-X-Accept-Content-Type: text/plain
-X-Uptime: 19:59:46 up 36 days, 17 min, 59 users,  load average: 0.04, 0.06,
- 0.07
+In-Reply-To: <20190622181029.iy72xkz3xcomwjtl@pengutronix.de>
 User-Agent: NeoMutt/20170113 (1.7.2)
-X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::c0
-X-SA-Exim-Mail-From: mol@pengutronix.de
-X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
- SAEximRunCond expanded to false
-X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190622_111040_116947_A1365204 
-X-CRM114-Status: GOOD (  20.21  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190622_114251_607386_2F0295EF 
+X-CRM114-Status: GOOD (  28.34  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [2001:4d48:ad52:3201:214:fdff:fe10:1be6 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -80,98 +89,102 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>,
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: Vinod Koul <vinod.koul@intel.com>, dmaengine@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org, Lucas Stach <l.stach@pengutronix.de>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sat, Jun 22, 2019 at 05:53:18PM +0100, Russell King - ARM Linux admin wrote:
-> Old code:
-> 
-> -       while (!(ret = readl_relaxed(sdma->regs + SDMA_H_INTR) & 1)) {
-> -               if (timeout-- <= 0)
-> -                       break;
-> -               udelay(1);
-> -       }
-> 
-> So, while bit 0 is _clear_ the loop continues to poll.
-> 
-> 
-> New code:
-> 
-> +       ret = readl_relaxed_poll_timeout_atomic(sdma->regs + SDMA_H_STATSTOP,
-> +                                               reg, !(reg & 1), 1, 500);
-> 
-> Doesn't really tell us what the termination condition is (because of
-> the obfuscation taking away the details), but if we dig into the
-> macro maze:
-> 
-> #define readl_relaxed_poll_timeout_atomic(addr, val, cond, delay_us, timeout_us) \
->         readx_poll_timeout_atomic(readl_relaxed, addr, val, cond, delay_us, timeout_us)
-> 
-> #define readx_poll_timeout_atomic(op, addr, val, cond, delay_us, timeout_us) \
-> ({ \
->         u64 __timeout_us = (timeout_us); \
->         unsigned long __delay_us = (delay_us); \
->         ktime_t __timeout = ktime_add_us(ktime_get(), __timeout_us); \
->         for (;;) { \
->                 (val) = op(addr); \
->                 if (cond) \
->                         break; \
-> 
-> "cond" is passed in to here unmodified, so this becomes:
-> 
-> 	for (;;) {
-> 		reg = readl_relaxed(sdma->regs + SDMA_H_STATSTOP);
-> 		if (!(reg & 1))
-> 			break;
-> 
-> So, if bit 0 of this register is clear, we terminate the loop.
-> 
-> Seems to me like this is a great illustration why using a helper
-> _introduces_ bugs, because it hides the detail about what the exit
-> condition for the embedded loop actually is, and leads to this kind
-> of error.
-> 
-> In any case, the conversion is obviously incorrect.
-> 
-> I occasionally see the "Timeout waiting for CH0 ready" error during
-> boot on a cbi4, which, given the above, means that we did end up
-> seeing bit 1 set (so according to the old code, we waited
-> successfully.)
-
-The old code was polling SDMA_H_INTR so it waited for the bit to be set.
-The new code (as documented in the commit message) polls SDMA_H_STATSTOP
-instead.
-I believe this register is called SDMAARM_STOP_STAT in the reference
-manual. And the documentation states: "Reading this register yields the
-current state of the HE[i] bits".
-And from the documentation of the SDMA "DONE" instruction:
-"Clear HE bit for the current channel, send an interrupt to the Arm
-platform for the current channel and reschedule."
-
-My interpretation of this is, that waiting for the bit in SDMA_H_STATSTOP
-to become zero has the same effect as waiting for the bit in SDMA_H_INTR to
-be set. Or am I missing something?
-
-Michael
-
-> Looking at the date of the commit, this is almost a three year old
-> bug.
-> 
-> -- 
-> RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
-> FTTC broadband for 0.8mile line in suburbia: sync at 12.1Mbps down 622kbps up
-> According to speedtest.net: 11.9Mbps down 500kbps up
-> 
-
--- 
-Pengutronix e.K.                           |                             |
-Industrial Linux Solutions                 | http://www.pengutronix.de/  |
-Peiner Str. 6-8, 31137 Hildesheim, Germany | Phone: +49-5121-206917-0    |
-Amtsgericht Hildesheim, HRA 2686           | Fax:   +49-5121-206917-5555 |
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gU2F0LCBKdW4gMjIsIDIwMTkgYXQgMDg6MTA6MjlQTSArMDIwMCwgTWljaGFlbCBPbGJyaWNo
+IHdyb3RlOgo+IE9uIFNhdCwgSnVuIDIyLCAyMDE5IGF0IDA1OjUzOjE4UE0gKzAxMDAsIFJ1c3Nl
+bGwgS2luZyAtIEFSTSBMaW51eCBhZG1pbiB3cm90ZToKPiA+IE9sZCBjb2RlOgo+ID4gCj4gPiAt
+ICAgICAgIHdoaWxlICghKHJldCA9IHJlYWRsX3JlbGF4ZWQoc2RtYS0+cmVncyArIFNETUFfSF9J
+TlRSKSAmIDEpKSB7Cj4gPiAtICAgICAgICAgICAgICAgaWYgKHRpbWVvdXQtLSA8PSAwKQo+ID4g
+LSAgICAgICAgICAgICAgICAgICAgICAgYnJlYWs7Cj4gPiAtICAgICAgICAgICAgICAgdWRlbGF5
+KDEpOwo+ID4gLSAgICAgICB9Cj4gPiAKPiA+IFNvLCB3aGlsZSBiaXQgMCBpcyBfY2xlYXJfIHRo
+ZSBsb29wIGNvbnRpbnVlcyB0byBwb2xsLgo+ID4gCj4gPiAKPiA+IE5ldyBjb2RlOgo+ID4gCj4g
+PiArICAgICAgIHJldCA9IHJlYWRsX3JlbGF4ZWRfcG9sbF90aW1lb3V0X2F0b21pYyhzZG1hLT5y
+ZWdzICsgU0RNQV9IX1NUQVRTVE9QLAo+ID4gKyAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgcmVnLCAhKHJlZyAmIDEpLCAxLCA1MDApOwo+ID4gCj4gPiBEb2Vz
+bid0IHJlYWxseSB0ZWxsIHVzIHdoYXQgdGhlIHRlcm1pbmF0aW9uIGNvbmRpdGlvbiBpcyAoYmVj
+YXVzZSBvZgo+ID4gdGhlIG9iZnVzY2F0aW9uIHRha2luZyBhd2F5IHRoZSBkZXRhaWxzKSwgYnV0
+IGlmIHdlIGRpZyBpbnRvIHRoZQo+ID4gbWFjcm8gbWF6ZToKPiA+IAo+ID4gI2RlZmluZSByZWFk
+bF9yZWxheGVkX3BvbGxfdGltZW91dF9hdG9taWMoYWRkciwgdmFsLCBjb25kLCBkZWxheV91cywg
+dGltZW91dF91cykgXAo+ID4gICAgICAgICByZWFkeF9wb2xsX3RpbWVvdXRfYXRvbWljKHJlYWRs
+X3JlbGF4ZWQsIGFkZHIsIHZhbCwgY29uZCwgZGVsYXlfdXMsIHRpbWVvdXRfdXMpCj4gPiAKPiA+
+ICNkZWZpbmUgcmVhZHhfcG9sbF90aW1lb3V0X2F0b21pYyhvcCwgYWRkciwgdmFsLCBjb25kLCBk
+ZWxheV91cywgdGltZW91dF91cykgXAo+ID4gKHsgXAo+ID4gICAgICAgICB1NjQgX190aW1lb3V0
+X3VzID0gKHRpbWVvdXRfdXMpOyBcCj4gPiAgICAgICAgIHVuc2lnbmVkIGxvbmcgX19kZWxheV91
+cyA9IChkZWxheV91cyk7IFwKPiA+ICAgICAgICAga3RpbWVfdCBfX3RpbWVvdXQgPSBrdGltZV9h
+ZGRfdXMoa3RpbWVfZ2V0KCksIF9fdGltZW91dF91cyk7IFwKPiA+ICAgICAgICAgZm9yICg7Oykg
+eyBcCj4gPiAgICAgICAgICAgICAgICAgKHZhbCkgPSBvcChhZGRyKTsgXAo+ID4gICAgICAgICAg
+ICAgICAgIGlmIChjb25kKSBcCj4gPiAgICAgICAgICAgICAgICAgICAgICAgICBicmVhazsgXAo+
+ID4gCj4gPiAiY29uZCIgaXMgcGFzc2VkIGluIHRvIGhlcmUgdW5tb2RpZmllZCwgc28gdGhpcyBi
+ZWNvbWVzOgo+ID4gCj4gPiAJZm9yICg7Oykgewo+ID4gCQlyZWcgPSByZWFkbF9yZWxheGVkKHNk
+bWEtPnJlZ3MgKyBTRE1BX0hfU1RBVFNUT1ApOwo+ID4gCQlpZiAoIShyZWcgJiAxKSkKPiA+IAkJ
+CWJyZWFrOwo+ID4gCj4gPiBTbywgaWYgYml0IDAgb2YgdGhpcyByZWdpc3RlciBpcyBjbGVhciwg
+d2UgdGVybWluYXRlIHRoZSBsb29wLgo+ID4gCj4gPiBTZWVtcyB0byBtZSBsaWtlIHRoaXMgaXMg
+YSBncmVhdCBpbGx1c3RyYXRpb24gd2h5IHVzaW5nIGEgaGVscGVyCj4gPiBfaW50cm9kdWNlc18g
+YnVncywgYmVjYXVzZSBpdCBoaWRlcyB0aGUgZGV0YWlsIGFib3V0IHdoYXQgdGhlIGV4aXQKPiA+
+IGNvbmRpdGlvbiBmb3IgdGhlIGVtYmVkZGVkIGxvb3AgYWN0dWFsbHkgaXMsIGFuZCBsZWFkcyB0
+byB0aGlzIGtpbmQKPiA+IG9mIGVycm9yLgo+ID4gCj4gPiBJbiBhbnkgY2FzZSwgdGhlIGNvbnZl
+cnNpb24gaXMgb2J2aW91c2x5IGluY29ycmVjdC4KPiA+IAo+ID4gSSBvY2Nhc2lvbmFsbHkgc2Vl
+IHRoZSAiVGltZW91dCB3YWl0aW5nIGZvciBDSDAgcmVhZHkiIGVycm9yIGR1cmluZwo+ID4gYm9v
+dCBvbiBhIGNiaTQsIHdoaWNoLCBnaXZlbiB0aGUgYWJvdmUsIG1lYW5zIHRoYXQgd2UgZGlkIGVu
+ZCB1cAo+ID4gc2VlaW5nIGJpdCAxIHNldCAoc28gYWNjb3JkaW5nIHRvIHRoZSBvbGQgY29kZSwg
+d2Ugd2FpdGVkCj4gPiBzdWNjZXNzZnVsbHkuKQo+IAo+IFRoZSBvbGQgY29kZSB3YXMgcG9sbGlu
+ZyBTRE1BX0hfSU5UUiBzbyBpdCB3YWl0ZWQgZm9yIHRoZSBiaXQgdG8gYmUgc2V0Lgo+IFRoZSBu
+ZXcgY29kZSAoYXMgZG9jdW1lbnRlZCBpbiB0aGUgY29tbWl0IG1lc3NhZ2UpIHBvbGxzIFNETUFf
+SF9TVEFUU1RPUAo+IGluc3RlYWQuCj4gSSBiZWxpZXZlIHRoaXMgcmVnaXN0ZXIgaXMgY2FsbGVk
+IFNETUFBUk1fU1RPUF9TVEFUIGluIHRoZSByZWZlcmVuY2UKPiBtYW51YWwuIEFuZCB0aGUgZG9j
+dW1lbnRhdGlvbiBzdGF0ZXM6ICJSZWFkaW5nIHRoaXMgcmVnaXN0ZXIgeWllbGRzIHRoZQo+IGN1
+cnJlbnQgc3RhdGUgb2YgdGhlIEhFW2ldIGJpdHMiLgo+IEFuZCBmcm9tIHRoZSBkb2N1bWVudGF0
+aW9uIG9mIHRoZSBTRE1BICJET05FIiBpbnN0cnVjdGlvbjoKPiAiQ2xlYXIgSEUgYml0IGZvciB0
+aGUgY3VycmVudCBjaGFubmVsLCBzZW5kIGFuIGludGVycnVwdCB0byB0aGUgQXJtCj4gcGxhdGZv
+cm0gZm9yIHRoZSBjdXJyZW50IGNoYW5uZWwgYW5kIHJlc2NoZWR1bGUuIgo+IAo+IE15IGludGVy
+cHJldGF0aW9uIG9mIHRoaXMgaXMsIHRoYXQgd2FpdGluZyBmb3IgdGhlIGJpdCBpbiBTRE1BX0hf
+U1RBVFNUT1AKPiB0byBiZWNvbWUgemVybyBoYXMgdGhlIHNhbWUgZWZmZWN0IGFzIHdhaXRpbmcg
+Zm9yIHRoZSBiaXQgaW4gU0RNQV9IX0lOVFIgdG8KPiBiZSBzZXQuIE9yIGFtIEkgbWlzc2luZyBz
+b21ldGhpbmc/CgpTbywgd2h5IGRvIGFsbCBteSBpTVg2IHBsYXRmb3JtcyBub3cgcmFuZG9tbHkg
+c3BpdCBvdXQ6CgoiaW14LXNkbWEgMjBlYzAwMC5zZG1hOiBUaW1lb3V0IHdhaXRpbmcgZm9yIENI
+MCByZWFkeSIKCmF0IGJvb3QsIHdoZXJlYXMgdGhleSBkaWRuJ3QgdXNlZCB0byB3aXRoIG9sZGVy
+IGtlcm5lbHM/ICBNYXliZSBjaGFubmVsCjAgZG9lcyBub3QgY2xlYXIgdGhlIEhFWzBdIGJpdD8K
+ClRoZSBkb2N1bWVudGF0aW9uIGV4cGxpY2l0bHkgc3RhdGVzIHRoYXQgZm9yIGluaXRpYWxpc2F0
+aW9uLCB0aGUKZm9sbG93aW5nIGlzIHJlcXVpcmVkOgoK4oCiIFNldCBiaXQgMCBvZiB0aGUgU0RN
+QV9IU1RBUlQgcmVnaXN0ZXIgdG8gc2V0IEhFWzBdIGFuZCBhbGxvdyBDaGFubmVsIDAKICB0byBy
+dW4gKGFzc3VtZXMgRU9bMF0gYW5kIERPWzBdIHdlcmUgYm90aCBzZXQgaW4gcHJldmlvdXMgc3Rl
+cCkuIFRoaXMKICB3aWxsIGNhdXNlIFNETUEgdG9sb2FkIHRoZSBwcm9ncmFtIFJBTSBhbmQgY2hh
+bm5lbCBjb250ZXh0cyBjb25maWd1cmVkCiAgcHJldmlvdXNseS4K4oCiIFdhaXQgZm9yIENoYW5u
+ZWwgMCB0byBmaW5pc2ggcnVubmluZy4gVGhpcyBpcyBpbmRpY2F0ZWQgYnkgSElbMF09MSBpbgog
+IHRoZSBTRE1BX1NETUFfSU5UUiByZWdpc3Rlciwgb3IgYnkgb3B0aW9uYWwgaW50ZXJydXB0IHRv
+IHRoZSBBUk0gcGxhdGZvcm0uCgpTbywgaXMgdGhlcmUgYSB3YXkgZm9yIGEgSEkgYml0IHRvIGJl
+IHNldCB3aXRob3V0IGNsZWFyaW5nIHRoZSBIRSBiaXQ/ClllcywgdmlhIHRoZSBOT1RJRlkgY29t
+bWFuZDoKCjU1LjUuMi4zNSBOT1RJRlkgKE5vdGlmeSB0byBBUk0gcGxhdGZvcm0pCk9wZXJhdGlv
+bjoKaWYgKGpqaiAmIDQgPT0gMCkKewogIGlmIChqamomMiA9PSAyKQogICAgSEVbQ0NSXSDihpAg
+MAogIGlmIChqamomMT09IDEpCiAgICBISVtDQ1JdIOKGkCAxCn0KZWxzZSBpZiAoampqID09IDQp
+CiAgRVBbQ0NSXSDihpAgMAplbHNlCgpTbywgaWYgampqIGlzIDAwMSBiaW5hcnksIHRoZSBIRSBi
+aXQgY2FuIHJlbWFpbiBzZXQgd2hpbGUgdGhlIEhJIGJpdAppcyBjbGVhcmVkLiAgTWF5YmUgdGhl
+IGZpcm13YXJlIHVzZXMgdGhpcyByYXRoZXIgdGhhbiBhIERPTkUgaW5zdHJ1Y3Rpb24Kd2hlbiBw
+ZXJmb3JtaW5nIHRoZSBpbml0aWFsaXNhdGlvbiBmdW5jdGlvbnMsIHdoaWNoIG1lYW5zIHlvdXIg
+aWRlYSBvZgpnb2luZyBhZ2FpbnN0IHdoYXQgaXMgc3BlY2lmaWVkIGluIHRoZSBtYW51YWwsIGFu
+ZCB1c2luZyBIRVswXSBpbnN0ZWFkCm9mIEhJWzBdIGlzIG9uIF92ZXJ5XyBzaGFrZXkgZ3JvdW5k
+LgoKR2l2ZW4gdGhhdCBJJ20gc2VlaW5nIHRoZSBzYW1lIGlzc3VlIG9uIF9mb3VyXyBpTVg2IHBs
+YXRmb3JtcyBoZXJlLApJIHRoaW5rIGl0J3MgcHJldHR5IG11Y2ggb2J2aW91cyB0aGF0IHlvdXIg
+YXNzdW1wdGlvbnMgaGVyZSBhcmUKZmFsc2UuCiAKPiBNaWNoYWVsCj4gCj4gPiBMb29raW5nIGF0
+IHRoZSBkYXRlIG9mIHRoZSBjb21taXQsIHRoaXMgaXMgYWxtb3N0IGEgdGhyZWUgeWVhciBvbGQK
+PiA+IGJ1Zy4KPiA+IAo+ID4gLS0gCj4gPiBSTUsncyBQYXRjaCBzeXN0ZW06IGh0dHBzOi8vd3d3
+LmFybWxpbnV4Lm9yZy51ay9kZXZlbG9wZXIvcGF0Y2hlcy8KPiA+IEZUVEMgYnJvYWRiYW5kIGZv
+ciAwLjhtaWxlIGxpbmUgaW4gc3VidXJiaWE6IHN5bmMgYXQgMTIuMU1icHMgZG93biA2MjJrYnBz
+IHVwCj4gPiBBY2NvcmRpbmcgdG8gc3BlZWR0ZXN0Lm5ldDogMTEuOU1icHMgZG93biA1MDBrYnBz
+IHVwCj4gPiAKPiAKPiAtLSAKPiBQZW5ndXRyb25peCBlLksuICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgfCAgICAgICAgICAgICAgICAgICAgICAgICAgICAgfAo+IEluZHVzdHJpYWwgTGludXgg
+U29sdXRpb25zICAgICAgICAgICAgICAgICB8IGh0dHA6Ly93d3cucGVuZ3V0cm9uaXguZGUvICB8
+Cj4gUGVpbmVyIFN0ci4gNi04LCAzMTEzNyBIaWxkZXNoZWltLCBHZXJtYW55IHwgUGhvbmU6ICs0
+OS01MTIxLTIwNjkxNy0wICAgIHwKPiBBbXRzZ2VyaWNodCBIaWxkZXNoZWltLCBIUkEgMjY4NiAg
+ICAgICAgICAgfCBGYXg6ICAgKzQ5LTUxMjEtMjA2OTE3LTU1NTUgfAo+IAoKLS0gClJNSydzIFBh
+dGNoIHN5c3RlbTogaHR0cHM6Ly93d3cuYXJtbGludXgub3JnLnVrL2RldmVsb3Blci9wYXRjaGVz
+LwpGVFRDIGJyb2FkYmFuZCBmb3IgMC44bWlsZSBsaW5lIGluIHN1YnVyYmlhOiBzeW5jIGF0IDEy
+LjFNYnBzIGRvd24gNjIya2JwcyB1cApBY2NvcmRpbmcgdG8gc3BlZWR0ZXN0Lm5ldDogMTEuOU1i
+cHMgZG93biA1MDBrYnBzIHVwCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVs
+QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9s
+aXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
