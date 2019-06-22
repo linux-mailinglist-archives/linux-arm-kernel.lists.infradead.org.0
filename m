@@ -2,62 +2,73 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0F8024F7DB
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 22 Jun 2019 20:54:06 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 502DC4F7DD
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 22 Jun 2019 20:56:16 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Date:Message-Id:MIME-Version:Subject:To
+	:From:References:In-Reply-To:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ki1Jcko5FCIvdEwO2RLrwfp8h1KZOcuwOKfi+a8HtWU=; b=VWbf11JDuQkOFV
-	AgEeyrDispQu6qtOS/O6oIComUmtTj6cvLvTf+8POE7w4r5YqeP0JVGxSFfukz+4vUgI9eHTcjyhz
-	DggDG2+a/9yduKgd3Rbqjj+a8nFi+u8H95GDCQQVcwkYjAhQRm07TVFEFwHc6uW9bgGHX5E47Cht3
-	heTPP6Ts0cRIUe7EzHhOPIJrSK0JV4xvPoWswigYMylJ9hdJsVamjr0G6khzYZ9nsj2QMHmHAOjKL
-	FUqIGdwsL/BBOZocaLhEM4g3c+XQbRfLZfJMqxfDsaw+yW6G8pJEijHZnNUMOJaBjXZ4OLLwincnt
-	PxsRUpQ+3P2XPbarshUQ==;
+	List-Owner; bh=Gg/HgONcoexy7Fpw1EGkrTF7vlL0BI0O82gGiszLycA=; b=P6n6/sMY5iJ3E2
+	QuXgt4vrIk7XOvubq7XQtnbed5YAwRHzwy3R+rMChXj6rKI+imbR9kZnx3FrWAN6W10/J+Ybbxx++
+	KeAuhPIvLIL9c+N+6p7NESLmGTUHL9oTyBvIvGM9G9rkdpTg6lq0O/3WkjqyVDPiI3twVOusO3T9q
+	yupFc3dL7ICsSPVTCrSGVvAK+98PpNA576twTYemVd4vecJWG2aZhV4a5s+qk6pgclFbSNEwyQh2u
+	DghXvrcaFqTQP+aWbVK4CraD5OWA+psFzEokTumWTemnl+GAKITnxQEnQ+huJYreA8fm/RyIP/okm
+	ePlCwDUsuUuD4w2F//Bg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hel9H-0000gz-S4; Sat, 22 Jun 2019 18:54:03 +0000
-Received: from vps0.lunn.ch ([185.16.172.187])
+	id 1helBO-0002Et-1J; Sat, 22 Jun 2019 18:56:14 +0000
+Received: from pandora.armlinux.org.uk
+ ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hel94-0000gd-Vt
- for linux-arm-kernel@lists.infradead.org; Sat, 22 Jun 2019 18:53:52 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=lunn.ch;
- s=20171124; h=In-Reply-To:Content-Type:MIME-Version:References:Message-ID:
- Subject:Cc:To:From:Date:Sender:Reply-To:Content-Transfer-Encoding:Content-ID:
- Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
- :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
- List-Post:List-Owner:List-Archive;
- bh=2lRkCjp8fvSiX3LtgZTt1WFMSmyzZh+b7YCWGtUyRSY=; b=FmQZjLAZWT+ZujCrK+8nEXKKiQ
- uOB86sg12LkLG2zSdq4DE7J2Z/1gDFQcBSMh8L10xpTidHsNFR6jhgxOOKlXshUMb/dikdJhLJRCV
- ulnCBOsKSPivs2s+lS5saAe71/eiQkA/VcQR2Rjg2wUkax3s+hyOhNt3Z+qL5GEDKYNs=;
-Received: from andrew by vps0.lunn.ch with local (Exim 4.89)
- (envelope-from <andrew@lunn.ch>)
- id 1hel8w-0003Vw-H7; Sat, 22 Jun 2019 20:53:42 +0200
-Date: Sat, 22 Jun 2019 20:53:42 +0200
-From: Andrew Lunn <andrew@lunn.ch>
-To: Joshua Scott <joshua.scott@alliedtelesis.co.nz>
-Subject: Re: [PATCH/RFT] serial: prevent armada-370/xp uart buffer loss
-Message-ID: <20190622185342.GF8497@lunn.ch>
-References: <20190621062920.16691-1-joshua.scott@alliedtelesis.co.nz>
+ id 1helBF-0002EE-L9
+ for linux-arm-kernel@lists.infradead.org; Sat, 22 Jun 2019 18:56:06 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=armlinux.org.uk; s=pandora-2019; h=Date:Sender:Message-Id:Content-Type:
+ Content-Transfer-Encoding:MIME-Version:Subject:Cc:To:From:References:
+ In-Reply-To:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+ Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:
+ List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=9L4EdajO6Xbwxdr23bMsOgh5jRoyTsPUINWDgSc18DQ=; b=ODoS1pCbMNS2pbN3tuZXPP2DpU
+ btyD2EpGAffay9u7xn0lhGx7Z5QM76wHruQiLRF3PTGbMNaP/RlTXLxo/t3eATwQFo7vA/QSqM7zm
+ nSp1btztbTwNTGKJXsS+bigdDUzJc52IGi2S57gF3QAWnNIgNHHeiwxPPSyhQuIN3ny7tqCN58cuZ
+ y3KG8IN1SBmNVyBq2cjPWY4NxRXLz1J25I9Mz9dZkqzGLIs5ZhzJvi4Qn0bPmukjVRHaeuAozUNFT
+ qJPgI/kQbQUR3nQhz4eZQGT2v7MwdjbjWF8vEvevzWTX6Qh8CT09nQ48BbpkWMWNCyGW03Qkao/kU
+ bZDa33+Q==;
+Received: from e0022681537dd.dyn.armlinux.org.uk
+ ([2001:4d48:ad52:3201:222:68ff:fe15:37dd]:54250 helo=rmk-PC.armlinux.org.uk)
+ by pandora.armlinux.org.uk with esmtpsa
+ (TLSv1.2:ECDHE-RSA-AES128-GCM-SHA256:128) (Exim 4.90_1)
+ (envelope-from <rmk@armlinux.org.uk>)
+ id 1helB3-0005N2-Ql; Sat, 22 Jun 2019 19:55:53 +0100
+Received: from rmk by rmk-PC.armlinux.org.uk with local (Exim
+ 4.82_1-5b7a7c0-XX) (envelope-from <rmk@armlinux.org.uk>)
+ id 1helB3-0005d6-7m; Sat, 22 Jun 2019 19:55:53 +0100
+In-Reply-To: <20190622165318.bgyun52hssqmdv4n@shell.armlinux.org.uk>
+References: <20190622165318.bgyun52hssqmdv4n@shell.armlinux.org.uk>
+From: Russell King <rmk+kernel@armlinux.org.uk>
+To: Michael Olbrich <m.olbrich@pengutronix.de>,
+ Lucas Stach <l.stach@pengutronix.de>, Vinod Koul <vkoul@kernel.org>
+Subject: [PATCH v2] dmaengine: imx-sdma: fix incorrect conversion to
+ readl_relaxed_poll_timeout_atomic()
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190621062920.16691-1-joshua.scott@alliedtelesis.co.nz>
-User-Agent: Mutt/1.5.23 (2014-03-12)
+Message-Id: <E1helB3-0005d6-7m@rmk-PC.armlinux.org.uk>
+Date: Sat, 22 Jun 2019 19:55:53 +0100
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190622_115351_191216_D3EB0544 
-X-CRM114-Status: UNSURE (   8.91  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190622_115605_706225_5DB8B3B2 
+X-CRM114-Status: GOOD (  10.54  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [185.16.172.187 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [2001:4d48:ad52:3201:214:fdff:fe10:1be6 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
@@ -76,31 +87,57 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Gregory Clement <gregory.clement@bootlin.com>,
- Jason Cooper <jason@lakedaemon.net>, linux-arm-kernel@lists.infradead.org,
- Sebastian Hesselbarth <sebastian.hesselbarth@gmail.com>
+Cc: Fabio Estevam <festevam@gmail.com>, Sascha Hauer <s.hauer@pengutronix.de>,
+ NXP Linux Team <linux-imx@nxp.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>, dmaengine@vger.kernel.org,
+ Dan Williams <dan.j.williams@intel.com>, Shawn Guo <shawnguo@kernel.org>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-> The question we have is, should the fix be applied to the common
-> armada-370-xp device-tree, or should it be restricted to only affect the
-> SOCs listed above.
-> 
-> If anybody is able to check, we would like to find out if the issue
-> affects other armada-xp / armada-370 based SOCs.
-> 
-> The issue can be reproduced, if logging in using the serial port, with:
->     resize && echo "hello world"
+When imx-sdma was converted to use readl_relaxed_poll_timeout_atomic(),
+the termination condition was inverted.  Fix this.
 
-Hi Joshua
+Fixes: 1d069bfa3c78 ("dmaengine: imx-sdma: ack channel 0 IRQ in the interrupt handler")
+Signed-off-by: Russell King <rmk+kernel@armlinux.org.uk>
+---
+ drivers/dma/imx-sdma.c | 12 +++++++++---
+ 1 file changed, 9 insertions(+), 3 deletions(-)
 
-I tried this test out on a Marvell 370rd reference design. I tried
-both 115200 and 9600 baud. I repeated the test maybe 10 times at each
-speed. No dropped characters.
+diff --git a/drivers/dma/imx-sdma.c b/drivers/dma/imx-sdma.c
+index 5f3c1378b90e..c45cbdb09714 100644
+--- a/drivers/dma/imx-sdma.c
++++ b/drivers/dma/imx-sdma.c
+@@ -655,15 +655,21 @@ static void sdma_enable_channel(struct sdma_engine *sdma, int channel)
+ static int sdma_run_channel0(struct sdma_engine *sdma)
+ {
+ 	int ret;
+-	u32 reg;
++	u32 reg, mask;
++
++	// Disable channel 0 interrupt
++	mask = readl_relaxed(sdma->regs + SDMA_H_INTRMSK);
++	writel_relaxed(mask & ~1, sdma->regs + SDMA_H_INTRMSK);
+ 
+ 	sdma_enable_channel(sdma, 0);
+ 
+-	ret = readl_relaxed_poll_timeout_atomic(sdma->regs + SDMA_H_STATSTOP,
+-						reg, !(reg & 1), 1, 500);
++	ret = readl_relaxed_poll_timeout_atomic(sdma->regs + SDMA_H_INTR,
++						reg, reg & 1, 1, 500);
+ 	if (ret)
+ 		dev_err(sdma->dev, "Timeout waiting for CH0 ready\n");
+ 
++	writel_relaxed(mask, sdma->regs + SDMA_H_INTRMSK);
++
+ 	/* Set bits of CONFIG register with dynamic context switching */
+ 	reg = readl(sdma->regs + SDMA_H_CONFIG);
+ 	if ((reg & SDMA_H_CONFIG_CSM) == 0) {
+-- 
+2.7.4
 
-       Andrew
 
 _______________________________________________
 linux-arm-kernel mailing list
