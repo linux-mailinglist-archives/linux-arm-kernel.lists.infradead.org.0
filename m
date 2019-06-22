@@ -2,88 +2,67 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 701D14F371
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 22 Jun 2019 05:42:44 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 97AAE4F3F4
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 22 Jun 2019 08:01:59 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fQs5+HrGEGZxd9RDXzyX6r4lNHBk4+uH9Ql12D/BgGU=; b=JscE8DjfzEwazg
-	4zXY++/wzjwTDjrbRV/mn1xPqhqtqNQJ9Pu8veru3FGscTw/0/a5IEX4hFLszjtcExBI1X4swO0qP
-	KkS0FP+h0s2udIonaMV9e03FFMLQqoyoiA4YdLduXz9JSZvIhCSRezjeUDZIUDkv8J0uad5o6g2UZ
-	89P2kAtj5Fw2hdK+rSO3QGzXmD2Qx6r3QA5my5RsHEuZm1JqCJL/YhNHPV4QnERJOic9b7A/t5geV
-	tPTAkeWJpPJMMvohNDOEvslh+E1xCR8jqleWgLbD9aXhMnyamquYj6GEjDbO3skKUWFq4ZGFyJ1YU
-	HbQvj7skORBCGTikhvww==;
+	List-Owner; bh=AfD6XiYQB6wpkqX0tiTuWcpGwZ5hv9WlzHH5ZLMqSaU=; b=u+SCmvGSfK9K2X
+	f8dIyUPrWm7bAUQD/wZ2kGLXabtyNCFCvHIAiSR1AjJgiTtDKxEWGoVIrKbrH6qgCdOwZylnSzr08
+	8gRtjrR7JTUrL0IsA4hrcCiJi/lAerHyHkcva7qXhSqNtBu70ImB9WGUGCZPUOiJR89QMfM4uN/Xm
+	CqRkDdwKH8Byf+tVssSfhs6Pql536ETJIz09kB0AayBXJm+1TDC5YwmTK+HinZYIf7M9lJAqXMYO4
+	rkJyic1cMu3cDYjPg2bDFr6T+Y+8R+cBT6syQ07D8eESeKsgnUIJ+1Xs5Cj0AtDtpYqcgE7e8b8NI
+	NoDUASLHdLIKTHJAmjtA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1heWvK-0002s9-Tu; Sat, 22 Jun 2019 03:42:42 +0000
-Received: from mail-pg1-x544.google.com ([2607:f8b0:4864:20::544])
+	id 1heZ63-0002M5-IE; Sat, 22 Jun 2019 06:01:55 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1heWu0-0001o0-4E
- for linux-arm-kernel@lists.infradead.org; Sat, 22 Jun 2019 03:41:21 +0000
-Received: by mail-pg1-x544.google.com with SMTP id 145so4255759pgh.4
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 21 Jun 2019 20:41:20 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=4i2YSPugXI0nrqp33kMy8Y944Y94lb5ecy4lCGMxEsQ=;
- b=niGTS4FI/C687+sa3kKLIMPE58L7G7E5nctX9I6CtYN8GELqO1dmYNy3W+bytP3lM2
- 7jJLiBQxNMTmWuycDio83VjqRBYXENo40QGJV77eJIpEvs05teclhe/XR8ex/VpLgaDx
- lNQopJYpNYfOR+08BHj2q1c/NuSF1p8+Ua8Lg=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=4i2YSPugXI0nrqp33kMy8Y944Y94lb5ecy4lCGMxEsQ=;
- b=Bx4I7RPZQbdAKEA+J0J3a6TIXVzgki9Bp+E/+Qaz2MLNB45MgrztT+pa7qepaBW0/3
- m6N4lbAXjxy3e4j4Aqeg5GRshM/+3Rbzz8MS1he8CfaKwwXkUY8MkFs+2Fp5DsJOhb7/
- YhqduNx1nyqxmYDsf9/hfeKzyBJYXEE6jdgxWmGWfMP3ROlemCcr9Bcsmjs2WHIxmboL
- A9kT9Fx4LvdQ6W9lXTKxjaC2CcVQFgJfe90XqjyLgfHz0UNe/JFQFPqoRysEi4teeHwV
- MCag36vwXB2HOCpBLK3UT6w9widY7RGBKCExr5fwy86UkCGgsQwsk4jwcTszVpR/E/qi
- qMTA==
-X-Gm-Message-State: APjAAAW4xzDecj9kM6uxdydX8gvDNrqb0n8PSjszPLSoc9x0suqVBVYf
- lm9GKjwGIHXqH4gTTZVZZVB+1g==
-X-Google-Smtp-Source: APXvYqzslQDI58gAtC55+8w+gQS8zY9PascQUVg5lYBeYsEo3d9ImRfo5a3yRY89wZxYrkoWlqCAMQ==
-X-Received: by 2002:a17:90b:d8f:: with SMTP id
- bg15mr10778249pjb.65.1561174875712; 
- Fri, 21 Jun 2019 20:41:15 -0700 (PDT)
-Received: from exogeni.mtv.corp.google.com
- ([2620:15c:202:1:5be8:f2a6:fd7b:7459])
- by smtp.gmail.com with ESMTPSA id u128sm4756688pfu.26.2019.06.21.20.41.14
- (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Fri, 21 Jun 2019 20:41:15 -0700 (PDT)
-From: Derek Basehore <dbasehore@chromium.org>
-To: linux-kernel@vger.kernel.org
-Subject: [PATCH v4 4/4] drm/mtk: add panel orientation property
-Date: Fri, 21 Jun 2019 20:41:05 -0700
-Message-Id: <20190622034105.188454-5-dbasehore@chromium.org>
-X-Mailer: git-send-email 2.22.0.410.gd8fdbe21b5-goog
-In-Reply-To: <20190622034105.188454-1-dbasehore@chromium.org>
-References: <20190622034105.188454-1-dbasehore@chromium.org>
+ id 1heZ5r-0002L8-JL
+ for linux-arm-kernel@lists.infradead.org; Sat, 22 Jun 2019 06:01:45 +0000
+Received: from localhost (83-86-89-107.cable.dynamic.v4.ziggo.nl
+ [83.86.89.107])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 442002070B;
+ Sat, 22 Jun 2019 06:01:38 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1561183299;
+ bh=J4nwTNf4TIc77OEmvYy2wd0rsAPfND411jSD0FcgEwE=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=uGFNm22Dllq5iqArZAVGhwDzlZNbmVJOLcw3Q9yawbOQKMjih0GV7VZhFwNePb0hn
+ inZi6PMD9sbUtc8/bl/LH9ZqUPohCCSW4Lhx5xf+2KpTa54EyGd26OZI2JA5pk2DH1
+ ImnCX/JHnz0tV2ynOLdB9QwAUkfALEY8Ohf0bJIA=
+Date: Sat, 22 Jun 2019 08:01:35 +0200
+From: Greg KH <gregkh@linuxfoundation.org>
+To: Dragan Cvetic <draganc@xilinx.com>
+Subject: Re: [PATCH V7 00/11] misc: xilinx sd-fec drive
+Message-ID: <20190622060135.GB26200@kroah.com>
+References: <1560274185-264438-1-git-send-email-dragan.cvetic@xilinx.com>
+ <20190621141553.GA16650@kroah.com>
+ <CH2PR02MB635999D7374378CEA096FE72CBE70@CH2PR02MB6359.namprd02.prod.outlook.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <CH2PR02MB635999D7374378CEA096FE72CBE70@CH2PR02MB6359.namprd02.prod.outlook.com>
+User-Agent: Mutt/1.12.1 (2019-06-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190621_204120_191853_22AF04E7 
-X-CRM114-Status: GOOD (  11.29  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190621_230143_683330_E7609833 
+X-CRM114-Status: GOOD (  23.19  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:544 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -96,58 +75,97 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Derek Basehore <dbasehore@chromium.org>,
- Philipp Zabel <p.zabel@pengutronix.de>,
- Maxime Ripard <maxime.ripard@bootlin.com>, Sam Ravnborg <sam@ravnborg.org>,
- intel-gfx@lists.freedesktop.org,
- Joonas Lahtinen <joonas.lahtinen@linux.intel.com>,
- Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
- Jani Nikula <jani.nikula@linux.intel.com>, David Airlie <airlied@linux.ie>,
- Thierry Reding <thierry.reding@gmail.com>,
- Matthias Brugger <matthias.bgg@gmail.com>, dri-devel@lists.freedesktop.org,
- Daniel Vetter <daniel@ffwll.ch>, Rodrigo Vivi <rodrigo.vivi@intel.com>,
- CK Hu <ck.hu@mediatek.com>, linux-mediatek@lists.infradead.org,
- Sean Paul <sean@poorly.run>, linux-arm-kernel@lists.infradead.org
+Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ "arnd@arndb.de" <arnd@arndb.de>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "robh+dt@kernel.org" <robh+dt@kernel.org>, Michal Simek <michals@xilinx.com>,
+ Derek Kiernan <dkiernan@xilinx.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This inits the panel orientation property for the mediatek dsi driver
-if the panel orientation (connector.display_info.panel_orientation) is
-not DRM_MODE_PANEL_ORIENTATION_UNKNOWN.
+On Fri, Jun 21, 2019 at 05:49:45PM +0000, Dragan Cvetic wrote:
+> 
+> 
+> > -----Original Message-----
+> > From: Greg KH [mailto:gregkh@linuxfoundation.org]
+> > Sent: Friday 21 June 2019 15:16
+> > To: Dragan Cvetic <draganc@xilinx.com>
+> > Cc: arnd@arndb.de; Michal Simek <michals@xilinx.com>; linux-arm-kernel@lists.infradead.org; robh+dt@kernel.org;
+> > mark.rutland@arm.com; devicetree@vger.kernel.org; linux-kernel@vger.kernel.org; Derek Kiernan <dkiernan@xilinx.com>
+> > Subject: Re: [PATCH V7 00/11] misc: xilinx sd-fec drive
+> > 
+> > On Tue, Jun 11, 2019 at 06:29:34PM +0100, Dragan Cvetic wrote:
+> > > This patchset is adding the full Soft Decision Forward Error
+> > > Correction (SD-FEC) driver implementation, driver DT binding and
+> > > driver documentation.
+> > >
+> > > Forward Error Correction (FEC) codes such as Low Density Parity
+> > > Check (LDPC) and turbo codes provide a means to control errors in
+> > > data transmissions over unreliable or noisy communication
+> > > channels. The SD-FEC Integrated Block is an optimized block for
+> > > soft-decision decoding of these codes. Fixed turbo codes are
+> > > supported directly, whereas custom and standardized LDPC codes
+> > > are supported through the ability to specify the parity check
+> > > matrix through an AXI4-Lite bus or using the optional programmable
+> > > (PL)-based support logic. For the further information see
+> > > https://www.xilinx.com/support/documentation/ip_documentation/
+> > > sd_fec/v1_1/pg256-sdfec-integrated-block.pdf
+> > >
+> > > This driver is a platform device driver which supports SDFEC16
+> > > (16nm) IP. SD-FEC driver supports LDPC decoding and encoding and
+> > > Turbo code decoding. LDPC codes can be specified on
+> > > a codeword-by-codeword basis, also a custom LDPC code can be used.
+> > >
+> > > The SD-FEC driver exposes a char device interface and supports
+> > > file operations: open(), close(), poll() and ioctl(). The driver
+> > > allows only one usage of the device, open() limits the number of
+> > > driver instances. The driver also utilize Common Clock Framework
+> > > (CCF).
+> > >
+> > > The control and monitoring is supported over ioctl system call.
+> > > The features supported by ioctl():
+> > > - enable or disable data pipes to/from device
+> > > - configure the FEC algorithm parameters
+> > > - set the order of data
+> > > - provide a control of a SDFEC bypass option
+> > > - activates/deactivates SD-FEC
+> > > - collect and provide statistical data
+> > > - enable/disable interrupt mode
+> > 
+> > Is there any userspace tool that talks to this device using these custom
+> > ioctls yet?
+> > 
+> Tools no, but could be the customer who is using the driver.
 
-Signed-off-by: Derek Basehore <dbasehore@chromium.org>
----
- drivers/gpu/drm/mediatek/mtk_dsi.c | 8 ++++++++
- 1 file changed, 8 insertions(+)
+I don't understand this.  Who has written code to talk to these
+special ioctls from userspace?  Is there a pointer to that code
+anywhere?
 
-diff --git a/drivers/gpu/drm/mediatek/mtk_dsi.c b/drivers/gpu/drm/mediatek/mtk_dsi.c
-index 4a0b9150a7bb..08ffdc7526dd 100644
---- a/drivers/gpu/drm/mediatek/mtk_dsi.c
-+++ b/drivers/gpu/drm/mediatek/mtk_dsi.c
-@@ -782,10 +782,18 @@ static int mtk_dsi_create_connector(struct drm_device *drm, struct mtk_dsi *dsi)
- 			DRM_ERROR("Failed to attach panel to drm\n");
- 			goto err_connector_cleanup;
- 		}
-+
-+		ret = drm_connector_init_panel_orientation_property(&dsi->conn);
-+		if (ret) {
-+			DRM_ERROR("Failed to init panel orientation\n");
-+			goto err_panel_detach;
-+		}
- 	}
- 
- 	return 0;
- 
-+err_panel_detach:
-+	drm_panel_detach(dsi->panel);
- err_connector_cleanup:
- 	drm_connector_cleanup(&dsi->conn);
- 	return ret;
--- 
-2.22.0.410.gd8fdbe21b5-goog
+> > Doing a one-off ioctl api is always a risky thing, you are pretty much
+> > just creating brand new system calls for one piece of hardware.
+> > 
+> 
+> Why is that wrong and what is the risk?
 
+You now have custom syscalls for one specfic piece of hardware that you
+now have to maintain working properly for the next 40+ years.  You have
+to make sure those calls are correct and that this is the correct api to
+talk to this hardware.
+
+> What would you propose?
+> Definitely, I have to read about this.
+
+What is this hardware and what is it used for?  Who will be talking to
+it from userspace?  What userspace workload uses it?  What tools need to
+talk to it?  Where is the code that uses these new apis?
+
+thanks,
+
+greg k-h
 
 _______________________________________________
 linux-arm-kernel mailing list
