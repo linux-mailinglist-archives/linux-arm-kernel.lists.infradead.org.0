@@ -2,76 +2,63 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E0D3F4F82B
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 22 Jun 2019 22:27:35 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 077974F83E
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 22 Jun 2019 22:58:11 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=lGXV0k2zg91cAJoUlz+/0iVYlqxOiEoWWTk4lWoiSWE=; b=dtKM2LBvxEvj1m
-	tFxB4rLFW/ACtt7B39TFlH7GEw0TFj3W2AUZS+pUVu1emXgz1osiNRd/kS63/ji5QdnQ7YDiXb0sw
-	jju/x7NCfyKqMwwozQ7H5s3/xpiugKu0RVah5IaThdTzcGzjud4wC0DjGSU6NA/FQbnwFfl+3JW5e
-	ro8yL76020cl8QaAndyE00Xy2sowrO49JAtrxBb0kpIhnjVBaKyOFffqh1KvHC5k5VEVQz73dECPN
-	LwaG76XKJ8DpM4lgXOXQ/lpZlv4spDwsYZiDT+CbKRnGy36iJKytHFQDUI/Ty5sLofqk6C+x6lDBW
-	l8O8UguQDqWlMSgrCnPA==;
+	List-Owner; bh=qPgcMRcwWRRPo8F8CCdTWHRkqCkGRpwMEWQtJC5yidY=; b=n4NUNPXlmtjH4K
+	12gPCBjj8z7KQCVuX+ixMlHOM58XYMRIp/y6eEl6KlsUoayDI2prY/sFLI3xptXJnYQJFj3nc7FlP
+	lB3YvioerKwhpIphLadhonMfz5aZMkGjAYO8dxIiVJ6nBWYympgKZ7LcpAQYJBe7r+qxsTYIhpSz1
+	K9bY1PiV4/DLodHowVnvj+11qx4LNHSi1xuWtfq/1M7aIkauOCRiFqvi6k0r2PvBkKzdrk1BQ6xE5
+	hukyLGyGX0fJ/kMANRqAYmCGrvTRfml5/ek+IKR/SXJxCMUXIOy065oce7nQnN5YlGGaoH2RrN/fk
+	Ev0RaHGNdo185eg/011A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hembj-0005aO-Jn; Sat, 22 Jun 2019 20:27:31 +0000
-Received: from pandora.armlinux.org.uk
- ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
+	id 1hen5D-0007GM-P4; Sat, 22 Jun 2019 20:58:02 +0000
+Received: from vps0.lunn.ch ([185.16.172.187])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hembZ-0005ZX-7O
- for linux-arm-kernel@lists.infradead.org; Sat, 22 Jun 2019 20:27:22 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
- MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
- Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
- List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=HXZ3LztbfRMIJbIXuXkbZg60XQF8h8xYMWqvMc6Bupk=; b=cex/u7Ik3rvvBR++CsGpeJB7+
- OBbsjkkzFmbsm9OUouBiXkve+IkSLAzDMSkxfY9wbS+3hOOsOD0jkQySCzP3JWSVYpb3pF8uIAf8s
- rpqxgra9/wicjd4K9dgGjTBzwIYTM/NmZYacpniMMdqHfBNeKOn+zLSfujjLwTPQ0Q/IGvVCTSoiB
- zMH0CI46Cr176t1DmYrxSnydDOWXmQUuWWG0eTNvQb5upzdlXS6EXol9dDXUMZcFhE7qay7lY2IPt
- ySAEUSq5ASTui8DZyArIBR51rEjV+VAKTjYnQ9FZEeeU6K+Y9wBlosTIRFlf4eOv0Dw2onvEAkBtX
- bZX/KbyUA==;
-Received: from shell.armlinux.org.uk
- ([2002:4e20:1eda:1:5054:ff:fe00:4ec]:58992)
- by pandora.armlinux.org.uk with esmtpsa
- (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <linux@armlinux.org.uk>)
- id 1hembJ-0005r1-Er; Sat, 22 Jun 2019 21:27:05 +0100
-Received: from linux by shell.armlinux.org.uk with local (Exim 4.89)
- (envelope-from <linux@shell.armlinux.org.uk>)
- id 1hembA-0004R1-3S; Sat, 22 Jun 2019 21:26:56 +0100
-Date: Sat, 22 Jun 2019 21:26:55 +0100
-From: Russell King - ARM Linux admin <linux@armlinux.org.uk>
-To: Michael Olbrich <m.olbrich@pengutronix.de>,
- Lucas Stach <l.stach@pengutronix.de>, Vinod Koul <vkoul@kernel.org>
-Subject: Re: [PATCH v2] dmaengine: imx-sdma: fix incorrect conversion to
- readl_relaxed_poll_timeout_atomic()
-Message-ID: <20190622202655.lwj43wpvw2ylzmcf@shell.armlinux.org.uk>
-References: <20190622165318.bgyun52hssqmdv4n@shell.armlinux.org.uk>
- <E1helB3-0005d6-7m@rmk-PC.armlinux.org.uk>
- <20190622192653.puxds354sx5v3jg7@shell.armlinux.org.uk>
+ id 1hen4s-0007FP-K4
+ for linux-arm-kernel@lists.infradead.org; Sat, 22 Jun 2019 20:57:40 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=lunn.ch;
+ s=20171124; h=In-Reply-To:Content-Type:MIME-Version:References:Message-ID:
+ Subject:Cc:To:From:Date:Sender:Reply-To:Content-Transfer-Encoding:Content-ID:
+ Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+ :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
+ List-Post:List-Owner:List-Archive;
+ bh=oePEOBUvsBrcln8QForxiWhri9yf6+IUcHaEBSsdi/w=; b=nASuRUEENw6wlYLBmrsJ5oRi9W
+ pm7kmBa2z+1ftH8shG31OizOzSGC9CN6XcqbVNc1w73iqO4ttBzfbrvWOCNrmz5XCmS8hxHZI3ELj
+ vA+cIJCfMw/4kUj5miKevgCE8exySXKzF7LQpaabgIFH9clP9UDjQsEnwdGftl5wGdeo=;
+Received: from andrew by vps0.lunn.ch with local (Exim 4.89)
+ (envelope-from <andrew@lunn.ch>)
+ id 1hen4a-00048d-Rp; Sat, 22 Jun 2019 22:57:20 +0200
+Date: Sat, 22 Jun 2019 22:57:20 +0200
+From: Andrew Lunn <andrew@lunn.ch>
+To: Claudiu Manoil <claudiu.manoil@nxp.com>
+Subject: Re: [PATCH net-next 6/6] net/mssc/ocelot: Add basic Felix switch
+ driver
+Message-ID: <20190622205720.GK8497@lunn.ch>
+References: <1561131532-14860-1-git-send-email-claudiu.manoil@nxp.com>
+ <1561131532-14860-7-git-send-email-claudiu.manoil@nxp.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190622192653.puxds354sx5v3jg7@shell.armlinux.org.uk>
-User-Agent: NeoMutt/20170113 (1.7.2)
+In-Reply-To: <1561131532-14860-7-git-send-email-claudiu.manoil@nxp.com>
+User-Agent: Mutt/1.5.23 (2014-03-12)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190622_132721_281683_C9E703DF 
-X-CRM114-Status: GOOD (  22.81  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20190622_135738_819304_447E87D4 
+X-CRM114-Status: GOOD (  29.61  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [2001:4d48:ad52:3201:214:fdff:fe10:1be6 listed in]
- [list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [185.16.172.187 listed in list.dnswl.org]
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
@@ -90,113 +77,235 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Shawn Guo <shawnguo@kernel.org>, Sascha Hauer <s.hauer@pengutronix.de>,
- NXP Linux Team <linux-imx@nxp.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>, dmaengine@vger.kernel.org,
- Dan Williams <dan.j.williams@intel.com>, Fabio Estevam <festevam@gmail.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: devicetree@vger.kernel.org,
+ Alexandre Belloni <alexandre.belloni@bootlin.com>, netdev@vger.kernel.org,
+ alexandru.marginean@nxp.com, linux-kernel@vger.kernel.org,
+ UNGLinuxDriver@microchip.com, Allan Nielsen <Allan.Nielsen@microsemi.com>,
+ Rob Herring <robh+dt@kernel.org>,
+ Catalin Horghidan <catalin.horghidan@gmail.com>,
+ "David S . Miller" <davem@davemloft.net>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sat, Jun 22, 2019 at 08:26:53PM +0100, Russell King - ARM Linux admin wrote:
-> Well, this doesn't appear to completely solve the problem either -
-> one out of four of my platforms still spat out the error (because
-> the SDMA initialisation can run on a different CPU to that which
-> receives the interrupt.)
+On Fri, Jun 21, 2019 at 06:38:52PM +0300, Claudiu Manoil wrote:
+> This supports a switch core ethernet device from Microsemi
+> (VSC9959) that can be integrated on different SoCs as a PCIe
+> endpoint device.
 > 
-> I've thought about using a completion, but that doesn't work either,
-> because in the case of a single CPU, the interrupts will be masked,
-> so we can't wait for completion.  I think we need to eliminate that
-> spinlock around this code.
-
-It looks like iMX6 Dual does not initialise DMA properly using the 1.1
-firmware - md5sum is:
-
-5d4584134cc4cba62e1be2f382cd6f3a  /lib/firmware/imx/sdma/sdma-imx6q.bin
-
-I've tried extending the timeout to 5ms, checking HI[0] (both from the
-interrupt handler and from sdma_run_channel0() to cover the case of a
-single-core setup).
-
-After boot:
-
- 60:          0          0       GPC   2 Level     sdma
-
-So no interrupt was received.  Looking at the registers:
-
-# /shared/bin32/devmem2 0x20ec02c
-Value at address 0x020ec02c: 0x00000000  <= H_INTRMASK
-# /shared/bin32/devmem2 0x20ec004
-Value at address 0x020ec004: 0x00000000  <= H_INTR
-# /shared/bin32/devmem2 0x20ec00c
-Value at address 0x020ec00c: 0x00000000  <= H_START
-# /shared/bin32/devmem2 0x20ec008
-Value at address 0x020ec008: 0x00000001  <= H_STATSTOP
-
-Any ideas?
-
+> The switchdev functionality is provided by the core Ocelot
+> switch driver. In this regard, the current driver is an
+> instance of Microsemi's Ocelot core driver.
 > 
-> On Sat, Jun 22, 2019 at 07:55:53PM +0100, Russell King wrote:
-> > When imx-sdma was converted to use readl_relaxed_poll_timeout_atomic(),
-> > the termination condition was inverted.  Fix this.
-> > 
-> > Fixes: 1d069bfa3c78 ("dmaengine: imx-sdma: ack channel 0 IRQ in the interrupt handler")
-> > Signed-off-by: Russell King <rmk+kernel@armlinux.org.uk>
-> > ---
-> >  drivers/dma/imx-sdma.c | 12 +++++++++---
-> >  1 file changed, 9 insertions(+), 3 deletions(-)
-> > 
-> > diff --git a/drivers/dma/imx-sdma.c b/drivers/dma/imx-sdma.c
-> > index 5f3c1378b90e..c45cbdb09714 100644
-> > --- a/drivers/dma/imx-sdma.c
-> > +++ b/drivers/dma/imx-sdma.c
-> > @@ -655,15 +655,21 @@ static void sdma_enable_channel(struct sdma_engine *sdma, int channel)
-> >  static int sdma_run_channel0(struct sdma_engine *sdma)
-> >  {
-> >  	int ret;
-> > -	u32 reg;
-> > +	u32 reg, mask;
-> > +
-> > +	// Disable channel 0 interrupt
-> > +	mask = readl_relaxed(sdma->regs + SDMA_H_INTRMSK);
-> > +	writel_relaxed(mask & ~1, sdma->regs + SDMA_H_INTRMSK);
-> >  
-> >  	sdma_enable_channel(sdma, 0);
-> >  
-> > -	ret = readl_relaxed_poll_timeout_atomic(sdma->regs + SDMA_H_STATSTOP,
-> > -						reg, !(reg & 1), 1, 500);
-> > +	ret = readl_relaxed_poll_timeout_atomic(sdma->regs + SDMA_H_INTR,
-> > +						reg, reg & 1, 1, 500);
-> >  	if (ret)
-> >  		dev_err(sdma->dev, "Timeout waiting for CH0 ready\n");
-> >  
-> > +	writel_relaxed(mask, sdma->regs + SDMA_H_INTRMSK);
-> > +
-> >  	/* Set bits of CONFIG register with dynamic context switching */
-> >  	reg = readl(sdma->regs + SDMA_H_CONFIG);
-> >  	if ((reg & SDMA_H_CONFIG_CSM) == 0) {
-> > -- 
-> > 2.7.4
-> > 
-> > 
+> The patch adds the PCI device driver part and defines the
+> register map for the Felix switch core, as it has some
+> differences in register addresses and bitfield mappings
+> compared to the Ocelot switch.  Also some registers or
+> bitfields present on Ocelot are not available on Felix.
+> That's why this driver has its own register map instance.
+> Other than that, the common registers and bitfields have the
+> same functionality and share the same name.
 > 
-> -- 
-> RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
-> FTTC broadband for 0.8mile line in suburbia: sync at 12.1Mbps down 622kbps up
-> According to speedtest.net: 11.9Mbps down 500kbps up
+> In a few cases, some h/w operations have to be done differently
+> on Felix due to missing bitfields.  This is the case for the
+> switch core reset and init.  Because for this operation Ocelot
+> uses some bits that are not present on Felix, the later has to
+> use a register from the global registers block (GCB) instead.
 > 
-> _______________________________________________
-> linux-arm-kernel mailing list
-> linux-arm-kernel@lists.infradead.org
-> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+> Signed-off-by: Catalin Horghidan <catalin.horghidan@gmail.com>
+> Signed-off-by: Claudiu Manoil <claudiu.manoil@nxp.com>
+> ---
+>  drivers/net/ethernet/mscc/Kconfig       |   8 +
+>  drivers/net/ethernet/mscc/Makefile      |   9 +-
+>  drivers/net/ethernet/mscc/felix_board.c | 392 +++++++++++++++++++++
+>  drivers/net/ethernet/mscc/felix_regs.c  | 448 ++++++++++++++++++++++++
+>  drivers/net/ethernet/mscc/ocelot.h      |   7 +
+>  5 files changed, 862 insertions(+), 2 deletions(-)
+>  create mode 100644 drivers/net/ethernet/mscc/felix_board.c
+>  create mode 100644 drivers/net/ethernet/mscc/felix_regs.c
 > 
+> diff --git a/drivers/net/ethernet/mscc/Kconfig b/drivers/net/ethernet/mscc/Kconfig
+> index bcec0587cf61..e5a7fa69307e 100644
+> --- a/drivers/net/ethernet/mscc/Kconfig
+> +++ b/drivers/net/ethernet/mscc/Kconfig
+> @@ -29,4 +29,12 @@ config MSCC_OCELOT_SWITCH_OCELOT
+>  	  This driver supports the Ocelot network switch device as present on
+>  	  the Ocelot SoCs.
+>  
+> +config MSCC_FELIX_SWITCH
+> +	tristate "Felix switch driver"
+> +	depends on MSCC_OCELOT_SWITCH
+> +	depends on PCI
+> +	help
+> +	  This driver supports the Felix network switch device, connected as a
+> +	  PCI device.
+> +
+>  endif # NET_VENDOR_MICROSEMI
+> diff --git a/drivers/net/ethernet/mscc/Makefile b/drivers/net/ethernet/mscc/Makefile
+> index 9a36c26095c8..81593feb2ea1 100644
+> --- a/drivers/net/ethernet/mscc/Makefile
+> +++ b/drivers/net/ethernet/mscc/Makefile
+> @@ -1,5 +1,10 @@
+>  # SPDX-License-Identifier: (GPL-2.0 OR MIT)
+>  obj-$(CONFIG_MSCC_OCELOT_SWITCH) += mscc_ocelot_common.o
+>  mscc_ocelot_common-y := ocelot.o ocelot_io.o
+> -mscc_ocelot_common-y += ocelot_regs.o ocelot_tc.o ocelot_police.o ocelot_ace.o ocelot_flower.o
+> -obj-$(CONFIG_MSCC_OCELOT_SWITCH_OCELOT) += ocelot_board.o
+> +mscc_ocelot_common-y += ocelot_tc.o ocelot_police.o ocelot_ace.o ocelot_flower.o
+> +
+> +obj-$(CONFIG_MSCC_OCELOT_SWITCH_OCELOT) += mscc_ocelot.o
+> +mscc_ocelot-$(CONFIG_MSCC_OCELOT_SWITCH_OCELOT) := ocelot_regs.o ocelot_board.o
+> +
+> +obj-$(CONFIG_MSCC_FELIX_SWITCH) += mscc_felix.o
+> +mscc_felix-$(CONFIG_MSCC_FELIX_SWITCH) := felix_regs.o felix_board.o
+> diff --git a/drivers/net/ethernet/mscc/felix_board.c b/drivers/net/ethernet/mscc/felix_board.c
+> new file mode 100644
+> index 000000000000..57f7a897b3ae
+> --- /dev/null
+> +++ b/drivers/net/ethernet/mscc/felix_board.c
+> @@ -0,0 +1,392 @@
+> +// SPDX-License-Identifier: (GPL-2.0 OR MIT)
+> +/* Felix Switch driver
+> + *
+> + * Copyright 2018-2019 NXP
+> + */
+> +
+> +#include <linux/module.h>
+> +#include <linux/pci.h>
+> +#include <linux/netdevice.h>
+> +#include <linux/phy_fixed.h>
+> +#include <linux/phy.h>
+> +#include <linux/of_mdio.h>
+> +#include <linux/of_net.h>
+> +#include <linux/iopoll.h>
+> +#include <net/switchdev.h>
+> +#include "ocelot.h"
+> +
+> +#define FELIX_DRV_VER_MAJ 1
+> +#define FELIX_DRV_VER_MIN 0
+> +
+> +#define FELIX_DRV_STR	"Felix Switch driver"
+> +#define FELIX_DRV_VER_STR __stringify(FELIX_DRV_VER_MAJ) "." \
+> +			  __stringify(FELIX_DRV_VER_MIN)
 
--- 
-RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
-FTTC broadband for 0.8mile line in suburbia: sync at 12.1Mbps down 622kbps up
-According to speedtest.net: 11.9Mbps down 500kbps up
+Driver version strings are pretty pointless. What you really want to
+know if the specific kernel version.
+
+> +
+> +#define FELIX_PORT_RES_START	0x0100000
+> +#define FELIX_PORT_RES_SIZE	0x10000
+
+This should really be in device tree. You then get a lot closer to the
+binding for mscc-ocelot, and you can reuse more of its code.
+
+> +static void felix_release_ports(struct ocelot *ocelot)
+> +{
+> +	struct ocelot_port *ocelot_port;
+> +	struct phy_device *phydev;
+> +	struct device_node *dn;
+> +	int i;
+> +
+> +	for (i = 0; i < ocelot->num_phys_ports; i++) {
+> +		ocelot_port = ocelot->ports[i];
+> +		if (!ocelot_port || !ocelot_port->phy || !ocelot_port->dev)
+> +			continue;
+
+Phys are often optional, e.g. an RGMII interface to another switch, or
+an SFP port.
+
+> +
+> +		phydev = ocelot_port->phy;
+> +		unregister_netdev(ocelot_port->dev);
+> +		free_netdev(ocelot_port->dev);
+> +
+> +		if (phy_is_pseudo_fixed_link(phydev)) {
+> +			dn = phydev->mdio.dev.of_node;
+> +			/* decr refcnt: of_phy_register_fixed_link */
+> +			of_phy_deregister_fixed_link(dn);
+> +		}
+> +		phy_device_free(phydev); /* decr refcnt: of_phy_find_device */
+
+To be on the safe side, you should probably not free the netdev until
+you free the phydev.
+
+This function also seems pretty generic. Should it be shared?
+
+> +static int felix_ports_init(struct pci_dev *pdev)
+> +{
+> +	struct ocelot *ocelot = pci_get_drvdata(pdev);
+> +	struct device_node *np = ocelot->dev->of_node;
+> +	struct device_node *phy_node, *portnp;
+> +	struct phy_device *phydev;
+> +	void __iomem *port_regs;
+> +	resource_size_t base;
+> +	u32 port;
+> +	int err;
+> +
+> +	ocelot->num_phys_ports = FELIX_MAX_NUM_PHY_PORTS;
+> +
+> +	np = of_get_child_by_name(np, "ethernet-ports");
+> +	if (!np) {
+> +		dev_err(&pdev->dev, "ethernet-ports sub-node not found\n");
+> +		return -ENODEV;
+> +	}
+> +
+> +	/* alloc netdev for each port */
+> +	err = ocelot_init(ocelot);
+> +	if (err)
+> +		return err;
+> +
+> +	base = pci_resource_start(pdev, FELIX_SWITCH_BAR);
+> +	for_each_available_child_of_node(np, portnp) {
+> +		struct resource res = {};
+> +		int phy_mode;
+> +
+> +		if (!portnp || !portnp->name ||
+> +		    of_node_cmp(portnp->name, "port") ||
+
+The name of the node should not matter.
+
+> +static int felix_pci_probe(struct pci_dev *pdev, const struct pci_device_id *id)
+> +{
+> +
+> +	register_netdevice_notifier(&ocelot_netdevice_nb);
+> +	register_switchdev_notifier(&ocelot_switchdev_nb);
+> +	register_switchdev_blocking_notifier(&ocelot_switchdev_blocking_nb);
+
+This is also shared. So maybe move it into a common function?
+
+> +
+> +	dev_info(&pdev->dev, "%s v%s\n", FELIX_DRV_STR, FELIX_DRV_VER_STR);
+> +	return 0;
+> +
+> +err_ports_init:
+> +err_chip_init:
+> +err_sw_core_init:
+> +	pci_iounmap(pdev, regs);
+> +err_iomap:
+> +err_resource_len:
+> +err_alloc_ocelot:
+> +err_dma:
+> +	pci_disable_device(pdev);
+> +
+> +	return err;
+> +}
+> +
+> +static void felix_pci_remove(struct pci_dev *pdev)
+> +{
+> +	struct ocelot *ocelot;
+> +
+> +	ocelot = pci_get_drvdata(pdev);
+> +
+> +	/* stop workqueue thread */
+> +	ocelot_deinit(ocelot);
+> +	unregister_switchdev_blocking_notifier(&ocelot_switchdev_blocking_nb);
+> +	unregister_switchdev_notifier(&ocelot_switchdev_nb);
+> +	unregister_netdevice_notifier(&ocelot_netdevice_nb);
+
+This is also common.
+
+     Andrew
 
 _______________________________________________
 linux-arm-kernel mailing list
