@@ -2,63 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 077974F83E
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 22 Jun 2019 22:58:11 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 737AF4F92F
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 23 Jun 2019 01:58:48 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=qPgcMRcwWRRPo8F8CCdTWHRkqCkGRpwMEWQtJC5yidY=; b=n4NUNPXlmtjH4K
-	12gPCBjj8z7KQCVuX+ixMlHOM58XYMRIp/y6eEl6KlsUoayDI2prY/sFLI3xptXJnYQJFj3nc7FlP
-	lB3YvioerKwhpIphLadhonMfz5aZMkGjAYO8dxIiVJ6nBWYympgKZ7LcpAQYJBe7r+qxsTYIhpSz1
-	K9bY1PiV4/DLodHowVnvj+11qx4LNHSi1xuWtfq/1M7aIkauOCRiFqvi6k0r2PvBkKzdrk1BQ6xE5
-	hukyLGyGX0fJ/kMANRqAYmCGrvTRfml5/ek+IKR/SXJxCMUXIOy065oce7nQnN5YlGGaoH2RrN/fk
-	Ev0RaHGNdo185eg/011A==;
+	List-Owner; bh=V4yE8G/WlST8J45t+2nB8HPaTgpJqBjMAbkBMrXuFV4=; b=si1/fF+Y3yHdnc
+	38VfjkJTmIHG4YDzVqZBEFOEI2tdnZjoZiWk0hLf4wL/8Vsd4vlPA/30maFd2Or4DltM++kkEb5In
+	+GTunWAXtf7PgewB5xbyu0gNjr8i8MBhBx9DAwFWfyBSqPaAlI25uRcudqtT2jq5EB/FPNO66urYJ
+	Pa58hQPoJPY5CArogVkIzAsqZu+K1DezVPRfqyHoh7+h72xiqWNaLVryCalLIfMS8OgQKeAz2PZAn
+	5GFJLnIwaqOmYMiwa2pRjGOXL59Q/K2RykFT/7kzN5ENtcEjE9xov6LTV1A+1lqeRr6hobXnnjRsa
+	4tAKhQvgSwCLtLwQSzsQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hen5D-0007GM-P4; Sat, 22 Jun 2019 20:58:02 +0000
-Received: from vps0.lunn.ch ([185.16.172.187])
+	id 1hepu8-0002UD-46; Sat, 22 Jun 2019 23:58:44 +0000
+Received: from mail-pg1-x542.google.com ([2607:f8b0:4864:20::542])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hen4s-0007FP-K4
- for linux-arm-kernel@lists.infradead.org; Sat, 22 Jun 2019 20:57:40 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=lunn.ch;
- s=20171124; h=In-Reply-To:Content-Type:MIME-Version:References:Message-ID:
- Subject:Cc:To:From:Date:Sender:Reply-To:Content-Transfer-Encoding:Content-ID:
- Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
- :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
- List-Post:List-Owner:List-Archive;
- bh=oePEOBUvsBrcln8QForxiWhri9yf6+IUcHaEBSsdi/w=; b=nASuRUEENw6wlYLBmrsJ5oRi9W
- pm7kmBa2z+1ftH8shG31OizOzSGC9CN6XcqbVNc1w73iqO4ttBzfbrvWOCNrmz5XCmS8hxHZI3ELj
- vA+cIJCfMw/4kUj5miKevgCE8exySXKzF7LQpaabgIFH9clP9UDjQsEnwdGftl5wGdeo=;
-Received: from andrew by vps0.lunn.ch with local (Exim 4.89)
- (envelope-from <andrew@lunn.ch>)
- id 1hen4a-00048d-Rp; Sat, 22 Jun 2019 22:57:20 +0200
-Date: Sat, 22 Jun 2019 22:57:20 +0200
-From: Andrew Lunn <andrew@lunn.ch>
-To: Claudiu Manoil <claudiu.manoil@nxp.com>
-Subject: Re: [PATCH net-next 6/6] net/mssc/ocelot: Add basic Felix switch
- driver
-Message-ID: <20190622205720.GK8497@lunn.ch>
-References: <1561131532-14860-1-git-send-email-claudiu.manoil@nxp.com>
- <1561131532-14860-7-git-send-email-claudiu.manoil@nxp.com>
+ id 1hepts-0002TT-1s; Sat, 22 Jun 2019 23:58:29 +0000
+Received: by mail-pg1-x542.google.com with SMTP id w10so5108477pgj.7;
+ Sat, 22 Jun 2019 16:58:26 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=lZUHpH2M+Wyx1Nixzo+rxEWVRPouZAupWhJLtRBuER4=;
+ b=J+Qc6kFzXV9b/IP8VxIZb1nSUz8aJcZTeIw+r3UN1METyQW9w7rkYFTtp56KtdH7lH
+ dv/f1e3OsdYTzUCOYAxPRRqAjAC1WERCoOVmaNwhVLBRsK2w7s0aC2H/PgTASU1glaGb
+ doSeUQo478cuImKQX8AO4FRa/K2aLaIJ0gS9Bv78EaX/zEG3Ym0uJr2cwoKXzdFFtrzU
+ ZSgYf9VmyhFjW73xz4JOErU0I+RjjDjFEGbmd2VXVoBnegagFdnA0UTeT4vJ+VbVZDKs
+ Z8fuUo2uN4rQp1lI+W6KG521AyDCqpM+RDjnfFau9GmlvmL1E1o0tglE0OS9MbhmQUeI
+ EIsQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=lZUHpH2M+Wyx1Nixzo+rxEWVRPouZAupWhJLtRBuER4=;
+ b=Mxpu1ZeV6OJ5CAG7nS8TwKeuHc2FDcMBMq4ZH4nkWB2bc7vW8vG57BwdAk4FCx2QCc
+ VIGgZuW/a1jEIUh6ejdo3kBY0eYUsWjCB2zLSZvqLDekx1wRGRw2+mlQAMdsMyMEN0ZJ
+ hkSO1Zxuo5MQ4SQUhiPlILCa0uG+MWQ2cDWH4XjmVxA8tBHJwAtWAuCrpPPKbA60dtvE
+ 6D5Wsj11oKIXSTC4tPBAnLnhFGtAQQWKTlJXWfWpQz79sDp9me8feL22L5oKKj0p1xka
+ t+jIlIKhW4XaFHFgNk0pOd9gUFvteaWg1Oa7DRfSKWkNFpkTINnAg9zeXRGUCvUQoSZ3
+ ySuw==
+X-Gm-Message-State: APjAAAVs4xvJNiokvBLPi17BDsovqraEdtmWRAQ7Q9KI0+FlgOsWRyYF
+ WHAN7syaLETLsKkDU07oaEjHUPnb
+X-Google-Smtp-Source: APXvYqyjw3Hl7M5bTbfpARaC/m/3jkVGHllSCS84kbpa2Q8bhzRaDSNMWuamR84mgLSgh3AETTooUQ==
+X-Received: by 2002:a17:90a:2224:: with SMTP id
+ c33mr15573423pje.22.1561247906433; 
+ Sat, 22 Jun 2019 16:58:26 -0700 (PDT)
+Received: from icarus ([2001:268:c145:c721:c70:4af9:86e2:2])
+ by smtp.gmail.com with ESMTPSA id o74sm10340916pfg.91.2019.06.22.16.58.19
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Sat, 22 Jun 2019 16:58:25 -0700 (PDT)
+Date: Sun, 23 Jun 2019 08:58:03 +0900
+From: William Breathitt Gray <vilhelm.gray@gmail.com>
+To: Guenter Roeck <linux@roeck-us.net>
+Subject: Re: [PATCH] watchdog: convert remaining drivers to use SPDX license
+ identifier
+Message-ID: <20190622235803.GA3286@icarus>
+References: <1561048126-27578-1-git-send-email-linux@roeck-us.net>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <1561131532-14860-7-git-send-email-claudiu.manoil@nxp.com>
-User-Agent: Mutt/1.5.23 (2014-03-12)
+In-Reply-To: <1561048126-27578-1-git-send-email-linux@roeck-us.net>
+User-Agent: Mutt/1.12.1 (2019-06-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190622_135738_819304_447E87D4 
-X-CRM114-Status: GOOD (  29.61  )
+X-CRM114-CacheID: sfid-20190622_165828_102503_C34904F9 
+X-CRM114-Status: GOOD (  15.04  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [185.16.172.187 listed in list.dnswl.org]
+ no trust [2607:f8b0:4864:20:0:0:0:542 listed in]
+ [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (vilhelm.gray[at]gmail.com)
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
@@ -77,235 +99,61 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org,
- Alexandre Belloni <alexandre.belloni@bootlin.com>, netdev@vger.kernel.org,
- alexandru.marginean@nxp.com, linux-kernel@vger.kernel.org,
- UNGLinuxDriver@microchip.com, Allan Nielsen <Allan.Nielsen@microsemi.com>,
- Rob Herring <robh+dt@kernel.org>,
- Catalin Horghidan <catalin.horghidan@gmail.com>,
- "David S . Miller" <davem@davemloft.net>, linux-arm-kernel@lists.infradead.org
+Cc: linux-watchdog@vger.kernel.org, Wan ZongShun <mcuos.com@gmail.com>,
+ linux-kernel@vger.kernel.org, linux-arm-msm@vger.kernel.org,
+ Jerry Hoemann <jerry.hoemann@hpe.com>, Vladimir Zapolskiy <vz@mleia.com>,
+ David Brown <david.brown@linaro.org>, Andy Gross <agross@kernel.org>,
+ linux-mediatek@lists.infradead.org, Sylvain Lemieux <slemieux.tyco@gmail.com>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ Wim Van Sebroeck <wim@linux-watchdog.org>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Jun 21, 2019 at 06:38:52PM +0300, Claudiu Manoil wrote:
-> This supports a switch core ethernet device from Microsemi
-> (VSC9959) that can be integrated on different SoCs as a PCIe
-> endpoint device.
+On Thu, Jun 20, 2019 at 09:28:46AM -0700, Guenter Roeck wrote:
+> This gets rid of the unnecessary license boilerplate, and avoids
+> having to deal with individual patches one by one.
 > 
-> The switchdev functionality is provided by the core Ocelot
-> switch driver. In this regard, the current driver is an
-> instance of Microsemi's Ocelot core driver.
+> No functional changes.
 > 
-> The patch adds the PCI device driver part and defines the
-> register map for the Felix switch core, as it has some
-> differences in register addresses and bitfield mappings
-> compared to the Ocelot switch.  Also some registers or
-> bitfields present on Ocelot are not available on Felix.
-> That's why this driver has its own register map instance.
-> Other than that, the common registers and bitfields have the
-> same functionality and share the same name.
-> 
-> In a few cases, some h/w operations have to be done differently
-> on Felix due to missing bitfields.  This is the case for the
-> switch core reset and init.  Because for this operation Ocelot
-> uses some bits that are not present on Felix, the later has to
-> use a register from the global registers block (GCB) instead.
-> 
-> Signed-off-by: Catalin Horghidan <catalin.horghidan@gmail.com>
-> Signed-off-by: Claudiu Manoil <claudiu.manoil@nxp.com>
+> Signed-off-by: Guenter Roeck <linux@roeck-us.net>
 > ---
->  drivers/net/ethernet/mscc/Kconfig       |   8 +
->  drivers/net/ethernet/mscc/Makefile      |   9 +-
->  drivers/net/ethernet/mscc/felix_board.c | 392 +++++++++++++++++++++
->  drivers/net/ethernet/mscc/felix_regs.c  | 448 ++++++++++++++++++++++++
->  drivers/net/ethernet/mscc/ocelot.h      |   7 +
->  5 files changed, 862 insertions(+), 2 deletions(-)
->  create mode 100644 drivers/net/ethernet/mscc/felix_board.c
->  create mode 100644 drivers/net/ethernet/mscc/felix_regs.c
+> Note: Several drivers include a paragraph such as
 > 
-> diff --git a/drivers/net/ethernet/mscc/Kconfig b/drivers/net/ethernet/mscc/Kconfig
-> index bcec0587cf61..e5a7fa69307e 100644
-> --- a/drivers/net/ethernet/mscc/Kconfig
-> +++ b/drivers/net/ethernet/mscc/Kconfig
-> @@ -29,4 +29,12 @@ config MSCC_OCELOT_SWITCH_OCELOT
->  	  This driver supports the Ocelot network switch device as present on
->  	  the Ocelot SoCs.
->  
-> +config MSCC_FELIX_SWITCH
-> +	tristate "Felix switch driver"
-> +	depends on MSCC_OCELOT_SWITCH
-> +	depends on PCI
-> +	help
-> +	  This driver supports the Felix network switch device, connected as a
-> +	  PCI device.
-> +
->  endif # NET_VENDOR_MICROSEMI
-> diff --git a/drivers/net/ethernet/mscc/Makefile b/drivers/net/ethernet/mscc/Makefile
-> index 9a36c26095c8..81593feb2ea1 100644
-> --- a/drivers/net/ethernet/mscc/Makefile
-> +++ b/drivers/net/ethernet/mscc/Makefile
-> @@ -1,5 +1,10 @@
->  # SPDX-License-Identifier: (GPL-2.0 OR MIT)
->  obj-$(CONFIG_MSCC_OCELOT_SWITCH) += mscc_ocelot_common.o
->  mscc_ocelot_common-y := ocelot.o ocelot_io.o
-> -mscc_ocelot_common-y += ocelot_regs.o ocelot_tc.o ocelot_police.o ocelot_ace.o ocelot_flower.o
-> -obj-$(CONFIG_MSCC_OCELOT_SWITCH_OCELOT) += ocelot_board.o
-> +mscc_ocelot_common-y += ocelot_tc.o ocelot_police.o ocelot_ace.o ocelot_flower.o
-> +
-> +obj-$(CONFIG_MSCC_OCELOT_SWITCH_OCELOT) += mscc_ocelot.o
-> +mscc_ocelot-$(CONFIG_MSCC_OCELOT_SWITCH_OCELOT) := ocelot_regs.o ocelot_board.o
-> +
-> +obj-$(CONFIG_MSCC_FELIX_SWITCH) += mscc_felix.o
-> +mscc_felix-$(CONFIG_MSCC_FELIX_SWITCH) := felix_regs.o felix_board.o
-> diff --git a/drivers/net/ethernet/mscc/felix_board.c b/drivers/net/ethernet/mscc/felix_board.c
-> new file mode 100644
-> index 000000000000..57f7a897b3ae
-> --- /dev/null
-> +++ b/drivers/net/ethernet/mscc/felix_board.c
-> @@ -0,0 +1,392 @@
-> +// SPDX-License-Identifier: (GPL-2.0 OR MIT)
-> +/* Felix Switch driver
-> + *
-> + * Copyright 2018-2019 NXP
-> + */
-> +
-> +#include <linux/module.h>
-> +#include <linux/pci.h>
-> +#include <linux/netdevice.h>
-> +#include <linux/phy_fixed.h>
-> +#include <linux/phy.h>
-> +#include <linux/of_mdio.h>
-> +#include <linux/of_net.h>
-> +#include <linux/iopoll.h>
-> +#include <net/switchdev.h>
-> +#include "ocelot.h"
-> +
-> +#define FELIX_DRV_VER_MAJ 1
-> +#define FELIX_DRV_VER_MIN 0
-> +
-> +#define FELIX_DRV_STR	"Felix Switch driver"
-> +#define FELIX_DRV_VER_STR __stringify(FELIX_DRV_VER_MAJ) "." \
-> +			  __stringify(FELIX_DRV_VER_MIN)
+> "Neither <name> nor <company> admit liability nor
+>  provide warranty for any of this software. This material is
+>  provided "AS-IS" and at no charge."
+> 
+> Presumably this is covered by the GPL license. However, since I am not
+> an attorney, I am not sure, and I opted for leaving such paragraphs in
+> place.
+[...]
+>  drivers/watchdog/ebc-c384_wdt.c        |  9 ---------
+[...]
+> diff --git a/drivers/watchdog/ebc-c384_wdt.c b/drivers/watchdog/ebc-c384_wdt.c
+> index c176f59fea28..8ef4b0df3855 100644
+> --- a/drivers/watchdog/ebc-c384_wdt.c
+> +++ b/drivers/watchdog/ebc-c384_wdt.c
+> @@ -2,15 +2,6 @@
+>  /*
+>   * Watchdog timer driver for the WinSystems EBC-C384
+>   * Copyright (C) 2016 William Breathitt Gray
+> - *
+> - * This program is free software; you can redistribute it and/or modify
+> - * it under the terms of the GNU General Public License, version 2, as
+> - * published by the Free Software Foundation.
+> - *
+> - * This program is distributed in the hope that it will be useful, but
+> - * WITHOUT ANY WARRANTY; without even the implied warranty of
+> - * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+> - * General Public License for more details.
+>   */
+>  #include <linux/device.h>
+>  #include <linux/dmi.h>
 
-Driver version strings are pretty pointless. What you really want to
-know if the specific kernel version.
-
-> +
-> +#define FELIX_PORT_RES_START	0x0100000
-> +#define FELIX_PORT_RES_SIZE	0x10000
-
-This should really be in device tree. You then get a lot closer to the
-binding for mscc-ocelot, and you can reuse more of its code.
-
-> +static void felix_release_ports(struct ocelot *ocelot)
-> +{
-> +	struct ocelot_port *ocelot_port;
-> +	struct phy_device *phydev;
-> +	struct device_node *dn;
-> +	int i;
-> +
-> +	for (i = 0; i < ocelot->num_phys_ports; i++) {
-> +		ocelot_port = ocelot->ports[i];
-> +		if (!ocelot_port || !ocelot_port->phy || !ocelot_port->dev)
-> +			continue;
-
-Phys are often optional, e.g. an RGMII interface to another switch, or
-an SFP port.
-
-> +
-> +		phydev = ocelot_port->phy;
-> +		unregister_netdev(ocelot_port->dev);
-> +		free_netdev(ocelot_port->dev);
-> +
-> +		if (phy_is_pseudo_fixed_link(phydev)) {
-> +			dn = phydev->mdio.dev.of_node;
-> +			/* decr refcnt: of_phy_register_fixed_link */
-> +			of_phy_deregister_fixed_link(dn);
-> +		}
-> +		phy_device_free(phydev); /* decr refcnt: of_phy_find_device */
-
-To be on the safe side, you should probably not free the netdev until
-you free the phydev.
-
-This function also seems pretty generic. Should it be shared?
-
-> +static int felix_ports_init(struct pci_dev *pdev)
-> +{
-> +	struct ocelot *ocelot = pci_get_drvdata(pdev);
-> +	struct device_node *np = ocelot->dev->of_node;
-> +	struct device_node *phy_node, *portnp;
-> +	struct phy_device *phydev;
-> +	void __iomem *port_regs;
-> +	resource_size_t base;
-> +	u32 port;
-> +	int err;
-> +
-> +	ocelot->num_phys_ports = FELIX_MAX_NUM_PHY_PORTS;
-> +
-> +	np = of_get_child_by_name(np, "ethernet-ports");
-> +	if (!np) {
-> +		dev_err(&pdev->dev, "ethernet-ports sub-node not found\n");
-> +		return -ENODEV;
-> +	}
-> +
-> +	/* alloc netdev for each port */
-> +	err = ocelot_init(ocelot);
-> +	if (err)
-> +		return err;
-> +
-> +	base = pci_resource_start(pdev, FELIX_SWITCH_BAR);
-> +	for_each_available_child_of_node(np, portnp) {
-> +		struct resource res = {};
-> +		int phy_mode;
-> +
-> +		if (!portnp || !portnp->name ||
-> +		    of_node_cmp(portnp->name, "port") ||
-
-The name of the node should not matter.
-
-> +static int felix_pci_probe(struct pci_dev *pdev, const struct pci_device_id *id)
-> +{
-> +
-> +	register_netdevice_notifier(&ocelot_netdevice_nb);
-> +	register_switchdev_notifier(&ocelot_switchdev_nb);
-> +	register_switchdev_blocking_notifier(&ocelot_switchdev_blocking_nb);
-
-This is also shared. So maybe move it into a common function?
-
-> +
-> +	dev_info(&pdev->dev, "%s v%s\n", FELIX_DRV_STR, FELIX_DRV_VER_STR);
-> +	return 0;
-> +
-> +err_ports_init:
-> +err_chip_init:
-> +err_sw_core_init:
-> +	pci_iounmap(pdev, regs);
-> +err_iomap:
-> +err_resource_len:
-> +err_alloc_ocelot:
-> +err_dma:
-> +	pci_disable_device(pdev);
-> +
-> +	return err;
-> +}
-> +
-> +static void felix_pci_remove(struct pci_dev *pdev)
-> +{
-> +	struct ocelot *ocelot;
-> +
-> +	ocelot = pci_get_drvdata(pdev);
-> +
-> +	/* stop workqueue thread */
-> +	ocelot_deinit(ocelot);
-> +	unregister_switchdev_blocking_notifier(&ocelot_switchdev_blocking_nb);
-> +	unregister_switchdev_notifier(&ocelot_switchdev_nb);
-> +	unregister_netdevice_notifier(&ocelot_netdevice_nb);
-
-This is also common.
-
-     Andrew
+Acked-by: William Breathitt Gray <vilhelm.gray@gmail.com>
 
 _______________________________________________
 linux-arm-kernel mailing list
