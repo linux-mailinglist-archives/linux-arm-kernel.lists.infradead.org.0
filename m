@@ -2,61 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EB8AD4F434
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 22 Jun 2019 09:44:42 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4B0DA4F43C
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 22 Jun 2019 09:59:14 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Cc:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=MX1Lz18CF4tpbMgan66jLaJUCmU2ovLEaKiPZk3uwtE=; b=LtrXwhyW31JVPgdXZJ2p8+gP07
-	9TNE99LI0iYdqgN1SyQedFcV/WL/irU3HTzn19BCF2x1Y/RSuPd+Rjeqalw6qRL/n0GiGIA0Zi3c2
-	Dsb5kfjmqFBKs0j1c0qTUdGrpwni0/j9akvTxJfA+kf4CCL9Z1l5gv3mbdtMpVuoOKeJnMH/JC+Q1
-	hfSKBDLqjGvxY2kX8ebT0Lxehb0aNgs1Pms61uL2FaO6dSf/hO+FXoivxvH7Q5OeT2vhDl5IU8qgM
-	rPya6KltdYjpM93MQpuL48l8MhAagVx0CsNAzGKp/iGXNlOeAMGnSsTX/s+//hNeIbIW7ecxl9lQA
-	oFXdnoqQ==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=GVz62qFRc6VPfm/ZW5Hl+qJ6/EEGvqTOc3uAMsJ2lBI=; b=HXypq2j04EkJ9D
+	kHnTcxoJXZ8cxlVv0wl/bDnTk0UbjajQSScHjjuupu9d7zO92/5eeeMzQDDgY1KHyPnhoivtDIDic
+	RgY08L+ttVMovWM2097brLi7xaOXn2I9yFQAaXwtJ6SpPjt56CV0cRfOZG6P+EKXiMi6J2Jaca/KL
+	2z1GHXrPPVWCsOq8ZeitX64TIfM57xuaDXk/M9JFnKDNbpmmrNzSEb/em5QZXnzF/grzz3e+VtVgI
+	rJGL9bnNa2K0iq8KJdsjshtyEx+cF67o/Bfky58T0L5ZJiRXZN1WWlezCvxlHmQXz+sS677iX+njH
+	JZbSOTHnbfpGkwmLubtw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1heahO-0006PB-Qs; Sat, 22 Jun 2019 07:44:34 +0000
-Received: from lb3-smtp-cloud8.xs4all.net ([194.109.24.29])
+	id 1heavY-0002fv-AR; Sat, 22 Jun 2019 07:59:12 +0000
+Received: from mail-qt1-x843.google.com ([2607:f8b0:4864:20::843])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1heahD-0006O5-UQ
- for linux-arm-kernel@lists.infradead.org; Sat, 22 Jun 2019 07:44:26 +0000
-Received: from [IPv6:2001:983:e9a7:1:c087:883d:6305:97f]
- ([IPv6:2001:983:e9a7:1:c087:883d:6305:97f])
- by smtp-cloud8.xs4all.net with ESMTPA
- id eaguhVBDg7KeZeagwhQqlg; Sat, 22 Jun 2019 09:44:10 +0200
-Subject: Re: [PATCH] media: atmel: atmel-isc: fix i386 build error
-To: Eugen.Hristev@microchip.com, linux-media@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
- sakari.ailus@iki.fi
-References: <1560928828-31471-1-git-send-email-eugen.hristev@microchip.com>
-From: Hans Verkuil <hverkuil@xs4all.nl>
-Message-ID: <26c3aae1-c385-fa13-8baa-82a011f7b243@xs4all.nl>
-Date: Sat, 22 Jun 2019 09:44:04 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.6.1
+ id 1heavO-0002fJ-53
+ for linux-arm-kernel@lists.infradead.org; Sat, 22 Jun 2019 07:59:03 +0000
+Received: by mail-qt1-x843.google.com with SMTP id x2so9424498qtr.0
+ for <linux-arm-kernel@lists.infradead.org>;
+ Sat, 22 Jun 2019 00:59:01 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=jms.id.au; s=google;
+ h=mime-version:from:date:message-id:subject:to:cc;
+ bh=l6JkMxGCR4TkYnMh8TfPneR47DulikqSuvDG9umnXVI=;
+ b=OeGnkvv7y+Ei1gULqYCugFOXLsimmG0XO0QLTsgjHQqhvu46hc3KZiXn2iwsY2zpcq
+ WKflQC1BRLeYcJ+LUHpDai9Y2b7nFA+xKT1OzmiNg9FuQm2gL5UwXyAh6eya8DaA7n/c
+ obGOyU2qw+xF8uXItSvl31hPY5U1/jdM8bpBA=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:from:date:message-id:subject:to:cc;
+ bh=l6JkMxGCR4TkYnMh8TfPneR47DulikqSuvDG9umnXVI=;
+ b=aY7ktgtM0X+qLAHV60P3+wMoTxpGB4eE7b9RsOOf9dKowA8NwuNOJhFkiE+F33cMZQ
+ hpecvvb++FMG/qEUPVocVQhDRHK5PCGVpeuG/d70A/vqTnnQBdMgpF87e1CAVb7G9GCt
+ 0qi/Sw50yTIivRX8GUTxahLdK+giAEaVodqWEySdFy/spNaBvbAlM1o2EHtV+0LSNsH8
+ NBOmjlksqd+C5TESeELMYsdK7fwA+pRb7IlGLFLsNa8hJjs7S+baACpZ82St20ehX6q+
+ hLt3C/JrtRlUMl00l8Mr0xnEyWu5djNYFdN1w3kF6E0tTeMDOXTOSV1WiPuUW0Esu8M7
+ SNFQ==
+X-Gm-Message-State: APjAAAX2L3Oh8rCG/egkcCm0a00I839CuLLkEvvXs9KOWLk+FjItirn7
+ qHY/mFJjRyrLUeNLaiDMu7R/fdZYVMjMD3/rXG0=
+X-Google-Smtp-Source: APXvYqwe++A1xs7ZZPPxAlWbW4nT5c67yseQmkyeJUk2auF7XiQNd32xDW1+ryWZ+Jb9yUeztgGVmIN6hcvMI5JnFBE=
+X-Received: by 2002:a0c:ae31:: with SMTP id y46mr48970818qvc.172.1561190337785; 
+ Sat, 22 Jun 2019 00:58:57 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <1560928828-31471-1-git-send-email-eugen.hristev@microchip.com>
-Content-Language: en-US
-X-CMAE-Envelope: MS4wfG4wOSwZ9jtKh3iwxbJ24OF7fIMGc6xRcRI+oeh9cz8bAIix89ngRNyoLd9xOqxH+Ssq9npO5Sudu/x+mEBeAhkapSZRGOitLBe234aMh1/+poMUDVCD
- qQkshVWi+mun8Y1a1vD3m300wWjuNSonvcfa8E86PGgN5JHHU6HGf2zHilz+gRAGt353BAjN2zY0Aw00snhe/NieWILEB1oD39kmTAL2v93Ow2P/p3axXSs1
- DNsj1B8K1RHvfjbVLJ/O2OfKJ4TO2CqxjPYvbamHzyommFHA7xtoWrgzgJd0GoadYf5dtCfLrQNTeTj8YSM0Qmp+6JZdrkWWZzZVlSFY0KR236z4MCqLMM6Z
- BSJmrz34jk3MX1MfOiu1wWvvIgFxB9G+jwOXL/Fnlfl/R4lLsH+zjsLvrAAihNpY15BYrd660sW31NHSPJjcpnW5iuB3zA==
+From: Joel Stanley <joel@jms.id.au>
+Date: Sat, 22 Jun 2019 07:58:46 +0000
+Message-ID: <CACPK8XfL-U-BeynGQNBp5rPiv1gzD=7DVzyvrgtoL3njU1Kr_A@mail.gmail.com>
+Subject: [GIT PULL] ARM: aspeed: defconfig changes for 5.3
+To: arm <arm@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190622_004424_149301_21188A43 
-X-CRM114-Status: GOOD (  18.88  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20190622_005902_237174_1499E7CC 
+X-CRM114-Status: UNSURE (   9.52  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.4 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (0.4 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [194.109.24.29 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:843 listed in]
+ [list.dnswl.org]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (joel.stan[at]gmail.com)
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -68,88 +89,46 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
+Cc: Andrew Jeffery <andrew@aj.id.au>, linux-aspeed@lists.ozlabs.org,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 6/19/19 9:24 AM, Eugen.Hristev@microchip.com wrote:
-> From: Eugen Hristev <eugen.hristev@microchip.com>
-> 
-> ld: drivers/media/platform/atmel/atmel-isc-base.o:(.bss+0x0): multiple definition of `debug'; arch/x86/entry/entry_32.o:(.entry.text+0x21ac): first defined here
-> 
-> Changed module parameters to static.
-> 
-> Reported-by: kbuild test robot <lkp@intel.com>
-> Signed-off-by: Eugen Hristev <eugen.hristev@microchip.com>
-> ---
-> 
-> Hello Hans,
-> 
-> Sorry for this, it looks like i386 has a stray weird 'debug' symbol which
-> causes an error.
-> I changed the module parameters of the atmel-isc to 'static' but now they
-> cannot be accessed in the other module files.
-> Will have to create a get function to be used in the other files if needed
-> later. Any other way to make a symbol static to current module and not
-> current file ? It would be useful for other config variables as well.
-> I was not sure if you want to squash this over the faulty patch or add it
-> as a separate patch.
-> If you want me to squash it let me know and I will come up with a squashed
-> new version.
-> 
-> Thanks,
-> Eugen
-> 
->  drivers/media/platform/atmel/atmel-isc-base.c | 4 ++--
->  drivers/media/platform/atmel/atmel-isc.h      | 4 ----
->  2 files changed, 2 insertions(+), 6 deletions(-)
-> 
-> diff --git a/drivers/media/platform/atmel/atmel-isc-base.c b/drivers/media/platform/atmel/atmel-isc-base.c
-> index eb1f5d4..c1c776b 100644
-> --- a/drivers/media/platform/atmel/atmel-isc-base.c
-> +++ b/drivers/media/platform/atmel/atmel-isc-base.c
-> @@ -35,11 +35,11 @@
->  #include "atmel-isc-regs.h"
->  #include "atmel-isc.h"
->  
-> -unsigned int debug;
-> +static unsigned int debug;
->  module_param(debug, int, 0644);
+Hi ARM maintainers,
 
-You can also use module_param_named, or use dev_dbg as Sakari suggested.
+Here are some defconfig updates for the ASPEED machines. I haven't
+sent one for a while, so there's a nice collection of drivers to add.
 
-In any case, I've added this patch to my pull request since it's urgent to
-fix this issue.
+The following changes since commit a188339ca5a396acc588e5851ed7e19f66b0ebd9:
 
-Regards,
+  Linux 5.2-rc1 (2019-05-19 15:47:09 -0700)
 
-	Hans
+are available in the Git repository at:
 
->  MODULE_PARM_DESC(debug, "debug level (0-2)");
->  
-> -unsigned int sensor_preferred = 1;
-> +static unsigned int sensor_preferred = 1;
->  module_param(sensor_preferred, uint, 0644);
->  MODULE_PARM_DESC(sensor_preferred,
->  		 "Sensor is preferred to output the specified format (1-on 0-off), default 1");
-> diff --git a/drivers/media/platform/atmel/atmel-isc.h b/drivers/media/platform/atmel/atmel-isc.h
-> index f5f5932..bfaed2f 100644
-> --- a/drivers/media/platform/atmel/atmel-isc.h
-> +++ b/drivers/media/platform/atmel/atmel-isc.h
-> @@ -230,10 +230,6 @@ struct isc_device {
->  
->  #define ATMEL_ISC_NAME "atmel-isc"
->  
-> -/* module parameters */
-> -extern unsigned int debug;
-> -extern unsigned int sensor_preferred;
-> -
->  extern struct isc_format formats_list[];
->  extern const struct isc_format controller_formats[];
->  extern const u32 isc_gamma_table[GAMMA_MAX + 1][GAMMA_ENTRIES];
-> 
+  git://git.kernel.org/pub/scm/linux/kernel/git/joel/aspeed.git \
+    tags/aspeed-5.3-defconfig
 
+for you to fetch changes up to 2d8bf3404bb0e65dffb7326f7fb6e96fa3cee418:
+
+  ARM: configs: multi_v5: Add more ASPEED devices (2019-06-22 17:12:17 +0930)
+
+----------------------------------------------------------------
+ASPEED device tree updates for 5.3
+
+Add new drivers to the ASPEED G4 and G5 defconfigs, and to the armv5
+multi defconfig.
+
+----------------------------------------------------------------
+Joel Stanley (2):
+      ARM: configs: aspeed: Add new drivers
+      ARM: configs: multi_v5: Add more ASPEED devices
+
+ arch/arm/configs/aspeed_g4_defconfig | 10 ++++++++--
+ arch/arm/configs/aspeed_g5_defconfig | 14 ++++++++++++--
+ arch/arm/configs/multi_v5_defconfig  |  8 ++++++++
+ 3 files changed, 28 insertions(+), 4 deletions(-)
 
 _______________________________________________
 linux-arm-kernel mailing list
