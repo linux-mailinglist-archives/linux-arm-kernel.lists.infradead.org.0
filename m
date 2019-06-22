@@ -2,72 +2,67 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 502DC4F7DD
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 22 Jun 2019 20:56:16 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 110ED4F7EA
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 22 Jun 2019 21:19:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Date:Message-Id:MIME-Version:Subject:To
-	:From:References:In-Reply-To:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Gg/HgONcoexy7Fpw1EGkrTF7vlL0BI0O82gGiszLycA=; b=P6n6/sMY5iJ3E2
-	QuXgt4vrIk7XOvubq7XQtnbed5YAwRHzwy3R+rMChXj6rKI+imbR9kZnx3FrWAN6W10/J+Ybbxx++
-	KeAuhPIvLIL9c+N+6p7NESLmGTUHL9oTyBvIvGM9G9rkdpTg6lq0O/3WkjqyVDPiI3twVOusO3T9q
-	yupFc3dL7ICsSPVTCrSGVvAK+98PpNA576twTYemVd4vecJWG2aZhV4a5s+qk6pgclFbSNEwyQh2u
-	DghXvrcaFqTQP+aWbVK4CraD5OWA+psFzEokTumWTemnl+GAKITnxQEnQ+huJYreA8fm/RyIP/okm
-	ePlCwDUsuUuD4w2F//Bg==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=LHMZJRDKQxpaw1qrcaqrirwY9XbLIikOkWNXn7LH+zw=; b=FPqlT2RRlBAfRyonISyXVg/Pf4
+	kWusu5+ggUf+BTICH1Bv2LKW28RigKvc2qvQQvhVUVRQq8zL0XlpEUWnwIo/14Hv4r2YEA2uWmjyG
+	qMKyV0efTrsPfIAQGsOh2qR+Rpa/Wck7YRETzaNczWnqP11qz5bZffCxKIXu4O6NNylbE2R7mzxLf
+	Lc2ifXdkPz9cTIKVwTGV3wuLhvp3mbe2WCv7770qumryV0cuN58q/4pTci7UqXwiFg7cTc5RKWVh1
+	IUexD4Nn7XsMCP9tbMREiVeBHzpq+FEhk01WxioKyjO696CH6osuSVmKtX0YWTC6H09yYazr1RYM2
+	+u+Jitnw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1helBO-0002Et-1J; Sat, 22 Jun 2019 18:56:14 +0000
-Received: from pandora.armlinux.org.uk
- ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
+	id 1helXm-00010q-Cf; Sat, 22 Jun 2019 19:19:22 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1helBF-0002EE-L9
- for linux-arm-kernel@lists.infradead.org; Sat, 22 Jun 2019 18:56:06 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=armlinux.org.uk; s=pandora-2019; h=Date:Sender:Message-Id:Content-Type:
- Content-Transfer-Encoding:MIME-Version:Subject:Cc:To:From:References:
- In-Reply-To:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
- Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:
- List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=9L4EdajO6Xbwxdr23bMsOgh5jRoyTsPUINWDgSc18DQ=; b=ODoS1pCbMNS2pbN3tuZXPP2DpU
- btyD2EpGAffay9u7xn0lhGx7Z5QM76wHruQiLRF3PTGbMNaP/RlTXLxo/t3eATwQFo7vA/QSqM7zm
- nSp1btztbTwNTGKJXsS+bigdDUzJc52IGi2S57gF3QAWnNIgNHHeiwxPPSyhQuIN3ny7tqCN58cuZ
- y3KG8IN1SBmNVyBq2cjPWY4NxRXLz1J25I9Mz9dZkqzGLIs5ZhzJvi4Qn0bPmukjVRHaeuAozUNFT
- qJPgI/kQbQUR3nQhz4eZQGT2v7MwdjbjWF8vEvevzWTX6Qh8CT09nQ48BbpkWMWNCyGW03Qkao/kU
- bZDa33+Q==;
-Received: from e0022681537dd.dyn.armlinux.org.uk
- ([2001:4d48:ad52:3201:222:68ff:fe15:37dd]:54250 helo=rmk-PC.armlinux.org.uk)
- by pandora.armlinux.org.uk with esmtpsa
- (TLSv1.2:ECDHE-RSA-AES128-GCM-SHA256:128) (Exim 4.90_1)
- (envelope-from <rmk@armlinux.org.uk>)
- id 1helB3-0005N2-Ql; Sat, 22 Jun 2019 19:55:53 +0100
-Received: from rmk by rmk-PC.armlinux.org.uk with local (Exim
- 4.82_1-5b7a7c0-XX) (envelope-from <rmk@armlinux.org.uk>)
- id 1helB3-0005d6-7m; Sat, 22 Jun 2019 19:55:53 +0100
-In-Reply-To: <20190622165318.bgyun52hssqmdv4n@shell.armlinux.org.uk>
-References: <20190622165318.bgyun52hssqmdv4n@shell.armlinux.org.uk>
-From: Russell King <rmk+kernel@armlinux.org.uk>
-To: Michael Olbrich <m.olbrich@pengutronix.de>,
- Lucas Stach <l.stach@pengutronix.de>, Vinod Koul <vkoul@kernel.org>
-Subject: [PATCH v2] dmaengine: imx-sdma: fix incorrect conversion to
- readl_relaxed_poll_timeout_atomic()
-MIME-Version: 1.0
-Content-Disposition: inline
-Message-Id: <E1helB3-0005d6-7m@rmk-PC.armlinux.org.uk>
-Date: Sat, 22 Jun 2019 19:55:53 +0100
+ id 1helXd-00010I-24
+ for linux-arm-kernel@lists.infradead.org; Sat, 22 Jun 2019 19:19:14 +0000
+Received: from localhost.localdomain (unknown [194.230.155.186])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 02ACD206B7;
+ Sat, 22 Jun 2019 19:19:06 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1561231150;
+ bh=bQV8QrWO6dxnGr7QlKGtsMX1k98htmmmCH69v0k+zmI=;
+ h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+ b=nVPXuPuOxymKodf9KSrozYvY7ndqFJIdi4WXf81r1bDSyYAXOPz9X/pGWUj1bH7qb
+ KxQENpY6NFmUVHMHKCJV5ptdRwmWYpgv2xr7CXcaYTlqvmgcrNu9FpfeKLwIcpOngY
+ NW215jnPbV8/CPSS3uvSA5kkG5Kt/F3Gg+6q6sao=
+From: Krzysztof Kozlowski <krzk@kernel.org>
+To: Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>,
+ Shawn Guo <shawnguo@kernel.org>, Maxime Ripard <maxime.ripard@bootlin.com>,
+ Olof Johansson <olof@lixom.net>, Jagan Teki <jagan@amarulasolutions.com>,
+ Simon Horman <horms+renesas@verge.net.au>,
+ Leonard Crestez <leonard.crestez@nxp.com>,
+ Bjorn Andersson <bjorn.andersson@linaro.org>,
+ Dinh Nguyen <dinguyen@kernel.org>,
+ Enric Balletbo i Serra <enric.balletbo@collabora.com>,
+ linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
+Subject: [PATCH v3] arm64: defconfig: Enable Panfrost and Lima drivers
+Date: Sat, 22 Jun 2019 21:18:38 +0200
+Message-Id: <20190622191838.29850-1-krzk@kernel.org>
+X-Mailer: git-send-email 2.17.1
+In-Reply-To: <20190621180208.25361-7-krzk@kernel.org>
+References: <20190621180208.25361-7-krzk@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190622_115605_706225_5DB8B3B2 
-X-CRM114-Status: GOOD (  10.54  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20190622_121913_324657_8EA2E1D8 
+X-CRM114-Status: GOOD (  11.09  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [2001:4d48:ad52:3201:214:fdff:fe10:1be6 listed in]
- [list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -76,6 +71,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -87,56 +83,52 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Fabio Estevam <festevam@gmail.com>, Sascha Hauer <s.hauer@pengutronix.de>,
- NXP Linux Team <linux-imx@nxp.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>, dmaengine@vger.kernel.org,
- Dan Williams <dan.j.williams@intel.com>, Shawn Guo <shawnguo@kernel.org>,
- linux-arm-kernel@lists.infradead.org
+Cc: Chanwoo Choi <cw00.choi@samsung.com>, linux-samsung-soc@vger.kernel.org,
+ Krzysztof Kozlowski <krzk@kernel.org>,
+ Marek Szyprowski <m.szyprowski@samsung.com>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-When imx-sdma was converted to use readl_relaxed_poll_timeout_atomic(),
-the termination condition was inverted.  Fix this.
+Enable support for Mali GPU with Panfrost and Lima drivers for:
+1. Samsung Exynos5433 and Exynos7 (having Mali T760),
+2. Allwiner A64 and H5 (Mali 400/450).
 
-Fixes: 1d069bfa3c78 ("dmaengine: imx-sdma: ack channel 0 IRQ in the interrupt handler")
-Signed-off-by: Russell King <rmk+kernel@armlinux.org.uk>
+Signed-off-by: Krzysztof Kozlowski <krzk@kernel.org>
+
 ---
- drivers/dma/imx-sdma.c | 12 +++++++++---
- 1 file changed, 9 insertions(+), 3 deletions(-)
 
-diff --git a/drivers/dma/imx-sdma.c b/drivers/dma/imx-sdma.c
-index 5f3c1378b90e..c45cbdb09714 100644
---- a/drivers/dma/imx-sdma.c
-+++ b/drivers/dma/imx-sdma.c
-@@ -655,15 +655,21 @@ static void sdma_enable_channel(struct sdma_engine *sdma, int channel)
- static int sdma_run_channel0(struct sdma_engine *sdma)
- {
- 	int ret;
--	u32 reg;
-+	u32 reg, mask;
-+
-+	// Disable channel 0 interrupt
-+	mask = readl_relaxed(sdma->regs + SDMA_H_INTRMSK);
-+	writel_relaxed(mask & ~1, sdma->regs + SDMA_H_INTRMSK);
- 
- 	sdma_enable_channel(sdma, 0);
- 
--	ret = readl_relaxed_poll_timeout_atomic(sdma->regs + SDMA_H_STATSTOP,
--						reg, !(reg & 1), 1, 500);
-+	ret = readl_relaxed_poll_timeout_atomic(sdma->regs + SDMA_H_INTR,
-+						reg, reg & 1, 1, 500);
- 	if (ret)
- 		dev_err(sdma->dev, "Timeout waiting for CH0 ready\n");
- 
-+	writel_relaxed(mask, sdma->regs + SDMA_H_INTRMSK);
-+
- 	/* Set bits of CONFIG register with dynamic context switching */
- 	reg = readl(sdma->regs + SDMA_H_CONFIG);
- 	if ((reg & SDMA_H_CONFIG_CSM) == 0) {
+Changes since v1:
+1. Enable Lima driver
+---
+ arch/arm64/configs/defconfig | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+diff --git a/arch/arm64/configs/defconfig b/arch/arm64/configs/defconfig
+index fbbc065415d4..3d31611368af 100644
+--- a/arch/arm64/configs/defconfig
++++ b/arch/arm64/configs/defconfig
+@@ -518,6 +518,8 @@ CONFIG_DRM_HISI_HIBMC=m
+ CONFIG_DRM_HISI_KIRIN=m
+ CONFIG_DRM_MESON=m
+ CONFIG_DRM_PL111=m
++CONFIG_DRM_LIMA=m
++CONFIG_DRM_PANFROST=m
+ CONFIG_FB=y
+ CONFIG_FB_MODE_HELPERS=y
+ CONFIG_BACKLIGHT_GENERIC=m
+@@ -718,7 +720,6 @@ CONFIG_ARCH_TEGRA_194_SOC=y
+ CONFIG_ARCH_K3_AM6_SOC=y
+ CONFIG_SOC_TI=y
+ CONFIG_TI_SCI_PM_DOMAINS=y
+-CONFIG_DEVFREQ_GOV_SIMPLE_ONDEMAND=y
+ CONFIG_EXTCON_USB_GPIO=y
+ CONFIG_EXTCON_USBC_CROS_EC=y
+ CONFIG_MEMORY=y
 -- 
-2.7.4
+2.17.1
 
 
 _______________________________________________
