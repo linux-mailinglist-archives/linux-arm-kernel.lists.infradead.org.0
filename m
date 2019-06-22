@@ -2,64 +2,178 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 281DB4F574
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 22 Jun 2019 13:05:31 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CFB124F59B
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 22 Jun 2019 14:10:50 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=xd7Ce4Op8w8Vaw8yIhkDJWoL3wk1GWrQ1Q9E/jTxjP4=; b=SiWpsIWM3HWK6P
-	mpU9HAceCICmrp2VmOsyIgWdfEVwYOjYokSRsVdiRkFAihK//B5TJbjGimkU2tq1vz+NOdKdBJNCa
-	xazU/11gidfJ6tL4NlCLw3e9+G+MXQphHU+y1bAPvPxKIRR7fIpIPRK9HHzdQa5tZwFYB5Rozfjga
-	C5VXudpvd5fpj8RMlAWflhEuUtlxz3SQ+TRDU/xLlQVqi3/saQOVxeP3OVmQ4SVfJBgv2WnoNAKwO
-	es1XlqolXlNAzzSDfe1HEuRwo1zKKmMB1Ju62akL8FqOF0/4uzDmjw2VzPGBB4HfzeRSzyAWpM1NK
-	sKrsFWrqB1LmQ1dZiBWw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=SfKzrOkaIPPmfuNJWveFfIXmOQFkCWA+8bBc8Siyum0=; b=V8qpfS1E2DMYdb
+	i8bTM13XwZuqKQQ311XE6RD5n8tqSfuhqYmT1welCJjwVD60YzY1Eu3YgO3rLtWeK5VcTiCHP4avB
+	7sGHuPJIszf4QoXuyOlwg2Tb3A4Ed/t3u+t9GxBBMr1I/8pI+9jtmw8YVvg7n8M0IYK3gTKfemuQB
+	Bf8m1fmz/q5Se14BvUdkpXKwAQ5kxdEjYo6NWFv11NfXAhqfGyNYo+MkTES5jlUwp6hcKlIsruETI
+	tLTS5dxQDEXwLSc5lqtwelwuQzgCEdPfwX7xBL4lwK9Pi72Q/J5S2ibJyEZC3/0IUhXADrN83Rc6V
+	LtYMJV5TN5bUrYr2EAIQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hedpl-000113-T6; Sat, 22 Jun 2019 11:05:25 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1heer0-0005LS-9x; Sat, 22 Jun 2019 12:10:46 +0000
+Received: from mout02.posteo.de ([185.67.36.66])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hedpc-00010M-7G
- for linux-arm-kernel@lists.infradead.org; Sat, 22 Jun 2019 11:05:18 +0000
-Received: from archlinux (cpc149474-cmbg20-2-0-cust94.5-4.cable.virginm.net
- [82.4.196.95])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 1950C2070B;
- Sat, 22 Jun 2019 11:05:12 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1561201515;
- bh=coSF7lUUUoxoKk7PJ/blfVziC8roqU2es3HSlaUS9X8=;
- h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
- b=p+uvwiheF6myrYZ9VKdtbBsSq0sAskz4r2jBxi4LavkLcrdCj4ypyzB80w+agKuNl
- UGrE9+ZNSn9NjkBCKUlPRgohApjsRXjVKWXQrVjSZNV59Pr4qFdtuYUPn9bJUYKwuP
- u4e+6Xrcz25tr4TOBeIrA2P9CWD1/PL3sOK1lCLs=
-Date: Sat, 22 Jun 2019 12:05:10 +0100
-From: Jonathan Cameron <jic23@kernel.org>
-To: Fabrice Gasnier <fabrice.gasnier@st.com>
-Subject: Re: [PATCH 2/3] iio: adc: stm32-adc: add analog switches supply
- control
-Message-ID: <20190622120510.2215e8cc@archlinux>
-In-Reply-To: <5ea9f65d-2feb-1ec5-1ca1-0cfd2964f160@st.com>
-References: <1560324276-681-1-git-send-email-fabrice.gasnier@st.com>
- <1560324276-681-3-git-send-email-fabrice.gasnier@st.com>
- <20190616160732.124a1eb9@archlinux>
- <f1d4b47a-5910-53fe-5d63-d51da429dacd@st.com>
- <5ea9f65d-2feb-1ec5-1ca1-0cfd2964f160@st.com>
-X-Mailer: Claws Mail 3.17.3 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
+ id 1heeqr-0005KN-VF
+ for linux-arm-kernel@lists.infradead.org; Sat, 22 Jun 2019 12:10:39 +0000
+Received: from submission (posteo.de [89.146.220.130]) 
+ by mout02.posteo.de (Postfix) with ESMTPS id 18F30240101
+ for <linux-arm-kernel@lists.infradead.org>;
+ Sat, 22 Jun 2019 14:10:27 +0200 (CEST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=posteo.de; s=2017;
+ t=1561205428; bh=wuJTI0u/hXgxQKm93bEtqH2IvOfjTYH45rUA3JxXKto=;
+ h=Subject:To:Cc:From:Openpgp:Autocrypt:Date:From;
+ b=fbqm3azof9WMdOV4URtZe5f8anX/5LsyGJD6The//TUWRxqRDUm6J7iz2OQxnZokK
+ MhyC90rlmnsuFHFHft3oLBbRRE5BOX/sOOI7bnQp0jrHHBKSpnwtg9mXvNBV64abN9
+ bc3PdtEhOwENHcKaZFkfS1Dksi0or9XhTjSkHoQrH3ytSHzycJ2+4BDqdR3V/RQ1MI
+ HfugXsjjnAzjF+EfMPx8pr15jJKjlPrQ6qdF9QlStyJZ7GEhIZ/4HmFJxdkJE2jY5T
+ bdPQbAwsbyX8fbHZmu2mVBnWBD3rM6Z9Bn6/EMS2W6stoPJLUT5m63XNoKP4ie+j3l
+ X9mY7eHCUaszA==
+Received: from customer (localhost [127.0.0.1])
+ by submission (posteo.de) with ESMTPSA id 45WDsD0zYWz9rxQ;
+ Sat, 22 Jun 2019 14:10:23 +0200 (CEST)
+Subject: Re: [PATCH 4/4] arm64: dts: imx8mm: Add system counter node
+To: Anson.Huang@nxp.com, catalin.marinas@arm.com, will@kernel.org,
+ robh+dt@kernel.org, mark.rutland@arm.com, shawnguo@kernel.org,
+ s.hauer@pengutronix.de, kernel@pengutronix.de, festevam@gmail.com,
+ mturquette@baylibre.com, sboyd@kernel.org, leonard.crestez@nxp.com,
+ aisheng.dong@nxp.com, ping.bai@nxp.com, daniel.baluta@nxp.com,
+ peng.fan@nxp.com, abel.vesa@nxp.com, linux-arm-kernel@lists.infradead.org,
+ linux-kernel@vger.kernel.org, devicetree@vger.kernel.org,
+ linux-clk@vger.kernel.org
+References: <20190621070720.12395-1-Anson.Huang@nxp.com>
+ <20190621070720.12395-4-Anson.Huang@nxp.com>
+From: Martin Kepplinger <martink@posteo.de>
+Openpgp: preference=signencrypt
+Autocrypt: addr=martink@posteo.de; keydata=
+ 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
+Message-ID: <9f411a1c-50d2-e26b-a4e6-83e02b626378@posteo.de>
+Date: Sat, 22 Jun 2019 14:10:23 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.7.1
 MIME-Version: 1.0
+In-Reply-To: <20190621070720.12395-4-Anson.Huang@nxp.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190622_040516_298237_8EFD57B2 
-X-CRM114-Status: GOOD (  32.25  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190622_051038_447024_8363DF85 
+X-CRM114-Status: UNSURE (   7.75  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [185.67.36.66 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -69,7 +183,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -81,440 +194,25 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, lars@metafoo.de,
- alexandre.torgue@st.com, linux-iio@vger.kernel.org, pmeerw@pmeerw.net,
- linux-kernel@vger.kernel.org, robh+dt@kernel.org, mcoquelin.stm32@gmail.com,
- knaack.h@gmx.de, linux-stm32@st-md-mailman.stormreply.com,
- linux-arm-kernel@lists.infradead.org
+Cc: Linux-imx@nxp.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, 19 Jun 2019 14:38:42 +0200
-Fabrice Gasnier <fabrice.gasnier@st.com> wrote:
-
-> On 6/17/19 2:43 PM, Fabrice Gasnier wrote:
-> > On 6/16/19 5:07 PM, Jonathan Cameron wrote:  
-> >> On Wed, 12 Jun 2019 09:24:35 +0200
-> >> Fabrice Gasnier <fabrice.gasnier@st.com> wrote:
-> >>  
-> >>> On stm32h7 and stm32mp1, the ADC inputs are multiplexed with analog
-> >>> switches which have reduced performances when their supply is below 2.7V
-> >>> (vdda by default):
-> >>> - vdd supply can be selected if above 2.7V by setting ANASWVDD syscfg bit
-> >>>   (STM32MP1 only).
-> >>> - Voltage booster can be used, to get full ADC performances by setting
-> >>>   BOOSTE/EN_BOOSTER syscfg bit (increases power consumption).
-> >>>
-> >>> Make this optional, since this is a trade-off between analog performance
-> >>> and power consumption.
-> >>>
-> >>> Note: STM32H7 syscfg has a set and clear register for "BOOSTE" control.
-> >>> STM32MP1 has separate set and clear registers pair to control EN_BOOSTER
-> >>> and ANASWVDD bits.
-> >>>
-> >>> Signed-off-by: Fabrice Gasnier <fabrice.gasnier@st.com>  
-> >>
-> >> A few minor bits inline, but mostly seems fine to me.
-> >>
-> >> Jonathan
-> >>  
-> >>> ---
-> >>>  drivers/iio/adc/stm32-adc-core.c | 232 ++++++++++++++++++++++++++++++++++++++-
-> >>>  1 file changed, 230 insertions(+), 2 deletions(-)
-> >>>
-> >>> diff --git a/drivers/iio/adc/stm32-adc-core.c b/drivers/iio/adc/stm32-adc-core.c
-> >>> index 2327ec1..9d41b16 100644
-> >>> --- a/drivers/iio/adc/stm32-adc-core.c
-> >>> +++ b/drivers/iio/adc/stm32-adc-core.c
-> >>> @@ -14,9 +14,11 @@
-> >>>  #include <linux/irqchip/chained_irq.h>
-> >>>  #include <linux/irqdesc.h>
-> >>>  #include <linux/irqdomain.h>
-> >>> +#include <linux/mfd/syscon.h>
-> >>>  #include <linux/module.h>
-> >>>  #include <linux/of_device.h>
-> >>>  #include <linux/pm_runtime.h>
-> >>> +#include <linux/regmap.h>
-> >>>  #include <linux/regulator/consumer.h>
-> >>>  #include <linux/slab.h>
-> >>>  
-> >>> @@ -51,6 +53,20 @@
-> >>>  
-> >>>  #define STM32_ADC_CORE_SLEEP_DELAY_MS	2000
-> >>>  
-> >>> +/* SYSCFG registers */
-> >>> +#define STM32H7_SYSCFG_PMCR		0x04
-> >>> +#define STM32MP1_SYSCFG_PMCSETR		0x04
-> >>> +#define STM32MP1_SYSCFG_PMCCLRR		0x44
-> >>> +
-> >>> +/* SYSCFG bit fields */
-> >>> +#define STM32H7_SYSCFG_BOOSTE_MASK	BIT(8)
-> >>> +#define STM32MP1_SYSCFG_ANASWVDD_MASK	BIT(9)
-> >>> +
-> >>> +/* SYSCFG capability flags */
-> >>> +#define HAS_VBOOSTER		BIT(0)
-> >>> +#define HAS_ANASWVDD		BIT(1)
-> >>> +#define HAS_CLEAR_REG		BIT(2)
-> >>> +
-> >>>  /**
-> >>>   * stm32_adc_common_regs - stm32 common registers, compatible dependent data
-> >>>   * @csr:	common status register offset
-> >>> @@ -58,6 +74,11 @@
-> >>>   * @eoc1:	adc1 end of conversion flag in @csr
-> >>>   * @eoc2:	adc2 end of conversion flag in @csr
-> >>>   * @eoc3:	adc3 end of conversion flag in @csr
-> >>> + * @has_syscfg: SYSCFG capability flags
-> >>> + * @pmcr:	SYSCFG_PMCSETR/SYSCFG_PMCR register offset
-> >>> + * @pmcc:	SYSCFG_PMCCLRR clear register offset
-> >>> + * @booste_msk:	SYSCFG BOOSTE / EN_BOOSTER bitmask in PMCR & PMCCLRR
-> >>> + * @anaswvdd_msk: SYSCFG ANASWVDD bitmask in PMCR & PMCCLRR
-> >>>   */
-> >>>  struct stm32_adc_common_regs {
-> >>>  	u32 csr;
-> >>> @@ -65,6 +86,11 @@ struct stm32_adc_common_regs {
-> >>>  	u32 eoc1_msk;
-> >>>  	u32 eoc2_msk;
-> >>>  	u32 eoc3_msk;
-> >>> +	unsigned int has_syscfg;
-> >>> +	u32 pmcr;
-> >>> +	u32 pmcc;
-> >>> +	u32 booste_msk;
-> >>> +	u32 anaswvdd_msk;
-> >>>  };
-> >>>  
-> >>>  struct stm32_adc_priv;
-> >>> @@ -87,20 +113,26 @@ struct stm32_adc_priv_cfg {
-> >>>   * @domain:		irq domain reference
-> >>>   * @aclk:		clock reference for the analog circuitry
-> >>>   * @bclk:		bus clock common for all ADCs, depends on part used
-> >>> + * @vdd:		vdd supply reference
-> >>> + * @vdda:		vdda supply reference
-> >>>   * @vref:		regulator reference
-> >>>   * @cfg:		compatible configuration data
-> >>>   * @common:		common data for all ADC instances
-> >>>   * @ccr_bak:		backup CCR in low power mode
-> >>> + * @syscfg:		reference to syscon, system control registers
-> >>>   */
-> >>>  struct stm32_adc_priv {
-> >>>  	int				irq[STM32_ADC_MAX_ADCS];
-> >>>  	struct irq_domain		*domain;
-> >>>  	struct clk			*aclk;
-> >>>  	struct clk			*bclk;
-> >>> +	struct regulator		*vdd;
-> >>> +	struct regulator		*vdda;
-> >>>  	struct regulator		*vref;
-> >>>  	const struct stm32_adc_priv_cfg	*cfg;
-> >>>  	struct stm32_adc_common		common;
-> >>>  	u32				ccr_bak;
-> >>> +	struct regmap			*syscfg;
-> >>>  };
-> >>>  
-> >>>  static struct stm32_adc_priv *to_stm32_adc_priv(struct stm32_adc_common *com)
-> >>> @@ -284,6 +316,22 @@ static const struct stm32_adc_common_regs stm32h7_adc_common_regs = {
-> >>>  	.ccr = STM32H7_ADC_CCR,
-> >>>  	.eoc1_msk = STM32H7_EOC_MST,
-> >>>  	.eoc2_msk = STM32H7_EOC_SLV,
-> >>> +	.has_syscfg = HAS_VBOOSTER,
-> >>> +	.pmcr = STM32H7_SYSCFG_PMCR,
-> >>> +	.booste_msk = STM32H7_SYSCFG_BOOSTE_MASK,
-> >>> +};
-> >>> +
-> >>> +/* STM32MP1 common registers definitions */
-> >>> +static const struct stm32_adc_common_regs stm32mp1_adc_common_regs = {
-> >>> +	.csr = STM32H7_ADC_CSR,
-> >>> +	.ccr = STM32H7_ADC_CCR,
-> >>> +	.eoc1_msk = STM32H7_EOC_MST,
-> >>> +	.eoc2_msk = STM32H7_EOC_SLV,
-> >>> +	.has_syscfg =  HAS_VBOOSTER | HAS_ANASWVDD | HAS_CLEAR_REG,  
-> >>
-> >> Extra space after =  
-> > 
-> > Hi Jonathan,
-> > 
-> > Oops, I'll fix it in v2.
-> >   
-> >>
-> >>  
-> >>> +	.pmcr = STM32MP1_SYSCFG_PMCSETR,
-> >>> +	.pmcc = STM32MP1_SYSCFG_PMCCLRR,
-> >>> +	.booste_msk = STM32H7_SYSCFG_BOOSTE_MASK,
-> >>> +	.anaswvdd_msk = STM32MP1_SYSCFG_ANASWVDD_MASK,
-> >>>  };
-> >>>  
-> >>>  /* ADC common interrupt for all instances */
-> >>> @@ -388,16 +436,145 @@ static void stm32_adc_irq_remove(struct platform_device *pdev,
-> >>>  	}
-> >>>  }
-> >>>  
-> >>> +static int stm32_adc_core_switches_supply_en(struct device *dev)
-> >>> +{
-> >>> +	struct stm32_adc_common *common = dev_get_drvdata(dev);
-> >>> +	struct stm32_adc_priv *priv = to_stm32_adc_priv(common);
-> >>> +	const struct stm32_adc_common_regs *regs = priv->cfg->regs;
-> >>> +	int ret, vdda, vdd = 0;
-> >>> +	u32 mask, clrmask, setmask = 0;
-> >>> +
-> >>> +	/*
-> >>> +	 * On STM32H7 and STM32MP1, the ADC inputs are multiplexed with analog
-> >>> +	 * switches (via PCSEL) which have reduced performances when their
-> >>> +	 * supply is below 2.7V (vdda by default):
-> >>> +	 * - Voltage booster can be used, to get full ADC performances
-> >>> +	 *   (increases power consumption).
-> >>> +	 * - Vdd can be used to supply them, if above 2.7V (STM32MP1 only).
-> >>> +	 *
-> >>> +	 * This is optional, as this is a trade-off between analog performance
-> >>> +	 * and power consumption.
-> >>> +	 */
-> >>> +	if (!regs->has_syscfg || !priv->vdda || !priv->syscfg) {
-> >>> +		dev_dbg(dev, "Not configuring analog switches\n");
-> >>> +		return 0;
-> >>> +	}
-> >>> +
-> >>> +	ret = regulator_enable(priv->vdda);
-> >>> +	if (ret < 0) {
-> >>> +		dev_err(dev, "vdda enable failed %d\n", ret);
-> >>> +		return ret;
-> >>> +	}
-> >>> +
-> >>> +	ret = regulator_get_voltage(priv->vdda);
-> >>> +	if (ret < 0) {
-> >>> +		dev_err(dev, "vdda get voltage failed %d\n", ret);
-> >>> +		goto vdda_dis;
-> >>> +	}
-> >>> +	vdda = ret;
-> >>> +  
-> >> We only need to do the following block if vdaa is too low.  Should probably
-> >> not turn on vdd if there is not chance we are going to use it?  
-> > 
-> > You're right, then I probably need to move the regulator_get_voltage()
-> > call at probe time, to avoid enabling it for nothing at runtime. (e.g.
-> > to figure out it's not going to be used).
-> > In fact, vdd is used also for other things on the platform (I/Os, other
-> > supplies...), and is marked "always-on" in the device tree. But I
-> > understand your point.
-> > 
-> > I'll rework this and send a v2.  
+On 21.06.19 09:07, Anson.Huang@nxp.com wrote:
+> From: Anson Huang <Anson.Huang@nxp.com>
 > 
-> Hi Jonathan,
+> Add i.MX8MM system counter node to enable timer-imx-sysctr
+> broadcast timer driver.
 > 
-> When reworking this part, I figured out the vdda should be described as
-> required supply for the STM32 ADC. So I pushed out a fix series to
-> address this "Add missing vdda-supply to STM32 ADC". I'll resume v2 of
-> this series that has some dependencies on the fix series .
 
-Cool. Given timing  I'm taking fixes and new stuff through the togreg
-branch anyway at the moment so dependencies on fixes are easier than
-normal for the next week or so ;)
 
-Jonathan
+do we need similar additions to imx8mq? If so, I think these would fit
+in here too.
 
-> 
-> Thanks
-> Best Regards,
-> Fabrice
-> 
-> > 
-> > Thanks,
-> > Fabrice
-> >   
-> >>  
-> >>> +	if (priv->vdd && regs->has_syscfg & HAS_ANASWVDD) {
-> >>> +		ret = regulator_enable(priv->vdd);
-> >>> +		if (ret < 0) {
-> >>> +			dev_err(dev, "vdd enable failed %d\n", ret);
-> >>> +			goto vdda_dis;
-> >>> +		}
-> >>> +
-> >>> +		ret = regulator_get_voltage(priv->vdd);
-> >>> +		if (ret < 0) {
-> >>> +			dev_err(dev, "vdd get voltage failed %d\n", ret);
-> >>> +			goto vdd_dis;
-> >>> +		}
-> >>> +		vdd = ret;
-> >>> +	}
-> >>> +
-> >>> +	/*
-> >>> +	 * Recommended settings for ANASWVDD and EN_BOOSTER:
-> >>> +	 * - vdda < 2.7V but vdd > 2.7V: ANASWVDD = 1, EN_BOOSTER = 0 (stm32mp1)
-> >>> +	 * - vdda < 2.7V and vdd < 2.7V: ANASWVDD = 0, EN_BOOSTER = 1
-> >>> +	 * - vdda >= 2.7V:               ANASWVDD = 0, EN_BOOSTER = 0 (default)
-> >>> +	 */
-> >>> +	if (vdda < 2700000) {
-> >>> +		if (vdd > 2700000) {
-> >>> +			dev_dbg(dev, "analog switches supplied by vdd\n");
-> >>> +			setmask = regs->anaswvdd_msk;
-> >>> +			clrmask = regs->booste_msk;
-> >>> +		} else {
-> >>> +			dev_dbg(dev, "Enabling voltage booster\n");
-> >>> +			setmask = regs->booste_msk;
-> >>> +			clrmask = regs->anaswvdd_msk;
-> >>> +		}
-> >>> +	} else {
-> >>> +		dev_dbg(dev, "analog switches supplied by vdda\n");
-> >>> +		clrmask = regs->booste_msk | regs->anaswvdd_msk;
-> >>> +	}
-> >>> +
-> >>> +	mask = regs->booste_msk | regs->anaswvdd_msk;
-> >>> +	if (regs->has_syscfg & HAS_CLEAR_REG) {
-> >>> +		ret = regmap_write(priv->syscfg, regs->pmcc, clrmask);
-> >>> +		if (ret) {
-> >>> +			dev_err(dev, "syscfg clear failed, %d\n", ret);
-> >>> +			goto vdd_dis;
-> >>> +		}
-> >>> +		mask = setmask;
-> >>> +	}
-> >>> +
-> >>> +	ret = regmap_update_bits(priv->syscfg, regs->pmcr, mask, setmask);
-> >>> +	if (ret) {
-> >>> +		dev_err(dev, "syscfg update failed, %d\n", ret);
-> >>> +		goto vdd_dis;
-> >>> +	}
-> >>> +
-> >>> +	/* Booster voltage can take up to 50 us to stabilize */
-> >>> +	if (setmask & regs->booste_msk)
-> >>> +		usleep_range(50, 100);
-> >>> +
-> >>> +	return ret;
-> >>> +
-> >>> +vdd_dis:
-> >>> +	if (priv->vdd && (regs->has_syscfg & HAS_ANASWVDD))
-> >>> +		regulator_disable(priv->vdd);
-> >>> +vdda_dis:
-> >>> +	regulator_disable(priv->vdda);
-> >>> +
-> >>> +	return ret;
-> >>> +}
-> >>> +
-> >>> +static void stm32_adc_core_switches_supply_dis(struct device *dev)
-> >>> +{
-> >>> +	struct stm32_adc_common *common = dev_get_drvdata(dev);
-> >>> +	struct stm32_adc_priv *priv = to_stm32_adc_priv(common);
-> >>> +	const struct stm32_adc_common_regs *regs = priv->cfg->regs;
-> >>> +	u32 mask = regs->booste_msk | regs->anaswvdd_msk;
-> >>> +
-> >>> +	if (!regs->has_syscfg || !priv->vdda || !priv->syscfg)
-> >>> +		return;
-> >>> +
-> >>> +	if (regs->has_syscfg & HAS_CLEAR_REG)
-> >>> +		regmap_write(priv->syscfg, regs->pmcc, mask);
-> >>> +	else
-> >>> +		regmap_update_bits(priv->syscfg, regs->pmcr, mask, 0);
-> >>> +
-> >>> +	if (priv->vdd && (regs->has_syscfg & HAS_ANASWVDD))
-> >>> +		regulator_disable(priv->vdd);
-> >>> +
-> >>> +	regulator_disable(priv->vdda);
-> >>> +}
-> >>> +
-> >>>  static int stm32_adc_core_hw_start(struct device *dev)
-> >>>  {
-> >>>  	struct stm32_adc_common *common = dev_get_drvdata(dev);
-> >>>  	struct stm32_adc_priv *priv = to_stm32_adc_priv(common);
-> >>>  	int ret;
-> >>>  
-> >>> +	ret = stm32_adc_core_switches_supply_en(dev);
-> >>> +	if (ret < 0)
-> >>> +		return ret;
-> >>> +
-> >>>  	ret = regulator_enable(priv->vref);
-> >>>  	if (ret < 0) {
-> >>>  		dev_err(dev, "vref enable failed\n");
-> >>> -		return ret;
-> >>> +		goto err_switches_disable;
-> >>>  	}
-> >>>  
-> >>>  	if (priv->bclk) {
-> >>> @@ -425,6 +602,8 @@ static int stm32_adc_core_hw_start(struct device *dev)
-> >>>  		clk_disable_unprepare(priv->bclk);
-> >>>  err_regulator_disable:
-> >>>  	regulator_disable(priv->vref);
-> >>> +err_switches_disable:
-> >>> +	stm32_adc_core_switches_supply_dis(dev);
-> >>>  
-> >>>  	return ret;
-> >>>  }
-> >>> @@ -441,6 +620,24 @@ static void stm32_adc_core_hw_stop(struct device *dev)
-> >>>  	if (priv->bclk)
-> >>>  		clk_disable_unprepare(priv->bclk);
-> >>>  	regulator_disable(priv->vref);
-> >>> +	stm32_adc_core_switches_supply_dis(dev);
-> >>> +}
-> >>> +
-> >>> +static int stm32_adc_core_syscfg_probe(struct device_node *np,
-> >>> +				       struct stm32_adc_priv *priv)
-> >>> +{
-> >>> +	if (!priv->cfg->regs->has_syscfg)
-> >>> +		return 0;
-> >>> +
-> >>> +	priv->syscfg = syscon_regmap_lookup_by_phandle(np, "st,syscfg");
-> >>> +	if (IS_ERR(priv->syscfg)) {
-> >>> +		/* Optional */
-> >>> +		if (PTR_ERR(priv->syscfg) != -ENODEV)
-> >>> +			return PTR_ERR(priv->syscfg);
-> >>> +		priv->syscfg = NULL;
-> >>> +	}
-> >>> +
-> >>> +	return 0;
-> >>>  }
-> >>>  
-> >>>  static int stm32_adc_probe(struct platform_device *pdev)
-> >>> @@ -475,6 +672,30 @@ static int stm32_adc_probe(struct platform_device *pdev)
-> >>>  		return ret;
-> >>>  	}
-> >>>  
-> >>> +	priv->vdda = devm_regulator_get_optional(&pdev->dev, "vdda");
-> >>> +	if (IS_ERR(priv->vdda)) {
-> >>> +		ret = PTR_ERR(priv->vdda);
-> >>> +		if (ret != -ENODEV) {
-> >>> +			if (ret != -EPROBE_DEFER)
-> >>> +				dev_err(&pdev->dev, "vdda get failed, %d\n",
-> >>> +					ret);
-> >>> +			return ret;
-> >>> +		}
-> >>> +		priv->vdda = NULL;
-> >>> +	}
-> >>> +
-> >>> +	priv->vdd = devm_regulator_get_optional(&pdev->dev, "vdd");
-> >>> +	if (IS_ERR(priv->vdd)) {
-> >>> +		ret = PTR_ERR(priv->vdd);
-> >>> +		if (ret != -ENODEV) {
-> >>> +			if (ret != -EPROBE_DEFER)
-> >>> +				dev_err(&pdev->dev, "vdd get failed, %d\n",
-> >>> +					ret);
-> >>> +			return ret;
-> >>> +		}
-> >>> +		priv->vdd = NULL;
-> >>> +	}
-> >>> +
-> >>>  	priv->aclk = devm_clk_get(&pdev->dev, "adc");
-> >>>  	if (IS_ERR(priv->aclk)) {
-> >>>  		ret = PTR_ERR(priv->aclk);
-> >>> @@ -495,6 +716,13 @@ static int stm32_adc_probe(struct platform_device *pdev)
-> >>>  		priv->bclk = NULL;
-> >>>  	}
-> >>>  
-> >>> +	ret = stm32_adc_core_syscfg_probe(np, priv);
-> >>> +	if (ret) {
-> >>> +		if (ret != -EPROBE_DEFER)
-> >>> +			dev_err(&pdev->dev, "Can't probe syscfg: %d\n", ret);
-> >>> +		return ret;
-> >>> +	}
-> >>> +
-> >>>  	pm_runtime_get_noresume(dev);
-> >>>  	pm_runtime_set_active(dev);
-> >>>  	pm_runtime_set_autosuspend_delay(dev, STM32_ADC_CORE_SLEEP_DELAY_MS);
-> >>> @@ -595,7 +823,7 @@ static const struct stm32_adc_priv_cfg stm32h7_adc_priv_cfg = {
-> >>>  };
-> >>>  
-> >>>  static const struct stm32_adc_priv_cfg stm32mp1_adc_priv_cfg = {
-> >>> -	.regs = &stm32h7_adc_common_regs,
-> >>> +	.regs = &stm32mp1_adc_common_regs,
-> >>>  	.clk_sel = stm32h7_adc_clk_sel,
-> >>>  	.max_clk_rate_hz = 40000000,
-> >>>  };  
-> >>  
+thanks,
+                                martin
 
 
 _______________________________________________
