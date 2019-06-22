@@ -2,60 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4B0DA4F43C
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 22 Jun 2019 09:59:14 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BED644F43F
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 22 Jun 2019 09:59:54 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=GVz62qFRc6VPfm/ZW5Hl+qJ6/EEGvqTOc3uAMsJ2lBI=; b=HXypq2j04EkJ9D
-	kHnTcxoJXZ8cxlVv0wl/bDnTk0UbjajQSScHjjuupu9d7zO92/5eeeMzQDDgY1KHyPnhoivtDIDic
-	RgY08L+ttVMovWM2097brLi7xaOXn2I9yFQAaXwtJ6SpPjt56CV0cRfOZG6P+EKXiMi6J2Jaca/KL
-	2z1GHXrPPVWCsOq8ZeitX64TIfM57xuaDXk/M9JFnKDNbpmmrNzSEb/em5QZXnzF/grzz3e+VtVgI
-	rJGL9bnNa2K0iq8KJdsjshtyEx+cF67o/Bfky58T0L5ZJiRXZN1WWlezCvxlHmQXz+sS677iX+njH
-	JZbSOTHnbfpGkwmLubtw==;
+	List-Owner; bh=/1kVegB1areJ0MrtiIE0j4YUkBPjMxnTiDSNeQHTMqA=; b=DzokjaqI/+/n2k
+	XS1faBe1OpuDeAHM1UrdrNpH41Hn0Pv049nk0XqrdgGSZnoWdt2vdugDo8JkHefubOpXhdVTX32mT
+	7mCUUZjMlsUuDRZJ9rw2T6goe64oDQq7A8yXhSajf4qMBOV3euCRLa+wPpscSLKmmV+pGl8ql1aNS
+	CJnsWV8OdOg2h+h78iiZVYGQIN4jVHCucVb2nMYznv+KQjkd07dTFT9XZqxCSuQ84jNLp7aRK25BS
+	o/LfqZfTvb1G88oWkH1XEoMy3AmhVdMVzEhhy2RkDh6LTBIqOaH2/h47kVZ83Azn04dbE56ZyRIUV
+	CZPssRs6AgS+WTlCDlOg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1heavY-0002fv-AR; Sat, 22 Jun 2019 07:59:12 +0000
-Received: from mail-qt1-x843.google.com ([2607:f8b0:4864:20::843])
+	id 1heawB-00032y-T5; Sat, 22 Jun 2019 07:59:51 +0000
+Received: from mail-qt1-x844.google.com ([2607:f8b0:4864:20::844])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1heavO-0002fJ-53
- for linux-arm-kernel@lists.infradead.org; Sat, 22 Jun 2019 07:59:03 +0000
-Received: by mail-qt1-x843.google.com with SMTP id x2so9424498qtr.0
+ id 1heavz-00031f-Q5
+ for linux-arm-kernel@lists.infradead.org; Sat, 22 Jun 2019 07:59:41 +0000
+Received: by mail-qt1-x844.google.com with SMTP id p15so9398589qtl.3
  for <linux-arm-kernel@lists.infradead.org>;
- Sat, 22 Jun 2019 00:59:01 -0700 (PDT)
+ Sat, 22 Jun 2019 00:59:39 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=jms.id.au; s=google;
  h=mime-version:from:date:message-id:subject:to:cc;
- bh=l6JkMxGCR4TkYnMh8TfPneR47DulikqSuvDG9umnXVI=;
- b=OeGnkvv7y+Ei1gULqYCugFOXLsimmG0XO0QLTsgjHQqhvu46hc3KZiXn2iwsY2zpcq
- WKflQC1BRLeYcJ+LUHpDai9Y2b7nFA+xKT1OzmiNg9FuQm2gL5UwXyAh6eya8DaA7n/c
- obGOyU2qw+xF8uXItSvl31hPY5U1/jdM8bpBA=
+ bh=ElCthtyVkpp3D7OzaN9Wr+2IruvrGmFjxxEU3huFxdM=;
+ b=gnUuPyJvg5zipZFWSvr2EWlhyoeYVQ8S/qBgGbjrC9L8THV4O7CfMaZ9WlWb8NOQmU
+ oThroHu+z04OkjXtRzTXFfyCY4fC4Hfi5fydYFovnnUzyfWmqcUMFTfho7KyNHrNdU6Y
+ Yrb8Ja1J0pGUbcXtmUKz9nB5csl6nv9hDecoI=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:from:date:message-id:subject:to:cc;
- bh=l6JkMxGCR4TkYnMh8TfPneR47DulikqSuvDG9umnXVI=;
- b=aY7ktgtM0X+qLAHV60P3+wMoTxpGB4eE7b9RsOOf9dKowA8NwuNOJhFkiE+F33cMZQ
- hpecvvb++FMG/qEUPVocVQhDRHK5PCGVpeuG/d70A/vqTnnQBdMgpF87e1CAVb7G9GCt
- 0qi/Sw50yTIivRX8GUTxahLdK+giAEaVodqWEySdFy/spNaBvbAlM1o2EHtV+0LSNsH8
- NBOmjlksqd+C5TESeELMYsdK7fwA+pRb7IlGLFLsNa8hJjs7S+baACpZ82St20ehX6q+
- hLt3C/JrtRlUMl00l8Mr0xnEyWu5djNYFdN1w3kF6E0tTeMDOXTOSV1WiPuUW0Esu8M7
- SNFQ==
-X-Gm-Message-State: APjAAAX2L3Oh8rCG/egkcCm0a00I839CuLLkEvvXs9KOWLk+FjItirn7
- qHY/mFJjRyrLUeNLaiDMu7R/fdZYVMjMD3/rXG0=
-X-Google-Smtp-Source: APXvYqwe++A1xs7ZZPPxAlWbW4nT5c67yseQmkyeJUk2auF7XiQNd32xDW1+ryWZ+Jb9yUeztgGVmIN6hcvMI5JnFBE=
-X-Received: by 2002:a0c:ae31:: with SMTP id y46mr48970818qvc.172.1561190337785; 
- Sat, 22 Jun 2019 00:58:57 -0700 (PDT)
+ bh=ElCthtyVkpp3D7OzaN9Wr+2IruvrGmFjxxEU3huFxdM=;
+ b=EpJAa0t5S0+BH1XiFzY2nJOoOdT3QZwVtjveW88mbpuPY8aaqNtiju3uSRE7T1btZU
+ ydXvSCGtbPUGzhmxTS9hqptEyNl8rHj8h4ZHiyLxRClASHNvgq+jSRzQJaXoP8+NK8gK
+ q9Y7rogiwgXcDnja6KO2jw/IWIaI6v/jhE84evD8i6QQUaV9jjkwe3gZIG2cNGMmSB4K
+ 0sEiQgBkHTXxAdkq96m2PR6ub/ahrfW1umuTmcVRAPaMJ6yV0Ys0C82/tUcUU7IYlWlG
+ hh733SRRi8FdbmIC3WLlSgMJlTKdgbBoSGFTbmno6jtDV4pfoK7w5ixqaRgyYmR5kK5a
+ H63w==
+X-Gm-Message-State: APjAAAUtgBNkbpryJaEfG4hIQF8Av8mIRRm+kUeESvSH41/KpOcDIk/7
+ MqHl+8qIzHs/Z/LkQneBUwznmarrv5HesVIL2wRCFgOm
+X-Google-Smtp-Source: APXvYqx/IwkmIiHtRDF2BSfmgwSk1awBdS8Qs9gCV6RU/5T4Ce3sfCirZpzBCSUzB+W61jJcGQdkM1SqKErfGs8fKzM=
+X-Received: by 2002:ac8:264a:: with SMTP id v10mr88767490qtv.255.1561190378628; 
+ Sat, 22 Jun 2019 00:59:38 -0700 (PDT)
 MIME-Version: 1.0
 From: Joel Stanley <joel@jms.id.au>
-Date: Sat, 22 Jun 2019 07:58:46 +0000
-Message-ID: <CACPK8XfL-U-BeynGQNBp5rPiv1gzD=7DVzyvrgtoL3njU1Kr_A@mail.gmail.com>
-Subject: [GIT PULL] ARM: aspeed: defconfig changes for 5.3
+Date: Sat, 22 Jun 2019 07:59:26 +0000
+Message-ID: <CACPK8Xdpd3Q7dexOEZqt9rP0KJz1XeRwXe6A1k1azm7eDhRm=g@mail.gmail.com>
+Subject: [GIT PULL] ARM: aspeed: soc changes for 5.3
 To: arm <arm@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190622_005902_237174_1499E7CC 
-X-CRM114-Status: UNSURE (   9.52  )
+X-CRM114-CacheID: sfid-20190622_005939_841615_60225362 
+X-CRM114-Status: UNSURE (   8.55  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.4 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -63,7 +63,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:843 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:844 listed in]
  [list.dnswl.org]
  0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
  mail domains are different
@@ -98,8 +98,8 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 Hi ARM maintainers,
 
-Here are some defconfig updates for the ASPEED machines. I haven't
-sent one for a while, so there's a nice collection of drivers to add.
+Here is a small soc change and a fix for that same change. This is the
+first time I've had an aspeed soc pull request, so here we go.
 
 The following changes since commit a188339ca5a396acc588e5851ed7e19f66b0ebd9:
 
@@ -108,27 +108,26 @@ The following changes since commit a188339ca5a396acc588e5851ed7e19f66b0ebd9:
 are available in the Git repository at:
 
   git://git.kernel.org/pub/scm/linux/kernel/git/joel/aspeed.git \
-    tags/aspeed-5.3-defconfig
+    tags/aspeed-5.3-soc
 
-for you to fetch changes up to 2d8bf3404bb0e65dffb7326f7fb6e96fa3cee418:
+for you to fetch changes up to c8a3b9b50d8331528fc8d03aadd1fec3d60362d7:
 
-  ARM: configs: multi_v5: Add more ASPEED devices (2019-06-22 17:12:17 +0930)
-
-----------------------------------------------------------------
-ASPEED device tree updates for 5.3
-
-Add new drivers to the ASPEED G4 and G5 defconfigs, and to the armv5
-multi defconfig.
+  soc: aspeed: lpc-ctrl: Fix probe error handling (2019-06-22 16:56:35 +0930)
 
 ----------------------------------------------------------------
-Joel Stanley (2):
-      ARM: configs: aspeed: Add new drivers
-      ARM: configs: multi_v5: Add more ASPEED devices
+ASPEED SoC updates for 5.3
 
- arch/arm/configs/aspeed_g4_defconfig | 10 ++++++++--
- arch/arm/configs/aspeed_g5_defconfig | 14 ++++++++++++--
- arch/arm/configs/multi_v5_defconfig  |  8 ++++++++
- 3 files changed, 28 insertions(+), 4 deletions(-)
+LPC control driver changes and a fix.
+
+----------------------------------------------------------------
+Joel Stanley (1):
+      soc: aspeed: lpc-ctrl: Fix probe error handling
+
+Vijay Khemka (1):
+      soc: aspeed: lpc-ctrl: make parameter optional
+
+ drivers/soc/aspeed/aspeed-lpc-ctrl.c | 61 ++++++++++++++++++++++--------------
+ 1 file changed, 38 insertions(+), 23 deletions(-)
 
 _______________________________________________
 linux-arm-kernel mailing list
