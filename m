@@ -2,66 +2,87 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 275D64F343
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 22 Jun 2019 04:43:46 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 573D54F369
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 22 Jun 2019 05:41:31 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=uLCfrIC7qoR/GIyhPdGBFmUQXYe2xasDq4PARFnBYJI=; b=OkJ0CfH4Fn3GM3
-	JYibIkgyW4o4Mqh4GqAyRq3j+vbrcHowP/XeofjMQ8XwgUX1xMyAmC+NiZVwYlxfBxJOiLU3BT1i3
-	kPp6D8xoEb46zj7F6WsRP0Kds/dik8Rlr+MUaarzWa/SuRYL/p4fbe/qYqmCzXPIuwyj4uUQWSziT
-	uUfw3w7bKMa8InGsMOqj4Db6BUPnXsHmJrcd8yAivuZap6yEv5d7zov9uJs82Sh7ain2YG/LG1kjF
-	Oo4E+F8DKPAfG2Jz9F/A98SXi7PtPBuwdgIzy2+GL1zUfVn2C3GZVs/txWGTg5YoViqmHjTUf51rM
-	R/ZJefdYCjz7h7SNSPrw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=hS10bZANps5J1Ymj31CKHzZi4MXZiAvyVORzXTDMxD0=; b=cmdTMWtpMTxGfh
+	VwxjlF9I75o0Tlh7PnSTKjujIKR1/bt8Cgd2zP2IpSSTNTQGAg0etWfWbTHBYC58ZkEiQCcnwT11T
+	Tjjeh7xUWt50pIQf+Y8dCtXee3lhOpNUM+V6qG6GV2uE2cQm++Wy3JLo6RTrLV9TS6Aa6Pc0ZNuvb
+	NKSBFMgdKDOTptIlcLOCj/nBYuGUhWFVAl6Ao1gcSFytvwWgrEMgpoNz/LaUL6zUYiDzM9FwLjWGD
+	NFAGJD/wOQ7bSXRAwtDMu7C4PMmftUdBaEwmbMfR+LZdKZp348kbdx30ivhuvR1b0vMLumpNXsSvN
+	slJpSaN3KdGIUMer5kGQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1heW0G-0000ah-64; Sat, 22 Jun 2019 02:43:44 +0000
-Received: from mailgw02.mediatek.com ([216.200.240.185])
+	id 1heWu6-0001ng-FU; Sat, 22 Jun 2019 03:41:26 +0000
+Received: from mail-pf1-x442.google.com ([2607:f8b0:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1heVzW-0000Fv-O8; Sat, 22 Jun 2019 02:43:00 +0000
-X-UUID: 95c82c90523d4560b7501de9037064aa-20190621
-X-UUID: 95c82c90523d4560b7501de9037064aa-20190621
-Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw02.mediatek.com
- (envelope-from <yong.wu@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 2096819189; Fri, 21 Jun 2019 18:42:52 -0800
-Received: from MTKMBS31DR.mediatek.inc (172.27.6.102) by
- MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Fri, 21 Jun 2019 19:42:51 -0700
-Received: from MTKCAS32.mediatek.inc (172.27.4.184) by MTKMBS31DR.mediatek.inc
- (172.27.6.102) with Microsoft SMTP Server (TLS) id 15.0.1395.4;
- Sat, 22 Jun 2019 10:42:48 +0800
-Received: from [10.17.3.153] (172.27.4.253) by MTKCAS32.mediatek.inc
- (172.27.4.170) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Sat, 22 Jun 2019 10:42:47 +0800
-Message-ID: <1561171367.4850.8.camel@mhfsdcap03>
-Subject: Re: [PATCH v2 02/12] iommu/mediatek: Add probe_defer for smi-larb
-From: Yong Wu <yong.wu@mediatek.com>
-To: Matthias Brugger <matthias.bgg@gmail.com>
-Date: Sat, 22 Jun 2019 10:42:47 +0800
-In-Reply-To: <a11fa818-cf62-cc24-2c41-4688fda5a88f@gmail.com>
-References: <1560171313-28299-1-git-send-email-yong.wu@mediatek.com>
- <1560171313-28299-3-git-send-email-yong.wu@mediatek.com>
- <a11fa818-cf62-cc24-2c41-4688fda5a88f@gmail.com>
-X-Mailer: Evolution 3.10.4-0ubuntu2 
+ id 1heWtu-0001lF-1C
+ for linux-arm-kernel@lists.infradead.org; Sat, 22 Jun 2019 03:41:18 +0000
+Received: by mail-pf1-x442.google.com with SMTP id 81so4506380pfy.13
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 21 Jun 2019 20:41:11 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=GbPgR1/hx/sADCMq1nG2N2yoZQYOu26NTJrjoG7x5xA=;
+ b=Zmu3mEblG9DO62WX5N1m2VZeTpFPKI2jgrIhgPwPBE8rRFVmDo8DC3yfbw6MKAkpn2
+ QK+/2+WdoWpH7KbIdh2MaZFoj/PgWlt//6JHJniNyGLTaUaUm9YBE3w87nd1tpmPH+7M
+ gyr210lpu+qPBP9Wbc6uIa2I4m4M/QBeVwIhE=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=GbPgR1/hx/sADCMq1nG2N2yoZQYOu26NTJrjoG7x5xA=;
+ b=e1GlgC8lhMz6g2Hh+//0sbkoaJ35VJ1EJkGlNGFUvUdPXxJWlbFzXD8kvC7pLJ6KTh
+ fmLIpa8eRZ3oW3fYTYi+hjYWT6Zp1EVqK2828tL5qHg8FHhcOm+pWadm+qNKdjRNtN0g
+ f7snqHcvOfiw7uvN3zrjAAchEgNoW1TVKLT40ONahsfaFZ8CaSLWsakJRz4+nMj9KF1b
+ 5tTdxW+OyFt0Vp4LH7YO2WfRRMg2nG8bNekbxrlp0efXsqkZAMhZuYRqXTSYXae5Deee
+ GYwq1Zpyihvu3TfuekwTtW9h70eSdK15ldEAgyzgKVE0inOWYwyQ6x6bqxRe8ZQ371Gy
+ fynQ==
+X-Gm-Message-State: APjAAAXEBZ78datcKzAqf3UY0pz39oVEjCNn7FhCDM6dcCLM8yiqHoh0
+ UhnGIZ734/9n07X/Bi1V1TJkLA==
+X-Google-Smtp-Source: APXvYqyyqTs+2ZoGG0EdVdaCSlWo+2N8luEZi/UZqbDEHKFswtQZPVx6FuiDYjT4HRX+RhljHv8nHA==
+X-Received: by 2002:a63:c442:: with SMTP id m2mr21570928pgg.277.1561174870871; 
+ Fri, 21 Jun 2019 20:41:10 -0700 (PDT)
+Received: from exogeni.mtv.corp.google.com
+ ([2620:15c:202:1:5be8:f2a6:fd7b:7459])
+ by smtp.gmail.com with ESMTPSA id u128sm4756688pfu.26.2019.06.21.20.41.09
+ (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
+ Fri, 21 Jun 2019 20:41:10 -0700 (PDT)
+From: Derek Basehore <dbasehore@chromium.org>
+To: linux-kernel@vger.kernel.org
+Subject: [PATCH v3 0/4] Panel rotation patches
+Date: Fri, 21 Jun 2019 20:41:01 -0700
+Message-Id: <20190622034105.188454-1-dbasehore@chromium.org>
+X-Mailer: git-send-email 2.22.0.410.gd8fdbe21b5-goog
 MIME-Version: 1.0
-X-TM-SNTS-SMTP: 62D4D809DF879D30713C1D085668025D905896208B75832BE651A5243713B1D32000:8
-X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190621_194258_803846_9E520016 
-X-CRM114-Status: GOOD (  19.58  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190621_204115_674681_D2F40C59 
+X-CRM114-Status: UNSURE (   8.84  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:442 listed in]
+ [list.dnswl.org]
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -73,80 +94,53 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: youlin.pei@mediatek.com, devicetree@vger.kernel.org,
- Nicolas Boichat <drinkcat@chromium.org>, srv_heupstream@mediatek.com,
- Joerg Roedel <joro@8bytes.org>, Will Deacon <will.deacon@arm.com>,
- linux-kernel@vger.kernel.org, Evan Green <evgreen@chromium.org>, Tomasz
- Figa <tfiga@google.com>, iommu@lists.linux-foundation.org,
- Rob Herring <robh+dt@kernel.org>, linux-mediatek@lists.infradead.org,
- yingjoe.chen@mediatek.com, anan.sun@mediatek.com,
- Robin Murphy <robin.murphy@arm.com>, linux-arm-kernel@lists.infradead.org
+Cc: Derek Basehore <dbasehore@chromium.org>,
+ Philipp Zabel <p.zabel@pengutronix.de>,
+ Maxime Ripard <maxime.ripard@bootlin.com>, Sam Ravnborg <sam@ravnborg.org>,
+ intel-gfx@lists.freedesktop.org,
+ Joonas Lahtinen <joonas.lahtinen@linux.intel.com>,
+ Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
+ Jani Nikula <jani.nikula@linux.intel.com>, David Airlie <airlied@linux.ie>,
+ Thierry Reding <thierry.reding@gmail.com>,
+ Matthias Brugger <matthias.bgg@gmail.com>, dri-devel@lists.freedesktop.org,
+ Daniel Vetter <daniel@ffwll.ch>, Rodrigo Vivi <rodrigo.vivi@intel.com>,
+ CK Hu <ck.hu@mediatek.com>, linux-mediatek@lists.infradead.org,
+ Sean Paul <sean@poorly.run>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+This adds the plumbing for reading panel rotation from the devicetree
+and sets up adding a panel property for the panel orientation on
+Mediatek SoCs when a rotation is present.
 
-On Wed, 2019-06-19 at 15:52 +0200, Matthias Brugger wrote:
-> 
-> On 10/06/2019 14:55, Yong Wu wrote:
-> > The iommu consumer should use device_link to connect with the
-> > smi-larb(supplier). then the smi-larb should run before the iommu
-> > consumer. Here we delay the iommu driver until the smi driver is
-> > ready, then all the iommu consumer always is after the smi driver.
-> > 
-> > When there is no this patch, if some consumer drivers run before
-> > smi-larb, the supplier link_status is DL_DEV_NO_DRIVER(0) in the
-> > device_link_add, then device_links_driver_bound will use WARN_ON
-> > to complain that the link_status of supplier is not right.
-> > 
-> > This is a preparing patch for adding device_link.
-> > 
-> > Signed-off-by: Yong Wu <yong.wu@mediatek.com>
-> > ---
-> >  drivers/iommu/mtk_iommu.c    | 2 +-
-> >  drivers/iommu/mtk_iommu_v1.c | 2 +-
-> >  2 files changed, 2 insertions(+), 2 deletions(-)
-> > 
-> > diff --git a/drivers/iommu/mtk_iommu.c b/drivers/iommu/mtk_iommu.c
-> > index 6fe3369..f7599d8 100644
-> > --- a/drivers/iommu/mtk_iommu.c
-> > +++ b/drivers/iommu/mtk_iommu.c
-> > @@ -664,7 +664,7 @@ static int mtk_iommu_probe(struct platform_device *pdev)
-> >  			id = i;
-> >  
-> >  		plarbdev = of_find_device_by_node(larbnode);
-> > -		if (!plarbdev) {
-> > +		if (!plarbdev || !plarbdev->dev.driver) {
-> 
-> can't we use:
-> device_lock()
-> device_is_bound(struct device *dev)
-> device_unlock()
+v3 changes:
+-changed from attach/detach callbacks to directly setting fixed panel
+ values in drm_panel_attach
+-removed update to Documentation
+-added separate function for quirked panel orientation property init
 
-A new API for me. Thanks the hint. I have tried. it is ok.
+v2 changes:
+fixed build errors in i915
 
+Derek Basehore (4):
+  drm/panel: Add helper for reading DT rotation
+  drm/panel: set display info in panel attach
+  drm/connector: Split out orientation quirk detection
+  drm/mtk: add panel orientation property
 
-> 
-> >  			of_node_put(larbnode);
-> >  			return -EPROBE_DEFER;
-> >  		}
-> > diff --git a/drivers/iommu/mtk_iommu_v1.c b/drivers/iommu/mtk_iommu_v1.c
-> > index 0b0908c..c43c4a0 100644
-> > --- a/drivers/iommu/mtk_iommu_v1.c
-> > +++ b/drivers/iommu/mtk_iommu_v1.c
-> > @@ -604,7 +604,7 @@ static int mtk_iommu_probe(struct platform_device *pdev)
-> >  			plarbdev = of_platform_device_create(
-> >  						larb_spec.np, NULL,
-> >  						platform_bus_type.dev_root);
-> > -			if (!plarbdev) {
-> > +			if (!plarbdev || !plarbdev->dev.driver) {
-> >  				of_node_put(larb_spec.np);
-> >  				return -EPROBE_DEFER;
-> >  			}
-> > 
+ drivers/gpu/drm/drm_connector.c    | 45 ++++++++++++++-----
+ drivers/gpu/drm/drm_panel.c        | 70 ++++++++++++++++++++++++++++++
+ drivers/gpu/drm/i915/intel_dp.c    |  4 +-
+ drivers/gpu/drm/i915/vlv_dsi.c     |  5 +--
+ drivers/gpu/drm/mediatek/mtk_dsi.c |  8 ++++
+ include/drm/drm_connector.h        |  2 +
+ include/drm/drm_panel.h            | 21 +++++++++
+ 7 files changed, 138 insertions(+), 17 deletions(-)
 
-
+-- 
+2.22.0.410.gd8fdbe21b5-goog
 
 
 _______________________________________________
