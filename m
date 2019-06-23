@@ -2,86 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 421D14FD00
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 23 Jun 2019 18:46:37 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A6E844FD6A
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 23 Jun 2019 19:51:56 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=l9S4FCU21DACti9jgYQuCP8qRKps9BncpHtEQ8pMqv4=; b=IHOs+TNnP/IwpAH9PPtnnNbRuO
-	mEU8FIYWTb41CkXYuUqcHGmFqAXnJH77KjvvYKZtcpBUCGnbhxMspM1Tnw1sLhefJca8nEGKoKgCY
-	Rplti9NynIaC6KrAfD+SCnrIzvGCKVqDlpNPXheifg5ltmhGwRS96zx4Jx1ntzmlSKglu3nUM1wkI
-	OFMdI5Y+q+wWfbflFZeLs+FEmyIFtWY/Rozh0fsxhPhmRR0FPm/s2LaiFHDzd7bWFoogEq2RRcgsg
-	oZbbMv2JtO7DJRgzxHc3zmAboOOMfeN4Vi1yvu2oNbVuRaQIQ6oEOHDaPOj7f8WqYTqriIm9XznGx
-	7GLwEedA==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:Message-ID:
+	In-Reply-To:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=65DScDHk2k9eYN9Q6S+ymfQVpNwzPXYEmESelMz5hd8=; b=RjotU1u9mW+Sca
+	+krDN8+zm/lXRRw8wAPCHqX9xjzP9FSDD65hExZIZN3/85j/ap75ys5t2X/f10yp4LIByxRJO5BP9
+	qy0HzO+FGP/W+DGgk6CwImOkLCDHokjjENXZ+XTKWGxlDakDpKTi4sioScrMNsIDtuUK59IfMxPQX
+	gSL5HfrpxLudX/y43CEllF0DnJua8+r2g/g8qT7gJqJBcdZ9Xa6T/yd2n6fODe/kAp26dy0cKIoaT
+	WM2s7XGwLGv9g1dXpHvNgO7H+WJZGKd4geMygMnr+PkNWekdhGKu8v4BKr3a2+/PKbljbF9ihSOKs
+	ms+YCArX5xYubwCznScQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hf5dT-0006eu-Gl; Sun, 23 Jun 2019 16:46:35 +0000
-Received: from mail-pg1-x541.google.com ([2607:f8b0:4864:20::541])
+	id 1hf6ed-0000Yx-89; Sun, 23 Jun 2019 17:51:51 +0000
+Received: from mail-io1-xd44.google.com ([2607:f8b0:4864:20::d44])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hf5Za-0002mC-OU
- for linux-arm-kernel@lists.infradead.org; Sun, 23 Jun 2019 16:42:36 +0000
-Received: by mail-pg1-x541.google.com with SMTP id z19so2825428pgl.12
+ id 1hf6eO-0000YF-EO
+ for linux-arm-kernel@lists.infradead.org; Sun, 23 Jun 2019 17:51:37 +0000
+Received: by mail-io1-xd44.google.com with SMTP id i10so123695iol.13
  for <linux-arm-kernel@lists.infradead.org>;
- Sun, 23 Jun 2019 09:42:34 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=Wt7RMWJEU5nf2APAW5wITney1vGRi8ExyzwA2ly5tbM=;
- b=DO56xL8GNC3pRjMbczek/js2aH+Jr00XhhADU2CusMADs20FUQ6om0QfFNRcH7bIok
- utY8iKwz2gs/7WHR18tlrl+XRM9KtdS9MZyCglgz5ZWErisPeGVp+BPEcw81Ezw1KyjP
- +I7gFX+cYEvLyjmwJRHb04L6mRZ4LjmdVX+GURXCGE4Ky2HFiZkXGwRma8nQVRg7xzb1
- OpjjtLiiCN+Zc/sg6Vk26H04UbcX2a5L9ZDyAyFJkne9LJuc3SjKpjccxQ4NfVaSg62X
- sX8QGDvadx5+1F6N6uKmqbh/oIFj9SbUUmdqZyIvf9VMIoiCKn8bIS68Io+mfdDuE05u
- 4YKQ==
+ Sun, 23 Jun 2019 10:51:35 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sifive.com; s=google;
+ h=date:from:to:cc:subject:in-reply-to:message-id:references
+ :user-agent:mime-version;
+ bh=Q2J+zKT6qsK6pe1jDDGYOH9t9wEmd7xRD0oxX/ZUOXQ=;
+ b=mvMMAei/5azOZcypBaEq8btNPNLpZxE8KXSkooN06cOew1QavQgeymrVjqWBjat1GL
+ uzBIDawPiu/bbiNJmLhZPmISgjP9aSiopTaL/7FR1APjAYczi+W0RvE9jR1WzBLBerqU
+ 7u5n19EJbrps00jQxZD4b5DiKjfAR2j6nJ3QDQUWgjjIP4uU7Rl5uAh4S4a2XlFtPU/d
+ Q/Hnk1VimSW17bTId6rZHzDJiIQT2NBzvQefxhxRpAncjpMwQ7wUhc12FxoK2tKIdDcx
+ XjQBxcDItwoOpcj78IDtHiU5jixCisA0Fsm4m9M9YUFLtXmouM0VW0sBz9+81nwGIiVL
+ jisg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references;
- bh=Wt7RMWJEU5nf2APAW5wITney1vGRi8ExyzwA2ly5tbM=;
- b=L51O/MKIA3P0KBq22DMCRaQRLksdWce3+Y/IrETZ7S0VU4O0diAZtTjWYpRX4o+h/y
- Yfhu/4nAS+/fpcl7nAGhGYiCPnD6HLfE6tHgluWPUiXpzeDw6gMTxOI1vK8UtrKKPmxy
- m76G2y9ixoNh9+O7QU3S122St9kZuZxmAvjxkLcdhRHdi4WofeEUOXdZvzJfpyCCy3MY
- 0S/KPl1Wv4qVsJEL/JvhAEqTl0MhiQWcANCNheP5jFiNdsqzRZGV/nP8XKEbh3VciqwG
- /THa9IJFSODd4MkPkS5xJ2MqTEUmPxFysYumw+sl/ZhR+45IcXonMWrNiZRwzCVWHWOw
- FyMA==
-X-Gm-Message-State: APjAAAV47xBAknRSJaKFro4Q0N4aqTSnSNeogdINhpXhovXDswnEyGV1
- 9+fReQG94HjDbrJhpEtzgiM=
-X-Google-Smtp-Source: APXvYqyPdz3cE/WXdIcDs7kmAR8F/niCfqMamQH54dQcogysOpQv1BP/blKrSSByCMUg+zO2djgwVA==
-X-Received: by 2002:a17:90a:7f02:: with SMTP id
- k2mr19642846pjl.78.1561308154262; 
- Sun, 23 Jun 2019 09:42:34 -0700 (PDT)
-Received: from localhost (68.168.130.77.16clouds.com. [68.168.130.77])
- by smtp.gmail.com with ESMTPSA id y17sm4923619pfe.148.2019.06.23.09.42.33
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Sun, 23 Jun 2019 09:42:33 -0700 (PDT)
-From: Yangtao Li <tiny.windzz@gmail.com>
-To: rui.zhang@intel.com, edubezval@gmail.com, daniel.lezcano@linaro.org,
- robh+dt@kernel.org, mark.rutland@arm.com, maxime.ripard@bootlin.com,
- wens@csie.org, davem@davemloft.net, gregkh@linuxfoundation.org,
- mchehab+samsung@kernel.org, linus.walleij@linaro.org,
- nicolas.ferre@microchip.com, paulmck@linux.ibm.com
-Subject: [PATCH v4 11/11] thermal: sun8i: add thermal driver for h3
-Date: Sun, 23 Jun 2019 12:42:06 -0400
-Message-Id: <20190623164206.7467-12-tiny.windzz@gmail.com>
-X-Mailer: git-send-email 2.17.0
-In-Reply-To: <20190623164206.7467-1-tiny.windzz@gmail.com>
-References: <20190623164206.7467-1-tiny.windzz@gmail.com>
+ h=x-gm-message-state:date:from:to:cc:subject:in-reply-to:message-id
+ :references:user-agent:mime-version;
+ bh=Q2J+zKT6qsK6pe1jDDGYOH9t9wEmd7xRD0oxX/ZUOXQ=;
+ b=pMbuhLOgPU5k/GqNBwNbJRiV1Xj7qNyrLeOLGSMFSwFgaLPFNfIzMbQxsha4VA64Vo
+ U0m9i0xLKvZH+Qo1Ew7YAQV0FIGpin1LskJwCdjt5R3AzSq3+XZ5OC3VNgmMoqwRbtbq
+ SNAx6mwVNOwCLtD8ANBO6rcuapbF/6U7c5STbfnhQCnUpMBsUoCHc8oO5zlN0pH+JWSM
+ ik06+0RbdaVHCxwc5W7ahJFLnb1lPZCfml62+nXa72nG8cmf0RYqYYyLx5b4qLNbkOER
+ bdSPy5pCcxL356Na0hWpeixIqNG1rvxlxu26CsRs76D4FJh/GkWP0DcqzhtylidG8j4U
+ 11pQ==
+X-Gm-Message-State: APjAAAVjclcJ7vQpiG4YYA6JJOBISNSasjNyg1jV5x2wTeSSG15fdaFh
+ 5ZTFavYeeCNexXjsAnF3OoCR7w==
+X-Google-Smtp-Source: APXvYqzhFIic7VRKdOafvYSegTmj3HQpbIxq+GXv4K4JVmIbUVqc3WLm1Nzru7qiZWB7KESBlTOu5w==
+X-Received: by 2002:a02:ce52:: with SMTP id y18mr19504458jar.78.1561312294952; 
+ Sun, 23 Jun 2019 10:51:34 -0700 (PDT)
+Received: from localhost (c-73-95-159-87.hsd1.co.comcast.net. [73.95.159.87])
+ by smtp.gmail.com with ESMTPSA id
+ r5sm7607520iom.42.2019.06.23.10.51.34
+ (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
+ Sun, 23 Jun 2019 10:51:34 -0700 (PDT)
+Date: Sun, 23 Jun 2019 10:51:33 -0700 (PDT)
+From: Paul Walmsley <paul.walmsley@sifive.com>
+X-X-Sender: paulw@viisi.sifive.com
+To: Atish Patra <Atish.Patra@wdc.com>, linux@armlinux.org.uk
+Subject: Re: [PATCH v7 3/7] cpu-topology: Move cpu topology code to common
+ code.
+In-Reply-To: <91559562f2958fa904b53e621e596d6216efa9fb.camel@wdc.com>
+Message-ID: <alpine.DEB.2.21.9999.1906231045280.13854@viisi.sifive.com>
+References: <20190617185920.29581-1-atish.patra@wdc.com>
+ <20190617185920.29581-4-atish.patra@wdc.com>
+ <20190619173801.GB20916@kroah.com>
+ <91559562f2958fa904b53e621e596d6216efa9fb.camel@wdc.com>
+User-Agent: Alpine 2.21.9999 (DEB 301 2018-08-15)
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190623_094235_349924_67BB4D5B 
-X-CRM114-Status: GOOD (  14.48  )
+X-CRM114-CacheID: sfid-20190623_105136_549979_C81957E9 
+X-CRM114-Status: GOOD (  13.15  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:541 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:d44 listed in]
  [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (tiny.windzz[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -102,150 +102,62 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Yangtao Li <tiny.windzz@gmail.com>, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-pm@vger.kernel.org
-MIME-Version: 1.0
+Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
+ "rafael@kernel.org" <rafael@kernel.org>,
+ "peterz@infradead.org" <peterz@infradead.org>,
+ "catalin.marinas@arm.com" <catalin.marinas@arm.com>,
+ "linus.walleij@linaro.org" <linus.walleij@linaro.org>,
+ "palmer@sifive.com" <palmer@sifive.com>,
+ "will.deacon@arm.com" <will.deacon@arm.com>,
+ "rfontana@redhat.com" <rfontana@redhat.com>,
+ "mchehab+samsung@kernel.org" <mchehab+samsung@kernel.org>,
+ "linux-riscv@lists.infradead.org" <linux-riscv@lists.infradead.org>,
+ "morten.rasmussen@arm.com" <morten.rasmussen@arm.com>,
+ "jhugo@codeaurora.org" <jhugo@codeaurora.org>,
+ "anup@brainfault.org" <anup@brainfault.org>,
+ "linux@armlinux.org.uk" <linux@armlinux.org.uk>,
+ "mingo@kernel.org" <mingo@kernel.org>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ "aou@eecs.berkeley.edu" <aou@eecs.berkeley.edu>,
+ "robh+dt@kernel.org" <robh+dt@kernel.org>,
+ "Jonathan.Cameron@huawei.com" <Jonathan.Cameron@huawei.com>,
+ "tglx@linutronix.de" <tglx@linutronix.de>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ "gregkh@linuxfoundation.org" <gregkh@linuxfoundation.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "ottosabart@seberm.com" <ottosabart@seberm.com>,
+ "sudeep.holla@arm.com" <sudeep.holla@arm.com>,
+ "davem@davemloft.net" <davem@davemloft.net>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This patch adds the support for allwinner h3 thermal sensor.
+Hi Atish, Russell,
 
-Signed-off-by: Yangtao Li <tiny.windzz@gmail.com>
----
- drivers/thermal/sun8i_thermal.c | 72 +++++++++++++++++++++++++++++++++
- 1 file changed, 72 insertions(+)
+On Fri, 21 Jun 2019, Atish Patra wrote:
 
-diff --git a/drivers/thermal/sun8i_thermal.c b/drivers/thermal/sun8i_thermal.c
-index 260b24340f5b..c8ee291f3b17 100644
---- a/drivers/thermal/sun8i_thermal.c
-+++ b/drivers/thermal/sun8i_thermal.c
-@@ -27,6 +27,14 @@
- #define TEMP_TO_REG				672
- #define CALIBRATE_DEFAULT			0x800
- 
-+#define SUN8I_THS_CTRL0				0x00
-+#define SUN8I_THS_CTRL2				0x40
-+#define SUN8I_THS_IC				0x44
-+#define SUN8I_THS_IS				0x48
-+#define SUN8I_THS_MFC				0x70
-+#define SUN8I_THS_TEMP_CALIB			0x74
-+#define SUN8I_THS_TEMP_DATA			0x80
-+
- #define SUN50I_THS_CTRL0			0x00
- #define SUN50I_H6_THS_ENABLE			0x04
- #define SUN50I_H6_THS_PC			0x08
-@@ -36,6 +44,9 @@
- #define SUN50I_H6_THS_TEMP_CALIB		0xa0
- #define SUN50I_H6_THS_TEMP_DATA			0xc0
- 
-+#define SUN8I_THS_CTRL0_T_ACQ0(x)		(GENMASK(15, 0) & (x))
-+#define SUN8I_THS_CTRL2_T_ACQ1(x)		((GENMASK(15, 0) & (x)) << 16)
-+
- #define SUN50I_THS_CTRL0_T_ACQ(x)		((GENMASK(15, 0) & (x)) << 16)
- #define SUN50I_THS_FILTER_EN			BIT(2)
- #define SUN50I_THS_FILTER_TYPE(x)		(GENMASK(1, 0) & (x))
-@@ -121,6 +132,21 @@ static const struct regmap_config config = {
- 	.fast_io = true,
- };
- 
-+static int sun8i_h3_irq_ack(struct ths_device *tmdev)
-+{
-+	int state, ret = 0;
-+
-+	regmap_read(tmdev->regmap, SUN8I_THS_IS, &state);
-+
-+	if (state & BIT(8)) {
-+		regmap_write(tmdev->regmap, SUN8I_THS_IS,
-+			     BIT(8));
-+		ret |= BIT(1);
-+	}
-+
-+	return ret;
-+}
-+
- static int sun50i_h6_irq_ack(struct ths_device *tmdev)
- {
- 	int i, state, ret = 0;
-@@ -154,6 +180,14 @@ static irqreturn_t sun8i_irq_thread(int irq, void *data)
- 	return IRQ_HANDLED;
- }
- 
-+static int sun8i_h3_ths_calibrate(struct ths_device *tmdev,
-+			       u16 *caldata, int callen)
-+{
-+	regmap_write(tmdev->regmap, SUN8I_THS_TEMP_CALIB, *caldata);
-+
-+	return 0;
-+}
-+
- static int sun50i_h6_ths_calibrate(struct ths_device *tmdev,
- 				   u16 *caldata, int callen)
- {
-@@ -325,6 +359,32 @@ static int sun8i_ths_resource_init(struct ths_device *tmdev)
- 	return ret;
- }
- 
-+static int sun8i_h3_thermal_init(struct ths_device *tmdev)
-+{
-+	/* average over 4 samples */
-+	regmap_write(tmdev->regmap, SUN8I_THS_MFC,
-+		     SUN50I_THS_FILTER_EN |
-+		     SUN50I_THS_FILTER_TYPE(1));
-+	/*
-+	 * period = (x + 1) * 4096 / clkin; ~10ms
-+	 * enable data interrupt
-+	 */
-+	regmap_write(tmdev->regmap, SUN8I_THS_IC,
-+		     SUN50I_H6_THS_PC_TEMP_PERIOD(58) | BIT(8));
-+	/*
-+	 * clkin = 24MHz
-+	 * T acquire = clkin / (x + 1)
-+	 *           = 20us
-+	 * enable sensor
-+	 */
-+	regmap_write(tmdev->regmap, SUN8I_THS_CTRL0,
-+		     SUN8I_THS_CTRL0_T_ACQ0(479));
-+	regmap_write(tmdev->regmap, SUN8I_THS_CTRL2,
-+		     SUN8I_THS_CTRL2_T_ACQ1(479) | BIT(0));
-+
-+	return 0;
-+}
-+
- static int sun50i_thermal_init(struct ths_device *tmdev)
- {
- 	int val;
-@@ -431,6 +491,17 @@ static int sun8i_ths_remove(struct platform_device *pdev)
- 	return 0;
- }
- 
-+static const struct ths_thermal_chip sun8i_h3_ths = {
-+	.sensor_num = 1,
-+	.offset = -1794,
-+	.scale = -121,
-+	.has_ahb_clk = true,
-+	.temp_data_base = SUN8I_THS_TEMP_DATA,
-+	.calibrate = sun8i_h3_ths_calibrate,
-+	.init = sun8i_h3_thermal_init,
-+	.irq_ack = sun8i_h3_irq_ack,
-+};
-+
- static const struct ths_thermal_chip sun50i_h6_ths = {
- 	.sensor_num = 2,
- 	.offset = -2794,
-@@ -443,6 +514,7 @@ static const struct ths_thermal_chip sun50i_h6_ths = {
- };
- 
- static const struct of_device_id of_ths_match[] = {
-+	{ .compatible = "allwinner,sun8i-h3-ths", .data = &sun8i_h3_ths },
- 	{ .compatible = "allwinner,sun50i-h6-ths", .data = &sun50i_h6_ths },
- 	{ /* sentinel */ },
- };
--- 
-2.17.1
+> On Wed, 2019-06-19 at 19:38 +0200, Greg Kroah-Hartman wrote:
+> > On Mon, Jun 17, 2019 at 11:59:16AM -0700, Atish Patra wrote:
+> > > Both RISC-V & ARM64 are using cpu-map device tree to describe
+> > > their cpu topology. It's better to move the relevant code to
+> > > a common place instead of duplicate code.
 
+[ ... ]
+
+> I guess Greg has acked the series assuming that it will go through some
+> other tree. Can you take it through RISC-V tree ?
+> 
+> Sorry for the confusion.
+> 
+> Note: We are still waiting for RMK's ACK on arm patch before it can be
+> sent as a PR.
+
+I'm fine to take it through the RISC-V tree, once Russell acks the 
+arch/arm patch.
+
+
+- Paul
 
 _______________________________________________
 linux-arm-kernel mailing list
