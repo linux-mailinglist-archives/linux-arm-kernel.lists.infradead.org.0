@@ -2,74 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 23F874FCB2
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 23 Jun 2019 18:36:16 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 180634FCD2
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 23 Jun 2019 18:42:38 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=pB9c1NxUNsFWqS9F+tnXPxL/NOaIwmkioUyQvSo9f0U=; b=SJaT7lpTRXIdDH
-	S1ghg2C2kwGfsJJXW9Sjb7qPiSdIms9wgrGeVrw1/b2MUZZje1EOOpm4J+aKioCc/PwIvLNYTLiNb
-	eetqrHAFlE8NGInPTsuL+M0nvKx0uzl0gwPcKWIgHlUzOtIgMHZJavY4fZA3RvcerqzUjpu4zVIwf
-	IDU6YraJAMKsANrNvXtj1yLBoEqPEeGO+XFx5bBKAKULj7TIv4Dc2uA5en3/WTW/nnlvDF/M8ysHQ
-	qjoieo9GkfQSvc9B9H5w+VPu//3Q11ipuGBT2KHxUws+yYd2TNU9RYuV6evsASdw9MAcR1ASiap9O
-	YSpzy/pZNwrTMwWfYB3w==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=VWYYlkAzfZ3z42ct5mDTDQHamBIGX85wXxDyR9kdEHo=; b=FGd
+	ttTaWjNggO0yrj8Ouy24P4h/viC5DRvNhcoOX5IBn5Mu2Nsab6jyszS5AWN9p0n/BI9Vu2vDATfF5
+	9Z7E97FyxXE8SsRoTxoYW5/LXBMgqeLzqlkgLH9/kVxYY9/sQoCbNvO8eTzfXAAJRy+X/Jrt91tws
+	jWYRVWibabzgjczorsWqlIZEketh//MTXo4RWdToc9NCIJvNW9MwsQ3oQorJyCn1um0t95NDX8UqC
+	h4IJwydGl396xHIFsJ58sijCiDPUqH+5Xudryd0/o6/t0SD96x3JumbcPKbWKCnkFpYYz0+O4qnFQ
+	YcmJkLVPFtQ60cu0+8z2xodCx1GtNOQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hf5TP-00073h-Dy; Sun, 23 Jun 2019 16:36:11 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1hf5Zc-0002Us-7y; Sun, 23 Jun 2019 16:42:36 +0000
+Received: from mail-pg1-x533.google.com ([2607:f8b0:4864:20::533])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hf5T4-0006qF-BZ; Sun, 23 Jun 2019 16:35:51 +0000
-Received: from mail-wm1-f42.google.com (mail-wm1-f42.google.com
- [209.85.128.42])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id A3D1B206BA;
- Sun, 23 Jun 2019 16:35:48 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1561307748;
- bh=f4wzwRqVtnbeGMbGLTUq9DbopFJOpD4awTGdr8HMu0c=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=FvLpsGf+BdJj6v3kZ/Rdc9A5wgVQ7uAClrDn+60p2iYf0uXBs5fkA6nuATTUz7iIL
- BuigSQMfDdK77Wag9pj7y7H2OcKDhynDnz11DXuUfbQajtjuDWauL+fzwqZSVuVpZp
- 96TU36uUbvTsuQCXV/iae25nGQIaG0Q4YvBL4SDw=
-Received: by mail-wm1-f42.google.com with SMTP id g135so10518145wme.4;
- Sun, 23 Jun 2019 09:35:48 -0700 (PDT)
-X-Gm-Message-State: APjAAAVkPWoW1N8BWYKzXFQ44r3hZEPjnWJA+psX65ZZkOPmW53n7kJJ
- y9qbJIx9yqllX6PSql/J2JNvKUW+dXXdM6r+t/A=
-X-Google-Smtp-Source: APXvYqytV0iot533SQYILeur1ABvpdvSmQ61FQnlhf7mWoX4c7AKw6SIGZCm/OWATKrhGhf7ydEFv29PmbNlV0vRGhM=
-X-Received: by 2002:a7b:cd84:: with SMTP id y4mr12259887wmj.79.1561307747231; 
- Sun, 23 Jun 2019 09:35:47 -0700 (PDT)
-MIME-Version: 1.0
-References: <20190321163623.20219-1-julien.grall@arm.com>
- <20190321163623.20219-12-julien.grall@arm.com>
- <0dfe120b-066a-2ac8-13bc-3f5a29e2caa3@arm.com>
- <CAJF2gTTXHHgDboaexdHA284y6kNZVSjLis5-Q2rDnXCxr4RSmA@mail.gmail.com>
- <c871a5ae-914f-a8bb-9474-1dcfec5d45bf@arm.com>
- <CAJF2gTStSR7Jmu7=HaO5Wxz=Zn8A5-RD8ktori3oKEhM9vozAA@mail.gmail.com>
- <20190621141606.GF18954@arrakis.emea.arm.com>
-In-Reply-To: <20190621141606.GF18954@arrakis.emea.arm.com>
-From: Guo Ren <guoren@kernel.org>
-Date: Mon, 24 Jun 2019 00:35:35 +0800
-X-Gmail-Original-Message-ID: <CAJF2gTTVUToRkRtxTmtWDotMGXy5YQCpL1h_2neTBuN3e6oz1w@mail.gmail.com>
-Message-ID: <CAJF2gTTVUToRkRtxTmtWDotMGXy5YQCpL1h_2neTBuN3e6oz1w@mail.gmail.com>
-Subject: Re: [PATCH RFC 11/14] arm64: Move the ASID allocator code in a
- separate file
-To: Catalin Marinas <catalin.marinas@arm.com>
+ id 1hf5ZE-0002Tp-Di
+ for linux-arm-kernel@lists.infradead.org; Sun, 23 Jun 2019 16:42:13 +0000
+Received: by mail-pg1-x533.google.com with SMTP id l19so5774401pgh.9
+ for <linux-arm-kernel@lists.infradead.org>;
+ Sun, 23 Jun 2019 09:42:11 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id;
+ bh=guN3ScMcBAl3EdBUUBqxZnez+QFG6VTe2Us/ZifbIac=;
+ b=Mz2oXdfcHCl/AjLIwcbhOTvV4DP6dKb58+chvGV34eLndltGe35g/temtiD24fRjEN
+ yO1BCIoo8bh5zc6/o2VRRFRtjsovwC8cLmA+1lVCHOhT0SFjZk5L3YCig71oXdx65Ay6
+ IJlxs0Y3LoduHUNd8+DrFVCawb+VjTlRPH+zQU6SuvJBEefpifliMWnFp2zbWLm0slwC
+ tjDZURjLb8nicaltlMwIObu0WLqBfV7PR3AUoucywPMLq9ER8zdNaIil71f0+MqSRy0j
+ wXrslvoMOx9iyv0PhWNIJXmZaRM0w/a81eNMSJFXw/zoQqBitfzFru9jbmphDrk+v/qm
+ F7FA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=guN3ScMcBAl3EdBUUBqxZnez+QFG6VTe2Us/ZifbIac=;
+ b=m8yzWWPUZr0gslydrjh2Q6QLQJJsLU7LIzbaeopEk7bWpHhJKBFUsLRV6l60UBa1+R
+ 7IGg2ZZaAGYLmFdKedcekQ5d+iy1crdxZg/g+/wECwHyzMTffn1l17CPQPHLOxNK97Pi
+ nH54jLrm6Tc8I4URG7FO+8+pB5Z1c+KZYM3//2cgxnFJCGqrqcXEmfqJGgQx/baAo7KD
+ F0NJ8oZayIs2Sw4PTA4tPqFNZ9FAV//C+uDP5ZlYnlf+BQS6t4js6gaanv3tov/lsNez
+ Ka3puCiFUDMoTw72JWrPI2TYuzrnKTLuS06vM6Ifc3b8lzm1Or6jcLvUIEpAv/eGzmB8
+ Be5g==
+X-Gm-Message-State: APjAAAUAsfVTQ9mykGmXpc0mVxjYsS2Yt3YsN3nqUxeXHRQw0Dhl1ibT
+ qeRnVjauMRQpZ2cOUsr7siU=
+X-Google-Smtp-Source: APXvYqzuNeNzlJfb0O2anqXdpR3fq7SW1y1TKzsXPcMSAaI/+wflpHzkgSycjT+gG4vxsg6zpZE3fg==
+X-Received: by 2002:a17:90a:a404:: with SMTP id
+ y4mr20304680pjp.58.1561308131121; 
+ Sun, 23 Jun 2019 09:42:11 -0700 (PDT)
+Received: from localhost (68.168.130.77.16clouds.com. [68.168.130.77])
+ by smtp.gmail.com with ESMTPSA id v138sm9644465pfc.15.2019.06.23.09.42.10
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Sun, 23 Jun 2019 09:42:10 -0700 (PDT)
+From: Yangtao Li <tiny.windzz@gmail.com>
+To: rui.zhang@intel.com, edubezval@gmail.com, daniel.lezcano@linaro.org,
+ robh+dt@kernel.org, mark.rutland@arm.com, maxime.ripard@bootlin.com,
+ wens@csie.org, davem@davemloft.net, gregkh@linuxfoundation.org,
+ mchehab+samsung@kernel.org, linus.walleij@linaro.org,
+ nicolas.ferre@microchip.com, paulmck@linux.ibm.com
+Subject: [PATCH v4 00/11] add thermal driver for h6
+Date: Sun, 23 Jun 2019 12:41:55 -0400
+Message-Id: <20190623164206.7467-1-tiny.windzz@gmail.com>
+X-Mailer: git-send-email 2.17.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190623_093550_431445_976A327A 
-X-CRM114-Status: GOOD (  24.24  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190623_094212_489663_A256F98B 
+X-CRM114-Status: UNSURE (   9.35  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:533 listed in]
+ [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (tiny.windzz[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -77,7 +88,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -89,97 +99,48 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: julien.thierry@arm.com, aou@eecs.berkeley.edu, james.morse@arm.com,
- suzuki.poulose@arm.com, Marc Zyngier <marc.zyngier@arm.com>,
- Anup Patel <anup.Patel@wdc.com>, Will Deacon <will.deacon@arm.com>,
- linux-kernel@vger.kernel.org, rppt@linux.ibm.com, hch@infradead.org,
- Atish Patra <Atish.Patra@wdc.com>, Julien Grall <julien.grall@arm.com>,
- Palmer Dabbelt <palmer@sifive.com>, gary@garyguo.net, paul.walmsley@sifive.com,
- christoffer.dall@arm.com, linux-riscv@lists.infradead.org,
- kvmarm@lists.cs.columbia.edu, linux-arm-kernel@lists.infradead.org
+Cc: Yangtao Li <tiny.windzz@gmail.com>, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-pm@vger.kernel.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Thx Catalin,
+This patchset add support for H3 and H6 thermal sensor.
 
-On Fri, Jun 21, 2019 at 10:16 PM Catalin Marinas
-<catalin.marinas@arm.com> wrote:
->
-> On Wed, Jun 19, 2019 at 07:51:03PM +0800, Guo Ren wrote:
-> > On Wed, Jun 19, 2019 at 4:54 PM Julien Grall <julien.grall@arm.com> wrote:
-> > > On 6/19/19 9:07 AM, Guo Ren wrote:
-> > > > Move arm asid allocator code in a generic one is a agood idea, I've
-> > > > made a patchset for C-SKY and test is on processing, See:
-> > > > https://lore.kernel.org/linux-csky/1560930553-26502-1-git-send-email-guoren@kernel.org/
-> > > >
-> > > > If you plan to seperate it into generic one, I could co-work with you.
-> > >
-> > > Was the ASID allocator work out of box on C-Sky?
-> >
-> > Almost done, but one question:
-> > arm64 remove the code in switch_mm:
-> >   cpumask_clear_cpu(cpu, mm_cpumask(prev));
-> >   cpumask_set_cpu(cpu, mm_cpumask(next));
-> >
-> > Why? Although arm64 cache operations could affect all harts with CTC
-> > method of interconnect, I think we should keep these code for
-> > primitive integrity in linux. Because cpu_bitmap is in mm_struct
-> > instead of mm->context.
->
-> We didn't have a use for this in the arm64 code, so no point in
-> maintaining the mm_cpumask. On some arm32 systems (ARMv6) with no
-> hardware broadcast of some TLB/cache operations, we use it to track
-> where the task has run to issue IPI for TLB invalidation or some
-> deferred I-cache invalidation.
-The operation of set/clear mm_cpumask was removed in arm64 compared to
-arm32. It seems no side effect on current arm64 system, but from
-software meaning it's wrong.
-I think we should keep mm_cpumask just like arm32.
+BTY, do a cleanup in thermal makfile.
 
->
-> (there was also a potential optimisation on arm64 to avoid broadcast
-> TLBI if the task only ran on a single CPU but Will found that was rarely
-> the case on an SMP system because of rebalancing happening during
-> execve(), ending up with two bits set in the mm_cpumask)
->
-> The way you use it on csky is different from how it is done on arm. It
-> seems to clear the mask for the scheduled out (prev) task but this
-> wouldn't work on arm(64) since the TLB still contains prev entries
-> tagged with the scheduled out ASID. Whether it matters, I guess it
-> depends on the specifics of your hardware.
-Sorry for the mistake quote, what I mean is what is done in arm32:
-clear all bits of mm->cpu_mask in new_context(), and set back one by
-one. Here is my patch:
-https://lore.kernel.org/linux-csky/CAJF2gTQ0xQtQY1t-g9FgWaxfDXppMkFooCQzTFy7+ouwUfyA6w@mail.gmail.com/T/#m2ed464d2dfb45ac6f5547fb3936adf2da456cb65
+Yangtao Li (11):
+  thermal: sun8i: add thermal driver for h6
+  dt-bindings: thermal: add binding document for h6 thermal controller
+  thermal: fix indentation in makefile
+  thermal: sun8i: get ths sensor number from device compatible
+  thermal: sun8i: rework for sun8i_ths_get_temp()
+  thermal: sun8i: get ths init func from device compatible
+  thermal: sun8i: rework for ths irq handler func
+  thermal: sun8i: support ahb clocks
+  thermal: sun8i: rework for ths calibrate func
+  dt-bindings: thermal: add binding document for h3 thermal controller
+  thermal: sun8i: add thermal driver for h3
 
->
-> While the algorithm may seem fairly generic, the semantics have a few
-> corner cases specific to each architecture. See [1] for a description of
-> the semantics we need on arm64 (CnP is a feature where the hardware
-> threads of the same core can share the TLB; the original algorithm
-> violated the requirements when this feature was enabled).
-C-SKY SMP is only one hart per core, but here is a patch [1] with my
-thought on SMT duplicate tlb flush:
-[1] https://lore.kernel.org/linux-csky/1561305869-18872-1-git-send-email-guoren@kernel.org/T/#u
+ .../bindings/thermal/sun8i-thermal.yaml       |  94 +++
+ MAINTAINERS                                   |   7 +
+ drivers/thermal/Kconfig                       |  14 +
+ drivers/thermal/Makefile                      |   9 +-
+ drivers/thermal/sun8i_thermal.c               | 534 ++++++++++++++++++
+ 5 files changed, 654 insertions(+), 4 deletions(-)
+ create mode 100644 Documentation/devicetree/bindings/thermal/sun8i-thermal.yaml
+ create mode 100644 drivers/thermal/sun8i_thermal.c
 
-For TLA+ model, I still need some learning before I could talk with you.
+---
+v4:
+-add h3 support
+-fix yaml file
+---
+2.17.1
 
->
-> BTW, if you find the algorithm fairly straightforward ;), see this
-> bug-fix which took a formal model to identify: a8ffaaa060b8 ("arm64:
-> asid: Do not replace active_asids if already 0").
-I think it's one fo the cases that other archs also could get benefit
-from arm's asid allocator code.
-Btw, Is this detected by arm's aisd allocator TLA+ model ? Or a real
-bug report ?
-
---
-Best Regards
- Guo Ren
-
-ML: https://lore.kernel.org/linux-csky/
 
 _______________________________________________
 linux-arm-kernel mailing list
