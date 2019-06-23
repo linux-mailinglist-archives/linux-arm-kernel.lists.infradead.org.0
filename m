@@ -2,57 +2,63 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 56A854FDC9
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 23 Jun 2019 21:10:02 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1F7C04FDD4
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 23 Jun 2019 21:17:11 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:Message-ID:
-	Subject:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=STpsCg50BrA1HpqTfEAWEdHhihCvPfVAgDt74750ApQ=; b=qTs6cQZK5o2HzPTiadHRTvUOw
-	ES/h4uUTHeFlgF1t6zTugAO7onLqsHmAukZVXxjgNQdoYWkQLTiCdn3h5pKUUxPzYXFi7rBEoFAR7
-	rGo69J8z4yFqc4cbTW5hXTyuzmvTsyz7v2DiuNVCc0NZY6rbnVXt1nJd7w57UilMcBwMAPxySA51t
-	HG3Td6nq0xQQYDcYpRJNt4Yyhb+vpe6AGwWtCDSRTh0qNEr50kIIyM0FF+/k6sfdxNLucl+/OTRFY
-	NxCSIKFDdkPd3qRvCrd1iRz6lz+c1nbhoVmu7/E9T8Mi8rgXH+lHkrk6LXF7o8DxKppCYMxS+YeWF
-	eMTeKfvMA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=eySy8+R3Z6SrDrrPudMvzSDtThAekWKQVOk18vMj9Xo=; b=ev98WJL5TnHcmI
+	V+IhW3edw+c6A47COhwGHFuUGRE8gn+mfXWaax+TAivCObkP/ZOErcqjqiT6+WprVB508ZfhCtjEV
+	rXwqqT/cxxoWkontxww3FFqxAsvmGlws7CGeBoPAChYNfGkjEawmhtCa/lRwOtuwFTOKXyjxAHYMp
+	CPLY5kzyKM6/O3uiPJJyJcpczgnZf47dTEWpUkgdXnJB4BpaPf991x3z7RKRC5ncZvRJXTZdqJq0G
+	0AUkB5BUz4WpTqO3mnjtTeja5S94NJLYlh/9fIY4XRBgkagWmHAfte9/t8igyXapXf+LnUWCAbVI9
+	qgW8Ha9JnqakqoDx70sA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hf7sD-0002fu-Gh; Sun, 23 Jun 2019 19:09:57 +0000
+	id 1hf7zA-0005r5-Ni; Sun, 23 Jun 2019 19:17:08 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hf7rt-0002fQ-Pe
- for linux-arm-kernel@lists.infradead.org; Sun, 23 Jun 2019 19:09:39 +0000
-Received: from localhost (unknown [107.242.116.126])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ id 1hf7yw-0005qh-Cc
+ for linux-arm-kernel@lists.infradead.org; Sun, 23 Jun 2019 19:16:55 +0000
+Received: from mail-lf1-f48.google.com (mail-lf1-f48.google.com
+ [209.85.167.48])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 3E2BD20656;
- Sun, 23 Jun 2019 19:09:34 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id B7872214C6
+ for <linux-arm-kernel@lists.infradead.org>;
+ Sun, 23 Jun 2019 19:16:53 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1561316975;
- bh=mlvFSvzkR+cCMmE9uWWqrJrJQDHurcL5lzCZSBcXqeM=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=WIlojUbYbhbPxgmncsctvio3d5Mn73rmmLk0d4dqSMx5J9aWVK+Ch0Ktgq95tupOF
- i/eIm1MdKNrRPM0pwIU0Hj6wp7UJ/S2I6lj8po0jYtHxFAVuuZjhJZzLWxBsbcQRlO
- iRp5ngtuuFHBff8VqAdtHzZ2JfD+gVpQNfhvhlGw=
-Date: Sun, 23 Jun 2019 15:09:29 -0400
-From: Sasha Levin <sashal@kernel.org>
-To: Thomas Gleixner <tglx@linutronix.de>
-Subject: Re: [PATCH v6 18/19] x86: Add support for generic vDSO
-Message-ID: <20190623190929.GL2226@sasha-vm>
-References: <20190530141531.43462-1-vincenzo.frascino@arm.com>
- <20190530141531.43462-19-vincenzo.frascino@arm.com>
- <BYAPR21MB1221D54FCEC97509EEF7395CD7180@BYAPR21MB1221.namprd21.prod.outlook.com>
- <alpine.DEB.2.21.1906141313150.1722@nanos.tec.linutronix.de>
- <20190614211710.GQ1513@sasha-vm>
- <alpine.DEB.2.21.1906221542270.5503@nanos.tec.linutronix.de>
+ s=default; t=1561317414;
+ bh=6JDucSZw1YglZ+Kvn1XvG/d7XRm8rtQU0pYzpt6juPQ=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=fMxYBvIsGShQvj4IRwFKmATaR58ZBtoFK/3QzbeoCdPlTIgVhOxnOQIcU8rMeawOF
+ KEUUjFHSckx4/VKUV2PR3zgU/uwJeR4zqJeTej1Y4bRWp7wd7lnglbaBipxfpAhrng
+ Awx7/hMEMT3kex+qw9ivJHzBoty9f1PF+frzSpbY=
+Received: by mail-lf1-f48.google.com with SMTP id p24so8430567lfo.6
+ for <linux-arm-kernel@lists.infradead.org>;
+ Sun, 23 Jun 2019 12:16:53 -0700 (PDT)
+X-Gm-Message-State: APjAAAV1WKKkot6I7CUgvEfTHElWZiOhruTpWO1wdrlqG4cyop7NLR/e
+ qMmHbFc9T/d5EPE7ll9B6NpixOIREEXKt0YFdQU=
+X-Google-Smtp-Source: APXvYqxXWDrgM4m579DLxJ1WTUgWjKF7XpNZeubHja/pXAlMQf3hxn+h9Y9vADetzdK8SIjDbU+EfRUwHC82D+/8Bxw=
+X-Received: by 2002:ac2:5601:: with SMTP id v1mr7937600lfd.106.1561317411913; 
+ Sun, 23 Jun 2019 12:16:51 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <alpine.DEB.2.21.1906221542270.5503@nanos.tec.linutronix.de>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+References: <20190621180208.25361-7-krzk@kernel.org>
+ <20190622191838.29850-1-krzk@kernel.org>
+ <CAGTfZH2g6E2pCEtqjfCd+PjEzjwc2AB75LXJfCeO+PcYLiLTUw@mail.gmail.com>
+In-Reply-To: <CAGTfZH2g6E2pCEtqjfCd+PjEzjwc2AB75LXJfCeO+PcYLiLTUw@mail.gmail.com>
+From: Krzysztof Kozlowski <krzk@kernel.org>
+Date: Sun, 23 Jun 2019 21:16:40 +0200
+X-Gmail-Original-Message-ID: <CAJKOXPcFFY08R1H-DrrzX2BC3L8x4NPJTP7nDn9yixAvmaiF9Q@mail.gmail.com>
+Message-ID: <CAJKOXPcFFY08R1H-DrrzX2BC3L8x4NPJTP7nDn9yixAvmaiF9Q@mail.gmail.com>
+Subject: Re: [PATCH v3] arm64: defconfig: Enable Panfrost and Lima drivers
+To: cwchoi00@gmail.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190623_120937_876393_CC0CF897 
-X-CRM114-Status: GOOD (  26.29  )
+X-CRM114-CacheID: sfid-20190623_121654_476309_16A722BC 
+X-CRM114-Status: GOOD (  16.83  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -81,118 +87,53 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-hyperv@vger.kernel.org, Rasmus Villemoes <linux@rasmusvillemoes.dk>,
- Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will.deacon@arm.com>,
- Michael Kelley <mikelley@microsoft.com>,
- "linux-kselftest@vger.kernel.org" <linux-kselftest@vger.kernel.org>,
- Vincenzo Frascino <vincenzo.frascino@arm.com>, Shuah Khan <shuah@kernel.org>,
- "linux-arch@vger.kernel.org" <linux-arch@vger.kernel.org>,
- Stephen Rothwell <sfr@canb.auug.org.au>,
- Daniel Lezcano <daniel.lezcano@linaro.org>,
- Russell King <linux@armlinux.org.uk>, Arnd Bergmann <arnd@arndb.de>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Dmitry Safonov <0x7f454c46@gmail.com>, Peter Collingbourne <pcc@google.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- Huw Davies <huw@codeweavers.com>, Greg KH <gregkh@linuxfoundation.org>,
- "linux-mips@vger.kernel.org" <linux-mips@vger.kernel.org>,
- Ralf Baechle <ralf@linux-mips.org>, Mark Salyzyn <salyzyn@android.com>,
- Paul Burton <paul.burton@mips.com>
-Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
+Cc: Enric Balletbo i Serra <enric.balletbo@collabora.com>,
+ linux-samsung-soc <linux-samsung-soc@vger.kernel.org>,
+ Chanwoo Choi <cw00.choi@samsung.com>,
+ Maxime Ripard <maxime.ripard@bootlin.com>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ linux-kernel <linux-kernel@vger.kernel.org>,
+ Bjorn Andersson <bjorn.andersson@linaro.org>,
+ Dinh Nguyen <dinguyen@kernel.org>, Jagan Teki <jagan@amarulasolutions.com>,
+ Simon Horman <horms+renesas@verge.net.au>, Olof Johansson <olof@lixom.net>,
+ Shawn Guo <shawnguo@kernel.org>, Leonard Crestez <leonard.crestez@nxp.com>,
+ Will Deacon <will@kernel.org>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
+ Marek Szyprowski <m.szyprowski@samsung.com>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sat, Jun 22, 2019 at 04:46:28PM +0200, Thomas Gleixner wrote:
->On Fri, 14 Jun 2019, Sasha Levin wrote:
->> On Fri, Jun 14, 2019 at 01:15:23PM +0200, Thomas Gleixner wrote:
->> > On Thu, 30 May 2019, Michael Kelley wrote:
->> > > Vincenzo -- these changes for Hyper-V are a subset of a larger patch set
->> > > I have that moves all of the Hyper-V clock/timer code into a separate
->> > > clocksource driver in drivers/clocksource, with an include file in
->> > > includes/clocksource.  That new include file should be able to work
->> > > instead of your new mshyperv-tsc.h.  It also has the benefit of being
->> > > ISA neutral, so it will work with my in-progress patch set to support
->> > > Linux on Hyper-V on ARM64.  See https://lkml.org/lkml/2019/5/27/231
->> > > for the new clocksource driver patch set.
->> >
->> > Grrr. That's queued in hyperv-next for whatever reasons.
->>
->> I queue up our future pull requests there to give them some soaking in
->> -next.
->
->What? You queue completely unreviewed stuff which touches two other
->subsystems to let it soak in next?
-
-It was out on LKML for 2+ weeks before I've pulled it in. As it mostly
-touches hyperv bits I felt comfortable to give it time in -next (but not
-actually to try and merge it until it gets a few acks).
-
->> > Sasha, can you please provide me the branch to pull from so I can have a
->> > common base for all the various changes floating around?
->>
->> I'll send you a unified pull request for these changes.
->
->Which has not materialized yet.
-
-Appologies about this. I ended up with way more travel than I would have
-liked (writing this from an airport). I've reset our hyperv-next branch
-to remove these 3 commits until we figure this out.
-
->TBH, I'm pretty grumpy about those clocksource changes. Here is the
->diffstat:
->
-> MAINTAINERS                          |    2
-> arch/x86/entry/vdso/vclock_gettime.c |    1
-> arch/x86/entry/vdso/vma.c            |    2
-> arch/x86/hyperv/hv_init.c            |   91 ---------
-> arch/x86/include/asm/hyperv-tlfs.h   |    6
-> arch/x86/include/asm/mshyperv.h      |   81 +-------
-> arch/x86/kernel/cpu/mshyperv.c       |    2
-> arch/x86/kvm/x86.c                   |    1
-> drivers/clocksource/Makefile         |    1
-> drivers/clocksource/hyperv_timer.c   |  322 +++++++++++++++++++++++++++++++++++
-> drivers/hv/Kconfig                   |    3
-> drivers/hv/hv.c                      |  156 ----------------
-> drivers/hv/hv_util.c                 |    1
-> drivers/hv/hyperv_vmbus.h            |    3
-> drivers/hv/vmbus_drv.c               |   42 ++--
-> include/clocksource/hyperv_timer.h   |  105 +++++++++++
->
->While the world and some more people have been CC'ed on those patches,
->neither the clocksource nor the x86 maintainer have been.
->
->When I gave Vincenzo the advise to base his code on that hyper-v branch, I
->expected that I find the related patches in my mail backlog. No, they have
->not been there because I was not on CC.
->
->Folks, please stop chosing Cc lists as you like. We have well established
->rules for that. And please stop queueing random unreviewed patches in
->next. Next is not a playground for not ready and unreviewed stuff. No, the
->hyper-v inbreed Reviewed-by is not sufficient for anything x86 and
->clocksource related.
-
-I'm sorry for this, you were supposed to be Cc'ed on these patches and I
-see that you were not.
-
->After chasing and looking at those patches, which have horrible subject
->lines and changelogs btw, I was not able to judge quickly whether that
->stuff is self contained or not. So no, I fixed up the fallout and rebased
->Vincenzos VDSO stuff on mainline w/o those hyperv changes simply because if
->they are not self contained they will break bisection badly.
->
->I'm going to push out the VDSO series later today. That will nicely break
->in combination with the hyper-next branch. Stephen, please drop that and do
->not try to handle the fallout. That stuff needs to go through the proper
->channels or at least be acked/reviewed by the relevant maintainers. So the
->hyper-v folks can rebase themself and post it proper.
-
-Okay, thank you. We'll rebase and resend.
-
---
-Thanks,
-Sasha
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gU3VuLCAyMyBKdW4gMjAxOSBhdCAwNjozMSwgQ2hhbndvbyBDaG9pIDxjd2Nob2kwMEBnbWFp
+bC5jb20+IHdyb3RlOgo+Cj4gSGkgS3J6eXN6dG9mLAo+Cj4gMjAxOeuFhCA27JuUIDIz7J28ICjs
+nbwpIOyYpOyghCA0OjIwLCBLcnp5c3p0b2YgS296bG93c2tpIDxrcnprQGtlcm5lbC5vcmc+64uY
+7J20IOyekeyEsToKPiA+Cj4gPiBFbmFibGUgc3VwcG9ydCBmb3IgTWFsaSBHUFUgd2l0aCBQYW5m
+cm9zdCBhbmQgTGltYSBkcml2ZXJzIGZvcjoKPiA+IDEuIFNhbXN1bmcgRXh5bm9zNTQzMyBhbmQg
+RXh5bm9zNyAoaGF2aW5nIE1hbGkgVDc2MCksCj4gPiAyLiBBbGx3aW5lciBBNjQgYW5kIEg1IChN
+YWxpIDQwMC80NTApLgo+ID4KPiA+IFNpZ25lZC1vZmYtYnk6IEtyenlzenRvZiBLb3psb3dza2kg
+PGtyemtAa2VybmVsLm9yZz4KPiA+Cj4gPiAtLS0KPiA+Cj4gPiBDaGFuZ2VzIHNpbmNlIHYxOgo+
+ID4gMS4gRW5hYmxlIExpbWEgZHJpdmVyCj4gPiAtLS0KPiA+ICBhcmNoL2FybTY0L2NvbmZpZ3Mv
+ZGVmY29uZmlnIHwgMyArKy0KPiA+ICAxIGZpbGUgY2hhbmdlZCwgMiBpbnNlcnRpb25zKCspLCAx
+IGRlbGV0aW9uKC0pCj4gPgo+ID4gZGlmZiAtLWdpdCBhL2FyY2gvYXJtNjQvY29uZmlncy9kZWZj
+b25maWcgYi9hcmNoL2FybTY0L2NvbmZpZ3MvZGVmY29uZmlnCj4gPiBpbmRleCBmYmJjMDY1NDE1
+ZDQuLjNkMzE2MTEzNjhhZiAxMDA2NDQKPiA+IC0tLSBhL2FyY2gvYXJtNjQvY29uZmlncy9kZWZj
+b25maWcKPiA+ICsrKyBiL2FyY2gvYXJtNjQvY29uZmlncy9kZWZjb25maWcKPiA+IEBAIC01MTgs
+NiArNTE4LDggQEAgQ09ORklHX0RSTV9ISVNJX0hJQk1DPW0KPiA+ICBDT05GSUdfRFJNX0hJU0lf
+S0lSSU49bQo+ID4gIENPTkZJR19EUk1fTUVTT049bQo+ID4gIENPTkZJR19EUk1fUEwxMTE9bQo+
+ID4gK0NPTkZJR19EUk1fTElNQT1tCj4gPiArQ09ORklHX0RSTV9QQU5GUk9TVD1tCj4gPiAgQ09O
+RklHX0ZCPXkKPiA+ICBDT05GSUdfRkJfTU9ERV9IRUxQRVJTPXkKPiA+ICBDT05GSUdfQkFDS0xJ
+R0hUX0dFTkVSSUM9bQo+ID4gQEAgLTcxOCw3ICs3MjAsNiBAQCBDT05GSUdfQVJDSF9URUdSQV8x
+OTRfU09DPXkKPiA+ICBDT05GSUdfQVJDSF9LM19BTTZfU09DPXkKPiA+ICBDT05GSUdfU09DX1RJ
+PXkKPiA+ICBDT05GSUdfVElfU0NJX1BNX0RPTUFJTlM9eQo+ID4gLUNPTkZJR19ERVZGUkVRX0dP
+Vl9TSU1QTEVfT05ERU1BTkQ9eQo+Cj4gRXh5bm9zNTQzMy10bTIgYm9hcmQgc3VwcG9ydCB0aGUg
+ZXh5bm9zLWJ1cyBkZXZpY2Ugd2hpY2gKPiB1c2VkIHRoZSBzaW1wbGVfb25kbWVuYWQgZ292ZXJu
+b3Igb2YgZGV2ZnJlcS4KPiBXaHkgZG8geW91IHJlbW92ZSB0aGlzIGNvbmZpZ3VyYXRpb24gZnJv
+bSB0aGUgZGVmY29uZmlnPwoKSXQgaXMgc2VsZWN0ZWQgYnkgZGVmYXVsdCBieSBEUk1fUEFORlJP
+U1QuIFRoZSBkaWZmZXJlbmNlIGlzIHRoYXQKUEFORlJPU1Qgc2VsZWN0cyBpdCBhcyBtb2R1bGUu
+IFRoZSAneScgaXMgY2hvc2VuIGJlY2F1c2Ugb2Y6CiAgU0NTSV9VRlNIQ0QgWz15XSAmJiBTQ1NJ
+X0xPV0xFVkVMIFs9eV0gJiYgU0NTSSBbPXldICYmIFNDU0lfRE1BIFs9eV0KCkJlc3QgcmVnYXJk
+cywKS3J6eXN6dG9mCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3Rz
+LmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5m
+by9saW51eC1hcm0ta2VybmVsCg==
