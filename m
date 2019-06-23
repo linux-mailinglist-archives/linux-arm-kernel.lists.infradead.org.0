@@ -2,91 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 032CB4F9E1
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 23 Jun 2019 06:31:23 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 055A94F9FD
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 23 Jun 2019 06:39:55 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:Reply-To:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:
-	From:In-Reply-To:References:MIME-Version:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=s/zeWYNQZe9fI8X9flmIombnsI6S1opMP4q82+ZwBx4=; b=rtqNJ5CsT8HS5r
-	3BNDZbfPhUoIyj4xgmlCK4045ljn/eMOKpjPwe5Zl58B99msaSNrL5PtLSbcnGiUDjP1DdRX3B6aQ
-	GLPnNtN0W9jzr5PBzbW48aMHfmedhukOKZvV/8C64Np+Br7PYHMFFwGSfhximTysa5ah41BYbKpTg
-	e2TxijcBjqcDZgUQaON1WX6a3bOglh62C53puZ/xBwOXsPRVRCP/ylHE1i5rsF/kmLhKpWgdNxr03
-	BLZrXVepf9CQ+i1i1YwizDsSFQb+r9vdg4x0FMjdZuHNgs+rGHY5pJMSowd7wNgLwgg2fSa9RwAll
-	vY6U9YtN67V4KfZc8BMQ==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=dZk5rZo0RI7fWvaoIUf562nu9JblhHP/XpLM/WObKmc=; b=W+3fZ8FLIT7M5n
+	mlZ/WEXKakelTnqtiXdce7L7wmkIA3uzE6AAUdyltK2FpaB00XYNtgdsZZw9QcBO52WKNVWyFjCyI
+	4kQGMgy02Qf7tZvkVqhOXmiIKumdSeEuhVEn/Du0do3WRyrbvlW+glpYocmUmz8R5tYhkQfsXr4RU
+	ivWDhcPUE/0XtxUaoz0KRTxOxDPyRuGkjISvMMX2peUX0M+j84wDCBEP4zYWQsoM7oDEDFu42tRfN
+	YuPlCzf0BTFItXI+gWieCMdYXRvdI7h8Iiipxy0GE91RZyYuyvhd13oIwBl0+DALz4VtXxb0mS83K
+	FZhuJYqHjloRREM0F9nA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1heu9s-0004tt-94; Sun, 23 Jun 2019 04:31:16 +0000
-Received: from mail-lj1-x244.google.com ([2a00:1450:4864:20::244])
+	id 1heuID-00072B-9z; Sun, 23 Jun 2019 04:39:53 +0000
+Received: from balrog.mythic-beasts.com ([2a00:1098:0:82:1000:0:2:1])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1heu9f-0004tN-1x
- for linux-arm-kernel@lists.infradead.org; Sun, 23 Jun 2019 04:31:04 +0000
-Received: by mail-lj1-x244.google.com with SMTP id a21so9421500ljh.7
- for <linux-arm-kernel@lists.infradead.org>;
- Sat, 22 Jun 2019 21:31:01 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:reply-to:from:date:message-id
- :subject:to:cc:content-transfer-encoding;
- bh=hGiEqlRc5MJLXesODiy0ME7Yviwr/0syQWplXoAFPOw=;
- b=R1eHZVqjPIG79KkzlAK+XWzgqRQm6QGaPiBBa+VuPcJwD5/fXuEZZKUSQAcZBZDO5u
- /BNXmVzHrJfQg9hWSul7X6EfSGBqU1q357MNfloOkJwW0V+T6lfb8VHHmyMgwh7dnJcv
- 6K5o7oSp62Yftv/YsN1tf6XgKT6AEIUhBmTyA+wSRhArkmazXIvH6FPgo3tPnQj5Tl+t
- aEj7FNvx9+i+sIgListx7TMmXsG7w50NwOizSJVQOT9Lv2CGNuPOv/XLi51x7RF8bIOl
- eUxr5NC/xGBMPSJb5JhxTpbWgrtDJsdTRQ4yYgdnYs5sd6RSLXmzrewvegVxJJnzwFZ0
- KTpQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:reply-to
- :from:date:message-id:subject:to:cc:content-transfer-encoding;
- bh=hGiEqlRc5MJLXesODiy0ME7Yviwr/0syQWplXoAFPOw=;
- b=GFoYUbqdh1wSLcR+1BRqQ3SvIebqeLnKXFZLU62107r93CoIhQ7vIqLqpdt+OIkZ95
- FdCirXjnZi/CdLZcHqX84sOfQhMw71mnt6e72RVdYG09tj7eIcTjJ+rjdGlgq9bTVU2M
- /X1DmZVjx0a/4kyWAbT94KDtSHCLagutGxLldeMFmbVcOh16GNVxOZcu5aLoPvOVrP5p
- mMZpI6oai71D0QNfOyxHMtyAfMvj3RinSYKb+MdTJ3VFJpbEtcnKhoFIBXcXJvYO/dqp
- dDxO/K67GvQzit4i9JRPyfqTENZu/IsRPp14J6H9IE8xankIVymqpOQay0TgVwk/ggxu
- JMJQ==
-X-Gm-Message-State: APjAAAXTfIb71+sdSiXxXbT94FAoagWrxY/5uXxz+zWRLgE00h9fxD7n
- K2FbB0ibIfvn2HbWfctQXs97GQYkkYglSQmvvJ0=
-X-Google-Smtp-Source: APXvYqwMu5YzC6WJljI3IPIZfrsR5mXPbLbjlkf8bI8RZFs7OsvPB751t90niZpM5oV+SbbvBvdyhggWKqUyc6J3HCE=
-X-Received: by 2002:a2e:3008:: with SMTP id w8mr41171796ljw.13.1561264259868; 
- Sat, 22 Jun 2019 21:30:59 -0700 (PDT)
+ id 1heuHT-0006i9-3u
+ for linux-arm-kernel@lists.infradead.org; Sun, 23 Jun 2019 04:39:08 +0000
+Received: from [199.195.250.187] (port=42959 helo=hermes.aosc.io)
+ by balrog.mythic-beasts.com with esmtpsa
+ (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <icenowy@aosc.io>)
+ id 1heuHJ-0000Oc-AU; Sun, 23 Jun 2019 05:39:01 +0100
+Received: from localhost (localhost [127.0.0.1]) (Authenticated sender:
+ icenowy@aosc.io)
+ by hermes.aosc.io (Postfix) with ESMTPSA id 7AB836212D;
+ Sun, 23 Jun 2019 04:38:42 +0000 (UTC)
+From: Icenowy Zheng <icenowy@aosc.io>
+To: Rob Herring <robh+dt@kernel.org>,
+ Maxime Ripard <maxime.ripard@bootlin.com>, Chen-Yu Tsai <wens@csie.org>,
+ Linus Walleij <linus.walleij@linaro.org>
+Subject: [PATCH v3 0/9] Support for Allwinner V3/S3L and Sochip S3
+Date: Sun, 23 Jun 2019 12:37:52 +0800
+Message-Id: <20190623043801.14040-1-icenowy@aosc.io>
 MIME-Version: 1.0
-References: <20190621180208.25361-7-krzk@kernel.org>
- <20190622191838.29850-1-krzk@kernel.org>
-In-Reply-To: <20190622191838.29850-1-krzk@kernel.org>
-From: Chanwoo Choi <cwchoi00@gmail.com>
-Date: Sun, 23 Jun 2019 13:30:23 +0900
-Message-ID: <CAGTfZH2g6E2pCEtqjfCd+PjEzjwc2AB75LXJfCeO+PcYLiLTUw@mail.gmail.com>
-Subject: Re: [PATCH v3] arm64: defconfig: Enable Panfrost and Lima drivers
-To: Krzysztof Kozlowski <krzk@kernel.org>
+X-BlackCat-Spam-Score: 24
+X-Spam-Status: No, score=2.4
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190622_213103_104486_83890D47 
-X-CRM114-Status: GOOD (  13.27  )
-X-Spam-Score: 0.3 (/)
+X-CRM114-CacheID: sfid-20190622_213907_191676_C8DD9ABD 
+X-CRM114-Status: GOOD (  14.72  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.3 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:244 listed in]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [2a00:1098:0:82:1000:0:2:1 listed in]
  [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (cwchoi00[at]gmail.com)
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (cwchoi00[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 FREEMAIL_REPLYTO_END_DIGIT Reply-To freemail username ends in
- digit (cwchoi00[at]gmail.com)
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -98,50 +66,68 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Reply-To: cwchoi00@gmail.com
-Cc: Enric Balletbo i Serra <enric.balletbo@collabora.com>,
- linux-samsung-soc <linux-samsung-soc@vger.kernel.org>,
- Chanwoo Choi <cw00.choi@samsung.com>,
- Maxime Ripard <maxime.ripard@bootlin.com>,
- Catalin Marinas <catalin.marinas@arm.com>,
- linux-kernel <linux-kernel@vger.kernel.org>,
- Bjorn Andersson <bjorn.andersson@linaro.org>,
- Dinh Nguyen <dinguyen@kernel.org>, Jagan Teki <jagan@amarulasolutions.com>,
- Simon Horman <horms+renesas@verge.net.au>, Olof Johansson <olof@lixom.net>,
- Shawn Guo <shawnguo@kernel.org>, Leonard Crestez <leonard.crestez@nxp.com>,
- Will Deacon <will@kernel.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
- Marek Szyprowski <m.szyprowski@samsung.com>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-gpio@vger.kernel.org, linux-sunxi@googlegroups.com,
+ linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ Icenowy Zheng <icenowy@aosc.io>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-SGkgS3J6eXN6dG9mLAoKMjAxOeuFhCA27JuUIDIz7J28ICjsnbwpIOyYpOyghCA0OjIwLCBLcnp5
-c3p0b2YgS296bG93c2tpIDxrcnprQGtlcm5lbC5vcmc+64uY7J20IOyekeyEsToKPgo+IEVuYWJs
-ZSBzdXBwb3J0IGZvciBNYWxpIEdQVSB3aXRoIFBhbmZyb3N0IGFuZCBMaW1hIGRyaXZlcnMgZm9y
-Ogo+IDEuIFNhbXN1bmcgRXh5bm9zNTQzMyBhbmQgRXh5bm9zNyAoaGF2aW5nIE1hbGkgVDc2MCks
-Cj4gMi4gQWxsd2luZXIgQTY0IGFuZCBINSAoTWFsaSA0MDAvNDUwKS4KPgo+IFNpZ25lZC1vZmYt
-Ynk6IEtyenlzenRvZiBLb3psb3dza2kgPGtyemtAa2VybmVsLm9yZz4KPgo+IC0tLQo+Cj4gQ2hh
-bmdlcyBzaW5jZSB2MToKPiAxLiBFbmFibGUgTGltYSBkcml2ZXIKPiAtLS0KPiAgYXJjaC9hcm02
-NC9jb25maWdzL2RlZmNvbmZpZyB8IDMgKystCj4gIDEgZmlsZSBjaGFuZ2VkLCAyIGluc2VydGlv
-bnMoKyksIDEgZGVsZXRpb24oLSkKPgo+IGRpZmYgLS1naXQgYS9hcmNoL2FybTY0L2NvbmZpZ3Mv
-ZGVmY29uZmlnIGIvYXJjaC9hcm02NC9jb25maWdzL2RlZmNvbmZpZwo+IGluZGV4IGZiYmMwNjU0
-MTVkNC4uM2QzMTYxMTM2OGFmIDEwMDY0NAo+IC0tLSBhL2FyY2gvYXJtNjQvY29uZmlncy9kZWZj
-b25maWcKPiArKysgYi9hcmNoL2FybTY0L2NvbmZpZ3MvZGVmY29uZmlnCj4gQEAgLTUxOCw2ICs1
-MTgsOCBAQCBDT05GSUdfRFJNX0hJU0lfSElCTUM9bQo+ICBDT05GSUdfRFJNX0hJU0lfS0lSSU49
-bQo+ICBDT05GSUdfRFJNX01FU09OPW0KPiAgQ09ORklHX0RSTV9QTDExMT1tCj4gK0NPTkZJR19E
-Uk1fTElNQT1tCj4gK0NPTkZJR19EUk1fUEFORlJPU1Q9bQo+ICBDT05GSUdfRkI9eQo+ICBDT05G
-SUdfRkJfTU9ERV9IRUxQRVJTPXkKPiAgQ09ORklHX0JBQ0tMSUdIVF9HRU5FUklDPW0KPiBAQCAt
-NzE4LDcgKzcyMCw2IEBAIENPTkZJR19BUkNIX1RFR1JBXzE5NF9TT0M9eQo+ICBDT05GSUdfQVJD
-SF9LM19BTTZfU09DPXkKPiAgQ09ORklHX1NPQ19UST15Cj4gIENPTkZJR19USV9TQ0lfUE1fRE9N
-QUlOUz15Cj4gLUNPTkZJR19ERVZGUkVRX0dPVl9TSU1QTEVfT05ERU1BTkQ9eQoKRXh5bm9zNTQz
-My10bTIgYm9hcmQgc3VwcG9ydCB0aGUgZXh5bm9zLWJ1cyBkZXZpY2Ugd2hpY2gKdXNlZCB0aGUg
-c2ltcGxlX29uZG1lbmFkIGdvdmVybm9yIG9mIGRldmZyZXEuCldoeSBkbyB5b3UgcmVtb3ZlIHRo
-aXMgY29uZmlndXJhdGlvbiBmcm9tIHRoZSBkZWZjb25maWc/Cgo+ICBDT05GSUdfRVhUQ09OX1VT
-Ql9HUElPPXkKPiAgQ09ORklHX0VYVENPTl9VU0JDX0NST1NfRUM9eQo+ICBDT05GSUdfTUVNT1JZ
-PXkKPiAtLQo+IDIuMTcuMQo+CgoKLS0gCkJlc3QgUmVnYXJkcywKQ2hhbndvbyBDaG9pCgpfX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2Vy
-bmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0
-cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVs
-Cg==
+This patchset tries to add support for Allwinner V3/S3L and Sochip S3.
+
+Allwinner V3/V3s/S3L and Sochip S3 share the same die, but with
+different package. V3 is BGA w/o co-packaged DDR, V3s is QFP w/ DDR2,
+S3L is BGA w/ DDR2 and S3 is BGA w/ DDR3. (S3 and S3L is compatible
+for pinout, but because of different DDR, DDR voltage is different
+between the two variants). Because of the pin count of V3s is
+restricted due to the package, some pins are not bound on V3s, but
+they're bound on V3/S3/S3L.
+
+Currently the kernel is only prepared for the features available on V3s.
+This patchset adds the features missing on V3s for using them on
+V3/S3/S3L, and add bindings for V3/S3/S3L. It also adds a S3 SoM by
+Sipeed, called Lichee Zero Plus.
+
+Icenowy Zheng (9):
+  pinctrl: sunxi: v3s: introduce support for V3
+  clk: sunxi-ng: v3s: add the missing PLL_DDR1
+  dt-bindings: clk: sunxi-ccu: add compatible string for V3 CCU
+  clk: sunxi-ng: v3s: add Allwinner V3 support
+  dt-bindings: vendor-prefixes: add SoChip
+  ARM: sunxi: dts: s3/s3l/v3: add DTSI files for S3/S3L/V3 SoCs
+  dt-bindings: vendor-prefixes: add Sipeed
+  dt-bindings: arm: sunxi: add binding for Lichee Zero Plus core board
+  ARM: dts: sun8i: s3: add devicetree for Lichee zero plus w/ S3
+
+ .../devicetree/bindings/arm/sunxi.yaml        |   5 +
+ .../clock/allwinner,sun4i-a10-ccu.yaml        |   1 +
+ .../devicetree/bindings/vendor-prefixes.yaml  |   4 +
+ arch/arm/boot/dts/Makefile                    |   1 +
+ .../boot/dts/sun8i-s3-lichee-zero-plus.dts    |   8 +
+ .../dts/sun8i-s3-s3l-lichee-zero-plus.dtsi    |  44 ++
+ arch/arm/boot/dts/sun8i-s3.dtsi               |   6 +
+ arch/arm/boot/dts/sun8i-s3l.dtsi              |   6 +
+ arch/arm/boot/dts/sun8i-v3.dtsi               |  14 +
+ drivers/clk/sunxi-ng/ccu-sun8i-v3s.c          | 244 ++++++++-
+ drivers/clk/sunxi-ng/ccu-sun8i-v3s.h          |   6 +-
+ drivers/pinctrl/sunxi/pinctrl-sun8i-v3s.c     | 473 ++++++++++++++----
+ drivers/pinctrl/sunxi/pinctrl-sunxi.h         |   2 +
+ include/dt-bindings/clock/sun8i-v3s-ccu.h     |   4 +
+ include/dt-bindings/reset/sun8i-v3s-ccu.h     |   3 +
+ 15 files changed, 704 insertions(+), 117 deletions(-)
+ create mode 100644 arch/arm/boot/dts/sun8i-s3-lichee-zero-plus.dts
+ create mode 100644 arch/arm/boot/dts/sun8i-s3-s3l-lichee-zero-plus.dtsi
+ create mode 100644 arch/arm/boot/dts/sun8i-s3.dtsi
+ create mode 100644 arch/arm/boot/dts/sun8i-s3l.dtsi
+ create mode 100644 arch/arm/boot/dts/sun8i-v3.dtsi
+
+-- 
+2.21.0
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
