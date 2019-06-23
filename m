@@ -2,90 +2,64 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 877A84FBE5
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 23 Jun 2019 15:29:55 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4A6364FBE8
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 23 Jun 2019 15:31:55 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=QGp+wDYXDdFHP9qR3Ey2T54BlP48IFvXfUe+EqjP3K8=; b=Y82unYzID+jzAG
-	QMeSWFFQzVEtCAozRy+ZRKyGyH6K+uOsHdp9XvnmBf5R/fKyqhWTOXbsCKxcFao9z6ndhKQHz91Q6
-	lP6rt3RZpF1MDx0KdxmwAzEj49DSwTuLAsBmgbM/0QifkUqPPdM0V3OwLZccdlsGKzFPTlRK6hkEH
-	S5csgzIOiisz9A7Oe+ijeytqa6qpqAZrl6rkuQy2i38Xd6uAOzMFUVdmVQ3ED+FrMvK95Mrv3+nIM
-	QKDBBDXI22JHOLqZIRLDVkwM50mgfQeF4ghvlxNTC5HjwyxnX2ZYCjjNpETxs46pjpRTFnBPCrAwi
-	57vAE6TLEgDum4yMBcWA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=k2DYDbzsxwC1tJ/wFI6UdJCuLUnHB6lZ9l91nfkLgRg=; b=cCrftW0c/Zp7Q/IsuojtYTroA
+	umNi33Sj6J4rq+orxgKCozmJWtFHjQa0NolxYQjXIQgiWxrKO5txFRtyGFAU8drx4isXrBY0Ep95h
+	nMAtLASGfpawzKIwOG0YFQ3ac+M59PYDXRS9JFkqmpC5wnOSzrNGcdZaTTxPN9785Q3szMRA+Zzzc
+	X4a691e/jJ29jYRHidFe4RK5O5cMGLWPl0pjgn6qswd856CADxraeuijHXWMMF5e2KsLrDiBztxhQ
+	xOMQFJlWeKYExNIRNdQlB7HbKq5mvA27iVzmzXrGpSW0C+fLtp6zAbLfhtVhK0i7Au8Kq9l9uUGtu
+	gWVBY6MZw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hf2Z5-0006Nj-Do; Sun, 23 Jun 2019 13:29:51 +0000
-Received: from mail-lj1-x243.google.com ([2a00:1450:4864:20::243])
+	id 1hf2b3-0007uy-GA; Sun, 23 Jun 2019 13:31:53 +0000
+Received: from www1102.sakura.ne.jp ([219.94.129.142])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hf2Ys-0006NG-2Y
- for linux-arm-kernel@lists.infradead.org; Sun, 23 Jun 2019 13:29:39 +0000
-Received: by mail-lj1-x243.google.com with SMTP id 205so1251012ljj.8
- for <linux-arm-kernel@lists.infradead.org>;
- Sun, 23 Jun 2019 06:29:33 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=iMugYLM0TSOEeMqLodsERtuvP9u+O/W19OcUNx2qqKE=;
- b=Nh82cgbCfdV3W9T0ZBzgKCen4UA43UBWLl8zNTUvlTbg62Y/vtLA+46MWCaMkhYfcB
- QoRsH+Kz3+V8IKyJ4dXfPjY1JYaxljjg7CZV+Jpg54/PyN/bRZQyiZ+smKKGJjV3/p4q
- VON83vTm7uZTYuGd9YVXOUylqlNpHzM9HOW+gGocuWXTRhALAo29VmkDh5l4lo1uxacz
- JOPO+5vd5ApDAC00Ibq7BfB/GIDSMaBFunF6ua+CHmVVXhTIbVdbKRd/aAwL52M+rBtA
- GnJqa/p9VsICM8jbMKWgDwDrqu0Ej8wWueg0HLx/ymewi7d0x9NjoxNYyCMqajrG6qZD
- lX8Q==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=iMugYLM0TSOEeMqLodsERtuvP9u+O/W19OcUNx2qqKE=;
- b=WMjKhNM6CnUveiTgX/gbv8X10ACKk+gEXEmtgYfOx47vfTjd239QnBVFh0mDyphbBU
- YWvSMqC4caawosmMHaRb9l1q39DVyN2b43oGBmVz152igY/n7d989pzyLUktzf9Sj0q8
- LIpYfl2ta9322vXHDznPC3yfmUloAGPdW7vugFv31roBtvNi3LWkxN45nZAm0M7VZCSO
- sp4X7tZAzev5izBlVucfS/J8WQMQRHKctc01kYJMTaluKzI9UTk7KQDVSUWyPCj/MjCc
- rrrr7s2vBNE9dkC5kWLy9dMaWYSDcd5VkPb2Tj+vFkHBwbfZGZu4atPs2FINgmJtxsPH
- M1eA==
-X-Gm-Message-State: APjAAAUbmCkXAr30tMfQoBXIm0iY4p08kfHTqTZ+nIZvaPxXGj8HBXha
- Zsrv4GNthKxXy5xM+nR6bCLTAPDp+I2XY4jxwpQ=
-X-Google-Smtp-Source: APXvYqyFgGq3y585l8TEj8J6rLVJh4Dg4GMJOjYNsFKOYXQ+e4N/qbOsEinXobwd5zUm8asmKUGq+283TfBTN6yr91w=
-X-Received: by 2002:a2e:7d03:: with SMTP id y3mr31940463ljc.240.1561296571399; 
- Sun, 23 Jun 2019 06:29:31 -0700 (PDT)
+ id 1hf2ao-0007u3-Gz; Sun, 23 Jun 2019 13:31:40 +0000
+Received: from fsav405.sakura.ne.jp (fsav405.sakura.ne.jp [133.242.250.104])
+ by www1102.sakura.ne.jp (8.15.2/8.15.2) with ESMTP id x5NDVU9l019165;
+ Sun, 23 Jun 2019 22:31:30 +0900 (JST)
+ (envelope-from katsuhiro@katsuster.net)
+Received: from www1102.sakura.ne.jp (219.94.129.142)
+ by fsav405.sakura.ne.jp (F-Secure/fsigk_smtp/530/fsav405.sakura.ne.jp);
+ Sun, 23 Jun 2019 22:31:30 +0900 (JST)
+X-Virus-Status: clean(F-Secure/fsigk_smtp/530/fsav405.sakura.ne.jp)
+Received: from [192.168.1.2] (118.153.231.153.ap.dti.ne.jp [153.231.153.118])
+ (authenticated bits=0)
+ by www1102.sakura.ne.jp (8.15.2/8.15.2) with ESMTPSA id x5NDVTux019135
+ (version=TLSv1.2 cipher=AES256-SHA bits=256 verify=NO);
+ Sun, 23 Jun 2019 22:31:29 +0900 (JST)
+ (envelope-from katsuhiro@katsuster.net)
+Subject: Re: [PATCH] ARM: dts: rockchip: add ethernet phy node for tinker board
+To: Andrew Lunn <andrew@lunn.ch>, Jose Abreu <joabreu@synopsys.com>
+References: <20190621180017.29646-1-katsuhiro@katsuster.net>
+ <1871177.hjLhdHVgcu@phil>
+ <ccf5ad2c-bd56-2d77-4728-d7906045e302@katsuster.net>
+ <20190622175508.GE8497@lunn.ch>
+From: Katsuhiro Suzuki <katsuhiro@katsuster.net>
+Message-ID: <8a006d47-a546-163f-0c3f-f35b0056ba3a@katsuster.net>
+Date: Sun, 23 Jun 2019 22:31:29 +0900
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.7.2
 MIME-Version: 1.0
-References: <20190622165318.bgyun52hssqmdv4n@shell.armlinux.org.uk>
- <E1helB3-0005d6-7m@rmk-PC.armlinux.org.uk>
- <20190622192653.puxds354sx5v3jg7@shell.armlinux.org.uk>
- <20190622202655.lwj43wpvw2ylzmcf@shell.armlinux.org.uk>
-In-Reply-To: <20190622202655.lwj43wpvw2ylzmcf@shell.armlinux.org.uk>
-From: Fabio Estevam <festevam@gmail.com>
-Date: Sun, 23 Jun 2019 10:29:50 -0300
-Message-ID: <CAOMZO5CdHXXP1X_71SVL4nrV=009xNugPFjbjP8s7NZ3byyP2w@mail.gmail.com>
-Subject: Re: [PATCH v2] dmaengine: imx-sdma: fix incorrect conversion to
- readl_relaxed_poll_timeout_atomic()
-To: Russell King - ARM Linux admin <linux@armlinux.org.uk>,
- Robin Gong <yibin.gong@nxp.com>
+In-Reply-To: <20190622175508.GE8497@lunn.ch>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190623_062938_115988_4C9AEB3B 
-X-CRM114-Status: GOOD (  16.74  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190623_063138_787518_42B7AB3E 
+X-CRM114-Status: GOOD (  12.61  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:243 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (festevam[at]gmail.com)
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -97,64 +71,57 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sascha Hauer <s.hauer@pengutronix.de>, Vinod Koul <vkoul@kernel.org>,
- NXP Linux Team <linux-imx@nxp.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>, dmaengine@vger.kernel.org,
- Michael Olbrich <m.olbrich@pengutronix.de>, Shawn Guo <shawnguo@kernel.org>,
- Dan Williams <dan.j.williams@intel.com>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>, Lucas Stach <l.stach@pengutronix.de>
-Content-Type: text/plain; charset="us-ascii"
+Cc: linux-rockchip@lists.infradead.org, devicetree@vger.kernel.org,
+ Heiko Stuebner <heiko@sntech.de>, linux-arm-kernel@lists.infradead.org,
+ linux-kernel@vger.kernel.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Russell,
+Hello Heiko, Andrew,
 
-On Sat, Jun 22, 2019 at 5:27 PM Russell King - ARM Linux admin
-<linux@armlinux.org.uk> wrote:
->
-> On Sat, Jun 22, 2019 at 08:26:53PM +0100, Russell King - ARM Linux admin wrote:
-> > Well, this doesn't appear to completely solve the problem either -
-> > one out of four of my platforms still spat out the error (because
-> > the SDMA initialisation can run on a different CPU to that which
-> > receives the interrupt.)
-> >
-> > I've thought about using a completion, but that doesn't work either,
-> > because in the case of a single CPU, the interrupts will be masked,
-> > so we can't wait for completion.  I think we need to eliminate that
-> > spinlock around this code.
->
-> It looks like iMX6 Dual does not initialise DMA properly using the 1.1
-> firmware - md5sum is:
->
-> 5d4584134cc4cba62e1be2f382cd6f3a  /lib/firmware/imx/sdma/sdma-imx6q.bin
->
-> I've tried extending the timeout to 5ms, checking HI[0] (both from the
-> interrupt handler and from sdma_run_channel0() to cover the case of a
-> single-core setup).
->
-> After boot:
->
->  60:          0          0       GPC   2 Level     sdma
->
-> So no interrupt was received.  Looking at the registers:
->
-> # /shared/bin32/devmem2 0x20ec02c
-> Value at address 0x020ec02c: 0x00000000  <= H_INTRMASK
-> # /shared/bin32/devmem2 0x20ec004
-> Value at address 0x020ec004: 0x00000000  <= H_INTR
-> # /shared/bin32/devmem2 0x20ec00c
-> Value at address 0x020ec00c: 0x00000000  <= H_START
-> # /shared/bin32/devmem2 0x20ec008
-> Value at address 0x020ec008: 0x00000001  <= H_STATSTOP
->
-> Any ideas?
+Thank you for comments. I found the commit that has regression:
+   74371272f97f net: stmmac: Convert to phylink and remove phylib logic
 
-Could you please try this patch from Robin?
-http://lists.infradead.org/pipermail/linux-arm-kernel/2019-June/661914.html
+So I'll report it to netdev and stmmac guys.
 
-Thanks
+Best Regards,
+---
+Katsuhiro Suzuki
+
+
+On 2019/06/23 2:55, Andrew Lunn wrote:
+> On Sat, Jun 22, 2019 at 11:50:10PM +0900, Katsuhiro Suzuki wrote:
+>> Hello,
+> 
+> Hi Katsuhiro
+> 
+> Please also report this to netdev, and the stmmac maintainers.
+> 
+> ./scripts/get_maintainer.pl -f drivers/net/ethernet/stmicro/stmmac/stmmac_main.c
+> Giuseppe Cavallaro <peppe.cavallaro@st.com> (supporter:STMMAC ETHERNET DRIVER)
+> Alexandre Torgue <alexandre.torgue@st.com> (supporter:STMMAC ETHERNET DRIVER)
+> Jose Abreu <joabreu@synopsys.com> (supporter:STMMAC ETHERNET DRIVER)
+> "David S. Miller" <davem@davemloft.net> (odd fixer:NETWORKING DRIVERS)
+> Maxime Coquelin <mcoquelin.stm32@gmail.com> (maintainer:ARM/STM32 ARCHITECTURE)
+> netdev@vger.kernel.org (open list:STMMAC ETHERNET DRIVER)
+> linux-stm32@st-md-mailman.stormreply.com (moderated list:ARM/STM32 ARCHITECTURE)
+> linux-arm-kernel@lists.infradead.org (moderated list:ARM/STM32 ARCHITECTURE)
+> linux-kernel@vger.kernel.org (open list)
+> 
+>> I have not bisect commit of root cause yet... Is it better to bisect
+>> and find problem instead of sending this patch?
+> 
+> My guess is that it is one of these three which broken it:
+> 
+> 74371272f97f net: stmmac: Convert to phylink and remove phylib logic
+> eeef2f6b9f6e net: stmmac: Start adding phylink support
+> 9ad372fc5aaf net: stmmac: Prepare to convert to phylink
+> 
+> 	     Andrew
+> 
+
 
 _______________________________________________
 linux-arm-kernel mailing list
