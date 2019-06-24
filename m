@@ -2,89 +2,67 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C852E50BC9
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Jun 2019 15:20:58 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B65BF50BD0
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Jun 2019 15:21:27 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=IFU/iSntJ/9y/GyPFDUZWdgV+q7Ldw2wWoHISjr7sfI=; b=TsQENBeLM6AdFO5CXna+PGycdl
-	1gxnhxNWFsZvfV4ySvcFZauyN1EEtO72fIaramoRuEeykivt7GSGbqv1NfjOtDSM6R8MFod0yzqWg
-	7Qcyfu3h3l51bED3Fshlk/Q3ik23tM9l980IGJ6ghj6O6teDO00KdHvbdigMgUR+4eHNxD0MHSr3L
-	W6/sRmX0sakUJy8ClJ5uKvIaw5KuQhSWAlM6ELCiP1MdjEo8AMhkKpZSaAHwy7ea2C59uqmlBIOTa
-	yrEBQ2WRNtZpYVVP3/3qK2OaiKfZ4xaUsXBoCiB7J/+s+bctl1+EuSQxDr5VwuMeCsM13P7/fHoeh
-	vaQEwNYA==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=27Cgh1RAGu5tZSBDepbopUk3J6KfscHQcR0pLQEk1fE=; b=ltcLbEheJECfYN
+	kYFFUOArXFohVuxBIEhLcdjwy2B+laUgE/kpQjd+iEOE+8iTz1fOPVho8hAiSAlXwTOVp5ogRpzYk
+	HY4UzZ8MbB+YdGlAXAYTMw2rdeg9jNo5OVXmddZWjBYmmHM3ks3ClWGU5QZsL0PZFmG3aR0oUks50
+	himRCeTU7C2+wXRguVXjkkG5HQulXE74uTqKm7Lp74h9RacYdiONqNUtLcN9OpQwX/cpGjhF+yVms
+	NYQnGfShh9K6GSpc7zGjL9s2jDlD6Wy16aiEtMdJFe6/aQJ6su9i5sa5AGxwR4FAF/PNxdXWu9BNK
+	Qfn51YLPk7h66wzMN6Ng==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hfOty-0005Z2-NO; Mon, 24 Jun 2019 13:20:54 +0000
-Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
+	id 1hfOuR-0005rz-3L; Mon, 24 Jun 2019 13:21:23 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hfOql-0002SC-7R
- for linux-arm-kernel@lists.infradead.org; Mon, 24 Jun 2019 13:17:38 +0000
-Received: by mail-wm1-x344.google.com with SMTP id h19so14256912wme.0
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 24 Jun 2019 06:17:34 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=YOp9UlrO2iQdo6ODR2oXUxAGINvR8zXAFEfOibWr2to=;
- b=zjJ9WS4za1awOHlFI3g63fhC+7TiJ1ChOUnYDuQCbYoQ1MQSrN6WsDNUY/GP1+mkw1
- 5LLgjsfjxlkYbZraaRsQUbm9cHX1c4U/rxORWREm0F+Tj3qhF/XGDG8VlJPF3vM76maa
- nD1wdDufRbYQoCMwUAI7rxUItw7gAGy6MMuOnJ5cDa54YIleu0JKBvR+admMzSXHY2Se
- iLil1a7G+i5GL4QYSwAQebZbAgg2avnr3cra4rMRR1EpLJtd8n1QVQKv9w2lYNy8q8NF
- 5FYey1EBhB82QHYW1NhXHoSJTkndNLlsIcG5BMrkdUqpaw/xlyGs4kAcUck5XtVe3EJn
- uDbw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references;
- bh=YOp9UlrO2iQdo6ODR2oXUxAGINvR8zXAFEfOibWr2to=;
- b=mKR8HPygjER37oyhc0HhApceqyMZgHw6TQtWPc0GJL68uSEhNpvVtvCxleV80rjJlX
- 0m+9XYXxTzcPQCp/We8cQ/2oabMGidTXoKySoHvd+zlFWMVXLstZj5dL6B2oEqqDQP7H
- HvsWaug5u+TsKdDDMatPEe0PYZY6g/uR6GhDT/eilnIbU11QlMZKkgB9sHfFswRblihN
- yS97dUvA1aDBa6axDf7Mysu0axaUnxGPSY5jEY8StxKjJaaAzFk+NKN/U3mJImeQcNbV
- Ge/96ZcsRKVRxnmwivQsLQ9sLkr3wYSy01M4bH7ejR+KFeNGIA3ym9Qv6WAr20bQ/bga
- wHnA==
-X-Gm-Message-State: APjAAAUQfoRIC4hi9ximnyxT8qLydyWCkZkDnd2cHRbQbs29U65MZ6pv
- OvDzc1eWLx6QEKtin/ahr3Ai/psa8zA=
-X-Google-Smtp-Source: APXvYqyrBfCF8ooky16ysx+SBo2f0sJ9oIFBPxHrC/P18XTpK0L+EiTsYh6+DITs5mHSyWjRsYgMeA==
-X-Received: by 2002:a1c:ac81:: with SMTP id
- v123mr16604748wme.145.1561382252593; 
- Mon, 24 Jun 2019 06:17:32 -0700 (PDT)
-Received: from clegane.local (209.94.129.77.rev.sfr.net. [77.129.94.209])
- by smtp.gmail.com with ESMTPSA id x8sm24952817wre.73.2019.06.24.06.17.30
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Mon, 24 Jun 2019 06:17:31 -0700 (PDT)
-From: Daniel Lezcano <daniel.lezcano@linaro.org>
-To: viresh.kumar@linaro.org
-Subject: [PATCH v2 2/2] thermal/drivers/cpu_cooling: Unregister with the policy
-Date: Mon, 24 Jun 2019 15:17:15 +0200
-Message-Id: <20190624131715.1857-2-daniel.lezcano@linaro.org>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20190624131715.1857-1-daniel.lezcano@linaro.org>
-References: <20190624131715.1857-1-daniel.lezcano@linaro.org>
+ id 1hfOsA-0003SI-V3; Mon, 24 Jun 2019 13:19:07 +0000
+X-UUID: ddcbed1c8c034de0b098768c6587c0cc-20190624
+X-UUID: ddcbed1c8c034de0b098768c6587c0cc-20190624
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
+ (envelope-from <jerry-ch.chen@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 740455538; Mon, 24 Jun 2019 05:18:52 -0800
+Received: from MTKMBS01N1.mediatek.inc (172.21.101.68) by
+ MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Mon, 24 Jun 2019 06:18:50 -0700
+Received: from mtkcas07.mediatek.inc (172.21.101.84) by
+ mtkmbs01n1.mediatek.inc (172.21.101.68) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Mon, 24 Jun 2019 21:18:48 +0800
+Received: from [172.21.84.99] (172.21.84.99) by mtkcas07.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
+ Transport; Mon, 24 Jun 2019 21:18:48 +0800
+Message-ID: <1561382328.15267.172.camel@mtksdccf07>
+Subject: Re: [RFC PATCH V1 6/6] platform: mtk-isp: Add Mediatek FD driver
+From: Jerry-ch Chen <Jerry-ch.Chen@mediatek.com>
+To: Tomasz Figa <tfiga@chromium.org>
+Date: Mon, 24 Jun 2019 21:18:48 +0800
+In-Reply-To: <20190606104347.GA107267@chromium.org>
+References: <20190423104505.38778-1-Jerry-Ch.chen@mediatek.com>
+ <20190423104505.38778-7-Jerry-Ch.chen@mediatek.com>
+ <20190606104347.GA107267@chromium.org>
+X-Mailer: Evolution 3.2.3-0ubuntu6 
+MIME-Version: 1.0
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190624_061735_895747_393ADAB4 
-X-CRM114-Status: GOOD (  22.78  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190624_061903_052182_43CAE8CA 
+X-CRM114-Status: GOOD (  36.47  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:344 listed in]
- [list.dnswl.org]
+ no trust [216.200.240.184 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -96,303 +74,1372 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Keerthy <j-keerthy@ti.com>,
- "open list:CPU FREQUENCY DRIVERS - ARM BIG LITTLE"
- <linux-pm@vger.kernel.org>, Fabio Estevam <festevam@gmail.com>,
- Amit Daniel Kachhap <amit.kachhap@gmail.com>, rjw@rjwysocki.net,
- linux-kernel@vger.kernel.org, edubezval@gmail.com,
- "open list:TI BANDGAP AND THERMAL DRIVER" <linux-omap@vger.kernel.org>,
- NXP Linux Team <linux-imx@nxp.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Sudeep Holla <sudeep.holla@arm.com>, Zhang Rui <rui.zhang@intel.com>,
- Javi Merino <javi.merino@kernel.org>, Shawn Guo <shawnguo@kernel.org>,
- Sascha Hauer <s.hauer@pengutronix.de>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>
-MIME-Version: 1.0
+Cc: "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ Sean Cheng =?UTF-8?Q?=28=E9=84=AD=E6=98=87=E5=BC=98=29?=
+ <Sean.Cheng@mediatek.com>, "laurent.pinchart+renesas@ideasonboard.com"
+ <laurent.pinchart+renesas@ideasonboard.com>,
+ Rynn Wu =?UTF-8?Q?=28=E5=90=B3=E8=82=B2=E6=81=A9=29?= <Rynn.Wu@mediatek.com>,
+ Christie Yu =?UTF-8?Q?=28=E6=B8=B8=E9=9B=85=E6=83=A0=29?=
+ <christie.yu@mediatek.com>, srv_heupstream <srv_heupstream@mediatek.com>,
+ Holmes Chiou =?UTF-8?Q?=28=E9=82=B1=E6=8C=BA=29?= <holmes.chiou@mediatek.com>,
+ "suleiman@chromium.org" <suleiman@chromium.org>,
+ "shik@chromium.org" <shik@chromium.org>,
+ Jungo Lin =?UTF-8?Q?=28=E6=9E=97=E6=98=8E=E4=BF=8A=29?=
+ <jungo.lin@mediatek.com>, Sj
+ Huang =?UTF-8?Q?=28=E9=BB=83=E4=BF=A1=E7=92=8B=29?= <sj.huang@mediatek.com>,
+ "yuzhao@chromium.org" <yuzhao@chromium.org>,
+ "hans.verkuil@cisco.com" <hans.verkuil@cisco.com>,
+ "zwisler@chromium.org" <zwisler@chromium.org>,
+ Frederic Chen =?UTF-8?Q?=28=E9=99=B3=E4=BF=8A=E5=85=83=29?=
+ <Frederic.Chen@mediatek.com>,
+ "matthias.bgg@gmail.com" <matthias.bgg@gmail.com>,
+ "linux-mediatek@lists.infradead.org" <linux-mediatek@lists.infradead.org>,
+ "mchehab@kernel.org" <mchehab@kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ "linux-media@vger.kernel.org" <linux-media@vger.kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Currently the function cpufreq_cooling_register() returns a cooling
-device pointer which is used back as a pointer to call the function
-cpufreq_cooling_unregister(). Even if it is correct, it would make
-sense to not leak the structure inside a cpufreq driver and keep the
-code thermal code self-encapsulate. Moreover, that forces to add an
-extra variable in each driver using this function.
+Hi Tomasz,
 
-Instead of passing the cooling device to unregister, pass the policy.
+On Thu, 2019-06-06 at 18:43 +0800, Tomasz Figa wrote:
+> Hi Jerry,
+> 
+> On Tue, Apr 23, 2019 at 06:45:05PM +0800, Jerry-ch Chen wrote:
+> > From: Jerry-ch Chen <jerry-ch.chen@mediatek.com>
+> > 
+> > This patch adds the driver of Face Detection (FD) unit in
+> > Mediatek camera system, providing face detection function.
+> > 
+> > The mtk-isp directory will contain drivers for multiple IP
+> > blocks found in Mediatek ISP system. It will include ISP Pass 1
+> > driver (CAM), sensor interface driver, DIP driver and face
+> > detection driver.
+> > 
+> 
+> Thanks for the patch.
+> 
+> First of all a general comment about the design:
+> 
+> My understanding is that this is a relatively straightforward
+> memory-to-memory device that reads a video frame and detects faces on it.
+> Such devices should be implemented as normal V4L2 memory-to-memory devices,
+> with contexts (instances; pipes) represented by v4l2_fh.
+> 
+> Also, please replace the META_OUTPUT queue with proper V4L2 controls, as I
+> don't think there is anything that we couldn't model using controls here.
+> 
+> The end result should be a V4L2 m2m driver (using the m2m helpers), where
+> you get a new context (instance; pipe) whenever you open the video node,
+> similar to codecs, video processors (like MTK MDP) and so on.
+> 
+> Also please see my comments inline.
+> 
 
-Because the cpufreq_cooling_unregister() function uses the policy to
-unregister itself. The only purpose of the cooling device pointer is
-to unregister the cpu cooling device.
+I appreciate your comments,
 
-As there is no more need of this pointer, remove it.
+FD driver will be implemented as a normal V4L2 m2m driver which has an
+IMAGE_OUTPUT queue and a META_CAPTURE queue(face result).
 
-Signed-off-by: Daniel Lezcano <daniel.lezcano@linaro.org>
-Acked-by: Viresh Kumar <viresh.kumar@linaro.org>
----
- drivers/cpufreq/arm_big_little.c               |  9 +++------
- drivers/cpufreq/cpufreq.c                      | 10 ++++------
- drivers/thermal/cpu_cooling.c                  | 18 ++++++++++--------
- drivers/thermal/imx_thermal.c                  | 12 ++++++------
- .../thermal/ti-soc-thermal/ti-thermal-common.c | 10 +++++-----
- include/linux/cpu_cooling.h                    |  6 +++---
- include/linux/cpufreq.h                        |  3 ---
- 7 files changed, 31 insertions(+), 37 deletions(-)
+We will use the following properties.
+/* Is a video mem-to-mem device that supports multiplanar formats */
+#define V4L2_CAP_VIDEO_M2M_MPLANE    0x00004000
 
-diff --git a/drivers/cpufreq/arm_big_little.c b/drivers/cpufreq/arm_big_little.c
-index 7fe52fcddcf1..718c63231e66 100644
---- a/drivers/cpufreq/arm_big_little.c
-+++ b/drivers/cpufreq/arm_big_little.c
-@@ -56,7 +56,6 @@ static bool bL_switching_enabled;
- #define ACTUAL_FREQ(cluster, freq)  ((cluster == A7_CLUSTER) ? freq << 1 : freq)
- #define VIRT_FREQ(cluster, freq)    ((cluster == A7_CLUSTER) ? freq >> 1 : freq)
- 
--static struct thermal_cooling_device *cdev[MAX_CLUSTERS];
- static const struct cpufreq_arm_bL_ops *arm_bL_ops;
- static struct clk *clk[MAX_CLUSTERS];
- static struct cpufreq_frequency_table *freq_table[MAX_CLUSTERS + 1];
-@@ -501,10 +500,8 @@ static int bL_cpufreq_exit(struct cpufreq_policy *policy)
- 	struct device *cpu_dev;
- 	int cur_cluster = cpu_to_cluster(policy->cpu);
- 
--	if (cur_cluster < MAX_CLUSTERS) {
--		cpufreq_cooling_unregister(cdev[cur_cluster]);
--		cdev[cur_cluster] = NULL;
--	}
-+	if (cur_cluster < MAX_CLUSTERS)
-+		cpufreq_cooling_unregister(policy);
- 
- 	cpu_dev = get_cpu_device(policy->cpu);
- 	if (!cpu_dev) {
-@@ -527,7 +524,7 @@ static void bL_cpufreq_ready(struct cpufreq_policy *policy)
- 	if (cur_cluster >= MAX_CLUSTERS)
- 		return;
- 
--	cdev[cur_cluster] = of_cpufreq_cooling_register(policy);
-+	of_cpufreq_cooling_register(policy);
- }
- 
- static struct cpufreq_driver bL_cpufreq_driver = {
-diff --git a/drivers/cpufreq/cpufreq.c b/drivers/cpufreq/cpufreq.c
-index aee024e42618..f07454249fbc 100644
---- a/drivers/cpufreq/cpufreq.c
-+++ b/drivers/cpufreq/cpufreq.c
-@@ -1379,8 +1379,8 @@ static int cpufreq_online(unsigned int cpu)
- 		cpufreq_driver->ready(policy);
- 
- 	if (cpufreq_thermal_control_enabled(cpufreq_driver))
--		policy->cdev = of_cpufreq_cooling_register(policy);
--
-+		of_cpufreq_cooling_register(policy);
-+	
- 	pr_debug("initialization complete\n");
- 
- 	return 0;
-@@ -1468,10 +1468,8 @@ static int cpufreq_offline(unsigned int cpu)
- 		goto unlock;
- 	}
- 
--	if (cpufreq_thermal_control_enabled(cpufreq_driver)) {
--		cpufreq_cooling_unregister(policy->cdev);
--		policy->cdev = NULL;
--	}
-+	if (cpufreq_thermal_control_enabled(cpufreq_driver))
-+		cpufreq_cooling_unregister(policy);
- 
- 	if (cpufreq_driver->stop_cpu)
- 		cpufreq_driver->stop_cpu(policy);
-diff --git a/drivers/thermal/cpu_cooling.c b/drivers/thermal/cpu_cooling.c
-index 83486775e593..007c7c6bf845 100644
---- a/drivers/thermal/cpu_cooling.c
-+++ b/drivers/thermal/cpu_cooling.c
-@@ -78,6 +78,7 @@ struct cpufreq_cooling_device {
- 	struct cpufreq_policy *policy;
- 	struct list_head node;
- 	struct time_in_idle *idle_time;
-+	struct thermal_cooling_device *cdev;
- };
- 
- static DEFINE_IDA(cpufreq_ida);
-@@ -606,6 +607,7 @@ __cpufreq_cooling_register(struct device_node *np,
- 		goto remove_ida;
- 
- 	cpufreq_cdev->clipped_freq = get_state_freq(cpufreq_cdev, 0);
-+	cpufreq_cdev->cdev = cdev;
- 
- 	mutex_lock(&cooling_list_lock);
- 	/* Register the notifier for first cpufreq cooling device */
-@@ -699,18 +701,18 @@ EXPORT_SYMBOL_GPL(of_cpufreq_cooling_register);
-  *
-  * This interface function unregisters the "thermal-cpufreq-%x" cooling device.
-  */
--void cpufreq_cooling_unregister(struct thermal_cooling_device *cdev)
-+void cpufreq_cooling_unregister(struct cpufreq_policy *policy)
- {
- 	struct cpufreq_cooling_device *cpufreq_cdev;
- 	bool last;
- 
--	if (!cdev)
--		return;
--
--	cpufreq_cdev = cdev->devdata;
--
- 	mutex_lock(&cooling_list_lock);
--	list_del(&cpufreq_cdev->node);
-+	list_for_each_entry(cpufreq_cdev, &cpufreq_cdev_list, node) {
-+		if (cpufreq_cdev->policy == policy) {
-+			list_del(&cpufreq_cdev->node);
-+			break;
-+		}
-+	}
- 	/* Unregister the notifier for the last cpufreq cooling device */
- 	last = list_empty(&cpufreq_cdev_list);
- 	mutex_unlock(&cooling_list_lock);
-@@ -719,7 +721,7 @@ void cpufreq_cooling_unregister(struct thermal_cooling_device *cdev)
- 		cpufreq_unregister_notifier(&thermal_cpufreq_notifier_block,
- 					    CPUFREQ_POLICY_NOTIFIER);
- 
--	thermal_cooling_device_unregister(cdev);
-+	thermal_cooling_device_unregister(cpufreq_cdev->cdev);
- 	ida_simple_remove(&cpufreq_ida, cpufreq_cdev->id);
- 	kfree(cpufreq_cdev->idle_time);
- 	kfree(cpufreq_cdev);
-diff --git a/drivers/thermal/imx_thermal.c b/drivers/thermal/imx_thermal.c
-index bb6754a5342c..021c0948b740 100644
---- a/drivers/thermal/imx_thermal.c
-+++ b/drivers/thermal/imx_thermal.c
-@@ -203,7 +203,6 @@ static struct thermal_soc_data thermal_imx7d_data = {
- struct imx_thermal_data {
- 	struct cpufreq_policy *policy;
- 	struct thermal_zone_device *tz;
--	struct thermal_cooling_device *cdev;
- 	enum thermal_device_mode mode;
- 	struct regmap *tempmon;
- 	u32 c1, c2; /* See formula in imx_init_calib() */
-@@ -656,6 +655,7 @@ MODULE_DEVICE_TABLE(of, of_imx_thermal_match);
- static int imx_thermal_register_legacy_cooling(struct imx_thermal_data *data)
- {
- 	struct device_node *np;
-+	struct thermal_cooling_device *cdev;
- 	int ret;
- 
- 	data->policy = cpufreq_cpu_get(0);
-@@ -667,9 +667,9 @@ static int imx_thermal_register_legacy_cooling(struct imx_thermal_data *data)
- 	np = of_get_cpu_node(data->policy->cpu, NULL);
- 
- 	if (!np || !of_find_property(np, "#cooling-cells", NULL)) {
--		data->cdev = cpufreq_cooling_register(data->policy);
--		if (IS_ERR(data->cdev)) {
--			ret = PTR_ERR(data->cdev);
-+		cdev = cpufreq_cooling_register(data->policy);
-+		if (IS_ERR(cdev)) {
-+			ret = PTR_ERR(cdev);
- 			cpufreq_cpu_put(data->policy);
- 			return ret;
- 		}
-@@ -680,7 +680,7 @@ static int imx_thermal_register_legacy_cooling(struct imx_thermal_data *data)
- 
- static void imx_thermal_unregister_legacy_cooling(struct imx_thermal_data *data)
- {
--	cpufreq_cooling_unregister(data->cdev);
-+	cpufreq_cooling_unregister(data->policy);
- 	cpufreq_cpu_put(data->policy);
- }
- 
-@@ -872,7 +872,7 @@ static int imx_thermal_remove(struct platform_device *pdev)
- 		clk_disable_unprepare(data->thermal_clk);
- 
- 	thermal_zone_device_unregister(data->tz);
--	cpufreq_cooling_unregister(data->cdev);
-+	cpufreq_cooling_unregister(data->policy);
- 	cpufreq_cpu_put(data->policy);
- 
- 	return 0;
-diff --git a/drivers/thermal/ti-soc-thermal/ti-thermal-common.c b/drivers/thermal/ti-soc-thermal/ti-thermal-common.c
-index b4f981daeaf2..170b70b6ec61 100644
---- a/drivers/thermal/ti-soc-thermal/ti-thermal-common.c
-+++ b/drivers/thermal/ti-soc-thermal/ti-thermal-common.c
-@@ -41,7 +41,6 @@ struct ti_thermal_data {
- 	struct cpufreq_policy *policy;
- 	struct thermal_zone_device *ti_thermal;
- 	struct thermal_zone_device *pcb_tz;
--	struct thermal_cooling_device *cool_dev;
- 	struct ti_bandgap *bgp;
- 	enum thermal_device_mode mode;
- 	struct work_struct thermal_wq;
-@@ -233,6 +232,7 @@ int ti_thermal_register_cpu_cooling(struct ti_bandgap *bgp, int id)
- {
- 	struct ti_thermal_data *data;
- 	struct device_node *np = bgp->dev->of_node;
-+	struct thermal_cooling_device *cdev;
- 
- 	/*
- 	 * We are assuming here that if one deploys the zone
-@@ -256,9 +256,9 @@ int ti_thermal_register_cpu_cooling(struct ti_bandgap *bgp, int id)
- 	}
- 
- 	/* Register cooling device */
--	data->cool_dev = cpufreq_cooling_register(data->policy);
--	if (IS_ERR(data->cool_dev)) {
--		int ret = PTR_ERR(data->cool_dev);
-+	cdev = cpufreq_cooling_register(data->policy);
-+	if (IS_ERR(cdev)) {
-+		int ret = PTR_ERR(cdev);
- 		dev_err(bgp->dev, "Failed to register cpu cooling device %d\n",
- 			ret);
- 		cpufreq_cpu_put(data->policy);
-@@ -277,7 +277,7 @@ int ti_thermal_unregister_cpu_cooling(struct ti_bandgap *bgp, int id)
- 	data = ti_bandgap_get_sensor_data(bgp, id);
- 
- 	if (data) {
--		cpufreq_cooling_unregister(data->cool_dev);
-+		cpufreq_cooling_unregister(data->policy);
- 		if (data->policy)
- 			cpufreq_cpu_put(data->policy);
- 	}
-diff --git a/include/linux/cpu_cooling.h b/include/linux/cpu_cooling.h
-index bae54bb7c048..89f469ee4be4 100644
---- a/include/linux/cpu_cooling.h
-+++ b/include/linux/cpu_cooling.h
-@@ -29,9 +29,9 @@ cpufreq_cooling_register(struct cpufreq_policy *policy);
- 
- /**
-  * cpufreq_cooling_unregister - function to remove cpufreq cooling device.
-- * @cdev: thermal cooling device pointer.
-+ * @policy: cpufreq policy
-  */
--void cpufreq_cooling_unregister(struct thermal_cooling_device *cdev);
-+void cpufreq_cooling_unregister(struct cpufreq_policy *policy);
- 
- #else /* !CONFIG_CPU_THERMAL */
- static inline struct thermal_cooling_device *
-@@ -41,7 +41,7 @@ cpufreq_cooling_register(struct cpufreq_policy *policy)
- }
- 
- static inline
--void cpufreq_cooling_unregister(struct thermal_cooling_device *cdev)
-+void cpufreq_cooling_unregister(struct cpufreq_policy *policy)
- {
- 	return;
- }
-diff --git a/include/linux/cpufreq.h b/include/linux/cpufreq.h
-index 53ec82d75565..81ac78353f79 100644
---- a/include/linux/cpufreq.h
-+++ b/include/linux/cpufreq.h
-@@ -144,9 +144,6 @@ struct cpufreq_policy {
- 
- 	/* For cpufreq driver's internal use */
- 	void			*driver_data;
--
--	/* Pointer to the cooling device if used for thermal mitigation */
--	struct thermal_cooling_device *cdev;
- };
- 
- struct cpufreq_freqs {
--- 
-2.17.1
+The original META_OUTPUT queue contains the following structure will be
+replaced by V4L2 controls,
+
+/* FD_SCALE_NUM is 15. */
+struct fd_user_param {
+	uint8_t rip_feature;
+	uint8_t gfd_skip;
+	uint8_t dynamic_change_model;
+	uint8_t scale_num_from_user;
+	uint16_t source_img_width[FD_SCALE_NUM];
+	uint16_t source_img_height[FD_SCALE_NUM];
+} __packed; //share with co-processor
+
+However, we found that testM2MFormats in the V4L2 compliance test will
+assume the capture queue has the same format as output queue has,
+therefore, FD driver's capture queue wouldn't be able to use META format
+or that test case will be failed. 
+
+// m2m devices are special in that the format is often per-filehandle.
+// But colorspace information should be passed from output to capture,
+// so test that.
+	if (node->is_m2m)
+		return testM2MFormats(node);
+
+May we ask for your suggestions about this part?
+
+> > Signed-off-by: Jerry-ch Chen <jerry-ch.chen@mediatek.com>
+> > ---
+> >  drivers/media/platform/mtk-isp/Makefile       |   16 +
+> >  drivers/media/platform/mtk-isp/fd/Makefile    |   25 +
+> >  .../media/platform/mtk-isp/fd/mtk_fd-dev.c    |  754 +++++++++++
+> >  .../media/platform/mtk-isp/fd/mtk_fd-dev.h    |  315 +++++
+> >  drivers/media/platform/mtk-isp/fd/mtk_fd-hw.h |  158 +++
+> >  .../media/platform/mtk-isp/fd/mtk_fd-smem.c   |  322 +++++
+> >  .../media/platform/mtk-isp/fd/mtk_fd-smem.h   |   39 +
+> >  .../media/platform/mtk-isp/fd/mtk_fd-v4l2.c   | 1171 +++++++++++++++++
+> >  drivers/media/platform/mtk-isp/fd/mtk_fd_40.c |  555 ++++++++
+> 
+> This is a small driver. Please just put all the code in one file. (Except
+> the smem stuff, which should go away.)
+> 
+Ok, we will fix it.
+> >  9 files changed, 3355 insertions(+)
+> >  create mode 100644 drivers/media/platform/mtk-isp/Makefile
+> >  create mode 100644 drivers/media/platform/mtk-isp/fd/Makefile
+> >  create mode 100644 drivers/media/platform/mtk-isp/fd/mtk_fd-dev.c
+> >  create mode 100644 drivers/media/platform/mtk-isp/fd/mtk_fd-dev.h
+> >  create mode 100644 drivers/media/platform/mtk-isp/fd/mtk_fd-hw.h
+> >  create mode 100644 drivers/media/platform/mtk-isp/fd/mtk_fd-smem.c
+> >  create mode 100644 drivers/media/platform/mtk-isp/fd/mtk_fd-smem.h
+> >  create mode 100644 drivers/media/platform/mtk-isp/fd/mtk_fd-v4l2.c
+> >  create mode 100644 drivers/media/platform/mtk-isp/fd/mtk_fd_40.c
+> > 
+> > diff --git a/drivers/media/platform/mtk-isp/Makefile b/drivers/media/platform/mtk-isp/Makefile
+> > new file mode 100644
+> > index 000000000000..5e3a9aa7f8b2
+> > --- /dev/null
+> > +++ b/drivers/media/platform/mtk-isp/Makefile
+> > @@ -0,0 +1,16 @@
+> > +#
+> > +# Copyright (C) 2018 MediaTek Inc.
+> > +#
+> > +# This program is free software: you can redistribute it and/or modify
+> > +# it under the terms of the GNU General Public License version 2 as
+> > +# published by the Free Software Foundation.
+> > +#
+> > +# This program is distributed in the hope that it will be useful,
+> > +# but WITHOUT ANY WARRANTY; without even the implied warranty of
+> > +# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+> > +# GNU General Public License for more details.
+> > +#
+> > +
+> > +ifeq ($(CONFIG_VIDEO_MEDIATEK_FD_SUPPORT),y)
+> 
+> There is no value in having "SUPPORT" in the Kconfig symbol name. It just
+> makes it unnecessarily long.
+> 
+> > +obj-y += fd/
+> > +endif
+> 
+> You can just add this directly in drivers/media/platform/Makefile. No need
+> for this intermediate file.
+> 
+> Also, the driver should be compilable as a module too.
+> 
+Ok, we will fix it.
+
+> > diff --git a/drivers/media/platform/mtk-isp/fd/Makefile b/drivers/media/platform/mtk-isp/fd/Makefile
+> > new file mode 100644
+> > index 000000000000..f2b64cf53da9
+> > --- /dev/null
+> > +++ b/drivers/media/platform/mtk-isp/fd/Makefile
+> > @@ -0,0 +1,25 @@
+> > +#
+> > +# Copyright (C) 2018 MediaTek Inc.
+> > +#
+> > +# This program is free software: you can redistribute it and/or modify
+> > +# it under the terms of the GNU General Public License version 2 as
+> > +# published by the Free Software Foundation.
+> > +#
+> > +# This program is distributed in the hope that it will be useful,
+> > +# but WITHOUT ANY WARRANTY; without even the implied warranty of
+> > +# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+> > +# GNU General Public License for more details.
+> > +#
+> > +$(info $(srctree))
+> > +ccflags-y += -I$(srctree)/drivers/media/platform/mtk-mdp3
+> > +
+> > +obj-y += mtk_fd_40.o
+> > +obj-y += mtk_fd-v4l2.o
+> > +
+> > +# To provide alloc context managing memory shared
+> > +# between CPU and camera coprocessor
+> > +obj-y += mtk_fd-smem.o
+> > +
+> > +# Utilits to provide frame-based streaming model
+> > +# with v4l2 user interfaces
+> > +obj-y += mtk_fd-dev.o
+> 
+> This wouldn't work if the driver is compiled as a module.
+> Please use something like if you have more than 1 object.
+> 
+> 	mtk-fd-objs += list of .o objects
+> 
+> 	obj-$(CONFIG_VIDEO_MEDIATEK_FD) += mtk-fd.o
+> 
+> Otherwise just use the last line directly.
+> 
+Ok, we will fix it.
+
+> > diff --git a/drivers/media/platform/mtk-isp/fd/mtk_fd-dev.c b/drivers/media/platform/mtk-isp/fd/mtk_fd-dev.c
+> > new file mode 100644
+> > index 000000000000..207e5d20ad46
+> > --- /dev/null
+> > +++ b/drivers/media/platform/mtk-isp/fd/mtk_fd-dev.c
+> > @@ -0,0 +1,754 @@
+> > +// SPDX-License-Identifier: GPL-2.0
+> > +/*
+> > + * Copyright (c) 2018 MediaTek Inc.
+> > + * Author: Frederic Chen <frederic.chen@mediatek.com>
+> > + *
+> > + * This program is free software; you can redistribute it and/or modify
+> > + * it under the terms of the GNU General Public License version 2 as
+> > + * published by the Free Software Foundation.
+> > + *
+> > + * This program is distributed in the hope that it will be useful,
+> > + * but WITHOUT ANY WARRANTY; without even the implied warranty of
+> > + * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+> > + * GNU General Public License for more details.
+> > + */
+> 
+> No need for this text if there is SPDX.
+> 
+Fixed.
+
+> [snip]
+> > diff --git a/drivers/media/platform/mtk-isp/fd/mtk_fd-dev.h b/drivers/media/platform/mtk-isp/fd/mtk_fd-dev.h
+> > new file mode 100644
+> > index 000000000000..c13627f2bac4
+> > --- /dev/null
+> > +++ b/drivers/media/platform/mtk-isp/fd/mtk_fd-dev.h
+> > @@ -0,0 +1,315 @@
+> > +/* SPDX-License-Identifier: GPL-2.0 */
+> > +/*
+> > + * Copyright (c) 2018 MediaTek Inc.
+> > + * Author: Frederic Chen <frederic.chen@mediatek.com>
+> > + *
+> > + * This program is free software; you can redistribute it and/or modify
+> > + * it under the terms of the GNU General Public License version 2 as
+> > + * published by the Free Software Foundation.
+> > + *
+> > + * This program is distributed in the hope that it will be useful,
+> > + * but WITHOUT ANY WARRANTY; without even the implied warranty of
+> > + * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+> > + * GNU General Public License for more details.
+> > + */
+> > +
+> > +#ifndef _MTK_FD_DEV_H_
+> > +#define _MTK_FD_DEV_H_
+> > +
+> > +#include <linux/types.h>
+> > +#include <linux/platform_device.h>
+> > +#include <media/v4l2-device.h>
+> > +#include <media/videobuf2-v4l2.h>
+> > +
+> > +#include "mtk_fd-hw.h"
+> > +#include "mtk_fd-smem.h"
+> > +
+> > +#define MTK_FD_PIPE_ID_STREAM_0				0
+> > +#define MTK_FD_PIPE_ID_STREAM_1				1
+> > +#define MTK_FD_PIPE_ID_TOTAL_NUM			2
+> > +
+> > +#define MTK_FD_VIDEO_NODE_ID_YUV_OUT			0
+> > +#define MTK_FD_VIDEO_NODE_ID_CONFIG_OUT			1
+> > +#define MTK_FD_VIDEO_NODE_ID_OUT_TOTAL_NUM		2
+> > +#define MTK_FD_VIDEO_NODE_ID_CAPTURE			2
+> > +#define MTK_FD_VIDEO_NODE_ID_CAPTURE_TOTAL_NUM		1
+> > +#define MTK_FD_VIDEO_NODE_ID_TOTAL_NUM \
+> > +	(MTK_FD_VIDEO_NODE_ID_OUT_TOTAL_NUM + \
+> > +	MTK_FD_VIDEO_NODE_ID_CAPTURE_TOTAL_NUM)
+> > +
+> > +#define MTK_FD_VIDEO_NODE_ID_NO_MASTER			-1
+> > +
+> > +#define MTK_FD_OUTPUT_MIN_WIDTH				2U
+> > +#define MTK_FD_OUTPUT_MIN_HEIGHT			2U
+> > +#define MTK_FD_OUTPUT_MAX_WIDTH				5376U
+> > +#define MTK_FD_OUTPUT_MAX_HEIGHT			4032U
+> > +#define MTK_FD_CAPTURE_MIN_WIDTH			2U
+> > +#define MTK_FD_CAPTURE_MIN_HEIGHT			2U
+> > +#define MTK_FD_CAPTURE_MAX_WIDTH			5376U
+> > +#define MTK_FD_CAPTURE_MAX_HEIGHT			4032U
+> > +
+> > +#define MTK_FD_PIPE_MEDIA_MODEL_NAME	"MTK-FD-V4L2"
+> > +#define MTK_FD_PIPE_NAME_STREAM_0	MTK_FD_PIPE_MEDIA_MODEL_NAME
+> > +#define MTK_FD_PIPE_NAME_STREAM_1	"MTK-FD-V4L2-STREAM-1"
+> > +
+> > +#define MTK_FD_DEV_META_BUF_DEFAULT_SIZE		(1110 * 1024)
+> > +
+> > +/*
+> > + * Supported format and the information used for
+> > + * size calculation
+> > + */
+> > +struct mtk_fd_dev_meta_format {
+> > +	u32 dataformat;
+> > +	u32 max_buffer_size;
+> > +	u8 flags;
+> > +};
+> > +
+> > +/* MDP part private format definitation */
+> > +struct mtk_fd_dev_mdp_format {
+> > +	u32 pixelformat;
+> > +	u32 mdp_color;
+> > +	u32 colorspace;
+> > +	u8 depth[VIDEO_MAX_PLANES];
+> > +	u8 row_depth[VIDEO_MAX_PLANES];
+> > +	u8 num_planes;
+> > +	u8 walign;
+> > +	u8 halign;
+> > +	u8 salign;
+> > +	u32 flags;
+> > +};
+> > +
+> > +struct mtk_fd_dev_format {
+> > +	union {
+> > +		struct mtk_fd_dev_meta_format meta;
+> > +		struct mtk_fd_dev_mdp_format img;
+> > +	} fmt;
+> > +};
+> 
+> This looks like a copy/paste from the DIP driver. Please merge the 3
+> structures above into 1 as suggested in review of that driver.
+> 
+Ok, we will fix it.
+
+> [snip]
+> > diff --git a/drivers/media/platform/mtk-isp/fd/mtk_fd-hw.h b/drivers/media/platform/mtk-isp/fd/mtk_fd-hw.h
+> > new file mode 100644
+> > index 000000000000..40e09d66c479
+> > --- /dev/null
+> > +++ b/drivers/media/platform/mtk-isp/fd/mtk_fd-hw.h
+> > @@ -0,0 +1,158 @@
+> > +/* SPDX-License-Identifier: GPL-2.0
+> > + * Copyright (C) 2015 MediaTek Inc.
+> > + *
+> > + * This program is free software: you can redistribute it and/or modify
+> > + * it under the terms of the GNU General Public License version 2 as
+> > + * published by the Free Software Foundation.
+> > + *
+> > + * This program is distributed in the hope that it will be useful,
+> > + * but WITHOUT ANY WARRANTY; without even the implied warranty of
+> > + * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+> > + * GNU General Public License for more details.
+> > + */
+> > +
+> > +#ifndef __MTK_FD_HW_H__
+> > +#define __MTK_FD_HW_H__
+> > +
+> > +#include <linux/io.h>
+> > +#define SIG_ERESTARTSYS 512
+> > +
+> > +#define FD_WR32(v, a) \
+> > +do { \
+> > +	__raw_writel((v), (void __force __iomem *)((a))); \
+> > +	mb(); /* ensure written */ \
+> > +} while (0)
+> > +
+> > +#define FD_RD32(addr) ioread32((void *)addr)
+> > +
+> > +#define FD_INT_EN		0x15c
+> > +#define FD_INT			0x168
+> > +#define FD_RESULT		0x178
+> > +#define FD_IRQ_MASK		0x001
+> > +
+> > +#define RS_BUF_SIZE_MAX		2288788
+> > +#define VA_OFFSET		0xffff000000000000
+> > +
+> > +#define MTK_FD_MAX_NO		1024
+> > +#define MAX_FACE_SEL_NUM	(MTK_FD_MAX_NO + 2)
+> > +
+> > +/* The max number of face sizes could be detected, for feature scaling */
+> > +#define FACE_SIZE_NUM_MAX	14
+> > +
+> > +/* FACE_SIZE_NUM_MAX + 1, first scale for input image W/H */
+> > +#define FD_SCALE_NUM		15
+> > +
+> > +/* Number of Learning data sets */
+> > +#define LEARNDATA_NUM		18
+> > +
+> > +#define mtk_fd_us_to_jiffies(us) \
+> > +	((((unsigned long)(us) / 1000) * HZ + 512) >> 10)
+> > +
+> 
+> Uhm, looking at the arbitrary numbers involved in this computation I'm
+> afraid to even ask what this macro is expected to do.
+> 
+> Judging by the name, why not just use usecs_to_jiffies()?
+> 
+Fixed. Using usecs_to_jiffies() instead.
+
+> [snip]
+> > diff --git a/drivers/media/platform/mtk-isp/fd/mtk_fd-smem.h b/drivers/media/platform/mtk-isp/fd/mtk_fd-smem.h
+> > new file mode 100644
+> > index 000000000000..758a4ab68ec2
+> > --- /dev/null
+> > +++ b/drivers/media/platform/mtk-isp/fd/mtk_fd-smem.h
+> > @@ -0,0 +1,39 @@
+> [snip]
+> > +
+> > +struct mtk_fd_smem_dev {
+> > +	struct device dev;
+> > +	struct sg_table sgt;
+> > +	struct page **smem_pages;
+> > +	int num_smem_pages;
+> > +	phys_addr_t smem_base;
+> > +	dma_addr_t smem_dma_base;
+> > +	int smem_size;
+> > +};
+> > +
+> > +phys_addr_t mtk_fd_smem_iova_to_phys(struct mtk_fd_smem_dev *smem_dev,
+> > +				     dma_addr_t iova);
+> > +int mtk_fd_smem_alloc_dev_init(struct mtk_fd_smem_dev *smem_dev,
+> > +			       struct device *default_alloc_dev);
+> > +void mtk_fd_smem_alloc_dev_release(struct mtk_fd_smem_dev *smem_dev);
+> > +
+> 
+> Please remove this custom smem thing as we should just use dma_alloc_*()
+> from the right struct device attached to the right reserved memory pool.
+> 
+FD driver may not need smem things after we use v4l2 control to replace
+the META_OUTPUT queuues.
+
+> [snip]
+> > +static int mtk_fd_videoc_enum_fmt(struct file *file, void *fh,
+> > +				  struct v4l2_fmtdesc *f)
+> 
+> It's "vidioc".
+> 
+Fixed.
+
+> > +{
+> > +	struct mtk_fd_video_device *node = mtk_fd_file_to_node(file);
+> > +
+> > +	if (f->index > node->desc->num_fmts ||
+> > +	    f->type != node->dev_q.vbq.type)
+> 
+> No need to check the type.
+> 
+Ok, we will fix it.
+
+> > +		return -EINVAL;
+> > +
+> > +	strscpy(f->description, node->desc->description,
+> > +		sizeof(f->description));
+> > +
+> > +	f->pixelformat = node->desc->fmts[f->index].fmt.img.pixelformat;
+> > +	f->flags = 0;
+> > +
+> > +	return 0;
+> > +}
+> > +
+> > +static int mtk_fd_meta_enum_format(struct file *file,
+> > +				   void *fh, struct v4l2_fmtdesc *f)
+> 
+> Please name the functions consistently. Above it has the vidioc prefix (with
+> typo) and enum_fmt, but here it doesn't have a prefix and is enum_format.
+> 
+Renamed to mtk_fd_vidioc_enum_meta_format.
+
+> > +{
+> > +	struct mtk_fd_video_device *node = mtk_fd_file_to_node(file);
+> > +
+> > +	if (f->index > 0 || f->type != node->dev_q.vbq.type)
+> 
+> There is no need to check the type, as the core should already check it for
+> you.
+> 
+Ok, we will fix it.
+
+> > +		return -EINVAL;
+> > +
+> > +	strscpy(f->description, node->desc->description,
+> > +		sizeof(f->description));
+> > +
+> > +	f->pixelformat = node->vdev_fmt.fmt.meta.dataformat;
+> 
+> Also set flags to 0.
+> 
+Fixed.
+> > +
+> > +	return 0;
+> > +}
+> > +
+> > +static int mtk_fd_videoc_g_meta_fmt(struct file *file,
+> > +				    void *fh, struct v4l2_format *f)
+> > +{
+> > +	struct mtk_fd_video_device *node = mtk_fd_file_to_node(file);
+> 
+> The Linux coding style requires 1 blank line between variable declarations
+> and code.
+> 
+> > +	*f = node->vdev_fmt;
+> > +
+> > +	return 0;
+> > +}
+> > +
+> > +static int
+> > +mtk_fd_vidioc_subscribe_event(struct v4l2_fh *fh,
+> > +			      const struct v4l2_event_subscription *sub)
+> > +{
+> > +	switch (sub->type) {
+> > +	case V4L2_EVENT_CTRL:
+> > +		return v4l2_ctrl_subscribe_event(fh, sub);
+> > +	default:
+> > +		return -EINVAL;
+> > +	}
+> > +}
+> 
+> This driver doesn't seem to support any controls, so there is no point in
+> supporting the above event.
+> 
+> [snip]
+> > +static void mtk_fd_node_to_v4l2(struct mtk_fd_pipe *fd_pipe,
+> > +				u32 idx,
+> > +				 struct video_device *vdev,
+> > +				 struct v4l2_format *f)
+> > +{
+> > +	struct mtk_fd_video_device *node = &fd_pipe->nodes[idx];
+> > +
+> > +	vdev->ioctl_ops = node->desc->ops;
+> > +	vdev->device_caps = V4L2_CAP_STREAMING | node->desc->cap;
+> > +	f->type = node->desc->buf_type;
+> > +	mtk_fd_pipe_load_default_fmt(fd_pipe, node, f);
+> > +}
+> 
+> This function is only called once, is very short and has a very misleading
+> name (this kind of name is used for functions that convert things).
+> Just move the code back to the caller.
+> 
+> > +
+> > +int mtk_fd_dev_media_register(struct device *dev,
+> > +			      struct media_device *media_dev,
+> > +			      const char *model)
+> > +{
+> > +	int ret = 0;
+> > +
+> > +	media_dev->dev = dev;
+> > +	dev_dbg(dev, "setup media_dev.dev: %p\n",
+> > +		media_dev->dev);
+> 
+> I don't think these logs every second line are useful even for debugging.
+> Please remove.
+> 
+> > +
+> > +	strlcpy(media_dev->model, model,
+> > +		sizeof(media_dev->model));
+> 
+> No need to pass model here as an argument. Just write the string here
+> directly.
+> 
+> > +	dev_dbg(dev, "setup media_dev.model: %s\n",
+> > +		media_dev->model);
+> > +
+> > +	snprintf(media_dev->bus_info, sizeof(media_dev->bus_info),
+> > +		 "platform:%s", dev_name(dev));
+> > +	dev_dbg(dev, "setup media_dev.bus_info: %s\n",
+> > +		media_dev->bus_info);
+> > +
+> > +	media_dev->hw_revision = 0;
+> > +	dev_dbg(dev, "setup media_dev.hw_revision: %d\n",
+> > +		media_dev->hw_revision);
+> 
+> No need to explicitly initialize to 0.
+> 
+> > +
+> > +	media_dev->ops = &mtk_fd_media_req_ops;
+> > +
+> > +	dev_dbg(dev, "media_device_init: media_dev:%p\n",
+> > +		media_dev);
+> > +	media_device_init(media_dev);
+> > +
+> > +	pr_debug("Register media device: %s, %p",
+> > +		 media_dev->model,
+> > +		media_dev);
+> > +
+> > +	ret = media_device_register(media_dev);
+> > +
+> > +	if (ret) {
+> > +		dev_err(dev, "failed to register media device (%d)\n", ret);
+> > +		goto fail_media_dev;
+> > +	}
+> > +	return 0;
+> > +
+> > +fail_media_dev:
+> > +	media_device_unregister(media_dev);
+> 
+> We jump here even if media_device_register() failed. Unregistering something
+> that wasn't registered doesn't sound like a good idea.
+> 
+> > +	media_device_cleanup(media_dev);
+> > +
+> > +	return ret;
+> > +}
+> 
+> There isn't much happening in this function. Perhaps just move the code back
+> to the caller?
+> 
+> > +
+> > +int mtk_fd_dev_v4l2_register(struct device *dev,
+> > +			     struct media_device *media_dev,
+> > +			     struct v4l2_device *v4l2_dev)
+> > +{
+> > +	int ret = 0;
+> 
+> Add a blank line between variable declarations and code.
+> 
+> > +	/* Set up v4l2 device */
+> > +	v4l2_dev->mdev = media_dev;
+> > +	dev_dbg(dev, "setup v4l2_dev->mdev: %p",
+> > +		v4l2_dev->mdev);
+> 
+> Please clean up such debugging messages, it makes it much harder to review
+> the code.
+> 
+> > +	v4l2_dev->ctrl_handler = NULL;
+> 
+> No need for explicit NULL assignments, as the structure was zero-filled
+> already.
+> 
+> > +	dev_dbg(dev, "setup v4l2_dev->ctrl_handler: %p",
+> > +		v4l2_dev->ctrl_handler);
+> > +
+> > +	pr_debug("Register v4l2 device: %p",
+> > +		 v4l2_dev);
+> 
+> dev_dbg()? But I would still just remove it.
+> 
+> > +
+> > +	ret = v4l2_device_register(dev, v4l2_dev);
+> > +
+> > +	if (ret) {
+> > +		dev_err(dev, "failed to register V4L2 device (%d)\n", ret);
+> > +		goto fail_v4l2_dev;
+> > +	}
+> > +
+> > +	return 0;
+> > +
+> > +fail_v4l2_dev:
+> > +	media_device_unregister(media_dev);
+> > +	media_device_cleanup(media_dev);
+> > +
+> > +	return ret;
+> > +}
+> > +
+> 
+> There isn't much happening in this function. Perhaps just move the code back
+> to the caller?
+> 
+> > +int mtk_fd_pipe_v4l2_register(struct mtk_fd_pipe *fd_pipe,
+> > +			      struct media_device *media_dev,
+> > +			      struct v4l2_device *v4l2_dev)
+> > +{
+> > +	int i, ret;
+> > +
+> > +	/* Initialize miscellaneous variables */
+> > +	fd_pipe->streaming = 0;
+> > +
+> > +	/* Initialize subdev media entity */
+> > +	fd_pipe->subdev_pads = kcalloc(fd_pipe->num_nodes,
+> > +				       sizeof(*fd_pipe->subdev_pads),
+> > +					GFP_KERNEL);
+> > +	if (!fd_pipe->subdev_pads) {
+> > +		ret = -ENOMEM;
+> > +		goto fail_subdev_pads;
+> 
+> There isn't anything to clean up at this point, so just return.
+> 
+> > +	}
+> > +
+> > +	ret = media_entity_pads_init(&fd_pipe->subdev.entity,
+> > +				     fd_pipe->num_nodes,
+> > +				     fd_pipe->subdev_pads);
+> > +	if (ret) {
+> > +		dev_err(&fd_pipe->fd_dev->pdev->dev,
+> > +			"failed initialize subdev media entity (%d)\n", ret);
+> > +		goto fail_media_entity;
+> 
+> Please name the labels after the next cleanup step to happen after jumping
+> to it.
+> 
+> > +	}
+> > +
+> > +	/* Initialize subdev */
+> > +	v4l2_subdev_init(&fd_pipe->subdev, &mtk_fd_subdev_ops);
+> > +
+> > +	fd_pipe->subdev.entity.function =
+> > +		MEDIA_ENT_F_PROC_VIDEO_PIXEL_FORMATTER;
+> > +
+> > +	fd_pipe->subdev.entity.ops = &mtk_fd_media_ops;
+> > +
+> > +	for (i = 0; i < fd_pipe->num_nodes; i++) {
+> > +		struct mtk_fd_video_device_desc *desc =
+> > +			fd_pipe->nodes[i].desc;
+> > +
+> > +		fd_pipe->subdev_pads[i].flags =
+> > +			V4L2_TYPE_IS_OUTPUT(desc->buf_type) ?
+> > +			MEDIA_PAD_FL_SINK : MEDIA_PAD_FL_SOURCE;
+> > +	}
+> > +
+> > +	fd_pipe->subdev.flags =
+> > +		V4L2_SUBDEV_FL_HAS_DEVNODE | V4L2_SUBDEV_FL_HAS_EVENTS;
+> > +	snprintf(fd_pipe->subdev.name, sizeof(fd_pipe->subdev.name),
+> > +		 "%s", fd_pipe->desc->name);
+> > +	v4l2_set_subdevdata(&fd_pipe->subdev, fd_pipe);
+> > +	fd_pipe->subdev.ctrl_handler = NULL;
+> > +	fd_pipe->subdev.internal_ops = &mtk_fd_subdev_internal_ops;
+> 
+> The above code registers a subdev, so it sounds like it could be a separate
+> function.
+> 
+> > +
+> > +	dev_dbg(&fd_pipe->fd_dev->pdev->dev,
+> > +		"register subdev: %s, ctrl_handler %p\n",
+> > +		 fd_pipe->subdev.name, fd_pipe->subdev.ctrl_handler);
+> > +	ret = v4l2_device_register_subdev(&fd_pipe->fd_dev->v4l2_dev,
+> > +					  &fd_pipe->subdev);
+> > +	if (ret) {
+> > +		dev_err(&fd_pipe->fd_dev->pdev->dev,
+> > +			"failed initialize subdev (%d)\n", ret);
+> > +		goto fail_subdev;
+> > +	}
+> > +
+> > +	ret = v4l2_device_register_subdev_nodes(&fd_pipe->fd_dev->v4l2_dev);
+> > +	if (ret) {
+> > +		dev_err(&fd_pipe->fd_dev->pdev->dev,
+> > +			"failed to register subdevs (%d)\n", ret);
+> > +		goto fail_subdevs;
+> > +	}
+> 
+> This isn't per-pipe, but global for the whole v4l2_device. It should be
+> called after all subdevs are fully initialized, to expose the device nodes
+> to the userspace atomically.
+> 
+> > +
+> > +	/* Create video nodes and links */
+> > +	for (i = 0; i < fd_pipe->num_nodes; i++) {
+> 
+> Please move the contents of the loop into a separate function that handles
+> one node.
+> 
+> > +		struct mtk_fd_video_device *node = &fd_pipe->nodes[i];
+> > +		struct video_device *vdev = &node->vdev;
+> > +		struct vb2_queue *vbq = &node->dev_q.vbq;
+> > +		struct mtk_fd_video_device_desc *desc = node->desc;
+> > +		u32 flags;
+> > +
+> > +		/* Initialize miscellaneous variables */
+> > +		mutex_init(&node->dev_q.lock);
+> 
+> Please just use the video_device lock for vb2 queues too. It simplifies the
+> overall driver locking and doesn't really have any practical performance
+> difference.
+> 
+> > +
+> > +		/* Initialize formats to default values */
+> > +		mtk_fd_node_to_v4l2(fd_pipe, i, vdev, &node->vdev_fmt);
+> > +
+> > +		/* Initialize media entities */
+> > +		ret = media_entity_pads_init(&vdev->entity, 1, &node->vdev_pad);
+> > +		if (ret) {
+> > +			dev_err(&fd_pipe->fd_dev->pdev->dev,
+> 
+> This kind of long chains of pointer dereferences signal a problem in the
+> design of driver structures and/or function arguments.
+> 
+> I'd suggest passing fd_dev to this function and also storing dev instead of
+> pdev inside fd_dev.
+> 
+> > +				"failed initialize media entity (%d)\n", ret);
+> > +			goto fail_vdev_media_entity;
+> > +		}
+> > +
+> > +		node->vdev_pad.flags = V4L2_TYPE_IS_OUTPUT(desc->buf_type) ?
+> > +			MEDIA_PAD_FL_SOURCE : MEDIA_PAD_FL_SINK;
+> > +		vdev->entity.ops = NULL;
+> > +
+> > +		/* Initialize vbq */
+> > +		vbq->type = node->vdev_fmt.type;
+> > +		vbq->io_modes = VB2_MMAP | VB2_DMABUF;
+> > +		vbq->ops = &mtk_fd_vb2_ops;
+> > +		vbq->mem_ops = &vb2_dma_contig_memops;
+> > +		vbq->supports_requests = true;
+> > +		vbq->buf_struct_size = sizeof(struct mtk_fd_dev_buffer);
+> > +		vbq->timestamp_flags = V4L2_BUF_FLAG_TIMESTAMP_MONOTONIC;
+> 
+> This is a mem2mem device so the timestamps should be copied from OUTPUT to
+> CAPTURE. Please set the flag appropriately.
+> 
+> > +		vbq->min_buffers_needed = 0;
+> > +		/* Put the process hub sub device in the vb2 private data*/
+> > +		vbq->drv_priv = fd_pipe;
+> > +		vbq->lock = &node->dev_q.lock;
+> > +		ret = vb2_queue_init(vbq);
+> > +		if (ret) {
+> > +			dev_err(&fd_pipe->fd_dev->pdev->dev,
+> > +				"failed to initialize video queue (%d)\n", ret);
+> > +			goto fail_vdev;
+> > +		}
+> > +
+> > +		/* Initialize vdev */
+> > +		snprintf(vdev->name, sizeof(vdev->name), "%s %s",
+> > +			 fd_pipe->desc->name,
+> > +			 node->desc->name);
+> > +		vdev->release = video_device_release_empty;
+> > +		vdev->fops = &mtk_fd_v4l2_fops;
+> > +		vdev->lock = &node->dev_q.lock;
+> 
+> Aha, so it's in fact the same lock. Please move it to the "node" struct
+> then.
+> 
+> > +		vdev->ctrl_handler = NULL;
+> > +		vdev->v4l2_dev = &fd_pipe->fd_dev->v4l2_dev;
+> > +		vdev->queue = &node->dev_q.vbq;
+> > +		vdev->vfl_dir = V4L2_TYPE_IS_OUTPUT(desc->buf_type) ?
+> > +			VFL_DIR_TX : VFL_DIR_RX;
+> > +		video_set_drvdata(vdev, fd_pipe);
+> > +		pr_debug("register vdev: %s\n", vdev->name);
+> 
+> dev_dbg()?
+> 
+> > +		ret = video_register_device(vdev, VFL_TYPE_GRABBER, -1);
+> > +		if (ret) {
+> > +			dev_err(&fd_pipe->fd_dev->pdev->dev,
+> > +				"failed to register video device (%d)\n", ret);
+> > +			goto fail_vdev;
+> > +		}
+> > +
+> > +		/* Create link between video node and the subdev pad */
+> > +		flags = 0;
+> > +		if (desc->dynamic)
+> > +			flags |= MEDIA_LNK_FL_DYNAMIC;
+> > +		if (node->enabled)
+> > +			flags |= MEDIA_LNK_FL_ENABLED;
+> > +		if (node->immutable)
+> > +			flags |= MEDIA_LNK_FL_IMMUTABLE;
+> 
+> Wouldn't all the nodes be always ENABLED and IMMUTABLE and not DYNAMIC for
+> this driver?
+> 
+> > +
+> > +		if (V4L2_TYPE_IS_OUTPUT(desc->buf_type))
+> > +			ret = media_create_pad_link(&vdev->entity, 0,
+> > +						    &fd_pipe->subdev.entity,
+> > +						    i, flags);
+> > +		else
+> > +			ret = media_create_pad_link(&fd_pipe->subdev.entity,
+> > +						    i, &vdev->entity, 0,
+> > +						    flags);
+> > +
+> 
+> No need for this blank line.
+> 
+> > +		if (ret)
+> > +			goto fail_link;
+> > +	}
+> > +
+> > +	return 0;
+> > +
+> > +	for (; i >= 0; i--) {
+> > +fail_link:
+> > +		video_unregister_device(&fd_pipe->nodes[i].vdev);
+> > +fail_vdev:
+> > +		vb2_queue_release(&fd_pipe->nodes[i].dev_q.vbq);
+> > +		media_entity_cleanup(&fd_pipe->nodes[i].vdev.entity);
+> > +fail_vdev_media_entity:
+> > +		mutex_destroy(&fd_pipe->nodes[i].dev_q.lock);
+> > +	}
+> > +fail_subdevs:
+> > +	v4l2_device_unregister_subdev(&fd_pipe->subdev);
+> > +fail_subdev:
+> > +	media_entity_cleanup(&fd_pipe->subdev.entity);
+> > +fail_media_entity:
+> > +	kfree(fd_pipe->subdev_pads);
+> > +fail_subdev_pads:
+> > +	v4l2_device_unregister(&fd_pipe->fd_dev->v4l2_dev);
+> 
+> We haven't registered the v4l2_device in this function.
+> 
+> > +	pr_err("fail_v4l2_dev: media_device_unregister and clenaup:%p",
+> > +	       &fd_pipe->fd_dev->mdev);
+> 
+> Error messages should be printed at the place of the failure.
+> 
+> > +	media_device_unregister(&fd_pipe->fd_dev->mdev);
+> > +	media_device_cleanup(&fd_pipe->fd_dev->mdev);
+> 
+> We haven't registered or initialized media_device in this function.
+> 
+> > +
+> > +	return ret;
+> > +}
+> > +
+> > +int mtk_fd_pipe_v4l2_unregister(struct mtk_fd_pipe *fd_pipe)
+> > +{
+> > +	unsigned int i;
+> > +
+> > +	for (i = 0; i < fd_pipe->num_nodes; i++) {
+> > +		video_unregister_device(&fd_pipe->nodes[i].vdev);
+> > +		vb2_queue_release(&fd_pipe->nodes[i].dev_q.vbq);
+> > +		media_entity_cleanup(&fd_pipe->nodes[i].vdev.entity);
+> > +		mutex_destroy(&fd_pipe->nodes[i].dev_q.lock);
+> > +	}
+> > +
+> > +	v4l2_device_unregister_subdev(&fd_pipe->subdev);
+> > +	media_entity_cleanup(&fd_pipe->subdev.entity);
+> > +	kfree(fd_pipe->subdev_pads);
+> > +	v4l2_device_unregister(&fd_pipe->fd_dev->v4l2_dev);
+> > +	media_device_unregister(&fd_pipe->fd_dev->mdev);
+> > +	media_device_cleanup(&fd_pipe->fd_dev->mdev);
+> 
+> Please make this consistent with the registration functions. For each
+> registration function there should be a matching unregister function that
+> cleans up only whatever was registered in that function.
+> 
+> > +
+> > +	return 0;
+> > +}
+> > +
+> > +void mtk_fd_v4l2_buffer_done(struct vb2_buffer *vb,
+> > +			     enum vb2_buffer_state state)
+> > +{
+> > +	struct mtk_fd_pipe *fd_pipe;
+> > +	struct mtk_fd_video_device *node;
+> > +
+> > +	fd_pipe = vb2_get_drv_priv(vb->vb2_queue);
+> > +	node = mtk_fd_vbq_to_node(vb->vb2_queue);
+> > +	dev_dbg(&fd_pipe->fd_dev->pdev->dev,
+> > +		"%s:%s: return buf, idx(%d), state(%d)\n",
+> > +		fd_pipe->desc->name, node->desc->name,
+> > +		vb->index, state);
+> > +	vb2_buffer_done(vb, state);
+> > +}
+> 
+> No need for this function. Just call vb2_buffer_done() directly from the
+> caller. (I already mentioned this in MTK DIP driver review. Please
+> coordinate with other driver owners and make sure that similar comments are
+> addressed in all drivers...)
+> 
+> > +
+> > +/********************************************
+> > + * MTK FD V4L2 Settings *
+> > + ********************************************/
+> > +
+> > +static const struct v4l2_ioctl_ops mtk_fd_v4l2_video_out_ioctl_ops = {
+> > +	.vidioc_querycap = mtk_fd_videoc_querycap,
+> > +	.vidioc_enum_framesizes = mtk_fd_videoc_enum_framesizes,
+> > +	.vidioc_enum_fmt_vid_cap_mplane = mtk_fd_videoc_enum_fmt,
+> > +	.vidioc_g_fmt_vid_cap_mplane = mtk_fd_videoc_g_fmt,
+> > +	.vidioc_s_fmt_vid_cap_mplane = mtk_fd_videoc_s_fmt,
+> > +	.vidioc_try_fmt_vid_cap_mplane = mtk_fd_videoc_try_fmt,
+> 
+> No need for *cap* ops if this is only for an OUTPUT device.
+> 
+> > +	.vidioc_enum_fmt_vid_out_mplane = mtk_fd_videoc_enum_fmt,
+> > +	.vidioc_g_fmt_vid_out_mplane = mtk_fd_videoc_g_fmt,
+> > +	.vidioc_s_fmt_vid_out_mplane = mtk_fd_videoc_s_fmt,
+> > +	.vidioc_try_fmt_vid_out_mplane = mtk_fd_videoc_try_fmt,
+> > +	.vidioc_reqbufs = vb2_ioctl_reqbufs,
+> > +	.vidioc_create_bufs = vb2_ioctl_create_bufs,
+> > +	.vidioc_prepare_buf = vb2_ioctl_prepare_buf,
+> > +	.vidioc_querybuf = vb2_ioctl_querybuf,
+> > +	.vidioc_qbuf = vb2_ioctl_qbuf,
+> > +	.vidioc_dqbuf = vb2_ioctl_dqbuf,
+> > +	.vidioc_streamon = vb2_ioctl_streamon,
+> > +	.vidioc_streamoff = vb2_ioctl_streamoff,
+> > +	.vidioc_expbuf = vb2_ioctl_expbuf,
+> > +	.vidioc_subscribe_event = mtk_fd_vidioc_subscribe_event,
+> > +	.vidioc_unsubscribe_event = v4l2_event_unsubscribe,
+> > +
+> > +};
+> > +
+> > +static const struct v4l2_ioctl_ops mtk_fd_v4l2_video_cap_ioctl_ops = {
+> > +	.vidioc_querycap = mtk_fd_videoc_querycap,
+> > +	.vidioc_enum_framesizes = mtk_fd_videoc_enum_framesizes,
+> > +	.vidioc_enum_fmt_vid_cap_mplane = mtk_fd_videoc_enum_fmt,
+> > +	.vidioc_g_fmt_vid_cap_mplane = mtk_fd_videoc_g_fmt,
+> > +	.vidioc_s_fmt_vid_cap_mplane = mtk_fd_videoc_s_fmt,
+> > +	.vidioc_try_fmt_vid_cap_mplane = mtk_fd_videoc_try_fmt,
+> > +	.vidioc_enum_fmt_vid_out_mplane = mtk_fd_videoc_enum_fmt,
+> > +	.vidioc_g_fmt_vid_out_mplane = mtk_fd_videoc_g_fmt,
+> > +	.vidioc_s_fmt_vid_out_mplane = mtk_fd_videoc_s_fmt,
+> > +	.vidioc_try_fmt_vid_out_mplane = mtk_fd_videoc_try_fmt,
+> > +	.vidioc_reqbufs = vb2_ioctl_reqbufs,
+> > +	.vidioc_create_bufs = vb2_ioctl_create_bufs,
+> > +	.vidioc_prepare_buf = vb2_ioctl_prepare_buf,
+> > +	.vidioc_querybuf = vb2_ioctl_querybuf,
+> > +	.vidioc_qbuf = vb2_ioctl_qbuf,
+> > +	.vidioc_dqbuf = vb2_ioctl_dqbuf,
+> > +	.vidioc_streamon = vb2_ioctl_streamon,
+> > +	.vidioc_streamoff = vb2_ioctl_streamoff,
+> > +	.vidioc_expbuf = vb2_ioctl_expbuf,
+> > +	.vidioc_subscribe_event = mtk_fd_vidioc_subscribe_event,
+> > +	.vidioc_unsubscribe_event = v4l2_event_unsubscribe,
+> > +
+> > +};
+> 
+> This structure is unused.
+> 
+> > +
+> > +static const struct v4l2_ioctl_ops mtk_fd_v4l2_meta_out_ioctl_ops = {
+> > +	.vidioc_querycap = mtk_fd_videoc_querycap,
+> > +
+> > +	.vidioc_enum_fmt_meta_cap = mtk_fd_meta_enum_format,
+> > +	.vidioc_g_fmt_meta_cap = mtk_fd_videoc_g_meta_fmt,
+> > +	.vidioc_s_fmt_meta_cap = mtk_fd_videoc_g_meta_fmt,
+> > +	.vidioc_try_fmt_meta_cap = mtk_fd_videoc_g_meta_fmt,
+> > +
+> > +	.vidioc_enum_fmt_meta_out = mtk_fd_meta_enum_format,
+> > +	.vidioc_g_fmt_meta_out = mtk_fd_videoc_g_meta_fmt,
+> > +	.vidioc_s_fmt_meta_out = mtk_fd_videoc_g_meta_fmt,
+> > +	.vidioc_try_fmt_meta_out = mtk_fd_videoc_g_meta_fmt,
+> > +
+> > +	.vidioc_reqbufs = vb2_ioctl_reqbufs,
+> > +	.vidioc_create_bufs = vb2_ioctl_create_bufs,
+> > +	.vidioc_prepare_buf = vb2_ioctl_prepare_buf,
+> > +	.vidioc_querybuf = vb2_ioctl_querybuf,
+> > +	.vidioc_qbuf = vb2_ioctl_qbuf,
+> > +	.vidioc_dqbuf = vb2_ioctl_dqbuf,
+> > +	.vidioc_streamon = vb2_ioctl_streamon,
+> > +	.vidioc_streamoff = vb2_ioctl_streamoff,
+> > +	.vidioc_expbuf = vb2_ioctl_expbuf,
+> > +};
+> > +
+> > +static const struct v4l2_ioctl_ops mtk_fd_v4l2_meta_cap_ioctl_ops = {
+> > +	.vidioc_querycap = mtk_fd_videoc_querycap,
+> > +
+> > +	.vidioc_enum_fmt_meta_cap = mtk_fd_meta_enum_format,
+> > +	.vidioc_g_fmt_meta_cap = mtk_fd_videoc_g_meta_fmt,
+> > +	.vidioc_s_fmt_meta_cap = mtk_fd_videoc_g_meta_fmt,
+> > +	.vidioc_try_fmt_meta_cap = mtk_fd_videoc_g_meta_fmt,
+> > +
+> > +	.vidioc_enum_fmt_meta_out = mtk_fd_meta_enum_format,
+> > +	.vidioc_g_fmt_meta_out = mtk_fd_videoc_g_meta_fmt,
+> > +	.vidioc_s_fmt_meta_out = mtk_fd_videoc_g_meta_fmt,
+> > +	.vidioc_try_fmt_meta_out = mtk_fd_videoc_g_meta_fmt,
+> > +
+> > +	.vidioc_reqbufs = vb2_ioctl_reqbufs,
+> > +	.vidioc_create_bufs = vb2_ioctl_create_bufs,
+> > +	.vidioc_prepare_buf = vb2_ioctl_prepare_buf,
+> > +	.vidioc_querybuf = vb2_ioctl_querybuf,
+> > +	.vidioc_qbuf = vb2_ioctl_qbuf,
+> > +	.vidioc_dqbuf = vb2_ioctl_dqbuf,
+> > +	.vidioc_streamon = vb2_ioctl_streamon,
+> > +	.vidioc_streamoff = vb2_ioctl_streamoff,
+> > +	.vidioc_expbuf = vb2_ioctl_expbuf,
+> > +};
+> 
+> Aren't the 2 structures above identical? Should be merged if so.
+> 
+> [snip]
+> > +int mtk_fd_dev_v4l2_init(struct mtk_fd_dev *fd_dev)
+> > +{
+> > +	struct media_device *media_dev;
+> > +	struct v4l2_device *v4l2_dev;
+> > +	struct mtk_fd_smem_dev *smem_alloc_dev = &fd_dev->smem_alloc_dev;
+> > +	int i;
+> > +	int ret = 0;
+> 
+> Please don't initialize local variables unless that's needed by the logic.
+> It prevents the compiler from detecting missing assignments.
+> 
+> > +
+> > +	media_dev = &fd_dev->mdev;
+> > +	v4l2_dev = &fd_dev->v4l2_dev;
+> 
+> Just pass fd_dev to the functions below. No need to extract only some
+> fields.
+> 
+> > +
+> > +	ret = mtk_fd_dev_media_register(&fd_dev->pdev->dev,
+> > +					media_dev,
+> > +					 MTK_FD_PIPE_MEDIA_MODEL_NAME);
+> 
+> We should bail out on error.
+> 
+> > +
+> > +	ret = mtk_fd_dev_v4l2_register(&fd_dev->pdev->dev,
+> > +				       media_dev,
+> > +					v4l2_dev);
+> 
+> We should clean up the previous steps and bail out on error.
+> 
+> > +
+> > +	ret = mtk_fd_smem_alloc_dev_init(smem_alloc_dev, &fd_dev->pdev->dev);
+> 
+> Ditto.
+> 
+> > +
+> > +	for (i = 0; i < MTK_FD_PIPE_ID_TOTAL_NUM; i++) {
+> > +		ret = mtk_fd_pipe_init(&fd_dev->fd_pipe[i], fd_dev,
+> > +				       &pipe_settings[i],
+> > +					media_dev, v4l2_dev, smem_alloc_dev);
+> > +		if (ret) {
+> > +			dev_err(&fd_dev->pdev->dev,
+> > +				"%s: Pipe id(%d) init failed(%d)\n",
+> > +				fd_dev->fd_pipe[i].desc->name,
+> > +				i, ret);
+> > +			return ret;
+> > +		}
+> > +	}
+> > +
+> > +	return 0;
+> > +}
+> > +
+> > +void mtk_fd_dev_v4l2_release(struct mtk_fd_dev *fd_dev)
+> > +{
+> > +	int i = 0;
+> 
+> No need for initialization.
+> 
+> > +
+> > +	if (fd_dev)
+> 
+> Why could it ever be NULL?
+> 
+> > +		for (i = 0; i < MTK_FD_PIPE_ID_TOTAL_NUM; i++)
+> > +			mtk_fd_pipe_release(&fd_dev->fd_pipe[i]);
+> > +
+> > +	mtk_fd_smem_alloc_dev_release(&fd_dev->smem_alloc_dev);
+> > +}
+> > +
+> 
+> [snip]
+> 
+> > +static int mtk_fd_probe(struct platform_device *pdev)
+> > +{
+> > +	struct mtk_fd_dev *fd_dev;
+> > +	struct mtk_fd_hw *fd_hw;
+> > +	struct device_node *node;
+> > +	struct platform_device *larb_pdev;
+> > +	int irq_num;
+> > +	int ret;
+> > +
+> > +	fd_dev = devm_kzalloc(&pdev->dev, sizeof(*fd_dev), GFP_KERNEL);
+> > +
+> 
+> nit: No need for this blank line, because the if below is directly related.
+> 
+> > +	if (!fd_dev)
+> > +		return -ENOMEM;
+> > +
+> > +	dev_set_drvdata(&pdev->dev, fd_dev);
+> > +	fd_hw = &fd_dev->fd_hw;
+> > +
+> > +	if (!fd_hw) {
+> 
+> How is this possible for a struct member?
+> 
+> > +		dev_err(&pdev->dev, "Unable to allocate fd_hw\n");
+> > +		return -ENOMEM;
+> > +	}
+> > +
+> > +	fd_dev->pdev = pdev;
+> > +
+> > +	irq_num = irq_of_parse_and_map(pdev->dev.of_node, FD_IRQ_IDX);
+> 
+> We should use platform_get_irq() here instead, because the IRQs were already
+> parsed for us when the platform core created the platform_device.
+> 
+> > +	ret = request_irq(irq_num, (irq_handler_t)mtk_fd_irq,
+> > +			  IRQF_TRIGGER_NONE, FD_DRVNAME, fd_hw);
+> 
+> It should be a device name, not driver name. One would normally use
+> dev_name() here.
+> 
+> Also devm_request_irq() should simplify the cleanup.
+> 
+> > +	if (ret) {
+> > +		dev_dbg(&pdev->dev, "%s request_irq fail, irq=%d\n",
+> > +			__func__, irq_num);
+> 
+> This is an error, so dev_err().
+> 
+> > +		return ret;
+> > +	}
+> > +	dev_dbg(&pdev->dev, "irq_num=%d\n", irq_num);
+> 
+> That's probably not very useful.
+> 
+> > +
+> > +	node = of_parse_phandle(pdev->dev.of_node, "mediatek,larb", 0);
+> > +	if (!node) {
+> > +		dev_err(&pdev->dev, "no mediatek, larb found");
+> > +		return -EINVAL;
+> > +	}
+> > +	larb_pdev = of_find_device_by_node(node);
+> > +	if (!larb_pdev) {
+> > +		dev_err(&pdev->dev, "no mediatek, larb device found");
+> > +		return -EINVAL;
+> > +	}
+> > +	fd_hw->larb_dev = &larb_pdev->dev;
+> > +
+> 
+> LARBs are handled automatically by the IOMMU driver, no need to do anything
+> with them explicitly anymore.
+> 
+> > +	node = pdev->dev.of_node;
+> > +	if (!node) {
+> > +		dev_err(&pdev->dev, "find fd node failed!!!\n");
+> > +		return -ENODEV;
+> > +	}
+> > +
+> > +	fd_hw->fd_base = of_iomap(node, 0);
+> 
+> One would normally use platform_get_resource() and devm_ioremap_resource()
+> here.
+> 
+> > +
+> > +	if (!fd_hw->fd_base) {
+> > +		dev_err(&pdev->dev, "unable to map fd node!!!\n");
+> > +		return -ENODEV;
+> > +	}
+> > +
+> > +	dev_dbg(&pdev->dev, "fd_hw->fd_base: %lx\n",
+> > +		(unsigned long)fd_hw->fd_base);
+> 
+> Not very useful either.
+> 
+> > +
+> > +	fd_hw->fd_clk = devm_clk_get(&pdev->dev, "FD_CLK_IMG_FD");
+> 
+> Clock names should be lowercase and name just inputs of the IP block, so
+> simply "fd", should be enough.
+> 
+> > +	if (IS_ERR(fd_hw->fd_clk)) {
+> > +		dev_err(&pdev->dev, "cannot get FD_CLK_IMG_FD clock\n");
+> > +		return PTR_ERR(fd_hw->fd_clk);
+> > +	}
+> > +
+> > +	pm_runtime_enable(&pdev->dev);
+> > +	atomic_set(&fd_hw->fd_user_cnt, 0);
+> > +	init_waitqueue_head(&fd_hw->wq);
+> > +	mutex_init(&fd_hw->fd_hw_lock);
+> > +	fd_hw->fd_irq_result = 0;
+> > +
+> > +	ret = mtk_fd_dev_v4l2_init(fd_dev);
+> > +	if (ret)
+> > +		dev_err(&pdev->dev, "v4l2 init failed: %d\n", ret);
+> 
+> We should clean up and return the error code, not 0.
+> 
+> > +
+> > +	dev_info(&pdev->dev, "Mediatek Camera FD driver probe.\n");
+> > +
+> > +	return 0;
+> > +}
+> > +
+> > +static int mtk_fd_remove(struct platform_device *pdev)
+> > +{
+> > +	int irq_i4;
+> > +	struct mtk_fd_dev *fd_dev = dev_get_drvdata(&pdev->dev);
+> > +
+> > +	if (fd_dev) {
+> > +		mtk_fd_dev_v4l2_release(fd_dev);
+> > +	} else {
+> 
+> This is impossible.
+> 
+> > +		dev_err(&pdev->dev, "Can't find fd driver data\n");
+> > +		return -EINVAL;
+> > +	}
+> > +
+> > +	mutex_destroy(&fd_dev->fd_hw.fd_hw_lock);
+> > +	pm_runtime_disable(&pdev->dev);
+> > +
+> > +	irq_i4 = platform_get_irq(pdev, 0);
+> > +	free_irq(irq_i4, NULL);
+> > +	kfree(fd_dev);
+> 
+> fd_dev was allocated using devm_kzalloc(), no need to free it explicitly.
+> 
+> > +
+> > +	return 0;
+> > +}
+> > +
+> > +static int mtk_fd_suspend(struct device *dev)
+> > +{
+> > +	struct mtk_fd_dev *fd_dev;
+> > +	int ret;
+> > +
+> > +	if (pm_runtime_suspended(dev))
+> > +		return 0;
+> > +
+> > +	fd_dev = dev_get_drvdata(dev);
+> > +
+> > +	if (atomic_read(&fd_dev->fd_hw.fd_user_cnt) > 0) {
+> > +		ret = pm_runtime_put_sync(fd_dev->fd_hw.larb_dev);
+> > +		clk_disable_unprepare(fd_dev->fd_hw.fd_clk);
+> > +		return ret;
+> > +	}
+> 
+> This isn't going to work, because the hardware may be still processing a
+> frame at this point. You need a way to ensure that the hardware goes idle
+> here first and then in resume, you need to make the hardware continue when
+> it left before suspend.
+> 
+> > +	return 0;
+> > +}
+> > +
+> > +static int mtk_fd_resume(struct device *dev)
+> > +{
+> > +	struct mtk_fd_dev *fd_dev;
+> > +	int ret;
+> > +
+> > +	if (pm_runtime_suspended(dev))
+> > +		return 0;
+> > +
+> > +	fd_dev = dev_get_drvdata(dev);
+> > +
+> > +	if (atomic_read(&fd_dev->fd_hw.fd_user_cnt) > 0) {
+> > +		ret = pm_runtime_get_sync(fd_dev->fd_hw.larb_dev);
+> > +		if (ret) {
+> > +			dev_dbg(&fd_dev->pdev->dev, "open larb clk failed\n");
+> > +			return ret;
+> > +		}
+> > +
+> > +		ret = clk_prepare_enable(fd_dev->fd_hw.fd_clk);
+> > +		if (ret) {
+> > +			dev_dbg(&fd_dev->pdev->dev, "open fd clk failed\n");
+> > +			return ret;
+> > +		}
+> > +		return ret;
+> > +	}
+> > +
+> > +	return 0;
+> > +}
+> > +
+> > +static const struct dev_pm_ops mtk_fd_pm_ops = {
+> > +	SET_SYSTEM_SLEEP_PM_OPS(mtk_fd_suspend, mtk_fd_resume)
+> > +	SET_RUNTIME_PM_OPS(mtk_fd_suspend, mtk_fd_resume, NULL)
+> > +};
+> > +
+> > +static const struct of_device_id mtk_fd_of_ids[] = {
+> > +	{ .compatible = "mediatek,mt8183-fd", },
+> > +	{}
+> > +};
+> > +MODULE_DEVICE_TABLE(of, mtk_fd_of_ids);
+> > +
+> > +static struct platform_driver mtk_fd_driver = {
+> > +	.probe   = mtk_fd_probe,
+> > +	.remove  = mtk_fd_remove,
+> > +	.driver  = {
+> > +		.name  = FD_DRVNAME,
+> 
+> Please just set the name explicitly here and remove the macro.
+> 
+> > +		.of_match_table = mtk_fd_of_ids,
+> 
+> Please use of_match_ptr().
+> 
+> > +		.pm = &mtk_fd_pm_ops,
+> > +	}
+> > +};
+> > +module_platform_driver(mtk_fd_driver);
+> > +
+> > +MODULE_DESCRIPTION("Mediatek FD driver");
+> > +MODULE_LICENSE("GPL");
+> 
+> GPL v2
+> 
+> > -- 
+> > 2.18.0
+> > 
+
 
 
 _______________________________________________
