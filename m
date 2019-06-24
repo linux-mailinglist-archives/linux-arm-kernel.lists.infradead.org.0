@@ -2,86 +2,142 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E901A504EA
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Jun 2019 10:53:24 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 955DE504F6
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Jun 2019 10:56:19 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3+N4pV9YuEYjdudBTfkc9zn1WqC9M/uGr4rk7wikM80=; b=qqXNpEguTmLbXD
-	HvvakBksElNwi0Bq2loWJ41L3/6c9DN6U8Z5poi+tddKxL6ItvOw5ShYy+ZWn626FHuU9gTuvsyrh
-	cAUjnf9VopkS6gx8zlfrTn26Q1OvEr8iCXjlFTe9eZkEyl0JZTE/MRdTr2y7JZo21V8hXWte6OHzV
-	zcA/37lqm4hrIrPTHLFN8IGQ3RgFbgkU0VnjzXHDMxVSXoKYSVc5q0mf80apeNTXRPKO3D8TqS1AT
-	fI/UZ85n10KfYfw+iSeZz7HXKbr7hltcsKrBdh8c358iDpT/acMSsJIYgG93MBIMfmWxyYEQJHY4r
-	KXwD1yoyOy9/n5qKOyJA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=e3CPcnHMSRWW+SK9lF06lt4C++jRVKK2MIWYfM1ET+8=; b=Fzp0rN8dhFDeeQ
+	KRPZZ2KMajaFK89kzoL+F/D5BkzvyV815ykV+vUHs0XHnyNC3lSuNJPejGenvpQh9ToBMIXLKia1q
+	We++cocVC+goxDo536LotXu2C8g3WS6a+jkKHAI9tXjkyNTkLLvG9Yflk0M03Ppi3w3bf0pC0HlKg
+	qz+MSVf4oK3oiCDy4FPyQoNN7q47ZiAy9seflKSeGaXlIo7xFuN+ZdyntT6Ioe2ftQpWUaQ2X1wTD
+	G7HqB8jnTHueQfudBJq4EtUS9bGh1QGRm6Yrk5SymA85Uu/jyyE35fLmQpn87RNzOOvKBJ9P3itBY
+	5OZ8lNAp4/euzX/pjJ0w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hfKj3-0000QT-OD; Mon, 24 Jun 2019 08:53:21 +0000
-Received: from mail-io1-xd43.google.com ([2607:f8b0:4864:20::d43])
+	id 1hfKlt-0002EC-F1; Mon, 24 Jun 2019 08:56:17 +0000
+Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hfKir-0000Pb-D8
- for linux-arm-kernel@lists.infradead.org; Mon, 24 Jun 2019 08:53:11 +0000
-Received: by mail-io1-xd43.google.com with SMTP id w25so327293ioc.8
+ id 1hfKlb-0002CO-IX
+ for linux-arm-kernel@lists.infradead.org; Mon, 24 Jun 2019 08:56:01 +0000
+Received: by mail-wr1-x444.google.com with SMTP id p11so12957934wre.7
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 24 Jun 2019 01:53:08 -0700 (PDT)
+ Mon, 24 Jun 2019 01:55:58 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=amarulasolutions.com; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=G8nkLyiOaKgOFrbXNHkWxjnqz5OluwUUizZDLmikCzc=;
- b=bQa7w3w9/tWFlqTl3ELpwdzGQDB+EPZzU7W2gMufCdWT1u4LtQjwwKHj9CsaYLT4PM
- 0JG06gaRGRWkCLsd2vl1uHTSvidjZb8DMvpSe4PFcET2cf2zO+kFhYO3YFZMz7NXeqX3
- E8UsbVgASYcuCGL2fFoPDQVWFONW9BOa5eNV8=
+ d=baylibre-com.20150623.gappssmtp.com; s=20150623;
+ h=subject:to:cc:references:from:openpgp:autocrypt:organization
+ :message-id:date:user-agent:mime-version:in-reply-to
+ :content-language:content-transfer-encoding;
+ bh=tsqDfC0/6IGkXvSlVTobk5beuguL0n3jpdD2n3NwLco=;
+ b=xTp9LKDzfklLDkCYl/npiybu7Qii3HLNt7uvpx7L/lL/bascfni2K1eHCHXzXpeRHp
+ Rb2vJ21BhFOjMupEQx5R4AIrMYIjEVUuH/hna97Gqd/5V3Y29/91RMbqGOimQXYE+wrJ
+ pSy3ScE9qG76AwmXiwN5pY5fwLCAoC0ve9b02FkK06O4/GJzNAvA9nS73LF5QJbQuG6O
+ q4P1k7Ofj+3bMfEAtKASb2ldb0rmJBJXepiuqSI+G8r1PK8mo9nE/Q2LrIK/YVGLX3wi
+ OH3rV/kH/yJQYjOfQg7Q8+dxvCRiDNqyOOfyzSRHVfbjDWMfNILQVmIyhPGW5B3vOUng
+ dR8Q==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=G8nkLyiOaKgOFrbXNHkWxjnqz5OluwUUizZDLmikCzc=;
- b=hGyJh/3dbRO0Ttx1jySOrPnQ9uYXWGa3O8pr0vw3GWa6Em1NgdDrQo923i58UE1Zjw
- J3Rh2UC58n2py8exB01A2TTntrF+SOCE3ybHnxQU7ZDmZQou4YrUH7+9Oidti3FrozGW
- wfkbL1j0bnO2TevSsFEA0W5jW/0Wu+jvh9mt5+eYtwIWwadw+Pp5XFdrOIpk/QcS1v7r
- x1k10miJGZBI12bmoDv/fbRF1HPt5qZB+vdxPhzHGihqn4MD68VCUsH9TxreFwcSe5He
- LVKNTMJp3d0ttQGcbPQvdT5t1ITOaNIboTum8WNJzJPWQcaPB6JAsx4Vgx/2VaGeUL8A
- n0ww==
-X-Gm-Message-State: APjAAAWevsvcGN/crtcvik9wD69n/Muq/S9zt2FcJiMAhRZzy52RCYpb
- qZUmxP4rsSAECVnCUc+JNuIXFOmjqyaZlutvoCWGzw==
-X-Google-Smtp-Source: APXvYqwMdAYjeq4CKzrllSK9uqFTO/tWs5fwsktXXlwIZt4LNDMpnzAmyrl5/0Wg5WytuKtm3+Y47WeYvP0jfFtfIn0=
-X-Received: by 2002:a05:6602:2253:: with SMTP id
- o19mr16852836ioo.297.1561366387533; 
- Mon, 24 Jun 2019 01:53:07 -0700 (PDT)
+ h=x-gm-message-state:subject:to:cc:references:from:openpgp:autocrypt
+ :organization:message-id:date:user-agent:mime-version:in-reply-to
+ :content-language:content-transfer-encoding;
+ bh=tsqDfC0/6IGkXvSlVTobk5beuguL0n3jpdD2n3NwLco=;
+ b=RMJZQvhdmgquNwEoER7Z7BnYwBJnOwvHmG7xgZjTin21TnkePpIF7ujZsriEbPZK66
+ HgPfemz/vSjQCkH8a5RU5o0uQT+E28g9ys7cKae1T6BzQZZm0KtDKipFc5F5E/NDtbeL
+ hs/+xEy94QWeQlIT7Wp7dAEVAOlR1CyuPes5Aj6QZ3+TXHnI+ZKRMx6A6A79PJ7zKUZ0
+ wEHasawlRGAjuAjqJKaSErl9dqf+XdDrY0Ts55ZY0hBEgRvOmaJzvZcpZo2DGbzv/I3s
+ SrDKCxZ50dgMU9M2W6N+Q97vTPTjyAb2Gpz9x8EtOcCAbkej3qHXOgb03rRyd01dqLjC
+ u5Ig==
+X-Gm-Message-State: APjAAAVeGVP6lV8mkC3CUFqMjDF6OF/vkjD4piw6RotjMPlTInxaLxUY
+ QlFM/N7wC/N2+nPqzdV3kZtCNg==
+X-Google-Smtp-Source: APXvYqwl6uyQyh9H/2TLaTx8Lmj4y4RxTk14OPwFBUZccGkTVy1ph8PRdsnwT9S3Ad6EqBGNsWiazQ==
+X-Received: by 2002:adf:e841:: with SMTP id d1mr45741252wrn.204.1561366557341; 
+ Mon, 24 Jun 2019 01:55:57 -0700 (PDT)
+Received: from [10.1.2.12] (lmontsouris-657-1-212-31.w90-63.abo.wanadoo.fr.
+ [90.63.244.31])
+ by smtp.gmail.com with ESMTPSA id d5sm9220657wrc.17.2019.06.24.01.55.56
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Mon, 24 Jun 2019 01:55:56 -0700 (PDT)
+Subject: Re: Help offering for AmLogic S905Y2 Mainline Effort
+To: Daniel Laube <mail@dlaube.de>
+References: <0292EC91-0CBE-4F22-8F28-BD581A157CD6@dlaube.de>
+ <2543a892-d7b6-f528-4df3-923edbf1dd85@free.fr>
+From: Neil Armstrong <narmstrong@baylibre.com>
+Openpgp: preference=signencrypt
+Autocrypt: addr=narmstrong@baylibre.com; prefer-encrypt=mutual; keydata=
+ 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
+ ZaTUOEkgIor5losDrePdPgE=
+Organization: Baylibre
+Message-ID: <cdd4111c-16d7-adce-d7f7-4c3ee77d2a43@baylibre.com>
+Date: Mon, 24 Jun 2019 10:55:56 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.7.0
 MIME-Version: 1.0
-References: <20190520090318.27570-1-jagan@amarulasolutions.com>
- <20190520090318.27570-4-jagan@amarulasolutions.com>
- <20190523203836.xy7nmte3ubyxwg27@flea>
- <CAMty3ZA2mZugso_rMy+anp1i1bSL5FtB2mAyN1v_gE3rds0LgA@mail.gmail.com>
- <CAGb2v67He9t3RhHJAW5ph_1Wgrj0eqRAF7Xg1Weh8Do3tBFyeQ@mail.gmail.com>
-In-Reply-To: <CAGb2v67He9t3RhHJAW5ph_1Wgrj0eqRAF7Xg1Weh8Do3tBFyeQ@mail.gmail.com>
-From: Jagan Teki <jagan@amarulasolutions.com>
-Date: Mon, 24 Jun 2019 14:22:56 +0530
-Message-ID: <CAMty3ZCEz7nMmVp6D99nFRfS4n_uwLgmveRz5Dp5rCrKL9dF5Q@mail.gmail.com>
-Subject: Re: [linux-sunxi] Re: [PATCH v10 03/11] drm/sun4i: dsi: Fix video
- start delay computation
-To: Chen-Yu Tsai <wens@csie.org>
+In-Reply-To: <2543a892-d7b6-f528-4df3-923edbf1dd85@free.fr>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190624_015309_602001_92BCAE43 
-X-CRM114-Status: GOOD (  18.91  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190624_015559_635451_C1FE7391 
+X-CRM114-Status: GOOD (  17.66  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:d43 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:444 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -94,121 +150,63 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Bhushan Shah <bshah@mykolab.com>,
- =?UTF-8?B?5Z2a5a6a5YmN6KGM?= <powerpan@qq.com>,
- Maxime Ripard <maxime.ripard@bootlin.com>,
- linux-kernel <linux-kernel@vger.kernel.org>,
- dri-devel <dri-devel@lists.freedesktop.org>, David Airlie <airlied@linux.ie>,
- linux-sunxi <linux-sunxi@googlegroups.com>, Daniel Vetter <daniel@ffwll.ch>,
- Michael Trimarchi <michael@amarulasolutions.com>,
- linux-amarula <linux-amarula@amarulasolutions.com>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Cc: Maxime Jourdan <mjourdan@baylibre.com>, linux-amlogic@lists.infradead.org,
+ Kevin Hilman <khilman@baylibre.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Marc Gonzalez <marc.w.gonzalez@free.fr>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Jun 21, 2019 at 2:05 PM Chen-Yu Tsai <wens@csie.org> wrote:
->
-> On Fri, May 24, 2019 at 6:27 PM Jagan Teki <jagan@amarulasolutions.com> wrote:
-> >
-> > On Fri, May 24, 2019 at 2:18 AM Maxime Ripard <maxime.ripard@bootlin.com> wrote:
-> > >
-> > > On Mon, May 20, 2019 at 02:33:10PM +0530, Jagan Teki wrote:
-> > > > The current code is computing vertical video start delay as
-> > > >
-> > > > delay = mode->vtotal - (mode->vsync_end - mode->vdisplay) + start;
-> > > >
-> > > > On which the second parameter
-> > > >
-> > > > mode->vsync_end - mode->vdisplay = front porch + sync timings
-> > > >
-> > > > according to "DRM kernel-internal display mode structure" in
-> > > > include/drm/drm_modes.h
-> > > >
-> > > > With adding additional sync timings, the desired video start delay
-> > > > value as 510 for "bananapi,s070wv20-ct16" panel timings which indeed
-> > > > trigger panel flip_done timed out as:
-> > > >
-> > > >  WARNING: CPU: 0 PID: 31 at drivers/gpu/drm/drm_atomic_helper.c:1429 drm_atomic_helper_wait_for_vblanks.part.1+0x298/0x2a0
-> > > >  [CRTC:46:crtc-0] vblank wait timed out
-> > > >  Modules linked in:
-> > > >  CPU: 0 PID: 31 Comm: kworker/0:1 Not tainted 5.1.0-next-20190514-00029-g09e5b0ed0a58 #18
-> > > >  Hardware name: Allwinner sun8i Family
-> > > >  Workqueue: events deferred_probe_work_func
-> > > >  [<c010ed54>] (unwind_backtrace) from [<c010b76c>] (show_stack+0x10/0x14)
-> > > >  [<c010b76c>] (show_stack) from [<c0688c70>] (dump_stack+0x84/0x98)
-> > > >  [<c0688c70>] (dump_stack) from [<c011d9e4>] (__warn+0xfc/0x114)
-> > > >  [<c011d9e4>] (__warn) from [<c011da40>] (warn_slowpath_fmt+0x44/0x68)
-> > > >  [<c011da40>] (warn_slowpath_fmt) from [<c040cd50>] (drm_atomic_helper_wait_for_vblanks.part.1+0x298/0x2a0)
-> > > >  [<c040cd50>] (drm_atomic_helper_wait_for_vblanks.part.1) from [<c040e694>] (drm_atomic_helper_commit_tail_rpm+0x5c/0x6c)
-> > > >  [<c040e694>] (drm_atomic_helper_commit_tail_rpm) from [<c040e4dc>] (commit_tail+0x40/0x6c)
-> > > >  [<c040e4dc>] (commit_tail) from [<c040e5cc>] (drm_atomic_helper_commit+0xbc/0x128)
-> > > >  [<c040e5cc>] (drm_atomic_helper_commit) from [<c0411b64>] (restore_fbdev_mode_atomic+0x1cc/0x1dc)
-> > > >  [<c0411b64>] (restore_fbdev_mode_atomic) from [<c04156f8>] (drm_fb_helper_restore_fbdev_mode_unlocked+0x54/0xa0)
-> > > >  [<c04156f8>] (drm_fb_helper_restore_fbdev_mode_unlocked) from [<c0415774>] (drm_fb_helper_set_par+0x30/0x54)
-> > > >  [<c0415774>] (drm_fb_helper_set_par) from [<c03ad450>] (fbcon_init+0x560/0x5ac)
-> > > >  [<c03ad450>] (fbcon_init) from [<c03eb8a0>] (visual_init+0xbc/0x104)
-> > > >  [<c03eb8a0>] (visual_init) from [<c03ed1b8>] (do_bind_con_driver+0x1b0/0x390)
-> > > >  [<c03ed1b8>] (do_bind_con_driver) from [<c03ed780>] (do_take_over_console+0x13c/0x1c4)
-> > > >  [<c03ed780>] (do_take_over_console) from [<c03ad800>] (do_fbcon_takeover+0x74/0xcc)
-> > > >  [<c03ad800>] (do_fbcon_takeover) from [<c013c9c8>] (notifier_call_chain+0x44/0x84)
-> > > >  [<c013c9c8>] (notifier_call_chain) from [<c013cd20>] (__blocking_notifier_call_chain+0x48/0x60)
-> > > >  [<c013cd20>] (__blocking_notifier_call_chain) from [<c013cd50>] (blocking_notifier_call_chain+0x18/0x20)
-> > > >  [<c013cd50>] (blocking_notifier_call_chain) from [<c03a6e44>] (register_framebuffer+0x1e0/0x2f8)
-> > > >  [<c03a6e44>] (register_framebuffer) from [<c04153c0>] (__drm_fb_helper_initial_config_and_unlock+0x2fc/0x50c)
-> > > >  [<c04153c0>] (__drm_fb_helper_initial_config_and_unlock) from [<c04158c8>] (drm_fbdev_client_hotplug+0xe8/0x1b8)
-> > > >  [<c04158c8>] (drm_fbdev_client_hotplug) from [<c0415a20>] (drm_fbdev_generic_setup+0x88/0x118)
-> > > >  [<c0415a20>] (drm_fbdev_generic_setup) from [<c043f060>] (sun4i_drv_bind+0x128/0x160)
-> > > >  [<c043f060>] (sun4i_drv_bind) from [<c044b598>] (try_to_bring_up_master+0x164/0x1a0)
-> > > >  [<c044b598>] (try_to_bring_up_master) from [<c044b668>] (__component_add+0x94/0x140)
-> > > >  [<c044b668>] (__component_add) from [<c0445e1c>] (sun6i_dsi_probe+0x144/0x234)
-> > > >  [<c0445e1c>] (sun6i_dsi_probe) from [<c0452ef4>] (platform_drv_probe+0x48/0x9c)
-> > > >  [<c0452ef4>] (platform_drv_probe) from [<c04512cc>] (really_probe+0x1dc/0x2c8)
-> > > >  [<c04512cc>] (really_probe) from [<c0451518>] (driver_probe_device+0x60/0x160)
-> > > >  [<c0451518>] (driver_probe_device) from [<c044f7a4>] (bus_for_each_drv+0x74/0xb8)
-> > > >  [<c044f7a4>] (bus_for_each_drv) from [<c045107c>] (__device_attach+0xd0/0x13c)
-> > > >  [<c045107c>] (__device_attach) from [<c0450474>] (bus_probe_device+0x84/0x8c)
-> > > >  [<c0450474>] (bus_probe_device) from [<c0450900>] (deferred_probe_work_func+0x64/0x90)
-> > > >  [<c0450900>] (deferred_probe_work_func) from [<c0135970>] (process_one_work+0x204/0x420)
-> > > >  [<c0135970>] (process_one_work) from [<c013690c>] (worker_thread+0x274/0x5a0)
-> > > >  [<c013690c>] (worker_thread) from [<c013b3d8>] (kthread+0x11c/0x14c)
-> > > >  [<c013b3d8>] (kthread) from [<c01010e8>] (ret_from_fork+0x14/0x2c)
-> > > >  Exception stack(0xde539fb0 to 0xde539ff8)
-> > > >  9fa0:                                     00000000 00000000 00000000 00000000
-> > > >  9fc0: 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000
-> > > >  9fe0: 00000000 00000000 00000000 00000000 00000013 00000000
-> > > >  ---[ end trace 495200a78b24980e ]---
-> > > >  random: fast init done
-> > > >  [drm:drm_atomic_helper_wait_for_dependencies] *ERROR* [CRTC:46:crtc-0] flip_done timed out
-> > > >  [drm:drm_atomic_helper_wait_for_dependencies] *ERROR* [CONNECTOR:48:DSI-1] flip_done timed out
-> > > >  [drm:drm_atomic_helper_wait_for_dependencies] *ERROR* [PLANE:30:plane-0] flip_done timed out
-> > > >
-> > > > But the expected video start delay value is 513 which states that
-> > > > the second parameter on the computation is "front porch" value
-> > > > (no sync timings included).
-> > > >
-> > > > This is clearly confirmed from the legacy [1] and new [2] bsp codes
-> > > > that the second parameter on the video start delay is "front porch"
-> > > >
-> > > > Here is the detailed evidence for calculating front porch as per
-> > > > bsp code.
-> > > >
-> > > > vfp = panel->lcd_vt - panel->lcd_y - panel->lcd_vbp
-> > > > => (panel->lcd_vt) - panel->lcd_y - panel->lcd_vbp
-> > > > => (tt->ver_front_porch + lcdp->panel_info.lcd_vbp
-> > > >     + lcdp->panel_info.lcd_y) -  panel->lcd_y - panel->lcd_vbp
-> > > > => tt->ver_front_porch
-> > >
-> > > The comment on patch 1 still applies on this patch
-> >
-> > Thanks, I have responded on that. Same applies here.
->
-> So this patch fixes the misinterpretation of Allwinner's back porch value,
-> much like patch 1, but this one is for the vertical back porch. So I think
-> you should follow the same advice I gave you for patch 1.
+Hi Daniel,
 
-Yes, indeed I'm planning to do the same. thanks!
+DRM Display support for the S905Y2 will be available in Linux v5.2,
+but necessary devices (mmc, sdcard, sdio, ethernet) will land in Linux v5.3-rc1
+in allmost 4weeks, but you can check the integ tree to test these features as
+described on http://linux-meson.com/doku.php#development_resources :
+https://git.kernel.org/pub/scm/linux/kernel/git/khilman/linux-amlogic.git/log/?h=v5.3/integ
+
+Video decoder support for S905Y2 is in the work, bit we mainly focused to have
+the bare minimum driver being merged for S905/S905X/S912 before pushing more
+complex decoder and new SoCs support :
+https://github.com/Elyotna/linux/tree/mjourdan/media/v5.2/aml/vdec
+
+BTW, you are very welcome !
+
+As Chen-Yu Tsai said, we idle on #linux-amlogic IRC channel on freenode and
+activaly use the linux-amlogic@lists.infradead.org ML.
+
+You can also join the u-boot-amlogic@groups.io ML if you are interested in
+mainline U-Boot dev for amlogic SoCs.
+
+Neil
+
+On 24/06/2019 10:36, Marc Gonzalez wrote:
+> On 23/06/2019 22:42, Daniel Laube wrote:
+> 
+>> recently bought a cheap HDMI Stick Computer with an AmLogic Chip (S905Y2 on x96s Board) 
+>> because i was told that it had mainline linux support. That seems to be 
+>> true only partly because there are drm drivers missing for the gpu and 
+>> no video encoding/decoding support.
+>> Because i would like to get these things working in the future i would 
+>> like to offer my help.
+>> I already ripped that thing open to get access to UART to see boot progress.
+>> Could someone please guide me where i can help with the mainlining effort?
+> 
+> I suppose the first thing to do is try to get in touch with whomever
+> might be working on this at the moment or in the (recent) past.
+> 
+> Look at the MAINTAINERS file, to find "official" maintainers and reviewers.
+> 
+> The baylibre team seems to be handling some of the mainlining effort,
+> so perhaps they are in a good position to provide relevant information.
+> 
+> There's also a specific mailing list: linux-amlogic@lists.infradead.org
+> 
+> Regards.
+> 
+
 
 _______________________________________________
 linux-arm-kernel mailing list
