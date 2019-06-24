@@ -2,86 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 748E051E25
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 25 Jun 2019 00:21:33 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7DFDE51EE9
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 25 Jun 2019 01:05:25 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ZKdLYxF6CYLSuOvfYrrizLEIHeV+Byn7lIEP3nk/3tA=; b=KtSIUMPn2h6/oS
-	N/q2zA3hQmtWiNin2GUPGZAzWDt6oncWxFoZmpFIYDdNJPXfLUcYQejai7X2d41LvnnrJr8Co7PNo
-	UQuY9S8CEfbTrS+g3W2pO9swHrJjsc6ajwlOLkfb7mzFAhhOQk9Wh9sHp+DNaG0+6HLjtR40u6RNN
-	nfPU13ep2kBBiSMlo6Ck0hiTaSM5JRT3vSsP8I2PhbfV3Yj8zifrBEBPC7N1OKHWv/RIgZ1wfVrd/
-	yzLWO7GqBew6/QzIoTHxWiBHpCA6XDxJFVH5CG4L/oy67LQ1QGyjNYtTg8myNexOw1+HAmkw1qQ1v
-	unWacU6h0b3v27bqj4Wg==;
+	List-Owner; bh=Txnc8Y21E7qz8tnaTCZtVF1xtjHqJLe/0dLU1unaBdI=; b=WDI6LyQvQa5koH
+	O86kImeEjf1zPNbZiurSiQh4WVbaLfgVF9kHJvLQb0DMvpL7pKmBZRuaKawz5T3jdoQCgehKyqAM6
+	jWoRWfx8CGb5o28QOEAs4zli7MW1WGghEvnYVz1Ss1mcj3+kAIvX8Kjf3l0s4xtIe3zL57LP2vNVF
+	4QAi04KGIB4cPJFhTzeKzjlUCV+u4w0yDXbz7GsZ0n+zlvanCnpY4mhxb7ODK7zSnq5sTcP2/BtmU
+	nfYOQFX1FzW9gQKRQkjru3d8cizriAzFnL8nQO1jrO4SwQSOPXRGZz+cHRg6JogvihdIhfCa/tJIJ
+	71BG9qFbgpbVK8OBj0qA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hfXL8-00023G-Sf; Mon, 24 Jun 2019 22:21:30 +0000
-Received: from mail-io1-xd44.google.com ([2607:f8b0:4864:20::d44])
+	id 1hfY1a-0008NY-K0; Mon, 24 Jun 2019 23:05:22 +0000
+Received: from mail-ua1-x941.google.com ([2607:f8b0:4864:20::941])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hfXKw-00022g-KB
- for linux-arm-kernel@lists.infradead.org; Mon, 24 Jun 2019 22:21:19 +0000
-Received: by mail-io1-xd44.google.com with SMTP id s7so481654iob.11
+ id 1hfY1O-0007pj-3O
+ for linux-arm-kernel@lists.infradead.org; Mon, 24 Jun 2019 23:05:11 +0000
+Received: by mail-ua1-x941.google.com with SMTP id s4so6311127uad.7
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 24 Jun 2019 15:21:18 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ Mon, 24 Jun 2019 16:05:06 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=C1hxUVhPxMAJ8iC1Jpoywv+GpiOlXAEZ3JQKKj0idbA=;
- b=cNRvk4jikf3M94qtfs0doJvC56m6xUDf8lVQVIQlsKY3ojvMPoTaz2vmfm5Xog3xtb
- 8/2WGqdKWy+uu/7o2fNnZh7Avi25axp9SYpY6QO7WP/u4PtJ2Fbir9QXJJzz8A5JE4tv
- 8Fr+GgfuBewCi1Lw6lbVsBxcZVA9krmg5KyY4vORS77bDUpUa7k96gVk2VDT0jeWJ+sk
- utABP5mcN9hMnaL4LzWvmxY4kCyjVlMdjQXQ4n2Zo5sOni8u1mQVOLN2iIJeN6BBXb4b
- j8Reqdh+Z6FsJM+ePoQJE5IqK7U9BS44g70B3RGfTnli1jwkQqUTgt+rdCu/Rt46IJG4
- i5GA==
+ :cc; bh=UUo1KrRDh5d7CTBF6eaNp9PxHrRcB6qM3gI926f1TeA=;
+ b=WVw0EoU/h/EqUukaJvGtqujV+cXiSxfpwlH2O1mjOPjBOWZm7X31Fi0BEpRrTWYB9o
+ o3CdLbtue0bwaz7Vgm1UpKlE0E0fSuldvTbmZ5qdmnnWwc+B2pMoaALrgyVv/folYTdx
+ o5vrcJW2m//kZ2EHqvUqM4fL2R7S887YcxtaU=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=C1hxUVhPxMAJ8iC1Jpoywv+GpiOlXAEZ3JQKKj0idbA=;
- b=RIY1vumCmOGC1BPmli6yy76umgTV8Pjm+58GkXvn1wwn2unxC71BBf67bTplScMSeW
- heyZuRwru5BWbhrKIBzxexuBfE+N/Yt6yUamD/19vQse5OQhlm7QRlGCgZJGD0v9EzPO
- PoZ167EcT1/FXkPkaZBO2P/imZdcsA2Aw06eerN3B7QxwWRxcdRLRg2Z1ylA+GqJPSLQ
- T0MOo+iBjU8sCzjVYeAYUhy496bzqzZ5JrQTsQKQ7dJ0jaX/aw1UTeEAkkdUYvN6LOqL
- CfmuWDAkPUCkCl7SjZzS44A89GENaOee6mu2IjivG7WwPziZX5hM5so59ctAItK1+tUf
- i1wA==
-X-Gm-Message-State: APjAAAU3Sif7o906RJ8l+J86GH0UbKkvbeKLZGoyooPg9OQlbb/2065I
- 6qINUDoRhu/XrZP/9QgIXTbow9jP2B0kD/taLZ8=
-X-Google-Smtp-Source: APXvYqyFWsOl+fg45q4H1f0m++1DSGjcTD7K0R/xRLC2C+yf1/Hj6drnDfWHx1wFtrD6k+/4rGRwk4rOL83I4swr8f0=
-X-Received: by 2002:a5d:8c81:: with SMTP id g1mr4054068ion.239.1561414877512; 
- Mon, 24 Jun 2019 15:21:17 -0700 (PDT)
+ bh=UUo1KrRDh5d7CTBF6eaNp9PxHrRcB6qM3gI926f1TeA=;
+ b=KwGL/ec0hjyR6+5Cnsq7TlpQiXZ0LtgrjzRHTOHgahCaCmMrjTydmnxijZKMULkzGs
+ ba08XMbcmv7Vo2vwNnx7qYVgEs8+MfqXh+rbdC8ZTb3YWC5S5T3mo5rHMvZc1TIVzDAK
+ kmn2priqIk+wZfzI7eWFu1VRYVdRx/knxWGBKnuwzrgOyQR2qwl9Q5neGYcyr/7t7m5/
+ +77dkQa/1E518xU6/b5RRqYxUxsthv9ZpWrdxHnmYgN3oOlcvRBn+5P2S9aO+r4BL/Bd
+ DKBWlvLBiUxUvAU4/YhVIVIXPJD7UanhGPEsgwdfUC06dds+rOAQWbW2fuMkVbUAVMWt
+ Vrqg==
+X-Gm-Message-State: APjAAAU+hoplE9U1QZc7jbF1kqx0A9ik/ktyvgnSollolTlSHH88XNsb
+ 7acKsRl2qhKbqSHz6/RIt5mpkgwDCwZE00Woxl/SXA==
+X-Google-Smtp-Source: APXvYqzGrtkWF399TOCeEibm6SiwufJW+tbfw85UkDFZQy9sMXwWQnNPBCZCk62frDzlYpVuKPp8w75505JQWMBjpNM=
+X-Received: by 2002:a9f:31a2:: with SMTP id v31mr30915038uad.15.1561417505834; 
+ Mon, 24 Jun 2019 16:05:05 -0700 (PDT)
 MIME-Version: 1.0
-References: <20190604170146.12205-1-s-anna@ti.com>
- <47b8f278-85ff-18be-d5a0-fde9de6e17f2@ti.com>
-In-Reply-To: <47b8f278-85ff-18be-d5a0-fde9de6e17f2@ti.com>
-From: Jassi Brar <jassisinghbrar@gmail.com>
-Date: Mon, 24 Jun 2019 17:21:06 -0500
-Message-ID: <CABb+yY0xOd_oJLg_BffKXuRtnpHeR-jg1EtKE4KVovy2u3MBuA@mail.gmail.com>
-Subject: Re: [PATCH 0/2] Add Mailbox support for TI K3 SoCs
-To: Suman Anna <s-anna@ti.com>
+References: <20190622034105.188454-1-dbasehore@chromium.org>
+ <20190622034105.188454-3-dbasehore@chromium.org>
+In-Reply-To: <20190622034105.188454-3-dbasehore@chromium.org>
+From: "dbasehore ." <dbasehore@chromium.org>
+Date: Mon, 24 Jun 2019 16:04:54 -0700
+Message-ID: <CAGAzgsrhS_nsXqf83ivZS5qcfT+Ss0=pzshH_i2+-Hd1iVNgNA@mail.gmail.com>
+Subject: Re: [PATCH v3 2/4] drm/panel: set display info in panel attach
+To: linux-kernel <linux-kernel@vger.kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190624_152118_694503_9301DBE8 
-X-CRM114-Status: GOOD (  18.91  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190624_160510_201217_5E4FA573 
+X-CRM114-Status: GOOD (  21.36  )
+X-Spam-Score: -7.4 (-------)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-7.4 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:d44 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:941 listed in]
  [list.dnswl.org]
+ -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
+ white-list
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (jassisinghbrar[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,48 +91,131 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Devicetree List <devicetree@vger.kernel.org>,
- linux-omap <linux-omap@vger.kernel.org>, Rob Herring <robh+dt@kernel.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- linux-arm-kernel@lists.infradead.org
+Cc: Philipp Zabel <p.zabel@pengutronix.de>,
+ Maxime Ripard <maxime.ripard@bootlin.com>, Sam Ravnborg <sam@ravnborg.org>,
+ Intel Graphics <intel-gfx@lists.freedesktop.org>,
+ Joonas Lahtinen <joonas.lahtinen@linux.intel.com>,
+ Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
+ Jani Nikula <jani.nikula@linux.intel.com>, David Airlie <airlied@linux.ie>,
+ Thierry Reding <thierry.reding@gmail.com>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ dri-devel <dri-devel@lists.freedesktop.org>, Daniel Vetter <daniel@ffwll.ch>,
+ Rodrigo Vivi <rodrigo.vivi@intel.com>, CK Hu <ck.hu@mediatek.com>,
+ "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
+ Sean Paul <sean@poorly.run>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Jun 24, 2019 at 3:39 PM Suman Anna <s-anna@ti.com> wrote:
+On Fri, Jun 21, 2019 at 8:41 PM Derek Basehore <dbasehore@chromium.org> wrote:
 >
-> Hi Jassi,
+> Devicetree systems can set panel orientation via a panel binding, but
+> there's no way, as is, to propagate this setting to the connector,
+> where the property need to be added.
+> To address this, this patch sets orientation, as well as other fixed
+> values for the panel, in the drm_panel_attach function. These values
+> are stored from probe in the drm_panel struct.
 >
-> On 6/4/19 12:01 PM, Suman Anna wrote:
-> > Hi Jassi,
-> >
-> > The following series adds the support for the Mailbox IP present
-> > within the Main NavSS module on the newer TI K3 AM65x and J721E SoCs.
-> >
-> > The Mailbox IP is similar to the previous generation IP on OMAP SoCs
-> > with a few differences:
-> >  - Multiple IP instances from previous DRA7/AM57 family each form a
-> >    cluster and are part of the same IP. The driver support will continue
-> >    to be based on a cluster.
-> >  - The IP is present within a Main NaVSS, and interrupts have to go
-> >    through an Interrupt Router within Main NavSS before they reach the
-> >    respective processor sub-system's interrupt controllers.
-> >  - The register layout is mostly same, with difference in two registers
-> >
-> > Support is added by enhancing the existing OMAP Mailbox driver to
-> > support the K3 IP using a new compatible. The driver also has to be
-> > adjusted to deal with the 32-bit mailbox payloads vs the 64-bit
-> > pointers used by the Mailbox API on these Arm v8 platforms.
-> >
-> > DT nodes will be posted separately once the binding is acked.
+> Signed-off-by: Derek Basehore <dbasehore@chromium.org>
+> ---
+>  drivers/gpu/drm/drm_panel.c | 28 ++++++++++++++++++++++++++++
+>  include/drm/drm_panel.h     | 14 ++++++++++++++
+>  2 files changed, 42 insertions(+)
 >
-> Can you please pick this series up for 5.3 merge window if you do not
-> have any comments.
+> diff --git a/drivers/gpu/drm/drm_panel.c b/drivers/gpu/drm/drm_panel.c
+> index 507099af4b57..5690fca30236 100644
+> --- a/drivers/gpu/drm/drm_panel.c
+> +++ b/drivers/gpu/drm/drm_panel.c
+> @@ -104,11 +104,23 @@ EXPORT_SYMBOL(drm_panel_remove);
+>   */
+>  int drm_panel_attach(struct drm_panel *panel, struct drm_connector *connector)
+>  {
+> +       struct drm_display_info *info;
+> +
+>         if (panel->connector)
+>                 return -EBUSY;
 >
-I will. Usually I leave the code to cook in the open for as long as
-possible, more so when no acks are coming.
-Cheers!
+>         panel->connector = connector;
+>         panel->drm = connector->dev;
+> +       info = &connector->display_info;
+> +       info->width_mm = panel->width_mm;
+> +       info->height_mm = panel->height_mm;
+> +       info->bpc = panel->bpc;
+> +       info->panel_orientation = panel->orientation;
+> +       info->bus_flags = panel->bus_flags;
+> +       if (panel->bus_formats)
+> +               drm_display_info_set_bus_formats(&connector->display_info,
+> +                                                panel->bus_formats,
+> +                                                panel->num_bus_formats);
+>
+>         return 0;
+>  }
+> @@ -128,6 +140,22 @@ EXPORT_SYMBOL(drm_panel_attach);
+>   */
+>  int drm_panel_detach(struct drm_panel *panel)
+>  {
+> +       struct drm_display_info *info;
+> +
+> +       if (!panel->connector)
+> +               goto out;
+> +
+> +       info = &panel->connector->display_info;
+> +       info->width_mm = 0;
+> +       info->height_mm = 0;
+> +       info->bpc = 0;
+> +       info->panel_orientation = DRM_MODE_PANEL_ORIENTATION_UNKNOWN;
+> +       info->bus_flags = 0;
+> +       kfree(info->bus_formats);
+> +       info->bus_formats = NULL;
+> +       info->num_bus_formats = 0;
+> +
+> +out:
+>         panel->connector = NULL;
+>         panel->drm = NULL;
+>
+> diff --git a/include/drm/drm_panel.h b/include/drm/drm_panel.h
+> index 3564952f1a4f..760ca5865962 100644
+> --- a/include/drm/drm_panel.h
+> +++ b/include/drm/drm_panel.h
+> @@ -37,6 +37,8 @@ struct display_timing;
+>   * struct drm_panel_funcs - perform operations on a given panel
+>   * @disable: disable panel (turn off back light, etc.)
+>   * @unprepare: turn off panel
+> + * @detach: detach panel->connector (clear internal state, etc.)
+> + * @attach: attach panel->connector (update internal state, etc.)
+>   * @prepare: turn on panel and perform set up
+>   * @enable: enable panel (turn on back light, etc.)
+>   * @get_modes: add modes to the connector that the panel is attached to and
+> @@ -93,6 +95,18 @@ struct drm_panel {
+>
+>         const struct drm_panel_funcs *funcs;
+>
+> +       /*
+> +        * panel information to be set in the connector when the panel is
+> +        * attached.
+> +        */
+> +       unsigned int width_mm;
+> +       unsigned int height_mm;
+> +       unsigned int bpc;
+> +       int orientation;
+> +       const u32 *bus_formats;
+> +       unsigned int num_bus_formats;
+> +       u32 bus_flags;
+
+Should probably put these in a struct to ensure the connector and
+panel have the same data types. Will do in a following patch if we
+stay with this.
+
+> +
+>         struct list_head list;
+>  };
+>
+> --
+> 2.22.0.410.gd8fdbe21b5-goog
+>
 
 _______________________________________________
 linux-arm-kernel mailing list
