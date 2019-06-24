@@ -2,50 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4AB3B50D1C
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Jun 2019 16:00:22 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8987750D21
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Jun 2019 16:00:44 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=87RoV4z8sXwOmKePRA4vXl+jDwo/Lb8ltFrb3MhfLP0=; b=ibt4960NcTAfIb
-	hbLuEZ1uyJc7zWBolI97/ZYqdLIeaEl9+f5r5xj1xOw56KOv324QVnkzBzY2XO4coSRskNhGWylOh
-	yE0sudIEwNRS5CvIFJg5cuEY8IAno/fPvz3Eak1W0XhPQ6QlrxhShyoU4v3nc6lSMoRMOuhL7mjxg
-	3GjvWB7+6Pvkn5N7uwMD4PN5/S2ahjMv068paM/0m6GIsz3SGS1YAFxMzctr2rGAX29EQizLoPIN5
-	PiQ95rW6cy7fgi09PMxiQiAU8Y5Or04pux/yGQ81vv22jIz/LpLLYvhKU35hlYqCRmSupPiW7d1E+
-	T2UYd/04IDn6vRgjoG+g==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=qbUu9rj1JX3Pyds+m9VGOByFEpysT/sPJMx4GD0fJ9I=; b=Wc7NUx0jcAKs6F
+	ENWdjdMWpJPgN5v8it9MUhxQ+liYX2gay89kYlNe/SgaOV2PIBR5PJMcF9kMSYP40btmOYH2anidR
+	KkIhUMXfXhXnc/F0epI1OmcBeyxIEHqVleW9ryytnzhgwv2hOZJQOeUr6LlAji/LHGFp6bOrG0LHB
+	hsbnKsQZ/HZeZNNekGnOEliSojUnEcuj/V7rUD4qDAJExYucdJ7zd4FRvSG32r0W8grIvm5GXYKHd
+	ZPtAEIgHq65VDyi0niJgkUIQpOPeXE0U6rGJo+b80e4r9XADrFCP8Zwa4eBYWOlsmIOviOC8fYjvZ
+	5qIkiSq1pADIjP/F59oA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hfPW6-0007Id-MM; Mon, 24 Jun 2019 14:00:18 +0000
+	id 1hfPWU-00081Y-Uk; Mon, 24 Jun 2019 14:00:43 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hfPVr-0006rQ-Fw
- for linux-arm-kernel@lists.infradead.org; Mon, 24 Jun 2019 14:00:05 +0000
+ id 1hfPWC-00080H-H9
+ for linux-arm-kernel@lists.infradead.org; Mon, 24 Jun 2019 14:00:25 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 0BD1E344;
- Mon, 24 Jun 2019 07:00:03 -0700 (PDT)
-Received: from [10.1.196.72] (e119884-lin.cambridge.arm.com [10.1.196.72])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 6A6DC3F71E;
- Mon, 24 Jun 2019 07:00:00 -0700 (PDT)
-Subject: Re: [PATCH v7 04/25] arm64: Substitute gettimeofday with C
- implementation
-To: Will Deacon <will.deacon@arm.com>
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 051CD344;
+ Mon, 24 Jun 2019 07:00:24 -0700 (PDT)
+Received: from arrakis.emea.arm.com (arrakis.cambridge.arm.com [10.1.196.78])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
+ 70E373F71E; Mon, 24 Jun 2019 07:00:21 -0700 (PDT)
+Date: Mon, 24 Jun 2019 15:00:19 +0100
+From: Catalin Marinas <catalin.marinas@arm.com>
+To: Vincenzo Frascino <vincenzo.frascino@arm.com>
+Subject: Re: [PATCH v7 10/25] arm64: compat: Add vDSO
+Message-ID: <20190624140018.GD29120@arrakis.emea.arm.com>
 References: <20190621095252.32307-1-vincenzo.frascino@arm.com>
- <20190621095252.32307-5-vincenzo.frascino@arm.com>
- <20190624133607.GI29497@fuggles.cambridge.arm.com>
-From: Vincenzo Frascino <vincenzo.frascino@arm.com>
-Message-ID: <13d00991-aaa0-72f9-4556-1c92eceabd07@arm.com>
-Date: Mon, 24 Jun 2019 14:59:59 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.7.0
+ <20190621095252.32307-11-vincenzo.frascino@arm.com>
 MIME-Version: 1.0
-In-Reply-To: <20190624133607.GI29497@fuggles.cambridge.arm.com>
-Content-Language: en-US
+Content-Disposition: inline
+In-Reply-To: <20190621095252.32307-11-vincenzo.frascino@arm.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190624_070003_638666_E547575F 
-X-CRM114-Status: GOOD (  20.63  )
+X-CRM114-CacheID: sfid-20190624_070024_663759_BC9F6549 
+X-CRM114-Status: GOOD (  16.78  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -64,15 +61,14 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arch@vger.kernel.org, Shuah Khan <shuah@kernel.org>,
+Cc: linux-arch@vger.kernel.org, Dmitry Safonov <0x7f454c46@gmail.com>,
  Shijith Thotton <sthotton@marvell.com>,
  Andre Przywara <andre.przywara@arm.com>, Arnd Bergmann <arnd@arndb.de>,
- Huw Davies <huw@codeweavers.com>, Catalin Marinas <catalin.marinas@arm.com>,
- Daniel Lezcano <daniel.lezcano@linaro.org>,
- Dmitry Safonov <0x7f454c46@gmail.com>, linux-kernel@vger.kernel.org,
- Ralf Baechle <ralf@linux-mips.org>, linux-mips@vger.kernel.org,
- Paul Burton <paul.burton@mips.com>, linux-kselftest@vger.kernel.org,
- Rasmus Villemoes <linux@rasmusvillemoes.dk>,
+ Huw Davies <huw@codeweavers.com>, Shuah Khan <shuah@kernel.org>,
+ Daniel Lezcano <daniel.lezcano@linaro.org>, Will Deacon <will.deacon@arm.com>,
+ linux-kernel@vger.kernel.org, Ralf Baechle <ralf@linux-mips.org>,
+ linux-mips@vger.kernel.org, Paul Burton <paul.burton@mips.com>,
+ linux-kselftest@vger.kernel.org, Rasmus Villemoes <linux@rasmusvillemoes.dk>,
  Russell King <linux@armlinux.org.uk>, Thomas Gleixner <tglx@linutronix.de>,
  Mark Salyzyn <salyzyn@android.com>, Peter Collingbourne <pcc@google.com>,
  linux-arm-kernel@lists.infradead.org
@@ -81,88 +77,78 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On Fri, Jun 21, 2019 at 10:52:37AM +0100, Vincenzo Frascino wrote:
+> --- /dev/null
+> +++ b/arch/arm64/include/asm/vdso/compat_barrier.h
+> @@ -0,0 +1,51 @@
+> +/* SPDX-License-Identifier: GPL-2.0 */
+> +/*
+> + * Copyright (C) 2018 ARM Limited
+> + */
+> +#ifndef __COMPAT_BARRIER_H
+> +#define __COMPAT_BARRIER_H
+> +
+> +#ifndef __ASSEMBLY__
+> +/*
+> + * Warning: This code is meant to be used with
+> + * ENABLE_COMPAT_VDSO only.
+> + */
+> +#ifndef ENABLE_COMPAT_VDSO
+> +#error This header is meant to be used with ENABLE_COMPAT_VDSO only
+> +#endif
+> +
+> +#ifdef dmb
+> +#undef dmb
+> +#endif
+> +
+> +#if __LINUX_ARM_ARCH__ >= 7
+> +#define dmb(option) __asm__ __volatile__ ("dmb " #option : : : "memory")
+> +#elif __LINUX_ARM_ARCH__ == 6
+> +#define dmb(x) __asm__ __volatile__ ("mcr p15, 0, %0, c7, c10, 5" \
+> +				    : : "r" (0) : "memory")
+> +#else
+> +#define dmb(x) __asm__ __volatile__ ("" : : : "memory")
+> +#endif
 
+We don't need pre-ARMv7 barriers (they've been deprecated and the arm64
+kernel actually traps and emulates them by default). Also your Makefile
+changes never define a __LINUX_ARM_ARCH__ lower than 7. Fix-up below:
 
-On 24/06/2019 14:36, Will Deacon wrote:
-> Hi Vincenzo,
-> 
-> On Fri, Jun 21, 2019 at 10:52:31AM +0100, Vincenzo Frascino wrote:
->> To take advantage of the commonly defined vdso interface for
->> gettimeofday the architectural code requires an adaptation.
->>
->> Re-implement the gettimeofday vdso in C in order to use lib/vdso.
->>
->> With the new implementation arm64 gains support for CLOCK_BOOTTIME
->> and CLOCK_TAI.
->>
->> Cc: Catalin Marinas <catalin.marinas@arm.com>
->> Cc: Will Deacon <will.deacon@arm.com>
->> Signed-off-by: Vincenzo Frascino <vincenzo.frascino@arm.com>
->> Tested-by: Shijith Thotton <sthotton@marvell.com>
->> Tested-by: Andre Przywara <andre.przywara@arm.com>
->> ---
->>  arch/arm64/Kconfig                         |   2 +
->>  arch/arm64/include/asm/vdso/gettimeofday.h |  86 ++++++
->>  arch/arm64/include/asm/vdso/vsyscall.h     |  53 ++++
->>  arch/arm64/include/asm/vdso_datapage.h     |  48 ---
->>  arch/arm64/kernel/asm-offsets.c            |  33 +-
->>  arch/arm64/kernel/vdso.c                   |  51 +---
->>  arch/arm64/kernel/vdso/Makefile            |  34 ++-
->>  arch/arm64/kernel/vdso/gettimeofday.S      | 334 ---------------------
->>  arch/arm64/kernel/vdso/vgettimeofday.c     |  28 ++
-> 
-> I'm concerned about an apparent semantic change introduced by your patch:
-> 
->> +static __always_inline u64 __arch_get_hw_counter(s32 clock_mode)
->> +{
->> +	u64 res;
->> +
->> +	asm volatile("mrs %0, cntvct_el0" : "=r" (res) :: "memory");
->> +
->> +	return res;
->> +}
-> 
-> vs:
-> 
->> -	.macro	get_clock_shifted_nsec res, cycle_last, mult
->> -	/* Read the virtual counter. */
->> -	isb
->> -	mrs	x_tmp, cntvct_el0
->> -	/* Calculate cycle delta and convert to ns. */
->> -	sub	\res, x_tmp, \cycle_last
->> -	/* We can only guarantee 56 bits of precision. */
->> -	movn	x_tmp, #0xff00, lsl #48
->> -	and	\res, x_tmp, \res
->> -	mul	\res, \res, \mult
->> -	/*
->> -	 * Fake address dependency from the value computed from the counter
->> -	 * register to subsequent data page accesses so that the sequence
->> -	 * locking also orders the read of the counter.
->> -	 */
->> -	and	x_tmp, \res, xzr
->> -	add	vdso_data, vdso_data, x_tmp
->> -	.endm
-> 
-> It looks like you're dropping both the preceding ISB (allowing the counter
-> value to be speculated) and also the subsequent dependency (allowing the
-> seq lock to be speculated). If I've missed them, apologies, but I couldn't
-> spot them elsewhere in this patch.
-> 
-> __arch_get_hw_counter should probably be identical to __arch_counter_get_cntvct
-> to avoid these problems. I guess we don't need to care about the case where
-> the counter is unstable, since we'll just disable the vDSO altogether on
-> such systems?
-> 
+------8<-----------------------
+From 5655a0313ce7bb731bfed6a19bcfe6b1100b542a Mon Sep 17 00:00:00 2001
+From: Catalin Marinas <catalin.marinas@arm.com>
+Date: Mon, 24 Jun 2019 12:16:06 +0100
+Subject: [PATCH] arm64: compat: No need for pre-ARMv7 barriers on an ARMv8
+ system
 
-Oops, I forgot to mirror your patch that introduces this change. I will post a
-fix in reply to this email.
+This patch removes the deprecated (pre-ARMv7) compat barriers as they
+would not be used on an ARMv8 system.
 
-> Will
-> 
+Fixes: a7f71a2c8903 ("arm64: compat: Add vDSO")
+Signed-off-by: Catalin Marinas <catalin.marinas@arm.com>
+---
+ arch/arm64/include/asm/vdso/compat_barrier.h | 7 -------
+ 1 file changed, 7 deletions(-)
 
--- 
-Regards,
-Vincenzo
+diff --git a/arch/arm64/include/asm/vdso/compat_barrier.h b/arch/arm64/include/asm/vdso/compat_barrier.h
+index ea24ea856b07..fb60a88b5ed4 100644
+--- a/arch/arm64/include/asm/vdso/compat_barrier.h
++++ b/arch/arm64/include/asm/vdso/compat_barrier.h
+@@ -18,14 +18,7 @@
+ #undef dmb
+ #endif
+ 
+-#if __LINUX_ARM_ARCH__ >= 7
+ #define dmb(option) __asm__ __volatile__ ("dmb " #option : : : "memory")
+-#elif __LINUX_ARM_ARCH__ == 6
+-#define dmb(x) __asm__ __volatile__ ("mcr p15, 0, %0, c7, c10, 5" \
+-				    : : "r" (0) : "memory")
+-#else
+-#define dmb(x) __asm__ __volatile__ ("" : : : "memory")
+-#endif
+ 
+ #if __LINUX_ARM_ARCH__ >= 8
+ #define aarch32_smp_mb()	dmb(ish)
 
 _______________________________________________
 linux-arm-kernel mailing list
