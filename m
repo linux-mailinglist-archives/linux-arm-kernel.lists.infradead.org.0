@@ -2,75 +2,124 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 712EC5029A
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Jun 2019 08:57:13 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 88A82502F6
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Jun 2019 09:21:24 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:MIME-Version:
+	Date:Message-ID:From:To:Subject:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=K8dCK1lJ7/6szTWJDoKytOy4HRpdpdMEvtll1O+8osk=; b=VR2QLyQEcUAbOO
-	9YSKZTmenbgK4AyV2Z61FYs0OH/R+JYpef0j3RHeNjlqBuOLFIVh54kiLGoDjJIHXlDa1VNZ8yJbd
-	TbFC+SNFcokEhidgmgCofcZR8pVcvkLDVYPPgs95YcTCTWdpcdowQk4qmVlrevMd8opk3UE1/FuIh
-	8KXpGXejNSsdNfVgNn1/5GAKn/XlVky5DIZofMaab5RMpk1QXWQH0s7cLzAz1KcCzPP91dn6b8z5Z
-	aISW1MK3jo7g7zgyhLqeSGMsLrtbZS7aEUmRvIQteGj5mDPdDSi6HaBMXWWBft3pw3NTBepUgJ25m
-	YyTaFsK7LvnwOwQcoCHA==;
+	List-Owner; bh=q6v6lVv98PTIGQEX3v/rCpEUqVnlkinUo6plYSLNKG0=; b=Ris2u4oySNIGqu
+	feCMIcYOale3rI+yTI8MHpZCpELfl/WeLkHKVMWsF8Kyd0zeKAUmhukW9t/AuagWmFhuxT/9o7N0e
+	p0/hKk5mzEZxTUbD7l3435TH3PCt+n9iO5m6oXE/xEKTns7sgITyS4LS5dT2hsL7aKf6gMViF9VWN
+	sr2wMtwNo8eTtEq1+3HHmBGY3BhQx5yOuyJ0m1yWr2YCYRr9LOA4xZyzl6RQFnelJ4WYftSt8RtJg
+	BhIU+xlPjR/hSPKS1NLmJWxpJ7DPM0KHZIubgG0zZJdVNtrC8XF1Oij9+RGKzxFgxx7O2MrPeTjuh
+	RU3GxfBx1ErUYZ65epzQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hfIub-0005sm-5z; Mon, 24 Jun 2019 06:57:09 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1hfJHu-0005bV-7O; Mon, 24 Jun 2019 07:21:14 +0000
+Received: from mailout1.w1.samsung.com ([210.118.77.11])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hfIuP-0005s5-6q
- for linux-arm-kernel@lists.infradead.org; Mon, 24 Jun 2019 06:56:58 +0000
-Received: from mail-lj1-f182.google.com (mail-lj1-f182.google.com
- [209.85.208.182])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 55B5B2146F
+ id 1hfJHR-0005aK-1m
+ for linux-arm-kernel@lists.infradead.org; Mon, 24 Jun 2019 07:20:47 +0000
+Received: from eucas1p2.samsung.com (unknown [182.198.249.207])
+ by mailout1.w1.samsung.com (KnoxPortal) with ESMTP id
+ 20190624072041euoutp017dcf47d0c27f430469205c0bb5cb69b0~rEWm_kUgc0728307283euoutp01F
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 24 Jun 2019 06:56:56 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1561359416;
- bh=Wmle4DmUHAJz9qxbWxUuCO6gcEUZ8pGJ4hH7DvFoVHc=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=BZRSOZwnvbTtrhE5FdhMr78QW7zS+u3+C0+kDVKvvXlEFAAiAv1CYiZKFI/RWBEHU
- QoVnOObxJg0OyB7oKA4lV4pLeYu3bw7phQ8UCPWIM1UHlhqTZ2H/o6Yyso5RFhmLS3
- OSenBnmvuMdUNYsUcZbMIMdm0cGNQAhQZOtdbvN0=
-Received: by mail-lj1-f182.google.com with SMTP id 131so11472482ljf.4
- for <linux-arm-kernel@lists.infradead.org>;
- Sun, 23 Jun 2019 23:56:56 -0700 (PDT)
-X-Gm-Message-State: APjAAAXAwFcJcLuTPmx3PjRaiveMQJBK8YFTr2QwPV3MMs3uCbJVQGcr
- Ncx/rti9mGg37TAJcpFwinKmr9vjtCyDYJVZF78=
-X-Google-Smtp-Source: APXvYqwuYsg0YtPp4HSVT4GsrVo3BqbfBMVGJw+z+cnqoCkDTdXplaaPso8EW7Ygbl0e07xoKBfuQzhZfcbiBsmYcXk=
-X-Received: by 2002:a2e:12dc:: with SMTP id 89mr16648875ljs.40.1561359414533; 
- Sun, 23 Jun 2019 23:56:54 -0700 (PDT)
+ Mon, 24 Jun 2019 07:20:41 +0000 (GMT)
+DKIM-Filter: OpenDKIM Filter v2.11.0 mailout1.w1.samsung.com
+ 20190624072041euoutp017dcf47d0c27f430469205c0bb5cb69b0~rEWm_kUgc0728307283euoutp01F
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
+ s=mail20170921; t=1561360841;
+ bh=AkkGYU4UEYgfsh3s+7fzHB6aVXnYZdkOfuooy+x870g=;
+ h=Subject:To:Cc:From:Date:In-Reply-To:References:From;
+ b=WkgAnjsW05sUl8X6Dlqlm58Q2AcbroHkjtjUeWf/nTaafa1+3WNjnyPWBt+6Hp27Y
+ vAtgxL4uz+cujhJXZwoFIIwRylPCvpk/gDbM1oSAThGEBJDbjfiw62NCBHcdXK1k+p
+ XVRgnXYj1nwF3q+OyCB4vO62LUnO8Zh7Y1U0CEzI=
+Received: from eusmges3new.samsung.com (unknown [203.254.199.245]) by
+ eucas1p2.samsung.com (KnoxPortal) with ESMTP id
+ 20190624072041eucas1p2aea54a574b3873ce169927d1c4fa95d5~rEWmo1As_3236132361eucas1p2d;
+ Mon, 24 Jun 2019 07:20:41 +0000 (GMT)
+Received: from eucas1p2.samsung.com ( [182.198.249.207]) by
+ eusmges3new.samsung.com (EUCPMTA) with SMTP id 89.6C.04325.8C9701D5; Mon, 24
+ Jun 2019 08:20:41 +0100 (BST)
+Received: from eusmtrp2.samsung.com (unknown [182.198.249.139]) by
+ eucas1p2.samsung.com (KnoxPortal) with ESMTPA id
+ 20190624072040eucas1p2d484086328b7c097693c2b45f18076db~rEWl7OxCh3225832258eucas1p2c;
+ Mon, 24 Jun 2019 07:20:40 +0000 (GMT)
+Received: from eusmgms2.samsung.com (unknown [182.198.249.180]) by
+ eusmtrp2.samsung.com (KnoxPortal) with ESMTP id
+ 20190624072040eusmtrp2509024819a46be13d0f5a21e69749747~rEWltEwkM1889218892eusmtrp2t;
+ Mon, 24 Jun 2019 07:20:40 +0000 (GMT)
+X-AuditID: cbfec7f5-fbbf09c0000010e5-88-5d1079c83e4a
+Received: from eusmtip1.samsung.com ( [203.254.199.221]) by
+ eusmgms2.samsung.com (EUCPMTA) with SMTP id 24.39.04140.8C9701D5; Mon, 24
+ Jun 2019 08:20:40 +0100 (BST)
+Received: from [106.120.50.25] (unknown [106.120.50.25]) by
+ eusmtip1.samsung.com (KnoxPortal) with ESMTPA id
+ 20190624072039eusmtip14a1638925c7d4e53713e27369151dee7~rEWlW37Px0343903439eusmtip1S;
+ Mon, 24 Jun 2019 07:20:39 +0000 (GMT)
+Subject: Re: [PATCH v2 3/4] ARM: dts: exynos: Add regulator suspend
+ configuration to Odroid XU3/XU4/HC1 family
+To: Anand Moon <linux.amoon@gmail.com>, Krzysztof Kozlowski <krzk@kernel.org>
+From: Marek Szyprowski <m.szyprowski@samsung.com>
+Message-ID: <d94a2f99-fb99-c238-7011-9bbb4c0cd90f@samsung.com>
+Date: Mon, 24 Jun 2019 09:20:38 +0200
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:60.0) Gecko/20100101
+ Thunderbird/60.7.2
 MIME-Version: 1.0
-References: <20190621180208.25361-7-krzk@kernel.org>
- <20190622191838.29850-1-krzk@kernel.org>
- <CAGTfZH2g6E2pCEtqjfCd+PjEzjwc2AB75LXJfCeO+PcYLiLTUw@mail.gmail.com>
- <CGME20190623192007epcas4p2a3995bb00091b436562828fceb6ff790@epcas4p2.samsung.com>
- <CAJKOXPcFFY08R1H-DrrzX2BC3L8x4NPJTP7nDn9yixAvmaiF9Q@mail.gmail.com>
- <6edbe882-314c-85e1-4109-7c3b324dc7ab@samsung.com>
-In-Reply-To: <6edbe882-314c-85e1-4109-7c3b324dc7ab@samsung.com>
-From: Krzysztof Kozlowski <krzk@kernel.org>
-Date: Mon, 24 Jun 2019 08:56:43 +0200
-X-Gmail-Original-Message-ID: <CAJKOXPd6BRm+Hz363BhP8xr9dZ6jZxMQmaT7KuiEHAyZz-hDoQ@mail.gmail.com>
-Message-ID: <CAJKOXPd6BRm+Hz363BhP8xr9dZ6jZxMQmaT7KuiEHAyZz-hDoQ@mail.gmail.com>
-Subject: Re: [PATCH v3] arm64: defconfig: Enable Panfrost and Lima drivers
-To: Chanwoo Choi <cw00.choi@samsung.com>
+In-Reply-To: <CANAwSgTFQo8wL5s-djwPXFFOLtTHvRQif6234kFC=23PwMhuEQ@mail.gmail.com>
+Content-Language: en-US
+X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFlrMKsWRmVeSWpSXmKPExsWy7djP87onKwViDdZ+ZbSYf+Qcq0X/49fM
+ FufPb2C32PT4GqvF5V1z2CxmnN/HZLFu4y12B3aPnbPusntsWtXJ5rF5Sb3H501yASxRXDYp
+ qTmZZalF+nYJXBkfLhxjKVjOWTHh8QH2BsYV7F2MnBwSAiYSm/f/YOli5OIQEljBKNG9/QCU
+ 84VR4uuMe0wQzmdGiabjS4AcDrCWPTtdIOLLGSX6ev+yQThvGSWuXFrFBDJXWKBAovPoWzYQ
+ W0TAX6Jn4z5WkCJmgZuMEt+3rmUESbAJGEp0ve0CK+IVsJP4ceo1O8gGFgFViffr+UDCogIx
+ Eg/n34EqEZQ4OfMJC4jNKRAoceHvPrAfmAXkJba/ncMMYYtL3HoyH+xqCYFl7BIrJ25jh7ja
+ ReL7NjGIn4UlXh3fAvW/jMT/nTD1zYwSD8+tZYdwehglLjfNYISospY4fPwiK8ggZgFNifW7
+ 9CFmOkq8uZYKYfJJ3HgrCHECn8SkbdOZIcK8Eh1tQhAz1CRmHV8Ht/XghUvMExiVZiF5bBaS
+ Z2YheWYWwtoFjCyrGMVTS4tz01OLjfNSy/WKE3OLS/PS9ZLzczcxApPO6X/Hv+5g3Pcn6RCj
+ AAejEg+vwAb+WCHWxLLiytxDjBIczEoivEsTBWKFeFMSK6tSi/Lji0pzUosPMUpzsCiJ81Yz
+ PIgWEkhPLEnNTk0tSC2CyTJxcEo1MAauSX783k1KQVzbX+n423dPXdfvLozyV0y4KXlgHcPO
+ tZcX+b1W77t24aP//v69JwR4Jrsp9p7U38mZ+nWudnuv3q1nwX5+z1l1vyw0ufHnEGvr36/3
+ inWW/lV8tWxCUjeHeBTz6l0X4364uMotir60ce67OYcj1AVNjlkknrxUIOjcza3jq6XEUpyR
+ aKjFXFScCAA6JuHXNgMAAA==
+X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFtrKIsWRmVeSWpSXmKPExsVy+t/xu7onKgViDY4cFrCYf+Qcq0X/49fM
+ FufPb2C32PT4GqvF5V1z2CxmnN/HZLFu4y12B3aPnbPusntsWtXJ5rF5Sb3H501yASxRejZF
+ +aUlqQoZ+cUltkrRhhZGeoaWFnpGJpZ6hsbmsVZGpkr6djYpqTmZZalF+nYJehkfLhxjKVjO
+ WTHh8QH2BsYV7F2MHBwSAiYSe3a6dDFycQgJLGWUaD8KEucEistInJzWwAphC0v8udbFBmIL
+ CbxmlPg6pQjEFhYokOg8+hYsLiLgK/G/4RYziM0scJNRouuODcTQH4wS87YsYwRJsAkYSnS9
+ hRjEK2An8ePUa7AjWARUJd6v5wMJiwrESHRN/ckCUSIocXLmEzCbUyBQ4sLffewQ880k5m1+
+ CLVLXmL72zlQtrjErSfzmSYwCs1C0j4LScssJC2zkLQsYGRZxSiSWlqcm55bbKRXnJhbXJqX
+ rpecn7uJERhl24793LKDsetd8CFGAQ5GJR5egQ38sUKsiWXFlbmHGCU4mJVEeJcmCsQK8aYk
+ VlalFuXHF5XmpBYfYjQF+m0is5Rocj4wAeSVxBuaGppbWBqaG5sbm1koifN2CByMERJITyxJ
+ zU5NLUgtgulj4uCUamA8taH+p2rW/JWexWdda3281B6+mL3SWW630gXT3R42uaZt0/OeliQ8
+ mCex0H7FhodFnRXySvetV5/zPrbfQnVH84QEngWvSvK1NkQZ7jI+r2PlNs/Yq2p39Peftyo/
+ 5i7f5vrlxrmPztVndM0UJkww0lBeOWGv3J/Mm1sjVMUU2dZZXDZ5f/2wEktxRqKhFnNRcSIA
+ XxGznMgCAAA=
+X-CMS-MailID: 20190624072040eucas1p2d484086328b7c097693c2b45f18076db
+X-Msg-Generator: CA
+X-RootMTR: 20190623160226epcas2p3449814deb1faf7bf939481e6d4da2b86
+X-EPHeader: CA
+CMS-TYPE: 201P
+X-CMS-RootMailID: 20190623160226epcas2p3449814deb1faf7bf939481e6d4da2b86
+References: <20190621155845.7079-1-krzk@kernel.org>
+ <20190621155845.7079-3-krzk@kernel.org>
+ <CGME20190623160226epcas2p3449814deb1faf7bf939481e6d4da2b86@epcas2p3.samsung.com>
+ <CANAwSgTFQo8wL5s-djwPXFFOLtTHvRQif6234kFC=23PwMhuEQ@mail.gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190623_235657_289593_6AE26B93 
-X-CRM114-Status: GOOD (  20.79  )
+X-CRM114-CacheID: sfid-20190624_002045_578485_54CA6171 
+X-CRM114-Status: GOOD (  13.57  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ high trust [210.118.77.11 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -90,65 +139,53 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
- Enric Balletbo i Serra <enric.balletbo@collabora.com>,
- linux-samsung-soc <linux-samsung-soc@vger.kernel.org>,
- Maxime Ripard <maxime.ripard@bootlin.com>,
- Catalin Marinas <catalin.marinas@arm.com>,
- linux-kernel <linux-kernel@vger.kernel.org>,
- Bjorn Andersson <bjorn.andersson@linaro.org>,
- Dinh Nguyen <dinguyen@kernel.org>, Jagan Teki <jagan@amarulasolutions.com>,
- Simon Horman <horms+renesas@verge.net.au>, Olof Johansson <olof@lixom.net>,
- Shawn Guo <shawnguo@kernel.org>, Leonard Crestez <leonard.crestez@nxp.com>,
- Will Deacon <will@kernel.org>, cwchoi00@gmail.com,
- Marek Szyprowski <m.szyprowski@samsung.com>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: devicetree <devicetree@vger.kernel.org>, linux-samsung-soc@vger.kernel.org,
+ Kukjin Kim <kgene@kernel.org>, Linux Kernel <linux-kernel@vger.kernel.org>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gTW9uLCAyNCBKdW4gMjAxOSBhdCAwMTozNiwgQ2hhbndvbyBDaG9pIDxjdzAwLmNob2lAc2Ft
-c3VuZy5jb20+IHdyb3RlOgo+Cj4gT24gMTkuIDYuIDI0LiDsmKTsoIQgNDoxNiwgS3J6eXN6dG9m
-IEtvemxvd3NraSB3cm90ZToKPiA+IE9uIFN1biwgMjMgSnVuIDIwMTkgYXQgMDY6MzEsIENoYW53
-b28gQ2hvaSA8Y3djaG9pMDBAZ21haWwuY29tPiB3cm90ZToKPiA+Pgo+ID4+IEhpIEtyenlzenRv
-ZiwKPiA+Pgo+ID4+IDIwMTnrhYQgNuyblCAyM+ydvCAo7J28KSDsmKTsoIQgNDoyMCwgS3J6eXN6
-dG9mIEtvemxvd3NraSA8a3J6a0BrZXJuZWwub3JnPuuLmOydtCDsnpHshLE6Cj4gPj4+Cj4gPj4+
-IEVuYWJsZSBzdXBwb3J0IGZvciBNYWxpIEdQVSB3aXRoIFBhbmZyb3N0IGFuZCBMaW1hIGRyaXZl
-cnMgZm9yOgo+ID4+PiAxLiBTYW1zdW5nIEV4eW5vczU0MzMgYW5kIEV4eW5vczcgKGhhdmluZyBN
-YWxpIFQ3NjApLAo+ID4+PiAyLiBBbGx3aW5lciBBNjQgYW5kIEg1IChNYWxpIDQwMC80NTApLgo+
-ID4+Pgo+ID4+PiBTaWduZWQtb2ZmLWJ5OiBLcnp5c3p0b2YgS296bG93c2tpIDxrcnprQGtlcm5l
-bC5vcmc+Cj4gPj4+Cj4gPj4+IC0tLQo+ID4+Pgo+ID4+PiBDaGFuZ2VzIHNpbmNlIHYxOgo+ID4+
-PiAxLiBFbmFibGUgTGltYSBkcml2ZXIKPiA+Pj4gLS0tCj4gPj4+ICBhcmNoL2FybTY0L2NvbmZp
-Z3MvZGVmY29uZmlnIHwgMyArKy0KPiA+Pj4gIDEgZmlsZSBjaGFuZ2VkLCAyIGluc2VydGlvbnMo
-KyksIDEgZGVsZXRpb24oLSkKPiA+Pj4KPiA+Pj4gZGlmZiAtLWdpdCBhL2FyY2gvYXJtNjQvY29u
-Zmlncy9kZWZjb25maWcgYi9hcmNoL2FybTY0L2NvbmZpZ3MvZGVmY29uZmlnCj4gPj4+IGluZGV4
-IGZiYmMwNjU0MTVkNC4uM2QzMTYxMTM2OGFmIDEwMDY0NAo+ID4+PiAtLS0gYS9hcmNoL2FybTY0
-L2NvbmZpZ3MvZGVmY29uZmlnCj4gPj4+ICsrKyBiL2FyY2gvYXJtNjQvY29uZmlncy9kZWZjb25m
-aWcKPiA+Pj4gQEAgLTUxOCw2ICs1MTgsOCBAQCBDT05GSUdfRFJNX0hJU0lfSElCTUM9bQo+ID4+
-PiAgQ09ORklHX0RSTV9ISVNJX0tJUklOPW0KPiA+Pj4gIENPTkZJR19EUk1fTUVTT049bQo+ID4+
-PiAgQ09ORklHX0RSTV9QTDExMT1tCj4gPj4+ICtDT05GSUdfRFJNX0xJTUE9bQo+ID4+PiArQ09O
-RklHX0RSTV9QQU5GUk9TVD1tCj4gPj4+ICBDT05GSUdfRkI9eQo+ID4+PiAgQ09ORklHX0ZCX01P
-REVfSEVMUEVSUz15Cj4gPj4+ICBDT05GSUdfQkFDS0xJR0hUX0dFTkVSSUM9bQo+ID4+PiBAQCAt
-NzE4LDcgKzcyMCw2IEBAIENPTkZJR19BUkNIX1RFR1JBXzE5NF9TT0M9eQo+ID4+PiAgQ09ORklH
-X0FSQ0hfSzNfQU02X1NPQz15Cj4gPj4+ICBDT05GSUdfU09DX1RJPXkKPiA+Pj4gIENPTkZJR19U
-SV9TQ0lfUE1fRE9NQUlOUz15Cj4gPj4+IC1DT05GSUdfREVWRlJFUV9HT1ZfU0lNUExFX09OREVN
-QU5EPXkKPiA+Pgo+ID4+IEV4eW5vczU0MzMtdG0yIGJvYXJkIHN1cHBvcnQgdGhlIGV4eW5vcy1i
-dXMgZGV2aWNlIHdoaWNoCj4gPj4gdXNlZCB0aGUgc2ltcGxlX29uZG1lbmFkIGdvdmVybm9yIG9m
-IGRldmZyZXEuCj4gPj4gV2h5IGRvIHlvdSByZW1vdmUgdGhpcyBjb25maWd1cmF0aW9uIGZyb20g
-dGhlIGRlZmNvbmZpZz8KPiA+Cj4gPiBJdCBpcyBzZWxlY3RlZCBieSBkZWZhdWx0IGJ5IERSTV9Q
-QU5GUk9TVC4gVGhlIGRpZmZlcmVuY2UgaXMgdGhhdAo+ID4gUEFORlJPU1Qgc2VsZWN0cyBpdCBh
-cyBtb2R1bGUuIFRoZSAneScgaXMgY2hvc2VuIGJlY2F1c2Ugb2Y6Cj4gPiAgIFNDU0lfVUZTSENE
-IFs9eV0gJiYgU0NTSV9MT1dMRVZFTCBbPXldICYmIFNDU0kgWz15XSAmJiBTQ1NJX0RNQSBbPXld
-Cj4KPiBXaGVuIEkgdHJpZWQgdG8gZmluZCB0aGUgaGlzdG9yeSBvZiBDT05GSUdfREVWRlJFUV9H
-T1ZfU0lNUExFX09OREVNQU5ECj4gZm9yIGRlZmNvbmZpZywgdGhlIGZvbGxvd2luZyBwYXRjaFsx
-XSBhZGRlZCB0aGlzIGNvbmZpZ3VyYXRpb24uCj4gWzFdIGI5NzJmZjc1ZjI5MzhjMzllMjIwNWMy
-M2VhMGU1MzFkMzZiMjdmODYKPiAtICJhcm02NDogZGVmY29uZmlnOiBFbmFibGUgVUZTIG9uIG1z
-bTg5OTYiCj4KPiBJIHRoaW5rIHRoYXQgdGhpcyBwYXRjaCB3aWxsIGFmZmVjdCB0aGUgb3ByYXRp
-b24gb2YgJ1VTRiBvbiBtc204OTk4Jy4KCkhpIENoYW53b28sCgpUaGFua3MgZm9yIHRoZSBmZWVk
-YmFjay4gVW5mb3J0dW5hdGVseSBJIGRvIG5vdCBzZWUgaG93IHJlbW92aW5nIGEKZGVwZW5kZW5j
-eSB3aWxsIGFmZmVjdCB0aGF0IFNDU0lfVUZTSENELiBUaGUKREVWRlJFUV9HT1ZfU0lNUExFX09O
-REVNQU5EIGlzIHN0aWxsIGJ1aWx0IGluLCBleGFjdGx5IHRoZSBzYW1lIGFzCmJlZm9yZS4uLgoK
-QmVzdCByZWdhcmRzLApLcnp5c3p0b2YKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1r
-ZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWls
-bWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
+Hi Anand,
+
+On 2019-06-23 18:02, Anand Moon wrote:
+> Thanks for this patch. Please add my
+>
+> Tested-by: Anand Moon <linux.amoon@gmail.com>
+>
+> [snip]
+>
+> Could you integrate below small changes into this patch.
+> with these below changes suspend and resume work correctly at my end.
+>
+> [1] XU4_suspendresume.patch
+>
+> As per S2MPS11B PMIC 1.2.1 Regulator (Features)
+> Fix the min max value for *Buck7* and *Buck8*
+>
+> -- Buck7 (VDD_1.0V_LDO) 1.5 A (1.2 V to 1.5 V, 12.5 mV step, default on 1.35 V)
+> -- Buck8 (VDD_1.8V_LDO) 2.5 A (1.8 V to 2.1 V, 12.5 mV step, default on 2.0 V)
+
+Could you elaborate why such change for Buck7 and Buck8 is needed?
+
+> Also add suspend-off for *Buck9*
+> Buck9 internally controls the power of USB hub.
+> Adding suspend the this node help proper reset of USB hub on Odroid
+> XU4 / HC1/ XU3
+> during suspend and resume. Below it the logs from my testing.
+
+Disabling Buck9 in suspend indeed reduces the power consumed by the 
+board during suspend-to-ram from about 80mA to as little as 7-10mA, what 
+matches the results of OdroidXU3. Thanks for the hint!
+
+Best regards
+-- 
+Marek Szyprowski, PhD
+Samsung R&D Institute Poland
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
