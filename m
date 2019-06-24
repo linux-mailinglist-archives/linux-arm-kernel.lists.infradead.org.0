@@ -2,70 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5A3024FEFF
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Jun 2019 04:04:34 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 73A534FEED
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Jun 2019 04:01:36 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9vzvixTPp4pBmhsuhzgHs+fbbBRiEHf2nMt1beJwpZY=; b=rMT/nbFFUw3UFH
-	PvCUP9zUOUmplWuKj26SWlPyVq2a0hOUKeJSEtyFo+mVHOp2mPZI5qY6F2AqVdFQrPfSljRqR/dcV
-	I7Zvdr9TEBNtVzU3WMDwcBauXCtZCScE2IblnyeMa3HCP8tFss/F1nSqkbaClmZ1mJtA5LJsRkCFm
-	QKRCbSzyk3LRalJ/YAPTABMP5TnaN6wullhGSXV0eaBg5jTIb/3SsVFq8FnRbXBT73GViAy+4/WFG
-	yrkLiKjaQKiDsPhWuF+OAssU3DJC8lsg3Xpapvp5MtimXDhLQCxJJO0fsLDWzQpkISKmLAL8DTUro
-	5/QZgNs08eKZoOlYGQWA==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=VPK1sxtKJXneTbQ0+uwuYCNoKkkkr7hy4ytG3ydIMeQ=; b=JpH
+	en6bw2IBx0pAi7a5qWemyxP9Ko6uaDRzG5GUjtpKjSjYiaCnlwA/dxcdGySS9B7Jjq9TOarA2RivY
+	Htlde4rtalJKK0WX+NDaH3UtF7X34Bl/6SylEpf8xnbQ4gd0xZ0T7dOJGiJ2Pw1pm8sf9ILuwyljy
+	Hq6dJO1neWA5LwhpABPGo3tFEg0svmykF1HwIzkfOktQj2/5QpbEMR24m098cYlIrKBZgBirBAuPh
+	pKjTN5zLRocoUOReJom7zkfRNTNQY90aAIgMGRgv1Nb06SiFfvSdxtP+i1ueWBvx6/+kf6GMjrWtm
+	+WIIm3S++c3LkvmMw/r1i9UH9Lra8hA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hfELQ-0002nl-Jh; Mon, 24 Jun 2019 02:04:32 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1hfEIR-0000SI-Uk; Mon, 24 Jun 2019 02:01:27 +0000
+Received: from inva021.nxp.com ([92.121.34.21])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hfEJN-0001MQ-Qe
- for linux-arm-kernel@lists.infradead.org; Mon, 24 Jun 2019 02:02:28 +0000
-Received: from dragon (li1322-146.members.linode.com [45.79.223.146])
- (using TLSv1.2 with cipher DHE-RSA-AES128-SHA (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 4F4202054F;
- Mon, 24 Jun 2019 02:02:22 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1561341745;
- bh=Bn7UoFve4cZCWL5q6OYgRzDWd8sX0VxTtUWVf0R+mL8=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=pmPw7GaoUQCLfl0vL4q9rzC2fFVZE+HRV4JF2i7KXmYVh36zShWtupvNITqmizguE
- 0fgT7B+hV4/FC+sRaUfrJg4FW+jRQkDNDsAKK+932DEDsP21Ano+dfKc+j098imGFM
- T8Jnqc7E4sbm8XapSUA24mqoD9G1tcIosDYYSI1g=
-Date: Mon, 24 Jun 2019 10:02:14 +0800
-From: Shawn Guo <shawnguo@kernel.org>
-To: Zhi Li <lznuaa@gmail.com>
-Subject: Re: [PATCH V12 3/4] arm64: dts: imx8qxp: added ddr performance
- monitor nodes
-Message-ID: <20190624020210.GJ3800@dragon>
-References: <CAHrpEqT_34eNK-EzRgs-ocDD6pfLzD=FU8n83HgSQVsimJRxPw@mail.gmail.com>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CAHrpEqT_34eNK-EzRgs-ocDD6pfLzD=FU8n83HgSQVsimJRxPw@mail.gmail.com>
-User-Agent: Mutt/1.5.21 (2010-09-15)
+ id 1hfEIC-0000Qc-Bg
+ for linux-arm-kernel@lists.infradead.org; Mon, 24 Jun 2019 02:01:13 +0000
+Received: from inva021.nxp.com (localhost [127.0.0.1])
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id C52FF20051F;
+ Mon, 24 Jun 2019 04:01:08 +0200 (CEST)
+Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
+ [165.114.16.14])
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 27F7D20051E;
+ Mon, 24 Jun 2019 04:01:02 +0200 (CEST)
+Received: from mega.ap.freescale.net (mega.ap.freescale.net [10.192.208.232])
+ by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 52C95402F6;
+ Mon, 24 Jun 2019 10:00:54 +0800 (SGT)
+From: Peter Chen <peter.chen@nxp.com>
+To: balbi@kernel.org,
+	shawnguo@kernel.org
+Subject: [PATCH v5 0/8] Add imx7ulp USBOTG1 support
+Date: Mon, 24 Jun 2019 10:02:50 +0800
+Message-Id: <20190624020258.21690-1-peter.chen@nxp.com>
+X-Mailer: git-send-email 2.17.1
+X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190623_190226_078187_2E98C7E6 
-X-CRM114-Status: GOOD (  13.34  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190623_190112_542442_D2F9BD78 
+X-CRM114-Status: UNSURE (   8.56  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [92.121.34.21 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -77,72 +65,66 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
- <devicetree@vger.kernel.org>, dl-linux-imx <linux-imx@nxp.com>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Cc: aisheng.dong@nxp.com, devicetree@vger.kernel.org,
+ sergei.shtylyov@cogentembedded.com, Peter Chen <peter.chen@nxp.com>,
+ linux-usb@vger.kernel.org, chunfeng.yun@mediatek.com, robh+dt@kernel.org,
+ linux-imx@nxp.com, kernel@pengutronix.de, fabio.estevam@nxp.com,
+ linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Jun 19, 2019 at 01:46:00PM -0500, Zhi Li wrote:
-> Add ddr performance monitor
-> 
-> Signed-off-by: Frank Li <Frank.Li@nxp.com>
-> Reviewed-by: Fabio Estevam <festevam@gmail.com>
-> ---
-> 
-> Resent without base64 encode
-> 
-> Notes:
->     No change from v9 to v12
-> 
->     Change from v8 to v9
->     * put ddr-pmu under ddr_subsystem bus
-> 
->     Change from v3 to v8
->     * none
-> 
->     Change from v2 to v3
->     * ddr_pmu0 -> ddr-pmu
-> 
->  arch/arm64/boot/dts/freescale/imx8qxp.dtsi | 14 ++++++++++++++
->  1 file changed, 14 insertions(+)
-> 
-> diff --git a/arch/arm64/boot/dts/freescale/imx8qxp.dtsi
-> b/arch/arm64/boot/dts/freescale/imx8qxp.dtsi
-> index 0683ee2..a33e08c 100644
-> --- a/arch/arm64/boot/dts/freescale/imx8qxp.dtsi
-> +++ b/arch/arm64/boot/dts/freescale/imx8qxp.dtsi
-> @@ -378,6 +378,20 @@
->                 };
->         };
-> 
-> +       ddr_subsyss: bus@5c000000 {
-> +               compatible = "simple-bus";
-> +               #address-cells = <1>;
-> +               #size-cells = <1>;
-> +               ranges = <0x5c000000 0x0 0x5c000000 0x1000000>;
-> +
-> +               ddr-pmu@5c020000 {
-> +                       compatible = "fsl,imx8-ddr-pmu";
-> +                       reg = <0x5c020000 0x10000>;
-> +                       interrupt-parent = <&gic>;
-> +                       interrupts = <GIC_SPI 131 IRQ_TYPE_LEVEL_HIGH>;
-> +               };
-> +       };
-> +
->         lsio_subsys: bus@5d000000 {
->                 compatible = "simple-bus";
->                 #address-cells = <1>;
+Changes for v5:
+- Change DT node name from 'usbphy' to usb-phy'. [Patch 1/8, 6/8]
 
-The patch format is corrupted.  All tabs are turned into spaces here.  I
-manually apply the patch, but please avoid it next time.
+Changes for v4:
+- Delete the oldest compatible for usbotg1, usbmisc and usbphy.
+[Patch 6/8]
 
-Shawn
+Changes for v3:
+- Using readl_poll_timeout to replace private function. [Patch 2/8]
+- Add more commit log for new flag CI_HDRC_PMQOS. [Patch 5/8]
+- Move 'compatible' at the beginning of propeties. [Patch 6/8]
 
-> --
-> 2.5.2
+Changes for v2:
+- Use common 'phys' property [Patch 6/8]
+- Add the last patch that "fsl,usbphy" phandle is not mandatory now
+[Patch 8/8]
+- Add Reviewed-by from Rob.
+
+
+There is a dual-role USB controller at imx7ulp, we add support for it
+in this patch set, and the dual-role function is tested at imx7ulp-evk
+board.
+
+Thanks.
+
+Peter Chen (8):
+  doc: dt-binding: mxs-usb-phy: add compatible for 7ulp
+  usb: phy: phy-mxs-usb: add imx7ulp support
+  doc: dt-binding: ci-hdrc-usb2: add compatible string for imx7ulp
+  doc: dt-binding: usbmisc-imx: add compatible string for imx7ulp
+  usb: chipidea: imx: add imx7ulp support
+  ARM: dts: imx7ulp: add imx7ulp USBOTG1 support
+  ARM: dts: imx7ulp-evk: enable USBOTG1 support
+  usb: chipidea: imx: "fsl,usbphy" phandle is not mandatory now
+
+ .../devicetree/bindings/phy/mxs-usb-phy.txt        |  3 +-
+ .../devicetree/bindings/usb/ci-hdrc-usb2.txt       |  1 +
+ .../devicetree/bindings/usb/usbmisc-imx.txt        |  1 +
+ arch/arm/boot/dts/imx7ulp-evk.dts                  | 35 +++++++++++
+ arch/arm/boot/dts/imx7ulp.dtsi                     | 28 +++++++++
+ drivers/usb/chipidea/ci_hdrc_imx.c                 | 33 ++++++++++-
+ drivers/usb/chipidea/usbmisc_imx.c                 |  4 ++
+ drivers/usb/phy/phy-mxs-usb.c                      | 67 +++++++++++++++++++++-
+ include/linux/usb/chipidea.h                       |  1 +
+ 9 files changed, 168 insertions(+), 5 deletions(-)
+
+-- 
+2.14.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
