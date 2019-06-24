@@ -2,55 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D07A950FB7
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Jun 2019 17:08:11 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 22E3C5103B
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Jun 2019 17:24:07 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1A5PtCRq7EQL+0hQ/jjSOk69ILqMWsxYinkq3JvIm7Q=; b=jGM7bL9+A/zm35
-	N+AlrPPGzJJeO2i360qPJwgdJ+DwzaWXvSy+YNl3kK0yCRK5WEtTN/sCn/QMkX+L4G33NU2NQ+5yI
-	/OeJUOFO93vf18yER4tKLmMTa3zSUXp/pSsIOiJSzZkx1Odyqxb2lOGDHGsvOynqUpFqPlTyqKyTd
-	HVn97iDJk59LNhQMADEbczH/ti12Ru5gdcP5zMevwY0WnUXswv/PHBYLiwjZZBbKY3ZKsRtgqVTVA
-	GxycEVxDt5JUZGdBly3O9EJvMwA2gvFg1SLf/ILUw0HPnMdonixblugbRayhi5wxv7mRrt5RUyCzp
-	8R0xU/OCW89unGUBJ73w==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=8ZCf+aaqCsi4a8mOg1M1fAN9bv00AA5Hxu2Xnyw40SU=; b=o/lZVzJkoSHZTt
+	3XbgXc2qiCV6nMQHJg1D5dX2oz93hCItgch0umIIBUiDkMEkuhOEznB6IUzR31T800IMQeRmr6jYx
+	Fp/prgwElnumEZUa6x16SnBiZH5Jn6FEZC4J5zky6gcxlrb0rLLgKVPnTyTS0/w6kMLySMmV/ktsX
+	PBzmgyEiwtvBT8LP497RnaJ6TIBpa6/Zs9VLEdxsibfttpELa6MvYzUFlVUbL1JhS/f7SYbuFjZ+P
+	Fc26e+1WmSfoJctKbLUWOy293V4bxnlUaVTdeRUwl4VY1SXUAkTCMJeXLAF+MPxSogH4An4k63Zlx
+	J3851WVDUvpfCRZNBZVw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hfQZi-0004DO-Tl; Mon, 24 Jun 2019 15:08:06 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hfQZW-0004Cy-6A
- for linux-arm-kernel@lists.infradead.org; Mon, 24 Jun 2019 15:07:55 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 8CB8D344;
- Mon, 24 Jun 2019 08:07:53 -0700 (PDT)
-Received: from [192.168.1.34] (unknown [172.31.20.19])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 1DE383F71E;
- Mon, 24 Jun 2019 08:07:51 -0700 (PDT)
-Subject: Re: [PATCH 15/59] KVM: arm64: nv: Refactor vcpu_{read,write}_sys_reg
-To: Marc Zyngier <marc.zyngier@arm.com>,
- linux-arm-kernel@lists.infradead.org, kvmarm@lists.cs.columbia.edu,
- kvm@vger.kernel.org
-References: <20190621093843.220980-1-marc.zyngier@arm.com>
- <20190621093843.220980-16-marc.zyngier@arm.com>
-From: Julien Thierry <julien.thierry@arm.com>
-Message-ID: <a64c85c3-0230-d9d0-aea6-b8a4196e62b2@arm.com>
-Date: Mon, 24 Jun 2019 16:07:49 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101
- Thunderbird/52.9.1
+	id 1hfQp7-0002OH-K6; Mon, 24 Jun 2019 15:24:01 +0000
+Received: from esa6.microchip.iphmx.com ([216.71.154.253])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hfQow-0002Mq-OU
+ for linux-arm-kernel@lists.infradead.org; Mon, 24 Jun 2019 15:23:52 +0000
+Received-SPF: Pass (esa6.microchip.iphmx.com: domain of
+ Allan.Nielsen@microchip.com designates 198.175.253.82 as
+ permitted sender) identity=mailfrom;
+ client-ip=198.175.253.82; receiver=esa6.microchip.iphmx.com;
+ envelope-from="Allan.Nielsen@microchip.com";
+ x-sender="Allan.Nielsen@microchip.com";
+ x-conformance=spf_only; x-record-type="v=spf1";
+ x-record-text="v=spf1 mx a:ushub1.microchip.com
+ a:smtpout.microchip.com a:mx1.microchip.iphmx.com
+ a:mx2.microchip.iphmx.com include:servers.mcsv.net
+ include:mktomail.com include:spf.protection.outlook.com ~all"
+Received-SPF: None (esa6.microchip.iphmx.com: no sender
+ authenticity information available from domain of
+ postmaster@email.microchip.com) identity=helo;
+ client-ip=198.175.253.82; receiver=esa6.microchip.iphmx.com;
+ envelope-from="Allan.Nielsen@microchip.com";
+ x-sender="postmaster@email.microchip.com"; x-conformance=spf_only
+Authentication-Results: esa6.microchip.iphmx.com;
+ dkim=none (message not signed) header.i=none;
+ spf=Pass smtp.mailfrom=Allan.Nielsen@microchip.com;
+ spf=None smtp.helo=postmaster@email.microchip.com;
+ dmarc=pass (p=none dis=none) d=microchip.com
+X-IronPort-AV: E=Sophos;i="5.63,412,1557212400"; d="scan'208";a="35622915"
+Received: from smtpout.microchip.com (HELO email.microchip.com)
+ ([198.175.253.82])
+ by esa6.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
+ 24 Jun 2019 08:23:47 -0700
+Received: from chn-vm-ex03.mchp-main.com (10.10.87.152) by
+ chn-vm-ex03.mchp-main.com (10.10.87.152) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
+ 15.1.1713.5; Mon, 24 Jun 2019 08:22:48 -0700
+Received: from localhost (10.10.85.251) by chn-vm-ex03.mchp-main.com
+ (10.10.85.151) with Microsoft SMTP Server id 15.1.1713.5 via Frontend
+ Transport; Mon, 24 Jun 2019 08:22:48 -0700
+Date: Mon, 24 Jun 2019 17:23:45 +0200
+From: "Allan W. Nielsen" <allan.nielsen@microchip.com>
+To: Andrew Lunn <andrew@lunn.ch>
+Subject: Re: [PATCH net-next 4/6] arm64: dts: fsl: ls1028a: Add Felix switch
+ port DT node
+Message-ID: <20190624152344.3bv46jjhhygo6zwl@lx-anielsen.microsemi.net>
+References: <1561131532-14860-1-git-send-email-claudiu.manoil@nxp.com>
+ <1561131532-14860-5-git-send-email-claudiu.manoil@nxp.com>
+ <20190621164940.GL31306@lunn.ch>
+ <VI1PR04MB4880D8F90BBCD30BF8A69C9696E00@VI1PR04MB4880.eurprd04.prod.outlook.com>
+ <20190624115558.GA5690@piout.net> <20190624142625.GR31306@lunn.ch>
 MIME-Version: 1.0
-In-Reply-To: <20190621093843.220980-16-marc.zyngier@arm.com>
-Content-Language: en-US
+Content-Disposition: inline
+In-Reply-To: <20190624142625.GR31306@lunn.ch>
+User-Agent: NeoMutt/20180716
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190624_080754_316578_CC3087BF 
-X-CRM114-Status: GOOD (  21.33  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190624_082350_827493_9880982D 
+X-CRM114-Status: GOOD (  16.38  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [216.71.154.253 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -64,148 +95,59 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Suzuki K Poulose <suzuki.poulose@arm.com>,
- Andre Przywara <andre.przywara@arm.com>,
- Christoffer Dall <christoffer.dall@arm.com>, Dave Martin <Dave.Martin@arm.com>,
- James Morse <james.morse@arm.com>, Jintack Lim <jintack@cs.columbia.edu>
+Cc: "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ Alexandre Belloni <alexandre.belloni@bootlin.com>,
+ "netdev@vger.kernel.org" <netdev@vger.kernel.org>,
+ Alexandru Marginean <alexandru.marginean@nxp.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "UNGLinuxDriver@microchip.com" <UNGLinuxDriver@microchip.com>,
+ Allan Nielsen <Allan.Nielsen@microsemi.com>,
+ Claudiu Manoil <claudiu.manoil@nxp.com>, Rob Herring <robh+dt@kernel.org>,
+ "David S . Miller" <davem@davemloft.net>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Hi Andrew,
 
+The 06/24/2019 16:26, Andrew Lunn wrote:
+> > > Yeah, there are 2 ethernet controller ports (managed by the enetc driver) 
+> > > connected inside the SoC via SGMII links to 2 of the switch ports, one of
+> > > these switch ports can be configured as CPU port (with follow-up patches).
+> > > 
+> > > This configuration may look prettier on DSA, but the main restriction here
+> > > is that the entire functionality is provided by the ocelot driver which is a
+> > > switchdev driver.  I don't think it would be a good idea to copy-paste code
+> > > from ocelot to a separate dsa driver.
+> > > 
+> > 
+> > We should probably make the ocelot driver a DSA driver then...
+> An important part of DSA is being able to direct frames out specific
+> ports when they ingress via the CPU port. Does the silicon support
+> this? At the moment, i think it is using polled IO.
 
-On 06/21/2019 10:37 AM, Marc Zyngier wrote:
-> Extract the direct HW accessors for later reuse.
-> 
-> Signed-off-by: Marc Zyngier <marc.zyngier@arm.com>
-> ---
->  arch/arm64/kvm/sys_regs.c | 247 +++++++++++++++++++++-----------------
->  1 file changed, 139 insertions(+), 108 deletions(-)
-> 
-> diff --git a/arch/arm64/kvm/sys_regs.c b/arch/arm64/kvm/sys_regs.c
-> index 2b8734f75a09..e181359adadf 100644
-> --- a/arch/arm64/kvm/sys_regs.c
-> +++ b/arch/arm64/kvm/sys_regs.c
-> @@ -182,99 +182,161 @@ const struct el2_sysreg_map *find_el2_sysreg(const struct el2_sysreg_map *map,
->  	return entry;
->  }
->  
-> +static bool __vcpu_read_sys_reg_from_cpu(int reg, u64 *val)
-> +{
-> +	/*
-> +	 * System registers listed in the switch are not saved on every
-> +	 * exit from the guest but are only saved on vcpu_put.
-> +	 *
-> +	 * Note that MPIDR_EL1 for the guest is set by KVM via VMPIDR_EL2 but
-> +	 * should never be listed below, because the guest cannot modify its
-> +	 * own MPIDR_EL1 and MPIDR_EL1 is accessed for VCPU A from VCPU B's
-> +	 * thread when emulating cross-VCPU communication.
-> +	 */
-> +	switch (reg) {
-> +	case CSSELR_EL1:	*val = read_sysreg_s(SYS_CSSELR_EL1);	break;
-> +	case SCTLR_EL1:		*val = read_sysreg_s(SYS_SCTLR_EL12);	break;
-> +	case ACTLR_EL1:		*val = read_sysreg_s(SYS_ACTLR_EL1);	break;
-> +	case CPACR_EL1:		*val = read_sysreg_s(SYS_CPACR_EL12);	break;
-> +	case TTBR0_EL1:		*val = read_sysreg_s(SYS_TTBR0_EL12);	break;
-> +	case TTBR1_EL1:		*val = read_sysreg_s(SYS_TTBR1_EL12);	break;
-> +	case TCR_EL1:		*val = read_sysreg_s(SYS_TCR_EL12);	break;
-> +	case ESR_EL1:		*val = read_sysreg_s(SYS_ESR_EL12);	break;
-> +	case AFSR0_EL1:		*val = read_sysreg_s(SYS_AFSR0_EL12);	break;
-> +	case AFSR1_EL1:		*val = read_sysreg_s(SYS_AFSR1_EL12);	break;
-> +	case FAR_EL1:		*val = read_sysreg_s(SYS_FAR_EL12);	break;
-> +	case MAIR_EL1:		*val = read_sysreg_s(SYS_MAIR_EL12);	break;
-> +	case VBAR_EL1:		*val = read_sysreg_s(SYS_VBAR_EL12);	break;
-> +	case CONTEXTIDR_EL1:	*val = read_sysreg_s(SYS_CONTEXTIDR_EL12);break;
-> +	case TPIDR_EL0:		*val = read_sysreg_s(SYS_TPIDR_EL0);	break;
-> +	case TPIDRRO_EL0:	*val = read_sysreg_s(SYS_TPIDRRO_EL0);	break;
-> +	case TPIDR_EL1:		*val = read_sysreg_s(SYS_TPIDR_EL1);	break;
-> +	case AMAIR_EL1:		*val = read_sysreg_s(SYS_AMAIR_EL12);	break;
-> +	case CNTKCTL_EL1:	*val = read_sysreg_s(SYS_CNTKCTL_EL12);	break;
-> +	case PAR_EL1:		*val = read_sysreg_s(SYS_PAR_EL1);	break;
-> +	case DACR32_EL2:	*val = read_sysreg_s(SYS_DACR32_EL2);	break;
-> +	case IFSR32_EL2:	*val = read_sysreg_s(SYS_IFSR32_EL2);	break;
-> +	case DBGVCR32_EL2:	*val = read_sysreg_s(SYS_DBGVCR32_EL2);	break;
-> +	default:		return false;
-> +	}
-> +
-> +	return true;
-> +}
-> +
-> +static bool __vcpu_write_sys_reg_to_cpu(u64 val, int reg)
-> +{
-> +	/*
-> +	 * System registers listed in the switch are not restored on every
-> +	 * entry to the guest but are only restored on vcpu_load.
-> +	 *
-> +	 * Note that MPIDR_EL1 for the guest is set by KVM via VMPIDR_EL2 but
-> +	 * should never be listed below, because the the MPIDR should only be
-> +	 * set once, before running the VCPU, and never changed later.
-> +	 */
-> +	switch (reg) {
-> +	case CSSELR_EL1:	write_sysreg_s(val, SYS_CSSELR_EL1);	break;
-> +	case SCTLR_EL1:		write_sysreg_s(val, SYS_SCTLR_EL12);	break;
-> +	case ACTLR_EL1:		write_sysreg_s(val, SYS_ACTLR_EL1);	break;
-> +	case CPACR_EL1:		write_sysreg_s(val, SYS_CPACR_EL12);	break;
-> +	case TTBR0_EL1:		write_sysreg_s(val, SYS_TTBR0_EL12);	break;
-> +	case TTBR1_EL1:		write_sysreg_s(val, SYS_TTBR1_EL12);	break;
-> +	case TCR_EL1:		write_sysreg_s(val, SYS_TCR_EL12);	break;
-> +	case ESR_EL1:		write_sysreg_s(val, SYS_ESR_EL12);	break;
-> +	case AFSR0_EL1:		write_sysreg_s(val, SYS_AFSR0_EL12);	break;
-> +	case AFSR1_EL1:		write_sysreg_s(val, SYS_AFSR1_EL12);	break;
-> +	case FAR_EL1:		write_sysreg_s(val, SYS_FAR_EL12);	break;
-> +	case MAIR_EL1:		write_sysreg_s(val, SYS_MAIR_EL12);	break;
-> +	case VBAR_EL1:		write_sysreg_s(val, SYS_VBAR_EL12);	break;
-> +	case CONTEXTIDR_EL1:	write_sysreg_s(val, SYS_CONTEXTIDR_EL12);break;
-> +	case TPIDR_EL0:		write_sysreg_s(val, SYS_TPIDR_EL0);	break;
-> +	case TPIDRRO_EL0:	write_sysreg_s(val, SYS_TPIDRRO_EL0);	break;
-> +	case TPIDR_EL1:		write_sysreg_s(val, SYS_TPIDR_EL1);	break;
-> +	case AMAIR_EL1:		write_sysreg_s(val, SYS_AMAIR_EL12);	break;
-> +	case CNTKCTL_EL1:	write_sysreg_s(val, SYS_CNTKCTL_EL12);	break;
-> +	case PAR_EL1:		write_sysreg_s(val, SYS_PAR_EL1);	break;
-> +	case DACR32_EL2:	write_sysreg_s(val, SYS_DACR32_EL2);	break;
-> +	case IFSR32_EL2:	write_sysreg_s(val, SYS_IFSR32_EL2);	break;
-> +	case DBGVCR32_EL2:	write_sysreg_s(val, SYS_DBGVCR32_EL2);	break;
-> +	default:		return false;
-> +	}
-> +
-> +	return true;
-> +}
-> +
->  u64 vcpu_read_sys_reg(const struct kvm_vcpu *vcpu, int reg)
->  {
-> -	u64 val;
-> +	u64 val = 0x8badf00d8badf00d;
->  
->  	if (!vcpu->arch.sysregs_loaded_on_cpu)
-> -		goto immediate_read;
-> +		goto memory_read;
->  
->  	if (unlikely(sysreg_is_el2(reg))) {
->  		const struct el2_sysreg_map *el2_reg;
->  
->  		if (!is_hyp_ctxt(vcpu))
-> -			goto immediate_read;
-> +			goto memory_read;
->  
->  		switch (reg) {
-> +		case ELR_EL2:
-> +			return read_sysreg_el1(SYS_ELR);
+That is supported, it requires a bit of initial configuration of the Chip, but
+nothing big (I believe this configuration is part of Claudiu's change-set).
 
-Hmmm, This change feels a bit out of place.
+But how do you envision this done?
 
-Also, patch 13 added ELR_EL2 and SP_EL2 to the switch cases for physical
-sysreg accesses. Now ELR_EL2 is moved out of the main switch cases and
-SP_EL2 is completely omitted.
+- Let the existing SwitchDev driver and the DSA driver use a set of common
+  functions.
+- Convert the existing Ocelot driver from SwitchDev to DSA
+- Fork (copy) the existing driver of Ocelot, and modify it as needed for the
+  Felix driver
 
-I'd say either patch 13 needs to be reworked or there is a separate
-patch that should be extracted from this patch to have an intermediate
-state, or the commit message on this patch should be more detailed.
+My guess is the first one, but I would like to understand what you have in mind.
 
-Cheers,
+BTW: The Ocelot switch does exist in an other (register compatible) version
+without the MIPS CPU. That version would use a MAC-2-MAC connection to an
+external CPU, and would fit the DSA model. And we have been considering how to
+best represent that version in the kernel.
 
--- 
-Julien Thierry
+/Allan
+
 
 _______________________________________________
 linux-arm-kernel mailing list
