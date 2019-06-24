@@ -2,70 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8151450A2F
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Jun 2019 13:54:05 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7935750A3A
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Jun 2019 13:56:23 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=wHkPneTrAXPNSgP5UAOA7lQt/Y4ZblI9paOPezheLjk=; b=bGxAeR8XTpWoiK
-	4ZrRIV6a/DYUl/cuLEQ8CfD25dc708i+aV6/3Pv6EV4YO16iowT4ineghwUnPi9+c+KecsQAusif7
-	bwv/pEYtxXp+n+0NWlUq7InhkuRItzFbiOWU5YbedVqRLwx0vJMt/yCf6CyCwCjgeetEmsM2xCw5N
-	5FB5FEUYSUuGr6HZrsqkB1zu3GD5eGyktJyrMo0sN0aRXt6ziDgU5xQjpKp1P4WNDgevju36dEIsG
-	gFPobpxMa4DivJA51oWJI8TRzHQkuzJZPA/PxskcwBVbOwSe2KB/XSHzUPw+/ykqKBSeov23DFLP/
-	hDqxPnJkGal+EDcbFEqg==;
+	List-Owner; bh=wgUV0eWsuxu76/5ozC/vWPAiWtMXIMdb7cHfWQit20s=; b=eFJ+OqDj8L51fu
+	lfxgjx1H/xT12O1rbUKbxmnfoH1hARIQivg8sDGzaHTeaBYKcZmeIqBF1Ilyg13HQDwPRc7Z0Tt+9
+	HzpWRFc75v3liPAFtwibLwmX75EJwIvU+gCiUoqavb+R3uqfTKWbFIvtupIWC3JM3UIDULW/7Lj4n
+	Fkk7wDlzWa7CPOSaLE+P6C4L3c+GO44LbmS5P1fXinTArbHCpYu0LYiQBtrjNr64Ji1A0mWfWAWSu
+	hye1M3HcLQz5WC8q/2DtxCcwV2Ezl+bV6EERpg4pn3OAnxRTTh12fZZN0U9J962+6AAEuJhjSjSAR
+	VeaOh4+fjrcHids5p08A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hfNXs-0006Zg-NK; Mon, 24 Jun 2019 11:54:00 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1hfNa7-00088u-Sf; Mon, 24 Jun 2019 11:56:19 +0000
+Received: from relay8-d.mail.gandi.net ([217.70.183.201])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hfNXm-0006ZK-NJ
- for linux-arm-kernel@lists.infradead.org; Mon, 24 Jun 2019 11:53:55 +0000
-Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id BD100212F5;
- Mon, 24 Jun 2019 11:53:52 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1561377234;
- bh=DPkbnAX2UC8HCyA8iQCpieXXckaaIIzpSDhByDPzn7Y=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=G8wC7xM9KFMtvOYu/kOVa2McfZiycme1sJMB4laZoRfGXGAGxgIe7MIfXLQhc8m2m
- /hdHyPsY8pRnYQbF5ft5LW2dkkPKET0OwfkBg31pxiBy90cEVRNKtqVeRUmkH9RQLL
- uV2aZb1cM9c8ClPfyvJg5QO6FlwjOKMf0hSks0D4=
-Date: Mon, 24 Jun 2019 12:53:49 +0100
-From: Will Deacon <will@kernel.org>
-To: Will Deacon <will.deacon@arm.com>, bjorn.andersson@linaro.org
-Subject: Re: [PATCH] iommu: io-pgtable: Support non-coherent page tables
-Message-ID: <20190624115349.f62uqypyt7l73skf@willie-the-truck>
-References: <20190515233234.22990-1-bjorn.andersson@linaro.org>
- <20190618173929.GG4270@fuggles.cambridge.arm.com>
+ id 1hfNZx-000880-Ql
+ for linux-arm-kernel@lists.infradead.org; Mon, 24 Jun 2019 11:56:11 +0000
+X-Originating-IP: 92.137.69.152
+Received: from localhost (alyon-656-1-672-152.w92-137.abo.wanadoo.fr
+ [92.137.69.152])
+ (Authenticated sender: alexandre.belloni@bootlin.com)
+ by relay8-d.mail.gandi.net (Postfix) with ESMTPSA id DF4521BF213;
+ Mon, 24 Jun 2019 11:55:58 +0000 (UTC)
+Date: Mon, 24 Jun 2019 13:55:58 +0200
+From: Alexandre Belloni <alexandre.belloni@bootlin.com>
+To: Claudiu Manoil <claudiu.manoil@nxp.com>
+Subject: Re: [PATCH net-next 4/6] arm64: dts: fsl: ls1028a: Add Felix switch
+ port DT node
+Message-ID: <20190624115558.GA5690@piout.net>
+References: <1561131532-14860-1-git-send-email-claudiu.manoil@nxp.com>
+ <1561131532-14860-5-git-send-email-claudiu.manoil@nxp.com>
+ <20190621164940.GL31306@lunn.ch>
+ <VI1PR04MB4880D8F90BBCD30BF8A69C9696E00@VI1PR04MB4880.eurprd04.prod.outlook.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190618173929.GG4270@fuggles.cambridge.arm.com>
-User-Agent: NeoMutt/20170113 (1.7.2)
+In-Reply-To: <VI1PR04MB4880D8F90BBCD30BF8A69C9696E00@VI1PR04MB4880.eurprd04.prod.outlook.com>
+User-Agent: Mutt/1.12.0 (2019-05-25)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190624_045354_769571_B8C3595B 
-X-CRM114-Status: GOOD (  18.61  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190624_045610_180563_74066E7D 
+X-CRM114-Status: GOOD (  16.97  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [217.70.183.201 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -77,62 +66,108 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm-msm@vger.kernel.org, Joerg Roedel <joro@8bytes.org>,
- Vivek Gautam <vgautam@qti.qualcomm.com>, linux-kernel@vger.kernel.org,
- iommu@lists.linux-foundation.org, Robin Murphy <robin.murphy@arm.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: Andrew Lunn <andrew@lunn.ch>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ "netdev@vger.kernel.org" <netdev@vger.kernel.org>,
+ Alexandru Marginean <alexandru.marginean@nxp.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "UNGLinuxDriver@microchip.com" <UNGLinuxDriver@microchip.com>,
+ Allan Nielsen <Allan.Nielsen@microsemi.com>, Rob Herring <robh+dt@kernel.org>,
+ "David S . Miller" <davem@davemloft.net>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi again, Bjorn,
-
-On Tue, Jun 18, 2019 at 06:39:33PM +0100, Will Deacon wrote:
-> On Wed, May 15, 2019 at 04:32:34PM -0700, Bjorn Andersson wrote:
-> > Describe the memory related to page table walks as non-cachable for iommu
-> > instances that are not DMA coherent.
-> > 
-> > Signed-off-by: Bjorn Andersson <bjorn.andersson@linaro.org>
-> > ---
-> >  drivers/iommu/io-pgtable-arm.c | 12 +++++++++---
-> >  1 file changed, 9 insertions(+), 3 deletions(-)
-> > 
-> > diff --git a/drivers/iommu/io-pgtable-arm.c b/drivers/iommu/io-pgtable-arm.c
-> > index 4e21efbc4459..68ff22ffd2cb 100644
-> > --- a/drivers/iommu/io-pgtable-arm.c
-> > +++ b/drivers/iommu/io-pgtable-arm.c
-> > @@ -803,9 +803,15 @@ arm_64_lpae_alloc_pgtable_s1(struct io_pgtable_cfg *cfg, void *cookie)
-> >  		return NULL;
-> >  
-> >  	/* TCR */
-> > -	reg = (ARM_LPAE_TCR_SH_IS << ARM_LPAE_TCR_SH0_SHIFT) |
-> > -	      (ARM_LPAE_TCR_RGN_WBWA << ARM_LPAE_TCR_IRGN0_SHIFT) |
-> > -	      (ARM_LPAE_TCR_RGN_WBWA << ARM_LPAE_TCR_ORGN0_SHIFT);
-> > +	if (cfg->quirks & IO_PGTABLE_QUIRK_NO_DMA) {
-> > +		reg = (ARM_LPAE_TCR_SH_IS << ARM_LPAE_TCR_SH0_SHIFT) |
-> > +		      (ARM_LPAE_TCR_RGN_WBWA << ARM_LPAE_TCR_IRGN0_SHIFT) |
-> > +		      (ARM_LPAE_TCR_RGN_WBWA << ARM_LPAE_TCR_ORGN0_SHIFT);
-> > +	} else {
-> > +		reg = (ARM_LPAE_TCR_SH_IS << ARM_LPAE_TCR_SH0_SHIFT) |
+On 24/06/2019 11:45:37+0000, Claudiu Manoil wrote:
+> Hi Andrew,
 > 
-> Nit: this should be outer-shareable (ARM_LPAE_TCR_SH_OS).
+> >-----Original Message-----
+> >From: Andrew Lunn <andrew@lunn.ch>
+> >Sent: Friday, June 21, 2019 7:50 PM
+> >To: Claudiu Manoil <claudiu.manoil@nxp.com>
+> >Cc: David S . Miller <davem@davemloft.net>; devicetree@vger.kernel.org;
+> >Alexandre Belloni <alexandre.belloni@bootlin.com>; netdev@vger.kernel.org;
+> >Alexandru Marginean <alexandru.marginean@nxp.com>; linux-
+> >kernel@vger.kernel.org; UNGLinuxDriver@microchip.com; Allan Nielsen
+> ><Allan.Nielsen@microsemi.com>; Rob Herring <robh+dt@kernel.org>; linux-
+> >arm-kernel@lists.infradead.org
+> >Subject: Re: [PATCH net-next 4/6] arm64: dts: fsl: ls1028a: Add Felix switch port
+> >DT node
+> >
+> >On Fri, Jun 21, 2019 at 06:38:50PM +0300, Claudiu Manoil wrote:
+> >> The switch device features 6 ports, 4 with external links
+> >> and 2 internally facing to the ls1028a SoC and connected via
+> >> fixed links to 2 internal enetc ethernet controller ports.
+> >
+> >Hi Claudiu
+> >
+> >> +			switch@0,5 {
+> >> +				compatible = "mscc,felix-switch";
+> >> +				reg = <0x000500 0 0 0 0>;
+> >> +
+> >> +				ethernet-ports {
+> >> +					#address-cells = <1>;
+> >> +					#size-cells = <0>;
+> >> +
+> >> +					/* external ports */
+> >> +					switch_port0: port@0 {
+> >> +						reg = <0>;
+> >> +					};
+> >> +					switch_port1: port@1 {
+> >> +						reg = <1>;
+> >> +					};
+> >> +					switch_port2: port@2 {
+> >> +						reg = <2>;
+> >> +					};
+> >> +					switch_port3: port@3 {
+> >> +						reg = <3>;
+> >> +					};
+> >> +					/* internal to-cpu ports */
+> >> +					port@4 {
+> >> +						reg = <4>;
+> >> +						fixed-link {
+> >> +							speed = <1000>;
+> >> +							full-duplex;
+> >> +						};
+> >> +					};
+> >> +					port@5 {
+> >> +						reg = <5>;
+> >> +						fixed-link {
+> >> +							speed = <1000>;
+> >> +							full-duplex;
+> >> +						};
+> >> +					};
+> >> +				};
+> >> +			};
+> >
+> >This sounds like a DSA setup, where you have SoC ports connected to
+> >the switch. With DSA, the CPU ports of the switch are special. We
+> >don't create netdev's for them, the binding explicitly list which SoC
+> >interface they are bound to, etc.
+> >
+> >What model are you using here? I'm just trying to understand the setup
+> >to ensure it is consistent with the swichdev model.
+> >
 > 
-> > +		      (ARM_LPAE_TCR_RGN_NC << ARM_LPAE_TCR_IRGN0_SHIFT) |
-> > +		      (ARM_LPAE_TCR_RGN_NC << ARM_LPAE_TCR_ORGN0_SHIFT);
-> > +	}
+> Yeah, there are 2 ethernet controller ports (managed by the enetc driver) 
+> connected inside the SoC via SGMII links to 2 of the switch ports, one of
+> these switch ports can be configured as CPU port (with follow-up patches).
 > 
-> Should we also be doing something similar for the short-descriptor code
-> in io-pgtable-arm-v7s.c? Looks like you just need to use ARM_V7S_RGN_NC
-> instead of ARM_V7S_RGN_WBWA when initialising ttbr0 for non-coherent
-> SMMUs.
+> This configuration may look prettier on DSA, but the main restriction here
+> is that the entire functionality is provided by the ocelot driver which is a
+> switchdev driver.  I don't think it would be a good idea to copy-paste code
+> from ocelot to a separate dsa driver.
+> 
 
-Do you plan to respin this? I'll need it this week if you're shooting for
-5.3.
+We should probably make the ocelot driver a DSA driver then...
 
-Thanks,
 
-Will
+-- 
+Alexandre Belloni, Bootlin
+Embedded Linux and Kernel engineering
+https://bootlin.com
 
 _______________________________________________
 linux-arm-kernel mailing list
