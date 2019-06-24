@@ -2,70 +2,87 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E7C9450425
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Jun 2019 10:02:38 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DA59D50423
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Jun 2019 10:02:09 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=mVQXtDzN2n7UAHPZ7CIskfWNsiFaeJOeaonkW4N27u8=; b=uRDcl2GGCuaMpi
-	bvUt4iLj9+Bo5xJdI31GqZpB809Q+wy06FVwrCliuAy3rWnryhiU4c1c1EWzUZj8u5e68YSFvlmfM
-	gQDGmjJzvIB4DbRTDYFJLBLgGwEKSeNeEMdjTy7A4uZ+wvB6Cb3wTKLXG4La3QEERIwTP2yPCyuGc
-	YvXJu/7a+EwDllwUUebA3o1cc1pzlZNIFoJcxxaWMI7/OPCI0Yoj4qGo0wdZgsRSx9UbP3uf8uWy4
-	tGZdIdJgR92taMtFkwq3cWtz1wvj/N7Bi63HWWP8V/cayd7sVSh7HFl0xOggzuo5lm59FRbYmfh2I
-	SqepT8lqQCMD43ynLi8w==;
+	List-Owner; bh=J8HotuERaqVugFut/TFEXjVSlsnYTlRG512FiMoRXuU=; b=IZLUvWPtI4xL11
+	lucc5N0VHXXDDusR6aiY2KRupS3M3mlaKICT0jA5KNZ3fYpXgyDGeckiPwLlAIHoN25xP5F7LQOLg
+	wnz9CoUcdrCPU5+G56mOFqqjuSmXD00FNHdbeBC5HLwk6LuSIYsaKXmYpN6CtOLc1yqmKH8X7CZXR
+	gH0PMnFkf9gV9g9aI0MbEFuVHaXx9P3p001i9qFEyVMZmKdgZwOzSa9JX1BgAKdnOSpLWKpyTnykv
+	T2PNxAOrXCtW0MzVjF72bZ2Bqr/5V6H2eyNA4PKJiiF9r/53wKNxfTF309E6SSlCsbFI7p8uh92/y
+	71EFix0b6kmCqETjfa2w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hfJvv-0004bZ-Dl; Mon, 24 Jun 2019 08:02:35 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
+	id 1hfJvR-0004Km-LY; Mon, 24 Jun 2019 08:02:05 +0000
+Received: from mail-io1-xd42.google.com ([2607:f8b0:4864:20::d42])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hfJvf-0004ZM-UL; Mon, 24 Jun 2019 08:02:21 +0000
-X-UUID: f1c1344d2fe543ef9807ea03ea968007-20190624
-X-UUID: f1c1344d2fe543ef9807ea03ea968007-20190624
-Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw01.mediatek.com
- (envelope-from <jitao.shi@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 367674676; Mon, 24 Jun 2019 00:00:35 -0800
-Received: from MTKMBS33N2.mediatek.inc (172.27.4.76) by
- MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Mon, 24 Jun 2019 01:00:33 -0700
-Received: from MTKCAS36.mediatek.inc (172.27.4.186) by MTKMBS33N2.mediatek.inc
- (172.27.4.76) with Microsoft SMTP Server (TLS) id 15.0.1395.4;
- Mon, 24 Jun 2019 16:00:31 +0800
-Received: from mszsdclx1018.gcn.mediatek.inc (172.27.4.253) by
- MTKCAS36.mediatek.inc (172.27.4.170) with Microsoft SMTP Server id
- 15.0.1395.4 via Frontend Transport; Mon, 24 Jun 2019 16:00:28 +0800
-From: Jitao Shi <jitao.shi@mediatek.com>
-To: Rob Herring <robh+dt@kernel.org>, Pawel Moll <pawel.moll@arm.com>, "Mark
- Rutland" <mark.rutland@arm.com>, Ian Campbell
- <ijc+devicetree@hellion.org.uk>, <linux-pwm@vger.kernel.org>, David Airlie
- <airlied@linux.ie>, "Matthias Brugger" <matthias.bgg@gmail.com>
-Subject: [v2 2/2] drm/panel: support for auo,
- kd101n80-45na wuxga dsi video mode panel
-Date: Mon, 24 Jun 2019 16:00:01 +0800
-Message-ID: <20190624080001.67222-3-jitao.shi@mediatek.com>
-X-Mailer: git-send-email 2.21.0
-In-Reply-To: <20190624080001.67222-1-jitao.shi@mediatek.com>
-References: <20190624080001.67222-1-jitao.shi@mediatek.com>
+ id 1hfJvD-0004K4-SV
+ for linux-arm-kernel@lists.infradead.org; Mon, 24 Jun 2019 08:01:53 +0000
+Received: by mail-io1-xd42.google.com with SMTP id j6so1393074ioa.5
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 24 Jun 2019 01:01:51 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=FTPWwACdEm2iARChdi+A0l0E519w0LgFxkdMjzE6KqA=;
+ b=Sqr1MaHRYO02yMQpmq6sGmEOyYe4gqkL//8AtMvJOtTKj39AZpjbOgbVi/XBZlrcT3
+ gp1JZO0PeQfv5PSCB1yzkwsbsCcCFg3PvvLqE3wkCsPotrbDsBbd3RsEPLbwVBVW92ea
+ DOei8IpXCQ7BRAgxycot1z8B1VMu5YE6OQjrIgcsHHqZuV9HVoZ95uBAlD6YqWgGHabY
+ e0E9efXtJzMzmBwkSL3olYKJbN99R/HA65opTIx3nlFkiUSu65Un2cO+dYdGrY+z4+9A
+ BhBsIdGGn5ZpKyrNxHmvHTbX+HTyaJwgUqVASZGxmNUwlRps6LYyqMTZc0jW6IPp6WsV
+ H61w==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=FTPWwACdEm2iARChdi+A0l0E519w0LgFxkdMjzE6KqA=;
+ b=I3QMxhbx7zrNRD9IlXu93ETiDULe6ZqHjGIeoGXUm4sicRJGEtwRYlwrAryqRc2eyk
+ ukPzlOfGuhLv+d1skwRRZDhfnkqavUsGwD0FlPBoWf56p2p7++Oibloyn7tBcOkNIQdJ
+ d7mqOWGUh3/5PGYC/IASDU8agMSyzmz2jzReLpM878/okhDTvbcB3K4qPbbPEuv1Ve/q
+ bk5LBcl2fo5LfADRDwGBVSXUNRKdZvPz4p6BU11gw++6lzcTMIIHuzIVpxCEtwlg1RPI
+ K3vQgvuN5/AAq9JtJwMEFU9B737KQNqK9f9McxCvPDpl0u5Njniu08QtJSbuZ+oR+dY9
+ wIsw==
+X-Gm-Message-State: APjAAAVItNrqU0ICxdGGm2kT9MLqwgfnGWFKhtnH/8i9enOXrrg+142m
+ /x+EGRLXsbWEYIPZWt0k8zuEB8q60b3En8zVXz1JUA==
+X-Google-Smtp-Source: APXvYqygfqk82gjJizKwuyDhHTlE1j+Su2e7VGfdGDa2jVMnGL3Ouit0b9Fe24gt7DT23pEtf84DZF3Iqm24HkWYfe0=
+X-Received: by 2002:a05:6602:98:: with SMTP id
+ h24mr20097216iob.49.1561363310654; 
+ Mon, 24 Jun 2019 01:01:50 -0700 (PDT)
 MIME-Version: 1.0
-X-MTK: N
+References: <20190624073818.29296-1-ard.biesheuvel@linaro.org>
+ <20190624073818.29296-2-ard.biesheuvel@linaro.org>
+ <CAFqZXNt4PgTB1Ocmui4CCYTCbguAqmcrdA=ZMbA6anH3LBX9EQ@mail.gmail.com>
+In-Reply-To: <CAFqZXNt4PgTB1Ocmui4CCYTCbguAqmcrdA=ZMbA6anH3LBX9EQ@mail.gmail.com>
+From: Ard Biesheuvel <ard.biesheuvel@linaro.org>
+Date: Mon, 24 Jun 2019 10:01:37 +0200
+Message-ID: <CAKv+Gu-UQ_QYqwDXM659PfZNKjHnS8vPfL6yV_ZT=Ggt5jDB-A@mail.gmail.com>
+Subject: Re: [PATCH 1/6] crypto: aegis128 - use unaliged helper in unaligned
+ decrypt path
+To: Ondrej Mosnacek <omosnace@redhat.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190624_010219_989610_3067DA61 
-X-CRM114-Status: UNSURE (   8.33  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190624_010151_930033_19792702 
+X-CRM114-Status: GOOD (  16.27  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [216.200.240.184 listed in list.dnswl.org]
+ no trust [2607:f8b0:4864:20:0:0:0:d42 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -77,101 +94,56 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: stonea168@163.com, dri-devel@lists.freedesktop.org,
- Andy Yan <andy.yan@rock-chips.com>, Ajay Kumar <ajaykumar.rs@samsung.com>,
- Vincent Palatin <vpalatin@chromium.org>, cawa.cheng@mediatek.com,
- bibby.hsieh@mediatek.com, ck.hu@mediatek.com,
- Russell King <rmk+kernel@arm.linux.org.uk>,
- Thierry Reding <treding@nvidia.com>, devicetree@vger.kernel.org,
- Jitao Shi <jitao.shi@mediatek.com>, Philipp Zabel <p.zabel@pengutronix.de>,
- Inki Dae <inki.dae@samsung.com>, linux-mediatek@lists.infradead.org,
- yingjoe.chen@mediatek.com, eddie.huang@mediatek.com,
- linux-arm-kernel@lists.infradead.org, Rahul Sharma <rahul.sharma@samsung.com>,
- srv_heupstream@mediatek.com, linux-kernel@vger.kernel.org,
- Sascha Hauer <kernel@pengutronix.de>, Sean Paul <seanpaul@chromium.org>
+Cc: Herbert Xu <herbert@gondor.apana.org.au>,
+ Steve Capper <steve.capper@arm.com>,
+ "open list:HARDWARE RANDOM NUMBER GENERATOR CORE"
+ <linux-crypto@vger.kernel.org>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
+ Eric Biggers <ebiggers@google.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Auo,kd101n80-45na's connector is same as boe,tv101wum-nl6.
-The most codes can be reuse.
-So auo,kd101n80-45na and boe,tv101wum-nl6 use one driver file.
-Add the different parts in driver data.
+On Mon, 24 Jun 2019 at 09:59, Ondrej Mosnacek <omosnace@redhat.com> wrote:
+>
+> Hi Ard,
+>
+> On Mon, Jun 24, 2019 at 9:38 AM Ard Biesheuvel
+> <ard.biesheuvel@linaro.org> wrote:
+> >
+> > Use crypto_aegis128_update_u() not crypto_aegis128_update_a() in the
+> > decrypt path that is taken when the source or destination pointers
+> > are not aligned.
+> >
+> > Signed-off-by: Ard Biesheuvel <ard.biesheuvel@linaro.org>
+> > ---
+> >  crypto/aegis128.c | 2 +-
+> >  1 file changed, 1 insertion(+), 1 deletion(-)
+> >
+> > diff --git a/crypto/aegis128.c b/crypto/aegis128.c
+> > index d78f77fc5dd1..125e11246990 100644
+> > --- a/crypto/aegis128.c
+> > +++ b/crypto/aegis128.c
+> > @@ -208,7 +208,7 @@ static void crypto_aegis128_decrypt_chunk(struct aegis_state *state, u8 *dst,
+> >                         crypto_aegis_block_xor(&tmp, &state->blocks[1]);
+> >                         crypto_xor(tmp.bytes, src, AEGIS_BLOCK_SIZE);
+> >
+> > -                       crypto_aegis128_update_a(state, &tmp);
+> > +                       crypto_aegis128_update_u(state, &tmp);
+>
+> The "tmp" variable used here is declared directly on the stack as
+> 'union aegis_block' and thus should be aligned to alignof(__le64),
+> which allows the use of crypto_aegis128_update_a() ->
+> crypto_aegis_block_xor(). It is also passed directly to
+> crypto_aegis_block_xor() a few lines above. Or am I missing something?
+>
 
-Signed-off-by: Jitao Shi <jitao.shi@mediatek.com>
----
- .../gpu/drm/panel/panel-boe-tv101wum-nl6.c    | 40 +++++++++++++++++++
- 1 file changed, 40 insertions(+)
+Ah yes, you are absolutely right. Apologies for the noise. I just
+noticed the asymmetry with the encrypt path, but I should have looked
+more carefully.
 
-diff --git a/drivers/gpu/drm/panel/panel-boe-tv101wum-nl6.c b/drivers/gpu/drm/panel/panel-boe-tv101wum-nl6.c
-index 6e06c8506623..d1ee43cfcbe2 100644
---- a/drivers/gpu/drm/panel/panel-boe-tv101wum-nl6.c
-+++ b/drivers/gpu/drm/panel/panel-boe-tv101wum-nl6.c
-@@ -372,6 +372,15 @@ static const struct panel_init_cmd boe_init_cmd[] = {
- 	{},
- };
- 
-+static const struct panel_init_cmd auo_init_cmd[] = {
-+	_INIT_DELAY_CMD(24),
-+	_INIT_DCS_CMD(0x11),
-+	_INIT_DELAY_CMD(120),
-+	_INIT_DCS_CMD(0x29),
-+	_INIT_DELAY_CMD(120),
-+	{},
-+};
-+
- static inline struct boe_panel *to_boe_panel(struct drm_panel *panel)
- {
- 	return container_of(panel, struct boe_panel, base);
-@@ -572,6 +581,34 @@ static const struct panel_desc boe_tv101wum_nl6_desc = {
- 	.init_cmds = boe_init_cmd,
- };
- 
-+static const struct drm_display_mode auo_default_mode = {
-+	.clock = 157000,
-+	.hdisplay = 1200,
-+	.hsync_start = 1200 + 80,
-+	.hsync_end = 1200 + 80 + 24,
-+	.htotal = 1200 + 80 + 24 + 36,
-+	.vdisplay = 1920,
-+	.vsync_start = 1920 + 16,
-+	.vsync_end = 1920 + 16 + 4,
-+	.vtotal = 1920 + 16 + 4 + 16,
-+	.vrefresh = 60,
-+	.type = DRM_MODE_TYPE_DRIVER | DRM_MODE_TYPE_PREFERRED,
-+};
-+
-+static const struct panel_desc auo_kd101n80_45na_desc = {
-+	.modes = &auo_default_mode,
-+	.bpc = 8,
-+	.size = {
-+		.width = 216,
-+		.height = 135,
-+	},
-+	.lanes = 4,
-+	.format = MIPI_DSI_FMT_RGB888,
-+	.mode_flags = MIPI_DSI_MODE_VIDEO | MIPI_DSI_MODE_VIDEO_SYNC_PULSE |
-+		      MIPI_DSI_MODE_LPM,
-+	.init_cmds = auo_init_cmd,
-+};
-+
- static int boe_panel_get_modes(struct drm_panel *panel)
- {
- 	struct boe_panel *boe = to_boe_panel(panel);
-@@ -695,6 +732,9 @@ static const struct of_device_id boe_of_match[] = {
- 	{ .compatible = "boe,tv101wum-nl6",
- 	  .data = &boe_tv101wum_nl6_desc
- 	},
-+	{ .compatible = "auo,kd101n80-45na",
-+	  .data = &auo_kd101n80_45na_desc
-+	},
- 	{ /* sentinel */ }
- };
- MODULE_DEVICE_TABLE(of, boe_of_match);
--- 
-2.21.0
-
+Please disregard this patch.
 
 _______________________________________________
 linux-arm-kernel mailing list
