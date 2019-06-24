@@ -2,55 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 707585028B
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Jun 2019 08:52:59 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 712EC5029A
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Jun 2019 08:57:13 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=WGCgcxm1m6OnN2qG+I4aB4wI0KYWbGVQ2naXhTz/omM=; b=bcuo1Gx2M8EYOW
-	p5F7F3CNX1TYocq8/SP2RaikrSNfS1mAbsMlzij8wRqS51Nyxcc2GcWNZMSc1N2dzLgDTlARrorz2
-	1A5k2lKZEYOZDGZmxlw9yW6Y4bRjrGGVHFh7dFshy2NvsbFR5v+s9qegmLUZVLAobj2z+GhmeDfuh
-	45hlnpYU7thMYyGGdSXRVOVusFVMoxD9viJ5SfoASHZvzyZ6Lq8y8I0TobTOoi5ow1s9CHbSp6LRa
-	dkxdXM7Mw2AQtTRJOh0SV0slMjWS2HXr5QGv9AM+ZJ7ao4YnL9vBh2BJfqSg16dzn53Ckdp0I1EBu
-	ktSijBmbuFfMBy2/+apw==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=K8dCK1lJ7/6szTWJDoKytOy4HRpdpdMEvtll1O+8osk=; b=VR2QLyQEcUAbOO
+	9YSKZTmenbgK4AyV2Z61FYs0OH/R+JYpef0j3RHeNjlqBuOLFIVh54kiLGoDjJIHXlDa1VNZ8yJbd
+	TbFC+SNFcokEhidgmgCofcZR8pVcvkLDVYPPgs95YcTCTWdpcdowQk4qmVlrevMd8opk3UE1/FuIh
+	8KXpGXejNSsdNfVgNn1/5GAKn/XlVky5DIZofMaab5RMpk1QXWQH0s7cLzAz1KcCzPP91dn6b8z5Z
+	aISW1MK3jo7g7zgyhLqeSGMsLrtbZS7aEUmRvIQteGj5mDPdDSi6HaBMXWWBft3pw3NTBepUgJ25m
+	YyTaFsK7LvnwOwQcoCHA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hfIqU-0004C9-Tc; Mon, 24 Jun 2019 06:52:55 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hfIqI-0004Bn-BT
- for linux-arm-kernel@lists.infradead.org; Mon, 24 Jun 2019 06:52:43 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 7C6152B;
- Sun, 23 Jun 2019 23:52:38 -0700 (PDT)
-Received: from [10.162.41.123] (p8cg001049571a15.blr.arm.com [10.162.41.123])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
- 61E2B3F246; Sun, 23 Jun 2019 23:54:24 -0700 (PDT)
-Subject: Re: [PATCH 3/3] mm/vmalloc: fix vmalloc_to_page for huge vmap mappings
-To: Nicholas Piggin <npiggin@gmail.com>, linux-mm@kvack.org
-References: <20190623094446.28722-1-npiggin@gmail.com>
- <20190623094446.28722-4-npiggin@gmail.com>
-From: Anshuman Khandual <anshuman.khandual@arm.com>
-Message-ID: <8668f76d-faad-4e57-2f7b-f2b8969b1026@arm.com>
-Date: Mon, 24 Jun 2019 12:22:59 +0530
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101
- Thunderbird/52.9.1
+	id 1hfIub-0005sm-5z; Mon, 24 Jun 2019 06:57:09 +0000
+Received: from mail.kernel.org ([198.145.29.99])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hfIuP-0005s5-6q
+ for linux-arm-kernel@lists.infradead.org; Mon, 24 Jun 2019 06:56:58 +0000
+Received: from mail-lj1-f182.google.com (mail-lj1-f182.google.com
+ [209.85.208.182])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 55B5B2146F
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 24 Jun 2019 06:56:56 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1561359416;
+ bh=Wmle4DmUHAJz9qxbWxUuCO6gcEUZ8pGJ4hH7DvFoVHc=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=BZRSOZwnvbTtrhE5FdhMr78QW7zS+u3+C0+kDVKvvXlEFAAiAv1CYiZKFI/RWBEHU
+ QoVnOObxJg0OyB7oKA4lV4pLeYu3bw7phQ8UCPWIM1UHlhqTZ2H/o6Yyso5RFhmLS3
+ OSenBnmvuMdUNYsUcZbMIMdm0cGNQAhQZOtdbvN0=
+Received: by mail-lj1-f182.google.com with SMTP id 131so11472482ljf.4
+ for <linux-arm-kernel@lists.infradead.org>;
+ Sun, 23 Jun 2019 23:56:56 -0700 (PDT)
+X-Gm-Message-State: APjAAAXAwFcJcLuTPmx3PjRaiveMQJBK8YFTr2QwPV3MMs3uCbJVQGcr
+ Ncx/rti9mGg37TAJcpFwinKmr9vjtCyDYJVZF78=
+X-Google-Smtp-Source: APXvYqwuYsg0YtPp4HSVT4GsrVo3BqbfBMVGJw+z+cnqoCkDTdXplaaPso8EW7Ygbl0e07xoKBfuQzhZfcbiBsmYcXk=
+X-Received: by 2002:a2e:12dc:: with SMTP id 89mr16648875ljs.40.1561359414533; 
+ Sun, 23 Jun 2019 23:56:54 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <20190623094446.28722-4-npiggin@gmail.com>
-Content-Language: en-US
+References: <20190621180208.25361-7-krzk@kernel.org>
+ <20190622191838.29850-1-krzk@kernel.org>
+ <CAGTfZH2g6E2pCEtqjfCd+PjEzjwc2AB75LXJfCeO+PcYLiLTUw@mail.gmail.com>
+ <CGME20190623192007epcas4p2a3995bb00091b436562828fceb6ff790@epcas4p2.samsung.com>
+ <CAJKOXPcFFY08R1H-DrrzX2BC3L8x4NPJTP7nDn9yixAvmaiF9Q@mail.gmail.com>
+ <6edbe882-314c-85e1-4109-7c3b324dc7ab@samsung.com>
+In-Reply-To: <6edbe882-314c-85e1-4109-7c3b324dc7ab@samsung.com>
+From: Krzysztof Kozlowski <krzk@kernel.org>
+Date: Mon, 24 Jun 2019 08:56:43 +0200
+X-Gmail-Original-Message-ID: <CAJKOXPd6BRm+Hz363BhP8xr9dZ6jZxMQmaT7KuiEHAyZz-hDoQ@mail.gmail.com>
+Message-ID: <CAJKOXPd6BRm+Hz363BhP8xr9dZ6jZxMQmaT7KuiEHAyZz-hDoQ@mail.gmail.com>
+Subject: Re: [PATCH v3] arm64: defconfig: Enable Panfrost and Lima drivers
+To: Chanwoo Choi <cw00.choi@samsung.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190623_235242_489859_41BB2D23 
-X-CRM114-Status: GOOD (  25.02  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190623_235657_289593_6AE26B93 
+X-CRM114-Status: GOOD (  20.79  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -62,149 +90,65 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Christophe Leroy <christophe.leroy@c-s.fr>,
- Mark Rutland <mark.rutland@arm.com>,
- Ard Biesheuvel <ard.biesheuvel@linaro.org>,
- Andrew Morton <akpm@linux-foundation.org>, linuxppc-dev@lists.ozlabs.org,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
+ Enric Balletbo i Serra <enric.balletbo@collabora.com>,
+ linux-samsung-soc <linux-samsung-soc@vger.kernel.org>,
+ Maxime Ripard <maxime.ripard@bootlin.com>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ linux-kernel <linux-kernel@vger.kernel.org>,
+ Bjorn Andersson <bjorn.andersson@linaro.org>,
+ Dinh Nguyen <dinguyen@kernel.org>, Jagan Teki <jagan@amarulasolutions.com>,
+ Simon Horman <horms+renesas@verge.net.au>, Olof Johansson <olof@lixom.net>,
+ Shawn Guo <shawnguo@kernel.org>, Leonard Crestez <leonard.crestez@nxp.com>,
+ Will Deacon <will@kernel.org>, cwchoi00@gmail.com,
+ Marek Szyprowski <m.szyprowski@samsung.com>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-
-
-On 06/23/2019 03:14 PM, Nicholas Piggin wrote:
-> vmalloc_to_page returns NULL for addresses mapped by larger pages[*].
-> Whether or not a vmap is huge depends on the architecture details,
-> alignments, boot options, etc., which the caller can not be expected
-> to know. Therefore HUGE_VMAP is a regression for vmalloc_to_page.
-> 
-> This change teaches vmalloc_to_page about larger pages, and returns
-> the struct page that corresponds to the offset within the large page.
-> This makes the API agnostic to mapping implementation details.
-> 
-> [*] As explained by commit 029c54b095995 ("mm/vmalloc.c: huge-vmap:
->     fail gracefully on unexpected huge vmap mappings")
-> 
-> Signed-off-by: Nicholas Piggin <npiggin@gmail.com>
-> ---
->  include/asm-generic/4level-fixup.h |  1 +
->  include/asm-generic/5level-fixup.h |  1 +
->  mm/vmalloc.c                       | 37 +++++++++++++++++++-----------
->  3 files changed, 26 insertions(+), 13 deletions(-)
-> 
-> diff --git a/include/asm-generic/4level-fixup.h b/include/asm-generic/4level-fixup.h
-> index e3667c9a33a5..3cc65a4dd093 100644
-> --- a/include/asm-generic/4level-fixup.h
-> +++ b/include/asm-generic/4level-fixup.h
-> @@ -20,6 +20,7 @@
->  #define pud_none(pud)			0
->  #define pud_bad(pud)			0
->  #define pud_present(pud)		1
-> +#define pud_large(pud)			0
->  #define pud_ERROR(pud)			do { } while (0)
->  #define pud_clear(pud)			pgd_clear(pud)
->  #define pud_val(pud)			pgd_val(pud)
-> diff --git a/include/asm-generic/5level-fixup.h b/include/asm-generic/5level-fixup.h
-> index bb6cb347018c..c4377db09a4f 100644
-> --- a/include/asm-generic/5level-fixup.h
-> +++ b/include/asm-generic/5level-fixup.h
-> @@ -22,6 +22,7 @@
->  #define p4d_none(p4d)			0
->  #define p4d_bad(p4d)			0
->  #define p4d_present(p4d)		1
-> +#define p4d_large(p4d)			0
->  #define p4d_ERROR(p4d)			do { } while (0)
->  #define p4d_clear(p4d)			pgd_clear(p4d)
->  #define p4d_val(p4d)			pgd_val(p4d)
-> diff --git a/mm/vmalloc.c b/mm/vmalloc.c
-> index 4c9e150e5ad3..4be98f700862 100644
-> --- a/mm/vmalloc.c
-> +++ b/mm/vmalloc.c
-> @@ -36,6 +36,7 @@
->  #include <linux/rbtree_augmented.h>
->  
->  #include <linux/uaccess.h>
-> +#include <asm/pgtable.h>
->  #include <asm/tlbflush.h>
->  #include <asm/shmparam.h>
->  
-> @@ -284,26 +285,36 @@ struct page *vmalloc_to_page(const void *vmalloc_addr)
->  
->  	if (pgd_none(*pgd))
->  		return NULL;
-> +
->  	p4d = p4d_offset(pgd, addr);
->  	if (p4d_none(*p4d))
->  		return NULL;
-> -	pud = pud_offset(p4d, addr);
-> +	if (WARN_ON_ONCE(p4d_bad(*p4d)))
-> +		return NULL;
-
-The warning here is a required addition but it needs to be moved after p4d_large()
-check. Please see the next comment below.
-
-> +#ifdef CONFIG_HAVE_ARCH_HUGE_VMAP
-> +	if (p4d_large(*p4d))
-> +		return p4d_page(*p4d) + ((addr & ~P4D_MASK) >> PAGE_SHIFT);
-> +#endif
->  
-> -	/*
-> -	 * Don't dereference bad PUD or PMD (below) entries. This will also
-> -	 * identify huge mappings, which we may encounter on architectures
-> -	 * that define CONFIG_HAVE_ARCH_HUGE_VMAP=y. Such regions will be
-> -	 * identified as vmalloc addresses by is_vmalloc_addr(), but are
-> -	 * not [unambiguously] associated with a struct page, so there is
-> -	 * no correct value to return for them.
-> -	 */
-> -	WARN_ON_ONCE(pud_bad(*pud));
-> -	if (pud_none(*pud) || pud_bad(*pud))
-> +	pud = pud_offset(p4d, addr);
-> +	if (pud_none(*pud))
-> +		return NULL;
-> +	if (WARN_ON_ONCE(pud_bad(*pud)))
->  		return NULL;
-> +#ifdef CONFIG_HAVE_ARCH_HUGE_VMAP
-> +	if (pud_large(*pud))
-> +		return pud_page(*pud) + ((addr & ~PUD_MASK) >> PAGE_SHIFT);
-> +#endif
-> +
-
-pud_bad() on arm64 returns true when the PUD does not point to a next page
-table page implying the fact that it might be a large/huge entry. I am not
-sure if the semantics holds good for other architectures too. But on arm64
-if pud_large() is true, then pud_bad() will be true as well. So pud_bad()
-check must happen after pud_large() check. So the sequence here should be
-
-1. pud_none()	--> Nothing is in here, return NULL
-2. pud_large()	--> Return offset page address from the huge page mapping
-3. pud_bad()	--> Return NULL as there is no more page table level left
-
-Checking pud_bad() first can return NULL for a valid huge mapping.
-
->  	pmd = pmd_offset(pud, addr);
-> -	WARN_ON_ONCE(pmd_bad(*pmd));
-> -	if (pmd_none(*pmd) || pmd_bad(*pmd))
-> +	if (pmd_none(*pmd))
-> +		return NULL;
-> +	if (WARN_ON_ONCE(pmd_bad(*pmd)))
->  		return NULL;
-> +#ifdef CONFIG_HAVE_ARCH_HUGE_VMAP
-> +	if (pmd_large(*pmd))
-> +		return pmd_page(*pmd) + ((addr & ~PMD_MASK) >> PAGE_SHIFT);
-> +#endif
-
-Ditto.
-
-I see that your previous proposal had this right which got changed in this
-manner after my comments. Sorry about it.
-
-It was recently when I learned (correctly) that expected semantics of pxx_bad()
-is that - It does not point to the next page table page.  Hence I wonder why is
-this not renamed as pxx_table() instead to make it absolutely clear.
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gTW9uLCAyNCBKdW4gMjAxOSBhdCAwMTozNiwgQ2hhbndvbyBDaG9pIDxjdzAwLmNob2lAc2Ft
+c3VuZy5jb20+IHdyb3RlOgo+Cj4gT24gMTkuIDYuIDI0LiDsmKTsoIQgNDoxNiwgS3J6eXN6dG9m
+IEtvemxvd3NraSB3cm90ZToKPiA+IE9uIFN1biwgMjMgSnVuIDIwMTkgYXQgMDY6MzEsIENoYW53
+b28gQ2hvaSA8Y3djaG9pMDBAZ21haWwuY29tPiB3cm90ZToKPiA+Pgo+ID4+IEhpIEtyenlzenRv
+ZiwKPiA+Pgo+ID4+IDIwMTnrhYQgNuyblCAyM+ydvCAo7J28KSDsmKTsoIQgNDoyMCwgS3J6eXN6
+dG9mIEtvemxvd3NraSA8a3J6a0BrZXJuZWwub3JnPuuLmOydtCDsnpHshLE6Cj4gPj4+Cj4gPj4+
+IEVuYWJsZSBzdXBwb3J0IGZvciBNYWxpIEdQVSB3aXRoIFBhbmZyb3N0IGFuZCBMaW1hIGRyaXZl
+cnMgZm9yOgo+ID4+PiAxLiBTYW1zdW5nIEV4eW5vczU0MzMgYW5kIEV4eW5vczcgKGhhdmluZyBN
+YWxpIFQ3NjApLAo+ID4+PiAyLiBBbGx3aW5lciBBNjQgYW5kIEg1IChNYWxpIDQwMC80NTApLgo+
+ID4+Pgo+ID4+PiBTaWduZWQtb2ZmLWJ5OiBLcnp5c3p0b2YgS296bG93c2tpIDxrcnprQGtlcm5l
+bC5vcmc+Cj4gPj4+Cj4gPj4+IC0tLQo+ID4+Pgo+ID4+PiBDaGFuZ2VzIHNpbmNlIHYxOgo+ID4+
+PiAxLiBFbmFibGUgTGltYSBkcml2ZXIKPiA+Pj4gLS0tCj4gPj4+ICBhcmNoL2FybTY0L2NvbmZp
+Z3MvZGVmY29uZmlnIHwgMyArKy0KPiA+Pj4gIDEgZmlsZSBjaGFuZ2VkLCAyIGluc2VydGlvbnMo
+KyksIDEgZGVsZXRpb24oLSkKPiA+Pj4KPiA+Pj4gZGlmZiAtLWdpdCBhL2FyY2gvYXJtNjQvY29u
+Zmlncy9kZWZjb25maWcgYi9hcmNoL2FybTY0L2NvbmZpZ3MvZGVmY29uZmlnCj4gPj4+IGluZGV4
+IGZiYmMwNjU0MTVkNC4uM2QzMTYxMTM2OGFmIDEwMDY0NAo+ID4+PiAtLS0gYS9hcmNoL2FybTY0
+L2NvbmZpZ3MvZGVmY29uZmlnCj4gPj4+ICsrKyBiL2FyY2gvYXJtNjQvY29uZmlncy9kZWZjb25m
+aWcKPiA+Pj4gQEAgLTUxOCw2ICs1MTgsOCBAQCBDT05GSUdfRFJNX0hJU0lfSElCTUM9bQo+ID4+
+PiAgQ09ORklHX0RSTV9ISVNJX0tJUklOPW0KPiA+Pj4gIENPTkZJR19EUk1fTUVTT049bQo+ID4+
+PiAgQ09ORklHX0RSTV9QTDExMT1tCj4gPj4+ICtDT05GSUdfRFJNX0xJTUE9bQo+ID4+PiArQ09O
+RklHX0RSTV9QQU5GUk9TVD1tCj4gPj4+ICBDT05GSUdfRkI9eQo+ID4+PiAgQ09ORklHX0ZCX01P
+REVfSEVMUEVSUz15Cj4gPj4+ICBDT05GSUdfQkFDS0xJR0hUX0dFTkVSSUM9bQo+ID4+PiBAQCAt
+NzE4LDcgKzcyMCw2IEBAIENPTkZJR19BUkNIX1RFR1JBXzE5NF9TT0M9eQo+ID4+PiAgQ09ORklH
+X0FSQ0hfSzNfQU02X1NPQz15Cj4gPj4+ICBDT05GSUdfU09DX1RJPXkKPiA+Pj4gIENPTkZJR19U
+SV9TQ0lfUE1fRE9NQUlOUz15Cj4gPj4+IC1DT05GSUdfREVWRlJFUV9HT1ZfU0lNUExFX09OREVN
+QU5EPXkKPiA+Pgo+ID4+IEV4eW5vczU0MzMtdG0yIGJvYXJkIHN1cHBvcnQgdGhlIGV4eW5vcy1i
+dXMgZGV2aWNlIHdoaWNoCj4gPj4gdXNlZCB0aGUgc2ltcGxlX29uZG1lbmFkIGdvdmVybm9yIG9m
+IGRldmZyZXEuCj4gPj4gV2h5IGRvIHlvdSByZW1vdmUgdGhpcyBjb25maWd1cmF0aW9uIGZyb20g
+dGhlIGRlZmNvbmZpZz8KPiA+Cj4gPiBJdCBpcyBzZWxlY3RlZCBieSBkZWZhdWx0IGJ5IERSTV9Q
+QU5GUk9TVC4gVGhlIGRpZmZlcmVuY2UgaXMgdGhhdAo+ID4gUEFORlJPU1Qgc2VsZWN0cyBpdCBh
+cyBtb2R1bGUuIFRoZSAneScgaXMgY2hvc2VuIGJlY2F1c2Ugb2Y6Cj4gPiAgIFNDU0lfVUZTSENE
+IFs9eV0gJiYgU0NTSV9MT1dMRVZFTCBbPXldICYmIFNDU0kgWz15XSAmJiBTQ1NJX0RNQSBbPXld
+Cj4KPiBXaGVuIEkgdHJpZWQgdG8gZmluZCB0aGUgaGlzdG9yeSBvZiBDT05GSUdfREVWRlJFUV9H
+T1ZfU0lNUExFX09OREVNQU5ECj4gZm9yIGRlZmNvbmZpZywgdGhlIGZvbGxvd2luZyBwYXRjaFsx
+XSBhZGRlZCB0aGlzIGNvbmZpZ3VyYXRpb24uCj4gWzFdIGI5NzJmZjc1ZjI5MzhjMzllMjIwNWMy
+M2VhMGU1MzFkMzZiMjdmODYKPiAtICJhcm02NDogZGVmY29uZmlnOiBFbmFibGUgVUZTIG9uIG1z
+bTg5OTYiCj4KPiBJIHRoaW5rIHRoYXQgdGhpcyBwYXRjaCB3aWxsIGFmZmVjdCB0aGUgb3ByYXRp
+b24gb2YgJ1VTRiBvbiBtc204OTk4Jy4KCkhpIENoYW53b28sCgpUaGFua3MgZm9yIHRoZSBmZWVk
+YmFjay4gVW5mb3J0dW5hdGVseSBJIGRvIG5vdCBzZWUgaG93IHJlbW92aW5nIGEKZGVwZW5kZW5j
+eSB3aWxsIGFmZmVjdCB0aGF0IFNDU0lfVUZTSENELiBUaGUKREVWRlJFUV9HT1ZfU0lNUExFX09O
+REVNQU5EIGlzIHN0aWxsIGJ1aWx0IGluLCBleGFjdGx5IHRoZSBzYW1lIGFzCmJlZm9yZS4uLgoK
+QmVzdCByZWdhcmRzLApLcnp5c3p0b2YKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1r
+ZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWls
+bWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
