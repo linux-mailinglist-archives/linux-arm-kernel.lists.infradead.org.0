@@ -2,56 +2,94 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D750150015
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Jun 2019 05:12:08 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2D2A250049
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Jun 2019 05:36:41 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=smDaYwKuSB5wUY+UsjbFFOdNCTAjF3nucKbe9O6wdYs=; b=hxXHvh5Wr9FkHL
-	0cc5V6RzAgPg7lByTj1mmSaGO9rIeGtyr8v/ZQMKCXp4SN5Xr3DxnqPC80j3hA71GZq3WJ7UY2Rds
-	7uMWaLHIxZpb3OIGdxLksU596bBzr+cCkj5LrO0G2IU48stthfnGx/J396JBculRxPhxGNpqMMwuk
-	MeEA0pmoHwmZjc+CO4xbD1sSn3663kVv0HpbR36mq70QubBzFXgjhDQ2XnXEIBkSZ6JwDJCblJHSo
-	sbXldfSLzloars9BqMMc0NnvjPZvZ2Wf93bn64duq/pA3n7+deQTWziNADOg8/ZEnh44sJlhG26Xr
-	pvgC8T902DXIQgRyk3JQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=tlIaAl4VBF6bzs6BSXUvzXZedEf5NoABf+/apuRmTiE=; b=P3ILCZVvJQ1qBl
+	Zd/7Yfiin3VVUpEY9pRhLbQWKvanxibFfRpOmV7XVRWLuKSbMKcFhAhTT+w4T+zKqi1iOvywESbf3
+	Z7lYfMSqz7wISGyGNGtgvxb+lFm8bivT7TCMA56rU03WgDJMvpN/t+YTtYZpbfrWqVg+bsYwa0+DO
+	xxRcSIKYtSkO1O1k4bNtwekbVdSGCsB/3Uk5HBtzi3RRlhwdUNpQSvqL//zoC9dtG/XDnMQe/T50G
+	aJGu7MbA15mshT2KvDn29teskXyFFrGktu6EJOMc3FLhkPQtszdtjygTx03IlvJfWQtB3a03uYJCN
+	UR5lvD3GTaYcJxuH2D7w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hfFOm-0001UL-QP; Mon, 24 Jun 2019 03:12:04 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hfFOU-0001Ti-Br
- for linux-arm-kernel@lists.infradead.org; Mon, 24 Jun 2019 03:11:47 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id A9D382B;
- Sun, 23 Jun 2019 20:11:42 -0700 (PDT)
-Received: from [10.162.41.123] (p8cg001049571a15.blr.arm.com [10.162.41.123])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
- 559003F246; Sun, 23 Jun 2019 20:11:37 -0700 (PDT)
-Subject: Re: [PATCH V6 3/3] arm64/mm: Enable memory hot remove
-To: Steve Capper <Steve.Capper@arm.com>
-References: <1560917860-26169-1-git-send-email-anshuman.khandual@arm.com>
- <1560917860-26169-4-git-send-email-anshuman.khandual@arm.com>
- <20190621143540.GA3376@capper-debian.cambridge.arm.com>
-From: Anshuman Khandual <anshuman.khandual@arm.com>
-Message-ID: <4c3bd9f9-d805-5977-6201-8517f2fc1da4@arm.com>
-Date: Mon, 24 Jun 2019 08:42:02 +0530
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101
- Thunderbird/52.9.1
+	id 1hfFmX-0001XF-J8; Mon, 24 Jun 2019 03:36:37 +0000
+Received: from smtp.codeaurora.org ([198.145.29.96])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hfFmI-0001WT-1k
+ for linux-arm-kernel@lists.infradead.org; Mon, 24 Jun 2019 03:36:23 +0000
+Received: by smtp.codeaurora.org (Postfix, from userid 1000)
+ id DC8716070D; Mon, 24 Jun 2019 03:36:20 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=codeaurora.org;
+ s=default; t=1561347380;
+ bh=6Z7HBpMm0ZfrkIlORZl8tv7HCGEf+5YDT93YXDXDWe8=;
+ h=From:To:Cc:Subject:Date:From;
+ b=j5vZb98fYQoV+I9IQpReSI0jjBZghWaIOs8sSsVV2F3MvnEPI+NODC6DYq9Uy/gGA
+ Lw0EopLXQ3MAK1kp6GgpikF1/uUspKmMr073l7fYpt0jWWVx1pxasCh1jBOr1GmooI
+ d0MBjpc+x2DCEoDI2Pxgw4nP7PimK9hJMbvEmGRs=
+X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
+ pdx-caf-mail.web.codeaurora.org
+X-Spam-Level: 
+X-Spam-Status: No, score=-2.7 required=2.0 tests=ALL_TRUSTED,BAYES_00,
+ DKIM_INVALID,DKIM_SIGNED,SPF_NONE autolearn=no autolearn_force=no
+ version=3.4.0
+Received: from blr-ubuntu-311.qualcomm.com
+ (blr-bdr-fw-01_globalnat_allzones-outside.qualcomm.com [103.229.18.19])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-SHA256 (128/128 bits))
+ (No client certificate requested)
+ (Authenticated sender: saiprakash.ranjan@codeaurora.org)
+ by smtp.codeaurora.org (Postfix) with ESMTPSA id 3C3B36038E;
+ Mon, 24 Jun 2019 03:36:16 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=codeaurora.org;
+ s=default; t=1561347380;
+ bh=6Z7HBpMm0ZfrkIlORZl8tv7HCGEf+5YDT93YXDXDWe8=;
+ h=From:To:Cc:Subject:Date:From;
+ b=j5vZb98fYQoV+I9IQpReSI0jjBZghWaIOs8sSsVV2F3MvnEPI+NODC6DYq9Uy/gGA
+ Lw0EopLXQ3MAK1kp6GgpikF1/uUspKmMr073l7fYpt0jWWVx1pxasCh1jBOr1GmooI
+ d0MBjpc+x2DCEoDI2Pxgw4nP7PimK9hJMbvEmGRs=
+DMARC-Filter: OpenDMARC Filter v1.3.2 smtp.codeaurora.org 3C3B36038E
+Authentication-Results: pdx-caf-mail.web.codeaurora.org;
+ dmarc=none (p=none dis=none) header.from=codeaurora.org
+Authentication-Results: pdx-caf-mail.web.codeaurora.org; spf=none
+ smtp.mailfrom=saiprakash.ranjan@codeaurora.org
+From: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>
+To: Mathieu Poirier <mathieu.poirier@linaro.org>,
+ Suzuki K Poulose <suzuki.poulose@arm.com>, Leo Yan <leo.yan@linaro.org>,
+ Rob Herring <robh+dt@kernel.org>, devicetree@vger.kernel.org,
+ Alexander Shishkin <alexander.shishkin@linux.intel.com>,
+ Andy Gross <andy.gross@linaro.org>, David Brown <david.brown@linaro.org>,
+ Mark Rutland <mark.rutland@arm.com>
+Subject: [PATCHv3 0/1] coresight: Do not default to CPU0 for missing CPU
+ phandle
+Date: Mon, 24 Jun 2019 09:06:08 +0530
+Message-Id: <cover.1561346998.git.saiprakash.ranjan@codeaurora.org>
+X-Mailer: git-send-email 2.22.0
 MIME-Version: 1.0
-In-Reply-To: <20190621143540.GA3376@capper-debian.cambridge.arm.com>
-Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190623_201146_502727_108A8892 
-X-CRM114-Status: GOOD (  21.65  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190623_203622_113228_351FBE6C 
+X-CRM114-Status: UNSURE (   8.61  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [198.145.29.96 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -63,126 +101,47 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <Mark.Rutland@arm.com>, "mhocko@suse.com" <mhocko@suse.com>,
- "mgorman@techsingularity.net" <mgorman@techsingularity.net>,
- "david@redhat.com" <david@redhat.com>,
- Catalin Marinas <Catalin.Marinas@arm.com>, Will Deacon <Will.Deacon@arm.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "linux-mm@kvack.org" <linux-mm@kvack.org>,
- "logang@deltatee.com" <logang@deltatee.com>,
- "arunks@codeaurora.org" <arunks@codeaurora.org>, "cai@lca.pw" <cai@lca.pw>,
- Ard Biesheuvel <Ard.Biesheuvel@arm.com>,
- "cpandya@codeaurora.org" <cpandya@codeaurora.org>,
- James Morse <James.Morse@arm.com>,
- "akpm@linux-foundation.org" <akpm@linux-foundation.org>, nd <nd@arm.com>,
- "ira.weiny@intel.com" <ira.weiny@intel.com>,
- "dan.j.williams@intel.com" <dan.j.williams@intel.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- "osalvador@suse.de" <osalvador@suse.de>
+Cc: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>,
+ Rajendra Nayak <rnayak@codeaurora.org>, linux-arm-msm@vger.kernel.org,
+ linux-kernel@vger.kernel.org, Sibi Sankar <sibis@codeaurora.org>,
+ Vivek Gautam <vivek.gautam@codeaurora.org>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+In case of missing CPU phandle, the affinity is set default to
+CPU0 which is not a correct assumption. Fix this in coresight
+platform to set affinity to invalid and abort the probe in drivers.
+Also update the dt-bindings accordingly.
 
+v3:
+ * Addressed review comments from Suzuki and updated
+   acpi_coresight_get_cpu.
+ * Removed patch 2 which had invalid check for online
+   cpus.
 
-On 06/21/2019 08:05 PM, Steve Capper wrote:
-> Hi Anshuman,
-> 
-> On Wed, Jun 19, 2019 at 09:47:40AM +0530, Anshuman Khandual wrote:
->> The arch code for hot-remove must tear down portions of the linear map and
->> vmemmap corresponding to memory being removed. In both cases the page
->> tables mapping these regions must be freed, and when sparse vmemmap is in
->> use the memory backing the vmemmap must also be freed.
->>
->> This patch adds a new remove_pagetable() helper which can be used to tear
->> down either region, and calls it from vmemmap_free() and
->> ___remove_pgd_mapping(). The sparse_vmap argument determines whether the
->> backing memory will be freed.
->>
->> remove_pagetable() makes two distinct passes over the kernel page table.
->> In the first pass it unmaps, invalidates applicable TLB cache and frees
->> backing memory if required (vmemmap) for each mapped leaf entry. In the
->> second pass it looks for empty page table sections whose page table page
->> can be unmapped, TLB invalidated and freed.
->>
->> While freeing intermediate level page table pages bail out if any of its
->> entries are still valid. This can happen for partially filled kernel page
->> table either from a previously attempted failed memory hot add or while
->> removing an address range which does not span the entire page table page
->> range.
->>
->> The vmemmap region may share levels of table with the vmalloc region.
->> There can be conflicts between hot remove freeing page table pages with
->> a concurrent vmalloc() walking the kernel page table. This conflict can
->> not just be solved by taking the init_mm ptl because of existing locking
->> scheme in vmalloc(). Hence unlike linear mapping, skip freeing page table
->> pages while tearing down vmemmap mapping.
->>
->> While here update arch_add_memory() to handle __add_pages() failures by
->> just unmapping recently added kernel linear mapping. Now enable memory hot
->> remove on arm64 platforms by default with ARCH_ENABLE_MEMORY_HOTREMOVE.
->>
->> This implementation is overall inspired from kernel page table tear down
->> procedure on X86 architecture.
->>
->> Acked-by: David Hildenbrand <david@redhat.com>
->> Signed-off-by: Anshuman Khandual <anshuman.khandual@arm.com>
->> ---
-> 
-> FWIW:
-> Acked-by: Steve Capper <steve.capper@arm.com>
+v2:
+ * Addressed review comments from Suzuki and Mathieu.
+ * Allows the probe of etm and cpu-debug to abort earlier
+   in case of unavailability of respective cpus.
 
-Thanks Steve.
+Sai Prakash Ranjan (1):
+  coresight: Do not default to CPU0 for missing CPU phandle
 
-> 
-> One minor comment below though.
-> 
->>  arch/arm64/Kconfig  |   3 +
->>  arch/arm64/mm/mmu.c | 290 ++++++++++++++++++++++++++++++++++++++++++++++++++--
->>  2 files changed, 284 insertions(+), 9 deletions(-)
->>
->> diff --git a/arch/arm64/Kconfig b/arch/arm64/Kconfig
->> index 6426f48..9375f26 100644
->> --- a/arch/arm64/Kconfig
->> +++ b/arch/arm64/Kconfig
->> @@ -270,6 +270,9 @@ config HAVE_GENERIC_GUP
->>  config ARCH_ENABLE_MEMORY_HOTPLUG
->>  	def_bool y
->>  
->> +config ARCH_ENABLE_MEMORY_HOTREMOVE
->> +	def_bool y
->> +
->>  config SMP
->>  	def_bool y
->>  
->> diff --git a/arch/arm64/mm/mmu.c b/arch/arm64/mm/mmu.c
->> index 93ed0df..9e80a94 100644
->> --- a/arch/arm64/mm/mmu.c
->> +++ b/arch/arm64/mm/mmu.c
->> @@ -733,6 +733,250 @@ int kern_addr_valid(unsigned long addr)
->>  
->>  	return pfn_valid(pte_pfn(pte));
->>  }
->> +
->> +#ifdef CONFIG_MEMORY_HOTPLUG
->> +static void free_hotplug_page_range(struct page *page, size_t size)
->> +{
->> +	WARN_ON(!page || PageReserved(page));
->> +	free_pages((unsigned long)page_address(page), get_order(size));
->> +}
-> 
-> We are dealing with power of 2 number of pages, it makes a lot more
-> sense (to me) to replace the size parameter with order.
-> 
-> Also, all the callers are for known compile-time sizes, so we could just
-> translate the size parameter as follows to remove any usage of get_order?
-> PAGE_SIZE -> 0
-> PMD_SIZE -> PMD_SHIFT - PAGE_SHIFT
-> PUD_SIZE -> PUD_SHIFT - PAGE_SHIFT
+ .../bindings/arm/coresight-cpu-debug.txt         |  4 ++--
+ .../devicetree/bindings/arm/coresight.txt        |  8 +++++---
+ .../hwtracing/coresight/coresight-cpu-debug.c    |  3 +++
+ drivers/hwtracing/coresight/coresight-etm3x.c    |  3 +++
+ drivers/hwtracing/coresight/coresight-etm4x.c    |  3 +++
+ drivers/hwtracing/coresight/coresight-platform.c | 16 ++++++++--------
+ 6 files changed, 24 insertions(+), 13 deletions(-)
 
-Sure this can be changed but I remember Mark wanted to have this on size
-instead of order which I proposed initially.
+-- 
+QUALCOMM INDIA, on behalf of Qualcomm Innovation Center, Inc. is a member
+of Code Aurora Forum, hosted by The Linux Foundation
+
 
 _______________________________________________
 linux-arm-kernel mailing list
