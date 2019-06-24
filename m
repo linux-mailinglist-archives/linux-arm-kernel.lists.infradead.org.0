@@ -2,49 +2,48 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 61F86509CA
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Jun 2019 13:29:07 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 136CF509D7
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Jun 2019 13:35:17 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=7cC890H2lP49x982Itfmxs56/Fpn4RDiVHL7M5UDlDQ=; b=sPT6CWlA9/9+nA
-	7818eDqDMNe4gUutpgNk9+fZb4FY2YPw6k3qsus4MMZLOAFXt4Gjd71DLYfqSf+ymzXXcrRbtK1wN
-	ATCTe4sdtPTt+q7zfydEN640G3v+XEkLMWZR6i5wvX+7e7eoMgyDiyaOntj/e2wkCVE6b72S2Dc0d
-	p1cFeqPfzWcxMC4OXjhiHdoOGITm/kdXDTTtX337zNs7fqRaAwqSYX3LRIeL7Xoo9sNiBgLq4u8Dg
-	SeST81X0tC8MTd+PTaPcKnEcx0Xz+8Jlg3o+g6fPGvIeYZxiIHn3fho6XWRS65OFjyxLOqD/Kvgjz
-	8IVWyPfNIIzCiG2F1r2A==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=uebIGWBdUNuUOQ5WVmOlltPSXohiWmrZG8XQDIleqS4=; b=Djxo7JkPEiSYTG
+	kkw9XeLIhPGYPw88lpXhNbGVXG3ejlPh3oamLKDPr3psozJCCJkEPIIhOHYxZIp5g5S8AaeZTwkOm
+	V8W2RD0AMafukU4ZPM/yORQg3QYy0SHKVJppqY1PdVdxUvRlI+LybGOxECGlqNVT379Pf0qePNlsW
+	NCgWWEFopoHRWmOn3CyLTLd0rrkXtI8lwxrm0OylRtkfzU03EE29yqyjn+455WaZvTBA6R9aRqPMB
+	5yON4YSxmH+V9OH/sBlYvTLdAJpSdNHdawpxMTGoU/v9Yr4TJfrkT6TPYhlp4TuHb/H2Fi9P4jl0P
+	gtjZoFWYT6w+xpDwYwvA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hfN9k-00052t-Qz; Mon, 24 Jun 2019 11:29:04 +0000
+	id 1hfNFh-0007ZN-FK; Mon, 24 Jun 2019 11:35:13 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hfN9b-00052F-Li
- for linux-arm-kernel@lists.infradead.org; Mon, 24 Jun 2019 11:28:57 +0000
+ id 1hfNFP-0007Yd-2I
+ for linux-arm-kernel@lists.infradead.org; Mon, 24 Jun 2019 11:34:56 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 2CF612B;
- Mon, 24 Jun 2019 04:28:55 -0700 (PDT)
-Received: from e103592.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
- [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id CCCB13F718;
- Mon, 24 Jun 2019 04:28:53 -0700 (PDT)
-Date: Mon, 24 Jun 2019 12:28:51 +0100
-From: Dave Martin <Dave.Martin@arm.com>
-To: Marc Zyngier <marc.zyngier@arm.com>
-Subject: Re: [PATCH 04/59] KVM: arm64: nv: Introduce nested virtualization
- VCPU feature
-Message-ID: <20190624112851.GM2790@e103592.cambridge.arm.com>
-References: <20190621093843.220980-1-marc.zyngier@arm.com>
- <20190621093843.220980-5-marc.zyngier@arm.com>
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 2E9092B;
+ Mon, 24 Jun 2019 04:34:52 -0700 (PDT)
+Received: from [10.1.196.105] (eglon.cambridge.arm.com [10.1.196.105])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 5C7E23F718;
+ Mon, 24 Jun 2019 04:34:51 -0700 (PDT)
+Subject: Re: [PATCH 3/3] arm64: stacktrace: better handle corrupted stacks
+To: Mark Rutland <mark.rutland@arm.com>
+References: <20190606125402.10229-1-mark.rutland@arm.com>
+ <20190606125402.10229-4-mark.rutland@arm.com>
+From: James Morse <james.morse@arm.com>
+Message-ID: <7c70ab1c-e114-9d21-e37b-3d4e01ac6e43@arm.com>
+Date: Mon, 24 Jun 2019 12:34:40 +0100
+User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
+ Thunderbird/60.7.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190621093843.220980-5-marc.zyngier@arm.com>
-User-Agent: Mutt/1.5.23 (2014-03-12)
+In-Reply-To: <20190606125402.10229-4-mark.rutland@arm.com>
+Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190624_042855_803519_17E7EFCA 
-X-CRM114-Status: GOOD (  17.62  )
+X-CRM114-CacheID: sfid-20190624_043455_195561_34F6370F 
+X-CRM114-Status: GOOD (  22.81  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -63,94 +62,111 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: kvm@vger.kernel.org, Julien Thierry <julien.thierry@arm.com>,
- Andre Przywara <andre.przywara@arm.com>,
- Suzuki K Poulose <suzuki.poulose@arm.com>,
- Christoffer Dall <christoffer.dall@arm.com>,
- Jintack Lim <jintack@cs.columbia.edu>, James Morse <james.morse@arm.com>,
- kvmarm@lists.cs.columbia.edu, linux-arm-kernel@lists.infradead.org
+Cc: catalin.marinas@arm.com, tengfeif@codeaurora.org, will.deacon@arm.com,
+ dave.martin@arm.com, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Jun 21, 2019 at 10:37:48AM +0100, Marc Zyngier wrote:
-> From: Christoffer Dall <christoffer.dall@arm.com>
-> 
-> Introduce the feature bit and a primitive that checks if the feature is
-> set behind a static key check based on the cpus_have_const_cap check.
-> 
-> Checking nested_virt_in_use() on systems without nested virt enabled
-> should have neglgible overhead.
-> 
-> We don't yet allow userspace to actually set this feature.
-> 
-> Signed-off-by: Christoffer Dall <christoffer.dall@arm.com>
-> Signed-off-by: Marc Zyngier <marc.zyngier@arm.com>
-> ---
->  arch/arm/include/asm/kvm_nested.h   |  9 +++++++++
->  arch/arm64/include/asm/kvm_nested.h | 13 +++++++++++++
->  arch/arm64/include/uapi/asm/kvm.h   |  1 +
->  3 files changed, 23 insertions(+)
->  create mode 100644 arch/arm/include/asm/kvm_nested.h
->  create mode 100644 arch/arm64/include/asm/kvm_nested.h
-> 
-> diff --git a/arch/arm/include/asm/kvm_nested.h b/arch/arm/include/asm/kvm_nested.h
-> new file mode 100644
-> index 000000000000..124ff6445f8f
-> --- /dev/null
-> +++ b/arch/arm/include/asm/kvm_nested.h
-> @@ -0,0 +1,9 @@
-> +/* SPDX-License-Identifier: GPL-2.0 */
-> +#ifndef __ARM_KVM_NESTED_H
-> +#define __ARM_KVM_NESTED_H
-> +
-> +#include <linux/kvm_host.h>
-> +
-> +static inline bool nested_virt_in_use(const struct kvm_vcpu *vcpu) { return false; }
-> +
-> +#endif /* __ARM_KVM_NESTED_H */
-> diff --git a/arch/arm64/include/asm/kvm_nested.h b/arch/arm64/include/asm/kvm_nested.h
-> new file mode 100644
-> index 000000000000..8a3d121a0b42
-> --- /dev/null
-> +++ b/arch/arm64/include/asm/kvm_nested.h
-> @@ -0,0 +1,13 @@
-> +/* SPDX-License-Identifier: GPL-2.0 */
-> +#ifndef __ARM64_KVM_NESTED_H
-> +#define __ARM64_KVM_NESTED_H
-> +
-> +#include <linux/kvm_host.h>
-> +
-> +static inline bool nested_virt_in_use(const struct kvm_vcpu *vcpu)
-> +{
-> +	return cpus_have_const_cap(ARM64_HAS_NESTED_VIRT) &&
-> +		test_bit(KVM_ARM_VCPU_NESTED_VIRT, vcpu->arch.features);
-> +}
-> +
-> +#endif /* __ARM64_KVM_NESTED_H */
-> diff --git a/arch/arm64/include/uapi/asm/kvm.h b/arch/arm64/include/uapi/asm/kvm.h
-> index d819a3e8b552..563e2a8bae93 100644
-> --- a/arch/arm64/include/uapi/asm/kvm.h
-> +++ b/arch/arm64/include/uapi/asm/kvm.h
-> @@ -106,6 +106,7 @@ struct kvm_regs {
->  #define KVM_ARM_VCPU_SVE		4 /* enable SVE for this CPU */
->  #define KVM_ARM_VCPU_PTRAUTH_ADDRESS	5 /* VCPU uses address authentication */
->  #define KVM_ARM_VCPU_PTRAUTH_GENERIC	6 /* VCPU uses generic authentication */
-> +#define KVM_ARM_VCPU_NESTED_VIRT	7 /* Support nested virtualization */
+Hi Mark,
 
-This seems weirdly named:
+On 06/06/2019 13:54, Mark Rutland wrote:
+> The arm64 stacktrace code is careful to only dereference frame records
+> in valid stack ranges, ensuring that a corrupted frame record won't
+> result in a faulting access.
+> 
+> However, it's still possible for corrupt frame records to result in
+> infinite loops in the stacktrace code, which is also undesirable.
+> 
+> This patch ensures that we complete a stacktrace in finite time, by
+> keeping track of which stacks we have already completed unwinding, and
+> verifying that if the next frame record is on the same stack, it is at a
+> higher address.
 
-Isn't the feature we're exposing here really EL2?  In that case, the
-feature the guest gets with this flag enabled is plain virtualisation,
-possibly with the option to nest further.
+This looks good, I tried to take it for a spin to test SDEI stack tracing ... but it
+wouldn't boot, it panic()s before earlycon.
 
-Does the guest also get nested virt (i.e., recursively nested virt from
-the host's PoV) as a side effect, or would require an explicit extra
-flag?
+defconfig doesn't do this, defconfig+CONFIG_PROVE_LOCKING does.
+Toggling CONFIG_DEBUG_LOCK_ALLOC is the smallest config change to make this show up.
 
-Cheers
----Dave
+Its taking a translation fault:
+| <__ll_sc_arch_atomic64_or>:
+|        f9800031        prfm    pstl1strm, [x1]
+|        c85f7c31        ldxr    x17, [x1]		(faulting instruction)
+|        aa000231        orr     x17, x17, x0
+|        c8107c31        stxr    w16, x17, [x1]
+|        35ffffb0        cbnz    w16, ffff000010c7d19c <__ll_sc_a
+|        d65f03c0        ret
+
+x0: 0x0000000000000100
+x1: 0xffff0000137399e8			(far_el2)
+
+If x1 were part of 'frame' in __save_stack_trace it should be on the stack, but at
+fault-time sp is 0xffff0000114a3a50. This happens before the linear map has been set up....
+
+The lr points just after the set_bit() call in unwind_frame().
+
+
+> diff --git a/arch/arm64/kernel/stacktrace.c b/arch/arm64/kernel/stacktrace.c
+> index b00ec7d483d1..1c45b33c7474 100644
+> --- a/arch/arm64/kernel/stacktrace.c
+> +++ b/arch/arm64/kernel/stacktrace.c
+> @@ -43,6 +43,8 @@
+>  int notrace unwind_frame(struct task_struct *tsk, struct stackframe *frame)
+>  {
+>  	unsigned long fp = frame->fp;
+> +	bool changed_stack = false;
+> +	struct stack_info info;
+>  
+>  	if (fp & 0xf)
+>  		return -EINVAL;
+> @@ -50,12 +52,24 @@ int notrace unwind_frame(struct task_struct *tsk, struct stackframe *frame)
+>  	if (!tsk)
+>  		tsk = current;
+>  
+> -	if (!on_accessible_stack(tsk, fp, NULL))
+> +	if (!on_accessible_stack(tsk, fp, &info))
+>  		return -EINVAL;
+>  
+> +	if (test_bit(info.type, frame->stacks_done))
+> +		return -EINVAL;
+> +
+> +	if (frame->stack_current != info.type) {
+
+> +		set_bit(frame->stack_current, frame->stacks_done);
+
+
+Changing this line:
+| -               set_bit(frame->stack_current, frame->stacks_done);
+| +               *frame->stacks_done |= (1 << frame->stack_current);
+works fine.
+
+But it doesn't cause a stacktrace to be printed, so I can't work out how
+CONFIG_DEBUG_LOCK_ALLOC is relevant.
+
+
+... this makes no sense, can anyone else reproduce it?
+
+
+Thanks,
+
+James
+
+
+> +		frame->stack_current = info.type;
+> +		changed_stack = true;
+> +	}
+> +
+>  	frame->fp = READ_ONCE_NOCHECK(*(unsigned long *)(fp));
+>  	frame->pc = READ_ONCE_NOCHECK(*(unsigned long *)(fp + 8));
+>  
+> +	if (!changed_stack && frame->fp <= fp)
+> +		return -EINVAL;
+> +
+>  #ifdef CONFIG_FUNCTION_GRAPH_TRACER
+>  	if (tsk->ret_stack &&
+>  			(frame->pc == (unsigned long)return_to_handler)) {
 
 _______________________________________________
 linux-arm-kernel mailing list
