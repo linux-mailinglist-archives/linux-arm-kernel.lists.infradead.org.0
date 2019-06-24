@@ -2,94 +2,71 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 54EC8518B4
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Jun 2019 18:30:51 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3E56C528B0
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 25 Jun 2019 11:55:37 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:References:To:From:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=DsX1RsNXNfxAPQL7csgjPgofiZvTsPS+Sjfi1aHPcnE=; b=rvfQaagh//l7X5
-	lh7HwkYG9aryGPEvTkhA+8qHGNXDJ7lFpsNZfg7YfF0v25eFhLC+Gq0iR3x9KcYJLwNZS1nWIkJLm
-	A0uXqQwWJN+HZ0mnWchIdV5ujL6cWu8SlKYPn9pcjgRUyf+AbsngN6fqGFOk+oWzkugtSb3TMh4FL
-	1K8ArRaNylhB9JVzjo5uQ6EOtY+TMBva6eQSk1jFW+R6LR3v6yyCGZ3Z4KIxIFmIikaQBl6MX+asj
-	Rk7ReRqe/Sx9htbinMcQluC3QxpKYGMHaY7RJO56Dp3Q19EXPq0dKSo26TvOARdONjneK6O2Z47Vs
-	D9h28ymiMXBiGpcsAKSg==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Date:Message-Id:
+	In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	References:List-Owner; bh=akXejFaq7QCWsjtT3Z5giHunTUtrgD1+BVcfiLXoxOQ=; b=Ze0
+	W9YHpInkukNEXxRHpXO6dZfr24F08PSG8tUtvUpDcaHMWaDt5N9uwDNOgN0GjNEDaOiz6K+pvxbUu
+	aKSV1l3GoN41XdwdN0PubXQ1AVlb2pKMsOaTmJoX1RnlF5beImyJDtvL8K45EcqUPXeQfN1KhBbPn
+	LgVMLrIvmxQApe0nrijwlQUSdKp5UrMny98wQpk15ZfOFitVqoVXnTpiBBjoUjX6deV6IF2LqgIeK
+	nab57lx1WQd78YKwzDJK0WML2zM/tN2yfHmsWpk/X6bmvk4heD0zWwDf2Cdf8im15Q9sLQ2/q2q1d
+	qXfbFTpdyiJm0ZiHpPIt9SoEkcKiPVA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hfRrk-0007UW-UB; Mon, 24 Jun 2019 16:30:48 +0000
-Received: from mail-io1-xd2c.google.com ([2607:f8b0:4864:20::d2c])
+	id 1hfiAn-0005p6-J1; Tue, 25 Jun 2019 09:55:33 +0000
+Received: from heliosphere.sirena.org.uk ([2a01:7e01::f03c:91ff:fed4:a3b6])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hfRra-0007Tj-Dz
- for linux-arm-kernel@lists.infradead.org; Mon, 24 Jun 2019 16:30:39 +0000
-Received: by mail-io1-xd2c.google.com with SMTP id u19so2434705ior.9
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 24 Jun 2019 09:30:37 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=subject:from:to:cc:references:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=Wulrto/HXlEP0Cxmn+aSmPqpiH4PSf21/9EuSwKYHd4=;
- b=Mn0cXMbFYMBl0SszZa7WI2WTD5T6951RjYiCrZy61CKf7Cm2DTD9UiLUXwJ0nx0zBY
- 1ujuIMMLx77NflyHWBE1yHJcYVq4eHb2AFI56KEKa6Ixd5wfgzHDtkT0WQXMURcOSVAl
- O7Vkq2+51rP5ijLHFX1ZeCKQOT/dDYZntnHe5jyJwkHd7wAslrFu8N5j0IFVI/bIEuwq
- GEjmX3B6uGzH6yZ+b7nKqHGaETy/LXWhmuYf6hpvua3ECqdLlCvvyEH0+IU7TOktpF4M
- zyORQJmP8JKT7T81fNiN8Gbe0OZtEXP/NYrDuoZf7q8Lzo97joLIHKPPtTkz0yI5kWnm
- 20kA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:from:to:cc:references:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=Wulrto/HXlEP0Cxmn+aSmPqpiH4PSf21/9EuSwKYHd4=;
- b=YB6XTIjQs+iOk/lyUf8ASPCUBDuvgYWw/hsra3uDRv1kG+MIQNXS2WezBOIKH01zg3
- ZyaXGs390c4x5wK+b9zfYRS0dQohXt7aUlNJTI1fAStIWqtQDYj3PUIEY11UgiXznjKp
- sQxfDPhiu0ZxyvAAqmr3Hz4cwpEWZ54UdqAriWdToSADQvJ6ykxli5v2WKiSXaEM+VM1
- 9OWHXlp+jWMWsgw1D3XLJ1R6ZB9B+YCWhsmbJ+OLuQc7dd5MYGpfiXY3OcVhuAUWNhbX
- JmTAt/pekypuwVZMIRgmlqRHch8VarZte0zcQw/jm/osat8e3wftouiW5pYeVK+UQm+m
- bR6g==
-X-Gm-Message-State: APjAAAVeELJeYmQTEIkJdNnpgrpOhbLkmA3mhda47f04w2/899auq4iY
- 5VLcKWLCeBcKvitk4UuJ4P5LzQ==
-X-Google-Smtp-Source: APXvYqxdhhVgzPshhJyQgs10Hk+zfOquGsuDDw6awgazoiRekD4XFtjDBCvTdDE3FewywU+/yE2bnw==
-X-Received: by 2002:a02:5185:: with SMTP id s127mr26639219jaa.44.1561393837131; 
- Mon, 24 Jun 2019 09:30:37 -0700 (PDT)
-Received: from [172.22.22.26] (c-71-195-29-92.hsd1.mn.comcast.net.
- [71.195.29.92])
- by smtp.googlemail.com with ESMTPSA id p25sm13692350iol.48.2019.06.24.09.30.35
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Mon, 24 Jun 2019 09:30:36 -0700 (PDT)
-Subject: WWAN Controller Framework (was IPA [PATCH v2 00/17])
-From: Alex Elder <elder@linaro.org>
-To: davem@davemloft.net, arnd@arndb.de, bjorn.andersson@linaro.org,
- ilias.apalodimas@linaro.org
-References: <20190531035348.7194-1-elder@linaro.org>
-Message-ID: <23ff4cce-1fee-98ab-3608-1fd09c2d97f1@linaro.org>
-Date: Mon, 24 Jun 2019 11:30:35 -0500
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.7.1
-MIME-Version: 1.0
-In-Reply-To: <20190531035348.7194-1-elder@linaro.org>
-Content-Language: en-US
+ id 1hfi9M-0005Cc-Qk; Tue, 25 Jun 2019 09:54:07 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=sirena.org.uk; s=20170815-heliosphere; h=Date:Message-Id:In-Reply-To:
+ Subject:Cc:To:From:Sender:Reply-To:MIME-Version:Content-Type:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
+ List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:
+ List-Archive; bh=zx9LoJRA5VJOsRJ+xBMTylTkTEgRWd6viN1kglPW6EM=; b=uKFHQxrVpH8X
+ dVpD/orDeKDSABWJfcieBWLyp3ClSXXnpcDhLRzc3zeMTVQo6+BwUWzl3PoKSxu0f1SJDoWumFrT+
+ Yklo0nb7sxV1cZK4iRNN5jSsBeYVM/j8t3M1v54LvNzSL+VJ1A15g1ImipVt/yxSKPx+rEmYCVK+W
+ Zpba4=;
+Received: from cpc102320-sgyl38-2-0-cust46.18-2.cable.virginm.net
+ ([82.37.168.47] helo=finisterre.sirena.org.uk)
+ by heliosphere.sirena.org.uk with esmtpsa
+ (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.89)
+ (envelope-from <broonie@sirena.org.uk>)
+ id 1hfi9G-0004ma-Ha; Tue, 25 Jun 2019 09:53:58 +0000
+Received: by finisterre.sirena.org.uk (Postfix, from userid 1000)
+ id 96F5D440046; Mon, 24 Jun 2019 17:32:13 +0100 (BST)
+From: Mark Brown <broonie@kernel.org>
+To: Enric Balletbo i Serra <enric.balletbo@collabora.com>
+Subject: Applied "ASoC: rk3399_gru_sound: Support 32,
+ 44.1 and 88.2 kHz sample rates" to the asoc tree
+In-Reply-To: <20190621155808.17182-1-enric.balletbo@collabora.com>
+X-Patchwork-Hint: ignore
+Message-Id: <20190624163213.96F5D440046@finisterre.sirena.org.uk>
+Date: Mon, 24 Jun 2019 17:32:13 +0100 (BST)
+X-Bad-Reply: In-Reply-To but no 'Re:' in Subject.
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190624_093038_517385_9B0B9401 
-X-CRM114-Status: GOOD (  12.91  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190625_025405_180025_2CB30AB2 
+X-CRM114-Status: GOOD (  14.65  )
+X-Spam-Score: 1.0 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (1.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:d2c listed in]
- [list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
+ 0.8 DATE_IN_PAST_12_24     Date: is 12 to 24 hours before Received: date
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -101,75 +78,99 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, syadagir@codeaurora.org, ejcaruso@google.com,
- netdev@vger.kernel.org, linux-kernel@vger.kernel.org, evgreen@chromium.org,
- linux-arm-kernel@lists.infradead.org, linux-arm-msm@vger.kernel.org,
- subashab@codeaurora.org, linux-soc@vger.kernel.org, abhishek.esse@gmail.com,
- cpratapa@codeaurora.org, benchan@google.com
+Cc: alsa-devel@alsa-project.org, Heiko Stuebner <heiko@sntech.de>,
+ Xing Zheng <zhengxing@rock-chips.com>, linux-kernel@vger.kernel.org,
+ Takashi Iwai <tiwai@suse.com>, Liam Girdwood <lgirdwood@gmail.com>,
+ Jaroslav Kysela <perex@perex.cz>, linux-rockchip@lists.infradead.org,
+ Mark Brown <broonie@kernel.org>, kernel@collabora.com,
+ Benson Leung <bleung@chromium.org>, linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-OK I want to try to organize a little more concisely some of the
-discussion on this, because there is a very large amount of volume
-to date and I think we need to try to narrow the focus back down
-again.
+The patch
 
-I'm going to use a few terms here.  Some of these I really don't
-like, but I want to be unambiguous *and* (at least for now) I want
-to avoid the very overloaded term "device".
+   ASoC: rk3399_gru_sound: Support 32, 44.1 and 88.2 kHz sample rates
 
-I have lots more to say, but let's start with a top-level picture,
-to make sure we're all on the same page.
+has been applied to the asoc tree at
 
-         WWAN Communication
-         Channel (Physical)
-                 |     ------------------------
-------------     v     |           :+ Control |  \
-|          |-----------|           :+ Data    |  |
-|    AP    |           | WWAN unit :+ Voice   |   > Functions
-|          |===========|           :+ GPS     |  |
-------------     ^     |           :+ ...     |  /
-                 |     -------------------------
-          Multiplexed WWAN
-           Communication
-         Channel (Physical)
+   https://git.kernel.org/pub/scm/linux/kernel/git/broonie/sound.git for-5.3
 
-- The *AP* is the main CPU complex that's running Linux on one or
-  more CPU cores.
-- A *WWAN unit* is an entity that shares one or more physical
-  *WWAN communication channels* with the AP.
-- A *WWAN communication channel* is a bidirectional means of
-  carrying data between the AP and WWAN unit.
-- A WWAN communication channel carries data using a *WWAN protocol*.
-- A WWAN unit implements one or more *WWAN functions*, such as
-  5G data, LTE voice, GPS, and so on.
-- A WWAN unit shall implement a *WWAN control function*, used to
-  manage the use of other WWAN functions, as well as the WWAN unit
-  itself.
-- The AP communicates with a WWAN function using a WWAN protocol.
-- A WWAN physical channel can be *multiplexed*, in which case it
-  carries the data for one or more *WWAN logical channels*.
-- A multiplexed WWAN communication channel uses a *WWAN wultiplexing
-  protocol*, which is used to separate independent data streams
-  carrying other WWAN protocols.
-- A WWAN logical channel carries a bidirectional stream of WWAN
-  protocol data between an entity on the AP and a WWAN function.
+All being well this means that it will be integrated into the linux-next
+tree (usually sometime in the next 24 hours) and sent to Linus during
+the next merge window (or sooner if it is a bug fix), however if
+problems are discovered then the patch may be dropped or reverted.  
 
-Does that adequately represent a very high-level picture of what
-we're trying to manage?
+You may get further e-mails resulting from automated or manual testing
+and review of the tree, please engage with people reporting problems and
+send followup patches addressing any issues that are reported if needed.
 
-And if I understand it right, the purpose of the generic framework
-being discussed is to define a common mechanism for managing (i.e.,
-discovering, creating, destroying, querying, configuring, enabling,
-disabling, etc.) WWAN units and the functions they implement, along
-with the communication and logical channels used to communicate with
-them.
+If any updates are required or you are submitting further changes they
+should be sent as incremental updates against current git, existing
+patches will not be replaced.
 
-Comments?
+Please add any relevant lists and maintainers to the CCs when replying
+to this mail.
 
-					-Alex
+Thanks,
+Mark
+
+From 30b233b1cb4291d39ca08a95566721e8a52e5ee3 Mon Sep 17 00:00:00 2001
+From: Enric Balletbo i Serra <enric.balletbo@collabora.com>
+Date: Fri, 21 Jun 2019 17:58:08 +0200
+Subject: [PATCH] ASoC: rk3399_gru_sound: Support 32, 44.1 and 88.2 kHz sample
+ rates
+
+According to the datasheet the max98357a also supports 32, 44.1 and
+88.2 kHz sample rate. This support was also introduced recently by
+commit fdf34366d324 ("ASoC: max98357a: add missing supported rates").
+
+Actually the machine driver validates the supported sample rates but
+this is not really needed because the component driver can all apply
+whatever constraints are needed and do their own validation. So, remove
+the checks from the machine driver as are not needed at all. This way,
+we also support 32, 44.1 and 88.2 kHz sample rates and we get rid of the
+errors like the below.
+
+  rk3399-gru-sound sound: rockchip_sound_max98357a_hw_params() doesn't support this sample rate: 44100
+  rk3399-gru-sound sound: ASoC: machine hw_params failed: -22
+
+Signed-off-by: Enric Balletbo i Serra <enric.balletbo@collabora.com>
+Signed-off-by: Mark Brown <broonie@kernel.org>
+---
+ sound/soc/rockchip/rk3399_gru_sound.c | 14 +-------------
+ 1 file changed, 1 insertion(+), 13 deletions(-)
+
+diff --git a/sound/soc/rockchip/rk3399_gru_sound.c b/sound/soc/rockchip/rk3399_gru_sound.c
+index 879069fc0b94..769d5795919c 100644
+--- a/sound/soc/rockchip/rk3399_gru_sound.c
++++ b/sound/soc/rockchip/rk3399_gru_sound.c
+@@ -66,19 +66,7 @@ static int rockchip_sound_max98357a_hw_params(struct snd_pcm_substream *substrea
+ 	unsigned int mclk;
+ 	int ret;
+ 
+-	/* max98357a supports these sample rates */
+-	switch (params_rate(params)) {
+-	case 8000:
+-	case 16000:
+-	case 48000:
+-	case 96000:
+-		mclk = params_rate(params) * SOUND_FS;
+-		break;
+-	default:
+-		dev_err(rtd->card->dev, "%s() doesn't support this sample rate: %d\n",
+-				__func__, params_rate(params));
+-		return -EINVAL;
+-	}
++	mclk = params_rate(params) * SOUND_FS;
+ 
+ 	ret = snd_soc_dai_set_sysclk(rtd->cpu_dai, 0, mclk, 0);
+ 	if (ret) {
+-- 
+2.20.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
