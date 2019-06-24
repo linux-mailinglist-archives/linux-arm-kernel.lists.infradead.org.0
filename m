@@ -2,71 +2,73 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1A9AF50F26
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Jun 2019 16:52:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9C14D50F28
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Jun 2019 16:52:19 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:Reply-To:List-Subscribe:List-Help:
 	List-Post:List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:
 	References:Date:Subject:To:From:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	List-Owner; bh=eSYVnsboN+DXplL0ChW6adEYP8mtjYwn/6xAPrK4VHk=; b=EGTmeU07eM2q2s
-	vvNq0exenz2FmTV1E9n4E+d3dp6PI/deSca1VtUJRVE/F3kw+KpZn47SAU7t72tnIx3omoVzfXKRX
-	rc2AjBO8l4EGGWOFuHRz232CgUufBvP0EfgCYn47CJd2MWGogJiujpfrqpp23HUioMqebhoJcphwC
-	CD9HHfgPm+6wVni92GZfJGERo25h7oDWzOMQg0UEv06rXCZRUFFdhg+Mgz4fqZwMiZU8LgqrDtmrX
-	m1mZf+ySnIzzfzZCZb9ERKSjlt1RwjFLrWxju0x6AjTHMezPYlPzvAFObdW3p1anG9WItWr1xAn3K
-	JhVOdUaDsBb4SWkuha9g==;
+	List-Owner; bh=OBN6c8VyAH8L5UYrADoIAsIX4e0L2iRGRibCebbVqjg=; b=hAWNyrTkiLWSzI
+	eZbn0J7DA3AflNPejUc12sncdEj0tLmdswodCGZIwtUodWGdHHCt5GO3f2VBTCPJiah5yEM3CDWs/
+	ACijN5xba6uXt11MnXXUp4s3UQNSAoVK/rLQGarzQsPwLDWymzsOo1ZGoooHEKdETjzcnTXH9Uh7V
+	YSwuFw4R6Y9fgxNqmuhE9/xOQvONXzdVR8rLEhkZPuLY+IkaS1sOZkTeKBcEfsFQMZTxzH9aE3/gW
+	QSOFuiJLmvgR9VKYCu7L+iXWgF4B2jVTXEJfIPAKPxpkxo3Vz3eCXUKB6oyQDuDHn/QF/GvOCbxH5
+	qX/8GgJ5J2dtAeL0TAkA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hfQK5-0003Ey-Ca; Mon, 24 Jun 2019 14:51:57 +0000
+	id 1hfQKP-0003XB-Ku; Mon, 24 Jun 2019 14:52:17 +0000
 Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hfQHR-0008JT-DD
- for linux-arm-kernel@lists.infradead.org; Mon, 24 Jun 2019 14:49:14 +0000
-Received: by mail-wm1-x344.google.com with SMTP id v19so13668596wmj.5
+ id 1hfQHZ-0008TW-8X
+ for linux-arm-kernel@lists.infradead.org; Mon, 24 Jun 2019 14:49:23 +0000
+Received: by mail-wm1-x344.google.com with SMTP id f17so13695558wme.2
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 24 Jun 2019 07:49:13 -0700 (PDT)
+ Mon, 24 Jun 2019 07:49:21 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=baylibre-com.20150623.gappssmtp.com; s=20150623;
  h=from:to:cc:subject:date:references:reply-to:message-id:mime-version;
- bh=+1HDQZviZEdEBIaZ3+cqb2NOlWyANG1RyMLvCgYrlxQ=;
- b=f+kqTndKvKQtaO3uX+rPt78/8vXst8PI3NwjdbB1DABotaFBkHQIV/ydAjoVPhg0Jv
- I2o7qcH/kgyDbaPjhUwHSYcYOQ1yhR2jAIoeV8Yj+hFpdXd7vJUlAja6IZmU2KHUwDqu
- tPvfg05GytpLRIkXHEmKbkwKSQ3Tx2d/zbi8yEa8QCRcQIUur0lj3GsxW+eizD1wdI3o
- dgLsliZhzNRKCBjgNgwmg6A3J5pXwmfgmB9aPfLtLodYBL+RQTEix6ezIZ67blO10OPx
- YJyEaUSR1/QcRZcvtvcARhuvkSCDUHz3S6/R9U5nEJ0ZfjHASF00lpJEOyf8O1YLLdTz
- weiw==
+ bh=qICt3tvrDEjsshgOgeqB9NCEtKIKhDes2GEOtGUCIpo=;
+ b=mnrc7AJREizTtyko4LB8qv6Cg5B7WxC4INlkHs9Ks4iSd2+apictmURS40KuI0t5Tn
+ IB2Vnf/t+LVnP+tv1JvqK0FMsszntab9bsBVDhaq6iH/5dr9u7y6ngMLni2/8v8/KD3I
+ 1RNcMErB5MGZrpdrKROpddh54ZDHRNg8rOMycQTJexvvjS09bSP+7duvAXFZuxYnmwGn
+ Wpgf31NfM9CwuosNa95m1z+0d2TNHFTO5beH//s/fat/KCaC+gG8C9eFd8v7zvt8OC3u
+ asoDvcItzT1/rBmW1y+Ab6G7mIjNAxdR7PXNNpiCVmsN1jFfPqU98sGJajv6Icl+rVEt
+ 2jCg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:references:reply-to
  :message-id:mime-version;
- bh=+1HDQZviZEdEBIaZ3+cqb2NOlWyANG1RyMLvCgYrlxQ=;
- b=InQyu8M/8zs5E9ofV/AMgW8CvOB1I3AlRWsEP0GThn/Jyhfa5LKUeexSSkASWUpbt9
- o3nvgv7kP8N7XhxqZ7OIp6OmgK2iLfGrmyAcqGxNB5bvWJobVGwTZz7S99MEKpJRPeap
- S3zucK15wn7hjkl1fwwY4s6B4KcbsKJv95oEGpGDJvlunBrU4GzLopXTlnvIrLDhHpO9
- 60uNj97/5HvZw/sCOaFVViiAGp3dBcNUdIEL/7VMo2PAdGErgP78I8q5AkPTEBSiVaSd
- Vc5QCgLX1G3L2rpO8vW2wCAJ4A5DWQcrBtIziehhkpBK4lg4uHM9EVp7yjA/XAY4eR/i
- ClKQ==
-X-Gm-Message-State: APjAAAVZQqT11nreq4JdBVdEdw2V6hxVQqNDiHH50j8GGxX5+kZlR9pY
- qA8HIF9KbzKgtcUMiXG6MEajPw==
-X-Google-Smtp-Source: APXvYqyKFT1ZDPov7FN01BjdxpOOg83+Hng//XfE/Nmzv8hToft5RZH9KSY96c9YR1WZPkYlwxu+Iw==
-X-Received: by 2002:a1c:343:: with SMTP id 64mr17222141wmd.116.1561387751980; 
- Mon, 24 Jun 2019 07:49:11 -0700 (PDT)
+ bh=qICt3tvrDEjsshgOgeqB9NCEtKIKhDes2GEOtGUCIpo=;
+ b=e2OkFnMdatixrv1BWoKXvuW2yDHHs8a2/UE01e5pO8Um+Sgg2OnGlA5E5TdH+l5VQ3
+ Hk+sUTmKjPi/Mjlc+k2/5URLC/5DCaoNxwAhZDfh8o9YroK/dxsScgidApes++HAQUan
+ 4fzn+oBECSd5By/VZtZLFcotQx2B4QFBIAr72+Ws02ecLdlm5zsPNZLhiYNaXVIYm/o3
+ /XSAirAbmTOi0dxODlg6M9UuantwDBKrvry0rjN/0XS0cx3amCCxzo8AqeI6XoKnEy+/
+ Zr/cAFCrNEMqcVyDoggjC0uARARffdu+E/+3RbBtw1mj2g+MRbVMKw6SEGZtnBwsfn/j
+ oyHA==
+X-Gm-Message-State: APjAAAU/5z9npXIXDw8Yw05yZplZVVFe5bCgZkXtT8vLsk2F+yj7dxfw
+ SpicwTEY29d6Uxy2K9lLhlgdHw==
+X-Google-Smtp-Source: APXvYqyo+n4FXVEBememSCgVf3nyfXvEm0+s6OodWbZ0mTPQMuiNLuOddy70bQx8iLDOUizpxuJGKg==
+X-Received: by 2002:a1c:cc0d:: with SMTP id h13mr15799778wmb.119.1561387759831; 
+ Mon, 24 Jun 2019 07:49:19 -0700 (PDT)
 Received: from localhost (lmontsouris-657-1-212-31.w90-63.abo.wanadoo.fr.
  [90.63.244.31])
- by smtp.gmail.com with ESMTPSA id k82sm10654558wma.15.2019.06.24.07.49.11
+ by smtp.gmail.com with ESMTPSA id t63sm11204083wmt.6.2019.06.24.07.49.19
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Mon, 24 Jun 2019 07:49:11 -0700 (PDT)
+ Mon, 24 Jun 2019 07:49:19 -0700 (PDT)
 From: Julien Masson <jmasson@baylibre.com>
 To: Neil Armstrong <narmstrong@baylibre.com>
-Subject: [PATCH 8/9] drm: meson: add macro used to enable HDMI PLL
-Date: Mon, 24 Jun 2019 16:49:04 +0200
+Subject: [PATCH 9/9] drm: meson: venc: set the correct macrovision max
+ amplitude value
+Date: Mon, 24 Jun 2019 16:49:12 +0200
 References: <86zhm782g5.fsf@baylibre.com>
-Message-ID: <86o92n82e1.fsf@baylibre.com>
+Message-ID: <86mui782dt.fsf@baylibre.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190624_074913_559098_7DCF7D64 
-X-CRM114-Status: GOOD (  10.45  )
+X-CRM114-CacheID: sfid-20190624_074921_445450_4AAFF13C 
+X-CRM114-Status: UNSURE (   9.44  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -100,35 +102,40 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This patch add new macro HHI_HDMI_PLL_CNTL_EN which is used to enable
-HDMI PLL.
+According to the register description of ENCI_MACV_MAX_AMP, the
+macrovision max amplitude value should be:
+- hdmi 480i => 0xb
+- hdmi 576i => 0x7
+
+The max value is 0x7ff (10 bits).
 
 Signed-off-by: Julien Masson <jmasson@baylibre.com>
 ---
- drivers/gpu/drm/meson/meson_vclk.c | 3 ++-
- 1 file changed, 2 insertions(+), 1 deletion(-)
+ drivers/gpu/drm/meson/meson_venc.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
 
-diff --git a/drivers/gpu/drm/meson/meson_vclk.c b/drivers/gpu/drm/meson/meson_vclk.c
-index e7c2b439d0f7..be6e152fc75a 100644
---- a/drivers/gpu/drm/meson/meson_vclk.c
-+++ b/drivers/gpu/drm/meson/meson_vclk.c
-@@ -96,6 +96,7 @@
- #define HHI_VDAC_CNTL1		0x2F8 /* 0xbe offset in data sheet */
- 
- #define HHI_HDMI_PLL_CNTL	0x320 /* 0xc8 offset in data sheet */
-+#define HHI_HDMI_PLL_CNTL_EN	BIT(30)
- #define HHI_HDMI_PLL_CNTL2	0x324 /* 0xc9 offset in data sheet */
- #define HHI_HDMI_PLL_CNTL3	0x328 /* 0xca offset in data sheet */
- #define HHI_HDMI_PLL_CNTL4	0x32C /* 0xcb offset in data sheet */
-@@ -468,7 +469,7 @@ void meson_hdmi_pll_set_params(struct meson_drm *priv, unsigned int m,
- 
- 		/* Enable and unreset */
- 		regmap_update_bits(priv->hhi, HHI_HDMI_PLL_CNTL,
--				   0x7 << 28, 0x4 << 28);
-+				   0x7 << 28, HHI_HDMI_PLL_CNTL_EN);
- 
- 		/* Poll for lock bit */
- 		regmap_read_poll_timeout(priv->hhi, HHI_HDMI_PLL_CNTL,
+diff --git a/drivers/gpu/drm/meson/meson_venc.c b/drivers/gpu/drm/meson/meson_venc.c
+index 2835133ab676..acad16ff7371 100644
+--- a/drivers/gpu/drm/meson/meson_venc.c
++++ b/drivers/gpu/drm/meson/meson_venc.c
+@@ -192,7 +192,7 @@ union meson_hdmi_venc_mode meson_hdmi_enci_mode_480i = {
+ 		.hso_end = 129,
+ 		.vso_even = 3,
+ 		.vso_odd = 260,
+-		.macv_max_amp = 0x810b,
++		.macv_max_amp = 0xb,
+ 		.video_prog_mode = 0xf0,
+ 		.video_mode = 0x8,
+ 		.sch_adjust = 0x20,
+@@ -212,7 +212,7 @@ union meson_hdmi_venc_mode meson_hdmi_enci_mode_576i = {
+ 		.hso_end = 129,
+ 		.vso_even = 3,
+ 		.vso_odd = 260,
+-		.macv_max_amp = 8107,
++		.macv_max_amp = 0x7,
+ 		.video_prog_mode = 0xff,
+ 		.video_mode = 0x13,
+ 		.sch_adjust = 0x28,
 -- 
 2.17.1
 
