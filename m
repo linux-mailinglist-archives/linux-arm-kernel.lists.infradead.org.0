@@ -2,45 +2,45 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A70A151AEB
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Jun 2019 20:45:19 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id EB2B751AEC
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Jun 2019 20:46:01 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
 	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=VM/An52Mf3NMT+x9xVOBv11xwLJNc6IUQ8kk1CAd11o=; b=oyEaoRGmgrG6j+
-	iCOQpvXrRhVZy4jNdu64nf2zBnxRDWwvyjxQOIZPeSuPTGdXgkDoHkLJqeLjrkoZRLYiUcKgDGVaf
-	SOdEhFfqtCLM0UCyJf0WeDjixSy8J4DEH2//Zx/1JR0sk5dLXF5useFCv+pil75JuLI4Zb+5Ewx9h
-	aKD84a1rmWb/d9VMcwBFWrt4ex2aKNP25jl2DVDly9tePGD7GydQuNyEJy8CsIY0pVXMSGIUZaCO3
-	Hp+UTH67GX2nEKNbtWbdAv/CQxklAv2M8ylSREv4jxu3CZz4Wi1whsubuv1/5AVjXCAXnB0kO9Zsb
-	8ZTeeLIUY9dr7haTn3mw==;
+	List-Owner; bh=30EuxfdNgKFB9YbDqxpMUL6fkrZv124QS4RQNvS074k=; b=LSwgQi+IrgisvV
+	4ssBo1MMhy3rrk80xVJ0s2dh5egQpQvK1FCw4hi6lQBvBCPvtHcNbhVjSdSJ+gpm310SoSVet6hjH
+	fiMEfFkf8YIIzfXbsuYM4loRNPnNAxVMzDi+iXj5p8N93vY5t9eGTGDUdfCW9a96BH3pcjhK6wtKT
+	2wfsyL228BQoSnEpI/jHsp6k3/qrgmQ00XAZicxG8lOl1Rj7gpFHNLGwoOyAAfCgY/F1QuzXD4lQR
+	CrKWDkHwRKzW0jyJlX9kdnerH3jC1x1/KZjkSc4aU+AJ7a3lQzWctUnyaKUZp5d4lrOiDRJvEYn2f
+	/qFuyeRvgeIZ7CtcrptA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hfTxs-0008Sk-3Q; Mon, 24 Jun 2019 18:45:16 +0000
+	id 1hfTyY-0000NT-Br; Mon, 24 Jun 2019 18:45:58 +0000
 Received: from smtp13.smtpout.orange.fr ([80.12.242.135]
  helo=smtp.smtpout.orange.fr)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hfTxh-0007Jj-GZ
- for linux-arm-kernel@lists.infradead.org; Mon, 24 Jun 2019 18:45:07 +0000
+ id 1hfTyL-0000N1-Jr
+ for linux-arm-kernel@lists.infradead.org; Mon, 24 Jun 2019 18:45:47 +0000
 Received: from belgarion ([86.210.207.101]) by mwinf5d75 with ME
- id Uiky2000B2BnxPa03ikyqz; Mon, 24 Jun 2019 20:45:00 +0200
+ id Uilj200092BnxPa03iljuh; Mon, 24 Jun 2019 20:45:44 +0200
 X-ME-Helo: belgarion
 X-ME-Auth: amFyem1pay5yb2JlcnRAb3JhbmdlLmZy
-X-ME-Date: Mon, 24 Jun 2019 20:45:00 +0200
+X-ME-Date: Mon, 24 Jun 2019 20:45:44 +0200
 X-ME-IP: 86.210.207.101
 From: Robert Jarzmik <robert.jarzmik@free.fr>
 To: arm@kernel.org
-Subject: [GIT PULL] pxa for v5.3
+Subject: [GIT PULL] pxa-dt for v5.3
 X-URL: http://belgarath.falguerolles.org/
-Date: Mon, 24 Jun 2019 20:44:58 +0200
-Message-ID: <878stqyg9h.fsf@belgarion.home>
+Date: Mon, 24 Jun 2019 20:45:43 +0200
+Message-ID: <877e9ayg88.fsf@belgarion.home>
 User-Agent: Gnus/5.130008 (Ma Gnus v0.8) Emacs/26 (gnu/linux)
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190624_114505_846261_C517FE27 
-X-CRM114-Status: GOOD (  15.64  )
+X-CRM114-CacheID: sfid-20190624_114545_933165_835D8D61 
+X-CRM114-Status: GOOD (  15.99  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -73,7 +73,7 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 Hi Arnd, Kevin, and Olof,
 
-This is the pxa pull request for 5.3. Can you please consider pulling ?
+This is the pxa devicetree pull request for 5.3. Can you please consider pulling ?
 
 The following changes since commit a188339ca5a396acc588e5851ed7e19f66b0ebd9:
 
@@ -81,26 +81,34 @@ The following changes since commit a188339ca5a396acc588e5851ed7e19f66b0ebd9:
 
 are available in the Git repository at:
 
-  https://github.com/rjarzmik/linux.git tags/pxa-for-5.3-2
+  https://github.com/rjarzmik/linux.git tags/pxa-dt-5.3
 
-for you to fetch changes up to f5a38c8ecf523e3b14c3766acf0d3119d96e8438:
+for you to fetch changes up to bea8754e784ef894a7aaf1821a1e8b700cc70f32:
 
-  ARM: pxa/lubbock: remove lubbock_set_misc_wr() from global view (2019-06-24 11:37:30 +0200)
-
-----------------------------------------------------------------
-This is the pxa changes for 5.3 cycle :
- - a simple cleanup for lubbock
+  ARM: dts: pxa300-raumfeld-speaker-one: add channel output mapping for STA320 (2019-06-24 11:35:02 +0200)
 
 ----------------------------------------------------------------
-Russell King (1):
-      ARM: pxa/lubbock: remove lubbock_set_misc_wr() from global view
+This is the pxa devicetree changes for 5.3 cycle :
+ - devicetree pinmux support for bias on pxa3xx
+ - devicetree pinmux bias usage for raumfeld
 
- arch/arm/mach-pxa/include/mach/lubbock.h | 4 ----
- arch/arm/mach-pxa/lubbock.c              | 3 +--
- 2 files changed, 1 insertion(+), 6 deletions(-)
+----------------------------------------------------------------
+Daniel Mack (5):
+      ARM: pxa3xx: dts: Add defines for pinctrl-single,bias-pull{up,down}
+      ARM: pxa: raumfeld-controller: fix 'dock detect' GPIO key
+      ARM: pxa: raumfeld-controller: add pinctrl for charger pins
+      ARM: pxa: raumfeld-common: fix comments in gpio_keys pinctrl node
+      ARM: dts: pxa300-raumfeld-speaker-one: add channel output mapping for STA320
+
+ arch/arm/boot/dts/pxa300-raumfeld-common.dtsi     |  6 +++---
+ arch/arm/boot/dts/pxa300-raumfeld-controller.dts  | 21 ++++++++++++++++++++-
+ arch/arm/boot/dts/pxa300-raumfeld-speaker-one.dts |  3 +++
+ arch/arm/boot/dts/pxa3xx.dtsi                     |  8 ++++++++
+ 4 files changed, 34 insertions(+), 4 deletions(-)
 
 -- 
 Robert
+
 
 _______________________________________________
 linux-arm-kernel mailing list
