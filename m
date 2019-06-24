@@ -2,70 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 106FD4FE4E
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Jun 2019 02:57:56 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B0B0F4FE52
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Jun 2019 03:12:33 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/qbBk/FzGMsbuf+5nAI2xHmyhbZWSBEbbUD39GyP2TI=; b=gwgPjq6U69Fi09
-	bF1NH6WrdYpUVBLXM8RaviZ8pOdhEMi4k/rH6AwnZmtbKg3yY4B+52iTtzM7bZFGj1okGwNvT9DXX
-	eVq1nhKlG+HHMFKQksK1kCHanz+mRlvuD8bqzS2IgmBpo/zOnIkeLeBzWlQF2KqCDdE1hpvMI0Gka
-	SQZY24xhEk7xbOdchnHxdBP1v3ArtBFnD/LaaEN9QZjF8lS6rbWj6UbXkKpwjPyPiPVYk6thIglpD
-	CN0TTmMqTZ9O/Cbfzd55HvWbJwuQcn8T6hI53/Rlf1xdctoqlJwsLoPcq4znjUC56EG1JmL/2NHXP
-	Y5y+X6fkFtMJ7Bqd4K4w==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=9ZDMWgv2Rr/RHCMIADZudjxHaSHwlNzf3ayG5KYKIr0=; b=Z8P
+	sdsdr5JEzzSfowRJJD+uNG59HU50iK38IXGI7QN9Hgsu/9tA7tQrQBPMCy5jYmLe7pFpZRP+ZNPWl
+	eFtGBITXwk0Qp1fhFy3/7FS9lReBrUa937vuIWuOJ9YKerYyEeccYbI/A9lYh1aIVG3tlcobQXPFm
+	Ueiagvnj8Giu3wa2GoaKL7QgQzzrVrYIxyBqu4GSVqONGDsG0QQkEpe/44h8nQl82VjQCvdTBOql9
+	N1dXTewR+8RxUwyvCKcjY0X7ZDWI++3JiKefA9WmXJU3vkJJE9kRv4A8iBz9Q5RrOrpTBVQr5tNZ+
+	U9jyDMjU29S38lDKouQj4I/f1gek/Mg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hfDIv-0002Em-Rw; Mon, 24 Jun 2019 00:57:53 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1hfDX3-0006fz-2x; Mon, 24 Jun 2019 01:12:29 +0000
+Received: from mail-vk1-f195.google.com ([209.85.221.195])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hfDIh-0002ET-Lb
- for linux-arm-kernel@lists.infradead.org; Mon, 24 Jun 2019 00:57:40 +0000
-Received: from dragon (li1322-146.members.linode.com [45.79.223.146])
- (using TLSv1.2 with cipher DHE-RSA-AES128-SHA (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id C52D922CDA;
- Mon, 24 Jun 2019 00:57:33 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1561337859;
- bh=miD3wAHyi4O1ctbdmZlddUy7kefFm9ICPlAWm0WphYQ=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=x1ZliunoMMDtr76MUYyZbSnxuFYCPAbXH0yiUCbYH7o+g7nSzeXUYAtyKkxg7YmtJ
- D7DnumVulaD1UZTWiFeT5qIEI2joPWT5fX03nHedfCUjkmewLmwu3bUb/ZbCyTACcj
- PYrrhl1gPnDluoYf5Sa/qLiuQBHt3H7YbpmeBTWw=
-Date: Mon, 24 Jun 2019 08:57:26 +0800
+ id 1hfDWo-0006fW-QH
+ for linux-arm-kernel@lists.infradead.org; Mon, 24 Jun 2019 01:12:16 +0000
+Received: by mail-vk1-f195.google.com with SMTP id k1so2438319vkb.2
+ for <linux-arm-kernel@lists.infradead.org>;
+ Sun, 23 Jun 2019 18:12:13 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=ChVt30miqrq6hdHJLmOve2UejHOyLwveK0jMb9sby7o=;
+ b=k+ApsLurXCrNg40uxAsrsBY07U7x6xheYzx9TcspkXw8d0Xn779FnoQekQg7woS/HO
+ Em1pbqYTZMo+NNAMpqacpvHZQYx9Ps5sV8KxoBK4pfHcFAzIHQMXBGKwu9i4gCAavIRv
+ TIe0NuP6uF8qgImHHenwbiYPDnkGDJ4VE8hsYkgJeZVjueXckHLxR03ZRn0iVkgoIqht
+ u1wKPwTg5lv/bZ2jL3ou5pmy6YAOnW6aQFpCD0v+0MrUFVzL57FCfEduitisDuX5dJb9
+ xrY4++J47cjkEdA/UeND+o83dLO96BxlA68YJdgEKt3iNMA5kRN1MenotDfYjEZEYtQg
+ Ytqg==
+X-Gm-Message-State: APjAAAWNr+aKCsTInTKFHPQEipMdCdegFwQNJaVu/whCH6gee1RtpJPj
+ rFj0luUPaJAY3LP7l3OlY14UxbFNi1M=
+X-Google-Smtp-Source: APXvYqxILNXnpuDyMqegwhRQ5nvmpoP75HUJHX/HXU5n41mvufnRskJlkIA3p/wOHe+JUPb79BVFVw==
+X-Received: by 2002:a1f:a887:: with SMTP id r129mr957357vke.75.1561338732343; 
+ Sun, 23 Jun 2019 18:12:12 -0700 (PDT)
+Received: from localhost (li1322-146.members.linode.com. [45.79.223.146])
+ by smtp.gmail.com with ESMTPSA id v4sm3724663vsc.7.2019.06.23.18.12.11
+ (version=TLS1_2 cipher=AES128-SHA bits=128/128);
+ Sun, 23 Jun 2019 18:12:11 -0700 (PDT)
 From: Shawn Guo <shawnguo@kernel.org>
-To: Daniel Baluta <daniel.baluta@gmail.com>
-Subject: Re: [PATCH] arm64: dts: imx8qxp: Add lsio_mu13 node
-Message-ID: <20190624005724.GG3800@dragon>
-References: <20190618210516.28866-1-daniel.baluta@nxp.com>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190618210516.28866-1-daniel.baluta@nxp.com>
-User-Agent: Mutt/1.5.21 (2010-09-15)
+To: linux-arm-kernel@lists.infradead.org
+Subject: [PATCH 1/2] arm64: dts: imx8qxp: sort alias alphabetically
+Date: Mon, 24 Jun 2019 09:12:02 +0800
+Message-Id: <20190624011203.10711-1-shawnguo@kernel.org>
+X-Mailer: git-send-email 2.18.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190623_175739_726455_96DEAEED 
-X-CRM114-Status: UNSURE (   7.15  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190623_181214_850639_6363D16C 
+X-CRM114-Status: GOOD (  10.16  )
+X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.221.195 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -77,22 +76,40 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, aisheng.dong@nxp.com, anson.huang@nxp.com,
- devicetree@vger.kernel.org, Daniel Baluta <daniel.baluta@nxp.com>,
- s.hauer@pengutronix.de, linux-kernel@vger.kernel.org, robh+dt@kernel.org,
- linux-imx@nxp.com, kernel@pengutronix.de, festevam@gmail.com,
- shengjiu.wang@nxp.com, linux-arm-kernel@lists.infradead.org
+Cc: devicetree@vger.kernel.org, Shawn Guo <shawnguo@kernel.org>,
+ Fabio Estevam <festevam@gmail.com>, NXP Linux Team <linux-imx@nxp.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Jun 19, 2019 at 12:05:16AM +0300, Daniel Baluta wrote:
-> lsio_mu13 node is used to communicate with DSP.
-> 
-> Signed-off-by: Daniel Baluta <daniel.baluta@nxp.com>
+We prefer to sort alias entries alphabetically, so let's move serial0
+to the right place.
 
-Applied, thanks.
+Signed-off-by: Shawn Guo <shawnguo@kernel.org>
+---
+ arch/arm64/boot/dts/freescale/imx8qxp.dtsi | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/arch/arm64/boot/dts/freescale/imx8qxp.dtsi b/arch/arm64/boot/dts/freescale/imx8qxp.dtsi
+index dcdbd86897ed..33bf0a53db9e 100644
+--- a/arch/arm64/boot/dts/freescale/imx8qxp.dtsi
++++ b/arch/arm64/boot/dts/freescale/imx8qxp.dtsi
+@@ -28,8 +28,8 @@
+ 		mmc0 = &usdhc1;
+ 		mmc1 = &usdhc2;
+ 		mmc2 = &usdhc3;
+-		serial0 = &adma_lpuart0;
+ 		mu1 = &lsio_mu1;
++		serial0 = &adma_lpuart0;
+ 	};
+ 
+ 	cpus {
+-- 
+2.18.0
+
 
 _______________________________________________
 linux-arm-kernel mailing list
