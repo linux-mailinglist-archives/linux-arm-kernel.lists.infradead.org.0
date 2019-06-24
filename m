@@ -2,86 +2,88 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2C1FD51CED
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Jun 2019 23:16:21 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B357851D1E
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Jun 2019 23:30:58 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=xZO8w3r3JhB/zP0arM0PWacCTTAL7Yp1rEBbLoi6Tcw=; b=DifnberPDg+9V1
-	zexw/LSxsNR4G0yOI4Xs7IGielkBVNQB6cj7DNlzw0qNixVx02PSRf1+ME3AzCxjh9pds99n5jdpt
-	N3nyIMbxmZaH8svopn8eTUGGws9oKi8ilfBp5crSPYDdHNwHLMlvtxpciAztBm0jPsNr61moymtvP
-	8QZmXq5/PcvtwAPFdVrqLaJPe0re8QffO66NR7sQARZSQG7H4RPTB9/p6MCkcyNIVhxMkNKpjxU/X
-	nbX5pe2sGhXDxVUlEvQOkwz7R8vMKuR92eXku/oMat7Z8Mhp+mRxPWYG8ghPwBloq3wceURawI6PF
-	W4OIpT1tSA5Rz2swvByA==;
+	List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=v/E79yKZoJcC19hkSRNJqkZTYROvrgrvGmjLYKteTt0=; b=DLZieQJr0RCMVF
+	gVT+hNEtO2tykzlRG+AduTsOfGYNKS9mED6gRaScnZJ/hD3M4P54/rqYOoI0JWzXYtCsxv7RKgqcq
+	5hFDXM4H6dUbKBMls7GKGITI+4/z0ZLbNBCsXOcgbpQBiYfAR7e10zCeMhEO5xJOFhVcvmzzmf5mz
+	pDfBFI3I0JJnv1Hpplbpr3o0lgPOaHHx8PvgI13+gshBJbr3/9Fhkd69qyeFHSXNVxAQEgOje7hEx
+	Y3EKef1CG+xM6HiwoMVrsqOYe5tMMoudyXQ0fw9s+vXk73hj72LGxanpmQ8Dp9ELbn6zkDbjagcPg
+	6dD1LXgbAc6U8LEMuSpw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hfWK1-0004ws-K8; Mon, 24 Jun 2019 21:16:17 +0000
-Received: from mail-io1-xd34.google.com ([2607:f8b0:4864:20::d34])
+	id 1hfWYB-0001Ul-Bc; Mon, 24 Jun 2019 21:30:55 +0000
+Received: from mail-qt1-x844.google.com ([2607:f8b0:4864:20::844])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hfWJr-0004w7-0P
- for linux-arm-kernel@lists.infradead.org; Mon, 24 Jun 2019 21:16:08 +0000
-Received: by mail-io1-xd34.google.com with SMTP id h6so2104050ioh.3
+ id 1hfWXz-0001UM-8b
+ for linux-arm-kernel@lists.infradead.org; Mon, 24 Jun 2019 21:30:44 +0000
+Received: by mail-qt1-x844.google.com with SMTP id i34so16148802qta.6
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 24 Jun 2019 14:16:05 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=subject:to:cc:references:from:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=h8aI2OpY2BAfzDNvFZ3TNgMEvHw9WrhdG1WTVU1HZ6o=;
- b=WmmeTTYCDtwI4cez2hHskkUb/f2zbtWIh47Df+A+CnCvmcBAuRgvczUyHTEzoPuaOy
- nz0iE6NjoFm/iSfcWNaG/Rnc4zBH+8Ub2s3s1W00ct5bJSD25gtV8X7Y1nMnaA+f2mgH
- SK2FkRdOCuVN8B3n6loqxPcgQWPa2Z6rZGAR/gdHVascBNuyUBqnoAk7iJTUVZOmN9O5
- qfWHW4qlLOKBI3JPmFNiAMJCIp47VsfCY7mgmyLWnw9OAj7MjtaTlDsqTGL9mFXpNs+S
- cDExxp6hBELeQ9dmnkBmRJmLYoXcwt6EdCIB6LlhUTSXJpkAs5TJYKzeNoU4Y2nvLhoh
- p5dQ==
+ Mon, 24 Jun 2019 14:30:42 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=lca.pw; s=google;
+ h=message-id:subject:from:to:cc:date:in-reply-to:references
+ :mime-version:content-transfer-encoding;
+ bh=IdPYB32R1Ky5udWdlDMBAJnCn+Bo2KtPbU6CqfZba4M=;
+ b=YtNTjUwedsLsfc7DrryL4Gz7SHsyOwurki3ZAuLGi5jv3uoV1XDzNuVshE2rgNJNk7
+ 7B4h1/7Ftgrcz4FUW9IG5jLOzQmp+3MiTHbK1xzrjDwrPmaEvaaCsHhik+IX27Rxptfy
+ hCbmTnibUCjBBtgsebBw1Yu7PyaULyPUdqE0uikoDJe1LStMwO3JfI7lG38VrHZ8Vlsf
+ C8N0Y39Vin7o/umAsyJo603Fl/rEM30epk4k/3BDRXauVyd49VRXp2mTLfwCaSwo+ryL
+ CCfu6apCDfSUOfIcf6TMIT6ubmfzCP3IGRY2YjyczjnEeDrzIjdliMcKaAMpp/KNc8aa
+ IOzw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=h8aI2OpY2BAfzDNvFZ3TNgMEvHw9WrhdG1WTVU1HZ6o=;
- b=hX6Ijev/+JR1X/Reg08ycJGXhj3vDfmBOMlTQ3sNNkYXD7BfCzguz+MOFwPheQoiOI
- JlgwOmeKO13lNnnQqdLRmmbRDMYdUmT076eMCf22OpAB5Q0GDxyFqSA5umOant9ZXVpi
- 7ri++0RSvgxbAJColh7EA+f4adOIWb8f3iO/kZ4U+4Fajon0V7OdX3wzrBXvmkredUbE
- v9lRrIcf/ZXb0z5rcNIv5eSE+GeaHpHM9XSrpnM5SAaZ7HQypykOTKUuSkiuhKdjibg2
- iR20d0xXOEyB8NqFlPDtLzmIhk1YY9/3JjLdbgwNB1N43DM3LwaEGbRB3FeoUmkcm/ja
- 4fOw==
-X-Gm-Message-State: APjAAAXMUZLz3yWhOof9PLCmcZFP6NUP7qziSuBQ262plnEmOyi5+eNu
- JIzqqGIWXxEAK+6gXSwA/45jc2CFKQny9A==
-X-Google-Smtp-Source: APXvYqy4nre2bpmlOpNAx5x3/VmpcP2S2sogYaxvXfJ/DXgJGUOK7qTbZPzOuG02VdqeuOf5/6uAEg==
-X-Received: by 2002:a6b:b709:: with SMTP id h9mr3662071iof.2.1561410964319;
- Mon, 24 Jun 2019 14:16:04 -0700 (PDT)
-Received: from [172.22.22.26] (c-71-195-29-92.hsd1.mn.comcast.net.
- [71.195.29.92])
- by smtp.googlemail.com with ESMTPSA id p3sm14613932iog.70.2019.06.24.14.16.02
+ h=x-gm-message-state:message-id:subject:from:to:cc:date:in-reply-to
+ :references:mime-version:content-transfer-encoding;
+ bh=IdPYB32R1Ky5udWdlDMBAJnCn+Bo2KtPbU6CqfZba4M=;
+ b=AA+PHfe6aZcvVpObBxNxCrC8+aTKMx8hWOziH4IKK6G+I9pd23ZO8GCTiA7EfAVLJI
+ cgMd9Dd1BgSG33+VxdAwOPoUEXnIYp/pAXQcAUq9bUWDYUHPerE56BGpWaigqMs8HMvP
+ YdGZBL9bgungSmm+bXSN2FJ3hLERmfMI+Y1n52hirUNyGQAJSyBvqbcCFxUeu4XJtOfp
+ K0/cKhW1xWAbmlIJJXK4Dv80p5YoHw7dV3ruXmwpe3u1psNQWLrM70XyPa0hvigANz5A
+ KnADH9PuAU8gqq3WaR4bNSSb4xopCrJYGjcyi2doKy4tfp4b3B6jIIg6HkyZdrhzLi5f
+ 4Bhw==
+X-Gm-Message-State: APjAAAXXuw3JwmJsv23Elsnv0CRYF31q8Gis5rNwrjexCyGwIaXhWzsu
+ 4bB1MDAi6uFkCsxRGSt6sFJ+4Q==
+X-Google-Smtp-Source: APXvYqyS6XZTOn9QKS3QHPK7KdIUEBDmjNO9cZeXeZ9E/jUJ7+RGxN37MlErmlyPXHlBJErk3AADkg==
+X-Received: by 2002:ac8:1946:: with SMTP id g6mr44679856qtk.225.1561411841994; 
+ Mon, 24 Jun 2019 14:30:41 -0700 (PDT)
+Received: from dhcp-41-57.bos.redhat.com (nat-pool-bos-t.redhat.com.
+ [66.187.233.206])
+ by smtp.gmail.com with ESMTPSA id s23sm7340370qtk.31.2019.06.24.14.30.40
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Mon, 24 Jun 2019 14:16:03 -0700 (PDT)
-Subject: Re: WWAN Controller Framework (was IPA [PATCH v2 00/17])
-To: Dan Williams <dcbw@redhat.com>, davem@davemloft.net, arnd@arndb.de,
- bjorn.andersson@linaro.org, ilias.apalodimas@linaro.org
-References: <20190531035348.7194-1-elder@linaro.org>
- <23ff4cce-1fee-98ab-3608-1fd09c2d97f1@linaro.org>
- <f0fcee096d779837abc46e7badae9105ee8aaecf.camel@redhat.com>
-From: Alex Elder <elder@linaro.org>
-Message-ID: <ad84c95a-1283-c0f5-0fb7-0909d07ee692@linaro.org>
-Date: Mon, 24 Jun 2019 16:16:02 -0500
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.7.1
-MIME-Version: 1.0
-In-Reply-To: <f0fcee096d779837abc46e7badae9105ee8aaecf.camel@redhat.com>
-Content-Language: en-US
+ Mon, 24 Jun 2019 14:30:41 -0700 (PDT)
+Message-ID: <1561411839.5154.60.camel@lca.pw>
+Subject: Re: LTP hugemmap05 test case failure on arm64 with linux-next
+ (next-20190613)
+From: Qian Cai <cai@lca.pw>
+To: Will Deacon <will@kernel.org>
+Date: Mon, 24 Jun 2019 17:30:39 -0400
+In-Reply-To: <1561381129.5154.55.camel@lca.pw>
+References: <1560461641.5154.19.camel@lca.pw>
+ <20190614102017.GC10659@fuggles.cambridge.arm.com>
+ <1560514539.5154.20.camel@lca.pw>
+ <054b6532-a867-ec7c-0a72-6a58d4b2723e@arm.com>
+ <EC704BC3-62FF-4DCE-8127-40279ED50D65@lca.pw>
+ <20190624093507.6m2quduiacuot3ne@willie-the-truck>
+ <1561381129.5154.55.camel@lca.pw>
+X-Mailer: Evolution 3.22.6 (3.22.6-10.el7) 
+Mime-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190624_141607_060693_DF175EAA 
-X-CRM114-Status: GOOD (  28.22  )
+X-CRM114-CacheID: sfid-20190624_143043_365155_FACB9464 
+X-CRM114-Status: UNSURE (   7.10  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:d34 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:844 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -103,175 +105,61 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, syadagir@codeaurora.org, ejcaruso@google.com,
- netdev@vger.kernel.org, linux-kernel@vger.kernel.org, evgreen@chromium.org,
- linux-arm-kernel@lists.infradead.org, linux-arm-msm@vger.kernel.org,
- subashab@codeaurora.org, linux-soc@vger.kernel.org, abhishek.esse@gmail.com,
- cpratapa@codeaurora.org, benchan@google.com
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Anshuman Khandual <anshuman.khandual@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, linux-kernel@vger.kernel.org,
+ linux-mm@kvack.org, linux-arm-kernel@lists.infradead.org,
+ Mike Kravetz <mike.kravetz@oracle.com>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 6/24/19 2:54 PM, Dan Williams wrote:
-> On Mon, 2019-06-24 at 11:30 -0500, Alex Elder wrote:
->> OK I want to try to organize a little more concisely some of the
->> discussion on this, because there is a very large amount of volume
->> to date and I think we need to try to narrow the focus back down
->> again.
->>
->> I'm going to use a few terms here.  Some of these I really don't
->> like, but I want to be unambiguous *and* (at least for now) I want
->> to avoid the very overloaded term "device".
->>
->> I have lots more to say, but let's start with a top-level picture,
->> to make sure we're all on the same page.
->>
->>          WWAN Communication
->>          Channel (Physical)
->>                  |     ------------------------
->> ------------     v     |           :+ Control |  \
->>>          |-----------|           :+ Data    |  |
->>>    AP    |           | WWAN unit :+ Voice   |   > Functions
->>>          |===========|           :+ GPS     |  |
->> ------------     ^     |           :+ ...     |  /
->>                  |     -------------------------
->>           Multiplexed WWAN
->>            Communication
->>          Channel (Physical)
->>
->> - The *AP* is the main CPU complex that's running Linux on one or
->>   more CPU cores.
->> - A *WWAN unit* is an entity that shares one or more physical
->>   *WWAN communication channels* with the AP.
-> 
-> You could just say "WWAN modem" here.
-
-That sounds great to me.
-
->> - A *WWAN communication channel* is a bidirectional means of
->>   carrying data between the AP and WWAN unit.
->> - A WWAN communication channel carries data using a *WWAN protocol*.
->> - A WWAN unit implements one or more *WWAN functions*, such as
->>   5G data, LTE voice, GPS, and so on.
-> 
-> Go more generic here. Not just 5G data but any WWAN IP-based data
-> (GPRS, EDGE, CDMA, UMTS, EVDO, LTE, 5G, etc). And not just LTE voice
-> but any voice data; plenty of devices don't support LTE but still have
-> "WWAN logical communication channels"
-
-I really meant *any* sort of function, and was only trying
-to give a few examples.  So yes, my meaning was completely
-generic, as you suggest.
-
->> - A WWAN unit shall implement a *WWAN control function*, used to
->>   manage the use of other WWAN functions, as well as the WWAN unit
->>   itself.
->> - The AP communicates with a WWAN function using a WWAN protocol.
->> - A WWAN physical channel can be *multiplexed*, in which case it
->>   carries the data for one or more *WWAN logical channels*.
-> 
-> It's unclear to me what "physical" means here. USB Interface or
-> Endpoint or PCI Function or SMD channel? Or kernel TTY device?
-
-I'm trying to distinguish between (let's say) "hardware" communication
-channels (such as what IPA basically provides) and logical ones,
-whose data is multiplexed over a "hardware"/"physical" channel.
-Maybe "link" would be a better term for what I referred to as a
-physical channel, and then have "channels" be multiplexed over a link.
-If you have a good suggestion, please offer it.
-
-But I think yes, USB interface, TTY device, etc. are what I mean.
-I wanted to capture the fact that there might be more than one of
-these (for example a user space QMI link for control, and IPA link
-for data?), and that any one of these might also be multiplexed.
-
-Multiplexing is a pretty basic capability of a network link, and I
-think the only reason I called it out separately is to be explicit
-that it is needs to be supported.
-
-> For example on Qualcomm-based USB dongles a given USB Interface's
-> Endpoint represents a QMAP "IP data" channel which itself could be
-> multiplexed into separate "IP data" channels.  Or that USB Endpoint(s)
-> could be exposed as a TTY which itself can be MUX-ed dynamically using
-> GSM 07.10.
-
-Yeah.  In this case the hardware connection between the AP and the
-USB dongle would provide a WWAN link (which I think corresponds to
-the QMAP "IP data" channel).  And if you wanted to multiplex that
-you would use a multiplexing protocol (like QMAP).  And that protocol
-would carry one or more logical channels, each using its own WWAN
-protocol.  It sounds like GSM 07.10 would be another WWAN multiplexing
-protocol.
-
-> To me "physical" usually means the bus type (PCI, USB, SMD, whatever).
-> A Linux hardware driver (IPA, qmi_wwan, option, sierra, etc) binds to
-> that physical entity using hardware IDs (USB or PCI VID/PID, devicetree
-> properties) and exposes some "WWAN logical communication channels".
-
-(Or perhaps exposes the ability to create "WWAN logical channels.")
-
-"Physical" is probably not a good term.  And perhaps focusing
-on the transport isn't right--maybe the focus should mainly be on
-the WWAN modem entity.  But one of the things we're trying to
-address here is that there might be several distinct "physical"
-paths through which the AP and modem can communicate, so a driver's
-ability to provide such a path should be a sort of first class
-abstraction.
-
-I'm really trying to get this discussion to converge a little, to
-have a few anchor points to build on.  I hope we're getting there.
-
-> Those logical channels might be multiplexed and another driver (rmnet)
-> could handle exposing the de-muxed logical channels that the muxed
-> logical channel carries.
-> 
->> - A multiplexed WWAN communication channel uses a *WWAN wultiplexing
->>   protocol*, which is used to separate independent data streams
->>   carrying other WWAN protocols.
->> - A WWAN logical channel carries a bidirectional stream of WWAN
->>   protocol data between an entity on the AP and a WWAN function.
-> 
-> It *usually* is bidirectional. For example some GPS logical
-> communication channels just start spitting out NMEA when you give the
-> control function a command. The NMEA ports themselves don't accept any
-> input.
-
-That's fine...  I don't think there's anything wrong with a
-particular application not using both directions.
-
->> Does that adequately represent a very high-level picture of what
->> we're trying to manage?
-> 
-> Yes, pretty well. Thanks for trying to specify it all.
-
-I think we're making progress.  I have some more thoughts but I
-think I'll wait until tomorrow to share them.
-
-Thanks a lot Dan.  At some point it might be better to have a
-conference call to make better progress, but I'm not suggesting
-that yet.
-
-					-Alex
-
->> And if I understand it right, the purpose of the generic framework
->> being discussed is to define a common mechanism for managing (i.e.,
->> discovering, creating, destroying, querying, configuring, enabling,
->> disabling, etc.) WWAN units and the functions they implement, along
->> with the communication and logical channels used to communicate with
->> them.
-> 
-> Yes.
-> 
-> Dan
-> 
->> Comments?
->>
->> 					-Alex
-> 
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+U28gdGhlIHByb2JsZW0gaXMgdGhhdCBpcGNnZXRfcHVibGljKCkgaGFzIGhlbGQgdGhlIHNlbWFw
+aG9yZSAiaWRzLT5yd3NlbSIgZm9yCnRvbyBsb25nIHNlZW1zIHVubmVjZXNzYXJpbHkgYW5kIHRo
+ZW4gZ29lcyB0byBzbGVlcCBzb21ldGltZXMgZHVlIHRvIGRpcmVjdApyZWNsYWltIChvdGhlciB0
+aW1lcyBMVFAgaHVnZW1tYXAwNSBbMV0gaGFzwqBodWdldGxiX2ZpbGVfc2V0dXAoKSByZXR1cm5z
+Ci1FTk9NRU0pLAoKW8KgwqA3ODguNzY1NzM5XVsgVDEzMTVdIElORk86IHRhc2sgaHVnZW1tYXAw
+NTo1MDAxIGNhbid0IGRpZSBmb3IgbW9yZSB0aGFuIDEyMgpzZWNvbmRzLgpbwqDCoDc4OC43NzM1
+MTJdWyBUMTMxNV0gaHVnZW1tYXAwNcKgwqDCoMKgwqDCoFLCoMKgcnVubmluZyB0YXNrwqDCoMKg
+wqAyNTYwMMKgwqA1MDAxwqDCoMKgwqDCoMKgMQoweDAwMDAwMDBkClvCoMKgNzg4Ljc4MTM0OF1b
+IFQxMzE1XSBDYWxsIHRyYWNlOgpbwqDCoDc4OC43ODQ1MzZdWyBUMTMxNV3CoMKgX19zd2l0Y2hf
+dG8rMHgyZTAvMHgzN2MKW8KgwqA3ODguNzg4ODQ4XVsgVDEzMTVdwqDCoHRyeV90b19mcmVlX3Bh
+Z2VzKzB4NjE0LzB4OTM0ClvCoMKgNzg4Ljc5MzY3OV1bIFQxMzE1XcKgwqBfX2FsbG9jX3BhZ2Vz
+X25vZGVtYXNrKzB4ZTg4LzB4MWQ2MApbwqDCoDc4OC43OTkwMzBdWyBUMTMxNV3CoMKgYWxsb2Nf
+ZnJlc2hfaHVnZV9wYWdlKzB4MTZjLzB4NTg4ClvCoMKgNzg4LjgwNDIwNl1bIFQxMzE1XcKgwqBh
+bGxvY19zdXJwbHVzX2h1Z2VfcGFnZSsweDljLzB4Mjc4ClvCoMKgNzg4LjgwOTQ2OF1bIFQxMzE1
+XcKgwqBodWdldGxiX2FjY3RfbWVtb3J5KzB4MTE0LzB4NWM0ClvCoMKgNzg4LjgxNDQ2OV1bIFQx
+MzE1XcKgwqBodWdldGxiX3Jlc2VydmVfcGFnZXMrMHgxNzAvMHgyYjAKW8KgwqA3ODguODE5NjYy
+XVsgVDEzMTVdwqDCoGh1Z2V0bGJfZmlsZV9zZXR1cCsweDI2Yy8weDNhOApbwqDCoDc4OC44MjQ2
+MDBdWyBUMTMxNV3CoMKgbmV3c2VnKzB4MjIwLzB4NjNjClvCoMKgNzg4LjgyODQ5MF1bIFQxMzE1
+XcKgwqBpcGNnZXQrMHg1NzAvMHg2NzQKW8KgwqA3ODguODMyMzc3XVsgVDEzMTVdwqDCoGtzeXNf
+c2htZ2V0KzB4OTAvMHhjNApbwqDCoDc4OC44MzY1MjVdWyBUMTMxNV3CoMKgX19hcm02NF9zeXNf
+c2htZ2V0KzB4NTQvMHg4OApbwqDCoDc4OC44NDEyODJdWyBUMTMxNV3CoMKgZWwwX3N2Y19oYW5k
+bGVyKzB4MTljLzB4MjZjClvCoMKgNzg4Ljg0NTk1Ml1bIFQxMzE1XcKgwqBlbDBfc3ZjKzB4OC8w
+eGMKCmFuZCB0aGVuIGFsbCBvdGhlciBwcm9jZXNzZXMgYXJlIHdhaXRpbmcgb24gdGhlIHNlbWFw
+aG9yZSBjYXVzZXMgbG9jawpjb250ZW50aW9ucywKClvCoMKgNzg4Ljg0OTU4M11bIFQxMzE1XSBJ
+TkZPOiB0YXNrIGh1Z2VtbWFwMDU6NTAyNyBibG9ja2VkIGZvciBtb3JlIHRoYW4gMTIyCnNlY29u
+ZHMuClvCoMKgNzg4Ljg1NzExOV1bIFQxMzE1XcKgwqDCoMKgwqDCoMKgVGFpbnRlZDogR8KgwqDC
+oMKgwqDCoMKgwqBXwqDCoMKgwqDCoMKgwqDCoMKgNS4yLjAtcmM2LW5leHQtMjAxOTA2MjQgCiMy
+ClvCoMKgNzg4Ljg2NDU2Nl1bIFQxMzE1XSAiZWNobyAwID4gL3Byb2Mvc3lzL2tlcm5lbC9odW5n
+X3Rhc2tfdGltZW91dF9zZWNzIgpkaXNhYmxlcyB0aGlzIG1lc3NhZ2UuClvCoMKgNzg4Ljg3MzEz
+OV1bIFQxMzE1XSBodWdlbW1hcDA1wqDCoMKgwqDCoMKgRDI2OTYwwqDCoDUwMjfCoMKgwqA1MDI2
+IDB4MDAwMDAwMDAKW8KgwqA3ODguODc5Mzk1XVsgVDEzMTVdIENhbGwgdHJhY2U6ClvCoMKgNzg4
+Ljg4MjU3Nl1bIFQxMzE1XcKgwqBfX3N3aXRjaF90bysweDJlMC8weDM3YwpbwqDCoDc4OC44ODY5
+MDFdWyBUMTMxNV3CoMKgX19zY2hlZHVsZSsweGI3NC8weGYwYwpbwqDCoDc4OC44OTExMzZdWyBU
+MTMxNV3CoMKgc2NoZWR1bGUrMHg2MC8weDE2OApbwqDCoDc4OC44OTUwOTddWyBUMTMxNV3CoMKg
+cndzZW1fZG93bl93cml0ZV9zbG93cGF0aCsweDVhMC8weDhjOApbwqDCoDc4OC45MDA2NTNdWyBU
+MTMxNV3CoMKgZG93bl93cml0ZSsweGMwLzB4YzQKW8KgwqA3ODguOTA0NzE1XVsgVDEzMTVdwqDC
+oGlwY2dldCsweDc0LzB4Njc0ClvCoMKgNzg4LjkwODUxNl1bIFQxMzE1XcKgwqBrc3lzX3NobWdl
+dCsweDkwLzB4YzQKW8KgwqA3ODguOTEyNjY0XVsgVDEzMTVdwqDCoF9fYXJtNjRfc3lzX3NobWdl
+dCsweDU0LzB4ODgKW8KgwqA3ODguOTE3NDIwXVsgVDEzMTVdwqDCoGVsMF9zdmNfaGFuZGxlcisw
+eDE5Yy8weDI2YwpbwqDCoDc4OC45MjIwODhdWyBUMTMxNV3CoMKgZWwwX3N2YysweDgvMHhjCgpJ
+ZGVhbGx5LCBpdCBzZWVtcyBvbmx5IGlwY19maW5ka2V5KCkgYW5kIG5ld3NlZygpIGluIHRoaXMg
+cGF0aCBuZWVkcyB0byBob2xkIHRoZQpzZW1hcGhvcmUgdG8gcHJvdGVjdCBjb25jdXJyZW5jeSBh
+Y2Nlc3MsIHNvIGl0IGNvdWxkIGp1c3QgYmUgY29udmVydGVkIHRvIGEKc3BpbmxvY2sgaW5zdGVh
+ZC4KClsxXSAuL2h1Z2VtbWFwMDUgLXMgLW0KCmh0dHBzOi8vZ2l0aHViLmNvbS9saW51eC10ZXN0
+LXByb2plY3QvbHRwL2Jsb2IvbWFzdGVyL3Rlc3RjYXNlcy9rZXJuZWwvbWVtL2h1Z2V0CmxiL2h1
+Z2VtbWFwL2h1Z2VtbWFwMDUuYwoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5l
+bEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4v
+bGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
