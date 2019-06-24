@@ -2,47 +2,48 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 15E9A50CE0
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Jun 2019 15:56:51 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2334D50CF1
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Jun 2019 15:58:32 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=orH6YcO1Ild3Q9S0gF2yruxzfaQmoooGCgnxgSBBxe4=; b=CffF88jHlJNwVI
-	qtO+lLHrr4W8cNc6CXcSmvAssWFhhIz/T9U0YR2mp9vMuuN5vMdCfVdYAlC9+DQMisGT6R2vbnf3N
-	twpyrXn9MoxRi3wFxxP/myfpI2Es+a43pOJ3cbo0CUa5wZqHB+7l6KP06wCGkzGUtcK54f10KF9+8
-	3p/2/UP+E1atKv34GIiUHVqjUo8kYkH1JTMsYmQTC37H1TbI2t0/uFXlqilTCIgYnykQ2sIbAl3YT
-	4pJRQ4TeL7nPTvyKnnyyAwSgJFmkx5leQUSA+KgSQDB+794az8MUrTfqRbdv0XU2H2C2lnXj1DNqj
-	GG+SMqOjIMxSzwEl4klQ==;
+	List-Owner; bh=GHiL8CUbH2jbQYvibyqEka8FSrHA+GiElvp8adGEscE=; b=cSWfGErs9BrZVY
+	Yj86n6TzBDHF8QkYfNQ2pNtzFjeHujx/UrUPuCoBd4T7XVkKsLWtn5oxr0MuatPc1bsOoH8kBxi/K
+	qppASyIktVDcn0PCEXzHP8rW1KmieO4fzblP+1BPU+8mOojUe2w2nTLSVVJ0qtWXC8y0uY1v1mpkv
+	6aF2J8/OmEFciEEIqGYtWjTwwt9bFPG+ymLR75n85U5UJoHaqxSJ+qsWixTqGsFKW/ZlFC6EbHztd
+	p9NMvThhIzb+TGf+ymSGXqVJxvTM4AxoG5uN3G4bM0ZEdDdZRdPSZbg5B4Ciy/hXTJSUglqaBIuWw
+	y51KYNcAyB+n3pQegugQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hfPSh-0005d2-CS; Mon, 24 Jun 2019 13:56:47 +0000
+	id 1hfPUM-000678-CI; Mon, 24 Jun 2019 13:58:30 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hfPSQ-0005cP-Bl
- for linux-arm-kernel@lists.infradead.org; Mon, 24 Jun 2019 13:56:31 +0000
+ id 1hfPUA-00066A-DG
+ for linux-arm-kernel@lists.infradead.org; Mon, 24 Jun 2019 13:58:19 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 6E6DF344;
- Mon, 24 Jun 2019 06:56:29 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 7E44DC0A;
+ Mon, 24 Jun 2019 06:58:17 -0700 (PDT)
 Received: from arrakis.emea.arm.com (arrakis.cambridge.arm.com [10.1.196.78])
  by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
- D58ED3F71E; Mon, 24 Jun 2019 06:56:26 -0700 (PDT)
-Date: Mon, 24 Jun 2019 14:56:24 +0100
+ E77423F7BE; Mon, 24 Jun 2019 06:58:14 -0700 (PDT)
+Date: Mon, 24 Jun 2019 14:58:12 +0100
 From: Catalin Marinas <catalin.marinas@arm.com>
 To: Vincenzo Frascino <vincenzo.frascino@arm.com>
-Subject: Re: [PATCH v7 01/25] kernel: Standardize vdso_datapage
-Message-ID: <20190624135624.GB29120@arrakis.emea.arm.com>
+Subject: Re: [PATCH v7 04/25] arm64: Substitute gettimeofday with C
+ implementation
+Message-ID: <20190624135812.GC29120@arrakis.emea.arm.com>
 References: <20190621095252.32307-1-vincenzo.frascino@arm.com>
- <20190621095252.32307-2-vincenzo.frascino@arm.com>
+ <20190621095252.32307-5-vincenzo.frascino@arm.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190621095252.32307-2-vincenzo.frascino@arm.com>
+In-Reply-To: <20190621095252.32307-5-vincenzo.frascino@arm.com>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190624_065630_460968_FBD6534F 
-X-CRM114-Status: GOOD (  14.94  )
+X-CRM114-CacheID: sfid-20190624_065818_542367_D156ADD9 
+X-CRM114-Status: GOOD (  14.18  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -77,56 +78,141 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Jun 21, 2019 at 10:52:28AM +0100, Vincenzo Frascino wrote:
-> In an effort to unify the common code for managing the vdso library in
-> between all the architectures that support it, this patch tries to
-> provide a common format for the vdso datapage.
-> 
-> As a result of this, this patch generalized the data structures in vgtod.h
-> from x86 private includes to general includes (include/vdso).
-> 
-> Cc: Arnd Bergmann <arnd@arndb.de>
-> Signed-off-by: Vincenzo Frascino <vincenzo.frascino@arm.com>
-> Tested-by: Shijith Thotton <sthotton@marvell.com>
-> Tested-by: Andre Przywara <andre.przywara@arm.com>
+On Fri, Jun 21, 2019 at 10:52:31AM +0100, Vincenzo Frascino wrote:
+> diff --git a/arch/arm64/kernel/asm-offsets.c b/arch/arm64/kernel/asm-offsets.c
+> index 947e39896e28..9e4b7ccbab2f 100644
+> --- a/arch/arm64/kernel/asm-offsets.c
+> +++ b/arch/arm64/kernel/asm-offsets.c
+> @@ -25,13 +25,13 @@
+>  #include <linux/kvm_host.h>
+>  #include <linux/preempt.h>
+>  #include <linux/suspend.h>
+> +#include <vdso/datapage.h>
+>  #include <asm/cpufeature.h>
+>  #include <asm/fixmap.h>
+>  #include <asm/thread_info.h>
+>  #include <asm/memory.h>
+>  #include <asm/smp_plat.h>
+>  #include <asm/suspend.h>
+> -#include <asm/vdso_datapage.h>
+>  #include <linux/kbuild.h>
+>  #include <linux/arm-smccc.h>
+>  
+> @@ -100,17 +100,28 @@ int main(void)
+>    DEFINE(CLOCK_COARSE_RES,	LOW_RES_NSEC);
+>    DEFINE(NSEC_PER_SEC,		NSEC_PER_SEC);
+>    BLANK();
+> -  DEFINE(VDSO_CS_CYCLE_LAST,	offsetof(struct vdso_data, cs_cycle_last));
+> -  DEFINE(VDSO_RAW_TIME_SEC,	offsetof(struct vdso_data, raw_time_sec));
+> -  DEFINE(VDSO_XTIME_CLK_SEC,	offsetof(struct vdso_data, xtime_clock_sec));
+> -  DEFINE(VDSO_XTIME_CRS_SEC,	offsetof(struct vdso_data, xtime_coarse_sec));
+> -  DEFINE(VDSO_XTIME_CRS_NSEC,	offsetof(struct vdso_data, xtime_coarse_nsec));
+> -  DEFINE(VDSO_WTM_CLK_SEC,	offsetof(struct vdso_data, wtm_clock_sec));
+> -  DEFINE(VDSO_TB_SEQ_COUNT,	offsetof(struct vdso_data, tb_seq_count));
+> -  DEFINE(VDSO_CS_MONO_MULT,	offsetof(struct vdso_data, cs_mono_mult));
+> -  DEFINE(VDSO_CS_SHIFT,		offsetof(struct vdso_data, cs_shift));
+> +  DEFINE(VDSO_SEQ,		offsetof(struct vdso_data, seq));
+> +  DEFINE(VDSO_CLK_MODE,		offsetof(struct vdso_data, clock_mode));
+> +  DEFINE(VDSO_CYCLE_LAST,	offsetof(struct vdso_data, cycle_last));
+> +  DEFINE(VDSO_MASK,		offsetof(struct vdso_data, mask));
+> +  DEFINE(VDSO_MULT,		offsetof(struct vdso_data, mult));
+> +  DEFINE(VDSO_SHIFT,		offsetof(struct vdso_data, shift));
+> +  DEFINE(VDSO_REALTIME_SEC,	offsetof(struct vdso_data, basetime[CLOCK_REALTIME].sec));
+> +  DEFINE(VDSO_REALTIME_NSEC,	offsetof(struct vdso_data, basetime[CLOCK_REALTIME].nsec));
+> +  DEFINE(VDSO_MONO_SEC,		offsetof(struct vdso_data, basetime[CLOCK_MONOTONIC].sec));
+> +  DEFINE(VDSO_MONO_NSEC,	offsetof(struct vdso_data, basetime[CLOCK_MONOTONIC].nsec));
+> +  DEFINE(VDSO_MONO_RAW_SEC,	offsetof(struct vdso_data, basetime[CLOCK_MONOTONIC_RAW].sec));
+> +  DEFINE(VDSO_MONO_RAW_NSEC,	offsetof(struct vdso_data, basetime[CLOCK_MONOTONIC_RAW].nsec));
+> +  DEFINE(VDSO_BOOTTIME_SEC,	offsetof(struct vdso_data, basetime[CLOCK_BOOTTIME].sec));
+> +  DEFINE(VDSO_BOOTTIME_NSEC,	offsetof(struct vdso_data, basetime[CLOCK_BOOTTIME].nsec));
+> +  DEFINE(VDSO_TAI_SEC,		offsetof(struct vdso_data, basetime[CLOCK_TAI].sec));
+> +  DEFINE(VDSO_TAI_NSEC,		offsetof(struct vdso_data, basetime[CLOCK_TAI].nsec));
+> +  DEFINE(VDSO_RT_COARSE_SEC,	offsetof(struct vdso_data, basetime[CLOCK_REALTIME_COARSE].sec));
+> +  DEFINE(VDSO_RT_COARSE_NSEC,	offsetof(struct vdso_data, basetime[CLOCK_REALTIME_COARSE].nsec));
+> +  DEFINE(VDSO_MONO_COARSE_SEC,	offsetof(struct vdso_data, basetime[CLOCK_MONOTONIC_COARSE].sec));
+> +  DEFINE(VDSO_MONO_COARSE_NSEC,	offsetof(struct vdso_data, basetime[CLOCK_MONOTONIC_COARSE].nsec));
+>    DEFINE(VDSO_TZ_MINWEST,	offsetof(struct vdso_data, tz_minuteswest));
+> -  DEFINE(VDSO_USE_SYSCALL,	offsetof(struct vdso_data, use_syscall));
+> +  DEFINE(VDSO_TZ_DSTTIME,	offsetof(struct vdso_data, tz_dsttime));
+>    BLANK();
+>    DEFINE(TVAL_TV_SEC,		offsetof(struct timeval, tv_sec));
+>    DEFINE(TSPEC_TV_SEC,		offsetof(struct timespec, tv_sec));
 
-Minor clean-up patch (on top of the tip timers/vdso branch):
+Now that we are moving this to C, do we actually need the asm-offsets?
+If not, here's a clean-up patch:
 
-------------8<------------------------------
-From 2e09fa6fca341b3ec7ecaf0b67a313a167bb4ff2 Mon Sep 17 00:00:00 2001
+---------------8<--------------------------------------
+From 7e818178a8b225b522fe547cf00ba8508d4cdcf0 Mon Sep 17 00:00:00 2001
 From: Catalin Marinas <catalin.marinas@arm.com>
-Date: Mon, 24 Jun 2019 12:19:23 +0100
-Subject: [PATCH] vdso: Remove superfluous #ifdef __KERNEL__ in
- vdso/datapage.h
+Date: Mon, 24 Jun 2019 14:12:48 +0100
+Subject: [PATCH] arm64: vdso: Remove unnecessary asm-offsets.c definitions
 
-With the move to UAPI headers, such #ifdefs are no longer necessary.
+Since the VDSO code is moving to C from assembly, there is no need to
+define and maintain the corresponding asm offsets.
 
-Fixes: 361f8aee9b09 ("vdso: Define standardized vdso_datapage")
+Fixes: 28b1a824a4f4 ("arm64: vdso: Substitute gettimeofday() with C implementation")
 Signed-off-by: Catalin Marinas <catalin.marinas@arm.com>
 ---
- include/vdso/datapage.h | 4 ----
- 1 file changed, 4 deletions(-)
+ arch/arm64/kernel/asm-offsets.c | 39 ---------------------------------
+ 1 file changed, 39 deletions(-)
 
-diff --git a/include/vdso/datapage.h b/include/vdso/datapage.h
-index e6eb36c3d54f..2e302c0f41f7 100644
---- a/include/vdso/datapage.h
-+++ b/include/vdso/datapage.h
-@@ -2,8 +2,6 @@
- #ifndef __VDSO_DATAPAGE_H
- #define __VDSO_DATAPAGE_H
- 
--#ifdef __KERNEL__
--
- #ifndef __ASSEMBLY__
- 
- #include <linux/bits.h>
-@@ -88,6 +86,4 @@ extern struct vdso_data _vdso_data[CS_BASES] __attribute__((visibility("hidden")
- 
- #endif /* !__ASSEMBLY__ */
- 
--#endif /* __KERNEL__ */
--
- #endif /* __VDSO_DATAPAGE_H */
+diff --git a/arch/arm64/kernel/asm-offsets.c b/arch/arm64/kernel/asm-offsets.c
+index e6f7409a78a4..214685760e1c 100644
+--- a/arch/arm64/kernel/asm-offsets.c
++++ b/arch/arm64/kernel/asm-offsets.c
+@@ -14,7 +14,6 @@
+ #include <linux/kvm_host.h>
+ #include <linux/preempt.h>
+ #include <linux/suspend.h>
+-#include <vdso/datapage.h>
+ #include <asm/cpufeature.h>
+ #include <asm/fixmap.h>
+ #include <asm/thread_info.h>
+@@ -86,44 +85,6 @@ int main(void)
+   BLANK();
+   DEFINE(PREEMPT_DISABLE_OFFSET, PREEMPT_DISABLE_OFFSET);
+   BLANK();
+-  DEFINE(CLOCK_REALTIME,	CLOCK_REALTIME);
+-  DEFINE(CLOCK_MONOTONIC,	CLOCK_MONOTONIC);
+-  DEFINE(CLOCK_MONOTONIC_RAW,	CLOCK_MONOTONIC_RAW);
+-  DEFINE(CLOCK_REALTIME_RES,	offsetof(struct vdso_data, hrtimer_res));
+-  DEFINE(CLOCK_REALTIME_COARSE,	CLOCK_REALTIME_COARSE);
+-  DEFINE(CLOCK_MONOTONIC_COARSE,CLOCK_MONOTONIC_COARSE);
+-  DEFINE(CLOCK_COARSE_RES,	LOW_RES_NSEC);
+-  DEFINE(NSEC_PER_SEC,		NSEC_PER_SEC);
+-  BLANK();
+-  DEFINE(VDSO_SEQ,		offsetof(struct vdso_data, seq));
+-  DEFINE(VDSO_CLK_MODE,		offsetof(struct vdso_data, clock_mode));
+-  DEFINE(VDSO_CYCLE_LAST,	offsetof(struct vdso_data, cycle_last));
+-  DEFINE(VDSO_MASK,		offsetof(struct vdso_data, mask));
+-  DEFINE(VDSO_MULT,		offsetof(struct vdso_data, mult));
+-  DEFINE(VDSO_SHIFT,		offsetof(struct vdso_data, shift));
+-  DEFINE(VDSO_REALTIME_SEC,	offsetof(struct vdso_data, basetime[CLOCK_REALTIME].sec));
+-  DEFINE(VDSO_REALTIME_NSEC,	offsetof(struct vdso_data, basetime[CLOCK_REALTIME].nsec));
+-  DEFINE(VDSO_MONO_SEC,		offsetof(struct vdso_data, basetime[CLOCK_MONOTONIC].sec));
+-  DEFINE(VDSO_MONO_NSEC,	offsetof(struct vdso_data, basetime[CLOCK_MONOTONIC].nsec));
+-  DEFINE(VDSO_MONO_RAW_SEC,	offsetof(struct vdso_data, basetime[CLOCK_MONOTONIC_RAW].sec));
+-  DEFINE(VDSO_MONO_RAW_NSEC,	offsetof(struct vdso_data, basetime[CLOCK_MONOTONIC_RAW].nsec));
+-  DEFINE(VDSO_BOOTTIME_SEC,	offsetof(struct vdso_data, basetime[CLOCK_BOOTTIME].sec));
+-  DEFINE(VDSO_BOOTTIME_NSEC,	offsetof(struct vdso_data, basetime[CLOCK_BOOTTIME].nsec));
+-  DEFINE(VDSO_TAI_SEC,		offsetof(struct vdso_data, basetime[CLOCK_TAI].sec));
+-  DEFINE(VDSO_TAI_NSEC,		offsetof(struct vdso_data, basetime[CLOCK_TAI].nsec));
+-  DEFINE(VDSO_RT_COARSE_SEC,	offsetof(struct vdso_data, basetime[CLOCK_REALTIME_COARSE].sec));
+-  DEFINE(VDSO_RT_COARSE_NSEC,	offsetof(struct vdso_data, basetime[CLOCK_REALTIME_COARSE].nsec));
+-  DEFINE(VDSO_MONO_COARSE_SEC,	offsetof(struct vdso_data, basetime[CLOCK_MONOTONIC_COARSE].sec));
+-  DEFINE(VDSO_MONO_COARSE_NSEC,	offsetof(struct vdso_data, basetime[CLOCK_MONOTONIC_COARSE].nsec));
+-  DEFINE(VDSO_TZ_MINWEST,	offsetof(struct vdso_data, tz_minuteswest));
+-  DEFINE(VDSO_TZ_DSTTIME,	offsetof(struct vdso_data, tz_dsttime));
+-  BLANK();
+-  DEFINE(TVAL_TV_SEC,		offsetof(struct timeval, tv_sec));
+-  DEFINE(TSPEC_TV_SEC,		offsetof(struct timespec, tv_sec));
+-  BLANK();
+-  DEFINE(TZ_MINWEST,		offsetof(struct timezone, tz_minuteswest));
+-  DEFINE(TZ_DSTTIME,		offsetof(struct timezone, tz_dsttime));
+-  BLANK();
+   DEFINE(CPU_BOOT_STACK,	offsetof(struct secondary_data, stack));
+   DEFINE(CPU_BOOT_TASK,		offsetof(struct secondary_data, task));
+   BLANK();
 
 _______________________________________________
 linux-arm-kernel mailing list
