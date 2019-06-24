@@ -2,80 +2,91 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B15E150752
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Jun 2019 12:06:55 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A20F150756
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Jun 2019 12:10:51 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
+	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=4WObJb+dw1H8g+V7NyAXwQe5mj4d7rtsmHwYXAxMSCg=; b=ic96p1YUj5N1+A
-	7jG7qqH/cQ3r/5Vdmfiqznwu7uDNye3+mFpy9Bu8HrT2/bkBELXP5jJfkfQSXeIf500cOYciuSk4+
-	KZOMX+zs8mhefmA0xjCQ/pZZDjkxsJ0mqlRZjyOShEmfwSplGGNtutC7l+N4npYnYyEIOLATy2i+p
-	c1ajwCvGWztusx7N10sDp7WXjtjdcPMxWJJ+qon+P81oWg+OSElwk5N7RMzEXw6HuP+bW3jl+QcZP
-	g9flkFMEyR6HVEMC/J+2c50CUnhySdSqKTRuOiZDvPNGPi/Ttoit6DR8tKIQWIiYDNgv4oNYedXA4
-	lcqhXbjOjHRSAUMV0yFw==;
+	List-Owner; bh=2QbcN8rGGjc98DN5i6x9j/hdOleHpBDDrmkTmpieGQQ=; b=EFwWsdnkK4W6yG
+	I26DnDBTIZZ+teWl+jUe8QQuxdmQRfdlqmP8J+cNxYwVkpZBKhtT9rYUG0Uc3RSDz42CVkkqid61V
+	dNWwj1XpVSO5NT+GkVlmYrXkanisSE+sx4Q7GFri+NKdgjvvWgGUmuMDlr2TozngE3RhbTSLZXg7W
+	H9AeeIl9MyCbirvDG6IGQIMc+7CHd1MwrV2T/DtzxV2LRKFwvf6bdDXfy1Psdcl4oJWEKZNKkarb7
+	C5k2ig0fswHUDtVix6wv/MwxqmAc/srdBNQ1biewFv0WzB7gg1JWAYzV1KrtdEOkZ6VLoSOVnuGCn
+	CGhzsV1Yl+FHOm62ej7g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hfLsA-0006aU-EO; Mon, 24 Jun 2019 10:06:50 +0000
-Received: from mail-io1-xd43.google.com ([2607:f8b0:4864:20::d43])
+	id 1hfLvy-0000Me-QA; Mon, 24 Jun 2019 10:10:47 +0000
+Received: from mx07-00178001.pphosted.com ([62.209.51.94])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hfLrt-0006Zk-Bu
- for linux-arm-kernel@lists.infradead.org; Mon, 24 Jun 2019 10:06:34 +0000
-Received: by mail-io1-xd43.google.com with SMTP id u19so1781659ior.9
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 24 Jun 2019 03:06:32 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=jzjhqKUQE+QT87VlGM7mrbkwUfIug49zvMwL3mtkgLI=;
- b=nsgcCRD4CD7gAOEhmxdS9KtrV1XDmK+5s3tRYAp4HsTfnT8B4aoKgDLyD6HpN5bSKn
- Emsl7eP2xijq0eANUtP0KvD/WoHMrGgOyW9IebxKrBzgTnq8rg7HWaY1HiETeI+wVCy3
- G0x1q+sKHGvktCR3zFb/ltoxVGFvwJ8UiRlSdeXa1JY87nKd8jkdRUZsagcB8fNP2IsO
- 5Tzq0jCElctINZ9ixKqDwpWfKrUXZl1inBuoVPQObeQ9VIgGrIzSZj33cST1DvsZkQkt
- kWOD/4dgdYs0UhB5mDmCjKCO8oP7XkPLXtP2+kJoFvLZGT21/9PxD/UiuYBhnX8OFA3A
- Zwng==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=jzjhqKUQE+QT87VlGM7mrbkwUfIug49zvMwL3mtkgLI=;
- b=X7ip9qNe8PZ8rfW26zO5AveNZETlAKZBA6fjj5OX1QfMHk5seQEXsBiqaC9DToodfD
- eVhRLjPh/7Qu5JRj48xd3kVIIADxUcHsMeMgz8ZT2s8zuoH1+J0oZ0v+gfQfhOjR7Gk2
- 4Q/b0/ihcD0PDxk+Zn0tBJkoidPCYgsY98xw/TxNhvDBR27HTgwF4l/XIMthk92r+jbl
- ZHHip15ZKmjpkWQUEca9vMl4LqKlkGIlKVvssRPWOUaHmLJcdGzqFU2OdBnI8bGsVsTK
- cTx9VJyJETAxlwf54/P6hiVUwsYZXFMh/a3Qagls5dp+Vj0ZA3dyE920rheBljY4XJfH
- SCMg==
-X-Gm-Message-State: APjAAAWm7+ncGylllUVvg56UdTOoXpQICPkAfApNEEzWW+57O8kPR839
- LDdx1TOJ/o19WfhCyVxprx2T98if1ZKWZWeLtxSh1w==
-X-Google-Smtp-Source: APXvYqzI8LYtNA99krDyYdJrbnPVFN00/VQBOGb8UbWp0fin3ELK5c7b8Nol1ZK3tMvJkd9iYwbO2GQPbH3p5eA9CAM=
-X-Received: by 2002:a02:6597:: with SMTP id u145mr28812545jab.26.1561370790929; 
- Mon, 24 Jun 2019 03:06:30 -0700 (PDT)
+ id 1hfLvj-0000Ko-7P
+ for linux-arm-kernel@lists.infradead.org; Mon, 24 Jun 2019 10:10:33 +0000
+Received: from pps.filterd (m0046668.ppops.net [127.0.0.1])
+ by mx07-00178001.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id
+ x5OA62I3032026; Mon, 24 Jun 2019 12:10:08 +0200
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
+ h=from : to : cc : subject
+ : date : message-id : references : in-reply-to : content-type : content-id
+ : content-transfer-encoding : mime-version; s=STMicroelectronics;
+ bh=f7nKa6SlB25HuKxpO9ORVYe76aQxcf81fhY3D6AwPCY=;
+ b=qVAS3sfAEQKMyPUYW5onOQocf3HQ1xMc8a9OD35wBW1ET4c0Z+4Dm3+rqFboLskfsnvq
+ L8mMSSDW3Cwvjy3glbyAwXs6v05wRZy+NzeQ83Zf3S24eyII1+VfHuj/zjb5mblxv1Iv
+ UO0OC8n4axKvQk5Ek1PG8cU8IxqL6PNFQ/CPrT1/+Z6u7yJEeCdnZ9YrJPn6XMhHtMbI
+ eQJVmp3lvfvasGSVYBAR2Lebs7rZy2l/a381BzqK3tcgn6RHHFO4f3TjrST9Cf9oJAB1
+ FPe6EN0eDxbQHR9+LqDu5Ja2axh+NPg3/kTx550GNqA2g+DFAnNpKo9yB7QJJwZ4JER7 Qw== 
+Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
+ by mx07-00178001.pphosted.com with ESMTP id 2t9d2g29h3-1
+ (version=TLSv1 cipher=ECDHE-RSA-AES256-SHA bits=256 verify=NOT);
+ Mon, 24 Jun 2019 12:10:08 +0200
+Received: from zeta.dmz-eu.st.com (zeta.dmz-eu.st.com [164.129.230.9])
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 541973A;
+ Mon, 24 Jun 2019 10:10:06 +0000 (GMT)
+Received: from Webmail-eu.st.com (sfhdag3node1.st.com [10.75.127.7])
+ by zeta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 16CA22661;
+ Mon, 24 Jun 2019 10:10:06 +0000 (GMT)
+Received: from SFHDAG5NODE1.st.com (10.75.127.13) by SFHDAG3NODE1.st.com
+ (10.75.127.7) with Microsoft SMTP Server (TLS) id 15.0.1347.2; Mon, 24 Jun
+ 2019 12:10:05 +0200
+Received: from SFHDAG5NODE1.st.com ([fe80::cc53:528c:36c8:95f6]) by
+ SFHDAG5NODE1.st.com ([fe80::cc53:528c:36c8:95f6%20]) with mapi id
+ 15.00.1347.000; Mon, 24 Jun 2019 12:10:05 +0200
+From: Hugues FRUCHET <hugues.fruchet@st.com>
+To: Sakari Ailus <sakari.ailus@linux.intel.com>
+Subject: Re: [PATCH v2 0/3] DCMI bridge support
+Thread-Topic: [PATCH v2 0/3] DCMI bridge support
+Thread-Index: AQHVJ4OqL2qtYdvbaESId3efmYQAfaaqeW6A
+Date: Mon, 24 Jun 2019 10:10:05 +0000
+Message-ID: <ae097d67-58fe-82d7-78d6-2445664f28db@st.com>
+References: <1560242912-17138-1-git-send-email-hugues.fruchet@st.com>
+ <20190620161721.h3wn4nibomrvriw4@kekkonen.localdomain>
+In-Reply-To: <20190620161721.h3wn4nibomrvriw4@kekkonen.localdomain>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+user-agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.7.0
+x-ms-exchange-messagesentrepresentingtype: 1
+x-ms-exchange-transport-fromentityheader: Hosted
+x-originating-ip: [10.75.127.48]
+Content-ID: <85607FCBA25C3B4296E8D683984E4084@st.com>
 MIME-Version: 1.0
-References: <20190620003244.261595-1-ndesaulniers@google.com>
- <20190620074640.GA27228@brain-police>
- <CAKv+Gu_KCFCVxw_zAfzUf8DjD4DmhvaJEoqBsX_SigOse_NwYw@mail.gmail.com>
- <CAKwvOdmQ+WdD8nvLz_VB_5atDi56fv485Xsn+mHJZKnyj6L-JA@mail.gmail.com>
- <20190624095749.wasjfrgcda7ygdr5@willie-the-truck>
-In-Reply-To: <20190624095749.wasjfrgcda7ygdr5@willie-the-truck>
-From: Ard Biesheuvel <ard.biesheuvel@linaro.org>
-Date: Mon, 24 Jun 2019 12:06:18 +0200
-Message-ID: <CAKv+Gu8G2GQGxmcAAy1XQ5gkN-2fJSWAKCQQm9T4skYdh5cT3Q@mail.gmail.com>
-Subject: Re: [PATCH] arm64: defconfig: update and enable CONFIG_RANDOMIZE_BASE
-To: Will Deacon <will@kernel.org>
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:, ,
+ definitions=2019-06-24_08:, , signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190624_030633_433328_A7729AC0 
-X-CRM114-Status: GOOD (  32.73  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190624_031031_567653_838DEDB8 
+X-CRM114-Status: GOOD (  20.74  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:d43 listed in]
- [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [62.209.51.94 listed in list.dnswl.org]
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -94,115 +105,103 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- Catalin Marinas <catalin.marinas@arm.com>, Arnd Bergmann <arnd@arndb.de>,
- Maxime Ripard <maxime.ripard@bootlin.com>,
- Jeffrey Vander Stoep <jeffv@google.com>, Olof Johansson <olof@lixom.net>,
- Nick Desaulniers <ndesaulniers@google.com>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Will Deacon <will.deacon@arm.com>,
- Bjorn Andersson <bjorn.andersson@linaro.org>,
- Dinh Nguyen <dinguyen@kernel.org>, Mark Brown <broonie@kernel.org>,
- Jagan Teki <jagan@amarulasolutions.com>,
- Sami Tolvanen <samitolvanen@google.com>, Kees Cook <keescook@google.com>,
- Enric Balletbo i Serra <enric.balletbo@collabora.com>,
- Shawn Guo <shawnguo@kernel.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Cc: Yannick FERTRE <yannick.fertre@st.com>,
+ Alexandre TORGUE <alexandre.torgue@st.com>,
+ Mickael GUENE <mickael.guene@st.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Philippe CORNU <philippe.cornu@st.com>, Hans Verkuil <hverkuil@xs4all.nl>,
+ Benjamin Gaignard <benjamin.gaignard@linaro.org>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>,
+ "linux-stm32@st-md-mailman.stormreply.com"
+ <linux-stm32@st-md-mailman.stormreply.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ "linux-media@vger.kernel.org" <linux-media@vger.kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, 24 Jun 2019 at 11:57, Will Deacon <will@kernel.org> wrote:
->
-> Hi Nick, Kees, Ard,
->
-> Thanks for the responses.
->
-> On Fri, Jun 21, 2019 at 01:27:45PM -0700, Nick Desaulniers wrote:
-> > On Thu, Jun 20, 2019 at 1:17 AM Ard Biesheuvel
-> > <ard.biesheuvel@linaro.org> wrote:
-> > > On Thu, 20 Jun 2019 at 09:47, Will Deacon <will.deacon@arm.com> wrote:
-> > > > On the flip side, I worry that it could make debugging more difficult, but I
-> > > > don't know whether that's a genuine concern or not. I'm assuming you've
-> > > > debugged your fair share of crashes from KASLR-enabled kernels; how bad is
-> > > > it? (I'm thinking of the case where somebody mails you part of a panic log
-> > > > and a .config).
-> >
-> > I don't recall specific cases where KASLR made debugging difficult.  I
-> > went and spoke to our stability team that debugs crash reports from
-> > the field.  My understanding is that we capture full ramdumps.  They
-> > have a lot of custom tooling for debugging, but they did not recall
-> > ever having to disable KASLR to debug further.  We've had KASLR
-> > enabled since I think the 2016 Pixel 1, so I assume their tooling
-> > accounts for the seed/offset.
-> >
-> > I think if a full ramdump of the kernel image is loaded into GDB with
-> > the matching kernel image it "just works" but could be mistaken.  For
-> > external developers, "nokaslr" boot time param is pretty standard.
-> >
-> > > In fact, given how many Android phones are running this code: Nick,
-> > > can you check if there are any KASLR related kernel fixes that haven't
-> > > been upstreamed?
-> >
-> > I spoke with the android common kernel team that's trying to burn down
-> > their out of tree patches.  I triple checked a doc they had where they
-> > had audited every last patch, looking for for KASLR and
-> > CONFIG_RANDOMIZE_BASE.  I also triple checked our internal bug tracker
-> > for burning down the out of tree patches.  Finally I'm scanning each
-> > branch of our android-common trees via `git log --all --grep
-> > <KASLR|CONFIG_RANDOMIZE_BASE>`.  I haven't found anything yet, and the
-> > team doesn't expect any out of tree patches related to that feature.
-> > Sorry for not responding sooner, but I'm still going through our 4.4,
-> > 4.9, 4.14, and 4.19 branches.
->
-> Thanks for having a look. It could be that we've fixed the issue Catalin was
-> running into in the past -- he was going to see if the problem persists with
-> mainline, since it was frequent enough that it was causing us to ignore the
-> results from our testing infrastructure when RANDOMIZE_BASE=y.
->
+Hi Sakari,
 
-I had no idea this was the case. I can look into it if we are still
-seeing failures.
+ > - Where's the sub-device representing the bridge itself?
+This is pointed by [1]: drivers/media/i2c/st-mipid02.c
 
-> > > So KASLR is known to be broken unless you enable KPTI as well, so that
-> > > is something we could take into account. I.e., mitigations that don't
-> > > reduce the attack surface at all are just pointless complexity, which
-> > > should obviously be avoided.
-> >
-> > (Note to Sami + Jeff if they had KPTI on their radar)
->
-> I mean, we could have RANDOMIZE_BASE select UNMAP_KERNEL_AT_EL0 if you like?
-> The latter is already default y and hidden behind EXPERT.
->
+ > - As the driver becomes MC-centric, crop configuration takes place
+through
+ >   V4L2 sub-device interface, not through the video device node.
+ > - Same goes for accessing sensor configuration: it does not take place
+ >   through video node but through the sub-device nodes.
 
-IIRC, when KASLR is enabled (and we have a seed), we override the
-runtime decision to out out of KPTI, and so even uarchs that don't
-require the Meltdown mitigations it provides will still be using it.
+Our objective is to be able to support either a simple parallel sensor
+or a CSI-2 sensor connected through a bridge without any changes on 
+userspace side because no additional processing or conversion involved, 
+only deserialisation is m.
+With the proposed set of patches, we succeeded to do so, the same 
+non-regression tests campaign is passed with OV5640 parallel sensor 
+(STM32MP1 evaluation board) or OV5640 CSI-2 sensor (Avenger96 board with 
+D3 mezzanine board).
 
-So I'd be fine with just adding a note to the UNMAP_KERNEL_AT_EL0
-Kconfig help text that even non-affected uarchs have a use for it if
-KASLR is enabled, but given that it is already behind EXPERT, I don't
-think more hand holding is necessary.
+We don't want driver to be MC-centric, media controller support was 
+required only to get access to the set of functions needed to link and
+walk trough subdevices: media_create_pad_link(), 
+media_entity_remote_pad(), etc...
 
-> > > Another thing to note is that the runtime cost of KASLR is ~zero, with
-> > > the exception of the module PLTs. However, the latter could do with
-> > > some additional coverage as well, so in summary, I think enabling this
-> > > is a good thing. Otherwise, we could disable full module randomization
-> > > so that the module PLT code doesn't get used in practice.
-> > >
-> > > Acked-by: Ard Biesheuvel <ard.biesheuvel@linaro.org>
-> >
-> > Olof mentioned on IRC that I should resend without the other defconfig
-> > changes.  Do others have thoughts on that?
->
-> That's not a bad idea. If you do that, feel free to add my Ack to the one
-> adding RANDOMIZE_BASE=y:
->
-> Acked-by: Will Deacon <will@kernel.org>
->
-> Will
+We did a try with the v1 version of this patchset, delegating subdevices 
+handling to userspace, by using media-controller, but this require to 
+configure first the pipeline for each single change of resolution and 
+format before making any capture using v4l2-ctl or GStreamer, quite 
+heavy in fact.
+Benjamin did another try using new libcamera codebase, but even for a 
+basic capture use-case, negotiation code is quite tricky in order to
+match the right subdevices bus format to the required V4L2 format.
+Moreover, it was not clear how to call libcamera library prior to any
+v4l2-ctl or GStreamer calls.
 
+Adding 100 lines of code into DCMI to well configure resolution and 
+formats fixes the point and allows us to keep backward compatibility
+as per our objective, so it seems far more reasonable to us to do so
+even if DCMI controls more than the subdevice it is connected to.
+Moreover we found similar code in other video interfaces code like 
+qcom/camss/camss.c and xilinx/xilinx-dma.c, controlling the whole 
+pipeline, so it seems to us quite natural to go this way.
+
+To summarize, if we cannot do the negotiation within kernel, delegating
+this to userspace implies far more complexity and breaks compatibility
+with existing applications without adding new functionalities.
+
+Having all that in mind, what should be reconsidered in your opinion 
+Sakari ? Do you have some alternatives ?
+
+Best regards,
+Hugues.
+
+
+On 6/20/19 6:17 PM, Sakari Ailus wrote:
+> Hi Hugues,
+> 
+> On Tue, Jun 11, 2019 at 10:48:29AM +0200, Hugues Fruchet wrote:
+>> This patch serie allows to connect non-parallel camera sensor to
+>> DCMI thanks to a bridge connected in between such as STMIPID02 [1].
+>>
+>> Media controller support is introduced first, then support of
+>> several sub-devices within pipeline with dynamic linking
+>> between them.
+>> In order to keep backward compatibility with applications
+>> relying on V4L2 interface only, format set on video node
+>> is propagated to all sub-devices connected to camera interface.
+>>
+>> [1] https://www.spinics.net/lists/devicetree/msg278002.html
+> 
+> General notes on the set, not related to any single patch:
+> 
+> - Where's the sub-device representing the bridge itself?
+> 
+> - As the driver becomes MC-centric, crop configuration takes place through
+>    V4L2 sub-device interface, not through the video device node.
+> 
+> - Same goes for accessing sensor configuration: it does not take place
+>    through video node but through the sub-device nodes.
+> 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
