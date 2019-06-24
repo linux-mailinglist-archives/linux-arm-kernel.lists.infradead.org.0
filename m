@@ -2,83 +2,92 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9DE9B501DD
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Jun 2019 08:05:05 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 03DA2501EA
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Jun 2019 08:06:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3Q8BtNQeMkmPGAByFP8A6paaSke17vSedUCknb75YgY=; b=m9HBs0vwIcscFz
-	CkqztZwYb2b1AGWb4cQZgpwl7ckMAXWI/OsoATwJlGbZVZ9iaaqSAQvzlYSKWZW7XBPHG4skm5JUs
-	clOTEWoR+rMrT6sX7KV5f2n0D7n0PepckZ47onQLuZZnnXW9rCgkqNedWcBgcQ7vPYWwigwBnacB8
-	/RKTeg79SRY4PNvL2yvEPQJroMhiVM+5LLVTo+qH/oLgYiy9dnVcAwZOKTq5g/vl7bTkWN8SfjUQT
-	eEEWyFyVbMbSsGtSY905a9tzwloooVllQKSCcdzlSMY+uYcMukY7VqStceKyUbXZyYe7PSacy3Uyq
-	f6yQxKrC//2gsRNR/J/w==;
+	List-Owner; bh=PMamySC2JEcQTBVsg59ig9iW6C5T8Cw2LEe9cz2iw88=; b=U0Ukd5sZqjvAh9
+	0TBLHl6zfbLLaYt8k9TH2pU+VFTyVaGYC8JdM4EOziRW2X6Y9rZfFQr0qd4kSY+crHV8j4x2LJw4D
+	5JXvwNtVIFOLFN8w0lEcw27bM/tI3WaUxuWbMffL1J/+iBgWOS2KDLZwtTrwfTtjrWmQ0LPpqRAx6
+	2pVScdioDRwzAewFjnBZAMHoCWdFNKTsTe7SxACs4GRvQayGax7K2vMPoKuke18QKthSPPP+bppoE
+	KDRPiLl2/wdWzuJnodRj23XtAgnL1/Xq+bpn4Fdey311hLhocSs9aRc3Lvfam0J9O3jVyD58eKMXi
+	1hAIfEVzfaI3sDtYV6/Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hfI6B-0000Us-RN; Mon, 24 Jun 2019 06:05:03 +0000
-Received: from mailgw02.mediatek.com ([216.200.240.185])
+	id 1hfI7S-0002Sr-8y; Mon, 24 Jun 2019 06:06:22 +0000
+Received: from mail-pl1-x641.google.com ([2607:f8b0:4864:20::641])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hfI5T-00009O-Si; Mon, 24 Jun 2019 06:04:22 +0000
-X-UUID: 0f56c670c35c42b6986644af341c1302-20190623
-X-UUID: 0f56c670c35c42b6986644af341c1302-20190623
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
- (envelope-from <jitao.shi@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 468047573; Sun, 23 Jun 2019 22:04:03 -0800
-Received: from MTKMBS33DR.mediatek.inc (172.27.6.106) by
- MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Sun, 23 Jun 2019 23:04:02 -0700
-Received: from MTKCAS32.mediatek.inc (172.27.4.184) by MTKMBS33DR.mediatek.inc
- (172.27.6.106) with Microsoft SMTP Server (TLS) id 15.0.1395.4;
- Mon, 24 Jun 2019 14:03:56 +0800
-Received: from mszsdclx1018.gcn.mediatek.inc (172.27.4.253) by
- MTKCAS32.mediatek.inc (172.27.4.170) with Microsoft SMTP Server id
- 15.0.1395.4 via Frontend Transport; Mon, 24 Jun 2019 14:03:53 +0800
-From: Jitao Shi <jitao.shi@mediatek.com>
-To: Rob Herring <robh+dt@kernel.org>, Pawel Moll <pawel.moll@arm.com>, "Mark
- Rutland" <mark.rutland@arm.com>, Ian Campbell
- <ijc+devicetree@hellion.org.uk>, <linux-pwm@vger.kernel.org>, David Airlie
- <airlied@linux.ie>, Matthias Brugger <matthias.bgg@gmail.com>
-Subject: [v2 2/2] drm/panel: support for BOE tv101wum-nl6 wuxga dsi video mode
- panel
-Date: Mon, 24 Jun 2019 14:03:43 +0800
-Message-ID: <20190624060343.62451-3-jitao.shi@mediatek.com>
-X-Mailer: git-send-email 2.21.0
-In-Reply-To: <20190624060343.62451-1-jitao.shi@mediatek.com>
-References: <20190624060343.62451-1-jitao.shi@mediatek.com>
+ id 1hfI7D-0002SH-99
+ for linux-arm-kernel@lists.infradead.org; Mon, 24 Jun 2019 06:06:08 +0000
+Received: by mail-pl1-x641.google.com with SMTP id k8so6273186plt.3
+ for <linux-arm-kernel@lists.infradead.org>;
+ Sun, 23 Jun 2019 23:06:06 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=rczLXy/YdSTRCqTeKDK2d2KcKBJ58Sk09VwtTR7c1D0=;
+ b=ezovdk0fIqsbaH3BRH7IYNVk7pFaH+wp0P2j0nRBwNRuPMyUFoMbdVd+2jMTEDGVgo
+ IZmW3IP4AXneC1YBX1129nHybakYDLNci6SALVR1OSMpqGN2hwHNlxo7C6EMmumZUC8P
+ A50eUtMpOWgSRW6Kl0cjA31otm4ZsTHmV9fmDwu0B6gG8im13AwoVCybx5x4B08QQT4w
+ 79fTu8xIps8bOQdDhp1oBfMCnZ+siksJOS/Vh1zp6ndB1fyTJs6jJ8pJgMCrOhlY12p+
+ DewbSP8RVVniYsQbxpu7TmpktfyQ1xPdQqJXtvBvoGaUMNbOLevIN5d9skSvnuqlKKxp
+ lR6A==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=rczLXy/YdSTRCqTeKDK2d2KcKBJ58Sk09VwtTR7c1D0=;
+ b=tkTSq+gicVM+ZA6iFfi4w8DHtWLUdR7Z4nDZyThk3Y7tgUgiaGsECEPhCHfA/S84/j
+ vum1azjQ24hliD2rk4ORM4eI1TjGA/kVo+SFKxVO9qr8/WFfW0++oVi8jfLhW8QhSD5d
+ grBrenI3N+BV224k/OXmhGcqMv4jiln43510KfR27P5rsnOzXYW+QtPNUy14milg7iGH
+ 6cI+RMAC97T/RjI/hIIYC43yRWQDfupTim/mwV6ZRHX0MQsEJfbBHbScgar3lRuXsJm1
+ 23l5qmhOfsGNKKVHaGlWvGo3YBgjCeX9ycyRc6mkWt/wBZ0WFOwgkA0L+Jf2o2iCAyMb
+ Y1qg==
+X-Gm-Message-State: APjAAAXRBv9PQ2qCPekS2ASOdWnw2W8ytuf4hpoYsqBCFd2/lw0AR5PG
+ 9YT6wxaE2lQRJb8lIHkzZlpcdg==
+X-Google-Smtp-Source: APXvYqyE4KypheWDTMolsvMJk+gKBAPl1QkcrSeuna1NO+V0ysfH9LpuW1Ya22r7aLQvQAUZoZJ/BQ==
+X-Received: by 2002:a17:902:42a5:: with SMTP id
+ h34mr110669295pld.16.1561356366447; 
+ Sun, 23 Jun 2019 23:06:06 -0700 (PDT)
+Received: from localhost ([122.172.211.128])
+ by smtp.gmail.com with ESMTPSA id w4sm10278398pfw.97.2019.06.23.23.06.05
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Sun, 23 Jun 2019 23:06:05 -0700 (PDT)
+Date: Mon, 24 Jun 2019 11:36:04 +0530
+From: Viresh Kumar <viresh.kumar@linaro.org>
+To: Daniel Lezcano <daniel.lezcano@linaro.org>
+Subject: Re: [PATCH 5/6] thermal/drivers/imx: Remove cooling device usage
+Message-ID: <20190624060604.v3docq36c4rmscja@vireshk-i7>
+References: <20190621132302.30414-1-daniel.lezcano@linaro.org>
+ <20190621132302.30414-5-daniel.lezcano@linaro.org>
 MIME-Version: 1.0
-X-TM-AS-Product-Ver: SMEX-12.5.0.1684-8.5.1010-24708.005
-X-TM-AS-Result: No-7.970300-8.000000-10
-X-TMASE-MatchedRID: vdBFVbH6wdi/kNGHVZrsluw8wbnnSw8bE1YUt4FjGjHYgrGDwuFJdoCu
- qghmtWfX5RngtX2fL537uuADRDIwrFmyoQnCHVcbc2lIN1d/aqKOz/LLJUcaHqzG9MIKeG/Glrz
- zm0tT2GPkn6SkMwS8XS3hzvwk6+T2j18LILQEPri3D7EeeyZCM1sP0tBwe3qDkY8eITaSJPhnml
- iDOiSLQ1nLAfRYp+ZdMd49TUxscFndGsCbhiuWoG0lh85vSrk7+eBf9ovw8I1P3Eb4+bLT+rKBp
- ljvKsfOH+aMVX1F9pR7oOXyKiDIt+2xjhw5qyIo/NOUkr6ADzd+tO36GYDlstuykrHhg4PdouaX
- E/reSZlB+KCiJTIohSEt7sMgnCwwxZYesGakkutlpwNsTvdlKeqhuTPUDQDt6W6bo0ouIXigrkH
- r6pdTsL2M7H5q8sUxzUq4XaLW7NEOvl7WFhImCwlpVkdtt3WuSiFtkzEVcTpUjspoiX02F7HLnh
- hMBcPp4vM1YF6AJbbCCfuIMF6xLSAHAopEd76vJXRHgCCb0t1AgixMmruhxVg0Q8Pdd/6ADrUvu
- udlH3UAsffldrfjqg==
-X-TM-AS-User-Approved-Sender: No
-X-TM-AS-User-Blocked-Sender: No
-X-TMASE-Result: 10--7.970300-8.000000
-X-TMASE-Version: SMEX-12.5.0.1684-8.5.1010-24708.005
-X-TM-SNTS-SMTP: 7477A4E36D5354AAE772F41582D8DDD3EF6F5B4164306C9EDA8FF3AC76369F7E2000:8
-X-MTK: N
+Content-Disposition: inline
+In-Reply-To: <20190621132302.30414-5-daniel.lezcano@linaro.org>
+User-Agent: NeoMutt/20180716-391-311a52
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190623_230419_967674_C7D42D62 
-X-CRM114-Status: GOOD (  13.21  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190623_230607_325254_68DFF701 
+X-CRM114-Status: GOOD (  16.15  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:641 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -90,794 +99,71 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: stonea168@163.com, dri-devel@lists.freedesktop.org,
- Andy Yan <andy.yan@rock-chips.com>, Ajay Kumar <ajaykumar.rs@samsung.com>,
- Vincent Palatin <vpalatin@chromium.org>, cawa.cheng@mediatek.com,
- bibby.hsieh@mediatek.com, ck.hu@mediatek.com,
- Russell King <rmk+kernel@arm.linux.org.uk>,
- Thierry Reding <treding@nvidia.com>, devicetree@vger.kernel.org,
- Jitao Shi <jitao.shi@mediatek.com>, Philipp Zabel <p.zabel@pengutronix.de>,
- Inki Dae <inki.dae@samsung.com>, linux-mediatek@lists.infradead.org,
- yingjoe.chen@mediatek.com, eddie.huang@mediatek.com,
- linux-arm-kernel@lists.infradead.org, Rahul Sharma <rahul.sharma@samsung.com>,
- srv_heupstream@mediatek.com, linux-kernel@vger.kernel.org,
- Sascha Hauer <kernel@pengutronix.de>, Sean Paul <seanpaul@chromium.org>
+Cc: "open list:THERMAL" <linux-pm@vger.kernel.org>,
+ Fabio Estevam <festevam@gmail.com>, Sascha Hauer <s.hauer@pengutronix.de>,
+ linux-kernel@vger.kernel.org, edubezval@gmail.com,
+ NXP Linux Team <linux-imx@nxp.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Zhang Rui <rui.zhang@intel.com>, Shawn Guo <shawnguo@kernel.org>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add driver for BOE tv101wum-nl6 panel is a 10.1" 1200x1920 panel.
+On 21-06-19, 15:23, Daniel Lezcano wrote:
+> The cpufreq_cooling_unregister() function uses now the policy to
+> unregister itself. The only purpose of the cooling device pointer is
+> to unregister the cpu cooling device.
+> 
+> As there is no more need of this pointer, remove it.
+> 
+> Signed-off-by: Daniel Lezcano <daniel.lezcano@linaro.org>
+> ---
+>  drivers/thermal/imx_thermal.c | 8 ++++----
+>  1 file changed, 4 insertions(+), 4 deletions(-)
+> 
+> diff --git a/drivers/thermal/imx_thermal.c b/drivers/thermal/imx_thermal.c
+> index 6746f1b73eb7..021c0948b740 100644
+> --- a/drivers/thermal/imx_thermal.c
+> +++ b/drivers/thermal/imx_thermal.c
+> @@ -203,7 +203,6 @@ static struct thermal_soc_data thermal_imx7d_data = {
+>  struct imx_thermal_data {
+>  	struct cpufreq_policy *policy;
+>  	struct thermal_zone_device *tz;
+> -	struct thermal_cooling_device *cdev;
+>  	enum thermal_device_mode mode;
+>  	struct regmap *tempmon;
+>  	u32 c1, c2; /* See formula in imx_init_calib() */
+> @@ -656,6 +655,7 @@ MODULE_DEVICE_TABLE(of, of_imx_thermal_match);
+>  static int imx_thermal_register_legacy_cooling(struct imx_thermal_data *data)
+>  {
+>  	struct device_node *np;
+> +	struct thermal_cooling_device *cdev;
+>  	int ret;
+>  
+>  	data->policy = cpufreq_cpu_get(0);
+> @@ -667,9 +667,9 @@ static int imx_thermal_register_legacy_cooling(struct imx_thermal_data *data)
+>  	np = of_get_cpu_node(data->policy->cpu, NULL);
+>  
+>  	if (!np || !of_find_property(np, "#cooling-cells", NULL)) {
+> -		data->cdev = cpufreq_cooling_register(data->policy);
+> -		if (IS_ERR(data->cdev)) {
+> -			ret = PTR_ERR(data->cdev);
+> +		cdev = cpufreq_cooling_register(data->policy);
+> +		if (IS_ERR(cdev)) {
+> +			ret = PTR_ERR(cdev);
+>  			cpufreq_cpu_put(data->policy);
+>  			return ret;
+>  		}
 
-Signed-off-by: Jitao Shi <jitao.shi@mediatek.com>
----
- drivers/gpu/drm/panel/Kconfig                 |  10 +
- drivers/gpu/drm/panel/Makefile                |   1 +
- .../gpu/drm/panel/panel-boe-tv101wum-nl6.c    | 715 ++++++++++++++++++
- 3 files changed, 726 insertions(+)
- create mode 100644 drivers/gpu/drm/panel/panel-boe-tv101wum-nl6.c
+This too..
 
-diff --git a/drivers/gpu/drm/panel/Kconfig b/drivers/gpu/drm/panel/Kconfig
-index e36dbb4df867..2b055ce0700b 100644
---- a/drivers/gpu/drm/panel/Kconfig
-+++ b/drivers/gpu/drm/panel/Kconfig
-@@ -17,6 +17,15 @@ config DRM_PANEL_ARM_VERSATILE
- 	  reference designs. The panel is detected using special registers
- 	  in the Versatile family syscon registers.
- 
-+config DRM_PANEL_BOE_TV101WUM_NL6
-+	tristate "BOE TV101WUM 1200x1920 panel"
-+	depends on OF
-+	depends on DRM_MIPI_DSI
-+	depends on BACKLIGHT_CLASS_DEVICE
-+	help
-+	  Say Y here if you want to support for BOE TV101WUM WUXGA PANEL
-+	  DSI Video Mode panel
-+
- config DRM_PANEL_LVDS
- 	tristate "Generic LVDS panel driver"
- 	depends on OF
-@@ -272,4 +281,5 @@ config DRM_PANEL_TRULY_NT35597_WQXGA
- 	help
- 	  Say Y here if you want to enable support for Truly NT35597 WQXGA Dual DSI
- 	  Video Mode panel
-+
- endmenu
-diff --git a/drivers/gpu/drm/panel/Makefile b/drivers/gpu/drm/panel/Makefile
-index 78e3dc376bdd..8d009223c44e 100644
---- a/drivers/gpu/drm/panel/Makefile
-+++ b/drivers/gpu/drm/panel/Makefile
-@@ -1,5 +1,6 @@
- # SPDX-License-Identifier: GPL-2.0
- obj-$(CONFIG_DRM_PANEL_ARM_VERSATILE) += panel-arm-versatile.o
-+obj-$(CONFIG_DRM_PANEL_BOE_TV101WUM_NL6) += panel-boe-tv101wum-nl6.o
- obj-$(CONFIG_DRM_PANEL_LVDS) += panel-lvds.o
- obj-$(CONFIG_DRM_PANEL_SIMPLE) += panel-simple.o
- obj-$(CONFIG_DRM_PANEL_FEIYANG_FY07024DI26A30D) += panel-feiyang-fy07024di26a30d.o
-diff --git a/drivers/gpu/drm/panel/panel-boe-tv101wum-nl6.c b/drivers/gpu/drm/panel/panel-boe-tv101wum-nl6.c
-new file mode 100644
-index 000000000000..6e06c8506623
---- /dev/null
-+++ b/drivers/gpu/drm/panel/panel-boe-tv101wum-nl6.c
-@@ -0,0 +1,715 @@
-+// SPDX-License-Identifier: GPL-2.0
-+/*
-+ * Copyright (c) 2018 MediaTek Inc.
-+ * Author: Jitao Shi <jitao.shi@mediatek.com>
-+ */
-+
-+#include <linux/backlight.h>
-+#include <linux/delay.h>
-+#include <linux/gpio/consumer.h>
-+#include <linux/module.h>
-+#include <linux/of.h>
-+#include <linux/of_device.h>
-+#include <linux/regulator/consumer.h>
-+
-+#include <drm/drm_crtc.h>
-+#include <drm/drm_mipi_dsi.h>
-+#include <drm/drm_panel.h>
-+
-+#include <video/mipi_display.h>
-+
-+struct panel_desc {
-+	const struct drm_display_mode *modes;
-+	unsigned int bpc;
-+
-+	/**
-+	 * @width: width (in millimeters) of the panel's active display area
-+	 * @height: height (in millimeters) of the panel's active display area
-+	 */
-+	struct {
-+		unsigned int width;
-+		unsigned int height;
-+	} size;
-+
-+	unsigned long mode_flags;
-+	enum mipi_dsi_pixel_format format;
-+	const struct panel_init_cmd *init_cmds;
-+	unsigned int lanes;
-+};
-+
-+struct boe_panel {
-+	struct drm_panel base;
-+	struct mipi_dsi_device *dsi;
-+
-+	const struct panel_desc *desc;
-+
-+	struct backlight_device *backlight;
-+	struct regulator *pp1800;
-+	struct regulator *avee;
-+	struct regulator *avdd;
-+	struct gpio_desc *enable_gpio;
-+
-+	bool prepared;
-+	bool enabled;
-+
-+	const struct drm_display_mode *mode;
-+};
-+
-+enum dsi_cmd_type {
-+	INIT_DCS_CMD,
-+	DELAY_CMD,
-+};
-+
-+struct panel_init_cmd {
-+	enum dsi_cmd_type type;
-+	size_t len;
-+	const char *data;
-+};
-+
-+#define _INIT_DCS_CMD(...) { \
-+	.type = INIT_DCS_CMD, \
-+	.len = sizeof((char[]){__VA_ARGS__}), \
-+	.data = (char[]){__VA_ARGS__} }
-+
-+#define _INIT_DELAY_CMD(...) { \
-+	.type = DELAY_CMD,\
-+	.len = sizeof((char[]){__VA_ARGS__}), \
-+	.data = (char[]){__VA_ARGS__} }
-+
-+static const struct panel_init_cmd boe_init_cmd[] = {
-+	_INIT_DELAY_CMD(24),
-+	_INIT_DCS_CMD(0xB0, 0x05),
-+	_INIT_DCS_CMD(0xB1, 0xE5),
-+	_INIT_DCS_CMD(0xB3, 0x52),
-+	_INIT_DCS_CMD(0xB0, 0x00),
-+	_INIT_DCS_CMD(0xB3, 0x88),
-+	_INIT_DCS_CMD(0xB0, 0x04),
-+	_INIT_DCS_CMD(0xB8, 0x00),
-+	_INIT_DCS_CMD(0xB0, 0x00),
-+	_INIT_DCS_CMD(0xB6, 0x03),
-+	_INIT_DCS_CMD(0xBA, 0x8B),
-+	_INIT_DCS_CMD(0xBF, 0x1A),
-+	_INIT_DCS_CMD(0xC0, 0x0F),
-+	_INIT_DCS_CMD(0xC2, 0x0C),
-+	_INIT_DCS_CMD(0xC3, 0x02),
-+	_INIT_DCS_CMD(0xC4, 0x0C),
-+	_INIT_DCS_CMD(0xC5, 0x02),
-+	_INIT_DCS_CMD(0xB0, 0x01),
-+	_INIT_DCS_CMD(0xE0, 0x26),
-+	_INIT_DCS_CMD(0xE1, 0x26),
-+	_INIT_DCS_CMD(0xDC, 0x00),
-+	_INIT_DCS_CMD(0xDD, 0x00),
-+	_INIT_DCS_CMD(0xCC, 0x26),
-+	_INIT_DCS_CMD(0xCD, 0x26),
-+	_INIT_DCS_CMD(0xC8, 0x00),
-+	_INIT_DCS_CMD(0xC9, 0x00),
-+	_INIT_DCS_CMD(0xD2, 0x03),
-+	_INIT_DCS_CMD(0xD3, 0x03),
-+	_INIT_DCS_CMD(0xE6, 0x04),
-+	_INIT_DCS_CMD(0xE7, 0x04),
-+	_INIT_DCS_CMD(0xC4, 0x09),
-+	_INIT_DCS_CMD(0xC5, 0x09),
-+	_INIT_DCS_CMD(0xD8, 0x0A),
-+	_INIT_DCS_CMD(0xD9, 0x0A),
-+	_INIT_DCS_CMD(0xC2, 0x0B),
-+	_INIT_DCS_CMD(0xC3, 0x0B),
-+	_INIT_DCS_CMD(0xD6, 0x0C),
-+	_INIT_DCS_CMD(0xD7, 0x0C),
-+	_INIT_DCS_CMD(0xC0, 0x05),
-+	_INIT_DCS_CMD(0xC1, 0x05),
-+	_INIT_DCS_CMD(0xD4, 0x06),
-+	_INIT_DCS_CMD(0xD5, 0x06),
-+	_INIT_DCS_CMD(0xCA, 0x07),
-+	_INIT_DCS_CMD(0xCB, 0x07),
-+	_INIT_DCS_CMD(0xDE, 0x08),
-+	_INIT_DCS_CMD(0xDF, 0x08),
-+	_INIT_DCS_CMD(0xB0, 0x02),
-+	_INIT_DCS_CMD(0xC0, 0x00),
-+	_INIT_DCS_CMD(0xC1, 0x0D),
-+	_INIT_DCS_CMD(0xC2, 0x17),
-+	_INIT_DCS_CMD(0xC3, 0x26),
-+	_INIT_DCS_CMD(0xC4, 0x31),
-+	_INIT_DCS_CMD(0xC5, 0x1C),
-+	_INIT_DCS_CMD(0xC6, 0x2C),
-+	_INIT_DCS_CMD(0xC7, 0x33),
-+	_INIT_DCS_CMD(0xC8, 0x31),
-+	_INIT_DCS_CMD(0xC9, 0x37),
-+	_INIT_DCS_CMD(0xCA, 0x37),
-+	_INIT_DCS_CMD(0xCB, 0x37),
-+	_INIT_DCS_CMD(0xCC, 0x39),
-+	_INIT_DCS_CMD(0xCD, 0x2E),
-+	_INIT_DCS_CMD(0xCE, 0x2F),
-+	_INIT_DCS_CMD(0xCF, 0x2F),
-+	_INIT_DCS_CMD(0xD0, 0x07),
-+	_INIT_DCS_CMD(0xD2, 0x00),
-+	_INIT_DCS_CMD(0xD3, 0x0D),
-+	_INIT_DCS_CMD(0xD4, 0x17),
-+	_INIT_DCS_CMD(0xD5, 0x26),
-+	_INIT_DCS_CMD(0xD6, 0x31),
-+	_INIT_DCS_CMD(0xD7, 0x3F),
-+	_INIT_DCS_CMD(0xD8, 0x3F),
-+	_INIT_DCS_CMD(0xD9, 0x3F),
-+	_INIT_DCS_CMD(0xDA, 0x3F),
-+	_INIT_DCS_CMD(0xDB, 0x37),
-+	_INIT_DCS_CMD(0xDC, 0x37),
-+	_INIT_DCS_CMD(0xDD, 0x37),
-+	_INIT_DCS_CMD(0xDE, 0x39),
-+	_INIT_DCS_CMD(0xDF, 0x2E),
-+	_INIT_DCS_CMD(0xE0, 0x2F),
-+	_INIT_DCS_CMD(0xE1, 0x2F),
-+	_INIT_DCS_CMD(0xE2, 0x07),
-+	_INIT_DCS_CMD(0xB0, 0x03),
-+	_INIT_DCS_CMD(0xC8, 0x0B),
-+	_INIT_DCS_CMD(0xC9, 0x07),
-+	_INIT_DCS_CMD(0xC3, 0x00),
-+	_INIT_DCS_CMD(0xE7, 0x00),
-+	_INIT_DCS_CMD(0xC5, 0x2A),
-+	_INIT_DCS_CMD(0xDE, 0x2A),
-+	_INIT_DCS_CMD(0xCA, 0x43),
-+	_INIT_DCS_CMD(0xC9, 0x07),
-+	_INIT_DCS_CMD(0xE4, 0xC0),
-+	_INIT_DCS_CMD(0xE5, 0x0D),
-+	_INIT_DCS_CMD(0xCB, 0x00),
-+	_INIT_DCS_CMD(0xB0, 0x06),
-+	_INIT_DCS_CMD(0xB8, 0xA5),
-+	_INIT_DCS_CMD(0xC0, 0xA5),
-+	_INIT_DCS_CMD(0xC7, 0x0F),
-+	_INIT_DCS_CMD(0xD5, 0x32),
-+	_INIT_DCS_CMD(0xB8, 0x00),
-+	_INIT_DCS_CMD(0xC0, 0x00),
-+	_INIT_DCS_CMD(0xBC, 0x00),
-+	_INIT_DCS_CMD(0xB0, 0x07),
-+	_INIT_DCS_CMD(0xB1, 0x00),
-+	_INIT_DCS_CMD(0xB2, 0x02),
-+	_INIT_DCS_CMD(0xB3, 0x0F),
-+	_INIT_DCS_CMD(0xB4, 0x25),
-+	_INIT_DCS_CMD(0xB5, 0x39),
-+	_INIT_DCS_CMD(0xB6, 0x4E),
-+	_INIT_DCS_CMD(0xB7, 0x72),
-+	_INIT_DCS_CMD(0xB8, 0x97),
-+	_INIT_DCS_CMD(0xB9, 0xDC),
-+	_INIT_DCS_CMD(0xBA, 0x22),
-+	_INIT_DCS_CMD(0xBB, 0xA4),
-+	_INIT_DCS_CMD(0xBC, 0x2B),
-+	_INIT_DCS_CMD(0xBD, 0x2F),
-+	_INIT_DCS_CMD(0xBE, 0xA9),
-+	_INIT_DCS_CMD(0xBF, 0x25),
-+	_INIT_DCS_CMD(0xC0, 0x61),
-+	_INIT_DCS_CMD(0xC1, 0x97),
-+	_INIT_DCS_CMD(0xC2, 0xB2),
-+	_INIT_DCS_CMD(0xC3, 0xCD),
-+	_INIT_DCS_CMD(0xC4, 0xD9),
-+	_INIT_DCS_CMD(0xC5, 0xE7),
-+	_INIT_DCS_CMD(0xC6, 0xF4),
-+	_INIT_DCS_CMD(0xC7, 0xFA),
-+	_INIT_DCS_CMD(0xC8, 0xFC),
-+	_INIT_DCS_CMD(0xC9, 0x00),
-+	_INIT_DCS_CMD(0xCA, 0x00),
-+	_INIT_DCS_CMD(0xCB, 0x16),
-+	_INIT_DCS_CMD(0xCC, 0xAF),
-+	_INIT_DCS_CMD(0xCD, 0xFF),
-+	_INIT_DCS_CMD(0xCE, 0xFF),
-+	_INIT_DCS_CMD(0xB0, 0x08),
-+	_INIT_DCS_CMD(0xB1, 0x04),
-+	_INIT_DCS_CMD(0xB2, 0x05),
-+	_INIT_DCS_CMD(0xB3, 0x11),
-+	_INIT_DCS_CMD(0xB4, 0x24),
-+	_INIT_DCS_CMD(0xB5, 0x39),
-+	_INIT_DCS_CMD(0xB6, 0x4F),
-+	_INIT_DCS_CMD(0xB7, 0x72),
-+	_INIT_DCS_CMD(0xB8, 0x98),
-+	_INIT_DCS_CMD(0xB9, 0xDC),
-+	_INIT_DCS_CMD(0xBA, 0x23),
-+	_INIT_DCS_CMD(0xBB, 0xA6),
-+	_INIT_DCS_CMD(0xBC, 0x2C),
-+	_INIT_DCS_CMD(0xBD, 0x30),
-+	_INIT_DCS_CMD(0xBE, 0xAA),
-+	_INIT_DCS_CMD(0xBF, 0x26),
-+	_INIT_DCS_CMD(0xC0, 0x62),
-+	_INIT_DCS_CMD(0xC1, 0x9B),
-+	_INIT_DCS_CMD(0xC2, 0xB5),
-+	_INIT_DCS_CMD(0xC3, 0xCF),
-+	_INIT_DCS_CMD(0xC4, 0xDB),
-+	_INIT_DCS_CMD(0xC5, 0xE8),
-+	_INIT_DCS_CMD(0xC6, 0xF5),
-+	_INIT_DCS_CMD(0xC7, 0xFA),
-+	_INIT_DCS_CMD(0xC8, 0xFC),
-+	_INIT_DCS_CMD(0xC9, 0x00),
-+	_INIT_DCS_CMD(0xCA, 0x00),
-+	_INIT_DCS_CMD(0xCB, 0x16),
-+	_INIT_DCS_CMD(0xCC, 0xAF),
-+	_INIT_DCS_CMD(0xCD, 0xFF),
-+	_INIT_DCS_CMD(0xCE, 0xFF),
-+	_INIT_DCS_CMD(0xB0, 0x09),
-+	_INIT_DCS_CMD(0xB1, 0x04),
-+	_INIT_DCS_CMD(0xB2, 0x02),
-+	_INIT_DCS_CMD(0xB3, 0x16),
-+	_INIT_DCS_CMD(0xB4, 0x24),
-+	_INIT_DCS_CMD(0xB5, 0x3B),
-+	_INIT_DCS_CMD(0xB6, 0x4F),
-+	_INIT_DCS_CMD(0xB7, 0x73),
-+	_INIT_DCS_CMD(0xB8, 0x99),
-+	_INIT_DCS_CMD(0xB9, 0xE0),
-+	_INIT_DCS_CMD(0xBA, 0x26),
-+	_INIT_DCS_CMD(0xBB, 0xAD),
-+	_INIT_DCS_CMD(0xBC, 0x36),
-+	_INIT_DCS_CMD(0xBD, 0x3A),
-+	_INIT_DCS_CMD(0xBE, 0xAE),
-+	_INIT_DCS_CMD(0xBF, 0x2A),
-+	_INIT_DCS_CMD(0xC0, 0x66),
-+	_INIT_DCS_CMD(0xC1, 0x9E),
-+	_INIT_DCS_CMD(0xC2, 0xB8),
-+	_INIT_DCS_CMD(0xC3, 0xD1),
-+	_INIT_DCS_CMD(0xC4, 0xDD),
-+	_INIT_DCS_CMD(0xC5, 0xE9),
-+	_INIT_DCS_CMD(0xC6, 0xF6),
-+	_INIT_DCS_CMD(0xC7, 0xFA),
-+	_INIT_DCS_CMD(0xC8, 0xFC),
-+	_INIT_DCS_CMD(0xC9, 0x00),
-+	_INIT_DCS_CMD(0xCA, 0x00),
-+	_INIT_DCS_CMD(0xCB, 0x16),
-+	_INIT_DCS_CMD(0xCC, 0xAF),
-+	_INIT_DCS_CMD(0xCD, 0xFF),
-+	_INIT_DCS_CMD(0xCE, 0xFF),
-+	_INIT_DCS_CMD(0xB0, 0x0A),
-+	_INIT_DCS_CMD(0xB1, 0x00),
-+	_INIT_DCS_CMD(0xB2, 0x02),
-+	_INIT_DCS_CMD(0xB3, 0x0F),
-+	_INIT_DCS_CMD(0xB4, 0x25),
-+	_INIT_DCS_CMD(0xB5, 0x39),
-+	_INIT_DCS_CMD(0xB6, 0x4E),
-+	_INIT_DCS_CMD(0xB7, 0x72),
-+	_INIT_DCS_CMD(0xB8, 0x97),
-+	_INIT_DCS_CMD(0xB9, 0xDC),
-+	_INIT_DCS_CMD(0xBA, 0x22),
-+	_INIT_DCS_CMD(0xBB, 0xA4),
-+	_INIT_DCS_CMD(0xBC, 0x2B),
-+	_INIT_DCS_CMD(0xBD, 0x2F),
-+	_INIT_DCS_CMD(0xBE, 0xA9),
-+	_INIT_DCS_CMD(0xBF, 0x25),
-+	_INIT_DCS_CMD(0xC0, 0x61),
-+	_INIT_DCS_CMD(0xC1, 0x97),
-+	_INIT_DCS_CMD(0xC2, 0xB2),
-+	_INIT_DCS_CMD(0xC3, 0xCD),
-+	_INIT_DCS_CMD(0xC4, 0xD9),
-+	_INIT_DCS_CMD(0xC5, 0xE7),
-+	_INIT_DCS_CMD(0xC6, 0xF4),
-+	_INIT_DCS_CMD(0xC7, 0xFA),
-+	_INIT_DCS_CMD(0xC8, 0xFC),
-+	_INIT_DCS_CMD(0xC9, 0x00),
-+	_INIT_DCS_CMD(0xCA, 0x00),
-+	_INIT_DCS_CMD(0xCB, 0x16),
-+	_INIT_DCS_CMD(0xCC, 0xAF),
-+	_INIT_DCS_CMD(0xCD, 0xFF),
-+	_INIT_DCS_CMD(0xCE, 0xFF),
-+	_INIT_DCS_CMD(0xB0, 0x0B),
-+	_INIT_DCS_CMD(0xB1, 0x04),
-+	_INIT_DCS_CMD(0xB2, 0x05),
-+	_INIT_DCS_CMD(0xB3, 0x11),
-+	_INIT_DCS_CMD(0xB4, 0x24),
-+	_INIT_DCS_CMD(0xB5, 0x39),
-+	_INIT_DCS_CMD(0xB6, 0x4F),
-+	_INIT_DCS_CMD(0xB7, 0x72),
-+	_INIT_DCS_CMD(0xB8, 0x98),
-+	_INIT_DCS_CMD(0xB9, 0xDC),
-+	_INIT_DCS_CMD(0xBA, 0x23),
-+	_INIT_DCS_CMD(0xBB, 0xA6),
-+	_INIT_DCS_CMD(0xBC, 0x2C),
-+	_INIT_DCS_CMD(0xBD, 0x30),
-+	_INIT_DCS_CMD(0xBE, 0xAA),
-+	_INIT_DCS_CMD(0xBF, 0x26),
-+	_INIT_DCS_CMD(0xC0, 0x62),
-+	_INIT_DCS_CMD(0xC1, 0x9B),
-+	_INIT_DCS_CMD(0xC2, 0xB5),
-+	_INIT_DCS_CMD(0xC3, 0xCF),
-+	_INIT_DCS_CMD(0xC4, 0xDB),
-+	_INIT_DCS_CMD(0xC5, 0xE8),
-+	_INIT_DCS_CMD(0xC6, 0xF5),
-+	_INIT_DCS_CMD(0xC7, 0xFA),
-+	_INIT_DCS_CMD(0xC8, 0xFC),
-+	_INIT_DCS_CMD(0xC9, 0x00),
-+	_INIT_DCS_CMD(0xCA, 0x00),
-+	_INIT_DCS_CMD(0xCB, 0x16),
-+	_INIT_DCS_CMD(0xCC, 0xAF),
-+	_INIT_DCS_CMD(0xCD, 0xFF),
-+	_INIT_DCS_CMD(0xCE, 0xFF),
-+	_INIT_DCS_CMD(0xB0, 0x0C),
-+	_INIT_DCS_CMD(0xB1, 0x04),
-+	_INIT_DCS_CMD(0xB2, 0x02),
-+	_INIT_DCS_CMD(0xB3, 0x16),
-+	_INIT_DCS_CMD(0xB4, 0x24),
-+	_INIT_DCS_CMD(0xB5, 0x3B),
-+	_INIT_DCS_CMD(0xB6, 0x4F),
-+	_INIT_DCS_CMD(0xB7, 0x73),
-+	_INIT_DCS_CMD(0xB8, 0x99),
-+	_INIT_DCS_CMD(0xB9, 0xE0),
-+	_INIT_DCS_CMD(0xBA, 0x26),
-+	_INIT_DCS_CMD(0xBB, 0xAD),
-+	_INIT_DCS_CMD(0xBC, 0x36),
-+	_INIT_DCS_CMD(0xBD, 0x3A),
-+	_INIT_DCS_CMD(0xBE, 0xAE),
-+	_INIT_DCS_CMD(0xBF, 0x2A),
-+	_INIT_DCS_CMD(0xC0, 0x66),
-+	_INIT_DCS_CMD(0xC1, 0x9E),
-+	_INIT_DCS_CMD(0xC2, 0xB8),
-+	_INIT_DCS_CMD(0xC3, 0xD1),
-+	_INIT_DCS_CMD(0xC4, 0xDD),
-+	_INIT_DCS_CMD(0xC5, 0xE9),
-+	_INIT_DCS_CMD(0xC6, 0xF6),
-+	_INIT_DCS_CMD(0xC7, 0xFA),
-+	_INIT_DCS_CMD(0xC8, 0xFC),
-+	_INIT_DCS_CMD(0xC9, 0x00),
-+	_INIT_DCS_CMD(0xCA, 0x00),
-+	_INIT_DCS_CMD(0xCB, 0x16),
-+	_INIT_DCS_CMD(0xCC, 0xAF),
-+	_INIT_DCS_CMD(0xCD, 0xFF),
-+	_INIT_DCS_CMD(0xCE, 0xFF),
-+	_INIT_DCS_CMD(0xB0, 0x00),
-+	_INIT_DCS_CMD(0xB3, 0x08),
-+	_INIT_DCS_CMD(0xB0, 0x04),
-+	_INIT_DCS_CMD(0xB8, 0x68),
-+	_INIT_DELAY_CMD(150),
-+	{},
-+};
-+
-+static inline struct boe_panel *to_boe_panel(struct drm_panel *panel)
-+{
-+	return container_of(panel, struct boe_panel, base);
-+}
-+
-+static int boe_panel_init(struct boe_panel *boe)
-+{
-+	struct mipi_dsi_device *dsi = boe->dsi;
-+	struct drm_panel *panel = &boe->base;
-+	int err, i;
-+
-+	if (boe->desc->init_cmds) {
-+		const struct panel_init_cmd *init_cmds = boe->desc->init_cmds;
-+
-+		for (i = 0; init_cmds[i].len != 0; i++) {
-+			const struct panel_init_cmd *cmd = &init_cmds[i];
-+
-+			switch (cmd->type) {
-+			case DELAY_CMD:
-+				msleep(cmd->data[0]);
-+				err = 0;
-+				break;
-+
-+			case INIT_DCS_CMD:
-+				err = mipi_dsi_dcs_write(dsi, cmd->data[0],
-+							 cmd->len <= 1 ? NULL :
-+							 &cmd->data[1],
-+							 cmd->len - 1);
-+				break;
-+			}
-+
-+			if (err < 0) {
-+				dev_err(panel->dev,
-+					"failed to write command %u\n", i);
-+				return err;
-+			}
-+		}
-+	}
-+	return 0;
-+}
-+
-+static int boe_panel_off(struct boe_panel *boe)
-+{
-+	struct mipi_dsi_device *dsi = boe->dsi;
-+	int ret;
-+
-+	dsi->mode_flags &= ~MIPI_DSI_MODE_LPM;
-+
-+	ret = mipi_dsi_dcs_enter_sleep_mode(dsi);
-+	if (ret < 0)
-+		return ret;
-+
-+	return 0;
-+}
-+
-+static int boe_panel_disable(struct drm_panel *panel)
-+{
-+	struct boe_panel *boe = to_boe_panel(panel);
-+
-+	if (!boe->enabled)
-+		return 0;
-+
-+	backlight_disable(boe->backlight);
-+
-+	boe->enabled = false;
-+
-+	return 0;
-+}
-+
-+static int boe_panel_unprepare(struct drm_panel *panel)
-+{
-+	struct boe_panel *boe = to_boe_panel(panel);
-+	int ret;
-+
-+	if (!boe->prepared)
-+		return 0;
-+
-+	ret = boe_panel_off(boe);
-+	if (ret < 0) {
-+		dev_err(panel->dev, "failed to set panel off: %d\n", ret);
-+		return ret;
-+	}
-+
-+	msleep(150);
-+	if (boe->enable_gpio)
-+		gpiod_set_value(boe->enable_gpio, 0);
-+	usleep_range(500, 1000);
-+	regulator_disable(boe->avee);
-+	regulator_disable(boe->avdd);
-+	usleep_range(5000, 7000);
-+	regulator_disable(boe->pp1800);
-+
-+	boe->prepared = false;
-+
-+	return 0;
-+}
-+
-+static int boe_panel_prepare(struct drm_panel *panel)
-+{
-+	struct boe_panel *boe = to_boe_panel(panel);
-+	int ret;
-+
-+	if (boe->prepared)
-+		return 0;
-+
-+	if (boe->enable_gpio) {
-+		gpiod_set_value(boe->enable_gpio, 0);
-+		usleep_range(1000, 1500);
-+	}
-+
-+	ret = regulator_enable(boe->pp1800);
-+	if (ret < 0)
-+		return ret;
-+
-+	usleep_range(3000, 5000);
-+
-+	ret = regulator_enable(boe->avdd);
-+	if (ret < 0)
-+		goto poweroff1v8;
-+	ret = regulator_enable(boe->avee);
-+	if (ret < 0)
-+		goto poweroffavdd;
-+
-+	msleep(100);
-+
-+	if (boe->enable_gpio) {
-+		gpiod_set_value(boe->enable_gpio, 1);
-+		usleep_range(10000, 12000);
-+	}
-+
-+	ret = boe_panel_init(boe);
-+	if (ret < 0) {
-+		dev_err(panel->dev, "failed to init panel: %d\n", ret);
-+		goto poweroff;
-+	}
-+
-+	boe->prepared = true;
-+
-+	return 0;
-+
-+poweroff:
-+	regulator_disable(boe->avee);
-+poweroffavdd:
-+	regulator_disable(boe->avdd);
-+poweroff1v8:
-+	usleep_range(5000, 7000);
-+	regulator_disable(boe->pp1800);
-+	if (boe->enable_gpio)
-+		gpiod_set_value(boe->enable_gpio, 0);
-+	return ret;
-+}
-+
-+static int boe_panel_enable(struct drm_panel *panel)
-+{
-+	struct boe_panel *boe = to_boe_panel(panel);
-+	int ret;
-+
-+	if (boe->enabled)
-+		return 0;
-+
-+	ret = backlight_enable(boe->backlight);
-+	if (ret) {
-+		dev_err(panel->dev, "Failed to enable backlight %d\n",
-+			ret);
-+		return ret;
-+	}
-+
-+	boe->enabled = true;
-+
-+	return 0;
-+}
-+
-+static const struct drm_display_mode boe_default_mode = {
-+	.clock = 159425,
-+	.hdisplay = 1200,
-+	.hsync_start = 1200 + 100,
-+	.hsync_end = 1200 + 100 + 40,
-+	.htotal = 1200 + 100 + 40 + 24,
-+	.vdisplay = 1920,
-+	.vsync_start = 1920 + 10,
-+	.vsync_end = 1920 + 10 + 14,
-+	.vtotal = 1920 + 10 + 14 + 4,
-+	.vrefresh = 60,
-+	.type = DRM_MODE_TYPE_DRIVER | DRM_MODE_TYPE_PREFERRED,
-+};
-+
-+static const struct panel_desc boe_tv101wum_nl6_desc = {
-+	.modes = &boe_default_mode,
-+	.bpc = 8,
-+	.size = {
-+		.width = 216,
-+		.height = 135,
-+	},
-+	.lanes = 4,
-+	.format = MIPI_DSI_FMT_RGB888,
-+	.mode_flags = MIPI_DSI_MODE_VIDEO | MIPI_DSI_MODE_VIDEO_SYNC_PULSE |
-+		      MIPI_DSI_MODE_LPM,
-+	.init_cmds = boe_init_cmd,
-+};
-+
-+static int boe_panel_get_modes(struct drm_panel *panel)
-+{
-+	struct boe_panel *boe = to_boe_panel(panel);
-+	const struct drm_display_mode *m = boe->desc->modes;
-+	struct drm_display_mode *mode;
-+
-+	mode = drm_mode_duplicate(panel->drm, m);
-+	if (!mode) {
-+		dev_err(panel->dev, "failed to add mode %ux%u@%u\n",
-+			m->hdisplay, m->vdisplay, m->vrefresh);
-+		return -ENOMEM;
-+	}
-+
-+	drm_mode_set_name(mode);
-+
-+	drm_mode_probed_add(panel->connector, mode);
-+
-+	panel->connector->display_info.width_mm = boe->desc->size.width;
-+	panel->connector->display_info.height_mm = boe->desc->size.height;
-+	panel->connector->display_info.bpc = boe->desc->bpc;
-+
-+	return 1;
-+}
-+
-+static const struct drm_panel_funcs boe_panel_funcs = {
-+	.disable = boe_panel_disable,
-+	.unprepare = boe_panel_unprepare,
-+	.prepare = boe_panel_prepare,
-+	.enable = boe_panel_enable,
-+	.get_modes = boe_panel_get_modes,
-+};
-+
-+static int boe_panel_add(struct boe_panel *boe)
-+{
-+	struct device *dev = &boe->dsi->dev;
-+
-+	boe->avdd = devm_regulator_get(dev, "avdd");
-+	if (IS_ERR(boe->avdd))
-+		return PTR_ERR(boe->avdd);
-+
-+	boe->avee = devm_regulator_get(dev, "avee");
-+	if (IS_ERR(boe->avee))
-+		return PTR_ERR(boe->avee);
-+
-+	boe->pp1800 = devm_regulator_get(dev, "pp1800");
-+	if (IS_ERR(boe->pp1800))
-+		return PTR_ERR(boe->pp1800);
-+
-+	boe->enable_gpio = devm_gpiod_get(dev, "enable", GPIOD_OUT_LOW);
-+	if (IS_ERR(boe->enable_gpio)) {
-+		dev_err(dev, "cannot get reset-gpios %ld\n",
-+			PTR_ERR(boe->enable_gpio));
-+		return PTR_ERR(boe->enable_gpio);
-+	}
-+
-+	gpiod_set_value(boe->enable_gpio, 0);
-+
-+	boe->backlight = devm_of_find_backlight(dev);
-+	if (IS_ERR(boe->backlight))
-+		return PTR_ERR(boe->backlight);
-+
-+	drm_panel_init(&boe->base);
-+	boe->base.funcs = &boe_panel_funcs;
-+	boe->base.dev = &boe->dsi->dev;
-+
-+	return drm_panel_add(&boe->base);
-+}
-+
-+static int boe_panel_probe(struct mipi_dsi_device *dsi)
-+{
-+	struct boe_panel *boe;
-+	int ret;
-+	const struct panel_desc *desc;
-+
-+	boe = devm_kzalloc(&dsi->dev, sizeof(*boe), GFP_KERNEL);
-+	if (!boe)
-+		return -ENOMEM;
-+
-+	desc = of_device_get_match_data(&dsi->dev);
-+	dsi->lanes = desc->lanes;
-+	dsi->format = desc->format;
-+	dsi->mode_flags = desc->mode_flags;
-+	boe->desc = desc;
-+	boe->dsi = dsi;
-+	ret = boe_panel_add(boe);
-+	if (ret < 0)
-+		return ret;
-+
-+	mipi_dsi_set_drvdata(dsi, boe);
-+
-+	return mipi_dsi_attach(dsi);
-+}
-+
-+static int boe_panel_remove(struct mipi_dsi_device *dsi)
-+{
-+	struct boe_panel *boe = mipi_dsi_get_drvdata(dsi);
-+	int ret;
-+
-+	ret = boe_panel_disable(&boe->base);
-+	if (ret < 0)
-+		dev_err(&dsi->dev, "failed to disable panel: %d\n", ret);
-+
-+	ret = mipi_dsi_detach(dsi);
-+	if (ret < 0)
-+		dev_err(&dsi->dev, "failed to detach from DSI host: %d\n", ret);
-+
-+	if (boe->base.dev)
-+		drm_panel_remove(&boe->base);
-+
-+	return 0;
-+}
-+
-+static void boe_panel_shutdown(struct mipi_dsi_device *dsi)
-+{
-+	struct boe_panel *boe = mipi_dsi_get_drvdata(dsi);
-+
-+	boe_panel_disable(&boe->base);
-+}
-+
-+static const struct of_device_id boe_of_match[] = {
-+	{ .compatible = "boe,tv101wum-nl6",
-+	  .data = &boe_tv101wum_nl6_desc
-+	},
-+	{ /* sentinel */ }
-+};
-+MODULE_DEVICE_TABLE(of, boe_of_match);
-+
-+static struct mipi_dsi_driver boe_panel_driver = {
-+	.driver = {
-+		.name = "panel-boe-tv101wum-nl6",
-+		.of_match_table = boe_of_match,
-+	},
-+	.probe = boe_panel_probe,
-+	.remove = boe_panel_remove,
-+	.shutdown = boe_panel_shutdown,
-+};
-+module_mipi_dsi_driver(boe_panel_driver);
-+
-+MODULE_AUTHOR("Jitao Shi <jitao.shi@mediatek.com>");
-+MODULE_DESCRIPTION("BOE tv101wum-nl6 1200x1920 video mode panel driver");
-+MODULE_LICENSE("GPL v2");
+Acked-by: Viresh Kumar <viresh.kumar@linaro.org>
+
 -- 
-2.21.0
-
+viresh
 
 _______________________________________________
 linux-arm-kernel mailing list
