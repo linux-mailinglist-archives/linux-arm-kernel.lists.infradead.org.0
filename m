@@ -2,77 +2,70 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 15C3E4FE58
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Jun 2019 03:20:56 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 951664FE59
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Jun 2019 03:29:37 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	MIME-Version:References:In-Reply-To:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=PrT+F8a2CTWv3pZ0l1DLXdB0jKEE0lCjk8PyyF6q/tQ=; b=CMTafW6znw2mEIUxMFjMCGH5F
-	RgghGfZPnBrO95Iyk+l9dpLTlqcOdmb2VCZdeh/7ofhArvwFsTASvbq7Vo3Z+IntvLZTJSJUFVEt5
-	Dk8SzwVSRq49BNo0tfsX7mDVrvUyKTAAH4Qw4KwInMchMf2j6I79d3Cu/DyjvhFmKbDqLEO9q+Qfu
-	AP9V5JK5FNmlMCYSwQStWyY6YAWzb8NBnvjK3qj1maaDHrsvEwSTGXSwPkKYoOResCI9efgPVclKO
-	7x1M1F+BBBU0uYayn2YhUaDi4/QK+evzjvhGv37pu5BCEK7w3vtrGXnU48xcySLsjiOFsickU6kxm
-	SrLOK/mxQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=kN0BFwpeD/0jD1dC+fykKjO/FEtfKEfrYH6L7nFSVx0=; b=g2RIPgk0rl6J6u
+	hl6YajPZ3xPO8h1+r1oHM4x/R2r/1n8G1WmAJ2Zg7LKp6W5pYrdTcXghBsLMLOL3f6eQMbMjW9zSs
+	KbDQEo5Cl4iqHNtRY4ObgfBvqNmBeeWlsjJH6Cl1GTlKCECky8cZikLPqf43600nS2S42K3hU9Ke5
+	DJAK0Nylm2wLS1A4bLcsJr3KBIS2FbWTjYwX81Qt87UAzIWDgDNMzbVSeQfidpfZtwrqe5d07k/+w
+	2ninAmWod1pccl6mztRPJqfBSugTabK5TAj1nQcHP24uVEnwi38lk39a8dCiNR0Ki8tU2CjWE3Nkn
+	B/TyQQqu0E7bWR5JRRfA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hfDf8-00026m-AZ; Mon, 24 Jun 2019 01:20:50 +0000
-Received: from bilbo.ozlabs.org ([2401:3900:2:1::2] helo=ozlabs.org)
+	id 1hfDna-0006Wk-JE; Mon, 24 Jun 2019 01:29:34 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hfDeu-00026J-Pv
- for linux-arm-kernel@lists.infradead.org; Mon, 24 Jun 2019 01:20:38 +0000
-Received: from authenticated.ozlabs.org (localhost [127.0.0.1])
- (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
- key-exchange ECDHE (P-256) server-signature RSA-PSS (4096 bits) server-digest
- SHA256) (No client certificate requested)
- by mail.ozlabs.org (Postfix) with ESMTPSA id 45XBLP6CHyz9sP1;
- Mon, 24 Jun 2019 11:20:29 +1000 (AEST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=canb.auug.org.au;
- s=201702; t=1561339233;
- bh=tHpKwuHkDaYhqmZgfsFoheh7ykmCSOsO+dlIAnOp5YA=;
- h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
- b=iH/Ezv8DzLvBwG2s0LQ7ZBM1welnN8fckpARVHddhZPLxtjELZrJzSp8tZYjclIHj
- OiHAqv6wiLW5pCCaa9reiSr+VLvDsU4HFF6hKpNdx8mwP/+TMKGiaHvPmRS70uMSfT
- 1d2b5DZrek2rF+dHmCPF7+4RWTaw19TsknadJ7KEg7DKURj+1IWE29q0rY6TQJX8Sn
- POZsWqoDp3665q0EDKriozuPffzKfV0xQPt73rUTT1gXEDINFIaMrUugDMEm1sekUa
- z3I7ArxUhv/hmTqmhwVj5cIwMdm5dOfjhnHdboIGIkHiUyOXUgMKUsG/AJ7wTubPYC
- 7dJqjoN7uByRA==
-Date: Mon, 24 Jun 2019 11:20:29 +1000
-From: Stephen Rothwell <sfr@canb.auug.org.au>
-To: Sasha Levin <sashal@kernel.org>
-Subject: Re: [PATCH v6 18/19] x86: Add support for generic vDSO
-Message-ID: <20190624112029.4f42a8cd@canb.auug.org.au>
-In-Reply-To: <20190624002430.GN2226@sasha-vm>
-References: <20190530141531.43462-1-vincenzo.frascino@arm.com>
- <20190530141531.43462-19-vincenzo.frascino@arm.com>
- <BYAPR21MB1221D54FCEC97509EEF7395CD7180@BYAPR21MB1221.namprd21.prod.outlook.com>
- <alpine.DEB.2.21.1906141313150.1722@nanos.tec.linutronix.de>
- <20190614211710.GQ1513@sasha-vm>
- <alpine.DEB.2.21.1906221542270.5503@nanos.tec.linutronix.de>
- <20190623190929.GL2226@sasha-vm>
- <20190624075834.2491a61a@canb.auug.org.au>
- <20190624002430.GN2226@sasha-vm>
+ id 1hfDnM-0006WO-FK
+ for linux-arm-kernel@lists.infradead.org; Mon, 24 Jun 2019 01:29:21 +0000
+Received: from dragon (li1322-146.members.linode.com [45.79.223.146])
+ (using TLSv1.2 with cipher DHE-RSA-AES128-SHA (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id C277522CEA;
+ Mon, 24 Jun 2019 01:29:15 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1561339760;
+ bh=4nvZp6iXSVydigSn7lGWLwxqlvENp3j62806CqZD/NQ=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=mfEU6Sc1RAoevKpcSCGpMzSh0Vi+dgoiG6xE5H+OwvrBvsGnvlPo/g6jRRAtOmJf2
+ GfGRD/gpTyNOfaG1hK4qfP8ekwgev8BiWDZic2KfJuUh3hryaHsf7oxRBIMioZKspE
+ 7DltZxx3wT08P3MQOiamPFipM7rnAb9okCLDRaPQ=
+Date: Mon, 24 Jun 2019 09:29:08 +0800
+From: Shawn Guo <shawnguo@kernel.org>
+To: Anson.Huang@nxp.com
+Subject: Re: [PATCH V2] soc: imx: Add i.MX8MN SoC driver support
+Message-ID: <20190624012757.GH3800@dragon>
+References: <20190619010708.31412-1-Anson.Huang@nxp.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20190619010708.31412-1-Anson.Huang@nxp.com>
+User-Agent: Mutt/1.5.21 (2010-09-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190623_182037_120576_8737F61C 
-X-CRM114-Status: UNSURE (   7.87  )
+X-CRM114-CacheID: sfid-20190623_182920_527912_29244311 
+X-CRM114-Status: UNSURE (   7.57  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.4 (--)
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.4 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [2401:3900:2:1:0:0:0:2 listed in] [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -84,74 +77,37 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-hyperv@vger.kernel.org, Rasmus Villemoes <linux@rasmusvillemoes.dk>,
- Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will.deacon@arm.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "linux-kselftest@vger.kernel.org" <linux-kselftest@vger.kernel.org>,
- Vincenzo Frascino <vincenzo.frascino@arm.com>, Shuah Khan <shuah@kernel.org>,
- "linux-arch@vger.kernel.org" <linux-arch@vger.kernel.org>,
- Daniel Lezcano <daniel.lezcano@linaro.org>,
- Russell King <linux@armlinux.org.uk>, Arnd Bergmann <arnd@arndb.de>,
- Dmitry Safonov <0x7f454c46@gmail.com>, Thomas Gleixner <tglx@linutronix.de>,
- Michael Kelley <mikelley@microsoft.com>, Peter Collingbourne <pcc@google.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- Huw Davies <huw@codeweavers.com>, Greg KH <gregkh@linuxfoundation.org>,
- "linux-mips@vger.kernel.org" <linux-mips@vger.kernel.org>,
- Ralf Baechle <ralf@linux-mips.org>, Mark Salyzyn <salyzyn@android.com>,
- Paul Burton <paul.burton@mips.com>
-Content-Type: multipart/mixed; boundary="===============3153319181193121366=="
+Cc: abel.vesa@nxp.com, viresh.kumar@linaro.org, s.hauer@pengutronix.de,
+ linux-kernel@vger.kernel.org, Linux-imx@nxp.com, kernel@pengutronix.de,
+ leonard.crestez@nxp.com, festevam@gmail.com,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
---===============3153319181193121366==
-Content-Type: multipart/signed; micalg=pgp-sha256;
- boundary="Sig_/UW6IjEE3Jj_YtxhGwam1e.t"; protocol="application/pgp-signature"
+On Wed, Jun 19, 2019 at 09:07:08AM +0800, Anson.Huang@nxp.com wrote:
+> From: Anson Huang <Anson.Huang@nxp.com>
+> 
+> This patch adds i.MX8MN SoC driver support:
+> 
+> root@imx8mnevk:~# cat /sys/devices/soc0/family
+> Freescale i.MX
+> 
+> root@imx8mnevk:~# cat /sys/devices/soc0/machine
+> NXP i.MX8MNano DDR4 EVK board
+> 
+> root@imx8mnevk:~# cat /sys/devices/soc0/soc_id
+> i.MX8MN
+> 
+> root@imx8mnevk:~# cat /sys/devices/soc0/revision
+> 1.0
+> 
+> Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
 
---Sig_/UW6IjEE3Jj_YtxhGwam1e.t
-Content-Type: text/plain; charset=US-ASCII
-Content-Transfer-Encoding: quoted-printable
-
-Hi Sasha,
-
-On Sun, 23 Jun 2019 20:24:30 -0400 Sasha Levin <sashal@kernel.org> wrote:
->
-> Pushed now. For some reason the airport wifi was blocking ssh :/
-
-Thanks.
-
---=20
-Cheers,
-Stephen Rothwell
-
---Sig_/UW6IjEE3Jj_YtxhGwam1e.t
-Content-Type: application/pgp-signature
-Content-Description: OpenPGP digital signature
-
------BEGIN PGP SIGNATURE-----
-
-iQEzBAEBCAAdFiEENIC96giZ81tWdLgKAVBC80lX0GwFAl0QJV0ACgkQAVBC80lX
-0GwUBQf/e/6tJWyAWMaopYMBDqN2qz4oN/vHsi0Cl4cEtZikDfm20K5/e1B/rwg4
-3AdDGd4MfB2z5/yvCCH0gZcA3R8U8r/OX6rpU6BHD6jewnLN813ja7GesU+lgWGE
-fDznHmIHmGaN2LljjUA34WkBymJGMDsOcA30q6ZIdO48ABULY+FstQOahDrTFMde
-Btm0wVAvmSOP5iIIXt64JWYPhNzGJljLoW9Y5SzpAQOIrTCzYaTIcKceQsBXmPoK
-XH6Ypn5GZCfCNZD/9reOW8IG8CNsSN+7OBdtFFC9W7/OGZdAmMz9n6eX+a/9WS3x
-VqP7o7p8NE5G2ug+cDsnFn1aIkDb6g==
-=/UhR
------END PGP SIGNATURE-----
-
---Sig_/UW6IjEE3Jj_YtxhGwam1e.t--
-
-
---===============3153319181193121366==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+Applied, thanks.
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============3153319181193121366==--
-
