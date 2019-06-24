@@ -2,67 +2,88 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F2D4250348
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Jun 2019 09:26:17 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 06DFF5036C
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Jun 2019 09:31:27 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Bl8ihaAtdUkRbf72lPwtlcxo0qgZcSbUEQv66EMkbkU=; b=s1hS7FRLlXM34/
-	CAVdUM5yHOpqrhmGtOPYTFka4/QRqstVYKrBffH51k4t96dS9Vjrt51TUBov/KVPfjrXsNHKPwVab
-	Ifz+qlHhew7K85OTs1NHrVSCkcyNm7qQr3WCdBKuv0B9sa+pjjJuMOEdxtQ/wrB0PUaFUhSkUF+x1
-	f5zMz6hZ1hQUsIy8gTUHoiC6vcGog2Ectd7sZmuBwBhYhudVFG4PK6g2PZkGQeeMaNYvBJkXmET8V
-	qd2M5Ndw9RvoU+lfdkqOCQm5YobWsLyPAA1KV02G3DwcYou+zboAE4H7WVfFm8F5koh01UjwIuSke
-	Y34h3mvQX/vtprGNlWvw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Dm/UOsBhIWA93uJyygocfDPyo/51ht7PpnrjgKKDJbU=; b=dvyXIwmQqEh2mO
+	8zaKIMYRnQsB9put60Lo8rPD9pBnAl4cM9e6iTnHJ9pV8l50fg+k6WTuY7AiSXIzLjH0vLbeP7Ctp
+	fAb1BHNV4MmkpLqB3j28yVU14SAwOzDAUxXgIYjHd7R6naIO4UDU0Ynn5jbEXIcnEjPCqyIaxEfO/
+	kBPaL6rIogwOlYWTMxcO6ESLDipbibiOPAjUVVAbDiEtl+5Z3HWuFGSsfi3ZSBrKKDw89kUI0FaJq
+	8T07Rpa+JHWrRLqWS1OxZ2Oo0lT4t8g8X9kIp6FWRfJqmoVoW3wRnpzHLKOUdzzMIkJUHCUkcCFL4
+	a31N7aVW/LhypRn9d4yQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hfJMm-0000jW-Ey; Mon, 24 Jun 2019 07:26:16 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
+	id 1hfJRi-0003MI-07; Mon, 24 Jun 2019 07:31:22 +0000
+Received: from lelv0142.ext.ti.com ([198.47.23.249])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hfJLF-0006s3-Oe; Mon, 24 Jun 2019 07:24:43 +0000
-X-UUID: bd06e2ab37ca4602adc7139a0b52618f-20190623
-X-UUID: bd06e2ab37ca4602adc7139a0b52618f-20190623
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
- (envelope-from <neal.liu@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 478244655; Sun, 23 Jun 2019 23:24:32 -0800
-Received: from mtkmbs07n1.mediatek.inc (172.21.101.16) by
- MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Mon, 24 Jun 2019 00:24:31 -0700
-Received: from mtkcas07.mediatek.inc (172.21.101.84) by
- mtkmbs07n1.mediatek.inc (172.21.101.16) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Mon, 24 Jun 2019 15:24:29 +0800
-Received: from mtkswgap22.mediatek.inc (172.21.77.33) by mtkcas07.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via
- Frontend Transport; Mon, 24 Jun 2019 15:24:28 +0800
-From: Neal Liu <neal.liu@mediatek.com>
-To: Matt Mackall <mpm@selenic.com>, Herbert Xu <herbert@gondor.apana.org.au>, 
- Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
- Matthias Brugger <matthias.bgg@gmail.com>, Sean Wang <sean.wang@kernel.org>
-Subject: [PATCH v4 3/3] hwrng: add mtk-sec-rng driver
-Date: Mon, 24 Jun 2019 15:24:12 +0800
-Message-ID: <1561361052-13072-4-git-send-email-neal.liu@mediatek.com>
-X-Mailer: git-send-email 1.7.9.5
-In-Reply-To: <1561361052-13072-1-git-send-email-neal.liu@mediatek.com>
-References: <1561361052-13072-1-git-send-email-neal.liu@mediatek.com>
+ id 1hfJRQ-0003I2-9k
+ for linux-arm-kernel@lists.infradead.org; Mon, 24 Jun 2019 07:31:05 +0000
+Received: from fllv0034.itg.ti.com ([10.64.40.246])
+ by lelv0142.ext.ti.com (8.15.2/8.15.2) with ESMTP id x5O7U2mx055210;
+ Mon, 24 Jun 2019 02:30:02 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
+ s=ti-com-17Q1; t=1561361402;
+ bh=Nr11N80KudDTkBmA2h5dEMXRhA9/KJlHbyFJQ9rK1ac=;
+ h=Subject:To:CC:References:From:Date:In-Reply-To;
+ b=Apq91SiE6fuoCNrkBrsu2GdGAQZnDy9tWyWbwFr+Ps86ONgTmNm10mJdS1hueW/Ld
+ KbeLqqlQLwhyZqcbKpYuPMm1suBxv4Qn+nUSafkbEj5nhrUb2RF4PN6wToyb5R/tP+
+ B0pd71XKHKAUOO7JTn3qZY0MjSxcU0U6t7+IIWrI=
+Received: from DFLE102.ent.ti.com (dfle102.ent.ti.com [10.64.6.23])
+ by fllv0034.itg.ti.com (8.15.2/8.15.2) with ESMTPS id x5O7U1jL012828
+ (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
+ Mon, 24 Jun 2019 02:30:02 -0500
+Received: from DFLE108.ent.ti.com (10.64.6.29) by DFLE102.ent.ti.com
+ (10.64.6.23) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5; Mon, 24
+ Jun 2019 02:30:01 -0500
+Received: from fllv0039.itg.ti.com (10.64.41.19) by DFLE108.ent.ti.com
+ (10.64.6.29) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5 via
+ Frontend Transport; Mon, 24 Jun 2019 02:30:01 -0500
+Received: from [172.24.190.172] (ileax41-snat.itg.ti.com [10.172.224.153])
+ by fllv0039.itg.ti.com (8.15.2/8.15.2) with ESMTP id x5O7TwPr072735;
+ Mon, 24 Jun 2019 02:29:58 -0500
+Subject: Re: [RFC v3 0/2] clocksource: davinci-timer: new driver
+To: Bartosz Golaszewski <brgl@bgdev.pl>, Daniel Lezcano
+ <daniel.lezcano@linaro.org>
+References: <20190605083334.22383-1-brgl@bgdev.pl>
+ <1ac8cfcf-1d77-9b6b-4aab-4171f6cf80fc@ti.com>
+ <1a66e067-631c-c7a4-288b-3934737bee8c@linaro.org>
+ <CAMRc=MecrpzwC0-8x=1dAipf+j7h+C54pHCfbZidFGXtAyv7Pg@mail.gmail.com>
+From: Sekhar Nori <nsekhar@ti.com>
+Message-ID: <234ab4c6-3b3d-6d6b-9bbc-6dc4ca9243b7@ti.com>
+Date: Mon, 24 Jun 2019 12:59:57 +0530
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.7.0
 MIME-Version: 1.0
-X-MTK: N
+In-Reply-To: <CAMRc=MecrpzwC0-8x=1dAipf+j7h+C54pHCfbZidFGXtAyv7Pg@mail.gmail.com>
+Content-Language: en-US
+X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190624_002441_987813_A1A2DF89 
-X-CRM114-Status: GOOD (  15.28  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190624_003104_435846_0FA6E374 
+X-CRM114-Status: GOOD (  15.59  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [216.200.240.184 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [198.47.23.249 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -74,175 +95,29 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, wsd_upstream@mediatek.com,
- linux-kernel@vger.kernel.org, Crystal Guo <Crystal.Guo@mediatek.com>,
- linux-crypto@vger.kernel.org, Neal Liu <neal.liu@mediatek.com>,
- linux-mediatek@lists.infradead.org, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: David Lechner <david@lechnology.com>, Kevin Hilman <khilman@kernel.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Bartosz Golaszewski <bgolaszewski@baylibre.com>,
+ Thomas Gleixner <tglx@linutronix.de>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-For MediaTek SoCs on ARMv8 with TrustZone enabled, peripherals like
-entropy sources is not accessible from normal world (linux) and
-rather accessible from secure world (ATF/TEE) only. This driver aims
-to provide a generic interface to ATF rng service.
-
-Signed-off-by: Neal Liu <neal.liu@mediatek.com>
----
- drivers/char/hw_random/Kconfig       |   16 ++++++
- drivers/char/hw_random/Makefile      |    1 +
- drivers/char/hw_random/mtk-sec-rng.c |   97 ++++++++++++++++++++++++++++++++++
- 3 files changed, 114 insertions(+)
- create mode 100644 drivers/char/hw_random/mtk-sec-rng.c
-
-diff --git a/drivers/char/hw_random/Kconfig b/drivers/char/hw_random/Kconfig
-index 25a7d8f..6c82a3b 100644
---- a/drivers/char/hw_random/Kconfig
-+++ b/drivers/char/hw_random/Kconfig
-@@ -398,6 +398,22 @@ config HW_RANDOM_MTK
- 
- 	  If unsure, say Y.
- 
-+config HW_RANDOM_MTK_SEC
-+	tristate "MediaTek Security Random Number Generator support"
-+	depends on HW_RANDOM
-+	depends on ARCH_MEDIATEK || COMPILE_TEST
-+	default HW_RANDOM
-+	help
-+	  This driver provides kernel-side support for the Random Number
-+	  Generator hardware found on MediaTek SoCs. The difference with
-+	  mtk-rng is the Random Number Generator hardware is secure
-+	  access only.
-+
-+	  To compile this driver as a module, choose M here. the
-+	  module will be called mtk-sec-rng.
-+
-+	  If unsure, say Y.
-+
- config HW_RANDOM_S390
- 	tristate "S390 True Random Number Generator support"
- 	depends on S390
-diff --git a/drivers/char/hw_random/Makefile b/drivers/char/hw_random/Makefile
-index 7c9ef4a..0ae4993 100644
---- a/drivers/char/hw_random/Makefile
-+++ b/drivers/char/hw_random/Makefile
-@@ -36,6 +36,7 @@ obj-$(CONFIG_HW_RANDOM_PIC32) += pic32-rng.o
- obj-$(CONFIG_HW_RANDOM_MESON) += meson-rng.o
- obj-$(CONFIG_HW_RANDOM_CAVIUM) += cavium-rng.o cavium-rng-vf.o
- obj-$(CONFIG_HW_RANDOM_MTK)	+= mtk-rng.o
-+obj-$(CONFIG_HW_RANDOM_MTK_SEC) += mtk-sec-rng.o
- obj-$(CONFIG_HW_RANDOM_S390) += s390-trng.o
- obj-$(CONFIG_HW_RANDOM_KEYSTONE) += ks-sa-rng.o
- obj-$(CONFIG_HW_RANDOM_OPTEE) += optee-rng.o
-diff --git a/drivers/char/hw_random/mtk-sec-rng.c b/drivers/char/hw_random/mtk-sec-rng.c
-new file mode 100644
-index 0000000..ecd2e29
---- /dev/null
-+++ b/drivers/char/hw_random/mtk-sec-rng.c
-@@ -0,0 +1,97 @@
-+// SPDX-License-Identifier: GPL-2.0
-+/*
-+ * Copyright (C) 2019 MediaTek Inc.
-+ */
-+
-+#include <linux/arm-smccc.h>
-+#include <linux/hw_random.h>
-+#include <linux/module.h>
-+#include <linux/of.h>
-+#include <linux/platform_device.h>
-+#include <linux/soc/mediatek/mtk_sip_svc.h>
-+
-+#define MT67XX_RNG_MAGIC	0x74726e67
-+#define SMC_RET_NUM		4
-+#define MTK_SEC_RND_SIZE	(sizeof(u32) * SMC_RET_NUM)
-+
-+struct mtk_sec_rng_priv {
-+	struct hwrng rng;
-+};
-+
-+static void mtk_sec_get_rnd(uint32_t *val)
-+{
-+	struct arm_smccc_res res;
-+
-+	arm_smccc_smc(MTK_SIP_KERNEL_GET_RND,
-+		      MT67XX_RNG_MAGIC, 0, 0, 0, 0, 0, 0, &res);
-+
-+	val[0] = res.a0;
-+	val[1] = res.a1;
-+	val[2] = res.a2;
-+	val[3] = res.a3;
-+}
-+
-+static int mtk_sec_rng_read(struct hwrng *rng, void *buf, size_t max, bool wait)
-+{
-+	u32 val[4] = {0};
-+	int retval = 0;
-+	int i;
-+
-+	while (max >= MTK_SEC_RND_SIZE) {
-+		mtk_sec_get_rnd(val);
-+
-+		for (i = 0; i < SMC_RET_NUM; i++) {
-+			*(u32 *)buf = val[i];
-+			buf += sizeof(u32);
-+		}
-+
-+		retval += MTK_SEC_RND_SIZE;
-+		max -= MTK_SEC_RND_SIZE;
-+	}
-+
-+	return retval;
-+}
-+
-+static int mtk_sec_rng_probe(struct platform_device *pdev)
-+{
-+	struct mtk_sec_rng_priv *priv;
-+	int ret;
-+
-+	priv = devm_kzalloc(&pdev->dev, sizeof(*priv), GFP_KERNEL);
-+	if (!priv)
-+		return -ENOMEM;
-+
-+	priv->rng.name = pdev->name;
-+	priv->rng.read = mtk_sec_rng_read;
-+	priv->rng.priv = (unsigned long)&pdev->dev;
-+	priv->rng.quality = 900;
-+
-+	ret = devm_hwrng_register(&pdev->dev, &priv->rng);
-+	if (ret) {
-+		dev_err(&pdev->dev, "failed to register rng device: %d\n", ret);
-+		return ret;
-+	}
-+
-+	return 0;
-+}
-+
-+static const struct of_device_id mtk_sec_rng_match[] = {
-+	{ .compatible = "mediatek,mtk-sec-rng", },
-+	{}
-+};
-+MODULE_DEVICE_TABLE(of, mtk_sec_rng_match);
-+
-+static struct platform_driver mtk_sec_rng_driver = {
-+	.probe = mtk_sec_rng_probe,
-+	.driver = {
-+		.name = KBUILD_MODNAME,
-+		.owner = THIS_MODULE,
-+		.of_match_table = mtk_sec_rng_match,
-+	},
-+};
-+
-+module_platform_driver(mtk_sec_rng_driver);
-+
-+MODULE_DESCRIPTION("MediaTek Security Random Number Generator Driver");
-+MODULE_AUTHOR("Neal Liu <neal.liu@mediatek.com>");
-+MODULE_LICENSE("GPL");
--- 
-1.7.9.5
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gMjQvMDYvMTkgMTI6NTEgUE0sIEJhcnRvc3ogR29sYXN6ZXdza2kgd3JvdGU6Cj4gcG9uLiwg
+MjQgY3plIDIwMTkgbyAwNzo0MCBEYW5pZWwgTGV6Y2FubyA8ZGFuaWVsLmxlemNhbm9AbGluYXJv
+Lm9yZz4gbmFwaXNhxYIoYSk6Cj4+Cj4+Cj4+IFNla2hhciwgQmFydG9zeiwKPj4KPj4gaWYgdGhl
+IHNwYXJzZSB3YXJuaW5nIGlzIG5vdCBmaXhlZCwgdGhlIGRyaXZlciB3b24ndCBoaXQgdGhpcyBr
+ZXJuZWwKPj4gdmVyc2lvbi4gUGxlYXNlIGZpeCBpdCBiZWZvcmUgdGhlIHR3byBuZXh0IGRheXMg
+b3RoZXJ3aXNlIGl0IHdvbid0IG1ha2UKPj4gaXQgZm9yIHY1LjQuCj4+Cj4+IFRoYW5rcwo+Pgo+
+IAo+IEhpIERhbmllbCwKPiAKPiB3aWxsIGRvLCBJIGp1c3QgY2FtZSBiYWNrIHRvIHRoZSBvZmZp
+Y2UuCj4gCj4gU2VraGFyLCBob3cgZG8gd2Ugd2FudCB0byBoYW5kbGUgdGhlIHJlc3Qgb2YgdGhl
+IHBsYXRmb3JtIGNvZGUgd2l0aAo+IHRoaXMgZHJpdmVyPyBEbyB5b3UgdGhpbmsgaXQgY2FuIG1h
+a2UgaXQgZm9yIHRoZSBuZXh0IHJlbGVhc2U/CgpJdCBtYXkgaGF2ZSB0byB3YWl0IHRpbGwgbmV4
+dCByZWxlYXNlLCBJIGFtIGFmcmFpZC4gTGV0cyBmaXJzdCB0cnkgdG8KZ2V0IHRoZSBkcml2ZXIg
+aW4gdGhvdWdoLiBJIGNhbiB0cnkgYSBsYXRlIHB1bGwgcmVxdWVzdCB3aXRoIG5vIGd1YXJhbnRl
+ZXMuCgpUaGFua3MsClNla2hhcgoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5l
+bEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4v
+bGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
