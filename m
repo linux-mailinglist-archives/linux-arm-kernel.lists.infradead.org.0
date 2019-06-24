@@ -2,79 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 322D750F84
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Jun 2019 17:02:39 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D07DD50F8E
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Jun 2019 17:03:04 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=h+VDzdO/bHbH4PI/k9vv4zCNai165bFY5TZkS7yRrls=; b=n9IdgnzxIsaY9G
-	ii9B/Ky3IkGfi5iAjWtbZs34wlTQdz/RewpbPa1ReuYKvLCsHGAqjTX3PpvQTXDRVa/+qbQw/3/JZ
-	M2J2gQQyS3shwpbaqC53qPoSqj6iA5ffw3H8CNu+eHaHh6IQXXotRsuSwnNGwyoDR/C3cD+7gSPRk
-	4bXUP4NUToZuerQfp9hFmgTzQdT4nZhJG6KkdZHy3rmMdgH/gklWdAj1GV/IBKWPGGs/jx9I5Scs/
-	V3z/1XHJaSgCi3uLJQCjwSwIbV07yPg2nXSppuU8wuPCMADDUSWNXnYkt7n8ZoM3Z4loQG+jUrL2P
-	3VwYJFq0zME5VPdHZ3rQ==;
+	List-Owner; bh=rVFZh+LEmQpM7zamLUrU1rfDr52ZzRANWmdM9hcliOQ=; b=qBU1XAxSv/axda
+	OPddxJoHeONv5OzipvSNQHUNtZgtlDP1AsKcuAY7ph3dHeuTIgfVJfjT48C3ryzUYTul5RlX+Dmco
+	HaxEMFq+yrz9rHK9pG1rahLIk8Tqz4HTykDhT8quy4D1dcl9CAmJmg3DMOiBTQwUD673r8pHgzc9U
+	7vcDD0+sBxLlsGTPxXnEl3eUmmEgCnjifNKzC0Kv3g1NIlnZi8TEsTkoVBcGy2OeGskqlx7jcb5Ny
+	CpcxpFuDiM+Df3tKChky0yV8vuoRURbNFijpU6mQm4aOKc/xdjYIC/z4W4r4zEeVXB2VhpRUDdXP+
+	yg4AwFj50A1E9abqegow==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hfQUN-00011y-Or; Mon, 24 Jun 2019 15:02:35 +0000
-Received: from mail-pl1-x643.google.com ([2607:f8b0:4864:20::643])
+	id 1hfQUp-0001MK-CY; Mon, 24 Jun 2019 15:03:03 +0000
+Received: from mail-pg1-x543.google.com ([2607:f8b0:4864:20::543])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hfQU9-00010A-Mp
- for linux-arm-kernel@lists.infradead.org; Mon, 24 Jun 2019 15:02:23 +0000
-Received: by mail-pl1-x643.google.com with SMTP id t7so7031665plr.11
+ id 1hfQUZ-0001L2-5I
+ for linux-arm-kernel@lists.infradead.org; Mon, 24 Jun 2019 15:02:48 +0000
+Received: by mail-pg1-x543.google.com with SMTP id y72so7257847pgd.8
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 24 Jun 2019 08:02:21 -0700 (PDT)
+ Mon, 24 Jun 2019 08:02:46 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
  h=date:from:to:cc:subject:message-id:references:mime-version
  :content-disposition:in-reply-to;
- bh=GtAdqPjW6ZZZnXrgGtz9dHnmmTnu4keB507Xrm18218=;
- b=ChnBbYYcZq0gQP/sJ3UOuMWBE4sFOJb179x3KxiYoIf9mz01hnbxknC2HoJWZ+GnKo
- I/gVcZavG+bqjHfCSPjI903PM2pF2P+rKnbbNQBP7YiqUkuVedhF+Zt+0nrsisSgO62h
- w1puy7E9AYi+Gooou5JDhG3yaU4cjhKpyOEpU=
+ bh=wtUCrmBvvtcTuAx+h8NVUvwzdIMNqCWWz94+pOdbySM=;
+ b=e43eFy4uvro/u8g8OpaaLl6Rs0FW7SVQaUyRp7V2h5UXAJx5vDQq+s1gB9TZQuKsNt
+ b4xMpJfn+9rwJ2wcampbkbNuD3kDE/KEYUEeVoAoarpxyF2ozWjPuoNnonjrArQW0IHL
+ YwvsDeGKK9G/YnAhcFhuSat9a+4MSjjnix9W4=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to;
- bh=GtAdqPjW6ZZZnXrgGtz9dHnmmTnu4keB507Xrm18218=;
- b=BTciZn2GR/4wCQ15niQ6iDNTV5mGPTxPNcUb2EXRerwFE8BO3Z+IJxp2E6w7MODSS8
- ptSH7w0dU0sEVVVHiw7lozrr+udqZ5jj642KNx81v4Zu127MFHBiOPiI1ctWbElAKEZn
- 5J9+SWzD53BYOx/Kpt/jQd5igyThJRS389A1HGmtBQmy/7DENtPzlsgFgVTl3Q+7sdbH
- pI/LKlYgRJO3/6m4j0LeaB3UmR9PfqiSDk8PEGb41/BpyceFVOxghA4C2aYkqHOsL0S1
- zqk2WWcVWUjrcXStF0LZWc+OKEgRhdje4bcKm4f77NrWzhfkujByXnPFe65L14OXcc1c
- AO/Q==
-X-Gm-Message-State: APjAAAVhomta5iVBi/YXDL5kmrJOpgrdYngoblZJcj1YwBll6G/Vqzwb
- zHAKxmo7DcHmPX133oxHGpR2Yw==
-X-Google-Smtp-Source: APXvYqw9zabTal+i8jDaBfZR0QmoB7d+QTrClEOLwXBQMsgoLsFLEgEQhYNwi/8CLPRMNc9iVSjF6A==
-X-Received: by 2002:a17:902:7687:: with SMTP id
- m7mr67127539pll.310.1561388541281; 
- Mon, 24 Jun 2019 08:02:21 -0700 (PDT)
+ bh=wtUCrmBvvtcTuAx+h8NVUvwzdIMNqCWWz94+pOdbySM=;
+ b=R+FwbUiup5XZhk20hmmvYV68lPmsuOWtkUb2BG5ikl0N8kPY/NWCP6wBG9/MIa6BSi
+ S6YulcD/lymTncQ0iJb9EQGcecDAk3Gi5wo9W+EXSNxPwVzHwahP7HL1dExxCenGaAcq
+ 7PPt19xucZwu5kIIeYiWNNw/PD1l4M6PyzgoPx5+qEmpn6pSNnr8njhH2FL2CL39NV32
+ w8jrBQSv19SkTEEtEv2Z2y+1V9roURGVKkkBGBsM3j+n9MwG6NqsngJJxbf1wB2jgnEb
+ l0xw+3Yp+tF7cK4bubCR+hHS2tXvqFWrPZBUtSEOoky091YAA/NUJRQ1H7v14GXetKb7
+ dE4A==
+X-Gm-Message-State: APjAAAVkYiPAV+bzvhF4WbtF00coajcXzNrw1kVyqdMfCdFEhGOSIHS8
+ Cqo9M4mKAaAY8HKJCeufZzy8JQ==
+X-Google-Smtp-Source: APXvYqy4hQCrjSrRM7hi0X8gFT7Wh+JsuaL6AoOZPMb6KqSaIYh6bUPxpgpfjIoTWPj+3t8Nf6ik+g==
+X-Received: by 2002:a63:1d5:: with SMTP id 204mr34459271pgb.207.1561388566306; 
+ Mon, 24 Jun 2019 08:02:46 -0700 (PDT)
 Received: from www.outflux.net (smtp.outflux.net. [198.145.64.163])
- by smtp.gmail.com with ESMTPSA id e189sm5063967pfh.50.2019.06.24.08.02.20
+ by smtp.gmail.com with ESMTPSA id j1sm13025385pfe.101.2019.06.24.08.02.45
  (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Mon, 24 Jun 2019 08:02:20 -0700 (PDT)
-Date: Mon, 24 Jun 2019 08:02:19 -0700
+ Mon, 24 Jun 2019 08:02:45 -0700 (PDT)
+Date: Mon, 24 Jun 2019 08:02:44 -0700
 From: Kees Cook <keescook@chromium.org>
 To: Andrey Konovalov <andreyknvl@google.com>
-Subject: Re: [PATCH v18 15/15] selftests, arm64: add a selftest for passing
- tagged pointers to kernel
-Message-ID: <201906240802.29EB80F@keescook>
+Subject: Re: [PATCH v18 10/15] drm/radeon: untag user pointers in
+ radeon_gem_userptr_ioctl
+Message-ID: <201906240802.23FD5401@keescook>
 References: <cover.1561386715.git.andreyknvl@google.com>
- <0999c80cd639b78ae27c0674069d552833227564.1561386715.git.andreyknvl@google.com>
+ <61d800c35a4f391218fbca6f05ec458557d8d097.1561386715.git.andreyknvl@google.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <0999c80cd639b78ae27c0674069d552833227564.1561386715.git.andreyknvl@google.com>
+In-Reply-To: <61d800c35a4f391218fbca6f05ec458557d8d097.1561386715.git.andreyknvl@google.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190624_080221_745621_DEE76595 
-X-CRM114-Status: GOOD (  21.73  )
+X-CRM114-CacheID: sfid-20190624_080247_207246_53AC25E6 
+X-CRM114-Status: GOOD (  19.47  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:643 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:543 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -128,109 +127,45 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Jun 24, 2019 at 04:33:00PM +0200, Andrey Konovalov wrote:
+On Mon, Jun 24, 2019 at 04:32:55PM +0200, Andrey Konovalov wrote:
 > This patch is a part of a series that extends kernel ABI to allow to pass
 > tagged user pointers (with the top byte set to something else other than
 > 0x00) as syscall arguments.
 > 
-> This patch adds a simple test, that calls the uname syscall with a
-> tagged user pointer as an argument. Without the kernel accepting tagged
-> user pointers the test fails with EFAULT.
+> In radeon_gem_userptr_ioctl() an MMU notifier is set up with a (tagged)
+> userspace pointer. The untagged address should be used so that MMU
+> notifiers for the untagged address get correctly matched up with the right
+> BO. This funcation also calls radeon_ttm_tt_pin_userptr(), which uses
+> provided user pointers for vma lookups, which can only by done with
+> untagged pointers.
 > 
+> This patch untags user pointers in radeon_gem_userptr_ioctl().
+> 
+> Suggested-by: Felix Kuehling <Felix.Kuehling@amd.com>
+> Acked-by: Felix Kuehling <Felix.Kuehling@amd.com>
 > Signed-off-by: Andrey Konovalov <andreyknvl@google.com>
 
-Acked-by: Kees Cook <keescook@chromium.org>
+Reviewed-by: Kees Cook <keescook@chromium.org>
 
 -Kees
 
 > ---
->  tools/testing/selftests/arm64/.gitignore      |  1 +
->  tools/testing/selftests/arm64/Makefile        | 11 +++++++
->  .../testing/selftests/arm64/run_tags_test.sh  | 12 ++++++++
->  tools/testing/selftests/arm64/tags_test.c     | 29 +++++++++++++++++++
->  4 files changed, 53 insertions(+)
->  create mode 100644 tools/testing/selftests/arm64/.gitignore
->  create mode 100644 tools/testing/selftests/arm64/Makefile
->  create mode 100755 tools/testing/selftests/arm64/run_tags_test.sh
->  create mode 100644 tools/testing/selftests/arm64/tags_test.c
+>  drivers/gpu/drm/radeon/radeon_gem.c | 2 ++
+>  1 file changed, 2 insertions(+)
 > 
-> diff --git a/tools/testing/selftests/arm64/.gitignore b/tools/testing/selftests/arm64/.gitignore
-> new file mode 100644
-> index 000000000000..e8fae8d61ed6
-> --- /dev/null
-> +++ b/tools/testing/selftests/arm64/.gitignore
-> @@ -0,0 +1 @@
-> +tags_test
-> diff --git a/tools/testing/selftests/arm64/Makefile b/tools/testing/selftests/arm64/Makefile
-> new file mode 100644
-> index 000000000000..a61b2e743e99
-> --- /dev/null
-> +++ b/tools/testing/selftests/arm64/Makefile
-> @@ -0,0 +1,11 @@
-> +# SPDX-License-Identifier: GPL-2.0
+> diff --git a/drivers/gpu/drm/radeon/radeon_gem.c b/drivers/gpu/drm/radeon/radeon_gem.c
+> index 44617dec8183..90eb78fb5eb2 100644
+> --- a/drivers/gpu/drm/radeon/radeon_gem.c
+> +++ b/drivers/gpu/drm/radeon/radeon_gem.c
+> @@ -291,6 +291,8 @@ int radeon_gem_userptr_ioctl(struct drm_device *dev, void *data,
+>  	uint32_t handle;
+>  	int r;
+>  
+> +	args->addr = untagged_addr(args->addr);
 > +
-> +# ARCH can be overridden by the user for cross compiling
-> +ARCH ?= $(shell uname -m 2>/dev/null || echo not)
-> +
-> +ifneq (,$(filter $(ARCH),aarch64 arm64))
-> +TEST_GEN_PROGS := tags_test
-> +TEST_PROGS := run_tags_test.sh
-> +endif
-> +
-> +include ../lib.mk
-> diff --git a/tools/testing/selftests/arm64/run_tags_test.sh b/tools/testing/selftests/arm64/run_tags_test.sh
-> new file mode 100755
-> index 000000000000..745f11379930
-> --- /dev/null
-> +++ b/tools/testing/selftests/arm64/run_tags_test.sh
-> @@ -0,0 +1,12 @@
-> +#!/bin/sh
-> +# SPDX-License-Identifier: GPL-2.0
-> +
-> +echo "--------------------"
-> +echo "running tags test"
-> +echo "--------------------"
-> +./tags_test
-> +if [ $? -ne 0 ]; then
-> +	echo "[FAIL]"
-> +else
-> +	echo "[PASS]"
-> +fi
-> diff --git a/tools/testing/selftests/arm64/tags_test.c b/tools/testing/selftests/arm64/tags_test.c
-> new file mode 100644
-> index 000000000000..22a1b266e373
-> --- /dev/null
-> +++ b/tools/testing/selftests/arm64/tags_test.c
-> @@ -0,0 +1,29 @@
-> +// SPDX-License-Identifier: GPL-2.0
-> +
-> +#include <stdio.h>
-> +#include <stdlib.h>
-> +#include <unistd.h>
-> +#include <stdint.h>
-> +#include <sys/prctl.h>
-> +#include <sys/utsname.h>
-> +
-> +#define SHIFT_TAG(tag)		((uint64_t)(tag) << 56)
-> +#define SET_TAG(ptr, tag)	(((uint64_t)(ptr) & ~SHIFT_TAG(0xff)) | \
-> +					SHIFT_TAG(tag))
-> +
-> +int main(void)
-> +{
-> +	static int tbi_enabled = 0;
-> +	struct utsname *ptr, *tagged_ptr;
-> +	int err;
-> +
-> +	if (prctl(PR_SET_TAGGED_ADDR_CTRL, PR_TAGGED_ADDR_ENABLE, 0, 0, 0) == 0)
-> +		tbi_enabled = 1;
-> +	ptr = (struct utsname *)malloc(sizeof(*ptr));
-> +	if (tbi_enabled)
-> +		tagged_ptr = (struct utsname *)SET_TAG(ptr, 0x42);
-> +	err = uname(tagged_ptr);
-> +	free(ptr);
-> +
-> +	return err;
-> +}
+>  	if (offset_in_page(args->addr | args->size))
+>  		return -EINVAL;
+>  
 > -- 
 > 2.22.0.410.gd8fdbe21b5-goog
 > 
