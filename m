@@ -2,68 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2BA7E5195A
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Jun 2019 19:12:31 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id ED4175195F
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Jun 2019 19:14:20 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=lYhi4K4MYxUQ7c3e9dXIsRIRaNdwrUJ9TrviK4+veG8=; b=O1HmV3MlngJ/UL
-	BNETFmD8zzDn4QQpYX00MCxG7zR5wmEC9sSJ3zFPLKNhSGUhtd1pvOzG/dMJ6zIrnF8EaVp4m6Y+T
-	/iFBjFtUjRggSrgYTLzB3N3U9lIJu5UbCfkm+qlvb+LvX1KJlyLXlM0t4i81oQRzz5eVwdzuRKxpK
-	p9SZxZiIDeKEkb+lt+jKodjOcBR3rHiIRylGj3VkAYsbsEpQIgJ3HN2iRISqJyPSaVY4l0Bo9nY7f
-	sITwSZwgoVw4PMqaY4U9DOPKA4XW6MbN4FBd1IC9kVVkvnvqmGtzzpDjPhYrVTNayjQubSy4WU9Pu
-	GqJ9r7KIAipDh2Ef2+ow==;
+	List-Owner; bh=RnzdKlvX05PdaMwDdELhNv4ZSPBpUYO7uO/Uiosgxeg=; b=kpzk5SnrB5iabo
+	4YljpRj3KRI83szhS4wes0fqIc8cQelcWtC+iW07Nz8KamHx4J205DWY+9g/eEUl8NLSR/1d5S0eO
+	ahbu6fj3Gb2O8t2csGTPbLHursNVkXbotqZuD7dqPINMZQ2mC2x8A0fGyvXsyfgdmfmll5wMTi9Tm
+	knPr3PVwfB7snTJ2daf1NMW/fDcUHQmyBYw1P8WVnl2QmfZFrjYLbms31p1c8nGA5kT3DDcKqc8sP
+	nPcRFFp/J6XeSOiKIo/ECOvoyz5RGoh9s24FjFyXt1Yk0eUJ0hcTj1LiV1BSiHXreT7r6wESgdXXQ
+	zUs0NwA9a98Oplsx1t3w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hfSW2-0003CP-D0; Mon, 24 Jun 2019 17:12:26 +0000
-Received: from vps0.lunn.ch ([185.16.172.187])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hfSVq-0003Bn-73
- for linux-arm-kernel@lists.infradead.org; Mon, 24 Jun 2019 17:12:15 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=lunn.ch;
- s=20171124; h=In-Reply-To:Content-Type:MIME-Version:References:Message-ID:
- Subject:Cc:To:From:Date:Sender:Reply-To:Content-Transfer-Encoding:Content-ID:
- Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
- :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
- List-Post:List-Owner:List-Archive;
- bh=p7sQ79R8JaxIKbqr/Gc0orIA07ItCj3ggsuU+qyqs8Y=; b=WhPmmRa3OvUx3DEGJJUWX2qJZV
- q5Qec0GyRgC6O+2BE/mOJd3b7x8f230C4k4REm9JRi0z7+JIoxvs9+7FO4dcGE0jZTNw1wzb94SF6
- mIBMCki45D6GShTDxHSftosAGLelVKSdtTypxrfvfXcFwpsuMahm0N/+TbEWsAufaPlU=;
-Received: from andrew by vps0.lunn.ch with local (Exim 4.89)
- (envelope-from <andrew@lunn.ch>)
- id 1hfSVm-0007Cn-R9; Mon, 24 Jun 2019 19:12:10 +0200
-Date: Mon, 24 Jun 2019 19:12:10 +0200
-From: Andrew Lunn <andrew@lunn.ch>
-To: claudio@databyte.ch
-Subject: Re: [Patch] support for new board
-Message-ID: <20190624171210.GA31306@lunn.ch>
-References: <004601d52a7d$8ee52c40$acaf84c0$@databyte.ch>
+	id 1hfSXp-0003jc-EO; Mon, 24 Jun 2019 17:14:17 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hfSXd-0003jC-3B
+ for linux-arm-kernel@lists.infradead.org; Mon, 24 Jun 2019 17:14:06 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 19E05360;
+ Mon, 24 Jun 2019 10:14:04 -0700 (PDT)
+Received: from arrakis.emea.arm.com (arrakis.cambridge.arm.com [10.1.196.78])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
+ 67FD73F718; Mon, 24 Jun 2019 10:14:02 -0700 (PDT)
+Date: Mon, 24 Jun 2019 18:14:00 +0100
+From: Catalin Marinas <catalin.marinas@arm.com>
+To: Ard Biesheuvel <ard.biesheuvel@linaro.org>
+Subject: Re: [PATCH 0/4] arm64: wire up VM_FLUSH_RESET_PERMS
+Message-ID: <20190624171358.GI29120@arrakis.emea.arm.com>
+References: <20190523102256.29168-1-ard.biesheuvel@arm.com>
+ <20190528100413.GA20809@fuggles.cambridge.arm.com>
+ <20190624111600.b7e5kkfvuszj6522@willie-the-truck>
+ <07e3d9ea-b917-2adb-6f88-0f1a31692d04@arm.com>
+ <CAKv+Gu9VcXuz8P7-2=MZjDj-7nVOEA8FUE1fRYTvtt1mvt99Yw@mail.gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <004601d52a7d$8ee52c40$acaf84c0$@databyte.ch>
-User-Agent: Mutt/1.5.23 (2014-03-12)
+In-Reply-To: <CAKv+Gu9VcXuz8P7-2=MZjDj-7nVOEA8FUE1fRYTvtt1mvt99Yw@mail.gmail.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190624_101214_406017_29A14B30 
-X-CRM114-Status: GOOD (  22.32  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190624_101405_178784_717CD9D0 
+X-CRM114-Status: GOOD (  22.15  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [185.16.172.187 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -75,138 +64,67 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: shawnguo@kernel.org, s.hauer@pengutronix.de, linux-imx@nxp.com,
- kernel@pengutronix.de, festevam@gmail.com,
- linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>, Marc Zyngier <marc.zyngier@arm.com>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Peter Zijlstra <peterz@infradead.org>, Nadav Amit <namit@vmware.com>,
+ Masami Hiramatsu <mhiramat@kernel.org>,
+ Ard Biesheuvel <ard.biesheuvel@arm.com>, James Morse <james.morse@arm.com>,
+ Andrew Morton <akpm@linux-foundation.org>,
+ Rick Edgecombe <rick.p.edgecombe@intel.com>, Will Deacon <will@kernel.org>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Jun 24, 2019 at 01:11:20PM +0200, claudio@databyte.ch wrote:
-> Hi there
+On Mon, Jun 24, 2019 at 04:29:39PM +0200, Ard Biesheuvel wrote:
+> On Mon, 24 Jun 2019 at 13:23, Ard Biesheuvel <ard.biesheuvel@arm.com> wrote:
+> > On 6/24/19 1:16 PM, Will Deacon wrote:
+> > > On Tue, May 28, 2019 at 11:04:20AM +0100, Will Deacon wrote:
+> > >> On Thu, May 23, 2019 at 11:22:52AM +0100, Ard Biesheuvel wrote:
+> > >>> Ard Biesheuvel (4):
+> > >>>    arm64: module: create module allocations without exec permissions
+> > >>>    arm64/mm: wire up CONFIG_ARCH_HAS_SET_DIRECT_MAP
+> > >>>    arm64/kprobes: set VM_FLUSH_RESET_PERMS on kprobe instruction pages
+> > >>>    arm64: bpf: do not allocate executable memory
+> > >>>
+> > >>>   arch/arm64/Kconfig                  |  1 +
+> > >>>   arch/arm64/include/asm/cacheflush.h |  3 ++
+> > >>>   arch/arm64/kernel/module.c          |  4 +-
+> > >>>   arch/arm64/kernel/probes/kprobes.c  |  4 +-
+> > >>>   arch/arm64/mm/pageattr.c            | 48 ++++++++++++++++----
+> > >>>   arch/arm64/net/bpf_jit_comp.c       |  2 +-
+> > >>>   mm/vmalloc.c                        | 11 -----
+> > >>>   7 files changed, 50 insertions(+), 23 deletions(-)
+> > >>
+> > >> Thanks, this all looks good to me. I can get pick this up for 5.2 if
+> > >> Rick's fixes [1] land soon enough.
+> > >
+> > > Bah, I missed these landing in -rc5 and I think it's a bit too late for
+> > > us to take this for 5.2. now particularly with our limited ability to
+> > > fix any late regressions that might arise.
+> > >
+> > > In which case, Catalin, please can you take these for 5.3? You might run
+> > > into some testing failures with for-next/core due to the late of Rick's
+> > > fixes, but linux-next should be alright and I don't think you'll get any
+> > > conflicts.
+> > >
+> > > Acked-by: Will Deacon <will@kernel.org>
+> > >
+> > > Ard: are you ok with that?
+> >
+> > That is fine, although I won't be around to pick up the pieces by the
+> > time the merge window opens. Also, I'd like to follow up on the lazy
+> > vunmap thing for non-x86, but perhaps we can talk about this at plumbers?
 > 
-> I would like to add support for a new board. 
-> Below is the Patch. 
+> Actually, you will run into a couple of conflicts. Let me know if you
+> want me to respin (although they still won't apply cleanly to both
+> for-next/core and -next)
 
-Hi Claudio
+I queued them in for-next/core (and fixed a minor conflict). Thanks.
 
-Please take a read of
-
-https://www.kernel.org/doc/html/latest/process/submitting-patches.html
-
-Your email has the wrong format. You a missing a Signed-off-by, etc.
-
-> ---------------------------------------
-> 
-> >From 84ee8bc7b927ca9f88870a6a2f73906bb9492698 Mon Sep 17 00:00:00 2001
-> From: Claudio Hediger <claudio@databyte.ch>
-> Date: Mon, 24 Jun 2019 12:39:51 +0200
-> Subject: [PATCH] added eval1a board
-> 
-> ---
->  arch/arm/boot/dts/Makefile               |   4 +-
->  arch/arm/boot/dts/imx6ull-dtb-eval1a.dts | 168 +++++++++++++++
->  arch/arm/configs/eval1a_defconfig        | 259 +++++++++++++++++++++++
->  3 files changed, 430 insertions(+), 1 deletion(-)
->  create mode 100644 arch/arm/boot/dts/imx6ull-dtb-eval1a.dts
->  create mode 100644 arch/arm/configs/eval1a_defconfig
-> 
-> diff --git a/arch/arm/boot/dts/Makefile b/arch/arm/boot/dts/Makefile
-> index dab2914fa293..5561881358ba 100644
-> --- a/arch/arm/boot/dts/Makefile
-> +++ b/arch/arm/boot/dts/Makefile
-> @@ -580,7 +580,9 @@ dtb-$(CONFIG_SOC_IMX6UL) += \
->  	imx6ull-14x14-evk.dtb \
->  	imx6ull-colibri-eval-v3.dtb \
->  	imx6ull-colibri-wifi-eval-v3.dtb \
-> -	imx6ulz-14x14-evk.dtb
-> +	imx6ulz-14x14-evk.dtb \
-> +        imx6ull-dtb-eval1a.dtb
-
-These files are listed in alphabetical order.  There is also a
-space/tab problem.  The -dtb- also looks a bit odd. I can see it
-getting mixed up with Device Tree Binary. Maybe -databyte- would be
-better?
-
-> +	
->  dtb-$(CONFIG_SOC_IMX7D) += \
->  	imx7d-cl-som-imx7.dtb \
->  	imx7d-colibri-emmc-eval-v3.dtb \
-> diff --git a/arch/arm/boot/dts/imx6ull-dtb-eval1a.dts
-> b/arch/arm/boot/dts/imx6ull-dtb-eval1a.dts
-> new file mode 100644
-> index 000000000000..e549ef90816f
-> --- /dev/null
-> +++ b/arch/arm/boot/dts/imx6ull-dtb-eval1a.dts
-> @@ -0,0 +1,168 @@
-> +/*
-> + *
-> + * This program is free software; you can redistribute it and/or modify
-> + * it under the terms of the GNU General Public License version 2 as
-> + * published by the Free Software Foundation.
-> + */
-
-Please add an SPDX line, and skip this text.
-
-> +
-> +/dts-v1/;
-> +
-> +#include "imx6ull.dtsi"
-> +
-> +/ {
-> +	model = "Databyte imx6 Evalboard 1A";
-> +	compatible = "databyte,eval1a", "fsl,imx6ull";
-
-databyte needs adding to Documentation/devicetree/bindings/vendor-prefixes.yaml 
-
-> +&fec1 {
-> +	pinctrl-names = "default";
-> +	pinctrl-0 = <&pinctrl_enet1>;
-> +	phy-mode = "rmii";
-> +	phy-handle = <&ethphy0>;
-> +	status = "okay";
-> +
-> +	mdio {
-> +		#address-cells = <1>;
-> +		#size-cells = <0>;
-> +
-> +		ethphy0: ethernet-phy@2 {
-> +			compatible = "ethernet-phy-ieee802.3-c22";
-
-This compatible is not required.
-
-> +			reg = <2>;
-> +		};
-> +	};
-> +};
-> +
-> +
-> +
-> +&iomuxc {
-> +	pinctrl-names = "default";
-> +	//pinctrl-0 = <&pinctrl_hog_1>;
-
-Please avoid commented out code.
-
-> +	eval1a {
-> +
-> +		pinctrl_enet1: enet1grp {
-> +			fsl,pins = <
-> +				MX6UL_PAD_ENET1_RX_EN__ENET1_RX_EN
-> 0x1b0b0
-> +				MX6UL_PAD_ENET1_RX_ER__ENET1_RX_ER
-> 0x1b0b0
-
-It looks like your mailer has corrupted this patch. Try using 'git
-send-email'
-
-> diff --git a/arch/arm/configs/eval1a_defconfig
-> b/arch/arm/configs/eval1a_defconfig
-
-defconfig's have not been added for years.
-
-	    Andrew
+-- 
+Catalin
 
 _______________________________________________
 linux-arm-kernel mailing list
