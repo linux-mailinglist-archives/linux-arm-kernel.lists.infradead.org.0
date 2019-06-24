@@ -2,55 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5F0CA519B2
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Jun 2019 19:38:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 72326519B9
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Jun 2019 19:38:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:Message-ID:
-	In-Reply-To:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=RpU75qT0son+g1zRcF7JS8svNHOuOPhObnBWAkIhy6A=; b=qlkC3igWUjV3OU
-	frGfoT6EinTAFASf7RfVtqEqUyl8SmgOg+JM6O0geJEs45S17NH156rj/fozOh6Pdfd07GzVDCtRG
-	jmxjGSgJwHPolhRW9N9usnJF3HpQWa10bhfzJI84RfPv7mb8t5xuUnYINBhXzrz7yXLmyOWYGv83U
-	iVZTIVaE/LDXEbiSzNJtQRDJxm/MreHxZWkvIGRQDvyNRqiJ/nsB4S22Ycg6TUq9LHpZ3WEF9wTr7
-	39QVvxER04HZp8zz8EPcR9IQs+2WihXeY6d/56M+vySRIPu7/XXzhxpqjKaa8B/nlBeBZPsE8qNlG
-	3vLO3msuNwMYs3uwrbeQ==;
+	List-Owner; bh=hp8tMwchI6ejui/8Y+PWQjFRTqEzqbta+hJZAdxk4qI=; b=nSfAB0g1Y1y3Zx
+	szzw+0TkzLeUmpFOXD0eSK/DZIRMJ2v/fU2PkC50BryvEP05SHBH2iC1S/NLuN5vYCVY3qosOwP2Y
+	r1CtO5PgXQTMEOOkNnJc2cNoiELZ7d5E0amirGwRT1ELWfOAVRtsSRn3ePEZ11KCrlke0y7KrJQ5u
+	Y5wehrKjm/HkYLo0IcTw7eU5lhtnE48pFL2Zd8TZU61LN51zvZHqMjq8zm95yhOd2Y6C3goBoI85V
+	7mfzHPzi7nwU53EnGdDjHJkVQgPbSjkJOiaTX95v39QoGzc3LzpRVhJvXIkxgQ/ZL2+4/LMlGJ4uz
+	7rQN9WPO7uExDmxIZlzw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hfSuk-0004ew-Sr; Mon, 24 Jun 2019 17:37:58 +0000
-Received: from galois.linutronix.de ([2a0a:51c0:0:12e:550::1])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hfSua-0004e8-Qc
- for linux-arm-kernel@lists.infradead.org; Mon, 24 Jun 2019 17:37:50 +0000
-Received: from p5b06daab.dip0.t-ipconnect.de ([91.6.218.171] helo=nanos)
- by Galois.linutronix.de with esmtpsa (TLS1.2:DHE_RSA_AES_256_CBC_SHA256:256)
- (Exim 4.80) (envelope-from <tglx@linutronix.de>)
- id 1hfSuT-0002VP-3j; Mon, 24 Jun 2019 19:37:41 +0200
-Date: Mon, 24 Jun 2019 19:37:40 +0200 (CEST)
-From: Thomas Gleixner <tglx@linutronix.de>
-To: Catalin Marinas <catalin.marinas@arm.com>
-Subject: Re: [PATCH v5 2/4] x86/entry: Simplify _TIF_SYSCALL_EMU handling
-In-Reply-To: <20190624173008.GJ29120@arrakis.emea.arm.com>
-Message-ID: <alpine.DEB.2.21.1906241936480.32342@nanos.tec.linutronix.de>
-References: <20190523090618.13410-3-sudeep.holla@arm.com>
- <20190611145627.23229-1-sudeep.holla@arm.com>
- <20190624173008.GJ29120@arrakis.emea.arm.com>
-User-Agent: Alpine 2.21 (DEB 202 2017-01-01)
+	id 1hfSvD-0004ua-BJ; Mon, 24 Jun 2019 17:38:27 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hfSuz-0004tp-Vs
+ for linux-arm-kernel@lists.infradead.org; Mon, 24 Jun 2019 17:38:15 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 25282C0A;
+ Mon, 24 Jun 2019 10:38:13 -0700 (PDT)
+Received: from arrakis.emea.arm.com (arrakis.cambridge.arm.com [10.1.196.78])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
+ 7895D3F718; Mon, 24 Jun 2019 10:38:08 -0700 (PDT)
+Date: Mon, 24 Jun 2019 18:38:06 +0100
+From: Catalin Marinas <catalin.marinas@arm.com>
+To: Andrey Konovalov <andreyknvl@google.com>
+Subject: Re: [PATCH v18 15/15] selftests, arm64: add a selftest for passing
+ tagged pointers to kernel
+Message-ID: <20190624173805.GK29120@arrakis.emea.arm.com>
+References: <cover.1561386715.git.andreyknvl@google.com>
+ <0999c80cd639b78ae27c0674069d552833227564.1561386715.git.andreyknvl@google.com>
 MIME-Version: 1.0
-X-Linutronix-Spam-Score: -1.0
-X-Linutronix-Spam-Level: -
-X-Linutronix-Spam-Status: No , -1.0 points, 5.0 required, ALL_TRUSTED=-1,
- SHORTCIRCUIT=-0.0001
+Content-Disposition: inline
+In-Reply-To: <0999c80cd639b78ae27c0674069d552833227564.1561386715.git.andreyknvl@google.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190624_103749_007463_6FB962B6 
-X-CRM114-Status: GOOD (  16.74  )
+X-CRM114-CacheID: sfid-20190624_103814_078700_1AB5D581 
+X-CRM114-Status: GOOD (  12.01  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -63,46 +62,68 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Haibo Xu <haibo.xu@arm.com>, Steve Capper <Steve.Capper@arm.com>,
- Richard Weinberger <richard@nod.at>, jdike@addtoit.com, x86@kernel.org,
- Will Deacon <will.deacon@arm.com>, Oleg Nesterov <oleg@redhat.com>,
- linux-kernel@vger.kernel.org, Ingo Molnar <mingo@redhat.com>,
- Borislav Petkov <bp@alien8.de>, Andy Lutomirski <luto@kernel.org>,
- Sudeep Holla <sudeep.holla@arm.com>, linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>, kvm@vger.kernel.org,
+ Szabolcs Nagy <Szabolcs.Nagy@arm.com>, Will Deacon <will.deacon@arm.com>,
+ dri-devel@lists.freedesktop.org, linux-mm@kvack.org,
+ Khalid Aziz <khalid.aziz@oracle.com>, linux-kselftest@vger.kernel.org,
+ Felix Kuehling <Felix.Kuehling@amd.com>,
+ Vincenzo Frascino <vincenzo.frascino@arm.com>,
+ Jacob Bramley <Jacob.Bramley@arm.com>, Leon Romanovsky <leon@kernel.org>,
+ linux-rdma@vger.kernel.org, amd-gfx@lists.freedesktop.org,
+ Christoph Hellwig <hch@infradead.org>, Jason Gunthorpe <jgg@ziepe.ca>,
+ Dmitry Vyukov <dvyukov@google.com>, Dave Martin <Dave.Martin@arm.com>,
+ Evgeniy Stepanov <eugenis@google.com>, linux-media@vger.kernel.org,
+ Kevin Brodsky <kevin.brodsky@arm.com>, Kees Cook <keescook@chromium.org>,
+ Ruben Ayrapetyan <Ruben.Ayrapetyan@arm.com>,
+ Ramana Radhakrishnan <Ramana.Radhakrishnan@arm.com>,
+ Alex Williamson <alex.williamson@redhat.com>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>,
+ linux-arm-kernel@lists.infradead.org, Kostya Serebryany <kcc@google.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Yishai Hadas <yishaih@mellanox.com>, linux-kernel@vger.kernel.org,
+ Jens Wiklander <jens.wiklander@linaro.org>, Lee Smith <Lee.Smith@arm.com>,
+ Alexander Deucher <Alexander.Deucher@amd.com>,
+ Andrew Morton <akpm@linux-foundation.org>, enh <enh@google.com>,
+ Robin Murphy <robin.murphy@arm.com>,
+ Christian Koenig <Christian.Koenig@amd.com>,
+ Luc Van Oostenryck <luc.vanoostenryck@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, 24 Jun 2019, Catalin Marinas wrote:
-> On Tue, Jun 11, 2019 at 03:56:27PM +0100, Sudeep Holla wrote:
-> > The usage of emulated and _TIF_SYSCALL_EMU flags in syscall_trace_enter
-> > is more complicated than required.
-> > 
-> > Cc: Andy Lutomirski <luto@kernel.org>
-> > Cc: Ingo Molnar <mingo@redhat.com>
-> > Cc: Borislav Petkov <bp@alien8.de>
-> > Acked-by: Oleg Nesterov <oleg@redhat.com>
-> > Reviewed-by: Thomas Gleixner <tglx@linutronix.de>
-> > Signed-off-by: Sudeep Holla <sudeep.holla@arm.com>
-> > ---
-> >  arch/x86/entry/common.c | 17 ++++++-----------
-> >  1 file changed, 6 insertions(+), 11 deletions(-)
-> > 
-> > Hi Catalin,
-> > 
-> > I assume you can now pick up this patch.
-> 
-> I can, unless Thomas picks it up through the tip tree (there is no
-> dependency on the other patches in this series, which I already queued
-> via arm64).
+On Mon, Jun 24, 2019 at 04:33:00PM +0200, Andrey Konovalov wrote:
+> --- /dev/null
+> +++ b/tools/testing/selftests/arm64/tags_test.c
+> @@ -0,0 +1,29 @@
+> +// SPDX-License-Identifier: GPL-2.0
+> +
+> +#include <stdio.h>
+> +#include <stdlib.h>
+> +#include <unistd.h>
+> +#include <stdint.h>
+> +#include <sys/prctl.h>
+> +#include <sys/utsname.h>
+> +
+> +#define SHIFT_TAG(tag)		((uint64_t)(tag) << 56)
+> +#define SET_TAG(ptr, tag)	(((uint64_t)(ptr) & ~SHIFT_TAG(0xff)) | \
+> +					SHIFT_TAG(tag))
+> +
+> +int main(void)
+> +{
+> +	static int tbi_enabled = 0;
+> +	struct utsname *ptr, *tagged_ptr;
+> +	int err;
+> +
+> +	if (prctl(PR_SET_TAGGED_ADDR_CTRL, PR_TAGGED_ADDR_ENABLE, 0, 0, 0) == 0)
+> +		tbi_enabled = 1;
 
-Last time I checked I had no dependencies either. I'll recheck later
-tonight.
+Nitpick: with the latest prctl() patch, you can skip the last three
+arguments as they are ignored.
 
-Thanks,
+Either way:
 
-	tglx
+Reviewed-by: Catalin Marinas <catalin.marinas@arm.com>
 
 _______________________________________________
 linux-arm-kernel mailing list
