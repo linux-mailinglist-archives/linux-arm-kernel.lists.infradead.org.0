@@ -2,64 +2,65 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 22F6A50E92
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Jun 2019 16:36:39 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1F2DB50E9B
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Jun 2019 16:36:58 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:From:Subject:References:Mime-Version
 	:Message-Id:In-Reply-To:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=zmdQu02YYAxj9OuayccVigmh2WtNSv8wgKq1pDiN1EQ=; b=Yb/cbu0PbKRyk+
-	hoignbvOyJoyFCkpJlskqeyi2auNTJi1UM2J+epLueZHarVWkxkcTXuOcPeVerhp+3+fw8K1fOo7P
-	Eai3BPnQYgG7FwY1tr57ztmP3MoIgiqEk2ehz8nlqv4TCN2R84jmfqJB0Fu8UP6cGJLwYKEV/ezQ/
-	lJ1i1qe8xJO9zrn+HpMJzJ0IVGvjmax8TV4M54aHmiIyc5Qe732hqTBZlJnFkPtdtasylHmkz7YW6
-	JU/PeilHR/V14XKz4oIyQBH+/arxXpbgIFeQfk6s20HDFzPGjZwvtKuWwGhY7bJNKo5hze+g5mHrH
-	3pKK1mmwQn9Nm3BkeLcw==;
+	List-Owner; bh=UtlYHoeVeZ6xCTV0nupR3DohNlfJepGBZs+KOYx7+gc=; b=ZCcSb853+FhkSw
+	kWta66d18n1WugTs0PUHExQpqA5xsUSox1pg2IDEpPayBUxkgAqNovpMfSpdHkC9ASEMc5U5kXFGP
+	i0wBEp5daSFpWPQlcKwhL4PzE+hFXGTcEFdGnHF7sWwHSjbxagjlH4VurYD2M9xhxBuEtj3oz81sX
+	5FS4UlTfI6WqPcoxIF/4MvsJpInmyNn0ZKaukqM3hGiUCnD+5yCG9uq5ihu0VYr0AgQ/9tMu4uALV
+	ypTEOkPFYM+oBfPeBnT7TjknCxn5BzyQyZmCwhMiNDurVNjRWrIG021GMP/8uzuJxTiiXmB8igKIn
+	BaSHre426H+DnhFBci6g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hfQ5F-0007yy-Sk; Mon, 24 Jun 2019 14:36:37 +0000
-Received: from mail-vk1-xa49.google.com ([2607:f8b0:4864:20::a49])
+	id 1hfQ5W-0008CG-G9; Mon, 24 Jun 2019 14:36:54 +0000
+Received: from mail-vk1-xa4a.google.com ([2607:f8b0:4864:20::a4a])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hfQ2L-0004Zs-D2
- for linux-arm-kernel@lists.infradead.org; Mon, 24 Jun 2019 14:33:39 +0000
-Received: by mail-vk1-xa49.google.com with SMTP id s145so6439346vke.18
+ id 1hfQ2O-0004bd-K7
+ for linux-arm-kernel@lists.infradead.org; Mon, 24 Jun 2019 14:33:42 +0000
+Received: by mail-vk1-xa4a.google.com with SMTP id j5so6490179vkj.1
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 24 Jun 2019 07:33:36 -0700 (PDT)
+ Mon, 24 Jun 2019 07:33:39 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
  h=date:in-reply-to:message-id:mime-version:references:subject:from:to
- :cc; bh=28kCgmnVQJn+BZTUIaDgZIVH/xo2y2bOHrwsQUj+YbM=;
- b=ABmMcgz7AotklEeh4aKRTIHhpGJQax1zmT5GPHXjwooqibRCX0X83G+wpDe15X0SRe
- HXe9A2NvGDpBCmPVnJWVtQfrGpLCbLOl8a7QKidgVQZS583p/fioInBWA7fnqQUcPu7U
- DvrTBHAjvD9bvEv4FtgsxMoYukH2FWhUY0cxk16hnaOXVOPeSCjP81uMpB44OL/S9lPI
- aBpKDHVXZkog9XLBmaqt8fwsR9QWzkmPDHX6Y9oJS6A6dF2fyXmif514CVj9w8GAfMxh
- 0cWaNfDCDK5rhCagjFyHYvWusLBZwBz8roAGGf8iO/F/Oiq2iyr+j9wwDpgGJziFwszL
- TQvQ==
+ :cc; bh=BJsyngqG/QyGrxCP5QV1VgvY/ZIDb46yXFdUWUYcJjE=;
+ b=tMmuoJLkJJRlr97nWuw9yp1dhBnjJgJJVctCCMOkVQAwVufIWjtRSJ98DeVWMAUpL7
+ c/DDMKTfXjJ3AunXbS9PbtesoR3v6FwAquf/mPo2ipW5m7uKq3mz622OTJgF//P41VeY
+ uBPVky3FH88ifuyXm9IjyMmdhNWu2I8INL87p4oZ1vAogbY0BRq3PmSNaYTl1n/7bnrO
+ Lc9PPi+EV8QQhe4FjeigOim3EKL5tCU2OhJP5k8d+H2v0cMsX/+SwQBn01vR1S+aYe8q
+ kmK501SZalx1YaFY0Y1ChZDATvY9Cs1dirj078l2AUk0ox9yU2Ud6XA8n+4rc4SVim6s
+ D61A==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:in-reply-to:message-id:mime-version
  :references:subject:from:to:cc;
- bh=28kCgmnVQJn+BZTUIaDgZIVH/xo2y2bOHrwsQUj+YbM=;
- b=D4dH1nCwl11kLJjBDiM8veyNVzmKlvPjOE/nCj75uB5ma+9K+4KGJ81hOiQGbff6VB
- qsG2XqgWCcNFgZVkmRCRDaq0z+JQ5ucf3WHjtOcRnfpbgCnzIotLJOh/VltzHW3wKVnX
- TCowUYHkHZf5eVEgJUp5SxpkKeTob/XeREsQGeSL6dvVlZw56K4OjbF+9fC/dfE+u0Jp
- qsiF2PcaZhehTC/gG6xqC8V2OhAFUtHfLf+W6XIDl4uB4Sv3Se+uBcLAXphuNw+ZF5Fd
- hVrBDrenDrVKehGd5ojJny8DvdR5zLY+Gy9V5fmxcGzACvlHuin1V0S76YNNQkI2NcX2
- We1w==
-X-Gm-Message-State: APjAAAWxsBPomEOJ8DjO/iOGBwtq/J5as8BIa2FPXH7gkGtb2we1UvPa
- uIsXKyKP0WbXLASDR3Gtp0turqmBNyUHOhUrS7SWYdLSXycHwF5VAlr2EQxzoScdMJzPWT0/QN7
- gq8WM+dcs5LcNTzg8IXLTBo5ybgVJbyjPOVEhsnfAlbrAvzCpbfN9u6SG3okszmFCtdvv3uoDYG
- eg9gIO9SYWZ6B9NSc=
-X-Google-Smtp-Source: APXvYqxFRRLv3BUPtPxjHGRaBJrhiwF+VRuSavZL/k035Tv2azTfOuV+FpSvTW5kRizXDXNW3SNuKikp21TfCtFX
-X-Received: by 2002:a1f:9748:: with SMTP id z69mr4561739vkd.25.1561386814933; 
- Mon, 24 Jun 2019 07:33:34 -0700 (PDT)
-Date: Mon, 24 Jun 2019 16:32:54 +0200
+ bh=BJsyngqG/QyGrxCP5QV1VgvY/ZIDb46yXFdUWUYcJjE=;
+ b=dCFw71HY8CuNUxXfbtxWtvOfEuzu61UPrBYn3ME2QGFC9PO3SPZroodZHrm2JdhxFi
+ jrZjj6Fi/TuemV3ULqHIX/SFQFbjJVjEBa2ugh4nNFe+S7mVrw59x8haEYjwaPECa6Vl
+ 9Oa21cby8K7nM4GpJvi49cXJghbLvyR1Wyz/JI6X5imqkzGySLhzyT/yNUyHDO+bIkO/
+ ksljg7zUE0epNKd1BB6Tit4C2m1VI8O1bfI5af96UgdItZeDRXivrJ79FKqZnnz3fP3N
+ KADqcZ4qx6Gmn2P1AHyhRyza7oeNQs212jbkmQHq+c21kXFFWpe7iaa6fwj8eFu4kzBT
+ Xdtw==
+X-Gm-Message-State: APjAAAXF8KK/6PUv4XFBS/kD1hz0Blb1HkKo2v6/5rXXPHzvMTNKhwFR
+ Bg9OeKPod68kdG8zWV0mSnAAKkJPcW0DVerydrWyr5qHqCYfzS0ve6uenof7Ur/gRgqbZDNWtfW
+ /8mMi4WjQnfLINvgIwjAx+kLZlOgn4txAT/XlDXuRoSxTrx3QZtV4cfPwVdbY1R1a3fK0nFu3zU
+ kNt+LvQjqwaNih7Rk=
+X-Google-Smtp-Source: APXvYqxgB5X/aCbKs9hmuZWtlXYS7x7msb4DLFufqsMoO6mME7B8su644ppdcEygFH1GnaKdKATNFxnkdsXw3C2U
+X-Received: by 2002:ab0:7782:: with SMTP id x2mr22851192uar.140.1561386818133; 
+ Mon, 24 Jun 2019 07:33:38 -0700 (PDT)
+Date: Mon, 24 Jun 2019 16:32:55 +0200
 In-Reply-To: <cover.1561386715.git.andreyknvl@google.com>
-Message-Id: <1d036fc5bec4be059ee7f4f42bf7417dc44651dd.1561386715.git.andreyknvl@google.com>
+Message-Id: <61d800c35a4f391218fbca6f05ec458557d8d097.1561386715.git.andreyknvl@google.com>
 Mime-Version: 1.0
 References: <cover.1561386715.git.andreyknvl@google.com>
 X-Mailer: git-send-email 2.22.0.410.gd8fdbe21b5-goog
-Subject: [PATCH v18 09/15] drm/amdgpu: untag user pointers
+Subject: [PATCH v18 10/15] drm/radeon: untag user pointers in
+ radeon_gem_userptr_ioctl
 From: Andrey Konovalov <andreyknvl@google.com>
 To: linux-arm-kernel@lists.infradead.org, linux-mm@kvack.org, 
  linux-kernel@vger.kernel.org, amd-gfx@lists.freedesktop.org, 
@@ -67,15 +68,15 @@ To: linux-arm-kernel@lists.infradead.org, linux-mm@kvack.org,
  linux-media@vger.kernel.org, kvm@vger.kernel.org, 
  linux-kselftest@vger.kernel.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190624_073337_561003_7383B8E5 
-X-CRM114-Status: GOOD (  14.72  )
+X-CRM114-CacheID: sfid-20190624_073340_770954_BBD03D15 
+X-CRM114-Status: GOOD (  12.27  )
 X-Spam-Score: -7.7 (-------)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-7.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:a49 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:a4a listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
@@ -131,41 +132,27 @@ This patch is a part of a series that extends kernel ABI to allow to pass
 tagged user pointers (with the top byte set to something else other than
 0x00) as syscall arguments.
 
-In amdgpu_gem_userptr_ioctl() and amdgpu_amdkfd_gpuvm.c/init_user_pages()
-an MMU notifier is set up with a (tagged) userspace pointer. The untagged
-address should be used so that MMU notifiers for the untagged address get
-correctly matched up with the right BO. This patch untag user pointers in
-amdgpu_gem_userptr_ioctl() for the GEM case and in amdgpu_amdkfd_gpuvm_
-alloc_memory_of_gpu() for the KFD case. This also makes sure that an
-untagged pointer is passed to amdgpu_ttm_tt_get_user_pages(), which uses
-it for vma lookups.
+In radeon_gem_userptr_ioctl() an MMU notifier is set up with a (tagged)
+userspace pointer. The untagged address should be used so that MMU
+notifiers for the untagged address get correctly matched up with the right
+BO. This funcation also calls radeon_ttm_tt_pin_userptr(), which uses
+provided user pointers for vma lookups, which can only by done with
+untagged pointers.
+
+This patch untags user pointers in radeon_gem_userptr_ioctl().
 
 Suggested-by: Felix Kuehling <Felix.Kuehling@amd.com>
 Acked-by: Felix Kuehling <Felix.Kuehling@amd.com>
 Signed-off-by: Andrey Konovalov <andreyknvl@google.com>
 ---
- drivers/gpu/drm/amd/amdgpu/amdgpu_amdkfd_gpuvm.c | 2 +-
- drivers/gpu/drm/amd/amdgpu/amdgpu_gem.c          | 2 ++
- 2 files changed, 3 insertions(+), 1 deletion(-)
+ drivers/gpu/drm/radeon/radeon_gem.c | 2 ++
+ 1 file changed, 2 insertions(+)
 
-diff --git a/drivers/gpu/drm/amd/amdgpu/amdgpu_amdkfd_gpuvm.c b/drivers/gpu/drm/amd/amdgpu/amdgpu_amdkfd_gpuvm.c
-index a6e5184d436c..5d476e9bbc43 100644
---- a/drivers/gpu/drm/amd/amdgpu/amdgpu_amdkfd_gpuvm.c
-+++ b/drivers/gpu/drm/amd/amdgpu/amdgpu_amdkfd_gpuvm.c
-@@ -1108,7 +1108,7 @@ int amdgpu_amdkfd_gpuvm_alloc_memory_of_gpu(
- 		alloc_flags = 0;
- 		if (!offset || !*offset)
- 			return -EINVAL;
--		user_addr = *offset;
-+		user_addr = untagged_addr(*offset);
- 	} else if (flags & ALLOC_MEM_FLAGS_DOORBELL) {
- 		domain = AMDGPU_GEM_DOMAIN_GTT;
- 		alloc_domain = AMDGPU_GEM_DOMAIN_CPU;
-diff --git a/drivers/gpu/drm/amd/amdgpu/amdgpu_gem.c b/drivers/gpu/drm/amd/amdgpu/amdgpu_gem.c
-index d4fcf5475464..e91df1407618 100644
---- a/drivers/gpu/drm/amd/amdgpu/amdgpu_gem.c
-+++ b/drivers/gpu/drm/amd/amdgpu/amdgpu_gem.c
-@@ -287,6 +287,8 @@ int amdgpu_gem_userptr_ioctl(struct drm_device *dev, void *data,
+diff --git a/drivers/gpu/drm/radeon/radeon_gem.c b/drivers/gpu/drm/radeon/radeon_gem.c
+index 44617dec8183..90eb78fb5eb2 100644
+--- a/drivers/gpu/drm/radeon/radeon_gem.c
++++ b/drivers/gpu/drm/radeon/radeon_gem.c
+@@ -291,6 +291,8 @@ int radeon_gem_userptr_ioctl(struct drm_device *dev, void *data,
  	uint32_t handle;
  	int r;
  
