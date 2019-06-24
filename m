@@ -2,80 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 955E7503CA
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Jun 2019 09:41:12 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 58793503CC
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Jun 2019 09:41:31 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3iINOnYb0vh1p+1GwBh6TZ4Ym28K9jTGO78ES4MzW6M=; b=kO9OY/OEWAun6G
-	F/CG9CEypka0axUQvENVNJO/ocHLFmexcyCf6wLONHZMmucQtLPMi+fjS/NWbZANlAmkXUjYUX/3h
-	pYO2XgX0JrQhjZqBSwCBVVb/r434lGvrKueoZ2nvoUh2PAvo7jaS5ghe3I56uhs2CQAyN1rmlxiKH
-	s7x55bLz7bXEdQ5yHMHElMiK1Yzgy3udlK27HiCtIUEOhX6lltroL+gBn1swH0yHK/XAAYbklde5+
-	cln02GQxLQBBX3erG3eTBqC8WARPZSJURt05xgN9L2LcIVjCrLNtYwwmYDNpLkeUBPFwYzqUCS6Tz
-	ywJ20q2ig7PYXIGk3grg==;
+	List-Owner; bh=hZ8EgZ+x9fdSDf1s+FclzDVWpslk1+/t8Wgh8EnfLXU=; b=AhYEwWaks+IUTb
+	DuwgHwClcZvKmJR+58svyQwmZ86WJq97SXj+H7oIOs8Oi3XCv8+m2E5xlf3OlWvtlBo6XglZcCYxi
+	eH6zT/r5i+mxgKJ94hT9Vt+Gr7V56V0nhO2DLNOUMZdg/Yd9TAwP1HvTe8r18rmTIVHL2Ym2OSAsb
+	qQ9C+Kwa5oJd1D5dUprxRAMkMJ9vCsKkdKiccxQYMDR0wT4mzwfPbFcZz5OGvtK/N6clGjgU5VHKa
+	vsdBVS8xeA/EQ2D0yMlPckpuC7G2V4X8iipYfd9518C6ePzJPS/SgWkbnpGUpGzw8eGYt/vw8aGoW
+	V+yD96GQ/dk3FlXywnDg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hfJbA-0001WJ-Fz; Mon, 24 Jun 2019 07:41:08 +0000
-Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
+	id 1hfJbS-0001pl-Lf; Mon, 24 Jun 2019 07:41:27 +0000
+Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hfJYh-0007Gv-R1
+ id 1hfJYi-0007Hh-OZ
  for linux-arm-kernel@lists.infradead.org; Mon, 24 Jun 2019 07:38:38 +0000
-Received: by mail-wm1-x342.google.com with SMTP id h19so13580863wme.0
+Received: by mail-wr1-x441.google.com with SMTP id x4so12703616wrt.6
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 24 Jun 2019 00:38:35 -0700 (PDT)
+ Mon, 24 Jun 2019 00:38:36 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=923foVD9gLovB0Clhw+C5MS1BecE623/4WPm3/kqlks=;
- b=SOPGrPDKEtTWRgHEo/QtVnXTYMT9EWsCejMLqNCh+rc8DcPwE3A0Ca0OwHQWiDGehw
- 6cAh4i95iKDiTSt/u3elGr7CQ4Yr+RXvDyMw/c+H0PrCEHjyQJWulbggCdcqn2zEchCd
- Is/xwQZTxvgXV+8OOfZEld8t+cNONRPudHH9lTjuYPfmQFTsqQT22jXa+HBMXpaWS7af
- wAft6VrIAX4rpUQJR/+62tBJBywS7WmPl2uaKTJz744IfKXR35xHRgB/UVYFwlnBnFf7
- YTY8357gfJBPyFjOisdYb1mKMuTV2tdLboNvFnD6Wf8YaW74Dz1DrmziWW6Y/Ur/e9DZ
- kR8Q==
+ bh=aJ2frxtItoOdASfDgurNaEGo6zzAMYWog88kS6QDgiQ=;
+ b=GuNoLYkQKEU73mu3/7iHpGXtDE+J0Nd0TNcCdU6ENNEMDknqTRlPJkhNiJtN6X8LOk
+ UJaYxKKUmwWaaGE0+q4Hy1X4+x28ia8GCF14Fnv5YTOeitJncZab/Lg/AO5KIXUYuw7K
+ xQ+JwqjXBnXhPv/L0Ewmc+JpHT/UxLuXuhn4EQdVS2Eyp/TyZWyzvfVrlcd1FM/xKvpd
+ SJH/lmMK6E2ngO5gcfqOOlKMOEBQv0Z8KIQyF1IUfGs2ianTBsljWsydcgGn8PDE0ijk
+ woY+ekqMzRGdtoFlBhhF6BktgLzmeBS93UsYTqkN7OFvOB3DMv9fdWmUAQjFfQCMFU0h
+ g22Q==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=923foVD9gLovB0Clhw+C5MS1BecE623/4WPm3/kqlks=;
- b=nunlYEWuomyFBA1OKZ5GVWkeX3az3e1uQiuRQwKnVMHUAfwiXUtCO2qRd2i4BxFZGE
- QZ9PRIIQ+D5oWiX+Lu7Xf50cpYMxH5lrW81w2ifl7drfespwCRxniBSsW4ZY0nnhz1To
- eHnojBspf3SO827Bg26Kn3bpLFbbZQuc1OET5ONWrLEE0nm8vyEnfEJTfiom2j4JGtAZ
- 86h0bVMfloLOlJUwAgwGw5BsYL2w6NcnKc30RVYLeNIJRND8HR9+ka3UxhC4G0Y5Vi5b
- DPy0sxxGMvWYDRyM/PSHhhoGQF8vCuRs1bSbMgk3x4a5tbGEihfrXHglwD25sGS+a36g
- E4EQ==
-X-Gm-Message-State: APjAAAX9X1Tcxduh42ZBK4HBRVwWdEagnEqbjfsmCT1BjV1WGF6n0pM0
- +Hqw38reAAmTJYPk71opg1rnHA==
-X-Google-Smtp-Source: APXvYqwocA/iwp977z0ReuQP4uITc0I9diEZKfKl2rCCjRk74/ZzMwvB66J8eSVBbbU0JkqwPUqy8A==
-X-Received: by 2002:a7b:c398:: with SMTP id s24mr9739069wmj.53.1561361914433; 
- Mon, 24 Jun 2019 00:38:34 -0700 (PDT)
+ bh=aJ2frxtItoOdASfDgurNaEGo6zzAMYWog88kS6QDgiQ=;
+ b=br59+nXbWZHNS140wpDgp4lkZSxSK75ug+SlBB4u+ttV3Y0CIv8lsJG2G5pTkMgezJ
+ uZd7KYC967TYi3Q8Uye5GTrnScw98lVeFdtZPY6oNkiPcbSuYdhxhFTkZAwmoaeXzRCY
+ SVBdKL6eZDRwIp6HtwSAVpN+YBPFAh8egcEkSULk/yhbKsM8Xfnsq1tcoqLKzvk/VNr5
+ psQmbLq3OaWy5YlIWZinESTDYPy8PqVv69w6AT/KbD+aJ/Kti9Y1QtTxFEy3Ld6wIds0
+ 2ZSq+bfIT3Z7kjjmNV3iF2jvLJWVxEgvtUSQn/U6sJjhak/UCRTjNdAMxw1UbNgq2gQ1
+ VckA==
+X-Gm-Message-State: APjAAAUMqLU/1wdSlftb6j1KUJj8QogzXR0mc8m4JhGj4aDtx2fhHbzL
+ SeFQO8uT0AnOHWY/T3MxscGBCQ==
+X-Google-Smtp-Source: APXvYqwTCNM4G7LjMyIADZGbLdD98jvNvZCoT4STmxytYs5x9ZEd9raiToSMzhIk9cfrM5w9PaqhYA==
+X-Received: by 2002:a5d:4001:: with SMTP id n1mr92777173wrp.293.1561361915452; 
+ Mon, 24 Jun 2019 00:38:35 -0700 (PDT)
 Received: from sudo.home ([2a01:cb1d:112:6f00:4866:7cdc:a930:8455])
- by smtp.gmail.com with ESMTPSA id 203sm7419280wmc.30.2019.06.24.00.38.33
+ by smtp.gmail.com with ESMTPSA id 203sm7419280wmc.30.2019.06.24.00.38.34
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Mon, 24 Jun 2019 00:38:33 -0700 (PDT)
+ Mon, 24 Jun 2019 00:38:34 -0700 (PDT)
 From: Ard Biesheuvel <ard.biesheuvel@linaro.org>
 To: linux-crypto@vger.kernel.org
-Subject: [PATCH 5/6] crypto: aegis128 - provide a SIMD implementation based on
- NEON intrinsics
-Date: Mon, 24 Jun 2019 09:38:17 +0200
-Message-Id: <20190624073818.29296-6-ard.biesheuvel@linaro.org>
+Subject: [PATCH 6/6] crypto: tcrypt - add a speed test for AEGIS128
+Date: Mon, 24 Jun 2019 09:38:18 +0200
+Message-Id: <20190624073818.29296-7-ard.biesheuvel@linaro.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20190624073818.29296-1-ard.biesheuvel@linaro.org>
 References: <20190624073818.29296-1-ard.biesheuvel@linaro.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190624_003835_922731_1A3714AC 
-X-CRM114-Status: GOOD (  16.43  )
+X-CRM114-CacheID: sfid-20190624_003836_948428_9CAB61B0 
+X-CRM114-Status: UNSURE (   9.31  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:342 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:441 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -106,258 +106,29 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Provide an accelerated implementation of aegis128 by wiring up the
-SIMD hooks in the generic driver to an implementation based on NEON
-intrinsics, which can be compiled to both ARM and arm64 code.
-
-This results in a performance of 2.2 cycles per byte on Cortex-A53,
-which is a performance increase of ~11x compared to the generic
-code.
-
 Signed-off-by: Ard Biesheuvel <ard.biesheuvel@linaro.org>
 ---
- crypto/Kconfig               |   5 +
- crypto/Makefile              |  12 ++
- crypto/aegis128-neon-inner.c | 142 ++++++++++++++++++++
- crypto/aegis128-neon.c       |  43 ++++++
- 4 files changed, 202 insertions(+)
+ crypto/tcrypt.c | 7 +++++++
+ 1 file changed, 7 insertions(+)
 
-diff --git a/crypto/Kconfig b/crypto/Kconfig
-index 3d056e7da65f..c4b96f2e1344 100644
---- a/crypto/Kconfig
-+++ b/crypto/Kconfig
-@@ -311,6 +311,11 @@ config CRYPTO_AEGIS128
- 	help
- 	 Support for the AEGIS-128 dedicated AEAD algorithm.
+diff --git a/crypto/tcrypt.c b/crypto/tcrypt.c
+index ad78ab5b93cb..c578ccd92c57 100644
+--- a/crypto/tcrypt.c
++++ b/crypto/tcrypt.c
+@@ -2327,6 +2327,13 @@ static int do_test(const char *alg, u32 type, u32 mask, int m, u32 num_mb)
+ 				  0, speed_template_32);
+ 		break;
  
-+config CRYPTO_AEGIS128_SIMD
-+	bool "Support SIMD acceleration for AEGIS-128"
-+	depends on CRYPTO_AEGIS128 && ((ARM || ARM64) && KERNEL_MODE_NEON)
-+	default y
++	case 221:
++		test_aead_speed("aegis128", ENCRYPT, sec,
++				NULL, 0, 16, 8, speed_template_16);
++		test_aead_speed("aegis128", DECRYPT, sec,
++				NULL, 0, 16, 8, speed_template_16);
++		break;
 +
- config CRYPTO_AEGIS128L
- 	tristate "AEGIS-128L AEAD algorithm"
- 	select CRYPTO_AEAD
-diff --git a/crypto/Makefile b/crypto/Makefile
-index 266a4cdbb9e2..f4a55cfb7f17 100644
---- a/crypto/Makefile
-+++ b/crypto/Makefile
-@@ -92,6 +92,18 @@ obj-$(CONFIG_CRYPTO_GCM) += gcm.o
- obj-$(CONFIG_CRYPTO_CCM) += ccm.o
- obj-$(CONFIG_CRYPTO_CHACHA20POLY1305) += chacha20poly1305.o
- obj-$(CONFIG_CRYPTO_AEGIS128) += aegis128.o
-+aegis128-y := aegis128.o
-+
-+ifeq ($(ARCH),arm)
-+CFLAGS_aegis128-neon-inner.o += -ffreestanding -march=armv7-a -mfloat-abi=softfp -mfpu=crypto-neon-fp-armv8
-+aegis128-$(CONFIG_CRYPTO_AEGIS128_SIMD) += aegis128-neon.o aegis128-neon-inner.o
-+endif
-+ifeq ($(ARCH),arm64)
-+CFLAGS_aegis128-neon-inner.o += -ffreestanding -mcpu=generic+crypto
-+CFLAGS_REMOVE_aegis128-neon-inner.o += -mgeneral-regs-only
-+aegis128-$(CONFIG_CRYPTO_AEGIS128_SIMD) += aegis128-neon.o aegis128-neon-inner.o
-+endif
-+
- obj-$(CONFIG_CRYPTO_AEGIS128L) += aegis128l.o
- obj-$(CONFIG_CRYPTO_AEGIS256) += aegis256.o
- obj-$(CONFIG_CRYPTO_MORUS640) += morus640.o
-diff --git a/crypto/aegis128-neon-inner.c b/crypto/aegis128-neon-inner.c
-new file mode 100644
-index 000000000000..c6d90390ac38
---- /dev/null
-+++ b/crypto/aegis128-neon-inner.c
-@@ -0,0 +1,142 @@
-+// SPDX-License-Identifier: GPL-2.0-or-later
-+/*
-+ * Copyright (C) 2019 Linaro, Ltd. <ard.biesheuvel@linaro.org>
-+ */
-+
-+#ifdef CONFIG_ARM64
-+#include <asm/neon-intrinsics.h>
-+#else
-+#include <arm_neon.h>
-+#endif
-+
-+#define AEGIS_BLOCK_SIZE	16
-+
-+#include <stddef.h>
-+
-+void *memcpy(void *dest, const void *src, size_t n);
-+void *memset(void *s, int c, size_t n);
-+
-+struct aegis128_state {
-+	uint8x16_t v[5];
-+};
-+
-+static struct aegis128_state aegis128_update_neon(struct aegis128_state st,
-+						  uint8x16_t m)
-+{
-+	uint8x16_t z = {};
-+	uint8x16_t t;
-+
-+	t        = vaesmcq_u8(vaeseq_u8(st.v[3], z));
-+	st.v[3] ^= vaesmcq_u8(vaeseq_u8(st.v[2], z));
-+	st.v[2] ^= vaesmcq_u8(vaeseq_u8(st.v[1], z));
-+	st.v[1] ^= vaesmcq_u8(vaeseq_u8(st.v[0], z));
-+	st.v[0] ^= vaesmcq_u8(vaeseq_u8(st.v[4], z)) ^ m;
-+	st.v[4] ^= t;
-+
-+	return st;
-+}
-+
-+void crypto_aegis128_update_neon(void *state, const void *msg)
-+{
-+	struct aegis128_state st = { {
-+		vld1q_u8(state),
-+		vld1q_u8(state + 16),
-+		vld1q_u8(state + 32),
-+		vld1q_u8(state + 48),
-+		vld1q_u8(state + 64)
-+	} };
-+
-+	st = aegis128_update_neon(st, vld1q_u8(msg));
-+
-+	vst1q_u8(state, st.v[0]);
-+	vst1q_u8(state + 16, st.v[1]);
-+	vst1q_u8(state + 32, st.v[2]);
-+	vst1q_u8(state + 48, st.v[3]);
-+	vst1q_u8(state + 64, st.v[4]);
-+}
-+
-+void crypto_aegis128_encrypt_chunk_neon(void *state, void *dst, const void *src,
-+					unsigned int size)
-+{
-+	struct aegis128_state st = { {
-+		vld1q_u8(state),
-+		vld1q_u8(state + 16),
-+		vld1q_u8(state + 32),
-+		vld1q_u8(state + 48),
-+		vld1q_u8(state + 64)
-+	} };
-+	uint8x16_t tmp;
-+
-+	while (size >= AEGIS_BLOCK_SIZE) {
-+		uint8x16_t s = vld1q_u8(src);
-+
-+		tmp = s ^ st.v[1] ^ (st.v[2] & st.v[3]) ^ st.v[4];
-+		st = aegis128_update_neon(st, s);
-+		vst1q_u8(dst, tmp);
-+
-+		size -= AEGIS_BLOCK_SIZE;
-+		src += AEGIS_BLOCK_SIZE;
-+		dst += AEGIS_BLOCK_SIZE;
-+	}
-+
-+	if (size > 0) {
-+		uint8_t buf[AEGIS_BLOCK_SIZE] = {};
-+		uint8x16_t msg;
-+
-+		memcpy(buf, src, size);
-+		msg = vld1q_u8(buf);
-+		tmp = msg ^ st.v[1] ^ (st.v[2] & st.v[3]) ^ st.v[4];
-+		st = aegis128_update_neon(st, msg);
-+		vst1q_u8(buf, tmp);
-+		memcpy(dst, buf, size);
-+	}
-+
-+	vst1q_u8(state, st.v[0]);
-+	vst1q_u8(state + 16, st.v[1]);
-+	vst1q_u8(state + 32, st.v[2]);
-+	vst1q_u8(state + 48, st.v[3]);
-+	vst1q_u8(state + 64, st.v[4]);
-+}
-+
-+void crypto_aegis128_decrypt_chunk_neon(void *state, void *dst, const void *src,
-+					unsigned int size)
-+{
-+	struct aegis128_state st = { {
-+		vld1q_u8(state),
-+		vld1q_u8(state + 16),
-+		vld1q_u8(state + 32),
-+		vld1q_u8(state + 48),
-+		vld1q_u8(state + 64)
-+	} };
-+	uint8x16_t tmp;
-+
-+	while (size >= AEGIS_BLOCK_SIZE) {
-+		tmp = vld1q_u8(src) ^ st.v[1] ^ (st.v[2] & st.v[3]) ^ st.v[4];
-+		st = aegis128_update_neon(st, tmp);
-+		vst1q_u8(dst, tmp);
-+
-+		size -= AEGIS_BLOCK_SIZE;
-+		src += AEGIS_BLOCK_SIZE;
-+		dst += AEGIS_BLOCK_SIZE;
-+	}
-+
-+	if (size > 0) {
-+		uint8_t buf[AEGIS_BLOCK_SIZE] = {};
-+		uint8x16_t msg;
-+
-+		memcpy(buf, src, size);
-+		msg = vld1q_u8(buf) ^ st.v[1] ^ (st.v[2] & st.v[3]) ^ st.v[4];
-+		vst1q_u8(buf, msg);
-+		memcpy(dst, buf, size);
-+
-+		memset(buf + size, 0, AEGIS_BLOCK_SIZE - size);
-+		msg = vld1q_u8(buf);
-+		st = aegis128_update_neon(st, msg);
-+	}
-+
-+	vst1q_u8(state, st.v[0]);
-+	vst1q_u8(state + 16, st.v[1]);
-+	vst1q_u8(state + 32, st.v[2]);
-+	vst1q_u8(state + 48, st.v[3]);
-+	vst1q_u8(state + 64, st.v[4]);
-+}
-diff --git a/crypto/aegis128-neon.c b/crypto/aegis128-neon.c
-new file mode 100644
-index 000000000000..c1c0a1686f67
---- /dev/null
-+++ b/crypto/aegis128-neon.c
-@@ -0,0 +1,43 @@
-+// SPDX-License-Identifier: GPL-2.0-or-later
-+/*
-+ * Copyright (C) 2019 Linaro Ltd <ard.biesheuvel@linaro.org>
-+ */
-+
-+#include <asm/cpufeature.h>
-+#include <asm/neon.h>
-+
-+#include "aegis.h"
-+
-+void crypto_aegis128_update_neon(void *state, const void *msg);
-+void crypto_aegis128_encrypt_chunk_neon(void *state, void *dst, const void *src,
-+					unsigned int size);
-+void crypto_aegis128_decrypt_chunk_neon(void *state, void *dst, const void *src,
-+					unsigned int size);
-+
-+bool crypto_aegis128_have_simd(void)
-+{
-+	return cpu_have_feature(cpu_feature(AES));
-+}
-+
-+void crypto_aegis128_update_simd(union aegis_block *state, const void *msg)
-+{
-+	kernel_neon_begin();
-+	crypto_aegis128_update_neon(state, msg);
-+	kernel_neon_end();
-+}
-+
-+void crypto_aegis128_encrypt_chunk_simd(union aegis_block *state, u8 *dst,
-+					const u8 *src, unsigned int size)
-+{
-+	kernel_neon_begin();
-+	crypto_aegis128_encrypt_chunk_neon(state, dst, src, size);
-+	kernel_neon_end();
-+}
-+
-+void crypto_aegis128_decrypt_chunk_simd(union aegis_block *state, u8 *dst,
-+					const u8 *src, unsigned int size)
-+{
-+	kernel_neon_begin();
-+	crypto_aegis128_decrypt_chunk_neon(state, dst, src, size);
-+	kernel_neon_end();
-+}
+ 	case 300:
+ 		if (alg) {
+ 			test_hash_speed(alg, sec, generic_hash_speed_template);
 -- 
 2.20.1
 
