@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8CAA050660
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Jun 2019 11:59:20 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A501650661
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Jun 2019 11:59:38 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,39 +11,39 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=YSzDdBTxLV7pUp5j2ROXTP5EuuBtuP6jo5eIrksTEt4=; b=d5oMJpEHfNnEiTd3En6t8tgdEc
-	xyrnPHVmfWAVpnF5ch5VA8KG2+PIVSx4sE3WBe9Ulrff29TX8eOMTWIt7y8by2n7gytJE/zPEJwqD
-	4bAuPIJ3Bv6/uOynnUZq9lPDQwxaA4I7N9JFyj8fxluUQIhuuEgdgDPg3ZY3DozuATspipAr8l+wS
-	7XdVNa2uNijm8E3+Ugq8GKogH2FmOL1JH9z5CUpV8SLtTFXgIbqYCmVU6Z5ectWZTgJqxqxibUJ41
-	Zbni5F21m7cfR8MLhSzE4Ndt+ErRW4NbsLyNZizlSQRRqqwDqX9RRsvKefn+oC0wEEPcjT0R2r0zS
-	D4mJo0vQ==;
+	bh=oxWlzHOV1CJw6cRErnV85U9Cbvz24FwWmcnRlc7Kj2A=; b=i2uz3L32+uJfSd9k+YB1mPgKgG
+	MIHn0TIrzdgU72Xk0mVtlkYYg8Z7o5qBc0PaHTLiwaU5Z0NnfXLtZRbNLysGhVmPPTmbhgpaevL0d
+	o9n3BXm+bmch3wlrVuvWln8SKIxZTmpG7lLmZ1mPb8PgNUMMX0j/z9jv1rENx7/NWWporRY7KIEZL
+	cd8ZX3pa0ktcKsdZFUs6csZfmpsGszFVhsjcQU+uVxCCFqZSz+upTWoQ68gvDgTpbZrpBaIs8ApSu
+	8Ioojy6qgXWv73xz4xL+yIgCdmf7wt5EhmQsQmVH4peAa7ONPFvxEMWI2oQJmcnYSBVWWXbqngi09
+	81iHH8gw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hfLkq-0007KR-0K; Mon, 24 Jun 2019 09:59:16 +0000
+	id 1hfLl8-0007dI-Ux; Mon, 24 Jun 2019 09:59:35 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hfLi2-0005EM-7x
+ id 1hfLi3-0005In-VD
  for linux-arm-kernel@lists.infradead.org; Mon, 24 Jun 2019 09:56:26 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 17463139F;
- Mon, 24 Jun 2019 02:56:22 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 6852311D4;
+ Mon, 24 Jun 2019 02:56:23 -0700 (PDT)
 Received: from e121650-lin.cambridge.arm.com (e121650-lin.cambridge.arm.com
  [10.1.196.120])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id ED5403F71E;
- Mon, 24 Jun 2019 02:56:20 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 4A2B73F71E;
+ Mon, 24 Jun 2019 02:56:22 -0700 (PDT)
 From: Raphael Gault <raphael.gault@arm.com>
 To: linux-arm-kernel@lists.infradead.org,
 	linux-kernel@vger.kernel.org
-Subject: [RFC V3 08/18] objtool: Refactor switch-tables code to support other
- architectures
-Date: Mon, 24 Jun 2019 10:55:38 +0100
-Message-Id: <20190624095548.8578-9-raphael.gault@arm.com>
+Subject: [RFC V3 09/18] gcc-plugins: objtool: Add plugin to detect switch
+ table on arm64
+Date: Mon, 24 Jun 2019 10:55:39 +0100
+Message-Id: <20190624095548.8578-10-raphael.gault@arm.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20190624095548.8578-1-raphael.gault@arm.com>
 References: <20190624095548.8578-1-raphael.gault@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190624_025622_404098_C0B2AFDB 
-X-CRM114-Status: GOOD (  19.07  )
+X-CRM114-CacheID: sfid-20190624_025624_169863_6476BE64 
+X-CRM114-Status: GOOD (  14.23  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -71,299 +71,113 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The way to identify switch-tables and retrieves all the data necessary
-to handle the different execution branches is not the same on all
-architecture. In order to be able to add other architecture support,
-this patch defines arch-dependent functions to process jump-tables.
+This plugins comes into play before the final 2 RTL passes of GCC and
+detects switch-tables that are to be outputed in the ELF and writes
+information in an "objtool_data" section which will be used by objtool.
 
 Signed-off-by: Raphael Gault <raphael.gault@arm.com>
 ---
- tools/objtool/arch/arm64/arch_special.c | 15 +++++
- tools/objtool/arch/x86/arch_special.c   | 73 +++++++++++++++++++++
- tools/objtool/check.c                   | 84 +------------------------
- tools/objtool/check.h                   |  7 +++
- tools/objtool/special.h                 | 10 ++-
- 5 files changed, 107 insertions(+), 82 deletions(-)
+ scripts/Makefile.gcc-plugins                  |  2 +
+ scripts/gcc-plugins/Kconfig                   |  9 +++
+ .../arm64_switch_table_detection_plugin.c     | 58 +++++++++++++++++++
+ 3 files changed, 69 insertions(+)
+ create mode 100644 scripts/gcc-plugins/arm64_switch_table_detection_plugin.c
 
-diff --git a/tools/objtool/arch/arm64/arch_special.c b/tools/objtool/arch/arm64/arch_special.c
-index a21d28876317..a0f7066994b5 100644
---- a/tools/objtool/arch/arm64/arch_special.c
-+++ b/tools/objtool/arch/arm64/arch_special.c
-@@ -20,3 +20,18 @@ void arch_force_alt_path(unsigned short feature,
- 			 struct special_alt *alt)
- {
- }
+diff --git a/scripts/Makefile.gcc-plugins b/scripts/Makefile.gcc-plugins
+index 5f7df50cfe7a..a56736df9dc2 100644
+--- a/scripts/Makefile.gcc-plugins
++++ b/scripts/Makefile.gcc-plugins
+@@ -44,6 +44,8 @@ ifdef CONFIG_GCC_PLUGIN_ARM_SSP_PER_TASK
+ endif
+ export DISABLE_ARM_SSP_PER_TASK_PLUGIN
+ 
++gcc-plugin-$(CONFIG_GCC_PLUGIN_SWITCH_TABLES)	+= arm64_switch_table_detection_plugin.so
 +
-+int arch_add_switch_table(struct objtool_file *file, struct instruction *insn,
-+			    struct rela *table, struct rela *next_table)
+ # All the plugin CFLAGS are collected here in case a build target needs to
+ # filter them out of the KBUILD_CFLAGS.
+ GCC_PLUGINS_CFLAGS := $(strip $(addprefix -fplugin=$(objtree)/scripts/gcc-plugins/, $(gcc-plugin-y)) $(gcc-plugin-cflags-y))
+diff --git a/scripts/gcc-plugins/Kconfig b/scripts/gcc-plugins/Kconfig
+index e9c677a53c74..a9b13d257cd2 100644
+--- a/scripts/gcc-plugins/Kconfig
++++ b/scripts/gcc-plugins/Kconfig
+@@ -113,4 +113,13 @@ config GCC_PLUGIN_ARM_SSP_PER_TASK
+ 	bool
+ 	depends on GCC_PLUGINS && ARM
+ 
++config GCC_PLUGIN_SWITCH_TABLES
++	bool "GCC Plugin: Identify switch tables at compile time"
++	default y
++	depends on STACK_VALIDATION && ARM64
++	help
++	  Plugin to identify switch tables generated at compile time and store
++	  them in a .objtool_data section. Objtool will then use that section
++	  to analyse the different execution path of the switch table.
++
+ endmenu
+diff --git a/scripts/gcc-plugins/arm64_switch_table_detection_plugin.c b/scripts/gcc-plugins/arm64_switch_table_detection_plugin.c
+new file mode 100644
+index 000000000000..d7f0e13910d5
+--- /dev/null
++++ b/scripts/gcc-plugins/arm64_switch_table_detection_plugin.c
+@@ -0,0 +1,58 @@
++// SPDX-License-Identifier: GPL-2.0
++
++#include <stdio.h>
++#include "gcc-common.h"
++
++__visible int plugin_is_GPL_compatible;
++
++static unsigned int arm64_switchtbl_rtl_execute(void)
 +{
-+	return 0;
-+}
++	rtx_insn *insn;
++	rtx_insn *labelp = NULL;
++	rtx_jump_table_data *tablep = NULL;
++	section *sec = get_section(".objtool_data", SECTION_STRINGS, NULL);
++	section *curr_sec = current_function_section();
 +
-+struct rela *arch_find_switch_table(struct objtool_file *file,
-+				    struct rela *text_rela,
-+				    struct section *rodata_sec,
-+				    unsigned long table_offset)
-+{
-+	file->ignore_unreachables = true;
-+	return NULL;
-+}
-diff --git a/tools/objtool/arch/x86/arch_special.c b/tools/objtool/arch/x86/arch_special.c
-index 6583a1770bb2..38ac010f8a02 100644
---- a/tools/objtool/arch/x86/arch_special.c
-+++ b/tools/objtool/arch/x86/arch_special.c
-@@ -26,3 +26,76 @@ void arch_force_alt_path(unsigned short feature,
- 				alt->skip_alt = true;
- 		}
- }
-+
-+int arch_add_switch_table(struct objtool_file *file, struct instruction *insn,
-+			    struct rela *table, struct rela *next_table)
-+{
-+	struct rela *rela = table;
-+	struct instruction *alt_insn;
-+	struct alternative *alt;
-+	struct symbol *pfunc = insn->func->pfunc;
-+	unsigned int prev_offset = 0;
-+
-+	list_for_each_entry_from(rela, &table->rela_sec->rela_list, list) {
-+		if (rela == next_table)
-+			break;
-+
-+		/* Make sure the switch table entries are consecutive: */
-+		if (prev_offset && rela->offset != prev_offset + 8)
-+			break;
-+
-+		/* Detect function pointers from contiguous objects: */
-+		if (rela->sym->sec == pfunc->sec &&
-+		    rela->addend == pfunc->offset)
-+			break;
-+
-+		alt_insn = find_insn(file, rela->sym->sec, rela->addend);
-+		if (!alt_insn)
-+			break;
-+
-+		/* Make sure the jmp dest is in the function or subfunction: */
-+		if (alt_insn->func->pfunc != pfunc)
-+			break;
-+
-+		alt = malloc(sizeof(*alt));
-+		if (!alt) {
-+			WARN("malloc failed");
-+			return -1;
-+		}
-+
-+		alt->insn = alt_insn;
-+		list_add_tail(&alt->list, &insn->alts);
-+		prev_offset = rela->offset;
-+	}
-+
-+	if (!prev_offset) {
-+		WARN_FUNC("can't find switch jump table",
-+			  insn->sec, insn->offset);
-+		return -1;
-+	}
-+
-+	return 0;
-+}
-+
-+struct rela *arch_find_switch_table(struct objtool_file *file,
-+				    struct rela *text_rela,
-+				    struct section *rodata_sec,
-+				    unsigned long table_offset)
-+{
-+	struct rela *rodata_rela;
-+
-+	rodata_rela = find_rela_by_dest(rodata_sec, table_offset);
-+	if (rodata_rela) {
++	for (insn = get_insns(); insn; insn = NEXT_INSN(insn)) {
 +		/*
-+		 * Use of RIP-relative switch jumps is quite rare, and
-+		 * indicates a rare GCC quirk/bug which can leave dead
-+		 * code behind.
++		 * Find a tablejump_p INSN (using a dispatch table)
 +		 */
-+		if (text_rela->type == R_X86_64_PC32)
-+			file->ignore_unreachables = true;
++		if (!tablejump_p(insn, &labelp, &tablep))
++			continue;
 +
-+		return rodata_rela;
++		if (labelp && tablep) {
++			switch_to_section(sec);
++			assemble_integer_with_op(".quad ", gen_rtx_LABEL_REF(Pmode, labelp));
++			assemble_integer_with_op(".quad ", GEN_INT(GET_NUM_ELEM(tablep->get_labels())));
++			assemble_integer_with_op(".quad ", GEN_INT(ADDR_DIFF_VEC_FLAGS(tablep).offset_unsigned));
++			switch_to_section(curr_sec);
++		}
++	}
++	return 0;
++}
++
++#define PASS_NAME arm64_switchtbl_rtl
++
++#define NO_GATE
++#include "gcc-generate-rtl-pass.h"
++
++__visible int plugin_init(struct plugin_name_args *plugin_info,
++			  struct plugin_gcc_version *version)
++{
++	const char * const plugin_name = plugin_info->base_name;
++	int tso = 0;
++	int i;
++
++	if (!plugin_default_version_check(version, &gcc_version)) {
++		error(G_("incompatible gcc/plugin versions"));
++		return 1;
 +	}
 +
-+	return NULL;
-+}
-diff --git a/tools/objtool/check.c b/tools/objtool/check.c
-index cba1d91451cc..ce1165ce448a 100644
---- a/tools/objtool/check.c
-+++ b/tools/objtool/check.c
-@@ -18,12 +18,6 @@
- 
- #define FAKE_JUMP_OFFSET -1
- 
--struct alternative {
--	struct list_head list;
--	struct instruction *insn;
--	bool skip_orig;
--};
--
- const char *objname;
- struct cfi_state initial_func_cfi;
- 
-@@ -901,56 +895,6 @@ static int add_special_section_alts(struct objtool_file *file)
- 	return ret;
- }
- 
--static int add_switch_table(struct objtool_file *file, struct instruction *insn,
--			    struct rela *table, struct rela *next_table)
--{
--	struct rela *rela = table;
--	struct instruction *alt_insn;
--	struct alternative *alt;
--	struct symbol *pfunc = insn->func->pfunc;
--	unsigned int prev_offset = 0;
--
--	list_for_each_entry_from(rela, &table->rela_sec->rela_list, list) {
--		if (rela == next_table)
--			break;
--
--		/* Make sure the switch table entries are consecutive: */
--		if (prev_offset && rela->offset != prev_offset + 8)
--			break;
--
--		/* Detect function pointers from contiguous objects: */
--		if (rela->sym->sec == pfunc->sec &&
--		    rela->addend == pfunc->offset)
--			break;
--
--		alt_insn = find_insn(file, rela->sym->sec, rela->addend);
--		if (!alt_insn)
--			break;
--
--		/* Make sure the jmp dest is in the function or subfunction: */
--		if (alt_insn->func->pfunc != pfunc)
--			break;
--
--		alt = malloc(sizeof(*alt));
--		if (!alt) {
--			WARN("malloc failed");
--			return -1;
--		}
--
--		alt->insn = alt_insn;
--		list_add_tail(&alt->list, &insn->alts);
--		prev_offset = rela->offset;
--	}
--
--	if (!prev_offset) {
--		WARN_FUNC("can't find switch jump table",
--			  insn->sec, insn->offset);
--		return -1;
--	}
--
--	return 0;
--}
--
- /*
-  * find_switch_table() - Given a dynamic jump, find the switch jump table in
-  * .rodata associated with it.
-@@ -1045,29 +989,7 @@ static struct rela *find_switch_table(struct objtool_file *file,
- 		if (find_symbol_containing(rodata_sec, table_offset))
- 			continue;
- 
--		/*
--		 * If we are on arm64 architecture, we now that we
--		 * are in presence of a switch table thanks to
--		 * the `br <Xn>` insn. but we can't retrieve it yet.
--		 * So we just ignore unreachable for this file.
--		 */
--		if (!arch_support_switch_table()) {
--			file->ignore_unreachables = true;
--			return NULL;
--		}
--
--		rodata_rela = find_rela_by_dest(rodata_sec, table_offset);
--		if (rodata_rela) {
--			/*
--			 * Use of RIP-relative switch jumps is quite rare, and
--			 * indicates a rare GCC quirk/bug which can leave dead
--			 * code behind.
--			 */
--			if (text_rela->type == R_X86_64_PC32)
--				file->ignore_unreachables = true;
--
--			return rodata_rela;
--		}
-+		return arch_find_switch_table(file, text_rela, rodata_sec, table_offset);
- 	}
- 
- 	return NULL;
-@@ -1112,7 +1034,7 @@ static int add_func_switch_tables(struct objtool_file *file,
- 		 * the beginning of another switch table in the same function.
- 		 */
- 		if (prev_jump) {
--			ret = add_switch_table(file, prev_jump, prev_rela, rela);
-+			ret = arch_add_switch_table(file, prev_jump, prev_rela, rela);
- 			if (ret)
- 				return ret;
- 		}
-@@ -1122,7 +1044,7 @@ static int add_func_switch_tables(struct objtool_file *file,
- 	}
- 
- 	if (prev_jump) {
--		ret = add_switch_table(file, prev_jump, prev_rela, NULL);
-+		ret = arch_add_switch_table(file, prev_jump, prev_rela, NULL);
- 		if (ret)
- 			return ret;
- 	}
-diff --git a/tools/objtool/check.h b/tools/objtool/check.h
-index c44f9fe40178..80e7a96525af 100644
---- a/tools/objtool/check.h
-+++ b/tools/objtool/check.h
-@@ -13,6 +13,7 @@
- #include "orc.h"
- #include "arch_special.h"
- #include <linux/hashtable.h>
-+;
- 
- struct insn_state {
- 	struct cfi_reg cfa;
-@@ -46,6 +47,12 @@ struct instruction {
- 	struct orc_entry orc;
- };
- 
-+struct alternative {
-+	struct list_head list;
-+	struct instruction *insn;
-+	bool skip_orig;
-+};
++	PASS_INFO(arm64_switchtbl_rtl, "outof_cfglayout", 1,
++		  PASS_POS_INSERT_AFTER);
 +
- struct objtool_file {
- 	struct elf *elf;
- 	struct list_head insn_list;
-diff --git a/tools/objtool/special.h b/tools/objtool/special.h
-index 90626a7e41cf..3fe093c1a9c5 100644
---- a/tools/objtool/special.h
-+++ b/tools/objtool/special.h
-@@ -7,7 +7,10 @@
- #define _SPECIAL_H
- 
- #include <stdbool.h>
-+#include <stdlib.h>
-+#include "check.h"
- #include "elf.h"
-+#include "warn.h"
- 
- struct special_alt {
- 	struct list_head list;
-@@ -30,5 +33,10 @@ int special_get_alts(struct elf *elf, struct list_head *alts);
- void arch_force_alt_path(unsigned short feature,
- 			 bool uaccess,
- 			 struct special_alt *alt);
--
-+int arch_add_switch_table(struct objtool_file *file, struct instruction *insn,
-+			    struct rela *table, struct rela *next_table);
-+struct rela *arch_find_switch_table(struct objtool_file *file,
-+				    struct rela *text_rela,
-+				    struct section *rodata_sec,
-+				    unsigned long table_offset);
- #endif /* _SPECIAL_H */
++	register_callback(plugin_info->base_name, PLUGIN_PASS_MANAGER_SETUP,
++			  NULL, &arm64_switchtbl_rtl_pass_info);
++
++	return 0;
++}
 -- 
 2.17.1
 
