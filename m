@@ -2,77 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 00B6E50913
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Jun 2019 12:40:41 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 338EC50925
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Jun 2019 12:43:11 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=6u3IuGBrAwe6y9sQGtY0nE5THevui0VUVO5453ncCBY=; b=oyk2f6x3+OCrah
-	lUttg2ZiBBbf53NAG0xy/er1SlbRN7/oK1VaWBNtMbmXxN0+9qHpug2Jfj7LBkQ8DFyrsy2ERmQha
-	ZhzM7JKh2BsqUyqDwGtH04RFis70rV/hwzQNE1ql9ygaq7/TXcPjGS3ksurzxqY4yMdFKrfYHMbbL
-	QbJW76rffgD3Ss7qOEW7YTy68kYjcq12ggC+fSM3UeHd46FdEE5UwqarFSjOj9WgL8xym4voDcEmU
-	YKYEm/ByU6Bukmt6m+AX+xlrgKwrMUacfhIoXmE8QLBUqHFPNFc8DVgjfMt+cRg+OXH9vZ5RIPcjd
-	uD9IMpYmVpQ5wR/6QUDQ==;
+	List-Owner; bh=eizEkTrGPn2TGvXxR/iFjYfLbIioO5OXfP3KtS6GZC0=; b=cfvQv8/3bGKXMX
+	dx2HrtQPorTWIIlajbzkR7Fwmbct/kLDAYH17OUGPiG20QyHUx6Ifb/bbpYmy/VUzN2gZyUq5iPoy
+	bk7X5K5LvxlS4avqCN60tJ+cjQv0b5YBbq9XmKi899YTuw3ngexF4pVrhESRpJAATGQJteryI4bVE
+	mBqBdl9VpD/3hc6OUR0HZBy+uUalS5Q2PLx9x9Xzdlnz8ZXvIa1icXllyDRBrl+5BF/R7MfNozcRC
+	mGd0oxwJP4w34GohpgMzxW97w81r5wZehVM+mlvJxdrErHEX+SA40UcbQ9lj08+Z5CLCx/3Z8gMdi
+	c70pzewAoNpxjN86in1Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hfMOo-0003UV-CK; Mon, 24 Jun 2019 10:40:34 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1hfMRH-0003yW-Ag; Mon, 24 Jun 2019 10:43:07 +0000
+Received: from relay11.mail.gandi.net ([217.70.178.231])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hfMOU-0003U7-DO; Mon, 24 Jun 2019 10:40:16 +0000
-Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 95F05208E4;
- Mon, 24 Jun 2019 10:40:10 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1561372814;
- bh=HxUEH3z4leC4dJ5SSdD+Hrod9xxZtdkXEJIvmvfkDls=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=p4PZ9wV2TnMIZpxRJidZl+RtPVe+FUZBi7moRglIiodLBtKwmf1oEV4xqb5V+mh/L
- Ugv88bzt/3W9tu/LDyR9Ve1JBjk3ghhMOMhvuEYNmO1szy9MNLn7zjJIf9MKdbIT/h
- Y4mOVdujWbYLgUJb5+1Frs1BuqhFX3eWJC3Rsdvc=
-Date: Mon, 24 Jun 2019 11:40:07 +0100
-From: Will Deacon <will@kernel.org>
-To: Guo Ren <guoren@kernel.org>
-Subject: Re: [PATCH RFC 11/14] arm64: Move the ASID allocator code in a
- separate file
-Message-ID: <20190624104006.lvm32nahemaqklxc@willie-the-truck>
-References: <20190321163623.20219-1-julien.grall@arm.com>
- <20190321163623.20219-12-julien.grall@arm.com>
- <0dfe120b-066a-2ac8-13bc-3f5a29e2caa3@arm.com>
- <CAJF2gTTXHHgDboaexdHA284y6kNZVSjLis5-Q2rDnXCxr4RSmA@mail.gmail.com>
- <c871a5ae-914f-a8bb-9474-1dcfec5d45bf@arm.com>
- <20190619091219.GB7767@fuggles.cambridge.arm.com>
- <CAJF2gTTmFq3yYa9UrdZRAFwJgC=KmKTe2_NFy_UZBUQovqQJPg@mail.gmail.com>
- <20190619123939.GF7767@fuggles.cambridge.arm.com>
- <CAJF2gTSiiiewTLwVAXvPLO7rTSUw1rg8VtFLzANdP2S2EEbTjg@mail.gmail.com>
+ id 1hfMR3-0003xK-Tc
+ for linux-arm-kernel@lists.infradead.org; Mon, 24 Jun 2019 10:42:55 +0000
+Received: from localhost (alyon-656-1-672-152.w92-137.abo.wanadoo.fr
+ [92.137.69.152])
+ (Authenticated sender: alexandre.belloni@bootlin.com)
+ by relay11.mail.gandi.net (Postfix) with ESMTPSA id BE47B100005;
+ Mon, 24 Jun 2019 10:42:38 +0000 (UTC)
+Date: Mon, 24 Jun 2019 12:42:34 +0200
+From: Alexandre Belloni <alexandre.belloni@bootlin.com>
+To: Chen-Yu Tsai <wens@kernel.org>
+Subject: Re: [PATCH 0/3] rtc: pcf8563: Fix unhandled interrupt storm
+Message-ID: <20190624104234.GG3133@piout.net>
+References: <20190604042337.26129-1-wens@kernel.org>
+ <20190620162220.GA23549@piout.net>
+ <CAGb2v67sf3L9zH9Li6tF3xunQ4-isoodBLQmSv2VJtAj6hS7Ug@mail.gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <CAJF2gTSiiiewTLwVAXvPLO7rTSUw1rg8VtFLzANdP2S2EEbTjg@mail.gmail.com>
-User-Agent: NeoMutt/20170113 (1.7.2)
+In-Reply-To: <CAGb2v67sf3L9zH9Li6tF3xunQ4-isoodBLQmSv2VJtAj6hS7Ug@mail.gmail.com>
+User-Agent: Mutt/1.12.0 (2019-05-25)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190624_034014_496526_599133E8 
-X-CRM114-Status: GOOD (  28.64  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190624_034254_118177_DFC36724 
+X-CRM114-Status: GOOD (  21.88  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [217.70.178.231 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -84,111 +63,62 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Julien Grall <julien.grall@arm.com>, aou@eecs.berkeley.edu,
- Arnd Bergmann <arnd@arndb.de>, suzuki.poulose@arm.com,
- Marc Zyngier <marc.zyngier@arm.com>, catalin.marinas@arm.com,
- julien.thierry@arm.com, Will Deacon <will.deacon@arm.com>,
- linux-kernel@vger.kernel.org, rppt@linux.ibm.com, hch@infradead.org,
- Atish.Patra@wdc.com, Anup Patel <anup.Patel@wdc.com>, james.morse@arm.com,
- gary@garyguo.net, Palmer Dabbelt <palmer@sifive.com>, christoffer.dall@arm.com,
- paul.walmsley@sifive.com, linux-riscv@lists.infradead.org,
- kvmarm@lists.cs.columbia.edu, linux-arm-kernel@lists.infradead.org
+Cc: linux-rtc@vger.kernel.org, Alessandro Zummo <a.zummo@towertech.it>,
+ devicetree <devicetree@vger.kernel.org>,
+ Maxime Ripard <maxime.ripard@bootlin.com>,
+ linux-kernel <linux-kernel@vger.kernel.org>,
+ Vincent Donnefort <vdonnefort@gmail.com>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Jun 20, 2019 at 05:33:03PM +0800, Guo Ren wrote:
-> On Wed, Jun 19, 2019 at 8:39 PM Will Deacon <will.deacon@arm.com> wrote:
+On 24/06/2019 18:34:29+0800, Chen-Yu Tsai wrote:
+> On Fri, Jun 21, 2019 at 12:22 AM Alexandre Belloni
+> <alexandre.belloni@bootlin.com> wrote:
 > >
-> > On Wed, Jun 19, 2019 at 08:18:04PM +0800, Guo Ren wrote:
-> > > On Wed, Jun 19, 2019 at 5:12 PM Will Deacon <will.deacon@arm.com> wrote:
-> > > > This is one place where I'd actually prefer not to go down the route of
-> > > > making the code generic. Context-switching and low-level TLB management
-> > > > is deeply architecture-specific and I worry that by trying to make this
-> > > > code common, we run the real risk of introducing subtle bugs on some
-> > > > architecture every time it is changed.
-> > > "Add generic asid code" and "move arm's into generic" are two things.
-> > > We could do
-> > > first and let architecture's maintainer to choose.
+> > On 04/06/2019 12:23:34+0800, Chen-Yu Tsai wrote:
+> > > From: Chen-Yu Tsai <wens@csie.org>
+> > >
+> > > Hi everyone,
+> > >
+> > > While bringing up my Pine H64, I encountered an interrupt storm from the
+> > > pcf8563 RTC. The RTC chip's interrupt line is shared with the PMIC, and
+> > > was not properly added to the device tree. Also, the driver was using an
+> > > trigger method incompatible with the PMIC, preventing the interrupt line
+> > > from being shared. Last, the driver only clears and masks the alarm
+> > > interrupt, while leaving the timer interrupt untouched. This is a
+> > > problem if previous systems left the timer interrupt enabled, and there
+> > > was an interrupt pending.
+> > >
+> > > This patch set fixes all three issues, one per patch.
+> > >
+> > > Please have a look.
+> > >
 > >
-> > If I understand the proposal being discussed, it involves basing that
-> > generic ASID allocation code around the arm64 implementation which I don't
-> > necessarily think is a good starting point.
-> ...
-> >
-> > > > Furthermore, the algorithm we use
-> > > > on arm64 is designed to scale to large systems using DVM and may well be
-> > > > too complex and/or sub-optimal for architectures with different system
-> > > > topologies or TLB invalidation mechanisms.
-> > > It's just a asid algorithm not very complex and there is a callback
-> > > for architecture to define their
-> > > own local hart tlb flush. Seems it has nothing with DVM or tlb
-> > > broadcast mechanism.
-> >
-> > I'm pleased that you think the algorithm is not very complex, but I'm also
-> > worried that you might not have fully understood some of its finer details.
-> I understand your concern about my less understanding of asid
-> technology. Here is
-> my short-description of arm64 asid allocator: (If you find anything
-> wrong, please
-> correct me directly, thx :)
-
-The complexity mainly comes from the fact that this thing runs concurrently
-with itself without synchronization on the fast-path. Coupled with the
-need to use the same ASID for all threads of a task, you end up in fiddly
-situations where rollover can occur on one CPU whilst another CPU is trying
-to schedule a thread of a task that already has threads running in
-userspace.
-
-However, it's architecture-specific whether or not you care about that
-scenario.
-
-> > The reason I mention DVM and TLB broadcasting is because, depending on
-> > the mechanisms in your architecture relating to those, it may be strictly
-> > required that all concurrently running threads of a process have the same
-> > ASID at any given point in time, or it may be that you really don't care.
-> >
-> > If you don't care, then the arm64 allocator is over-engineered and likely
-> > inefficient for your system. If you do care, then it's worth considering
-> > whether a lock is sufficient around the allocator if you don't expect high
-> > core counts. Another possibility is that you end up using only one ASID and
-> > invalidating the local TLB on every context switch. Yet another design
-> > would be to manage per-cpu ASID pools.
-> I'll keep my system use the same ASID for SMP + IOMMU :P
-
-You will want a separate allocator for that:
-
-https://lkml.kernel.org/r/20190610184714.6786-2-jean-philippe.brucker@arm.com
-
-> Yes, there are two styles of asid allocator: per-cpu ASID (MIPS) or
-> same ASID (ARM).
-> If the CPU couldn't support cache/tlb coherency maintian in hardware,
-> it should use
-> per-cpu ASID style because IPI is expensive and per-cpu ASID style
-> need more software
-> mechanism to improve performance (eg: delay cache flush). From software view the
-> same ASID is clearer and easier to build bigger system with more TLB caches.
+> > I don't have that particular RTC so I can't test but the interrupt
+> > handling in pcf8563_irq seems problematic too. I guess the RTC will only
+> > trigger once per second because the call to pcf8563_set_alarm_mode will
+> > explicitely leave the alarm enabled. The core doesn't really care but it
+> > doesn't really expect the alarm to stay enabled. i.e. It will ensure the
+> > alarm is enabled again after setting it when necessary. I think it would
+> > be safer to simply clear both AIE and AF here. Could you test?
 > 
-> I think the same ASID style is a more sensible choice for modern
-> processor and let it be
-> one of generic is reasonable.
+> Yeah, that bit looked weird to me as well. And actually the alarm doesn't
+> go down to the second, only the minute.
+> 
+> Is there a test program I can use to test the alarms?
+> 
 
-I'm not sure I agree. x86, for example, is better off using a different
-algorithm for allocating its PCIDs.
+Sure, tools/testing/selftests/rtc/rtctest.c if you use a recent enough
+version, it will test minute boundaries.
 
-> > So rather than blindly copying the arm64 code, I suggest sitting down and
-> > designing something that fits to your architecture instead. You may end up
-> > with something that is both simpler and more efficient.
-> In fact, riscv folks have discussed a lot about arm's asid allocator
-> and I learned
-> a lot from the discussion:
-> https://lore.kernel.org/linux-riscv/20190327100201.32220-1-anup.patel@wdc.com/
 
-If you require all threads of the same process to have the same ASID, then
-that patch looks broken to me.
-
-Will
+-- 
+Alexandre Belloni, Bootlin
+Embedded Linux and Kernel engineering
+https://bootlin.com
 
 _______________________________________________
 linux-arm-kernel mailing list
