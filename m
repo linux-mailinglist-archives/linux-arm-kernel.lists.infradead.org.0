@@ -2,50 +2,50 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 44E28518AD
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Jun 2019 18:29:21 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 75EF8518AF
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Jun 2019 18:30:01 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
 	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
 	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=NhG6Mkbwj55UHi6JT6PcM7uiNUNX9WTJfRS1+UiVaoI=; b=EE1IYoh6PJNVYSZO3mXcSAFW3
-	JhI25eCCHl+FObNbzOSxWhBZXNWziBM+amsr0bMo1kaDdQSxphKFThIp+rYhZaaGb8gYlpk3eNkjx
-	UxEpvQPx3U3pLupT/XIRkcKZXgnL0GY0R5stdA0NvXIECjfmtudBuYSrJEYY7P/fDHA3z/P56ug1H
-	MERfdRzcmSBza8M6P4gTxJmCi3GROxEj6kLz/jqlWAeaY90O1q+Fe7dol499jA5/z7VBLHA5YMzWr
-	fwO+CfXbrZovVdzsIZw3k5PE/pzypvdzJI//JiZBT/Viw4V4PNXYolbk4e0GB01D801VeSliK1q7b
-	OkBmdPVbA==;
+	 bh=HiPSs8Cni3RDsyol9eSvMEreiSdc3zem9kz93RqLXDk=; b=B1Pj21F4sYczPPfet9GZF2tr9
+	x9duX8p+y0TAoJzd5/otTPj7MR2JzM0hZYU89ZrmUMnlqTkC/a9j6ZoPzwOv00Ee7Gg1IZM+h+sgS
+	TSNVWxxq13om0nXTt7FlWEPOjPQFl1XA2shZvg8PzXdXFccbhpL6SH2JcY5NSqdYRx9lrPC6w9xrv
+	fQkRKAqHs9SCbO+CDU1DrZoGYZOQm+1Q1v6Lhz3u7vSw27XonySbLJL3DCfHbq6Xc2F1pZQokV2v7
+	r69BTnWuf7gaxhfmWjWTTXAgsxZiIrDuiVT7J5cezVHKHKrBH++0P5/D+MznwqYKKNnDdJkgNfPlf
+	18a23jGfA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hfRqG-0005hV-Ln; Mon, 24 Jun 2019 16:29:16 +0000
+	id 1hfRqv-0005xv-FG; Mon, 24 Jun 2019 16:29:57 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hfRq0-0005gx-QK
- for linux-arm-kernel@lists.infradead.org; Mon, 24 Jun 2019 16:29:02 +0000
+ id 1hfRqi-0005xM-FV
+ for linux-arm-kernel@lists.infradead.org; Mon, 24 Jun 2019 16:29:45 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id E8D2B360;
- Mon, 24 Jun 2019 09:28:59 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 0EEDC360;
+ Mon, 24 Jun 2019 09:29:44 -0700 (PDT)
 Received: from [10.37.12.219] (unknown [10.37.12.219])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id C50113F71E;
- Mon, 24 Jun 2019 09:28:57 -0700 (PDT)
-Subject: Re: [RFC PATCH v2 5/8] arm64/sve: Implement an helper to flush SVE
- registers
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 8E8A83F71E;
+ Mon, 24 Jun 2019 09:29:42 -0700 (PDT)
+Subject: Re: [RFC PATCH v2 6/8] arm64/sve: Implement an helper to load SVE
+ registers from FPSIMD state
 To: Dave Martin <Dave.Martin@arm.com>
 References: <20190613161656.20765-1-julien.grall@arm.com>
- <20190613161656.20765-6-julien.grall@arm.com>
- <20190621153302.GA2790@e103592.cambridge.arm.com>
+ <20190613161656.20765-7-julien.grall@arm.com>
+ <20190621153309.GB2790@e103592.cambridge.arm.com>
 From: Julien Grall <julien.grall@arm.com>
-Message-ID: <20772a47-5cd3-0566-1e29-839e39961def@arm.com>
-Date: Mon, 24 Jun 2019 17:28:56 +0100
+Message-ID: <8894be57-8ae2-31b6-2871-31483463bf2e@arm.com>
+Date: Mon, 24 Jun 2019 17:29:41 +0100
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
  Thunderbird/60.7.0
 MIME-Version: 1.0
-In-Reply-To: <20190621153302.GA2790@e103592.cambridge.arm.com>
+In-Reply-To: <20190621153309.GB2790@e103592.cambridge.arm.com>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190624_092900_957894_F4926D63 
-X-CRM114-Status: GOOD (  19.89  )
+X-CRM114-CacheID: sfid-20190624_092944_560279_C47EE1A6 
+X-CRM114-Status: GOOD (  16.91  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -75,122 +75,73 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 Hi Dave,
 
 On 6/21/19 4:33 PM, Dave Martin wrote:
-> On Thu, Jun 13, 2019 at 05:16:53PM +0100, Julien Grall wrote:
->> Introduce a new helper that will zero all SVE registers but the first
->> 128-bits of each vector.
-> 
-> Maybe mention that the helper will be used by a subsequent patch.  For
-> now, it's dead code.
-> 
-> Maybe also mention briefly what this will be used for: i.e., to avoid
-> the costly store/munge/reload sequences currently used by things like
-> do_sve_acc().
-
-How about the following commit message:
-
-"Introduce a new helper that will zero all SVE registers but the first 
-128-bits of each vector. This will be used in subsequent patch to avoid 
-the costly store/munge/reload sequences used in place such as do_sve_acc()."
-
-> 
->> Signed-off-by: Julien Grall <julien.grall@arm.com>
+> On Thu, Jun 13, 2019 at 05:16:54PM +0100, Julien Grall wrote:
+>> In a follow-up patch, we may save the FPSIMD rather than the full SVE
+>> state when the state has to be zeroed on return to userspace (e.g
+>> during a syscall).
 >>
+>> Introduce an helper to load SVE vectors from FPSIMD state and zero the rest
+>> of SVE registers.
+>>
+>> Signed-off-by: Julien Grall <julien.grall@arm.com>
 >> ---
->>      Changes in v2:
->>          - Fix typo in the commit title
->> ---
->>   arch/arm64/include/asm/fpsimd.h       |  3 +++
->>   arch/arm64/include/asm/fpsimdmacros.h | 19 +++++++++++++++++++
->>   arch/arm64/kernel/entry-fpsimd.S      |  7 +++++++
->>   3 files changed, 29 insertions(+)
+>>   arch/arm64/include/asm/fpsimd.h  |  3 +++
+>>   arch/arm64/kernel/entry-fpsimd.S | 17 +++++++++++++++++
+>>   2 files changed, 20 insertions(+)
 >>
 >> diff --git a/arch/arm64/include/asm/fpsimd.h b/arch/arm64/include/asm/fpsimd.h
->> index df62bbd33a9a..fda3544c9606 100644
+>> index fda3544c9606..f07a88552588 100644
 >> --- a/arch/arm64/include/asm/fpsimd.h
 >> +++ b/arch/arm64/include/asm/fpsimd.h
->> @@ -83,6 +83,9 @@ static inline void *sve_pffr(struct thread_struct *thread)
->>   extern void sve_save_state(void *state, u32 *pfpsr);
->>   extern void sve_load_state(void const *state, u32 const *pfpsr,
->>   			   unsigned long vq_minus_1);
->> +
->> +extern void sve_flush_live(void);
+>> @@ -86,6 +86,9 @@ extern void sve_load_state(void const *state, u32 const *pfpsr,
+>>   
+>>   extern void sve_flush_live(void);
+>>   
+>> +extern void sve_load_from_fpsimd_state(struct user_fpsimd_state const *state,
+>> +				       unsigned long vq_minus_1);
 >> +
 > 
-> We probably don't need the extra blank lines here... these operations
-> are all closely related low-level backend functions.
-
-Sure.
-
+> Lose the extra blank line?
 > 
 >>   extern unsigned int sve_get_vl(void);
 >>   
 >>   struct arm64_cpu_capabilities;
->> diff --git a/arch/arm64/include/asm/fpsimdmacros.h b/arch/arm64/include/asm/fpsimdmacros.h
->> index 5e291d9c1ba0..a41ab337bf42 100644
->> --- a/arch/arm64/include/asm/fpsimdmacros.h
->> +++ b/arch/arm64/include/asm/fpsimdmacros.h
->> @@ -175,6 +175,13 @@
->>   		| ((\np) << 5)
->>   .endm
->>   
->> +/* PFALSE P\np.B */
->> +.macro _sve_pfalse np
->> +	_sve_check_preg \np
->> +	.inst	0x2518e400			\
->> +		| (\np)
->> +.endm
->> +
->>   .macro __for from:req, to:req
->>   	.if (\from) == (\to)
->>   		_for__body %\from
->> @@ -209,6 +216,18 @@
->>   921:
->>   .endm
->>   
->> +/* Preserve the first 128-bits of Znz and zero the rest. */
->> +.macro _sve_flush_z nz
->> +	_sve_check_zreg \nz
->> +	mov	v\nz\().16b, v\nz\().16b
->> +.endm
->> +
->> +.macro sve_flush
->> + _for n, 0, 31, _sve_flush_z	\n
->> + _for n, 0, 15, _sve_pfalse	\n
->> +		_sve_wrffr	0
->> +.endm
->> +
->>   .macro sve_save nxbase, xpfpsr, nxtmp
->>    _for n, 0, 31,	_sve_str_v	\n, \nxbase, \n - 34
->>    _for n, 0, 15,	_sve_str_p	\n, \nxbase, \n - 16
 >> diff --git a/arch/arm64/kernel/entry-fpsimd.S b/arch/arm64/kernel/entry-fpsimd.S
->> index 12d4958e6429..17121a51c41f 100644
+>> index 17121a51c41f..35c21a707730 100644
 >> --- a/arch/arm64/kernel/entry-fpsimd.S
 >> +++ b/arch/arm64/kernel/entry-fpsimd.S
->> @@ -57,4 +57,11 @@ ENTRY(sve_get_vl)
->>   	_sve_rdvl	0, 1
+>> @@ -58,6 +58,23 @@ ENTRY(sve_get_vl)
 >>   	ret
 >>   ENDPROC(sve_get_vl)
+>>   
+>> +/*
+>> + * Load SVE state from FPSIMD state.
+>> + *
+>> + * x0 = pointer to struct fpsimd_state
+>> + * x1 = VQ - 1
+>> + *
+>> + * Each SVE vector will be loaded with the first 128-bits taken from FPSIMD
+>> + * and the rest zeroed. All the other SVE registers will be zeroed.
+>> + */
+>> +ENTRY(sve_load_from_fpsimd_state)
+>> +		sve_load_vq	x1, x2, x3
+>> +		fpsimd_restore	x0, 8
+>> + _for n, 0, 15, _sve_pfalse	\n
+>> +		_sve_wrffr 0
+>> +		ret
+>> +ENDPROC(sve_load_from_fpsimd_state)
 >> +
->> +/* Zero all SVE registers but the first 128-bits of each vector */
->> +ENTRY(sve_flush_live)
->> +	sve_flush
->> +	ret
->> +ENDPROC(sve_flush_live)
->> +
->>   #endif /* CONFIG_ARM64_SVE */
+>>   /* Zero all SVE registers but the first 128-bits of each vector */
+>>   ENTRY(sve_flush_live)
+>>   	sve_flush
 > 
-> The extra blank line makes this more readable, but in the interests
-> of symmetry can you also add a blank after the corresponding #ifdef?
+> With the extra blank line in fpsimd.h gone (if you agree):
 
-I would prefer to do this change in a separate patch. So I will drop the 
-newline here.
+I don't particularly care of the newline :).
 
-> 
-> [...]
-> 
-> With those addressed as appropriate,
 > 
 > Reviewed-by: Dave Martin <Dave.Martin@arm.com>
+> 
 
 Thank you!
 
