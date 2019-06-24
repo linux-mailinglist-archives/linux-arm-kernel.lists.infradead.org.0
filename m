@@ -2,85 +2,104 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EF32050EB0
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Jun 2019 16:39:05 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A6CF150EB1
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Jun 2019 16:39:23 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=2VQWXWWz2MsckhoPDzZ1kY/+zAXYVs0M3W7qMuWNQ9A=; b=A4C5ZKan4ms5eo
-	eHkVHkYciPs82/n2eiLnBnkBUaxD5vUKHZ9UjBgMf+ACxtCjFCqcR+Sw4uWklM3jKDuglGFkJ45qR
-	Slvj5QqlAj/r26E1U06OrNxKMDRjVB+jV8VHJHPB6u9zQb/CHsTlxB2Oesr7spPKs/MyqW1P3wL5Q
-	uIXGpsaw1e1vN93hYAia0zU+trGSWJeYoByG+NhLWb5O8h+BMIN/SbRCaOmofz65TDp4cXIv98LFN
-	utB2QScDxd+fNuQ5loe3j0y8HxeCo6opKCkArWfINuVkSE9JHRUTbTWWRjZrxJzDegbaq+ul7CBfk
-	hZz4EQ9GI5nUhbwD3Tqw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=h3tYbEeyAuDuEsBk+kML7KoJ7SvI9719nLPDwpD6yLo=; b=Ne2O1bK6D3ZkX4
+	HzfumNly/wRItLgn9egbMHBrVED6mACahJQcmT77MAodvuNMz4Go2lygvDXo4yL4CVXEhIzBYy0dS
+	+diK9Z+vEyWq2pzd53bTxUQQ+OwcqEVxpT+EY/oDjC19LGtZVaLNhJmj3wwzvlZWNkElWygnbW3VK
+	lg1330UPAgSVuJNb+XIDOjvG2H0OQTzZfcaJWQRzLsUJns0F6PJ5LTRut3X/utrYbhaH9v4mKKd+x
+	+CG0ubP+5FJWeRunJU+54PUWhl+lgTPMJaw9/7ClEaLKmWorZgH6soW5PznBZs8HJivOhtu4E6oQe
+	/rasdvnIXWf+66BQQz0Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hfQ7b-0001iQ-CQ; Mon, 24 Jun 2019 14:39:03 +0000
-Received: from mail-io1-xd41.google.com ([2607:f8b0:4864:20::d41])
+	id 1hfQ7s-0001xz-4M; Mon, 24 Jun 2019 14:39:20 +0000
+Received: from mail-eopbgr680131.outbound.protection.outlook.com
+ ([40.107.68.131] helo=NAM04-BN3-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hfQ6D-0000f4-F9
- for linux-arm-kernel@lists.infradead.org; Mon, 24 Jun 2019 14:37:42 +0000
-Received: by mail-io1-xd41.google.com with SMTP id r185so1261829iod.6
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 24 Jun 2019 07:37:37 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=8t2dI3qcQHJ03st0n/Xa4z9xUhlY5mkfwBdJ9AK0hb4=;
- b=GT0ywkN6dZdrUPXDLfalysL0wv0r19AWbL4Zby7v/a5CZKA5R9z2PZbMfLiDlgtLlo
- Xj+PWHGAoNCCdI+/VCBkivmZN7ruZQyVsS/PUtG6FqEAhVYc6HDHR0xvQUf7nLcw2Uc/
- wXvBqaH1Mt8CufOobp7I2xaUtGM0iog2CqoX5oqgHRkDKJ7cNGGNtyqIgV8lpS1iVXvF
- f+5Y7/uOsvB6w0+8oP3k9clyKULFn2PUD2w933FBZNhEVC9cASUrqHGhAsJBpoaL1Noe
- g3MqJPHHVMOCetv0mEFzpj5nwGqPtWn6/+eMsTjSDe9H8Cz7PM6HvBWPqzdmjn6d4jN4
- 0wlw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=8t2dI3qcQHJ03st0n/Xa4z9xUhlY5mkfwBdJ9AK0hb4=;
- b=kPFntQNNTK04m3vIbEGFnejsT8w84hfxzuCGGDOSiFkEkWYQMw2U8+90jfpeWOofSY
- V/UzMI+xRV46n2IKyy9HbpiO/y8OUk4ItrDVrKBFoYC0Qb6G1Wf2yCkAKmToWJ/auTmM
- jsn615zuYcgOLpN62mmk8eOEqU4bJE2xyVMVECcd2g9VKrG1PtPut+ag6JTDYYnrD/sL
- p7i8jaoLy4FqdMuEtfp43CumqOxOKWq8IbcHcjErZ3X4YzxgSoBueKv9hCu3oc3sRI+A
- p53NULqrj/ddcRGEk8Aet1Tzs5GZz8h4ShZWxkbT938mOGcTYWR+leXKoAYSp56CuYwk
- rAlw==
-X-Gm-Message-State: APjAAAWx5f54yEBX+I/2zFM43njiA+hiW2pCVvwmIdem+P2ln4oB1RM0
- ZOZ6II2PQuo23WQL41UDqLNT0H3bvjoaJYBTuDGLeQ==
-X-Google-Smtp-Source: APXvYqzThl3l6ewnU4Zyr8pwLRNTMEXCKxpGLr3u+l8OupJIXWgOokRIzTky0FyGc6ws5GFPfPEEV7wS59Cxfl4Lw6A=
-X-Received: by 2002:a02:1a86:: with SMTP id 128mr26144285jai.95.1561387056479; 
- Mon, 24 Jun 2019 07:37:36 -0700 (PDT)
+ id 1hfQ78-0001UV-6W
+ for linux-arm-kernel@lists.infradead.org; Mon, 24 Jun 2019 14:38:35 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=amperemail.onmicrosoft.com; s=selector2-amperemail-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=88MwFkrLRW09sAI0A8nZ+7uIFYPFLZnkM+2+y68G3p4=;
+ b=fZt+asrEt6KTqLMtERk30+GPJdPLcIjT/mTK+1qOWPGZsLO29hVJaAPXG4dguGxvjb+xhRsQJz3ysM790S06PVqATpes34BxZ7sPU3Oppi3ZDCXX0yoec6H5Uj4VZ7GboRwnSjssRDdXXSD7omtmTqw9qiHqo05BmShCQIAW+4U=
+Received: from DM6PR01MB4090.prod.exchangelabs.com (20.176.104.151) by
+ DM6PR01MB3929.prod.exchangelabs.com (20.176.66.14) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2008.13; Mon, 24 Jun 2019 14:38:29 +0000
+Received: from DM6PR01MB4090.prod.exchangelabs.com
+ ([fe80::f0f2:16e1:1db7:ccb3]) by DM6PR01MB4090.prod.exchangelabs.com
+ ([fe80::f0f2:16e1:1db7:ccb3%7]) with mapi id 15.20.2008.017; Mon, 24 Jun 2019
+ 14:38:29 +0000
+From: Hoan Tran OS <hoan@os.amperecomputing.com>
+To: Catalin Marinas <catalin.marinas@arm.com>, Will Deacon
+ <will.deacon@arm.com>
+Subject: [PATCH] arm64: Kconfig: Enable NODES_SPAN_OTHER_NODES config for NUMA
+Thread-Topic: [PATCH] arm64: Kconfig: Enable NODES_SPAN_OTHER_NODES config for
+ NUMA
+Thread-Index: AQHVKpp8SjYC130sVEibrXL3FC+ASw==
+Date: Mon, 24 Jun 2019 14:38:28 +0000
+Message-ID: <1561387098-23692-1-git-send-email-Hoan@os.amperecomputing.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-clientproxiedby: CY4PR18CA0064.namprd18.prod.outlook.com
+ (2603:10b6:903:13f::26) To DM6PR01MB4090.prod.exchangelabs.com
+ (2603:10b6:5:2a::23)
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=hoan@os.amperecomputing.com; 
+x-ms-exchange-messagesentrepresentingtype: 1
+x-mailer: git-send-email 2.7.4
+x-originating-ip: [4.28.12.214]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: 5902007f-628d-46b4-3293-08d6f8b19e7a
+x-microsoft-antispam: BCL:0; PCL:0;
+ RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600148)(711020)(4605104)(1401327)(2017052603328)(7193020);
+ SRVR:DM6PR01MB3929; 
+x-ms-traffictypediagnostic: DM6PR01MB3929:
+x-microsoft-antispam-prvs: <DM6PR01MB392952282822042DF2CB1D3AF1E00@DM6PR01MB3929.prod.exchangelabs.com>
+x-ms-oob-tlc-oobclassifiers: OLM:4303;
+x-forefront-prvs: 007814487B
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10019020)(39840400004)(376002)(136003)(346002)(396003)(366004)(189003)(199004)(66446008)(68736007)(81156014)(6486002)(26005)(4326008)(186003)(256004)(6436002)(6506007)(486006)(386003)(102836004)(4744005)(71200400001)(71190400001)(305945005)(66556008)(64756008)(73956011)(99286004)(86362001)(2616005)(476003)(52116002)(25786009)(66946007)(2906002)(66066001)(7736002)(53936002)(81166006)(8936002)(107886003)(6512007)(110136005)(66476007)(316002)(50226002)(478600001)(5660300002)(14454004)(6116002)(3846002)(8676002)(54906003);
+ DIR:OUT; SFP:1102; SCL:1; SRVR:DM6PR01MB3929;
+ H:DM6PR01MB4090.prod.exchangelabs.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; MX:1; A:0; 
+received-spf: None (protection.outlook.com: os.amperecomputing.com does not
+ designate permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam-message-info: i7A3tHJnWEj1++QD0H5pIvKApNpWhz/e9BS/mRVIoxRAplNFy3bga4sG/cNXrYVaaYWn3EvHh0uhd4mKRrqUORWp4YfkIDjAsmM1HiaCS2FvPMol5zeMs9qUb7mDHHSFhsiqYH5ZwkYym61QfJGMJJ50GnAw9t7NvfDaVwY/luEomjH8vIT5MsRErZeRKXATJcrvAIsux5eWoTZfS2VodvYd2F2XeUXvP3dIA7gPEF45vGvE5Hu/s7icgULTApPAeIJBgwEOZgsFxi38+jHpp0+gwt1LesB9LbC/hPWT8hiuu1jhL6rClb1D+9yA4CHkFl1+61LtKE0MKJgUjI5tSMh/oGsoPwj/L4tnKa2S0jm5YD+bgUrpTwWh42cDcey0Akp1dm/NsZOHz6fsrFDETOq0OqXQEHg7ubAq8aJ1QpU=
 MIME-Version: 1.0
-References: <20190624073818.29296-1-ard.biesheuvel@linaro.org>
- <20190624073818.29296-6-ard.biesheuvel@linaro.org>
-In-Reply-To: <20190624073818.29296-6-ard.biesheuvel@linaro.org>
-From: Ard Biesheuvel <ard.biesheuvel@linaro.org>
-Date: Mon, 24 Jun 2019 16:37:25 +0200
-Message-ID: <CAKv+Gu-6KX-=N9=GykoPQgppAZTZ=2a4RNcCZyQwuE9YPKV=Eg@mail.gmail.com>
-Subject: Re: [PATCH 5/6] crypto: aegis128 - provide a SIMD implementation
- based on NEON intrinsics
-To: "open list:HARDWARE RANDOM NUMBER GENERATOR CORE"
- <linux-crypto@vger.kernel.org>
+X-OriginatorOrg: os.amperecomputing.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 5902007f-628d-46b4-3293-08d6f8b19e7a
+X-MS-Exchange-CrossTenant-originalarrivaltime: 24 Jun 2019 14:38:29.1030 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 3bc2b170-fd94-476d-b0ce-4229bdc904a7
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: Hoan@os.amperecomputing.com
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DM6PR01MB3929
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190624_073737_637879_A43969BC 
-X-CRM114-Status: GOOD (  14.45  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190624_073834_325507_FC872472 
+X-CRM114-Status: UNSURE (   9.77  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:d41 listed in]
- [list.dnswl.org]
+ no trust [40.107.68.131 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -93,48 +112,47 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Herbert Xu <herbert@gondor.apana.org.au>,
- Steve Capper <steve.capper@arm.com>, Ondrej Mosnacek <omosnace@redhat.com>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
- Eric Biggers <ebiggers@google.com>
+Cc: Open Source Review <OpenSourceReview@amperecomputing.com>,
+ Hoan Tran OS <hoan@os.amperecomputing.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, 24 Jun 2019 at 09:38, Ard Biesheuvel <ard.biesheuvel@linaro.org> wrote:
->
-> Provide an accelerated implementation of aegis128 by wiring up the
-> SIMD hooks in the generic driver to an implementation based on NEON
-> intrinsics, which can be compiled to both ARM and arm64 code.
->
-> This results in a performance of 2.2 cycles per byte on Cortex-A53,
-> which is a performance increase of ~11x compared to the generic
-> code.
->
-> Signed-off-by: Ard Biesheuvel <ard.biesheuvel@linaro.org>
-> ---
->  crypto/Kconfig               |   5 +
->  crypto/Makefile              |  12 ++
->  crypto/aegis128-neon-inner.c | 142 ++++++++++++++++++++
->  crypto/aegis128-neon.c       |  43 ++++++
->  4 files changed, 202 insertions(+)
->
-...
-> diff --git a/crypto/Makefile b/crypto/Makefile
-> index 266a4cdbb9e2..f4a55cfb7f17 100644
-> --- a/crypto/Makefile
-> +++ b/crypto/Makefile
-> @@ -92,6 +92,18 @@ obj-$(CONFIG_CRYPTO_GCM) += gcm.o
->  obj-$(CONFIG_CRYPTO_CCM) += ccm.o
->  obj-$(CONFIG_CRYPTO_CHACHA20POLY1305) += chacha20poly1305.o
->  obj-$(CONFIG_CRYPTO_AEGIS128) += aegis128.o
-> +aegis128-y := aegis128.o
-> +
+Some NUMA nodes have memory ranges that span other nodes.
+Even though a pfn is valid and between a node's start and end pfns,
+it may not reside on that node.
 
-This doesn't actually work when building a module. I'll have to rename
-the .c file so that the module that combines the objects can retain
-its name
+This patch enables NODES_SPAN_OTHER_NODES config for NUMA to support
+this type of NUMA layout.
+
+Signed-off-by: Hoan Tran <Hoan@os.amperecomputing.com>
+---
+ arch/arm64/Kconfig | 7 +++++++
+ 1 file changed, 7 insertions(+)
+
+diff --git a/arch/arm64/Kconfig b/arch/arm64/Kconfig
+index 697ea05..21fc168 100644
+--- a/arch/arm64/Kconfig
++++ b/arch/arm64/Kconfig
+@@ -873,6 +873,13 @@ config NEED_PER_CPU_EMBED_FIRST_CHUNK
+ config HOLES_IN_ZONE
+ 	def_bool y
+ 
++# Some NUMA nodes have memory ranges that span other nodes.
++# Even though a pfn is valid and between a node's start and end pfns,
++# it may not reside on that node.
++config NODES_SPAN_OTHER_NODES
++	def_bool y
++	depends on ACPI_NUMA
++
+ source "kernel/Kconfig.hz"
+ 
+ config ARCH_SUPPORTS_DEBUG_PAGEALLOC
+-- 
+2.7.4
 
 _______________________________________________
 linux-arm-kernel mailing list
