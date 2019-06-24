@@ -2,68 +2,67 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5A90F51C86
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Jun 2019 22:39:13 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2F91F51C8A
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Jun 2019 22:39:57 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=HhG//9P8wHD0+Suxb+Y2NdRlQ6uWEDyctMFcil+j2CM=; b=dIM++V8cbN8eKc
-	HKI1u4d1NH9PuHNswvIt4yzhLUlDDVWaHVzy0sVkqonJhxT/gWbkgT+p5bolGESKjDyz8x0smAlaP
-	rlsYbuqUzklR9TTuVIUgC6LhuheKWEwauYDty1teoRK3T6lvbRNBL3h8IkX9/xeQBz8zSFyp3kmLw
-	zd353R3YVQ2bZjlJXERkOPAkVAN484gu+QFEydGsAkzYB78TjcmiS0YjSWJVTceeMwlPFVhYJJIAE
-	HNgF/2Ek1Ki06uLK3uw4garvzY/nP8bdDA9usT8m87g34br6QQJQFN2AISFP2PHoqnGEcsfT/ApsQ
-	doLOTn25wgH9jIikGShg==;
+	List-Owner; bh=cLCAWINsCnS4D5Ujs5PfrZiyLPLWw+llv4a+MZWqONU=; b=tBiRvfNd1F6XN/
+	2zxwMZP8Vr1Lvkk+0YAsjJwW3ZbDAK1OXCYFsuGdFRfc1o5wePi5KFFiyW16S7SP3jS584Xzs0tmX
+	PlqNYh8ookcJYxLI1/hAS9Ud2pAOy4wihcX42TRRLdG58ZVBNwhMwHu5E3F5KEJyE7xzwCjjDKS65
+	WEPHt/RPKC1KQutnCaGevyltolPjFbcg66Qavyv0vYGj6QUAH5bzky5dZ+Ran0CYc6YPmufOJvor4
+	1LbPhx6HJ6kSsEjUSKFn3YJc4id2lTdBuSHq1W6f5ZJN0Raj2eo4IVVR98y3HsCUuuaMR/UPSB6cq
+	BKMkxXcaXn9CsA8rHq4w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hfVk7-0002M2-5G; Mon, 24 Jun 2019 20:39:11 +0000
+	id 1hfVkn-0002cg-Sd; Mon, 24 Jun 2019 20:39:53 +0000
 Received: from fllv0016.ext.ti.com ([198.47.19.142])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hfVjx-0002KI-0k
- for linux-arm-kernel@lists.infradead.org; Mon, 24 Jun 2019 20:39:02 +0000
-Received: from lelv0265.itg.ti.com ([10.180.67.224])
- by fllv0016.ext.ti.com (8.15.2/8.15.2) with ESMTP id x5OKcqA8077427;
- Mon, 24 Jun 2019 15:38:52 -0500
+ id 1hfVkX-0002c9-PI
+ for linux-arm-kernel@lists.infradead.org; Mon, 24 Jun 2019 20:39:39 +0000
+Received: from fllv0035.itg.ti.com ([10.64.41.0])
+ by fllv0016.ext.ti.com (8.15.2/8.15.2) with ESMTP id x5OKdZCS077530;
+ Mon, 24 Jun 2019 15:39:35 -0500
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1561408732;
- bh=Rx7KKINFV12iE6CsBC74T41LgUQI1T0uN4iRkdsLxVY=;
+ s=ti-com-17Q1; t=1561408775;
+ bh=oIggU2usg7ip92ERe3n8UI5GnQ67C5U97I7Ca1/uLxw=;
  h=Subject:To:CC:References:From:Date:In-Reply-To;
- b=S1lURTsrPoOWHuJSpNy7BEmoQkPEfxkyyRt7zqaLIMNkoAmyildJrQqyBevODEeE2
- /bc4RgLar3zkS/jeToHT5IySR880x7GTjCXitX1MVc1V5mTxg+k3tIE6yXltodEyWb
- hMx+3eNzvXj22AZMUbbKtuS0OKqgpVGATkXRAy8M=
-Received: from DLEE100.ent.ti.com (dlee100.ent.ti.com [157.170.170.30])
- by lelv0265.itg.ti.com (8.15.2/8.15.2) with ESMTPS id x5OKcquw069074
+ b=PXmZABqByRnONJkq4IlV58VJMYG2qoNypXsSXYUb9lYL8kntL4D1kvhndujxPF8ZW
+ 1go4rpAo3ktU3Up5YbUgyQLWcPKFsctVlVxZSUpo44VbxwZJJuikzMMdsDAJOsJR2G
+ G9UFie8rQJdHNniqlGTm16JM62GsByKyV2pS13iM=
+Received: from DLEE105.ent.ti.com (dlee105.ent.ti.com [157.170.170.35])
+ by fllv0035.itg.ti.com (8.15.2/8.15.2) with ESMTPS id x5OKdZD1076634
  (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Mon, 24 Jun 2019 15:38:52 -0500
-Received: from DLEE107.ent.ti.com (157.170.170.37) by DLEE100.ent.ti.com
- (157.170.170.30) with Microsoft SMTP Server (version=TLS1_2,
+ Mon, 24 Jun 2019 15:39:35 -0500
+Received: from DLEE112.ent.ti.com (157.170.170.23) by DLEE105.ent.ti.com
+ (157.170.170.35) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5; Mon, 24
- Jun 2019 15:38:52 -0500
-Received: from lelv0326.itg.ti.com (10.180.67.84) by DLEE107.ent.ti.com
- (157.170.170.37) with Microsoft SMTP Server (version=TLS1_2,
+ Jun 2019 15:39:34 -0500
+Received: from lelv0327.itg.ti.com (10.180.67.183) by DLEE112.ent.ti.com
+ (157.170.170.23) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5 via
- Frontend Transport; Mon, 24 Jun 2019 15:38:52 -0500
+ Frontend Transport; Mon, 24 Jun 2019 15:39:34 -0500
 Received: from [128.247.58.153] (ileax41-snat.itg.ti.com [10.172.224.153])
- by lelv0326.itg.ti.com (8.15.2/8.15.2) with ESMTP id x5OKcqeD087798;
- Mon, 24 Jun 2019 15:38:52 -0500
-Subject: Re: [PATCH 0/3] Add HwSpinlock support for TI K3 SoCs
-To: Bjorn Andersson <bjorn.andersson@linaro.org>, Rob Herring
- <robh+dt@kernel.org>
-References: <20190531021321.14025-1-s-anna@ti.com>
+ by lelv0327.itg.ti.com (8.15.2/8.15.2) with ESMTP id x5OKdYHJ075028;
+ Mon, 24 Jun 2019 15:39:34 -0500
+Subject: Re: [PATCH 0/2] Add Mailbox support for TI K3 SoCs
+To: Jassi Brar <jassisinghbrar@gmail.com>, Rob Herring <robh+dt@kernel.org>
+References: <20190604170146.12205-1-s-anna@ti.com>
 From: Suman Anna <s-anna@ti.com>
-Message-ID: <90211f72-7ce4-94e5-aef7-bbe14266dfbb@ti.com>
-Date: Mon, 24 Jun 2019 15:38:52 -0500
+Message-ID: <47b8f278-85ff-18be-d5a0-fde9de6e17f2@ti.com>
+Date: Mon, 24 Jun 2019 15:39:34 -0500
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
  Thunderbird/60.6.1
 MIME-Version: 1.0
-In-Reply-To: <20190531021321.14025-1-s-anna@ti.com>
+In-Reply-To: <20190604170146.12205-1-s-anna@ti.com>
 Content-Language: en-US
 X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190624_133901_164240_4316A02E 
-X-CRM114-Status: GOOD (  15.88  )
+X-CRM114-CacheID: sfid-20190624_133937_904266_B269C68F 
+X-CRM114-Status: GOOD (  19.46  )
 X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.5 points)
@@ -93,43 +92,53 @@ List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: devicetree@vger.kernel.org, linux-omap@vger.kernel.org,
- linux-remoteproc@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Bjorn,
+Hi Jassi,
 
-On 5/30/19 9:13 PM, Suman Anna wrote:
-> Hi Bjorn,
+On 6/4/19 12:01 PM, Suman Anna wrote:
+> Hi Jassi,
 > 
-> The following series adds the support for the HwSpinlock IP present
-> on the newer TI K3 AM65x and J721E SoCs. The first 2 patches are
-> related to the K3 support, and the last patch is a minor debug related
-> trace to see the number of locks registered on each SoC.
+> The following series adds the support for the Mailbox IP present
+> within the Main NavSS module on the newer TI K3 AM65x and J721E SoCs.
 > 
-> I will be posting the DT nodes once the binding is acked.
+> The Mailbox IP is similar to the previous generation IP on OMAP SoCs
+> with a few differences:
+>  - Multiple IP instances from previous DRA7/AM57 family each form a
+>    cluster and are part of the same IP. The driver support will continue
+>    to be based on a cluster.
+>  - The IP is present within a Main NaVSS, and interrupts have to go
+>    through an Interrupt Router within Main NavSS before they reach the
+>    respective processor sub-system's interrupt controllers.
+>  - The register layout is mostly same, with difference in two registers
+> 
+> Support is added by enhancing the existing OMAP Mailbox driver to 
+> support the K3 IP using a new compatible. The driver also has to be
+> adjusted to deal with the 32-bit mailbox payloads vs the 64-bit 
+> pointers used by the Mailbox API on these Arm v8 platforms.
+> 
+> DT nodes will be posted separately once the binding is acked.
 
-If you do not have any comments, can you please pick up this series for
-5.3 merge window?
+Can you please pick this series up for 5.3 merge window if you do not
+have any comments.
 
 Thanks,
 Suman
 
 > 
-> regards
-> Suman
+> Suman Anna (2):
+>   dt-bindings: mailbox: omap: Update bindings for TI K3 SoCs
+>   mailbox/omap: Add support for TI K3 SoCs
 > 
-> Suman Anna (3):
->   dt-bindings: hwlock: Update OMAP binding for TI K3 SoCs
->   hwspinlock/omap: Add support for TI K3 SoCs
->   hwspinlock/omap: Add a trace during probe
-> 
->  .../bindings/hwlock/omap-hwspinlock.txt       | 25 +++++++++++++++----
->  drivers/hwspinlock/Kconfig                    |  2 +-
->  drivers/hwspinlock/omap_hwspinlock.c          |  4 +++
->  3 files changed, 25 insertions(+), 6 deletions(-)
+>  .../bindings/mailbox/omap-mailbox.txt         | 59 ++++++++++++++++---
+>  drivers/mailbox/Kconfig                       |  2 +-
+>  drivers/mailbox/omap-mailbox.c                | 43 ++++++++------
+>  include/linux/omap-mailbox.h                  |  4 +-
+>  4 files changed, 80 insertions(+), 28 deletions(-)
 > 
 
 
