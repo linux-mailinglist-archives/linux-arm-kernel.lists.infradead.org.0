@@ -2,57 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8024351F06
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 25 Jun 2019 01:16:29 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D38FF51F10
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 25 Jun 2019 01:20:50 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:
-	In-Reply-To:MIME-Version:Date:Message-ID:From:References:To:Subject:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=5IMnbDYK9fq/MGWP9J8lUzuLkhsWyxD9wDl4yJ0W5EU=; b=ayiCeWFk71us54veMiKeHM4Ky
-	ggtyRYL4H0/g4qzllyJcjVPjQz46irahcI475UHZVsoiAv1POz8ps+9HtS8Rbwh9H8XViwKYVgyF5
-	XGq7hl19ec54QuiAGwgG/IcMJ1lShtLv9dXYEVOO/EsqZcl2bC2mod9dn8tZZjOU3jc8Gb0I0oXXw
-	bXA15obY+vnuDFvAwBvhC3nCILmOp22rvoMya9nLhHES6f/10cJlLMqeyDbOu4YRli+YjaH8/Ctzq
-	PBqSBCFR38p4VWkKOY+3aymSmaBhvWPN1RTlsCuA4izGMBPnJBPGHfhEkP9LoGQxuHn6veMuuDWRK
-	3+5pmOW+w==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:References
+	:In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=6qkfKlt/aPMq1er2lNJQn3QPm/3aBe+s1VnjED+pDCU=; b=SXc6x+KEt+57lU
+	LZ27/wx0QZn7JjD+wqUXkQEjV2KuRi+3cc81Yra7upcIxWVbeeScDF44L1Q0arWBP8NZejHL05a+r
+	XBWo00Qiri3hQgxwi6NSYzVbiiix3i5Pq5LazOtwUgweC15NORoKVEGBYz32tbjlqnsfeEHrhYUPh
+	s+oEo1fTFF4slZobmRUka8Srj0y+7anyHdFw+vpZJna3YUMNXRZM6pZFpA99CCaC88Wrwa0HgSkap
+	k1/Qnw3RDydWEUupwAn37HuC1RdPltfgoPzOqkGY3nDmq5IDfQOKyFON/ucnRkVT1wGhT7nbNQqQ1
+	Y5ixZ07RbudKGEL1sSQQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hfYCK-0004rn-5i; Mon, 24 Jun 2019 23:16:28 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hfYC3-0004rB-UW
- for linux-arm-kernel@lists.infradead.org; Mon, 24 Jun 2019 23:16:14 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id B0D94360;
- Mon, 24 Jun 2019 16:16:10 -0700 (PDT)
-Received: from [10.37.13.1] (unknown [10.37.13.1])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 256E93F71E;
- Mon, 24 Jun 2019 16:16:06 -0700 (PDT)
-Subject: Re: [PATCH v7 00/25] Unify vDSOs across more architectures
-To: Paul Burton <paul.burton@mips.com>, Thomas Gleixner <tglx@linutronix.de>
-References: <20190621095252.32307-1-vincenzo.frascino@arm.com>
- <alpine.DEB.2.21.1906240142000.32342@nanos.tec.linutronix.de>
- <20190624184157.mu6n74a7qqa4z5z5@pburton-laptop>
-From: Vincenzo Frascino <vincenzo.frascino@arm.com>
-Message-ID: <3ae7f595-0a15-0584-198e-b32fe3e3ea57@arm.com>
-Date: Tue, 25 Jun 2019 00:16:55 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.7.0
+	id 1hfYGW-0006eO-Ge; Mon, 24 Jun 2019 23:20:48 +0000
+Received: from mail-pf1-x442.google.com ([2607:f8b0:4864:20::442])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hfYGH-0006am-6y
+ for linux-arm-kernel@lists.infradead.org; Mon, 24 Jun 2019 23:20:34 +0000
+Received: by mail-pf1-x442.google.com with SMTP id t16so8349567pfe.11
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 24 Jun 2019 16:20:31 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=baylibre-com.20150623.gappssmtp.com; s=20150623;
+ h=from:to:cc:subject:in-reply-to:references:date:message-id
+ :mime-version; bh=CLMq9SkPZ0LrpMbu6uM6UrnywucO78/fC+4xJdWuUjU=;
+ b=dLg/cSRkJPUZwFWpsP5zrU6X5hseY4oEeFd0LoCR7LGMnXqC0nzPoFAzqz9Y7u/41c
+ PVqSleEbaPIgcPu0aCXcvA8ErwL0FqzRVDuGb0m2YwMJ9cLF7LbUaVxZP6q/2kesoXRK
+ /jWxwhBmthWot8HMFhTMtiLMF/eWvtwCGW/6JkkiTuKr3iAewjAgK3i9kIFHThWf575k
+ 4wEOAr5iRNfUAvL3Xq4eB6rRA+mjQFjipz3E7czZd/g0cvHAaH3Btayr9Z60UV90p37m
+ CkV51ozzeK7L+hUT1HzMKJCGHN2tVbrbHL8lyYsoK6oeRmrOC9eKXS9fiv1ZYUi9XD+Z
+ 9m5Q==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:in-reply-to:references:date
+ :message-id:mime-version;
+ bh=CLMq9SkPZ0LrpMbu6uM6UrnywucO78/fC+4xJdWuUjU=;
+ b=UKDI88jM8ifBlWA/ynXiRupjvc1CekrJo57zVTOoQrPeuwR7GKJb25NEqa/5bGJOQ8
+ 5gLrZpwZzmNr366xvvs3E1yvgNCe41458RblFMIN/dWxDAyQLGLNLBM/l0GmU5O/s48O
+ 4Wmbul+SI92GQRWP0GTa9maShwTIlWVfIBUem73HjmRN7jrN+iUwRtlj9/O4uq/3LokO
+ 0yJM/LLLUPAcRpFPsedhpiTwTzmlQI+qa16yWvzqX4aA9VkkmMWQYaZyQczZn/aOOQk3
+ 4mDuovVYDezU4mPT44XFQiRWcjXHVxQxetmXy7wMyLiAWSjdWj7Af5seiAx8IY/vTUKX
+ 8A7A==
+X-Gm-Message-State: APjAAAVhp2gz01btqVUa4wcgG7miJUkaR+RSHH9Wgpv54sbD89ATplKW
+ 88VDZVPGTcj8B0CG1dySLs/vJw==
+X-Google-Smtp-Source: APXvYqw0AZKgg6EjKTiDXtbpUIU8qcxoTXpR5EwI5qJzAJRAtq9DzupQa5ZaWWS4hAxfXE0scVi4uw==
+X-Received: by 2002:a63:c60:: with SMTP id 32mr13363428pgm.42.1561418431055;
+ Mon, 24 Jun 2019 16:20:31 -0700 (PDT)
+Received: from localhost ([2601:602:9200:a1a5:559b:6f10:667f:4354])
+ by smtp.googlemail.com with ESMTPSA id m19sm1137712pjn.3.2019.06.24.16.20.30
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Mon, 24 Jun 2019 16:20:30 -0700 (PDT)
+From: Kevin Hilman <khilman@baylibre.com>
+To: 86zhm782g5.fsf@baylibre.com, Neil Armstrong <narmstrong@baylibre.com>
+Subject: Re: [PATCH 8/9] drm: meson: add macro used to enable HDMI PLL
+In-Reply-To: <86o92n82e1.fsf@baylibre.com>
+References: <86zhm782g5.fsf@baylibre.com> <86o92n82e1.fsf@baylibre.com>
+Date: Mon, 24 Jun 2019 16:20:29 -0700
+Message-ID: <7hwohawoxu.fsf@baylibre.com>
 MIME-Version: 1.0
-In-Reply-To: <20190624184157.mu6n74a7qqa4z5z5@pburton-laptop>
-Content-Type: multipart/mixed; boundary="------------E09C3611481E52636CE747FD"
-Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190624_161612_080393_C3B1A17B 
-X-CRM114-Status: GOOD (  23.11  )
+X-CRM114-CacheID: sfid-20190624_162033_249021_4CF3C469 
+X-CRM114-Status: GOOD (  12.89  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:442 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -64,468 +91,48 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Andy Lutomirski <luto@kernel.org>,
- Rasmus Villemoes <linux@rasmusvillemoes.dk>,
- Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will.deacon@arm.com>,
- "linux-mips@vger.kernel.org" <linux-mips@vger.kernel.org>,
- "linux-kselftest@vger.kernel.org" <linux-kselftest@vger.kernel.org>,
- Shuah Khan <shuah@kernel.org>,
- "linux-arch@vger.kernel.org" <linux-arch@vger.kernel.org>,
- Dmitry Safonov <dima@arista.com>, Daniel Lezcano <daniel.lezcano@linaro.org>,
- Russell King <linux@armlinux.org.uk>, Sasha Levin <sashal@kernel.org>,
- Arnd Bergmann <arnd@arndb.de>, Andre Przywara <andre.przywara@arm.com>,
- Dmitry Safonov <0x7f454c46@gmail.com>, Michael Kelley <mikelley@microsoft.com>,
- Peter Collingbourne <pcc@google.com>,
- LAK <linux-arm-kernel@lists.infradead.org>, Andrei Vagin <avagin@openvz.org>,
- Huw Davies <huw@codeweavers.com>, LKML <linux-kernel@vger.kernel.org>,
- Ralf Baechle <ralf@linux-mips.org>, Mark Salyzyn <salyzyn@android.com>,
- Shijith Thotton <sthotton@marvell.com>,
- Linus Torvalds <torvalds@linux-foundation.org>
+Cc: Julien Masson <jmasson@baylibre.com>, linux-amlogic@lists.infradead.org,
+ dri-devel@lists.freedesktop.org, linux-arm-kernel@lists.infradead.org,
+ linux-kernel@vger.kernel.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This is a multi-part message in MIME format.
---------------E09C3611481E52636CE747FD
-Content-Type: text/plain; charset=utf-8
-Content-Transfer-Encoding: 7bit
+Julien Masson <jmasson@baylibre.com> writes:
 
-Hi Paul,
+> This patch add new macro HHI_HDMI_PLL_CNTL_EN which is used to enable
+> HDMI PLL.
+>
+> Signed-off-by: Julien Masson <jmasson@baylibre.com>
+> ---
+>  drivers/gpu/drm/meson/meson_vclk.c | 3 ++-
+>  1 file changed, 2 insertions(+), 1 deletion(-)
+>
+> diff --git a/drivers/gpu/drm/meson/meson_vclk.c b/drivers/gpu/drm/meson/meson_vclk.c
+> index e7c2b439d0f7..be6e152fc75a 100644
+> --- a/drivers/gpu/drm/meson/meson_vclk.c
+> +++ b/drivers/gpu/drm/meson/meson_vclk.c
+> @@ -96,6 +96,7 @@
+>  #define HHI_VDAC_CNTL1		0x2F8 /* 0xbe offset in data sheet */
+>  
+>  #define HHI_HDMI_PLL_CNTL	0x320 /* 0xc8 offset in data sheet */
+> +#define HHI_HDMI_PLL_CNTL_EN	BIT(30)
+>  #define HHI_HDMI_PLL_CNTL2	0x324 /* 0xc9 offset in data sheet */
+>  #define HHI_HDMI_PLL_CNTL3	0x328 /* 0xca offset in data sheet */
+>  #define HHI_HDMI_PLL_CNTL4	0x32C /* 0xcb offset in data sheet */
+> @@ -468,7 +469,7 @@ void meson_hdmi_pll_set_params(struct meson_drm *priv, unsigned int m,
+>  
+>  		/* Enable and unreset */
+>  		regmap_update_bits(priv->hhi, HHI_HDMI_PLL_CNTL,
+> -				   0x7 << 28, 0x4 << 28);
+> +				   0x7 << 28, HHI_HDMI_PLL_CNTL_EN);
 
-thank you for your review.
+still using a magic const for the mask.  Can use GENMASK() for this?
 
-On 6/24/19 7:41 PM, Paul Burton wrote:
-> Hello,
-> 
-> On Mon, Jun 24, 2019 at 02:34:24AM +0200, Thomas Gleixner wrote:
->> I did not merge the ARM and MIPS parts as they lack any form of
->> acknowlegment from their maintainers. Please talk to those folks. If they
->> ack/review the changes then I can pick them up and they go into 5.3 or they
->> have to go in a later cycle. Nevertheless it was well worth the trouble to
->> have those conversions done to confirm that the new common library fits a
->> bunch of different architectures.
-> 
-> Apologies for not being more proactive on the MIPS front here; life &
-> work are extra busy at the moment... But thanks Vincenzo for including
-> MIPS in the work here.
-> 
-
-No problem.
-
-> Unfortunately after applying the 3 MIPS patches (19-21) atop the current
-> tip.git timers/vdso branch at ecf9db3d1f1a ("x86/vdso: Give the
-> [ph]vclock_page declarations real types") I see build failures for the
-> o32 compat VDSO, shown below. This is using the gcc 8.1.0 mips-linux
-> toolchain from here:
-> 
->   https://mirrors.edge.kernel.org/pub/tools/crosstool/files/bin/x86_64/8.1.0/x86_64-gcc-8.1.0-nolibc-mips-linux.tar.xz
-> 
-> Configuration is 64r6el_defconfig. The following helps remove the
-> implicit declaration warnings (and eww to including C files via CFLAGS),
-> but it still doesn't build:
-> 
->   diff --git a/arch/mips/vdso/Makefile b/arch/mips/vdso/Makefile
->   index 95df49402a53..aa38049bdb24 100644
->   --- a/arch/mips/vdso/Makefile
->   +++ b/arch/mips/vdso/Makefile
->   @@ -36,6 +36,8 @@ aflags-vdso := $(ccflags-vdso) \
->   
->    ifneq ($(c-gettimeofday-y),)
->    CFLAGS_vgettimeofday.o = -include $(c-gettimeofday-y)
->   +CFLAGS_vgettimeofday-o32.o = -include $(c-gettimeofday-y)
->   +CFLAGS_vgettimeofday-n32.o = -include $(c-gettimeofday-y)
->    endif
-> 
->  CFLAGS_REMOVE_vgettimeofday.o = -pg
-> 
-> So the MIPS bits here need more work.
-> 
-
-I admit, the one proposed was a nice challenge and it took me a while to
-understand the differences in between the O32, N32 and N64 binaries and what was
-causing the reported issue.
-
-In the end I concluded that all the errors seen here depend on the fact that I
-tested my vdso implementation on MIPS32el only (as stated in the cover letter)
-and that when I tried to compile a 32BIT binary on a 64BIT configuration I did
-it wrongly for two reasons, for N32 and O32 binaries:
- - we need to undefine CONFIG_64BIT and define CONFIG_32BIT
- - we need to define CONFIG_GENERIC_ATOMIC64
-
-
-I have a fix for this (patch in attachment), but I do not have the hardware to
-test it. If you could provide some feedback would be appreciated (really want to
-see MIPS merged with the other archs in 5.3 :) ).
-
-> Thanks,
->     Paul
-> 
->   CC      arch/mips/vdso/vgettimeofday-o32.o
-> In file included from ./include/linux/bitops.h:19,
->                  from ./include/linux/kernel.h:12,
->                  from ./include/linux/list.h:9,
->                  from ./include/linux/preempt.h:11,
->                  from ./include/linux/spinlock.h:51,
->                  from ./include/linux/seqlock.h:36,
->                  from ./include/linux/time.h:6,
->                  from arch/mips/vdso/vgettimeofday.c:10:
-> ./arch/mips/include/asm/bitops.h: In function '__fls':
-> ./arch/mips/include/asm/bitops.h:518:21: warning: left shift count >= width of type [-Wshift-count-overflow]
->   if (!(word & (~0ul << 32))) {
->                      ^~
-> ./arch/mips/include/asm/bitops.h:520:8: warning: left shift count >= width of type [-Wshift-count-overflow]
->    word <<= 32;
->         ^~~
-> ./arch/mips/include/asm/bitops.h:523:21: warning: left shift count >= width of type [-Wshift-count-overflow]
->   if (!(word & (~0ul << (BITS_PER_LONG-16)))) {
->                      ^~
-> ./arch/mips/include/asm/bitops.h:527:21: warning: left shift count >= width of type [-Wshift-count-overflow]
->   if (!(word & (~0ul << (BITS_PER_LONG-8)))) {
->                      ^~
-> ./arch/mips/include/asm/bitops.h:531:21: warning: left shift count >= width of type [-Wshift-count-overflow]
->   if (!(word & (~0ul << (BITS_PER_LONG-4)))) {
->                      ^~
-> ./arch/mips/include/asm/bitops.h:535:21: warning: left shift count >= width of type [-Wshift-count-overflow]
->   if (!(word & (~0ul << (BITS_PER_LONG-2)))) {
->                      ^~
-> ./arch/mips/include/asm/bitops.h:539:21: warning: left shift count >= width of type [-Wshift-count-overflow]
->   if (!(word & (~0ul << (BITS_PER_LONG-1))))
->                      ^~
-> In file included from ./arch/mips/include/asm/mmiowb.h:5,
->                  from ./include/linux/spinlock.h:60,
->                  from ./include/linux/seqlock.h:36,
->                  from ./include/linux/time.h:6,
->                  from arch/mips/vdso/vgettimeofday.c:10:
-> ./arch/mips/include/asm/io.h: In function 'phys_to_virt':
-> ./arch/mips/include/asm/io.h:136:9: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
->   return (void *)(address + PAGE_OFFSET - PHYS_OFFSET);
->          ^
-> In file included from ./include/linux/bitops.h:5,
->                  from ./include/linux/kernel.h:12,
->                  from ./include/linux/list.h:9,
->                  from ./include/linux/preempt.h:11,
->                  from ./include/linux/spinlock.h:51,
->                  from ./include/linux/seqlock.h:36,
->                  from ./include/linux/time.h:6,
->                  from arch/mips/vdso/vgettimeofday.c:10:
-> ./arch/mips/include/asm/mips-cm.h: In function 'mips_cm_max_vp_width':
-> ./include/linux/bits.h:20:39: warning: right shift count >= width of type [-Wshift-count-overflow]
->   (((~0UL) - (1UL << (l)) + 1) & (~0UL >> (BITS_PER_LONG - 1 - (h))))
->                                        ^~
-> ./arch/mips/include/asm/mips-cm.h:152:28: note: in expansion of macro 'GENMASK'
->  #define CM_GCR_REV_MAJOR   GENMASK(15, 8)
->                             ^~~~~~~
-> ./arch/mips/include/asm/mips-cm.h:156:22: note: in expansion of macro 'CM_GCR_REV_MAJOR'
->    (((major) << __ffs(CM_GCR_REV_MAJOR)) | \
->                       ^~~~~~~~~~~~~~~~
-> ./arch/mips/include/asm/mips-cm.h:161:23: note: in expansion of macro 'CM_ENCODE_REV'
->  #define CM_REV_CM3    CM_ENCODE_REV(8, 0)
->                        ^~~~~~~~~~~~~
-> ./arch/mips/include/asm/mips-cm.h:367:28: note: in expansion of macro 'CM_REV_CM3'
->   if (mips_cm_revision() >= CM_REV_CM3)
->                             ^~~~~~~~~~
-> ./include/linux/bits.h:20:39: warning: right shift count >= width of type [-Wshift-count-overflow]
->   (((~0UL) - (1UL << (l)) + 1) & (~0UL >> (BITS_PER_LONG - 1 - (h))))
->                                        ^~
-> ./arch/mips/include/asm/mips-cm.h:153:28: note: in expansion of macro 'GENMASK'
->  #define CM_GCR_REV_MINOR   GENMASK(7, 0)
->                             ^~~~~~~
-> ./arch/mips/include/asm/mips-cm.h:157:22: note: in expansion of macro 'CM_GCR_REV_MINOR'
->     ((minor) << __ffs(CM_GCR_REV_MINOR)))
->                       ^~~~~~~~~~~~~~~~
-> ./arch/mips/include/asm/mips-cm.h:161:23: note: in expansion of macro 'CM_ENCODE_REV'
->  #define CM_REV_CM3    CM_ENCODE_REV(8, 0)
->                        ^~~~~~~~~~~~~
-> ./arch/mips/include/asm/mips-cm.h:367:28: note: in expansion of macro 'CM_REV_CM3'
->   if (mips_cm_revision() >= CM_REV_CM3)
->                             ^~~~~~~~~~
-> ./include/linux/bits.h:20:39: warning: right shift count >= width of type [-Wshift-count-overflow]
->   (((~0UL) - (1UL << (l)) + 1) & (~0UL >> (BITS_PER_LONG - 1 - (h))))
->                                        ^~
-> ./arch/mips/include/asm/mips-cm.h:239:36: note: in expansion of macro 'GENMASK'
->  #define CM_GCR_SYS_CONFIG2_MAXVPW  GENMASK(3, 0)
->                                     ^~~~~~~
-> ./arch/mips/include/asm/mips-cm.h:368:35: note: in expansion of macro 'CM_GCR_SYS_CONFIG2_MAXVPW'
->    return read_gcr_sys_config2() & CM_GCR_SYS_CONFIG2_MAXVPW;
->                                    ^~~~~~~~~~~~~~~~~~~~~~~~~
-> ./include/linux/bits.h:20:39: warning: right shift count >= width of type [-Wshift-count-overflow]
->   (((~0UL) - (1UL << (l)) + 1) & (~0UL >> (BITS_PER_LONG - 1 - (h))))
->                                        ^~
-> ./arch/mips/include/asm/mips-cm.h:293:33: note: in expansion of macro 'GENMASK'
->  #define CM_GCR_Cx_CONFIG_PVPE   GENMASK(9, 0)
->                                  ^~~~~~~
-> ./arch/mips/include/asm/mips-cm.h:376:32: note: in expansion of macro 'CM_GCR_Cx_CONFIG_PVPE'
->    cfg = read_gcr_cl_config() & CM_GCR_Cx_CONFIG_PVPE;
->                                 ^~~~~~~~~~~~~~~~~~~~~
-> ./include/linux/bits.h:20:39: warning: right shift count >= width of type [-Wshift-count-overflow]
->   (((~0UL) - (1UL << (l)) + 1) & (~0UL >> (BITS_PER_LONG - 1 - (h))))
->                                        ^~
-> ./arch/mips/include/asm/mips-cm.h:293:33: note: in expansion of macro 'GENMASK'
->  #define CM_GCR_Cx_CONFIG_PVPE   GENMASK(9, 0)
->                                  ^~~~~~~
-> ./arch/mips/include/asm/mips-cm.h:377:24: note: in expansion of macro 'CM_GCR_Cx_CONFIG_PVPE'
->    return (cfg >> __ffs(CM_GCR_Cx_CONFIG_PVPE)) + 1;
->                         ^~~~~~~~~~~~~~~~~~~~~
-> ./arch/mips/include/asm/mips-cps.h: In function 'mips_cps_numclusters':
-> ./include/linux/bits.h:20:39: warning: right shift count >= width of type [-Wshift-count-overflow]
->   (((~0UL) - (1UL << (l)) + 1) & (~0UL >> (BITS_PER_LONG - 1 - (h))))
->                                        ^~
-> ./arch/mips/include/asm/mips-cm.h:152:28: note: in expansion of macro 'GENMASK'
->  #define CM_GCR_REV_MAJOR   GENMASK(15, 8)
->                             ^~~~~~~
-> ./arch/mips/include/asm/mips-cm.h:156:22: note: in expansion of macro 'CM_GCR_REV_MAJOR'
->    (((major) << __ffs(CM_GCR_REV_MAJOR)) | \
->                       ^~~~~~~~~~~~~~~~
-> ./arch/mips/include/asm/mips-cm.h:162:25: note: in expansion of macro 'CM_ENCODE_REV'
->  #define CM_REV_CM3_5    CM_ENCODE_REV(9, 0)
->                          ^~~~~~~~~~~~~
-> ./arch/mips/include/asm/mips-cps.h:117:27: note: in expansion of macro 'CM_REV_CM3_5'
->   if (mips_cm_revision() < CM_REV_CM3_5)
->                            ^~~~~~~~~~~~
-> ./include/linux/bits.h:20:39: warning: right shift count >= width of type [-Wshift-count-overflow]
->   (((~0UL) - (1UL << (l)) + 1) & (~0UL >> (BITS_PER_LONG - 1 - (h))))
->                                        ^~
-> ./arch/mips/include/asm/mips-cm.h:153:28: note: in expansion of macro 'GENMASK'
->  #define CM_GCR_REV_MINOR   GENMASK(7, 0)
->                             ^~~~~~~
-> ./arch/mips/include/asm/mips-cm.h:157:22: note: in expansion of macro 'CM_GCR_REV_MINOR'
->     ((minor) << __ffs(CM_GCR_REV_MINOR)))
->                       ^~~~~~~~~~~~~~~~
-> ./arch/mips/include/asm/mips-cm.h:162:25: note: in expansion of macro 'CM_ENCODE_REV'
->  #define CM_REV_CM3_5    CM_ENCODE_REV(9, 0)
->                          ^~~~~~~~~~~~~
-> ./arch/mips/include/asm/mips-cps.h:117:27: note: in expansion of macro 'CM_REV_CM3_5'
->   if (mips_cm_revision() < CM_REV_CM3_5)
->                            ^~~~~~~~~~~~
-> ./include/linux/bits.h:20:39: warning: right shift count >= width of type [-Wshift-count-overflow]
->   (((~0UL) - (1UL << (l)) + 1) & (~0UL >> (BITS_PER_LONG - 1 - (h))))
->                                        ^~
-> ./arch/mips/include/asm/mips-cm.h:133:37: note: in expansion of macro 'GENMASK'
->  #define CM_GCR_CONFIG_NUM_CLUSTERS  GENMASK(29, 23)
->                                      ^~~~~~~
-> ./arch/mips/include/asm/mips-cps.h:120:37: note: in expansion of macro 'CM_GCR_CONFIG_NUM_CLUSTERS'
->   num_clusters = read_gcr_config() & CM_GCR_CONFIG_NUM_CLUSTERS;
->                                      ^~~~~~~~~~~~~~~~~~~~~~~~~~
-> ./include/linux/bits.h:20:39: warning: right shift count >= width of type [-Wshift-count-overflow]
->   (((~0UL) - (1UL << (l)) + 1) & (~0UL >> (BITS_PER_LONG - 1 - (h))))
->                                        ^~
-> ./arch/mips/include/asm/mips-cm.h:133:37: note: in expansion of macro 'GENMASK'
->  #define CM_GCR_CONFIG_NUM_CLUSTERS  GENMASK(29, 23)
->                                      ^~~~~~~
-> ./arch/mips/include/asm/mips-cps.h:121:25: note: in expansion of macro 'CM_GCR_CONFIG_NUM_CLUSTERS'
->   num_clusters >>= __ffs(CM_GCR_CONFIG_NUM_CLUSTERS);
->                          ^~~~~~~~~~~~~~~~~~~~~~~~~~
-> ./arch/mips/include/asm/mips-cps.h: In function 'mips_cps_cluster_config':
-> ./include/linux/bits.h:20:39: warning: right shift count >= width of type [-Wshift-count-overflow]
->   (((~0UL) - (1UL << (l)) + 1) & (~0UL >> (BITS_PER_LONG - 1 - (h))))
->                                        ^~
-> ./arch/mips/include/asm/mips-cm.h:152:28: note: in expansion of macro 'GENMASK'
->  #define CM_GCR_REV_MAJOR   GENMASK(15, 8)
->                             ^~~~~~~
-> ./arch/mips/include/asm/mips-cm.h:156:22: note: in expansion of macro 'CM_GCR_REV_MAJOR'
->    (((major) << __ffs(CM_GCR_REV_MAJOR)) | \
->                       ^~~~~~~~~~~~~~~~
-> ./arch/mips/include/asm/mips-cm.h:162:25: note: in expansion of macro 'CM_ENCODE_REV'
->  #define CM_REV_CM3_5    CM_ENCODE_REV(9, 0)
->                          ^~~~~~~~~~~~~
-> ./arch/mips/include/asm/mips-cps.h:137:27: note: in expansion of macro 'CM_REV_CM3_5'
->   if (mips_cm_revision() < CM_REV_CM3_5) {
->                            ^~~~~~~~~~~~
-> ./include/linux/bits.h:20:39: warning: right shift count >= width of type [-Wshift-count-overflow]
->   (((~0UL) - (1UL << (l)) + 1) & (~0UL >> (BITS_PER_LONG - 1 - (h))))
->                                        ^~
-> ./arch/mips/include/asm/mips-cm.h:153:28: note: in expansion of macro 'GENMASK'
->  #define CM_GCR_REV_MINOR   GENMASK(7, 0)
->                             ^~~~~~~
-> ./arch/mips/include/asm/mips-cm.h:157:22: note: in expansion of macro 'CM_GCR_REV_MINOR'
->     ((minor) << __ffs(CM_GCR_REV_MINOR)))
->                       ^~~~~~~~~~~~~~~~
-> ./arch/mips/include/asm/mips-cm.h:162:25: note: in expansion of macro 'CM_ENCODE_REV'
->  #define CM_REV_CM3_5    CM_ENCODE_REV(9, 0)
->                          ^~~~~~~~~~~~~
-> ./arch/mips/include/asm/mips-cps.h:137:27: note: in expansion of macro 'CM_REV_CM3_5'
->   if (mips_cm_revision() < CM_REV_CM3_5) {
->                            ^~~~~~~~~~~~
-> ./arch/mips/include/asm/mips-cps.h: In function 'mips_cps_numcores':
-> ./include/linux/bits.h:20:39: warning: right shift count >= width of type [-Wshift-count-overflow]
->   (((~0UL) - (1UL << (l)) + 1) & (~0UL >> (BITS_PER_LONG - 1 - (h))))
->                                        ^~
-> ./arch/mips/include/asm/mips-cm.h:135:32: note: in expansion of macro 'GENMASK'
->  #define CM_GCR_CONFIG_PCORES   GENMASK(7, 0)
->                                 ^~~~~~~
-> ./arch/mips/include/asm/mips-cps.h:172:50: note: in expansion of macro 'CM_GCR_CONFIG_PCORES'
->   return (mips_cps_cluster_config(cluster) + 1) & CM_GCR_CONFIG_PCORES;
->                                                   ^~~~~~~~~~~~~~~~~~~~
-> ./arch/mips/include/asm/mips-cps.h: In function 'mips_cps_numiocu':
-> ./include/linux/bits.h:20:39: warning: right shift count >= width of type [-Wshift-count-overflow]
->   (((~0UL) - (1UL << (l)) + 1) & (~0UL >> (BITS_PER_LONG - 1 - (h))))
->                                        ^~
-> ./arch/mips/include/asm/mips-cm.h:134:33: note: in expansion of macro 'GENMASK'
->  #define CM_GCR_CONFIG_NUMIOCU   GENMASK(15, 8)
->                                  ^~~~~~~
-> ./arch/mips/include/asm/mips-cps.h:189:48: note: in expansion of macro 'CM_GCR_CONFIG_NUMIOCU'
->   num_iocu = mips_cps_cluster_config(cluster) & CM_GCR_CONFIG_NUMIOCU;
->                                                 ^~~~~~~~~~~~~~~~~~~~~
-> ./include/linux/bits.h:20:39: warning: right shift count >= width of type [-Wshift-count-overflow]
->   (((~0UL) - (1UL << (l)) + 1) & (~0UL >> (BITS_PER_LONG - 1 - (h))))
->                                        ^~
-> ./arch/mips/include/asm/mips-cm.h:134:33: note: in expansion of macro 'GENMASK'
->  #define CM_GCR_CONFIG_NUMIOCU   GENMASK(15, 8)
->                                  ^~~~~~~
-> ./arch/mips/include/asm/mips-cps.h:190:21: note: in expansion of macro 'CM_GCR_CONFIG_NUMIOCU'
->   num_iocu >>= __ffs(CM_GCR_CONFIG_NUMIOCU);
->                      ^~~~~~~~~~~~~~~~~~~~~
-> ./arch/mips/include/asm/mips-cps.h: In function 'mips_cps_numvps':
-> ./include/linux/bits.h:20:39: warning: right shift count >= width of type [-Wshift-count-overflow]
->   (((~0UL) - (1UL << (l)) + 1) & (~0UL >> (BITS_PER_LONG - 1 - (h))))
->                                        ^~
-> ./arch/mips/include/asm/mips-cm.h:152:28: note: in expansion of macro 'GENMASK'
->  #define CM_GCR_REV_MAJOR   GENMASK(15, 8)
->                             ^~~~~~~
-> ./arch/mips/include/asm/mips-cm.h:156:22: note: in expansion of macro 'CM_GCR_REV_MAJOR'
->    (((major) << __ffs(CM_GCR_REV_MAJOR)) | \
->                       ^~~~~~~~~~~~~~~~
-> ./arch/mips/include/asm/mips-cm.h:162:25: note: in expansion of macro 'CM_ENCODE_REV'
->  #define CM_REV_CM3_5    CM_ENCODE_REV(9, 0)
->                          ^~~~~~~~~~~~~
-> ./arch/mips/include/asm/mips-cps.h:216:27: note: in expansion of macro 'CM_REV_CM3_5'
->   if (mips_cm_revision() < CM_REV_CM3_5) {
->                            ^~~~~~~~~~~~
-> ./include/linux/bits.h:20:39: warning: right shift count >= width of type [-Wshift-count-overflow]
->   (((~0UL) - (1UL << (l)) + 1) & (~0UL >> (BITS_PER_LONG - 1 - (h))))
->                                        ^~
-> ./arch/mips/include/asm/mips-cm.h:153:28: note: in expansion of macro 'GENMASK'
->  #define CM_GCR_REV_MINOR   GENMASK(7, 0)
->                             ^~~~~~~
-> ./arch/mips/include/asm/mips-cm.h:157:22: note: in expansion of macro 'CM_GCR_REV_MINOR'
->     ((minor) << __ffs(CM_GCR_REV_MINOR)))
->                       ^~~~~~~~~~~~~~~~
-> ./arch/mips/include/asm/mips-cm.h:162:25: note: in expansion of macro 'CM_ENCODE_REV'
->  #define CM_REV_CM3_5    CM_ENCODE_REV(9, 0)
->                          ^~~~~~~~~~~~~
-> ./arch/mips/include/asm/mips-cps.h:216:27: note: in expansion of macro 'CM_REV_CM3_5'
->   if (mips_cm_revision() < CM_REV_CM3_5) {
->                            ^~~~~~~~~~~~
-> ./include/linux/bits.h:20:39: warning: right shift count >= width of type [-Wshift-count-overflow]
->   (((~0UL) - (1UL << (l)) + 1) & (~0UL >> (BITS_PER_LONG - 1 - (h))))
->                                        ^~
-> ./arch/mips/include/asm/mips-cm.h:293:33: note: in expansion of macro 'GENMASK'
->  #define CM_GCR_Cx_CONFIG_PVPE   GENMASK(9, 0)
->                                  ^~~~~~~
-> ./arch/mips/include/asm/mips-cps.h:233:21: note: in expansion of macro 'CM_GCR_Cx_CONFIG_PVPE'
->   return (cfg + 1) & CM_GCR_Cx_CONFIG_PVPE;
->                      ^~~~~~~~~~~~~~~~~~~~~
-> arch/mips/vdso/vgettimeofday.c: In function '__vdso_clock_gettime':
-> arch/mips/vdso/vgettimeofday.c:17:9: error: implicit declaration of function '__cvdso_clock_gettime32'; did you mean '__vdso_clock_gettime'? [-Werror=implicit-function-declaration]
->   return __cvdso_clock_gettime32(clock, ts);
->          ^~~~~~~~~~~~~~~~~~~~~~~
->          __vdso_clock_gettime
-> arch/mips/vdso/vgettimeofday.c: In function '__vdso_gettimeofday':
-> arch/mips/vdso/vgettimeofday.c:23:9: error: implicit declaration of function '__cvdso_gettimeofday'; did you mean '__vdso_gettimeofday'? [-Werror=implicit-function-declaration]
->   return __cvdso_gettimeofday(tv, tz);
->          ^~~~~~~~~~~~~~~~~~~~
->          __vdso_gettimeofday
-> arch/mips/vdso/vgettimeofday.c: In function '__vdso_clock_getres':
-> arch/mips/vdso/vgettimeofday.c:29:9: error: implicit declaration of function '__cvdso_clock_getres_time32'; did you mean '__vdso_clock_gettime'? [-Werror=implicit-function-declaration]
->   return __cvdso_clock_getres_time32(clock_id, res);
->          ^~~~~~~~~~~~~~~~~~~~~~~~~~~
->          __vdso_clock_gettime
-> arch/mips/vdso/vgettimeofday.c: In function '__vdso_clock_gettime64':
-> arch/mips/vdso/vgettimeofday.c:35:9: error: implicit declaration of function '__cvdso_clock_gettime'; did you mean '__vdso_clock_gettime'? [-Werror=implicit-function-declaration]
->   return __cvdso_clock_gettime(clock, ts);
->          ^~~~~~~~~~~~~~~~~~~~~
->          __vdso_clock_gettime
-> cc1: some warnings being treated as errors
-> make[1]: *** [arch/mips/vdso/Makefile:148: arch/mips/vdso/vgettimeofday-o32.o] Error 1
-> make: *** [Makefile:1746: arch/mips/vdso/vgettimeofday-o32.o] Error 2
-> 
-
--- 
-Regards,
-Vincenzo
-
---------------E09C3611481E52636CE747FD
-Content-Type: text/x-patch;
- name="0001-mips-Fix-o32-and-n32-vDSO-compilation.patch"
-Content-Transfer-Encoding: 7bit
-Content-Disposition: attachment;
- filename="0001-mips-Fix-o32-and-n32-vDSO-compilation.patch"
-
-From 7bf2f8fe3b412e922f7d6d193763bee94b5b76c5 Mon Sep 17 00:00:00 2001
-From: Vincenzo Frascino <vincenzo.frascino@arm.com>
-Date: Mon, 24 Jun 2019 23:46:57 +0100
-Subject: [PATCH] mips: Fix o32 and n32 vDSO compilation
-
-The Unified vDSO implementation does not compile correctly for n32 and
-o32 type of binaries on mips64 because the environment is not set
-correctly.
-
-Restore the correct behaviour addressing the configuration issues for
-the generation of these types of binaries.
-
-[ To be squashed with the "[PATCH v7 19/25] mips: Add support for generic
-vDSO" ]
-
-Signed-off-by: Vincenzo Frascino <vincenzo.frascino@arm.com>
----
- arch/mips/vdso/Makefile             |  6 ++++++
- arch/mips/vdso/config-n32-o32-env.c | 17 +++++++++++++++++
- 2 files changed, 23 insertions(+)
- create mode 100644 arch/mips/vdso/config-n32-o32-env.c
-
-diff --git a/arch/mips/vdso/Makefile b/arch/mips/vdso/Makefile
-index 95df49402a53..47316964150c 100644
---- a/arch/mips/vdso/Makefile
-+++ b/arch/mips/vdso/Makefile
-@@ -36,6 +36,12 @@ aflags-vdso := $(ccflags-vdso) \
- 
- ifneq ($(c-gettimeofday-y),)
- CFLAGS_vgettimeofday.o = -include $(c-gettimeofday-y)
-+
-+# config-n32-o32-env.c prepares the environment to build a 32bit vDSO
-+# library on a 64bit kernel.
-+# Note: Needs to be included before than the generic library.
-+CFLAGS_vgettimeofday-o32.o = -include config-n32-o32-env.c -include $(c-gettimeofday-y)
-+CFLAGS_vgettimeofday-n32.o = -include config-n32-o32-env.c -include $(c-gettimeofday-y)
- endif
- 
- CFLAGS_REMOVE_vgettimeofday.o = -pg
-diff --git a/arch/mips/vdso/config-n32-o32-env.c b/arch/mips/vdso/config-n32-o32-env.c
-new file mode 100644
-index 000000000000..da4994b2b3e5
---- /dev/null
-+++ b/arch/mips/vdso/config-n32-o32-env.c
-@@ -0,0 +1,17 @@
-+// SPDX-License-Identifier: GPL-2.0
-+/*
-+ * Configuration file for O32 and N32 binaries.
-+ * Note: To be included before lib/vdso/gettimeofday.c
-+ */
-+#if defined(CONFIG_MIPS32_O32) || defined(CONFIG_MIPS32_N32)
-+/*
-+ * In case of a 32 bit VDSO for a 64 bit kernel fake a 32 bit kernel
-+ * configuration.
-+ */
-+#undef CONFIG_64BIT
-+
-+#define CONFIG_32BIT 1
-+#define CONFIG_GENERIC_ATOMIC64 1
-+
-+#endif
-+
--- 
-2.22.0
-
-
---------------E09C3611481E52636CE747FD
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+Kevin
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---------------E09C3611481E52636CE747FD--
-
