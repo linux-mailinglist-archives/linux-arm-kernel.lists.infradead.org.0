@@ -2,65 +2,64 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1F2DB50E9B
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Jun 2019 16:36:58 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3FE4050EA5
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Jun 2019 16:37:16 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:From:Subject:References:Mime-Version
 	:Message-Id:In-Reply-To:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=UtlYHoeVeZ6xCTV0nupR3DohNlfJepGBZs+KOYx7+gc=; b=ZCcSb853+FhkSw
-	kWta66d18n1WugTs0PUHExQpqA5xsUSox1pg2IDEpPayBUxkgAqNovpMfSpdHkC9ASEMc5U5kXFGP
-	i0wBEp5daSFpWPQlcKwhL4PzE+hFXGTcEFdGnHF7sWwHSjbxagjlH4VurYD2M9xhxBuEtj3oz81sX
-	5FS4UlTfI6WqPcoxIF/4MvsJpInmyNn0ZKaukqM3hGiUCnD+5yCG9uq5ihu0VYr0AgQ/9tMu4uALV
-	ypTEOkPFYM+oBfPeBnT7TjknCxn5BzyQyZmCwhMiNDurVNjRWrIG021GMP/8uzuJxTiiXmB8igKIn
-	BaSHre426H+DnhFBci6g==;
+	List-Owner; bh=nvprPoIuIibV5VhptSbKBZRWYprOWumZr0NwKvSIMWY=; b=fkydFxeamxV4Ut
+	6U6vvmL9KIxihDD8NwD9cYVRAFkl5wjCbHoKthhrywo3WYJ9fYdV/e7J84goY4SBO265qwQEInf/Q
+	SG3yv2rdobZd9w4PibW3feABxvVkD1bEb7Z8r7d+UapPX04olptaToh613VFsj4hDCe4lsSZuutNR
+	ldIACVK4haFLcPlv7zrhCl2XLEdZaClj4sOlfzy3IlnEqj+d7usOvTC+vsmqbq5WDQ0dfI5woiEWX
+	6ImwFTcIwXjlcYgilzz6yhDoTtZd9VW8f8n4LD/ktSEF3KfPLsBX6K0jyXAq400wSZmgluzo5vTBC
+	R3yr6948Ram+Xahtd+Sg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hfQ5W-0008CG-G9; Mon, 24 Jun 2019 14:36:54 +0000
-Received: from mail-vk1-xa4a.google.com ([2607:f8b0:4864:20::a4a])
+	id 1hfQ5o-0008S5-GG; Mon, 24 Jun 2019 14:37:12 +0000
+Received: from mail-vk1-xa49.google.com ([2607:f8b0:4864:20::a49])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hfQ2O-0004bd-K7
- for linux-arm-kernel@lists.infradead.org; Mon, 24 Jun 2019 14:33:42 +0000
-Received: by mail-vk1-xa4a.google.com with SMTP id j5so6490179vkj.1
+ id 1hfQ2R-0004dq-4q
+ for linux-arm-kernel@lists.infradead.org; Mon, 24 Jun 2019 14:33:44 +0000
+Received: by mail-vk1-xa49.google.com with SMTP id 184so6449742vku.17
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 24 Jun 2019 07:33:39 -0700 (PDT)
+ Mon, 24 Jun 2019 07:33:42 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
  h=date:in-reply-to:message-id:mime-version:references:subject:from:to
- :cc; bh=BJsyngqG/QyGrxCP5QV1VgvY/ZIDb46yXFdUWUYcJjE=;
- b=tMmuoJLkJJRlr97nWuw9yp1dhBnjJgJJVctCCMOkVQAwVufIWjtRSJ98DeVWMAUpL7
- c/DDMKTfXjJ3AunXbS9PbtesoR3v6FwAquf/mPo2ipW5m7uKq3mz622OTJgF//P41VeY
- uBPVky3FH88ifuyXm9IjyMmdhNWu2I8INL87p4oZ1vAogbY0BRq3PmSNaYTl1n/7bnrO
- Lc9PPi+EV8QQhe4FjeigOim3EKL5tCU2OhJP5k8d+H2v0cMsX/+SwQBn01vR1S+aYe8q
- kmK501SZalx1YaFY0Y1ChZDATvY9Cs1dirj078l2AUk0ox9yU2Ud6XA8n+4rc4SVim6s
- D61A==
+ :cc; bh=+QjTccShtmk/DNvEu2Adujr4/24uQqkMA4u/Npu2BdA=;
+ b=BuaO5811jnUX9zfd4G8ToBhrbhMJy0LzFmcX+sgB7AQM8NJvSv01OIt+sAqC0IYDFj
+ O+VE+bcKl7xzCDnEKiecjcqkjUhFXSFgcq02fOM7s9XnYH4kbv5oATeSWl+tEWpHxjax
+ uddXNBc9L6bsecbckcats1vGIj+FRm1AXB1jETFkmq7osCy5XjHt0r7A/MylVaoS7sEi
+ BEqqQGEpCtD+G1DLTSJRrPX1jP7q6JLRto0o7pT68gHSfXhTroGbTpoKZNwyLPn4gBNV
+ 8ODVys95W2+g/mSu4Rja/qhLF+ras1jurnSxRwwt4QC/Gcz8iYCVwlkq+O0Dgaz38Z6X
+ Qigg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:in-reply-to:message-id:mime-version
  :references:subject:from:to:cc;
- bh=BJsyngqG/QyGrxCP5QV1VgvY/ZIDb46yXFdUWUYcJjE=;
- b=dCFw71HY8CuNUxXfbtxWtvOfEuzu61UPrBYn3ME2QGFC9PO3SPZroodZHrm2JdhxFi
- jrZjj6Fi/TuemV3ULqHIX/SFQFbjJVjEBa2ugh4nNFe+S7mVrw59x8haEYjwaPECa6Vl
- 9Oa21cby8K7nM4GpJvi49cXJghbLvyR1Wyz/JI6X5imqkzGySLhzyT/yNUyHDO+bIkO/
- ksljg7zUE0epNKd1BB6Tit4C2m1VI8O1bfI5af96UgdItZeDRXivrJ79FKqZnnz3fP3N
- KADqcZ4qx6Gmn2P1AHyhRyza7oeNQs212jbkmQHq+c21kXFFWpe7iaa6fwj8eFu4kzBT
- Xdtw==
-X-Gm-Message-State: APjAAAXF8KK/6PUv4XFBS/kD1hz0Blb1HkKo2v6/5rXXPHzvMTNKhwFR
- Bg9OeKPod68kdG8zWV0mSnAAKkJPcW0DVerydrWyr5qHqCYfzS0ve6uenof7Ur/gRgqbZDNWtfW
- /8mMi4WjQnfLINvgIwjAx+kLZlOgn4txAT/XlDXuRoSxTrx3QZtV4cfPwVdbY1R1a3fK0nFu3zU
- kNt+LvQjqwaNih7Rk=
-X-Google-Smtp-Source: APXvYqxgB5X/aCbKs9hmuZWtlXYS7x7msb4DLFufqsMoO6mME7B8su644ppdcEygFH1GnaKdKATNFxnkdsXw3C2U
-X-Received: by 2002:ab0:7782:: with SMTP id x2mr22851192uar.140.1561386818133; 
- Mon, 24 Jun 2019 07:33:38 -0700 (PDT)
-Date: Mon, 24 Jun 2019 16:32:55 +0200
+ bh=+QjTccShtmk/DNvEu2Adujr4/24uQqkMA4u/Npu2BdA=;
+ b=K1fMklJQCegmV+a/+khrkbgPwSn7W54AMeoSkILCPfzxmH2WMxD0jzp53YqPajlTCY
+ I+L6FF24aOqXJyASiARayCFOAS7bMKQtxYzoaZUqwsK7gUz0h2Wm6nae6zyGpv6Hrer6
+ f8nBNdvJO3QvZsA2eNv/fXvjjAQFBs2d9q9qs5FGtsoFJsbHaMmhCcvth7VbZ+8XfaMG
+ vnipi70PnRmXiDBxlih62Ymhug8s9fhnrxaTkOJXhJV16hYT4QdDJSdPkeKsdrw21Bm5
+ kWZywNeKo6pL16pBos1U2jYtlKoIm0NChysEZcnE2cvYtVJUG0rJBZuzjF5/23Drj95B
+ mvew==
+X-Gm-Message-State: APjAAAVxEoTxoRy014KV2tsnGUXWaUS2zEwoX+TYS3w5CFbi+r2S62dR
+ 7ItDU9nzBiMacolOIvjZnSHzq3IaD3GVjAbF7fh8T/3e1iRbkR2c1NnI3+ueA6taWcxB6SRh6UQ
+ GeWinJ4GPu2upBrMtF86O2wxbLrec1/xTQqdU3Os9vx2i6t8Nfo2sy7+ycBrxGkM2pqe8CzaiOg
+ Ar5OhWIYSYKlQPGKI=
+X-Google-Smtp-Source: APXvYqyUWW8huBSfbOwzfvyZrK53WvzmxiQ9by61ETLtrVtF59paHvOBrjS1vPlQyT8G9KXO3foj9yEr/dGEqynR
+X-Received: by 2002:a1f:a887:: with SMTP id r129mr2036386vke.75.1561386821206; 
+ Mon, 24 Jun 2019 07:33:41 -0700 (PDT)
+Date: Mon, 24 Jun 2019 16:32:56 +0200
 In-Reply-To: <cover.1561386715.git.andreyknvl@google.com>
-Message-Id: <61d800c35a4f391218fbca6f05ec458557d8d097.1561386715.git.andreyknvl@google.com>
+Message-Id: <ea0ff94ef2b8af12ea6c222c5ebd970e0849b6dd.1561386715.git.andreyknvl@google.com>
 Mime-Version: 1.0
 References: <cover.1561386715.git.andreyknvl@google.com>
 X-Mailer: git-send-email 2.22.0.410.gd8fdbe21b5-goog
-Subject: [PATCH v18 10/15] drm/radeon: untag user pointers in
- radeon_gem_userptr_ioctl
+Subject: [PATCH v18 11/15] IB/mlx4: untag user pointers in mlx4_get_umem_mr
 From: Andrey Konovalov <andreyknvl@google.com>
 To: linux-arm-kernel@lists.infradead.org, linux-mm@kvack.org, 
  linux-kernel@vger.kernel.org, amd-gfx@lists.freedesktop.org, 
@@ -68,15 +67,15 @@ To: linux-arm-kernel@lists.infradead.org, linux-mm@kvack.org,
  linux-media@vger.kernel.org, kvm@vger.kernel.org, 
  linux-kselftest@vger.kernel.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190624_073340_770954_BBD03D15 
-X-CRM114-Status: GOOD (  12.27  )
+X-CRM114-CacheID: sfid-20190624_073343_240291_9D628852 
+X-CRM114-Status: GOOD (  12.40  )
 X-Spam-Score: -7.7 (-------)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-7.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:a4a listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:a49 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
@@ -132,35 +131,41 @@ This patch is a part of a series that extends kernel ABI to allow to pass
 tagged user pointers (with the top byte set to something else other than
 0x00) as syscall arguments.
 
-In radeon_gem_userptr_ioctl() an MMU notifier is set up with a (tagged)
-userspace pointer. The untagged address should be used so that MMU
-notifiers for the untagged address get correctly matched up with the right
-BO. This funcation also calls radeon_ttm_tt_pin_userptr(), which uses
-provided user pointers for vma lookups, which can only by done with
-untagged pointers.
+mlx4_get_umem_mr() uses provided user pointers for vma lookups, which can
+only by done with untagged pointers.
 
-This patch untags user pointers in radeon_gem_userptr_ioctl().
+Untag user pointers in this function.
 
-Suggested-by: Felix Kuehling <Felix.Kuehling@amd.com>
-Acked-by: Felix Kuehling <Felix.Kuehling@amd.com>
 Signed-off-by: Andrey Konovalov <andreyknvl@google.com>
 ---
- drivers/gpu/drm/radeon/radeon_gem.c | 2 ++
- 1 file changed, 2 insertions(+)
+ drivers/infiniband/hw/mlx4/mr.c | 7 ++++---
+ 1 file changed, 4 insertions(+), 3 deletions(-)
 
-diff --git a/drivers/gpu/drm/radeon/radeon_gem.c b/drivers/gpu/drm/radeon/radeon_gem.c
-index 44617dec8183..90eb78fb5eb2 100644
---- a/drivers/gpu/drm/radeon/radeon_gem.c
-+++ b/drivers/gpu/drm/radeon/radeon_gem.c
-@@ -291,6 +291,8 @@ int radeon_gem_userptr_ioctl(struct drm_device *dev, void *data,
- 	uint32_t handle;
- 	int r;
+diff --git a/drivers/infiniband/hw/mlx4/mr.c b/drivers/infiniband/hw/mlx4/mr.c
+index 355205a28544..13d9f917f249 100644
+--- a/drivers/infiniband/hw/mlx4/mr.c
++++ b/drivers/infiniband/hw/mlx4/mr.c
+@@ -378,6 +378,7 @@ static struct ib_umem *mlx4_get_umem_mr(struct ib_udata *udata, u64 start,
+ 	 * again
+ 	 */
+ 	if (!ib_access_writable(access_flags)) {
++		unsigned long untagged_start = untagged_addr(start);
+ 		struct vm_area_struct *vma;
  
-+	args->addr = untagged_addr(args->addr);
-+
- 	if (offset_in_page(args->addr | args->size))
- 		return -EINVAL;
- 
+ 		down_read(&current->mm->mmap_sem);
+@@ -386,9 +387,9 @@ static struct ib_umem *mlx4_get_umem_mr(struct ib_udata *udata, u64 start,
+ 		 * cover the memory, but for now it requires a single vma to
+ 		 * entirely cover the MR to support RO mappings.
+ 		 */
+-		vma = find_vma(current->mm, start);
+-		if (vma && vma->vm_end >= start + length &&
+-		    vma->vm_start <= start) {
++		vma = find_vma(current->mm, untagged_start);
++		if (vma && vma->vm_end >= untagged_start + length &&
++		    vma->vm_start <= untagged_start) {
+ 			if (vma->vm_flags & VM_WRITE)
+ 				access_flags |= IB_ACCESS_LOCAL_WRITE;
+ 		} else {
 -- 
 2.22.0.410.gd8fdbe21b5-goog
 
