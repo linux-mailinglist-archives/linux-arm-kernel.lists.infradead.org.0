@@ -2,50 +2,48 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6F4F350B17
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Jun 2019 14:49:15 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BB46C50B1F
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Jun 2019 14:51:17 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=sXnBP7BbIeCzPAmcFClCmv99RBp9yUkugdHGhqE/Tf4=; b=nsxlSpBlkT6XrY
-	/rcarsb2LbquUBY9AadfB0rI4JONWlkvPYukKIJ8AFYTg1WE9H5BPQ/9qovRbHdRDKoBOwvqw5OM6
-	Kxa9vFBGBaSshWUw5s3e+sRTIMtKR8JKqEZUHUe5ZLBTf97PAyrPnQh5xYFettuAx5mRv1ILY55HG
-	y9BwdnHXPqW2uqR8EOffYJHPwZQ1xGGu5UIFxhNW6mn0nlLS4Qijp2mzrvgk9QrI9wZeaOwQzgnBj
-	XhfYCs3y9TjxEk4yijD8yoWvwVTCGROwEbVMLdL4Og9LLNusUI3MgxXOKW0TXndJ4bHD/CFfP4ZTe
-	uDVp3jUcKRCFVtec+SzQ==;
+	List-Owner; bh=8G1IWMUDYDuKYk63dBQdEuC+YW+5cTgJgVC7GuyZnXo=; b=ujXqf9HjNf5+H/
+	oyWd8W/BcRgp74LggHX1ukP0zWFY0kuqsVSENTRpRbZ+C31ZG7UQbijfT6EJ+t2OtYQxw4BTkz88Y
+	3Yrn2z/XxxpUTlKRuJP3OZDXNhQsmcSss2WRQ7AXR2IhvlYu+68Je7NaIBzpFVRjAM/GErqhs1XSE
+	2QrmVG4KPKr/DpAT2Dku3y6KqWzKfr8+XUiGywWWKfUM8ikul9nDO+BQvT2meF56bhXwdBLoLTJqH
+	EoMwcRETQB7YoKkq/J6d43fDekMTPSYaGZ4ihqIIYzYbdDC69xX9YlMW+MJ/7IEe3tuLtrWmqV4Ug
+	FRlEFc7YoMOO++/ORMwQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hfOPI-00040C-RY; Mon, 24 Jun 2019 12:49:12 +0000
+	id 1hfORG-0005Z3-Fx; Mon, 24 Jun 2019 12:51:14 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hfOP9-0003zT-Ku
- for linux-arm-kernel@lists.infradead.org; Mon, 24 Jun 2019 12:49:05 +0000
+ id 1hfOR5-0005YH-7y
+ for linux-arm-kernel@lists.infradead.org; Mon, 24 Jun 2019 12:51:04 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 73E0C344;
- Mon, 24 Jun 2019 05:49:02 -0700 (PDT)
-Received: from e103592.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id F20E7344;
+ Mon, 24 Jun 2019 05:51:00 -0700 (PDT)
+Received: from donnerap.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
  [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 856513F718;
- Mon, 24 Jun 2019 05:49:01 -0700 (PDT)
-Date: Mon, 24 Jun 2019 13:48:59 +0100
-From: Dave Martin <Dave.Martin@arm.com>
-To: Marc Zyngier <marc.zyngier@arm.com>
-Subject: Re: [PATCH 06/59] KVM: arm64: nv: Allow userspace to set PSR_MODE_EL2x
-Message-ID: <20190624124859.GP2790@e103592.cambridge.arm.com>
-References: <20190621093843.220980-1-marc.zyngier@arm.com>
- <20190621093843.220980-7-marc.zyngier@arm.com>
- <7f8a9d76-6087-b8d9-3571-074a08d08ec8@arm.com>
- <3a68e4e6-878f-7272-4e2d-8768680287fd@arm.com>
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 7EDFB3F718;
+ Mon, 24 Jun 2019 05:50:58 -0700 (PDT)
+Date: Mon, 24 Jun 2019 13:50:55 +0100
+From: Andre Przywara <andre.przywara@arm.com>
+To: Vincenzo Frascino <vincenzo.frascino@arm.com>
+Subject: Re: [PATCH v7 00/25] Unify vDSOs across more architectures
+Message-ID: <20190624135055.7020fc2a@donnerap.cambridge.arm.com>
+In-Reply-To: <20190621095252.32307-1-vincenzo.frascino@arm.com>
+References: <20190621095252.32307-1-vincenzo.frascino@arm.com>
+Organization: ARM
+X-Mailer: Claws Mail 3.17.3 (GTK+ 2.24.32; aarch64-unknown-linux-gnu)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <3a68e4e6-878f-7272-4e2d-8768680287fd@arm.com>
-User-Agent: Mutt/1.5.23 (2014-03-12)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190624_054903_731349_2674F9D0 
-X-CRM114-Status: GOOD (  20.65  )
+X-CRM114-CacheID: sfid-20190624_055103_331286_A0EAAE81 
+X-CRM114-Status: UNSURE (   9.74  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -64,87 +62,63 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: kvm@vger.kernel.org, Andre Przywara <andre.przywara@arm.com>,
- kvmarm@lists.cs.columbia.edu, linux-arm-kernel@lists.infradead.org,
- Julien Thierry <julien.thierry@arm.com>
+Cc: linux-arch@vger.kernel.org, Shuah Khan <shuah@kernel.org>,
+ Shijith Thotton <sthotton@marvell.com>, Arnd Bergmann <arnd@arndb.de>,
+ Huw Davies <huw@codeweavers.com>, Catalin Marinas <catalin.marinas@arm.com>,
+ Daniel Lezcano <daniel.lezcano@linaro.org>, Will Deacon <will.deacon@arm.com>,
+ linux-kernel@vger.kernel.org, Ralf Baechle <ralf@linux-mips.org>,
+ linux-mips@vger.kernel.org, Dmitry Safonov <0x7f454c46@gmail.com>,
+ Paul Burton <paul.burton@mips.com>, linux-kselftest@vger.kernel.org,
+ Rasmus Villemoes <linux@rasmusvillemoes.dk>,
+ Russell King <linux@armlinux.org.uk>, Thomas Gleixner <tglx@linutronix.de>,
+ Mark Salyzyn <salyzyn@android.com>, Peter Collingbourne <pcc@google.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Jun 21, 2019 at 02:50:08PM +0100, Marc Zyngier wrote:
-> On 21/06/2019 14:24, Julien Thierry wrote:
-> > 
-> > 
-> > On 21/06/2019 10:37, Marc Zyngier wrote:
-> >> From: Christoffer Dall <christoffer.dall@linaro.org>
-> >>
-> >> We were not allowing userspace to set a more privileged mode for the VCPU
-> >> than EL1, but we should allow this when nested virtualization is enabled
-> >> for the VCPU.
-> >>
-> >> Signed-off-by: Christoffer Dall <christoffer.dall@linaro.org>
-> >> Signed-off-by: Marc Zyngier <marc.zyngier@arm.com>
-> >> ---
-> >>  arch/arm64/kvm/guest.c | 6 ++++++
-> >>  1 file changed, 6 insertions(+)
-> >>
-> >> diff --git a/arch/arm64/kvm/guest.c b/arch/arm64/kvm/guest.c
-> >> index 3ae2f82fca46..4c35b5d51e21 100644
-> >> --- a/arch/arm64/kvm/guest.c
-> >> +++ b/arch/arm64/kvm/guest.c
-> >> @@ -37,6 +37,7 @@
-> >>  #include <asm/kvm_emulate.h>
-> >>  #include <asm/kvm_coproc.h>
-> >>  #include <asm/kvm_host.h>
-> >> +#include <asm/kvm_nested.h>
-> >>  #include <asm/sigcontext.h>
-> >>  
-> >>  #include "trace.h"
-> >> @@ -194,6 +195,11 @@ static int set_core_reg(struct kvm_vcpu *vcpu, const struct kvm_one_reg *reg)
-> >>  			if (vcpu_el1_is_32bit(vcpu))
-> >>  				return -EINVAL;
-> >>  			break;
-> >> +		case PSR_MODE_EL2h:
-> >> +		case PSR_MODE_EL2t:
-> >> +			if (vcpu_el1_is_32bit(vcpu) || !nested_virt_in_use(vcpu))
-> > 
-> > This condition reads a bit weirdly. Why do we care about anything else
-> > than !nested_virt_in_use() ?
-> > 
-> > If nested virt is not in use then obviously we return the error.
-> > 
-> > If nested virt is in use then why do we care about EL1? Or should this
-> > test read as "highest_el_is_32bit" ?
-> 
-> There are multiple things at play here:
-> 
-> - MODE_EL2x is not a valid 32bit mode
-> - The architecture forbids nested virt with 32bit EL2
-> 
-> The code above is a simplification of these two conditions. But
-> certainly we can do a bit better, as kvm_reset_cpu() doesn't really
-> check that we don't create a vcpu with both 32bit+NV. These two bits
-> should really be exclusive.
+On Fri, 21 Jun 2019 10:52:27 +0100
+Vincenzo Frascino <vincenzo.frascino@arm.com> wrote:
 
-This code is safe for now because KVM_VCPU_MAX_FEATURES <=
-KVM_ARM_VCPU_NESTED_VIRT, right, i.e., nested_virt_in_use() cannot be
-true?
+Hi,
 
-This makes me a little uneasy, but I think that's paranoia talking: we
-want bisectably, but no sane person should ship with just half of this
-series.  So I guess this is fine.
+> vDSO (virtual dynamic shared object) is a mechanism that the Linux
+> kernel provides as an alternative to system calls to reduce where
+> possible the costs in terms of cycles.
+[ ... ]
 
-We could stick something like
+Some numbers for the ARM(32) part:
 
-	if (WARN_ON(...))
-		return false;
+I booted my trusted old Calxeda Midway server (Cortex A-15 cores) and ran
+the vdsotest benchmark on it. The results are:
+(vdso: times, in nsec/call; n/t: "not tested" (=not implemented))
+call				5.2-rc3	5.2-rc3-vdso
+clock-gettime-monotonic:        147     142
+clock-getres-monotonic:         n/t     34
+clock-gettime-monotonic-coarse: 90      96
+clock-getres-monotonic-coarse:  n/t     36
+clock-gettime-monotonic-raw:    431     142
+clock-getres-monotonic-raw:     n/t     35
+clock-gettime-tai:              598     150
+clock-getres-tai:               n/t     34
+clock-gettime-boottime:         592     142
+clock-getres-boottime:          n/t     34
+clock-gettime-realtime:         149     142
+clock-getres-realtime:          n/t     34
+clock-gettime-realtime-coarse:  86      96
+clock-getres-realtime-coarse:   n/t     36
+getcpu:                         n/t     n/t
+gettimeofday:                   133     110
 
-in nested_virt_in_use() and then remove it in the final patch, but it's
-probably overkill.
+So there are some minor improvements, two minor regressions, some
+significant improvements (factor 3-4), and some dramatic improvements
+(where we actually gained VDSO support).
+Overall a pretty impressive outcome for an "Odd fixes" architecture,
+especially as it should reduce the future maintenance burden.
 
-Cheers
----Dave
+Cheers,
+Andre.
 
 _______________________________________________
 linux-arm-kernel mailing list
