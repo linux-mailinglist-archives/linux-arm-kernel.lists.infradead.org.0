@@ -2,81 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7FEA050D43
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Jun 2019 16:07:55 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DD99D50DAC
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Jun 2019 16:17:47 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=RHIs/2FJViz/BbnieVUKlRhbce5zEL83+swezN6DdI8=; b=tkH
-	ZLUcDpnCc6tTdKl2bDe0g8qYn9b3oSYZYGv1MpzNWXv0rzz6GLPSz8upcYF+YOjlLPWMiuNr9ajlS
-	8FoJzOQ8b48/93mD50KhuAz53yv++Hh8RjAtlnBVzx85sjnlbgrhoWMVAkL2wGYL+CA86r1WQAHg9
-	j9jb1iNGXUNiRC6NhDaFSvPtlaml9NFOVX/teiYAUGjC6fbXD3mEAMxiOd0A1fGgiCxsaQUQc2Mno
-	MK2bbwlwTlVtr6ARl0XadnjsShHrgF6jg9Nm1YKdIv9OF/bxLnsEu2itR3oOgFNOnARuUtQlLQxQB
-	nyBbRWsW1QgUHWQhnuOZI+uO0kjE5mQ==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=NMdfk0daQ/BvQemTo0P3DeUpRA/C9l2dW+OgO7I+41c=; b=oSomqj1Kphi4lh
+	/2Joec/nIr4SMLDF68e8qUDbx7VrrMd3vuZwSjazuwoATBO7PmfR45+5o6FMCCMAjrjvwVP+JrmRP
+	7/0Hv9RJKqgwfTLWxr8DE8dG1EI8cao2xsaf0BE2iIiv5PDyaSfktJPGzL9Iqm0w09kAV3P6cR831
+	oHNV7GXR8BAI5MoR6ivGy71tV4GVirsOrnn2BCEmMlkeRfV+oe5+neOsZ0CBIDXPmvj7BBghug9E2
+	l8dCAWEn9xQfnZfWUD5fEzW/Y5aAdqoC6fdrdKBLcAqbsTwNecayjpO1yuIM6/PFi9rpByX0GsO50
+	Po2HgS1Tq2lojuLRTzRg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hfPdO-0001Xc-Nq; Mon, 24 Jun 2019 14:07:50 +0000
-Received: from mail-io1-xd42.google.com ([2607:f8b0:4864:20::d42])
+	id 1hfPmw-00050t-1i; Mon, 24 Jun 2019 14:17:42 +0000
+Received: from mail-lj1-x242.google.com ([2a00:1450:4864:20::242])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hfPdC-0001X7-00
- for linux-arm-kernel@lists.infradead.org; Mon, 24 Jun 2019 14:07:39 +0000
-Received: by mail-io1-xd42.google.com with SMTP id u19so1288195ior.9
+ id 1hfPmg-00050K-N2
+ for linux-arm-kernel@lists.infradead.org; Mon, 24 Jun 2019 14:17:28 +0000
+Received: by mail-lj1-x242.google.com with SMTP id 16so12764485ljv.10
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 24 Jun 2019 07:07:37 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id;
- bh=03apFXZ4DhKsed7tdajOvwJKFsSf8Y4I5P3qFLjRkKo=;
- b=I2Fo6XRAMMVOjvK9E4plBFmE6GbrgJNAzyqNah9iq40Vff1Sw1lpbcprdLQnGMx0eX
- xlzZChXLaTQXOyI22/oiBXxsGauWHWJoqH9029TFw6qyRQcnIRC/gDVZYqeTZVO/9/ny
- x/vHEcTt1jha1w58oRB6H9f2iJX0p/tSvZo5TIOk5x4NFIjQAn+nA1vNlrqf1DP3asNE
- lAnhxpsOMxb1xsuRRPUjobmfukOlvQ1DETmQUIXj8Sq8l4vGUCHzAtmp75+gaGegyo1X
- 84V+T86qp0e3GuFTf6Z+v8yV8zgTzDwqZoLeNq0BOmMlLyJjTw/MySnlGVfPhXpYa1qj
- YLXA==
+ Mon, 24 Jun 2019 07:17:25 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=gv/iTNvb5RX+h4LWGOolD/aL8D7JzkFSVfgItWt9X+0=;
+ b=JOCNad5gFzzQGn3T7/+rLI1QfX7+KHq6uaGIJWLrCtU9KAzcCOasF+/wOHov1elYtw
+ PrX5qqq3ltUTFhj8v98whQGF/COyTMUHC/ukbWueHlr1XPwN4lW5yQ2FJ7xPLv0fFmVD
+ 7gfy0BGOErzvgK5BgQOqCmP2iJ9wFNv93E4FCmoHfDGQ4sIsoRKzdqNKDQ3XIoZElJJZ
+ Jkc5+RdYgCleNk8KoteHHxJ+CxVoSPSf2GoxSGSKyZ/q8wY44Y491uWb+p20j449aOBz
+ b0bdKz3mR8z8I0Gle1peMbKH5gqE64uJtJODyhuh3Wbc2pNql8doFmja6qZPslp68bSp
+ QLUQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=03apFXZ4DhKsed7tdajOvwJKFsSf8Y4I5P3qFLjRkKo=;
- b=VZWiwOoP9SxS0NTssgT2UdZplcjkyLDQLPY7rh92yzuLTmJrTWjjwbPHxBZRPv0iQI
- l0lbZu8mfMI2WkPM75agNQS1w+0TY42od2X+mXqei+HpbWMCxIk04RxZM2JIUKfWbclN
- 5XWxwmC9YWwB5YVJA+f8LHgSFgOIP2kPBsl79QQGjsbF7hERDjRcTr4GFW4f/Eub7pOT
- i0lkNsFrpTOyti/PCavFzL/qUX6YqqRuNd6D8es7PUZVSRX83hE8XO3PZWM8BYRw26cc
- BqQVRHrkBDFoMqHtdqV/Knz7cGgURBqfOYtljbAf3pyoVn5SJKRRXS7FRoEcWXivBhoN
- Cspw==
-X-Gm-Message-State: APjAAAVZXzbBd0FiWSKSlrLMXOG4A4sXz7vupAirLkF4mD3m0t3Fen/q
- 0t8ZMQGSR8Uag06Ss0ucqPM=
-X-Google-Smtp-Source: APXvYqyyScY1CjudlFtny0U4SJFuFhECkaYbbnN7rZimu7Yub+mmjUoXj+OQyw0DAdw//wlggWdGLA==
-X-Received: by 2002:a5d:9703:: with SMTP id h3mr21151624iol.152.1561385256497; 
- Mon, 24 Jun 2019 07:07:36 -0700 (PDT)
-Received: from svens-asus.arcx.com ([184.94.50.30])
- by smtp.gmail.com with ESMTPSA id d17sm13210813iom.28.2019.06.24.07.07.35
- (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Mon, 24 Jun 2019 07:07:35 -0700 (PDT)
-From: Sven Van Asbroeck <thesven73@gmail.com>
-X-Google-Original-From: Sven Van Asbroeck <TheSven73@gmail.com>
-To: Robin Gong <yibin.gong@nxp.com>
-Subject: [PATCH] dmaengine: imx-sdma: fix use-after-free on probe error path
-Date: Mon, 24 Jun 2019 10:07:31 -0400
-Message-Id: <20190624140731.24080-1-TheSven73@gmail.com>
-X-Mailer: git-send-email 2.17.1
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=gv/iTNvb5RX+h4LWGOolD/aL8D7JzkFSVfgItWt9X+0=;
+ b=YJ+QxDXjUeY1daeGpEwG3adhI8Stap3xWY2V7nmsUXinnuEhRSHVreoFwWOslnybl6
+ l1fpwy0CfI+AbgfWdQcwvhUNkfpyKxaNbmEQggV+W5kTeC4k38tmz4JRLn5NrLgKRn7h
+ 287j9LKxFPZ5diJB9gVavc957o91qoIjOVscR/cedKwtEciCr9rMGfnzsyEXwqksxqDC
+ 1I5dIreaW014ecjJMG59bAyLH2cTZ80rZs9yJ/tS2z4mJZqX8IbW25N//WPAHXOz2L76
+ kVJg1TTnvBq1gRiFPvJKg0YtGwDl2dizDTcsez+oXuFXItQ6592c0GJx7DxO06kT41u+
+ vFSA==
+X-Gm-Message-State: APjAAAUPcyDC7bOQUPVBYJjKTeuYt3SjSocul6U1n1Ayb+Xgyrsj+R6e
+ 2GV6PkrUW2rWf/ziX+E+anLmx/vmZF7+3hQUJhsPGy5V
+X-Google-Smtp-Source: APXvYqytWclhBi/QOWNrJ+E4ORBzmzp2PSL2LmMAfY++PEEFBojP/YNNp1GpP5qnSOgbzgAKxP6y6Rx5LhoXwMWVgvM=
+X-Received: by 2002:a2e:a0d5:: with SMTP id f21mr49046981ljm.69.1561385844006; 
+ Mon, 24 Jun 2019 07:17:24 -0700 (PDT)
+MIME-Version: 1.0
+References: <CACRpkdYLcCB6zA2dYj9A0bJU-gQF3QuhmFd0oGt++oa+gSE_Cw@mail.gmail.com>
+ <20190619131559.7x5mbfwlzp6psjql@localhost>
+In-Reply-To: <20190619131559.7x5mbfwlzp6psjql@localhost>
+From: Linus Walleij <linus.walleij@linaro.org>
+Date: Mon, 24 Jun 2019 16:17:12 +0200
+Message-ID: <CACRpkdZ4y3Wg55si2UF9Fkx5Gcm41jyNGLsct4OO52bVdbUfrA@mail.gmail.com>
+Subject: Re: [GIT PULL] Integrator DTS updates for v5.3
+To: Olof Johansson <olof@lixom.net>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190624_070738_064841_06F23393 
-X-CRM114-Status: GOOD (  16.60  )
-X-Spam-Score: 0.1 (/)
+X-CRM114-CacheID: sfid-20190624_071726_768708_F39F0322 
+X-CRM114-Status: GOOD (  13.76  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:d42 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:242 listed in]
  [list.dnswl.org]
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (thesven73[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (thesven73[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -96,125 +91,41 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Shawn Guo <shawnguo@kernel.org>, Sascha Hauer <s.hauer@pengutronix.de>,
- linux-kernel@vger.kernel.org, Vinod Koul <vkoul@kernel.org>,
- NXP Linux Team <linux-imx@nxp.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>, dmaengine@vger.kernel.org,
- Dan Williams <dan.j.williams@intel.com>, Fabio Estevam <festevam@gmail.com>,
- linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
+Cc: arm-soc <arm@kernel.org>, Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-If probe() fails anywhere beyond the point where
-sdma_get_firmware() is called, then a kernel oops may occur.
+On Wed, Jun 19, 2019 at 3:39 PM Olof Johansson <olof@lixom.net> wrote:
+> On Mon, May 27, 2019 at 11:19:00AM +0200, Linus Walleij wrote:
+> > Hi ARM SoC people,
+> >
+> > please pull in these DTS changes to set the flash partition information
+> > right on the Integrator boards for kernel v5.3.
+> >
+> > Yours,
+> > Linus Walleij
+> >
+> > The following changes since commit a188339ca5a396acc588e5851ed7e19f66b0ebd9:
+> >
+> >   Linux 5.2-rc1 (2019-05-19 15:47:09 -0700)
+> >
+> > are available in the Git repository at:
+> >
+> >   git://git.kernel.org/pub/scm/linux/kernel/git/linusw/linux-integrator.git
+> > tags/integrator-dts-v5.3-arm-soc
+> >
+> > for you to fetch changes up to 62a5017bf825c9e4d3176eb975a01c329a9f364b:
+> >
+> >   ARM: dts: vexpress: specify AFS partition (2019-05-20 16:40:38 +0200)
+>
+> Merged, thanks!
 
-Problematic sequence of events:
-1. probe() calls sdma_get_firmware(), which schedules the
-   firmware callback to run when firmware becomes available,
-   using the sdma instance structure as the context
-2. probe() encounters an error, which deallocates the
-   sdma instance structure
-3. firmware becomes available, firmware callback is
-   called with deallocated sdma instance structure
-4. use after free - kernel oops !
+Hmmmm something is fishy! I can't see these patches in linux-next?
 
-Solution: only attempt to load firmware when we're certain
-that probe() will succeed. This guarantees that the firmware
-callback's context will remain valid.
-
-Note that the remove() path is unaffected by this issue: the
-firmware loader will increment the driver module's use count,
-ensuring that the module cannot be unloaded while the
-firmware callback is pending or running.
-
-To: Robin Gong <yibin.gong@nxp.com>
-Cc: Vinod Koul <vkoul@kernel.org>
-Cc: Dan Williams <dan.j.williams@intel.com>
-Cc: Shawn Guo <shawnguo@kernel.org>
-Cc: Sascha Hauer <s.hauer@pengutronix.de>
-Cc: Pengutronix Kernel Team <kernel@pengutronix.de>
-Cc: Fabio Estevam <festevam@gmail.com>
-Cc: NXP Linux Team <linux-imx@nxp.com>
-Cc: dmaengine@vger.kernel.org
-Cc: linux-arm-kernel@lists.infradead.org
-Cc: linux-kernel@vger.kernel.org
-Signed-off-by: Sven Van Asbroeck <TheSven73@gmail.com>
----
- drivers/dma/imx-sdma.c | 48 ++++++++++++++++++++++++------------------
- 1 file changed, 27 insertions(+), 21 deletions(-)
-
-diff --git a/drivers/dma/imx-sdma.c b/drivers/dma/imx-sdma.c
-index 99d9f431ae2c..3f0f41d16e1c 100644
---- a/drivers/dma/imx-sdma.c
-+++ b/drivers/dma/imx-sdma.c
-@@ -2096,27 +2096,6 @@ static int sdma_probe(struct platform_device *pdev)
- 	if (pdata && pdata->script_addrs)
- 		sdma_add_scripts(sdma, pdata->script_addrs);
- 
--	if (pdata) {
--		ret = sdma_get_firmware(sdma, pdata->fw_name);
--		if (ret)
--			dev_warn(&pdev->dev, "failed to get firmware from platform data\n");
--	} else {
--		/*
--		 * Because that device tree does not encode ROM script address,
--		 * the RAM script in firmware is mandatory for device tree
--		 * probe, otherwise it fails.
--		 */
--		ret = of_property_read_string(np, "fsl,sdma-ram-script-name",
--					      &fw_name);
--		if (ret)
--			dev_warn(&pdev->dev, "failed to get firmware name\n");
--		else {
--			ret = sdma_get_firmware(sdma, fw_name);
--			if (ret)
--				dev_warn(&pdev->dev, "failed to get firmware from device tree\n");
--		}
--	}
--
- 	sdma->dma_device.dev = &pdev->dev;
- 
- 	sdma->dma_device.device_alloc_chan_resources = sdma_alloc_chan_resources;
-@@ -2161,6 +2140,33 @@ static int sdma_probe(struct platform_device *pdev)
- 		of_node_put(spba_bus);
- 	}
- 
-+	/*
-+	 * Kick off firmware loading as the very last step:
-+	 * attempt to load firmware only if we're not on the error path, because
-+	 * the firmware callback requires a fully functional and allocated sdma
-+	 * instance.
-+	 */
-+	if (pdata) {
-+		ret = sdma_get_firmware(sdma, pdata->fw_name);
-+		if (ret)
-+			dev_warn(&pdev->dev, "failed to get firmware from platform data\n");
-+	} else {
-+		/*
-+		 * Because that device tree does not encode ROM script address,
-+		 * the RAM script in firmware is mandatory for device tree
-+		 * probe, otherwise it fails.
-+		 */
-+		ret = of_property_read_string(np, "fsl,sdma-ram-script-name",
-+					      &fw_name);
-+		if (ret)
-+			dev_warn(&pdev->dev, "failed to get firmware name\n");
-+		else {
-+			ret = sdma_get_firmware(sdma, fw_name);
-+			if (ret)
-+				dev_warn(&pdev->dev, "failed to get firmware from device tree\n");
-+		}
-+	}
-+
- 	return 0;
- 
- err_register:
--- 
-2.17.1
-
+Yours,
+Linus Walleij
 
 _______________________________________________
 linux-arm-kernel mailing list
