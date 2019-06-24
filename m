@@ -1,49 +1,50 @@
 Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
-Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id ADF68509B6
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Jun 2019 13:24:33 +0200 (CEST)
+Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
+	by mail.lfdr.de (Postfix) with ESMTPS id 61F86509CA
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Jun 2019 13:29:07 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=AsxyPeTrC7b9079pv+5apmIfVRjWcGTBwk08OisjqOM=; b=MQUAo/14HD2hA2
-	SCbqvqCTuu5AwxHeFMZf94n6GVqHymdOyuWpZaWkk+xAlwlKNFcpG7lM1h6cs9lwijMGxEncui1ia
-	EJqDTYKQbk+rFrn7ARsP4xbdYrUqvaVFcM3ns7TEheIktYHxwKtJ/T48zfHfk9HgQPle8Qiyd+8Lf
-	VDibbkOyHv7KnkxACUVEztmMttIs+rO2EP+x6Aytnb1Ov65tNL5Mre8C95DZTonKVPAKgRf+GrpZY
-	5TTnmdXtGo2hbXU3hp/1KmqlLDMnrALmXPrdJdNnFg+6dCs5L+v6CUUVsqRTsALXkMv6NiMTAelmA
-	XTxU/Uwy3DENmi5HN3xg==;
+	List-Owner; bh=7cC890H2lP49x982Itfmxs56/Fpn4RDiVHL7M5UDlDQ=; b=sPT6CWlA9/9+nA
+	7818eDqDMNe4gUutpgNk9+fZb4FY2YPw6k3qsus4MMZLOAFXt4Gjd71DLYfqSf+ymzXXcrRbtK1wN
+	ATCTe4sdtPTt+q7zfydEN640G3v+XEkLMWZR6i5wvX+7e7eoMgyDiyaOntj/e2wkCVE6b72S2Dc0d
+	p1cFeqPfzWcxMC4OXjhiHdoOGITm/kdXDTTtX337zNs7fqRaAwqSYX3LRIeL7Xoo9sNiBgLq4u8Dg
+	SeST81X0tC8MTd+PTaPcKnEcx0Xz+8Jlg3o+g6fPGvIeYZxiIHn3fho6XWRS65OFjyxLOqD/Kvgjz
+	8IVWyPfNIIzCiG2F1r2A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hfN5J-0003K8-PL; Mon, 24 Jun 2019 11:24:29 +0000
+	id 1hfN9k-00052t-Qz; Mon, 24 Jun 2019 11:29:04 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hfN59-0003JR-3u
- for linux-arm-kernel@lists.infradead.org; Mon, 24 Jun 2019 11:24:20 +0000
+ id 1hfN9b-00052F-Li
+ for linux-arm-kernel@lists.infradead.org; Mon, 24 Jun 2019 11:28:57 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 43C16C15;
- Mon, 24 Jun 2019 04:24:18 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 2CF612B;
+ Mon, 24 Jun 2019 04:28:55 -0700 (PDT)
 Received: from e103592.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
  [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id E37FC3F762;
- Mon, 24 Jun 2019 04:24:16 -0700 (PDT)
-Date: Mon, 24 Jun 2019 12:24:14 +0100
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id CCCB13F718;
+ Mon, 24 Jun 2019 04:28:53 -0700 (PDT)
+Date: Mon, 24 Jun 2019 12:28:51 +0100
 From: Dave Martin <Dave.Martin@arm.com>
 To: Marc Zyngier <marc.zyngier@arm.com>
-Subject: Re: [PATCH 03/59] arm64: Add ARM64_HAS_NESTED_VIRT cpufeature
-Message-ID: <20190624112414.GL2790@e103592.cambridge.arm.com>
+Subject: Re: [PATCH 04/59] KVM: arm64: nv: Introduce nested virtualization
+ VCPU feature
+Message-ID: <20190624112851.GM2790@e103592.cambridge.arm.com>
 References: <20190621093843.220980-1-marc.zyngier@arm.com>
- <20190621093843.220980-4-marc.zyngier@arm.com>
+ <20190621093843.220980-5-marc.zyngier@arm.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190621093843.220980-4-marc.zyngier@arm.com>
+In-Reply-To: <20190621093843.220980-5-marc.zyngier@arm.com>
 User-Agent: Mutt/1.5.23 (2014-03-12)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190624_042419_210913_3C121AB6 
-X-CRM114-Status: GOOD (  18.22  )
+X-CRM114-CacheID: sfid-20190624_042855_803519_17E7EFCA 
+X-CRM114-Status: GOOD (  17.62  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -73,46 +74,80 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Jun 21, 2019 at 10:37:47AM +0100, Marc Zyngier wrote:
-> From: Jintack Lim <jintack.lim@linaro.org>
+On Fri, Jun 21, 2019 at 10:37:48AM +0100, Marc Zyngier wrote:
+> From: Christoffer Dall <christoffer.dall@arm.com>
 > 
-> Add a new ARM64_HAS_NESTED_VIRT feature to indicate that the
-> CPU has the ARMv8.3 nested virtualization capability.
+> Introduce the feature bit and a primitive that checks if the feature is
+> set behind a static key check based on the cpus_have_const_cap check.
 > 
-> This will be used to support nested virtualization in KVM.
+> Checking nested_virt_in_use() on systems without nested virt enabled
+> should have neglgible overhead.
 > 
-> Signed-off-by: Jintack Lim <jintack.lim@linaro.org>
-> Signed-off-by: Andre Przywara <andre.przywara@arm.com>
+> We don't yet allow userspace to actually set this feature.
+> 
 > Signed-off-by: Christoffer Dall <christoffer.dall@arm.com>
 > Signed-off-by: Marc Zyngier <marc.zyngier@arm.com>
 > ---
->  .../admin-guide/kernel-parameters.txt         |  4 +++
->  arch/arm64/include/asm/cpucaps.h              |  3 ++-
->  arch/arm64/include/asm/sysreg.h               |  1 +
->  arch/arm64/kernel/cpufeature.c                | 26 +++++++++++++++++++
->  4 files changed, 33 insertions(+), 1 deletion(-)
+>  arch/arm/include/asm/kvm_nested.h   |  9 +++++++++
+>  arch/arm64/include/asm/kvm_nested.h | 13 +++++++++++++
+>  arch/arm64/include/uapi/asm/kvm.h   |  1 +
+>  3 files changed, 23 insertions(+)
+>  create mode 100644 arch/arm/include/asm/kvm_nested.h
+>  create mode 100644 arch/arm64/include/asm/kvm_nested.h
 > 
-> diff --git a/Documentation/admin-guide/kernel-parameters.txt b/Documentation/admin-guide/kernel-parameters.txt
-> index 138f6664b2e2..202bb2115d83 100644
-> --- a/Documentation/admin-guide/kernel-parameters.txt
-> +++ b/Documentation/admin-guide/kernel-parameters.txt
-> @@ -2046,6 +2046,10 @@
->  			[KVM,ARM] Allow use of GICv4 for direct injection of
->  			LPIs.
->  
-> +	kvm-arm.nested=
-> +			[KVM,ARM] Allow nested virtualization in KVM/ARM.
-> +			Default is 0 (disabled)
+> diff --git a/arch/arm/include/asm/kvm_nested.h b/arch/arm/include/asm/kvm_nested.h
+> new file mode 100644
+> index 000000000000..124ff6445f8f
+> --- /dev/null
+> +++ b/arch/arm/include/asm/kvm_nested.h
+> @@ -0,0 +1,9 @@
+> +/* SPDX-License-Identifier: GPL-2.0 */
+> +#ifndef __ARM_KVM_NESTED_H
+> +#define __ARM_KVM_NESTED_H
 > +
+> +#include <linux/kvm_host.h>
+> +
+> +static inline bool nested_virt_in_use(const struct kvm_vcpu *vcpu) { return false; }
+> +
+> +#endif /* __ARM_KVM_NESTED_H */
+> diff --git a/arch/arm64/include/asm/kvm_nested.h b/arch/arm64/include/asm/kvm_nested.h
+> new file mode 100644
+> index 000000000000..8a3d121a0b42
+> --- /dev/null
+> +++ b/arch/arm64/include/asm/kvm_nested.h
+> @@ -0,0 +1,13 @@
+> +/* SPDX-License-Identifier: GPL-2.0 */
+> +#ifndef __ARM64_KVM_NESTED_H
+> +#define __ARM64_KVM_NESTED_H
+> +
+> +#include <linux/kvm_host.h>
+> +
+> +static inline bool nested_virt_in_use(const struct kvm_vcpu *vcpu)
+> +{
+> +	return cpus_have_const_cap(ARM64_HAS_NESTED_VIRT) &&
+> +		test_bit(KVM_ARM_VCPU_NESTED_VIRT, vcpu->arch.features);
+> +}
+> +
+> +#endif /* __ARM64_KVM_NESTED_H */
+> diff --git a/arch/arm64/include/uapi/asm/kvm.h b/arch/arm64/include/uapi/asm/kvm.h
+> index d819a3e8b552..563e2a8bae93 100644
+> --- a/arch/arm64/include/uapi/asm/kvm.h
+> +++ b/arch/arm64/include/uapi/asm/kvm.h
+> @@ -106,6 +106,7 @@ struct kvm_regs {
+>  #define KVM_ARM_VCPU_SVE		4 /* enable SVE for this CPU */
+>  #define KVM_ARM_VCPU_PTRAUTH_ADDRESS	5 /* VCPU uses address authentication */
+>  #define KVM_ARM_VCPU_PTRAUTH_GENERIC	6 /* VCPU uses generic authentication */
+> +#define KVM_ARM_VCPU_NESTED_VIRT	7 /* Support nested virtualization */
 
-In light of the discussion on this patch, is it worth making 0 not
-guarantee that nested is allowed, rather than guaranteeing to disable
-nested?
+This seems weirdly named:
 
-This would allow the option to be turned into a no-op later once the NV
-code is considered mature enough to rip out all the conditionality.
+Isn't the feature we're exposing here really EL2?  In that case, the
+feature the guest gets with this flag enabled is plain virtualisation,
+possibly with the option to nest further.
 
-[...]
+Does the guest also get nested virt (i.e., recursively nested virt from
+the host's PoV) as a side effect, or would require an explicit extra
+flag?
 
 Cheers
 ---Dave
