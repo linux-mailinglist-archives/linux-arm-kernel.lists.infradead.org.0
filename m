@@ -2,87 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B542A50C14
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Jun 2019 15:33:54 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5AEC650C1C
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Jun 2019 15:36:40 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=kHGY7BMnmnP5/9FORI1874TvoCqN1w7TK73EohNsBMY=; b=F7lKAfMpcVikQQ
-	lTM6qkqU86Rj/UunT4zPOCKXehp1WXDyVUFVftliA/FzmhluKO/NDbM8s2qMiVLiuUHTFKnJrtqet
-	mLMnTdqxNOPNLixDbI3GyT9cADIwZZ3qGNWERCEimhj/0XbGOiVngJFQCW9+YCoCy2YWM5g+DYX88
-	tP+nxliQJX2O8D6qtI+qEH5RlOaVGxR3OS+iUbahAzGNiO9xMW/om4MkuqKuhHJRty5ORfSI8TrDL
-	KMxM9KX3Rc0PuyOV9hbmjuePZ7xWY60SIEZajDYUTvpfCtEUl5MvcSL5mLYPWolUiMAarFqsVFVPp
-	0pEqqDYNDjwSizQqjEtA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=mvV/PgiYAuS6vWyF7TF4nzp023+0ZKUUSqREoIMUAZ0=; b=HgRaE5jAraACDH
+	SlPYSbIrnMpObfFz7kWDvpLqwEx90yIM8hViAKsnZcT5eIdN2cQLmBMrSbhKgEf6+4/LVZcY+/HKS
+	L42iVZFZW+XrlMg+Ogk9k4PQFvQ9dHq29Fr6GG53FE4CZvfRylHesOJuER9lPOkTLoBObFRyYGyHV
+	2FiDapYpUblZvdRS/NyBdDgGD1TV4jbwDlPaj0AgB23UlH3OL0Kmn6F+cp3zVoe4qT8c0WKsElLLV
+	rHRGBPk+AeSWE9qJ/a2KsHfrw7d7OKMf2gt0l6cMMU7moK3WXUReV4koPbuAgfRTLS5m3S85G7FUy
+	AxIp/0iZw7wilZD6SPqg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hfP6T-0002u9-Fk; Mon, 24 Jun 2019 13:33:49 +0000
-Received: from fllv0016.ext.ti.com ([198.47.19.142])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hfP5p-0002iR-DP; Mon, 24 Jun 2019 13:33:10 +0000
-Received: from fllv0035.itg.ti.com ([10.64.41.0])
- by fllv0016.ext.ti.com (8.15.2/8.15.2) with ESMTP id x5ODX3H1103654;
- Mon, 24 Jun 2019 08:33:03 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1561383183;
- bh=T0b0y9lRm0PF/7Q++y9fxvMPpbsAZoaqD8rEIUJSye0=;
- h=Subject:To:CC:References:From:Date:In-Reply-To;
- b=Lj7qLlEk0mkinY9mM7qWIgaS7ynCHyCu9/jnLcJuqMn4gUcHh8isfl3iKuKQTg9Oo
- daJO0tQfP8Ia6dlSQ40TTwSm2KOu/VkQ4O4HEx3QOz7wt6QXcvxKX/WUSUk0AXxdd5
- 2w/jfbmpYWcwiUXN+Gox2dYFrb+EWYhc/gYxbXpg=
-Received: from DFLE105.ent.ti.com (dfle105.ent.ti.com [10.64.6.26])
- by fllv0035.itg.ti.com (8.15.2/8.15.2) with ESMTPS id x5ODX3f7096762
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Mon, 24 Jun 2019 08:33:03 -0500
-Received: from DFLE100.ent.ti.com (10.64.6.21) by DFLE105.ent.ti.com
- (10.64.6.26) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5; Mon, 24
- Jun 2019 08:33:03 -0500
-Received: from fllv0040.itg.ti.com (10.64.41.20) by DFLE100.ent.ti.com
- (10.64.6.21) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5 via
- Frontend Transport; Mon, 24 Jun 2019 08:33:03 -0500
-Received: from [172.24.190.89] (ileax41-snat.itg.ti.com [10.172.224.153])
- by fllv0040.itg.ti.com (8.15.2/8.15.2) with ESMTP id x5ODWxcF056686;
- Mon, 24 Jun 2019 08:33:00 -0500
-Subject: Re: [PATCH v7 3/5] mtd: Add support for HyperBus memory devices
-To: Sergei Shtylyov <sergei.shtylyov@cogentembedded.com>, Boris Brezillon
- <bbrezillon@kernel.org>, Marek Vasut <marek.vasut@gmail.com>, Richard
- Weinberger <richard@nod.at>, Rob Herring <robh+dt@kernel.org>
-References: <20190620172250.9102-1-vigneshr@ti.com>
- <20190620172250.9102-4-vigneshr@ti.com>
- <4d17e914-cd1f-c6fe-b70a-6aae02e0cf4e@cogentembedded.com>
-From: Vignesh Raghavendra <vigneshr@ti.com>
-Message-ID: <053894bc-1536-0b6c-5255-ab9be6d66eee@ti.com>
-Date: Mon, 24 Jun 2019 19:03:44 +0530
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.7.1
+	id 1hfP99-0004Yq-EG; Mon, 24 Jun 2019 13:36:35 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hfP8q-0004Xr-EM
+ for linux-arm-kernel@lists.infradead.org; Mon, 24 Jun 2019 13:36:17 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 1D0E0344;
+ Mon, 24 Jun 2019 06:36:12 -0700 (PDT)
+Received: from fuggles.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
+ [10.121.207.14])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 859783F71E;
+ Mon, 24 Jun 2019 06:36:09 -0700 (PDT)
+Date: Mon, 24 Jun 2019 14:36:07 +0100
+From: Will Deacon <will.deacon@arm.com>
+To: Vincenzo Frascino <vincenzo.frascino@arm.com>
+Subject: Re: [PATCH v7 04/25] arm64: Substitute gettimeofday with C
+ implementation
+Message-ID: <20190624133607.GI29497@fuggles.cambridge.arm.com>
+References: <20190621095252.32307-1-vincenzo.frascino@arm.com>
+ <20190621095252.32307-5-vincenzo.frascino@arm.com>
 MIME-Version: 1.0
-In-Reply-To: <4d17e914-cd1f-c6fe-b70a-6aae02e0cf4e@cogentembedded.com>
-Content-Language: en-US
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
+Content-Disposition: inline
+In-Reply-To: <20190621095252.32307-5-vincenzo.frascino@arm.com>
+User-Agent: Mutt/1.11.1+86 (6f28e57d73f2) ()
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190624_063309_565051_DAFD7C8E 
-X-CRM114-Status: GOOD (  17.91  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20190624_063616_575774_A1B306E9 
+X-CRM114-Status: GOOD (  15.75  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.19.142 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,77 +63,93 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-mtd@lists.infradead.org, Miquel Raynal <miquel.raynal@bootlin.com>,
- Mason Yang <masonccyang@mxic.com.tw>, linux-arm-kernel@lists.infradead.org
+Cc: linux-arch@vger.kernel.org, Shuah Khan <shuah@kernel.org>,
+ Shijith Thotton <sthotton@marvell.com>,
+ Andre Przywara <andre.przywara@arm.com>, Arnd Bergmann <arnd@arndb.de>,
+ Huw Davies <huw@codeweavers.com>, Catalin Marinas <catalin.marinas@arm.com>,
+ Daniel Lezcano <daniel.lezcano@linaro.org>,
+ Dmitry Safonov <0x7f454c46@gmail.com>, linux-kernel@vger.kernel.org,
+ Ralf Baechle <ralf@linux-mips.org>, linux-mips@vger.kernel.org,
+ Paul Burton <paul.burton@mips.com>, linux-kselftest@vger.kernel.org,
+ Rasmus Villemoes <linux@rasmusvillemoes.dk>,
+ Russell King <linux@armlinux.org.uk>, Thomas Gleixner <tglx@linutronix.de>,
+ Mark Salyzyn <salyzyn@android.com>, Peter Collingbourne <pcc@google.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Hi Vincenzo,
 
-
-On 22/06/19 1:22 AM, Sergei Shtylyov wrote:
-> Hello!
+On Fri, Jun 21, 2019 at 10:52:31AM +0100, Vincenzo Frascino wrote:
+> To take advantage of the commonly defined vdso interface for
+> gettimeofday the architectural code requires an adaptation.
 > 
-> On 06/20/2019 08:22 PM, Vignesh Raghavendra wrote:
+> Re-implement the gettimeofday vdso in C in order to use lib/vdso.
 > 
->> Cypress' HyperBus is Low Signal Count, High Performance Double Data Rate
->> Bus interface between a host system master and one or more slave
->> interfaces. HyperBus is used to connect microprocessor, microcontroller,
->> or ASIC devices with random access NOR flash memory (called HyperFlash)
->> or self refresh DRAM (called HyperRAM).
->>
->> Its a 8-bit data bus (DQ[7:0]) with  Read-Write Data Strobe (RWDS)
->> signal and either Single-ended clock(3.0V parts) or Differential clock
->> (1.8V parts). It uses ChipSelect lines to select b/w multiple slaves.
->> At bus level, it follows a separate protocol described in HyperBus
->> specification[1].
->>
->> HyperFlash follows CFI AMD/Fujitsu Extended Command Set (0x0002) similar
->> to that of existing parallel NORs. Since HyperBus is x8 DDR bus,
->> its equivalent to x16 parallel NOR flash wrt bits per clock cycle. But
->> HyperBus operates at >166MHz frequencies.
+> With the new implementation arm64 gains support for CLOCK_BOOTTIME
+> and CLOCK_TAI.
 > 
->    s/wrt/WRT/.
+> Cc: Catalin Marinas <catalin.marinas@arm.com>
+> Cc: Will Deacon <will.deacon@arm.com>
+> Signed-off-by: Vincenzo Frascino <vincenzo.frascino@arm.com>
+> Tested-by: Shijith Thotton <sthotton@marvell.com>
+> Tested-by: Andre Przywara <andre.przywara@arm.com>
+> ---
+>  arch/arm64/Kconfig                         |   2 +
+>  arch/arm64/include/asm/vdso/gettimeofday.h |  86 ++++++
+>  arch/arm64/include/asm/vdso/vsyscall.h     |  53 ++++
+>  arch/arm64/include/asm/vdso_datapage.h     |  48 ---
+>  arch/arm64/kernel/asm-offsets.c            |  33 +-
+>  arch/arm64/kernel/vdso.c                   |  51 +---
+>  arch/arm64/kernel/vdso/Makefile            |  34 ++-
+>  arch/arm64/kernel/vdso/gettimeofday.S      | 334 ---------------------
+>  arch/arm64/kernel/vdso/vgettimeofday.c     |  28 ++
 
-OK
+I'm concerned about an apparent semantic change introduced by your patch:
 
-[...]
->> diff --git a/include/linux/mtd/hyperbus.h b/include/linux/mtd/hyperbus.h
->> new file mode 100644
->> index 000000000000..ead969aad35b
->> --- /dev/null
->> +++ b/include/linux/mtd/hyperbus.h
->> @@ -0,0 +1,86 @@
-> [...]
->> +/**
->> + * struct hyperbus_ops - struct representing custom HyperBus operations
->> + * @read16: read 16 bit of data to flash in a single burst. Used to read
-> 
->    s/to flash/from flash/.
->
+> +static __always_inline u64 __arch_get_hw_counter(s32 clock_mode)
+> +{
+> +	u64 res;
+> +
+> +	asm volatile("mrs %0, cntvct_el0" : "=r" (res) :: "memory");
+> +
+> +	return res;
+> +}
 
-Will fix
+vs:
 
+> -	.macro	get_clock_shifted_nsec res, cycle_last, mult
+> -	/* Read the virtual counter. */
+> -	isb
+> -	mrs	x_tmp, cntvct_el0
+> -	/* Calculate cycle delta and convert to ns. */
+> -	sub	\res, x_tmp, \cycle_last
+> -	/* We can only guarantee 56 bits of precision. */
+> -	movn	x_tmp, #0xff00, lsl #48
+> -	and	\res, x_tmp, \res
+> -	mul	\res, \res, \mult
+> -	/*
+> -	 * Fake address dependency from the value computed from the counter
+> -	 * register to subsequent data page accesses so that the sequence
+> -	 * locking also orders the read of the counter.
+> -	 */
+> -	and	x_tmp, \res, xzr
+> -	add	vdso_data, vdso_data, x_tmp
+> -	.endm
 
-> [...]
->> +#endif /* __LINUX_MTD_HYPERBUS_H__ */
-> 
->    I thought you agreed to add the #defines for the HF commands. Well, I can add them
-> as well...
-> 
+It looks like you're dropping both the preceding ISB (allowing the counter
+value to be speculated) and also the subsequent dependency (allowing the
+seq lock to be speculated). If I've missed them, apologies, but I couldn't
+spot them elsewhere in this patch.
 
-Sorry, I thought you were proposing to add them to your driver's header
-file. Anyways, I think its better to add defines when there is an actual
-user.
+__arch_get_hw_counter should probably be identical to __arch_counter_get_cntvct
+to avoid these problems. I guess we don't need to care about the case where
+the counter is unstable, since we'll just disable the vDSO altogether on
+such systems?
 
-If there are no further comments, I will fixup things locally and queue
-up for next release.
-
--- 
-Regards
-Vignesh
+Will
 
 _______________________________________________
 linux-arm-kernel mailing list
