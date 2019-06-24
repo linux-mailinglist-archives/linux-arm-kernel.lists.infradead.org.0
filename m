@@ -2,59 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E2A045026F
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Jun 2019 08:38:14 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 43F1750271
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Jun 2019 08:39:06 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=mEKsAC277zdvtqwIL0sw+Tz5FL9bhlnEEUgSAYNmxbU=; b=tIUnmw862uYl8y
-	QS/9fT+liDLHH/yNz+9s9GpqCN49XhV1R2bMqQa5sypvaWZC9w1ofJORxHEy/AXlRELZiYo4IY+x5
-	R6Iux/HkxHiaq/+UT9GGzjHEqj6ZI1nRShgzAF4Ul+av7mKXK5Ru/F6zg7uzSTAnfepyjQXm7P8Ef
-	ms4xZfo7pNSmC4LbHC9YsBm40VPDah/w2yZOaM+ZCv6wFfggQTQLV2qlP7o3Ts0eNjWLuiTuAxDG3
-	deVu+QfX1zO65n/pxFPEJfWYICllyJJOp1KXkJjcep/RUhdicNxrOv4Bhz6dLp2xV2tTV5WCMHxYm
-	E+VJ3OnzpGxjRI3S4Oyg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=DkD4eTIf0K8mKJTYAPexa3nTr5MIyZL6hw1O9ni1B0M=; b=cfTNDOPqX0WWyr
+	l3kjhh41yHH+ku3VtnShkP/8GArZAzD46tIRD7Fah8ZrMuxOLgB1PheckUAfGO+pnR9yPp7fwypq7
+	TxtDLd0ZWgAWx6uZfH9xWGYB8GdOWsnJtXudJDjjRKGP1TMTQKMvjDV7VMQoLM+/DMtrgBEkGS/ka
+	n1kwGkobT0h0WPo0ry2bqr0uhDFKHauijFNNcS04U55HF34YEWFuxqR/uArb9d58OY1E2cQQSq8e2
+	ER0FdWHTo+hPh8aqNLwyeFgqc0oRHJODkfXVRCRepgk8bZWqzvOt2jC+GJjXCLmBCCf6Au11nOW1X
+	kW0UVG8JLSMRDbRj53/g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hfIcC-0007jp-JO; Mon, 24 Jun 2019 06:38:08 +0000
-Received: from szxga05-in.huawei.com ([45.249.212.191] helo=huawei.com)
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hfIby-0007j9-DA
- for linux-arm-kernel@lists.infradead.org; Mon, 24 Jun 2019 06:37:57 +0000
-Received: from DGGEMS412-HUB.china.huawei.com (unknown [172.30.72.59])
- by Forcepoint Email with ESMTP id B9BD876A78035E795A4A;
- Mon, 24 Jun 2019 14:37:30 +0800 (CST)
-Received: from [127.0.0.1] (10.177.223.23) by DGGEMS412-HUB.china.huawei.com
- (10.3.19.212) with Microsoft SMTP Server id 14.3.439.0; Mon, 24 Jun 2019
- 14:37:29 +0800
-Subject: Re: [PATCH v5] arm64: kernel: implement fast refcount checking
-To: Ard Biesheuvel <ard.biesheuvel@linaro.org>,
- <linux-arm-kernel@lists.infradead.org>
-References: <20190619105431.2630-1-ard.biesheuvel@linaro.org>
-From: Hanjun Guo <guohanjun@huawei.com>
-Message-ID: <abc0e649-ed32-ac76-434e-632dee53980c@huawei.com>
-Date: Mon, 24 Jun 2019 14:37:15 +0800
-User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:52.0) Gecko/20100101
- Thunderbird/52.5.0
+	id 1hfId6-000801-Qj; Mon, 24 Jun 2019 06:39:04 +0000
+Received: from 178.115.242.59.static.drei.at ([178.115.242.59]
+ helo=mail.osadl.at)
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hfIcr-0007yt-KX; Mon, 24 Jun 2019 06:38:52 +0000
+Received: by mail.osadl.at (Postfix, from userid 1001)
+ id C37BB5C02F0; Mon, 24 Jun 2019 08:37:18 +0200 (CEST)
+Date: Mon, 24 Jun 2019 08:37:18 +0200
+From: Nicholas Mc Guire <der.herr@hofr.at>
+To: Christophe JAILLET <christophe.jaillet@wanadoo.fr>
+Subject: Re: [PATCH] staging: bcm2835-camera: Avoid apotential sleep while
+ holding a spin_lock
+Message-ID: <20190624063718.GD31913@osadl.at>
+References: <20190624053351.5217-1-christophe.jaillet@wanadoo.fr>
 MIME-Version: 1.0
-In-Reply-To: <20190619105431.2630-1-ard.biesheuvel@linaro.org>
-Content-Language: en-US
-X-Originating-IP: [10.177.223.23]
-X-CFilter-Loop: Reflected
+Content-Disposition: inline
+In-Reply-To: <20190624053351.5217-1-christophe.jaillet@wanadoo.fr>
+User-Agent: Mutt/1.5.23 (2014-03-12)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190623_233756_019981_EFC3997E 
-X-CRM114-Status: GOOD (  16.80  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20190623_233849_862191_A00FB1DA 
+X-CRM114-Status: GOOD (  14.59  )
+X-Spam-Score: 0.3 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [45.249.212.191 listed in list.dnswl.org]
+ 0.0 TVD_RCVD_IP            Message was received from an IP address
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -66,73 +60,69 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Kees Cook <keescook@chromium.org>,
- Catalin Marinas <catalin.marinas@arm.com>, Jan Glauber <jglauber@marvell.com>,
- Will Deacon <will.deacon@arm.com>,
- Jayachandran Chandrasekharan Nair <jnair@marvell.com>,
- Linus Torvalds <torvalds@linux-foundation.org>
+Cc: stefan.wahren@i2se.com, devel@driverdev.osuosl.org, f.fainelli@gmail.com,
+ sbranden@broadcom.com, tuomas.tynkkynen@iki.fi, rjui@broadcom.com,
+ hofrat@osadl.org, kernel-janitors@vger.kernel.org,
+ linux-kernel@vger.kernel.org, tobias.buettner@fau.de, eric@anholt.net,
+ bcm-kernel-feedback-list@broadcom.com, linux-rpi-kernel@lists.infradead.org,
+ gregkh@linuxfoundation.org, inf.braun@fau.de,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 2019/6/19 18:54, Ard Biesheuvel wrote:
-> This adds support to arm64 for fast refcount checking, as contributed
-> by Kees for x86 based on the implementation by grsecurity/PaX.
-> 
-> The general approach is identical: the existing atomic_t helpers are
-> cloned for refcount_t, with the arithmetic instruction modified to set
-> the PSTATE flags, and one or two branch instructions added that jump to
-> an out of line handler if overflow, decrement to zero or increment from
-> zero are detected.
-> 
-> One complication that we have to deal with on arm64 is the fact that
-> it has two atomics implementations: the original LL/SC implementation
-> using load/store exclusive loops, and the newer LSE one that does mostly
-> the same in a single instruction. So we need to clone some parts of
-> both for the refcount handlers, but we also need to deal with the way
-> LSE builds fall back to LL/SC at runtime if the hardware does not
-> support it.
-> 
-> As is the case with the x86 version, the performance gain is substantial
-> (ThunderX2 @ 2.2 GHz, using LSE), even though the arm64 implementation
-> incorporates an add-from-zero check as well:
-> 
-> perf stat -B -- echo ATOMIC_TIMING >/sys/kernel/debug/provoke-crash/DIRECT
-> 
->       116252672661      cycles                    #    2.207 GHz
-> 
->       52.689793525 seconds time elapsed
-> 
-> perf stat -B -- echo REFCOUNT_TIMING >/sys/kernel/debug/provoke-crash/DIRECT
-> 
->       127060259162      cycles                    #    2.207 GHz
-> 
->       57.243690077 seconds time elapsed
-> 
-> For comparison, the numbers below were captured using CONFIG_REFCOUNT_FULL,
-> which uses the validation routines implemented in C using cmpxchg():
-> 
-> perf stat -B -- echo REFCOUNT_TIMING >/sys/kernel/debug/provoke-crash/DIRECT
-> 
->  Performance counter stats for 'cat /dev/fd/63':
-> 
->       191057942484      cycles                    #    2.207 GHz
-> 
->       86.568269904 seconds time elapsed
-> 
-> As a bonus, this code has been found to perform significantly better on
-> systems with many CPUs, due to the fact that it no longer relies on the
-> load/compare-and-swap combo performed in a tight loop, which is what we
-> emit for cmpxchg() on arm64.
+On Mon, Jun 24, 2019 at 07:33:51AM +0200, Christophe JAILLET wrote:
+> Do not allocate memory with GFP_KERNEL when holding a spin_lock, it may
+> sleep. Use GFP_NOWAIT instead.
+>
 
-It helps my 96 cores ARM64 server as well,
+checking for this in the rest of the kernel with a cocci spatch
+<snip>
+virtual report
 
-Tested-by: Hanjun Guo <guohanjun@huawei.com>
+@nonatomic@
+position p;
+identifier var;
+@@
 
-Thanks
-Hanjun
+  spin_lock(...)
+  ... when != spin_unlock(...)
+* var = idr_alloc@p(...,GFP_KERNEL);
+  ... when != spin_unlock(...)
+  spin_unlock(...);
+<snip>
+this seems to be the only instance of this specific problem.
 
+> Fixes: 950fd867c635 ("staging: bcm2835-camera: Replace open-coded idr with a struct idr.")
+
+The GFP_KERNEL actually was there befor this patch so not sure if this Fixes
+ref is correct - I think the GFP_KERNEL was introduced in:
+4e6bafdfb9f3 ("staging: bcm2835_camera: Use a mapping table for context field of mmal_msg_header")
+
+> Signed-off-by: Christophe JAILLET <christophe.jaillet@wanadoo.fr>
+Reviewed-by: Nicholas Mc Guire <hofrat@osadl.org>
+
+> ---
+>  drivers/staging/vc04_services/bcm2835-camera/mmal-vchiq.c | 2 +-
+>  1 file changed, 1 insertion(+), 1 deletion(-)
+> 
+> diff --git a/drivers/staging/vc04_services/bcm2835-camera/mmal-vchiq.c b/drivers/staging/vc04_services/bcm2835-camera/mmal-vchiq.c
+> index 16af735af5c3..438d548c6e24 100644
+> --- a/drivers/staging/vc04_services/bcm2835-camera/mmal-vchiq.c
+> +++ b/drivers/staging/vc04_services/bcm2835-camera/mmal-vchiq.c
+> @@ -186,7 +186,7 @@ get_msg_context(struct vchiq_mmal_instance *instance)
+>  	 */
+>  	spin_lock(&instance->context_map_lock);
+>  	handle = idr_alloc(&instance->context_map, msg_context,
+> -			   0, 0, GFP_KERNEL);
+> +			   0, 0, GFP_NOWAIT);
+>  	spin_unlock(&instance->context_map_lock);
+>  
+>  	if (handle < 0) {
+> -- 
+> 2.20.1
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
