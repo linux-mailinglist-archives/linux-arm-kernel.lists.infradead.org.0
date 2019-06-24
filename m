@@ -2,74 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6929B5188B
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Jun 2019 18:25:02 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 44E28518AD
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Jun 2019 18:29:21 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=zNdd4TZQIfmiFFHBoG1pF5TY4hqBhmOby3lbest6cas=; b=u7MVfgKWTSYrU1
-	n0+pbaDR5a7U2N6JAAEnzl7SMRArAnBSx9tJTZ+OfVU50NafZjtRRdVfxh1+LoaRx8Ra8CEwUF78V
-	cI2YIWNxO75avAleL5ua3tbUhqKvRDfq+9p2hOtWRN54Y47OCatVrRFQ9GVhNeuB2+x7DaFdRXSz6
-	jSTyRSeLWaAuMm5nhZVkzQ6UzGmgtnh4knvoZyQvCBaP8NuONoB6le0dV7KDOT+P/S3KZ7lxI5DPZ
-	koyqjYJoIT964RIfkoOSRbawk5PpY2gEOkClP8Qa8EI+NykkMzXMdqYfAkYoMs0pgcgwrDxjSl7RI
-	gO0oCz1O/okqXxJWRIhg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=NhG6Mkbwj55UHi6JT6PcM7uiNUNX9WTJfRS1+UiVaoI=; b=EE1IYoh6PJNVYSZO3mXcSAFW3
+	JhI25eCCHl+FObNbzOSxWhBZXNWziBM+amsr0bMo1kaDdQSxphKFThIp+rYhZaaGb8gYlpk3eNkjx
+	UxEpvQPx3U3pLupT/XIRkcKZXgnL0GY0R5stdA0NvXIECjfmtudBuYSrJEYY7P/fDHA3z/P56ug1H
+	MERfdRzcmSBza8M6P4gTxJmCi3GROxEj6kLz/jqlWAeaY90O1q+Fe7dol499jA5/z7VBLHA5YMzWr
+	fwO+CfXbrZovVdzsIZw3k5PE/pzypvdzJI//JiZBT/Viw4V4PNXYolbk4e0GB01D801VeSliK1q7b
+	OkBmdPVbA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hfRm6-0003wP-Ba; Mon, 24 Jun 2019 16:24:58 +0000
-Received: from vps0.lunn.ch ([185.16.172.187])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hfRlt-0003vN-12
- for linux-arm-kernel@lists.infradead.org; Mon, 24 Jun 2019 16:24:46 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=lunn.ch;
- s=20171124; h=In-Reply-To:Content-Type:MIME-Version:References:Message-ID:
- Subject:Cc:To:From:Date:Sender:Reply-To:Content-Transfer-Encoding:Content-ID:
- Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
- :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
- List-Post:List-Owner:List-Archive;
- bh=fbuOEGD6/p3KGLV+SsGx2RFhZqUs0c/4MZswvhidVf4=; b=D2uGrxuEdFzruVC29WTvIkFpCi
- bN7wchEmq/rvf1zT2YMyFEcF27QgmyFgbSsivPFALpo53XmgCKP0xOg5aL79oIMMZZJW+bXPWIN2q
- Z4a5M+Mh2wBSH/YuO3dWLF0f0wHNGqfTwjrejeyYIudJJWMuetxRZA9BNAr3M/brhG30=;
-Received: from andrew by vps0.lunn.ch with local (Exim 4.89)
- (envelope-from <andrew@lunn.ch>)
- id 1hfRlf-0006oM-P5; Mon, 24 Jun 2019 18:24:31 +0200
-Date: Mon, 24 Jun 2019 18:24:31 +0200
-From: Andrew Lunn <andrew@lunn.ch>
-To: "Allan W. Nielsen" <allan.nielsen@microchip.com>
-Subject: Re: [PATCH net-next 4/6] arm64: dts: fsl: ls1028a: Add Felix switch
- port DT node
-Message-ID: <20190624162431.GX31306@lunn.ch>
-References: <1561131532-14860-1-git-send-email-claudiu.manoil@nxp.com>
- <1561131532-14860-5-git-send-email-claudiu.manoil@nxp.com>
- <20190621164940.GL31306@lunn.ch>
- <VI1PR04MB4880D8F90BBCD30BF8A69C9696E00@VI1PR04MB4880.eurprd04.prod.outlook.com>
- <20190624115558.GA5690@piout.net> <20190624142625.GR31306@lunn.ch>
- <20190624152344.3bv46jjhhygo6zwl@lx-anielsen.microsemi.net>
+	id 1hfRqG-0005hV-Ln; Mon, 24 Jun 2019 16:29:16 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hfRq0-0005gx-QK
+ for linux-arm-kernel@lists.infradead.org; Mon, 24 Jun 2019 16:29:02 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id E8D2B360;
+ Mon, 24 Jun 2019 09:28:59 -0700 (PDT)
+Received: from [10.37.12.219] (unknown [10.37.12.219])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id C50113F71E;
+ Mon, 24 Jun 2019 09:28:57 -0700 (PDT)
+Subject: Re: [RFC PATCH v2 5/8] arm64/sve: Implement an helper to flush SVE
+ registers
+To: Dave Martin <Dave.Martin@arm.com>
+References: <20190613161656.20765-1-julien.grall@arm.com>
+ <20190613161656.20765-6-julien.grall@arm.com>
+ <20190621153302.GA2790@e103592.cambridge.arm.com>
+From: Julien Grall <julien.grall@arm.com>
+Message-ID: <20772a47-5cd3-0566-1e29-839e39961def@arm.com>
+Date: Mon, 24 Jun 2019 17:28:56 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.7.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190624152344.3bv46jjhhygo6zwl@lx-anielsen.microsemi.net>
-User-Agent: Mutt/1.5.23 (2014-03-12)
+In-Reply-To: <20190621153302.GA2790@e103592.cambridge.arm.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190624_092445_217847_12145103 
-X-CRM114-Status: GOOD (  21.38  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190624_092900_957894_F4926D63 
+X-CRM114-Status: GOOD (  19.89  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [185.16.172.187 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -81,58 +64,140 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- Alexandre Belloni <alexandre.belloni@bootlin.com>,
- "netdev@vger.kernel.org" <netdev@vger.kernel.org>,
- Alexandru Marginean <alexandru.marginean@nxp.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "UNGLinuxDriver@microchip.com" <UNGLinuxDriver@microchip.com>,
- Allan Nielsen <Allan.Nielsen@microsemi.com>,
- Claudiu Manoil <claudiu.manoil@nxp.com>, Rob Herring <robh+dt@kernel.org>,
- "David S . Miller" <davem@davemloft.net>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
+Cc: Anton.Kirilov@arm.com, catalin.marinas@arm.com, will.deacon@arm.com,
+ oleg@redhat.com, zhang.lei@jp.fujitsu.com, alex.bennee@linaro.org,
+ linux-arm-kernel@lists.infradead.org, Daniel.Kiss@arm.com
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Jun 24, 2019 at 05:23:45PM +0200, Allan W. Nielsen wrote:
-> Hi Andrew,
-> 
-> The 06/24/2019 16:26, Andrew Lunn wrote:
-> > > > Yeah, there are 2 ethernet controller ports (managed by the enetc driver) 
-> > > > connected inside the SoC via SGMII links to 2 of the switch ports, one of
-> > > > these switch ports can be configured as CPU port (with follow-up patches).
-> > > > 
-> > > > This configuration may look prettier on DSA, but the main restriction here
-> > > > is that the entire functionality is provided by the ocelot driver which is a
-> > > > switchdev driver.  I don't think it would be a good idea to copy-paste code
-> > > > from ocelot to a separate dsa driver.
-> > > > 
-> > > 
-> > > We should probably make the ocelot driver a DSA driver then...
-> > An important part of DSA is being able to direct frames out specific
-> > ports when they ingress via the CPU port. Does the silicon support
-> > this? At the moment, i think it is using polled IO.
-> 
-> That is supported, it requires a bit of initial configuration of the Chip, but
-> nothing big (I believe this configuration is part of Claudiu's change-set).
-> 
-> But how do you envision this done?
-> 
-> - Let the existing SwitchDev driver and the DSA driver use a set of common
->   functions.
-> - Convert the existing Ocelot driver from SwitchDev to DSA
-> - Fork (copy) the existing driver of Ocelot, and modify it as needed for the
->   Felix driver
-> 
-> My guess is the first one, but I would like to understand what you have in mind.
+Hi Dave,
 
-I don't know the various architectures the switch is used in. But it
-does seem like a core library, and then a switchdev wrapper for Ocelot
-and a DSA wrapper for Felix would make sense.
- 
-  Andrew
+On 6/21/19 4:33 PM, Dave Martin wrote:
+> On Thu, Jun 13, 2019 at 05:16:53PM +0100, Julien Grall wrote:
+>> Introduce a new helper that will zero all SVE registers but the first
+>> 128-bits of each vector.
+> 
+> Maybe mention that the helper will be used by a subsequent patch.  For
+> now, it's dead code.
+> 
+> Maybe also mention briefly what this will be used for: i.e., to avoid
+> the costly store/munge/reload sequences currently used by things like
+> do_sve_acc().
+
+How about the following commit message:
+
+"Introduce a new helper that will zero all SVE registers but the first 
+128-bits of each vector. This will be used in subsequent patch to avoid 
+the costly store/munge/reload sequences used in place such as do_sve_acc()."
+
+> 
+>> Signed-off-by: Julien Grall <julien.grall@arm.com>
+>>
+>> ---
+>>      Changes in v2:
+>>          - Fix typo in the commit title
+>> ---
+>>   arch/arm64/include/asm/fpsimd.h       |  3 +++
+>>   arch/arm64/include/asm/fpsimdmacros.h | 19 +++++++++++++++++++
+>>   arch/arm64/kernel/entry-fpsimd.S      |  7 +++++++
+>>   3 files changed, 29 insertions(+)
+>>
+>> diff --git a/arch/arm64/include/asm/fpsimd.h b/arch/arm64/include/asm/fpsimd.h
+>> index df62bbd33a9a..fda3544c9606 100644
+>> --- a/arch/arm64/include/asm/fpsimd.h
+>> +++ b/arch/arm64/include/asm/fpsimd.h
+>> @@ -83,6 +83,9 @@ static inline void *sve_pffr(struct thread_struct *thread)
+>>   extern void sve_save_state(void *state, u32 *pfpsr);
+>>   extern void sve_load_state(void const *state, u32 const *pfpsr,
+>>   			   unsigned long vq_minus_1);
+>> +
+>> +extern void sve_flush_live(void);
+>> +
+> 
+> We probably don't need the extra blank lines here... these operations
+> are all closely related low-level backend functions.
+
+Sure.
+
+> 
+>>   extern unsigned int sve_get_vl(void);
+>>   
+>>   struct arm64_cpu_capabilities;
+>> diff --git a/arch/arm64/include/asm/fpsimdmacros.h b/arch/arm64/include/asm/fpsimdmacros.h
+>> index 5e291d9c1ba0..a41ab337bf42 100644
+>> --- a/arch/arm64/include/asm/fpsimdmacros.h
+>> +++ b/arch/arm64/include/asm/fpsimdmacros.h
+>> @@ -175,6 +175,13 @@
+>>   		| ((\np) << 5)
+>>   .endm
+>>   
+>> +/* PFALSE P\np.B */
+>> +.macro _sve_pfalse np
+>> +	_sve_check_preg \np
+>> +	.inst	0x2518e400			\
+>> +		| (\np)
+>> +.endm
+>> +
+>>   .macro __for from:req, to:req
+>>   	.if (\from) == (\to)
+>>   		_for__body %\from
+>> @@ -209,6 +216,18 @@
+>>   921:
+>>   .endm
+>>   
+>> +/* Preserve the first 128-bits of Znz and zero the rest. */
+>> +.macro _sve_flush_z nz
+>> +	_sve_check_zreg \nz
+>> +	mov	v\nz\().16b, v\nz\().16b
+>> +.endm
+>> +
+>> +.macro sve_flush
+>> + _for n, 0, 31, _sve_flush_z	\n
+>> + _for n, 0, 15, _sve_pfalse	\n
+>> +		_sve_wrffr	0
+>> +.endm
+>> +
+>>   .macro sve_save nxbase, xpfpsr, nxtmp
+>>    _for n, 0, 31,	_sve_str_v	\n, \nxbase, \n - 34
+>>    _for n, 0, 15,	_sve_str_p	\n, \nxbase, \n - 16
+>> diff --git a/arch/arm64/kernel/entry-fpsimd.S b/arch/arm64/kernel/entry-fpsimd.S
+>> index 12d4958e6429..17121a51c41f 100644
+>> --- a/arch/arm64/kernel/entry-fpsimd.S
+>> +++ b/arch/arm64/kernel/entry-fpsimd.S
+>> @@ -57,4 +57,11 @@ ENTRY(sve_get_vl)
+>>   	_sve_rdvl	0, 1
+>>   	ret
+>>   ENDPROC(sve_get_vl)
+>> +
+>> +/* Zero all SVE registers but the first 128-bits of each vector */
+>> +ENTRY(sve_flush_live)
+>> +	sve_flush
+>> +	ret
+>> +ENDPROC(sve_flush_live)
+>> +
+>>   #endif /* CONFIG_ARM64_SVE */
+> 
+> The extra blank line makes this more readable, but in the interests
+> of symmetry can you also add a blank after the corresponding #ifdef?
+
+I would prefer to do this change in a separate patch. So I will drop the 
+newline here.
+
+> 
+> [...]
+> 
+> With those addressed as appropriate,
+> 
+> Reviewed-by: Dave Martin <Dave.Martin@arm.com>
+
+Thank you!
+
+Cheers,
+
+-- 
+Julien Grall
 
 _______________________________________________
 linux-arm-kernel mailing list
