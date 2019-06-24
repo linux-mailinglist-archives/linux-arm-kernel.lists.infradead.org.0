@@ -2,54 +2,89 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BBE9550F50
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Jun 2019 16:56:10 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8492650F75
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Jun 2019 17:01:33 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=t2N7+f3jNaFbt0MX09Ag9tdgLuUCNgjSmd9BOTHcdVw=; b=Nqw7JVWC2Bn05W
-	Q7nNO0T3Hu+NufHniMBmH5VHzD3/Atr9q7XMU7LJz6rl3XmzDxLv/LkssdsFIKF9Q+SIgX1vtQTHA
-	y5zI3wyRibs9JJQnOeTFpr6OX4TXqK8X3gzVBR3BERuEh2+oDQWBXQ9fSmvx3omPHriLV5y7RKEhw
-	4dk2uX9l7GNjt4iww8GTAW1a4+yCGhhBhVWJrLecMFgodi8Lqng65wIE8VPRLDqiuJlGVVoJ6vtYf
-	k3OOdU4eA0pdF6ZR8cVt6uRO/uMcjaGnsrer2VkboKxcUyTa8+35hgR4afQ9a3sGX+fl4g4oBWzk1
-	mD4vjYMywCK7exEb0aHw==;
+	List-Owner; bh=REi5M8vwUV4tPBDlsccAxSCIPTgNZCgQdxIazxc8U+E=; b=VTKn0bXrYef7wP
+	rHrtxZNqn6ZJQX77RtyIuaccv1FoIP8H1NTWrwq7gGPvFFNguLUQop8ki39WzN1BqstZpeP/X1hOt
+	3R2OlBQDqUrG3XY48yIjhJEQFFJ5JwgXjuKdcpGLjv0lTYLgI9M9MgAzMU7ROIGOqTEVq3kSmU3Kn
+	7egxavx32hm4dBJJ98ZsSi76vhcnQdtvxk/KXVEdfPTQ1s7r8Ix00/JyaEHh1zqNwefIkCfEs18Wa
+	dxGQ9v6zn9xx4S9bOtn75rupP9X8l4qr7x5PRW7mWZJZxGNUv4lbbfpUOT4VfvdNObuNawt6lVZhk
+	098kS3yqQu57OL2JYliQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hfQO5-0006S4-RK; Mon, 24 Jun 2019 14:56:05 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hfQNt-0006Ra-88
- for linux-arm-kernel@lists.infradead.org; Mon, 24 Jun 2019 14:55:55 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id B7A0E344;
- Mon, 24 Jun 2019 07:55:52 -0700 (PDT)
-Received: from arrakis.emea.arm.com (arrakis.cambridge.arm.com [10.1.196.78])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
- B368D3F71E; Mon, 24 Jun 2019 07:55:51 -0700 (PDT)
-Date: Mon, 24 Jun 2019 15:55:49 +0100
-From: Catalin Marinas <catalin.marinas@arm.com>
-To: Ard Biesheuvel <ard.biesheuvel@linaro.org>
-Subject: Re: [RFC PATCH] acpi/arm64: ignore 5.1 FADTs that are reported as 5.0
-Message-ID: <20190624145549.GF29120@arrakis.emea.arm.com>
-References: <20190619121831.7614-1-ard.biesheuvel@linaro.org>
+	id 1hfQTJ-0000BP-OU; Mon, 24 Jun 2019 15:01:29 +0000
+Received: from mail-pf1-x443.google.com ([2607:f8b0:4864:20::443])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hfQSq-0008W0-OX
+ for linux-arm-kernel@lists.infradead.org; Mon, 24 Jun 2019 15:01:02 +0000
+Received: by mail-pf1-x443.google.com with SMTP id 19so7666062pfa.4
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 24 Jun 2019 08:01:00 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to;
+ bh=ZH0KsEpqEXiZL11grL/nW8IzWOxozO/nFecO0TNWzZg=;
+ b=KQ2654w6YgnMZs2At+Zd89XQIqIuYR8jlquNCWJJuIXpWD/HlSd4ZBjLxPQsxGeT2n
+ QOBGSpQkVzrAWhjdNm3L175i3EwkQyprQmoxs6iyZjw9hV5O7BunNQVJJ3RYGgog4Rsr
+ YQVv/8/84su3okC1IPWa+LhVmvUHm4bqUkhyE=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to;
+ bh=ZH0KsEpqEXiZL11grL/nW8IzWOxozO/nFecO0TNWzZg=;
+ b=GoCf1K/kcxJYYAWW3TS3ERNJXwUj6/g9YPnzqQX4zTfien5PRvtQw7ojHDuxgh+Uia
+ SfKJetBeVsk5ObWSKgd8ThFnmXRWedZBeNxu3lM6hkCqUEUZnT3CkklbP4zKAcGsSljn
+ Ep0TkxeG8/tqMgiJuLf321h5BjrpZ4BbwCpfnQi2KbsA4vUaqNgNMYi4CEUiADZHVk/3
+ 47rLVnuhFwJt2LPWIr4cYh69feQef/LDx9044M83sZw1GHaDg+U3MUCcAjR5ojGLFDee
+ qMShbeGtP+O9HGIsDbfeFOkpiqY5MNpFfDEP2RBNNaTJWozZrj5V5HJno+c5g1zdRslu
+ /GkA==
+X-Gm-Message-State: APjAAAXIZFsuLkEK7aatRha+xVg2c2mbdjdYq6tobfIRbmmfTvsVW16K
+ LZJrXJwtD9v+3FVAamQsoe+tjQ==
+X-Google-Smtp-Source: APXvYqyXA9qWckeMWJ1FYgTNxW3Kl/SaHQcwWPkv+8Ov9g+q8rZ/yCmpPgqZaQwQyexxau4NGmLb3Q==
+X-Received: by 2002:a17:90a:338b:: with SMTP id
+ n11mr24999228pjb.21.1561388459522; 
+ Mon, 24 Jun 2019 08:00:59 -0700 (PDT)
+Received: from www.outflux.net (smtp.outflux.net. [198.145.64.163])
+ by smtp.gmail.com with ESMTPSA id e188sm1978374pfh.99.2019.06.24.08.00.58
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Mon, 24 Jun 2019 08:00:58 -0700 (PDT)
+Date: Mon, 24 Jun 2019 08:00:57 -0700
+From: Kees Cook <keescook@chromium.org>
+To: Andrey Konovalov <andreyknvl@google.com>
+Subject: Re: [PATCH v18 09/15] drm/amdgpu: untag user pointers
+Message-ID: <201906240800.5677E3CF@keescook>
+References: <cover.1561386715.git.andreyknvl@google.com>
+ <1d036fc5bec4be059ee7f4f42bf7417dc44651dd.1561386715.git.andreyknvl@google.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190619121831.7614-1-ard.biesheuvel@linaro.org>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <1d036fc5bec4be059ee7f4f42bf7417dc44651dd.1561386715.git.andreyknvl@google.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190624_075553_330300_5A20EDA4 
-X-CRM114-Status: UNSURE (   8.72  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190624_080100_824079_36ABA328 
+X-CRM114-Status: GOOD (  21.19  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:443 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -61,29 +96,96 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: lorenzo.pieralisi@arm.com, will.deacon@arm.com, leif.lindholm@linaro.org,
- linux-acpi@vger.kernel.org, lee.jones@linaro.org,
- linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>, kvm@vger.kernel.org,
+ Szabolcs Nagy <Szabolcs.Nagy@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will.deacon@arm.com>,
+ dri-devel@lists.freedesktop.org, linux-mm@kvack.org,
+ Khalid Aziz <khalid.aziz@oracle.com>, linux-kselftest@vger.kernel.org,
+ Felix Kuehling <Felix.Kuehling@amd.com>,
+ Vincenzo Frascino <vincenzo.frascino@arm.com>,
+ Jacob Bramley <Jacob.Bramley@arm.com>, Leon Romanovsky <leon@kernel.org>,
+ linux-rdma@vger.kernel.org, amd-gfx@lists.freedesktop.org,
+ Christoph Hellwig <hch@infradead.org>, Jason Gunthorpe <jgg@ziepe.ca>,
+ Dmitry Vyukov <dvyukov@google.com>, Dave Martin <Dave.Martin@arm.com>,
+ Evgeniy Stepanov <eugenis@google.com>, linux-media@vger.kernel.org,
+ Kevin Brodsky <kevin.brodsky@arm.com>,
+ Ruben Ayrapetyan <Ruben.Ayrapetyan@arm.com>,
+ Ramana Radhakrishnan <Ramana.Radhakrishnan@arm.com>,
+ Alex Williamson <alex.williamson@redhat.com>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>,
+ linux-arm-kernel@lists.infradead.org, Kostya Serebryany <kcc@google.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Yishai Hadas <yishaih@mellanox.com>, linux-kernel@vger.kernel.org,
+ Jens Wiklander <jens.wiklander@linaro.org>, Lee Smith <Lee.Smith@arm.com>,
+ Alexander Deucher <Alexander.Deucher@amd.com>,
+ Andrew Morton <akpm@linux-foundation.org>, enh <enh@google.com>,
+ Robin Murphy <robin.murphy@arm.com>,
+ Christian Koenig <Christian.Koenig@amd.com>,
+ Luc Van Oostenryck <luc.vanoostenryck@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Jun 19, 2019 at 02:18:31PM +0200, Ard Biesheuvel wrote:
-> Some Qualcomm Snapdragon based laptops built to run Microsoft Windows
-> are clearly ACPI 5.1 based, given that that is the first ACPI revision
-> that supports ARM, and introduced the FADT 'arm_boot_flags' field,
-> which has a non-zero field on those systems.
+On Mon, Jun 24, 2019 at 04:32:54PM +0200, Andrey Konovalov wrote:
+> This patch is a part of a series that extends kernel ABI to allow to pass
+> tagged user pointers (with the top byte set to something else other than
+> 0x00) as syscall arguments.
 > 
-> So in these cases, infer from the ARM boot flags that the FADT must be
-> 5.1 or later, and treat it as 5.1.
+> In amdgpu_gem_userptr_ioctl() and amdgpu_amdkfd_gpuvm.c/init_user_pages()
+> an MMU notifier is set up with a (tagged) userspace pointer. The untagged
+> address should be used so that MMU notifiers for the untagged address get
+> correctly matched up with the right BO. This patch untag user pointers in
+> amdgpu_gem_userptr_ioctl() for the GEM case and in amdgpu_amdkfd_gpuvm_
+> alloc_memory_of_gpu() for the KFD case. This also makes sure that an
+> untagged pointer is passed to amdgpu_ttm_tt_get_user_pages(), which uses
+> it for vma lookups.
 > 
-> Signed-off-by: Ard Biesheuvel <ard.biesheuvel@linaro.org>
+> Suggested-by: Felix Kuehling <Felix.Kuehling@amd.com>
+> Acked-by: Felix Kuehling <Felix.Kuehling@amd.com>
+> Signed-off-by: Andrey Konovalov <andreyknvl@google.com>
 
-Queued for 5.3. Thanks.
+Reviewed-by: Kees Cook <keescook@chromium.org>
+
+-Kees
+
+> ---
+>  drivers/gpu/drm/amd/amdgpu/amdgpu_amdkfd_gpuvm.c | 2 +-
+>  drivers/gpu/drm/amd/amdgpu/amdgpu_gem.c          | 2 ++
+>  2 files changed, 3 insertions(+), 1 deletion(-)
+> 
+> diff --git a/drivers/gpu/drm/amd/amdgpu/amdgpu_amdkfd_gpuvm.c b/drivers/gpu/drm/amd/amdgpu/amdgpu_amdkfd_gpuvm.c
+> index a6e5184d436c..5d476e9bbc43 100644
+> --- a/drivers/gpu/drm/amd/amdgpu/amdgpu_amdkfd_gpuvm.c
+> +++ b/drivers/gpu/drm/amd/amdgpu/amdgpu_amdkfd_gpuvm.c
+> @@ -1108,7 +1108,7 @@ int amdgpu_amdkfd_gpuvm_alloc_memory_of_gpu(
+>  		alloc_flags = 0;
+>  		if (!offset || !*offset)
+>  			return -EINVAL;
+> -		user_addr = *offset;
+> +		user_addr = untagged_addr(*offset);
+>  	} else if (flags & ALLOC_MEM_FLAGS_DOORBELL) {
+>  		domain = AMDGPU_GEM_DOMAIN_GTT;
+>  		alloc_domain = AMDGPU_GEM_DOMAIN_CPU;
+> diff --git a/drivers/gpu/drm/amd/amdgpu/amdgpu_gem.c b/drivers/gpu/drm/amd/amdgpu/amdgpu_gem.c
+> index d4fcf5475464..e91df1407618 100644
+> --- a/drivers/gpu/drm/amd/amdgpu/amdgpu_gem.c
+> +++ b/drivers/gpu/drm/amd/amdgpu/amdgpu_gem.c
+> @@ -287,6 +287,8 @@ int amdgpu_gem_userptr_ioctl(struct drm_device *dev, void *data,
+>  	uint32_t handle;
+>  	int r;
+>  
+> +	args->addr = untagged_addr(args->addr);
+> +
+>  	if (offset_in_page(args->addr | args->size))
+>  		return -EINVAL;
+>  
+> -- 
+> 2.22.0.410.gd8fdbe21b5-goog
+> 
 
 -- 
-Catalin
+Kees Cook
 
 _______________________________________________
 linux-arm-kernel mailing list
