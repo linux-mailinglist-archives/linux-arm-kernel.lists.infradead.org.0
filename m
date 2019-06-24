@@ -2,92 +2,63 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 90A0850C2F
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Jun 2019 15:43:17 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 77D9B50C39
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Jun 2019 15:44:06 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Message-ID:From:To:Subject:MIME-Version
+	:References:In-Reply-To:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=xt97gb44KQ7WG3cv1lxmKqIE52eM9A9Lww4gxF+EHSo=; b=AjQNHN2kFdw7Uq
-	3BSeX0PrBDFmj7b/2YwenXYR4lMtzp6RF8UUMad/IdT4AmSdLHBaysdxjaPEiyZz3movFH4BduK1V
-	DoEPqvNe820gngQQhe0rVvAPm9mSiAcdxpvR+N4kwjUCG5aaQcGPwe0jDxK9lTGbZXne6c9Sv/ZXe
-	y2HHIp4kuWoUh4MiT7PFiJKXwLWiKzUkFGODxy6cNwGzBpAvxTRqnkTkyssqO70anvmvM5GlYoP+A
-	Vh7gJdulbZY9AUSjpKBxZ8vOMqNBgUp9bW/brCIQYsAO8q31wuiAA1z3KVfxN7jPJy8DmcD3oBxIq
-	W9t0HPxLmuSHvuu3xSSg==;
+	List-Owner; bh=aNDGL6AWE1rdrj234xtawRzuJbLBBTx/k/15Jf3ymPY=; b=C2zcI/L+QS9MnO
+	2GLCH8ZAjJyg8FCM4N79Rp185kYfrIuwlDkAB1eug0TDOyA+KcmfBXBzrdz6wHmv0guO4Fu0EckMu
+	5DQtMkc2YqwrMRpdOP4FtyXYzNTEZVGjTWOZCBoUm26GRYsT+ijeP8EYm9oJaAS0uTe9w0qpXXgKG
+	EvcBHmpChd7DBHbFXrbs2rpZZhJXwwzteXBO9HHpjY2RglnSsx6548aw5V1n+AyRUj6H77saWlHMh
+	Tkmcb3vHOyBaIs1WIENIdHBTJxqANMcWKSSAvfmp/EUfw9iw7IYZroi+PMnFN4xFCYxzYiZA1MqpS
+	0azFhFlYCrVngM6jS/hA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hfPFZ-0006xe-Nn; Mon, 24 Jun 2019 13:43:13 +0000
-Received: from mail-io1-xd42.google.com ([2607:f8b0:4864:20::d42])
+	id 1hfPGP-0007FR-3w; Mon, 24 Jun 2019 13:44:05 +0000
+Received: from haggis.mythic-beasts.com ([2a00:1098:0:86:1000:0:2:1])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hfPFM-0006oS-WA
- for linux-arm-kernel@lists.infradead.org; Mon, 24 Jun 2019 13:43:02 +0000
-Received: by mail-io1-xd42.google.com with SMTP id n5so2134271ioc.7
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 24 Jun 2019 06:43:00 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=JAY+HO+se6M27BJLGy2WaRXVtQjt3tup0p+M/AykcYU=;
- b=WqahhA0vGT09ygQXdubtYD5Lz8cEW9fjhcYm97RgfF6N2/isRXcUjN3KMzuLlAScL2
- uB1+yrJlpzeAGIVXLqeyKk4Vv85+P8jeJFXi+iruawOOdanDNRNg8aoHp1CPiDmlYVSC
- 6U6VpETeSl0kXNREKCfsI8At3rHRNCu0EpJHK/dETrHs2ALcqFSRc3oLzsWKipgN8xM/
- T1+lJaRW9mkfN/FM8N2bu1xaMckb8WFtWM0ymwCaaUbnCX6j5Wl3/3Fcu7P6cZBagDZm
- qF6gd2YkmuYRFi1rjW+ke9AcQTdaKKhb/17oQHB4k5i+20d0/O1EfWR42JOMSVp5noas
- SpKg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=JAY+HO+se6M27BJLGy2WaRXVtQjt3tup0p+M/AykcYU=;
- b=ALr20y0uRUGKRoIAG56nNtMzLiRSFrk/iYiwd8ZTXj/kAovnwypqaeIH3tMujWw27T
- 2NiRh3AqC0A1/qvvkajt6IA5ODgM5+6/TuQBbBZ9xlCiwnBDyN0ifuf3fm2bGQkwfeAZ
- 51/bU1DJOdaByOXmF7H90n2OV9gSRvVJyPxZD1XRHeA9s9XMJeJ7gKqn041ATSx4kLhs
- 4/dP6mqkE2tl1PGOX2plAoQ6wLRHPjB1120inocy9vr09wX9/E/pvZnTlQiyDULvO9xS
- 2wUic7LIi65dqY35PSrBKeKoUeMKIW4nNekEJLrdnEoYarpnfNSk7pYfXxkJpYY6Y+jz
- gKPA==
-X-Gm-Message-State: APjAAAUamQpLqEShPs06EXqfKIKNNyzXxdgqMDJ+40yQGMDSTH6x4RPJ
- htqQ9xIgSC+ZrxyiEgcTF0KOla9+fi/OMbuvs814/VHM
-X-Google-Smtp-Source: APXvYqypl0IrSyDO/f7SI42d4NpFHa/7OZX0jXNbFpUASMxwh2fx0mJgfs/qVOYaLSUhLwF6DwSrz304TPAq9G/BjWs=
-X-Received: by 2002:a5e:c30f:: with SMTP id a15mr8320747iok.246.1561383779652; 
- Mon, 24 Jun 2019 06:42:59 -0700 (PDT)
+ id 1hfPGB-0007F8-Oz
+ for linux-arm-kernel@lists.infradead.org; Mon, 24 Jun 2019 13:43:53 +0000
+Received: from [199.195.250.187] (port=58237 helo=hermes.aosc.io)
+ by haggis.mythic-beasts.com with esmtpsa
+ (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <icenowy@aosc.io>)
+ id 1hfPG1-0000Mc-AT; Mon, 24 Jun 2019 14:43:46 +0100
+Received: from localhost (localhost [127.0.0.1]) (Authenticated sender:
+ icenowy@aosc.io)
+ by hermes.aosc.io (Postfix) with ESMTPSA id F0E2A6CACE;
+ Mon, 24 Jun 2019 13:43:30 +0000 (UTC)
+Date: Mon, 24 Jun 2019 21:43:23 +0800
+In-Reply-To: <20190624124301.chwhfalk5o53fm5x@flea>
+References: <20190623043801.14040-1-icenowy@aosc.io>
+ <20190623043801.14040-10-icenowy@aosc.io>
+ <20190624124301.chwhfalk5o53fm5x@flea>
 MIME-Version: 1.0
-References: <20190621155845.7079-1-krzk@kernel.org>
- <20190621155845.7079-3-krzk@kernel.org>
- <CGME20190623160226epcas2p3449814deb1faf7bf939481e6d4da2b86@epcas2p3.samsung.com>
- <CANAwSgTFQo8wL5s-djwPXFFOLtTHvRQif6234kFC=23PwMhuEQ@mail.gmail.com>
- <d94a2f99-fb99-c238-7011-9bbb4c0cd90f@samsung.com>
- <CAJKOXPeXELUjsuW9eyGuRj56067qnL-J2Lt4U42mYiyx=X+F_Q@mail.gmail.com>
- <2f58b63e-adf1-7935-8849-f311dc991b84@samsung.com>
-In-Reply-To: <2f58b63e-adf1-7935-8849-f311dc991b84@samsung.com>
-From: Anand Moon <linux.amoon@gmail.com>
-Date: Mon, 24 Jun 2019 19:12:46 +0530
-Message-ID: <CANAwSgTymg=u8oJy4bOoREpY1DvVqav=FfdizumeUJMYhntKaQ@mail.gmail.com>
-Subject: Re: [PATCH v2 3/4] ARM: dts: exynos: Add regulator suspend
- configuration to Odroid XU3/XU4/HC1 family
-To: Marek Szyprowski <m.szyprowski@samsung.com>
+Subject: Re: [PATCH v3 9/9] ARM: dts: sun8i: s3: add devicetree for Lichee
+ zero plus w/ S3
+To: linux-arm-kernel@lists.infradead.org,
+ Maxime Ripard <maxime.ripard@bootlin.com>
+From: Icenowy Zheng <icenowy@aosc.io>
+Message-ID: <1E6AB747-5A4C-4515-A0EB-F0E89F520CF7@aosc.io>
+X-BlackCat-Spam-Score: 14
+X-Spam-Status: No, score=1.4
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190624_064301_068954_8FA63AC7 
-X-CRM114-Status: GOOD (  18.76  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190624_064351_810176_12D3A24F 
+X-CRM114-Status: GOOD (  16.41  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:d42 listed in]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [2a00:1098:0:86:1000:0:2:1 listed in]
  [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (linux.amoon[at]gmail.com)
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -99,96 +70,77 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree <devicetree@vger.kernel.org>,
- "linux-samsung-soc@vger.kernel.org" <linux-samsung-soc@vger.kernel.org>,
- Linux Kernel <linux-kernel@vger.kernel.org>,
- Krzysztof Kozlowski <krzk@kernel.org>, Kukjin Kim <kgene@kernel.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: devicetree@vger.kernel.org, Linus Walleij <linus.walleij@linaro.org>,
+ linux-sunxi@googlegroups.com, linux-kernel@vger.kernel.org,
+ linux-gpio@vger.kernel.org, Chen-Yu Tsai <wens@csie.org>,
+ Rob Herring <robh+dt@kernel.org>, linux-clk@vger.kernel.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Marek / Krzysztof,
-
-On Mon, 24 Jun 2019 at 14:31, Marek Szyprowski <m.szyprowski@samsung.com> wrote:
->
-> Hi Krzysztof,
->
-> On 2019-06-24 09:41, Krzysztof Kozlowski wrote:
-> > On Mon, 24 Jun 2019 at 09:20, Marek Szyprowski <m.szyprowski@samsung.com> wrote:
-> >> On 2019-06-23 18:02, Anand Moon wrote:
-> >>> Thanks for this patch. Please add my
-> >>>
-> >>> Tested-by: Anand Moon <linux.amoon@gmail.com>
-> >>>
-> >>> [snip]
-> >>>
-> >>> Could you integrate below small changes into this patch.
-> >>> with these below changes suspend and resume work correctly at my end.
-> >>>
-> >>> [1] XU4_suspendresume.patch
-> >>>
-> >>> As per S2MPS11B PMIC 1.2.1 Regulator (Features)
-> >>> Fix the min max value for *Buck7* and *Buck8*
-> >>>
-> >>> -- Buck7 (VDD_1.0V_LDO) 1.5 A (1.2 V to 1.5 V, 12.5 mV step, default on 1.35 V)
-> >>> -- Buck8 (VDD_1.8V_LDO) 2.5 A (1.8 V to 2.1 V, 12.5 mV step, default on 2.0 V)
-> >> Could you elaborate why such change for Buck7 and Buck8 is needed?
-> > Anand has here valid point - the constraints in DTS do not match
-> > hardware manual. This leads to question whether voltage table in
-> > driver is proper... Another point is the voltage itself. The
-> > schematics describes them as at specific voltage (1.35 V and 2.0 V)
-> > but after boot they are 1.2 V and 1.85 V. Maybe this shift comes from
-> > the problem above.
-> >
-> >>> Also add suspend-off for *Buck9*
-> >>> Buck9 internally controls the power of USB hub.
-> >>> Adding suspend the this node help proper reset of USB hub on Odroid
-> >>> XU4 / HC1/ XU3
-> >>> during suspend and resume. Below it the logs from my testing.
-> >> Disabling Buck9 in suspend indeed reduces the power consumed by the
-> >> board during suspend-to-ram from about 80mA to as little as 7-10mA, what
-> >> matches the results of OdroidXU3. Thanks for the hint!
-> > Although I did not get what is the difference in the logs (Anand
-> > pasted two logs but they look the same) but the power consumption is
-> > reason is good enough. I would be happy to put in the changelog entire
-> > consumption  difference. I can measure it on XU3-Lite but can you give
-> > me the XU4 (before and after)?\
->
->
-> HC1:
->
-> next-20190620: 120mA (@5V)
-> this patchset: 72mA (@5V)
-> this patchset + fixup from Anand: 7-10mA (@5V)
->
-> XU4 (SDcard):
->
-> next-20190620: 88mA (@5V)
-> this patchset: 74mA (@5V), sometimes 42mA (@5V)
-> this patchset + fixup from Anand: 6-9mA (@5V)
->
->
-> XU4 (eMMC):
->
-> next-20190620: 100mA (@5V)
-> this patchset: 72mA (@5V), sometimes 41mA (@5V)
-> this patchset + fixup from Anand: 6-9mA (@5V)
->
->
-> Best regards
-> --
-> Marek Szyprowski, PhD
-> Samsung R&D Institute Poland
->
-
-Thanks for this results.
-
-Best Regards
--Anand
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+Cgrkuo4gMjAxOeW5tDbmnIgyNOaXpSBHTVQrMDg6MDAg5LiL5Y2IODo0MzowMSwgTWF4aW1lIFJp
+cGFyZCA8bWF4aW1lLnJpcGFyZEBib290bGluLmNvbT4g5YaZ5YiwOgo+T24gU3VuLCBKdW4gMjMs
+IDIwMTkgYXQgMTI6Mzg6MDFQTSArMDgwMCwgSWNlbm93eSBaaGVuZyB3cm90ZToKPj4gTGljaGVl
+IHplcm8gcGx1cyBpcyBhIGNvcmUgYm9hcmQgbWFkZSBieSBTaXBlZWQsIHdoaWNoIGluY2x1ZGVz
+Cj5vbi1ib2FyZAo+PiBURiBzbG90IG9yIFNNVCBTRCBOQU5ELCBhbmQgb3B0aW9uYWwgU1BJIE5P
+UiBvciBlTU1DLCBhIFVBUlQgZGVidWcKPj4gaGVhZGVyLCBhIG1pY3JvVVNCIHNsb3QgYW5kIGEg
+Z29sZCBmaW5nZXIgY29ubmVjdG9yIGZvciBleHBhbnNpb24uIEl0Cj4+IGNhbiB1c2UgZWl0aGVy
+IFNvY2hpcCBTMyBvciBBbGx3aW5uZXIgUzNMIFNvQy4KPj4KPj4gQWRkIHRoZSBiYXNpYyBkZXZp
+Y2UgdHJlZSBmb3IgdGhlIGNvcmUgYm9hcmQsIHcvbyBvcHRpb25hbCBvbmJvYXJkCj4+IHN0b3Jh
+Z2UsIGFuZCB3aXRoIFMzIFNvQy4KPj4KPj4gU2lnbmVkLW9mZi1ieTogSWNlbm93eSBaaGVuZyA8
+aWNlbm93eUBhb3NjLmlvPgo+PiAtLS0KPj4gQ2hhbmdlcyBpbiB2MzoKPj4gLSBEcm9wIGNvbW1v
+biByZWd1bGF0b3IgRFRTSSB1c2FnZSBhbmQgYWRkZWQgdmNjM3YzIHJlZ3VsYXRvci4KPj4KPj4g
+IGFyY2gvYXJtL2Jvb3QvZHRzL01ha2VmaWxlICAgICAgICAgICAgICAgICAgICB8ICAxICsKPj4g
+IC4uLi9ib290L2R0cy9zdW44aS1zMy1saWNoZWUtemVyby1wbHVzLmR0cyAgICB8ICA4ICsrKysK
+Pj4gIC4uLi9kdHMvc3VuOGktczMtczNsLWxpY2hlZS16ZXJvLXBsdXMuZHRzaSAgICB8IDQ0Cj4r
+KysrKysrKysrKysrKysrKysrCj4+ICAzIGZpbGVzIGNoYW5nZWQsIDUzIGluc2VydGlvbnMoKykK
+Pj4gIGNyZWF0ZSBtb2RlIDEwMDY0NCBhcmNoL2FybS9ib290L2R0cy9zdW44aS1zMy1saWNoZWUt
+emVyby1wbHVzLmR0cwo+PiAgY3JlYXRlIG1vZGUgMTAwNjQ0Cj5hcmNoL2FybS9ib290L2R0cy9z
+dW44aS1zMy1zM2wtbGljaGVlLXplcm8tcGx1cy5kdHNpCj4+Cj4+IGRpZmYgLS1naXQgYS9hcmNo
+L2FybS9ib290L2R0cy9NYWtlZmlsZSBiL2FyY2gvYXJtL2Jvb3QvZHRzL01ha2VmaWxlCj4+IGlu
+ZGV4IGM0NzQyYWZlNDFhNy4uZDI0ZGVjMjkyNDVlIDEwMDY0NAo+PiAtLS0gYS9hcmNoL2FybS9i
+b290L2R0cy9NYWtlZmlsZQo+PiArKysgYi9hcmNoL2FybS9ib290L2R0cy9NYWtlZmlsZQo+PiBA
+QCAtMTExMyw2ICsxMTEzLDcgQEAgZHRiLSQoQ09ORklHX01BQ0hfU1VOOEkpICs9IFwKPj4gIAlz
+dW44aS1yMTYtbmludGVuZG8tc3VwZXItbmVzLWNsYXNzaWMuZHRiIFwKPj4gIAlzdW44aS1yMTYt
+cGFycm90LmR0YiBcCj4+ICAJc3VuOGktcjQwLWJhbmFuYXBpLW0yLXVsdHJhLmR0YiBcCj4+ICsJ
+c3VuOGktczMtbGljaGVlLXplcm8tcGx1cy5kdGIgXAo+PiAgCXN1bjhpLXQzLWNxYTN0LWJ2My5k
+dGIgXAo+PiAgCXN1bjhpLXYzcy1saWNoZWVwaS16ZXJvLmR0YiBcCj4+ICAJc3VuOGktdjNzLWxp
+Y2hlZXBpLXplcm8tZG9jay5kdGIgXAo+PiBkaWZmIC0tZ2l0IGEvYXJjaC9hcm0vYm9vdC9kdHMv
+c3VuOGktczMtbGljaGVlLXplcm8tcGx1cy5kdHMKPmIvYXJjaC9hcm0vYm9vdC9kdHMvc3VuOGkt
+czMtbGljaGVlLXplcm8tcGx1cy5kdHMKPj4gbmV3IGZpbGUgbW9kZSAxMDA2NDQKPj4gaW5kZXgg
+MDAwMDAwMDAwMDAwLi43ZDJmNmIxNDUxOTAKPj4gLS0tIC9kZXYvbnVsbAo+PiArKysgYi9hcmNo
+L2FybS9ib290L2R0cy9zdW44aS1zMy1saWNoZWUtemVyby1wbHVzLmR0cwo+PiBAQCAtMCwwICsx
+LDggQEAKPj4gKy8vIFNQRFgtTGljZW5zZS1JZGVudGlmaWVyOiAoR1BMLTIuMCsgT1IgTUlUKQo+
+PiArLyoKPj4gKyAqIENvcHlyaWdodCAoQykgMjAxOSBJY2Vub3d5IFpoZW5nIDxpY2Vub3d5QGFv
+c2MuaW8+Cj4+ICsgKi8KPj4gKwo+PiArL2R0cy12MS87Cj4+ICsjaW5jbHVkZSAic3VuOGktczMu
+ZHRzaSIKPj4gKyNpbmNsdWRlICJzdW44aS1zMy1zM2wtbGljaGVlLXplcm8tcGx1cy5kdHNpIgo+
+PiBkaWZmIC0tZ2l0IGEvYXJjaC9hcm0vYm9vdC9kdHMvc3VuOGktczMtczNsLWxpY2hlZS16ZXJv
+LXBsdXMuZHRzaQo+Yi9hcmNoL2FybS9ib290L2R0cy9zdW44aS1zMy1zM2wtbGljaGVlLXplcm8t
+cGx1cy5kdHNpCj4+IG5ldyBmaWxlIG1vZGUgMTAwNjQ0Cj4+IGluZGV4IDAwMDAwMDAwMDAwMC4u
+ZTY4ZjczOGMzMDQ2Cj4+IC0tLSAvZGV2L251bGwKPj4gKysrIGIvYXJjaC9hcm0vYm9vdC9kdHMv
+c3VuOGktczMtczNsLWxpY2hlZS16ZXJvLXBsdXMuZHRzaQo+PiBAQCAtMCwwICsxLDQ2IEBACj4+
+ICsvLyBTUERYLUxpY2Vuc2UtSWRlbnRpZmllcjogKEdQTC0yLjArIE9SIE1JVCkKPj4gKy8qCj4+
+ICsgKiBDb3B5cmlnaHQgKEMpIDIwMTkgSWNlbm93eSBaaGVuZyA8aWNlbm93eUBhb3NjLmlvPgo+
+PiArICovCj4+ICsKPj4gKyNpbmNsdWRlIDxkdC1iaW5kaW5ncy9ncGlvL2dwaW8uaD4KPj4gKwo+
+PiArLyB7Cj4+ICsJYWxpYXNlcyB7Cj4+ICsJCXNlcmlhbDAgPSAmdWFydDA7Cj4+ICsJfTsKPj4g
+Kwo+PiArCWNob3NlbiB7Cj4+ICsJCXN0ZG91dC1wYXRoID0gInNlcmlhbDA6MTE1MjAwbjgiOwo+
+PiArCX07Cj4+ICsKPj4gKwlyZWdfdmNjM3YzOiB2Y2MzdjMgewo+PiArCQljb21wYXRpYmxlID0g
+InJlZ3VsYXRvci1maXhlZCI7Cj4+ICsJCXJlZ3VsYXRvci1uYW1lID0gInZjYzN2MyI7Cj4+ICsJ
+CXJlZ3VsYXRvci1taW4tbWljcm92b2x0ID0gPDMzMDAwMDA+Owo+PiArCQlyZWd1bGF0b3ItbWF4
+LW1pY3Jvdm9sdCA9IDwzMzAwMDAwPjsKPj4gKwl9Owo+PiArfTsKPj4gKwo+PiArJm1tYzAgewo+
+PiArCWJyb2tlbi1jZDsKPj4gKwlidXMtd2lkdGggPSA8ND47Cj4+ICsJdm1tYy1zdXBwbHkgPSA8
+JnJlZ192Y2MzdjM+Owo+PiArCXN0YXR1cyA9ICJva2F5IjsKPj4gK307Cj4+ICsKPj4gKyZ1YXJ0
+MCB7Cj4+ICsJcGluY3RybC0wID0gPCZ1YXJ0MF9wYl9waW5zPjsKPj4gKwlwaW5jdHJsLW5hbWVz
+ID0gImRlZmF1bHQiOwo+PiArCXN0YXR1cyA9ICJva2F5IjsKPj4gK307Cj4+ICsKPj4gKyZ1c2Jf
+b3RnIHsKPj4gKwlkcl9tb2RlID0gIm90ZyI7Cj4+ICsJc3RhdHVzID0gIm9rYXkiOwo+PiArfTsK
+Pj4gKwo+PiArJnVzYnBoeSB7Cj4+ICsJdXNiMF9pZF9kZXQtZ3Bpb3MgPSA8JnBpbyA1IDYgR1BJ
+T19BQ1RJVkVfSElHSD47Cj4+ICsJc3RhdHVzID0gIm9rYXkiOwo+PiArfTsKPgo+SG93IGNhbiBp
+dCBkbyBPVEcgaWYgdGhlcmUncyBubyBjb250cm9sbGFibGUgVkJVUyByZWd1bGF0b3I/CgpBbGwg
+NVYncyBhcmUgY29ubmVjdGVkIHRvZ2V0aGVyLCBsaWtlIE9yYW5nZSBQaSBaZXJvLgoKPgo+TWF4
+aW1lCj4KPi0tCj5NYXhpbWUgUmlwYXJkLCBCb290bGluCj5FbWJlZGRlZCBMaW51eCBhbmQgS2Vy
+bmVsIGVuZ2luZWVyaW5nCj5odHRwczovL2Jvb3RsaW4uY29tCgotLSAK5L2/55SoIEstOSBNYWls
+IOWPkemAgeiHquaIkeeahEFuZHJvaWTorr7lpIfjgIIKCl9fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0Cmxp
+bnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFk
+Lm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
