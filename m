@@ -2,58 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 004A150489
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Jun 2019 10:27:12 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 63E53504A9
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Jun 2019 10:36:43 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=DVD2+9P+SUAZGJfPIt7tRgNJZqcJ8sGu5MNSmqVIm8E=; b=psBqtE6myNdIE/qMpabnVeUYf
-	tQV6iL1JIuOrLK9oB7pmLaGEqnKb49eY+juLo2brPqED9Km9G8vnxu0l1TsUqaDkiPF/8G2VYdrwQ
-	VrH8huXKoDOzXEbxSZFbN86gtT81E+nKx4/QMg/OsXISA5SbmwYFQmHaD0ZkOxkCnkiSlZGJLCvkx
-	9P68M2YUTmVYkV0GtGjYpeLUItlAocXTiKx+r4Ocn2P1ff45Vf8wpfkfmXy0NKTYnJ6qZSiXi5YFM
-	Wc5ymlQO7qokIjLvlmTuFxhoQryxk7hCL6Zrr9tWRzYSmwm4MhJAZydWFCuK+bkBWjnQtDH0m2O4p
-	9TZuwJRmw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=0nrLIvs8R51MonPZCiBcnzyztZvNSSOW20JoANIYglM=; b=eb1Is2ALTAE18n
+	Tj69UB/nOn9u3T57RDYRxRRi+eZZn6MyMOdhUocHxBL0OmiW2YmobJeTxg4giM4c5pFuiyFZXN9fu
+	qwbv/F9mkT5aiAU1JX0VIQir/J7SPzCdVMZs4Dm0UMUoHE61ujsiNZwYDcKrv+BraiU23C1iF8Rum
+	SzHIssBYB92BgQ5vU0J5UDTgje9qqDNbSpGFUSVeOllP/8GNA8rjxWJ1K84KS5DkbjAvJyngwts7w
+	Doy6zZe+fiBpGP/HNaw9hK/SInI331Pa8bYEpKuQJ4UaMGUNr62ErbcF3rDbSFaAGDNQvSqO2hxqa
+	JJQ4CH3MfjvsB/4R1v2g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hfKJg-000786-Vf; Mon, 24 Jun 2019 08:27:09 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hfKIx-0006lT-SK
- for linux-arm-kernel@lists.infradead.org; Mon, 24 Jun 2019 08:26:26 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id D2D8BC0A;
- Mon, 24 Jun 2019 01:26:20 -0700 (PDT)
-Received: from [10.1.196.93] (en101.cambridge.arm.com [10.1.196.93])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id C84BB3F71E;
- Mon, 24 Jun 2019 01:26:18 -0700 (PDT)
-Subject: Re: [PATCHv3 1/1] coresight: Do not default to CPU0 for missing CPU
- phandle
-To: saiprakash.ranjan@codeaurora.org, mathieu.poirier@linaro.org,
- leo.yan@linaro.org, robh+dt@kernel.org, devicetree@vger.kernel.org,
- alexander.shishkin@linux.intel.com, andy.gross@linaro.org,
- david.brown@linaro.org, mark.rutland@arm.com
-References: <cover.1561346998.git.saiprakash.ranjan@codeaurora.org>
- <635466ab6a27781966bb083e93d2ca2729473ced.1561346998.git.saiprakash.ranjan@codeaurora.org>
-From: Suzuki K Poulose <suzuki.poulose@arm.com>
-Message-ID: <4db99204-8553-7a80-f952-30cbd149593d@arm.com>
-Date: Mon, 24 Jun 2019 09:26:17 +0100
+	id 1hfKSr-0002B9-Td; Mon, 24 Jun 2019 08:36:37 +0000
+Received: from ns.iliad.fr ([212.27.33.1])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hfKSc-00028d-Rk; Mon, 24 Jun 2019 08:36:24 +0000
+Received: from ns.iliad.fr (localhost [127.0.0.1])
+ by ns.iliad.fr (Postfix) with ESMTP id 3F6F920598;
+ Mon, 24 Jun 2019 10:36:17 +0200 (CEST)
+Received: from [192.168.108.49] (freebox.vlq16.iliad.fr [213.36.7.13])
+ by ns.iliad.fr (Postfix) with ESMTP id 28C092020F;
+ Mon, 24 Jun 2019 10:36:17 +0200 (CEST)
+Subject: Re: Help offering for AmLogic S905Y2 Mainline Effort
+To: Daniel Laube <mail@dlaube.de>
+References: <0292EC91-0CBE-4F22-8F28-BD581A157CD6@dlaube.de>
+From: Marc Gonzalez <marc.w.gonzalez@free.fr>
+Message-ID: <2543a892-d7b6-f528-4df3-923edbf1dd85@free.fr>
+Date: Mon, 24 Jun 2019 10:36:17 +0200
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.7.0
+ Thunderbird/60.6.1
 MIME-Version: 1.0
-In-Reply-To: <635466ab6a27781966bb083e93d2ca2729473ced.1561346998.git.saiprakash.ranjan@codeaurora.org>
+In-Reply-To: <0292EC91-0CBE-4F22-8F28-BD581A157CD6@dlaube.de>
 Content-Language: en-US
+X-Virus-Scanned: ClamAV using ClamSMTP ; ns.iliad.fr ;
+ Mon Jun 24 10:36:17 2019 +0200 (CEST)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190624_012624_003535_3EA23A2C 
-X-CRM114-Status: GOOD (  10.74  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190624_013623_043923_D5222E4A 
+X-CRM114-Status: GOOD (  10.01  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [212.27.33.1 listed in list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (marc.w.gonzalez[at]free.fr)
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -66,31 +66,37 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: rnayak@codeaurora.org, linux-arm-msm@vger.kernel.org,
- linux-kernel@vger.kernel.org, sibis@codeaurora.org,
- vivek.gautam@codeaurora.org, linux-arm-kernel@lists.infradead.org
+Cc: Maxime Jourdan <mjourdan@baylibre.com>, linux-amlogic@lists.infradead.org,
+ Kevin Hilman <khilman@baylibre.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Neil Armstrong <narmstrong@baylibre.com>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Sai,
+On 23/06/2019 22:42, Daniel Laube wrote:
 
-Thanks for getting this done.
+> recently bought a cheap HDMI Stick Computer with an AmLogic Chip (S905Y2 on x96s Board) 
+> because i was told that it had mainline linux support. That seems to be 
+> true only partly because there are drm drivers missing for the gpu and 
+> no video encoding/decoding support.
+> Because i would like to get these things working in the future i would 
+> like to offer my help.
+> I already ripped that thing open to get access to UART to see boot progress.
+> Could someone please guide me where i can help with the mainlining effort?
 
-On 24/06/2019 04:36, Sai Prakash Ranjan wrote:
-> Coresight platform support assumes that a missing "cpu" phandle
-> defaults to CPU0. This could be problematic and unnecessarily binds
-> components to CPU0, where they may not be. Let us make the DT binding
-> rules a bit stricter by not defaulting to CPU0 for missing "cpu"
-> affinity information.
-> 
-> Also in coresight etm and cpu-debug drivers, abort the probe
-> for such cases.
-> 
-> Signed-off-by: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>
+I suppose the first thing to do is try to get in touch with whomever
+might be working on this at the moment or in the (recent) past.
 
-Reviewed-by: Suzuki K Poulose <suzuki.poulose@arm.com>
+Look at the MAINTAINERS file, to find "official" maintainers and reviewers.
+
+The baylibre team seems to be handling some of the mainlining effort,
+so perhaps they are in a good position to provide relevant information.
+
+There's also a specific mailing list: linux-amlogic@lists.infradead.org
+
+Regards.
 
 _______________________________________________
 linux-arm-kernel mailing list
