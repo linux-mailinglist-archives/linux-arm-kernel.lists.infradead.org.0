@@ -2,72 +2,87 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A5FA0528AE
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 25 Jun 2019 11:55:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 60440518E0
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Jun 2019 18:41:38 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Date:Message-Id:
-	In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	References:List-Owner; bh=d1suY1FBgCu4ZTykRU65fLKpLImDASVY6uhQv6JnZjc=; b=VQp
-	SPXiZou2aLMVVMon8FiSu0MDCg2/v1zS4MX0xbhQSwMv2J2LGVcvvyj5YVKPQYlMN7ZkwVX41xCFU
-	6u1M/q5edjBXcaRfpICLbdDulCV1ykQEINJNydm+KsckeQX/XAA8aJ8sJdBbozpbhJCYWvpBXo6cT
-	nY0KlQ+udDZqidhChvwRzGwlx/KA/XLvDPuemsbhBoKOfJ1BNHZKXJPe/NQ01tWud9rZOZkFH8Kmu
-	DLOWBI21AARNWzp+cM56U7FNbrFwME8/4yWBkjeZBT89ew0OEXMqJoIpaTWr+tQsBTLO95PFULQx3
-	2GJWLRtP/T5UMiYhx5i+XS35phgsPfQ==;
+	List-Owner; bh=MaJ1ken/Ekv1UQyR96qd/KobgXZqw1ACJQQqzYTI6Uk=; b=PgGhlE5jU5Es4C
+	YcaCTkh9ppUlUqrXcQpdBwyKeiM5QQcx553seksSVbxbdXV8KS8PGuN9RuMQiu1HqU3eZwaXTjbvs
+	7VkB5XiSxebqgbD2hitgspBJsHJUo3kxKYQ1z0CCx3yGHtCx4sGiBWy5tV5QfhTv7tb+wxifXPfDm
+	OEC6QF5K5znNxCv6wINvTmLsV7hmxCaVOIXtFydCgwOHYPxfCokb4HDan5RZ08d/LqgeldeCt8z/r
+	R3uP1gOQDF7fgLGOfWvRRtZWDX42NrBTZv3gF+a0b+UnqWlPj6TPHfcsSeMNfVUBrad3O8EXi3Omc
+	H+anyISS17ly13qEgZWg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hfiAF-0005ZD-L8; Tue, 25 Jun 2019 09:54:59 +0000
-Received: from heliosphere.sirena.org.uk ([2a01:7e01::f03c:91ff:fed4:a3b6])
+	id 1hfS29-0002qW-JN; Mon, 24 Jun 2019 16:41:33 +0000
+Received: from mail-qk1-f196.google.com ([209.85.222.196])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hfi9K-000598-6M
- for linux-arm-kernel@lists.infradead.org; Tue, 25 Jun 2019 09:54:05 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sirena.org.uk; s=20170815-heliosphere; h=Date:Message-Id:In-Reply-To:
- Subject:Cc:To:From:Sender:Reply-To:MIME-Version:Content-Type:
- Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
- List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:
- List-Archive; bh=4xhafNZ9vsKKvjfqO+yD1YjW/mVePLcmRuEcd5QcDMA=; b=SCJr7OJ8/Njz
- sjrg808suH9HC4CBUz9daEFnlgLmMAzA5NIn6wpTTpHuJacXeImBpd1jD9AzN1rKJLX13BbcaUxxr
- uFqawaJkOIdT6Qq4pqif2W5wJ3lbTxODiXA1sYC3ma8Qq5nd+VVgxao/29MX0Arurm+aWI+nzzXcU
- EmTU4=;
-Received: from cpc102320-sgyl38-2-0-cust46.18-2.cable.virginm.net
- ([82.37.168.47] helo=finisterre.sirena.org.uk)
- by heliosphere.sirena.org.uk with esmtpsa
- (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.89)
- (envelope-from <broonie@sirena.org.uk>)
- id 1hfi9F-0004mM-03; Tue, 25 Jun 2019 09:53:57 +0000
-Received: by finisterre.sirena.org.uk (Postfix, from userid 1000)
- id DD2B044006F; Mon, 24 Jun 2019 17:32:28 +0100 (BST)
-From: Mark Brown <broonie@kernel.org>
-To: Patrice Chotard <patrice.chotard@st.com>
-Subject: Applied "spi: spi-stm32-qspi: Remove CR_FTHRES_MASK usage" to the spi
- tree
-In-Reply-To: <20190620131323.5955-1-patrice.chotard@st.com>
-X-Patchwork-Hint: ignore
-Message-Id: <20190624163228.DD2B044006F@finisterre.sirena.org.uk>
-Date: Mon, 24 Jun 2019 17:32:28 +0100 (BST)
-X-Bad-Reply: In-Reply-To but no 'Re:' in Subject.
+ id 1hfS1z-0002pP-Cy
+ for linux-arm-kernel@lists.infradead.org; Mon, 24 Jun 2019 16:41:24 +0000
+Received: by mail-qk1-f196.google.com with SMTP id l128so10243325qke.2
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 24 Jun 2019 09:41:18 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=UdA6Y6qkEPNcox/R4AD5p5PdgoW5IX8dJGvSgmjWmkg=;
+ b=Skgk50oyz69XZYLQmDO4I/zHDRnJPBydrj/sREqKR6ut5/7Nh80ILNrAxtcbI8IOzI
+ VfJlkXjJkPwudlqdA847F7Zo/o+e6HSzkNPwlZvlDPpV0xUeDXmA+esyggfSK+fBZzPp
+ ct8rPdsbmmnko1VH0fwOqUPl9geKXcrnqFbbMjncLHNtmKFx/ZIYHDAAR3An/mi5A614
+ XxcYfyf2o7Q3U04xnhu/D2vyxkMeKCvc+hrRr1+xfmfMOUhor8QD9ISWA0igIDD9JGGO
+ lZXKagwuIFyFK/ad9vJXfetdlwALHO2u4S6li+awyxb+Lg8KzCUAnVbtGdTV1Jdi2pc/
+ W8nQ==
+X-Gm-Message-State: APjAAAVyuvI7XNeI0XSMyRUM2w/MqviChjwEi2TZijFzAUZFDpNzHu1/
+ miapoVRs5DaSi0T2oX9coiKvntmA/as+wrMEsqE=
+X-Google-Smtp-Source: APXvYqx9IXxZ67+F4onDygsWo++RwTBrZyAF3TvR7CC3NoZfdYBTRnVe65OvdwgLfjKt586ottXwhlgpI1RplTtFttg=
+X-Received: by 2002:a05:620a:12db:: with SMTP id
+ e27mr111628534qkl.352.1561394477622; 
+ Mon, 24 Jun 2019 09:41:17 -0700 (PDT)
+MIME-Version: 1.0
+References: <380a6185-7ad1-6be0-060b-e6e5d4126917@linaro.org>
+ <a94676381a5ca662c848f7a725562f721c43ce76.camel@sipsolutions.net>
+ <CAK8P3a0kV-i7BJJ2X6C=5n65rSGfo8fUiC4J_G-+M8EctYKbkg@mail.gmail.com>
+ <fc0d08912bc10ad089eb74034726308375279130.camel@redhat.com>
+ <36bca57c999f611353fd9741c55bb2a7@codeaurora.org>
+ <153fafb91267147cf22e2bf102dd822933ec823a.camel@redhat.com>
+ <CAK8P3a2Y+tcL1-V57dtypWHndNT3eDJdcKj29c_v+k8o1HHQig@mail.gmail.com>
+ <f4249aa5f5acdd90275eda35aa16f3cfb29d29be.camel@redhat.com>
+ <CAK8P3a2nzZKtshYfomOOSYkqx5HdU15Wr9b+3va0B1euNhFOAg@mail.gmail.com>
+ <dbb32f185d2c3a654083ee0a7188379e1f88d899.camel@sipsolutions.net>
+ <d533b708-c97a-710d-1138-3ae79107f209@linaro.org>
+ <abdfc6b3a9981bcdef40f85f5442a425ce109010.camel@sipsolutions.net>
+ <db34aa39-6cf1-4844-1bfe-528e391c3729@linaro.org>
+In-Reply-To: <db34aa39-6cf1-4844-1bfe-528e391c3729@linaro.org>
+From: Arnd Bergmann <arnd@arndb.de>
+Date: Mon, 24 Jun 2019 18:40:57 +0200
+Message-ID: <CAK8P3a1ixL9ZjYz=pWTxvMfeD89S6QxSeHt9ZCL9dkCNV5pMHQ@mail.gmail.com>
+Subject: Re: [PATCH v2 00/17] net: introduce Qualcomm IPA driver
+To: Alex Elder <elder@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190625_025402_825701_73508FCF 
-X-CRM114-Status: GOOD (  14.11  )
-X-Spam-Score: 1.0 (+)
+X-CRM114-CacheID: sfid-20190624_094123_444478_A7791776 
+X-CRM114-Status: GOOD (  26.39  )
+X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (1.0 points)
+ Content analysis details:   (0.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.222.196 listed in list.dnswl.org]
  0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
  mail domains are different
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.222.196 listed in wl.mailspike.net]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (arndbergmann[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.8 DATE_IN_PAST_12_24     Date: is 12 to 24 hours before Received: date
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -79,89 +94,100 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: christophe.kerello@st.com, Alexandre Torgue <alexandre.torgue@st.com>,
- linux-kernel@vger.kernel.org, linux-spi@vger.kernel.org,
- patrice.chotard@st.com, Mark Brown <broonie@kernel.org>,
- Maxime Coquelin <mcoquelin.stm32@gmail.com>,
- linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
+Cc: DTML <devicetree@vger.kernel.org>, syadagir@codeaurora.org,
+ Eric Caruso <ejcaruso@google.com>, David Miller <davem@davemloft.net>,
+ Dan Williams <dcbw@redhat.com>, linux-arm-msm@vger.kernel.org,
+ Ilias Apalodimas <ilias.apalodimas@linaro.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>, evgreen@chromium.org,
+ Bjorn Andersson <bjorn.andersson@linaro.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Networking <netdev@vger.kernel.org>,
+ Subash Abhinov Kasiviswanathan <subashab@codeaurora.org>,
+ Johannes Berg <johannes@sipsolutions.net>, linux-soc@vger.kernel.org,
+ abhishek.esse@gmail.com, cpratapa@codeaurora.org,
+ Ben Chan <benchan@google.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The patch
+On Mon, Jun 24, 2019 at 6:21 PM Alex Elder <elder@linaro.org> wrote:
+> On 6/18/19 2:03 PM, Johannes Berg wrote:
+>
+> > Really there are two possible ways (and they intersect to some extent).
+> >
+> > One is the whole multi-function device, where a single WWAN device is
+> > composed of channels offered by actually different drivers, e.g. for a
+> > typical USB device you might have something like cdc_ether and the
+> > usb_wwan TTY driver. In this way, we need to "compose" the WWAN device
+> > similarly, e.g. by using the underlying USB device "struct device"
+> > pointer to tie it together.
+>
+> I *think* this model makes the most sense.  But at this point
+> it would take very little to convince me otherwise...  (And then
+> I saw Arnd's message advocating the other one, unfortunately...)
+>
+> > The other is something like IPA or the Intel modem driver, where the
+> > device is actually a single (e.g. PCIe) device and just has a single
+> > driver, but that single driver offers different channels.
+>
+> What I don't like about this is that it's more monolithic.  It
+> seems better to have the low-level IPA or Intel modem driver (or
+> any other driver that can support communication between the AP
+> and WWAN device) present communication paths that other function-
+> specific drivers can attach to and use.
 
-   spi: spi-stm32-qspi: Remove CR_FTHRES_MASK usage
+I did not understand Johannes description as two competing models
+for the same code, but rather two kinds of existing hardware that
+a new driver system would have to deal with.
 
-has been applied to the spi tree at
+I was trying to simplify it to just having the second model, by adding
+a hack to support the first, but my view was rather unpopular so
+far, so if everyone agrees on one way to do it, don't worry about me ;-)
 
-   https://git.kernel.org/pub/scm/linux/kernel/git/broonie/spi.git for-5.2
+> > Now, it's not clear to me where IPA actually falls, because so far we've
+> > been talking about the IPA driver only as providing *netdevs*, not any
+> > control channels, so I'm not actually sure where the control channel is.
+>
+> There is user space code that handles all of this, and as far as I
+> can tell, parts of it will always remain proprietary.
 
-All being well this means that it will be integrated into the linux-next
-tree (usually sometime in the next 24 hours) and sent to Linus during
-the next merge window (or sooner if it is a bug fix), however if
-problems are discovered then the patch may be dropped or reverted.  
+Two replies on this:
 
-You may get further e-mails resulting from automated or manual testing
-and review of the tree, please engage with people reporting problems and
-send followup patches addressing any issues that are reported if needed.
+- to answer Johannes question, my understanding is that the interface
+  between kernel and firmware/hardware for IPA has a single 'struct
+  device' that is used for both the data and the control channels,
+  rather than having a data channel and an independent control device,
+  so this falls into the same category as the Intel one (please correct
+  me on that)
 
-If any updates are required or you are submitting further changes they
-should be sent as incremental updates against current git, existing
-patches will not be replaced.
+- The user space being proprietary is exactly what we need to avoid
+  with the wwan subsystem. We need to be able to use the same
+  method for setting up Intel, Qualcomm, Samsung, Unisoc or
+  Hisilicon modems or anything else that hooks into the subsystem,
+  and support that in network manager as well as the Android
+  equivalent.
+  If Qualcomm wants to provide their own proprietary user space
+  solution, we can't stop them, but then that should also work on
+  all the others unless they intentionally break it. ;-)
 
-Please add any relevant lists and maintainers to the CCs when replying
-to this mail.
+> > and simply require that the channel is attached to the wwan device with
+> > the representation-specific call (wwan_attach_netdev, wwan_attach_tty,
+> > ...).
+>
+> Or maybe have the WWAN device present interfaces with attributes,
+> and have drivers that are appropriate for each interface attach
+> to only the ones they recognize they support.
 
-Thanks,
-Mark
+I think you both mean the same thing here, a structure with callback
+pointers that may or may not be filled by the driver depending on its
+capabilities.
 
-From 94613d5ae1091a28b33f38e18d96e8d953ac18df Mon Sep 17 00:00:00 2001
-From: Patrice Chotard <patrice.chotard@st.com>
-Date: Thu, 20 Jun 2019 15:13:23 +0200
-Subject: [PATCH] spi: spi-stm32-qspi: Remove CR_FTHRES_MASK usage
+What we should try to avoid though is a way to add driver private
+interfaces that risk having multiple drivers create similar functionality
+in incompatible ways.
 
-On STM32 F4/F7/H7 SoCs, FTHRES is a 5 bits field in QSPI_CR register,
-but for STM32MP1 SoCs, FTHRES is a 4 bits field long. CR_FTHRES_MASK
-definition is not correct.
-
-As for all these SoCs, FTHRES field is set to 3, FIELD_PREP() macro
-is used with a constant as second parameter which make its usage useless.
-
-CR_FTHRES_MASK and FIELD_PREP() can be removed.
-
-Signed-off-by: Patrice Chotard <patrice.chotard@st.com>
-Signed-off-by: Mark Brown <broonie@kernel.org>
----
- drivers/spi/spi-stm32-qspi.c | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
-
-diff --git a/drivers/spi/spi-stm32-qspi.c b/drivers/spi/spi-stm32-qspi.c
-index 42f8e3c6aa1f..5dbb6a8e893c 100644
---- a/drivers/spi/spi-stm32-qspi.c
-+++ b/drivers/spi/spi-stm32-qspi.c
-@@ -29,7 +29,7 @@
- #define CR_SSHIFT		BIT(4)
- #define CR_DFM			BIT(6)
- #define CR_FSEL			BIT(7)
--#define CR_FTHRES_MASK		GENMASK(12, 8)
-+#define CR_FTHRES_SHIFT		8
- #define CR_TEIE			BIT(16)
- #define CR_TCIE			BIT(17)
- #define CR_FTIE			BIT(18)
-@@ -463,7 +463,7 @@ static int stm32_qspi_setup(struct spi_device *spi)
- 	flash->presc = presc;
- 
- 	mutex_lock(&qspi->lock);
--	qspi->cr_reg = FIELD_PREP(CR_FTHRES_MASK, 3) | CR_SSHIFT | CR_EN;
-+	qspi->cr_reg = 3 << CR_FTHRES_SHIFT | CR_SSHIFT | CR_EN;
- 	writel_relaxed(qspi->cr_reg, qspi->io_base + QSPI_CR);
- 
- 	/* set dcr fsize to max address */
--- 
-2.20.1
-
+        Arnd
 
 _______________________________________________
 linux-arm-kernel mailing list
