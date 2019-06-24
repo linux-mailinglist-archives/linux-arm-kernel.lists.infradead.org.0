@@ -2,78 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F30B350F7C
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Jun 2019 17:01:54 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id F264950F7D
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Jun 2019 17:02:07 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=rVFZh+LEmQpM7zamLUrU1rfDr52ZzRANWmdM9hcliOQ=; b=TJPlQ6IcPQhZr7
-	YVmkvGTPQtVEYz3BiwLxm08q++EJAmR+uY6njmZDw5YPnxsiEU5kPVovSluyrokQJNKsQpCrtWwn4
-	dv5e87ekthG3V204D7Gq1EOYHJvoBS/hFkcaTW7A5YB4x7gdJAkbQ+CzX38MadtHHNM4xfzhqwGAu
-	ck4Q99cZWYkMPDsKVEVmsIc+wqorA0Gd2pVF3WTy7qzGGM4BRYCT+KfS96an809zhhKRyHyc7f3bN
-	6CGVPqUSEBexK5jqWsAYrE3WB9cdS/2n5LcXqS3274ubb+knMQpExD+vBDwDGgg8isOz+vsA1dMxX
-	ZABRW+qRPqhDOI6cZQRQ==;
+	List-Owner; bh=Rec18GocobFPeaHaIycLN8tnDpnOgQoIvV4WNqQfzZc=; b=OSWDiaf7Li3r1v
+	N8Bo0DEgsj9wZUILpE+Yu4gWpYzztVLVZyrJpAaQO4dRykISomPhCaksQNNu0Zq8UnzftUhSVpY6q
+	S0nozuEEFTYQCOHY4thTPMxcX2W/DI7/0kNM7bl8k4yjY4NSrF1umH0/SGBJp1RqXxQ+xqRG7Cwc/
+	Ej3pLOQuzXM/i4tQY7MvIJEEJsm+PE+yDtFEjUMo0csXH8f+zRfmFVm33c+aD8Khnv3gSsdp0b4dF
+	MVynDyKB4V+A3Mk0BGoj5/s4DlLrhWBffi5FFh4LfkQI8wLBroH+7pxc9E3JocqKhDM8Boz1FXovS
+	M0GxmJiGw9POkf3oqkgw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hfQTe-0000Ko-Ro; Mon, 24 Jun 2019 15:01:50 +0000
-Received: from mail-pf1-x442.google.com ([2607:f8b0:4864:20::442])
+	id 1hfQTu-0000dI-J3; Mon, 24 Jun 2019 15:02:06 +0000
+Received: from mail-pl1-x643.google.com ([2607:f8b0:4864:20::643])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hfQT3-00007t-D7
- for linux-arm-kernel@lists.infradead.org; Mon, 24 Jun 2019 15:01:14 +0000
-Received: by mail-pf1-x442.google.com with SMTP id x15so7684116pfq.0
+ id 1hfQTV-0000Tp-Mr
+ for linux-arm-kernel@lists.infradead.org; Mon, 24 Jun 2019 15:01:43 +0000
+Received: by mail-pl1-x643.google.com with SMTP id p1so7054744plo.2
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 24 Jun 2019 08:01:13 -0700 (PDT)
+ Mon, 24 Jun 2019 08:01:41 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
  h=date:from:to:cc:subject:message-id:references:mime-version
  :content-disposition:in-reply-to;
- bh=wtUCrmBvvtcTuAx+h8NVUvwzdIMNqCWWz94+pOdbySM=;
- b=SgtXb1ZoPYVGoTEFnr3Dke5H/wW1XINfDlxvUxMEVKLscJVqYESlzT6pTs1qtGKsP3
- VeuBN2URvFVWTMNeAoodZlrCQwZUc/5Z9xlB5RTSjoVcpo/SiTZgkaWRm8NhK88ImAdg
- pZTI13ZgoVTCMMEv5hkuIuzOLGORBtQ5+y4c8=
+ bh=BLg06i/VCl1+ARgBePt6UCtgCE6yMoeYz0XGu/hbFeo=;
+ b=MwA/LDiusqfNWsTB2DaatzITy3M650ma8hf3fWZJJgZo0sU5+WHRov34/AgR5khfdn
+ 43QWHZ5AnOHm74CPfDOEecH6k3NeL2D42ht4vodc0QKm4kkProj+2T//kWp6iTgN3F0V
+ SMoSonCHMQtZbalEg27bzapOmKXhEcFOVUU3I=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to;
- bh=wtUCrmBvvtcTuAx+h8NVUvwzdIMNqCWWz94+pOdbySM=;
- b=f6I7hHRbnXWRuvkOt8zrYaiUNRTPjn9/j47DiFBCUMzz5gs+uiAGUWtMFgzmQmCo2c
- q7Zp+j+0L0pN2v1izdDMCcg6zNR8ACjJCidyUi3N4sb/isGzKyxCHQINpA0MrbeDx7yF
- Ag9iu0fCGYG1umBBfkpPsZm+AHz5jrqy83jrBOTySFbA3E3NlwHQSuX1cM4e8jrBUPHU
- UcLle6azHe1rvVXfbUYunsx/798iUSjbB2W1ePzWa2g+K+9STwhUAO/L3QNP5mrIXc1/
- +ZVxYZ/rwMmHSzWefdccBBxQXEd8SKJXTvWNcrrW3EqVHyPIAJDZ4YdCfcoZwPt5AWRy
- +EJA==
-X-Gm-Message-State: APjAAAWgpBV8aJKiDr4Rc64KBE0e4ybwnjpdIy/hV9HQKyO2vOVx3EhZ
- VVZrpZ80v9TLKMAwGfBH6TY2fQ==
-X-Google-Smtp-Source: APXvYqzelK/vNHxou/EQMWEPlS7Rae3sUcNTxG5Oed/VwPMQT+QfUbDH1pcZmoGQxd0g0HPzOMRX5A==
-X-Received: by 2002:a63:f349:: with SMTP id t9mr32144143pgj.296.1561388472617; 
- Mon, 24 Jun 2019 08:01:12 -0700 (PDT)
+ bh=BLg06i/VCl1+ARgBePt6UCtgCE6yMoeYz0XGu/hbFeo=;
+ b=XTPSpCFJ/1G3gLFrzH+AeAcqY6HmoJ6N/Ug+Xh7iXGl5kp4eB/SVgRDPp1GWdZl/4n
+ dFKc9hgca6BJu5jKDULUgYvmNZbxKqizLgMmcE2z0zM0ywM1ent3Crr175n1kadZaKSl
+ p45hooP0YImq34UcxGMjcM3Ic1m1X2c8wBgEI07xtlVgvyV3RYw0qgluQJGXwkUwafN2
+ OAdq7iQGAuy33eylsQLUA5bm+xN4WKRGh/iITwOxhxvjwObpIEYyr8WjWaMwmquKXjoA
+ +jJZZoPIq1HjAmER3Reqz3II2c0XK716nuNgHsIgiEfpRXownF6DKR1K2hMARtrbczeL
+ mJRw==
+X-Gm-Message-State: APjAAAWiTRrEmKybTUFQvUHq21L09spxUNrMnl4JqmTLo3uoQZ3C0b0I
+ PtogVH4ttSxwVWUS701HnWmPOg==
+X-Google-Smtp-Source: APXvYqxWnwPjr90pgAz811Ip1hR0DU+KY/u+1S7JOfCxDoc+41R5+q814qY7q3l7dWsEUazPv/NQog==
+X-Received: by 2002:a17:902:ac88:: with SMTP id
+ h8mr71103307plr.12.1561388501191; 
+ Mon, 24 Jun 2019 08:01:41 -0700 (PDT)
 Received: from www.outflux.net (smtp.outflux.net. [198.145.64.163])
- by smtp.gmail.com with ESMTPSA id v5sm14367158pgq.66.2019.06.24.08.01.11
+ by smtp.gmail.com with ESMTPSA id k2sm10325517pjl.23.2019.06.24.08.01.40
  (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Mon, 24 Jun 2019 08:01:11 -0700 (PDT)
-Date: Mon, 24 Jun 2019 08:01:10 -0700
+ Mon, 24 Jun 2019 08:01:40 -0700 (PDT)
+Date: Mon, 24 Jun 2019 08:01:39 -0700
 From: Kees Cook <keescook@chromium.org>
 To: Andrey Konovalov <andreyknvl@google.com>
-Subject: Re: [PATCH v18 10/15] drm/radeon: untag user pointers in
- radeon_gem_userptr_ioctl
-Message-ID: <201906240801.F35CE2641@keescook>
+Subject: Re: [PATCH v18 11/15] IB/mlx4: untag user pointers in mlx4_get_umem_mr
+Message-ID: <201906240801.BE42EB3AA@keescook>
 References: <cover.1561386715.git.andreyknvl@google.com>
- <61d800c35a4f391218fbca6f05ec458557d8d097.1561386715.git.andreyknvl@google.com>
+ <ea0ff94ef2b8af12ea6c222c5ebd970e0849b6dd.1561386715.git.andreyknvl@google.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <61d800c35a4f391218fbca6f05ec458557d8d097.1561386715.git.andreyknvl@google.com>
+In-Reply-To: <ea0ff94ef2b8af12ea6c222c5ebd970e0849b6dd.1561386715.git.andreyknvl@google.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190624_080113_444477_CBDC611B 
-X-CRM114-Status: GOOD (  19.47  )
+X-CRM114-CacheID: sfid-20190624_080141_780460_9B0C7CC2 
+X-CRM114-Status: GOOD (  20.22  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:442 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:643 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -127,22 +127,16 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Jun 24, 2019 at 04:32:55PM +0200, Andrey Konovalov wrote:
+On Mon, Jun 24, 2019 at 04:32:56PM +0200, Andrey Konovalov wrote:
 > This patch is a part of a series that extends kernel ABI to allow to pass
 > tagged user pointers (with the top byte set to something else other than
 > 0x00) as syscall arguments.
 > 
-> In radeon_gem_userptr_ioctl() an MMU notifier is set up with a (tagged)
-> userspace pointer. The untagged address should be used so that MMU
-> notifiers for the untagged address get correctly matched up with the right
-> BO. This funcation also calls radeon_ttm_tt_pin_userptr(), which uses
-> provided user pointers for vma lookups, which can only by done with
-> untagged pointers.
+> mlx4_get_umem_mr() uses provided user pointers for vma lookups, which can
+> only by done with untagged pointers.
 > 
-> This patch untags user pointers in radeon_gem_userptr_ioctl().
+> Untag user pointers in this function.
 > 
-> Suggested-by: Felix Kuehling <Felix.Kuehling@amd.com>
-> Acked-by: Felix Kuehling <Felix.Kuehling@amd.com>
 > Signed-off-by: Andrey Konovalov <andreyknvl@google.com>
 
 Reviewed-by: Kees Cook <keescook@chromium.org>
@@ -150,22 +144,34 @@ Reviewed-by: Kees Cook <keescook@chromium.org>
 -Kees
 
 > ---
->  drivers/gpu/drm/radeon/radeon_gem.c | 2 ++
->  1 file changed, 2 insertions(+)
+>  drivers/infiniband/hw/mlx4/mr.c | 7 ++++---
+>  1 file changed, 4 insertions(+), 3 deletions(-)
 > 
-> diff --git a/drivers/gpu/drm/radeon/radeon_gem.c b/drivers/gpu/drm/radeon/radeon_gem.c
-> index 44617dec8183..90eb78fb5eb2 100644
-> --- a/drivers/gpu/drm/radeon/radeon_gem.c
-> +++ b/drivers/gpu/drm/radeon/radeon_gem.c
-> @@ -291,6 +291,8 @@ int radeon_gem_userptr_ioctl(struct drm_device *dev, void *data,
->  	uint32_t handle;
->  	int r;
+> diff --git a/drivers/infiniband/hw/mlx4/mr.c b/drivers/infiniband/hw/mlx4/mr.c
+> index 355205a28544..13d9f917f249 100644
+> --- a/drivers/infiniband/hw/mlx4/mr.c
+> +++ b/drivers/infiniband/hw/mlx4/mr.c
+> @@ -378,6 +378,7 @@ static struct ib_umem *mlx4_get_umem_mr(struct ib_udata *udata, u64 start,
+>  	 * again
+>  	 */
+>  	if (!ib_access_writable(access_flags)) {
+> +		unsigned long untagged_start = untagged_addr(start);
+>  		struct vm_area_struct *vma;
 >  
-> +	args->addr = untagged_addr(args->addr);
-> +
->  	if (offset_in_page(args->addr | args->size))
->  		return -EINVAL;
->  
+>  		down_read(&current->mm->mmap_sem);
+> @@ -386,9 +387,9 @@ static struct ib_umem *mlx4_get_umem_mr(struct ib_udata *udata, u64 start,
+>  		 * cover the memory, but for now it requires a single vma to
+>  		 * entirely cover the MR to support RO mappings.
+>  		 */
+> -		vma = find_vma(current->mm, start);
+> -		if (vma && vma->vm_end >= start + length &&
+> -		    vma->vm_start <= start) {
+> +		vma = find_vma(current->mm, untagged_start);
+> +		if (vma && vma->vm_end >= untagged_start + length &&
+> +		    vma->vm_start <= untagged_start) {
+>  			if (vma->vm_flags & VM_WRITE)
+>  				access_flags |= IB_ACCESS_LOCAL_WRITE;
+>  		} else {
 > -- 
 > 2.22.0.410.gd8fdbe21b5-goog
 > 
