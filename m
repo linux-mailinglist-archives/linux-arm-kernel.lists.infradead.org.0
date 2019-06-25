@@ -2,59 +2,87 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D567E5513B
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 25 Jun 2019 16:11:38 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 484FA55146
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 25 Jun 2019 16:12:53 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=yGf+e5Nah9Xol6iUhj7L4sGudfUxqydlbNlyBgej8kU=; b=sr+MSW6V9xcluF
-	z4n5agtrd0AAAKf3S+jqKSiTbMU4kXbLT5R7SkFPuTJnseCrfa8FMC9pkVFqiXvmQK9rEV41LHm9T
-	Jm5J0PFUz4F5GvAWikYOrHA5ublpXh5uX5zw7DQg3YEz45tJMpxOxvQoCNPR/TQogrsn9I26rDKgX
-	spzQTb/KdFKjkWwpoNMfaAuoXBQHEXSvlWcpM2Dl5RHkYPkaYUTtUAN8g8c8sAtqaD+GefZAYQ5nv
-	YHJvT4PWrLRn0wZMFoNnWU3uEn9cpQ3r343vu6eIkLJGO8rWjQfRi2/6Seb/Gc/Ctq4xMcQ7XBBYu
-	0iEokOZdaiEQptrPxaTA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:References
+	:In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=qBa+pv28tYWMZkaJNWeQ6RZb7nCn2Xb2I5risJBGCPY=; b=JUozDeqTyTgENT
+	FAifnuHUPF3FF1zcoXqpC8RRIi3QRYU2Y0tR5jG/TST63bQSyDBkDss6TJCNDppEtQ5ljj92PwlPu
+	NTu9Rx7TmVyehQc2lns+e8xoRcIKqMLe0Zi34c0zkMXWU0KFkD4suzrdNyFHZnTKX1XMiCp6X8BnN
+	pOADMz/UyqnmtlTvZ37qZBGpeS7G7zXZeAKWj0hBKf1RlLO7bbCr+qiyyINziFWaem2phZGKdSZFb
+	LmWqJz0zmemiy/XEQlscwBivPve9YgXtrYsVYXQ9fcSBashMpyxpPz6Dz8kMMC21P22h8Y6y7+KLp
+	clOGAT3f9jLppuJH1NcQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hfmAZ-0002u9-Hw; Tue, 25 Jun 2019 14:11:35 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hfmAO-0002tL-QS
- for linux-arm-kernel@lists.infradead.org; Tue, 25 Jun 2019 14:11:26 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 1B73F2B;
- Tue, 25 Jun 2019 07:11:24 -0700 (PDT)
-Received: from [10.1.196.72] (e119884-lin.cambridge.arm.com [10.1.196.72])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id DD24D3F718;
- Tue, 25 Jun 2019 07:11:22 -0700 (PDT)
-Subject: Re: "arm64: vdso: Substitute gettimeofday() with C implementation"
- breaks clang build
-To: Qian Cai <cai@lca.pw>
-References: <1561464964.5154.63.camel@lca.pw>
- <e86774e4-7470-5cb2-fc3e-b7c1f529d253@arm.com>
- <1561467369.5154.67.camel@lca.pw>
- <00a78980-6b9c-5d5b-ed01-b28bb34be022@arm.com>
- <1561470705.5154.68.camel@lca.pw>
-From: Vincenzo Frascino <vincenzo.frascino@arm.com>
-Message-ID: <5113362e-1256-6712-6ce8-9599b1806cf1@arm.com>
-Date: Tue, 25 Jun 2019 15:11:21 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.7.0
+	id 1hfmBn-0003gY-Qa; Tue, 25 Jun 2019 14:12:51 +0000
+Received: from mail-pf1-x442.google.com ([2607:f8b0:4864:20::442])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hfmBY-0003ec-2m
+ for linux-arm-kernel@lists.infradead.org; Tue, 25 Jun 2019 14:12:38 +0000
+Received: by mail-pf1-x442.google.com with SMTP id d126so9558844pfd.2
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 25 Jun 2019 07:12:35 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=baylibre-com.20150623.gappssmtp.com; s=20150623;
+ h=from:to:cc:subject:in-reply-to:references:date:message-id
+ :mime-version; bh=OBwKrFY1D4LOF1Npq2Ns7LAgZ/Aix78Gw6PxZa/+a3U=;
+ b=dJT0IR/2tzobuBPy1TiyjO+DHXLlxT9JA+IIkorQZ0t7mRO+tnQAQpYqxOXEQtcJuq
+ Rg62vbxjqGnha2P8YTjfywu6SShwDjzlkNMbCjrqIz3I4rvns5nu7dzlj48mXGgz1VeY
+ cEOJsqqAIBYTaGAS6SHDbJm5LcgNwBUgJgVbWYmAeoIPx5tiwN1OEJO4Z9fGI7NLJ7ou
+ aQuKfOYKyMvoFDPL9DRs+N7oSmiVcHYHwYS5saQEilU06TFdJ545nu/qOILyjlh23Ja9
+ 2tWA5kgM4leoia+EorOrzqWbtrD9k+p8CxA1pAEoBOJXrTotraUE0WTb0ctf35rYlxkl
+ MgLA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:in-reply-to:references:date
+ :message-id:mime-version;
+ bh=OBwKrFY1D4LOF1Npq2Ns7LAgZ/Aix78Gw6PxZa/+a3U=;
+ b=Ze9k+qh68bNkfrqigsQH4oTmd2Gz6xCMboKbvW46MHlKyKN92sC3mpzjd4Y5/ueKzT
+ zMMLj4HNwScGyZlrLieXJLhnGtoANLvWUwWSZeheWG8NsTHE9h11bMBEQVTphFSLSrww
+ ShqCxwPKwwMuS4j4SLcbEfM8CXxOPUoRYvzdbaxcP6BbfPdzQUe33KmudjEvQ0imQCST
+ tXsuO6qW3z6TUFMc02n7U2ZuYY2WmQWEkxOhTSw0ZcPFT62SIHO+2Zm2WRkLVir3TQre
+ yWIiFMxPSXDNX9tJ2oalOj5EAQGUshTi03Kq9tqekqPz0AipBsKCujYrEhtGdzmfiy2m
+ tQ+w==
+X-Gm-Message-State: APjAAAX/ewT+0nrOqUZrlV1AsWpB70/qBDSAqrgQlEDWBYwQRAn1rV3y
+ l1D4zvQQuUCwDUCYSw77tCf1vylaQNqErg==
+X-Google-Smtp-Source: APXvYqzv3TxmWjFdOQXC8vFHDimo2UK7d7xgflxjZGmexCbRONVFSD1NKQEc2bIiggZiKJA5hOALbA==
+X-Received: by 2002:a17:90a:26a1:: with SMTP id
+ m30mr32832193pje.59.1561471955332; 
+ Tue, 25 Jun 2019 07:12:35 -0700 (PDT)
+Received: from localhost ([2601:602:9200:a1a5:559b:6f10:667f:4354])
+ by smtp.googlemail.com with ESMTPSA id
+ h11sm15022678pfn.170.2019.06.25.07.12.34
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Tue, 25 Jun 2019 07:12:34 -0700 (PDT)
+From: Kevin Hilman <khilman@baylibre.com>
+To: Olof Johansson <olof@lixom.net>
+Subject: Re: [GIT PULL] ARM: dts: Amlogic updates for v5.3
+In-Reply-To: <20190625114037.siptjcfkgmm4modi@localhost>
+References: <7hd0j8eyew.fsf@baylibre.com>
+ <20190625114037.siptjcfkgmm4modi@localhost>
+Date: Tue, 25 Jun 2019 07:12:30 -0700
+Message-ID: <7hftnxwy7l.fsf@baylibre.com>
 MIME-Version: 1.0
-In-Reply-To: <1561470705.5154.68.camel@lca.pw>
-Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190625_071124_904537_9A9DFE3B 
-X-CRM114-Status: GOOD (  13.10  )
+X-CRM114-CacheID: sfid-20190625_071236_170402_4BBE70CA 
+X-CRM114-Status: GOOD (  14.67  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:442 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -66,59 +94,76 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: ndesaulniers@google.com, Catalin Marinas <catalin.marinas@arm.com>,
- Will Deacon <will.deacon@arm.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- natechancellor@gmail.com, Thomas Gleixner <tglx@linutronix.de>,
+Cc: linux-amlogic@lists.infradead.org, arm@kernel.org,
  linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-SGkgUWlhbiwKCk9uIDI1LzA2LzIwMTkgMTQ6NTEsIFFpYW4gQ2FpIHdyb3RlOgo+IE9uIFR1ZSwg
-MjAxOS0wNi0yNSBhdCAxNDo0MCArMDEwMCwgVmluY2Vuem8gRnJhc2Npbm8gd3JvdGU6Cj4+IE9u
-IDI1LzA2LzIwMTkgMTM6NTYsIFFpYW4gQ2FpIHdyb3RlOgo+Pj4gT24gVHVlLCAyMDE5LTA2LTI1
-IGF0IDEzOjQ3ICswMTAwLCBWaW5jZW56byBGcmFzY2lubyB3cm90ZToKPj4+PiBIaSBRaWFuLAo+
-Pj4+Cj4+Pj4gT24gMjUvMDYvMjAxOSAxMzoxNiwgUWlhbiBDYWkgd3JvdGU6Cj4+Pj4+IFRoZSBs
-aW51eC1uZXh0IGNvbW1pdCAiYXJtNjQ6IHZkc286IFN1YnN0aXR1dGUgZ2V0dGltZW9mZGF5KCkg
-d2l0aCBDCj4+Pj4+IGltcGxlbWVudGF0aW9uIiBbMV0gYnJlYWtzIGNsYW5nIGJ1aWxkLgo+Pj4+
-Pgo+Pj4+PiBlcnJvcjogaW52YWxpZCB2YWx1ZSAndGlueScgaW4gJy1tY29kZS1tb2RlbCB0aW55
-Jwo+Pj4+PiBtYWtlWzFdOiAqKiogW3NjcmlwdHMvTWFrZWZpbGUuYnVpbGQ6Mjc5Ogo+Pj4+PiBh
-cmNoL2FybTY0L2tlcm5lbC92ZHNvL3ZnZXR0aW1lb2ZkYXkub10gRXJyb3IgMQo+Pj4+PiBtYWtl
-WzFdOiAqKiogV2FpdGluZyBmb3IgdW5maW5pc2hlZCBqb2JzLi4uLgo+Pj4+PiBtYWtlOiAqKiog
-W2FyY2gvYXJtNjQvTWFrZWZpbGU6MTgwOiB2ZHNvX3ByZXBhcmVdIEVycm9yIDIKPj4+Pj4KPj4+
-Pj4gWzFdIGh0dHBzOi8vcGF0Y2h3b3JrLmtlcm5lbC5vcmcvcGF0Y2gvMTEwMDk2NjMvCj4+Pj4+
-Cj4+Pj4KPj4+PiBJIGFtIG5vdCBzdXJlIHdoYXQgZG9lcyBleGFjdGx5IGJyZWFrIGZyb20geW91
-ciByZXBvcnQuIENvdWxkIHlvdSBwbGVhc2UKPj4+PiBwcm92aWRlCj4+Pj4gbW9yZSBkZXRhaWxz
-Pwo+Pj4KPj4+IEhlcmUgaXMgdGhlIGNvbmZpZyB0byByZXByb2R1Y2UuCj4+Pgo+Pj4gaHR0cHM6
-Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL2NhaWxjYS9saW51eC1tbS9tYXN0ZXIvYXJtNjQu
-Y29uZmlnCj4+Pgo+Pj4gIyBtYWtlIENDPWNsYW5nIC1qICQobnJfY3B1cykKPj4+Cj4+PiBJIGNh
-biBnZXQgaXQgd29ya2luZyBhZ2FpbiBieSByZW1vdmluZyAiLW1jbW9kZWw9dGlueSIgaW4KPj4+
-IGFyY2gvYXJtNjQva2VybmVsL3Zkc28vTWFrZWZpbGUKPj4+Cj4+Cj4+IFdpdGggeW91ciBkZWZj
-b25maWcgSSBjYW4ndCBzdGlsbCByZXByb2R1Y2UgdGhlIHByb2JsZW0uIFdoaWNoIHZlcnNpb24g
-b2YKPj4gY2xhbmcKPj4gYXJlIHlvdSB1c2luZz8KPiAKPiBDb21waWxlcjogY2xhbmcgdmVyc2lv
-biA3LjAuMSAodGFncy9SRUxFQVNFXzcwMS9maW5hbCkKPiAKCkkgYW0gdXNpbmcgY2xhbmcgOC4w
-LjAuIENvdWxkIHlvdSBwbGVhc2UgdHJ5IHdpdGggaXQgYW5kIHNlZSBpZiB0aGUgaXNzdWUgZ29l
-cyBhd2F5PwoKVGhhbmtzLApWaW5jZW56bwoKPj4KPj4+Pgo+Pj4+IE9uIG15IGVudjoKPj4+Pgo+
-Pj4+ICQgbWFrZSBtcnByb3BlciAmJiBtYWtlIGRlZmNvbmZpZyAmJiBtYWtlIENDPWNsYW5nIEhP
-U1RDQz1jbGFuZyAtaiQobnByb2MpCj4+Pj4KPj4+PiAuLi4KPj4+Pgo+Pj4+IGFyY2gvYXJtNjQv
-TWFrZWZpbGU6NTY6IENST1NTX0NPTVBJTEVfQ09NUEFUIGlzIGNsYW5nLCB0aGUgY29tcGF0IHZE
-U08KPj4+PiB3aWxsCj4+Pj4gbm90Cj4+Pj4gYmUgYnVpbHQKPj4+Pgo+Pj4+IC4uLgo+Pj4+Cj4+
-Pj4gwqAgTERTwqDCoMKgwqDCoGFyY2gvYXJtNjQva2VybmVsL3Zkc28vdmRzby5sZHMKPj4+PiDC
-oCBBU8KgwqDCoMKgwqDCoGFyY2gvYXJtNjQva2VybmVsL3Zkc28vbm90ZS5vCj4+Pj4gwqAgQVPC
-oMKgwqDCoMKgwqBhcmNoL2FybTY0L2tlcm5lbC92ZHNvL3NpZ3JldHVybi5vCj4+Pj4gwqAgQ0PC
-oMKgwqDCoMKgwqBhcmNoL2FybTY0L2tlcm5lbC92ZHNvL3ZnZXR0aW1lb2ZkYXkubwo+Pj4+IMKg
-IExEwqDCoMKgwqDCoMKgYXJjaC9hcm02NC9rZXJuZWwvdmRzby92ZHNvLnNvLmRiZwo+Pj4+IMKg
-IFZEU09DSEsgYXJjaC9hcm02NC9rZXJuZWwvdmRzby92ZHNvLnNvLmRiZwo+Pj4+IMKgIFZEU09T
-WU0gaW5jbHVkZS9nZW5lcmF0ZWQvdmRzby1vZmZzZXRzLmgKPj4+Pgo+Pj4+IC4uLgo+Pj4+Cj4+
-Pj4gwqAgTETCoMKgwqDCoMKgwqB2bWxpbnV4Lm8KPj4+PiDCoCBNT0RQT1NUIHZtbGludXgubwo+
-Pj4+IMKgIE1PRElORk8gbW9kdWxlcy5idWlsdGluLm1vZGluZm8KPj4+PiDCoCBLU1lNwqDCoMKg
-wqAudG1wX2thbGxzeW1zMS5vCj4+Pj4gwqAgS1NZTcKgwqDCoMKgLnRtcF9rYWxsc3ltczIubwo+
-Pj4+IMKgIExEwqDCoMKgwqDCoMKgdm1saW51eAo+Pj4+IMKgIFNPUlRFWMKgwqB2bWxpbnV4Cj4+
-Pj4gwqAgU1lTTUFQwqDCoFN5c3RlbS5tYXAKPj4+PiDCoCBCdWlsZGluZyBtb2R1bGVzLCBzdGFn
-ZSAyLgo+Pj4+IMKgIE9CSkNPUFkgYXJjaC9hcm02NC9ib290L0ltYWdlCj4+Pj4gwqAgTU9EUE9T
-VCA0ODMgbW9kdWxlcwo+Pj4+Cj4+Cj4+CgotLSAKUmVnYXJkcywKVmluY2Vuem8KCl9fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwg
-bWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8v
-bGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
+Olof Johansson <olof@lixom.net> writes:
+
+> On Thu, Jun 20, 2019 at 02:31:51PM -0700, Kevin Hilman wrote:
+>> The following changes since commit a188339ca5a396acc588e5851ed7e19f66b0ebd9:
+>> 
+>>   Linux 5.2-rc1 (2019-05-19 15:47:09 -0700)
+>> 
+>> are available in the git repository at:
+>> 
+>>   https://git.kernel.org/pub/scm/linux/kernel/git/khilman/linux-amlogic.git tags/amlogic-dt
+>> 
+>> for you to fetch changes up to a2c6e82e5341a283b06b04029f952598e445b159:
+>> 
+>>   ARM: dts: meson: switch to the generic Ethernet PHY reset bindings (2019-06-20 13:58:11 -0700)
+>> 
+>> ----------------------------------------------------------------
+>> ARM: dts: Amlogic updates for v5.3
+>> - SPDX updates
+>> - switch to generic ethernet PHY reset bindings
+>> - add the canvas module
+>> - mxiii-plus board: add regulators
+>> 
+>> ----------------------------------------------------------------
+>> Martin Blumenstingl (7):
+>>       ARM: dts: meson8: add the canvas module
+>>       ARM: dts: meson8m2: update the offset of the canvas module
+>>       ARM: dts: meson8b: add the canvas module
+>>       ARM: dts: meson8m2: mxiii-plus: rename the DCDC2 regulator
+>>       ARM: dts: meson8m2: mxiii-plus: add the supply for the Mali GPU
+>>       ARM: dts: meson8b: mxq: improve support for the TRONFY MXQ S805
+>>       ARM: dts: meson: switch to the generic Ethernet PHY reset bindings
+>> 
+>> Neil Armstrong (8):
+>>       ARM: dts: meson: update with SPDX Licence identifier
+>>       ARM: dts: meson6-atv1200: update with SPDX Licence identifier
+>>       ARM: dts: meson6: update with SPDX Licence identifier
+>>       ARM: dts: meson8-minix-neo-x8: update with SPDX Licence identifier
+>>       ARM: dts: meson8: update with SPDX Licence identifier
+>>       ARM: dts: meson8b-mxq: update with SPDX Licence identifier
+>>       ARM: dts: meson8b-odroidc1: update with SPDX Licence identifier
+>>       ARM: dts: meson8b: update with SPDX Licence identifier
+>> 
+>>  arch/arm/boot/dts/meson.dtsi              |  44 +-------------------------------------------
+>>  arch/arm/boot/dts/meson6-atv1200.dts      |  44 +-------------------------------------------
+>>  arch/arm/boot/dts/meson6.dtsi             |  44 +-------------------------------------------
+>>  arch/arm/boot/dts/meson8-minix-neo-x8.dts |  39 +--------------------------------------
+>>  arch/arm/boot/dts/meson8.dtsi             |  64 +++++++++++++++++++++++----------------------------------------
+>>  arch/arm/boot/dts/meson8b-ec100.dts       |   9 +++++----
+>>  arch/arm/boot/dts/meson8b-mxq.dts         | 182 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-----------------------------------------
+>>  arch/arm/boot/dts/meson8b-odroidc1.dts    |  51 ++++++--------------------------------------------
+>>  arch/arm/boot/dts/meson8b.dtsi            |  64 +++++++++++++++++++++++----------------------------------------
+>>  arch/arm/boot/dts/meson8m2-mxiii-plus.dts |  17 +++++++++++------
+>>  arch/arm/boot/dts/meson8m2.dtsi           |  10 ++++++++++
+>
+> If you redirect your 'git pull-request' to a file, or pipe it through cat, it
+> will use 80-char lines instead of whatever your terminal is set to. :)
+
+Hmm, my scripts redirect to a file, and I remember this used to be the
+case, but it's doesn't seem to be anymore.  I'm using git v2.11.0
+
+Kevin
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
