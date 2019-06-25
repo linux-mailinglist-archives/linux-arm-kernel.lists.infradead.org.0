@@ -2,70 +2,107 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 24C9855112
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 25 Jun 2019 16:07:36 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2A3525511A
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 25 Jun 2019 16:08:15 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=XU5PPPyqmWCMMUkAZ2VRwBvNU0pfcFRCNXWeHN9t7ts=; b=cnn8QHozaZ0RNI
-	D1lFJMPzgyZ+PNUxZyFg1cF2eV6bZMyVrklgVLIpcLnEqPkNXcfiEXHL5pcI+iYBBer5vv085ujPo
-	vbpOWktfqknPAwS3DWIqmfL1D+CH50sFpXkLESp+LZn/hhbqID/PYwB8TPiZqnbVlJhc3DXYf6chy
-	a97pK0WwOIn9xNbglCRVDz161lRax/LUEGp25euJzc0AqaVbc0LKa34KmEZxegiui/gdX82im/IeB
-	m0KlQmFFXRGNzz/7vsiGulABNrDss1mp0XwhpYS65ZxsfQAuyLlaoucKVjqw41cfkboufkS7Qm2K4
-	yzsewJcKnXz2Z25wkrew==;
+	List-Owner; bh=1OpFsgbIgeEAxDk1WH3YWOYdJ57ubm9TY2qFIRVadSo=; b=DOVak4fR8sOXug
+	0qGqlnK3yUGcljttWadLI6qJNQGpDZzOsNxhMiBflt3176T0Qh0fZV32eJaXFIHqumtaSqfCkyroq
+	B4uwp2fCX2U72+oYdCBnm5tTjufnKi8SEJd4GJVdjvPomUtP/6DnWASmMRJWMPXZGPqrXBaFBpe3x
+	TPPlS1PY1tSmx0UYuGv03WDOcLak0u+Rpl8A9ebnTQKW4NS63+WR+5hRlxAzYN5ivInuu6+AF0Yzr
+	dYlUENh0SrTLDsTJoyxp/BxtHDmVYEwUDrfP+useDNlo2FU0raGy5cmWQwukVcSKrZfL3QNYlU2U0
+	Yp1WyA9M1htElJE1FvNw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hfm6e-00008w-Jq; Tue, 25 Jun 2019 14:07:32 +0000
-Received: from mail-oi1-f196.google.com ([209.85.167.196])
+	id 1hfm7J-0000Q8-9m; Tue, 25 Jun 2019 14:08:13 +0000
+Received: from mail-ed1-x541.google.com ([2a00:1450:4864:20::541])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hfm6U-000087-CT
- for linux-arm-kernel@lists.infradead.org; Tue, 25 Jun 2019 14:07:23 +0000
-Received: by mail-oi1-f196.google.com with SMTP id g7so12596345oia.8
+ id 1hfm76-0000Oz-IT
+ for linux-arm-kernel@lists.infradead.org; Tue, 25 Jun 2019 14:08:02 +0000
+Received: by mail-ed1-x541.google.com with SMTP id k8so27300409edr.11
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 25 Jun 2019 07:07:21 -0700 (PDT)
+ Tue, 25 Jun 2019 07:07:59 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ffwll.ch; s=google;
+ h=sender:date:from:to:cc:subject:message-id:mail-followup-to
+ :references:mime-version:content-disposition
+ :content-transfer-encoding:in-reply-to:user-agent;
+ bh=CAtg3PLJ+XKSV8dAF2QLAFWrkpUis1quRM8X3SddO/c=;
+ b=DlsNVgfRWTP8NpGGrX9t3Nbz1zo7ltZhwtKOk/Es+ZdbHwht+lr3TCIe70hcYOlrBR
+ ABPEEparLAqoeRRvZ5Pzq1cEVMTiKJ3tiqSO4M7ZzKp6aqKBOmxw686MYovwaEFXhy8l
+ NK+f1Jf6pSuG3cXFg7wdY+FYcdimxOYB8sVXQ=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=xu5K3cSApgyQCIPbxwida3cq6je8e/cZ02vCwRG1d+w=;
- b=KbjGDnuJSBw4EyODM1PW1b/2pKAo4oQnmqGe8HVXczX280ogMBDym5FAR1Bb5/fhbX
- CNI3kqA6Ou55pL5xSJ9YyTI8lQYulBKzpTOqeo/Xy0xm4JDUX8hBbHDM8mRaEDp8SNCI
- 2ZEJU9rENW0Rl1cVdpcDYO2i/m4cy5ldP5DUC9edhI+lD6etXZ/Jny9ojDPWA4dSJwTN
- 1HSst5QE4b7RgkHLkPO3ik89VVeY6NRvuK+2nt/Sq4AOsBSyKJTKI9JRocyykwmyFPHQ
- YvyIzlS5aT7ljlRX3yYX9MJ0uQ6dqH240FNtLMBk3VF6CgN7Arz91UpbjI19R/nrdm4D
- sT4A==
-X-Gm-Message-State: APjAAAXrq8sZqRWDnB0+EHpPCTCBAKUp9ONuFKfyEEgd5ykmBLH4ylwO
- alSQ1yqpqb8Ml5DdkP2g2XLWZ5OnOlL15y3L0HvYLQ==
-X-Google-Smtp-Source: APXvYqyhnHU3+3QLCRUz5Xg9saeFMZSdaOUxzK0ZU1+6c5QvjPo2LeghnD2BWPn5f41xuge8lDam212q25TqBdTMzss=
-X-Received: by 2002:aca:a853:: with SMTP id r80mr14442083oie.156.1561471641232; 
- Tue, 25 Jun 2019 07:07:21 -0700 (PDT)
+ h=x-gm-message-state:sender:date:from:to:cc:subject:message-id
+ :mail-followup-to:references:mime-version:content-disposition
+ :content-transfer-encoding:in-reply-to:user-agent;
+ bh=CAtg3PLJ+XKSV8dAF2QLAFWrkpUis1quRM8X3SddO/c=;
+ b=IGHE8e2JIFXzL8BLRAug2AT93A5CjrLOoMPr+aI+xxgVXkpS8XK2Vugsae2KG3swrB
+ InPpmtH9qACRKJjJEeFzviQkzr4YYyGvHFbJuN4YNqvh0N4vKRcjKgxQ7oQSDVYqt2+U
+ 1dV8AWgtIAiz4L3vTJPZJQDa3v892IZ04kKyMJZEKUV0CGfyS3MlZ4ZsEH983L565lV1
+ I7v4HDjhMcD/CNRAv+S/f7PhCsEHSM0aPDzRMKGz8NBSdQ6SLOP1l8et0QInbrQZF6tT
+ YDZw3SmjX3zYiGBTDQ69fl/Om/90aMqa4b3O0mtAMtVEPAEFu50yM0AGQOwcfaChk+Nm
+ r/XA==
+X-Gm-Message-State: APjAAAW7+PLrMZbCtBHLAtmYKt09Xm/5kT3cD5KteR0jvyrW9viw4CLT
+ rKiC6nySraVE+5SU1ZGiP0rtoQ==
+X-Google-Smtp-Source: APXvYqwnUNvO8RCgD+CoeE0AtlUeuwzv5wVl2MiDkEcmAY2cVmivLFNLtUKUMk2lZa5wxlyqXHk8gw==
+X-Received: by 2002:a50:92e1:: with SMTP id l30mr77999218eda.141.1561471678547; 
+ Tue, 25 Jun 2019 07:07:58 -0700 (PDT)
+Received: from phenom.ffwll.local ([2a02:168:569e:0:3106:d637:d723:e855])
+ by smtp.gmail.com with ESMTPSA id w17sm4594091edi.15.2019.06.25.07.07.56
+ (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
+ Tue, 25 Jun 2019 07:07:57 -0700 (PDT)
+Date: Tue, 25 Jun 2019 16:07:55 +0200
+From: Daniel Vetter <daniel@ffwll.ch>
+To: Emil Velikov <emil.velikov@collabora.com>
+Subject: Re: [PATCH 0/2] Associate ddc adapters with connectors
+Message-ID: <20190625140755.GT12905@phenom.ffwll.local>
+Mail-Followup-To: Emil Velikov <emil.velikov@collabora.com>,
+ Andrzej Pietrasiewicz <andrzej.p@collabora.com>,
+ Russell King - ARM Linux admin <linux@armlinux.org.uk>,
+ linux-samsung-soc@vger.kernel.org,
+ Joonyoung Shim <jy0922.shim@samsung.com>,
+ Maxime Ripard <maxime.ripard@bootlin.com>,
+ Seung-Woo Kim <sw0312.kim@samsung.com>,
+ Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
+ linux-kernel@vger.kernel.org, Krzysztof Kozlowski <krzk@kernel.org>,
+ Inki Dae <inki.dae@samsung.com>, David Airlie <airlied@linux.ie>,
+ Kyungmin Park <kyungmin.park@samsung.com>,
+ Kukjin Kim <kgene@kernel.org>, dri-devel@lists.freedesktop.org,
+ kernel@collabora.com, Sean Paul <sean@poorly.run>,
+ linux-arm-kernel@lists.infradead.org, m.szyprowski@samsung.com
+References: <cover.1561452052.git.andrzej.p@collabora.com>
+ <20190625100351.52ddptvb2gizaepi@shell.armlinux.org.uk>
+ <817ccfba-754c-6a28-8d75-63f70605fd43@collabora.com>
+ <20190625133639.GA16031@arch-x1c3>
 MIME-Version: 1.0
-References: <20190624073818.29296-1-ard.biesheuvel@linaro.org>
- <20190624165641.GB211064@gmail.com>
-In-Reply-To: <20190624165641.GB211064@gmail.com>
-From: Ondrej Mosnacek <omosnace@redhat.com>
-Date: Tue, 25 Jun 2019 16:07:09 +0200
-Message-ID: <CAFqZXNvE2YaanvjQJq41AdcQh8qeY3=idng29GT=8Pt61PU_uw@mail.gmail.com>
-Subject: Re: [PATCH 0/6] crypto: aegis128 - add NEON intrinsics version for
- ARM/arm64
-To: Eric Biggers <ebiggers@kernel.org>
+Content-Disposition: inline
+In-Reply-To: <20190625133639.GA16031@arch-x1c3>
+X-Operating-System: Linux phenom 4.19.0-5-amd64 
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190625_070722_421789_A0E37F62 
-X-CRM114-Status: GOOD (  19.07  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20190625_070800_665014_434A3978 
+X-CRM114-Status: GOOD (  20.04  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.167.196 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ no trust [2a00:1450:4864:20:0:0:0:541 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.167.196 listed in wl.mailspike.net]
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -77,58 +114,96 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Herbert Xu <herbert@gondor.apana.org.au>,
- Steve Capper <steve.capper@arm.com>,
- Ard Biesheuvel <ard.biesheuvel@linaro.org>, linux-crypto@vger.kernel.org,
- Milan Broz <gmazyland@gmail.com>, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: linux-arm-kernel@lists.infradead.org, linux-samsung-soc@vger.kernel.org,
+ Joonyoung Shim <jy0922.shim@samsung.com>,
+ Maxime Ripard <maxime.ripard@bootlin.com>,
+ Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
+ Seung-Woo Kim <sw0312.kim@samsung.com>,
+ Russell King - ARM Linux admin <linux@armlinux.org.uk>,
+ Krzysztof Kozlowski <krzk@kernel.org>,
+ Andrzej Pietrasiewicz <andrzej.p@collabora.com>,
+ Inki Dae <inki.dae@samsung.com>, David Airlie <airlied@linux.ie>,
+ Kyungmin Park <kyungmin.park@samsung.com>, Kukjin Kim <kgene@kernel.org>,
+ dri-devel@lists.freedesktop.org, Daniel Vetter <daniel@ffwll.ch>,
+ kernel@collabora.com, Sean Paul <sean@poorly.run>,
+ linux-kernel@vger.kernel.org, m.szyprowski@samsung.com
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Jun 24, 2019 at 6:57 PM Eric Biggers <ebiggers@kernel.org> wrote:
-> On Mon, Jun 24, 2019 at 09:38:12AM +0200, Ard Biesheuvel wrote:
-> > Now that aegis128 has been announced as one of the winners of the CAESAR
-> > competition, it's time to provide some better support for it on arm64 (and
-> > 32-bit ARM *)
-> >
-> > This time, instead of cloning the generic driver twice and rewriting half
-> > of it in arm64 and ARM assembly, add hooks for an accelerated SIMD path to
-> > the generic driver, and populate it with a C version using NEON intrinsics
-> > that can be built for both ARM and arm64. This results in a speedup of ~11x,
-> > resulting in a performance of 2.2 cycles per byte on Cortex-A53.
-> >
-> > Patches #1 .. #3 are some fixes/improvements for the generic code. Patch #4
-> > adds the plumbing for using a SIMD accelerated implementation. Patch #5
-> > adds the ARM and arm64 code, and patch #6 adds a speed test.
-> >
-> > Note that aegis128l and aegis256 were not selected, and nor where any of the
-> > morus contestants, and so we should probably consider dropping those drivers
-> > again.
-> >
->
-> I'll also note that a few months ago there were attacks published on all
-> versions of full MORUS, with only 2^76 data and time complexity
-> (https://eprint.iacr.org/2019/172.pdf).  So MORUS is cryptographically broken,
-> and isn't really something that people should be using.  Ondrej, are people
-> actually using MORUS in the kernel?  I understand that you added it for your
-> Master's Thesis with the intent that it would be used with dm-integrity and
-> dm-crypt, but it's not clear that people are actually doing that.
+On Tue, Jun 25, 2019 at 02:36:39PM +0100, Emil Velikov wrote:
+> On 2019/06/25, Andrzej Pietrasiewicz wrote:
+> > Hi Russell,
+> > =
 
-AFAIK, the only (potential) users are dm-crypt/dm-integrity and
-af_alg. I don't expect many (if any) users using it, but who knows...
-I don't have any problem with MORUS being removed from crypto API. It
-seems to be broken rather heavily...
+> > W dniu 25.06.2019 o=A012:03, Russell King - ARM Linux admin pisze:
+> > > On Tue, Jun 25, 2019 at 11:46:34AM +0200, Andrzej Pietrasiewicz wrote:
+> > > > It is difficult for a user to know which of the i2c adapters is for=
+ which
+> > > > drm connector. This series addresses this problem.
+> > > > =
 
->
-> In any case we could consider dropping the assembly implementations, though.
->
-> - Eric
+> > > > The idea is to have a symbolic link in connector's sysfs directory,=
+ e.g.:
+> > > > =
 
---
-Ondrej Mosnacek <omosnace at redhat dot com>
-Software Engineer, Security Technologies
-Red Hat, Inc.
+> > > > ls -l /sys/class/drm/card0-HDMI-A-1/i2c-2
+> > > > lrwxrwxrwx 1 root root 0 Jun 24 10:42 /sys/class/drm/card0-HDMI-A-1=
+/i2c-2 \
+> > > > 	-> ../../../../soc/13880000.i2c/i2c-2
+> > > =
+
+> > > Don't you want the symlink name to be "i2c" or something fixed, rather
+> > > than the name of the i2c adapter?  Otherwise, you seem to be encumber=
+ing
+> > > userspace with searching the directory to try and find the symlink.
+> > > =
+
+> > =
+
+> > Thank you for your comment. So you imagine something on the lines of:
+> > =
+
+> > lrwxrwxrwx 1 root root 0 Jun 24 10:42 /sys/class/drm/card0-HDMI-A-1/ddc=
+ \
+> >  	-> ../../../../soc/13880000.i2c/i2c-2
+> > =
+
+> > ?
+> > =
+
+> Fwiw my Intel machine lists a number of i2c devices:
+> /sys/class/drm/card0-DP-1/i2c-6
+> /sys/class/drm/card0-DP-2/i2c-7
+> /sys/class/drm/card0-eDP-1/i2c-5
+> =
+
+> Note: I haven't looked _if_ they relate to ones you're proposing here.
+> =
+
+> One thing worth mentioning is, the ones I've seen are not symlinks to
+> another sysfs entries. And there aren't any i2c nodes in /dev ...
+> =
+
+> Just a random food for thought :-)
+
+Those are the i2c-over-dp-aux controllers. I think we want to list these
+too.
+
+Btw to make this more useful maybe some default implementations for
+get_modes which automatically dtrt, as a helper? Probably could use that
+to squash quite a bit of boilerplate.
+
+Otherwise I like this. Biggest problem I'm seeing here is rolling this out
+everywhere, this is a lot of work. And without widespread adoptions it's
+not terribly useful for userspace.
+-Daniel
+-- =
+
+Daniel Vetter
+Software Engineer, Intel Corporation
+http://blog.ffwll.ch
 
 _______________________________________________
 linux-arm-kernel mailing list
