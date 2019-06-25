@@ -2,82 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 03A0352242
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 25 Jun 2019 06:45:26 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A05BB52253
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 25 Jun 2019 06:52:15 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=c5mfJBGvTfY8JfagmVcskPjQASHPbMu5mCjV6+TpSeg=; b=e6YL+rtBdMv9x3
-	PMRHwASLFmw8tNvXRNhuweDM+uS/USbGPaTAxo0FNGu1BwTcK2ofSw6BRMoFTTNk0NQK8d2RTx3uP
-	JHEhdT2sdgwUvlBJhov3j/spGRFaqYwr15IFvRRmYVbjbXtwem5s09CJ5DvTybYrOJFTdB3XfBRkz
-	bV8n+6aXqCVtp8xgVkF7e6Y2l7PnC3xZf+lZvsJZLws2+JTpHmToAwjqzzea8aIWmHtdi/KCtTWEU
-	IWZ9LNiFLx92f8PV8jRSHSR6gg16yHTQX4nppvciXoFg3vl2M5fKlynDGNJG9TYnmlBOh14l3/8XZ
-	exq4zsugc+8sVG2RlRGQ==;
+	List-Owner; bh=EVlanM+KZleEFPJCPFDWVhs+VBV5slJBso41dyM5gWI=; b=MriOpo8d7E4bOk
+	r175NThBO9D2JfD+x3VlxFGkUm9nes54a+Mvm5TLfWi/E4aecDSAbR3st1gNeYmivEtd9c9nNPBMM
+	r9i02Cve7076Pn2jPqe+4Q0TGwNtuQ2NWBDbD2SuLQlXEabF6QGHoBIyyqm3uUhFlkucmRPafH1qd
+	I4ht9g8BzveVdmoDoq5scvpMpUZekJlPRCaRVphf3GgneTYKEgzNuPGiCPrhN5zyUpiIu23wpE/ir
+	kqg9GqnpET52z3oEABv0gfj1AqS5s1j0GGvXV//hrNTPuM/WTAHBwp0PsFMzUWNtd3CfmH++GtEsX
+	l1OmcgveXEXtVFMjFwrA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hfdKY-0004Nn-2F; Tue, 25 Jun 2019 04:45:18 +0000
-Received: from mail-ot1-x343.google.com ([2607:f8b0:4864:20::343])
+	id 1hfdRG-0007jO-2y; Tue, 25 Jun 2019 04:52:14 +0000
+Received: from mail-pf1-x443.google.com ([2607:f8b0:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hfdKE-0004N8-9y
- for linux-arm-kernel@lists.infradead.org; Tue, 25 Jun 2019 04:44:59 +0000
-Received: by mail-ot1-x343.google.com with SMTP id 43so11097453otf.8
+ id 1hfdR3-0007j4-Fo
+ for linux-arm-kernel@lists.infradead.org; Tue, 25 Jun 2019 04:52:02 +0000
+Received: by mail-pf1-x443.google.com with SMTP id q10so8779455pff.9
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 24 Jun 2019 21:44:57 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=googlemail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=2Wp4HQypqw0rNbItr1Xs0WBR6fHG0G9gjAl5KxurVdE=;
- b=ICNF3PTZ1ZfG+bAeY8F8Pp7sQzesnEsLfQyVK4xXEW0fE9JbdoeEwICCri9MhuwgDe
- bm/0ejdD98vhkuaDReGiErs7EaKJphiOdNIOX5OTwKFKRbuUyOxVIAk4bHBff8k+v4sW
- T7OmIR81tdf3Fy8cR5DX0+mQ0tZ/Wu4tdvEcn1ySqLThg5Z+Cqiyv07RISHe3YwpWKkU
- mNX0GQfIvmuXGqm24S4OcATnGcJC5dp2nIjKXJ/eVlclscTS4ifWJKJt3gXQIn8V6JDV
- mBBDQVVDx+ijpZkFkPqRJLSkoToQRF0nF2/Dh+zYJ2NvIUQ+MXj1dcWGXJ7WX+IKrAi0
- Ackw==
+ Mon, 24 Jun 2019 21:52:00 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=x++iS19w63sxgFVfWWLm5YJQFUHEat//0dXequQHgss=;
+ b=oPMATDOVDtVdhlOcqT7LD8rym0j7XNpvTqF81EmRDXevW5UrlQq+FYBUI8F5pOH+FV
+ vOoyEXA3YXGXBeBlycdLp9fk9MazJEIc9K+NxmzsuRCpDdG9h7TuhXujrTj6DMCN8h7T
+ Y6i84uBKUBG5O4vYCrqQ7eXupJwjwqHWx/1kMbOsHbWMGfZ3csvfmUoLMbgSOqMptbGf
+ KoVs3A8EU6eR5YM3Pxu8PVnJ2VOU/KlDIxEk6zJdxdxyl6DY0AMbUkIrpnJ78EvrnBFB
+ TlCzMdE1KIJzqUwkvzH5kvGPEsftIY/nqvyBzHUlz1SabNYgQiXNDdXCyqcmY9m38/Ky
+ tNlg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=2Wp4HQypqw0rNbItr1Xs0WBR6fHG0G9gjAl5KxurVdE=;
- b=MG1AzNtCc4bWn2eKmzcOS0yPGx+a1AQlZFN7DhIRMH/b4Gy80YGu5p9IMm/vXgueo3
- HGbEmEqbZXc0VURV+N2qvSSeMLELMA5aw43M3ILCpNEB91oxOr7eZOfVasR/FgHYHh6R
- Bbw6cpTti7BzD8LMkv6/KsGk+85BSgB/bhY7OR9oZ53NGPt6MxdhN7hdOq+E3VSi9vx0
- I99vINlSpGrUgDEpYMVmyK1UyRPZ5WnWoEUTH7YyTK7seuLCrv7IWcaWQjn1DhLspfgt
- HuCdp1G8znDO8LX5X7YX+KiuLZ/sQXyr0KMfTayu5bcC8RV908dV17wDLm+ylC3uvCRY
- zYnw==
-X-Gm-Message-State: APjAAAVJ2+EMczRAzsLhHJcou7aLIV1NTRouzuqVxcfM+CX+HAqLMwiE
- aM2QurNm8lMrosH1py/UtAvdUm/KpAv6GyCvmuQ=
-X-Google-Smtp-Source: APXvYqxsOdEMaHKmim8mpE6aFtY/5w9wT+CBAa2iQ2fftmNQo7l1oux8418VMI5kU7usdjz86T8c871EA6XxIf+xwSc=
-X-Received: by 2002:a9d:14a:: with SMTP id 68mr70034647otu.96.1561437896776;
- Mon, 24 Jun 2019 21:44:56 -0700 (PDT)
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=x++iS19w63sxgFVfWWLm5YJQFUHEat//0dXequQHgss=;
+ b=Wxd2CiGPQU3PNuVwVBavpFFFRukW912boFTR5YkFB3GOCLdt0oXAdHcSoM4mSDi+Oh
+ A1yA9yExBuZCv362dd0zeEDudl2itI+0XGplpcNDthvw8tOkSHcg0GInxKmwwIrxDE8p
+ 3GmHqCRxLQeeZnHUF5RT2dbvr7KP+jIZcUiNV1E0DI4ZqGzERR8PJ34ZHcZQvu0Rg40/
+ 0Vfah+S6zBwOUtVBmdQru2h+4uYUVnnVi0daBywNjzEvO9GvlS5jfgS+INj4lU3+1ost
+ +oQ3znIyPACI23RyznaG4ntlesk/BvUIwZaroppbev6Q+BQdbxcgml9xNNJP4kZFf14X
+ WfVA==
+X-Gm-Message-State: APjAAAXKcBMnq37RKrzSt6B8Vza5fnkMoTfTcrnWgIvoTzuH+RqBxPOE
+ XUD89gcx+iknA+2TAsZJAoLbTA==
+X-Google-Smtp-Source: APXvYqwq+x8bjy217eJe6SW1wvSRPjFujvsZCYifDyTnFtr9gkiZuKb/hbegQMTzT8JlFrq6Jsu5Gg==
+X-Received: by 2002:a63:a046:: with SMTP id u6mr20953163pgn.122.1561438320211; 
+ Mon, 24 Jun 2019 21:52:00 -0700 (PDT)
+Received: from leoy-ThinkPad-X240s ([240e:e0:f087:f467:b43a:6fd7:87a2:c789])
+ by smtp.gmail.com with ESMTPSA id 22sm18808541pfu.179.2019.06.24.21.51.47
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Mon, 24 Jun 2019 21:51:59 -0700 (PDT)
+Date: Tue, 25 Jun 2019 12:51:40 +0800
+From: Leo Yan <leo.yan@linaro.org>
+To: Arnaldo Carvalho de Melo <arnaldo.melo@gmail.com>
+Subject: Re: [PATCH] perf cs-etm: Improve completeness for kernel address space
+Message-ID: <20190625045140.GA7637@leoy-ThinkPad-X240s>
+References: <20190617150024.11787-1-leo.yan@linaro.org>
+ <CANLsYkyMW=WG+=yWTLSyMT3JXqd_2kvsrx9c-EwCoKEnRZvErA@mail.gmail.com>
+ <20190620005829.GH24549@leoy-ThinkPad-X240s>
+ <20190624190009.GE4181@kernel.org>
 MIME-Version: 1.0
-References: <20190617165836.4673-1-colin.king@canonical.com>
- <20190619051308.23582-1-martin.blumenstingl@googlemail.com>
- <92f9e5a6-d2a2-6bf2-ff8a-2430fe977f93@canonical.com>
- <CAFBinCDmYVPDMcwAAYhMfxxuTsG=xunduN58_8e20zE_Mhmb7Q@mail.gmail.com>
-In-Reply-To: <CAFBinCDmYVPDMcwAAYhMfxxuTsG=xunduN58_8e20zE_Mhmb7Q@mail.gmail.com>
-From: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
-Date: Tue, 25 Jun 2019 06:44:45 +0200
-Message-ID: <CAFBinCC-LLpfXQRFcKBbUpCfKc0S9Xtt60QrhEThsOFV-T7vFw@mail.gmail.com>
-Subject: Re: [PATCH] net: stmmac: add sanity check to
- device_property_read_u32_array call
-To: Colin Ian King <colin.king@canonical.com>
+Content-Disposition: inline
+In-Reply-To: <20190624190009.GE4181@kernel.org>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190624_214458_377586_D0124035 
-X-CRM114-Status: GOOD (  20.82  )
+X-CRM114-CacheID: sfid-20190624_215201_592348_B8C35161 
+X-CRM114-Status: GOOD (  21.32  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:343 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:443 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (martin.blumenstingl[at]googlemail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -97,64 +100,81 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: alexandre.torgue@st.com, netdev@vger.kernel.org,
- kernel-janitors@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-stm32@st-md-mailman.stormreply.com, joabreu@synopsys.com,
- mcoquelin.stm32@gmail.com, peppe.cavallaro@st.com, davem@davemloft.net,
- linux-arm-kernel@lists.infradead.org
+Cc: Mathieu Poirier <mathieu.poirier@linaro.org>,
+ Suzuki Poulouse <suzuki.poulose@arm.com>,
+ Alexander Shishkin <alexander.shishkin@linux.intel.com>,
+ netdev@vger.kernel.org, Coresight ML <coresight@lists.linaro.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Peter Zijlstra <peterz@infradead.org>, Namhyung Kim <namhyung@kernel.org>,
+ bpf@vger.kernel.org, Jiri Olsa <jolsa@redhat.com>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Colin,
+Hi Arnaldo,
 
-On Thu, Jun 20, 2019 at 3:34 AM Martin Blumenstingl
-<martin.blumenstingl@googlemail.com> wrote:
->
-> Hi Colin,
->
-> On Wed, Jun 19, 2019 at 8:55 AM Colin Ian King <colin.king@canonical.com> wrote:
-> >
-> > On 19/06/2019 06:13, Martin Blumenstingl wrote:
-> > > Hi Colin,
-> > >
-> > >> Currently the call to device_property_read_u32_array is not error checked
-> > >> leading to potential garbage values in the delays array that are then used
-> > >> in msleep delays.  Add a sanity check to the property fetching.
-> > >>
-> > >> Addresses-Coverity: ("Uninitialized scalar variable")
-> > >> Signed-off-by: Colin Ian King <colin.king@canonical.com>
-> > > I have also sent a patch [0] to fix initialize the array.
-> > > can you please look at my patch so we can work out which one to use?
-> > >
-> > > my concern is that the "snps,reset-delays-us" property is optional,
-> > > the current dt-bindings documentation states that it's a required
-> > > property. in reality it isn't, there are boards (two examples are
-> > > mentioned in my patch: [0]) without it.
-> > >
-> > > so I believe that the resulting behavior has to be:
-> > > 1. don't delay if this property is missing (instead of delaying for
-> > >    <garbage value> ms)
-> > > 2. don't error out if this property is missing
-> > >
-> > > your patch covers #1, can you please check whether #2 is also covered?
-> > > I tested case #2 when submitting my patch and it worked fine (even
-> > > though I could not reproduce the garbage values which are being read
-> > > on some boards)
-in the meantime I have tested your patch.
-when I don't set the "snps,reset-delays-us" property then I get the
-following error:
-  invalid property snps,reset-delays-us
+On Mon, Jun 24, 2019 at 04:00:09PM -0300, Arnaldo Carvalho de Melo wrote:
 
-my patch has landed in the meantime: [0]
-how should we proceed with your patch?
+[...]
 
+> > > > diff --git a/tools/perf/util/cs-etm.c b/tools/perf/util/cs-etm.c
+> > > > index 0c7776b51045..ae831f836c70 100644
+> > > > --- a/tools/perf/util/cs-etm.c
+> > > > +++ b/tools/perf/util/cs-etm.c
+> > > > @@ -613,10 +613,34 @@ static void cs_etm__free(struct perf_session *session)
+> > > >  static u8 cs_etm__cpu_mode(struct cs_etm_queue *etmq, u64 address)
+> > > >  {
+> > > >         struct machine *machine;
+> > > > +       u64 fixup_kernel_start = 0;
+> > > > +       const char *arch;
+> > > >
+> > > >         machine = etmq->etm->machine;
+> > > > +       arch = perf_env__arch(machine->env);
+> > > >
+> > > > -       if (address >= etmq->etm->kernel_start) {
+> > > > +       /*
+> > > > +        * Since arm and arm64 specify some memory regions prior to
+> > > > +        * 'kernel_start', kernel addresses can be less than 'kernel_start'.
+> > > > +        *
+> > > > +        * For arm architecture, the 16MB virtual memory space prior to
+> > > > +        * 'kernel_start' is allocated to device modules, a PMD table if
+> > > > +        * CONFIG_HIGHMEM is enabled and a PGD table.
+> > > > +        *
+> > > > +        * For arm64 architecture, the root PGD table, device module memory
+> > > > +        * region and BPF jit region are prior to 'kernel_start'.
+> > > > +        *
+> > > > +        * To reflect the complete kernel address space, compensate these
+> > > > +        * pre-defined regions for kernel start address.
+> > > > +        */
+> > > > +       if (!strcmp(arch, "arm64"))
+> > > > +               fixup_kernel_start = etmq->etm->kernel_start -
+> > > > +                                    ARM64_PRE_START_SIZE;
+> > > > +       else if (!strcmp(arch, "arm"))
+> > > > +               fixup_kernel_start = etmq->etm->kernel_start -
+> > > > +                                    ARM_PRE_START_SIZE;
+> > > 
+> > > I will test your work but from a quick look wouldn't it be better to
+> > > have a single define name here?  From looking at the modifications you
+> > > did to Makefile.config there doesn't seem to be a reason to have two.
+> > 
+> > Thanks for suggestion.  I changed to use single define
+> > ARM_PRE_START_SIZE and sent patch v2 [1].
+> > 
+> > If possible, please test patch v2.
+> > 
+> > Thanks,
+> > Leo Yan
+> 
+> So just for the record, I'm waiting for Mathieu on this one, i.e. for
+> him to test/ack v3.
 
-Martin
+Yes, this makes sense.  I'd like to get Mathieu's green light as well,
+it needs to take much time to build llvm/clang on SBC, so it's no rush.
 
-
-[0] https://git.kernel.org/pub/scm/linux/kernel/git/davem/net-next.git/commit/drivers/net/ethernet/stmicro/stmmac/stmmac_mdio.c?id=84ce4d0f9f55b4f4ca4d4edcbb54a23d9dad1aae
+Thanks,
+Leo Yan
 
 _______________________________________________
 linux-arm-kernel mailing list
