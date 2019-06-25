@@ -2,55 +2,49 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 22E6055773
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 25 Jun 2019 20:55:52 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 41D7F557DC
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 25 Jun 2019 21:35:40 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:Subject:From:To:
-	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=VHKeI4gyWAZq6GpW0JzElmCPibHc9R6WevIYJJ+tASM=; b=kiXWQi1QRZH+ck
-	QAueKYOZNDD9FY7oQo0hM0iMcXOWMk4VYh3lvBYNVBmspRvFs/Gzoxytyeve/FNNjCuu69HBSJfWF
-	pVJnsgziUwC/3qepqbL6AgUj23Gpyv9oXq5rn8z2VQKnDVNfPBbJNGvawn2tWZrBYGtmslLczMP+h
-	TDC1ptwlqiJ4ebx0TCEFFMBUbyggW0jM08wT1YcP8bcfnY4yiR6vgVLruBrWkx18IKThXLNjrwKoh
-	/Vpr4qYWEl47qy8EaHtkvozn8KbZEAr5pFkyx9wJGhqQjKcq+0SX3cvZTljWJvFAlhRym1n0CLvsO
-	YKRDzOaKBEpv7+/6yIlg==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=gN4DwYkpYzbdBo82vZsJ90OiOzwgry0s0MdsNPBB7Ns=; b=OdY
+	bXz+ZZOTEM5d9MZI8Tw6EKy3Lw+ZtFZLQAQ+pBo+M0jEpERglY8/IqAH46ytmZnUzHKqAZE79EEJP
+	znbH0uWyMy4o3jxtnhwOX4zqk3pXX4scI9xLBsuPk/qqAJua0Z8hDdRyD6rPQvtKuUSekIpQouHD9
+	OxXEJfo2TaNTw+yhvGlz+ZXjeQImYnfKxEWiS9Vt8mCvi51NZ5gumNwuSvDVleFNmLIhL17JXnRhi
+	noMZ6ETfmejECE83pcNKSO0/bowu0DpSpHLxae9MIOO4uvkuiMzGw5nkYqV8cxLMsXxSlek+5TagA
+	9y142HCsh4ast8dWeD/fixZWS2L+Y2Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hfqbd-0002ar-Pj; Tue, 25 Jun 2019 18:55:49 +0000
+	id 1hfrDx-0006Dw-Be; Tue, 25 Jun 2019 19:35:25 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hfqbK-0002aJ-Df
- for linux-arm-kernel@lists.infradead.org; Tue, 25 Jun 2019 18:55:31 +0000
-Received: from kernel.org (unknown [104.132.0.74])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ id 1hfrDa-0005nc-PF
+ for linux-arm-kernel@lists.infradead.org; Tue, 25 Jun 2019 19:35:04 +0000
+Received: from localhost.localdomain (unknown [194.230.155.151])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id ACAF52085A;
- Tue, 25 Jun 2019 18:55:29 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id D024120883;
+ Tue, 25 Jun 2019 19:34:59 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1561488929;
- bh=CU/pi1jDqoAxTEEO83+4ZsORpoB/lyIbsA7mD6/R9HY=;
- h=In-Reply-To:References:To:From:Subject:Cc:Date:From;
- b=vcR9gmJZJ9TmQdBp8TcKLhGKYvrdW1PlBKzqzOSCiwznX260bcm2xeLhLjpjalFuk
- xIaSshROHzPyZCwur+DKJZ6juJUGyYx9W6LpDJGP5JB7u6t0ZYIS/mNnSdc8oNM+rr
- fQiOUa2dbEWCZem77UsrtRicO7pQh2JeTvZrIVms=
-MIME-Version: 1.0
-In-Reply-To: <2ba035cc-2381-ce36-3b7d-f5027ef9ef40@ti.com>
-References: <1deb7a85-0859-54f1-950a-33de3a08f9fd@ti.com>
- <20190625011711.3D2D520663@mail.kernel.org>
- <2ba035cc-2381-ce36-3b7d-f5027ef9ef40@ti.com>
-To: Michael Turquette <mturquette@baylibre.com>,
- Santosh Shilimkar <ssantosh@kernel.org>, Tero Kristo <t-kristo@ti.com>,
- linux-clk <linux-clk@vger.kernel.org>
-From: Stephen Boyd <sboyd@kernel.org>
-Subject: Re: [GIT PULL] clk: keystone: changes for 5.3 v2
-User-Agent: alot/0.8.1
-Date: Tue, 25 Jun 2019 11:55:28 -0700
-Message-Id: <20190625185529.ACAF52085A@mail.kernel.org>
+ s=default; t=1561491301;
+ bh=hQjKnhcZZUBXPnB4E3tB9Mrbs5scGFUowmnD4/pB2Ek=;
+ h=From:To:Cc:Subject:Date:From;
+ b=o1JcsmuO60aZ0R5wdaDmtQYeoEr+vUjp9eyMf0/7AhX9CexsHk+Lgq3EJ3rLVbX1E
+ +DDGwuTD03wkgpirHBdbD4tn8V8fWf5s0EkgbwWzmhlQRwyWy/yKI3rBQg8Q/GB6I7
+ uIKtvkplzhyp150qaAzyMLS/wPGqSwYvGGDQWJOE=
+From: Krzysztof Kozlowski <krzk@kernel.org>
+To: Olof Johansson <olof@lixom.net>, Arnd Bergmann <arnd@arndb.de>,
+ arm@kernel.org
+Subject: [GIT PULL 1/4] ARM: defconfig: Samsung/Exynos for v5.3
+Date: Tue, 25 Jun 2019 21:34:48 +0200
+Message-Id: <20190625193451.7696-1-krzk@kernel.org>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190625_115530_485699_BA1CA694 
-X-CRM114-Status: GOOD (  20.74  )
+X-CRM114-CacheID: sfid-20190625_123502_850127_805782DD 
+X-CRM114-Status: GOOD (  10.80  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -79,65 +73,46 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "linux-arm-kernel@lists.infradead.org"
- <linux-arm-kernel@lists.infradead.org>
+Cc: linux-samsung-soc@vger.kernel.org, Kukjin Kim <kgene@kernel.org>,
+ linux-arm-kernel@lists.infradead.org, Krzysztof Kozlowski <krzk@kernel.org>,
+ linux-kernel@vger.kernel.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Quoting Tero Kristo (2019-06-25 03:33:50)
-> On 25/06/2019 04:17, Stephen Boyd wrote:
-> > Quoting Tero Kristo (2019-06-12 04:56:15)
-> >> Hi Stephen, Mike, Santosh,
-> >>
-> >> Here's a 2nd take of the pull request for the clock changes for keystone
-> >> SoC for 5.3. The only change compared to the v1 is to add the required
-> >> drivers/firmware change in. This avoids the nasty dependency between the
-> >> pull requests between the clock driver and firmware driver.
-> >>
-> >> -Tero
-> > 
-> > Thanks. Pulled into clk-next. I guess we should increase the size of the
-> > number of parents that can exist to be more than a u8? We're close to
-> > getting there with the new way of specifying clk parents, so maybe we
-> > should expand it to an unsigned int, but then we may need to optimize
-> > finding parents when searching through all the parents of a clk.
-> 
-> For now, this is not an issue with TI SoC:s at least, I think we only 
-> have like 64 parents at max for muxes.
+The following changes since commit a188339ca5a396acc588e5851ed7e19f66b0ebd9:
 
-Ok. It doesn't sound like a priority then.
+  Linux 5.2-rc1 (2019-05-19 15:47:09 -0700)
 
-> 
-> > Also, there isn't any quantification of how much better it is to scan DT
-> > for all the clks that are used and only register those ones. It would be
-> > nice to understand how much better it is to do that sort of scan vs.
-> > just populating all clks at boot time.
-> 
-> I haven't done measurements lately, but it provides pretty drastic 
-> improvement. On am65x for example, it cuts the scan time from bit more 
-> than 1 second to couple of hundred milliseconds. I don't have 
-> measurements for the new j721e SoC, but I would believe the improvement 
-> is even more with that one.
+are available in the Git repository at:
 
-Cool. Thanks for the numbers.
+  https://git.kernel.org/pub/scm/linux/kernel/git/krzk/linux.git tags/samsung-defconfig-5.3
 
-> 
-> > It may be useful to make the code
-> > generic because NXP folks also want to populate clks from DT so maybe we
-> > should provide this from the core framework somehow to ask providers to
-> > register a particular clk or not. I haven't thought about it at all, but
-> > it may come up that we totally rewrite this code in the future to be
-> > shared outside of the TI clk driver.
-> 
-> It might also be worth thinking whether some sort of lazy clock probe 
-> would be possible... now we register everything at one go, but would it 
-> be possible to only register / reparent clocks once they are actually 
-> requested by some driver?
+for you to fetch changes up to dd50a69b5697532666023766688c6ea642e5a443:
 
-Sure. Ideally the optimization isn't vendor driver specific.
+  ARM: exynos_defconfig: Enable Panfrost and Lima drivers (2019-06-19 19:23:35 +0200)
 
+----------------------------------------------------------------
+Samsung defconfig changes for v5.3
+
+1. Trim several configs with savedefconfig.
+2. Enable Lima and Panfrost drivers for Mali GPU.
+
+----------------------------------------------------------------
+Krzysztof Kozlowski (4):
+      ARM: exynos_defconfig: Trim and reorganize with savedefconfig
+      ARM: defconfig: samsung: Cleanup with savedefconfig
+      ARM: multi_v7_defconfig: Enable Panfrost and Lima drivers
+      ARM: exynos_defconfig: Enable Panfrost and Lima drivers
+
+ arch/arm/configs/exynos_defconfig   | 65 +++++++++++++++++--------------------
+ arch/arm/configs/mini2440_defconfig | 43 ++++++++++--------------
+ arch/arm/configs/multi_v7_defconfig |  3 +-
+ arch/arm/configs/s3c2410_defconfig  | 24 +++++---------
+ arch/arm/configs/s3c6400_defconfig  | 11 +++----
+ 5 files changed, 62 insertions(+), 84 deletions(-)
 
 _______________________________________________
 linux-arm-kernel mailing list
