@@ -2,70 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A177352928
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 25 Jun 2019 12:13:08 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3D8B652932
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 25 Jun 2019 12:14:52 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=h/3qqVq4D/WoEKuw24aIfvSWT42r3GAlvm+HclvoMAk=; b=IlZXPKGEa4qSY1
-	sHLEbKywA0C6AiJwkZzntoXflKZiA3lVmBdkKucLcwg6PsWm1lbI7D3jy6qNqwMO5ICnct3RXlAOy
-	dKbt62pZgNxV4/8hEkgi5Saec4Yjkrw1MrjGb2nPeiyLstM6B5A5KDaD1zcQNxlZRkQFp/314KkBf
-	EpuZjy/ylnkGUpfY4plSTDKpg7xgSV2PBhAklBkCxN18BWJdcQwsLrbjlb6jaoO9ihRsbIRIjn9Xo
-	+NVfyENu/dpzw9whrfXnxlmC+pKaDF8O3SY9mdrY0U1Yf6cDtYg+alLrn0+GwiBzYxVjDHR0GPD6v
-	o8J53aHAZ9Da9CwDIVsg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:References:
+	To:Subject:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=mztEQTZvbIjYIYPhAdafjytI7GJbitRe6nAzTMO38VY=; b=TIbRLAB3MZWPbzGOyj/4ldGix
+	OvHC68JjHsSPAlttpXkewD+nlVTVR/o0KFAhb/MMQQxCXGVzfZjcaFuAFJ9KZ1AihwNgFF4Z3SuYt
+	1BaXnF947taA6CPGaXc5PhMgi+AkUZH6xt48onicSYeBX48rAjsIBqGBhEYKtU5flZnECCF7v5OHW
+	6BPw+CL67tlYqfW2Jq3aC097eL3+iTIUQS5qn3bBJsteu2R4zFB2kxyC8DMGPT5Ljq7mKvqZQ6nCp
+	qZzdYWpfYDva07nqABH6UluGKT6FPgYVCXuon+RN5O8AFIcm4kbAKtAu11Fog9DroNSyhjtkOQFRV
+	kXlxcczzg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hfiRk-000636-VB; Tue, 25 Jun 2019 10:13:05 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1hfiTQ-0006Ms-Fz; Tue, 25 Jun 2019 10:14:48 +0000
+Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hfiRW-00062V-PJ
- for linux-arm-kernel@lists.infradead.org; Tue, 25 Jun 2019 10:12:52 +0000
-Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 9497020644;
- Tue, 25 Jun 2019 10:12:48 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1561457569;
- bh=BccGv4rAyaS20N7ULXOIXSojeQUiRKMC5yb0GgHpenw=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=PwHE0qM6WpJ29nsXZ+hxtEv9CAAgJ2a+pQzJs/VJcWF+IonYcZ8AvVqF3Q50F6JrJ
- cvE+szA3JwIu3z7pcCX9Si2uRWKqWfusCMQDCR9Mhy4z0hQQ1CyV4eEGxykSZVj87b
- UzysuLk+r4aaeeKs1sbcsr83JqrihjX1WQHpnSyo=
-Date: Tue, 25 Jun 2019 11:12:45 +0100
-From: Will Deacon <will@kernel.org>
-To: Hoan Tran OS <hoan@os.amperecomputing.com>
-Subject: Re: [PATCH] arm64: Kconfig: Enable NODES_SPAN_OTHER_NODES config for
- NUMA
-Message-ID: <20190625101245.s4vxfosoop52gl4e@willie-the-truck>
-References: <1561387098-23692-1-git-send-email-Hoan@os.amperecomputing.com>
+ id 1hfiTA-0006MU-DE
+ for linux-arm-kernel@lists.infradead.org; Tue, 25 Jun 2019 10:14:33 +0000
+Received: from [127.0.0.1] (localhost [127.0.0.1])
+ (Authenticated sender: andrzej.p) with ESMTPSA id 5E67D266AD9
+From: Andrzej Pietrasiewicz <andrzej.p@collabora.com>
+Subject: Re: [PATCH 0/2] Associate ddc adapters with connectors
+To: Russell King - ARM Linux admin <linux@armlinux.org.uk>
+References: <cover.1561452052.git.andrzej.p@collabora.com>
+ <20190625100351.52ddptvb2gizaepi@shell.armlinux.org.uk>
+Message-ID: <817ccfba-754c-6a28-8d75-63f70605fd43@collabora.com>
+Date: Tue, 25 Jun 2019 12:14:27 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.7.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <1561387098-23692-1-git-send-email-Hoan@os.amperecomputing.com>
-User-Agent: NeoMutt/20170113 (1.7.2)
+In-Reply-To: <20190625100351.52ddptvb2gizaepi@shell.armlinux.org.uk>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190625_031250_840471_9BA6B27A 
-X-CRM114-Status: GOOD (  18.01  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190625_031432_576009_836B2DC3 
+X-CRM114-Status: GOOD (  13.68  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -77,53 +60,39 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Open Source Review <OpenSourceReview@amperecomputing.com>,
- Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will.deacon@arm.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: linux-samsung-soc@vger.kernel.org, Joonyoung Shim <jy0922.shim@samsung.com>,
+ Maxime Ripard <maxime.ripard@bootlin.com>,
+ Seung-Woo Kim <sw0312.kim@samsung.com>,
+ Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
+ linux-kernel@vger.kernel.org, Krzysztof Kozlowski <krzk@kernel.org>,
+ Inki Dae <inki.dae@samsung.com>, David Airlie <airlied@linux.ie>,
+ Kyungmin Park <kyungmin.park@samsung.com>, Kukjin Kim <kgene@kernel.org>,
+ dri-devel@lists.freedesktop.org, Daniel Vetter <daniel@ffwll.ch>,
+ kernel@collabora.com, Sean Paul <sean@poorly.run>,
+ linux-arm-kernel@lists.infradead.org, m.szyprowski@samsung.com
+Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="utf-8"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Jun 24, 2019 at 02:38:28PM +0000, Hoan Tran OS wrote:
-> Some NUMA nodes have memory ranges that span other nodes.
-> Even though a pfn is valid and between a node's start and end pfns,
-> it may not reside on that node.
-> 
-> This patch enables NODES_SPAN_OTHER_NODES config for NUMA to support
-> this type of NUMA layout.
-> 
-> Signed-off-by: Hoan Tran <Hoan@os.amperecomputing.com>
-> ---
->  arch/arm64/Kconfig | 7 +++++++
->  1 file changed, 7 insertions(+)
-> 
-> diff --git a/arch/arm64/Kconfig b/arch/arm64/Kconfig
-> index 697ea05..21fc168 100644
-> --- a/arch/arm64/Kconfig
-> +++ b/arch/arm64/Kconfig
-> @@ -873,6 +873,13 @@ config NEED_PER_CPU_EMBED_FIRST_CHUNK
->  config HOLES_IN_ZONE
->  	def_bool y
->  
-> +# Some NUMA nodes have memory ranges that span other nodes.
-> +# Even though a pfn is valid and between a node's start and end pfns,
-> +# it may not reside on that node.
-> +config NODES_SPAN_OTHER_NODES
-> +	def_bool y
-> +	depends on ACPI_NUMA
-
-How come this is specific to ACPI?
-
-It would be nice if this was the default, given that only ia64, mips and
-sh appear to be the only NUMA-capable architectures which don't have it.
-In other words, replace the #ifdef CONFIG_NODES_SPAN_OTHER_NODES in
-mm/page_alloc.c with #ifdef CONFIG_NUMA.
-
-Will
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+SGkgUnVzc2VsbCwKClcgZG5pdSAyNS4wNi4yMDE5IG/CoDEyOjAzLCBSdXNzZWxsIEtpbmcgLSBB
+Uk0gTGludXggYWRtaW4gcGlzemU6Cj4gT24gVHVlLCBKdW4gMjUsIDIwMTkgYXQgMTE6NDY6MzRB
+TSArMDIwMCwgQW5kcnplaiBQaWV0cmFzaWV3aWN6IHdyb3RlOgo+PiBJdCBpcyBkaWZmaWN1bHQg
+Zm9yIGEgdXNlciB0byBrbm93IHdoaWNoIG9mIHRoZSBpMmMgYWRhcHRlcnMgaXMgZm9yIHdoaWNo
+Cj4+IGRybSBjb25uZWN0b3IuIFRoaXMgc2VyaWVzIGFkZHJlc3NlcyB0aGlzIHByb2JsZW0uCj4+
+Cj4+IFRoZSBpZGVhIGlzIHRvIGhhdmUgYSBzeW1ib2xpYyBsaW5rIGluIGNvbm5lY3RvcidzIHN5
+c2ZzIGRpcmVjdG9yeSwgZS5nLjoKPj4KPj4gbHMgLWwgL3N5cy9jbGFzcy9kcm0vY2FyZDAtSERN
+SS1BLTEvaTJjLTIKPj4gbHJ3eHJ3eHJ3eCAxIHJvb3Qgcm9vdCAwIEp1biAyNCAxMDo0MiAvc3lz
+L2NsYXNzL2RybS9jYXJkMC1IRE1JLUEtMS9pMmMtMiBcCj4+IAktPiAuLi8uLi8uLi8uLi9zb2Mv
+MTM4ODAwMDAuaTJjL2kyYy0yCj4gCj4gRG9uJ3QgeW91IHdhbnQgdGhlIHN5bWxpbmsgbmFtZSB0
+byBiZSAiaTJjIiBvciBzb21ldGhpbmcgZml4ZWQsIHJhdGhlcgo+IHRoYW4gdGhlIG5hbWUgb2Yg
+dGhlIGkyYyBhZGFwdGVyPyAgT3RoZXJ3aXNlLCB5b3Ugc2VlbSB0byBiZSBlbmN1bWJlcmluZwo+
+IHVzZXJzcGFjZSB3aXRoIHNlYXJjaGluZyB0aGUgZGlyZWN0b3J5IHRvIHRyeSBhbmQgZmluZCB0
+aGUgc3ltbGluay4KPiAKClRoYW5rIHlvdSBmb3IgeW91ciBjb21tZW50LiBTbyB5b3UgaW1hZ2lu
+ZSBzb21ldGhpbmcgb24gdGhlIGxpbmVzIG9mOgoKbHJ3eHJ3eHJ3eCAxIHJvb3Qgcm9vdCAwIEp1
+biAyNCAxMDo0MiAvc3lzL2NsYXNzL2RybS9jYXJkMC1IRE1JLUEtMS9kZGMgXAogIAktPiAuLi8u
+Li8uLi8uLi9zb2MvMTM4ODAwMDAuaTJjL2kyYy0yCgo/CgpUaGlzIG1ha2VzIHNlbnNlIHRvIG1l
+LCBJIHdpbGwgc2VuZCBhIHYyLgoKQW5kcnplagoKX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgt
+YXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3Jn
+L21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
