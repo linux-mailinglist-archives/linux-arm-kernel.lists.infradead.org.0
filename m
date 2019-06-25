@@ -2,61 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 319C6554AA
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 25 Jun 2019 18:36:21 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 98718554AB
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 25 Jun 2019 18:36:56 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=soud2dReT+vftpKKCF8P1HA7zS11HpZ+EEud2E2IuRo=; b=gQL+dz5T+MWUVD
-	Ez/syLoWgEJ2arCNbSZmxgBPbUqCRceS9EORQz2p9EWtL9+fY9Y2KuJAAUQXQ2qqivpF4s6iXhdsM
-	c/48Bo9wOKwrZ1vDMN9V79GJmBKDWIUxPYAXU+dacPCM4mJFW/aTdAMe3cPnHIN8yQrMfXaQ2kOmx
-	sqRjWOxGtPhwpXWIuvGliK5ZnWmoTyc13NcW8zDQ8XydUP9vge+gExTJiYXO+EONtDVFdc8qwLdwK
-	tDqtc1QzrEUcPoCmLI68jOGGVsCTewsG2f5myI0pMj0nACJc0TdwYmSsK0p64xgWx5KphLt6lbQvE
-	xj1eRbSM4ePha7TI9Mmw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=CS04Kv6mMp+GeLu0fNo/GuK0fHSTDgFqP+a+UriRYm8=; b=YzlLJtYpavy39y
+	AfPp7COeFbptNQg/Fpt4GKQtq9tIcYYeLkPFKFvwVA/YSqfGd3dCs5Es44ijjei9JyZZcsWfTt1X2
+	vRM4P8fnAr5bVvetZfilfVpxWhPJslm7hULSJnsUklH3roMp407Ou6FIJ3O+QfF8gpj/Tpn3WvUby
+	o9i/Ty6mDCc8Kpu1kE0VEygJNboPFqHzXPI+8tP8u0+1MgwDEUdFoyKhLILtBboBJppSAA+bL0D3S
+	LcT/Q9qPNwInC2Mo+cyrK7ZSMa4GFnUxxowco+GGqHUYOy6Ay+OdnGisAZTTBmp7OXh+yRe0N6icM
+	D4NiBjg15LVVD9f/tHZA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hfoQU-0001v6-Sz; Tue, 25 Jun 2019 16:36:10 +0000
-Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
+	id 1hfoRA-0003W3-Gh; Tue, 25 Jun 2019 16:36:52 +0000
+Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hfoPF-0001tj-Bn
+ id 1hfoPG-0001tr-DW
  for linux-arm-kernel@lists.infradead.org; Tue, 25 Jun 2019 16:34:55 +0000
-Received: by mail-wr1-x443.google.com with SMTP id v14so18634983wrr.4
+Received: by mail-wr1-x444.google.com with SMTP id f9so18593897wre.12
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 25 Jun 2019 09:34:52 -0700 (PDT)
+ Tue, 25 Jun 2019 09:34:54 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=bgdev-pl.20150623.gappssmtp.com; s=20150623;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=RNjXZTa0eehs8U6TXIJ1xtY97Iu/6Eek+y81QQNtjK4=;
- b=B8LuQu66bgMmpBHn0CbN+gVJmLWy3c3N7z8bxuh0JXGKTw6PWfsSrpdrk5mrFYRvmt
- CeUcFrYqeCPgbiCJ+jIiEUE2NbmgnQFalb/wUcSM8ab3BddXyQ02/10RO9om9ObUS8VI
- sGVmk+ffQ8YrqfA7m/lbU2K1B/9/tczAwT7KMOOrh4Sd13TAzAhT66t4CKX4s9yQH1PU
- l8BYKVJU3d61u7wZ4h/eYquVn0tk1mbumj6t91PAzxrKbo2uiCe1uu/MMQkGxLylJ/5D
- zHz02i20yGrgLom/qdpFn5k25qlFJq2s36M/p6mmBeIaxkvGXx1yijivOajz10lQ2ZDo
- hrMQ==
+ h=from:to:cc:subject:date:message-id:in-reply-to:references
+ :mime-version:content-transfer-encoding;
+ bh=2ZSWbqFAdYMHZSBHSRb1jfufvzOhyuDcLok5vmyDpAk=;
+ b=SJOSCbrBbZkjOqrPgnuNAn3R5vfXS6muglF3i2rYm4u0+9MfY8ZtiyCWhaoSYkXO8w
+ eOFkyeVW0jcrhK2bzRVm7OVFfxNNRuPXIaA1Pc5QIbfMItUzavJ+NDMN8n9e0L9FS8p6
+ tq7TTeGdzaX0136DmFa1LftA7xw+cPs//R7BxHfmQaa/vNwriSWQhE6HYmKQuFbGDxDq
+ Bg5erLaGp0cgJlgeiEOIPYKLnoR9icCMSctMhsB1HZzmQqp3udL5+Sn4pNOcL9yKERsx
+ Z5y5KpcxAJ9+MaE4zx8TVcaHvHGAnMEpPRGOC89hkmJe4zcmW8hColHnvm5z1nJEKHx+
+ Lt5A==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=RNjXZTa0eehs8U6TXIJ1xtY97Iu/6Eek+y81QQNtjK4=;
- b=bGbreQwA5rmcEYfd7QeMLzFfptX8VF8KCa3pDUhoy8TKHxMJUygr34szOSiajbwlHF
- Qm0ayQvyeiqgqVb0ICT8YiMFP4ivDShoiXGPjPvArtYH3cms5lSzFjiWNIRjdEya/0Zf
- Xpq+Nag62qtb31dy5gUPGkdprpmyCntQhZTTlgQFzjT85GPymM6geRJVW2RgrhwkMtKY
- 1kuXGMa6B8OVoPXV5UOYSTP0QSxVutgodYQ4QLhG+SNq1Ok/EXaCgmGyYS7sj17+bJdK
- 86oDbdFSMK7LlwzlC46t+C8WudQz4zSCcnzDkB/y5ukf/1Z6glJCCHkMSldZRYqn54it
- 9zCw==
-X-Gm-Message-State: APjAAAWg5fEqIN+CnlK2RtWU/GLyZdhdLfl3JRSIf15yefgOs/HBStbI
- Bbw4mtXoiv0ARavJxaCSwmTMMQ==
-X-Google-Smtp-Source: APXvYqwGZ61fCCBpD9shDosEmPm3n3rtBVEJAron1RaBsQFJZuBhiFZxaTmMz81yYUZI1bSgnfdGEg==
-X-Received: by 2002:a5d:5446:: with SMTP id w6mr106263069wrv.164.1561480491732; 
- Tue, 25 Jun 2019 09:34:51 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references:mime-version:content-transfer-encoding;
+ bh=2ZSWbqFAdYMHZSBHSRb1jfufvzOhyuDcLok5vmyDpAk=;
+ b=K5QMchzzwpwCwomum306+wF4uelZHb7g/kE6pX9OKAXJTUXr+F3NrEHy9lFwXVkUNA
+ WMKO+2hNM5Hl7qiBpcXTMOXvAkM5BplsXGEj1KYNmeWz9zi25RKcQJkPFVkys2bJHHbY
+ 0X5o+dEYUEB9nV0NDAhMTwK6il8czB6zzsu/McTcvDf2/NQMixXFYxpjVm9Sf44P//1J
+ HGffbTzBGRPRv/lFVzBcfiWe/gNhCrItj+tR+0cPQGyGIDkBc14H9yypK4uScZCbW0E+
+ 3W7vhWkfRWlIBLA9olytyHDz0S/kkwRX8ontD8oRF4B1pdJ+s9tlKJejHhds9t6beetj
+ CFoQ==
+X-Gm-Message-State: APjAAAUGNyrRHif+7csKScb3uvqpAQOzkOs+S1GJ0s0X8FD8DRzmNarM
+ ZBgwP5j1Uk9EtxRSUUGPrf8Efg==
+X-Google-Smtp-Source: APXvYqxBEmrDBznAn14GIGVfoHIVRb3pDwaOfikmLmN/GvkdUV1EAMzyMBq7WLZPIpw1AC69xAAo+Q==
+X-Received: by 2002:a05:6000:114b:: with SMTP id
+ d11mr47787109wrx.167.1561480492966; 
+ Tue, 25 Jun 2019 09:34:52 -0700 (PDT)
 Received: from debian-brgl.home ([2a01:cb1d:af:5b00:6d6c:8493:1ab5:dad7])
- by smtp.gmail.com with ESMTPSA id g8sm2683795wme.20.2019.06.25.09.34.49
+ by smtp.gmail.com with ESMTPSA id g8sm2683795wme.20.2019.06.25.09.34.51
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Tue, 25 Jun 2019 09:34:51 -0700 (PDT)
+ Tue, 25 Jun 2019 09:34:52 -0700 (PDT)
 From: Bartosz Golaszewski <brgl@bgdev.pl>
 To: Sekhar Nori <nsekhar@ti.com>, Kevin Hilman <khilman@kernel.org>,
  Lee Jones <lee.jones@linaro.org>,
@@ -65,21 +66,24 @@ To: Sekhar Nori <nsekhar@ti.com>, Kevin Hilman <khilman@kernel.org>,
  Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>,
  David Lechner <david@lechnology.com>,
  Linus Walleij <linus.walleij@linaro.org>
-Subject: [PATCH 00/12] ARM: davinci: da850-evm: remove more legacy GPIO calls
-Date: Tue, 25 Jun 2019 18:34:22 +0200
-Message-Id: <20190625163434.13620-1-brgl@bgdev.pl>
+Subject: [PATCH 01/12] backlight: gpio: allow to probe non-pdata devices from
+ board files
+Date: Tue, 25 Jun 2019 18:34:23 +0200
+Message-Id: <20190625163434.13620-2-brgl@bgdev.pl>
 X-Mailer: git-send-email 2.21.0
+In-Reply-To: <20190625163434.13620-1-brgl@bgdev.pl>
+References: <20190625163434.13620-1-brgl@bgdev.pl>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190625_093453_993749_E7107CE1 
-X-CRM114-Status: GOOD (  10.80  )
+X-CRM114-CacheID: sfid-20190625_093454_470895_CB8B6790 
+X-CRM114-Status: GOOD (  15.78  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:443 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:444 listed in]
  [list.dnswl.org]
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -107,49 +111,80 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Bartosz Golaszewski <bgolaszewski@baylibre.com>
 
-This is another small step on the path to liberating davinci from legacy
-GPIO API calls and shrinking the davinci GPIO driver by not having to
-support the base GPIO number anymore.
+Currently we can only probe devices that either use device tree or pass
+platform data to probe(). Rename gpio_backlight_probe_dt() to
+gpio_backlight_probe_prop() and use generic device properties instead
+of OF specific helpers. Reverse the logic checking the presence of
+platform data in probe(). This way we can probe devices() registered
+from machine code that neither have a DT node nor use platform data.
 
-This time we're removing the legacy calls used indirectly by the LCDC
-fbdev driver.
+Signed-off-by: Bartosz Golaszewski <bgolaszewski@baylibre.com>
+---
+ drivers/video/backlight/gpio_backlight.c | 24 ++++++++----------------
+ 1 file changed, 8 insertions(+), 16 deletions(-)
 
-The first three patches modify the GPIO backlight driver. The first
-of them adds the necessary functionality, the other two are just
-tweaks and cleanups.
-
-Next two patches enable the GPIO backlight driver in
-davinci_all_defconfig.
-
-Patch 6/12 models the backlight GPIO as an actual GPIO backlight device.
-
-Patches 7-9 extend the fbdev driver with regulator support and convert
-the da850-evm board file to using it.
-
-Last three patches are improvements to the da8xx fbdev driver since
-we're already touching it in this series.
-
-Bartosz Golaszewski (12):
-  backlight: gpio: allow to probe non-pdata devices from board files
-  backlight: gpio: use a helper variable for &pdev->dev
-  backlight: gpio: pull the non-pdata device probing code into probe()
-  ARM: davinci: refresh davinci_all_defconfig
-  ARM: davinci_all_defconfig: enable GPIO backlight
-  ARM: davinci: da850-evm: model the backlight GPIO as an actual device
-  fbdev: da8xx: add support for a regulator
-  ARM: davinci: da850-evm: switch to using a fixed regulator for lcdc
-  fbdev: da8xx: remove panel_power_ctrl() callback from platform data
-  fbdev: da8xx-fb: use devm_platform_ioremap_resource()
-  fbdev: da8xx-fb: drop a redundant if
-  fbdev: da8xx: use resource management for dma
-
- arch/arm/configs/davinci_all_defconfig   |  28 +++---
- arch/arm/mach-davinci/board-da850-evm.c  |  90 ++++++++++++-----
- drivers/video/backlight/gpio_backlight.c |  67 +++++--------
- drivers/video/fbdev/da8xx-fb.c           | 118 +++++++++++++----------
- include/video/da8xx-fb.h                 |   1 -
- 5 files changed, 165 insertions(+), 139 deletions(-)
-
+diff --git a/drivers/video/backlight/gpio_backlight.c b/drivers/video/backlight/gpio_backlight.c
+index b9300f3e1ee6..654c19d3a81d 100644
+--- a/drivers/video/backlight/gpio_backlight.c
++++ b/drivers/video/backlight/gpio_backlight.c
+@@ -54,15 +54,14 @@ static const struct backlight_ops gpio_backlight_ops = {
+ 	.check_fb	= gpio_backlight_check_fb,
+ };
+ 
+-static int gpio_backlight_probe_dt(struct platform_device *pdev,
+-				   struct gpio_backlight *gbl)
++static int gpio_backlight_probe_prop(struct platform_device *pdev,
++				     struct gpio_backlight *gbl)
+ {
+ 	struct device *dev = &pdev->dev;
+-	struct device_node *np = dev->of_node;
+ 	enum gpiod_flags flags;
+ 	int ret;
+ 
+-	gbl->def_value = of_property_read_bool(np, "default-on");
++	gbl->def_value = device_property_read_bool(dev, "default-on");
+ 	flags = gbl->def_value ? GPIOD_OUT_HIGH : GPIOD_OUT_LOW;
+ 
+ 	gbl->gpiod = devm_gpiod_get(dev, NULL, flags);
+@@ -86,26 +85,15 @@ static int gpio_backlight_probe(struct platform_device *pdev)
+ 	struct backlight_properties props;
+ 	struct backlight_device *bl;
+ 	struct gpio_backlight *gbl;
+-	struct device_node *np = pdev->dev.of_node;
+ 	int ret;
+ 
+-	if (!pdata && !np) {
+-		dev_err(&pdev->dev,
+-			"failed to find platform data or device tree node.\n");
+-		return -ENODEV;
+-	}
+-
+ 	gbl = devm_kzalloc(&pdev->dev, sizeof(*gbl), GFP_KERNEL);
+ 	if (gbl == NULL)
+ 		return -ENOMEM;
+ 
+ 	gbl->dev = &pdev->dev;
+ 
+-	if (np) {
+-		ret = gpio_backlight_probe_dt(pdev, gbl);
+-		if (ret)
+-			return ret;
+-	} else {
++	if (pdata) {
+ 		/*
+ 		 * Legacy platform data GPIO retrieveal. Do not expand
+ 		 * the use of this code path, currently only used by one
+@@ -126,6 +114,10 @@ static int gpio_backlight_probe(struct platform_device *pdev)
+ 		gbl->gpiod = gpio_to_desc(pdata->gpio);
+ 		if (!gbl->gpiod)
+ 			return -EINVAL;
++	} else {
++		ret = gpio_backlight_probe_prop(pdev, gbl);
++		if (ret)
++			return ret;
+ 	}
+ 
+ 	memset(&props, 0, sizeof(props));
 -- 
 2.21.0
 
