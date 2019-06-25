@@ -2,62 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 04278521D5
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 25 Jun 2019 06:15:51 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 03A0352242
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 25 Jun 2019 06:45:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=cMyZ/VD5YWtG15kvXOaF6E2r3gf9xznLvNqhquHufII=; b=WI19oHWMzWepNs
-	HvQ8/h0aCahKE0CrdgsKuZ+AkzpwsCpzfGwbKHW4wpbFpQ7Hu5ynAdTe/mmSp0rCd1saaN5Gsh7+Z
-	tyHFW4ljXjiHedL801WkiqnYULOEhBq0nlk0i4zM9TaiFi/npBdL0RbLnk0qcivnAOBb2SM0v7Eul
-	6lFL75ZiQV+QGs7u86LXXKa8RCknIkt2oIZuZSfgdPZl7JOLHTbsJcPmEiCxUX+bQmh2ysimX8NG+
-	S8DqqQk+NA+cd8jHBPByQ5Hpx0LpC0dCHuvzdv0/0t4YasFG/feelJc2c4/bVXhAQBaTLGgzSrD5h
-	2K7r6H+rzUBs7IQcjkwQ==;
+	List-Owner; bh=c5mfJBGvTfY8JfagmVcskPjQASHPbMu5mCjV6+TpSeg=; b=e6YL+rtBdMv9x3
+	PMRHwASLFmw8tNvXRNhuweDM+uS/USbGPaTAxo0FNGu1BwTcK2ofSw6BRMoFTTNk0NQK8d2RTx3uP
+	JHEhdT2sdgwUvlBJhov3j/spGRFaqYwr15IFvRRmYVbjbXtwem5s09CJ5DvTybYrOJFTdB3XfBRkz
+	bV8n+6aXqCVtp8xgVkF7e6Y2l7PnC3xZf+lZvsJZLws2+JTpHmToAwjqzzea8aIWmHtdi/KCtTWEU
+	IWZ9LNiFLx92f8PV8jRSHSR6gg16yHTQX4nppvciXoFg3vl2M5fKlynDGNJG9TYnmlBOh14l3/8XZ
+	exq4zsugc+8sVG2RlRGQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hfcrw-0004hq-2P; Tue, 25 Jun 2019 04:15:44 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1hfdKY-0004Nn-2F; Tue, 25 Jun 2019 04:45:18 +0000
+Received: from mail-ot1-x343.google.com ([2607:f8b0:4864:20::343])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hfcrf-0004h4-BU
- for linux-arm-kernel@lists.infradead.org; Tue, 25 Jun 2019 04:15:28 +0000
-Received: from localhost (unknown [106.201.40.23])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id B00BA20659;
- Tue, 25 Jun 2019 04:15:25 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1561436126;
- bh=yiFX7jrnzfFDLJD+nZSTKbVmX0FksTqWGaKxBhnQdGA=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=FOHh1ZCQPvSJUEOQ1v0P0F7Xp/ZdZFJSlLQmvLls0ZxvnMFyRLt+t4zd7W5pxYy7J
- X6a2MbZtxa/Fdiz7V7DfvHFksuLa5H79xI1gNSpdCiU9TNiE7q4kSDwWyBsIPwMtki
- 3kT+nhdM7POHUElZ1UsjskwtvoHFv0uJ2O5yQpiw=
-Date: Tue, 25 Jun 2019 09:42:16 +0530
-From: Vinod Koul <vkoul@kernel.org>
-To: yibin.gong@nxp.com
-Subject: Re: [PATCH v4 1/6] dmaengine: fsl-edma: add drvdata for fsl-edma
-Message-ID: <20190625041216.GE2962@vkoul-mobl>
-References: <20190614081724.13366-1-yibin.gong@nxp.com>
- <20190614081724.13366-2-yibin.gong@nxp.com>
+ id 1hfdKE-0004N8-9y
+ for linux-arm-kernel@lists.infradead.org; Tue, 25 Jun 2019 04:44:59 +0000
+Received: by mail-ot1-x343.google.com with SMTP id 43so11097453otf.8
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 24 Jun 2019 21:44:57 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=googlemail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=2Wp4HQypqw0rNbItr1Xs0WBR6fHG0G9gjAl5KxurVdE=;
+ b=ICNF3PTZ1ZfG+bAeY8F8Pp7sQzesnEsLfQyVK4xXEW0fE9JbdoeEwICCri9MhuwgDe
+ bm/0ejdD98vhkuaDReGiErs7EaKJphiOdNIOX5OTwKFKRbuUyOxVIAk4bHBff8k+v4sW
+ T7OmIR81tdf3Fy8cR5DX0+mQ0tZ/Wu4tdvEcn1ySqLThg5Z+Cqiyv07RISHe3YwpWKkU
+ mNX0GQfIvmuXGqm24S4OcATnGcJC5dp2nIjKXJ/eVlclscTS4ifWJKJt3gXQIn8V6JDV
+ mBBDQVVDx+ijpZkFkPqRJLSkoToQRF0nF2/Dh+zYJ2NvIUQ+MXj1dcWGXJ7WX+IKrAi0
+ Ackw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=2Wp4HQypqw0rNbItr1Xs0WBR6fHG0G9gjAl5KxurVdE=;
+ b=MG1AzNtCc4bWn2eKmzcOS0yPGx+a1AQlZFN7DhIRMH/b4Gy80YGu5p9IMm/vXgueo3
+ HGbEmEqbZXc0VURV+N2qvSSeMLELMA5aw43M3ILCpNEB91oxOr7eZOfVasR/FgHYHh6R
+ Bbw6cpTti7BzD8LMkv6/KsGk+85BSgB/bhY7OR9oZ53NGPt6MxdhN7hdOq+E3VSi9vx0
+ I99vINlSpGrUgDEpYMVmyK1UyRPZ5WnWoEUTH7YyTK7seuLCrv7IWcaWQjn1DhLspfgt
+ HuCdp1G8znDO8LX5X7YX+KiuLZ/sQXyr0KMfTayu5bcC8RV908dV17wDLm+ylC3uvCRY
+ zYnw==
+X-Gm-Message-State: APjAAAVJ2+EMczRAzsLhHJcou7aLIV1NTRouzuqVxcfM+CX+HAqLMwiE
+ aM2QurNm8lMrosH1py/UtAvdUm/KpAv6GyCvmuQ=
+X-Google-Smtp-Source: APXvYqxsOdEMaHKmim8mpE6aFtY/5w9wT+CBAa2iQ2fftmNQo7l1oux8418VMI5kU7usdjz86T8c871EA6XxIf+xwSc=
+X-Received: by 2002:a9d:14a:: with SMTP id 68mr70034647otu.96.1561437896776;
+ Mon, 24 Jun 2019 21:44:56 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190614081724.13366-2-yibin.gong@nxp.com>
-User-Agent: Mutt/1.11.3 (2019-02-01)
+References: <20190617165836.4673-1-colin.king@canonical.com>
+ <20190619051308.23582-1-martin.blumenstingl@googlemail.com>
+ <92f9e5a6-d2a2-6bf2-ff8a-2430fe977f93@canonical.com>
+ <CAFBinCDmYVPDMcwAAYhMfxxuTsG=xunduN58_8e20zE_Mhmb7Q@mail.gmail.com>
+In-Reply-To: <CAFBinCDmYVPDMcwAAYhMfxxuTsG=xunduN58_8e20zE_Mhmb7Q@mail.gmail.com>
+From: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
+Date: Tue, 25 Jun 2019 06:44:45 +0200
+Message-ID: <CAFBinCC-LLpfXQRFcKBbUpCfKc0S9Xtt60QrhEThsOFV-T7vFw@mail.gmail.com>
+Subject: Re: [PATCH] net: stmmac: add sanity check to
+ device_property_read_u32_array call
+To: Colin Ian King <colin.king@canonical.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190624_211527_419098_C65030EB 
-X-CRM114-Status: UNSURE (   7.12  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190624_214458_377586_D0124035 
+X-CRM114-Status: GOOD (  20.82  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:343 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (martin.blumenstingl[at]googlemail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -66,7 +86,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -78,31 +97,64 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, robh@kernel.org, angelo@sysam.it, festevam@gmail.com,
- s.hauer@pengutronix.de, linux-kernel@vger.kernel.org,
- devicetree@vger.kernel.org, linux-imx@nxp.com, kernel@pengutronix.de,
- dmaengine@vger.kernel.org, dan.j.williams@intel.com, shawnguo@kernel.org,
+Cc: alexandre.torgue@st.com, netdev@vger.kernel.org,
+ kernel-janitors@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-stm32@st-md-mailman.stormreply.com, joabreu@synopsys.com,
+ mcoquelin.stm32@gmail.com, peppe.cavallaro@st.com, davem@davemloft.net,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 14-06-19, 16:17, yibin.gong@nxp.com wrote:
-> From: Robin Gong <yibin.gong@nxp.com>
-> 
-> There are some differences between vf610 and next i.mx7ulp. Put such
-> differences into static driver data for distiguish easily at driver
+Hi Colin,
 
-Typo distiguish 
+On Thu, Jun 20, 2019 at 3:34 AM Martin Blumenstingl
+<martin.blumenstingl@googlemail.com> wrote:
+>
+> Hi Colin,
+>
+> On Wed, Jun 19, 2019 at 8:55 AM Colin Ian King <colin.king@canonical.com> wrote:
+> >
+> > On 19/06/2019 06:13, Martin Blumenstingl wrote:
+> > > Hi Colin,
+> > >
+> > >> Currently the call to device_property_read_u32_array is not error checked
+> > >> leading to potential garbage values in the delays array that are then used
+> > >> in msleep delays.  Add a sanity check to the property fetching.
+> > >>
+> > >> Addresses-Coverity: ("Uninitialized scalar variable")
+> > >> Signed-off-by: Colin Ian King <colin.king@canonical.com>
+> > > I have also sent a patch [0] to fix initialize the array.
+> > > can you please look at my patch so we can work out which one to use?
+> > >
+> > > my concern is that the "snps,reset-delays-us" property is optional,
+> > > the current dt-bindings documentation states that it's a required
+> > > property. in reality it isn't, there are boards (two examples are
+> > > mentioned in my patch: [0]) without it.
+> > >
+> > > so I believe that the resulting behavior has to be:
+> > > 1. don't delay if this property is missing (instead of delaying for
+> > >    <garbage value> ms)
+> > > 2. don't error out if this property is missing
+> > >
+> > > your patch covers #1, can you please check whether #2 is also covered?
+> > > I tested case #2 when submitting my patch and it worked fine (even
+> > > though I could not reproduce the garbage values which are being read
+> > > on some boards)
+in the meantime I have tested your patch.
+when I don't set the "snps,reset-delays-us" property then I get the
+following error:
+  invalid property snps,reset-delays-us
 
-Though I tried to apply 1-5 it doesnt apply for me, can you rebase and
-resend
+my patch has landed in the meantime: [0]
+how should we proceed with your patch?
 
-Thanks
 
--- 
-~Vinod
+Martin
+
+
+[0] https://git.kernel.org/pub/scm/linux/kernel/git/davem/net-next.git/commit/drivers/net/ethernet/stmicro/stmmac/stmmac_mdio.c?id=84ce4d0f9f55b4f4ca4d4edcbb54a23d9dad1aae
 
 _______________________________________________
 linux-arm-kernel mailing list
