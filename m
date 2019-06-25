@@ -2,91 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 15E315570F
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 25 Jun 2019 20:21:08 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 90EEF55730
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 25 Jun 2019 20:27:35 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:Message-ID:
+	In-Reply-To:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=QHxfBINXfMbsHjr7NdKIeQUKNfjeghYvp2amRyHAcJA=; b=BWOHHIHW2mkutz
-	jC5l/1z59dmYGHte+bPapk2wSWkdceWdR9N7VYYR0dY8ccpES0/y+gLZaGrzuYkPczncoBSSw0aob
-	ZCqDKH+t/CrxI2NJjaWeOKI3HhCX58hpja3Iqq7JmVJpkCkrFSysjvspBZ5y6Got2rkGtgkuSufwC
-	QBZrlKYREj3q5mEX0AMYRV73VkLV4qfml+cFy3CHL2EJe1akLD+nEmnhnORF/KA0ELC2OFzwkyeUv
-	Ue1LVlMA9ysIYbMyMPkzteW7DgoVmXhZLmB3ORp8iysxGyNzuQTQ9+zUSW4U+LgzTCa8ePkwiOsnG
-	E7CRLSuimmeUjourFLqQ==;
+	List-Owner; bh=3lu5gwrrP7VgPtWRpSh3H5ds3KhwGO5wmx4RLZOMwxM=; b=L7NgI2jNBOHOIS
+	8tpGcIZKgeiCybsiy2VkR8a6l44HaZQFl/02D0CUaZ2pW+tEEy69RBYVqLiNSq8jTQ6wFu8JOz8d+
+	E3CufIMbgF6OfPWhOIqLel6t4uVMBTCTDhXWT1j15f1s6xrTzeCxs67cK6Zt1hUb6sprcmHi9270S
+	k3PXpcc3raGaqNJgToCEgEVPPAkcSIHJxgLQfksKLHwdUC1oQwN+FKFR6yNF2/Jg94nu/aZGeohHJ
+	3hYZbOhzdyjHIQrROWJ9rurggVcwMQzcdFvIuc/2X1I7JwKeKfmN39bz08KbdIGG+vmRVT+j7IKff
+	DWfQyTJ58id1cCLOLKrQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hfq40-0007bk-BO; Tue, 25 Jun 2019 18:21:04 +0000
-Received: from mail-pl1-x644.google.com ([2607:f8b0:4864:20::644])
+	id 1hfqAF-00010F-Ky; Tue, 25 Jun 2019 18:27:31 +0000
+Received: from galois.linutronix.de ([2a0a:51c0:0:12e:550::1])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hfq0w-00040I-Ca; Tue, 25 Jun 2019 18:17:57 +0000
-Received: by mail-pl1-x644.google.com with SMTP id i2so9266487plt.1;
- Tue, 25 Jun 2019 11:17:53 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=yuHblpfu5i68xJ6EQkdjloP0O8Tt/QPPF6JuJ1uV5XQ=;
- b=NXofPKhwS8Li19Fm0qYYRh60USSNiUUxcmSm7u5FQTA78Z3TWQVE+qTmBSWdmFoXqI
- Ch1EpzFu925iz6D2OsrsopmWWQdpdapUKKIEeaHyLbj5pxs159q1LxwUFbkNuXfVYmQ7
- OveFAMOqerAovsILc2nnOGDr2nO7VCpG7zJjqjrt2Kk8Y/vxYuSJQ/mXoayGE5LAXxLR
- sxmxonI6utk6uA3jeweOB5U0w0+e4alpq9vzZ0khhYcNYRUHdTweGp+z4fvfaqwOZtjY
- B7gM2P/Xrxgg75gxy19aEBBMZBsSfoWiCqvmNkDkPDxPi+jk+c2T8/aYNfGuOfs1e7nN
- r4tg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=yuHblpfu5i68xJ6EQkdjloP0O8Tt/QPPF6JuJ1uV5XQ=;
- b=MB8VhL8G2yKDmjMinfuHagFFHOesnutLv4CdCanGPUUsncvGpUhtOgTyMc7O/vDF5z
- sQ1KUKez01IhzUtvENtvmejethMvSg1sQ0koS6vCHlyOpWih0DWH+V/O0oQ+caAJxPlC
- Hc4SS+xc3SClnn0Ufmsb99gwsq3Nqyp3XbYDuPgNNt4EkE5m2NVFoTLvtLUGz0q2D6lV
- rOsFvFu25uw+t1qxCNE4lgfdO/ud68ZZxeM7kEA8AgvBmvQdTP4MUpuytG8EafQyW6YK
- V1N7cFRb1QZz1U0yhbq/IUy4kN816dzg3rvqQJo0WyYydu9Tg6ijm6RP2GCqWVlmy35C
- eOtw==
-X-Gm-Message-State: APjAAAXiU+pu34Pwt/XGy4NhA7PkurrdxdUyyGiPKLJk/anOyYe0BM22
- sC47W5q54AE1T0VpyBQsw5c=
-X-Google-Smtp-Source: APXvYqxnGY9Wr6s8gpGV/odUIOfRZg8u/r4QEu70F5gaNfKnHVHycE5N/Jdnjm9pzvNeTKHeGedlYA==
-X-Received: by 2002:a17:902:2e81:: with SMTP id r1mr97555plb.0.1561486672980; 
- Tue, 25 Jun 2019 11:17:52 -0700 (PDT)
-Received: from localhost.localdomain ([122.163.71.137])
- by smtp.gmail.com with ESMTPSA id w7sm14042959pfb.117.2019.06.25.11.17.50
- (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Tue, 25 Jun 2019 11:17:52 -0700 (PDT)
-From: Nishka Dasgupta <nishkadg.linux@gmail.com>
-To: eric@anholt.net, wahrenst@gmx.net, gregkh@linuxfoundation.org,
- linux-rpi-kernel@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
- devel@driverdev.osuosl.org
-Subject: [PATCH 9/9] staging: vc04_services: Remove function block_resume()
-Date: Tue, 25 Jun 2019 23:47:09 +0530
-Message-Id: <20190625181710.2267-9-nishkadg.linux@gmail.com>
-X-Mailer: git-send-email 2.19.1
-In-Reply-To: <20190625181710.2267-1-nishkadg.linux@gmail.com>
-References: <20190625181710.2267-1-nishkadg.linux@gmail.com>
+ id 1hfqA3-0000wg-I1
+ for linux-arm-kernel@lists.infradead.org; Tue, 25 Jun 2019 18:27:20 +0000
+Received: from p5b06daab.dip0.t-ipconnect.de ([91.6.218.171] helo=nanos)
+ by Galois.linutronix.de with esmtpsa (TLS1.2:DHE_RSA_AES_256_CBC_SHA256:256)
+ (Exim 4.80) (envelope-from <tglx@linutronix.de>)
+ id 1hfq9y-0005oZ-Q8; Tue, 25 Jun 2019 20:27:14 +0200
+Date: Tue, 25 Jun 2019 20:27:13 +0200 (CEST)
+From: Thomas Gleixner <tglx@linutronix.de>
+To: Vincenzo Frascino <vincenzo.frascino@arm.com>
+Subject: Re: [PATCH 1/3] lib/vdso: Delay mask application in do_hres()
+In-Reply-To: <alpine.DEB.2.21.1906251851350.32342@nanos.tec.linutronix.de>
+Message-ID: <alpine.DEB.2.21.1906252024350.32342@nanos.tec.linutronix.de>
+References: <20190624133607.GI29497@fuggles.cambridge.arm.com>
+ <20190625161804.38713-1-vincenzo.frascino@arm.com>
+ <alpine.DEB.2.21.1906251851350.32342@nanos.tec.linutronix.de>
+User-Agent: Alpine 2.21 (DEB 202 2017-01-01)
 MIME-Version: 1.0
+X-Linutronix-Spam-Score: -1.0
+X-Linutronix-Spam-Level: -
+X-Linutronix-Spam-Status: No , -1.0 points, 5.0 required, ALL_TRUSTED=-1,
+ SHORTCIRCUIT=-0.0001
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190625_111754_782839_69C0D95D 
-X-CRM114-Status: GOOD (  10.69  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190625_112719_741985_9560D5A3 
+X-CRM114-Status: GOOD (  17.13  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:644 listed in]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [2a0a:51c0:0:12e:550:0:0:1 listed in]
  [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (nishkadg.linux[at]gmail.com)
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -98,100 +66,55 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Nishka Dasgupta <nishkadg.linux@gmail.com>
+Cc: linux@rasmusvillemoes.dk, Peter Zijlstra <peterz@infradead.org>,
+ catalin.marinas@arm.com, Will Deacon <will.deacon@arm.com>,
+ linux-mips@vger.kernel.org, linux-kselftest@vger.kernel.org, shuah@kernel.org,
+ linux-arch@vger.kernel.org, 0x7f454c46@gmail.com,
+ Daniel Lezcano <daniel.lezcano@linaro.org>, linux@armlinux.org.uk,
+ Arnd Bergmann <arnd@arndb.de>, andre.przywara@arm.com,
+ Andy Lutomirski <luto@kernel.org>, pcc@google.com,
+ LAK <linux-arm-kernel@lists.infradead.org>, huw@codeweavers.com,
+ LKML <linux-kernel@vger.kernel.org>, Ralf Baechle <ralf@linux-mips.org>,
+ salyzyn@android.com, paul.burton@mips.com, sthotton@marvell.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Remove function block_resume as it was only called by
-vchiq_arm_force_suspend, which was removed in a previous patch.
-Issue found with Coccinelle.
+On Tue, 25 Jun 2019, Thomas Gleixner wrote:
 
-Signed-off-by: Nishka Dasgupta <nishkadg.linux@gmail.com>
----
- .../interface/vchiq_arm/vchiq_arm.c           | 66 -------------------
- 1 file changed, 66 deletions(-)
+> On Tue, 25 Jun 2019, Vincenzo Frascino wrote:
+> 
+> CC+ Andy
+> 
+> > do_hres() in the vDSO generic library masks the hw counter value
+> > immediately after reading it.
+> > 
+> > Postpone the mask application after checking if the syscall fallback is
+> > enabled, in order to be able to detect a possible fallback for the
+> > architectures that have masks smaller than ULLONG_MAX.
+> 
+> Right. This only worked on x86 because the mask is there ULLONG_MAX for all
+> VDSO capable clocksources, i.e. that ever worked just by chance.
+> 
+> As we talked about that already yesterday, I tested this on a couple of
+> machines and as expected the outcome is uarch dependent. Minimal deviations
+> to both sides and some machines do not show any change at all. I doubt it's
+> possible to come up with a solution which makes all uarchs go faster
+> magically.
+> 
+> Though, thinking about it, we could remove the mask operation completely on
+> X86. /me runs tests
 
-diff --git a/drivers/staging/vc04_services/interface/vchiq_arm/vchiq_arm.c b/drivers/staging/vc04_services/interface/vchiq_arm/vchiq_arm.c
-index ebf7e2a3bd3b..cc4383d1ec3e 100644
---- a/drivers/staging/vc04_services/interface/vchiq_arm/vchiq_arm.c
-+++ b/drivers/staging/vc04_services/interface/vchiq_arm/vchiq_arm.c
-@@ -2554,72 +2554,6 @@ need_resume(struct vchiq_state *state)
- 			vchiq_videocore_wanted(state);
- }
- 
--static int
--block_resume(struct vchiq_arm_state *arm_state)
--{
--	int status = VCHIQ_SUCCESS;
--	const unsigned long timeout_val =
--				msecs_to_jiffies(FORCE_SUSPEND_TIMEOUT_MS);
--	int resume_count = 0;
--
--	/* Allow any threads which were blocked by the last force suspend to
--	 * complete if they haven't already.  Only give this one shot; if
--	 * blocked_count is incremented after blocked_blocker is completed
--	 * (which only happens when blocked_count hits 0) then those threads
--	 * will have to wait until next time around */
--	if (arm_state->blocked_count) {
--		reinit_completion(&arm_state->blocked_blocker);
--		write_unlock_bh(&arm_state->susp_res_lock);
--		vchiq_log_info(vchiq_susp_log_level, "%s wait for previously "
--			"blocked clients", __func__);
--		if (wait_for_completion_interruptible_timeout(
--				&arm_state->blocked_blocker, timeout_val)
--					<= 0) {
--			vchiq_log_error(vchiq_susp_log_level, "%s wait for "
--				"previously blocked clients failed", __func__);
--			status = VCHIQ_ERROR;
--			write_lock_bh(&arm_state->susp_res_lock);
--			goto out;
--		}
--		vchiq_log_info(vchiq_susp_log_level, "%s previously blocked "
--			"clients resumed", __func__);
--		write_lock_bh(&arm_state->susp_res_lock);
--	}
--
--	/* We need to wait for resume to complete if it's in process */
--	while (arm_state->vc_resume_state != VC_RESUME_RESUMED &&
--			arm_state->vc_resume_state > VC_RESUME_IDLE) {
--		if (resume_count > 1) {
--			status = VCHIQ_ERROR;
--			vchiq_log_error(vchiq_susp_log_level, "%s waited too "
--				"many times for resume", __func__);
--			goto out;
--		}
--		write_unlock_bh(&arm_state->susp_res_lock);
--		vchiq_log_info(vchiq_susp_log_level, "%s wait for resume",
--			__func__);
--		if (wait_for_completion_interruptible_timeout(
--				&arm_state->vc_resume_complete, timeout_val)
--					<= 0) {
--			vchiq_log_error(vchiq_susp_log_level, "%s wait for "
--				"resume failed (%s)", __func__,
--				resume_state_names[arm_state->vc_resume_state +
--							VC_RESUME_NUM_OFFSET]);
--			status = VCHIQ_ERROR;
--			write_lock_bh(&arm_state->susp_res_lock);
--			goto out;
--		}
--		vchiq_log_info(vchiq_susp_log_level, "%s resumed", __func__);
--		write_lock_bh(&arm_state->susp_res_lock);
--		resume_count++;
--	}
--	reinit_completion(&arm_state->resume_blocker);
--	arm_state->resume_blocked = 1;
--
--out:
--	return status;
--}
--
- static inline void
- unblock_resume(struct vchiq_arm_state *arm_state)
- {
--- 
-2.19.1
+Unsurprisingly the results vary. Two uarchs do not care, but they did not
+care about moving the mask either. The other two gain performance and the
+last one falls back to the state before moving the mask. So in general it
+looks like a worthwhile optimization.
+
+Thanks,
+
+	tglx
+
 
 
 _______________________________________________
