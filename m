@@ -2,96 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6283355B50
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 26 Jun 2019 00:35:34 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3947A55B85
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 26 Jun 2019 00:47:25 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:Subject:From:To:
-	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:Message-ID:
+	In-Reply-To:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=mdK6a/bzelfFTk+Oz0cBgqmljg1hxMihAWCUZbZaqRc=; b=E7LIJYsI7ax57J
-	yoICNLa7QD1zSTQonMXZXg/JXWLyxJyYDtC1lRgtcUrdYWIG5m6ff85e1ay0GAFUheqOm3HMULrfq
-	DH9HqmFSSeyp8cruNnPh15sOoepgFvWnE+V20fmEv9rZN5CpITcDrYmR6UCXphtjaSPzVShmF73vS
-	KLh/dLxCo6K2x6qEQ/J8ZVdaZJc7GUOVtE8AbA1WoaOsDg6ERng7CmZvkJJ2hP50mV1s+SshX4eDp
-	hyN3EXJEUc0NDwcVosgVocKZVVzpOJr0BJD12bTTfAdW6M6Xb+1uC6235XATfgVnmWRvM3d6pPFgZ
-	VXCJCYC3+7Z3jUeN/zqA==;
+	List-Owner; bh=NCrr6CA7oywgYp4tq7vYTkyUK0DaxFEYJPbIhpVphsw=; b=Bqi9EoLeUd4WYY
+	p0pgTxHbgInnlc79aiOVsG6mVpOi7JafWo/MZSpDxiYaeNbYqvscbrzJi0Z25uCc9iIEXMA0GaFrO
+	iQq9Ma8gusPgBCShq82KRd4zVUnN+7a6YpVe+g9di96FAcYRCkYmxW5Rs1s3/qW2xAhfQ+39u13nM
+	q0pr+VHmf92zriEUlAcBIX/YC1zc1KHmzQJcpSmsqdlgBDEDcDxGPhJeG3DmxzuiO4yyj2PBi+jLJ
+	r2kxBmlYz2mvsdZu268cz5ucyVjDayXwQpAnJr5G9dgkFs+yjR42RH9vzYfdIx6VW01ty96FdLzlF
+	x+yACe3FzoIsKuMZaK3Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hfu2E-0002WU-4l; Tue, 25 Jun 2019 22:35:30 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1hfuDf-00072I-8I; Tue, 25 Jun 2019 22:47:19 +0000
+Received: from galois.linutronix.de ([2a0a:51c0:0:12e:550::1])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hfu1h-0002U7-Gp
- for linux-arm-kernel@lists.infradead.org; Tue, 25 Jun 2019 22:34:59 +0000
-Received: from kernel.org (unknown [104.132.0.74])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 1FCBF205ED;
- Tue, 25 Jun 2019 22:34:57 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1561502097;
- bh=/kwIgl7T7RUB6O8AVjTRLgNL7U9K6Zhd50WUYjJcszk=;
- h=In-Reply-To:References:To:From:Subject:Cc:Date:From;
- b=TJcRicsuQdvPQg9FeTYbsi/IhN1JdT58h299gkXyrGdyEDhz+ZXUCdRDp0ABWeF67
- mfNgTTWW7vB2AB93S1BledWN7Ici0mXVLEkXdh1PtPnaCLdWvIrJvmKCZN0+p9w5ew
- eHnOpg3F3NLVVen8lN7NjAb6z6kZ0nPHR1rtx0d4=
+ id 1hfuDT-00071L-6i
+ for linux-arm-kernel@lists.infradead.org; Tue, 25 Jun 2019 22:47:08 +0000
+Received: from p5b06daab.dip0.t-ipconnect.de ([91.6.218.171] helo=nanos)
+ by Galois.linutronix.de with esmtpsa (TLS1.2:DHE_RSA_AES_256_CBC_SHA256:256)
+ (Exim 4.80) (envelope-from <tglx@linutronix.de>)
+ id 1hfuC6-0002Ou-9G; Wed, 26 Jun 2019 00:45:42 +0200
+Date: Wed, 26 Jun 2019 00:45:41 +0200 (CEST)
+From: Thomas Gleixner <tglx@linutronix.de>
+To: Hoan Tran OS <hoan@os.amperecomputing.com>
+Subject: Re: [PATCH 3/5] x86: Kconfig: Remove CONFIG_NODES_SPAN_OTHER_NODES
+In-Reply-To: <1561501810-25163-4-git-send-email-Hoan@os.amperecomputing.com>
+Message-ID: <alpine.DEB.2.21.1906260032250.32342@nanos.tec.linutronix.de>
+References: <1561501810-25163-1-git-send-email-Hoan@os.amperecomputing.com>
+ <1561501810-25163-4-git-send-email-Hoan@os.amperecomputing.com>
+User-Agent: Alpine 2.21 (DEB 202 2017-01-01)
 MIME-Version: 1.0
-In-Reply-To: <DB3PR0402MB3916F7F7D7CA801F5C0D0610F5ED0@DB3PR0402MB3916.eurprd04.prod.outlook.com>
-References: <20190604015928.23157-1-Anson.Huang@nxp.com>
- <20190604015928.23157-3-Anson.Huang@nxp.com>
- <20190606162543.EFFB820645@mail.kernel.org>
- <DB3PR0402MB391625A0B3D838CE88C53E33F5100@DB3PR0402MB3916.eurprd04.prod.outlook.com>
- <20190607180039.611C7208C0@mail.kernel.org>
- <DB3PR0402MB391678C245944942EA2A7F62F5110@DB3PR0402MB3916.eurprd04.prod.outlook.com>
- <20190610151425.D8139207E0@mail.kernel.org>
- <DB3PR0402MB3916F7F7D7CA801F5C0D0610F5ED0@DB3PR0402MB3916.eurprd04.prod.outlook.com>
-To: "bjorn.andersson@linaro.org" <bjorn.andersson@linaro.org>,
- "catalin.marinas@arm.com" <catalin.marinas@arm.com>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- "dinguyen@kernel.org" <dinguyen@kernel.org>,
- "enric.balletbo@collabora.com" <enric.balletbo@collabora.com>,
- "festevam@gmail.com" <festevam@gmail.com>,
- "horms+renesas@verge.net.au" <horms+renesas@verge.net.au>,
- "jagan@amarulasolutions.com" <jagan@amarulasolutions.com>,
- "kernel@pengutronix.de" <kernel@pengutronix.de>,
- "l.stach@pengutronix.de" <l.stach@pengutronix.de>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- "linux-clk@vger.kernel.org" <linux-clk@vger.kernel.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "mark.rutland@arm.com" <mark.rutland@arm.com>,
- "maxime.ripard@bootlin.com" <maxime.ripard@bootlin.com>,
- "mturquette@baylibre.com" <mturquette@baylibre.com>,
- "olof@lixom.net" <olof@lixom.net>, "robh+dt@kernel.org" <robh+dt@kernel.org>,
- "s.hauer@pengutronix
- .de" <s.hauer@pengutronix.de>, "shawnguo@kernel.org" <shawnguo@kernel.org>,
- "will.deacon@arm.com" <will.deacon@arm.com>, Abel Vesa <abel.vesa@nxp.com>,
- Aisheng Dong <aisheng.dong@nxp.com>, Anson Huang <anson.huang@nxp.com>,
- Jacky Bai <ping.bai@nxp.com>, Leonard Crestez <leonard.crestez@nxp.com>
-From: Stephen Boyd <sboyd@kernel.org>
-Subject: RE: [PATCH V3 3/4] clk: imx: Add support for i.MX8MN clock driver
-User-Agent: alot/0.8.1
-Date: Tue, 25 Jun 2019 15:34:56 -0700
-Message-Id: <20190625223457.1FCBF205ED@mail.kernel.org>
+X-Linutronix-Spam-Score: -1.0
+X-Linutronix-Spam-Level: -
+X-Linutronix-Spam-Status: No , -1.0 points, 5.0 required, ALL_TRUSTED=-1,
+ SHORTCIRCUIT=-0.0001
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190625_153457_723155_0F022957 
-X-CRM114-Status: GOOD (  17.64  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190625_154707_391532_87007BB3 
+X-CRM114-Status: GOOD (  15.46  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [2a0a:51c0:0:12e:550:0:0:1 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -103,65 +65,87 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: dl-linux-imx <linux-imx@nxp.com>
+Cc: Michal Hocko <mhocko@suse.com>, Catalin Marinas <catalin.marinas@arm.com>,
+ Heiko Carstens <heiko.carstens@de.ibm.com>,
+ "open list:MEMORY MANAGEMENT" <linux-mm@kvack.org>,
+ Paul Mackerras <paulus@samba.org>, "H . Peter Anvin" <hpa@zytor.com>,
+ "sparclinux@vger.kernel.org" <sparclinux@vger.kernel.org>,
+ Alexander Duyck <alexander.h.duyck@linux.intel.com>,
+ "linux-s390@vger.kernel.org" <linux-s390@vger.kernel.org>,
+ Michael Ellerman <mpe@ellerman.id.au>, "x86@kernel.org" <x86@kernel.org>,
+ Mike Rapoport <rppt@linux.ibm.com>,
+ Christian Borntraeger <borntraeger@de.ibm.com>, Ingo Molnar <mingo@redhat.com>,
+ Vlastimil Babka <vbabka@suse.cz>,
+ Benjamin Herrenschmidt <benh@kernel.crashing.org>,
+ Open Source Submission <patches@amperecomputing.com>,
+ Pavel Tatashin <pavel.tatashin@microsoft.com>,
+ Vasily Gorbik <gor@linux.ibm.com>, Will Deacon <will.deacon@arm.com>,
+ Borislav Petkov <bp@alien8.de>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ Oscar Salvador <osalvador@suse.de>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Andrew Morton <akpm@linux-foundation.org>,
+ "linuxppc-dev@lists.ozlabs.org" <linuxppc-dev@lists.ozlabs.org>,
+ "David S . Miller" <davem@davemloft.net>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Quoting Anson Huang (2019-06-10 19:06:22)
-> > >
-> > > Sorry, I am still a little confused, all the clock
-> > > register(clk_register()) are via each different clock types like
-> > > imx_clk_gate4/imx_clk_pll14xx, if using clk_hw_register, means we need
-> > > to re-write the clock driver using different clk register method, that
-> > > will make the driver completely different from i.mx8mq/i.mx8mm, they
-> > > are actually same series of SoC as i.mx8mn, it will introduce many
-> > confusion, is my understanding correct? And is it OK to just keep what it is
-> > and make them all aligned?
-> > >
-> > 
-> > Ok, the problem I'm trying to point out is that clk registrations need to be
-> > undone, i.e. clk_unregister() needs to be called, when the driver fails to
-> > probe. devm_*() is one way to do this, but if you have other ways of
-> > removing all the registered clks then that works too. Makes sense?
-> 
-> Yes, it makes sense. Do you think it is OK to add an imx_unregister_clocks() API, then
-> call it in every place of returning failure in .probe function? If yes, I will add it and also
-> fix it in i.MX8MQ driver which uses platform driver model but does NOT handle this case. 
-> 
->         base = devm_platform_ioremap_resource(pdev, 0);
-> -       if (WARN_ON(IS_ERR(base)))
-> -               return PTR_ERR(base);
-> +       if (WARN_ON(IS_ERR(base))) {
-> +               ret = PTR_ERR(base);
-> +               goto unregister_clks;
-> +       }
-> 
->                 pr_err("failed to register clks for i.MX8MN\n");
-> -               return -EINVAL;
-> +               goto unregister_clks;
->         }
-> 
->         return 0;
-> +
-> +unregister_clks:
-> +       imx_unregister_clocks(clks, ARRAY_SIZE(clks));
-> +
-> +       return ret;
-> 
-> +void imx_unregister_clocks(struct clk *clks[], unsigned int count)
-> +{
-> +       unsigned i;
-> +
-> +       for (i = 0; i < count; i++)
-> +               clk_unregister(clks[i]);
-> +}
-> +
-> 
+Hoan,
 
-Yes, looks better.
+On Tue, 25 Jun 2019, Hoan Tran OS wrote:
 
+Please use 'x86/Kconfig: ' as prefix.
+
+> This patch removes CONFIG_NODES_SPAN_OTHER_NODES as it's
+> enabled by default with NUMA.
+
+Please do not use 'This patch' in changelogs. It's pointless because we
+already know that this is a patch.
+
+See also Documentation/process/submitting-patches.rst and search for 'This
+patch'
+
+Simply say:
+
+  Remove CONFIG_NODES_SPAN_OTHER_NODES as it's enabled by default with
+  NUMA.
+
+But .....
+
+> @@ -1567,15 +1567,6 @@ config X86_64_ACPI_NUMA
+>  	---help---
+>  	  Enable ACPI SRAT based node topology detection.
+>  
+> -# Some NUMA nodes have memory ranges that span
+> -# other nodes.  Even though a pfn is valid and
+> -# between a node's start and end pfns, it may not
+> -# reside on that node.  See memmap_init_zone()
+> -# for details.
+> -config NODES_SPAN_OTHER_NODES
+> -	def_bool y
+> -	depends on X86_64_ACPI_NUMA
+
+the changelog does not mention that this lifts the dependency on
+X86_64_ACPI_NUMA and therefore enables that functionality for anything
+which has NUMA enabled including 32bit.
+
+The core mm change gives no helpful information either. You just copied the
+above comment text from some random Kconfig.
+
+This needs a bit more data in the changelogs and the cover letter:
+
+     - Why is it useful to enable it unconditionally
+
+     - Why is it safe to do so, even if the architecture had constraints on
+       it
+
+     - What's the potential impact
+
+Thanks,
+
+	tglx
 
 _______________________________________________
 linux-arm-kernel mailing list
