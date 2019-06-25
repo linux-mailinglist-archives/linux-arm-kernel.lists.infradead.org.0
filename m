@@ -2,145 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EA9A4527B9
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 25 Jun 2019 11:14:36 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C86C3527E1
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 25 Jun 2019 11:21:28 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
-	References:Message-ID:Date:Subject:To:From:Reply-To:Cc:Content-Description:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8kqEz9E3yNSMCSSzvVWORqRu9QqcpNCM1r6SXchWhz4=; b=Jpto/GKqxXaddI
-	wP75ZoBjRdJm/twaoMWAYQpMxU24+YpQ5aato+kS4zwodgjrYvjsatz5uh5toKL02czZ3faVeSg/z
-	FHvEqoaSG09iA5Z4QgGMESht1xzYkE0alb5onDLMIp4MsTW8DSfATE76pnwSUl0ONN9ZrRtpljjfU
-	dABt+K+kRi5u4i8LgbkQOC7MUyfqgB8SUaYWC1um0xZIyVOtk5orUu11rWvENren0XpbzU14Q23OB
-	Z/bJaZvMQ0sXouMQeB7q/i+IkFt90WohGAqUMGMHMb2rdA0SvY+dUJxqyIVDuVd+uyPTYv7XgIV00
-	OeHdB1kCXITjjTOq8Tgw==;
+	List-Owner; bh=iWOdBxv0OIHH+GR8PL9TR8pOKNZ4pP4FH5i5NksuYCU=; b=KSj3FvTvZD28Dc
+	gZsQOvP23hAwLTnd8KRI72Eam+IrqFF3ugYRJ0ivpSRUawAJ8tq2TLj6kCWeMpzYjQdTJrl5hxKbB
+	6I+U6vT+wtA3u+lrfOyyKcCQGHJE4ZFcXNBif2blg93q6MthgbFNbXOX2rmpir+y3RDVqlr3gl/Mq
+	cavfkC6EYMzk5KObprEBvGC1+cd/BhX0G6w+aQO2Z1nKknzJImWnoKHqDjVl1ICTGKo6Ntn6HIdjV
+	YzRgmOWONkY/S1vus243OPMx8+8WZFfYxkAifSHjUN0n2EpDmmDz6WkQrPqpuohzKCWeyotkmRvTh
+	dZyggys4S5rESW1dEA0Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hfhX7-0002Kq-Cm; Tue, 25 Jun 2019 09:14:33 +0000
-Received: from esa2.microchip.iphmx.com ([68.232.149.84])
+	id 1hfhdU-0005iJ-Sy; Tue, 25 Jun 2019 09:21:09 +0000
+Received: from szxga06-in.huawei.com ([45.249.212.32] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hfhWr-0002KM-Nb
- for linux-arm-kernel@lists.infradead.org; Tue, 25 Jun 2019 09:14:19 +0000
-Received-SPF: Pass (esa2.microchip.iphmx.com: domain of
- Eugen.Hristev@microchip.com designates 198.175.253.82 as
- permitted sender) identity=mailfrom;
- client-ip=198.175.253.82; receiver=esa2.microchip.iphmx.com;
- envelope-from="Eugen.Hristev@microchip.com";
- x-sender="Eugen.Hristev@microchip.com";
- x-conformance=spf_only; x-record-type="v=spf1";
- x-record-text="v=spf1 mx a:ushub1.microchip.com
- a:smtpout.microchip.com a:mx1.microchip.iphmx.com
- a:mx2.microchip.iphmx.com include:servers.mcsv.net
- include:mktomail.com include:spf.protection.outlook.com ~all"
-Received-SPF: None (esa2.microchip.iphmx.com: no sender
- authenticity information available from domain of
- postmaster@email.microchip.com) identity=helo;
- client-ip=198.175.253.82; receiver=esa2.microchip.iphmx.com;
- envelope-from="Eugen.Hristev@microchip.com";
- x-sender="postmaster@email.microchip.com"; x-conformance=spf_only
-Authentication-Results: esa2.microchip.iphmx.com;
- spf=Pass smtp.mailfrom=Eugen.Hristev@microchip.com;
- spf=None smtp.helo=postmaster@email.microchip.com;
- dkim=pass (signature verified) header.i=@microchiptechnology.onmicrosoft.com;
- dmarc=pass (p=none dis=none) d=microchip.com
-X-IronPort-AV: E=Sophos;i="5.63,415,1557212400"; d="scan'208";a="38780807"
-Received: from smtpout.microchip.com (HELO email.microchip.com)
- ([198.175.253.82])
- by esa2.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
- 25 Jun 2019 02:14:16 -0700
-Received: from chn-vm-ex03.mchp-main.com (10.10.87.152) by
- chn-vm-ex03.mchp-main.com (10.10.87.152) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
- 15.1.1713.5; Tue, 25 Jun 2019 02:14:37 -0700
-Received: from NAM04-BN3-obe.outbound.protection.outlook.com (10.10.215.89) by
- email.microchip.com (10.10.87.152) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.1713.5
- via Frontend Transport; Tue, 25 Jun 2019 02:14:37 -0700
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=microchiptechnology.onmicrosoft.com;
- s=selector1-microchiptechnology-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=oQboUQZRVJ1cLGfCsaE2CbtP+tIP5CWRsoBrKFaRZT0=;
- b=m/iMZuccxjq4szPCOT4OPZPLTjt6SBjN2JAlemPxKe5pOH8mO49gl5/ZX01EcpRbP4KPNgZffGaCd6x+I6gTndI9tABGwlqWm3FfFnGFS+eTaPBVFhiZH/NHt63wK7BajnlwGUsBPQVwdzlSkiVTNTh1t0JMS6I+gGSeuUImIRM=
-Received: from DM5PR11MB1242.namprd11.prod.outlook.com (10.168.108.8) by
- DM5PR11MB0075.namprd11.prod.outlook.com (10.164.155.144) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2008.16; Tue, 25 Jun 2019 09:14:13 +0000
-Received: from DM5PR11MB1242.namprd11.prod.outlook.com
- ([fe80::6476:ace0:bf3a:322]) by DM5PR11MB1242.namprd11.prod.outlook.com
- ([fe80::6476:ace0:bf3a:322%9]) with mapi id 15.20.2008.017; Tue, 25 Jun 2019
- 09:14:13 +0000
-From: <Eugen.Hristev@microchip.com>
-To: <peda@axentia.se>, <robh+dt@kernel.org>, <mark.rutland@arm.com>,
- <Nicolas.Ferre@microchip.com>, <alexandre.belloni@bootlin.com>,
- <Ludovic.Desroches@microchip.com>, <wsa@the-dreams.de>,
- <linux-i2c@vger.kernel.org>, <devicetree@vger.kernel.org>,
- <linux-arm-kernel@lists.infradead.org>, <linux-kernel@vger.kernel.org>
-Subject: Re: [PATCH v2 6/9] dt-bindings: i2c: at91: add binding for
- enable-ana-filt
-Thread-Topic: [PATCH v2 6/9] dt-bindings: i2c: at91: add binding for
- enable-ana-filt
-Thread-Index: AQHVKyyv+/RK0NIkBk254PAOuF5Z96asET2AgAAEBoA=
-Date: Tue, 25 Jun 2019 09:14:13 +0000
-Message-ID: <84628b5e-bea7-7d91-f790-f3a2650040fa@microchip.com>
-References: <1561449642-26956-1-git-send-email-eugen.hristev@microchip.com>
- <1561449642-26956-7-git-send-email-eugen.hristev@microchip.com>
- <4e81d3c9-25f3-ca6e-f2d5-17fad5905bb8@axentia.se>
-In-Reply-To: <4e81d3c9-25f3-ca6e-f2d5-17fad5905bb8@axentia.se>
-Accept-Language: ro-RO, en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-x-clientproxiedby: VI1PR0401CA0016.eurprd04.prod.outlook.com
- (2603:10a6:800:4a::26) To DM5PR11MB1242.namprd11.prod.outlook.com
- (2603:10b6:3:14::8)
-x-ms-exchange-messagesentrepresentingtype: 1
-x-tagtoolbar-keys: D20190625121017485
-x-originating-ip: [94.177.32.154]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: 8f064436-3c8c-4001-82b1-08d6f94d7d8a
-x-microsoft-antispam: BCL:0; PCL:0;
- RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600148)(711020)(4605104)(1401327)(2017052603328)(7193020);
- SRVR:DM5PR11MB0075; 
-x-ms-traffictypediagnostic: DM5PR11MB0075:
-x-microsoft-antispam-prvs: <DM5PR11MB0075FD35D254E0E3DAFA9E98E8E30@DM5PR11MB0075.namprd11.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:8273;
-x-forefront-prvs: 0079056367
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(376002)(346002)(396003)(366004)(39860400002)(136003)(189003)(199004)(5660300002)(305945005)(53936002)(6116002)(3846002)(86362001)(14454004)(25786009)(6436002)(2201001)(53546011)(446003)(66066001)(31696002)(6506007)(386003)(476003)(99286004)(8936002)(102836004)(6246003)(2616005)(486006)(229853002)(68736007)(6512007)(76176011)(7736002)(6486002)(66446008)(66556008)(66476007)(8676002)(64756008)(31686004)(2501003)(52116002)(478600001)(110136005)(81166006)(11346002)(26005)(66946007)(73956011)(316002)(72206003)(36756003)(186003)(256004)(2906002)(71190400001)(71200400001)(81156014)(921003)(1121003);
- DIR:OUT; SFP:1101; SCL:1; SRVR:DM5PR11MB0075;
- H:DM5PR11MB1242.namprd11.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; MX:1; A:1; 
-received-spf: None (protection.outlook.com: microchip.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: iBXj0ulX8MxhJ1vuQAQpi93D15L7Oog5P1541b8v8sz1uzVsUDHdKqXWCXUyqmDgXRq5yfEpFWmocxt3E/LPLGgacRQm0IqgsD/e1ZsiL5LPO3KG4PkFTnvkv06kB5nPTwQFIsWOgA8jHjqossrS10RO5rZYrQn8DxtKYBFdwuv/LzRG+WzeGSQl8UWBrQWE7GDDpctULz3pasaAKnjx+Q/yd5zoRlLXP2uz97lDedOLC2LUC4iARcj8rEZt7DAsyMtJFP7o2OkYYPy5uMRAUGW966XAHLFdo6QzVmgmUJ9hq5dvGwHAIV439i8+aACcMCkJCn1+Nvmd5AXCYm2kI46msP4o6JjwTayRAp4ENTMMk2/IFrwGoG+pJRdDgXaAcDnYoO/H9cMGTC9xIqS7E2uckmCUsBn5t5svSS33d7Y=
-Content-ID: <21506B8E5B03ED40A516D9564C071A00@namprd11.prod.outlook.com>
+ id 1hfhcz-0005gh-9u
+ for linux-arm-kernel@lists.infradead.org; Tue, 25 Jun 2019 09:20:41 +0000
+Received: from DGGEMS402-HUB.china.huawei.com (unknown [172.30.72.60])
+ by Forcepoint Email with ESMTP id EA2B26ACADE6F2562ACA;
+ Tue, 25 Jun 2019 17:20:23 +0800 (CST)
+Received: from localhost (10.202.226.61) by DGGEMS402-HUB.china.huawei.com
+ (10.3.19.202) with Microsoft SMTP Server id 14.3.439.0; Tue, 25 Jun 2019
+ 17:20:15 +0800
+Date: Tue, 25 Jun 2019 10:20:05 +0100
+From: Jonathan Cameron <jonathan.cameron@huawei.com>
+To: <linux-mm@kvack.org>, <linux-acpi@vger.kernel.org>,
+ <linux-kernel@vger.kernel.org>, <linux-arm-kernel@lists.infradead.org>
+Subject: Re: [PATCH 0/4 V3] ACPI: Support generic initiator proximity domains
+Message-ID: <20190625102005.00007ea2@huawei.com>
+In-Reply-To: <20190528123158.0000167a@huawei.com>
+References: <20190415174907.102307-1-Jonathan.Cameron@huawei.com>
+ <20190528123158.0000167a@huawei.com>
+Organization: Huawei
+X-Mailer: Claws Mail 3.17.3 (GTK+ 2.24.32; i686-w64-mingw32)
 MIME-Version: 1.0
-X-MS-Exchange-CrossTenant-Network-Message-Id: 8f064436-3c8c-4001-82b1-08d6f94d7d8a
-X-MS-Exchange-CrossTenant-originalarrivaltime: 25 Jun 2019 09:14:13.5723 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 3f4057f3-b418-4d4e-ba84-d55b4e897d88
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: eugen.hristev@microchip.com
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DM5PR11MB0075
+X-Originating-IP: [10.202.226.61]
+X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190625_021417_800749_2C96DC0C 
-X-CRM114-Status: GOOD (  12.09  )
+X-CRM114-CacheID: sfid-20190625_022037_918389_45BDBC5A 
+X-CRM114-Status: GOOD (  34.31  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [68.232.149.84 listed in list.dnswl.org]
+ medium trust [45.249.212.32 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -152,73 +66,149 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
+Cc: Keith Busch <keith.busch@intel.com>,
+ =?ISO-8859-1?Q?J=E9r=F4me?= Glisse <jglisse@redhat.com>,
+ "Rafael J . Wysocki" <rjw@rjwysocki.net>, linuxarm@huawei.com,
+ Andrew Morton <akpm@linux-foundation.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On Tue, 28 May 2019 12:31:58 +0100
+Jonathan Cameron <jonathan.cameron@huawei.com> wrote:
+Hi All,
+
+This is your periodic Generic Initiator reminder service.  I'm still looking
+for review on all aspects of this series.
+
+* ACPI for the table parsing code.
+* ARM64 for the architecture handling
+* x86 for the architecture handling.
+* Generic MM for the overall approach. In some sense it's not mm related in
+  of itself (as otherwise they wouldn't be Generic Initiator domains) but
+  it does result in different NUMA policy decisions from the current status
+  hence mm input would be great.
+
+Any suggestions on people to add to the CC list to try and make some progress
+on this welcome as well.
+
+If I don't hear anything I'll do a rebase post the coming merge window and
+resend.
+
+Thanks,
+
+Jonathan
+
+> Hi All,
+> 
+> Anyone had a change to take a look at this?
+> 
+> Thanks,
+> 
+> Jonathan
+> 
+> On Tue, 16 Apr 2019 01:49:03 +0800
+> Jonathan Cameron <Jonathan.Cameron@huawei.com> wrote:
+> 
+> > Changes since RFC V2.
+> > * RFC dropped as now we have x86 support, so the lack of guards in in the
+> > ACPI code etc should now be fine.
+> > * Added x86 support.  Note this has only been tested on QEMU as I don't have
+> > a convenient x86 NUMA machine to play with.  Note that this fitted together
+> > rather differently form arm64 so I'm particularly interested in feedback
+> > on the two solutions.
+> > 
+> > Since RFC V1.
+> > * Fix incorrect interpretation of the ACPI entry noted by Keith Busch
+> > * Use the acpica headers definitions that are now in mmotm.
+> > 
+> > It's worth noting that, to safely put a given device in a GI node, may
+> > require changes to the existing drivers as it's not unusual to assume
+> > you have local memory or processor core. There may be futher constraints
+> > not yet covered by this patch.
+> > 
+> > Original cover letter...
+> > 
+> > ACPI 6.3 introduced a new entity that can be part of a NUMA proximity domain.
+> > It may share such a domain with the existing options (memory, cpu etc) but it
+> > may also exist on it's own.
+> > 
+> > The intent is to allow the description of the NUMA properties (particulary
+> > via HMAT) of accelerators and other initiators of memory activity that are not
+> > the host processor running the operating system.
+> > 
+> > This patch set introduces 'just enough' to make them work for arm64 and x86.
+> > It should be trivial to support other architectures, I just don't suitable
+> > NUMA systems readily available to test.
+> > 
+> > There are a few quirks that need to be considered.
+> > 
+> > 1. Fall back nodes
+> > ******************
+> > 
+> > As pre ACPI 6.3 supporting operating systems do not have Generic Initiator
+> > Proximity Domains it is possible to specify, via _PXM in DSDT that another
+> > device is part of such a GI only node.  This currently blows up spectacularly.
+> > 
+> > Whilst we can obviously 'now' protect against such a situation (see the related
+> > thread on PCI _PXM support and the  threadripper board identified there as
+> > also falling into the  problem of using non existent nodes
+> > https://patchwork.kernel.org/patch/10723311/ ), there is no way to  be sure
+> > we will never have legacy OSes that are not protected  against this.  It would
+> > also be 'non ideal' to fallback to  a default node as there may be a better
+> > (non GI) node to pick  if GI nodes aren't available.
+> > 
+> > The work around is that we also have a new system wide OSC bit that allows
+> > an operating system to 'annouce' that it supports Generic Initiators.  This
+> > allows, the firmware to us DSDT magic to 'move' devices between the nodes
+> > dependent on whether our new nodes are there or not.
+> > 
+> > 2. New ways of assigning a proximity domain for devices
+> > *******************************************************
+> > 
+> > Until now, the only way firmware could indicate that a particular device
+> > (outside the 'special' set of cpus etc) was to be found in a particular
+> > Proximity Domain by the use of _PXM in DSDT.
+> > 
+> > That is equally valid with GI domains, but we have new options. The SRAT
+> > affinity structure includes a handle (ACPI or PCI) to identify devices
+> > with the system and specify their proximity domain that way.  If both _PXM
+> > and this are provided, they should give the same answer.
+> > 
+> > For now this patch set completely ignores that feature as we don't need
+> > it to start the discussion.  It will form a follow up set at some point
+> > (if no one else fancies doing it).
+> > 
+> > Jonathan Cameron (4):
+> >   ACPI: Support Generic Initiator only domains
+> >   arm64: Support Generic Initiator only domains
+> >   x86: Support Generic Initiator only proximity domains
+> >   ACPI: Let ACPI know we support Generic Initiator Affinity Structures
+> > 
+> >  arch/arm64/kernel/smp.c        |  8 +++++
+> >  arch/x86/include/asm/numa.h    |  2 ++
+> >  arch/x86/kernel/setup.c        |  1 +
+> >  arch/x86/mm/numa.c             | 14 ++++++++
+> >  drivers/acpi/bus.c             |  1 +
+> >  drivers/acpi/numa.c            | 62 +++++++++++++++++++++++++++++++++-
+> >  drivers/base/node.c            |  3 ++
+> >  include/asm-generic/topology.h |  3 ++
+> >  include/linux/acpi.h           |  1 +
+> >  include/linux/nodemask.h       |  1 +
+> >  include/linux/topology.h       |  7 ++++
+> >  11 files changed, 102 insertions(+), 1 deletion(-)
+> >   
+> 
+> 
+> 
+> _______________________________________________
+> linux-arm-kernel mailing list
+> linux-arm-kernel@lists.infradead.org
+> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
 
 
-On 25.06.2019 11:55, Peter Rosin wrote:
 
-> 
-> On 2019-06-25 10:05, Eugen.Hristev@microchip.com wrote:
->> From: Eugen Hristev <eugen.hristev@microchip.com>
->>
->> Add binding specification for analogic filter inside the i2c controller
-> 
-> s/analogic/the analog/
-> 
->> Signed-off-by: Eugen Hristev <eugen.hristev@microchip.com>
->> ---
->>   Documentation/devicetree/bindings/i2c/i2c-at91.txt | 4 ++++
->>   1 file changed, 4 insertions(+)
->>
->> diff --git a/Documentation/devicetree/bindings/i2c/i2c-at91.txt b/Documentation/devicetree/bindings/i2c/i2c-at91.txt
->> index 8268595..20d334c 100644
->> --- a/Documentation/devicetree/bindings/i2c/i2c-at91.txt
->> +++ b/Documentation/devicetree/bindings/i2c/i2c-at91.txt
->> @@ -23,6 +23,9 @@ Optional properties:
->>   - enable-dig-filt: Enable the built-in digital filter on the i2c lines,
->>     specifically required depending on the hardware PCB/board and if the
->>     version of the controller includes it.
->> +- enable-ana-filt: Enable the built-in analogic filter on the i2c lines,
->> +  specifically required depending on the hardware PCB/board and if the
->> +  version of the controller includes it.
->>   - Child nodes conforming to i2c bus binding
->>   
->>   Examples :
->> @@ -60,6 +63,7 @@ i2c0: i2c@f8034600 {
->>   	atmel,fifo-size = <16>;
->>   	i2c-sda-hold-time-ns = <336>;
->>   	enable-dig-filt;
->> +	enable-ana-filt;
-> 
-> Perhaps
-> 
-> 	microchip,digital-filter;
-> 	microchip,analog-filter;
-> 
-> ?
-
-Hi Peter,
-
-Thanks for reviewing. The name of the property does not matter much to 
-me, and we have properties prefixed with vendor, and some are not.
-
-@Alexandre Belloni: which name you think it's best ?
-
-Eugen
-
-> 
-> Cheers,
-> Peter
-> 
->>   
->>   	wm8731: wm8731@1a {
->>   		compatible = "wm8731";
->>
-> 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
