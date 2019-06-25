@@ -2,87 +2,88 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B176654FBB
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 25 Jun 2019 15:05:07 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C5E2254EA0
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 25 Jun 2019 14:16:31 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=CTz6FT9nt5U0sv+kHSeNgbMjjZTp2MS/WMJiVXU3s2o=; b=cQb/eJs5mi/5cX
-	HLQedxWpEKeZ6bv9qg900mZ6DuupinITHdzJc1UmcIKANSiL3PnfNKF/1tec09xa2/xITLPoFkGkp
-	KcA5v+PPIu8VTdX25x0YHzZSPL9kXbyC9Nt59od1sOyTg6EzMjF/34EH9rDSLvgv6MdY7UaMl69xM
-	CTTcTg2JmGMw9820vbCdDyHZKvAr9OdQuVSYTmslYrnZqGycqNqOHbvhlNzxfP0DyR21mXRWcSpPT
-	1jmsxSqDrBDc/hhVm7TGN2FPKWa8iufLcVD2qDYEoQ/bdzF/K0t7vgK4fHb60Ki9cHUZLscBPz1Gs
-	EXhdBiImmRshOJWKZ/gQ==;
+	List-Archive:List-Unsubscribe:List-Id:Mime-Version:Date:To:From:Subject:
+	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=ydeBY6ZTtIsQtFsKbUQqGd62przpz1hy/RbUlSIH0c4=; b=Pm252Eq5h9f0F5
+	hcY3qslpdqy/uPkuD7TPSGDbIALrMmTFpmo5xDjHRLZJtE0Wi4GxURqRs3MK2lhCPXa1C+JheRwb/
+	JY/e7raA5YktySplhFqAh+bT4k/XBOQpgYKOad17OAfMZLgwd5VVoFowvdW6EzAOw+IcHmRNlosso
+	BMg6aoLx6lKCVS5HY2ISOs/NEbC5H2v8KP6W3NW6EIJ3LeaU8Pdzw0U5HLX4CPmu4hj/l+Vtt0jvd
+	vwQT/6O2HrOzz9LD7yFdLYCuJaahRsMdxNxkuuibO+jNTH908Y3iEFNuRFOde+gRlU76tIxn78qUW
+	cMstNkJDjjpVLt+mqe+g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hfl89-0001Tm-Ii; Tue, 25 Jun 2019 13:05:01 +0000
-Received: from mail-lj1-x242.google.com ([2a00:1450:4864:20::242])
+	id 1hfkNC-00043H-2v; Tue, 25 Jun 2019 12:16:30 +0000
+Received: from mail-qk1-x734.google.com ([2607:f8b0:4864:20::734])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hfl7c-0001Gw-39
- for linux-arm-kernel@lists.infradead.org; Tue, 25 Jun 2019 13:04:29 +0000
-Received: by mail-lj1-x242.google.com with SMTP id v18so16174239ljh.6
+ id 1hfkMp-0003x9-L5
+ for linux-arm-kernel@lists.infradead.org; Tue, 25 Jun 2019 12:16:13 +0000
+Received: by mail-qk1-x734.google.com with SMTP id g18so12382802qkl.3
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 25 Jun 2019 06:04:27 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=lixom-net.20150623.gappssmtp.com; s=20150623;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:content-transfer-encoding:in-reply-to
- :user-agent; bh=lPv5IiwZi/qVzddwdiHeLst6KphXvcBVBZQ/ceZIAcU=;
- b=K7CkxYtuN77fOmkMLMVkMuRjpjIY3F6dk2EFHtKzM/w3q6KATdq3XNcUNpFsgFaJiz
- IlPfeEmPgvB29wUex70kqHwaezkcVPiCUqwNlCzvoMxff1TSodC1qDX2KAe+RMqol6bP
- SGUrA9DlB9TY1rgsUwZyU7YjZhmuWCmvc9ZPlA2e3iVKKUTcZdLx8BRNKr55qg7hwABx
- MOWLb7Xzge3+EXv8Zvi9cDIJn1jD214z/yEwlGmPAE7/6PbntEwA7AQ3YdchtNb7IijI
- n8nk8g3AMw718/qI3FFFGkreEhBn73a3VBlFBqwvFq5WKeh6D7PhdN/D3QzMNRlOiF3B
- ox9Q==
+ Tue, 25 Jun 2019 05:16:06 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=lca.pw; s=google;
+ h=message-id:subject:from:to:cc:date:mime-version
+ :content-transfer-encoding;
+ bh=Jo5ZxbVSIdMopp53XA/lWdARqu1Vh5aO08tEM8lSAB8=;
+ b=LjiH2Aick5W1S4iX94IADv/8ufjngFU9SFx5pPZBTdlYAgz3IaLZyyQeSySCmi7D6L
+ fBewD81X8OLiO72k7nK37Dr3+KDLT59keFgdwZ1mAvzTtmF4f5W/5Atw2fhBp0HATKBV
+ Hee48t8z5OQ1g+x0KQzKSp4AwQsQiTp3n4Xka8baYKA48t0gcHBhNB+wvmLF+1XMeLo8
+ DNT9x97d9WjttYql91ZVtuXPfUClWnxTOMgTN1aaPevoao4Eyufm7PFS0pGV6NzuH4Zv
+ psinx69lSDpo3IgJ4LbZ9T6bQcszpGB6f2X5/IK+KtSfMYRAxjvb/v7wPTADzCVZIlov
+ cLeQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:content-transfer-encoding
- :in-reply-to:user-agent;
- bh=lPv5IiwZi/qVzddwdiHeLst6KphXvcBVBZQ/ceZIAcU=;
- b=Tw8aQTCSMRLCGC0p9+yB9BPldc5WYU1SRiakc+L2y8M+25I78xnyEgTT0x2C8r2OTg
- ccMV28Ob1NGnxl+DX0vy2Z6HHEt5N/y5q6HatKPlXERIRCtGdiGqbodtcRnWO4JJgIrL
- wGwXevj5QK5IpFGtYQGxFDSLunWhAMFhWy+/wZADOd0kNSfK6Z2OwYwptuhBn/Dkys55
- osKzfK6SkMEKHaq7z7DxCGxsjsZ/vqMUzFyuUx50VmKqmNwWdPAxiAR4HZzy+Xnnyb1o
- GwkjVkTV2ugzZtimXAknWsCDXnLlTJeGDCp6DQ3X/CwR8gPh3gsmA38wXxGqDXBshl4W
- sgKg==
-X-Gm-Message-State: APjAAAUwNc3el1A0R1WQW31HXcLT1ZUukIvitbHVjuA0PLc65AYU4jyl
- NQgkmF73ecufawg2ldFpfpPTmA==
-X-Google-Smtp-Source: APXvYqwYoUhCxeyvRDo2O8PaTLPIs81VJApKM2NdTUdRQil7IcYv2tqN4CTGO2c4nCKMJmRY4SXn0g==
-X-Received: by 2002:a05:651c:95:: with SMTP id
- 21mr36942889ljq.128.1561467866338; 
- Tue, 25 Jun 2019 06:04:26 -0700 (PDT)
-Received: from localhost (h85-30-9-151.cust.a3fiber.se. [85.30.9.151])
- by smtp.gmail.com with ESMTPSA id r84sm2603995lja.54.2019.06.25.06.04.24
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Tue, 25 Jun 2019 06:04:24 -0700 (PDT)
-Date: Tue, 25 Jun 2019 05:15:52 -0700
-From: Olof Johansson <olof@lixom.net>
-To: Maxime Ripard <maxime.ripard@bootlin.com>
-Subject: Re: [GIT PULL] Allwinner arm64 defconfig Changes for 5.3
-Message-ID: <20190625121552.gso5dc7n6a7dka2z@localhost>
-References: <e4e2f9cf-d986-4648-a196-fba54f048edf.lettre@localhost>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <e4e2f9cf-d986-4648-a196-fba54f048edf.lettre@localhost>
-User-Agent: NeoMutt/20170113 (1.7.2)
+ h=x-gm-message-state:message-id:subject:from:to:cc:date:mime-version
+ :content-transfer-encoding;
+ bh=Jo5ZxbVSIdMopp53XA/lWdARqu1Vh5aO08tEM8lSAB8=;
+ b=Tn3/T+kl3vsUT+ej8MwwjMdAO4nf5EMD5K67s6qP4TBZkKdtbiShj204cIYmehYYSk
+ aRgy3EQ+y5Lz6FgOfjPgDjw1T7USuFbi3/L2QWGscG8qoiSfC0hdz7pUt0oL/j+2vuR6
+ OISX/A3AGeNC/RVvocAicvFBNC2wIHLGiI/SPl1l1LfI0NJWOj/zdVfiucYFbPPNcXb3
+ rRx5528V8dS4chy78Ljm7lbK9rfx43lPvcUytjpKB/aXU9HggvKHAzZmRl+F/P9peuhc
+ x7U/9AH16kTXgATNHYao7WE/rUnOXZ4UUvZKIgRP2zv7MZtJg88h/B7fh0iPrvZXtPoi
+ R8Yg==
+X-Gm-Message-State: APjAAAWySPyeGAG0bv+OuYZvAO5vWf3CNIH5ww9qTv+dy4MJCVDOQnEC
+ b4srR4n8Uv1y10ls0NzNpvtalQ==
+X-Google-Smtp-Source: APXvYqwMrlhcyFatGCBkoDD6VKM1BCFRs76z953BDEboVbbhRtdY/MlybjpRLQJs/+vq5eIMwFiuLA==
+X-Received: by 2002:a37:4a04:: with SMTP id x4mr22458625qka.408.1561464965994; 
+ Tue, 25 Jun 2019 05:16:05 -0700 (PDT)
+Received: from dhcp-41-57.bos.redhat.com (nat-pool-bos-t.redhat.com.
+ [66.187.233.206])
+ by smtp.gmail.com with ESMTPSA id s127sm6765096qkd.107.2019.06.25.05.16.04
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Tue, 25 Jun 2019 05:16:05 -0700 (PDT)
+Message-ID: <1561464964.5154.63.camel@lca.pw>
+Subject: "arm64: vdso: Substitute gettimeofday() with C implementation"
+ breaks clang build
+From: Qian Cai <cai@lca.pw>
+To: Vincenzo Frascino <vincenzo.frascino@arm.com>
+Date: Tue, 25 Jun 2019 08:16:04 -0400
+X-Mailer: Evolution 3.22.6 (3.22.6-10.el7) 
+Mime-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190625_060428_139809_6DA3928F 
-X-CRM114-Status: GOOD (  14.73  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190625_051608_136137_E274398D 
+X-CRM114-Status: UNSURE (   5.87  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:242 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:734 listed in]
  [list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -96,68 +97,25 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Chen-Yu Tsai <wens@csie.org>, arm@kernel.org,
+Cc: Catalin Marinas <catalin.marinas@arm.com>,
+ Thomas Gleixner <tglx@linutronix.de>, Will Deacon <will.deacon@arm.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
  linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi,
+The linux-next commit "arm64: vdso: Substitute gettimeofday() with C
+implementation" [1] breaks clang build.
 
-On Fri, Jun 21, 2019 at 10:13:58AM +0200, Maxime Ripard wrote:
-> Hi,
-> =
+error: invalid value 'tiny' in '-mcode-model tiny'
+make[1]: *** [scripts/Makefile.build:279:
+arch/arm64/kernel/vdso/vgettimeofday.o] Error 1
+make[1]: *** Waiting for unfinished jobs....
+make: *** [arch/arm64/Makefile:180: vdso_prepare] Error 2
 
-> Please pull the following changes for the next release.
-> =
-
-> Thanks!
-> Maxime
-> =
-
-> The following changes since commit a188339ca5a396acc588e5851ed7e19f66b0eb=
-d9:
-> =
-
->   Linux 5.2-rc1 (2019-05-19 15:47:09 -0700)
-> =
-
-> are available in the Git repository at:
-> =
-
->   https://git.kernel.org/pub/scm/linux/kernel/git/sunxi/linux.git refs/ta=
-gs/sunxi-config64-for-5.3-201906210813
-> =
-
-> for you to fetch changes up to dae335bcae86cab8f5e1df32d9c0ec200585a92d:
-> =
-
->   arm64: defconfig: enable Allwinner DMA drivers (2019-06-11 10:28:18 +02=
-00)
-> =
-
-> ----------------------------------------------------------------
-> Our usual bunch of arm64 defconfig changes, this time mostly to enable
-> some missing drivers for the Allwinner A64.
-> =
-
-> ----------------------------------------------------------------
-> Cl=E9ment P=E9ron (2):
->       arm64: defconfig: enable sunxi watchdog
->       arm64: defconfig: enable Allwinner DMA drivers
-> =
-
-> Yangtao Li (1):
->       arm64: defconfig: add allwinner sid support
-
-Is there a reason this isn't a module? I don't think it's needed to mount
-rootfs.
-
-(Not merged until clarified).
-
-
--Olof
+[1] https://patchwork.kernel.org/patch/11009663/
 
 _______________________________________________
 linux-arm-kernel mailing list
