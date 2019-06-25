@@ -2,54 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4423C55BD7
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 26 Jun 2019 01:02:18 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D5EED55BDB
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 26 Jun 2019 01:02:49 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:Subject:From:To:
 	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9Iv4J8PuP+ijRg7bJHRAoiLw54NavpMVIdBAByY7eps=; b=Y/5WQTSjzpBtue
-	q+alNzvMFPfx2Kvi1p9VJKETUOw/vHQZkfXK0k/4iF/cPzlU9VC1pHZhV6z/Xve4EwI5R7zr8sz3l
-	FHSpX5KEAk8o1PRar8jMgCsRPE4ad+2/0cjVWM4/FFcYRyw8owRiDDCDF3dDQPRUKzy+Y5RfB91VB
-	zayw7q6Y4V/0cuAIFpg1DJJiOH/O+1FmZFmlPFp3ZqF+ql6UN7frg2fgTLnVOf1VGq03nBzDoT1Rg
-	LIQxkhceJO8auXHrZzo9enEIJ0MkP5IGWWEjrQKIN2T7k9ajcAc4jsGYU95dAWJkwd9XO+ImAQy8Z
-	5UubiT/NJLPvafYUv9cw==;
+	List-Owner; bh=jYeOTqdqGgiB3mqn4sasZqm7QkBr10gIRAkwZXzg0Cg=; b=GJaMaMcliwJclo
+	CFtKK+YMUkmkg4UxJFjwmrLwLCv2p3/bVVVKnZvhmmrflybdSZJhNdM2wH2gBkDOZbx52NO9v27Xd
+	q77Y5K6y3UIh5SBgUS+EXdv8nthVC6csb+1AF4tq3nUMSNxK+BrHFp2LETynNejem7HPfJs0kG9wd
+	W/Dv5zfJ1Z1bLotxKEMlnqW7EEYNLi3i4HT76h2nAqENNl8yEsZ0tNcY2e4M+O+bFlfDrJs8GtGdN
+	AUoMycNQZOtXQ83VVzJDjoHS6CIGTNE4nXEoKpriEGb5mfauqZ78r4nG5UJG2P6UeSx7loBOBiKOr
+	O6KaT375jshpLqlEM9Tw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hfuS6-0004I6-St; Tue, 25 Jun 2019 23:02:14 +0000
+	id 1hfuSa-0004ch-9r; Tue, 25 Jun 2019 23:02:44 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hfuR3-0003lR-0y; Tue, 25 Jun 2019 23:01:11 +0000
+ id 1hfuSE-0004b0-2f; Tue, 25 Jun 2019 23:02:25 +0000
 Received: from kernel.org (unknown [104.132.0.74])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 9897F2084B;
- Tue, 25 Jun 2019 23:01:08 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id A1C772084B;
+ Tue, 25 Jun 2019 23:02:21 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1561503668;
- bh=1hx1HOG4G3+zSxwKEwqkBRzCSUugXRSDSutWlI0q2uo=;
+ s=default; t=1561503741;
+ bh=82RyR5pFqn05vyyNq4lzd/5m52MIeTMNFiRkCRUTQV0=;
  h=In-Reply-To:References:To:From:Subject:Cc:Date:From;
- b=vsZCG6oJC0xEGTpa1Jzozm/n/jlshGHgcRXCWzQ2SKouEw5ltQu1uyHaOjYlO2hux
- 9vgHJYUu2jteiilEKc2Y5ebVycV3yacI6dxtuxmwfzyDbDURzHbd8BSRAKE5XYtYid
- FMZkpSPadLmtoZWtuJoGlH0co+hYevF9uZaoCePw=
+ b=VxhOM3T0rDZQLYc6U+By4eyc5T1Fg6CRnnOjooSqYTLKhmT0WzIfRkbcCbpHuNkUd
+ SfdZrjYkzhyLLpm9MxCLhuxO6J1ugyIMAFleGIH7ckoKy9+stTLZIYRJk83AxLdGaZ
+ xithUTuimVB8qjTsllcRV1+jXFeDlIjceJxL68DU=
 MIME-Version: 1.0
-In-Reply-To: <20190611175839.28351-6-nsaenzjulienne@suse.de>
-References: <20190611175839.28351-1-nsaenzjulienne@suse.de>
- <20190611175839.28351-6-nsaenzjulienne@suse.de>
-To: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
- linux-kernel@vger.kernel.org, stefan.wahren@i2se.com
+In-Reply-To: <d8b20179-45ef-479a-47dc-390a4a2dfddf@i2se.com>
+References: <20190612182500.4097-1-nsaenzjulienne@suse.de>
+ <6a9e1450-80ad-a13c-59d2-d0b39f25f67e@gmail.com>
+ <7acfd967-0a82-5429-4eed-8b802e6620f5@i2se.com>
+ <d8b20179-45ef-479a-47dc-390a4a2dfddf@i2se.com>
+To: Mike Turquette <mturquette@baylibre.com>,
+ Stefan Wahren <stefan.wahren@i2se.com>
 From: Stephen Boyd <sboyd@kernel.org>
-Subject: Re: [PATCH v3 5/7] clk: raspberrypi: register platform device for
- raspberrypi-cpufreq
+Subject: Re: [PATCH v4 0/7] cpufreq support for Raspberry Pi
 User-Agent: alot/0.8.1
-Date: Tue, 25 Jun 2019 16:01:07 -0700
-Message-Id: <20190625230108.9897F2084B@mail.kernel.org>
+Date: Tue, 25 Jun 2019 16:02:20 -0700
+Message-Id: <20190625230221.A1C772084B@mail.kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190625_160110_049165_D7D4C9EA 
-X-CRM114-Status: UNSURE (   6.72  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190625_160222_233093_7D7F424C 
+X-CRM114-Status: GOOD (  14.08  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -78,28 +78,58 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm-kernel@lists.infradead.org, f.fainelli@gmail.com,
- ptesarik@suse.com, viresh.kumar@linaro.org, mturquette@baylibre.com,
- linux-pm@vger.kernel.org, rjw@rjwysocki.net, eric@anholt.net,
- bcm-kernel-feedback-list@broadcom.com, linux-rpi-kernel@lists.infradead.org,
- Nicolas Saenz Julienne <nsaenzjulienne@suse.de>, linux-clk@vger.kernel.org,
- mbrugger@suse.de, ssuloev@orpaltech.com
+Cc: linux-arm-kernel@lists.infradead.org,
+ Florian Fainelli <f.fainelli@gmail.com>, ptesarik@suse.com,
+ viresh.kumar@linaro.org, linux-pm@vger.kernel.org, rjw@rjwysocki.net,
+ linux-kernel@vger.kernel.org, eric@anholt.net,
+ bcm-kernel-feedback-list@broadcom.com, mbrugger@suse.de, ssuloev@orpaltech.com,
+ linux-clk@vger.kernel.org, Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
+ linux-rpi-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Quoting Nicolas Saenz Julienne (2019-06-11 10:58:42)
-> As 'clk-raspberrypi' depends on RPi's firmware interface, which might be
-> configured as a module, the cpu clock might not be available for the
-> cpufreq driver during it's init process. So we register the
-> 'raspberrypi-cpufreq' platform device after the probe sequence succeeds.
+Quoting Stefan Wahren (2019-06-22 02:54:47)
+> Hi Stephen,
+> hi Mike,
 > 
-> Signed-off-by: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
-> Acked-by: Eric Anholt <eric@anholt.net>
-> ---
+> Am 13.06.19 um 06:31 schrieb Stefan Wahren:
+> > Hi Florian,
+> > hi Stephen,
+> >
+> > Am 13.06.19 um 05:31 schrieb Florian Fainelli:
+> >> On 6/12/2019 11:24 AM, Nicolas Saenz Julienne wrote:
+> >>> Hi all,
+> >>> this aims at adding cpufreq support to the Raspberry Pi family of
+> >>> boards.
+> >>>
+> >>> The series first factors out 'pllb' from clk-bcm2385 and creates a new
+> >>> clk driver that operates it over RPi's firmware interface[1]. We are
+> >>> forced to do so as the firmware 'owns' the pll and we're not allowed to
+> >>> change through the register interface directly as we might race with the
+> >>> over-temperature and under-voltage protections provided by the firmware.
+> >>>
+> >>> Next it creates a minimal cpufreq driver that populates the CPU's opp
+> >>> table, and registers cpufreq-dt. Which is needed as the firmware
+> >>> controls the max and min frequencies available.
+> >>>
+> >>> This was tested on a RPi3b+ and RPI2b, both using multi_v7_defconfig and
+> >>> arm64's defconfig.
+> >> How do we go about merging this? Stefan, will you pick up patch 3, 6 and
+> >> 7 and submit them for 5.3/5.4? Viresh has already picked up patch 4.
+> > is it possible to let patches 1,2, 3 and 5 go via clk-tree?
+> >
+> > I would take care of 6 and 7.
+> >
+> > Stefan
+> are you fine with the series, since Viresh already picked up patch 4?
+> 
+> are you okay with my suggestion above?
+> 
 
-Reviewed-by: Stephen Boyd <sboyd@kernel.org>
+Oh I missed this. I can apply the clk patches most likely assuming it
+doesn't break anything bisection-wise.
 
 
 _______________________________________________
