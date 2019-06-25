@@ -2,32 +2,34 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3985C527E7
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 25 Jun 2019 11:22:50 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 00CB1527F1
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 25 Jun 2019 11:23:17 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=i8e2gnyuwS8TOyXhV3pTgqgFKjVXkqi47LSvnO/V7J8=; b=s8kUSxX+vhtQzQ
-	U7T+sgAzE+NgjRVhefrhBcbt6cN0D9xA3QN69UAtDzMflGEj0B5qXD3MSYiteKqGTTxz9GXCyhYud
-	nI+u5F0bjPo41nLU5APjghIOks+aslLbDRXjC+WB+DaVi/XcWG/lCwJXnxvZNGm9vav6vXSXWgp1t
-	7/qhvRms5Sbwdv9P0MHf6f10wWMn4mQxftYCDxp0qC4QdFDJLtq7+sS+ufKinmO+fhy7Rk0BqaGWo
-	Sg/x4EKytIPAotMDh0vwl6wDaHqaD3m89OqoB0AeGyDBoUuOUg9kqpgAUOxI2FuWyvwXLiGXoyG9d
-	XLo+2FgPDZGEhC12HsYA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=/Rq+Mc1ImeN2zcmH363mwdSj28rjI0RWW73FFCr4hoU=; b=mDApYdcVNLeF7x
+	+0hRtNpghEPF306vDZ0rCGiGNYC8kaBewpXYFMssGw0nBaLt41/sCZxhXkCtsRCS7cgzwQT2yX6Vv
+	xaBBji04KFRyJYYMpuLfhLYNe6YtaWIVHrcINTLu3DtjyOqwy+5/mgufkP0Xp0nbXc7GzGNdGzRU7
+	CpjbOHXMN+mEyoNOL48YB70q7y4EiKhtCk9BVl2MtfVP8GIhFTBWSRvlKkMht24zGME/QQgEMj+xr
+	67fDm3B+DIrJn8iHxSGBaydqQWhbrThwgUUntOyq4PpbmBWZq+6qCKlSqt+gQl3kbihnakK/z1MY4
+	dx/RWzVv1xNUJE+pnkVQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hfhf4-0006Mr-0Z; Tue, 25 Jun 2019 09:22:46 +0000
+	id 1hfhfV-0006hP-EC; Tue, 25 Jun 2019 09:23:13 +0000
 Received: from clnet-p19-102.ikbnet.co.at ([83.175.77.102] helo=localhost)
  by bombadil.infradead.org with esmtpsa (Exim 4.92 #3 (Red Hat Linux))
- id 1hfhd7-0005iX-UF; Tue, 25 Jun 2019 09:20:47 +0000
+ id 1hfhdE-0005k3-Cs; Tue, 25 Jun 2019 09:20:52 +0000
 From: Christoph Hellwig <hch@lst.de>
 To: Ulf Hansson <ulf.hansson@linaro.org>
-Subject: get rid of dma_max_pfn
-Date: Tue, 25 Jun 2019 11:20:40 +0200
-Message-Id: <20190625092042.19320-1-hch@lst.de>
+Subject: [PATCH 1/2] mmc: let the dma map ops handle bouncing
+Date: Tue, 25 Jun 2019 11:20:41 +0200
+Message-Id: <20190625092042.19320-2-hch@lst.de>
 X-Mailer: git-send-email 2.20.1
+In-Reply-To: <20190625092042.19320-1-hch@lst.de>
+References: <20190625092042.19320-1-hch@lst.de>
 MIME-Version: 1.0
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -48,16 +50,42 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi everyone,
+Just like we do for all other block drivers.  Especially as the limit
+imposed at the moment might be way to pessimistic for iommus.
 
-I though I got rid of all non-highmem, non-ISA block layer bounce
-buffering a while ago, but I missed the MMC case.  While I still plan to
-also kill off the highmem bouncing there I won't get to it this merge
-window, so for now I'd like to make some progress and move MMC to the
-DMA layer (swiotlb or arm dmabounce) bouncing for addressing limitations
-and kill off the dma_max_pfn helper.
+Signed-off-by: Christoph Hellwig <hch@lst.de>
+---
+ drivers/mmc/core/queue.c | 7 ++-----
+ 1 file changed, 2 insertions(+), 5 deletions(-)
 
-I'm fine with merging this through the mmc tree if it suits everyone.
+diff --git a/drivers/mmc/core/queue.c b/drivers/mmc/core/queue.c
+index 3557d5c51141..e327f80ebe70 100644
+--- a/drivers/mmc/core/queue.c
++++ b/drivers/mmc/core/queue.c
+@@ -350,18 +350,15 @@ static const struct blk_mq_ops mmc_mq_ops = {
+ static void mmc_setup_queue(struct mmc_queue *mq, struct mmc_card *card)
+ {
+ 	struct mmc_host *host = card->host;
+-	u64 limit = BLK_BOUNCE_HIGH;
+ 	unsigned block_size = 512;
+ 
+-	if (mmc_dev(host)->dma_mask && *mmc_dev(host)->dma_mask)
+-		limit = (u64)dma_max_pfn(mmc_dev(host)) << PAGE_SHIFT;
+-
+ 	blk_queue_flag_set(QUEUE_FLAG_NONROT, mq->queue);
+ 	blk_queue_flag_clear(QUEUE_FLAG_ADD_RANDOM, mq->queue);
+ 	if (mmc_can_erase(card))
+ 		mmc_queue_setup_discard(mq->queue, card);
+ 
+-	blk_queue_bounce_limit(mq->queue, limit);
++	if (!mmc_dev(host)->dma_mask || !*mmc_dev(host)->dma_mask)
++		blk_queue_bounce_limit(mq->queue, BLK_BOUNCE_HIGH);
+ 	blk_queue_max_hw_sectors(mq->queue,
+ 		min(host->max_blk_count, host->max_req_size / 512));
+ 	blk_queue_max_segments(mq->queue, host->max_segs);
+-- 
+2.20.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
