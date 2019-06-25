@@ -2,80 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 932FD55537
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 25 Jun 2019 18:54:06 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8387F55539
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 25 Jun 2019 18:54:25 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=JbaCD99X+YhRbDPY2CrVRAp0Tv3AiQJ6E6r/tjtQIYU=; b=Z2UBOedhALww9X
-	U+eZ8GtEw+B0XHVvMcrxKZRf+IDPsEamTaHNNBxLliLzoKh/x3yUyvVRgcB62wo5PklD8/c6bjbnX
-	2re4CyBH1dV2gMkc/zNv1T+jk4gun+xEMmDEhm9PF6Qiwu5HtGrfj+1mddUSscFgGjiaT5qgNpQsE
-	98Y/7mYN3bWmFbb2SKbC1lFwtZdykL9uLYR2SF2XL3yVJWDrC6vLL/Lej25yDcILypF0wxsnIE158
-	3iugk+fmZJAYiDeuYV1sbrtdARrHXI9lmjb0WnpG6H5+S3hkUVu9ueT6I7C1Fg/CajcKmhi9AECpK
-	zi+OX/U6L5kZAJcrp+hw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=St0J+l+MAVMwAzfp5bWMWDdKjIxPHrwexylzdPeNS7M=; b=EQJmTKBXvkdOyM
+	aZe3okKI83+kyu3m7RyvauFhnuI0/hh3UBmoHtEEC/8Yl38GsorAKREChkUTZT72TI1FrS9umSPsN
+	RdwaXKDKX7EB5Mqb8VTOXx5/CQs+8Brk0HCVg4EKMRqJ2A4oGdJhK3PuHVfizpdM8mAhbgtKYnHW3
+	/X8CJfBmCtHtZllHV5iabHQgtkNXkzkBDqNU/crxO3GmpNvf/Jvpa5Lad7mKAOYOrOU4dRH43tyRb
+	PC5AWN2A1l5jten1n7YlFiDUR1Ssav9NetQMbyMDy3dCacn9CbI3XKumu3axG1tuK1NuUDciFJyk2
+	sNevTo1hYiEq6FM2X86g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hfohm-0008At-L0; Tue, 25 Jun 2019 16:54:02 +0000
-Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
+	id 1hfoi6-0008RV-5Y; Tue, 25 Jun 2019 16:54:22 +0000
+Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hfodH-0003ok-RF
- for linux-arm-kernel@lists.infradead.org; Tue, 25 Jun 2019 16:49:25 +0000
-Received: by mail-wm1-x341.google.com with SMTP id c66so3577029wmf.0
+ id 1hfodI-0003pg-Re
+ for linux-arm-kernel@lists.infradead.org; Tue, 25 Jun 2019 16:49:27 +0000
+Received: by mail-wm1-x344.google.com with SMTP id f17so3689383wme.2
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 25 Jun 2019 09:49:23 -0700 (PDT)
+ Tue, 25 Jun 2019 09:49:24 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=bgdev-pl.20150623.gappssmtp.com; s=20150623;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=MFyZxw/PmmATYVOt4ZawM+qBj1/OEyzSJ/6Kyab2jWE=;
- b=N1Z3E600oJOwtEVH3C1Eo5uAwAxEnzzAlWIlPjtyUPZP6XvGIql/osbEXGEgp1Nx4k
- 5sx/CxtAV7ql0CA8vLWy1cCSBLB0GDejFOFTdwI6VHwsJ+ebvt/OChHqNr2vng16MV8+
- P1XT7VOaDKQGk8PWEYAm9PcxBv7ZLAYS8LOTLPNkARiMaS6BYl5+32TquD7KccbgzNoh
- 6Xv/7LN91jpzEiUMDcjdRlBZk/4p2NS4520oZDiZUshAYBXorKE3nHq2KrFM18Blv4fK
- jWdW2JO/QmrB81rMoagEqGrcJy1a9lJM/6JTAfsj2CG9JaaQ0lvl1uym9UNBF9zWzJn6
- nIIQ==
+ h=from:to:cc:subject:date:message-id:in-reply-to:references
+ :mime-version:content-transfer-encoding;
+ bh=BpBEtYSgqrBi7j4SiCT1m6YSPtNFJxDP5oog1k2Dp/E=;
+ b=eDnM5SmroyDBRGWomt4zm7VTbV4K8ugQm9G7mQkVjtkKKrgpPXvluSKc0vRgU+BNb1
+ VpUb13atGzKgtE48uLL+hhQvMBm9nrkO/hshQUUBPnbzeI7eO2oFXOu/PfLFTvmUSWv+
+ x7u4OqYLiuvEApl5clWFxy/edonhHNOkVcoa6DL6GKCw3W95w+/vY9iMBQZEbF4R2QRS
+ lLKqTq8JHXN2kSAZndjbq6Wix02hiVIb2mJT5MSoSkAUY3hR43RXrZcC4LYzVLDMMY5A
+ 1zedhzJ1Y2ZuXVSUI//I5AgEyxzZ5K9tcypa/cdU1QDNyLXJkXuoQLX+foMyOZZwbDMF
+ CA5Q==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=MFyZxw/PmmATYVOt4ZawM+qBj1/OEyzSJ/6Kyab2jWE=;
- b=KETqpDpyBKyVHnyv3hv0OYvg0yTSxtEMZzRRfjiTZJ7Nour25kOXs5Fxr6XJN79nty
- 3lgTBJNKu9V1+enyev1/LOYPWD18HZxAoJL0h2zNdIzqIwOalI1ua0e7HRKLPYhVkJAr
- 2TGw/wJvL40E4yx16fpNQKK+BQ/VoP7t3UOBAjCXtpbNUWTGG8Wq7ByTEBcZ67EP7Ipl
- LtBYk2Kck3fVDM3Ssuywc8JF9AmdVQFqOajiZp4KLjfPZP1sBXuIAGgfQibtVD7iQwzQ
- HlZLaYHtodsQWsyoUixahQyOgbe+1EN7ojr93PTmW4kkjYdKfVEUMm9PQ86tkTQ1/tjd
- PI7w==
-X-Gm-Message-State: APjAAAV3IdEbeepIqPlo7CaLwTMDQET86WWQDQE/Tk+3j8GySAuPomqz
- oQqwGvK4JfSGq8pXBccxYAhyw3qROTc=
-X-Google-Smtp-Source: APXvYqysaCd7pSOBC7N6A5J56tC0N0gGA43Mb7o4V/1MzqrHjgghtqMRBQ2q8szPaZ6cVG0tv4Dq8A==
-X-Received: by 2002:a7b:c7d7:: with SMTP id z23mr21157208wmk.46.1561481362319; 
- Tue, 25 Jun 2019 09:49:22 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references:mime-version:content-transfer-encoding;
+ bh=BpBEtYSgqrBi7j4SiCT1m6YSPtNFJxDP5oog1k2Dp/E=;
+ b=Fs3TXgIDQfN6QHER2k4Q0SyRVny23DkC6ChiB31cQmwjA6MZklhlttpR2g1RvBkNP4
+ jWOKvoHUVMr76k218t1vGWPX3BFRZR9u5EBxksYNlQXGSf9uAlqN96MA/1aOEZhmXeXw
+ 1hHB04B8sCitG6s5OlU+yxxvvA2lHobKIhzvhn6da4EvyhptKgwDRw47EVuzkWaeGkOg
+ +NAwbZRK/L2jXW49wb+0VDKyQ1umhJ2GaOn7M7ic37YvOCBwskzSzI71hrAL5r+qiGDb
+ w+7QCX+xeY9h7kCG9brMXkgMKW5fxAfqCnPkhMGgGlI41qIVDPmd1Z/1Vf1CWpSyxTxA
+ WPlw==
+X-Gm-Message-State: APjAAAVdbR8AkVS6oTZDBnbhtiVAEAxUzr43OlytD/4AAXOBloyVNJUm
+ prsEMU4ooIVAq+PHQnXogCfYRA==
+X-Google-Smtp-Source: APXvYqyVBBSlo04QiVVJZul9HxR3AfR32ezyhijOC6RrdMyx1+Q4KkR7gbPOK8c8SM4hhdG5xjAAig==
+X-Received: by 2002:a1c:23c4:: with SMTP id
+ j187mr20851213wmj.176.1561481363562; 
+ Tue, 25 Jun 2019 09:49:23 -0700 (PDT)
 Received: from debian-brgl.home ([2a01:cb1d:af:5b00:6d6c:8493:1ab5:dad7])
- by smtp.gmail.com with ESMTPSA id h14sm3078652wro.30.2019.06.25.09.49.21
+ by smtp.gmail.com with ESMTPSA id h14sm3078652wro.30.2019.06.25.09.49.22
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Tue, 25 Jun 2019 09:49:21 -0700 (PDT)
+ Tue, 25 Jun 2019 09:49:23 -0700 (PDT)
 From: Bartosz Golaszewski <brgl@bgdev.pl>
 To: Sekhar Nori <nsekhar@ti.com>,
 	Kevin Hilman <khilman@kernel.org>
-Subject: [PATCH 1/2] ARM: davinci: da830-evm: add missing regulator
+Subject: [PATCH 2/2] ARM: davinci: omapl138-hawk: add missing regulator
  constraints for OHCI
-Date: Tue, 25 Jun 2019 18:49:14 +0200
-Message-Id: <20190625164915.30242-1-brgl@bgdev.pl>
+Date: Tue, 25 Jun 2019 18:49:15 +0200
+Message-Id: <20190625164915.30242-2-brgl@bgdev.pl>
 X-Mailer: git-send-email 2.21.0
+In-Reply-To: <20190625164915.30242-1-brgl@bgdev.pl>
+References: <20190625164915.30242-1-brgl@bgdev.pl>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190625_094923_952517_30DF4A3D 
-X-CRM114-Status: GOOD (  10.22  )
+X-CRM114-CacheID: sfid-20190625_094925_019329_06540F70 
+X-CRM114-Status: GOOD (  10.87  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:341 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:344 listed in]
  [list.dnswl.org]
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -105,27 +108,27 @@ From: Bartosz Golaszewski <bgolaszewski@baylibre.com>
 We need to enable status changes for the fixed power supply for the USB
 controller.
 
-Fixes: 274e4c336192 ("ARM: davinci: da830-evm: add a fixed regulator for ohci-da8xx")
+Fixes: 1d272894ec4f ("ARM: davinci: omapl138-hawk: add a fixed regulator for ohci-da8xx")
 Cc: stable@vger.kernel.org
 Signed-off-by: Bartosz Golaszewski <bgolaszewski@baylibre.com>
 ---
- arch/arm/mach-davinci/board-da830-evm.c | 3 +++
+ arch/arm/mach-davinci/board-omapl138-hawk.c | 3 +++
  1 file changed, 3 insertions(+)
 
-diff --git a/arch/arm/mach-davinci/board-da830-evm.c b/arch/arm/mach-davinci/board-da830-evm.c
-index aba10a2bc6b9..a273ab25c668 100644
---- a/arch/arm/mach-davinci/board-da830-evm.c
-+++ b/arch/arm/mach-davinci/board-da830-evm.c
-@@ -61,6 +61,9 @@ static struct regulator_consumer_supply da830_evm_usb_supplies[] = {
- static struct regulator_init_data da830_evm_usb_vbus_data = {
- 	.consumer_supplies	= da830_evm_usb_supplies,
- 	.num_consumer_supplies	= ARRAY_SIZE(da830_evm_usb_supplies),
+diff --git a/arch/arm/mach-davinci/board-omapl138-hawk.c b/arch/arm/mach-davinci/board-omapl138-hawk.c
+index db177a6a7e48..5390a8630cf0 100644
+--- a/arch/arm/mach-davinci/board-omapl138-hawk.c
++++ b/arch/arm/mach-davinci/board-omapl138-hawk.c
+@@ -306,6 +306,9 @@ static struct regulator_consumer_supply hawk_usb_supplies[] = {
+ static struct regulator_init_data hawk_usb_vbus_data = {
+ 	.consumer_supplies	= hawk_usb_supplies,
+ 	.num_consumer_supplies	= ARRAY_SIZE(hawk_usb_supplies),
 +	.constraints    = {
 +		.valid_ops_mask = REGULATOR_CHANGE_STATUS,
 +	},
  };
  
- static struct fixed_voltage_config da830_evm_usb_vbus = {
+ static struct fixed_voltage_config hawk_usb_vbus = {
 -- 
 2.21.0
 
