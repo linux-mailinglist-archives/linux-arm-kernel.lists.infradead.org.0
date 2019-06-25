@@ -2,55 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D2A435533D
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 25 Jun 2019 17:21:32 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id AF78E55347
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 25 Jun 2019 17:23:12 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jJqKgZpvyOV+JIu4f5dm5ml56lhVpduIO/cOAxzry9w=; b=PYIg8gwbzKAcGq
-	sutSKTwXkmcNc3uCzwN3j+yZIDcsCHUYklzHZuuseIRHVu7MkYZAFAh028vOnbcktP9DJ0YNfntM7
-	QW946etO72B0GhOl6PCZkRCR2XATyvteDsTzqpa+6ApAX1Ha2fBerDB/WMOgBV3lF7cTiBsrMfrz1
-	uLV7FZTD132U6dyEYA2I1nXvXt/pyOJqUSmQq3Ok7wX7Ld78XrsiMJt4Py3VC3INppN+0qFNlKZ4C
-	6jbEfSD3GmdEXQIzaGSgnoAIgMAPwl7UTPKgMWErDgeTSt/aVBDXl1FSPV6xq3CSpdSDoB2iDN2wV
-	2XbMkqz8HaDmbMccRRGw==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=sg5JZbn2szi7WgkTw9642sWAEVy0watut1koX5wYyvk=; b=aqTh01Q3NxLjAu
+	RD4N5KbsyaFmtKpY+/BmQW/refprULhSmVKE9Aqkip82K4MXHvJYikjXs/RuklJgUdIdPPZ4MDqXq
+	oho0zcBEBGlYo++uoih166vnngQqQRuI3j4kgpKq1ccbxCVWaN5YdwFTIAfwOse03WdtO6rxevTd/
+	SlQHWiOfiOh/WBjNsYxmids92q2nrtnRfUCdUrfjKI8qngaVgYq9JuBqPmyfRWU1YOQdSBm6mNtY2
+	4f03nnIdG7Cbm6vnONdLGnDNXrzaPUljrmMSrceF8x8ms5lASQD+38fQQRcfxjjVVoPZHLlcVGv1x
+	sHqZDr2CCPV6dV4vS/Fw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hfnGD-0004LO-AZ; Tue, 25 Jun 2019 15:21:29 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hfnFY-00041S-Hb
- for linux-arm-kernel@lists.infradead.org; Tue, 25 Jun 2019 15:20:50 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 5BE622B;
- Tue, 25 Jun 2019 08:20:46 -0700 (PDT)
-Received: from e107155-lin (e107155-lin.cambridge.arm.com [10.1.196.42])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id EF9493F718;
- Tue, 25 Jun 2019 08:20:44 -0700 (PDT)
-Date: Tue, 25 Jun 2019 16:20:38 +0100
-From: Sudeep Holla <sudeep.holla@arm.com>
-To: Valentin Schneider <valentin.schneider@arm.com>
-Subject: Re: [PATCH v2 1/2] ACPI/PPTT: Add support for ACPI 6.3 thread flag
-Message-ID: <20190625152029.GA2308@e107155-lin>
-References: <20190614223158.49575-1-jeremy.linton@arm.com>
- <20190614223158.49575-2-jeremy.linton@arm.com>
- <667f95c0-5aa9-f460-a49a-e6dfefc027d8@arm.com>
+	id 1hfnHr-0004uZ-1J; Tue, 25 Jun 2019 15:23:11 +0000
+Received: from conssluserg-06.nifty.com ([210.131.2.91])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hfnHS-0004k4-GO
+ for linux-arm-kernel@lists.infradead.org; Tue, 25 Jun 2019 15:22:48 +0000
+Received: from mail-vs1-f52.google.com (mail-vs1-f52.google.com
+ [209.85.217.52]) (authenticated)
+ by conssluserg-06.nifty.com with ESMTP id x5PFMJnf001802
+ for <linux-arm-kernel@lists.infradead.org>; Wed, 26 Jun 2019 00:22:20 +0900
+DKIM-Filter: OpenDKIM Filter v2.10.3 conssluserg-06.nifty.com x5PFMJnf001802
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nifty.com;
+ s=dec2015msa; t=1561476140;
+ bh=I4gn4zhWUu8CS8xq7uHMDWTl3vK+1KN7KiPYqeN5XG4=;
+ h=From:Date:Subject:To:Cc:From;
+ b=IUbkxvew3coDHXBh1wbNW8DZulxXDMMOC9ub60hnqscwj+VHOAQjk9M6qqzlIHfpU
+ M+4qUigtcanahmxyTVa4ODzwHkzmu1d273V7sHpQGtWfbcX1MWjY2XxRzmQHgQzF6l
+ GCIcYl/ylkcyTxXjm3P8EGKOraWIElrrMNt3d7ujNPizRBYABz/4LWrT2VdCTn1DFb
+ YjPiizwRj46lCNS+1vRN63XY9Qlu7LDMI138BjWmGHJFTpCSZYuJHL32ow9X4RJnnR
+ HeLVGonywzEdigD7MZxzGzV9ggFHlv/fixRv9QH+ZJ2q91Kqo9//4rvgifawv53itL
+ XSGP5b7mVnKlA==
+X-Nifty-SrcIP: [209.85.217.52]
+Received: by mail-vs1-f52.google.com with SMTP id m8so11164949vsj.0
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 25 Jun 2019 08:22:19 -0700 (PDT)
+X-Gm-Message-State: APjAAAXwukH44RW7vHU7PpqbkYbQo2yydewgRTnIiLLIjAPvX2dK61cv
+ AqQ2ZxpBHlIH0lGkVst8kMB1YWf7OuXWWjLDFWQ=
+X-Google-Smtp-Source: APXvYqwWtj7ZIxvvgGhAtUAx2CLtVniyMTTW+OkeTFlWaM/0Lwm1ata1J+FSKX2nmJVuupuYCeIa5nm9RLoFWJql2Ws=
+X-Received: by 2002:a67:d46:: with SMTP id 67mr1416351vsn.181.1561476138869;
+ Tue, 25 Jun 2019 08:22:18 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <667f95c0-5aa9-f460-a49a-e6dfefc027d8@arm.com>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+From: Masahiro Yamada <yamada.masahiro@socionext.com>
+Date: Wed, 26 Jun 2019 00:21:42 +0900
+X-Gmail-Original-Message-ID: <CAK7LNAQKmSUkXtJOOcr1q8b_yTU_NRcgCvDAo8aZ+CkOXGTWNA@mail.gmail.com>
+Message-ID: <CAK7LNAQKmSUkXtJOOcr1q8b_yTU_NRcgCvDAo8aZ+CkOXGTWNA@mail.gmail.com>
+Subject: [GIT PULL] arm64: dts: uniphier: UniPhier DT updates for v5.3
+To: Arnd Bergmann <arnd@arndb.de>, Olof Johansson <olof@lixom.net>,
+ arm-soc <arm@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190625_082048_709398_B60668A5 
-X-CRM114-Status: GOOD (  19.30  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190625_082246_794998_9EB18B91 
+X-CRM114-Status: GOOD (  11.09  )
+X-Spam-Score: 1.0 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (1.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [210.131.2.91 listed in list.dnswl.org]
+ 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -62,63 +81,59 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: rjw@rjwysocki.net, catalin.marinas@arm.com, will.deacon@arm.com,
- linux-kernel@vger.kernel.org, Jeremy Linton <jeremy.linton@arm.com>,
- linux-acpi@vger.kernel.org, Sudeep Holla <sudeep.holla@arm.com>,
- linux-arm-kernel@lists.infradead.org, lenb@kernel.org
+Cc: masahiroy@kernel.org,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Jun 17, 2019 at 01:34:51PM +0100, Valentin Schneider wrote:
-> Hi Jeremy,
->
-> Few nits below.
->
-> Also, I had a look at the other PPTT processor flags that were introduced
-> in 6.3, and the only other one being used is ACPI_LEAF_NODE in
-> acpi_pptt_leaf_node(). However that one already has a handle on the table
-> header, so the check_acpi_cpu_flag() isn't of much help there.
->
-> I don't believe the other existing flags will benefit from the helper since
-> they are more about describing the PPTT tree, but I think it doesn't hurt
-> to keep it around for potential future flags.
->
-> On 14/06/2019 23:31, Jeremy Linton wrote:
-> [...]
-> > @@ -517,6 +517,43 @@ static int find_acpi_cpu_topology_tag(unsigned int cpu, int level, int flag)
-> >  	return retval;
-> >  }
-> >
-> > +/**
-> > + * check_acpi_cpu_flag() - Determine if CPU node has a flag set
-> > + * @cpu: Kernel logical CPU number
-> > + * @rev: The PPTT revision defining the flag
-> > + * @flag: The flag itself
+Hi Arnd, Olof,
 
-How about the "the processor structure flag being examined" ?
+Please pull UniPhier DT updates (64bit) for the v5.3 MW.
 
-> > + *
-> > + * Check the node representing a CPU for a given flag.
-> > + *
-> > + * Return: -ENOENT if the PPTT doesn't exist, the CPU cannot be found or
-> > + *	   the table revision isn't new enough.
-> > + * Otherwise returns flag value
-> > + */
->
-> Nit: strictly speaking we're not returning the flag value but its mask
-> applied to the flags field. I don't think anyone will care about getting
-> the actual flag value, but it should be made obvious in the doc:
->
+Thanks.
 
-I agree with that. I am also fine if you want to change the code to
-return 0 or 1 based on the flag value. It then aligns well with comment
-under acpi_pptt_cpu_is_thread. Either way, we just need consistency.
 
---
-Regards,
-Sudeep
+The following changes since commit a188339ca5a396acc588e5851ed7e19f66b0ebd9:
+
+  Linux 5.2-rc1 (2019-05-19 15:47:09 -0700)
+
+are available in the Git repository at:
+
+  git://git.kernel.org/pub/scm/linux/kernel/git/masahiroy/linux-uniphier.git
+tags/uniphier-dt64-v5.3
+
+for you to fetch changes up to aa38571246c6ac279ebebd141157297bcb959d76:
+
+  arm64: dts: uniphier: add reserved-memory for secure memory
+(2019-06-26 00:08:47 +0900)
+
+----------------------------------------------------------------
+UniPhier ARM64 SoC DT updates for v5.3
+
+- Migrate to the new binding for the Denali NAND controller
+
+- Use reserved-memory node instead of /memreserve/ for the
+  secure memory area
+
+----------------------------------------------------------------
+Masahiro Yamada (2):
+      arm64: dts: uniphier: update to new Denali NAND binding
+      arm64: dts: uniphier: add reserved-memory for secure memory
+
+ arch/arm64/boot/dts/socionext/uniphier-ld11-global.dts |  4 ++++
+ arch/arm64/boot/dts/socionext/uniphier-ld11.dtsi       | 15 +++++++++++++--
+ arch/arm64/boot/dts/socionext/uniphier-ld20.dtsi       | 15 +++++++++++++--
+ arch/arm64/boot/dts/socionext/uniphier-pxs3-ref.dts    |  4 ++++
+ arch/arm64/boot/dts/socionext/uniphier-pxs3.dtsi       | 15 +++++++++++++--
+ 5 files changed, 47 insertions(+), 6 deletions(-)
+
+
+-- 
+Best Regards
+Masahiro Yamada
 
 _______________________________________________
 linux-arm-kernel mailing list
