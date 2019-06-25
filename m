@@ -2,57 +2,88 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BDBE0522CC
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 25 Jun 2019 07:27:13 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 745725232C
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 25 Jun 2019 07:52:32 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/h9ANKgSTopln+8mbdXk4hb1OJpRFywhXmAqj6bkM3E=; b=suRe2hPz/s8OlU
-	ryoI8AHJuUFCfdRyPPZLO6UwYyjiRy3n4Nod0/v6OWn7PU6yC16K92JE/cjh/XCQa6dcNeDgzFfEc
-	RIejKA+GTK+hjDAxsaAqUFP7f8eYDIdHkXPOfSBZOUI4jSCnX54NyQlOMMQx5JBqhnr6QNW5PEWpE
-	tWIIrNRcpF3PphbTU9WdDUcUHrTRqMgRGOwjzW8hnuOXgshsPUA+NRhEuFCYb+OsI/qSGyWKMsukk
-	vBA/OrvC6iQNHM90MbMy6dOHMUNRjFVbt6bBRKrQxSIXi+AHDw5EXJBFSkTFca6LqbmERlKLNGyLN
-	3km6ksN/8xMEAunC5PKA==;
+	List-Owner; bh=rgUQMg+KlH9vpKnGY5YbnUOc5W9lC5pVYWD0XtCw4wA=; b=DztewZk9VoqdiP
+	SJVDFk/o+ARC6rD/3i71/hCiRUq45IVXClSW2AETegQyck5/afyuob6Mb0rUu52wMfYoWC9Vwov/l
+	RIecDXMYrJautVcm42vuEQx9jK+Na3blQkasBHBh+qlSv+5jVCJ+d9kvaS03+uWYVRRDIOnvjKFDb
+	cP9nMuzQ+WEmjFqXDeACqhxmK1HHbFtzin/17pFimiuSbBWP+EiiP0hAnYx5zTaREb3WlLPDcFoYX
+	6f/DwMMxtSc4MrZSlgaM19tUlgqi1q99o76yOhVkAlf+8j91CkDjhuQacdC6/OLM2LbJGsE3Nj81v
+	3h/cYmG0FZBHDyc11BFA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hfdz6-0001jb-9C; Tue, 25 Jun 2019 05:27:12 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hfdym-0001j3-Ks
- for linux-arm-kernel@lists.infradead.org; Tue, 25 Jun 2019 05:26:54 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 34B53360;
- Mon, 24 Jun 2019 22:26:49 -0700 (PDT)
-Received: from [10.163.1.179] (unknown [10.163.1.179])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 0688C3F246;
- Mon, 24 Jun 2019 22:28:31 -0700 (PDT)
-Subject: Re: [PATCH V6 3/3] arm64/mm: Enable memory hot remove
-To: Mark Rutland <mark.rutland@arm.com>, Steve Capper <Steve.Capper@arm.com>
-References: <1560917860-26169-1-git-send-email-anshuman.khandual@arm.com>
- <1560917860-26169-4-git-send-email-anshuman.khandual@arm.com>
- <20190621143540.GA3376@capper-debian.cambridge.arm.com>
- <20190624165148.GA9847@lakrids.cambridge.arm.com>
-From: Anshuman Khandual <anshuman.khandual@arm.com>
-Message-ID: <48f39fa1-c369-c8e2-4572-b7e016dca2d6@arm.com>
-Date: Tue, 25 Jun 2019 10:57:07 +0530
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101
- Thunderbird/52.9.1
+	id 1hfeNZ-00022z-Q9; Tue, 25 Jun 2019 05:52:30 +0000
+Received: from lelv0142.ext.ti.com ([198.47.23.249])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hfeMt-0001pZ-Qu; Tue, 25 Jun 2019 05:51:49 +0000
+Received: from lelv0265.itg.ti.com ([10.180.67.224])
+ by lelv0142.ext.ti.com (8.15.2/8.15.2) with ESMTP id x5P5phWh124656;
+ Tue, 25 Jun 2019 00:51:43 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
+ s=ti-com-17Q1; t=1561441903;
+ bh=4ydtyfEhKGGW/Ym8YTJs7/FZVjb1PULXWMT5pJO9Yu4=;
+ h=Subject:To:CC:References:From:Date:In-Reply-To;
+ b=Rc2IdmhPIIDtTjoavCEXOQ4rVB8Q//lJVmRKI622FOEg3yDnk6ulQcnscaukByUN8
+ 2wgw2+zQDPKhC60Dmwfuk4I0D1SlC1zZYR+vmMTeMwulMYyQJGlqpbHUnEP2GYpa7q
+ 9XHBYSigMEXUHRQPRiDTG5HBw3HOTGZEJLiElPH8=
+Received: from DFLE112.ent.ti.com (dfle112.ent.ti.com [10.64.6.33])
+ by lelv0265.itg.ti.com (8.15.2/8.15.2) with ESMTPS id x5P5phq8066012
+ (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
+ Tue, 25 Jun 2019 00:51:43 -0500
+Received: from DFLE109.ent.ti.com (10.64.6.30) by DFLE112.ent.ti.com
+ (10.64.6.33) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5; Tue, 25
+ Jun 2019 00:51:43 -0500
+Received: from lelv0327.itg.ti.com (10.180.67.183) by DFLE109.ent.ti.com
+ (10.64.6.30) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5 via
+ Frontend Transport; Tue, 25 Jun 2019 00:51:42 -0500
+Received: from [172.24.190.89] (ileax41-snat.itg.ti.com [10.172.224.153])
+ by lelv0327.itg.ti.com (8.15.2/8.15.2) with ESMTP id x5P5pcQR064859;
+ Tue, 25 Jun 2019 00:51:39 -0500
+Subject: Re: [PATCH v7 1/5] mtd: cfi_cmdset_0002: Add support for polling
+ status register
+To: Tokunori Ikegami <ikegami.t@gmail.com>, Boris Brezillon
+ <bbrezillon@kernel.org>, Marek Vasut <marek.vasut@gmail.com>, Richard
+ Weinberger <richard@nod.at>, Rob Herring <robh+dt@kernel.org>
+References: <20190620172250.9102-1-vigneshr@ti.com>
+ <20190620172250.9102-2-vigneshr@ti.com>
+ <571484c7-0cf4-6a7d-6d7f-375cfb13ce8b@gmail.com>
+From: Vignesh Raghavendra <vigneshr@ti.com>
+Message-ID: <c35bf193-02e2-6fe4-3db3-5be757616239@ti.com>
+Date: Tue, 25 Jun 2019 11:22:24 +0530
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.7.1
 MIME-Version: 1.0
-In-Reply-To: <20190624165148.GA9847@lakrids.cambridge.arm.com>
+In-Reply-To: <571484c7-0cf4-6a7d-6d7f-375cfb13ce8b@gmail.com>
 Content-Language: en-US
+X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190624_222652_779222_BA0ED020 
-X-CRM114-Status: GOOD (  26.33  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190624_225147_966038_DF237DD1 
+X-CRM114-Status: GOOD (  23.54  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [198.47.23.249 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -64,156 +95,159 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "mhocko@suse.com" <mhocko@suse.com>,
- "mgorman@techsingularity.net" <mgorman@techsingularity.net>,
- "david@redhat.com" <david@redhat.com>,
- Catalin Marinas <Catalin.Marinas@arm.com>, Will Deacon <Will.Deacon@arm.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "linux-mm@kvack.org" <linux-mm@kvack.org>,
- "logang@deltatee.com" <logang@deltatee.com>,
- "arunks@codeaurora.org" <arunks@codeaurora.org>, "cai@lca.pw" <cai@lca.pw>,
- Ard Biesheuvel <Ard.Biesheuvel@arm.com>,
- "cpandya@codeaurora.org" <cpandya@codeaurora.org>,
- James Morse <James.Morse@arm.com>,
- "akpm@linux-foundation.org" <akpm@linux-foundation.org>, nd <nd@arm.com>,
- "ira.weiny@intel.com" <ira.weiny@intel.com>,
- "dan.j.williams@intel.com" <dan.j.williams@intel.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- "osalvador@suse.de" <osalvador@suse.de>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: devicetree@vger.kernel.org,
+ Sergei Shtylyov <sergei.shtylyov@cogentembedded.com>,
+ linux-kernel@vger.kernel.org, linux-mtd@lists.infradead.org,
+ Miquel Raynal <miquel.raynal@bootlin.com>,
+ Mason Yang <masonccyang@mxic.com.tw>, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-
-
-On 06/24/2019 10:22 PM, Mark Rutland wrote:
-> On Fri, Jun 21, 2019 at 03:35:53PM +0100, Steve Capper wrote:
->> Hi Anshuman,
->>
->> On Wed, Jun 19, 2019 at 09:47:40AM +0530, Anshuman Khandual wrote:
->>> The arch code for hot-remove must tear down portions of the linear map and
->>> vmemmap corresponding to memory being removed. In both cases the page
->>> tables mapping these regions must be freed, and when sparse vmemmap is in
->>> use the memory backing the vmemmap must also be freed.
->>>
->>> This patch adds a new remove_pagetable() helper which can be used to tear
->>> down either region, and calls it from vmemmap_free() and
->>> ___remove_pgd_mapping(). The sparse_vmap argument determines whether the
->>> backing memory will be freed.
->>>
->>> remove_pagetable() makes two distinct passes over the kernel page table.
->>> In the first pass it unmaps, invalidates applicable TLB cache and frees
->>> backing memory if required (vmemmap) for each mapped leaf entry. In the
->>> second pass it looks for empty page table sections whose page table page
->>> can be unmapped, TLB invalidated and freed.
->>>
->>> While freeing intermediate level page table pages bail out if any of its
->>> entries are still valid. This can happen for partially filled kernel page
->>> table either from a previously attempted failed memory hot add or while
->>> removing an address range which does not span the entire page table page
->>> range.
->>>
->>> The vmemmap region may share levels of table with the vmalloc region.
->>> There can be conflicts between hot remove freeing page table pages with
->>> a concurrent vmalloc() walking the kernel page table. This conflict can
->>> not just be solved by taking the init_mm ptl because of existing locking
->>> scheme in vmalloc(). Hence unlike linear mapping, skip freeing page table
->>> pages while tearing down vmemmap mapping.
->>>
->>> While here update arch_add_memory() to handle __add_pages() failures by
->>> just unmapping recently added kernel linear mapping. Now enable memory hot
->>> remove on arm64 platforms by default with ARCH_ENABLE_MEMORY_HOTREMOVE.
->>>
->>> This implementation is overall inspired from kernel page table tear down
->>> procedure on X86 architecture.
->>>
->>> Acked-by: David Hildenbrand <david@redhat.com>
->>> Signed-off-by: Anshuman Khandual <anshuman.khandual@arm.com>
->>> ---
->>
->> FWIW:
->> Acked-by: Steve Capper <steve.capper@arm.com>
->>
->> One minor comment below though.
->>
->>>  arch/arm64/Kconfig  |   3 +
->>>  arch/arm64/mm/mmu.c | 290 ++++++++++++++++++++++++++++++++++++++++++++++++++--
->>>  2 files changed, 284 insertions(+), 9 deletions(-)
->>>
->>> diff --git a/arch/arm64/Kconfig b/arch/arm64/Kconfig
->>> index 6426f48..9375f26 100644
->>> --- a/arch/arm64/Kconfig
->>> +++ b/arch/arm64/Kconfig
->>> @@ -270,6 +270,9 @@ config HAVE_GENERIC_GUP
->>>  config ARCH_ENABLE_MEMORY_HOTPLUG
->>>  	def_bool y
->>>  
->>> +config ARCH_ENABLE_MEMORY_HOTREMOVE
->>> +	def_bool y
->>> +
->>>  config SMP
->>>  	def_bool y
->>>  
->>> diff --git a/arch/arm64/mm/mmu.c b/arch/arm64/mm/mmu.c
->>> index 93ed0df..9e80a94 100644
->>> --- a/arch/arm64/mm/mmu.c
->>> +++ b/arch/arm64/mm/mmu.c
->>> @@ -733,6 +733,250 @@ int kern_addr_valid(unsigned long addr)
->>>  
->>>  	return pfn_valid(pte_pfn(pte));
->>>  }
->>> +
->>> +#ifdef CONFIG_MEMORY_HOTPLUG
->>> +static void free_hotplug_page_range(struct page *page, size_t size)
->>> +{
->>> +	WARN_ON(!page || PageReserved(page));
->>> +	free_pages((unsigned long)page_address(page), get_order(size));
->>> +}
->>
->> We are dealing with power of 2 number of pages, it makes a lot more
->> sense (to me) to replace the size parameter with order.
->>
->> Also, all the callers are for known compile-time sizes, so we could just
->> translate the size parameter as follows to remove any usage of get_order?
->> PAGE_SIZE -> 0
->> PMD_SIZE -> PMD_SHIFT - PAGE_SHIFT
->> PUD_SIZE -> PUD_SHIFT - PAGE_SHIFT
-> 
-> Now that I look at this again, the above makes sense to me.
-> 
-> I'd requested the current form (which I now realise is broken), since
-> back in v2 the code looked like:
-> 
-> static void free_pagetable(struct page *page, int order)
-> {
-> 	...
-> 	free_pages((unsigned long)page_address(page), order);
-> 	...
-> }
-> 
-> ... with callsites looking like:
-> 
-> free_pagetable(pud_page(*pud), get_order(PUD_SIZE));
-> 
-> ... which I now see is off by PAGE_SHIFT, and we inherited that bug in
-> the current code, so the calculated order is vastly larger than it
-> should be. It's worrying that doesn't seem to be caught by anything in
-> testing. :/
-
-get_order() returns the minimum page allocation order for a given size
-which already takes into account PAGE_SHIFT i.e get_order(PAGE_SIZE)
-returns 0.
-
-> 
-> Anshuman, could you please fold in Steve's suggested change? I'll look
-> at the rest of the series shortly, so no need to resend that right away,
-> but it would be worth sorting out.
-
-get_order() is already optimized for built in constants. But will replace
-with absolute constants as Steve mentioned if that is preferred.
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+SGksCgpPbiAyNC8wNi8xOSAxMDoxNiBQTSwgVG9rdW5vcmkgSWtlZ2FtaSB3cm90ZToKPiAKWy4u
+Ll0KPj4gwqAgKy8qCj4+ICsgKiBVc2Ugc3RhdHVzIHJlZ2lzdGVyIHRvIHBvbGwgZm9yIEVyYXNl
+L3dyaXRlIGNvbXBsZXRpb24gd2hlbiBEUSBpcyBub3QKPj4gKyAqIHN1cHBvcnRlZC4gVGhpcyBp
+cyBpbmRpY2F0ZWQgYnkgQml0WzE6MF0gb2YgU29mdHdhcmVGZWF0dXJlcyBmaWVsZCBpbgo+PiAr
+ICogQ0ZJIFByaW1hcnkgVmVuZG9yLVNwZWNpZmljIEV4dGVuZGVkIFF1ZXJ5IHRhYmxlIDEuNQo+
+PiArICovCj4+ICtzdGF0aWMgaW50IGNmaV91c2Vfc3RhdHVzX3JlZyhzdHJ1Y3QgY2ZpX3ByaXZh
+dGUgKmNmaSkKPj4gK3sKPj4gK8KgwqDCoCBzdHJ1Y3QgY2ZpX3ByaV9hbWRzdGQgKmV4dHAgPSBj
+ZmktPmNtZHNldF9wcml2Owo+PiArCj4+ICvCoMKgwqAgcmV0dXJuIGV4dHAtPk1pbm9yVmVyc2lv
+biA+PSAnNScgJiYKPj4gK8KgwqDCoMKgwqDCoMKgIChleHRwLT5Tb2Z0d2FyZUZlYXR1cmVzICYg
+MHgzKSA9PSAweDE7Cj4gCj4gU2VlbXMgdG8gYmUgYmV0dGVyIHRvIHVzZSBkZWZpbmVkIHZhbHVl
+cyBpbnN0ZWFkIG9mIDB4MyBhbmQgMHgxIGhhcmQKPiBjb2RlZCB2YWx1ZXMuCj4gCgpPawoKPj4g
+K30KPj4gKwo+PiArc3RhdGljIHZvaWQgY2ZpX2NoZWNrX2Vycl9zdGF0dXMoc3RydWN0IG1hcF9p
+bmZvICptYXAsIHVuc2lnbmVkIGxvbmcKPj4gYWRyKQo+PiArewo+PiArwqDCoMKgIHN0cnVjdCBj
+ZmlfcHJpdmF0ZSAqY2ZpID0gbWFwLT5mbGRydl9wcml2Owo+PiArwqDCoMKgIG1hcF93b3JkIHN0
+YXR1czsKPj4gKwo+PiArwqDCoMKgIGlmICghY2ZpX3VzZV9zdGF0dXNfcmVnKGNmaSkpCj4+ICvC
+oMKgwqDCoMKgwqDCoCByZXR1cm47Cj4+ICsKPj4gK8KgwqDCoCBjZmlfc2VuZF9nZW5fY21kKDB4
+NzAsIGNmaS0+YWRkcl91bmxvY2sxLCAwLCBtYXAsIGNmaSwKPiAKPiBJcyBpdCBub3QgbmVjZXNz
+YXJ5IHRvIHNldCBjaGlwLT5zdGFydCBhcyB0aGUgYmFzZSBwYXJhbWV0ZXIgZm9yCj4gY2ZpX3Nl
+bmRfZ2VuX2NtZCgpPwo+IAoKUmlnaHQgbm93LCBJIGFtIG5vdCBhd2FyZSBvZiBhbnkgZmxhc2gg
+dGhhdCBzdXBwb3J0cyBzdGF0dXMgcmVnaXN0ZXJzCmFuZCBhcmUgYmFua2VkICh0aGF0J3Mgd2hl
+biAgY2hpcC0+c3RhcnQgY2FuIGJlIG5vbiB6ZXJvKS4gVGhlcmVmb3JlIEkKZGlkIG5vdCB0aGlu
+ayBvZiB1c2luZyBjaGlwLT5zdGFydC4KQnV0IGFueXdheXMsIEkgd2lsbCBmaXggdGhpcyB1cCB0
+byB1c2UgY2hpcC0+c3RhcnQgaGVyZSBhbmQgZWxzZXdoZXJlCmZvciBuZXh0IHZlcnNpb24sIGFz
+c3VtaW5nIHRoZXJlIHdpbGwgYmUgc3VjaCBjaGlwcyBpbiB0aGUgZnV0dXJlLgoKPj4gK8KgwqDC
+oMKgwqDCoMKgwqDCoMKgwqDCoCBjZmktPmRldmljZV90eXBlLCBOVUxMKTsKPj4gK8KgwqDCoCBz
+dGF0dXMgPSBtYXBfcmVhZChtYXAsIGFkcik7Cj4+ICsKPj4gK8KgwqDCoCBpZiAobWFwX3dvcmRf
+Yml0c3NldChtYXAsIHN0YXR1cywgQ01EKDB4M2EpKSkgewo+PiArwqDCoMKgwqDCoMKgwqAgdW5z
+aWduZWQgbG9uZyBjaGlwc3RhdHVzID0gTUVSR0VTVEFUVVMoc3RhdHVzKTsKPj4gKwo+PiArwqDC
+oMKgwqDCoMKgwqAgaWYgKGNoaXBzdGF0dXMgJiBDRklfU1JfRVNCKQo+PiArwqDCoMKgwqDCoMKg
+wqDCoMKgwqDCoCBwcl9lcnIoIiVzIGVyYXNlIG9wZXJhdGlvbiBmYWlsZWQsIHN0YXR1cyAlbHhc
+biIsCj4+ICvCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgbWFwLT5uYW1lLCBj
+aGlwc3RhdHVzKTsKPj4gK8KgwqDCoMKgwqDCoMKgIGlmIChjaGlwc3RhdHVzICYgQ0ZJX1NSX1BT
+QikKPj4gK8KgwqDCoMKgwqDCoMKgwqDCoMKgwqAgcHJfZXJyKCIlcyBwcm9ncmFtIG9wZXJhdGlv
+biBmYWlsZWQsIHN0YXR1cyAlbHhcbiIsCj4+ICvCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
+wqDCoMKgwqAgbWFwLT5uYW1lLCBjaGlwc3RhdHVzKTsKPj4gK8KgwqDCoMKgwqDCoMKgIGlmIChj
+aGlwc3RhdHVzICYgQ0ZJX1NSX1dCQVNCKQo+PiArwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCBwcl9l
+cnIoIiVzIGJ1ZmZlciBwcm9ncmFtIGNvbW1hbmQgYWJvcnRlZCwgc3RhdHVzICVseFxuIiwKPj4g
+K8KgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCBtYXAtPm5hbWUsIGNoaXBzdGF0
+dXMpOwo+PiArwqDCoMKgwqDCoMKgwqAgaWYgKGNoaXBzdGF0dXMgJiBDRklfU1JfU0xTQikKPj4g
+K8KgwqDCoMKgwqDCoMKgwqDCoMKgwqAgcHJfZXJyKCIlcyBzZWN0b3Igd3JpdGUgcHJvdGVjdGVk
+LCBzdGF0dXMgJWx4XG4iLAo+PiArwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
+IG1hcC0+bmFtZSwgY2hpcHN0YXR1cyk7Cj4+ICvCoMKgwqAgfQo+PiArfQo+PiDCoCDCoCAvKiAj
+ZGVmaW5lIERFQlVHX0NGSV9GRUFUVVJFUyAqLwo+PiDCoCBAQCAtNzQ0LDggKzc5NiwyMiBAQCBz
+dGF0aWMgc3RydWN0IG10ZF9pbmZvICpjZmlfYW1kc3RkX3NldHVwKHN0cnVjdAo+PiBtdGRfaW5m
+byAqbXRkKQo+PiDCoMKgICovCj4+IMKgIHN0YXRpYyBpbnQgX194aXByYW0gY2hpcF9yZWFkeShz
+dHJ1Y3QgbWFwX2luZm8gKm1hcCwgdW5zaWduZWQgbG9uZwo+PiBhZGRyKQo+PiDCoCB7Cj4+ICvC
+oMKgwqAgc3RydWN0IGNmaV9wcml2YXRlICpjZmkgPSBtYXAtPmZsZHJ2X3ByaXY7Cj4+IMKgwqDC
+oMKgwqAgbWFwX3dvcmQgZCwgdDsKPj4gwqAgK8KgwqDCoCBpZiAoY2ZpX3VzZV9zdGF0dXNfcmVn
+KGNmaSkpIHsKPj4gK8KgwqDCoMKgwqDCoMKgIG1hcF93b3JkIHJlYWR5ID0gQ01EKENGSV9TUl9E
+UkIpOwo+PiArwqDCoMKgwqDCoMKgwqAgLyoKPj4gK8KgwqDCoMKgwqDCoMKgwqAgKiBGb3IgY2hp
+cHMgdGhhdCBzdXBwb3J0IHN0YXR1cyByZWdpc3RlciwgY2hlY2sgZGV2aWNlCj4+ICvCoMKgwqDC
+oMKgwqDCoMKgICogcmVhZHkgYml0Cj4+ICvCoMKgwqDCoMKgwqDCoMKgICovCj4+ICvCoMKgwqDC
+oMKgwqDCoCBjZmlfc2VuZF9nZW5fY21kKDB4NzAsIGNmaS0+YWRkcl91bmxvY2sxLCAwLCBtYXAs
+IGNmaSwKPiAKPiBTYW1lIGNvbW1lbnQgYXMgY2ZpX2NoZWNrX2Vycl9zdGF0dXMoKSBhYm91dCB0
+aGUgYmFzZSBhZGRyZXNzLgo+IAo+PiArwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAg
+Y2ZpLT5kZXZpY2VfdHlwZSwgTlVMTCk7Cj4+ICvCoMKgwqDCoMKgwqDCoCBkID0gbWFwX3JlYWQo
+bWFwLCBhZGRyKTsKPj4gKwo+PiArwqDCoMKgwqDCoMKgwqAgcmV0dXJuIG1hcF93b3JkX2FuZGVx
+dWFsKG1hcCwgZCwgcmVhZHksIHJlYWR5KTsKPj4gK8KgwqDCoCB9Cj4+ICsKPj4gwqDCoMKgwqDC
+oCBkID0gbWFwX3JlYWQobWFwLCBhZGRyKTsKPj4gwqDCoMKgwqDCoCB0ID0gbWFwX3JlYWQobWFw
+LCBhZGRyKTsKPj4gwqAgQEAgLTc2OSw4ICs4MzUsMjcgQEAgc3RhdGljIGludCBfX3hpcHJhbSBj
+aGlwX3JlYWR5KHN0cnVjdCBtYXBfaW5mbwo+PiAqbWFwLCB1bnNpZ25lZCBsb25nIGFkZHIpCj4+
+IMKgwqAgKi8KPj4gwqAgc3RhdGljIGludCBfX3hpcHJhbSBjaGlwX2dvb2Qoc3RydWN0IG1hcF9p
+bmZvICptYXAsIHVuc2lnbmVkIGxvbmcKPj4gYWRkciwgbWFwX3dvcmQgZXhwZWN0ZWQpCj4+IMKg
+IHsKPj4gK8KgwqDCoCBzdHJ1Y3QgY2ZpX3ByaXZhdGUgKmNmaSA9IG1hcC0+ZmxkcnZfcHJpdjsK
+Pj4gwqDCoMKgwqDCoCBtYXBfd29yZCBvbGRkLCBjdXJkOwo+PiDCoCArwqDCoMKgIGlmIChjZmlf
+dXNlX3N0YXR1c19yZWcoY2ZpKSkgewo+PiArwqDCoMKgwqDCoMKgwqAgbWFwX3dvcmQgcmVhZHkg
+PSBDTUQoQ0ZJX1NSX0RSQik7Cj4+ICvCoMKgwqDCoMKgwqDCoCBtYXBfd29yZCBlcnIgPSBDTUQo
+Q0ZJX1NSX1BTQiB8IENGSV9TUl9FU0IpOwo+IAo+IElzIGl0IG5vdCBuZWNlc3NhcnkgdG8gY2hl
+Y2sgQ0ZJX1NSX1dCQVNCIGFuZCBDRklfU1JfU0xTQiB0aGF0IGFyZQo+IGNoZWNrZWQgYnkgY2Zp
+X2NoZWNrX2Vycl9zdGF0dXMoKT8KPiAKCmNoaXBfZ29vZCgpIGlzIHVzZWQgdG8gdmVyaWZ5IHdo
+ZXRoZXIgd3JpdGUgb3IgZXJhc2Ugb3BlcmF0aW9uIHJlYWxseQpzdWNjZWVkZWQuIExvb2tpbmcg
+YXQgQ3lwcmVzcyBIeXBlckZsYXNoIGRhdGFzaGVldHMgYW5kIGFwcCBub3RlcyBvbgpzdGF0dXMg
+cmVnaXN0ZXIgcG9sbGluZywgaXRzIGVub3VnaCB0byBzZWUgaWYgQ0ZJX1NSX1BTQiBvciBDRklf
+U1JfUFNCCmlzIHNldCB0byBrbm93IGlmIHdyaXRlIG9yIGVyYXNlIGZhaWxlZC4gTm93LCB0aGUg
+cmVhc29uIGZvciBwcm9ncmFtIG9yCmVyYXNlIGZhaWx1cmUgY2FuIGJlIGtub3duIGJ5IGxvb2tp
+bmcgYXQgQ0ZJX1NSX1dCQVNCIGFuZCBDRklfU1JfU0xTQgp3aGljaCBpcyBkb25lIGZvciBjZmlf
+Y2hlY2tfZXJyX3N0YXR1cygpLgpUaGVyZWZvcmUsIEkgZmVlbCwgaXRzIGVub3VnaCB0byBsb29r
+IGZvciBDRklfU1JfUFNCIG9yIENGSV9TUl9FU0IgaGVyZS4KClRoYW5rcyBmb3IgdGhlIHJldmll
+dyEKClJlZ2FyZHMKVmlnbmVzaAoKPj4gK8KgwqDCoMKgwqDCoMKgIC8qCj4+ICvCoMKgwqDCoMKg
+wqDCoMKgICogRm9yIGNoaXBzIHRoYXQgc3VwcG9ydCBzdGF0dXMgcmVnaXN0ZXIsIGNoZWNrIGRl
+dmljZQo+PiArwqDCoMKgwqDCoMKgwqDCoCAqIHJlYWR5IGJpdCBhbmQgRXJhc2UvUHJvZ3JhbSBz
+dGF0dXMgYml0IHRvIGtub3cgaWYKPj4gK8KgwqDCoMKgwqDCoMKgwqAgKiBvcGVyYXRpb24gc3Vj
+Y2VlZGVkLgo+PiArwqDCoMKgwqDCoMKgwqDCoCAqLwo+PiArwqDCoMKgwqDCoMKgwqAgY2ZpX3Nl
+bmRfZ2VuX2NtZCgweDcwLCBjZmktPmFkZHJfdW5sb2NrMSwgMCwgbWFwLCBjZmksCj4gCj4gU2Ft
+ZSBhcyBjZmlfY2hlY2tfZXJyX3N0YXR1cygpIGFuZCBjaGlwX3JlYWR5KCkgYWJvdXQgdGhlIGJh
+c2UgYWRkcmVzcy4KPiAKPj4gK8KgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIGNmaS0+
+ZGV2aWNlX3R5cGUsIE5VTEwpOwo+PiArwqDCoMKgwqDCoMKgwqAgY3VyZCA9IG1hcF9yZWFkKG1h
+cCwgYWRkcik7Cj4+ICsKPj4gK8KgwqDCoMKgwqDCoMKgIGlmIChtYXBfd29yZF9hbmRlcXVhbCht
+YXAsIGN1cmQsIHJlYWR5LCByZWFkeSkpCj4+ICvCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIHJldHVy
+biAhbWFwX3dvcmRfYml0c3NldChtYXAsIGN1cmQsIGVycik7Cj4+ICsKPj4gK8KgwqDCoMKgwqDC
+oMKgIHJldHVybiAwOwo+PiArwqDCoMKgIH0KPj4gKwo+PiDCoMKgwqDCoMKgIG9sZGQgPSBtYXBf
+cmVhZChtYXAsIGFkZHIpOwo+PiDCoMKgwqDCoMKgIGN1cmQgPSBtYXBfcmVhZChtYXAsIGFkZHIp
+Owo+PiDCoCBAQCAtMTY0NCw2ICsxNzI5LDcgQEAgc3RhdGljIGludCBfX3hpcHJhbSBkb193cml0
+ZV9vbmV3b3JkKHN0cnVjdAo+PiBtYXBfaW5mbyAqbWFwLCBzdHJ1Y3QgZmxjaGlwICpjaGlwLAo+
+PiDCoMKgwqDCoMKgIC8qIERpZCB3ZSBzdWNjZWVkPyAqLwo+PiDCoMKgwqDCoMKgIGlmICghY2hp
+cF9nb29kKG1hcCwgYWRyLCBkYXR1bSkpIHsKPj4gwqDCoMKgwqDCoMKgwqDCoMKgIC8qIHJlc2V0
+IG9uIGFsbCBmYWlsdXJlcy4gKi8KPj4gK8KgwqDCoMKgwqDCoMKgIGNmaV9jaGVja19lcnJfc3Rh
+dHVzKG1hcCwgYWRyKTsKPj4gwqDCoMKgwqDCoMKgwqDCoMKgIG1hcF93cml0ZShtYXAsIENNRCgw
+eEYwKSwgY2hpcC0+c3RhcnQpOwo+PiDCoMKgwqDCoMKgwqDCoMKgwqAgLyogRklYTUUgLSBzaG91
+bGQgaGF2ZSByZXNldCBkZWxheSBiZWZvcmUgY29udGludWluZyAqLwo+PiDCoCBAQCAtMTkwMSw2
+ICsxOTg3LDcgQEAgc3RhdGljIGludCBfX3hpcHJhbSBkb193cml0ZV9idWZmZXIoc3RydWN0Cj4+
+IG1hcF9pbmZvICptYXAsIHN0cnVjdCBmbGNoaXAgKmNoaXAsCj4+IMKgwqDCoMKgwqDCoCAqIFNl
+ZSBlLmcuCj4+IMKgwqDCoMKgwqDCoCAqCj4+IGh0dHA6Ly93d3cuc3BhbnNpb24uY29tL1N1cHBv
+cnQvQXBwbGljYXRpb24lMjBOb3Rlcy9NaXJyb3JCaXRfV3JpdGVfQnVmZmVyX1Byb2dfUGFnZV9C
+dWZmZXJfUmVhZF9BTi5wZGYKPj4KPj4gwqDCoMKgwqDCoMKgICovCj4+ICvCoMKgwqAgY2ZpX2No
+ZWNrX2Vycl9zdGF0dXMobWFwLCBhZHIpOwo+PiDCoMKgwqDCoMKgIGNmaV9zZW5kX2dlbl9jbWQo
+MHhBQSwgY2ZpLT5hZGRyX3VubG9jazEsIGNoaXAtPnN0YXJ0LCBtYXAsIGNmaSwKPj4gwqDCoMKg
+wqDCoMKgwqDCoMKgwqDCoMKgwqDCoCBjZmktPmRldmljZV90eXBlLCBOVUxMKTsKPj4gwqDCoMKg
+wqDCoCBjZmlfc2VuZF9nZW5fY21kKDB4NTUsIGNmaS0+YWRkcl91bmxvY2syLCBjaGlwLT5zdGFy
+dCwgbWFwLCBjZmksCj4+IEBAIC0yMTA3LDYgKzIxOTQsNyBAQCBzdGF0aWMgaW50IGRvX3Bhbmlj
+X3dyaXRlX29uZXdvcmQoc3RydWN0Cj4+IG1hcF9pbmZvICptYXAsIHN0cnVjdCBmbGNoaXAgKmNo
+aXAsCj4+IMKgIMKgwqDCoMKgwqAgaWYgKCFjaGlwX2dvb2QobWFwLCBhZHIsIGRhdHVtKSkgewo+
+PiDCoMKgwqDCoMKgwqDCoMKgwqAgLyogcmVzZXQgb24gYWxsIGZhaWx1cmVzLiAqLwo+PiArwqDC
+oMKgwqDCoMKgwqAgY2ZpX2NoZWNrX2Vycl9zdGF0dXMobWFwLCBhZHIpOwo+PiDCoMKgwqDCoMKg
+wqDCoMKgwqAgbWFwX3dyaXRlKG1hcCwgQ01EKDB4RjApLCBjaGlwLT5zdGFydCk7Cj4+IMKgwqDC
+oMKgwqDCoMKgwqDCoCAvKiBGSVhNRSAtIHNob3VsZCBoYXZlIHJlc2V0IGRlbGF5IGJlZm9yZSBj
+b250aW51aW5nICovCj4+IMKgIEBAIC0yMzE2LDYgKzI0MDQsNyBAQCBzdGF0aWMgaW50IF9feGlw
+cmFtIGRvX2VyYXNlX2NoaXAoc3RydWN0Cj4+IG1hcF9pbmZvICptYXAsIHN0cnVjdCBmbGNoaXAg
+KmNoaXApCj4+IMKgwqDCoMKgwqAgLyogRGlkIHdlIHN1Y2NlZWQ/ICovCj4+IMKgwqDCoMKgwqAg
+aWYgKHJldCkgewo+PiDCoMKgwqDCoMKgwqDCoMKgwqAgLyogcmVzZXQgb24gYWxsIGZhaWx1cmVz
+LiAqLwo+PiArwqDCoMKgwqDCoMKgwqAgY2ZpX2NoZWNrX2Vycl9zdGF0dXMobWFwLCBhZHIpOwo+
+PiDCoMKgwqDCoMKgwqDCoMKgwqAgbWFwX3dyaXRlKG1hcCwgQ01EKDB4RjApLCBjaGlwLT5zdGFy
+dCk7Cj4+IMKgwqDCoMKgwqDCoMKgwqDCoCAvKiBGSVhNRSAtIHNob3VsZCBoYXZlIHJlc2V0IGRl
+bGF5IGJlZm9yZSBjb250aW51aW5nICovCj4+IMKgIEBAIC0yNDEyLDYgKzI1MDEsNyBAQCBzdGF0
+aWMgaW50IF9feGlwcmFtIGRvX2VyYXNlX29uZWJsb2NrKHN0cnVjdAo+PiBtYXBfaW5mbyAqbWFw
+LCBzdHJ1Y3QgZmxjaGlwICpjaGlwLAo+PiDCoMKgwqDCoMKgIC8qIERpZCB3ZSBzdWNjZWVkPyAq
+Lwo+PiDCoMKgwqDCoMKgIGlmIChyZXQpIHsKPj4gwqDCoMKgwqDCoMKgwqDCoMKgIC8qIHJlc2V0
+IG9uIGFsbCBmYWlsdXJlcy4gKi8KPj4gK8KgwqDCoMKgwqDCoMKgIGNmaV9jaGVja19lcnJfc3Rh
+dHVzKG1hcCwgYWRyKTsKPj4gwqDCoMKgwqDCoMKgwqDCoMKgIG1hcF93cml0ZShtYXAsIENNRCgw
+eEYwKSwgY2hpcC0+c3RhcnQpOwo+PiDCoMKgwqDCoMKgwqDCoMKgwqAgLyogRklYTUUgLSBzaG91
+bGQgaGF2ZSByZXNldCBkZWxheSBiZWZvcmUgY29udGludWluZyAqLwo+PiDCoCBkaWZmIC0tZ2l0
+IGEvaW5jbHVkZS9saW51eC9tdGQvY2ZpLmggYi9pbmNsdWRlL2xpbnV4L210ZC9jZmkuaAo+PiBp
+bmRleCAyMDhjODdjZjJlM2UuLmI1MDQxNjE2OTA0OSAxMDA2NDQKPj4gLS0tIGEvaW5jbHVkZS9s
+aW51eC9tdGQvY2ZpLmgKPj4gKysrIGIvaW5jbHVkZS9saW51eC9tdGQvY2ZpLmgKPj4gQEAgLTIx
+OSw2ICsyMTksMTEgQEAgc3RydWN0IGNmaV9wcmlfYW1kc3RkIHsKPj4gwqDCoMKgwqDCoCB1aW50
+OF90wqAgVnBwTWluOwo+PiDCoMKgwqDCoMKgIHVpbnQ4X3TCoCBWcHBNYXg7Cj4+IMKgwqDCoMKg
+wqAgdWludDhfdMKgIFRvcEJvdHRvbTsKPj4gK8KgwqDCoCAvKiBCZWxvdyBmaWVsZCBhcmUgYWRk
+ZWQgZnJvbSB2ZXJzaW9uIDEuNSAqLwo+PiArwqDCoMKgIHVpbnQ4X3TCoCBQcm9ncmFtU3VzcGVu
+ZDsKPj4gK8KgwqDCoCB1aW50OF90wqAgVW5sb2NrQnlwYXNzOwo+PiArwqDCoMKgIHVpbnQ4X3TC
+oCBTZWN1cmVTaWxpY29uU2VjdG9yOwo+PiArwqDCoMKgIHVpbnQ4X3TCoCBTb2Z0d2FyZUZlYXR1
+cmVzOwo+PiDCoCB9IF9fcGFja2VkOwo+PiDCoCDCoCAvKiBWZW5kb3ItU3BlY2lmaWMgUFJJIGZv
+ciBBdG1lbCBjaGlwcyAoY29tbWFuZCBzZXQgMHgwMDAyKSAqLwoKLS0gClJlZ2FyZHMKVmlnbmVz
+aAoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgt
+YXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQu
+b3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJt
+LWtlcm5lbAo=
