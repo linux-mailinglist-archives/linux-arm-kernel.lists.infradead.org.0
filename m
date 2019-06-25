@@ -2,59 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 953F652737
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 25 Jun 2019 10:55:54 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 606B452748
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 25 Jun 2019 10:57:12 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=LzEGuGmWrMTzJAJIh6hgVrNXHcIvb0QGPxRQ5gTTcms=; b=NkpDrse0TfFbEj
-	6RbA2c5XBhq1GAJh/dOnsfXukdLEyCfDau9qcBKDbVtZL4fHmOb1UFbgH2gcCpv5glbybJ6u591P3
-	KTOJeS9bsM0JfQMCNIk576jS1bK9TgGa4Y3fhBOSIFHES8Vb5BiBlv1yLLFNsCwS8wRAA3TUIQCRl
-	OziwN8/98jEzN7dJFCLhSo+g5CfxJYiSRCixJilMo01UPEyhSm3sSojafn9Wqu9jCaZmibK1Q4p4f
-	RqAjNJfBRCLHP5GmjBRKhlxfSp9CQzOBGw/AHHJlaPjNElEbLTNiNlVkdOV/2RDRgX0+lFWgd7Xs7
-	LclpgBGl5seYa2A06zoQ==;
+	List-Owner; bh=FM4q6k1Z+1VNXlGMoBs2E4XakcbkMC6IKI6fPnT41UY=; b=cqJukzzpdebq7W
+	hiKXUauedF4MskwPp3UHgiAbgbmPHffc4ye4WbINotUBvSHH4gfWNfdW/ez3gt+OKQVSnnsoMxior
+	eaQL4Q1LBdHapjeBkmp+0XyPj8EYzbySJ+dR1b+mFjVV8kJvvfo1CcGmdmEXuJGayMWabJ+EGW99E
+	C6/xwqmCgYuYXtVuRgGp872taNqT4jduLyVMJdeZOinVC8AhNGSDFtjkMXOiS+6AUm3tUlHb14MTJ
+	qP496CVrrjjMEdH9Q4t5m6XDqZtbMtJ5rluATeQ3NDH8EmfMo14m3hT1aGGNdR1v0Ed7WWzHaNQv8
+	ZeaD+EfQEkxKWvsp3iQg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hfhF1-0000PB-Iz; Tue, 25 Jun 2019 08:55:51 +0000
+	id 1hfhGG-00019j-NO; Tue, 25 Jun 2019 08:57:08 +0000
 Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hfhEd-0000N8-Ik; Tue, 25 Jun 2019 08:55:29 +0000
-X-UUID: 71ef69a92cc14b47ada42eae9c990a11-20190625
-X-UUID: 71ef69a92cc14b47ada42eae9c990a11-20190625
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
- (envelope-from <jerry-ch.chen@mediatek.com>)
+ id 1hfhFP-0000jQ-0K; Tue, 25 Jun 2019 08:56:16 +0000
+X-UUID: 5da05a3a0cc0402983e13d456144f85e-20190625
+X-UUID: 5da05a3a0cc0402983e13d456144f85e-20190625
+Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw01.mediatek.com
+ (envelope-from <chunfeng.yun@mediatek.com>)
  (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 672323143; Tue, 25 Jun 2019 00:55:16 -0800
-Received: from MTKMBS01N2.mediatek.inc (172.21.101.79) by
- MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Tue, 25 Jun 2019 01:55:15 -0700
-Received: from MTKCAS06.mediatek.inc (172.21.101.30) by
- mtkmbs01n2.mediatek.inc (172.21.101.79) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Tue, 25 Jun 2019 16:55:12 +0800
-Received: from [172.21.84.99] (172.21.84.99) by MTKCAS06.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Tue, 25 Jun 2019 16:55:13 +0800
-Message-ID: <1561452912.15267.261.camel@mtksdccf07>
-Subject: Re: [RFC PATCH V1 6/6] platform: mtk-isp: Add Mediatek FD driver
-From: Jerry-ch Chen <Jerry-ch.Chen@mediatek.com>
-To: Tomasz Figa <tfiga@chromium.org>
-Date: Tue, 25 Jun 2019 16:55:12 +0800
-In-Reply-To: <CAAFQd5BWbtPtNG29ULF==jCGOes=ob-NFcnOX8_DH=GhZRZGrA@mail.gmail.com>
-References: <20190423104505.38778-1-Jerry-Ch.chen@mediatek.com>
- <20190423104505.38778-7-Jerry-Ch.chen@mediatek.com>
- <20190606104347.GA107267@chromium.org>
- <1561386122.15267.223.camel@mtksdccf07>
- <CAAFQd5BWbtPtNG29ULF==jCGOes=ob-NFcnOX8_DH=GhZRZGrA@mail.gmail.com>
-X-Mailer: Evolution 3.2.3-0ubuntu6 
+ with ESMTP id 281697124; Tue, 25 Jun 2019 00:55:55 -0800
+Received: from MTKMBS31N1.mediatek.inc (172.27.4.69) by
+ MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Tue, 25 Jun 2019 01:55:52 -0700
+Received: from MTKCAS36.mediatek.inc (172.27.4.186) by MTKMBS31N1.mediatek.inc
+ (172.27.4.69) with Microsoft SMTP Server (TLS) id 15.0.1395.4;
+ Tue, 25 Jun 2019 16:55:48 +0800
+Received: from [10.17.3.153] (172.27.4.253) by MTKCAS36.mediatek.inc
+ (172.27.4.170) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
+ Transport; Tue, 25 Jun 2019 16:55:47 +0800
+Message-ID: <1561452947.32589.25.camel@mhfsdcap03>
+Subject: Re: [PATCH v7 09/10] usb: roles: add USB Type-B GPIO connector driver
+From: Chunfeng Yun <chunfeng.yun@mediatek.com>
+To: Heikki Krogerus <heikki.krogerus@linux.intel.com>
+Date: Tue, 25 Jun 2019 16:55:47 +0800
+In-Reply-To: <20190624095827.GA6501@kuha.fi.intel.com>
+References: <1560242680-23844-1-git-send-email-chunfeng.yun@mediatek.com>
+ <1560242680-23844-10-git-send-email-chunfeng.yun@mediatek.com>
+ <20190624095827.GA6501@kuha.fi.intel.com>
+X-Mailer: Evolution 3.10.4-0ubuntu2 
 MIME-Version: 1.0
-X-TM-SNTS-SMTP: 6DE5DEF6EA280BDF5EB53DC35CC2ABC1EF4F33C58E0860BAC3DA1606991010A52000:8
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190625_015527_632719_CEB4826E 
-X-CRM114-Status: GOOD (  38.56  )
+X-CRM114-CacheID: sfid-20190625_015615_106107_FBE832FF 
+X-CRM114-Status: GOOD (  29.04  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -77,203 +74,153 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- Sean Cheng =?UTF-8?Q?=28=E9=84=AD=E6=98=87=E5=BC=98=29?=
- <Sean.Cheng@mediatek.com>, "laurent.pinchart+renesas@ideasonboard.com"
- <laurent.pinchart+renesas@ideasonboard.com>,
- Rynn Wu =?UTF-8?Q?=28=E5=90=B3=E8=82=B2=E6=81=A9=29?= <Rynn.Wu@mediatek.com>,
- srv_heupstream <srv_heupstream@mediatek.com>,
- "mchehab@kernel.org" <mchehab@kernel.org>,
- Po-Yang Huang =?UTF-8?Q?=28=E9=BB=83=E6=9F=8F=E9=99=BD=29?=
- <po-yang.huang@mediatek.com>,
- Holmes Chiou =?UTF-8?Q?=28=E9=82=B1=E6=8C=BA=29?= <holmes.chiou@mediatek.com>,
- "suleiman@chromium.org" <suleiman@chromium.org>,
- "shik@chromium.org" <shik@chromium.org>,
- Jungo Lin =?UTF-8?Q?=28=E6=9E=97=E6=98=8E=E4=BF=8A=29?=
- <jungo.lin@mediatek.com>, Sj
- Huang =?UTF-8?Q?=28=E9=BB=83=E4=BF=A1=E7=92=8B=29?= <sj.huang@mediatek.com>,
- "yuzhao@chromium.org" <yuzhao@chromium.org>,
- "linux-mediatek@lists.infradead.org" <linux-mediatek@lists.infradead.org>,
- "zwisler@chromium.org" <zwisler@chromium.org>,
- "matthias.bgg@gmail.com" <matthias.bgg@gmail.com>,
- Christie Yu =?UTF-8?Q?=28=E6=B8=B8=E9=9B=85=E6=83=A0=29?=
- <christie.yu@mediatek.com>,
- Frederic Chen =?UTF-8?Q?=28=E9=99=B3=E4=BF=8A=E5=85=83=29?=
- <Frederic.Chen@mediatek.com>,
- "hans.verkuil@cisco.com" <hans.verkuil@cisco.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- "linux-media@vger.kernel.org" <linux-media@vger.kernel.org>
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Felipe Balbi <felipe.balbi@linux.intel.com>,
+ Hans de Goede <hdegoede@redhat.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Linus Walleij <linus.walleij@linaro.org>, linux-usb@vger.kernel.org,
+ Yu Chen <chenyu56@huawei.com>, linux-kernel@vger.kernel.org,
+ Biju Das <biju.das@bp.renesas.com>, Badhri Jagan
+ Sridharan <badhri@google.com>, Andy
+ Shevchenko <andy.shevchenko@gmail.com>, Rob Herring <robh+dt@kernel.org>,
+ linux-mediatek@lists.infradead.org, Min Guo <min.guo@mediatek.com>, Matthias
+ Brugger <matthias.bgg@gmail.com>, Nagarjuna Kristam <nkristam@nvidia.com>,
+ Adam Thomson <Adam.Thomson.Opensource@diasemi.com>,
+ linux-arm-kernel@lists.infradead.org, Li Jun <jun.li@nxp.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Tomasz,
+Hi Heikki,
 
-On Tue, 2019-06-25 at 11:39 +0800, Tomasz Figa wrote:
-> Hi Jerry,
+On Mon, 2019-06-24 at 12:58 +0300, Heikki Krogerus wrote:
+> Hi Chunfeng,
 > 
-> On Mon, Jun 24, 2019 at 11:22 PM Jerry-ch Chen
-> <Jerry-ch.Chen@mediatek.com> wrote:
-> >
-> > Hi Tomasz,
-> >
-> > On Thu, 2019-06-06 at 18:43 +0800, Tomasz Figa wrote:
-> > > Hi Jerry,
-> > >
-> > > On Tue, Apr 23, 2019 at 06:45:05PM +0800, Jerry-ch Chen wrote:
-> > > > From: Jerry-ch Chen <jerry-ch.chen@mediatek.com>
-> > > >
-> > > > This patch adds the driver of Face Detection (FD) unit in
-> > > > Mediatek camera system, providing face detection function.
-> > > >
-> > > > The mtk-isp directory will contain drivers for multiple IP
-> > > > blocks found in Mediatek ISP system. It will include ISP Pass 1
-> > > > driver (CAM), sensor interface driver, DIP driver and face
-> > > > detection driver.
-> > > >
-> > >
-> > > Thanks for the patch.
-> > >
-> > > First of all a general comment about the design:
-> > >
-> > > My understanding is that this is a relatively straightforward
-> > > memory-to-memory device that reads a video frame and detects faces on it.
-> > > Such devices should be implemented as normal V4L2 memory-to-memory devices,
-> > > with contexts (instances; pipes) represented by v4l2_fh.
-> > >
-> > > Also, please replace the META_OUTPUT queue with proper V4L2 controls, as I
-> > > don't think there is anything that we couldn't model using controls here.
-> > >
-> > > The end result should be a V4L2 m2m driver (using the m2m helpers), where
-> > > you get a new context (instance; pipe) whenever you open the video node,
-> > > similar to codecs, video processors (like MTK MDP) and so on.
-> > >
-> > > Also please see my comments inline.
-> > >
-> > I appreciate your comments,
-> > sorry for sending the previous two unfinished mail...
-> >
-> > FD driver will be implemented as a normal V4L2 m2m driver which has an
-> > IMAGE_OUTPUT queue and a META_CAPTURE queue(face result).
-> >
-> > We will use the following properties.
-> > /* Is a video mem-to-mem device that supports multiplanar formats */
-> > #define V4L2_CAP_VIDEO_M2M_MPLANE    0x00004000
-> >
-> > The original META_OUTPUT queue contains the following structure will be
-> > replaced by V4L2 controls,
-> >
-> > /* FD_SCALE_NUM is 15. */
-> > struct fd_user_param {
-> >         uint8_t rip_feature;
-> >         uint8_t gfd_skip;
-> >         uint8_t dynamic_change_model;
-> >         uint8_t scale_num_from_user;
-> >         uint16_t source_img_width[FD_SCALE_NUM];
-> >         uint16_t source_img_height[FD_SCALE_NUM];
-> > } __packed; //share with co-processor
-> >
-> > However, we found that testM2MFormats() in the V4L2 compliance test will
-> > assume the capture queue has the same format as output queue has,
-> > therefore, FD driver's capture queue wouldn't be able to use META format
-> > or the v4l2 test will be failed.
-> >
-> > reference: v4l2-compliance/v4l2-test-formats.cpp
-> > // m2m devices are special in that the format is often per-filehandle.
-> > // But colorspace information should be passed from output to capture,
-> > // so test that.
-> >         if (node->is_m2m)
-> >                 return testM2MFormats(node);
-> >
-> > May we ask for your suggestions about this part?
-> >
+> On Tue, Jun 11, 2019 at 04:44:39PM +0800, Chunfeng Yun wrote:
+> > Due to the requirement of usb-connector.txt binding, the old way
+> > using extcon to support USB Dual-Role switch is now deprecated
+> > when use Type-B connector.
+> > This patch introduces a driver of Type-B connector which typically
+> > uses an input GPIO to detect USB ID pin, and try to replace the
+> > function provided by extcon-usb-gpio driver
 > 
-> Ah, I didn't mean mem-to-mem device specifically as per
-> V4L2_CAP_VIDEO_M2M_MPLANE, because that one implies the regular
-> VIDEO_OUTPUT -> VIDEO_CAPTURE processing indeed. We should expose just
-> VIDEO_OUTPUT_MPLANE and META_CAPTURE in the capabilities, but all the
-> rest would still behave like a mem-to-mem device, i.e. v4l2_fh for
-> contexts/instances, v4l2_m2m helpers and so on.
+> I'm sorry for asking this so late, but why is this driver a Type-B
+> specific driver (I really thought somebody had already asked this
+> question)?
+It's mainly used for Type-B connector with ID pin. 
+
 > 
-I Appreciate for your reply, 
+> I don't see anything Type-B specific in the driver. 
+It's need add another compatible "usb-b-connector" except the driver
+provided.
 
-Sorry I didn't mention the question clearly, we have included these two
-capabilities, but we get the following v4l2 test failure:
-fail: v4l2-test-formats.cpp(784): fmt_cap.g_colorspace() !=
-fmt_out.g_colorspace()
-
-Which is caused by the following code testing the m2m buffers'
-capabilities, FD driver have fmt_cap with V4L2_BUF_TYPE_META_CAPTURE and
-fmt_out with V4L2_BUF_TYPE_VIDEO_OUTPUT_MPLANE, therefore, our fmt_cap
-won't have colorspace information.
-
-Reference:
-https://github.com/gjasny/v4l-utils/blob/master/utils/v4l2-compliance/v4l2-test-formats.cpp#L774
-fail_on_test(fmt_cap.g_colorspace() != fmt_out.g_colorspace());
-fail_on_test(fmt_cap.g_ycbcr_enc() != fmt_out.g_ycbcr_enc());
-fail_on_test(fmt_cap.g_quantization() != fmt_out.g_quantization());
-fail_on_test(fmt_cap.g_xfer_func() != fmt_out.g_xfer_func());
-
-Not sure if the maintainer of v4l2 test would consider modifying here to
-allow the use case of FD driver?
-
-> [snip]
+> Basically it looks
+> to me like just a gpio based connection detection driver that would
+> work fine with for example uAB connectors..
+Yes, it is.
 > 
-> > > > +
-> > > > +   return 0;
-> > > > +}
-> > > > +
-> > > > +static int mtk_fd_suspend(struct device *dev)
-> > > > +{
-> > > > +   struct mtk_fd_dev *fd_dev;
-> > > > +   int ret;
-> > > > +
-> > > > +   if (pm_runtime_suspended(dev))
-> > > > +           return 0;
-> > > > +
-> > > > +   fd_dev = dev_get_drvdata(dev);
-> > > > +
-> > > > +   if (atomic_read(&fd_dev->fd_hw.fd_user_cnt) > 0) {
-> > > > +           ret = pm_runtime_put_sync(fd_dev->fd_hw.larb_dev);
-> > > > +           clk_disable_unprepare(fd_dev->fd_hw.fd_clk);
-> > > > +           return ret;
-> > > > +   }
-> > >
-> > > This isn't going to work, because the hardware may be still processing a
-> > > frame at this point. You need a way to ensure that the hardware goes idle
-> > > here first and then in resume, you need to make the hardware continue when
-> > > it left before suspend.
-> > >
-> > For this part, I would like to do as following:
-> > when suspend, it should set the driver power state as idle or suspended
-> > to stop further enqueue jobs, should be judged in mtk_fd_hw_job_exec()
-> > or somewhere, then wait for the unfinished job return or timeout, and
-> > finally close the clock.
-> > When resume, we set the driver power state as resumed and let the new
-> > jobs to be enqueued.
-> >
-> > Or another way is to create a wait queue or work queue to store the jobs
-> > from user. When suspend, we change the driver status to restrict the new
-> > jobs joining to work queue and close the clock. When resume, driver
-> > continue execute the jobs from the work queue.
-> >
+> > Signed-off-by: Chunfeng Yun <chunfeng.yun@mediatek.com>
+> > Tested-by: Nagarjuna Kristam <nkristam@nvidia.com>
+> > ---
+> > v7 changes:
+> >   1. remove macro DEV_PMS_OPS suggested by Andy
+> >   2. add tested-by Nagarjuna
+> > 
+> > v6 changes:
+> >   1. get usb-role-swtich by usb_role_switch_get()
+> > 
+> > v5 changes:
+> >   1. put usb_role_switch when error happens suggested by Biju
+> >   2. don't treat bype-B connector as a virtual device suggested by Rob
+> > 
+> > v4 changes:
+> >   1. remove linux/gpio.h suggested by Linus
+> >   2. put node when error happens
+> > 
+> > v3 changes:
+> >   1. treat bype-B connector as a virtual device;
+> >   2. change file name again
+> > 
+> > v2 changes:
+> >   1. file name is changed
+> >   2. use new compatible
+> > ---
+> >  drivers/usb/roles/Kconfig           |  11 ++
+> >  drivers/usb/roles/Makefile          |   1 +
+> >  drivers/usb/roles/typeb-conn-gpio.c | 284 ++++++++++++++++++++++++++++
 > 
-> I wouldn't introduce a workqueue only for handling suspend/resume. If
-> we end up in a need to use a workqueue for some other purposes too,
-> then a freezable workqueue could work for blocking further requests
-> during suspend indeed. If we don't need a workqueue for anything else,
-> then a simple boolean flag set and wait for last job to finish in
-> suspend and flag reset and call to schedule a next job in resume
-> should be good enough.
+> ..It also drives me crazy that you've put this driver under this
+> folder. It does not create a role switch so ideally it should not go
+> under driver/usb/roles/. 
+agree:)
+
+> I think a better place for it would be
+> drivers/usb/misc/, or actually, maybe it should go under
+> drivers/usb/common/?
+I'm not sure, but prefer misc/ folder.
+
+Hi Greg, 
+
+would you please give me some suggestions about this?  which folder I
+should put the driver into?
+
 > 
-> Best regards,
-> Tomasz
+> Could you still rename the driver to something like "usb-gpio.c" or
+> conn-gpio.c,
+I think about the name for a long time before, and have some doubt
+whether it's suitable to add typeb into the name.
+How about using usb-conn-gpio.c or conn-usb-gpio.c?
 
-Ok, we got it.
+Thanks a lot
 
-Sincerely,
-Jerry
+>  or something else, and also move it under
+> drivers/usb/misc/ or drivers/usb/common/?
+> 
+> >  3 files changed, 296 insertions(+)
+> >  create mode 100644 drivers/usb/roles/typeb-conn-gpio.c
+> > 
+> > diff --git a/drivers/usb/roles/Kconfig b/drivers/usb/roles/Kconfig
+> > index f8b31aa67526..d1156e18a81a 100644
+> > --- a/drivers/usb/roles/Kconfig
+> > +++ b/drivers/usb/roles/Kconfig
+> > @@ -26,4 +26,15 @@ config USB_ROLES_INTEL_XHCI
+> >  	  To compile the driver as a module, choose M here: the module will
+> >  	  be called intel-xhci-usb-role-switch.
+> >  
+> > +config TYPEB_CONN_GPIO
+> > +	tristate "USB Type-B GPIO Connector"
+> 
+> USB GPIO connection detection driver?
+> 
+> > +	depends on GPIOLIB
+> > +	help
+> > +	  The driver supports USB role switch between host and device via GPIO
+> > +	  based USB cable detection, used typically if an input GPIO is used
+> > +	  to detect USB ID pin.
+> > +
+> > +	  To compile the driver as a module, choose M here: the module will
+> > +	  be called typeb-conn-gpio.ko
+> > +
+> >  endif # USB_ROLE_SWITCH
+> > diff --git a/drivers/usb/roles/Makefile b/drivers/usb/roles/Makefile
+> > index 757a7d2797eb..5d5620d9d113 100644
+> > --- a/drivers/usb/roles/Makefile
+> > +++ b/drivers/usb/roles/Makefile
+> > @@ -3,3 +3,4 @@
+> >  obj-$(CONFIG_USB_ROLE_SWITCH)		+= roles.o
+> >  roles-y					:= class.o
+> >  obj-$(CONFIG_USB_ROLES_INTEL_XHCI)	+= intel-xhci-usb-role-switch.o
+> > +obj-$(CONFIG_TYPEB_CONN_GPIO)		+= typeb-conn-gpio.o
+> > diff --git a/drivers/usb/roles/typeb-conn-gpio.c b/drivers/usb/roles/typeb-conn-gpio.c
+> > new file mode 100644
+> > index 000000000000..e3fba1656069
+> > --- /dev/null
+> > +++ b/drivers/usb/roles/typeb-conn-gpio.c
+> > @@ -0,0 +1,284 @@
+> > +// SPDX-License-Identifier: GPL-2.0
+> > +/*
+
 
 
 _______________________________________________
