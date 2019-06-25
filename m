@@ -2,49 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AC35D5296D
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 25 Jun 2019 12:28:33 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3E03B5299C
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 25 Jun 2019 12:31:49 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:References:To:From:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ombO1D8IJyw+iqmNyTmebPsd/N8OD5xkdyN9hyqaHGM=; b=PH73QFPEDN1pw5
-	ksNUp9STvVqQTepPNwaYMb2MceVnPFjj8thAcTZfRr4hvV20J4SBUMjV2f3S35tsdOfMQAoNR/EMk
-	cIgMLHmmSx7hUHI5N5jEiOnhiH4PpWTEnERIy5FKZLjMoJYljzTYK154K8Q2EE518T4OnBcAKm/CH
-	qiySOM7pIfxDewQMtShWS0jn6FlHXAEAanTyz4w4OAJzBPSe3fXuzom0OvHwZGuORf9qlrOVDXLn8
-	GATVLF0sxsuTa9RO94Nk7TlQT/kr/DS3235bfaa3NwdlyB/cpN2s6/WT4pDcBIiCFvF2L0+uUzaGq
-	QHr8brtHNPudleA6zwXQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=ABzInfbdmCdMSBK8UfN/uiojpHswjiMjP6P7U8HGI2s=; b=EwQf6HaGhF/7gU
+	DnIjmCS4acZzJje8rR+/LzLOdNWEBNzYfH1ayBn5opgXbPk/oyp7UEcioH45RAqQjCwj2G3+6q3s3
+	eZS479L1zNVgRm16DRMr8xCCq3TnNYH6063HWEB6XtT6jL0rExuZ4utvnJWlGBL9S6/sw4kpjzpdm
+	A0JypkdAs03Yaxjt4xUF8LH5AEm5TJELfFz6mvS1vZRRUdZOztU79GFsS2zXostzAiQzbg7X+V+32
+	xoQlOByXiQB9q6bU3UXU30A1jsykyuU4ZXMyRMc5vUvrCRXbXILxqfSKUqtmCLY7LI/tSOrogOItf
+	NzwEGth8caBD2wpL7YsA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hfigg-00059Y-2T; Tue, 25 Jun 2019 10:28:30 +0000
+	id 1hfijr-0007Tn-AK; Tue, 25 Jun 2019 10:31:47 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hfigV-00058y-Q1
- for linux-arm-kernel@lists.infradead.org; Tue, 25 Jun 2019 10:28:21 +0000
+ id 1hfiji-0007TD-3w
+ for linux-arm-kernel@lists.infradead.org; Tue, 25 Jun 2019 10:31:39 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id A1B13360;
- Tue, 25 Jun 2019 03:28:18 -0700 (PDT)
-Received: from [10.1.196.105] (eglon.cambridge.arm.com [10.1.196.105])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id C69903F71E;
- Tue, 25 Jun 2019 03:28:17 -0700 (PDT)
-Subject: Re: [PATCH 3/3] arm64: stacktrace: better handle corrupted stacks
-From: James Morse <james.morse@arm.com>
-To: Mark Rutland <mark.rutland@arm.com>
-References: <20190606125402.10229-1-mark.rutland@arm.com>
- <20190606125402.10229-4-mark.rutland@arm.com>
- <7c70ab1c-e114-9d21-e37b-3d4e01ac6e43@arm.com>
-Message-ID: <57fdba62-b7fc-27dc-cc7a-f911cfb58440@arm.com>
-Date: Tue, 25 Jun 2019 11:28:16 +0100
-User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
- Thunderbird/60.7.0
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 80371360;
+ Tue, 25 Jun 2019 03:31:37 -0700 (PDT)
+Received: from lakrids.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
+ [10.121.207.14])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 91F543F71E;
+ Tue, 25 Jun 2019 03:31:34 -0700 (PDT)
+Date: Tue, 25 Jun 2019 11:31:29 +0100
+From: Mark Rutland <mark.rutland@arm.com>
+To: Anshuman Khandual <anshuman.khandual@arm.com>
+Subject: Re: [PATCH V6 3/3] arm64/mm: Enable memory hot remove
+Message-ID: <20190625103128.GA12207@lakrids.cambridge.arm.com>
+References: <1560917860-26169-1-git-send-email-anshuman.khandual@arm.com>
+ <1560917860-26169-4-git-send-email-anshuman.khandual@arm.com>
+ <20190621143540.GA3376@capper-debian.cambridge.arm.com>
+ <20190624165148.GA9847@lakrids.cambridge.arm.com>
+ <48f39fa1-c369-c8e2-4572-b7e016dca2d6@arm.com>
 MIME-Version: 1.0
-In-Reply-To: <7c70ab1c-e114-9d21-e37b-3d4e01ac6e43@arm.com>
-Content-Language: en-GB
+Content-Disposition: inline
+In-Reply-To: <48f39fa1-c369-c8e2-4572-b7e016dca2d6@arm.com>
+User-Agent: Mutt/1.11.1+11 (2f07cb52) (2018-12-01)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190625_032819_933330_DB4FDC83 
-X-CRM114-Status: GOOD (  24.00  )
+X-CRM114-CacheID: sfid-20190625_033138_260959_A98DE597 
+X-CRM114-Status: GOOD (  18.21  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -63,175 +65,80 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: catalin.marinas@arm.com, tengfeif@codeaurora.org, will.deacon@arm.com,
- dave.martin@arm.com, linux-arm-kernel@lists.infradead.org
+Cc: "mhocko@suse.com" <mhocko@suse.com>,
+ "mgorman@techsingularity.net" <mgorman@techsingularity.net>,
+ Steve Capper <Steve.Capper@arm.com>, Catalin Marinas <Catalin.Marinas@arm.com>,
+ "david@redhat.com" <david@redhat.com>, Will Deacon <Will.Deacon@arm.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "linux-mm@kvack.org" <linux-mm@kvack.org>,
+ "logang@deltatee.com" <logang@deltatee.com>,
+ "arunks@codeaurora.org" <arunks@codeaurora.org>, "cai@lca.pw" <cai@lca.pw>,
+ Ard Biesheuvel <Ard.Biesheuvel@arm.com>,
+ "cpandya@codeaurora.org" <cpandya@codeaurora.org>,
+ James Morse <James.Morse@arm.com>,
+ "akpm@linux-foundation.org" <akpm@linux-foundation.org>, nd <nd@arm.com>,
+ "ira.weiny@intel.com" <ira.weiny@intel.com>,
+ "dan.j.williams@intel.com" <dan.j.williams@intel.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ "osalvador@suse.de" <osalvador@suse.de>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Mark,
-
-On 24/06/2019 12:34, James Morse wrote:
-> On 06/06/2019 13:54, Mark Rutland wrote:
->> The arm64 stacktrace code is careful to only dereference frame records
->> in valid stack ranges, ensuring that a corrupted frame record won't
->> result in a faulting access.
->>
->> However, it's still possible for corrupt frame records to result in
->> infinite loops in the stacktrace code, which is also undesirable.
->>
->> This patch ensures that we complete a stacktrace in finite time, by
->> keeping track of which stacks we have already completed unwinding, and
->> verifying that if the next frame record is on the same stack, it is at a
->> higher address.
+On Tue, Jun 25, 2019 at 10:57:07AM +0530, Anshuman Khandual wrote:
+> On 06/24/2019 10:22 PM, Mark Rutland wrote:
+> > On Fri, Jun 21, 2019 at 03:35:53PM +0100, Steve Capper wrote:
+> >> On Wed, Jun 19, 2019 at 09:47:40AM +0530, Anshuman Khandual wrote:
+> >>> +static void free_hotplug_page_range(struct page *page, size_t size)
+> >>> +{
+> >>> +	WARN_ON(!page || PageReserved(page));
+> >>> +	free_pages((unsigned long)page_address(page), get_order(size));
+> >>> +}
+> >>
+> >> We are dealing with power of 2 number of pages, it makes a lot more
+> >> sense (to me) to replace the size parameter with order.
+> >>
+> >> Also, all the callers are for known compile-time sizes, so we could just
+> >> translate the size parameter as follows to remove any usage of get_order?
+> >> PAGE_SIZE -> 0
+> >> PMD_SIZE -> PMD_SHIFT - PAGE_SHIFT
+> >> PUD_SIZE -> PUD_SHIFT - PAGE_SHIFT
+> > 
+> > Now that I look at this again, the above makes sense to me.
+> > 
+> > I'd requested the current form (which I now realise is broken), since
+> > back in v2 the code looked like:
+> > 
+> > static void free_pagetable(struct page *page, int order)
+> > {
+> > 	...
+> > 	free_pages((unsigned long)page_address(page), order);
+> > 	...
+> > }
+> > 
+> > ... with callsites looking like:
+> > 
+> > free_pagetable(pud_page(*pud), get_order(PUD_SIZE));
+> > 
+> > ... which I now see is off by PAGE_SHIFT, and we inherited that bug in
+> > the current code, so the calculated order is vastly larger than it
+> > should be. It's worrying that doesn't seem to be caught by anything in
+> > testing. :/
 > 
-> This looks good, I tried to take it for a spin to test SDEI stack tracing ... but it
-> wouldn't boot, it panic()s before earlycon.
-> 
-> defconfig doesn't do this, defconfig+CONFIG_PROVE_LOCKING does.
-> Toggling CONFIG_DEBUG_LOCK_ALLOC is the smallest config change to make this show up.
-> 
-> Its taking a translation fault:
-> | <__ll_sc_arch_atomic64_or>:
-> |        f9800031        prfm    pstl1strm, [x1]
-> |        c85f7c31        ldxr    x17, [x1]		(faulting instruction)
-> |        aa000231        orr     x17, x17, x0
-> |        c8107c31        stxr    w16, x17, [x1]
-> |        35ffffb0        cbnz    w16, ffff000010c7d19c <__ll_sc_a
-> |        d65f03c0        ret
-> 
-> x0: 0x0000000000000100
-> x1: 0xffff0000137399e8			(far_el2)
-> 
-> If x1 were part of 'frame' in __save_stack_trace it should be on the stack, but at
-> fault-time sp is 0xffff0000114a3a50. This happens before the linear map has been set up....
-> 
-> The lr points just after the set_bit() call in unwind_frame().
+> get_order() returns the minimum page allocation order for a given size
+> which already takes into account PAGE_SHIFT i.e get_order(PAGE_SIZE)
+> returns 0.
 
-frame->stack_current is uninitialized/junk, so the calculated bit to set is outside of
-mapped memory.
+Phew.
 
-Lockdep is relevant because it uses save_stack_trace() which doesn't use the
-start_backtrace() helper that initialises the new metadata.
-DEBUG_LOCK_ALLOC was a red-herring, it was perturbing the stack layout so this code ate a
-pointer instead of a much more believable 0.
+Let's leave this as is then -- it's clearer/simpler than using the SHIFT
+constants, performance isn't a major concern in this path, and it's very
+likely that GCC will inline and constant-fold this away regardless.
 
-Patch below, this needs to come before patch 3.
-I'll give this a spin with the SDEI firmware.
+Sorry for the noise, and thanks for correcting me.
 
-
-Thanks,
-
-James
-
-----------------------------------%<----------------------------------
-From: James Morse <james.morse@arm.com>
-Date:   Tue Jun 25 11:05:33 2019 +0100
-
-arm64: stacktrace: use start_backtrace() consistently
-
-unwind_frame() is about to get smart when it comes to validating
-stack frames and stepping between stacks without going round in
-circles.
-
-All this relies on new parameters in struct stackframe being
-initialised. Before we can do this, we need all users of
-struct stackframe to use start_backtrace(), instead of packing
-the values manually.
-
-Signed-off-by: James Morse <james.morse@arm.com>
----
- arch/arm64/kernel/perf_callchain.c |  7 +------
- arch/arm64/kernel/return_address.c |  8 +++-----
- arch/arm64/kernel/stacktrace.c     | 20 ++++++--------------
- 3 files changed, 10 insertions(+), 25 deletions(-)
-
----
-diff --git a/arch/arm64/kernel/perf_callchain.c b/arch/arm64/kernel/perf_callcha
-in.c
-index 61d983f5756f..1510ccbd7cb2 100644
---- a/arch/arm64/kernel/perf_callchain.c
-+++ b/arch/arm64/kernel/perf_callchain.c
-@@ -165,12 +165,7 @@ void perf_callchain_kernel(struct perf_callchain_entry_ctx
-*entry,
-                return;
-        }
-
--       frame.fp = regs->regs[29];
--       frame.pc = regs->pc;
--#ifdef CONFIG_FUNCTION_GRAPH_TRACER
--       frame.graph = 0;
--#endif
--
-+       start_backtrace(&frame, current, regs->regs[29], regs->pc);
-        walk_stackframe(current, &frame, callchain_trace, entry);
- }
-
-diff --git a/arch/arm64/kernel/return_address.c b/arch/arm64/kernel/return_address.c
-index 53c40196b607..36f8888a5e76 100644
---- a/arch/arm64/kernel/return_address.c
-+++ b/arch/arm64/kernel/return_address.c
-@@ -41,11 +41,9 @@ void *return_address(unsigned int level)
-        data.level = level + 2;
-        data.addr = NULL;
-
--       frame.fp = (unsigned long)__builtin_frame_address(0);
--       frame.pc = (unsigned long)return_address; /* dummy */
--#ifdef CONFIG_FUNCTION_GRAPH_TRACER
--       frame.graph = 0;
--#endif
-+       start_backtrace(&frame, current,
-+                       (unsigned long)__builtin_frame_address(0),
-+                       (unsigned long)return_address);
-
-        walk_stackframe(current, &frame, save_return_addr, &data);
-
-diff --git a/arch/arm64/kernel/stacktrace.c b/arch/arm64/kernel/stacktrace.c
-index 1c45b33c7474..8a1fa90c784d 100644
---- a/arch/arm64/kernel/stacktrace.c
-+++ b/arch/arm64/kernel/stacktrace.c
-@@ -147,12 +147,7 @@ void save_stack_trace_regs(struct pt_regs *regs, struct stack_trace
-*trace)
-        data.skip = trace->skip;
-        data.no_sched_functions = 0;
-
--       frame.fp = regs->regs[29];
--       frame.pc = regs->pc;
--#ifdef CONFIG_FUNCTION_GRAPH_TRACER
--       frame.graph = 0;
--#endif
--
-+       start_backtrace(&frame, current, regs->regs[29], regs->pc);
-        walk_stackframe(current, &frame, save_trace, &data);
- }
- EXPORT_SYMBOL_GPL(save_stack_trace_regs);
-@@ -171,18 +166,15 @@ static noinline void __save_stack_trace(struct task_struct *tsk,
-        data.no_sched_functions = nosched;
-
-        if (tsk != current) {
--               frame.fp = thread_saved_fp(tsk);
--               frame.pc = thread_saved_pc(tsk);
-+               start_backtrace(&frame, tsk, thread_saved_fp(tsk),
-+                               thread_saved_pc(tsk));
-        } else {
-                /* We don't want this function nor the caller */
-                data.skip += 2;
--               frame.fp = (unsigned long)__builtin_frame_address(0);
--               frame.pc = (unsigned long)__save_stack_trace;
-+               start_backtrace(&frame, tsk,
-+                               (unsigned long)__builtin_frame_address(0),
-+                               (unsigned long)__save_stack_trace);
-        }
--#ifdef CONFIG_FUNCTION_GRAPH_TRACER
--       frame.graph = 0;
--#endif
--
-        walk_stackframe(tsk, &frame, save_trace, &data);
-
-        put_task_stack(tsk);
-
-----------------------------------%<----------------------------------
+Mark.
 
 _______________________________________________
 linux-arm-kernel mailing list
