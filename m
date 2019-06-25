@@ -2,80 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8745455615
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 25 Jun 2019 19:39:29 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D81A155623
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 25 Jun 2019 19:43:47 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=gzYjGwscTU8p6xwFLgpSuJzyiVo3mhEtu/yabE1Is3Q=; b=Tsl8ufZ2dYSX8F
-	+nhi4+syIVKl00E8yXi7S7IPF3Xoehhus2tza3ECZFlXDw/CPzbpcymVR9SzQbjYpCBciNCFXH3CV
-	+ivtzTcwSjuWJ5kzl3pwI9D2bQnTW5TOvWrPlpgV+IQxYZc7H1YwVf5lkpvSF0v+VhdGWLlC9jlC+
-	JHxHoeHdcXtqiI9bsrspMcUhbk0uondqdEksCm3PiM3kh3OT0k3xiuhKtO1yYNDNZ2MEalX2bHi57
-	R8rUEg7u5na+hAR21E/9IC8L/IbVapCSnBwrs8VVfI8XjXMzOi7ffi3SH73yfY8wfvID88mjDqzTp
-	caGa7uL10jrDvVAvpCoA==;
+	List-Owner; bh=l7PtVLyB6YXzvT9f48eQ2bVqze4DuGgVCVMYAwhesdI=; b=FAD2jhJzZkqx0y
+	TTQxTkvuzirMkYtTXRVkyv/zPWidjZBFMUAijrWx7yfqym5k0rXK4kfXw5uGrRDMpw1Ruqd6rblWP
+	UgoTHn3nh3Hy7cTUx5mwuPfrGoY6TD0JIZ2ugQkEg7IoN9RX0Wy5iUClmOEboTriN3/XEO5RJSUih
+	tfVG0zLmXBBppmY0UPHDVl0DPOSBt7v6tczPs72dr21iVfu5N9fNxoaVZVjn9175k+phOIvcxSpn2
+	3wolpSV333ZFn4sptbedxJ4M7/ISJ+mIuY4FJWfspHzXKQ+N43chJE1T3bYgM8uAIS4A6CX5ExsE6
+	Ojs4T4elMmaVHLcG/mkw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hfpPk-0004IL-3R; Tue, 25 Jun 2019 17:39:28 +0000
-Received: from mail.kernel.org ([198.145.29.99])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hfpPX-0004Ho-Lh
- for linux-arm-kernel@lists.infradead.org; Tue, 25 Jun 2019 17:39:16 +0000
-Received: from mail-qt1-f170.google.com (mail-qt1-f170.google.com
- [209.85.160.170])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id ABDF02084B
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 25 Jun 2019 17:39:14 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1561484354;
- bh=uN+wDDacNJwqx+v/3/n9nLahoHqzeiFAwdlzYipdI4Q=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=DZClxw/ihopBvtSbOR8Z1H0A4Pac9E37GVJDGLb5uGZFu+kZDSY5rK6XQLgx77MGu
- PZWac+VgZuLeOQlZkw5MTWkK76V3Cvn5l724U3UUKKRahQ4StmpEdHw7+tMuFEZ35w
- f0pAHmJoix4gJmL4t9ALd8FeAQUbyBDdcKOUDJ8U=
-Received: by mail-qt1-f170.google.com with SMTP id x47so19305829qtk.11
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 25 Jun 2019 10:39:14 -0700 (PDT)
-X-Gm-Message-State: APjAAAWlsjzQUc4JJ6e1+Cs+KlHFq7Fsyd0mSflRBaQx6mHC+z8JcMkx
- zVY90B0k7csr8gJxgzS7Eb+Y4eKybYtnPuy7pA==
-X-Google-Smtp-Source: APXvYqyklRzybJRVDTEpfp0SeahUkH+awTTyyTlDMslpGY15qipWFkQLHnSeins0DWa3Bf2iY4HJCCw2GsgIen75KcU=
-X-Received: by 2002:a0c:b627:: with SMTP id f39mr65154134qve.72.1561484354003; 
- Tue, 25 Jun 2019 10:39:14 -0700 (PDT)
+	id 1hfpTq-0006Le-RD; Tue, 25 Jun 2019 17:43:42 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hfpTd-0006Ko-Ji
+ for linux-arm-kernel@lists.infradead.org; Tue, 25 Jun 2019 17:43:30 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id DE6E1360;
+ Tue, 25 Jun 2019 10:43:28 -0700 (PDT)
+Received: from e119884-lin.cambridge.arm.com (e119884-lin.cambridge.arm.com
+ [10.1.196.72])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 1B2233F718;
+ Tue, 25 Jun 2019 10:43:26 -0700 (PDT)
+From: Vincenzo Frascino <vincenzo.frascino@arm.com>
+To: linux-arch@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-kernel@vger.kernel.org, linux-mips@vger.kernel.org,
+ linux-kselftest@vger.kernel.org
+Subject: [PATCH] arm64: vdso: Fix compilation with clang < 8
+Date: Tue, 25 Jun 2019 18:43:16 +0100
+Message-Id: <20190625174316.21946-1-vincenzo.frascino@arm.com>
+X-Mailer: git-send-email 2.22.0
+In-Reply-To: <20190621095252.32307-5-vincenzo.frascino@arm.com>
+References: <20190621095252.32307-5-vincenzo.frascino@arm.com>
 MIME-Version: 1.0
-References: <20190623043801.14040-1-icenowy@aosc.io>
- <20190623043801.14040-6-icenowy@aosc.io>
- <CACRpkdbbxgeGPh1oKfyKKOMhpXiz4sQWjZv23FbYaafCz6NyCQ@mail.gmail.com>
-In-Reply-To: <CACRpkdbbxgeGPh1oKfyKKOMhpXiz4sQWjZv23FbYaafCz6NyCQ@mail.gmail.com>
-From: Rob Herring <robh+dt@kernel.org>
-Date: Tue, 25 Jun 2019 11:39:01 -0600
-X-Gmail-Original-Message-ID: <CAL_Jsq+w-+cRwfAMu=kZPK=e85ujq8hu9Lh=jjf+Qy=R7C-AQA@mail.gmail.com>
-Message-ID: <CAL_Jsq+w-+cRwfAMu=kZPK=e85ujq8hu9Lh=jjf+Qy=R7C-AQA@mail.gmail.com>
-Subject: Re: [PATCH v3 5/9] dt-bindings: vendor-prefixes: add SoChip
-To: Linus Walleij <linus.walleij@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190625_103915_723482_CBE9D4EB 
-X-CRM114-Status: GOOD (  13.58  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190625_104329_697609_AB14EED9 
+X-CRM114-Status: UNSURE (   9.17  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -87,43 +63,48 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
- <devicetree@vger.kernel.org>, Maxime Ripard <maxime.ripard@bootlin.com>,
- linux-sunxi <linux-sunxi@googlegroups.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
- Chen-Yu Tsai <wens@csie.org>, linux-clk <linux-clk@vger.kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Icenowy Zheng <icenowy@aosc.io>
+Cc: shuah@kernel.org, andre.przywara@arm.com, arnd@arndb.de,
+ huw@codeweavers.com, catalin.marinas@arm.com, daniel.lezcano@linaro.org,
+ will.deacon@arm.com, linux@armlinux.org.uk, ralf@linux-mips.org,
+ salyzyn@android.com, luto@kernel.org, paul.burton@mips.com,
+ Qian Cai <cai@lca.pw>, 0x7f454c46@gmail.com, linux@rasmusvillemoes.dk,
+ tglx@linutronix.de, sthotton@marvell.com, pcc@google.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Jun 25, 2019 at 7:55 AM Linus Walleij <linus.walleij@linaro.org> wrote:
->
-> On Sun, Jun 23, 2019 at 6:39 AM Icenowy Zheng <icenowy@aosc.io> wrote:
->
-> > Shenzhen SoChip Technology Co., Ltd. is a hardware vendor that produces
-> > EVBs with Allwinner chips. There's also a SoC named S3 that is developed
-> > by Allwinner (based on Allwinner V3/V3s) but branded SoChip.
-> >
-> > Add the vendor prefix for SoChip.
-> >
-> > Signed-off-by: Icenowy Zheng <icenowy@aosc.io>
-> > Reviewed-by: Rob Herring <robh@kernel.org>
-> > ---
-> > No changes in v3.
-> >
-> > Changes in v2:
-> > - Add the review tag by Rob.
->
-> Should I apply this to the pinctrl tree? Rob?
+clang versions previous to 8 do not support -mcmodel=tiny.
 
-I'd like to take these 2 because we have lots of vendor prefix changes
-(adding a bunch of undocumented ones) this cycle.
+Add a check to the vDSO Makefile for arm64 to remove the flag when these
+versions of the compiler are detected.
 
-Rob
+Signed-off-by: Vincenzo Frascino <vincenzo.frascino@arm.com>
+Reported-by: Qian Cai <cai@lca.pw>
+Tested-by: Qian Cai <cai@lca.pw>
+---
+ arch/arm64/kernel/vdso/Makefile | 5 +++++
+ 1 file changed, 5 insertions(+)
+
+diff --git a/arch/arm64/kernel/vdso/Makefile b/arch/arm64/kernel/vdso/Makefile
+index ec81d28aeb5d..5154f50aff2d 100644
+--- a/arch/arm64/kernel/vdso/Makefile
++++ b/arch/arm64/kernel/vdso/Makefile
+@@ -38,6 +38,11 @@ else
+ CFLAGS_vgettimeofday.o = -O2 -mcmodel=tiny -include $(c-gettimeofday-y)
+ endif
+ 
++# Clang versions less than 8 do not support -mcmodel=tiny
++ifeq ($(shell test $(CONFIG_CLANG_VERSION) -lt 80000; echo $$?),0)
++CFLAGS_REMOVE_vgettimeofday.o += -mcmodel=tiny
++endif
++
+ # Disable gcov profiling for VDSO code
+ GCOV_PROFILE := n
+ 
+-- 
+2.22.0
+
 
 _______________________________________________
 linux-arm-kernel mailing list
