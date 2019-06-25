@@ -2,53 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 76A4955C05
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 26 Jun 2019 01:05:38 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E6C8A55C06
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 26 Jun 2019 01:06:01 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:Subject:From:To:
 	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=uqQAgzOKgDvf+oJh3SRH9m/4fiV6pw/bu+Z1G2wcoVY=; b=IxONDTNUaq+2dq
-	7ehev2A0GYwxNghzWCrwSxICc3dykC+8+3n3cqkscUlh+hbpRdJ1OnpoUkEobeBujf3dRGLFVHTX9
-	cpqPW+257WbGgqzt8zoUfD9Ty9kWbWzNhE1oOi0WKP0N0MVc67qNf9AH+KEpbmB0y7mqSUx5t9tnn
-	Qq5DWcSO6f+XnJ9rQwyqVCJgWNsCGuvrAQqyKDteY4OOnEvkDyOPdmlMSAZtcF1hXNENhaEbu7WKu
-	ZH4vQ/Ht0TEjlufxiB/kIvrGlYdJx8IZ6Msywtawjk/jpWHGJFpxzyLAXSCT58Nzpt1E9uSq3SQaq
-	+BU4eXxUGxnOjmMhK9yg==;
+	List-Owner; bh=T3nHgduZHW57r2jTBB8Ah8nWRQzJhDBNaulgBWxODtk=; b=Pytr94h93FbU8i
+	AzYAfMzVYbdwc0i/sNK8lU2b5dzao2dILLEXqg+SHNG3wEd6dqHRSQlI9CGrc/bPXiYG6mG5hZ3LB
+	hfl8I+cL97M3uk2k1saXDP/8iyIyQ/0O8ubgP/vH3QIH689d4oRjfSoaYB2Ytd4g89J5x/mKR4X2X
+	HCv+UuM03vjFI1dMv+UBnookOwfETHrwyQTsN0XKSrXr1zswnS7m4sHSsnBJxk+Un4/z2f8obYG2j
+	I/4WJMbxDw5vcnRuSm0n7/TPQl/oChjV5nZdeD8cj4eSj1zLqLVVvHRm1j3+LIKX/utq8ddXrbzAP
+	HtFciJI8ZdxC5+vj776Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hfuVK-0006aI-KY; Tue, 25 Jun 2019 23:05:34 +0000
+	id 1hfuVh-0006nF-Ki; Tue, 25 Jun 2019 23:05:57 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hfuUf-0005AT-Ap; Tue, 25 Jun 2019 23:04:54 +0000
+ id 1hfuUk-0005Ez-4K; Tue, 25 Jun 2019 23:04:59 +0000
 Received: from kernel.org (unknown [104.132.0.74])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id EB3AE2133F;
- Tue, 25 Jun 2019 23:04:52 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id B48E62086D;
+ Tue, 25 Jun 2019 23:04:57 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1561503893;
- bh=L4wBBj7VYpmL0ZQhlGCEppLooGryYJZoy3g3fIHaeIE=;
+ s=default; t=1561503897;
+ bh=+CGuu9k+uPdFdb6RRHWgE8kNKhCrYuk5mghMuKCGlZ4=;
  h=In-Reply-To:References:To:From:Subject:Cc:Date:From;
- b=PBoK/RHe3VYSOdqx4mIrnN2ixf4WZrCYkKciUyfXafKP7cRof0QJmGYPT5sBTNjmR
- e9EWck1IuKdqMSSv95Fb7sIPbpf2ptBaYyu1fe30IYP161d3abwLoYncRFeTrkW2wz
- +tzY9h+O9ZM6B28REljVYnBg0ldQgAUDE1PJHJvs=
+ b=u7X3FHT767mlnYuFXB1qdSOmnAVBasE0imtx33jpynu7jgJYKTuKDiKEi5ChA/oY2
+ noWZpS2QBrFT9m6fffQGOwJFRxnOe9K/lUsari/72M+/VWdr2sFXNail/oM6fvKoaI
+ kSxFY0Q1Weeko3qE5TR1URZ5XpAdTW2KADNeUtzY=
 MIME-Version: 1.0
-In-Reply-To: <20190612182500.4097-3-nsaenzjulienne@suse.de>
+In-Reply-To: <20190612182500.4097-4-nsaenzjulienne@suse.de>
 References: <20190612182500.4097-1-nsaenzjulienne@suse.de>
- <20190612182500.4097-3-nsaenzjulienne@suse.de>
+ <20190612182500.4097-4-nsaenzjulienne@suse.de>
 To: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
  linux-kernel@vger.kernel.org, stefan.wahren@i2se.com
 From: Stephen Boyd <sboyd@kernel.org>
-Subject: Re: [PATCH v4 2/7] clk: bcm283x: add driver interfacing with
- Raspberry Pi's firmware
+Subject: Re: [PATCH v4 3/7] firmware: raspberrypi: register clk device
 User-Agent: alot/0.8.1
-Date: Tue, 25 Jun 2019 16:04:51 -0700
-Message-Id: <20190625230452.EB3AE2133F@mail.kernel.org>
+Date: Tue, 25 Jun 2019 16:04:56 -0700
+Message-Id: <20190625230457.B48E62086D@mail.kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190625_160453_471493_8A385FBB 
-X-CRM114-Status: UNSURE (   6.44  )
+X-CRM114-CacheID: sfid-20190625_160458_253425_1966A1AF 
+X-CRM114-Status: UNSURE (   5.69  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -89,11 +88,9 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Quoting Nicolas Saenz Julienne (2019-06-12 11:24:54)
-> Raspberry Pi's firmware offers an interface though which update it's
-> clock's frequencies. This is specially useful in order to change the CPU
-> clock (pllb_arm) which is 'owned' by the firmware and we're unable to
-> scale using the register interface provided by clk-bcm2835.
+Quoting Nicolas Saenz Julienne (2019-06-12 11:24:55)
+> Since clk-raspberrypi is tied to the VC4 firmware instead of particular
+> hardware it's registration should be performed by the firmware driver.
 > 
 > Signed-off-by: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
 > Acked-by: Eric Anholt <eric@anholt.net>
