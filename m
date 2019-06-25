@@ -2,93 +2,73 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DBF1352596
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 25 Jun 2019 09:57:11 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 39107525A5
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 25 Jun 2019 09:58:04 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=TFbAcTPppSNt1BIA1dsaiIUxaDgNxbuINdQ0Utxtbqk=; b=c6y+rUnGco+xTI
-	dE+IqNmIaPZiOO2TjpETvYBg1s5IsFmPkAU3W+afZpMz3YUI9kDFkRhwj3shkHJA++Fb74nlrs3Fm
-	hFNOapiS36D2VmZkFYc2BQKAui5WCmAYTgChiFwBMoWhjFgdqG1H0yu+gavkXhDuEZbFaK2otle2M
-	tLssoS3SrT7CjIGEzKBcD0BjkG3xbps/nqzMeMr9/lCVorvmJlwb2VMngxLIk1BUL80EIowKPsY2k
-	8i2/oEU85fe6DW20gyAmEFyNuENfeXw3iePFbUI6gjG5LqKUb9SZltFdWUmkN8pZe5/sz0bSNfgEd
-	CUwNM/cCEXeg1tbf4rTw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=bfZ3JmwGgFXRVNhMqJIn6zdhG5XjbL9vsWdvVqt2MXc=; b=PLclwjS+YIKvMa
+	T+pF323CGDnOTMujNv6+n9ZNCQVPwKE3ryLOGL9ZqSD48OWbYYbG+Zpjk0q3ttI3beuVl0nHwTWWx
+	NZRpwZJpusicDCUpyRL3wb6/X3hVnRtOdSfJGL0avqRqKvATHdkaddz048ElqZQb5Pc3Mvuurzyeo
+	IS2RCVNYaxpi0vB+YSmu3drJZ2H0h1Gw6vcA1N4iG11G4/3MBj+Kk8S5QAfzlibEsFXsnEL8DVr5G
+	BnYUpzkzTpeWUpDpnwUqZOkwixx9yDlrk+m1HGDq3EojekU2L+y3mf9Z26WM2gmI2q5rmbYVSTFBE
+	xil13mO0UUBRp9kwjZCA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hfgKB-0002ID-7S; Tue, 25 Jun 2019 07:57:07 +0000
-Received: from userp2130.oracle.com ([156.151.31.86])
+	id 1hfgL1-0002fs-T3; Tue, 25 Jun 2019 07:57:59 +0000
+Received: from fllv0015.ext.ti.com ([198.47.19.141])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hfgJM-0001rP-LO; Tue, 25 Jun 2019 07:56:18 +0000
-Received: from pps.filterd (userp2130.oracle.com [127.0.0.1])
- by userp2130.oracle.com (8.16.0.27/8.16.0.27) with SMTP id x5P7sOWG008130;
- Tue, 25 Jun 2019 07:56:08 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=oracle.com;
- h=date : from : to : cc
- : subject : message-id : references : mime-version : content-type :
- in-reply-to; s=corp-2018-07-02;
- bh=5hPNEEOLEhrLonKXVMBQSK5/DYkRHzR0TDxjO5rF1gg=;
- b=yx6SN5D5OpW+U1sSOBLsx/z+kGMd1Jy3WzcGBdZNSUUPIONIFXRKSa5jA/FLZQs8Vsdj
- h2qFp+7RgdPKOYbh9JEstZAxRTYy1oM3iRw3Ay20n3dIWjWkYalYHC7Whq++2YEfSLjz
- J8JS5QTpX+QFjCPBzejqmSJ15glCWGgb47/KAeei9RCFm+odfWJ4kPfaEYY54Vr7BT6N
- UMFOwPx0bkvm5UzKRoKNpodMfrti044WM05JNGTqa5S02Purd36alP0dXOG4EZtbsiME
- 4fEw71+2erJS/dQUJXnZtYAXm+D4nC9f2+CI84jeVspfQV/qd6bgVOZM1Q9PHitGPmgJ hQ== 
-Received: from userp3020.oracle.com (userp3020.oracle.com [156.151.31.79])
- by userp2130.oracle.com with ESMTP id 2t9brt2jv7-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Tue, 25 Jun 2019 07:56:08 +0000
-Received: from pps.filterd (userp3020.oracle.com [127.0.0.1])
- by userp3020.oracle.com (8.16.0.27/8.16.0.27) with SMTP id x5P7tXD6007243;
- Tue, 25 Jun 2019 07:56:08 GMT
-Received: from userv0121.oracle.com (userv0121.oracle.com [156.151.31.72])
- by userp3020.oracle.com with ESMTP id 2tat7c3a4g-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Tue, 25 Jun 2019 07:56:07 +0000
-Received: from abhmp0015.oracle.com (abhmp0015.oracle.com [141.146.116.21])
- by userv0121.oracle.com (8.14.4/8.13.8) with ESMTP id x5P7u6hM005590;
- Tue, 25 Jun 2019 07:56:06 GMT
-Received: from kadam (/41.57.98.10) by default (Oracle Beehive Gateway v4.0)
- with ESMTP ; Tue, 25 Jun 2019 00:56:06 -0700
-Date: Tue, 25 Jun 2019 10:55:58 +0300
-From: Dan Carpenter <dan.carpenter@oracle.com>
-To: Stefan Wahren <wahrenst@gmx.net>
-Subject: Re: [PATCH] staging: bcm2835-camera: Restore return behavior of
- ctrl_set_bitrate()
-Message-ID: <20190625075558.GY28859@kadam>
-References: <1561414395-12518-1-git-send-email-wahrenst@gmx.net>
+ id 1hfgKk-0002eo-Gy; Tue, 25 Jun 2019 07:57:44 +0000
+Received: from lelv0265.itg.ti.com ([10.180.67.224])
+ by fllv0015.ext.ti.com (8.15.2/8.15.2) with ESMTP id x5P7vavA024342;
+ Tue, 25 Jun 2019 02:57:36 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
+ s=ti-com-17Q1; t=1561449456;
+ bh=Zqe/xzwynZqz0llmH9YDfghZsEJytMmd21yMBjUKFhQ=;
+ h=From:To:CC:Subject:Date;
+ b=tTJiWeeSmcHGYSLnLhywOVDW836rvDPrMcQ0I33ffGlQ+cZdg3IfmVXKEIjjIgVCZ
+ 9XhqpyZGne9IfeWE8m27ZYoI++LAxxhk1x/3oLSEAecgJz2kHpMR0nW3KHB1IP3OHU
+ 7ZJWtx0mbylQA/b7ktA0mJJ2ET1yS2DwSvu3cOWg=
+Received: from DFLE108.ent.ti.com (dfle108.ent.ti.com [10.64.6.29])
+ by lelv0265.itg.ti.com (8.15.2/8.15.2) with ESMTPS id x5P7vaHE079013
+ (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
+ Tue, 25 Jun 2019 02:57:36 -0500
+Received: from DFLE106.ent.ti.com (10.64.6.27) by DFLE108.ent.ti.com
+ (10.64.6.29) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5; Tue, 25
+ Jun 2019 02:57:36 -0500
+Received: from lelv0327.itg.ti.com (10.180.67.183) by DFLE106.ent.ti.com
+ (10.64.6.27) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5 via
+ Frontend Transport; Tue, 25 Jun 2019 02:57:36 -0500
+Received: from a0132425.india.ti.com (ileax41-snat.itg.ti.com [10.172.224.153])
+ by lelv0327.itg.ti.com (8.15.2/8.15.2) with ESMTP id x5P7vWTg105511;
+ Tue, 25 Jun 2019 02:57:32 -0500
+From: Vignesh Raghavendra <vigneshr@ti.com>
+To: Vignesh Raghavendra <vigneshr@ti.com>, Boris Brezillon
+ <bbrezillon@kernel.org>, Marek Vasut <marek.vasut@gmail.com>, Richard
+ Weinberger <richard@nod.at>, Rob Herring <robh+dt@kernel.org>
+Subject: [PATCH v8 0/5] MTD: Add Initial Hyperbus support
+Date: Tue, 25 Jun 2019 13:27:41 +0530
+Message-ID: <20190625075746.10439-1-vigneshr@ti.com>
+X-Mailer: git-send-email 2.22.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <1561414395-12518-1-git-send-email-wahrenst@gmx.net>
-User-Agent: Mutt/1.9.4 (2018-02-28)
-X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9298
- signatures=668687
-X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 suspectscore=0
- malwarescore=0
- phishscore=0 bulkscore=0 spamscore=0 mlxscore=0 mlxlogscore=999
- adultscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.0.1-1810050000 definitions=main-1906250065
-X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9298
- signatures=668687
-X-Proofpoint-Spam-Details: rule=notspam policy=default score=0
- priorityscore=1501 malwarescore=0
- suspectscore=0 phishscore=0 bulkscore=0 spamscore=0 clxscore=1011
- lowpriorityscore=0 mlxscore=0 impostorscore=0 mlxlogscore=999 adultscore=0
- classifier=spam adjust=0 reason=mlx scancount=1 engine=8.0.1-1810050000
- definitions=main-1906250065
+X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190625_005616_895732_AC8467EA 
-X-CRM114-Status: GOOD (  20.05  )
+X-CRM114-CacheID: sfid-20190625_005742_664763_63984CA8 
+X-CRM114-Status: GOOD (  15.93  )
 X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [156.151.31.86 listed in list.dnswl.org]
+ medium trust [198.47.19.141 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -96,8 +76,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
  -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -110,53 +88,127 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devel@driverdev.osuosl.org, Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Madhumitha Prabakaran <madhumithabiw@gmail.com>, Eric Anholt <eric@anholt.net>,
- linux-rpi-kernel@lists.infradead.org, linux-arm-kernel@lists.infradead.org
+Cc: devicetree@vger.kernel.org,
+ Sergei Shtylyov <sergei.shtylyov@cogentembedded.com>,
+ Tokunori Ikegami <ikegami.t@gmail.com>, linux-kernel@vger.kernel.org,
+ linux-mtd@lists.infradead.org, Miquel Raynal <miquel.raynal@bootlin.com>,
+ Mason Yang <masonccyang@mxic.com.tw>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Jun 25, 2019 at 12:13:15AM +0200, Stefan Wahren wrote:
-> The commit 52c4dfcead49 ("Staging: vc04_services: Cleanup in
-> ctrl_set_bitrate()") changed the return behavior of ctrl_set_bitrate().
-> This breaks probing of bcm2835-camera:
-> 
->     bcm2835-v4l2: mmal_init: failed to set all camera controls: -3
->     Cleanup: Destroy video encoder
->     Cleanup: Destroy image encoder
->     Cleanup: Destroy video render
->     Cleanup: Destroy camera
->     bcm2835-v4l2: bcm2835_mmal_probe: mmal init failed: -3
->     bcm2835-camera: probe of bcm2835-camera failed with error -3
-> 
-> So restore the old behavior and fix this issue.
-> 
-> Fixes: 52c4dfcead49 ("Staging: vc04_services: Cleanup in ctrl_set_bitrate()")
-> Signed-off-by: Stefan Wahren <wahrenst@gmx.net>
+Change log:
+Since v7:
+Fix up status register polling to support banked flashes in patch 1/5.
+Fix up comments by Sergei on documentation and style
 
-I feel like this papers over the issue.  It would be better to figure
-out why this is failing and fix it properly.  -3 is -ESRCH and when I
-grep for ESRCH I only see it used in the ioctl so that can't be it.
+Since v6:
+Fix up DT bindings for TI HBMC driver to move hyperbus node out of
+syscon
 
-I think it must be -MMAL_MSG_STATUS_EINVAL actually, but it comes from
-the firmware or something so we can't grep for it.
+Since v5:
+Fix up DT bindings comments for TI HBMC driver
+Move calibration sequence out of core into TI HBMC driver
 
-Can we do some more digging to find out why it's failing or otherwise
-we could add a comment.
+Since v4:
+Fix Rob's comments on dt-bindings of TI HBMC driver
 
-	/*
-	 * FIXME:  port_parameter_set() sometimes fails with
-	 * -MMAL_MSG_STATUS_EINVAL and we don't know why so we're
-	 * ignoring those errors for now.
-	 *
-	 */
-	return 0;
+Since v3:
+* Drop reading QRY string twice in hyperbus_calibrate()
+* Fix doc/misc comments on v3.
+
+Since RFC v2:
+* use map_word_xxx() for handling status register to support interleaved
+  flashes as suggested by Joakim Tjernlund <Joakim.Tjernlund@infinera.com>
+* Report error status/messages on erase/program failure by looking at
+  status register bits.
+* Add "cfi-flash" as fallback compatible for cypress,hyperflash
+* Add support to select between HyperBus and OSPI using mmio mux
+
+Since RFC v1:
+* Re-work Hyperbus core to provide separate struct representation for
+  controller and slave devices
+* Rename all files and func names to have hyperbus_ prefix
+* Provide default calibration routine for use by controller drivers
+* Fix up errors with patch spliting
+* Address comments by Sergei Shtylyov <sergei.shtylyov@cogentembedded.com>
+Cypress HyperBus is Low Signal Count, High Performance Double Data Rate Bus
+interface between a host system master and one or more slave interfaces.
+HyperBus is used to connect microprocessor, microcontroller, or ASIC
+devices with random access NOR flash memory(called HyperFlash) or
+self refresh DRAM(called HyperRAM).
+
+Its a 8-bit data bus (DQ[7:0]) with  Read-Write Data Strobe (RWDS)
+signal and either Single-ended clock(3.0V parts) or Differential clock
+(1.8V parts). It uses ChipSelect lines to select b/w multiple slaves.
+At bus level, it follows a separate protocol described in HyperBus
+specification[1].
+
+HyperFlash follows CFI AMD/Fujitsu Extended Command Set (0x0002) similar
+to that of existing parallel NORs. Since Hyperbus is x8 DDR bus,
+its equivalent to x16 parallel NOR flash wrt bits per clk. But Hyperbus
+operates at >166MHz frequencies.
+HyperRAM provides direct random read/write access to flash memory
+array.
+Framework is modelled along the lines of spi-nor framework. HyperBus
+memory controller(HBMC) drivers call hyperbus_register_device() to register a
+single HyperFlash device. HyperFlash core parses MMIO access
+information from DT, sets up the map_info struct, probes CFI flash and
+registers it with MTD framework.
+
+This is an early RFC, to know if its okay to use maps framework and existing
+CFI compliant flash support code to support Hyperflash
+Also would like input on different types of HBMC master IPs out there
+and their programming sequences.
+Would appreciate any testing/review.
+
+Tested on modified TI AM654 EVM with Cypress Hyperflash S26KS512 by
+creating a UBIFS partition and writing and reading files to it.
+Stress tested by writing/reading 16MB flash repeatedly at different
+offsets using dd commmand.
+
+HyperBus specification can be found at[1]
+HyperFlash datasheet can be found at[2]
+TI's HBMC controller details at[3]
+
+[1] https://www.cypress.com/file/213356/download
+[2] https://www.cypress.com/file/213346/download
+[3] http://www.ti.com/lit/ug/spruid7b/spruid7b.pdf
+    Table 12-5741. HyperFlash Access Sequence
 
 
-regards,
-dan carpenter
+Vignesh Raghavendra (5):
+  mtd: cfi_cmdset_0002: Add support for polling status register
+  dt-bindings: mtd: Add binding documentation for HyperFlash
+  mtd: Add support for HyperBus memory devices
+  dt-bindings: mtd: Add bindings for TI's AM654 HyperBus memory
+    controller
+  mtd: hyperbus: Add driver for TI's HyperBus memory controller
+
+ .../bindings/mtd/cypress,hyperflash.txt       |  13 ++
+ .../devicetree/bindings/mtd/ti,am654-hbmc.txt |  51 ++++++
+ MAINTAINERS                                   |   8 +
+ drivers/mtd/Kconfig                           |   2 +
+ drivers/mtd/Makefile                          |   1 +
+ drivers/mtd/chips/cfi_cmdset_0002.c           | 130 +++++++++++++--
+ drivers/mtd/hyperbus/Kconfig                  |  23 +++
+ drivers/mtd/hyperbus/Makefile                 |   4 +
+ drivers/mtd/hyperbus/hbmc-am654.c             | 141 ++++++++++++++++
+ drivers/mtd/hyperbus/hyperbus-core.c          | 154 ++++++++++++++++++
+ include/linux/mtd/cfi.h                       |   7 +
+ include/linux/mtd/hyperbus.h                  |  86 ++++++++++
+ 12 files changed, 603 insertions(+), 17 deletions(-)
+ create mode 100644 Documentation/devicetree/bindings/mtd/cypress,hyperflash.txt
+ create mode 100644 Documentation/devicetree/bindings/mtd/ti,am654-hbmc.txt
+ create mode 100644 drivers/mtd/hyperbus/Kconfig
+ create mode 100644 drivers/mtd/hyperbus/Makefile
+ create mode 100644 drivers/mtd/hyperbus/hbmc-am654.c
+ create mode 100644 drivers/mtd/hyperbus/hyperbus-core.c
+ create mode 100644 include/linux/mtd/hyperbus.h
+
+-- 
+2.22.0
 
 
 _______________________________________________
