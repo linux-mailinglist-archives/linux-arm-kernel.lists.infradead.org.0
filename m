@@ -2,71 +2,73 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9C87D556E6
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 25 Jun 2019 20:17:53 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 376CB556EC
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 25 Jun 2019 20:18:15 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=6ia4ofJ2uATQZXzk5fvi29+O9YDbhEBr7uNfuUG3kao=; b=D3HqHzFp+rBLFc
-	+uUeL1c9qEakTHALacPghPlNSvndoGCGt/RJm5HwLgHtJeMvnHeO2mu7p7C3y1q5Z79a2p7OLAWSO
-	kTl/aADMitbvDFiX9Imemz3NpNbkkMiugZXmravhtz4Xqr3PMA1l1vccPtpLUIABLlj1vZtCVzu8n
-	h+Cktt46AZagiObHiQhqZMfPJQoAbt42vMHNMIH4fEEG9jcqEOqVUQOmogCsEoga+hnv71t1U4xOo
-	E2u4q4sMHCp9GZSubk+NscSMzl7V7S8tb96CwqJLLLW5u5ycDQjxWg/v26P1X59CoQXDXDUTU2jn+
-	uUDjx3qwdzBz+RpNPreQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=h227uJFx6ZE4eZpxYXzK/Q0YVLuFJfU4uYqz/kQpYi4=; b=bb0NldTYcCD/QO
+	sq5pDCKns9Sm3hYGAediiCQl49YbSNLR1PNNu9krUZLqFA/Tc1pJWLv3XqCU3RxUnb0PayiMdB20d
+	ggr/f2h3PiWrFyu358r9/FSf8H/WJcvSdy//B/cp80YdDh9tk3Qj40CNmKZnO4vm+cbRc7pXxlpQR
+	iJj/P1TwlSXCnNa/KFN5didgY2XWYOiOBH8l3NVm89mLbnMkZiK1dt6HEfa0EDYCQhoTu06AtgpvK
+	WQD3KnLYYUI89yzNEMwBxgzb+LiUXXWR0oD/LZVP5S8/ZCQ7jtXpv2ty4DZWaiMNwTvI0+ktT9N0c
+	EmR+BRsh8SkCahggCmYg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hfq0o-0003gv-Nu; Tue, 25 Jun 2019 18:17:46 +0000
-Received: from mail-pl1-x641.google.com ([2607:f8b0:4864:20::641])
+	id 1hfq1D-000401-BF; Tue, 25 Jun 2019 18:18:11 +0000
+Received: from mail-pf1-x442.google.com ([2607:f8b0:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hfq0U-0003em-Ej; Tue, 25 Jun 2019 18:17:27 +0000
-Received: by mail-pl1-x641.google.com with SMTP id b7so9294167pls.6;
- Tue, 25 Jun 2019 11:17:25 -0700 (PDT)
+ id 1hfq0X-0003g6-Pa; Tue, 25 Jun 2019 18:17:31 +0000
+Received: by mail-pf1-x442.google.com with SMTP id i189so9886652pfg.10;
+ Tue, 25 Jun 2019 11:17:28 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=ic2sos3p2ZO51dPXYEpE88vNYNF9xpgqADXaFZWGMEA=;
- b=BtjPMi1+Roch459MDj3Oht2eS9e6nKl1QAR6lmeAee2jCJb7iKVK8kfRlDB1ZsZziM
- /VOV/m5RebeHOGoZHds8M1Y33qn6ZZ9xz4GyP5ATCD6q8YYgLZilB9XC6as/8dZHZDax
- I9IZRxdLrghDjbaLK29OTAcGO3vZoSs6f06t5PsNRZ9RwXYQAPfMuE4mxturp8tMw0Ke
- EdLggZl0UQ472RYIaY7S5eVQbqLpCbL9sHOyHfoprpiV7wd4xHPZa90Jm2SBcl1H70LC
- +gMKHt1UnjDkrzDTco17QZJV90nn8SaNevFW2+5Gyy3PoYuYkWsK1AMr3OxKMRNn8frd
- ABtg==
+ h=from:to:cc:subject:date:message-id:in-reply-to:references
+ :mime-version:content-transfer-encoding;
+ bh=Bbu2tK3sSakQNVnTXMl1WxahFU6YdysIhCNxY10qcCo=;
+ b=tKeM1nGfAFy82ijO53OzXbiMonpIclXTfbiFrjUIX6LNGP9WTd+3/aapkGSqfzAYZa
+ J3IRSfzOrSta/n7Jf8cHooKALNszdjpL81TLbuciwWNrhNzQ8GWxX1FS8JyMRq3ghoH1
+ iun0X3fs0/XpKbh9CuoDLNxhDYqhCVSQi2wewfn7K9qz3wEVll/Y7tD+X7XgHB5M6NQG
+ 2iQ9vqe0HFB5troq5IRVo1yUXXJjgcO5uSpyoIcy3xgbgSDVPJBpnjU9pJO1BRAqJ7Er
+ qkCdrF9gcVW3YhH8TcATTeo5uAOpc3mMiZdJzcUI5eEZnHXFpOGQs+JWAlgf5R8z/yli
+ o6FQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=ic2sos3p2ZO51dPXYEpE88vNYNF9xpgqADXaFZWGMEA=;
- b=fG2t6Ug5UIGe0xK1YSgMoSzinA+Yt8WrDukHQvAorFGCC4IcGDpGSNym7YZeaDgKU9
- YEAsKfkh3yNi24rFJ47EsP96jx/xZaakTJncsFh2RzyIn2EW3zpfmle0iCf9DxzCcXgV
- nyC8RO2XfiVguQd2SWNUp1zqQEcw5UF5ZUX9t+iDzA4zF24gPtSk65ef8pFUI1D31AcM
- vghVrgdm3zVURSeHnI1uiqa6GiemnCjWm6Gzrqa5pW9VLneMlDJp34Yt+bnd6vvAwefR
- u/qfvRakgXOocrOITp6d/JqrtRdchujbndonAesGCCUQHyt1fvwW4dqkqfr58caaVxF3
- Wt/g==
-X-Gm-Message-State: APjAAAUCluNLNSsJ/e1OM5Nx+m+S6RlzqdhxLwvER9QutAf/dcKfkB3x
- tYqTKQXgT3A8VY3MznRPkzY=
-X-Google-Smtp-Source: APXvYqzFgH6YNemAXMamssS24KzgeSF3SUtZouLUzp2jMdNUAptfS71nh+KiZb/gK5Cr/UGn9yaGjA==
-X-Received: by 2002:a17:902:22:: with SMTP id 31mr40001pla.15.1561486645099;
- Tue, 25 Jun 2019 11:17:25 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references:mime-version:content-transfer-encoding;
+ bh=Bbu2tK3sSakQNVnTXMl1WxahFU6YdysIhCNxY10qcCo=;
+ b=gtHSWK0918sykLq4tuNY40Ii6rPLlFi5cMQiP3HlantIRvPBsKe31VzxwL78m1RHY3
+ mI3DxAGh2jeth1bvW2AHZ/orRoWN6ADh2kFqql8TsxxDbpFS6DVUMzTq+SuimemYYJjl
+ 4lxsO0FkCWTHvswIxqjGhpMciD6PywT+yAle83k8AW/LtDw5WK5toyt7WLnJAkb2TBOw
+ yWOFBQujyZJdGfN4QuT7M3HVDBTY4DQumqyeXVqV0hak6dr/rXrNTZiRDUcj1YAl3oFv
+ p9nqegQIM6FAB23U3VflDADExmB+Exf9+2oxeMcprCOqBzQgvZ7OUk+c9/G4Uy56nGsZ
+ /4cQ==
+X-Gm-Message-State: APjAAAUzAcl/OQS8MHNt70zDqHVCMExaQdjR+f+9I+a9tCP5d/yVKZPl
+ Gs9yVEl1rDmXVT3AH2j16I0=
+X-Google-Smtp-Source: APXvYqy/6zI05cRtN3eini2aVDksTAmfLNCv+u3083Kd+IS7U9vzKapIqMvIz+7VpFR658J/vgZ5Xw==
+X-Received: by 2002:a63:3f48:: with SMTP id m69mr1507421pga.17.1561486648208; 
+ Tue, 25 Jun 2019 11:17:28 -0700 (PDT)
 Received: from localhost.localdomain ([122.163.71.137])
- by smtp.gmail.com with ESMTPSA id w7sm14042959pfb.117.2019.06.25.11.17.20
+ by smtp.gmail.com with ESMTPSA id w7sm14042959pfb.117.2019.06.25.11.17.25
  (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Tue, 25 Jun 2019 11:17:24 -0700 (PDT)
+ Tue, 25 Jun 2019 11:17:27 -0700 (PDT)
 From: Nishka Dasgupta <nishkadg.linux@gmail.com>
 To: eric@anholt.net, wahrenst@gmx.net, gregkh@linuxfoundation.org,
  linux-rpi-kernel@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
  devel@driverdev.osuosl.org
-Subject: [PATCH 1/9] staging: vc04_services: Remove function
- vchiu_queue_is_full()
-Date: Tue, 25 Jun 2019 23:47:01 +0530
-Message-Id: <20190625181710.2267-1-nishkadg.linux@gmail.com>
+Subject: [PATCH 2/9] staging: vc04_services: Remove function
+ vchiq_arm_allow_resume()
+Date: Tue, 25 Jun 2019 23:47:02 +0530
+Message-Id: <20190625181710.2267-2-nishkadg.linux@gmail.com>
 X-Mailer: git-send-email 2.19.1
+In-Reply-To: <20190625181710.2267-1-nishkadg.linux@gmail.com>
+References: <20190625181710.2267-1-nishkadg.linux@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190625_111726_497418_12582721 
-X-CRM114-Status: UNSURE (   6.51  )
+X-CRM114-CacheID: sfid-20190625_111730_339601_5C6389C1 
+X-CRM114-Status: UNSURE (   8.29  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -74,7 +76,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:641 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:442 listed in]
  [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider (nishkadg.linux[at]gmail.com)
@@ -104,43 +106,83 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Remove unused function vchiu_queue_is_full.
+Remove unused function vchiq_arm_allow_resume.
 Issue found with Coccinelle.
 
 Signed-off-by: Nishka Dasgupta <nishkadg.linux@gmail.com>
 ---
- .../staging/vc04_services/interface/vchiq_arm/vchiq_util.c   | 5 -----
- .../staging/vc04_services/interface/vchiq_arm/vchiq_util.h   | 1 -
- 2 files changed, 6 deletions(-)
+ .../interface/vchiq_arm/vchiq_arm.c           | 43 -------------------
+ .../interface/vchiq_arm/vchiq_arm.h           |  3 --
+ 2 files changed, 46 deletions(-)
 
-diff --git a/drivers/staging/vc04_services/interface/vchiq_arm/vchiq_util.c b/drivers/staging/vc04_services/interface/vchiq_arm/vchiq_util.c
-index 8ee85c5e6f77..5e6d3035dc05 100644
---- a/drivers/staging/vc04_services/interface/vchiq_arm/vchiq_util.c
-+++ b/drivers/staging/vc04_services/interface/vchiq_arm/vchiq_util.c
-@@ -39,11 +39,6 @@ int vchiu_queue_is_empty(struct vchiu_queue *queue)
- 	return queue->read == queue->write;
+diff --git a/drivers/staging/vc04_services/interface/vchiq_arm/vchiq_arm.c b/drivers/staging/vc04_services/interface/vchiq_arm/vchiq_arm.c
+index 9264a07cf160..bf7c1e2bce67 100644
+--- a/drivers/staging/vc04_services/interface/vchiq_arm/vchiq_arm.c
++++ b/drivers/staging/vc04_services/interface/vchiq_arm/vchiq_arm.c
+@@ -2883,49 +2883,6 @@ vchiq_check_suspend(struct vchiq_state *state)
+ 	vchiq_log_trace(vchiq_susp_log_level, "%s exit", __func__);
  }
  
--int vchiu_queue_is_full(struct vchiu_queue *queue)
+-int
+-vchiq_arm_allow_resume(struct vchiq_state *state)
 -{
--	return queue->write == queue->read + queue->size;
+-	struct vchiq_arm_state *arm_state = vchiq_platform_get_arm_state(state);
+-	int resume = 0;
+-	int ret = -1;
+-
+-	if (!arm_state)
+-		goto out;
+-
+-	vchiq_log_trace(vchiq_susp_log_level, "%s", __func__);
+-
+-	write_lock_bh(&arm_state->susp_res_lock);
+-	unblock_resume(arm_state);
+-	resume = vchiq_check_resume(state);
+-	write_unlock_bh(&arm_state->susp_res_lock);
+-
+-	if (resume) {
+-		if (wait_for_completion_interruptible(
+-			&arm_state->vc_resume_complete) < 0) {
+-			vchiq_log_error(vchiq_susp_log_level,
+-				"%s interrupted", __func__);
+-			/* failed, cannot accurately derive suspend
+-			 * state, so exit early. */
+-			goto out;
+-		}
+-	}
+-
+-	read_lock_bh(&arm_state->susp_res_lock);
+-	if (arm_state->vc_suspend_state == VC_SUSPEND_SUSPENDED) {
+-		vchiq_log_info(vchiq_susp_log_level,
+-				"%s: Videocore remains suspended", __func__);
+-	} else {
+-		vchiq_log_info(vchiq_susp_log_level,
+-				"%s: Videocore resumed", __func__);
+-		ret = 0;
+-	}
+-	read_unlock_bh(&arm_state->susp_res_lock);
+-out:
+-	vchiq_log_trace(vchiq_susp_log_level, "%s exit %d", __func__, ret);
+-	return ret;
 -}
 -
- void vchiu_queue_push(struct vchiu_queue *queue, struct vchiq_header *header)
- {
- 	if (!queue->initialized)
-diff --git a/drivers/staging/vc04_services/interface/vchiq_arm/vchiq_util.h b/drivers/staging/vc04_services/interface/vchiq_arm/vchiq_util.h
-index ee1459468171..f03a4250de0d 100644
---- a/drivers/staging/vc04_services/interface/vchiq_arm/vchiq_util.h
-+++ b/drivers/staging/vc04_services/interface/vchiq_arm/vchiq_util.h
-@@ -40,7 +40,6 @@ extern int  vchiu_queue_init(struct vchiu_queue *queue, int size);
- extern void vchiu_queue_delete(struct vchiu_queue *queue);
+ /* This function should be called with the write lock held */
+ int
+ vchiq_check_resume(struct vchiq_state *state)
+diff --git a/drivers/staging/vc04_services/interface/vchiq_arm/vchiq_arm.h b/drivers/staging/vc04_services/interface/vchiq_arm/vchiq_arm.h
+index c1d5a9d17071..61b15278c999 100644
+--- a/drivers/staging/vc04_services/interface/vchiq_arm/vchiq_arm.h
++++ b/drivers/staging/vc04_services/interface/vchiq_arm/vchiq_arm.h
+@@ -115,9 +115,6 @@ vchiq_arm_vcsuspend(struct vchiq_state *state);
+ extern VCHIQ_STATUS_T
+ vchiq_arm_force_suspend(struct vchiq_state *state);
  
- extern int vchiu_queue_is_empty(struct vchiu_queue *queue);
--extern int vchiu_queue_is_full(struct vchiu_queue *queue);
+-extern int
+-vchiq_arm_allow_resume(struct vchiq_state *state);
+-
+ extern VCHIQ_STATUS_T
+ vchiq_arm_vcresume(struct vchiq_state *state);
  
- extern void vchiu_queue_push(struct vchiu_queue *queue,
- 			     struct vchiq_header *header);
 -- 
 2.19.1
 
