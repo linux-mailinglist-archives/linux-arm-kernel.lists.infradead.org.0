@@ -2,61 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 51701554C4
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 25 Jun 2019 18:43:33 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6643A554C5
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 25 Jun 2019 18:43:58 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=2gWho1iQcNhOATeTqjXRrZ3CUhvjKHCZA0t9LKm1HxY=; b=S/6fEmEkr7T7cH
-	Me7Zf0/LYH7TrBW28107rWOqK8ZRjFUBR0Y2w/eulH5He7Y6pi94qQHnONjD7ZwPAudbCAKcK4hK0
-	erLSQn/l2aGCLG6cBw+MqSaPYE2Q2wN6c1QNLdpQaTrOTDaw7gP4arvKdZHew3jSDqmwxOHzEbj5/
-	S3XR9uKcIeqEf60xRGUaytCmiPNj5wRRRdnvxZjlEQkD6YDR9iIFSRVcmHJshjcY2+p/f1DoYuUcC
-	ogl26lQ3VY86yPL6YsLj1OKA2y2qJcPJpPB0/l4fLiOZwTwGNhBBSA3PlMWsXWtFbrRQv7h0lx37Q
-	LpQ7Yp6k6ZzHXnmmAzlw==;
+	List-Owner; bh=qlYDkhlj5l7xrcDB0omD6WRaggR2wRvQtm2doDUlvDQ=; b=Gu3Yby7J+XrAcz
+	OtT9EtAJuwkzECdDSXo9BA5cS5K7o5jqer2hMeYV3bZ1qoBfVwTCGWRziESqQBJj7PU9xFmSxBe10
+	fXkCYxRsicRD1fQdbrZ6JZITcmNMt7WI7f2NU2dwRVEg5kBdqY5gozqZVN7cAb15+fyAc5pX3gXpU
+	cA3jZXzwsa7f4ZQaDNsC9nCYjYY54PWVkNRIv6G71lpfD0kVswdNfiY0P5wl0iW1m6e5m3tudBSor
+	GN5enVuiJjLdZoA0MGq9HgRM8z7R3Y+E6fPJJA6kO9lpptPPL/RfZYvGgBcw5HmXQIkU+kTBorEPS
+	DJ/pyc6avOzMb1eiob1Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hfoXb-0007b2-FQ; Tue, 25 Jun 2019 16:43:31 +0000
-Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
+	id 1hfoXy-0007oX-B1; Tue, 25 Jun 2019 16:43:54 +0000
+Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hfoPT-0002Fx-Mf
+ id 1hfoPU-0002OF-8K
  for linux-arm-kernel@lists.infradead.org; Tue, 25 Jun 2019 16:35:11 +0000
-Received: by mail-wr1-x441.google.com with SMTP id k11so18663433wrl.1
+Received: by mail-wr1-x443.google.com with SMTP id x4so18611635wrt.6
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 25 Jun 2019 09:35:07 -0700 (PDT)
+ Tue, 25 Jun 2019 09:35:08 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=bgdev-pl.20150623.gappssmtp.com; s=20150623;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=bAOkVHO1BfkTnSJLTBWlqsTsKKDk8gdZ6nODPU4c1tE=;
- b=i50TzhxoE0EVWRZb7FuSgJwILA4rx2iPG77Mv3xcrrEJhVN4B/h7MPBBWVugqYxWp2
- z/toOghI0xFLzo4j20BFkcTCK+t9oS1ur5Zxjuv68/EUxdI7HLW8oC2Nj9IGNwbxlkcf
- ppV6VXclq/A8Z0b+pcsB0R3xp2T8dBZGYEgPFrzfJRHQCawfFi+1EpUaRPuEwp5oe/TE
- cjUFukQoM00ogBXYvTqt763tfq4G+xwbOAaEuus8bhR4jpNdbtNk1PP3kxzDeiAC6IY4
- zhd+wjbHvP1qPE3kwpdpje4Jp/GVei4mLQW7Kg6+P3xNN65ClIzjaWSbuQstQ63Hv5H+
- 570A==
+ bh=ga+YwIrD2LqYZ2tJvuqiZTtIXkFbIASL3x6BxdYUV7E=;
+ b=AHkej/B1mfm2h6OHO9LRjul+QcnubPRDTF056QLWkadd6YmPrnjIQ0undO3cGCLteJ
+ vDiXd6NaEvKkuA/Ov1EU6GibR2fq54JcogmaTLJSE1w8VxFhBCKMQa6nMSc7ama2AQUQ
+ MXjYRzIQXao10HPHfkljNhFskfJ1miN0PiAO2WXQdrS+ZTVMirEH1Q6Xpg47b+c9njcv
+ +AACxr8d7oedC2TVbLqVhCM7LVV6mcxDlsoJqTfbUea3qLJwtE8gHdguCFLj0gCiAbWC
+ v37fEvz+TIlhi8gACKPDc1wJUhIQBhzZpszZhnPvYhMiEv2bxIIzjLBufGN9GEE3sxzT
+ cfTA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=bAOkVHO1BfkTnSJLTBWlqsTsKKDk8gdZ6nODPU4c1tE=;
- b=C8MW+X4wd6t438RHFJGVbLL8YYbSMRia8dmkr9lTRmRkipO6OaVhetW02rCnksi3gb
- jH6iKw5dCsRLJu1fd7GtnTUjB1dXtI8j9QR4EboSSCbqasbvFRj24BtxnohDDsxd+4Sj
- XHoIA2we4R6s/1ODjRI32oc6ZzeiTQ3TfgeOQ5D3wprMqb2PkrqBKKYutPEEMwzY4pGT
- fqH5nqkcUoXF6BkTZn+q0Zmnot2EVJajAesdaZWwderBdOAdDmQUQUhduzWRDC0SioiM
- L2fT/HrwKF5dvvhu7JyjVk3I0LZfs1crAzar6MgBidSqcGw7tVBkW1EL1tAoReYax25i
- OytA==
-X-Gm-Message-State: APjAAAWwb/3G31IoJu6mZZs3D9BXseJmtqtbPcSVbdWHuHwJpz9MmQ/6
- kqZ8QZfav6FTEfR5W2vMdmAxVA==
-X-Google-Smtp-Source: APXvYqytytlRfo6YGBjwFJZaCuSVzWH7Bv4+NP+iZBeBXrfYOEHyoR/Ueaj3FUGfeHDYPIHfHNmD2A==
-X-Received: by 2002:adf:e691:: with SMTP id r17mr62365819wrm.67.1561480505225; 
- Tue, 25 Jun 2019 09:35:05 -0700 (PDT)
+ bh=ga+YwIrD2LqYZ2tJvuqiZTtIXkFbIASL3x6BxdYUV7E=;
+ b=Vnt0Ld++AZNAP+JcdNf/GhbG2d4/luCGbTM/VeRKqBR8G/tScP7zDf4Rasn9VesuUr
+ 8pt95rM501mkCshjINkDxKG2iW7IOKxLen1D1hJ8ncn6u8nEav0zicuLg58nEucjzECU
+ xbuIp8X1kIzn5iHFp05SiovDDIWxME9RGdpy/TIk3btwjsgyI9LdUme9cdTbteWdnhg+
+ ivq6Ky8pjIEJjVA0dfcXkCE0H7kv9tmUjNjMsGJsfMFQ+0159s2ufQ8F27YqHh7rSt00
+ 83tPWprOqkdIxcNwjk337F2nZ+dZk8PidmUbluRe7Pr6xB8cniN+50NgHbvIy8REQoxw
+ Y2pQ==
+X-Gm-Message-State: APjAAAVVJ79GTcWsc4gY5pvYE93dF0ewjLm4rEZjAysb7Og2+VMJnk9c
+ 9ieGO3Cwa+cWPqq2v24otB5Kvg==
+X-Google-Smtp-Source: APXvYqyvWx9JbKk03RcDjA3pShyMvYT0hK97AL2s1HrAwQ3kyP6xBm3hM8uqoOdedFI3inNXlGh+zw==
+X-Received: by 2002:a5d:528b:: with SMTP id c11mr299403wrv.25.1561480506602;
+ Tue, 25 Jun 2019 09:35:06 -0700 (PDT)
 Received: from debian-brgl.home ([2a01:cb1d:af:5b00:6d6c:8493:1ab5:dad7])
- by smtp.gmail.com with ESMTPSA id g8sm2683795wme.20.2019.06.25.09.35.04
+ by smtp.gmail.com with ESMTPSA id g8sm2683795wme.20.2019.06.25.09.35.05
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Tue, 25 Jun 2019 09:35:04 -0700 (PDT)
+ Tue, 25 Jun 2019 09:35:06 -0700 (PDT)
 From: Bartosz Golaszewski <brgl@bgdev.pl>
 To: Sekhar Nori <nsekhar@ti.com>, Kevin Hilman <khilman@kernel.org>,
  Lee Jones <lee.jones@linaro.org>,
@@ -65,23 +65,23 @@ To: Sekhar Nori <nsekhar@ti.com>, Kevin Hilman <khilman@kernel.org>,
  Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>,
  David Lechner <david@lechnology.com>,
  Linus Walleij <linus.walleij@linaro.org>
-Subject: [PATCH 11/12] fbdev: da8xx-fb: drop a redundant if
-Date: Tue, 25 Jun 2019 18:34:33 +0200
-Message-Id: <20190625163434.13620-12-brgl@bgdev.pl>
+Subject: [PATCH 12/12] fbdev: da8xx: use resource management for dma
+Date: Tue, 25 Jun 2019 18:34:34 +0200
+Message-Id: <20190625163434.13620-13-brgl@bgdev.pl>
 X-Mailer: git-send-email 2.21.0
 In-Reply-To: <20190625163434.13620-1-brgl@bgdev.pl>
 References: <20190625163434.13620-1-brgl@bgdev.pl>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190625_093509_196922_EA1C6176 
-X-CRM114-Status: GOOD (  14.89  )
+X-CRM114-CacheID: sfid-20190625_093509_196922_82E54B6E 
+X-CRM114-Status: GOOD (  13.39  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:441 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:443 listed in]
  [list.dnswl.org]
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -109,76 +109,92 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Bartosz Golaszewski <bgolaszewski@baylibre.com>
 
-The driver data is always set in probe. The remove() callback won't be
-called if probe failed which is the only way for it to be NULL. Remove
-the redundant if.
+Use managed variants of dma alloc functions in the da8xx fbdev driver.
 
 Signed-off-by: Bartosz Golaszewski <bgolaszewski@baylibre.com>
 ---
- drivers/video/fbdev/da8xx-fb.c | 43 ++++++++++++++++------------------
- 1 file changed, 20 insertions(+), 23 deletions(-)
+ drivers/video/fbdev/da8xx-fb.c | 32 ++++++++++----------------------
+ 1 file changed, 10 insertions(+), 22 deletions(-)
 
 diff --git a/drivers/video/fbdev/da8xx-fb.c b/drivers/video/fbdev/da8xx-fb.c
-index 4dda194d6b8f..6b11a8108108 100644
+index 6b11a8108108..22f79b3c2326 100644
 --- a/drivers/video/fbdev/da8xx-fb.c
 +++ b/drivers/video/fbdev/da8xx-fb.c
-@@ -1067,37 +1067,34 @@ static void lcd_da8xx_cpufreq_deregister(struct da8xx_fb_par *par)
- static int fb_remove(struct platform_device *dev)
- {
- 	struct fb_info *info = dev_get_drvdata(&dev->dev);
-+	struct da8xx_fb_par *par = info->par;
- 	int ret;
+@@ -1087,10 +1087,6 @@ static int fb_remove(struct platform_device *dev)
  
--	if (info) {
--		struct da8xx_fb_par *par = info->par;
+ 	unregister_framebuffer(info);
+ 	fb_dealloc_cmap(&info->cmap);
+-	dma_free_coherent(par->dev, PALETTE_SIZE, par->v_palette_base,
+-			  par->p_palette_base);
+-	dma_free_coherent(par->dev, par->vram_size, par->vram_virt,
+-			  par->vram_phys);
+ 	pm_runtime_put_sync(&dev->dev);
+ 	pm_runtime_disable(&dev->dev);
+ 	framebuffer_release(info);
+@@ -1428,10 +1424,10 @@ static int fb_probe(struct platform_device *device)
+ 	par->vram_size = roundup(par->vram_size/8, ulcm);
+ 	par->vram_size = par->vram_size * LCD_NUM_BUFFERS;
+ 
+-	par->vram_virt = dma_alloc_coherent(par->dev,
+-					    par->vram_size,
+-					    &par->vram_phys,
+-					    GFP_KERNEL | GFP_DMA);
++	par->vram_virt = dmam_alloc_coherent(par->dev,
++					     par->vram_size,
++					     &par->vram_phys,
++					     GFP_KERNEL | GFP_DMA);
+ 	if (!par->vram_virt) {
+ 		dev_err(&device->dev,
+ 			"GLCD: kmalloc for frame buffer failed\n");
+@@ -1449,20 +1445,20 @@ static int fb_probe(struct platform_device *device)
+ 		da8xx_fb_fix.line_length - 1;
+ 
+ 	/* allocate palette buffer */
+-	par->v_palette_base = dma_alloc_coherent(par->dev, PALETTE_SIZE,
+-						 &par->p_palette_base,
+-						 GFP_KERNEL | GFP_DMA);
++	par->v_palette_base = dmam_alloc_coherent(par->dev, PALETTE_SIZE,
++						  &par->p_palette_base,
++						  GFP_KERNEL | GFP_DMA);
+ 	if (!par->v_palette_base) {
+ 		dev_err(&device->dev,
+ 			"GLCD: kmalloc for palette buffer failed\n");
+ 		ret = -EINVAL;
+-		goto err_release_fb_mem;
++		goto err_release_fb;
+ 	}
+ 
+ 	par->irq = platform_get_irq(device, 0);
+ 	if (par->irq < 0) {
+ 		ret = -ENOENT;
+-		goto err_release_pl_mem;
++		goto err_release_fb;
+ 	}
+ 
+ 	da8xx_fb_var.grayscale =
+@@ -1480,7 +1476,7 @@ static int fb_probe(struct platform_device *device)
+ 
+ 	ret = fb_alloc_cmap(&da8xx_fb_info->cmap, PALETTE_SIZE, 0);
+ 	if (ret)
+-		goto err_release_pl_mem;
++		goto err_release_fb;
+ 	da8xx_fb_info->cmap.len = par->palette_sz;
+ 
+ 	/* initialize var_screeninfo */
+@@ -1534,14 +1530,6 @@ static int fb_probe(struct platform_device *device)
+ err_dealloc_cmap:
+ 	fb_dealloc_cmap(&da8xx_fb_info->cmap);
+ 
+-err_release_pl_mem:
+-	dma_free_coherent(par->dev, PALETTE_SIZE, par->v_palette_base,
+-			  par->p_palette_base);
 -
- #ifdef CONFIG_CPU_FREQ
--		lcd_da8xx_cpufreq_deregister(par);
-+	lcd_da8xx_cpufreq_deregister(par);
- #endif
--		if (par->lcd_supply) {
--			ret = regulator_disable(par->lcd_supply);
--			if (ret)
--				return ret;
--		}
-+	if (par->lcd_supply) {
-+		ret = regulator_disable(par->lcd_supply);
-+		if (ret)
-+			return ret;
-+	}
- 
--		lcd_disable_raster(DA8XX_FRAME_WAIT);
--		lcdc_write(0, LCD_RASTER_CTRL_REG);
-+	lcd_disable_raster(DA8XX_FRAME_WAIT);
-+	lcdc_write(0, LCD_RASTER_CTRL_REG);
- 
--		/* disable DMA  */
--		lcdc_write(0, LCD_DMA_CTRL_REG);
-+	/* disable DMA  */
-+	lcdc_write(0, LCD_DMA_CTRL_REG);
- 
--		unregister_framebuffer(info);
--		fb_dealloc_cmap(&info->cmap);
--		dma_free_coherent(par->dev, PALETTE_SIZE, par->v_palette_base,
--				  par->p_palette_base);
--		dma_free_coherent(par->dev, par->vram_size, par->vram_virt,
--				  par->vram_phys);
--		pm_runtime_put_sync(&dev->dev);
--		pm_runtime_disable(&dev->dev);
--		framebuffer_release(info);
-+	unregister_framebuffer(info);
-+	fb_dealloc_cmap(&info->cmap);
-+	dma_free_coherent(par->dev, PALETTE_SIZE, par->v_palette_base,
-+			  par->p_palette_base);
-+	dma_free_coherent(par->dev, par->vram_size, par->vram_virt,
-+			  par->vram_phys);
-+	pm_runtime_put_sync(&dev->dev);
-+	pm_runtime_disable(&dev->dev);
-+	framebuffer_release(info);
- 
--	}
- 	return 0;
- }
+-err_release_fb_mem:
+-	dma_free_coherent(par->dev, par->vram_size, par->vram_virt,
+-		          par->vram_phys);
+-
+ err_release_fb:
+ 	framebuffer_release(da8xx_fb_info);
  
 -- 
 2.21.0
