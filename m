@@ -2,59 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 15E2952952
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 25 Jun 2019 12:23:56 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9E53F52960
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 25 Jun 2019 12:25:17 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-ID:To:Subject
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=Cjg3HuQ1JpgdAXFQfHuLB20yJP47zHIx8z5xap9sbWg=; b=ixz0Z6E7bdCkpN
-	e3GXbRw4j6Hv5pbzhHOsT97T5Wn5o9QqxZZfwDpctLPXtNY9isfP4GwRBem8Pokm3l73l4H6JSqyz
-	StvMMff9YULfYCVLF7TVZqKqBwofJ6hbdFvBSxqsn6kgrtqDMGS6ZfvNg5NzDFB/F+LvkoC70CC/v
-	1G/m2GYKoLzfCPl5gh88ZtZ2VJKfnXiIGYqd6n8/o+Ewrzf6wCFG8PDyKLxfj0W2je4kI9ztAulw5
-	y7yPxA62H6e7p1eUqQ6SLhy5+/obDfGVNPcT55CEHDUuVCWDUVl3qrDyQDO2eQistSxnpuEvSas6K
-	NLY8DmT6iVmmqVgt0+qQ==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=w+3Sfo+rgs/fbZvLklOMzoJcpsKxq4uV5zI94tScih0=; b=o14q/pvD8fKzoU4MCvouZsZkhZ
+	UgIpaJ3G/0JsCtgfx2wbSptmNL+zkf0U6j55PcaWbhwWphbU/7e1tNsLKgByMI9zTuWS2f9qbZD14
+	jelfdYM8mlcUyzmJQ+2sCIez5OUAhGkot/tG75OAnx8Wq4rJ2WMQz+v5yq+VMurQIKfRI6OsHVueR
+	OLozN457irYJg1G8q9ZWpU6p8ITsQPoZU2+lR80vdATMT4wyOG1t9cFcS5utmw7l1F0eBzmSePQYw
+	7vO4lkRKstpCXQe5/qsB+rsUogUBPPbgoUNyk9QZvnvz14jAbxcxoMuMoeLAzsPuw+J8bfjChqSVA
+	nRjQa/yg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hficB-0002Ix-Hl; Tue, 25 Jun 2019 10:23:51 +0000
-Received: from lhrrgout.huawei.com ([185.176.76.210] helo=huawei.com)
+	id 1hfidU-0002eD-Rx; Tue, 25 Jun 2019 10:25:12 +0000
+Received: from bhuna.collabora.co.uk ([46.235.227.227])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hfibx-0002Hq-0V
- for linux-arm-kernel@lists.infradead.org; Tue, 25 Jun 2019 10:23:38 +0000
-Received: from LHREML712-CAH.china.huawei.com (unknown [172.18.7.106])
- by Forcepoint Email with ESMTP id 8453260D02D8B346C6FA;
- Tue, 25 Jun 2019 11:23:29 +0100 (IST)
-Received: from [127.0.0.1] (10.202.227.157) by LHREML712-CAH.china.huawei.com
- (10.201.108.35) with Microsoft SMTP Server id 14.3.408.0;
- Tue, 25 Jun 2019 11:23:22 +0100
-From: Wei Xu <xuwei5@hisilicon.com>
-Subject: [GIT PULL] Hisilicon fixes for v5.2
-To: <arm@kernel.org>, linux-arm-kernel <linux-arm-kernel@lists.infradead.org>, 
- Olof Johansson <olof@lixom.net>, <arnd@arndb.de>
-Message-ID: <b89ef8f0-d102-7f78-f373-cbcc7faddee3@hisilicon.com>
-Date: Tue, 25 Jun 2019 11:23:21 +0100
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:60.0) Gecko/20100101
- Thunderbird/60.4.0
-MIME-Version: 1.0
-Content-Language: en-US
-X-Originating-IP: [10.202.227.157]
-X-CFilter-Loop: Reflected
+ id 1hfid7-0002d7-Bg
+ for linux-arm-kernel@lists.infradead.org; Tue, 25 Jun 2019 10:24:50 +0000
+Received: from [127.0.0.1] (localhost [127.0.0.1])
+ (Authenticated sender: andrzej.p) with ESMTPSA id 7C869288DC0
+From: Andrzej Pietrasiewicz <andrzej.p@collabora.com>
+To: dri-devel@lists.freedesktop.org
+Subject: [PATCH v2 0/2] Associate ddc adapters with connectors
+Date: Tue, 25 Jun 2019 12:24:39 +0200
+Message-Id: <cover.1561458051.git.andrzej.p@collabora.com>
+X-Mailer: git-send-email 2.17.1
+In-Reply-To: <20190625101655.n246vbwtupb4eoyz@shell.armlinux.org.uk>
+References: <20190625101655.n246vbwtupb4eoyz@shell.armlinux.org.uk>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190625_032337_202429_E18163BD 
-X-CRM114-Status: GOOD (  12.04  )
-X-Spam-Score: -2.1 (--)
+X-CRM114-CacheID: sfid-20190625_032449_529282_1B8771F1 
+X-CRM114-Status: GOOD (  10.69  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.1 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [185.176.76.210 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [46.235.227.227 listed in list.dnswl.org]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -66,64 +59,60 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Salil Mehta <salil.mehta@huawei.com>, jinying@hisilicon.com,
- Tangkunshan <tangkunshan@huawei.com>, linux-pci@vger.kernel.org,
- John Garry <john.garry@huawei.com>, rjw@rjwysocki.net, linuxarm@huawei.com,
- Shameerali Kolothum Thodi <shameerali.kolothum.thodi@huawei.com>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- huangdaode <huangdaode@hisilicon.com>, "xuwei \(O\)" <xuwei5@huawei.com>,
- Jonathan Cameron <Jonathan.Cameron@huawei.com>, bhelgaas@google.com,
- "Liguozhu \(Kenneth\)" <liguozhu@hisilicon.com>,
- Zhangyi ac <zhangyi.ac@huawei.com>, Shiju Jose <shiju.jose@huawei.com>
+Cc: linux-samsung-soc@vger.kernel.org, Joonyoung Shim <jy0922.shim@samsung.com>,
+ Maxime Ripard <maxime.ripard@bootlin.com>,
+ Seung-Woo Kim <sw0312.kim@samsung.com>,
+ Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
+ linux-kernel@vger.kernel.org, Krzysztof Kozlowski <krzk@kernel.org>,
+ Inki Dae <inki.dae@samsung.com>, David Airlie <airlied@linux.ie>,
+ Kyungmin Park <kyungmin.park@samsung.com>, Kukjin Kim <kgene@kernel.org>,
+ Daniel Vetter <daniel@ffwll.ch>, kernel@collabora.com,
+ Sean Paul <sean@poorly.run>, linux-arm-kernel@lists.infradead.org,
+ m.szyprowski@samsung.com
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi ARM-SoC team,
+It is difficult for a user to know which of the i2c adapters is for which
+drm connector. This series addresses this problem.
 
-Please consider to pull the following changes.
-Thanks!
+The idea is to have a symbolic link in connector's sysfs directory, e.g.:
 
-Best Regards,
-Wei
+ls -l /sys/class/drm/card0-HDMI-A-1/ddc
+lrwxrwxrwx 1 root root 0 Jun 24 10:42 /sys/class/drm/card0-HDMI-A-1/ddc \
+	-> ../../../../soc/13880000.i2c/i2c-2
 
----
+The user then knows that their card0-HDMI-A-1 uses i2c-2 and can e.g. run
+ddcutil:
 
-The following changes since commit a188339ca5a396acc588e5851ed7e19f66b0ebd9:
+ddcutil -b 2 getvcp 0x10
+VCP code 0x10 (Brightness                    ): current value =    90, max value =   100
 
-  Linux 5.2-rc1 (2019-05-19 15:47:09 -0700)
+The first patch in the series adds struct i2c_adapter pointer to struct
+drm_connector. If the field is used by a particular driver, then an
+appropriate symbolic link is created by the generic code, which is also added
+by this patch.
 
-are available in the Git repository at:
+The second patch is an example of how to convert a driver to this new scheme.
 
-  git://github.com/hisilicon/linux-hisi.git tags/hisi-fixes-for-5.2
+v1..v2:
 
-for you to fetch changes up to 07c811af1c00d7b4212eac86900b023b6405a954:
+- used fixed name "ddc" for the symbolic link in order to make it easy for
+userspace to find the i2c adapter
 
-  lib: logic_pio: Enforce LOGIC_PIO_INDIRECT region ops are set at registration (2019-06-25 09:40:42 +0100)
+Andrzej Pietrasiewicz (2):
+  drm: Include ddc adapter pointer in struct drm_connector
+  drm/exynos: Provide ddc symlink in connector's sysfs
 
-----------------------------------------------------------------
-Hisilicon fixes for v5.2-rc
+ drivers/gpu/drm/drm_sysfs.c          |  7 +++++++
+ drivers/gpu/drm/exynos/exynos_hdmi.c | 11 +++++------
+ include/drm/drm_connector.h          | 11 +++++++++++
+ 3 files changed, 23 insertions(+), 6 deletions(-)
 
-- fixed RCU usage in logical PIO
-- Added a function to unregister a logical PIO range in logical PIO
-  to support the fixes in the hisi-lpc driver
-- fixed and optimized hisi-lpc driver to avoid potential use-after-free
-  and driver unbind crash
-
-----------------------------------------------------------------
-John Garry (6):
-      lib: logic_pio: Fix RCU usage
-      lib: logic_pio: Avoid possible overlap for unregistering regions
-      lib: logic_pio: Add logic_pio_unregister_range()
-      bus: hisi_lpc: Unregister logical PIO range to avoid potential use-after-free
-      bus: hisi_lpc: Add .remove method to avoid driver unbind crash
-      lib: logic_pio: Enforce LOGIC_PIO_INDIRECT region ops are set at registration
-
- drivers/bus/hisi_lpc.c    | 43 ++++++++++++++++++++----
- include/linux/logic_pio.h |  1 +
- lib/logic_pio.c           | 86 +++++++++++++++++++++++++++++++++--------------
- 3 files changed, 99 insertions(+), 31 deletions(-)
+-- 
+2.17.1
 
 
 _______________________________________________
