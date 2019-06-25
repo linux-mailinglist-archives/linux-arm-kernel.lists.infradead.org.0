@@ -2,84 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F033C54ECB
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 25 Jun 2019 14:27:11 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9C2E454ED5
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 25 Jun 2019 14:28:53 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=uTRKYREMvktbPWO7WF8BaOhASf95SbjjQcDihfMM/Nw=; b=S4HZO6Ln3KthVY
-	G36VVFpWsSdZsx4LrwxudyyRiFkVCJD6vmiTLyE6ErG90EY1lm943XEmiWkzossOz6mWeomwpnHCB
-	fwDzzatsvPJzc0qJ9rSAaE7DJdG/c5mNEAjEVvJk51bTotS4DNw7/DmkJ3QiEJvkQdpovR2tfLphB
-	7Z/4JgZInyCuJjIdvEwDkWzw9MnU8JBC6uyMjajdou0IAP261NxWd05rV4gjywSgE2Css5o6wWffK
-	9L6ggJOLgC8EI+tu6kZ69JVmVzzxZ7U9D6oIzdPrMrvtT9bzrFvzLzxWOxiIrw/vkAoLzm2x+aL8E
-	TAYSIAYrpSCALDxEjY4A==;
+	List-Owner; bh=64iDz5z8fanVHk4xOowh+TgIhSPOUIXJC5xVr3iMC3A=; b=P6d2kd0CTvXLQP
+	gQegpoJVBy3LFfA80g3iIHm6nPSqUz4mRSr7uw2zdiC+nmcyCUc8nW45yyY825/Gt2hzwMbY+CyDk
+	cabUQqUpDFoxD4xKuJ8bgID6WtgEHoXBfxMnG2fKde5KsNXev+jXQ8ACMoQC8FbhrBx76kavg/V+A
+	7OvWbX2wa8DE/sP80YgcCKFvEQ4xI0HcLgCrhV+DLFMH0MEhjTaBpHUghh/gpP4Brjncp27t1yJo+
+	jWyZtMk670TAUgoOm7osyhZbc24+RfqsAA6IJ7QMXsC3zvVTYvPhAjWyioRHdIiTqZGa/zD1Jk0uX
+	0c4Pzc7hz2ppVWpNBYYw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hfkXT-0000GD-KL; Tue, 25 Jun 2019 12:27:07 +0000
-Received: from mail-lj1-x244.google.com ([2a00:1450:4864:20::244])
+	id 1hfkZ8-0001BT-9L; Tue, 25 Jun 2019 12:28:50 +0000
+Received: from verein.lst.de ([213.95.11.211] helo=newverein.lst.de)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hfkXK-0000Fj-KK
- for linux-arm-kernel@lists.infradead.org; Tue, 25 Jun 2019 12:27:00 +0000
-Received: by mail-lj1-x244.google.com with SMTP id h10so16086934ljg.0
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 25 Jun 2019 05:26:58 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=jkM0/+Y2mDTWRWvyb1EfYEosGBa2XCe1MpHMrOCqACs=;
- b=gjRocc0M0csOsxcltg1nkQWWzkjs3PSER+yR2O1GOwKo2FVeeoBS8PgxAD1E6mjPxY
- LLT3xmGdPMDMbbTnk6hBta7ypvxPkY6YPvTpZ+01Z0y098PfPKQ/+49XGlm2WDmMh5tl
- D1coqelf7c3PUCElzY3sJ9LOc4F3XRV8vFhFCXIBISTf3Zg5DyOBweRq306XDmxj3zbr
- QFf+mbnJOyKWRpw7ox/wP9s7TnI3bxPYYM/t6l1xHEx/ARZvPVDZZXiS28HhVjokMT8L
- C/AmhzogK4YVADlvOLp6zZpxSrK0oXTk2Wyo8ngs/zRfpv9qxe/Ofch61mG2cQ8oZDX6
- ZJPQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=jkM0/+Y2mDTWRWvyb1EfYEosGBa2XCe1MpHMrOCqACs=;
- b=nXQekqYsYfNoEz5fVJtDUDwPtJLNp4Sc8oqA0ESQ4rhziJnxwYW4vLT/I26TaLDLVn
- OCF7b6RcjEA78mAOqeGluQJ+A4uw2vragAqfYX1S+hVvcKzSQ8AW3gF8VZv+9Z6g4nHk
- TSt9K/q78o44eUVJobQcrvYuskIQ4Pssudoxgv+9W6TKWMo4ISRG2Ah7KhjvRY4y8QPu
- yehMaC8E4xuxDhtbtmkqzWUFFgUWY00QIrQtSYFUGermHd96Po6LriJcbQxL9otpKs8k
- +tNdUADJ6j8UXdVm9TzqzHhCXuZVrKHzA+69/n6nVPBvNGxWn10d4goSvmkjtMLjW6HA
- xnng==
-X-Gm-Message-State: APjAAAXsBKAb3VlZZMR+reu6vqD1phMtM52qeV2SHZaAllqCjmUtlc6S
- eilHOloSBzAZyFeK1BkhsLWpD/vdjmb6OdtD692E3Q==
-X-Google-Smtp-Source: APXvYqwqmW7K+YRAv/jeZfMAYfAGHtHSP+nnNJ4VnkYeEMfCpom4R1Lx1FjpN+hjQApZV+HFHvgf/yn0v6vmuNYbGmo=
-X-Received: by 2002:a2e:a0cf:: with SMTP id f15mr9060553ljm.180.1561465617100; 
- Tue, 25 Jun 2019 05:26:57 -0700 (PDT)
+ id 1hfkYy-0001Az-FU; Tue, 25 Jun 2019 12:28:41 +0000
+Received: by newverein.lst.de (Postfix, from userid 2407)
+ id 02DC568B05; Tue, 25 Jun 2019 14:28:09 +0200 (CEST)
+Date: Tue, 25 Jun 2019 14:28:08 +0200
+From: Christoph Hellwig <hch@lst.de>
+To: Helge Deller <deller@gmx.de>
+Subject: Re: [PATCH 5/7] dma-direct: handle DMA_ATTR_NON_CONSISTENT in
+ common code
+Message-ID: <20190625122808.GB4421@lst.de>
+References: <20190614144431.21760-1-hch@lst.de>
+ <20190614144431.21760-6-hch@lst.de>
+ <3eb32e0b-5aa4-fe1e-e581-038750e11cef@gmx.de>
 MIME-Version: 1.0
-References: <20190617215458.32688-1-chris.packham@alliedtelesis.co.nz>
- <20190617215458.32688-4-chris.packham@alliedtelesis.co.nz>
-In-Reply-To: <20190617215458.32688-4-chris.packham@alliedtelesis.co.nz>
-From: Linus Walleij <linus.walleij@linaro.org>
-Date: Tue, 25 Jun 2019 14:26:45 +0200
-Message-ID: <CACRpkdbSS18us3o=v7ki_=8cLXYjfDd8q321xMCounXPh11GAQ@mail.gmail.com>
-Subject: Re: [PATCH v2 3/4] pinctrl: mvebu: Add support for MV98DX1135
-To: Chris Packham <chris.packham@alliedtelesis.co.nz>
+Content-Disposition: inline
+In-Reply-To: <3eb32e0b-5aa4-fe1e-e581-038750e11cef@gmx.de>
+User-Agent: Mutt/1.5.17 (2007-11-01)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190625_052658_673558_2AA20C88 
-X-CRM114-Status: GOOD (  10.76  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190625_052840_667179_CEA963E7 
+X-CRM114-Status: UNSURE (   8.47  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:244 listed in]
- [list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ no trust [213.95.11.211 listed in list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -91,38 +61,35 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Andrew Lunn <andrew@lunn.ch>,
- Jason Cooper <jason@lakedaemon.net>,
- "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
- <devicetree@vger.kernel.org>, Stephen Boyd <sboyd@kernel.org>,
- Michael Turquette <mturquette@baylibre.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- linux-clk <linux-clk@vger.kernel.org>,
- "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
- Rob Herring <robh+dt@kernel.org>,
- Gregory Clement <gregory.clement@bootlin.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Sebastian Hesselbarth <sebastian.hesselbarth@gmail.com>
+Cc: Jonas Bonn <jonas@southpole.se>, Vladimir Murzin <vladimir.murzin@arm.com>,
+ linux-parisc@vger.kernel.org, Vineet Gupta <vgupta@synopsys.com>,
+ linux-kernel@vger.kernel.org,
+ Stefan Kristiansson <stefan.kristiansson@saunalahti.fi>,
+ iommu@lists.linux-foundation.org, openrisc@lists.librecores.org,
+ Stafford Horne <shorne@gmail.com>, linux-snps-arc@lists.infradead.org,
+ Christoph Hellwig <hch@lst.de>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Jun 17, 2019 at 11:55 PM Chris Packham
-<chris.packham@alliedtelesis.co.nz> wrote:
+On Tue, Jun 25, 2019 at 02:23:45PM +0200, Helge Deller wrote:
+> On 14.06.19 16:44, Christoph Hellwig wrote:
+> > Only call into arch_dma_alloc if we require an uncached mapping,
+> > and remove the parisc code manually doing normal cached
+> > DMA_ATTR_NON_CONSISTENT allocations.
+> >
+> > Signed-off-by: Christoph Hellwig <hch@lst.de>
+> 
+> Acked-by: Helge Deller <deller@gmx.de> # parisc
+> 
+> Boot-tested 32-bit kernel on PCX-L and PCX-W2 machines (although
+> the patches don't cleanly apply any longer against git head).
 
-> The 98DX1135 is a switch chip with an integrated CPU. This is similar to
-> the 98DX4122 except the MPP assignments differ.
->
-> Signed-off-by: Chris Packham <chris.packham@alliedtelesis.co.nz>
-> Reviewed-by: Andrew Lunn <andrew@lunn.ch>
+The series was against the dma-mapping tree, which might have diverged
+a bit already.
 
-Patch applied.
-I just assume this one has no dependency on the clock patches
-so I can merge it separately.
-
-Yours,
-Linus Walleij
+Thanks for testing!
 
 _______________________________________________
 linux-arm-kernel mailing list
