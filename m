@@ -2,80 +2,64 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8259055ABA
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 26 Jun 2019 00:13:24 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7DECC55ADE
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 26 Jun 2019 00:15:20 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:Subject:From:To:
+	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Y3E64nafetBEKb/S5C2bv/3RJXca7GTAtSoDqIBhoJM=; b=QUu0iGEelX85d4
-	pYkA6vSv/TBCpV4K0j5eVSpJyky0yqjf7qCs2Jm1qomnO8M+l8hvSk4Q6XU2CuQQE74+ylaV8xxEX
-	nCnMVoWz/QzjD0o/xNnw6zu997H4G5tcGukf/vVG3zIWmXjTGvVsywJRRttQUYgoMscou+onx4npi
-	GLy6wqhwPdcd/SNmDYTVowDuT/gVSFApc63wmYPbqHVTrj5QMgIjkRZUgjbP0PgEk6NUSgoi17Oun
-	5vb7r3k+CrhU99Numbdyp91vV/M8Dyi/w4rU12O1SHYEvSpZZD5x52uA+BtcLuOhR/DSTEUyJwhrx
-	T1bURB/nCRJx1y5QfHjw==;
+	List-Owner; bh=EHZratylrTfOp7t9l/j37RBKioDfbDhC5Wlv3p6nyE0=; b=Vd/RmYZKAlWLRH
+	Ae+mK+GdgY+tw+ypvqM6aYcXV2LKGsMNlf7+OFX5+z9v8K9lG2nSyPNDreKJVuM7id6BnFZxlUIPq
+	cd/hS5jf9KDBx6EoFBzZ7lmGj8mEnXcTh6+V1eMJLf3Q7HQUbZgtNXQ/Uc/lW1lNr+6C2O/4NM0yc
+	iF8HScpzxMvl1TS2mtIITRUrtbBa6W8iZR/Qz0AsuIiMkjpsABVX88lpTWCQLifZ7A0gu6bNfHLkn
+	uJ+A8+2B41uLTdbe9jOVxSfZefY6j1IGuM0B0ayYiBGOMb8C34brk+MxJss5eVk9gY7uESAthX0ua
+	BX0m5DYLXSfzwvCFTNYQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hftgo-0008CK-SK; Tue, 25 Jun 2019 22:13:23 +0000
-Received: from mail-vs1-xe42.google.com ([2607:f8b0:4864:20::e42])
+	id 1hftia-0000Sq-NT; Tue, 25 Jun 2019 22:15:13 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hftgV-0008BN-IY
- for linux-arm-kernel@lists.infradead.org; Tue, 25 Jun 2019 22:13:05 +0000
-Received: by mail-vs1-xe42.google.com with SMTP id 2so241729vso.8
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 25 Jun 2019 15:13:03 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=3n+LcMejLmcA2HmAuYiDTQTe/hLh9m1gb0zWqdGsK68=;
- b=VZCpcSruMkBN/fSuTzWYVVaGnaXStuxDTlxa6KFFowmHSW6v2Kp5xf+pb8sCdtaNmI
- xWDUgTBPVJTm3UOzht8hRhzYr5tvq5wbDau9K9ekcL7zkkOkPO6YsM415uZM6T3vh/XA
- fGfPjTr6Fy2AgIjssn8ZMUzqkRDozC0cHm7b8=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=3n+LcMejLmcA2HmAuYiDTQTe/hLh9m1gb0zWqdGsK68=;
- b=DDVnflG40IFgZ0O8N7f3WssRPADxNdQrzAD6mCFzNHZ9QMuqLq6sm031h2ypdf+ioJ
- 86c3zkJmmIewywUpWeI41+ZHL656ICqOgOD66W52mMfwrEI6/PGSnMgMJgDlvoDjhgxj
- noGOTCLAgsfyadLrFqvord4UjcU+N1RvihQIWpzIyUE/B7w5UTlJ4AizPUsNMxltzpN4
- UT+iFzRM++1yey1Yn2Xf+ljNxcS1vEG7j50oTeFoo04xreX7UXOyNJ54BICyb6d6QPNU
- WksO77fXxG2Yct+1v/L5tgIy4wvesq8hRYDPZYTygEqF0lhRs3LozFXe9ZIIa+Ingdjc
- OAzA==
-X-Gm-Message-State: APjAAAXZCYzQ3lXMKIlFNCRhjolEbii1TOmy0uxX/zIPluuuzkFiWk8Z
- fKhYY/C9Z9TgWa8cULslk6Yr5mrDup86IdSSS1Nmuw==
-X-Google-Smtp-Source: APXvYqxAFcpueCkXxA4fX5ZdmVpn9ubMtxiNatLRjWu9UrGeHKopzC5JOp9YWWvfIyG8W3lvQ5C/O8BukWSbyTUXEmY=
-X-Received: by 2002:a67:cd9a:: with SMTP id r26mr780862vsl.152.1561500782182; 
- Tue, 25 Jun 2019 15:13:02 -0700 (PDT)
+ id 1hfthg-0000Rs-6o; Tue, 25 Jun 2019 22:14:17 +0000
+Received: from kernel.org (unknown [104.132.0.74])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id B0DC22086D;
+ Tue, 25 Jun 2019 22:14:15 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1561500855;
+ bh=ZcG6s2SVVPlQMCLBl239NuNMjuljQYUwEP8YAEKAtsQ=;
+ h=In-Reply-To:References:To:From:Subject:Cc:Date:From;
+ b=Ydzac1ENQGs8JHN5EL5E+CkJH82B6XZ3c9ps/ajN91KLrj3uAj/+VpNZmZCdy27gF
+ j+kmQ0rJLpj2ZbPXomZ68FzknKOIshM5pYbIqyrdhTjjiWWhao81hbRMTErmFENX0n
+ gDVC1TZk2QIFCy7IUZZGjEqeE/telP1NRjhfAJ2M=
 MIME-Version: 1.0
-References: <20190622034105.188454-1-dbasehore@chromium.org>
- <20190622034105.188454-2-dbasehore@chromium.org>
- <20190624203632.GA12316@ravnborg.org>
-In-Reply-To: <20190624203632.GA12316@ravnborg.org>
-From: "dbasehore ." <dbasehore@chromium.org>
-Date: Tue, 25 Jun 2019 15:12:51 -0700
-Message-ID: <CAGAzgspnknoX_6zP4__tjQonxg53jjJj-xP=yrQydA2FhMG2JA@mail.gmail.com>
-Subject: Re: [PATCH v3 1/4] drm/panel: Add helper for reading DT rotation
-To: Sam Ravnborg <sam@ravnborg.org>
+In-Reply-To: <1560138293-4163-1-git-send-email-weiyi.lu@mediatek.com>
+References: <1560138293-4163-1-git-send-email-weiyi.lu@mediatek.com>
+To: Matthias Brugger <matthias.bgg@gmail.com>, Weiyi Lu <weiyi.lu@mediatek.com>
+From: Stephen Boyd <sboyd@kernel.org>
+Subject: Re: [RFC v1] clk: core: support clocks that need to be enabled during
+ re-parent
+User-Agent: alot/0.8.1
+Date: Tue, 25 Jun 2019 15:14:14 -0700
+Message-Id: <20190625221415.B0DC22086D@mail.kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190625_151303_647111_4A0D7EF7 
-X-CRM114-Status: GOOD (  25.33  )
-X-Spam-Score: -7.4 (-------)
+X-CRM114-CacheID: sfid-20190625_151416_266550_6FA05503 
+X-CRM114-Status: UNSURE (   8.27  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-7.4 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:e42 listed in]
- [list.dnswl.org]
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
- white-list
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -92,169 +76,30 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Philipp Zabel <p.zabel@pengutronix.de>,
- Maxime Ripard <maxime.ripard@bootlin.com>,
- Intel Graphics <intel-gfx@lists.freedesktop.org>,
- Joonas Lahtinen <joonas.lahtinen@linux.intel.com>,
- Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
- linux-kernel <linux-kernel@vger.kernel.org>,
- Jani Nikula <jani.nikula@linux.intel.com>, David Airlie <airlied@linux.ie>,
- Thierry Reding <thierry.reding@gmail.com>,
- Matthias Brugger <matthias.bgg@gmail.com>,
- dri-devel <dri-devel@lists.freedesktop.org>, Daniel Vetter <daniel@ffwll.ch>,
- Rodrigo Vivi <rodrigo.vivi@intel.com>, CK Hu <ck.hu@mediatek.com>,
- "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
- Sean Paul <sean@poorly.run>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>
+Cc: James Liao <jamesjj.liao@mediatek.com>, Weiyi Lu <weiyi.lu@mediatek.com>,
+ srv_heupstream@mediatek.com, Biao Huang <biao.huang@mediatek.com>,
+ linux-kernel@vger.kernel.org, stable@vger.kernel.org,
+ Fan Chen <fan.chen@mediatek.com>, linux-mediatek@lists.infradead.org,
+ linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Jun 24, 2019 at 1:36 PM Sam Ravnborg <sam@ravnborg.org> wrote:
->
-> Hi Derek.
->
-> On Fri, Jun 21, 2019 at 08:41:02PM -0700, Derek Basehore wrote:
-> > This adds a helper function for reading the rotation (panel
-> > orientation) from the device tree.
-> >
-> > Signed-off-by: Derek Basehore <dbasehore@chromium.org>
-> > ---
-> >  drivers/gpu/drm/drm_panel.c | 42 +++++++++++++++++++++++++++++++++++++
-> >  include/drm/drm_panel.h     |  7 +++++++
-> >  2 files changed, 49 insertions(+)
-> >
-> > diff --git a/drivers/gpu/drm/drm_panel.c b/drivers/gpu/drm/drm_panel.c
-> > index dbd5b873e8f2..507099af4b57 100644
-> > --- a/drivers/gpu/drm/drm_panel.c
-> > +++ b/drivers/gpu/drm/drm_panel.c
-> > @@ -172,6 +172,48 @@ struct drm_panel *of_drm_find_panel(const struct device_node *np)
-> >       return ERR_PTR(-EPROBE_DEFER);
-> >  }
-> >  EXPORT_SYMBOL(of_drm_find_panel);
-> > +
-> > +/**
-> > + * of_drm_get_panel_orientation - look up the rotation of the panel using a
-> > + * device tree node
-> > + * @np: device tree node of the panel
-> > + * @orientation: orientation enum to be filled in
-> > + *
-> > + * Looks up the rotation of a panel in the device tree. The rotation in the
-> > + * device tree is counter clockwise.
-> > + *
-> > + * Return: 0 when a valid rotation value (0, 90, 180, or 270) is read or the
-> > + * rotation property doesn't exist. -EERROR otherwise.
-> > + */
-> This function should better spell out why it talks about rotation versus
-> orientation.
->
-> It happens that orientation, due to bad design choices is named rotation
-> in DT.
-> But then this function is all about orientation, that just happens to be
-> named rotation in DT.
-> And the comments associated to the function should reflect this.
->
-> something like:
-> /**
->  * of_drm_get_panel_orientation - look up the orientation of the panel using a
->  * device tree node
->  * @np: device tree node of the panel
->  * @orientation: orientation enum to be filled in
->  *
->  * Looks up the rotation property of a panel in the device tree.
->  * The orientation of the panel is expressed as a property named
->  * "rotation" in the device tree.
->  * The rotation in the device tree is counter clockwise.
->  *
->  * Return: 0 when a valid orientation value (0, 90, 180, or 270) is read or the
->  * rotation property doesn't exist. -EERROR otherwise.
->  */
+Quoting Weiyi Lu (2019-06-09 20:44:53)
+> When using property assigned-clock-parents to assign parent clocks,
+> core clocks might still be disabled during re-parent.
+> Add flag 'CLK_OPS_CORE_ENABLE' for those clocks must be enabled
+> during re-parent.
+> 
+> Signed-off-by: Weiyi Lu <weiyi.lu@mediatek.com>
 
-I'll clear this up in the next patch set.
+Can you further describe the scenario where this is a problem? Is it
+some sort of clk that is enabled by default out of the bootloader and is
+then configured to have an 'assigned-clock-parents' property to change
+the parent, but that clk needs to be "enabled" so that the framework
+turns on the parents for the parent switch?
 
->
-> This would at least remove some of my confusiuon.
-> And then maybe add a bit more explanation to the binding property
-> description too.
-
-Tried this, yet I got told off for adding kernel details to the DT
-documentation (which is frowned upon).
-
->
->         Sam
->
->
->
->
->
->
->
->
->
->
->
->
-> > +int of_drm_get_panel_orientation(const struct device_node *np,
-> > +                              enum drm_panel_orientation *orientation)
-> > +{
-> > +     int rotation, ret;
-> > +
-> > +     ret = of_property_read_u32(np, "rotation", &rotation);
-> > +     if (ret == -EINVAL) {
-> > +             /* Don't return an error if there's no rotation property. */
-> > +             *orientation = DRM_MODE_PANEL_ORIENTATION_UNKNOWN;
-> > +             return 0;
-> > +     }
-> > +
-> > +     if (ret < 0)
-> > +             return ret;
-> > +
-> > +     if (rotation == 0)
-> > +             *orientation = DRM_MODE_PANEL_ORIENTATION_NORMAL;
-> > +     else if (rotation == 90)
-> > +             *orientation = DRM_MODE_PANEL_ORIENTATION_RIGHT_UP;
-> > +     else if (rotation == 180)
-> > +             *orientation = DRM_MODE_PANEL_ORIENTATION_BOTTOM_UP;
-> > +     else if (rotation == 270)
-> > +             *orientation = DRM_MODE_PANEL_ORIENTATION_LEFT_UP;
-> > +     else
-> > +             return -EINVAL;
-> > +
-> > +     return 0;
-> > +}
-> > +EXPORT_SYMBOL(of_drm_get_panel_orientation);
-> >  #endif
-> >
-> >  MODULE_AUTHOR("Thierry Reding <treding@nvidia.com>");
-> > diff --git a/include/drm/drm_panel.h b/include/drm/drm_panel.h
-> > index 8c738c0e6e9f..3564952f1a4f 100644
-> > --- a/include/drm/drm_panel.h
-> > +++ b/include/drm/drm_panel.h
-> > @@ -197,11 +197,18 @@ int drm_panel_detach(struct drm_panel *panel);
-> >
-> >  #if defined(CONFIG_OF) && defined(CONFIG_DRM_PANEL)
-> >  struct drm_panel *of_drm_find_panel(const struct device_node *np);
-> > +int of_drm_get_panel_orientation(const struct device_node *np,
-> > +                              enum drm_panel_orientation *orientation);
-> >  #else
-> >  static inline struct drm_panel *of_drm_find_panel(const struct device_node *np)
-> >  {
-> >       return ERR_PTR(-ENODEV);
-> >  }
-> > +int of_drm_get_panel_orientation(const struct device_node *np,
-> > +                              enum drm_panel_orientation *orientation)
-> > +{
-> > +     return -ENODEV;
-> > +}
-> >  #endif
-> >
-> >  #endif
-> > --
-> > 2.22.0.410.gd8fdbe21b5-goog
-
-Thanks for the review
 
 _______________________________________________
 linux-arm-kernel mailing list
