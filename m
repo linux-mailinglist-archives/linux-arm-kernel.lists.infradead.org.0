@@ -2,90 +2,72 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A3EBB54DB5
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 25 Jun 2019 13:33:41 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id EB47154DCA
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 25 Jun 2019 13:36:23 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=ZDwHC2AAWVZ1qB+uu446EOeCj0gg9JnSP7E+4Km+wVM=; b=Ek9Gg3YzDczSEzh6ZiEp5B1qTk
-	UBip+YhisfSNVhpLCFl7wQIjoNYcsud2M0QIi8Ioz8a0Kh1EhS1y94hW7LaHiDWaODDgTvQTLliiz
-	Y1jc8CezAbpRqk5mI4f2VX4ELGcRx5fj45B5VnOAnW+RrF9sjrlLmdggo8ZZ2xXSp7WOYlLiyg1db
-	iegUUpVqoxSXT6Ea/FEqcWwQFk92y2azSiEYJ9dT5lC8RazqLYlammb7xksES9FbqHpb/FfStzMjN
-	OsftXD105L3jkbvCQZhOB+ARHmBPzfE8+RPkjw3VMYaUe7JIWuSmVMqlMZ0DZfrnhBNt0dIx4QVEJ
-	xQzRd28g==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=29/k8106ME0wbMrQRpk2lWTG+lRUYqK+RqgT1PT5vFA=; b=oQVqeXpZ7dXfpx
+	ybeN1PTMxJk9B4ukTbTXxLFyLYWwz0rvcRXAdfWjFMBAcNLUxjpKtlE4bojJmurcMySz0UE38MuNl
+	9JZTpJVho8ppYXbFE3YirFEIEWmzUdONKfr9nVUZXQwGeNX03QU6uM6+URsO1RGmdGudEDj44lwzT
+	2z2Ebx2iUdMlMrggmHCVGlpielMS8mfWuIu9RSy9MgvP5s2GxsoZST/vJfkUIf4QPHHGV+ysOBKLR
+	bgZBubj8L0wq9QJpATOcdQ8YzdW7htqVPkiDDTgQRwsp1VyFAz91mL3HhdyLBlNNhjMAB2SUXFxzD
+	fQN4WOy7prMMMh7ub/Bg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hfjhh-0004dI-P6; Tue, 25 Jun 2019 11:33:37 +0000
-Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
+	id 1hfjkL-0006Hw-ND; Tue, 25 Jun 2019 11:36:21 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hfjhD-0004UW-AX
- for linux-arm-kernel@lists.infradead.org; Tue, 25 Jun 2019 11:33:09 +0000
-Received: by mail-wm1-x341.google.com with SMTP id c6so2625706wml.0
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 25 Jun 2019 04:33:06 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=1GRtxbvJ7zQMEAzf5USjpOzydVY/5kmGwkIlpaLrADw=;
- b=Ehnr0RmwjLMD+uPoNHV4VCT4BrNvFINrvm11Jwmp0X8vbmx+CNYN+Xzx2gu/xT8lpq
- 8aedQccZjAUzVVMTUpA2k7EY0zEoQiuPm3+MTjSSCmKUCD4qEZah+MCAkZR/lkTRJI8S
- qbsbqrNVmVADWjyODTHoz5RjwGacaOvrPpOG9n+D2mTLbfYQ+6cyWLYZ1IFurqUM8G8C
- QxbXLEpXQHL1AOl5edMeAfrg6YT3BRmCXl7xMkLLqi8CqiM/UM97yFjN2PyGg9ciwVU4
- QcDd6ai+2zpnXnbhsqFUf9fFfPiyk2XA1hse2h4u2/A/9o0zmmOSN14PBIHatZNybjvJ
- Cfpw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references;
- bh=1GRtxbvJ7zQMEAzf5USjpOzydVY/5kmGwkIlpaLrADw=;
- b=Y4GKyEg6Mn2N7CkotEfHpB178A58nrDhGDyoffi7xi7FVl+gvYimgMiL8pRfMZyiYa
- FNaW2xmwHG1bssaD1oxH2TtTgcP0Cn0CbXfucZEL4f/Z4/Re/oU4dBoZ1oExASwFpzZa
- 2U3qIwZeC3+TiFklW4EWHtTWf/+vfx09ynoeEz44wVHYZVVmvi/I9P/KvqphL2P9Rrkn
- 6tkHxl3XCrE0yPZpysRQzZDI1AFsajxV4oPgveO3Zn9o050q5hfndZaQNGGsIB231FPk
- oTbM5lwWtk+WbvxmAS5gDGkBqwS366UF7RZcW5eGxJI4bwZ2qjsK5TeUwgFuVSQBTN/J
- cDvw==
-X-Gm-Message-State: APjAAAUKdNbNTa1jspnFZ2ipUXk5Knja7iM8j1pEwE2bkPKK2nSqHnQr
- N34IoAcAVCcBzjK6340mMteq+w==
-X-Google-Smtp-Source: APXvYqyEyB2lNfbV8SJL0HSWaizGxaMKeN5Sw5X3E86zHZQ+GTc3cszJfeHxfYNey1cdGehMbHxjSg==
-X-Received: by 2002:a05:600c:28d:: with SMTP id
- 13mr19743593wmk.5.1561462385508; 
- Tue, 25 Jun 2019 04:33:05 -0700 (PDT)
-Received: from clegane.local (191.184.66.86.rev.sfr.net. [86.66.184.191])
- by smtp.gmail.com with ESMTPSA id j7sm19254284wru.54.2019.06.25.04.33.03
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Tue, 25 Jun 2019 04:33:04 -0700 (PDT)
-From: Daniel Lezcano <daniel.lezcano@linaro.org>
-To: viresh.kumar@linaro.org
-Subject: [PATCH V3 3/3] thermal/drivers/cpu_cooling: cpufreq_cooling_register
- returns an int
-Date: Tue, 25 Jun 2019 13:32:43 +0200
-Message-Id: <20190625113244.18146-3-daniel.lezcano@linaro.org>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20190625113244.18146-1-daniel.lezcano@linaro.org>
-References: <20190625113244.18146-1-daniel.lezcano@linaro.org>
+ id 1hfjk7-0006HU-5x; Tue, 25 Jun 2019 11:36:11 +0000
+X-UUID: a1bf63b899584b2fb7b299d1bc04eef3-20190625
+X-UUID: a1bf63b899584b2fb7b299d1bc04eef3-20190625
+Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw01.mediatek.com
+ (envelope-from <frederic.chen@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 897121878; Tue, 25 Jun 2019 03:35:54 -0800
+Received: from mtkmbs08n2.mediatek.inc (172.21.101.56) by
+ MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Tue, 25 Jun 2019 04:35:52 -0700
+Received: from mtkcas08.mediatek.inc (172.21.101.126) by
+ mtkmbs08n2.mediatek.inc (172.21.101.56) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Tue, 25 Jun 2019 19:35:38 +0800
+Received: from [172.21.84.99] (172.21.84.99) by mtkcas08.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
+ Transport; Tue, 25 Jun 2019 19:35:38 +0800
+Message-ID: <1561462538.23799.19.camel@mtksdccf07>
+Subject: Re: [RFC PATCH V1 6/6] platform: mtk-isp: Add Mediatek DIP driver
+From: Frederic Chen <frederic.chen@mediatek.com>
+To: Tomasz Figa <tfiga@chromium.org>
+Date: Tue, 25 Jun 2019 19:35:38 +0800
+In-Reply-To: <CAAFQd5Ai2JmwY+_inA-WkE1rKhTOyvJeLM8XG3E6BsYCrp4pnw@mail.gmail.com>
+References: <20190417104511.21514-1-frederic.chen@mediatek.com>
+ <20190417104511.21514-7-frederic.chen@mediatek.com>
+ <20190509094846.GA65444@google.com> <1558466055.15388.342.camel@mtksdccf07>
+ <1560242886.23799.13.camel@mtksdccf07>
+ <CAAFQd5CReiPOySyk-eFkgiQMDMoqB3Uhd=bcho2Qtsv74y8fmg@mail.gmail.com>
+ <1560247648.23799.16.camel@mtksdccf07>
+ <CAAFQd5Ai2JmwY+_inA-WkE1rKhTOyvJeLM8XG3E6BsYCrp4pnw@mail.gmail.com>
+X-Mailer: Evolution 3.2.3-0ubuntu6 
+MIME-Version: 1.0
+X-TM-SNTS-SMTP: A96D21B4832B5BB347BCC937165A0AD695ED92798361EA550FFEA438A530F48C2000:8
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190625_043307_364988_78AF82D6 
-X-CRM114-Status: GOOD (  21.90  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190625_043609_593392_24D5B999 
+X-CRM114-Status: GOOD (  28.02  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:341 listed in]
- [list.dnswl.org]
+ no trust [216.200.240.184 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -97,303 +79,194 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "open list:TI BANDGAP AND THERMAL DRIVER" <linux-omap@vger.kernel.org>,
- "open list:THERMAL/CPU_COOLING" <linux-pm@vger.kernel.org>,
- Fabio Estevam <festevam@gmail.com>,
- Amit Daniel Kachhap <amit.kachhap@gmail.com>, rjw@rjwysocki.net,
- linux-kernel@vger.kernel.org, edubezval@gmail.com,
- NXP Linux Team <linux-imx@nxp.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>, Keerthy <j-keerthy@ti.com>,
- Zhang Rui <rui.zhang@intel.com>, Javi Merino <javi.merino@kernel.org>,
- Shawn Guo <shawnguo@kernel.org>, Sascha Hauer <s.hauer@pengutronix.de>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>
-MIME-Version: 1.0
+Cc: Shik Chen <shik@chromium.org>, devicetree@vger.kernel.org,
+ Sean Cheng =?UTF-8?Q?=28=E9=84=AD=E6=98=87=E5=BC=98=29?=
+ <Sean.Cheng@mediatek.com>,
+ Laurent Pinchart <laurent.pinchart+renesas@ideasonboard.com>,
+ Rynn Wu =?UTF-8?Q?=28=E5=90=B3=E8=82=B2=E6=81=A9=29?= <Rynn.Wu@mediatek.com>,
+ srv_heupstream <srv_heupstream@mediatek.com>,
+ Holmes Chiou =?UTF-8?Q?=28=E9=82=B1=E6=8C=BA=29?= <holmes.chiou@mediatek.com>,
+ suleiman@chromium.org, Jerry-ch Chen <Jerry-ch.Chen@mediatek.com>,
+ Jungo Lin =?UTF-8?Q?=28=E6=9E=97=E6=98=8E=E4=BF=8A=29?=
+ <jungo.lin@mediatek.com>, Sj
+ Huang <sj.huang@mediatek.com>, yuzhao@chromium.org,
+ "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
+ zwisler@chromium.org, Matthias Brugger <matthias.bgg@gmail.com>,
+ Christie Yu =?UTF-8?Q?=28=E6=B8=B8=E9=9B=85=E6=83=A0=29?=
+ <christie.yu@mediatek.com>, Mauro Carvalho Chehab <mchehab@kernel.org>,
+ Hans Verkuil <hans.verkuil@cisco.com>, "list@263.net:IOMMU DRIVERS
+ <iommu@lists.linux-foundation.org>, Joerg  Roedel <joro@8bytes.org>,
+ " <linux-arm-kernel@lists.infradead.org>, Linux
+ Media Mailing List <linux-media@vger.kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-It looks like after the changes in the patch the only reason for
-returning (struct thermal_cooling_device *) from
-cpufreq_cooling_register() is error checking, but it would be much
-more straightforward to return int for this purpose.
+Hi Tomasz,
 
-Moreover, that would prevent the callers of it from doing incorrect
-things with the returned pointers (like using it to unregister the
-cooling device).
+On Tue, 2019-06-11 at 19:13 +0900, Tomasz Figa wrote:
+> On Tue, Jun 11, 2019 at 7:07 PM Frederic Chen
+> <frederic.chen@mediatek.com> wrote:
+> >
+> > Hi Tomasz,
+> >
+> >
+> > On Tue, 2019-06-11 at 17:59 +0900, Tomasz Figa wrote:
+> > > On Tue, Jun 11, 2019 at 5:48 PM Frederic Chen
+> > > <frederic.chen@mediatek.com> wrote:
+> > > >
+> > > > Dear Tomasz,
+> > > >
+> > > > I'd like to elaborate more about the tuning_data.va.
+> > > > Would you like to give us some advice about our improvement proposal inline?
+> > > >
+> > > > Thank you very much.
+> > > >
+> > > >
+> > > > On Wed, 2019-05-22 at 03:14 +0800, Frederic Chen wrote:
+> > > > > Dear Tomasz,
+> > > > >
+> > > > > I appreciate your comment. It is very helpful for us.
+> > > > >
+> > > > >
+> > > > > > > diff --git a/drivers/media/platform/mtk-isp/isp_50/dip/mtk_dip-sys.c b/drivers/media/platform/mtk-isp/isp_50/dip/mtk_dip-sys.c
+> > > > > > > new file mode 100644
+> > > > > > > index 000000000000..54d2b5f5b802
+> > > > > > > --- /dev/null
+> > > > > > > +++ b/drivers/media/platform/mtk-isp/isp_50/dip/mtk_dip-sys.c
+> > > > > > > @@ -0,0 +1,1384 @@
+> > > >
+> > > > [snip]
+> > > >
+> > > > > > > +static void dip_submit_worker(struct work_struct *work)
+> > > > > > > +{
+> > > > > > > +       struct mtk_dip_hw_submit_work *dip_submit_work =
+> > > > > > > +               container_of(work, struct mtk_dip_hw_submit_work, frame_work);
+> > > > > > > +       struct mtk_dip_hw *dip_hw = dip_submit_work->dip_hw;
+> > > > > > > +       struct mtk_dip_dev *dip_dev = mtk_dip_hw_to_dev(dip_hw);
+> > > > > > > +       struct mtk_dip_hw_work *dip_work;
+> > > > > > > +       struct mtk_dip_hw_subframe *buf;
+> > > > > > > +       u32 len, num;
+> > > > > > > +       int ret;
+> > > > > > > +
+> > > > > > > +       num  = atomic_read(&dip_hw->num_composing);
+> > > > > > > +
+> > > > > > > +       mutex_lock(&dip_hw->dip_worklist.queuelock);
+> > > > > > > +       dip_work = list_first_entry(&dip_hw->dip_worklist.queue,
+> > > >
+> > > > [snip]
+> > > >
+> > > > > > > +
+> > > > > > > +       if (dip_work->frameparams.tuning_data.pa == 0) {
+> > > > > > > +               dev_dbg(&dip_dev->pdev->dev,
+> > > > > > > +                       "%s: frame_no(%d) has no tuning_data\n",
+> > > > > > > +                       __func__, dip_work->frameparams.frame_no);
+> > > > > > > +
+> > > > > > > +               memcpy(&dip_work->frameparams.tuning_data,
+> > > > > > > +                      &buf->tuning_buf, sizeof(buf->tuning_buf));
+> > > > > >
+> > > > > > Ditto.
+> > > > > >
+> > > > >
+> > > > > I got it.
+> > > > >
+> > > > > > > +               memset((char *)buf->tuning_buf.va, 0, DIP_TUNING_SZ);
+> > > > > >
+> > > > > > Ditto.
+> > > > >
+> > > > > I got it.
+> > > > >
+> > > > > >
+> > > > > > > +               /*
+> > > > > > > +                * When user enqueued without tuning buffer,
+> > > > > > > +                * it would use driver internal buffer.
+> > > > > > > +                * So, tuning_data.va should be 0
+> > > > > > > +                */
+> > > > > > > +               dip_work->frameparams.tuning_data.va = 0;
+> > > > > >
+> > > > > > I don't understand this. We just zeroed the buffer via this kernel VA few
+> > > > > > lines above, so why would it have to be set to 0?
+> > > > > >
+> > > > >
+> > > > > I will remove this unnecessary line.
+> > > > >
+> > > > > > > +       }
+> > > >
+> > > > After confirming the firmware part, I found that we use this field
+> > > > (tuning_data.va) to notify firmware if there is no tuning data from
+> > > > user.
+> > > >
+> > > > - frameparams.tuning_data.va is 0: use the default tuning data in
+> > > >                                    SCP, but we still need to pass
+> > > >                                    frameparams.tuning_data.pa because
+> > > >                                    the buffer contains some working
+> > > >                                    buffer required.
+> > > > - frameparams.tuning_data.va is not 0: the tuning data was passed from
+> > > >                                        the user
+> > > >
+> > > > Since we should not pass cpu addres to SCP, could I rename tuning_data.va
+> > > > as tuning_data.cookie, and write a constant value to indicate if SCP
+> > > > should use its internal default setting or not here?
+> > > >
+> > > > For example,
+> > > > /* SCP uses tuning data passed from userspace*/
+> > > > dip_work->frameparams.tuning_data.cookie = MTK_DIP_USER_TUNING_DATA;
+> > > >
+> > > > /* SCP uses internal tuning data */
+> > > > dip_work->frameparams.tuning_data.cookie = MTK_DIP_DEFAULT_TUNING_DATA;
+> > >
+> > > Perhaps we could just call it "present" and set to true or false?
+> > >
+> >
+> > Yes. I would like to use "present" here.
+> >
+> > Original:
+> >   struct img_addr {
+> >       u64 va; /* Used by Linux OS access */
+> >       u32 pa; /* Used by CM4 access */
+> >       u32 iova; /* Used by IOMMU HW access */
+> >   } __attribute__ ((__packed__));
+> >
+> >   struct img_ipi_frameparam {
+> >       u32 index;
+> >       u32 frame_no;
+> >       u64 timestamp;
+> >       u8 type;  /* enum mdp_stream_type */
+> >       u8 state;
+> >       u8 num_inputs;
+> >       u8 num_outputs;
+> >       u64 drv_data;
+> >       struct img_input inputs[IMG_MAX_HW_INPUTS];
+> >       struct img_output outputs[IMG_MAX_HW_OUTPUTS];
+> >       struct img_addr tuning_data;
+> >       struct img_addr subfrm_data;
+> >       struct img_sw_addr config_data;
+> >       struct img_sw_addr self_data;
+> >   } __attribute__ ((__packed__));
+> >
+> >
+> > Modified:
+> >   struct tuning_buf {
+> >       u8 present;
+> 
+> I'd make this u32 to keep the other fields aligned.
+> 
+> >       u32 pa;   /* Used by CM4 access */
+> >       u32 iova; /* Used by IOMMU HW access */
+> >   } __attribute__ ((__packed__));
+> 
 
-Replace the returned value an integer instead of a pointer to a
-thermal cooling device structure.
+We will use u32 to keep the fields aligned in next patch.
 
-Suggested-by: Rafael J. Wysocki <rafael@kernel.org>
-Signed-off-by: Daniel Lezcano <daniel.lezcano@linaro.org>
----
- drivers/thermal/cpu_cooling.c                 | 63 +++++++++----------
- drivers/thermal/imx_thermal.c                 |  6 +-
- .../ti-soc-thermal/ti-thermal-common.c        |  7 +--
- include/linux/cpu_cooling.h                   | 16 ++---
- 4 files changed, 40 insertions(+), 52 deletions(-)
 
-diff --git a/drivers/thermal/cpu_cooling.c b/drivers/thermal/cpu_cooling.c
-index 007c7c6bf845..f5fa31a57658 100644
---- a/drivers/thermal/cpu_cooling.c
-+++ b/drivers/thermal/cpu_cooling.c
-@@ -530,13 +530,12 @@ static struct notifier_block thermal_cpufreq_notifier_block = {
-  * cooling devices. It also gives the opportunity to link the cooling device
-  * with a device tree node, in order to bind it via the thermal DT code.
-  *
-- * Return: a valid struct thermal_cooling_device pointer on success,
-- * on failure, it returns a corresponding ERR_PTR().
-+ * Return: zero on success, less than zero corresponding to the
-+ * negative error code.
-  */
--static struct thermal_cooling_device *
--__cpufreq_cooling_register(struct device_node *np,
--			struct cpufreq_policy *policy,
--			struct em_perf_domain *em)
-+static int __cpufreq_cooling_register(struct device_node *np,
-+				      struct cpufreq_policy *policy,
-+				      struct em_perf_domain *em)
- {
- 	struct thermal_cooling_device *cdev;
- 	struct cpufreq_cooling_device *cpufreq_cdev;
-@@ -548,19 +547,19 @@ __cpufreq_cooling_register(struct device_node *np,
- 
- 	if (IS_ERR_OR_NULL(policy)) {
- 		pr_err("%s: cpufreq policy isn't valid: %p\n", __func__, policy);
--		return ERR_PTR(-EINVAL);
-+		return -EINVAL;
- 	}
- 
- 	i = cpufreq_table_count_valid_entries(policy);
- 	if (!i) {
- 		pr_debug("%s: CPUFreq table not found or has no valid entries\n",
- 			 __func__);
--		return ERR_PTR(-ENODEV);
-+		return -ENODEV;
- 	}
- 
- 	cpufreq_cdev = kzalloc(sizeof(*cpufreq_cdev), GFP_KERNEL);
- 	if (!cpufreq_cdev)
--		return ERR_PTR(-ENOMEM);
-+		return -ENOMEM;
- 
- 	cpufreq_cdev->policy = policy;
- 	num_cpus = cpumask_weight(policy->related_cpus);
-@@ -568,7 +567,7 @@ __cpufreq_cooling_register(struct device_node *np,
- 					 sizeof(*cpufreq_cdev->idle_time),
- 					 GFP_KERNEL);
- 	if (!cpufreq_cdev->idle_time) {
--		cdev = ERR_PTR(-ENOMEM);
-+		ret = -ENOMEM;
- 		goto free_cdev;
- 	}
- 
-@@ -576,10 +575,8 @@ __cpufreq_cooling_register(struct device_node *np,
- 	cpufreq_cdev->max_level = i - 1;
- 
- 	ret = ida_simple_get(&cpufreq_ida, 0, 0, GFP_KERNEL);
--	if (ret < 0) {
--		cdev = ERR_PTR(ret);
-+	if (ret < 0)
- 		goto free_idle_time;
--	}
- 	cpufreq_cdev->id = ret;
- 
- 	snprintf(dev_name, sizeof(dev_name), "thermal-cpufreq-%d",
-@@ -597,14 +594,16 @@ __cpufreq_cooling_register(struct device_node *np,
- 	if (policy->freq_table_sorted == CPUFREQ_TABLE_UNSORTED) {
- 		pr_err("%s: unsorted frequency tables are not supported\n",
- 				__func__);
--		cdev = ERR_PTR(-EINVAL);
-+		ret = -EINVAL;
- 		goto remove_ida;
- 	}
- 
- 	cdev = thermal_of_cooling_device_register(np, dev_name, cpufreq_cdev,
- 						  cooling_ops);
--	if (IS_ERR(cdev))
-+	if (IS_ERR(cdev)) {
-+		ret = PTR_ERR(cdev);
- 		goto remove_ida;
-+	}
- 
- 	cpufreq_cdev->clipped_freq = get_state_freq(cpufreq_cdev, 0);
- 	cpufreq_cdev->cdev = cdev;
-@@ -619,7 +618,7 @@ __cpufreq_cooling_register(struct device_node *np,
- 		cpufreq_register_notifier(&thermal_cpufreq_notifier_block,
- 					  CPUFREQ_POLICY_NOTIFIER);
- 
--	return cdev;
-+	return 0;
- 
- remove_ida:
- 	ida_simple_remove(&cpufreq_ida, cpufreq_cdev->id);
-@@ -627,7 +626,7 @@ __cpufreq_cooling_register(struct device_node *np,
- 	kfree(cpufreq_cdev->idle_time);
- free_cdev:
- 	kfree(cpufreq_cdev);
--	return cdev;
-+	return ret;
- }
- 
- /**
-@@ -638,11 +637,10 @@ __cpufreq_cooling_register(struct device_node *np,
-  * "thermal-cpufreq-%x". This api can support multiple instances of cpufreq
-  * cooling devices.
-  *
-- * Return: a valid struct thermal_cooling_device pointer on success,
-- * on failure, it returns a corresponding ERR_PTR().
-+ * Return: zero on success, less than zero corresponding to the
-+ * negative error code.
-  */
--struct thermal_cooling_device *
--cpufreq_cooling_register(struct cpufreq_policy *policy)
-+int cpufreq_cooling_register(struct cpufreq_policy *policy)
- {
- 	return __cpufreq_cooling_register(NULL, policy, NULL);
- }
-@@ -664,34 +662,31 @@ EXPORT_SYMBOL_GPL(cpufreq_cooling_register);
-  * It also takes into account, if property present in policy CPU node, the
-  * static power consumed by the cpu.
-  *
-- * Return: a valid struct thermal_cooling_device pointer on success,
-- * and NULL on failure.
-+ * Return: zero on success, less than zero corresponding to the
-+ * negative error code.
-  */
--struct thermal_cooling_device *
--of_cpufreq_cooling_register(struct cpufreq_policy *policy)
-+int of_cpufreq_cooling_register(struct cpufreq_policy *policy)
- {
- 	struct device_node *np = of_get_cpu_node(policy->cpu, NULL);
--	struct thermal_cooling_device *cdev = NULL;
-+	int ret = -EINVAL;
- 
- 	if (!np) {
- 		pr_err("cpu_cooling: OF node not available for cpu%d\n",
- 		       policy->cpu);
--		return NULL;
-+		return -EINVAL;
- 	}
- 
- 	if (of_find_property(np, "#cooling-cells", NULL)) {
- 		struct em_perf_domain *em = em_cpu_get(policy->cpu);
- 
--		cdev = __cpufreq_cooling_register(np, policy, em);
--		if (IS_ERR(cdev)) {
--			pr_err("cpu_cooling: cpu%d failed to register as cooling device: %ld\n",
--			       policy->cpu, PTR_ERR(cdev));
--			cdev = NULL;
--		}
-+		ret = __cpufreq_cooling_register(np, policy, em);
-+		if (ret)
-+			pr_err("cpu_cooling: cpu%d failed to register as cooling device: %d\n",
-+			       policy->cpu, ret);
- 	}
- 
- 	of_node_put(np);
--	return cdev;
-+	return ret;
- }
- EXPORT_SYMBOL_GPL(of_cpufreq_cooling_register);
- 
-diff --git a/drivers/thermal/imx_thermal.c b/drivers/thermal/imx_thermal.c
-index 021c0948b740..1c4b49b583bc 100644
---- a/drivers/thermal/imx_thermal.c
-+++ b/drivers/thermal/imx_thermal.c
-@@ -655,7 +655,6 @@ MODULE_DEVICE_TABLE(of, of_imx_thermal_match);
- static int imx_thermal_register_legacy_cooling(struct imx_thermal_data *data)
- {
- 	struct device_node *np;
--	struct thermal_cooling_device *cdev;
- 	int ret;
- 
- 	data->policy = cpufreq_cpu_get(0);
-@@ -667,9 +666,8 @@ static int imx_thermal_register_legacy_cooling(struct imx_thermal_data *data)
- 	np = of_get_cpu_node(data->policy->cpu, NULL);
- 
- 	if (!np || !of_find_property(np, "#cooling-cells", NULL)) {
--		cdev = cpufreq_cooling_register(data->policy);
--		if (IS_ERR(cdev)) {
--			ret = PTR_ERR(cdev);
-+		ret = cpufreq_cooling_register(data->policy);
-+		if (ret) {
- 			cpufreq_cpu_put(data->policy);
- 			return ret;
- 		}
-diff --git a/drivers/thermal/ti-soc-thermal/ti-thermal-common.c b/drivers/thermal/ti-soc-thermal/ti-thermal-common.c
-index 170b70b6ec61..eacc46d7bd1c 100644
---- a/drivers/thermal/ti-soc-thermal/ti-thermal-common.c
-+++ b/drivers/thermal/ti-soc-thermal/ti-thermal-common.c
-@@ -232,7 +232,7 @@ int ti_thermal_register_cpu_cooling(struct ti_bandgap *bgp, int id)
- {
- 	struct ti_thermal_data *data;
- 	struct device_node *np = bgp->dev->of_node;
--	struct thermal_cooling_device *cdev;
-+	int ret;
- 
- 	/*
- 	 * We are assuming here that if one deploys the zone
-@@ -256,9 +256,8 @@ int ti_thermal_register_cpu_cooling(struct ti_bandgap *bgp, int id)
- 	}
- 
- 	/* Register cooling device */
--	cdev = cpufreq_cooling_register(data->policy);
--	if (IS_ERR(cdev)) {
--		int ret = PTR_ERR(cdev);
-+	ret = cpufreq_cooling_register(data->policy);
-+	if (ret) {
- 		dev_err(bgp->dev, "Failed to register cpu cooling device %d\n",
- 			ret);
- 		cpufreq_cpu_put(data->policy);
-diff --git a/include/linux/cpu_cooling.h b/include/linux/cpu_cooling.h
-index 89f469ee4be4..98f7c8a9cab6 100644
---- a/include/linux/cpu_cooling.h
-+++ b/include/linux/cpu_cooling.h
-@@ -24,8 +24,7 @@ struct cpufreq_policy;
-  * cpufreq_cooling_register - function to create cpufreq cooling device.
-  * @policy: cpufreq policy.
-  */
--struct thermal_cooling_device *
--cpufreq_cooling_register(struct cpufreq_policy *policy);
-+int cpufreq_cooling_register(struct cpufreq_policy *policy);
- 
- /**
-  * cpufreq_cooling_unregister - function to remove cpufreq cooling device.
-@@ -34,10 +33,9 @@ cpufreq_cooling_register(struct cpufreq_policy *policy);
- void cpufreq_cooling_unregister(struct cpufreq_policy *policy);
- 
- #else /* !CONFIG_CPU_THERMAL */
--static inline struct thermal_cooling_device *
--cpufreq_cooling_register(struct cpufreq_policy *policy)
-+static inline int cpufreq_cooling_register(struct cpufreq_policy *policy)
- {
--	return ERR_PTR(-ENOSYS);
-+	return -ENOSYS;
- }
- 
- static inline
-@@ -52,13 +50,11 @@ void cpufreq_cooling_unregister(struct cpufreq_policy *policy)
-  * of_cpufreq_cooling_register - create cpufreq cooling device based on DT.
-  * @policy: cpufreq policy.
-  */
--struct thermal_cooling_device *
--of_cpufreq_cooling_register(struct cpufreq_policy *policy);
-+int of_cpufreq_cooling_register(struct cpufreq_policy *policy);
- #else
--static inline struct thermal_cooling_device *
--of_cpufreq_cooling_register(struct cpufreq_policy *policy)
-+static inline int of_cpufreq_cooling_register(struct cpufreq_policy *policy)
- {
--	return NULL;
-+	return -ENOSYS;
- }
- #endif /* defined(CONFIG_THERMAL_OF) && defined(CONFIG_CPU_THERMAL) */
- 
--- 
-2.17.1
+> Best regards,
+> Tomasz
+
+
+Sincerely,
+
+Frederic Chen
 
 
 _______________________________________________
