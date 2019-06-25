@@ -2,51 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A396E5282E
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 25 Jun 2019 11:36:16 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4648152830
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 25 Jun 2019 11:37:59 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=gmIDLKLEYAI+G/f0wLvuJazfzxC2ekO6YkxDvV9208U=; b=PHymp+JMrCTAQE
-	VyrtgnLjJhGJmPnI+or/QB3UvmeJW7Oyl/Ek7vzO+IsMuGVVQOBBVvS1kmtJW4VR0bmjzNYcu99qo
-	Dz358X8J2yAkYisIWxMQEvXL6r1OvcnHdGfADx3HdUbXw15bSUX7rGZ0v5oMbqZ3iWy2DVCm9VWzP
-	GW9gLYmFKYuAeeX4CLn07Lf0NomFwggN3LcWQCylNMEIQsiQLzdh426tOncB7/Rym4FKxcEVcS55N
-	BzVODP+88abv8Hd3doHTTQcdd1yBQySRcdmuma5tb7YCMAHaZCvCWXSQTv7Y1wLr6ZoMplrYgiC0P
-	GVG46V9jg7sts6evC60w==;
+	List-Owner; bh=FFIzMSZ4eKZsNZfoe/urw05E0hnN+kxpZd9FyAoRhuY=; b=MKTjNKNb8mLkew
+	HL7aX66AxR1KNy2ZNxbCfYsPz3E9xQplQcLecTI/FR3CUALK1LbZBq/FAZlKkfQtb5Ziqi2i4Yxt1
+	tzUw7e7scRUeC4gg37FZWZj9zyNpPIHMSXyYn+51Z7Krhe+an8HkLRVIF0rX2QbisgkPZkpBPDWAO
+	wuKooondnLq5pfuXcGPr19HAK9byKDs3aAKv09PT3niOu4r+Fr0KNLlqdk6hUplgzDjf/Z9lCPxkg
+	irTQO9QrOMa00GyUqOOQqbYHs6Go5ck97U1IQQ3gsF2wrWLsIOZhuDysn6rJnwmkjGDJPuqV9nu+3
+	13EB5IEi+2qfOZNQ48Ag==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hfhs3-000473-J1; Tue, 25 Jun 2019 09:36:12 +0000
+	id 1hfhtj-00055m-AC; Tue, 25 Jun 2019 09:37:55 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hfhrh-00045p-G1
- for linux-arm-kernel@lists.infradead.org; Tue, 25 Jun 2019 09:35:51 +0000
+ id 1hfhtT-00055J-Hz
+ for linux-arm-kernel@lists.infradead.org; Tue, 25 Jun 2019 09:37:40 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 20161360;
- Tue, 25 Jun 2019 02:35:46 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 9D659360;
+ Tue, 25 Jun 2019 02:37:38 -0700 (PDT)
 Received: from e103592.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
  [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id D845D3F71E;
- Tue, 25 Jun 2019 02:35:44 -0700 (PDT)
-Date: Tue, 25 Jun 2019 10:35:42 +0100
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 6030D3F71E;
+ Tue, 25 Jun 2019 02:37:37 -0700 (PDT)
+Date: Tue, 25 Jun 2019 10:37:35 +0100
 From: Dave Martin <Dave.Martin@arm.com>
 To: Julien Grall <julien.grall@arm.com>
-Subject: Re: [RFC PATCH v2 3/8] arm64/fpsimdmacros: Allow the macro "for" to
- be used in more cases
-Message-ID: <20190625093540.GW2790@e103592.cambridge.arm.com>
+Subject: Re: [RFC PATCH v2 5/8] arm64/sve: Implement an helper to flush SVE
+ registers
+Message-ID: <20190625093735.GX2790@e103592.cambridge.arm.com>
 References: <20190613161656.20765-1-julien.grall@arm.com>
- <20190613161656.20765-4-julien.grall@arm.com>
- <20190621153241.GY2790@e103592.cambridge.arm.com>
- <8ba85821-3734-9e3c-5696-bc5e315a28c4@arm.com>
+ <20190613161656.20765-6-julien.grall@arm.com>
+ <20190621153302.GA2790@e103592.cambridge.arm.com>
+ <20772a47-5cd3-0566-1e29-839e39961def@arm.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <8ba85821-3734-9e3c-5696-bc5e315a28c4@arm.com>
+In-Reply-To: <20772a47-5cd3-0566-1e29-839e39961def@arm.com>
 User-Agent: Mutt/1.5.23 (2014-03-12)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190625_023549_641276_43A950C8 
-X-CRM114-Status: GOOD (  23.78  )
+X-CRM114-CacheID: sfid-20190625_023739_685546_A8A62BCF 
+X-CRM114-Status: GOOD (  19.11  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -73,140 +73,95 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Jun 24, 2019 at 05:10:02PM +0100, Julien Grall wrote:
+On Mon, Jun 24, 2019 at 05:28:56PM +0100, Julien Grall wrote:
 > Hi Dave,
 > 
-> On 6/21/19 4:32 PM, Dave Martin wrote:
-> >On Thu, Jun 13, 2019 at 05:16:51PM +0100, Julien Grall wrote:
-> >>The current version of the macro "for" is only able to work when the
-> >>counter is used to generate registers using mnemonics. This is because
+> On 6/21/19 4:33 PM, Dave Martin wrote:
+> >On Thu, Jun 13, 2019 at 05:16:53PM +0100, Julien Grall wrote:
+> >>Introduce a new helper that will zero all SVE registers but the first
+> >>128-bits of each vector.
 > >
-> >[*] Is this backwards?  Previously, we _can't_ substitute register
-> >numbers directly into proper instruction mnemonics: we have to use
-> >.insn with an expression to generate the opcode directly instead
-> >(possibly via a macro).
+> >Maybe mention that the helper will be used by a subsequent patch.  For
+> >now, it's dead code.
+> >
+> >Maybe also mention briefly what this will be used for: i.e., to avoid
+> >the costly store/munge/reload sequences currently used by things like
+> >do_sve_acc().
 > 
-> Hmm, yes this is backwards. I want to s/only able/not able/.
+> How about the following commit message:
 > 
-> >
-> >With this change we can paste the _for number straight into human-
-> >readable assembler mnemonics.
-> >
-> >>gas is not able to evaluate the expression generated if used in
-> >>registers name (i.e x\n).
-> >
-> >Nit: maybe: "a register name" or "a register's name"
-> 
-> Ok.
+> "Introduce a new helper that will zero all SVE registers but the first
+> 128-bits of each vector. This will be used in subsequent patch to avoid the
+> costly store/munge/reload sequences used in place such as do_sve_acc()."
+
+Sure, that works.
+
 > 
 > >
-> >>Gas offers a way to evaluate macro arguments by using % in front of
-> >>them under the alternate macro mode [1].
-> >
-> >This reference is obviously useful to reviewers, but I'm not sure about
-> >the life expectancy of such a URL.  It probably belongs after the
-> >tearoff line rather than in the commit message.
-> 
-> Sure.
-> 
-> >
-> >>The implementation of "for" is updated to use the alternate macro mode
-> >>and %, so we can use the macro in more cases. As the alternate macro mode
-> >>may have side-effect, this is disabled when generating the body.
-> >
-> >Nit: side-effects
-> >
-> >Nit: I'd probably say "expanding the body", to be consistent with gas's
-> >own terminology.
-> >
-> >(These are pedantic, and inessential to fix.)
-> 
-> I have fixed them :).
-> 
-> >
-> >>While it is enough to prefix the argument of the macro "__for_body" with
-> >>%, the arguments of "__for" are also prefixed to get a more bearable
-> >>value in case of compilation error.
-> >>
-> >>[1] https://sourceware.org/binutils/docs/as/Altmacro.html
-> >>
-> >>Suggested-by: Dave Martin <dave.martin@arm.com>
 > >>Signed-off-by: Julien Grall <julien.grall@arm.com>
 > >>
 > >>---
 > >>     Changes in v2:
-> >>         - Fix typo in the commit message
+> >>         - Fix typo in the commit title
 > >>---
-> >>  arch/arm64/include/asm/fpsimdmacros.h | 10 +++++++---
-> >>  1 file changed, 7 insertions(+), 3 deletions(-)
+> >>  arch/arm64/include/asm/fpsimd.h       |  3 +++
+> >>  arch/arm64/include/asm/fpsimdmacros.h | 19 +++++++++++++++++++
+> >>  arch/arm64/kernel/entry-fpsimd.S      |  7 +++++++
+> >>  3 files changed, 29 insertions(+)
 > >>
-> >>diff --git a/arch/arm64/include/asm/fpsimdmacros.h b/arch/arm64/include/asm/fpsimdmacros.h
-> >>index 46843515d77b..e2ab77dd9b4f 100644
-> >>--- a/arch/arm64/include/asm/fpsimdmacros.h
-> >>+++ b/arch/arm64/include/asm/fpsimdmacros.h
-> >>@@ -177,19 +177,23 @@
-> >>  .macro __for from:req, to:req
-> >>  	.if (\from) == (\to)
-> >>-		_for__body \from
-> >>+		_for__body %\from
-> >>  	.else
-> >>-		__for \from, (\from) + ((\to) - (\from)) / 2
-> >>-		__for (\from) + ((\to) - (\from)) / 2 + 1, \to
-> >>+		__for %\from, %((\from) + ((\to) - (\from)) / 2)
-> >>+		__for %((\from) + ((\to) - (\from)) / 2 + 1), %\to
-> >>  	.endif
-> >>  .endm
-> >>  .macro _for var:req, from:req, to:req, insn:vararg
-> >>  	.macro _for__body \var:req
-> >>+		.noaltmacro
-> >>  		\insn
-> >>+		.altmacro
-> >>  	.endm
-> >>+	.altmacro
-> >>  	__for \from, \to
-> >>+	.noaltmacro
-> >>  	.purgem _for__body
-> >>  .endm
+> >>diff --git a/arch/arm64/include/asm/fpsimd.h b/arch/arm64/include/asm/fpsimd.h
+> >>index df62bbd33a9a..fda3544c9606 100644
+> >>--- a/arch/arm64/include/asm/fpsimd.h
+> >>+++ b/arch/arm64/include/asm/fpsimd.h
+> >>@@ -83,6 +83,9 @@ static inline void *sve_pffr(struct thread_struct *thread)
+> >>  extern void sve_save_state(void *state, u32 *pfpsr);
+> >>  extern void sve_load_state(void const *state, u32 const *pfpsr,
+> >>  			   unsigned long vq_minus_1);
+> >>+
+> >>+extern void sve_flush_live(void);
+> >>+
 > >
-> >Looks OK to me.  With [*] addressed as appropriate, and modulo others'
-> >comments (if any):
+> >We probably don't need the extra blank lines here... these operations
+> >are all closely related low-level backend functions.
 > 
-> This is the new commit message (I have taken the opportunity to reflow it):
+> Sure.
+
+[...]
+
+> >>diff --git a/arch/arm64/kernel/entry-fpsimd.S b/arch/arm64/kernel/entry-fpsimd.S
+> >>index 12d4958e6429..17121a51c41f 100644
+> >>--- a/arch/arm64/kernel/entry-fpsimd.S
+> >>+++ b/arch/arm64/kernel/entry-fpsimd.S
+> >>@@ -57,4 +57,11 @@ ENTRY(sve_get_vl)
+> >>  	_sve_rdvl	0, 1
+> >>  	ret
+> >>  ENDPROC(sve_get_vl)
+> >>+
+> >>+/* Zero all SVE registers but the first 128-bits of each vector */
+> >>+ENTRY(sve_flush_live)
+> >>+	sve_flush
+> >>+	ret
+> >>+ENDPROC(sve_flush_live)
+> >>+
+> >>  #endif /* CONFIG_ARM64_SVE */
+> >
+> >The extra blank line makes this more readable, but in the interests
+> >of symmetry can you also add a blank after the corresponding #ifdef?
 > 
-> commit 0dabd72ee773a62ec25fde289a60a9de908bf41b
-> Author: Julien Grall <julien.grall@arm.com>
-> Date:   Wed Dec 5 14:44:19 2018 +0000
+> I would prefer to do this change in a separate patch. So I will drop the
+> newline here.
+
+OK, sounds reasonable.
+
 > 
->     arm64/fpsimdmacros: Allow the macro "for" to be used in more cases
-> 
->     The current version of the macro "for" is not able to work when the
->     counter is used to generate registers using mnemonics. This is because
->     gas is not able to evaluate the expression generated if used in
->     register's name (i.e x\n).
-> 
->     Gas offers a way to evaluate macro arguments by using % in front of
->     them under the alternate macro mode.
-> 
->     The implementation of "for" is updated to use the alternate macro mode
->     and %, so we can use the macro in more cases. As the alternate macro
->     mode may have side-effects, this is disabled when expanding the body.
-> 
->     While it is enough to prefix the argument of the macro "__for_body"
->     with %, the arguments of "__for" are also prefixed to get a more
->     bearable value in case of compilation error.
-> 
->     Suggested-by: Dave Martin <dave.martin@arm.com>
->     Signed-off-by: Julien Grall <julien.grall@arm.com>
-> 
->     ---
-> 
->      For the alternate macro mode documentation, see:
->        https://sourceware.org/binutils/docs/as/Altmacro.html
-> 
+> >
+> >[...]
+> >
+> >With those addressed as appropriate,
 > >
 > >Reviewed-by: Dave Martin <Dave.Martin@arm.com>
 
-That looks fine to me.
+Feel free to keep this tag.
 
 Cheers
 ---Dave
