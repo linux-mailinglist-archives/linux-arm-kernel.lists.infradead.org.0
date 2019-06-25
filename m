@@ -2,84 +2,102 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2D736525CE
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 25 Jun 2019 10:01:35 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3CE73525D2
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 25 Jun 2019 10:02:08 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ERA2vLsKYRP3PHbckxintr2/X8sg4mBcw8UxP88plnQ=; b=P1Q4C9Di1ZNeMH
-	wpaH4lmmNCcSksSTJN0x1u7rIKwnO7kygWWV0LfszrRJ+bDYQC58n1Bp2kXAAsiKmraeBTSlRm9bX
-	gSpvdogmXOcUChh3bSVV7utfFIVPzyaFYtxRe0BN15Ugd6Qxdc9cviNFD33O9rj4ei1hoHWPNqlWX
-	tJGeVHd+ZrCUdqMtpAdFHrUS5Q4krwimXHycM4HtBuQjvgHBjyzQb2Cri8CNYBFIAV1os0gOMc4j/
-	hedBIL5lSvSi21GaDwFyL7F2SInTf8GOdXXIzzMDWJAWRXvgNnRqylLdGnaTDl2JX9Wp/rLlvRnZt
-	t3xS2U0x0CDB+DRzwDEA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=ouqsz9CkO+SGVVAmoQVbU5KlTdrINa/6wDhsCdynEMg=; b=h+GnqeHC/fbbxO
+	rCIOVmY5ZbRPiG0lQDRv+NXMrZpHahekRyJe2Oi996GuFuQR4jOfFdlne22/VL/AkpJRZn0HP0fCe
+	AIXPRkaHJdIbRub9q6WRi+Sfmfsvb3tADilEr1Nn4XGMhG2YwXYHYSHhTlcV9snaIGI8mUzfir06V
+	q8khNtM6b0FJDjSo+sSgSQBP3tq/hiaPDbbwMMDS5YOtl14FdA1CoAc7dGbOCh3OxGe6s6PA2lFNk
+	qIKkaJCwTmeC2C9QP7e5BLi7wEVhPa4OjbykY/NeuyO2k7bfDYvnmZUaaVfabFikLAgqIukecnyCC
+	M+XxUcZn8Z6OwF80ov7Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hfgOR-0006f9-Bq; Tue, 25 Jun 2019 08:01:31 +0000
-Received: from lelv0142.ext.ti.com ([198.47.23.249])
+	id 1hfgP0-0007Ap-Je; Tue, 25 Jun 2019 08:02:06 +0000
+Received: from youngberry.canonical.com ([91.189.89.112])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hfgL2-0002sm-31; Tue, 25 Jun 2019 07:58:02 +0000
-Received: from lelv0265.itg.ti.com ([10.180.67.224])
- by lelv0142.ext.ti.com (8.15.2/8.15.2) with ESMTP id x5P7vtdu027126;
- Tue, 25 Jun 2019 02:57:55 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1561449475;
- bh=G7zuSlc9r4KvzQ7MKTQFYIQGH4bzcjMx34Ty3GvGHMk=;
- h=From:To:CC:Subject:Date:In-Reply-To:References;
- b=l5GB9ARySEdVRrureocEKiB/5tD7GTAUbF+I++JOmvm0n59Gvn6QJHqn5loFVy88C
- AG0eK4IjJTGTYiH6TIX4UG2SbxmCer1ztzB2dovr5PmjFCoZQtKZdcDyTOI85YwPXG
- xkrkxDVmnTrH78nBSvoawAeBXnb5/oD8ABlyxq+M=
-Received: from DLEE113.ent.ti.com (dlee113.ent.ti.com [157.170.170.24])
- by lelv0265.itg.ti.com (8.15.2/8.15.2) with ESMTPS id x5P7vtlm079174
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Tue, 25 Jun 2019 02:57:55 -0500
-Received: from DLEE107.ent.ti.com (157.170.170.37) by DLEE113.ent.ti.com
- (157.170.170.24) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5; Tue, 25
- Jun 2019 02:57:55 -0500
-Received: from lelv0327.itg.ti.com (10.180.67.183) by DLEE107.ent.ti.com
- (157.170.170.37) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5 via
- Frontend Transport; Tue, 25 Jun 2019 02:57:55 -0500
-Received: from a0132425.india.ti.com (ileax41-snat.itg.ti.com [10.172.224.153])
- by lelv0327.itg.ti.com (8.15.2/8.15.2) with ESMTP id x5P7vWTl105511;
- Tue, 25 Jun 2019 02:57:52 -0500
-From: Vignesh Raghavendra <vigneshr@ti.com>
-To: Vignesh Raghavendra <vigneshr@ti.com>, Boris Brezillon
- <bbrezillon@kernel.org>, Marek Vasut <marek.vasut@gmail.com>, Richard
- Weinberger <richard@nod.at>, Rob Herring <robh+dt@kernel.org>
-Subject: [PATCH v8 5/5] mtd: hyperbus: Add driver for TI's HyperBus memory
- controller
-Date: Tue, 25 Jun 2019 13:27:46 +0530
-Message-ID: <20190625075746.10439-6-vigneshr@ti.com>
-X-Mailer: git-send-email 2.22.0
-In-Reply-To: <20190625075746.10439-1-vigneshr@ti.com>
-References: <20190625075746.10439-1-vigneshr@ti.com>
+ id 1hfgLK-00036O-5p
+ for linux-arm-kernel@lists.infradead.org; Tue, 25 Jun 2019 07:58:19 +0000
+Received: from 1.general.cking.uk.vpn ([10.172.193.212])
+ by youngberry.canonical.com with esmtpsa (TLS1.0:RSA_AES_128_CBC_SHA1:16)
+ (Exim 4.76) (envelope-from <colin.king@canonical.com>)
+ id 1hfgLD-00050k-HN; Tue, 25 Jun 2019 07:58:11 +0000
+Subject: Re: [PATCH] net: stmmac: add sanity check to
+ device_property_read_u32_array call
+To: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
+References: <20190617165836.4673-1-colin.king@canonical.com>
+ <20190619051308.23582-1-martin.blumenstingl@googlemail.com>
+ <92f9e5a6-d2a2-6bf2-ff8a-2430fe977f93@canonical.com>
+ <CAFBinCDmYVPDMcwAAYhMfxxuTsG=xunduN58_8e20zE_Mhmb7Q@mail.gmail.com>
+ <CAFBinCC-LLpfXQRFcKBbUpCfKc0S9Xtt60QrhEThsOFV-T7vFw@mail.gmail.com>
+From: Colin Ian King <colin.king@canonical.com>
+Openpgp: preference=signencrypt
+Autocrypt: addr=colin.king@canonical.com; prefer-encrypt=mutual; keydata=
+ mQINBE6TJCgBEACo6nMNvy06zNKj5tiwDsXXS+LhT+LwtEsy9EnraKYXAf2xwazcICSjX06e
+ fanlyhB0figzQO0n/tP7BcfMVNG7n1+DC71mSyRK1ZERcG1523ajvdZOxbBCTvTitYOy3bjs
+ +LXKqeVMhK3mRvdTjjmVpWnWqJ1LL+Hn12ysDVVfkbtuIm2NoaSEC8Ae8LSSyCMecd22d9Pn
+ LR4UeFgrWEkQsqROq6ZDJT9pBLGe1ZS0pVGhkRyBP9GP65oPev39SmfAx9R92SYJygCy0pPv
+ BMWKvEZS/7bpetPNx6l2xu9UvwoeEbpzUvH26PHO3DDAv0ynJugPCoxlGPVf3zcfGQxy3oty
+ dNTWkP6Wh3Q85m+AlifgKZudjZLrO6c+fAw/jFu1UMjNuyhgShtFU7NvEzL3RqzFf9O1qM2m
+ uj83IeFQ1FZ65QAiCdTa3npz1vHc7N4uEQBUxyXgXfCI+A5yDnjHwzU0Y3RYS52TA3nfa08y
+ LGPLTf5wyAREkFYou20vh5vRvPASoXx6auVf1MuxokDShVhxLpryBnlKCobs4voxN54BUO7m
+ zuERXN8kadsxGFzItAyfKYzEiJrpUB1yhm78AecDyiPlMjl99xXk0zs9lcKriaByVUv/NsyJ
+ FQj/kmdxox3XHi9K29kopFszm1tFiDwCFr/xumbZcMY17Yi2bQARAQABtCVDb2xpbiBLaW5n
+ IDxjb2xpbi5raW5nQGNhbm9uaWNhbC5jb20+iQI2BBMBCAAhBQJOkyQoAhsDBQsJCAcDBRUK
+ CQgLBRYCAwEAAh4BAheAAAoJEGjCh9/GqAImsBcP9i6C/qLewfi7iVcOwqF9avfGzOPf7CVr
+ n8CayQnlWQPchmGKk6W2qgnWI2YLIkADh53TS0VeSQ7Tetj8f1gV75eP0Sr/oT/9ovn38QZ2
+ vN8hpZp0GxOUrzkvvPjpH+zdmKSaUsHGp8idfPpZX7XeBO0yojAs669+3BrnBcU5wW45SjSV
+ nfmVj1ZZj3/yBunb+hgNH1QRcm8ZPICpjvSsGFClTdB4xu2AR28eMiL/TTg9k8Gt72mOvhf0
+ fS0/BUwcP8qp1TdgOFyiYpI8CGyzbfwwuGANPSupGaqtIRVf+/KaOdYUM3dx/wFozZb93Kws
+ gXR4z6tyvYCkEg3x0Xl9BoUUyn9Jp5e6FOph2t7TgUvv9dgQOsZ+V9jFJplMhN1HPhuSnkvP
+ 5/PrX8hNOIYuT/o1AC7K5KXQmr6hkkxasjx16PnCPLpbCF5pFwcXc907eQ4+b/42k+7E3fDA
+ Erm9blEPINtt2yG2UeqEkL+qoebjFJxY9d4r8PFbEUWMT+t3+dmhr/62NfZxrB0nTHxDVIia
+ u8xM+23iDRsymnI1w0R78yaa0Eea3+f79QsoRW27Kvu191cU7QdW1eZm05wO8QUvdFagVVdW
+ Zg2DE63Fiin1AkGpaeZG9Dw8HL3pJAJiDe0KOpuq9lndHoGHs3MSa3iyQqpQKzxM6sBXWGfk
+ EkK5Ag0ETpMkKAEQAMX6HP5zSoXRHnwPCIzwz8+inMW7mJ60GmXSNTOCVoqExkopbuUCvinN
+ 4Tg+AnhnBB3R1KTHreFGoz3rcV7fmJeut6CWnBnGBtsaW5Emmh6gZbO5SlcTpl7QDacgIUuT
+ v1pgewVHCcrKiX0zQDJkcK8FeLUcB2PXuJd6sJg39kgsPlI7R0OJCXnvT/VGnd3XPSXXoO4K
+ cr5fcjsZPxn0HdYCvooJGI/Qau+imPHCSPhnX3WY/9q5/WqlY9cQA8tUC+7mgzt2VMjFft1h
+ rp/CVybW6htm+a1d4MS4cndORsWBEetnC6HnQYwuC4bVCOEg9eXMTv88FCzOHnMbE+PxxHzW
+ 3Gzor/QYZGcis+EIiU6hNTwv4F6fFkXfW6611JwfDUQCAHoCxF3B13xr0BH5d2EcbNB6XyQb
+ IGngwDvnTyKHQv34wE+4KtKxxyPBX36Z+xOzOttmiwiFWkFp4c2tQymHAV70dsZTBB5Lq06v
+ 6nJs601Qd6InlpTc2mjd5mRZUZ48/Y7i+vyuNVDXFkwhYDXzFRotO9VJqtXv8iqMtvS4xPPo
+ 2DtJx6qOyDE7gnfmk84IbyDLzlOZ3k0p7jorXEaw0bbPN9dDpw2Sh9TJAUZVssK119DJZXv5
+ 2BSc6c+GtMqkV8nmWdakunN7Qt/JbTcKlbH3HjIyXBy8gXDaEto5ABEBAAGJAh8EGAEIAAkF
+ Ak6TJCgCGwwACgkQaMKH38aoAiZ4lg/+N2mkx5vsBmcsZVd3ys3sIsG18w6RcJZo5SGMxEBj
+ t1UgyIXWI9lzpKCKIxKx0bskmEyMy4tPEDSRfZno/T7p1mU7hsM4owi/ic0aGBKP025Iok9G
+ LKJcooP/A2c9dUV0FmygecRcbIAUaeJ27gotQkiJKbi0cl2gyTRlolKbC3R23K24LUhYfx4h
+ pWj8CHoXEJrOdHO8Y0XH7059xzv5oxnXl2SD1dqA66INnX+vpW4TD2i+eQNPgfkECzKzGj+r
+ KRfhdDZFBJj8/e131Y0t5cu+3Vok1FzBwgQqBnkA7dhBsQm3V0R8JTtMAqJGmyOcL+JCJAca
+ 3Yi81yLyhmYzcRASLvJmoPTsDp2kZOdGr05Dt8aGPRJL33Jm+igfd8EgcDYtG6+F8MCBOult
+ TTAu+QAijRPZv1KhEJXwUSke9HZvzo1tNTlY3h6plBsBufELu0mnqQvHZmfa5Ay99dF+dL1H
+ WNp62+mTeHsX6v9EACH4S+Cw9Q1qJElFEu9/1vFNBmGY2vDv14gU2xEiS2eIvKiYl/b5Y85Q
+ QLOHWV8up73KK5Qq/6bm4BqVd1rKGI9un8kezUQNGBKre2KKs6wquH8oynDP/baoYxEGMXBg
+ GF/qjOC6OY+U7kNUW3N/A7J3M2VdOTLu3hVTzJMZdlMmmsg74azvZDV75dUigqXcwjE=
+Message-ID: <c46d2d17-c35b-46f0-0674-0c55bea3a272@canonical.com>
+Date: Tue, 25 Jun 2019 08:58:10 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.7.1
 MIME-Version: 1.0
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
+In-Reply-To: <CAFBinCC-LLpfXQRFcKBbUpCfKc0S9Xtt60QrhEThsOFV-T7vFw@mail.gmail.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190625_005800_238649_9DB85EAF 
-X-CRM114-Status: GOOD (  19.56  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20190625_005818_376420_FB7637DC 
+X-CRM114-Status: GOOD (  16.77  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.23.249 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [91.189.89.112 listed in list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -91,212 +109,70 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org,
- Sergei Shtylyov <sergei.shtylyov@cogentembedded.com>,
- Tokunori Ikegami <ikegami.t@gmail.com>, linux-kernel@vger.kernel.org,
- linux-mtd@lists.infradead.org, Miquel Raynal <miquel.raynal@bootlin.com>,
- Mason Yang <masonccyang@mxic.com.tw>, linux-arm-kernel@lists.infradead.org
+Cc: alexandre.torgue@st.com, netdev@vger.kernel.org,
+ kernel-janitors@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-stm32@st-md-mailman.stormreply.com, joabreu@synopsys.com,
+ mcoquelin.stm32@gmail.com, peppe.cavallaro@st.com, davem@davemloft.net,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add driver for HyperBus memory controller on TI's AM654 SoC. Programming
-IP is pretty simple and provides direct memory mapped access to
-connected Flash devices.
+On 25/06/2019 05:44, Martin Blumenstingl wrote:
+> Hi Colin,
+> 
+> On Thu, Jun 20, 2019 at 3:34 AM Martin Blumenstingl
+> <martin.blumenstingl@googlemail.com> wrote:
+>>
+>> Hi Colin,
+>>
+>> On Wed, Jun 19, 2019 at 8:55 AM Colin Ian King <colin.king@canonical.com> wrote:
+>>>
+>>> On 19/06/2019 06:13, Martin Blumenstingl wrote:
+>>>> Hi Colin,
+>>>>
+>>>>> Currently the call to device_property_read_u32_array is not error checked
+>>>>> leading to potential garbage values in the delays array that are then used
+>>>>> in msleep delays.  Add a sanity check to the property fetching.
+>>>>>
+>>>>> Addresses-Coverity: ("Uninitialized scalar variable")
+>>>>> Signed-off-by: Colin Ian King <colin.king@canonical.com>
+>>>> I have also sent a patch [0] to fix initialize the array.
+>>>> can you please look at my patch so we can work out which one to use?
+>>>>
+>>>> my concern is that the "snps,reset-delays-us" property is optional,
+>>>> the current dt-bindings documentation states that it's a required
+>>>> property. in reality it isn't, there are boards (two examples are
+>>>> mentioned in my patch: [0]) without it.
+>>>>
+>>>> so I believe that the resulting behavior has to be:
+>>>> 1. don't delay if this property is missing (instead of delaying for
+>>>>    <garbage value> ms)
+>>>> 2. don't error out if this property is missing
+>>>>
+>>>> your patch covers #1, can you please check whether #2 is also covered?
+>>>> I tested case #2 when submitting my patch and it worked fine (even
+>>>> though I could not reproduce the garbage values which are being read
+>>>> on some boards)
+> in the meantime I have tested your patch.
+> when I don't set the "snps,reset-delays-us" property then I get the
+> following error:
+>   invalid property snps,reset-delays-us
+> 
+> my patch has landed in the meantime: [0]
+> how should we proceed with your patch?
 
-Add basic support for the IP without DMA. Second chipSelect is not
-supported for now.
+I'm out of the office today. I'll get back to you on this tomorrow.
 
-Signed-off-by: Vignesh Raghavendra <vigneshr@ti.com>
----
-v8:
-No change
-
- drivers/mtd/hyperbus/Kconfig      |  12 +++
- drivers/mtd/hyperbus/Makefile     |   1 +
- drivers/mtd/hyperbus/hbmc-am654.c | 141 ++++++++++++++++++++++++++++++
- 3 files changed, 154 insertions(+)
- create mode 100644 drivers/mtd/hyperbus/hbmc-am654.c
-
-diff --git a/drivers/mtd/hyperbus/Kconfig b/drivers/mtd/hyperbus/Kconfig
-index 98147e28caa0..cff6bbd226f5 100644
---- a/drivers/mtd/hyperbus/Kconfig
-+++ b/drivers/mtd/hyperbus/Kconfig
-@@ -9,3 +9,15 @@ menuconfig MTD_HYPERBUS
- 	  the HyperBus Controller driver to communicate with
- 	  HyperFlash. See Cypress HyperBus specification for more
- 	  details
-+
-+if MTD_HYPERBUS
-+
-+config HBMC_AM654
-+	tristate "HyperBus controller driver for AM65x SoC"
-+	select MULTIPLEXER
-+	select MUX_MMIO
-+	help
-+	 This is the driver for HyperBus controller on TI's AM65x and
-+	 other SoCs
-+
-+endif # MTD_HYPERBUS
-diff --git a/drivers/mtd/hyperbus/Makefile b/drivers/mtd/hyperbus/Makefile
-index ca61dedd730d..8a936e066f48 100644
---- a/drivers/mtd/hyperbus/Makefile
-+++ b/drivers/mtd/hyperbus/Makefile
-@@ -1,3 +1,4 @@
- # SPDX-License-Identifier: GPL-2.0
- 
- obj-$(CONFIG_MTD_HYPERBUS)	+= hyperbus-core.o
-+obj-$(CONFIG_HBMC_AM654)	+= hbmc-am654.o
-diff --git a/drivers/mtd/hyperbus/hbmc-am654.c b/drivers/mtd/hyperbus/hbmc-am654.c
-new file mode 100644
-index 000000000000..ca3fe198169e
---- /dev/null
-+++ b/drivers/mtd/hyperbus/hbmc-am654.c
-@@ -0,0 +1,141 @@
-+// SPDX-License-Identifier: GPL-2.0
-+//
-+// Copyright (C) 2019 Texas Instruments Incorporated - http://www.ti.com/
-+// Author: Vignesh Raghavendra <vigneshr@ti.com>
-+
-+#include <linux/err.h>
-+#include <linux/kernel.h>
-+#include <linux/module.h>
-+#include <linux/mtd/cfi.h>
-+#include <linux/mtd/hyperbus.h>
-+#include <linux/mtd/mtd.h>
-+#include <linux/mux/consumer.h>
-+#include <linux/of.h>
-+#include <linux/platform_device.h>
-+#include <linux/pm_runtime.h>
-+#include <linux/types.h>
-+
-+#define AM654_HBMC_CALIB_COUNT 25
-+
-+struct am654_hbmc_priv {
-+	struct hyperbus_ctlr ctlr;
-+	struct hyperbus_device hbdev;
-+};
-+
-+static int am654_hbmc_calibrate(struct hyperbus_device *hbdev)
-+{
-+	struct map_info *map = &hbdev->map;
-+	struct cfi_private cfi;
-+	int count = AM654_HBMC_CALIB_COUNT;
-+	int pass_count = 0;
-+	int ret;
-+
-+	cfi.interleave = 1;
-+	cfi.device_type = CFI_DEVICETYPE_X16;
-+	cfi_send_gen_cmd(0xF0, 0, 0, map, &cfi, cfi.device_type, NULL);
-+	cfi_send_gen_cmd(0x98, 0x55, 0, map, &cfi, cfi.device_type, NULL);
-+
-+	while (count--) {
-+		ret = cfi_qry_present(map, 0, &cfi);
-+		if (ret)
-+			pass_count++;
-+		else
-+			pass_count = 0;
-+		if (pass_count == 5)
-+			break;
-+	}
-+
-+	cfi_qry_mode_off(0, map, &cfi);
-+
-+	return ret;
-+}
-+
-+static const struct hyperbus_ops am654_hbmc_ops = {
-+	.calibrate = am654_hbmc_calibrate,
-+};
-+
-+static int am654_hbmc_probe(struct platform_device *pdev)
-+{
-+	struct device *dev = &pdev->dev;
-+	struct am654_hbmc_priv *priv;
-+	int ret;
-+
-+	priv = devm_kzalloc(dev, sizeof(*priv), GFP_KERNEL);
-+	if (!priv)
-+		return -ENOMEM;
-+
-+	platform_set_drvdata(pdev, priv);
-+
-+	if (of_property_read_bool(dev->of_node, "mux-controls")) {
-+		struct mux_control *control = devm_mux_control_get(dev, NULL);
-+
-+		if (IS_ERR(control))
-+			return PTR_ERR(control);
-+
-+		ret = mux_control_select(control, 1);
-+		if (ret) {
-+			dev_err(dev, "Failed to select HBMC mux\n");
-+			return ret;
-+		}
-+	}
-+
-+	pm_runtime_enable(dev);
-+	ret = pm_runtime_get_sync(dev);
-+	if (ret < 0) {
-+		pm_runtime_put_noidle(dev);
-+		goto disable_pm;
-+	}
-+
-+	priv->ctlr.dev = dev;
-+	priv->ctlr.ops = &am654_hbmc_ops;
-+	priv->hbdev.ctlr = &priv->ctlr;
-+	priv->hbdev.np = of_get_next_child(dev->of_node, NULL);
-+	ret = hyperbus_register_device(&priv->hbdev);
-+	if (ret) {
-+		dev_err(dev, "failed to register controller\n");
-+		pm_runtime_put_sync(&pdev->dev);
-+		goto disable_pm;
-+	}
-+
-+	return 0;
-+disable_pm:
-+	pm_runtime_disable(dev);
-+	return ret;
-+}
-+
-+static int am654_hbmc_remove(struct platform_device *pdev)
-+{
-+	struct am654_hbmc_priv *priv = platform_get_drvdata(pdev);
-+	int ret;
-+
-+	ret = hyperbus_unregister_device(&priv->hbdev);
-+	pm_runtime_put_sync(&pdev->dev);
-+	pm_runtime_disable(&pdev->dev);
-+
-+	return ret;
-+}
-+
-+static const struct of_device_id am654_hbmc_dt_ids[] = {
-+	{
-+		.compatible = "ti,am654-hbmc",
-+	},
-+	{ /* end of table */ }
-+};
-+
-+MODULE_DEVICE_TABLE(of, am654_hbmc_dt_ids);
-+
-+static struct platform_driver am654_hbmc_platform_driver = {
-+	.probe = am654_hbmc_probe,
-+	.remove = am654_hbmc_remove,
-+	.driver = {
-+		.name = "hbmc-am654",
-+		.of_match_table = am654_hbmc_dt_ids,
-+	},
-+};
-+
-+module_platform_driver(am654_hbmc_platform_driver);
-+
-+MODULE_DESCRIPTION("HBMC driver for AM654 SoC");
-+MODULE_LICENSE("GPL v2");
-+MODULE_ALIAS("platform:hbmc-am654");
-+MODULE_AUTHOR("Vignesh Raghavendra <vigneshr@ti.com>");
--- 
-2.22.0
+Colin
+> 
+> 
+> Martin
+> 
+> 
+> [0] https://git.kernel.org/pub/scm/linux/kernel/git/davem/net-next.git/commit/drivers/net/ethernet/stmicro/stmmac/stmmac_mdio.c?id=84ce4d0f9f55b4f4ca4d4edcbb54a23d9dad1aae
+> 
 
 
 _______________________________________________
