@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0945A557DE
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 25 Jun 2019 21:36:21 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1148B557DF
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 25 Jun 2019 21:36:39 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,43 +11,43 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=uQ0Pf3CwFFDV2V4JbIX0N/N8XYD9c57Ik1DV+124YBo=; b=uB3aNtCa6UoakGRjehe/tqJBD+
-	2t2ea7hBuBzYQda+El/gkumvHk8RvTlS+srBu+T1W34wkX69qIsRrgkb5l/VAh8IAJDryN1RvYJqg
-	ZEakk/HVxvO5VmtM8MVpp77J60wEjKyJmY5TS5pWgEH25qw6Djg9uo1SkelJKsqJzZrWjWEh/ziAw
-	xvsgrMts7aeC17u1pw4qj2tvF5Uh3Y5YXZSAx3reAlDInSnar/Mxrj29BK6ZudIWrylGfxBuTtEPp
-	bz2iYj/W6BpfRVu2nJfjaZRdvT3YxkaH8a1FPIKICfqLJ66TmbYEtAotKegcPpbnDAm3mHlH8ZAUc
-	BQBVlYXA==;
+	bh=peAApIfz/ep1xHBVgl0PIjdjy4UeDBthSRgcNrgso08=; b=A+WXSmCkpl0wRzS+XVwD34B38T
+	dtdKIj6fqmlKsbuXU0NhPzuhUd/nGsgP13uVi4zLSw3lozlVfV0seiw/ZkxFy/zsl+cUea4SuxjNj
+	BWE+w4yCEeLZxt6ufQ91fqlOEsaI34qQr2jnwi1XaI0KGgE+bNriFLt5m6zProzTag4ZdRkw6JiGJ
+	E+OroCLMqrHVToBmjlC6GmopO3/qK1TZxYsXc3iSJx7zrTuQQFuylJjL2ygiGkZD80U5XRr8ULjHf
+	GC4HsIHI2IoNIIAKuV+f4Top9aItURMTngCJWFgPBFQr0GPWla7Ss0TKZmZGejlm4tMDZIU6JbvVr
+	7H4FyX3Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hfrEn-0007Qv-IJ; Tue, 25 Jun 2019 19:36:17 +0000
+	id 1hfrF5-0007ft-B8; Tue, 25 Jun 2019 19:36:35 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hfrDf-0006WV-95
- for linux-arm-kernel@lists.infradead.org; Tue, 25 Jun 2019 19:35:08 +0000
+ id 1hfrDh-0006lv-LM
+ for linux-arm-kernel@lists.infradead.org; Tue, 25 Jun 2019 19:35:11 +0000
 Received: from localhost.localdomain (unknown [194.230.155.151])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 0027120883;
- Tue, 25 Jun 2019 19:35:04 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 69A95213F2;
+ Tue, 25 Jun 2019 19:35:07 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1561491307;
- bh=aRij1mR2Y7fwBDGuFaA7Kzzg9Y6e90L+q57nwMwS4+0=;
+ s=default; t=1561491309;
+ bh=4EGvDFLeBk4PJoyn0+P90KXm88w6KMDfWiCeX6JaV3g=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=rVzEt3Nb68tTb0K9jdU1XJISzbdNzEpg4V/4IYkGYX2jO1kULCNEFCCNAIDqcKX8h
- pH1NF/KB/3ziCIc6F1GchXk+0tysPPzOpZYxz/JHVHXYTAwp1DJkQcPopMPo7PJuBk
- zQ7J/mHIEFLSl9U/R4wH0L+TcA7HzVYJ+Zn2xRME=
+ b=pSCDf/ZVtOEJiY9PhSVLjzx4XovFVEyB58LaNg519psG3Ctk4c7rrhpR/jaeXPwFs
+ //eP2AUvjf04ykJgJGdrB/+vSn46QHRPAYQTAV1pc2jub2DstKHlrd1PidRfLy7y97
+ fp33ExKSpoRtjbVJZPN9tuej1dy+/MAlsaRbRcb0=
 From: Krzysztof Kozlowski <krzk@kernel.org>
 To: Olof Johansson <olof@lixom.net>, Arnd Bergmann <arnd@arndb.de>,
  arm@kernel.org
-Subject: [GIT PULL 3/4] arm64: dts: exynos: Pull for v5.3
-Date: Tue, 25 Jun 2019 21:34:50 +0200
-Message-Id: <20190625193451.7696-3-krzk@kernel.org>
+Subject: [GIT PULL 4/4] ARM: exynos: Mach for v5.3
+Date: Tue, 25 Jun 2019 21:34:51 +0200
+Message-Id: <20190625193451.7696-4-krzk@kernel.org>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20190625193451.7696-1-krzk@kernel.org>
 References: <20190625193451.7696-1-krzk@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190625_123507_473009_B51D20CB 
-X-CRM114-Status: GOOD (  11.22  )
+X-CRM114-CacheID: sfid-20190625_123510_007487_D3356D1D 
+X-CRM114-Status: GOOD (  11.20  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -91,27 +91,31 @@ The following changes since commit a188339ca5a396acc588e5851ed7e19f66b0ebd9:
 
 are available in the Git repository at:
 
-  https://git.kernel.org/pub/scm/linux/kernel/git/krzk/linux.git tags/samsung-dt64-5.3
+  https://git.kernel.org/pub/scm/linux/kernel/git/krzk/linux.git tags/samsung-soc-5.3
 
-for you to fetch changes up to 4dc2a25d058d71f39e41da986777327b423b92f1:
+for you to fetch changes up to a55e040c6f21f55f81c53c56e1d8095df35e1d02:
 
-  arm64: dts: exynos: Add GPU/Mali T760 node to Exynos7 (2019-06-24 19:52:48 +0200)
-
-----------------------------------------------------------------
-Samsung DTS ARM64 changes for v5.3
-
-Add Mali nodes to Exynos3 and Exynos4.
+  ARM: exynos: Cleanup cppcheck shifting warning (2019-06-25 20:45:09 +0200)
 
 ----------------------------------------------------------------
-Krzysztof Kozlowski (2):
-      arm64: dts: exynos: Add GPU/Mali T760 node to Exynos5433
-      arm64: dts: exynos: Add GPU/Mali T760 node to Exynos7
+Samsung mach/soc changes for v5.3
 
- .../boot/dts/exynos/exynos5433-tm2-common.dtsi     |  5 +++
- arch/arm64/boot/dts/exynos/exynos5433.dtsi         | 51 ++++++++++++++++++++++
- arch/arm64/boot/dts/exynos/exynos7-espresso.dts    |  5 +++
- arch/arm64/boot/dts/exynos/exynos7.dtsi            | 11 +++++
- 4 files changed, 72 insertions(+)
+Only cleanups and minor fixes.
+
+----------------------------------------------------------------
+Arnd Bergmann (1):
+      ARM: exynos: Only build MCPM support if used
+
+Krzysztof Kozlowski (1):
+      ARM: exynos: Make ARCH_EXYNOS3 a default option
+
+Phong Tran (1):
+      ARM: exynos: Cleanup cppcheck shifting warning
+
+ arch/arm/mach-exynos/Kconfig   | 7 ++++++-
+ arch/arm/mach-exynos/Makefile  | 2 +-
+ arch/arm/mach-exynos/suspend.c | 8 ++++----
+ 3 files changed, 11 insertions(+), 6 deletions(-)
 
 _______________________________________________
 linux-arm-kernel mailing list
