@@ -2,54 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DBC9E55B4B
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 26 Jun 2019 00:34:50 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6283355B50
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 26 Jun 2019 00:35:34 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:Subject:From:To:
 	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=qozVySnuBBXSaRoo22qN//0DzFmnI8JofMxxJACTFYE=; b=RlNk93yxJtRDgT
-	zKJCguATS3mEQRJ8lFs/0ERit3N38oxvsUGBub/mV8tFVHrLThTaPSMxT4OuRPa7kdQrRo1t9AfLy
-	tD3+7ZKNcfJ4WflPs9z+OwXfbDZW8jS5H2DniHKOlkGYrQ/3fQfSjTS/noDPIxVF6W0dzZJ+GFaeP
-	2Xmm0gJIWecfOgvPazQ/JIvqDLE+3Go55Y62zu6ua3SjpYpgF6QWdPm/cSeJ5QQJqukDD7GU/P+pM
-	usJsd16+DK6WukCSIQ8qLlMYac+vFgW0LcC8ddDDEkQQpcone2eyn1qJFjfeYKtG/k1v9Uf5i/Vyy
-	qFeIuSWnUoKVyXiXterg==;
+	List-Owner; bh=mdK6a/bzelfFTk+Oz0cBgqmljg1hxMihAWCUZbZaqRc=; b=E7LIJYsI7ax57J
+	yoICNLa7QD1zSTQonMXZXg/JXWLyxJyYDtC1lRgtcUrdYWIG5m6ff85e1ay0GAFUheqOm3HMULrfq
+	DH9HqmFSSeyp8cruNnPh15sOoepgFvWnE+V20fmEv9rZN5CpITcDrYmR6UCXphtjaSPzVShmF73vS
+	KLh/dLxCo6K2x6qEQ/J8ZVdaZJc7GUOVtE8AbA1WoaOsDg6ERng7CmZvkJJ2hP50mV1s+SshX4eDp
+	hyN3EXJEUc0NDwcVosgVocKZVVzpOJr0BJD12bTTfAdW6M6Xb+1uC6235XATfgVnmWRvM3d6pPFgZ
+	VXCJCYC3+7Z3jUeN/zqA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hfu1X-00026L-Bj; Tue, 25 Jun 2019 22:34:47 +0000
+	id 1hfu2E-0002WU-4l; Tue, 25 Jun 2019 22:35:30 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hftzD-0000rw-W6
- for linux-arm-kernel@lists.infradead.org; Tue, 25 Jun 2019 22:32:25 +0000
+ id 1hfu1h-0002U7-Gp
+ for linux-arm-kernel@lists.infradead.org; Tue, 25 Jun 2019 22:34:59 +0000
 Received: from kernel.org (unknown [104.132.0.74])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 3B8EC2053B;
- Tue, 25 Jun 2019 22:32:23 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 1FCBF205ED;
+ Tue, 25 Jun 2019 22:34:57 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1561501943;
- bh=cSuQxxaq84YwOFPQHIHja20RlhSxafVamByUrHvRrDQ=;
+ s=default; t=1561502097;
+ bh=/kwIgl7T7RUB6O8AVjTRLgNL7U9K6Zhd50WUYjJcszk=;
  h=In-Reply-To:References:To:From:Subject:Cc:Date:From;
- b=uOThxdWIbQIHssS8dVd8WO2sv4HnWY9Krnf6kAdWBWn+vn4mff8AGaU7SXJfDPhQh
- R4W3J5zoId9HAY1DA6y3R2SF0uCSl/dNLEEHvscypDCrIjnWYyYi9IAO2n+zDnSwEJ
- 9POD0+D4ltW1DyG5nDqCpTX0MxTKdezfL79viuNE=
+ b=TJcRicsuQdvPQg9FeTYbsi/IhN1JdT58h299gkXyrGdyEDhz+ZXUCdRDp0ABWeF67
+ mfNgTTWW7vB2AB93S1BledWN7Ici0mXVLEkXdh1PtPnaCLdWvIrJvmKCZN0+p9w5ew
+ eHnOpg3F3NLVVen8lN7NjAb6z6kZ0nPHR1rtx0d4=
 MIME-Version: 1.0
-In-Reply-To: <1561453316-11481-1-git-send-email-abel.vesa@nxp.com>
-References: <1561453316-11481-1-git-send-email-abel.vesa@nxp.com>
-To: Abel Vesa <abel.vesa@nxp.com>, Anson Huang <anson.huang@nxp.com>,
- Fabio Estevam <fabio.estevam@nxp.com>,
- Mike Turquette <mturquette@baylibre.com>, Sascha Hauer <kernel@pengutronix.de>,
- Shawn Guo <shawnguo@kernel.org>
+In-Reply-To: <DB3PR0402MB3916F7F7D7CA801F5C0D0610F5ED0@DB3PR0402MB3916.eurprd04.prod.outlook.com>
+References: <20190604015928.23157-1-Anson.Huang@nxp.com>
+ <20190604015928.23157-3-Anson.Huang@nxp.com>
+ <20190606162543.EFFB820645@mail.kernel.org>
+ <DB3PR0402MB391625A0B3D838CE88C53E33F5100@DB3PR0402MB3916.eurprd04.prod.outlook.com>
+ <20190607180039.611C7208C0@mail.kernel.org>
+ <DB3PR0402MB391678C245944942EA2A7F62F5110@DB3PR0402MB3916.eurprd04.prod.outlook.com>
+ <20190610151425.D8139207E0@mail.kernel.org>
+ <DB3PR0402MB3916F7F7D7CA801F5C0D0610F5ED0@DB3PR0402MB3916.eurprd04.prod.outlook.com>
+To: "bjorn.andersson@linaro.org" <bjorn.andersson@linaro.org>,
+ "catalin.marinas@arm.com" <catalin.marinas@arm.com>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ "dinguyen@kernel.org" <dinguyen@kernel.org>,
+ "enric.balletbo@collabora.com" <enric.balletbo@collabora.com>,
+ "festevam@gmail.com" <festevam@gmail.com>,
+ "horms+renesas@verge.net.au" <horms+renesas@verge.net.au>,
+ "jagan@amarulasolutions.com" <jagan@amarulasolutions.com>,
+ "kernel@pengutronix.de" <kernel@pengutronix.de>,
+ "l.stach@pengutronix.de" <l.stach@pengutronix.de>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ "linux-clk@vger.kernel.org" <linux-clk@vger.kernel.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "mark.rutland@arm.com" <mark.rutland@arm.com>,
+ "maxime.ripard@bootlin.com" <maxime.ripard@bootlin.com>,
+ "mturquette@baylibre.com" <mturquette@baylibre.com>,
+ "olof@lixom.net" <olof@lixom.net>, "robh+dt@kernel.org" <robh+dt@kernel.org>,
+ "s.hauer@pengutronix
+ .de" <s.hauer@pengutronix.de>, "shawnguo@kernel.org" <shawnguo@kernel.org>,
+ "will.deacon@arm.com" <will.deacon@arm.com>, Abel Vesa <abel.vesa@nxp.com>,
+ Aisheng Dong <aisheng.dong@nxp.com>, Anson Huang <anson.huang@nxp.com>,
+ Jacky Bai <ping.bai@nxp.com>, Leonard Crestez <leonard.crestez@nxp.com>
 From: Stephen Boyd <sboyd@kernel.org>
-Subject: Re: [PATCH] clk: imx8mq: Mark AHB clock as critical
+Subject: RE: [PATCH V3 3/4] clk: imx: Add support for i.MX8MN clock driver
 User-Agent: alot/0.8.1
-Date: Tue, 25 Jun 2019 15:32:22 -0700
-Message-Id: <20190625223223.3B8EC2053B@mail.kernel.org>
+Date: Tue, 25 Jun 2019 15:34:56 -0700
+Message-Id: <20190625223457.1FCBF205ED@mail.kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190625_153224_254518_E9FDC56B 
-X-CRM114-Status: GOOD (  14.20  )
+X-CRM114-CacheID: sfid-20190625_153457_723155_0F022957 
+X-CRM114-Status: GOOD (  17.64  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -78,42 +103,65 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Abel Vesa <abel.vesa@nxp.com>, NXP Linux Team <linux-imx@nxp.com>,
- linux-arm-kernel@lists.infradead.org, linux-clk@vger.kernel.org
+Cc: dl-linux-imx <linux-imx@nxp.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Quoting Abel Vesa (2019-06-25 02:01:56)
-> Keep the AHB clock always on since there is no driver to control it and
-> all the other clocks that use it as parent rely on it being always enabled.
+Quoting Anson Huang (2019-06-10 19:06:22)
+> > >
+> > > Sorry, I am still a little confused, all the clock
+> > > register(clk_register()) are via each different clock types like
+> > > imx_clk_gate4/imx_clk_pll14xx, if using clk_hw_register, means we need
+> > > to re-write the clock driver using different clk register method, that
+> > > will make the driver completely different from i.mx8mq/i.mx8mm, they
+> > > are actually same series of SoC as i.mx8mn, it will introduce many
+> > confusion, is my understanding correct? And is it OK to just keep what it is
+> > and make them all aligned?
+> > >
+> > 
+> > Ok, the problem I'm trying to point out is that clk registrations need to be
+> > undone, i.e. clk_unregister() needs to be called, when the driver fails to
+> > probe. devm_*() is one way to do this, but if you have other ways of
+> > removing all the registered clks then that works too. Makes sense?
 > 
-> Signed-off-by: Abel Vesa <abel.vesa@nxp.com>
-> ---
->  drivers/clk/imx/clk-imx8mq.c | 2 +-
->  1 file changed, 1 insertion(+), 1 deletion(-)
+> Yes, it makes sense. Do you think it is OK to add an imx_unregister_clocks() API, then
+> call it in every place of returning failure in .probe function? If yes, I will add it and also
+> fix it in i.MX8MQ driver which uses platform driver model but does NOT handle this case. 
 > 
-> diff --git a/drivers/clk/imx/clk-imx8mq.c b/drivers/clk/imx/clk-imx8mq.c
-> index 5fbc2a7..b48268b 100644
-> --- a/drivers/clk/imx/clk-imx8mq.c
-> +++ b/drivers/clk/imx/clk-imx8mq.c
-> @@ -398,7 +398,7 @@ static int imx8mq_clocks_probe(struct platform_device *pdev)
->         clks[IMX8MQ_CLK_NOC_APB] = imx8m_clk_composite_critical("noc_apb", imx8mq_noc_apb_sels, base + 0x8d80);
->  
->         /* AHB */
-> -       clks[IMX8MQ_CLK_AHB] = imx8m_clk_composite("ahb", imx8mq_ahb_sels, base + 0x9000);
-> +       clks[IMX8MQ_CLK_AHB] = imx8m_clk_composite_critical("ahb", imx8mq_ahb_sels, base + 0x9000);
+>         base = devm_platform_ioremap_resource(pdev, 0);
+> -       if (WARN_ON(IS_ERR(base)))
+> -               return PTR_ERR(base);
+> +       if (WARN_ON(IS_ERR(base))) {
+> +               ret = PTR_ERR(base);
+> +               goto unregister_clks;
+> +       }
+> 
+>                 pr_err("failed to register clks for i.MX8MN\n");
+> -               return -EINVAL;
+> +               goto unregister_clks;
+>         }
+> 
+>         return 0;
+> +
+> +unregister_clks:
+> +       imx_unregister_clocks(clks, ARRAY_SIZE(clks));
+> +
+> +       return ret;
+> 
+> +void imx_unregister_clocks(struct clk *clks[], unsigned int count)
+> +{
+> +       unsigned i;
+> +
+> +       for (i = 0; i < count; i++)
+> +               clk_unregister(clks[i]);
+> +}
+> +
+> 
 
-Please add a comment into the code why it's critical.
+Yes, looks better.
 
->         clks[IMX8MQ_CLK_AUDIO_AHB] = imx8m_clk_composite("audio_ahb", imx8mq_audio_ahb_sels, base + 0x9100);
->  
->         /* IPG */
-> -- 
-> 2.7.4
-> 
 
 _______________________________________________
 linux-arm-kernel mailing list
