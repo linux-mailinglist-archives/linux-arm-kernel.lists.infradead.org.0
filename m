@@ -2,62 +2,87 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EDA1654DF8
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 25 Jun 2019 13:51:04 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id AB7C154E8D
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 25 Jun 2019 14:14:24 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=WQxSbh2rm0l/I4Fg7XH9uaVmdDKmIvkWDL20c1qo+TI=; b=ee/qv8QdKazTNCjiCinroH1H/
-	rs5mKj1Ec/QvmIACn4UrHQ9Oo/NaCHmlncH9+dgLVsv76n4oW7/+/Gpw+v3noZtdq2JxF7JAHk5EM
-	PIBsM8hp+eZCZsZahrLzHjoWDfLjprKB3jR9Dewiu7LGuQT4bTpYNWpHyx6wXIRYLlOkwu+j3Z94r
-	Zj92kvTJtqYeavBm28yi9jrr4Q+1VB8EWYsRKi3fBoakvIIgQK24WvTsZbPphByJOvqDgQcXwlSac
-	ZddeTBwkTIu6kF2obiI0LQUdde+yrQUUoaw5gzxRBDuYYja4SbP/hF3W4+2N33idk9mCZKMxDnLy8
-	NISrYyxCA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=L8tHcnZZky6sqwdr96CVvB2gVd/tVA50v3ncdT0jMjw=; b=cK65fl2Kad7FaZ
+	TnRx61kcYTIBem+2U0Hit5P6QYsslwmcEcF5mikJF1hg1TkrGR6db6+J+eGW9dSdbAx2+6upIjz1n
+	Plr+yC2bYZbYfT1p4QiLFC3rJQhNqZ8AXdcAB9r0VLPzRjR5SYrNVx5gUNvzjw+qy5WUt1/hERSzW
+	jQsmWRyfdmLrwk4wXECLiL5Xo2kvTi2PjRllO0SeaJNgo5tTouBTdaKij565Gw/K67xwtQqQedjJD
+	gMMevIJhdKHp9vqY6q3NV2r0DPNMsBBeApYe7HoPFEzJsGAcysdyAZzzpycY2D+Drnx41+RuzhVrw
+	vCiGpfRbDqfHBLG23L0g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hfjyV-0003mz-NZ; Tue, 25 Jun 2019 11:50:59 +0000
-Received: from szxga04-in.huawei.com ([45.249.212.190] helo=huawei.com)
+	id 1hfkL5-0000f7-1c; Tue, 25 Jun 2019 12:14:19 +0000
+Received: from mail-lj1-x241.google.com ([2a00:1450:4864:20::241])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hfjyH-0003km-MK
- for linux-arm-kernel@lists.infradead.org; Tue, 25 Jun 2019 11:50:47 +0000
-Received: from DGGEMS404-HUB.china.huawei.com (unknown [172.30.72.60])
- by Forcepoint Email with ESMTP id D2A5EB1D8DF8C982AA7F;
- Tue, 25 Jun 2019 19:50:32 +0800 (CST)
-Received: from [127.0.0.1] (10.184.12.158) by DGGEMS404-HUB.china.huawei.com
- (10.3.19.204) with Microsoft SMTP Server id 14.3.439.0; Tue, 25 Jun 2019
- 19:50:26 +0800
-Subject: Re: [PATCH v2 7/9] KVM: arm/arm64: vgic-its: Cache successful
- MSI->LPI translation
-To: Marc Zyngier <marc.zyngier@arm.com>,
- <linux-arm-kernel@lists.infradead.org>, <kvmarm@lists.cs.columbia.edu>,
- <kvm@vger.kernel.org>
-References: <20190611170336.121706-1-marc.zyngier@arm.com>
- <20190611170336.121706-8-marc.zyngier@arm.com>
-From: Zenghui Yu <yuzenghui@huawei.com>
-Message-ID: <53de88e9-3550-bd7f-8266-35c5e75fae4e@huawei.com>
-Date: Tue, 25 Jun 2019 19:50:04 +0800
-User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:64.0) Gecko/20100101
- Thunderbird/64.0
+ id 1hfkCH-0001BY-JR
+ for linux-arm-kernel@lists.infradead.org; Tue, 25 Jun 2019 12:05:16 +0000
+Received: by mail-lj1-x241.google.com with SMTP id i21so15997177ljj.3
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 25 Jun 2019 05:05:13 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=lixom-net.20150623.gappssmtp.com; s=20150623;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=xdsnLrsYJbWERRxV/nWb2MgRMp7nkNf8MeT+JdwKIc4=;
+ b=ROxVYJGUnQP1c0Gh5ckMQ8ayBmQuVwDQpvAFJzk2/AFEuA9/hngDWesn1SS5NrllBP
+ rwNcSCYOtzbaUym3oQkFdnxan4tbjhwihsV3/Wcf2AaBM44wuPNB3pxLIAtOR6n894WW
+ YFOgjQWt964NbmSzCfZuVC/Wx+HY8YTg42/uyaoHORJ1PC1xj1SftkQyWYJSPxtFvGvM
+ MZCHgcOR6PY6CQinuRIMoIx3+bmfwbNB82oDVcFvpjztigk444YRkHU9uZ9CK2/gNoSm
+ 8KyHkFSYK8lOt2b7TTpPOaEjtCJNnpiXukgr/6T+h+3m4NGGb8Us3N+/zdj/BY6SXvyz
+ AY9g==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=xdsnLrsYJbWERRxV/nWb2MgRMp7nkNf8MeT+JdwKIc4=;
+ b=oWVVee0GIBQvPUk9NVM1ZErf0P1VEk25BsNCuohsMDREwSLyqbo227lZ6/qzIrtcjC
+ UrHhLI+p0FL5IuQW08JilEeJiH2DZVqZ1t/5tNwBeqqw9HizmYT9Up1gOPSk+sGIEI3l
+ WT9IsPn7sGCG5AERoZEg3Fye5WRVXjmwlPWcsBDIQDw9RLtBGG7olVy3fbIS2IOa6RaQ
+ RJFxvPX4hkYx7C31eLwCi7dk7h/j3wYwTT80nXcZ/hMj1GAhikRfkYoeR6yYqc4YlUIQ
+ OoHW2OYndbUMiiaUFr2cuLxPJCd/xIf2iGm4An2u57Qp5IpCy/EvWRL/LYFq2FLY5CUo
+ xTBA==
+X-Gm-Message-State: APjAAAVnXm+AvpiOzT5iUECyp7oMSlRq73Q1dPwRXwDHY+dbQAVJ/PRj
+ mFLsttBoceFskrqgdelnE19XtA==
+X-Google-Smtp-Source: APXvYqzrIs/OYd5IboKOCIHa0eUKnsXaFdu6aS2fUzEOM0jbd9xTAXplq2G7a30bDl0eXbt1kQ7lxg==
+X-Received: by 2002:a2e:12dc:: with SMTP id 89mr21141179ljs.40.1561464312159; 
+ Tue, 25 Jun 2019 05:05:12 -0700 (PDT)
+Received: from localhost (h85-30-9-151.cust.a3fiber.se. [85.30.9.151])
+ by smtp.gmail.com with ESMTPSA id 89sm2218804ljs.48.2019.06.25.05.05.10
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Tue, 25 Jun 2019 05:05:11 -0700 (PDT)
+Date: Tue, 25 Jun 2019 04:50:42 -0700
+From: Olof Johansson <olof@lixom.net>
+To: Robert Jarzmik <robert.jarzmik@free.fr>
+Subject: Re: [GIT PULL] pxa-dt for v5.3
+Message-ID: <20190625115042.qrlpbjzehjhxilvh@localhost>
+References: <877e9ayg88.fsf@belgarion.home>
 MIME-Version: 1.0
-In-Reply-To: <20190611170336.121706-8-marc.zyngier@arm.com>
-Content-Language: en-US
-X-Originating-IP: [10.184.12.158]
-X-CFilter-Loop: Reflected
+Content-Disposition: inline
+In-Reply-To: <877e9ayg88.fsf@belgarion.home>
+User-Agent: NeoMutt/20170113 (1.7.2)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190625_045045_961578_815E92D4 
-X-CRM114-Status: GOOD (  20.84  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20190625_050513_767102_18EAA2D1 
+X-CRM114-Status: GOOD (  14.06  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [45.249.212.190 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:241 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -69,144 +94,34 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Suzuki K Poulose <suzuki.poulose@arm.com>, "Raslan,
- KarimAllah" <karahmed@amazon.de>, Julien Thierry <julien.thierry@arm.com>,
- Christoffer Dall <christoffer.dall@arm.com>,
- Eric Auger <eric.auger@redhat.com>, James Morse <james.morse@arm.com>, "Saidi,
- Ali" <alisaidi@amazon.com>
+Cc: arm@kernel.org, Haojian Zhuang <haojian.zhuang@gmail.com>,
+ linux-arm-kernel@lists.infradead.org, Daniel Mack <zonque@gmail.com>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Marc,
-
-On 2019/6/12 1:03, Marc Zyngier wrote:
-> On a successful translation, preserve the parameters in the LPI
-> translation cache. Each translation is reusing the last slot
-> in the list, naturally evincting the least recently used entry.
+On Mon, Jun 24, 2019 at 08:45:43PM +0200, Robert Jarzmik wrote:
+> Hi Arnd, Kevin, and Olof,
 > 
-> Signed-off-by: Marc Zyngier <marc.zyngier@arm.com>
-> ---
->   virt/kvm/arm/vgic/vgic-its.c | 86 ++++++++++++++++++++++++++++++++++++
->   1 file changed, 86 insertions(+)
+> This is the pxa devicetree pull request for 5.3. Can you please consider pulling ?
 > 
-> diff --git a/virt/kvm/arm/vgic/vgic-its.c b/virt/kvm/arm/vgic/vgic-its.c
-> index 0aa0cbbc3af6..62932458476a 100644
-> --- a/virt/kvm/arm/vgic/vgic-its.c
-> +++ b/virt/kvm/arm/vgic/vgic-its.c
-> @@ -546,6 +546,90 @@ static unsigned long vgic_mmio_read_its_idregs(struct kvm *kvm,
->   	return 0;
->   }
->   
-> +static struct vgic_irq *__vgic_its_check_cache(struct vgic_dist *dist,
-> +					       phys_addr_t db,
-> +					       u32 devid, u32 eventid)
-> +{
-> +	struct vgic_translation_cache_entry *cte;
-> +	struct vgic_irq *irq = NULL;
-> +
-> +	list_for_each_entry(cte, &dist->lpi_translation_cache, entry) {
-> +		/*
-> +		 * If we hit a NULL entry, there is nothing after this
-> +		 * point.
-> +		 */
-> +		if (!cte->irq)
-> +			break;
-> +
-> +		if (cte->db == db &&
-> +		    cte->devid == devid &&
-> +		    cte->eventid == eventid) {
-> +			/*
-> +			 * Move this entry to the head, as it is the
-> +			 * most recently used.
-> +			 */
-> +			list_move(&cte->entry, &dist->lpi_translation_cache);
-
-Only for performance reasons: if we hit at the "head" of the list, we
-don't need to do a list_move().
-In our tests, we found that a single list_move() takes nearly (sometimes
-even more than) one microsecond, for some unknown reason...
-
-
-Thanks,
-zenghui
-
-> +			irq = cte->irq;
-> +			break;
-> +		}
-> +	}
-> +
-> +	return irq;
-> +}
-> +
-> +static void vgic_its_cache_translation(struct kvm *kvm, struct vgic_its *its,
-> +				       u32 devid, u32 eventid,
-> +				       struct vgic_irq *irq)
-> +{
-> +	struct vgic_dist *dist = &kvm->arch.vgic;
-> +	struct vgic_translation_cache_entry *cte;
-> +	unsigned long flags;
-> +	phys_addr_t db;
-> +
-> +	/* Do not cache a directly injected interrupt */
-> +	if (irq->hw)
-> +		return;
-> +
-> +	raw_spin_lock_irqsave(&dist->lpi_list_lock, flags);
-> +
-> +	if (unlikely(list_empty(&dist->lpi_translation_cache)))
-> +		goto out;
-> +
-> +	/*
-> +	 * We could have raced with another CPU caching the same
-> +	 * translation behind our back, so let's check it is not in
-> +	 * already
-> +	 */
-> +	db = its->vgic_its_base + GITS_TRANSLATER;
-> +	if (__vgic_its_check_cache(dist, db, devid, eventid))
-> +		goto out;
-> +
-> +	/* Always reuse the last entry (LRU policy) */
-> +	cte = list_last_entry(&dist->lpi_translation_cache,
-> +			      typeof(*cte), entry);
-> +
-> +	/*
-> +	 * Caching the translation implies having an extra reference
-> +	 * to the interrupt, so drop the potential reference on what
-> +	 * was in the cache, and increment it on the new interrupt.
-> +	 */
-> +	if (cte->irq)
-> +		__vgic_put_lpi_locked(kvm, cte->irq);
-> +
-> +	vgic_get_irq_kref(irq);
-> +
-> +	cte->db		= db;
-> +	cte->devid	= devid;
-> +	cte->eventid	= eventid;
-> +	cte->irq	= irq;
-> +
-> +	/* Move the new translation to the head of the list */
-> +	list_move(&cte->entry, &dist->lpi_translation_cache);
-> +
-> +out:
-> +	raw_spin_unlock_irqrestore(&dist->lpi_list_lock, flags);
-> +}
-> +
->   void vgic_its_invalidate_cache(struct kvm *kvm)
->   {
->   	struct vgic_dist *dist = &kvm->arch.vgic;
-> @@ -589,6 +673,8 @@ int vgic_its_resolve_lpi(struct kvm *kvm, struct vgic_its *its,
->   	if (!vcpu->arch.vgic_cpu.lpis_enabled)
->   		return -EBUSY;
->   
-> +	vgic_its_cache_translation(kvm, its, devid, eventid, ite->irq);
-> +
->   	*irq = ite->irq;
->   	return 0;
->   }
+> The following changes since commit a188339ca5a396acc588e5851ed7e19f66b0ebd9:
 > 
+>   Linux 5.2-rc1 (2019-05-19 15:47:09 -0700)
+> 
+> are available in the Git repository at:
+> 
+>   https://github.com/rjarzmik/linux.git tags/pxa-dt-5.3
+> 
+> for you to fetch changes up to bea8754e784ef894a7aaf1821a1e8b700cc70f32:
+> 
+>   ARM: dts: pxa300-raumfeld-speaker-one: add channel output mapping for STA320 (2019-06-24 11:35:02 +0200)
 
+Merged, thanks!
+
+
+-Olof
 
 _______________________________________________
 linux-arm-kernel mailing list
