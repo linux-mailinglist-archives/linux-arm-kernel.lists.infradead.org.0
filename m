@@ -2,81 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B2BFF54E7C
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 25 Jun 2019 14:12:30 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4CD2C54E83
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 25 Jun 2019 14:13:31 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=xS2pa6LWddieHNok2KAJZo45fgf4XGiM8Va3XqXOVzQ=; b=b66FNsUIjDomi+
-	ua1vSdja6A7mnHFcRO494RrnN1zV3voFsd7QhHVHfTzLWMTIyiABm8KzwP9DW1Aioa2wjLinVqpGN
-	/bxI1h20bH4H0YgKwwlWh2OwPzYX6k7vHs8eVerv1+5wfzLo4vEy1oGTFNH5gXTS2A3+gkCvqxCSU
-	CerJG8eAzUZ3ik24crKx71KvtUyZq6uHPF2toKdUQx4idEM0Rn3T2Zsb9CFA45lTPNA40OQK7i3Fo
-	Vgk6tVjArGztYsDanL80WFOZRaXGkPEOrPJclet7Jd+mxRx++2coVFQkStgk9N0ws6csvfqRF6XJR
-	RMBlJrSS3yQEI1rGyeXA==;
+	List-Owner; bh=6qsEJSm/7OIv/2ngp1wotv2t1b8mK9xPg+kY7GkWLgs=; b=FG4tSEyqQytVYc
+	qAA9C4iz0zk7gfMq2E8sWC/yK+CrXhjANTu1ACmPLbe4KaE63xNJv0yewoHNRmzoV+L7SIB+iTpTg
+	gxDweVe9sqDaK0MD9gVRsf+jFJV3q+TmvMDP/NH8LFpZvCMprRSfSH83E4xRDm19rPAR5ZvJ+Zx4l
+	0b19cA9J59FmLCrSp38edzybhn4LLWElCHunmqbHzi/D+f9jYqWgq9utHGkb7pzOhR+U1PV/ynBL3
+	zqmzCIlE5ofYoTzR1Z1Gghgk6uLGNGxxlXxd/fMDlgqcqJz1vZ/sO7cU1GvbH7M14RNu0WX13+a5g
+	/exX5l5Gszkt3r0kJ1Kg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hfkJF-0006pr-S2; Tue, 25 Jun 2019 12:12:25 +0000
-Received: from mail-lj1-x243.google.com ([2a00:1450:4864:20::243])
+	id 1hfkKE-000854-Ft; Tue, 25 Jun 2019 12:13:26 +0000
+Received: from mail-lj1-x244.google.com ([2a00:1450:4864:20::244])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hfkC7-0000FS-FX
- for linux-arm-kernel@lists.infradead.org; Tue, 25 Jun 2019 12:05:07 +0000
-Received: by mail-lj1-x243.google.com with SMTP id r9so15972693ljg.5
+ id 1hfkCA-0000Ni-7S
+ for linux-arm-kernel@lists.infradead.org; Tue, 25 Jun 2019 12:05:08 +0000
+Received: by mail-lj1-x244.google.com with SMTP id a21so15973113ljh.7
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 25 Jun 2019 05:05:02 -0700 (PDT)
+ Tue, 25 Jun 2019 05:05:04 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=lixom-net.20150623.gappssmtp.com; s=20150623;
  h=date:from:to:cc:subject:message-id:references:mime-version
  :content-disposition:in-reply-to:user-agent;
- bh=lsjU0B8w1/+TpKQdDJy9G6QTMNvy3R6oaTVgf9gLKTI=;
- b=YGZqAawjNi+O0OEeqgV3sT+/NTAdycURx0SRbs8tzQNu0LXZG8x41BHUCf3IsTrPNA
- 664FQ6qJO20/czGzXwXiffHlASar3gNw0echevNxNar18hS4OgS5vyhRPfuKUxlwAvdU
- +Fd4ooUaJKoterQj9hplpATgO+IBNX0l5immsqSrQP9cMEebmetx11tOnBSyeUIs65Az
- cm9gx0l41a+IZoRuJ5UeJUjh04vzmxiq4D06QK+xHC84cSKPkQJNBW3qkYeM2/Bf/4MJ
- m8nwLj2bFwPPJvrFIvU8RnH3xWNRz0CO9rgLgYL185384j6BAClKFW77o4gVLz0K47x4
- xLTA==
+ bh=ZCqm+oSft5fAPJxKmIyqw7sj+ghn/xnpVlKgn8ycP14=;
+ b=D+Vg5xfV3w8uEePdmqRg6vbqpf1u5GMliiUZhLuQtmKBGL2vuHgbvkuRIq4R0eY019
+ 4k7wgnL3Xb68pJ8LWYObKYrjn/HGU/4sVIlD27CUPIcbJL45VRSHVSIp0p/CJWEBELjq
+ 3IETxvG76CSO5kfbEkCYArGK+KzCkySYnacJFSbBCVKK5pPBTPzMqfIG9F/AiEDQpDDM
+ MO5cRfEuq936WWxwig4YEAJMFKo9NUkkTzNE7Qd+hSRhqFuOe44VCw2GcXesEyiRMJh6
+ 8MMpUHFn8I+P9riKmRbYvAwByolJtrK279yyNecvzunTgbqkRMxulVXOlR3CEMvRgRtM
+ ZDwA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to:user-agent;
- bh=lsjU0B8w1/+TpKQdDJy9G6QTMNvy3R6oaTVgf9gLKTI=;
- b=qGTCMlxo/mCHV51RyvbCTo0QHOwUxl2EEM5CcjhXyWIkO0eT7AzvJJ6kghISFgqbaK
- tH2I0ftwfSnMM82XdKXP4HCOcXEoHkS7L9LlHQvlXSrhYKP2XkXSsyP3J6PAiZQd/TJ/
- 1UorzfCv8XvwrPxQ23OKhng9Pak8VxAfqnwT0gnw7atQOrrLvGliaSviJv9bOnGXV16F
- eO3kdcwHXdVQiYlOCbutSbokaSbaOjjRN9X8YXuGIA7cX5emdGJyjQA2ZMBDXobUDShS
- 9v7x3ssd2JQZ8f08Hpxhcay8dtkN0p3YPXwVKcrMIZpwjWB7DkcH/F75n1olZ08/D64q
- ZJoA==
-X-Gm-Message-State: APjAAAUGaW49tBgDw8gCaZfZHpJd/Uy6t19pTpHc7WQd09Wci4FGXvLh
- LT8o3mjis03JlXqLw/3eRKedwA==
-X-Google-Smtp-Source: APXvYqwE8XgUYst/0iqT8fyftfT0HKnJwEnsCZdN6X1ziSQJ8TbqkT1lLI2Apr9jO2NSt/LQUdXgsQ==
-X-Received: by 2002:a2e:12c8:: with SMTP id 69mr73238941ljs.189.1561464301164; 
- Tue, 25 Jun 2019 05:05:01 -0700 (PDT)
+ bh=ZCqm+oSft5fAPJxKmIyqw7sj+ghn/xnpVlKgn8ycP14=;
+ b=aOggNh/xQiCmYbz+nQZz8f3guh6MdSS1Zwj4t7/OM1MfmVR0SnxnK/5eOT2FNlp+0D
+ XHVPxLfsrOFVUv08I1GGTFM6zUMrPX91oTZXkuWG+q51kBwjGkfW7kGHq1ViHoFaa5E4
+ AA0eb1k8DzjAmBwuumHPXVqhlqDS8eh5mDGcJuiGtz2rd8p29Ha8nFzd8L21vCD/kPkx
+ ob+T1qe7gzrx98ZS0K5fg5kacunZRlbBMT5hmnyn8wr7E2GR8nwRtZ122SUbTGsRqcR+
+ DWVD4dKEdRSfRv5hKMXvpDYbg+/m3Cths+Mf3doojCGFq+xkivG9EP7VErWGjkEi5J41
+ AYSQ==
+X-Gm-Message-State: APjAAAXsrh5y2Is1HZkNLW6uXnE/Mbzbkl2tLUKAEWjJVCbVPhB+y8Fc
+ pkXeBWnUdp1vks+fYPKGhlfxPA==
+X-Google-Smtp-Source: APXvYqwNUhvguPW/EuxXRp8c2O0jH9j/1bZIGRWXXZxKsP2kZygk2f9zVCb5vz2ycyqKJY0M+0NQ+Q==
+X-Received: by 2002:a2e:7a19:: with SMTP id v25mr19207671ljc.39.1561464303440; 
+ Tue, 25 Jun 2019 05:05:03 -0700 (PDT)
 Received: from localhost (h85-30-9-151.cust.a3fiber.se. [85.30.9.151])
- by smtp.gmail.com with ESMTPSA id 2sm2202333lju.52.2019.06.25.05.04.59
+ by smtp.gmail.com with ESMTPSA id 80sm1940581lfz.56.2019.06.25.05.05.02
  (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Tue, 25 Jun 2019 05:05:00 -0700 (PDT)
-Date: Tue, 25 Jun 2019 04:46:42 -0700
+ Tue, 25 Jun 2019 05:05:02 -0700 (PDT)
+Date: Tue, 25 Jun 2019 04:47:29 -0700
 From: Olof Johansson <olof@lixom.net>
 To: Gregory CLEMENT <gregory.clement@bootlin.com>
-Subject: Re: [GIT PULL] ARM: mvebu: dt for v5.3 (#1)
-Message-ID: <20190625114642.2wdzg2gsrubsdnqh@localhost>
-References: <87fto3mc3y.fsf@FE-laptop>
+Subject: Re: [GIT PULL] ARM: mvebu: dt64 for v5.3 (#1)
+Message-ID: <20190625114729.rgz6ax6244drhd5k@localhost>
+References: <87d0j7mc2q.fsf@FE-laptop>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <87fto3mc3y.fsf@FE-laptop>
+In-Reply-To: <87d0j7mc2q.fsf@FE-laptop>
 User-Agent: NeoMutt/20170113 (1.7.2)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190625_050503_783609_9ACA4F2E 
-X-CRM114-Status: GOOD (  13.92  )
+X-CRM114-CacheID: sfid-20190625_050506_491754_03B3EB86 
+X-CRM114-Status: GOOD (  13.71  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:243 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:244 listed in]
  [list.dnswl.org]
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -103,10 +103,10 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Jun 21, 2019 at 01:06:25PM +0200, Gregory CLEMENT wrote:
+On Fri, Jun 21, 2019 at 01:07:09PM +0200, Gregory CLEMENT wrote:
 > Hi,
 > 
-> Here is the first pull request for dt for mvebu for v5.3.
+> Here is the first pull request for dt64 for mvebu for v5.3.
 > 
 > Gregory
 > 
@@ -116,16 +116,12 @@ On Fri, Jun 21, 2019 at 01:06:25PM +0200, Gregory CLEMENT wrote:
 > 
 > are available in the Git repository at:
 > 
->   git://git.infradead.org/linux-mvebu.git tags/mvebu-dt-5.3-1
+>   git://git.infradead.org/linux-mvebu.git tags/mvebu-dt64-5.3-1
 > 
-> for you to fetch changes up to 0e5447626bed837604b21adf3e5cd903db78321e:
+> for you to fetch changes up to 200f5c4081e03b068ceac8b5418fb5160274b547:
 > 
->   ARM: dts: armada: netgear-rn104: Add LCD to RN104 dts. (2019-06-03 16:03:38 +0200)
-> 
-> ----------------------------------------------------------------
-> mvebu dt for 5.3 (part 1)
-> 
-> Add LCD support on Netgear RN104
+>   arm64: dts: marvell: add missing #interrupt-cells property (2019-06-18 10:17:39 +0200)
+
 
 Merged, thanks!
 
