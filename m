@@ -2,57 +2,129 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CF35E5270F
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 25 Jun 2019 10:49:13 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8D45252720
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 25 Jun 2019 10:51:49 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=VKbmzSgYcYYpxbqPvkLDtWBTLoDqmbv0U2TUJ6zxk3I=; b=jVmhSmQZicrDZC
-	JWt59UiUbTUpJ2mGh3QgflIwddR80fLhB7gHEayJd3a14bM9s1fJD3MscPcUtTL9qiPEMiv/N+myU
-	gFS46Vg/DwT9QpW+ZLe3lAlJxiiNozYx32u3kwxtLQcOhUL9fwwaFqTRMiHNVDrw5GE34JLcsJGh6
-	BTaklCrbrLwMfGuPeGH5h748zk05FVt0lW4ooHDOK2IpqIFxZ37ILrOaD+NUMqyYPRHsbMScmD64r
-	s53YW9VPhAK0LlluqH3yh/+h0husF1SM5gPT3ZKNbP/azSpfIWTWPUIw4DP+DdCt6VYa7fwqfbDfZ
-	SNhFRwO7jYNcCWFvMVMQ==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
+	References:Message-ID:Date:Subject:To:From:Reply-To:Cc:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=ToVo+ozVyN6sS+kCyRLMmjVMVAQw+8NdghNCbM8G69w=; b=g0BR+DwQurzNTP
+	r53iMhmppKtjQmj1a4cuW5GiCpsjxEj/3SXPzAmuHImOTiDYyYBHrBIcEN4ZpgQKt+1wNWoOLtFwO
+	yayy7XKaCLjfRbgLffGxLgJzwL5PtzgQDc7PE03sfO8B0cB7zlt+N+9OMhNGEC3eD64qW3AqZaeK6
+	fUpF1jB6d2VOqRMlIftffgOXjuXpjtaRpTAui35x7e3eBANYy/LDxOQ8HYi+orDstp8HODlBX/zRj
+	UbvXm719Ov2gNYZuq6rOChMEmMi4GM1ItNBaVKMhINIBRt8NvbwsmcCa237nEj90EY6te5a2m2VFb
+	OChAiU1dE9Inc/BCzQBQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hfh8W-0005L6-UF; Tue, 25 Jun 2019 08:49:08 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hfh8J-0005Kk-BD
- for linux-arm-kernel@lists.infradead.org; Tue, 25 Jun 2019 08:48:56 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 88A232B;
- Tue, 25 Jun 2019 01:48:54 -0700 (PDT)
-Received: from [10.37.8.194] (unknown [10.37.8.194])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 8E5D03F718;
- Tue, 25 Jun 2019 01:48:52 -0700 (PDT)
-Subject: Re: [PATCH 16/59] KVM: arm64: nv: Save/Restore vEL2 sysregs
-To: Marc Zyngier <marc.zyngier@arm.com>,
- linux-arm-kernel@lists.infradead.org, kvmarm@lists.cs.columbia.edu,
- kvm@vger.kernel.org
-References: <20190621093843.220980-1-marc.zyngier@arm.com>
- <20190621093843.220980-17-marc.zyngier@arm.com>
-From: Julien Thierry <julien.thierry@arm.com>
-Message-ID: <800f3e9a-5b67-951b-34c2-60367c0697f9@arm.com>
-Date: Tue, 25 Jun 2019 09:48:50 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101
- Thunderbird/52.9.1
-MIME-Version: 1.0
-In-Reply-To: <20190621093843.220980-17-marc.zyngier@arm.com>
+	id 1hfhB3-0007Aq-IM; Tue, 25 Jun 2019 08:51:45 +0000
+Received: from mail-am5eur02on0717.outbound.protection.outlook.com
+ ([2a01:111:f400:fe07::717]
+ helo=EUR02-AM5-obe.outbound.protection.outlook.com)
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hfhAq-00079V-2R
+ for linux-arm-kernel@lists.infradead.org; Tue, 25 Jun 2019 08:51:33 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=axentia.se;
+ s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=aNRey0Q/Xh555bd7+jbqJv2t7P70BgNv5KqDmeqs6ag=;
+ b=j0XaP3ySimDY/vPc8792zucRFEtZlXHME1hBISGieZ0GkA9qUV+ET/9+adn6zp5Jk01aIYryABiJILUD7bwRSvdiYOyTZddmJzu3FpCWD8xoDZvd9uVwCzww9UoJklPIDl8sfWKujmDcMmS8SOMT1K6FF2FYNdKxoGXOpX5xoTo=
+Received: from DB3PR0202MB3434.eurprd02.prod.outlook.com (52.134.66.158) by
+ DB3PR0202MB3401.eurprd02.prod.outlook.com (52.134.73.24) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2008.16; Tue, 25 Jun 2019 08:51:27 +0000
+Received: from DB3PR0202MB3434.eurprd02.prod.outlook.com
+ ([fe80::29c5:d1ae:8855:3153]) by DB3PR0202MB3434.eurprd02.prod.outlook.com
+ ([fe80::29c5:d1ae:8855:3153%3]) with mapi id 15.20.2008.014; Tue, 25 Jun 2019
+ 08:51:27 +0000
+From: Peter Rosin <peda@axentia.se>
+To: "Eugen.Hristev@microchip.com" <Eugen.Hristev@microchip.com>,
+ "robh+dt@kernel.org" <robh+dt@kernel.org>, "mark.rutland@arm.com"
+ <mark.rutland@arm.com>, "Nicolas.Ferre@microchip.com"
+ <Nicolas.Ferre@microchip.com>, "alexandre.belloni@bootlin.com"
+ <alexandre.belloni@bootlin.com>, "Ludovic.Desroches@microchip.com"
+ <Ludovic.Desroches@microchip.com>, "wsa@the-dreams.de" <wsa@the-dreams.de>,
+ "linux-i2c@vger.kernel.org" <linux-i2c@vger.kernel.org>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ "linux-arm-kernel@lists.infradead.org"
+ <linux-arm-kernel@lists.infradead.org>, "linux-kernel@vger.kernel.org"
+ <linux-kernel@vger.kernel.org>
+Subject: Re: [PATCH v2 9/9] ARM: dts: at91: sama5d4_xplained: add analogic
+ filter for i2c
+Thread-Topic: [PATCH v2 9/9] ARM: dts: at91: sama5d4_xplained: add analogic
+ filter for i2c
+Thread-Index: AQHVKyzD88KDJW5qrEyetFFZXOAmS6asD/kA
+Date: Tue, 25 Jun 2019 08:51:27 +0000
+Message-ID: <8b964ca4-58b6-5560-b06a-da3ad98dd36d@axentia.se>
+References: <1561449642-26956-1-git-send-email-eugen.hristev@microchip.com>
+ <1561449642-26956-10-git-send-email-eugen.hristev@microchip.com>
+In-Reply-To: <1561449642-26956-10-git-send-email-eugen.hristev@microchip.com>
+Accept-Language: en-US, sv-SE
 Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+user-agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:60.0) Gecko/20100101
+ Thunderbird/60.7.1
+x-originating-ip: [213.112.138.100]
+x-clientproxiedby: HE1PR0701CA0043.eurprd07.prod.outlook.com
+ (2603:10a6:3:9e::11) To DB3PR0202MB3434.eurprd02.prod.outlook.com
+ (2603:10a6:8:5::30)
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=peda@axentia.se; 
+x-ms-exchange-messagesentrepresentingtype: 1
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: 367c900a-b005-471b-1312-08d6f94a4f02
+x-microsoft-antispam: BCL:0; PCL:0;
+ RULEID:(2390118)(7020095)(4652040)(7021145)(8989299)(4534185)(7022145)(4603075)(4627221)(201702281549075)(8990200)(7048125)(7024125)(7027125)(7023125)(5600148)(711020)(4605104)(1401327)(2017052603328)(7193020);
+ SRVR:DB3PR0202MB3401; 
+x-ms-traffictypediagnostic: DB3PR0202MB3401:
+x-microsoft-antispam-prvs: <DB3PR0202MB34019D0DA115AE19E0AC1AFBBCE30@DB3PR0202MB3401.eurprd02.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:2803;
+x-forefront-prvs: 0079056367
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10019020)(346002)(396003)(376002)(39830400003)(366004)(136003)(199004)(189003)(71200400001)(71190400001)(66556008)(76176011)(5660300002)(66476007)(64756008)(66446008)(73956011)(6436002)(66946007)(486006)(7736002)(305945005)(186003)(508600001)(8936002)(6512007)(65826007)(64126003)(2501003)(52116002)(2906002)(99286004)(4744005)(31696002)(256004)(58126008)(6246003)(81156014)(7416002)(26005)(316002)(81166006)(8676002)(229853002)(110136005)(25786009)(68736007)(2616005)(11346002)(74482002)(14454004)(31686004)(65956001)(476003)(65806001)(66066001)(2201001)(6116002)(6486002)(36756003)(102836004)(6506007)(53546011)(446003)(53936002)(86362001)(386003)(3846002)(921003)(1121003);
+ DIR:OUT; SFP:1102; SCL:1; SRVR:DB3PR0202MB3401;
+ H:DB3PR0202MB3434.eurprd02.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; A:1; MX:1; 
+received-spf: None (protection.outlook.com: axentia.se does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam-message-info: pMOkyFz/1eyyAmnwxi1zallek3GFLVeFbMaR/87mjg4E90zBNF3kwD2HDIMKC4hxKuLZnxg256F+10NtZ9TljoNCtoopZZK4Relik5T4Y93VvITG/I1hACmqshNkupp7HBmM9aJC0w31Xxekvao0uFx75ShDUo5jCDYKh+AkYDSZyituOYTQlV/ai++Nddw6GZ8MvtTWjAVM++LiX+oNYImCVskVJgHFi6zf5BuxxS2/79hY1BCKlQQUnKfI1FCI/mwVZpwhyIvqyKVv0GnlkPULxJ1uDO1w2QHkxub8Coea3UDhmIhSUZuVgqaqFVsXGUcha+d2z7u2UTRtsjRAETY08jHSrJ2/bQ/4RO1ztn2VyDmThPHHaJb+npJbb8NxKEZK+lWbYNaBxkQbJNZoMrVk9bIsLDydCsPszEUE52Q=
+Content-ID: <30346D7CF884B04D8E7CF466AED05481@eurprd02.prod.outlook.com>
+MIME-Version: 1.0
+X-OriginatorOrg: axentia.se
+X-MS-Exchange-CrossTenant-Network-Message-Id: 367c900a-b005-471b-1312-08d6f94a4f02
+X-MS-Exchange-CrossTenant-originalarrivaltime: 25 Jun 2019 08:51:27.1214 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 4ee68585-03e1-4785-942a-df9c1871a234
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: peda@axentia.se
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB3PR0202MB3401
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190625_014855_483730_4BE327C5 
-X-CRM114-Status: GOOD (  22.80  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190625_015132_317376_5680528A 
+X-CRM114-Status: GOOD (  14.14  )
+X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (0.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a01:111:f400:fe07:0:0:0:717 listed in]
+ [list.dnswl.org]
+ 0.1 URIBL_SBL_A Contains URL's A record listed in the Spamhaus SBL
+ blocklist [URIs: axentia.se]
+ 0.6 URIBL_SBL Contains an URL's NS IP listed in the Spamhaus SBL
+ blocklist [URIs: axentia.se]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -64,136 +136,39 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Suzuki K Poulose <suzuki.poulose@arm.com>,
- Andre Przywara <andre.przywara@arm.com>,
- Christoffer Dall <christoffer.dall@arm.com>, Dave Martin <Dave.Martin@arm.com>,
- James Morse <james.morse@arm.com>, Jintack Lim <jintack@cs.columbia.edu>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-
-
-On 06/21/2019 10:38 AM, Marc Zyngier wrote:
-> From: Andre Przywara <andre.przywara@arm.com>
+On 2019-06-25 10:05, Eugen.Hristev@microchip.com wrote:
+> From: Eugen Hristev <eugen.hristev@microchip.com>
 > 
-> Whenever we need to restore the guest's system registers to the CPU, we
-> now need to take care of the EL2 system registers as well. Most of them
-> are accessed via traps only, but some have an immediate effect and also
-> a guest running in VHE mode would expect them to be accessible via their
-> EL1 encoding, which we do not trap.
-> 
-> Split the current __sysreg_{save,restore}_el1_state() functions into
-> handling common sysregs, then differentiate between the guest running in
-> vEL2 and vEL1.
-> 
-> For vEL2 we write the virtual EL2 registers with an identical format directly
-> into their EL1 counterpart, and translate the few registers that have a
-> different format for the same effect on the execution when running a
-> non-VHE guest guest hypervisor.
-> 
->   [ Commit message reworked and many bug fixes applied by Marc Zyngier
->     and Christoffer Dall. ]
-> 
-> Signed-off-by: Andre Przywara <andre.przywara@arm.com>
-> Signed-off-by: Marc Zyngier <marc.zyngier@arm.com>
-> Signed-off-by: Christoffer Dall <christoffer.dall@arm.com>
-> ---
->  arch/arm64/kvm/hyp/sysreg-sr.c | 160 +++++++++++++++++++++++++++++++--
->  1 file changed, 153 insertions(+), 7 deletions(-)
-> 
-> diff --git a/arch/arm64/kvm/hyp/sysreg-sr.c b/arch/arm64/kvm/hyp/sysreg-sr.c
-> index 62866a68e852..2abb9c3ff24f 100644
-> --- a/arch/arm64/kvm/hyp/sysreg-sr.c
-> +++ b/arch/arm64/kvm/hyp/sysreg-sr.c
+> Add property for digital filter for i2c0 node sama5d4_xplained
 
-[...]
-
-> @@ -124,10 +167,91 @@ static void __hyp_text __sysreg_restore_user_state(struct kvm_cpu_context *ctxt)
->  	write_sysreg(ctxt->sys_regs[TPIDRRO_EL0],	tpidrro_el0);
->  }
->  
-> -static void __hyp_text __sysreg_restore_el1_state(struct kvm_cpu_context *ctxt)
-> +static void __sysreg_restore_vel2_state(struct kvm_cpu_context *ctxt)
->  {
-> +	u64 val;
-> +
-> +	write_sysreg(read_cpuid_id(),			vpidr_el2);
->  	write_sysreg(ctxt->sys_regs[MPIDR_EL1],		vmpidr_el2);
-> -	write_sysreg(ctxt->sys_regs[CSSELR_EL1],	csselr_el1);
-> +	write_sysreg_el1(ctxt->sys_regs[MAIR_EL2],	SYS_MAIR);
-> +	write_sysreg_el1(ctxt->sys_regs[VBAR_EL2],	SYS_VBAR);
-> +	write_sysreg_el1(ctxt->sys_regs[CONTEXTIDR_EL2],SYS_CONTEXTIDR);
-> +	write_sysreg_el1(ctxt->sys_regs[AMAIR_EL2],	SYS_AMAIR);
-> +
-> +	if (__vcpu_el2_e2h_is_set(ctxt)) {
-> +		/*
-> +		 * In VHE mode those registers are compatible between
-> +		 * EL1 and EL2.
-> +		 */
-> +		write_sysreg_el1(ctxt->sys_regs[SCTLR_EL2],	SYS_SCTLR);
-> +		write_sysreg_el1(ctxt->sys_regs[CPTR_EL2],	SYS_CPACR);
-> +		write_sysreg_el1(ctxt->sys_regs[TTBR0_EL2],	SYS_TTBR0);
-> +		write_sysreg_el1(ctxt->sys_regs[TTBR1_EL2],	SYS_TTBR1);
-> +		write_sysreg_el1(ctxt->sys_regs[TCR_EL2],	SYS_TCR);
-> +		write_sysreg_el1(ctxt->sys_regs[CNTHCTL_EL2],	SYS_CNTKCTL);
-> +	} else {
-> +		write_sysreg_el1(translate_sctlr(ctxt->sys_regs[SCTLR_EL2]),
-> +				 SYS_SCTLR);
-> +		write_sysreg_el1(translate_cptr(ctxt->sys_regs[CPTR_EL2]),
-> +				 SYS_CPACR);
-> +		write_sysreg_el1(translate_ttbr0(ctxt->sys_regs[TTBR0_EL2]),
-> +				 SYS_TTBR0);
-> +		write_sysreg_el1(translate_tcr(ctxt->sys_regs[TCR_EL2]),
-> +				 SYS_TCR);
-> +		write_sysreg_el1(translate_cnthctl(ctxt->sys_regs[CNTHCTL_EL2]),
-> +				 SYS_CNTKCTL);
-> +	}
-> +
-> +	/*
-> +	 * These registers can be modified behind our back by a fault
-> +	 * taken inside vEL2. Save them, always.
-> +	 */
-> +	write_sysreg_el1(ctxt->sys_regs[ESR_EL2],	SYS_ESR);
-> +	write_sysreg_el1(ctxt->sys_regs[AFSR0_EL2],	SYS_AFSR0);
-> +	write_sysreg_el1(ctxt->sys_regs[AFSR1_EL2],	SYS_AFSR1);
-> +	write_sysreg_el1(ctxt->sys_regs[FAR_EL2],	SYS_FAR);
-> +	write_sysreg(ctxt->sys_regs[SP_EL2],		sp_el1);
-> +	write_sysreg_el1(ctxt->sys_regs[ELR_EL2],	SYS_ELR);
-> +
-> +	val = __fixup_spsr_el2_write(ctxt, ctxt->sys_regs[SPSR_EL2]);
-> +	write_sysreg_el1(val,	SYS_SPSR);
-> +}
-> +
-> +static void __hyp_text __sysreg_restore_vel1_state(struct kvm_cpu_context *ctxt)
-> +{
-> +	u64 mpidr;
-> +
-> +	if (has_vhe()) {
-> +		struct kvm_vcpu *vcpu;
-> +
-> +		/*
-> +		 * Warning: this hack only works on VHE, because we only
-> +		 * call this with the *guest* context, which is part of
-> +		 * struct kvm_vcpu. On a host context, you'd get pure junk.
-> +		 */
-> +		vcpu = container_of(ctxt, struct kvm_vcpu, arch.ctxt);
-
-This seems very fragile, just to find out whether the guest has hyp
-capabilities. It would be at least nice to make sure this is indeed a
-guest context.
-
-The *clean* way to do it could be to have a pointer to kvm_vcpu in the
-kvm_cpu_context which would be NULL for host contexts.
-
-Otherwise, I'm under the impression that for a host context,
-ctxt->sys_reg[HCR_EL2] == 0 and that this would also be true for a guest
-without nested virt capability. Could we use something like that here?
+This does not match the below hunk.
 
 Cheers,
+Peter
 
-Julien
+> Signed-off-by: Eugen Hristev <eugen.hristev@microchip.com>
+> ---
+>  arch/arm/boot/dts/at91-sama5d4_xplained.dts | 1 +
+>  1 file changed, 1 insertion(+)
+> 
+> diff --git a/arch/arm/boot/dts/at91-sama5d4_xplained.dts b/arch/arm/boot/dts/at91-sama5d4_xplained.dts
+> index fdfc37d..06068dc 100644
+> --- a/arch/arm/boot/dts/at91-sama5d4_xplained.dts
+> +++ b/arch/arm/boot/dts/at91-sama5d4_xplained.dts
+> @@ -49,6 +49,7 @@
+>  			};
+>  
+>  			i2c0: i2c@f8014000 {
+> +				enable-ana-filt;
+>  				status = "okay";
+>  			};
+>  
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
