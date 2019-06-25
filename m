@@ -2,76 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DE3EC54E4B
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 25 Jun 2019 14:05:24 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BF7B054E4D
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 25 Jun 2019 14:05:45 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=QCpw6BmDXVKeAowI7xBtzhiHg74FPIOXJpL5n8WW/3Q=; b=q39yBKfUKGOLDl
-	hfpg1oSMVi8IocQ33+e4ryVI5Kw+qv4iNw+On1EL951952q7kdh1qtqrIZpjPjWMyA1/xwBTygn34
-	M5N1JYMU3wlCPPgwMMFvxqG9wAeR7dRmUaYnBKlcOiYIUc1131bgoPJFxs8c83gkBh8KI6hX2XtlC
-	XGx3Q56pL5EJe4imtpvooA4iWdQ4VWuRqiqmzF2nAbpluFBKkLIMKvA8W1qbmkz1YbgGwL+dql4iF
-	6lxRYCqxfrBa48CXBm3K5vviVjiAaw+3B5/Rst9fO1MRgGH/C7oIoCxPzTfW/Olwy0kq1EUEyibTW
-	IgWxH0aI4x5wt7l3xyIA==;
+	List-Owner; bh=7My4HaLPpD4J3iHCzUHtk8N9dqAqgYCIypcB448dK9c=; b=nmXF/JuGw73On8
+	WpR4lhYsZ74/xy+lMpuG4QgcYsJIlbql5hQ/BBbgLOaYaeYjHrjZWXkRZLGWSL+qe37CvXoVAvCsM
+	5lwYWYUGwFhuPsg9h0gDIUPw0M85UsF3UyYyST/xpqomn0Mb58YOP6c6qc0F49l3yKiAKqFcXqiCL
+	KkBgcxT2egk0LvoDzpA2JQ8nCtM5wUM45QV8DUMP1d1TlMYlyoVyWuf7EvkjecggKXfdgkF+4yYNu
+	66jrHyaF1Uz+d2K2ciTTYYXhSv+BCKJc3z5s20OeiGilhzHtvOdaSvXW84KTm7L7T/TEJBMv2B0+t
+	lhfI8+8UECwLkkVqfLyQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hfkCQ-000076-TO; Tue, 25 Jun 2019 12:05:22 +0000
+	id 1hfkCj-0001jf-6b; Tue, 25 Jun 2019 12:05:41 +0000
 Received: from mail-lf1-x142.google.com ([2a00:1450:4864:20::142])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hfkBN-0008FH-Tj
- for linux-arm-kernel@lists.infradead.org; Tue, 25 Jun 2019 12:04:19 +0000
-Received: by mail-lf1-x142.google.com with SMTP id q26so12465535lfc.3
+ id 1hfkBQ-0008H9-45
+ for linux-arm-kernel@lists.infradead.org; Tue, 25 Jun 2019 12:04:21 +0000
+Received: by mail-lf1-x142.google.com with SMTP id 136so12435652lfa.8
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 25 Jun 2019 05:04:17 -0700 (PDT)
+ Tue, 25 Jun 2019 05:04:19 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=lixom-net.20150623.gappssmtp.com; s=20150623;
  h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=PB1rw3vXfCT4+u25HYq0tmcjSmKl2wAOx1X83ZW82Fc=;
- b=cMG2I9XS536Nv2vwqDi2o60PZ1MtRmz3nA04GOdHRSxLQ5zcpoBL6vhJjrOosF0Yhw
- zSQJL/AquI+f/RgvlEj531QJK4QQDs7kgLNimYl2+aGvr5Y7eaYCMmd1GpYGu0HsJgv7
- 1wzQ9eUuAIvAt6vOKaxJ5jv59tp4sOWHxGKb1e1B/wuxlGOJH9L17H5RbMkJ0t6lcGVd
- qRSgg5lmqZ7K+ESbIX+KSnGqXurI7Va3mQpaZrQRbwxAu1eq1JYc17v0XIhK+HBTbKpS
- TDZiLWv9nJnHES25s801sd1B8Ok5BlOabBy+c8bCKl9UYBa2/+onZ4vo6uacNhuKYarf
- chRA==
+ :content-disposition:content-transfer-encoding:in-reply-to
+ :user-agent; bh=h0u3VlCQ87CLZ6HEtUcmXW5gL9aGPSH4TbhKSlp9CRU=;
+ b=xegko0byQ6cMXFS8OFdo9vt2kQrMcUrwvP0/ZRz4y1oV9bdCIJ8GqOUmdNMOi531IG
+ cgnornaMN8hr/9xa2+g1JTDqrz/dUeJBJQRQVHKu4YqBKuxiTnKVS/+2DTh9oTsfmFVh
+ gO0460T9mBKmHqygDm/VB6UWq1YgTuS0N8Z/VINaPi62s8GdX+wj9o0nDGp+96EGloSd
+ 4X/F+681siM9SxyQk1631P+VIAUd5Y8RmsdiSv3Vo/amvwDt0/gVmcmwZ4Hsplo1ami+
+ obv0SZw4jzI+04av4bph5eBHHYCTaTkNT1TQO0ZKJxJpJOZl/sD+aW9cpBsLrNg86h9K
+ gRzQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=PB1rw3vXfCT4+u25HYq0tmcjSmKl2wAOx1X83ZW82Fc=;
- b=sQdwzy02j2H+iCasjfFUFpPP0efK0mNZgTU+48GW+u3TGOTYqAfF7H9vIGIVe49K/7
- vypGG9DEbUGvCUh5rT5ZL52JvE5ca7kQOeykCSnPE4rpDRelMDBARoOiNc8KGkCy5mly
- yckmrhTLUo4P1HmyoOBIQwxC44SBBPAFMpSTThzx6JwpQCKUEs4ZWDonTty5zHMXIJSk
- i/+YaVHJ7eNB0ce0GcVyoy4Xu51b0zKBNohmshg+nnoU0smDteGuzMpfubrqGu5mScp3
- kng3TbgVjxLg148kcJw1YPQtC9N/ghtRU7PP4Z1rEZpaQduiCCupKEeD0R8AUYQxOaw3
- HVXw==
-X-Gm-Message-State: APjAAAVsJDCX7iaxWnA4NkPszW2hjtc3W/9Cr2PxOVru7BpOKr2Bl/Lz
- joGxCaI1xxoLRGDQwBZ3YEj21w==
-X-Google-Smtp-Source: APXvYqznyMG7ECDmQXbRE5Qng0WKde+8K74na+gaVs+GzsTET1KPdmXO2TFQQJnafkOd87lHqn5KPQ==
-X-Received: by 2002:ac2:46ef:: with SMTP id q15mr17222127lfo.63.1561464256033; 
- Tue, 25 Jun 2019 05:04:16 -0700 (PDT)
+ :mime-version:content-disposition:content-transfer-encoding
+ :in-reply-to:user-agent;
+ bh=h0u3VlCQ87CLZ6HEtUcmXW5gL9aGPSH4TbhKSlp9CRU=;
+ b=j4BVuvF8hB3rh0c2OE/8ZY5b+T7/rZGA+XLp0s6vaCSzU9QSwpB/NXEMI6PyiiW9EQ
+ yP7xMWVRNh8YajxzUzR+REtOReBeUEN+0351hLALAdkO7EQ3fzSdJBQ6ymTeDnZZi87N
+ zcKAlbmxq6KV8AAh5CPPeDIJCs0KCCf3JTltNhXu0AzcpWmc26/GAd8KYGfuUBE3n2lM
+ ZGUhzxKW8G7GTfQYWp5I6DGf5tkFCdsA4zOKszTxgNLN/UkOfSm446meVZM6OndzSCdZ
+ x374w3G+uAykHJSNJMnSfDzOT0dtYOyj360491rdrtTvo8wORkhsfTxgb9MR8XNycEQ+
+ 42zw==
+X-Gm-Message-State: APjAAAVwNfE++GtDDYYcp1KwpTMeS7U8uk0eAVpZzWnbbhiqcyRETevb
+ isn9ikxodpJMLfBLOoIDXoRSkg==
+X-Google-Smtp-Source: APXvYqx6p6amI9NYHTP+LlTyto23uN5ap7trSnZuLdDGWzKzCCgFqqzUTNaDFrvy1Z3jRgKPb3QFRQ==
+X-Received: by 2002:ac2:5467:: with SMTP id e7mr55181905lfn.23.1561464258309; 
+ Tue, 25 Jun 2019 05:04:18 -0700 (PDT)
 Received: from localhost (h85-30-9-151.cust.a3fiber.se. [85.30.9.151])
- by smtp.gmail.com with ESMTPSA id a70sm2223137ljf.57.2019.06.25.05.04.13
+ by smtp.gmail.com with ESMTPSA id y25sm2580753lja.45.2019.06.25.05.04.16
  (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Tue, 25 Jun 2019 05:04:14 -0700 (PDT)
-Date: Tue, 25 Jun 2019 04:17:16 -0700
+ Tue, 25 Jun 2019 05:04:17 -0700 (PDT)
+Date: Tue, 25 Jun 2019 04:19:03 -0700
 From: Olof Johansson <olof@lixom.net>
-To: Florian Fainelli <f.fainelli@gmail.com>
-Subject: Re: [GIT PULL 1/6] Broadcom devicetree changes for 5.3
-Message-ID: <20190625111716.ljna7ca772orjd63@localhost>
-References: <20190612025028.13118-1-f.fainelli@gmail.com>
- <20190619133538.64htegz3xepd2mu7@localhost>
- <7b1ed927-bc60-c5a1-6255-b4180776cba3@gmail.com>
+To: Marcin Juszkiewicz <marcin.juszkiewicz@linaro.org>
+Subject: Re: [PATCH 1/3] arm64 defconfig: enable LVM support
+Message-ID: <20190625111903.6zeifvxv5cp53ndn@localhost>
+References: <20190617160411.24329-1-marcin.juszkiewicz@linaro.org>
+ <20190619142142.52stwnyucxa7g3rz@localhost>
+ <d1138486-4078-e838-ae49-fc9b038fc61c@linaro.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <7b1ed927-bc60-c5a1-6255-b4180776cba3@gmail.com>
+In-Reply-To: <d1138486-4078-e838-ae49-fc9b038fc61c@linaro.org>
 User-Agent: NeoMutt/20170113 (1.7.2)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190625_050417_993641_C0CB6282 
-X-CRM114-Status: GOOD (  22.12  )
+X-CRM114-CacheID: sfid-20190625_050420_225309_29CAA9FD 
+X-CRM114-Status: UNSURE (   9.27  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -96,77 +98,29 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm-kernel@lists.infradead.org, arm@kernel.org, arnd@arndb.de,
- Kevin Hilman <khilman@kernel.org>, Eric Anholt <eric@anholt.net>,
- Lukas Wunner <lukas@wunner.de>, bcm-kernel-feedback-list@broadcom.com,
- Stefan Wahren <wahrenst@gmx.net>, Martin Sperl <kernel@martin.sperl.org>,
- Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: arm@kernel.org, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sat, Jun 22, 2019 at 07:22:27PM -0700, Florian Fainelli wrote:
-> 
-> 
-> On 6/19/2019 6:35 AM, Olof Johansson wrote:
-> > On Tue, Jun 11, 2019 at 07:50:23PM -0700, Florian Fainelli wrote:
-> >> The following changes since commit a188339ca5a396acc588e5851ed7e19f66b0ebd9:
+On Thu, Jun 20, 2019 at 12:17:06PM +0200, Marcin Juszkiewicz wrote:
+> W dniu 19.06.2019 o=A016:21, Olof Johansson pisze:
+> > On Mon, Jun 17, 2019 at 06:04:09PM +0200, Marcin Juszkiewicz wrote:
+> >> Follow x86-64 defconfig on enabling basic LVM support.
 > >>
-> >>   Linux 5.2-rc1 (2019-05-19 15:47:09 -0700)
-> >>
-> >> are available in the Git repository at:
-> >>
-> >>   https://github.com/Broadcom/stblinux.git tags/arm-soc/for-5.3/devicetree
-> >>
-> >> for you to fetch changes up to 34b1441452e550169b4d3647a4f851d9332d4b76:
-> >>
-> >>   ARM: dts: BCM5301X: Fix most DTC W=1 warnings (2019-06-11 15:07:56 -0700)
-> >>
-> >> ----------------------------------------------------------------
-> >> This pull request contain Broadcom ARM-based SoCs Device Tree changes
-> >> for 5.3 please pull the following:
-> >>
-> >> - Lukas enables DMA support for the BCM2835 (Raspberry Pi) SPI
-> >>   controller
-> >>
-> >> - Florian fixes a number of dtc W=1 warnings in the Broadcom DTS files
-> >>   and provides a fix for devices failing to boot after the removal of
-> >>   skelton.dtsi (that commit has been submitted as a separate fix)
-> >>
-> >> ----------------------------------------------------------------
-> >> Florian Fainelli (9):
-> >>       Merge tag 'tags/bcm2835-dt-next-2019-06-01' into devicetree/next
-> >>       ARM: dts: bcm: Add missing device_type = "memory" property
-> >>       ARM: dts: Fix BCM7445 DTC warnings
-> >>       ARM: dts: Cygnus: Fix most DTC W=1 warnings
-> >>       ARM: dts: bcm-mobile: Fix most DTC W=1 warnings
-> >>       ARM: dts: BCM53573: Fix DTC W=1 warnings
-> >>       ARM: dts: BCM63xx: Fix DTC W=1 warnings
-> >>       ARM: dts: NSP: Fix the bulk of W=1 DTC warnings
-> >>       ARM: dts: BCM5301X: Fix most DTC W=1 warnings
-> >>
-> >> Lukas Wunner (1):
-> >>       ARM: bcm283x: Enable DMA support for SPI controller
-> > 
-> > Something went wrong here. I merged your pull request for the missing
-> > device_type that had commit e8bd76dccd79 for that patch.
-> > 
-> > Here you have the same patch here as 0e9e8c404ec2. While git normally handles
-> > this alright, in this case the warning removals changes the line above so you
-> > get a merge conflict for every file and that's a lot to fix up.
-> > 
-> > Would you mind rebuilding this branch on top of your fixes to keep that patch
-> > at the same commit?
-> 
-> Yes, absolutely. It looks like [GIT PULL 5/6] Broadcom soc changes for
-> 5.3 has not been merged yet, is everything okay with that one?
+> >> Signed-off-by: Marcin Juszkiewicz <marcin.juszkiewicz@linaro.org>
+> > =
 
-It is merged, but arm-soc didn't have the latest contents pushed to it. We
-mostly use 'soc' as the main tree, and usually I remember to push the same
-contents to arm-soc but I missed last time around.
+> > Do you need this to be =3Dy? If you use LVM, you usually boot with a ra=
+mdisk that
+> > will hold modules.
+> =
 
-(We also switched linux-next over the last few days).
+> Right. Forgot to change.
+
+
+Applied to arm/defconfig. Thanks!
 
 
 -Olof
