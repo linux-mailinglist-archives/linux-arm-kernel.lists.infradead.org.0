@@ -2,73 +2,73 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4C8AE5570A
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 25 Jun 2019 20:20:32 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 960EC5570B
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 25 Jun 2019 20:20:47 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=weL3BRyHS3TQ+2zXfr9MLKvKiffv/KhJ3WOFNa/Vlvk=; b=HglYGm1uIAGcNk
-	/oXaVhGV2TzkJyiJUDUYT1btfIBh02Wyid9DgeOcqfEKwndEv/wvDeWAyWgruymzNPGAgr9tGAwr0
-	XpH7ga9p1Z1IOo9g3bGOc3RxEyo/CIGJqJMVQrCoyfstW1J7DSPRXgBsZzuSfmihMuliwsdWUBSNl
-	9xNCyfiVptLshxc1yFgpukZnpkMwyQNgZcjzS45gZs8mL0+WAwMamsGJbJIsgf2XUGuHjEOeAhBBg
-	Ac8Jo0fnSnIhMrKHayp/hfNq4V+VT7rhNVmDHlu2GIzvdIs958FmjlQzdAp8Uxf+FvNs7HOqdeAI4
-	YvKh3wrx+kOk1D/HMAwA==;
+	List-Owner; bh=b5eZiiRlLP6cw59pQ0cMhx7L7mSl80i0dT0GpwcqlmE=; b=RwvA7TQtxXOAqW
+	MtSr3Aw6EeBVLrhd1OMTYyh6Av6+sDDZQQhpzUQv6znFJgu5sNwN08waLgFoOaYeXygdsoRTsk138
+	uaLJpyJEpzu8EN+nf9NBPXgU8BXZTigUC24fRgat98NR71K4N31NDTfbZyF4yzsQfNJDMHqrl2k43
+	Yp0AUF3nvGy1nRWSjMfuF7SHQazzYwfmr4rOotN0bXb7we5m0LSLC2qOOKm3OQ+ck4MVa5uNIWwun
+	JoDOUWn9XaKkbGa83xcVpV/xhE1mminNCAq3HJ51Ivor3hggvPfMKEvVdyTe6kVt2TCPOWWR6RrEE
+	k0K5PYNvK2yAD1X/llPQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hfq3Q-0006v0-6W; Tue, 25 Jun 2019 18:20:28 +0000
-Received: from mail-pl1-x642.google.com ([2607:f8b0:4864:20::642])
+	id 1hfq3h-0007I3-Ue; Tue, 25 Jun 2019 18:20:45 +0000
+Received: from mail-pf1-x443.google.com ([2607:f8b0:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hfq0n-0003ti-K7; Tue, 25 Jun 2019 18:17:51 +0000
-Received: by mail-pl1-x642.google.com with SMTP id ay6so9232067plb.9;
- Tue, 25 Jun 2019 11:17:45 -0700 (PDT)
+ id 1hfq0s-0003wo-Hb; Tue, 25 Jun 2019 18:17:54 +0000
+Received: by mail-pf1-x443.google.com with SMTP id x15so9918800pfq.0;
+ Tue, 25 Jun 2019 11:17:49 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=lUeZCQu7IkZyTo6f12/xdvpIlBPtEGZlNE9DSsLV+Ac=;
- b=p0xaDUw9wpzK5XCs9BWhC1JhfcU9lla/mab2ubGi5iGBKqf+d64Q9ti1qyZvpr0o0p
- mFwLMsI/VzpvDEm0gz7xs4N6qeFJDXQwJIftrhHtHJG5tmzkYtjxLN6rL/rv3zyu6IHs
- XhIk5h4N05NwP8cHWGrft6RmgCuV3YF3DuN4GZ/vuDoIeAR8MgbVKcH0cCBlWUApTInQ
- DhD9DGbiB5RJHBkoNEPdLtdPZoQa5Ud2GTk28pWNvbjfAGnX9d/40+ge2ZqhvcbPXA8e
- PcZqCO+5wZRAH7S6zOqLSDmJDx2CqntWw9H55YRdcashfJ5vyrURNpBY4KDh7u9mmiE6
- uHSw==
+ bh=aU2lMvLMFAmaKI8o4T7rqGlAgr2Pw6XZztA93JG4rHk=;
+ b=gQR9fXq3UuoEG38nYSFjn/jYpxHF3CwwiCJnG9Xw+c+dDhrtbEN/t2RU3NPTjWlui1
+ 0V8KRf7ev8ab//Ln103JjWmC1bprusm+pLDC8P12cIyo2wwHMQBOfuhNROvDi4h4Icw9
+ YTSODvePzhJI8J7tXbxsWpiKlPmUh2Z/Ul4cMqK3toqCHw5ZPNXImBFShsPWmeIvPQnS
+ ouIBJPMyD75jwIPCRPSvNhdd2GRLKr81vogDepRgtLFyT/mYji5kVuH99dO1ZIDQNRNU
+ +IZDZ33GowF3JPpe4MyedUEDaRG8qxbJql+J0gs/RFetskMCSmqWQ5usARYIP1RNQOjm
+ ZHGw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=lUeZCQu7IkZyTo6f12/xdvpIlBPtEGZlNE9DSsLV+Ac=;
- b=U+V6ZcbbCJFgc3ldgNzDtfxxr81sI3DKGkQ8QpaVOFk6pLnu3wu9kET89iGg8uI20F
- p35G68tuO+T9/y9XsQKtGX6U1F8La6YOtI19fj4AKpcWLTa79pA7gDrRdwh11jlcHf59
- zjjAYvVY2cGZjYX1AIffuHsNGmrV2Z1n3KehRYZWwD1KZq0e0zU/9wwjErJdyMsjfKZs
- OlHMstVwAc0fthNw/2dguIszEC/XKAKkAZkWUj9tBldWggsNYy5OXg5r5lPYVoPhneK4
- fKQDkHHP0twStoAgW1FsxuKXgla/h9Oz7ywDlWWQ5HOVNtZ8Meei9PZzibGvNkfRF3O4
- dnQg==
-X-Gm-Message-State: APjAAAVjDuB9Qpm+4uXKf3z1P82cT7rNX1MeyJhcUfbqEMsh1DK4hmlj
- uuvc+j48IENL9OGkx6na4UA=
-X-Google-Smtp-Source: APXvYqzpSRRotp9f+BDQ8j/fYEO7IsawFqRe3jEzRo71rZcIGRM6NFM+Gv1j21drEqHDO76DP0kGig==
-X-Received: by 2002:a17:902:aa0a:: with SMTP id
- be10mr2479plb.293.1561486665088; 
- Tue, 25 Jun 2019 11:17:45 -0700 (PDT)
+ bh=aU2lMvLMFAmaKI8o4T7rqGlAgr2Pw6XZztA93JG4rHk=;
+ b=L6BF8du6VSr2mz65kj1objj9uBhRrkGjQ3/b4qhnS9LYYwkp/TLA1dxfd9wHlB2sHY
+ cUh0xXirM5JEu2mHISV6sL46gTxnzdW+UyeY+f2m8W9mocm3iNbmXTItDh8frYVYCRYe
+ 29tyP8zCep/epu3h+s6tNTqA0tPM/XpNgMZyvIZvNGRWoWMfbe0wxI9DYGtCTHCEMgvF
+ SC4i9hqk0J92tKLWlpoL5JvgI7dUxEEge7BcSUhSwX9cigH2BrCs4quFZiY1zrwITV6y
+ FBoF4XKf2ISfR/vyNR05p7M0+7Y9XtNeD4VS6IpPtcOha1FaWtOXx0HRtQQ+LcBGkREE
+ ri9g==
+X-Gm-Message-State: APjAAAX9lHrrlBVUFgwwFjBerdeQuphOTCIA9VKc658J6bssCtZ1hEPQ
+ 1LW31DH6CT4GsjsXtjQ+cNA=
+X-Google-Smtp-Source: APXvYqytoKvzSIiaV2WUSp6pnmGIovjzqqXmYErctBokbL2fxUoiR9YWs2fG7CHyUZHe2v2TFWAVmg==
+X-Received: by 2002:a63:fa4e:: with SMTP id g14mr40143275pgk.237.1561486668887; 
+ Tue, 25 Jun 2019 11:17:48 -0700 (PDT)
 Received: from localhost.localdomain ([122.163.71.137])
- by smtp.gmail.com with ESMTPSA id w7sm14042959pfb.117.2019.06.25.11.17.42
+ by smtp.gmail.com with ESMTPSA id w7sm14042959pfb.117.2019.06.25.11.17.45
  (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Tue, 25 Jun 2019 11:17:44 -0700 (PDT)
+ Tue, 25 Jun 2019 11:17:48 -0700 (PDT)
 From: Nishka Dasgupta <nishkadg.linux@gmail.com>
 To: eric@anholt.net, wahrenst@gmx.net, gregkh@linuxfoundation.org,
  linux-rpi-kernel@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
  devel@driverdev.osuosl.org
-Subject: [PATCH 7/9] staging: vc04_services: Remove vchiq_send_remote_release()
-Date: Tue, 25 Jun 2019 23:47:07 +0530
-Message-Id: <20190625181710.2267-7-nishkadg.linux@gmail.com>
+Subject: [PATCH 8/9] staging: vc04_services: Remove function
+ output_timeout_error()
+Date: Tue, 25 Jun 2019 23:47:08 +0530
+Message-Id: <20190625181710.2267-8-nishkadg.linux@gmail.com>
 X-Mailer: git-send-email 2.19.1
 In-Reply-To: <20190625181710.2267-1-nishkadg.linux@gmail.com>
 References: <20190625181710.2267-1-nishkadg.linux@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190625_111745_724187_6FF0C8BC 
-X-CRM114-Status: UNSURE (   7.14  )
+X-CRM114-CacheID: sfid-20190625_111750_614303_0C9E348F 
+X-CRM114-Status: UNSURE (   8.71  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -76,7 +76,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:642 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:443 listed in]
  [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider (nishkadg.linux[at]gmail.com)
@@ -106,51 +106,62 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Remove unused function vchiq_send_remote_release.
+Remove function output_timeout_error as it was only called by
+vchiq_arm_force_suspend, which was deleted in a previous patch.
 Issue found with Coccinelle.
 
 Signed-off-by: Nishka Dasgupta <nishkadg.linux@gmail.com>
 ---
- .../vc04_services/interface/vchiq_arm/vchiq_core.c    | 11 -----------
- .../vc04_services/interface/vchiq_arm/vchiq_core.h    |  3 ---
- 2 files changed, 14 deletions(-)
+ .../interface/vchiq_arm/vchiq_arm.c           | 36 -------------------
+ 1 file changed, 36 deletions(-)
 
-diff --git a/drivers/staging/vc04_services/interface/vchiq_arm/vchiq_core.c b/drivers/staging/vc04_services/interface/vchiq_arm/vchiq_core.c
-index 5e231cc5c87d..183f5cf887e0 100644
---- a/drivers/staging/vc04_services/interface/vchiq_arm/vchiq_core.c
-+++ b/drivers/staging/vc04_services/interface/vchiq_arm/vchiq_core.c
-@@ -3538,17 +3538,6 @@ VCHIQ_STATUS_T vchiq_send_remote_use(struct vchiq_state *state)
- 	return status;
+diff --git a/drivers/staging/vc04_services/interface/vchiq_arm/vchiq_arm.c b/drivers/staging/vc04_services/interface/vchiq_arm/vchiq_arm.c
+index a97076c18a0f..ebf7e2a3bd3b 100644
+--- a/drivers/staging/vc04_services/interface/vchiq_arm/vchiq_arm.c
++++ b/drivers/staging/vc04_services/interface/vchiq_arm/vchiq_arm.c
+@@ -2705,42 +2705,6 @@ vchiq_platform_check_suspend(struct vchiq_state *state)
+ 	return;
  }
  
--VCHIQ_STATUS_T vchiq_send_remote_release(struct vchiq_state *state)
+-static void
+-output_timeout_error(struct vchiq_state *state)
 -{
--	VCHIQ_STATUS_T status = VCHIQ_RETRY;
+-	struct vchiq_arm_state *arm_state = vchiq_platform_get_arm_state(state);
+-	char err[50] = "";
+-	int vc_use_count = arm_state->videocore_use_count;
+-	int active_services = state->unused_service;
+-	int i;
 -
--	if (state->conn_state != VCHIQ_CONNSTATE_DISCONNECTED)
--		status = queue_message(state, NULL,
--			VCHIQ_MAKE_MSG(VCHIQ_MSG_REMOTE_RELEASE, 0, 0),
--			NULL, NULL, 0, 0);
--	return status;
+-	if (!arm_state->videocore_use_count) {
+-		snprintf(err, sizeof(err), " Videocore usecount is 0");
+-		goto output_msg;
+-	}
+-	for (i = 0; i < active_services; i++) {
+-		struct vchiq_service *service_ptr = state->services[i];
+-
+-		if (service_ptr && service_ptr->service_use_count &&
+-			(service_ptr->srvstate != VCHIQ_SRVSTATE_FREE)) {
+-			snprintf(err, sizeof(err), " %c%c%c%c(%d) service has "
+-				"use count %d%s", VCHIQ_FOURCC_AS_4CHARS(
+-					service_ptr->base.fourcc),
+-				 service_ptr->client_id,
+-				 service_ptr->service_use_count,
+-				 service_ptr->service_use_count ==
+-					 vc_use_count ? "" : " (+ more)");
+-			break;
+-		}
+-	}
+-
+-output_msg:
+-	vchiq_log_error(vchiq_susp_log_level,
+-		"timed out waiting for vc suspend (%d).%s",
+-		 arm_state->autosuspend_override, err);
+-
 -}
 -
- VCHIQ_STATUS_T vchiq_send_remote_use_active(struct vchiq_state *state)
+ void
+ vchiq_check_suspend(struct vchiq_state *state)
  {
- 	VCHIQ_STATUS_T status = VCHIQ_RETRY;
-diff --git a/drivers/staging/vc04_services/interface/vchiq_arm/vchiq_core.h b/drivers/staging/vc04_services/interface/vchiq_arm/vchiq_core.h
-index b5e09d52b202..63f71b2a492f 100644
---- a/drivers/staging/vc04_services/interface/vchiq_arm/vchiq_core.h
-+++ b/drivers/staging/vc04_services/interface/vchiq_arm/vchiq_core.h
-@@ -639,9 +639,6 @@ vchiq_on_remote_use_active(struct vchiq_state *state);
- extern VCHIQ_STATUS_T
- vchiq_send_remote_use(struct vchiq_state *state);
- 
--extern VCHIQ_STATUS_T
--vchiq_send_remote_release(struct vchiq_state *state);
--
- extern VCHIQ_STATUS_T
- vchiq_send_remote_use_active(struct vchiq_state *state);
- 
 -- 
 2.19.1
 
