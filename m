@@ -2,55 +2,103 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4358952591
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 25 Jun 2019 09:56:51 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DBF1352596
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 25 Jun 2019 09:57:11 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=IJ6iXZTgrB85c1WZSjOAW6nZm6DM+83vcLs3RZcf9vc=; b=iF81IOHq1xj6Ky
-	KSgOY5wHN6/wqcX3EwL7tPCcFjepItNfFUsMWUSPNU8VpvwdH3lLryUdj7LxHV/gWXkvDuWetwqyB
-	d3m0UleRYXqWZ/vabMxKz+nGHpN/csXzsrBullNLgEbUhxpvKNMPXlsEf7GqN4qA9cRMyPR5qzIT3
-	Hll6an2JEAw2Jox2RUpBQVTeVTMS+wkirX3qvYdUhz+VsRaR2kkJpX3JvhySRtGOBrD+F2MxmuoVB
-	3bOmcgVO4+/Dols5C7JDPNa/cYwbcoA4GPKsq1PeZ4raiAUOlbRa/DYflTxWfd7u1hS6pabCXy+8e
-	0N+ABk9rubMRCFySPEVw==;
+	List-Owner; bh=TFbAcTPppSNt1BIA1dsaiIUxaDgNxbuINdQ0Utxtbqk=; b=c6y+rUnGco+xTI
+	dE+IqNmIaPZiOO2TjpETvYBg1s5IsFmPkAU3W+afZpMz3YUI9kDFkRhwj3shkHJA++Fb74nlrs3Fm
+	hFNOapiS36D2VmZkFYc2BQKAui5WCmAYTgChiFwBMoWhjFgdqG1H0yu+gavkXhDuEZbFaK2otle2M
+	tLssoS3SrT7CjIGEzKBcD0BjkG3xbps/nqzMeMr9/lCVorvmJlwb2VMngxLIk1BUL80EIowKPsY2k
+	8i2/oEU85fe6DW20gyAmEFyNuENfeXw3iePFbUI6gjG5LqKUb9SZltFdWUmkN8pZe5/sz0bSNfgEd
+	CUwNM/cCEXeg1tbf4rTw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hfgJr-0001yd-DW; Tue, 25 Jun 2019 07:56:47 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hfgIb-0001Ft-2T
- for linux-arm-kernel@lists.infradead.org; Tue, 25 Jun 2019 07:55:31 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 420962B;
- Tue, 25 Jun 2019 00:55:27 -0700 (PDT)
-Received: from iMac.local (unknown [172.31.20.19])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 885DE3F246;
- Tue, 25 Jun 2019 00:55:24 -0700 (PDT)
-Date: Tue, 25 Jun 2019 08:55:22 +0100
-From: Catalin Marinas <catalin.marinas@arm.com>
-To: Nick Desaulniers <ndesaulniers@google.com>
-Subject: Re: [PATCH v2] arm64: defconfig: enable CONFIG_RANDOMIZE_BASE
-Message-ID: <20190625075521.GA1784@iMac.local>
-References: <20190624095749.wasjfrgcda7ygdr5@willie-the-truck>
- <20190624175852.46560-1-ndesaulniers@google.com>
+	id 1hfgKB-0002ID-7S; Tue, 25 Jun 2019 07:57:07 +0000
+Received: from userp2130.oracle.com ([156.151.31.86])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hfgJM-0001rP-LO; Tue, 25 Jun 2019 07:56:18 +0000
+Received: from pps.filterd (userp2130.oracle.com [127.0.0.1])
+ by userp2130.oracle.com (8.16.0.27/8.16.0.27) with SMTP id x5P7sOWG008130;
+ Tue, 25 Jun 2019 07:56:08 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=oracle.com;
+ h=date : from : to : cc
+ : subject : message-id : references : mime-version : content-type :
+ in-reply-to; s=corp-2018-07-02;
+ bh=5hPNEEOLEhrLonKXVMBQSK5/DYkRHzR0TDxjO5rF1gg=;
+ b=yx6SN5D5OpW+U1sSOBLsx/z+kGMd1Jy3WzcGBdZNSUUPIONIFXRKSa5jA/FLZQs8Vsdj
+ h2qFp+7RgdPKOYbh9JEstZAxRTYy1oM3iRw3Ay20n3dIWjWkYalYHC7Whq++2YEfSLjz
+ J8JS5QTpX+QFjCPBzejqmSJ15glCWGgb47/KAeei9RCFm+odfWJ4kPfaEYY54Vr7BT6N
+ UMFOwPx0bkvm5UzKRoKNpodMfrti044WM05JNGTqa5S02Purd36alP0dXOG4EZtbsiME
+ 4fEw71+2erJS/dQUJXnZtYAXm+D4nC9f2+CI84jeVspfQV/qd6bgVOZM1Q9PHitGPmgJ hQ== 
+Received: from userp3020.oracle.com (userp3020.oracle.com [156.151.31.79])
+ by userp2130.oracle.com with ESMTP id 2t9brt2jv7-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Tue, 25 Jun 2019 07:56:08 +0000
+Received: from pps.filterd (userp3020.oracle.com [127.0.0.1])
+ by userp3020.oracle.com (8.16.0.27/8.16.0.27) with SMTP id x5P7tXD6007243;
+ Tue, 25 Jun 2019 07:56:08 GMT
+Received: from userv0121.oracle.com (userv0121.oracle.com [156.151.31.72])
+ by userp3020.oracle.com with ESMTP id 2tat7c3a4g-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Tue, 25 Jun 2019 07:56:07 +0000
+Received: from abhmp0015.oracle.com (abhmp0015.oracle.com [141.146.116.21])
+ by userv0121.oracle.com (8.14.4/8.13.8) with ESMTP id x5P7u6hM005590;
+ Tue, 25 Jun 2019 07:56:06 GMT
+Received: from kadam (/41.57.98.10) by default (Oracle Beehive Gateway v4.0)
+ with ESMTP ; Tue, 25 Jun 2019 00:56:06 -0700
+Date: Tue, 25 Jun 2019 10:55:58 +0300
+From: Dan Carpenter <dan.carpenter@oracle.com>
+To: Stefan Wahren <wahrenst@gmx.net>
+Subject: Re: [PATCH] staging: bcm2835-camera: Restore return behavior of
+ ctrl_set_bitrate()
+Message-ID: <20190625075558.GY28859@kadam>
+References: <1561414395-12518-1-git-send-email-wahrenst@gmx.net>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190624175852.46560-1-ndesaulniers@google.com>
-User-Agent: Mutt/1.11.1 (2018-12-01)
+In-Reply-To: <1561414395-12518-1-git-send-email-wahrenst@gmx.net>
+User-Agent: Mutt/1.9.4 (2018-02-28)
+X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9298
+ signatures=668687
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 suspectscore=0
+ malwarescore=0
+ phishscore=0 bulkscore=0 spamscore=0 mlxscore=0 mlxlogscore=999
+ adultscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.0.1-1810050000 definitions=main-1906250065
+X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9298
+ signatures=668687
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0
+ priorityscore=1501 malwarescore=0
+ suspectscore=0 phishscore=0 bulkscore=0 spamscore=0 clxscore=1011
+ lowpriorityscore=0 mlxscore=0 impostorscore=0 mlxlogscore=999 adultscore=0
+ classifier=spam adjust=0 reason=mlx scancount=1 engine=8.0.1-1810050000
+ definitions=main-1906250065
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190625_005529_203355_341261C9 
-X-CRM114-Status: UNSURE (   9.28  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190625_005616_895732_AC8467EA 
+X-CRM114-Status: GOOD (  20.05  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [156.151.31.86 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -62,35 +110,54 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, Enric Balletbo i Serra <enric.balletbo@collabora.com>,
- Kees Cook <keescook@chromium.org>, Will Deacon <will@kernel.org>,
- ard.biesheuvel@linaro.org, Maxime Ripard <maxime.ripard@bootlin.com>,
- jeffv@google.com, Dinh Nguyen <dinguyen@kernel.org>, will.deacon@arm.com,
- linux-kernel@vger.kernel.org, Bjorn Andersson <bjorn.andersson@linaro.org>,
- Andy Gross <andy.gross@linaro.org>, broonie@kernel.org,
- Arnd Bergmann <arnd@arndb.de>, Jagan Teki <jagan@amarulasolutions.com>,
- samitolvanen@google.com, keescook@google.com, Olof Johansson <olof@lixom.net>,
- shawnguo@kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: devel@driverdev.osuosl.org, Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Madhumitha Prabakaran <madhumithabiw@gmail.com>, Eric Anholt <eric@anholt.net>,
+ linux-rpi-kernel@lists.infradead.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Jun 24, 2019 at 10:58:50AM -0700, Nick Desaulniers wrote:
-> For testing coverage and improved defense in depth, enable KASLR by
-> default.
+On Tue, Jun 25, 2019 at 12:13:15AM +0200, Stefan Wahren wrote:
+> The commit 52c4dfcead49 ("Staging: vc04_services: Cleanup in
+> ctrl_set_bitrate()") changed the return behavior of ctrl_set_bitrate().
+> This breaks probing of bcm2835-camera:
 > 
-> Acked-by: Ard Biesheuvel <ard.biesheuvel@linaro.org>
-> Acked-by: Will Deacon <will@kernel.org>
-> Reviewed-by: Kees Cook <keescook@chromium.org>
-> Suggested-by: Arnd Bergmann <arnd@arndb.de>
-> Suggested-by: Olof Johansson <olof@lixom.net>
-> Signed-off-by: Nick Desaulniers <ndesaulniers@google.com>
+>     bcm2835-v4l2: mmal_init: failed to set all camera controls: -3
+>     Cleanup: Destroy video encoder
+>     Cleanup: Destroy image encoder
+>     Cleanup: Destroy video render
+>     Cleanup: Destroy camera
+>     bcm2835-v4l2: bcm2835_mmal_probe: mmal init failed: -3
+>     bcm2835-camera: probe of bcm2835-camera failed with error -3
+> 
+> So restore the old behavior and fix this issue.
+> 
+> Fixes: 52c4dfcead49 ("Staging: vc04_services: Cleanup in ctrl_set_bitrate()")
+> Signed-off-by: Stefan Wahren <wahrenst@gmx.net>
 
-Thanks. I'll queue this for 5.3.
+I feel like this papers over the issue.  It would be better to figure
+out why this is failing and fix it properly.  -3 is -ESRCH and when I
+grep for ESRCH I only see it used in the ioctl so that can't be it.
 
--- 
-Catalin
+I think it must be -MMAL_MSG_STATUS_EINVAL actually, but it comes from
+the firmware or something so we can't grep for it.
+
+Can we do some more digging to find out why it's failing or otherwise
+we could add a comment.
+
+	/*
+	 * FIXME:  port_parameter_set() sometimes fails with
+	 * -MMAL_MSG_STATUS_EINVAL and we don't know why so we're
+	 * ignoring those errors for now.
+	 *
+	 */
+	return 0;
+
+
+regards,
+dan carpenter
+
 
 _______________________________________________
 linux-arm-kernel mailing list
