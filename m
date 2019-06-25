@@ -2,83 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 970CA54E8E
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 25 Jun 2019 14:14:37 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9CC4754E90
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 25 Jun 2019 14:14:53 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/82yjVh6Gy03s8JwEpYp21HyJoLjFyD2K10ijOm05us=; b=AA5La8Z4udu7jA
-	swijO7ByeSUT611nFkvBYbvCy8NquFckTjgQjSLQKM2+5InsiEkpDszzZIeb8NrtCMHK8p6JJpLn0
-	Ii+k5UpvIB5X0vXUdkv4UkSZBqNk6//swIFRn07qg1avpw8Lt12xam1UIGpkW05krCMMTLmrQ7mIk
-	7ejoatvat8YKyuIayFinDzpAeM+BliynRlMJdgTyBmYdYl6eMAsNaEq5UBwcL2ZWxe4Mf8kHqcC3i
-	MRlentnjGtSstU9WHhC1L0xDTkGPfcAtuiXtgLYYSPnsEQhR5vl/4+bsWE985awpiIpCX2rpvsdsP
-	YNJGXEf8/h6jYtYQCOTA==;
+	List-Owner; bh=AEFvGO45nwU0JczOZ+mXDEHykk0Id0Q8/hviTWrlvCY=; b=NXc9kOo9rCXxyb
+	kAMlmcFeDz2VCWp+TT9X69Yvbl0tcPr+rWOJ4exuVX/uuYITMovrehS6PzaPKRW6xI6zX8jK4NNE0
+	WBuPmXQi2eQW1x4dsZwqoV0evJaVFu2tJi/nJGDK6Pf4UFpCdBqkYtgp5cqtZFHVm7P1mDBV/c9Nl
+	9tvh/EDDCf5xf591iHiQuCJW8r3aLYONxARZI4C4pGZKQ0j8SV1WDjBxpCCCCk/5RGUPnNJmUoiY4
+	3fZiyjC5Qy6ET7g+6gAGNBpNedqdO3DQRuzWyYL9kkUE+Oqe0TyxrXTOIQ6H/3VUIxDf2+ZJ+EjBQ
+	O+A9HSSouEh77CcQ466w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hfkLL-0000pv-S0; Tue, 25 Jun 2019 12:14:35 +0000
-Received: from mail-lf1-x141.google.com ([2a00:1450:4864:20::141])
+	id 1hfkLY-00019l-Km; Tue, 25 Jun 2019 12:14:48 +0000
+Received: from mail-lf1-x144.google.com ([2a00:1450:4864:20::144])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hfkCL-0001Tz-EH
- for linux-arm-kernel@lists.infradead.org; Tue, 25 Jun 2019 12:05:18 +0000
-Received: by mail-lf1-x141.google.com with SMTP id p24so12429847lfo.6
+ id 1hfkCN-0001e0-7F
+ for linux-arm-kernel@lists.infradead.org; Tue, 25 Jun 2019 12:05:20 +0000
+Received: by mail-lf1-x144.google.com with SMTP id u10so12399657lfm.12
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 25 Jun 2019 05:05:17 -0700 (PDT)
+ Tue, 25 Jun 2019 05:05:19 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=lixom-net.20150623.gappssmtp.com; s=20150623;
  h=date:from:to:cc:subject:message-id:references:mime-version
  :content-disposition:in-reply-to:user-agent;
- bh=5sY7f4sSZEQEZ1E+amwAAxFLBkS9LsML27vJQ5tK4vA=;
- b=RQgGeKmAMRhO7XWSc1fC1u4SCgjH+WpBKENbj/2SIuBauOow7VdJbHW8Nz3VaoHK0n
- b6OPgH91pPflKGGM1SQgljUEz8xUMExSQB1D16TWACajfCK6WptRezOhHXSc2TtLpgWV
- LHSm1KP3pjnkiFOhORTOBxuZYuiEXHARxIyKmpC8mVX+WjJqYCIV6nmszui5pMaT6HU8
- 2s056t+i6Urj7A1WBtuL38VmgGa2zkwuX7xXhRp37K2ufFymhBc1ctIWW7xdg3FVFf4/
- F+Sz4ewMEDs8Dt4NJBKSp4kFuAmdiWTC9rApIBVd2Rn2QdUpd1+N03hE+wv42QFFPzLJ
- shVQ==
+ bh=oE/JKWXBgDSERSdCIOTs+mchlKOPMTD3Ggpn57SKOJI=;
+ b=gZPHEO0xEUuGU9V8n6AAS+eRJa4nMOHh68rzhUMipPUnTAxbysthDveJk11uuVqydC
+ WgY4Hi4+Mse/N1/gVghDed7xr19JUb62fd/qCosucExcO912JRZZeQlwh83kUtjBdwIq
+ thnf1PLZSDbbmSwIeWeMqGn7fQ84AAKw5tk0viS+TALaK+ro3t/378dm6DiuMiRSaiak
+ XdepbeSN2t6tEE3PZOmqCqjM6Y3/nPQDUVj+xpihfBthZCrgw1mDtJt7iPenty/n2YQI
+ JpE83soGgLG5uwdG3zkukX1b56ZDqaC/Kqhl3DGD1TmUBe9ZERJbr73xPRpWizquEWWi
+ skCQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to:user-agent;
- bh=5sY7f4sSZEQEZ1E+amwAAxFLBkS9LsML27vJQ5tK4vA=;
- b=jzlr9xjZQSUs41NS7jsVS4rIEbMRhfWSER8XKhs9QEvw+OZGL+nGA18xxQ6r3eH1Ka
- d3cj5LXkj1dV9/C1NK4XGxjIVkXLGC/ViPZGy7+qPFAGEn0GNiMMjxzmdfEl3ppe6Nx1
- bbezxvdt16bbs5jNDy0LDG2r1oqcmm9uzivJMbey/+kYgfvGfNcaFPXXXkUkLUQD1S9+
- k7hfcr2k45qn+CQ6wRSgjpyDebaUn8cK6E50qz9/4Gytx8GOihUZ2hPyurshmznA3/kM
- 9ndbnrjeoW01X8wYLiF8jggPo4CDnF3auyPJzlvehDwqwglgaVtG1Fmw+GR5BA9k3vlF
- V+oA==
-X-Gm-Message-State: APjAAAUtt4YLs3O2wS2rALUu32AMsVj2upJz1XssoXqSLFzMlQ6aumyJ
- 9ySwF+dFFOW3rkZa8qwmAZ7U2A==
-X-Google-Smtp-Source: APXvYqwammsYzDPf8HQ1JqHVoFYy4JYXViH9g+cEDIB+n2jVepc5UELOjpaJgxmSziF7+u38TAuIZQ==
-X-Received: by 2002:a05:6512:dc:: with SMTP id
- c28mr78587039lfp.105.1561464315283; 
- Tue, 25 Jun 2019 05:05:15 -0700 (PDT)
+ bh=oE/JKWXBgDSERSdCIOTs+mchlKOPMTD3Ggpn57SKOJI=;
+ b=Sk1ynUC/IawhgIz5pLkEJP/CrtnTVT1htPA3+rc8Jd+WUMb4jEORAhW8ad+ix/iCCc
+ TQrn8GE344EvoKKs7uQAkYo+ozU98u9DJZh6UyLK+nigSogID4EQoNuddIM1JEkbgvrv
+ qwzOFLPL4zSmes5RBcj+g/VhXdQbNdw54xVHgHRWfWmFDwanao/Hv0rv470VdLKE+0kT
+ KaoGKGvsEMComRKk407lZWEO4rNBcKvtR5yVVSVPJl33OZh91+GdGOYSdzdbnhdgBOjg
+ gQEkpQM5BP4gQWG+Modns9cLmeZsyaLOVZQDSMEdOoX7tY+sQU+/chZ0PCApT8f2Vmq9
+ zscA==
+X-Gm-Message-State: APjAAAWz6vdgoTmRCZ5T6FBK9NtfCQxtgTRaNlRfLVwI/wpZadch+aQv
+ CoHzpPWMbvKzzD4DwQFBxawZbg==
+X-Google-Smtp-Source: APXvYqz8jm1RlEX9s+rT9ArGMTI7BjicDXai25Z7NEBnxyVkpcWnTJHu+U8BH8rUxKi/UFg82NhuLA==
+X-Received: by 2002:ac2:597c:: with SMTP id h28mr40124483lfp.90.1561464317704; 
+ Tue, 25 Jun 2019 05:05:17 -0700 (PDT)
 Received: from localhost (h85-30-9-151.cust.a3fiber.se. [85.30.9.151])
- by smtp.gmail.com with ESMTPSA id f1sm2222022ljf.53.2019.06.25.05.05.12
+ by smtp.gmail.com with ESMTPSA id n131sm1924259lfd.70.2019.06.25.05.05.16
  (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Tue, 25 Jun 2019 05:05:13 -0700 (PDT)
-Date: Tue, 25 Jun 2019 04:51:31 -0700
+ Tue, 25 Jun 2019 05:05:16 -0700 (PDT)
+Date: Tue, 25 Jun 2019 04:52:05 -0700
 From: Olof Johansson <olof@lixom.net>
 To: Shawn Guo <shawnguo@kernel.org>
-Subject: Re: [GIT PULL 3/7] i.MX DT bindings update for 5.3
-Message-ID: <20190625115131.lzno3sjl3gkoi63t@localhost>
+Subject: Re: [GIT PULL 4/7] i.MX DT changes with new clock for 5.3
+Message-ID: <20190625115205.ccz73rc7ymimcdy2@localhost>
 References: <20190625075305.29082-1-shawnguo@kernel.org>
- <20190625075305.29082-3-shawnguo@kernel.org>
+ <20190625075305.29082-4-shawnguo@kernel.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190625075305.29082-3-shawnguo@kernel.org>
+In-Reply-To: <20190625075305.29082-4-shawnguo@kernel.org>
 User-Agent: NeoMutt/20170113 (1.7.2)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190625_050517_567417_65BFE55C 
-X-CRM114-Status: GOOD (  12.21  )
+X-CRM114-CacheID: sfid-20190625_050519_274184_CE4ABA0F 
+X-CRM114-Status: GOOD (  14.38  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:141 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:144 listed in]
  [list.dnswl.org]
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -96,35 +95,37 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Stefan Agner <stefan@agner.ch>, Li Yang <leoyang.li@nxp.com>,
- arm@kernel.org, linux-imx@nxp.com, kernel@pengutronix.de,
- Fabio Estevam <festevam@gmail.com>, linux-arm-kernel@lists.infradead.org
+Cc: Stephen Boyd <sboyd@kernel.org>, Stefan Agner <stefan@agner.ch>,
+ Li Yang <leoyang.li@nxp.com>, arm@kernel.org, linux-imx@nxp.com,
+ kernel@pengutronix.de, Fabio Estevam <festevam@gmail.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Jun 25, 2019 at 03:53:01PM +0800, Shawn Guo wrote:
-> The following changes since commit a188339ca5a396acc588e5851ed7e19f66b0ebd9:
+On Tue, Jun 25, 2019 at 03:53:02PM +0800, Shawn Guo wrote:
+> Hi,
 > 
->   Linux 5.2-rc1 (2019-05-19 15:47:09 -0700)
+> This is a set of device tree changes having dependency on clock tree.
+> The top commit 53c6a2ec018b ("clk: imx8m: Add GIC clock") of the
+> dependencies have been pulled in here, which should be stable.  Please
+> pull, thanks!
+> 
+> Shawn
+> 
+> 
+> The following changes since commit 53c6a2ec018bb07aeb1e2b1d7db8521f1e56d221:
+> 
+>   clk: imx8m: Add GIC clock (2019-05-23 21:14:41 +0800)
 > 
 > are available in the Git repository at:
 > 
->   git://git.kernel.org/pub/scm/linux/kernel/git/shawnguo/linux.git tags/imx-bindings-5.3
+>   git://git.kernel.org/pub/scm/linux/kernel/git/shawnguo/linux.git tags/imx-dt-clkdep-5.3
 > 
-> for you to fetch changes up to a10ecf624b7b7c1ec6c263d4562bd6631d380d2f:
+> for you to fetch changes up to 881b54c7e9d97e36b08fa40d46377b3b983e4095:
 > 
->   dt-bindings: arm: fsl: Add missing schemas for i.MX1/31/35 (2019-06-18 21:39:22 +0800)
-> 
-> ----------------------------------------------------------------
-> i.MX DT bindings for 5.3:
->  - Add vendor prefix for Purism SPC.
->  - Add bindings for i.MX8MQ EVK Board, Purism Librem5 devkit and i.MX7
->    Meerkat96 Board.
->  - Add LS1028A specific compatible into qDMA bindings doc.
->  - Move Emtrion i.MX6 board bindings to schema.
->  - Add missing schemas for i.MX7ULP and i.MX1/31/35 bindings.
+>   arm64: dts: imx8mq: add clock for SNVS RTC node (2019-05-31 15:22:06 +0800)
 
 Merged, thanks!
 
