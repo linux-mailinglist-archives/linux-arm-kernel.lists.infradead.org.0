@@ -2,85 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F2C55550F5
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 25 Jun 2019 15:57:41 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9C2D255103
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 25 Jun 2019 16:03:00 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=TSmaOChl7KGNM7nBnkgL4tpgyI9pJzRIZlSBwqCFWYs=; b=OzbAqGjunzNJmt
-	XK518um2NAvg1XsXd45u8iv0nucpJAqg66vPVA2jv0fn6sdBUSZsruGfQhkXOD7r94cbdIA9hkicY
-	T86+ySozaDnAXqTRlxho/6ihxkLylJL1MQ5H68+z8ppFfXCRKI0TqNn2ukfjInE/Hj1t6kDAE53tQ
-	85PR+aD8j2n/lS1lX4DLalLzh5OSUfLt8VDq4UOF1ZNCO+uXi7P00jWCPYtWSrjJTh6Jx5AcCmO0w
-	zyCD1lng3UkWFWym3mucnLRtDg0AxSV9nBPnlaUGfOAdJGSuBqMUBMJDZ8Cvu8Xut98uVyCjgXkQ5
-	K0+2OHOXgahzBdz9C4DA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=tjcaEm4orBdIKSpwNPOV1rcuJVgn/ohWEvm6h6XmeNk=; b=tJEISAEbZ3pqke
+	Q4SVK3kVEf3FHpds3hZy7qdkW2Gz6cBWWtNRSlBp7r6wy4zY4UX93A6RcbNrSt0NSSdtJlXpUV48J
+	LgvO0T9oBZ1ELk75+Z7DtH9mjn3Et1rlyy7YSa+RICkZTRg8nyTf6UStEvEI20MFnXb8dbvhYFbj9
+	CB/0RdXGQKqcR/9xLO/cGwQd/EDqVt+ker3ghjdsyYef6Yv+Mz4XVFurKgGMTPpLjr/RR73OGo2Wf
+	rhyU/3rBmaKpRF0ZrzR4hOj1TrgkG6Cx1+29ubsittoDGGZ6u332gWFDzFiL3/IXSzyDgyGuQtY2Y
+	ENrw0n1DwQV1m9szETzg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hflx5-0004u7-NM; Tue, 25 Jun 2019 13:57:39 +0000
-Received: from mail-lf1-x142.google.com ([2a00:1450:4864:20::142])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hflwu-0004tZ-V0
- for linux-arm-kernel@lists.infradead.org; Tue, 25 Jun 2019 13:57:30 +0000
-Received: by mail-lf1-x142.google.com with SMTP id y17so12730717lfe.0
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 25 Jun 2019 06:57:28 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=uTW1RTzufVVCLIfnh+7h6hW+A8p2OrQGWdWYeH+4NGc=;
- b=rD0m+cdPPd//2jtOKnRrGA+yNzIqtS2OrqhFqNvI9BwnBTByDXePb2d3VmLU2Jsp2b
- Oydu3kFeAuwXsLOTos5YOl2x5uYhXgslRKqRtNLsVCKqeXMHqkFg2ymZljatvVr6VYlA
- O0tiN6MFwgHkc8Q/ZYT/7xhM6QsmCfMQ8+TvCfARZfEtL92HD+7UYauRjumeafw5xCsk
- BZExa7hD1Zs1iEwk2uLNjmROHkuq7YMAp1FA+V8VgxqVdo+xk38mlwJEz72Xnk7ppxBr
- +0cinfadSpALzcrTBdhVj0HVufS77V7TugkgzF4l2XAZenupQ1QYRRNAyk/hiuknm6eP
- 3NNQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=uTW1RTzufVVCLIfnh+7h6hW+A8p2OrQGWdWYeH+4NGc=;
- b=Ft/b3ooc2qgXX5CrrFXw3BZd9sRNzwDmAL0PcWOO1ke77uowTEryEFsuq1KqemlvyC
- f6edpKp5eIcTlTI/xK+1YQpsWPOX96A6uKA7TByxvILhY4e3q9CSLOLy/L3fzY4MRfX4
- imMhIAdfQePN5sTOiCDSo+RSYHZtA5FPm6gyne72eMh7ZXq4RsQ8WvaxUY8GGKyWZEJZ
- 7gCg3pNY9MulSfdXNZsrBZjBtS6CYnJDYdjLIPuIPgoHiYYWkNC+rtrHiveYDY81hr7G
- +AHHOqceaDdAogHr6zGQYoCz8EQxDSLYYh8cJbn8lJK1z/6dx/W3GALxnj7B8eOw+n85
- lm8Q==
-X-Gm-Message-State: APjAAAWccmdSEwh1P1uhNTKoufrPTJHLlUOxHFOm1d5j+VC/GietAJxE
- Sy3JipFpCloo7QoSVqTbtm/E4kIEZiEy1qAY8+7u0A==
-X-Google-Smtp-Source: APXvYqwtMnHq1yBBhWHpEFgSyvvNlRPOWrNyzfQxiPn5jAkCYYNbYam/5KODrrng0KafhfQTzullbXmVYSc52G3PQ3I=
-X-Received: by 2002:a19:7616:: with SMTP id c22mr25238102lff.115.1561471047372; 
- Tue, 25 Jun 2019 06:57:27 -0700 (PDT)
+	id 1hfm2C-0006mG-1e; Tue, 25 Jun 2019 14:02:56 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hfm22-0006lm-Hm
+ for linux-arm-kernel@lists.infradead.org; Tue, 25 Jun 2019 14:02:48 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id BC4402B;
+ Tue, 25 Jun 2019 07:02:45 -0700 (PDT)
+Received: from [10.1.215.72] (e121566-lin.cambridge.arm.com [10.1.215.72])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 55DAE3F718;
+ Tue, 25 Jun 2019 07:02:44 -0700 (PDT)
+Subject: Re: [PATCH 13/59] KVM: arm64: nv: Handle virtual EL2 registers in
+ vcpu_read/write_sys_reg()
+To: Julien Thierry <julien.thierry@arm.com>,
+ Marc Zyngier <marc.zyngier@arm.com>, linux-arm-kernel@lists.infradead.org,
+ kvmarm@lists.cs.columbia.edu, kvm@vger.kernel.org
+References: <20190621093843.220980-1-marc.zyngier@arm.com>
+ <20190621093843.220980-14-marc.zyngier@arm.com>
+ <01c91e35-1f0d-0da8-ea0c-7b901753e6f0@arm.com>
+From: Alexandru Elisei <alexandru.elisei@arm.com>
+Message-ID: <d022e70e-ce03-5c6d-3c24-b2a40236b4b3@arm.com>
+Date: Tue, 25 Jun 2019 15:02:43 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.7.0
 MIME-Version: 1.0
-References: <20190623043801.14040-1-icenowy@aosc.io>
- <20190623043801.14040-2-icenowy@aosc.io>
- <20190624124019.o6acnnkjikekshl5@flea>
-In-Reply-To: <20190624124019.o6acnnkjikekshl5@flea>
-From: Linus Walleij <linus.walleij@linaro.org>
-Date: Tue, 25 Jun 2019 15:57:15 +0200
-Message-ID: <CACRpkdaQSg4qWWF1XurWA8wnW+ezGtTympVT9DvkF87VKEQVzw@mail.gmail.com>
-Subject: Re: [PATCH v3 1/9] pinctrl: sunxi: v3s: introduce support for V3
-To: Maxime Ripard <maxime.ripard@bootlin.com>
+In-Reply-To: <01c91e35-1f0d-0da8-ea0c-7b901753e6f0@arm.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190625_065728_999576_A777AB0A 
-X-CRM114-Status: GOOD (  13.85  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190625_070246_690160_686041B8 
+X-CRM114-Status: GOOD (  27.11  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:142 listed in]
- [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -92,44 +66,277 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
- <devicetree@vger.kernel.org>, linux-sunxi <linux-sunxi@googlegroups.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
- Chen-Yu Tsai <wens@csie.org>, Rob Herring <robh+dt@kernel.org>,
- linux-clk <linux-clk@vger.kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Icenowy Zheng <icenowy@aosc.io>
+Cc: Suzuki K Poulose <suzuki.poulose@arm.com>,
+ Andre Przywara <andre.przywara@arm.com>,
+ Christoffer Dall <christoffer.dall@arm.com>, Dave Martin <Dave.Martin@arm.com>,
+ James Morse <james.morse@arm.com>, Jintack Lim <jintack@cs.columbia.edu>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Jun 24, 2019 at 2:40 PM Maxime Ripard <maxime.ripard@bootlin.com> wrote:
-> On Sun, Jun 23, 2019 at 12:37:53PM +0800, Icenowy Zheng wrote:
-> > Introduce the GPIO pins that is only available on V3 (not on V3s) to the
-> > V3s pinctrl driver.
-> >
-> > Signed-off-by: Icenowy Zheng <icenowy@aosc.io>
-> > ---
-> > Changes in v3:
-> > - Fixed code alignment.
-> > - Fixed LVDS function number.
-
-> > -               SUNXI_FUNCTION(0x2, "uart2"),         /* TX */
-> > -               SUNXI_FUNCTION_IRQ_BANK(0x6, 0, 0)),  /* PB_EINT0 */
-> > +               SUNXI_FUNCTION(0x2, "uart2"),                 /* TX */
-> > +               SUNXI_FUNCTION_IRQ_BANK(0x6, 0, 0)),          /* PB_EINT0 */
+On 6/24/19 1:42 PM, Julien Thierry wrote:
 >
-> I'm not sure why all that churn is needed.
+> On 06/21/2019 10:37 AM, Marc Zyngier wrote:
+>> From: Andre Przywara <andre.przywara@arm.com>
+>>
+>> KVM internally uses accessor functions when reading or writing the
+>> guest's system registers. This takes care of accessing either the stored
+>> copy or using the "live" EL1 system registers when the host uses VHE.
+>>
+>> With the introduction of virtual EL2 we add a bunch of EL2 system
+>> registers, which now must also be taken care of:
+>> - If the guest is running in vEL2, and we access an EL1 sysreg, we must
+>>   revert to the stored version of that, and not use the CPU's copy.
+>> - If the guest is running in vEL1, and we access an EL2 sysreg, we must
+>>   also use the stored version, since the CPU carries the EL1 copy.
+>> - Some EL2 system registers are supposed to affect the current execution
+>>   of the system, so we need to put them into their respective EL1
+>>   counterparts. For this we need to define a mapping between the two.
+>>   This is done using the newly introduced struct el2_sysreg_map.
+>> - Some EL2 system registers have a different format than their EL1
+>>   counterpart, so we need to translate them before writing them to the
+>>   CPU. This is done using an (optional) translate function in the map.
+>> - There are the three special registers SP_EL2, SPSR_EL2 and ELR_EL2,
+>>   which need some separate handling.
+>>
+>> All of these cases are now wrapped into the existing accessor functions,
+>> so KVM users wouldn't need to care whether they access EL2 or EL1
+>> registers and also which state the guest is in.
+>>
+>> This handles what was formerly known as the "shadow state" dynamically,
+>> without requiring a separate copy for each vCPU EL.
+>>
+>> Signed-off-by: Andre Przywara <andre.przywara@arm.com>
+>> Signed-off-by: Marc Zyngier <marc.zyngier@arm.com>
+>> ---
+>>  arch/arm64/include/asm/kvm_emulate.h |   6 +
+>>  arch/arm64/include/asm/kvm_host.h    |   5 +
+>>  arch/arm64/kvm/sys_regs.c            | 163 +++++++++++++++++++++++++++
+>>  3 files changed, 174 insertions(+)
+>>
+>> diff --git a/arch/arm64/include/asm/kvm_emulate.h b/arch/arm64/include/asm/kvm_emulate.h
+>> index c43aac5fed69..f37006b6eec4 100644
+>> --- a/arch/arm64/include/asm/kvm_emulate.h
+>> +++ b/arch/arm64/include/asm/kvm_emulate.h
+>> @@ -70,6 +70,12 @@ void kvm_emulate_nested_eret(struct kvm_vcpu *vcpu);
+>>  int kvm_inject_nested_sync(struct kvm_vcpu *vcpu, u64 esr_el2);
+>>  int kvm_inject_nested_irq(struct kvm_vcpu *vcpu);
+>>  
+>> +u64 translate_tcr(u64 tcr);
+>> +u64 translate_cptr(u64 tcr);
+>> +u64 translate_sctlr(u64 tcr);
+>> +u64 translate_ttbr0(u64 tcr);
+>> +u64 translate_cnthctl(u64 tcr);
+>> +
+>>  static inline bool vcpu_el1_is_32bit(struct kvm_vcpu *vcpu)
+>>  {
+>>  	return !(vcpu->arch.hcr_el2 & HCR_RW);
+>> diff --git a/arch/arm64/include/asm/kvm_host.h b/arch/arm64/include/asm/kvm_host.h
+>> index 2d4290d2513a..dae9c42a7219 100644
+>> --- a/arch/arm64/include/asm/kvm_host.h
+>> +++ b/arch/arm64/include/asm/kvm_host.h
+>> @@ -217,6 +217,11 @@ enum vcpu_sysreg {
+>>  	NR_SYS_REGS	/* Nothing after this line! */
+>>  };
+>>  
+>> +static inline bool sysreg_is_el2(int reg)
+>> +{
+>> +	return reg >= FIRST_EL2_SYSREG && reg < NR_SYS_REGS;
+>> +}
+>> +
+>>  /* 32bit mapping */
+>>  #define c0_MPIDR	(MPIDR_EL1 * 2)	/* MultiProcessor ID Register */
+>>  #define c0_CSSELR	(CSSELR_EL1 * 2)/* Cache Size Selection Register */
+>> diff --git a/arch/arm64/kvm/sys_regs.c b/arch/arm64/kvm/sys_regs.c
+>> index 693dd063c9c2..d024114da162 100644
+>> --- a/arch/arm64/kvm/sys_regs.c
+>> +++ b/arch/arm64/kvm/sys_regs.c
+>> @@ -76,11 +76,142 @@ static bool write_to_read_only(struct kvm_vcpu *vcpu,
+>>  	return false;
+>>  }
+>>  
+>> +static u64 tcr_el2_ips_to_tcr_el1_ps(u64 tcr_el2)
+>> +{
+>> +	return ((tcr_el2 & TCR_EL2_PS_MASK) >> TCR_EL2_PS_SHIFT)
+>> +		<< TCR_IPS_SHIFT;
+>> +}
+>> +
+>> +u64 translate_tcr(u64 tcr)
+>> +{
+>> +	return TCR_EPD1_MASK |				/* disable TTBR1_EL1 */
+>> +	       ((tcr & TCR_EL2_TBI) ? TCR_TBI0 : 0) |
+>> +	       tcr_el2_ips_to_tcr_el1_ps(tcr) |
+>> +	       (tcr & TCR_EL2_TG0_MASK) |
+>> +	       (tcr & TCR_EL2_ORGN0_MASK) |
+>> +	       (tcr & TCR_EL2_IRGN0_MASK) |
+>> +	       (tcr & TCR_EL2_T0SZ_MASK);
+>> +}
+>> +
+>> +u64 translate_cptr(u64 cptr_el2)
+>> +{
+>> +	u64 cpacr_el1 = 0;
+>> +
+>> +	if (!(cptr_el2 & CPTR_EL2_TFP))
+>> +		cpacr_el1 |= CPACR_EL1_FPEN;
+>> +	if (cptr_el2 & CPTR_EL2_TTA)
+>> +		cpacr_el1 |= CPACR_EL1_TTA;
+>> +	if (!(cptr_el2 & CPTR_EL2_TZ))
+>> +		cpacr_el1 |= CPACR_EL1_ZEN;
+>> +
+>> +	return cpacr_el1;
+>> +}
+>> +
+>> +u64 translate_sctlr(u64 sctlr)
+>> +{
+>> +	/* Bit 20 is RES1 in SCTLR_EL1, but RES0 in SCTLR_EL2 */
+>> +	return sctlr | BIT(20);
+>> +}
+>> +
+>> +u64 translate_ttbr0(u64 ttbr0)
+>> +{
+>> +	/* Force ASID to 0 (ASID 0 or RES0) */
+>> +	return ttbr0 & ~GENMASK_ULL(63, 48);
+>> +}
+>> +
+>> +u64 translate_cnthctl(u64 cnthctl)
+>> +{
+>> +	return ((cnthctl & 0x3) << 10) | (cnthctl & 0xfc);
+>> +}
+>> +
+>> +#define EL2_SYSREG(el2, el1, translate)	\
+>> +	[el2 - FIRST_EL2_SYSREG] = { el2, el1, translate }
+>> +#define PURE_EL2_SYSREG(el2) \
+>> +	[el2 - FIRST_EL2_SYSREG] = { el2,__INVALID_SYSREG__, NULL }
+>> +/*
+>> + * Associate vEL2 registers to their EL1 counterparts on the CPU.
+>> + * The translate function can be NULL, when the register layout is identical.
+>> + */
+>> +struct el2_sysreg_map {
+>> +	int sysreg;	/* EL2 register index into the array above */
+>> +	int mapping;	/* associated EL1 register */
+>> +	u64 (*translate)(u64 value);
+>> +} nested_sysreg_map[NR_SYS_REGS - FIRST_EL2_SYSREG] = {
+>> +	PURE_EL2_SYSREG( VPIDR_EL2 ),
+>> +	PURE_EL2_SYSREG( VMPIDR_EL2 ),
+>> +	PURE_EL2_SYSREG( ACTLR_EL2 ),
+>> +	PURE_EL2_SYSREG( HCR_EL2 ),
+>> +	PURE_EL2_SYSREG( MDCR_EL2 ),
+>> +	PURE_EL2_SYSREG( HSTR_EL2 ),
+>> +	PURE_EL2_SYSREG( HACR_EL2 ),
+>> +	PURE_EL2_SYSREG( VTTBR_EL2 ),
+>> +	PURE_EL2_SYSREG( VTCR_EL2 ),
+>> +	PURE_EL2_SYSREG( RVBAR_EL2 ),
+>> +	PURE_EL2_SYSREG( RMR_EL2 ),
+>> +	PURE_EL2_SYSREG( TPIDR_EL2 ),
+>> +	PURE_EL2_SYSREG( CNTVOFF_EL2 ),
+>> +	PURE_EL2_SYSREG( CNTHCTL_EL2 ),
+>> +	PURE_EL2_SYSREG( HPFAR_EL2 ),
+>> +	EL2_SYSREG(      SCTLR_EL2,  SCTLR_EL1,      translate_sctlr ),
+>> +	EL2_SYSREG(      CPTR_EL2,   CPACR_EL1,      translate_cptr  ),
+>> +	EL2_SYSREG(      TTBR0_EL2,  TTBR0_EL1,      translate_ttbr0 ),
+>> +	EL2_SYSREG(      TTBR1_EL2,  TTBR1_EL1,      NULL            ),
+>> +	EL2_SYSREG(      TCR_EL2,    TCR_EL1,        translate_tcr   ),
+>> +	EL2_SYSREG(      VBAR_EL2,   VBAR_EL1,       NULL            ),
+>> +	EL2_SYSREG(      AFSR0_EL2,  AFSR0_EL1,      NULL            ),
+>> +	EL2_SYSREG(      AFSR1_EL2,  AFSR1_EL1,      NULL            ),
+>> +	EL2_SYSREG(      ESR_EL2,    ESR_EL1,        NULL            ),
+>> +	EL2_SYSREG(      FAR_EL2,    FAR_EL1,        NULL            ),
+>> +	EL2_SYSREG(      MAIR_EL2,   MAIR_EL1,       NULL            ),
+>> +	EL2_SYSREG(      AMAIR_EL2,  AMAIR_EL1,      NULL            ),
+>> +};
+>> +
+>> +static
+>> +const struct el2_sysreg_map *find_el2_sysreg(const struct el2_sysreg_map *map,
+>> +					     int reg)
+>> +{
+>> +	const struct el2_sysreg_map *entry;
+>> +
+>> +	if (!sysreg_is_el2(reg))
+>> +		return NULL;
+>> +
+>> +	entry = &nested_sysreg_map[reg - FIRST_EL2_SYSREG];
+>> +	if (entry->sysreg == __INVALID_SYSREG__)
+>> +		return NULL;
+>> +
+>> +	return entry;
+>> +}
+>> +
+>>  u64 vcpu_read_sys_reg(const struct kvm_vcpu *vcpu, int reg)
+>>  {
+>> +
+>>  	if (!vcpu->arch.sysregs_loaded_on_cpu)
+>>  		goto immediate_read;
+>>  
+>> +	if (unlikely(sysreg_is_el2(reg))) {
+>> +		const struct el2_sysreg_map *el2_reg;
+>> +
+>> +		if (!is_hyp_ctxt(vcpu))
+>> +			goto immediate_read;
+>> +
+>> +		el2_reg = find_el2_sysreg(nested_sysreg_map, reg);
+>> +		if (el2_reg) {
+>> +			/*
+>> +			 * If this register does not have an EL1 counterpart,
+>> +			 * then read the stored EL2 version.
+>> +			 */
+>> +			if (el2_reg->mapping == __INVALID_SYSREG__)
+> In this patch, find_el2_sysreg returns NULL for PURE_EL2 registers. So
+> for PURE_EL2, the access would go through the switch case. However this
+> branch suggest that for PURE_EL2 register we intend to do the read from
+> the memory backed version.
 >
-> Looks good otherwise.
-
-Should I apply the patch or wait for a new version without the
-whitespace fixes?
-
-Yours,
-Linus Walleij
+> Which should it be?
+From my understanding of the code, find_el2_sysreg returns NULL when reg is not
+an EL2 register or when the entry associated with reg in nested_sysreg_map is
+zero (reg is not in the map).
+>
+>> +				goto immediate_read;
+>> +
+>> +			/* Get the current version of the EL1 counterpart. */
+>> +			reg = el2_reg->mapping;
+>> +		}
+>> +	} else {
+>> +		/* EL1 register can't be on the CPU if the guest is in vEL2. */
+>> +		if (unlikely(is_hyp_ctxt(vcpu)))
+>> +			goto immediate_read;
+>> +	}
+>> +
+>>  	/*
+>>  	 * System registers listed in the switch are not saved on every
+>>  	 * exit from the guest but are only saved on vcpu_put.
+>> @@ -114,6 +245,8 @@ u64 vcpu_read_sys_reg(const struct kvm_vcpu *vcpu, int reg)
+>>  	case DACR32_EL2:	return read_sysreg_s(SYS_DACR32_EL2);
+>>  	case IFSR32_EL2:	return read_sysreg_s(SYS_IFSR32_EL2);
+>>  	case DBGVCR32_EL2:	return read_sysreg_s(SYS_DBGVCR32_EL2);
+>> +	case SP_EL2:		return read_sysreg(sp_el1);
+>> +	case ELR_EL2:		return read_sysreg_el1(SYS_ELR);
+>>  	}
+>>  
+>>  immediate_read:
+>> @@ -125,6 +258,34 @@ void vcpu_write_sys_reg(struct kvm_vcpu *vcpu, u64 val, int reg)
+>>  	if (!vcpu->arch.sysregs_loaded_on_cpu)
+>>  		goto immediate_write;
+>>  
+>> +	if (unlikely(sysreg_is_el2(reg))) {
+>> +		const struct el2_sysreg_map *el2_reg;
+>> +
+>> +		if (!is_hyp_ctxt(vcpu))
+>> +			goto immediate_write;
+>> +
+>> +		/* Store the EL2 version in the sysregs array. */
+>> +		__vcpu_sys_reg(vcpu, reg) = val;
+>> +
+>> +		el2_reg = find_el2_sysreg(nested_sysreg_map, reg);
+>> +		if (el2_reg) {
+>> +			/* Does this register have an EL1 counterpart? */
+>> +			if (el2_reg->mapping == __INVALID_SYSREG__)
+>> +				return;
+> As in the read case, this is never reached and we'll go through the
+> switch case.
+>
+> Cheers,
+>
 
 _______________________________________________
 linux-arm-kernel mailing list
