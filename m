@@ -2,98 +2,99 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8127E55181
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 25 Jun 2019 16:22:12 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 937565518C
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 25 Jun 2019 16:23:04 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=TzL9cVucF+hEE88LLEV3jdb3SXrJmEJB5/BN1kDS/Fs=; b=n0kFA62rvSafTl
-	tMfA8L4vYMWEPGwVBkxeK66UVhU2WqjjJBh9i+z2v0NS/N8/vmsuj68JuczlY4junHlhOkShyQRRp
-	aZHR7xJONEeoFyh4pOwxVK7MSlMbSxA7vDwc/rNZasFgkKcAL/bUe0NmvgjDpDnoQvPod4vrzj3WL
-	NXc2Z7QIL0OxOAoQyAX/s8qc3D0PrkDuE8PfFk7cJeRotXZu0pMvKM4XHdHs7UxdlyRPzxz9TIUPF
-	4LNudoPx4ts8ZmnWW4r567J0npVQoc2/Qc4j/6/lspy5kt/9e56BI5pxW5tSUiF2zLxlsiO5Wbqx2
-	GxN5Ia4wiB23/XXtkvXQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:Message-ID:Date
+	:Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	List-Owner; bh=Kdsg0AM0dvrPlfwpLENO88Odc9QWg8D/qAIz3NaXjmI=; b=DMEHfBeALWm/6Q
+	5c3LWVwOK+JefqQOD8yIsIZdvZIFDiMTEm79k7EE04WqYAxaVj3Gi1iLXtnQ5EYE673z1sJZcMed6
+	ZMBtvkAsSpRl4TNv4maUeVN6jEdtt2wxVQfa2Cj3YPY8C8X8OkxVh3YKJzeRHmjsg8CedFxdNWOiv
+	YcxAGKvkJMQg0VCs/SAw4Nkgqyk7pSU11Z5YO2mc0hL0QQx7R5oSCXi3fwBOot3a9rBRR+fd5cz7u
+	lGpJO5Txbfxrr+vgsBFR+zLQmd+H88jsul1YEcpC5lbj1dqDMzevfqlxrYhwrCCTQSDoXrltwnGeC
+	2mAyoMWTdiEozYt5t70Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hfmKm-0008VD-Hn; Tue, 25 Jun 2019 14:22:08 +0000
-Received: from mail-ed1-x543.google.com ([2a00:1450:4864:20::543])
+	id 1hfmLe-0000fm-NG; Tue, 25 Jun 2019 14:23:02 +0000
+Received: from mail-eopbgr70084.outbound.protection.outlook.com ([40.107.7.84]
+ helo=EUR04-HE1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hfmKa-0008UD-1Y
- for linux-arm-kernel@lists.infradead.org; Tue, 25 Jun 2019 14:21:57 +0000
-Received: by mail-ed1-x543.google.com with SMTP id i11so27473401edq.0
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 25 Jun 2019 07:21:53 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ffwll.ch; s=google;
- h=sender:date:from:to:cc:subject:message-id:mail-followup-to
- :references:mime-version:content-disposition:in-reply-to:user-agent;
- bh=24gzO0A0maaezXLn4Sf+YkjPoPGU5cIzahsVUvGWJpM=;
- b=Y+iwXU//8GiwvhB5OdOIwFWmfTwBckBPRRYgH6kue66lsWyh9dCVA2FaKmL02xFKEp
- ZfANSgyGzfjQvccuoaiACu2E9hFGEvf3GDPGF1PFAIvlKZ7isxVSmuGTE6shmB2zXpAr
- IoDUAySoIuAmV09dUoCcTV15LJhra9BJbO9AQ=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:sender:date:from:to:cc:subject:message-id
- :mail-followup-to:references:mime-version:content-disposition
- :in-reply-to:user-agent;
- bh=24gzO0A0maaezXLn4Sf+YkjPoPGU5cIzahsVUvGWJpM=;
- b=X0jRjUt+/O2ICOGlyGwYEzbIxnXHn+CfxgYfmVehpHmIKxsOLFVCCbDVNkgiCryhyb
- Cf9J+kbxzQejAqLp01Y08uxd4x0TOkqaGBNZWSjGkjNRv8mLAtGwDJIMooqVAWKConhT
- D7zX2faXDszST2siUHp2DaYu5VutjUlSo3k5edFfehaTIfhWtE0LjUe4DX077gZkfGxk
- mER76zwQOL5S23hYLc7zfgwTncQ3Es0YIxkpw849drfdjiYI34oueRwws9Ltzr75Hgxd
- e1+iO3/WdHtdjXi9mQGCn1CnvHE0AelIYfFuWm3vS7Gd+dB2RlH8bNFu6v9ubXNJ3MG+
- rTgw==
-X-Gm-Message-State: APjAAAVHhRDyAgOTnu/moXl7b0tv9r+MOnZDjT2je6+qxOpOvjnpdbi2
- EgS2DAABqmv2DAFPkL/kN2WGfA==
-X-Google-Smtp-Source: APXvYqxVUUONdezXsW7E9TNE+qfMGQMUrSmhwkxeITlCJQHWjHZ7M6mojDMZlCgAoAGW7zba80GVtw==
-X-Received: by 2002:aa7:d30b:: with SMTP id p11mr133074273edq.23.1561472512705; 
- Tue, 25 Jun 2019 07:21:52 -0700 (PDT)
-Received: from phenom.ffwll.local ([2a02:168:569e:0:3106:d637:d723:e855])
- by smtp.gmail.com with ESMTPSA id z2sm2477457ejp.73.2019.06.25.07.21.51
- (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Tue, 25 Jun 2019 07:21:51 -0700 (PDT)
-Date: Tue, 25 Jun 2019 16:21:49 +0200
-From: Daniel Vetter <daniel@ffwll.ch>
-To: Andrzej Pietrasiewicz <andrzej.p@collabora.com>
-Subject: Re: [PATCH v2 1/2] drm: Include ddc adapter pointer in struct
- drm_connector
-Message-ID: <20190625142149.GW12905@phenom.ffwll.local>
-Mail-Followup-To: Andrzej Pietrasiewicz <andrzej.p@collabora.com>,
- dri-devel@lists.freedesktop.org, kernel@collabora.com,
- m.szyprowski@samsung.com,
- Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
- Maxime Ripard <maxime.ripard@bootlin.com>,
- Sean Paul <sean@poorly.run>, David Airlie <airlied@linux.ie>,
- Inki Dae <inki.dae@samsung.com>,
- Joonyoung Shim <jy0922.shim@samsung.com>,
- Seung-Woo Kim <sw0312.kim@samsung.com>,
- Kyungmin Park <kyungmin.park@samsung.com>,
- Kukjin Kim <kgene@kernel.org>,
- Krzysztof Kozlowski <krzk@kernel.org>, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org,
- linux-samsung-soc@vger.kernel.org
-References: <cover.1561458051.git.andrzej.p@collabora.com>
- <ef88f682401ae863a91e6c885d83a2756ae20b85.1561458051.git.andrzej.p@collabora.com>
+ id 1hfmKj-00006t-Gk
+ for linux-arm-kernel@lists.infradead.org; Tue, 25 Jun 2019 14:22:07 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=vyjNARllyvJSmD8LmaYeP4Xkh6ob0o5S2vQ5dg9Y3fk=;
+ b=Ylmwq1gSB0exWozTN+z8I7q6cNSPhy2BpVivVl0wPnFGjOmXOvGDcANfiKkcTQ6oobXsI+QEPOt9kqanVL1rsB352GRxnVPwqdOxerLakJgPYiIYhJNUwXbdGiTmRqylpsh03WcRazMd95e5mkhIQsljTYTtygQVQEfiDTknl+E=
+Received: from VI1PR04MB5055.eurprd04.prod.outlook.com (20.177.50.140) by
+ VI1PR04MB6976.eurprd04.prod.outlook.com (52.133.246.212) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2008.16; Tue, 25 Jun 2019 14:22:00 +0000
+Received: from VI1PR04MB5055.eurprd04.prod.outlook.com
+ ([fe80::d83:14c4:dedb:213b]) by VI1PR04MB5055.eurprd04.prod.outlook.com
+ ([fe80::d83:14c4:dedb:213b%5]) with mapi id 15.20.2008.014; Tue, 25 Jun 2019
+ 14:22:00 +0000
+From: Leonard Crestez <leonard.crestez@nxp.com>
+To: Abel Vesa <abel.vesa@nxp.com>, Shawn Guo <shawnguo@kernel.org>, Fabio
+ Estevam <fabio.estevam@nxp.com>, Stephen Boyd <sboyd@kernel.org>, Jacky Bai
+ <ping.bai@nxp.com>
+Subject: Re: [PATCH] arm64: dts: imx8mq: Init rates and parents configs for
+ clocks
+Thread-Topic: [PATCH] arm64: dts: imx8mq: Init rates and parents configs for
+ clocks
+Thread-Index: AQHVK1SzBLyg7yu1NUGWmKUxLWsOPA==
+Date: Tue, 25 Jun 2019 14:22:00 +0000
+Message-ID: <VI1PR04MB50550ACBAEA73FD7B5A97DD8EEE30@VI1PR04MB5055.eurprd04.prod.outlook.com>
+References: <1561467081-25701-1-git-send-email-abel.vesa@nxp.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=leonard.crestez@nxp.com; 
+x-originating-ip: [89.37.124.34]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: b9626825-8f06-44b0-7087-08d6f9787cd5
+x-ms-office365-filtering-ht: Tenant
+x-microsoft-antispam: BCL:0; PCL:0;
+ RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600148)(711020)(4605104)(1401327)(4618075)(2017052603328)(7193020);
+ SRVR:VI1PR04MB6976; 
+x-ms-traffictypediagnostic: VI1PR04MB6976:
+x-microsoft-antispam-prvs: <VI1PR04MB6976E904E8DE81270D21A23EEEE30@VI1PR04MB6976.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:6430;
+x-forefront-prvs: 0079056367
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(136003)(346002)(376002)(39860400002)(396003)(366004)(189003)(199004)(6246003)(52536014)(305945005)(316002)(6436002)(66066001)(6116002)(74316002)(102836004)(25786009)(76176011)(110136005)(55016002)(68736007)(7696005)(54906003)(8936002)(26005)(9686003)(14454004)(4326008)(7416002)(229853002)(256004)(2906002)(86362001)(8676002)(81166006)(53546011)(478600001)(186003)(7736002)(5660300002)(44832011)(81156014)(53936002)(33656002)(6506007)(486006)(73956011)(476003)(71200400001)(71190400001)(99286004)(6636002)(66946007)(64756008)(76116006)(66446008)(446003)(91956017)(66476007)(66556008)(3846002)(32563001);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:VI1PR04MB6976;
+ H:VI1PR04MB5055.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; MX:1; A:1; 
+received-spf: None (protection.outlook.com: nxp.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam-message-info: PIfCXF/oVmzJipsl0N3MIYOBzh0g6iyev9ly/P3+S35VF05jkHe5tPph02rXbps9LMzjxJBXI1tOcgUMo+NpaOG0F58tgGWUPhtvlHu+AVwFkfWpSwjmNWSMne+wDO3Te2xlnCyOqdEsONUgdcnlDVaADv/E51Vq1sysCTofODXS4CzI6pH5zWJmT3cOrxWp//xCHRZN/9Nu2aLESCu/ITfER8l5wcsq+obvH4Vg8OvCF6jOXJY8/WW+PNYK8jcUhfS3fPw+OMvLtEbvNeDBHMkawJaRhAGVj6iRR9SGXoDfKd2w0I+0oxFOJ2Ef7tLBnoa/uHX8Zfpkf87Q8Qi5ztCHJme/cdlSTCXbp58OD4JFabKT2S4p1LtSo0Akytfa6VMGVnn0zAHv4ISeUMeUL3Ohu3cSYgeE/KQg4F+YunU=
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <ef88f682401ae863a91e6c885d83a2756ae20b85.1561458051.git.andrzej.p@collabora.com>
-X-Operating-System: Linux phenom 4.19.0-5-amd64 
-User-Agent: Mutt/1.10.1 (2018-07-13)
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: b9626825-8f06-44b0-7087-08d6f9787cd5
+X-MS-Exchange-CrossTenant-originalarrivaltime: 25 Jun 2019 14:22:00.4818 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: leonard.crestez@nxp.com
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1PR04MB6976
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190625_072156_090699_14B709B6 
-X-CRM114-Status: GOOD (  23.59  )
+X-CRM114-CacheID: sfid-20190625_072205_915948_0D2473F2 
+X-CRM114-Status: GOOD (  12.10  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:543 listed in]
- [list.dnswl.org]
+ no trust [40.107.7.84 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
@@ -112,111 +113,55 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-samsung-soc@vger.kernel.org, Joonyoung Shim <jy0922.shim@samsung.com>,
- Maxime Ripard <maxime.ripard@bootlin.com>,
- Seung-Woo Kim <sw0312.kim@samsung.com>,
- Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
- linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
- Inki Dae <inki.dae@samsung.com>, David Airlie <airlied@linux.ie>,
- Kyungmin Park <kyungmin.park@samsung.com>, Kukjin Kim <kgene@kernel.org>,
- Krzysztof Kozlowski <krzk@kernel.org>, Daniel Vetter <daniel@ffwll.ch>,
- kernel@collabora.com, Sean Paul <sean@poorly.run>,
- linux-arm-kernel@lists.infradead.org, m.szyprowski@samsung.com
+Cc: Mark Rutland <mark.rutland@arm.com>, Rob Herring <robh@kernel.org>,
+ Anson Huang <anson.huang@nxp.com>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ Andrey Smirnov <andrew.smirnov@gmail.com>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ dl-linux-imx <linux-imx@nxp.com>, Sascha Hauer <kernel@pengutronix.de>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ Lucas Stach <l.stach@pengutronix.de>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Jun 25, 2019 at 12:24:40PM +0200, Andrzej Pietrasiewicz wrote:
-> Add generic code which creates symbolic links in sysfs, pointing to ddc
-> interface used by a particular video output. For example:
+On 25.06.2019 15:51, Abel Vesa wrote:
+> Add the initial configuration for clocks that need default parent and rate
+> setting. This is based on the vendor tree clock provider parents and rates
+> configuration except this is doing the setup in dts rather then using clock
+> consumer API in a clock provider driver.
 > 
-> ls -l /sys/class/drm/card0-HDMI-A-1/ddc
-> lrwxrwxrwx 1 root root 0 Jun 24 10:42 /sys/class/drm/card0-HDMI-A-1/ddc \
-> 	-> ../../../../soc/13880000.i2c/i2c-2
-> 
-> This makes it easy for user to associate a display with its ddc adapter
-> and use e.g. ddcutil to control the chosen monitor.
-> 
-> This patch adds an i2c_adapter pointer to struct drm_connector. Particular
-> drivers can then use it instead of using their own private instance. If a
-> connector contains a ddc, then create a symbolic link in sysfs.
-> 
-> Signed-off-by: Andrzej Pietrasiewicz <andrzej.p@collabora.com>
-
-Acked-by: Daniel Vetter <daniel.vetter@ffwll.ch>
-
-As mentioned in the other subthread, I think the important bit to sell
-this is rolling it out to as many drivers as feasible and collecting all
-the acks from driver maintainers.
--Daniel
+> Signed-off-by: Abel Vesa <abel.vesa@nxp.com>
 > ---
->  drivers/gpu/drm/drm_sysfs.c |  7 +++++++
->  include/drm/drm_connector.h | 11 +++++++++++
->  2 files changed, 18 insertions(+)
+>   arch/arm64/boot/dts/freescale/imx8mq.dtsi | 34 +++++++++++++++++++++++++++++++
+>   1 file changed, 34 insertions(+)
 > 
-> diff --git a/drivers/gpu/drm/drm_sysfs.c b/drivers/gpu/drm/drm_sysfs.c
-> index ad10810bc972..26d359b39785 100644
-> --- a/drivers/gpu/drm/drm_sysfs.c
-> +++ b/drivers/gpu/drm/drm_sysfs.c
-> @@ -294,6 +294,9 @@ int drm_sysfs_connector_add(struct drm_connector *connector)
->  	/* Let userspace know we have a new connector */
->  	drm_sysfs_hotplug_event(dev);
->  
-> +	if (connector->ddc)
-> +		return sysfs_create_link(&connector->kdev->kobj,
-> +				 &connector->ddc->dev.kobj, "ddc");
->  	return 0;
->  }
->  
-> @@ -301,6 +304,10 @@ void drm_sysfs_connector_remove(struct drm_connector *connector)
->  {
->  	if (!connector->kdev)
->  		return;
-> +
-> +	if (connector->ddc)
-> +		sysfs_remove_link(&connector->kdev->kobj, "ddc");
-> +
->  	DRM_DEBUG("removing \"%s\" from sysfs\n",
->  		  connector->name);
->  
-> diff --git a/include/drm/drm_connector.h b/include/drm/drm_connector.h
-> index ca745d9feaf5..1ad3d1d54ba7 100644
-> --- a/include/drm/drm_connector.h
-> +++ b/include/drm/drm_connector.h
-> @@ -23,6 +23,7 @@
->  #ifndef __DRM_CONNECTOR_H__
->  #define __DRM_CONNECTOR_H__
->  
-> +#include <linux/i2c.h>
->  #include <linux/list.h>
->  #include <linux/llist.h>
->  #include <linux/ctype.h>
-> @@ -1308,6 +1309,16 @@ struct drm_connector {
->  	 * [0]: progressive, [1]: interlaced
->  	 */
->  	int audio_latency[2];
-> +
-> +	/**
-> +	 * @ddc: associated ddc adapter.
-> +	 * A connector usually has its associated ddc adapter. If a driver uses
-> +	 * this field, then an appropriate symbolic link is created in connector
-> +	 * sysfs directory to make it easy for the user to tell which i2c
-> +	 * adapter is for a particular display.
-> +	 */
-> +	struct i2c_adapter *ddc;
-> +
->  	/**
->  	 * @null_edid_counter: track sinks that give us all zeros for the EDID.
->  	 * Needed to workaround some HW bugs where we get all 0s
-> -- 
-> 2.17.1
-> 
+> diff --git a/arch/arm64/boot/dts/freescale/imx8mq.dtsi b/arch/arm64/boot/dts/freescale/imx8mq.dtsi
+> index d09b808..e0abe02 100644
+> --- a/arch/arm64/boot/dts/freescale/imx8mq.dtsi
+> +++ b/arch/arm64/boot/dts/freescale/imx8mq.dtsi
+> @@ -489,6 +489,40 @@
 
--- 
-Daniel Vetter
-Software Engineer, Intel Corporation
-http://blog.ffwll.ch
+> +					<&clk IMX8MQ_CLK_PCIE1_CTRL>,
+> +					<&clk IMX8MQ_CLK_PCIE1_PHY>,
+> +					<&clk IMX8MQ_CLK_PCIE2_CTRL>,
+> +					<&clk IMX8MQ_CLK_PCIE2_PHY>,
+> +					<&clk IMX8MQ_CLK_CSI1_CORE>,
+> +					<&clk IMX8MQ_CLK_CSI1_PHY_REF>,
+> +					<&clk IMX8MQ_CLK_CSI1_ESC>,
+> +					<&clk IMX8MQ_CLK_CSI2_CORE>,
+> +					<&clk IMX8MQ_CLK_CSI2_PHY_REF>,
+> +					<&clk IMX8MQ_CLK_CSI2_ESC>;
+
+This stuff (and NAND) looks like it would belong to device nodes instead.
+
+The rest seem fine though I'm not sure why exactly those clks are 
+adjusted in vendor tree.
+
+--
+Regards,
+Leonard
 
 _______________________________________________
 linux-arm-kernel mailing list
