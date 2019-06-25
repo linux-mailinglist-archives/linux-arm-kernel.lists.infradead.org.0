@@ -2,72 +2,87 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EB47154DCA
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 25 Jun 2019 13:36:23 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 01B0054E6F
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 25 Jun 2019 14:10:39 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=29/k8106ME0wbMrQRpk2lWTG+lRUYqK+RqgT1PT5vFA=; b=oQVqeXpZ7dXfpx
-	ybeN1PTMxJk9B4ukTbTXxLFyLYWwz0rvcRXAdfWjFMBAcNLUxjpKtlE4bojJmurcMySz0UE38MuNl
-	9JZTpJVho8ppYXbFE3YirFEIEWmzUdONKfr9nVUZXQwGeNX03QU6uM6+URsO1RGmdGudEDj44lwzT
-	2z2Ebx2iUdMlMrggmHCVGlpielMS8mfWuIu9RSy9MgvP5s2GxsoZST/vJfkUIf4QPHHGV+ysOBKLR
-	bgZBubj8L0wq9QJpATOcdQ8YzdW7htqVPkiDDTgQRwsp1VyFAz91mL3HhdyLBlNNhjMAB2SUXFxzD
-	fQN4WOy7prMMMh7ub/Bg==;
+	List-Owner; bh=pnebyAgQkf4viRmCjYdN5arSYG2JLUNqrrIQT5tu8FE=; b=HKGyzvGkMTfknY
+	S3NKDGMFmOs0PT4jHml5jOrEQT+01pjy48xHQwnu+yiFbXlhe4f7lYpclD/7YKOo2kT0jdRU29Zio
+	QKmMdDQOc0Y2Tiwvd5PZVwftulYpS1GPNn8QW8Pk2ewIJdXayGEB825Pbl746at8Z1QMMWLjoBnqZ
+	KfbwRe3sbrJmDJaQI7uPtzZru0oTDyTH2EQPGSoZL1FPpp0aEpHJUSv+YaVczke08Ntns7NzVHR0I
+	IjHWpjjawEK2CVk3Q4vIm9p3R8kpX5NkkYVX/fjty7jepc16JPtPABubKaop1A1ZD6Z3aj2iKBS+Z
+	EY2gEqqmxbmpJfnzaw+w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hfjkL-0006Hw-ND; Tue, 25 Jun 2019 11:36:21 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
+	id 1hfkHS-00055E-JX; Tue, 25 Jun 2019 12:10:34 +0000
+Received: from mail-lj1-x243.google.com ([2a00:1450:4864:20::243])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hfjk7-0006HU-5x; Tue, 25 Jun 2019 11:36:11 +0000
-X-UUID: a1bf63b899584b2fb7b299d1bc04eef3-20190625
-X-UUID: a1bf63b899584b2fb7b299d1bc04eef3-20190625
-Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw01.mediatek.com
- (envelope-from <frederic.chen@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 897121878; Tue, 25 Jun 2019 03:35:54 -0800
-Received: from mtkmbs08n2.mediatek.inc (172.21.101.56) by
- MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Tue, 25 Jun 2019 04:35:52 -0700
-Received: from mtkcas08.mediatek.inc (172.21.101.126) by
- mtkmbs08n2.mediatek.inc (172.21.101.56) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Tue, 25 Jun 2019 19:35:38 +0800
-Received: from [172.21.84.99] (172.21.84.99) by mtkcas08.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Tue, 25 Jun 2019 19:35:38 +0800
-Message-ID: <1561462538.23799.19.camel@mtksdccf07>
-Subject: Re: [RFC PATCH V1 6/6] platform: mtk-isp: Add Mediatek DIP driver
-From: Frederic Chen <frederic.chen@mediatek.com>
-To: Tomasz Figa <tfiga@chromium.org>
-Date: Tue, 25 Jun 2019 19:35:38 +0800
-In-Reply-To: <CAAFQd5Ai2JmwY+_inA-WkE1rKhTOyvJeLM8XG3E6BsYCrp4pnw@mail.gmail.com>
-References: <20190417104511.21514-1-frederic.chen@mediatek.com>
- <20190417104511.21514-7-frederic.chen@mediatek.com>
- <20190509094846.GA65444@google.com> <1558466055.15388.342.camel@mtksdccf07>
- <1560242886.23799.13.camel@mtksdccf07>
- <CAAFQd5CReiPOySyk-eFkgiQMDMoqB3Uhd=bcho2Qtsv74y8fmg@mail.gmail.com>
- <1560247648.23799.16.camel@mtksdccf07>
- <CAAFQd5Ai2JmwY+_inA-WkE1rKhTOyvJeLM8XG3E6BsYCrp4pnw@mail.gmail.com>
-X-Mailer: Evolution 3.2.3-0ubuntu6 
+ id 1hfkBi-0008WM-R5
+ for linux-arm-kernel@lists.infradead.org; Tue, 25 Jun 2019 12:04:41 +0000
+Received: by mail-lj1-x243.google.com with SMTP id m23so15944367lje.12
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 25 Jun 2019 05:04:38 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=lixom-net.20150623.gappssmtp.com; s=20150623;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=z4XsQI9r3zgLSCqnQ/EBqswCUpZjuVFZcMFBR4ZXA0c=;
+ b=jPIyrkQiGDbi3xcB+wPr34WQcfntKoDvbPuU60XSKx4F8IblnVJBWeHX1/1n+/iQ0g
+ vvjRnu4te0A4osICcy9k+YsnwLDgo2NmjJG1VN1yUQ5xutdMjA+ctuYSrXTEn+FdcX1u
+ mPhmrVjABeP13eEVEjZLKRNA47QN1zp96UBVT6Tz8l/uNTEdx+T6n/iMlyJ+08e9RkM4
+ UYwZaf/7AyhmyT4LsE3r0Sffq32eW/I4YR2qiTBZ8r7eO0NCdn2oBnafm+LG/7fMhXza
+ DvixQaIZf96sMSBEKkG4a9t1GSQiD4CbNLFXfh8Lzk1ZTMhQbS9ZnQip30cRw7AKD+ie
+ jq4w==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=z4XsQI9r3zgLSCqnQ/EBqswCUpZjuVFZcMFBR4ZXA0c=;
+ b=tl+bjSNDYO1pIA9RCy+FIXGL75IrzJsnRZCTZyZlijkhHO/2rROLhusTZu/+wLDtOt
+ NjjkvHTHv8ZtL3QCmmBT8jU8+8YPogOlvuE8YNKT7n6FQy8N41M/SIRImTlk/M810wDZ
+ SotE4ctdXQr1xNfQ31qJelLF4bBQyQIpxFhnQhXT4NhttdCTdBm+Uxp7QsRlZJS7sNCn
+ XwLwQOaF720YFbabJmZgk55N6pphqLdPeuaYGvqlBdKQYaTwmCEP8WG8oVQ3TNAtvRKn
+ c3qedhcMJlldZTq6znpZ7J/IzwD4x6YJLG8m/DWxkjZCjdbv9xRH3l9zzlAzv1BhQern
+ 9IYQ==
+X-Gm-Message-State: APjAAAVD8F19gfXxgFPl1iX/y3062impDyr0667WTCzGjQmQGvbo4YUZ
+ gluHChB/94g8GqTXafa/U2ywTg==
+X-Google-Smtp-Source: APXvYqy/FnDivULLxZ2Wc9B3BXXFhEFNfqa3GnLUyjOrJkfRR3rVJTddV2nFa79laoonnwV0Sce3mg==
+X-Received: by 2002:a2e:5b94:: with SMTP id m20mr75023837lje.7.1561464277190; 
+ Tue, 25 Jun 2019 05:04:37 -0700 (PDT)
+Received: from localhost (h85-30-9-151.cust.a3fiber.se. [85.30.9.151])
+ by smtp.gmail.com with ESMTPSA id q21sm996152lfc.96.2019.06.25.05.04.35
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Tue, 25 Jun 2019 05:04:35 -0700 (PDT)
+Date: Tue, 25 Jun 2019 04:36:57 -0700
+From: Olof Johansson <olof@lixom.net>
+To: Joel Stanley <joel@jms.id.au>
+Subject: Re: [GIT PULL] ARM: aspeed: dts changes for 5.3
+Message-ID: <20190625113657.uiy7ytcotn57hq3r@localhost>
+References: <CACPK8XfMEzqvTGZz7JZxz0XQ0tBHzpJRDxtCEFB-ZzKCyDeuQw@mail.gmail.com>
 MIME-Version: 1.0
-X-TM-SNTS-SMTP: A96D21B4832B5BB347BCC937165A0AD695ED92798361EA550FFEA438A530F48C2000:8
-X-MTK: N
+Content-Disposition: inline
+In-Reply-To: <CACPK8XfMEzqvTGZz7JZxz0XQ0tBHzpJRDxtCEFB-ZzKCyDeuQw@mail.gmail.com>
+User-Agent: NeoMutt/20170113 (1.7.2)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190625_043609_593392_24D5B999 
-X-CRM114-Status: GOOD (  28.02  )
+X-CRM114-CacheID: sfid-20190625_050438_908713_504602D4 
+X-CRM114-Status: GOOD (  15.36  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [216.200.240.184 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ no trust [2a00:1450:4864:20:0:0:0:243 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -79,195 +94,57 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Shik Chen <shik@chromium.org>, devicetree@vger.kernel.org,
- Sean Cheng =?UTF-8?Q?=28=E9=84=AD=E6=98=87=E5=BC=98=29?=
- <Sean.Cheng@mediatek.com>,
- Laurent Pinchart <laurent.pinchart+renesas@ideasonboard.com>,
- Rynn Wu =?UTF-8?Q?=28=E5=90=B3=E8=82=B2=E6=81=A9=29?= <Rynn.Wu@mediatek.com>,
- srv_heupstream <srv_heupstream@mediatek.com>,
- Holmes Chiou =?UTF-8?Q?=28=E9=82=B1=E6=8C=BA=29?= <holmes.chiou@mediatek.com>,
- suleiman@chromium.org, Jerry-ch Chen <Jerry-ch.Chen@mediatek.com>,
- Jungo Lin =?UTF-8?Q?=28=E6=9E=97=E6=98=8E=E4=BF=8A=29?=
- <jungo.lin@mediatek.com>, Sj
- Huang <sj.huang@mediatek.com>, yuzhao@chromium.org,
- "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
- zwisler@chromium.org, Matthias Brugger <matthias.bgg@gmail.com>,
- Christie Yu =?UTF-8?Q?=28=E6=B8=B8=E9=9B=85=E6=83=A0=29?=
- <christie.yu@mediatek.com>, Mauro Carvalho Chehab <mchehab@kernel.org>,
- Hans Verkuil <hans.verkuil@cisco.com>, "list@263.net:IOMMU DRIVERS
- <iommu@lists.linux-foundation.org>, Joerg  Roedel <joro@8bytes.org>,
- " <linux-arm-kernel@lists.infradead.org>, Linux
- Media Mailing List <linux-media@vger.kernel.org>
+Cc: Andrew Jeffery <andrew@aj.id.au>, arm <arm@kernel.org>,
+ linux-aspeed@lists.ozlabs.org,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Tomasz,
-
-On Tue, 2019-06-11 at 19:13 +0900, Tomasz Figa wrote:
-> On Tue, Jun 11, 2019 at 7:07 PM Frederic Chen
-> <frederic.chen@mediatek.com> wrote:
-> >
-> > Hi Tomasz,
-> >
-> >
-> > On Tue, 2019-06-11 at 17:59 +0900, Tomasz Figa wrote:
-> > > On Tue, Jun 11, 2019 at 5:48 PM Frederic Chen
-> > > <frederic.chen@mediatek.com> wrote:
-> > > >
-> > > > Dear Tomasz,
-> > > >
-> > > > I'd like to elaborate more about the tuning_data.va.
-> > > > Would you like to give us some advice about our improvement proposal inline?
-> > > >
-> > > > Thank you very much.
-> > > >
-> > > >
-> > > > On Wed, 2019-05-22 at 03:14 +0800, Frederic Chen wrote:
-> > > > > Dear Tomasz,
-> > > > >
-> > > > > I appreciate your comment. It is very helpful for us.
-> > > > >
-> > > > >
-> > > > > > > diff --git a/drivers/media/platform/mtk-isp/isp_50/dip/mtk_dip-sys.c b/drivers/media/platform/mtk-isp/isp_50/dip/mtk_dip-sys.c
-> > > > > > > new file mode 100644
-> > > > > > > index 000000000000..54d2b5f5b802
-> > > > > > > --- /dev/null
-> > > > > > > +++ b/drivers/media/platform/mtk-isp/isp_50/dip/mtk_dip-sys.c
-> > > > > > > @@ -0,0 +1,1384 @@
-> > > >
-> > > > [snip]
-> > > >
-> > > > > > > +static void dip_submit_worker(struct work_struct *work)
-> > > > > > > +{
-> > > > > > > +       struct mtk_dip_hw_submit_work *dip_submit_work =
-> > > > > > > +               container_of(work, struct mtk_dip_hw_submit_work, frame_work);
-> > > > > > > +       struct mtk_dip_hw *dip_hw = dip_submit_work->dip_hw;
-> > > > > > > +       struct mtk_dip_dev *dip_dev = mtk_dip_hw_to_dev(dip_hw);
-> > > > > > > +       struct mtk_dip_hw_work *dip_work;
-> > > > > > > +       struct mtk_dip_hw_subframe *buf;
-> > > > > > > +       u32 len, num;
-> > > > > > > +       int ret;
-> > > > > > > +
-> > > > > > > +       num  = atomic_read(&dip_hw->num_composing);
-> > > > > > > +
-> > > > > > > +       mutex_lock(&dip_hw->dip_worklist.queuelock);
-> > > > > > > +       dip_work = list_first_entry(&dip_hw->dip_worklist.queue,
-> > > >
-> > > > [snip]
-> > > >
-> > > > > > > +
-> > > > > > > +       if (dip_work->frameparams.tuning_data.pa == 0) {
-> > > > > > > +               dev_dbg(&dip_dev->pdev->dev,
-> > > > > > > +                       "%s: frame_no(%d) has no tuning_data\n",
-> > > > > > > +                       __func__, dip_work->frameparams.frame_no);
-> > > > > > > +
-> > > > > > > +               memcpy(&dip_work->frameparams.tuning_data,
-> > > > > > > +                      &buf->tuning_buf, sizeof(buf->tuning_buf));
-> > > > > >
-> > > > > > Ditto.
-> > > > > >
-> > > > >
-> > > > > I got it.
-> > > > >
-> > > > > > > +               memset((char *)buf->tuning_buf.va, 0, DIP_TUNING_SZ);
-> > > > > >
-> > > > > > Ditto.
-> > > > >
-> > > > > I got it.
-> > > > >
-> > > > > >
-> > > > > > > +               /*
-> > > > > > > +                * When user enqueued without tuning buffer,
-> > > > > > > +                * it would use driver internal buffer.
-> > > > > > > +                * So, tuning_data.va should be 0
-> > > > > > > +                */
-> > > > > > > +               dip_work->frameparams.tuning_data.va = 0;
-> > > > > >
-> > > > > > I don't understand this. We just zeroed the buffer via this kernel VA few
-> > > > > > lines above, so why would it have to be set to 0?
-> > > > > >
-> > > > >
-> > > > > I will remove this unnecessary line.
-> > > > >
-> > > > > > > +       }
-> > > >
-> > > > After confirming the firmware part, I found that we use this field
-> > > > (tuning_data.va) to notify firmware if there is no tuning data from
-> > > > user.
-> > > >
-> > > > - frameparams.tuning_data.va is 0: use the default tuning data in
-> > > >                                    SCP, but we still need to pass
-> > > >                                    frameparams.tuning_data.pa because
-> > > >                                    the buffer contains some working
-> > > >                                    buffer required.
-> > > > - frameparams.tuning_data.va is not 0: the tuning data was passed from
-> > > >                                        the user
-> > > >
-> > > > Since we should not pass cpu addres to SCP, could I rename tuning_data.va
-> > > > as tuning_data.cookie, and write a constant value to indicate if SCP
-> > > > should use its internal default setting or not here?
-> > > >
-> > > > For example,
-> > > > /* SCP uses tuning data passed from userspace*/
-> > > > dip_work->frameparams.tuning_data.cookie = MTK_DIP_USER_TUNING_DATA;
-> > > >
-> > > > /* SCP uses internal tuning data */
-> > > > dip_work->frameparams.tuning_data.cookie = MTK_DIP_DEFAULT_TUNING_DATA;
-> > >
-> > > Perhaps we could just call it "present" and set to true or false?
-> > >
-> >
-> > Yes. I would like to use "present" here.
-> >
-> > Original:
-> >   struct img_addr {
-> >       u64 va; /* Used by Linux OS access */
-> >       u32 pa; /* Used by CM4 access */
-> >       u32 iova; /* Used by IOMMU HW access */
-> >   } __attribute__ ((__packed__));
-> >
-> >   struct img_ipi_frameparam {
-> >       u32 index;
-> >       u32 frame_no;
-> >       u64 timestamp;
-> >       u8 type;  /* enum mdp_stream_type */
-> >       u8 state;
-> >       u8 num_inputs;
-> >       u8 num_outputs;
-> >       u64 drv_data;
-> >       struct img_input inputs[IMG_MAX_HW_INPUTS];
-> >       struct img_output outputs[IMG_MAX_HW_OUTPUTS];
-> >       struct img_addr tuning_data;
-> >       struct img_addr subfrm_data;
-> >       struct img_sw_addr config_data;
-> >       struct img_sw_addr self_data;
-> >   } __attribute__ ((__packed__));
-> >
-> >
-> > Modified:
-> >   struct tuning_buf {
-> >       u8 present;
+On Thu, Jun 20, 2019 at 07:34:16AM +0000, Joel Stanley wrote:
+> Hello ARM maintainers,
 > 
-> I'd make this u32 to keep the other fields aligned.
+> Here's the ASPEED device tree changes for 5.3. Most of the patches
+> have been baking for a number of weeks, with a few late changes added
+> in today.
 > 
-> >       u32 pa;   /* Used by CM4 access */
-> >       u32 iova; /* Used by IOMMU HW access */
-> >   } __attribute__ ((__packed__));
+> The following changes since commit a188339ca5a396acc588e5851ed7e19f66b0ebd9:
 > 
+>   Linux 5.2-rc1 (2019-05-19 15:47:09 -0700)
+> 
+> are available in the Git repository at:
+> 
+>   git://git.kernel.org/pub/scm/linux/kernel/git/joel/aspeed.git \
+>     tags/aspeed-5.3-devicetree
+> 
+> for you to fetch changes up to 6084110a0e9c4bff75970f3d68091ceff9e2c2c7:
+> 
+>   ARM: dts: aspeed: Enable video engine on romulus and wtherspoon
+> (2019-06-20 16:37:26 +0930)
+> 
+> ----------------------------------------------------------------
+> ASPEED device tree updates for 5.3
+> 
+> We have various device tree updates from the OpenBMC project to enable
+> bits and pieces in existing systems, notably updates to Google's Zaius.
+> 
+> There are some AST2500 machines under development:
+> 
+>   * Lenovo Hr630
+>   * IBM Swift
+>   * Facebook YAMP
+> 
+> And some AST2400 machines that have been around but out of tree and have
+> now joined the party:
+> 
+>   * YADRO VESNIN
+>   * Microsoft Olympus
 
-We will use u32 to keep the fields aligned in next patch.
+Merged, thanks!
 
 
-> Best regards,
-> Tomasz
-
-
-Sincerely,
-
-Frederic Chen
-
+-Olof
 
 _______________________________________________
 linux-arm-kernel mailing list
