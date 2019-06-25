@@ -2,64 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9EC84550A3
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 25 Jun 2019 15:41:41 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CCF14550C0
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 25 Jun 2019 15:51:15 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Kuc7ZzcpAPglmcem3nkK7dzs80U7RK4JguwvXzhD4CM=; b=WZ8qjuqfHo3jDg
-	Ey/E2WS5+8pAHxiblraJ0RbjTeTOT0ceRzfI2RreRgD6syzjcH1co0MBpnYlbFbBu7L9rQ1pSwdx7
-	s8OkXcCO+WrSSRSJhRV376smfiPuaSvuS5GRuHDwDkf+xEbdPYp4reEwjqtWL4BVtoChWpHCUMAlt
-	YAyRuZkotk5p2SY66Jew27Jk9gp7pG9Qn/EznEcEdaOoZiRHn1xbAXnoPloVeaSXi1uP0Rwfb8Ht+
-	vodBBhDWKhk+GkTpmzihMJZ7bNZoTLrgOuIJkHJ5DkvBrmvDMQIkZpsBd3vNJARq8BM2FiaBLtf9y
-	UgJ+cpycsQmpq6BQSvnA==;
+	List-Owner; bh=O7ELak71Rl3fIad/NiJKxzq9uJbLqdMFqUyhWtdWAaM=; b=Lcw8aZrjB0/9lw
+	wPSu/PZuAMeYYGsWq1EZ8GIfHsB1NHFKv2mBNTa9+odY4sTTEzfg/qShyF8k+tddGZzSsOEwfaHpQ
+	jqI3HGH68YbgifRnuPXcgpZb2g4jixhf0RroHBkS1g2h2G2PvRg3rOBZlx1LPnTXu8FPlqPkDzObW
+	GmGJNjXH9utQx0lifjccTpNN6eLfVXx4CovHMYBylj+8QH7EyywRP/Ro1NuaVLzGC44M0Gmw5LMxE
+	z8ZE/QvVCazLcGMd+s0ngQf3zWvXDDwvx9FZQtGuJq3tprz8eiYJMdrcckTSHrDiJWWR//wldldSN
+	A0bOZ0sHXMBXy9i/UB7A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hflha-00071z-TE; Tue, 25 Jun 2019 13:41:38 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1hflqr-0001re-GQ; Tue, 25 Jun 2019 13:51:13 +0000
+Received: from mail-lf1-x144.google.com ([2a00:1450:4864:20::144])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hflhL-000719-G4
- for linux-arm-kernel@lists.infradead.org; Tue, 25 Jun 2019 13:41:25 +0000
-Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id BD5982133F;
- Tue, 25 Jun 2019 13:41:20 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1561470082;
- bh=LOjVR/zCOOavzyfdkONnkNBnRswHHfgS5xi+h5FfHwg=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=uhzue9w2YA2B/nApeUVqoiZqwDaU/BSbEY6fr/5HABCG6oVHY5M4Ap85fAtv+LK1V
- xNKDjwolFglKpTC0T5vk8hp+EJFchPrZ4IBAFlIcYAJYbi8j7uQEykSrJno7My7eFv
- X/wbBxgZzPbkXTgyOYpwNrQ8ktERyqOeJ4kssy8g=
-Date: Tue, 25 Jun 2019 14:41:18 +0100
-From: Will Deacon <will@kernel.org>
-To: Raphael Gault <raphael.gault@arm.com>
-Subject: Re: [PATCH 3/7] perf: arm64: Use rseq to test userspace access to
- pmu counters
-Message-ID: <20190625134117.r3gysn7mvzzdrytj@willie-the-truck>
-References: <20190611125315.18736-1-raphael.gault@arm.com>
- <20190611125315.18736-4-raphael.gault@arm.com>
- <20190611143346.GB28689@kernel.org>
- <20190611165755.GG29008@lakrids.cambridge.arm.com>
- <ff5897eb-ae6c-482f-148b-947a661fde4f@arm.com>
+ id 1hflqh-0001ql-RS
+ for linux-arm-kernel@lists.infradead.org; Tue, 25 Jun 2019 13:51:05 +0000
+Received: by mail-lf1-x144.google.com with SMTP id y198so12711536lfa.1
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 25 Jun 2019 06:51:03 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=NFgue3oKymAnPLqWEpKiFYxZqxdbMA1mAsgv3rYLpoE=;
+ b=PdLfNuRX8o0MT8u/xnGoKn1MWuT+NeXfGGOEg8LQPuO8qtlaH+6/U/Se7HOmQPGW/t
+ nhuOnnNj/Ur1cPp9pkrCWbCm946AeCXnyEcwO8F6uGppaYNGrImtYwVg4eqyZuYx4nw4
+ VzpiyXCGGe1cmSCebquOcabusXBnFKLKt/BvnEHk5Iq9Ksp049DCVXNqpV90gE4KpAF6
+ jIdbmoHFwr2O+yKyF5xOQ6KSyCo6vEP2VXoqEQKBLLqYGiyMWASrpQRYV9T68FD2svRX
+ SLceTYFCOde44PwxP8DvJvoE815KPjsYOzE1qmOXi23IUTqltqJQloZd9osx4M9Eh944
+ IQWw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=NFgue3oKymAnPLqWEpKiFYxZqxdbMA1mAsgv3rYLpoE=;
+ b=Br5I2Q59jU92nM3YPHwBANfKAxgQsk7/WLKuikzoAJgGeKcykrKd8YAl6dyKEwTUl0
+ ItLsng0FiEiYbTTFi0NYEF/zNLS7wsv+VqtyU5qlJ9v7UXNJ3YNJxllJDLVuXfACEBxa
+ f0k46oPSkHdbRmA0y8QBNe25O6Kgm/TA+xj+xBxH5YkEFQt2nE5+wkv60BOkdYv98LeW
+ vOPlF7lSQuYaj7CfODsR4eoup+wG2daiJBZK+ztT00PlaF2Rm0IESjfFjCY4srVkwFTk
+ 330sufAUgf/FLn2r9xGD3ns3xhff+nYoZ7wvadQsmudLuxWXPE4v8gg9AWljlxGm5VrG
+ o+5A==
+X-Gm-Message-State: APjAAAV+KdWzVtiuctOPzoHZIgmMp9YkatVd8Lk1n49vLguJrDbA7CQS
+ C60kPWuXcQ1TwzgZwpL3KPatryQ0YxX9pqK/A03+8Q==
+X-Google-Smtp-Source: APXvYqweuybTOeTfqTGsuOJxjLKJ6DVhGG8Um8M//OczH8cF/Z2EL92nk9R9z1tbGk4bZ7C0ouYVRfKXJe75pfgJjXU=
+X-Received: by 2002:ac2:50c4:: with SMTP id h4mr25254433lfm.61.1561470662286; 
+ Tue, 25 Jun 2019 06:51:02 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <ff5897eb-ae6c-482f-148b-947a661fde4f@arm.com>
-User-Agent: NeoMutt/20170113 (1.7.2)
+References: <20190429035515.73611-1-drinkcat@chromium.org>
+ <20190429035515.73611-2-drinkcat@chromium.org>
+In-Reply-To: <20190429035515.73611-2-drinkcat@chromium.org>
+From: Linus Walleij <linus.walleij@linaro.org>
+Date: Tue, 25 Jun 2019 15:50:50 +0200
+Message-ID: <CACRpkdZd+0_7xqaa05mqNzNxDC1kKmEv9LLRoSVYqTmO=+3iGA@mail.gmail.com>
+Subject: Re: [PATCH 1/2] pinctrl: mediatek: Ignore interrupts that are wake
+ only during resume
+To: Nicolas Boichat <drinkcat@chromium.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190625_064123_570063_C3C99781 
-X-CRM114-Status: GOOD (  13.85  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190625_065103_892598_E1D6D311 
+X-CRM114-Status: GOOD (  13.98  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:144 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -69,7 +81,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -81,46 +92,46 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, peterz@infradead.org,
- catalin.marinas@arm.com, will.deacon@arm.com,
- Arnaldo Carvalho de Melo <arnaldo.melo@gmail.com>,
- linux-kernel@vger.kernel.org, mingo@redhat.com, mathieu.desnoyers@efficios.com,
- linux-arm-kernel@lists.infradead.org
+Cc: Chuanjia Liu <Chuanjia.Liu@mediatek.com>, Sean Wang <sean.wang@kernel.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Evan Green <evgreen@chromium.org>, Stephen Boyd <swboyd@chromium.org>,
+ "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
+ "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Raphael,
+On Mon, Apr 29, 2019 at 5:55 AM Nicolas Boichat <drinkcat@chromium.org> wrote:
 
-On Tue, Jun 25, 2019 at 02:29:56PM +0100, Raphael Gault wrote:
-> Now that we have a better idea what enabling this feature for heterogeneous
-> systems would look like (both with or without using rseqs), it might be
-> worth discussing if this is in fact a desirable thing in term of
-> performance-complexity trade off.
+> Before suspending, mtk-eint would set the interrupt mask to the
+> one in wake_mask. However, some of these interrupts may not have a
+> corresponding interrupt handler, or the interrupt may be disabled.
+>
+> On resume, the eint irq handler would trigger nevertheless,
+> and irq/pm.c:irq_pm_check_wakeup would be called, which would
+> try to call irq_disable. However, if the interrupt is not enabled
+> (irqd_irq_disabled(&desc->irq_data) is true), the call does nothing,
+> and the interrupt is left enabled in the eint driver.
+>
+> Especially for level-sensitive interrupts, this will lead to an
+> interrupt storm on resume.
+>
+> If we detect that an interrupt is only in wake_mask, but not in
+> cur_mask, we can just mask it out immediately (as mtk_eint_resume
+> would do anyway at a later stage in the resume sequence, when
+> restoring cur_mask).
+>
+> Fixes: bf22ff45bed ("genirq: Avoid unnecessary low level irq function calls")
+> Signed-off-by: Nicolas Boichat <drinkcat@chromium.org>
 
-Agreed; it's one of those things that I think is *definitely* worth
-prototyping, but it's not obviously something we should commit to at this
-stage.
+Patch applied for fixes.
+Hm a late ACK made me miss this, sorry.
 
-> Indeed, while not as scary as first thought, maybe the rseq method would
-> still dissuade users from using this feature. It is also worth noting that
-> if we only enable this feature on homogeneous system, the `mrs`
-> hook/emulation would not be necessary.
-> If because of the complexity of the setup we need to consider whether we
-> want to upstream this and have to maintain it afterward.
-
-Given that we don't currently support userspace access to the counters at
-all, I think upstreaming support only for homogeneous systems makes sense
-initially as long as (a) we fail gracefully on heterogeneous systems and (b)
-we don't close the door to using the rseq-based mechanism in future if we
-choose to (i.e. it would be nice if this was an extension to the ABI rather
-than a break). That also gives us a chance to assess the wider adoption of
-rseq before throwing our weight behind it.
-
-Sound reasonable?
-
-Will
+Yours,
+Linus Walleij
 
 _______________________________________________
 linux-arm-kernel mailing list
