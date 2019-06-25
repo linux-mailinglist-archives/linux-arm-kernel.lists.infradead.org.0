@@ -2,89 +2,64 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8387F55539
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 25 Jun 2019 18:54:25 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id F36C955546
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 25 Jun 2019 19:00:50 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=St0J+l+MAVMwAzfp5bWMWDdKjIxPHrwexylzdPeNS7M=; b=EQJmTKBXvkdOyM
-	aZe3okKI83+kyu3m7RyvauFhnuI0/hh3UBmoHtEEC/8Yl38GsorAKREChkUTZT72TI1FrS9umSPsN
-	RdwaXKDKX7EB5Mqb8VTOXx5/CQs+8Brk0HCVg4EKMRqJ2A4oGdJhK3PuHVfizpdM8mAhbgtKYnHW3
-	/X8CJfBmCtHtZllHV5iabHQgtkNXkzkBDqNU/crxO3GmpNvf/Jvpa5Lad7mKAOYOrOU4dRH43tyRb
-	PC5AWN2A1l5jten1n7YlFiDUR1Ssav9NetQMbyMDy3dCacn9CbI3XKumu3axG1tuK1NuUDciFJyk2
-	sNevTo1hYiEq6FM2X86g==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:
+	In-Reply-To:MIME-Version:Date:Message-ID:From:References:To:Subject:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=U8RvHOzVVLEZhRVi+o7gfMZTetX0nWNXJXhbcfNp91o=; b=ZOQv2a+9hDrhcoznJTQVYn7Vf
+	nOqWJMdi5qeU7Q2zEY8Wa7eiPXFX53/gIVwdqhaWxLH2BvqEn+PhzpYIl3VAsfIQHqPO1rV08mZHv
+	7auWlADCIbggDBBz1OZH2JxbkpdZbBuNNqr0kyvD1ukcRmnsaUSzYdXhF5n/D/D5FkypBYUdeXy+O
+	pRLnJ4RbbnnT0P0FG5/YC2IGsUUitXLehDsblmeA1+g88Vw9wwgEed9EtDeF+dmGNErsg6MYK0gij
+	8TkxpwFSnTBqgQ8M23Zia76aZs7xrXZk11RSfOPEsrC4HpM4dB5x1OoRyVyH2g7tLHRYblOAePNtX
+	sUPEPyN8Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hfoi6-0008RV-5Y; Tue, 25 Jun 2019 16:54:22 +0000
-Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hfodI-0003pg-Re
- for linux-arm-kernel@lists.infradead.org; Tue, 25 Jun 2019 16:49:27 +0000
-Received: by mail-wm1-x344.google.com with SMTP id f17so3689383wme.2
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 25 Jun 2019 09:49:24 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=bgdev-pl.20150623.gappssmtp.com; s=20150623;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=BpBEtYSgqrBi7j4SiCT1m6YSPtNFJxDP5oog1k2Dp/E=;
- b=eDnM5SmroyDBRGWomt4zm7VTbV4K8ugQm9G7mQkVjtkKKrgpPXvluSKc0vRgU+BNb1
- VpUb13atGzKgtE48uLL+hhQvMBm9nrkO/hshQUUBPnbzeI7eO2oFXOu/PfLFTvmUSWv+
- x7u4OqYLiuvEApl5clWFxy/edonhHNOkVcoa6DL6GKCw3W95w+/vY9iMBQZEbF4R2QRS
- lLKqTq8JHXN2kSAZndjbq6Wix02hiVIb2mJT5MSoSkAUY3hR43RXrZcC4LYzVLDMMY5A
- 1zedhzJ1Y2ZuXVSUI//I5AgEyxzZ5K9tcypa/cdU1QDNyLXJkXuoQLX+foMyOZZwbDMF
- CA5Q==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=BpBEtYSgqrBi7j4SiCT1m6YSPtNFJxDP5oog1k2Dp/E=;
- b=Fs3TXgIDQfN6QHER2k4Q0SyRVny23DkC6ChiB31cQmwjA6MZklhlttpR2g1RvBkNP4
- jWOKvoHUVMr76k218t1vGWPX3BFRZR9u5EBxksYNlQXGSf9uAlqN96MA/1aOEZhmXeXw
- 1hHB04B8sCitG6s5OlU+yxxvvA2lHobKIhzvhn6da4EvyhptKgwDRw47EVuzkWaeGkOg
- +NAwbZRK/L2jXW49wb+0VDKyQ1umhJ2GaOn7M7ic37YvOCBwskzSzI71hrAL5r+qiGDb
- w+7QCX+xeY9h7kCG9brMXkgMKW5fxAfqCnPkhMGgGlI41qIVDPmd1Z/1Vf1CWpSyxTxA
- WPlw==
-X-Gm-Message-State: APjAAAVdbR8AkVS6oTZDBnbhtiVAEAxUzr43OlytD/4AAXOBloyVNJUm
- prsEMU4ooIVAq+PHQnXogCfYRA==
-X-Google-Smtp-Source: APXvYqyVBBSlo04QiVVJZul9HxR3AfR32ezyhijOC6RrdMyx1+Q4KkR7gbPOK8c8SM4hhdG5xjAAig==
-X-Received: by 2002:a1c:23c4:: with SMTP id
- j187mr20851213wmj.176.1561481363562; 
- Tue, 25 Jun 2019 09:49:23 -0700 (PDT)
-Received: from debian-brgl.home ([2a01:cb1d:af:5b00:6d6c:8493:1ab5:dad7])
- by smtp.gmail.com with ESMTPSA id h14sm3078652wro.30.2019.06.25.09.49.22
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Tue, 25 Jun 2019 09:49:23 -0700 (PDT)
-From: Bartosz Golaszewski <brgl@bgdev.pl>
-To: Sekhar Nori <nsekhar@ti.com>,
-	Kevin Hilman <khilman@kernel.org>
-Subject: [PATCH 2/2] ARM: davinci: omapl138-hawk: add missing regulator
- constraints for OHCI
-Date: Tue, 25 Jun 2019 18:49:15 +0200
-Message-Id: <20190625164915.30242-2-brgl@bgdev.pl>
-X-Mailer: git-send-email 2.21.0
-In-Reply-To: <20190625164915.30242-1-brgl@bgdev.pl>
-References: <20190625164915.30242-1-brgl@bgdev.pl>
+	id 1hfooK-0003Mm-Fp; Tue, 25 Jun 2019 17:00:48 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hfoo5-0003LV-Mk
+ for linux-arm-kernel@lists.infradead.org; Tue, 25 Jun 2019 17:00:35 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id E699F360;
+ Tue, 25 Jun 2019 10:00:29 -0700 (PDT)
+Received: from [10.1.196.72] (e119884-lin.cambridge.arm.com [10.1.196.72])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id BEB0F3F718;
+ Tue, 25 Jun 2019 10:00:28 -0700 (PDT)
+Subject: Re: "arm64: vdso: Substitute gettimeofday() with C implementation"
+ breaks clang build
+To: Nick Desaulniers <ndesaulniers@google.com>
+References: <1561464964.5154.63.camel@lca.pw>
+ <e86774e4-7470-5cb2-fc3e-b7c1f529d253@arm.com>
+ <1561467369.5154.67.camel@lca.pw>
+ <00a78980-6b9c-5d5b-ed01-b28bb34be022@arm.com>
+ <1561470705.5154.68.camel@lca.pw>
+ <5113362e-1256-6712-6ce8-9599b1806cf1@arm.com>
+ <1561472887.5154.72.camel@lca.pw>
+ <668bbe72-b32b-8cee-ccad-d1f6110c6728@arm.com>
+ <CAKwvOdmCFjunXRbninTdqoDGPNJ6b7npgXLAPYGqFZas5ofNjw@mail.gmail.com>
+From: Vincenzo Frascino <vincenzo.frascino@arm.com>
+Message-ID: <193c179e-16ca-4b4e-2584-75e8f6c1819f@arm.com>
+Date: Tue, 25 Jun 2019 18:00:27 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.7.0
 MIME-Version: 1.0
+In-Reply-To: <CAKwvOdmCFjunXRbninTdqoDGPNJ6b7npgXLAPYGqFZas5ofNjw@mail.gmail.com>
+Content-Type: multipart/mixed; boundary="------------C25D41F534D1DAA79714818A"
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190625_094925_019329_06540F70 
-X-CRM114-Status: GOOD (  10.87  )
+X-CRM114-CacheID: sfid-20190625_100034_013596_70BB31FA 
+X-CRM114-Status: GOOD (  18.83  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:344 listed in]
- [list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -96,44 +71,121 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Bartosz Golaszewski <bgolaszewski@baylibre.com>, stable@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Catalin Marinas <catalin.marinas@arm.com>,
+ Will Deacon <will.deacon@arm.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Qian Cai <cai@lca.pw>, Thomas Gleixner <tglx@linutronix.de>,
+ Nathan Chancellor <natechancellor@gmail.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Bartosz Golaszewski <bgolaszewski@baylibre.com>
+This is a multi-part message in MIME format.
+--------------C25D41F534D1DAA79714818A
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 7bit
 
-We need to enable status changes for the fixed power supply for the USB
-controller.
+Hi Nick,
 
-Fixes: 1d272894ec4f ("ARM: davinci: omapl138-hawk: add a fixed regulator for ohci-da8xx")
-Cc: stable@vger.kernel.org
-Signed-off-by: Bartosz Golaszewski <bgolaszewski@baylibre.com>
----
- arch/arm/mach-davinci/board-omapl138-hawk.c | 3 +++
- 1 file changed, 3 insertions(+)
+On 25/06/2019 17:26, Nick Desaulniers wrote:
+> On Tue, Jun 25, 2019 at 7:54 AM Vincenzo Frascino
+> <vincenzo.frascino@arm.com> wrote:
+>>
+>> Hi Qian,
+>>
+>> ...
+>>
+>>>
+>>> but clang 7.0 is still use in many distros by default, so maybe this commit can
+>>> be fixed by adding a conditional check to use "small" if clang version < 8.0.
+>>>
+>>
+>> Could you please verify that the patch below works for you?
+> 
+> Should it be checking against CONFIG_CLANG_VERSION, or better yet be
+> using cc-option macro?
+> 
 
-diff --git a/arch/arm/mach-davinci/board-omapl138-hawk.c b/arch/arm/mach-davinci/board-omapl138-hawk.c
-index db177a6a7e48..5390a8630cf0 100644
---- a/arch/arm/mach-davinci/board-omapl138-hawk.c
-+++ b/arch/arm/mach-davinci/board-omapl138-hawk.c
-@@ -306,6 +306,9 @@ static struct regulator_consumer_supply hawk_usb_supplies[] = {
- static struct regulator_init_data hawk_usb_vbus_data = {
- 	.consumer_supplies	= hawk_usb_supplies,
- 	.num_consumer_supplies	= ARRAY_SIZE(hawk_usb_supplies),
-+	.constraints    = {
-+		.valid_ops_mask = REGULATOR_CHANGE_STATUS,
-+	},
- };
- 
- static struct fixed_voltage_config hawk_usb_vbus = {
+This is what I did in my proposed patch, but I was surprised that clang-7
+generates relocations that clang-8 does not.
+
+  LD      arch/arm64/kernel/vdso/vdso.so.dbg
+  VDSOCHK arch/arm64/kernel/vdso/vdso.so.dbg
+00000000000009d0 R_AARCH64_JUMP_SLOT  _mcount
+
+arch/arm64/kernel/vdso/vdso.so.dbg: dynamic relocations are not supported
+make[1]: *** [arch/arm64/kernel/vdso/Makefile:59:
+arch/arm64/kernel/vdso/vdso.so.dbg] Error 1
+make: *** [arch/arm64/Makefile:180: vdso_prepare] Error 2
+
+This is the the result of the macro I introduced in lib/vdso/Makefile.
+
+And I just found out why. I forgot to add a "+" in the patch provided :)
+
+@Qian: Could you please retry with the one provided below?
+
 -- 
-2.21.0
+Regards,
+Vincenzo
 
+--->8----
+
+
+
+
+--------------C25D41F534D1DAA79714818A
+Content-Type: text/x-patch;
+ name="0001-arm64-vdso-Fix-compilation-with-clang-8.patch"
+Content-Transfer-Encoding: 7bit
+Content-Disposition: attachment;
+ filename="0001-arm64-vdso-Fix-compilation-with-clang-8.patch"
+
+From eed9ea23cf999d31b87db4b98a8e9de209706132 Mon Sep 17 00:00:00 2001
+From: Vincenzo Frascino <vincenzo.frascino@arm.com>
+Date: Tue, 25 Jun 2019 15:49:37 +0100
+Subject: [PATCH] arm64: vdso: Fix compilation with clang < 8
+
+clang versions previous to 8 do not support -mcmodel=tiny.
+
+Add a check to the vDSO Makefile for arm64 to remove the flag when these
+versions of the compiler are detected.
+
+Reported-by: Qian Cai <cai@lca.pw>
+Signed-off-by: Vincenzo Frascino <vincenzo.frascino@arm.com>
+---
+ arch/arm64/kernel/vdso/Makefile | 5 +++++
+ 1 file changed, 5 insertions(+)
+
+diff --git a/arch/arm64/kernel/vdso/Makefile b/arch/arm64/kernel/vdso/Makefile
+index ec81d28aeb5d..5154f50aff2d 100644
+--- a/arch/arm64/kernel/vdso/Makefile
++++ b/arch/arm64/kernel/vdso/Makefile
+@@ -38,6 +38,11 @@ else
+ CFLAGS_vgettimeofday.o = -O2 -mcmodel=tiny -include $(c-gettimeofday-y)
+ endif
+ 
++# Clang versions less than 8 do not support -mcmodel=tiny
++ifeq ($(shell test $(CONFIG_CLANG_VERSION) -lt 80000; echo $$?),0)
++CFLAGS_REMOVE_vgettimeofday.o += -mcmodel=tiny
++endif
++
+ # Disable gcov profiling for VDSO code
+ GCOV_PROFILE := n
+ 
+-- 
+2.22.0
+
+
+--------------C25D41F534D1DAA79714818A
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--------------C25D41F534D1DAA79714818A--
+
