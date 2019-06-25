@@ -2,60 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2C8B1551BC
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 25 Jun 2019 16:30:53 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 570EE551C7
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 25 Jun 2019 16:35:06 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Z+Hx7BusyKeXRm7gHzGw3B0D0fM2onSJ1/hhRTLC+XY=; b=IQqh9+VVqaiEZQ
-	DwOchiOmntiGnWUL5cAO7jiybZd90LQehY+jR9xWa+5G9Lxaa8B2HeIfyilO37ZTuetrz9uf9gaoW
-	x280HlQKeNtKFXApbbwf5eE6zxIGrpJfESGLjEdGgucy+3qbuCTKR0R2F40jdqOmAjkwqcqhMmj80
-	0CapacYKlf/88XFpl2taLplI0v0ivSILkXGkQnCsFL2eSsMQXFaDRL/c8+ww/NfFefeNaZh6C1T1V
-	ktTK4QkgKEVNipX34nQRQdDDsS2/2to5NHPaz5eYFx64JlCTTVTZRiJdF8OfF7KoH0M+2FlSXeNFE
-	WzLKNbuA1xgoFClTHvGw==;
+	List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=HqI3qupQpCRozt/jnkDIyc5xcUQdVVM5d47DsGnXBoI=; b=DRsxdLZ2PnoNqw
+	Wpls2v8i9WtxQo7S3goYd4k5cE8X4g+Y/zrpeYwn5OA6yDZi4uMmkVqrCRNu3/Qo9vpOU1I9cDIyS
+	Idj72m3b8lOvHR55rp9QpDU45b29Ps6TKQumV5ZBqRCId1JuV5UzrSRO4BzwPBrsOwF+9vZaHpgWJ
+	hzZg/YtTOYDSRbVn6GMncNygm0QzlBV8UJ1cRTm3atRGC+Sy4Tac4zpZ3Ly6lxVqZvZ8lCYzbdJo/
+	qOavdfhrusLbYFk6HqwpiF7BN71ITAdHr/MoHgPkZlhXsIUkozcWPlqiwwmKnYgRj8mgkjCZ30Ayv
+	wppIiMg62hU/XuaMdxTQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hfmTC-0005JO-M2; Tue, 25 Jun 2019 14:30:50 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hfmT2-0005If-0D
- for linux-arm-kernel@lists.infradead.org; Tue, 25 Jun 2019 14:30:41 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 8BA7C2B;
- Tue, 25 Jun 2019 07:30:38 -0700 (PDT)
-Received: from [10.1.196.72] (e119884-lin.cambridge.arm.com [10.1.196.72])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 847343F718;
- Tue, 25 Jun 2019 07:30:37 -0700 (PDT)
-Subject: Re: "arm64: vdso: Substitute gettimeofday() with C implementation"
- breaks clang build
-To: Qian Cai <cai@lca.pw>
-References: <1561464964.5154.63.camel@lca.pw>
- <e86774e4-7470-5cb2-fc3e-b7c1f529d253@arm.com>
- <1561467369.5154.67.camel@lca.pw>
- <00a78980-6b9c-5d5b-ed01-b28bb34be022@arm.com>
- <1561470705.5154.68.camel@lca.pw>
- <5113362e-1256-6712-6ce8-9599b1806cf1@arm.com>
- <1561472887.5154.72.camel@lca.pw>
-From: Vincenzo Frascino <vincenzo.frascino@arm.com>
-Message-ID: <bf7a6fa8-5cc3-0a7a-08ab-7607ca79d279@arm.com>
-Date: Tue, 25 Jun 2019 15:30:36 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.7.0
-MIME-Version: 1.0
-In-Reply-To: <1561472887.5154.72.camel@lca.pw>
-Content-Language: en-US
+	id 1hfmXH-0005qC-Uz; Tue, 25 Jun 2019 14:35:03 +0000
+Received: from s3.sipsolutions.net ([2a01:4f8:191:4433::2]
+ helo=sipsolutions.net)
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hfmX5-0005pD-5I
+ for linux-arm-kernel@lists.infradead.org; Tue, 25 Jun 2019 14:34:52 +0000
+Received: by sipsolutions.net with esmtpsa
+ (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <johannes@sipsolutions.net>)
+ id 1hfmWu-0005ft-Of; Tue, 25 Jun 2019 16:34:40 +0200
+Message-ID: <f1243295f088b70d48e4b832a28f79c0cd84ca1c.camel@sipsolutions.net>
+Subject: Re: WWAN Controller Framework (was IPA [PATCH v2 00/17])
+From: Johannes Berg <johannes@sipsolutions.net>
+To: Alex Elder <elder@linaro.org>, davem@davemloft.net, arnd@arndb.de, 
+ bjorn.andersson@linaro.org, ilias.apalodimas@linaro.org, Dan Williams
+ <dcbw@redhat.com>
+Date: Tue, 25 Jun 2019 16:34:38 +0200
+In-Reply-To: <6dae9d1c-ceae-7e88-fe61-f4cda82820ea@linaro.org>
+ (sfid-20190624_190620_354118_89F0D47F)
+References: <20190531035348.7194-1-elder@linaro.org>
+ <23ff4cce-1fee-98ab-3608-1fd09c2d97f1@linaro.org>
+ <6dae9d1c-ceae-7e88-fe61-f4cda82820ea@linaro.org>
+ (sfid-20190624_190620_354118_89F0D47F)
+X-Mailer: Evolution 3.28.5 (3.28.5-3.fc28) 
+Mime-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190625_073040_156515_CD7B9D96 
-X-CRM114-Status: GOOD (  16.66  )
+X-CRM114-CacheID: sfid-20190625_073451_203479_D2FBC28A 
+X-CRM114-Status: GOOD (  24.79  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -68,73 +64,152 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: ndesaulniers@google.com, Catalin Marinas <catalin.marinas@arm.com>,
- Will Deacon <will.deacon@arm.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- natechancellor@gmail.com, Thomas Gleixner <tglx@linutronix.de>,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: devicetree@vger.kernel.org, syadagir@codeaurora.org, ejcaruso@google.com,
+ netdev@vger.kernel.org, linux-kernel@vger.kernel.org, evgreen@chromium.org,
+ linux-arm-kernel@lists.infradead.org, linux-arm-msm@vger.kernel.org,
+ subashab@codeaurora.org, linux-soc@vger.kernel.org, abhishek.esse@gmail.com,
+ cpratapa@codeaurora.org, benchan@google.com
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-SGkgUWlhbiwKCk9uIDI1LzA2LzIwMTkgMTU6MjgsIFFpYW4gQ2FpIHdyb3RlOgo+IE9uIFR1ZSwg
-MjAxOS0wNi0yNSBhdCAxNToxMSArMDEwMCwgVmluY2Vuem8gRnJhc2Npbm8gd3JvdGU6Cj4+IEhp
-IFFpYW4sCj4+Cj4+IE9uIDI1LzA2LzIwMTkgMTQ6NTEsIFFpYW4gQ2FpIHdyb3RlOgo+Pj4gT24g
-VHVlLCAyMDE5LTA2LTI1IGF0IDE0OjQwICswMTAwLCBWaW5jZW56byBGcmFzY2lubyB3cm90ZToK
-Pj4+PiBPbiAyNS8wNi8yMDE5IDEzOjU2LCBRaWFuIENhaSB3cm90ZToKPj4+Pj4gT24gVHVlLCAy
-MDE5LTA2LTI1IGF0IDEzOjQ3ICswMTAwLCBWaW5jZW56byBGcmFzY2lubyB3cm90ZToKPj4+Pj4+
-IEhpIFFpYW4sCj4+Pj4+Pgo+Pj4+Pj4gT24gMjUvMDYvMjAxOSAxMzoxNiwgUWlhbiBDYWkgd3Jv
-dGU6Cj4+Pj4+Pj4gVGhlIGxpbnV4LW5leHQgY29tbWl0ICJhcm02NDogdmRzbzogU3Vic3RpdHV0
-ZSBnZXR0aW1lb2ZkYXkoKSB3aXRoIEMKPj4+Pj4+PiBpbXBsZW1lbnRhdGlvbiIgWzFdIGJyZWFr
-cyBjbGFuZyBidWlsZC4KPj4+Pj4+Pgo+Pj4+Pj4+IGVycm9yOiBpbnZhbGlkIHZhbHVlICd0aW55
-JyBpbiAnLW1jb2RlLW1vZGVsIHRpbnknCj4+Pj4+Pj4gbWFrZVsxXTogKioqIFtzY3JpcHRzL01h
-a2VmaWxlLmJ1aWxkOjI3OToKPj4+Pj4+PiBhcmNoL2FybTY0L2tlcm5lbC92ZHNvL3ZnZXR0aW1l
-b2ZkYXkub10gRXJyb3IgMQo+Pj4+Pj4+IG1ha2VbMV06ICoqKiBXYWl0aW5nIGZvciB1bmZpbmlz
-aGVkIGpvYnMuLi4uCj4+Pj4+Pj4gbWFrZTogKioqIFthcmNoL2FybTY0L01ha2VmaWxlOjE4MDog
-dmRzb19wcmVwYXJlXSBFcnJvciAyCj4+Pj4+Pj4KPj4+Pj4+PiBbMV0gaHR0cHM6Ly9wYXRjaHdv
-cmsua2VybmVsLm9yZy9wYXRjaC8xMTAwOTY2My8KPj4+Pj4+Pgo+Pj4+Pj4KPj4+Pj4+IEkgYW0g
-bm90IHN1cmUgd2hhdCBkb2VzIGV4YWN0bHkgYnJlYWsgZnJvbSB5b3VyIHJlcG9ydC4gQ291bGQg
-eW91Cj4+Pj4+PiBwbGVhc2UKPj4+Pj4+IHByb3ZpZGUKPj4+Pj4+IG1vcmUgZGV0YWlscz8KPj4+
-Pj4KPj4+Pj4gSGVyZSBpcyB0aGUgY29uZmlnIHRvIHJlcHJvZHVjZS4KPj4+Pj4KPj4+Pj4gaHR0
-cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL2NhaWxjYS9saW51eC1tbS9tYXN0ZXIvYXJt
-NjQuY29uZmlnCj4+Pj4+Cj4+Pj4+ICMgbWFrZSBDQz1jbGFuZyAtaiAkKG5yX2NwdXMpCj4+Pj4+
-Cj4+Pj4+IEkgY2FuIGdldCBpdCB3b3JraW5nIGFnYWluIGJ5IHJlbW92aW5nICItbWNtb2RlbD10
-aW55IiBpbgo+Pj4+PiBhcmNoL2FybTY0L2tlcm5lbC92ZHNvL01ha2VmaWxlCj4+Pj4+Cj4+Pj4K
-Pj4+PiBXaXRoIHlvdXIgZGVmY29uZmlnIEkgY2FuJ3Qgc3RpbGwgcmVwcm9kdWNlIHRoZSBwcm9i
-bGVtLiBXaGljaCB2ZXJzaW9uIG9mCj4+Pj4gY2xhbmcKPj4+PiBhcmUgeW91IHVzaW5nPwo+Pj4K
-Pj4+IENvbXBpbGVyOiBjbGFuZyB2ZXJzaW9uIDcuMC4xICh0YWdzL1JFTEVBU0VfNzAxL2ZpbmFs
-KQo+Pj4KPj4KPj4gSSBhbSB1c2luZyBjbGFuZyA4LjAuMC4gQ291bGQgeW91IHBsZWFzZSB0cnkg
-d2l0aCBpdCBhbmQgc2VlIGlmIHRoZSBpc3N1ZSBnb2VzCj4+IGF3YXk/Cj4gCj4gTG9va3MgbGlr
-ZSB0aGUgInRpbnkiIHdhcyBhZGRlZCBzaW5jZSBjbGFuZyA4LjAuCj4gCj4gaHR0cHM6Ly9yZXZp
-ZXdzLmxsdm0ub3JnL0Q0OTY3NAo+IAo+IGJ1dCBjbGFuZyA3LjAgaXMgc3RpbGwgdXNlIGluIG1h
-bnkgZGlzdHJvcyBieSBkZWZhdWx0LCBzbyBtYXliZSB0aGlzIGNvbW1pdCBjYW4KPiBiZSBmaXhl
-ZCBieSBhZGRpbmcgYSBjb25kaXRpb25hbCBjaGVjayB0byB1c2UgInNtYWxsIiBpZiBjbGFuZyB2
-ZXJzaW9uIDwgOC4wLgo+IAoKSXQgaXMgd2hhdCBJIHRob3VnaHQgdGhhdCdzIHdoeSBJIGFza2Vk
-IHRvIGNyb3NzLWNoZWNrLiBJIGRpZCBub3Qgd2FudCB0byByZW1vdmUKdGlueS4KClRoYW5rcyBm
-b3IgeW91ciBzdXBwb3J0LCBJIHdpbGwgcG9zdCBhIHBhdGNoIGFkZGluZyB5b3VyIHRhZyBhcyBy
-ZXBvcnRlZC1ieSBpZgp5b3UgYXJlIG9rIHdpdGggdGhhdC4KCj4+Cj4+IFRoYW5rcywKPj4gVmlu
-Y2Vuem8KPj4KPj4+Pgo+Pj4+Pj4KPj4+Pj4+IE9uIG15IGVudjoKPj4+Pj4+Cj4+Pj4+PiAkIG1h
-a2UgbXJwcm9wZXIgJiYgbWFrZSBkZWZjb25maWcgJiYgbWFrZSBDQz1jbGFuZyBIT1NUQ0M9Y2xh
-bmcKPj4+Pj4+IC1qJChucHJvYykKPj4+Pj4+Cj4+Pj4+PiAuLi4KPj4+Pj4+Cj4+Pj4+PiBhcmNo
-L2FybTY0L01ha2VmaWxlOjU2OiBDUk9TU19DT01QSUxFX0NPTVBBVCBpcyBjbGFuZywgdGhlIGNv
-bXBhdCB2RFNPCj4+Pj4+PiB3aWxsCj4+Pj4+PiBub3QKPj4+Pj4+IGJlIGJ1aWx0Cj4+Pj4+Pgo+
-Pj4+Pj4gLi4uCj4+Pj4+Pgo+Pj4+Pj4gwqAgTERTwqDCoMKgwqDCoGFyY2gvYXJtNjQva2VybmVs
-L3Zkc28vdmRzby5sZHMKPj4+Pj4+IMKgIEFTwqDCoMKgwqDCoMKgYXJjaC9hcm02NC9rZXJuZWwv
-dmRzby9ub3RlLm8KPj4+Pj4+IMKgIEFTwqDCoMKgwqDCoMKgYXJjaC9hcm02NC9rZXJuZWwvdmRz
-by9zaWdyZXR1cm4ubwo+Pj4+Pj4gwqAgQ0PCoMKgwqDCoMKgwqBhcmNoL2FybTY0L2tlcm5lbC92
-ZHNvL3ZnZXR0aW1lb2ZkYXkubwo+Pj4+Pj4gwqAgTETCoMKgwqDCoMKgwqBhcmNoL2FybTY0L2tl
-cm5lbC92ZHNvL3Zkc28uc28uZGJnCj4+Pj4+PiDCoCBWRFNPQ0hLIGFyY2gvYXJtNjQva2VybmVs
-L3Zkc28vdmRzby5zby5kYmcKPj4+Pj4+IMKgIFZEU09TWU0gaW5jbHVkZS9nZW5lcmF0ZWQvdmRz
-by1vZmZzZXRzLmgKPj4+Pj4+Cj4+Pj4+PiAuLi4KPj4+Pj4+Cj4+Pj4+PiDCoCBMRMKgwqDCoMKg
-wqDCoHZtbGludXgubwo+Pj4+Pj4gwqAgTU9EUE9TVCB2bWxpbnV4Lm8KPj4+Pj4+IMKgIE1PRElO
-Rk8gbW9kdWxlcy5idWlsdGluLm1vZGluZm8KPj4+Pj4+IMKgIEtTWU3CoMKgwqDCoC50bXBfa2Fs
-bHN5bXMxLm8KPj4+Pj4+IMKgIEtTWU3CoMKgwqDCoC50bXBfa2FsbHN5bXMyLm8KPj4+Pj4+IMKg
-IExEwqDCoMKgwqDCoMKgdm1saW51eAo+Pj4+Pj4gwqAgU09SVEVYwqDCoHZtbGludXgKPj4+Pj4+
-IMKgIFNZU01BUMKgwqBTeXN0ZW0ubWFwCj4+Pj4+PiDCoCBCdWlsZGluZyBtb2R1bGVzLCBzdGFn
-ZSAyLgo+Pj4+Pj4gwqAgT0JKQ09QWSBhcmNoL2FybTY0L2Jvb3QvSW1hZ2UKPj4+Pj4+IMKgIE1P
-RFBPU1QgNDgzIG1vZHVsZXMKPj4+Pj4+Cj4+Pj4KPj4+Pgo+Pgo+PgoKLS0gClJlZ2FyZHMsClZp
-bmNlbnpvCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwps
-aW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJh
-ZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51
-eC1hcm0ta2VybmVsCg==
+On Mon, 2019-06-24 at 12:06 -0500, Alex Elder wrote:
+
+> > OK I want to try to organize a little more concisely some of the
+> > discussion on this, because there is a very large amount of volume
+> > to date and I think we need to try to narrow the focus back down
+> > again.
+
+Sounds good to me!
+
+> > I'm going to use a few terms here.  Some of these I really don't
+> > like, but I want to be unambiguous *and* (at least for now) I want
+> > to avoid the very overloaded term "device".
+> > 
+> > I have lots more to say, but let's start with a top-level picture,
+> > to make sure we're all on the same page.
+> > 
+> >          WWAN Communication
+> >          Channel (Physical)
+> >                  |     ------------------------
+> > ------------     v     |           :+ Control |  \
+> > >          |-----------|           :+ Data    |  |
+> > >    AP    |           | WWAN unit :+ Voice   |   > Functions
+> > >          |===========|           :+ GPS     |  |
+> > 
+> > ------------     ^     |           :+ ...     |  /
+> >                  |     -------------------------
+> >           Multiplexed WWAN
+> >            Communication
+> >          Channel (Physical)
+
+Sounds right to me. I'm not sure if you're distinguishing here between
+the "Data function" and multiple data channels to the data function, but
+at this point I guess it doesn't matter.
+
+> > - The *AP* is the main CPU complex that's running Linux on one or
+> >   more CPU cores.
+> > - A *WWAN unit* is an entity that shares one or more physical
+> >   *WWAN communication channels* with the AP.
+> > - A *WWAN communication channel* is a bidirectional means of
+> >   carrying data between the AP and WWAN unit.
+> > - A WWAN communication channel carries data using a *WWAN protocol*.
+> > - A WWAN unit implements one or more *WWAN functions*, such as
+> >   5G data, LTE voice, GPS, and so on.
+> > - A WWAN unit shall implement a *WWAN control function*, used to
+> >   manage the use of other WWAN functions, as well as the WWAN unit
+> >   itself.
+
+I think here we need to be more careful. I don't know how you want to
+call it, but we actually have multiple levels of control here.
+
+You have
+ * hardware control, to control how you actually use the (multiple or
+   not) physical communication channel(s) to the WWAN unit
+ * this is partially exposed to userspace via the WWAN netlink family or
+   something like that, so userspace can create new netdevs to tx/rx
+   with the "data function" and to the network; note that it could be
+   one or multiple
+ * WWAN control, which is typically userspace communicating with the
+   WWAN control function in the WWAN unit, but this can take different
+   forms (as I mentioned earlier, e.g. AT commands, MBIM, QMI)
+
+> > - The AP communicates with a WWAN function using a WWAN protocol.
+
+Right, that's just device specific (IPA vs. Intel vs. ...)
+
+> > - A WWAN physical channel can be *multiplexed*, in which case it
+> >   carries the data for one or more *WWAN logical channels*.
+
+This ... depends a bit on how you exactly define a physical channel
+here. Is that, to you, the PCIe/USB link? In that case, yes, obviously
+you have only one physical channel for each WWAN unit.
+
+However, I'd probably see this slightly differently, because e.g. the
+Intel modem has multiple DMA engines, and so you actually have multiple
+DMA rings to talk to the WWAN unit, and I'd have called each DMA ring a
+physical channel. And then, you just have a 1:1 from physical to logical
+channel since it doesn't actually carry a multiplexing protocol.
+
+> > - A multiplexed WWAN communication channel uses a *WWAN wultiplexing
+> >   protocol*, which is used to separate independent data streams
+> >   carrying other WWAN protocols.
+
+Like just described, this isn't really needed and is a device-specific
+property.
+
+> > - A WWAN logical channel carries a bidirectional stream of WWAN
+> >   protocol data between an entity on the AP and a WWAN function.
+> > 
+> > Does that adequately represent a very high-level picture of what
+> > we're trying to manage?
+
+Pretty much.
+
+I only disagree slightly on the control planes (there are multiple, and
+multiple options for the "Control function" one), and on the whole
+notion of physical link/logical link/multiplexing which is device
+specific.
+
+> > And if I understand it right, the purpose of the generic framework
+> > being discussed is to define a common mechanism for managing (i.e.,
+> > discovering, creating, destroying, querying, configuring, enabling,
+> > disabling, etc.) WWAN units and the functions they implement, along
+> > with the communication and logical channels used to communicate with
+> > them.
+
+Well, some subset of that matrix, the framework won't actually destroy
+WWAN units I hope ;-)
+
+But yes. I'd probably captured it in layers, and say that we have a
+
+WWAN framework layer
+ - discover, query, configure WWAN units
+ - enable, disable channels to the functions inside the WWAN units
+
+WWAN device driver
+ - implement (partial) API offered by WWAN framework layer to allow
+   these things
+   (sometimes may not allow creating more control or data channels for
+   example, and fixed function channels are precreated, but then can
+   still discover data about the device and configure the channels
+ - implement the device-specific protocols etc. necessary to achieve
+   this
+
+Userspace
+ - uses control function channel (e.g. TTY) to talk directly to the WWAN
+   unit's control function
+ - uses WWAN framework APIs to create/configure/... (other) function
+   channels
+   (it may be necessary to create a control channel even, before being
+   able to use it, since different options (AT/MBIM/QMI) may be there
+ - configures netdevs (data function channels) after their creation
+
+johannes
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
