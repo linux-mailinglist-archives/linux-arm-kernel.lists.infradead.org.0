@@ -2,85 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2D9AB522C9
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 25 Jun 2019 07:22:39 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BDBE0522CC
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 25 Jun 2019 07:27:13 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=c7VeESKhb1pfGasydUKaXAjrdhwZpf3Oe4RmlLNdFsM=; b=fS2+Ui4J/js+VF
-	Jfrc25RZqCavAjoQvI0B9Zu8X5audpISZRp2XStqwUEacyTM+snfgJH6NEVGhK24IH+kNlXCzhjn7
-	f/+BTwC8nS63dG1GOBY+Sb/L8BLjCaJ8hG+hcOCNt64G+l5thOesqFpsjMKlIA8Jaa6AZcIJLhUxj
-	NXKlVIrirZBAriCAbm2d99Wdikl9OdoVnIjumVpsOkjTFGxYZg3j7mIx2+z0oALLtCVD5WTzrlbju
-	scCmzSOVWAX0VB3/12xzj65M4tMB9glu58qnqHBOjwLdMQs4hqZL/ZPPEpbvh00AuNCGD5lYusZ08
-	mRiIVsGomFxsTQxeA+yQ==;
+	List-Owner; bh=/h9ANKgSTopln+8mbdXk4hb1OJpRFywhXmAqj6bkM3E=; b=suRe2hPz/s8OlU
+	ryoI8AHJuUFCfdRyPPZLO6UwYyjiRy3n4Nod0/v6OWn7PU6yC16K92JE/cjh/XCQa6dcNeDgzFfEc
+	RIejKA+GTK+hjDAxsaAqUFP7f8eYDIdHkXPOfSBZOUI4jSCnX54NyQlOMMQx5JBqhnr6QNW5PEWpE
+	tWIIrNRcpF3PphbTU9WdDUcUHrTRqMgRGOwjzW8hnuOXgshsPUA+NRhEuFCYb+OsI/qSGyWKMsukk
+	vBA/OrvC6iQNHM90MbMy6dOHMUNRjFVbt6bBRKrQxSIXi+AHDw5EXJBFSkTFca6LqbmERlKLNGyLN
+	3km6ksN/8xMEAunC5PKA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hfdua-0008RN-Es; Tue, 25 Jun 2019 05:22:32 +0000
-Received: from fllv0015.ext.ti.com ([198.47.19.141])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hfdto-0008QI-Lx; Tue, 25 Jun 2019 05:21:47 +0000
-Received: from fllv0034.itg.ti.com ([10.64.40.246])
- by fllv0015.ext.ti.com (8.15.2/8.15.2) with ESMTP id x5P5LbtN116561;
- Tue, 25 Jun 2019 00:21:37 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1561440097;
- bh=9F8HTAfQZLe8MRr2+hW7iIFR3FLEFhyWWylUj5bW8XI=;
- h=Subject:To:CC:References:From:Date:In-Reply-To;
- b=HOgXmJYFcuWOQyAJM0HpBVeN7etxOVRkfo6bN5X1+G8Bw9x++7ZPIM8UUUkjCxOKW
- Ktql0ZfDsmrS+9MfboHxuQOKzaS9LyLi6a5qY9HcMbIe0X+o1gDurCFP/t/ajCAN7E
- 0Qs4pDXjUyZNiU8/9cJd34P8SQlA4iWA8lVA0f8Y=
-Received: from DFLE109.ent.ti.com (dfle109.ent.ti.com [10.64.6.30])
- by fllv0034.itg.ti.com (8.15.2/8.15.2) with ESMTPS id x5P5La1a008858
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Tue, 25 Jun 2019 00:21:37 -0500
-Received: from DFLE103.ent.ti.com (10.64.6.24) by DFLE109.ent.ti.com
- (10.64.6.30) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5; Tue, 25
- Jun 2019 00:21:36 -0500
-Received: from fllv0039.itg.ti.com (10.64.41.19) by DFLE103.ent.ti.com
- (10.64.6.24) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5 via
- Frontend Transport; Tue, 25 Jun 2019 00:21:36 -0500
-Received: from [172.24.190.233] (ileax41-snat.itg.ti.com [10.172.224.153])
- by fllv0039.itg.ti.com (8.15.2/8.15.2) with ESMTP id x5P5LYAR122424;
- Tue, 25 Jun 2019 00:21:35 -0500
-Subject: Re: [PATCH v2] phy: meson-g12a-usb3-pcie: disable locking for
- cr_regmap
-To: Neil Armstrong <narmstrong@baylibre.com>
-References: <20190605090215.29905-1-narmstrong@baylibre.com>
- <990fd423-fe01-0c35-1ec9-99b43e1d9bc0@baylibre.com>
-From: Kishon Vijay Abraham I <kishon@ti.com>
-Message-ID: <fbec0de6-bd42-7cee-29ba-a07cc7c2b974@ti.com>
-Date: Tue, 25 Jun 2019 10:50:05 +0530
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.7.1
+	id 1hfdz6-0001jb-9C; Tue, 25 Jun 2019 05:27:12 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hfdym-0001j3-Ks
+ for linux-arm-kernel@lists.infradead.org; Tue, 25 Jun 2019 05:26:54 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 34B53360;
+ Mon, 24 Jun 2019 22:26:49 -0700 (PDT)
+Received: from [10.163.1.179] (unknown [10.163.1.179])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 0688C3F246;
+ Mon, 24 Jun 2019 22:28:31 -0700 (PDT)
+Subject: Re: [PATCH V6 3/3] arm64/mm: Enable memory hot remove
+To: Mark Rutland <mark.rutland@arm.com>, Steve Capper <Steve.Capper@arm.com>
+References: <1560917860-26169-1-git-send-email-anshuman.khandual@arm.com>
+ <1560917860-26169-4-git-send-email-anshuman.khandual@arm.com>
+ <20190621143540.GA3376@capper-debian.cambridge.arm.com>
+ <20190624165148.GA9847@lakrids.cambridge.arm.com>
+From: Anshuman Khandual <anshuman.khandual@arm.com>
+Message-ID: <48f39fa1-c369-c8e2-4572-b7e016dca2d6@arm.com>
+Date: Tue, 25 Jun 2019 10:57:07 +0530
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101
+ Thunderbird/52.9.1
 MIME-Version: 1.0
-In-Reply-To: <990fd423-fe01-0c35-1ec9-99b43e1d9bc0@baylibre.com>
+In-Reply-To: <20190624165148.GA9847@lakrids.cambridge.arm.com>
 Content-Language: en-US
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190624_222145_059731_1C5AD1F3 
-X-CRM114-Status: GOOD (  17.71  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20190624_222652_779222_BA0ED020 
+X-CRM114-Status: GOOD (  26.33  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.19.141 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -92,8 +64,22 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-amlogic@lists.infradead.org, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
+Cc: "mhocko@suse.com" <mhocko@suse.com>,
+ "mgorman@techsingularity.net" <mgorman@techsingularity.net>,
+ "david@redhat.com" <david@redhat.com>,
+ Catalin Marinas <Catalin.Marinas@arm.com>, Will Deacon <Will.Deacon@arm.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "linux-mm@kvack.org" <linux-mm@kvack.org>,
+ "logang@deltatee.com" <logang@deltatee.com>,
+ "arunks@codeaurora.org" <arunks@codeaurora.org>, "cai@lca.pw" <cai@lca.pw>,
+ Ard Biesheuvel <Ard.Biesheuvel@arm.com>,
+ "cpandya@codeaurora.org" <cpandya@codeaurora.org>,
+ James Morse <James.Morse@arm.com>,
+ "akpm@linux-foundation.org" <akpm@linux-foundation.org>, nd <nd@arm.com>,
+ "ira.weiny@intel.com" <ira.weiny@intel.com>,
+ "dan.j.williams@intel.com" <dan.j.williams@intel.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ "osalvador@suse.de" <osalvador@suse.de>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
@@ -101,82 +87,131 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 
 
-On 24/06/19 6:30 PM, Neil Armstrong wrote:
-> Hi Kishon,
-> 
-> On 05/06/2019 11:02, Neil Armstrong wrote:
->> Locking is not needed for the phy_g12a_usb3_pcie_cr_bus_read/write() and
->> currently it causes the following BUG because of the usage of the
->> regmap_read_poll_timeout() running in spinlock_irq, configured by regmap fast_io.
+On 06/24/2019 10:22 PM, Mark Rutland wrote:
+> On Fri, Jun 21, 2019 at 03:35:53PM +0100, Steve Capper wrote:
+>> Hi Anshuman,
 >>
->> Simply disable locking in the cr_regmap config since it's only used from the
->> PHY init callback function.
+>> On Wed, Jun 19, 2019 at 09:47:40AM +0530, Anshuman Khandual wrote:
+>>> The arch code for hot-remove must tear down portions of the linear map and
+>>> vmemmap corresponding to memory being removed. In both cases the page
+>>> tables mapping these regions must be freed, and when sparse vmemmap is in
+>>> use the memory backing the vmemmap must also be freed.
+>>>
+>>> This patch adds a new remove_pagetable() helper which can be used to tear
+>>> down either region, and calls it from vmemmap_free() and
+>>> ___remove_pgd_mapping(). The sparse_vmap argument determines whether the
+>>> backing memory will be freed.
+>>>
+>>> remove_pagetable() makes two distinct passes over the kernel page table.
+>>> In the first pass it unmaps, invalidates applicable TLB cache and frees
+>>> backing memory if required (vmemmap) for each mapped leaf entry. In the
+>>> second pass it looks for empty page table sections whose page table page
+>>> can be unmapped, TLB invalidated and freed.
+>>>
+>>> While freeing intermediate level page table pages bail out if any of its
+>>> entries are still valid. This can happen for partially filled kernel page
+>>> table either from a previously attempted failed memory hot add or while
+>>> removing an address range which does not span the entire page table page
+>>> range.
+>>>
+>>> The vmemmap region may share levels of table with the vmalloc region.
+>>> There can be conflicts between hot remove freeing page table pages with
+>>> a concurrent vmalloc() walking the kernel page table. This conflict can
+>>> not just be solved by taking the init_mm ptl because of existing locking
+>>> scheme in vmalloc(). Hence unlike linear mapping, skip freeing page table
+>>> pages while tearing down vmemmap mapping.
+>>>
+>>> While here update arch_add_memory() to handle __add_pages() failures by
+>>> just unmapping recently added kernel linear mapping. Now enable memory hot
+>>> remove on arm64 platforms by default with ARCH_ENABLE_MEMORY_HOTREMOVE.
+>>>
+>>> This implementation is overall inspired from kernel page table tear down
+>>> procedure on X86 architecture.
+>>>
+>>> Acked-by: David Hildenbrand <david@redhat.com>
+>>> Signed-off-by: Anshuman Khandual <anshuman.khandual@arm.com>
+>>> ---
+>>
+>> FWIW:
+>> Acked-by: Steve Capper <steve.capper@arm.com>
+>>
+>> One minor comment below though.
+>>
+>>>  arch/arm64/Kconfig  |   3 +
+>>>  arch/arm64/mm/mmu.c | 290 ++++++++++++++++++++++++++++++++++++++++++++++++++--
+>>>  2 files changed, 284 insertions(+), 9 deletions(-)
+>>>
+>>> diff --git a/arch/arm64/Kconfig b/arch/arm64/Kconfig
+>>> index 6426f48..9375f26 100644
+>>> --- a/arch/arm64/Kconfig
+>>> +++ b/arch/arm64/Kconfig
+>>> @@ -270,6 +270,9 @@ config HAVE_GENERIC_GUP
+>>>  config ARCH_ENABLE_MEMORY_HOTPLUG
+>>>  	def_bool y
+>>>  
+>>> +config ARCH_ENABLE_MEMORY_HOTREMOVE
+>>> +	def_bool y
+>>> +
+>>>  config SMP
+>>>  	def_bool y
+>>>  
+>>> diff --git a/arch/arm64/mm/mmu.c b/arch/arm64/mm/mmu.c
+>>> index 93ed0df..9e80a94 100644
+>>> --- a/arch/arm64/mm/mmu.c
+>>> +++ b/arch/arm64/mm/mmu.c
+>>> @@ -733,6 +733,250 @@ int kern_addr_valid(unsigned long addr)
+>>>  
+>>>  	return pfn_valid(pte_pfn(pte));
+>>>  }
+>>> +
+>>> +#ifdef CONFIG_MEMORY_HOTPLUG
+>>> +static void free_hotplug_page_range(struct page *page, size_t size)
+>>> +{
+>>> +	WARN_ON(!page || PageReserved(page));
+>>> +	free_pages((unsigned long)page_address(page), get_order(size));
+>>> +}
+>>
+>> We are dealing with power of 2 number of pages, it makes a lot more
+>> sense (to me) to replace the size parameter with order.
+>>
+>> Also, all the callers are for known compile-time sizes, so we could just
+>> translate the size parameter as follows to remove any usage of get_order?
+>> PAGE_SIZE -> 0
+>> PMD_SIZE -> PMD_SHIFT - PAGE_SHIFT
+>> PUD_SIZE -> PUD_SHIFT - PAGE_SHIFT
 > 
-> Gentle ping,
-> Is the commit log right now ?
+> Now that I look at this again, the above makes sense to me.
+> 
+> I'd requested the current form (which I now realise is broken), since
+> back in v2 the code looked like:
+> 
+> static void free_pagetable(struct page *page, int order)
+> {
+> 	...
+> 	free_pages((unsigned long)page_address(page), order);
+> 	...
+> }
+> 
+> ... with callsites looking like:
+> 
+> free_pagetable(pud_page(*pud), get_order(PUD_SIZE));
+> 
+> ... which I now see is off by PAGE_SHIFT, and we inherited that bug in
+> the current code, so the calculated order is vastly larger than it
+> should be. It's worrying that doesn't seem to be caught by anything in
+> testing. :/
 
-merged now, thanks!
+get_order() returns the minimum page allocation order for a given size
+which already takes into account PAGE_SHIFT i.e get_order(PAGE_SIZE)
+returns 0.
 
--Kishon
+> 
+> Anshuman, could you please fold in Steve's suggested change? I'll look
+> at the rest of the series shortly, so no need to resend that right away,
+> but it would be worth sorting out.
 
-> 
-> Thanks,
-> Neil
-> 
->>
->> BUG: sleeping function called from invalid context at drivers/phy/amlogic/phy-meson-g12a-usb3-pcie.c:85
->> in_atomic(): 1, irqs_disabled(): 128, pid: 60, name: kworker/3:1
->> [snip]
->> Workqueue: events deferred_probe_work_func
->> Call trace:
->>  dump_backtrace+0x0/0x190
->>  show_stack+0x14/0x20
->>  dump_stack+0x90/0xb4
->>  ___might_sleep+0xec/0x110
->>  __might_sleep+0x50/0x88
->>  phy_g12a_usb3_pcie_cr_bus_addr.isra.0+0x80/0x1a8
->>  phy_g12a_usb3_pcie_cr_bus_read+0x34/0x1d8
->>  _regmap_read+0x60/0xe0
->>  _regmap_update_bits+0xc4/0x110
->>  regmap_update_bits_base+0x60/0x90
->>  phy_g12a_usb3_pcie_init+0xdc/0x210
->>  phy_init+0x74/0xd0
->>  dwc3_meson_g12a_probe+0x2cc/0x4d0
->>  platform_drv_probe+0x50/0xa0
->>  really_probe+0x20c/0x3b8
->>  driver_probe_device+0x68/0x150
->>  __device_attach_driver+0xa8/0x170
->>  bus_for_each_drv+0x64/0xc8
->>  __device_attach+0xd8/0x158
->>  device_initial_probe+0x10/0x18
->>  bus_probe_device+0x90/0x98
->>  deferred_probe_work_func+0x94/0xe8
->>  process_one_work+0x1e0/0x338
->>  worker_thread+0x230/0x458
->>  kthread+0x134/0x138
->>  ret_from_fork+0x10/0x1con,
->>
->> Fixes: 36077e16c050 ("phy: amlogic: Add Amlogic G12A USB3 + PCIE Combo PHY Driver")
->> Signed-off-by: Neil Armstrong <narmstrong@baylibre.com>
->> ---
->>  drivers/phy/amlogic/phy-meson-g12a-usb3-pcie.c | 2 +-
->>  1 file changed, 1 insertion(+), 1 deletion(-)
->>
->> diff --git a/drivers/phy/amlogic/phy-meson-g12a-usb3-pcie.c b/drivers/phy/amlogic/phy-meson-g12a-usb3-pcie.c
->> index 6233a7979a93..ac322d643c7a 100644
->> --- a/drivers/phy/amlogic/phy-meson-g12a-usb3-pcie.c
->> +++ b/drivers/phy/amlogic/phy-meson-g12a-usb3-pcie.c
->> @@ -188,7 +188,7 @@ static const struct regmap_config phy_g12a_usb3_pcie_cr_regmap_conf = {
->>  	.reg_read = phy_g12a_usb3_pcie_cr_bus_read,
->>  	.reg_write = phy_g12a_usb3_pcie_cr_bus_write,
->>  	.max_register = 0xffff,
->> -	.fast_io = true,
->> +	.disable_locking = true,
->>  };
->>  
->>  static int phy_g12a_usb3_init(struct phy *phy)
->>
-> 
+get_order() is already optimized for built in constants. But will replace
+with absolute constants as Steve mentioned if that is preferred.
 
 _______________________________________________
 linux-arm-kernel mailing list
