@@ -2,60 +2,87 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id ED5D954F59
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 25 Jun 2019 14:51:44 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 240EA54FE9
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 25 Jun 2019 15:11:43 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=amzc1qjkZ/tT2iy0iuuce0l7WWxX3ZyxlgC+keSX+GA=; b=FcV
-	NoigGgv4tDyc7EZpMX3Tvo7RmOixO88Q9eFA2Esf7dOni/fmZ2fr7wqdHLf9pZShdcSinLnaWmLZV
-	j4IuZRsLZp+UEw5b04DgIKDTy0ITz3k7H/os3mQtLkamYopikLuVKCcKA7nIDZrufBYYesSmd1M8q
-	098LiHWLHvjlvx816bdf5Y1C1CIyqkDH6lsfXKDbNk5Jsv4NlySVu4futljsAvXbRyyqz3BLHr4Qv
-	Lk8Aap0xeIIkJ288/DohZ/qhDJnTsvfNlet2fpPxBR1cUagZKSUjM7ekIX+O5PwhVBsi20D77Cg8Q
-	MQVnv/hxrlHAHDSFHroJaGfEXEwMJOA==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=JLncjmEAMl2WHSzdVYdHTc2SkbTMC3agEdmfa7Ms0k4=; b=PJAXe94lBcG8m4
+	JKJ34HHYnRzTqct59hShAsITf0s2+cV4Q2/y0DGji7AjpI74vWuximbYrsjOxSqbEauqIYg35BwDW
+	pjcXHKGmhgJP7sDwk4M2TH3r9dZuxpYZIE94c4g003gL5o0WidDg+i2uovfrAekI9JE5QjeAJ1Vav
+	1+XsXtD0vIqvZmDhFl3YvIkIeG+WBbZKDFbbzHRy4tOvw5SxcIvXe4/gXPIQr3qNx4iOyLLVwiTmz
+	20yNyNpOIc+b/yFf++KABKyGj2WuGqkD/dXq7qcwqYGaG8XwXjxodjFeIiwxNV/coapsvse7/ns11
+	RI2BbJdamMVn6tRoTWyw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hfkvF-0003rG-GS; Tue, 25 Jun 2019 12:51:41 +0000
-Received: from inva020.nxp.com ([92.121.34.13])
+	id 1hflEX-0000a7-CA; Tue, 25 Jun 2019 13:11:37 +0000
+Received: from mail-lj1-x234.google.com ([2a00:1450:4864:20::234])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hfkv4-0003qM-B0
- for linux-arm-kernel@lists.infradead.org; Tue, 25 Jun 2019 12:51:31 +0000
-Received: from inva020.nxp.com (localhost [127.0.0.1])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 5663F1A07E6;
- Tue, 25 Jun 2019 14:51:25 +0200 (CEST)
-Received: from inva024.eu-rdc02.nxp.com (inva024.eu-rdc02.nxp.com
- [134.27.226.22])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 48D291A07DC;
- Tue, 25 Jun 2019 14:51:25 +0200 (CEST)
-Received: from fsr-ub1664-175.ea.freescale.net
- (fsr-ub1664-175.ea.freescale.net [10.171.82.40])
- by inva024.eu-rdc02.nxp.com (Postfix) with ESMTP id BC1272061E;
- Tue, 25 Jun 2019 14:51:24 +0200 (CEST)
-From: Abel Vesa <abel.vesa@nxp.com>
-To: Rob Herring <robh@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
- Shawn Guo <shawnguo@kernel.org>, Sascha Hauer <kernel@pengutronix.de>,
- Fabio Estevam <fabio.estevam@nxp.com>, Anson Huang <anson.huang@nxp.com>
-Subject: [PATCH] arm64: dts: imx8mq: Init rates and parents configs for clocks
-Date: Tue, 25 Jun 2019 15:51:21 +0300
-Message-Id: <1561467081-25701-1-git-send-email-abel.vesa@nxp.com>
-X-Mailer: git-send-email 2.7.4
-X-Virus-Scanned: ClamAV using ClamSMTP
+ id 1hfl8J-0002T7-GU
+ for linux-arm-kernel@lists.infradead.org; Tue, 25 Jun 2019 13:05:16 +0000
+Received: by mail-lj1-x234.google.com with SMTP id v18so16177056ljh.6
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 25 Jun 2019 06:05:11 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=lixom-net.20150623.gappssmtp.com; s=20150623;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=JLn6AET/8VToy+Z4v7YXskGIYrPaOsm+sZy4mfmS+z4=;
+ b=jc9EHeWRtH848W8d/DpjnAtrBVzXH3vnLpbv7txAg3eOVBvlhPTrL/eOHUOTYCmyX7
+ UDtigNW674HJmrghRii9ZdOWJbiKSauqqRrHFFgSVdB1Mmaq65tmBOk741xLj28EfgyI
+ rnX6rVDbk5+jm4f2RRty/A2D1LHmRCOpQUwcqEVcjsy+QUtYFCGucb6NQeX2MR3rBXC8
+ Gj4ToLVK843+3Se/wle57+GRTk98QVh0U7A+K+aaGtqtX4pFBlbUUExpugIjhWb65D7E
+ v1jzj0Vnbfyx+VC+Omv9BRbvLk4tQgulSaW523+pNjfJz4HvEFGq0xOSNEzE2cTI4eeR
+ 1pDA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=JLn6AET/8VToy+Z4v7YXskGIYrPaOsm+sZy4mfmS+z4=;
+ b=dCQMFos2EOjFLc630U6WfFI/PKi6ni3mehE0CbtamXY0A8gYrXxDV8r4ji5/UTjAKK
+ sG02vR+ABufp05vZN4cv0dJ9iYlrw89+rrTUV0nzXxu+lrr1XHHLR2vsKXC17k9apDo9
+ SSvkXGQVN+Egu3Mn0pJp1Irvh3/jmbNkBkijOho04GdJDjYdgkj5MDbeZgTX4flRVjJL
+ X4H9mBHVENH9OVtigtAY6iktU8RAc7YwBD/ydzcA2UYywVzWGdKwlh1j+++x5CXpirMJ
+ ZNqTGb4rsxDtCIG8GPvVVdTRZa9rfCKxumeLzoAv6XneGXRz9BCwJP2gAnzKeC83l+u1
+ xYpQ==
+X-Gm-Message-State: APjAAAVuzkUk62fu+IDwQma9ZCOGhSoB8AbIhB7qA6nM8GoJc1r9tTd1
+ 9nZvQRv+LcQDOeBA/U3vt7dbpm591ISgxg==
+X-Google-Smtp-Source: APXvYqw+dT584PJUu9ALIvoWVlIQpQI9LlB1ZZaTRG3Bbpcl8J02HKzJj2xM5/njLha6K7db6EIDBg==
+X-Received: by 2002:a2e:8744:: with SMTP id q4mr15699448ljj.77.1561467909419; 
+ Tue, 25 Jun 2019 06:05:09 -0700 (PDT)
+Received: from localhost (h85-30-9-151.cust.a3fiber.se. [85.30.9.151])
+ by smtp.gmail.com with ESMTPSA id u22sm2609366ljd.18.2019.06.25.06.05.08
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Tue, 25 Jun 2019 06:05:08 -0700 (PDT)
+Date: Tue, 25 Jun 2019 05:51:42 -0700
+From: Olof Johansson <olof@lixom.net>
+To: Robert Jarzmik <robert.jarzmik@free.fr>
+Subject: Re: [GIT PULL] pxa for v5.3
+Message-ID: <20190625125142.4jvynofoz734mld6@localhost>
+References: <878stqyg9h.fsf@belgarion.home>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <878stqyg9h.fsf@belgarion.home>
+User-Agent: NeoMutt/20170113 (1.7.2)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190625_055130_519484_733AD372 
-X-CRM114-Status: UNSURE (   7.16  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20190625_060511_684495_A6C38575 
+X-CRM114-Status: GOOD (  14.47  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [92.121.34.13 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:234 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -67,74 +94,38 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Abel Vesa <abel.vesa@nxp.com>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- NXP Linux Team <linux-imx@nxp.com>, linux-arm-kernel@lists.infradead.org,
- Lucas Stach <l.stach@pengutronix.de>
-MIME-Version: 1.0
+Cc: arm@kernel.org, Haojian Zhuang <haojian.zhuang@gmail.com>,
+ linux-arm-kernel@lists.infradead.org, Daniel Mack <zonque@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add the initial configuration for clocks that need default parent and rate
-setting. This is based on the vendor tree clock provider parents and rates
-configuration except this is doing the setup in dts rather then using clock
-consumer API in a clock provider driver.
+On Mon, Jun 24, 2019 at 08:44:58PM +0200, Robert Jarzmik wrote:
+> Hi Arnd, Kevin, and Olof,
+> 
+> This is the pxa pull request for 5.3. Can you please consider pulling ?
+> 
+> The following changes since commit a188339ca5a396acc588e5851ed7e19f66b0ebd9:
+> 
+>   Linux 5.2-rc1 (2019-05-19 15:47:09 -0700)
+> 
+> are available in the Git repository at:
+> 
+>   https://github.com/rjarzmik/linux.git tags/pxa-for-5.3-2
+> 
+> for you to fetch changes up to f5a38c8ecf523e3b14c3766acf0d3119d96e8438:
+> 
+>   ARM: pxa/lubbock: remove lubbock_set_misc_wr() from global view (2019-06-24 11:37:30 +0200)
+> 
+> ----------------------------------------------------------------
+> This is the pxa changes for 5.3 cycle :
+>  - a simple cleanup for lubbock
 
-Signed-off-by: Abel Vesa <abel.vesa@nxp.com>
----
- arch/arm64/boot/dts/freescale/imx8mq.dtsi | 34 +++++++++++++++++++++++++++++++
- 1 file changed, 34 insertions(+)
+Merged, thanks!
 
-diff --git a/arch/arm64/boot/dts/freescale/imx8mq.dtsi b/arch/arm64/boot/dts/freescale/imx8mq.dtsi
-index d09b808..e0abe02 100644
---- a/arch/arm64/boot/dts/freescale/imx8mq.dtsi
-+++ b/arch/arm64/boot/dts/freescale/imx8mq.dtsi
-@@ -489,6 +489,40 @@
- 				clock-names = "ckil", "osc_25m", "osc_27m",
- 				              "clk_ext1", "clk_ext2",
- 				              "clk_ext3", "clk_ext4";
-+				assigned-clocks = <&clk IMX8MQ_VIDEO_PLL1>,
-+					<&clk IMX8MQ_CLK_AHB>,
-+					<&clk IMX8MQ_CLK_NAND_USDHC_BUS>,
-+					<&clk IMX8MQ_CLK_AUDIO_AHB>,
-+					<&clk IMX8MQ_VIDEO_PLL1_REF_SEL>,
-+					<&clk IMX8MQ_CLK_NOC>,
-+					<&clk IMX8MQ_CLK_PCIE1_CTRL>,
-+					<&clk IMX8MQ_CLK_PCIE1_PHY>,
-+					<&clk IMX8MQ_CLK_PCIE2_CTRL>,
-+					<&clk IMX8MQ_CLK_PCIE2_PHY>,
-+					<&clk IMX8MQ_CLK_CSI1_CORE>,
-+					<&clk IMX8MQ_CLK_CSI1_PHY_REF>,
-+					<&clk IMX8MQ_CLK_CSI1_ESC>,
-+					<&clk IMX8MQ_CLK_CSI2_CORE>,
-+					<&clk IMX8MQ_CLK_CSI2_PHY_REF>,
-+					<&clk IMX8MQ_CLK_CSI2_ESC>;
-+				assigned-clock-parents = <0>,
-+						<&clk IMX8MQ_SYS1_PLL_133M>,
-+						<&clk IMX8MQ_SYS1_PLL_266M>,
-+						<&clk IMX8MQ_SYS2_PLL_500M>,
-+						<&clk IMX8MQ_CLK_27M>,
-+						<&clk IMX8MQ_SYS1_PLL_800M>,
-+						<&clk IMX8MQ_SYS2_PLL_250M>,
-+						<&clk IMX8MQ_SYS2_PLL_100M>,
-+						<&clk IMX8MQ_SYS2_PLL_250M>,
-+						<&clk IMX8MQ_SYS2_PLL_100M>,
-+						<&clk IMX8MQ_SYS1_PLL_266M>,
-+						<&clk IMX8MQ_SYS2_PLL_1000M>,
-+						<&clk IMX8MQ_SYS1_PLL_800M>,
-+						<&clk IMX8MQ_SYS1_PLL_266M>,
-+						<&clk IMX8MQ_SYS2_PLL_1000M>,
-+						<&clk IMX8MQ_SYS1_PLL_800M>;
-+				assigned-clock-rates = <593999999>;
-+
- 			};
- 
- 			src: reset-controller@30390000 {
--- 
-2.7.4
 
+-Olof
 
 _______________________________________________
 linux-arm-kernel mailing list
