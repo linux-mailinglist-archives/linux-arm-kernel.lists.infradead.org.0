@@ -2,61 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 68A9D554B5
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 25 Jun 2019 18:39:08 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A29B1554B7
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 25 Jun 2019 18:39:40 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=AKdhHDdufkZpGCmyn7TNPUWghHEsaYSLuHJre8eck+w=; b=RAWLPKk0OG5o5P
-	+PIb5qwf7klxCimbI0PmYAeoqSmgU11bJ8XFMgZ4vGnOeLo17JvAIm7C7dH2AzeY+yKIY8pg59SXJ
-	th/Aba/SjTkW0ITR8/+vg2bI11ozLoARAF5ym+cDKIGqj6FXOdkRqzOszi/nIxIoyxw2GsU0xYV3O
-	TnTd0u/EpDTBG8P8eME++Lv/VkSds29Q0CJHqZRjyKAWb7cDiFMp2sncYOkUwuKr1r0diX9wy9TXJ
-	kdBOzdtJug7hIXJAuO1oIrf4ng0BlJ0uEkPF63ktVUvZNS2xv/BzHq2+e+qexyy1eqg1spGmw/Z58
-	WySQ7GAbjt+8AXaj29vQ==;
+	List-Owner; bh=XlGtTWQ4oBRe3xIfna1E5Es3wpSMu3bOTE/FzBVwb8k=; b=DDBDxFvkoat3vH
+	76FzushNaRbLciVxYNGEamBkWYNUCYH49+Rlg3OeinBKPhG+bOAsWcmbkU7VSC626LQ97FaUzc8WV
+	VOcC5hT2cvL6YUrKQ1NVbGaX2yV/aR10aUXmw6j2QjWp1mk3qoHeckjUX4Q84b/BiqF/DWzfan+I/
+	y0eXq5WCP2l5VSkyPIdj9K1PvVcpfR86cK6Y/DuUHU2Vm/5Y8L94ZIeBfNbtH6xgXiS/J/N+aKPcL
+	IzPxUUcoyaQlUy1nX0ZTGnabAboHpKd/gij5TX40FNvdAwZ7QFGQN9dmbSua037NSOczpnzBMFE6X
+	u4qjMpuXXybNCnQMzEZA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hfoTH-0004YU-7I; Tue, 25 Jun 2019 16:39:03 +0000
+	id 1hfoTl-0004pk-MG; Tue, 25 Jun 2019 16:39:33 +0000
 Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hfoPN-0001vP-0F
+ id 1hfoPN-0001vd-0G
  for linux-arm-kernel@lists.infradead.org; Tue, 25 Jun 2019 16:35:03 +0000
-Received: by mail-wr1-x441.google.com with SMTP id x4so18611086wrt.6
+Received: by mail-wr1-x441.google.com with SMTP id n4so18582119wrw.13
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 25 Jun 2019 09:34:59 -0700 (PDT)
+ Tue, 25 Jun 2019 09:35:00 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=bgdev-pl.20150623.gappssmtp.com; s=20150623;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=sFDObtAhBFoq+e3uGBncXCZh94u1gqoIy533R027F8g=;
- b=G4Pw99p7XQ8OGBF3dnF0u8nsP2gzt973olZmzxwCvcharaKDy85867vLHAfEEMeOY6
- WbvGNVaQTvX6o6k0m03Dbg3bqJePqRGuhQt3WSt/PGG8Cb/oCVEqY2X6FLotNA0IXfJm
- ARyniYvJZe/t7VQyJcxGxpDqPU66WCtZIWCej1JRYrPbhTKgeT2by3xxii6Mp4ieweY4
- kcGKmEFn2Ow9kyf3HS2AOfy4WfOxqLajkqnTEHqnZVLC2+gcImOh2N06MabRO5E7+Uh0
- Rz8cDgo9FQcCj48JgPkYsVbGknrWRKT8C9/qsCP3bGmyaklMqjuX8zcNjbTiVOhmz5fy
- wOUA==
+ bh=n5d3BfSnmnwO/hS4dFGhcrIk5LVowo1/qQQdF1Vy3jk=;
+ b=mi3aYH337XfZeD6KCGPODvIEDc6lpAsrLiBKenynyTgeBAflzEuAFOSSRaIv7QCcw0
+ cU5hYTlgn0flazzm/uE9V2gsr0kjBHT5y/98Qo74IaK5b50eEFHQWnCUmKzphCf694cO
+ LDW7BmNVzoFJZ5NIlzjd+HVONir3l9AyrAj5png44VBdtFHeh3uryIXOkGa1wJPvA5LN
+ WvCLOTnyGe8CkM/Fz5OUnv1HjtcHnzID+6CRcBFR3JznXuOHp5DQfeF10qw9RKY3r25S
+ CYTFos7dPmJNHROYanCTBvFs7gU6PLh/xVeNfeRVmRWdHzC44plIWFbBhF8yvimaw5KZ
+ jexw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=sFDObtAhBFoq+e3uGBncXCZh94u1gqoIy533R027F8g=;
- b=s86D2OcAzO8uqKMKHq706pZegdoDBrtmP2clUy9ZRmezQaiZvVtDLpZb60z4fkEltD
- uN4Eqz+b9Dwuy0z0WOMBtty8S8QiSiddiuFs2AnDer0WbmHYmgBZzfnVmZwLokSB/PB6
- mleW6KKOL2S2FntVsJkX5IkjgRZ+zCFaZQuclIyf+Qh8zVTfvqtGqQnQLPJkvhN5OMm7
- a+9WxV4/Y1x9esMnlJRGyBCcDwNBRCtaEmR/k10Xrlbi/oBm/m8i0UOruYKFtYRK0PJ7
- 02Ee3X0qWMz2X7G83CFbWYKo8+4PSB4wPqYd+m4CaFKUEF82TTIAUDGVf1CYYdFomMga
- xfNg==
-X-Gm-Message-State: APjAAAVF8crJNMcsZ9DQp0Mmq8vYkw6kCU9BWGbbWQYB8f8jnqo58uWu
- jisMq1V/Ua4A1LdS9UXrQAS9+Q==
-X-Google-Smtp-Source: APXvYqw0FlaqXL9keBHWR7KbT8zOx0gQKa57yMr4s6cP5zk/w1cWEybKYPn7W1s8wCZ4fu5o6W6zoA==
-X-Received: by 2002:adf:fc91:: with SMTP id g17mr25182759wrr.194.1561480498103; 
- Tue, 25 Jun 2019 09:34:58 -0700 (PDT)
+ bh=n5d3BfSnmnwO/hS4dFGhcrIk5LVowo1/qQQdF1Vy3jk=;
+ b=Nnq0s6DfOmrKsCRMF5VX2k74TYxeIJn7lk/MMjsoVu0EkO/IiBDijTk7RBZLkn2YTs
+ tSW/MMspZSNVf6dkXvMwhecAmQ9sSltEArqYMZxQ8X8NpDRbm+a6oPCuI2vFmM/9vloV
+ zZxY/ylzqbOWCeRnJTMVkI3YP2WCrz3YgqfduaZK2C6sB11ivE9Rh+lY73vdJn7z+eou
+ gCrSpqiZ2/WlT/ExkZmRI8FL2APBDf9LE+6Wp+t0Fpu3FosP2b9YGWYvdMoBZInLNwsR
+ 4Ct0L/k3rjHrQKIf3AJcJvzNPO8Ac8QNMNrIlEmWTidL9+fYo8Lotjsef/YpgJAZ75cM
+ cijQ==
+X-Gm-Message-State: APjAAAW2kxj+r/mAIDztfVD4EcRZKDLnJdcGQr/bBmnF07hIAc10t93O
+ XvVn9+MIV+HgrzLTeyFscSI6qS9y5WU=
+X-Google-Smtp-Source: APXvYqxYtpw4EEVsdGnQVBBLUuXARVZGsIrOsocPZwN44dsA/Y8ZCTQWBqOBfRU7qmBFqnACXLnZHw==
+X-Received: by 2002:a5d:5189:: with SMTP id k9mr71415wrv.45.1561480499309;
+ Tue, 25 Jun 2019 09:34:59 -0700 (PDT)
 Received: from debian-brgl.home ([2a01:cb1d:af:5b00:6d6c:8493:1ab5:dad7])
- by smtp.gmail.com with ESMTPSA id g8sm2683795wme.20.2019.06.25.09.34.56
+ by smtp.gmail.com with ESMTPSA id g8sm2683795wme.20.2019.06.25.09.34.58
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Tue, 25 Jun 2019 09:34:57 -0700 (PDT)
+ Tue, 25 Jun 2019 09:34:58 -0700 (PDT)
 From: Bartosz Golaszewski <brgl@bgdev.pl>
 To: Sekhar Nori <nsekhar@ti.com>, Kevin Hilman <khilman@kernel.org>,
  Lee Jones <lee.jones@linaro.org>,
@@ -65,17 +65,17 @@ To: Sekhar Nori <nsekhar@ti.com>, Kevin Hilman <khilman@kernel.org>,
  Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>,
  David Lechner <david@lechnology.com>,
  Linus Walleij <linus.walleij@linaro.org>
-Subject: [PATCH 05/12] ARM: davinci_all_defconfig: enable GPIO backlight
-Date: Tue, 25 Jun 2019 18:34:27 +0200
-Message-Id: <20190625163434.13620-6-brgl@bgdev.pl>
+Subject: [PATCH 06/12] ARM: davinci: da850-evm: model the backlight GPIO as an
+ actual device
+Date: Tue, 25 Jun 2019 18:34:28 +0200
+Message-Id: <20190625163434.13620-7-brgl@bgdev.pl>
 X-Mailer: git-send-email 2.21.0
 In-Reply-To: <20190625163434.13620-1-brgl@bgdev.pl>
 References: <20190625163434.13620-1-brgl@bgdev.pl>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190625_093501_361104_B84C8926 
-X-CRM114-Status: UNSURE (   9.96  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190625_093501_361226_1C6ADD0E 
+X-CRM114-Status: GOOD (  14.57  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -110,25 +110,89 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Bartosz Golaszewski <bgolaszewski@baylibre.com>
 
-Enable the GPIO backlight module in davinci_all_defconfig.
+Instead of enabling the panel backlight in a callback defined in board
+file using deprecated legacy GPIO API calls, model the line as a GPIO
+backlight device.
 
 Signed-off-by: Bartosz Golaszewski <bgolaszewski@baylibre.com>
 ---
- arch/arm/configs/davinci_all_defconfig | 1 +
- 1 file changed, 1 insertion(+)
+ arch/arm/mach-davinci/board-da850-evm.c | 40 +++++++++++++++++--------
+ 1 file changed, 28 insertions(+), 12 deletions(-)
 
-diff --git a/arch/arm/configs/davinci_all_defconfig b/arch/arm/configs/davinci_all_defconfig
-index 13d7846c613d..06855b2bce7e 100644
---- a/arch/arm/configs/davinci_all_defconfig
-+++ b/arch/arm/configs/davinci_all_defconfig
-@@ -158,6 +158,7 @@ CONFIG_FB=y
- CONFIG_FIRMWARE_EDID=y
- CONFIG_FB_DA8XX=y
- CONFIG_BACKLIGHT_PWM=m
-+CONFIG_BACKLIGHT_GPIO=m
- CONFIG_FRAMEBUFFER_CONSOLE=y
- CONFIG_LOGO=y
- CONFIG_SOUND=m
+diff --git a/arch/arm/mach-davinci/board-da850-evm.c b/arch/arm/mach-davinci/board-da850-evm.c
+index 31ae3be5741d..ffda623bb543 100644
+--- a/arch/arm/mach-davinci/board-da850-evm.c
++++ b/arch/arm/mach-davinci/board-da850-evm.c
+@@ -36,6 +36,7 @@
+ #include <linux/platform_data/ti-aemif.h>
+ #include <linux/platform_data/spi-davinci.h>
+ #include <linux/platform_data/uio_pruss.h>
++#include <linux/property.h>
+ #include <linux/regulator/machine.h>
+ #include <linux/regulator/tps6507x.h>
+ #include <linux/regulator/fixed.h>
+@@ -803,34 +804,49 @@ static const short da850_evm_mmcsd0_pins[] __initconst = {
+ 
+ static void da850_panel_power_ctrl(int val)
+ {
+-	/* lcd backlight */
+-	gpio_set_value(DA850_LCD_BL_PIN, val);
+-
+ 	/* lcd power */
+ 	gpio_set_value(DA850_LCD_PWR_PIN, val);
+ }
+ 
++static struct property_entry da850_lcd_backlight_props[] = {
++	PROPERTY_ENTRY_BOOL("default-on"),
++	{ }
++};
++
++static struct gpiod_lookup_table da850_lcd_backlight_gpio_table = {
++	.dev_id		= "gpio-backlight",
++	.table = {
++		GPIO_LOOKUP("davinci_gpio", DA850_LCD_BL_PIN, NULL, 0),
++		{ }
++	},
++};
++
++static const struct platform_device_info da850_lcd_backlight_info = {
++	.name		= "gpio-backlight",
++	.id		= PLATFORM_DEVID_NONE,
++	.properties	= da850_lcd_backlight_props,
++};
++
+ static int da850_lcd_hw_init(void)
+ {
++	struct platform_device *backlight;
+ 	int status;
+ 
+-	status = gpio_request(DA850_LCD_BL_PIN, "lcd bl");
+-	if (status < 0)
+-		return status;
++	gpiod_add_lookup_table(&da850_lcd_backlight_gpio_table);
++	backlight = platform_device_register_full(&da850_lcd_backlight_info);
++	if (IS_ERR(backlight))
++		return PTR_ERR(backlight);
+ 
+ 	status = gpio_request(DA850_LCD_PWR_PIN, "lcd pwr");
+-	if (status < 0) {
+-		gpio_free(DA850_LCD_BL_PIN);
++	if (status < 0)
+ 		return status;
+-	}
+ 
+-	gpio_direction_output(DA850_LCD_BL_PIN, 0);
+ 	gpio_direction_output(DA850_LCD_PWR_PIN, 0);
+ 
+-	/* Switch off panel power and backlight */
++	/* Switch off panel power */
+ 	da850_panel_power_ctrl(0);
+ 
+-	/* Switch on panel power and backlight */
++	/* Switch on panel power */
+ 	da850_panel_power_ctrl(1);
+ 
+ 	return 0;
 -- 
 2.21.0
 
