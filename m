@@ -2,52 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 872F955BD6
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 26 Jun 2019 01:01:57 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4423C55BD7
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 26 Jun 2019 01:02:18 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:Subject:From:To:
 	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=G9XFUCOybWW3AJke9X8fxcz1NikIHNmVvWzmMqvHq9g=; b=sNULz6LmYtuqi7
-	kSKrnJxlVjV9zUiddB/IQnTNbu2yFo2pDoB9tHk0DtLicKqMd5HouBA+uLHTKsKJSrGzFCaxYeDbZ
-	dGNgTnjMP+N7ZPKYvovpEThXhGa555SqDPbu3FcxgepthzmU6bXGQDJZYscA1TBjfzDUceCBFrGsg
-	cctWm+ZonAv+8hDNRvOpaOlWpB5j5N5RCGpveX2A+G2beV3gEcI41/WOY6d4HZcP7oHsiQacSE2ct
-	jfH70GTgmwzLi9blvo5EkZDzGLQDiWBbQr5WjlAOwWkvgk2ne3eDV0ZDRpOk/yzI2+vXzSaiU53qw
-	0uWE/kdVxTvi3IKlR3jw==;
+	List-Owner; bh=9Iv4J8PuP+ijRg7bJHRAoiLw54NavpMVIdBAByY7eps=; b=Y/5WQTSjzpBtue
+	q+alNzvMFPfx2Kvi1p9VJKETUOw/vHQZkfXK0k/4iF/cPzlU9VC1pHZhV6z/Xve4EwI5R7zr8sz3l
+	FHSpX5KEAk8o1PRar8jMgCsRPE4ad+2/0cjVWM4/FFcYRyw8owRiDDCDF3dDQPRUKzy+Y5RfB91VB
+	zayw7q6Y4V/0cuAIFpg1DJJiOH/O+1FmZFmlPFp3ZqF+ql6UN7frg2fgTLnVOf1VGq03nBzDoT1Rg
+	LIQxkhceJO8auXHrZzo9enEIJ0MkP5IGWWEjrQKIN2T7k9ajcAc4jsGYU95dAWJkwd9XO+ImAQy8Z
+	5UubiT/NJLPvafYUv9cw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hfuRo-00044W-75; Tue, 25 Jun 2019 23:01:56 +0000
+	id 1hfuS6-0004I6-St; Tue, 25 Jun 2019 23:02:14 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hfuQi-0003d4-RJ; Tue, 25 Jun 2019 23:00:50 +0000
+ id 1hfuR3-0003lR-0y; Tue, 25 Jun 2019 23:01:11 +0000
 Received: from kernel.org (unknown [104.132.0.74])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 6A9512086D;
- Tue, 25 Jun 2019 23:00:48 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 9897F2084B;
+ Tue, 25 Jun 2019 23:01:08 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1561503648;
- bh=XZFb1bPM2OTbilPsddH9Pql5EwgGw3s5eRnhL/AV5B0=;
+ s=default; t=1561503668;
+ bh=1hx1HOG4G3+zSxwKEwqkBRzCSUugXRSDSutWlI0q2uo=;
  h=In-Reply-To:References:To:From:Subject:Cc:Date:From;
- b=YJooSIj28SxbPEkKyN2o5czbIwdY9TBypYR8CqhVO1KvbNY74WYo0kNy/F285NqIC
- OQVkiGFpuGCqaB7oGfRMcSC7efVBS8TG+xTKC7Qvl3PzpuDCG/S53UiMFvyZydKZGD
- C1A8ucallZI5P3yFYQGq3aLApzU3B8lLJR5Yilu0=
+ b=vsZCG6oJC0xEGTpa1Jzozm/n/jlshGHgcRXCWzQ2SKouEw5ltQu1uyHaOjYlO2hux
+ 9vgHJYUu2jteiilEKc2Y5ebVycV3yacI6dxtuxmwfzyDbDURzHbd8BSRAKE5XYtYid
+ FMZkpSPadLmtoZWtuJoGlH0co+hYevF9uZaoCePw=
 MIME-Version: 1.0
-In-Reply-To: <20190611175839.28351-4-nsaenzjulienne@suse.de>
+In-Reply-To: <20190611175839.28351-6-nsaenzjulienne@suse.de>
 References: <20190611175839.28351-1-nsaenzjulienne@suse.de>
- <20190611175839.28351-4-nsaenzjulienne@suse.de>
+ <20190611175839.28351-6-nsaenzjulienne@suse.de>
 To: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
  linux-kernel@vger.kernel.org, stefan.wahren@i2se.com
 From: Stephen Boyd <sboyd@kernel.org>
-Subject: Re: [PATCH v3 3/7] firmware: raspberrypi: register clk device
+Subject: Re: [PATCH v3 5/7] clk: raspberrypi: register platform device for
+ raspberrypi-cpufreq
 User-Agent: alot/0.8.1
-Date: Tue, 25 Jun 2019 16:00:47 -0700
-Message-Id: <20190625230048.6A9512086D@mail.kernel.org>
+Date: Tue, 25 Jun 2019 16:01:07 -0700
+Message-Id: <20190625230108.9897F2084B@mail.kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190625_160049_101523_C96D1E02 
-X-CRM114-Status: UNSURE (   5.80  )
+X-CRM114-CacheID: sfid-20190625_160110_049165_D7D4C9EA 
+X-CRM114-Status: UNSURE (   6.72  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -88,9 +89,11 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Quoting Nicolas Saenz Julienne (2019-06-11 10:58:38)
-> Since clk-raspberrypi is tied to the VC4 firmware instead of particular
-> hardware it's registration should be performed by the firmware driver.
+Quoting Nicolas Saenz Julienne (2019-06-11 10:58:42)
+> As 'clk-raspberrypi' depends on RPi's firmware interface, which might be
+> configured as a module, the cpu clock might not be available for the
+> cpufreq driver during it's init process. So we register the
+> 'raspberrypi-cpufreq' platform device after the probe sequence succeeds.
 > 
 > Signed-off-by: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
 > Acked-by: Eric Anholt <eric@anholt.net>
