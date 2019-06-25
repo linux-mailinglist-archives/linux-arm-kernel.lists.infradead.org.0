@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BE7E8556B3
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 25 Jun 2019 20:04:07 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1CB41556B2
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 25 Jun 2019 20:03:52 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,38 +11,40 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=prajIWG2vk4gI+c2yfiH+KJXMkm9MmcuyNpsqFB6dRQ=; b=Ivi5iVuLhZl7BioM7i0yeVinh4
-	bUMxAJi/PniJcCOifplEoRdCytFbAfBajUtjBt+3Hukif4tLDDZOCg4HXZA08NcFXCiNzhM3O464h
-	jdK1YMGGg9F37EK2NH5g2MVCPBNDuXEoN5b76cunWGwGxOnKj1IZqADF1vmS0D3LsrqHsf4xfV+lZ
-	O7Q4K/jJ00EUSqztYPtayF8Benw6QgoGguNj3pTUC/Egbi+Gm/cr7DqMbm4DI2T1C7fakNkkRA+zH
-	GddE+NqZC7jf9O5G86IgIUxt84YDXbYnqQIAe3JQ3tDPw9UYcni1Dh299U43rsOl8LvLLXT1VVqFY
-	gjglM/8w==;
+	bh=NmdP4pUzxeyYT42G+QXEBT0SdL/7fRYsQl02I2hzyPM=; b=Nw0ahwoIgYa/eW+jRMkPmqHyHP
+	X7KqPM8rJJDrwlqZsSKwWdfwREQD9bt1rktRxshD1wMTXIUXsHtIV+5pT1R/1zQOp0I9G6ybj00Ng
+	wiTl8e1wLAWWv2styG+HDIFJJa3t+2l6uj514CaPlpr29uehaSpCCeJ7GpaKi/nQD5CwoZb8kT5NE
+	3xolAPC77fJhKoezk7HSGTtFTyvr4VKvXUwQQUT7TMYaIVb2r3qmdMXpjyxQ7RoWLSvXzL4PUA0rw
+	p5TSbrIEnPt5UI70rSJz/kMT5rWJiNPl0IIW2QtzQBXHiYvBzcwsawNuvNUG/NtFlrd7GipYm5GAx
+	3Co+vkhQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hfpnZ-0006Lb-JW; Tue, 25 Jun 2019 18:04:05 +0000
-Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
+	id 1hfpnI-00067R-V5; Tue, 25 Jun 2019 18:03:48 +0000
+Received: from bhuna.collabora.co.uk ([46.235.227.227])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hfpmC-0005Ot-71
- for linux-arm-kernel@lists.infradead.org; Tue, 25 Jun 2019 18:02:43 +0000
+ id 1hfpmC-0005Ou-Hc
+ for linux-arm-kernel@lists.infradead.org; Tue, 25 Jun 2019 18:02:42 +0000
 Received: from [127.0.0.1] (localhost [127.0.0.1])
- (Authenticated sender: bbeckett) with ESMTPSA id 8D2A6286276
+ (Authenticated sender: bbeckett) with ESMTPSA id DE8FC28627D
 From: Robert Beckett <bob.beckett@collabora.com>
 To: dri-devel@lists.freedesktop.org
-Subject: [PATCH v3 3/4] drm/vblank: estimate vblank while disabling vblank if
- interrupt disabled
-Date: Tue, 25 Jun 2019 18:59:14 +0100
-Message-Id: <b96132cef4b63118df1026a99b3c345692e3de26.1561483965.git.bob.beckett@collabora.com>
+Subject: [PATCH v3 4/4] drm/imx: only send event on crtc disable if kept
+ disabled
+Date: Tue, 25 Jun 2019 18:59:15 +0100
+Message-Id: <6599f538740632c5524bab86514b8ba026798537.1561483965.git.bob.beckett@collabora.com>
 X-Mailer: git-send-email 2.18.0
 In-Reply-To: <cover.1561483965.git.bob.beckett@collabora.com>
 References: <cover.1561483965.git.bob.beckett@collabora.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190625_110240_385490_1575D1CF 
-X-CRM114-Status: GOOD (  12.00  )
+X-CRM114-CacheID: sfid-20190625_110240_711540_6F316A76 
+X-CRM114-Status: GOOD (  11.70  )
 X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [46.235.227.227 listed in list.dnswl.org]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
@@ -73,51 +75,29 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-If interrupts are disabled (e.g. via vblank_disable_fn) and we come to
-disable vblank, update the vblank count to best guess as to what it
-would be had the interrupts remained enabled, and update the timesamp to
-now.
+The event will be sent as part of the vblank enable during the modeset
+if the crtc is not being kept disabled.
 
-This avoids a stale vblank event being sent while disabling crtcs during
-atomic modeset.
-
-Fixes: 68036b08b91bc ("drm/vblank: Do not update vblank count if interrupts
-are already disabled.")
+Fixes: 5f2f911578fb ("drm/imx: atomic phase 3 step 1: Use atomic configuration")
 
 Signed-off-by: Robert Beckett <bob.beckett@collabora.com>
 ---
- drivers/gpu/drm/drm_vblank.c | 16 +++++++++++++++-
- 1 file changed, 15 insertions(+), 1 deletion(-)
+ drivers/gpu/drm/imx/ipuv3-crtc.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/drivers/gpu/drm/drm_vblank.c b/drivers/gpu/drm/drm_vblank.c
-index 7dabb2bdb733..db68b8cbf797 100644
---- a/drivers/gpu/drm/drm_vblank.c
-+++ b/drivers/gpu/drm/drm_vblank.c
-@@ -375,9 +375,23 @@ void drm_vblank_disable_and_save(struct drm_device *dev, unsigned int pipe)
- 	 * interrupts were enabled. This avoids calling the ->disable_vblank()
- 	 * operation in atomic context with the hardware potentially runtime
- 	 * suspended.
-+	 * If interrupts are disabled (e.g. via blank_disable_fn) then make
-+	 * best guess as to what it would be now and make sure we have an up
-+	 * to date timestamp.
- 	 */
--	if (!vblank->enabled)
-+	if (!vblank->enabled) {
-+		ktime_t now = ktime_get();
-+		u32 diff = 0;
-+		if (vblank->framedur_ns) {
-+			u64 diff_ns = ktime_to_ns(ktime_sub(now, vblank->time));
-+			diff = DIV_ROUND_CLOSEST_ULL(diff_ns,
-+						     vblank->framedur_ns);
-+		}
-+
-+		store_vblank(dev, pipe, diff, now, vblank->count);
-+
- 		goto out;
-+	}
+diff --git a/drivers/gpu/drm/imx/ipuv3-crtc.c b/drivers/gpu/drm/imx/ipuv3-crtc.c
+index e04d6efff1b5..c436a28d50e4 100644
+--- a/drivers/gpu/drm/imx/ipuv3-crtc.c
++++ b/drivers/gpu/drm/imx/ipuv3-crtc.c
+@@ -94,7 +94,7 @@ static void ipu_crtc_atomic_disable(struct drm_crtc *crtc,
+ 	drm_crtc_vblank_off(crtc);
  
- 	/*
- 	 * Update the count and timestamp to maintain the
+ 	spin_lock_irq(&crtc->dev->event_lock);
+-	if (crtc->state->event) {
++	if (crtc->state->event && !crtc->state->active) {
+ 		drm_crtc_send_vblank_event(crtc, crtc->state->event);
+ 		crtc->state->event = NULL;
+ 	}
 -- 
 2.18.0
 
