@@ -2,65 +2,92 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F2A5C56108
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 26 Jun 2019 05:56:02 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1266556139
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 26 Jun 2019 06:20:54 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:References:
-	To:From:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=LVKbxMUY+g/BqA80JUFG39Z0ui83xrFg+XzCXLJ4+3w=; b=d45q9lPNpGShy4SSiVctBVVcL
-	Mnad+suWIXxlphkLe0vMYHpw7/A3iCBVVQw+lH2HSfck3/4e7xezCQaSmSiaW/OB2YuAPun8PtNm1
-	eYyUHq/kJ/QweLuvIzLh4UEtQjPTaZqM66sIGgqwIzMr/uV8jMx2/DXKvUzDW2vVqdXgkOAfYTcPG
-	DD0RtwvYN+X/pt6FjtdTKN57fKLsLAxC/3zy7v1wavPrecSwGs7OXIfEmZlzoRc+WBb5hVcaUELkp
-	pSbc9a06cXrLoKPSaHQhkUEEa84yfClpuYuumADgJ4IlhnozgO9ZoIoMhDg1OoLxT0L1bgUxLr0W2
-	WqJSMA1cw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=arPWv3+laR/qi5IOGn+oqmi9AYwwd1QQhlQpZaDpLz4=; b=tnREHmdYJbncjd
+	dsRyPo0CPqV4IN27twVUwx+RYyv6Thh2vwOHqHjUBJUuQhBGDPs60oNi8RGWmRPoDu+5tWD3GuPd1
+	rNyOSS/ha+VHVLwdK+4fD8SaUH3yhmF4bL7Lhy329d6/cWZdU8UHPDm6n7pSlliCro4DQb2ZDxW8r
+	9qCEICJnVLd/ysyfOcXttQpGTQGJGmpc0HZPdsEwfdaFLTFbttXAZZqrIjEwBuduCv2NdvNRRCwKT
+	e3o196/QjBCMWJ+Mrv7SAuo4Ti3pQBmlwEPO5iF9L+5oHK/LC/156qRySUtJ0zWe0r4w+NC7cQDzy
+	BJUxIKuva7sEwkECu2sA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hfz2P-0002Xy-Ic; Wed, 26 Jun 2019 03:56:01 +0000
-Received: from szxga04-in.huawei.com ([45.249.212.190] helo=huawei.com)
+	id 1hfzQR-0002BP-Hs; Wed, 26 Jun 2019 04:20:51 +0000
+Received: from mail-ed1-x542.google.com ([2a00:1450:4864:20::542])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hfz1y-0002W9-2Y
- for linux-arm-kernel@lists.infradead.org; Wed, 26 Jun 2019 03:55:35 +0000
-Received: from DGGEMS407-HUB.china.huawei.com (unknown [172.30.72.60])
- by Forcepoint Email with ESMTP id 1FC7BE4B79234D7E47FC;
- Wed, 26 Jun 2019 11:55:29 +0800 (CST)
-Received: from [127.0.0.1] (10.184.12.158) by DGGEMS407-HUB.china.huawei.com
- (10.3.19.207) with Microsoft SMTP Server id 14.3.439.0; Wed, 26 Jun 2019
- 11:55:22 +0800
-Subject: Re: [PATCH v2 7/9] KVM: arm/arm64: vgic-its: Cache successful
- MSI->LPI translation
-From: Zenghui Yu <yuzenghui@huawei.com>
-To: Marc Zyngier <marc.zyngier@arm.com>,
- <linux-arm-kernel@lists.infradead.org>, <kvmarm@lists.cs.columbia.edu>,
- <kvm@vger.kernel.org>
-References: <20190611170336.121706-1-marc.zyngier@arm.com>
- <20190611170336.121706-8-marc.zyngier@arm.com>
- <53de88e9-3550-bd7f-8266-35c5e75fae4e@huawei.com>
- <169cc847-ebfa-44b6-00e7-c69dccdbbd62@arm.com>
- <7af32ebf-91a8-ef63-6108-4ca506fd364e@huawei.com>
-Message-ID: <dd1b71c0-46fb-29f2-2fbc-2689c22ca8d7@huawei.com>
-Date: Wed, 26 Jun 2019 11:54:55 +0800
-User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:64.0) Gecko/20100101
- Thunderbird/64.0
+ id 1hfzQC-0002AV-9b
+ for linux-arm-kernel@lists.infradead.org; Wed, 26 Jun 2019 04:20:37 +0000
+Received: by mail-ed1-x542.google.com with SMTP id p15so1170048eds.8
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 25 Jun 2019 21:20:35 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=8Cl6yVigkJvzoVrHwes9kSjc7pM4VSMZ/+3LWRXp8II=;
+ b=P1VTP7Pj84OsQis7x1uKS38d7izOAewPCuxClFsIh3Q8xGkm2w4RgYFl/ekzoDot/d
+ RTQkeWGv2/mJmfDBEZycoPXx/VnVCV+bKYezE/Jp05k1ZV98lV/XSNH1ReTqSAqkI20x
+ 0fZ34XTKKdzC7dzKT/7nFE2cFuOfUyyMGoR/Um+LfVodvd3Gp63yidTSlEfLjrzHsbPd
+ /UQ/WYvvB6r1cqCXUZ3bdQ3qTR7MZW+0EpeXUfSuzT0BfIQoQOPN+zazD0Wed/sVNy1Y
+ ISzB4OmUR8YRywE4m0HoB4hYbglqSbD24bv6xGQtupOSojegFam/ztLkKtRyy/84s5l1
+ pwnA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=8Cl6yVigkJvzoVrHwes9kSjc7pM4VSMZ/+3LWRXp8II=;
+ b=NcX7K3r6gG/65RepzFsefy5sJJwM3pPZl8KneIdcOeAGjXpsKvb94YWBKvjGXEvD6f
+ xZr9B0nEShWKJRJ3DV4wKjxYJghiovxtmVj6G9NUAAwLTWzwHvTAU5OkoEy/4HV29mkQ
+ UD0UeqAVTSAZ2U7qsUdWxb63klV6PmDXMXUStrOYiuHgkJlLg0M/YgnCezPCAJtdhq8y
+ ZskBBtBfzodcZDmTd0wHf30zLA10Y8BITLkRilcdPKTgPoqRvsRo1Jos6Dkz/S7PILi5
+ xn1WfQNDC1+cKxirx6bJh5T5HeRTOFhb7Xyln943wxkQYa0KaVaf1Fqqv5XIAiOYBSCO
+ Zgsg==
+X-Gm-Message-State: APjAAAUSpOiUYgIAjo3XXNMq+2CwY2Ht6eEUE/8uq308T7OwyQMw3NId
+ SDB9N/FHy/3Zwaw1+UmevRA=
+X-Google-Smtp-Source: APXvYqwXqs1HEBueWWQka/6CMFwu/lhK03HSxnd+VHGfUzx+yhV/PAHnMwGpK/7LqQHSt0mldLz/Og==
+X-Received: by 2002:a50:b6c7:: with SMTP id f7mr2392320ede.275.1561522834286; 
+ Tue, 25 Jun 2019 21:20:34 -0700 (PDT)
+Received: from localhost.localdomain ([2a01:4f9:2b:2b15::2])
+ by smtp.gmail.com with ESMTPSA id a3sm5180717edr.48.2019.06.25.21.20.33
+ (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
+ Tue, 25 Jun 2019 21:20:33 -0700 (PDT)
+From: Nathan Chancellor <natechancellor@gmail.com>
+To: Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>
+Subject: [PATCH] arm64/efi: Mark __efistub_stext_offset as an absolute symbol
+ explicitly
+Date: Tue, 25 Jun 2019 21:20:17 -0700
+Message-Id: <20190626042017.54773-1-natechancellor@gmail.com>
+X-Mailer: git-send-email 2.22.0
 MIME-Version: 1.0
-In-Reply-To: <7af32ebf-91a8-ef63-6108-4ca506fd364e@huawei.com>
-Content-Language: en-US
-X-Originating-IP: [10.184.12.158]
-X-CFilter-Loop: Reflected
+X-Patchwork-Bot: notify
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190625_205534_357228_3FB771BD 
-X-CRM114-Status: GOOD (  17.11  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20190625_212036_363741_D1C4FBA2 
+X-CRM114-Status: GOOD (  11.32  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [45.249.212.190 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:542 listed in]
+ [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (natechancellor[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -72,75 +99,62 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Suzuki K Poulose <suzuki.poulose@arm.com>, "Raslan,
- KarimAllah" <karahmed@amazon.de>, Julien Thierry <julien.thierry@arm.com>,
- Christoffer Dall <christoffer.dall@arm.com>,
- Eric Auger <eric.auger@redhat.com>, James Morse <james.morse@arm.com>, "Saidi,
- Ali" <alisaidi@amazon.com>
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Cc: Fangrui Song <maskray@google.com>, linux-kernel@vger.kernel.org,
+ clang-built-linux@googlegroups.com, Peter Smith <peter.smith@linaro.org>,
+ Nathan Chancellor <natechancellor@gmail.com>,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Ck9uIDIwMTkvNi8yNiAwOjAwLCBaZW5naHVpIFl1IHdyb3RlOgo+IEhpIE1hcmMsCj4gCj4gT24g
-MjAxOS82LzI1IDIwOjMxLCBNYXJjIFp5bmdpZXIgd3JvdGU6Cj4+IEhpIFplbmdodWksCj4+Cj4+
-IE9uIDI1LzA2LzIwMTkgMTI6NTAsIFplbmdodWkgWXUgd3JvdGU6Cj4+PiBIaSBNYXJjLAo+Pj4K
-Pj4+IE9uIDIwMTkvNi8xMiAxOjAzLCBNYXJjIFp5bmdpZXIgd3JvdGU6Cj4+Pj4gT24gYSBzdWNj
-ZXNzZnVsIHRyYW5zbGF0aW9uLCBwcmVzZXJ2ZSB0aGUgcGFyYW1ldGVycyBpbiB0aGUgTFBJCj4+
-Pj4gdHJhbnNsYXRpb24gY2FjaGUuIEVhY2ggdHJhbnNsYXRpb24gaXMgcmV1c2luZyB0aGUgbGFz
-dCBzbG90Cj4+Pj4gaW4gdGhlIGxpc3QsIG5hdHVyYWxseSBldmluY3RpbmcgdGhlIGxlYXN0IHJl
-Y2VudGx5IHVzZWQgZW50cnkuCj4+Pj4KPj4+PiBTaWduZWQtb2ZmLWJ5OiBNYXJjIFp5bmdpZXIg
-PG1hcmMuenluZ2llckBhcm0uY29tPgo+Pj4+IC0tLQo+Pj4+IMKgwqAgdmlydC9rdm0vYXJtL3Zn
-aWMvdmdpYy1pdHMuYyB8IDg2IAo+Pj4+ICsrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysr
-KysrKwo+Pj4+IMKgwqAgMSBmaWxlIGNoYW5nZWQsIDg2IGluc2VydGlvbnMoKykKPj4+Pgo+Pj4+
-IGRpZmYgLS1naXQgYS92aXJ0L2t2bS9hcm0vdmdpYy92Z2ljLWl0cy5jIAo+Pj4+IGIvdmlydC9r
-dm0vYXJtL3ZnaWMvdmdpYy1pdHMuYwo+Pj4+IGluZGV4IDBhYTBjYmJjM2FmNi4uNjI5MzI0NTg0
-NzZhIDEwMDY0NAo+Pj4+IC0tLSBhL3ZpcnQva3ZtL2FybS92Z2ljL3ZnaWMtaXRzLmMKPj4+PiAr
-KysgYi92aXJ0L2t2bS9hcm0vdmdpYy92Z2ljLWl0cy5jCj4+Pj4gQEAgLTU0Niw2ICs1NDYsOTAg
-QEAgc3RhdGljIHVuc2lnbmVkIGxvbmcgCj4+Pj4gdmdpY19tbWlvX3JlYWRfaXRzX2lkcmVncyhz
-dHJ1Y3Qga3ZtICprdm0sCj4+Pj4gwqDCoMKgwqDCoMKgIHJldHVybiAwOwo+Pj4+IMKgwqAgfQo+
-Pj4+ICtzdGF0aWMgc3RydWN0IHZnaWNfaXJxICpfX3ZnaWNfaXRzX2NoZWNrX2NhY2hlKHN0cnVj
-dCB2Z2ljX2Rpc3QgKmRpc3QsCj4+Pj4gK8KgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
-wqDCoMKgwqDCoMKgwqDCoMKgwqAgcGh5c19hZGRyX3QgZGIsCj4+Pj4gK8KgwqDCoMKgwqDCoMKg
-wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgdTMyIGRldmlkLCB1MzIgZXZl
-bnRpZCkKPj4+PiArewo+Pj4+ICvCoMKgwqAgc3RydWN0IHZnaWNfdHJhbnNsYXRpb25fY2FjaGVf
-ZW50cnkgKmN0ZTsKPj4+PiArwqDCoMKgIHN0cnVjdCB2Z2ljX2lycSAqaXJxID0gTlVMTDsKPj4+
-PiArCj4+Pj4gK8KgwqDCoCBsaXN0X2Zvcl9lYWNoX2VudHJ5KGN0ZSwgJmRpc3QtPmxwaV90cmFu
-c2xhdGlvbl9jYWNoZSwgZW50cnkpIHsKPj4+PiArwqDCoMKgwqDCoMKgwqAgLyoKPj4+PiArwqDC
-oMKgwqDCoMKgwqDCoCAqIElmIHdlIGhpdCBhIE5VTEwgZW50cnksIHRoZXJlIGlzIG5vdGhpbmcg
-YWZ0ZXIgdGhpcwo+Pj4+ICvCoMKgwqDCoMKgwqDCoMKgICogcG9pbnQuCj4+Pj4gK8KgwqDCoMKg
-wqDCoMKgwqAgKi8KPj4+PiArwqDCoMKgwqDCoMKgwqAgaWYgKCFjdGUtPmlycSkKPj4+PiArwqDC
-oMKgwqDCoMKgwqDCoMKgwqDCoCBicmVhazsKPj4+PiArCj4+Pj4gK8KgwqDCoMKgwqDCoMKgIGlm
-IChjdGUtPmRiID09IGRiICYmCj4+Pj4gK8KgwqDCoMKgwqDCoMKgwqDCoMKgwqAgY3RlLT5kZXZp
-ZCA9PSBkZXZpZCAmJgo+Pj4+ICvCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIGN0ZS0+ZXZlbnRpZCA9
-PSBldmVudGlkKSB7Cj4+Pj4gK8KgwqDCoMKgwqDCoMKgwqDCoMKgwqAgLyoKPj4+PiArwqDCoMKg
-wqDCoMKgwqDCoMKgwqDCoMKgICogTW92ZSB0aGlzIGVudHJ5IHRvIHRoZSBoZWFkLCBhcyBpdCBp
-cyB0aGUKPj4+PiArwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgICogbW9zdCByZWNlbnRseSB1c2Vk
-Lgo+Pj4+ICvCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgKi8KPj4+PiArwqDCoMKgwqDCoMKgwqDC
-oMKgwqDCoCBsaXN0X21vdmUoJmN0ZS0+ZW50cnksICZkaXN0LT5scGlfdHJhbnNsYXRpb25fY2Fj
-aGUpOwo+Pj4KPj4+IE9ubHkgZm9yIHBlcmZvcm1hbmNlIHJlYXNvbnM6IGlmIHdlIGhpdCBhdCB0
-aGUgImhlYWQiIG9mIHRoZSBsaXN0LCB3ZQo+Pj4gZG9uJ3QgbmVlZCB0byBkbyBhIGxpc3RfbW92
-ZSgpLgo+Pj4gSW4gb3VyIHRlc3RzLCB3ZSBmb3VuZCB0aGF0IGEgc2luZ2xlIGxpc3RfbW92ZSgp
-IHRha2VzIG5lYXJseSAoc29tZXRpbWVzCj4+PiBldmVuIG1vcmUgdGhhbikgb25lIG1pY3Jvc2Vj
-b25kLCBmb3Igc29tZSB1bmtub3duIHJlYXNvbi4uLgoKcy9vbmUgbWljcm9zZWNvbmQvNTAwIG5h
-bm9zZWNvbmRzLwooSSBnb3QgdGhlIHZhbHVlIG9mIENOVEZSUSB3cm9uZywgc29ycnkuKQoKPj4K
-Pj4gSHVoLi4uIFRoYXQncyBvZGQuCj4+Cj4+IENhbiB5b3UgbmFycm93IGRvd24gdW5kZXIgd2hp
-Y2ggY29uZGl0aW9ucyB0aGlzIGhhcHBlbnM/IEknbSBub3Qgc3VyZSBpZgo+PiBjaGVja2luZyBm
-b3IgdGhlIGxpc3QgaGVhZCB3b3VsZCBiZSBtb3JlIGVmZmljaWVudCwgYXMgeW91IGVuZC11cAo+
-PiBmZXRjaGluZyB0aGUgaGVhZCBhbnl3YXkuIENhbiB5b3UgdHJ5IHJlcGxhY2luZyB0aGlzIGxp
-bmUgd2l0aDoKPj4KPj4gwqDCoMKgwqBpZiAoIWxpc3RfaXNfZmlyc3QoJmN0ZS0+ZW50cnksICZk
-aXN0LT5scGlfdHJhbnNsYXRpb25fY2FjaGUpKQo+PiDCoMKgwqDCoMKgwqDCoCBsaXN0X21vdmUo
-JmN0ZS0+ZW50cnksICZkaXN0LT5scGlfdHJhbnNsYXRpb25fY2FjaGUpOwo+Pgo+PiBhbmQgbGV0
-IG1lIGtub3cgd2hldGhlciBpdCBoZWxwcz8KPiAKPiBJdCBoZWxwcy4gV2l0aCB0aGlzIGNoYW5n
-ZSwgdGhlIG92ZXJoZWFkIG9mIGxpc3RfbW92ZSgpIGlzIGdvbmUuCj4gCj4gV2UgcnVuIDE2IDQt
-dmNwdSBWTXMgb24gdGhlIGhvc3QsIGVhY2ggd2l0aCBhIHZob3N0LXVzZXIgbmljLCBhbmQgcnVu
-Cj4gImlwZXJmIiBpbiBwYWlycyBiZXR3ZWVuIHRoZW0uwqAgSXQncyBsaWtlbHkgdG8gaGl0IGF0
-IHRoZSBoZWFkIG9mIHRoZQo+IGNhY2hlIGxpc3QgaW4gb3VyIHRlc3RzLgo+IFdpdGggdGhpcyBj
-aGFuZ2UsIHRoZSBzeXMlIHV0aWxpemF0aW9uIG9mIHZob3N0ZHBmd2QgdGhyZWFkcyB3aWxsCj4g
-ZGVjcmVhc2UgYnkgYWJvdXQgMTAlLsKgIEJ1dCBJIGRvbid0IGtub3cgdGhlIHJlYXNvbiBleGFj
-dGx5IChJIGhhdmVuJ3QKPiBmb3VuZCBhbnkgY2x1ZXMgaW4gY29kZSB5ZXQsIGluIGltcGxlbWVu
-dGF0aW9uIG9mIGxpc3RfbW92ZS4uLikuCj4gCj4gCj4gVGhhbmtzLAo+IHplbmdodWkKPiAKPiAK
-CgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1h
-cm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5v
-cmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0t
-a2VybmVsCg==
+After r363059 and r363928 in LLVM, a build using ld.lld as the linker
+with CONFIG_RANDOMIZE_BASE enabled fails like so:
+
+ld.lld: error: relocation R_AARCH64_ABS32 cannot be used against symbol
+__efistub_stext_offset; recompile with -fPIC
+
+Fangrui and Peter figured out that ld.lld is incorrectly considering
+__efistub_stext_offset as a relative symbol because of the order in
+which symbols are evaluated. _text is treated as an absolute symbol
+and stext is a relative symbol, making __efistub_stext_offset a
+relative symbol.
+
+Adding ABSOLUTE will force ld.lld to evalute this expression in the
+right context and does not change ld.bfd's behavior. ld.lld will
+need to be fixed but the developers do not see a quick or simple fix
+without some research (see the linked issue for further explanation).
+Add this simple workaround so that ld.lld can continue to link kernels.
+
+Link: https://github.com/ClangBuiltLinux/linux/issues/561
+Link: https://github.com/llvm/llvm-project/commit/025a815d75d2356f2944136269aa5874721ec236
+Link: https://github.com/llvm/llvm-project/commit/249fde85832c33f8b06c6b4ac65d1c4b96d23b83
+Debugged-by: Fangrui Song <maskray@google.com>
+Debugged-by: Peter Smith <peter.smith@linaro.org>
+Suggested-by: Fangrui Song <maskray@google.com>
+Signed-off-by: Nathan Chancellor <natechancellor@gmail.com>
+---
+ arch/arm64/kernel/image.h | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/arch/arm64/kernel/image.h b/arch/arm64/kernel/image.h
+index 04ca08086d35..9a2d2227907c 100644
+--- a/arch/arm64/kernel/image.h
++++ b/arch/arm64/kernel/image.h
+@@ -67,7 +67,7 @@
+ 
+ #ifdef CONFIG_EFI
+ 
+-__efistub_stext_offset = stext - _text;
++__efistub_stext_offset = ABSOLUTE(stext - _text);
+ 
+ /*
+  * The EFI stub has its own symbol namespace prefixed by __efistub_, to
+-- 
+2.22.0
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
