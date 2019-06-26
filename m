@@ -2,87 +2,70 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2013E56E08
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 26 Jun 2019 17:49:11 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 435F856E55
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 26 Jun 2019 18:06:41 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=qjzvJkBweFVGZWCHd7cHawZMDpcLTzSf2CjoVEIv+0Q=; b=eu5
-	ABKzcpImxwkRcYCdHG/4eTgYM8nrpBaJqeKW2TNWEhNUjvnfU8TgkbD4nsIXkBXSb/riyKYzEcGJo
-	91zXHR6clQ6yf7eRtaHSX9IMfiwGPTC2YQvr6vQ+CrVJs+xDhlH/1V1+9myF4ySIX+mLOnm+w3pgi
-	j1JeP7vd7fpr8iyG29kaFoDH7FdC5Sw66TINVyaE5igT9yKcrFoAITGfRZevp1dd3uq5EKxs/+oo3
-	9BvpwHZ3Bdb+bWzFc9kS4udjL8V4+u7aesLq8tOOPLZab+W8ZW1iq4PHENzdHblrJyrK/2pGEECPx
-	bVAV7MIHqms4tvAAyXSlPai0wU/j12A==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=XvIC8/eQW6UoWbTXyRe2KM/gWd4IAAxLSGCcjbnEUR0=; b=oUPYZQcZLmUj+roXVnjnFKWmj
+	amQqNUAQ0da/S96Cpsg9t+8RY9rFCRxvwA6W7CqIwAwHUPulZgNHk3WgDkW8frzdPofSmajb67HYq
+	ANyhRvUZoC7QmVh4rnRe+hRmq2vEPmkmUgcaXQPBAj4b5y3Hb+Hr2C+UuM8/GIJrB13J4MBWjhhj8
+	Pc6PcErO/L5tjUfHZMM+RByAKpsipdYRAWAnufOJr9LSHtrK27Z1bwLKepXS/VhXYdijAqt6CaoeC
+	SvBtOAEzGTKy5g0O3euf8AAEOEzRFLAt58vKomdzecF8FkGgByhG7kTQChoBSkbkwD6jn3E76LX1x
+	uiO6ZT9BA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hgAAV-00030G-Ka; Wed, 26 Jun 2019 15:49:07 +0000
-Received: from mout.gmx.net ([212.227.17.20])
+	id 1hgARR-0001jb-Qq; Wed, 26 Jun 2019 16:06:37 +0000
+Received: from heliosphere.sirena.org.uk ([2a01:7e01::f03c:91ff:fed4:a3b6])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hgAAH-0002yg-2E; Wed, 26 Jun 2019 15:48:54 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=gmx.net;
- s=badeba3b8450; t=1561564113;
- bh=mWLTbdtxGfwZ13vnfxlQDfv6DzwTGycBEng3zNk/XaE=;
- h=X-UI-Sender-Class:From:To:Cc:Subject:Date;
- b=KYHDR8XZmzxft+7qC8J8cyQ71BSi6JkTsAhWvd+vK2f+YjWqjT42uTfrjNGCcQfdV
- Z9gkAVPhUJWqXcu/GipMjVfx/QmxN65eJI1oHCOZ/vhkhzCqY9CuiJjHWnxF6jmydK
- 5QSqYnKAOWM3NXmd6pWkd6wlKwIFV9zX8+x8R0gE=
-X-UI-Sender-Class: 01bb95c1-4bf8-414a-932a-4f6e2808ef9c
-Received: from localhost.localdomain ([37.4.249.111]) by mail.gmx.com
- (mrgmx102 [212.227.17.168]) with ESMTPSA (Nemesis) id
- 0LyS5K-1ibrK32soI-015u60; Wed, 26 Jun 2019 17:48:33 +0200
-From: Stefan Wahren <wahrenst@gmx.net>
-To: Eric Anholt <eric@anholt.net>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Madhumitha Prabakaran <madhumithabiw@gmail.com>
-Subject: [PATCH V2] staging: bcm2835-camera: Restore return behavior of
- ctrl_set_bitrate()
-Date: Wed, 26 Jun 2019 17:48:11 +0200
-Message-Id: <1561564091-14248-1-git-send-email-wahrenst@gmx.net>
-X-Mailer: git-send-email 2.7.4
-X-Provags-ID: V03:K1:oGZaaF0VyX9aU1B2KlshIgSdbA6j0aZLN7PhhBatNb+3vHD/bim
- IAE1eOdpYqQunHD6Pg0lTq7WJELowblFluMBHzPg8LdD02e6QUAOnsxpP9+ZsegmN4310bJ
- qbWyOk73ZUf0L+ErExAilg9x9ygGjCdTujEDRrk0vloZc12lmdHMEA8VQs/4HDu6WGeOoac
- M59q+7daHAsSTIgJrRUuA==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:+5QZJxEbxD4=:fxpwesVoxYf61efHxmcTKK
- BddiAtw8+v4csO9cTNV4qSFAebPmgWlPv8KyLXPbOQdcjOl72FUcevKvhsznxi/uv5leFw9uX
- Sr99W78EPj3EmJmQT1KZ8GMPWcB/hQa1h/t4bhjHByFu4VQ2xaIdpsJfZlFcR2poK1E6dEFT6
- jHlzWYjt2kP7anvsjMJvdSVILf9+ei6ysWz1aaMCKFLhxNUNmXH9onDdO8WOanGVr15zb+cVv
- N4ecxzj0SonMoADsz1UJqgwb8Pi5/me809KQd8pQ/GhKDeLPNwQPXJMMhRbyPgmg5bJVCRUgp
- MaMwDNiIn3qPl6t4jPx9uiSL5n47PAyt6vVlyufqp1lOr4EqgQFWp+2hknWJYJ8hzkBLgXrdZ
- gfNGAtlqG9MdHsJds/KNtpjNvF3iCuOWcIyBEGAYKZL78LQggOcIFSlHn+KZ9JU2t9jGJHKF7
- 0E7pkZuWJIQjaWnt7WTAiO/Pv3tNhKukGVQXG7OTxkwS3+BsXI+vBB+xtOP+syI1QFkP3h+5c
- 9HVQLB7CA73bkyul1AwmrHNV+OqITaTatTPFXsDojt54X59pz2G3SkQI5z8JZ2aq40Z3vwI6u
- lyMT+gPPFDx2aNm460FX8Gm+2BisA5xrkpjxb4KIDZvTRDCexntK3cadXRyX7GZQWc6poIcVf
- atWNWiKYv6KN6vA+lc2Ffl5FM8p7BFtkX4GA0GZ/XhMTvCqDtgxBdQ4sevKJ4riNMAvRuswrM
- BUrlhaRg3ElFPF3x+S73QaRmNmtv34L7puWW57WxrkKKSJS7Td0oZd1ktx6eAW1CA+I8RmOn3
- A+rcm/ZfBf00TXqxsq3/t9h4mL3cP4KhBAxtyYg4z4yjuWt8AmXR6GfvTwCxk+qioygsV6KyY
- 6yh532oUizARrL8gUwZBauRwgH5rk7e2BWINY86y8vr3nSBzocuIFAekTK42reIsJ+qq9OSD5
- IcQroenV1LixMtStvb6CiyHMHMqpxb+Buu+0bdl5qjKcUB4JxBA6KWMPC6Orj+Yf/GKaQlk+k
- VsgZBuZAUHsZFuULBdIsUg//MyQJ0q/13WL31BSqJX9SAMgHFgsGeDo4yAg4YSF2Mbh1EgZu7
- a3+bklRX7SG3Ts=
+ id 1hgARG-0001ix-UR
+ for linux-arm-kernel@lists.infradead.org; Wed, 26 Jun 2019 16:06:28 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=sirena.org.uk; s=20170815-heliosphere; h=In-Reply-To:Content-Type:
+ MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=ObBll3o8jBZS2dIG2Cco4jHSqfd2Q/hNM+srOG9AS3M=; b=thoT/O1sexjZusF5z9OsSHm6B
+ aI4KIIMBS8+xlJDdJwA1npXG+fZyPHI4p4d2UwhMb607KF9MlYDCpXvhBSOC46i2+RkPpD0oQ/8kp
+ g26acCAOK8XGnSFRq6c4qnQSqliee0iu1oy80ioReOV3LtGpHSzaphmzxskVewwovSZ78=;
+Received: from cpc102320-sgyl38-2-0-cust46.18-2.cable.virginm.net
+ ([82.37.168.47] helo=finisterre.sirena.org.uk)
+ by heliosphere.sirena.org.uk with esmtpsa
+ (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.89)
+ (envelope-from <broonie@sirena.org.uk>)
+ id 1hgARD-0008Ak-8w; Wed, 26 Jun 2019 16:06:23 +0000
+Received: by finisterre.sirena.org.uk (Postfix, from userid 1000)
+ id 86D05440046; Wed, 26 Jun 2019 17:06:22 +0100 (BST)
+Date: Wed, 26 Jun 2019 17:06:22 +0100
+From: Mark Brown <broonie@kernel.org>
+To: Will Deacon <will@kernel.org>
+Subject: Re: [PATCH] arm64: Add support for E0PD
+Message-ID: <20190626160622.GA5379@sirena.org.uk>
+References: <20190626144535.27680-1-broonie@kernel.org>
+ <20190626150403.dekq5l5rpmgzknfr@willie-the-truck>
+MIME-Version: 1.0
+In-Reply-To: <20190626150403.dekq5l5rpmgzknfr@willie-the-truck>
+X-Cookie: You need not be present to win.
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190626_084853_443115_5EF1DFC7 
-X-CRM114-Status: GOOD (  11.55  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20190626_090627_149357_3864FDBB 
+X-CRM114-Status: GOOD (  19.68  )
+X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [212.227.17.20 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (wahrenst[at]gmx.net)
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -96,83 +79,89 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devel@driverdev.osuosl.org, Stefan Wahren <wahrenst@gmx.net>,
- Dave Stevenson <dave.stevenson@raspberrypi.org>,
- Dan Carpenter <dan.carpenter@oracle.com>, linux-arm-kernel@lists.infradead.org,
- linux-rpi-kernel@lists.infradead.org
-MIME-Version: 1.0
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Catalin Marinas <catalin.marinas@arm.com>,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: multipart/mixed; boundary="===============7209286159686963391=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The commit 52c4dfcead49 ("Staging: vc04_services: Cleanup in
-ctrl_set_bitrate()") changed the return behavior of ctrl_set_bitrate().
-We cannot do this because of a bug in the firmware, which breaks probing
-of bcm2835-camera:
 
-    bcm2835-v4l2: mmal_init: failed to set all camera controls: -3
-    Cleanup: Destroy video encoder
-    Cleanup: Destroy image encoder
-    Cleanup: Destroy video render
-    Cleanup: Destroy camera
-    bcm2835-v4l2: bcm2835_mmal_probe: mmal init failed: -3
-    bcm2835-camera: probe of bcm2835-camera failed with error -3
+--===============7209286159686963391==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="y0ulUmNC+osPPQO6"
+Content-Disposition: inline
 
-So restore the old behavior, add an explaining comment and a debug message
-to verify that the bug has been fixed in firmware.
 
-Fixes: 52c4dfcead49 ("Staging: vc04_services: Cleanup in ctrl_set_bitrate()")
-Signed-off-by: Stefan Wahren <wahrenst@gmx.net>
----
- .../staging/vc04_services/bcm2835-camera/controls.c   | 19 ++++++++++++++++---
- 1 file changed, 16 insertions(+), 3 deletions(-)
+--y0ulUmNC+osPPQO6
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
 
-Changes in V2:
-- add an explaining comment as suggest by Dan and Dave
-- add a debug message to verify the firmware behavior
+On Wed, Jun 26, 2019 at 04:04:04PM +0100, Will Deacon wrote:
 
-diff --git a/drivers/staging/vc04_services/bcm2835-camera/controls.c b/drivers/staging/vc04_services/bcm2835-camera/controls.c
-index d60e378..c251164 100644
---- a/drivers/staging/vc04_services/bcm2835-camera/controls.c
-+++ b/drivers/staging/vc04_services/bcm2835-camera/controls.c
-@@ -604,15 +604,28 @@ static int ctrl_set_bitrate(struct bm2835_mmal_dev *dev,
- 			    struct v4l2_ctrl *ctrl,
- 			    const struct bm2835_mmal_v4l2_ctrl *mmal_ctrl)
- {
-+	int ret;
- 	struct vchiq_mmal_port *encoder_out;
+> I think you're missing one small thing here: all v8.5 CPUs will have
+> hardware mitigations for meltdown as advertised in the ID registers.
+> However, we still force KPTI on for those CPUs if KASLR is enabled to avo=
+id
+> it being trivially bypassed by looking at fault timings. As you point out,
+> there are two issues with that: (1) the performance impact of KPTI and (2)
+> the incompatibility with statistical profiling. It is these issues which
+> E0PD attempts to address, so whilst I'm ok with enabling it unconditional=
+ly
+> as you propose, we should go one step further and avoid enabling KPTI on
+> CPUs with E0PD even if KASLR is enabled.
 
- 	dev->capture.encode_bitrate = ctrl->val;
+I agree, I'm currently working on a patch which will disable KPTI by
+default if we've enabled E0PD - it's a bit of a faff due to how early we
+decide if we're going to use KPTI so it probably needs to be a separate
+patch anyway.  I figured it was worth sending this separately as a
+system that has both E0PD and KPTI will be no worse off and a system
+that does not enable KPTI but suppports E0PD will be better off so it's
+a net win. =20
 
- 	encoder_out = &dev->component[MMAL_COMPONENT_VIDEO_ENCODE]->output[0];
+> We probably also need to consider the unfortunate situations where E0PD
+> is not supported by all of the CPUs in the system.
 
--	return vchiq_mmal_port_parameter_set(dev->instance, encoder_out,
--					     mmal_ctrl->mmal_id, &ctrl->val,
--					     sizeof(ctrl->val));
-+	ret = vchiq_mmal_port_parameter_set(dev->instance, encoder_out,
-+					    mmal_ctrl->mmal_id, &ctrl->val,
-+					    sizeof(ctrl->val));
-+
-+	v4l2_dbg(1, bcm2835_v4l2_debug, &dev->v4l2_dev,
-+		 "%s: After: mmal_ctrl:%p ctrl id:0x%x ctrl val:%d ret %d(%d)\n",
-+		 __func__, mmal_ctrl, ctrl->id, ctrl->val, ret,
-+		 (ret == 0 ? 0 : -EINVAL));
-+
-+	/*
-+	 * Older firmware versions (pre July 2019) have a bug in handling
-+	 * MMAL_PARAMETER_VIDEO_BIT_RATE that result in the call
-+	 * returning -MMAL_MSG_STATUS_EINVAL. So ignore errors from this call.
-+	 */
-+	return 0;
- }
+Yes, I've marked it as ARM64_CPUCAP_SYSTEM_FEATURE so it should be safe
+unless all the CPUs that don't support it are late CPUs (in which case
+it'd stop them booting) but it's not ideal as it means we won't use it
+at on mixed systems.  I did debate marking it as _WEAK so that we'd
+enable it on the CPUs that can use it but I worried that that'd be
+potentially misleading with regard to the level of hardening if the
+kernel said it was turning on E0PD.
 
- static int ctrl_set_bitrate_mode(struct bm2835_mmal_dev *dev,
---
-2.7.4
+As with the interaction with KPTI I figured that the doing the simple
+thing leaves systems generally no worse off and leaves some systems
+better off.
 
+--y0ulUmNC+osPPQO6
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAl0Tl/0ACgkQJNaLcl1U
+h9C3Igf/b2EY9w6HmhLQt+UURagEPGZu02QY/z2OMxrg/wBeeocxfmyg22VW01VK
+8f9AEkwH1l+4tcTm+uLxzRwpHOg4na3lqxamEn3ys6ECbELip0sIss1BziPb49fq
+8oKEzKyecRTsQuqGJgTvJxxbUzH8WrnaGi5HBxo1t5tytkiqRY2UwFUh8GsIqzNc
+FGfOMepm3SZfBvGV9EfHlT38SsrQd/MLlEb6k0UuqCBej8iiULFKmPxAlNwGFl4Y
+X5HLio3lcDLEnbwHGxzqaNiKSuSosKESFPBxx0P5fZlq1D9/L3dNmVo9LO4jfxB4
+iHsRo10lPFXgoYhnKJmi8Tw5/ER2tQ==
+=F9Li
+-----END PGP SIGNATURE-----
+
+--y0ulUmNC+osPPQO6--
+
+
+--===============7209286159686963391==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============7209286159686963391==--
+
