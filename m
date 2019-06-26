@@ -2,59 +2,77 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2863D56F81
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 26 Jun 2019 19:27:57 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 06E1A56FBF
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 26 Jun 2019 19:42:31 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=hGxEbHM45nqcqJI48rw4eF62CIWGEs0v+Go8ZZu8Ivw=; b=VbLEqdkyPbStJC
-	SqHL0zulkwzKlYJVY9ZNo6OP+7HOigmrmjhuHCakKMlv0nnnM2EW7xUxFUo1l3uR8dVxSQo4wrYk8
-	hIg+e8hDZzMT/CaJziFvJ4N067+8gKOQSSBBA1wD8v4Lz0MRhUq/HPUgaP1W5ryAdzE+753QkJ4q8
-	IWmOvYJ/hFjhO/rERBOND7xnqRYimV/NnedHTFtnVjAsbgL1Yxl744bLz84ENF0RGJlfNP7x8NT8u
-	X53djLaiYt2b7tipplg8rV59d2vx9L479HBs6K0YwryuvdWUjoyozla7y1t/ojTOrPvD3PD1jBki/
-	GTLCYaO+Z9b0igJfaA0A==;
+	List-Owner; bh=7K49faGNj1kUPJBnc7p9uSscXPodbnZ1ldZKswrZqIY=; b=rJKQTZmqs/L2iS
+	Pg9JpwWsLekEt5jKMiYmxd93tTOO5t6eKjF1J9C6YFBEViL9QAQdrUvxSw6N2Yvq29n2lz5/QcwAt
+	eVxZr0/y6d6QDstbls+o6u4/UEv8CQk/yzaHR2hFv+9g8PpA72BpyOLMGcGfMuNLq5Rw41vot6TJo
+	ycriK5xtxOIm498qTCqIZu0TBO7QOwCH93Q+NYZXi+xlZJn3naMhazPNk5FW4SVQ+EwN/OpvPFtvj
+	T4jksvCT2J2Q0RjoPqMmGO2bIIiK1MJQCiITtx/tgg8930DM+piAvaO0RwrbQE5iI1lADHq/bfrOU
+	YOSU/VutN2D+LfvgtBzw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hgBi5-0003ms-Dv; Wed, 26 Jun 2019 17:27:53 +0000
-Received: from perceval.ideasonboard.com ([213.167.242.64])
+	id 1hgBw7-0000Iq-Ru; Wed, 26 Jun 2019 17:42:23 +0000
+Received: from mail-io1-xd41.google.com ([2607:f8b0:4864:20::d41])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hgBhs-0003ls-0f
- for linux-arm-kernel@lists.infradead.org; Wed, 26 Jun 2019 17:27:42 +0000
-Received: from pendragon.ideasonboard.com (81-175-216-236.bb.dnainternet.fi
- [81.175.216.236])
- by perceval.ideasonboard.com (Postfix) with ESMTPSA id A1035510;
- Wed, 26 Jun 2019 19:27:30 +0200 (CEST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=ideasonboard.com;
- s=mail; t=1561570050;
- bh=i14VRbRUNWeaIKjEs5xAYIdwAOF9WuME1WNthjXo334=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=D7AdT3iHB/0TaRDGPON3Uu1w9UZ1SWe8rNbHY0LKbFytsYZFOOX5xgYHPMDriKuNl
- go7zLXJ7/ylQZy/6QEXBEdVbwSV8/fCmLJx1TavUSbtS+hWyPvGBMeIoy6KK91cFx1
- xbNWGAxwk2PBZ+wMy9Yycyz0YHUUD+Ib8HSGU81c=
-Date: Wed, 26 Jun 2019 20:25:03 +0300
-From: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
-To: Hugues FRUCHET <hugues.fruchet@st.com>
-Subject: Re: [PATCH v2 0/3] DCMI bridge support
-Message-ID: <20190626172503.GB6118@pendragon.ideasonboard.com>
-References: <1560242912-17138-1-git-send-email-hugues.fruchet@st.com>
- <20190620161721.h3wn4nibomrvriw4@kekkonen.localdomain>
- <ae097d67-58fe-82d7-78d6-2445664f28db@st.com>
+ id 1hgBvv-0000Hu-09
+ for linux-arm-kernel@lists.infradead.org; Wed, 26 Jun 2019 17:42:12 +0000
+Received: by mail-io1-xd41.google.com with SMTP id h6so5252927ioh.3
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 26 Jun 2019 10:42:10 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=ZKsEzAEn+zTozZeyiV/e1LwfvFOgAuBk1MCTImiKLZA=;
+ b=onBGOizxsfiCRd7+gXbaT4hAW6mqsDds5B4NbecGa5qCbrZwUlZKaUd8d9sc91lChN
+ 6p5GnD6ymeH10NabPIoVjBxJ2cieNgGYlB7B2r47VOuUCSzlgnGhfpMC12zEohslJRMy
+ YGkCnl6tXZ+lCkt57UOzxqs04jbh4VNyBHxxAYH4lAI2Eg0ZKN2e5XExnBhMHhCqgrlm
+ WjffAFmf1Yu2L9onBnMGPP8XZ1pzdMJebNqHY6nbp8CcAP04BXFe4GZpZiFbVTWdQdX8
+ J136o+dqdFHN6P0Ge8G2KnzX/2vsduc71V5PcFarONPkW4LBJ+ECv0Z+8zmthoeVj4Sx
+ 2UFg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=ZKsEzAEn+zTozZeyiV/e1LwfvFOgAuBk1MCTImiKLZA=;
+ b=O9YwEB6dZdCy4GMBpUqCFd4h+8pMZxuHlS0uBudYaeIOjbdCK0Fc8Hmgm8qF/2VwMN
+ tLPNpdNom+OXL8oU+L08c/rr0mUeoA9DOBZ4m+QNtj65dc+o5TvkzbpT8A4vNt/9hwf/
+ eRGg/egKXFsegvHyNY3D2zQ+xRaLK5WBzwA9IdNWX5YJBhr72c13y9VgfJF1Y9bcYFO5
+ 9e7CroLGi8vvZ/kc+jW7c2lKAjkXGGy6yyD78mu5tyBSCzz3yLn335Q9GcifVKGM8VQh
+ +P7p0Ty1lKzJXxCX506LWiKCGL29pdI7PcKKt3Pl5byhipwGgw32rVj+CTXu2yvL0xPq
+ RCsw==
+X-Gm-Message-State: APjAAAUkriAsLmZFkw8NCO1sO1cX8A4wOI0hCjjAHJGzroSoHTJ/mdoa
+ 2Sf7Zl7NMLu/yngWHXzWtj6h1vwx4mvB58nQLgwL9A==
+X-Google-Smtp-Source: APXvYqzP67fOblQX+UL3RTr8NEKsVBKZNmmryeKDByfNumC6w51Z6JbSESfRJHVRXeUS4Dcqs0atYnirT3xgPzBD4GQ=
+X-Received: by 2002:a5d:9613:: with SMTP id w19mr6438554iol.140.1561570929448; 
+ Wed, 26 Jun 2019 10:42:09 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <ae097d67-58fe-82d7-78d6-2445664f28db@st.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+References: <cover.1561346998.git.saiprakash.ranjan@codeaurora.org>
+ <635466ab6a27781966bb083e93d2ca2729473ced.1561346998.git.saiprakash.ranjan@codeaurora.org>
+In-Reply-To: <635466ab6a27781966bb083e93d2ca2729473ced.1561346998.git.saiprakash.ranjan@codeaurora.org>
+From: Mathieu Poirier <mathieu.poirier@linaro.org>
+Date: Wed, 26 Jun 2019 11:41:58 -0600
+Message-ID: <CANLsYky6D5EsCL2vOa4hHaqTQRXbN+TT0pSzFrykDL_fHEkiBQ@mail.gmail.com>
+Subject: Re: [PATCHv3 1/1] coresight: Do not default to CPU0 for missing CPU
+ phandle
+To: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190626_102740_356025_9E0F2D63 
-X-CRM114-Status: GOOD (  27.15  )
+X-CRM114-CacheID: sfid-20190626_104211_050882_916307D5 
+X-CRM114-Status: GOOD (  24.44  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:d41 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -74,148 +92,186 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Yannick FERTRE <yannick.fertre@st.com>,
- Benjamin Gaignard <benjamin.gaignard@linaro.org>,
- Alexandre TORGUE <alexandre.torgue@st.com>,
- Mickael GUENE <mickael.guene@st.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Philippe CORNU <philippe.cornu@st.com>, Hans Verkuil <hverkuil@xs4all.nl>,
- Sakari Ailus <sakari.ailus@linux.intel.com>,
- Mauro Carvalho Chehab <mchehab@kernel.org>,
- "linux-stm32@st-md-mailman.stormreply.com"
- <linux-stm32@st-md-mailman.stormreply.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- "linux-media@vger.kernel.org" <linux-media@vger.kernel.org>
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Rajendra Nayak <rnayak@codeaurora.org>,
+ Suzuki K Poulose <suzuki.poulose@arm.com>,
+ Alexander Shishkin <alexander.shishkin@linux.intel.com>,
+ linux-arm-msm <linux-arm-msm@vger.kernel.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ David Brown <david.brown@linaro.org>, Rob Herring <robh+dt@kernel.org>,
+ Sibi Sankar <sibis@codeaurora.org>, Vivek Gautam <vivek.gautam@codeaurora.org>,
+ Leo Yan <leo.yan@linaro.org>, Andy Gross <andy.gross@linaro.org>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Hugues,
+Hi Sai,
 
-On Mon, Jun 24, 2019 at 10:10:05AM +0000, Hugues FRUCHET wrote:
-> Hi Sakari,
-> 
->  > - Where's the sub-device representing the bridge itself?
-> This is pointed by [1]: drivers/media/i2c/st-mipid02.c
-> 
->  > - As the driver becomes MC-centric, crop configuration takes place
-> through
->  >   V4L2 sub-device interface, not through the video device node.
->  > - Same goes for accessing sensor configuration: it does not take place
->  >   through video node but through the sub-device nodes.
-> 
-> Our objective is to be able to support either a simple parallel sensor
-> or a CSI-2 sensor connected through a bridge without any changes on 
-> userspace side because no additional processing or conversion involved, 
-> only deserialisation is m.
-> With the proposed set of patches, we succeeded to do so, the same 
-> non-regression tests campaign is passed with OV5640 parallel sensor 
-> (STM32MP1 evaluation board) or OV5640 CSI-2 sensor (Avenger96 board with 
-> D3 mezzanine board).
-> 
-> We don't want driver to be MC-centric, media controller support was 
-> required only to get access to the set of functions needed to link and
-> walk trough subdevices: media_create_pad_link(), 
-> media_entity_remote_pad(), etc...
-> 
-> We did a try with the v1 version of this patchset, delegating subdevices 
-> handling to userspace, by using media-controller, but this require to 
-> configure first the pipeline for each single change of resolution and 
-> format before making any capture using v4l2-ctl or GStreamer, quite 
-> heavy in fact.
-> Benjamin did another try using new libcamera codebase, but even for a 
-> basic capture use-case, negotiation code is quite tricky in order to
-> match the right subdevices bus format to the required V4L2 format.
+On Sun, 23 Jun 2019 at 21:36, Sai Prakash Ranjan
+<saiprakash.ranjan@codeaurora.org> wrote:
+>
+> Coresight platform support assumes that a missing "cpu" phandle
+> defaults to CPU0. This could be problematic and unnecessarily binds
+> components to CPU0, where they may not be. Let us make the DT binding
+> rules a bit stricter by not defaulting to CPU0 for missing "cpu"
+> affinity information.
+>
+> Also in coresight etm and cpu-debug drivers, abort the probe
+> for such cases.
+>
+> Signed-off-by: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>
+> ---
+>  .../bindings/arm/coresight-cpu-debug.txt         |  4 ++--
+>  .../devicetree/bindings/arm/coresight.txt        |  8 +++++---
+>  .../hwtracing/coresight/coresight-cpu-debug.c    |  3 +++
+>  drivers/hwtracing/coresight/coresight-etm3x.c    |  3 +++
+>  drivers/hwtracing/coresight/coresight-etm4x.c    |  3 +++
+>  drivers/hwtracing/coresight/coresight-platform.c | 16 ++++++++--------
+>  6 files changed, 24 insertions(+), 13 deletions(-)
+>
+> diff --git a/Documentation/devicetree/bindings/arm/coresight-cpu-debug.txt b/Documentation/devicetree/bindings/arm/coresight-cpu-debug.txt
+> index 298291211ea4..f1de3247c1b7 100644
+> --- a/Documentation/devicetree/bindings/arm/coresight-cpu-debug.txt
+> +++ b/Documentation/devicetree/bindings/arm/coresight-cpu-debug.txt
+> @@ -26,8 +26,8 @@ Required properties:
+>                 processor core is clocked by the internal CPU clock, so it
+>                 is enabled with CPU clock by default.
+>
+> -- cpu : the CPU phandle the debug module is affined to. When omitted
+> -       the module is considered to belong to CPU0.
+> +- cpu : the CPU phandle the debug module is affined to. Do not assume it
+> +        to default to CPU0 if omitted.
+>
+>  Optional properties:
+>
+> diff --git a/Documentation/devicetree/bindings/arm/coresight.txt b/Documentation/devicetree/bindings/arm/coresight.txt
+> index 8a88ddebc1a2..fcc3bacfd8bc 100644
+> --- a/Documentation/devicetree/bindings/arm/coresight.txt
+> +++ b/Documentation/devicetree/bindings/arm/coresight.txt
+> @@ -59,6 +59,11 @@ its hardware characteristcs.
+>
+>         * port or ports: see "Graph bindings for Coresight" below.
+>
+> +* Additional required property for Embedded Trace Macrocell (version 3.x and
+> +  version 4.x):
+> +       * cpu: the cpu phandle this ETM/PTM is affined to. Do not
+> +         assume it to default to CPU0 if omitted.
+> +
+>  * Additional required properties for System Trace Macrocells (STM):
+>         * reg: along with the physical base address and length of the register
+>           set as described above, another entry is required to describe the
+> @@ -87,9 +92,6 @@ its hardware characteristcs.
+>         * arm,cp14: must be present if the system accesses ETM/PTM management
+>           registers via co-processor 14.
+>
+> -       * cpu: the cpu phandle this ETM/PTM is affined to. When omitted the
+> -         source is considered to belong to CPU0.
+> -
+>  * Optional property for TMC:
+>
+>         * arm,buffer-size: size of contiguous buffer space for TMC ETR
+> diff --git a/drivers/hwtracing/coresight/coresight-cpu-debug.c b/drivers/hwtracing/coresight/coresight-cpu-debug.c
+> index 07a1367c733f..58bfd6319f65 100644
+> --- a/drivers/hwtracing/coresight/coresight-cpu-debug.c
+> +++ b/drivers/hwtracing/coresight/coresight-cpu-debug.c
+> @@ -579,6 +579,9 @@ static int debug_probe(struct amba_device *adev, const struct amba_id *id)
+>                 return -ENOMEM;
+>
+>         drvdata->cpu = coresight_get_cpu(dev);
+> +       if (drvdata->cpu < 0)
+> +               return drvdata->cpu;
+> +
+>         if (per_cpu(debug_drvdata, drvdata->cpu)) {
+>                 dev_err(dev, "CPU%d drvdata has already been initialized\n",
+>                         drvdata->cpu);
+> diff --git a/drivers/hwtracing/coresight/coresight-etm3x.c b/drivers/hwtracing/coresight/coresight-etm3x.c
+> index 225c2982e4fe..e2cb6873c3f2 100644
+> --- a/drivers/hwtracing/coresight/coresight-etm3x.c
+> +++ b/drivers/hwtracing/coresight/coresight-etm3x.c
+> @@ -816,6 +816,9 @@ static int etm_probe(struct amba_device *adev, const struct amba_id *id)
+>         }
+>
+>         drvdata->cpu = coresight_get_cpu(dev);
+> +       if (drvdata->cpu < 0)
+> +               return drvdata->cpu;
+> +
+>         desc.name  = devm_kasprintf(dev, GFP_KERNEL, "etm%d", drvdata->cpu);
+>         if (!desc.name)
+>                 return -ENOMEM;
+> diff --git a/drivers/hwtracing/coresight/coresight-etm4x.c b/drivers/hwtracing/coresight/coresight-etm4x.c
+> index 7fe266194ab5..7bcac8896fc1 100644
+> --- a/drivers/hwtracing/coresight/coresight-etm4x.c
+> +++ b/drivers/hwtracing/coresight/coresight-etm4x.c
+> @@ -1101,6 +1101,9 @@ static int etm4_probe(struct amba_device *adev, const struct amba_id *id)
+>         spin_lock_init(&drvdata->spinlock);
+>
+>         drvdata->cpu = coresight_get_cpu(dev);
+> +       if (drvdata->cpu < 0)
+> +               return drvdata->cpu;
+> +
+>         desc.name = devm_kasprintf(dev, GFP_KERNEL, "etm%d", drvdata->cpu);
+>         if (!desc.name)
+>                 return -ENOMEM;
+> diff --git a/drivers/hwtracing/coresight/coresight-platform.c b/drivers/hwtracing/coresight/coresight-platform.c
+> index 3c5ceda8db24..4990da2c13e9 100644
+> --- a/drivers/hwtracing/coresight/coresight-platform.c
+> +++ b/drivers/hwtracing/coresight/coresight-platform.c
+> @@ -159,16 +159,16 @@ static int of_coresight_get_cpu(struct device *dev)
+>         struct device_node *dn;
+>
+>         if (!dev->of_node)
+> -               return 0;
+> +               return -ENODEV;
+> +
+>         dn = of_parse_phandle(dev->of_node, "cpu", 0);
+> -       /* Affinity defaults to CPU0 */
+>         if (!dn)
+> -               return 0;
+> +               return -ENODEV;
+> +
+>         cpu = of_cpu_node_to_id(dn);
+>         of_node_put(dn);
+>
+> -       /* Affinity to CPU0 if no cpu nodes are found */
+> -       return (cpu < 0) ? 0 : cpu;
+> +       return cpu;
+>  }
 
-Why would it be trickier in userspace than in the kernel ? The V4L2
-subdev operations are more or less expose verbatim through the subdev
-userspace API.
+Function of_coresight_get_cpu() needs to return -ENODEV rather than 0
+when !CONFIG_OF
 
-> Moreover, it was not clear how to call libcamera library prior to any
-> v4l2-ctl or GStreamer calls.
+>
+>  /*
+> @@ -734,14 +734,14 @@ static int acpi_coresight_get_cpu(struct device *dev)
+>         struct acpi_device *adev = ACPI_COMPANION(dev);
+>
+>         if (!adev)
+> -               return 0;
+> +               return -ENODEV;
+>         status = acpi_get_parent(adev->handle, &cpu_handle);
+>         if (ACPI_FAILURE(status))
+> -               return 0;
+> +               return -ENODEV;
+>
+>         cpu = acpi_handle_to_logical_cpuid(cpu_handle);
+>         if (cpu >= nr_cpu_ids)
+> -               return 0;
+> +               return -ENODEV;
+>         return cpu;
+>  }
+>
 
-libcamera isn't meant to be called before v4l2-ctl or GStreamer.
-Applications are supposed to be based directly on libcamera, or, for
-existing userspace APIs such as V4L2 or GStreamer, compatibility layers
-are supposed to be developed. For V4L2 it will take the form of a
-LD_PRELOAD-able .so that will intercept the V4L2 API calls, making most
-V4L2 applications work with libcamera unmodified (I said most as 100%
-compatibility will likely not be achievable). For GStreamer it will take
-the form of a GStreamer libcamera element that will replace the V4L2
-source element.
+Same as above, but for !CONFIG_ACPI
 
-> Adding 100 lines of code into DCMI to well configure resolution and 
-> formats fixes the point and allows us to keep backward compatibility
-> as per our objective, so it seems far more reasonable to us to do so
-> even if DCMI controls more than the subdevice it is connected to.
-> Moreover we found similar code in other video interfaces code like 
-> qcom/camss/camss.c and xilinx/xilinx-dma.c, controlling the whole 
-> pipeline, so it seems to us quite natural to go this way.
+Thanks,
+Mathieu
 
-I can't comment on the qcom-camss driver as I'm not aware of its
-internals, but where have you found such code in the Xilinx V4L2 drivers
-?
-
-> To summarize, if we cannot do the negotiation within kernel, delegating
-> this to userspace implies far more complexity and breaks compatibility
-> with existing applications without adding new functionalities.
-> 
-> Having all that in mind, what should be reconsidered in your opinion 
-> Sakari ? Do you have some alternatives ?
-
-First of all, let's note that your patch series performs to related but
-still independent changes: it enables MC support, *and* enables the V4L2
-subdev userspace API. The former is clearly needed and will allow you to
-use the MC API internally in the kernel, simplifying pipeline traversal.
-The latter then enables the V4L2 subdev userspace API, moving the
-pipeline configuration responsibility to userspace.
-
-You could in theory move to the MC API inside the kernel, without
-enabling support for the V4L2 subdev userspace API. Configuring the
-pipeline and propagating the formats would then be the responsibility of
-the kernel driver. However, this will limit your driver to the
-following:
-
-- Fully linear pipelines only (single sensor)
-- No support for controls implemented by multiple entities in the
-  pipeline (for instance controls that would exist in both the sensor
-  and the bridge, such as gains)
-- No proper support for scaling configuration if multiple components in
-  the pipeline can scale
-
-Are you willing to set those limitations in stone and give up on
-supporting those features ?
-
-> On 6/20/19 6:17 PM, Sakari Ailus wrote:
-> > On Tue, Jun 11, 2019 at 10:48:29AM +0200, Hugues Fruchet wrote:
-> >> This patch serie allows to connect non-parallel camera sensor to
-> >> DCMI thanks to a bridge connected in between such as STMIPID02 [1].
-> >>
-> >> Media controller support is introduced first, then support of
-> >> several sub-devices within pipeline with dynamic linking
-> >> between them.
-> >> In order to keep backward compatibility with applications
-> >> relying on V4L2 interface only, format set on video node
-> >> is propagated to all sub-devices connected to camera interface.
-> >>
-> >> [1] https://www.spinics.net/lists/devicetree/msg278002.html
-> > 
-> > General notes on the set, not related to any single patch:
-> > 
-> > - Where's the sub-device representing the bridge itself?
-> > 
-> > - As the driver becomes MC-centric, crop configuration takes place through
-> >    V4L2 sub-device interface, not through the video device node.
-> > 
-> > - Same goes for accessing sensor configuration: it does not take place
-> >    through video node but through the sub-device nodes.
-> > 
-
--- 
-Regards,
-
-Laurent Pinchart
+> --
+> QUALCOMM INDIA, on behalf of Qualcomm Innovation Center, Inc. is a member
+> of Code Aurora Forum, hosted by The Linux Foundation
+>
 
 _______________________________________________
 linux-arm-kernel mailing list
