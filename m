@@ -2,83 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2933E56BB0
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 26 Jun 2019 16:17:21 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 05D8156BB9
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 26 Jun 2019 16:18:04 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=9QjjjJBhVvxEOusCEBcXtmTTTScCP+z68IpwtETfuu0=; b=mVr5W4+vucOtRUJTPZ/W264O71
-	SCcoyOVjOpy56BzNjp33Rqmp7GOdM2Dkw48bvJsa2tlwGCubnvumc6ShJTayBPiQKdGZcst1qy+kB
-	agZ/yXqN+VKucU1GLZiXYh1ATpfqXQ8MMaVklk5jODxTDQbZA+/ZssBWEboZuId7IkMAWszXs9x5G
-	IVtbM4s07qIy+io3NGmG4eSRIITbbDpgQyicmj/E3/8HU+Z+/2Nc0u/EU1q4+kQokBIN55B2efri+
-	B6loMh3AK76GA6fm0XP9E+XYqyI0k4fWZNeSqwKve1qCcqq2T9dMVdo2sezXpWRGmCh8rM9FqK0wD
-	biREXydg==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=8L9u1Y1BDk7HPd/89t/FZgGnJtK/8jRD7iat6RNrkl4=; b=lhnEVdwarATgKp
+	gif53sVwCE4mo1ov2roFAAmCyhs3AO8XJvf0Tw++xKiXSsptsV0N07m/J6LUXxv1gpLIpd4cguDLZ
+	78zNWgjEibQHDkVygGi5J8rnZZTUX7fcH1ezGeFpQluaHX3YOHMHjQ6RUuDfMkG+TVP3NGVUpuw+K
+	NkJnAWq73S/LA9Jpzqi9l+8VeL8H+pmBIwlmG3xtGPSpAUjX/T0XiOOY+eak6FKgURggv1RWGu9Ks
+	9iczlD93HhnDEL3DlGjk1qHSz/NI5ugGpOO6pgNPOzos8efmwN/1r1wIrzApRnOzb5TNw1mwY3wOv
+	k4OUIEoI05GUbzhXB39Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hg8jf-0006rc-8V; Wed, 26 Jun 2019 14:17:19 +0000
-Received: from mail-lj1-x241.google.com ([2a00:1450:4864:20::241])
+	id 1hg8kI-0007KB-N8; Wed, 26 Jun 2019 14:17:58 +0000
+Received: from mx07-00178001.pphosted.com ([62.209.51.94])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hg8gp-00040Y-Rq
- for linux-arm-kernel@lists.infradead.org; Wed, 26 Jun 2019 14:14:25 +0000
-Received: by mail-lj1-x241.google.com with SMTP id m23so2356754lje.12
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 26 Jun 2019 07:14:22 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=disSROzqfUTYpKBNgu+W39ygIWnnZb5HbJrhGeUkuwI=;
- b=BZj8H7g+wSJU3LS7Okj/+Un4KL2iGuLBDqcdcEdVq5R5tg43lDh8RHDvP8Sjk1tgAg
- EGPnu5JOWBCXeBM4+Fa6IUVYWxIowJrKn+Y1CXKRDUpeDChs/B1CkGmVDXZakNdU3NIG
- igwQWHWYjAOErhpFJF7lMMWIDcPk11H10UoxW7atwM3x2CyXcqzaCpndkP1qQZiOcke+
- uUtA5tj/61A5V/YvQ12mM2yVqkYxtSN5JST2LKGOf+HX7KnWw5ycCmFylwdhAuLPEpQ8
- WrlIQTH3X3fJ924sImugV+iwxzEoqwZ7m82jaLI9XAQd/ZXS7I+8A/0zCvFAhXHSelQ9
- ncdw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references;
- bh=disSROzqfUTYpKBNgu+W39ygIWnnZb5HbJrhGeUkuwI=;
- b=IhiZFnjBW3muPpMWoEfdDAJuraxthZ6ShzqMB0AkmbHUVC/QZ4stD7xq5/GPbIKijy
- k4izOdvS/9gE8IzVor4IxF5+ZVFENMeMQGYUKDYWKGp//KAD9KEbasAbIxW0AdKBbc2o
- LslBykXZmk3/oxZTMlikj80ZKKIhOOKzALR3FdBpmKh3+IVgUBH6HtPLv9Gow7qwkvO9
- 5LZL5RNSXsBFiI9QNJ+l251ZX0PnLfD7Qr1un+dm0fv8h/IdzU3kIG6BuU0RER2rkbLl
- RhLWHq7IeWI0Qf+exmnqAXU/wA1aIaPjmBLCT091a6CSioKuQyxdMY4z2KfacVgU9iPi
- NYaQ==
-X-Gm-Message-State: APjAAAWZo3BkGYSLHFMe8FoEBz/q41wP7Gwq1ck1dQKiJv75qluPx3sf
- RKaMwadBeD7YwRzaURMFEqM=
-X-Google-Smtp-Source: APXvYqzQ3GQSF/ngOsv3mi41ox5k13SoEkk3vZAxzYGrp0VMn7mMceHw0FTkyiuSkMxqLHYFdZ3q9Q==
-X-Received: by 2002:a2e:988b:: with SMTP id b11mr3080348ljj.110.1561558461628; 
- Wed, 26 Jun 2019 07:14:21 -0700 (PDT)
-Received: from osv.localdomain ([89.175.180.246])
- by smtp.gmail.com with ESMTPSA id 25sm2863825ljn.62.2019.06.26.07.14.20
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-SHA bits=128/128);
- Wed, 26 Jun 2019 07:14:21 -0700 (PDT)
-From: Sergey Organov <sorganov@gmail.com>
-To: Sascha Hauer <s.hauer@pengutronix.de>
-Subject: [PATCH v2 7/7] serial: imx: get rid of imx_uart_rts_auto()
-Date: Wed, 26 Jun 2019 17:11:33 +0300
-Message-Id: <1561558293-7683-8-git-send-email-sorganov@gmail.com>
-X-Mailer: git-send-email 2.1.4
-In-Reply-To: <1561558293-7683-1-git-send-email-sorganov@gmail.com>
-References: <20190614072801.3187-1-s.hauer@pengutronix.de>
- <1561558293-7683-1-git-send-email-sorganov@gmail.com>
+ id 1hg8hR-0004Pf-I8
+ for linux-arm-kernel@lists.infradead.org; Wed, 26 Jun 2019 14:15:04 +0000
+Received: from pps.filterd (m0046668.ppops.net [127.0.0.1])
+ by mx07-00178001.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id
+ x5QE6Sop016102; Wed, 26 Jun 2019 16:14:56 +0200
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
+ h=subject : to : cc :
+ references : from : message-id : date : mime-version : in-reply-to :
+ content-type : content-transfer-encoding; s=STMicroelectronics;
+ bh=WC3M5mQ7yREfwEdPV7kKxdDvvWYQOrxeml4zeAizf3M=;
+ b=M9CdTU8a0eBLpab+3SnE9feWBOzkHJz2OpdgAtiDVRsmMHTMNeiieG0WPOZBMIuYFyCL
+ q6/wC7J7y56YYd0k6d3j9YGQeTZJT1C4lJ6NmFjeJfSV5QMi/5BM5kJNHydg3TjkXoCq
+ BDmV5tw2+fUgj3bYHtiwLPpKanLNjNJSIshsjY6wckQNSWqkx9rYyZ6eTamZDhi7sORk
+ 1CEC7Nx8Qqlw9KR3G9NLe5Sj9hmcigDw/v4/KjTNeMTrLSfH4Mqcaxd4yv9SDROw13nF
+ 4uLWLOMc+f6W+ReEtzGIdSuk/2slqfP0TSWIaM+bQBx9dX3DjDr1xPG9kCTiSRyuxVZ0 Hg== 
+Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
+ by mx07-00178001.pphosted.com with ESMTP id 2t9d2ggnvf-1
+ (version=TLSv1 cipher=ECDHE-RSA-AES256-SHA bits=256 verify=NOT);
+ Wed, 26 Jun 2019 16:14:56 +0200
+Received: from zeta.dmz-eu.st.com (zeta.dmz-eu.st.com [164.129.230.9])
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id EB3E038;
+ Wed, 26 Jun 2019 14:14:54 +0000 (GMT)
+Received: from Webmail-eu.st.com (sfhdag5node2.st.com [10.75.127.14])
+ by zeta.dmz-eu.st.com (STMicroelectronics) with ESMTP id BA4712A63;
+ Wed, 26 Jun 2019 14:14:54 +0000 (GMT)
+Received: from [10.48.1.93] (10.75.127.51) by SFHDAG5NODE2.st.com
+ (10.75.127.14) with Microsoft SMTP Server (TLS) id 15.0.1347.2; Wed, 26 Jun
+ 2019 16:14:53 +0200
+Subject: Re: [PATCH] i2c: i2c-stm32f7: Add I2C_SMBUS_I2C_BLOCK_DATA support
+To: Wolfram Sang <wsa@the-dreams.de>, Fabrice Gasnier <fabrice.gasnier@st.com>
+References: <1559654451-26612-1-git-send-email-fabrice.gasnier@st.com>
+ <20190626134535.GN801@ninjato>
+From: Pierre Yves MORDRET <pierre-yves.mordret@st.com>
+Message-ID: <762d7038-62e5-4192-e471-e18194e528f9@st.com>
+Date: Wed, 26 Jun 2019 16:14:52 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.7.1
+MIME-Version: 1.0
+In-Reply-To: <20190626134535.GN801@ninjato>
+Content-Language: en-US
+X-Originating-IP: [10.75.127.51]
+X-ClientProxiedBy: SFHDAG8NODE1.st.com (10.75.127.22) To SFHDAG5NODE2.st.com
+ (10.75.127.14)
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:, ,
+ definitions=2019-06-26_07:, , signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190626_071423_931282_FE60C212 
-X-CRM114-Status: GOOD (  12.05  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190626_071502_315740_A8B2998C 
+X-CRM114-Status: GOOD (  18.21  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:241 listed in]
- [list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [62.209.51.94 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (sorganov[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -87,6 +85,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
+ 0.0 KHOP_DYNAMIC           Relay looks like a dynamic address
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -98,62 +97,69 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Pengutronix Kernel Team <kernel@pengutronix.de>,
- NXP Linux Team <linux-imx@nxp.com>, linux-arm-kernel@lists.infradead.org,
- linux-serial@vger.kernel.org,
- =?UTF-8?q?Uwe=20Kleine-K=C3=B6nig?= <u.kleine-koenig@pengutronix.de>
-MIME-Version: 1.0
+Cc: alexandre.torgue@st.com, linux-kernel@vger.kernel.org,
+ linux-i2c@vger.kernel.org, mcoquelin.stm32@gmail.com,
+ linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Called in only one place, for RS232, it only obscures things, as it
-doesn't go well with 2 similar named functions,
-imx_uart_rts_inactive() and imx_uart_rts_active(), that both are
-RS485-specific.
+Hi
 
-Reviewed-by: Sascha Hauer <s.hauer@pengutronix.de>
-Tested-by: Sascha Hauer <s.hauer@pengutronix.de>
-Signed-off-by: Sergey Organov <sorganov@gmail.com>
----
- drivers/tty/serial/imx.c | 13 ++++---------
- 1 file changed, 4 insertions(+), 9 deletions(-)
+I looks good to me
 
-diff --git a/drivers/tty/serial/imx.c b/drivers/tty/serial/imx.c
-index 171347d..a5e80a0 100644
---- a/drivers/tty/serial/imx.c
-+++ b/drivers/tty/serial/imx.c
-@@ -402,13 +402,6 @@ static void imx_uart_rts_inactive(struct imx_port *sport, u32 *ucr2)
- 	mctrl_gpio_set(sport->gpios, sport->port.mctrl);
- }
- 
--/* called with port.lock taken and irqs caller dependent */
--static void imx_uart_rts_auto(struct imx_port *sport, u32 *ucr2)
--{
--	if (*ucr2 & UCR2_CTS)
--		*ucr2 |= UCR2_CTSC;
--}
--
- /* called with port.lock taken and irqs off */
- static void imx_uart_start_rx(struct uart_port *port)
- {
-@@ -1598,8 +1591,10 @@ imx_uart_set_termios(struct uart_port *port, struct ktermios *termios,
- 		else
- 			imx_uart_rts_inactive(sport, &ucr2);
- 
--	} else if (termios->c_cflag & CRTSCTS)
--		imx_uart_rts_auto(sport, &ucr2);
-+	} else if (termios->c_cflag & CRTSCTS) {
-+		if (ucr2 & UCR2_CTS)
-+			ucr2 |= UCR2_CTSC;
-+	}
- 
- 	if (termios->c_cflag & CRTSCTS)
- 		ucr2 &= ~UCR2_IRTS;
--- 
-2.10.0.1.g57b01a3
+Reviewed-by: Pierre-Yves MORDRET <pierre-yves.mordret@st.com>
 
+Thx
+
+On 6/26/19 3:45 PM, Wolfram Sang wrote:
+> On Tue, Jun 04, 2019 at 03:20:51PM +0200, Fabrice Gasnier wrote:
+>> This patch adds the support of I2C_SMBUS_I2C_BLOCK_DATA transaction type
+>> for the stm32f7 SMBUS Controller.
+>> Use emulated I2C_SMBUS_I2C_BLOCK_DATA transactions as there is no specific
+>> hardware in STM32 I2C to manage this (e.g. like no need for PEC here).
+>> Emulated transfer will fall back calling i2c transfer method where there's
+>> already support for DMAs for example.
+>> So, use the I2C_FUNC_SMBUS_I2C_BLOCK in stm32f7_i2c_func(), and rely on
+>> emulated transfer by returning -EOPNOTSUPP in the smbus_xfer() routine
+>> for such a case.
+>>
+>> Signed-off-by: Fabrice Gasnier <fabrice.gasnier@st.com>
+> 
+> Maintainers?
+> 
+>> ---
+>>  drivers/i2c/busses/i2c-stm32f7.c | 6 +++++-
+>>  1 file changed, 5 insertions(+), 1 deletion(-)
+>>
+>> diff --git a/drivers/i2c/busses/i2c-stm32f7.c b/drivers/i2c/busses/i2c-stm32f7.c
+>> index 48337be..68a751e 100644
+>> --- a/drivers/i2c/busses/i2c-stm32f7.c
+>> +++ b/drivers/i2c/busses/i2c-stm32f7.c
+>> @@ -953,6 +953,9 @@ static int stm32f7_i2c_smbus_xfer_msg(struct stm32f7_i2c_dev *i2c_dev,
+>>  		cr2 &= ~STM32F7_I2C_CR2_RD_WRN;
+>>  		f7_msg->read_write = I2C_SMBUS_READ;
+>>  		break;
+>> +	case I2C_SMBUS_I2C_BLOCK_DATA:
+>> +		/* Rely on emulated i2c transfer (through master_xfer) */
+>> +		return -EOPNOTSUPP;
+>>  	default:
+>>  		dev_err(dev, "Unsupported smbus protocol %d\n", f7_msg->size);
+>>  		return -EOPNOTSUPP;
+>> @@ -1803,7 +1806,8 @@ static u32 stm32f7_i2c_func(struct i2c_adapter *adap)
+>>  		I2C_FUNC_SMBUS_QUICK | I2C_FUNC_SMBUS_BYTE |
+>>  		I2C_FUNC_SMBUS_BYTE_DATA | I2C_FUNC_SMBUS_WORD_DATA |
+>>  		I2C_FUNC_SMBUS_BLOCK_DATA | I2C_FUNC_SMBUS_BLOCK_PROC_CALL |
+>> -		I2C_FUNC_SMBUS_PROC_CALL | I2C_FUNC_SMBUS_PEC;
+>> +		I2C_FUNC_SMBUS_PROC_CALL | I2C_FUNC_SMBUS_PEC |
+>> +		I2C_FUNC_SMBUS_I2C_BLOCK;
+>>  }
+>>  
+>>  static struct i2c_algorithm stm32f7_i2c_algo = {
+>> -- 
+>> 2.7.4
+>>
 
 _______________________________________________
 linux-arm-kernel mailing list
