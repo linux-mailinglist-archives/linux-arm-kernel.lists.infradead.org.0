@@ -2,85 +2,94 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6323856805
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 26 Jun 2019 13:54:23 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 76D9656866
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 26 Jun 2019 14:14:48 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=PhCCsWUX2qPgcCV2wX6n0omqTMGm7UXUklx8b1gFrJM=; b=SxaQHq15z/nfC+
-	GG4qBx+CcgvMLo+AUIcAHoB4KjquBdCwJ2NGCJE1+6m1QcbbRL66ZHEMPB+JGPHb/WzX/q2mpbgjL
-	23eIcyD933A/CnHlexkuFY+3nGWu1NRXIJnXQ8eMpYI/QH/9ojefkdiOiflDc/1S1jD+6EyhAkjMT
-	uxFXlYJFMIDCMryiFiAfRlr+AZrQC4QkJp4cGnCWM5ZkQNuRpOBPal3prEAGrlt1CWLvSsbujIYYf
-	QRV4kZf5Ax8VLNsIPOD8rSXgj9rZwZCkqDQ8gTIEoA4kazm64zovuLqa61J215OSVaPAnUrFWvdJh
-	hkhBRtc7RgaAJjYWL2Yg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:References:
+	To:Subject:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=sKzwdr296cIzrjh1OEXGpg+YrRldTrNXPj84ULqN4SU=; b=W1xdIb0HbIPJRGzjKUno+SWI1
+	bDBwZirt4aJGcCG5qS6K2GAF3cieG7FdWeKjTcU+Ipfjv2egu3o9zLZua+KbdXAZjAHqjuX8irnrz
+	LEUitTXdpi/Nn5ohPlajV6cnFKdsNYzoJ1oYGJ3/pGS/7sAD1S1gUeZJCAiPe7tJvu0vhcuj4PEGb
+	ri674LsWAmQjl6Vbh4zPGDtQ1mz+5i7gC/Ih3BZWl5uL1ydGQk4RFCwfEJOZ9xi7dfXkSwXB8bYA0
+	QeFuhfzJb6t2kG1XoU9zViYfOfWpZ9iabxfuhIKGwkWx5BlosnLUt8JIEENz+JGc9m+s4kT554V3t
+	PXzpv0K7A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hg6VH-0004v3-Eg; Wed, 26 Jun 2019 11:54:19 +0000
-Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
+	id 1hg6oz-0003eW-Cf; Wed, 26 Jun 2019 12:14:42 +0000
+Received: from mail-pg1-x543.google.com ([2607:f8b0:4864:20::543])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hg6Uz-0004ty-VQ
- for linux-arm-kernel@lists.infradead.org; Wed, 26 Jun 2019 11:54:03 +0000
-Received: by mail-wr1-x443.google.com with SMTP id n4so2352410wrw.13
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 26 Jun 2019 04:54:01 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:content-transfer-encoding:in-reply-to
- :user-agent; bh=T1u8/nO2ihXA3qg4xnmoP2DlkB1dnveETSZSrMNRfSE=;
- b=oEEPl7PGp2yDGgQlpMIT9CDuA8EaBW2aDv4LKDx3jzAasANl+MgbubGI8TDqHbuRNy
- XfivoVJgBZ1Bep/dM5tMDxCu2yliu0Ff0UxJDZrHJ4xRmQYRga11k/qthaUoD2zgt2bC
- ceMy+Db8M+Lmut5drD8EUrPFy2Rb+kwGy2B3BV/YYU2egpNRi5myDVorKaXRBrEg62Su
- vPCNQoLMWtVv6nTfJseJmQR2w811Z+fiWY6MWZ7hM09+xLVsub4wmhCAtKivMnIUTkA6
- YRJL0JX+NuYiWCOy4/S6xgcC7Lt7BD/Apc6uiHhXtC36D2dvKZJRGAtc/LdEhtgmdIYj
- eioA==
+ id 1hg6oX-0003bf-MG; Wed, 26 Jun 2019 12:14:15 +0000
+Received: by mail-pg1-x543.google.com with SMTP id s27so1155715pgl.2;
+ Wed, 26 Jun 2019 05:14:13 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:subject:to:cc:references:message-id:date:user-agent
+ :mime-version:in-reply-to:content-language:content-transfer-encoding;
+ bh=nE8JZHrKvZIjpzwoCOV4W+kZMdzp32CH3OhSv9DzAQA=;
+ b=FkpiqxEmc1WKkr3sirer29jM7xKhdHyKj0fJ2SNPATI1XoRrgSCqtqr9u1BKAC5cXW
+ YFlgxc/7PYtwZNZTxfldcM14QmtYCm5V+lOlEqpU9Hb19P2FtbAt3wmSsrs4kBJ6AZQF
+ xNcQZqQR1b7/EuDIIVJO/0cj0Z7SHlyBVQdwSv7gbLf6RapeCmFI0xnvOW49BJh5bLeI
+ RS4umvJZCdtSFtR5EIM67n/KRpXkwZYMwHaqEykhtlh1F41v969pTFQAuq90Bf8RkXxB
+ sI6z8boSKMD/WDlvoH0rirK0/QKtqFKmzHexh6m20aylIOt7MKN0jHGhTlGHhSuKk+Hl
+ h75A==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:content-transfer-encoding
- :in-reply-to:user-agent;
- bh=T1u8/nO2ihXA3qg4xnmoP2DlkB1dnveETSZSrMNRfSE=;
- b=DLTkyJWiKO4XiwBghjUAMzRfISTWzf6rOeJvS/5AAlJxJ1QbYwjxypciSFDIKUTMQc
- 2BQOblNNcm3a2tcKiUTImmD79lpSQRtaWzS1VzA/ofUlGecoG7eIaqZOjkN3w/VgSUaD
- nGJ+pmHsJITbmmpZeGVsS3F1T815PkFU/rGnbcHlXukekzumw1G5oudGp4HOVXY+Dk2K
- fGDTl8ECdQnTlE/Jh/2fAIuiJ0OCdobV0oBu3sELfmlgcPWbIs1BhV9oeAQ43C2Nz8ta
- c4Mr/qO1iyWNo+G2bjhr1yKvCLN6EGccNCtuqP1dwTU3DQuUDuvgbSJn+Vy12I4ybE0P
- Uu/g==
-X-Gm-Message-State: APjAAAXFjQw5ClEKfo4kgiyrIcEGcq5sd0xWhfWV12UQE5eKn+/ooXNV
- 0sVxgRUgNdGuVLjaCWs0Qc4anw==
-X-Google-Smtp-Source: APXvYqwvxy0BQwbcO7zmMMj/LzCToTOsmyf+YRoJ7BmmuJFGLD3NT2IC/y1kE2vMhrdysj0lBqOPpw==
-X-Received: by 2002:adf:fc45:: with SMTP id e5mr3506614wrs.240.1561550040713; 
- Wed, 26 Jun 2019 04:54:00 -0700 (PDT)
-Received: from dell ([2.27.35.164])
- by smtp.gmail.com with ESMTPSA id f12sm36496470wrg.5.2019.06.26.04.53.59
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Wed, 26 Jun 2019 04:54:00 -0700 (PDT)
-Date: Wed, 26 Jun 2019 12:53:58 +0100
-From: Lee Jones <lee.jones@linaro.org>
-To: Tony Xie <tony.xie@rock-chips.com>
-Subject: Re: [PATCH v10 1/6] mfd: rk808: remove the id_table
-Message-ID: <20190626115358.GS21119@dell>
-References: <20190621103258.8154-1-tony.xie@rock-chips.com>
- <20190621103258.8154-2-tony.xie@rock-chips.com>
+ h=x-gm-message-state:from:subject:to:cc:references:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=nE8JZHrKvZIjpzwoCOV4W+kZMdzp32CH3OhSv9DzAQA=;
+ b=jMlAZIFP7P7EIjD9roK/7PVw7vSlzDyxFJbUVzEcbEfDrw5XFWr0g/UOHMPmhcufwY
+ VZ+QiprbYPZd7FgxKHkIlLdNJJdYrNWQ3PFPunH2DMFLgam8eqY8J1f5RT7qlxK2jvsG
+ bvwWf1y40bTi9SVVAgLiuRqMD5yqSsEVKS7EAmdaDRhe2hHy++zvVtHDkgQ+Fzr6zOCZ
+ FjHIjaDnc3zkLmBXhyzZoXT6yLlFz6HhC+cRC4NW/qJiW9bU/wr161yxOueKFUFCn4gr
+ aISwQ+hGakO1seNXR54cnGEbvFV/pL7GZ55czEHwE0zFrOFaI9n6K5r3N+O/M0zrW93W
+ VSPg==
+X-Gm-Message-State: APjAAAURO2kv+D5zeXBY9g4Z0bE0Efcj4mPDzOxV7gn4vQRABFbPAuNp
+ V2XhY9+PkngTmUg4D5TOcXQ02mo53nQ=
+X-Google-Smtp-Source: APXvYqyl/rcV1NaUbh6KN9ZCyayU/jSJPecs/2fph6Nkb+9gPHbGA+Bn5bVK4tmxcfI91FmEViay7g==
+X-Received: by 2002:a17:90a:214f:: with SMTP id
+ a73mr4338153pje.21.1561551252708; 
+ Wed, 26 Jun 2019 05:14:12 -0700 (PDT)
+Received: from [10.44.0.192] ([103.48.210.53])
+ by smtp.gmail.com with ESMTPSA id x128sm30778516pfd.17.2019.06.26.05.14.07
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Wed, 26 Jun 2019 05:14:12 -0700 (PDT)
+From: Greg Ungerer <gregungerer00@gmail.com>
+X-Google-Original-From: Greg Ungerer <gerg@linux-m68k.org>
+Subject: Re: [PATCH 08/17] binfmt_flat: consolidate two version of
+ flat_v2_reloc_t
+To: Geert Uytterhoeven <geert@linux-m68k.org>
+References: <20190613070903.17214-1-hch@lst.de>
+ <20190613070903.17214-9-hch@lst.de>
+ <20190625222941.GA1343@ZenIV.linux.org.uk>
+ <f8a61a8e-0469-a9d6-e0a1-01a4619d7363@linux-m68k.org>
+ <CAMuHMdXkMh+pOqPNavmYAhKXTVT12nC5gKc10CJj_CXME+uhWQ@mail.gmail.com>
+Message-ID: <a2567a04-ac83-408f-51a2-53d23fcc0c36@linux-m68k.org>
+Date: Wed, 26 Jun 2019 22:14:06 +1000
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.7.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190621103258.8154-2-tony.xie@rock-chips.com>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+In-Reply-To: <CAMuHMdXkMh+pOqPNavmYAhKXTVT12nC5gKc10CJj_CXME+uhWQ@mail.gmail.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190626_045402_040924_9990A55B 
-X-CRM114-Status: GOOD (  13.79  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190626_051413_751431_5DDA3A86 
+X-CRM114-Status: GOOD (  16.92  )
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:443 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:543 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (gregungerer00[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (gregungerer00[at]gmail.com)
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -99,39 +108,103 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, a.zummo@towertech.it, alexandre.belloni@bootlin.com,
- huangtao@rock-chips.com, heiko@sntech.de, devicetree@vger.kernel.org,
- sboyd@kernel.org, zhangqing@rock-chips.com, linux-kernel@vger.kernel.org,
- robh+dt@kernel.org, xsf@rock-chips.com, linux-rockchip@lists.infradead.org,
- broonie@kernel.org, chenjh@rock-chips.com, linux-clk@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-rtc@vger.kernel.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: "moderated list:H8/300 ARCHITECTURE"
+ <uclinux-h8-devel@lists.sourceforge.jp>, linux-xtensa@linux-xtensa.org,
+ Michal Simek <monstr@monstr.eu>, linux-c6x-dev@linux-c6x.org,
+ Linux-sh list <linux-sh@vger.kernel.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ linux-m68k <linux-m68k@lists.linux-m68k.org>,
+ Al Viro <viro@zeniv.linux.org.uk>, linux-riscv@lists.infradead.org,
+ Christoph Hellwig <hch@lst.de>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gRnJpLCAyMSBKdW4gMjAxOSwgVG9ueSBYaWUgd3JvdGU6Cgo+IFJlbW92ZSB0aGUgaWRfdGFi
-bGUgYmVjYXVzZSBpdCdzIG5vdCB1c2VkLgo+IAo+IFNpZ25lZC1vZmYtYnk6IFRvbnkgWGllIDx0
-b255LnhpZUByb2NrLWNoaXBzLmNvbT4KPiAtLS0KPiAgZHJpdmVycy9tZmQvcms4MDguYyB8IDkg
-LS0tLS0tLS0tCj4gIDEgZmlsZSBjaGFuZ2VkLCA5IGRlbGV0aW9ucygtKQoKQWxzbywgdGhpcyBw
-YXRjaCBhbHJlYWR5IGFwcGVhcnMgdG8gYmUgYXBwbGllZC4KCk9uY2UgcGF0Y2hlcyBhcmUgdGFr
-ZW4gZnJvbSB0aGUgc2V0LCB5b3Ugc2hvdWxkIGF2b2lkIHJlc2VuZGluZyB0aGVtLgoKPiBkaWZm
-IC0tZ2l0IGEvZHJpdmVycy9tZmQvcms4MDguYyBiL2RyaXZlcnMvbWZkL3JrODA4LmMKPiBpbmRl
-eCAyMTZmYmY2YWRlYzkuLjk0Mzc3NzgyZDIwOCAxMDA2NDQKPiAtLS0gYS9kcml2ZXJzL21mZC9y
-azgwOC5jCj4gKysrIGIvZHJpdmVycy9tZmQvcms4MDguYwo+IEBAIC01NjgsMTQgKzU2OCw2IEBA
-IHN0YXRpYyBpbnQgcms4MDhfcmVtb3ZlKHN0cnVjdCBpMmNfY2xpZW50ICpjbGllbnQpCj4gIAly
-ZXR1cm4gMDsKPiAgfQo+ICAKPiAtc3RhdGljIGNvbnN0IHN0cnVjdCBpMmNfZGV2aWNlX2lkIHJr
-ODA4X2lkc1tdID0gewo+IC0JeyAicms4MDUiIH0sCj4gLQl7ICJyazgwOCIgfSwKPiAtCXsgInJr
-ODE4IiB9LAo+IC0JeyB9LAo+IC19Owo+IC1NT0RVTEVfREVWSUNFX1RBQkxFKGkyYywgcms4MDhf
-aWRzKTsKPiAtCj4gIHN0YXRpYyBzdHJ1Y3QgaTJjX2RyaXZlciByazgwOF9pMmNfZHJpdmVyID0g
-ewo+ICAJLmRyaXZlciA9IHsKPiAgCQkubmFtZSA9ICJyazgwOCIsCj4gQEAgLTU4Myw3ICs1NzUs
-NiBAQCBzdGF0aWMgc3RydWN0IGkyY19kcml2ZXIgcms4MDhfaTJjX2RyaXZlciA9IHsKPiAgCX0s
-Cj4gIAkucHJvYmUgICAgPSByazgwOF9wcm9iZSwKPiAgCS5yZW1vdmUgICA9IHJrODA4X3JlbW92
-ZSwKPiAtCS5pZF90YWJsZSA9IHJrODA4X2lkcywKPiAgfTsKPiAgCj4gIG1vZHVsZV9pMmNfZHJp
-dmVyKHJrODA4X2kyY19kcml2ZXIpOwoKLS0gCkxlZSBKb25lcyBb5p2O55C85pavXQpMaW5hcm8g
-U2VydmljZXMgVGVjaG5pY2FsIExlYWQKTGluYXJvLm9yZyDilIIgT3BlbiBzb3VyY2Ugc29mdHdh
-cmUgZm9yIEFSTSBTb0NzCkZvbGxvdyBMaW5hcm86IEZhY2Vib29rIHwgVHdpdHRlciB8IEJsb2cK
-Cl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFy
-bS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9y
-ZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1r
-ZXJuZWwK
+Hi Geert,
+
+On 26/6/19 6:18 pm, Geert Uytterhoeven wrote:
+> Hi Greg,
+> 
+> On Wed, Jun 26, 2019 at 9:23 AM Greg Ungerer <gerg@linux-m68k.org> wrote:
+>> On 26/6/19 8:29 am, Al Viro wrote:
+>>> On Thu, Jun 13, 2019 at 09:08:54AM +0200, Christoph Hellwig wrote:
+>>>> Two branches of the ifdef maze actually have the same content, so merge
+>>>> them.
+>>>>
+>>>> Signed-off-by: Christoph Hellwig <hch@lst.de>
+>>>> ---
+>>>>    include/linux/flat.h | 6 ++----
+>>>>    1 file changed, 2 insertions(+), 4 deletions(-)
+>>>>
+>>>> diff --git a/include/linux/flat.h b/include/linux/flat.h
+>>>> index 2b7cda6e9c1b..19c586b74b99 100644
+>>>> --- a/include/linux/flat.h
+>>>> +++ b/include/linux/flat.h
+>>>> @@ -69,15 +69,13 @@ struct flat_hdr {
+>>>>    typedef union {
+>>>>       unsigned long   value;
+>>>>       struct {
+>>>> -# if defined(mc68000) && !defined(CONFIG_COLDFIRE)
+>>>> +#if defined(__LITTLE_ENDIAN_BITFIELD) || \
+>>>> +    (defined(mc68000) && !defined(CONFIG_COLDFIRE))
+>>>>               signed long offset : 30;
+>>>>               unsigned long type : 2;
+>>>>    # elif defined(__BIG_ENDIAN_BITFIELD)
+>>>>               unsigned long type : 2;
+>>>>               signed long offset : 30;
+>>>> -# elif defined(__LITTLE_ENDIAN_BITFIELD)
+>>>> -            signed long offset : 30;
+>>>> -            unsigned long type : 2;
+>>>>    # else
+>>>>    #          error "Unknown bitfield order for flat files."
+>>>>    # endif
+>>>> --
+>>>> 2.20.1
+>>>>
+>>>
+>>> FWIW, I wonder if keeping that type is worth bothering.
+>>> Something like
+>>> old_reloc(__be32 reloc)
+>>> {
+>>>        u32 v = be32_to_cpu(reloc);
+>>>        int offset, type;
+>>>
+>>> #if (defined(mc68000) && !defined(CONFIG_COLDFIRE))
+>>>        /* old m68k uses unusual format - type is in lower bits of octet 3 */
+>>>        type = v % 4;
+>>>        offset = (int)v / 4;
+>>> #else
+>>>        /* everything else (including coldfire) has it in upper bits of octet 0 */
+>>>        type = v >> 30;
+>>>        offset = (int)(v << 2) >> 2; /* or (v & 0x1fffffff) - (v & 0x20000000) * 4 */
+>>> #endif
+>>>        ...
+>>>
+>>> and to hell with bitfields, aliasing unions, etc.  Unless I'm misreading
+>>> the whole thing, that is...  Greg?
+>>
+>> I think you are right. This is much better.
+>> The old mc6800 is the odd one out, the rest have it in network order,
+>> and this makes that much clearer.
+> 
+> Is that correct for Microblaze, which can be big or little endian?
+
+It is true for all architectures that use flat. All fields inside a
+flat format binary are store in network order.
+
+The final processing of the relocation entries in the elf2flt
+converter tool:
+
+    for (i=0; i<reloc_len; i++) reloc[i] = htonl(reloc[i]);
+
+Regards
+Greg
+
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
