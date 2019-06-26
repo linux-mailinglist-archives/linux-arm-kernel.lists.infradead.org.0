@@ -2,53 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1E3095702E
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 26 Jun 2019 20:00:29 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DD11857032
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 26 Jun 2019 20:00:52 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8mOPpWikNZlKZ1ojLl4kOrvViWZs8y9TwfN9XmWEZVg=; b=a4Jp37lo4DaAs9
-	wMvWaBKuUO39OIEqDe8nKJYqOg5YXyH0x7RY3UYIaS3nrtaaAnS0wgh1V9aBE8MoFkRzquU/vpMyz
-	CTecTPJtcQ4385bAAr4YBnpXqdPCkUnDQwYXo7dAx2+ic11hJRKE9ZT2jm6LqbFyzI5aGBrVYc8EX
-	QwE0hR2iakLVE8dBqZbvAN4uKFipy0UqwLDgEKOiGa8NJkMwj9t6Q52nfosZXgjXomLv+ji/rPP2+
-	tk3b3TfMF0xHCsdQrNzFI5CdEwBXUAArdo+vNJPAdVvtW7P/JEG8gP3Q4AVyjhuY9aL78zHs//AE8
-	XYvw2u2gylkq5iScNJlw==;
+	List-Owner; bh=XcJaR4zSrG8gXH5nLwJvQx0Y3sypicnYTOxV001IUnY=; b=C+RElFNXClK1fq
+	xVxfoBOtN3rpEWDwYxcL7dlZ1852xSJR0ygVMMDkV+5I0lscvfkIoc+ffLHshqs+hxWbBNWY3ewAt
+	q12nXdUbtWIL1iXe9omBIyFrTHzk1b32bnRhHlF+nDhjKZc8iM2tVzHLnIYrXFqvXYLsUxasKvWTC
+	2QVKxIRwNWMf5/YbNhzpwjplwc8BbR3bna69iuOnLoLPHeu+hwwoOdeQhdaTn5pxvmY1EYPOTsZC6
+	V1IZXFkrqVz4XBFWcTSnsopqTGzNuqmfLQd5pFuZAR32zE4LZsCBRzqUz4MUQGJQaRAi0DP+3cuG7
+	dZX2wvh4IX4ua7H05zsw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hgCDZ-0000Lv-9K; Wed, 26 Jun 2019 18:00:25 +0000
+	id 1hgCDx-0000kR-UM; Wed, 26 Jun 2019 18:00:49 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hgCDF-0008Jr-B3
- for linux-arm-kernel@lists.infradead.org; Wed, 26 Jun 2019 18:00:06 +0000
+ id 1hgCDf-0000ii-8e
+ for linux-arm-kernel@lists.infradead.org; Wed, 26 Jun 2019 18:00:32 +0000
 Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
  bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id F23AF208E3;
- Wed, 26 Jun 2019 18:00:02 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id E2FC12177B;
+ Wed, 26 Jun 2019 18:00:28 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1561572005;
- bh=Yw+WNhu2uTH/tNxCYEnMhsKWbJMHkoSnvT9yxad1CYc=;
+ s=default; t=1561572030;
+ bh=amZXky+dzy6w//rZtfTX48NyKxgLPjoPas3mxcVTbe4=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=KBxCyhHD2cBAcSN2qEvsVo8wqPUOEcC/iX1A4kip5UJ/ExQik0trzTbSNlmE5QGfS
- ER9ioo+a/BMpevKUIClKM4Z178VZbr2b4CIJmITUu93R/WpWzbAKGvhHpk3p+6yidG
- jAx3yTXQMazq94naq2uX+Ea4dO32EIGsaHVXDOxQ=
-Date: Wed, 26 Jun 2019 18:59:59 +0100
+ b=yjWHcRlpFsV3Ts63y+nh2Wr5JEyOiV/tm3lCQSVSJrExovUYgChIQnL3RkPEkPy//
+ tRDUh7tJNyr68TWwrj1bgCY2qwIjsKCfUqYb45HxZltQOPAlWt/6Vm7V739Xajuanf
+ wfGUH0ykQmRyIrO+fVMe1WlTsvKPI8heorx98kQA=
+Date: Wed, 26 Jun 2019 19:00:26 +0100
 From: Will Deacon <will@kernel.org>
 To: Jean-Philippe Brucker <jean-philippe.brucker@arm.com>
-Subject: Re: [PATCH 6/8] iommu/arm-smmu-v3: Support auxiliary domains
-Message-ID: <20190626175959.ubxvb2qn4taclact@willie-the-truck>
+Subject: Re: [PATCH 4/8] iommu/arm-smmu-v3: Add support for Substream IDs
+Message-ID: <20190626180025.g4clm6qnbbna65de@willie-the-truck>
 References: <20190610184714.6786-1-jean-philippe.brucker@arm.com>
- <20190610184714.6786-7-jean-philippe.brucker@arm.com>
+ <20190610184714.6786-5-jean-philippe.brucker@arm.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190610184714.6786-7-jean-philippe.brucker@arm.com>
+In-Reply-To: <20190610184714.6786-5-jean-philippe.brucker@arm.com>
 User-Agent: NeoMutt/20170113 (1.7.2)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190626_110005_427877_7F2D3291 
-X-CRM114-Status: GOOD (  26.28  )
+X-CRM114-CacheID: sfid-20190626_110031_391728_FCCD53B6 
+X-CRM114-Status: GOOD (  19.94  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -87,166 +87,79 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Jean-Philippe,
+On Mon, Jun 10, 2019 at 07:47:10PM +0100, Jean-Philippe Brucker wrote:
+> At the moment, the SMMUv3 driver implements only one stage-1 or stage-2
+> page directory per device. However SMMUv3 allows more than one address
+> space for some devices, by providing multiple stage-1 page directories. In
+> addition to the Stream ID (SID), that identifies a device, we can now have
+> Substream IDs (SSID) identifying an address space. In PCIe, SID is called
+> Requester ID (RID) and SSID is called Process Address-Space ID (PASID).
+> 
+> Prepare the driver for SSID support, by adding context descriptor tables
+> in STEs (previously a single static context descriptor). A complete
+> stage-1 walk is now performed like this by the SMMU:
+> 
+>       Stream tables          Ctx. tables          Page tables
+>         +--------+   ,------->+-------+   ,------->+-------+
+>         :        :   |        :       :   |        :       :
+>         +--------+   |        +-------+   |        +-------+
+>    SID->|  STE   |---'  SSID->|  CD   |---'  IOVA->|  PTE  |--> IPA
+>         +--------+            +-------+            +-------+
+>         :        :            :       :            :       :
+>         +--------+            +-------+            +-------+
+> 
+> Implement a single level of context descriptor table for now, but as with
+> stream and page tables, an SSID can be split to index multiple levels of
+> tables.
+> 
+> In all stream table entries, we set S1DSS=SSID0 mode, making translations
+> without an SSID use context descriptor 0. Although it would be possible by
+> setting S1DSS=BYPASS, we don't currently support SSID when user selects
+> iommu.passthrough.
 
-On Mon, Jun 10, 2019 at 07:47:12PM +0100, Jean-Philippe Brucker wrote:
-> In commit a3a195929d40 ("iommu: Add APIs for multiple domains per
-> device"), the IOMMU API gained the concept of auxiliary domains (AUXD),
-> which allows to control the PASID-tagged address spaces of a device. With
-> AUXD the PASID address space are not shared with the CPU, but are instead
-> modified with iommu_map() and iommu_unmap() calls on auxiliary domains.
-> 
-> Add auxiliary domain support to the SMMUv3 driver. Device drivers allocate
-> an unmanaged IOMMU domain with iommu_domain_alloc(), and attach it to the
-> device with iommu_aux_attach_domain().
+I don't understand your comment here: iommu.passthrough works just as it did
+before, right, since we set bypass in the STE config field so S1DSS is not
+relevant? I also notice that SSID0 causes transactions with SSID==0 to
+abort. Is a PASID of 0 reserved, so this doesn't matter?
 
-[...]
-
-> 
-> The AUXD API is fairly permissive, and allows to attach an IOMMU domain in
-> both normal and auxiliary mode at the same time - one device can be
-> attached to the domain normally, and another device can be attached
-> through one of its PASIDs. To avoid excessive complexity in the SMMU
-> implementation we pose some restrictions on supported AUXD usage:
-> 
-> * A domain is either in auxiliary mode or normal mode. And that state is
->   sticky. Once detached the domain has to be re-attached in the same mode.
-> 
-> * An auxiliary domain can have a single parent domain. Two devices can be
->   attached to the same auxiliary domain only if they are attached to the
->   same parent domain.
-> 
-> In practice these shouldn't be problematic, since we have the same kind of
-> restriction on normal domains and users have been able to cope so far: at
-> the moment a domain cannot be attached to two devices behind different
-> SMMUs. When VFIO puts two such devices in the same container, it simply
-> falls back to allocating two separate IOMMU domains.
-> 
-> Signed-off-by: Jean-Philippe Brucker <jean-philippe.brucker@arm.com>
-> ---
->  drivers/iommu/Kconfig       |   1 +
->  drivers/iommu/arm-smmu-v3.c | 276 +++++++++++++++++++++++++++++++++---
->  2 files changed, 260 insertions(+), 17 deletions(-)
-> 
-> diff --git a/drivers/iommu/Kconfig b/drivers/iommu/Kconfig
-> index 9b45f70549a7..d326fef3d3a6 100644
-> --- a/drivers/iommu/Kconfig
-> +++ b/drivers/iommu/Kconfig
-> @@ -393,6 +393,7 @@ config ARM_SMMU_DISABLE_BYPASS_BY_DEFAULT
->  config ARM_SMMU_V3
->  	bool "ARM Ltd. System MMU Version 3 (SMMUv3) Support"
->  	depends on ARM64
-> +	select IOASID
->  	select IOMMU_API
->  	select IOMMU_IO_PGTABLE_LPAE
->  	select GENERIC_MSI_IRQ_DOMAIN
-> diff --git a/drivers/iommu/arm-smmu-v3.c b/drivers/iommu/arm-smmu-v3.c
-> index 326b71793336..633d829f246f 100644
-> --- a/drivers/iommu/arm-smmu-v3.c
-> +++ b/drivers/iommu/arm-smmu-v3.c
-> @@ -19,6 +19,7 @@
->  #include <linux/err.h>
->  #include <linux/interrupt.h>
->  #include <linux/io-pgtable.h>
-> +#include <linux/ioasid.h>
->  #include <linux/iommu.h>
->  #include <linux/iopoll.h>
->  #include <linux/init.h>
-> @@ -641,6 +642,7 @@ struct arm_smmu_master {
->  	unsigned int			num_sids;
->  	unsigned int			ssid_bits;
->  	bool				ats_enabled		:1;
-> +	bool				auxd_enabled		:1;
->  };
+> @@ -1062,33 +1143,90 @@ static u64 arm_smmu_cpu_tcr_to_cd(u64 tcr)
+>  	return val;
+>  }
 >  
->  /* SMMU private data for an IOMMU domain */
-> @@ -666,8 +668,14 @@ struct arm_smmu_domain {
+> -static void arm_smmu_write_ctx_desc(struct arm_smmu_device *smmu,
+> -				    struct arm_smmu_s1_cfg *cfg)
+> +static int arm_smmu_write_ctx_desc(struct arm_smmu_domain *smmu_domain,
+> +				   int ssid, struct arm_smmu_ctx_desc *cd)
+>  {
+>  	u64 val;
+> +	bool cd_live;
+> +	struct arm_smmu_device *smmu = smmu_domain->smmu;
+> +	__le64 *cdptr = arm_smmu_get_cd_ptr(&smmu_domain->s1_cfg, ssid);
 >  
->  	struct iommu_domain		domain;
->  
-> +	/* Unused in aux domains */
->  	struct list_head		devices;
->  	spinlock_t			devices_lock;
+>  	/*
+> -	 * We don't need to issue any invalidation here, as we'll invalidate
+> -	 * the STE when installing the new entry anyway.
+> +	 * This function handles the following cases:
+> +	 *
+> +	 * (1) Install primary CD, for normal DMA traffic (SSID = 0).
+> +	 * (2) Install a secondary CD, for SID+SSID traffic.
+> +	 * (3) Update ASID of a CD. Atomically write the first 64 bits of the
+> +	 *     CD, then invalidate the old entry and mappings.
+> +	 * (4) Remove a secondary CD.
+>  	 */
+> -	val = arm_smmu_cpu_tcr_to_cd(cfg->cd.tcr) |
 > +
-> +	/* Auxiliary domain stuff */
-> +	struct arm_smmu_domain		*parent;
-> +	ioasid_t			ssid;
-> +	unsigned long			aux_nr_devs;
+> +	if (!cdptr)
+> +		return -ENOMEM;
+> +
+> +	val = le64_to_cpu(cdptr[0]);
+> +	cd_live = !!(val & CTXDESC_CD_0_V);
+> +
+> +	if (!cd) { /* (4) */
+> +		cdptr[0] = 0;
 
-Maybe use a union to avoid comments about what is used/unused?
-
-> +static void arm_smmu_aux_detach_dev(struct iommu_domain *domain, struct device *dev)
-> +{
-> +	struct iommu_domain *parent_domain;
-> +	struct arm_smmu_domain *parent_smmu_domain;
-> +	struct arm_smmu_master *master = dev_to_master(dev);
-> +	struct arm_smmu_domain *smmu_domain = to_smmu_domain(domain);
-> +
-> +	if (!arm_smmu_dev_feature_enabled(dev, IOMMU_DEV_FEAT_AUX))
-> +		return;
-> +
-> +	parent_domain = iommu_get_domain_for_dev(dev);
-> +	if (!parent_domain)
-> +		return;
-> +	parent_smmu_domain = to_smmu_domain(parent_domain);
-> +
-> +	mutex_lock(&smmu_domain->init_mutex);
-> +	if (!smmu_domain->aux_nr_devs)
-> +		goto out_unlock;
-> +
-> +	if (!--smmu_domain->aux_nr_devs) {
-> +		arm_smmu_write_ctx_desc(parent_smmu_domain, smmu_domain->ssid,
-> +					NULL);
-> +		/*
-> +		 * TLB doesn't need invalidation since accesses from the device
-> +		 * can't use this domain's ASID once the CD is clear.
-> +		 *
-> +		 * Sadly that doesn't apply to ATCs, which are PASID tagged.
-> +		 * Invalidate all other devices as well, because even though
-> +		 * they weren't 'officially' attached to the auxiliary domain,
-> +		 * they could have formed ATC entries.
-> +		 */
-> +		arm_smmu_atc_inv_domain(smmu_domain, 0, 0);
-
-I've been struggling to understand the locking here, since both
-arm_smmu_write_ctx_desc and arm_smmu_atc_inv_domain take and release the
-devices_lock for the domain. Is there not a problem with devices coming and
-going in-between the two calls?
-
-> +	} else {
-> +		struct arm_smmu_cmdq_ent cmd;
-> +
-> +		/* Invalidate only this device's ATC */
-> +		if (master->ats_enabled) {
-> +			arm_smmu_atc_inv_to_cmd(smmu_domain->ssid, 0, 0, &cmd);
-> +			arm_smmu_atc_inv_master(master, &cmd);
-> +		}
-> +	}
-> +out_unlock:
-> +	mutex_unlock(&smmu_domain->init_mutex);
-> +}
-> +
-> +static int arm_smmu_aux_get_pasid(struct iommu_domain *domain, struct device *dev)
-> +{
-> +	struct arm_smmu_domain *smmu_domain = to_smmu_domain(domain);
-> +
-> +	return smmu_domain->ssid ?: -EINVAL;
-> +}
-> +
->  static struct iommu_ops arm_smmu_ops = {
->  	.capable		= arm_smmu_capable,
->  	.domain_alloc		= arm_smmu_domain_alloc,
-> @@ -2539,6 +2772,13 @@ static struct iommu_ops arm_smmu_ops = {
->  	.of_xlate		= arm_smmu_of_xlate,
->  	.get_resv_regions	= arm_smmu_get_resv_regions,
->  	.put_resv_regions	= arm_smmu_put_resv_regions,
-> +	.dev_has_feat		= arm_smmu_dev_has_feature,
-> +	.dev_feat_enabled	= arm_smmu_dev_feature_enabled,
-> +	.dev_enable_feat	= arm_smmu_dev_enable_feature,
-> +	.dev_disable_feat	= arm_smmu_dev_disable_feature,
-
-Why can't we use the existing ->capable and ->dev_{get,set}_attr callbacks
-for this?
+Should we be using WRITE_ONCE here? (although I notice we don't seem to
+bother for STEs either...)
 
 Will
 
