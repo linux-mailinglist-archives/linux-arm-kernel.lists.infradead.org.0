@@ -2,84 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DE285563CD
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 26 Jun 2019 09:55:23 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E3FBD563D3
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 26 Jun 2019 09:56:20 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Subject:To:From:Message-ID:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=FsSfFCLGiXDkb07ErCi3kD3m7YWj37T/gsOkdyVKXh4=; b=V2l5EY/pXb1gRy
-	P7FR6Zfehir0Tfq/a7te2FWAgayS/X4P5z0zfH89Spa3oNYD2HUOL8rNtPZbq1URXlhql1CmOLz15
-	buuiR8b/f8o4KaT2haK8Q3zF4WaW1EBLtfKIlHTVmSMCfjYo2cnnc2v5I74tSxw3g4PO9gRGNOMDn
-	/3lzsPpsNibdwRswAtL3AQZEVaVJpl/4QaqSQLa6YciPpDFmAYEsjqJQwMI3PGQofpTFElgQbgwqJ
-	VfyoFx3D4Dr6Yx8NVeD8sdzp976YMhCZIUsjZnRYMPbsGaTiLdmszpEaGPIrO3EjfoJ0oi4zg9I+Z
-	03XbXKzcPrEOmWBxyPzQ==;
+	List-Owner; bh=HmgsKOUmijuZ7mnvMytRVCcpnAnq646chfgoBdfc2ns=; b=r3dOPJ5cwUjXNX
+	yM+2SOiqwqEbVRLS3FUrtM3B5IqZ9voq3jgA98hI3YoVqjJOB5y3jYqxZ5sT/hUv7Y+ikt/7F9Gz+
+	+1T9ht2UbG+x5R93jyMNuvkhLT/IUT0F6GEa6iWerJTXi5rUbCjSNHfgcFYgxqgqtAdi5QEicKdnP
+	YE3fIOq12vq2jF24N5wnFVrbkF97fGlcOPs8CO4E5tUX2oiHz6mRXb+HUoaUDDdNCwr/+5UGPjZuX
+	Ntvj7vW2RpqVMt6QT3YFwbkeNaT2Kaa1ZzvKP1eCXRb1vClJDBf5r/ZabrStvbRa0od2+sFMGgxNT
+	sAHFVRod50XrH1BRjS6w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hg2lz-0005m4-4U; Wed, 26 Jun 2019 07:55:19 +0000
-Received: from mail-lf1-x142.google.com ([2a00:1450:4864:20::142])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hg2lj-00052y-W5
- for linux-arm-kernel@lists.infradead.org; Wed, 26 Jun 2019 07:55:05 +0000
-Received: by mail-lf1-x142.google.com with SMTP id a25so908105lfg.2
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 26 Jun 2019 00:55:02 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=uxdb5wlFiHBkF0SzBr5FCoS6f7qiRJDmJ1nDITQi0Dw=;
- b=m4n+hEZBjSl7z0DhNNkX163BSsqoZWM4Vv+1gORRGXGEyJ7mgvy8Zc8GCjHlf4UKZz
- SzMf+PwcnfQVBQlF5KWvIDwyzUIxJ7y8dF0ZlSMbLEux5PVwVzK4/wbX9p4C8vgQ/cLs
- OUbHAOtvtatcVcy7T1n4ClVtN3VfJxaFeTz9bcmjm4NswEVlKTTEOdLN3B2cSJv7ML0f
- dvtb1Yp4GYrbdmAvQMxiXVkk1qnZ3vPnuwsJuJsMmiLyQuiZlld8WbxJpyxD51HVUsuJ
- 2K7Yy6aTQwOkloLhCUNTijNxeAkHbkDQA7u5SUW/B8m94CyiFyIogZRFeit4jthgmS/Y
- vi8Q==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=uxdb5wlFiHBkF0SzBr5FCoS6f7qiRJDmJ1nDITQi0Dw=;
- b=dMWWob+GJR0XqeE/SxV9gOUvIYM8cNW4fQeQuhMS41/PzBjKbc6L5gCbhX/6tm8ng6
- IJIeeRuC6XKoC3zQ0FlCjXYeYZMou4DEOACwZ0+UdXPiLe7oQkjLRiJY/63kskxp6Qo0
- NFvMNfC35q9g1wD/K1reYDUfq/eorC7sz0N2B0JURHGWMwFA2o4ST6rRpRmPEVRnGsWQ
- YcZDDLrdKcvhsv+sSD3GDqcd6Lu5d0NzNg5VzO7YQcSODFpw+ZJ2H3JV1btgyCT+9dS1
- smynxcR1Vn58910RSbp8e0LAIfoV31XWRLnRTLMYqQZxUGyY/kA0Mg6eeI7rmprESI52
- A0eQ==
-X-Gm-Message-State: APjAAAVi7bwEVxbI4qnXiglJA+J3LAfhJODFj+LqZN/LNthKkMPuKmiu
- 6HxcytKdO8lTqXBLea1RZPBCgxzkSTJkdhc8hN8Grw==
-X-Google-Smtp-Source: APXvYqzo+qALg1dJHN8BZKGNryj1b2QPxrO2/Ylr70oC8XJ11Le0Cn/eflBCqD0MzHpKgDWXJ6rrs+q++1xhp5JnKPs=
-X-Received: by 2002:ac2:50c4:: with SMTP id h4mr1916988lfm.61.1561535701468;
- Wed, 26 Jun 2019 00:55:01 -0700 (PDT)
-MIME-Version: 1.0
-References: <20190626071430.28556-1-andrew@aj.id.au>
-In-Reply-To: <20190626071430.28556-1-andrew@aj.id.au>
-From: Linus Walleij <linus.walleij@linaro.org>
-Date: Wed, 26 Jun 2019 09:54:50 +0200
-Message-ID: <CACRpkdboxjMmeb8feffyG5JJ7fGPR6hqC8sc+XV5We3TC__LXg@mail.gmail.com>
-Subject: Re: [PATCH 0/8] pinctrl: aspeed: Preparation for AST2600
-To: Andrew Jeffery <andrew@aj.id.au>
+	id 1hg2mx-0006Ve-BP; Wed, 26 Jun 2019 07:56:19 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hg2me-0006Uq-IK
+ for linux-arm-kernel@lists.infradead.org; Wed, 26 Jun 2019 07:56:02 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 9CCB02B;
+ Wed, 26 Jun 2019 00:55:59 -0700 (PDT)
+Received: from big-swifty.misterjones.org (unknown [172.31.20.19])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 636C93F246;
+ Wed, 26 Jun 2019 00:55:56 -0700 (PDT)
+Date: Wed, 26 Jun 2019 08:55:49 +0100
+Message-ID: <86a7e4pypm.wl-marc.zyngier@arm.com>
+From: Marc Zyngier <marc.zyngier@arm.com>
+To: Zenghui Yu <yuzenghui@huawei.com>
+Subject: Re: [PATCH v2 7/9] KVM: arm/arm64: vgic-its: Cache successful
+ MSI->LPI translation
+In-Reply-To: <7af32ebf-91a8-ef63-6108-4ca506fd364e@huawei.com>
+References: <20190611170336.121706-1-marc.zyngier@arm.com>
+ <20190611170336.121706-8-marc.zyngier@arm.com>
+ <53de88e9-3550-bd7f-8266-35c5e75fae4e@huawei.com>
+ <169cc847-ebfa-44b6-00e7-c69dccdbbd62@arm.com>
+ <7af32ebf-91a8-ef63-6108-4ca506fd364e@huawei.com>
+User-Agent: Wanderlust/2.15.9 (Almost Unreal) SEMI-EPG/1.14.7 (Harue)
+ FLIM/1.14.9 (=?UTF-8?B?R29qxY0=?=) APEL/10.8 EasyPG/1.0.0 Emacs/26
+ (aarch64-unknown-linux-gnu) MULE/6.0 (HANACHIRUSATO)
+Organization: ARM Ltd
+MIME-Version: 1.0 (generated by SEMI-EPG 1.14.7 - "Harue")
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190626_005504_046323_0FD951ED 
-X-CRM114-Status: UNSURE (   9.50  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190626_005600_692049_072FD41E 
+X-CRM114-Status: GOOD (  24.22  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:142 listed in]
- [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -91,31 +67,110 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
- <devicetree@vger.kernel.org>, Ryan Chen <ryan_chen@aspeedtech.com>,
- linux-aspeed@lists.ozlabs.org, OpenBMC Maillist <openbmc@lists.ozlabs.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
- Rob Herring <robh+dt@kernel.org>, Joel Stanley <joel@jms.id.au>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: kvm@vger.kernel.org, Suzuki K Poulose <suzuki.poulose@arm.com>, "Raslan,
+ KarimAllah" <karahmed@amazon.de>, Julien Thierry <julien.thierry@arm.com>,
+ Christoffer Dall <christoffer.dall@arm.com>,
+ Eric Auger <eric.auger@redhat.com>, James Morse <james.morse@arm.com>, "Saidi,
+ Ali" <alisaidi@amazon.com>, kvmarm@lists.cs.columbia.edu,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Jun 26, 2019 at 9:15 AM Andrew Jeffery <andrew@aj.id.au> wrote:
+On Tue, 25 Jun 2019 17:00:54 +0100,
+Zenghui Yu <yuzenghui@huawei.com> wrote:
+> 
+> Hi Marc,
+> 
+> On 2019/6/25 20:31, Marc Zyngier wrote:
+> > Hi Zenghui,
+> > 
+> > On 25/06/2019 12:50, Zenghui Yu wrote:
+> >> Hi Marc,
+> >> 
+> >> On 2019/6/12 1:03, Marc Zyngier wrote:
+> >>> On a successful translation, preserve the parameters in the LPI
+> >>> translation cache. Each translation is reusing the last slot
+> >>> in the list, naturally evincting the least recently used entry.
+> >>> 
+> >>> Signed-off-by: Marc Zyngier <marc.zyngier@arm.com>
+> >>> ---
+> >>>    virt/kvm/arm/vgic/vgic-its.c | 86 ++++++++++++++++++++++++++++++++++++
+> >>>    1 file changed, 86 insertions(+)
+> >>> 
+> >>> diff --git a/virt/kvm/arm/vgic/vgic-its.c b/virt/kvm/arm/vgic/vgic-its.c
+> >>> index 0aa0cbbc3af6..62932458476a 100644
+> >>> --- a/virt/kvm/arm/vgic/vgic-its.c
+> >>> +++ b/virt/kvm/arm/vgic/vgic-its.c
+> >>> @@ -546,6 +546,90 @@ static unsigned long vgic_mmio_read_its_idregs(struct kvm *kvm,
+> >>>    	return 0;
+> >>>    }
+> >>>    +static struct vgic_irq *__vgic_its_check_cache(struct
+> >>> vgic_dist *dist,
+> >>> +					       phys_addr_t db,
+> >>> +					       u32 devid, u32 eventid)
+> >>> +{
+> >>> +	struct vgic_translation_cache_entry *cte;
+> >>> +	struct vgic_irq *irq = NULL;
+> >>> +
+> >>> +	list_for_each_entry(cte, &dist->lpi_translation_cache, entry) {
+> >>> +		/*
+> >>> +		 * If we hit a NULL entry, there is nothing after this
+> >>> +		 * point.
+> >>> +		 */
+> >>> +		if (!cte->irq)
+> >>> +			break;
+> >>> +
+> >>> +		if (cte->db == db &&
+> >>> +		    cte->devid == devid &&
+> >>> +		    cte->eventid == eventid) {
+> >>> +			/*
+> >>> +			 * Move this entry to the head, as it is the
+> >>> +			 * most recently used.
+> >>> +			 */
+> >>> +			list_move(&cte->entry, &dist->lpi_translation_cache);
+> >> 
+> >> Only for performance reasons: if we hit at the "head" of the list, we
+> >> don't need to do a list_move().
+> >> In our tests, we found that a single list_move() takes nearly (sometimes
+> >> even more than) one microsecond, for some unknown reason...
+> > 
+> > Huh... That's odd.
+> > 
+> > Can you narrow down under which conditions this happens? I'm not sure if
+> > checking for the list head would be more efficient, as you end-up
+> > fetching the head anyway. Can you try replacing this line with:
+> > 
+> > 	if (!list_is_first(&cte->entry, &dist->lpi_translation_cache))
+> > 		list_move(&cte->entry, &dist->lpi_translation_cache);
+> > 
+> > and let me know whether it helps?
+> 
+> It helps. With this change, the overhead of list_move() is gone.
+> 
+> We run 16 4-vcpu VMs on the host, each with a vhost-user nic, and run
+> "iperf" in pairs between them.  It's likely to hit at the head of the
+> cache list in our tests.
+> With this change, the sys% utilization of vhostdpfwd threads will
+> decrease by about 10%.  But I don't know the reason exactly (I haven't
+> found any clues in code yet, in implementation of list_move...).
 
-> The ASPEED AST2600 is in the pipeline, and we have enough information to start
-> preparing to upstream support for it. This series lays some ground work;
-> splitting the bindings and dicing the implementation up a little further to
-> facilitate differences between the 2600 and previous SoC generations.
+list_move is rather simple, and shouldn't be too hard to execute
+quickly. The only contention I can imagine is that as the cache line
+is held by multiple CPUs, the update to the list pointers causes an
+invalidation to be sent to other CPUs, leading to a slower update.
 
-All looks good to me, but Rob should have a glance at the DT bindings
-and YAML syntax before I proceed to apply them.
+But it remains that 500ns is a pretty long time (that's 1000 cycles on
+a 2GHz CPU). It'd be interesting to throw perf at this and see shows
+up. It would give us a clue about what is going on here.
 
-Yours,
-Linus Walleij
+Thanks,
+
+	M.
+
+-- 
+Jazz is not dead, it just smells funny.
 
 _______________________________________________
 linux-arm-kernel mailing list
