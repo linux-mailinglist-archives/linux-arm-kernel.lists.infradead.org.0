@@ -2,72 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 435F856E55
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 26 Jun 2019 18:06:41 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5336A56E7F
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 26 Jun 2019 18:14:46 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=XvIC8/eQW6UoWbTXyRe2KM/gWd4IAAxLSGCcjbnEUR0=; b=oUPYZQcZLmUj+roXVnjnFKWmj
-	amQqNUAQ0da/S96Cpsg9t+8RY9rFCRxvwA6W7CqIwAwHUPulZgNHk3WgDkW8frzdPofSmajb67HYq
-	ANyhRvUZoC7QmVh4rnRe+hRmq2vEPmkmUgcaXQPBAj4b5y3Hb+Hr2C+UuM8/GIJrB13J4MBWjhhj8
-	Pc6PcErO/L5tjUfHZMM+RByAKpsipdYRAWAnufOJr9LSHtrK27Z1bwLKepXS/VhXYdijAqt6CaoeC
-	SvBtOAEzGTKy5g0O3euf8AAEOEzRFLAt58vKomdzecF8FkGgByhG7kTQChoBSkbkwD6jn3E76LX1x
-	uiO6ZT9BA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=XtlTB9JSeMNxBxf7zJ5t2/e3KM3bE45SAe5rsniLuJU=; b=T/DWwwPMomaUmx
+	kpGJ7+4kbN/AdtbkYhEnoiMK6kffz6Xi2LOyHqVdrnLgvv+IT0BAsjJ2/SlMn7AyeEFziZKKxLcm/
+	t9/y5WWSkynN+zudifU5nUPrjU/s8QopiTupBAvZ5a+sQSurRzcnzOOw3SGKCWVNhDgN+naR/WsMw
+	prwXnrDEHNfROtRv/TmOI36P+SFvfDdJpc4r4O32yiq/Bx3Q02m79MNvdEIorXYuIJH7Olrnzynzw
+	CJolZ4BdNF4GBIVE/f1Dqcx3z487aAL/jzxGyf4lVJpvYSAlycKRq2JITVKBRPjzK1W59eYQxTcko
+	vpGB1URopKrL4YDSwchg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hgARR-0001jb-Qq; Wed, 26 Jun 2019 16:06:37 +0000
-Received: from heliosphere.sirena.org.uk ([2a01:7e01::f03c:91ff:fed4:a3b6])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hgARG-0001ix-UR
- for linux-arm-kernel@lists.infradead.org; Wed, 26 Jun 2019 16:06:28 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sirena.org.uk; s=20170815-heliosphere; h=In-Reply-To:Content-Type:
- MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
- Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
- List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=ObBll3o8jBZS2dIG2Cco4jHSqfd2Q/hNM+srOG9AS3M=; b=thoT/O1sexjZusF5z9OsSHm6B
- aI4KIIMBS8+xlJDdJwA1npXG+fZyPHI4p4d2UwhMb607KF9MlYDCpXvhBSOC46i2+RkPpD0oQ/8kp
- g26acCAOK8XGnSFRq6c4qnQSqliee0iu1oy80ioReOV3LtGpHSzaphmzxskVewwovSZ78=;
-Received: from cpc102320-sgyl38-2-0-cust46.18-2.cable.virginm.net
- ([82.37.168.47] helo=finisterre.sirena.org.uk)
- by heliosphere.sirena.org.uk with esmtpsa
- (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.89)
- (envelope-from <broonie@sirena.org.uk>)
- id 1hgARD-0008Ak-8w; Wed, 26 Jun 2019 16:06:23 +0000
-Received: by finisterre.sirena.org.uk (Postfix, from userid 1000)
- id 86D05440046; Wed, 26 Jun 2019 17:06:22 +0100 (BST)
-Date: Wed, 26 Jun 2019 17:06:22 +0100
-From: Mark Brown <broonie@kernel.org>
-To: Will Deacon <will@kernel.org>
-Subject: Re: [PATCH] arm64: Add support for E0PD
-Message-ID: <20190626160622.GA5379@sirena.org.uk>
-References: <20190626144535.27680-1-broonie@kernel.org>
- <20190626150403.dekq5l5rpmgzknfr@willie-the-truck>
+	id 1hgAZG-00059a-38; Wed, 26 Jun 2019 16:14:42 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hgAYz-00058H-IG
+ for linux-arm-kernel@lists.infradead.org; Wed, 26 Jun 2019 16:14:27 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 6476C2B;
+ Wed, 26 Jun 2019 09:14:21 -0700 (PDT)
+Received: from e103592.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
+ [10.121.207.14])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id B27B73F706;
+ Wed, 26 Jun 2019 09:14:18 -0700 (PDT)
+Date: Wed, 26 Jun 2019 17:14:16 +0100
+From: Dave Martin <Dave.Martin@arm.com>
+To: Vincenzo Frascino <vincenzo.frascino@arm.com>
+Subject: Re: [PATCH v7 04/25] arm64: Substitute gettimeofday with C
+ implementation
+Message-ID: <20190626161413.GA2790@e103592.cambridge.arm.com>
+References: <20190621095252.32307-1-vincenzo.frascino@arm.com>
+ <20190621095252.32307-5-vincenzo.frascino@arm.com>
+ <20190625153336.GZ2790@e103592.cambridge.arm.com>
+ <f5ac379a-731d-0662-2f5b-bd046e3bd1c5@arm.com>
 MIME-Version: 1.0
-In-Reply-To: <20190626150403.dekq5l5rpmgzknfr@willie-the-truck>
-X-Cookie: You need not be present to win.
-User-Agent: Mutt/1.10.1 (2018-07-13)
+Content-Disposition: inline
+In-Reply-To: <f5ac379a-731d-0662-2f5b-bd046e3bd1c5@arm.com>
+User-Agent: Mutt/1.5.23 (2014-03-12)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190626_090627_149357_3864FDBB 
-X-CRM114-Status: GOOD (  19.68  )
-X-Spam-Score: 0.2 (/)
+X-CRM114-CacheID: sfid-20190626_091425_697167_720B4EB2 
+X-CRM114-Status: GOOD (  33.37  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -79,89 +65,328 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Catalin Marinas <catalin.marinas@arm.com>,
- linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============7209286159686963391=="
+Cc: linux-arch@vger.kernel.org, Shuah Khan <shuah@kernel.org>,
+ Catalin Marinas <catalin.marinas@arm.com>, Arnd Bergmann <arnd@arndb.de>,
+ Mark Salyzyn <salyzyn@android.com>, Huw Davies <huw@codeweavers.com>,
+ Andre Przywara <andre.przywara@arm.com>,
+ Daniel Lezcano <daniel.lezcano@linaro.org>, Will Deacon <will.deacon@arm.com>,
+ linux-kernel@vger.kernel.org, Ralf Baechle <ralf@linux-mips.org>,
+ linux-mips@vger.kernel.org, Paul Burton <paul.burton@mips.com>,
+ linux-kselftest@vger.kernel.org, Rasmus Villemoes <linux@rasmusvillemoes.dk>,
+ Russell King <linux@armlinux.org.uk>, Dmitry Safonov <0x7f454c46@gmail.com>,
+ Shijith Thotton <sthotton@marvell.com>, Peter Collingbourne <pcc@google.com>,
+ Thomas Gleixner <tglx@linutronix.de>, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On Wed, Jun 26, 2019 at 02:27:59PM +0100, Vincenzo Frascino wrote:
+> Hi Dave,
+> 
+> On 25/06/2019 16:33, Dave Martin wrote:
+> > On Fri, Jun 21, 2019 at 10:52:31AM +0100, Vincenzo Frascino wrote:
+> >> To take advantage of the commonly defined vdso interface for
+> >> gettimeofday the architectural code requires an adaptation.
+> >>
+> >> Re-implement the gettimeofday vdso in C in order to use lib/vdso.
+> >>
+> >> With the new implementation arm64 gains support for CLOCK_BOOTTIME
+> >> and CLOCK_TAI.
+> >>
+> >> Cc: Catalin Marinas <catalin.marinas@arm.com>
+> >> Cc: Will Deacon <will.deacon@arm.com>
+> >> Signed-off-by: Vincenzo Frascino <vincenzo.frascino@arm.com>
+> >> Tested-by: Shijith Thotton <sthotton@marvell.com>
+> >> Tested-by: Andre Przywara <andre.przywara@arm.com>
+> > 
+> > [...]
+> > 
+> >> diff --git a/arch/arm64/include/asm/vdso/gettimeofday.h b/arch/arm64/include/asm/vdso/gettimeofday.h
+> >> new file mode 100644
+> >> index 000000000000..bc3cb6738051
+> >> --- /dev/null
+> >> +++ b/arch/arm64/include/asm/vdso/gettimeofday.h
+> >> @@ -0,0 +1,86 @@
+> >> +/* SPDX-License-Identifier: GPL-2.0 */
+> >> +/*
+> >> + * Copyright (C) 2018 ARM Limited
+> >> + */
+> >> +#ifndef __ASM_VDSO_GETTIMEOFDAY_H
+> >> +#define __ASM_VDSO_GETTIMEOFDAY_H
+> >> +
+> >> +#ifndef __ASSEMBLY__
+> >> +
+> >> +#include <asm/unistd.h>
+> >> +#include <uapi/linux/time.h>
+> >> +
+> >> +#define VDSO_HAS_CLOCK_GETRES		1
+> >> +
+> >> +static __always_inline int gettimeofday_fallback(
+> >> +					struct __kernel_old_timeval *_tv,
+> >> +					struct timezone *_tz)
+> > 
+> > Out of interest, does this need to be __always_inline?
+> > 
+> 
+> It is a design choice. Philosophically, I prefer to control and reduce the scope
+> of the decisions the compiler has to make in order to not have surprises.
+> 
+> >> +{
+> >> +	register struct timezone *tz asm("x1") = _tz;
+> >> +	register struct __kernel_old_timeval *tv asm("x0") = _tv;
+> >> +	register long ret asm ("x0");
+> >> +	register long nr asm("x8") = __NR_gettimeofday;
+> >> +
+> >> +	asm volatile(
+> >> +	"       svc #0\n"
+> > 
+> > Can inlining of this function result in non-trivial expressions being
+> > substituted for _tz or _tv?
+> > 
+> > A function call can clobber register asm vars that are assigned to the
+> > caller-save registers or that the PCS uses for function arguments, and
+> > the situations where this can happen are poorly defined AFAICT.  There's
+> > also no reliable way to detect at build time whether the compiler has
+> > done this, and no robust way to stop if happening.
+> > 
+> > (IMHO the compiler is wrong to do this, but it's been that way for ever,
+> > and I think I saw GCC 9 show this behaviour recently when I was
+> > investigating something related.)
+> > 
+> > 
+> > To be safe, it's better to put this out of line, or remove the reg asm()
+> > specifiers, mark x0-x18 and lr as clobbered here (so that the compiler
+> > doesn't map arguments to them), and put movs in the asm to move things
+> > into the right registers.  The syscall number can be passed with an "i"
+> > constraint.  (And yes, this sucks.)
+> > 
+> > If the code this is inlined in is simple enough though, we can be fairly
+> > confident of getting away with it.
+> >
+> 
+> I took very seriously what you are mentioning here because I think
+> that robustness of the code comes before than everything especially
+> in the kernel and I carried on some experiments to try to verify if
+> in this case is safe to assume that the compiler is doing the right
+> thing.
+> 
+> Based on my investigation and on previous observations of the
+> generation of the vDSO library, I can conclude that the approach
+> seems safe due to the fact that the usage of this code is very
+> limited, the code itself is simple enough and that gcc would inline
+> this code anyway based on the current compilation options.
 
---===============7209286159686963391==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="y0ulUmNC+osPPQO6"
-Content-Disposition: inline
+I'd caution about "seems safe".  A lot of subtly wrong code not only
+seems safe, but _is_ safe in its original context, in practice.  Add
+some code to the vdso over time though, or tweak the compilation options
+at some point in the future, or use a different compiler, and things
+could still go wrong.
+
+(Further comments below.)
+
+> The experiment that I did was to define some self-contained code that
+> tries to mimic what you are describing and compile it with 3
+> different versions of gcc (6.4, 8.1 and 8.3) and in all the tree
+> cases the behavior seems correct.
+> 
+> Code:
+> =====
+> 
+> typedef int ssize_t;
+> typedef int size_t;
+> 
+> static int my_strlen(const char *s)
+> {
+> 	int i = 0;
+> 
+> 	while (s[i] == '\0')
+> 		i++;
+> 
+> 	return i;
+> }
+> 
+> static inline ssize_t my_syscall(int fd, const void *buf, size_t count)
+> {
+> 	register ssize_t arg1 asm ("x0") = fd;
+> 	register const void *arg2 asm ("x1") = buf;
+> 	register size_t arg3 asm ("x2") = count;
+> 
+> 	__asm__ volatile (
+> 		"mov x8, #64\n"
+> 		"svc #0\n"
+> 		: "=&r" (arg1)
+> 		: "r" (arg2), "r" (arg3)
+> 		: "x8"
+>         );
+> 
+>         return arg1;
+> }
+> 
+> void sys_caller(const char *s)
+> {
+> 	my_syscall(1, s, my_strlen(s));
+> }
+> 
+> 
+> GCC 8.3.0:
+> ==========
+> 
+> main.8.3.0.o:     file format elf64-littleaarch64
+> 
+> 
+> Disassembly of section .text:
+> 
+> 0000000000000000 <sys_caller>:
+>    0:	39400001 	ldrb	w1, [x0]
+>    4:	35000161 	cbnz	w1, 30 <sys_caller+0x30>
+>    8:	d2800023 	mov	x3, #0x1                   	// #1
+>    c:	d1000404 	sub	x4, x0, #0x1
+>   10:	2a0303e2 	mov	w2, w3
+>   14:	91000463 	add	x3, x3, #0x1
+>   18:	38636881 	ldrb	w1, [x4, x3]
+>   1c:	34ffffa1 	cbz	w1, 10 <sys_caller+0x10>
+>   20:	aa0003e1 	mov	x1, x0
+>   24:	d2800808 	mov	x8, #0x40                  	// #64
+>   28:	d4000001 	svc	#0x0
+>   2c:	d65f03c0 	ret
+>   30:	52800002 	mov	w2, #0x0                   	// #0
+>   34:	17fffffb 	b	20 <sys_caller+0x20>
+> 
+> 
+> GCC 8.1.0:
+> ==========
+> 
+> main.8.1.0.o:     file format elf64-littleaarch64
+> 
+> 
+> Disassembly of section .text:
+> 
+> 0000000000000000 <sys_caller>:
+>    0:	39400001 	ldrb	w1, [x0]
+>    4:	35000161 	cbnz	w1, 30 <sys_caller+0x30>
+>    8:	d2800023 	mov	x3, #0x1                   	// #1
+>    c:	d1000404 	sub	x4, x0, #0x1
+>   10:	2a0303e2 	mov	w2, w3
+>   14:	91000463 	add	x3, x3, #0x1
+>   18:	38636881 	ldrb	w1, [x4, x3]
+>   1c:	34ffffa1 	cbz	w1, 10 <sys_caller+0x10>
+>   20:	aa0003e1 	mov	x1, x0
+>   24:	d2800808 	mov	x8, #0x40                  	// #64
+>   28:	d4000001 	svc	#0x0
+>   2c:	d65f03c0 	ret
+>   30:	52800002 	mov	w2, #0x0                   	// #0
+>   34:	17fffffb 	b	20 <sys_caller+0x20>
+> 
+> 
+> 
+> GCC 6.4.0:
+> ==========
+> 
+> main.6.4.0.o:     file format elf64-littleaarch64
+> 
+> 
+> Disassembly of section .text:
+> 
+> 0000000000000000 <sys_caller>:
+>    0:	39400001 	ldrb	w1, [x0]
+>    4:	35000161 	cbnz	w1, 30 <sys_caller+0x30>
+>    8:	d2800023 	mov	x3, #0x1                   	// #1
+>    c:	d1000404 	sub	x4, x0, #0x1
+>   10:	2a0303e2 	mov	w2, w3
+>   14:	91000463 	add	x3, x3, #0x1
+>   18:	38636881 	ldrb	w1, [x4, x3]
+>   1c:	34ffffa1 	cbz	w1, 10 <sys_caller+0x10>
+>   20:	aa0003e1 	mov	x1, x0
+>   24:	d2800808 	mov	x8, #0x40                  	// #64
+>   28:	d4000001 	svc	#0x0
+>   2c:	d65f03c0 	ret
+>   30:	52800002 	mov	w2, #0x0                   	// #0
+>   34:	17fffffb 	b	20 <sys_caller+0x20>
+
+Thanks for having a go at this.  If the compiler can show the
+problematic behaviour, it looks like your could could probably trigger
+it, and as you observe, it doesn't trigger.
+
+I am sure I have seen it in the past, but today I am struggling
+to tickle the compiler in the right way.  My original reproducer may
+have involved LTO, but either way I don't still have it :(
 
 
---y0ulUmNC+osPPQO6
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
+The classic example of this (triggered directly and not due to inlining)
+would be something like:
 
-On Wed, Jun 26, 2019 at 04:04:04PM +0100, Will Deacon wrote:
+int bar(int, int);
 
-> I think you're missing one small thing here: all v8.5 CPUs will have
-> hardware mitigations for meltdown as advertised in the ID registers.
-> However, we still force KPTI on for those CPUs if KASLR is enabled to avo=
-id
-> it being trivially bypassed by looking at fault timings. As you point out,
-> there are two issues with that: (1) the performance impact of KPTI and (2)
-> the incompatibility with statistical profiling. It is these issues which
-> E0PD attempts to address, so whilst I'm ok with enabling it unconditional=
-ly
-> as you propose, we should go one step further and avoid enabling KPTI on
-> CPUs with E0PD even if KASLR is enabled.
+void foo(int x, int y)
+{
+	register int x_ asm("r0") = x;
+	register int y_ asm("r1") = bar(x, y);
 
-I agree, I'm currently working on a patch which will disable KPTI by
-default if we've enabled E0PD - it's a bit of a faff due to how early we
-decide if we're going to use KPTI so it probably needs to be a separate
-patch anyway.  I figured it was worth sending this separately as a
-system that has both E0PD and KPTI will be no worse off and a system
-that does not enable KPTI but suppports E0PD will be better off so it's
-a net win. =20
+	asm volatile (
+		"svc	#0"
+		:: "r" (x_), "r" (y_)
+		: "memory"
+	);
+}
 
-> We probably also need to consider the unfortunate situations where E0PD
-> is not supported by all of the CPUs in the system.
+->
 
-Yes, I've marked it as ARM64_CPUCAP_SYSTEM_FEATURE so it should be safe
-unless all the CPUs that don't support it are late CPUs (in which case
-it'd stop them booting) but it's not ideal as it means we won't use it
-at on mixed systems.  I did debate marking it as _WEAK so that we'd
-enable it on the CPUs that can use it but I worried that that'd be
-potentially misleading with regard to the level of hardening if the
-kernel said it was turning on E0PD.
-
-As with the interaction with KPTI I figured that the doing the simple
-thing leaves systems generally no worse off and leaves some systems
-better off.
-
---y0ulUmNC+osPPQO6
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAl0Tl/0ACgkQJNaLcl1U
-h9C3Igf/b2EY9w6HmhLQt+UURagEPGZu02QY/z2OMxrg/wBeeocxfmyg22VW01VK
-8f9AEkwH1l+4tcTm+uLxzRwpHOg4na3lqxamEn3ys6ECbELip0sIss1BziPb49fq
-8oKEzKyecRTsQuqGJgTvJxxbUzH8WrnaGi5HBxo1t5tytkiqRY2UwFUh8GsIqzNc
-FGfOMepm3SZfBvGV9EfHlT38SsrQd/MLlEb6k0UuqCBej8iiULFKmPxAlNwGFl4Y
-X5HLio3lcDLEnbwHGxzqaNiKSuSosKESFPBxx0P5fZlq1D9/L3dNmVo9LO4jfxB4
-iHsRo10lPFXgoYhnKJmi8Tw5/ER2tQ==
-=F9Li
------END PGP SIGNATURE-----
-
---y0ulUmNC+osPPQO6--
+0000000000000000 <foo>:
+   0:   a9bf7bfd        stp     x29, x30, [sp, #-16]!
+   4:   910003fd        mov     x29, sp
+   8:   94000000        bl      0 <bar>
+   c:   2a0003e1        mov     w1, w0
+  10:   d4000001        svc     #0x0
+  14:   a8c17bfd        ldp     x29, x30, [sp], #16
+  18:   d65f03c0        ret
 
 
---===============7209286159686963391==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+The gcc documentation is vague and ambiguous about precisely whan this
+can happen and about how to avoid it.
+
+The case where this behaviour is triggered by inlining an expression
+that involves a (possibly implicit) function call seems hard to
+reproduce.
+
+
+However, the workaround is cheap, and to avoid the chance of subtle
+intermittent code gen bugs it may be worth it:
+
+void foo(int x, int y)
+{
+	asm volatile (
+		"mov	x0, %0\n\t"
+		"mov	x1, %1\n\t"
+		"svc	#0"
+		:: "r" (x), "r" (bar(x, y))
+		: "r0", "r1", "memory"
+	);
+}
+
+->
+
+0000000000000000 <foo>:
+   0:   a9be7bfd        stp     x29, x30, [sp, #-32]!
+   4:   910003fd        mov     x29, sp
+   8:   f9000bf3        str     x19, [sp, #16]
+   c:   2a0003f3        mov     w19, w0
+  10:   94000000        bl      0 <bar>
+  14:   2a0003e2        mov     w2, w0
+  18:   aa1303e0        mov     x0, x19
+  1c:   aa0203e1        mov     x1, x2
+  20:   d4000001        svc     #0x0
+  24:   f9400bf3        ldr     x19, [sp, #16]
+  28:   a8c27bfd        ldp     x29, x30, [sp], #32
+  2c:   d65f03c0        ret
+
+
+What do you think?
+
+Cheers
+---Dave
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============7209286159686963391==--
-
