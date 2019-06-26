@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9753D56AAD
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 26 Jun 2019 15:35:21 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 819BE56AB0
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 26 Jun 2019 15:35:41 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,46 +11,46 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=WJGOAHyrsmuuk8bD/9rFVOrQ/bGlKnvUbVNArfvwnH0=; b=o2HQi0AmIzkBkm2A7RpDv2AHFO
-	RahISc6E0nknMN/9seiL1kzVAgU/NKt9XeMJs1W1o8CWOxs6fykyh7TZnR5Mk+Gl08oAPXsB97RxP
-	rMV5yerDxKPsDFpElNqeSJVW7LM14xN0043f7gAIwYOnvGFh1hKoZ8upR1GQd30XmwM55uWffCP6M
-	3UoHo87w530wjGgS6kphXIpwybfNwwJP6Wv/ngxa+qXn5v3vpOuVyLIlA6PIS2QTFeGvbWA7WehLZ
-	UsVaI1JBao/3QYtO7//MFCINyUYQmAvb49PdnZQSRMnRDrJLcUQDr6dotRwK928MSQIIMYzQdYWNr
-	HUWejuNQ==;
+	bh=qkvz7S3c96lhYHIk7j9W6hp8TsM98qndKZron1izvAM=; b=iDC6nhV2qsQJn6p6IVdD+jx+i9
+	sDU8IPGbLvqIugWrZ+YI5ozVq+ezP+WbzZS8YVyC9DYHganDqiqpRNO2RVHLMvVJ9YW99bxGLYi+N
+	MdqXPMnOmgrNQK+9YOfL5X4ayuA9aCTzVOvNCWzplq+Nbw72vyl+tUbjMWZ53kb6wZ2k7/3pI2kXE
+	O9WgPBuUsqrv6RBwEBZOgvzzFvmtOEFveo/TT59ceZ3ItkxnkDMWVj40ifxoLmv1V37Qv80kXKeZ9
+	ptrRtQbWLc917XDMk+4GncIJkQjxD4H6/1BpTL0obDDf45/p3zgdkGntWUAwnszMfqZElFE+tlLNp
+	QujSDILg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hg84z-0002ku-Tt; Wed, 26 Jun 2019 13:35:17 +0000
+	id 1hg85L-0004Bt-Do; Wed, 26 Jun 2019 13:35:39 +0000
 Received: from inva020.nxp.com ([92.121.34.13])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hg82F-0001AI-T7
+ id 1hg82G-0001Bn-Jt
  for linux-arm-kernel@lists.infradead.org; Wed, 26 Jun 2019 13:32:31 +0000
 Received: from inva020.nxp.com (localhost [127.0.0.1])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id A147A1A0FC7;
- Wed, 26 Jun 2019 15:32:26 +0200 (CEST)
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 5D97E1A0A37;
+ Wed, 26 Jun 2019 15:32:27 +0200 (CEST)
 Received: from inva024.eu-rdc02.nxp.com (inva024.eu-rdc02.nxp.com
  [134.27.226.22])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 93E311A0FC2;
- Wed, 26 Jun 2019 15:32:26 +0200 (CEST)
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 517681A0A32;
+ Wed, 26 Jun 2019 15:32:27 +0200 (CEST)
 Received: from fsr-ub1664-120.ea.freescale.net
  (fsr-ub1664-120.ea.freescale.net [10.171.82.81])
- by inva024.eu-rdc02.nxp.com (Postfix) with ESMTP id E2272205DB;
- Wed, 26 Jun 2019 15:32:25 +0200 (CEST)
+ by inva024.eu-rdc02.nxp.com (Postfix) with ESMTP id A25EA205DB;
+ Wed, 26 Jun 2019 15:32:26 +0200 (CEST)
 From: Robert Chiras <robert.chiras@nxp.com>
 To: Marek Vasut <marex@denx.de>, Stefan Agner <stefan@agner.ch>,
  David Airlie <airlied@linux.ie>, Daniel Vetter <daniel@ffwll.ch>,
  Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
  Shawn Guo <shawnguo@kernel.org>, Sascha Hauer <s.hauer@pengutronix.de>,
  Fabio Estevam <festevam@gmail.com>
-Subject: [PATCH 06/10] drm/mxsfb: Add max-res property for MXSFB
-Date: Wed, 26 Jun 2019 16:32:14 +0300
-Message-Id: <1561555938-21595-7-git-send-email-robert.chiras@nxp.com>
+Subject: [PATCH 07/10] drm/mxsfb: Update mxsfb to support LCD reset
+Date: Wed, 26 Jun 2019 16:32:15 +0300
+Message-Id: <1561555938-21595-8-git-send-email-robert.chiras@nxp.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1561555938-21595-1-git-send-email-robert.chiras@nxp.com>
 References: <1561555938-21595-1-git-send-email-robert.chiras@nxp.com>
 X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190626_063228_117405_6C0A10BB 
-X-CRM114-Status: GOOD (  10.81  )
+X-CRM114-CacheID: sfid-20190626_063228_915932_984EC355 
+X-CRM114-Status: GOOD (  10.60  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -81,48 +81,60 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Because of stability issues, we may want to limit the maximum resolution
-supported by the MXSFB (eLCDIF) driver.
-This patch add support for a new property which we can use to impose such
-limitation.
+The eLCDIF controller has control pin for the external LCD reset pin.
+Add support for it and assert this pin in enable and de-assert it in
+disable.
 
 Signed-off-by: Robert Chiras <robert.chiras@nxp.com>
 ---
- drivers/gpu/drm/mxsfb/mxsfb_drv.c | 12 ++++++++++--
- 1 file changed, 10 insertions(+), 2 deletions(-)
+ drivers/gpu/drm/mxsfb/mxsfb_crtc.c | 10 ++++++++--
+ drivers/gpu/drm/mxsfb/mxsfb_regs.h |  1 +
+ 2 files changed, 9 insertions(+), 2 deletions(-)
 
-diff --git a/drivers/gpu/drm/mxsfb/mxsfb_drv.c b/drivers/gpu/drm/mxsfb/mxsfb_drv.c
-index 64575df..9a1ee70 100644
---- a/drivers/gpu/drm/mxsfb/mxsfb_drv.c
-+++ b/drivers/gpu/drm/mxsfb/mxsfb_drv.c
-@@ -260,6 +260,7 @@ static int mxsfb_load(struct drm_device *drm, unsigned long flags)
- 	struct platform_device *pdev = to_platform_device(drm->dev);
- 	struct mxsfb_drm_private *mxsfb;
- 	struct resource *res;
-+	u32 max_res[2] = {0, 0};
- 	int ret;
+diff --git a/drivers/gpu/drm/mxsfb/mxsfb_crtc.c b/drivers/gpu/drm/mxsfb/mxsfb_crtc.c
+index e48396d..d9429fc 100644
+--- a/drivers/gpu/drm/mxsfb/mxsfb_crtc.c
++++ b/drivers/gpu/drm/mxsfb/mxsfb_crtc.c
+@@ -222,9 +222,12 @@ static void mxsfb_enable_controller(struct mxsfb_drm_private *mxsfb)
+ 		clk_prepare_enable(mxsfb->clk_disp_axi);
+ 	clk_prepare_enable(mxsfb->clk);
  
- 	mxsfb = devm_kzalloc(&pdev->dev, sizeof(*mxsfb), GFP_KERNEL);
-@@ -340,10 +341,17 @@ static int mxsfb_load(struct drm_device *drm, unsigned long flags)
- 		}
- 	}
+-	if (mxsfb->devdata->ipversion >= 4)
++	if (mxsfb->devdata->ipversion >= 4) {
+ 		writel(CTRL2_OUTSTANDING_REQS__REQ_16,
+ 		       mxsfb->base + LCDC_V4_CTRL2 + REG_SET);
++		/* Assert LCD Reset bit */
++		writel(CTRL2_LCD_RESET, mxsfb->base + LCDC_V4_CTRL2 + REG_SET);
++	}
  
-+	of_property_read_u32_array(drm->dev->of_node, "max-res",
-+				   &max_res[0], 2);
-+	if (!max_res[0])
-+		max_res[0] = MXSFB_MAX_XRES;
-+	if (!max_res[1])
-+		max_res[1] = MXSFB_MAX_YRES;
-+
- 	drm->mode_config.min_width	= MXSFB_MIN_XRES;
- 	drm->mode_config.min_height	= MXSFB_MIN_YRES;
--	drm->mode_config.max_width	= MXSFB_MAX_XRES;
--	drm->mode_config.max_height	= MXSFB_MAX_YRES;
-+	drm->mode_config.max_width	= max_res[0];
-+	drm->mode_config.max_height	= max_res[1];
- 	drm->mode_config.funcs		= &mxsfb_mode_config_funcs;
- 	drm->mode_config.helper_private	= &mxsfb_mode_config_helpers;
+ 	/* If it was disabled, re-enable the mode again */
+ 	writel(CTRL_DOTCLK_MODE, mxsfb->base + LCDC_CTRL + REG_SET);
+@@ -242,9 +245,12 @@ static void mxsfb_disable_controller(struct mxsfb_drm_private *mxsfb)
+ {
+ 	u32 reg;
  
+-	if (mxsfb->devdata->ipversion >= 4)
++	if (mxsfb->devdata->ipversion >= 4) {
+ 		writel(CTRL2_OUTSTANDING_REQS(0x7),
+ 		       mxsfb->base + LCDC_V4_CTRL2 + REG_CLR);
++		/* De-assert LCD Reset bit */
++		writel(CTRL2_LCD_RESET, mxsfb->base + LCDC_V4_CTRL2 + REG_CLR);
++	}
+ 
+ 	writel(CTRL_RUN, mxsfb->base + LCDC_CTRL + REG_CLR);
+ 
+diff --git a/drivers/gpu/drm/mxsfb/mxsfb_regs.h b/drivers/gpu/drm/mxsfb/mxsfb_regs.h
+index 9ee0d3c7..2583a69 100644
+--- a/drivers/gpu/drm/mxsfb/mxsfb_regs.h
++++ b/drivers/gpu/drm/mxsfb/mxsfb_regs.h
+@@ -87,6 +87,7 @@
+ #define CTRL2_OUTSTANDING_REQS(x)	REG_PUT((x), 23, 21)
+ #define CTRL2_ODD_LINE_PATTERN(x)	REG_PUT((x), 18, 16)
+ #define CTRL2_EVEN_LINE_PATTERN(x)	REG_PUT((x), 14, 12)
++#define CTRL2_LCD_RESET			BIT(0)
+ 
+ #define TRANSFER_COUNT_SET_VCOUNT(x)	(((x) & 0xffff) << 16)
+ #define TRANSFER_COUNT_GET_VCOUNT(x)	(((x) >> 16) & 0xffff)
 -- 
 2.7.4
 
