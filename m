@@ -2,43 +2,42 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7DC4B56AF7
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 26 Jun 2019 15:43:20 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 50FB656B05
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 26 Jun 2019 15:46:00 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
 	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=81Yzcujp+ShujK+kBeqXeiJZT89btgZn5S1UvR75UiA=; b=k/9ABvEmbkhWD2oucL4s9OgXJ
-	ZGYtohQJYCe5c3rVf5ajV8PF3hnH/pzHFuIBa0Xsv6C26iNKN+nb8isvL23vCDUfAzjRPlkp2c4Fh
-	aG/2XpgP3NEM21RT3C9vWXShfXEvx0GNMFASaVQxymtEPMUZE7DTNqbZOiAoY3CRy0DssPfHqjXcu
-	15VU/e4R7GzUX6EsDFr3JCBZKJ5iIpZEMwZLKiWDs+5GQkIYlLPxz/Cplu8j/Kv4Z1qEhQyE2d1sI
-	LUrPXg4ZiQ0E+GmK7iZdfuEH5IbEQgUeAgBLlX2qAICMsz/e0rpTWdDczhoxBdWypFdfhCmRyLDSo
-	RgkelLswA==;
+	 bh=POdvDFaSzs8GNQxGvDA9kAW3PK+HsviRW6kpkcBjCsY=; b=omSTu75iSQKAOrycp5sNrLGnk
+	1MTiB0TtAHwQPFK4cIeA2QPXh0Jgdp43pjZYu0NA2GZc30jeax9FGrZQtu0IIiS8qYcyYJI6kIiyi
+	YM8z3PVMjuCk0tAtLcicawrK7Opc+NfwenmTKCfIau8/WFBnfv1m+gUYvWa1s8BzhAv/ZJNbuJ/3i
+	Pbm5GmsYqTOh+kWsS8+oooWYQXRmciAus8bFccclX320/7f3jpcp8k+XvlN00nHrbVoJ11mz83Ahb
+	YVLOik+bxa9q2WaBbkJEoEL6bz97IfQfGRd3cpogdvkFMEJWEwct2U7jmcLgQW6x3MiR2hTIhAuCa
+	yg9yZcLkg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hg8Ci-0000H6-EX; Wed, 26 Jun 2019 13:43:16 +0000
+	id 1hg8FF-0002B0-CJ; Wed, 26 Jun 2019 13:45:53 +0000
 Received: from sauhun.de ([88.99.104.3] helo=pokefinder.org)
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hg8CV-0000GE-SL
- for linux-arm-kernel@lists.infradead.org; Wed, 26 Jun 2019 13:43:05 +0000
+ id 1hg8Ey-0002AU-Of
+ for linux-arm-kernel@lists.infradead.org; Wed, 26 Jun 2019 13:45:38 +0000
 Received: from localhost (p54B330AF.dip0.t-ipconnect.de [84.179.48.175])
- by pokefinder.org (Postfix) with ESMTPSA id E84C82C0114;
- Wed, 26 Jun 2019 15:43:02 +0200 (CEST)
-Date: Wed, 26 Jun 2019 15:43:02 +0200
+ by pokefinder.org (Postfix) with ESMTPSA id 00AF52C0114;
+ Wed, 26 Jun 2019 15:45:35 +0200 (CEST)
+Date: Wed, 26 Jun 2019 15:45:35 +0200
 From: Wolfram Sang <wsa@the-dreams.de>
-To: Vignesh Raghavendra <vigneshr@ti.com>
-Subject: Re: [PATCH] dt-bindings: i2c: omap: Add new compatible for J721E SoCs
-Message-ID: <20190626134302.GM801@ninjato>
-References: <20190605084504.2777-1-vigneshr@ti.com>
+To: Fabrice Gasnier <fabrice.gasnier@st.com>
+Subject: Re: [PATCH] i2c: i2c-stm32f7: Add I2C_SMBUS_I2C_BLOCK_DATA support
+Message-ID: <20190626134535.GN801@ninjato>
+References: <1559654451-26612-1-git-send-email-fabrice.gasnier@st.com>
 MIME-Version: 1.0
-In-Reply-To: <20190605084504.2777-1-vigneshr@ti.com>
+In-Reply-To: <1559654451-26612-1-git-send-email-fabrice.gasnier@st.com>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190626_064304_068521_76125C58 
-X-CRM114-Status: UNSURE (   7.32  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190626_064536_947642_F116F5C8 
+X-CRM114-Status: GOOD (  17.43  )
 X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.0 points)
@@ -59,64 +58,100 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
- Rob Herring <robh+dt@kernel.org>, linux-i2c@vger.kernel.org,
- linux-omap@vger.kernel.org, linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============8814039453152678212=="
+Cc: alexandre.torgue@st.com, linux-kernel@vger.kernel.org,
+ pierre-yves.mordret@st.com, linux-i2c@vger.kernel.org,
+ mcoquelin.stm32@gmail.com, linux-stm32@st-md-mailman.stormreply.com,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: multipart/mixed; boundary="===============6593504173043123567=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 
---===============8814039453152678212==
+--===============6593504173043123567==
 Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="EOHJn1TVIJfeVXv2"
+	protocol="application/pgp-signature"; boundary="8MZM6zh5Bb05FW+3"
 Content-Disposition: inline
 
 
---EOHJn1TVIJfeVXv2
+--8MZM6zh5Bb05FW+3
 Content-Type: text/plain; charset=us-ascii
 Content-Disposition: inline
 Content-Transfer-Encoding: quoted-printable
 
-On Wed, Jun 05, 2019 at 02:15:04PM +0530, Vignesh Raghavendra wrote:
-> From: Peter Ujfalusi <peter.ujfalusi@ti.com>
+On Tue, Jun 04, 2019 at 03:20:51PM +0200, Fabrice Gasnier wrote:
+> This patch adds the support of I2C_SMBUS_I2C_BLOCK_DATA transaction type
+> for the stm32f7 SMBUS Controller.
+> Use emulated I2C_SMBUS_I2C_BLOCK_DATA transactions as there is no specific
+> hardware in STM32 I2C to manage this (e.g. like no need for PEC here).
+> Emulated transfer will fall back calling i2c transfer method where there's
+> already support for DMAs for example.
+> So, use the I2C_FUNC_SMBUS_I2C_BLOCK in stm32f7_i2c_func(), and rely on
+> emulated transfer by returning -EOPNOTSUPP in the smbus_xfer() routine
+> for such a case.
 >=20
-> J721E SoCs have same I2C IP as OMAP SoCs. Add new compatible to
-> handle J721E SoCs.
+> Signed-off-by: Fabrice Gasnier <fabrice.gasnier@st.com>
+
+Maintainers?
+
+> ---
+>  drivers/i2c/busses/i2c-stm32f7.c | 6 +++++-
+>  1 file changed, 5 insertions(+), 1 deletion(-)
 >=20
-> Signed-off-by: Peter Ujfalusi <peter.ujfalusi@ti.com>
-> Signed-off-by: Vignesh Raghavendra <vigneshr@ti.com>
+> diff --git a/drivers/i2c/busses/i2c-stm32f7.c b/drivers/i2c/busses/i2c-st=
+m32f7.c
+> index 48337be..68a751e 100644
+> --- a/drivers/i2c/busses/i2c-stm32f7.c
+> +++ b/drivers/i2c/busses/i2c-stm32f7.c
+> @@ -953,6 +953,9 @@ static int stm32f7_i2c_smbus_xfer_msg(struct stm32f7_=
+i2c_dev *i2c_dev,
+>  		cr2 &=3D ~STM32F7_I2C_CR2_RD_WRN;
+>  		f7_msg->read_write =3D I2C_SMBUS_READ;
+>  		break;
+> +	case I2C_SMBUS_I2C_BLOCK_DATA:
+> +		/* Rely on emulated i2c transfer (through master_xfer) */
+> +		return -EOPNOTSUPP;
+>  	default:
+>  		dev_err(dev, "Unsupported smbus protocol %d\n", f7_msg->size);
+>  		return -EOPNOTSUPP;
+> @@ -1803,7 +1806,8 @@ static u32 stm32f7_i2c_func(struct i2c_adapter *ada=
+p)
+>  		I2C_FUNC_SMBUS_QUICK | I2C_FUNC_SMBUS_BYTE |
+>  		I2C_FUNC_SMBUS_BYTE_DATA | I2C_FUNC_SMBUS_WORD_DATA |
+>  		I2C_FUNC_SMBUS_BLOCK_DATA | I2C_FUNC_SMBUS_BLOCK_PROC_CALL |
+> -		I2C_FUNC_SMBUS_PROC_CALL | I2C_FUNC_SMBUS_PEC;
+> +		I2C_FUNC_SMBUS_PROC_CALL | I2C_FUNC_SMBUS_PEC |
+> +		I2C_FUNC_SMBUS_I2C_BLOCK;
+>  }
+> =20
+>  static struct i2c_algorithm stm32f7_i2c_algo =3D {
+> --=20
+> 2.7.4
+>=20
 
-Applied to for-next, thanks!
-
-Sorry for the delay, I was waiting for an ack to show up. I totally
-missed you are the maintainer :( Won't happen again!
-
-
---EOHJn1TVIJfeVXv2
+--8MZM6zh5Bb05FW+3
 Content-Type: application/pgp-signature; name="signature.asc"
 
 -----BEGIN PGP SIGNATURE-----
 
-iQIzBAABCgAdFiEEOZGx6rniZ1Gk92RdFA3kzBSgKbYFAl0TdmAACgkQFA3kzBSg
-KbZ9dBAAo919nA+c20of0MlgEZW7UedZulT6dQ4dEQarjiBxvSypxnuLFf4GK0HU
-49ES8y9RFx/ALu1w0tuB2X8tdnymyeURHhKamiRzI9uQckdWdG+bq4CYqJAbjyRn
-wrqn09bsPLR3X7tW5Ivcn5p0capglvGYbKMfSG4sM43b793RglSxydF2XhDoZYlQ
-jw7ixZikzVY1hl7fz05zhjXNnOpEF/M3HdnqpkcFf/PrAlZH+NycWnAU3LbERYVa
-hCIo98A7lqgfuGgCsiifSwc0M9fcLu7ddf8SVPnS5V39//H+8oW2BpR5U8tDZ4nW
-Iu3l/R4mBdZ68Evda2mQHNbRGybt3cV4e4VdyuxeKjGPe+kAxBUaEsPNwYF01k2A
-StviNSwbGPDkzHOLP4/Cw+1cb++CsduUJd06e1xocsqkpzLoaGUTmy1g0TiL1hdv
-ehM8d+zmZfm1l4RMF/bXe06+nOlMy4JvT/4yB1a4XoptrOdOJ7gKvAguKQkVfwx9
-yopMdS2cysDNu2ny9258EnAls1cfFJCbysBbl3/lX8HNwb8yUWSrD/EleroF/35h
-2H/awiSEuDDGXJRXoUxXlJQpS/kXrw3ehpplkFptKKhpG5s1U+EZNXZk5IZHWw8c
-helXxIcFR4UZUuMefJ/5NzB+yi6v2VJFHmZyOHmnRwxdtqNDekI=
-=T4Na
+iQIzBAABCgAdFiEEOZGx6rniZ1Gk92RdFA3kzBSgKbYFAl0Tdv8ACgkQFA3kzBSg
+KbY34A/8CYpfe2MHsAqTGHO1tyGPc3Fuatefa6I/N/YHYLpWoSl3mpGia6mLK7s7
+gpUm/ClB+7Sl5KKdUaQ2zbvDtBPKQHfpZ/2QAYgBIoTVpf+snQLYRv4I5EiDD9Hs
+EAD+2gH3nxPCHu4q/J97lT/wq4o5IxeyzsLHxeRnnBB+Ziov+9Zoad5ug3f6jRTp
+KcL9B7T1Is0CU4xlqO/m3sHiRgfzIjovv7l6UIWd4JgRCiXerqkDuaZ7kp/rin5h
+4JQplk9UxamamgkjDexY/CE1Jk2ZN1NYLck574DAFO2J0CpGsYYu+ykC046A1H2i
+1yPfuLWy6Ie3IHHmf0CWJOw9h0o0oxmZQkTiX8WoXwUAozrodjbHo5asLK8V+F+z
+mjv8YhvXjbZRePtqpusnwtU7p4kXNhfi2skCNUPMqEQlAMgHecagto0+rDcfy6qI
+icB1x3LegvBoO1wWRilTvjYAYC5/gFLSdqppZVYGF5kEEzmJ1Q/Tv+Ekb3fUbgEz
+50riYWCnCoOdCs6S2XNb8/aSgHkU+6sjRNA7hCJCNNLPxcMobmUCk5V2R56GWjPW
+4z30wWy4vO3eo4CtH7WDUsMDnxiNK4lxqMkiPZPXgcJRl+SDnIPsyWrQKN9CCNoq
+c2br40VJ1gnvj0OX0TSKItNmxc5K4Q1iQWGiEwmA7DMumfDW9Kw=
+=as2l
 -----END PGP SIGNATURE-----
 
---EOHJn1TVIJfeVXv2--
+--8MZM6zh5Bb05FW+3--
 
 
---===============8814039453152678212==
+--===============6593504173043123567==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -127,5 +162,5 @@ linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
 
---===============8814039453152678212==--
+--===============6593504173043123567==--
 
