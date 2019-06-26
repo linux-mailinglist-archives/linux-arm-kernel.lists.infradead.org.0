@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2162355D02
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 26 Jun 2019 02:42:37 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0DADE55D06
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 26 Jun 2019 02:42:54 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,44 +11,44 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=QcAypXR7Hxq5hSfGCDjb+0FGXznq+wJTcq9pGlrjHzM=; b=sP1qFBgTtX708W0dlQVN/0x/rE
-	FUhQgYI3ZqInlZLwJr0aCM9FuQAvljKMJf9jYVCe3m4DTMLPKBVrJ3FGy2uhu2EztSc/JP081L3+1
-	9lwTblEGrN4d9Q0xkw8YfMl7C05S9aQKENSe0zeKnZuAJf4udE9olz/MLJ5nt1V0L3JzamuMJj2PE
-	t1o1DT1s3FKnzq1KLlFaLfcCrVQhbYB792+vKb8c8UgqEIu4Dk8Ck3DichUmwvzKHnDJgv3402j6U
-	7KQFpYhsp0tEG1aAXtTk4pcBGVKc1mAPb5Cgsm3+PBpakjsSl0GCH7veEkZDVlWRjYz4n6sBsijQo
-	/PAfmvxA==;
+	bh=YfwcAy1prz/BHaBekuheZKYq6eBjdeDMeOz8wosvygY=; b=WVf39zfLetKeWZO2fNBIgXqB1H
+	wwjC5kC6WUTPlNJshQtupIfwZoCycdOs4m18Uzk62p0KahzDsDgobcjGlgW4YGQA4hphL+8RW5LQF
+	R07g9iGpLs8mCBs/aPm2AZgm6ZcBZkjejDsjnhKY5Ky8jwZBQR6w+lBHeCccfQ5EbHjPdgs184R9b
+	c1xplWBGdXjFt3MaBCGejR141JQM668DAY43N/1NlctOZ0cfRH3W0btYWIfkTwPrFxFJAbdMNlVIC
+	vdxOky1DFk9OLjjpDMBQ7lse28RWEM7ThnzOi1RJCpCTvjjI88VQJ2RISZZn0SkutVnJ8zj0J8C/D
+	feprsBKQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hfw1B-000580-FA; Wed, 26 Jun 2019 00:42:33 +0000
+	id 1hfw1S-0005N9-8k; Wed, 26 Jun 2019 00:42:50 +0000
 Received: from mx.socionext.com ([202.248.49.38])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hfw0c-0004uV-9z
- for linux-arm-kernel@lists.infradead.org; Wed, 26 Jun 2019 00:41:59 +0000
+ id 1hfw0e-0004uV-6z
+ for linux-arm-kernel@lists.infradead.org; Wed, 26 Jun 2019 00:42:01 +0000
 Received: from unknown (HELO iyokan-ex.css.socionext.com) ([172.31.9.54])
  by mx.socionext.com with ESMTP; 26 Jun 2019 09:41:55 +0900
-Received: from mail.mfilter.local (m-filter-2 [10.213.24.62])
- by iyokan-ex.css.socionext.com (Postfix) with ESMTP id 8F16F60629;
+Received: from mail.mfilter.local (m-filter-1 [10.213.24.61])
+ by iyokan-ex.css.socionext.com (Postfix) with ESMTP id F38CC60629;
  Wed, 26 Jun 2019 09:41:55 +0900 (JST)
-Received: from 172.31.9.53 (172.31.9.53) by m-FILTER with ESMTP;
+Received: from 172.31.9.51 (172.31.9.51) by m-FILTER with ESMTP;
  Wed, 26 Jun 2019 09:41:55 +0900
 Received: from yuzu.css.socionext.com (yuzu [172.31.8.45])
- by iyokan.css.socionext.com (Postfix) with ESMTP id 78EDF40377;
+ by kinkan.css.socionext.com (Postfix) with ESMTP id A99A21A14E3;
  Wed, 26 Jun 2019 09:41:55 +0900 (JST)
 Received: from hamster.e01.socionext.com (unknown [10.213.134.20])
- by yuzu.css.socionext.com (Postfix) with ESMTP id 4E6AD120138;
+ by yuzu.css.socionext.com (Postfix) with ESMTP id 7F157120138;
  Wed, 26 Jun 2019 09:41:55 +0900 (JST)
 From: Keiji Hayashibara <hayashibara.keiji@socionext.com>
 To: broonie@kernel.org, yamada.masahiro@socionext.com,
  linux-spi@vger.kernel.org, linux-arm-kernel@lists.infradead.org
-Subject: [PATCH 1/2] spi: uniphier: fix timeout error
-Date: Wed, 26 Jun 2019 09:41:47 +0900
-Message-Id: <1561509708-4175-2-git-send-email-hayashibara.keiji@socionext.com>
+Subject: [PATCH 2/2] spi: uniphier: fix zero-length transfer
+Date: Wed, 26 Jun 2019 09:41:48 +0900
+Message-Id: <1561509708-4175-3-git-send-email-hayashibara.keiji@socionext.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1561509708-4175-1-git-send-email-hayashibara.keiji@socionext.com>
 References: <1561509708-4175-1-git-send-email-hayashibara.keiji@socionext.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190625_174158_460657_68E5F896 
-X-CRM114-Status: GOOD (  16.23  )
+X-CRM114-CacheID: sfid-20190625_174200_360326_15471FDB 
+X-CRM114-Status: GOOD (  11.20  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -77,49 +77,30 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Timeout error was silently ignored.
-This commit adds timeout error handling and modifies return type of
-wait_for_completion_timeout().
+The zero-length transfer results in timeout error because
+the transfer doesn't start.
+This commit modified to return success in this case.
 
 Signed-off-by: Keiji Hayashibara <hayashibara.keiji@socionext.com>
 ---
- drivers/spi/spi-uniphier.c | 13 ++++++++-----
- 1 file changed, 8 insertions(+), 5 deletions(-)
+ drivers/spi/spi-uniphier.c | 4 ++++
+ 1 file changed, 4 insertions(+)
 
 diff --git a/drivers/spi/spi-uniphier.c b/drivers/spi/spi-uniphier.c
-index 5a6137f..c3c35c0 100644
+index c3c35c0..b32c77d 100644
 --- a/drivers/spi/spi-uniphier.c
 +++ b/drivers/spi/spi-uniphier.c
-@@ -328,7 +328,8 @@ static int uniphier_spi_transfer_one(struct spi_master *master,
- 				     struct spi_transfer *t)
- {
- 	struct uniphier_spi_priv *priv = spi_master_get_devdata(master);
--	int status;
-+	struct device *dev = master->dev.parent;
-+	unsigned long time_left;
+@@ -331,6 +331,10 @@ static int uniphier_spi_transfer_one(struct spi_master *master,
+ 	struct device *dev = master->dev.parent;
+ 	unsigned long time_left;
  
++	/* Terminate and return success for 0 byte length transfer */
++	if (!t->len)
++		return 0;
++
  	uniphier_spi_setup_transfer(spi, t);
  
-@@ -338,13 +339,15 @@ static int uniphier_spi_transfer_one(struct spi_master *master,
- 
- 	uniphier_spi_irq_enable(spi, SSI_IE_RCIE | SSI_IE_RORIE);
- 
--	status = wait_for_completion_timeout(&priv->xfer_done,
--					     msecs_to_jiffies(SSI_TIMEOUT_MS));
-+	time_left = wait_for_completion_timeout(&priv->xfer_done,
-+					msecs_to_jiffies(SSI_TIMEOUT_MS));
- 
- 	uniphier_spi_irq_disable(spi, SSI_IE_RCIE | SSI_IE_RORIE);
- 
--	if (status < 0)
--		return status;
-+	if (!time_left) {
-+		dev_err(dev, "transfer timeout.\n");
-+		return -ETIMEDOUT;
-+	}
- 
- 	return priv->error;
- }
+ 	reinit_completion(&priv->xfer_done);
 -- 
 2.7.4
 
