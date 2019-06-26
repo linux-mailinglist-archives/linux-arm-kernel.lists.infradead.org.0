@@ -2,64 +2,108 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 72D4E56AB6
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 26 Jun 2019 15:36:34 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4BE8B56ACA
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 26 Jun 2019 15:37:38 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=9JLGbgqtpj3Mm7DxmV7DcZlwffib1Y/x+Dft0aQ2+SA=; b=YCcCccf14xrRGJ3FR3fLL69Mvy
-	g+rKSyegQK0FoZvkWWBoRvpUNieDPvWRiHKsrnhstOGRf4UOnnzZ/x/TPNiiTLCQTwF6EsEYlSPYX
-	Y0NJgA0EHuJ5HLQoxD2olRPPqESskVesxBwFdnPtuX2PiG/P9WPrKc9Twr+fpvRXzrtMS9/7W97HD
-	uHi4QjweiQF/eaQfmy3+A9DWQhACa3ygNggPSHbfffubH6AA9391fvWL+p49U/zU7O6IB/x/Cdhh2
-	Qp/mmLl+EEiw+ei+BfPitxM+BGDNzVAhEM5l5VnIZDyqhKQoWHrZgkRfpeFwDHLjG+2fNfq48DzIj
-	3VKKwO/w==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=wITwouE8M4JxBis1RceYgj2+X2kX+XDMBMplZOK474E=; b=nJ08Ls71jhmHTG
+	0XMNiGyLnkUxNaaKmEnycvJdJbpLE1XKezg1Ng8oamOPPgeeo1T21W45rVmUH2XQVa+xa+TZejYdj
+	+c9osuOGpS1sq9jypyhtF8iEBP2/kJf30LFmsiMqsprCcaBSlkJNG+B3ERU5nlaNaGJdMkCkch1Uk
+	aT+Rl5SqRMuGTG0jssotyQWf/XH+BJi3NBelzcp0Uv0RanBf7MsxCfgpw9rw6kkrY2pvomSg4Rkdd
+	l5bFlP4nwlxVXur3WBzxtBkMlXBto30di1y7kcjVs11ugcjnCRUL9wy+5hs7UiaKTP+4yzIHZf25J
+	Gndbbsa56Yxr9OVO+iEA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hg86C-0004xP-MR; Wed, 26 Jun 2019 13:36:32 +0000
-Received: from inva021.nxp.com ([92.121.34.21])
+	id 1hg87E-0005gT-FZ; Wed, 26 Jun 2019 13:37:36 +0000
+Received: from mail-io1-xd42.google.com ([2607:f8b0:4864:20::d42])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hg82I-0001Db-Qk
- for linux-arm-kernel@lists.infradead.org; Wed, 26 Jun 2019 13:32:33 +0000
-Received: from inva021.nxp.com (localhost [127.0.0.1])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id A0DDE2009AA;
- Wed, 26 Jun 2019 15:32:29 +0200 (CEST)
-Received: from inva024.eu-rdc02.nxp.com (inva024.eu-rdc02.nxp.com
- [134.27.226.22])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 92D002009A9;
- Wed, 26 Jun 2019 15:32:29 +0200 (CEST)
-Received: from fsr-ub1664-120.ea.freescale.net
- (fsr-ub1664-120.ea.freescale.net [10.171.82.81])
- by inva024.eu-rdc02.nxp.com (Postfix) with ESMTP id E2E56205DB;
- Wed, 26 Jun 2019 15:32:28 +0200 (CEST)
-From: Robert Chiras <robert.chiras@nxp.com>
-To: Marek Vasut <marex@denx.de>, Stefan Agner <stefan@agner.ch>,
- David Airlie <airlied@linux.ie>, Daniel Vetter <daniel@ffwll.ch>,
- Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
- Shawn Guo <shawnguo@kernel.org>, Sascha Hauer <s.hauer@pengutronix.de>,
- Fabio Estevam <festevam@gmail.com>
-Subject: [PATCH 10/10] drm/mxsfb: Add support for horizontal stride
-Date: Wed, 26 Jun 2019 16:32:18 +0300
-Message-Id: <1561555938-21595-11-git-send-email-robert.chiras@nxp.com>
-X-Mailer: git-send-email 2.7.4
-In-Reply-To: <1561555938-21595-1-git-send-email-robert.chiras@nxp.com>
-References: <1561555938-21595-1-git-send-email-robert.chiras@nxp.com>
-X-Virus-Scanned: ClamAV using ClamSMTP
+ id 1hg86c-0005Vn-5z
+ for linux-arm-kernel@lists.infradead.org; Wed, 26 Jun 2019 13:37:05 +0000
+Received: by mail-io1-xd42.google.com with SMTP id u19so2287234ior.9
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 26 Jun 2019 06:36:57 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=subject:to:cc:references:from:message-id:date:user-agent
+ :mime-version:in-reply-to:content-language:content-transfer-encoding;
+ bh=ENXGaIGRT1B00/CXHLaCHuqYUO45S2El+5e8iF1gDj8=;
+ b=SeqWi607qF5e+FkdwUpfQcC/7QmOJ5s24nuXUNnvHpwi0h4L+RtrFlE5rEkApvgBHz
+ GDrElVUIpoFHsuK8pcPj8vR86x82glVHL64SRytOVMkS9FAk+UvjboZR2V4kCa+H6t/+
+ dcRWLwAhkAxIRInKIjGHEKZDyXnGUIyMqzfT7n/+qEdclfO/OWhJARRXe5KCdblVK606
+ inK+GP3tUAd7nE/rRGizyjoSnOSqLHiKvlhOsh3qkipCsaDokiWvNP57E1bQF7bl526r
+ eLXHlUt/RKzAxhgTR8H7S9CJC79Ey9g6AscwcxBdYH3ATaw38nynLDlkRqtD5KE1XYVp
+ gCSg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:subject:to:cc:references:from:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=ENXGaIGRT1B00/CXHLaCHuqYUO45S2El+5e8iF1gDj8=;
+ b=PCcVDLz0E1mwD0BuBeocoVDV9Bj9V1ZC3pVxZtVQa2X5zU99ymjXNHb0ISGuIhcuaP
+ xgN2qYwWlHl6v7gteq/gxoq4+2zHdXqyF5fkamAb/U+9v0ECMrkWEDOaN4e/1pa3jIu+
+ URiZiyXmyuZ8AN8oyQ+m3RqufJT6Pzg3HCQg3daXoqmDLn27iabLhaB9QQkZFcdZIyaQ
+ jfV3kWb3zsFcMqQrVJQTaUwjPbG3ZZwcfRZGWiB0fM7zUyurCKavH8jkkUM/fajUpMya
+ syqTFyfZTsJI7weRY/rsCfFIGuraaY38hJLYBZ9Y4Q/IG9jN+E1MJL40/eWtSDCNhSDz
+ Qhfg==
+X-Gm-Message-State: APjAAAXLHOpkRTxgE/hCu1Ku2GA689Vosj8rsQXt3xxV6DKL1b3KiKBr
+ K7A5BG1DPs1CjFbj8gHah/I/8A==
+X-Google-Smtp-Source: APXvYqyQBoux0KuEkaaWXNLkz2zfITjJ9SPM1X71L3pCiTDjFxyyBoi8+PhKT4ho+S/U4RXMgvZJCQ==
+X-Received: by 2002:a5d:948a:: with SMTP id v10mr5072911ioj.103.1561556216461; 
+ Wed, 26 Jun 2019 06:36:56 -0700 (PDT)
+Received: from [172.22.22.26] (c-71-195-29-92.hsd1.mn.comcast.net.
+ [71.195.29.92])
+ by smtp.googlemail.com with ESMTPSA id t4sm15432505ioj.26.2019.06.26.06.36.54
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Wed, 26 Jun 2019 06:36:55 -0700 (PDT)
+Subject: Re: [PATCH v2 00/17] net: introduce Qualcomm IPA driver
+To: Johannes Berg <johannes@sipsolutions.net>, Dan Williams
+ <dcbw@redhat.com>, Arnd Bergmann <arnd@arndb.de>
+References: <380a6185-7ad1-6be0-060b-e6e5d4126917@linaro.org>
+ <a94676381a5ca662c848f7a725562f721c43ce76.camel@sipsolutions.net>
+ <CAK8P3a0kV-i7BJJ2X6C=5n65rSGfo8fUiC4J_G-+M8EctYKbkg@mail.gmail.com>
+ <fc0d08912bc10ad089eb74034726308375279130.camel@redhat.com>
+ <36bca57c999f611353fd9741c55bb2a7@codeaurora.org>
+ <153fafb91267147cf22e2bf102dd822933ec823a.camel@redhat.com>
+ <CAK8P3a2Y+tcL1-V57dtypWHndNT3eDJdcKj29c_v+k8o1HHQig@mail.gmail.com>
+ <f4249aa5f5acdd90275eda35aa16f3cfb29d29be.camel@redhat.com>
+ <CAK8P3a2nzZKtshYfomOOSYkqx5HdU15Wr9b+3va0B1euNhFOAg@mail.gmail.com>
+ <dbb32f185d2c3a654083ee0a7188379e1f88d899.camel@sipsolutions.net>
+ <e6ba8a9063e63506c0b88a70418d74ca4efe85cd.camel@sipsolutions.net>
+ <850eed1d-0fec-c396-6e91-b5f1f8440ded@linaro.org>
+ <84153d9e7c903084b492ceccc0dd98cbb32c12ac.camel@redhat.com>
+ <7de004be-27b6-ac63-389d-8ea9d23d0361@linaro.org>
+ <868e949b1fc8cf22307f579ab1f14543064bec20.camel@sipsolutions.net>
+From: Alex Elder <elder@linaro.org>
+Message-ID: <0f5c0332-6894-2fdd-fd25-7af9a21b445b@linaro.org>
+Date: Wed, 26 Jun 2019 08:36:53 -0500
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.7.1
+MIME-Version: 1.0
+In-Reply-To: <868e949b1fc8cf22307f579ab1f14543064bec20.camel@sipsolutions.net>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190626_063231_187220_303534CA 
-X-CRM114-Status: GOOD (  18.82  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20190626_063658_285066_EFE22FF7 
+X-CRM114-Status: GOOD (  31.83  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [92.121.34.21 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:d42 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -71,242 +115,157 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
- dri-devel@lists.freedesktop.org, NXP Linux Team <linux-imx@nxp.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Robert Chiras <robert.chiras@nxp.com>, linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
+Cc: DTML <devicetree@vger.kernel.org>, syadagir@codeaurora.org,
+ Eric Caruso <ejcaruso@google.com>, linux-arm-msm@vger.kernel.org,
+ abhishek.esse@gmail.com,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>, evgreen@chromium.org,
+ Bjorn Andersson <bjorn.andersson@linaro.org>,
+ Ilias Apalodimas <ilias.apalodimas@linaro.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Networking <netdev@vger.kernel.org>,
+ Subash Abhinov Kasiviswanathan <subashab@codeaurora.org>,
+ linux-soc@vger.kernel.org, David Miller <davem@davemloft.net>,
+ cpratapa@codeaurora.org, Ben Chan <benchan@google.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Besides the eLCDIF block, there is another IP block, used in the past
-for EPDC panels. Since the iMX.8mq doesn't have an EPDC connector, this
-block is not documented, but we can use it to do additional operations
-on the frame buffer.
-In this case, we can use the pigeon registers from this IP block in
-order to do horizontal crop on the frame buffer processed by the eLCDIF
-block.
+On 6/25/19 9:14 AM, Johannes Berg wrote:
+> Hi Alex,
+> 
+> I'll just pick a few or your messages and reply there - some other
+> subthreads seem to have pretty much completed.
+> 
 
-Signed-off-by: Robert Chiras <robert.chiras@nxp.com>
----
- drivers/gpu/drm/mxsfb/mxsfb_crtc.c | 79 +++++++++++++++++++++++++++++++++++---
- drivers/gpu/drm/mxsfb/mxsfb_drv.c  | 26 ++++++++++++-
- drivers/gpu/drm/mxsfb/mxsfb_regs.h | 16 ++++++++
- 3 files changed, 113 insertions(+), 8 deletions(-)
+. . .
 
-diff --git a/drivers/gpu/drm/mxsfb/mxsfb_crtc.c b/drivers/gpu/drm/mxsfb/mxsfb_crtc.c
-index 02a5684..712494e 100644
---- a/drivers/gpu/drm/mxsfb/mxsfb_crtc.c
-+++ b/drivers/gpu/drm/mxsfb/mxsfb_crtc.c
-@@ -9,6 +9,7 @@
-  */
- 
- #include <drm/drmP.h>
-+#include <drm/drm_atomic.h>
- #include <drm/drm_atomic_helper.h>
- #include <drm/drm_crtc.h>
- #include <drm/drm_fb_helper.h>
-@@ -430,15 +431,67 @@ void mxsfb_crtc_disable(struct mxsfb_drm_private *mxsfb)
- 	clk_disable_unprepare(mxsfb->clk_axi);
- }
- 
-+void mxsfb_set_fb_hcrop(struct mxsfb_drm_private *mxsfb, u32 src_w, u32 fb_w)
-+{
-+	u32 mask_cnt, htotal, hcount;
-+	u32 vdctrl2, vdctrl3, vdctrl4, transfer_count;
-+	u32 pigeon_12_0, pigeon_12_1, pigeon_12_2;
-+
-+	if (src_w == fb_w) {
-+		writel(0x0, mxsfb->base + HW_EPDC_PIGEON_12_0);
-+		writel(0x0, mxsfb->base + HW_EPDC_PIGEON_12_1);
-+
-+		return;
-+	}
-+
-+	transfer_count = readl(mxsfb->base + LCDC_V4_TRANSFER_COUNT);
-+	hcount = TRANSFER_COUNT_GET_HCOUNT(transfer_count);
-+
-+	transfer_count &= ~TRANSFER_COUNT_SET_HCOUNT(0xffff);
-+	transfer_count |= TRANSFER_COUNT_SET_HCOUNT(fb_w);
-+	writel(transfer_count, mxsfb->base + LCDC_V4_TRANSFER_COUNT);
-+
-+	vdctrl2 = readl(mxsfb->base + LCDC_VDCTRL2);
-+	htotal  = VDCTRL2_GET_HSYNC_PERIOD(vdctrl2);
-+	htotal  += fb_w - hcount;
-+	vdctrl2 &= ~VDCTRL2_SET_HSYNC_PERIOD(0x3ffff);
-+	vdctrl2 |= VDCTRL2_SET_HSYNC_PERIOD(htotal);
-+	writel(vdctrl2, mxsfb->base + LCDC_VDCTRL2);
-+
-+	vdctrl4 = readl(mxsfb->base + LCDC_VDCTRL4);
-+	vdctrl4 &= ~SET_DOTCLK_H_VALID_DATA_CNT(0x3ffff);
-+	vdctrl4 |= SET_DOTCLK_H_VALID_DATA_CNT(fb_w);
-+	writel(vdctrl4, mxsfb->base + LCDC_VDCTRL4);
-+
-+	/* configure related pigeon registers */
-+	vdctrl3  = readl(mxsfb->base + LCDC_VDCTRL3);
-+	mask_cnt = GET_HOR_WAIT_CNT(vdctrl3) - 5;
-+
-+	pigeon_12_0 = PIGEON_12_0_SET_STATE_MASK(0x24)		|
-+		      PIGEON_12_0_SET_MASK_CNT(mask_cnt)	|
-+		      PIGEON_12_0_SET_MASK_CNT_SEL(0x6)		|
-+		      PIGEON_12_0_POL_ACTIVE_LOW		|
-+		      PIGEON_12_0_EN;
-+	writel(pigeon_12_0, mxsfb->base + HW_EPDC_PIGEON_12_0);
-+
-+	pigeon_12_1 = PIGEON_12_1_SET_CLR_CNT(src_w) |
-+		      PIGEON_12_1_SET_SET_CNT(0x0);
-+	writel(pigeon_12_1, mxsfb->base + HW_EPDC_PIGEON_12_1);
-+
-+	pigeon_12_2 = 0x0;
-+	writel(pigeon_12_2, mxsfb->base + HW_EPDC_PIGEON_12_2);
-+}
-+
- void mxsfb_plane_atomic_update(struct mxsfb_drm_private *mxsfb,
- 			       struct drm_plane_state *old_state)
- {
- 	struct drm_simple_display_pipe *pipe = &mxsfb->pipe;
- 	struct drm_crtc *crtc = &pipe->crtc;
-+	struct drm_plane_state *state = pipe->plane.state;
- 	struct drm_framebuffer *fb = pipe->plane.state->fb;
- 	struct drm_framebuffer *old_fb = old_state->fb;
- 	struct drm_pending_vblank_event *event;
--	dma_addr_t paddr;
-+	u32 fb_addr, src_off, src_w, stride, cpp = 0;
- 
- 	spin_lock_irq(&crtc->dev->event_lock);
- 	event = crtc->state->event;
-@@ -453,15 +506,29 @@ void mxsfb_plane_atomic_update(struct mxsfb_drm_private *mxsfb,
- 	}
- 	spin_unlock_irq(&crtc->dev->event_lock);
- 
--	paddr = mxsfb_get_fb_paddr(mxsfb);
--	if (paddr) {
-+	if (!fb || !old_fb)
-+		return;
-+
-+	fb_addr = mxsfb_get_fb_paddr(mxsfb);
-+	if (mxsfb->devdata->ipversion >= 4) {
-+		cpp = fb->format->cpp[0];
-+		src_off = (state->src_y >> 16) * fb->pitches[0] +
-+			  (state->src_x >> 16) * cpp;
-+		fb_addr += fb->offsets[0] + src_off;
-+	}
-+
-+	if (fb_addr) {
- 		clk_prepare_enable(mxsfb->clk_axi);
--		writel(paddr, mxsfb->base + mxsfb->devdata->next_buf);
-+		writel(fb_addr, mxsfb->base + mxsfb->devdata->next_buf);
- 		clk_disable_unprepare(mxsfb->clk_axi);
- 	}
- 
--	if (!fb || !old_fb)
--		return;
-+	if (mxsfb->devdata->ipversion >= 4 &&
-+	    unlikely(drm_atomic_crtc_needs_modeset(state->crtc->state))) {
-+		stride = DIV_ROUND_UP(fb->pitches[0], cpp);
-+		src_w = state->src_w >> 16;
-+		mxsfb_set_fb_hcrop(mxsfb, src_w, stride);
-+	}
- 
- 	/*
- 	 * TODO: Currently, we only support pixel format change, but we need
-diff --git a/drivers/gpu/drm/mxsfb/mxsfb_drv.c b/drivers/gpu/drm/mxsfb/mxsfb_drv.c
-index a164f4d..ffc4b0a 100644
---- a/drivers/gpu/drm/mxsfb/mxsfb_drv.c
-+++ b/drivers/gpu/drm/mxsfb/mxsfb_drv.c
-@@ -132,6 +132,7 @@ static int mxsfb_atomic_helper_check(struct drm_device *dev,
- 		if (old_bpp != new_bpp)
- 			new_state->mode_changed = true;
- 	}
-+
- 	return ret;
- }
- 
-@@ -145,6 +146,25 @@ static const struct drm_mode_config_helper_funcs mxsfb_mode_config_helpers = {
- 	.atomic_commit_tail = drm_atomic_helper_commit_tail_rpm,
- };
- 
-+static int mxsfb_pipe_check(struct drm_simple_display_pipe *pipe,
-+			    struct drm_plane_state *plane_state,
-+			    struct drm_crtc_state *crtc_state)
-+{
-+	struct drm_framebuffer *fb = plane_state->fb;
-+	struct drm_framebuffer *old_fb = pipe->plane.state->fb;
-+
-+	/* force 'mode_changed' when fb pitches changed, since
-+	 * the pitch related registers configuration of LCDIF
-+	 * can not be done when LCDIF is running.
-+	 */
-+	if (old_fb && likely(!crtc_state->mode_changed)) {
-+		if (old_fb->pitches[0] != fb->pitches[0])
-+			crtc_state->mode_changed = true;
-+	}
-+
-+	return 0;
-+}
-+
- static void mxsfb_pipe_enable(struct drm_simple_display_pipe *pipe,
- 			      struct drm_crtc_state *crtc_state,
- 			      struct drm_plane_state *plane_state)
-@@ -241,6 +261,7 @@ static void mxsfb_pipe_disable_vblank(struct drm_simple_display_pipe *pipe)
- }
- 
- static struct drm_simple_display_pipe_funcs mxsfb_funcs = {
-+	.check          = mxsfb_pipe_check,
- 	.enable		= mxsfb_pipe_enable,
- 	.disable	= mxsfb_pipe_disable,
- 	.update		= mxsfb_pipe_update,
-@@ -344,8 +365,9 @@ static int mxsfb_load(struct drm_device *drm, unsigned long flags)
- 
- 	drm->mode_config.min_width	= MXSFB_MIN_XRES;
- 	drm->mode_config.min_height	= MXSFB_MIN_YRES;
--	drm->mode_config.max_width	= max_res[0];
--	drm->mode_config.max_height	= max_res[1];
-+	/* Add additional 16 pixels for possible strides */
-+	drm->mode_config.max_width	= max_res[0] + 16;
-+	drm->mode_config.max_height	= max_res[1] + 16;
- 	drm->mode_config.funcs		= &mxsfb_mode_config_funcs;
- 	drm->mode_config.helper_private	= &mxsfb_mode_config_helpers;
- 
-diff --git a/drivers/gpu/drm/mxsfb/mxsfb_regs.h b/drivers/gpu/drm/mxsfb/mxsfb_regs.h
-index 2583a69..54b0ed1 100644
---- a/drivers/gpu/drm/mxsfb/mxsfb_regs.h
-+++ b/drivers/gpu/drm/mxsfb/mxsfb_regs.h
-@@ -40,6 +40,11 @@
- #define LCDC_AS_BUF			0x220
- #define LCDC_AS_NEXT_BUF		0x230
- 
-+/* pigeon registers for crop */
-+#define HW_EPDC_PIGEON_12_0		0xb00
-+#define HW_EPDC_PIGEON_12_1		0xb10
-+#define HW_EPDC_PIGEON_12_2		0xb20
-+
- /* reg bit manipulation */
- #define REG_MASK(e, s) (((1 << ((e) - (s) + 1)) - 1) << (s))
- #define REG_PUT(x, e, s) (((x) << (s)) & REG_MASK(e, s))
-@@ -121,6 +126,17 @@
- #define VDCTRL4_SYNC_SIGNALS_ON		BIT(18)
- #define SET_DOTCLK_H_VALID_DATA_CNT(x)	((x) & 0x3ffff)
- 
-+#define PIGEON_12_0_SET_STATE_MASK(x)	REG_PUT((x), 31, 24)
-+#define PIGEON_12_0_SET_MASK_CNT(x)	REG_PUT((x), 23, 12)
-+#define PIGEON_12_0_SET_MASK_CNT_SEL(x)	REG_PUT((x), 11,  8)
-+#define PIGEON_12_0_SET_OFFSET(x)	REG_PUT((x),  7,  4)
-+#define PIGEON_12_0_SET_INC_SEL(x)	REG_PUT((x),  3,  2)
-+#define PIGEON_12_0_POL_ACTIVE_LOW	BIT(1)
-+#define PIGEON_12_0_EN			BIT(0)
-+
-+#define PIGEON_12_1_SET_CLR_CNT(x)	REG_PUT((x), 31, 16)
-+#define PIGEON_12_1_SET_SET_CNT(x)	REG_PUT((x), 15,  0)
-+
- #define DEBUG0_HSYNC			(1 < 26)
- #define DEBUG0_VSYNC			(1 < 25)
- 
--- 
-2.7.4
+>>> Linux usually tries to keep drivers generic and focused; each driver is
+>>> written for a specific function. For example, a USB device usually
+>>> provides multiple USB interfaces which will be bound to different Linux
+>>> drivers like a TTY, cdc-ether, QMI (via qmi_wwan), cdc-acm, etc.
+>>
+>> So USB has some attributes similar to what we're talking about
+>> here.  But if I'm not mistaken we want some sort of an overall
+>> management scheme as well.
+> 
+> Yes. For the record, I think the part about "keep drivers generic and
+> focused" really only works for USB devices that expose different pieces
+> that look like any other network device or a TTY device on the USB
+> level, just the combination of these things (and knowing about that)
+> really makes them a modem.
+> 
+> For things like IPA or the (hypothetical) Intel driver we're talking
+> about, it's still all managed by a single (PCIe) driver. For the Intel
+> device in particular, even all the control channels are over exactly the
+> same transport mechanism as the data channels.
 
+Actually the setup for IPA requires certain things to be done via
+QMI by something outside the IPA driver, and it uses a separate
+communication path.  But I understand what you're saying.
+
+. . .
+
+>> I don't like the "maybe" API unless there's no other way to do it.
+>>
+>> Instead I think it would be better for the probing driver to register
+>> with a whatever the WWAN core is, and then have the WWAN core be
+>> responsible for pulling things all together when it receives a
+>> request to do so.  I.e., something in user space should request
+>> that a registered data interface be brought up, and at that
+>> time everything "knows" it's implemented as part of a WWAN
+>> device.
+> 
+> Right, but then we just punt to userspace. Mostly we *do* (eventually!)
+> know that it's a WWAN device, just not every component can detect it.
+> Some components typically can.
+
+We need to identify the existence of a WWAN device (which is I
+guess--typically? always?--a modem).  Perhaps that can be
+discovered in some cases but I think it means a node described
+by Device Tree.
+
+> So for example, you might have a USB multi-function device with a
+> network function (looks just like ethernet pretty much) but another TTY
+> control channel that actually has some specific WWAN IDs, so that part
+> can know it's a WWAN.
+> 
+> Here, the ethernet function would need "maybe" attach, and the control
+> channel would "definitively" attach, pulling it together as a WWAN
+> device without requiring any more action or information.
+
+So you're saying you have a single Ethernet driver, and it can
+drive an Ethernet device connected to a WWAN, or not connected
+to a WWAN, without any changes.  The only distinction is that
+if the device is part of a WWAN it needs to register with the
+WWAN framework.  Is that right?
+
+>> So maybe:
+>> - Hardware probe detects a WWAN device
+>> - The drivers that detect the WWAN device register it with the
+>>   WWAN core code.
+>> - A control channel is instantiated at/before the time the WWAN
+>>   device is registered
+>> - Something in user space should manage the bring-up of any
+>>   other things on the WWAN device thereafter
+> 
+> But those things need to actually get connected first :-)
+
+What I meant is that the registering with the "WWAN core code"
+is what does that "connecting."  The WWAN code has the information
+about what got registered.  But as I said above, this WWAN device
+needs to be identified, and I think (at least for IPA) that will
+require something in Device Tree.  That will "connect" them.
+
+Or I might be misunderstanding your point.
+
+> In IPA/Intel case this is easy since it's a single driver. But if
+> there's multi-function device with ethernet being a completely separate
+> driver, the control channel cannot even reach that to tell it to create
+> a new data channel.
+
+There's a lot more to talk about with control.  I think
+you discuss this in another message, and I'll get to that
+shortly.  But I think understand your point, and again
+I think it comes back to having an abstraction that
+represents the modem, distinct from (but "connected" to)
+the functions it implements/includes.
+
+>>> userspace should probably always create the netdevices (since they are
+>>> always useless until userspace coordinates with the firmware about
+>>> them) but that's not how things are yet.
+>>
+>> That's too bad.  How hard would that be to change?
+> 
+> Depends, but as I said above it's probably orthogonal to the question.
+> The data channel driver would still need to attach to the WWAN device
+> somehow so it becomes reachable by the control plane (note this isn't
+> the same as "control channel" since the latter talks to the modem, the
+> control plane talks to the kernel drivers).
+> 
+>>>> - What causes a created channel to be removed?
+>>>
+>>> Driver removal, userspace WWAN daemon terminating the packet data
+>>> connection which the channel represents, the modem terminating the
+>>> packet data connection (eg network initiated disconnect), etc.
+>>
+>> OK this is as I expected.  Driver (or device) removal is somewhat
+>> obvious, but you're confirming user space might request it as well.
+> 
+> If userspace actually had the ability to create (data) channels, then it
+> would have the ability to also remove them. Right now, this may or may
+> not be supported by the drivers that act together to form the interfaces
+> to a WWAN device.
+
+I think this (user space control) needs to be an option, but
+it doesn't have to be the only way.
+
+. . .
+
+You made some other good clarifications in this message but I'm
+going to try to capture them elsewhere rather than respond here.
+
+					-Alex
 
 _______________________________________________
 linux-arm-kernel mailing list
