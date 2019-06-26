@@ -2,93 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 34DCB56DA0
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 26 Jun 2019 17:27:22 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8DE1056DBF
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 26 Jun 2019 17:33:23 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=GpJiGr+piNKGqylV8Iuz1TUmphfrHkAsqRIInUB/GLo=; b=fNT0gcgaYZBOraZODPo/guHjg
-	EQSldXPbMqTKXI/cJLsLdol3fYLiVC0fPDUwUnaaVFBhbg5iCEC3wM7dLLmbcfQ3Z0yimoPf2snnU
-	/3+mufE0ao5kOgfuTjF45oQWBBvKgea/XRhFY3aD+wDLN6OUH9z3kpqMCd7TYMP2LKCKkIhzgjRsY
-	YltalUMyrvugT8Sm/N/mddg2zplZPonKPXt0cU9PsvFRoCnkXr3kj5w5COueuiApQOvBAVVd/DGQU
-	kU94E7SZlJ8O/K40Z7JU1YXp+4nVoKTyZ5xIHazdp3ZRiPpsJorJWByA9ZqBXbMIHQWASSwQMTkI+
-	SrC0cRmWw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=9OTs5m8x8hCHBSPUx1ktmIbpX2VHmWbybeBOX4n6jk8=; b=P7gGpv43T7RFQI
+	YTKxIHT6Rrx3+Uzw/f0IK9uPX9EbvkFVJC+NCFWn4DniJhdKtQPeeqjJ4GxjqC6bMiPQEhV6KJb8D
+	KsP0RDAikXQzsP3D5rKCFKAQn9ew6ln5vEm4+t9LkDe2acg20uKXvHmrRzO7pzNzew6703UPvwNVq
+	OrE0ffmVpaJ3dcv21SuM6PJFdp0gHCvplXBq5SMzb79qWQQtdzrjJgrBsVSP3k3TotKfYO17sxYSA
+	ZXkwy/ahfxVieGLhpLWx02EYngfe+udD+HiFj+s1WOLQglESVWqoO9UFxDQQ9q8K8n+VFJVU/CTJC
+	U2C3WDezFoQxPZ5FtjVw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hg9pP-0001Zu-Ek; Wed, 26 Jun 2019 15:27:19 +0000
-Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
+	id 1hg9vD-000473-3C; Wed, 26 Jun 2019 15:33:19 +0000
+Received: from bhuna.collabora.co.uk ([46.235.227.227])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hg9pA-0001ZR-6U
- for linux-arm-kernel@lists.infradead.org; Wed, 26 Jun 2019 15:27:06 +0000
-Received: by mail-wr1-x444.google.com with SMTP id p11so3223587wre.7
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 26 Jun 2019 08:27:03 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=9A2wQY7gA6xIj6wKGlooAaLf8y+VabEUr9BRhKlWgIs=;
- b=SLAJ6rqzmTBZp/FgctLb4FAr/aFVV60LMs/tgVvBfJ5AVFxS+vo1hiQ0GiR7m0aMJr
- itAXg2707XGHwQocyvNSYi4bgQaRQ1WmMazDQUGsHkmWm9CA/S6PD4TnW/vtbRBRdrgy
- 9wHjSelVgYQaGgUC/ezGeAezu0xf8NaOt/lwz1sCsZjS2Wfum+BZ+H95O97/S7YRLHqN
- 7bbY4Er9fl6Rn3/A5xGrvPndXYKBNfx5oIdjnjC3zfUwGHJGSJP7mjaS9rMA8qlO7GSS
- 9SemumG0eHC7OoSNh64edSj2cdGLGnxm1NrwQmOeL+6B2tOweXeCc5XG1nL1Dz+ME+AD
- 6p4g==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=9A2wQY7gA6xIj6wKGlooAaLf8y+VabEUr9BRhKlWgIs=;
- b=XhgTJkk7fF4DwxlXKRkUCdWhZVXgJ2Oqs3ytA/KaCRVSLRMN6HiMUjmrkAwv6Lgeb8
- yU9/SRqbFYI5cvu26Q4SS9BW+SMiRmfZT/neIwtoNmd/L8OvKkorKC+SwFlIPwEWiaSV
- CdDkcjCncWntRXbFO7dWbpbYFLtb6Jvmu5mwIymUtIKxrqKV/dUlP8NaKaAMBAeTb4ns
- F0d3IfxQNrzKELL199XE6N78fWrGy9NjiZB6xIZ8lvj+9c+aDn0SuoGz+IfAizSOFVYe
- 7W0SY7gSxN6los0vL9Xwz55hazNIVGsNe6+0cqfhBTYn+i6LmGS/d4LfSafd6dNP4ogE
- 7BDg==
-X-Gm-Message-State: APjAAAVdmoO5JHmQIGSfq2Y6GXFomuL9AQblu/21UBzKWfvwF/Bswl43
- ysn28yJDcP6ASyNjOVnt3Sw=
-X-Google-Smtp-Source: APXvYqyOc1IAXBRl/VFMbKWih7h/LwjwBbFO8TF9+0o+g0SDmLt0h47TcPCTUZGLtrhXNvyMFBz4kQ==
-X-Received: by 2002:adf:ea92:: with SMTP id s18mr3986892wrm.257.1561562822152; 
- Wed, 26 Jun 2019 08:27:02 -0700 (PDT)
-Received: from localhost (p2E5BEF36.dip0.t-ipconnect.de. [46.91.239.54])
- by smtp.gmail.com with ESMTPSA id s188sm3091226wmf.40.2019.06.26.08.27.00
- (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Wed, 26 Jun 2019 08:27:00 -0700 (PDT)
-Date: Wed, 26 Jun 2019 17:26:59 +0200
-From: Thierry Reding <thierry.reding@gmail.com>
-To: Maxime Ripard <maxime.ripard@bootlin.com>
-Subject: Re: [PATCH v5 06/12] drm/modes: Support modes names on the command
- line
-Message-ID: <20190626152659.GA11481@ulmo>
-References: <cover.5190d070d1439d762d7ab273f4ae2573087fee20.1560783090.git-series.maxime.ripard@bootlin.com>
- <18443e0c3bdbbd16cea4ec63bc7f2079b820b43b.1560783090.git-series.maxime.ripard@bootlin.com>
+ id 1hg9v0-00046K-09; Wed, 26 Jun 2019 15:33:08 +0000
+Received: from [127.0.0.1] (localhost [127.0.0.1])
+ (Authenticated sender: ezequiel) with ESMTPSA id ED64C28528D
+Message-ID: <7a205885f0599f04da067a7f41a14ee0b0d759f5.camel@collabora.com>
+Subject: Re: [PATCH v2] phy: rockchip-inno-usb2: allow to force the B-Device
+ Session Valid bit.
+From: Ezequiel Garcia <ezequiel@collabora.com>
+To: =?ISO-8859-1?Q?Ga=EBl?= PORTAY <gael.portay@collabora.com>, 
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org, 
+ linux-rockchip@lists.infradead.org
+Date: Wed, 26 Jun 2019 12:32:55 -0300
+In-Reply-To: <20190515222050.15075-1-gael.portay@collabora.com>
+References: <20190515222050.15075-1-gael.portay@collabora.com>
+Organization: Collabora
+User-Agent: Evolution 3.30.5-1.1 
 MIME-Version: 1.0
-In-Reply-To: <18443e0c3bdbbd16cea4ec63bc7f2079b820b43b.1560783090.git-series.maxime.ripard@bootlin.com>
-User-Agent: Mutt/1.11.4 (2019-03-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190626_082704_243730_37377CE2 
-X-CRM114-Status: GOOD (  44.92  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190626_083306_304746_DF8F5147 
+X-CRM114-Status: GOOD (  26.35  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:444 listed in]
- [list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (thierry.reding[at]gmail.com)
+ no trust [46.235.227.227 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -100,339 +62,143 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: eben@raspberrypi.org, David Airlie <airlied@linux.ie>,
- Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
- dri-devel@lists.freedesktop.org,
- Paul Kocialkowski <paul.kocialkowski@bootlin.com>,
- Sean Paul <seanpaul@chromium.org>,
- Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
- Daniel Vetter <daniel.vetter@intel.com>,
- Maxime Ripard <maxime.ripard@free-electrons.com>,
- linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============8749651980431466444=="
+Cc: Enric Balletbo i Serra <enric.balletbo@collabora.com>, kernel@collabora.com,
+ Heiko Stuebner <heiko@sntech.de>, Kishon Vijay Abraham I <kishon@ti.com>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-
---===============8749651980431466444==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="xHFwDpU9dbj6ez1V"
-Content-Disposition: inline
-
-
---xHFwDpU9dbj6ez1V
-Content-Type: text/plain; charset=utf-8
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
-
-On Mon, Jun 17, 2019 at 04:51:33PM +0200, Maxime Ripard wrote:
-> From: Maxime Ripard <maxime.ripard@free-electrons.com>
->=20
-> The drm subsystem also uses the video=3D kernel parameter, and in the
-> documentation refers to the fbdev documentation for that parameter.
->=20
-> However, that documentation also says that instead of giving the mode usi=
-ng
-> its resolution we can also give a name. However, DRM doesn't handle that
-> case at the moment. Even though in most case it shouldn't make any
-> difference, it might be useful for analog modes, where different standards
-> might have the same resolution, but still have a few different parameters
-> that are not encoded in the modes (NTSC vs NTSC-J vs PAL-M for example).
->=20
-> Reviewed-by: Noralf Tr=C3=B8nnes <noralf@tronnes.org>
-> Signed-off-by: Maxime Ripard <maxime.ripard@free-electrons.com>
-> ---
->  drivers/gpu/drm/drm_client_modeset.c |  4 ++-
->  drivers/gpu/drm/drm_connector.c      |  3 +-
->  drivers/gpu/drm/drm_modes.c          | 62 +++++++++++++++++++++--------
->  include/drm/drm_connector.h          |  7 +++-
->  4 files changed, 59 insertions(+), 17 deletions(-)
-
-This patch causes an issue on various Tegra boards that have so far been
-running flawlessly. Here's an extract from the boot log:
-
-	[    0.000000] Kernel command line: root=3D/dev/nfs rw netdevwait ip=3D:::=
-::eth0:on nfsroot=3D192.168.23.1:/srv/nfs/tegra194 console=3DttyTCU0,115200=
-n8 console=3Dtty0 fbcon=3Dmap:0 net.ifnames=3D0 rootfstype=3Dext4 video=3Dt=
-egrafb no_console_suspend=3D1 earlycon=3Dtegra_comb_uart,mmio32,0x0c168000 =
-gpt usbcore.old_scheme_first=3D1 tegraid=3D19.1.2.0.0 maxcpus=3D8 boot.slot=
-_suffix=3D boot.ratchetvalues=3D0.2.2 vpr=3D0x8000000@0xf0000000 sdhci_tegr=
-a.en_boot_part_access=3D1
-	...
-	[   18.597001] [drm:drm_connector_init [drm]] cmdline mode for connector D=
-P-1 tegrafb 0x0@60Hz
-	...
-	[   18.627145] [drm:drm_connector_init [drm]] cmdline mode for connector D=
-P-2 tegrafb 0x0@60Hz
-	...
-	[   18.673770] [drm:drm_connector_init [drm]] cmdline mode for connector H=
-DMI-A-1 tegrafb 0x0@60Hz
-	...
-	[   19.057500] [drm:drm_mode_debug_printmodeline [drm]] Modeline "0x0": 0 =
-0 0 0 0 0 0 1 4 1 0x20 0x6
-	[   19.066341] [drm:drm_mode_prune_invalid [drm]] Not using 0x0 mode: CLOC=
-K_LOW
-	...
-	[   19.677803] [drm:drm_client_modeset_probe [drm]] looking for cmdline mo=
-de on connector 60
-	[   19.686019] [drm:drm_client_modeset_probe [drm]] found mode 0x0
-	...
-	[   19.851843] drm drm: failed to set initial configuration: -28
-
-So basically what's happening here is that the bootloader is passing a
-video=3D parameter on the command-line and after this patch, the DRM core
-will consider the tegrafb in that parameter to be a named video mode.
-The mode is then filtered out because it doesn't make any sense, but
-then drm_client_modeset_probe() still tries to use it, eventually
-leading to failure because we can't allocate memory for a 0x0
-framebuffer.
-
-Now, there are obviously a couple of places where things go wrong. On
-one hand I think if the mode specified on the command-line is already
-filtered out, then drm_client_modeset_probe() should not be trying to
-use it.
-
-One could also argue that the bootloader shouldn't be passing that
-video=3Dtegrafb parameter in the first place. Then again, this is nothing
-out of the ordinary (as documented in Documentation/fb/modedb.rst).
-
-The problem with named modes, and you already highlighted this in your
-comment in the code, is that it's not possible to distinguish between a
-mode name and a video=3D option that defines the framebuffer device to
-use.
-
-That said, I wouldn't be surprised if this change ended up breaking on
-other devices. I'm also not sure that under these circumstances it's a
-good idea to support named modes. At least not until we have a better
-way of determining what's a real mode name and what isn't. Looking at
-the old modedb from fb, not even the standard modes listed there have
-names associated with them, so I'm not sure how this was ever supposed
-to work. From the looks of it, some of the fbdev drivers seem to take a
-mode list from board-code (see for example the mx21ads_modes array from
-arch/arm/mach-imx/mach-mx21ads.c). The imxfb driver can then take a mode
-name from the command line and try to match it against a list of known
-modes. That seems to match what the documentation says.
-
-However, that also really only works because this is all directly dealt
-with in the fbdev drivers. For DRM/KMS we don't do that and instead we
-rely on the core to provide this backwards-compatibility. However, at
-the time when we parse the mode from the command line we don't have the
-list of modes that are considered to be valid, so your patch currently
-needs to assume that it is a valid mode. I don't think that's a good
-idea, because clearly not all strings that currently make it through the
-filter are actually modes.
-
-So if we really need this, I think we want some way for the connector to
-provide the list of named modes that it supports so that by the time we
-want to parse the command-line we can check whether it's actually a name
-to avoid false positives like the ones I'm seeing on Tegra.
-
-For now it might just be easiest to avoid any of this and disable the
-named mode support until it's a bit more mature. The patch no longer
-reverts cleanly, but it should be fairly easy to disable the feature in
-a follow-up patch again.
-
-Thierry
-
-> diff --git a/drivers/gpu/drm/drm_client_modeset.c b/drivers/gpu/drm/drm_c=
-lient_modeset.c
-> index 4869a0170bec..33d4988f22ae 100644
-> --- a/drivers/gpu/drm/drm_client_modeset.c
-> +++ b/drivers/gpu/drm/drm_client_modeset.c
-> @@ -149,6 +149,10 @@ drm_connector_pick_cmdline_mode(struct drm_connector=
- *connector)
->  	prefer_non_interlace =3D !cmdline_mode->interlace;
->  again:
->  	list_for_each_entry(mode, &connector->modes, head) {
-> +		/* Check (optional) mode name first */
-> +		if (!strcmp(mode->name, cmdline_mode->name))
-> +			return mode;
-> +
->  		/* check width/height */
->  		if (mode->hdisplay !=3D cmdline_mode->xres ||
->  		    mode->vdisplay !=3D cmdline_mode->yres)
-> diff --git a/drivers/gpu/drm/drm_connector.c b/drivers/gpu/drm/drm_connec=
-tor.c
-> index 3ccdcf3dfcde..3afed5677946 100644
-> --- a/drivers/gpu/drm/drm_connector.c
-> +++ b/drivers/gpu/drm/drm_connector.c
-> @@ -139,8 +139,9 @@ static void drm_connector_get_cmdline_mode(struct drm=
-_connector *connector)
->  		connector->force =3D mode->force;
->  	}
-> =20
-> -	DRM_DEBUG_KMS("cmdline mode for connector %s %dx%d@%dHz%s%s%s\n",
-> +	DRM_DEBUG_KMS("cmdline mode for connector %s %s %dx%d@%dHz%s%s%s\n",
->  		      connector->name,
-> +		      mode->name ? mode->name : "",
->  		      mode->xres, mode->yres,
->  		      mode->refresh_specified ? mode->refresh : 60,
->  		      mode->rb ? " reduced blanking" : "",
-> diff --git a/drivers/gpu/drm/drm_modes.c b/drivers/gpu/drm/drm_modes.c
-> index 6debbd6c1763..429d3be17800 100644
-> --- a/drivers/gpu/drm/drm_modes.c
-> +++ b/drivers/gpu/drm/drm_modes.c
-> @@ -1580,7 +1580,7 @@ bool drm_mode_parse_command_line_for_connector(cons=
-t char *mode_option,
->  					       struct drm_cmdline_mode *mode)
->  {
->  	const char *name;
-> -	bool parse_extras =3D false;
-> +	bool named_mode =3D false, parse_extras =3D false;
->  	unsigned int bpp_off =3D 0, refresh_off =3D 0;
->  	unsigned int mode_end =3D 0;
->  	char *bpp_ptr =3D NULL, *refresh_ptr =3D NULL, *extra_ptr =3D NULL;
-> @@ -1599,8 +1599,22 @@ bool drm_mode_parse_command_line_for_connector(con=
-st char *mode_option,
-> =20
->  	name =3D mode_option;
-> =20
-> -	if (!isdigit(name[0]))
-> -		return false;
-> +	/*
-> +	 * This is a bit convoluted. To differentiate between the
-> +	 * named modes and poorly formatted resolutions, we need a
-> +	 * bunch of things:
-> +	 *   - We need to make sure that the first character (which
-> +	 *     would be our resolution in X) is a digit.
-> +	 *   - However, if the X resolution is missing, then we end up
-> +	 *     with something like x<yres>, with our first character
-> +	 *     being an alpha-numerical character, which would be
-> +	 *     considered a named mode.
-> +	 *
-> +	 * If this isn't enough, we should add more heuristics here,
-> +	 * and matching unit-tests.
-> +	 */
-> +	if (!isdigit(name[0]) && name[0] !=3D 'x')
-> +		named_mode =3D true;
-> =20
->  	/* Try to locate the bpp and refresh specifiers, if any */
->  	bpp_ptr =3D strchr(name, '-');
-> @@ -1611,6 +1625,9 @@ bool drm_mode_parse_command_line_for_connector(cons=
-t char *mode_option,
-> =20
->  	refresh_ptr =3D strchr(name, '@');
->  	if (refresh_ptr) {
-> +		if (named_mode)
-> +			return false;
-> +
->  		refresh_off =3D refresh_ptr - name;
->  		mode->refresh_specified =3D true;
->  	}
-> @@ -1627,12 +1644,16 @@ bool drm_mode_parse_command_line_for_connector(co=
-nst char *mode_option,
->  		parse_extras =3D true;
->  	}
-> =20
-> -	ret =3D drm_mode_parse_cmdline_res_mode(name, mode_end,
-> -					      parse_extras,
-> -					      connector,
-> -					      mode);
-> -	if (ret)
-> -		return false;
-> +	if (named_mode) {
-> +		strncpy(mode->name, name, mode_end);
-> +	} else {
-> +		ret =3D drm_mode_parse_cmdline_res_mode(name, mode_end,
-> +						      parse_extras,
-> +						      connector,
-> +						      mode);
-> +		if (ret)
-> +			return false;
-> +	}
->  	mode->specified =3D true;
-> =20
->  	if (bpp_ptr) {
-> @@ -1660,14 +1681,23 @@ bool drm_mode_parse_command_line_for_connector(co=
-nst char *mode_option,
->  		extra_ptr =3D refresh_end_ptr;
-> =20
->  	if (extra_ptr) {
-> -		int remaining =3D strlen(name) - (extra_ptr - name);
-> +		if (!named_mode) {
-> +			int len =3D strlen(name) - (extra_ptr - name);
-> =20
-> -		/*
-> -		 * We still have characters to process, while
-> -		 * we shouldn't have any
-> -		 */
-> -		if (remaining > 0)
-> -			return false;
-> +			ret =3D drm_mode_parse_cmdline_extra(extra_ptr, len,
-> +							   connector, mode);
-> +			if (ret)
-> +				return false;
-> +		} else {
-> +			int remaining =3D strlen(name) - (extra_ptr - name);
-> +
-> +			/*
-> +			 * We still have characters to process, while
-> +			 * we shouldn't have any
-> +			 */
-> +			if (remaining > 0)
-> +				return false;
-> +		}
->  	}
-> =20
->  	return true;
-> diff --git a/include/drm/drm_connector.h b/include/drm/drm_connector.h
-> index c802780b0bfc..cdf2fb910010 100644
-> --- a/include/drm/drm_connector.h
-> +++ b/include/drm/drm_connector.h
-> @@ -933,6 +933,13 @@ struct drm_connector_funcs {
->   */
->  struct drm_cmdline_mode {
->  	/**
-> +	 * @name:
-> +	 *
-> +	 * Name of the mode.
-> +	 */
-> +	char name[DRM_DISPLAY_MODE_LEN];
-> +
-> +	/**
->  	 * @specified:
->  	 *
->  	 * Has a mode been read from the command-line?
-> --=20
-> git-series 0.9.1
-> _______________________________________________
-> dri-devel mailing list
-> dri-devel@lists.freedesktop.org
-> https://lists.freedesktop.org/mailman/listinfo/dri-devel
-
---xHFwDpU9dbj6ez1V
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQIzBAABCAAdFiEEiOrDCAFJzPfAjcif3SOs138+s6EFAl0Tjr8ACgkQ3SOs138+
-s6Glnw/+Pt0bC3X46p37pShw923Lk4S2Lxlc1JezkP0cn31NeemL8oAS6Dtu2yek
-kPA5q4mHbZ9mJFXOBZvUHWqJvsFbkvcupDbskMcOvsVL4DvdQW7ZwRwYls8paFAh
-Czear83LW1J6Nc54BxZvkyYDnswRsEZIBeX1DLi5Na3202qaYiaJ/Wo5AhhCH6qO
-40VfrQOtVUSsG04aT91cLO0NrCUpbVPuvyxksO/EYeClyDtsN7+eGTzGi8ZBVZ9s
-aoCs/zuY7hl2EkPZIT5Fbfl+EQrIuoF4op++2yqdHka3/+7yv8pEWj7CtqT4/bFf
-eUWfK70uPdJsi94Iu9aOYoY6NmnwFNtDLGc0pgRQCL/CWOVAMF6N37emZwXUA+CM
-3Y2ySIGDeOEKkUMxFtgK/1MY6gjREAJBzWbnJf6p+8eocE8EDKbmtDV+EfWf59XS
-5pWzcmE5lX6/Z43SmcLoT+t/6LnJVfk3WZOCxOXwibW59WjL1HO2VeAydzQlU1b9
-qsefPqgGCONHAnft6tRA9AY8qmSFlu3WhIX9FA9TWxE5ZmyOx7uS0cUQ7JUWoO6I
-w1rVHdgL91/p32e3FNPXXwtxjJLgvKxH+zQ07k/qBGiQ/j+mkpaSHItc05rAx37R
-BqhW+0tjxoJ93mZVVQ6C1Us504Ag4nPdHRclZdfzHJf/dc/cVxs=
-=Eqct
------END PGP SIGNATURE-----
-
---xHFwDpU9dbj6ez1V--
-
-
---===============8749651980431466444==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============8749651980431466444==--
-
+T24gV2VkLCAyMDE5LTA1LTE1IGF0IDE4OjIwIC0wNDAwLCBHYcOrbCBQT1JUQVkgd3JvdGU6Cj4g
+RnJvbTogRW5yaWMgQmFsbGV0Ym8gaSBTZXJyYSA8ZW5yaWMuYmFsbGV0Ym9AY29sbGFib3JhLmNv
+bT4KPiAKPiBUaGUgT1RHIGRpc2Nvbm5lY3Rpb24gZXZlbnQgaXMgZ2VuZXJhdGVkIGFmdGVyIHRo
+ZSBwcmVzZW5jZS9hYnNlbmNlIG9mCj4gYW4gSUQgY29ubmVjdGlvbiwgYnV0IHNvbWUgcGxhdGZv
+cm1zIGRvbid0IGhhdmUgdGhlIElEIHBpbiBjb25uZWN0ZWQsIHNvCj4gdGhlIGV2ZW50IGlzIG5v
+dCBnZW5lcmF0ZWQuIEluIHN1Y2ggY2FzZSwgZm9yIGRldGVjdGluZyB0aGUKPiBkaXNjb25uZWN0
+aW9uIGV2ZW50LCB3ZSBjYW4gZ2V0IHRoZSBjYWJsZSBzdGF0ZSBmcm9tIGFuIGV4dGNvbiBkcml2
+ZXIuCj4gV2UgbmVlZCwgdGhvdWdoLCB0byBmb3JjZSB0byBzZXQgdGhlIEItRGV2aWNlIFNlc3Np
+b24gVmFsaWQgYml0IG9uIHRoZQo+IFBIWSB0byBoYXZlIHRoZSBkZXZpY2UgcmVzcG9uZCB0byB0
+aGUgc2V0dXAgYWRkcmVzcy4gT3RoZXJ3aXNlLCB0aGUKPiBmb2xsb3dpbmcgZXJyb3IgaXMgc2hv
+d246Cj4gCj4gICAgIHVzYiAyLTI6IERldmljZSBub3QgcmVzcG9uZGluZyB0byBzZXR1cCBhZGRy
+ZXNzLgo+ICAgICB1c2IgMi0yOiBkZXZpY2Ugbm90IGFjY2VwdGluZyBhZGRyZXNzIDE0LCBlcnJv
+ciAtNzEKPiAgICAgdXNiIHVzYjItcG9ydDI6IHVuYWJsZSB0byBlbnVtZXJhdGUgVVNCIGRldmlj
+ZQo+IAo+IFRoZSBwYXRjaCB0ZWxscyB0aGUgUEhZIHRvIGZvcmNlIHRoZSBCLURldmljZSBTZXNz
+aW9uIFZhbGlkIGJpdCB3aGVuIHRoZQo+IE9URyByb2xlIGlzIGRldmljZSBhbmQgY2xlYXIgdGhh
+dCBiaXQgaWYgdGhlIE9URyByb2xlIGlzIGhvc3QsIHdoZW4gYW4KPiBleHRjb24gaXMgYXZhaWxh
+YmxlLgo+IAo+IFNpZ25lZC1vZmYtYnk6IEVucmljIEJhbGxldGJvIGkgU2VycmEgPGVucmljLmJh
+bGxldGJvQGNvbGxhYm9yYS5jb20+Cj4gU2lnbmVkLW9mZi1ieTogR2HDq2wgUE9SVEFZIDxnYWVs
+LnBvcnRheUBjb2xsYWJvcmEuY29tPgo+IC0tLQo+IAo+IEhpIGFsbCwKPiAKPiBUaGUgbWFpbiBw
+dXJwb3NlIG9mIHRoaXMgcGF0Y2ggaXMgaGF2ZSB0aGUgVHlwZS1DIHBvcnQgb24gdGhlIFNhbXN1
+bmcKPiBDaHJvbWVib29rIFBsdXMgd29yayBhcyBhIGRldmljZSBvciBpbiBPVEcgbW9kZS4KPiAK
+PiBUaGF0IHBhdGNoIHdhcyBvcmlnaW5hbGx5IGEgcGFydCBvZiB0aGF0IHBhdGNoc2V0WzFdOyBh
+bGwgb3RoZXIgcGF0Y2hlcwo+IHdhcyBtZXJnZWQgcmVjZW50bHkgaW4gbWFzdGVyLgo+IAo+IFRo
+ZSBwYXRjaCB3YXMgdGVzdGVkIG9uIGEgU2Ftc3VuZyBDaHJvbWVib29rIFBsdXMgYnkgY29uZmln
+dXJpbmcgb25lCj4gcG9ydCB0byB3b3JrIGFzIGRldmljZSwgY29uZmlndXJlIGEgY2RjIGV0aGVy
+bmV0IGdhZGdldCBhbmQgY29tbXVuaWNhdGUKPiB2aWEgZXRoZXJuZXQgZ2FkZ2V0IG15IHdvcmtz
+dGF0aW9uIHdpdGggdGhlIGNocm9tZWJvb2sgdGhyb3VnaCBhIHVzYi1hCj4gdG8gdHlwZS1jIGNh
+YmxlLgo+IAo+IEJlc3QgcmVnYXJkcywKPiBHYcOrbAo+IAo+IFsxXTogaHR0cHM6Ly9sa21sLm9y
+Zy9sa21sLzIwMTgvOC8xNS8xNDEKPiAKPiBDaGFuZ2VzIHNpbmNlIHYxOgo+ICAtIFtQQVRDSCAz
+LzRdIFJlbW92ZSBpbnRyb2R1Y3Rpb24gb2YgZHQgcHJvcGVydHkgInJvY2tjaGlwLGZvcmNlLWJ2
+YWxpZCIKPiAgICAgICAgICAgICAgICBhbmQgcmVwbGFjZSBjYWJsZSBzdGF0ZSB1c2luZyBleHRj
+b24gaW5zdGVhZCAoaWYgc2V0KS4KPiAKPiAgZHJpdmVycy9waHkvcm9ja2NoaXAvcGh5LXJvY2tj
+aGlwLWlubm8tdXNiMi5jIHwgNTEgKysrKysrKysrKysrKysrKysrKwo+ICAxIGZpbGUgY2hhbmdl
+ZCwgNTEgaW5zZXJ0aW9ucygrKQo+IAo+IGRpZmYgLS1naXQgYS9kcml2ZXJzL3BoeS9yb2NrY2hp
+cC9waHktcm9ja2NoaXAtaW5uby11c2IyLmMgYi9kcml2ZXJzL3BoeS9yb2NrY2hpcC9waHktcm9j
+a2NoaXAtaW5uby11c2IyLmMKPiBpbmRleCBiYTA3MTIxYzNlZmYuLjVlOWQ1MGI1YWUxNiAxMDA2
+NDQKPiAtLS0gYS9kcml2ZXJzL3BoeS9yb2NrY2hpcC9waHktcm9ja2NoaXAtaW5uby11c2IyLmMK
+PiArKysgYi9kcml2ZXJzL3BoeS9yb2NrY2hpcC9waHktcm9ja2NoaXAtaW5uby11c2IyLmMKPiBA
+QCAtMTI1LDYgKzEyNSw3IEBAIHN0cnVjdCByb2NrY2hpcF9jaGdfZGV0X3JlZyB7Cj4gICAqIEBi
+dmFsaWRfZGV0X2VuOiB2YnVzIHZhbGlkIHJpc2UgZGV0ZWN0aW9uIGVuYWJsZSByZWdpc3Rlci4K
+PiAgICogQGJ2YWxpZF9kZXRfc3Q6IHZidXMgdmFsaWQgcmlzZSBkZXRlY3Rpb24gc3RhdHVzIHJl
+Z2lzdGVyLgo+ICAgKiBAYnZhbGlkX2RldF9jbHI6IHZidXMgdmFsaWQgcmlzZSBkZXRlY3Rpb24g
+Y2xlYXIgcmVnaXN0ZXIuCj4gKyAqIEBidmFsaWRfc2Vzc2lvbjogZm9yY2UgQi1kZXZpY2Ugc2Vz
+c2lvbiB2YWxpZCByZWdpc3Rlci4KPiAgICogQGxzX2RldF9lbjogbGluZXN0YXRlIGRldGVjdGlv
+biBlbmFibGUgcmVnaXN0ZXIuCj4gICAqIEBsc19kZXRfc3Q6IGxpbmVzdGF0ZSBkZXRlY3Rpb24g
+c3RhdGUgcmVnaXN0ZXIuCj4gICAqIEBsc19kZXRfY2xyOiBsaW5lc3RhdGUgZGV0ZWN0aW9uIGNs
+ZWFyIHJlZ2lzdGVyLgo+IEBAIC0xMzgsNiArMTM5LDcgQEAgc3RydWN0IHJvY2tjaGlwX3VzYjJw
+aHlfcG9ydF9jZmcgewo+ICAJc3RydWN0IHVzYjJwaHlfcmVnCWJ2YWxpZF9kZXRfZW47Cj4gIAlz
+dHJ1Y3QgdXNiMnBoeV9yZWcJYnZhbGlkX2RldF9zdDsKPiAgCXN0cnVjdCB1c2IycGh5X3JlZwli
+dmFsaWRfZGV0X2NscjsKPiArCXN0cnVjdCB1c2IycGh5X3JlZwlidmFsaWRfc2Vzc2lvbjsKPiAg
+CXN0cnVjdCB1c2IycGh5X3JlZwlsc19kZXRfZW47Cj4gIAlzdHJ1Y3QgdXNiMnBoeV9yZWcJbHNf
+ZGV0X3N0Owo+ICAJc3RydWN0IHVzYjJwaHlfcmVnCWxzX2RldF9jbHI7Cj4gQEAgLTE2OSw2ICsx
+NzEsNyBAQCBzdHJ1Y3Qgcm9ja2NoaXBfdXNiMnBoeV9jZmcgewo+ICAgKiBAcG9ydF9pZDogZmxh
+ZyBmb3Igb3RnIHBvcnQgb3IgaG9zdCBwb3J0Lgo+ICAgKiBAc3VzcGVuZGVkOiBwaHkgc3VzcGVu
+ZGVkIGZsYWcuCj4gICAqIEB2YnVzX2F0dGFjaGVkOiBvdGcgZGV2aWNlIHZidXMgc3RhdHVzLgo+
+ICsgKiBAZm9yY2VfYnZhbGlkOiBmb3JjZSB0aGUgY29udHJvbCBvZiB0aGUgQi1kZXZpY2Ugc2Vz
+c2lvbiB2YWxpZCBiaXQuCj4gICAqIEBidmFsaWRfaXJxOiBJUlEgbnVtYmVyIGFzc2lnbmVkIGZv
+ciB2YnVzIHZhbGlkIHJpc2UgZGV0ZWN0aW9uLgo+ICAgKiBAbHNfaXJxOiBJUlEgbnVtYmVyIGFz
+c2lnbmVkIGZvciBsaW5lc3RhdGUgZGV0ZWN0aW9uLgo+ICAgKiBAb3RnX211eF9pcnE6IElSUSBu
+dW1iZXIgd2hpY2ggbXVsdGlwbGV4IG90Zy1pZC9vdGctYnZhbGlkL2xpbmVzdGF0ZQo+IEBAIC0x
+ODcsNiArMTkwLDcgQEAgc3RydWN0IHJvY2tjaGlwX3VzYjJwaHlfcG9ydCB7Cj4gIAl1bnNpZ25l
+ZCBpbnQJcG9ydF9pZDsKPiAgCWJvb2wJCXN1c3BlbmRlZDsKPiAgCWJvb2wJCXZidXNfYXR0YWNo
+ZWQ7Cj4gKwlib29sCQlmb3JjZV9idmFsaWQ7Cj4gIAlpbnQJCWJ2YWxpZF9pcnE7Cj4gIAlpbnQJ
+CWxzX2lycTsKPiAgCWludAkJb3RnX211eF9pcnE7Cj4gQEAgLTU1Myw2ICs1NTcsMTMgQEAgc3Rh
+dGljIHZvaWQgcm9ja2NoaXBfdXNiMnBoeV9vdGdfc21fd29yayhzdHJ1Y3Qgd29ya19zdHJ1Y3Qg
+KndvcmspCj4gIAlzd2l0Y2ggKHJwb3J0LT5zdGF0ZSkgewo+ICAJY2FzZSBPVEdfU1RBVEVfVU5E
+RUZJTkVEOgo+ICAJCXJwb3J0LT5zdGF0ZSA9IE9UR19TVEFURV9CX0lETEU7Cj4gKwkJaWYgKHJw
+b3J0LT5mb3JjZV9idmFsaWQpIHsKPiArCQkJcHJvcGVydHlfZW5hYmxlKHJwaHktPmdyZiwKPiAr
+CQkJCQkmcnBvcnQtPnBvcnRfY2ZnLT5idmFsaWRfc2Vzc2lvbiwKPiArCQkJCQl0cnVlKTsKPiAr
+CQkJZGV2X2RiZygmcnBvcnQtPnBoeS0+ZGV2LAo+ICsJCQkJInNldCB0aGUgQi1EZXZpY2UgU2Vz
+c2lvbiBWYWxpZFxuIik7Cj4gKwkJfQo+ICAJCWlmICghdmJ1c19hdHRhY2gpCj4gIAkJCXJvY2tj
+aGlwX3VzYjJwaHlfcG93ZXJfb2ZmKHJwb3J0LT5waHkpOwo+ICAJCS8qIGZhbGwgdGhyb3VnaCAq
+Lwo+IEBAIC01NjAsNiArNTcxLDE0IEBAIHN0YXRpYyB2b2lkIHJvY2tjaGlwX3VzYjJwaHlfb3Rn
+X3NtX3dvcmsoc3RydWN0IHdvcmtfc3RydWN0ICp3b3JrKQo+ICAJCWlmIChleHRjb25fZ2V0X3N0
+YXRlKHJwaHktPmVkZXYsIEVYVENPTl9VU0JfSE9TVCkgPiAwKSB7Cj4gIAkJCWRldl9kYmcoJnJw
+b3J0LT5waHktPmRldiwgInVzYiBvdGcgaG9zdCBjb25uZWN0XG4iKTsKPiAgCQkJcnBvcnQtPnN0
+YXRlID0gT1RHX1NUQVRFX0FfSE9TVDsKPiArCQkJLyogV2hlbiBsZWF2aW5nIGRldmljZSBtb2Rl
+IGZvcmNlIGVuZCB0aGUgc2Vzc2lvbiAqLwo+ICsJCQlpZiAocnBvcnQtPmZvcmNlX2J2YWxpZCkg
+ewo+ICsJCQkJcHJvcGVydHlfZW5hYmxlKHJwaHktPmdyZiwKPiArCQkJCQkmcnBvcnQtPnBvcnRf
+Y2ZnLT5idmFsaWRfc2Vzc2lvbiwKPiArCQkJCQlmYWxzZSk7Cj4gKwkJCQlkZXZfZGJnKCZycG9y
+dC0+cGh5LT5kZXYsCj4gKwkJCQkJImNsZWFyIHRoZSBCLURldmljZSBTZXNzaW9uIFZhbGlkXG4i
+KTsKPiArCQkJfQo+ICAJCQlyb2NrY2hpcF91c2IycGh5X3Bvd2VyX29uKHJwb3J0LT5waHkpOwo+
+ICAJCQlyZXR1cm47Cj4gIAkJfSBlbHNlIGlmICh2YnVzX2F0dGFjaCkgewo+IEBAIC02MzQsNiAr
+NjUzLDE0IEBAIHN0YXRpYyB2b2lkIHJvY2tjaGlwX3VzYjJwaHlfb3RnX3NtX3dvcmsoc3RydWN0
+IHdvcmtfc3RydWN0ICp3b3JrKQo+ICAJCWlmIChleHRjb25fZ2V0X3N0YXRlKHJwaHktPmVkZXYs
+IEVYVENPTl9VU0JfSE9TVCkgPT0gMCkgewo+ICAJCQlkZXZfZGJnKCZycG9ydC0+cGh5LT5kZXYs
+ICJ1c2Igb3RnIGhvc3QgZGlzY29ubmVjdFxuIik7Cj4gIAkJCXJwb3J0LT5zdGF0ZSA9IE9UR19T
+VEFURV9CX0lETEU7Cj4gKwkJCS8qIFdoZW4gbGVhdmluZyBob3N0IG1vZGUgZm9yY2Ugc3RhcnQg
+dGhlIHNlc3Npb24gKi8KPiArCQkJaWYgKHJwb3J0LT5mb3JjZV9idmFsaWQpIHsKPiArCQkJCXBy
+b3BlcnR5X2VuYWJsZShycGh5LT5ncmYsCj4gKwkJCQkJJnJwb3J0LT5wb3J0X2NmZy0+YnZhbGlk
+X3Nlc3Npb24sCj4gKwkJCQkJdHJ1ZSk7Cj4gKwkJCQlkZXZfZGJnKCZycG9ydC0+cGh5LT5kZXYs
+Cj4gKwkJCQkJInNldCB0aGUgQi1EZXZpY2UgU2Vzc2lvbiBWYWxpZFxuIik7Cj4gKwkJCX0KPiAg
+CQkJcm9ja2NoaXBfdXNiMnBoeV9wb3dlcl9vZmYocnBvcnQtPnBoeSk7Cj4gIAkJfQo+ICAJCWJy
+ZWFrOwo+IEBAIC0xMDE2LDYgKzEwNDMsMjggQEAgc3RhdGljIGludCByb2NrY2hpcF91c2IycGh5
+X290Z19wb3J0X2luaXQoc3RydWN0IHJvY2tjaGlwX3VzYjJwaHkgKnJwaHksCj4gIAlJTklUX0RF
+TEFZRURfV09SSygmcnBvcnQtPmNoZ193b3JrLCByb2NrY2hpcF9jaGdfZGV0ZWN0X3dvcmspOwo+
+ICAJSU5JVF9ERUxBWUVEX1dPUksoJnJwb3J0LT5vdGdfc21fd29yaywgcm9ja2NoaXBfdXNiMnBo
+eV9vdGdfc21fd29yayk7Cj4gIAo+ICsJLyoKPiArCSAqIFNvbWUgcGxhdGZvcm1zIGRvZXNuJ3Qg
+aGF2ZSB0aGUgSUQgcGluIGNvbm5lY3RlZCB0byB0aGUgcGh5LCBoZW5jZQo+ICsJICogdGhlIE9U
+RCBJRCBldmVudCBpcyBub3QgZ2VuZXJhdGVkLCBidXQgaW4gc29tZSBjYXNlcyB3ZSBjYW4gZ2V0
+IHRoZQo+ICsJICogY2FibGUgc3RhdGUgZnJvbSBhbiBleHRjb24gZHJpdmVyLiBJbiBzdWNoIGNh
+c2Ugd2UgY2FuIGZvcmNlIHRvIHNldAo+ICsJICogdGhlIEItRGV2aWNlIFNlc3Npb24gVmFsaWQg
+Yml0IG9uIHRoZSBQSFkgdG8gaGF2ZSB0aGUgZGV2aWNlIHdvcmtpbmcKPiArCSAqIGFzIGEgT1RH
+Lgo+ICsJICovCj4gKwlpZiAocnBoeS0+ZWRldikgewo+ICsJCS8qCj4gKwkJICogQ2hlY2sgaWYg
+YnZhbGlkX3Nlc3Npb24gcmVnaXN0ZXIgaXMgc2V0IGluIHRoZSBzdHJ1Y3R1cmUKPiArCQkgKiBy
+b2NrY2hpcF91c2IycGh5X2NmZyBmb3IgdGhpcyBTb0MuCj4gKwkJICovCj4gKwkJaWYgKHJwb3J0
+LT5wb3J0X2NmZy0+YnZhbGlkX3Nlc3Npb24ub2Zmc2V0ID09IDB4MCkgewo+ICsJCQlycG9ydC0+
+Zm9yY2VfYnZhbGlkID0gZmFsc2U7Cj4gKwkJCWRldl9lcnIocnBoeS0+ZGV2LAo+ICsJCQkJImNh
+bm5vdCBmb3JjZSBCLWRldmljZSBzZXNzaW9uLCB0aGUgcmVnaXN0ZXIgaXMgbm90IHNldCBmb3Ig
+dGhhdCBTb0NcbiIpOwo+ICsJCX0gZWxzZSB7Cj4gKwkJCXJwb3J0LT5mb3JjZV9idmFsaWQgPSB0
+cnVlOwo+ICsJCQlkZXZfaW5mbyhycGh5LT5kZXYsICJmb3JjZSBCLWRldmljZSBzZXNzaW9uIGVu
+YWJsZWRcbiIpOwo+ICsJCX0KPiArCX0KPiArCj4gIAkvKgo+ICAJICogU29tZSBTb0NzIHVzZSBv
+bmUgaW50ZXJydXB0IHdpdGggb3RnLWlkL290Zy1idmFsaWQvbGluZXN0YXRlCj4gIAkgKiBpbnRl
+cnJ1cHRzIG11eGVkIHRvZ2V0aGVyLCBzbyBwcm9iZSB0aGUgb3RnLW11eCBpbnRlcnJ1cHQgZmly
+c3QsCj4gQEAgLTEzMzgsNiArMTM4Nyw3IEBAIHN0YXRpYyBjb25zdCBzdHJ1Y3Qgcm9ja2NoaXBf
+dXNiMnBoeV9jZmcgcmszMzk5X3BoeV9jZmdzW10gPSB7Cj4gIAkJCQkuYnZhbGlkX2RldF9lbgk9
+IHsgMHhlM2MwLCAzLCAzLCAwLCAxIH0sCj4gIAkJCQkuYnZhbGlkX2RldF9zdAk9IHsgMHhlM2Uw
+LCAzLCAzLCAwLCAxIH0sCj4gIAkJCQkuYnZhbGlkX2RldF9jbHIJPSB7IDB4ZTNkMCwgMywgMywg
+MCwgMSB9LAo+ICsJCQkJLmJ2YWxpZF9zZXNzaW9uID0geyAweDQ0OTgsIDQsIDQsIDAsIDEgfSwK
+PiAgCQkJCS51dG1pX2F2YWxpZAk9IHsgMHhlMmFjLCA3LCA3LCAwLCAxIH0sCj4gIAkJCQkudXRt
+aV9idmFsaWQJPSB7IDB4ZTJhYywgMTIsIDEyLCAwLCAxIH0sCj4gIAkJCX0sCj4gQEAgLTEzNzMs
+NiArMTQyMyw3IEBAIHN0YXRpYyBjb25zdCBzdHJ1Y3Qgcm9ja2NoaXBfdXNiMnBoeV9jZmcgcmsz
+Mzk5X3BoeV9jZmdzW10gPSB7Cj4gIAkJCQkuYnZhbGlkX2RldF9lbiAgPSB7IDB4ZTNjMCwgOCwg
+OCwgMCwgMSB9LAo+ICAJCQkJLmJ2YWxpZF9kZXRfc3QgID0geyAweGUzZTAsIDgsIDgsIDAsIDEg
+fSwKPiAgCQkJCS5idmFsaWRfZGV0X2NsciA9IHsgMHhlM2QwLCA4LCA4LCAwLCAxIH0sCj4gKwkJ
+CQkuYnZhbGlkX3Nlc3Npb24gPSB7IDB4NDUxOCwgNCwgNCwgMCwgMSB9LAo+ICAJCQkJLnV0bWlf
+YXZhbGlkCT0geyAweGUyYWMsIDEwLCAxMCwgMCwgMSB9LAo+ICAJCQkJLnV0bWlfYnZhbGlkICAg
+ID0geyAweGUyYWMsIDE2LCAxNiwgMCwgMSB9LAo+ICAJCQl9LAo+IC0tIAo+IDIuMjEuMAo+IAo+
+IAoKSXQncyBiZWVuIG1vcmUgdGhhbiBhIG1vbnRoIHdpdGhvdXQgYW55IGFjdGl2aXR5IGhlcmUu
+CgpBbnkgbmV3cz8KClRoYW5rcywKRXplcXVpZWwKCgoKX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGlu
+dXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQu
+b3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
