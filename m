@@ -2,62 +2,63 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 89B4D56586
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 26 Jun 2019 11:15:18 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1C82D5658C
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 26 Jun 2019 11:15:55 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=NtqceHtRzxClQc7MV/ZmnMnJys6R8w5cS7VO/CiGxgk=; b=lnKxv2ibL2Gt7J
-	//Eqthbtl0fcX9KYSUtDUaWS7S3q4ybIOXHqJ4qQ8E8xbYlkYcHkx8nprTYMhHrfHb18hHLOSUDEF
-	AU3p0cwxEaQmzhJwo6yRj3ZwCXhOUsDZwmCjHyTfnMdYf0fZkj1fyKMvSnaCvOase9XAa9YpVndOV
-	1eObHJksaEvp91BKljxNEFkL4l6V5w3I6ptgHRmewPOzgf8dwlJpjqI8ajnCGcDLQyacaNco4kEpz
-	pFCWjVJ48eksAZx3lXIApd4+7SEUiiJtCwPJt8KOXPmHZoiMsu9WTQ0bGCjjjz7DmZ9Dy85PLKt76
-	BBVZ+bpwrL4jwSq5cRzA==;
+	List-Owner; bh=rGh5rbYmFuRDzJYPh9sJWa6zuHKqAu6NqL9Yvb4ivP8=; b=FnOxQg1tlyNAcg
+	cwQqAegabxICYYEv7efIOBqiy6san4z+GJKdIMncKDCu5gzoScDWmX84tu8fPWyRkGFCOv4mlzoao
+	B3oGdnnFzEZ9IUUSvajZaF3RboCBYyaAtMrFoYVK1wYQTF9fn1TLW8O1jNFORmaGwZe8CMjVf4c+a
+	9l7UwGGv+cT26+c/JybAUZ9aIegmueiWNo+rIKy9z5MUmbSBD/vN+eXCBD3qfxXpAEk7dMeTRSzA8
+	t0Gyy0eMuq2ew+EwVlNmFsGlQYb6lVnl1JSenK/Lo67tT0Ohn36lqt8aU0boPosxDfJrzkMHHtBsC
+	t1U3LzmQ/dw7hlDtT+hg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hg41L-0001iv-9h; Wed, 26 Jun 2019 09:15:15 +0000
+	id 1hg41v-0003I3-A8; Wed, 26 Jun 2019 09:15:51 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hg40Q-0001HN-Cl
- for linux-arm-kernel@lists.infradead.org; Wed, 26 Jun 2019 09:14:20 +0000
-Received: from mail-lf1-f51.google.com (mail-lf1-f51.google.com
- [209.85.167.51])
+ id 1hg41c-0003HJ-26
+ for linux-arm-kernel@lists.infradead.org; Wed, 26 Jun 2019 09:15:33 +0000
+Received: from mail-lf1-f49.google.com (mail-lf1-f49.google.com
+ [209.85.167.49])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 71D912054F
+ by mail.kernel.org (Postfix) with ESMTPSA id 7A80920B7C
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 26 Jun 2019 09:14:17 +0000 (UTC)
+ Wed, 26 Jun 2019 09:15:31 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1561540457;
- bh=g4DUkrrjfFj7xHESarAI2dRhed/w7oKp4416qFpgZRU=;
+ s=default; t=1561540531;
+ bh=xBnCRh/F9bl6/gAL0HvFg53BgxFLrpsTqE33GFGpnm0=;
  h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=04n10WVyRHzd2WJpVjUcfjocTAX38tMp7ZVDMnyZ1/Y+vTeX1YXynvXcyk847krQE
- ndxGNtw2KD70rHuXPwJKF25ohyUe4IEzt6HS/DMhx83b+wSxLyb9UWW1AxvZl74xCx
- OPAxyIJyDvF6PpBu2fZnq5DfgSmRfOi2Rza2kIyM=
-Received: by mail-lf1-f51.google.com with SMTP id b11so1054858lfa.5
+ b=VVq8wBfVS5xintLI48TW9kBhV9VZXd7wsC7XTHDvGz+45ZHMzLEshd0cc40XV1AlW
+ cEHClsFnzaiXP6MueZieKdyXFv/krzT8tynqDCnEMduVjrOK9IfrMIk7QtIEhnQY5y
+ 6o0OCnAp256XmDddmef6KdghJEFfdbm2kT3RNHlM=
+Received: by mail-lf1-f49.google.com with SMTP id y17so1079101lfe.0
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 26 Jun 2019 02:14:17 -0700 (PDT)
-X-Gm-Message-State: APjAAAUWdsq8NMRvW17fsLvD53Kjnwsz4jPJXilJ/lX7dbiW3ALMS9uq
- GET5W156zmATRH/A7xnSgwIbeOcVioTekZx3ZmU=
-X-Google-Smtp-Source: APXvYqxyflZNdBFIUXAD5rBef4z4NLETV6l0FfCDdosZdM/KpjcmBy4iI0hm/rxk5/cFZrEESI5AZP6IaTMNv3wTk5s=
-X-Received: by 2002:ac2:5601:: with SMTP id v1mr2104868lfd.106.1561540455758; 
- Wed, 26 Jun 2019 02:14:15 -0700 (PDT)
+ Wed, 26 Jun 2019 02:15:31 -0700 (PDT)
+X-Gm-Message-State: APjAAAVdyHhK5xs7Hm6risbfRtpoxpjHUXNtEZOueHgI4zBZJiyU2Y9v
+ GnWaKDU0EdlLpa9QGxMXKbG9l7Zp7zkkK3gRuyQ=
+X-Google-Smtp-Source: APXvYqzd8GB5R50ZJNdOxfdPEXjKaYgCH773OG1ZTg+eqJ9KRgvJXOGEjgcSVC5XUphD0RI4i6IPGHaaFxJMs/VSFY0=
+X-Received: by 2002:a19:3804:: with SMTP id f4mr2023177lfa.69.1561540529761;
+ Wed, 26 Jun 2019 02:15:29 -0700 (PDT)
 MIME-Version: 1.0
 References: <20190625193451.7696-1-krzk@kernel.org>
-In-Reply-To: <20190625193451.7696-1-krzk@kernel.org>
+ <20190625193451.7696-4-krzk@kernel.org>
+In-Reply-To: <20190625193451.7696-4-krzk@kernel.org>
 From: Krzysztof Kozlowski <krzk@kernel.org>
-Date: Wed, 26 Jun 2019 11:14:04 +0200
-X-Gmail-Original-Message-ID: <CAJKOXPeCQZPsF1kGKmhSWgxsWSsb4cre6mhS=n=kJbH63LjmUQ@mail.gmail.com>
-Message-ID: <CAJKOXPeCQZPsF1kGKmhSWgxsWSsb4cre6mhS=n=kJbH63LjmUQ@mail.gmail.com>
-Subject: Re: [GIT PULL 1/4] ARM: defconfig: Samsung/Exynos for v5.3
+Date: Wed, 26 Jun 2019 11:15:18 +0200
+X-Gmail-Original-Message-ID: <CAJKOXPejHBKp1fnhqaKwx2vby1_XmP916TyA9Nw8usU5QNadbA@mail.gmail.com>
+Message-ID: <CAJKOXPejHBKp1fnhqaKwx2vby1_XmP916TyA9Nw8usU5QNadbA@mail.gmail.com>
+Subject: Re: [GIT PULL 4/4] ARM: exynos: Mach for v5.3
 To: Olof Johansson <olof@lixom.net>, Arnd Bergmann <arnd@arndb.de>,
  arm@kernel.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190626_021418_655797_76793277 
-X-CRM114-Status: GOOD (  14.26  )
+X-CRM114-CacheID: sfid-20190626_021532_131205_B8D60DCF 
+X-CRM114-Status: GOOD (  13.43  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -102,63 +103,40 @@ On Tue, 25 Jun 2019 at 21:35, Krzysztof Kozlowski <krzk@kernel.org> wrote:
 >
 > are available in the Git repository at:
 >
->   https://git.kernel.org/pub/scm/linux/kernel/git/krzk/linux.git tags/samsung-defconfig-5.3
+>   https://git.kernel.org/pub/scm/linux/kernel/git/krzk/linux.git tags/samsung-soc-5.3
 >
-> for you to fetch changes up to dd50a69b5697532666023766688c6ea642e5a443:
+> for you to fetch changes up to a55e040c6f21f55f81c53c56e1d8095df35e1d02:
 >
->   ARM: exynos_defconfig: Enable Panfrost and Lima drivers (2019-06-19 19:23:35 +0200)
+>   ARM: exynos: Cleanup cppcheck shifting warning (2019-06-25 20:45:09 +0200)
 >
 > ----------------------------------------------------------------
-> Samsung defconfig changes for v5.3
+> Samsung mach/soc changes for v5.3
 >
-> 1. Trim several configs with savedefconfig.
-> 2. Enable Lima and Panfrost drivers for Mali GPU.
+> Only cleanups and minor fixes.
+>
+> ----------------------------------------------------------------
+> Arnd Bergmann (1):
+>       ARM: exynos: Only build MCPM support if used
 
 Hi,
 
-I forgot to mention possible merge conflicts (although Stephen Cc-ed
+I forgot to mention possible merge conflict (although Stephen Cc-ed
 you on mails). Resolution is to accept both sides:
 
---- a/arch/arm/configs/exynos_defconfig
-+++ b/arch/arm/configs/exynos_defconfig
-@@@ -4,12 -5,7 +5,8 @@@ CONFIG_PREEMPT=
-  CONFIG_CGROUPS=y
-  CONFIG_BLK_DEV_INITRD=y
-  CONFIG_PERF_EVENTS=y
-- CONFIG_MODULES=y
-- CONFIG_MODULE_UNLOAD=y
-- CONFIG_PARTITION_ADVANCED=y
-  CONFIG_ARCH_EXYNOS=y
-- CONFIG_ARCH_EXYNOS3=y
- +CONFIG_CPU_ICACHE_MISMATCH_WORKAROUND=y
+diff --cc arch/arm/mach-exynos/Makefile
+index 5ccf9d7e58d4,5abf3db23912..0fd3fcf8bfb0
+--- a/arch/arm/mach-exynos/Makefile
++++ b/arch/arm/mach-exynos/Makefile
+@@@ -14,5 -14,9 +14,5 @@@ obj-$(CONFIG_PM_SLEEP)                += suspend.
 
---- a/arch/arm/configs/s3c2410_defconfig
-+++ b/arch/arm/configs/s3c2410_defconfig
-@@@ -181,10 -178,11 +178,10 @@@ CONFIG_CFG80211=
-  CONFIG_MAC80211=m
-  CONFIG_MAC80211_MESH=y
-  CONFIG_MAC80211_LEDS=y
- -CONFIG_UEVENT_HELPER_PATH="/sbin/hotplug"
-  CONFIG_MTD=y
-+ CONFIG_MTD_CMDLINE_PARTS=y
-  CONFIG_MTD_REDBOOT_PARTS=y
-  CONFIG_MTD_REDBOOT_PARTS_UNALLOCATED=y
-- CONFIG_MTD_CMDLINE_PARTS=y
+  obj-$(CONFIG_SMP)             += platsmp.o headsmp.o
 
---- a/arch/arm/configs/s3c6400_defconfig
-+++ b/arch/arm/configs/s3c6400_defconfig
-@@@ -18,9 -15,12 +15,11 @@@ CONFIG_MACH_HMT=
-  CONFIG_MACH_SMARTQ5=y
-  CONFIG_MACH_SMARTQ7=y
-  CONFIG_MACH_WLF_CRAGG_6410=y
-- CONFIG_AEABI=y
-  CONFIG_CMDLINE="console=ttySAC0,115200 root=/dev/ram init=/linuxrc
-initrd=0x51000000,6M ramdisk_size=6144"
-  CONFIG_VFP=y
- -CONFIG_UEVENT_HELPER_PATH="/sbin/hotplug"
-+ CONFIG_MODULES=y
-+ CONFIG_MODULE_UNLOAD=y
-+ # CONFIG_BLK_DEV_BSG is not set
+- obj-$(CONFIG_MCPM)            += mcpm-exynos.o
+ -plus_sec := $(call as-instr,.arch_extension sec,+sec)
+ -AFLAGS_exynos-smc.o           :=-Wa,-march=armv7-a$(plus_sec)
+ -AFLAGS_sleep.o                        :=-Wa,-march=armv7-a$(plus_sec)
+ -
++ obj-$(CONFIG_EXYNOS_MCPM)     += mcpm-exynos.o
 
 Best regards,
 Krzysztof
