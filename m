@@ -2,79 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C3BD356CD2
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 26 Jun 2019 16:50:06 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2FFD056D22
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 26 Jun 2019 17:04:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=YniHQpXBCSg+r8TfqfWRWALynsUweBXZ3owVQQg2ujM=; b=Qod5AzbjAUjkhd
-	wkAdYy8JF1kEMcQ3Uo5FgIvDqCcbnIClzaGPeRaQqVoh47Nidzb+l8qD9q9vWMeNCvsVxvDA05Dnx
-	XJVaQTQSAc3EQ4MmDihNWbjGJlz5o7id/zUM1UjpngE8/1CIlqo7T2gzNC0zC09f1GM5aoR2pgD0v
-	1vRhO1J4/SBGZhaU+cxtVBXAqZIYS+LqvdBfH7G1pQD1MBJDW4z4B3UzN/lmt30fOXgGi+Qccm/hY
-	ky8LjP4QtwJ99mdh/q8ssHbuiAM7ogtAJBqqQUoNNhio9nOGVKUuwnbRLsJBBfHEXbVUQGQth54v5
-	ANxHOfqGjIsTPa4Lygyw==;
+	List-Owner; bh=d7mRkC78dDtkvU4M1jTBQ93H5Bpp4L5IqXUBKei9GmE=; b=bsfcjm+RnI34yC
+	fHs+cez6KFLocbt6+6p5a/Gqb92mFe4oSY53O7YfZ3i0GzOCR/xfXdGlAl416Ddrxf6zQGZbrEynQ
+	lPBLJeFxHKN3z7AMihYCHFieeQNvWQh9vVDsjKX0X91V+uARO4mCBD+SX/0LdwtOne8jhzhfIqGcx
+	zELQbHjkdyRpUsBDayo1bFz/6vxAnnzd2+ZHb3/GAEcdV4CU1uekbOIahrBAQBM7moi4FQ5m99j0h
+	rCCTF8YYWsG9pdyUMkaMBs/uC9LgwMc15Ftu38+z4TkXi3mqD9qM/eHuvp1JIFc4rP0uAvj+5ddgi
+	sUUjiu4GwpDi+rHeSx3Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hg9FI-0003tW-M4; Wed, 26 Jun 2019 14:50:00 +0000
-Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
+	id 1hg9TD-00019q-Tm; Wed, 26 Jun 2019 15:04:23 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hg9Es-0003pA-De
- for linux-arm-kernel@lists.infradead.org; Wed, 26 Jun 2019 14:49:37 +0000
-Received: by mail-wm1-x341.google.com with SMTP id g135so2409726wme.4
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 26 Jun 2019 07:49:34 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=ECyt5vpAqWKFoSesBXtQvTFCZ7b8NPpG6514f3+peBM=;
- b=bvLQhbNxtQl2dD5Zacz1NqKOVgyIMvJxzsmO+2Riu4LERygWj6oSSB8dCTnlQRzHBJ
- WBcMIUnVXHzRJq2PnULFDQEFau/8R+M6cBXdjbooJor1DbcFp1O8fWIkcZ1i53zf0IA5
- 5oz8pE70hgB30UagR+kfeZ38bPeUYsebU5aRY0ZeeiThmo068Pemx1OgojGZ1CiE+1js
- 55uJGDTtgOnsyOiEV5lcLBQOwVxfxVzaPBYRHGynEOdSWJCBC4rnsxa7VlSbB2g0sed8
- tXxh29kQ2ud6ODQQqHFPs8Mko1IwBjKs4tAlDVR64YxnpV4eEubO4KnwE4xqOZYGSPQe
- fzww==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=ECyt5vpAqWKFoSesBXtQvTFCZ7b8NPpG6514f3+peBM=;
- b=rDpVI2nA3yQ3egdykrCuj323Z6peflalTnxDggk6Lg/afLF50ivx9VXar1SZZNqQd7
- P69S9YMhKR0+S7MF9cOfuDNVvRF5jJGw5Yr+ti/a3Tj8qzAk8zoQVgCMWmJgXZYbNheB
- 7Gov1AVoixjWV8KwFZxAcDIz/22l0URyFt+QVJnfn1K7OwI+cqJclwirZMXzMIKr5rqI
- ZOi1QgOmklz/c67BQJ80Jlh/5pMWGvo3vBwKI6MgVuP1uwH/0yTBXjp2biAxsV3iGL9n
- bWObRiRKzR3YdIdGc/NeWQswk63IzfsFx4UyPiO8xoVj1qA23k/wMk0W5YDmSGGsrK0W
- WnyA==
-X-Gm-Message-State: APjAAAWWcYlm7/hD8Wae3K0o2UjJd0Nce5deLI5PF4iafMJWrDmSGqmB
- QwuqGE86gCCVJrVhL+2wmnn4eDD5LhghylwXuGQ=
-X-Google-Smtp-Source: APXvYqyCRXdn4IYc4ZYT5kM3lXrCHCJZRWeMSW9Bhp2BTjll4zCHUsAMqPLDD0OJHXb4eGcs5CaX9g+D0C41Y3+WNjg=
-X-Received: by 2002:a7b:c051:: with SMTP id u17mr2957974wmc.25.1561560572892; 
- Wed, 26 Jun 2019 07:49:32 -0700 (PDT)
+ id 1hg9Sy-00019U-BJ
+ for linux-arm-kernel@lists.infradead.org; Wed, 26 Jun 2019 15:04:09 +0000
+Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 06DF120645;
+ Wed, 26 Jun 2019 15:04:06 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1561561447;
+ bh=LWIrJoi9FpDvIqnXKvGGPKczwxn7uLV0yj/Ttwn3mOk=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=InO5IrPf6XdGB8HYH9z8CS7SSDWLK1S3gFuvX9Vr49/DM6orHwwvPur+SoLN9TI1D
+ FDUGCG2ofvxvVsNWkvAuJPkMi/V0niYPEXluT50eXA67O54pka4qkuq/61j3sx1aAy
+ HNJxmZ6IGJC7zeKKIU5rqZu9cE1CJdFNGZP//nyw=
+Date: Wed, 26 Jun 2019 16:04:04 +0100
+From: Will Deacon <will@kernel.org>
+To: Mark Brown <broonie@kernel.org>
+Subject: Re: [PATCH] arm64: Add support for E0PD
+Message-ID: <20190626150403.dekq5l5rpmgzknfr@willie-the-truck>
+References: <20190626144535.27680-1-broonie@kernel.org>
 MIME-Version: 1.0
-References: <20190614081650.11880-1-daniel.baluta@nxp.com>
- <20190614081650.11880-3-daniel.baluta@nxp.com>
- <CAL_JsqJKgMB1PNA33gmFju4AQTc2WaSBoOGQExVaGd9LZRmk_g@mail.gmail.com>
-In-Reply-To: <CAL_JsqJKgMB1PNA33gmFju4AQTc2WaSBoOGQExVaGd9LZRmk_g@mail.gmail.com>
-From: Daniel Baluta <daniel.baluta@gmail.com>
-Date: Wed, 26 Jun 2019 17:49:21 +0300
-Message-ID: <CAEnQRZBNA4ndSL1vMStHemYkzt9TxqjgdWWjqFwnBFQ+ha+egA@mail.gmail.com>
-Subject: Re: [PATCH 2/2] dt-bindings: arm: fsl: Add DSP IPC binding support
-To: Rob Herring <robh+dt@kernel.org>
+Content-Disposition: inline
+In-Reply-To: <20190626144535.27680-1-broonie@kernel.org>
+User-Agent: NeoMutt/20170113 (1.7.2)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190626_074934_659822_36118766 
-X-CRM114-Status: GOOD (  24.60  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190626_080408_407494_27B0AF23 
+X-CRM114-Status: GOOD (  14.66  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:341 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (daniel.baluta[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -83,6 +64,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,155 +76,42 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Dong Aisheng <aisheng.dong@nxp.com>, Mark Rutland <mark.rutland@arm.com>,
- Anson Huang <anson.huang@nxp.com>,
- Devicetree List <devicetree@vger.kernel.org>,
- Daniel Baluta <daniel.baluta@nxp.com>, Sascha Hauer <s.hauer@pengutronix.de>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Oleksij Rempel <o.rempel@pengutronix.de>, NXP Linux Team <linux-imx@nxp.com>,
- Fabio Estevam <festevam@gmail.com>, Shawn Guo <shawnguo@kernel.org>,
- "S.j. Wang" <shengjiu.wang@nxp.com>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>
+Cc: Catalin Marinas <catalin.marinas@arm.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Rob,
+Hi Mark,
 
-This is my first time documenting the bindings using the
-new yaml format so thanks for your patience and explanations!
+On Wed, Jun 26, 2019 at 03:45:35PM +0100, Mark Brown wrote:
+> Kernel Page Table Isolation (KPTI) is used to mitigate some speculation
+> based security issues by ensuring that the kernel is not mapped when
+> userspace is running but this approach is expensive and is incompatible
+> with SPE.  E0PD, introduced in the ARMv8.5 extensions, provides an
+> alternative to this which ensures that accesses from userspace to the
+> kernel's half of the memory map to always fault with constant time,
+> preventing timing attacks without requiring constant unmapping and
+> remapping or preventing legitimate accesses.
+> 
+> To simplify integration with KPTI we initially enable the feature system
+> wide, doing so unconditionally since it has no meaningful overhead.
 
-On Fri, Jun 14, 2019 at 5:53 PM Rob Herring <robh+dt@kernel.org> wrote:
->
-> On Fri, Jun 14, 2019 at 2:15 AM <daniel.baluta@nxp.com> wrote:
-> >
-> > From: Daniel Baluta <daniel.baluta@nxp.com>
-> >
-> > DSP IPC is the layer that allows the Host CPU to communicate
-> > with DSP firmware.
-> > DSP is part of some i.MX8 boards (e.g i.MX8QM, i.MX8QXP)
-> >
-> > Signed-off-by: Daniel Baluta <daniel.baluta@nxp.com>
-> > ---
-> >  .../bindings/arm/freescale/fsl,dsp.yaml       | 43 +++++++++++++++++++
->
-> bindings/dsp/...
+I think you're missing one small thing here: all v8.5 CPUs will have
+hardware mitigations for meltdown as advertised in the ID registers.
+However, we still force KPTI on for those CPUs if KASLR is enabled to avoid
+it being trivially bypassed by looking at fault timings. As you point out,
+there are two issues with that: (1) the performance impact of KPTI and (2)
+the incompatibility with statistical profiling. It is these issues which
+E0PD attempts to address, so whilst I'm ok with enabling it unconditionally
+as you propose, we should go one step further and avoid enabling KPTI on
+CPUs with E0PD even if KASLR is enabled.
 
-Fair enough. Will fix in v2.
+We probably also need to consider the unfortunate situations where E0PD
+is not supported by all of the CPUs in the system.
 
->
-> >  1 file changed, 43 insertions(+)
-> >  create mode 100644 Documentation/devicetree/bindings/arm/freescale/fsl,dsp.yaml
-> >
-> > diff --git a/Documentation/devicetree/bindings/arm/freescale/fsl,dsp.yaml b/Documentation/devicetree/bindings/arm/freescale/fsl,dsp.yaml
-> > new file mode 100644
-> > index 000000000000..16d9df1d397b
-> > --- /dev/null
-> > +++ b/Documentation/devicetree/bindings/arm/freescale/fsl,dsp.yaml
-> > @@ -0,0 +1,43 @@
-> > +# SPDX-License-Identifier: GPL-2.0
->
-> The preference is to dual license new bindings: GPL-2.0 OR BSD-2-Clause
->
-> > +%YAML 1.2
-> > +---
-> > +$id: http://devicetree.org/schemas/arm/freescale/fsl,dsp.yaml#
-> > +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> > +
-> > +title: NXP i.MX IPC DSP driver
->
-> This isn't a driver.
-
-I see. This node is actually the representation of DSP IPC so not a driver.
->
-> > +
-> > +maintainers:
-> > +  - Daniel Baluta <daniel.baluta@nxp.com>
-> > +
-> > +description: |
-> > +  IPC communication layer between Host CPU and DSP on NXP i.MX8 platforms
-> > +
-> > +properties:
-> > +  compatible:
-> > +    enum:
-> > +      - fsl,imx-dsp
->
-> You can have a fallback, but it needs SoC specific compatible(s).
-Agree. Will fix in v2.
-
->
-> > +
-> > +  mboxes:
-> > +    description:
-> > +      List of phandle of 2 MU channels for TXDB, 2 MU channels for RXDB
-> > +      (see mailbox/fsl,mu.txt)
-> > +    maxItems: 1
->
-> Should be 4?
-
-Actually is just a list with 1 item. I think is the terminology:
-
-You can have an example here of the mboxes defined for SCU.
-https://github.com/torvalds/linux/blob/master/arch/arm64/boot/dts/freescale/imx8qxp.dtsi#L123
-
-
->
-> > +
-> > +  mbox-names
-> > +    description:
-> > +      Mailboxes names
-> > +    allOf:
-> > +      - $ref: "/schemas/types.yaml#/definitions/string"
->
-> No need for this, '*-names' already has a defined type.
-So, should I remove the above two lines ?
->
-> > +      - enum: [ "txdb0", "txdb1", "rxdb0", "rxdb1" ]
->
-> Should be an 'items' list with 4 entries?
-
-Let me better read the yaml spec. But "items" list indeed sounds better.
-
->
-> > +required:
-> > +  - compatible
-> > +  - mboxes
-> > +  - mbox-names
->
-> This seems incomplete. How does one boot the DSP? Load firmware? No
-> resources that Linux has to manage. Shared memory?
-
-This is only the IPC mailboxes used by DSP to communicate with Linux. The
-loading of the firmware, the resources needed to be managed by Linux, etc
-are part of the DSP node.
-
-To avoid confusion I have renamed this node from dsp to dsp_ipc.
-
->
-> > +
-> > +examples:
-> > +  - |
-> > +    dsp {
-> > +      compatbile = "fsl,imx-dsp";
-> > +      mbox-names = "txdb0", "txdb1", "rxdb0", "rxdb1";
-> > +      mboxes = <&lsio_mu13 2 0 &lsio_mu13 2 1 &lsio_mu13 3 0 &lsio_mu13 3 1>;
->
-> mboxes = <&lsio_mu13 2 0>, <&lsio_mu13 2 1>, <&lsio_mu13 3 0>, <&lsio_mu13 3 1>;
-
-Actually no! It looks like the imx mailbox expects one element with a
-list of phandles directions and index.
-
-See again, how SCU uses the mailbox node.
-
-https://github.com/torvalds/linux/blob/master/arch/arm64/boot/dts/freescale/imx8qxp.dtsi#L123
-
->
-> > +    };
-> > --
-> > 2.17.1
-> >
+Will
 
 _______________________________________________
 linux-arm-kernel mailing list
