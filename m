@@ -2,59 +2,93 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 728F857132
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 26 Jun 2019 21:02:09 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5E4015713A
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 26 Jun 2019 21:02:55 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=e6Pw7oE8K/V4Pmwnhng+0G58iUKVVcKDuP2k9ZkTTWs=; b=SasUfL1/anBU+/
-	xnTNxZNMtNFYy/0WGLdbKAOPzKBQ09dndI/Qvs0Nwm9+Z7eM3gNdj5BC+0Wt0e/hWY65do3w/OpqQ
-	s3uKAjIbwr83OCmm8d7sDhCRcJhZmZTXAzqH+HG75WupacS8CwBGs7VgZSLirWMRCO0jumVGTE6hZ
-	DFUjHzBz3XYWlF0fZ313kJ0lC7eHagIsOo5KNld1U9d9SZukkTTqV1m7GoheMbq+IvRt3xvdFm2n9
-	2f/Qq3NVTC2mvHoq1eC5Jc2aRRbWii8JvxNhEaWq/0GzRpOo/3WWCP7xjtbNEtF7EISOrskZmFHew
-	zwdyEvuiIPLXMKFiQcIA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=x6ztw8W4LI/BrPd7oqKu/GAla+Q1pfLwppwEJGHKOxI=; b=KSHLwOTwUAmPYBAZjN6534df4
+	sca5l9leCFXw4ubzMEobVat9Dt+lFT14MvwbFWxMJ5omKRKI7yv40vBSJqnJaPSziO3BzE+eyWP5c
+	ybfLC7bFPqOeMsSTjbdB1dUjjFBtq56caplcTFfsmiT53M1Z18jZpPdGr94U0KPh/oSFwmNfcYqXu
+	MblWkwTDkpocDSdul3IvLkDyuq26hLJsNzXvCJNhX7Q72VfmAlIT8h7bdsaq6gCnx8EJ1h4u53aTz
+	sESWJEa7Qwcy5eBAdOQ40FokEYKSnNYhFKG40dGAeErXoPoTFV0zwH/tZioCFoomTfx2+Y1DwEgca
+	5egaLDNQg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hgDBF-0006x9-Dz; Wed, 26 Jun 2019 19:02:05 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hgDAP-0006aJ-Q2
- for linux-arm-kernel@lists.infradead.org; Wed, 26 Jun 2019 19:01:16 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 4D1C0360;
- Wed, 26 Jun 2019 12:01:10 -0700 (PDT)
-Received: from [192.168.1.18] (unknown [172.31.20.19])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 5B7403F718;
- Wed, 26 Jun 2019 12:01:07 -0700 (PDT)
-Subject: Re: [PATCH v7 04/25] arm64: Substitute gettimeofday with C
- implementation
-To: Dave Martin <Dave.Martin@arm.com>
-References: <20190621095252.32307-1-vincenzo.frascino@arm.com>
- <20190621095252.32307-5-vincenzo.frascino@arm.com>
- <20190625153336.GZ2790@e103592.cambridge.arm.com>
- <f5ac379a-731d-0662-2f5b-bd046e3bd1c5@arm.com>
- <20190626161413.GA2790@e103592.cambridge.arm.com>
-From: Vincenzo Frascino <vincenzo.frascino@arm.com>
-Message-ID: <19ebd45a-b666-d7de-fd9e-2b72e18892d9@arm.com>
-Date: Wed, 26 Jun 2019 20:01:58 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.7.0
+	id 1hgDBz-0007SY-UI; Wed, 26 Jun 2019 19:02:52 +0000
+Received: from smtp.codeaurora.org ([198.145.29.96])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hgDBZ-0007PC-Nf
+ for linux-arm-kernel@lists.infradead.org; Wed, 26 Jun 2019 19:02:27 +0000
+Received: by smtp.codeaurora.org (Postfix, from userid 1000)
+ id A77BD60F3A; Wed, 26 Jun 2019 19:02:24 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=codeaurora.org;
+ s=default; t=1561575745;
+ bh=ssCLH2DoKTlXWGV9yiNUwpiNQxntMU7hy1HNqKFxCCg=;
+ h=Subject:To:Cc:References:From:Date:In-Reply-To:From;
+ b=JP2W7Z05S65V6m1oiRDauhdOVwpkcW3VqS+0cRxwy+TI833fdK8i1Y7AMgT03vyFl
+ wCI8gS2D/iBlGWF2j/a3BAPfg1xnq5VfRy2UNDo1E6ZOfzGmJi7SX5HeEyHcEe0ZxP
+ KlqmWYTeyiSh3ktK3qZQasSBesSPrrTmsZi4qWFI=
+X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
+ pdx-caf-mail.web.codeaurora.org
+X-Spam-Level: 
+X-Spam-Status: No, score=-2.7 required=2.0 tests=ALL_TRUSTED,BAYES_00,
+ DKIM_INVALID,DKIM_SIGNED,SPF_NONE autolearn=no autolearn_force=no
+ version=3.4.0
+Received: from [192.168.1.100] (unknown [157.45.87.48])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ (Authenticated sender: saiprakash.ranjan@smtp.codeaurora.org)
+ by smtp.codeaurora.org (Postfix) with ESMTPSA id 02D37611C3;
+ Wed, 26 Jun 2019 19:02:16 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=codeaurora.org;
+ s=default; t=1561575743;
+ bh=ssCLH2DoKTlXWGV9yiNUwpiNQxntMU7hy1HNqKFxCCg=;
+ h=Subject:To:Cc:References:From:Date:In-Reply-To:From;
+ b=oQTNqSlBgSWSEUG6XfeB1st98U6hzR/AGOTiQ15o5PkdK1RlhOT1Dp8Ogl/L8ITFh
+ 5oOTx3dBfanB5UeBvQMs40Wb4khZ/Qc7d0xpXDHFT35O+l6/V6qT7S+TfGXhgGrVtc
+ tv7kxa597Do8x+Un4bBvHmHuyhhwxCD/RZSqFlt8=
+DMARC-Filter: OpenDMARC Filter v1.3.2 smtp.codeaurora.org 02D37611C3
+Authentication-Results: pdx-caf-mail.web.codeaurora.org;
+ dmarc=none (p=none dis=none) header.from=codeaurora.org
+Authentication-Results: pdx-caf-mail.web.codeaurora.org; spf=none
+ smtp.mailfrom=saiprakash.ranjan@codeaurora.org
+Subject: Re: [PATCHv3 1/1] coresight: Do not default to CPU0 for missing CPU
+ phandle
+To: Mathieu Poirier <mathieu.poirier@linaro.org>
+References: <cover.1561346998.git.saiprakash.ranjan@codeaurora.org>
+ <635466ab6a27781966bb083e93d2ca2729473ced.1561346998.git.saiprakash.ranjan@codeaurora.org>
+ <CANLsYky6D5EsCL2vOa4hHaqTQRXbN+TT0pSzFrykDL_fHEkiBQ@mail.gmail.com>
+From: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>
+Message-ID: <68fea180-c3a4-b7d9-09b6-1d3ddbc89f9d@codeaurora.org>
+Date: Thu, 27 Jun 2019 00:32:14 +0530
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:60.0) Gecko/20100101
+ Thunderbird/60.7.2
 MIME-Version: 1.0
-In-Reply-To: <20190626161413.GA2790@e103592.cambridge.arm.com>
+In-Reply-To: <CANLsYky6D5EsCL2vOa4hHaqTQRXbN+TT0pSzFrykDL_fHEkiBQ@mail.gmail.com>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190626_120114_293748_E609F21E 
-X-CRM114-Status: GOOD (  35.25  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190626_120225_889610_21F88D9E 
+X-CRM114-Status: GOOD (  16.38  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [198.145.29.96 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -66,373 +100,87 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arch@vger.kernel.org, Shuah Khan <shuah@kernel.org>,
- Catalin Marinas <catalin.marinas@arm.com>, Arnd Bergmann <arnd@arndb.de>,
- Mark Salyzyn <salyzyn@android.com>, Huw Davies <huw@codeweavers.com>,
- Andre Przywara <andre.przywara@arm.com>,
- Daniel Lezcano <daniel.lezcano@linaro.org>, Will Deacon <will.deacon@arm.com>,
- linux-kernel@vger.kernel.org, Ralf Baechle <ralf@linux-mips.org>,
- linux-mips@vger.kernel.org, Paul Burton <paul.burton@mips.com>,
- linux-kselftest@vger.kernel.org, Rasmus Villemoes <linux@rasmusvillemoes.dk>,
- Russell King <linux@armlinux.org.uk>, Dmitry Safonov <0x7f454c46@gmail.com>,
- Shijith Thotton <sthotton@marvell.com>, Peter Collingbourne <pcc@google.com>,
- Thomas Gleixner <tglx@linutronix.de>, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Rajendra Nayak <rnayak@codeaurora.org>,
+ Suzuki K Poulose <suzuki.poulose@arm.com>,
+ Alexander Shishkin <alexander.shishkin@linux.intel.com>,
+ linux-arm-msm <linux-arm-msm@vger.kernel.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ David Brown <david.brown@linaro.org>, Rob Herring <robh+dt@kernel.org>,
+ Sibi Sankar <sibis@codeaurora.org>, Vivek Gautam <vivek.gautam@codeaurora.org>,
+ Leo Yan <leo.yan@linaro.org>, Andy Gross <andy.gross@linaro.org>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Dave,
+Hi Mathieu,
 
-thank you for the quick turn around.
-
-On 6/26/19 5:14 PM, Dave Martin wrote:
-> On Wed, Jun 26, 2019 at 02:27:59PM +0100, Vincenzo Frascino wrote:
->> Hi Dave,
->>
->> On 25/06/2019 16:33, Dave Martin wrote:
->>> On Fri, Jun 21, 2019 at 10:52:31AM +0100, Vincenzo Frascino wrote:
->>>> To take advantage of the commonly defined vdso interface for
->>>> gettimeofday the architectural code requires an adaptation.
->>>>
->>>> Re-implement the gettimeofday vdso in C in order to use lib/vdso.
->>>>
->>>> With the new implementation arm64 gains support for CLOCK_BOOTTIME
->>>> and CLOCK_TAI.
->>>>
->>>> Cc: Catalin Marinas <catalin.marinas@arm.com>
->>>> Cc: Will Deacon <will.deacon@arm.com>
->>>> Signed-off-by: Vincenzo Frascino <vincenzo.frascino@arm.com>
->>>> Tested-by: Shijith Thotton <sthotton@marvell.com>
->>>> Tested-by: Andre Przywara <andre.przywara@arm.com>
->>>
->>> [...]
->>>
->>>> diff --git a/arch/arm64/include/asm/vdso/gettimeofday.h b/arch/arm64/include/asm/vdso/gettimeofday.h
->>>> new file mode 100644
->>>> index 000000000000..bc3cb6738051
->>>> --- /dev/null
->>>> +++ b/arch/arm64/include/asm/vdso/gettimeofday.h
->>>> @@ -0,0 +1,86 @@
->>>> +/* SPDX-License-Identifier: GPL-2.0 */
->>>> +/*
->>>> + * Copyright (C) 2018 ARM Limited
->>>> + */
->>>> +#ifndef __ASM_VDSO_GETTIMEOFDAY_H
->>>> +#define __ASM_VDSO_GETTIMEOFDAY_H
->>>> +
->>>> +#ifndef __ASSEMBLY__
->>>> +
->>>> +#include <asm/unistd.h>
->>>> +#include <uapi/linux/time.h>
->>>> +
->>>> +#define VDSO_HAS_CLOCK_GETRES		1
->>>> +
->>>> +static __always_inline int gettimeofday_fallback(
->>>> +					struct __kernel_old_timeval *_tv,
->>>> +					struct timezone *_tz)
->>>
->>> Out of interest, does this need to be __always_inline?
->>>
->>
->> It is a design choice. Philosophically, I prefer to control and reduce the scope
->> of the decisions the compiler has to make in order to not have surprises.
->>
->>>> +{
->>>> +	register struct timezone *tz asm("x1") = _tz;
->>>> +	register struct __kernel_old_timeval *tv asm("x0") = _tv;
->>>> +	register long ret asm ("x0");
->>>> +	register long nr asm("x8") = __NR_gettimeofday;
->>>> +
->>>> +	asm volatile(
->>>> +	"       svc #0\n"
->>>
->>> Can inlining of this function result in non-trivial expressions being
->>> substituted for _tz or _tv?
->>>
->>> A function call can clobber register asm vars that are assigned to the
->>> caller-save registers or that the PCS uses for function arguments, and
->>> the situations where this can happen are poorly defined AFAICT.  There's
->>> also no reliable way to detect at build time whether the compiler has
->>> done this, and no robust way to stop if happening.
->>>
->>> (IMHO the compiler is wrong to do this, but it's been that way for ever,
->>> and I think I saw GCC 9 show this behaviour recently when I was
->>> investigating something related.)
->>>
->>>
->>> To be safe, it's better to put this out of line, or remove the reg asm()
->>> specifiers, mark x0-x18 and lr as clobbered here (so that the compiler
->>> doesn't map arguments to them), and put movs in the asm to move things
->>> into the right registers.  The syscall number can be passed with an "i"
->>> constraint.  (And yes, this sucks.)
->>>
->>> If the code this is inlined in is simple enough though, we can be fairly
->>> confident of getting away with it.
->>>
->>
->> I took very seriously what you are mentioning here because I think
->> that robustness of the code comes before than everything especially
->> in the kernel and I carried on some experiments to try to verify if
->> in this case is safe to assume that the compiler is doing the right
->> thing.
->>
->> Based on my investigation and on previous observations of the
->> generation of the vDSO library, I can conclude that the approach
->> seems safe due to the fact that the usage of this code is very
->> limited, the code itself is simple enough and that gcc would inline
->> this code anyway based on the current compilation options.
+On 6/26/2019 11:11 PM, Mathieu Poirier wrote:
+> Hi Sai,
 > 
-> I'd caution about "seems safe".  A lot of subtly wrong code not only
-> seems safe, but _is_ safe in its original context, in practice.  Add
-> some code to the vdso over time though, or tweak the compilation options
-> at some point in the future, or use a different compiler, and things
-> could still go wrong.
+> On Sun, 23 Jun 2019 at 21:36, Sai Prakash Ranjan
+> <saiprakash.ranjan@codeaurora.org> wrote:
+>> diff --git a/drivers/hwtracing/coresight/coresight-platform.c b/drivers/hwtracing/coresight/coresight-platform.c
+>> index 3c5ceda8db24..4990da2c13e9 100644
+>> --- a/drivers/hwtracing/coresight/coresight-platform.c
+>> +++ b/drivers/hwtracing/coresight/coresight-platform.c
+>> @@ -159,16 +159,16 @@ static int of_coresight_get_cpu(struct device *dev)
+>>          struct device_node *dn;
+>>
+>>          if (!dev->of_node)
+>> -               return 0;
+>> +               return -ENODEV;
+>> +
+>>          dn = of_parse_phandle(dev->of_node, "cpu", 0);
+>> -       /* Affinity defaults to CPU0 */
+>>          if (!dn)
+>> -               return 0;
+>> +               return -ENODEV;
+>> +
+>>          cpu = of_cpu_node_to_id(dn);
+>>          of_node_put(dn);
+>>
+>> -       /* Affinity to CPU0 if no cpu nodes are found */
+>> -       return (cpu < 0) ? 0 : cpu;
+>> +       return cpu;
+>>   }
 > 
-> (Further comments below.)
+> Function of_coresight_get_cpu() needs to return -ENODEV rather than 0
+> when !CONFIG_OF
+> 
+>>
+>>   /*
+>> @@ -734,14 +734,14 @@ static int acpi_coresight_get_cpu(struct device *dev)
+>>          struct acpi_device *adev = ACPI_COMPANION(dev);
+>>
+>>          if (!adev)
+>> -               return 0;
+>> +               return -ENODEV;
+>>          status = acpi_get_parent(adev->handle, &cpu_handle);
+>>          if (ACPI_FAILURE(status))
+>> -               return 0;
+>> +               return -ENODEV;
+>>
+>>          cpu = acpi_handle_to_logical_cpuid(cpu_handle);
+>>          if (cpu >= nr_cpu_ids)
+>> -               return 0;
+>> +               return -ENODEV;
+>>          return cpu;
+>>   }
+>>
+> 
+> Same as above, but for !CONFIG_ACPI
 > 
 
-Allow me to provide a clarification on "seems safe" vs "is safe": my approach
-"seems safe" because I am providing empirical evidence to support my thesis, but
-I guess we both know that there is no simple way to prove in one way or another
-that the problem has a complete solution.
-The proposed problem involves suppositions on potential future code additions
-and changes of behavior of the compiler that I can't either control or prevent.
-In other words, I can comment and propose solutions only based on the current
-status of the things, and it is what my analysis targets, not on what will
-happen in future.
+Have fixed and resent, thanks Mathieu.
 
-I will reply point by point below.
-
->> The experiment that I did was to define some self-contained code that
->> tries to mimic what you are describing and compile it with 3
->> different versions of gcc (6.4, 8.1 and 8.3) and in all the tree
->> cases the behavior seems correct.
->>
->> Code:
->> =====
->>
->> typedef int ssize_t;
->> typedef int size_t;
->>
->> static int my_strlen(const char *s)
->> {
->> 	int i = 0;
->>
->> 	while (s[i] == '\0')
->> 		i++;
->>
->> 	return i;
->> }
->>
->> static inline ssize_t my_syscall(int fd, const void *buf, size_t count)
->> {
->> 	register ssize_t arg1 asm ("x0") = fd;
->> 	register const void *arg2 asm ("x1") = buf;
->> 	register size_t arg3 asm ("x2") = count;
->>
->> 	__asm__ volatile (
->> 		"mov x8, #64\n"
->> 		"svc #0\n"
->> 		: "=&r" (arg1)
->> 		: "r" (arg2), "r" (arg3)
->> 		: "x8"
->>         );
->>
->>         return arg1;
->> }
->>
->> void sys_caller(const char *s)
->> {
->> 	my_syscall(1, s, my_strlen(s));
->> }
->>
->>
->> GCC 8.3.0:
->> ==========
->>
->> main.8.3.0.o:     file format elf64-littleaarch64
->>
->>
->> Disassembly of section .text:
->>
->> 0000000000000000 <sys_caller>:
->>    0:	39400001 	ldrb	w1, [x0]
->>    4:	35000161 	cbnz	w1, 30 <sys_caller+0x30>
->>    8:	d2800023 	mov	x3, #0x1                   	// #1
->>    c:	d1000404 	sub	x4, x0, #0x1
->>   10:	2a0303e2 	mov	w2, w3
->>   14:	91000463 	add	x3, x3, #0x1
->>   18:	38636881 	ldrb	w1, [x4, x3]
->>   1c:	34ffffa1 	cbz	w1, 10 <sys_caller+0x10>
->>   20:	aa0003e1 	mov	x1, x0
->>   24:	d2800808 	mov	x8, #0x40                  	// #64
->>   28:	d4000001 	svc	#0x0
->>   2c:	d65f03c0 	ret
->>   30:	52800002 	mov	w2, #0x0                   	// #0
->>   34:	17fffffb 	b	20 <sys_caller+0x20>
->>
->>
->> GCC 8.1.0:
->> ==========
->>
->> main.8.1.0.o:     file format elf64-littleaarch64
->>
->>
->> Disassembly of section .text:
->>
->> 0000000000000000 <sys_caller>:
->>    0:	39400001 	ldrb	w1, [x0]
->>    4:	35000161 	cbnz	w1, 30 <sys_caller+0x30>
->>    8:	d2800023 	mov	x3, #0x1                   	// #1
->>    c:	d1000404 	sub	x4, x0, #0x1
->>   10:	2a0303e2 	mov	w2, w3
->>   14:	91000463 	add	x3, x3, #0x1
->>   18:	38636881 	ldrb	w1, [x4, x3]
->>   1c:	34ffffa1 	cbz	w1, 10 <sys_caller+0x10>
->>   20:	aa0003e1 	mov	x1, x0
->>   24:	d2800808 	mov	x8, #0x40                  	// #64
->>   28:	d4000001 	svc	#0x0
->>   2c:	d65f03c0 	ret
->>   30:	52800002 	mov	w2, #0x0                   	// #0
->>   34:	17fffffb 	b	20 <sys_caller+0x20>
->>
->>
->>
->> GCC 6.4.0:
->> ==========
->>
->> main.6.4.0.o:     file format elf64-littleaarch64
->>
->>
->> Disassembly of section .text:
->>
->> 0000000000000000 <sys_caller>:
->>    0:	39400001 	ldrb	w1, [x0]
->>    4:	35000161 	cbnz	w1, 30 <sys_caller+0x30>
->>    8:	d2800023 	mov	x3, #0x1                   	// #1
->>    c:	d1000404 	sub	x4, x0, #0x1
->>   10:	2a0303e2 	mov	w2, w3
->>   14:	91000463 	add	x3, x3, #0x1
->>   18:	38636881 	ldrb	w1, [x4, x3]
->>   1c:	34ffffa1 	cbz	w1, 10 <sys_caller+0x10>
->>   20:	aa0003e1 	mov	x1, x0
->>   24:	d2800808 	mov	x8, #0x40                  	// #64
->>   28:	d4000001 	svc	#0x0
->>   2c:	d65f03c0 	ret
->>   30:	52800002 	mov	w2, #0x0                   	// #0
->>   34:	17fffffb 	b	20 <sys_caller+0x20>
-> 
-> Thanks for having a go at this.  If the compiler can show the
-> problematic behaviour, it looks like your could could probably trigger
-> it, and as you observe, it doesn't trigger.
-> 
-> I am sure I have seen it in the past, but today I am struggling
-> to tickle the compiler in the right way.  My original reproducer may
-> have involved LTO, but either way I don't still have it :(
->
-
-vDSO library is a shared object not compiled with LTO as far as I can see, hence
-if this involved LTO should not applicable in this case.
-
-
-> 
-> The classic example of this (triggered directly and not due to inlining)
-> would be something like:
-> 
-> int bar(int, int);
-> 
-> void foo(int x, int y)
-> {
-> 	register int x_ asm("r0") = x;
-> 	register int y_ asm("r1") = bar(x, y);
-> 
-> 	asm volatile (
-> 		"svc	#0"
-> 		:: "r" (x_), "r" (y_)
-> 		: "memory"
-> 	);
-> }
-> 
-> ->
-> 
-> 0000000000000000 <foo>:
->    0:   a9bf7bfd        stp     x29, x30, [sp, #-16]!
->    4:   910003fd        mov     x29, sp
->    8:   94000000        bl      0 <bar>
->    c:   2a0003e1        mov     w1, w0
->   10:   d4000001        svc     #0x0
->   14:   a8c17bfd        ldp     x29, x30, [sp], #16
->   18:   d65f03c0        ret
->
-
-Contextualized to what my vdso fallback functions do, this should not be a
-concern because in no case a function result is directly set to a variable
-declared as register.
-
-Since the vdso fallback functions serve a very specific and limited purpose, I
-do not expect that that code is going to change much in future.
-
-The only thing that can happen is something similar to what I wrote in my
-example, which as I empirically proved does not trigger the problematic behavior.
-
-> 
-> The gcc documentation is vague and ambiguous about precisely whan this
-> can happen and about how to avoid it.
-> 
-
-On this I agree, it is not very clear, but this seems more something to raise
-with the gcc folks in order to have a more "explicit" description that leaves no
-room to the interpretation.
-
-...
-
-> 
-> However, the workaround is cheap, and to avoid the chance of subtle
-> intermittent code gen bugs it may be worth it:
-> 
-> void foo(int x, int y)
-> {
-> 	asm volatile (
-> 		"mov	x0, %0\n\t"
-> 		"mov	x1, %1\n\t"
-> 		"svc	#0"
-> 		:: "r" (x), "r" (bar(x, y))
-> 		: "r0", "r1", "memory"
-> 	);
-> }
-> 
-> ->
-> 
-> 0000000000000000 <foo>:
->    0:   a9be7bfd        stp     x29, x30, [sp, #-32]!
->    4:   910003fd        mov     x29, sp
->    8:   f9000bf3        str     x19, [sp, #16]
->    c:   2a0003f3        mov     w19, w0
->   10:   94000000        bl      0 <bar>
->   14:   2a0003e2        mov     w2, w0
->   18:   aa1303e0        mov     x0, x19
->   1c:   aa0203e1        mov     x1, x2
->   20:   d4000001        svc     #0x0
->   24:   f9400bf3        ldr     x19, [sp, #16]
->   28:   a8c27bfd        ldp     x29, x30, [sp], #32
->   2c:   d65f03c0        ret
-> 
-> 
-> What do you think?
->
-
-The solution seems ok, thanks for providing it, but IMHO I think we should find
-a workaround for something that is broken, which, unless I am missing something
-major, this seems not the case.
-
-> Cheers
-> ---Dave
-> 
+-Sai
 
 -- 
-Regards,
-Vincenzo
+QUALCOMM INDIA, on behalf of Qualcomm Innovation Center, Inc. is a member
+of Code Aurora Forum, hosted by The Linux Foundation
 
 _______________________________________________
 linux-arm-kernel mailing list
