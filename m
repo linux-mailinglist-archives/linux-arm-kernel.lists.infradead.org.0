@@ -2,66 +2,107 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A635E57B80
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 27 Jun 2019 07:32:59 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5F31257B99
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 27 Jun 2019 07:38:54 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=EcdYbi5INo+PiyIdKwRysECbttlTaMXK4dC+O52NdsU=; b=LM2iQpNF6K7tjO
-	zmztMfLLI2zeqAB0nbKWqa4jQkieHMwT6ei9oQfxCkQLKD7Dq9iycBDw5lSim2i31sfM0BaaOjMwq
-	Sv2xX9pVY8lyRomddXMnyOa8poupmBO/o5BXajvsIxXOvaRYO0FnUCX/K2Zm/T+CpARzzNxwSVINg
-	o9HGgSE1DtDfrz5qNk+R8Tm5hzqitRzJp9NL834eDm4KUEio2RP1NuJ3K7V4uDEgpMfpdufyFpogi
-	0NRMmviV5RIIqGo+Ec4VeSEJfYqwnxp9dwk/LSVbXQjHKl6oRaaG1AKWCW2kuwNOCZV2W28ubzBWY
-	SFP9cfPOHiqD1CXnxhqw==;
+	List-Owner; bh=CyP066tsj59t5//LT2OkjddIWMCEZJJpghaRWIp+8Cc=; b=Gyjaif5j/Lc80e
+	GqlSACExV5VThcmb360xpgDpZU7LjAGbkfn2RNjFTdqH9oDygRNKrL8fPDzRgZGFaaTXxb2TzriSt
+	VrgVe7Op95i5Gocdo6pxNrrBVu2zx1pSR/TNfEEWY3jf5N0PgxPHPXptlrVB2WFIIhOPBh2b2vgug
+	8BH6mpE3dnQbQaVtKYTlPWU+8iRdEQKxEhGq7d5nVWaCEYWpzMBTGtUCA9pWyV46NNgxkVsm9F8x4
+	VAVTcF6sGeot00AsGfPETVhnpRAvHCBTdpoctnTliOgno/uofJLegVwYZ5juU1UBj73BQWwsAaO1e
+	d5SlSKC8vx6f22wxgDvA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hgN1m-0004Cc-3U; Thu, 27 Jun 2019 05:32:58 +0000
+	id 1hgN7R-00012r-Sg; Thu, 27 Jun 2019 05:38:49 +0000
 Received: from casper.infradead.org ([2001:8b0:10b:1236::1])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hgMsf-0007bR-SA; Thu, 27 Jun 2019 05:23:33 +0000
+ id 1hgMsc-00013R-7Y
+ for linux-arm-kernel@bombadil.infradead.org; Thu, 27 Jun 2019 05:23:30 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=infradead.org; s=casper.20170209; h=Content-Type:Content-Transfer-Encoding:
- MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:Sender
- :Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
- Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:
- List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=hxS4g+YLJmA56kXbsyG1nmRaD9gikm+asntstLr9cIQ=; b=AFX0FIQdPUbtk4JPoEt9/yN6lH
- gXuYGd4HnLkSEyJKo29dEo9d5AlZugTrS+sxmah2GS5WKzjYOYBaVYLfCZcA2uvsAABuiT/3mt19o
- xJukvJEjrI+kZvMCr4bqfO93ubC1lwgVKRD4G3T3B+hbudwKA1N33m0uOyOZVY1rG+QJ1m5jLSxos
- IdF4XqyZh1s/qEEF/Z/hTsXLZsqmmEH0myjc6tH0YkLGVOIMkhs4P4Al42uIyAiwKxBIjmotOSSll
- ycPBxEtJlk2eBiY/HpG8tKRxprAXvtXlp0WVLzA9DyyQIkSfBufSuhUbwZBxZ1qnUWyHkb9PB0Y/B
- tuim/x3g==;
-Received: from gloria.sntech.de ([185.11.138.130])
+ d=infradead.org; s=casper.20170209; h=In-Reply-To:Content-Type:MIME-Version:
+ References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=IuI6M4VGf1cjQTUKZW+l4CbPnBlOyXj2+eIKebMch1k=; b=esFkzDVk5ZtsTWE4Kiwcbl9Ta
+ KsFVwCbhYVJgq1dz48vBzPGlX+Lmn5KDDu+WO+A6K6FnJFAPwUlnqVAU/MnptjjvwR7k2iOKVW70q
+ WculYiy4CVCb7mG9FzZ+I7FDnaupVrxSvAbd22YIoP0lMm5VS2FYq2if+MmzPwQJWP71gwFC8ubZW
+ IJcwKAiCQ+JfahntPoOkhuFBTxA1vrv9wqG/xVQnqkQD+jnb+AN6Ricm5dk1My8NUnzoAlgLUH+0D
+ NuB4Qt+jwrUlX3xMitKtcg5ai7x9XIcsWhREWbDnaxEwKN8p/iJbrxvnIV+HKIttdcsjxHkPqMz2F
+ zA8J0KoVA==;
+Received: from mail-pg1-x543.google.com ([2607:f8b0:4864:20::543])
  by casper.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hgGak-0007KF-Tw; Wed, 26 Jun 2019 22:40:40 +0000
-Received: from ip5f5a6320.dynamic.kabel-deutschland.de ([95.90.99.32]
- helo=phil.localnet)
- by gloria.sntech.de with esmtpsa (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
- (Exim 4.89) (envelope-from <heiko@sntech.de>)
- id 1hgGYb-0004Ub-O1; Thu, 27 Jun 2019 00:38:25 +0200
-From: Heiko Stuebner <heiko@sntech.de>
-To: Vivek Unune <npcomplete13@gmail.com>
-Subject: Re: [PATCH v2] arm64: dts: rockchip: Add support for Hugsun X99 TV Box
-Date: Thu, 27 Jun 2019 00:38:25 +0200
-Message-ID: <3247989.aGYRIomCNH@phil>
-In-Reply-To: <20190621205308.5177-1-npcomplete13@gmail.com>
-References: <2273961.GTPgWWlV5T@phil>
- <20190621205308.5177-1-npcomplete13@gmail.com>
+ id 1hgGs5-0007s5-Hm
+ for linux-arm-kernel@lists.infradead.org; Wed, 26 Jun 2019 22:58:35 +0000
+Received: by mail-pg1-x543.google.com with SMTP id w10so61189pgj.7
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 26 Jun 2019 15:58:30 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=IuI6M4VGf1cjQTUKZW+l4CbPnBlOyXj2+eIKebMch1k=;
+ b=PkX050BpppH3H/7xYIywyS+Db9gQLAlPfiWuw1cGsyQZ+YKibWRElZhD+84sVsUSU4
+ 1E/w5nwSOoby0+/SDXrA61D0g/IS1aMnxZCOMTDSwtiArIylZ2mxQdb7Hki56EuRiFRd
+ DKOTP6SJn52T4RzoGRJhl5q9+Wn0GLrQzS178=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=IuI6M4VGf1cjQTUKZW+l4CbPnBlOyXj2+eIKebMch1k=;
+ b=iUpqyobz+Ek0us5JBzYjf/UhUqwHuYTGFowLBbZa2wHIpQB5y2AsEcTgaXaTcptIfK
+ CV4Mj3gYtSlN5A7moDBOQkJNUGgiGGzmzGNchkbCjJO/+5M7JdgP872XUgG7pB8G3H5h
+ GRLqGlTpuZWsHCaBsWbgLjCtthNNhHpqeWdE+KpQk9fL5MhqtikI7M2y0/Eh3OUuhZ/e
+ oJBwR3avjWBBQjhGUZFAJBcnDrAKLhuE6Hn7pj9AjyxWMGNLCr2wJfsmezzsfqZWz8FX
+ +2ETndyZIklt2CE6xaQvtukgcbepkdDTvxT1/FwShA1ceSw+SXAGm2P7+QgBq6EuE0OV
+ JSAw==
+X-Gm-Message-State: APjAAAVPdKGJWtCfmQ8yE3mQSAD1l3xxzG3DyWHUFdexMCeTzrFphgua
+ Tso+YxoQfWfszXgzbjbfh6VPcQ==
+X-Google-Smtp-Source: APXvYqyx8pJF4J/wTCH99KCJF8FrgEcnvbR4pUyscuGINJgi0EniQVKfjOWyJ2HNdG0cgwESpM13NA==
+X-Received: by 2002:a17:90a:2385:: with SMTP id
+ g5mr1954277pje.12.1561589786991; 
+ Wed, 26 Jun 2019 15:56:26 -0700 (PDT)
+Received: from localhost ([2620:15c:202:1:75a:3f6e:21d:9374])
+ by smtp.gmail.com with ESMTPSA id f88sm3487343pjg.5.2019.06.26.15.56.26
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Wed, 26 Jun 2019 15:56:26 -0700 (PDT)
+Date: Wed, 26 Jun 2019 15:56:24 -0700
+From: Matthias Kaehlcke <mka@chromium.org>
+To: Heiko Stuebner <heiko@sntech.de>
+Subject: Re: [PATCH 1/2] ARM: dts: rockchip: move rk3288-veryon display
+ settings into a separate file
+Message-ID: <20190626225624.GC137143@google.com>
+References: <20190625222629.154619-1-mka@chromium.org>
+ <2418036.tTYI8lUvN5@phil>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <2418036.tTYI8lUvN5@phil>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190626_234039_020983_449CA93C 
-X-CRM114-Status: UNSURE (   9.79  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190626_235833_659967_9BDD69D6 
+X-CRM114-Status: GOOD (  21.84  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on casper.infradead.org summary:
- Content analysis details:   (0.0 points, 5.0 required)
+ Content analysis details:   (-0.2 points, 5.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:543 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -73,42 +114,50 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-rockchip@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
- devicetree@vger.kernel.org
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Douglas Anderson <dianders@chromium.org>, linux-rockchip@lists.infradead.org,
+ Rob Herring <robh+dt@kernel.org>, enric.balletbo@collabora.com,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Am Freitag, 21. Juni 2019, 22:53:08 CEST schrieb Vivek Unune:
-> Add devicetree support for Hugsun X99 TV Box based on RK3399 SoC
+On Thu, Jun 27, 2019 at 12:19:27AM +0200, Heiko Stuebner wrote:
+> Hi Matthias,
 > 
-> Tested with LibreElec running kernel v5.1.2.
-> Following peripherals tested and work:
+> Am Mittwoch, 26. Juni 2019, 00:26:28 CEST schrieb Matthias Kaehlcke:
+> > The chromebook .dtsi file contains common settings for veyron
+> > Chromebooks with eDP displays. Some veyron devices with a display
+> > aren't Chromebooks (e.g. 'tiger' aka 'AOpen Chromebase Mini'), move
+> > display related bits from the chromebook .dtsi into a separate file
+> > to avoid redundant DT settings.
+> > 
+> > The new file is included from the chromebook .dtsi and can be
+> > included by non-Chromebook devices with a display.
+> > 
+> > Signed-off-by: Matthias Kaehlcke <mka@chromium.org>
+> > ---
+> > This series is based on v5.3-armsoc/dts32 (f497ab6b4bb8 "ARM:
+> > dts: rockchip: Configure BT_HOST_WAKE as wake-up signal on
+> > veyron") plus the display timing patches from Doug:
 > 
-> Peripheral works:
-> - UART2 debug
-> - eMMC
-> - USB 3.0 port
-> - USB 2.0 port
-> - sdio, sd-card
-> - HDMI
-> - Ethernet
-> - WiFi/BT
+> the display-timing patches are still stuck on panel-review.
 > 
-> Not tested:
-> - Type-C port
-> - OPTICAL
-> - IR
-> 
-> Signed-off-by: Vivek Unune <npcomplete13@gmail.com>
+> But while we wait for that to get resolved, you could also check if
+> the veyron panels could use Enric's fanzy new automatic calculation
+> of brightness-leves in the pwm-backlight driver, so that we possibly
+> could get rid of the long table of levels.
 
-applied for 5.3 after doing some reordering to make things
-alphabetical.
+We could get rid of the tables after "backlight: pwm_bl: Fix heuristic
+to determine number of brightness levels"
+(https://lore.kernel.org/patchwork/patch/1087809/) lands.
 
-Heiko
-
-
+Ideally we would also have something like this series
+https://lore.kernel.org/patchwork/project/lkml/list/?series=399607 ,
+to provide userspace information about the brightness scale. Currently
+Chrome OS would interpret Enric's table as being linear and adjust the
+brightness slider incorrectly.
 
 _______________________________________________
 linux-arm-kernel mailing list
