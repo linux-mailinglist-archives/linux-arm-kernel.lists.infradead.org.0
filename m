@@ -2,47 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EA6EF573BF
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 26 Jun 2019 23:38:16 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2E5A4573C8
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 26 Jun 2019 23:38:58 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8qnwGQ07ys6rj253JKos0Jb9coMS87Lz2zqRX+w5PqY=; b=VsWUUtJWRk7EbS
-	EPPohZebv/l1AVH/kwYrwYGk2atHZwAjLMWOYxwnzJ4bXs+H2wFCQezhCuhas/Awy1nvTpQ92Liom
-	Kx4h5KAftheNxHPwxVSuRXEo+7w/GKg3HvAN9W4B4ykL+YOrPlvouzinNxjuWmtMdOLbRyAiuhzZO
-	r6Zze4Vh3yDC09qjzeYqk6kJTMxJSzjImbm3SQxSU6bLxU/cZUxccEtrpuFgch1qUWnDZsnGmX+Dp
-	FHN0wuPcpK2fiENpp57tRcjROS/sNDvBmpvG9vHVkNaQfSurqrBlRD9Gl9Zr9ywqngrdVJKe1U5C+
-	0OsCQri5gGzirHZ9By2A==;
+	List-Owner; bh=gazxEiojqXymNalO3C1nEBxQBYo9se6kju2T7rDPonE=; b=Wo1lbfrJXPOCOR
+	d9hW7av+mGSABL3E50dI9ccPYxXcqXWMz2SEORCuAiolZJ2kdDTl5gXWRIoNLQtjD9w+GSZtDhOXa
+	3+YGX+bSPhYls+P7qYx/EzU0KtyE20L9gbsK311PQEasM7m011Dry7KH0aAkFcaxoH+3ilZrQnRqQ
+	vyE8JOYRy4+bAoQIAe0hE3vRlgQlcAvrBHfdqxGzWCqrZxKHmXdTm8rctMbYSdhcwUgESd0Hodm3k
+	R+oVKmTNVA+i97f/YX4ZAacr0dlkNkGvQvXoy2BD0B4LrifgBD9TVjediwprX1Fz3z5dojW8uJME+
+	6qMeFPu71dCG0hIoHuvg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hgFcN-0006eU-I1; Wed, 26 Jun 2019 21:38:15 +0000
+	id 1hgFd0-0007Cg-8x; Wed, 26 Jun 2019 21:38:54 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hgFbj-0006RE-FB
- for linux-arm-kernel@lists.infradead.org; Wed, 26 Jun 2019 21:37:36 +0000
+ id 1hgFbk-0006Ra-3h
+ for linux-arm-kernel@lists.infradead.org; Wed, 26 Jun 2019 21:37:38 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 37E27D6E;
- Wed, 26 Jun 2019 14:37:33 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 0FB1011D4;
+ Wed, 26 Jun 2019 14:37:34 -0700 (PDT)
 Received: from mammon-tx2.austin.arm.com (mammon-tx2.austin.arm.com
  [10.118.30.49])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 2587D3F246;
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id F26903F246;
  Wed, 26 Jun 2019 14:37:33 -0700 (PDT)
 From: Jeremy Linton <jeremy.linton@arm.com>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH v5 1/4] ACPI/PPTT: Modify node flag detection to find last
- IDENTICAL
-Date: Wed, 26 Jun 2019 16:37:15 -0500
-Message-Id: <20190626213718.39423-2-jeremy.linton@arm.com>
+Subject: [PATCH v5 2/4] ACPI/PPTT: Add function to return ACPI 6.3 Identical
+ tokens
+Date: Wed, 26 Jun 2019 16:37:16 -0500
+Message-Id: <20190626213718.39423-3-jeremy.linton@arm.com>
 X-Mailer: git-send-email 2.21.0
 In-Reply-To: <20190626213718.39423-1-jeremy.linton@arm.com>
 References: <20190626213718.39423-1-jeremy.linton@arm.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190626_143735_595340_B74F7A75 
-X-CRM114-Status: GOOD (  14.24  )
+X-CRM114-CacheID: sfid-20190626_143736_191551_7272EE55 
+X-CRM114-Status: GOOD (  10.00  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -70,84 +70,79 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The ACPI specification implies that the IDENTICAL flag should be
-set on all non leaf nodes where the children are identical.
-This means that we need to be searching for the last node with
-the identical flag set rather than the first one.
+ACPI 6.3 adds a flag to indicate that child nodes are all
+identical cores. This is useful to authoritatively determine
+if a set of (possibly offline) cores are identical or not.
 
-Since this flag is also dependent on the table revision, we
-need to add a bit of extra code to verify the table revision,
-and the next node's state in the traversal. Since we want to
-avoid function pointers here, lets just special case
-the IDENTICAL flag.
+Since the flag doesn't give us a unique id we can generate
+one and use it to create bitmaps of sibling nodes, or simply
+in a loop to determine if a subset of cores are identical.
 
 Tested-by: Hanjun Gou <gouhanjun@huawei.com>
 Reviewed-by: Sudeep Holla <sudeep.holla@arm.com>
 Signed-off-by: Jeremy Linton <jeremy.linton@arm.com>
 ---
- drivers/acpi/pptt.c | 35 +++++++++++++++++++++++++++++------
- 1 file changed, 29 insertions(+), 6 deletions(-)
+ drivers/acpi/pptt.c  | 26 ++++++++++++++++++++++++++
+ include/linux/acpi.h |  5 +++++
+ 2 files changed, 31 insertions(+)
 
 diff --git a/drivers/acpi/pptt.c b/drivers/acpi/pptt.c
-index b72e6afaa8fb..05344413f199 100644
+index 05344413f199..1e7ac0bd0d3a 100644
 --- a/drivers/acpi/pptt.c
 +++ b/drivers/acpi/pptt.c
-@@ -432,17 +432,40 @@ static void cache_setup_acpi_cpu(struct acpi_table_header *table,
- 	}
+@@ -683,3 +683,29 @@ int find_acpi_cpu_topology_package(unsigned int cpu)
+ 	return find_acpi_cpu_topology_tag(cpu, PPTT_ABORT_PACKAGE,
+ 					  ACPI_PPTT_PHYSICAL_PACKAGE);
  }
- 
-+static bool flag_identical(struct acpi_table_header *table_hdr,
-+			   struct acpi_pptt_processor *cpu)
++
++/**
++ * find_acpi_cpu_topology_hetero_id() - Get a core architecture tag
++ * @cpu: Kernel logical CPU number
++ *
++ * Determine a unique heterogeneous tag for the given CPU. CPUs with the same
++ * implementation should have matching tags.
++ *
++ * The returned tag can be used to group peers with identical implementation.
++ *
++ * The search terminates when a level is found with the identical implementation
++ * flag set or we reach a root node.
++ *
++ * Due to limitations in the PPTT data structure, there may be rare situations
++ * where two cores in a heterogeneous machine may be identical, but won't have
++ * the same tag.
++ *
++ * Return: -ENOENT if the PPTT doesn't exist, or the CPU cannot be found.
++ * Otherwise returns a value which represents a group of identical cores
++ * similar to this CPU.
++ */
++int find_acpi_cpu_topology_hetero_id(unsigned int cpu)
 +{
-+	struct acpi_pptt_processor *next;
-+
-+	/* heterogeneous machines must use PPTT revision > 1 */
-+	if (table_hdr->revision < 2)
-+		return false;
-+
-+	/* Locate the last node in the tree with IDENTICAL set */
-+	if (cpu->flags & ACPI_PPTT_ACPI_IDENTICAL) {
-+		next = fetch_pptt_node(table_hdr, cpu->parent);
-+		if (!(next && next->flags & ACPI_PPTT_ACPI_IDENTICAL))
-+			return true;
-+	}
-+
-+	return false;
++	return find_acpi_cpu_topology_tag(cpu, PPTT_ABORT_PACKAGE,
++					  ACPI_PPTT_ACPI_IDENTICAL);
 +}
-+
- /* Passing level values greater than this will result in search termination */
- #define PPTT_ABORT_PACKAGE 0xFF
- 
--static struct acpi_pptt_processor *acpi_find_processor_package_id(struct acpi_table_header *table_hdr,
--								  struct acpi_pptt_processor *cpu,
--								  int level, int flag)
-+static struct acpi_pptt_processor *acpi_find_processor_tag(struct acpi_table_header *table_hdr,
-+							   struct acpi_pptt_processor *cpu,
-+							   int level, int flag)
+diff --git a/include/linux/acpi.h b/include/linux/acpi.h
+index d315d86844e4..5bcd23e5ccd6 100644
+--- a/include/linux/acpi.h
++++ b/include/linux/acpi.h
+@@ -1303,6 +1303,7 @@ static inline int lpit_read_residency_count_address(u64 *address)
+ #ifdef CONFIG_ACPI_PPTT
+ int find_acpi_cpu_topology(unsigned int cpu, int level);
+ int find_acpi_cpu_topology_package(unsigned int cpu);
++int find_acpi_cpu_topology_hetero_id(unsigned int cpu);
+ int find_acpi_cpu_cache_topology(unsigned int cpu, int level);
+ #else
+ static inline int find_acpi_cpu_topology(unsigned int cpu, int level)
+@@ -1313,6 +1314,10 @@ static inline int find_acpi_cpu_topology_package(unsigned int cpu)
  {
- 	struct acpi_pptt_processor *prev_node;
- 
- 	while (cpu && level) {
--		if (cpu->flags & flag)
-+		/* special case the identical flag to find last identical */
-+		if (flag == ACPI_PPTT_ACPI_IDENTICAL) {
-+			if (flag_identical(table_hdr, cpu))
-+				break;
-+		} else if (cpu->flags & flag)
- 			break;
- 		pr_debug("level %d\n", level);
- 		prev_node = fetch_pptt_node(table_hdr, cpu->parent);
-@@ -480,8 +503,8 @@ static int topology_get_acpi_cpu_tag(struct acpi_table_header *table,
- 
- 	cpu_node = acpi_find_processor_node(table, acpi_cpu_id);
- 	if (cpu_node) {
--		cpu_node = acpi_find_processor_package_id(table, cpu_node,
--							  level, flag);
-+		cpu_node = acpi_find_processor_tag(table, cpu_node,
-+						   level, flag);
- 		/*
- 		 * As per specification if the processor structure represents
- 		 * an actual processor, then ACPI processor ID must be valid.
+ 	return -EINVAL;
+ }
++static inline int find_acpi_cpu_topology_hetero_id(unsigned int cpu)
++{
++	return -EINVAL;
++}
+ static inline int find_acpi_cpu_cache_topology(unsigned int cpu, int level)
+ {
+ 	return -EINVAL;
 -- 
 2.21.0
 
