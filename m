@@ -2,84 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1946A562E5
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 26 Jun 2019 09:07:39 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 583C8562E0
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 26 Jun 2019 09:05:56 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=UN1zd1Q9SdqWLCZzfeE52HKdfg6uUbL8O8mH+QxvloM=; b=WBfbD8bDS7LUTp
-	ERKdMzZwHstDFqVVEt0bN/IOrTSRtOW9lY9qAeUfsehYOGKUK9u3CaGhVrAg+TGItrWzinY1kBrye
-	bU/ukXth39qUweyrx2di+YvRs5hNKVH2cQSTBdV5sxBrh7quPDgkqA41vbqeWzTUxYx8ihXdHVJ7k
-	rO5TyDMo07BSRaYTr9G1SubgawMg5iAIohhT9cM1b91R0MLFvlH1gV4pKqozCffmkwoZm5mbaan1Y
-	af6OaxwKllgu7Ko95zJXdQ5nnkzWLeRwloIiQj7TvWxLHTHxW3+tAN9k/mxaFXKO2rNxHmEv/yjNO
-	9BItiS0/XTzzKj+lYLGQ==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=htancbL/ZtKIaYZc3tnv0zsuE4279847heKg5f/BmlM=; b=fZD
+	dQrEqES+76r5LcWrzMVkCCaHQjBusoA3vUmIke1mKpX0+0DPpyzJkpIGajMHitREUQiwKpomRMYtR
+	hQ7lESNzTxezXTtJ2d8m2cGTQ9vaPvDJKmCeBsG89hcYdx8R4x1hhyWZEoYUqunn2Lfb6fxQSj70q
+	rxs59rd7Euv92PA51az4+SnjEl5MLb/NgNGzdzaDvs3Rc34yvo4OQFmWDEdGeMwgxNHxL+enj9nvw
+	NSmcDl84huH8k0M0uAwnIopX0g0BovA0mU+o2o6KbaJZDKUPm1Gu4nIWVQgZ8yLF+kRpOFN+Leyjz
+	NQviE7ml3EPnw3BkC2ooXg89iKAQRRA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hg21n-00037M-7Z; Wed, 26 Jun 2019 07:07:35 +0000
-Received: from mail-io1-xd44.google.com ([2607:f8b0:4864:20::d44])
+	id 1hg200-0002bP-Gk; Wed, 26 Jun 2019 07:05:44 +0000
+Received: from inva021.nxp.com ([92.121.34.21])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hg21R-00034j-Qb
- for linux-arm-kernel@lists.infradead.org; Wed, 26 Jun 2019 07:07:15 +0000
-Received: by mail-io1-xd44.google.com with SMTP id k20so2683348ios.10
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 26 Jun 2019 00:07:13 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=YO3NTtUqQg+q5y+jLevvg6DdA+MqWwydBFISViHdvIg=;
- b=uSxFPFz1oOhSaCmWOKp7072jHy7BtOTB5oQPPcoEsjkMzC0GDSdCUibZ0FnOAbKoN+
- V22GqVPuxH+X7LFD3UGeDwKZzHTfEdw2lSv1IxhOB6vL7VEKGE3Eeps4viQAFq8brg8/
- WHPQs+sZh/FXV83NvXHnx2R06RkWQLPoUDTz5HJiZTbMXv/uqAfA6ji7dkWrHBij0l5N
- Ngxq0uvzA2UK9pMGLxHQekggDgkrXY7BIgDg3nNPPF5jgXNbTaIwFPQvTLcEYv41Ks7D
- vmIytaUPzzz3nObxwbEkIppJTv02PwMaGz5QG3iCow7IL/VmILcJ00jcYIGeXtpmi9kT
- fRrg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=YO3NTtUqQg+q5y+jLevvg6DdA+MqWwydBFISViHdvIg=;
- b=T+b/HACJJZ9Sd1y7DuUkberpyxph8AGedVmzsDVfAS3G3KF8LjpFv+x6OLdlqv+5/u
- 23/F76b4OmJ6t3iCjYnT+M1+HuDnn0Nz/FZVPxh86rihoMrECohfGZujtZxqAMYFuhQ/
- +9uyQQZzvBnFBUxmiSi1fnOwI1IvukNabGtQ6j1PdPKAxnsTAtI84FbAnFZE1tESuhDv
- s9jLerqpzc3CfdNUkMS6WP7mWWSMb4dzvfejMzNTJuGk8JntmrLs43lnIvzE2R6e/4/1
- kxGVnr7jNI+NxoiUk7YU0bFhqiUAdv6gFHEV+hZ4HErEagoxa0MfBK++QVYwQnvUaute
- +eLg==
-X-Gm-Message-State: APjAAAUGg52oRXsLMU2s6rWXPtU3xb2FAMtFgBXdROEEXCUzz+gwbezf
- bJYgVMlq6lS+gBmJ91mTe31CBQvspT+fHItwY6ol+A==
-X-Google-Smtp-Source: APXvYqwUVeURJFgq5+tDgeunYYmLvd6FqPHhlPb/ql/shK6VJGGdE9qcDN4/pinr9Th11F4v8t/w1seE5/vbWzXl9qw=
-X-Received: by 2002:a5d:9d83:: with SMTP id 3mr3210336ion.65.1561532832763;
- Wed, 26 Jun 2019 00:07:12 -0700 (PDT)
-MIME-Version: 1.0
-References: <20190626042017.54773-1-natechancellor@gmail.com>
-In-Reply-To: <20190626042017.54773-1-natechancellor@gmail.com>
-From: Ard Biesheuvel <ard.biesheuvel@linaro.org>
-Date: Wed, 26 Jun 2019 09:07:00 +0200
-Message-ID: <CAKv+Gu85xLD+-CqwgNQtC3Hr9z2R5bm5th8_zd_jMSzA3JE8og@mail.gmail.com>
-Subject: Re: [PATCH] arm64/efi: Mark __efistub_stext_offset as an absolute
- symbol explicitly
-To: Nathan Chancellor <natechancellor@gmail.com>
+ id 1hg1zZ-0002aw-D7
+ for linux-arm-kernel@lists.infradead.org; Wed, 26 Jun 2019 07:05:19 +0000
+Received: from inva021.nxp.com (localhost [127.0.0.1])
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 43245200256;
+ Wed, 26 Jun 2019 09:05:13 +0200 (CEST)
+Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
+ [165.114.16.14])
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 6C4E52008FD;
+ Wed, 26 Jun 2019 09:05:08 +0200 (CEST)
+Received: from mega.ap.freescale.net (mega.ap.freescale.net [10.192.208.232])
+ by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 405874030F;
+ Wed, 26 Jun 2019 15:05:02 +0800 (SGT)
+From: Anson.Huang@nxp.com
+To: shawnguo@kernel.org, s.hauer@pengutronix.de, kernel@pengutronix.de,
+ festevam@gmail.com, aisheng.dong@nxp.com, abel.vesa@nxp.com,
+ linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
+Subject: [PATCH] soc: imx-scu: Add SoC UID(unique identifier) support
+Date: Wed, 26 Jun 2019 15:07:06 +0800
+Message-Id: <20190626070706.24930-1-Anson.Huang@nxp.com>
+X-Mailer: git-send-email 2.17.1
+X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190626_000713_985125_B9A52EF9 
-X-CRM114-Status: GOOD (  17.23  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190626_000517_691537_6AA38FE7 
+X-CRM114-Status: UNSURE (   7.46  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:d44 listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [92.121.34.21 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -91,68 +66,82 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Fangrui Song <maskray@google.com>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- clang-built-linux <clang-built-linux@googlegroups.com>,
- Peter Smith <peter.smith@linaro.org>, Will Deacon <will@kernel.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Cc: Linux-imx@nxp.com
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, 26 Jun 2019 at 06:20, Nathan Chancellor
-<natechancellor@gmail.com> wrote:
->
-> After r363059 and r363928 in LLVM, a build using ld.lld as the linker
-> with CONFIG_RANDOMIZE_BASE enabled fails like so:
->
-> ld.lld: error: relocation R_AARCH64_ABS32 cannot be used against symbol
-> __efistub_stext_offset; recompile with -fPIC
->
-> Fangrui and Peter figured out that ld.lld is incorrectly considering
-> __efistub_stext_offset as a relative symbol because of the order in
-> which symbols are evaluated. _text is treated as an absolute symbol
-> and stext is a relative symbol, making __efistub_stext_offset a
-> relative symbol.
->
-> Adding ABSOLUTE will force ld.lld to evalute this expression in the
-> right context and does not change ld.bfd's behavior. ld.lld will
-> need to be fixed but the developers do not see a quick or simple fix
-> without some research (see the linked issue for further explanation).
-> Add this simple workaround so that ld.lld can continue to link kernels.
->
-> Link: https://github.com/ClangBuiltLinux/linux/issues/561
-> Link: https://github.com/llvm/llvm-project/commit/025a815d75d2356f2944136269aa5874721ec236
-> Link: https://github.com/llvm/llvm-project/commit/249fde85832c33f8b06c6b4ac65d1c4b96d23b83
-> Debugged-by: Fangrui Song <maskray@google.com>
-> Debugged-by: Peter Smith <peter.smith@linaro.org>
-> Suggested-by: Fangrui Song <maskray@google.com>
-> Signed-off-by: Nathan Chancellor <natechancellor@gmail.com>
+From: Anson Huang <Anson.Huang@nxp.com>
 
-Acked-by: Ard Biesheuvel <ard.biesheuvel@linaro.org>
+Add i.MX SCU SoC's UID(unique identifier) support, user
+can read it from sysfs:
 
-> ---
->  arch/arm64/kernel/image.h | 2 +-
->  1 file changed, 1 insertion(+), 1 deletion(-)
->
-> diff --git a/arch/arm64/kernel/image.h b/arch/arm64/kernel/image.h
-> index 04ca08086d35..9a2d2227907c 100644
-> --- a/arch/arm64/kernel/image.h
-> +++ b/arch/arm64/kernel/image.h
-> @@ -67,7 +67,7 @@
->
->  #ifdef CONFIG_EFI
->
-> -__efistub_stext_offset = stext - _text;
-> +__efistub_stext_offset = ABSOLUTE(stext - _text);
->
->  /*
->   * The EFI stub has its own symbol namespace prefixed by __efistub_, to
-> --
-> 2.22.0
->
+root@imx8qxpmek:~# cat /sys/devices/soc0/soc_uid
+7B64280B57AC1898
+
+Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
+---
+ drivers/soc/imx/soc-imx-scu.c | 35 +++++++++++++++++++++++++++++++++++
+ 1 file changed, 35 insertions(+)
+
+diff --git a/drivers/soc/imx/soc-imx-scu.c b/drivers/soc/imx/soc-imx-scu.c
+index 676f612..8d322a1 100644
+--- a/drivers/soc/imx/soc-imx-scu.c
++++ b/drivers/soc/imx/soc-imx-scu.c
+@@ -27,6 +27,36 @@ struct imx_sc_msg_misc_get_soc_id {
+ 	} data;
+ } __packed;
+ 
++struct imx_sc_msg_misc_get_soc_uid {
++	struct imx_sc_rpc_msg hdr;
++	u32 uid_low;
++	u32 uid_high;
++} __packed;
++
++static ssize_t soc_uid_show(struct device *dev,
++			    struct device_attribute *attr, char *buf)
++{
++	struct imx_sc_msg_misc_get_soc_uid msg;
++	struct imx_sc_rpc_msg *hdr = &msg.hdr;
++	u64 soc_uid;
++
++	hdr->ver = IMX_SC_RPC_VERSION;
++	hdr->svc = IMX_SC_RPC_SVC_MISC;
++	hdr->func = IMX_SC_MISC_FUNC_UNIQUE_ID;
++	hdr->size = 1;
++
++	/* the return value of SCU FW is in correct, skip return value check */
++	imx_scu_call_rpc(soc_ipc_handle, &msg, true);
++
++	soc_uid = msg.uid_high;
++	soc_uid <<= 32;
++	soc_uid |= msg.uid_low;
++
++	return sprintf(buf, "%016llX\n", soc_uid);
++}
++
++static DEVICE_ATTR_RO(soc_uid);
++
+ static int imx_scu_soc_id(void)
+ {
+ 	struct imx_sc_msg_misc_get_soc_id msg;
+@@ -102,6 +132,11 @@ static int imx_scu_soc_probe(struct platform_device *pdev)
+ 		goto free_revision;
+ 	}
+ 
++	ret = device_create_file(soc_device_to_device(soc_dev),
++				 &dev_attr_soc_uid);
++	if (ret)
++		goto free_revision;
++
+ 	return 0;
+ 
+ free_revision:
+-- 
+2.7.4
+
 
 _______________________________________________
 linux-arm-kernel mailing list
