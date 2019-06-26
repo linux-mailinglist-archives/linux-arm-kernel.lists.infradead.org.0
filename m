@@ -2,69 +2,95 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4F67156FE4
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 26 Jun 2019 19:49:07 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 823F056FE7
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 26 Jun 2019 19:50:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:Cc:Reply-To:List-Subscribe:List-Help:
+	List-Post:List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:
+	References:Message-ID:Subject:To:From:Date:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=DvnnM0It9ihvIt56k0MRxK4HyqdEjgAzCjLmExdB6Xk=; b=VEaFbJYGHkwauO
-	sqLmwLK0dNbmb99MyP/M31U9Mxro0sZyt1Gh6ZPK/6iXtxM8tb2PJqqPcz49AQXCqAjGDlmyAlMhk
-	U0B4TVdfPxlCXbNroL24ez6NLP5HsTcb2R6LGo3kk+ulUk/rrQjY0//5jiZAyysovF5WRTyNsrefM
-	spDzMj6VTcDrXFLE0IG3ZmNwkaqlx5hVZ2XOWS2ax9pNGPqWGXOCR3LJCLp7qGl9mYDm9reig3QtV
-	NTU84G8nJ3Q0HHYnEyCCJr9+1J0xHcFrwhMnAfJETr7PdEPa4SSw5Mla3HeMkkupYDDKcGKk/zNy+
-	2zDYByPYaUEUmeByXBAg==;
+	List-Owner; bh=NTm1sSOpuo9pPFiLQMgXRftp9gpZgULzT8uPNVbqQ8g=; b=u6tVzC8Pm+mCzj
+	pn6yi/yWO9p4PcxqWAzVKr+qTxyNhut1MzwzHriFU+bGc2Leff3NAMJ2BYymIBhHJrJxBWYh63YgP
+	maDItC4Z5pYtv+KehLuW+XPABWyU13TMZ6YYrRwwEQtV1mwYoR0/Mu1oxnD9gyFjjeHpmAnFmVVY+
+	FNDWGjRT//IQNJF8TlDhJDYoXpKHsng1AZ5/Qt5oyErBE4sZFMRnQxztC141RbN/h18GPfTHNQJhh
+	aLXJBFh/K7KDianReJ/U4rfY4FuHhxyBdwzQvnVAcJ/Rbf3TAE5YSYFE8NcYesdiLN69MBmwq9wSA
+	OVj/WyIxB/EpIcTeK9Aw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hgC2Z-0002ri-Gh; Wed, 26 Jun 2019 17:49:03 +0000
-Received: from s3.sipsolutions.net ([2a01:4f8:191:4433::2]
- helo=sipsolutions.net)
+	id 1hgC3w-0004Nm-Gq; Wed, 26 Jun 2019 17:50:29 +0000
+Received: from mx0b-001b2d01.pphosted.com ([148.163.158.5]
+ helo=mx0a-001b2d01.pphosted.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hgC2L-0002rN-6b
- for linux-arm-kernel@lists.infradead.org; Wed, 26 Jun 2019 17:48:50 +0000
-Received: by sipsolutions.net with esmtpsa
- (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
- (envelope-from <johannes@sipsolutions.net>)
- id 1hgC2C-0007vw-Ho; Wed, 26 Jun 2019 19:48:40 +0200
-Message-ID: <9e46f95b8727c8b95aedb144970986a21266983c.camel@sipsolutions.net>
-Subject: Re: [PATCH v2 00/17] net: introduce Qualcomm IPA driver
-From: Johannes Berg <johannes@sipsolutions.net>
-To: Arnd Bergmann <arnd@arndb.de>, Alex Elder <elder@linaro.org>
-Date: Wed, 26 Jun 2019 19:48:38 +0200
-In-Reply-To: <CAK8P3a3wHe_6ay8P+F9Vo=k19P5fifs6RWozxFF5nGYYjO_=Xw@mail.gmail.com>
- (sfid-20190626_155908_107021_A3066824)
-References: <380a6185-7ad1-6be0-060b-e6e5d4126917@linaro.org>
- <a94676381a5ca662c848f7a725562f721c43ce76.camel@sipsolutions.net>
- <CAK8P3a0kV-i7BJJ2X6C=5n65rSGfo8fUiC4J_G-+M8EctYKbkg@mail.gmail.com>
- <fc0d08912bc10ad089eb74034726308375279130.camel@redhat.com>
- <36bca57c999f611353fd9741c55bb2a7@codeaurora.org>
- <153fafb91267147cf22e2bf102dd822933ec823a.camel@redhat.com>
- <CAK8P3a2Y+tcL1-V57dtypWHndNT3eDJdcKj29c_v+k8o1HHQig@mail.gmail.com>
- <f4249aa5f5acdd90275eda35aa16f3cfb29d29be.camel@redhat.com>
- <CAK8P3a2nzZKtshYfomOOSYkqx5HdU15Wr9b+3va0B1euNhFOAg@mail.gmail.com>
- <dbb32f185d2c3a654083ee0a7188379e1f88d899.camel@sipsolutions.net>
- <d533b708-c97a-710d-1138-3ae79107f209@linaro.org>
- <abdfc6b3a9981bcdef40f85f5442a425ce109010.camel@sipsolutions.net>
- <db34aa39-6cf1-4844-1bfe-528e391c3729@linaro.org>
- <CAK8P3a1ixL9ZjYz=pWTxvMfeD89S6QxSeHt9ZCL9dkCNV5pMHQ@mail.gmail.com>
- <efbcb3b84ff0a7d7eab875c37f3a5fa77e21d324.camel@sipsolutions.net>
- <edea19ef-f225-bdcd-f394-77e326d1d3ad@linaro.org>
- <CAK8P3a3wHe_6ay8P+F9Vo=k19P5fifs6RWozxFF5nGYYjO_=Xw@mail.gmail.com>
- (sfid-20190626_155908_107021_A3066824)
-X-Mailer: Evolution 3.28.5 (3.28.5-3.fc28) 
-Mime-Version: 1.0
+ id 1hgC3h-0004Mv-Tx
+ for linux-arm-kernel@lists.infradead.org; Wed, 26 Jun 2019 17:50:15 +0000
+Received: from pps.filterd (m0098421.ppops.net [127.0.0.1])
+ by mx0a-001b2d01.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id
+ x5QHgM3u022896; Wed, 26 Jun 2019 13:49:58 -0400
+Received: from ppma01wdc.us.ibm.com (fd.55.37a9.ip4.static.sl-reverse.com
+ [169.55.85.253])
+ by mx0a-001b2d01.pphosted.com with ESMTP id 2tcb7jnq41-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+ Wed, 26 Jun 2019 13:49:58 -0400
+Received: from pps.filterd (ppma01wdc.us.ibm.com [127.0.0.1])
+ by ppma01wdc.us.ibm.com (8.16.0.27/8.16.0.27) with SMTP id x5QHdmme011574;
+ Wed, 26 Jun 2019 17:49:57 GMT
+Received: from b01cxnp22035.gho.pok.ibm.com (b01cxnp22035.gho.pok.ibm.com
+ [9.57.198.25]) by ppma01wdc.us.ibm.com with ESMTP id 2t9by70tak-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+ Wed, 26 Jun 2019 17:49:57 +0000
+Received: from b01ledav003.gho.pok.ibm.com (b01ledav003.gho.pok.ibm.com
+ [9.57.199.108])
+ by b01cxnp22035.gho.pok.ibm.com (8.14.9/8.14.9/NCO v10.0) with ESMTP id
+ x5QHnvj354395304
+ (version=TLSv1/SSLv3 cipher=DHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Wed, 26 Jun 2019 17:49:57 GMT
+Received: from b01ledav003.gho.pok.ibm.com (unknown [127.0.0.1])
+ by IMSVA (Postfix) with ESMTP id 28EBBB205F;
+ Wed, 26 Jun 2019 17:49:57 +0000 (GMT)
+Received: from b01ledav003.gho.pok.ibm.com (unknown [127.0.0.1])
+ by IMSVA (Postfix) with ESMTP id 1621CB2065;
+ Wed, 26 Jun 2019 17:49:57 +0000 (GMT)
+Received: from paulmck-ThinkPad-W541 (unknown [9.70.82.26])
+ by b01ledav003.gho.pok.ibm.com (Postfix) with ESMTP;
+ Wed, 26 Jun 2019 17:49:57 +0000 (GMT)
+Received: by paulmck-ThinkPad-W541 (Postfix, from userid 1000)
+ id 6D20D16C2F90; Wed, 26 Jun 2019 10:49:58 -0700 (PDT)
+Date: Wed, 26 Jun 2019 10:49:58 -0700
+From: "Paul E. McKenney" <paulmck@linux.ibm.com>
+To: Mark Rutland <mark.rutland@arm.com>
+Subject: Re: [PATCH arm] Use common outgoing-CPU-notification code
+Message-ID: <20190626174958.GH26519@linux.ibm.com>
+References: <20190611192410.GA27930@linux.ibm.com>
+ <20190617115809.GA3767@lakrids.cambridge.arm.com>
+ <20190617130657.GL26519@linux.ibm.com>
+ <20190626164159.GI20635@lakrids.cambridge.arm.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20190626164159.GI20635@lakrids.cambridge.arm.com>
+User-Agent: Mutt/1.5.21 (2010-09-15)
+X-TM-AS-GCONF: 00
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:, ,
+ definitions=2019-06-26_09:, , signatures=0
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ priorityscore=1501
+ malwarescore=0 suspectscore=0 phishscore=0 bulkscore=0 spamscore=0
+ clxscore=1015 lowpriorityscore=0 mlxscore=0 impostorscore=0
+ mlxlogscore=999 adultscore=0 classifier=spam adjust=0 reason=mlx
+ scancount=1 engine=8.0.1-1810050000 definitions=main-1906260208
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190626_104849_243813_E78A1F1E 
-X-CRM114-Status: GOOD (  15.41  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190626_105014_092875_572F8FC9 
+X-CRM114-Status: GOOD (  23.72  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [148.163.158.5 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.0 KHOP_DYNAMIC           Relay looks like a dynamic address
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -76,64 +102,52 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: DTML <devicetree@vger.kernel.org>, syadagir@codeaurora.org,
- Eric Caruso <ejcaruso@google.com>, David Miller <davem@davemloft.net>,
- Dan Williams <dcbw@redhat.com>, linux-arm-msm@vger.kernel.org,
- Ilias Apalodimas <ilias.apalodimas@linaro.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>, evgreen@chromium.org,
- Bjorn Andersson <bjorn.andersson@linaro.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Networking <netdev@vger.kernel.org>,
- Subash Abhinov Kasiviswanathan <subashab@codeaurora.org>,
- linux-soc@vger.kernel.org, abhishek.esse@gmail.com, cpratapa@codeaurora.org,
- Ben Chan <benchan@google.com>
+Reply-To: paulmck@linux.ibm.com
+Cc: linux@arm.linux.org.uk, dietmar.eggemann@arm.com,
+ linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, 2019-06-26 at 15:58 +0200, Arnd Bergmann wrote:
+On Wed, Jun 26, 2019 at 05:42:00PM +0100, Mark Rutland wrote:
+> On Mon, Jun 17, 2019 at 06:06:57AM -0700, Paul E. McKenney wrote:
+> > On Mon, Jun 17, 2019 at 12:58:19PM +0100, Mark Rutland wrote:
+> > > On Tue, Jun 11, 2019 at 12:24:10PM -0700, Paul E. McKenney wrote:
+> > > > This commit removes the open-coded CPU-offline notification with new
+> > > > common code.  In particular, this change avoids calling scheduler code
+> > > > using RCU from an offline CPU that RCU is ignoring.  This is a minimal
+> > > > change.  A more intrusive change might invoke the cpu_check_up_prepare()
+> > > > and cpu_set_state_online() functions at CPU-online time, which would
+> > > > allow onlining throw an error if the CPU did not go offline properly.
+> > > > 
+> > > > Signed-off-by: Paul E. McKenney <paulmck@linux.vnet.ibm.com>
+> > > > Cc: linux-arm-kernel@lists.infradead.org
+> > > > Cc: Russell King <linux@arm.linux.org.uk>
+> > > > Cc: Mark Rutland <mark.rutland@arm.com>
+> > > > Tested-by: Dietmar Eggemann <dietmar.eggemann@arm.com>
+> > > 
+> > > FWIW:
+> > > 
+> > > Acked-by: Mark Rutland <mark.rutland@arm.com>
+> > > 
+> > > On the assumption that Russell is ok with this, I think this should be
+> > > dropped into the ARM patch system [1].
+> > > 
+> > > Paul, are you familiar with that, or would you prefer that someone else
+> > > submits the patch there? I can do so if you'd like.
+> > 
+> > I never have used this system, so please do drop it in there!  Let me
+> > know when you have done so, and I will then drop it from -rcu.
 > 
-> > The IPA hardware is actually something that sits *between* the
-> > AP and the modem.  It implements one form of communication
-> > pathway (IP data), but there are others (including QMI, which
-> > presents a network-like interface but it's actually implemented
-> > via clever use of shared memory and interrupts).
+> After testing that multi_v7_defconfig built, I've just submitted this as
+> 8872/1:
 > 
-> Can you clarify how QMI fits in here? Do you mean one has to
-> talk to both IPA and QMI to use the modem, or are these two
-> alternative implementations for the same basic purpose?
+>   https://www.armlinux.org.uk/developer/patches/viewpatch.php?id=8872/1
 
-I'm not going to comment on QMI specifically, because my understanding
-might well be wrong, and any response to your question will likely
-correct my understanding :-)
+Very good, thank you!  I will drop this from my -rcu tree.
 
-(Thus, you should probably also ignore everything I ever said about QMI)
-
-> My previous understanding was that from the hardware perspective
-> there is only one control interface, which is for IPA. Part of this
-> is abstracted to user space with ioctl commands to the IPA driver,
-> and then one must set up rmnet to match these by configuring
-> an rmnet device over netlink messages from user space, but
-> rmnet does not have a control protocol with the hardware.
-
-Right so this is why I say it's confusing when we just talk about
-"control interface" or "path".
-
-I see multiple layers of control
-
- * hardware control, which you mention here. This might be things like
-   "enable/disable aggregation on an rmnet channel" etc. I guess this
-   type of thing would have been implemented with ioctls? Not the
-   aggregation specifically, but things that affect how you set up the
-   hardware.
-
- * modem control, which we conflate, but can be like AT commands or
-   MBIM. From the kernel driver POV, this is actually just another
-   channel it provides for userspace to talk to the modem.
-
-johannes
-
+							Thanx, Paul
 
 _______________________________________________
 linux-arm-kernel mailing list
