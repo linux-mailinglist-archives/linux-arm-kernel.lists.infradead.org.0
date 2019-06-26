@@ -2,94 +2,63 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 76D9656866
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 26 Jun 2019 14:14:48 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 58C005688E
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 26 Jun 2019 14:22:20 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:References:
-	To:Subject:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=sKzwdr296cIzrjh1OEXGpg+YrRldTrNXPj84ULqN4SU=; b=W1xdIb0HbIPJRGzjKUno+SWI1
-	bDBwZirt4aJGcCG5qS6K2GAF3cieG7FdWeKjTcU+Ipfjv2egu3o9zLZua+KbdXAZjAHqjuX8irnrz
-	LEUitTXdpi/Nn5ohPlajV6cnFKdsNYzoJ1oYGJ3/pGS/7sAD1S1gUeZJCAiPe7tJvu0vhcuj4PEGb
-	ri674LsWAmQjl6Vbh4zPGDtQ1mz+5i7gC/Ih3BZWl5uL1ydGQk4RFCwfEJOZ9xi7dfXkSwXB8bYA0
-	QeFuhfzJb6t2kG1XoU9zViYfOfWpZ9iabxfuhIKGwkWx5BlosnLUt8JIEENz+JGc9m+s4kT554V3t
-	PXzpv0K7A==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=58W0a8gi9sIKyWIlnjHsYz9yvKRHM1ydWBHZDH6BCY8=; b=caB+oJgHrbk+VY
+	CNK3Wvh85CTcaDwvygbZy1iiSRiavI6NwUsrdESt84Ll38tm9XH8wOcj/wDksNufCqp4XwBwORFoW
+	A2zwtbG6woW9fDvPF3QVxoOGMld927UKrs0eTATphlzBerwvSHy64D8GgVRrcOfDwCONgm6B+2fMR
+	ClVEPxzW9vI9ZgFEPaM/ANriZYMEoCBjXORem449TZS+DR1GB5m09hk2rkaTybTCTCYpR88KqHIN3
+	suCBy5FXpYldRTL6g1kwGFgE6ReaIpTxabtkPnJh7ArDVhKb/CPDIgS+3R9cvymuKZlMbCj5MX5uk
+	PYg31wW8bbxLWgKWm8mw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hg6oz-0003eW-Cf; Wed, 26 Jun 2019 12:14:42 +0000
-Received: from mail-pg1-x543.google.com ([2607:f8b0:4864:20::543])
+	id 1hg6wF-0007As-Ao; Wed, 26 Jun 2019 12:22:11 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hg6oX-0003bf-MG; Wed, 26 Jun 2019 12:14:15 +0000
-Received: by mail-pg1-x543.google.com with SMTP id s27so1155715pgl.2;
- Wed, 26 Jun 2019 05:14:13 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:subject:to:cc:references:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=nE8JZHrKvZIjpzwoCOV4W+kZMdzp32CH3OhSv9DzAQA=;
- b=FkpiqxEmc1WKkr3sirer29jM7xKhdHyKj0fJ2SNPATI1XoRrgSCqtqr9u1BKAC5cXW
- YFlgxc/7PYtwZNZTxfldcM14QmtYCm5V+lOlEqpU9Hb19P2FtbAt3wmSsrs4kBJ6AZQF
- xNcQZqQR1b7/EuDIIVJO/0cj0Z7SHlyBVQdwSv7gbLf6RapeCmFI0xnvOW49BJh5bLeI
- RS4umvJZCdtSFtR5EIM67n/KRpXkwZYMwHaqEykhtlh1F41v969pTFQAuq90Bf8RkXxB
- sI6z8boSKMD/WDlvoH0rirK0/QKtqFKmzHexh6m20aylIOt7MKN0jHGhTlGHhSuKk+Hl
- h75A==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:subject:to:cc:references:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=nE8JZHrKvZIjpzwoCOV4W+kZMdzp32CH3OhSv9DzAQA=;
- b=jMlAZIFP7P7EIjD9roK/7PVw7vSlzDyxFJbUVzEcbEfDrw5XFWr0g/UOHMPmhcufwY
- VZ+QiprbYPZd7FgxKHkIlLdNJJdYrNWQ3PFPunH2DMFLgam8eqY8J1f5RT7qlxK2jvsG
- bvwWf1y40bTi9SVVAgLiuRqMD5yqSsEVKS7EAmdaDRhe2hHy++zvVtHDkgQ+Fzr6zOCZ
- FjHIjaDnc3zkLmBXhyzZoXT6yLlFz6HhC+cRC4NW/qJiW9bU/wr161yxOueKFUFCn4gr
- aISwQ+hGakO1seNXR54cnGEbvFV/pL7GZ55czEHwE0zFrOFaI9n6K5r3N+O/M0zrW93W
- VSPg==
-X-Gm-Message-State: APjAAAURO2kv+D5zeXBY9g4Z0bE0Efcj4mPDzOxV7gn4vQRABFbPAuNp
- V2XhY9+PkngTmUg4D5TOcXQ02mo53nQ=
-X-Google-Smtp-Source: APXvYqyl/rcV1NaUbh6KN9ZCyayU/jSJPecs/2fph6Nkb+9gPHbGA+Bn5bVK4tmxcfI91FmEViay7g==
-X-Received: by 2002:a17:90a:214f:: with SMTP id
- a73mr4338153pje.21.1561551252708; 
- Wed, 26 Jun 2019 05:14:12 -0700 (PDT)
-Received: from [10.44.0.192] ([103.48.210.53])
- by smtp.gmail.com with ESMTPSA id x128sm30778516pfd.17.2019.06.26.05.14.07
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Wed, 26 Jun 2019 05:14:12 -0700 (PDT)
-From: Greg Ungerer <gregungerer00@gmail.com>
-X-Google-Original-From: Greg Ungerer <gerg@linux-m68k.org>
-Subject: Re: [PATCH 08/17] binfmt_flat: consolidate two version of
- flat_v2_reloc_t
-To: Geert Uytterhoeven <geert@linux-m68k.org>
-References: <20190613070903.17214-1-hch@lst.de>
- <20190613070903.17214-9-hch@lst.de>
- <20190625222941.GA1343@ZenIV.linux.org.uk>
- <f8a61a8e-0469-a9d6-e0a1-01a4619d7363@linux-m68k.org>
- <CAMuHMdXkMh+pOqPNavmYAhKXTVT12nC5gKc10CJj_CXME+uhWQ@mail.gmail.com>
-Message-ID: <a2567a04-ac83-408f-51a2-53d23fcc0c36@linux-m68k.org>
-Date: Wed, 26 Jun 2019 22:14:06 +1000
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.7.0
+ id 1hg6vl-00079e-Q8
+ for linux-arm-kernel@lists.infradead.org; Wed, 26 Jun 2019 12:21:43 +0000
+Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 54F0E20663;
+ Wed, 26 Jun 2019 12:21:39 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1561551701;
+ bh=bzzuAsJFpALlF09800RIXkmFifwZs/0LsYp0Xdjf7lA=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=QG5wNuPmjrSNBSjDiSSCgTZlz/8TXSmjSfBQaTeh2HpKuAucc31EfN0oweUcEWWTz
+ UaVUE0sG5oMoB6F/Q9kYiwXqsgOhR5khCwluVydKxhPDnfDZ8gt0iSrFYKL9djGBt9
+ HPnxRmX9CVEVhrUeI27SI6mVupT9IPj5JYfKqL2E=
+Date: Wed, 26 Jun 2019 13:21:35 +0100
+From: Will Deacon <will@kernel.org>
+To: jinho lim <jordan.lim@samsung.com>, catalin.marinas@arm.com
+Subject: Re: [PATCH v3] arm64: rename dump_instr as dump_kernel_instr
+Message-ID: <20190626122134.fg7s6di5o3d3gim4@willie-the-truck>
+References: <CGME20190626115016epcas1p455530417de86ea2e72ce1b389ae57a75@epcas1p4.samsung.com>
+ <20190626115013.13044-1-jordan.lim@samsung.com>
 MIME-Version: 1.0
-In-Reply-To: <CAMuHMdXkMh+pOqPNavmYAhKXTVT12nC5gKc10CJj_CXME+uhWQ@mail.gmail.com>
-Content-Language: en-US
+Content-Disposition: inline
+In-Reply-To: <20190626115013.13044-1-jordan.lim@samsung.com>
+User-Agent: NeoMutt/20170113 (1.7.2)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190626_051413_751431_5DDA3A86 
-X-CRM114-Status: GOOD (  16.92  )
-X-Spam-Score: 0.1 (/)
+X-CRM114-CacheID: sfid-20190626_052141_860411_F3A6F624 
+X-CRM114-Status: UNSURE (   9.84  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:543 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (gregungerer00[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (gregungerer00[at]gmail.com)
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -97,6 +66,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -108,101 +78,33 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "moderated list:H8/300 ARCHITECTURE"
- <uclinux-h8-devel@lists.sourceforge.jp>, linux-xtensa@linux-xtensa.org,
- Michal Simek <monstr@monstr.eu>, linux-c6x-dev@linux-c6x.org,
- Linux-sh list <linux-sh@vger.kernel.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- linux-m68k <linux-m68k@lists.linux-m68k.org>,
- Al Viro <viro@zeniv.linux.org.uk>, linux-riscv@lists.infradead.org,
- Christoph Hellwig <hch@lst.de>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: mark.rutland@arm.com, anshuman.khandual@arm.com, marc.zyngier@arm.com,
+ andreyknvl@google.com, will.deacon@arm.com, linux-kernel@vger.kernel.org,
+ seroto7@gmail.com, ebiederm@xmission.com, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Geert,
-
-On 26/6/19 6:18 pm, Geert Uytterhoeven wrote:
-> Hi Greg,
+On Wed, Jun 26, 2019 at 08:50:13PM +0900, jinho lim wrote:
+> In traps.c, only __die calls dump_instr.
+> However, this function has sub-function as __dump_instr.
 > 
-> On Wed, Jun 26, 2019 at 9:23 AM Greg Ungerer <gerg@linux-m68k.org> wrote:
->> On 26/6/19 8:29 am, Al Viro wrote:
->>> On Thu, Jun 13, 2019 at 09:08:54AM +0200, Christoph Hellwig wrote:
->>>> Two branches of the ifdef maze actually have the same content, so merge
->>>> them.
->>>>
->>>> Signed-off-by: Christoph Hellwig <hch@lst.de>
->>>> ---
->>>>    include/linux/flat.h | 6 ++----
->>>>    1 file changed, 2 insertions(+), 4 deletions(-)
->>>>
->>>> diff --git a/include/linux/flat.h b/include/linux/flat.h
->>>> index 2b7cda6e9c1b..19c586b74b99 100644
->>>> --- a/include/linux/flat.h
->>>> +++ b/include/linux/flat.h
->>>> @@ -69,15 +69,13 @@ struct flat_hdr {
->>>>    typedef union {
->>>>       unsigned long   value;
->>>>       struct {
->>>> -# if defined(mc68000) && !defined(CONFIG_COLDFIRE)
->>>> +#if defined(__LITTLE_ENDIAN_BITFIELD) || \
->>>> +    (defined(mc68000) && !defined(CONFIG_COLDFIRE))
->>>>               signed long offset : 30;
->>>>               unsigned long type : 2;
->>>>    # elif defined(__BIG_ENDIAN_BITFIELD)
->>>>               unsigned long type : 2;
->>>>               signed long offset : 30;
->>>> -# elif defined(__LITTLE_ENDIAN_BITFIELD)
->>>> -            signed long offset : 30;
->>>> -            unsigned long type : 2;
->>>>    # else
->>>>    #          error "Unknown bitfield order for flat files."
->>>>    # endif
->>>> --
->>>> 2.20.1
->>>>
->>>
->>> FWIW, I wonder if keeping that type is worth bothering.
->>> Something like
->>> old_reloc(__be32 reloc)
->>> {
->>>        u32 v = be32_to_cpu(reloc);
->>>        int offset, type;
->>>
->>> #if (defined(mc68000) && !defined(CONFIG_COLDFIRE))
->>>        /* old m68k uses unusual format - type is in lower bits of octet 3 */
->>>        type = v % 4;
->>>        offset = (int)v / 4;
->>> #else
->>>        /* everything else (including coldfire) has it in upper bits of octet 0 */
->>>        type = v >> 30;
->>>        offset = (int)(v << 2) >> 2; /* or (v & 0x1fffffff) - (v & 0x20000000) * 4 */
->>> #endif
->>>        ...
->>>
->>> and to hell with bitfields, aliasing unions, etc.  Unless I'm misreading
->>> the whole thing, that is...  Greg?
->>
->> I think you are right. This is much better.
->> The old mc6800 is the odd one out, the rest have it in network order,
->> and this makes that much clearer.
+> dump_kernel_instr can replace those functions.
+> By using aarch64_insn_read, it does not have to change fs to KERNEL_DS.
 > 
-> Is that correct for Microblaze, which can be big or little endian?
+> Signed-off-by: jinho lim <jordan.lim@samsung.com>
+> ---
+>  arch/arm64/kernel/traps.c | 23 +++++++----------------
+>  1 file changed, 7 insertions(+), 16 deletions(-)
 
-It is true for all architectures that use flat. All fields inside a
-flat format binary are store in network order.
+Thanks, this looks good to me now:
 
-The final processing of the relocation entries in the elf2flt
-converter tool:
+Acked-by: Will Deacon <will.deacon@arm.com>
 
-    for (i=0; i<reloc_len; i++) reloc[i] = htonl(reloc[i]);
+Catalin can pick this up for 5.3.
 
-Regards
-Greg
-
-
+Will
 
 _______________________________________________
 linux-arm-kernel mailing list
