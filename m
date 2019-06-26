@@ -2,63 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5B16C565D9
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 26 Jun 2019 11:46:02 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 60C30565F9
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 26 Jun 2019 11:54:03 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=iE7P9MQ5w/ySmWTPGo//mNXX/KVLW0nSiY2N4slefXg=; b=Y1/r3H2fjwnpdd
-	n+qU4sPuEhOF5QkzuwlTj3BYm+N0S0b/EFYz0barmh3nyiA/CY/S0bOQw8S7ApvnAahwdRethNUUu
-	TJpqPEWBB7cTt+ueaY39WnNsMBJMPbOBMgIncRuMOs03xgAXEq1IgS0otLHqrzcMr2ezHC+wqrEkf
-	0V+Ubcyo5bRPLOFuDRnUJlpGGW/0jekWXyvtr+YBYuqyXOxAyWtp6JxcZFJ1qhqmqYv5kRXRjLG/p
-	haf/hA9hPmYObZ3se2y6C9chQ1rqgj3eXCLY6IAK7g53bArF6P7Ta5ebS3Qk2NMBznUngAS+EFRj3
-	FjZl7wWodn9a3PqbsCQA==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=B0VcgyjyTsJBSGbBuAd/7NKlralY8LWAYl1pNZEFaFQ=; b=ki5
+	Ex76pd4Hs8eWbYE5Yl+rMfm+RXFEpEka0lFdbSCyOO9YBArLpVnX0cXgIG22NNUOCsQKnPykVgnzx
+	Odn83IYBGTEWf/uDQgHk+dnYICgr87r7S6ZOgZi4lCpWrXRsuRycqUGTnZs2mKTNFD/oshz7VlJLV
+	UID9nPr+XupWiquG9Y7+QCMB3xAlHsfG9f6/jBOd7MyBMo3OURGlIGyLaroooCjg0ZD9j7jyGbIEt
+	bz7qHDbnu4ng/uPQFpB1/caRd4r7UbKRg+4l0WLHtx36AoC6mz2DCv3eE+rV1Shmf3ryQgLw94kYx
+	eHRfcQxM/I6jLSqGmzFjzlmClsVcTQA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hg4V3-000691-DZ; Wed, 26 Jun 2019 09:45:57 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hg4Ur-00068g-6s
- for linux-arm-kernel@lists.infradead.org; Wed, 26 Jun 2019 09:45:46 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id E6D372B;
- Wed, 26 Jun 2019 02:45:43 -0700 (PDT)
-Received: from [10.1.196.72] (e119884-lin.cambridge.arm.com [10.1.196.72])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id B57BF3F718;
- Wed, 26 Jun 2019 02:45:42 -0700 (PDT)
-Subject: Re: "arm64: vdso: Substitute gettimeofday() with C implementation"
- breaks clang build
-To: Will Deacon <will@kernel.org>
-References: <1561464964.5154.63.camel@lca.pw>
- <e86774e4-7470-5cb2-fc3e-b7c1f529d253@arm.com>
- <1561467369.5154.67.camel@lca.pw>
- <00a78980-6b9c-5d5b-ed01-b28bb34be022@arm.com>
- <1561470705.5154.68.camel@lca.pw>
- <5113362e-1256-6712-6ce8-9599b1806cf1@arm.com>
- <1561472887.5154.72.camel@lca.pw>
- <668bbe72-b32b-8cee-ccad-d1f6110c6728@arm.com>
- <CAKwvOdmCFjunXRbninTdqoDGPNJ6b7npgXLAPYGqFZas5ofNjw@mail.gmail.com>
- <193c179e-16ca-4b4e-2584-75e8f6c1819f@arm.com>
- <20190626093836.y2lofo54rhxw3xsm@willie-the-truck>
-From: Vincenzo Frascino <vincenzo.frascino@arm.com>
-Message-ID: <897bf622-0f89-14f2-d278-b22f640b78f4@arm.com>
-Date: Wed, 26 Jun 2019 10:45:41 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.7.0
-MIME-Version: 1.0
-In-Reply-To: <20190626093836.y2lofo54rhxw3xsm@willie-the-truck>
-Content-Language: en-US
+	id 1hg4cq-0008BP-29; Wed, 26 Jun 2019 09:54:00 +0000
+Received: from inva020.nxp.com ([92.121.34.13])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hg4cb-0008AQ-5L
+ for linux-arm-kernel@lists.infradead.org; Wed, 26 Jun 2019 09:53:48 +0000
+Received: from inva020.nxp.com (localhost [127.0.0.1])
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 48EF21A0011;
+ Wed, 26 Jun 2019 11:53:43 +0200 (CEST)
+Received: from inva024.eu-rdc02.nxp.com (inva024.eu-rdc02.nxp.com
+ [134.27.226.22])
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 3C92A1A000D;
+ Wed, 26 Jun 2019 11:53:43 +0200 (CEST)
+Received: from fsr-ub1864-112.ea.freescale.net
+ (fsr-ub1864-112.ea.freescale.net [10.171.82.98])
+ by inva024.eu-rdc02.nxp.com (Postfix) with ESMTP id 7D9FC205DB;
+ Wed, 26 Jun 2019 11:53:42 +0200 (CEST)
+From: Leonard Crestez <leonard.crestez@nxp.com>
+To: Srinivas Kandagatla <srinivas.kandagatla@linaro.org>,
+ Bryan O'Donoghue <pure.logic@nexus-software.ie>
+Subject: [PATCH RESEND] nvmem: imx-ocotp: imx8mq is compatible with imx6 not
+ imx7
+Date: Wed, 26 Jun 2019 12:53:38 +0300
+Message-Id: <41a273f30656ac1a699b1f130cd701f00177b0cc.1561542673.git.leonard.crestez@nxp.com>
+X-Mailer: git-send-email 2.17.1
+X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190626_024545_299437_664A138A 
-X-CRM114-Status: GOOD (  16.08  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190626_025345_337074_DDF3779F 
+X-CRM114-Status: UNSURE (   7.09  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [92.121.34.13 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -72,75 +67,65 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Catalin Marinas <catalin.marinas@arm.com>,
- Nick Desaulniers <ndesaulniers@google.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Will Deacon <will.deacon@arm.com>, Qian Cai <cai@lca.pw>,
- Thomas Gleixner <tglx@linutronix.de>,
- Nathan Chancellor <natechancellor@gmail.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: Dong Aisheng <aisheng.dong@nxp.com>, Peng Fan <peng.fan@nxp.com>,
+ Abel Vesa <abel.vesa@nxp.com>, Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ linux-imx@nxp.com, kernel@pengutronix.de,
+ Fabio Estevam <fabio.estevam@nxp.com>, Shawn Guo <shawnguo@kernel.org>,
+ linux-arm-kernel@lists.infradead.org, Lucas Stach <l.stach@pengutronix.de>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+According to NXP Reference Manuals and uboot/atf sources the OCOTP block
+on imx8m behaves more like imx6 than imx7.
 
+- Fuses can be read/written 32bits at a time (no imx7-like banking)
+- The OCOTP_HW_OCOTP_TIMING register is like imx6 not imx7
 
-On 26/06/2019 10:38, Will Deacon wrote:
-> On Tue, Jun 25, 2019 at 06:00:27PM +0100, Vincenzo Frascino wrote:
->> On 25/06/2019 17:26, Nick Desaulniers wrote:
->>> On Tue, Jun 25, 2019 at 7:54 AM Vincenzo Frascino
->>> <vincenzo.frascino@arm.com> wrote:
->>>>> but clang 7.0 is still use in many distros by default, so maybe this commit can
->>>>> be fixed by adding a conditional check to use "small" if clang version < 8.0.
->>>>>
->>>>
->>>> Could you please verify that the patch below works for you?
->>>
->>> Should it be checking against CONFIG_CLANG_VERSION, or better yet be
->>> using cc-option macro?
->>>
->>
->> This is what I did in my proposed patch, but I was surprised that clang-7
->> generates relocations that clang-8 does not.
->>
->>   LD      arch/arm64/kernel/vdso/vdso.so.dbg
->>   VDSOCHK arch/arm64/kernel/vdso/vdso.so.dbg
->> 00000000000009d0 R_AARCH64_JUMP_SLOT  _mcount
-> 
-> Hmm. It would be nice to understand where the reference to _mcount is coming
-> from, since that sounds like ftrace is getting involved where it shouldn't
-> be.
-> 
+Since nvmem doesn't support uboot-style "sense" and "override" this
+issue only affected "write" which is very rarely used.
 
-That's very true, it was a mistake in the Makefile change that I provided with
-the original iteration of this patch, that had as a side effect of having ftrace
-involved (_mcount is defined in entry-ftrace.c).
+Fixes: 163c0dbd0cb1 ("nvmem: imx-ocotp: add support for imx8mq")
+Signed-off-by: Leonard Crestez <leonard.crestez@nxp.com>
+Reviewed-by: Peng Fan <peng.fan@nxp.com>
 
-I was overriding:
+---
 
-CFLAGS_REMOVE_vgettimeofday.o = $(CC_FLAGS_FTRACE) -Os
+Link to v1: https://patchwork.kernel.org/patch/10908081/
 
-with:
+That patch prompted a series of other fixes for imx-ocotp from Bryan
+O'Donoghue: https://patchwork.kernel.org/cover/10928999/
 
-CFLAGS_REMOVE_vgettimeofday.o = -mcmodel=tiny (selected if clang is < 8)
+That series is for 8mm, this patch fixes the 8mq compat and still needs
+to be applied.
 
-that's why I said that I missed a "+" in my previous patch.
+I don't Bryan's series in linux-next either, maybe it slipped through
+the cracks? Consider this a gentle ping.
 
-Having:
-
-CFLAGS_REMOVE_vgettimeofday.o += -mcmodel=tiny
-
-restores the wanted behavior.
-
-Sorry for not being clear in my explanation.
-
-> Will
-> 
-
+diff --git a/drivers/nvmem/imx-ocotp.c b/drivers/nvmem/imx-ocotp.c
+index bd016b928589..aec4d5b80f8d 100644
+--- a/drivers/nvmem/imx-ocotp.c
++++ b/drivers/nvmem/imx-ocotp.c
+@@ -438,12 +438,12 @@ static const struct ocotp_params imx7ulp_params = {
+ 	.bank_address_words = 0,
+ };
+ 
+ static const struct ocotp_params imx8mq_params = {
+ 	.nregs = 256,
+-	.bank_address_words = 4,
+-	.set_timing = imx_ocotp_set_imx7_timing,
++	.bank_address_words = 0,
++	.set_timing = imx_ocotp_set_imx6_timing,
+ };
+ 
+ static const struct of_device_id imx_ocotp_dt_ids[] = {
+ 	{ .compatible = "fsl,imx6q-ocotp",  .data = &imx6q_params },
+ 	{ .compatible = "fsl,imx6sl-ocotp", .data = &imx6sl_params },
 -- 
-Regards,
-Vincenzo
+2.17.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
