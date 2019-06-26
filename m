@@ -2,162 +2,101 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5CA43566EE
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 26 Jun 2019 12:38:06 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E57A356712
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 26 Jun 2019 12:43:23 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=tp+odOiza0sJSuiNuwFMIXqGrRdF2sukpyS0lKBPYjU=; b=WPdhk1KmpTWICv
-	L0tdG4u1VQ8QkhH6kOvEYGZdhVz/TRg3lGQPgICxKs0Biv9MypTLNdiLcRl9z6z3itMwfhqyElIhl
-	SpZF32Hu46adOLHwnx9pnzbQRGY7KFJQTXIX2oUfNKPs2O394NkKcrTqLmTfgIUOsLSpqTCKvaa6N
-	21MBg1V/0hX7gSEgm8vpun20bQXXjPjTIch6I71d54VlaBl6mMEiWtrS2NL7CdgiYeIFNRt26wTOl
-	F15my7+CHQHMrfBOn+4ZjRjayUBCDa17K/IN2urv0TRnwHiJu9RLGYKcVmHOmU8vEGJCYX/84J4yH
-	nr9vuYseHXy924g6+w9Q==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=ayATHQOJgXzsEfAQXyyKzWg27YMX6+Npi8hhLDsHwrU=; b=H/tsM8KNQrZTeM
+	uQFnE9tXOA3fjtTF7kv+J6jIp+3jk+9Pq/e+32D5POmQdv+sLgvC9n8NXdjRUS4vpsrIa+m55BKuH
+	DTQgyRPi1REacROCKP6BBHx+89toXCGrgj+eoLlQUYaKyJiPdYPP8aOqNP+PVqp0k0y1dIWwhLKgx
+	rE5HNYRIB7YllpLFDf34zaSKgd6zqLQiTkBYuq4IYSDkmF/lxn0cBotZvHUffZQfbWXSTfvcoY+MY
+	dS6wLayhHC5oXcInZewiCMnH0LzgxQPjM+bMxaAB6A91KHGx6HjXhAyM5eS1x82dskWvv8Ck9jKKY
+	uSinSvp+xb66nob0vGIg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hg5JU-0001To-3W; Wed, 26 Jun 2019 10:38:04 +0000
-Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
+	id 1hg5Oa-0003Qx-65; Wed, 26 Jun 2019 10:43:20 +0000
+Received: from mx08-00252a01.pphosted.com ([91.207.212.211])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hg5JN-0001TH-3A
- for linux-arm-kernel@lists.infradead.org; Wed, 26 Jun 2019 10:37:58 +0000
-Received: by mail-wr1-x442.google.com with SMTP id n9so2163072wru.0
+ id 1hg5OM-0003P6-Q0
+ for linux-arm-kernel@lists.infradead.org; Wed, 26 Jun 2019 10:43:10 +0000
+Received: from pps.filterd (m0102629.ppops.net [127.0.0.1])
+ by mx08-00252a01.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
+ x5QAc0he019580
+ for <linux-arm-kernel@lists.infradead.org>; Wed, 26 Jun 2019 11:43:02 +0100
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=raspberrypi.org;
+ h=mime-version :
+ references : in-reply-to : from : date : message-id : subject : to : cc :
+ content-type; s=pp; bh=H72M3+PWhw9sOunRiDpxWoNo9tqIHCGVsvvEbNV2cac=;
+ b=w+pX53jhDrcg3Ri331gchgt0yH/PHyxd2zMjzKNDFaSZDyyWfYtLefI8a2BSffZYtP5E
+ cmeHcyZ6Qd036b5eukQztS1xWPm6rs3f17ik+8lMHrX9d6m5mr41B/iabxb8F/7cMP2k
+ NHSEB7DObJV8GxTCk3ACUhu8h9X4RcCzaY24xuJ8TGqM6rm555wyFaiP1kj3FvgarZEZ
+ 4A+r2m+muouchXkuY1MmVLEiz5uTuFLxT7dwzT2gOBi4kkX0+dMQKMdevsViAvZj3Md5
+ +9sSNv63e68ypQJ0zaNSZl3zRKiJ5LZH6Sr+BDtOrnmDcVrbGyXoDXvrAxL/lvVOhvIr 2g== 
+Received: from mail-pf1-f199.google.com (mail-pf1-f199.google.com
+ [209.85.210.199])
+ by mx08-00252a01.pphosted.com with ESMTP id 2t9exhj2sd-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=OK)
+ for <linux-arm-kernel@lists.infradead.org>; Wed, 26 Jun 2019 11:43:02 +0100
+Received: by mail-pf1-f199.google.com with SMTP id q14so1520004pff.8
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 26 Jun 2019 03:37:56 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=subject:to:cc:references:from:openpgp:autocrypt:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=BE4Q6kIsXy7ZYeSWx7jwFQJAWHgEXuWMNO+V0OKRKWQ=;
- b=uXcrECe/WmOv6aWe4aZ4fN1GlMgV47z3fzFklSAfC1srPdj0p7BUNtAh69p57iI06m
- OJWDzLkrWTsC2DaQbg0n4wR2cZjKCcny43O4JOxFLotWgVFrC3R9czddAOVPYACMJ/8O
- NnxAXnchO+6xfxfEVHntu/BbRYxtaxsyVD1QaZJFt4PKPeIimCoeT/nm/2v7aPl9uunV
- 1GEPTOWZfddnmw3AoH/+vpXB4/b5j5XtGHuTXEqbj8jzyI8aafckhP4vrImAdExv/eYM
- ptgCtUwhBMws3p+EtaiyFhEwmJXq9jGxrMhlQpdqQtU0VzwkACWIV1ibr3SQVIpLqCwW
- zjsg==
+ Wed, 26 Jun 2019 03:43:02 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=raspberrypi.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=H72M3+PWhw9sOunRiDpxWoNo9tqIHCGVsvvEbNV2cac=;
+ b=B/5z55lee914sGMzs/ZjBxJ62Uul/d0vYZNRY/Wr4ucoBuxrZsHuPxvN9T+JO4AXk7
+ Zl7tQBBY9ZmSx/POB3pAPLHlcjl5K+ZpJHvRYPhXPc0Dx3pMiGsEpTTpbvHnKUNMv/HL
+ ADchEiRObMQhpTso1YNwrdaP40XtIWI9e5wLXwxxUYrVjZabC0vOOiMofnpmrF/FDqwf
+ ZvWJh4ye3oypogexs/hOaHSw+llPhO7btJEKSrME3ZjU5TxQhfrMkPtIfJO69lD29YbX
+ Y0wiYZoWSagYjBOvbFcskj08AcE326EPLEv5mq/tcAp3mPIICh9Qb+NeChw+428/fLxC
+ FuyQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:openpgp:autocrypt
- :message-id:date:user-agent:mime-version:in-reply-to
- :content-language:content-transfer-encoding;
- bh=BE4Q6kIsXy7ZYeSWx7jwFQJAWHgEXuWMNO+V0OKRKWQ=;
- b=P5zOYNHMISnRdBAcFsnFUM9pwPJXndjFgFh1NOH0ecfrH3OBMSzRSN5+Rz/m1eTbQP
- sxXEgWl2lBuGXxXutPc5VUOzUrZ2l0Vjx5IOMdiWPTkJiyeeQIKy3VCLWE7VG9tfx2IK
- N2P9Z9lEBhXoxl0o6v08yWSc1pdnxD+ErTZqPVX4m9yCmmiyZZiPA3oweVMgSunT8FZd
- yxLDGHMzvLQQemoI67as791eOAYpKMec5oJ3kv8Q+X8unhb3zGStXzs3vIDYb2t7KC/I
- Cfco/lS8EUKPFa6o5cEb+kXh/nOI4F3NiTdE/jAhGEmcUzZbnwiFVfCE43njJ4UY46in
- jXEA==
-X-Gm-Message-State: APjAAAXzFiNgGRSoycbs7Ue9dZKV4BlHPK9casCPYf3CCF+CMrjZDtCV
- DyQz4aRRFhs91j2S09KhsKSItw==
-X-Google-Smtp-Source: APXvYqxdA6ohIleHU+JXzKXyLdxetJYYb4zBfbWjh9KbfccO0wfd/WveAYZEARVdGXJrFASZ/GxrSw==
-X-Received: by 2002:a5d:5303:: with SMTP id e3mr3064772wrv.239.1561545475091; 
- Wed, 26 Jun 2019 03:37:55 -0700 (PDT)
-Received: from [192.168.0.41] (26.92.130.77.rev.sfr.net. [77.130.92.26])
- by smtp.googlemail.com with ESMTPSA id w7sm1110780wmc.46.2019.06.26.03.37.53
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Wed, 26 Jun 2019 03:37:54 -0700 (PDT)
-Subject: Re: [PATCH RESEND V2 1/3] clocksource/drivers/sysctr: Add optional
- clock-frequency property
-To: Anson Huang <anson.huang@nxp.com>, "tglx@linutronix.de"
- <tglx@linutronix.de>, "robh+dt@kernel.org" <robh+dt@kernel.org>,
- "mark.rutland@arm.com" <mark.rutland@arm.com>,
- "shawnguo@kernel.org" <shawnguo@kernel.org>,
- "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
- "kernel@pengutronix.de" <kernel@pengutronix.de>,
- "festevam@gmail.com" <festevam@gmail.com>,
- "l.stach@pengutronix.de" <l.stach@pengutronix.de>,
- Abel Vesa <abel.vesa@nxp.com>, "ccaione@baylibre.com"
- <ccaione@baylibre.com>, "angus@akkea.ca" <angus@akkea.ca>,
- "andrew.smirnov@gmail.com" <andrew.smirnov@gmail.com>,
- "agx@sigxcpu.org" <agx@sigxcpu.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
-References: <20190623123850.22584-1-Anson.Huang@nxp.com>
- <55abafbd-c010-32b5-6d76-26040830d5b0@linaro.org>
- <DB3PR0402MB3916AB9F2260B0E46CCDDEC0F5E20@DB3PR0402MB3916.eurprd04.prod.outlook.com>
-From: Daniel Lezcano <daniel.lezcano@linaro.org>
-Openpgp: preference=signencrypt
-Autocrypt: addr=daniel.lezcano@linaro.org; prefer-encrypt=mutual; keydata=
- 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
-Message-ID: <9c017ba9-ac6b-480b-d1f3-120289343101@linaro.org>
-Date: Wed, 26 Jun 2019 12:37:52 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.7.0
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=H72M3+PWhw9sOunRiDpxWoNo9tqIHCGVsvvEbNV2cac=;
+ b=JA7Ea0Agx5xYS7IRnUbaNuPE4/UwxBw9LCnya7ivg1qQarwwWoBO2p/4MaIVWwxQOx
+ ZSQk4j6zuWNrY/N+yYpPra9T2urfXSGbudr9X3G5PDHU06LSUNou5xOq8kImzgVkCcse
+ wNcujQLOGYXCUPlxyQIjlQMDjNLLOKqNWlVtpN0EVDUN3yQJ/+VlmDlZe5Qo/C7DQ/n8
+ qSzA1xSYD7JXwr2Z4hPUtEvbxRqwJ12Qm2NEj+EC41QIJX+76RYDgm+scR0H4GNcEI1X
+ 6s9K5l/WDDAReALRfZAs1SZH8FeJMTRmznSrnxTPkD91CLZwyZ6or+VprCMOfgUR6S9O
+ DH2w==
+X-Gm-Message-State: APjAAAX2vnu5/ji+3W1RRLktBHaCxb8Q5Gw2TOiyobneKjEfbYg96f7B
+ xk0+SSsJFgpq8ZaZClTHq52FlnIdf2MLVtBV6R/nVBymDa1HKjzriV8hoAqM7c+OwGW658XYoyb
+ ovvWIcs4YuHjcRjvGtzGcLKHJZPanHS2LE4uq13VcJI8nppWotQ==
+X-Received: by 2002:a17:902:296a:: with SMTP id
+ g97mr4575660plb.115.1561545780332; 
+ Wed, 26 Jun 2019 03:43:00 -0700 (PDT)
+X-Google-Smtp-Source: APXvYqzoaspFcX9aLC1AUlC3zgQFeLmLLAxDawSBjp3KT5SgiRv/Vh6vP1KZavG5puO6oi4xjZ2lUwREVMgGnN7C3ks=
+X-Received: by 2002:a17:902:296a:: with SMTP id
+ g97mr4575640plb.115.1561545780096; 
+ Wed, 26 Jun 2019 03:43:00 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <DB3PR0402MB3916AB9F2260B0E46CCDDEC0F5E20@DB3PR0402MB3916.eurprd04.prod.outlook.com>
-Content-Language: en-US
+References: <1561414395-12518-1-git-send-email-wahrenst@gmx.net>
+ <20190625075558.GY28859@kadam> <27ed9c22-1d36-7c3e-a81b-5fa1e8245d1e@gmx.net>
+In-Reply-To: <27ed9c22-1d36-7c3e-a81b-5fa1e8245d1e@gmx.net>
+From: Dave Stevenson <dave.stevenson@raspberrypi.org>
+Date: Wed, 26 Jun 2019 11:42:46 +0100
+Message-ID: <CAAoAYcNhwoCwRrac7ek+5XfjqJyBUj1jHefidSoLmj_XG7jPHw@mail.gmail.com>
+Subject: Re: [PATCH] staging: bcm2835-camera: Restore return behavior of
+ ctrl_set_bitrate()
+To: Stefan Wahren <wahrenst@gmx.net>
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:5.22.84,1.0.8
+ definitions=2019-06-26_06:2019-06-25,2019-06-26 signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190626_033757_142285_A1ACD488 
-X-CRM114-Status: GOOD (  15.81  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190626_034307_127475_C4606644 
+X-CRM114-Status: GOOD (  33.50  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:442 listed in]
- [list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [91.207.212.211 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -167,6 +106,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
+ 0.0 KHOP_DYNAMIC           Relay looks like a dynamic address
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -178,42 +118,129 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: dl-linux-imx <linux-imx@nxp.com>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: devel@driverdev.osuosl.org, Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Madhumitha Prabakaran <madhumithabiw@gmail.com>, Eric Anholt <eric@anholt.net>,
+ "moderated list:BROADCOM BCM2835 ARM ARCHITECTURE"
+ <linux-rpi-kernel@lists.infradead.org>,
+ Dan Carpenter <dan.carpenter@oracle.com>, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gMjYvMDYvMjAxOSAwMzo0MiwgQW5zb24gSHVhbmcgd3JvdGU6Cj4gSGksIERhbmllbAo+IAo+
-PiBPbiAyMy8wNi8yMDE5IDE0OjM4LCBBbnNvbi5IdWFuZ0BueHAuY29tIHdyb3RlOgo+Pj4gRnJv
-bTogQW5zb24gSHVhbmcgPEFuc29uLkh1YW5nQG54cC5jb20+Cj4+Pgo+Pj4gU3lzdGVtcyB3aGlj
-aCB1c2UgcGxhdGZvcm0gZHJpdmVyIG1vZGVsIGZvciBjbG9jayBkcml2ZXIgcmVxdWlyZSB0aGUK
-Pj4+IGNsb2NrIGZyZXF1ZW5jeSB0byBiZSBzdXBwbGllZCB2aWEgZGV2aWNlIHRyZWUgd2hlbiBz
-eXN0ZW0gY291bnRlcgo+Pj4gZHJpdmVyIGlzIGVuYWJsZWQuCj4+Pgo+Pj4gVGhpcyBpcyBuZWNl
-c3NhcnkgYXMgaW4gdGhlIHBsYXRmb3JtIGRyaXZlciBtb2RlbCB0aGUgb2ZfY2xrCj4+PiBvcGVy
-YXRpb25zIGRvIG5vdCB3b3JrIGNvcnJlY3RseSBiZWNhdXNlIHN5c3RlbSBjb3VudGVyIGRyaXZl
-ciBpcwo+Pj4gaW5pdGlhbGl6ZWQgaW4gZWFybHkgcGhhc2Ugb2Ygc3lzdGVtIGJvb3QgdXAsIGFu
-ZCBjbG9jayBkcml2ZXIgdXNpbmcKPj4+IHBsYXRmb3JtIGRyaXZlciBtb2RlbCBpcyBOT1QgcmVh
-ZHkgYXQgdGhhdCB0aW1lLCBpdCB3aWxsIGNhdXNlIHN5c3RlbQo+Pj4gY291bnRlciBkcml2ZXIg
-aW5pdGlhbGl6YXRpb24gZmFpbGVkLgo+Pj4KPj4+IEFkZCB0aGUgb3B0aW5hbCBjbG9jay1mcmVx
-dWVuY3kgdG8gdGhlIGRldmljZSB0cmVlIGJpbmRpbmdzIG9mIHRoZSBOWFAKPj4+IHN5c3RlbSBj
-b3VudGVyLCBzbyB0aGUgZnJlcXVlbmN5IGNhbiBiZSBoYW5kZWQgaW4gYW5kIHRoZSBvZl9jbGsK
-Pj4+IG9wZXJhdGlvbnMgY2FuIGJlIHNraXBwZWQuCj4+Cj4+IElzbid0IGl0IHBvc3NpYmxlIHRv
-IGNyZWF0ZSBhIGZpeGVkLWNsb2NrIGFuZCByZWZlciB0byBpdD8gU28gbm8gbmVlZCB0byBjcmVh
-dGUgYQo+PiBzcGVjaWZpYyBhY3Rpb24gYmVmb3JlIGNhbGxpbmcgdGltZXJfb2ZfaW5pdCgpID8K
-Pj4KPiAKPiBBcyB0aGUgY2xvY2sgbXVzdCBiZSByZWFkeSBiZWZvcmUgdGhlIFRJTUVSX09GX0RF
-Q0xBUkUsIHNvIGFkZGluZyBhIENMS19PRl9ERUNMQVJFX0RSSVZFUiBpbgo+IGNsb2NrIGRyaXZl
-ciB0byBPTkxZIHJlZ2lzdGVyIGEgZml4ZWQtY2xvY2s/IFRoZSBzeXN0ZW0gY291bnRlcidzIGZy
-ZXF1ZW5jeSBhcmUgZGlmZmVyZW50IG9uIGRpZmZlcmVudAo+IHBsYXRmb3Jtcywgc28gYWRkaW5n
-IGZpeGVkIGNsb2NrIGluIHN5c3RlbSBjb3VudGVyIGRyaXZlciBpcyBOT1QgYSBnb29kIGlkZWEs
-IE9OTFkgdGhlIERUIG5vZGUgb3IgdGhlCj4gY2xvY2sgZHJpdmVyIGNhbiBjcmVhdGUgdGhpcyBm
-aXhlZCBjbG9jayBhY2NvcmRpbmcgdG8gcGxhdGZvcm1zLCBjYW4geW91IGFkdmlzZSB3aGVyZSB0
-byBjcmVhdGUgdGhpcyBmaXhlZAo+IGNsb2NrIGlzIGJldHRlcj8KCkNhbiB5b3UgcG9pbnQgbWUg
-dG8gYSBEVCB3aXRoIHRoZSAibnhwLHN5c2N0ci10aW1lciIgPwoKCi0tIAogPGh0dHA6Ly93d3cu
-bGluYXJvLm9yZy8+IExpbmFyby5vcmcg4pSCIE9wZW4gc291cmNlIHNvZnR3YXJlIGZvciBBUk0g
-U29DcwoKRm9sbG93IExpbmFybzogIDxodHRwOi8vd3d3LmZhY2Vib29rLmNvbS9wYWdlcy9MaW5h
-cm8+IEZhY2Vib29rIHwKPGh0dHA6Ly90d2l0dGVyLmNvbS8jIS9saW5hcm9vcmc+IFR3aXR0ZXIg
-fAo8aHR0cDovL3d3dy5saW5hcm8ub3JnL2xpbmFyby1ibG9nLz4gQmxvZwoKCl9fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFp
-bGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlz
-dHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
+Hi Stefan.
+
+On Tue, 25 Jun 2019 at 17:30, Stefan Wahren <wahrenst@gmx.net> wrote:
+>
+> Hi Dan,
+> hi Dave,
+>
+> Am 25.06.19 um 09:55 schrieb Dan Carpenter:
+> > On Tue, Jun 25, 2019 at 12:13:15AM +0200, Stefan Wahren wrote:
+> >> The commit 52c4dfcead49 ("Staging: vc04_services: Cleanup in
+> >> ctrl_set_bitrate()") changed the return behavior of ctrl_set_bitrate().
+> >> This breaks probing of bcm2835-camera:
+> >>
+> >>     bcm2835-v4l2: mmal_init: failed to set all camera controls: -3
+> >>     Cleanup: Destroy video encoder
+> >>     Cleanup: Destroy image encoder
+> >>     Cleanup: Destroy video render
+> >>     Cleanup: Destroy camera
+> >>     bcm2835-v4l2: bcm2835_mmal_probe: mmal init failed: -3
+> >>     bcm2835-camera: probe of bcm2835-camera failed with error -3
+> >>
+> >> So restore the old behavior and fix this issue.
+> >>
+> >> Fixes: 52c4dfcead49 ("Staging: vc04_services: Cleanup in ctrl_set_bitrate()")
+> >> Signed-off-by: Stefan Wahren <wahrenst@gmx.net>
+> > I feel like this papers over the issue.  It would be better to figure
+> > out why this is failing and fix it properly.  -3 is -ESRCH and when I
+> > grep for ESRCH I only see it used in the ioctl so that can't be it.
+> >
+> > I think it must be -MMAL_MSG_STATUS_EINVAL actually, but it comes from
+> > the firmware or something so we can't grep for it.
+> yes this is a result from the VC4 firmware, there is nothing i can do
+> about it. Even the firmware has been fixed, the driver must be
+> compatible with older firmware version.
+> > Can we do some more digging to find out why it's failing or otherwise
+> > we could add a comment.
+> >
+> >       /*
+> >        * FIXME:  port_parameter_set() sometimes fails with
+> >        * -MMAL_MSG_STATUS_EINVAL and we don't know why so we're
+> >        * ignoring those errors for now.
+> >        *
+> >        */
+> >       return 0;
+>
+> I will add a comment and a v4l2_dbg entry.
+>
+> @Dave
+>
+> I used a Raspberry Pi 3 with a V1.3 camera and get this with an
+> additional v4l2_dbg in ctrl_set_bitrate()
+>
+> [    1.472805] raspberrypi-firmware soc:firmware: Attached to firmware
+> from 2019-03-27 15:48
+> ...
+> [    7.441639] videodev: Linux video capture interface: v2.00
+> [    7.511659] bcm2835_v4l2: module is from the staging directory, the
+> quality is unknown, you have been warned.
+> ...
+> [    8.162504] bcm2835-v4l2: Set fps range to 30000/1000 to 30000/1000
+> [    8.163104] bcm2835-v4l2: Set fps range to 30000/1000 to 30000/1000
+> [    8.163624] bcm2835-v4l2: Set fps range to 30000/1000 to 30000/1000
+> [    8.164395] bcm2835-v4l2: mmal_ctrl:eecd7187 ctrl id:0x98091f ctrl
+> val:0 imagefx:0x0 color_effect:false u:0 v:0 ret 0(0)
+> [    8.164493] bcm2835-v4l2: ctrl_set_colfx: After: mmal_ctrl:1ec18e37
+> ctrl id:0x98092a ctrl val:32896 ret 0(0)
+> [    8.165413] bcm2835-v4l2: ctrl_set_bitrate: After: mmal_ctrl:b01a3b48
+> ctrl id:0x9909cf ctrl val:10000000 ret -3(-22)
+> [    8.165872] bcm2835-v4l2: scene mode selected 0, was 0
+> [    8.166249] bcm2835-v4l2: V4L2 device registered as video0 - stills
+> mode > 1280x720
+> [    8.166596] bcm2835-v4l2: vid_cap - set up encode comp
+> [    8.171208] bcm2835-v4l2: JPG - buf size now 786432 was 786432
+> [    8.171220] bcm2835-v4l2: vid_cap - cur_buf.size set to 786432
+> [    8.171228] bcm2835-v4l2: Set dev->capture.fmt 4745504A, 1024x768,
+> stride 0, size 786432
+> [    8.171234] bcm2835-v4l2: Broadcom 2835 MMAL video capture ver 0.0.2
+> loaded.
+>
+> Looks like the firmware dislike val:10000000
+>
+> Any thoughts?
+
+I'd had a quick dig yesterday, but forgot to hit send :-/
+It looks like the firmware is getting upset over the ordering of
+things in setting the default bitrate and the bitrate mode. Setting
+the bitrate mode to the default of VBR fails (return code is ignored)
+as the bitrate is 0 at that point. Setting the bitrate then fails as
+the firmware default mode is "disabled" (ie specify the Qp
+parameters).
+
+Setting the bitrate is also done via the MMAL port format when
+enabling the stream, so I believe it's only the setting of the default
+values that fails.
+
+I'll sort a firmware fix, but a comment here along the lines you
+propose is definitely worth it.
+ /*
+  * Older firmware versions (pre July 2019) have a bug in handling
+  * MMAL_PARAMETER_VIDEO_BIT_RATE that result in the call
+  * returning -MMAL_MSG_STATUS_EINVAL.
+  * Ignore errors from this call.
+  */
+  return 0;
+(apologies for the formatting).
+
+  Dave
+
+PS Is linux-rpi-kernel actually behaving for other people? I didn't
+see this patch when it was submitted, and it isn't showing in the list
+archive either.
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
