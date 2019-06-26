@@ -2,52 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5EA1A56A7E
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 26 Jun 2019 15:32:00 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6816C56A92
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 26 Jun 2019 15:33:05 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=Zl61PdgiFUc0+GfFiInzhUflzguos1Xb4geuTjPxmIA=; b=O/EbqQMt9/ZwfN/g2/ZNNXhkq
-	r6T5088cdMsUGezHgwLTEuQ6WkKtaIqfyEUu7eEwJyDLOcVrqmCFxfWWHYHAzhLzRXMmiFD5pgD/C
-	s02eWeppvOrCzx2nfE86mLzEIPbPtuaNbwyNJdri7T6iRf5caWE5GpQfHY7a6FLO3DQXhU7QpPx9r
-	wDR1CSFvddMdjH+sOCE45RYYcXZhF2xY/mHOZtp8HY+J7V775q8ob9m1gebT/64GEvtXjNbR+XiJs
-	rlLn+peWBxMV2bgLCJsPLoF9l2i1Ka6DlZFBBFaGuM+iem4tGeVwmB1kRT/w3e1sJi826A6ThU1l3
-	sdlRXnK2g==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=mxkeXzVqrYlopVoAb8fsjhDABHTQSD0s8XBt1b30EPo=; b=N24
+	rna8s1G8u5IwCmAT65jvjlK3sEmI322EmHNKz2/qahSCMQpgXyMIZrR6ji1yt+2s7d4EbxLyYgPXB
+	30HoxwJg+Lsx1/4OC3gVA1EsCa+eQALPNh/Bs3vE3qEiaf8EyYo24APOcSXKuc1JevuT5K9G4YCs6
+	6wavazO3/Ezo7BgHi5iBZRv55fKOWD8X4HJj5raZo5HDpJ3k4pISx+a2zsGHSWQbHZUp6mtu71SeQ
+	pgxEskQ3jRg9Sj4ZiiYcagtGaNpWssvJ3ZYKxzpTkDCj4G22WcMpUD8NK4pqgQ7XM/nf78lTmXfJN
+	v96zxMHFARHhz+SP16s9Z+R9jR7b1rw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hg81k-0000bF-RZ; Wed, 26 Jun 2019 13:31:56 +0000
-Received: from sauhun.de ([88.99.104.3] helo=pokefinder.org)
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hg817-0000Nj-9f
- for linux-arm-kernel@lists.infradead.org; Wed, 26 Jun 2019 13:31:18 +0000
-Received: from localhost (p54B330AF.dip0.t-ipconnect.de [84.179.48.175])
- by pokefinder.org (Postfix) with ESMTPSA id 9A4DC2C0114;
- Wed, 26 Jun 2019 15:31:16 +0200 (CEST)
-Date: Wed, 26 Jun 2019 15:31:16 +0200
-From: Wolfram Sang <wsa@the-dreams.de>
-To: Maxime Ripard <maxime.ripard@bootlin.com>
-Subject: Re: [PATCH v3 2/2] dt-bindings: i2c: mv64xxx: Add YAML schemas
-Message-ID: <20190626133116.GJ801@ninjato>
-References: <20190611090309.7930-1-maxime.ripard@bootlin.com>
- <20190611090309.7930-2-maxime.ripard@bootlin.com>
-MIME-Version: 1.0
-In-Reply-To: <20190611090309.7930-2-maxime.ripard@bootlin.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+	id 1hg82o-0001II-NK; Wed, 26 Jun 2019 13:33:02 +0000
+Received: from inva021.nxp.com ([92.121.34.21])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hg82D-00017N-TF
+ for linux-arm-kernel@lists.infradead.org; Wed, 26 Jun 2019 13:32:27 +0000
+Received: from inva021.nxp.com (localhost [127.0.0.1])
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 1DB852009AC;
+ Wed, 26 Jun 2019 15:32:22 +0200 (CEST)
+Received: from inva024.eu-rdc02.nxp.com (inva024.eu-rdc02.nxp.com
+ [134.27.226.22])
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 1069F2009AB;
+ Wed, 26 Jun 2019 15:32:22 +0200 (CEST)
+Received: from fsr-ub1664-120.ea.freescale.net
+ (fsr-ub1664-120.ea.freescale.net [10.171.82.81])
+ by inva024.eu-rdc02.nxp.com (Postfix) with ESMTP id 6078A205DB;
+ Wed, 26 Jun 2019 15:32:21 +0200 (CEST)
+From: Robert Chiras <robert.chiras@nxp.com>
+To: Marek Vasut <marex@denx.de>, Stefan Agner <stefan@agner.ch>,
+ David Airlie <airlied@linux.ie>, Daniel Vetter <daniel@ffwll.ch>,
+ Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
+ Shawn Guo <shawnguo@kernel.org>, Sascha Hauer <s.hauer@pengutronix.de>,
+ Fabio Estevam <festevam@gmail.com>
+Subject: [PATCH 00/10] Improvements and fixes for mxsfb DRM driver
+Date: Wed, 26 Jun 2019 16:32:08 +0300
+Message-Id: <1561555938-21595-1-git-send-email-robert.chiras@nxp.com>
+X-Mailer: git-send-email 2.7.4
+X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190626_063117_558533_38592AD0 
-X-CRM114-Status: UNSURE (   7.45  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20190626_063226_292767_DD1BD991 
+X-CRM114-Status: GOOD (  10.74  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [88.99.104.3 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [92.121.34.21 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -60,68 +68,75 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Gregory Clement <gregory.clement@bootlin.com>, Chen-Yu Tsai <wens@csie.org>,
- Rob Herring <robh+dt@kernel.org>, linux-i2c@vger.kernel.org,
- Frank Rowand <frowand.list@gmail.com>, linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============3870789782217075812=="
+Cc: devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+ dri-devel@lists.freedesktop.org, NXP Linux Team <linux-imx@nxp.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Robert Chiras <robert.chiras@nxp.com>, linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+This patch-set improves the use of eLCDIF block on iMX 8 SoCs (like 8MQ, 8MM
+and 8QXP). Following, are the new features added and fixes from this
+patch-set:
 
---===============3870789782217075812==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="ZG+WKzXzVby2T9Ro"
-Content-Disposition: inline
+1. Add support for drm_bridge
+On 8MQ and 8MM, the LCDIF block is not directly connected to a parallel
+display connector, where an LCD panel can be attached, but instead it is
+connected to DSI controller. Since this DSI stands between the display
+controller (eLCDIF) and the physical connector, the DSI can be implemented
+as a DRM bridge. So, in order to be able to connect the mxsfb driver to
+the DSI driver, the support for a drm_bridge was needed in mxsfb DRM
+driver (the actual driver for the eLCDIF block).
 
+2. Add support for additional pixel formats
+Some of the pixel formats needed by Android were not implemented in this
+driver, but they were actually supported. So, add support for them.
 
---ZG+WKzXzVby2T9Ro
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
+3. Add support for horizontal stride
+Having support for horizontal stride allows the use of eLCDIF with a GPU
+(for example) that can only output resolution sizes multiple of a power of
+8. For example, 1080 is not a power of 16, so in order to support 1920x1080
+output from GPUs that can produce linear buffers only in sizes multiple to 16,
+this feature is needed.
 
-On Tue, Jun 11, 2019 at 11:03:09AM +0200, Maxime Ripard wrote:
-> Switch the DT binding to a YAML schema to enable the DT validation.
->=20
-> Signed-off-by: Maxime Ripard <maxime.ripard@bootlin.com>
->=20
+3. Few minor features and bug-fixing
+The addition of max-res DT property was actually needed in order to limit
+the bandwidth usage of the eLCDIF block. This is need on systems where
+multiple display controllers are presend and the memory bandwidth is not
+enough to handle all of them at maximum capacity (like it is the case on
+8MQ, where there are two display controllers: DCSS and eLCDIF).
+The rest of the patches are bug-fixes.
 
-Applied to for-next, thanks!
+Mirela Rabulea (1):
+  drm/mxsfb: Signal mode changed when bpp changed
 
+Robert Chiras (9):
+  drm/mxsfb: Update mxsfb to support a bridge
+  drm/mxsfb: Update mxsfb with additional pixel formats
+  drm/mxsfb: Fix the vblank events
+  dt-bindings: display: Add max-res property for mxsfb
+  drm/mxsfb: Add max-res property for MXSFB
+  drm/mxsfb: Update mxsfb to support LCD reset
+  drm/mxsfb: Improve the axi clock usage
+  drm/mxsfb: Clear OUTSTANDING_REQS bits
+  drm/mxsfb: Add support for horizontal stride
 
---ZG+WKzXzVby2T9Ro
-Content-Type: application/pgp-signature; name="signature.asc"
+ .../devicetree/bindings/display/mxsfb.txt          |   6 +
+ drivers/gpu/drm/mxsfb/mxsfb_crtc.c                 | 290 ++++++++++++++++++---
+ drivers/gpu/drm/mxsfb/mxsfb_drv.c                  | 189 +++++++++++---
+ drivers/gpu/drm/mxsfb/mxsfb_drv.h                  |  10 +-
+ drivers/gpu/drm/mxsfb/mxsfb_out.c                  |  26 +-
+ drivers/gpu/drm/mxsfb/mxsfb_regs.h                 | 128 ++++++---
+ 6 files changed, 531 insertions(+), 118 deletions(-)
 
------BEGIN PGP SIGNATURE-----
+-- 
+2.7.4
 
-iQIzBAABCgAdFiEEOZGx6rniZ1Gk92RdFA3kzBSgKbYFAl0Tc6QACgkQFA3kzBSg
-KbYHgA/9F8nLcTx2NE4YvEyysDBH0L3/XFU39GvfNfR00Uu3Js8xbbyCmj/GYwLr
-fPMNWfOtjF5ROVZOnhKc8BVhk9ps9qzOVDjn11VgnScxpWym2IuvpFfY1yXfT0H6
-9arS6XHnikWTkLUpZIAWSA4yHByNptL+ZRmcJ2gcabBn/8rCrfwe2JvxfLNyLAsI
-rL+ynFioJZqhZOEXrag9AwPPzIH8UnItUbt/yFgNdurRynJUDmKM2eZ/xwf8mgga
-WXVGHIVHjSJFp0kool7FJagDUqJ5nVTMDBkUePCxUihg6CSse2YDQtONGKY2fxmY
-2aSpGhNYUj+jRTOtJSHPjGfCFJ7t6k6nhuk0Psqz5rOV3fxy+Hldi23MJa5D6GWb
-jbclbxhwIKKuBsCx694ESa2yUoKXdPkIukw1IDTynpFUgF5/Gm9cafxcCGK5wNrd
-aIzPaDVP/9JGdXx/i7kkVTFtPO+J3ToXqA/UHhbz/JoX8ORlun18NBrcgfpl26p3
-TST6uEr15dx+SR46ebz7r5RdnirxWyBD2kn4iMnj7YmUi9ONSPXttjN+4/Mnq1wk
-9wnM4tic6utMMEQN5oHCnViFi1ZS4/FqEQ0CTZlb1+DG5UwRTSUAgN4v+fWffM/2
-k4Mnmq4JmdQaFsFmcM282vpYVQAm7UwU5wQYZOd1Be/tWe+Tsxg=
-=RozK
------END PGP SIGNATURE-----
-
---ZG+WKzXzVby2T9Ro--
-
-
---===============3870789782217075812==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============3870789782217075812==--
-
