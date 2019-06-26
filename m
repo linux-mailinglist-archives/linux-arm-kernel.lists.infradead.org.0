@@ -2,97 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 719F456BF3
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 26 Jun 2019 16:30:47 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2B27E56CCE
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 26 Jun 2019 16:49:38 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=0t2b3FSAaYAU0oFRfQ6Lu9nQGwU0vr51cpAGKKgr/WM=; b=rzHbBi7ASx7xjL
-	dJJU9PtNKUov5JSdn3RpVufElmi3z7kmbLl/LPheWpfcHz0n/ZoFjEykcK39k2F0yxnW7p4rMfCd7
-	IT3Mp20y78FLNFrPkQMlP+DACBOWXWNsW7CCVAucYyEBuUP9erjTeVTeMPgwy7PHX3vuA3tlJ25I7
-	MS3uhTR9L1ytH9zBNsX7Au+b1uECJXsjFDBCuse1aLdkomeEOI3yHnSTpLBpsUN5sJaJF5k7xz/1X
-	ASWR3qRLkkh8VBW1BUdR9pdnm6WC7ovSKv3zT8NA93SjErydat0vL2OGnrQO4RJpF7NzU1mXz3oc8
-	Djfb4nJuxrfxGNbj7a5g==;
+	List-Owner; bh=gDw8n3VnuXCiXZURlr9NonFRqADP3GxnpUJGOKwi6zA=; b=bXlWW3ChKhy2hc
+	YJ5o2WEeEvd+B1mgVb5nAueMdtkgvCnLtvDEg7w4UlAUVt7Ix9n56ALQEOHS82LqXLD/2rUzE9oBk
+	pofeO0EhiDfuBPr8zWFxo+kbpw8/vm4SuX6XBlERqI6wVOkPe/ibxbPLVVr9p/zNjaAIsoXfk0MZR
+	YYBum2Qjbl2O7UKnrO5b2I9wNfb9rQ18HWA2vJKYfvzlHvICurqXAWDdWF8TE6Bso1gOPlEeSL8WQ
+	rXhq8C9w61ZjoEH+Fyt/8nZnkDTJ6+EpJAwk9Kd48qNfnpa2eZ6Ki78sB4dHMqt7ZdEelOnrV5ju0
+	+qL5GIiliTwOLrmI6lJg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hg8wb-0004kN-Tk; Wed, 26 Jun 2019 14:30:41 +0000
-Received: from mail-ed1-x544.google.com ([2a00:1450:4864:20::544])
+	id 1hg9Eu-0003eQ-HW; Wed, 26 Jun 2019 14:49:36 +0000
+Received: from mail-io1-xd44.google.com ([2607:f8b0:4864:20::d44])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hg8wP-0004jo-P7
- for linux-arm-kernel@lists.infradead.org; Wed, 26 Jun 2019 14:30:31 +0000
-Received: by mail-ed1-x544.google.com with SMTP id w13so3695031eds.4
+ id 1hg9E8-0003KX-Mx
+ for linux-arm-kernel@lists.infradead.org; Wed, 26 Jun 2019 14:48:51 +0000
+Received: by mail-io1-xd44.google.com with SMTP id j6so3943680ioa.5
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 26 Jun 2019 07:30:29 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ffwll.ch; s=google;
- h=sender:date:from:to:cc:subject:message-id:mail-followup-to
- :references:mime-version:content-disposition
- :content-transfer-encoding:in-reply-to:user-agent;
- bh=oycxIMhWeOjgRZ0/QzcUw1Wm4NjGiCorky0TzSRYEqE=;
- b=ATxugIl2SCaT9srbmP+Rni5GHifDKlPGbXR7cYJH8NZJPoLZdG+YoE+KGlga5ijBjN
- 0IaYYsPbZbhlbZ+tgs7ixOM0KKMv+5E5aECiVHH+fBYMy1syTxMjneNp9IDNlk7a/jbe
- M++g+/H/ce1vcxRfKzoZWLaBkn7ISoij6+edI=
+ Wed, 26 Jun 2019 07:48:48 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=DgyZrV/0GXyIl5zMpVdez37+pt0NN6PZa+e8Yh9Hijw=;
+ b=dOdIhYXTF+no3YlbD2CeiKg6dat5l5CZOYD1xXFNvcNIBlAs26LBlatTYEcR2hhgI7
+ H9zsMLsH3VQ22LOEebISJz7Gu5FaNqEkZLSey44RurxttEJ7oggMzJFFrJxCMhUlqrk1
+ Z9EaitNaYGsRLgbaGEakPUC+tbKPTUuNIqIRc=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:sender:date:from:to:cc:subject:message-id
- :mail-followup-to:references:mime-version:content-disposition
- :content-transfer-encoding:in-reply-to:user-agent;
- bh=oycxIMhWeOjgRZ0/QzcUw1Wm4NjGiCorky0TzSRYEqE=;
- b=sNlZd8juv4o2Gw4qwEvemex+JOFvHvyuhSwhPh48EKTWCIxCrvgt0QvZQ0lerpvPAc
- 3HxyRdM6urn/JUy31Nd1X6uPO0vGrTgA3lieDLxkNKLUqrmDcwTOauDNoL5/xBdT42Vk
- 8Mw6WsYeNcV6xpdbXP9D5RvQ1aLL+YvZIrrqnf1yQBt+YsJ1OJUt6ZzS4c5GsCsT/xfG
- TMGPKEq/m2o3PjsJGIjhIq7Kd5cYXxkZOh53P36/kfx5nASiU7GIpDsCv3Wx4V7dr+YC
- y7jGuu4YdO8wCymuCb9ksSSd4Q7w38qVKEE9TREDt4DjhcITS0DTpWyfxXpxTwuMjz0L
- N15A==
-X-Gm-Message-State: APjAAAXrQ5fc7ZW7uTruSWnpB0HwHamLjBiloAAYvV2hwPRaPq5gY5Nt
- UuYeXpGd1P1sJWsoNQ1JCNHnSQ==
-X-Google-Smtp-Source: APXvYqzNFt6g8HxgwDJyHbLTfRt/7BCAd97Ph8ib/VE+AghliKNlIAXkR9U7cf7MH6mNrMRncjwmSA==
-X-Received: by 2002:a05:6402:2cb:: with SMTP id
- b11mr5612295edx.281.1561559427848; 
- Wed, 26 Jun 2019 07:30:27 -0700 (PDT)
-Received: from phenom.ffwll.local ([2a02:168:569e:0:3106:d637:d723:e855])
- by smtp.gmail.com with ESMTPSA id j10sm3037251ejk.23.2019.06.26.07.30.26
- (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Wed, 26 Jun 2019 07:30:27 -0700 (PDT)
-Date: Wed, 26 Jun 2019 16:30:25 +0200
-From: Daniel Vetter <daniel@ffwll.ch>
-To: Ville =?iso-8859-1?Q?Syrj=E4l=E4?= <ville.syrjala@linux.intel.com>
-Subject: Re: [PATCH v3 3/4] drm/vblank: estimate vblank while disabling
- vblank if interrupt disabled
-Message-ID: <20190626143025.GN12905@phenom.ffwll.local>
-Mail-Followup-To: Ville =?iso-8859-1?Q?Syrj=E4l=E4?=
- <ville.syrjala@linux.intel.com>, 
- Robert Beckett <bob.beckett@collabora.com>,
- Maxime Ripard <maxime.ripard@bootlin.com>,
- Sean Paul <sean@poorly.run>, linux-kernel@vger.kernel.org,
- dri-devel@lists.freedesktop.org, David Airlie <airlied@linux.ie>,
- NXP Linux Team <linux-imx@nxp.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Shawn Guo <shawnguo@kernel.org>,
- linux-arm-kernel@lists.infradead.org
-References: <cover.1561483965.git.bob.beckett@collabora.com>
- <b96132cef4b63118df1026a99b3c345692e3de26.1561483965.git.bob.beckett@collabora.com>
- <20190626132732.GP5942@intel.com>
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=DgyZrV/0GXyIl5zMpVdez37+pt0NN6PZa+e8Yh9Hijw=;
+ b=DsZ58eU5adbRlBle38ahv9PSBAHanziR0g5HV0dELQvujeXedd4QBNLQkBM/8Jd+0S
+ 4/weMe/ARDjvYW4o/wFW9bC7NGN8a1yNSIiqnhssCS5zgP+2KEFcHK0Ix1ZFYBg/GjPC
+ aRVFIOVZoE52A+peIzgRLH/IO6JJ/Z800sccAoiuJ1+7WVE5XizQkkjCGSWs1ZgY9MqJ
+ idejX5S40BWQUjgI/eEwQeEyQXyZ9WPM7WOr0RlmIGkPL0GVivQNukkHcjRgrBkpdKFN
+ n/NWFIGd9jp7caOimqw9go/HehdsU9EwFL4DtUzpJ3Bxpmyysow0ftAnk4iYVurljQew
+ Misw==
+X-Gm-Message-State: APjAAAVZD0B62pDmgSIdGRsIC49DTxIEx0m0oottPyZki4ZVEqwqJwvG
+ ijlWzT3bn/tt0b2nackRdcsmGIAw+EM=
+X-Google-Smtp-Source: APXvYqw8ADbqSIx0SWfUCwsIKU7SdUdL2nEbYp+s3i2N7pvSFfJ5oMGa1FrQ8ft2z+Pym7aSu0aUaA==
+X-Received: by 2002:a5d:9b1a:: with SMTP id y26mr5527869ion.238.1561560527255; 
+ Wed, 26 Jun 2019 07:48:47 -0700 (PDT)
+Received: from mail-io1-f49.google.com (mail-io1-f49.google.com.
+ [209.85.166.49])
+ by smtp.gmail.com with ESMTPSA id a2sm16419608iod.57.2019.06.26.07.48.47
+ for <linux-arm-kernel@lists.infradead.org>
+ (version=TLS1_3 cipher=AEAD-AES128-GCM-SHA256 bits=128/128);
+ Wed, 26 Jun 2019 07:48:47 -0700 (PDT)
+Received: by mail-io1-f49.google.com with SMTP id j6so3943589ioa.5
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 26 Jun 2019 07:48:47 -0700 (PDT)
+X-Received: by 2002:a02:aa1d:: with SMTP id r29mr5324399jam.127.1561560097502; 
+ Wed, 26 Jun 2019 07:41:37 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190626132732.GP5942@intel.com>
-X-Operating-System: Linux phenom 4.19.0-5-amd64 
-User-Agent: Mutt/1.10.1 (2018-07-13)
+References: <20190401171724.215780-1-dianders@chromium.org>
+ <20190626130007.GE23428@ravnborg.org>
+In-Reply-To: <20190626130007.GE23428@ravnborg.org>
+From: Doug Anderson <dianders@chromium.org>
+Date: Wed, 26 Jun 2019 07:41:25 -0700
+X-Gmail-Original-Message-ID: <CAD=FV=U4UU8q+CS76uuuGUP=EVnE6+BTUf8U=j7uwfczNgkrZw@mail.gmail.com>
+Message-ID: <CAD=FV=U4UU8q+CS76uuuGUP=EVnE6+BTUf8U=j7uwfczNgkrZw@mail.gmail.com>
+Subject: Re: [PATCH v5 0/7] drm/panel: simple: Add mode support to devicetree
+To: Sam Ravnborg <sam@ravnborg.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190626_073029_822162_F180DC0C 
-X-CRM114-Status: GOOD (  23.37  )
+X-CRM114-CacheID: sfid-20190626_074849_038712_1DCC92C6 
+X-CRM114-Status: GOOD (  21.48  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:544 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:d44 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -100,6 +89,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -111,111 +101,75 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Robert Beckett <bob.beckett@collabora.com>,
- Maxime Ripard <maxime.ripard@bootlin.com>, Shawn Guo <shawnguo@kernel.org>,
- linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
- David Airlie <airlied@linux.ie>, NXP Linux Team <linux-imx@nxp.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>, Sean Paul <sean@poorly.run>,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Brian Norris <briannorris@chromium.org>, Heiko Stuebner <heiko@sntech.de>,
+ David Airlie <airlied@linux.ie>, Viresh Kumar <viresh.kumar@linaro.org>,
+ Dmitry Torokhov <dmitry.torokhov@gmail.com>,
+ LKML <linux-kernel@vger.kernel.org>, Rob Herring <robh+dt@kernel.org>,
+ "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
+ Thierry Reding <thierry.reding@gmail.com>, Sean Paul <seanpaul@chromium.org>,
+ dri-devel <dri-devel@lists.freedesktop.org>,
+ Boris Brezillon <boris.brezillon@collabora.com>,
+ =?UTF-8?Q?Enric_Balletb=C3=B2?= <enric.balletbo@collabora.com>,
+ Klaus Goger <klaus.goger@theobroma-systems.com>,
+ Ezequiel Garcia <ezequiel@collabora.com>, Matthias Kaehlcke <mka@chromium.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Laurent Pinchart <laurent.pinchart@ideasonboard.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Jun 26, 2019 at 04:27:32PM +0300, Ville Syrj=E4l=E4 wrote:
-> On Tue, Jun 25, 2019 at 06:59:14PM +0100, Robert Beckett wrote:
-> > If interrupts are disabled (e.g. via vblank_disable_fn) and we come to
-> > disable vblank, update the vblank count to best guess as to what it
-> > would be had the interrupts remained enabled, and update the timesamp to
-> > now.
-> > =
+Hi,
 
-> > This avoids a stale vblank event being sent while disabling crtcs during
-> > atomic modeset.
-> > =
+On Wed, Jun 26, 2019 at 6:00 AM Sam Ravnborg <sam@ravnborg.org> wrote:
+>
+> Hi Douglas.
+>
+> On Mon, Apr 01, 2019 at 10:17:17AM -0700, Douglas Anderson wrote:
+> > I'm reviving Sean Paul's old patchset to get mode support in device
+> > tree.  The cover letter for his v3 is at:
+> > https://lists.freedesktop.org/archives/dri-devel/2018-February/165162.html
+> >
+> > No code is different between v4 and v5, just commit messages and text
+> > in the bindings.
+> >
+> > I've pulled together the patches that didn't land in v3, addressed
+> > outstanding feedback, and reposted.  Atop them I've added patches for
+> > rk3288-veyron-chromebook (used for jaq, jerry, mighty, speedy) and
+> > rk3288-veryon-minnie.
+> >
+> > Please let me know how they look.
+> >
+> > In general I have added people to the whole series who I think would
+> > like the whole series and then let get_maintainer pick extra people it
+> > thinks are relevant to each individual patch.  If I see you respond to
+> > any of the patches in the series, though, I'll add you to the whole
+> > series Cc list next time.
+> >
+> > Changes in v5:
+> > - Removed bit about OS may ignore (Rob/Ezequiel)
+> > - Added Heiko's Tested-by
+> > - It's not just jerry, it's most rk3288 Chromebooks (Heiko)
+>
+> What are the plans to move forward with this?
+> Or did you drop the whole idea again?
 
-> > Fixes: 68036b08b91bc ("drm/vblank: Do not update vblank count if interr=
-upts
-> > are already disabled.")
-> =
+At the moment I'm blocked on Thierry responding, either taking the
+patch or telling me what I need to do to fix it.  I saw Sean Paul ping
+Thierry on IRC on June 3rd and as far as I could tell there was no
+response.
 
-> I don't understand that commit. drm_vblank_off() should be called
-> when the power is still present, so it looks to me like that
-> commit is actually wrong. So I think we may want to just revert
-> it and figure out what the actual bug was.
+https://people.freedesktop.org/~cbrill/dri-log/?channel=dri-devel&highlight_names=&date=2019-06-03&show_html=true
 
-Hm yeah we might need a power domain get/put around our
-drm_crtc_vblank_off() call to make sure it dtrt. Revert sounds like a good
-idea instead of adding more kludges ... a-b: me on the revert, even though
-I did ack the original patch too.
--Daniel
+...and as you can see Heiko pinged this thread on June 14th.
 
-> =
+Thierry: can you help give us some direction?  Are you uninterested in
+reviewing them and would prefer that I find someone to land them in
+drm-misc directly?
 
-> > =
 
-> > Signed-off-by: Robert Beckett <bob.beckett@collabora.com>
-> > ---
-> >  drivers/gpu/drm/drm_vblank.c | 16 +++++++++++++++-
-> >  1 file changed, 15 insertions(+), 1 deletion(-)
-> > =
-
-> > diff --git a/drivers/gpu/drm/drm_vblank.c b/drivers/gpu/drm/drm_vblank.c
-> > index 7dabb2bdb733..db68b8cbf797 100644
-> > --- a/drivers/gpu/drm/drm_vblank.c
-> > +++ b/drivers/gpu/drm/drm_vblank.c
-> > @@ -375,9 +375,23 @@ void drm_vblank_disable_and_save(struct drm_device=
- *dev, unsigned int pipe)
-> >  	 * interrupts were enabled. This avoids calling the ->disable_vblank()
-> >  	 * operation in atomic context with the hardware potentially runtime
-> >  	 * suspended.
-> > +	 * If interrupts are disabled (e.g. via blank_disable_fn) then make
-> > +	 * best guess as to what it would be now and make sure we have an up
-> > +	 * to date timestamp.
-> >  	 */
-> > -	if (!vblank->enabled)
-> > +	if (!vblank->enabled) {
-> > +		ktime_t now =3D ktime_get();
-> > +		u32 diff =3D 0;
-> > +		if (vblank->framedur_ns) {
-> > +			u64 diff_ns =3D ktime_to_ns(ktime_sub(now, vblank->time));
-> > +			diff =3D DIV_ROUND_CLOSEST_ULL(diff_ns,
-> > +						     vblank->framedur_ns);
-> > +		}
-> > +
-> > +		store_vblank(dev, pipe, diff, now, vblank->count);
-> > +
-> >  		goto out;
-> > +	}
-> >  =
-
-> >  	/*
-> >  	 * Update the count and timestamp to maintain the
-> > -- =
-
-> > 2.18.0
-> > =
-
-> > _______________________________________________
-> > dri-devel mailing list
-> > dri-devel@lists.freedesktop.org
-> > https://lists.freedesktop.org/mailman/listinfo/dri-devel
-> =
-
-> -- =
-
-> Ville Syrj=E4l=E4
-> Intel
-> _______________________________________________
-> dri-devel mailing list
-> dri-devel@lists.freedesktop.org
-> https://lists.freedesktop.org/mailman/listinfo/dri-devel
-
--- =
-
-Daniel Vetter
-Software Engineer, Intel Corporation
-http://blog.ffwll.ch
+-Doug
 
 _______________________________________________
 linux-arm-kernel mailing list
