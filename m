@@ -2,93 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5E4015713A
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 26 Jun 2019 21:02:55 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 052DE571B1
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 26 Jun 2019 21:24:54 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=x6ztw8W4LI/BrPd7oqKu/GAla+Q1pfLwppwEJGHKOxI=; b=KSHLwOTwUAmPYBAZjN6534df4
-	sca5l9leCFXw4ubzMEobVat9Dt+lFT14MvwbFWxMJ5omKRKI7yv40vBSJqnJaPSziO3BzE+eyWP5c
-	ybfLC7bFPqOeMsSTjbdB1dUjjFBtq56caplcTFfsmiT53M1Z18jZpPdGr94U0KPh/oSFwmNfcYqXu
-	MblWkwTDkpocDSdul3IvLkDyuq26hLJsNzXvCJNhX7Q72VfmAlIT8h7bdsaq6gCnx8EJ1h4u53aTz
-	sESWJEa7Qwcy5eBAdOQ40FokEYKSnNYhFKG40dGAeErXoPoTFV0zwH/tZioCFoomTfx2+Y1DwEgca
-	5egaLDNQg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:In-Reply-To:
+	Date:References:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=z3iDrbbrWIQ0E78rqhQBC2AWrRyF2NEkzz6UKbe+s0U=; b=GIiifFNgDciq7A
+	79XdftP3gMwjOVanx/w4Z8FCuSj6g+72j0oLI84SZXjdUFiisyHxfvF3/PBeo5RrMNWeIdrnCqixK
+	yAIibs5/fZkuP+B3VPSdPfq4JPgvTyHXc3Tz9uoNoHaFCqRqRX/8KJcX7Aiw1MvtSdE2MW2jQMbwp
+	6GH3PmwtML631CoanPPM78rM0ZJegOMvDc0z4B/KdoRp02vd7P/0NLsiJyMnelzTnZ64sEquoP3iN
+	F3vSIQhdYA9Je+9RAm1tmyUkwBSSNfvD/7l7BXPeA2obgqDjxaNgofgCWW+xfTOZKszpPlW2ab1Qf
+	So6ho0NLMidhitAILLnQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hgDBz-0007SY-UI; Wed, 26 Jun 2019 19:02:52 +0000
-Received: from smtp.codeaurora.org ([198.145.29.96])
+	id 1hgDXE-0008AU-2u; Wed, 26 Jun 2019 19:24:48 +0000
+Received: from smtp02.smtpout.orange.fr ([80.12.242.124]
+ helo=smtp.smtpout.orange.fr)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hgDBZ-0007PC-Nf
- for linux-arm-kernel@lists.infradead.org; Wed, 26 Jun 2019 19:02:27 +0000
-Received: by smtp.codeaurora.org (Postfix, from userid 1000)
- id A77BD60F3A; Wed, 26 Jun 2019 19:02:24 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=codeaurora.org;
- s=default; t=1561575745;
- bh=ssCLH2DoKTlXWGV9yiNUwpiNQxntMU7hy1HNqKFxCCg=;
- h=Subject:To:Cc:References:From:Date:In-Reply-To:From;
- b=JP2W7Z05S65V6m1oiRDauhdOVwpkcW3VqS+0cRxwy+TI833fdK8i1Y7AMgT03vyFl
- wCI8gS2D/iBlGWF2j/a3BAPfg1xnq5VfRy2UNDo1E6ZOfzGmJi7SX5HeEyHcEe0ZxP
- KlqmWYTeyiSh3ktK3qZQasSBesSPrrTmsZi4qWFI=
-X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
- pdx-caf-mail.web.codeaurora.org
-X-Spam-Level: 
-X-Spam-Status: No, score=-2.7 required=2.0 tests=ALL_TRUSTED,BAYES_00,
- DKIM_INVALID,DKIM_SIGNED,SPF_NONE autolearn=no autolearn_force=no
- version=3.4.0
-Received: from [192.168.1.100] (unknown [157.45.87.48])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- (Authenticated sender: saiprakash.ranjan@smtp.codeaurora.org)
- by smtp.codeaurora.org (Postfix) with ESMTPSA id 02D37611C3;
- Wed, 26 Jun 2019 19:02:16 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=codeaurora.org;
- s=default; t=1561575743;
- bh=ssCLH2DoKTlXWGV9yiNUwpiNQxntMU7hy1HNqKFxCCg=;
- h=Subject:To:Cc:References:From:Date:In-Reply-To:From;
- b=oQTNqSlBgSWSEUG6XfeB1st98U6hzR/AGOTiQ15o5PkdK1RlhOT1Dp8Ogl/L8ITFh
- 5oOTx3dBfanB5UeBvQMs40Wb4khZ/Qc7d0xpXDHFT35O+l6/V6qT7S+TfGXhgGrVtc
- tv7kxa597Do8x+Un4bBvHmHuyhhwxCD/RZSqFlt8=
-DMARC-Filter: OpenDMARC Filter v1.3.2 smtp.codeaurora.org 02D37611C3
-Authentication-Results: pdx-caf-mail.web.codeaurora.org;
- dmarc=none (p=none dis=none) header.from=codeaurora.org
-Authentication-Results: pdx-caf-mail.web.codeaurora.org; spf=none
- smtp.mailfrom=saiprakash.ranjan@codeaurora.org
-Subject: Re: [PATCHv3 1/1] coresight: Do not default to CPU0 for missing CPU
- phandle
-To: Mathieu Poirier <mathieu.poirier@linaro.org>
-References: <cover.1561346998.git.saiprakash.ranjan@codeaurora.org>
- <635466ab6a27781966bb083e93d2ca2729473ced.1561346998.git.saiprakash.ranjan@codeaurora.org>
- <CANLsYky6D5EsCL2vOa4hHaqTQRXbN+TT0pSzFrykDL_fHEkiBQ@mail.gmail.com>
-From: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>
-Message-ID: <68fea180-c3a4-b7d9-09b6-1d3ddbc89f9d@codeaurora.org>
-Date: Thu, 27 Jun 2019 00:32:14 +0530
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:60.0) Gecko/20100101
- Thunderbird/60.7.2
+ id 1hgDX0-00089r-EJ
+ for linux-arm-kernel@lists.infradead.org; Wed, 26 Jun 2019 19:24:36 +0000
+Received: from belgarion ([86.210.207.101]) by mwinf5d56 with ME
+ id VXQQ2000A2BnxPa03XQQkJ; Wed, 26 Jun 2019 21:24:29 +0200
+X-ME-Helo: belgarion
+X-ME-Auth: amFyem1pay5yb2JlcnRAb3JhbmdlLmZy
+X-ME-Date: Wed, 26 Jun 2019 21:24:29 +0200
+X-ME-IP: 86.210.207.101
+From: Robert Jarzmik <robert.jarzmik@free.fr>
+To: Olof Johansson <olof@lixom.net>
+Subject: Re: [GIT PULL] pxa-dt for v5.3
+References: <877e9ayg88.fsf@belgarion.home>
+ <20190625115042.qrlpbjzehjhxilvh@localhost>
+X-URL: http://belgarath.falguerolles.org/
+Date: Wed, 26 Jun 2019 21:24:24 +0200
+In-Reply-To: <20190625115042.qrlpbjzehjhxilvh@localhost> (Olof Johansson's
+ message of "Tue, 25 Jun 2019 04:50:42 -0700")
+Message-ID: <87y31ow3o7.fsf@belgarion.home>
+User-Agent: Gnus/5.130008 (Ma Gnus v0.8) Emacs/26 (gnu/linux)
 MIME-Version: 1.0
-In-Reply-To: <CANLsYky6D5EsCL2vOa4hHaqTQRXbN+TT0pSzFrykDL_fHEkiBQ@mail.gmail.com>
-Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190626_120225_889610_21F88D9E 
-X-CRM114-Status: GOOD (  16.38  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20190626_122434_780078_3DAD717E 
+X-CRM114-Status: GOOD (  15.31  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.145.29.96 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [80.12.242.124 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (robert.jarzmik[at]free.fr)
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -100,87 +67,40 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Rajendra Nayak <rnayak@codeaurora.org>,
- Suzuki K Poulose <suzuki.poulose@arm.com>,
- Alexander Shishkin <alexander.shishkin@linux.intel.com>,
- linux-arm-msm <linux-arm-msm@vger.kernel.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- David Brown <david.brown@linaro.org>, Rob Herring <robh+dt@kernel.org>,
- Sibi Sankar <sibis@codeaurora.org>, Vivek Gautam <vivek.gautam@codeaurora.org>,
- Leo Yan <leo.yan@linaro.org>, Andy Gross <andy.gross@linaro.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Cc: arm@kernel.org, Haojian Zhuang <haojian.zhuang@gmail.com>,
+ linux-arm-kernel@lists.infradead.org, Daniel Mack <zonque@gmail.com>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Mathieu,
+Olof Johansson <olof@lixom.net> writes:
 
-On 6/26/2019 11:11 PM, Mathieu Poirier wrote:
-> Hi Sai,
-> 
-> On Sun, 23 Jun 2019 at 21:36, Sai Prakash Ranjan
-> <saiprakash.ranjan@codeaurora.org> wrote:
->> diff --git a/drivers/hwtracing/coresight/coresight-platform.c b/drivers/hwtracing/coresight/coresight-platform.c
->> index 3c5ceda8db24..4990da2c13e9 100644
->> --- a/drivers/hwtracing/coresight/coresight-platform.c
->> +++ b/drivers/hwtracing/coresight/coresight-platform.c
->> @@ -159,16 +159,16 @@ static int of_coresight_get_cpu(struct device *dev)
->>          struct device_node *dn;
->>
->>          if (!dev->of_node)
->> -               return 0;
->> +               return -ENODEV;
->> +
->>          dn = of_parse_phandle(dev->of_node, "cpu", 0);
->> -       /* Affinity defaults to CPU0 */
->>          if (!dn)
->> -               return 0;
->> +               return -ENODEV;
->> +
->>          cpu = of_cpu_node_to_id(dn);
->>          of_node_put(dn);
->>
->> -       /* Affinity to CPU0 if no cpu nodes are found */
->> -       return (cpu < 0) ? 0 : cpu;
->> +       return cpu;
->>   }
-> 
-> Function of_coresight_get_cpu() needs to return -ENODEV rather than 0
-> when !CONFIG_OF
-> 
->>
->>   /*
->> @@ -734,14 +734,14 @@ static int acpi_coresight_get_cpu(struct device *dev)
->>          struct acpi_device *adev = ACPI_COMPANION(dev);
->>
->>          if (!adev)
->> -               return 0;
->> +               return -ENODEV;
->>          status = acpi_get_parent(adev->handle, &cpu_handle);
->>          if (ACPI_FAILURE(status))
->> -               return 0;
->> +               return -ENODEV;
->>
->>          cpu = acpi_handle_to_logical_cpuid(cpu_handle);
->>          if (cpu >= nr_cpu_ids)
->> -               return 0;
->> +               return -ENODEV;
->>          return cpu;
->>   }
->>
-> 
-> Same as above, but for !CONFIG_ACPI
-> 
+> On Mon, Jun 24, 2019 at 08:45:43PM +0200, Robert Jarzmik wrote:
+>> Hi Arnd, Kevin, and Olof,
+>> 
+>> This is the pxa devicetree pull request for 5.3. Can you please consider pulling ?
+>> 
+>> The following changes since commit a188339ca5a396acc588e5851ed7e19f66b0ebd9:
+>> 
+>>   Linux 5.2-rc1 (2019-05-19 15:47:09 -0700)
+>> 
+>> are available in the Git repository at:
+>> 
+>>   https://github.com/rjarzmik/linux.git tags/pxa-dt-5.3
+>> 
+>> for you to fetch changes up to bea8754e784ef894a7aaf1821a1e8b700cc70f32:
+>> 
+>>   ARM: dts: pxa300-raumfeld-speaker-one: add channel output mapping for STA320 (2019-06-24 11:35:02 +0200)
+>
+> Merged, thanks!
+Thanks.
+I hope you have also seen the other one of the split.
 
-Have fixed and resent, thanks Mathieu.
-
--Sai
+Cheers.
 
 -- 
-QUALCOMM INDIA, on behalf of Qualcomm Innovation Center, Inc. is a member
-of Code Aurora Forum, hosted by The Linux Foundation
+Robert
 
 _______________________________________________
 linux-arm-kernel mailing list
