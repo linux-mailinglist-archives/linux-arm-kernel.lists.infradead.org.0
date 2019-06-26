@@ -2,52 +2,46 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5EBDA56F59
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 26 Jun 2019 19:10:17 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C597856F78
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 26 Jun 2019 19:18:45 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=NVTPerCAntMeNSFlnc2xzz2qIyWXIXTUS0pvHjD3WO4=; b=PRBLZa0IaSiTc+
-	TrCftsZuuAVJEAoL0dZrr6Zs5eVK12D2aQ60jdd1LrKMH7CZ/2epCp28JO+mRLc/u72Ufv85qE7NT
-	Qrhrei4VQfqZ+75PKXUbkVxzqOv+h0yOJifDsJeFyuAhI2koj9T7ZNsSBf8TWLT/sZm7yVyBeKslV
-	hbeoTwpCZbd5Vz28N4/9UD9JZ8+r4fShH3tBZ3FKoz2rl7gfRk66ENGl5WTkCfnjrdpNAZ0gy1Vq8
-	MOfAwQa+EA+Wrv1XHZu9MWBUV7Yc6dxCDhv59Q8PvnnYTYo7eqyefFBlNVZW2o7925YBVD7ztQelq
-	i5prZZG0O+9toJY3P4kg==;
+	List-Owner; bh=YsvTb22V2BjATEqJf+17lTahvz7juu+v0AKReD1GpwY=; b=UQNPpCCdRKjivT
+	qXmaw24cglo42mewsi5UBKLmGnfecgkyKEraZCRPm/fohUgxZnsvqvVx7BBMiAGD+MjYB7+35tLbN
+	g+5edNeqECu9DNi9xqaiwC0oj/QKXksZWhJzzgFsY2r06Z2M71e0DAVkdzCg/UEsWRGUBtZOABX3S
+	lLhiihMzPnQQQJElJvnMPG4NpEzR9X/NxwsDeEGafvnqEVk6q7fxYXW2jTj5KuBIhBmvHCC4oOz43
+	GK3BOeALdsQd2WbR2Rp8YJxIi+TYjdNB8NKOkWseKzyoEJrGj4LpbM8Q+aorX4UOmJlnL0xRNlpUY
+	/dxiuawk0qoO9WZNoLnQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hgBQv-0004It-PT; Wed, 26 Jun 2019 17:10:09 +0000
+	id 1hgBZD-0008Gp-HQ; Wed, 26 Jun 2019 17:18:43 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hgBQB-0004IC-Tu
- for linux-arm-kernel@lists.infradead.org; Wed, 26 Jun 2019 17:09:25 +0000
+ id 1hgBYx-0008Fq-CL
+ for linux-arm-kernel@lists.infradead.org; Wed, 26 Jun 2019 17:18:28 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 5AD402B;
- Wed, 26 Jun 2019 10:09:23 -0700 (PDT)
-Received: from e107155-lin (e107155-lin.cambridge.arm.com [10.1.196.42])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 6DAB53F718;
- Wed, 26 Jun 2019 10:09:21 -0700 (PDT)
-Date: Wed, 26 Jun 2019 18:09:19 +0100
-From: Sudeep Holla <sudeep.holla@arm.com>
-To: Florian Fainelli <f.fainelli@gmail.com>
-Subject: Re: [PATCH V2 2/2] mailbox: introduce ARM SMC based mailbox
-Message-ID: <20190626170919.GC13572@e107155-lin>
-References: <20190603083005.4304-1-peng.fan@nxp.com>
- <20190603083005.4304-3-peng.fan@nxp.com>
- <CABb+yY1wW-arSMQSYjrezXOZ0Ar_shAr78MOyUD3hBxXohWx3g@mail.gmail.com>
- <AM0PR04MB44813A4DE544E53EB7B6F02B88E30@AM0PR04MB4481.eurprd04.prod.outlook.com>
- <CABb+yY38MAZqVOhjyV+GByPvpFcTfKbNG1rJ8YDRd1vi1F4fqg@mail.gmail.com>
- <AM0PR04MB44814D3BD59033ECDDE3094C88E20@AM0PR04MB4481.eurprd04.prod.outlook.com>
- <e49278ba-f734-e019-ab44-53afe558bd85@gmail.com>
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 3BC85360;
+ Wed, 26 Jun 2019 10:18:26 -0700 (PDT)
+Received: from arrakis.emea.arm.com (arrakis.cambridge.arm.com [10.1.196.78])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
+ 876353F718; Wed, 26 Jun 2019 10:18:21 -0700 (PDT)
+Date: Wed, 26 Jun 2019 18:18:19 +0100
+From: Catalin Marinas <catalin.marinas@arm.com>
+To: Andrew Morton <akpm@linux-foundation.org>
+Subject: Re: [PATCH v18 00/15] arm64: untag user pointers passed to the kernel
+Message-ID: <20190626171819.GG29672@arrakis.emea.arm.com>
+References: <cover.1561386715.git.andreyknvl@google.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <e49278ba-f734-e019-ab44-53afe558bd85@gmail.com>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+In-Reply-To: <cover.1561386715.git.andreyknvl@google.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190626_100924_053432_A7F029FD 
-X-CRM114-Status: GOOD (  20.37  )
+X-CRM114-CacheID: sfid-20190626_101827_514892_06EEDD66 
+X-CRM114-Status: GOOD (  14.15  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -66,76 +60,103 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- Devicetree List <devicetree@vger.kernel.org>, Peng Fan <peng.fan@nxp.com>,
- Sudeep Holla <sudeep.holla@arm.com>, "festevam@gmail.com" <festevam@gmail.com>,
- Jassi Brar <jassisinghbrar@gmail.com>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Rob Herring <robh+dt@kernel.org>, dl-linux-imx <linux-imx@nxp.com>, ",
- Sascha Hauer" <kernel@pengutronix.de>, Andre Przywara <andre.przywara@arm.com>,
- "van.freenix@gmail.com" <van.freenix@gmail.com>,
- Shawn Guo <shawnguo@kernel.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: Mark Rutland <mark.rutland@arm.com>, kvm@vger.kernel.org,
+ Szabolcs Nagy <Szabolcs.Nagy@arm.com>, Will Deacon <will.deacon@arm.com>,
+ dri-devel@lists.freedesktop.org, linux-mm@kvack.org,
+ Khalid Aziz <khalid.aziz@oracle.com>, linux-kselftest@vger.kernel.org,
+ Felix Kuehling <Felix.Kuehling@amd.com>,
+ Vincenzo Frascino <vincenzo.frascino@arm.com>,
+ Jacob Bramley <Jacob.Bramley@arm.com>, Leon Romanovsky <leon@kernel.org>,
+ linux-rdma@vger.kernel.org, amd-gfx@lists.freedesktop.org,
+ Christoph Hellwig <hch@infradead.org>, Jason Gunthorpe <jgg@ziepe.ca>,
+ Dmitry Vyukov <dvyukov@google.com>, Dave Martin <Dave.Martin@arm.com>,
+ Evgeniy Stepanov <eugenis@google.com>, linux-media@vger.kernel.org,
+ Kevin Brodsky <kevin.brodsky@arm.com>, Kees Cook <keescook@chromium.org>,
+ Ruben Ayrapetyan <Ruben.Ayrapetyan@arm.com>,
+ Andrey Konovalov <andreyknvl@google.com>,
+ Ramana Radhakrishnan <Ramana.Radhakrishnan@arm.com>,
+ Alex Williamson <alex.williamson@redhat.com>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>,
+ linux-arm-kernel@lists.infradead.org, Kostya Serebryany <kcc@google.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Yishai Hadas <yishaih@mellanox.com>, linux-kernel@vger.kernel.org,
+ Jens Wiklander <jens.wiklander@linaro.org>, Lee Smith <Lee.Smith@arm.com>,
+ Alexander Deucher <Alexander.Deucher@amd.com>, enh <enh@google.com>,
+ Robin Murphy <robin.murphy@arm.com>,
+ Christian Koenig <Christian.Koenig@amd.com>,
+ Luc Van Oostenryck <luc.vanoostenryck@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Jun 26, 2019 at 09:44:06AM -0700, Florian Fainelli wrote:
-> On 6/26/19 6:31 AM, Peng Fan wrote:
-> >>> The firmware driver might not have func-id, such as SCMI/SCPI.
-> >>> So add an optional func-id to let smc mailbox driver could
-> >>> use smc SiP func id.
-> >>>
-> >> There is no end to conforming to protocols. Controller drivers should
-> >> be written having no particular client in mind.
-> >
-> > If the func-id needs be passed from user, then the chan_id suggested
-> > by Sudeep should also be passed from user, not in mailbox driver.
-> >
-> > Jassi, so from your point, arm_smc_send_data just send a0 - a6
-> > to firmware, right?
-> >
-> > Sudeep, Andre, Florian,
-> >
-> > What's your suggestion? SCMI not support, do you have
-> > plan to add smc transport in SCMI?
->
-> On the platforms that I work with, we have taken the liberty of
-> implementing SCMI in our monitor firmware because the other MCU we use
-> for dynamic voltage and frequency scaling did not have enough memory to
-> support that and we still had the ability to make that firmware be
-> trusted enough we could give it power management responsibilities. I
-> would certainly feel more comfortable if the SCMI specification was
-> amended to indicate that the Agent could be such a software entity,
-> still residing on the same host CPU as the Platform(s), but if not,
-> that's fine.
->
+Hi Andrew,
 
-That's completely legal and there's nothing in the specification that
-prohibits. I understand it's not explicitly not mentioned and I have
-been trying to get such things clarified. But since it's main focus
-is on the message protocol, the clarity on transport mechanism is very
-thin and there's hesitation to add more details under the impression
-that it may restrict the usage.
+On Mon, Jun 24, 2019 at 04:32:45PM +0200, Andrey Konovalov wrote:
+> Andrey Konovalov (14):
+>   arm64: untag user pointers in access_ok and __uaccess_mask_ptr
+>   lib: untag user pointers in strn*_user
+>   mm: untag user pointers passed to memory syscalls
+>   mm: untag user pointers in mm/gup.c
+>   mm: untag user pointers in get_vaddr_frames
+>   fs/namespace: untag user pointers in copy_mount_options
+>   userfaultfd: untag user pointers
+>   drm/amdgpu: untag user pointers
+>   drm/radeon: untag user pointers in radeon_gem_userptr_ioctl
+>   IB/mlx4: untag user pointers in mlx4_get_umem_mr
+>   media/v4l2-core: untag user pointers in videobuf_dma_contig_user_get
+>   tee/shm: untag user pointers in tee_shm_register
+>   vfio/type1: untag user pointers in vaddr_get_pfn
+>   selftests, arm64: add a selftest for passing tagged pointers to kernel
+> 
+> Catalin Marinas (1):
+>   arm64: Introduce prctl() options to control the tagged user addresses
+>     ABI
+> 
+>  arch/arm64/Kconfig                            |  9 +++
+>  arch/arm64/include/asm/processor.h            |  8 +++
+>  arch/arm64/include/asm/thread_info.h          |  1 +
+>  arch/arm64/include/asm/uaccess.h              | 12 +++-
+>  arch/arm64/kernel/process.c                   | 72 +++++++++++++++++++
+>  .../gpu/drm/amd/amdgpu/amdgpu_amdkfd_gpuvm.c  |  2 +-
+>  drivers/gpu/drm/amd/amdgpu/amdgpu_gem.c       |  2 +
+>  drivers/gpu/drm/radeon/radeon_gem.c           |  2 +
+>  drivers/infiniband/hw/mlx4/mr.c               |  7 +-
+>  drivers/media/v4l2-core/videobuf-dma-contig.c |  9 +--
+>  drivers/tee/tee_shm.c                         |  1 +
+>  drivers/vfio/vfio_iommu_type1.c               |  2 +
+>  fs/namespace.c                                |  2 +-
+>  fs/userfaultfd.c                              | 22 +++---
+>  include/uapi/linux/prctl.h                    |  5 ++
+>  kernel/sys.c                                  | 12 ++++
+>  lib/strncpy_from_user.c                       |  3 +-
+>  lib/strnlen_user.c                            |  3 +-
+>  mm/frame_vector.c                             |  2 +
+>  mm/gup.c                                      |  4 ++
+>  mm/madvise.c                                  |  2 +
+>  mm/mempolicy.c                                |  3 +
+>  mm/migrate.c                                  |  2 +-
+>  mm/mincore.c                                  |  2 +
+>  mm/mlock.c                                    |  4 ++
+>  mm/mprotect.c                                 |  2 +
+>  mm/mremap.c                                   |  7 ++
+>  mm/msync.c                                    |  2 +
+>  tools/testing/selftests/arm64/.gitignore      |  1 +
+>  tools/testing/selftests/arm64/Makefile        | 11 +++
+>  .../testing/selftests/arm64/run_tags_test.sh  | 12 ++++
+>  tools/testing/selftests/arm64/tags_test.c     | 29 ++++++++
+>  32 files changed, 232 insertions(+), 25 deletions(-)
 
-But as I mentioned, I understand what you need there :)
+It looks like we got to an agreement on how to deal with tagged user
+addresses between SPARC ADI and ARM Memory Tagging. If there are no
+other objections, what's your preferred way of getting this series into
+-next first and then mainline? Are you ok to merge them into the mm
+tree?
 
-> This has lead us to implement a mailbox driver that uses a proprietary
-> SMC call for the P2A path ("tx" channel) and the return being done via
-> either that same SMC or through SGI. You can take a look at it in our
-> downstream tree here actually:
->
-> https://github.com/Broadcom/stblinux-4.9/blob/master/linux/drivers/mailbox/brcmstb-mailbox.c
->
+Thanks.
 
-Just curious, I see it's fast call and why do you still depend on
-interrupt to indicate completion of the message. Will the return from
-SMC not suffice ? Sorry if I am missing something obvious.
-
---
-Regards,
-Sudeep
+-- 
+Catalin
 
 _______________________________________________
 linux-arm-kernel mailing list
