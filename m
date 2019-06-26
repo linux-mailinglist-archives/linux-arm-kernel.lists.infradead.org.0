@@ -2,57 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5336A56E7F
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 26 Jun 2019 18:14:46 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D387356EA0
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 26 Jun 2019 18:24:01 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=XtlTB9JSeMNxBxf7zJ5t2/e3KM3bE45SAe5rsniLuJU=; b=T/DWwwPMomaUmx
-	kpGJ7+4kbN/AdtbkYhEnoiMK6kffz6Xi2LOyHqVdrnLgvv+IT0BAsjJ2/SlMn7AyeEFziZKKxLcm/
-	t9/y5WWSkynN+zudifU5nUPrjU/s8QopiTupBAvZ5a+sQSurRzcnzOOw3SGKCWVNhDgN+naR/WsMw
-	prwXnrDEHNfROtRv/TmOI36P+SFvfDdJpc4r4O32yiq/Bx3Q02m79MNvdEIorXYuIJH7Olrnzynzw
-	CJolZ4BdNF4GBIVE/f1Dqcx3z487aAL/jzxGyf4lVJpvYSAlycKRq2JITVKBRPjzK1W59eYQxTcko
-	vpGB1URopKrL4YDSwchg==;
+	List-Owner; bh=F3ry+RddVEEPhibGvHcj5W3X01vAaIUQvwgUElGbpoM=; b=DljFnQfDxfsrq+
+	M0FGxdIeTFMRunJT5HrKCRgkZXZ+1UGZSrajsS96G5JrtqCfi4qw6rDqfc3ZSfRh9SJB/0TKI28i6
+	CeI6Aii7NBVVtMRIn/dZPzV/q6TVpFblnlymlwcNeFUloCwMLXhUKH6B1wUYPtOckuW2EoeMNC35q
+	n4b8FuVU7fdYDd9Jb/3HxmWYeaotqb3t5NTs9ItNJweN8VIK4ek01Qq0KCzg5Q79tgKmg6rkhJWk/
+	kfYOehbazZUALBJjfNW9asArLK8lpHKNeYjm4DzKI5h948d79r6BY3/erieaDtZWLSR+Xp5mAY30r
+	+P2k7e8ngWgo1133W34g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hgAZG-00059a-38; Wed, 26 Jun 2019 16:14:42 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hgAYz-00058H-IG
- for linux-arm-kernel@lists.infradead.org; Wed, 26 Jun 2019 16:14:27 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 6476C2B;
- Wed, 26 Jun 2019 09:14:21 -0700 (PDT)
-Received: from e103592.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
- [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id B27B73F706;
- Wed, 26 Jun 2019 09:14:18 -0700 (PDT)
-Date: Wed, 26 Jun 2019 17:14:16 +0100
-From: Dave Martin <Dave.Martin@arm.com>
-To: Vincenzo Frascino <vincenzo.frascino@arm.com>
-Subject: Re: [PATCH v7 04/25] arm64: Substitute gettimeofday with C
- implementation
-Message-ID: <20190626161413.GA2790@e103592.cambridge.arm.com>
-References: <20190621095252.32307-1-vincenzo.frascino@arm.com>
- <20190621095252.32307-5-vincenzo.frascino@arm.com>
- <20190625153336.GZ2790@e103592.cambridge.arm.com>
- <f5ac379a-731d-0662-2f5b-bd046e3bd1c5@arm.com>
+	id 1hgAiE-0000ti-Ig; Wed, 26 Jun 2019 16:23:58 +0000
+Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hgAi1-0000s0-Et; Wed, 26 Jun 2019 16:23:48 +0000
+Received: from localhost (unknown [IPv6:2a01:e0a:2c:6930:5cf4:84a1:2763:fe0d])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ (Authenticated sender: bbrezillon)
+ by bhuna.collabora.co.uk (Postfix) with ESMTPSA id 155F72753CB;
+ Wed, 26 Jun 2019 17:23:43 +0100 (BST)
+Date: Wed, 26 Jun 2019 18:23:39 +0200
+From: Boris Brezillon <boris.brezillon@collabora.com>
+To: Qii Wang <qii.wang@mediatek.com>
+Subject: Re: [PATCH v2 1/2] dt-bindings: i3c: Document MediaTek I3C master
+ bindings
+Message-ID: <20190626182339.0c6301a2@collabora.com>
+In-Reply-To: <1561527388-4829-2-git-send-email-qii.wang@mediatek.com>
+References: <1561527388-4829-1-git-send-email-qii.wang@mediatek.com>
+ <1561527388-4829-2-git-send-email-qii.wang@mediatek.com>
+Organization: Collabora
+X-Mailer: Claws Mail 3.17.3 (GTK+ 2.24.32; x86_64-redhat-linux-gnu)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <f5ac379a-731d-0662-2f5b-bd046e3bd1c5@arm.com>
-User-Agent: Mutt/1.5.23 (2014-03-12)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190626_091425_697167_720B4EB2 
-X-CRM114-Status: GOOD (  33.37  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190626_092347_163705_2E11ABF4 
+X-CRM114-Status: GOOD (  16.52  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -65,326 +61,97 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arch@vger.kernel.org, Shuah Khan <shuah@kernel.org>,
- Catalin Marinas <catalin.marinas@arm.com>, Arnd Bergmann <arnd@arndb.de>,
- Mark Salyzyn <salyzyn@android.com>, Huw Davies <huw@codeweavers.com>,
- Andre Przywara <andre.przywara@arm.com>,
- Daniel Lezcano <daniel.lezcano@linaro.org>, Will Deacon <will.deacon@arm.com>,
- linux-kernel@vger.kernel.org, Ralf Baechle <ralf@linux-mips.org>,
- linux-mips@vger.kernel.org, Paul Burton <paul.burton@mips.com>,
- linux-kselftest@vger.kernel.org, Rasmus Villemoes <linux@rasmusvillemoes.dk>,
- Russell King <linux@armlinux.org.uk>, Dmitry Safonov <0x7f454c46@gmail.com>,
- Shijith Thotton <sthotton@marvell.com>, Peter Collingbourne <pcc@google.com>,
- Thomas Gleixner <tglx@linutronix.de>, linux-arm-kernel@lists.infradead.org
+Cc: devicetree@vger.kernel.org, srv_heupstream@mediatek.com,
+ bbrezillon@kernel.org, leilk.liu@mediatek.com, gregkh@linuxfoundation.org,
+ linux-kernel@vger.kernel.org, liguo.zhang@mediatek.com,
+ linux-mediatek@lists.infradead.org, xinping.qian@mediatek.com,
+ matthias.bgg@gmail.com, linux-i3c@lists.infradead.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Jun 26, 2019 at 02:27:59PM +0100, Vincenzo Frascino wrote:
-> Hi Dave,
-> 
-> On 25/06/2019 16:33, Dave Martin wrote:
-> > On Fri, Jun 21, 2019 at 10:52:31AM +0100, Vincenzo Frascino wrote:
-> >> To take advantage of the commonly defined vdso interface for
-> >> gettimeofday the architectural code requires an adaptation.
-> >>
-> >> Re-implement the gettimeofday vdso in C in order to use lib/vdso.
-> >>
-> >> With the new implementation arm64 gains support for CLOCK_BOOTTIME
-> >> and CLOCK_TAI.
-> >>
-> >> Cc: Catalin Marinas <catalin.marinas@arm.com>
-> >> Cc: Will Deacon <will.deacon@arm.com>
-> >> Signed-off-by: Vincenzo Frascino <vincenzo.frascino@arm.com>
-> >> Tested-by: Shijith Thotton <sthotton@marvell.com>
-> >> Tested-by: Andre Przywara <andre.przywara@arm.com>
-> > 
-> > [...]
-> > 
-> >> diff --git a/arch/arm64/include/asm/vdso/gettimeofday.h b/arch/arm64/include/asm/vdso/gettimeofday.h
-> >> new file mode 100644
-> >> index 000000000000..bc3cb6738051
-> >> --- /dev/null
-> >> +++ b/arch/arm64/include/asm/vdso/gettimeofday.h
-> >> @@ -0,0 +1,86 @@
-> >> +/* SPDX-License-Identifier: GPL-2.0 */
-> >> +/*
-> >> + * Copyright (C) 2018 ARM Limited
-> >> + */
-> >> +#ifndef __ASM_VDSO_GETTIMEOFDAY_H
-> >> +#define __ASM_VDSO_GETTIMEOFDAY_H
-> >> +
-> >> +#ifndef __ASSEMBLY__
-> >> +
-> >> +#include <asm/unistd.h>
-> >> +#include <uapi/linux/time.h>
-> >> +
-> >> +#define VDSO_HAS_CLOCK_GETRES		1
-> >> +
-> >> +static __always_inline int gettimeofday_fallback(
-> >> +					struct __kernel_old_timeval *_tv,
-> >> +					struct timezone *_tz)
-> > 
-> > Out of interest, does this need to be __always_inline?
-> > 
-> 
-> It is a design choice. Philosophically, I prefer to control and reduce the scope
-> of the decisions the compiler has to make in order to not have surprises.
-> 
-> >> +{
-> >> +	register struct timezone *tz asm("x1") = _tz;
-> >> +	register struct __kernel_old_timeval *tv asm("x0") = _tv;
-> >> +	register long ret asm ("x0");
-> >> +	register long nr asm("x8") = __NR_gettimeofday;
-> >> +
-> >> +	asm volatile(
-> >> +	"       svc #0\n"
-> > 
-> > Can inlining of this function result in non-trivial expressions being
-> > substituted for _tz or _tv?
-> > 
-> > A function call can clobber register asm vars that are assigned to the
-> > caller-save registers or that the PCS uses for function arguments, and
-> > the situations where this can happen are poorly defined AFAICT.  There's
-> > also no reliable way to detect at build time whether the compiler has
-> > done this, and no robust way to stop if happening.
-> > 
-> > (IMHO the compiler is wrong to do this, but it's been that way for ever,
-> > and I think I saw GCC 9 show this behaviour recently when I was
-> > investigating something related.)
-> > 
-> > 
-> > To be safe, it's better to put this out of line, or remove the reg asm()
-> > specifiers, mark x0-x18 and lr as clobbered here (so that the compiler
-> > doesn't map arguments to them), and put movs in the asm to move things
-> > into the right registers.  The syscall number can be passed with an "i"
-> > constraint.  (And yes, this sucks.)
-> > 
-> > If the code this is inlined in is simple enough though, we can be fairly
-> > confident of getting away with it.
-> >
-> 
-> I took very seriously what you are mentioning here because I think
-> that robustness of the code comes before than everything especially
-> in the kernel and I carried on some experiments to try to verify if
-> in this case is safe to assume that the compiler is doing the right
-> thing.
-> 
-> Based on my investigation and on previous observations of the
-> generation of the vDSO library, I can conclude that the approach
-> seems safe due to the fact that the usage of this code is very
-> limited, the code itself is simple enough and that gcc would inline
-> this code anyway based on the current compilation options.
+On Wed, 26 Jun 2019 13:36:27 +0800
+Qii Wang <qii.wang@mediatek.com> wrote:
 
-I'd caution about "seems safe".  A lot of subtly wrong code not only
-seems safe, but _is_ safe in its original context, in practice.  Add
-some code to the vdso over time though, or tweak the compilation options
-at some point in the future, or use a different compiler, and things
-could still go wrong.
+> Document MediaTek I3C master DT bindings.
+> 
+> Signed-off-by: Qii Wang <qii.wang@mediatek.com>
+> ---
+>  .../devicetree/bindings/i3c/mtk,i3c-master.txt     |   47 ++++++++++++++++++++
+>  1 file changed, 47 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/i3c/mtk,i3c-master.txt
+> 
+> diff --git a/Documentation/devicetree/bindings/i3c/mtk,i3c-master.txt b/Documentation/devicetree/bindings/i3c/mtk,i3c-master.txt
+> new file mode 100644
+> index 0000000..3fd4f17
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/i3c/mtk,i3c-master.txt
+> @@ -0,0 +1,47 @@
+> +Bindings for MediaTek I3C master block
+> +=====================================
+> +
+> +Required properties:
+> +--------------------
+> +- compatible: shall be "mediatek,i3c-master"
+> +- reg: physical base address of the controller and apdma base, length of
+> +  memory mapped region.
+> +- reg-names: should be "main" for controller and "dma" for apdma.
+> +- interrupts: interrupt number to the cpu.
 
-(Further comments below.)
+Depending on the interrupt controller, each interrupt cell might
+contain more than just the interrupt number.
 
-> The experiment that I did was to define some self-contained code that
-> tries to mimic what you are describing and compile it with 3
-> different versions of gcc (6.4, 8.1 and 8.3) and in all the tree
-> cases the behavior seems correct.
-> 
-> Code:
-> =====
-> 
-> typedef int ssize_t;
-> typedef int size_t;
-> 
-> static int my_strlen(const char *s)
-> {
-> 	int i = 0;
-> 
-> 	while (s[i] == '\0')
-> 		i++;
-> 
-> 	return i;
-> }
-> 
-> static inline ssize_t my_syscall(int fd, const void *buf, size_t count)
-> {
-> 	register ssize_t arg1 asm ("x0") = fd;
-> 	register const void *arg2 asm ("x1") = buf;
-> 	register size_t arg3 asm ("x2") = count;
-> 
-> 	__asm__ volatile (
-> 		"mov x8, #64\n"
-> 		"svc #0\n"
-> 		: "=&r" (arg1)
-> 		: "r" (arg2), "r" (arg3)
-> 		: "x8"
->         );
-> 
->         return arg1;
-> }
-> 
-> void sys_caller(const char *s)
-> {
-> 	my_syscall(1, s, my_strlen(s));
-> }
-> 
-> 
-> GCC 8.3.0:
-> ==========
-> 
-> main.8.3.0.o:     file format elf64-littleaarch64
-> 
-> 
-> Disassembly of section .text:
-> 
-> 0000000000000000 <sys_caller>:
->    0:	39400001 	ldrb	w1, [x0]
->    4:	35000161 	cbnz	w1, 30 <sys_caller+0x30>
->    8:	d2800023 	mov	x3, #0x1                   	// #1
->    c:	d1000404 	sub	x4, x0, #0x1
->   10:	2a0303e2 	mov	w2, w3
->   14:	91000463 	add	x3, x3, #0x1
->   18:	38636881 	ldrb	w1, [x4, x3]
->   1c:	34ffffa1 	cbz	w1, 10 <sys_caller+0x10>
->   20:	aa0003e1 	mov	x1, x0
->   24:	d2800808 	mov	x8, #0x40                  	// #64
->   28:	d4000001 	svc	#0x0
->   2c:	d65f03c0 	ret
->   30:	52800002 	mov	w2, #0x0                   	// #0
->   34:	17fffffb 	b	20 <sys_caller+0x20>
-> 
-> 
-> GCC 8.1.0:
-> ==========
-> 
-> main.8.1.0.o:     file format elf64-littleaarch64
-> 
-> 
-> Disassembly of section .text:
-> 
-> 0000000000000000 <sys_caller>:
->    0:	39400001 	ldrb	w1, [x0]
->    4:	35000161 	cbnz	w1, 30 <sys_caller+0x30>
->    8:	d2800023 	mov	x3, #0x1                   	// #1
->    c:	d1000404 	sub	x4, x0, #0x1
->   10:	2a0303e2 	mov	w2, w3
->   14:	91000463 	add	x3, x3, #0x1
->   18:	38636881 	ldrb	w1, [x4, x3]
->   1c:	34ffffa1 	cbz	w1, 10 <sys_caller+0x10>
->   20:	aa0003e1 	mov	x1, x0
->   24:	d2800808 	mov	x8, #0x40                  	// #64
->   28:	d4000001 	svc	#0x0
->   2c:	d65f03c0 	ret
->   30:	52800002 	mov	w2, #0x0                   	// #0
->   34:	17fffffb 	b	20 <sys_caller+0x20>
-> 
-> 
-> 
-> GCC 6.4.0:
-> ==========
-> 
-> main.6.4.0.o:     file format elf64-littleaarch64
-> 
-> 
-> Disassembly of section .text:
-> 
-> 0000000000000000 <sys_caller>:
->    0:	39400001 	ldrb	w1, [x0]
->    4:	35000161 	cbnz	w1, 30 <sys_caller+0x30>
->    8:	d2800023 	mov	x3, #0x1                   	// #1
->    c:	d1000404 	sub	x4, x0, #0x1
->   10:	2a0303e2 	mov	w2, w3
->   14:	91000463 	add	x3, x3, #0x1
->   18:	38636881 	ldrb	w1, [x4, x3]
->   1c:	34ffffa1 	cbz	w1, 10 <sys_caller+0x10>
->   20:	aa0003e1 	mov	x1, x0
->   24:	d2800808 	mov	x8, #0x40                  	// #64
->   28:	d4000001 	svc	#0x0
->   2c:	d65f03c0 	ret
->   30:	52800002 	mov	w2, #0x0                   	// #0
->   34:	17fffffb 	b	20 <sys_caller+0x20>
+> +- clocks: clock name from clock manager.
 
-Thanks for having a go at this.  If the compiler can show the
-problematic behaviour, it looks like your could could probably trigger
-it, and as you observe, it doesn't trigger.
+This property does not contain clock names but clk references.
 
-I am sure I have seen it in the past, but today I am struggling
-to tickle the compiler in the right way.  My original reproducer may
-have involved LTO, but either way I don't still have it :(
+> +- clock-names: must include "main" and "dma".
+> +
+> +Mandatory properties defined by the generic binding (see
+> +Documentation/devicetree/bindings/i3c/i3c.txt for more details):
+> +
+> +- #address-cells: shall be set to 3
+> +- #size-cells: shall be set to 0
+> +
+> +Optional properties defined by the generic binding (see
+> +Documentation/devicetree/bindings/i3c/i3c.txt for more details):
+> +
+> +- i2c-scl-hz
+> +- i3c-scl-hz
+> +
+> +I3C device connected on the bus follow the generic description (see
+> +Documentation/devicetree/bindings/i3c/i3c.txt for more details).
+> +
+> +Example:
+> +
+> +	i3c0: i3c@1100d000 {
+> +		compatible = "mediatek,i3c-master";
+> +		reg = <0x1100d000 0x100>,
+> +		      <0x11000300 0x80>;
+> +		reg-names = "main", "dma";
+> +		interrupts = <GIC_SPI 44 IRQ_TYPE_LEVEL_LOW>;
+> +		clocks = <&i3c0_ck>, <&ap_dma_ck>;
+> +		clock-names = "main", "dma";
+> +		#address-cells = <1>;
+> +		#size-cells = <0>;
+> +		i2c-scl-hz = <100000>;
+> +
+> +		nunchuk: nunchuk@52 {
+> +			compatible = "nintendo,nunchuk";
+> +			reg = <0x52 0x80000010 0>;
 
+reg is wrong here, should be
 
-The classic example of this (triggered directly and not due to inlining)
-would be something like:
+			reg = <0x52 0x0 0x10>;
 
-int bar(int, int);
+While at it, can you send a patch to fix the example in the cadence
+binding doc?
 
-void foo(int x, int y)
-{
-	register int x_ asm("r0") = x;
-	register int y_ asm("r1") = bar(x, y);
+> +		};
+> +	};
 
-	asm volatile (
-		"svc	#0"
-		:: "r" (x_), "r" (y_)
-		: "memory"
-	);
-}
-
-->
-
-0000000000000000 <foo>:
-   0:   a9bf7bfd        stp     x29, x30, [sp, #-16]!
-   4:   910003fd        mov     x29, sp
-   8:   94000000        bl      0 <bar>
-   c:   2a0003e1        mov     w1, w0
-  10:   d4000001        svc     #0x0
-  14:   a8c17bfd        ldp     x29, x30, [sp], #16
-  18:   d65f03c0        ret
-
-
-The gcc documentation is vague and ambiguous about precisely whan this
-can happen and about how to avoid it.
-
-The case where this behaviour is triggered by inlining an expression
-that involves a (possibly implicit) function call seems hard to
-reproduce.
-
-
-However, the workaround is cheap, and to avoid the chance of subtle
-intermittent code gen bugs it may be worth it:
-
-void foo(int x, int y)
-{
-	asm volatile (
-		"mov	x0, %0\n\t"
-		"mov	x1, %1\n\t"
-		"svc	#0"
-		:: "r" (x), "r" (bar(x, y))
-		: "r0", "r1", "memory"
-	);
-}
-
-->
-
-0000000000000000 <foo>:
-   0:   a9be7bfd        stp     x29, x30, [sp, #-32]!
-   4:   910003fd        mov     x29, sp
-   8:   f9000bf3        str     x19, [sp, #16]
-   c:   2a0003f3        mov     w19, w0
-  10:   94000000        bl      0 <bar>
-  14:   2a0003e2        mov     w2, w0
-  18:   aa1303e0        mov     x0, x19
-  1c:   aa0203e1        mov     x1, x2
-  20:   d4000001        svc     #0x0
-  24:   f9400bf3        ldr     x19, [sp, #16]
-  28:   a8c27bfd        ldp     x29, x30, [sp], #32
-  2c:   d65f03c0        ret
-
-
-What do you think?
-
-Cheers
----Dave
 
 _______________________________________________
 linux-arm-kernel mailing list
