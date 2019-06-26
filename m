@@ -2,62 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B06EF57115
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 26 Jun 2019 20:54:27 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1887D57129
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 26 Jun 2019 21:00:19 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:From:To:Subject:
-	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=EzJKk3xU2wx2fWe6FE12VwXPKKoKgex9i+d7Blt6Vzs=; b=MjGV0KrpRoUnHm
-	Z0AXQyG4jRI2trM9nlPAaYdvWEU0tSyVfRQDj1vwL5ckUsFsTSt8R7uDaOTLoncrunMsEHIrpYgXQ
-	dg4wn1oSd0saKBaXaClupUFGG0H4/DeBljCpLQ0wwxCKvhB5/dvjoNZo7BnwyvtPJITNvOzffb9OJ
-	uqQsUeb7lmPwiIF/x6Op6lcDVi/VS/0tsi5fNKuSBpmxj6+QUQbDjm1NP5nXVfJMzWIHltfKqW0RJ
-	4+OSEHK2NVYrGlFE7q4uH2kjVXGjH2ABqM1WfTAsRwxZugoLTQ1ce77wTwDzmDo1JlHoiEjE6OJKq
-	ttLPc8RWl1028GoTt8aA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=H5MERCBxUnE5+y9LVVyth75HgG9bTicZlcexe1dsB/4=; b=rQCOrnjVKYtdTu
+	BSS1RBOYQZRz7/PpKWYMW6Wc+kU6Bfq07ALnByZLKZtp45Q+1mGiLq/QW0OglM+iFZuuNh8NnXlKS
+	3UrmBcbYlaaqZa05/oThUXA+K0WQR4eZdDHMoRIVKB6eymTm9HARy2+dlJl4agqPj+gxTtPFsyMcp
+	jeP7AEblrafACOHMFTeEykSrlyEBD9mU7CE1Spn4mPkkPJcH+pCMyTboDFtPKoZypDQCL6eEZ5HCM
+	UU+hgvJAu12QBtH1I/zebsK0IFMfvNtnOan1vn4Q0Dmt1QCoUHCu6mkPv1ht+DRxbMZY4Zx0V/B9D
+	ryNMj7ZlxPRep1Yzzi3g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hgD3p-0002jC-AP; Wed, 26 Jun 2019 18:54:25 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1hgD9U-0004cy-Ab; Wed, 26 Jun 2019 19:00:16 +0000
+Received: from smtp.codeaurora.org ([198.145.29.96])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hgD3Q-0002ie-JD
- for linux-arm-kernel@lists.infradead.org; Wed, 26 Jun 2019 18:54:01 +0000
-Received: from kernel.org (unknown [104.132.0.74])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ id 1hgD99-0004c0-6g
+ for linux-arm-kernel@lists.infradead.org; Wed, 26 Jun 2019 18:59:56 +0000
+Received: by smtp.codeaurora.org (Postfix, from userid 1000)
+ id 6020960A0A; Wed, 26 Jun 2019 18:59:53 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=codeaurora.org;
+ s=default; t=1561575593;
+ bh=8WgmiRB1fwqFJ3XjC6N9Q04m667OxWcKK9L96wS4Tsk=;
+ h=From:To:Cc:Subject:Date:From;
+ b=DiGQj/UCkPmZa72HQzDxW4zNutbh5CkGyKYgjGrx21p7af4nxtho4B4A/ZKpYBV8F
+ WlgCcZIiMsT/MQ2+crA5LLgoFe2mbaPLJMh3YGhNpLCiKiqJiKMCvOYspTAk6ppU8o
+ K1fZ+h5n83zqLshZJH6P+zo/bWqdn4kEacfaBffk=
+X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
+ pdx-caf-mail.web.codeaurora.org
+X-Spam-Level: 
+X-Spam-Status: No, score=-2.7 required=2.0 tests=ALL_TRUSTED,BAYES_00,
+ DKIM_INVALID,DKIM_SIGNED,SPF_NONE autolearn=no autolearn_force=no
+ version=3.4.0
+Received: from blr-ubuntu-311.qualcomm.com
+ (blr-bdr-fw-01_globalnat_allzones-outside.qualcomm.com [103.229.18.19])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id D90C120B1F;
- Wed, 26 Jun 2019 18:53:59 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1561575240;
- bh=f5WpHBtEtFahIw3vdUhL2oQjYqmF7FGf/RrCjS8X2io=;
- h=In-Reply-To:References:Subject:To:Cc:From:Date:From;
- b=2DgVwPGP72rgzQZSWHXMghXrWIppNM0nQ8i48SfoOD1tLrP9zDD7brzNtRI0QJOXc
- Qe+aMbqYbnlToGBRDg97O+pH0iaHjjItDJlEQ5QnLdAvFL8zCBC8FrUnBJnw34Zq/W
- juX/mJDB/4OZrSjpNW/8We1tG3C7qk6zjbQyeYFo=
+ (Authenticated sender: saiprakash.ranjan@codeaurora.org)
+ by smtp.codeaurora.org (Postfix) with ESMTPSA id 068EF60256;
+ Wed, 26 Jun 2019 18:59:48 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=codeaurora.org;
+ s=default; t=1561575592;
+ bh=8WgmiRB1fwqFJ3XjC6N9Q04m667OxWcKK9L96wS4Tsk=;
+ h=From:To:Cc:Subject:Date:From;
+ b=lVROsomG7J5KhvmiaQqdVdDRFW7mH6K987cKEcd1d5bHXrc5xj0UQZjFlgPkzwq5Q
+ UKG8tPaqsSdcEUAXecDp8aEBRuqQGWqm1gv52oEyT1klSqMqTruUH8CUCYYQNX4ob+
+ b9N8VxS9AB49FVVpdDafTXmexFiCMKIGiG6BYShE=
+DMARC-Filter: OpenDMARC Filter v1.3.2 smtp.codeaurora.org 068EF60256
+Authentication-Results: pdx-caf-mail.web.codeaurora.org;
+ dmarc=none (p=none dis=none) header.from=codeaurora.org
+Authentication-Results: pdx-caf-mail.web.codeaurora.org; spf=none
+ smtp.mailfrom=saiprakash.ranjan@codeaurora.org
+From: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>
+To: Mathieu Poirier <mathieu.poirier@linaro.org>,
+ Suzuki K Poulose <suzuki.poulose@arm.com>,
+ Rob Herring <robh+dt@kernel.org>, devicetree@vger.kernel.org,
+ Leo Yan <leo.yan@linaro.org>,
+ Alexander Shishkin <alexander.shishkin@linux.intel.com>,
+ David Brown <david.brown@linaro.org>, Mark Rutland <mark.rutland@arm.com>
+Subject: [PATCHv4 0/1] coresight: Do not default to CPU0 for missing CPU
+ phandle
+Date: Thu, 27 Jun 2019 00:29:29 +0530
+Message-Id: <cover.1561575087.git.saiprakash.ranjan@codeaurora.org>
+X-Mailer: git-send-email 2.22.0
 MIME-Version: 1.0
-In-Reply-To: <20190621093302.GJ23549@piout.net>
-References: <1560440205-4604-1-git-send-email-claudiu.beznea@microchip.com>
- <20190618095521.GE23549@piout.net>
- <929ac20b-db1d-3f7a-b37c-0dfb253156d5@microchip.com>
- <20190621093302.GJ23549@piout.net>
-Subject: Re: [PATCH 0/7] clk: at91: sckc: improve error path
-To: Alexandre Belloni <alexandre.belloni@bootlin.com>,
- Claudiu.Beznea@microchip.com
-From: Stephen Boyd <sboyd@kernel.org>
-User-Agent: alot/0.8.1
-Date: Wed, 26 Jun 2019 11:53:59 -0700
-Message-Id: <20190626185359.D90C120B1F@mail.kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190626_115400_655090_109B42E6 
-X-CRM114-Status: GOOD (  15.17  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190626_115955_265917_6231BB7F 
+X-CRM114-Status: UNSURE (   8.61  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [198.145.29.96 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -67,7 +90,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -79,52 +101,49 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mturquette@baylibre.com, linux-clk@vger.kernel.org,
- linux-kernel@vger.kernel.org, claudiu.beznea@gmail.com,
+Cc: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>,
+ Rajendra Nayak <rnayak@codeaurora.org>, linux-arm-msm@vger.kernel.org,
+ linux-kernel@vger.kernel.org, Sibi Sankar <sibis@codeaurora.org>,
+ Vivek Gautam <vivek.gautam@codeaurora.org>,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Quoting Alexandre Belloni (2019-06-21 02:33:02)
-> On 20/06/2019 10:30:42+0000, Claudiu.Beznea@microchip.com wrote:
-> > Hi,
-> > 
-> > On 18.06.2019 12:55, Alexandre Belloni wrote:
-> > > On 13/06/2019 15:37:06+0000, Claudiu.Beznea@microchip.com wrote:
-> > >> From: Claudiu Beznea <claudiu.beznea@microchip.com>
-> > >>
-> > >> Hi,
-> > >>
-> > >> This series tries to improve error path for slow clock registrations
-> > >> by adding functions to free resources and using them on failures.
-> > >>
-> > > 
-> > > Does the platform even boot when the slow clock is not available? 
-> > > 
-> > > The TCB clocksource would fail at:
-> > > 
-> > >         tc.slow_clk = of_clk_get_by_name(node->parent, "slow_clk");
-> > >         if (IS_ERR(tc.slow_clk))
-> > >                 return PTR_ERR(tc.slow_clk);
-> > > 
-> > 
-> > In case of using TC as clocksource, yes, the platform wouldn't boot if slow
-> > clock is not available, because, anyway the TC needs it. PIT may work
-> > without it (if slow clock is not used to drive the PIT).
-> > 
-> > For sure there are other IPs (which may be or are driven by slow clock)
-> > which may not work if slow clock is driven them.
-> > 
-> > Anyway, please let me know if you feel this series has no meaning.
-> > 
-> 
-> Well, I'm not sure it is worth it but at the same time, it is not adding
-> many lines and you already developed it...
-> 
+In case of missing CPU phandle, the affinity is set default to
+CPU0 which is not a correct assumption. Fix this in coresight
+platform to set affinity to invalid and abort the probe in drivers.
+Also update the dt-bindings accordingly.
 
-Is that a Reviewed-by or a Rejected-by tag?
+v4:
+ * Fix return for !CONFIG_ACPI and !CONFIG_OF.
+
+v3:
+ * Addressed review comments from Suzuki and updated
+   acpi_coresight_get_cpu.
+ * Removed patch 2 which had invalid check for online
+   cpus.
+
+v2:
+ * Addressed review comments from Suzuki and Mathieu.
+ * Allows the probe of etm and cpu-debug to abort earlier
+   in case of unavailability of respective cpus.
+
+Sai Prakash Ranjan (1):
+  coresight: Do not default to CPU0 for missing CPU phandle
+
+ .../bindings/arm/coresight-cpu-debug.txt      |  4 ++--
+ .../devicetree/bindings/arm/coresight.txt     |  8 +++++---
+ .../hwtracing/coresight/coresight-cpu-debug.c |  3 +++
+ drivers/hwtracing/coresight/coresight-etm3x.c |  3 +++
+ drivers/hwtracing/coresight/coresight-etm4x.c |  3 +++
+ .../hwtracing/coresight/coresight-platform.c  | 20 +++++++++----------
+ 6 files changed, 26 insertions(+), 15 deletions(-)
+
+-- 
+QUALCOMM INDIA, on behalf of Qualcomm Innovation Center, Inc. is a member
+of Code Aurora Forum, hosted by The Linux Foundation
 
 
 _______________________________________________
