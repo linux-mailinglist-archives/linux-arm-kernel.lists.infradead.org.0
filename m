@@ -2,71 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 12C255720E
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 26 Jun 2019 21:55:22 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E2B94572C2
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 26 Jun 2019 22:41:41 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=L+3PA6zBSJUlqI89v7t8KEUFEzDIvgP7SmV/Q++B1wI=; b=NmJwUA7xVGU/2g
-	d0jerPNm5pHQvSeiNinCgUuJBWIrE+uDybtGuQTJxon2S+vlFMitRUZlxMikeaz/++GdLSTAwdrE5
-	ctkVXBsepzvmpS/TW+0vEhjGgbWfuQjXApIZPREv22R5YR3TzNtPl4agJ3ykGCcHyHPihtzaxCKW0
-	l6rbOzHC33/mBj9cswIT+2a/Nlx0BHtMJo/fjWCswDFCPKPVLUhN9lxbTQbN6X9o9vqOafKT1+QkS
-	/d8FulpjFY8PzLuXIuGxbXfRMIg405Vd5twOgAOqO4k9XxXS/pVr1N1hjw+XVQg4ymuiWJfocFhss
-	6a6jER6oxuJcidCx92uA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=/HyDC9dZtpUMcRg3n76qKNzrYbOkdBFuMWtXXMk52rA=; b=ZCs/V8FtUMuyYf
+	vnddn+vEPqS7g+iyEG2YG2fyIMU1gW6sggO2Cyre5I6OriO2W3fMBS/JIp8YKvXoebLgMtXLnA10p
+	ufOfyoyp4SsjNj1p5mt1Ipi0KZghxSZaJFl/mwsDK8UU0uUJt2QUAUBksFxcyS6vjRu5m5dfHX5a0
+	ChZ/oBZgzTrtAIHPVJgypLEAL4KGZVrf5X+305ty20dA/I8svMsBhSSQti8kDl5DXuDs3B9lTpprt
+	GVefJeGQqV8pU9GBx+0xilbKm/OXlqsYgVJrGubm0nU9wCwBDcu9MUFwhQv0VDYMtF2YtiHP1+11U
+	eNYKxDCaTkSllk3RZDbQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hgE0g-0003Hb-GG; Wed, 26 Jun 2019 19:55:14 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1hgEjO-0003Nl-9k; Wed, 26 Jun 2019 20:41:26 +0000
+Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hgE0N-0003H0-Up
- for linux-arm-kernel@lists.infradead.org; Wed, 26 Jun 2019 19:54:57 +0000
-Received: from mail-qt1-f177.google.com (mail-qt1-f177.google.com
- [209.85.160.177])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 4E37A21783
+ id 1hgEis-0003MF-Hk
+ for linux-arm-kernel@lists.infradead.org; Wed, 26 Jun 2019 20:40:57 +0000
+Received: by mail-wr1-x441.google.com with SMTP id x4so4266023wrt.6
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 26 Jun 2019 19:54:54 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1561578894;
- bh=KcD7c6hKQWEu008qT9k7dg3vhdqwpsDp6Y4IxD3yQtY=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=Bmq634H6AuhkvTnl8ByQlWQL/et5bCg6GiQTU5Wxxehw+bAuRb3PkWlvdgnru+wCQ
- 2PQRhYhjDO3qBaziCHuszbI+M2cOK/wL4p1Xc9eMDvtykqpH0hKsutQSyEzWLPlWnY
- zufBuEQ9BqcgM/yNiD7c1mDEb0uCBK/Gy4rSXdO8=
-Received: by mail-qt1-f177.google.com with SMTP id x47so3747854qtk.11
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 26 Jun 2019 12:54:54 -0700 (PDT)
-X-Gm-Message-State: APjAAAWfw/rZxaOo18QqiMzYqpeO33Zqgj1IjyEJzN4L3gKD8NnuYv3V
- 2Gd2jriSQX/MHy6QN+BW31Tut2nMVRSnOUcWlQ==
-X-Google-Smtp-Source: APXvYqxvjkkMKsEsiee5jdC+mhyswCFA/6copmi5BDxMTfkflXbixreHTXK1d+tXLtOdZg6I42aAKOCcCo2xPI+9SV4=
-X-Received: by 2002:a0c:baa1:: with SMTP id x33mr4102705qvf.200.1561578893478; 
- Wed, 26 Jun 2019 12:54:53 -0700 (PDT)
+ Wed, 26 Jun 2019 13:40:52 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=NPjxqtyjQpYCgybS5zN78zffB956dgNyXrI9VH1y9Hc=;
+ b=IIHfq8mCVktitxkEaThPZUfzgKbkr3QTYmX2SgJ6H0We5g1vtQscSIvE2OTtjaDQ3C
+ +4+TjStEWDjMKdKm/SyAA12jVhu2yYFeSBuM58Ir1x0bsp/e9NJjODm2Ym6B4N7ZsTjD
+ 00GSJbQNyCvojnjTVMzq31XyKvzY4yUW7+XH3CVNURSYmQ01eNF2ukHpukfVQeiOYEsj
+ 2lOpFgA8UwWZ44zGgHx8ksc+gLrG8zfF5+p2cWP7oSzotuZ6S0ydvQwHL4G07DZKO302
+ Miyt4b5mFXqFHGCyqD8VILdjvAlnF87KAp9rNGb7HW3qaaDvvfjcSOPcJw0bcpA+OQqU
+ ivjw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=NPjxqtyjQpYCgybS5zN78zffB956dgNyXrI9VH1y9Hc=;
+ b=R4aBuwHcag1QG30LT91/N4fw9xShhRhCeRVzJcQ2xkR9eZ0pRbBUJGqh+WT38rh0Uc
+ vYcx/QfPN3WnKWjgAG5gD29W3B9dhOZCnzZxaA/re8tPXkTkBFsIu90ARd/gFYnZUOlh
+ KbK0aJcmFMsuEEfKIIzg4wIrld4eaGHlccTzfZTGwDEy9C31l7Ab+rbvm6Q4E0KuUFg9
+ IaNDEH03nmKdftyfzlhPHZNYHrIM4k99dLdZLTDaBvNfAY19GmGljd8Krx3cU9WSVtNg
+ rSWd47KqflSGDwjwYtGQlbZRYa6rbtiKYj3SWNVxOAcYIRFN/8QY5ePFgmqiE2jIF2Yu
+ WCGQ==
+X-Gm-Message-State: APjAAAVDLvCf8iknE/5ahqmJamOaZfzvpRTrxpfY+CmEgkUbC17D0QHT
+ vCgLSeE/lWpu+YeME5q9qpyloA==
+X-Google-Smtp-Source: APXvYqzyPP2kqpROYclJaOZTSu+oBTttt7ijJE2qrnLMB35rJqOYfqlpYR3U9Q9USBzOTxHA6dZ5xA==
+X-Received: by 2002:a5d:5702:: with SMTP id a2mr5328474wrv.89.1561581651363;
+ Wed, 26 Jun 2019 13:40:51 -0700 (PDT)
+Received: from sudo.home ([2a01:cb1d:112:6f00:9c7f:f574:ee94:7dec])
+ by smtp.gmail.com with ESMTPSA id 32sm35164587wra.35.2019.06.26.13.40.49
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Wed, 26 Jun 2019 13:40:50 -0700 (PDT)
+From: Ard Biesheuvel <ard.biesheuvel@linaro.org>
+To: linux-crypto@vger.kernel.org
+Subject: [PATCH v5 0/7] crypto: switch to crypto API for ESSIV generation
+Date: Wed, 26 Jun 2019 22:40:40 +0200
+Message-Id: <20190626204047.32131-1-ard.biesheuvel@linaro.org>
+X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
-References: <20190614081650.11880-1-daniel.baluta@nxp.com>
- <20190614081650.11880-3-daniel.baluta@nxp.com>
- <CAL_JsqJKgMB1PNA33gmFju4AQTc2WaSBoOGQExVaGd9LZRmk_g@mail.gmail.com>
- <CAEnQRZBNA4ndSL1vMStHemYkzt9TxqjgdWWjqFwnBFQ+ha+egA@mail.gmail.com>
-In-Reply-To: <CAEnQRZBNA4ndSL1vMStHemYkzt9TxqjgdWWjqFwnBFQ+ha+egA@mail.gmail.com>
-From: Rob Herring <robh+dt@kernel.org>
-Date: Wed, 26 Jun 2019 13:54:40 -0600
-X-Gmail-Original-Message-ID: <CAL_JsqJQRbuWKgON+ukZ3GRwyq8SvTZ=PRGwMhQjAxKPSP-Fkw@mail.gmail.com>
-Message-ID: <CAL_JsqJQRbuWKgON+ukZ3GRwyq8SvTZ=PRGwMhQjAxKPSP-Fkw@mail.gmail.com>
-Subject: Re: [PATCH 2/2] dt-bindings: arm: fsl: Add DSP IPC binding support
-To: Daniel Baluta <daniel.baluta@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190626_125456_033058_60D2CAE4 
-X-CRM114-Status: GOOD (  32.40  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190626_134054_931269_9F1DDAE8 
+X-CRM114-Status: GOOD (  19.76  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:441 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -76,7 +83,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -88,192 +94,111 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Dong Aisheng <aisheng.dong@nxp.com>, Mark Rutland <mark.rutland@arm.com>,
- Anson Huang <anson.huang@nxp.com>,
- Devicetree List <devicetree@vger.kernel.org>,
- Daniel Baluta <daniel.baluta@nxp.com>, Sascha Hauer <s.hauer@pengutronix.de>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Oleksij Rempel <o.rempel@pengutronix.de>, NXP Linux Team <linux-imx@nxp.com>,
- Fabio Estevam <festevam@gmail.com>, Shawn Guo <shawnguo@kernel.org>,
- "S.j. Wang" <shengjiu.wang@nxp.com>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>
+Cc: Herbert Xu <herbert@gondor.apana.org.au>,
+ Eric Biggers <ebiggers@google.com>, Ard Biesheuvel <ard.biesheuvel@linaro.org>,
+ linux-fscrypt@vger.kernel.org, Gilad Ben-Yossef <gilad@benyossef.com>,
+ dm-devel@redhat.com, Milan Broz <gmazyland@gmail.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Jun 26, 2019 at 8:49 AM Daniel Baluta <daniel.baluta@gmail.com> wrote:
->
-> Hi Rob,
->
-> This is my first time documenting the bindings using the
-> new yaml format so thanks for your patience and explanations!
->
-> On Fri, Jun 14, 2019 at 5:53 PM Rob Herring <robh+dt@kernel.org> wrote:
-> >
-> > On Fri, Jun 14, 2019 at 2:15 AM <daniel.baluta@nxp.com> wrote:
-> > >
-> > > From: Daniel Baluta <daniel.baluta@nxp.com>
-> > >
-> > > DSP IPC is the layer that allows the Host CPU to communicate
-> > > with DSP firmware.
-> > > DSP is part of some i.MX8 boards (e.g i.MX8QM, i.MX8QXP)
-> > >
-> > > Signed-off-by: Daniel Baluta <daniel.baluta@nxp.com>
-> > > ---
-> > >  .../bindings/arm/freescale/fsl,dsp.yaml       | 43 +++++++++++++++++++
-> >
-> > bindings/dsp/...
->
-> Fair enough. Will fix in v2.
->
-> >
-> > >  1 file changed, 43 insertions(+)
-> > >  create mode 100644 Documentation/devicetree/bindings/arm/freescale/fsl,dsp.yaml
-> > >
-> > > diff --git a/Documentation/devicetree/bindings/arm/freescale/fsl,dsp.yaml b/Documentation/devicetree/bindings/arm/freescale/fsl,dsp.yaml
-> > > new file mode 100644
-> > > index 000000000000..16d9df1d397b
-> > > --- /dev/null
-> > > +++ b/Documentation/devicetree/bindings/arm/freescale/fsl,dsp.yaml
-> > > @@ -0,0 +1,43 @@
-> > > +# SPDX-License-Identifier: GPL-2.0
-> >
-> > The preference is to dual license new bindings: GPL-2.0 OR BSD-2-Clause
-> >
-> > > +%YAML 1.2
-> > > +---
-> > > +$id: http://devicetree.org/schemas/arm/freescale/fsl,dsp.yaml#
-> > > +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> > > +
-> > > +title: NXP i.MX IPC DSP driver
-> >
-> > This isn't a driver.
->
-> I see. This node is actually the representation of DSP IPC so not a driver.
-> >
-> > > +
-> > > +maintainers:
-> > > +  - Daniel Baluta <daniel.baluta@nxp.com>
-> > > +
-> > > +description: |
-> > > +  IPC communication layer between Host CPU and DSP on NXP i.MX8 platforms
-> > > +
-> > > +properties:
-> > > +  compatible:
-> > > +    enum:
-> > > +      - fsl,imx-dsp
-> >
-> > You can have a fallback, but it needs SoC specific compatible(s).
-> Agree. Will fix in v2.
->
-> >
-> > > +
-> > > +  mboxes:
-> > > +    description:
-> > > +      List of phandle of 2 MU channels for TXDB, 2 MU channels for RXDB
-> > > +      (see mailbox/fsl,mu.txt)
-> > > +    maxItems: 1
-> >
-> > Should be 4?
->
-> Actually is just a list with 1 item. I think is the terminology:
->
-> You can have an example here of the mboxes defined for SCU.
-> https://github.com/torvalds/linux/blob/master/arch/arm64/boot/dts/freescale/imx8qxp.dtsi#L123
+This series creates an ESSIV template that produces a skcipher or AEAD
+transform based on a tuple of the form '<skcipher>,<cipher>,<shash>'
+(or '<aead>,<cipher>,<shash>' for the AEAD case). It exposes the
+encapsulated sync or async skcipher/aead by passing through all operations,
+while using the cipher/shash pair to transform the input IV into an ESSIV
+output IV.
 
-mboxes = <&lsio_mu1 0 0
-&lsio_mu1 0 1
-&lsio_mu1 0 2
-&lsio_mu1 0 3
-&lsio_mu1 1 0
-&lsio_mu1 1 1
-&lsio_mu1 1 2
-&lsio_mu1 1 3
-&lsio_mu1 3 3>;
+This matches what both users of ESSIV in the kernel do, and so it is proposed
+as a replacement for those, in patches #2 and #4.
 
-Logically, this is 9 entries and each entry is 3 cells ( or phandle
-plus 2 cells). More below...
+This code has been tested using the fscrypt test suggested by Eric
+(generic/549), as well as the mode-test script suggested by Milan for
+the dm-crypt case. I also tested the aead case in a virtual machine,
+but it definitely needs some wider testing from the dm-crypt experts.
 
-> > > +
-> > > +  mbox-names
+The consensus appears to be that it would be useful if the crypto API
+encapsulates the handling of multiple subsequent blocks that are
+encrypted using a 64-bit LE counter as IV, and makes it the duty of
+the algo to increment the counter between blocks. However, this is
+equally suitable for non-ESSIV transforms (or even more so), and so
+this is left as a future enhancement to  be applied on top.
 
-Also, missing a ':' here. This won't build. Make sure you build this
-(make dt_binding_check). See
-Documentation/devicetree/writing-schemas.md.
+Changes since v4:
+- make the ESSIV template IV size equal the IV size of the encapsulated
+  cipher - defining it as 8 bytes was needlessly restrictive, and also
+  complicated the code for no reason
+- add a missing kfree() spotted by Smatch
+- add additional algo length name checks when constructing the essiv()
+  cipher name
+- reinstate the 'essiv' IV generation implementation in dm-crypt, but
+  make its generation function identical to plain64le (and drop the other
+  methods)
+- fix a bug in the arm64 CE/NEON code
+- simplify the arm64 code by reusing more of the existing CBC implementation
+  (patch #6 is new to this series and was added for this reason)
 
-> > > +    description:
-> > > +      Mailboxes names
-> > > +    allOf:
-> > > +      - $ref: "/schemas/types.yaml#/definitions/string"
-> >
-> > No need for this, '*-names' already has a defined type.
-> So, should I remove the above two lines ?
+Changes since v3:
+- address various review comments from Eric on patch #1
+- use Kconfig's 'imply' instead of 'select' to permit CRYPTO_ESSIV to be
+  enabled as a module or disabled entirely even if fscrypt is compiled in (#2)
+- fix an issue in the AEAD encrypt path caused by the IV being clobbered by
+  the inner skcipher before the hmac was being calculated
 
-Actually, all 4. There's no need to describe what 'mbox-names' is.
+Changes since v2:
+- fixed a couple of bugs that snuck in after I'd done the bulk of my
+  testing
+- some cosmetic tweaks to the ESSIV template skcipher setkey function
+  to align it with the aead one
+- add a test case for essiv(cbc(aes),aes,sha256)
+- add an accelerated implementation for arm64 that combines the IV
+  derivation and the actual en/decryption in a single asm routine
 
-> > > +      - enum: [ "txdb0", "txdb1", "rxdb0", "rxdb1" ]
-> >
-> > Should be an 'items' list with 4 entries?
->
-> Let me better read the yaml spec. But "items" list indeed sounds better.
+Scroll down for tcrypt speed test result comparing the essiv template
+with the asm implementation. Bare cbc(aes) tests included for reference
+as well. Taken on a 2GHz Cortex-A57 (AMD Seattle)
 
-What you should end up with is:
+Code can be found here
+https://git.kernel.org/pub/scm/linux/kernel/git/ardb/linux.git/log/?h=essiv-v5
 
-items:
-  - const: txdb0
-  - const: txdb1
-  - const: rxdb0
-  - const: rxdb1
+Cc: Herbert Xu <herbert@gondor.apana.org.au>
+Cc: Eric Biggers <ebiggers@google.com>
+Cc: dm-devel@redhat.com
+Cc: linux-fscrypt@vger.kernel.org
+Cc: Gilad Ben-Yossef <gilad@benyossef.com>
+Cc: Milan Broz <gmazyland@gmail.com>
 
-This is saying you have 4 strings in the listed order. The enum you
-had would be a single string of one of the 4 values.
+Ard Biesheuvel (7):
+  crypto: essiv - create wrapper template for ESSIV generation
+  fs: crypto: invoke crypto API for ESSIV handling
+  md: dm-crypt: infer ESSIV block cipher from cipher string directly
+  md: dm-crypt: switch to ESSIV crypto API template
+  crypto: essiv - add test vector for essiv(cbc(aes),aes,sha256)
+  crypto: arm64/aes-cts-cbc - factor out CBC en/decryption of a walk
+  crypto: arm64/aes - implement accelerated ESSIV/CBC mode
 
-> > > +required:
-> > > +  - compatible
-> > > +  - mboxes
-> > > +  - mbox-names
-> >
-> > This seems incomplete. How does one boot the DSP? Load firmware? No
-> > resources that Linux has to manage. Shared memory?
->
-> This is only the IPC mailboxes used by DSP to communicate with Linux. The
-> loading of the firmware, the resources needed to be managed by Linux, etc
-> are part of the DSP node.
+ arch/arm64/crypto/aes-glue.c  | 205 +++++--
+ arch/arm64/crypto/aes-modes.S |  29 +-
+ crypto/Kconfig                |   4 +
+ crypto/Makefile               |   1 +
+ crypto/essiv.c                | 636 ++++++++++++++++++++
+ crypto/tcrypt.c               |   9 +
+ crypto/testmgr.c              |   6 +
+ crypto/testmgr.h              | 213 +++++++
+ drivers/md/Kconfig            |   1 +
+ drivers/md/dm-crypt.c         | 229 ++-----
+ fs/crypto/Kconfig             |   1 +
+ fs/crypto/crypto.c            |   5 -
+ fs/crypto/fscrypt_private.h   |   9 -
+ fs/crypto/keyinfo.c           |  88 +--
+ 14 files changed, 1111 insertions(+), 325 deletions(-)
+ create mode 100644 crypto/essiv.c
 
-You should just add the mailboxes to the DSP node then. I suppose you
-didn't because you want 2 drivers? If so, that's the OS's problem and
-not part of DT. A Linux driver can instantiate devices for other
-drivers.
+-- 
+2.20.1
 
-> To avoid confusion I have renamed this node from dsp to dsp_ipc.
->
-> >
-> > > +
-> > > +examples:
-> > > +  - |
-> > > +    dsp {
-> > > +      compatbile = "fsl,imx-dsp";
-> > > +      mbox-names = "txdb0", "txdb1", "rxdb0", "rxdb1";
-> > > +      mboxes = <&lsio_mu13 2 0 &lsio_mu13 2 1 &lsio_mu13 3 0 &lsio_mu13 3 1>;
-> >
-> > mboxes = <&lsio_mu13 2 0>, <&lsio_mu13 2 1>, <&lsio_mu13 3 0>, <&lsio_mu13 3 1>;
->
-> Actually no! It looks like the imx mailbox expects one element with a
-> list of phandles directions and index.
-
-There's not actually any difference in what the OS sees. Both source
-syntaxes result in the same data encoding in the dtb. It's simply 12
-words of data. What's a phandle is only known because the OS knows
-what 'mboxes' contains and by reading #mbox-cells in lsio_mu13.
-
-However, we are using this source grouping to maintain type
-information to do schema validation. The grouping is kept thru to the
-yaml encoding (of the DT, not to be confused with the schemas). So
-we're going to have to start being stricter in dts files.
-
-Rob
 
 _______________________________________________
 linux-arm-kernel mailing list
