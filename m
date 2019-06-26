@@ -2,82 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D562456555
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 26 Jun 2019 11:09:18 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C611356559
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 26 Jun 2019 11:09:43 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=xnyiuUbaswgh9mf5z8ylLkcpKMnOMv0Ug6C6NfoETgc=; b=Wd3q2mxysfM+tD
-	zMCLFt1hxjv4K57jPMBo1FHKN7mmhyFRFsRcFsGwQzS/nCHLBipjM1K2Y6EoohQXONOUmOJHl1bzE
-	R4b5SFWUY8g2NUJwZtpGNsvqfom3eakAoxHq/NHHmnJIqQEcUQ+kYvX1FbGGxmeQggaM35KDKy42o
-	zWSBa8RAD8+5eMJuyxWuG3N1NAcbvnvbfA00UB8C39cQ1rLdD6GzGFuzNJBJw6IubjgLNErAAyvdS
-	Zcnb1yHgYpC4v2tdXZt3gQiheXRRsa1+HitkYzpCSonivFgF72fe2T75PXdFuzzEkO9Hnnq4Fzw70
-	aCtJM+LMkSW/TFU/K9DA==;
+	List-Owner; bh=yb3MTBG2MRq4h/V6YdDkwNsTe16Qb6WoOhV4PrR61xc=; b=Hd5MzZEkI3G0xN
+	wtDKanBrb5u8tkj/r+7bIcnt+/PC0wvMPdcMJotYVuGYsza+RdEiEOv/YMT/+oQGIp9jYg9QbU1nr
+	jPpvHcrhtnvI9iYV4nfcJWTwFIOnTsD0zKv94zAQqXDMoMtBtGjvGVt3GTcWxuby0Sfgne/EPwcxn
+	2HKMektoZCFrBN0YGMCmAy7wq1Wc9lLUg61lcrCYgka2CiSaz/kI6PgT9V0BYNxJu5U6oNcPGU9xm
+	vceovJvk+id2plvXF4sgUSoPdt6AwdcgJH8UKP1NDJqgJzw1Bk0jkYHWB73mHT0eVgwxt1wzMTArV
+	ulbXR3I7wJVQ59UAa0zg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hg3vW-0003vr-Q7; Wed, 26 Jun 2019 09:09:15 +0000
-Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
+	id 1hg3vx-0004FR-GT; Wed, 26 Jun 2019 09:09:42 +0000
+Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hg3t4-0002ZP-LL
- for linux-arm-kernel@lists.infradead.org; Wed, 26 Jun 2019 09:06:44 +0000
-Received: by mail-wr1-x443.google.com with SMTP id n9so1813568wru.0
+ id 1hg3t6-0002ap-BB
+ for linux-arm-kernel@lists.infradead.org; Wed, 26 Jun 2019 09:06:46 +0000
+Received: by mail-wr1-x444.google.com with SMTP id k11so1809769wrl.1
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 26 Jun 2019 02:06:42 -0700 (PDT)
+ Wed, 26 Jun 2019 02:06:44 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=baylibre-com.20150623.gappssmtp.com; s=20150623;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=0YLGRK88mV5vZE4LqM30CD7m71X58sUA87fhljEjqxY=;
- b=OI251nwwamcbJiqoK+UB/Xvd/6flu0o1NsCNHXMNnGjCJucGdtYeU2BAOR5pxbDyIf
- 3pcHb7SWZ7lgPOjn1NIwpQYiA7oY+GdaCy6w/RtniLVSjwqYJ5cEFwjlahGpDEOakzRp
- HojdXsl4mFeJdV8ZNlbA6T0vu90xrCXQbrOlfVFNH4oBIt7JPA9v1saJYXvJx+/PtD2E
- MC0CU7+d0AYzSPCQ1tTqW5c8DYy437GAzhZxBp4YLmEvRW9MPhLqvd1wbk6SvPNkE/Eh
- 6GEhofow4tZR9QuXfCR3+WMeVfmXi2KdOOKX3T/LxYMsFKsELkXaDRSxvQIm3Bm66Esk
- MM0Q==
+ bh=j3tTOMHSiFLp+myEpmzmt12jpkjBS7JqoQLTAOWEufU=;
+ b=kvEHQB03XrT84WCCgsKDcFFTwKXwKaZ9mDxKAfYFkJG0CyuFNQRy4K8U+kFQ/pSpA8
+ r0FZiPGnVvSVEjDRozPe/MTE6t5BbBDy+i0PBLgpt+6tDDw0RzZ2vS3LjJWOZN4DwRZL
+ BGnJh7xqxgqmsiPsbISq953QPFmuJ9iADvx8lIEBJ/xkcF+gctf3zO6QpOwhzOmBF0i1
+ zfriLTSiHGJYZUvcZGdIIDxwbOSLyx4mRW2hQBrweBIY/TdJaOqa6xp4pvLLXuH0TY6O
+ TWQOef7/FtK0IATdV/kq073FgFeAQjyr2yZVKMps3dem6FK9Oa5Oh7L7ggjpbboZhhhZ
+ YYWg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=0YLGRK88mV5vZE4LqM30CD7m71X58sUA87fhljEjqxY=;
- b=C2pwRnX00udrasxaJ1nMSW34klW8i+RCx+v+nsqHIqHa/bTqHg7eOT67xbqCajpaxh
- yYubA1X7R/bL5AB+Yevb5tPqaeL3Oicj5IDNboijeyC7llP6yiKAoHT/xGHGIHAmRElN
- O8KlutCYgcXpRk2KU/kMmZUT2Hshn21u3IeaghZOiYv96TWyzKnDfJS5josBVEyFtmTy
- zbLFYv5efdl4TTBRXTgBhsWFdf84Oslvl2p+I+oJsLe3caELwd/1vDuMC4bHEWQwznGy
- pwHjUYzZ+P+YD3FNkJ6GM32IHJQAhKrFXxGgsesrrx+pcRYFcF70X1ZBQ0j1Fo/Kvvb9
- YeuA==
-X-Gm-Message-State: APjAAAXbWfAVUA10rCw8iEY9SHJPi85TELBk3MBGKmjB3KRHIozpBc7J
- eWR1g9s5/5tCTI5+4hiCN2cpZQ==
-X-Google-Smtp-Source: APXvYqz3vdyXnAtP1SpNLPKWrEQyz94x72h+b+vO8Fr71mlivyvfBRlVQGi5Jlk1VZVxT9rHkUqXTA==
-X-Received: by 2002:a5d:518c:: with SMTP id k12mr2735671wrv.322.1561540001249; 
- Wed, 26 Jun 2019 02:06:41 -0700 (PDT)
+ bh=j3tTOMHSiFLp+myEpmzmt12jpkjBS7JqoQLTAOWEufU=;
+ b=jukzpJrEh+ay8o78DwW3xF6uCGFkDVT5zbGIE1RjS4OAWcuO9VZmtpDnbvzIT3mUeb
+ O8OJnFlcaHS23DMrOj6f87LR8GsuaWh/VwNu0jDvMmahTe0VSRpQ4jRkV33aPEhkp2Qp
+ 7SkqUoNnfBazvvz/i+cqKtAScIc2iVTXz246a7NJl25+b87zXimbj6aENTM9tUQNot7R
+ KmNIDf1rByzSEE1Vri8Hqzqipvklp449kYW94kyIUg6MQcD0/jeJt12ef+ol0mJOHMtn
+ ADONY0Iq48ENNoEZPpnUYgRhZiCSkWK3WCFNlsDB+C8ef5fjH5dTUTXwH5PWw7tXEPme
+ Oh6w==
+X-Gm-Message-State: APjAAAWNbNssek+eUesV211h5IC1mWZiRN2ulj1gatSZWLhRggwI5GOC
+ HzHpXmyIZ0Llmzbz2u7CNq0zCQ==
+X-Google-Smtp-Source: APXvYqzlmS3faQEc6tabH/P7o/TLm9JFP3+2CcVMZrRoZkQ0ElNEXs3j3ITiywoJc77PAE2qCCbTaw==
+X-Received: by 2002:adf:e2cb:: with SMTP id d11mr2768630wrj.66.1561540002580; 
+ Wed, 26 Jun 2019 02:06:42 -0700 (PDT)
 Received: from bender.baylibre.local
  (lmontsouris-657-1-212-31.w90-63.abo.wanadoo.fr. [90.63.244.31])
- by smtp.gmail.com with ESMTPSA id o6sm1925797wmc.46.2019.06.26.02.06.40
+ by smtp.gmail.com with ESMTPSA id o6sm1925797wmc.46.2019.06.26.02.06.41
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-SHA bits=128/128);
- Wed, 26 Jun 2019 02:06:40 -0700 (PDT)
+ Wed, 26 Jun 2019 02:06:41 -0700 (PDT)
 From: Neil Armstrong <narmstrong@baylibre.com>
 To: jbrunet@baylibre.com,
 	khilman@baylibre.com
-Subject: [RFC/RFT v2 04/14] clk: meson: eeclk: add setup callback
-Date: Wed, 26 Jun 2019 11:06:22 +0200
-Message-Id: <20190626090632.7540-5-narmstrong@baylibre.com>
+Subject: [RFC/RFT v2 05/14] soc: amlogic: meson-clk-measure: protect measure
+ with a mutex
+Date: Wed, 26 Jun 2019 11:06:23 +0200
+Message-Id: <20190626090632.7540-6-narmstrong@baylibre.com>
 X-Mailer: git-send-email 2.21.0
 In-Reply-To: <20190626090632.7540-1-narmstrong@baylibre.com>
 References: <20190626090632.7540-1-narmstrong@baylibre.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190626_020642_800503_FF9B311E 
-X-CRM114-Status: GOOD (  12.42  )
+X-CRM114-CacheID: sfid-20190626_020644_408266_B91FCB53 
+X-CRM114-Status: GOOD (  12.64  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:443 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:444 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -104,46 +105,59 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add a setup() callback in the eeclk structure, to call an optional
-call() function at end of eeclk probe to setup clocks.
-
-It's used for the G12A clock controller to setup the CPU clock notifiers.
+In order to protect clock measuring when multiple process asks for
+a mesure, protect the main measure function with mutexes.
 
 Signed-off-by: Neil Armstrong <narmstrong@baylibre.com>
 ---
- drivers/clk/meson/meson-eeclk.c | 6 ++++++
- drivers/clk/meson/meson-eeclk.h | 1 +
- 2 files changed, 7 insertions(+)
+ drivers/soc/amlogic/meson-clk-measure.c | 12 +++++++++++-
+ 1 file changed, 11 insertions(+), 1 deletion(-)
 
-diff --git a/drivers/clk/meson/meson-eeclk.c b/drivers/clk/meson/meson-eeclk.c
-index 6ba2094be257..81fd2abcd173 100644
---- a/drivers/clk/meson/meson-eeclk.c
-+++ b/drivers/clk/meson/meson-eeclk.c
-@@ -61,6 +61,12 @@ int meson_eeclkc_probe(struct platform_device *pdev)
- 		}
- 	}
+diff --git a/drivers/soc/amlogic/meson-clk-measure.c b/drivers/soc/amlogic/meson-clk-measure.c
+index 19d4cbc93a17..c470e24f1dfa 100644
+--- a/drivers/soc/amlogic/meson-clk-measure.c
++++ b/drivers/soc/amlogic/meson-clk-measure.c
+@@ -11,6 +11,8 @@
+ #include <linux/debugfs.h>
+ #include <linux/regmap.h>
  
-+	if (data->setup) {
-+		ret = data->setup(pdev);
-+		if (ret)
-+			return ret;
-+	}
++static DEFINE_MUTEX(measure_lock);
 +
- 	return devm_of_clk_add_hw_provider(dev, of_clk_hw_onecell_get,
- 					   data->hw_onecell_data);
- }
-diff --git a/drivers/clk/meson/meson-eeclk.h b/drivers/clk/meson/meson-eeclk.h
-index 9ab5d6fa7ccb..7fdf424f71a6 100644
---- a/drivers/clk/meson/meson-eeclk.h
-+++ b/drivers/clk/meson/meson-eeclk.h
-@@ -20,6 +20,7 @@ struct meson_eeclkc_data {
- 	const struct reg_sequence	*init_regs;
- 	unsigned int			init_count;
- 	struct clk_hw_onecell_data	*hw_onecell_data;
-+	int				(*setup)(struct platform_device *pdev);
- };
+ #define MSR_CLK_DUTY		0x0
+ #define MSR_CLK_REG0		0x4
+ #define MSR_CLK_REG1		0x8
+@@ -360,6 +362,10 @@ static int meson_measure_id(struct meson_msr_id *clk_msr_id,
+ 	unsigned int val;
+ 	int ret;
  
- int meson_eeclkc_probe(struct platform_device *pdev);
++	ret = mutex_lock_interruptible(&measure_lock);
++	if (ret)
++		return ret;
++
+ 	regmap_write(priv->regmap, MSR_CLK_REG0, 0);
+ 
+ 	/* Set measurement duration */
+@@ -377,8 +383,10 @@ static int meson_measure_id(struct meson_msr_id *clk_msr_id,
+ 
+ 	ret = regmap_read_poll_timeout(priv->regmap, MSR_CLK_REG0,
+ 				       val, !(val & MSR_BUSY), 10, 10000);
+-	if (ret)
++	if (ret) {
++		mutex_unlock(&measure_lock);
+ 		return ret;
++	}
+ 
+ 	/* Disable */
+ 	regmap_update_bits(priv->regmap, MSR_CLK_REG0, MSR_ENABLE, 0);
+@@ -386,6 +394,8 @@ static int meson_measure_id(struct meson_msr_id *clk_msr_id,
+ 	/* Get the value in multiple of gate time counts */
+ 	regmap_read(priv->regmap, MSR_CLK_REG2, &val);
+ 
++	mutex_unlock(&measure_lock);
++
+ 	if (val >= MSR_VAL_MASK)
+ 		return -EINVAL;
+ 
 -- 
 2.21.0
 
