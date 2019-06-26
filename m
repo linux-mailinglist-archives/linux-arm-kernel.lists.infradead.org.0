@@ -2,53 +2,68 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8E77B56FC7
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 26 Jun 2019 19:45:26 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 159AE56FCC
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 26 Jun 2019 19:45:49 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8BZ/HHNRMQE+5ABvLXt/TQBiATwyHbJxAFoiIFFiEiE=; b=HAtdCwOVl4VGri
-	uMvFK0pRzRlcpU7oHV+UPJK51W0wEeSY8HFT49ByGplmWF8drJUGbqOLYkjVK7OvsptVsejOcauOq
-	wdSopzY6LJybuo8wtsX9e/l3p+uV0WQQoVTtAueIYBx39t5oMKqOWj88RmqSijNLzOh4yTtkyT3fn
-	OLjh3OZsSTP/kuXooTDwohWK0QdSocZJFutTSM6R9542yRegU6YTr2HxTnzs4KgRErQf64OxRsrMe
-	D+/6VzLqOTUrFQLVvWW4pyLqZiq02itruU85a1Y9D9SUGO/tAJICBI5VILS2hAXtKf9ipXDwtlLNl
-	AD5U13uqYnG5WeAB23XQ==;
+	List-Owner; bh=WlSszBzXkGEI0fQIRPXCqZzzilYYERHp+FW4ZPj3uDE=; b=RcsN6jdqW+r7Bb
+	kOZFOltWiR7onOMruPSfxFpi677STPYz7NlZoyMTLhfEgIYm8DKI2/EvlHL+IZwknLyiFnj4w3N9w
+	UUleuItjDLoTB/9xWOxy0fprg9gEdovtwlw+iPqnf7qSansPo2Yrxq+mXM3X5fyWuodeT16ZPCfQi
+	l+PBALEMUdjV5OUGmdfxX6CsYM1j7iZFbJobyChz3MpXUw17XjakwjSi5/Sv91tfRZ2W19EJWQWZP
+	cUTtUrL9fK5qrcj9y6MbEYDTP0DQuYQl74XK70v4LBqU7xk79CisgfRzPzMecBiFAnng7TURnCpKh
+	FTyF3/LFNELKc23MMMiw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hgBz0-000269-Tm; Wed, 26 Jun 2019 17:45:22 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hgByl-0001hR-3J
- for linux-arm-kernel@lists.infradead.org; Wed, 26 Jun 2019 17:45:08 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 8098A360;
- Wed, 26 Jun 2019 10:45:06 -0700 (PDT)
-Received: from arrakis.emea.arm.com (arrakis.cambridge.arm.com [10.1.196.78])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
- 5FA693F718; Wed, 26 Jun 2019 10:45:05 -0700 (PDT)
-Date: Wed, 26 Jun 2019 18:45:03 +0100
-From: Catalin Marinas <catalin.marinas@arm.com>
-To: Andrew Murray <andrew.murray@arm.com>
-Subject: Re: [RFC] arm64: Detecting tagged addresses
-Message-ID: <20190626174502.GH29672@arrakis.emea.arm.com>
-References: <20190619121619.GV20984@e119886-lin.cambridge.arm.com>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190619121619.GV20984@e119886-lin.cambridge.arm.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+	id 1hgBzP-0002Kq-QT; Wed, 26 Jun 2019 17:45:47 +0000
+Received: from s3.sipsolutions.net ([2a01:4f8:191:4433::2]
+ helo=sipsolutions.net)
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hgBz1-0002EL-Qq
+ for linux-arm-kernel@lists.infradead.org; Wed, 26 Jun 2019 17:45:26 +0000
+Received: by sipsolutions.net with esmtpsa
+ (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <johannes@sipsolutions.net>)
+ id 1hgByp-0007sg-J1; Wed, 26 Jun 2019 19:45:11 +0200
+Message-ID: <8bcefe5c5e4697a0c0b1543ef386bc8268c19d76.camel@sipsolutions.net>
+Subject: Re: [PATCH v2 00/17] net: introduce Qualcomm IPA driver
+From: Johannes Berg <johannes@sipsolutions.net>
+To: Alex Elder <elder@linaro.org>, Arnd Bergmann <arnd@arndb.de>
+Date: Wed, 26 Jun 2019 19:45:07 +0200
+In-Reply-To: <edea19ef-f225-bdcd-f394-77e326d1d3ad@linaro.org>
+ (sfid-20190626_153939_653069_ADB7A601)
+References: <380a6185-7ad1-6be0-060b-e6e5d4126917@linaro.org>
+ <a94676381a5ca662c848f7a725562f721c43ce76.camel@sipsolutions.net>
+ <CAK8P3a0kV-i7BJJ2X6C=5n65rSGfo8fUiC4J_G-+M8EctYKbkg@mail.gmail.com>
+ <fc0d08912bc10ad089eb74034726308375279130.camel@redhat.com>
+ <36bca57c999f611353fd9741c55bb2a7@codeaurora.org>
+ <153fafb91267147cf22e2bf102dd822933ec823a.camel@redhat.com>
+ <CAK8P3a2Y+tcL1-V57dtypWHndNT3eDJdcKj29c_v+k8o1HHQig@mail.gmail.com>
+ <f4249aa5f5acdd90275eda35aa16f3cfb29d29be.camel@redhat.com>
+ <CAK8P3a2nzZKtshYfomOOSYkqx5HdU15Wr9b+3va0B1euNhFOAg@mail.gmail.com>
+ <dbb32f185d2c3a654083ee0a7188379e1f88d899.camel@sipsolutions.net>
+ <d533b708-c97a-710d-1138-3ae79107f209@linaro.org>
+ <abdfc6b3a9981bcdef40f85f5442a425ce109010.camel@sipsolutions.net>
+ <db34aa39-6cf1-4844-1bfe-528e391c3729@linaro.org>
+ <CAK8P3a1ixL9ZjYz=pWTxvMfeD89S6QxSeHt9ZCL9dkCNV5pMHQ@mail.gmail.com>
+ <efbcb3b84ff0a7d7eab875c37f3a5fa77e21d324.camel@sipsolutions.net>
+ <edea19ef-f225-bdcd-f394-77e326d1d3ad@linaro.org>
+ (sfid-20190626_153939_653069_ADB7A601)
+X-Mailer: Evolution 3.28.5 (3.28.5-3.fc28) 
+Mime-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190626_104507_260204_8A443CF8 
-X-CRM114-Status: GOOD (  24.86  )
+X-CRM114-CacheID: sfid-20190626_104524_590015_88F91820 
+X-CRM114-Status: GOOD (  33.76  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -60,121 +75,134 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Andrey Konovalov <andreyknvl@google.com>, linux-kernel@vger.kernel.org,
- linux-mm@kvack.org, Luc Van Oostenryck <luc.vanoostenryck@gmail.com>,
- linux-kselftest@vger.kernel.org, vincenzo.frascino@arm.com,
- linux-arm-kernel@lists.infradead.org
+Cc: DTML <devicetree@vger.kernel.org>, syadagir@codeaurora.org,
+ Eric Caruso <ejcaruso@google.com>, David Miller <davem@davemloft.net>,
+ Dan Williams <dcbw@redhat.com>, linux-arm-msm@vger.kernel.org,
+ Ilias Apalodimas <ilias.apalodimas@linaro.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>, evgreen@chromium.org,
+ Bjorn Andersson <bjorn.andersson@linaro.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Networking <netdev@vger.kernel.org>,
+ Subash Abhinov Kasiviswanathan <subashab@codeaurora.org>,
+ linux-soc@vger.kernel.org, abhishek.esse@gmail.com, cpratapa@codeaurora.org,
+ Ben Chan <benchan@google.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Andrew,
+On Wed, 2019-06-26 at 08:39 -0500, Alex Elder wrote:
 
-Cc'ing Luc (sparse maintainer) who's been involved in the past
-discussions around static checking of user pointers:
-
-https://lore.kernel.org/linux-arm-kernel/20180905190316.a34yycthgbamx2t3@ltop.local/
-
-So I think the difference here from the previous approach is that we
-explicitly mark functions that cannot take tagged addresses (like
-find_vma()) and identify the callers.
-
-More comments below:
-
-On Wed, Jun 19, 2019 at 01:16:20PM +0100, Andrew Murray wrote:
-> The proposed introduction of a relaxed ARM64 ABI [1] will allow tagged memory
-> addresses to be passed through the user-kernel syscall ABI boundary. Tagged
-> memory addresses are those which contain a non-zero top byte (the hardware
-> has always ignored this top byte due to TCR_EL1.TBI0) and may be useful
-> for features such as HWASan.
+> > However, to also reply to Alex: I don't know exactly how IPA works, but
+> > for the Intel modem at least you can't fundamentally have two drivers
+> > for different parts of the functionality, since it's just a single piece
+> > of hardware and you need to allocate hardware resources from a common
+> > pool etc. So you cannot split the driver into "Intel modem control
+> > channel driver" and "Intel modem data channel driver". In fact, it's
+> > just a single "struct device" on the PCIe bus that you can bind to, and
+> > only one driver can bind at a time.
 > 
-> To permit this relaxation a proposed patchset [2] strips the top byte (tag)
-> from user provided memory addresses prior to use in kernel functions which
-> require untagged addresses (for example comparasion/arithmetic of addresses).
-> The author of this patchset relied on a variety of techniques [2] (such as
-> grep, BUG_ON, sparse etc) to identify as many instances of possible where
-> tags need to be stipped.
+> Interesting.  So a single modem driver needs to implement
+> *all* of the features/functions?  Like GPS or data log or
+> whatever, all needs to share the same struct device?
+> Or does what you're describing apply to a subset of the
+> modem's functionality?  Or something else?
+
+Well, what is even the "implement the functions"? I mean, as kernel
+drivers we're really just in the business of providing communication
+channels to those functions. E.g. if you have a GNSS/GPS device, you
+might just have another TTY channel with NMEA data coming out, or
+something like that, right?
+
+But from a kernel POV yes, I don't see how you could create multiple
+function drivers for something behind the same PCIe device (unless it
+actually appeared as multiple virtual functions or such, like the bigger
+ethernet NICs, but it doesn't).
+
+But this points out to me that I was actually not quite accurate when I
+spoke about struct device before in the USB context with function
+drivers, but I have to do some research before I can correct myself
+correctly.
+
+> > So, IOW, I'm not sure I see how you'd split that up. I guess you could
+> > if you actually do something like the "rmnet" model, and I suppose
+> > you're free to do that for IPA if you like, but I tend to think that's
+> > actually a burden, not a win since you just get more complex code that
+> > needs to interact with more pieces. A single driver for a single
+> > hardware that knows about the few types of channels seems simpler to me.
+> > 
+> > > - to answer Johannes question, my understanding is that the interface
+> > >   between kernel and firmware/hardware for IPA has a single 'struct
+> > >   device' that is used for both the data and the control channels,
+> > >   rather than having a data channel and an independent control device,
+> > >   so this falls into the same category as the Intel one (please correct
+> > >   me on that)
 > 
-> To support this effort and to catch future regressions (e.g. in new syscalls
-> or ioctls), I've devised an additional approach for detecting the use of
-> tagged addresses in functions that do not want them. This approach makes
-> use of Smatch [3] and is outlined in this RFC. Due to the ability of Smatch
-> to do flow analysis I believe we can annotate the kernel in fewer places
-> than a similar approach in sparse.
+> I don't think that's quite right, but it might be partially
+> right.  There is a single device representing IPA, but the
+> picture is a little more complicated.
 > 
-> I'm keen for feedback on the likely usefulness of this approach.
+> The IPA hardware is actually something that sits *between* the
+> AP and the modem.  It implements one form of communication
+> pathway (IP data), but there are others (including QMI, which
+> presents a network-like interface but it's actually implemented
+> via clever use of shared memory and interrupts).
+
+OK.
+
+Well, I guess this then might eventually become a bit of a hybrid - you
+eventually want one WWAN device to represent it all to userspace, but
+might actually have multiple devices with different drivers (from the
+kernel POV)?
+
+But this is more like all the USB devices work. I just have to figure
+out how to correctly tie them together - "struct device" may or may not
+be right? I need to check how this functions.
+
+I guess for something where you have DT (like you allude to elsewhere)
+you could just capture all this in DT by having some phandle link or
+something?
+
+> What we're talking about here is WWAN/modem management more
+> generally though.  It *sounds* like the Intel modem is
+> more like a single device, which requires a single driver,
+> that seems to implement a bunch of distinct functions.
+
+Yes.
+
+> On this I'm not very knowledgeable but for Qualcomm there is
+> user space code that is in charge of overall management of
+> the modem.  It implements what I think you're calling control
+> functions, negotiating with the modem to allow new data channels
+> to be created.  Normally the IPA driver would provide information
+> to user space about available resources, but would only make a
+> communication pathway available when requested.
+
+Right.
+
+> > Are the control channels to IPA are actually also tunnelled over the
+> > rmnet protocol? And even if they are, perhaps they have a different
+> > hardware queue or so? That'd be the case for Intel - different hardware
+> > queue, same (or at least similar) protocol spoken for the DMA hardware
+> > itself, but different contents of the messages obviously.
 > 
-> We first add some new annotations that are exclusively consumed by Smatch:
-> 
-> --- a/include/linux/compiler_types.h
-> +++ b/include/linux/compiler_types.h
-> @@ -19,6 +19,7 @@
->  # define __cond_lock(x,c)      ((c) ? ({ __acquire(x); 1; }) : 0)
->  # define __percpu      __attribute__((noderef, address_space(3)))
->  # define __rcu         __attribute__((noderef, address_space(4)))
-> +# define __untagged    __attribute__((address_space(5)))
->  # define __private     __attribute__((noderef))
->  extern void __chk_user_ptr(const volatile void __user *);
->  extern void __chk_io_ptr(const volatile void __iomem *);
-[...]
-> --- a/mm/mmap.c
-> +++ b/mm/mmap.c
-> @@ -2224,7 +2224,7 @@ get_unmapped_area(struct file *file, unsigned long addr, unsigned long len,
->  EXPORT_SYMBOL(get_unmapped_area);
->  
->  /* Look up the first VMA which satisfies  addr < vm_end,  NULL if none. */
-> -struct vm_area_struct *find_vma(struct mm_struct *mm, unsigned long addr)
-> +struct vm_area_struct *find_vma(struct mm_struct *mm, unsigned long __untagged addr)
->  {
->         struct rb_node *rb_node;
->         struct vm_area_struct *vma;
-[...]
-> This can be further improved - the problem here is that for a given function,
-> e.g. find_vma we look for callers where *any* of the parameters
-> passed to find_vma are tagged addresses from userspace - i.e. not *just*
-> the annotated parameter. This is also true for find_vma's callers' callers'.
-> This results in the call tree having false positives.
-> 
-> It *is* possible to track parameters (e.g. find_vma arg 1 comes from arg 3 of
-> do_pages_stat_array etc), but this is limited as if functions modify the
-> data then the tracking is stopped (however this can be fixed).
-[...]
-> An example of a false positve is do_mlock. We untag the address and pass that
-> to apply_vma_lock_flags - however we also pass a length - because the length
-> came from userspace and could have the top bits set - it's flagged. However
-> with improved parameter tracking we can remove this false positive and similar.
+> I want to be careful talking about "control" but for IPA it comes
+> from user space.  For the purpose of getting initial code upstream,
+> all of that control functionality (which was IOCTL based) has been
+> removed, and a fixed configuration is assumed.
 
-Could we track only the conversions from __user * that eventually end up
-as __untagged? (I'm not familiar with smatch, so not sure what it can
-do). We could assume that an unsigned long argument to a syscall is
-default __untagged, unless explicitly marked as __tagged. For example,
-sys_munmap() is allowed to take a tagged address.
+But something that's ioctl based is just one form of "control" pathway.
+I was thinking of the AT or MBIM commands "control" channel. And then
+ioctls are likely something that terminates in the *driver*, right? I
+mean, the driver wouldn't get an ioctl and actually talk AT commands to
+the device ...
 
-> Prior to smatch I attempted a similar approach with sparse - however it seemed
-> necessary to propogate the __untagged annotation in every function up the call tree,
-> and resulted in adding the __untagged annotation to functions that would never
-> get near user provided data. This leads to a littering of __untagged all over the
-> kernel which doesn't seem appealing.
+But yes, the various control planes are confusing, we need to
+disentangle that. I tried over in the other email by layering where the
+control terminates.
 
-Indeed. We attempted this last year (see the above thread).
+johannes
 
-> Smatch is more capable, however it almost
-> certainly won't pick up 100% of issues due to the difficulity of making flow
-> analysis understand everything a compiler can.
-> 
-> Is it likely to be acceptable to use the __untagged annotation in user-path
-> functions that require untagged addresses across the kernel?
-
-If it helps with identifying missing untagged_addr() calls, I would say
-yes (as long as we keep them to a minimum).
-
-> [1] https://lkml.org/lkml/2019/6/13/534
-> [2] https://patchwork.kernel.org/cover/10989517/
-> [3] http://smatch.sourceforge.net/
-
--- 
-Catalin
 
 _______________________________________________
 linux-arm-kernel mailing list
