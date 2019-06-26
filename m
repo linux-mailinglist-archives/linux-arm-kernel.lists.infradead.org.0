@@ -2,110 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4B11555DDF
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 26 Jun 2019 03:43:14 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E71C655DF3
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 26 Jun 2019 03:48:52 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=qTqZS1V48KhLq4+YUQglEXDL5d/8ZBVnsJ8Dae11tk4=; b=tDAipjSx+V3T9h
-	AkcsfKADAVDhGugpD2rw1lXYpu/VED/sIjH9RCHCNj66QBgidsZSiSHMpPRHtfjMhb8qDBtUhhVSr
-	yOCwncuPBKpjT6RfbcE/Omox7IhdtN0zn6sgIhZgKkCE3r81FxXIsDJ+Z/Qy7h1i1a/bmbyM+66EQ
-	lFWapoaDVLEOEs7nTpXnz+ifpnyGnMWDXdvj68sfRqiulQ1SHlMVlqPQjRgWQjB5W6to6GwfxV4Lf
-	jHLQ+PivNaQB02QAam7GpJ5dvcghTEZ0KQTU9wDyAL7UoffyLFfuo8pbu0thzH5DGOy/XkBud+Wj8
-	TnKb1j2VBK5/8VlV9FHg==;
+	List-Owner; bh=0Ju/btiP7SdFLyzFJcWxYsTDZr7Vo3DJnU2RdpB63Ek=; b=QLL4BKnJsgZR5w
+	inrWr7WaRb5UTpDqeBe1mV0nNMpuTyYvZJQg16AuzFhtTvkn0kcFxn75nZqa6mspgY4BbCbvp09Ot
+	FI+owBYUJrf1NIQDTtfPQrK8mKVyci7ZPytIVV8mNm9FO8+IbrohlFMrj1wt5T6dwOaJZnhq+D8uW
+	LQh0KP3trkUzbGK2XP6kFjUF2fM2X3AY3Ysp8MMnDOB3qLzCpdUkJ0z7i7lNqG/rngSQbhnSpaVzl
+	a4WMjM0Fw17Y7vW9aM6YToZI1Biep/isNpf+8pTqELk2nThgh8Zq3zQMFJa/nyac1VHJggw3FzwYJ
+	G55h+hQRWnA2mL4fvGUg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hfwxo-0001mQ-T9; Wed, 26 Jun 2019 01:43:08 +0000
-Received: from mail-eopbgr20061.outbound.protection.outlook.com ([40.107.2.61]
- helo=EUR02-VE1-obe.outbound.protection.outlook.com)
+	id 1hfx3I-0003Rr-VT; Wed, 26 Jun 2019 01:48:48 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hfwxa-0001lc-UC
- for linux-arm-kernel@lists.infradead.org; Wed, 26 Jun 2019 01:42:56 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=tZVqGS9K5sTkvVIqgTU2Ye5pdZMkkBpRjs9hZxvDNeY=;
- b=L/0XFdCf6OuHo1+kvO4rhb7yuzIY7ih8d0aqWiJxxxbAZk1Qv3jyZQkZJl79Xg8ftjl9hnDCRlX7L6dbgBIFHjLgSSo/3LLO0Gl/E9y/sexs2ll9FOFqo/i79aZfwzTzA23Thf5B3teyHLguvHKUuoTq/mrLbzzamPD0S+GszdE=
-Received: from DB3PR0402MB3916.eurprd04.prod.outlook.com (52.134.72.18) by
- DB3PR0402MB3900.eurprd04.prod.outlook.com (52.134.71.14) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2008.16; Wed, 26 Jun 2019 01:42:48 +0000
-Received: from DB3PR0402MB3916.eurprd04.prod.outlook.com
- ([fe80::3945:fcda:5bdd:8191]) by DB3PR0402MB3916.eurprd04.prod.outlook.com
- ([fe80::3945:fcda:5bdd:8191%4]) with mapi id 15.20.2008.014; Wed, 26 Jun 2019
- 01:42:48 +0000
-From: Anson Huang <anson.huang@nxp.com>
-To: Daniel Lezcano <daniel.lezcano@linaro.org>, "tglx@linutronix.de"
- <tglx@linutronix.de>, "robh+dt@kernel.org" <robh+dt@kernel.org>,
- "mark.rutland@arm.com" <mark.rutland@arm.com>, "shawnguo@kernel.org"
- <shawnguo@kernel.org>, "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
- "kernel@pengutronix.de" <kernel@pengutronix.de>, "festevam@gmail.com"
- <festevam@gmail.com>, "l.stach@pengutronix.de" <l.stach@pengutronix.de>, Abel
- Vesa <abel.vesa@nxp.com>, "ccaione@baylibre.com" <ccaione@baylibre.com>,
- "angus@akkea.ca" <angus@akkea.ca>, "andrew.smirnov@gmail.com"
- <andrew.smirnov@gmail.com>, "agx@sigxcpu.org" <agx@sigxcpu.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
-Subject: RE: [PATCH RESEND V2 1/3] clocksource/drivers/sysctr: Add optional
- clock-frequency property
-Thread-Topic: [PATCH RESEND V2 1/3] clocksource/drivers/sysctr: Add optional
- clock-frequency property
-Thread-Index: AQHVKcBeREE6S4ew/U+TyYIcUsyobqas4eqAgABJq2A=
-Date: Wed, 26 Jun 2019 01:42:48 +0000
-Message-ID: <DB3PR0402MB3916AB9F2260B0E46CCDDEC0F5E20@DB3PR0402MB3916.eurprd04.prod.outlook.com>
-References: <20190623123850.22584-1-Anson.Huang@nxp.com>
- <55abafbd-c010-32b5-6d76-26040830d5b0@linaro.org>
-In-Reply-To: <55abafbd-c010-32b5-6d76-26040830d5b0@linaro.org>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=anson.huang@nxp.com; 
-x-originating-ip: [119.31.174.66]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: 01bbb761-a46f-46ff-3e22-08d6f9d7984b
-x-ms-office365-filtering-ht: Tenant
-x-microsoft-antispam: BCL:0; PCL:0;
- RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600148)(711020)(4605104)(1401327)(4618075)(2017052603328)(7193020);
- SRVR:DB3PR0402MB3900; 
-x-ms-traffictypediagnostic: DB3PR0402MB3900:
-x-microsoft-antispam-prvs: <DB3PR0402MB3900636172950BF8AFCEBB21F5E20@DB3PR0402MB3900.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:8273;
-x-forefront-prvs: 00808B16F3
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(366004)(376002)(346002)(396003)(39860400002)(136003)(189003)(199004)(3846002)(6116002)(44832011)(81166006)(53936002)(110136005)(8936002)(486006)(74316002)(476003)(256004)(305945005)(68736007)(71200400001)(6436002)(229853002)(2501003)(316002)(9686003)(76176011)(2906002)(81156014)(55016002)(86362001)(6246003)(2201001)(7416002)(8676002)(4326008)(14454004)(33656002)(52536014)(478600001)(66946007)(64756008)(25786009)(5660300002)(66446008)(71190400001)(186003)(7736002)(66476007)(66556008)(76116006)(73956011)(11346002)(26005)(102836004)(446003)(7696005)(99286004)(6506007)(53546011)(66066001)(921003)(1121003);
- DIR:OUT; SFP:1101; SCL:1; SRVR:DB3PR0402MB3900;
- H:DB3PR0402MB3916.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; MX:1; A:1; 
-received-spf: None (protection.outlook.com: nxp.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: w453HTHzL6Zp40JvfUzUu3HLN5JQvqcwNQ+eHuJ+71SbcVo5AR/bALfGKUjX2kPs86BbrTKPoeuqR4rVDQ97z3Ez/UylJI8Pho/pM6CvpHSQaui2Yhq+QHRvP6Yg9nHLcjqhEQpc6fg5OvA/2kxFqI4YXStJbNFLLzdhBwRGReA91M0zOWY5+QM6PdBDApgvWOoxGsxTzOYx2gm7tlJG5wlQXnX2Nn3/LcgZ521GRHgOj+wEbbuHZe1VQU2Vkr13iTTLsBGew6tZoNTOe12ETZdoWRLbL5PO/cKlcQ+FD1Kdl+HhgRHESbh9oFS+y3u3sDSN7Napl8pgacXt3FKOa9rrPQc1Cf6uux2AmDKnwmX4n1a5cviiH4j7dca69wb0rq5rz5pC18TXsLutkArdJ9SoCyovWW2qHuFEYUusV4Y=
+ id 1hfx35-0003RS-14
+ for linux-arm-kernel@lists.infradead.org; Wed, 26 Jun 2019 01:48:37 +0000
+Received: from dragon (li1322-146.members.linode.com [45.79.223.146])
+ (using TLSv1.2 with cipher DHE-RSA-AES128-SHA (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id DB962204EC;
+ Wed, 26 Jun 2019 01:48:29 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1561513713;
+ bh=owx0wb73EThTywYU6i4ubKi+rzMy9J4WHHfleArB/18=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=u8ZU/YsWhOTzSHtSwsmM366q41qcBEyYxSzxdgmENcJkpGLICtMl5wiW50x49IAUu
+ Vi/HWoPXC/PgOIQOpKsotM8hCZScDpPh3QZ8QRQALeL68p9JjF/AXdMwUTGannjXx2
+ 6cQMRAOrgyNVoTlLbD2xspGNDQIBJroGQznNNP3k=
+Date: Wed, 26 Jun 2019 09:48:16 +0800
+From: Shawn Guo <shawnguo@kernel.org>
+To: Olof Johansson <olof@lixom.net>
+Subject: Re: [GIT PULL 1/7] i.MX drivers change for 5.3
+Message-ID: <20190626014815.GE16146@dragon>
+References: <20190625075305.29082-1-shawnguo@kernel.org>
+ <20190625124538.wrxlx6mk3vtyij3m@localhost>
 MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 01bbb761-a46f-46ff-3e22-08d6f9d7984b
-X-MS-Exchange-CrossTenant-originalarrivaltime: 26 Jun 2019 01:42:48.5468 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: anson.huang@nxp.com
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB3PR0402MB3900
+Content-Disposition: inline
+In-Reply-To: <20190625124538.wrxlx6mk3vtyij3m@localhost>
+User-Agent: Mutt/1.5.21 (2010-09-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190625_184254_980294_30A02C80 
-X-CRM114-Status: GOOD (  15.03  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190625_184835_252585_144D1777 
+X-CRM114-Status: GOOD (  15.23  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.2.61 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
@@ -113,6 +65,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -124,43 +77,58 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: dl-linux-imx <linux-imx@nxp.com>
+Cc: Stefan Agner <stefan@agner.ch>, Li Yang <leoyang.li@nxp.com>,
+ arm@kernel.org, linux-imx@nxp.com, kernel@pengutronix.de,
+ Fabio Estevam <festevam@gmail.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi, Daniel
-
-> On 23/06/2019 14:38, Anson.Huang@nxp.com wrote:
-> > From: Anson Huang <Anson.Huang@nxp.com>
-> >
-> > Systems which use platform driver model for clock driver require the
-> > clock frequency to be supplied via device tree when system counter
-> > driver is enabled.
-> >
-> > This is necessary as in the platform driver model the of_clk
-> > operations do not work correctly because system counter driver is
-> > initialized in early phase of system boot up, and clock driver using
-> > platform driver model is NOT ready at that time, it will cause system
-> > counter driver initialization failed.
-> >
-> > Add the optinal clock-frequency to the device tree bindings of the NXP
-> > system counter, so the frequency can be handed in and the of_clk
-> > operations can be skipped.
+On Tue, Jun 25, 2019 at 05:45:38AM -0700, Olof Johansson wrote:
+> On Tue, Jun 25, 2019 at 03:52:59PM +0800, Shawn Guo wrote:
+> > The following changes since commit a188339ca5a396acc588e5851ed7e19f66b0ebd9:
+> > 
+> >   Linux 5.2-rc1 (2019-05-19 15:47:09 -0700)
+> > 
+> > are available in the Git repository at:
+> > 
+> >   git://git.kernel.org/pub/scm/linux/kernel/git/shawnguo/linux.git tags/imx-drivers-5.3
+> > 
+> > for you to fetch changes up to db10496c0064ba3355936de801cd3ba0b6711bd1:
+> > 
+> >   soc: imx: Add i.MX8MN SoC driver support (2019-06-24 09:15:57 +0800)
+> > 
+> > ----------------------------------------------------------------
+> > i.MX driver changes for 5.3:
+> >  - Add i.MX SCU based SoC bus driver for i.MX8QXP SoC support, which
+> >    talks to SCU firmware for getting SoC ID and revision.
+> >  - Update soc-imx8 bus driver to read imx8mm soc revision from anatop.
+> >  - Add i.MX8MN SoC bus support into soc-imx8 driver.
+> >  - Various small improvements on soc-imx8 bus driver.
+> > 
+> > ----------------------------------------------------------------
+> > Anson Huang (6):
+> >       soc: imx: Add SCU SoC info driver support
+> >       soc: imx: soc-imx8: Avoid unnecessary of_node_put() in error handling
+> >       soc: imx: soc-imx8: Correct return value of error handle
+> >       soc: imx8: Fix potential kernel dump in error path
+> >       soc: imx8: Use existing of_root directly
+> >       soc: imx: Add i.MX8MN SoC driver support
 > 
-> Isn't it possible to create a fixed-clock and refer to it? So no need to create a
-> specific action before calling timer_of_init() ?
-> 
+> Given that these were posted at the same time, it seems silly to post a patch
+> with a fix right after -- they should probably be squashed before sending out
+> (or when applying).
 
-As the clock must be ready before the TIMER_OF_DECLARE, so adding a CLK_OF_DECLARE_DRIVER in
-clock driver to ONLY register a fixed-clock? The system counter's frequency are different on different
-platforms, so adding fixed clock in system counter driver is NOT a good idea, ONLY the DT node or the
-clock driver can create this fixed clock according to platforms, can you advise where to create this fixed
-clock is better?
+Hmm, soc-imx-scu is the new SoC bus driver added during this development
+cycle, but all those improvements are around soc-imx8 driver which
+landed on 5.2 release.
 
-Thanks,
-Anson 
+> Anyway, minor nit. Merged the branch.
+
+Thanks, Olof.
+
+Shawn
 
 _______________________________________________
 linux-arm-kernel mailing list
