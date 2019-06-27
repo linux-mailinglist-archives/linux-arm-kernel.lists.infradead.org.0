@@ -2,98 +2,101 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4F8E357C5F
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 27 Jun 2019 08:45:43 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 419EF57C61
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 27 Jun 2019 08:46:08 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Xtxw2CMRjDK6waUuWSYRzouggxx/iSdvpFkGflYIRgE=; b=CLzQ0P1miop3P7
-	br+w+WEtXOOtP3TSe7OgYWW+G8iiAG2t1TwnwkBERxMWE+FL+QMa5Xis4fggKcoqKhGu1xRpGDS5n
-	D/YY8646XUx7891fPYYyyy3fqCqtuLwrG+7O+kqSFkoJEBzhtxRRggQRo2bsgkEwp1JPlqjUxEBEk
-	nZPT/ZVJNnxS/W5TQ0ponItBO0fpnq20AFLfTk9QLl02BjHqebWLWH++00/RKvF3L3FX7nPTN/tkn
-	jvGSCYbSen8tkoPppYcVr6YQhxjnPaSUebXW1suiTeSpwJWYJNSl5HZs0l0MO3BhlaucxJ50JvWbE
-	0dkfCrA7r7PRv5xxNTQA==;
+	List-Owner; bh=Hn+/cNvt5d+9+MwnzkVHBQax6VYyrG/IaHYnTd9OnHQ=; b=OhT44Z8b17P/WC
+	ZxUz6fbSxLVuWqnLqe5IN79u6IWe70LclZckFme+Xa47byf9KHhol/27W9tbD7Shp2P8v7KZpsbNr
+	3h6LI/1R8uIo2U/SPbg1hX1y+kuFg6Ro1Fk3zbKogXDRiVB4pk9DARGAv0nykl2jjjnp9R2kmErfl
+	J+JxR+xKGMMULEj55xYiSuEXLf0qXH9ahrxRz/4U5kMQBjw1OxWPydmOafiWe5T1ARSvz5taIMgEY
+	7cHgJC53DtDsI6hX63d5ypFvJHZ4CR5WOcKybTf1HFqJfdnwxc3fk4abxFPS50W5emc1PLOZ+1ALj
+	lczyIPqlqewLXKDQqUVw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hgOA7-0000Pp-Fd; Thu, 27 Jun 2019 06:45:39 +0000
+	id 1hgOAX-0000n2-53; Thu, 27 Jun 2019 06:46:05 +0000
 Received: from merlin.infradead.org ([2001:8b0:10b:1231::1])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hgO88-0006KM-J1
- for linux-arm-kernel@bombadil.infradead.org; Thu, 27 Jun 2019 06:43:36 +0000
+ id 1hgO8A-0006KM-4y
+ for linux-arm-kernel@bombadil.infradead.org; Thu, 27 Jun 2019 06:43:38 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=infradead.org; s=merlin.20170209; h=Content-Type:Cc:To:Subject:Message-ID:
  Date:From:In-Reply-To:References:MIME-Version:Sender:Reply-To:
  Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
  Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
  List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=2KVsZBY5LFFo4gY6VFlLWm4C7+0s80NQB68c0PwknKs=; b=F0ttKjGgE3DtEJWAEaEyTykAv
- MLqqL81DEwuoiuwAmoCRB5CJxhCZ08U9yNR8jbDJ5qggJvCdyoAuHZEzpHLEMPSM8Wd1i1J5XCUtV
- YjVm9EV4y89v/k+Df0lo746HSZuAk5Xte0M1Y34H/dynO0zjPWxZhRElrgdWcFb0IevAzbeIMVu6s
- j1h0Nrl+NQcdPeMeqLvklDKB45igHXbGJ1DltgpjkfihQxdVyA6LisnaC5rsJd1X8YidvUNmvFEuy
- lnHSxC3voSSPaMMVWFvN8MhPNcK0Uhsjl77KL9hqEDftABjrKafhHrGJKZbTixbRUBGFHsZndQa4V
- 7LOZiYnEQ==;
-Received: from mail-qk1-x742.google.com ([2607:f8b0:4864:20::742])
+ bh=y22CNeS4I4ip2/omKMWln+BWupj7xZ1w+7CB2TiUth0=; b=oHg9p2z5N4EJq5ffL8SzaA37J
+ Sj+bG9O4YreXMsY0ogVvbXB2ePBMTduf+ARcESDRt3uBJLnzeirCiKAiG22bCwMliPq4tgHN5+VD4
+ AHCH0S+dq/q1JlSfW4Dh/fRkfC20zUlRZtcFetvkKb4t9Uh9frHPkXgFEgLQSEkzqJXv+VHNyA1jc
+ QQ2rxeCoJ9w/9nQYloyKZcNFHd81asx98ybGX6LeQufCM9t6wkd5womfdB3Nt+ef0ez2PqrvTWlRo
+ ejeFEm4yNbTuzXrleVg4gN9HQIZ5Yy7LXXQjBjXhuOn5KlHk5KDNtbaYnRsQUYGnnz+ImJirdTpXu
+ cn98zmXog==;
+Received: from mail-ed1-f68.google.com ([209.85.208.68])
  by merlin.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hgLCI-0006M8-0S
- for linux-arm-kernel@lists.infradead.org; Thu, 27 Jun 2019 03:35:43 +0000
-Received: by mail-qk1-x742.google.com with SMTP id p144so522262qke.11
+ id 1hgLC2-0006M2-9V
+ for linux-arm-kernel@lists.infradead.org; Thu, 27 Jun 2019 03:35:27 +0000
+Received: by mail-ed1-f68.google.com with SMTP id k21so5617843edq.3
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 26 Jun 2019 20:35:40 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=jms.id.au; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=2KVsZBY5LFFo4gY6VFlLWm4C7+0s80NQB68c0PwknKs=;
- b=CIH3DEPisvLbPTZi3wGI1i0TO6B3EfYZ4CM7za6PasawEQwEPzSBOS2EYItAnRotMN
- nOB68MyZj2/cOYouVjFwjG2GMNoScQjVrcU9FtqqisfIN3GYQi/GI6j2w7t0LZspAEZY
- OxPlsgmasoWbTm8XsFglyvqYvmDiZcPezKJzM=
+ Wed, 26 Jun 2019 20:35:21 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=2KVsZBY5LFFo4gY6VFlLWm4C7+0s80NQB68c0PwknKs=;
- b=Kp1kQPi9wUrJeT7zYWMhMIw20jy0clTd1hZQ+h0sfdsIzJ+SEVX8LdNsLb5L+7uDcE
- +4hYHCJI7w7ZpOJLFDROr1C/xRSZ9+WR6j646vJp0DKnsMz+hs6S+zHESh4eH6mWGuW/
- xmHuWC3dL+Lyh/Ckfwz+tsKnTzdza2yGD0esMEyPLAGf9QluBWQdKqO6O64HainvML3X
- CeAZMlin2dpLaaWBSh60oV20qvspSoMGQn8UkomEpmtk3bG47DK8uSGoiuUSX/yTp80P
- E5Acdpc5sI+u/J+7H0PJcA8hiEGvt5lmSgoHQQWDa50swD/wQxHhbM8wujw5/HrB2PrF
- O6Ow==
-X-Gm-Message-State: APjAAAXsRpJtttjEj6v7NAcQ2GhhVV8SEV9qNYhGeMf/BJ20XbakmFZD
- eU6a+C3TlXvhxmlY0vfUgVShI73fLefaP9jegKs=
-X-Google-Smtp-Source: APXvYqwXbb3SH4AresCUU4pzniix+MHNP2zt84LdWlLd+3IFX0N+wQdttTRFErJ2Y5pcpv3VABkcH8J/i1o8Fv56cF4=
-X-Received: by 2002:a05:620a:1113:: with SMTP id
- o19mr1389916qkk.330.1561606418450; 
- Wed, 26 Jun 2019 20:33:38 -0700 (PDT)
+ bh=y22CNeS4I4ip2/omKMWln+BWupj7xZ1w+7CB2TiUth0=;
+ b=YnvinpZpacIR0iKEOJQ6e6+y16BiqEbh4OYtP2LEavM3azvmy4dVZlQhB3GO7+z0E7
+ jeNgu25TfSBKgj7VnFPi2xVdoVJ3OPfyQuMjeNuxVSNFk5YVFFKvbA+zZPPIyKObyitN
+ Tf6m7XFYvZn6pwpHpkRCRZbLHCi6yzy5T3VICptMFb3TwNT1cl3BBS29w+ptZ6PyEmr4
+ GMFe0Z9Gf7fJXZnLQs/DWfeJz8oI7+1s17KsY1eT1ueouPD7yBbvTnzSbbAVLaMStKlt
+ XnUbqFif1nJ8olJ2I8WpbHShLprT+BpxzlPhFajnK/1c5e1ZY/tMU9B9XePE1BxSYOGZ
+ ZAzQ==
+X-Gm-Message-State: APjAAAURD0bFo6OuLwqJJ573/q7T+KmzBkRliQy9FFVBTTihlJhWpvI/
+ Fb60vwkNd93Rz/4A8sMZlOBrD3BsGF8=
+X-Google-Smtp-Source: APXvYqwRIvKeHcUSpUfGDL/YRaZLsK+yW+mJB7NRUKF1UPAlCGYBguOPtf3ph/tV1nE62jbeOXsBvA==
+X-Received: by 2002:a50:976d:: with SMTP id d42mr1405993edb.77.1561606460260; 
+ Wed, 26 Jun 2019 20:34:20 -0700 (PDT)
+Received: from mail-wm1-f47.google.com (mail-wm1-f47.google.com.
+ [209.85.128.47])
+ by smtp.gmail.com with ESMTPSA id v12sm169663ejh.48.2019.06.26.20.34.19
+ for <linux-arm-kernel@lists.infradead.org>
+ (version=TLS1_3 cipher=AEAD-AES128-GCM-SHA256 bits=128/128);
+ Wed, 26 Jun 2019 20:34:20 -0700 (PDT)
+Received: by mail-wm1-f47.google.com with SMTP id s3so4144678wms.2
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 26 Jun 2019 20:34:19 -0700 (PDT)
+X-Received: by 2002:a7b:c051:: with SMTP id u17mr1290734wmc.25.1561606459379; 
+ Wed, 26 Jun 2019 20:34:19 -0700 (PDT)
 MIME-Version: 1.0
-References: <20190626071430.28556-1-andrew@aj.id.au>
- <20190626071430.28556-7-andrew@aj.id.au>
-In-Reply-To: <20190626071430.28556-7-andrew@aj.id.au>
-From: Joel Stanley <joel@jms.id.au>
-Date: Thu, 27 Jun 2019 03:33:26 +0000
-Message-ID: <CACPK8Xf2xvQAm8sad-xTt_yNO0-ed+PG8mVDujS8EsXzZw4J0A@mail.gmail.com>
-Subject: Re: [PATCH 6/8] pinctrl: aspeed: Clarify comment about strapping W1C
-To: Andrew Jeffery <andrew@aj.id.au>
+References: <20190620010127.12071-1-andre.przywara@arm.com>
+ <CAGb2v66WOTFvXWSSGwtLh3hD+N4CeJkFEPnCMXp0FuU2h=LS9Q@mail.gmail.com>
+ <20190624135806.7bc78378@donnerap.cambridge.arm.com>
+ <CAGb2v66vNndnXXfQfF4tnkEfqPjom7e=kuWVzWggjcTSeDPWsA@mail.gmail.com>
+In-Reply-To: <CAGb2v66vNndnXXfQfF4tnkEfqPjom7e=kuWVzWggjcTSeDPWsA@mail.gmail.com>
+From: Chen-Yu Tsai <wens@csie.org>
+Date: Thu, 27 Jun 2019 11:34:09 +0800
+X-Gmail-Original-Message-ID: <CAGb2v67woLtn4bdD8YbCN9CyLPm_9r9+wd_Cxp8AUeVed0O-pA@mail.gmail.com>
+Message-ID: <CAGb2v67woLtn4bdD8YbCN9CyLPm_9r9+wd_Cxp8AUeVed0O-pA@mail.gmail.com>
+Subject: Re: [PATCH] arm64: dts: allwinner: properly connect USB PHY to port 0
+To: Andre Przywara <andre.przywara@arm.com>
 X-Spam-Note: CRM114 invocation failed
-X-Spam-Score: 0.4 (/)
+X-Spam-Score: 0.8 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on merlin.infradead.org summary:
- Content analysis details:   (0.4 points)
+ Content analysis details:   (0.8 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.208.68 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
  mail domains are different
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (wens213[at]gmail.com)
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (joel.stan[at]gmail.com)
+ provider (wens213[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:742 listed in]
- [list.dnswl.org]
  0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
  EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -108,48 +111,71 @@ List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: Mark Rutland <mark.rutland@arm.com>,
- devicetree <devicetree@vger.kernel.org>, Ryan Chen <ryan_chen@aspeedtech.com>,
- linux-aspeed@lists.ozlabs.org, Linus Walleij <linus.walleij@linaro.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- linux-gpio@vger.kernel.org, Rob Herring <robh+dt@kernel.org>,
- OpenBMC Maillist <openbmc@lists.ozlabs.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+ devicetree <devicetree@vger.kernel.org>, Rob Herring <robh@kernel.org>,
+ Maxime Ripard <maxime.ripard@bootlin.com>,
+ linux-sunxi <linux-sunxi@googlegroups.com>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, 26 Jun 2019 at 07:16, Andrew Jeffery <andrew@aj.id.au> wrote:
+On Mon, Jun 24, 2019 at 9:03 PM Chen-Yu Tsai <wens@csie.org> wrote:
 >
-> Writes of 1 to SCU7C clear set bits in SCU70, the hardware strapping
-> register. The information was correct if you squinted while reading, but
-> hopefully switching the order of the registers as listed conveys it
-> better.
+> On Mon, Jun 24, 2019 at 8:58 PM Andre Przywara <andre.przywara@arm.com> wrote:
+> >
+> > On Mon, 24 Jun 2019 16:25:47 +0800
+> > Chen-Yu Tsai <wens@csie.org> wrote:
+> >
+> > Hi,
+> >
+> > > On Thu, Jun 20, 2019 at 9:02 AM Andre Przywara <andre.przywara@arm.com> wrote:
+> > > >
+> > > > In recent Allwinner SoCs the first USB host controller (HCI0) shares
+> > > > the first PHY with the MUSB controller. Probably to make this sharing
+> > > > work, we were avoiding to declare this in the DT. This has two
+> > > > shortcomings:
+> > > > - U-Boot (which uses the same .dts) cannot use this port without a PHY
+> > > >   linked, so we were loosing one USB port there.
+> > > > - It requires the MUSB driver to be enabled and loaded, although we
+> > > >   don't actually use it.
+> > > >
+> > > > For those (64-bit) boards which use an USB-A socket for HCI0/MUSB, add
+> > > > a "phys" property pointing to the USB PHY 0.
+> > > >
+> > > > This makes it work in U-Boot, also improves compatiblity when no MUSB
+> > > > driver is loaded (for instance in distribution installers).
+> > > >
+> > > > Signed-off-by: Andre Przywara <andre.przywara@arm.com>
+> > > > ---
+> > > > Hi,
+> > > >
+> > > > I have the feeling this belongs into the .dtsi, but cant't tell for sure
+> > > > how this interacts with the MUSB driver. If need be, we can always pull
+> > > > this up later, I guess.
+> > >
+> > > Have you tried if gadget mode and switching between gadget/host mode on
+> > > an otg port still works? AFAICT that would be the main thing to worry
+> > > about.
+> >
+> > I briefly tried gadget mode on a BPi-M64, and that still seemed to work,
+> > but I couldn't switch it to host mode. IIRC that didn't even work without
+> > this patch, but I didn't find the time to investigate yet.
+> >
+> > Is it supposed to switch automatically when the ID pin changes state? Do
+> > you know a board/kernel combination which is known to work?
 >
-> Signed-off-by: Andrew Jeffery <andrew@aj.id.au>
+> Yes it's supposed to switch automatically when you insert or remove the
+> OTG host mode cable.
+>
+> I think it worked during the last release cycle while I was adding support
+> for VBUS polling. I'll do some tests on the current sunxi-next tomorrow
+> and let you know.
 
-Acked-by: Joel Stanley <joel@jms.id.au>
+So it works properly for me on the Bananapi M64 with the latest sunxi-next
+branch. I have the gadget drivers built-in.
 
-> ---
->  drivers/pinctrl/aspeed/pinctrl-aspeed.c | 2 +-
->  1 file changed, 1 insertion(+), 1 deletion(-)
->
-> diff --git a/drivers/pinctrl/aspeed/pinctrl-aspeed.c b/drivers/pinctrl/aspeed/pinctrl-aspeed.c
-> index 4c775b8ffdc4..b510bb475851 100644
-> --- a/drivers/pinctrl/aspeed/pinctrl-aspeed.c
-> +++ b/drivers/pinctrl/aspeed/pinctrl-aspeed.c
-> @@ -209,7 +209,7 @@ static int aspeed_sig_expr_set(const struct aspeed_sig_expr *expr,
->                 if (desc->ip == ASPEED_IP_SCU && desc->reg == HW_STRAP2)
->                         continue;
->
-> -               /* On AST2500, Set bits in SCU7C are cleared from SCU70 */
-> +               /* On AST2500, Set bits in SCU70 are cleared from SCU7C */
->                 if (desc->ip == ASPEED_IP_SCU && desc->reg == HW_STRAP1) {
->                         unsigned int rev_id;
->
-> --
-> 2.20.1
->
+ChenYu
 
 _______________________________________________
 linux-arm-kernel mailing list
