@@ -2,36 +2,36 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F01FA589AC
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 27 Jun 2019 20:16:53 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B815B589B1
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 27 Jun 2019 20:17:22 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=NzZ0d4qDahosgp9JWrLBJaC6HdQziFj7aZxr7z9VGAQ=; b=pCY5pstqzFc7f5
-	5KeQvGcwKuBVWEVGqmLrdcy1jRoefB4wh8pOfHV295MxJ2qmrE2cFVCtcR5TviwWAqO6KkR6pWfe5
-	ID/vBFG0aay8q3cbm1GzxcojFWOxihL8lDwtASarFMeSN4CbTMU9R3kq+1U56RI1Uv1lHjAnFSi0c
-	05e5uvKC9Y7j7GmP0zx1RecwwdSG01geGMywi2IMsfR4GeMlLj2Vz5KrA8kxNte0rnwj+04Sfr9ws
-	0zPd9Rmv8EHfu/PMufl70RvaHRob9m0ju9awE6D/4l+tbm1zsLFSuKPTvwEaMwxeu4ZzmhF0zYSMX
-	sTSA4wPNOjmQ4CvByxJw==;
+	List-Owner; bh=TwQODgM0HRZuLOrGs1bPNHYFEsvFrKH6xoT56XRo2j8=; b=fpKFAaQEp8LaSG
+	2m3Mq/sTiVpSdIXt05fLAB7z3f+mIuXFywudU+zXklvTPh1ITIU+rMFbCQCNmjeiwGBjq9JMggdUh
+	Etv4zNs4KzNy07NUngP5JXmANRSNu+ics5EIzYnxa5jRO7OywsL39WdFun1NWg0yuRr1tNs2IobHI
+	1AHjVR5Hpiapff598a6l6XWpWZfqEfHqQxuBu2w14BKmV66RoZt2w9qIB9QExoGnXFt+F/iTL9qI2
+	5TA4jfR+eJH/eOAYooOo6JoKvLIKLYdcXItF+vPLkGJxpHRjOmDFqrT2U+Y0BBGm+VjSfcLOb6ZNp
+	D3+/BKRmyL2k1Jpi0p3Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hgYx0-0003UP-7i; Thu, 27 Jun 2019 18:16:50 +0000
+	id 1hgYxT-0003mx-59; Thu, 27 Jun 2019 18:17:19 +0000
 Received: from smtp.codeaurora.org ([198.145.29.96])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hgYwA-0003Fk-Ti
- for linux-arm-kernel@lists.infradead.org; Thu, 27 Jun 2019 18:16:00 +0000
+ id 1hgYwH-0003MC-Fs
+ for linux-arm-kernel@lists.infradead.org; Thu, 27 Jun 2019 18:16:07 +0000
 Received: by smtp.codeaurora.org (Postfix, from userid 1000)
- id 9C35D60E75; Thu, 27 Jun 2019 18:15:58 +0000 (UTC)
+ id 3080A60E5C; Thu, 27 Jun 2019 18:16:05 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=codeaurora.org;
- s=default; t=1561659358;
- bh=Lz3k/LZ0eJkEWfeJA4dvwqIvzmvYo86ur1JDk9IAS94=;
+ s=default; t=1561659365;
+ bh=ekmJZYPruG94DW3n938J/KYtemQnbEksmuKLFC0kwso=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=Lzkd05cadR+VcLtDFKmWEYTQr+Z/FWNMayfa1lp2IBpnHx2sogvA6WDtkLSHn4xJ/
- Xg5SaKZXkLGVErGTHZ2nGVijSvYYfeUpZXw3ALAZrgsLNcDD4sknz5QtpY7CPB0OFQ
- 29foyOZHT/oJMontSvlBDyuZh0gWE57U0JlSdC80=
+ b=kTG+czq2VT4LUCiiMBxD6qrP7/Od2bX/SNie8o1GQd3uN22p5x/QGzOQccTpp2hFR
+ zxxrGssZOW1+Xrnt0uRjZQiJp0t96o9mIhZ46tZuf6PCa3Gw0wtdIE0/QSIDIvxc+5
+ ctRKIKvnryDlvna6FXtQii9cDTvtqeJxY08w2G+A=
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
  pdx-caf-mail.web.codeaurora.org
 X-Spam-Level: 
@@ -43,16 +43,16 @@ Received: from blr-ubuntu-311.qualcomm.com
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-SHA256 (128/128 bits))
  (No client certificate requested)
  (Authenticated sender: saiprakash.ranjan@codeaurora.org)
- by smtp.codeaurora.org (Postfix) with ESMTPSA id AA74760AA8;
- Thu, 27 Jun 2019 18:15:53 +0000 (UTC)
+ by smtp.codeaurora.org (Postfix) with ESMTPSA id E142060EA5;
+ Thu, 27 Jun 2019 18:15:59 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=codeaurora.org;
- s=default; t=1561659357;
- bh=Lz3k/LZ0eJkEWfeJA4dvwqIvzmvYo86ur1JDk9IAS94=;
+ s=default; t=1561659363;
+ bh=ekmJZYPruG94DW3n938J/KYtemQnbEksmuKLFC0kwso=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=iOVrGKe0a3g9isQq9B0nO6PQcASg/n9Duxk7VJzhena/RHnH11geeWn9cixyk2mki
- gr0L+hMPDb463HmPsrkuYeK50k9kJ43BcWBLPNMckfYJTgmSQI2hbgrPnjpStVb/80
- g4rODFOAi6S8WYjrtQU02g8lHsQ/kB3a4RedpHKw=
-DMARC-Filter: OpenDMARC Filter v1.3.2 smtp.codeaurora.org AA74760AA8
+ b=A1zDquxtlEaF+OoVsqk0tXFXiuKwTZu79cbDELpLPdqVsL6KFEvXTLir5UxwAIQCC
+ CbgrOvNh6aA6mU06XS6Mw8LGmFk2RJuusvgcBn0SBTuOvkrE1+8FAKhTZHLzEneDZ0
+ GzrUrq0CU5Usg+leln1b6jluy5H3w+hndiIjICbU=
+DMARC-Filter: OpenDMARC Filter v1.3.2 smtp.codeaurora.org E142060EA5
 Authentication-Results: pdx-caf-mail.web.codeaurora.org;
  dmarc=none (p=none dis=none) header.from=codeaurora.org
 Authentication-Results: pdx-caf-mail.web.codeaurora.org; spf=none
@@ -64,17 +64,17 @@ To: Mathieu Poirier <mathieu.poirier@linaro.org>,
  Leo Yan <leo.yan@linaro.org>,
  Alexander Shishkin <alexander.shishkin@linux.intel.com>,
  David Brown <david.brown@linaro.org>, Mark Rutland <mark.rutland@arm.com>
-Subject: [PATCHv5 1/2] dt-bindings: coresight: Change CPU phandle to required
- property
-Date: Thu, 27 Jun 2019 23:45:28 +0530
-Message-Id: <2afedb941294af7ba0658496b4aca3759a4e43ff.1561659046.git.saiprakash.ranjan@codeaurora.org>
+Subject: [PATCHv5 2/2] coresight: Do not default to CPU0 for missing CPU
+ phandle
+Date: Thu, 27 Jun 2019 23:45:29 +0530
+Message-Id: <1a6616f9f41b560963e86e24d533c5b2c3f05179.1561659046.git.saiprakash.ranjan@codeaurora.org>
 X-Mailer: git-send-email 2.22.0
 In-Reply-To: <cover.1561659046.git.saiprakash.ranjan@codeaurora.org>
 References: <cover.1561659046.git.saiprakash.ranjan@codeaurora.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190627_111559_078923_53C98134 
-X-CRM114-Status: GOOD (  12.81  )
+X-CRM114-CacheID: sfid-20190627_111605_611260_D447B655 
+X-CRM114-Status: GOOD (  13.61  )
 X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.5 points)
@@ -112,58 +112,124 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Do not assume the affinity to CPU0 if cpu phandle is omitted.
-Update the DT binding rules to reflect the same by changing it
-to a required property.
+Coresight platform support assumes that a missing "cpu" phandle
+defaults to CPU0. This could be problematic and unnecessarily binds
+components to CPU0, where they may not be. In coresight etm and
+cpu-debug drivers, abort the probe for such cases.
 
 Signed-off-by: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>
 Reviewed-by: Suzuki K Poulose <suzuki.poulose@arm.com>
 ---
- .../devicetree/bindings/arm/coresight-cpu-debug.txt       | 4 ++--
- Documentation/devicetree/bindings/arm/coresight.txt       | 8 +++++---
- 2 files changed, 7 insertions(+), 5 deletions(-)
+ .../hwtracing/coresight/coresight-cpu-debug.c |  3 +++
+ drivers/hwtracing/coresight/coresight-etm3x.c |  3 +++
+ drivers/hwtracing/coresight/coresight-etm4x.c |  3 +++
+ .../hwtracing/coresight/coresight-platform.c  | 20 +++++++++----------
+ 4 files changed, 19 insertions(+), 10 deletions(-)
 
-diff --git a/Documentation/devicetree/bindings/arm/coresight-cpu-debug.txt b/Documentation/devicetree/bindings/arm/coresight-cpu-debug.txt
-index 298291211ea4..f1de3247c1b7 100644
---- a/Documentation/devicetree/bindings/arm/coresight-cpu-debug.txt
-+++ b/Documentation/devicetree/bindings/arm/coresight-cpu-debug.txt
-@@ -26,8 +26,8 @@ Required properties:
- 		processor core is clocked by the internal CPU clock, so it
- 		is enabled with CPU clock by default.
+diff --git a/drivers/hwtracing/coresight/coresight-cpu-debug.c b/drivers/hwtracing/coresight/coresight-cpu-debug.c
+index 07a1367c733f..58bfd6319f65 100644
+--- a/drivers/hwtracing/coresight/coresight-cpu-debug.c
++++ b/drivers/hwtracing/coresight/coresight-cpu-debug.c
+@@ -579,6 +579,9 @@ static int debug_probe(struct amba_device *adev, const struct amba_id *id)
+ 		return -ENOMEM;
  
--- cpu : the CPU phandle the debug module is affined to. When omitted
--	the module is considered to belong to CPU0.
-+- cpu : the CPU phandle the debug module is affined to. Do not assume it
-+        to default to CPU0 if omitted.
- 
- Optional properties:
- 
-diff --git a/Documentation/devicetree/bindings/arm/coresight.txt b/Documentation/devicetree/bindings/arm/coresight.txt
-index 8a88ddebc1a2..fcc3bacfd8bc 100644
---- a/Documentation/devicetree/bindings/arm/coresight.txt
-+++ b/Documentation/devicetree/bindings/arm/coresight.txt
-@@ -59,6 +59,11 @@ its hardware characteristcs.
- 
- 	* port or ports: see "Graph bindings for Coresight" below.
- 
-+* Additional required property for Embedded Trace Macrocell (version 3.x and
-+  version 4.x):
-+	* cpu: the cpu phandle this ETM/PTM is affined to. Do not
-+	  assume it to default to CPU0 if omitted.
+ 	drvdata->cpu = coresight_get_cpu(dev);
++	if (drvdata->cpu < 0)
++		return drvdata->cpu;
 +
- * Additional required properties for System Trace Macrocells (STM):
- 	* reg: along with the physical base address and length of the register
- 	  set as described above, another entry is required to describe the
-@@ -87,9 +92,6 @@ its hardware characteristcs.
- 	* arm,cp14: must be present if the system accesses ETM/PTM management
- 	  registers via co-processor 14.
+ 	if (per_cpu(debug_drvdata, drvdata->cpu)) {
+ 		dev_err(dev, "CPU%d drvdata has already been initialized\n",
+ 			drvdata->cpu);
+diff --git a/drivers/hwtracing/coresight/coresight-etm3x.c b/drivers/hwtracing/coresight/coresight-etm3x.c
+index 225c2982e4fe..e2cb6873c3f2 100644
+--- a/drivers/hwtracing/coresight/coresight-etm3x.c
++++ b/drivers/hwtracing/coresight/coresight-etm3x.c
+@@ -816,6 +816,9 @@ static int etm_probe(struct amba_device *adev, const struct amba_id *id)
+ 	}
  
--	* cpu: the cpu phandle this ETM/PTM is affined to. When omitted the
--	  source is considered to belong to CPU0.
--
- * Optional property for TMC:
+ 	drvdata->cpu = coresight_get_cpu(dev);
++	if (drvdata->cpu < 0)
++		return drvdata->cpu;
++
+ 	desc.name  = devm_kasprintf(dev, GFP_KERNEL, "etm%d", drvdata->cpu);
+ 	if (!desc.name)
+ 		return -ENOMEM;
+diff --git a/drivers/hwtracing/coresight/coresight-etm4x.c b/drivers/hwtracing/coresight/coresight-etm4x.c
+index 7fe266194ab5..7bcac8896fc1 100644
+--- a/drivers/hwtracing/coresight/coresight-etm4x.c
++++ b/drivers/hwtracing/coresight/coresight-etm4x.c
+@@ -1101,6 +1101,9 @@ static int etm4_probe(struct amba_device *adev, const struct amba_id *id)
+ 	spin_lock_init(&drvdata->spinlock);
  
- 	* arm,buffer-size: size of contiguous buffer space for TMC ETR
+ 	drvdata->cpu = coresight_get_cpu(dev);
++	if (drvdata->cpu < 0)
++		return drvdata->cpu;
++
+ 	desc.name = devm_kasprintf(dev, GFP_KERNEL, "etm%d", drvdata->cpu);
+ 	if (!desc.name)
+ 		return -ENOMEM;
+diff --git a/drivers/hwtracing/coresight/coresight-platform.c b/drivers/hwtracing/coresight/coresight-platform.c
+index 3c5ceda8db24..cf580ffbc27c 100644
+--- a/drivers/hwtracing/coresight/coresight-platform.c
++++ b/drivers/hwtracing/coresight/coresight-platform.c
+@@ -159,16 +159,16 @@ static int of_coresight_get_cpu(struct device *dev)
+ 	struct device_node *dn;
+ 
+ 	if (!dev->of_node)
+-		return 0;
++		return -ENODEV;
++
+ 	dn = of_parse_phandle(dev->of_node, "cpu", 0);
+-	/* Affinity defaults to CPU0 */
+ 	if (!dn)
+-		return 0;
++		return -ENODEV;
++
+ 	cpu = of_cpu_node_to_id(dn);
+ 	of_node_put(dn);
+ 
+-	/* Affinity to CPU0 if no cpu nodes are found */
+-	return (cpu < 0) ? 0 : cpu;
++	return cpu;
+ }
+ 
+ /*
+@@ -310,7 +310,7 @@ of_get_coresight_platform_data(struct device *dev,
+ 
+ static inline int of_coresight_get_cpu(struct device *dev)
+ {
+-	return 0;
++	return -ENODEV;
+ }
+ #endif
+ 
+@@ -734,14 +734,14 @@ static int acpi_coresight_get_cpu(struct device *dev)
+ 	struct acpi_device *adev = ACPI_COMPANION(dev);
+ 
+ 	if (!adev)
+-		return 0;
++		return -ENODEV;
+ 	status = acpi_get_parent(adev->handle, &cpu_handle);
+ 	if (ACPI_FAILURE(status))
+-		return 0;
++		return -ENODEV;
+ 
+ 	cpu = acpi_handle_to_logical_cpuid(cpu_handle);
+ 	if (cpu >= nr_cpu_ids)
+-		return 0;
++		return -ENODEV;
+ 	return cpu;
+ }
+ 
+@@ -769,7 +769,7 @@ acpi_get_coresight_platform_data(struct device *dev,
+ 
+ static inline int acpi_coresight_get_cpu(struct device *dev)
+ {
+-	return 0;
++	return -ENODEV;
+ }
+ #endif
+ 
 -- 
 QUALCOMM INDIA, on behalf of Qualcomm Innovation Center, Inc. is a member
 of Code Aurora Forum, hosted by The Linux Foundation
