@@ -2,65 +2,95 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CE235583B9
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 27 Jun 2019 15:40:15 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9A13E583CC
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 27 Jun 2019 15:46:28 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=nng6lN8DYL/zZfGPLjH4QL8H/Xmk6KZCeCAGrN7YrbU=; b=l6YyRc+MVG7Cq3
-	+PHsAwfOcQT8WIL9kOT7nLN1s/rbnrqAqHfU9hJxdiM0ftVD91TDgDy3nMjICt0b5kcIaMpqsoJR6
-	WjJ8cV9n6VwNEgBY2wMnrkE5BMdXnFKRh3cS6oaz2qmgdrBXiDQUe1HhIOzzr7FTfLPrQIeY50id3
-	M9uz6/MPSnVUyDjgRvJ0otGVLDvOyJt9POPIcOfilFz5VveAlRvFFdhKzBt1Xuy/P+7whbsVO2RAx
-	UB6iEMj66v3p+zqQMHMHd4FmnCqUVTnQ0hT5rQ08KnJgsPDbIiwOBnaBqjjxrRjO6vDE0RHE6UXbN
-	t9fkUB2f82B/0N/H3Q3Q==;
+	List-Owner; bh=kVIa+JtVCNdQc5lNW6QhHyhIVW89dUhJxz6iu+A8Oq4=; b=totE76BmVd2RDj
+	eluOahPtRIpNyEqvLcg+KsDDMUnXdqfeypjPNrLJHHdO/c4P2PPqCKSbDHCwwmHcqGmwKA2VS4cB8
+	AvNs+jKUaK8IXFO8A9hXdAWmVgLW2C3b79ROFhcHKrc//gKAFDMyMbpbdLkql3lpjGVoL+ZuoAVyb
+	LcOZjNdyjXJgFUBexrfD0hMErVmmeEYXfbPf6AlYBypQSrM7C7WmMmZVrlA43gguAZgc4NMe5gx/2
+	A2zjqKuSwqBOtlDSQMGQdGUbosccUHIVEl2+72Lu08yUhjfQdXvUQVM5ZqAEWE3+fziCzhBiazU7N
+	TsNEGnOazzSbvEjqX5DA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hgUdI-0007kH-BZ; Thu, 27 Jun 2019 13:40:12 +0000
-Received: from relay3-d.mail.gandi.net ([217.70.183.195])
+	id 1hgUjG-0003WT-VR; Thu, 27 Jun 2019 13:46:23 +0000
+Received: from mail-qt1-x842.google.com ([2607:f8b0:4864:20::842])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hgUcv-0007iv-Qq
- for linux-arm-kernel@lists.infradead.org; Thu, 27 Jun 2019 13:39:51 +0000
-X-Originating-IP: 92.137.69.152
-Received: from localhost (alyon-656-1-672-152.w92-137.abo.wanadoo.fr
- [92.137.69.152])
- (Authenticated sender: alexandre.belloni@bootlin.com)
- by relay3-d.mail.gandi.net (Postfix) with ESMTPSA id AAFAF60018;
- Thu, 27 Jun 2019 13:39:33 +0000 (UTC)
-Date: Thu, 27 Jun 2019 15:39:32 +0200
-From: Alexandre Belloni <alexandre.belloni@bootlin.com>
-To: Wolfram Sang <wsa@the-dreams.de>
-Subject: Re: I2C filtering (was Re: [PATCH v2 6/9] dt-bindings: i2c: at91:
- add binding for enable-ana-filt)
-Message-ID: <20190627133932.GL3692@piout.net>
-References: <1561449642-26956-1-git-send-email-eugen.hristev@microchip.com>
- <1561449642-26956-7-git-send-email-eugen.hristev@microchip.com>
- <4e81d3c9-25f3-ca6e-f2d5-17fad5905bb8@axentia.se>
- <84628b5e-bea7-7d91-f790-f3a2650040fa@microchip.com>
- <20190625093156.GF5690@piout.net> <20190625095533.GC1688@kunai>
- <20190627132200.GK3692@piout.net>
- <eb2d87b7-437c-53ee-a1ca-37c4d3fadea6@microchip.com>
- <20190627133440.GA7158@ninjato>
+ id 1hgUiu-0003VB-Ko; Thu, 27 Jun 2019 13:46:02 +0000
+Received: by mail-qt1-x842.google.com with SMTP id p15so2472380qtl.3;
+ Thu, 27 Jun 2019 06:45:59 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=RvlLa2f6FXHpp41B30iGxN9xdJLyVpWbPdRkmCrlMUM=;
+ b=M9s5jArQGsv3jFLsOazm3k0Su2Ijc3P1WDdeP9ro/cWAwLGYbv4XUsyCwC44qXPBIH
+ SBTsevQrWVmbdulLcgJzJGiVpX+jZ5b16alhATkJ1j1sJI2gEaYpBBq1SyUjKJQZlb+B
+ yc/jS8FJrVezk4HOhfIzhysnc5zmQh4bo3KG0ByWmNRJ+2JIgj0dhGYcajVGFmfwR27t
+ hbWHLJHo6ylkWL8FJndTQTJ+4SP8RK+JmUwQysqwRAyeTZQJisNWvYcRM49NEzSrwxA+
+ Ha/oUMqwW+h25eRehXb5Ew6yRYt29oG5OLcAk/AFlw4gJIRHqCnP+r8GbfB3/8T5J5B/
+ irZA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=RvlLa2f6FXHpp41B30iGxN9xdJLyVpWbPdRkmCrlMUM=;
+ b=KW5/Y31RvUS2oQNpffF0HBD3eCaVR0ImGfqy84jbc2pM78qm19sd6cZovBgpRvKL+9
+ Cdnmj+GGW9VRYOmFS5RDCtv5Q6+hSyRj19g66s2+0uJi5FZxsgZ/661ghDup5Fbulvw6
+ Rlq7lG3hY9Qa43AdHjmH/kIIM4+nSj2cYE8zp8mkxc9ZghKEo02yNeImK5NKga8IIoGE
+ ULpPPQWkG4rscCu32aB0uO1zdZk5oEEuACovmnsNKLKcYiYfprjMNS0oN/QW7eXmkBHK
+ N9dPCopiGT0RHTqab2huG5j8sCdS917osPcqVtQXVevw9angX9WhxfZVijCMDYcwp+OG
+ cuqg==
+X-Gm-Message-State: APjAAAU0jd1KdV3JisKK44omHPioy7mp67Nv6hNdOcar1jON4u1fkXmo
+ anMpHj8g3pIcQKVUUa9Ovno=
+X-Google-Smtp-Source: APXvYqyhMoXbBadlv3aGIW8CDGWxS2SVIQP2MLynVqH4G4BIBYr3VYanG9PLF35D+hUOSanOADREqA==
+X-Received: by 2002:ac8:4705:: with SMTP id f5mr2976812qtp.99.1561643158801;
+ Thu, 27 Jun 2019 06:45:58 -0700 (PDT)
+Received: from ubuntu (ool-18b82048.dyn.optonline.net. [24.184.32.72])
+ by smtp.gmail.com with ESMTPSA id o12sm847801qkg.99.2019.06.27.06.45.57
+ (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
+ Thu, 27 Jun 2019 06:45:58 -0700 (PDT)
+Date: Thu, 27 Jun 2019 09:45:55 -0400
+From: Vivek Unune <npcomplete13@gmail.com>
+To: Heiko Stuebner <heiko@sntech.de>
+Subject: Re: [PATCH v2] arm64: dts: rockchip: Add support for Hugsun X99 TV Box
+Message-ID: <20190627134555.GA25086@ubuntu>
+References: <2273961.GTPgWWlV5T@phil>
+ <20190621205308.5177-1-npcomplete13@gmail.com>
+ <3247989.aGYRIomCNH@phil>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190627133440.GA7158@ninjato>
-User-Agent: Mutt/1.12.0 (2019-05-25)
+In-Reply-To: <3247989.aGYRIomCNH@phil>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190627_063950_029480_333F2481 
-X-CRM114-Status: GOOD (  10.97  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20190627_064600_703963_049384C6 
+X-CRM114-Status: UNSURE (   9.98  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.183.195 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [217.70.183.195 listed in wl.mailspike.net]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:842 listed in]
+ [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (npcomplete13[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (npcomplete13[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -72,38 +102,44 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
- linux-stm32@st-md-mailman.stormreply.com, pierre-yves.mordret@st.com,
- linux-kernel@vger.kernel.org, Ludovic.Desroches@microchip.com,
- robh+dt@kernel.org, linux-i2c@vger.kernel.org, Eugen.Hristev@microchip.com,
- peda@axentia.se, linux-arm-kernel@lists.infradead.org
+Cc: linux-rockchip@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
+ devicetree@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 27/06/2019 15:34:40+0200, Wolfram Sang wrote:
+On Thu, Jun 27, 2019 at 12:38:25AM +0200, Heiko Stuebner wrote:
+> Am Freitag, 21. Juni 2019, 22:53:08 CEST schrieb Vivek Unune:
+> > Add devicetree support for Hugsun X99 TV Box based on RK3399 SoC
+> > 
+> > Tested with LibreElec running kernel v5.1.2.
+> > Following peripherals tested and work:
+> > 
+> > Peripheral works:
+> > - UART2 debug
+> > - eMMC
+> > - USB 3.0 port
+> > - USB 2.0 port
+> > - sdio, sd-card
+> > - HDMI
+> > - Ethernet
+> > - WiFi/BT
+> > 
+> > Not tested:
+> > - Type-C port
+> > - OPTICAL
+> > - IR
+> > 
+> > Signed-off-by: Vivek Unune <npcomplete13@gmail.com>
 > 
-> > > Apart from enabling the filter there is indeed one configuration
-> > > setting, the maximum pulse width of spikes to be suppressed by the input
-> > > filter.
+> applied for 5.3 after doing some reordering to make things
+> alphabetical.
 > 
-> Yup, this is what I anticipated.
+> Heiko
 > 
-> > This is a number 0 to 7 (3 bits) that represents the width of the spike 
-> > in periph clock cycles.
 > 
-> For a generic binding, we would need some time-value as a parameter and
-> convert it to clock cycles in the driver then, I'd think.
-> 
-
-Yes, that is what I was going to suggest.
-
-
--- 
-Alexandre Belloni, Bootlin
-Embedded Linux and Kernel engineering
-https://bootlin.com
+Thanks Heiko!
 
 _______________________________________________
 linux-arm-kernel mailing list
