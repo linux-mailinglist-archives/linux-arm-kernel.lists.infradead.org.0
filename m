@@ -2,80 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7D88258C67
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 27 Jun 2019 23:03:12 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 99CD858C8C
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 27 Jun 2019 23:11:45 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=zBr9zyLbB4+LyJBKORzYaudbr0L6dpvxPVwH2pm+Wbg=; b=tWi2iRvRHXZO0NQejUzn9jTjA/
-	N6p90URXa4wWPA4rcY1R9tPeKHRykfsoAnU7FpNi0AmlBtvG4gYhlBwfjAwKaTeHp3/hgS0zryRLW
-	z4buVYyTw1VHLO39OtIx7lR4ObXVi3VMoelgkf00VuhM5+KSMl5O9On4mtTa1SRfHflCMN+pghMHn
-	tUPy9+jLEfyn7k0KDvVp7mWTVlJTKzOjKCzyUP0l0yGbulU4CD4QpJezPX1ozE/h8zQEchSmrSWp0
-	gYhu6aflfUlCKA5QDkDoBOlWs8jkkZjezljhO2NUH1Q/uzTLfxZKXa4r3SlMmQbLTQYB/Z4xIsoxn
-	vhy63/1Q==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=BZ/Myi5YJsTYTjsmf43/pqXbaQrtWAT7gG5CzGtYsws=; b=uLM
+	ldlWzBjMamchHBqu2H7VtMxmM9JFFoxmX3tgmuMBrQPG3xQFotqpM/Pf6poMUBo1/7KGhFWhozWgT
+	5QOsoh+Jh6uyDAL5FRkgaZjBwtp0W3kYKO4Eaoi/Ul6gPuR6l7japMP+WENkzU28znezWdTB27/84
+	3pO6iu0FDcgF5UzTnvmH/Msi1A+lJDgG9u7ncvS2BSUGUVOfASayhU9/0KNi6jleN35vqSOnHumqS
+	50g1Tgsf9JXmssxGJU7UC0tkRwXRVvGLse0R4KkP1VhZbn2xukMi7irxLRusxgwHtJJUIFZOaq//l
+	yEaFpoM577SgKSctjv/EgZOoVdQTUlw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hgbXy-0005th-Mv; Thu, 27 Jun 2019 21:03:10 +0000
-Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
+	id 1hgbgE-0002Pr-2j; Thu, 27 Jun 2019 21:11:42 +0000
+Received: from mout.gmx.net ([212.227.15.19])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hgbXN-0005TQ-V2
- for linux-arm-kernel@lists.infradead.org; Thu, 27 Jun 2019 21:02:35 +0000
-Received: by mail-wm1-x343.google.com with SMTP id h19so7915329wme.0
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 27 Jun 2019 14:02:33 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=tpUESVgsv/sulA0PM7+SZlP275qaUOQmqQ29BukGITA=;
- b=sQohD71HHG60ny5GLHRLPoXwYOfyt+Dnz8+4A04pWdW1QoTXb/LdwXbRkhWxoRp4fw
- AH7pws31fi2NICaQ4sznHRkNtLe/7uQQMWlfJ3GkYFptzTXEUPcMr8i+D2IY7+QI2RQP
- +TdsP/gO8BbvQQac2AsX5GLmzCi6gccA1slEmPehIUfy/oLqYM2/nYA2SLMYCJpbfMEd
- dyZPxr4amzs6WKCvUlbKwMGJZTu75gGyNDhd6RFQmNyzifEJyJVIQweUxK25vPxj8ZZ+
- RIqKZalcXz6PSmATz+H1V9ezTkK0iywtbEcyz43c7bfkH9OVwtL/7sqM0dSOtjNjKS6H
- 5AsQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references;
- bh=tpUESVgsv/sulA0PM7+SZlP275qaUOQmqQ29BukGITA=;
- b=SmBTWhjF+lRNlNn7wKW1yabFj/BPrl30UzqhNx0pfw2yExjkuqJbLXSDBAS5MssX5r
- t6qy4zqw3vJuFCfYY7ETEDlbjTfWiMUUJG+JlHhmmsDAuO+CI1sHyqwcmJxdC4oEzLEW
- vwIRUh+xhtUBwpBEy9a6cEwbnLoh3s4XYB1fXFcD+CuYv+dr9jZaU7e14BKhmMhnvezu
- pVuUE7w0a8XGO/WE6HWhnhLF86LezugXpKTq44C8sd2AKQxajbYx5d+yZzSahSPt6eT5
- /x3+mSGSlrWNl7eQNkfrD5ZLIyHr1GI38EprG1IIqYEkLh7stA46XHtlpOGyObrIzh4y
- lSlg==
-X-Gm-Message-State: APjAAAWNRHSEQVRSRRQMrOu6FyqwfhC+RgZCRALHG1PwPgt+qHCMDee9
- kpR/a0W7AnvZPlVuvLUTnXfWgw==
-X-Google-Smtp-Source: APXvYqyJz7Sg9VCZbrLR8wTcu5ovTV7bYzP7QonyZBoPnMAicgOqlDo71sRR5F7q97AHJwt/TmvAOw==
-X-Received: by 2002:a1c:b604:: with SMTP id g4mr4610761wmf.111.1561669352055; 
- Thu, 27 Jun 2019 14:02:32 -0700 (PDT)
-Received: from clegane.local (11.117.130.77.rev.sfr.net. [77.130.117.11])
- by smtp.gmail.com with ESMTPSA id k82sm107902wma.15.2019.06.27.14.02.30
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Thu, 27 Jun 2019 14:02:31 -0700 (PDT)
-From: Daniel Lezcano <daniel.lezcano@linaro.org>
-To: viresh.kumar@linaro.org
-Subject: [PATCH V4 3/3] thermal/drivers/cpu_cooling: cpufreq_cooling_register
- returns an int
-Date: Thu, 27 Jun 2019 23:02:08 +0200
-Message-Id: <20190627210209.32600-3-daniel.lezcano@linaro.org>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20190627210209.32600-1-daniel.lezcano@linaro.org>
-References: <20190627210209.32600-1-daniel.lezcano@linaro.org>
+ id 1hgbeh-0000cb-8S; Thu, 27 Jun 2019 21:10:09 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=gmx.net;
+ s=badeba3b8450; t=1561669790;
+ bh=tOe/BsiIMjwoLabnnwXX3NINpGucWPxxyc0RQkE0ApQ=;
+ h=X-UI-Sender-Class:From:To:Cc:Subject:Date;
+ b=ZfuFen8jwyk5KZzFDSdqGs0mV0OXyCl5zF9UeMFE6n8PjlLTXKRoCc3zRmS3Y98bB
+ LNDUSI2UN7IZfVaFZjWf9mV74phFaTV0VlQWW9c7a9tg9TUBewO4OeN3gZNKWOZB0W
+ JPlzTjuKEwkDiv1F2ZNCwWvwhruRojlL6rp1Pegk=
+X-UI-Sender-Class: 01bb95c1-4bf8-414a-932a-4f6e2808ef9c
+Received: from localhost.localdomain ([37.4.249.111]) by mail.gmx.com
+ (mrgmx004 [212.227.17.190]) with ESMTPSA (Nemesis) id
+ 1MtwUw-1iYinq1UxI-00uK9j; Thu, 27 Jun 2019 23:09:50 +0200
+From: Stefan Wahren <wahrenst@gmx.net>
+To: Eric Anholt <eric@anholt.net>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Dave Stevenson <dave.stevenson@raspberrypi.org>,
+ Hans Verkuil <hverkuil@xs4all.nl>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>
+Subject: [PATCH 27/31] staging: mmal-vchiq: Avoid use of bool in structures
+Date: Thu, 27 Jun 2019 23:09:25 +0200
+Message-Id: <1561669769-2498-1-git-send-email-wahrenst@gmx.net>
+X-Mailer: git-send-email 2.7.4
+X-Provags-ID: V03:K1:XFFVS6J7p8vwVQmBIJXFTLISbJpbws3cNDTTFZWohJQfzLD8CR+
+ LfEiQslGADaYvMz37HwEnPWgyRdNlWQigKnbCS3N36L9xUpeCKuHOCyFU0+t/pj9vfQXhCo
+ 5e5AUFIrBAekKkXkZYhxO/YmiaoC9L/ingm3SE/WtTjIlyC2j7SkJcLZOixGZ65LmyjceUz
+ TTTpDoBDesal8UgeKo3Eg==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:A4GjgavEWCA=:G+PJsUBAxgqqAbv4Nraj1q
+ PYLJPYz3TysHJgMWZmVmKeh+3b14DmjiEzDO8sxGYJ7sLLSqUXw+qnZ6NpD5X72DNfzzcjPkV
+ bvD0y9WBIOhoep32BWJbI3FEX94bf8ikr3UjTvoNLUq4krDPnBrOFWwRnpXAjEmfBueuPQGeT
+ P/fdkhThRioEwuPg5tXVFSJ5FJRVExnkbCAhJlTAmBY2IZoj0tvw2w3XuiiJeG7oC7D7lCDDl
+ TR+RA5o3IKXthpAIucDGcQQsn03+iPBQkg1S2palOka8O9Adzjw1fdf6wJCsnAdAKNk/YoCRD
+ EKIHFkFIABHRIWLft838yyWsHaTsTXIYpbg2sMOeQCHoY81yteDAbOlez0UeWdIUs0+Mr420o
+ Rq517SIrnYa3jqZ4TdKJ40Xa7RPbytvlq4ck+ghoYbdIErrmpHAN9zzIW0xGUGoMj+BJhPmFi
+ LX6n8RQ3Tjb50Nu7yZhSbj1KmWjIxUZCOWF4JZ7g5LwZTZPiM2dqaPT/gZt2PuqpDVsMZaXPx
+ 33NngNTTXc057/eC5RVyOH88YhXXrKZ7ULiW7T5fS6wPnObuaDz4J4Mm/4gYdlgCi/vF/vKU+
+ RA3K4asFj7riqIu14qm7Mv42aaoS2C789hoqqx5SUKLhZbqUa/0Pj9hU1EJAucdaWo/xYABJD
+ RND+x11wQ4MjPNnfb56Yn10zC8MgHmeO/cSUuF9an07ZZCD36X0wtmWCFeXixa9z1KmAih665
+ 9+e+x6l/8kva2NRrKKFO3yAymBdFV63wHEgA4ZVkU3wBUJWXRLEo7R7gxfUeYIvOeQDedXcDE
+ a6y7Eli97WG0UBywU77gFR1sSikFGDcANunHaeWzNQLTOKazzXInPokMUU1S29jjVCuHodIDk
+ m+ByAifN2474HIPJm1zXcYbmk9T7yePRdKJlV3qX4Xc9LbinJd1bHZ7WsjzYtGq17yfOc8hvS
+ 5yKjWToUtlNCMI/mRbtdCbwhagipauNhonICu0f2d3qXfjBKTTo3xRebFBND4j13qesfFQ5Ow
+ NN4mgeOqAUJ4GoS56zetU8qPVPNwE5EVRzR5spCH/Sa8CoLQv9kbn1ZV4+XOEDV9aS0GUcEGb
+ qcyKv4OPbgiDUc=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190627_140233_999929_F625CFC1 
-X-CRM114-Status: GOOD (  21.84  )
+X-CRM114-CacheID: sfid-20190627_141007_627292_98DEEDC2 
+X-CRM114-Status: GOOD (  12.08  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:343 listed in]
- [list.dnswl.org]
+ no trust [212.227.15.19 listed in list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (wahrenst[at]gmx.net)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -96,303 +97,101 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "open list:TI BANDGAP AND THERMAL DRIVER" <linux-omap@vger.kernel.org>,
- "open list:THERMAL/CPU_COOLING" <linux-pm@vger.kernel.org>,
- Fabio Estevam <festevam@gmail.com>,
- Amit Daniel Kachhap <amit.kachhap@gmail.com>, rjw@rjwysocki.net,
- linux-kernel@vger.kernel.org, edubezval@gmail.com,
- NXP Linux Team <linux-imx@nxp.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>, Keerthy <j-keerthy@ti.com>,
- Zhang Rui <rui.zhang@intel.com>, Javi Merino <javi.merino@kernel.org>,
- Shawn Guo <shawnguo@kernel.org>, Sascha Hauer <s.hauer@pengutronix.de>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>
+Cc: devel@driverdev.osuosl.org, linux-rpi-kernel@lists.infradead.org,
+ linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
 MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-It looks like after the changes in the patch the only reason for
-returning (struct thermal_cooling_device *) from
-cpufreq_cooling_register() is error checking, but it would be much
-more straightforward to return int for this purpose.
+From: Dave Stevenson <dave.stevenson@raspberrypi.org>
 
-Moreover, that would prevent the callers of it from doing incorrect
-things with the returned pointers (like using it to unregister the
-cooling device).
+Fixes up a checkpatch error "Avoid using bool structure members
+because of possible alignment issues".
 
-Replace the returned value an integer instead of a pointer to a
-thermal cooling device structure.
-
-Suggested-by: Rafael J. Wysocki <rafael@kernel.org>
-Signed-off-by: Daniel Lezcano <daniel.lezcano@linaro.org>
+Signed-off-by: Dave Stevenson <dave.stevenson@raspberrypi.org>
 ---
- drivers/thermal/cpu_cooling.c                 | 63 +++++++++----------
- drivers/thermal/imx_thermal.c                 |  6 +-
- .../ti-soc-thermal/ti-thermal-common.c        |  7 +--
- include/linux/cpu_cooling.h                   | 16 ++---
- 4 files changed, 40 insertions(+), 52 deletions(-)
+ drivers/staging/vc04_services/bcm2835-camera/mmal-vchiq.c | 12 ++++++------
+ drivers/staging/vc04_services/bcm2835-camera/mmal-vchiq.h |  4 ++--
+ 2 files changed, 8 insertions(+), 8 deletions(-)
 
-diff --git a/drivers/thermal/cpu_cooling.c b/drivers/thermal/cpu_cooling.c
-index be01546a656f..0d5e39716542 100644
---- a/drivers/thermal/cpu_cooling.c
-+++ b/drivers/thermal/cpu_cooling.c
-@@ -530,13 +530,12 @@ static struct notifier_block thermal_cpufreq_notifier_block = {
-  * cooling devices. It also gives the opportunity to link the cooling device
-  * with a device tree node, in order to bind it via the thermal DT code.
-  *
-- * Return: a valid struct thermal_cooling_device pointer on success,
-- * on failure, it returns a corresponding ERR_PTR().
-+ * Return: zero on success, less than zero corresponding to the
-+ * negative error code.
-  */
--static struct thermal_cooling_device *
--__cpufreq_cooling_register(struct device_node *np,
--			struct cpufreq_policy *policy,
--			struct em_perf_domain *em)
-+static int __cpufreq_cooling_register(struct device_node *np,
-+				      struct cpufreq_policy *policy,
-+				      struct em_perf_domain *em)
- {
- 	struct thermal_cooling_device *cdev;
- 	struct cpufreq_cooling_device *cpufreq_cdev;
-@@ -548,19 +547,19 @@ __cpufreq_cooling_register(struct device_node *np,
- 
- 	if (IS_ERR_OR_NULL(policy)) {
- 		pr_err("%s: cpufreq policy isn't valid: %p\n", __func__, policy);
--		return ERR_PTR(-EINVAL);
-+		return -EINVAL;
- 	}
- 
- 	i = cpufreq_table_count_valid_entries(policy);
- 	if (!i) {
- 		pr_debug("%s: CPUFreq table not found or has no valid entries\n",
- 			 __func__);
--		return ERR_PTR(-ENODEV);
-+		return -ENODEV;
- 	}
- 
- 	cpufreq_cdev = kzalloc(sizeof(*cpufreq_cdev), GFP_KERNEL);
- 	if (!cpufreq_cdev)
--		return ERR_PTR(-ENOMEM);
-+		return -ENOMEM;
- 
- 	cpufreq_cdev->policy = policy;
- 	num_cpus = cpumask_weight(policy->related_cpus);
-@@ -568,7 +567,7 @@ __cpufreq_cooling_register(struct device_node *np,
- 					 sizeof(*cpufreq_cdev->idle_time),
- 					 GFP_KERNEL);
- 	if (!cpufreq_cdev->idle_time) {
--		cdev = ERR_PTR(-ENOMEM);
-+		ret = -ENOMEM;
- 		goto free_cdev;
- 	}
- 
-@@ -576,10 +575,8 @@ __cpufreq_cooling_register(struct device_node *np,
- 	cpufreq_cdev->max_level = i - 1;
- 
- 	ret = ida_simple_get(&cpufreq_ida, 0, 0, GFP_KERNEL);
--	if (ret < 0) {
--		cdev = ERR_PTR(ret);
-+	if (ret < 0)
- 		goto free_idle_time;
--	}
- 	cpufreq_cdev->id = ret;
- 
- 	snprintf(dev_name, sizeof(dev_name), "thermal-cpufreq-%d",
-@@ -597,14 +594,16 @@ __cpufreq_cooling_register(struct device_node *np,
- 	if (policy->freq_table_sorted == CPUFREQ_TABLE_UNSORTED) {
- 		pr_err("%s: unsorted frequency tables are not supported\n",
- 				__func__);
--		cdev = ERR_PTR(-EINVAL);
-+		ret = -EINVAL;
- 		goto remove_ida;
- 	}
- 
- 	cdev = thermal_of_cooling_device_register(np, dev_name, cpufreq_cdev,
- 						  cooling_ops);
--	if (IS_ERR(cdev))
-+	if (IS_ERR(cdev)) {
-+		ret = PTR_ERR(cdev);
- 		goto remove_ida;
-+	}
- 
- 	cpufreq_cdev->clipped_freq = get_state_freq(cpufreq_cdev, 0);
- 	cpufreq_cdev->cdev = cdev;
-@@ -619,7 +618,7 @@ __cpufreq_cooling_register(struct device_node *np,
- 		cpufreq_register_notifier(&thermal_cpufreq_notifier_block,
- 					  CPUFREQ_POLICY_NOTIFIER);
- 
--	return cdev;
-+	return 0;
- 
- remove_ida:
- 	ida_simple_remove(&cpufreq_ida, cpufreq_cdev->id);
-@@ -627,7 +626,7 @@ __cpufreq_cooling_register(struct device_node *np,
- 	kfree(cpufreq_cdev->idle_time);
- free_cdev:
- 	kfree(cpufreq_cdev);
--	return cdev;
-+	return ret;
- }
- 
- /**
-@@ -638,11 +637,10 @@ __cpufreq_cooling_register(struct device_node *np,
-  * "thermal-cpufreq-%x". This api can support multiple instances of cpufreq
-  * cooling devices.
-  *
-- * Return: a valid struct thermal_cooling_device pointer on success,
-- * on failure, it returns a corresponding ERR_PTR().
-+ * Return: zero on success, less than zero corresponding to the
-+ * negative error code.
-  */
--struct thermal_cooling_device *
--cpufreq_cooling_register(struct cpufreq_policy *policy)
-+int cpufreq_cooling_register(struct cpufreq_policy *policy)
- {
- 	return __cpufreq_cooling_register(NULL, policy, NULL);
- }
-@@ -664,34 +662,31 @@ EXPORT_SYMBOL_GPL(cpufreq_cooling_register);
-  * It also takes into account, if property present in policy CPU node, the
-  * static power consumed by the cpu.
-  *
-- * Return: a valid struct thermal_cooling_device pointer on success,
-- * and NULL on failure.
-+ * Return: zero on success, less than zero corresponding to the
-+ * negative error code.
-  */
--struct thermal_cooling_device *
--of_cpufreq_cooling_register(struct cpufreq_policy *policy)
-+int of_cpufreq_cooling_register(struct cpufreq_policy *policy)
- {
- 	struct device_node *np = of_get_cpu_node(policy->cpu, NULL);
--	struct thermal_cooling_device *cdev = NULL;
-+	int ret = -EINVAL;
- 
- 	if (!np) {
- 		pr_err("cpu_cooling: OF node not available for cpu%d\n",
- 		       policy->cpu);
--		return NULL;
-+		return -EINVAL;
- 	}
- 
- 	if (of_find_property(np, "#cooling-cells", NULL)) {
- 		struct em_perf_domain *em = em_cpu_get(policy->cpu);
- 
--		cdev = __cpufreq_cooling_register(np, policy, em);
--		if (IS_ERR(cdev)) {
--			pr_err("cpu_cooling: cpu%d failed to register as cooling device: %ld\n",
--			       policy->cpu, PTR_ERR(cdev));
--			cdev = NULL;
--		}
-+		ret = __cpufreq_cooling_register(np, policy, em);
-+		if (ret)
-+			pr_err("cpu_cooling: cpu%d failed to register as cooling device: %d\n",
-+			       policy->cpu, ret);
- 	}
- 
- 	of_node_put(np);
--	return cdev;
-+	return ret;
- }
- EXPORT_SYMBOL_GPL(of_cpufreq_cooling_register);
- 
-diff --git a/drivers/thermal/imx_thermal.c b/drivers/thermal/imx_thermal.c
-index 021c0948b740..1c4b49b583bc 100644
---- a/drivers/thermal/imx_thermal.c
-+++ b/drivers/thermal/imx_thermal.c
-@@ -655,7 +655,6 @@ MODULE_DEVICE_TABLE(of, of_imx_thermal_match);
- static int imx_thermal_register_legacy_cooling(struct imx_thermal_data *data)
- {
- 	struct device_node *np;
--	struct thermal_cooling_device *cdev;
- 	int ret;
- 
- 	data->policy = cpufreq_cpu_get(0);
-@@ -667,9 +666,8 @@ static int imx_thermal_register_legacy_cooling(struct imx_thermal_data *data)
- 	np = of_get_cpu_node(data->policy->cpu, NULL);
- 
- 	if (!np || !of_find_property(np, "#cooling-cells", NULL)) {
--		cdev = cpufreq_cooling_register(data->policy);
--		if (IS_ERR(cdev)) {
--			ret = PTR_ERR(cdev);
-+		ret = cpufreq_cooling_register(data->policy);
-+		if (ret) {
- 			cpufreq_cpu_put(data->policy);
- 			return ret;
+diff --git a/drivers/staging/vc04_services/bcm2835-camera/mmal-vchiq.c b/drivers/staging/vc04_services/bcm2835-camera/mmal-vchiq.c
+index d0f7b67..1c180ea 100644
+--- a/drivers/staging/vc04_services/bcm2835-camera/mmal-vchiq.c
++++ b/drivers/staging/vc04_services/bcm2835-camera/mmal-vchiq.c
+@@ -853,9 +853,9 @@ static int port_info_get(struct vchiq_mmal_instance *instance,
+ 		goto release_msg;
+
+ 	if (rmsg->u.port_info_get_reply.port.is_enabled == 0)
+-		port->enabled = false;
++		port->enabled = 0;
+ 	else
+-		port->enabled = true;
++		port->enabled = 1;
+
+ 	/* copy the values out of the message */
+ 	port->handle = rmsg->u.port_info_get_reply.port_handle;
+@@ -1292,7 +1292,7 @@ static int port_disable(struct vchiq_mmal_instance *instance,
+ 	if (!port->enabled)
+ 		return 0;
+
+-	port->enabled = false;
++	port->enabled = 0;
+
+ 	ret = port_action_port(instance, port,
+ 			       MMAL_MSG_PORT_ACTION_TYPE_DISABLE);
+@@ -1344,7 +1344,7 @@ static int port_enable(struct vchiq_mmal_instance *instance,
+ 	if (ret)
+ 		goto done;
+
+-	port->enabled = true;
++	port->enabled = 1;
+
+ 	if (port->buffer_cb) {
+ 		/* send buffer headers to videocore */
+@@ -1511,7 +1511,7 @@ int vchiq_mmal_port_connect_tunnel(struct vchiq_mmal_instance *instance,
+ 			pr_err("failed disconnecting src port\n");
+ 			goto release_unlock;
  		}
-diff --git a/drivers/thermal/ti-soc-thermal/ti-thermal-common.c b/drivers/thermal/ti-soc-thermal/ti-thermal-common.c
-index 170b70b6ec61..eacc46d7bd1c 100644
---- a/drivers/thermal/ti-soc-thermal/ti-thermal-common.c
-+++ b/drivers/thermal/ti-soc-thermal/ti-thermal-common.c
-@@ -232,7 +232,7 @@ int ti_thermal_register_cpu_cooling(struct ti_bandgap *bgp, int id)
- {
- 	struct ti_thermal_data *data;
- 	struct device_node *np = bgp->dev->of_node;
--	struct thermal_cooling_device *cdev;
-+	int ret;
- 
- 	/*
- 	 * We are assuming here that if one deploys the zone
-@@ -256,9 +256,8 @@ int ti_thermal_register_cpu_cooling(struct ti_bandgap *bgp, int id)
+-		src->connected->enabled = false;
++		src->connected->enabled = 0;
+ 		src->connected = NULL;
  	}
- 
- 	/* Register cooling device */
--	cdev = cpufreq_cooling_register(data->policy);
--	if (IS_ERR(cdev)) {
--		int ret = PTR_ERR(cdev);
-+	ret = cpufreq_cooling_register(data->policy);
-+	if (ret) {
- 		dev_err(bgp->dev, "Failed to register cpu cooling device %d\n",
- 			ret);
- 		cpufreq_cpu_put(data->policy);
-diff --git a/include/linux/cpu_cooling.h b/include/linux/cpu_cooling.h
-index 89f469ee4be4..98f7c8a9cab6 100644
---- a/include/linux/cpu_cooling.h
-+++ b/include/linux/cpu_cooling.h
-@@ -24,8 +24,7 @@ struct cpufreq_policy;
-  * cpufreq_cooling_register - function to create cpufreq cooling device.
-  * @policy: cpufreq policy.
-  */
--struct thermal_cooling_device *
--cpufreq_cooling_register(struct cpufreq_policy *policy);
-+int cpufreq_cooling_register(struct cpufreq_policy *policy);
- 
- /**
-  * cpufreq_cooling_unregister - function to remove cpufreq cooling device.
-@@ -34,10 +33,9 @@ cpufreq_cooling_register(struct cpufreq_policy *policy);
- void cpufreq_cooling_unregister(struct cpufreq_policy *policy);
- 
- #else /* !CONFIG_CPU_THERMAL */
--static inline struct thermal_cooling_device *
--cpufreq_cooling_register(struct cpufreq_policy *policy)
-+static inline int cpufreq_cooling_register(struct cpufreq_policy *policy)
- {
--	return ERR_PTR(-ENOSYS);
-+	return -ENOSYS;
- }
- 
- static inline
-@@ -52,13 +50,11 @@ void cpufreq_cooling_unregister(struct cpufreq_policy *policy)
-  * of_cpufreq_cooling_register - create cpufreq cooling device based on DT.
-  * @policy: cpufreq policy.
-  */
--struct thermal_cooling_device *
--of_cpufreq_cooling_register(struct cpufreq_policy *policy);
-+int of_cpufreq_cooling_register(struct cpufreq_policy *policy);
- #else
--static inline struct thermal_cooling_device *
--of_cpufreq_cooling_register(struct cpufreq_policy *policy)
-+static inline int of_cpufreq_cooling_register(struct cpufreq_policy *policy)
- {
--	return NULL;
-+	return -ENOSYS;
- }
- #endif /* defined(CONFIG_THERMAL_OF) && defined(CONFIG_CPU_THERMAL) */
- 
--- 
-2.17.1
+
+@@ -1758,7 +1758,7 @@ int vchiq_mmal_component_disable(struct vchiq_mmal_instance *instance,
+
+ 	ret = disable_component(instance, component);
+ 	if (ret == 0)
+-		component->enabled = false;
++		component->enabled = 0;
+
+ 	mutex_unlock(&instance->vchiq_mutex);
+
+diff --git a/drivers/staging/vc04_services/bcm2835-camera/mmal-vchiq.h b/drivers/staging/vc04_services/bcm2835-camera/mmal-vchiq.h
+index 1750ff0..f738e7f 100644
+--- a/drivers/staging/vc04_services/bcm2835-camera/mmal-vchiq.h
++++ b/drivers/staging/vc04_services/bcm2835-camera/mmal-vchiq.h
+@@ -48,7 +48,7 @@ typedef void (*vchiq_mmal_buffer_cb)(
+ 		unsigned long length, u32 mmal_flags, s64 dts, s64 pts);
+
+ struct vchiq_mmal_port {
+-	bool enabled;
++	u32 enabled:1;
+ 	u32 handle;
+ 	u32 type; /* port type, cached to use on port info set */
+ 	u32 index; /* port index, cached to use on port info set */
+@@ -82,7 +82,7 @@ struct vchiq_mmal_port {
+ };
+
+ struct vchiq_mmal_component {
+-	bool enabled;
++	u32 enabled:1;
+ 	u32 handle;  /* VideoCore handle for component */
+ 	u32 inputs;  /* Number of input ports */
+ 	u32 outputs; /* Number of output ports */
+--
+2.7.4
 
 
 _______________________________________________
