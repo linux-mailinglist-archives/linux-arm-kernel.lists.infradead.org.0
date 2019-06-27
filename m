@@ -2,83 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0FFD1585A7
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 27 Jun 2019 17:32:13 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3DED1585C5
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 27 Jun 2019 17:32:44 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:To:From:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=Ry8Jtx50B4R1z49WxiyZ1/zZjzymM19d4FEx78Txlxk=; b=LG0SJ9PqTaXAWhjqx9MwAK0Ap
-	c7t+3TFM7eJV61IHahjKKjvhSieqmXKKPE3VnGQvdmBS0N4eUB7tturC8Zt+25XJvJYjopctTAn2+
-	0SC2Yxc1jmLU7JJxGYpucZ40Yq5D7yxWzRlMbeHKjFXRHnevxDf64bLx8TvZTVtEwtnoTPJ59IiZU
-	hRgT1xnSKHOgGGprwMbtS9+aW+J3aPbCEIsfZ7+wKy+XmbKS1PmD4DWcLG7Qy4ylRa1Kt4b2hQSay
-	cJSra3Sbzc5fF9zDNOEAX88GxiiWwJj24YWrdki+Gd90FHa+kNXpEMggioxPGAqRM/t5ptzB6/Hx5
-	Y4Jkhfr3g==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=Uw/uCDldbykaXIVOgPmnpV8VEi1YGvsgY7BoiP97liw=; b=iAhOb7dc+rhTk6
+	qfzt3uhCZqoQspmNOWLX6aHj+OMGwAZqE/AyCmnLdmLPGCfbEZ5jrgORnsrhdC2zV18xtDxg3Fxw8
+	ZpANqlyJGX2XowwtYKLTeKSlxd3JJTvZZOt0Fkl3xVKC2WFehQVy+1jUpo+pag3skrBPF3LQEzRpC
+	k3kVuc+UmCgYDSLXwyhIXM7oe0Ut9LmOr8PlVeDjTDlycMtzF6pE88Ws6Y7v4vX59w9zkzC3J8EXu
+	z/aDGD5uiMevtMPSIRAseQNI5W2O/bI93RFfOFKY/YcG3kPBn5qqgulHm2gBRxJ+7sliaC+U8dD0p
+	iQ4ECpsPbayuOvlUXvTA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hgWNU-00061k-O1; Thu, 27 Jun 2019 15:32:00 +0000
-Received: from hqemgate14.nvidia.com ([216.228.121.143])
+	id 1hgWO7-0006HT-JC; Thu, 27 Jun 2019 15:32:39 +0000
+Received: from relay6-d.mail.gandi.net ([217.70.183.198])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hgWN6-00061C-6K
- for linux-arm-kernel@lists.infradead.org; Thu, 27 Jun 2019 15:31:37 +0000
-Received: from hqpgpgate101.nvidia.com (Not Verified[216.228.121.13]) by
- hqemgate14.nvidia.com (using TLS: TLSv1.2, DES-CBC3-SHA)
- id <B5d14e1540002>; Thu, 27 Jun 2019 08:31:32 -0700
-Received: from hqmail.nvidia.com ([172.20.161.6])
- by hqpgpgate101.nvidia.com (PGP Universal service);
- Thu, 27 Jun 2019 08:31:34 -0700
-X-PGP-Universal: processed;
- by hqpgpgate101.nvidia.com on Thu, 27 Jun 2019 08:31:34 -0700
-Received: from [10.2.163.244] (172.20.13.39) by HQMAIL107.nvidia.com
- (172.20.187.13) with Microsoft SMTP Server (TLS) id 15.0.1473.3; Thu, 27 Jun
- 2019 15:31:33 +0000
-From: Zi Yan <ziy@nvidia.com>
-To: Anshuman Khandual <anshuman.khandual@arm.com>
-Subject: Re: [RFC 1/2] arm64/mm: Change THP helpers to comply with generic MM
- semantics
-Date: Thu, 27 Jun 2019 11:31:31 -0400
-X-Mailer: MailMate (1.12.5r5643)
-Message-ID: <7F685152-7C6C-4E99-99DF-03DDD03D6094@nvidia.com>
-In-Reply-To: <1561639696-16361-2-git-send-email-anshuman.khandual@arm.com>
-References: <1561639696-16361-1-git-send-email-anshuman.khandual@arm.com>
- <1561639696-16361-2-git-send-email-anshuman.khandual@arm.com>
+ id 1hgWNW-0006AH-TT
+ for linux-arm-kernel@lists.infradead.org; Thu, 27 Jun 2019 15:32:11 +0000
+X-Originating-IP: 86.250.200.211
+Received: from localhost (lfbn-1-17395-211.w86-250.abo.wanadoo.fr
+ [86.250.200.211]) (Authenticated sender: maxime.ripard@bootlin.com)
+ by relay6-d.mail.gandi.net (Postfix) with ESMTPSA id 01763C0008;
+ Thu, 27 Jun 2019 15:31:56 +0000 (UTC)
+From: Maxime Ripard <maxime.ripard@bootlin.com>
+To: Mark Rutland <mark.rutland@arm.com>, Rob Herring <robh+dt@kernel.org>,
+ Frank Rowand <frowand.list@gmail.com>,
+ "David S . Miller" <davem@davemloft.net>, Chen-Yu Tsai <wens@csie.org>,
+ Maxime Ripard <maxime.ripard@bootlin.com>
+Subject: [PATCH v4 00/13] net: Add generic and Allwinner YAML bindings
+Date: Thu, 27 Jun 2019 17:31:42 +0200
+Message-Id: <cover.e80da8845680a45c2e07d5f17280fdba84555b8a.1561649505.git-series.maxime.ripard@bootlin.com>
+X-Mailer: git-send-email 2.21.0
 MIME-Version: 1.0
-X-Originating-IP: [172.20.13.39]
-X-ClientProxiedBy: HQMAIL107.nvidia.com (172.20.187.13) To
- HQMAIL107.nvidia.com (172.20.187.13)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nvidia.com; s=n1;
- t=1561649492; bh=vDxVQVvJQ3+Sqi/Q2QIRj6FMeyjJ9wfmkbAsVSsgX7w=;
- h=X-PGP-Universal:From:To:CC:Subject:Date:X-Mailer:Message-ID:
- In-Reply-To:References:MIME-Version:X-Originating-IP:
- X-ClientProxiedBy:Content-Type;
- b=ZYF+qGGah37ytxxKVO/Snol52FyL17Y5EeBAZdecBKuQZZ/ypxmCOma8lPQTFPPbU
- SmwaYsAHf6HqDRaSqmByfCgjrFwR5W6v3EA9G0kyqu2sRSR3A247kZkKBOyJd2e9q8
- X3l2fk0vzPNx/6HDJLRcV9QqEvI7NtedkdxPV8QykTjddZgM6dgrJg7H5gWPe/4pqN
- Rzr2cUvvgMTyPZ+TRFvuEd4/4dH2jdO5G2bJJX5du8ciX7Q0wHRIRthELuNqRGLMc+
- u1HSa7SJiKz3fk/1IsEuoICh1HzNqxSG/pg4dsrw1IDg4QGfNHUe2tGZYVrsf2KI+E
- 0nFCTVBs4M5jQ==
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190627_083136_248907_9B041CDF 
-X-CRM114-Status: GOOD (  14.25  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190627_083204_287631_F15AAF9B 
+X-CRM114-Status: GOOD (  14.26  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [216.228.121.143 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [217.70.183.198 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [217.70.183.198 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -90,150 +63,156 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- Suzuki Poulose <suzuki.poulose@arm.com>, Marc Zyngier <marc.zyngier@arm.com>,
- Catalin Marinas <catalin.marinas@arm.com>, linux-kernel@vger.kernel.org,
- linux-mm@kvack.org, Will Deacon <will@kernel.org>,
- linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============6684796085295054072=="
+Cc: devicetree@vger.kernel.org, Florian Fainelli <f.fainelli@gmail.com>,
+ Alexandre Torgue <alexandre.torgue@st.com>, Andrew Lunn <andrew@lunn.ch>,
+ =?UTF-8?q?Antoine=20T=C3=A9nart?= <antoine.tenart@bootlin.com>,
+ netdev@vger.kernel.org, Maxime Chevallier <maxime.chevallier@bootlin.com>,
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org,
+ Heiner Kallweit <hkallweit1@gmail.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
---===============6684796085295054072==
-Content-Type: multipart/signed;
-	boundary="=_MailMate_B99B95B9-F3F7-4559-91D4-01BCFC794027_=";
-	micalg=pgp-sha512; protocol="application/pgp-signature"
+Hi,
 
---=_MailMate_B99B95B9-F3F7-4559-91D4-01BCFC794027_=
-Content-Type: text/plain; charset=utf-8
-Content-Transfer-Encoding: quoted-printable
+This is an attempt at getting the main generic DT bindings for the ethernet
+(and related) devices, and convert some DT bindings for the Allwinner DTs
+to YAML as well.
 
-On 27 Jun 2019, at 8:48, Anshuman Khandual wrote:
+This should provide some DT validation coverage.
 
-> pmd_present() and pmd_trans_huge() are expected to behave in the follow=
-ing
-> manner during various phases of a given PMD. It is derived from a previ=
-ous
-> detailed discussion on this topic [1] and present THP documentation [2]=
-=2E
->
-> pmd_present(pmd):
->
-> - Returns true if pmd refers to system RAM with a valid pmd_page(pmd)
-> - Returns false if pmd does not refer to system RAM - Invalid pmd_page(=
-pmd)
->
-> pmd_trans_huge(pmd):
->
-> - Returns true if pmd refers to system RAM and is a trans huge mapping
->
-> -----------------------------------------------------------------------=
---
-> |	PMD states	|	pmd_present	|	pmd_trans_huge	|
-> -----------------------------------------------------------------------=
---
-> |	Mapped		|	Yes		|	Yes		|
-> -----------------------------------------------------------------------=
---
-> |	Splitting	|	Yes		|	Yes		|
-> -----------------------------------------------------------------------=
---
-> |	Migration/Swap	|	No		|	No		|
-> -----------------------------------------------------------------------=
---
->
-> The problem:
->
-> PMD is first invalidated with pmdp_invalidate() before it's splitting. =
-This
-> invalidation clears PMD_SECT_VALID as below.
->
-> PMD Split -> pmdp_invalidate() -> pmd_mknotpresent -> Clears PMD_SECT_V=
-ALID
->
-> Once PMD_SECT_VALID gets cleared, it results in pmd_present() return fa=
-lse
-> on the PMD entry. It will need another bit apart from PMD_SECT_VALID to=
- re-
-> affirm pmd_present() as true during the THP split process. To comply wi=
-th
-> above mentioned semantics, pmd_trans_huge() should also check pmd_prese=
-nt()
-> first before testing presence of an actual transparent huge mapping.
->
-> The solution:
->
-> Ideally PMD_TYPE_SECT should have been used here instead. But it shares=
- the
-> bit position with PMD_SECT_VALID which is used for THP invalidation. He=
-nce
-> it will not be there for pmd_present() check after pmdp_invalidate().
->
-> PTE_SPECIAL never gets used for PMD mapping i.e there is no pmd_special=
-().
-> Hence this bit can be set on the PMD entry during invalidation which ca=
-n
-> help in making pmd_present() return true and in recognizing the fact th=
-at
-> it still points to memory.
->
-> This bit is transient. During the split is process it will be overridde=
-n
-> by a page table page representing the normal pages in place of erstwhil=
-e
-> huge page. Other pmdp_invalidate() callers always write a fresh PMD val=
-ue
-> on the entry overriding this transient PTE_SPECIAL making it safe. In t=
-he
-> past former pmd_[mk]splitting() functions used PTE_SPECIAL.
->
-> [1]: https://lkml.org/lkml/2018/10/17/231
+Let me know if you have any questions,
+Maxime
 
-Just want to point out that lkml.org link might not be stable.
-This one would be better: https://lore.kernel.org/linux-mm/20181017020930=
-=2EGN30832@redhat.com/
+Changes from v3:
+  - Added a cover letter
+  - Dropped the phy-mode deprecation, and the DT changes moving to
+    phy-connection-type
+  - Fixed the mdio example node name
+  - Deprecated the fixed-link array property, in favor of the fixed-link
+    subnode
 
+Changes from v2:
+  - Switched to the deprecated keyword to describe deprecated properties
+  - Deprecated phy-mode, phy and phy-handle
+  - Added patches to switch to phy-connection-type and phy-device for
+    Allwinner DTs
+  - Changed the A83t GMAC delays to use multipleOf instead of an enum
+  - Fix the snps,*pbl properties types
+  - Add a generic MDIO YAML schemas
 
-=E2=80=94
-Best Regards,
-Yan Zi
+Changes from v1:
+  - Move the DWMAC SoC specific bindings to separate documents
+  - Mark snps,reset-gpio (and related) as deprecated and fixed the
+    Allwinner DTs accordingly
+  - Restrict snps,tso to only a couple of compatibles
+  - Use an enum for the compatibles
+  - Add a custom select statement with the compatibles of all the generic
+    compatibles, including the deprecated ones. Remove the deprecated ones
+    from the valid compatible values to issue a warning when used.
+  - Add a patch to MAINTAINERS for the PHY YAML binding
+  - Add missing compatible options for the PHY, and missing phy speeds
+  - Add a custom select clause to make the PHY binding validate all phy
+    nodes, and not just the ones with a compatible
+  - Validate the fixed-link array elements
+  - Removed deprecated properties (phy-mode, phy, phy-device)
+  - Restrict the number of items under link-gpios to 1
 
---=_MailMate_B99B95B9-F3F7-4559-91D4-01BCFC794027_=
-Content-Description: OpenPGP digital signature
-Content-Disposition: attachment; filename="signature.asc"
-Content-Type: application/pgp-signature; name="signature.asc"
+Maxime Ripard (13):
+  dt-bindings: net: Add YAML schemas for the generic Ethernet options
+  dt-bindings: net: Add a YAML schemas for the generic PHY options
+  dt-bindings: net: Add a YAML schemas for the generic MDIO options
+  MAINTAINERS: Add Ethernet PHY YAML file
+  dt-bindings: net: phy: The interrupt property is not mandatory
+  dt-bindings: net: sun4i-emac: Convert the binding to a schemas
+  dt-bindings: net: sun4i-mdio: Convert the binding to a schemas
+  dt-bindings: net: stmmac: Convert the binding to a schemas
+  dt-bindings: net: sun7i-gmac: Convert the binding to a schemas
+  dt-bindings: net: sun8i-emac: Convert the binding to a schemas
+  dt-bindings: net: dwmac: Deprecate the PHY reset properties
+  ARM: dts: sunxi: Switch to the generic PHY properties
+  ARM: dts: sunxi: Switch from phy to phy-handle
 
------BEGIN PGP SIGNATURE-----
+ Documentation/devicetree/bindings/net/allwinner,sun4i-a10-emac.yaml  |  55 ++++++++++-
+ Documentation/devicetree/bindings/net/allwinner,sun4i-a10-mdio.yaml  |  70 ++++++++++++-
+ Documentation/devicetree/bindings/net/allwinner,sun4i-emac.txt       |  19 +---
+ Documentation/devicetree/bindings/net/allwinner,sun4i-mdio.txt       |  27 +-----
+ Documentation/devicetree/bindings/net/allwinner,sun7i-a20-gmac.txt   |  27 +-----
+ Documentation/devicetree/bindings/net/allwinner,sun7i-a20-gmac.yaml  |  66 ++++++++++++-
+ Documentation/devicetree/bindings/net/allwinner,sun8i-a83t-emac.yaml | 321 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++-
+ Documentation/devicetree/bindings/net/dwmac-sun8i.txt                | 201 +-----------------------------------
+ Documentation/devicetree/bindings/net/ethernet-controller.yaml       | 204 ++++++++++++++++++++++++++++++++++++-
+ Documentation/devicetree/bindings/net/ethernet-phy.yaml              | 178 +++++++++++++++++++++++++++++++-
+ Documentation/devicetree/bindings/net/ethernet.txt                   |  69 +------------
+ Documentation/devicetree/bindings/net/fixed-link.txt                 |  55 +----------
+ Documentation/devicetree/bindings/net/mdio.txt                       |  38 +-------
+ Documentation/devicetree/bindings/net/mdio.yaml                      |  51 +++++++++-
+ Documentation/devicetree/bindings/net/phy.txt                        |  80 +--------------
+ Documentation/devicetree/bindings/net/snps,dwmac.yaml                | 410 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-
+ Documentation/devicetree/bindings/net/stmmac.txt                     | 179 +-------------------------------
+ MAINTAINERS                                                          |   1 +-
+ arch/arm/boot/dts/sun4i-a10-a1000.dts                                |   2 +-
+ arch/arm/boot/dts/sun4i-a10-ba10-tvbox.dts                           |   2 +-
+ arch/arm/boot/dts/sun4i-a10-cubieboard.dts                           |   2 +-
+ arch/arm/boot/dts/sun4i-a10-hackberry.dts                            |   2 +-
+ arch/arm/boot/dts/sun4i-a10-itead-iteaduino-plus.dts                 |   2 +-
+ arch/arm/boot/dts/sun4i-a10-jesurun-q5.dts                           |   2 +-
+ arch/arm/boot/dts/sun4i-a10-marsboard.dts                            |   2 +-
+ arch/arm/boot/dts/sun4i-a10-olinuxino-lime.dts                       |   2 +-
+ arch/arm/boot/dts/sun4i-a10-pcduino.dts                              |   2 +-
+ arch/arm/boot/dts/sun5i-a10s-olinuxino-micro.dts                     |   2 +-
+ arch/arm/boot/dts/sun5i-a10s-wobo-i5.dts                             |   2 +-
+ arch/arm/boot/dts/sun6i-a31-colombus.dts                             |   2 +-
+ arch/arm/boot/dts/sun6i-a31-hummingbird.dts                          |   8 +-
+ arch/arm/boot/dts/sun6i-a31-i7.dts                                   |   2 +-
+ arch/arm/boot/dts/sun6i-a31-m9.dts                                   |   2 +-
+ arch/arm/boot/dts/sun6i-a31-mele-a1000g-quad.dts                     |   2 +-
+ arch/arm/boot/dts/sun6i-a31s-cs908.dts                               |   2 +-
+ arch/arm/boot/dts/sun6i-a31s-sina31s.dts                             |   2 +-
+ arch/arm/boot/dts/sun6i-a31s-sinovoip-bpi-m2.dts                     |   8 +-
+ arch/arm/boot/dts/sun7i-a20-bananapi-m1-plus.dts                     |   2 +-
+ arch/arm/boot/dts/sun7i-a20-bananapi.dts                             |   2 +-
+ arch/arm/boot/dts/sun7i-a20-bananapro.dts                            |   2 +-
+ arch/arm/boot/dts/sun7i-a20-cubieboard2.dts                          |   2 +-
+ arch/arm/boot/dts/sun7i-a20-cubietruck.dts                           |   2 +-
+ arch/arm/boot/dts/sun7i-a20-hummingbird.dts                          |  11 +--
+ arch/arm/boot/dts/sun7i-a20-i12-tvbox.dts                            |   2 +-
+ arch/arm/boot/dts/sun7i-a20-icnova-swac.dts                          |   2 +-
+ arch/arm/boot/dts/sun7i-a20-itead-ibox.dts                           |   2 +-
+ arch/arm/boot/dts/sun7i-a20-m3.dts                                   |   2 +-
+ arch/arm/boot/dts/sun7i-a20-olimex-som-evb.dts                       |   2 +-
+ arch/arm/boot/dts/sun7i-a20-olimex-som204-evb.dts                    |  10 +-
+ arch/arm/boot/dts/sun7i-a20-olinuxino-lime.dts                       |   2 +-
+ arch/arm/boot/dts/sun7i-a20-olinuxino-lime2.dts                      |   2 +-
+ arch/arm/boot/dts/sun7i-a20-olinuxino-micro.dts                      |   2 +-
+ arch/arm/boot/dts/sun7i-a20-orangepi-mini.dts                        |   2 +-
+ arch/arm/boot/dts/sun7i-a20-orangepi.dts                             |   2 +-
+ arch/arm/boot/dts/sun7i-a20-pcduino3-nano.dts                        |   2 +-
+ arch/arm/boot/dts/sun7i-a20-pcduino3.dts                             |   2 +-
+ arch/arm/boot/dts/sun7i-a20-wits-pro-a20-dkt.dts                     |   2 +-
+ arch/arm/boot/dts/sun9i-a80-cubieboard4.dts                          |   2 +-
+ arch/arm/boot/dts/sun9i-a80-optimus.dts                              |   2 +-
+ 59 files changed, 1416 insertions(+), 746 deletions(-)
+ create mode 100644 Documentation/devicetree/bindings/net/allwinner,sun4i-a10-emac.yaml
+ create mode 100644 Documentation/devicetree/bindings/net/allwinner,sun4i-a10-mdio.yaml
+ delete mode 100644 Documentation/devicetree/bindings/net/allwinner,sun4i-emac.txt
+ delete mode 100644 Documentation/devicetree/bindings/net/allwinner,sun4i-mdio.txt
+ delete mode 100644 Documentation/devicetree/bindings/net/allwinner,sun7i-a20-gmac.txt
+ create mode 100644 Documentation/devicetree/bindings/net/allwinner,sun7i-a20-gmac.yaml
+ create mode 100644 Documentation/devicetree/bindings/net/allwinner,sun8i-a83t-emac.yaml
+ delete mode 100644 Documentation/devicetree/bindings/net/dwmac-sun8i.txt
+ create mode 100644 Documentation/devicetree/bindings/net/ethernet-controller.yaml
+ create mode 100644 Documentation/devicetree/bindings/net/ethernet-phy.yaml
+ create mode 100644 Documentation/devicetree/bindings/net/mdio.yaml
+ create mode 100644 Documentation/devicetree/bindings/net/snps,dwmac.yaml
 
-iQJDBAEBCgAtFiEEh7yFAW3gwjwQ4C9anbJR82th+ooFAl0U4VMPHHppeUBudmlk
-aWEuY29tAAoJEJ2yUfNrYfqKinUQAKM0LtiOpKq090Um2I0uGfI6LhFiYxu0mTu4
-xn54F2sm6WjyH7iXsUexLGkOIwz2wVyY6htmKPWk6uyoP+GtvdFa8x9FGoQrvH0t
-wa3NoM4fFa39jUu74HaUkBYZiRNgGJr5t4M5cAOTJ/um/KsCJRfnKDsIwCcysheF
-tsvGoMZX6zzbwtbYscjvIiGlYQOXFYqdt7T5RFX7p8+k7ZG9/wyjmR3filj5kqFW
-O6sTBHLVeCftBTggC9Qkn1BjC1smHBNiAm/yYG1wyLnZKyjCkVdFq4b/d2QIFS2a
-BdyOPfETSAOYP/+PlmiISqaVgKxYh6pP7w1qUtJjt2Kag29cFboTHVJAnDduO/6P
-JU+KLKKH54Bb82r6naLkEttksDBc+xZ9iPiso1FxyDnfyawo+eIji0luRaKeigxK
-4lDTEqywX/VonL6VAc0pEJ/ZwQMPTIqr726ssWI3x99SwuZphPFjUv+b2z70bQTj
-Ra/rfXGCIlHI0malYTsqyoLJ8z3kkflpyC/QPq5VmKR7dlJp8jSK92u0VkDWm596
-QqI8lXd79EQ8s3DoRJwr5g8MI7mgmn5yGK0/r8XjElxZ+imK92otyJsrzLZTBcba
-JSi1Za+UfoWzZgJZA38HfglnOJoFXikAWnMKVuKF0JvKHCPERZubmBtwFM5SSL9u
-Y+dCDneI
-=jqdz
------END PGP SIGNATURE-----
-
---=_MailMate_B99B95B9-F3F7-4559-91D4-01BCFC794027_=--
-
-
---===============6684796085295054072==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+base-commit: 8087b004bd099367c29d3a163950bc4b162ebc3c
+-- 
+git-series 0.9.1
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============6684796085295054072==--
-
