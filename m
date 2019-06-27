@@ -2,98 +2,96 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 201A957B8C
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 27 Jun 2019 07:36:14 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6A13057C80
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 27 Jun 2019 08:52:37 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=wOPAQxQ0NRkcVf5JGWTvDdlfAofIgkFbh7iDuJpaGg8=; b=UHbUaIwbWpPKn4
-	EjUUUNpKyU7s3Fv5E4UZ6WlB4Rkbc/NCDUzUlyKaxFvUbEnn80hxnWmTuZxhiDsNaP5CUxJAPyR3H
-	itPGEQ7UgK8cvnZFKyKSstkZ4lHbv/JRhqaM+NOfxL5TE4Jm1FZ3k+6Ftfen7tEJq4fR1FqsUuXjn
-	ldP8DhV5VwAo/VmfRQbcb564tswGQyGOFpTcXK5+Nhohg2moeUM7N4RXsTSE6ccs8Kf60ew+NK0Lt
-	FDh691TROkX5GBAKi2mDB5hE/bQHWaMxO5VOvRJM5a/LcZ13cziRofQWAB1A2/l/2MmJdN/5f7CSR
-	NgI7EieuNiXOrwdcH/1A==;
+	List-Owner; bh=+cMJWPQnQ9Svc+Dr1U+CZMftBf8lPrwq/SqupAB63TA=; b=ag4fK3M8SJd0Iu
+	t9jEOfVOk22ZK6NjeJkewSGvTKufaXFkAXMxihCm6fzXs6Qp62JJgr0/QyEJtH8nR/YKlVOgWACI/
+	pZK5bPvUp2dz6FcQ/zCwyw/UeVneJWF2jlv3K6t4xTP0JDTPCKY27c9VPgfG533U3u7YNzZ2G1KmG
+	T6Cqwelk4kzaE2heIRb2Hq+1SFAujCnbiRXvnwHZp4EXKnY1KyCopFCKi5D8oWSJnnxP+LEjxoyjU
+	UFrcT0hJW1XN4HNFSkAhe/3fpse/I1jRCqaW0UXvMmul4hE0cPgR166J6sqC+yIjh5fc3orgsqlM0
+	v8htp/q8b/a/mK0AWgew==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hgN4r-0007fs-C2; Thu, 27 Jun 2019 05:36:09 +0000
-Received: from casper.infradead.org ([2001:8b0:10b:1236::1])
+	id 1hgOGp-0007R2-5Q; Thu, 27 Jun 2019 06:52:35 +0000
+Received: from merlin.infradead.org ([2001:8b0:10b:1231::1])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hgMqE-0006Qi-FL
- for linux-arm-kernel@bombadil.infradead.org; Thu, 27 Jun 2019 05:21:02 +0000
+ id 1hgO8h-0006KM-6V
+ for linux-arm-kernel@bombadil.infradead.org; Thu, 27 Jun 2019 06:44:11 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=infradead.org; s=casper.20170209; h=Content-Type:Cc:To:Subject:Message-ID:
+ d=infradead.org; s=merlin.20170209; h=Content-Type:Cc:To:Subject:Message-ID:
  Date:From:In-Reply-To:References:MIME-Version:Sender:Reply-To:
  Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
  Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
  List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=jVqZi0VDpRvustqGLunF6Pc/Tu/MfYc9yORaW6QQzAA=; b=N9kLnSxYBfwXERMWNvqzwMeuQ
- E68asArf4CFhQ9/aVdK1fL8uTADVVW7dFEQG7n8znaMqtyTiREQ1OIc9jTz/yuwoBvEv40ANmWGn1
- 9uh2VYxmH9zRXIKxOd6tvFPYNS5dXx95J00Foc8N6N65BFMRAziE1lR/WruZmD56DqJ317G1vH/uc
- vuAjwgZX2VvMumn/UJtsoQaxWRZHLkrBGPW/bCx6yHAuRis15AksaeK/pg9PUwS6JmoP9rA+DcZ/n
- X6Vd1wmvZ2OxN2RQ158gQ1Ah9Eilkvxa9goDBWNSRVYGwfrNfIchC4EpoVdWlICMHHAdqtlvLKgES
- JLKP8LDkQ==;
-Received: from mail-io1-xd41.google.com ([2607:f8b0:4864:20::d41])
- by casper.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hgJLG-0007kj-Me
- for linux-arm-kernel@lists.infradead.org; Thu, 27 Jun 2019 01:36:52 +0000
-Received: by mail-io1-xd41.google.com with SMTP id u19so1056475ior.9
+ bh=L2Q5XHKelfQkjrwCrn4wOaWyOpvTiODS5vOc84eDxew=; b=fj+MtGC0jZ3f+Zzhb0yQCSO8l
+ 96rdpSUzF8AO8HV1DX1vqX8wUcl5vJi9IprFNjD8ZZo6SI0T6EHmngd6ZA1CtNrnSQbfbMWTSzHS+
+ 2xNJjMZYYkGWoXerjQXy4zmQD2OVVJFc3c28uncvdIZqfTEzswlIbbii+Vlgi+7MkRlibju1EkRkl
+ VWqMyJeibfDzwVapbVed0WXTeX+YTkx/2thsCRGdGoMK6CezKtNbBBa5JeEj5Kjg821Fn/Z3bj5Qt
+ zQ0CtbFG2WwKauuYb9vCOqXy9eaS5aSB64CglNessle1q4D5nLObRyQHrJivrLnpueOhN1Wz4h8KV
+ niF9oXpEg==;
+Received: from mail-io1-xd42.google.com ([2607:f8b0:4864:20::d42])
+ by merlin.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hgJMC-0005OS-7A
+ for linux-arm-kernel@lists.infradead.org; Thu, 27 Jun 2019 01:37:49 +0000
+Received: by mail-io1-xd42.google.com with SMTP id u13so1161344iop.0
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 26 Jun 2019 18:36:47 -0700 (PDT)
+ Wed, 26 Jun 2019 18:37:44 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=lixom-net.20150623.gappssmtp.com; s=20150623;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=jVqZi0VDpRvustqGLunF6Pc/Tu/MfYc9yORaW6QQzAA=;
- b=1HDoASi8ehQLwS9AVqo+QZIvtpQhSg2NY0GoRAQ/E88QE51Uwjwzt+00Thte4mgkCe
- irtdL0UpXN18j497JbSF77PpCcWkHi/bICUu5OKdiKSpSuIRaAw5sWdKUqhZl3AZ1EE1
- 07E4rzPxK8izncNWrpZSQr5Ug2rANfBvGe0849GPIhM+QgQoX+7+wSbnfsjPaHdjZ6AZ
- cdP8Ustc2ltJZBnLv3W+ieTJ9DmW7Moaac1IxX4t+eEwIX9vs5xoSPTc0v6OKkXV+nc7
- bnDBmto5w2jXhTBLRWnv9Hn4mNGoIA/QHctbcj0kbX1QQmqj2C10w7l7qYc2CHj9muhG
- voNA==
+ :cc; bh=L2Q5XHKelfQkjrwCrn4wOaWyOpvTiODS5vOc84eDxew=;
+ b=FGS0QkFaBTr98/I3wX3l3Xwn5/UoXj/EdPToMw7TfG1aRgpH+EnONtjqdZhxs34fbo
+ Aa3mQUHvVI4LUbCOi1oRI+0oljGBbrqzVCG99hFfjI2V3rbr6YHGEfHcgkwqxMk3b815
+ xLanycfZWa9NodV+TommWxgf6QKZID6LlGP8mFd3LUrfZNFS+edvM1CsSrkXdRl3X2Hb
+ fZlb1QCtboFHYZ4MXkqLlhEC5RcS7fCp0vYfkuOrGhjjjjxA3eL2eWid+mOJHAOzahhr
+ CKVV3otYAynLepoc4pGK6KW5FiNh91E52SLuRPARlTQfKVvs1TXfFlkxtO6du1WnC6X/
+ nDCg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=jVqZi0VDpRvustqGLunF6Pc/Tu/MfYc9yORaW6QQzAA=;
- b=YcihQT6eFLR3hGHBXCRzeOZX66GpG73gRDS9qgbTorv4B4SLR08P4siTBud+68/G+E
- UA2ki24GOO5OBNBTyzEyCu78qTqSAOw3wcpaHI388ylEpJ/IY9fLYVdCwq/FXEzpKxia
- qnUIWZaLS8+rpmVn/nY0E0Bno6s7p4x2FvfaTIq6B8lXuwSbWbIUWrBcy84X9cCMY9BI
- QD277uLjAHlrvVF0FFqAv1Bz1Ztq9TeU7dgP/8E0M0ZSYG1zqXMrKPW844az04bVQ3wr
- ziSaq+VfA8F+r2z39Qn93NnJxJpeN+ghtiIvM+ggoMydNjKaSiDr8ZyFuvthHXfga7F2
- PlxA==
-X-Gm-Message-State: APjAAAVwJLGtYx8RWWQF2mpbPSOoc573EdJHRa5gMKrS/6HAetyhhO+g
- U69oE31gY3nmUNmfHvcYslTs4A0R3CWTHywHAhBllA==
-X-Google-Smtp-Source: APXvYqzs75iMfXz7/rS4VeyHDtKAwlYTXfTPZZpSXxahppQZp/zCJx7DuwV1f+XkzmQJHKDm5D1GT8ViO7csAMLN+6U=
-X-Received: by 2002:a6b:9257:: with SMTP id u84mr1461213iod.278.1561599283064; 
- Wed, 26 Jun 2019 18:34:43 -0700 (PDT)
+ bh=L2Q5XHKelfQkjrwCrn4wOaWyOpvTiODS5vOc84eDxew=;
+ b=O4zixLAIFiTgreeSYwyUNnQ2bZcEjwO+SLmb4ET/dx77MYxJQIe3oWr43+ojzbCk/Y
+ 4cir0oBa2LSdtH8Jb63pCu6aBFcIY7iteAOnbwFO73KweO83MDIIPM858rGJhdWdF9gO
+ 6ZhDL/xJ0r/g0TCtWM5UE1/mTLKV/fGMTBi6L2w4gOOfPTL30198Tlk2TRWLofQQ1H4F
+ kuG5DuAKwJ3Pw4GyvzIQDE6hUOiikbvy5Og+AlC4tvvCktw4Z4xmoxPWtbvXY5SHysgu
+ NGLOhqWC9RwFYuTYkD2CtyZPg7mzMvxulGtC1+sPyNTeiMwj+NlfDblbotnGAWMKyiSD
+ n7MA==
+X-Gm-Message-State: APjAAAVL7jEXfDKi4HKSBP1jSfOv74ffnf2IgRKmaoe+vSELxVE02qKX
+ J5xnowAB5IoTipEiQjTf9P22qidzfZ59WfmG5V180Q==
+X-Google-Smtp-Source: APXvYqzjHVXBPJRsTAL4Ko5kFmM6fTuQiqSMoCWmWcBnzUvY6+yWotykh5i3K3ina2IROBrQGhCo8dMJQyRSib29VSQ=
+X-Received: by 2002:a6b:1494:: with SMTP id 142mr1560459iou.72.1561599343195; 
+ Wed, 26 Jun 2019 18:35:43 -0700 (PDT)
 MIME-Version: 1.0
-References: <877e9ayg88.fsf@belgarion.home>
- <20190625115042.qrlpbjzehjhxilvh@localhost>
- <87y31ow3o7.fsf@belgarion.home>
-In-Reply-To: <87y31ow3o7.fsf@belgarion.home>
+References: <cover.1561105093.git.horms+renesas@verge.net.au>
+ <20190625124924.ubpi3pxwggbz5cbw@localhost>
+ <CAMuHMdVj5G6-m9iqQQM5nAQZbhC=GL0DtgUKXff7UBQ8uNwmBw@mail.gmail.com>
+In-Reply-To: <CAMuHMdVj5G6-m9iqQQM5nAQZbhC=GL0DtgUKXff7UBQ8uNwmBw@mail.gmail.com>
 From: Olof Johansson <olof@lixom.net>
-Date: Thu, 27 Jun 2019 09:34:29 +0800
-Message-ID: <CAOesGMhtzW_mUdxqnWj3qhkuv2+5oOixQ6UH+rq2S_yJ523OGA@mail.gmail.com>
-Subject: Re: [GIT PULL] pxa-dt for v5.3
-To: Robert Jarzmik <robert.jarzmik@free.fr>
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190627_023650_769918_64547B6A 
-X-CRM114-Status: GOOD (  15.20  )
+Date: Thu, 27 Jun 2019 09:35:30 +0800
+Message-ID: <CAOesGMjVE0--LQF2eULx5WgANSsuiYPbmy0bv2HUUirokLJ=vA@mail.gmail.com>
+Subject: Re: [GIT PULL] Renesas ARM Based SoC Updates for v5.3
+To: Geert Uytterhoeven <geert@linux-m68k.org>
+X-Spam-Note: CRM114 invocation failed
 X-Spam-Score: 0.0 (/)
-X-Spam-Report: SpamAssassin version 3.4.2 on casper.infradead.org summary:
- Content analysis details:   (0.0 points, 5.0 required)
+X-Spam-Report: SpamAssassin version 3.4.2 on merlin.infradead.org summary:
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:d41 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:d42 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -105,45 +103,46 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: ARM-SoC Maintainers <arm@kernel.org>,
- Haojian Zhuang <haojian.zhuang@gmail.com>,
- Linux ARM Mailing List <linux-arm-kernel@lists.infradead.org>,
- Daniel Mack <zonque@gmail.com>
+Cc: Arnd Bergmann <arnd@arndb.de>, Kevin Hilman <khilman@kernel.org>,
+ Magnus Damm <magnus.damm@gmail.com>,
+ Linux-Renesas <linux-renesas-soc@vger.kernel.org>, arm-soc <arm@kernel.org>,
+ Simon Horman <horms+renesas@verge.net.au>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Jun 27, 2019 at 3:24 AM Robert Jarzmik <robert.jarzmik@free.fr> wrote:
+On Tue, Jun 25, 2019 at 9:23 PM Geert Uytterhoeven <geert@linux-m68k.org> wrote:
 >
-> Olof Johansson <olof@lixom.net> writes:
+> Hi Olof,
 >
-> > On Mon, Jun 24, 2019 at 08:45:43PM +0200, Robert Jarzmik wrote:
-> >> Hi Arnd, Kevin, and Olof,
-> >>
-> >> This is the pxa devicetree pull request for 5.3. Can you please consider pulling ?
-> >>
-> >> The following changes since commit a188339ca5a396acc588e5851ed7e19f66b0ebd9:
-> >>
-> >>   Linux 5.2-rc1 (2019-05-19 15:47:09 -0700)
-> >>
-> >> are available in the Git repository at:
-> >>
-> >>   https://github.com/rjarzmik/linux.git tags/pxa-dt-5.3
-> >>
-> >> for you to fetch changes up to bea8754e784ef894a7aaf1821a1e8b700cc70f32:
-> >>
-> >>   ARM: dts: pxa300-raumfeld-speaker-one: add channel output mapping for STA320 (2019-06-24 11:35:02 +0200)
+> On Tue, Jun 25, 2019 at 3:10 PM Olof Johansson <olof@lixom.net> wrote:
+> > On Fri, Jun 21, 2019 at 11:12:04AM +0200, Simon Horman wrote:
+> > > Oleksandr Tyshchenko (1):
+> > >       ARM: mach-shmobile: Don't init CNTVOFF/counter if PSCI is available
 > >
-> > Merged, thanks!
-> Thanks.
-> I hope you have also seen the other one of the split.
+> > Merged, thanks.
+>
+> Thanks!
+>
+> > Note that in this patch, code like this:
+> >
+> > +#ifdef CONFIG_ARM_PSCI_FW
+> > +       if (psci_ops.cpu_on)
+> > +               need_update = false;
+> > +#endif
+> > +
+> > +       if (need_update == false)
+> > +               goto skip_update;
+> >
+> >
+> > Can either be replaced with a goto under the ifdef, or at the very least, no
+>
+> I believe a goto under the ifdef may cause a "label defined but not used"
+> warning if CONFIG_ARM_PSCI_FW is not defined.
 
-Yeah, did I miss replying?
-
-It's merged:
-
-https://git.kernel.org/pub/scm/linux/kernel/git/soc/soc.git/log/?h=arm/soc
+Ah yeah, good point.
 
 
 -Olof
