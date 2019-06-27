@@ -2,110 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CB4BB57E04
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 27 Jun 2019 10:13:50 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 25BE957E10
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 27 Jun 2019 10:17:41 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Z8J64oYz2aXXryTkkND/Ed8m2DqNVnXWTUD8kaFY8CU=; b=bkNzUoRfZPXTEd
-	o4/Zj9NTszZGL1caAgXBkwJLJoUx6PO83pEuYgdnGxMHRi4RJttIg5geliCMMP443vYka1kJQBSpt
-	r2xMgdKKVxCs3/3BA7AHznJJwJVAAG1rZ0nxiVyoO9CF/ruEoTBbcjZEuiR3HPABiRQXJCTwBqfTB
-	wut2xtYoF7sAkgw6NHlVvdVlIAUfNw+1AT6Sa0DuiBahFwz6vD4xhewEFtRfZIvizHvBW7bPzbq+S
-	hPlCDqhIbNlvg7hI8Cj45p7V5X8i6b1qfqU8zuuAcEgU0yySxa6mrJrNcymD+w3sr2J0onTnjUVe2
-	9XzGZtyzPBYeR5Munhww==;
+	List-Owner; bh=9R60AIEM/WoeIdPsjWuKx3/chXOnmIZ1L1PBXEUr/TM=; b=IlfypyTIH29U15
+	y3fy4vCyReoaDTUYZV/HYnhQbL6SnsPFOzw30q1y4ila80/Mh7mKnfW2Yj+lx1KAcXVFfUrevh1X0
+	ROh9NuPCoxlg65hyE0NmZi2kL8sVUWVtiqMFXlvcNcpQxxL55++avYE28UHIx3NNE/FMGN2CK/FMc
+	JhCCiP2+mNO1n4I6A7IThNpa/o6CAmNI/LgqzpjZ0t7cQHTapCd5bYRIK4z/IK8ABhu5wcQuty9ya
+	6IW2rYmwJfcjKkq0OiU8HL9ZwCgVzbAGbHal7g+G58e42FKixCN8HPZ6yJCOvoFVbVZjchuSZBrKe
+	XxZAmaFNzG+MuF+iKdUw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hgPXO-0004kM-1M; Thu, 27 Jun 2019 08:13:46 +0000
-Received: from mail-eopbgr60083.outbound.protection.outlook.com ([40.107.6.83]
- helo=EUR04-DB3-obe.outbound.protection.outlook.com)
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hgPW7-0003xj-Sn
- for linux-arm-kernel@lists.infradead.org; Thu, 27 Jun 2019 08:12:29 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=dsdPYxCU7srWVhLq1BGY9FbUyssnUN5o9xuGkke+PCw=;
- b=pZt1dlzCRiWkRS30GslqPfucc/vO1TQMsZjPHxyE6Kswkx0Ob8U7TDi8HSedaa20ElFjTq9vZvBir/CIfn9gZMQSErsiyNBMjrhcippdn7kWU+oEiBXiwXdHaEqK/o+vLbTEFaxHMfldr5iLM0eMBRJtU4p9Ay3HbBNCcvuYkVs=
-Received: from AM6PR04MB5207.eurprd04.prod.outlook.com (20.177.35.159) by
- AM6PR04MB4453.eurprd04.prod.outlook.com (20.176.242.94) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2008.17; Thu, 27 Jun 2019 08:12:21 +0000
-Received: from AM6PR04MB5207.eurprd04.prod.outlook.com
- ([fe80::9c87:7753:43b9:6d4a]) by AM6PR04MB5207.eurprd04.prod.outlook.com
- ([fe80::9c87:7753:43b9:6d4a%4]) with mapi id 15.20.2008.014; Thu, 27 Jun 2019
- 08:12:21 +0000
-From: Daniel Baluta <daniel.baluta@nxp.com>
-To: "shawnguo@kernel.org" <shawnguo@kernel.org>, "robh+dt@kernel.org"
- <robh+dt@kernel.org>, "o.rempel@pengutronix.de" <o.rempel@pengutronix.de>
-Subject: [PATCH v2 2/2] dt-bindings: dsp: fsl: Add DSP IPC binding support
-Thread-Topic: [PATCH v2 2/2] dt-bindings: dsp: fsl: Add DSP IPC binding support
-Thread-Index: AQHVLMALhzY9Df127E6IyTklCWRQSg==
-Date: Thu, 27 Jun 2019 08:12:20 +0000
-Message-ID: <20190627081205.22065-3-daniel.baluta@nxp.com>
-References: <20190627081205.22065-1-daniel.baluta@nxp.com>
-In-Reply-To: <20190627081205.22065-1-daniel.baluta@nxp.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-x-clientproxiedby: VI1PR0802CA0020.eurprd08.prod.outlook.com
- (2603:10a6:800:aa::30) To AM6PR04MB5207.eurprd04.prod.outlook.com
- (2603:10a6:20b:e::31)
-x-mailer: git-send-email 2.17.1
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=daniel.baluta@nxp.com; 
-x-ms-exchange-messagesentrepresentingtype: 1
-x-originating-ip: [89.37.124.34]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: ef5f7e60-15ff-412d-ed94-08d6fad72d5e
-x-ms-office365-filtering-ht: Tenant
-x-microsoft-antispam: BCL:0; PCL:0;
- RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600148)(711020)(4605104)(1401327)(4618075)(2017052603328)(7193020);
- SRVR:AM6PR04MB4453; 
-x-ms-traffictypediagnostic: AM6PR04MB4453:
-x-ms-exchange-purlcount: 2
-x-microsoft-antispam-prvs: <AM6PR04MB445331A82319DC284FEC1699F9FD0@AM6PR04MB4453.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:3513;
-x-forefront-prvs: 008184426E
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(376002)(346002)(396003)(39860400002)(136003)(366004)(199004)(189003)(966005)(2501003)(81156014)(25786009)(68736007)(256004)(186003)(14454004)(26005)(66066001)(476003)(99286004)(50226002)(6506007)(4326008)(8936002)(8676002)(81166006)(386003)(44832011)(102836004)(52116002)(305945005)(486006)(76176011)(446003)(3846002)(71190400001)(54906003)(53376002)(6306002)(71200400001)(7736002)(11346002)(6436002)(2616005)(478600001)(86362001)(316002)(53936002)(36756003)(5660300002)(1076003)(110136005)(66556008)(66476007)(64756008)(66946007)(73956011)(6486002)(2906002)(6116002)(66446008)(6512007);
- DIR:OUT; SFP:1101; SCL:1; SRVR:AM6PR04MB4453;
- H:AM6PR04MB5207.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; A:1; MX:1; 
-received-spf: None (protection.outlook.com: nxp.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: 3tbO6/wDWf0lvpKRVEuDkUAi13vGSihk6hvcbmDCRVpgO+RUMuRfZvUK6JNAAqVgAa7x6j6NA+xjZRL7127JPnlNSpiE2mhUA/swZuSnQWZWf8FaEVNSygITVlS/CLALcuHeoj40eDln4LprBRUWI1vpXgQA+iUeh2ik4oH0K/oPQTUidpSvbldCV3wgnVNkDd2deQ+w9+EalEI8apw99MDdlhll4MQZo9+6SPma/7FFLJIPst+yQiMLyNBckHzSzD4PFBU54/xE2OxSBgt2C5RaKLQhr/zlQDhIkXUqdZovn2DFwBd/YLhcEKZymarfqL7u9UOG8xYwBs/oNRIZ2I116hrZGviO6/s62NlmbXXfM/Z/2g5D8vPsWF+MvdR5RyvuDiDi5riu/Gq+wM9isTAWjLx7TwaVnvK6i1/O2/o=
+	id 1hgPb8-0006hI-B5; Thu, 27 Jun 2019 08:17:38 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hgPar-0006gk-TH
+ for linux-arm-kernel@lists.infradead.org; Thu, 27 Jun 2019 08:17:23 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 49C9C2B;
+ Thu, 27 Jun 2019 01:17:21 -0700 (PDT)
+Received: from localhost (unknown [10.37.6.20])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id BF20C3F706;
+ Thu, 27 Jun 2019 01:17:20 -0700 (PDT)
+Date: Thu, 27 Jun 2019 09:17:19 +0100
+From: Andrew Murray <andrew.murray@arm.com>
+To: Mike Leach <mike.leach@linaro.org>
+Subject: Re: [PATCH v1 5/5] coresight: etm4x: save/restore state across CPU
+ low power states
+Message-ID: <20190627081718.GB34530@e119886-lin.cambridge.arm.com>
+References: <20190618125433.9739-1-andrew.murray@arm.com>
+ <20190618125433.9739-6-andrew.murray@arm.com>
+ <20190618225549.GB24894@xps15>
+ <494e131a-0fcf-a4b0-6112-cb5861756004@arm.com>
+ <CANLsYkwnCMNnMM+H4+iXJv3AJADvW7V09fi+s1nVbYvvOLpuwg@mail.gmail.com>
+ <CAJ9a7VjaXqx2moWB8JGyfHxzPEdvpuKcDXwobER9PN2GdrgfQA@mail.gmail.com>
 MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: ef5f7e60-15ff-412d-ed94-08d6fad72d5e
-X-MS-Exchange-CrossTenant-originalarrivaltime: 27 Jun 2019 08:12:21.0739 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: daniel.baluta@nxp.com
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM6PR04MB4453
+Content-Disposition: inline
+In-Reply-To: <CAJ9a7VjaXqx2moWB8JGyfHxzPEdvpuKcDXwobER9PN2GdrgfQA@mail.gmail.com>
+User-Agent: Mutt/1.10.1+81 (426a6c1) (2018-08-26)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190627_011227_987878_ACD31B73 
-X-CRM114-Status: GOOD (  10.88  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190627_011722_039665_68C006E0 
+X-CRM114-Status: GOOD (  30.80  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.6.83 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -117,83 +66,159 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Aisheng Dong <aisheng.dong@nxp.com>,
- "mark.rutland@arm.com" <mark.rutland@arm.com>,
- Anson Huang <anson.huang@nxp.com>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- Daniel Baluta <daniel.baluta@nxp.com>,
- "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- dl-linux-imx <linux-imx@nxp.com>, "festevam@gmail.com" <festevam@gmail.com>,
- "S.j. Wang" <shengjiu.wang@nxp.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: Alexander Shishkin <alexander.shishkin@linux.intel.com>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
+ Mathieu Poirier <mathieu.poirier@linaro.org>,
+ Suzuki K Poulose <suzuki.poulose@arm.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-DSP IPC is the layer that allows the Host CPU to communicate
-with DSP firmware.
-DSP is part of some i.MX8 boards (e.g i.MX8QM, i.MX8QXP)
+On Wed, Jun 26, 2019 at 11:21:35AM +0100, Mike Leach wrote:
+> Hi,
+> 
+> Sorry, a bit late on this set as it didn't appear in the Coresight
+> mailing list as expected per suzukis suggestion.
+> 
+> On Tue, 25 Jun 2019 at 20:57, Mathieu Poirier
+> <mathieu.poirier@linaro.org> wrote:
+> >
+> > Hi,
+> >
+> > On Tue, 25 Jun 2019 at 04:07, Suzuki K Poulose <suzuki.poulose@arm.com> wrote:
+> > >
+> > > Hi Mathieu,
+> > >
+> > > On 18/06/2019 23:55, Mathieu Poirier wrote:
+> > > > On Tue, Jun 18, 2019 at 01:54:33PM +0100, Andrew Murray wrote:
+> > > >> Some hardware will ignore bit TRCPDCR.PU which is used to signal
+> > > >> to hardware that power should not be removed from the trace unit.
+> > > >> Let's mitigate against this by saving and restoring the trace
+> > > >> unit state when the CPU enters low power states.
+> > > >>
+> > > >> To provide the benefit to both self-hosted and external debuggers
+> > > >> we save/restore the entire state which includes etmv4_config data
+> > > >> and dynamic data such as inflight counter values, sequencer
+> > > >> states, etc.
+> > > >>
+> > > >> To reduce CPU suspend/resume latency the state is only saved or
+> > > >> restored if coresight is in use as determined by the claimset
+> > > >> registers.
+> > > >>
+> > > >> To aid debug of CPU suspend/resume a disable_pm_save parameter
+> > > >> is provided to disable this feature.
+> > > >>
+> > > >> Signed-off-by: Andrew Murray <andrew.murray@arm.com>
+> > >
+> > >
+> > > >> +static int etm4_cpu_pm_notify(struct notifier_block *nb, unsigned long cmd,
+> > > >> +                          void *v)
+> > > >> +{
+> > > >> +    struct etmv4_drvdata *drvdata = container_of(nb,
+> > > >> +                                    struct etmv4_drvdata, nb);
+> > > >> +
+> > > >> +    if (disable_pm_save)
+> > > >> +            return NOTIFY_OK;
+> > > >> +
+> > > >> +    switch (cmd) {
+> > > >> +    case CPU_PM_ENTER:
+> > > >> +            /* save the state if coresight is in use */
+> > > >> +            if (coresight_is_claimed_any(drvdata->base))
+> > > >
+> > > > claimed_any()? At this point if coresight_is_claimed_self_hosted() == false an
+> > > > external agent is competing with the framework and we should abdicate.
+> > >
+> > > I think claimed_any() is correct check. As per PSCI, ARM DEN 0022D, section
+> > > 6.8.1 Debug and Trace save and restore,  the OS software is
+> > > in charge of save/restoring the context of Debug/Trace. The claim tags
+> > > are a mechanism to indicate who is consuming the components. Also, given
+> > > the OS software doesn't have a reliable way to communicate back to the
+> > > the External debugger about its decision to power down the CPU, that
+> > > makes sense to save/restore it.
+> >
+> > What I understand from section 6.8.1 is that supervisory and OS power
+> > management SW are responsible to save the debug context when operating
+> > in their respective mode, which reflects my comment above.
+> >
+> > I also see that two options are available to an external agent, i.e
+> > either use the DBGNOPWRDWN and DBGPWRUPREQ bits to request powerdown
+> > emulation or use the "OS Unlock Catch" debug event (which probably
+> > relates to the lost of context bit) to restore the debug context.
+> > From where I stand there is no provision for OS power management code
+> > to take care of the debug context of an external agent.  Am I missing
+> > something here?
+> >
+> 
+> OS lock is precisely the provision designed for an OS to handle
+> save/restore on behalf of an external debug agent. OS lock blocks the
+> external debugger from accessing the coresight when it is powered but
+> being updated by the OS
+> 
+> A scenario may be:-
+> a) external debug halts core(s) & programs Coresight subsystem -
+> likely extracting trace via TPIU.
+> b) external debug agent restarts cores - linux (continues) running /
+> booting - collecting the trace we want.
+> c) Some event happens and the external debug agent regains control.
+> (breakpoint / halt request).
+> 
+> During b) cores may be powering up and down. When this happens we need
+> the state to be saved and restored so that trace continues. (assuming
+> that the various debug power requests above are either not supported
+> in the fw/hardware or not asserted by the external agent).
+> The external debug agent cannot safely manipulate coresight during
+> this period - it can never know if a register is going to be available
+> - a classic race condition.
+> 
+> Irrespective of whoever "owns" the ETM programming - if the CPUidle
+> notification is required due to implementation issues, then in both
+> cases the save and restore is required.
 
-Signed-off-by: Daniel Baluta <daniel.baluta@nxp.com>
----
- .../devicetree/bindings/dsp/fsl,dsp_ipc.yaml  | 44 +++++++++++++++++++
- 1 file changed, 44 insertions(+)
- create mode 100644 Documentation/devicetree/bindings/dsp/fsl,dsp_ipc.yaml
+Thanks for this.
 
-diff --git a/Documentation/devicetree/bindings/dsp/fsl,dsp_ipc.yaml b/Documentation/devicetree/bindings/dsp/fsl,dsp_ipc.yaml
-new file mode 100644
-index 000000000000..1cbf5d25b258
---- /dev/null
-+++ b/Documentation/devicetree/bindings/dsp/fsl,dsp_ipc.yaml
-@@ -0,0 +1,44 @@
-+# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
-+%YAML 1.2
-+---
-+$id: http://devicetree.org/schemas/arm/freescale/fsl,dsp.yaml#
-+$schema: http://devicetree.org/meta-schemas/core.yaml#
-+
-+title: NXP i.MX8 IPC DSP interface
-+
-+maintainers:
-+  - Daniel Baluta <daniel.baluta@nxp.com>
-+
-+description: |
-+  IPC communication layer between Host CPU and DSP on NXP i.MX8 platforms
-+
-+properties:
-+  compatible:
-+    enum:
-+      - fsl,imx8qxp-dsp
-+
-+  mboxes:
-+    description:
-+      List of <&phandle type channel> - 2 channels for TXDB, 2 channels for RXDB
-+      (see mailbox/fsl,mu.txt)
-+    maxItems: 4
-+
-+  mbox-names:
-+    items:
-+      - const: txdb0
-+      - const: txdb1
-+      - const: rxdb0
-+      - const: rxdb1
-+
-+required:
-+  - compatible
-+  - mboxes
-+  - mbox-names
-+
-+examples:
-+  - |
-+    dsp_ipc {
-+      compatbile = "fsl,imx8qxp-dsp";
-+      mbox-names = "txdb0", "txdb1", "rxdb0", "rxdb1";
-+      mboxes = <&lsio_mu13 2 0>, <&lsio_mu13 2 1>, <&lsio_mu13 3 0>, <&lsio_mu13 3 1>;
-+    };
--- 
-2.17.1
+> 
+> For the external agent owner I agree that everything needs to be saved
+>  - but for self hosted, just the dynamic values should be read back,
+> much of the remainder of the information is already held in the driver
+> in etmv4_config. This should help reduce at least the power down
+> latency.
+
+I agree - we don't need to save/restore as many registers as we currently
+do for self-hosted - and thus we have the opportunity to optimise latency
+for this use case.
+
+However, let's see where v2 takes us and measure the impact before adding
+this optimisation. I'm keen to avoid complexity where possible.
+
+Thanks,
+
+Andrew Murray
+
+> 
+> 
+> 
+> 
+> Regards
+> 
+> Mike
+> 
+> 
+> > >
+> > > Cheers
+> > > Suzuki
+> >
+> > _______________________________________________
+> > linux-arm-kernel mailing list
+> > linux-arm-kernel@lists.infradead.org
+> > http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+> 
+> 
+> 
+> -- 
+> Mike Leach
+> Principal Engineer, ARM Ltd.
+> Manchester Design Centre. UK
 
 _______________________________________________
 linux-arm-kernel mailing list
