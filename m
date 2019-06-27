@@ -2,78 +2,93 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0304D57CAE
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 27 Jun 2019 09:04:56 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D9D3757CBB
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 27 Jun 2019 09:05:44 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=J0/t6hdoqFdNe4nM7TFoiqdhHxWtYnDlYMPGpH4FMoA=; b=OPVkj5o0ffFpqS
-	aHPcRP9IS+PhEJ5hNmExPbDER3QIKu6u+3xO1z6z8T37UXOdBb87GkPEmYYYlf+F5BUsv5xl30Uia
-	bn1fCNuIfklpuxdKf4LSRztacqHoS09iLJaLAI3SmeTVSni80GqvJa54rb9o0xZIS3XIhX9bRxd6A
-	NK3JucBlQgidFW8/NqHCqTQbUPXILK+sGmFu9Bohc3SpQ8f0Grxff6oVy8a2kM9nGDMBrCF+rkPmP
-	rmd/c6ho9anL+cbuyLxo7hq8DZBlu/hV8/d9c4oBH+xGpT6wUCajpI9IMoPC59+Tvrmhov8k3HOY1
-	0jzwmh1Qz188RdVnHSgg==;
+	List-Owner; bh=AKDcyGJ7Co8/EYawds7QB90zRK5nW5917Ucokt0bHWA=; b=JQxWjAdEdjFwFu
+	cJP5Snq3vJcKt0zte7lFqgHlcKEnln/KBCqAyZ5a5yJW91VrjhuGgF0VO1UuJGHMb6uP1bbX/Q8H8
+	7NeENZlB0b6jLnrRsbeq9KMFEfX8kZh2qFqpfX1WhoIJC4kacrCPaOmPCTZERXfnl+V2FmRjTQLKw
+	lH3GBCFUgL9YHbqtSeBhUEjV+TZqyapk2NwJ3XMOoKdG1g7sJVvIGrk8V4n5XdRmLVyPy3WgV2ZyV
+	nM4JZT2deVaujlMgusTR7sfHCecYR6IhbLW8bMv9GBKcLfK2ejFPRWmET90rk+MlT0iEQ6Fa2nioy
+	Idhwe8CqKt55syJ4gLCw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hgOSi-0006Cw-Gl; Thu, 27 Jun 2019 07:04:52 +0000
-Received: from mail-io1-xd41.google.com ([2607:f8b0:4864:20::d41])
+	id 1hgOTV-0007aR-7c; Thu, 27 Jun 2019 07:05:41 +0000
+Received: from userp2120.oracle.com ([156.151.31.85])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hgOSI-0006Cc-FT
- for linux-arm-kernel@lists.infradead.org; Thu, 27 Jun 2019 07:04:28 +0000
-Received: by mail-io1-xd41.google.com with SMTP id h6so2491851ioh.3
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 27 Jun 2019 00:04:26 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=AZmkg14rhmcX5Dvn99I9Bdojb+GxN0kaY+JY2CKjAGo=;
- b=vbR3WYhUS9HeIiQnXzqMjOMfF59F2nBROJQUUfNES1Cd8B0fbpsjXssBRAwBd4OJWb
- UCpNtnUJlqgzQGSq6iTYX6coyVr/A4iw4si1tGeljV3UibLsB4dpN7hiG8JSFpTgw/O+
- Ud4ifzxOXHzXuDDLlYp0GOuHO2/CPZtQf8hCGmP+qIwKsbIcgxDo4T4DVrrwnLutmHVl
- zbqqUHgT1TnteK5e0ksflhMCgTp2MLDb4JZtBvfrENyu4SEt1xhsANAccIFeIhkB6a94
- XykjByBhbk34K9b33OPIQG+ZGnUDzklMMdD3fqmUXLson+2cL1cBzrus+P0MH0xC1eSY
- scug==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=AZmkg14rhmcX5Dvn99I9Bdojb+GxN0kaY+JY2CKjAGo=;
- b=hTcPlK/PXDK4QWcMIPH5l+xIfBdCZ5RkFaDKMRlXH+X8tvcVQ2eUUWc0WuwV0fF7cR
- bkB59UvubhxCvRObdwq7LSPDHxYdzaemvQsBSsmqEAL1jUD4LUMng+jatnab/5m5SKXQ
- 8+ncgvC6aSL0Zl+f2lHgjPNYjmR1UR9JMkPllN4nMQKRbnd4dMSnkUEexjcdcbQDwIqD
- peGzd/B3qYyIQ497famUx3hTz3Y3NxnKbIEsNbdV02X+OrmCwO4k7RaKiQhjl6uniCo1
- kouUfCPqShDuTxZBw4bdkbchcg9d5yRrFaGh2I1kGh3JgKGJxViyGhWA82hw22lvgctn
- ocwg==
-X-Gm-Message-State: APjAAAWGKHUndVmzIEE7TGqmGaEvsfDMal0/xwrjpjlI6FZ/xhLpzmZg
- tgcRKBHpGORto1OmHoBvhbF03X+48QaBLS52ZKYT9w==
-X-Google-Smtp-Source: APXvYqyQ8lEGEOe574tAaBoj1hNDqt9LhwaGLmd8WzETW0ivzLxr8aw/A+Me4o6JpnjnyIzfoRf+ZGTv19sNDODhzm8=
-X-Received: by 2002:a6b:7312:: with SMTP id e18mr2631988ioh.156.1561619065452; 
- Thu, 27 Jun 2019 00:04:25 -0700 (PDT)
+ id 1hgOT2-00073c-OU
+ for linux-arm-kernel@lists.infradead.org; Thu, 27 Jun 2019 07:05:14 +0000
+Received: from pps.filterd (userp2120.oracle.com [127.0.0.1])
+ by userp2120.oracle.com (8.16.0.27/8.16.0.27) with SMTP id x5R74G0p050697;
+ Thu, 27 Jun 2019 07:05:05 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=oracle.com;
+ h=date : from : to : cc
+ : subject : message-id : references : mime-version : content-type :
+ in-reply-to; s=corp-2018-07-02;
+ bh=hRU06uH8360fbw0mabho66WQvlTQhCWmUo1y/p8qPLs=;
+ b=0V9EVW5P9eBAIXvdsepxSm1ALI4xXco/EmqlVFVNg/BzDf86KpH7fW7uad/4f8L4vBbn
+ PfYO9yt1YVJ62IYcAnCDL6uGcw5dDJinKrILZpq4plxjz7ipIjVRn/mgOFRoOdSBln5P
+ xHx8iwnu5broShhSVSymNSSszw5H4fLCNSpfwEjqHh7i6NuskWXQrJKMqsreADxvEmWB
+ 2PP1ynq4c3Ock9CcykrKZWdIlJf33/6geDPSP2tofmoEdxAIs+7Pr62OwtaOSmPT8gkw
+ /IbRk7aFuuqOKezfc/46FwT/eKTrmQM6gE3++v4X4YX3yPgubCAnnnoz8Pk4psMsnHhW lg== 
+Received: from userp3020.oracle.com (userp3020.oracle.com [156.151.31.79])
+ by userp2120.oracle.com with ESMTP id 2t9cyqpbqh-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Thu, 27 Jun 2019 07:05:05 +0000
+Received: from pps.filterd (userp3020.oracle.com [127.0.0.1])
+ by userp3020.oracle.com (8.16.0.27/8.16.0.27) with SMTP id x5R73SZ3005637;
+ Thu, 27 Jun 2019 07:05:04 GMT
+Received: from aserv0121.oracle.com (aserv0121.oracle.com [141.146.126.235])
+ by userp3020.oracle.com with ESMTP id 2tat7d76m0-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Thu, 27 Jun 2019 07:05:04 +0000
+Received: from abhmp0012.oracle.com (abhmp0012.oracle.com [141.146.116.18])
+ by aserv0121.oracle.com (8.14.4/8.13.8) with ESMTP id x5R751CF021457;
+ Thu, 27 Jun 2019 07:05:02 GMT
+Received: from kadam (/41.57.98.10) by default (Oracle Beehive Gateway v4.0)
+ with ESMTP ; Thu, 27 Jun 2019 00:05:01 -0700
+Date: Thu, 27 Jun 2019 10:04:52 +0300
+From: Dan Carpenter <dan.carpenter@oracle.com>
+To: Steve Longerbeam <slongerbeam@gmail.com>
+Subject: Re: [PATCH] media: staging/imx: Fix NULL deref in
+ find_pipeline_entity()
+Message-ID: <20190627070452.GA19308@kadam>
+References: <20190626185225.11992-1-slongerbeam@gmail.com>
 MIME-Version: 1.0
-References: <20190626204047.32131-1-ard.biesheuvel@linaro.org>
- <20190626204047.32131-2-ard.biesheuvel@linaro.org>
-In-Reply-To: <20190626204047.32131-2-ard.biesheuvel@linaro.org>
-From: Ard Biesheuvel <ard.biesheuvel@linaro.org>
-Date: Thu, 27 Jun 2019 09:04:10 +0200
-Message-ID: <CAKv+Gu8ivcjgM0hjLHrf55kWHpoV8ZYYYLkPuaapMe6Yj37Zbg@mail.gmail.com>
-Subject: Re: [PATCH v5 1/7] crypto: essiv - create wrapper template for ESSIV
- generation
-To: "open list:HARDWARE RANDOM NUMBER GENERATOR CORE"
- <linux-crypto@vger.kernel.org>
+Content-Disposition: inline
+In-Reply-To: <20190626185225.11992-1-slongerbeam@gmail.com>
+User-Agent: Mutt/1.9.4 (2018-02-28)
+X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9300
+ signatures=668687
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 suspectscore=0
+ malwarescore=0
+ phishscore=0 bulkscore=0 spamscore=0 mlxscore=0 mlxlogscore=999
+ adultscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.0.1-1810050000 definitions=main-1906270080
+X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9300
+ signatures=668687
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0
+ priorityscore=1501 malwarescore=0
+ suspectscore=0 phishscore=0 bulkscore=0 spamscore=0 clxscore=1015
+ lowpriorityscore=0 mlxscore=0 impostorscore=0 mlxlogscore=999 adultscore=0
+ classifier=spam adjust=0 reason=mlx scancount=1 engine=8.0.1-1810050000
+ definitions=main-1906270081
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190627_000426_530151_73DA0E6E 
-X-CRM114-Status: GOOD (  22.81  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190627_000512_931353_ED4C0F4C 
+X-CRM114-Status: GOOD (  23.11  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:d41 listed in]
- [list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [156.151.31.85 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -82,6 +97,9 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,131 +111,53 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Herbert Xu <herbert@gondor.apana.org.au>,
- Eric Biggers <ebiggers@google.com>, linux-fscrypt@vger.kernel.org,
- Gilad Ben-Yossef <gilad@benyossef.com>,
- device-mapper development <dm-devel@redhat.com>,
- Milan Broz <gmazyland@gmail.com>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Cc: "open list:STAGING SUBSYSTEM" <devel@driverdev.osuosl.org>,
+ Philipp Zabel <p.zabel@pengutronix.de>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Sascha Hauer <s.hauer@pengutronix.de>,
+ open list <linux-kernel@vger.kernel.org>, NXP Linux Team <linux-imx@nxp.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>, Shawn Guo <shawnguo@kernel.org>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>, linux-media@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, 26 Jun 2019 at 22:40, Ard Biesheuvel <ard.biesheuvel@linaro.org> wrote:
->
-> Implement a template that wraps a (skcipher,cipher,shash) or
-> (aead,cipher,shash) tuple so that we can consolidate the ESSIV handling
-> in fscrypt and dm-crypt and move it into the crypto API. This will result
-> in better test coverage, and will allow future changes to make the bare
-> cipher interface internal to the crypto subsystem, in order to increase
-> robustness of the API against misuse.
->
-> Signed-off-by: Ard Biesheuvel <ard.biesheuvel@linaro.org>
+On Wed, Jun 26, 2019 at 11:52:25AM -0700, Steve Longerbeam wrote:
+> Fix a cut&paste error in find_pipeline_entity(). The start entity must be
+> passed to media_entity_to_video_device() in find_pipeline_entity(), not
+> pad->entity. The pad is only put to use later, after determining the start
+> entity is not the entity being searched for.
+> 
+> Fixes: 3ef46bc97ca2 ("media: staging/imx: Improve pipeline searching")
+> 
+> Reported-by: Colin Ian King <colin.king@canonical.com>
+> Signed-off-by: Steve Longerbeam <slongerbeam@gmail.com>
 > ---
->  crypto/Kconfig  |   4 +
->  crypto/Makefile |   1 +
->  crypto/essiv.c  | 636 ++++++++++++++++++++
->  3 files changed, 641 insertions(+)
->
-...
-> diff --git a/crypto/essiv.c b/crypto/essiv.c
-> new file mode 100644
-> index 000000000000..fddf6dcc3823
-> --- /dev/null
-> +++ b/crypto/essiv.c
-> @@ -0,0 +1,636 @@
-...
-> +static void essiv_aead_done(struct crypto_async_request *areq, int err)
-> +{
-> +       struct aead_request *req = areq->data;
-> +       struct essiv_aead_request_ctx *rctx = aead_request_ctx(req);
-> +
-> +       if (rctx->iv)
-> +               kfree(rctx->iv);
-> +       aead_request_complete(req, err);
-> +}
-> +
-> +static int essiv_aead_crypt(struct aead_request *req, bool enc)
-> +{
-> +       gfp_t gfp = (req->base.flags & CRYPTO_TFM_REQ_MAY_SLEEP) ? GFP_KERNEL
-> +                                                                : GFP_ATOMIC;
-> +       struct crypto_aead *tfm = crypto_aead_reqtfm(req);
-> +       const struct essiv_tfm_ctx *tctx = crypto_aead_ctx(tfm);
-> +       struct essiv_aead_request_ctx *rctx = aead_request_ctx(req);
-> +       struct aead_request *subreq = &rctx->aead_req;
-> +       struct scatterlist *sg;
-> +       int err;
-> +
-> +       crypto_cipher_encrypt_one(tctx->essiv_cipher, req->iv, req->iv);
-> +
-> +       /*
-> +        * dm-crypt embeds the sector number and the IV in the AAD region, so
-> +        * we have to copy the converted IV into the source scatterlist before
-> +        * we pass it on. If the source and destination scatterlist pointers
-> +        * are the same, we just update the IV copy in the AAD region in-place.
-> +        * However, if they are different, the caller is not expecting us to
-> +        * modify the memory described by the source scatterlist, and so we have
-> +        * to do this little dance to create a new scatterlist that backs the
-> +        * IV slot in the AAD region with a scratch buffer that we can freely
-> +        * modify.
-> +        */
-> +       rctx->iv = NULL;
-> +       if (req->src != req->dst) {
-> +               int ivsize = crypto_aead_ivsize(tfm);
-> +               int ssize = req->assoclen - ivsize;
-> +               u8 *iv;
-> +
-> +               if (ssize < 0 || sg_nents_for_len(req->src, ssize) != 1)
-> +                       return -EINVAL;
-> +
-> +               if (enc) {
-> +                       rctx->iv = iv = kmemdup(req->iv, ivsize, gfp);
+>  drivers/staging/media/imx/imx-media-utils.c | 2 +-
+>  1 file changed, 1 insertion(+), 1 deletion(-)
+> 
+> diff --git a/drivers/staging/media/imx/imx-media-utils.c b/drivers/staging/media/imx/imx-media-utils.c
+> index b5b8a3b7730a..6fb88c22ee27 100644
+> --- a/drivers/staging/media/imx/imx-media-utils.c
+> +++ b/drivers/staging/media/imx/imx-media-utils.c
+> @@ -842,7 +842,7 @@ find_pipeline_entity(struct media_entity *start, u32 grp_id,
+>  		if (sd->grp_id & grp_id)
+>  			return &sd->entity;
+>  	} else if (buftype && is_media_entity_v4l2_video_device(start)) {
+> -		vfd = media_entity_to_video_device(pad->entity);
+> +		vfd = media_entity_to_video_device(start);
 
-This allocation is not really needed - I'll enlarge the request ctx
-struct instead so I can incorporate it as an anonymous member.
+Can we also remove the "pad = NULL" assignment at the start of the
+function?  Otherwise static checkers and new versions of GCC will warn
+that the assignment isn't used.  Plus removing the initialization will
+prevent bugs like this in the future.
 
-> +                       if (!iv)
-> +                               return -ENOMEM;
-> +               } else {
-> +                       /*
-> +                        * On the decrypt path, the ahash executes before the
-> +                        * skcipher gets a chance to clobber req->iv with its
-> +                        * output IV, so just map the buffer directly.
-> +                        */
-> +                       iv = req->iv;
-> +               }
-> +
-> +               sg_init_table(rctx->sg, 4);
-> +               sg_set_page(rctx->sg, sg_page(req->src), ssize, req->src->offset);
-> +               sg_set_buf(rctx->sg + 1, iv, ivsize);
-> +               sg = scatterwalk_ffwd(rctx->sg + 2, req->src, req->assoclen);
-> +               if (sg != rctx->sg + 2)
-> +                       sg_chain(rctx->sg, 3, sg);
-> +               sg = rctx->sg;
-> +       } else {
-> +               scatterwalk_map_and_copy(req->iv, req->dst,
-> +                                        req->assoclen - crypto_aead_ivsize(tfm),
-> +                                        crypto_aead_ivsize(tfm), 1);
-> +               sg = req->src;
-> +       }
-> +
-> +       aead_request_set_tfm(subreq, tctx->u.aead);
-> +       aead_request_set_ad(subreq, req->assoclen);
-> +       aead_request_set_callback(subreq, aead_request_flags(req),
-> +                                 essiv_aead_done, req);
-> +       aead_request_set_crypt(subreq, sg, req->dst, req->cryptlen, req->iv);
-> +
-> +       err = enc ? crypto_aead_encrypt(subreq) :
-> +                   crypto_aead_decrypt(subreq);
-> +
-> +       if (rctx->iv && err != -EINPROGRESS)
-> +               kfree(rctx->iv);
-> +
-> +       return err;
-> +}
-> +
-...
+regards,
+dan carpenter
+
 
 _______________________________________________
 linux-arm-kernel mailing list
