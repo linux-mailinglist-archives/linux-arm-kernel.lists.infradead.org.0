@@ -2,77 +2,68 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8C77457CAB
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 27 Jun 2019 09:03:51 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0304D57CAE
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 27 Jun 2019 09:04:56 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:In-Reply-To:
-	Date:References:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=FR8xgg9gDFA+Pfv2oyc9GacFEWXOTqG/6Sys+OIJoT4=; b=Z1D8VXeruqIlpb
-	fAeYH/ZGD3xEsKbgXZDOKzt0859/6R/aYScde3fcGQQYSs9J7Ozk2prhebDIZjwkAuk6VkxrHQCUB
-	fyCtoat/gh3CS3wKumgtWBHYpgMFlE3CoQOUvxux3b4pymoOkZL0sUhCkaLB7XDnSO0ISiPXx0tnA
-	XVl7Thqup79/fmjzbfBBqfcHH0/R4LV5vyPdbb0NsAw2UOtkReFGfeTaImOjde1+FkopqVsC8wXfC
-	H735VNinX9hRFh3dwVFIOGr61yQyIAcrR2HJ9rMpuqV2yUSGQW7/QRbApYjs4yjA5npzYzn8R1rbB
-	y+bWsJrevbGvIgsY1n6g==;
+	List-Owner; bh=J0/t6hdoqFdNe4nM7TFoiqdhHxWtYnDlYMPGpH4FMoA=; b=OPVkj5o0ffFpqS
+	aHPcRP9IS+PhEJ5hNmExPbDER3QIKu6u+3xO1z6z8T37UXOdBb87GkPEmYYYlf+F5BUsv5xl30Uia
+	bn1fCNuIfklpuxdKf4LSRztacqHoS09iLJaLAI3SmeTVSni80GqvJa54rb9o0xZIS3XIhX9bRxd6A
+	NK3JucBlQgidFW8/NqHCqTQbUPXILK+sGmFu9Bohc3SpQ8f0Grxff6oVy8a2kM9nGDMBrCF+rkPmP
+	rmd/c6ho9anL+cbuyLxo7hq8DZBlu/hV8/d9c4oBH+xGpT6wUCajpI9IMoPC59+Tvrmhov8k3HOY1
+	0jzwmh1Qz188RdVnHSgg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hgORf-0005nR-47; Thu, 27 Jun 2019 07:03:47 +0000
-Received: from mail-lj1-x242.google.com ([2a00:1450:4864:20::242])
+	id 1hgOSi-0006Cw-Gl; Thu, 27 Jun 2019 07:04:52 +0000
+Received: from mail-io1-xd41.google.com ([2607:f8b0:4864:20::d41])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hgOPx-0005XP-Cq
- for linux-arm-kernel@lists.infradead.org; Thu, 27 Jun 2019 07:02:17 +0000
-Received: by mail-lj1-x242.google.com with SMTP id p17so1194676ljg.1
+ id 1hgOSI-0006Cc-FT
+ for linux-arm-kernel@lists.infradead.org; Thu, 27 Jun 2019 07:04:28 +0000
+Received: by mail-io1-xd41.google.com with SMTP id h6so2491851ioh.3
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 27 Jun 2019 00:02:01 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:references:date:in-reply-to:message-id
- :user-agent:mime-version:content-transfer-encoding;
- bh=Pvfj5IUJQ92pFQYuAu+C5YKHxoqdsKA2nN/i3c6nnRM=;
- b=HmWsV8yKXXVdET4q91MaKEi0sqE5IFmAgar6irfyeJah90ltAUtgRO0fAlkBFOaN30
- ZusLey9GuZJkPALI9pbZlCePjlos/9ReNoBOon8HswHg78lJWlDSgS1ZKW3ND95MY7p1
- GaJBpeYZhj+YGsQZrzqE3Xr2DLpG3IrC48vaxgR3I0z33fvQAqfqwunqH76P3u9TynYK
- HKdi+o4DbVrQBBdSk/B1QKwlSBE9/QaZi1HbwLp/oZK/hG9/xykeuw5nuqVl649gqgon
- e/Imu6A793VlC2f5dOJr1oPN/JOEzab8NcqltSPfGdCu5Mu7reCLyI4FtTALfTssx2Ow
- 8YXg==
+ Thu, 27 Jun 2019 00:04:26 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=AZmkg14rhmcX5Dvn99I9Bdojb+GxN0kaY+JY2CKjAGo=;
+ b=vbR3WYhUS9HeIiQnXzqMjOMfF59F2nBROJQUUfNES1Cd8B0fbpsjXssBRAwBd4OJWb
+ UCpNtnUJlqgzQGSq6iTYX6coyVr/A4iw4si1tGeljV3UibLsB4dpN7hiG8JSFpTgw/O+
+ Ud4ifzxOXHzXuDDLlYp0GOuHO2/CPZtQf8hCGmP+qIwKsbIcgxDo4T4DVrrwnLutmHVl
+ zbqqUHgT1TnteK5e0ksflhMCgTp2MLDb4JZtBvfrENyu4SEt1xhsANAccIFeIhkB6a94
+ XykjByBhbk34K9b33OPIQG+ZGnUDzklMMdD3fqmUXLson+2cL1cBzrus+P0MH0xC1eSY
+ scug==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:references:date:in-reply-to
- :message-id:user-agent:mime-version:content-transfer-encoding;
- bh=Pvfj5IUJQ92pFQYuAu+C5YKHxoqdsKA2nN/i3c6nnRM=;
- b=hW5u7FW+9uYWMhE2dw+d1wA+r+ri12V5HhSDO/OEHaAZHBe1XS8gsVCB7t3WkUchba
- OuvFSma16AjaJArS5arBAw1PZpUChO8ME4/tdWJ9p4oviPYBuOhEIG76U3FXad9W1KMQ
- 6UFBvASE7FyXEM4c4mM0fXIOsAviddQxKKLQqgBvsriep4VhgT0+gPAL4hvKCHM+3Xov
- EiK8mFBxyv6+EZ9pLYfZ/gYH4vbjeGkhlBp3HWra+9jQMM/uYSBqVbWxrAwxdEjJ0JUW
- 26IyODzw3Fl5QhSV3o7A0jXXTaVgYLUWpve0nW//yifNh/3ElJzMvIA+6ZOtB3o8Tt7m
- xioQ==
-X-Gm-Message-State: APjAAAX5CEUq0wx2zrVNpMWJeaLa1chLKccFUUngu1o1hOyHkQncCWgC
- 6hhHj7vEwN1SrW++e9RE7Ht0Xzvg
-X-Google-Smtp-Source: APXvYqwwDeR3mG5V7MTsd1v77XqJ3MRQe8u0XvgvPm3cI08X9armX5Ba/ryUeZswyN7KohvGKiNvBw==
-X-Received: by 2002:a2e:5c88:: with SMTP id q130mr1609327ljb.176.1561618916948; 
- Thu, 27 Jun 2019 00:01:56 -0700 (PDT)
-Received: from osv.localdomain ([89.175.180.246])
- by smtp.gmail.com with ESMTPSA id u11sm222130ljd.90.2019.06.27.00.01.55
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Thu, 27 Jun 2019 00:01:56 -0700 (PDT)
-From: Sergey Organov <sorganov@gmail.com>
-To: Uwe =?utf-8?Q?Kleine-K=C3=B6nig?= <u.kleine-koenig@pengutronix.de>
-Subject: Re: [PATCH v2 6/7] serial: imx: set_mctrl(): correctly restore
- autoRTS state
-References: <20190614072801.3187-1-s.hauer@pengutronix.de>
- <1561558293-7683-1-git-send-email-sorganov@gmail.com>
- <1561558293-7683-7-git-send-email-sorganov@gmail.com>
- <20190627060537.brmgsmoh3usr4vo6@pengutronix.de>
-Date: Thu, 27 Jun 2019 10:01:54 +0300
-In-Reply-To: <20190627060537.brmgsmoh3usr4vo6@pengutronix.de> ("Uwe
- \=\?utf-8\?Q\?Kleine-K\=C3\=B6nig\=22's\?\= message of "Thu,
- 27 Jun 2019 08:05:37 +0200")
-Message-ID: <87imsrik9p.fsf@osv.gnss.ru>
-User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/24.4 (gnu/linux)
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=AZmkg14rhmcX5Dvn99I9Bdojb+GxN0kaY+JY2CKjAGo=;
+ b=hTcPlK/PXDK4QWcMIPH5l+xIfBdCZ5RkFaDKMRlXH+X8tvcVQ2eUUWc0WuwV0fF7cR
+ bkB59UvubhxCvRObdwq7LSPDHxYdzaemvQsBSsmqEAL1jUD4LUMng+jatnab/5m5SKXQ
+ 8+ncgvC6aSL0Zl+f2lHgjPNYjmR1UR9JMkPllN4nMQKRbnd4dMSnkUEexjcdcbQDwIqD
+ peGzd/B3qYyIQ497famUx3hTz3Y3NxnKbIEsNbdV02X+OrmCwO4k7RaKiQhjl6uniCo1
+ kouUfCPqShDuTxZBw4bdkbchcg9d5yRrFaGh2I1kGh3JgKGJxViyGhWA82hw22lvgctn
+ ocwg==
+X-Gm-Message-State: APjAAAWGKHUndVmzIEE7TGqmGaEvsfDMal0/xwrjpjlI6FZ/xhLpzmZg
+ tgcRKBHpGORto1OmHoBvhbF03X+48QaBLS52ZKYT9w==
+X-Google-Smtp-Source: APXvYqyQ8lEGEOe574tAaBoj1hNDqt9LhwaGLmd8WzETW0ivzLxr8aw/A+Me4o6JpnjnyIzfoRf+ZGTv19sNDODhzm8=
+X-Received: by 2002:a6b:7312:: with SMTP id e18mr2631988ioh.156.1561619065452; 
+ Thu, 27 Jun 2019 00:04:25 -0700 (PDT)
 MIME-Version: 1.0
+References: <20190626204047.32131-1-ard.biesheuvel@linaro.org>
+ <20190626204047.32131-2-ard.biesheuvel@linaro.org>
+In-Reply-To: <20190626204047.32131-2-ard.biesheuvel@linaro.org>
+From: Ard Biesheuvel <ard.biesheuvel@linaro.org>
+Date: Thu, 27 Jun 2019 09:04:10 +0200
+Message-ID: <CAKv+Gu8ivcjgM0hjLHrf55kWHpoV8ZYYYLkPuaapMe6Yj37Zbg@mail.gmail.com>
+Subject: Re: [PATCH v5 1/7] crypto: essiv - create wrapper template for ESSIV
+ generation
+To: "open list:HARDWARE RANDOM NUMBER GENERATOR CORE"
+ <linux-crypto@vger.kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190627_000203_689666_C35E4456 
+X-CRM114-CacheID: sfid-20190627_000426_530151_73DA0E6E 
 X-CRM114-Status: GOOD (  22.81  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -80,11 +71,9 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:242 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:d41 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (sorganov[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -104,70 +93,133 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Pengutronix Kernel Team <kernel@pengutronix.de>,
- Sascha Hauer <s.hauer@pengutronix.de>, linux-arm-kernel@lists.infradead.org,
- linux-serial@vger.kernel.org, NXP Linux Team <linux-imx@nxp.com>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Herbert Xu <herbert@gondor.apana.org.au>,
+ Eric Biggers <ebiggers@google.com>, linux-fscrypt@vger.kernel.org,
+ Gilad Ben-Yossef <gilad@benyossef.com>,
+ device-mapper development <dm-devel@redhat.com>,
+ Milan Broz <gmazyland@gmail.com>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-VXdlIEtsZWluZS1Lw7ZuaWcgPHUua2xlaW5lLWtvZW5pZ0BwZW5ndXRyb25peC5kZT4gd3JpdGVz
-OgoKPiBPbiBXZWQsIEp1biAyNiwgMjAxOSBhdCAwNToxMTozMlBNICswMzAwLCBTZXJnZXkgT3Jn
-YW5vdiB3cm90ZToKPj4gaW14X3VhcnRfc2V0X21jdHJsKCkgaGFwcGVuZWQgdG8gc2V0IFVDUjJf
-Q1RTQyBiaXQgd2hlbmV2ZXIgVElPQ01fUlRTCj4+IHdhcyBzZXQsIG5vIG1hdHRlciBpZiBSVFMv
-Q1RTIGhhbmRzaGFrZSBpcyBlbmFibGVkIG9yIG5vdC4gTm93IGZpeGVkIGJ5Cj4+IHR1cm5pbmcg
-aGFuZHNoYWtlIG9uIG9ubHkgd2hlbiBDUlRTQ1RTIGJpdCBmb3IgdGhlIHBvcnQgaXMgc2V0Lgo+
-PiAKPj4gUmV2aWV3ZWQtYnk6IFNhc2NoYSBIYXVlciA8cy5oYXVlckBwZW5ndXRyb25peC5kZT4K
-Pj4gVGVzdGVkLWJ5OiBTYXNjaGEgSGF1ZXIgPHMuaGF1ZXJAcGVuZ3V0cm9uaXguZGU+Cj4+IFNp
-Z25lZC1vZmYtYnk6IFNlcmdleSBPcmdhbm92IDxzb3JnYW5vdkBnbWFpbC5jb20+Cj4+IC0tLQo+
-PiAgZHJpdmVycy90dHkvc2VyaWFsL2lteC5jIHwgMTMgKysrKysrKysrKystLQo+PiAgMSBmaWxl
-IGNoYW5nZWQsIDExIGluc2VydGlvbnMoKyksIDIgZGVsZXRpb25zKC0pCj4+IAo+PiBkaWZmIC0t
-Z2l0IGEvZHJpdmVycy90dHkvc2VyaWFsL2lteC5jIGIvZHJpdmVycy90dHkvc2VyaWFsL2lteC5j
-Cj4+IGluZGV4IDQ4NjdmODAuLjE3MTM0N2QgMTAwNjQ0Cj4+IC0tLSBhL2RyaXZlcnMvdHR5L3Nl
-cmlhbC9pbXguYwo+PiArKysgYi9kcml2ZXJzL3R0eS9zZXJpYWwvaW14LmMKPj4gQEAgLTk3MCwx
-MCArOTcwLDE5IEBAIHN0YXRpYyB2b2lkIGlteF91YXJ0X3NldF9tY3RybChzdHJ1Y3QgdWFydF9w
-b3J0ICpwb3J0LCB1bnNpZ25lZCBpbnQgbWN0cmwpCj4+ICAJaWYgKCEocG9ydC0+cnM0ODUuZmxh
-Z3MgJiBTRVJfUlM0ODVfRU5BQkxFRCkpIHsKPj4gIAkJdTMyIHVjcjI7Cj4+ICAKPj4gKwkJLyoK
-Pj4gKwkJICogVHVybiBvZmYgYXV0b1JUUyAoVUNSMl9DVFNDKSBpZiBSVFMgaXMgbG93ZXJlZCBh
-bmQgcmVzdG9yZQo+PiArCQkgKiBhdXRvUlRTIHNldHRpbmcgaWYgUlRTIGlzIHJhaXNlZC4gSW52
-ZXJ0ZWQgVUNSMl9JUlRTIGlzIHNldAo+PiArCQkgKiBpZiBhbmQgb25seSBpZiBDUlRTQ1RTIGJp
-dCBpcyBzZXQgZm9yIHRoZSBwb3J0LCBzbyB3ZSB1c2UgaXQKPj4gKwkJICogdG8gZ2V0IHRoZSBz
-dGF0ZSB0byByZXN0b3JlIHRvLgo+PiArCQkgKi8KPgo+IFRoZSBjb21tZW50IGlzIHF1aXRlIGNv
-bXBsaWNhdGVkLiBJIGxpa2UgdGhlIGNvbW1lbnRzIG9mIFNhc2NoYSdzIHBhdGNoCj4gdGhhdCBh
-ZGRyZXNzZWQgdGhlIHNhbWUgaXNzdWUgYmV0dGVyLgoKVGhpcyBvbmUgaXMgc2ltcGx5IG1vZGVs
-ZWQgYWZ0ZXIgc2ltaWxhciBjb21tZW50cyBpbiBvdGhlciBkcml2ZXJzLAp0aGVuIGFkZGluZyB0
-aGUgc3BlY2lmaWNzLgoKPiBBcmUgeW91IHVzaW5nIFVDUjJfSVJUUyBhcyBhbiBpbmRpY2F0b3Ig
-aWYgQ1JUU0NUUyBpcyBzZXQ/IElmIGl0J3MgdGhhdAo+IHdoYXQgeW91IGludGVuZCB0byBleHBy
-ZXNzIGluIHRoZSBzZWNvbmQgc2VudGVuY2UgdGhhdCBpcyBoYXJkIHRvIGdyYXNwLgo+IFNvbWV0
-aGluZyBsaWtlOgo+Cj4gCVVDUjJfSVJUUyBpcyB1bnNldCBpZmYgdGhlIHBvcnQgaXMgY29uZmln
-dXJlZCBmb3IgQ1JUU0NUUwoKWWVhaCwgZXhhY3RseS4gRmluZSwgSSdsbCBjaGFuZ2UgdGhpcywg
-dGhhbmtzIQoKPgo+IEFsc28gYXMgdGhlIHZhbHVlIG9mIHRoZSBDVFMgYml0IGRvZXNuJ3QgbWF0
-dGVyIGlmIENUU0MgaXMgc2V0LCB0aGUKPiBvcmRlciBvZiB0aGUgY2hlY2tzIGNvdWxkIGJlIHN3
-YXBwZWQgdG8gcmVzdWx0IGluIGVhc2llciBjb2RlIChJTUhPIGF0Cj4gbGVhc3QpIHRoYXQgZG9l
-c24ndCBuZWVkIGEgbmVzdGVkIGlmLgo+Cj4gU29tZXRoaW5nIGxpa2U6Cj4KPiAJdWNyMiA9IGlt
-eF91YXJ0X3JlYWRsKHNwb3J0LCBVQ1IyKTsKPiAJdWNyMiAmPSB+KFVDUjJfQ1RTIHwgVUNSMl9D
-VFNDKTsKPgo+IAkvKiBVQ1IyX0lSVFMgaXMgdW5zZXQgaWZmIHRoZSBwb3J0IGlzIGNvbmZpZ3Vy
-ZWQgZm9yIENSVFNDVFMgKi8KPiAJY3J0c2N0cyA9ICEodWNyMiAmIFVDUjJfSVJUUyk7Cj4KPiAJ
-aWYgKCEobWN0cmwgJiBUSU9DTV9SVFMpKSB7Cj4gCQkvKiBGb3JjZSBSVFMgaW5hY3RpdmUsIGku
-ZS4gVUNSMl9DVFM9MCBhbmQgVUNSMl9DVFNDPTAgKi8KPiAJfSBlbHNlIGlmIChjcnRzY3RzKSB7
-Cj4gCQkvKiBsZXQgdGhlIHJlY2VpdmVyIGNvbnRyb2wgUlRTICovCj4gCQl1Y3IyIHw9IFVDUjJf
-Q1RTQzsKPiAJfSBlbHNlIHsKPiAJCS8qIEZvcmNlIFJUUyBhY3RpdmUgKi8KPiAJCXVjcjIgfD0g
-VUNSMl9DVFM7Cj4gCX0KClJpZ2h0LCB0aGlzIGlzIGZ1bmN0aW9uYWxseSBjb3JyZWN0IGFzIHdl
-bGwsIGFuZCB0aHVzIGl0J3MgYSBtYXR0ZXIgb2YKdGFzdGUsIGJ1dCBJIHN0aWxsIGJlbGlldmUg
-dGhhdCB3aGF0IEkgc3VnZ2VzdGVkIGlzIGJldHRlcjoKCgl1Y3IyID0gaW14X3VhcnRfcmVhZGwo
-c3BvcnQsIFVDUjIpOwoJdWNyMiAmPSB+KFVDUjJfQ1RTIHwgVUNSMl9DVFNDKTsKCWlmIChtY3Ry
-bCAmIFRJT0NNX1JUUykgewoJCXVjcjIgfD0gVUNSMl9DVFM7CgkJaWYgKCEodWNyMiAmIFVDUjJf
-SVJUUykpCgkJCXVjcjIgfD0gVUNSMl9DVFNDOwoJfQoKRmlyc3QsIGl0IGFsd2F5cyBzZXRzIGhh
-cmR3YXJlIFJUUyBhY2NvcmRpbmcgdG8gVElPQ01fUlRTLCB0aGF0IElNSE8gaXMKbGVzcyBzdXJw
-cmlzaW5nIHRoYW4gY2xlYXJpbmcgaGFyZHdhcmUgUlRTIGJpdCB3aGVuIHBvcnQgaXMgY29uZmln
-dXJlZApDUlRTQ1RTLgoKU2Vjb25kLCAodW5mb3J0dW5hdGUpIGludGVyLWRlcGVuZGVuY3kgYmV0
-d2VlbiBUSU9DTV9SVFMgYW5kIENSVFNDVFMgaXMKYmV0dGVyIGlzb2xhdGVkLCBzbyB0byBnZXQg
-cmlkIG9mIGl0IChldmVuIGlmIG9ubHkgbWVudGFsbHkpLCBvbmx5CnJlbW92YWxzIGFyZSByZXF1
-aXJlZCwgdGhhdCByZWR1Y2VzIHRoZSBjb2RlIHRvIHF1aXRlIG9idmlvdXM6CgoJdWNyMiA9IGlt
-eF91YXJ0X3JlYWRsKHNwb3J0LCBVQ1IyKTsKCXVjcjIgJj0gfihVQ1IyX0NUUyk7CglpZiAobWN0
-cmwgJiBUSU9DTV9SVFMpCgkJdWNyMiB8PSBVQ1IyX0NUUzsKClRoYW5rcyEKCi0tIFNlcmdleQoK
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJt
-LWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3Jn
-Cmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtl
-cm5lbAo=
+On Wed, 26 Jun 2019 at 22:40, Ard Biesheuvel <ard.biesheuvel@linaro.org> wrote:
+>
+> Implement a template that wraps a (skcipher,cipher,shash) or
+> (aead,cipher,shash) tuple so that we can consolidate the ESSIV handling
+> in fscrypt and dm-crypt and move it into the crypto API. This will result
+> in better test coverage, and will allow future changes to make the bare
+> cipher interface internal to the crypto subsystem, in order to increase
+> robustness of the API against misuse.
+>
+> Signed-off-by: Ard Biesheuvel <ard.biesheuvel@linaro.org>
+> ---
+>  crypto/Kconfig  |   4 +
+>  crypto/Makefile |   1 +
+>  crypto/essiv.c  | 636 ++++++++++++++++++++
+>  3 files changed, 641 insertions(+)
+>
+...
+> diff --git a/crypto/essiv.c b/crypto/essiv.c
+> new file mode 100644
+> index 000000000000..fddf6dcc3823
+> --- /dev/null
+> +++ b/crypto/essiv.c
+> @@ -0,0 +1,636 @@
+...
+> +static void essiv_aead_done(struct crypto_async_request *areq, int err)
+> +{
+> +       struct aead_request *req = areq->data;
+> +       struct essiv_aead_request_ctx *rctx = aead_request_ctx(req);
+> +
+> +       if (rctx->iv)
+> +               kfree(rctx->iv);
+> +       aead_request_complete(req, err);
+> +}
+> +
+> +static int essiv_aead_crypt(struct aead_request *req, bool enc)
+> +{
+> +       gfp_t gfp = (req->base.flags & CRYPTO_TFM_REQ_MAY_SLEEP) ? GFP_KERNEL
+> +                                                                : GFP_ATOMIC;
+> +       struct crypto_aead *tfm = crypto_aead_reqtfm(req);
+> +       const struct essiv_tfm_ctx *tctx = crypto_aead_ctx(tfm);
+> +       struct essiv_aead_request_ctx *rctx = aead_request_ctx(req);
+> +       struct aead_request *subreq = &rctx->aead_req;
+> +       struct scatterlist *sg;
+> +       int err;
+> +
+> +       crypto_cipher_encrypt_one(tctx->essiv_cipher, req->iv, req->iv);
+> +
+> +       /*
+> +        * dm-crypt embeds the sector number and the IV in the AAD region, so
+> +        * we have to copy the converted IV into the source scatterlist before
+> +        * we pass it on. If the source and destination scatterlist pointers
+> +        * are the same, we just update the IV copy in the AAD region in-place.
+> +        * However, if they are different, the caller is not expecting us to
+> +        * modify the memory described by the source scatterlist, and so we have
+> +        * to do this little dance to create a new scatterlist that backs the
+> +        * IV slot in the AAD region with a scratch buffer that we can freely
+> +        * modify.
+> +        */
+> +       rctx->iv = NULL;
+> +       if (req->src != req->dst) {
+> +               int ivsize = crypto_aead_ivsize(tfm);
+> +               int ssize = req->assoclen - ivsize;
+> +               u8 *iv;
+> +
+> +               if (ssize < 0 || sg_nents_for_len(req->src, ssize) != 1)
+> +                       return -EINVAL;
+> +
+> +               if (enc) {
+> +                       rctx->iv = iv = kmemdup(req->iv, ivsize, gfp);
+
+This allocation is not really needed - I'll enlarge the request ctx
+struct instead so I can incorporate it as an anonymous member.
+
+> +                       if (!iv)
+> +                               return -ENOMEM;
+> +               } else {
+> +                       /*
+> +                        * On the decrypt path, the ahash executes before the
+> +                        * skcipher gets a chance to clobber req->iv with its
+> +                        * output IV, so just map the buffer directly.
+> +                        */
+> +                       iv = req->iv;
+> +               }
+> +
+> +               sg_init_table(rctx->sg, 4);
+> +               sg_set_page(rctx->sg, sg_page(req->src), ssize, req->src->offset);
+> +               sg_set_buf(rctx->sg + 1, iv, ivsize);
+> +               sg = scatterwalk_ffwd(rctx->sg + 2, req->src, req->assoclen);
+> +               if (sg != rctx->sg + 2)
+> +                       sg_chain(rctx->sg, 3, sg);
+> +               sg = rctx->sg;
+> +       } else {
+> +               scatterwalk_map_and_copy(req->iv, req->dst,
+> +                                        req->assoclen - crypto_aead_ivsize(tfm),
+> +                                        crypto_aead_ivsize(tfm), 1);
+> +               sg = req->src;
+> +       }
+> +
+> +       aead_request_set_tfm(subreq, tctx->u.aead);
+> +       aead_request_set_ad(subreq, req->assoclen);
+> +       aead_request_set_callback(subreq, aead_request_flags(req),
+> +                                 essiv_aead_done, req);
+> +       aead_request_set_crypt(subreq, sg, req->dst, req->cryptlen, req->iv);
+> +
+> +       err = enc ? crypto_aead_encrypt(subreq) :
+> +                   crypto_aead_decrypt(subreq);
+> +
+> +       if (rctx->iv && err != -EINPROGRESS)
+> +               kfree(rctx->iv);
+> +
+> +       return err;
+> +}
+> +
+...
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
