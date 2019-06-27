@@ -2,81 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F3E3057C66
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 27 Jun 2019 08:47:20 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 509C057C63
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 27 Jun 2019 08:46:54 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=lLWIAMcTP76mhOzSC98p713UAPlckIG0ScTIpBPrXfk=; b=I5uv06j5bQfcUU
-	r3faHOqcrvX4cRO2xl+8OP7CgYhmeZ7BaaqElKFmfOG6m7F3IVKXvcXup4j0dcDXK/WRhZuj2Kw/Z
-	wntTz9Xj6CpDlGj+sjgykB/Ao50/jh9khtS5/XKaFVesroa3PGjyfIfvvoJs8oUrwNM0Pnnxcbeg9
-	2Us0b5QXGlJ3ah3vjUHw/HL6Twbob/K7Af+KoiCuv4mcQ291c0Rb4nlecq6c2TEBBMe6cIc6bgBtM
-	gqvAtblcp7Qz27CEkNisX29wmq7xVWNjZQEYY04l0wpk9gSwvUZ64T4ggNQRmeSx+WNo0cGJt3dNo
-	4oagywenzxlzOkFKNqUA==;
+	List-Owner; bh=DdEWcV9VUf5B/OBfyNMYeYLi7LIxn87ekSkinBTnZXY=; b=XXQ8BHU7HoL+Ki
+	TGrOP0nTKYYH0Cn9/D638mk0DO7xNoF5rWvUiEj3QZU/yXfftS2bp/vlIzyd/66T/rvqEnQG3Q1zI
+	ivUHOqKpFJStyfABsrEYVzSZd1nKYuGkF66NqESTcDxv2myzahQQUDbQPxXAkSqEMn5Y8EzEW6XFG
+	TyQqSiTxHZ5G6bQ22SSPnF1YXc7XLY4wEjP5Xo4cyATfq1AvDTReLIicKXiKSXuBKzd/Bd+gQDa9z
+	2JMBHP2WG7K54xPl5eP5/p2wMh2MY13XzEdTrBQI/IP95rARoe3tf5KR435ipz/eG8t3PSiGmGCDd
+	rYj1crqkvXK/h/HaBVKg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hgOBi-0001nO-5P; Thu, 27 Jun 2019 06:47:18 +0000
+	id 1hgOBG-0001TQ-S3; Thu, 27 Jun 2019 06:46:50 +0000
 Received: from merlin.infradead.org ([2001:8b0:10b:1231::1])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hgO8F-0006KM-MC; Thu, 27 Jun 2019 06:43:44 +0000
+ id 1hgO8E-0006KM-4Y; Thu, 27 Jun 2019 06:43:42 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=infradead.org; s=merlin.20170209; h=Content-Type:Content-Transfer-Encoding:
- MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:CC:To:From:Sender
- :Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
- Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:
- List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=q3w4kLbEMN5AAhmy8j8Oe8vJz0K5DMcllAlfrse5msA=; b=XrLm2I7rNFdtBAbu3K/+zwzUDM
- i8g0z5xdwpehQTHJtlUJop9bItl/0pqKAXukeYDkcLwWG6s9c6EJKDO1hDaeK+uXGDobwbQmplMe+
- luwSFCBV3Xu+E6Ylg5cwBn6EiGVGtiwZROJEbWgYxMXCHy6amOThIGmNO3Rzp4m/X+4CU4b8TUwuK
- 1kTLd8SK4kieTSKmIx2GiFf3wRf6Alh+ItiHBI8zkTt2DVar8nHlEApoguuAi3pHz5Rf3S31oM9jD
- wiWGUrOZ2/afSWXFoCQidfqUzcw6L3UPwao1o/793ORvj39kVSBO5IHLPtcUpEZe47dgN9xq9Co+H
- UWXUnqNw==;
-Received: from mailgw01.mediatek.com ([216.200.240.184])
+ d=infradead.org; s=merlin.20170209; h=Content-Type:Cc:To:Subject:Message-ID:
+ Date:From:In-Reply-To:References:MIME-Version:Sender:Reply-To:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=hUceC5AeeaszlwO9PeBwDuTy7hRVRhzHLJ1xX0slEKk=; b=c6nSaZaH1057hcDVEFiQifBjG
+ 3rNI6YLg7OK2xAlvKoo9FtuXDsRnyQmclZ/OJkfsfF4KwJVdzmJ/XFHdOvdR5RDDVL3LSAtJQK8Mn
+ ovZKSqGPXFE9xHR2eOkm2IT3mm/6ZB489q2gp3M0lGdnDwNmjtErfEgrjKsBeFbQLaSdRHTOmvOdo
+ DIqyNQoW71vTSIklMPDO6YOQnmAt2f/K29Mws/eV9LuRamWqmOHnIiRn94199s2Un0p4yRzoIkDgI
+ Wc066BUnxJvvESGrrwzFq6tby4zQfKL1sb95mj7aThaNL6fpbRVsUUEG58JIRuQHDswyXa+z7Ooni
+ 1fgqIF+4Q==;
+Received: from conssluserg-04.nifty.com ([210.131.2.83])
  by merlin.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hgKdB-00069F-6E; Thu, 27 Jun 2019 02:59:27 +0000
-X-UUID: 436c1a9d17d541ef88d24cf197075743-20190626
-X-UUID: 436c1a9d17d541ef88d24cf197075743-20190626
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
- (envelope-from <jitao.shi@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1599439191; Wed, 26 Jun 2019 18:59:13 -0800
-Received: from MTKMBS33N2.mediatek.inc (172.27.4.76) by
- MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Wed, 26 Jun 2019 19:59:12 -0700
-Received: from MTKCAS36.mediatek.inc (172.27.4.186) by MTKMBS33N2.mediatek.inc
- (172.27.4.76) with Microsoft SMTP Server (TLS) id 15.0.1395.4;
- Thu, 27 Jun 2019 10:59:10 +0800
-Received: from mszsdclx1018.gcn.mediatek.inc (172.27.4.253) by
- MTKCAS36.mediatek.inc (172.27.4.170) with Microsoft SMTP Server id
- 15.0.1395.4 via Frontend Transport; Thu, 27 Jun 2019 10:59:08 +0800
-From: Jitao Shi <jitao.shi@mediatek.com>
-To: Rob Herring <robh+dt@kernel.org>, Pawel Moll <pawel.moll@arm.com>, "Mark
- Rutland" <mark.rutland@arm.com>, Ian Campbell
- <ijc+devicetree@hellion.org.uk>, <linux-pwm@vger.kernel.org>, David Airlie
- <airlied@linux.ie>, "Matthias Brugger" <matthias.bgg@gmail.com>
-Subject: [v5 3/3] drm/mediatek: add mipi_tx driver for mt8183
-Date: Thu, 27 Jun 2019 10:59:01 +0800
-Message-ID: <20190627025901.28418-4-jitao.shi@mediatek.com>
-X-Mailer: git-send-email 2.21.0
-In-Reply-To: <20190627025901.28418-1-jitao.shi@mediatek.com>
-References: <20190627025901.28418-1-jitao.shi@mediatek.com>
+ id 1hgKr7-0006HF-5Y; Thu, 27 Jun 2019 03:13:50 +0000
+Received: from mail-vk1-f173.google.com (mail-vk1-f173.google.com
+ [209.85.221.173]) (authenticated)
+ by conssluserg-04.nifty.com with ESMTP id x5R3D6Nq018382;
+ Thu, 27 Jun 2019 12:13:07 +0900
+DKIM-Filter: OpenDKIM Filter v2.10.3 conssluserg-04.nifty.com x5R3D6Nq018382
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nifty.com;
+ s=dec2015msa; t=1561605187;
+ bh=hUceC5AeeaszlwO9PeBwDuTy7hRVRhzHLJ1xX0slEKk=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=2Cyt6p7moE3aTxtO9LVZTLf8Js+TX6msHAzEQc2U3RWhpCafH3zcwX7L6dncx8NZj
+ ockSog0czJt3lhCqCbLzNffVlAwojPSytljO9BO73VA05KUuFrmauuPIzOxtzCJyCS
+ I5epEv29rqm491WP8MAtiIhEnlmhgxnbyjF+1EaPXAMrOVW0Tp8sy5BrWQ7xi5cIMS
+ +la8c2fFA7Qz6Gsxgjb0dJKJI56ggjDPZDYsmLm17g/FfJteYLT0I79YEcy9pHsNwi
+ 0ZC+277O1XILPZP/vHnTygUbl9mom+Th9NKjBPsENXkyrtFEoxj3NwJvDj2HSBB8DY
+ 94rFlEoEYBGdQ==
+X-Nifty-SrcIP: [209.85.221.173]
+Received: by mail-vk1-f173.google.com with SMTP id y130so204168vkc.0;
+ Wed, 26 Jun 2019 20:13:07 -0700 (PDT)
+X-Gm-Message-State: APjAAAWnZIHDThqgcdgzQ1nwMUaVMY4gUPF4Q1sVrfeo0czcI+T1CgtG
+ V90w+vUmHVWilECAq/QhMGtTQj1KtWALI962BHM=
+X-Google-Smtp-Source: APXvYqyrO6AGMiLTE/NsWodSgUDnExRC/7L2ZBLMise97w6CNCIJwXhqUDD88sfQ76DyLQRs9XeF+xyViB4ZUlsc7PQ=
+X-Received: by 2002:a1f:4107:: with SMTP id o7mr526475vka.34.1561605185809;
+ Wed, 26 Jun 2019 20:13:05 -0700 (PDT)
 MIME-Version: 1.0
-X-MTK: N
+References: <20190627014617.600-1-yamada.masahiro@socionext.com>
+In-Reply-To: <20190627014617.600-1-yamada.masahiro@socionext.com>
+From: Masahiro Yamada <yamada.masahiro@socionext.com>
+Date: Thu, 27 Jun 2019 12:12:30 +0900
+X-Gmail-Original-Message-ID: <CAK7LNARr7mDaDdh0NxUjYHJCz7Gd9-gFdryWtT224U8KpJ9p3w@mail.gmail.com>
+Message-ID: <CAK7LNARr7mDaDdh0NxUjYHJCz7Gd9-gFdryWtT224U8KpJ9p3w@mail.gmail.com>
+Subject: Re: [PATCH v2 0/4] Compile-test UAPI and kernel headers
+To: Linux Kbuild mailing list <linux-kbuild@vger.kernel.org>
 X-Spam-Note: CRM114 invocation failed
-X-Spam-Score: 0.0 (/)
+X-Spam-Score: 1.0 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on merlin.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (1.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [216.200.240.184 listed in list.dnswl.org]
+ no trust [210.131.2.83 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -88,261 +93,93 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: stonea168@163.com, dri-devel@lists.freedesktop.org,
- Andy Yan <andy.yan@rock-chips.com>, Ajay Kumar <ajaykumar.rs@samsung.com>,
- Vincent Palatin <vpalatin@chromium.org>, cawa.cheng@mediatek.com,
- bibby.hsieh@mediatek.com, ck.hu@mediatek.com,
- Russell King <rmk+kernel@arm.linux.org.uk>,
- Thierry Reding <treding@nvidia.com>, devicetree@vger.kernel.org,
- Jitao Shi <jitao.shi@mediatek.com>, Philipp Zabel <p.zabel@pengutronix.de>,
- Inki Dae <inki.dae@samsung.com>, linux-mediatek@lists.infradead.org,
- yingjoe.chen@mediatek.com, eddie.huang@mediatek.com,
- linux-arm-kernel@lists.infradead.org, Rahul Sharma <rahul.sharma@samsung.com>,
- srv_heupstream@mediatek.com, linux-kernel@vger.kernel.org,
- Sascha Hauer <kernel@pengutronix.de>, Sean Paul <seanpaul@chromium.org>
+Cc: Song Liu <songliubraving@fb.com>,
+ Jakub Kicinski <jakub.kicinski@netronome.com>,
+ "open list:DOCUMENTATION" <linux-doc@vger.kernel.org>,
+ Palmer Dabbelt <palmer@sifive.com>, Alexei Starovoitov <ast@kernel.org>,
+ linux-riscv@lists.infradead.org, Sam Ravnborg <sam@ravnborg.org>,
+ Kees Cook <keescook@chromium.org>, xdp-newbies@vger.kernel.org,
+ Daniel Borkmann <daniel@iogearbox.net>, Jonathan Corbet <corbet@lwn.net>,
+ Anton Vorontsov <anton@enomsg.org>, John Fastabend <john.fastabend@gmail.com>,
+ Yonghong Song <yhs@fb.com>, Albert Ou <aou@eecs.berkeley.edu>,
+ Jesper Dangaard Brouer <hawk@kernel.org>,
+ Michal Marek <michal.lkml@markovi.net>,
+ "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
+ Tony Luck <tony.luck@intel.com>, Networking <netdev@vger.kernel.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Martin KaFai Lau <kafai@fb.com>, Colin Cross <ccross@android.com>,
+ bpf@vger.kernel.org, "David S. Miller" <davem@davemloft.net>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This patch add mt8183 mipi_tx driver.
-And also support other chips that use the same binding and driver.
+On Thu, Jun 27, 2019 at 10:49 AM Masahiro Yamada
+<yamada.masahiro@socionext.com> wrote:
+>
+>
+> 1/4: reworked v2.
+>
+> 2/4: fix a flaw I noticed when I was working on this series
+>
+> 3/4: maybe useful for 4/4 and in some other places
+>
+> 4/4: v2. compile as many headers as possible.
+>
 
-Signed-off-by: Jitao Shi <jitao.shi@mediatek.com>
----
- drivers/gpu/drm/mediatek/Makefile             |   1 +
- drivers/gpu/drm/mediatek/mtk_mipi_tx.c        |   2 +
- drivers/gpu/drm/mediatek/mtk_mipi_tx.h        |   1 +
- drivers/gpu/drm/mediatek/mtk_mt8183_mipi_tx.c | 181 ++++++++++++++++++
- 4 files changed, 185 insertions(+)
- create mode 100644 drivers/gpu/drm/mediatek/mtk_mt8183_mipi_tx.c
 
-diff --git a/drivers/gpu/drm/mediatek/Makefile b/drivers/gpu/drm/mediatek/Makefile
-index 2c8de1f5a5ee..8067a4be8311 100644
---- a/drivers/gpu/drm/mediatek/Makefile
-+++ b/drivers/gpu/drm/mediatek/Makefile
-@@ -13,6 +13,7 @@ mediatek-drm-y := mtk_disp_color.o \
- 		  mtk_dsi.o \
- 		  mtk_mipi_tx.o \
- 		  mtk_mt8173_mipi_tx.o \
-+		  mtk_mt8183_mipi_tx.o \
- 		  mtk_dpi.o
- 
- obj-$(CONFIG_DRM_MEDIATEK) += mediatek-drm.o
-diff --git a/drivers/gpu/drm/mediatek/mtk_mipi_tx.c b/drivers/gpu/drm/mediatek/mtk_mipi_tx.c
-index cdc68b88cefd..ab0fbfba5572 100644
---- a/drivers/gpu/drm/mediatek/mtk_mipi_tx.c
-+++ b/drivers/gpu/drm/mediatek/mtk_mipi_tx.c
-@@ -182,6 +182,8 @@ static const struct of_device_id mtk_mipi_tx_match[] = {
- 	  .data = &mt2701_mipitx_data },
- 	{ .compatible = "mediatek,mt8173-mipi-tx",
- 	  .data = &mt8173_mipitx_data },
-+	{ .compatible = "mediatek,mt8183-mipi-tx",
-+	  .data = &mt8183_mipitx_data },
- 	{ },
- };
- 
-diff --git a/drivers/gpu/drm/mediatek/mtk_mipi_tx.h b/drivers/gpu/drm/mediatek/mtk_mipi_tx.h
-index 660726924992..3fd24563952e 100644
---- a/drivers/gpu/drm/mediatek/mtk_mipi_tx.h
-+++ b/drivers/gpu/drm/mediatek/mtk_mipi_tx.h
-@@ -45,5 +45,6 @@ unsigned long mtk_mipi_tx_pll_recalc_rate(struct clk_hw *hw,
- 
- extern const struct mtk_mipitx_data mt2701_mipitx_data;
- extern const struct mtk_mipitx_data mt8173_mipitx_data;
-+extern const struct mtk_mipitx_data mt8183_mipitx_data;
- 
- #endif
-diff --git a/drivers/gpu/drm/mediatek/mtk_mt8183_mipi_tx.c b/drivers/gpu/drm/mediatek/mtk_mt8183_mipi_tx.c
-new file mode 100644
-index 000000000000..7758bc95555c
---- /dev/null
-+++ b/drivers/gpu/drm/mediatek/mtk_mt8183_mipi_tx.c
-@@ -0,0 +1,181 @@
-+// SPDX-License-Identifier: GPL-2.0
-+/*
-+ * Copyright (c) 2019 MediaTek Inc.
-+ * Author: jitao.shi <jitao.shi@mediatek.com>
-+ */
-+
-+#include "mtk_mipi_tx.h"
-+
-+#define MIPITX_LANE_CON		0x000c
-+#define RG_DSI_CPHY_T1DRV_EN		BIT(0)
-+#define RG_DSI_ANA_CK_SEL		BIT(1)
-+#define RG_DSI_PHY_CK_SEL		BIT(2)
-+#define RG_DSI_CPHY_EN			BIT(3)
-+#define RG_DSI_PHYCK_INV_EN		BIT(4)
-+#define RG_DSI_PWR04_EN			BIT(5)
-+#define RG_DSI_BG_LPF_EN		BIT(6)
-+#define RG_DSI_BG_CORE_EN		BIT(7)
-+#define RG_DSI_PAD_TIEL_SEL		BIT(8)
-+
-+#define MIPITX_PLL_PWR	0x0028
-+#define MIPITX_PLL_CON0	0x002c
-+#define MIPITX_PLL_CON1	0x0030
-+#define MIPITX_PLL_CON2	0x0034
-+#define MIPITX_PLL_CON3	0x0038
-+#define MIPITX_PLL_CON4	0x003c
-+#define RG_DSI_PLL_IBIAS		(3 << 10)
-+
-+#define MIPITX_D2_SW_CTL_EN	0x0144
-+#define MIPITX_D0_SW_CTL_EN	0x0244
-+#define MIPITX_CK_CKMODE_EN	0x0328
-+#define DSI_CK_CKMODE_EN		BIT(0)
-+#define MIPITX_CK_SW_CTL_EN	0x0344
-+#define MIPITX_D1_SW_CTL_EN	0x0444
-+#define MIPITX_D3_SW_CTL_EN	0x0544
-+#define DSI_SW_CTL_EN			BIT(0)
-+#define AD_DSI_PLL_SDM_PWR_ON		BIT(0)
-+#define AD_DSI_PLL_SDM_ISO_EN		BIT(1)
-+
-+#define RG_DSI_PLL_EN			BIT(4)
-+#define RG_DSI_PLL_POSDIV		(0x7 << 8)
-+
-+static int mtk_mipi_tx_pll_prepare(struct clk_hw *hw)
-+{
-+	struct mtk_mipi_tx *mipi_tx = mtk_mipi_tx_from_clk_hw(hw);
-+	int ret = 0;
-+
-+	ret = clk_prepare(mipi_tx->ref_clk);
-+	if (ret < 0)
-+		dev_err(mipi_tx->dev,
-+			"can't prepare mipi_tx ref_clk %d\n", ret);
-+
-+	return ret;
-+}
-+
-+static int mtk_mipi_tx_pll_enable(struct clk_hw *hw)
-+{
-+	struct mtk_mipi_tx *mipi_tx = mtk_mipi_tx_from_clk_hw(hw);
-+	unsigned int txdiv, txdiv0;
-+	u64 pcw;
-+	int ret;
-+
-+	dev_dbg(mipi_tx->dev, "enable: %u bps\n", mipi_tx->data_rate);
-+
-+	if (mipi_tx->data_rate >= 2000000000) {
-+		txdiv = 1;
-+		txdiv0 = 0;
-+	} else if (mipi_tx->data_rate >= 1000000000) {
-+		txdiv = 2;
-+		txdiv0 = 1;
-+	} else if (mipi_tx->data_rate >= 500000000) {
-+		txdiv = 4;
-+		txdiv0 = 2;
-+	} else if (mipi_tx->data_rate > 250000000) {
-+		txdiv = 8;
-+		txdiv0 = 3;
-+	} else if (mipi_tx->data_rate >= 125000000) {
-+		txdiv = 16;
-+		txdiv0 = 4;
-+	} else {
-+		return -EINVAL;
-+	}
-+
-+	ret = clk_enable(mipi_tx->ref_clk);
-+	if (ret < 0) {
-+		dev_err(mipi_tx->dev,
-+			"can't enable mipi_tx ref_clk %d\n", ret);
-+		return ret;
-+	}
-+
-+	mtk_mipi_tx_clear_bits(mipi_tx, MIPITX_PLL_CON4, RG_DSI_PLL_IBIAS);
-+
-+	mtk_mipi_tx_set_bits(mipi_tx, MIPITX_PLL_PWR, AD_DSI_PLL_SDM_PWR_ON);
-+	mtk_mipi_tx_clear_bits(mipi_tx, MIPITX_PLL_CON1, RG_DSI_PLL_EN);
-+	udelay(1);
-+	mtk_mipi_tx_clear_bits(mipi_tx, MIPITX_PLL_PWR, AD_DSI_PLL_SDM_ISO_EN);
-+	pcw = div_u64(((u64)mipi_tx->data_rate * txdiv) << 24, 26000000);
-+	writel(pcw, mipi_tx->regs + MIPITX_PLL_CON0);
-+	mtk_mipi_tx_update_bits(mipi_tx, MIPITX_PLL_CON1, RG_DSI_PLL_POSDIV,
-+				txdiv0 << 8);
-+	mtk_mipi_tx_set_bits(mipi_tx, MIPITX_PLL_CON1, RG_DSI_PLL_EN);
-+
-+	return 0;
-+}
-+
-+static void mtk_mipi_tx_pll_unprepare(struct clk_hw *hw)
-+{
-+	struct mtk_mipi_tx *mipi_tx = mtk_mipi_tx_from_clk_hw(hw);
-+
-+	clk_unprepare(mipi_tx->ref_clk);
-+}
-+
-+static void mtk_mipi_tx_pll_disable(struct clk_hw *hw)
-+{
-+	struct mtk_mipi_tx *mipi_tx = mtk_mipi_tx_from_clk_hw(hw);
-+
-+	mtk_mipi_tx_clear_bits(mipi_tx, MIPITX_PLL_CON1, RG_DSI_PLL_EN);
-+
-+	mtk_mipi_tx_set_bits(mipi_tx, MIPITX_PLL_PWR, AD_DSI_PLL_SDM_ISO_EN);
-+	mtk_mipi_tx_clear_bits(mipi_tx, MIPITX_PLL_PWR, AD_DSI_PLL_SDM_PWR_ON);
-+	clk_disable(mipi_tx->ref_clk);
-+}
-+
-+static long mtk_mipi_tx_pll_round_rate(struct clk_hw *hw, unsigned long rate,
-+				       unsigned long *prate)
-+{
-+	return clamp_val(rate, 50000000, 1600000000);
-+}
-+
-+static const struct clk_ops mtk_mipi_tx_pll_ops = {
-+	.prepare = mtk_mipi_tx_pll_prepare,
-+	.enable = mtk_mipi_tx_pll_enable,
-+	.unprepare = mtk_mipi_tx_pll_unprepare,
-+	.disable = mtk_mipi_tx_pll_disable,
-+	.round_rate = mtk_mipi_tx_pll_round_rate,
-+	.set_rate = mtk_mipi_tx_pll_set_rate,
-+	.recalc_rate = mtk_mipi_tx_pll_recalc_rate,
-+};
-+
-+static void mtk_mipi_tx_power_on_signal(struct phy *phy)
-+{
-+	struct mtk_mipi_tx *mipi_tx = phy_get_drvdata(phy);
-+
-+	/* BG_LPF_EN / BG_CORE_EN */
-+	writel(RG_DSI_PAD_TIEL_SEL | RG_DSI_BG_CORE_EN,
-+	       mipi_tx->regs + MIPITX_LANE_CON);
-+	usleep_range(30, 100);
-+	writel(RG_DSI_BG_CORE_EN | RG_DSI_BG_LPF_EN,
-+	       mipi_tx->regs + MIPITX_LANE_CON);
-+
-+	/* Switch OFF each Lane */
-+	mtk_mipi_tx_clear_bits(mipi_tx, MIPITX_D0_SW_CTL_EN, DSI_SW_CTL_EN);
-+	mtk_mipi_tx_clear_bits(mipi_tx, MIPITX_D1_SW_CTL_EN, DSI_SW_CTL_EN);
-+	mtk_mipi_tx_clear_bits(mipi_tx, MIPITX_D2_SW_CTL_EN, DSI_SW_CTL_EN);
-+	mtk_mipi_tx_clear_bits(mipi_tx, MIPITX_D3_SW_CTL_EN, DSI_SW_CTL_EN);
-+	mtk_mipi_tx_clear_bits(mipi_tx, MIPITX_CK_SW_CTL_EN, DSI_SW_CTL_EN);
-+
-+	mtk_mipi_tx_set_bits(mipi_tx, MIPITX_CK_CKMODE_EN, DSI_CK_CKMODE_EN);
-+}
-+
-+static void mtk_mipi_tx_power_off_signal(struct phy *phy)
-+{
-+	struct mtk_mipi_tx *mipi_tx = phy_get_drvdata(phy);
-+
-+	/* Switch ON each Lane */
-+	mtk_mipi_tx_set_bits(mipi_tx, MIPITX_D0_SW_CTL_EN, DSI_SW_CTL_EN);
-+	mtk_mipi_tx_set_bits(mipi_tx, MIPITX_D1_SW_CTL_EN, DSI_SW_CTL_EN);
-+	mtk_mipi_tx_set_bits(mipi_tx, MIPITX_D2_SW_CTL_EN, DSI_SW_CTL_EN);
-+	mtk_mipi_tx_set_bits(mipi_tx, MIPITX_D3_SW_CTL_EN, DSI_SW_CTL_EN);
-+	mtk_mipi_tx_set_bits(mipi_tx, MIPITX_CK_SW_CTL_EN, DSI_SW_CTL_EN);
-+
-+	writel(RG_DSI_PAD_TIEL_SEL | RG_DSI_BG_CORE_EN,
-+	       mipi_tx->regs + MIPITX_LANE_CON);
-+	writel(RG_DSI_PAD_TIEL_SEL, mipi_tx->regs + MIPITX_LANE_CON);
-+}
-+
-+const struct mtk_mipitx_data mt8183_mipitx_data = {
-+	.mipi_tx_clk_ops = &mtk_mipi_tx_pll_ops,
-+	.mipi_tx_enable_signal = mtk_mipi_tx_power_on_signal,
-+	.mipi_tx_disable_signal = mtk_mipi_tx_power_off_signal,
-+};
-+
+If you want to test this series,
+please check:
+
+git://git.kernel.org/pub/scm/linux/kernel/git/masahiroy/linux-kbuild.git
+ header-test-v2
+
+
+> Changes in v2:
+>  - Add CONFIG_CPU_{BIG,LITTLE}_ENDIAN guard to avoid build error
+>  - Use 'header-test-' instead of 'no-header-test'
+>  - Avoid weird 'find' warning when cleaning
+>   - New patch
+>   - New patch
+>   - Add everything to test coverage, and exclude broken ones
+>   - Rename 'Makefile' to 'Kbuild'
+>   - Add CONFIG_KERNEL_HEADER_TEST option
+>
+> Masahiro Yamada (4):
+>   kbuild: compile-test UAPI headers to ensure they are self-contained
+>   kbuild: do not create wrappers for header-test-y
+>   kbuild: support header-test-pattern-y
+>   kbuild: compile-test kernel headers to ensure they are self-contained
+>
+>  .gitignore                         |    1 -
+>  Documentation/dontdiff             |    1 -
+>  Documentation/kbuild/makefiles.txt |   13 +-
+>  Makefile                           |    4 +-
+>  include/Kbuild                     | 1134 ++++++++++++++++++++++++++++
+>  init/Kconfig                       |   22 +
+>  scripts/Makefile.build             |   10 +-
+>  scripts/Makefile.lib               |   12 +-
+>  scripts/cc-system-headers.sh       |    8 +
+>  usr/.gitignore                     |    1 -
+>  usr/Makefile                       |    2 +
+>  usr/include/.gitignore             |    3 +
+>  usr/include/Makefile               |  133 ++++
+>  13 files changed, 1331 insertions(+), 13 deletions(-)
+>  create mode 100644 include/Kbuild
+>  create mode 100755 scripts/cc-system-headers.sh
+>  create mode 100644 usr/include/.gitignore
+>  create mode 100644 usr/include/Makefile
+>
+> --
+> 2.17.1
+>
+
+
 -- 
-2.21.0
-
+Best Regards
+Masahiro Yamada
 
 _______________________________________________
 linux-arm-kernel mailing list
