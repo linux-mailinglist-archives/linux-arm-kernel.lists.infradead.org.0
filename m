@@ -2,54 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8D472589DA
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 27 Jun 2019 20:23:17 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 30660589DC
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 27 Jun 2019 20:23:38 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:Subject:From:To:
 	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=zXY1I8HHFTW64ycuXP7A8kC02r91hJdq2Cl2dNykoCg=; b=qqSWMNlQegfDEK
-	Y4NfpkRrhbz0FjvdqCLrYWb64viGt8dOG4Nmuyf86O4nbWqt+eIXat9rIcOOwLY6lK3eFXuhr86ai
-	zHi6MmnZvunicFULbcc2sZ6EUiqpE6s3AkIdQ5DdFEfLWl8Oy06JzvtvovWukpyif5hAaCsaRbBVJ
-	CFolZW58xXmITw4uLnw+QYsjt3eqlm6f3sgyLMmPxlmFDVDuiNFdW4aIfCObuUibhLHcrhC8dHyle
-	2voQ6yIbGwsy5/C2AmLe/ycV13c6o6klmeuyxhfDHkys1ieNgBGSwbFnR9MUZUSuJFSGC8sB9/RrB
-	H0uVusTNaUYr9gUo/PsQ==;
+	List-Owner; bh=0pUMvq5ke3HknI0EaTUATbCp3DV/Ip34RizmriDxXBo=; b=ZLDKVNsKs4HHH5
+	AO5pJnA6jPjufKnUdSFaPLmIphhARUAr2B+n1FPaSNAhJSOW1Ih8TfQP8k4CjjIas5hIAeXieIWtK
+	P5rEUzbleBRgKe8jmJG4dB+eOFNmIAv3q3SZfPsoyD/IcpH4qS1xZpsaoqetSwZsc4vsUZKTJFJcf
+	+I/zN0p02cwooBvNGly4ASpPVI/Eoa6hG5YWCFWMy7iKlJqCDWkkp8xkI+FsVNZ/1mrBqEXJSPVQ6
+	2O5jY+dCSABOlkrC44cjl6s4TAKxLyP0vYQfA9fjJjikk9WpGA20Aor2JYItWfbUiU+ptBv2yAK2x
+	WVAyx8CKF65C8QnSmk/w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hgZ3B-0006Cs-V8; Thu, 27 Jun 2019 18:23:14 +0000
+	id 1hgZ3W-0006Ta-LN; Thu, 27 Jun 2019 18:23:34 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hgZ2e-00061M-PF
- for linux-arm-kernel@lists.infradead.org; Thu, 27 Jun 2019 18:22:42 +0000
+ id 1hgZ2i-00064s-10
+ for linux-arm-kernel@lists.infradead.org; Thu, 27 Jun 2019 18:22:45 +0000
 Received: from kernel.org (unknown [104.132.0.74])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 6793E2147A;
- Thu, 27 Jun 2019 18:22:40 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id A072220B7C;
+ Thu, 27 Jun 2019 18:22:43 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1561659760;
- bh=OWVaDmVNtApgOpqHAmgc9fI+si0QgpxgVbTygDfbC5g=;
+ s=default; t=1561659763;
+ bh=guphP16sdjxJw57d0MpWZHYmhSF7auBrRQTkXSawdqA=;
  h=In-Reply-To:References:To:From:Subject:Cc:Date:From;
- b=pzy1CMV5UoWSBwbJ8DIs+dNid1Fb8DuW3yB7SpL/Sp5Cfee5LCndMZLYfO63TFdaD
- jYXFEwyIj2Q45koz1zbZES2tZCs0OVDDJaLcrFZDscMllr/RdxfD+5jTER1ndh0GMS
- DeZFHH8S3zMdp53eNXzedrYBUNltAP6aRwDiEDz4=
+ b=HP4rllCr8QS4YXZ+7FghOiOP6+dk8qbD79JzOi6bCCJwNLuiepHTOf29btroY2M0R
+ FD/vnSvVhhSz1uMxaqAjlauOLUUCpgVqErpmbr+M48RMweoIvIudaqCVSTw96lkg9d
+ OhVIEO9xqDdF5htam48bsBMDwosaeBqedFrUawcA=
 MIME-Version: 1.0
-In-Reply-To: <1561650825-11213-3-git-send-email-claudiu.beznea@microchip.com>
+In-Reply-To: <1561650825-11213-4-git-send-email-claudiu.beznea@microchip.com>
 References: <1561650825-11213-1-git-send-email-claudiu.beznea@microchip.com>
- <1561650825-11213-3-git-send-email-claudiu.beznea@microchip.com>
+ <1561650825-11213-4-git-send-email-claudiu.beznea@microchip.com>
 To: Claudiu Beznea <claudiu.beznea@microchip.com>,
  alexandre.belloni@bootlin.com, ludovic.desroches@microchip.com,
  mturquette@baylibre.com, nicolas.ferre@microchip.com
 From: Stephen Boyd <sboyd@kernel.org>
-Subject: Re: [PATCH v2 2/7] clk: at91: sckc: add support to free slow rc
- oscillator
+Subject: Re: [PATCH v2 3/7] clk: at91: sckc: add support to free slow clock
+ osclillator
 User-Agent: alot/0.8.1
-Date: Thu, 27 Jun 2019 11:22:39 -0700
-Message-Id: <20190627182240.6793E2147A@mail.kernel.org>
+Date: Thu, 27 Jun 2019 11:22:42 -0700
+Message-Id: <20190627182243.A072220B7C@mail.kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190627_112240_865803_D5D0B58C 
+X-CRM114-CacheID: sfid-20190627_112244_261004_43336374 
 X-CRM114-Status: UNSURE (   5.78  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
@@ -87,8 +87,8 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Quoting Claudiu Beznea (2019-06-27 08:53:40)
-> Add support to free slow rc oscillator resources.
+Quoting Claudiu Beznea (2019-06-27 08:53:41)
+> Add support to free slow clock oscillator resources.
 > 
 > Signed-off-by: Claudiu Beznea <claudiu.beznea@microchip.com>
 > Reviewed-by: Alexandre Belloni <alexandre.belloni@bootlin.com>
