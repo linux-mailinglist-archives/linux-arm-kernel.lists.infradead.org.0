@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9A0B558C8A
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 27 Jun 2019 23:11:25 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 02A7A58C82
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 27 Jun 2019 23:10:25 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,74 +11,75 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=+8zBc+jSvPlQsRqFx2aI4NCOj7ij89harrmuVRuZrXQ=; b=dcbG/J6Y85YCWHpv5o1cxHXs3M
-	2fFshYwecWWFso6G602JcogS74WoDY9aDgrX7zUm/QjGqLIx7gK2xBIw5mGVMrUtbLL5D5QQ512IG
-	UzanjD9XijaE1WRIsg7FKSE22de0SofDUKilqlFDCD1zpLQL91P7Zht1q2RYuzAa9MYOfqDQjI0a0
-	rxlNt4LY/4k5PuUityEtbkkMkWHFkPHhuCZ0Iar1hP02EfOG1kXsSMn25E4xcnYKECRt03PzmQazA
-	y58MhwhSYJf+Y/qQm0U33f2WL7sRsSS6vNUmNc7h9mFne7/Y8J+CTC1F35V7IIji3P+IT7UtdAMvZ
-	rSxJWBAg==;
+	bh=5rMDfZCXr0/UufvdrnPttFSKKCyTcHzsvJDXAs15ybg=; b=iZ9tRfABu9zxyzbge9cRv9L1+w
+	0nIWP7Raa4849JVv9D4Q7/Det7n+rGE8JVN+sGsQF0GlHuccgM/H2Wp1DaC0squKGeXhjAVMp6IuU
+	3qMW6zDAzMxm9f0J/5dlgKsOQRmQLbMtA7JB9DE3yKv6un9E+qLzEedvadXWW/SsoJjRVXelKGUSp
+	a0HqDvUMXexxJylVJCNDNpeAIfEr9qApMONapUCABMELw1OMF3sshp3HVryHAB+suAQbuKX6o3l4p
+	K1E2AHeJzHibW/pFCgnNE6AF9A7+pyHSC26YF5mycqej/CGkWyDPdtwzhAp+ZIfhzdxLHbgBXD6Ea
+	VymtqRMg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hgbfu-00028L-1y; Thu, 27 Jun 2019 21:11:22 +0000
-Received: from mout.gmx.net ([212.227.15.19])
+	id 1hgbet-0000jA-Fe; Thu, 27 Jun 2019 21:10:19 +0000
+Received: from mout.gmx.net ([212.227.15.18])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hgbee-0000Bl-Hp; Thu, 27 Jun 2019 21:10:07 +0000
+ id 1hgbed-0008UM-Sq; Thu, 27 Jun 2019 21:10:05 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=gmx.net;
  s=badeba3b8450; t=1561669791;
- bh=5x34gYp6Uyi6CJY0kFm3PZXjSzyrVChOMLS0r3Akco4=;
+ bh=xdTAATWF8qX6yvXCOv29YdhPGUUPpJi7l7udO3XOz3o=;
  h=X-UI-Sender-Class:From:To:Cc:Subject:Date:In-Reply-To:References;
- b=h03fJbJW/7gg1QuO2NfaJ617tEbTmP8u13OHt/Oh5VwGfBZ8wv18oVYl4hXmT+Jah
- J76tOLrPVpmlnIpz8gsSMtTipoCWoX2oN6BjnwoG88j7tsHTHZq38YJXcRMsDH0ZnK
- ozDlOZ+574qSx8Wwmz7MEsIcl3QPgcq2AmOFSaj4=
+ b=eh0rZ0J45FuY/n5E4be49hyEsA37PoCc2+4E/PHiBSK7lCRrDptyda4gD0kWyuAvz
+ PrOHIo7Hqi//pKQ18kN0WOjudFUFGK2gr0+EQdgTr9RdRg9IBnNUqKLJruf7eSrrWB
+ I8JCo/Mn3sr1PHZeRf5bp+yiLM4y7lZscxCeIglc=
 X-UI-Sender-Class: 01bb95c1-4bf8-414a-932a-4f6e2808ef9c
 Received: from localhost.localdomain ([37.4.249.111]) by mail.gmx.com
  (mrgmx004 [212.227.17.190]) with ESMTPSA (Nemesis) id
- 1MaJ7v-1i1Fjm0J0f-00WI0A; Thu, 27 Jun 2019 23:09:51 +0200
+ 1M2f9h-1hhztI1mox-0049H6; Thu, 27 Jun 2019 23:09:51 +0200
 From: Stefan Wahren <wahrenst@gmx.net>
 To: Eric Anholt <eric@anholt.net>,
  Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
  Dave Stevenson <dave.stevenson@raspberrypi.org>,
  Hans Verkuil <hverkuil@xs4all.nl>,
  Mauro Carvalho Chehab <mchehab@kernel.org>
-Subject: [PATCH 29/31] staging: bcm2835-camera: Add sanity checks for
- queue_setup/CREATE_BUFS
-Date: Thu, 27 Jun 2019 23:09:27 +0200
-Message-Id: <1561669769-2498-3-git-send-email-wahrenst@gmx.net>
+Subject: [PATCH 30/31] staging: bcm2835-camera: Set the field value within ach
+ buffer
+Date: Thu, 27 Jun 2019 23:09:28 +0200
+Message-Id: <1561669769-2498-4-git-send-email-wahrenst@gmx.net>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1561669769-2498-1-git-send-email-wahrenst@gmx.net>
 References: <1561669769-2498-1-git-send-email-wahrenst@gmx.net>
-X-Provags-ID: V03:K1:Mlex4ury0QpXvh3qld/Yk5PIv+tL8JhKdoUqZFxDDXHIXhlkusC
- QW8eAeoFawzNVxQCEbAtx2B2KjulBooNWVDk4Th/3aF3JHhuGxKcwgj8Kq8wJZTAk1kjE2l
- vcIP9JxIVI7dfrngOtFWB5KX0Ws+Q8f8K/D364z+0yp/tF+f0jTslsZx2LSZ5Ql5lXERIkf
- Z2PEolwEWNOPOsDn8Av0w==
+X-Provags-ID: V03:K1:4p9yOIhIrBTeY/wdnhkFhlYsxDf8BdSb0lYlxYcw2+9Vz6In7NX
+ 4cP0I6lDzSRKKuBytlRDRK0xrHTB7ACIcOl9DieNvK1jFc+ufRd0rReoLe2iX3gpZ8PhbQz
+ IASrz/oLgKDRk4lCN59DFHobxwqGHwe80LwpVTgDO/JZOVGiyzW3H2P2mGHxIHpihVV0PfL
+ /na5UGu+9jWfsJLE27D8A==
 X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:237QWuQc4Lo=:G2mQgIER8ss0VpyNGDK6EW
- 0wwn+ng2GBvhsMbuA0FnDTqlS+SSu1M+m4nhhkeVf2g3YQnZzHe2ZDqFjuH1wt41f+8WNUvjY
- /1814HtColxVjucaO3xQtdrel98cuXqUmxRboCKYKPm8f6WCMMp/UqhcFGWwjWUebd5JKll45
- WPqcIr37aicAl5RXahB7BsN5hI6FJ37Xi9EGtmw4K4BwUR/tprj4XN7VVRWw2QO9JzsHY3XeM
- eKdNX0SpN2xfQwafPQKZrlRyEbC6oH0gXQTq8BixRyNLKxhveqoM0slXXVwH8u7AR1tkkgUO6
- jmydwuK+M46olFqDJQyIX5Ztsll9UrQkoEGbbTb5YeUkptxBJMRzobN5v+E4sG7TI0q5iO35H
- K5wWcUHAJoSe01bSyyilZUZauxKhILzgXBSY7oag+VsBATc0N99tclr8zOlqJIGaYE2O7tpe7
- iGLAtpr2bLSdS9X2J6gmWxSnSnkEzsdakuUtRbfOG4Xp+UIz0zCy0KqUKS/RhKYSlv6u/qTa9
- jw4DGj5J2CaRwrBLvzWsGcz6Yhb0YzZrAp9aPUh4sHsdNCSW1rK/L13FwsF/T0IEuGiw5fR3Z
- UF4DuslEskj+a1deyol9WI7QKrxPjKAonFZB9aHxML1kkdt4ZwTgARBAE7+89KRD7cfkz6U3h
- iapci80fdiCIFQ3n+MBuQNkB6ob5lKIZlAOjLVGMn4QD8YmvlXXkjX7jBViq6p/PyGQJl03RP
- pJqwcDOxxfmkroFLYQkYOhIkC1vy/gBPjtnQ9sC1aQGEg7fYEQyT8VqQ5aDKcEWyfH4o8ILBz
- Wd8vK6eyNWOjXxY3Zkk6aEP58fFgxhTNPj5JhV7OsuM6KqQ8giC5daJP8kzW3npwP5gaCaPlT
- hqYzHWvkUyB75/vhIL7hFlMgRiohkpLWeIdiI2nNhceqynlmcB97x8uGJtATupePOAnYZtRFm
- e/IBUFm7hcoAA/iDVWvFs6xJBy08N/VnX8VcCzslHPgPgOhM4iOXbzeImaE6vGyNTdzxR8q16
- p3DbqjwGYQq/h23JGN8+nPHSwJoHJKoW+Od5/6VipTM9zKejNJSttA+uaZ+OMglcxuZMSuuIH
- sv1NPYM8NU4CWo=
+X-UI-Out-Filterresults: notjunk:1;V03:K0:rQHcc4g8hC8=:AAy4aEqkn1m0W9xIIDySBU
+ oh3Evqj4xbse6o61KfZlJjpfmCbdXi/IUkoHmfQ1Rv8a/xeGWBjXW6PDb4kZZ30UFuz4alRXU
+ FNmdbIQI0ZdCzNliyM8ykBo++fxfFjRkJMrWF1uNh2/E+bQwwKzoZY2funCkntAx/WE8noVED
+ datZfkE6SmuBDtf3j8iiZzDjBYasIqjrobqeOLe96mno6Jf7dcU4bmzHYp7IQPN0j7nLHL7i9
+ 41+BrxhqK6GfVHP28S+vMw5JCRN2xc3rOQzrYZlLs+AfLDYqqCTTtoKSlHbtn+xHhZJbznu0M
+ JGT9Xe/eUDYaqW3ETycs9m2VcIXIrdIyOXdS19CUYcAPDsyNhYqlHM5055tXb6A3pRaHcRHWW
+ zS9ceVypNhvPaBJs+Hotc9FM0JSapYnSl1rHpbZIBzrracNUmEtsqzOqXZxDz7Xf+rpgarLS7
+ dX09UdQLL96dM9zj2dl6LPwXe00WWcYMVvxS3lEHQD63rh3CaW537dGxE1En1waseKp4okXz/
+ Ula4r5ISnjzlsB2t97+XGdbHq1nK2KcTFR+XNM+AycurOsQptl/mqJOw2Fd7TzwqH5pGLqDKV
+ PlCSzaEEYI8Rirz+EZSDxD3rJyLZkNALUYKePiVdVF1ZHvky9PLL362CMBo72RpDJ5Fr81pQG
+ 3aPbhV3LNsh2Crmh6VArK7iLVyNWhB3zum62eNr4+4OC5cpy/tmtkxcPnzPhpuuPsaX8PnmqR
+ /eMlUO6NhvH7sSM3xlxCKLAuiiC/qBT1gP7QETXvzkr/p3+RDic3bbyM4yBZpMCCNLLRonuSh
+ f6DXaF6xwXZwFa1HeFg6hwzOmXpMKemml7vWehVlv/P9LZFlbq4O9ABQLEcoVjGymzS8EdL3Q
+ lwLjn2yRHeIiiYfuWfPiQc8FW1pR6Y01yivUlm+0tRpFhxF8Eemm/WjlHFUcjisspAvdrDHBD
+ klSGgb6XbBibS9FotkMUpBB0QyuwJ4gCdjlS6bPlqQjWQp4aODB6qa8Q+g+OGJ5Mo1REeu7rq
+ qugNDIHRdNRtdtfE8uGDvNBJzZVOfrmhHbF19JOnUZ21BxpXBY9iRx1yeBeiVJA1Hmb4Wrizw
+ 79+xRaH+Zb0x5c=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190627_141004_886308_0CEF398A 
-X-CRM114-Status: GOOD (  10.50  )
+X-CRM114-CacheID: sfid-20190627_141004_296309_909FF693 
+X-CRM114-Status: UNSURE (   8.74  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.227.15.19 listed in list.dnswl.org]
+ no trust [212.227.15.18 listed in list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider (wahrenst[at]gmx.net)
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -111,46 +112,29 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Dave Stevenson <dave.stevenson@raspberrypi.org>
 
-Fixes a v4l2-compliance failure when passed a buffer that is
-too small.
-queue_setup wasn't handling the case where !(*nplanes), as
-used from CREATE_BUFS and requiring the driver to sanity
-check the provided buffer parameters. It was assuming that
-it was always being used in the REQBUFS case where it provides
-the buffer properties.
+Fixes a v4l2-compliance failure
+v4l2-test-buffers.cpp(415): g_field() == V4L2_FIELD_ANY
+
+The driver only ever produces progresive frames, so field should
+always be set to V4L2_FIELD_NONE.
 
 Signed-off-by: Dave Stevenson <dave.stevenson@raspberrypi.org>
 ---
- .../vc04_services/bcm2835-camera/bcm2835-camera.c        | 16 ++++++++++++++++
- 1 file changed, 16 insertions(+)
+ drivers/staging/vc04_services/bcm2835-camera/bcm2835-camera.c | 1 +
+ 1 file changed, 1 insertion(+)
 
 diff --git a/drivers/staging/vc04_services/bcm2835-camera/bcm2835-camera.c b/drivers/staging/vc04_services/bcm2835-camera/bcm2835-camera.c
-index 256667b..705644c 100644
+index 705644c..78d5bca 100644
 --- a/drivers/staging/vc04_services/bcm2835-camera/bcm2835-camera.c
 +++ b/drivers/staging/vc04_services/bcm2835-camera/bcm2835-camera.c
-@@ -236,6 +236,22 @@ static int queue_setup(struct vb2_queue *vq,
- 		return -EINVAL;
+@@ -420,6 +420,7 @@ static void buffer_cb(struct vchiq_mmal_instance *instance,
  	}
+ 	dev->capture.last_timestamp = buf->vb.vb2_buf.timestamp;
+ 	buf->vb.sequence = dev->capture.sequence++;
++	buf->vb.field = V4L2_FIELD_NONE;
 
-+	/* Handle CREATE_BUFS situation - *nplanes != 0 */
-+	if (*nplanes) {
-+		if (*nplanes != 1 ||
-+		    sizes[0] < dev->capture.port->current_buffer.size) {
-+			v4l2_dbg(1, bcm2835_v4l2_debug, &dev->v4l2_dev,
-+				 "%s: dev:%p Invalid buffer request from CREATE_BUFS, size %u < %u, nplanes %u != 1\n",
-+				 __func__, dev, sizes[0],
-+				 dev->capture.port->current_buffer.size,
-+				 *nplanes);
-+			return -EINVAL;
-+		} else {
-+			return 0;
-+		}
-+	}
-+
-+	/* Handle REQBUFS situation */
- 	size = dev->capture.port->current_buffer.size;
- 	if (size == 0) {
- 		v4l2_err(&dev->v4l2_dev,
+ 	vb2_set_plane_payload(&buf->vb.vb2_buf, 0, length);
+ 	if (mmal_flags & MMAL_BUFFER_HEADER_FLAG_KEYFRAME)
 --
 2.7.4
 
