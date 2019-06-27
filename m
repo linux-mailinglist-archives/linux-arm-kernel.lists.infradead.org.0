@@ -2,117 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5A7B758327
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 27 Jun 2019 15:12:22 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7474258332
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 27 Jun 2019 15:16:27 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=eJ8BCLeijPvXGIQsxyHfQcxB70nNMQwP5YCD7WWtq1A=; b=I6L9SkMzN8F/Bz
-	RfuorW+8Xj0AVsMwx5+O8QG1i09uLUmBDxUk0j9wRneUuiJSFJnV6gXQ/2dGJCbEBy2TTIjDyhEE6
-	Zuo0GyEhcVLcSNvBo/ndmbU+ijsgo3CPJHApH2eQmbVt5X4Wx81bTl+n5Vu148C+kGESs/ImBmiFi
-	YxXCymbfHP3Div1Q3f1GjeGfEdUhyFcHdmrjgFiYj0NAxORAkJ6BsjMz68QI76G1HZhkpIl6HM9l/
-	LEdW+RKImg8lmEiiIWC0E2Kuern+Q+Aio2lY5acZSADtWRKViUqWXIrixq4TyBXw7V2owqrQWdNPN
-	jipfimllty9zR8QEh3Qw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=OIqSASaQDUWl8Og+RA4xYfSZLRXOY1dSk+k4dpd0yDM=; b=aVpyHm6+G/Njcf
+	frDcPpQEDzx/gUa9PUMjTz88gcXziXn4nuBQoj/HrjKAerEHx3SwwWzMtr6eIdWpkXbYDdw+ExFmK
+	cgOUv2yBVNI42TqFDxcomOR9EDHW6TVdNObmGu5gQbmz+JWYqED1yaecFJnmwwGUX6P1EDtsmV6+I
+	ESQ++Exhizhf1MhZuPLg3aH4JvVWP6X9kXvr6MUaaIXx6Myf2iIhwDaN8toKUHjRxuI++jmtguLdd
+	RPLkSmWw5b6+kYPHxPfDkHtzH7niUyavU+/LI22UB0gIHDXfuSGHUZqI6rk6vf+xxWULXQa4N9kkm
+	pscqZt+gGppKB3Wa5FYQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hgUCF-0001sa-7G; Thu, 27 Jun 2019 13:12:15 +0000
-Received: from mail-eopbgr30086.outbound.protection.outlook.com ([40.107.3.86]
- helo=EUR03-AM5-obe.outbound.protection.outlook.com)
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hgUC2-0001rj-M4
- for linux-arm-kernel@lists.infradead.org; Thu, 27 Jun 2019 13:12:04 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=Jr1+A4CoIJZO4uRPJaMb7FmfoDx1VJWnsTWi4Yrj4kg=;
- b=oCuNwp4rYVbYTSgUSZeOYQK5XtG8vS0FGJDY3d2CaDcqBeJc2oBPiSfLAkM8hDXDCoqezciLRE/o70Po9v/44URCLbIR5XR92EAnsueHve6sivbujI2PFRGKFCXRmoeYFZL/Qd1memt9QmALQrC15hE3lMIwzOnCU4Ybp0leYkQ=
-Received: from DB3PR0402MB3916.eurprd04.prod.outlook.com (52.134.72.18) by
- DB3PR0402MB3674.eurprd04.prod.outlook.com (52.134.66.143) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2032.17; Thu, 27 Jun 2019 13:11:55 +0000
-Received: from DB3PR0402MB3916.eurprd04.prod.outlook.com
- ([fe80::3945:fcda:5bdd:8191]) by DB3PR0402MB3916.eurprd04.prod.outlook.com
- ([fe80::3945:fcda:5bdd:8191%4]) with mapi id 15.20.2008.014; Thu, 27 Jun 2019
- 13:11:55 +0000
-From: Anson Huang <anson.huang@nxp.com>
-To: Daniel Lezcano <daniel.lezcano@linaro.org>, "tglx@linutronix.de"
- <tglx@linutronix.de>, "robh+dt@kernel.org" <robh+dt@kernel.org>,
- "mark.rutland@arm.com" <mark.rutland@arm.com>, "shawnguo@kernel.org"
- <shawnguo@kernel.org>, "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
- "kernel@pengutronix.de" <kernel@pengutronix.de>, "festevam@gmail.com"
- <festevam@gmail.com>, "l.stach@pengutronix.de" <l.stach@pengutronix.de>, Abel
- Vesa <abel.vesa@nxp.com>, "ccaione@baylibre.com" <ccaione@baylibre.com>,
- "angus@akkea.ca" <angus@akkea.ca>, "andrew.smirnov@gmail.com"
- <andrew.smirnov@gmail.com>, "agx@sigxcpu.org" <agx@sigxcpu.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
-Subject: RE: [PATCH RESEND V2 1/3] clocksource/drivers/sysctr: Add optional
- clock-frequency property
-Thread-Topic: [PATCH RESEND V2 1/3] clocksource/drivers/sysctr: Add optional
- clock-frequency property
-Thread-Index: AQHVKcBeREE6S4ew/U+TyYIcUsyobqavVD+AgAArhLA=
-Date: Thu, 27 Jun 2019 13:11:55 +0000
-Message-ID: <DB3PR0402MB3916D17328CF69C09C74A3D8F5FD0@DB3PR0402MB3916.eurprd04.prod.outlook.com>
-References: <20190623123850.22584-1-Anson.Huang@nxp.com>
- <bb362db6-9c50-5d2c-349a-4097dea0449f@linaro.org>
-In-Reply-To: <bb362db6-9c50-5d2c-349a-4097dea0449f@linaro.org>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=anson.huang@nxp.com; 
-x-originating-ip: [183.192.20.60]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: 00adc900-b886-4ace-98a6-08d6fb01073c
-x-ms-office365-filtering-ht: Tenant
-x-microsoft-antispam: BCL:0; PCL:0;
- RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600148)(711020)(4605104)(1401327)(4618075)(2017052603328)(7193020);
- SRVR:DB3PR0402MB3674; 
-x-ms-traffictypediagnostic: DB3PR0402MB3674:
-x-microsoft-antispam-prvs: <DB3PR0402MB3674B95C1E1280AC49183091F5FD0@DB3PR0402MB3674.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:4303;
-x-forefront-prvs: 008184426E
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(346002)(136003)(366004)(39860400002)(396003)(376002)(189003)(199004)(33656002)(8676002)(229853002)(7416002)(186003)(256004)(486006)(44832011)(11346002)(476003)(4326008)(68736007)(2501003)(5660300002)(7736002)(6506007)(305945005)(99286004)(52536014)(478600001)(8936002)(2906002)(81166006)(81156014)(53936002)(53546011)(76116006)(7696005)(76176011)(66476007)(66446008)(64756008)(66556008)(66946007)(6246003)(73956011)(6436002)(26005)(316002)(25786009)(74316002)(102836004)(9686003)(55016002)(3846002)(6116002)(446003)(86362001)(2201001)(110136005)(66066001)(71200400001)(71190400001)(14454004)(921003)(1121003);
- DIR:OUT; SFP:1101; SCL:1; SRVR:DB3PR0402MB3674;
- H:DB3PR0402MB3916.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; MX:1; A:1; 
-received-spf: None (protection.outlook.com: nxp.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: 7jJNvxsyCTQ135scMd33xc4hLbEzGMbjmz09n/fSehcR33gMzau9DICezjTdesKe8T1EAnRSH5cEZqNx4BHBmSXg0rLOe0MSMi6a968wTkG5hgEkvKeVRBgyt1+2bfvMpiRSP8sm8TioRbaM/a9xux8bJGsBTLq+9gqrp89Q5qkVMNaSsFvi3D6zbvVSipDJZMZe9p1GkbvlaTtXgy0fClZ95qCCH/7yPJSQgYu/Mp+gPdE8utbZRdkKWbM5alyYIA4uYqzMuY/P3AgXormRhcBGx5O7/pu3Ssc6mh2DTqe/Nf0rnx+wGAYbE+tcaB/loY+hFSTL0IxFXQVJfIEaXDvPRqnB5qfHLs3s5E7Mcgn4oR8ZaO9tDNd012ALPylQeLb36LH3+0V23AM13hrXIqMHXZeYOeFrRqBj4c6NjA4=
+	id 1hgUGH-0003ei-3N; Thu, 27 Jun 2019 13:16:25 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hgUG0-0003dp-Me
+ for linux-arm-kernel@lists.infradead.org; Thu, 27 Jun 2019 13:16:10 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id E939A360;
+ Thu, 27 Jun 2019 06:16:04 -0700 (PDT)
+Received: from [10.37.8.60] (unknown [10.37.8.60])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 299C43F246;
+ Thu, 27 Jun 2019 06:16:01 -0700 (PDT)
+Subject: Re: [PATCH 35/59] KVM: arm/arm64: nv: Support multiple nested stage 2
+ mmu structures
+To: Marc Zyngier <marc.zyngier@arm.com>,
+ linux-arm-kernel@lists.infradead.org, kvmarm@lists.cs.columbia.edu,
+ kvm@vger.kernel.org
+References: <20190621093843.220980-1-marc.zyngier@arm.com>
+ <20190621093843.220980-36-marc.zyngier@arm.com>
+From: Julien Thierry <julien.thierry@arm.com>
+Message-ID: <87564216-c7d0-351f-b3a6-1826706df89b@arm.com>
+Date: Thu, 27 Jun 2019 14:15:59 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101
+ Thunderbird/52.9.1
 MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 00adc900-b886-4ace-98a6-08d6fb01073c
-X-MS-Exchange-CrossTenant-originalarrivaltime: 27 Jun 2019 13:11:55.3665 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: anson.huang@nxp.com
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB3PR0402MB3674
+In-Reply-To: <20190621093843.220980-36-marc.zyngier@arm.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190627_061202_731388_7EB0A635 
-X-CRM114-Status: GOOD (  19.66  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190627_061608_838894_C062A475 
+X-CRM114-Status: GOOD (  33.77  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.3.86 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -124,77 +65,369 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: dl-linux-imx <linux-imx@nxp.com>
+Cc: Suzuki K Poulose <suzuki.poulose@arm.com>,
+ Andre Przywara <andre.przywara@arm.com>,
+ Christoffer Dall <christoffer.dall@arm.com>, Dave Martin <Dave.Martin@arm.com>,
+ James Morse <james.morse@arm.com>, Jintack Lim <jintack@cs.columbia.edu>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi, Daniel
 
-> On 23/06/2019 14:38, Anson.Huang@nxp.com wrote:
-> > From: Anson Huang <Anson.Huang@nxp.com>
-> >
-> > Systems which use platform driver model for clock driver require the
-> > clock frequency to be supplied via device tree when system counter
-> > driver is enabled.
-> >
-> > This is necessary as in the platform driver model the of_clk
-> > operations do not work correctly because system counter driver is
-> > initialized in early phase of system boot up, and clock driver using
-> > platform driver model is NOT ready at that time, it will cause system
-> > counter driver initialization failed.
-> >
-> > Add the optinal clock-frequency to the device tree bindings of the NXP
-> > system counter, so the frequency can be handed in and the of_clk
-> > operations can be skipped.
-> >
-> > Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
-> > ---
-> > Changes since V1:
-> > 	- improve commit log, no content change.
-> > ---
-> >  Documentation/devicetree/bindings/timer/nxp,sysctr-timer.txt | 6
-> > ++++++
-> >  1 file changed, 6 insertions(+)
-> >
-> > diff --git
-> > a/Documentation/devicetree/bindings/timer/nxp,sysctr-timer.txt
-> > b/Documentation/devicetree/bindings/timer/nxp,sysctr-timer.txt
-> > index d576599..c9907a0 100644
-> > --- a/Documentation/devicetree/bindings/timer/nxp,sysctr-timer.txt
-> > +++ b/Documentation/devicetree/bindings/timer/nxp,sysctr-timer.txt
-> > @@ -14,6 +14,11 @@ Required properties:
-> >  - clocks : 	    Specifies the counter clock.
-> >  - clock-names: 	    Specifies the clock's name of this module
-> >
-> > +Optional properties:
-> > +
-> > +- clock-frequency : Specifies system counter clock frequency and indicates
-> system
-> > +		    counter driver to skip clock operations.
-> > +
-> 
-> Shouldn't it be required and mutually exclusive with clocks/clock-names?
->
-Yes, make sense, I ever thought about it when doing this patch, but eventually I picked
-the optional...will fix it in next version.
 
-Thanks,
-Anson
+On 06/21/2019 10:38 AM, Marc Zyngier wrote:
+> From: Christoffer Dall <christoffer.dall@arm.com>
+> 
+> Add stage 2 mmu data structures for virtual EL2 and for nested guests.
+> We don't yet populate shadow stage 2 page tables, but we now have a
+> framework for getting to a shadow stage 2 pgd.
+> 
+> We allocate twice the number of vcpus as stage 2 mmu structures because
+> that's sufficient for each vcpu running two VMs without having to flush
+> the stage 2 page tables.
+> 
+> Signed-off-by: Christoffer Dall <christoffer.dall@arm.com>
+> Signed-off-by: Marc Zyngier <marc.zyngier@arm.com>
+> ---
+>  arch/arm/include/asm/kvm_host.h     |   4 +
+>  arch/arm/include/asm/kvm_mmu.h      |   3 +
+>  arch/arm64/include/asm/kvm_host.h   |  28 +++++
+>  arch/arm64/include/asm/kvm_mmu.h    |   8 ++
+>  arch/arm64/include/asm/kvm_nested.h |   7 ++
+>  arch/arm64/kvm/nested.c             | 172 ++++++++++++++++++++++++++++
+>  virt/kvm/arm/arm.c                  |  16 ++-
+>  virt/kvm/arm/mmu.c                  |  31 ++---
+>  8 files changed, 254 insertions(+), 15 deletions(-)
+> 
+> diff --git a/arch/arm/include/asm/kvm_host.h b/arch/arm/include/asm/kvm_host.h
+> index e3217c4ad25b..b821eb2383ad 100644
+> --- a/arch/arm/include/asm/kvm_host.h
+> +++ b/arch/arm/include/asm/kvm_host.h
+> @@ -424,4 +424,8 @@ static inline bool kvm_arm_vcpu_is_finalized(struct kvm_vcpu *vcpu)
+>  	return true;
+>  }
+>  
+> +static inline void kvm_vcpu_load_hw_mmu(struct kvm_vcpu *vcpu) {}
+> +static inline void kvm_vcpu_put_hw_mmu(struct kvm_vcpu *vcpu) {}
+> +static inline int kvm_vcpu_init_nested(struct kvm_vcpu *vcpu) { return 0; }
+> +
+>  #endif /* __ARM_KVM_HOST_H__ */
+> diff --git a/arch/arm/include/asm/kvm_mmu.h b/arch/arm/include/asm/kvm_mmu.h
+> index be23e3f8e08c..e6984b6da2ce 100644
+> --- a/arch/arm/include/asm/kvm_mmu.h
+> +++ b/arch/arm/include/asm/kvm_mmu.h
+> @@ -420,6 +420,9 @@ static inline int hyp_map_aux_data(void)
+>  
+>  static inline void kvm_set_ipa_limit(void) {}
+>  
+> +static inline void kvm_init_s2_mmu(struct kvm_s2_mmu *mmu) {}
+> +static inline void kvm_init_nested(struct kvm *kvm) {}
+> +
+>  static __always_inline u64 kvm_get_vttbr(struct kvm_s2_mmu *mmu)
+>  {
+>  	struct kvm_vmid *vmid = &mmu->vmid;
+> diff --git a/arch/arm64/include/asm/kvm_host.h b/arch/arm64/include/asm/kvm_host.h
+> index 3dee5e17a4ee..cc238de170d2 100644
+> --- a/arch/arm64/include/asm/kvm_host.h
+> +++ b/arch/arm64/include/asm/kvm_host.h
+> @@ -88,11 +88,39 @@ struct kvm_s2_mmu {
+>  	phys_addr_t	pgd_phys;
+>  
+>  	struct kvm *kvm;
+> +
+> +	/*
+> +	 * For a shadow stage-2 MMU, the virtual vttbr programmed by the guest
+> +	 * hypervisor.  Unused for kvm_arch->mmu. Set to 1 when the structure
+> +	 * contains no valid information.
+> +	 */
+> +	u64	vttbr;
+> +
+> +	/* true when this represents a nested context where virtual HCR_EL2.VM == 1 */
+> +	bool	nested_stage2_enabled;
+> +
+> +	/*
+> +	 *  0: Nobody is currently using this, check vttbr for validity
+> +	 * >0: Somebody is actively using this.
+> +	 */
+> +	atomic_t refcnt;
+>  };
+>  
+> +static inline bool kvm_s2_mmu_valid(struct kvm_s2_mmu *mmu)
+> +{
+> +	return !(mmu->vttbr & 1);
+> +}
+> +
+>  struct kvm_arch {
+>  	struct kvm_s2_mmu mmu;
+>  
+> +	/*
+> +	 * Stage 2 paging stage for VMs with nested virtual using a virtual
+> +	 * VMID.
+> +	 */
+> +	struct kvm_s2_mmu *nested_mmus;
+> +	size_t nested_mmus_size;
+> +
+>  	/* VTCR_EL2 value for this VM */
+>  	u64    vtcr;
+>  
+> diff --git a/arch/arm64/include/asm/kvm_mmu.h b/arch/arm64/include/asm/kvm_mmu.h
+> index 1eb6e0ca61c2..32bcaa1845dc 100644
+> --- a/arch/arm64/include/asm/kvm_mmu.h
+> +++ b/arch/arm64/include/asm/kvm_mmu.h
+> @@ -100,6 +100,7 @@ alternative_cb_end
+>  #include <asm/mmu_context.h>
+>  #include <asm/pgtable.h>
+>  #include <asm/kvm_emulate.h>
+> +#include <asm/kvm_nested.h>
+>  
+>  void kvm_update_va_mask(struct alt_instr *alt,
+>  			__le32 *origptr, __le32 *updptr, int nr_inst);
+> @@ -164,6 +165,7 @@ int create_hyp_exec_mappings(phys_addr_t phys_addr, size_t size,
+>  			     void **haddr);
+>  void free_hyp_pgds(void);
+>  
+> +void kvm_unmap_stage2_range(struct kvm_s2_mmu *mmu, phys_addr_t start, u64 size);
+>  void stage2_unmap_vm(struct kvm *kvm);
+>  int kvm_alloc_stage2_pgd(struct kvm_s2_mmu *mmu);
+>  void kvm_free_stage2_pgd(struct kvm_s2_mmu *mmu);
+> @@ -635,5 +637,11 @@ static __always_inline void __load_guest_stage2(struct kvm_s2_mmu *mmu)
+>  	asm(ALTERNATIVE("nop", "isb", ARM64_WORKAROUND_1165522));
+>  }
+>  
+> +static inline u64 get_vmid(u64 vttbr)
+> +{
+> +	return (vttbr & VTTBR_VMID_MASK(kvm_get_vmid_bits())) >>
+> +		VTTBR_VMID_SHIFT;
+> +}
+> +
+>  #endif /* __ASSEMBLY__ */
+>  #endif /* __ARM64_KVM_MMU_H__ */
+> diff --git a/arch/arm64/include/asm/kvm_nested.h b/arch/arm64/include/asm/kvm_nested.h
+> index 61e71d0d2151..d4021d0892bd 100644
+> --- a/arch/arm64/include/asm/kvm_nested.h
+> +++ b/arch/arm64/include/asm/kvm_nested.h
+> @@ -10,6 +10,13 @@ static inline bool nested_virt_in_use(const struct kvm_vcpu *vcpu)
+>  		test_bit(KVM_ARM_VCPU_NESTED_VIRT, vcpu->arch.features);
+>  }
+>  
+> +extern void kvm_init_nested(struct kvm *kvm);
+> +extern int kvm_vcpu_init_nested(struct kvm_vcpu *vcpu);
+> +extern void kvm_init_s2_mmu(struct kvm_s2_mmu *mmu);
+> +extern struct kvm_s2_mmu *lookup_s2_mmu(struct kvm *kvm, u64 vttbr, u64 hcr);
+> +extern void kvm_vcpu_load_hw_mmu(struct kvm_vcpu *vcpu);
+> +extern void kvm_vcpu_put_hw_mmu(struct kvm_vcpu *vcpu);
+> +
+>  int handle_wfx_nested(struct kvm_vcpu *vcpu, bool is_wfe);
+>  extern bool forward_traps(struct kvm_vcpu *vcpu, u64 control_bit);
+>  extern bool forward_nv_traps(struct kvm_vcpu *vcpu);
+> diff --git a/arch/arm64/kvm/nested.c b/arch/arm64/kvm/nested.c
+> index 3872e3cf1691..4b38dc5c0be3 100644
+> --- a/arch/arm64/kvm/nested.c
+> +++ b/arch/arm64/kvm/nested.c
+> @@ -18,7 +18,161 @@
+>  #include <linux/kvm.h>
+>  #include <linux/kvm_host.h>
+>  
+> +#include <asm/kvm_arm.h>
+>  #include <asm/kvm_emulate.h>
+> +#include <asm/kvm_mmu.h>
+> +#include <asm/kvm_nested.h>
+> +
+> +void kvm_init_nested(struct kvm *kvm)
+> +{
+> +	kvm_init_s2_mmu(&kvm->arch.mmu);
+> +
+> +	kvm->arch.nested_mmus = NULL;
+> +	kvm->arch.nested_mmus_size = 0;
+> +}
+> +
+> +int kvm_vcpu_init_nested(struct kvm_vcpu *vcpu)
+> +{
+> +	struct kvm *kvm = vcpu->kvm;
+> +	struct kvm_s2_mmu *tmp;
+> +	int num_mmus;
+> +	int ret = -ENOMEM;
+> +
+> +	if (!test_bit(KVM_ARM_VCPU_NESTED_VIRT, vcpu->arch.features))
+> +		return 0;
+> +
+> +	if (!cpus_have_const_cap(ARM64_HAS_NESTED_VIRT))
+> +		return -EINVAL;
+> +
+> +	mutex_lock(&kvm->lock);
+> +
+> +	num_mmus = atomic_read(&kvm->online_vcpus) * 2;
+> +	tmp = __krealloc(kvm->arch.nested_mmus,
+> +			 num_mmus * sizeof(*kvm->arch.nested_mmus),
+> +			 GFP_KERNEL | __GFP_ZERO);
+> +
+> +	if (tmp) {
+> +		if (tmp != kvm->arch.nested_mmus)
+> +			kfree(kvm->arch.nested_mmus);
+> +
+> +		tmp[num_mmus - 1].kvm = kvm;
+> +		atomic_set(&tmp[num_mmus - 1].refcnt, 0);
+> +		ret = kvm_alloc_stage2_pgd(&tmp[num_mmus - 1]);
+> +		if (ret)
+> +			goto out;
+> +
+> +		tmp[num_mmus - 2].kvm = kvm;
+> +		atomic_set(&tmp[num_mmus - 2].refcnt, 0);
+> +		ret = kvm_alloc_stage2_pgd(&tmp[num_mmus - 2]);
+> +		if (ret) {
+> +			kvm_free_stage2_pgd(&tmp[num_mmus - 1]);
+> +			goto out;
+> +		}
+> +
+> +		kvm->arch.nested_mmus_size = num_mmus;
+> +		kvm->arch.nested_mmus = tmp;
+> +		tmp = NULL;
+> +	}
+> +
+> +out:
+> +	kfree(tmp);
+> +	mutex_unlock(&kvm->lock);
+> +	return ret;
+> +}
+> +
+> +/* Must be called with kvm->lock held */
+> +struct kvm_s2_mmu *lookup_s2_mmu(struct kvm *kvm, u64 vttbr, u64 hcr)
+> +{
+> +	bool nested_stage2_enabled = hcr & HCR_VM;
+> +	int i;
+> +
+> +	/* Don't consider the CnP bit for the vttbr match */
+> +	vttbr = vttbr & ~1UL;
+> +
+> +	/* Search a mmu in the list using the virtual VMID as a key */
+> +	for (i = 0; i < kvm->arch.nested_mmus_size; i++) {
+> +		struct kvm_s2_mmu *mmu = &kvm->arch.nested_mmus[i];
+> +
+> +		if (!kvm_s2_mmu_valid(mmu))
+> +			continue;
+> +
+> +		if (nested_stage2_enabled &&
+> +		    mmu->nested_stage2_enabled &&
+> +		    vttbr == mmu->vttbr)
+> +			return mmu;
+> +
+> +		if (!nested_stage2_enabled &&
+> +		    !mmu->nested_stage2_enabled &&
+> +		    get_vmid(vttbr) == get_vmid(mmu->vttbr))
+> +			return mmu;
+> +	}
+> +	return NULL;
+> +}
+> +
+> +static struct kvm_s2_mmu *get_s2_mmu_nested(struct kvm_vcpu *vcpu)
+> +{
+> +	struct kvm *kvm = vcpu->kvm;
+> +	u64 vttbr = vcpu_read_sys_reg(vcpu, VTTBR_EL2);
+> +	u64 hcr= vcpu_read_sys_reg(vcpu, HCR_EL2);
+> +	struct kvm_s2_mmu *s2_mmu;
+> +	int i;
+> +
+> +	s2_mmu = lookup_s2_mmu(kvm, vttbr, hcr);
+> +	if (s2_mmu)
+> +		goto out;
+> +
+> +	for (i = 0; i < kvm->arch.nested_mmus_size; i++) {
+> +		s2_mmu = &kvm->arch.nested_mmus[i];
+> +
+> +		if (atomic_read(&s2_mmu->refcnt) == 0)
+> +			break;
+> +	}
+> +	BUG_ON(atomic_read(&s2_mmu->refcnt)); /* We have struct MMUs to spare */
+> +
+> +	if (kvm_s2_mmu_valid(s2_mmu)) {
+> +		/* Clear the old state */
+> +		kvm_unmap_stage2_range(s2_mmu, 0, kvm_phys_size(kvm));
+> +		if (s2_mmu->vmid.vmid_gen)
+> +			kvm_call_hyp(__kvm_tlb_flush_vmid, s2_mmu);
+> +	}
+> +
+> +	/*
+> +	 * The virtual VMID (modulo CnP) will be used as a key when matching
+> +	 * an existing kvm_s2_mmu.
+> +	 */
+> +	s2_mmu->vttbr = vttbr & ~1UL;
+> +	s2_mmu->nested_stage2_enabled = hcr & HCR_VM;
+> +
+> +out:
+> +	atomic_inc(&s2_mmu->refcnt);
+> +	return s2_mmu;
+> +}
+> +
+> +void kvm_init_s2_mmu(struct kvm_s2_mmu *mmu)
+> +{
+> +	mmu->vttbr = 1;
+> +	mmu->nested_stage2_enabled = false;
+> +	atomic_set(&mmu->refcnt, 0);
+> +}
+> +
+> +void kvm_vcpu_load_hw_mmu(struct kvm_vcpu *vcpu)
+> +{
+> +	if (is_hyp_ctxt(vcpu)) {
+> +		vcpu->arch.hw_mmu = &vcpu->kvm->arch.mmu;
+> +	} else {
+> +		spin_lock(&vcpu->kvm->mmu_lock);
 
-> >  Example:
-> >
-> >  	system_counter: timer@306a0000 {
-> > @@ -22,4 +27,5 @@ Example:
-> >  		clocks = <&clk_8m>;
-> >  		clock-names = "per";
-> >  		interrupts = <GIC_SPI 47 IRQ_TYPE_LEVEL_HIGH>;
-> > +		clock-frequency = <8333333>;
-> >  	};
-> >
-> 
-> 
+For the allocation + initialization of s2 mmus, kvm->lock is taken in
+kvm_vcpu_init_nested(). But here we take kvm->mmu_lock.
+
+Are we in trouble? Or are we expecting
+get_s2_mmu_nested()/lookup_s2_mmu() to be called only after
+kvm_vcpu_init_nested() has completed on all vcpus of the VM? Otherwise
+we could end up using the kvm->arch.nested_mmus when it has been freed
+and before it is updated with the new pointer.
+
+(I feel we should be taking kvm->mmu_lock in kvm_vcpu_init_nested() )
+
+> +		vcpu->arch.hw_mmu = get_s2_mmu_nested(vcpu);
+> +		spin_unlock(&vcpu->kvm->mmu_lock);
+> +	}
+> +}
+> +
+> +void kvm_vcpu_put_hw_mmu(struct kvm_vcpu *vcpu)
+> +{
+> +	if (vcpu->arch.hw_mmu != &vcpu->kvm->arch.mmu) {
+> +		atomic_dec(&vcpu->arch.hw_mmu->refcnt);
+> +		vcpu->arch.hw_mmu = NULL;
+> +	}
+> +}
+>  
+>  /*
+>   * Inject wfx to the virtual EL2 if this is not from the virtual EL2 and
+> @@ -37,3 +191,21 @@ int handle_wfx_nested(struct kvm_vcpu *vcpu, bool is_wfe)
+>  
+>  	return -EINVAL;
+>  }
+> +
+> +void kvm_arch_flush_shadow_all(struct kvm *kvm)
+> +{
+> +	int i;
+> +
+> +	for (i = 0; i < kvm->arch.nested_mmus_size; i++) {
+> +		struct kvm_s2_mmu *mmu = &kvm->arch.nested_mmus[i];
+> +
+> +		WARN_ON(atomic_read(&mmu->refcnt));
+> +
+> +		if (!atomic_read(&mmu->refcnt))
+> +			kvm_free_stage2_pgd(mmu);
+> +	}
+> +	kfree(kvm->arch.nested_mmus);
+> +	kvm->arch.nested_mmus = NULL;
+> +	kvm->arch.nested_mmus_size = 0;
+
+Don't we need also to take the lock before modifying those? (Apprently
+we're killing the VM, so there shouldn't be other user, but just want to
+make sure...)
+
+Cheers,
+
+-- 
+Julien Thierry
 
 _______________________________________________
 linux-arm-kernel mailing list
