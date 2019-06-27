@@ -2,74 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 642DB58777
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 27 Jun 2019 18:43:19 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 935CA5878D
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 27 Jun 2019 18:47:31 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=NgZE4j9GiD4kxIuP4YrqN6P2a0NK9gy56h0UjBEyypU=; b=Of2kIeE/lhcAjV
-	lvqYJAyN5tLoWjtyVsYQ79NxaHJ/xdVKTKN+dL4Z8C/C5BWSv4l4yQdNwxgAO9Y1uwBfJ0KFS+Gco
-	uMosqWIoNu071lu71XAQUffCGU5kp7Z+Q7dTXjXyCiXZRWoUd6pIEXXSNCLirOx1Fvplewc5yGKMj
-	LNZMCfkYRyWg8C4Ocr0ZVW5VIUHFYv2bbDrzTllPBHt4X0qED4GAYgfTGNxZbW3DGgt8xMm+l8Qic
-	wbAocRpBR3B+vzhPuDJIAHz7PWRAhaNCfkLa/1U2Uif3d25kzAMXBjTanW/L75fSaqnfGU7pLhIL5
-	p0oaOUMaqvh21w3X77Ew==;
+	List-Owner; bh=BwRByBCAhTj8Q8gkaeBdGqI2FfD2B/att1Vpmdh30yE=; b=r8YlNiRTwuXFXb
+	li++VDuCWKsUvQG0XLdoXUx0kNjIaIoF6QAIU2VtYTFGvKJmCha3XI72ZwIshs2+hdQiwnlC1ewmr
+	YlXLQ1Cfl4NYlJ1x4rwrxbOaEt18AEyXTb+O6j5B33vVg6/6IuyfwY658Yd+ZIl7Pzuw06fTHhFeT
+	dVF0/orBpcjbT3nU+YAM5HV7ayKSuI83ciZrNJlQenLiPpRhYiJ7vHpv0H+NEXXZ2efeyRa4gQuSs
+	Nqcq9YtlLO2BcA2bEhIyeBt/Jl9gC67lWmtgZuNPnOiic43CFoly5fNIJBhdOOEVssvJ90bdE/YRT
+	kLHQ5AD8hgRawvh7eVmA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hgXUR-0004Z6-6m; Thu, 27 Jun 2019 16:43:15 +0000
-Received: from conssluserg-04.nifty.com ([210.131.2.83])
+	id 1hgXYV-0006wX-6s; Thu, 27 Jun 2019 16:47:27 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hgXU9-0004YB-Ok; Thu, 27 Jun 2019 16:42:59 +0000
-Received: from mail-vk1-f178.google.com (mail-vk1-f178.google.com
- [209.85.221.178]) (authenticated)
- by conssluserg-04.nifty.com with ESMTP id x5RGgai7008040;
- Fri, 28 Jun 2019 01:42:37 +0900
-DKIM-Filter: OpenDKIM Filter v2.10.3 conssluserg-04.nifty.com x5RGgai7008040
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nifty.com;
- s=dec2015msa; t=1561653757;
- bh=mjVQLrBPdJBnHT5c+yqrverpI3gXoSHt0lyoRtZKVh8=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=x+YPmK0dx6bvhLMCzmvcqEyTBzJ07PFO64KYLQ74sqFFOoUlR1PyfsGFuN0jYBibn
- O39lAZa08boANWu8MEfBwP451cGoa/Tz+5I/Rk7hzelPDmzuaDR14JRisQ3mqsBPAt
- uM9eYwpD/KHv6Oyzf5cQHYLfY9q+5fi0xLq1cqBsP/yr0r+L/gmVGToMjhTLHIuWnx
- X+L4EFRivPXsfzDii0vitYHy8FD8geSIJZ1GJ2JQc7yIsP2imS4vMZpe8U+41e/bBa
- WtUEyGQ2VqCf+8ntswPHaQ1w9YNkqgWSiXyvvLAIMtfnBorZ+W4/y4R+4UTE3fr/Nf
- cz4e1mtKIkk0A==
-X-Nifty-SrcIP: [209.85.221.178]
-Received: by mail-vk1-f178.google.com with SMTP id y130so638164vkc.0;
- Thu, 27 Jun 2019 09:42:37 -0700 (PDT)
-X-Gm-Message-State: APjAAAXPrTFKr4BV63EbXhGoJsOUutvcbA1wYBJZdo0CYmF28JR8+Aqk
- mTARArH+qjnF0aXPemnt4usQ1gvbs10hCV7FKbQ=
-X-Google-Smtp-Source: APXvYqzEikgizt6Sw+DCd4k5FOnO+SppEPTSGT3JzOTu5C6ZNp4faFBLQFiM9RKT4r3KAmi9gcOpHh0nyzlDZNjlMnQ=
-X-Received: by 2002:a1f:ac1:: with SMTP id 184mr1898318vkk.0.1561653756253;
- Thu, 27 Jun 2019 09:42:36 -0700 (PDT)
+ id 1hgXYG-0006w7-9E
+ for linux-arm-kernel@lists.infradead.org; Thu, 27 Jun 2019 16:47:13 +0000
+Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id E0BCD2054F;
+ Thu, 27 Jun 2019 16:47:09 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1561654032;
+ bh=4xUGv1/o6blMAKCCJJ4W4BVLGoWulRvdcHqF1JjKY2g=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=oDIpUHGYhjrQKfQtioIrtGLI5WLEzWVGVW1ZuPbuDNGK4TeZdUEWZB1k8gKj5At/8
+ aXyF95c7d2u2o8zP78iql17oz8bmky8JtFX7D9HEkmM2+8cX7/SeNfyW71K7c05HZT
+ IKQoQLGhlMOjPS1M838B5E/acmo7oduSjvbk1ls8=
+Date: Thu, 27 Jun 2019 17:47:06 +0100
+From: Will Deacon <will@kernel.org>
+To: Jeremy Linton <jeremy.linton@arm.com>
+Subject: Re: [PATCH v5 0/4] arm64: SPE ACPI enablement
+Message-ID: <20190627164706.rdmoze4we2dcshts@willie-the-truck>
+References: <20190626213718.39423-1-jeremy.linton@arm.com>
 MIME-Version: 1.0
-References: <20190627014617.600-1-yamada.masahiro@socionext.com>
- <87y31np89f.fsf@intel.com>
-In-Reply-To: <87y31np89f.fsf@intel.com>
-From: Masahiro Yamada <yamada.masahiro@socionext.com>
-Date: Fri, 28 Jun 2019 01:42:00 +0900
-X-Gmail-Original-Message-ID: <CAK7LNAS=Uhyq9AitSqRR2aKOg18aae8Ce9FXTufgJq3KNhmsUg@mail.gmail.com>
-Message-ID: <CAK7LNAS=Uhyq9AitSqRR2aKOg18aae8Ce9FXTufgJq3KNhmsUg@mail.gmail.com>
-Subject: Re: [PATCH v2 0/4] Compile-test UAPI and kernel headers
-To: Jani Nikula <jani.nikula@linux.intel.com>
+Content-Disposition: inline
+In-Reply-To: <20190626213718.39423-1-jeremy.linton@arm.com>
+User-Agent: NeoMutt/20170113 (1.7.2)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190627_094258_020873_E53FA60A 
-X-CRM114-Status: GOOD (  13.93  )
-X-Spam-Score: 1.0 (+)
+X-CRM114-CacheID: sfid-20190627_094712_352010_AF2F89B8 
+X-CRM114-Status: GOOD (  14.20  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (1.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [210.131.2.83 listed in list.dnswl.org]
- 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -81,76 +76,46 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Song Liu <songliubraving@fb.com>,
- Jakub Kicinski <jakub.kicinski@netronome.com>,
- "open list:DOCUMENTATION" <linux-doc@vger.kernel.org>,
- Palmer Dabbelt <palmer@sifive.com>, Alexei Starovoitov <ast@kernel.org>,
- linux-riscv@lists.infradead.org, Sam Ravnborg <sam@ravnborg.org>,
- Kees Cook <keescook@chromium.org>, xdp-newbies@vger.kernel.org,
- Daniel Borkmann <daniel@iogearbox.net>, Jonathan Corbet <corbet@lwn.net>,
- Anton Vorontsov <anton@enomsg.org>, John Fastabend <john.fastabend@gmail.com>,
- Yonghong Song <yhs@fb.com>, Albert Ou <aou@eecs.berkeley.edu>,
- Jesper Dangaard Brouer <hawk@kernel.org>,
- Linux Kbuild mailing list <linux-kbuild@vger.kernel.org>,
- Michal Marek <michal.lkml@markovi.net>,
- "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
- Matthias Brugger <matthias.bgg@gmail.com>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
- Tony Luck <tony.luck@intel.com>, Networking <netdev@vger.kernel.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- "David S. Miller" <davem@davemloft.net>, Colin Cross <ccross@android.com>,
- bpf@vger.kernel.org, Martin KaFai Lau <kafai@fb.com>
+Cc: mark.rutland@arm.com, lorenzo.pieralisi@arm.com, catalin.marinas@arm.com,
+ will.deacon@arm.com, rjw@rjwysocki.net, linux-kernel@vger.kernel.org,
+ linux-acpi@vger.kernel.org, sudeep.holla@arm.com,
+ linux-arm-kernel@lists.infradead.org, lenb@kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Jun 27, 2019 at 8:36 PM Jani Nikula <jani.nikula@linux.intel.com> wrote:
->
-> On Thu, 27 Jun 2019, Masahiro Yamada <yamada.masahiro@socionext.com> wrote:
-> > 1/4: reworked v2.
-> >
-> > 2/4: fix a flaw I noticed when I was working on this series
-> >
-> > 3/4: maybe useful for 4/4 and in some other places
-> >
-> > 4/4: v2. compile as many headers as possible.
-> >
-> >
-> > Changes in v2:
-> >  - Add CONFIG_CPU_{BIG,LITTLE}_ENDIAN guard to avoid build error
-> >  - Use 'header-test-' instead of 'no-header-test'
-> >  - Avoid weird 'find' warning when cleaning
-> >   - New patch
-> >   - New patch
-> >   - Add everything to test coverage, and exclude broken ones
-> >   - Rename 'Makefile' to 'Kbuild'
-> >   - Add CONFIG_KERNEL_HEADER_TEST option
-> >
-> > Masahiro Yamada (4):
-> >   kbuild: compile-test UAPI headers to ensure they are self-contained
-> >   kbuild: do not create wrappers for header-test-y
-> >   kbuild: support header-test-pattern-y
-> >   kbuild: compile-test kernel headers to ensure they are self-contained
->
-> [responding here because I didn't receive the actual patch]
->
-> This looks like it's doing what it's supposed to, but I ran into a bunch
-> of build fails with CONFIG_OF=n. Sent a fix to one [1], but stopped at
-> the next. Looks like you'll have to exclude more. And I'm pretty sure
-> we'll uncover more configurations where this will fail.
+On Wed, Jun 26, 2019 at 04:37:14PM -0500, Jeremy Linton wrote:
+> This patch series enables the Arm Statistical Profiling
+> Extension (SPE) on ACPI platforms.
+> 
+> This is possible because ACPI 6.3 uses a previously
+> reserved field in the MADT to store the SPE interrupt
+> number, similarly to how the normal PMU is described.
+> If a consistent valid interrupt exists across all the
+> cores in the system, a platform device is registered.
+> That then triggers the SPE module, which runs as normal.
+> 
+> We also add the ability to parse the PPTT for IDENTICAL
+> cores. We then use this to sanity check the single SPE
+> device we create. This creates a bit of a problem with
+> respect to the specification though. The specification
+> says that its legal for multiple tree's to exist in the
+> PPTT. We handle this fine, but what happens in the
+> case of multiple tree's is that the lack of a common
+> node with IDENTICAL set forces us to assume that there
+> are multiple non-IDENTICAL cores in the machine.
+> 
+> v4->v5: Remove error returns from arm_spe_acpi_register_device()
+> 	Add some review/test tags
 
-Thanks for testing.
+Cheers, I've pushed this out with the acks and typo fixes.
 
-I did more compile-tests, and excluded more headers in v3.
+https://git.kernel.org/pub/scm/linux/kernel/git/will/linux.git/log/?h=for-next/perf
 
-Thanks.
+Please let me know if you spot any problems.
 
-
-
--- 
-Best Regards
-Masahiro Yamada
+Will
 
 _______________________________________________
 linux-arm-kernel mailing list
