@@ -2,105 +2,104 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D785B57B62
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 27 Jun 2019 07:27:45 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5B61F57C6B
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 27 Jun 2019 08:48:52 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=5W8CwMP/IP9o4VpvyB8K7XZUOwKGiNCrpOa7wp1gJ+0=; b=Gc5J9AcSllQN4gAu/V+dh20Ro
-	RWcKQEqU64fxJiuB6hVC5WSl1acA6sqmNIeaa90c9LsoGyknq7oHyyKvRJ+n1aGMYezDXU6YGPbL0
-	1qygY5F+Fa6PgT/Hxgslb4hkkBauQUdexe2zan2tQ6bMx9oL919phrpQgv/YPqeGfPr4R7C7vW5nb
-	86TirxMbdBSvJ8STGGN0t/6Xx2Fs/AUthZjQ0qrEB8BZw0GgfPUeXCJSvdVE9hjstIF1T/f2p8B9P
-	dUmdqkMB+Iypj4t2uCKvL+tIDEvsC4N9f7Ny9oGe0jX/CxVQDHoEfAoZhhGR36AASlrTMFtur2+w6
-	9uNMOwrPw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=zaRWFlWSZhwuWJfBlVCMO4Su9qWpmWSArxwVvF0CFCI=; b=gNbLZUumI5KPvO
+	CPfgoKwFO8zgkcZSLyI/Mwy0pNPGAp0iwUAIWbrkFGLEs7UR7LUOK+qhzl4UAesuhHmACjDBjwb6O
+	vJ5PG4EcFS5lSMxSAd6M0ifkFYCWi0TigKrMjnjgvBE0XcQgks3ZJuNv4L3HMfizEz3hDuShp85Nn
+	mXs1+nvxvfRxlyx2PZlMFi/MRTCOAOH0uFZPndXcHu0zs9+JRSuNMwDtGHdNSogDjFqzbweEVITyP
+	r/cVce3MnuZd9EefoTFuQ0CpAQH3PuVi/qvUgmtE5Wf/8C5kLbnWM+T5nBBO6o9R60qOC/jM+sdCb
+	3CHfNvYLuL2l6yp8bmAA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hgMwi-0007JJ-CQ; Thu, 27 Jun 2019 05:27:44 +0000
-Received: from casper.infradead.org ([2001:8b0:10b:1236::1])
+	id 1hgOD9-0002uh-Ma; Thu, 27 Jun 2019 06:48:47 +0000
+Received: from merlin.infradead.org ([2001:8b0:10b:1231::1])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hgMpi-0006ep-HX; Thu, 27 Jun 2019 05:20:30 +0000
+ id 1hgO8O-0006KM-HV
+ for linux-arm-kernel@bombadil.infradead.org; Thu, 27 Jun 2019 06:43:52 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=infradead.org; s=casper.20170209; h=Content-Transfer-Encoding:Content-Type:
- In-Reply-To:MIME-Version:Date:Message-ID:From:References:Cc:To:Subject:Sender
- :Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
- Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:
- List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=UNLyOsV3OGMw6xlUhvSGjqaekUuyTSupeV2vLHx35Xc=; b=FeIJdkYbOOgkVj5dB/Fom4Td4r
- rX3qEOcqKi5jRt+nUFMOkXjrEOb7wV53nAmxP8hGXfWNY9+cp/nubZvZ1ob9IiOIqh2WI7AvWp8mG
- eDJkZ+0UndOOdS2KjPcBthCT4OVyZ5m8bn4s5NMHPq/BFoJjNK/kNyuOuTKDiQsrhlnY9/dOFsQ7X
- 2VBezca9eDMBhLGh7BUIhJW9DhVYE8hU/BRRHc1cn3pvwVqGgzXmXQUH2RXOsSE54dfyYpx8pgaBp
- LyKo6J/Wr8zVzfp2YuVgFonu0L0/kkLvchOj41Rm0890MOC1tT3nFU8SjAhogvMV2/AGYHhTNkDrG
- /h4P8I+g==;
-Received: from esa2.hgst.iphmx.com ([68.232.143.124])
- by casper.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hgK0Q-0002Y3-J0; Thu, 27 Jun 2019 02:19:24 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple;
- d=wdc.com; i=@wdc.com; q=dns/txt; s=dkim.wdc.com;
- t=1561601961; x=1593137961;
- h=subject:to:cc:references:from:message-id:date:
- mime-version:in-reply-to:content-transfer-encoding;
- bh=Tfwp7gFaZ6qND8kZaF7KWkT1wyf1zxCP1c9dIpITNvc=;
- b=ofXrSGA2cDs/mrb95EkpIHTAM+W/LKW7hY9jflaM7FcXIHPBWRJDmAU0
- UUvKV/yL5bfda4KYYeNjFDidFfYR/coEb66G+pG7c/NMZScOw6PiA6sti
- POhmdJwVzzcfyzP4w9UhYRxYH+Wl+1LNTZDpADvjNx1B9JEKmAGEINJ/G
- L0Vko7FzkyuwoJNzSF7FVc+bw2BGnFp+kRkVk/NPcXv3sBef0zaJD0WJW
- oEGbBBNcEEMJxyLPFZDkYpogL9+dUL7eOtOSln+yrmfbMfyShvBywqiHB
- dm3T8Y3nWHbFQGHk/0817AKqQmEF4a4htGg888W3XwDYqJuztkUW7pCX/ w==;
-X-IronPort-AV: E=Sophos;i="5.63,422,1557158400"; d="scan'208";a="211454252"
-Received: from uls-op-cesaip02.wdc.com (HELO uls-op-cesaep02.wdc.com)
- ([199.255.45.15])
- by ob1.hgst.iphmx.com with ESMTP; 27 Jun 2019 10:20:09 +0800
-IronPort-SDR: 1+Ew/4+sXLSS51N8u7BooKieY4X+jkbs409ph5WvfkvTPe4kykDlpI+3N64Kq8xcaY1YybRQsu
- DO52WUbpv/b5kCU4mrA52KzsKVnjyGXRqsKNBVO9+42/jYutlIjqvTHl0OMQ+rX/Hidstw3D2v
- kX1xYyJ+5Mhhyrbwmou4v3eAsoTek9buCiCWuzrQJ3w9phW0ytNt8U5/v9LSEOJyNveIbPSTkh
- bb9kceiPuH9bbSOuKnZ6+uuF4kuTlr1JVKJPccsQAFRLH9QKIs4fAPVAXll5GOUd8qIwIJt7tR
- VfXxAs2bnojDKsG0Vz92gaFL
-Received: from uls-op-cesaip01.wdc.com ([10.248.3.36])
- by uls-op-cesaep02.wdc.com with ESMTP; 26 Jun 2019 19:17:52 -0700
-IronPort-SDR: ciLexNHCv6HL8MZuckFUeBuAAqxAHwDwL0T3akazDuuvQlT+UmUai8SZlQcgLlMo31DzQYCy9C
- hUmWFABApl4vhwrHwwwNgApIeFL7zgMAQsNfesmsMzYlcHY/bExk7+MCe6LFtwJP5mf9NcCS5I
- yosY85vqe7YCnHakfyQMwyQjzZEz/2iJf1D2qk2ScLEpepDs50z5eYX5Yas7bf4/E5rwInY8df
- VA2fHixn7pD+aJT3u6PzOm755RWHxstUQ+JkAIqkjoIGczFDwhyJa85Jy2zwmAziFv0/Njm1rR
- +rY=
-Received: from usa005100.ad.shared (HELO [10.225.99.96]) ([10.225.99.96])
- by uls-op-cesaip01.wdc.com with ESMTP; 26 Jun 2019 19:18:37 -0700
-Subject: Re: [PATCH v7 1/7] Documentation: DT: arm: add support for sockets
- defining package boundaries
-To: Paul Walmsley <paul.walmsley@sifive.com>,
- Sudeep Holla <sudeep.holla@arm.com>
-References: <20190617185920.29581-1-atish.patra@wdc.com>
- <20190617185920.29581-2-atish.patra@wdc.com>
- <alpine.DEB.2.21.9999.1906261724000.23534@viisi.sifive.com>
-From: Atish Patra <atish.patra@wdc.com>
-Message-ID: <873a80f0-e704-dd7e-4db9-b159b23847fc@wdc.com>
-Date: Wed, 26 Jun 2019 19:18:36 -0700
-User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:60.0)
- Gecko/20100101 Thunderbird/60.7.2
+ d=infradead.org; s=merlin.20170209; h=In-Reply-To:Content-Type:MIME-Version:
+ References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=kpqYC0bettaQFGE+cPMxYMow71Zk/Lt7y+RJt1aO3ZA=; b=vHq4W2Tk1InXIUkjwWq87mNA9
+ ZDHaDAOIE8i364qfJ+NkS3Nx0k8c3RZONZZg0OFfTSoL4VHgoF2Ps2pbFkWsRjCMVrUq9q5u2JrrN
+ WDK/X/F7coF9U0ySLZR9drPsE3csj5RGijl55LbcOmcPz2m5W50UTpm36Gygu1cm9hUMSSvYl87oH
+ agzdsHgvtVgedds9NQjwuiJ9UcfFUWZM5T+3LAZYS/cyNcXPLrgqO7BdNIjLgt4UpeuvEH7gXNVV5
+ aQGNsMVd3czhcTBJHKtyySmJcnlb7lah45ISYlByQFp87EEHDDwe8PwAkU2nCk226qmEfzTzIfvBO
+ 3hfi5avYA==;
+Received: from mail-lf1-x142.google.com ([2a00:1450:4864:20::142])
+ by merlin.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hgKFU-0005vt-2k
+ for linux-arm-kernel@lists.infradead.org; Thu, 27 Jun 2019 02:34:56 +0000
+Received: by mail-lf1-x142.google.com with SMTP id 136so453499lfa.8
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 26 Jun 2019 19:34:55 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=lixom-net.20150623.gappssmtp.com; s=20150623;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=kpqYC0bettaQFGE+cPMxYMow71Zk/Lt7y+RJt1aO3ZA=;
+ b=CUYJXh+O76PMEBZGgXYE4jBtsdtMsFSEbZO0ZPyGHzyh2zdxZqtKDI8UekfWutOZ/E
+ YOB+X7vQ4M6jz4r3vtoOXStSuKF65tzQF2Hy2iAis1o6RYF834KH8sRjmjRZMHCwO+62
+ MO4t7AD0yZgX9E1DKMcyzPLyDEPCd2COfseoooOnSJqaFvkUw9X7M0S0KF5v1b58crp0
+ FwPaHIAzP4nqMXq7qwBG6huU7gkp8E3fXfbotKN6d/a7vZrhC6xBO1zFP3Kc95nRNozg
+ 3dUxkOYgiDhv7NyUXyrj5a+3L0Vv1LSR+WiWc3I9rNhxc1Mp1+3c7vN7Xszo0uMwbfZ+
+ hNTA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=kpqYC0bettaQFGE+cPMxYMow71Zk/Lt7y+RJt1aO3ZA=;
+ b=A7Gv6XLBmF65ImHTWixY+4ufd7FBh4MYiXkpi3Mdx8jJwNxCWUQByhq+VE2UW3l0Bi
+ l2En0cD2mgdXrhUKlBdcMIFS8iITPzYgDBYFW88WU1BKbbCCXg8XsnQnt8tB1vHGWKHP
+ qHB3gxtZlU7UC5c9e7k+jYZ7QZfmIaMW8DP2R8BWnoStjKwlGu5k24y/1PM6fnazZeES
+ eRJDIUO107uH7uEUm0tY8Df+c4ZWQ6mzE+4z2E3/bfH2a+ltWvDXBmVFddNbuCEh2P0n
+ G0wHlvFeTUOrLOBdhha00tAXC8SGacVpm1CvdBEOzYSIWyfGu3Fu5YZWjef3o0DXupuQ
+ 8vpA==
+X-Gm-Message-State: APjAAAUvrlH4Fs93TmsKUqwOBIQBWEUN2iqKIeCM2Dwn8WyZTa/6iuCa
+ wfILZ0BVpxMLLuJGc7zyAzTWkA==
+X-Google-Smtp-Source: APXvYqwVm7ApFldCcgUkF3KiAVNAlR3f2LErwu5ylCjWa4dtUcO2yDmcrQXQfnSFhvIyODaUbhq7dQ==
+X-Received: by 2002:ac2:52b7:: with SMTP id r23mr662754lfm.120.1561602825764; 
+ Wed, 26 Jun 2019 19:33:45 -0700 (PDT)
+Received: from localhost (h85-30-9-151.cust.a3fiber.se. [85.30.9.151])
+ by smtp.gmail.com with ESMTPSA id k12sm117397lfm.90.2019.06.26.19.33.42
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Wed, 26 Jun 2019 19:33:43 -0700 (PDT)
+Date: Wed, 26 Jun 2019 19:19:37 -0700
+From: Olof Johansson <olof@lixom.net>
+To: John Garry <john.garry@huawei.com>
+Subject: Re: [GIT PULL] Hisilicon fixes for v5.2
+Message-ID: <20190627021937.kk4lklv2uz3mogoq@localhost>
+References: <b89ef8f0-d102-7f78-f373-cbcc7faddee3@hisilicon.com>
+ <20190625112148.ckj7sgdgvyeel7vy@localhost>
+ <CAOesGMj+aNkOT1YVHTSBLkOfEujk7uer3R1AmE-sa1TwCijbBg@mail.gmail.com>
+ <7e215bd7-daab-b6cf-8d0f-9513bd7c4f6d@huawei.com>
 MIME-Version: 1.0
-In-Reply-To: <alpine.DEB.2.21.9999.1906261724000.23534@viisi.sifive.com>
-Content-Language: en-US
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190627_031922_970578_DF0047A9 
-X-CRM114-Status: GOOD (  23.57  )
-X-Spam-Score: -2.5 (--)
-X-Spam-Report: SpamAssassin version 3.4.2 on casper.infradead.org summary:
- Content analysis details:   (-2.5 points, 5.0 required)
+Content-Disposition: inline
+In-Reply-To: <7e215bd7-daab-b6cf-8d0f-9513bd7c4f6d@huawei.com>
+User-Agent: NeoMutt/20170113 (1.7.2)
+X-Spam-Note: CRM114 invocation failed
+X-Spam-Score: 0.0 (/)
+X-Spam-Report: SpamAssassin version 3.4.2 on merlin.infradead.org summary:
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [68.232.143.124 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:142 listed in]
+ [list.dnswl.org]
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -112,92 +111,63 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- "Rafael J. Wysocki" <rafael@kernel.org>,
- "Peter Zijlstra \(Intel\)" <peterz@infradead.org>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Linus Walleij <linus.walleij@linaro.org>, Palmer Dabbelt <palmer@sifive.com>,
- Will Deacon <will.deacon@arm.com>, Richard Fontana <rfontana@redhat.com>,
- Mauro Carvalho Chehab <mchehab+samsung@kernel.org>,
- "linux-riscv@lists.infradead.org" <linux-riscv@lists.infradead.org>,
- Morten Rasmussen <morten.rasmussen@arm.com>, Rob Herring <robh@kernel.org>,
- Anup Patel <anup@brainfault.org>, Russell King <linux@armlinux.org.uk>,
- Ingo Molnar <mingo@kernel.org>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- Albert Ou <aou@eecs.berkeley.edu>, Rob Herring <robh+dt@kernel.org>,
+Cc: Salil Mehta <salil.mehta@huawei.com>, jinying@hisilicon.com,
+ Tangkunshan <tangkunshan@huawei.com>, Arnd Bergmann <arnd@arndb.de>,
+ Shameerali Kolothum Thodi <shameerali.kolothum.thodi@huawei.com>,
+ linux-pci@vger.kernel.org, "Rafael J. Wysocki" <rjw@rjwysocki.net>,
+ Linuxarm <linuxarm@huawei.com>, Wei Xu <xuwei5@hisilicon.com>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ ARM-SoC Maintainers <arm@kernel.org>, huangdaode <huangdaode@hisilicon.com>,
+ "xuwei \(O\)" <xuwei5@huawei.com>,
  Jonathan Cameron <Jonathan.Cameron@huawei.com>,
- Thomas Gleixner <tglx@linutronix.de>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Otto Sabart <ottosabart@seberm.com>, "David S. Miller" <davem@davemloft.net>
+ Bjorn Helgaas <bhelgaas@google.com>,
+ "Liguozhu \(Kenneth\)" <liguozhu@hisilicon.com>,
+ Zhangyi ac <zhangyi.ac@huawei.com>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
+ Shiju Jose <shiju.jose@huawei.com>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 6/26/19 5:31 PM, Paul Walmsley wrote:
-> Hi Sudeep, Atish,
+On Tue, Jun 25, 2019 at 02:31:26PM +0100, John Garry wrote:
+> On 25/06/2019 14:03, Olof Johansson wrote:
+> > > > are available in the Git repository at:
+> > > > > >
+> > > > > >   git://github.com/hisilicon/linux-hisi.git tags/hisi-fixes-for-5.2
+> > > > > >
+> > > > > > for you to fetch changes up to 07c811af1c00d7b4212eac86900b023b6405a954:
+> > > > > >
+> > > > > >   lib: logic_pio: Enforce LOGIC_PIO_INDIRECT region ops are set at registration (2019-06-25 09:40:42 +0100)
+> > > > > >
+> > > > > > ----------------------------------------------------------------
+> > > > > > Hisilicon fixes for v5.2-rc
+> > > > > >
+> > > > > > - fixed RCU usage in logical PIO
+> > > > > > - Added a function to unregister a logical PIO range in logical PIO
+> > > > > >   to support the fixes in the hisi-lpc driver
+> > > > > > - fixed and optimized hisi-lpc driver to avoid potential use-after-free
+> > > > > >   and driver unbind crash
+> > > >
+> > > > Merged to fixes, thanks.
+> > 
+> > This broke arm64 allmodconfig:
+> > 
+> >        arm64.allmodconfig:
+> > drivers/bus/hisi_lpc.c:656:3: error: implicit declaration of function
+> > 'hisi_lpc_acpi_remove'; did you mean 'hisi_lpc_acpi_probe'?
+> > [-Werror=implicit-function-declaration]
+> > 
+> > 
 > 
-> On Mon, 17 Jun 2019, Atish Patra wrote:
-> 
->> From: Sudeep Holla <sudeep.holla@arm.com>
->>
->> The current ARM DT topology description provides the operating system
->> with a topological view of the system that is based on leaf nodes
->> representing either cores or threads (in an SMT system) and a
->> hierarchical set of cluster nodes that creates a hierarchical topology
->> view of how those cores and threads are grouped.
->>
->> However this hierarchical representation of clusters does not allow to
->> describe what topology level actually represents the physical package or
->> the socket boundary, which is a key piece of information to be used by
->> an operating system to optimize resource allocation and scheduling.
->>
->> Lets add a new "socket" node type in the cpu-map node to describe the
->> same.
->>
->> Signed-off-by: Sudeep Holla <sudeep.holla@arm.com>
->> Reviewed-by: Rob Herring <robh@kernel.org>
-> 
-> This one doesn't apply cleanly here on top of v5.2-rc2, Linus's master
-> branch, and next-20190626.  The reject file is below.  Am I missing
-> a patch?
-> 
+> Uhhh, that's my fault - I didn't provide a stub for !ACPI. Sorry. I'll send
+> a fixed v3 series.
 
-That's weird. I could apply the patch from any git tree (github or 
-git.kernel.org) but not from mail or patchworks.
-
-git log doesn't show any recent modifications of that file. I am trying 
-to figure out what's wrong.
-> 
-> - Paul
-> 
-> --- Documentation/devicetree/bindings/arm/topology.txt
-> +++ Documentation/devicetree/bindings/arm/topology.txt
-> @@ -185,13 +206,15 @@ Bindings for cluster/cpu/thread nodes are defined as follows:
->   4 - Example dts
->   ===========================================
->   
-> -Example 1 (ARM 64-bit, 16-cpu system, two clusters of clusters):
-> +Example 1 (ARM 64-bit, 16-cpu system, two clusters of clusters in a single
-> +physical socket):
->   
->   cpus {
->   	#size-cells = <0>;
->   	#address-cells = <2>;
->   
->   	cpu-map {
-> +		socket0 {
->   			cluster0 {
->   				cluster0 {
->   					core0 {
-> 
+No worries, it happens -- but it's good if maintainers do at least a few test
+builds before sending in pull requests so we don't catch all of it at our end.
 
 
--- 
-Regards,
-Atish
+-Olof
 
 _______________________________________________
 linux-arm-kernel mailing list
