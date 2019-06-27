@@ -2,103 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 68AF757C30
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 27 Jun 2019 08:28:14 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 80E8E57C44
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 27 Jun 2019 08:34:20 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=PvinsDj7cPcZG5RwepHR/BPdBy8+cZm/r1yipw2yhgI=; b=JXcgmxU7m2LFlD
-	GjpJcIpFVf0skqVRq/oLBD9u9V56FOUb5vc2Dtffx03lyySyBBIx0glDdNfySnj+vNSV3EMZY4kFJ
-	wn5m5oTm+J9yJvK76gRVqQNSpG3zwwezl8+aGxEDZZq7tO8Ny1SRgvrJV9bFfVzHdrTbHngMYbtvV
-	Mz8yvm7WC4V2QHTEdXYPtffRsC7U2fx5snyewp3L34EF2TteAkU/QhNx6VAJRO3usYdOYhh1ucuMC
-	vi14rGNqWjwtfqrcpj0m9xsNJw8AcUcaY79Yyu2X3qVZWIwTnK7APXIcQzWQ5VSWx3VpqZiBC3hiQ
-	uf/6+Qr/EhxSZAevXZgg==;
+	List-Owner; bh=XiFnksFJeY5SnM6ZelAMfex+4qim4oFzkHGXRi6YiFw=; b=BYCf/liH6McgBv
+	31VrkqN8va7MWbW5LySw6ii3YqsBzGAsQkJFwQGG+zw5Yow5iJPSQ34J82XPYDmA6+AMy7OSPvOhc
+	DCjdI0WaGAfiOiVASvJH+Oo23MgkqLgpoSaw9lOsUkUO5n5nkNnM6vuny7XEFWs2LMPbk0MsI4LNk
+	hklALgkO1t2kTVX7Sgor5FF1EYvnnQt582mOlfXSyk+nlBtuDwvy0x6xiIDRLK37aQZ+8bS6Cx9Y1
+	JWg7PS9tDLbdzIDXXY27DunCT6F7jaXrxEjgjYoujSu6db646sRFJcpCfZX3CbRKQJvpBJhsB9KGk
+	Py26zsPQETXEUX8I/B5Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hgNtE-00088L-OR; Thu, 27 Jun 2019 06:28:12 +0000
-Received: from userp2130.oracle.com ([156.151.31.86])
+	id 1hgNz5-0002Gf-92; Thu, 27 Jun 2019 06:34:15 +0000
+Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hgNsy-000871-1e; Thu, 27 Jun 2019 06:27:57 +0000
-Received: from pps.filterd (userp2130.oracle.com [127.0.0.1])
- by userp2130.oracle.com (8.16.0.27/8.16.0.27) with SMTP id x5R6NWw1014055;
- Thu, 27 Jun 2019 06:27:43 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=oracle.com;
- h=date : from : to : cc
- : subject : message-id : references : mime-version : content-type :
- in-reply-to; s=corp-2018-07-02;
- bh=GDKJKNHOZeHmmW0m1iW1ic8ltOoO02ccTD0gSIZf2sE=;
- b=M7YixM67nzGU+6jKyws0QLjh4CEOUFGT+FN6tvurgwz96NK+OPtlc8TIpwNe5coKjDv7
- hcJ2UcGfH2VCEf54yHP40nKq4W038XugHUjP+hE6dBKBe1bTu1snP1fYvBdv9yGuSmEf
- qKwrCqs4ylUZa7HSTOeJth73R9LEV6j3yy3QXyujSFNlDaJ8JvFEG2J+5C6QyOCtvViw
- sPxeGXzCRWNXEdnMAkdljICZDWeuOYiEW9r2lrS3KWWkwj8FjbCsgD+x1lIGY0y8Vl5u
- Y9MocJ9LnLNkLlpQcUnE6QGpb4qOKgSDWhlorMIgKDm/o/em0LfDSJksF0KwfoUMdpA2 WA== 
-Received: from aserp3020.oracle.com (aserp3020.oracle.com [141.146.126.70])
- by userp2130.oracle.com with ESMTP id 2t9brteat4-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Thu, 27 Jun 2019 06:27:43 +0000
-Received: from pps.filterd (aserp3020.oracle.com [127.0.0.1])
- by aserp3020.oracle.com (8.16.0.27/8.16.0.27) with SMTP id x5R6QroX070945;
- Thu, 27 Jun 2019 06:27:42 GMT
-Received: from aserv0122.oracle.com (aserv0122.oracle.com [141.146.126.236])
- by aserp3020.oracle.com with ESMTP id 2t9p6v5843-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Thu, 27 Jun 2019 06:27:42 +0000
-Received: from abhmp0009.oracle.com (abhmp0009.oracle.com [141.146.116.15])
- by aserv0122.oracle.com (8.14.4/8.14.4) with ESMTP id x5R6Rccp032271;
- Thu, 27 Jun 2019 06:27:39 GMT
-Received: from kadam (/41.57.98.10) by default (Oracle Beehive Gateway v4.0)
- with ESMTP ; Wed, 26 Jun 2019 23:27:37 -0700
-Date: Thu, 27 Jun 2019 09:27:29 +0300
-From: Dan Carpenter <dan.carpenter@oracle.com>
-To: Stefan Wahren <wahrenst@gmx.net>
-Subject: Re: [PATCH V2] staging: bcm2835-camera: Restore return behavior of
- ctrl_set_bitrate()
-Message-ID: <20190627062729.GB5715@kadam>
-References: <1561564091-14248-1-git-send-email-wahrenst@gmx.net>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <1561564091-14248-1-git-send-email-wahrenst@gmx.net>
-User-Agent: Mutt/1.9.4 (2018-02-28)
-X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9300
- signatures=668687
-X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 suspectscore=0
- malwarescore=0
- phishscore=0 bulkscore=0 spamscore=0 mlxscore=0 mlxlogscore=999
- adultscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.0.1-1810050000 definitions=main-1906270072
-X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9300
- signatures=668687
-X-Proofpoint-Spam-Details: rule=notspam policy=default score=0
- priorityscore=1501 malwarescore=0
- suspectscore=0 phishscore=0 bulkscore=0 spamscore=0 clxscore=1011
- lowpriorityscore=0 mlxscore=0 impostorscore=0 mlxlogscore=999 adultscore=0
- classifier=spam adjust=0 reason=mlx scancount=1 engine=8.0.1-1810050000
- definitions=main-1906270073
+ id 1hgNyr-0002FW-0W
+ for linux-arm-kernel@lists.infradead.org; Thu, 27 Jun 2019 06:34:02 +0000
+Received: from lupine.hi.pengutronix.de
+ ([2001:67c:670:100:3ad5:47ff:feaf:1a17] helo=lupine)
+ by metis.ext.pengutronix.de with esmtp (Exim 4.92)
+ (envelope-from <p.zabel@pengutronix.de>)
+ id 1hgNyg-00037l-N0; Thu, 27 Jun 2019 08:33:50 +0200
+Message-ID: <1561617229.4216.1.camel@pengutronix.de>
+Subject: Re: [PATCH] media: staging/imx: Fix NULL deref in
+ find_pipeline_entity()
+From: Philipp Zabel <p.zabel@pengutronix.de>
+To: Steve Longerbeam <slongerbeam@gmail.com>, linux-media@vger.kernel.org
+Date: Thu, 27 Jun 2019 08:33:49 +0200
+In-Reply-To: <20190626185225.11992-1-slongerbeam@gmail.com>
+References: <20190626185225.11992-1-slongerbeam@gmail.com>
+X-Mailer: Evolution 3.22.6-1+deb9u2 
+Mime-Version: 1.0
+X-SA-Exim-Connect-IP: 2001:67c:670:100:3ad5:47ff:feaf:1a17
+X-SA-Exim-Mail-From: p.zabel@pengutronix.de
+X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
+ SAEximRunCond expanded to false
+X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190626_232756_226772_8D6C82AF 
-X-CRM114-Status: GOOD (  10.26  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20190626_233401_049860_3A3F0677 
+X-CRM114-Status: GOOD (  14.44  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [156.151.31.86 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -110,23 +64,52 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devel@driverdev.osuosl.org, Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Madhumitha Prabakaran <madhumithabiw@gmail.com>, Eric Anholt <eric@anholt.net>,
- linux-rpi-kernel@lists.infradead.org,
- Dave Stevenson <dave.stevenson@raspberrypi.org>,
- linux-arm-kernel@lists.infradead.org
+Cc: "open list:STAGING SUBSYSTEM" <devel@driverdev.osuosl.org>,
+ Fabio Estevam <festevam@gmail.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Sascha Hauer <s.hauer@pengutronix.de>,
+ open list <linux-kernel@vger.kernel.org>, NXP Linux Team <linux-imx@nxp.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>, Shawn Guo <shawnguo@kernel.org>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Thanks!
+On Wed, 2019-06-26 at 11:52 -0700, Steve Longerbeam wrote:
+> Fix a cut&paste error in find_pipeline_entity(). The start entity must be
+> passed to media_entity_to_video_device() in find_pipeline_entity(), not
+> pad->entity. The pad is only put to use later, after determining the start
+> entity is not the entity being searched for.
+> 
+> Fixes: 3ef46bc97ca2 ("media: staging/imx: Improve pipeline searching")
+> 
+> Reported-by: Colin Ian King <colin.king@canonical.com>
+> Signed-off-by: Steve Longerbeam <slongerbeam@gmail.com>
+> ---
+>  drivers/staging/media/imx/imx-media-utils.c | 2 +-
+>  1 file changed, 1 insertion(+), 1 deletion(-)
+> 
+> diff --git a/drivers/staging/media/imx/imx-media-utils.c b/drivers/staging/media/imx/imx-media-utils.c
+> index b5b8a3b7730a..6fb88c22ee27 100644
+> --- a/drivers/staging/media/imx/imx-media-utils.c
+> +++ b/drivers/staging/media/imx/imx-media-utils.c
+> @@ -842,7 +842,7 @@ find_pipeline_entity(struct media_entity *start, u32 grp_id,
+>  		if (sd->grp_id & grp_id)
+>  			return &sd->entity;
+>  	} else if (buftype && is_media_entity_v4l2_video_device(start)) {
+> -		vfd = media_entity_to_video_device(pad->entity);
+> +		vfd = media_entity_to_video_device(start);
+>  		if (buftype == vfd->queue->type)
+>  			return &vfd->entity;
+>  	}
 
-Acked-by: Dan Carpenter <dan.carpenter@oracle.com>
+Reviewed-by: Philipp Zabel <p.zabel@pengutronix.de>
 
-regards,
-dan carpenter
-
+regards
+Philipp
 
 _______________________________________________
 linux-arm-kernel mailing list
