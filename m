@@ -2,86 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DF63458604
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 27 Jun 2019 17:38:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7B99A58617
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 27 Jun 2019 17:40:27 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=53qHRPl593q+yemlJlb0NEt6Ci0bBcNiwJs5E+hWGJM=; b=s2yMKbQvfWulMA
-	z8y83zM1IZcA4KZn1yjAgdkn33NMMAf8DkRazxV91its+5BRWVbGo2GrnaYFZ0cmJDvWCJZCY62KL
-	Y5bXIPd+R8G++JqGoV4bDIdDVyGL4fGepedKOlJuNrK870Ttt9XqK6Vwr5rupft1aNwmjNVDS5X45
-	c0Ac6LS+RKngmTBT/Q0uNXc7bRHIBcLSZbQeIouH7d4KtqwzYSbgU9IYGPjqo2R1UTKXdqxZ78tW7
-	Bad6W07eJJsf2dcF5+KqeUSdPph2+2hQOBJrr1cQqRqaXSMPCHxAqIZcwMXbcxrtxYtyMKvO+zxQP
-	fCxMpz9QJbPZfkrZ3YXA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=pUBoXOTVJzN+kvwU+bJ6/6jbdPeBaEDmnWjlQ4nJMfc=; b=qmfCl4A0rMP/CxCfCANEj8oY5
+	aX5UxntJ1xRrbHaz7iLTPZ7mFNGSHtffSnhnwlDmbXJCef38trlRN4XyJ61dvvsu9d7z+gIZgfEcg
+	wM06SsIwJvTzqt+sssqP8kxnhIcWPg3uEZgRcudUYi2k3q0Eee7Hf9P/ad7nNMcopDJ0E4gbimRy2
+	qBkmh8wOhwzXdHKae6Wu81ERJYKAFxoImCjyhgkSNB2B3ivC6wZLLB1CvBoxrN02rrx2OiCEaeBHi
+	b3mWtTKYENW44V6hDqdncBx763ldlqiIA62lRrkKfNCREI0N6dE8bm41pDljZKFNxBgKj/8eY8p4p
+	WW8O8PJZg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hgWTI-0002K6-0C; Thu, 27 Jun 2019 15:38:00 +0000
-Received: from mail-io1-xd42.google.com ([2607:f8b0:4864:20::d42])
+	id 1hgWVb-0004Oj-I8; Thu, 27 Jun 2019 15:40:23 +0000
+Received: from hqemgate16.nvidia.com ([216.228.121.65])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hgWO7-0006YB-MS
- for linux-arm-kernel@lists.infradead.org; Thu, 27 Jun 2019 15:32:42 +0000
-Received: by mail-io1-xd42.google.com with SMTP id n5so5670553ioc.7
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 27 Jun 2019 08:32:39 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=59Nn5nbRZMXaiSawckn2aQ0fMAxX2U20XTjPkPEFxrM=;
- b=VmJcIzz2oyCbL3ltguvci+laxVDoe5qs6Vvm19EijK1BOvGGG9BGPVrb6Slx88G/8I
- Xw8APQexZMaGSggJhNV/JASgUuylKtgQ/D20Fcp0Nuz/9NTl+/rWjPiHQHZ+Lyl5/8sz
- znKErZCuNbs68f29ekSCZoaATgcvpMTKGrDeguV5jAEoRUqv3RSAAhCAyxeLo+QEtWmC
- p3qnZUzhcusy5LRytRb9DUG5bDqy4/G+F76EmcwSH/CNd8k26UxCBkV6UTKcbXhbzBiC
- etOgLhxJHu8ISguqUZklDcaatKaCS7I2/LIyd9xxfsLk48v8jCnLi8tHIkCSmB+J0MbD
- 11jw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=59Nn5nbRZMXaiSawckn2aQ0fMAxX2U20XTjPkPEFxrM=;
- b=VL7xcKihn4CclBQtBTGll0cd0e3Mv9hxEOMcw1BnsleUgbaRXDbIvdzT3ppOHlkDaN
- n9s7H7dE5VH4B3tWy+PZg4LKPMf/jw6EB00ThzL1AXfrlb9pByL8xmpdZv1FoMP5lCtm
- y7AVJP+z9R/nUBbnJqhdlM+j91AkjkjtxHNGpeYTuMwJFbdCDYIV2XO++MTaCaoHqR70
- 7InElNIlJTqSo63/z5w0NkEnofyr83oFVMmzBIH65HjhGR7Q8o9iQfHPpE7BUjtomMDP
- HzucSCDgBalcIwAch0uMScObiw/2kKEaITUqLcDZeWvxizWNLWL01B6gs/yi3Q1uqkBa
- fKXA==
-X-Gm-Message-State: APjAAAVUTIBRlP3k0o0ER4sWXq7dmhNErnRzshexJJ367Z+MF+6rR8yC
- hUbtSi6AodVQ6yLJnmooh/NRQ2ZgJKj9ToKw+ZI=
-X-Google-Smtp-Source: APXvYqws3mmBGC1Nm5BMf5lOqIkEiXBt4nu6Kkfl1ZOPSvzUJsjmwD4gIgkLWMsvDM5nmAawlgv+cqbhhf0ZmY71Jfw=
-X-Received: by 2002:a02:a38d:: with SMTP id y13mr5124660jak.68.1561649558019; 
- Thu, 27 Jun 2019 08:32:38 -0700 (PDT)
+ id 1hgWOl-0006xV-5l
+ for linux-arm-kernel@lists.infradead.org; Thu, 27 Jun 2019 15:33:23 +0000
+Received: from hqpgpgate102.nvidia.com (Not Verified[216.228.121.13]) by
+ hqemgate16.nvidia.com (using TLS: TLSv1.2, DES-CBC3-SHA)
+ id <B5d14e1bc0002>; Thu, 27 Jun 2019 08:33:16 -0700
+Received: from hqmail.nvidia.com ([172.20.161.6])
+ by hqpgpgate102.nvidia.com (PGP Universal service);
+ Thu, 27 Jun 2019 08:33:17 -0700
+X-PGP-Universal: processed;
+ by hqpgpgate102.nvidia.com on Thu, 27 Jun 2019 08:33:17 -0700
+Received: from [10.25.73.176] (10.124.1.5) by HQMAIL107.nvidia.com
+ (172.20.187.13) with Microsoft SMTP Server (TLS) id 15.0.1473.3; Thu, 27 Jun
+ 2019 15:33:11 +0000
+Subject: Re: [PATCH V11 03/12] PCI: dwc: Perform dbi regs write lock towards
+ the end
+To: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
+References: <20190624091505.1711-1-vidyas@nvidia.com>
+ <20190624091505.1711-4-vidyas@nvidia.com>
+ <20190627145800.GD3782@e121166-lin.cambridge.arm.com>
+X-Nvconfidentiality: public
+From: Vidya Sagar <vidyas@nvidia.com>
+Message-ID: <ecae46b4-54cc-7f4d-5a86-908431fd472a@nvidia.com>
+Date: Thu, 27 Jun 2019 21:03:08 +0530
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:60.0) Gecko/20100101
+ Thunderbird/60.7.2
 MIME-Version: 1.0
-References: <20190603083005.4304-1-peng.fan@nxp.com>
- <20190603083005.4304-3-peng.fan@nxp.com>
- <CABb+yY1wW-arSMQSYjrezXOZ0Ar_shAr78MOyUD3hBxXohWx3g@mail.gmail.com>
- <AM0PR04MB44813A4DE544E53EB7B6F02B88E30@AM0PR04MB4481.eurprd04.prod.outlook.com>
- <CABb+yY38MAZqVOhjyV+GByPvpFcTfKbNG1rJ8YDRd1vi1F4fqg@mail.gmail.com>
- <AM0PR04MB44814D3BD59033ECDDE3094C88E20@AM0PR04MB4481.eurprd04.prod.outlook.com>
- <e49278ba-f734-e019-ab44-53afe558bd85@gmail.com>
- <CABb+yY2B_bGqZhd3HRm2qOwGNXG8UYvRo0_uBmwGbx_1gA-vfA@mail.gmail.com>
- <20190627090903.GD13572@e107155-lin>
-In-Reply-To: <20190627090903.GD13572@e107155-lin>
-From: Jassi Brar <jassisinghbrar@gmail.com>
-Date: Thu, 27 Jun 2019 10:32:27 -0500
-Message-ID: <CABb+yY1aVbKfuqX=GvTzyjkgRXB3DXLvgjZARGn8k8m2R2vSqA@mail.gmail.com>
-Subject: Re: [PATCH V2 2/2] mailbox: introduce ARM SMC based mailbox
-To: Sudeep Holla <sudeep.holla@arm.com>
+In-Reply-To: <20190627145800.GD3782@e121166-lin.cambridge.arm.com>
+X-Originating-IP: [10.124.1.5]
+X-ClientProxiedBy: HQMAIL104.nvidia.com (172.18.146.11) To
+ HQMAIL107.nvidia.com (172.20.187.13)
+Content-Language: en-US
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nvidia.com; s=n1;
+ t=1561649596; bh=i+FMOxZ9zRQNIxD/tJQJP96BLZYES68rpDNzKXH1Hoo=;
+ h=X-PGP-Universal:Subject:To:CC:References:X-Nvconfidentiality:From:
+ Message-ID:Date:User-Agent:MIME-Version:In-Reply-To:
+ X-Originating-IP:X-ClientProxiedBy:Content-Type:Content-Language:
+ Content-Transfer-Encoding;
+ b=NI59+G6dB0bbFZOAVMh76agA4AL6+J8djBbkbKJCvGiynhoRhcuiRRXcZCNx3MGK1
+ 30Y9IIl8j16nKlv3yyuYUj5y0M1WwcI4yOjPK2rCeDFZkYJVUIgpRjL7df+4Sovqdq
+ hnXAawpejYqElyJdckiVWzKkFZaPTtP4qq2SOmzM97x/Uk4NZkZuCdsCJBw3Yc8lhF
+ 7MGzi5MrJ5adaeaH443AMqbarB9ll7Xl/dywfrpDFmqWZuvqIymMz6Yittq6w2loqH
+ L47JjkDApJJUcyWLy0kdPGhJQX5DJ2ZYAr6PDf5TCoJ/2d2FQYHERNf8OKXqk1dEI0
+ nkQPmwugOQuHg==
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190627_083239_887357_84844032 
-X-CRM114-Status: GOOD (  26.73  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190627_083319_448063_88A531DA 
+X-CRM114-Status: GOOD (  16.27  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:d42 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (jassisinghbrar[at]gmail.com)
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [216.228.121.65 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -89,6 +83,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -100,86 +95,137 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- Devicetree List <devicetree@vger.kernel.org>, Peng Fan <peng.fan@nxp.com>,
- Florian Fainelli <f.fainelli@gmail.com>,
- "festevam@gmail.com" <festevam@gmail.com>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Rob Herring <robh+dt@kernel.org>, dl-linux-imx <linux-imx@nxp.com>, ",
- Sascha Hauer" <kernel@pengutronix.de>, Andre Przywara <andre.przywara@arm.com>,
- "van.freenix@gmail.com" <van.freenix@gmail.com>,
- Shawn Guo <shawnguo@kernel.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, mperttunen@nvidia.com,
+ mmaddireddy@nvidia.com, linux-pci@vger.kernel.org, catalin.marinas@arm.com,
+ will.deacon@arm.com, linux-kernel@vger.kernel.org, kthota@nvidia.com,
+ kishon@ti.com, linux-tegra@vger.kernel.org, robh+dt@kernel.org,
+ thierry.reding@gmail.com, gustavo.pimentel@synopsys.com, jingoohan1@gmail.com,
+ bhelgaas@google.com, digetx@gmail.com, jonathanh@nvidia.com,
+ linux-arm-kernel@lists.infradead.org, sagar.tv@gmail.com
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Jun 27, 2019 at 4:09 AM Sudeep Holla <sudeep.holla@arm.com> wrote:
->
-> On Wed, Jun 26, 2019 at 01:27:41PM -0500, Jassi Brar wrote:
-> > On Wed, Jun 26, 2019 at 11:44 AM Florian Fainelli <f.fainelli@gmail.com> wrote:
-> > >
-> > > On 6/26/19 6:31 AM, Peng Fan wrote:
-> > > >>> The firmware driver might not have func-id, such as SCMI/SCPI.
-> > > >>> So add an optional func-id to let smc mailbox driver could
-> > > >>> use smc SiP func id.
-> > > >>>
-> > > >> There is no end to conforming to protocols. Controller drivers should
-> > > >> be written having no particular client in mind.
-> > > >
-> > > > If the func-id needs be passed from user, then the chan_id suggested
-> > > > by Sudeep should also be passed from user, not in mailbox driver.
-> > > >
-> > > > Jassi, so from your point, arm_smc_send_data just send a0 - a6
-> > > > to firmware, right?
-> > > >
-> > > > Sudeep, Andre, Florian,
-> > > >
-> > > > What's your suggestion? SCMI not support, do you have
-> > > > plan to add smc transport in SCMI?
-> > >
-> > > On the platforms that I work with, we have taken the liberty of
-> > > implementing SCMI in our monitor firmware because the other MCU we use
-> > > for dynamic voltage and frequency scaling did not have enough memory to
-> > > support that and we still had the ability to make that firmware be
-> > > trusted enough we could give it power management responsibilities. I
-> > > would certainly feel more comfortable if the SCMI specification was
-> > > amended to indicate that the Agent could be such a software entity,
-> > > still residing on the same host CPU as the Platform(s), but if not,
-> > > that's fine.
-> > >
-> > > This has lead us to implement a mailbox driver that uses a proprietary
-> > > SMC call for the P2A path ("tx" channel) and the return being done via
-> > > either that same SMC or through SGI. You can take a look at it in our
-> > > downstream tree here actually:
-> > >
-> > > https://github.com/Broadcom/stblinux-4.9/blob/master/linux/drivers/mailbox/brcmstb-mailbox.c
-> > >
-> > > If we can get rid of our own driver and uses a standard SMC based
-> > > mailbox driver that supports our use case that involves interrupts (we
-> > > can always change their kind without our firmware/boot loader since FDT
-> > > is generated from that component), that would be great.
-> > >
-> > static irqreturn_t brcm_isr(void)
-> > {
-> >          mbox_chan_received_data(&chans[0], NULL);
-> >          return IRQ_HANDLED;
-> > }
-> >
-> > Sorry, I fail to understand why the irq can't be moved inside the
-> > client driver itself? There can't be more cost to it and there
-> > definitely is no functionality lost.
->
-> What if there are multiple clients ?
->
-There is a flag IRQF_SHARED for such situations.
-(good to see you considering multiple clients per channel as a legit scenario)
+On 6/27/2019 8:28 PM, Lorenzo Pieralisi wrote:
+> On Mon, Jun 24, 2019 at 02:44:56PM +0530, Vidya Sagar wrote:
+>> Remove multiple write enable and disable sequences of dbi registers as
+>> Tegra194 implements writes to BAR-0 register (offset: 0x10) controlled by
+>> DBI write-lock enable bit thereby not allowing any further writes to BAR-0
+>> register in config space to take place. Hence enabling write permission at
+>> the start of function and disabling the same only towards the end.
+> 
+> I do not understand what this patch does, I would like to rephrase
+> the commit log in a way that is easier to parse.
+> 
+> In particular I do not get what you mean in relation to BAR-0, I am
+> confused, please clarify.
+> 
+> Lorenzo
+Well, some of the Synopsys DesignWare core's DBI registers are protected with a lock
+without which, they are read-only by default. Existing code in dw_pcie_setup_rc() API
+tries to unlock and lock multiple times whenever it wants to update those write-protected
+registers. This patch attempts to unlock all such write-protected registers for writing
+once in the beginning of the function and lock them back towards the end.
+As far as BAR-0 register (which is at offset 0x10 in DBI space... nothing but the
+config space) in Tegra194 is concerned, it is one of those registers to which
+writes are protected. I could have added unlock/lock pair around accessing this register,
+but that would bloat this API with one more pair of unlock/lock, instead I chose to remove
+unlock/lock pairs for all protected registers and have unlock in the beginning and lock
+towards the end.
 
-> And I assume you are referring to case like this where IRQ is not tied
-> to the mailbox IP.
->
-Yes, and that is the reason the irq should not be managed by the mailbox driver.
+-Vidya Sagar
+
+> 
+>> Signed-off-by: Vidya Sagar <vidyas@nvidia.com>
+>> Reviewed-by: Thierry Reding <treding@nvidia.com>
+>> Acked-by: Jingoo Han <jingoohan1@gmail.com>
+>> ---
+>> Changes since [v10]:
+>> * None
+>>
+>> Changes since [v9]:
+>> * None
+>>
+>> Changes since [v8]:
+>> * None
+>>
+>> Changes since [v7]:
+>> * None
+>>
+>> Changes since [v6]:
+>> * None
+>>
+>> Changes since [v5]:
+>> * Moved write enable to the beginning of the API and write disable to the end
+>>
+>> Changes since [v4]:
+>> * None
+>>
+>> Changes since [v3]:
+>> * None
+>>
+>> Changes since [v2]:
+>> * None
+>>
+>> Changes since [v1]:
+>> * None
+>>
+>>   drivers/pci/controller/dwc/pcie-designware-host.c | 14 ++++++++------
+>>   1 file changed, 8 insertions(+), 6 deletions(-)
+>>
+>> diff --git a/drivers/pci/controller/dwc/pcie-designware-host.c b/drivers/pci/controller/dwc/pcie-designware-host.c
+>> index f93252d0da5b..d3156446ff27 100644
+>> --- a/drivers/pci/controller/dwc/pcie-designware-host.c
+>> +++ b/drivers/pci/controller/dwc/pcie-designware-host.c
+>> @@ -628,6 +628,12 @@ void dw_pcie_setup_rc(struct pcie_port *pp)
+>>   	u32 val, ctrl, num_ctrls;
+>>   	struct dw_pcie *pci = to_dw_pcie_from_pp(pp);
+>>   
+>> +	/*
+>> +	 * Enable DBI read-only registers for writing/updating configuration.
+>> +	 * Write permission gets disabled towards the end of this function.
+>> +	 */
+>> +	dw_pcie_dbi_ro_wr_en(pci);
+>> +
+>>   	dw_pcie_setup(pci);
+>>   
+>>   	if (!pp->ops->msi_host_init) {
+>> @@ -650,12 +656,10 @@ void dw_pcie_setup_rc(struct pcie_port *pp)
+>>   	dw_pcie_writel_dbi(pci, PCI_BASE_ADDRESS_1, 0x00000000);
+>>   
+>>   	/* Setup interrupt pins */
+>> -	dw_pcie_dbi_ro_wr_en(pci);
+>>   	val = dw_pcie_readl_dbi(pci, PCI_INTERRUPT_LINE);
+>>   	val &= 0xffff00ff;
+>>   	val |= 0x00000100;
+>>   	dw_pcie_writel_dbi(pci, PCI_INTERRUPT_LINE, val);
+>> -	dw_pcie_dbi_ro_wr_dis(pci);
+>>   
+>>   	/* Setup bus numbers */
+>>   	val = dw_pcie_readl_dbi(pci, PCI_PRIMARY_BUS);
+>> @@ -687,15 +691,13 @@ void dw_pcie_setup_rc(struct pcie_port *pp)
+>>   
+>>   	dw_pcie_wr_own_conf(pp, PCI_BASE_ADDRESS_0, 4, 0);
+>>   
+>> -	/* Enable write permission for the DBI read-only register */
+>> -	dw_pcie_dbi_ro_wr_en(pci);
+>>   	/* Program correct class for RC */
+>>   	dw_pcie_wr_own_conf(pp, PCI_CLASS_DEVICE, 2, PCI_CLASS_BRIDGE_PCI);
+>> -	/* Better disable write permission right after the update */
+>> -	dw_pcie_dbi_ro_wr_dis(pci);
+>>   
+>>   	dw_pcie_rd_own_conf(pp, PCIE_LINK_WIDTH_SPEED_CONTROL, 4, &val);
+>>   	val |= PORT_LOGIC_SPEED_CHANGE;
+>>   	dw_pcie_wr_own_conf(pp, PCIE_LINK_WIDTH_SPEED_CONTROL, 4, val);
+>> +
+>> +	dw_pcie_dbi_ro_wr_dis(pci);
+>>   }
+>>   EXPORT_SYMBOL_GPL(dw_pcie_setup_rc);
+>> -- 
+>> 2.17.1
+>>
+
 
 _______________________________________________
 linux-arm-kernel mailing list
