@@ -2,102 +2,94 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CFF9957B50
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 27 Jun 2019 07:25:50 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 09C3657C67
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 27 Jun 2019 08:47:45 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
-	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=dEExXKBwtoNgV4D9oVJpgGeEA36jAU1e1Uf8PmhBj5A=; b=a2WwA1lwhiZQ9S
-	VViernNIm8RU87v6KTAzIiuW9VzH9RbP/ZuAvtgc6E7AMO7Fw05q0bO3z5EClozRj9G5DITMtbvkK
-	6yZSwu2NGulfHXAJLjkZ1cb9jB6Jh6xRI2VNgtEchan8zW6wG0Rz2JGJfC2Uy22ehkTfLjqyrWame
-	kKwLwxMdFOCM8ZqlDhjAs0J2Uw3xih9SNZLi0G8G1PdEh9vf4lmgjMRkDsWj1n2cxXtzBJHGcV6lr
-	70Bxw02GM1j3znY3uAWJJqtcYkgPqs9EoikYCm6X8iUi540mISkzOptdlWta/nLh+uau+zz1LPlze
-	XsW/zZvHQo5y7sJY+QGA==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=q2b+axuv/aIyNkVhnnLC80y0iKBQKAKUC6p+qBQkyFA=; b=ACZKkN479Z53Ac
+	gYFjQS1L3ALdpkylhOxId+ZfcmjyNOPhk6jnQ8WzH3D62TlL/IwYdi05OSDNPeWSIzdYZeEvYqveW
+	DSqRmGFcOJ2EaWmsuEgIk8Y69EnekhXsp+NgKHXnQd5imuvtP5qU9BBtVTk7lmi0SSx7eNK0LFCN9
+	yWbgSzw5Y4/b9DANYXTrjJbJcBGMDCLC9YvlpWzYGZbSAfTBLysyw6p9ZEK84DVQBEZREN6e3s3Th
+	UfdC5mYTG6CXk6Xsf47uj3Re3mNMT+ZRMfQFQP88+WQ9HLrqp4Uy2bGBI/6OMpFRwGdk4b7l+wQ67
+	/xyQSIWOVbKDZhJdD9Hw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hgMuo-0005rp-Es; Thu, 27 Jun 2019 05:25:46 +0000
-Received: from casper.infradead.org ([2001:8b0:10b:1236::1])
+	id 1hgOC5-000255-8I; Thu, 27 Jun 2019 06:47:41 +0000
+Received: from merlin.infradead.org ([2001:8b0:10b:1231::1])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hgMpO-0006ep-7l
- for linux-arm-kernel@bombadil.infradead.org; Thu, 27 Jun 2019 05:20:10 +0000
+ id 1hgO8H-0006KM-FM
+ for linux-arm-kernel@bombadil.infradead.org; Thu, 27 Jun 2019 06:43:45 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=infradead.org; s=casper.20170209; h=Content-Transfer-Encoding:Content-Type:
- MIME-Version:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:Content-ID:
- Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
- :Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
- List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=BTKCxnhTazrPesoHKDV4p8sRapqVbrsGw9bOncK6AZU=; b=Ohy7KFF+VSNIWjRSzvtUB30GyE
- ELNu0OD+fJdGgcosKy60qjE/p92M/rAkszLFoRyzMmfkWyQECHqtMN5tXiECffGHM2X2uPMoXRSU3
- hsHzV9vIF7CAnXrKakzAGcNAPeH4Ww9ADDPjSCgcfT/+WFE5ItXYNwk++7lYxHvkHd10SSUyKgY1q
- v24eAcxUUdKS/ew+EuWA4yd5y4lwOzp9CFwUPepuGFtXQnXu1QAPCqVEg0ORrBAnTeuLE6/I8EnMl
- wzN2UEUvB/J9OSPRLv9b6qfvuwibxp0U9llEd8XhqDwApD0IdbZO/ZnUCmVcHVgK3L/2RS39CIgcE
- s6oEbL6A==;
-Received: from mail-lj1-x241.google.com ([2a00:1450:4864:20::241])
- by casper.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hgKVk-0004zY-EI
- for linux-arm-kernel@lists.infradead.org; Thu, 27 Jun 2019 02:51:46 +0000
-Received: by mail-lj1-x241.google.com with SMTP id k18so646971ljc.11
+ d=infradead.org; s=merlin.20170209; h=Content-Type:Cc:To:Subject:Message-ID:
+ Date:From:In-Reply-To:References:MIME-Version:Sender:Reply-To:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=BagUEWU4JMaHfO4zEh4KFO/Co7whzZQUVnKPwZipvek=; b=GJ6tHAnb579Sqm10c9MRUDI9L
+ ZhmSQvd30NQqmkVcmDpsJdeVnbRM1/x5SiK5MOaLUfW1nFrxK2Q7zoN3wikDph+3WZPZaGtACSYRB
+ HsZpG7+T+qUL4E9DKJWiW/7p8Kih55A2LfkbKe1DI8iAj6JzHB54fwLE/KO5OVv5iQyDQA13Gxv6A
+ xF15wwGDS66MewYPBpKKkAYKWoxJ5FwvwNDDKtY/zwQ6Mst1ea7dO1ZuJXMc1W39DZKHPe3x3d06c
+ HfrGv1v23rA6yQFJDu16kCvIjiPnNvm0NNEqL+EPhPU4IyVngystq+VtYAbgd2IeDNhuNY1ceaQuw
+ kq+Qle9FA==;
+Received: from mail-io1-xd29.google.com ([2607:f8b0:4864:20::d29])
+ by merlin.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hgKaJ-00067f-K9
+ for linux-arm-kernel@lists.infradead.org; Thu, 27 Jun 2019 02:56:29 +0000
+Received: by mail-io1-xd29.google.com with SMTP id m24so1457464ioo.2
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 26 Jun 2019 19:51:41 -0700 (PDT)
+ Wed, 26 Jun 2019 19:56:25 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=lixom-net.20150623.gappssmtp.com; s=20150623;
- h=date:from:to:cc:subject:message-id:mime-version:content-disposition
- :content-transfer-encoding:user-agent;
- bh=BTKCxnhTazrPesoHKDV4p8sRapqVbrsGw9bOncK6AZU=;
- b=gO9JdY7D9q0BkzIBQI9C0ktBuctOyqDjPah6J+45Rj43WFfPDhuCyeicU4enOUY7dm
- VuIyQqJxWnIaqzMkznyd2uO7XSahMortHR8YUaG7dOv+zCmmJ1Y5eauotob7cR/Fhb5L
- jFqiM8NrmAZAiUMZPgccGP9QABRsB2l3TGnhyfYqVFeObOsabYQoXlipLoE+C17oT6JQ
- 4zvPZFUI4RneAwmz1DI/eqPpfh20xre5+hOY/hCX4s1JxzqgMEXwfBIZ6HSG2js3uXB6
- dLDFyLYu+Q5PLs40TzONI8rcJRjDLyJ5Iz7buRXtJbYjJcEzM+R2CEUAvHQKrpwPA0hj
- auyQ==
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=BagUEWU4JMaHfO4zEh4KFO/Co7whzZQUVnKPwZipvek=;
+ b=YGhLEWHgOxYUTi12mztc4zACgIfgOFXXQtwVCDQdgZZ5Idb6wRBZ6SHIcYyqtZOGvP
+ Xvrdjqc6ovw7D82uYHVS63ATHXt2uHzigP8GDl+M4wO3mRX1pR87ESM0Af0gN2E+zdeC
+ 5aWa+HibGrO/Tpu2d+3ZbzBK2Nr2qzm12961fah4xcLctsMfF09nEG1X3NzXt9z9Yu1k
+ vkGrEO9z+kI/+xT+QU+2ZuJbFN+Ep6M37aYvqsL+5nF/ZsyENcU5GQpP0JVaxG/qbdse
+ CAgPGhMQYRUtdgYtBcaJFiRXgzxjGl7Pnkc7AWxasjIOZlKJP25fZHmHpXJlf9sUD7o8
+ kHrg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:mime-version
- :content-disposition:content-transfer-encoding:user-agent;
- bh=BTKCxnhTazrPesoHKDV4p8sRapqVbrsGw9bOncK6AZU=;
- b=NypGEUPOgFi6/CCzeePifo2/M9p0S/KMtl8Lv5mEpwmOlQmT8+o9pc3dxphJS3Hz4n
- G5Eo1R38t3aSvfV/2/oX80VfJ7ITj+7OgH7Wpo0vco64vP6fm6MCDUMlV13ed8pnqWSz
- NdRExzU++PRGcmZiRJHO4s2I2vHknZZicX7GPJ+UPvaupWMN/W4uMruk6EH+djimLvrc
- mqCXozRU5xRDZSVE6qmhZlhDmqSqsJikzfZrYCQ35B773Cb870BKFkKXjZllwr7XAlwW
- hVoWj+0qrj3v9HkHNHvmCnoI+s3xfh5w3GoryjfaxH4grIWIgsQzFoHbW0QfShC5XsG9
- BWdw==
-X-Gm-Message-State: APjAAAWjWpgsvJhHq1AFVMklQ/jqfj6QBqhdxKs7LNGD7EZhyaqUHKtv
- vRGQK8+vNHPyRd6FkWC4Rqk8x3F0bz5BlQ==
-X-Google-Smtp-Source: APXvYqwhLURgl+MsgWvofjbyRiAKbfjz5hDylTAkGa/+UG0J4j7UGT0bxctq8zcKUe2fAy2VfDC4bg==
-X-Received: by 2002:a2e:9198:: with SMTP id f24mr914481ljg.221.1561603838424; 
- Wed, 26 Jun 2019 19:50:38 -0700 (PDT)
-Received: from localhost (h85-30-9-151.cust.a3fiber.se. [85.30.9.151])
- by smtp.gmail.com with ESMTPSA id g68sm111896ljg.47.2019.06.26.19.50.37
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Wed, 26 Jun 2019 19:50:37 -0700 (PDT)
-Date: Wed, 26 Jun 2019 19:45:08 -0700
-From: Olof Johansson <olof@lixom.net>
-To: torvalds@linux-foundation.org, gregkh@linuxfoundation.org
-Subject: [GIT PULL] ARM: SoC fixes
-Message-ID: <20190627024508.x5opgsq4tjk32m6j@localhost>
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=BagUEWU4JMaHfO4zEh4KFO/Co7whzZQUVnKPwZipvek=;
+ b=UKY90IE8Q61LgN0GPYRPLSa/QHqokRw6hbjegWqd1eYqQWpTepF5kQ6YNW8nzGfjZE
+ JCvy1ri4SxJFgNbHk+TrkkeWc20x8QOcxzeKu2ckgP4xNyb2GGbIk4veprVeB2UX8Y3C
+ t/FmRmkjCe0GoEhEj4wI3qpiCz+EvrleO2GD1SZqHs9G47NkM07mVPM1owq/ZVsOfq9V
+ jMOoQJffgZ7IkCqn0pY7OBJ+Iu6b6ksgNKY2Mwx0PSrX9MV5+omqUDqYOrrTOEMO2ThH
+ dSrjga1zUaFcQspOd9BfNMxsChEOJAXkwCZhMLVses9hKPn6pnxNu1GBmE/iF3vZFtxD
+ wKDA==
+X-Gm-Message-State: APjAAAUj0cbD3DJe2Q4S53hNwYwKfd5LNNx/EqFlUGLVar7i0EIsoVM3
+ 9BBmwbcgQxwsFCTxhkXqhkaVylOAKIFw0f0UVOkFWA==
+X-Google-Smtp-Source: APXvYqyjwjH6PcvtE2d5Vc+6EVj/KlkhOIZ+KK8G/WFrida+Tfh6HoRg7rLd58y0rhwH3GzlJtI5y8fglRHWLesopwg=
+X-Received: by 2002:a5d:9282:: with SMTP id s2mr1744443iom.36.1561604124107;
+ Wed, 26 Jun 2019 19:55:24 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-User-Agent: NeoMutt/20170113 (1.7.2)
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190627_035144_531588_8805A1DF 
-X-CRM114-Status: GOOD (  13.15  )
-X-Spam-Score: 2.5 (++)
-X-Spam-Report: SpamAssassin version 3.4.2 on casper.infradead.org summary:
- Content analysis details:   (2.5 points, 5.0 required)
+References: <20190626135422.eebzw2nosygkzhy3@verge.net.au>
+In-Reply-To: <20190626135422.eebzw2nosygkzhy3@verge.net.au>
+From: Olof Johansson <olof@lixom.net>
+Date: Thu, 27 Jun 2019 10:55:12 +0800
+Message-ID: <CAOesGMgvQTPm-7iyvbns+rCG54vtppJwSWbT20BuggUBRcwknA@mail.gmail.com>
+Subject: Re: [Announce] Renesas SoC Co-Maintainer
+To: Simon Horman <horms@verge.net.au>
+X-Spam-Note: CRM114 invocation failed
+X-Spam-Score: 0.0 (/)
+X-Spam-Report: SpamAssassin version 3.4.2 on merlin.infradead.org summary:
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:241 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:d29 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- 2.5 SUSPICIOUS_RECIPS      Similar addresses in recipient list
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -109,91 +101,46 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: olof@lixom.net, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Cc: Arnd Bergmann <arnd@arndb.de>, Geert Uytterhoeven <geert+renesas@glider.be>,
+ Kevin Hilman <khilman@kernel.org>, Magnus Damm <magnus.damm@gmail.com>,
+ Linux-Renesas <linux-renesas-soc@vger.kernel.org>,
+ ARM-SoC Maintainers <arm@kernel.org>,
+ Linux ARM Mailing List <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Linus, Greg,
+Hi,
 
-The following changes since commit cd3967bee004bcbd142403698d658166fa618c9e:
+On Wed, Jun 26, 2019 at 9:54 PM Simon Horman <horms@verge.net.au> wrote:
+>
+> Hi,
+>
+> at the end of the v5.3 upstream kernel development cycle I will be stepping
+> down from my role as Renesas SoC maintainer. And starting with the v5.4
+> development cycle Geert Uytterhoeven will be taking over this role.
+>
+> I'd like to take a moment to thank everyone for the support that they have
+> shown to me over the years. And for the contributions of many to allow
+> the upstream kernel to support a wide range of features on a wide range
+> of 32 and 64bit ARM based Renesas SoCs out of the box.
+>
+> Lastly, I'd like to wish Geert all the best in his new role.
 
-  soc: ixp4xx: npe: Fix an IS_ERR() vs NULL check in probe (2019-06-18 06:4=
-7:59 -0700)
 
-are available in the git repository at:
+Renesas has been a very high volume platform with lots of upstream
+participation, and it's been running smoothly for a long time. That
+takes a lot of work, even if it's not always visible.
 
-  git://git.kernel.org/pub/scm/linux/kernel/git/soc/soc.git tags/armsoc-fix=
-es
+Thanks a lot for all your work, Simon!
 
-for you to fetch changes up to e73f65930f8880fafaccf2cc1e5c44272e9523ec:
+Geert -- feel free to find us on IRC or email if you have questions as
+we get going. Sometimes it takes a few iterations to align workflows,
+but you've probably been observing for a while already. :)
 
-  Merge tag 'imx-fixes-5.2-3' of git://git.kernel.org/pub/scm/linux/kernel/=
-git/shawnguo/linux into arm/fixes (2019-06-25 04:20:08 -0700)
 
-----------------------------------------------------------------
-ARM: SoC fixes
-
-A smaller batch of fixes, nothing that stands out as risky or scary.
-
-Mostly DTS tweaks for a few issues:
- - GPU fixlets for Meson
- - CPU idle fix for LS1028A
- - PWM interrupt fixes for i.MX6UL
-
-Also, enable a driver (FSL_EDMA) on arm64 defconfig, and a warning and
-two MAINTAINER tweaks.
-
-----------------------------------------------------------------
-Arnd Bergmann (1):
-      ARM: omap2: remove incorrect __init annotation
-
-Florian Fainelli (2):
-      MAINTAINERS: BCM2835: Add internal Broadcom mailing list
-      MAINTAINERS: BCM53573: Add internal Broadcom mailing list
-
-Li Yang (1):
-      arm64: defconfig: Enable FSL_EDMA driver
-
-Linus Walleij (2):
-      ARM: dts: Blank D-Link DIR-685 console
-      ARM: dts: gemini Fix up DNS-313 compatible string
-
-Martin Blumenstingl (3):
-      ARM: dts: meson8: fix GPU interrupts and drop an undocumented property
-      ARM: dts: meson8b: drop undocumented property from the Mali GPU node
-      ARM: dts: meson8b: fix the operating voltage of the Mali GPU
-
-Olof Johansson (5):
-      Merge tag 'imx-fixes-5.2-2' of git://git.kernel.org/.../shawnguo/linu=
-x into arm/fixes
-      Merge tag 'gemini-dts-v5.2' of git://git.kernel.org/.../linusw/linux-=
-nomadik into arm/fixes
-      Merge tag 'arm-soc/for-5.3/maintainers' of https://github.com/Broadco=
-m/stblinux into arm/fixes
-      Merge tag 'amlogic-fixes' of https://git.kernel.org/.../khilman/linux=
--amlogic into arm/fixes
-      Merge tag 'imx-fixes-5.2-3' of git://git.kernel.org/.../shawnguo/linu=
-x into arm/fixes
-
-Ran Wang (1):
-      arm64: dts: ls1028a: Fix CPU idle fail.
-
-S=E9bastien Szymanski (1):
-      ARM: dts: imx6ul: fix PWM[1-4] interrupts
-
- MAINTAINERS                                    |  2 ++
- arch/arm/boot/dts/gemini-dlink-dir-685.dts     |  2 +-
- arch/arm/boot/dts/gemini-dlink-dns-313.dts     |  2 +-
- arch/arm/boot/dts/imx6ul.dtsi                  |  8 ++++----
- arch/arm/boot/dts/meson8.dtsi                  |  5 ++---
- arch/arm/boot/dts/meson8b.dtsi                 | 11 +++++------
- arch/arm/mach-omap2/prm3xxx.c                  |  2 +-
- arch/arm64/boot/dts/freescale/fsl-ls1028a.dtsi | 18 +++++++++---------
- arch/arm64/configs/defconfig                   |  1 +
- 9 files changed, 26 insertions(+), 25 deletions(-)
+-Olof
 
 _______________________________________________
 linux-arm-kernel mailing list
