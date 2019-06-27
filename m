@@ -2,65 +2,87 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 13B8457C49
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 27 Jun 2019 08:37:53 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8152C57C6C
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 27 Jun 2019 08:49:10 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=u6AmdPVIZf20iFC/W1qQs9KrsJIxgRI4fOxboiBVJiw=; b=UMHeWCZwvesk8t
-	zXlSa1HTSfzotS4+TdT3LvQiwrCqrr9RJizTE7ftgJhfzUCC2qpYc22tnGDMNSCMfBLHZvCh1AWlm
-	SMuJ7eLlgMsftkcSGu5ZlvnKUr7FojUBqCOsGLmR7XQDtZEmQx3h9Ey7T0OEP5sXCpgRI4oVc6uD8
-	QNHOEClMmCGGVc4SAeg++16eUJbrzbPev3eAI+vkPq8VGLtNnghhMeRpU8YK9APKTR0AHZnPku3D9
-	fVB19ZYMRvXh4GOC7IYBELkDh+W6bPyDqhLcTPKl1u4b72VRQ035bCy/XxIXHbbBydrwosCWBIDWN
-	xVtVDXDEXbR5UUatSdDQ==;
+	List-Owner; bh=47lUQdi5rh2tiAmVLgAQBipalakO7XI29Owd8tfhyFQ=; b=HmIAXtRUx7oEfE
+	9fU7ikCGgDQ6Qn3r4mOvlz4u7PuArcTs88EQhjmKB+7Jg5AjodDcnl5fLrkX2N3QhaRcmxVoRjzp6
+	54ig5lLq/WtUOBa6L0XEPXMss20HyaS8B7C6ROsDtfqNASpoMGZjGuUmSRfaRmt9llUoAHdKLgBXK
+	ACG5vgdml95jMwjqn+rqDodJ8VCZx8VDjJbypZtHcDjGNVPS/OcmVxaCESjzOpGI3Exy2Zu2OmMq+
+	9lqXxB1mJ3HhoTXwBat/L0ZmfW17MjpiueJoyaLEEiDaVfhGR31taRbt4d30uonFl/r/1+kK3eCjY
+	OVSq/Zwqd56RB+abVLKg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hgO2Y-0003xj-Tk; Thu, 27 Jun 2019 06:37:50 +0000
-Received: from mailgw02.mediatek.com ([216.200.240.185])
+	id 1hgODS-0003El-6a; Thu, 27 Jun 2019 06:49:06 +0000
+Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hgO2K-0003xI-Tg; Thu, 27 Jun 2019 06:37:38 +0000
-X-UUID: 0e0d19b14c854e0db54271d8b5e2d420-20190626
-X-UUID: 0e0d19b14c854e0db54271d8b5e2d420-20190626
-Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw02.mediatek.com
- (envelope-from <ck.hu@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1100819700; Wed, 26 Jun 2019 22:37:22 -0800
-Received: from mtkmbs08n1.mediatek.inc (172.21.101.55) by
- MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Wed, 26 Jun 2019 23:37:20 -0700
-Received: from mtkcas09.mediatek.inc (172.21.101.178) by
- mtkmbs08n1.mediatek.inc (172.21.101.55) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Thu, 27 Jun 2019 14:37:12 +0800
-Received: from [172.21.77.4] (172.21.77.4) by mtkcas09.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Thu, 27 Jun 2019 14:37:12 +0800
-Message-ID: <1561617432.17285.4.camel@mtksdaap41>
-Subject: Re: [PATCH v9 11/12] soc: mediatek: cmdq: add
- cmdq_dev_get_client_reg function
-From: CK Hu <ck.hu@mediatek.com>
-To: Bibby Hsieh <bibby.hsieh@mediatek.com>
-Date: Thu, 27 Jun 2019 14:37:12 +0800
-In-Reply-To: <20190627061958.9488-12-bibby.hsieh@mediatek.com>
-References: <20190627061958.9488-1-bibby.hsieh@mediatek.com>
- <20190627061958.9488-12-bibby.hsieh@mediatek.com>
-X-Mailer: Evolution 3.10.4-0ubuntu2 
+ id 1hgO8K-0006cJ-3C
+ for linux-arm-kernel@lists.infradead.org; Thu, 27 Jun 2019 06:43:49 +0000
+Received: by mail-wm1-x344.google.com with SMTP id g135so4491776wme.4
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 26 Jun 2019 23:43:47 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=Fr091IJlyLDPMmSVtyOHFtPcDnSVYiT6XZwDIOErr7U=;
+ b=c62nqjamUpIKgiIcFe5zH56Mi5/TGbku/yyyhPsJoeQmVhmTIs8N5hSdXJxZrgZRy3
+ FIKW859OaiknvC0qYWcvdCrN0VOPxp5nGr0qMueJLs88j542C20qRGwa1LeLvMiAkXO/
+ 6sFw9gl+LoNBhRJO8eRUWs7ZowQcCFFx6Lrr7/LxB2YnKZjXx8EVEOzk/k7TKqcCY0VM
+ OUej1LV+9rtwJ5qOz32zTbsO8nKo2i+Ib+wP0847PnoeSwdvj71G5yFnDYfcjeNw5P5W
+ W6INA6bWMfx/MW2FyXTdS4jL3zseq2A9t6DNQwZB0bFB19Y8jd083Rcn2q1Kbkjz1X0V
+ LnvQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=Fr091IJlyLDPMmSVtyOHFtPcDnSVYiT6XZwDIOErr7U=;
+ b=sMJpWI7TcxC2rGwbIrof8WYJlP1JsABcBZwLiSkeX4DFRNAOpH6sV54GlOaaEo6L8O
+ suwu30omgw/V3P1sae/G/crIua/C2O+Vy6rQjTA7gyPEquHLOSMPk2XgcTtzV93kxbSE
+ q3tek2NN9R40jvZ+aR6c892mh7LAoklIIpi/UlxznvS9LJLh6NT/fiI8CRr7bV7TePEf
+ uWdaGeiGk7WYVVIY1wlX49HZb/0/16yBPnCI5iCruISXt83wg+NkPe6TWa9Wlcq8IwmJ
+ 3+KcrGDbVlO3VlFd9N8ijXYWQOlBLpgAkg6tw0MbCb35GYC52prlBmUhjUrDa0+6/Uxs
+ Dizg==
+X-Gm-Message-State: APjAAAURO3//nH8C+PwmZFHmyVUaYIMrw4RYUoYdDrWhOHnadOnMw0H5
+ ACnb1ji4h7pam04fRICxBe9VYwM8waBlvsgnjS8=
+X-Google-Smtp-Source: APXvYqznv8TwvW1K9qKqrvLF/qS3x63C6UZFf9AHU2K/Hpl+fugYxqf+pFeMX8bv03CQylSfZpSqbH95DtsRbuyMR/c=
+X-Received: by 2002:a05:600c:206:: with SMTP id 6mr1793945wmi.73.1561617826007; 
+ Wed, 26 Jun 2019 23:43:46 -0700 (PDT)
 MIME-Version: 1.0
-X-MTK: N
+References: <20190626070706.24930-1-Anson.Huang@nxp.com>
+ <CAEnQRZBsT=KY3-Gk8p1byJOqx1_y_EX-KqiBs6WnroWkT5oe_Q@mail.gmail.com>
+ <DB3PR0402MB3916A4093CFB363B51523AA7F5FD0@DB3PR0402MB3916.eurprd04.prod.outlook.com>
+In-Reply-To: <DB3PR0402MB3916A4093CFB363B51523AA7F5FD0@DB3PR0402MB3916.eurprd04.prod.outlook.com>
+From: Daniel Baluta <daniel.baluta@gmail.com>
+Date: Thu, 27 Jun 2019 09:43:34 +0300
+Message-ID: <CAEnQRZDzFBzgwugaK-CihQNaa=1SPPNsKm6QKOh9LqWACeFGTg@mail.gmail.com>
+Subject: Re: [PATCH] soc: imx-scu: Add SoC UID(unique identifier) support
+To: Anson Huang <anson.huang@nxp.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190626_233736_964903_C32C18FD 
-X-CRM114-Status: GOOD (  16.43  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190626_234348_177224_DF684E33 
+X-CRM114-Status: GOOD (  21.74  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:344 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (daniel.baluta[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -72,119 +94,111 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Nicolas Boichat <drinkcat@chromium.org>,
- Philipp Zabel <p.zabel@pengutronix.de>, srv_heupstream@mediatek.com,
- Daoyuan Huang <daoyuan.huang@mediatek.com>,
- Sascha Hauer <s.hauer@pengutronix.de>, Jassi Brar <jassisinghbrar@gmail.com>,
- linux-kernel@vger.kernel.org, Daniel Kurtz <djkurtz@chromium.org>,
- Dennis-YC Hsieh <dennis-yc.hsieh@mediatek.com>, YT
- Shen <yt.shen@mediatek.com>, Rob Herring <robh+dt@kernel.org>,
- linux-mediatek@lists.infradead.org, Houlong Wei <houlong.wei@mediatek.com>,
- Sascha Hauer <kernel@pengutronix.de>,
- Matthias Brugger <matthias.bgg@gmail.com>,
- Jiaguang Zhang <jiaguang.zhang@mediatek.com>,
- linux-arm-kernel@lists.infradead.org, ginny.chen@mediatek.com
+Cc: Aisheng Dong <aisheng.dong@nxp.com>, Abel Vesa <abel.vesa@nxp.com>,
+ Shawn Guo <shawnguo@kernel.org>, Sascha Hauer <s.hauer@pengutronix.de>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Daniel Baluta <daniel.baluta@nxp.com>, dl-linux-imx <linux-imx@nxp.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Fabio Estevam <festevam@gmail.com>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi, Bibby:
+On Thu, Jun 27, 2019 at 3:48 AM Anson Huang <anson.huang@nxp.com> wrote:
+>
+> Hi, Daniel
+>
+> > -----Original Message-----
+> > From: Daniel Baluta <daniel.baluta@gmail.com>
+> > Sent: Wednesday, June 26, 2019 8:42 PM
+> > To: Anson Huang <anson.huang@nxp.com>
+> > Cc: Shawn Guo <shawnguo@kernel.org>; Sascha Hauer
+> > <s.hauer@pengutronix.de>; Pengutronix Kernel Team
+> > <kernel@pengutronix.de>; Fabio Estevam <festevam@gmail.com>; Aisheng
+> > Dong <aisheng.dong@nxp.com>; Abel Vesa <abel.vesa@nxp.com>; linux-
+> > arm-kernel <linux-arm-kernel@lists.infradead.org>; Linux Kernel Mailing List
+> > <linux-kernel@vger.kernel.org>; dl-linux-imx <linux-imx@nxp.com>; Daniel
+> > Baluta <daniel.baluta@nxp.com>
+> > Subject: Re: [PATCH] soc: imx-scu: Add SoC UID(unique identifier) support
+> >
+> > On Wed, Jun 26, 2019 at 10:06 AM <Anson.Huang@nxp.com> wrote:
+> > >
+> > > From: Anson Huang <Anson.Huang@nxp.com>
+> > >
+> > > Add i.MX SCU SoC's UID(unique identifier) support, user can read it
+> > > from sysfs:
+> > >
+> > > root@imx8qxpmek:~# cat /sys/devices/soc0/soc_uid
+> > > 7B64280B57AC1898
+> > >
+> > > Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
+> > > ---
+> > >  drivers/soc/imx/soc-imx-scu.c | 35
+> > > +++++++++++++++++++++++++++++++++++
+> > >  1 file changed, 35 insertions(+)
+> > >
+> > > diff --git a/drivers/soc/imx/soc-imx-scu.c
+> > > b/drivers/soc/imx/soc-imx-scu.c index 676f612..8d322a1 100644
+> > > --- a/drivers/soc/imx/soc-imx-scu.c
+> > > +++ b/drivers/soc/imx/soc-imx-scu.c
+> > > @@ -27,6 +27,36 @@ struct imx_sc_msg_misc_get_soc_id {
+> > >         } data;
+> > >  } __packed;
+> > >
+> > > +struct imx_sc_msg_misc_get_soc_uid {
+> > > +       struct imx_sc_rpc_msg hdr;
+> > > +       u32 uid_low;
+> > > +       u32 uid_high;
+> > > +} __packed;
+> > > +
+> > > +static ssize_t soc_uid_show(struct device *dev,
+> > > +                           struct device_attribute *attr, char *buf)
+> > > +{
+> > > +       struct imx_sc_msg_misc_get_soc_uid msg;
+> > > +       struct imx_sc_rpc_msg *hdr = &msg.hdr;
+> > > +       u64 soc_uid;
+> > > +
+> > > +       hdr->ver = IMX_SC_RPC_VERSION;
+> > > +       hdr->svc = IMX_SC_RPC_SVC_MISC;
+> > > +       hdr->func = IMX_SC_MISC_FUNC_UNIQUE_ID;
+> > > +       hdr->size = 1;
+> > > +
+> > > +       /* the return value of SCU FW is in correct, skip return value
+> > > + check */
+> >
+> > Why do you mean by "in correct"?
+>
+> I made a mistake, it should be "incorrect", the existing SCFW of this API returns
+> an error value even this API is successfully called, to make it work with current
+> SCFW, I have to skip the return value check for this API for now. Will send V2 patch
+> to fix this typo.
 
-On Thu, 2019-06-27 at 14:19 +0800, Bibby Hsieh wrote:
-> GCE cannot know the register base address, this function
-> can help cmdq client to get the cmdq_client_reg structure.
-> 
-> Signed-off-by: Bibby Hsieh <bibby.hsieh@mediatek.com>
-> ---
->  drivers/soc/mediatek/mtk-cmdq-helper.c | 24 ++++++++++++++++++++++++
->  include/linux/soc/mediatek/mtk-cmdq.h  | 21 +++++++++++++++++++++
->  2 files changed, 45 insertions(+)
-> 
-> diff --git a/drivers/soc/mediatek/mtk-cmdq-helper.c b/drivers/soc/mediatek/mtk-cmdq-helper.c
-> index 70ad4d806fac..ceb1b569891f 100644
-> --- a/drivers/soc/mediatek/mtk-cmdq-helper.c
-> +++ b/drivers/soc/mediatek/mtk-cmdq-helper.c
-> @@ -27,6 +27,30 @@ struct cmdq_instruction {
->  	u8 op;
->  };
->  
-> +int cmdq_dev_get_client_reg(struct device *dev,
-> +			    struct cmdq_client_reg *client_reg, int idx)
-> +{
-> +	struct of_phandle_args spec;
-> +
-> +	if (!client_reg)
-> +		return -ENOENT;
-> +
-> +	if (of_parse_phandle_with_args(dev->of_node, "mediatek,gce-client-reg",
-> +				       "#subsys-cells", idx, &spec)) {
-> +		dev_err(dev, "can't parse gce-client-reg property (%d)", idx);
-> +
-> +		return -ENOENT;
+Thanks Anson! It makes sense now. It is a little bit sad though because we won't
+know when there is a "real" error :).
 
-Maybe my expression is not so clear. of_parse_phandle_with_args() may
-return -ENOENT, but it also may return -EINVAL. My point is why do you
-change the return value of of_parse_phandle_with_args(). What the error
-you get from of_parse_phandle_with_args(), you could also return it to
-the caller of cmdq_dev_get_client_reg().
+Lets update the comment to be more specific:
 
-Regards,
-CK
-
-> +	}
-> +
-> +	client_reg->subsys = spec.args[0];
-> +	client_reg->offset = spec.args[1];
-> +	client_reg->size = spec.args[2];
-> +	of_node_put(spec.np);
-> +
-> +	return 0;
-> +}
-> +EXPORT_SYMBOL(cmdq_dev_get_client_reg);
-> +
->  static void cmdq_client_timeout(struct timer_list *t)
->  {
->  	struct cmdq_client *client = from_timer(client, t, timer);
-> diff --git a/include/linux/soc/mediatek/mtk-cmdq.h b/include/linux/soc/mediatek/mtk-cmdq.h
-> index a345870a6d10..be402c4c740e 100644
-> --- a/include/linux/soc/mediatek/mtk-cmdq.h
-> +++ b/include/linux/soc/mediatek/mtk-cmdq.h
-> @@ -15,6 +15,12 @@
->  
->  struct cmdq_pkt;
->  
-> +struct cmdq_client_reg {
-> +	u8 subsys;
-> +	u16 offset;
-> +	u16 size;
-> +};
-> +
->  struct cmdq_client {
->  	spinlock_t lock;
->  	u32 pkt_cnt;
-> @@ -142,4 +148,19 @@ int cmdq_pkt_flush_async(struct cmdq_pkt *pkt, cmdq_async_flush_cb cb,
->   */
->  int cmdq_pkt_flush(struct cmdq_pkt *pkt);
->  
-> +/**
-> + * cmdq_dev_get_client_reg() - parse cmdq client reg from the device
-> + *			       node of CMDQ client
-> + * @dev:	device of CMDQ mailbox clienti
-> + * @client_reg: CMDQ client reg pointer
-> + * @idx:	the index of desired reg
-> + *
-> + * Return: 0 for success; else the error code is returned
-> + *
-> + * Help CMDQ client pasing the cmdq client reg
-> + * from the device node of CMDQ client.
-> + */
-> +int cmdq_dev_get_client_reg(struct device *dev,
-> +			    struct cmdq_client_reg *client_reg, int idx);
-> +
->  #endif	/* __MTK_CMDQ_H__ */
+/* SCFW FW API always returns an error even the function is
+successfully executed, so skip returned value */
 
 
+> > > +       imx_scu_call_rpc(soc_ipc_handle, &msg, true);
+> > > +
+> > > +       soc_uid = msg.uid_high;
+> > > +       soc_uid <<= 32;
+> > > +       soc_uid |= msg.uid_low;
+> > > +
+> > > +       return sprintf(buf, "%016llX\n", soc_uid);
+> >
+> > snprintf?
+>
+> The snprintf is to avoid buffer overflow, which in this case, I don't know the size
+> of "buf", and the value(u64) to be printed is with fixed length of 64, so I think
+> sprint is just OK.
+
+Ok.
 
 _______________________________________________
 linux-arm-kernel mailing list
