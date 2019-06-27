@@ -2,97 +2,63 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 626BE57BAE
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 27 Jun 2019 07:58:30 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5744E57BB6
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 27 Jun 2019 08:05:56 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:In-Reply-To:
-	Date:References:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/49dHfRetSVqHMH3bcYwU9YFFpYFIAFyFbwjlS3UgGg=; b=UXdfcOkWMNPsRy
-	Ftwgv4jCy0L54Bk/WZ/DfrvQdns3QRs7OV99S2nXchZCV5Eu8ulyD5j4W+I2iXBs2rJlvgzmvvWd3
-	64TOne6QGRQHnwwmCvlwtnNP2kLP7c7+KTsEKS3Zlf0um+uSSGHZeBvxROG0WddRXpF2pgtC0xBvG
-	A0byfXP+MWaj/ZgNfjoF+7AG0XrA5VCTyxXU852y35Lr1UikgSwxqYsIpOjJ6FaJK4sAVJyyjII86
-	u6K1ef2nOqGXPrQpwPUFxdxvZ+uWxMyhqmIWF/TsWAWFXuH90LtNgZERT92/J98UKdEOIhOxkwgJq
-	aqJD6l1KVC2Mg+ofRlTQ==;
+	List-Owner; bh=maoN6z4Jdz6N3FlwXG1Nd2fi6EFDl3+ELS/pBU1DXIc=; b=Q84Uu8R9N8xVmN
+	GpQvs8csLVLY8sTZwTSrCsi6eNDGXU6LoyMc0R7dznP7T+EP2AcVtAEyWNPGLn/qQqm9fe7c8pkTY
+	wAjy/cT6YnIrpLuE0fCVUKNQWw10JZqeXIyz/UniPU5s/v091QiFYzVIsgJk6OeE87fiEvReLHm0E
+	XBeK19Ac1CkmzeyrT66TfhPGR+zAsFXCs9+wXC7YEAcuSDrFUoBLLmOECqgVHc1iHukiwrSdPfMLf
+	/yCGHvegV8xw4JUWNpcng1kVE/N1CIMOHRaWUSJMLd8vS707vGfw16G9INXEhOk1zOSEWsEGfK10Q
+	nYx59J1YFkXXU4vMisVw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hgNQO-0001mI-9I; Thu, 27 Jun 2019 05:58:24 +0000
-Received: from mail-lj1-x243.google.com ([2a00:1450:4864:20::243])
+	id 1hgNXe-0004yr-6h; Thu, 27 Jun 2019 06:05:54 +0000
+Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hgNQB-0001ll-Tr
- for linux-arm-kernel@lists.infradead.org; Thu, 27 Jun 2019 05:58:13 +0000
-Received: by mail-lj1-x243.google.com with SMTP id 131so1019223ljf.4
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 26 Jun 2019 22:58:09 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:references:date:in-reply-to:message-id
- :user-agent:mime-version:content-transfer-encoding;
- bh=Jg1u7BG7wu6GjScXMtGk/VeNhSa0IfS4GRE9+vAXXPE=;
- b=DET1rfD5GeoeMSPoCV1yXNcu7VVU7oW0POg811KEjlSgnmdapJRNkkttJk89kMcYiF
- WnbsQJWWzCz0Y8i0kx3GuC2e6VIQqS56JshveAdrTi+iQSID1E32SvB/5Q8oXT1KpNK+
- s27Q1+PNO3bP17qDjm6F9szQYoiuBvvRwh746tu9dUeYO6iw6kckxda0fHW+XGu20cQ/
- f88NJJSSNHGS2vc6Yl0QzjNK7UDin2RE9OQKj9YDqDDGyId1r4h/fpaPDcHlXNNDAaFe
- +EPGCzMEdAJTusSS+n0wkk0C0kdzt1vMc5SNV98ivAMU+K/r6iM3lLoxtN3SB3XpFkLh
- QCbw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:references:date:in-reply-to
- :message-id:user-agent:mime-version:content-transfer-encoding;
- bh=Jg1u7BG7wu6GjScXMtGk/VeNhSa0IfS4GRE9+vAXXPE=;
- b=WdQaepqI1LOOmdI3pEa4P+HBG0PMAYYNlhhbLcczwy17LxjaUqiJAvsshbuQXycIWx
- 5iKaHgd4kAB/eOUg96cyUlx7ANc6m3gjGKD/yVBgCbFEX7nuJygj3o4eTj7eWnvQcCtN
- cTkpiM/Gy6RrJ7kBnJCyxY0QRkIaOWUuLQbrumq8NtW3qG6aCSpQO/wogO0NvVGvA0Ly
- meT4vZtX0RLzWQWubZGPoq+L7NfEFMb4tuYANA7SsoNrxD0MFQyCkYhWfi4W0/MAbnzF
- 52X1RfipwKGxnZ0aAqEKOqCDhQLKbTxsv17c8HiJsytHjzUBpR80K/uYAYeGxrZ0gzaq
- XWmw==
-X-Gm-Message-State: APjAAAXZdD6KLoMsvG8tc4znEo48Nr+kzio4mV14+XHjayap3ZZqIFrO
- 5HHbloHy9ib1NXhOPZW4cq4n+VcV
-X-Google-Smtp-Source: APXvYqwo7atdj7D9mV8TXhVmxKQUQXt4DpXmXA+E3gMAlbvHsHaAURJGHEv8q2XZ0Nsl4ikV/6a2GA==
-X-Received: by 2002:a2e:854d:: with SMTP id u13mr1412795ljj.236.1561615088185; 
- Wed, 26 Jun 2019 22:58:08 -0700 (PDT)
-Received: from osv.localdomain ([89.175.180.246])
- by smtp.gmail.com with ESMTPSA id c15sm172330lja.79.2019.06.26.22.58.07
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Wed, 26 Jun 2019 22:58:07 -0700 (PDT)
-From: Sergey Organov <sorganov@gmail.com>
-To: Uwe =?utf-8?Q?Kleine-K=C3=B6nig?= <u.kleine-koenig@pengutronix.de>
-Subject: Re: [PATCH v2 3/7] serial: imx: set_termios(): clarify RTS/CTS bits
- calculation
+ id 1hgNXS-0004yY-DB
+ for linux-arm-kernel@lists.infradead.org; Thu, 27 Jun 2019 06:05:43 +0000
+Received: from pty.hi.pengutronix.de ([2001:67c:670:100:1d::c5])
+ by metis.ext.pengutronix.de with esmtps
+ (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <ukl@pengutronix.de>)
+ id 1hgNXQ-0007w2-7l; Thu, 27 Jun 2019 08:05:40 +0200
+Received: from ukl by pty.hi.pengutronix.de with local (Exim 4.89)
+ (envelope-from <ukl@pengutronix.de>)
+ id 1hgNXN-0003af-LM; Thu, 27 Jun 2019 08:05:37 +0200
+Date: Thu, 27 Jun 2019 08:05:37 +0200
+From: Uwe =?iso-8859-1?Q?Kleine-K=F6nig?= <u.kleine-koenig@pengutronix.de>
+To: Sergey Organov <sorganov@gmail.com>
+Subject: Re: [PATCH v2 6/7] serial: imx: set_mctrl(): correctly restore
+ autoRTS state
+Message-ID: <20190627060537.brmgsmoh3usr4vo6@pengutronix.de>
 References: <20190614072801.3187-1-s.hauer@pengutronix.de>
  <1561558293-7683-1-git-send-email-sorganov@gmail.com>
- <1561558293-7683-4-git-send-email-sorganov@gmail.com>
- <20190627052652.ey7cmzkztylfy7k3@pengutronix.de>
-Date: Thu, 27 Jun 2019 08:58:06 +0300
-In-Reply-To: <20190627052652.ey7cmzkztylfy7k3@pengutronix.de> ("Uwe
- \=\?utf-8\?Q\?Kleine-K\=C3\=B6nig\=22's\?\= message of "Thu,
- 27 Jun 2019 07:26:52 +0200")
-Message-ID: <87k1d7k1sh.fsf@osv.gnss.ru>
-User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/24.4 (gnu/linux)
+ <1561558293-7683-7-git-send-email-sorganov@gmail.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <1561558293-7683-7-git-send-email-sorganov@gmail.com>
+User-Agent: NeoMutt/20170113 (1.7.2)
+X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::c5
+X-SA-Exim-Mail-From: ukl@pengutronix.de
+X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
+ SAEximRunCond expanded to false
+X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190626_225811_966147_1E6686A8 
-X-CRM114-Status: GOOD (  17.69  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190626_230542_450309_21DE95B4 
+X-CRM114-Status: GOOD (  17.26  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:243 listed in]
- [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (sorganov[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -107,68 +73,82 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>,
 Cc: Pengutronix Kernel Team <kernel@pengutronix.de>,
  Sascha Hauer <s.hauer@pengutronix.de>, linux-arm-kernel@lists.infradead.org,
  linux-serial@vger.kernel.org, NXP Linux Team <linux-imx@nxp.com>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-VXdlIEtsZWluZS1Lw7ZuaWcgPHUua2xlaW5lLWtvZW5pZ0BwZW5ndXRyb25peC5kZT4gd3JpdGVz
-OgoKPiBPbiBXZWQsIEp1biAyNiwgMjAxOSBhdCAwNToxMToyOVBNICswMzAwLCBTZXJnZXkgT3Jn
-YW5vdiB3cm90ZToKPj4gQXZvaWQgcmVwZWF0aW5nIHRoZSBzYW1lIGNvZGUgZm9yIHJzNDg1IHR3
-aWNlLgo+PiAKPj4gTWFrZSBpdCBvYnZpb3VzIHdlIGNsZWFyIENSVFNDVFMgYml0IGluIHRlcm1p
-b3MtPmNfY2ZsYWcgd2hlbmV2ZXIKPj4gc3BvcnQtPmhhdmVfcnRzY3RzIGlzIGZhbHNlLgo+PiAK
-Pj4gTWFrZSBpdCBvYnZpb3VzIHdlIGNsZWFyIFVDUjJfSVJUUyB3aGVuZXZlciBDUlRTQ1RTIGlz
-IHNldC4KPj4gCj4+IFJldmlld2VkLWJ5OiBTYXNjaGEgSGF1ZXIgPHMuaGF1ZXJAcGVuZ3V0cm9u
-aXguZGU+Cj4+IFRlc3RlZC1ieTogU2FzY2hhIEhhdWVyIDxzLmhhdWVyQHBlbmd1dHJvbml4LmRl
-Pgo+PiBTaWduZWQtb2ZmLWJ5OiBTZXJnZXkgT3JnYW5vdiA8c29yZ2Fub3ZAZ21haWwuY29tPgo+
-PiAtLS0KPj4gIGRyaXZlcnMvdHR5L3NlcmlhbC9pbXguYyB8IDM2ICsrKysrKysrKysrKystLS0t
-LS0tLS0tLS0tLS0tLS0tLS0tLQo+PiAgMSBmaWxlIGNoYW5nZWQsIDEzIGluc2VydGlvbnMoKyks
-IDIzIGRlbGV0aW9ucygtKQo+PiAKPj4gZGlmZiAtLWdpdCBhL2RyaXZlcnMvdHR5L3NlcmlhbC9p
-bXguYyBiL2RyaXZlcnMvdHR5L3NlcmlhbC9pbXguYwo+PiBpbmRleCA4NzgwMmZkLi4xN2UyMzIy
-IDEwMDY0NAo+PiAtLS0gYS9kcml2ZXJzL3R0eS9zZXJpYWwvaW14LmMKPj4gKysrIGIvZHJpdmVy
-cy90dHkvc2VyaWFsL2lteC5jCj4+IEBAIC0xNTY3LDM1ICsxNTY3LDI1IEBAIGlteF91YXJ0X3Nl
-dF90ZXJtaW9zKHN0cnVjdCB1YXJ0X3BvcnQgKnBvcnQsIHN0cnVjdCBrdGVybWlvcyAqdGVybWlv
-cywKPj4gIAlpZiAoKHRlcm1pb3MtPmNfY2ZsYWcgJiBDU0laRSkgPT0gQ1M4KQo+PiAgCQl1Y3Iy
-IHw9IFVDUjJfV1M7Cj4+ICAKPj4gLQlpZiAodGVybWlvcy0+Y19jZmxhZyAmIENSVFNDVFMpIHsK
-Pj4gLQkJaWYgKHNwb3J0LT5oYXZlX3J0c2N0cykgewo+PiAtCQkJdWNyMiAmPSB+VUNSMl9JUlRT
-Owo+PiArCWlmICghc3BvcnQtPmhhdmVfcnRzY3RzKQo+PiArCQl0ZXJtaW9zLT5jX2NmbGFnICY9
-IH5DUlRTQ1RTOwo+PiAgCj4+IC0JCQlpZiAocG9ydC0+cnM0ODUuZmxhZ3MgJiBTRVJfUlM0ODVf
-RU5BQkxFRCkgewo+PiAtCQkJCS8qCj4+IC0JCQkJICogUlRTIGlzIG1hbmRhdG9yeSBmb3IgcnM0
-ODUgb3BlcmF0aW9uLCBzbyBrZWVwCj4+IC0JCQkJICogaXQgdW5kZXIgbWFudWFsIGNvbnRyb2wg
-YW5kIGtlZXAgdHJhbnNtaXR0ZXIKPj4gLQkJCQkgKiBkaXNhYmxlZC4KPj4gLQkJCQkgKi8KPj4g
-LQkJCQlpZiAocG9ydC0+cnM0ODUuZmxhZ3MgJgo+PiAtCQkJCSAgICBTRVJfUlM0ODVfUlRTX0FG
-VEVSX1NFTkQpCj4+IC0JCQkJCWlteF91YXJ0X3J0c19hY3RpdmUoc3BvcnQsICZ1Y3IyKTsKPj4g
-LQkJCQllbHNlCj4+IC0JCQkJCWlteF91YXJ0X3J0c19pbmFjdGl2ZShzcG9ydCwgJnVjcjIpOwo+
-PiAtCQkJfSBlbHNlIHsKPj4gLQkJCQlpbXhfdWFydF9ydHNfYXV0byhzcG9ydCwgJnVjcjIpOwo+
-PiAtCQkJfQo+PiAtCQl9IGVsc2Ugewo+PiAtCQkJdGVybWlvcy0+Y19jZmxhZyAmPSB+Q1JUU0NU
-UzsKPj4gLQkJfQo+PiAtCX0gZWxzZSBpZiAocG9ydC0+cnM0ODUuZmxhZ3MgJiBTRVJfUlM0ODVf
-RU5BQkxFRCkgewo+PiAtCQkvKiBkaXNhYmxlIHRyYW5zbWl0dGVyICovCj4+ICsJaWYgKHBvcnQt
-PnJzNDg1LmZsYWdzICYgU0VSX1JTNDg1X0VOQUJMRUQpIHsKPj4gKwkJLyoKPj4gKwkJICogUlRT
-IGlzIG1hbmRhdG9yeSBmb3IgcnM0ODUgb3BlcmF0aW9uLCBzbyBrZWVwCj4+ICsJCSAqIGl0IHVu
-ZGVyIG1hbnVhbCBjb250cm9sIGFuZCBrZWVwIHRyYW5zbWl0dGVyCj4+ICsJCSAqIGRpc2FibGVk
-Lgo+PiArCQkgKi8KPj4gIAkJaWYgKHBvcnQtPnJzNDg1LmZsYWdzICYgU0VSX1JTNDg1X1JUU19B
-RlRFUl9TRU5EKQo+PiAgCQkJaW14X3VhcnRfcnRzX2FjdGl2ZShzcG9ydCwgJnVjcjIpOwo+PiAg
-CQllbHNlCj4+ICAJCQlpbXhfdWFydF9ydHNfaW5hY3RpdmUoc3BvcnQsICZ1Y3IyKTsKPj4gLQl9
-Cj4+ICAKPj4gKwl9IGVsc2UgaWYgKHRlcm1pb3MtPmNfY2ZsYWcgJiBDUlRTQ1RTKQo+PiArCQlp
-bXhfdWFydF9ydHNfYXV0byhzcG9ydCwgJnVjcjIpOwo+Cj4gSGVyZSBhIHNldCBvZiBicmFjZXMg
-aXMgbmVlZGVkIGV2ZW4gaWYgdGhlIGJvZHkgaGFzIG9ubHkgYSBzaW5nbGUKPiBsaW5lLgoKUmVh
-bGx5PyBzY3JpcHRzL2NoZWNrcGF0Y2gucGwgZGlkbid0IGNhdGNoIHRoaXMuCgpJZiBuZWVkZWQs
-IGlzIGl0IGVzc2VudGlhbCBlbm91Z2ggdG8gZml4IGhlcmUsIGFzIGZpbmFsIHJlc3VsdCBoYXMg
-dGhpcwpjaHVuayBkaWZmZXJlbnQgYW55d2F5IChhbmQgd2l0aCBicmFjZXMpPwoKPgo+PiArCj4+
-ICsJaWYgKHRlcm1pb3MtPmNfY2ZsYWcgJiBDUlRTQ1RTKQo+PiArCQl1Y3IyICY9IH5VQ1IyX0lS
-VFM7Cj4+ICAKPj4gIAlpZiAodGVybWlvcy0+Y19jZmxhZyAmIENTVE9QQikKPj4gIAkJdWNyMiB8
-PSBVQ1IyX1NUUEI7Cj4KPiBJcyB0aGlzIHBhdGNoIGludGVuZGVkIHRvIG5vdCBjaGFuZ2Ugc2Vt
-YW50aWM/IEkgd29uZGVyIGlmIGl0IGhpZGVzIGEKPiBmaXggYmVjYXVzZSBpZiBpbXhfdWFydF9z
-ZXRfdGVybWlvcygpIHdhcyBjYWxsZWQgd2l0aCB0ZXJtaW9zLT5jX2NmbGFnCj4gJiBDUlRTQ1RT
-IGFuZCAhc3BvcnQtPmhhdmVfcnRzY3RzIHRoZSByczQ4NSBibG9jayB3YXMgbm90IHJlYWNoZWQu
-IE5vdwo+IGl0IGlzLgoKQXMgY29tbWVudCBzYXlzICJSVFMgaXMgbWFuZGF0b3J5IGZvciByczQ4
-NSBvcGVyYXRpb24iLCBJIGFzc3VtZWQKU0VSX1JTNDg1X0VOQUJMRUQgYW5kICFzcG9ydC0+aGF2
-ZV9ydHNjdHMgYXJlIGluY29tcGF0aWJsZSwgc28KdGhlcmUgc2hvdWxkIGJlIG5vIGFjdHVhbCBz
-ZW1hbnRpYyBjaGFuZ2UgaGVyZS4gSSBtZWFuOgoKCWlmIChwb3J0LT5yczQ4NS5mbGFncyAmIFNF
-Ul9SUzQ4NV9FTkFCTEVEKSB7CiAgICAgICAgCWFzc2VydChzcG9ydC0+aGF2ZV9ydHNjdHMpOwoK
-c2hvdWxkIG5ldmVyIGZpcmUuCgpEbyB5b3UgdGhpbmsgSSByYXRoZXIgbmVlZCB0byBwdXQgYWRk
-aXRpb25hbCBjaGVjayBmb3IKc3BvcnQtPmhhdmVfcnRzY3RzIGluc2lkZSB0aGUgU0VSX1JTNDg1
-X0VOQUJMRUQgY2FzZT8KClRoYW5rcyEKCi0tIFNlcmdleQoKX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QK
-bGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRl
-YWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
+On Wed, Jun 26, 2019 at 05:11:32PM +0300, Sergey Organov wrote:
+> imx_uart_set_mctrl() happened to set UCR2_CTSC bit whenever TIOCM_RTS
+> was set, no matter if RTS/CTS handshake is enabled or not. Now fixed by
+> turning handshake on only when CRTSCTS bit for the port is set.
+> =
+
+> Reviewed-by: Sascha Hauer <s.hauer@pengutronix.de>
+> Tested-by: Sascha Hauer <s.hauer@pengutronix.de>
+> Signed-off-by: Sergey Organov <sorganov@gmail.com>
+> ---
+>  drivers/tty/serial/imx.c | 13 +++++++++++--
+>  1 file changed, 11 insertions(+), 2 deletions(-)
+> =
+
+> diff --git a/drivers/tty/serial/imx.c b/drivers/tty/serial/imx.c
+> index 4867f80..171347d 100644
+> --- a/drivers/tty/serial/imx.c
+> +++ b/drivers/tty/serial/imx.c
+> @@ -970,10 +970,19 @@ static void imx_uart_set_mctrl(struct uart_port *po=
+rt, unsigned int mctrl)
+>  	if (!(port->rs485.flags & SER_RS485_ENABLED)) {
+>  		u32 ucr2;
+>  =
+
+> +		/*
+> +		 * Turn off autoRTS (UCR2_CTSC) if RTS is lowered and restore
+> +		 * autoRTS setting if RTS is raised. Inverted UCR2_IRTS is set
+> +		 * if and only if CRTSCTS bit is set for the port, so we use it
+> +		 * to get the state to restore to.
+> +		 */
+
+The comment is quite complicated. I like the comments of Sascha's patch
+that addressed the same issue better.
+
+Are you using UCR2_IRTS as an indicator if CRTSCTS is set? If it's that
+what you intend to express in the second sentence that is hard to grasp.
+Something like:
+
+	UCR2_IRTS is unset iff the port is configured for CRTSCTS
+
+Also as the value of the CTS bit doesn't matter if CTSC is set, the
+order of the checks could be swapped to result in easier code (IMHO at
+least) that doesn't need a nested if.
+
+Something like:
+
+	ucr2 =3D imx_uart_readl(sport, UCR2);
+	ucr2 &=3D ~(UCR2_CTS | UCR2_CTSC);
+
+	/* UCR2_IRTS is unset iff the port is configured for CRTSCTS */
+	crtscts =3D !(ucr2 & UCR2_IRTS);
+
+	if (!(mctrl & TIOCM_RTS)) {
+		/* Force RTS inactive, i.e. UCR2_CTS=3D0 and UCR2_CTSC=3D0 */
+	} else if (crtscts) {
+		/* let the receiver control RTS */
+		ucr2 |=3D UCR2_CTSC;
+	} else {
+		/* Force RTS active */
+		ucr2 |=3D UCR2_CTS;
+	}
+
+Best regards
+Uwe
+
+-- =
+
+Pengutronix e.K.                           | Uwe Kleine-K=F6nig            |
+Industrial Linux Solutions                 | http://www.pengutronix.de/  |
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
