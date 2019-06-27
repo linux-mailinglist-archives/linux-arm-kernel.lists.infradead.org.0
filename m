@@ -2,51 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7C36D57E20
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 27 Jun 2019 10:19:27 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B669457E48
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 27 Jun 2019 10:35:51 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fEEvNsHuMa7m1pIK1UMJ8sQq73V6hoI5orh+MF560UM=; b=n4/kDluYUIc0GA
-	4l0YBUJt/hFh5PpiVmMKyuNUumLof1rEOhnBeZ+iti5GwjMlt9lq3YlpGxv1UO/PbyRmTJRkXxw+X
-	pZZeyuEGt86lJwy2n/ihO5p7+ivMfBLs5cB8qHDr8osxDqksMnvcJkzdGkbCFtY6nWRmMi4UbHuO7
-	vbVcJPG4wRVmJ1xLJ1kKwTPcqHlVJZikkpd9lR+UXOcR94mFq1Cn/D5nuRthH8Bdb/qHw5g6NQ/h6
-	z1JMtn8nvEFCQlTF/jBXAX3XLrj4p7/VYt7QyV2ndmH3aedSBzTej92RLSM7j7nE50e2IIrLoyE+q
-	Lg7vuo59oyvFcJFrhvWg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=HE18eKHI01B83edVRcI2R1y9GPHKxRwdeO8wnGRe52s=; b=sPnPy4YgGRpEHg
+	3N6FPC5HANGpLLLlQfZqArVB7632l8+E+1GzcRhEW95X42IIxc5e/MMno+H+HR9yFF8xFhnwSAngw
+	Bn0HV5PWWX8tpFbDs11qG6aLY+xCKgRBdbEvjMHvVo4FH0oVSaOTrYRXzd7XXxKW0NFbXXocP6NaD
+	3jLu7T00jfqS8fN1Ycd80So9iTkmqWQInMolTHoHk0M3RvhAKct0LYdiPe17EqRzqSH0Zs0xQcuuU
+	oYpICp4cHFL5kGU+uDUMfFBkQzw5Y0vkZ/v9L5lsh0PkwsezlucNE2rCIRz+hi6rl1WyGMSZAGa03
+	xSu6b1WqA5kpjbZQNW3A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hgPcn-00076Z-A5; Thu, 27 Jun 2019 08:19:21 +0000
-Received: from gloria.sntech.de ([185.11.138.130])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hgPca-00075w-Cn; Thu, 27 Jun 2019 08:19:09 +0000
-Received: from wf0413.dip.tu-dresden.de ([141.76.181.157] helo=phil.localnet)
- by gloria.sntech.de with esmtpsa
- (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.89)
- (envelope-from <heiko@sntech.de>)
- id 1hgPcN-0006oO-B4; Thu, 27 Jun 2019 10:18:55 +0200
-From: Heiko Stuebner <heiko@sntech.de>
-To: Lee Jones <lee.jones@linaro.org>
-Subject: Re: [PATCH v10 0/6] support a new type of PMIC,
- including two chips(rk817 and rk809)
-Date: Thu, 27 Jun 2019 10:18:54 +0200
-Message-ID: <2084806.DiqCa91xLP@phil>
-In-Reply-To: <20190626115251.GR21119@dell>
-References: <20190621103258.8154-1-tony.xie@rock-chips.com>
- <20190626115251.GR21119@dell>
+	id 1hgPsi-00059e-DQ; Thu, 27 Jun 2019 08:35:48 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hgPsS-00059J-92
+ for linux-arm-kernel@lists.infradead.org; Thu, 27 Jun 2019 08:35:33 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 26AA62B;
+ Thu, 27 Jun 2019 01:35:31 -0700 (PDT)
+Received: from e119886-lin.cambridge.arm.com (unknown [10.37.6.20])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id BA41D3F706;
+ Thu, 27 Jun 2019 01:35:29 -0700 (PDT)
+From: Andrew Murray <andrew.murray@arm.com>
+To: Mathieu Poirier <mathieu.poirier@linaro.org>,
+ Suzuki K Poulose <suzuki.poulose@arm.com>,
+ Alexander Shishkin <alexander.shishkin@linux.intel.com>
+Subject: [PATCH v2 0/5] coresight: etm4x: save/restore ETMv4 context across
+ CPU low power states
+Date: Thu, 27 Jun 2019 09:35:20 +0100
+Message-Id: <20190627083525.37463-1-andrew.murray@arm.com>
+X-Mailer: git-send-email 2.21.0
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190627_011908_585315_8BA6EB81 
-X-CRM114-Status: GOOD (  11.48  )
+X-CRM114-CacheID: sfid-20190627_013532_363565_3D42FBAD 
+X-CRM114-Status: GOOD (  12.44  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -58,43 +60,76 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, a.zummo@towertech.it, alexandre.belloni@bootlin.com,
- huangtao@rock-chips.com, linux-rockchip@lists.infradead.org,
- Tony Xie <tony.xie@rock-chips.com>, zhangqing@rock-chips.com,
- linux-kernel@vger.kernel.org, robh+dt@kernel.org, xsf@rock-chips.com,
- sboyd@kernel.org, devicetree@vger.kernel.org, broonie@kernel.org,
- chenjh@rock-chips.com, linux-clk@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-rtc@vger.kernel.org
+Cc: coresight@lists.linaro.org, Sudeep Holla <sudeep.holla@arm.com>,
+ linux-arm-kernel@lists.infradead.org, Mike Leach <mike.leach@linaro.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Lee,
+Some hardware will ignore bit TRCPDCR.PU which is used to signal
+to hardware that power should not be removed from the trace unit.
+Let's mitigate against this by conditionally saving and restoring
+the trace unit state when the CPU enters low power states.
 
-Am Mittwoch, 26. Juni 2019, 13:52:51 CEST schrieb Lee Jones:
-> On Fri, 21 Jun 2019, Tony Xie wrote:
-> 
-> > Most of functions and registers of the rk817 and rk808 are the same,
-> > so they can share allmost all codes.
-> > 
-> > Their specifications are as follows:
-> >   1) The RK809 and RK809 consist of 5 DCDCs, 9 LDOs and have the same
-> > registers
-> >      for these components except dcdc5.
-> >   2) The dcdc5 is a boost dcdc for RK817 and is a buck for RK809.
-> >   3) The RK817 has one switch but The Rk809 has two.
-> 
-> Just tried to apply this set to a v5.2-rc1 base, but it doesn't seem
-> to do so cleanly.  Would you be able to rebase and resend please?
+This patchset introduces a firmware property named
+'arm,coresight-needs-save-restore' - when this is present the
+hardware state will be conditionally saved and restored.
 
-I took the liberty of rebasing patch 3 accordingly and sent it as reply
-to the original patch3 as (v10.1). The other patches did apply cleanly
-after that.
+A module parameter 'pm_save_enable' is also introduced which can
+be configured to override the firmware property.
+
+The hardware state is only ever saved and restored when the claim
+tags indicate that self-hosted mode is in use.
+
+Changes since v1:
+
+ - Rebased onto coresight/next
+
+ - Correcly pass bit number rather than BIT macro to coresight_timeout
+
+ - Abort saving state if a timeout occurs
+
+ - Fix completely broken pm_notify handling and unregister handler on error
+
+ - Use state_needs_restore to ensure state is restored only once
+
+ - Add module parameter description to existing boot_enable parameter
+   and use module_param instead of module_param_named
+
+ - Add firmware bindings for coresight-needs-save-restore
+
+ - Rename 'disable_pm_save' to 'pm_save_enable' which allows for
+   disabled, enabled or firmware
+
+ - Update comment on etm4_os_lock, it incorrectly indicated that
+   the code unlocks the trace registers
+
+ - Add comments to explain use of OS lock during save/restore
+
+ - Fix incorrect error description whilst waiting for PM stable
+
+ - Add WARN_ON_ONCE when cpu isn't as expected during save/restore
+
+ - Various updates to commit messages
 
 
-Heiko
+Andrew Murray (5):
+  coresight: etm4x: remove superfluous setting of os_unlock
+  coresight: etm4x: use explicit barriers on enable/disable
+  coresight: etm4x: use module_param instead of module_param_named
+  coresight: etm4x: improve clarity of etm4_os_unlock comment
+  coresight: etm4x: save/restore state across CPU low power states
 
+ .../devicetree/bindings/arm/coresight.txt     |   3 +
+ drivers/hwtracing/coresight/coresight-etm4x.c | 315 +++++++++++++++++-
+ drivers/hwtracing/coresight/coresight-etm4x.h |  66 ++++
+ drivers/hwtracing/coresight/coresight.c       |   2 +-
+ include/linux/coresight.h                     |   8 +
+ 5 files changed, 387 insertions(+), 7 deletions(-)
+
+-- 
+2.21.0
 
 
 _______________________________________________
