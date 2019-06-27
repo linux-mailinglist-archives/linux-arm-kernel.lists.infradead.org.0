@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6909358A90
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 27 Jun 2019 21:02:05 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B3BC658A72
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 27 Jun 2019 20:58:24 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,67 +11,68 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=v4dK1HyMr8MEvLEQLWtJesL+yfaOVd5pdVtY/dDMi7E=; b=sxC9ndWXbHEZwR7TtOsC6WXwAH
-	HN/pUDX9mFI9cpc+Fmduok/nsmlrkSeRj1UoPSpmMvSwNgvRaVYhVPgtCxrp3l/+X9MM676yrm+XR
-	ABje1vxWlpkzIUgyixeNDJgzkTTaWCaDc4FOao40r8e4CpjmGRSmKuk8F3XI6m1WY9vvZUXxN3tQv
-	WWwdbs6Kan4eFuvfmip8Xk9PGzRzD+6EYrrS7ZDzLn5TqqFzXsZ2Ae79BOkcWHiKJFhOfokILD7WO
-	cMfW91oYOrl5smznI3f6oclNZKFc2fTDGzlXSeFkkj8nSr/VZBEPI/fvdi93KHK1zUT5qviiU7Ykp
-	MRohh++w==;
+	bh=SpGtSfRSO94nuWVnWkfegr4JP2HgrE3ac/n4wR8hgX4=; b=c5IqqFNypoUQG2dmVkDC9Xnyw+
+	ShFePHLv3Tuyt1SWtzgZdaSM1ZRiQYaMABedIH+u749oqJSKBjrnOFIrtcrfE/gOd7L+7WPloTbA3
+	/qPwplhY+QmneklPvszDOdGefxckdMe9/dE6U5x/uElBYRLmfIxsVLdTfIQvgMN2LpRjnlmSCslcn
+	u4r2dvqWMQsCkq5dKni9u1VtREaEekxsguKeTN0yfLJwwbYh/30QtXQn3tTPinzpLdrFI6RFYCDWs
+	NdRnrjS2K3Ot2ZexqgBgcmM1t/cAybjW+TV7VrlcPDmpZhAgU8BooGpDZ2dwWEp2ABaB+eBAfiXmp
+	3wfNmg/Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hgZej-00074x-Lp; Thu, 27 Jun 2019 19:02:01 +0000
+	id 1hgZbD-0003BV-3g; Thu, 27 Jun 2019 18:58:23 +0000
 Received: from mout.gmx.net ([212.227.15.15])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hgZZu-0002Rf-Qd; Thu, 27 Jun 2019 18:57:10 +0000
+ id 1hgZZu-0002Ru-6l; Thu, 27 Jun 2019 18:57:04 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=gmx.net;
  s=badeba3b8450; t=1561661810;
- bh=yz9ARinC93og+5jnEIbXwHj/wwjzpB1P6r189rBFmnA=;
+ bh=oLnjN52EnE2DOibkkrUsKEoboTm6occkriot7kdGOWc=;
  h=X-UI-Sender-Class:From:To:Cc:Subject:Date:In-Reply-To:References;
- b=JmZdPjvJMhyeNhR2D+BN3g9qLceztN6NcA3URY76jvLgAgzc5l18ROHoTbxjm2skr
- ZrpZ0f1kyHmjpl7uDjzW+4dw7Uq0+HEUmDHUVvT76YcYfihyoJ45kv5mBSkwkA0yc4
- +cfmPBI77doKFgp2vIINtP37cwli/EkomJvLrHS0=
+ b=RKnMp8hZU20lqiGxc90wHuETi2g7AFvuAAL5zIuDEPG/xvXcauzV4BWngTwdUBrhi
+ 2ttIZA9hw6yppVjT2JG3TZ6Iu21B+AFb9ZuFs7mfUR6RIlhMfbeD9BRsrsm1yGOjsR
+ 1HMbqjQIbe5RyNDaTVFamsu+SeiBK0RqPZZrV2cI=
 X-UI-Sender-Class: 01bb95c1-4bf8-414a-932a-4f6e2808ef9c
 Received: from localhost.localdomain ([37.4.249.111]) by mail.gmx.com
  (mrgmx002 [212.227.17.190]) with ESMTPSA (Nemesis) id
- 0Meg8W-1hw21a04DY-00OGyR; Thu, 27 Jun 2019 20:56:50 +0200
+ 0LnwxU-1iDhT01mrA-00fwPr; Thu, 27 Jun 2019 20:56:50 +0200
 From: Stefan Wahren <wahrenst@gmx.net>
 To: Eric Anholt <eric@anholt.net>,
  Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
  Dave Stevenson <dave.stevenson@raspberrypi.org>,
  Hans Verkuil <hverkuil@xs4all.nl>,
  Mauro Carvalho Chehab <mchehab@kernel.org>
-Subject: [PATCH 04/31] staging: bcm2835-camera: Do not bulk receive from
- service thread
-Date: Thu, 27 Jun 2019 20:56:01 +0200
-Message-Id: <1561661788-22744-5-git-send-email-wahrenst@gmx.net>
+Subject: [PATCH 05/31] staging: bcm2835-camera: Correctly denote key frames in
+ encoded data
+Date: Thu, 27 Jun 2019 20:56:02 +0200
+Message-Id: <1561661788-22744-6-git-send-email-wahrenst@gmx.net>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1561661788-22744-1-git-send-email-wahrenst@gmx.net>
 References: <1561661788-22744-1-git-send-email-wahrenst@gmx.net>
-X-Provags-ID: V03:K1:IYmTXewCTBPdP7XHifBO0a02+9akpP8FpA6NR/xAJmt0DQgv9h4
- 9YdL+mb7XEvg0lGA7PqRPs0GjfQNr4mp3qeQ7fRrHNa231WcijKkL6F41PUfLoYgUt9lQDf
- 33KdXe19iGJMwnoQXX2jqFlA0twde1eyYqdPvBKx2KVoxbWeTZmEVJirnp//gnXZw49496Z
- m7XRSV5YazjGGRT1MXFmA==
+X-Provags-ID: V03:K1:yZ1iRnEdO/zCVfwT0Jup2xWKW1hJcfyIxLMQ6raD3e/K42260gg
+ sJpGrJ9+VGPSRXyTOiZV/d6DuJ4Wf/px0uBMNMxghtmP3CuyqrlKknImVks1Uj/B1hc+vW5
+ Y0H4pBYw972XKbYWN+acwiqOMebVNZuqnakrfrU5q4IpA0DaKZsOtA320Pef0MDCGSj4PT5
+ eNUCvM/AZzIoFeXkTllXA==
 X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:X4zk92MyG2g=:f96coLNfkaoQCRIC/4Mc06
- pvUb1YcnKh/ulqvDeoshWXjyFNkPVgUsgznngJqQj5fBiuDmGFmBp1E/PPLesUHwr3rEkcdsF
- mJpVO661a/cM9beCZf1Fb7HAMfKKVBRHNLTIkyX7USej/ICDBU2PRL0pj14vTpZHt9o+wFGSe
- HjNwtkDsX8Af4U1aoPB3NR9uWsj1J0x/QiHtk6KSBxiRAIQiw1ZiNAaNk64E1ViB0wBpTo2fG
- UVHspJIZm7xUumaYVcIUkJQJW54XCwyXEeXKun7ZsGzNirKitsyALS4sRwKDvqdHHgKAQC+E1
- xawtHHVJUtgCY1NUOk65U8tw5JqlS6m+ikUaLkWAyEv/X1HBeyzlaUDwZv/5LwCkMXmhiV51n
- nFDHOLAm8uaiUquRASqQ00fGubd4pylsT+MDTqFCGmErQ3DHgPVeloQtTPspmNHAL7xCbAsZa
- H+C6yVRTDfQkJvNVi3AA+mfJZBl5zi87nXVDZcTJcdXI+fVG4vySZUKdpnnVSbWNEqUD29UK8
- DOsC3SseYsGgs3BWM0yVxIqaC8k37jK6nV4i3nFRaybMUBzsvwKdACHxNNt8x/Boi2AAUYt9X
- 6KWl7F+c/8P59NiE+/gswOIz9uTiTMtsEBhvNIaYz6R9nrJspwnJrbJC9fcafJWqncwGkP+tw
- yS+AClWrQcdzExS13K7J8qqTZVg02FxzZVfYWAVEYvv4D3NPrvQTfCoASzKgZdb7klf2M6yhj
- gkXQ+M+9mY6YyGXq6MUm9OT2U4XuVfWJCQzkov54RdhawWS+muB/iQ60ZoZDaqOkOptkKFu0d
- rQdoWKm7/+W9SaeEVMWLRv9SASxee+knkqSJvcLOnsuxpMF4zn+2uZ4mpBbjqsBv+5uTIODh+
- QEguQ4RNv8nXFysL9gbMReI6k+Iy6EHfM/DBnLV7VnGDP1k77nvsLXrj0h5UGVdOJY2T9s2sV
- 52EvEdPbWskxnrMB+T9GPgo4XHNp8Jlt+lgTywZbVKw/IYmRXNn6StA5woct6NlKD23BJd3qX
- TebxpQRpJj76jSjL+t0SD5PGE8lrLN59UAG/uTDzFo36bv7lQdAq+12rdRG5XND+vAQu0hWuG
- 7sVONezGN0qQbI=
+X-UI-Out-Filterresults: notjunk:1;V03:K0:E9CXXj22YFg=:npWE8aj9lMTYCPhz1hA5Io
+ LX0cFJTv2+agRUQfFUqMJEsx2bNaMgp8eGLcRj4ByUfpm3RtOwmfiwUrAfOQg5E14cA4w5lxL
+ rvkkjvv1aT9R0wR7r37gMgTMTK+8SKFu7Lml1T+mba3A9ReUmfh35g8uo9hRhlA+SkzwvCpec
+ WCIcaCPiCvyv6fbxJ+UT7UcZ5OqCiWUvO9Eh8z5LakYDwdLB1s0u7wivt7/+RpvVHTguVlArI
+ qHtAwyVapFpmwpON74e31ClJIZyiYzDWVh2Tgixkbz/R2s6oEOKnji0nTPIYKxNoTShRrhFz1
+ 3xZLANtdfI0kff3F5qrt/Tqp61WmPW7N2R+KDPD48b9PpGRBKttVgQs/1GvAf0jYFMpvVl9Um
+ rfKGHBXXPi3fIC7Q/Xg/dOIUkOSleSfVCARvmU4Vbcxiz8OdGSUM9Okqc+cGa4vAMV+A9zgG+
+ aYsZVJCDh7IzwqDozUyh0ZkgoWG9YyJ8QaxfmI5fjmFUs418vtSG5eUrJliXZ0QSsk0cTOzO8
+ 2WvnxR4N3XrankAlMpa6Lep8BbGAN/MUyL+Co1dsjG0C/+akbITiLrAo6ozCjvWaMJE458ppP
+ nf5kYjSvf6BQ8J5d7WAsu6isrmrphaRKn/ZJU//IKgJnnkWOsqZVUY5ha/kPTJR/p4VvLGOvq
+ I30ljE6IGwk7710rOPqU92Sdz6WNVID5ieILU+YU4PY8LjwNZqDxh6K0Qs0Ezhav++K7oLKhI
+ AM/2AxEubOPp3eECQlSkllQ7hYDGCM3A3QJK40Y/qfKYY2Y+IBziEY0AXn8tYxK86r92wWN/e
+ ZY1Jcpy8Xfr+tE3uA3hlwmRSzHzY554vX8MunfkpXMuLXEuXsoz66n0QFiKKLx1l3M9JsQ4sG
+ TW0S3L/uOp3P8J97IJuAeBkzg5zYtNYR6ejQJBJvHtPKpMbuxdoCIcPIA94esWW1G53CmUXR9
+ A1gPI1yqXZPrXFepimiLXJ7paDr3hq2ICSOEwJoPi9T1laDLMIhN6jHBzgNimUg5i1mtz4iZE
+ Owy4H6DzwYUS9H4m8WBTP+jg1iD3dbzHZeHY7wsFwkZ3oAY9e0bN+T20/FMCs4aZCkwdAD+DL
+ ziEj/D0cdINm34=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190627_115703_151040_02ECA23A 
-X-CRM114-Status: GOOD (  17.64  )
+X-CRM114-CacheID: sfid-20190627_115702_550309_9110BA39 
+X-CRM114-Status: UNSURE (   8.28  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -111,199 +112,27 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Dave Stevenson <dave.stevenson@raspberrypi.org>
 
-vchi_bulk_queue_receive will queue up to a default of 4
-bulk receives on a connection before blocking.
-If called from the VCHI service_callback thread, then
-that thread is unable to service the VCHI_CALLBACK_BULK_RECEIVED
-events that would enable the queue call to succeed.
-
-Add a workqueue to schedule the call vchi_bulk_queue_receive
-in an alternate context to avoid the lock up.
+Forward MMAL key frame flags to the V4L2 buffers.
 
 Signed-off-by: Dave Stevenson <dave.stevenson@raspberrypi.org>
 ---
- .../vc04_services/bcm2835-camera/mmal-vchiq.c      | 101 ++++++++++++---------
- 1 file changed, 59 insertions(+), 42 deletions(-)
+ drivers/staging/vc04_services/bcm2835-camera/bcm2835-camera.c | 3 +++
+ 1 file changed, 3 insertions(+)
 
-diff --git a/drivers/staging/vc04_services/bcm2835-camera/mmal-vchiq.c b/drivers/staging/vc04_services/bcm2835-camera/mmal-vchiq.c
-index f1bb900..1a343d8 100644
---- a/drivers/staging/vc04_services/bcm2835-camera/mmal-vchiq.c
-+++ b/drivers/staging/vc04_services/bcm2835-camera/mmal-vchiq.c
-@@ -117,8 +117,10 @@ struct mmal_msg_context {
+diff --git a/drivers/staging/vc04_services/bcm2835-camera/bcm2835-camera.c b/drivers/staging/vc04_services/bcm2835-camera/bcm2835-camera.c
+index 0c04815..456b686 100644
+--- a/drivers/staging/vc04_services/bcm2835-camera/bcm2835-camera.c
++++ b/drivers/staging/vc04_services/bcm2835-camera/bcm2835-camera.c
+@@ -385,6 +385,9 @@ static void buffer_cb(struct vchiq_mmal_instance *instance,
+ 			dev->capture.last_timestamp = buf->vb.vb2_buf.timestamp;
 
- 	union {
- 		struct {
--			/* work struct for defered callback - must come first */
-+			/* work struct for buffer_cb callback */
- 			struct work_struct work;
-+			/* work struct for deferred callback */
-+			struct work_struct buffer_to_host_work;
- 			/* mmal instance */
- 			struct vchiq_mmal_instance *instance;
- 			/* mmal port */
-@@ -167,6 +169,9 @@ struct vchiq_mmal_instance {
- 	/* component to use next */
- 	int component_idx;
- 	struct vchiq_mmal_component component[VCHIQ_MMAL_MAX_COMPONENTS];
+ 			vb2_set_plane_payload(&buf->vb.vb2_buf, 0, length);
++			if (mmal_flags & MMAL_BUFFER_HEADER_FLAG_KEYFRAME)
++				buf->vb.flags |= V4L2_BUF_FLAG_KEYFRAME;
 +
-+	/* ordered workqueue to process all bulk operations */
-+	struct workqueue_struct *bulk_wq;
- };
+ 			vb2_buffer_done(&buf->vb.vb2_buf, VB2_BUF_STATE_DONE);
 
- static struct mmal_msg_context *
-@@ -248,7 +253,44 @@ static void buffer_work_cb(struct work_struct *work)
- 					    msg_context->u.bulk.mmal_flags,
- 					    msg_context->u.bulk.dts,
- 					    msg_context->u.bulk.pts);
-+}
-
-+/* workqueue scheduled callback to handle receiving buffers
-+ *
-+ * VCHI will allow up to 4 bulk receives to be scheduled before blocking.
-+ * If we block in the service_callback context then we can't process the
-+ * VCHI_CALLBACK_BULK_RECEIVED message that would otherwise allow the blocked
-+ * vchi_bulk_queue_receive() call to complete.
-+ */
-+static void buffer_to_host_work_cb(struct work_struct *work)
-+{
-+	struct mmal_msg_context *msg_context =
-+		container_of(work, struct mmal_msg_context,
-+			     u.bulk.buffer_to_host_work);
-+	struct vchiq_mmal_instance *instance = msg_context->instance;
-+	unsigned long len = msg_context->u.bulk.buffer_used;
-+	int ret;
-+
-+	if (!len)
-+		/* Dummy receive to ensure the buffers remain in order */
-+		len = 8;
-+	/* queue the bulk submission */
-+	vchi_service_use(instance->handle);
-+	ret = vchi_bulk_queue_receive(instance->handle,
-+				      msg_context->u.bulk.buffer->buffer,
-+				      /* Actual receive needs to be a multiple
-+				       * of 4 bytes
-+				       */
-+				      (len + 3) & ~3,
-+				      VCHI_FLAGS_CALLBACK_WHEN_OP_COMPLETE |
-+				      VCHI_FLAGS_BLOCK_UNTIL_QUEUED,
-+				      msg_context);
-+
-+	vchi_service_release(instance->handle);
-+
-+	if (ret != 0)
-+		pr_err("%s: ctx: %p, vchi_bulk_queue_receive failed %d\n",
-+		       __func__, msg_context, ret);
- }
-
- /* enqueue a bulk receive for a given message context */
-@@ -257,7 +299,6 @@ static int bulk_receive(struct vchiq_mmal_instance *instance,
- 			struct mmal_msg_context *msg_context)
- {
- 	unsigned long rd_len;
--	int ret;
-
- 	rd_len = msg->u.buffer_from_host.buffer_header.length;
-
-@@ -293,45 +334,10 @@ static int bulk_receive(struct vchiq_mmal_instance *instance,
- 	msg_context->u.bulk.dts = msg->u.buffer_from_host.buffer_header.dts;
- 	msg_context->u.bulk.pts = msg->u.buffer_from_host.buffer_header.pts;
-
--	/* queue the bulk submission */
--	vchi_service_use(instance->handle);
--	ret = vchi_bulk_queue_receive(instance->handle,
--				      msg_context->u.bulk.buffer->buffer,
--				      /* Actual receive needs to be a multiple
--				       * of 4 bytes
--				       */
--				      (rd_len + 3) & ~3,
--				      VCHI_FLAGS_CALLBACK_WHEN_OP_COMPLETE |
--				      VCHI_FLAGS_BLOCK_UNTIL_QUEUED,
--				      msg_context);
--
--	vchi_service_release(instance->handle);
-+	queue_work(msg_context->instance->bulk_wq,
-+		   &msg_context->u.bulk.buffer_to_host_work);
-
--	return ret;
--}
--
--/* enque a dummy bulk receive for a given message context */
--static int dummy_bulk_receive(struct vchiq_mmal_instance *instance,
--			      struct mmal_msg_context *msg_context)
--{
--	int ret;
--
--	/* zero length indicates this was a dummy transfer */
--	msg_context->u.bulk.buffer_used = 0;
--
--	/* queue the bulk submission */
--	vchi_service_use(instance->handle);
--
--	ret = vchi_bulk_queue_receive(instance->handle,
--				      instance->bulk_scratch,
--				      8,
--				      VCHI_FLAGS_CALLBACK_WHEN_OP_COMPLETE |
--				      VCHI_FLAGS_BLOCK_UNTIL_QUEUED,
--				      msg_context);
--
--	vchi_service_release(instance->handle);
--
--	return ret;
-+	return 0;
- }
-
- /* data in message, memcpy from packet into output buffer */
-@@ -379,6 +385,8 @@ buffer_from_host(struct vchiq_mmal_instance *instance,
-
- 	/* initialise work structure ready to schedule callback */
- 	INIT_WORK(&msg_context->u.bulk.work, buffer_work_cb);
-+	INIT_WORK(&msg_context->u.bulk.buffer_to_host_work,
-+		  buffer_to_host_work_cb);
-
- 	/* prep the buffer from host message */
- 	memset(&m, 0xbc, sizeof(m));	/* just to make debug clearer */
-@@ -459,7 +467,7 @@ static void buffer_to_host_cb(struct vchiq_mmal_instance *instance,
- 		if (msg->u.buffer_from_host.buffer_header.flags &
- 		    MMAL_BUFFER_HEADER_FLAG_EOS) {
- 			msg_context->u.bulk.status =
--			    dummy_bulk_receive(instance, msg_context);
-+			    bulk_receive(instance, msg, msg_context);
- 			if (msg_context->u.bulk.status == 0)
- 				return;	/* successful bulk submission, bulk
- 					 * completion will trigger callback
-@@ -1793,6 +1801,9 @@ int vchiq_mmal_finalise(struct vchiq_mmal_instance *instance)
-
- 	mutex_unlock(&instance->vchiq_mutex);
-
-+	flush_workqueue(instance->bulk_wq);
-+	destroy_workqueue(instance->bulk_wq);
-+
- 	vfree(instance->bulk_scratch);
-
- 	idr_destroy(&instance->context_map);
-@@ -1855,6 +1866,11 @@ int vchiq_mmal_init(struct vchiq_mmal_instance **out_instance)
-
- 	params.callback_param = instance;
-
-+	instance->bulk_wq = alloc_ordered_workqueue("mmal-vchiq",
-+						    WQ_MEM_RECLAIM);
-+	if (!instance->bulk_wq)
-+		goto err_free;
-+
- 	status = vchi_service_open(vchi_instance, &params, &instance->handle);
- 	if (status) {
- 		pr_err("Failed to open VCHI service connection (status=%d)\n",
-@@ -1869,8 +1885,9 @@ int vchiq_mmal_init(struct vchiq_mmal_instance **out_instance)
- 	return 0;
-
- err_close_services:
--
- 	vchi_service_close(instance->handle);
-+	destroy_workqueue(instance->bulk_wq);
-+err_free:
- 	vfree(instance->bulk_scratch);
- 	kfree(instance);
- 	return -ENODEV;
+ 			if (mmal_flags & MMAL_BUFFER_HEADER_FLAG_EOS &&
 --
 2.7.4
 
