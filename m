@@ -2,57 +2,48 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 928C6584A4
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 27 Jun 2019 16:38:53 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 327C8584A9
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 27 Jun 2019 16:39:11 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3FKRdFQFaV4vYT8rsrjmALegg0XPVTtKifLzyrTAWXM=; b=pxjx/97bbviwJn
-	pGAuWmLBr5z1OeEQS+9/IPA5rYpyzaIsx1CTKZt20mvSa6hM41wO17+N8Av7W+PbY80zbUcbvdfq3
-	9GvHJYd8DugfDO/N+MQByvZ01kEMODL7o558o1gfy2kW69Tp1Tng4hbjuvjmqDVHEMto7INeL7f8F
-	Ao289a5lmFKKgZM2a7QMLm6/7EX9PsuGytcqBzpCL+LpxGLLlzZCBVQGrxt6WJixTEeqxpLhUcD6Z
-	VLGmfiYrAGV5rtAPWwyS/zVNcK/R9NUe8zy7x1NV7a2gB94zppQ/dvFbsRJBY2Gybo36PnzYmFiE+
-	7op89AY7bg66FURJAmaA==;
+	List-Owner; bh=LdqF/Cj2BmsZjScmPKx51v57sDmKya4kDCNQ+vg2QTM=; b=rzjczfQxLqIgBW
+	bmF7ubi2L2+UmE7re906TDWM1VP8Ut/Q4IKn28nyM3mTlDZzzZ7waKtW3/XDATgJ6oUtgCVqhq1Dk
+	OO7t4HycEQgrhwHFGZ0m4/KWMfVkHWppKIBqWMDcho+AkDaBol+g0tleG2iAWrHHdtXHn5Qgd7hkn
+	ULtug3LW8glpaOQIrysbvCA4JemTJx9WFfofXHBjCCI4fAXpuwEp5N1kr9dX/OZ6r04qva9Yus938
+	JD6izaHpZi4kcp6Q+SGrC4kjDSQSPwHL0o84DnsvOb2xCcVMwnNnUL8uxlNmJj5TOcJ8VSD5RqaXu
+	sk3dOr+h0SOMQhhv9iKg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hgVY1-0006wQ-HB; Thu, 27 Jun 2019 14:38:49 +0000
+	id 1hgVYL-000792-FL; Thu, 27 Jun 2019 14:39:09 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hgVXl-0006vz-Ct
- for linux-arm-kernel@lists.infradead.org; Thu, 27 Jun 2019 14:38:34 +0000
+ id 1hgVXv-00072Z-5R
+ for linux-arm-kernel@lists.infradead.org; Thu, 27 Jun 2019 14:38:45 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 5D986360;
- Thu, 27 Jun 2019 07:38:31 -0700 (PDT)
-Received: from e103592.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
- [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id ABE3B3F246;
- Thu, 27 Jun 2019 07:38:28 -0700 (PDT)
-Date: Thu, 27 Jun 2019 15:38:26 +0100
-From: Dave Martin <Dave.Martin@arm.com>
-To: Vincenzo Frascino <vincenzo.frascino@arm.com>
-Subject: Re: [PATCH v7 04/25] arm64: Substitute gettimeofday with C
- implementation
-Message-ID: <20190627143826.GG2790@e103592.cambridge.arm.com>
-References: <20190621095252.32307-1-vincenzo.frascino@arm.com>
- <20190621095252.32307-5-vincenzo.frascino@arm.com>
- <20190625153336.GZ2790@e103592.cambridge.arm.com>
- <f5ac379a-731d-0662-2f5b-bd046e3bd1c5@arm.com>
- <20190626161413.GA2790@e103592.cambridge.arm.com>
- <19ebd45a-b666-d7de-fd9e-2b72e18892d9@arm.com>
- <20190627100150.GC2790@e103592.cambridge.arm.com>
- <85808e79-27a0-d3ab-3fb0-445f79ff87a4@arm.com>
- <20190627112731.GF2790@e103592.cambridge.arm.com>
- <a07b66cb-186f-a743-4f1d-41227f23db74@arm.com>
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 72489360;
+ Thu, 27 Jun 2019 07:38:42 -0700 (PDT)
+Received: from e121166-lin.cambridge.arm.com (unknown [10.1.196.255])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id DD71B3F246;
+ Thu, 27 Jun 2019 07:38:39 -0700 (PDT)
+Date: Thu, 27 Jun 2019 15:38:37 +0100
+From: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
+To: Vidya Sagar <vidyas@nvidia.com>
+Subject: Re: [PATCH V11 01/12] PCI: Add #defines for some of PCIe spec r4.0
+ features
+Message-ID: <20190627143837.GC3782@e121166-lin.cambridge.arm.com>
+References: <20190624091505.1711-1-vidyas@nvidia.com>
+ <20190624091505.1711-2-vidyas@nvidia.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <a07b66cb-186f-a743-4f1d-41227f23db74@arm.com>
-User-Agent: Mutt/1.5.23 (2014-03-12)
+In-Reply-To: <20190624091505.1711-2-vidyas@nvidia.com>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190627_073833_530622_612F304D 
-X-CRM114-Status: GOOD (  22.59  )
+X-CRM114-CacheID: sfid-20190627_073843_442294_869D28DB 
+X-CRM114-Status: GOOD (  12.82  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -71,138 +62,104 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arch@vger.kernel.org, Shuah Khan <shuah@kernel.org>,
- Catalin Marinas <catalin.marinas@arm.com>, Arnd Bergmann <arnd@arndb.de>,
- Mark Salyzyn <salyzyn@android.com>, Huw Davies <huw@codeweavers.com>,
- Andre Przywara <andre.przywara@arm.com>,
- Daniel Lezcano <daniel.lezcano@linaro.org>, Will Deacon <will.deacon@arm.com>,
- linux-mips@vger.kernel.org, Ralf Baechle <ralf@linux-mips.org>,
- linux-kernel@vger.kernel.org, Paul Burton <paul.burton@mips.com>,
- linux-kselftest@vger.kernel.org, Rasmus Villemoes <linux@rasmusvillemoes.dk>,
- Russell King <linux@armlinux.org.uk>, Dmitry Safonov <0x7f454c46@gmail.com>,
- Shijith Thotton <sthotton@marvell.com>, Peter Collingbourne <pcc@google.com>,
- Thomas Gleixner <tglx@linutronix.de>, linux-arm-kernel@lists.infradead.org
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, mperttunen@nvidia.com,
+ mmaddireddy@nvidia.com, linux-pci@vger.kernel.org, catalin.marinas@arm.com,
+ will.deacon@arm.com, linux-kernel@vger.kernel.org, kthota@nvidia.com,
+ kishon@ti.com, linux-tegra@vger.kernel.org, robh+dt@kernel.org,
+ thierry.reding@gmail.com, gustavo.pimentel@synopsys.com, jingoohan1@gmail.com,
+ bhelgaas@google.com, digetx@gmail.com, jonathanh@nvidia.com,
+ linux-arm-kernel@lists.infradead.org, sagar.tv@gmail.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Jun 27, 2019 at 12:59:07PM +0100, Vincenzo Frascino wrote:
-> On 6/27/19 12:27 PM, Dave Martin wrote:
-> > On Thu, Jun 27, 2019 at 11:57:36AM +0100, Vincenzo Frascino wrote:
-
-[...]
-
-> >> Disassembly of section .text:
-> >> 0000000000000000 show_it:
-> >>        0:	e8 03 1f aa 	mov	x8, xzr
-> >>        4:	09 68 68 38 	ldrb	w9, [x0, x8]
-> >>        8:	08 05 00 91 	add	x8, x8, #1
-> >>        c:	c9 ff ff 34 	cbz	w9, #-8 <show_it+0x4>
-> >>       10:	02 05 00 51 	sub	w2, w8, #1
-> >>       14:	e1 03 00 aa 	mov	x1, x0
-> >>       18:	08 08 80 d2 	mov	x8, #64
-> >>       1c:	01 00 00 d4 	svc	#0
-> >>       20:	c0 03 5f d6 	ret
-> >>
-> >> Commands used:
-> >>
-> >> $ clang -target aarch64-linux-gnueabi main.c -O -c -o main.clang.<x>.o
-> >> $ llvm-objdump -d main.clang.<x>.o
-> > 
-> > Actually, I'm not sure this is comparable with the reproducer I quoted
-> > in my last reply.
-> >
+On Mon, Jun 24, 2019 at 02:44:54PM +0530, Vidya Sagar wrote:
+> Add #defines only for the Data Link Feature and Physical Layer 16.0 GT/s
+> features.
 > 
-> As explained in my previous email, this is the only case that can realistically
-> happen. vDSO has no dependency on any other library (i.e. libgcc you were
-> mentioning) and we are referring to the fallbacks which fall in this category.
-
-Outlining could also introduce a local function call where none exists
-explicitly in the program IIUC.
-
-My point is that the interaction between asm reg vars and machine-level
-procedure calls is at best ill-defined, and it is largely up to the
-compiler when to introduce such a call, even without LTO etc.
-
-So we should not be surprised to see variations in behaviour depending
-on compiler, compiler version and compiler flags.
-
-> > The compiler can see the definition of strlen and fully inlines it.
-> > I only ever saw the problem when the compiler emits an out-of-line
-> > implicit function call.
-> > > What does clang do with my example on 32-bit?
+> Signed-off-by: Vidya Sagar <vidyas@nvidia.com>
+> Reviewed-by: Thierry Reding <treding@nvidia.com>
+> ---
+> Changes since [v10]:
+> * None
 > 
-> When clang is selected compat vDSOs are currently disabled on arm64, will be
-> introduced with a future patch series.
+> Changes since [v9]:
+> * None
 > 
-> Anyway since I am curious as well, this is what happens with your example with
-> clang.8 target=arm-linux-gnueabihf:
+> Changes since [v8]:
+> * None
 > 
-> dave-code.clang.8.o:	file format ELF32-arm-little
+> Changes since [v7]:
+> * None
 > 
-> Disassembly of section .text:
-> 0000000000000000 foo:
->        0:	00 00 00 ef 	svc	#0
->        4:	1e ff 2f e1 	bx	lr
+> Changes since [v6]:
+> * None
 > 
-> 0000000000000008 bar:
->        8:	10 4c 2d e9 	push	{r4, r10, r11, lr}
->        c:	08 b0 8d e2 	add	r11, sp, #8
->       10:	00 40 a0 e1 	mov	r4, r0
->       14:	fe ff ff eb 	bl	#-8 <bar+0xc>
->       18:	00 10 a0 e1 	mov	r1, r0
->       1c:	04 00 a0 e1 	mov	r0, r4
->       20:	00 00 00 ef 	svc	#0
->       24:	10 8c bd e8 	pop	{r4, r10, r11, pc}
-
-> Compiled with -O2, -O3, -Os never inlines.
-
-Looks sane, and is the behaviour we want.
-
-> Same thing happens for aarch64-linux-gnueabi:
+> Changes since [v5]:
+> * None
 > 
-> dave-code.clang.8.o:	file format ELF64-aarch64-little
+> Changes since [v4]:
+> * None
 > 
-> Disassembly of section .text:
-> 0000000000000000 foo:
->        0:	e0 03 00 2a 	mov	w0, w0
->        4:	e1 03 01 2a 	mov	w1, w1
->        8:	01 00 00 d4 	svc	#0
->        c:	c0 03 5f d6 	ret
+> Changes since [v3]:
+> * None
 > 
-> 0000000000000010 bar:
->       10:	01 0c c1 1a 	sdiv	w1, w0, w1
->       14:	e0 03 00 2a 	mov	w0, w0
->       18:	01 00 00 d4 	svc	#0
->       1c:	c0 03 5f d6 	ret
+> Changes since [v2]:
+> * Updated commit message and description to explicitly mention that defines are
+>   added only for some of the features and not all.
+> 
+> Changes since [v1]:
+> * None
+> 
+>  include/uapi/linux/pci_regs.h | 22 +++++++++++++++++++++-
+>  1 file changed, 21 insertions(+), 1 deletion(-)
 
-Curious, clang seems to be inserting some seemingly redundant moves
-of its own here, though this shouldn't break anything.
+I need Bjorn's ACK to merge this patch.
 
-I suspect that clang might require an X-reg holding an int to have its
-top 32 bits zeroed for passing to an asm, whereas GCC does not.  I think
-this comes under "we should not be surprised to see variations".
+Lorenzo
 
-GCC 9 does this instead:
-
-0000000000000000 <foo>:
-   0:   d4000001        svc     #0x0
-   4:   d65f03c0        ret
-
-0000000000000008 <bar>:
-   8:   1ac10c01        sdiv    w1, w0, w1
-   c:   d4000001        svc     #0x0
-  10:   d65f03c0        ret
-
-
-> Based on this I think we can conclude our investigation.
-
-So we use non-reg vars and use the asm clobber list and explicit moves
-to get things into / out of the right registers?
-
-Cheers
----Dave
+> diff --git a/include/uapi/linux/pci_regs.h b/include/uapi/linux/pci_regs.h
+> index f28e562d7ca8..1c79f6a097d2 100644
+> --- a/include/uapi/linux/pci_regs.h
+> +++ b/include/uapi/linux/pci_regs.h
+> @@ -713,7 +713,9 @@
+>  #define PCI_EXT_CAP_ID_DPC	0x1D	/* Downstream Port Containment */
+>  #define PCI_EXT_CAP_ID_L1SS	0x1E	/* L1 PM Substates */
+>  #define PCI_EXT_CAP_ID_PTM	0x1F	/* Precision Time Measurement */
+> -#define PCI_EXT_CAP_ID_MAX	PCI_EXT_CAP_ID_PTM
+> +#define PCI_EXT_CAP_ID_DLF	0x25	/* Data Link Feature */
+> +#define PCI_EXT_CAP_ID_PL	0x26	/* Physical Layer 16.0 GT/s */
+> +#define PCI_EXT_CAP_ID_MAX	PCI_EXT_CAP_ID_PL
+>  
+>  #define PCI_EXT_CAP_DSN_SIZEOF	12
+>  #define PCI_EXT_CAP_MCAST_ENDPOINT_SIZEOF 40
+> @@ -1053,4 +1055,22 @@
+>  #define  PCI_L1SS_CTL1_LTR_L12_TH_SCALE	0xe0000000  /* LTR_L1.2_THRESHOLD_Scale */
+>  #define PCI_L1SS_CTL2		0x0c	/* Control 2 Register */
+>  
+> +/* Data Link Feature */
+> +#define PCI_DLF_CAP		0x04	/* Capabilities Register */
+> +#define  PCI_DLF_LOCAL_DLF_SUP_MASK	0x007fffff  /* Local Data Link Feature Supported */
+> +#define  PCI_DLF_EXCHANGE_ENABLE	0x80000000  /* Data Link Feature Exchange Enable */
+> +#define PCI_DLF_STS		0x08	/* Status Register */
+> +#define  PCI_DLF_REMOTE_DLF_SUP_MASK	0x007fffff  /* Remote Data Link Feature Supported */
+> +#define  PCI_DLF_REMOTE_DLF_SUP_VALID	0x80000000  /* Remote Data Link Feature Support Valid */
+> +
+> +/* Physical Layer 16.0 GT/s */
+> +#define PCI_PL_16GT_CAP		0x04	/* Capabilities Register */
+> +#define PCI_PL_16GT_CTRL	0x08	/* Control Register */
+> +#define PCI_PL_16GT_STS		0x0c	/* Status Register */
+> +#define PCI_PL_16GT_LDPM_STS	0x10	/* Local Data Parity Mismatch Status Register */
+> +#define PCI_PL_16GT_FRDPM_STS	0x14	/* First Retimer Data Parity Mismatch Status Register */
+> +#define PCI_PL_16GT_SRDPM_STS	0x18	/* Second Retimer Data Parity Mismatch Status Register */
+> +#define PCI_PL_16GT_RSVD	0x1C	/* Reserved */
+> +#define PCI_PL_16GT_LE_CTRL	0x20	/* Lane Equalization Control Register */
+> +
+>  #endif /* LINUX_PCI_REGS_H */
+> -- 
+> 2.17.1
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
