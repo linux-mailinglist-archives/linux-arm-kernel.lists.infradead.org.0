@@ -2,53 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 327C8584A9
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 27 Jun 2019 16:39:11 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D9CD1584C8
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 27 Jun 2019 16:48:21 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=LdqF/Cj2BmsZjScmPKx51v57sDmKya4kDCNQ+vg2QTM=; b=rzjczfQxLqIgBW
-	bmF7ubi2L2+UmE7re906TDWM1VP8Ut/Q4IKn28nyM3mTlDZzzZ7waKtW3/XDATgJ6oUtgCVqhq1Dk
-	OO7t4HycEQgrhwHFGZ0m4/KWMfVkHWppKIBqWMDcho+AkDaBol+g0tleG2iAWrHHdtXHn5Qgd7hkn
-	ULtug3LW8glpaOQIrysbvCA4JemTJx9WFfofXHBjCCI4fAXpuwEp5N1kr9dX/OZ6r04qva9Yus938
-	JD6izaHpZi4kcp6Q+SGrC4kjDSQSPwHL0o84DnsvOb2xCcVMwnNnUL8uxlNmJj5TOcJ8VSD5RqaXu
-	sk3dOr+h0SOMQhhv9iKg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=VycU+Z0pg5lu+pAg+gB3hcOHao+6RD23eHBt/p+PwLs=; b=sOjql1JqUywzWk
+	o81cx1L6N0cW0ZAOdpWwgjMf/LQtUdIXQmNaX2Dc0JcoqMTP/0wJ1jwW/1evIPO55tjbHwvECAO0A
+	e7xqx1pW55Q7SkqnTJAXcFW0Sr2+9DaUHn68G6paJa1VJmSXVKmwgzc29UkCLlmNgG3E2yZ6JoQTt
+	MuV6+u6tXmtSsNbt1a1zsJtJy3GBCpnN4wGw82jqgw12ts8iLltPncNlLNaCuN1iPh4tddy0EPNph
+	2wjvMRCtYNuEJCpUYXUvc89+O/fYgkpQjVULsNQ/L1aPJhTJK1NxB1TXDh0Wa0Eh1ENeSg6zIbUGp
+	JbX+OFRGeBaiI/k9g5ZQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hgVYL-000792-FL; Thu, 27 Jun 2019 14:39:09 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hgVXv-00072Z-5R
- for linux-arm-kernel@lists.infradead.org; Thu, 27 Jun 2019 14:38:45 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 72489360;
- Thu, 27 Jun 2019 07:38:42 -0700 (PDT)
-Received: from e121166-lin.cambridge.arm.com (unknown [10.1.196.255])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id DD71B3F246;
- Thu, 27 Jun 2019 07:38:39 -0700 (PDT)
-Date: Thu, 27 Jun 2019 15:38:37 +0100
-From: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
-To: Vidya Sagar <vidyas@nvidia.com>
-Subject: Re: [PATCH V11 01/12] PCI: Add #defines for some of PCIe spec r4.0
- features
-Message-ID: <20190627143837.GC3782@e121166-lin.cambridge.arm.com>
-References: <20190624091505.1711-1-vidyas@nvidia.com>
- <20190624091505.1711-2-vidyas@nvidia.com>
+	id 1hgVh9-0002fc-Ue; Thu, 27 Jun 2019 14:48:15 +0000
+Received: from esa5.microchip.iphmx.com ([216.71.150.166])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hgVgt-0002eO-Kb
+ for linux-arm-kernel@lists.infradead.org; Thu, 27 Jun 2019 14:48:03 +0000
+Received-SPF: Pass (esa5.microchip.iphmx.com: domain of
+ Claudiu.Beznea@microchip.com designates 198.175.253.82 as
+ permitted sender) identity=mailfrom;
+ client-ip=198.175.253.82; receiver=esa5.microchip.iphmx.com;
+ envelope-from="Claudiu.Beznea@microchip.com";
+ x-sender="Claudiu.Beznea@microchip.com";
+ x-conformance=spf_only; x-record-type="v=spf1";
+ x-record-text="v=spf1 mx a:ushub1.microchip.com
+ a:smtpout.microchip.com a:mx1.microchip.iphmx.com
+ a:mx2.microchip.iphmx.com include:servers.mcsv.net
+ include:mktomail.com include:spf.protection.outlook.com ~all"
+Received-SPF: None (esa5.microchip.iphmx.com: no sender
+ authenticity information available from domain of
+ postmaster@email.microchip.com) identity=helo;
+ client-ip=198.175.253.82; receiver=esa5.microchip.iphmx.com;
+ envelope-from="Claudiu.Beznea@microchip.com";
+ x-sender="postmaster@email.microchip.com"; x-conformance=spf_only
+Authentication-Results: esa5.microchip.iphmx.com;
+ dkim=none (message not signed) header.i=none;
+ spf=Pass smtp.mailfrom=Claudiu.Beznea@microchip.com;
+ spf=None smtp.helo=postmaster@email.microchip.com;
+ dmarc=pass (p=none dis=none) d=microchip.com
+X-IronPort-AV: E=Sophos;i="5.63,424,1557212400"; d="scan'208";a="37606820"
+Received: from smtpout.microchip.com (HELO email.microchip.com)
+ ([198.175.253.82])
+ by esa5.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
+ 27 Jun 2019 07:47:57 -0700
+Received: from chn-vm-ex01.mchp-main.com (10.10.87.71) by
+ chn-vm-ex04.mchp-main.com (10.10.87.151) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
+ 15.1.1713.5; Thu, 27 Jun 2019 07:47:56 -0700
+Received: from m18063-ThinkPad-T460p.mchp-main.com (10.10.85.251) by
+ chn-vm-ex01.mchp-main.com (10.10.85.143) with Microsoft SMTP Server id
+ 15.1.1713.5 via Frontend Transport; Thu, 27 Jun 2019 07:47:52 -0700
+From: Claudiu Beznea <claudiu.beznea@microchip.com>
+To: <mturquette@baylibre.com>, <sboyd@kernel.org>, <robh+dt@kernel.org>,
+ <mark.rutland@arm.com>, <nicolas.ferre@microchip.com>,
+ <alexandre.belloni@bootlin.com>, <ludovic.desroches@microchip.com>
+Subject: [PATCH v5 0/4] add slow clock support for SAM9X60
+Date: Thu, 27 Jun 2019 17:47:17 +0300
+Message-ID: <1561646841-7663-1-git-send-email-claudiu.beznea@microchip.com>
+X-Mailer: git-send-email 2.7.4
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190624091505.1711-2-vidyas@nvidia.com>
-User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190627_073843_442294_869D28DB 
-X-CRM114-Status: GOOD (  12.82  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190627_074759_790253_03B5245D 
+X-CRM114-Status: UNSURE (   9.51  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [216.71.150.166 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -62,104 +90,72 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, mperttunen@nvidia.com,
- mmaddireddy@nvidia.com, linux-pci@vger.kernel.org, catalin.marinas@arm.com,
- will.deacon@arm.com, linux-kernel@vger.kernel.org, kthota@nvidia.com,
- kishon@ti.com, linux-tegra@vger.kernel.org, robh+dt@kernel.org,
- thierry.reding@gmail.com, gustavo.pimentel@synopsys.com, jingoohan1@gmail.com,
- bhelgaas@google.com, digetx@gmail.com, jonathanh@nvidia.com,
- linux-arm-kernel@lists.infradead.org, sagar.tv@gmail.com
+Cc: devicetree@vger.kernel.org, Claudiu Beznea <claudiu.beznea@microchip.com>,
+ linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-kernel@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Jun 24, 2019 at 02:44:54PM +0530, Vidya Sagar wrote:
-> Add #defines only for the Data Link Feature and Physical Layer 16.0 GT/s
-> features.
-> 
-> Signed-off-by: Vidya Sagar <vidyas@nvidia.com>
-> Reviewed-by: Thierry Reding <treding@nvidia.com>
-> ---
-> Changes since [v10]:
-> * None
-> 
-> Changes since [v9]:
-> * None
-> 
-> Changes since [v8]:
-> * None
-> 
-> Changes since [v7]:
-> * None
-> 
-> Changes since [v6]:
-> * None
-> 
-> Changes since [v5]:
-> * None
-> 
-> Changes since [v4]:
-> * None
-> 
-> Changes since [v3]:
-> * None
-> 
-> Changes since [v2]:
-> * Updated commit message and description to explicitly mention that defines are
->   added only for some of the features and not all.
-> 
-> Changes since [v1]:
-> * None
-> 
->  include/uapi/linux/pci_regs.h | 22 +++++++++++++++++++++-
->  1 file changed, 21 insertions(+), 1 deletion(-)
+Hi,
 
-I need Bjorn's ACK to merge this patch.
+This series add slow clock support for SAM9X60. Apart from previous IPs, this
+one uses different offsets in control register for different functionalities.
+The series adapt current driver to work for all IPs using per IP
+configurations initialized at probe.
 
-Lorenzo
+Stephen,
 
-> diff --git a/include/uapi/linux/pci_regs.h b/include/uapi/linux/pci_regs.h
-> index f28e562d7ca8..1c79f6a097d2 100644
-> --- a/include/uapi/linux/pci_regs.h
-> +++ b/include/uapi/linux/pci_regs.h
-> @@ -713,7 +713,9 @@
->  #define PCI_EXT_CAP_ID_DPC	0x1D	/* Downstream Port Containment */
->  #define PCI_EXT_CAP_ID_L1SS	0x1E	/* L1 PM Substates */
->  #define PCI_EXT_CAP_ID_PTM	0x1F	/* Precision Time Measurement */
-> -#define PCI_EXT_CAP_ID_MAX	PCI_EXT_CAP_ID_PTM
-> +#define PCI_EXT_CAP_ID_DLF	0x25	/* Data Link Feature */
-> +#define PCI_EXT_CAP_ID_PL	0x26	/* Physical Layer 16.0 GT/s */
-> +#define PCI_EXT_CAP_ID_MAX	PCI_EXT_CAP_ID_PL
->  
->  #define PCI_EXT_CAP_DSN_SIZEOF	12
->  #define PCI_EXT_CAP_MCAST_ENDPOINT_SIZEOF 40
-> @@ -1053,4 +1055,22 @@
->  #define  PCI_L1SS_CTL1_LTR_L12_TH_SCALE	0xe0000000  /* LTR_L1.2_THRESHOLD_Scale */
->  #define PCI_L1SS_CTL2		0x0c	/* Control 2 Register */
->  
-> +/* Data Link Feature */
-> +#define PCI_DLF_CAP		0x04	/* Capabilities Register */
-> +#define  PCI_DLF_LOCAL_DLF_SUP_MASK	0x007fffff  /* Local Data Link Feature Supported */
-> +#define  PCI_DLF_EXCHANGE_ENABLE	0x80000000  /* Data Link Feature Exchange Enable */
-> +#define PCI_DLF_STS		0x08	/* Status Register */
-> +#define  PCI_DLF_REMOTE_DLF_SUP_MASK	0x007fffff  /* Remote Data Link Feature Supported */
-> +#define  PCI_DLF_REMOTE_DLF_SUP_VALID	0x80000000  /* Remote Data Link Feature Support Valid */
-> +
-> +/* Physical Layer 16.0 GT/s */
-> +#define PCI_PL_16GT_CAP		0x04	/* Capabilities Register */
-> +#define PCI_PL_16GT_CTRL	0x08	/* Control Register */
-> +#define PCI_PL_16GT_STS		0x0c	/* Status Register */
-> +#define PCI_PL_16GT_LDPM_STS	0x10	/* Local Data Parity Mismatch Status Register */
-> +#define PCI_PL_16GT_FRDPM_STS	0x14	/* First Retimer Data Parity Mismatch Status Register */
-> +#define PCI_PL_16GT_SRDPM_STS	0x18	/* Second Retimer Data Parity Mismatch Status Register */
-> +#define PCI_PL_16GT_RSVD	0x1C	/* Reserved */
-> +#define PCI_PL_16GT_LE_CTRL	0x20	/* Lane Equalization Control Register */
-> +
->  #endif /* LINUX_PCI_REGS_H */
-> -- 
-> 2.17.1
-> 
+I send a new version of this since I'm not seeing the patches on clk-next
+and I though you may had issues with the previous version of this series.
+
+Thank you,
+Claudiu Beznea
+
+Changes in v5:
+- get rid of Content-Transfer-Encoding: base64
+- collect Ack-by tag
+
+Changes in v4:
+- remove macros which were used to access IP specific bits for control
+  register
+- collect Acked-by, Reviewed-by tags
+
+Changes in v3:
+- add patch 1/1 that remove bypass code in the code specific to SAMA5D4
+  (there is no bypass support on SAMA5D4)
+- adapt review comments
+- register clock with of_clk_hw_onecell_get to emphasize that this IP has
+  2 output clocks MD_SLKC and TD_SLCK (I considered not necessary to
+  introduce new constants to be shared b/w driver and DT bindings; if
+  you consider otherwise, let me know)
+- adapt dt-binding patch with clock-cells changes (thus didn't introduced
+  Reviewed-by tag)
+- renamed struct clk_slow_offsets to struct clk_slow_bits and the
+  corresponding instances of it
+
+Changes in v2:
+- split patch 1/1 from v1 in 2 patches: one adding register bit offsets
+  support (patch 1/3 from this series), one adding support for SAM9X60
+  (patch 2/3 from this series)
+- fix compatible string from "microchip,at91sam9x60-sckc" to
+  "microchip,sam9x60-sckc"
+
+Claudiu Beznea (4):
+  clk: at91: sckc: sama5d4 has no bypass support
+  clk: at91: sckc: add support to specify registers bit offsets
+  dt-bindings: clk: at91: add bindings for SAM9X60's slow clock
+    controller
+  clk: at91: sckc: add support for SAM9X60
+
+ .../devicetree/bindings/clock/at91-clock.txt       |   7 +-
+ drivers/clk/at91/sckc.c                            | 173 ++++++++++++++++-----
+ 2 files changed, 139 insertions(+), 41 deletions(-)
+
+-- 
+2.7.4
+
 
 _______________________________________________
 linux-arm-kernel mailing list
