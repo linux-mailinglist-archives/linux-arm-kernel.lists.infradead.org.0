@@ -2,98 +2,98 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 57DF957B38
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 27 Jun 2019 07:20:50 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6B24157B37
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 27 Jun 2019 07:20:23 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Subject:To:From:Date:References:
 	In-Reply-To:Message-Id:Mime-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=OmDbgnzOgpxsjFMHuwr2CAxkk6oR25miMywiUbu2xWU=; b=BJUphpW46q2xlZ
-	SLHmIm+olOfphqL5NiD25xPfGm1xil+k/SeG0wG4BSw8I2aXWWAX/KCX+MVUrtsX794fzoESCZncI
-	DoQ4/oVw/fxELkPZhxj1tO3Qx3DIXPLLHZPgpeRUGzLQ8k29qKUEolfLIHHoOONdnnNGdaUxqUapk
-	Am+71Uzzr81+LCCF1qGqlnQMj3iyNa54GhDfYfqf1/RxwX0w4PFK2M7GAepE2xAdLEJmIIdMJC2YH
-	wXFs2a7IO1FCEi8k2v7ara9qWxNYDfY/JS8EY0a1g8/53qq9CRw79doWI04mg7HmgpbICmKaOfRVB
-	ERNhQ3i8Cuu2kf2hnZJA==;
+	List-Owner; bh=l+OD/2mkRYUp8DMQBtPTEWN+BCvJuWA8fulF/Khk7wk=; b=qaHrZMmiuDLxa2
+	QwfhjPcS7xceUADC7fNrToin7n77GA8XZwMFnLF3HE1ALDc2MJ0Q2f+D4lfKeghI6Z0Ar55XVZ1JR
+	e6ZAU8mKVcCI3MMeW5MEtlm1LTtjykGYtDkuCNQXtrGcUhHmFP3LVa6YiBF85ZSiobEnsRj87dL3U
+	VO0tTGtpOG3AR4aQ20flw8fEYfw8TWxSwCPoV2zHaID65iJIIueKwEt9Ib+rHVu6xwGLvXg+135RJ
+	e1dhIReJ1oiElUfXE4yCgbP0cTarPVFd80RDj7UmWAK5hnHbhjwDN1zNJx0tXTmUZvfUkA4nWPdfK
+	c5rB+0m6ewalrPbcwwIA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hgMpx-00017d-9M; Thu, 27 Jun 2019 05:20:46 +0000
+	id 1hgMpY-0007km-Ti; Thu, 27 Jun 2019 05:20:21 +0000
 Received: from casper.infradead.org ([2001:8b0:10b:1236::1])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hgMob-0006Q2-3k
- for linux-arm-kernel@bombadil.infradead.org; Thu, 27 Jun 2019 05:19:21 +0000
+ id 1hgMoY-0006Q2-E5
+ for linux-arm-kernel@bombadil.infradead.org; Thu, 27 Jun 2019 05:19:18 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=infradead.org; s=casper.20170209; h=Content-Type:Subject:Cc:To:From:Date:
  References:In-Reply-To:Message-Id:Mime-Version:Sender:Reply-To:
  Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
  Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
  List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=rg0MvOjGGvyE/jBUfl7d7PqyJK1OGHxniXZ/0dvFPZw=; b=gpBBx7yjoV+CNqGBWrIhHSiSo
- ehzD/D+9QyoO4RBuMKD8w4HbNReMlzN3+EmTJpHSh/8M5/6tl1M+pBS5yrNEIAv/ijoxFpJiQTtiP
- LOgpZf0Lut6kBw87m7FSoNBE0D2ckfmwrdZvn+0kBRdpgEwuvtgsP3xerqIEJJnlh38Fd2gDe0+r0
- 1KhYq+g9IYKBjyXrVm49iVFHmoz6ktEHukv0rPeBo2AZJydTjYb5u5wVZtPDEBMnppDr1sMuOmfqo
- xDbIV5gnppEBUovox8ZeWaxX75KyZha05bxYkNKfd4+EuVPkLOVGpRh4FcLDTASIUlkU8Sanazy6g
- z1wPIfrNg==;
+ bh=Fmp+BOEupySBVtpjzqC63zvPuK56eVvu2js37xVpihI=; b=fme4mIKjMU0Z3mt23lqfwPsoK
+ zHo5f/4Q1bR1xEXwJ4ooWEMl2ZkZ13v+xB9WTcDp/TDOnd4r9xlhFfgMuEAxjWVq7szhxe9DaOo+D
+ snnQwrZARzXJlfFnhxrCjBkUXHxZOod8uHxTgz7ENGgNYDNANOTCI+UFxjThjTfpetMs6kxy6m6Zr
+ PvnPXPUwE/QoL1JT1RADDyIU9HqpEpyfsrFf3hzAfkIMRVxsSQU2YUWRyRtseo+6X42XXekNUmi+Q
+ pIMcm5d/aPG6O6kZ+AfgkLaFdkDqt6gDMRmGj9GVfD77SGVIMZ1aY0Qg77U/BsZgv8TGUTJJGIzW0
+ NM2Gbf2dw==;
 Received: from new4-smtp.messagingengine.com ([66.111.4.230])
  by casper.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hgLYr-0001gn-2C
- for linux-arm-kernel@lists.infradead.org; Thu, 27 Jun 2019 03:59:03 +0000
+ id 1hgLct-0001jy-B2
+ for linux-arm-kernel@lists.infradead.org; Thu, 27 Jun 2019 04:03:13 +0000
 Received: from compute4.internal (compute4.nyi.internal [10.202.2.44])
- by mailnew.nyi.internal (Postfix) with ESMTP id E81FA12EC;
- Wed, 26 Jun 2019 23:57:49 -0400 (EDT)
+ by mailnew.nyi.internal (Postfix) with ESMTP id 31EC820D8;
+ Thu, 27 Jun 2019 00:02:35 -0400 (EDT)
 Received: from imap2 ([10.202.2.52])
- by compute4.internal (MEProxy); Wed, 26 Jun 2019 23:57:49 -0400
+ by compute4.internal (MEProxy); Thu, 27 Jun 2019 00:02:35 -0400
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=aj.id.au; h=
  mime-version:message-id:in-reply-to:references:date:from:to:cc
- :subject:content-type; s=fm3; bh=rg0MvOjGGvyE/jBUfl7d7PqyJK1OGHx
- niXZ/0dvFPZw=; b=XzMOM0/rxccQ96fc86NdijBflRai0T1+PxCH9qaL3Sryjrw
- nj/UpEtQP/UzQsGY8fgJDnhpiCZ4g5PKxAFVv8clb9SdA8LzyaWe3dUotdPgpr0z
- G+JWDrgXHh6BFTck+mFh2x58zXQUksUUA9HoIo2NO1lksrZW1etKIfegcBCg9IVm
- Ks7AfdUDbl35GslFSCM4M74kv9Y/0fBcdhYT0hcn626UDRSP3DS4z4YSlSyUXdBQ
- GTUCC8no7rKNgfhjiC4SB+U9tYx5+z+ygw4+F0FIiOQ/1hARiReCbo3Q125db2B5
- RxEGsH1fKh8Pjbdx0WhITmwhk+XcDT3sKukOQCw==
+ :subject:content-type; s=fm3; bh=Fmp+BOEupySBVtpjzqC63zvPuK56eVv
+ u2js37xVpihI=; b=QApLQdYFEOTDAyKcDh23hCvGX/5Na3gs77ir4y1XL43mS/1
+ v121RibpU2D+/HDmQ8xskmCg8pOhpCempJAM7pJ74gHx6pjzXJ8qk49xo1IWpXu1
+ vH6T6US7ifm0ybajLI9YBalSqPqBHBQ/bRDptkSRqoagxKnl5+i2D558ewtcKzV6
+ S0MVi7u7op7bF7romF9qoMv4btmGYuiLyAUAfA8jmvnyQk1Za1KIxhMXfzc9yIUB
+ INGTiGkcqJV9GcZPwa+OAC40/KPAgcfscGWheGD3HS/daVoThjhhfiH6t04iFTmU
+ wd7bO0abU+2StVJCLmHm2E3r97vI7QLf2u2NhQA==
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
  messagingengine.com; h=cc:content-type:date:from:in-reply-to
  :message-id:mime-version:references:subject:to:x-me-proxy
- :x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm3; bh=rg0MvO
- jGGvyE/jBUfl7d7PqyJK1OGHxniXZ/0dvFPZw=; b=cOiSDPN6EEDQPKa7O3gae8
- lusEHXgnu4k/9H+I2TcJhlUhAEz2+crNkkAzW9vAulDzh5969LYLk5zroCpNMMLX
- 9N1frUxLs5V9LWpM47DkpAzihRu1aXp0s/0vb8MrlcvFWxyfVOyU0BCrpS3oW8Si
- E0L77ATGh0A6J7Q7pOYZ6g/AoYz+zRk7n72RDR4nxdq2cs7EJVbu2sLPggFZq5YH
- 2A1fORbPRT1bNrmwUApDoKHYGJn4KmOwNsyLa9FWgtE4VfzJk+E9c6b2EL0+TSLd
- vUm6tsiXd4Jy5GyKjxJS2UBU+FnPwX+L4GL+q6RQbKIoIUAQkjw+mqSoUeSgqdsw
+ :x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm3; bh=Fmp+BO
+ EupySBVtpjzqC63zvPuK56eVvu2js37xVpihI=; b=FO6dIVoQ5rtaF5n1GaLBNh
+ iZV9oG0MDngG9xZuQrWvDDps2XG40OVY5DYSVwHtuAWYBwhTsvc8LXOIPRjr2fZw
+ 9437BDHvv024GLyNwyAvEmLHP/Jlyb/xrHdOI3Zrc+wdvqezf/hkbw8XFKOP6gOV
+ 7Bsnsf5qjh13kGSKw50FXmER8Q/Pt9MGhiEoDhXzDLjYa42OxXB9Nh7GDfVd3eaG
+ 0cEwX7Eujxq2urTHUhx6HShHFjY575W6IWoudvq7S3IZZwz4HOWfge5Ao+JPI9Oq
+ CErKCDGZ1PC2XsMnCdBTal1SG8WYeZkFF8eSWOD2izQ8uLMCIqe/QEeIPNGudYRA
  ==
-X-ME-Sender: <xms:vT4UXRp2MSuLxXQ-ITuvd9B7INIxJ1ed3uVe2NGSAquykYboA1IenA>
-X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduvddrudejgdejkecutefuodetggdotefrodftvf
+X-ME-Sender: <xms:1z8UXWyS844TDQTyEk41JatYBMxO4mlrM6N6rx_l6AD1sQGY3kIjow>
+X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduvddrudejgdejlecutefuodetggdotefrodftvf
  curfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfghnecu
  uegrihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmdenuc
  fjughrpefofgggkfgjfhffhffvufgtsehttdertderreejnecuhfhrohhmpedftehnughr
  vgifucflvghffhgvrhihfdcuoegrnhgurhgvfiesrghjrdhiugdrrghuqeenucfrrghrrg
  hmpehmrghilhhfrhhomheprghnughrvgifsegrjhdrihgurdgruhenucevlhhushhtvghr
  ufhiiigvpedt
-X-ME-Proxy: <xmx:vT4UXYtzJC0GJKHqspDMd3VbjFBNdrZWw32FOnTyS-Oem1uJSTqvog>
- <xmx:vT4UXbNZnvGiTu5AJiZZYW8Ejpqsyqa7EmhdNAoSgkzu215cKLw8Bw>
- <xmx:vT4UXamkNYXRw3iXICIJ2khXi9n8IP0ba-Pd7XLwIBhloCztRxSFJg>
- <xmx:vT4UXXevahKZNWtBkhHAopfLZyZhUVcd73y5CdDGD6apGkgIe0e0cQ>
+X-ME-Proxy: <xmx:1z8UXbrxEntN8J8lOKet4zVeDQ7SveS9sUBku1OJcIlxv91V-0ZAvg>
+ <xmx:1z8UXReH2J5pvvNvppgjPUnwFpvC4fTECLbKMzmsPBmFHmlxhq-swQ>
+ <xmx:1z8UXfhcoeGRGvU77nfbqd_JOD3sXVYp8x8UTfWwHEtnCbGz6xwO1w>
+ <xmx:2z8UXe-zAs_jUi-e4l2KZJEBBBLTaXnmpuZbUpk8Iq-T3kaIzwEtAg>
 Received: by mailuser.nyi.internal (Postfix, from userid 501)
- id 9C47CE00A2; Wed, 26 Jun 2019 23:57:49 -0400 (EDT)
+ id 3F2F4E00A2; Thu, 27 Jun 2019 00:02:31 -0400 (EDT)
 X-Mailer: MessagingEngine.com Webmail Interface
 User-Agent: Cyrus-JMAP/3.1.6-730-g63f2c3b-fmstable-20190622v1
 Mime-Version: 1.0
-Message-Id: <835ac4e3-6ee4-4c3f-913b-93629d7e8080@www.fastmail.com>
-In-Reply-To: <CACPK8XcPxJAOBAnKMKxtiG4Fkz8BPf8KtW1Kc3A9tU_emQviVg@mail.gmail.com>
+Message-Id: <226afe63-cc86-4920-abc1-025bdda32063@www.fastmail.com>
+In-Reply-To: <CACPK8Xfdd1ReAHr9f6zRbZ-WJRquDJsTdUQeT_JuEBhOzS8tig@mail.gmail.com>
 References: <20190626071430.28556-1-andrew@aj.id.au>
- <20190626071430.28556-6-andrew@aj.id.au>
- <CACPK8XcPxJAOBAnKMKxtiG4Fkz8BPf8KtW1Kc3A9tU_emQviVg@mail.gmail.com>
-Date: Thu, 27 Jun 2019 13:27:49 +0930
+ <20190626071430.28556-2-andrew@aj.id.au>
+ <CACPK8Xfdd1ReAHr9f6zRbZ-WJRquDJsTdUQeT_JuEBhOzS8tig@mail.gmail.com>
+Date: Thu, 27 Jun 2019 13:32:30 +0930
 From: "Andrew Jeffery" <andrew@aj.id.au>
 To: "Joel Stanley" <joel@jms.id.au>
-Subject: =?UTF-8?Q?Re:_[PATCH_5/8]_pinctrl:_aspeed:_Correct_comment_that_is_no_lo?=
- =?UTF-8?Q?nger_true?=
+Subject: =?UTF-8?Q?Re:_[PATCH_1/8]_dt-bindings:_pinctrl:_aspeed:_Split_bindings_d?=
+ =?UTF-8?Q?ocument_in_two?=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190627_045901_277222_34078D52 
-X-CRM114-Status: GOOD (  16.77  )
+X-CRM114-CacheID: sfid-20190627_050311_570720_2D9E7356 
+X-CRM114-Status: GOOD (  16.16  )
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on casper.infradead.org summary:
  Content analysis details:   (-0.9 points, 5.0 required)
@@ -135,29 +135,46 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 
 
-On Thu, 27 Jun 2019, at 13:00, Joel Stanley wrote:
-> On Wed, 26 Jun 2019 at 07:16, Andrew Jeffery <andrew@aj.id.au> wrote:
+On Thu, 27 Jun 2019, at 13:02, Joel Stanley wrote:
+> On Wed, 26 Jun 2019 at 07:15, Andrew Jeffery <andrew@aj.id.au> wrote:
 > >
-> > We have handled the GFX register case for quite some time now.
+> > Have one for each of the AST2400 and AST2500. The only thing that was
+> > common was the fact that both support ASPEED BMC SoCs.
 > >
 > > Signed-off-by: Andrew Jeffery <andrew@aj.id.au>
 > > ---
-> >  drivers/pinctrl/aspeed/pinctrl-aspeed.h | 3 +--
-> >  1 file changed, 1 insertion(+), 2 deletions(-)
+> >  .../pinctrl/aspeed,ast2400-pinctrl.txt        | 80 +++++++++++++++++++
+> >  ...-aspeed.txt => aspeed,ast2500-pinctrl.txt} | 63 ++-------------
+> >  2 files changed, 85 insertions(+), 58 deletions(-)
+> >  create mode 100644 Documentation/devicetree/bindings/pinctrl/aspeed,ast2400-pinctrl.txt
+> >  rename Documentation/devicetree/bindings/pinctrl/{pinctrl-aspeed.txt => aspeed,ast2500-pinctrl.txt} (66%)
 > >
-> > diff --git a/drivers/pinctrl/aspeed/pinctrl-aspeed.h b/drivers/pinctrl/aspeed/pinctrl-aspeed.h
-> > index 4b06ddbc6aec..c5918c4a087c 100644
-> > --- a/drivers/pinctrl/aspeed/pinctrl-aspeed.h
-> > +++ b/drivers/pinctrl/aspeed/pinctrl-aspeed.h
-> > @@ -240,8 +240,7 @@
-> >   * opposed to naming them e.g. PINMUX_CTRL_[0-9]). Further, signal expressions
-> >   * reference registers beyond those dedicated to pinmux, such as the system
-> >   * reset control and MAC clock configuration registers. The AST2500 goes a step
+> > diff --git a/Documentation/devicetree/bindings/pinctrl/aspeed,ast2400-pinctrl.txt b/Documentation/devicetree/bindings/pinctrl/aspeed,ast2400-pinctrl.txt
+> > new file mode 100644
+> > index 000000000000..67e0325ccf2e
+> > --- /dev/null
+> > +++ b/Documentation/devicetree/bindings/pinctrl/aspeed,ast2400-pinctrl.txt
+> > @@ -0,0 +1,80 @@
+> > +=============================
+> > +Aspeed AST2400 Pin Controller
+> > +=============================
+> > +
+> > +Required properties for the AST2400:
+> > +- compatible :                         Should be one of the following:
+> > +                               "aspeed,ast2400-pinctrl"
+> > +                               "aspeed,g4-pinctrl"
+> > +
+> > +The pin controller node should be the child of a syscon node with the required
+> > +property:
+> > +
+> > +- compatible :                 Should be one of the following:
+> > +                       "aspeed,ast2400-scu", "syscon", "simple-mfd"
+> > +                       "aspeed,g4-scu", "syscon", "simple-mfd"
 > 
-> AST2600 too?
+> I think we can use this as an opportunity to drop the unused g4-scu
+> compatible from the bindings. Similarly for the g5.
 
-No mention of the GFX block in the pinctrl table for the 2600, it appears the pinmux
-state is entirely determined by SCU registers.
+I Wonder if we should eradicate that pattern for all the aspeed compatibles?
 
 > 
 > Acked-by: Joel Stanley <joel@jms.id.au>
@@ -165,18 +182,6 @@ state is entirely determined by SCU registers.
 Cheers,
 
 Andrew
-
-> 
-> > - * further and references registers in the graphics IP block, but that isn't
-> > - * handled yet.
-> > + * further and references registers in the graphics IP block.
-> >   */
-> >  #define SCU2C           0x2C /* Misc. Control Register */
-> >  #define SCU3C           0x3C /* System Reset Control/Status Register */
-> > --
-> > 2.20.1
-> >
->
 
 _______________________________________________
 linux-arm-kernel mailing list
