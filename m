@@ -2,86 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A7FCA58233
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 27 Jun 2019 14:09:48 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 24E045828D
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 27 Jun 2019 14:26:35 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=YVYSCWoz1yQgdz7N0lmVhuryMh7SdEth1sY4cCizBkY=; b=R6e3wnYoatRXkr
-	M0IpCSbm/NswB0hT8Oo97hSZo+HOFE9xqJLOV11/xpEi7HvxXz6vn6X7dlpNzrVry4f9wWcYNZDzO
-	0mhPxRME5lFJ0pFrMz1gnag4CsqGhEFlLMLmUEdRNP44KkNlAd0LuA9G4xm7KIJcacRV9N23sBd/G
-	cQZfp85hXUn5r1dv9yeuAGVtPQtlF7jEwSacmlev0e7SnVgVy7ve7XFtj14f1b9wsRPseVkw0PQmH
-	IwecbzPpeBbiJgXx/EkbzN8v/saCmp0OAjkD4kI3IwO8U+JF+Xpwhh3N31mZ3jcvvoahXbe0+Ku9u
-	Lg5+U4fWGcfsVFUU+Bcg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=F92hXVHEPnJR8fRHtHPQgqM8i7IIotFsmi5hoc2OAiQ=; b=Hq5FeeC1ZcOoNG
+	ErTEfDaw8b4Xh52ECDATwGaahzZTzGesUOqOMhbrv0wq028x+vOJ1KOyh2KaBLnPlWOYuLmQBNKWm
+	Hk50wXIRf9y/tTUh38e7tDvU1pSGWCJoirrxyyXwz8IyBnvIjHzxzRRloEhDvLYRoZzDkNuZEmW9V
+	f4qeLanlj+8Tls5DTcmIj63yuV+maiAT6deFWTT5YZ8jbuYJHHBelZOpxxRzlYag3efcos6cTHwH5
+	1eF069EhBnux3gYPhZ0a0qPMufywn0wljnlLGYRuDFqWWXHEBwM6rpnhXO+wFTvc2QwMflQMckCpM
+	ndb0p0AWyS8IVOySpewQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hgTDk-0002Z8-EZ; Thu, 27 Jun 2019 12:09:44 +0000
-Received: from mx08-00178001.pphosted.com ([91.207.212.93]
- helo=mx07-00178001.pphosted.com)
+	id 1hgTU1-0000ua-6f; Thu, 27 Jun 2019 12:26:33 +0000
+Received: from relay12.mail.gandi.net ([217.70.178.232])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hgTDX-0002YF-GK
- for linux-arm-kernel@lists.infradead.org; Thu, 27 Jun 2019 12:09:33 +0000
-Received: from pps.filterd (m0046661.ppops.net [127.0.0.1])
- by mx08-00178001.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id
- x5RC978P027890; Thu, 27 Jun 2019 14:09:24 +0200
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
- h=from : to : cc : subject
- : date : message-id : mime-version : content-type; s=STMicroelectronics;
- bh=YhbGT74N+NBt7diBF1bSd0/WlzOVPJg/StbhMe0pCCw=;
- b=q1ldMIaPhSmX9byvqp4QjPhafsAc0jBnCLQFu9stlJliO/Td13SvJLIUUniXG9EHj3CZ
- 9FPZV/Ar7YAXvuL+6rusfmbFvory1CaV5/cMKMyeatIWVpR4lrTxcSJFH5M9p4WYO2gx
- M1Gz9qYpctH25Gp40FGgB69z1K9yF3cPIdyBwHxUUItx5DC+q+DfAnBy+NMQFKRCRfiB
- fQNt965WFpbhky6Hr1M0dRlSbNgIHh7ytbirl2OFQuxxL6enhebbN8ohh5pQ0Bkc9rdm
- vJHx21hn79dGR4pAIb3oGqFi7DkC13bP+ZS59qcbmsl4xIIg15RIhUDxcCBfCySY3pnQ iQ== 
-Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx08-00178001.pphosted.com with ESMTP id 2t9d2jy4j5-1
- (version=TLSv1 cipher=ECDHE-RSA-AES256-SHA bits=256 verify=NOT);
- Thu, 27 Jun 2019 14:09:24 +0200
-Received: from zeta.dmz-eu.st.com (zeta.dmz-eu.st.com [164.129.230.9])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 44D5B49;
- Thu, 27 Jun 2019 12:09:23 +0000 (GMT)
-Received: from Webmail-eu.st.com (Safex1hubcas21.st.com [10.75.90.44])
- by zeta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 19A7F272F;
- Thu, 27 Jun 2019 12:09:23 +0000 (GMT)
-Received: from SAFEX1HUBCAS22.st.com (10.75.90.93) by SAFEX1HUBCAS21.st.com
- (10.75.90.44) with Microsoft SMTP Server (TLS) id 14.3.439.0; Thu, 27 Jun
- 2019 14:09:23 +0200
-Received: from lmecxl0923.lme.st.com (10.48.0.237) by Webmail-ga.st.com
- (10.75.90.48) with Microsoft SMTP Server (TLS) id 14.3.439.0; Thu, 27 Jun
- 2019 14:09:22 +0200
-From: Ludovic Barre <ludovic.Barre@st.com>
-To: Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>
-Subject: [PATCH] ARM: dts: stm32: activate dma for qspi on stm32mp157
-Date: Thu, 27 Jun 2019 14:09:05 +0200
-Message-ID: <1561637345-31441-1-git-send-email-ludovic.Barre@st.com>
-X-Mailer: git-send-email 2.7.4
+ id 1hgTSx-0000Qo-Cj
+ for linux-arm-kernel@lists.infradead.org; Thu, 27 Jun 2019 12:25:30 +0000
+Received: from localhost.localdomain (lfbn-1-17395-211.w86-250.abo.wanadoo.fr
+ [86.250.200.211]) (Authenticated sender: miquel.raynal@bootlin.com)
+ by relay12.mail.gandi.net (Postfix) with ESMTPSA id 4CAA720001F;
+ Thu, 27 Jun 2019 12:25:12 +0000 (UTC)
+From: Miquel Raynal <miquel.raynal@bootlin.com>
+To: Gregory Clement <gregory.clement@bootlin.com>,
+ Jason Cooper <jason@lakedaemon.net>, Andrew Lunn <andrew@lunn.ch>,
+ Sebastian Hesselbarth <sebastian.hesselbarth@gmail.com>,
+ Kishon Vijay Abraham I <kishon@ti.com>
+Subject: [PATCH v2 13/19] dt-bindings: phy: Add Marvell COMPHY clocks
+Date: Thu, 27 Jun 2019 14:24:59 +0200
+Message-Id: <20190627122505.25774-1-miquel.raynal@bootlin.com>
+X-Mailer: git-send-email 2.19.1
+In-Reply-To: <20190627095104.22529-1-miquel.raynal@bootlin.com>
+References: <20190627095104.22529-1-miquel.raynal@bootlin.com>
 MIME-Version: 1.0
-X-Originating-IP: [10.48.0.237]
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:, ,
- definitions=2019-06-27_07:, , signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190627_050931_986168_EEFEE9EE 
-X-CRM114-Status: GOOD (  13.19  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20190627_052527_599264_02939DC4 
+X-CRM114-Status: GOOD (  11.65  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [217.70.178.232 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [91.207.212.93 listed in list.dnswl.org]
- 0.0 KHOP_DYNAMIC           Relay looks like a dynamic address
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,40 +62,56 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Alexandre Torgue <alexandre.torgue@st.com>,
- linux-kernel@vger.kernel.org, Ludovic Barre <ludovic.barre@st.com>,
- Maxime Coquelin <mcoquelin.stm32@gmail.com>,
- linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
+Cc: devicetree@vger.kernel.org, Antoine Tenart <antoine.tenart@bootlin.com>,
+ Grzegorz Jaszczyk <jaz@semihalf.com>, Russell King <linux@armlinux.org.uk>,
+ Maxime Chevallier <maxime.chevallier@bootlin.com>,
+ Nadav Haklai <nadavh@marvell.com>, Rob Herring <robh+dt@kernel.org>,
+ Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
+ Miquel Raynal <miquel.raynal@bootlin.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Ludovic Barre <ludovic.barre@st.com>
+Marvell CP110 COMPHY block is fed by 3 clocks. Describe each of them in the
+bindings.
 
-This patch activates dma for qspi on stm32mp157.
-
-Signed-off-by: Ludovic Barre <ludovic.barre@st.com>
+Signed-off-by: Miquel Raynal <miquel.raynal@bootlin.com>
 ---
- arch/arm/boot/dts/stm32mp157c.dtsi | 3 +++
- 1 file changed, 3 insertions(+)
+ .../devicetree/bindings/phy/phy-mvebu-comphy.txt       | 10 ++++++++++
+ 1 file changed, 10 insertions(+)
 
-diff --git a/arch/arm/boot/dts/stm32mp157c.dtsi b/arch/arm/boot/dts/stm32mp157c.dtsi
-index 2afeee6..205ea1d 100644
---- a/arch/arm/boot/dts/stm32mp157c.dtsi
-+++ b/arch/arm/boot/dts/stm32mp157c.dtsi
-@@ -1074,6 +1074,9 @@
- 			reg = <0x58003000 0x1000>, <0x70000000 0x10000000>;
- 			reg-names = "qspi", "qspi_mm";
- 			interrupts = <GIC_SPI 92 IRQ_TYPE_LEVEL_HIGH>;
-+			dmas = <&mdma1 22 0x10 0x100002 0x0 0x0>,
-+			       <&mdma1 22 0x10 0x100008 0x0 0x0>;
-+			dma-names = "tx", "rx";
- 			clocks = <&rcc QSPI_K>;
- 			resets = <&rcc QSPI_R>;
- 			status = "disabled";
+diff --git a/Documentation/devicetree/bindings/phy/phy-mvebu-comphy.txt b/Documentation/devicetree/bindings/phy/phy-mvebu-comphy.txt
+index cf2cd86db267..8c60e6985950 100644
+--- a/Documentation/devicetree/bindings/phy/phy-mvebu-comphy.txt
++++ b/Documentation/devicetree/bindings/phy/phy-mvebu-comphy.txt
+@@ -25,6 +25,13 @@ Required properties:
+ - #address-cells: should be 1.
+ - #size-cells: should be 0.
+ 
++Optional properlties:
++
++- clocks: pointers to the reference clocks for this device (CP110 only),
++          consequently: MG clock, MG Core clock, AXI clock.
++- clock-names: names of used clocks for CP110 only, must be :
++               "mg_clk", "mg_core_clk" and "axi_clk".
++
+ A sub-node is required for each comphy lane provided by the comphy.
+ 
+ Required properties (child nodes):
+@@ -39,6 +46,9 @@ Examples:
+ 		compatible = "marvell,comphy-cp110";
+ 		reg = <0x120000 0x6000>;
+ 		marvell,system-controller = <&cpm_syscon0>;
++		clocks = <&CP110_LABEL(clk) 1 5>, <&CP110_LABEL(clk) 1 6>,
++			 <&CP110_LABEL(clk) 1 18>;
++		clock-names = "mg_clk", "mg_core_clk", "axi_clk";
+ 		#address-cells = <1>;
+ 		#size-cells = <0>;
+ 
 -- 
-2.7.4
+2.19.1
 
 
 _______________________________________________
