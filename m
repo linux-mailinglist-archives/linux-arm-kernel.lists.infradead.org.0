@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 18A33582D6
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 27 Jun 2019 14:49:23 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 956A5582D9
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 27 Jun 2019 14:49:44 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,37 +11,36 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=hsE/BM5GvmTLdZrY/73hP+A0F+g+uhk6gRk4mV1ezRs=; b=XMrKlkxX0RUL8H4vR2+155HRxg
-	UQlogVHvIbT2gumJHnIKM9gA62aiZUF+VEnGeNicmSVLMk7xQvdbqF5MfTyZPlX9qTQvp8cS7yYo/
-	H9EZ9YzjVqbh+8Nr5b04ndnSft6y5yGk0+u2uS4FBkvsgVUbt/cs2QYgl714/3rEZc+bjLB/smjb4
-	kmSkJ/hcOQVPNIIs6iUU3XFgmfriJbgCnJk+MIa7WJIA0xSQWD7NhSzpMqwm1bve274UETZEfZ2py
-	Pvv1fdy0zfgJyXPOw7TOIZJJdxwb45zcx7jBmUt003qLu5RaCSp6ANXNc3eqerEpmPPpAeBRSew0v
-	uRcWxS/w==;
+	bh=TgF6KAXrWR3+jkUtLPMqkWRRNvsUEidYZMkWDddxuxg=; b=ec6i0T2FezNbH3jnURKF2WxFAH
+	Wx9m0ab4dW50g+jbooCoxItiiouqFVGmsExzrRQ5k5tEPWsb8wBIQTRwNlL/Te/tLMVVOh6Y7siQM
+	9kzUZ8+K+9spFZ+Wq50iIaHi6ZMC00NiPN6OCA2GzPPOLdfEuw6PQW1exx68oqYDvB1xgE+wl6JLV
+	oleHMDGnkT0230OjBsIPpPeQ0q7PgJYwhHU5wl474dqj/9FD+fAA4rtQrE+CS6hxX7td2yEGe2c0+
+	drMa+At6TNJqH9QP5EIc9oyVTZ9+UnpMHbBnW1xlQzzmDGdtQIg4FCNu1Z1SWYzwI8RyBNskHLlnw
+	ZzvlohLA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hgTq5-0001kJ-Mk; Thu, 27 Jun 2019 12:49:21 +0000
+	id 1hgTqP-00021I-5d; Thu, 27 Jun 2019 12:49:41 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hgTpf-0001fq-J4
- for linux-arm-kernel@lists.infradead.org; Thu, 27 Jun 2019 12:48:57 +0000
+ id 1hgTpn-0001n4-T7
+ for linux-arm-kernel@lists.infradead.org; Thu, 27 Jun 2019 12:49:08 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id BDB732B;
- Thu, 27 Jun 2019 05:48:54 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 13BFD2B;
+ Thu, 27 Jun 2019 05:49:03 -0700 (PDT)
 Received: from p8cg001049571a15.arm.com (unknown [10.163.1.20])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 7A9973F718;
- Thu, 27 Jun 2019 05:48:51 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id C121B3F718;
+ Thu, 27 Jun 2019 05:48:59 -0700 (PDT)
 From: Anshuman Khandual <anshuman.khandual@arm.com>
 To: linux-mm@kvack.org
-Subject: [RFC 1/2] arm64/mm: Change THP helpers to comply with generic MM
- semantics
-Date: Thu, 27 Jun 2019 18:18:15 +0530
-Message-Id: <1561639696-16361-2-git-send-email-anshuman.khandual@arm.com>
+Subject: [RFC 2/2] arm64/mm: Enable THP migration without split
+Date: Thu, 27 Jun 2019 18:18:16 +0530
+Message-Id: <1561639696-16361-3-git-send-email-anshuman.khandual@arm.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1561639696-16361-1-git-send-email-anshuman.khandual@arm.com>
 References: <1561639696-16361-1-git-send-email-anshuman.khandual@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190627_054855_782559_6490E2EE 
-X-CRM114-Status: GOOD (  13.91  )
+X-CRM114-CacheID: sfid-20190627_054904_361171_F739CD85 
+X-CRM114-Status: GOOD (  10.67  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -71,61 +70,15 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-pmd_present() and pmd_trans_huge() are expected to behave in the following
-manner during various phases of a given PMD. It is derived from a previous
-detailed discussion on this topic [1] and present THP documentation [2].
+In certain page migration situations a THP page can be migrated without
+being split into it's constituent normal pages. This not only saves time
+required to split the THP page later to be put back when required but also
+saves an wider address range translation from the existing huge TLB entry
+reducing future page fault costs.
 
-pmd_present(pmd):
-
-- Returns true if pmd refers to system RAM with a valid pmd_page(pmd)
-- Returns false if pmd does not refer to system RAM - Invalid pmd_page(pmd)
-
-pmd_trans_huge(pmd):
-
-- Returns true if pmd refers to system RAM and is a trans huge mapping
-
--------------------------------------------------------------------------
-|	PMD states	|	pmd_present	|	pmd_trans_huge	|
--------------------------------------------------------------------------
-|	Mapped		|	Yes		|	Yes		|
--------------------------------------------------------------------------
-|	Splitting	|	Yes		|	Yes		|
--------------------------------------------------------------------------
-|	Migration/Swap	|	No		|	No		|
--------------------------------------------------------------------------
-
-The problem:
-
-PMD is first invalidated with pmdp_invalidate() before it's splitting. This
-invalidation clears PMD_SECT_VALID as below.
-
-PMD Split -> pmdp_invalidate() -> pmd_mknotpresent -> Clears PMD_SECT_VALID
-
-Once PMD_SECT_VALID gets cleared, it results in pmd_present() return false
-on the PMD entry. It will need another bit apart from PMD_SECT_VALID to re-
-affirm pmd_present() as true during the THP split process. To comply with
-above mentioned semantics, pmd_trans_huge() should also check pmd_present()
-first before testing presence of an actual transparent huge mapping.
-
-The solution:
-
-Ideally PMD_TYPE_SECT should have been used here instead. But it shares the
-bit position with PMD_SECT_VALID which is used for THP invalidation. Hence
-it will not be there for pmd_present() check after pmdp_invalidate().
-
-PTE_SPECIAL never gets used for PMD mapping i.e there is no pmd_special().
-Hence this bit can be set on the PMD entry during invalidation which can
-help in making pmd_present() return true and in recognizing the fact that
-it still points to memory.
-
-This bit is transient. During the split is process it will be overridden
-by a page table page representing the normal pages in place of erstwhile
-huge page. Other pmdp_invalidate() callers always write a fresh PMD value
-on the entry overriding this transient PTE_SPECIAL making it safe. In the
-past former pmd_[mk]splitting() functions used PTE_SPECIAL.
-
-[1]: https://lkml.org/lkml/2018/10/17/231
-[2]: https://www.kernel.org/doc/Documentation/vm/transhuge.txt
+The previous patch changed the THP helper functions which now complies with
+the generic MM semantics clearing the path for THP migration support. Hence
+just enable it.
 
 Cc: Catalin Marinas <catalin.marinas@arm.com>
 Cc: Will Deacon <will@kernel.org>
@@ -137,61 +90,41 @@ Cc: linux-kernel@vger.kernel.org
 
 Signed-off-by: Anshuman Khandual <anshuman.khandual@arm.com>
 ---
- arch/arm64/include/asm/pgtable.h | 27 ++++++++++++++++++++++++---
- 1 file changed, 24 insertions(+), 3 deletions(-)
+ arch/arm64/Kconfig               | 4 ++++
+ arch/arm64/include/asm/pgtable.h | 5 +++++
+ 2 files changed, 9 insertions(+)
 
+diff --git a/arch/arm64/Kconfig b/arch/arm64/Kconfig
+index 0758d89..27bd8c4 100644
+--- a/arch/arm64/Kconfig
++++ b/arch/arm64/Kconfig
+@@ -1589,6 +1589,10 @@ config ARCH_ENABLE_HUGEPAGE_MIGRATION
+ 	def_bool y
+ 	depends on HUGETLB_PAGE && MIGRATION
+ 
++config ARCH_ENABLE_THP_MIGRATION
++	def_bool y
++	depends on TRANSPARENT_HUGEPAGE
++
+ menu "Power management options"
+ 
+ source "kernel/power/Kconfig"
 diff --git a/arch/arm64/include/asm/pgtable.h b/arch/arm64/include/asm/pgtable.h
-index 87a4b2d..90d4e24 100644
+index 90d4e24..4860573 100644
 --- a/arch/arm64/include/asm/pgtable.h
 +++ b/arch/arm64/include/asm/pgtable.h
-@@ -368,15 +368,31 @@ static inline int pmd_protnone(pmd_t pmd)
- }
- #endif
+@@ -851,6 +851,11 @@ static inline pmd_t pmdp_establish(struct vm_area_struct *vma,
+ #define __pte_to_swp_entry(pte)	((swp_entry_t) { pte_val(pte) })
+ #define __swp_entry_to_pte(swp)	((pte_t) { (swp).val })
  
-+static inline int pmd_present(pmd_t pmd)
-+{
-+	if (pte_present(pmd_pte(pmd)))
-+		return 1;
-+
-+	return pte_special(pmd_pte(pmd));
-+}
++#ifdef CONFIG_ARCH_ENABLE_THP_MIGRATION
++#define __pmd_to_swp_entry(pmd)        ((swp_entry_t) { pmd_val(pmd) })
++#define __swp_entry_to_pmd(swp)        __pmd((swp).val)
++#endif
 +
  /*
-  * THP definitions.
-  */
- 
- #ifdef CONFIG_TRANSPARENT_HUGEPAGE
--#define pmd_trans_huge(pmd)	(pmd_val(pmd) && !(pmd_val(pmd) & PMD_TABLE_BIT))
-+static inline int pmd_trans_huge(pmd_t pmd)
-+{
-+	if (!pmd_val(pmd))
-+		return 0;
-+
-+	if (!pmd_present(pmd))
-+		return 0;
-+
-+	return !(pmd_val(pmd) & PMD_TABLE_BIT);
-+}
- #endif /* CONFIG_TRANSPARENT_HUGEPAGE */
- 
--#define pmd_present(pmd)	pte_present(pmd_pte(pmd))
- #define pmd_dirty(pmd)		pte_dirty(pmd_pte(pmd))
- #define pmd_young(pmd)		pte_young(pmd_pte(pmd))
- #define pmd_valid(pmd)		pte_valid(pmd_pte(pmd))
-@@ -386,7 +402,12 @@ static inline int pmd_protnone(pmd_t pmd)
- #define pmd_mkclean(pmd)	pte_pmd(pte_mkclean(pmd_pte(pmd)))
- #define pmd_mkdirty(pmd)	pte_pmd(pte_mkdirty(pmd_pte(pmd)))
- #define pmd_mkyoung(pmd)	pte_pmd(pte_mkyoung(pmd_pte(pmd)))
--#define pmd_mknotpresent(pmd)	(__pmd(pmd_val(pmd) & ~PMD_SECT_VALID))
-+
-+static inline pmd_t pmd_mknotpresent(pmd_t pmd)
-+{
-+	pmd = pte_pmd(pte_mkspecial(pmd_pte(pmd)));
-+	return __pmd(pmd_val(pmd) & ~PMD_SECT_VALID);
-+}
- 
- #define pmd_thp_or_huge(pmd)	(pmd_huge(pmd) || pmd_trans_huge(pmd))
- 
+  * Ensure that there are not more swap files than can be encoded in the kernel
+  * PTEs.
 -- 
 2.7.4
 
