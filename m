@@ -2,91 +2,116 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D07A357C5E
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 27 Jun 2019 08:45:21 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C9E5157B3A
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 27 Jun 2019 07:21:15 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Subject:To:From:Date:References:
+	In-Reply-To:Message-Id:Mime-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=huS/mr9qT4ZnRmBv8HsjYfJtblYu2+WuYeRej7bEQyY=; b=X1B9d4oTFw3x8+
-	zzaH00jJXPNnXwcLNzDZQrae2HP1znZUi5zAIyEjcs8y17HOKHTLRR0h0hnTxrql3I89V4hWU1oL+
-	wsDXbChQrvOZPOkmRQFjd4ruCHYqM6xTbS25NIizwLaKtW6C682iSbINgJSkb5w6JBx+bPxcObprl
-	CZJbNCYrcbjAl8l1N3ANMkU5ck23i3at7rM0n+dYm3KZJlwT7UsESXdg4q6vJQAbzPwBK7LBgD3C5
-	ubmR/4q51MDrb2S+LTPzgiilXsv6XWrEpvTVImXhwvHF4hPfrkHZvbY0FcnitLZfAsE1lF9Swu+4e
-	ZV1yCair8zMwimHxRmQQ==;
+	List-Owner; bh=T5OZ9QjCvHgJo87OsnnAP1vefTFHXJ0BhJRONBVqmhA=; b=Fs05BQSf2R89qX
+	nbjv6Jo+8pfxraLrWzxyi5ghpWZaTGKfmqpi7FRXKDOM9aZurQOv770BM8COgxuaFRiELcbycVS1f
+	XVhgNYReYDaG3mvhcvXWDP3Zkczk8zGo+0UZOmqU+86wTJ90RJ6JVf4PGsE/qtxtk3yFopmo+xHGm
+	ynRZKqaDDiwoELIWQh+Xf6L+W28bpbFh3ahaGnMpeuRJsv7yLxwFR2XvzBGraH8DnbWqPZlxFHYZU
+	Epf5nlMNoMdLu7y4lQi2wEiK96E87NFFjMNJoOI7VQ/5mabtGBbvU0G97r4N3yVZV2q2MV/fRrBCZ
+	GPbcCUXpZX5FY2Pmbbwg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hgO9l-0007Og-Vb; Thu, 27 Jun 2019 06:45:18 +0000
-Received: from merlin.infradead.org ([2001:8b0:10b:1231::1])
+	id 1hgMqM-0001Wd-Sr; Thu, 27 Jun 2019 05:21:11 +0000
+Received: from casper.infradead.org ([2001:8b0:10b:1236::1])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hgO86-0006KM-HD; Thu, 27 Jun 2019 06:43:34 +0000
+ id 1hgMof-0006Q2-CO
+ for linux-arm-kernel@bombadil.infradead.org; Thu, 27 Jun 2019 05:19:25 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=infradead.org; s=merlin.20170209; h=Content-Type:Cc:To:Subject:Message-ID:
- Date:From:In-Reply-To:References:MIME-Version:Sender:Reply-To:
- Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
- List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=cHU/2P+9AoyIrIzIGKHe8ERCeZ+lRTgiCzEUTACqf6Y=; b=LKReEaQDjucjSZ8S+ZWmw6rVp
- 1zv3pGSKltJwKH1/p4TCLVEzSSBFYx1k2uImvZ8UE2jfL31CmG9Vai/YujgA7rz/TsPsd2C1Q5nwI
- gGML3OIt+udR3iNwznDxFnWZ+4Ui9RKbSr700LKem7Cvl+302CsSVDxlyrTajUmX5TPr60+RFMQh1
- HXl2rHIyuLaEU1rWFVHnwAKHDgBvg6ZKSMKzqwlZALexfOnEC2ur86fjd0sZQpCuRfNptgOnRQswc
- ljT9o/QjkpsRXCVfm3ZsIqka7nXLCn2jEYgbHdMz2NTp8jFKke8Hd20cWRLgX0Atw3ZVCEL81fkY0
- xVu1Bgobg==;
-Received: from conssluserg-04.nifty.com ([210.131.2.83])
- by merlin.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hgLEn-0006Mq-CN; Thu, 27 Jun 2019 03:38:19 +0000
-Received: from mail-ua1-f47.google.com (mail-ua1-f47.google.com
- [209.85.222.47]) (authenticated)
- by conssluserg-04.nifty.com with ESMTP id x5R3baKo028566;
- Thu, 27 Jun 2019 12:37:37 +0900
-DKIM-Filter: OpenDKIM Filter v2.10.3 conssluserg-04.nifty.com x5R3baKo028566
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nifty.com;
- s=dec2015msa; t=1561606657;
- bh=cHU/2P+9AoyIrIzIGKHe8ERCeZ+lRTgiCzEUTACqf6Y=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=jVMFTq54d6d2hfPxEsCFhJq0pGa1yE9ekpJ5aU6xIPvBurX0hYTIM2VOwo1MvyWDZ
- 4czCSoGV/B16FwvkDfQzn7mbCcLh/bfwv6hzQTRur9ujBbn56q0ndbrV2FGAhpHByK
- yTHGNTpdny4Kj2io3mJIFaJxTjoanGRe/aHWYmUEGIg11nbMqYcsmrEcOBRr9KzcrJ
- lGgr0mwR/HWoNMIxi9fdnHybUFtsKw7SZHbT6vukxWn7UbnTPBsujOBI4CUjTSgt+a
- 24MP32KJBfj2gtizZrXUGeI/Ie8YU0tunbHpdR6pOV8dfOuSB1v8XoD/gl52piRAfZ
- Q0vnuNZ3YlUAw==
-X-Nifty-SrcIP: [209.85.222.47]
-Received: by mail-ua1-f47.google.com with SMTP id z13so303759uaa.4;
- Wed, 26 Jun 2019 20:37:37 -0700 (PDT)
-X-Gm-Message-State: APjAAAV+Wk7YpNIt+qMNJss67VziXdyxJslGLddlcwDhfpDID1jsrd69
- 6PnF471XxrrutolTMjuf5lLTm/EMlM9ZEPBbIrA=
-X-Google-Smtp-Source: APXvYqxnTaJrFrMjuBoXEoiAN+DrkrbXhQiwMUAtqVh/FSoRuIgZnVV8242KrVAiYzqrGsKWX8k8KZMQVT7KGH9LF+4=
-X-Received: by 2002:ab0:234e:: with SMTP id h14mr991265uao.25.1561606656202;
- Wed, 26 Jun 2019 20:37:36 -0700 (PDT)
-MIME-Version: 1.0
-References: <20190621163931.19397-1-yamada.masahiro@socionext.com>
- <20190621175134.GB16409@ravnborg.org>
- <CAK7LNATz1iuG0Moab60gMSbVU8PJAmrLn27K8HK_1zQ0qeh26w@mail.gmail.com>
- <20190622130635.GA24262@ravnborg.org> <20190624214027.GA14740@ravnborg.org>
- <20190625061120.GA7561@ravnborg.org>
-In-Reply-To: <20190625061120.GA7561@ravnborg.org>
-From: Masahiro Yamada <yamada.masahiro@socionext.com>
-Date: Thu, 27 Jun 2019 12:36:59 +0900
-X-Gmail-Original-Message-ID: <CAK7LNARMnsC+tm13VRV3kvRQNUWOrH1NxEwvFHwVJbFav50idg@mail.gmail.com>
-Message-ID: <CAK7LNARMnsC+tm13VRV3kvRQNUWOrH1NxEwvFHwVJbFav50idg@mail.gmail.com>
-Subject: Re: [PATCH] kbuild: compile-test global headers to ensure they are
- self-contained
-To: Sam Ravnborg <sam@ravnborg.org>
-X-Spam-Note: CRM114 invocation failed
-X-Spam-Score: 1.0 (+)
-X-Spam-Report: SpamAssassin version 3.4.2 on merlin.infradead.org summary:
- Content analysis details:   (1.0 points)
+ d=infradead.org; s=casper.20170209; h=Content-Transfer-Encoding:Content-Type:
+ Subject:Cc:To:From:Date:References:In-Reply-To:Message-Id:Mime-Version:Sender
+ :Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+ Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:
+ List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=tMjKriNycNOWkPKVYEQBH1iIP1LssSXBssZD2VGtolQ=; b=b1iZ4zJjSr5xGaRJNurgk3wEo2
+ hJq9/WVTS632ofW4al8M4JGEXjQvF2rQgyu5KfJCNzR2jLsLNL6OGm9xVM3HxYwWJUFkcpvyV5YHY
+ FxZ2sM3WQZGt2moJUCvmN3KeaAaROG50W/EeigYluJBktKh6U+HD2EJkEonvSzC5oTrzcnMSgX9SD
+ 1FPmPuSKlwIvofL8d94Qahvc3ExtLDDcY3GQ/2pZFi3FF/daSO7AY5wwAhVEpfGY6v1fNRIKbfQmO
+ +kF8uF75VWdNXBWJ81aqUOhw72xtA+pl1uzMwAfJGSxUgG5Z5s+f3luMcEYfxNeU7XDb1Wn0zxHh/
+ /qgRTspA==;
+Received: from new4-smtp.messagingengine.com ([66.111.4.230])
+ by casper.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hgLW4-00011V-WD
+ for linux-arm-kernel@lists.infradead.org; Thu, 27 Jun 2019 03:56:12 +0000
+Received: from compute4.internal (compute4.nyi.internal [10.202.2.44])
+ by mailnew.nyi.internal (Postfix) with ESMTP id C23C4FE1;
+ Wed, 26 Jun 2019 23:55:44 -0400 (EDT)
+Received: from imap2 ([10.202.2.52])
+ by compute4.internal (MEProxy); Wed, 26 Jun 2019 23:55:44 -0400
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=aj.id.au; h=
+ mime-version:message-id:in-reply-to:references:date:from:to:cc
+ :subject:content-type:content-transfer-encoding; s=fm3; bh=tMjKr
+ iNycNOWkPKVYEQBH1iIP1LssSXBssZD2VGtolQ=; b=GTt/F9Qa6bfIu3QOnOpxY
+ Uv5bHNcOzYTEPNdjXk7gXE5NTjWBYEfKhC8+ecFsY/Xstnur01IzqMHvTLXoJDSX
+ oxMJPT4RforoAXFoFbFnT6Lug/oOn4JvgC7neJvYOWuMosbT+dy1LiAHlF0HzTtn
+ sp7oXsPMLMTCZw/K2PQjqJByQ9vdNIQt9CNxEc2g+Eyv3L2tFmfQcSCDEICSyjKG
+ T2gifMxPKDmsnqGMwVVVieD0v8+8mx+cx89yO+HlEzVqvz67xThMiNxcZmu8pIQj
+ o1EuHXMSKL7hkduHR/YTXK3w9q8qSZx5DRtNlf4e1hVDVpSoEzQBIucyfb1ZJiDa
+ w==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
+ messagingengine.com; h=cc:content-transfer-encoding:content-type
+ :date:from:in-reply-to:message-id:mime-version:references
+ :subject:to:x-me-proxy:x-me-proxy:x-me-sender:x-me-sender
+ :x-sasl-enc; s=fm3; bh=tMjKriNycNOWkPKVYEQBH1iIP1LssSXBssZD2VGto
+ lQ=; b=EK8E0SUG+AhD5hGbawX4rZsr8eBONtMImKCWFrm0mCjZ64Z6CdybCcdaE
+ C/xNGHwDh2P+RdZGeafGS4/VB/PTCzsxbWjihNV9Vl/Bk6rKEVeganc6iqMmGSPE
+ e+76aFA9ucOBZ5g09R6VCClNwy1C/IqVbyMHRHnRl2PDlNTKyqh9G71XF0WPPFWM
+ 0aEaIyIuoEZX4JpltGpwEk68JZGXAx+LfCOvFCj6Pyuv1fE/oWAFexMebdEc7y52
+ wAAdpxOPxgMCQfsPDB6JBBdlzqhkqdtpSDo4ZK/wFG4OcpN4JS2fEVS0BUvGNQDz
+ LDtu0/jg9l9T6gfAVrupQUG7vbRzQ==
+X-ME-Sender: <xms:Pz4UXW8o9fzgPtOAqJO6SJ3Xuku4yGCtRb-1zTmQiKVXuUWs3alKjA>
+X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduvddrudejgdejkecutefuodetggdotefrodftvf
+ curfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfghnecu
+ uegrihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmdenuc
+ fjughrpefofgggkfgjfhffhffvufgtgfesthhqredtreerjeenucfhrhhomhepfdetnhgu
+ rhgvficulfgvfhhfvghrhidfuceorghnughrvgifsegrjhdrihgurdgruheqnecuffhomh
+ grihhnpeguvghvihgtvghtrhgvvgdrohhrghdpkhgvrhhnvghlrdhorhhgnecurfgrrhgr
+ mhepmhgrihhlfhhrohhmpegrnhgurhgvfiesrghjrdhiugdrrghunecuvehluhhsthgvrh
+ fuihiivgeptd
+X-ME-Proxy: <xmx:Pz4UXdA0yFPWEhSAHAbLxDmG8n0GPLyIH3Y_AruW_aug9NgSZx9iIQ>
+ <xmx:Pz4UXYuzqbFBGFnN8KjhiG-1KMAWv8z4Jykv8xIuhfjQUn7eHpB52g>
+ <xmx:Pz4UXdHMayJBqUUBd93X0A19lr5aDWjm-6p95WEXdx5tgvWuGty14w>
+ <xmx:QD4UXSo3CXxzmQP7A3KBP2n9US2PkaDx_zy3mziznJ7Ll57gJIvvcA>
+Received: by mailuser.nyi.internal (Postfix, from userid 501)
+ id E3CD1E00A2; Wed, 26 Jun 2019 23:55:42 -0400 (EDT)
+X-Mailer: MessagingEngine.com Webmail Interface
+User-Agent: Cyrus-JMAP/3.1.6-730-g63f2c3b-fmstable-20190622v1
+Mime-Version: 1.0
+Message-Id: <30d5585b-7591-4149-87c4-816e4c18fb9d@www.fastmail.com>
+In-Reply-To: <CAL_JsqKXPzFYTHos-uvCUtBj-bcsNfrzt5GjxQ=PmgeXpp5J-A@mail.gmail.com>
+References: <20190626071430.28556-1-andrew@aj.id.au>
+ <20190626071430.28556-3-andrew@aj.id.au>
+ <CAL_JsqKXPzFYTHos-uvCUtBj-bcsNfrzt5GjxQ=PmgeXpp5J-A@mail.gmail.com>
+Date: Thu, 27 Jun 2019 13:25:42 +0930
+From: "Andrew Jeffery" <andrew@aj.id.au>
+To: "Rob Herring" <robh+dt@kernel.org>
+Subject: =?UTF-8?Q?Re:_[PATCH_2/8]_dt-bindings:_pinctrl:_aspeed:_Convert_AST2400_?=
+ =?UTF-8?Q?bindings_to_json-schema?=
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20190627_045609_402703_E96374F9 
+X-CRM114-Status: GOOD (  18.46  )
+X-Spam-Score: -0.9 (/)
+X-Spam-Report: SpamAssassin version 3.4.2 on casper.infradead.org summary:
+ Content analysis details:   (-0.9 points, 5.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [210.131.2.83 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [66.111.4.230 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -98,88 +123,201 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Michal Marek <michal.lkml@markovi.net>,
- Linux Kbuild mailing list <linux-kbuild@vger.kernel.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
- Matthias Brugger <matthias.bgg@gmail.com>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Ryan Chen <ryan_chen@aspeedtech.com>, linux-aspeed@lists.ozlabs.org,
+ Linus Walleij <linus.walleij@linaro.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
+ Joel Stanley <joel@jms.id.au>, OpenBMC Maillist <openbmc@lists.ozlabs.org>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Sam,
-
-On Tue, Jun 25, 2019 at 3:11 PM Sam Ravnborg <sam@ravnborg.org> wrote:
->
-> >
-> > When all header files below include/drm are self-contained it will be a
-> > single line:
-> >
-> >     header-test-y += $(all_headers_with_subdir)
-> In reality it will likely be the above, and then a list of
->
-> header-test-n += foo.h
->
-> For the header files that we for one or the other reason do not want to
-> make self-contained.
-> It would be nice to have the list of ignored files close to their home
-> and not a full list in one Makefile in include/
->
-> > diff --git a/scripts/Makefile.lib b/scripts/Makefile.lib
-> > index 3e630fcaffd1..e2f765e9d1e1 100644
-> > --- a/scripts/Makefile.lib
-> > +++ b/scripts/Makefile.lib
-> > @@ -67,6 +67,7 @@ extra-$(CONFIG_OF_ALL_DTBS) += $(patsubst %.dtb,%.dt.yaml, $(dtb-))
-> >  endif
-> >
-> >  # Test self-contained headers
-> > +header-test-y := $(filter-out $(header-test-n), $(header-test-y))
-> This part should include the logic to filter out duplicates too.
-> I think we may do something wrong if the same header is listed twice.
->
-> We could also extend this with a check that all files in header-test-n
-> exits.
->
->         Sam
-
-Thanks for your comments.
-
-Some followups:
-
-[1] I prefer 'header-test-' to 'header-test-n'
-for excluding headers.
-In some places, it will be useful to
-be able to write like this:
-header-test-$(CONFIG_FOO) += foo.h
 
 
-[2] I proposed somewhat generalized header-test-pattern-y instead of
-providing both of 'all_headers' and 'all_headers_with_subdir'
+On Wed, 26 Jun 2019, at 23:17, Rob Herring wrote:
+> On Wed, Jun 26, 2019 at 1:21 AM Andrew Jeffery <andrew@aj.id.au> wrote:
+> > +  The pin controller node should be the child of a syscon node with the
+> > +  required property:
+> > +
+> > +  - compatible:     Should be one of the following:
+> > +                    "aspeed,ast2400-scu", "syscon", "simple-mfd"
+> > +                    "aspeed,g4-scu", "syscon", "simple-mfd"
+> > +
+> > +  Refer to the the bindings described in
+> > +  Documentation/devicetree/bindings/mfd/syscon.txt
+> > +
+> > +  For the AST2400 pinmux, each mux function has only one associated pin group.
+> > +  Each group is named by its function. The following values for the function
+> > +  and groups properties are supported:
+> > +
+> > +  ACPI ADC0 ADC1 ADC10 ADC11 ADC12 ADC13 ADC14 ADC15 ADC2 ADC3 ADC4 ADC5 ADC6
+> > +  ADC7 ADC8 ADC9 BMCINT DDCCLK DDCDAT EXTRST FLACK FLBUSY FLWP GPID GPID0 GPID2
+> > +  GPID4 GPID6 GPIE0 GPIE2 GPIE4 GPIE6 I2C10 I2C11 I2C12 I2C13 I2C14 I2C3 I2C4
+> > +  I2C5 I2C6 I2C7 I2C8 I2C9 LPCPD LPCPME LPCRST LPCSMI MAC1LINK MAC2LINK MDIO1
+> > +  MDIO2 NCTS1 NCTS2 NCTS3 NCTS4 NDCD1 NDCD2 NDCD3 NDCD4 NDSR1 NDSR2 NDSR3 NDSR4
+> > +  NDTR1 NDTR2 NDTR3 NDTR4 NDTS4 NRI1 NRI2 NRI3 NRI4 NRTS1 NRTS2 NRTS3 OSCCLK
+> > +  PWM0 PWM1 PWM2 PWM3 PWM4 PWM5 PWM6 PWM7 RGMII1 RGMII2 RMII1 RMII2 ROM16 ROM8
+> > +  ROMCS1 ROMCS2 ROMCS3 ROMCS4 RXD1 RXD2 RXD3 RXD4 SALT1 SALT2 SALT3 SALT4 SD1
+> > +  SD2 SGPMCK SGPMI SGPMLD SGPMO SGPSCK SGPSI0 SGPSI1 SGPSLD SIOONCTRL SIOPBI
+> > +  SIOPBO SIOPWREQ SIOPWRGD SIOS3 SIOS5 SIOSCI SPI1 SPI1DEBUG SPI1PASSTHRU
+> > +  SPICS1 TIMER3 TIMER4 TIMER5 TIMER6 TIMER7 TIMER8 TXD1 TXD2 TXD3 TXD4 UART6
+> > +  USB11D1 USB11H2 USB2D1 USB2H1 USBCKI VGABIOS_ROM VGAHS VGAVS VPI18 VPI24
+> > +  VPI30 VPO12 VPO24 WDTRST1 WDTRST2
+> 
+> This should be a schema. You need to define child nodes and list these
+> as values for 'function' and 'group'. Ideally, the child nodes would
+> have some sort of pattern, but if not, you can just match on '^.*$'
+> under patternProperties.
 
-BTW, "all headers" should be added with care.
-scripts/Makefile.asm-generic and scripts/Makefile.headersinst
-cater to removing stale headers.
-But, we do not explicitly clean other headers.
-We always be careful about potential matching to stale headers.
+The children don't have any pattern in their node name, which drives
+me towards the '^.*$' pattern match, however, what I've found is that
+I get the following errors for some of the relevant dts files:
 
+```
+/home/andrew/src/linux/aspeed/arch/arm/boot/dts/aspeed-bmc-opp-palmetto.dt.yaml: compatible: ['aspeed,g4-pinctrl'] is not of type 'object'                                                                                                                                      
+/home/andrew/src/linux/aspeed/arch/arm/boot/dts/aspeed-bmc-opp-palmetto.dt.yaml: pinctrl-names: ['default'] is not of type 'object'
+/home/andrew/src/linux/aspeed/arch/arm/boot/dts/aspeed-bmc-opp-palmetto.dt.yaml: pinctrl-0: [[7, 8, 9, 10, 11, 12]] is not of type 'object'                                                                                                                                     
+/home/andrew/src/linux/aspeed/arch/arm/boot/dts/aspeed-bmc-opp-palmetto.dt.yaml: phandle: [[13]] is not of type 'object'
+/home/andrew/src/linux/aspeed/arch/arm/boot/dts/aspeed-bmc-opp-palmetto.dt.yaml: $nodename: ['pinctrl'] is not of type 'object'
+/home/andrew/src/linux/aspeed/arch/arm/boot/dts/aspeed-bmc-quanta-q71l.dt.yaml: compatible: ['aspeed,g4-pinctrl'] is not of type 'object'                                                                                                                                       
+/home/andrew/src/linux/aspeed/arch/arm/boot/dts/aspeed-bmc-quanta-q71l.dt.yaml: pinctrl-names: ['default'] is not of type 'object'
+/home/andrew/src/linux/aspeed/arch/arm/boot/dts/aspeed-bmc-quanta-q71l.dt.yaml: pinctrl-0: [[9, 10, 11, 12]] is not of type 'object'
+/home/andrew/src/linux/aspeed/arch/arm/boot/dts/aspeed-bmc-quanta-q71l.dt.yaml: phandle: [[13]] is not of type 'object'
+/home/andrew/src/linux/aspeed/arch/arm/boot/dts/aspeed-bmc-quanta-q71l.dt.yaml: $nodename: ['pinctrl'] is not of type 'object'
+```
 
-[3] I tried both 'one big single Makefile' and
-    'each Makefile in sub-directories'
+We shouldn't be expecting these properties in the child nodes, so
+something is busted. Looking at processed-schema.yaml, we have:
 
-I am slightly in favor of the former. Maybe I could be wrong,
-and we may switch to the other approach.
-But, I'd like to start with a single Makefile, and see how bad it is.
+```
+- $filename: /home/andrew/src/linux/aspeed/Documentation/devicetree/bindings/pinctrl/aspeed,ast2400-pinctrl.yaml
+  $id: http://devicetree.org/schemas/pinctrl/aspeed,ast2400-pinctrl.yaml#
+  $schema: http://devicetree.org/meta-schemas/core.yaml#
+  patternProperties:
+    ^.*$:
+      patternProperties:
+        ^function|groups$:
+          allOf:
+          - {$ref: /schemas/types.yaml#/definitions/string}
+          - additionalItems: false
+            items:
+              enum: [ACPI, ADC0, ADC1, ADC10, ADC11, ADC12, ADC13, ADC14, ADC15, ADC2,
+                ADC3, ADC4, ADC5, ADC6, ADC7, ADC8, ADC9, BMCINT, DDCCLK, DDCDAT,
+                EXTRST, FLACK, FLBUSY, FLWP, GPID, GPID0, GPID2, GPID4, GPID6, GPIE0,
+                GPIE2, GPIE4, GPIE6, I2C10, I2C11, I2C12, I2C13, I2C14, I2C3, I2C4,
+                I2C5, I2C6, I2C7, I2C8, I2C9, LPCPD, LPCPME, LPCRST, LPCSMI, MAC1LINK,
+                MAC2LINK, MDIO1, MDIO2, NCTS1, NCTS2, NCTS3, NCTS4, NDCD1, NDCD2,
+                NDCD3, NDCD4, NDSR1, NDSR2, NDSR3, NDSR4, NDTR1, NDTR2, NDTR3, NDTR4,
+                NDTS4, NRI1, NRI2, NRI3, NRI4, NRTS1, NRTS2, NRTS3, OSCCLK, PWM0,
+                PWM1, PWM2, PWM3, PWM4, PWM5, PWM6, PWM7, RGMII1, RGMII2, RMII1, RMII2,
+                ROM16, ROM8, ROMCS1, ROMCS2, ROMCS3, ROMCS4, RXD1, RXD2, RXD3, RXD4,
+                SALT1, SALT2, SALT3, SALT4, SD1, SD2, SGPMCK, SGPMI, SGPMLD, SGPMO,
+                SGPSCK, SGPSI0, SGPSI1, SGPSLD, SIOONCTRL, SIOPBI, SIOPBO, SIOPWREQ,
+                SIOPWRGD, SIOS3, SIOS5, SIOSCI, SPI1, SPI1DEBUG, SPI1PASSTHRU, SPICS1,
+                TIMER3, TIMER4, TIMER5, TIMER6, TIMER7, TIMER8, TXD1, TXD2, TXD3,
+                TXD4, UART6, USB11D1, USB11H2, USB2D1, USB2H1, USBCKI, VGABIOS_ROM,
+                VGAHS, VGAVS, VPI18, VPI24, VPI30, VPO12, VPO24, WDTRST1, WDTRST2]
+            maxItems: 1
+            minItems: 1
+            type: array
+        pinctrl-[0-9]+: true
+      properties: {phandle: true, pinctrl-names: true, status: true}
+      type: object
+    pinctrl-[0-9]+: true
+  properties:
+    $nodename: true
+    compatible:
+      additionalItems: false
+      items:
+      - enum: ['aspeed,ast2400-pinctrl', 'aspeed,g4-pinctrl']
+      maxItems: 1
+      minItems: 1
+      type: array
+    phandle: true
+    pinctrl-names: true
+    status: true
+  required: [compatible]
+  select:
+    properties:
+      compatible:
+        contains:
+          enum: ['aspeed,ast2400-pinctrl', 'aspeed,g4-pinctrl']
+    required: [compatible]
+  title: ASPEED AST2400 Pin Controller
+```
 
+`properties: {phandle: true, pinctrl-names: true, status: true}` has been
+merged into my '^.*$' patternProperty, presumably partly from
+pinctrl-consumer.yaml, and this seems to be the source of the bad
+output. If as a hack I change my pattern to '^.*_default$' the problem
+goes away as we no longer try to enforce the constraints on properties
+provided by other bindings, but the problem is the node names are
+largely freeform[1] (unless I enforce a naming constraint as part of my
+bindings?).
 
-I sent v2:
-https://patchwork.kernel.org/project/linux-kbuild/list/?series=138507
+[1] https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/Documentation/devicetree/bindings/pinctrl/pinctrl-bindings.txt?h=v5.2-rc6#n112
 
+> 
+> BTW, You can put the names under a 'definitions' key and then use
+> '$ref' to reference them from function and group to avoid duplicating
+> the names. Or use patternProperties with '^(function|group)$'.
 
--- 
-Best Regards
-Masahiro Yamada
+I've used the patternProperties approach above as I couldn't get the
+definitions/$ref approach to work. I did the following:
+
+```
+definitions:
+  pinctrl-value:
+    allOf:
+      - $ref: "/schemas/types.yaml#/definitions/string"
+      - enum: [ "ACPI", "ADC0", "ADC1", "ADC10", "ADC11", "ADC12", "ADC13",
+        "ADC14", "ADC15", "ADC2", "ADC3", "ADC4", "ADC5", "ADC6", "ADC7",
+        "ADC8", "ADC9", "BMCINT", "DDCCLK", "DDCDAT", "EXTRST", "FLACK",
+        "FLBUSY", "FLWP", "GPID", "GPID0", "GPID2", "GPID4", "GPID6", "GPIE0",
+        "GPIE2", "GPIE4", "GPIE6", "I2C10", "I2C11", "I2C12", "I2C13", "I2C14",
+        "I2C3", "I2C4", "I2C5", "I2C6", "I2C7", "I2C8", "I2C9", "LPCPD",
+        "LPCPME", "LPCRST", "LPCSMI", "MAC1LINK", "MAC2LINK", "MDIO1", "MDIO2",
+        "NCTS1", "NCTS2", "NCTS3", "NCTS4", "NDCD1", "NDCD2", "NDCD3", "NDCD4",
+        "NDSR1", "NDSR2", "NDSR3", "NDSR4", "NDTR1", "NDTR2", "NDTR3", "NDTR4",
+        "NDTS4", "NRI1", "NRI2", "NRI3", "NRI4", "NRTS1", "NRTS2", "NRTS3",
+        "OSCCLK", "PWM0", "PWM1", "PWM2", "PWM3", "PWM4", "PWM5", "PWM6",
+        "PWM7", "RGMII1", "RGMII2", "RMII1", "RMII2", "ROM16", "ROM8",
+        "ROMCS1", "ROMCS2", "ROMCS3", "ROMCS4", "RXD1", "RXD2", "RXD3", "RXD4",
+        "SALT1", "SALT2", "SALT3", "SALT4", "SD1", "SD2", "SGPMCK", "SGPMI",
+        "SGPMLD", "SGPMO", "SGPSCK", "SGPSI0", "SGPSI1", "SGPSLD", "SIOONCTRL",
+        "SIOPBI", "SIOPBO", "SIOPWREQ", "SIOPWRGD", "SIOS3", "SIOS5", "SIOSCI",
+        "SPI1", "SPI1DEBUG", "SPI1PASSTHRU", "SPICS1", "TIMER3", "TIMER4",
+        "TIMER5", "TIMER6", "TIMER7", "TIMER8", "TXD1", "TXD2", "TXD3", "TXD4",
+        "UART6", "USB11D1", "USB11H2", "USB2D1", "USB2H1", "USBCKI",
+        "VGABIOS_ROM", "VGAHS", "VGAVS", "VPI18", "VPI24", "VPI30", "VPO12",
+        "VPO24", "WDTRST1", "WDTRST2" ]
+
+patternProperties:
+  '^.*_default$':
+    type: object
+    properties:
+      function:
+        $ref: "#/definitions/pinctrl-value"
+      groups:
+        $ref: "#/definitions/pinctrl-value"
+```
+
+But it gave me output like:
+
+```
+/home/andrew/src/linux/aspeed/arch/arm/boot/dts/aspeed-bmc-quanta-q71l.dt.yaml: wdtrst2_default:function: ['WDTRST2'] is not one of ['ACPI', 'ADC0', 'ADC1', 'ADC10', 'ADC11', 'ADC12', 'ADC13', 'ADC14', 'ADC15', 'ADC2', 'ADC3', 'ADC4', 'ADC5', 'ADC6', 'ADC7', 'ADC8', 'ADC9', 'BMCINT', 'DDCCLK', 'DDCDAT', 'EXTRST', 'FLACK', 'FLBUSY', 'FLWP', 'GPID', 'GPID0', 'GPID2', 'GPID4', 'GPID6', 'GPIE0', 'GPIE2', 'GPIE4', 'GPIE6', 'I2C10', 'I2C11', 'I2C12', 'I2C13', 'I2C14', 'I2C3', 'I2C4', 'I2C5', 'I2C6', 'I2C7', 'I2C8', 'I2C9', 'LPCPD', 'LPCPME', 'LPCRST', 'LPCSMI', 'MAC1LINK', 'MAC2LINK', 'MDIO1', 'MDIO2', 'NCTS1', 'NCTS2', 'NCTS3', 'NCTS4', 'NDCD1', 'NDCD2', 'NDCD3', 'NDCD4', 'NDSR1', 'NDSR2', 'NDSR3', 'NDSR4', 'NDTR1', 'NDTR2', 'NDTR3', 'NDTR4', 'NDTS4', 'NRI1', 'NRI2', 'NRI3', 'NRI4', 'NRTS1', 'NRTS2', 'NRTS3', 'OSCCLK', 'PWM0', 'PWM1', 'PWM2', 'PWM3', 'PWM4', 'PWM5', 'PWM6', 'PWM7', 'RGMII1', 'RGMII2', 'RMII1', 'RMII2', 'ROM16', 'ROM8', 'ROMCS1', 'ROMCS2', 'ROMCS3', 'ROMCS4', 'RXD1', 'RXD2', 'RXD3', 'RXD4', 'SALT1', 'SALT2', 'SALT3', 'SALT4', 'SD1', 'SD2', 'SGPMCK', 'SGPMI', 'SGPMLD', 'SGPMO', 'SGPSCK', 'SGPSI0', 'SGPSI1', 'SGPSLD', 'SIOONCTRL', 'SIOPBI', 'SIOPBO', 'SIOPWREQ', 'SIOPWRGD', 'SIOS3', 'SIOS5', 'SIOSCI', 'SPI1', 'SPI1DEBUG', 'SPI1PASSTHRU', 'SPICS1', 'TIMER3', 'TIMER4', 'TIMER5', 'TIMER6', 'TIMER7', 'TIMER8', 'TXD1', 'TXD2', 'TXD3', 'TXD4', 'UART6', 'USB11D1', 'USB11H2', 'USB2D1', 'USB2H1', 'USBCKI', 'VGABIOS_ROM', 'VGAHS', 'VGAVS', 'VPI18', 'VPI24', 'VPI30', 'VPO12', 'VPO24', 'WDTRST1', 'WDTRST2']
+/home/andrew/src/linux/aspeed/arch/arm/boot/dts/aspeed-bmc-quanta-q71l.dt.yaml: wdtrst2_default:groups: ['WDTRST2'] is not one of ['ACPI', 'ADC0', 'ADC1', 'ADC10', 'ADC11', 'ADC12', 'ADC13', 'ADC14', 'ADC15', 'ADC2', 'ADC3', 'ADC4', 'ADC5', 'ADC6', 'ADC7', 'ADC8', 'ADC9', 'BMCINT', 'DDCCLK', 'DDCDAT', 'EXTRST', 'FLACK', 'FLBUSY', 'FLWP', 'GPID', 'GPID0', 'GPID2', 'GPID4', 'GPID6', 'GPIE0', 'GPIE2', 'GPIE4', 'GPIE6', 'I2C10', 'I2C11', 'I2C12', 'I2C13', 'I2C14', 'I2C3', 'I2C4', 'I2C5', 'I2C6', 'I2C7', 'I2C8', 'I2C9', 'LPCPD', 'LPCPME', 'LPCRST', 'LPCSMI', 'MAC1LINK', 'MAC2LINK', 'MDIO1', 'MDIO2', 'NCTS1', 'NCTS2', 'NCTS3', 'NCTS4', 'NDCD1', 'NDCD2', 'NDCD3', 'NDCD4', 'NDSR1', 'NDSR2', 'NDSR3', 'NDSR4', 'NDTR1', 'NDTR2', 'NDTR3', 'NDTR4', 'NDTS4', 'NRI1', 'NRI2', 'NRI3', 'NRI4', 'NRTS1', 'NRTS2', 'NRTS3', 'OSCCLK', 'PWM0', 'PWM1', 'PWM2', 'PWM3', 'PWM4', 'PWM5', 'PWM6', 'PWM7', 'RGMII1', 'RGMII2', 'RMII1', 'RMII2', 'ROM16', 'ROM8', 'ROMCS1', 'ROMCS2', 'ROMCS3', 'ROMCS4', 'RXD1', 'RXD2', 'RXD3', 'RXD4', 'SALT1', 'SALT2', 'SALT3', 'SALT4', 'SD1', 'SD2', 'SGPMCK', 'SGPMI', 'SGPMLD', 'SGPMO', 'SGPSCK', 'SGPSI0', 'SGPSI1', 'SGPSLD', 'SIOONCTRL', 'SIOPBI', 'SIOPBO', 'SIOPWREQ', 'SIOPWRGD', 'SIOS3', 'SIOS5', 'SIOSCI', 'SPI1', 'SPI1DEBUG', 'SPI1PASSTHRU', 'SPICS1', 'TIMER3', 'TIMER4', 'TIMER5', 'TIMER6', 'TIMER7', 'TIMER8', 'TXD1', 'TXD2', 'TXD3', 'TXD4', 'UART6', 'USB11D1', 'USB11H2', 'USB2D1', 'USB2H1', 'USBCKI', 'VGABIOS_ROM', 'VGAHS', 'VGAVS', 'VPI18', 'VPI24', 'VPI30', 'VPO12', 'VPO24', 'WDTRST1', 'WDTRST2']
+```
+
+Clearly I haven't got it quite right, but I'm not sure what's wrong with my approach. Can you tell me? It looks like the property is interpreted as a string-array rather than a string, but I'm not sure why.
+
+Cheers,
+
+Andrew
 
 _______________________________________________
 linux-arm-kernel mailing list
