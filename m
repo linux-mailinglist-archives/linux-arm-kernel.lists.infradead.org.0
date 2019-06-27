@@ -2,62 +2,72 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5C47C5870D
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 27 Jun 2019 18:28:31 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 676A258725
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 27 Jun 2019 18:32:38 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=ypvXUaq+lkslL0Yt4HeSCVOGqN1OHWNcc2BjAk+7t/o=; b=NgwMYq1aQ3Y/HRksX+zbJnoHZ
-	IhPQAM6oovfK7mAWYQg6vhoEj9xASa7rwkCy0Wjy9BpT/yO5//aOWTwy2bnyTot7Du4NNO4zZRRGD
-	Nf+FXEI/n0p5o8eVrohmkxmFuve9890MoxiSyCIlUyLxJ7EZMCHiuiYgKUYexTEAa15Dc8ZHYL6S7
-	K+szUlQ/t8v58Id3+wB+QZPZpkFCoN/zGK9Z17tMQ110g881Pzy4A1HcNm3NOx920eYR3bF/4M3zz
-	964US81oZd5kZcaNnzgUBVPGaTOvhCYJH1tOtMJttWtMyBNSei5Y1DmT2u68D8bCpIAu/cHCE2435
-	/IQbyfs0A==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Kys8+ar3a2Ptvq7YXGG7TS2qo9STfCggYoxPlxvA07w=; b=WGuBsAULNwkdJE
+	MBTkPJ9zxFGu2z1raSOAM3cENE1eamdnOuzdPT6g+kRYYxOgtE04cBN5eGbHJl0QszpC0yWedQTfi
+	EQv+cpqQfHAnxLm5CRICF4jfkjOmZ0buacpUGFkLzHPXhK605bFRKnOcgWc3R5dtInbOv9Mm3Bg4M
+	Rh4gG7chD+GF94oxumKgaY5cUMtML2NtIgKag8n21JVqLfaEbqzDXoo0gUmtcawMEO9Uh+3JauFED
+	fqdfmTjBYp1+sncfglu91QAYuAlTkcqy9msR6OSlSqBqrJ48yjyGhrizBd7Bn9eVaOgXBwTN+sBXj
+	JJkSKSrz9eibRNapSrpw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hgXG6-0005FU-N1; Thu, 27 Jun 2019 16:28:26 +0000
-Received: from szxga06-in.huawei.com ([45.249.212.32] helo=huawei.com)
+	id 1hgXK8-0007QZ-5C; Thu, 27 Jun 2019 16:32:36 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hgXFh-00053u-Cb
- for linux-arm-kernel@lists.infradead.org; Thu, 27 Jun 2019 16:28:04 +0000
-Received: from DGGEMS406-HUB.china.huawei.com (unknown [172.30.72.58])
- by Forcepoint Email with ESMTP id 9349457549DBE8AA1F6B;
- Fri, 28 Jun 2019 00:27:48 +0800 (CST)
-Received: from [127.0.0.1] (10.202.227.238) by DGGEMS406-HUB.china.huawei.com
- (10.3.19.206) with Microsoft SMTP Server id 14.3.439.0;
- Fri, 28 Jun 2019 00:27:41 +0800
-Subject: Re: [PATCH v2 2/5] perf pmu: Support more complex PMU event aliasing
-To: Jiri Olsa <jolsa@redhat.com>
-References: <1560521283-73314-1-git-send-email-john.garry@huawei.com>
- <1560521283-73314-3-git-send-email-john.garry@huawei.com>
- <20190616095844.GC2500@krava>
- <a27e65b4-b487-9206-6dd0-6f9dcec0f1f5@huawei.com>
- <20190620182519.GA15239@krava>
- <6257fc79-b737-e6ca-2fce-f71afa36e9aa@huawei.com>
-From: John Garry <john.garry@huawei.com>
-Message-ID: <cafed7d6-13c7-3a92-a826-024698bc6cc8@huawei.com>
-Date: Thu, 27 Jun 2019 17:27:32 +0100
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:45.0) Gecko/20100101
- Thunderbird/45.3.0
+ id 1hgXJw-0007Q7-0i
+ for linux-arm-kernel@lists.infradead.org; Thu, 27 Jun 2019 16:32:25 +0000
+Received: from sol.localdomain (c-24-5-143-220.hsd1.ca.comcast.net
+ [24.5.143.220])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 256742133F;
+ Thu, 27 Jun 2019 16:32:23 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1561653143;
+ bh=l+tpA8pTSE7U2Xt092Cu2tDM10p0PpnM8sLMPlQKFsM=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=lUjg23UCBQQEqIOZnF8gvrMMj8kB7OF23AlJoJG1+1WZMSXu61OilQF2cqiaIDcff
+ Gu6WhfcS4pR1m17ItBlI9zulFWiLYv7Pym6PrNQjANgtCjF3SEXBb21iQBj8bIl5gO
+ dpyjyl71HNu2mF0UYpdRkLg0suGaUq742fuZz5WA=
+Date: Thu, 27 Jun 2019 09:32:21 -0700
+From: Eric Biggers <ebiggers@kernel.org>
+To: Ard Biesheuvel <ard.biesheuvel@linaro.org>
+Subject: Re: [PATCH v5 5/7] crypto: essiv - add test vector for
+ essiv(cbc(aes),aes,sha256)
+Message-ID: <20190627163221.GC686@sol.localdomain>
+References: <20190626204047.32131-1-ard.biesheuvel@linaro.org>
+ <20190626204047.32131-6-ard.biesheuvel@linaro.org>
 MIME-Version: 1.0
-In-Reply-To: <6257fc79-b737-e6ca-2fce-f71afa36e9aa@huawei.com>
-X-Originating-IP: [10.202.227.238]
-X-CFilter-Loop: Reflected
+Content-Disposition: inline
+In-Reply-To: <20190626204047.32131-6-ard.biesheuvel@linaro.org>
+User-Agent: Mutt/1.12.1 (2019-06-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190627_092802_246609_F2CE0FB9 
-X-CRM114-Status: GOOD (  23.43  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20190627_093224_073558_A48FECBC 
+X-CRM114-Status: GOOD (  10.46  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [45.249.212.32 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -69,152 +79,30 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, brueckner@linux.ibm.com, mathieu.poirier@linaro.org,
- peterz@infradead.org, tmricht@linux.ibm.com, will.deacon@arm.com,
- linux-kernel@vger.kernel.org, acme@kernel.org, linuxarm@huawei.com,
- zhangshaokun@hisilicon.com, alexander.shishkin@linux.intel.com,
- mingo@redhat.com, namhyung@kernel.org, ben@decadent.org.uk,
- linux-arm-kernel@lists.infradead.org, kan.liang@linux.intel.com
+Cc: Herbert Xu <herbert@gondor.apana.org.au>, linux-fscrypt@vger.kernel.org,
+ Gilad Ben-Yossef <gilad@benyossef.com>, dm-devel@redhat.com,
+ linux-crypto@vger.kernel.org, Milan Broz <gmazyland@gmail.com>,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 21/06/2019 11:42, John Garry wrote:
-> On 20/06/2019 19:25, Jiri Olsa wrote:
->> On Mon, Jun 17, 2019 at 10:06:08AM +0100, John Garry wrote:
->>> On 16/06/2019 10:58, Jiri Olsa wrote:
->>>> On Fri, Jun 14, 2019 at 10:08:00PM +0800, John Garry wrote:
->>>>> The jevent "Unit" field is used for uncore PMU alias definition.
->>>>>
->>>>> The form uncore_pmu_example_X is supported, where "X" is a wildcard,
->>>>> to support multiple instances of the same PMU in a system.
->>>>>
->>>>> Unfortunately this format not suitable for all uncore PMUs; take
->>>>> the Hisi
->>>>> DDRC uncore PMU for example, where the name is in the form
->>>>> hisi_scclX_ddrcY.
->>>>>
->>>>> For the current jevent parsing, we would be required to hardcode an
->>>>> uncore
->>>>> alias translation for each possible value of X. This is not scalable.
->>>>>
->>>>> Instead, add support for "Unit" field in the form "hisi_sccl,ddrc",
->>>>> where
->>>>> we can match by hisi_scclX and ddrcY. Tokens in Unit field are
->>>>> delimited by ','.
->>>>>
->>>>> Signed-off-by: John Garry <john.garry@huawei.com>
->>>>> ---
->>>>>  tools/perf/util/pmu.c | 39 ++++++++++++++++++++++++++++++++++-----
->>>>>  1 file changed, 34 insertions(+), 5 deletions(-)
->>>>>
->>>>> diff --git a/tools/perf/util/pmu.c b/tools/perf/util/pmu.c
->>>>> index 7e7299fee550..bc71c60589b5 100644
->>>>> --- a/tools/perf/util/pmu.c
->>>>> +++ b/tools/perf/util/pmu.c
->>>>> @@ -700,6 +700,39 @@ struct pmu_events_map
->>>>> *perf_pmu__find_map(struct perf_pmu *pmu)
->>>>>      return map;
->>>>>  }
->>>>>
->>>>> +static bool pmu_uncore_alias_match(const char *pmu_name, const
->>>>> char *name)
->>>>> +{
->>>>> +    char *tmp, *tok, *str;
->>>>> +    bool res;
->>>>> +
->>>>> +    str = strdup(pmu_name);
->>>>> +    if (!str)
->>>>> +        return false;
->
-> Hi Jirka,
->
->>>>> +
->>>>> +    /*
->>>>> +     * uncore alias may be from different PMU with common
->>>>> +     * prefix or matching tokens.
->>>>> +     */
->>>>> +    tok = strtok_r(str, ",", &tmp);
->
-> If str contains no delimiter, then it returns str in tok.
->
->>>>> +    if (strncmp(pmu_name, tok, strlen(tok))) {
->
-> So this above check covers the case of str with and without a delimiter.
->
->>>>
->>>
->>> Hi Jirka,
->>
->> heya,
->> sry for late reply
->>
->>>
->>>> if tok is NULL in here we crash
->>>>
->>>
->>> As I see, tok could not be NULL. If str contains no delimiters, then
->>> we just
->>> return same as str in tok.
->>>
->>> Can you see tok being NULL?
->>
->> well, if there's no ',' in the str it returns NULL, right?
->
-> No, it would return str in tok.
->
->> and IIUC this function is still called for standard uncore
->> pmu names
->>
->>>
->>>>> +        res = false;
->>>>> +        goto out;
->>>>> +    }
->>>>> +
->>>>> +    for (; tok; name += strlen(tok), tok = strtok_r(NULL, ",",
->>>>> &tmp)) {
->>>>
->>>> why is name shifted in here?
->>>
->>> I want to ensure that we match the tokens in order and also guard
->>> against
->>> possible repeated token matches in 'name'.
->>
->> i might not understand this correctly.. so
->>
->> str is the alias name that can contain ',' now, like:
->>   hisi_sccl,ddrc
->
-> For example of pmu_nmame=hisi_sccl,ddrc and pmu=hisi_sccl1_ddrc0, we
-> match in this sequence:
->
-> loop 1. tok=hisi_sccl name=hisi_sccl1_ddrc0
-> loop 2. tok=ddrc name=ddrc0
-> loop 3. tok=NULL -> breakout and return true
->
-> A couple of notes:
-> a. loop 1. could be omitted, but the code becomes a bit more complicated
-> 2. I don't have to advance name. But then we would match something like
-> hisi_ddrc0_sccl1. Maybe this is ok.
->
->>
->> and name is still pmu with no ',' ...
->> please make this or
->> proper version that in some comment
->>
->
-> I didn't really get your meaning here. Please check my replies and see
-> if you have further doubt or concern.
->
+On Wed, Jun 26, 2019 at 10:40:45PM +0200, Ard Biesheuvel wrote:
+> Add a test vector for the ESSIV mode that is the most widely used,
+> i.e., using cbc(aes) and sha256.
+> 
+> Signed-off-by: Ard Biesheuvel <ard.biesheuvel@linaro.org>
+> ---
+>  crypto/tcrypt.c  |   9 +
+>  crypto/testmgr.c |   6 +
+>  crypto/testmgr.h | 213 ++++++++++++++++++++
+>  3 files changed, 228 insertions(+)
 
-Hi Jirka,
+Shouldn't there be an authenc test vector too?  Otherwise there will be no way
+to test the AEAD support in essiv.c using the crypto self-tests.
 
-I was just wondering if you have any further comments or questions here?
-
-Much appreciated,
-John
-
+- Eric
 
 _______________________________________________
 linux-arm-kernel mailing list
