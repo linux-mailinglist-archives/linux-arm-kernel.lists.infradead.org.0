@@ -2,56 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4A5AF58569
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 27 Jun 2019 17:18:28 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 21E1058574
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 27 Jun 2019 17:22:23 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=vE5cK8q/boAS6TLHcH4yxbUK4z+N43TfHPyr2vhdge0=; b=oDsgLu3ls/HsSr
-	D0/IkPz+xTKNM6XDL9R2dEutBn9qNRXNtnf0kKlijDsc1QJxIsRVKnSpR5CxMEs3ggTDxumVZQMbk
-	O4eRa9ESHu4kk8bvGKSA/8yyz22upBZOGeAHoTUGW0bOP6XGn5Fwl62LzeSOTC6/YXobTX7Hsor68
-	q2GquQCSJQXyfB1r3YogjdeHVruS9jpwTgWPZp2vIC4bB9Hsc+jshGjO+kwraNZ02zVEq1tfm992W
-	/frKLNuMXK90IK4uKWcdo5PIc+NI7tHHpAJwt0GIsbzSWCqGlkJwZZI8QyYt9P8DDEpd9pXy1rrZF
-	hIFudycbs8PXzctNOlpQ==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=fZz1nD9Pbl2V4AZN9ZXu27Xen3ZVRy1iA/jv4pT9hE8=; b=Tp5
+	dKUIFA4cLOcyA7MsjMPDMeT7f1ohdvdzVd7fNw86oovBdp/rjAtBHur0Bwf6JBzqlGRIgQDFgQf14
+	LYrT43YpM+z2D3XJbKYZTS/Beq4fFyNBwrurPhastenLiUq5jrCNtzlWsz6ukKKm8LSpPvPeZBlXF
+	3dNZ03ftJmOWwRQNFAyxWck7faqL4zN/muT9BI1KFq7PeuB6v35NlMCDPgVPppy93l97bqczGWfHP
+	ISC5eaNeDMM6d7BgDLI+eH6RacR1dl3CUWbgeCG6Pvz6f7yJTDMNDbVDsNfhBryrdERsiqSRjOPpx
+	rM2a+OvnjMQJVeKLf5kWDYIpwhE1ggA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hgWAK-0008QI-UY; Thu, 27 Jun 2019 15:18:24 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hgWA2-0008Oy-25
- for linux-arm-kernel@lists.infradead.org; Thu, 27 Jun 2019 15:18:07 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 1E6A5360;
- Thu, 27 Jun 2019 08:18:05 -0700 (PDT)
-Received: from e103592.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
- [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id D791D3F246;
- Thu, 27 Jun 2019 08:18:03 -0700 (PDT)
-Date: Thu, 27 Jun 2019 16:18:01 +0100
-From: Dave Martin <Dave.Martin@arm.com>
-To: Catalin Marinas <catalin.marinas@arm.com>
-Subject: Re: [PATCH v2 1/3] arm64/sve: Fix missing SVE/FPSIMD endianness
- conversions
-Message-ID: <20190627151801.GJ2790@e103592.cambridge.arm.com>
-References: <1560355234-25516-1-git-send-email-Dave.Martin@arm.com>
- <1560355234-25516-2-git-send-email-Dave.Martin@arm.com>
- <20190612172853.GA27039@fuggles.cambridge.arm.com>
- <20190627135112.GC9894@arrakis.emea.arm.com>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190627135112.GC9894@arrakis.emea.arm.com>
-User-Agent: Mutt/1.5.23 (2014-03-12)
+	id 1hgWE3-00021R-Ep; Thu, 27 Jun 2019 15:22:15 +0000
+Received: from inva021.nxp.com ([92.121.34.21])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hgWDo-0001qI-Kh
+ for linux-arm-kernel@lists.infradead.org; Thu, 27 Jun 2019 15:22:02 +0000
+Received: from inva021.nxp.com (localhost [127.0.0.1])
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 91244200C47;
+ Thu, 27 Jun 2019 17:21:57 +0200 (CEST)
+Received: from inva024.eu-rdc02.nxp.com (inva024.eu-rdc02.nxp.com
+ [134.27.226.22])
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 82D48200C45;
+ Thu, 27 Jun 2019 17:21:57 +0200 (CEST)
+Received: from fsr-ub1864-112.ea.freescale.net
+ (fsr-ub1864-112.ea.freescale.net [10.171.82.98])
+ by inva024.eu-rdc02.nxp.com (Postfix) with ESMTP id 25F39205DB;
+ Thu, 27 Jun 2019 17:21:57 +0200 (CEST)
+From: Leonard Crestez <leonard.crestez@nxp.com>
+To: Stephen Boyd <sboyd@kernel.org>,
+ Geert Uytterhoeven <geert+renesas@glider.be>
+Subject: [PATCH] clk: Add clk_min/max_rate entries in debugfs
+Date: Thu, 27 Jun 2019 18:21:49 +0300
+Message-Id: <35dca44e929f49c7a00125bf18c3455198d4e18e.1561648504.git.leonard.crestez@nxp.com>
+X-Mailer: git-send-email 2.17.1
+X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190627_081806_146686_567590D2 
-X-CRM114-Status: GOOD (  19.41  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190627_082200_823179_D379ABF3 
+X-CRM114-Status: UNSURE (   6.88  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [92.121.34.21 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -65,57 +66,81 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Peter Maydell <peter.maydell@linaro.org>, gdb@sourceware.org,
- Will Deacon <will.deacon@arm.com>, Zhang Lei <zhang.lei@jp.fujitsu.com>,
- Julien Grall <julien.grall@arm.com>, Alan Hayward <alan.hayward@arm.com>,
- Alex =?iso-8859-1?Q?Benn=E9e?= <alex.bennee@linaro.org>,
- linux-arm-kernel@lists.infradead.org
+Cc: "Rafael J. Wysocki" <rafael@kernel.org>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Michael Turquette <mturquette@baylibre.com>, linux-imx@nxp.com,
+ linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Jun 27, 2019 at 02:51:13PM +0100, Catalin Marinas wrote:
-> On Wed, Jun 12, 2019 at 06:28:53PM +0100, Will Deacon wrote:
-> > On Wed, Jun 12, 2019 at 05:00:32PM +0100, Dave Martin wrote:
-> > > The in-memory representation of SVE and FPSIMD registers is
-> > > different: the FPSIMD V-registers are stored as single 128-bit
-> > > host-endian values, whereas SVE registers are stored in an
-> > > endianness-invariant byte order.
-> > > 
-> > > This means that the two representations differ when running on a
-> > > big-endian host.  But we blindly copy data from one representation
-> > > to another when converting between the two, resulting in the
-> > > register contents being unintentionally byteswapped in certain
-> > > situations.  Currently this can be triggered by the first SVE
-> > > instruction after a syscall, for example (though the potential
-> > > trigger points may vary in future).
-> > > 
-> > > So, fix the conversion functions fpsimd_to_sve(), sve_to_fpsimd()
-> > > and sve_sync_from_fpsimd_zeropad() to swab where appropriate.
-> > > 
-> > > There is no common swahl128() or swab128() that we could use here.
-> > > Maybe it would be worth making this generic, but for now add a
-> > > simple local hack.
-> > > 
-> > > Since the byte order differences are exposed in ABI, also clarify
-> > > the docuentation.
-> > > 
-> > > Fixes: bc0ee4760364 ("arm64/sve: Core task context handling")
-> > > Fixes: 8cd969d28fd2 ("arm64/sve: Signal handling support")
-> > > Fixes: 43d4da2c45b2 ("arm64/sve: ptrace and ELF coredump support")
-> > > Signed-off-by: Dave Martin <Dave.Martin@arm.com>
-> > 
-> > Thanks, Dave. I've picked this one up and pushed it out to our fixes branch
-> > for 5.2. I assume Catalin will take the other two for 5.3.
-> 
-> At least the second patch depends on the first one. So I'll postpone
-> merging them until -rc1.
+Add two files to expose min/max clk rates as determined by
+clk_core_get_boundaries, taking all consumer requests into account.
 
-Yes, that should be fine.  Those are cleanup, supplementary to the fix.
+This information does not appear to be otherwise exposed to userspace.
 
-Thanks
----Dave
+Signed-off-by: Leonard Crestez <leonard.crestez@nxp.com>
+---
+ drivers/clk/clk.c | 26 ++++++++++++++++++++++++++
+ 1 file changed, 26 insertions(+)
+
+diff --git a/drivers/clk/clk.c b/drivers/clk/clk.c
+index fbf63daa62bc..a51d8ffb2d40 100644
+--- a/drivers/clk/clk.c
++++ b/drivers/clk/clk.c
+@@ -3031,10 +3031,34 @@ static int clk_duty_cycle_show(struct seq_file *s, void *data)
+ 
+ 	return 0;
+ }
+ DEFINE_SHOW_ATTRIBUTE(clk_duty_cycle);
+ 
++static int clk_min_rate_show(struct seq_file *s, void *data)
++{
++	struct clk_core *core = s->private;
++	unsigned long min_rate, max_rate;
++
++	clk_core_get_boundaries(core, &min_rate, &max_rate);
++	seq_printf(s, "%lu\n", min_rate);
++
++	return 0;
++}
++DEFINE_SHOW_ATTRIBUTE(clk_min_rate);
++
++static int clk_max_rate_show(struct seq_file *s, void *data)
++{
++	struct clk_core *core = s->private;
++	unsigned long min_rate, max_rate;
++
++	clk_core_get_boundaries(core, &min_rate, &max_rate);
++	seq_printf(s, "%lu\n", max_rate);
++
++	return 0;
++}
++DEFINE_SHOW_ATTRIBUTE(clk_max_rate);
++
+ static void clk_debug_create_one(struct clk_core *core, struct dentry *pdentry)
+ {
+ 	struct dentry *root;
+ 
+ 	if (!core || !pdentry)
+@@ -3042,10 +3066,12 @@ static void clk_debug_create_one(struct clk_core *core, struct dentry *pdentry)
+ 
+ 	root = debugfs_create_dir(core->name, pdentry);
+ 	core->dentry = root;
+ 
+ 	debugfs_create_ulong("clk_rate", 0444, root, &core->rate);
++	debugfs_create_file("clk_min_rate", 0444, root, core, &clk_min_rate_fops);
++	debugfs_create_file("clk_max_rate", 0444, root, core, &clk_max_rate_fops);
+ 	debugfs_create_ulong("clk_accuracy", 0444, root, &core->accuracy);
+ 	debugfs_create_u32("clk_phase", 0444, root, &core->phase);
+ 	debugfs_create_file("clk_flags", 0444, root, core, &clk_flags_fops);
+ 	debugfs_create_u32("clk_prepare_count", 0444, root, &core->prepare_count);
+ 	debugfs_create_u32("clk_enable_count", 0444, root, &core->enable_count);
+-- 
+2.17.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
