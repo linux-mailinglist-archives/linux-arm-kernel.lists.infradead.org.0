@@ -2,92 +2,93 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 96C1357C6A
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 27 Jun 2019 08:48:24 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9848257B57
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 27 Jun 2019 07:26:49 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jS6afbRP0kS2cRxLE0ZCSWb5B+lv70t5MfczBlTraeo=; b=Bf0I9mvH4yt4c7
-	HOYXq+y/1rgTAyk6CnE1d9ddQPboYI6D1vUy7bkwBVCR98tdwZeZe9vNcHlyfLNAIY0Kz//YFEd34
-	RIxbgeILLqMSXmpa9pjSvP7/2nYzo1ftPbE4h8JoUqYcUuEWARUEb4/nqj9JdeUJcaNlQrttfqdOJ
-	IT06SUnUlgHecEhbhiV7WQgXZ3VC8rBkBsnX0q15tGNi60fOJkjP9d+0V/Q9z055yy0dE9YbSXDHM
-	V1NiZhKG3p4fMqmubQluJFbq3sOhYJhYy0pIZ+ntyhtcUlVtll3S8Syk6gJ2hD5ZKw4WHafKRCvAI
-	gcvPahxqF+gbLiKJejuw==;
+	List-Owner; bh=nb0JHhcMDTlo3a1tFGsl7zKUFUZzdwS3gmZqL/k5hi8=; b=GB5NuL0bH56n0U
+	QnKhW9jy3ysnl8UqMjSc5oro68M43SfJ1XLDZrenVBEwCUGbrx/Fob0EwsCHfpRUoH6rc7RwlhF8Q
+	ImiuJ55ChHDkxE0IRpys/+gCzKBWExEyuryupaPW3q8c/X7t/8jHMxELs7LKBf+ZmOi7EO/PdETjl
+	fCEVzoUAiw7DqafKeTTUjpPxS7Ii5H1m/7L4V3IuFGXYWob1w5ZnUF7PxmA7FCAjaotL3M69OTtE3
+	xKb1L7PmiVwAoSAf78Wzervv+EQUu7CdxbCjM1KSGsFE8VnGBhHvt/bLl3rN6Qn0YCAlntrIBvBYO
+	XTe68MmPVW9ehRrNJMnQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hgOCk-0002fz-FF; Thu, 27 Jun 2019 06:48:22 +0000
-Received: from merlin.infradead.org ([2001:8b0:10b:1231::1])
+	id 1hgMvl-0006c3-IJ; Thu, 27 Jun 2019 05:26:45 +0000
+Received: from casper.infradead.org ([2001:8b0:10b:1236::1])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hgO8M-0006KM-Nx
- for linux-arm-kernel@bombadil.infradead.org; Thu, 27 Jun 2019 06:43:50 +0000
+ id 1hgMpY-0007bR-Qe
+ for linux-arm-kernel@bombadil.infradead.org; Thu, 27 Jun 2019 05:20:21 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=infradead.org; s=merlin.20170209; h=In-Reply-To:Content-Type:MIME-Version:
+ d=infradead.org; s=casper.20170209; h=In-Reply-To:Content-Type:MIME-Version:
  References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
  Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
  Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
  List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=YqSJkouCdbmz4bvieX9MmvoCdaOvWPYtwXCJEllW7aE=; b=WHJ8vd4kLAzhtUDx0NeOXAAl0
- 71Ibb0LdJJ1MPtmTTV0Du3Nj1BhEjmxtNyl4mGdG3DwU7fLQ02EKtg45rbiY4NvAubSsSTd7RvzgX
- uFfk4PZ+uxk2q5to9f4yqK0sjRzZH8COsXaVxdWo3Ixv4fXLDBsDYIOylQy45n7jPAGWgc1Q8hs2y
- W9Zt+hsACYR/xIRUadwDRMtH+1vK7vpIbI/ZikGCmNL1dogy0tjXKo98w95ko9zzvxhoBe4/HsWZA
- 9gYDsPoGq2ei0j2QyxNnTrir0kc1J+zhRuQY6plS/vr8dqVDbGTj3HGzwxwSSdnNclKSWtFDb7zMe
- KaauOdU6Q==;
+ bh=Q52VmEfyzODDUjexrWxHmYGjGvFn+xuEHsx+LScKSTg=; b=QgqjMZyA1ih5lfLOuyagSMBeV
+ i1xduF2PPifRx7fDdH7dEO0kOXUU0mfACn776sH0Eqpi57DfolddOKDFBU+qTncsOmU383HUlvOkG
+ oeg2pNCnFK53V/jB0YmOynAsRyzC0mLI8Bct1J9Mg1RG6btk3FcnAPg6vydrLTlAtt48lGR6/ELVZ
+ 7cq4QojBAKlKbb59IvHpaa/88gg5Kk2PCY+l1zgzmpJUIZaM/eH9PjhlQS9MDPvFE2ynr5EUu6miv
+ S9D1yisPxtk2fw6t9tIvIy2wThJ4KjV01MpkxdQcV/pTsj6071S4jztWv+Il5UJDa8JYL1D5ZSdb8
+ pvobEj8mg==;
 Received: from mail-lj1-x241.google.com ([2a00:1450:4864:20::241])
- by merlin.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hgKFZ-0005w6-Il
- for linux-arm-kernel@lists.infradead.org; Thu, 27 Jun 2019 02:35:02 +0000
-Received: by mail-lj1-x241.google.com with SMTP id 16so624174ljv.10
+ by casper.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hgKFc-0003bf-90
+ for linux-arm-kernel@lists.infradead.org; Thu, 27 Jun 2019 02:35:06 +0000
+Received: by mail-lj1-x241.google.com with SMTP id k18so619220ljc.11
  for <linux-arm-kernel@lists.infradead.org>;
  Wed, 26 Jun 2019 19:35:01 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=lixom-net.20150623.gappssmtp.com; s=20150623;
  h=date:from:to:cc:subject:message-id:references:mime-version
  :content-disposition:in-reply-to:user-agent;
- bh=YqSJkouCdbmz4bvieX9MmvoCdaOvWPYtwXCJEllW7aE=;
- b=ofOF3Pcn7Fsnx8bfodWEdspjWibel0QtIkMI76mLhMU7ufARyT4XCtgDrRSrGGAaPH
- K81LLtmZ6Cxq4q9nNfAoZuEyOD+4GJ++Q3J2LwIOnvLbG2irctb9GISDQhF2Rv4Y+TKM
- PxT8lCnp17sR7UZqooYTXhH7Q0sMtRDufezoy1+MEK2zb44VvZ7A9W4XkzsXk1N4fscL
- Lr5vh7kbqV6fBSWJSEFgua0OQFEokSfI9D59D+DB/iOunGtmjf5z/bLOCuGuD9/fHEZ2
- 85jcYLHjrUu26mXDn0xj9dm1tu1VJ2S2KDh2G/fH2S2IcQ/R7XyzAm98dVUB1UBAKBD9
- PUrQ==
+ bh=Q52VmEfyzODDUjexrWxHmYGjGvFn+xuEHsx+LScKSTg=;
+ b=bVK5unloG/mSghdXaDDGNyMd521dXDj5UMzHvjjJjLf/fGTyHkQ6Me7+chzBNGypQG
+ ZWVL2Ht1gXRiciWwYohLBjDpSGIzLL7d5C59BfjKNcldb7/ENjzQMF0HIQmMbTUEjdOA
+ kmrviGPuSb5hYjextJKmqZAPKs1oP78bkkJYdHnk9wJOSAJkY4ayFh4lI4SbGm6DOJ6o
+ biPJZ7aUZFbsloDbPJTwSAkD6ZrJ7kpseRCSjRK1Z4tDkFueMLNj7c0YAQhYzXrw8jTU
+ 7nvUw/gztvfeALt7C9fwze3nUy85yQrCmTHRZY7+kMo3GKyoom+xADxtrSehx4Jaavne
+ ynZQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to:user-agent;
- bh=YqSJkouCdbmz4bvieX9MmvoCdaOvWPYtwXCJEllW7aE=;
- b=QkqMamieqV9OoTwWm9//4D2XVNbuJ/msCB0FRYaqK4uRgW7jEisbRRqii3p9TGt5VA
- zMJNkBC1rWlKgthnatzq64wnwJpP0bDv7Wq2JjgYiPLO4ZGhRTnfLnZBmmMvA1tE3fMO
- eeaDBGh8iBQaz1Jiy4UK9PRyFlhoTLMZol5971sgkb1ex/vURRcAJse43chkruOh9ek1
- h00z8meBOZLf6jb3GTVgMCgGoJ8js7T96+lj/bRHI+FtxfHdCezYj8j9LTdg0zWCXiXW
- 2ZxX5lfnWNl999aCwLuLBZpo2rwq0E0ag8PpD69+/TRTbUN2+wjPBTTYV3Rx6HPtzl/s
- vkcA==
-X-Gm-Message-State: APjAAAX/NVlou5oqN3XSNyBK1nX8mEoDboHzIrVTKngs7U6XNzw0jhqg
- EqayWAA+hMzTh5SMkIIZ/CaogA==
-X-Google-Smtp-Source: APXvYqzUo/OMOEtxCgRTsVH9uHTyjCrqs+2MYNudDPes4ncQUwwtP9ffEH64O9IdQtyZOyUc3YK1nA==
-X-Received: by 2002:a2e:7c15:: with SMTP id x21mr872691ljc.55.1561602836467;
- Wed, 26 Jun 2019 19:33:56 -0700 (PDT)
+ bh=Q52VmEfyzODDUjexrWxHmYGjGvFn+xuEHsx+LScKSTg=;
+ b=ocKV+FpGggcme/ZaaIIJQmfS86t0eGf+kCubIprWJ1EFL2XFBLLAdL5/Lvb9+i1vfK
+ jhuoQgWRDtksI7QafCtjlAW3P9IwJ9KkOvAxGcf+oqvPcsLtwfIfy+6T2CsdQa285mVC
+ kFtpiJZ2Z6z0FNiLnrhCUljiZS2I/J4twIjcd7u1uYJATJlF7R0G4yHdYJU+yVIaXNxr
+ LxxmjmLykFUCWiVPC+sgLfpsWdbNJW5B8W17+4j1otdDm66WIvM37sT03sJmar5yo7dA
+ paVCXsG9yC/8BB+YMkMq/r7NQaXm3rWceTUQx7E/kJ5NdK0qpDoetRGX5qYYkWDCZxwv
+ PVUw==
+X-Gm-Message-State: APjAAAU0W6ZqSKkXfxcMmRihjo9lZD4ctlZX/pnj8aA4JRR/Rx+2SqM2
+ 2tOtb0yzbu5PulGbueHCemoNaJGtCFT8fA==
+X-Google-Smtp-Source: APXvYqyj92gPoEoAWjZ93sFwLUMCNj7Ql/zysxuhQK9eStj8fDbV1Uye+s1koXqor7RwDwo9j6dfVQ==
+X-Received: by 2002:a2e:5c09:: with SMTP id q9mr898785ljb.120.1561602838511;
+ Wed, 26 Jun 2019 19:33:58 -0700 (PDT)
 Received: from localhost (h85-30-9-151.cust.a3fiber.se. [85.30.9.151])
- by smtp.gmail.com with ESMTPSA id f30sm106397lfa.48.2019.06.26.19.33.55
+ by smtp.gmail.com with ESMTPSA id v15sm107830lfd.53.2019.06.26.19.33.57
  (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Wed, 26 Jun 2019 19:33:55 -0700 (PDT)
-Date: Wed, 26 Jun 2019 19:24:23 -0700
+ Wed, 26 Jun 2019 19:33:57 -0700 (PDT)
+Date: Wed, 26 Jun 2019 19:27:48 -0700
 From: Olof Johansson <olof@lixom.net>
 To: Krzysztof Kozlowski <krzk@kernel.org>
-Subject: Re: [GIT PULL 3/4] arm64: dts: exynos: Pull for v5.3
-Message-ID: <20190627022423.u36lomov33w3smtr@localhost>
+Subject: Re: [GIT PULL 1/4] ARM: defconfig: Samsung/Exynos for v5.3
+Message-ID: <20190627022748.327vqldfpfykpww5@localhost>
 References: <20190625193451.7696-1-krzk@kernel.org>
- <20190625193451.7696-3-krzk@kernel.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190625193451.7696-3-krzk@kernel.org>
+In-Reply-To: <20190625193451.7696-1-krzk@kernel.org>
 User-Agent: NeoMutt/20170113 (1.7.2)
-X-Spam-Note: CRM114 invocation failed
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20190627_033504_357211_EE411AE4 
+X-CRM114-Status: GOOD (  13.70  )
 X-Spam-Score: 0.0 (/)
-X-Spam-Report: SpamAssassin version 3.4.2 on merlin.infradead.org summary:
- Content analysis details:   (0.0 points)
+X-Spam-Report: SpamAssassin version 3.4.2 on casper.infradead.org summary:
+ Content analysis details:   (0.0 points, 5.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
@@ -95,9 +96,9 @@ X-Spam-Report: SpamAssassin version 3.4.2 on merlin.infradead.org summary:
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -117,30 +118,35 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Jun 25, 2019 at 09:34:50PM +0200, Krzysztof Kozlowski wrote:
+On Tue, Jun 25, 2019 at 09:34:48PM +0200, Krzysztof Kozlowski wrote:
 > The following changes since commit a188339ca5a396acc588e5851ed7e19f66b0ebd9:
 > 
 >   Linux 5.2-rc1 (2019-05-19 15:47:09 -0700)
 > 
 > are available in the Git repository at:
 > 
->   https://git.kernel.org/pub/scm/linux/kernel/git/krzk/linux.git tags/samsung-dt64-5.3
+>   https://git.kernel.org/pub/scm/linux/kernel/git/krzk/linux.git tags/samsung-defconfig-5.3
 > 
-> for you to fetch changes up to 4dc2a25d058d71f39e41da986777327b423b92f1:
+> for you to fetch changes up to dd50a69b5697532666023766688c6ea642e5a443:
 > 
->   arm64: dts: exynos: Add GPU/Mali T760 node to Exynos7 (2019-06-24 19:52:48 +0200)
+>   ARM: exynos_defconfig: Enable Panfrost and Lima drivers (2019-06-19 19:23:35 +0200)
 > 
 > ----------------------------------------------------------------
-> Samsung DTS ARM64 changes for v5.3
+> Samsung defconfig changes for v5.3
 > 
-> Add Mali nodes to Exynos3 and Exynos4.
+> 1. Trim several configs with savedefconfig.
+> 2. Enable Lima and Panfrost drivers for Mali GPU.
+> 
+> ----------------------------------------------------------------
+> Krzysztof Kozlowski (4):
+>       ARM: exynos_defconfig: Trim and reorganize with savedefconfig
+>       ARM: defconfig: samsung: Cleanup with savedefconfig
+>       ARM: multi_v7_defconfig: Enable Panfrost and Lima drivers
+>       ARM: exynos_defconfig: Enable Panfrost and Lima drivers
 
 
-Merged, but updating the message to Exynos7/5433.
+Merged, thanks!
 
-
-
-Thanks,
 
 -Olof
 
