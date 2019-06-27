@@ -2,72 +2,112 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C22DE57F4D
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 27 Jun 2019 11:25:56 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 75F3057F7A
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 27 Jun 2019 11:43:36 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
+	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=rgkcngFJe1d1tGFVv+sYNO7ukiGWvHF8deHSCK4Lrzw=; b=VxTsYuBEjeFfkh
-	DqeCG9d+9fDSkDskx06M2i/HADJ0VWam0z+ENoMpcWcso4V1CAi/afWOPzrXJHohVLYYDB/TAarBT
-	VSA03pZQ7hHDKbOrxiDkhn0TDdLDsZZA5hhdjLnRW74mbhcIyBrfQmrxgWb/8RY7gdCAYarC/qZxw
-	9JkxlCE9YUg67/gAawoiyIsD27YmwfZXhZuBPFLrkXPoVYw39Wfm2jxE4zN4Lf4GB31gRBKAZ717x
-	wc1Nb3rU+S42nWUR9qq8Q8Z1z3hcdTThoTXlt1uChTQ9n8PjgDlMIe663CJblYQgoDslsBfy5Xiwm
-	z8cH83MfmR3NksO6sKrg==;
+	List-Owner; bh=VHsbpQdaID2dQu8TQxTtO5fJ48i8QHaFWKLL0g4YqqM=; b=jDouoEHlVU4Sm9
+	jB4sdnmQWY2PdrTlE4SVm06i7l0P3UQFMnsSzpxDnFZX599k6qfxmFxb9f6iC5FsLdDiLuUpGEV/M
+	hMtmv/CTmzvdiFhrYOXD/70ozfvuF3MIi2cNE0hHE5q4vmdS5SOZHDyYZ/oIIEjw7zYafTbG9gUU8
+	RIR0sE1tlVjNySk+Zz5e9qTOQRKpSQC6zdjmTtpXg9F6POQP7mQ0k+iaQg0Pk8py60ByWe2Hqzk7/
+	19Tc0/yrlHHA7yeBH03PbPrWW42feBP6FhGEtdAFtOeBBZq1zQJiRXf0tlczSsq3vwrlpkOIQYCmg
+	eAy6BaEzPAy0NtW1+/cA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hgQf9-0001gp-Fd; Thu, 27 Jun 2019 09:25:51 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1hgQwB-0007Qk-DB; Thu, 27 Jun 2019 09:43:27 +0000
+Received: from esa20.fujitsucc.c3s2.iphmx.com ([216.71.158.65])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hgQes-0001gV-LB
- for linux-arm-kernel@lists.infradead.org; Thu, 27 Jun 2019 09:25:36 +0000
-Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 297F820815;
- Thu, 27 Jun 2019 09:25:33 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1561627533;
- bh=goq2/A7st83ja3Ukmer3IzeR7NeJxE0JXUBuAGZtzG8=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=usXZ1Almi7iw/vNTG13gtkTbdBPTY88H4ZXJ5ih150x8FiCTR9J7sNSV5bQoY3aul
- plBSDB/R79EFy41UU3KERrpDgspoWD3vvQnGnjqutbrTGFfr6SyC3nWoe5vsOI0oLv
- p+93oWTyZfCVJpN4rQT2s9TR0mrMKsD6OnI4ZPKo=
-Date: Thu, 27 Jun 2019 10:25:30 +0100
-From: Will Deacon <will@kernel.org>
-To: Catalin Marinas <catalin.marinas@arm.com>
-Subject: Re: [PATCH] arm64: Add support for E0PD
-Message-ID: <20190627092529.a2hdttgitnile3h6@willie-the-truck>
-References: <20190626144535.27680-1-broonie@kernel.org>
- <20190626150403.dekq5l5rpmgzknfr@willie-the-truck>
- <20190626160622.GA5379@sirena.org.uk>
- <20190626165102.GE29672@arrakis.emea.arm.com>
+ id 1hgQvj-0007OV-MR; Thu, 27 Jun 2019 09:43:02 +0000
+X-IronPort-AV: E=McAfee;i="6000,8403,9300"; a="4700467"
+X-IronPort-AV: E=Sophos;i="5.63,423,1557154800"; 
+   d="scan'208";a="4700467"
+Received: from mail-os2jpn01lp2051.outbound.protection.outlook.com (HELO
+ JPN01-OS2-obe.outbound.protection.outlook.com) ([104.47.92.51])
+ by ob1.fujitsucc.c3s2.iphmx.com with ESMTP/TLS/AES256-SHA256;
+ 27 Jun 2019 18:41:46 +0900
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=fujitsu.onmicrosoft.com; s=selector1-fujitsu-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=8Xau6Txq9jQewfvZAJs10LxHpWFjBeu+ae//TvuxrF4=;
+ b=SXGozLCa+Le0qXnwncW6dt7JbMMFXRK1cQztjrhqpDDj86gVTqjrXrNcIVbyfzNHk2SpaHOLEisxOLy5F1cqwnL2OPv3LA/EYL+R/2URf+29ZyJqF80K59EW8EZQcQHsjRlb0S11UiGalPNGRXToP2EGymuUpS3RxwG+AUaDyCY=
+Received: from OSAPR01MB4993.jpnprd01.prod.outlook.com (20.179.178.151) by
+ OSAPR01MB2179.jpnprd01.prod.outlook.com (52.134.234.138) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2032.17; Thu, 27 Jun 2019 09:41:43 +0000
+Received: from OSAPR01MB4993.jpnprd01.prod.outlook.com
+ ([fe80::59f0:837d:b06f:9dbd]) by OSAPR01MB4993.jpnprd01.prod.outlook.com
+ ([fe80::59f0:837d:b06f:9dbd%5]) with mapi id 15.20.2008.017; Thu, 27 Jun 2019
+ 09:41:43 +0000
+From: "qi.fuli@fujitsu.com" <qi.fuli@fujitsu.com>
+To: Will Deacon <will@kernel.org>, Guo Ren <guoren@kernel.org>
+Subject: Re: [PATCH RFC 11/14] arm64: Move the ASID allocator code in a
+ separate file
+Thread-Topic: [PATCH RFC 11/14] arm64: Move the ASID allocator code in a
+ separate file
+Thread-Index: AQHU4ARcPz9tm+J3xUqwKj8A/ooqYqaNvxWAgBVs3wCAAA0vgIAAMV6AgANNMoCAA0uhgIABKgAAgASsFgA=
+Date: Thu, 27 Jun 2019 09:41:42 +0000
+Message-ID: <c5be6baa-91aa-c178-6698-c83d4d82a217@jp.fujitsu.com>
+References: <20190321163623.20219-1-julien.grall@arm.com>
+ <20190321163623.20219-12-julien.grall@arm.com>
+ <0dfe120b-066a-2ac8-13bc-3f5a29e2caa3@arm.com>
+ <CAJF2gTTXHHgDboaexdHA284y6kNZVSjLis5-Q2rDnXCxr4RSmA@mail.gmail.com>
+ <c871a5ae-914f-a8bb-9474-1dcfec5d45bf@arm.com>
+ <CAJF2gTStSR7Jmu7=HaO5Wxz=Zn8A5-RD8ktori3oKEhM9vozAA@mail.gmail.com>
+ <20190621141606.GF18954@arrakis.emea.arm.com>
+ <CAJF2gTTVUToRkRtxTmtWDotMGXy5YQCpL1h_2neTBuN3e6oz1w@mail.gmail.com>
+ <20190624102209.ngwtosgr5fvp3ler@willie-the-truck>
+In-Reply-To: <20190624102209.ngwtosgr5fvp3ler@willie-the-truck>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=qi.fuli@fujitsu.com; 
+x-originating-ip: [211.13.147.179]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: e67b46a7-e10b-44ac-f919-08d6fae3a9b3
+x-microsoft-antispam: BCL:0; PCL:0;
+ RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600148)(711020)(4605104)(1401327)(2017052603328)(7193020);
+ SRVR:OSAPR01MB2179; 
+x-ms-traffictypediagnostic: OSAPR01MB2179:
+x-ms-exchange-purlcount: 2
+x-microsoft-antispam-prvs: <OSAPR01MB21797B3EF4119D4D4EB1B736F7FD0@OSAPR01MB2179.jpnprd01.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:9508;
+x-forefront-prvs: 008184426E
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(376002)(346002)(366004)(136003)(39860400002)(396003)(189003)(199004)(31696002)(14444005)(256004)(6306002)(6512007)(53936002)(6436002)(6486002)(5660300002)(76116006)(73956011)(6246003)(66946007)(66476007)(66556008)(64756008)(66446008)(71200400001)(71190400001)(966005)(31686004)(316002)(229853002)(2906002)(54906003)(110136005)(14454004)(76176011)(7736002)(66066001)(99286004)(8936002)(6506007)(68736007)(85182001)(4326008)(25786009)(102836004)(26005)(476003)(53546011)(8676002)(186003)(7416002)(81166006)(81156014)(486006)(11346002)(478600001)(86362001)(6116002)(3846002)(446003)(305945005)(3714002)(777600001);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:OSAPR01MB2179;
+ H:OSAPR01MB4993.jpnprd01.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; MX:1; A:1; 
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam-message-info: zVoC3YR9MYzDJEChb14qJgO2JqQHqjnYYNSCYmultvC+waI3cGko/WW5cp8QCdjSeFli69QotZRwIWaPfu/pearC6ydL1lMChYHEU6dP/QPEhN5aIFHuRYbhDnWXR4ADRNlGQB0bJOUrr1+Fl4MNWgUesp8q+1g+BqPtTQRHVKUez7AVeiunKkykAssuLFGA2mbOXBfgkvYMB/MofffS4x5yVDobN+xAYsO7rdomu/HU0tx/ABvq3WnubLzaphZikVxNy75WJaZyxwmgPrtnW1XJqp+IF+nuHWUBkCV1Gnd/ikma4/g2bxR6yiLE+UHcIdg8jXEXrlGm4h2amHtGmId89opcFbTluAGXMn4uziiXswsGahJCJ0Qorw+tgFfTM/K5E9oelMT/2nLyuJIhwzLw2NAOWzGN1Nxcv4cc1UM=
+Content-ID: <FD4886E71D71804996690C96B064C95D@jpnprd01.prod.outlook.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190626165102.GE29672@arrakis.emea.arm.com>
-User-Agent: NeoMutt/20170113 (1.7.2)
+X-OriginatorOrg: fujitsu.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: e67b46a7-e10b-44ac-f919-08d6fae3a9b3
+X-MS-Exchange-CrossTenant-originalarrivaltime: 27 Jun 2019 09:41:43.0328 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: a19f121d-81e1-4858-a9d8-736e267fd4c7
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: qi.fuli@jp.fujitsu.com
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: OSAPR01MB2179
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190627_022534_726756_66461E52 
-X-CRM114-Status: GOOD (  28.93  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190627_024300_142278_B4B00B1F 
+X-CRM114-Status: GOOD (  18.19  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -79,65 +119,92 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Brown <broonie@kernel.org>, linux-arm-kernel@lists.infradead.org
+Cc: Julien Grall <julien.grall@arm.com>,
+ "aou@eecs.berkeley.edu" <aou@eecs.berkeley.edu>,
+ "suzuki.poulose@arm.com" <suzuki.poulose@arm.com>,
+ Marc Zyngier <marc.zyngier@arm.com>, Catalin Marinas <catalin.marinas@arm.com>,
+ "julien.thierry@arm.com" <julien.thierry@arm.com>,
+ Will Deacon <will.deacon@arm.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "rppt@linux.ibm.com" <rppt@linux.ibm.com>,
+ "hch@infradead.org" <hch@infradead.org>, Atish Patra <Atish.Patra@wdc.com>,
+ Anup Patel <anup.Patel@wdc.com>, "james.morse@arm.com" <james.morse@arm.com>,
+ "gary@garyguo.net" <gary@garyguo.net>, Palmer Dabbelt <palmer@sifive.com>,
+ "christoffer.dall@arm.com" <christoffer.dall@arm.com>,
+ "paul.walmsley@sifive.com" <paul.walmsley@sifive.com>,
+ "linux-riscv@lists.infradead.org" <linux-riscv@lists.infradead.org>,
+ "kvmarm@lists.cs.columbia.edu" <kvmarm@lists.cs.columbia.edu>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Jun 26, 2019 at 05:51:03PM +0100, Catalin Marinas wrote:
-> On Wed, Jun 26, 2019 at 05:06:22PM +0100, Mark Brown wrote:
-> > On Wed, Jun 26, 2019 at 04:04:04PM +0100, Will Deacon wrote:
-> > > I think you're missing one small thing here: all v8.5 CPUs will have
-> > > hardware mitigations for meltdown as advertised in the ID registers.
-> > > However, we still force KPTI on for those CPUs if KASLR is enabled to avoid
-> > > it being trivially bypassed by looking at fault timings. As you point out,
-> > > there are two issues with that: (1) the performance impact of KPTI and (2)
-> > > the incompatibility with statistical profiling. It is these issues which
-> > > E0PD attempts to address, so whilst I'm ok with enabling it unconditionally
-> > > as you propose, we should go one step further and avoid enabling KPTI on
-> > > CPUs with E0PD even if KASLR is enabled.
-> > 
-> > I agree, I'm currently working on a patch which will disable KPTI by
-> > default if we've enabled E0PD - it's a bit of a faff due to how early we
-> > decide if we're going to use KPTI so it probably needs to be a separate
-> > patch anyway.
-> 
-> Could we not wire up this check in unmap_kernel_at_el0()? We can look at
-> this as a more efficient KPTI handled by the hardware.
 
-CPUs with this feature will already return false from unmap_kernel_at_el0(),
-but I suppose the kaslr check could be augmented not to force kpti if E0PD
-is supported. Something similar would need to be added to
-arm64_kernel_use_ng_mappings(), so adding a kaslr_needs_kpti() helper might
-be a good idea.
+On 6/24/19 7:22 PM, Will Deacon wrote:
+> On Mon, Jun 24, 2019 at 12:35:35AM +0800, Guo Ren wrote:
+>> On Fri, Jun 21, 2019 at 10:16 PM Catalin Marinas
+>> <catalin.marinas@arm.com> wrote:
+>>> On Wed, Jun 19, 2019 at 07:51:03PM +0800, Guo Ren wrote:
+>>>> On Wed, Jun 19, 2019 at 4:54 PM Julien Grall <julien.grall@arm.com> wrote:
+>>>>> On 6/19/19 9:07 AM, Guo Ren wrote:
+>>>>>> Move arm asid allocator code in a generic one is a agood idea, I've
+>>>>>> made a patchset for C-SKY and test is on processing, See:
+>>>>>> https://lore.kernel.org/linux-csky/1560930553-26502-1-git-send-email-guoren@kernel.org/
+>>>>>>
+>>>>>> If you plan to seperate it into generic one, I could co-work with you.
+>>>>> Was the ASID allocator work out of box on C-Sky?
+>>>> Almost done, but one question:
+>>>> arm64 remove the code in switch_mm:
+>>>>    cpumask_clear_cpu(cpu, mm_cpumask(prev));
+>>>>    cpumask_set_cpu(cpu, mm_cpumask(next));
+>>>>
+>>>> Why? Although arm64 cache operations could affect all harts with CTC
+>>>> method of interconnect, I think we should keep these code for
+>>>> primitive integrity in linux. Because cpu_bitmap is in mm_struct
+>>>> instead of mm->context.
+>>> We didn't have a use for this in the arm64 code, so no point in
+>>> maintaining the mm_cpumask. On some arm32 systems (ARMv6) with no
+>>> hardware broadcast of some TLB/cache operations, we use it to track
+>>> where the task has run to issue IPI for TLB invalidation or some
+>>> deferred I-cache invalidation.
+>> The operation of set/clear mm_cpumask was removed in arm64 compared to
+>> arm32. It seems no side effect on current arm64 system, but from
+>> software meaning it's wrong.
+>> I think we should keep mm_cpumask just like arm32.
+> It was a while ago now, but I remember the atomic update of the mm_cpumask
+> being quite expensive when I was profiling this stuff, so I removed it
+> because we don't need it for arm64 (at least, it doesn't allow us to
+> optimise our shootdowns in practice).
 
-> > > We probably also need to consider the unfortunate situations where E0PD
-> > > is not supported by all of the CPUs in the system.
-> > 
-> > Yes, I've marked it as ARM64_CPUCAP_SYSTEM_FEATURE so it should be safe
-> > unless all the CPUs that don't support it are late CPUs (in which case
-> > it'd stop them booting) but it's not ideal as it means we won't use it
-> > at on mixed systems.  I did debate marking it as _WEAK so that we'd
-> > enable it on the CPUs that can use it but I worried that that'd be
-> > potentially misleading with regard to the level of hardening if the
-> > kernel said it was turning on E0PD.
-> 
-> I think this will become problematic in combination with disabling kpti.
-> If we decide early that it is meltdown-safe (unmap_kernel_at_el0()
-> returning false) because the boot CPU supports E0PD, any subsequent CPU
-> not having E0PD and hence requiring unmap_kernel_at_el0() will not boot.
-> That's fine by me as long as we have a Kconfig option to disable E0PD
-> and allow mixed CPU features on some custom SoCs.
+Hi Will,
 
-No, I think that's a regression over the current behaviour where we do boot
-on mixed SoCs like this. What we don't allow is late onlining of CPUs that
-are affected if none of the initial CPUs were affected, but that's only an
-issue with "maxcpus=" so it's not a big deal (you can just as easily pass
-"kpti=on" at the same time).
+I think mm_cpumask can be used for filtering the cpus that there are TBL 
+entries on.
+The OS jitter can be reduced by invalidating TLB entries only on the 
+CPUs specified by mm_cpumask(mm).
+As I mentioned in an earlier email, the 2.5% OS jitter can result in 
+over a factor of 20 slowdown for the same application [1].
+Though it may be an extreme example, reducing the OS jitter has been an 
+issue in HPC environment.
+I would like to avoid broadcast TLBI by using mm_cpumask on arm64, cloud 
+you please tell me more about the costs caused by updating mm_cpumask?
 
-Will
+Here is my patch:
+https://lkml.org/lkml/2019/6/17/703
 
+[1] Ferreira, Kurt B., Patrick Bridges, and Ron Brightwell. 
+"Characterizing application sensitivity to OS interference using 
+kernel-level noise injection." Proceedings of the 2008 ACM/IEEE 
+conference on Supercomputing. IEEE Press, 2008.
+
+Thanks,
+QI Fuli
+
+> I still think this is over-engineered for what you want on c-sky and making
+> this code generic is a mistake.
+>
+> Will
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
