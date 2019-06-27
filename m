@@ -2,90 +2,124 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A37E7587B1
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 27 Jun 2019 18:52:32 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D4D03587C4
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 27 Jun 2019 18:56:01 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=B3BksMar5LcR7etXthOycBeuccHm3DGIZkPmN0TJUZI=; b=eJKO9r37163MUajn4UFmzOQEq
-	tFv7SKvo83R+dF/gO8nUkKI0Y13sBH3vaOCdE0Nu1r1LtSsJfXjsL2QwNbToXH78t0oPv6u5/jsj8
-	DiGnk7wTJd1day8dAFuo1uNrAqTo3icIvpzxWtxWg43S1W2pDYF/W82OheJMQ14B9H418hX/s5+PH
-	dxFFpLAA5f8yXkgaWBHGJl/WlfAeRrpVMhwDXWgL4QU3I6JV3NfC2+TuacjqSFnCZw7RcG9tNqRFc
-	ko8Pc1Cq0omCfoqd8rePQxMUdjP1q2vfoOiskhUXGq1mjZI/IGww8SWNqerVoZhkMY+b4Nas9CXMw
-	Df6SEWcPQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=XGakgZKfm0dpLIlb5rNXl91VvtimwKf20skORWriPBw=; b=Xa9DHG+gto3z7T
+	l1rRcqnjqXw+fl/cNKUnxTFOQa1NnC6X0KOyTvEmVY8RWblWBqEDeeZozSa/C7S8gGKImQ26nv6FT
+	CrgKNWWHjkotEivXqXLdM1C8dT/hoHxmXZBPSbfWppzGLXxGDZQmOyHr+cIUwx3iS7iA9iQ+YTB22
+	t+xnAdBg/z06DPgCdh0atmhORkSvqLjaAxK2wss59VXvAxg9KncYnYR+O9OwTLIk5FMjSNtDR9O0t
+	H/qO+KYbyGuF5Ne3rk+bmGoEVMDphJ7SMW4QKmDUtdFgyqNh1qbJgmtSdq7CJ13WkhSEC863Rgen2
+	zAIV+yEvLorkC27ZzuVA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hgXdM-0000lc-TS; Thu, 27 Jun 2019 16:52:29 +0000
-Received: from hqemgate14.nvidia.com ([216.228.121.143])
+	id 1hgXgl-0002W5-Bv; Thu, 27 Jun 2019 16:55:59 +0000
+Received: from mout.kundenserver.de ([212.227.17.24])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hgXd7-0000ko-CW
- for linux-arm-kernel@lists.infradead.org; Thu, 27 Jun 2019 16:52:14 +0000
-Received: from hqpgpgate101.nvidia.com (Not Verified[216.228.121.13]) by
- hqemgate14.nvidia.com (using TLS: TLSv1.2, DES-CBC3-SHA)
- id <B5d14f43a0000>; Thu, 27 Jun 2019 09:52:10 -0700
-Received: from hqmail.nvidia.com ([172.20.161.6])
- by hqpgpgate101.nvidia.com (PGP Universal service);
- Thu, 27 Jun 2019 09:52:12 -0700
-X-PGP-Universal: processed;
- by hqpgpgate101.nvidia.com on Thu, 27 Jun 2019 09:52:12 -0700
-Received: from [10.25.73.176] (10.124.1.5) by HQMAIL107.nvidia.com
- (172.20.187.13) with Microsoft SMTP Server (TLS) id 15.0.1473.3; Thu, 27 Jun
- 2019 16:52:06 +0000
-Subject: Re: [PATCH V11 03/12] PCI: dwc: Perform dbi regs write lock towards
- the end
-To: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
-References: <20190624091505.1711-1-vidyas@nvidia.com>
- <20190624091505.1711-4-vidyas@nvidia.com>
- <20190627145800.GD3782@e121166-lin.cambridge.arm.com>
- <ecae46b4-54cc-7f4d-5a86-908431fd472a@nvidia.com>
- <20190627155047.GF3782@e121166-lin.cambridge.arm.com>
-X-Nvconfidentiality: public
-From: Vidya Sagar <vidyas@nvidia.com>
-Message-ID: <fbef2fee-1ca9-b894-6d1a-f2a9449968a5@nvidia.com>
-Date: Thu, 27 Jun 2019 22:22:03 +0530
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:60.0) Gecko/20100101
- Thunderbird/60.7.2
+ id 1hgXgP-0002V3-HG
+ for linux-arm-kernel@lists.infradead.org; Thu, 27 Jun 2019 16:55:46 +0000
+Received: from [192.168.1.162] ([37.4.249.111]) by mrelayeu.kundenserver.de
+ (mreue109 [212.227.15.183]) with ESMTPSA (Nemesis) id
+ 1MRTEp-1hspKc0A8z-00NSkY; Thu, 27 Jun 2019 18:55:27 +0200
+Subject: Re: [PATCH v5 04/12] PCI: brcmstb: add dma-range mapping for inbound
+ traffic
+To: Jim Quinlan <jim2101024@gmail.com>
+References: <1537367527-20773-1-git-send-email-jim2101024@gmail.com>
+ <1537367527-20773-5-git-send-email-jim2101024@gmail.com>
+ <CAKv+Gu_d-r0ubyqZcDzERYd5FVTSpjBk++iACHqVgtHrOK0F7A@mail.gmail.com>
+ <7fa897cf-4d58-c63f-afdd-a3ec5a6a56bf@gmail.com>
+ <CAKv+Gu8aJRV4nqq1e-5HRLvbrANQsYuMf-pwWB53BhxLgX7iWg@mail.gmail.com>
+ <b74d3c16-a512-73dc-c94a-ef6adde5f757@gmail.com>
+ <CAKv+Gu8ZbN3BDRyuFzt4o--SSUmhuOh+jnpq8ZR-Ay13DJrAqg@mail.gmail.com>
+ <fa285694-c3e1-adf8-032a-202e7598de41@gmail.com>
+ <CANCKTBsypcVS_iC1+sbW5fMKfj+tTsxbQv9CvDwcO8GV3a8_Yg@mail.gmail.com>
+ <CAKv+Gu-+OjJi8zGLqvnsOJQ9ygMot-O0EbyMKO-yyG-+k-274A@mail.gmail.com>
+ <CANCKTBtbwSqfSU0b_d6Yi7TV3R_ijEpPE8a4bpgpkcOxJOa_zQ@mail.gmail.com>
+From: Stefan Wahren <stefan.wahren@i2se.com>
+Openpgp: preference=signencrypt
+Autocrypt: addr=stefan.wahren@i2se.com; keydata=
+ xsFNBFt6gBMBEACub/pBevHxbvJefyZG32JINmn2bsEPX25V6fejmyYwmCGKjFtL/DoUMEVH
+ DxCJ47BMXo344fHV1C3AnudgN1BehLoBtLHxmneCzgH3KcPtWW7ptj4GtJv9CQDZy27SKoEP
+ xyaI8CF0ygRxJc72M9I9wmsPZ5bUHsLuYWMqQ7JcRmPs6D8gBkk+8/yngEyNExwxJpR1ylj5
+ bjxWDHyYQvuJ5LzZKuO9LB3lXVsc4bqXEjc6VFuZFCCk/syio/Yhse8N+Qsx7MQagz4wKUkQ
+ QbfXg1VqkTnAivXs42VnIkmu5gzIw/0tRJv50FRhHhxpyKAI8B8nhN8Qvx7MVkPc5vDfd3uG
+ YW47JPhVQBcUwJwNk/49F9eAvg2mtMPFnFORkWURvP+G6FJfm6+CvOv7YfP1uewAi4ln+JO1
+ g+gjVIWl/WJpy0nTipdfeH9dHkgSifQunYcucisMyoRbF955tCgkEY9EMEdY1t8iGDiCgX6s
+ 50LHbi3k453uacpxfQXSaAwPksl8MkCOsv2eEr4INCHYQDyZiclBuuCg8ENbR6AGVtZSPcQb
+ enzSzKRZoO9CaqID+favLiB/dhzmHA+9bgIhmXfvXRLDZze8po1dyt3E1shXiddZPA8NuJVz
+ EIt2lmI6V8pZDpn221rfKjivRQiaos54TgZjjMYI7nnJ7e6xzwARAQABzSlTdGVmYW4gV2Fo
+ cmVuIDxzdGVmYW4ud2FocmVuQGluLXRlY2guY29tPsLBdwQTAQgAIQUCXIdehwIbAwULCQgH
+ AgYVCAkKCwIEFgIDAQIeAQIXgAAKCRCUgewPEZDy2yHTD/9UF7QlDkGxzQ7AaCI6N95iQf8/
+ 1oSUaDNu2Y6IK+DzQpb1TbTOr3VJwwY8a3OWz5NLSOLMWeVxt+osMmlQIGubD3ODZJ8izPlG
+ /JrNt5zSdmN5IA5f3esWWQVKvghZAgTDqdpv+ZHW2EmxnAJ1uLFXXeQd3UZcC5r3/g/vSaMo
+ 9xek3J5mNuDm71lEWsAs/BAcFc+ynLhxwBWBWwsvwR8bHtJ5DOMWvaKuDskpIGFUe/Kb2B+j
+ ravQ3Tn6s/HqJM0cexSHz5pe+0sGvP+t9J7234BFQweFExriey8UIxOr4XAbaabSryYnU/zV
+ H9U1i2AIQZMWJAevCvVgQ/U+NeRhXude9YUmDMDo2sB2VAFEAqiF2QUHPA2m8a7EO3yfL4rM
+ k0iHzLIKvh6/rH8QCY8i3XxTNL9iCLzBWu/NOnCAbS+zlvLZaiSMh5EfuxTtv4PlVdEjf62P
+ +ZHID16gUDwEmazLAMrx666jH5kuUCTVymbL0TvB+6L6ARl8ANyM4ADmkWkpyM22kCuISYAE
+ fQR3uWXZ9YgxaPMqbV+wBrhJg4HaN6C6xTqGv3r4B2aqb77/CVoRJ1Z9cpHCwiOzIaAmvyzP
+ U6MxCDXZ8FgYlT4v23G5imJP2zgX5s+F6ACUJ9UQPD0uTf+J9Da2r+skh/sWOnZ+ycoHNBQv
+ ocZENAHQf87BTQRbeoATARAA2Hd0fsDVK72RLSDHby0OhgDcDlVBM2M+hYYpO3fX1r++shiq
+ PKCHVAsQ5bxe7HmJimHa4KKYs2kv/mlt/CauCJ//pmcycBM7GvwnKzmuXzuAGmVTZC6WR5Lk
+ akFrtHOzVmsEGpNv5Rc9l6HYFpLkbSkVi5SPQZJy+EMgMCFgjrZfVF6yotwE1af7HNtMhNPa
+ LDN1oUKF5j+RyRg5iwJuCDknHjwBQV4pgw2/5vS8A7ZQv2MbW/TLEypKXif78IhgAzXtE2Xr
+ M1n/o6ZH71oRFFKOz42lFdzdrSX0YsqXgHCX5gItLfqzj1psMa9o1eiNTEm1dVQrTqnys0l1
+ 8oalRNswYlQmnYBwpwCkaTHLMHwKfGBbo5dLPEshtVowI6nsgqLTyQHmqHYqUZYIpigmmC3S
+ wBWY1V6ffUEmkqpAACEnL4/gUgn7yQ/5d0seqnAq2pSBHMUUoCcTzEQUWVkiDv3Rk7hTFmhT
+ sMq78xv2XRsXMR6yQhSTPFZCYDUExElEsSo9FWHWr6zHyYcc8qDLFvG9FPhmQuT2s9Blx6gI
+ 323GnEq1lwWPJVzP4jQkJKIAXwFpv+W8CWLqzDWOvdlrDaTaVMscFTeH5W6Uprl65jqFQGMp
+ cRGCs8GCUW13H0IyOtQtwWXA4ny+SL81pviAmaSXU8laKaRu91VOVaF9f4sAEQEAAcLBXwQY
+ AQIACQUCW3qAEwIbDAAKCRCUgewPEZDy2+oXD/9cHHRkBZOfkmSq14Svx062PtU0KV470TSn
+ p/jWoYJnKIw3G0mXIRgrtH2dPwpIgVjsYyRSVMKmSpt5ZrDf9NtTbNWgk8VoLeZzYEo+J3oP
+ qFrTMs3aYYv7e4+JK695YnmQ+mOD9nia915tr5AZj95UfSTlyUmyic1d8ovsf1fP7XCUVRFc
+ RjfNfDF1oL/pDgMP5GZ2OwaTejmyCuHjM8IR1CiavBpYDmBnTYk7Pthy6atWvYl0fy/CqajT
+ Ksx7+p9xziu8ZfVX+iKBCc+He+EDEdGIDhvNZ/IQHfOB2PUXWGS+s9FNTxr/A6nLGXnA9Y6w
+ 93iPdYIwxS7KXLoKJee10DjlzsYsRflFOW0ZOiSihICXiQV1uqM6tzFG9gtRcius5UAthWaO
+ 1OwUSCQmfCOm4fvMIJIA9rxtoS6OqRQciF3crmo0rJCtN2awZfgi8XEif7d6hjv0EKM9XZoi
+ AZYZD+/iLm5TaKWN6oGIti0VjJv8ZZOZOfCb6vqFIkJW+aOu4orTLFMz28aoU3QyWpNC8FFm
+ dYsVua8s6gN1NIa6y3qa/ZB8bA/iky59AEz4iDIRrgUzMEg8Ak7Tfm1KiYeiTtBDCo25BvXj
+ bqsyxkQD1nkRm6FAVzEuOPIe8JuqW2xD9ixGYvjU5hkRgJp3gP5b+cnG3LPqquQ2E6goKUML AQ==
+Message-ID: <cd1a967d-2088-c644-6b50-547b14cd3357@i2se.com>
+Date: Thu, 27 Jun 2019 18:55:25 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.7.1
 MIME-Version: 1.0
-In-Reply-To: <20190627155047.GF3782@e121166-lin.cambridge.arm.com>
-X-Originating-IP: [10.124.1.5]
-X-ClientProxiedBy: HQMAIL104.nvidia.com (172.18.146.11) To
- HQMAIL107.nvidia.com (172.20.187.13)
+In-Reply-To: <CANCKTBtbwSqfSU0b_d6Yi7TV3R_ijEpPE8a4bpgpkcOxJOa_zQ@mail.gmail.com>
 Content-Language: en-US
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nvidia.com; s=n1;
- t=1561654330; bh=yvZTQ4IOvwV6hxGeLW9GOQ2PqNDwou5Z7nhqxb2MGzs=;
- h=X-PGP-Universal:Subject:To:CC:References:X-Nvconfidentiality:From:
- Message-ID:Date:User-Agent:MIME-Version:In-Reply-To:
- X-Originating-IP:X-ClientProxiedBy:Content-Type:Content-Language:
- Content-Transfer-Encoding;
- b=iYpJIifkIFk1Yn0Eghy9VIv8CWqVmaUl2NjkJCcCnw4fa44o14waMoJZ5wiY2vv4i
- AonS5CXCnMzgLrRHT3pgAav4AlJ6wHA79wV19iTR2hU3lKQPkXn5ZeZN30IhnSEuTl
- 7j+nz+zLL7eMFU1AYZsTIvEY7gReETQa/nmiCqdp/KsBYN1ZLNckPodg5tL8PvbqWq
- qyy9BkbegqMYkCWBvxKzXSi8ha/QC9Q0lbPnkvEN07Bphh/8hxtwnaBr0qB8/Js98s
- qDXzoUxEMVyK/6y0EGWf0UF0sCYc+P7x/uEBCX5HiehRt9Opb3Ipyiu4L+dzJi0aHz
- 4x3HfLnIFxTEQ==
+X-Provags-ID: V03:K1:l0xqY3UsxG8WEbzy1MkAb9rzx+/CW3Sl86OkU9r+x4PXh3NDpHY
+ 1fwSKXJXdqciEj2c2bsPwifFf8+/31Gek/e6wGpwtSJqPM+76aw6uGipn+WSViX7bpUjccb
+ 9zPy89bXBT9oPQCwtOulXmsYEP6wsu+5J3kc0qetQHJHRlDsDoCwRdHPrudpPnmS3C4UQXb
+ 74x2o4zcoNmEV0yL/aemw==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:klzKvQL7Mbc=:b++CW595MCjhCMXg9C4h31
+ RtO/vAve4myjETFhYIxsF5oFo5fRpCpdJH2139LBmLFuxAJgnmtH6Pr0u5ZHeThJKVKz2Ejpk
+ jDcvjod4IGE+4yJyitnP/HoEIxcxHOTRiJVkuUa8x+b+vRAP3P795AwCT1Q5LCkkD0LLb2B1W
+ vcUHjwpnmZoSMvU565P1Ms2Glmw/qjV5HXVk1miUwZfvzv3eqTe1uogzQr8OBbAGLEowVRhhU
+ CP/GqAj5pUjo3BvhA311IgmmBAA5fUIRsdOzdV2xIRAdSpqUlL+GkajB5Q6ISAHYS4X1l5W5q
+ PjZOMdCeBoolYEgp6hm9UM/+plE2lo/Asq8G2k7g3TMaXfJvkT7M+AXV4oA0B3AxKqhWJIJFo
+ DwdTB3N/mog32B9umoVLSeyozBsVgQyb05MjqKBO4+sw2EI0wd2D0RCbVZLiBUM/WvxRXyO+K
+ lvtVY0fkO4KJ9uuPTgmkhVbVOh01k+3MiVVcWeX1iCnJhucYno1VHzorRnI1qmnyr/ygGdGkl
+ NVCFxrtaux/gGO10Af4qijoAjDjuQVOH92ZuGuuJiwkjOEnGZSNUUQ2UlhgNbP/yX7L+lDUBD
+ JWFw68rIATVEm1HFgoCbniN/tVXYlIsiAGlOWS5YIndUfXdN+DZy6T1EJwo0R34AqX0pSirMS
+ FX72uEEHggC8IaBDbfz5bXSIWxJ9gh1oTvJTHxikDpAlTxEMzLAppcMblW2z5qCTySFFvIMAF
+ /PMQkbheeqzQANXwVlQy4KiZuAVut5luUMrvdtR41GmGRRMLS2BhQkOTPu8=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190627_095213_443013_F1D1654D 
-X-CRM114-Status: GOOD (  15.54  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190627_095545_256869_8DA2B572 
+X-CRM114-Status: GOOD (  14.83  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [216.228.121.143 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [212.227.17.24 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -97,146 +131,47 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, mperttunen@nvidia.com,
- mmaddireddy@nvidia.com, linux-pci@vger.kernel.org, catalin.marinas@arm.com,
- will.deacon@arm.com, linux-kernel@vger.kernel.org, kthota@nvidia.com,
- kishon@ti.com, linux-tegra@vger.kernel.org, robh+dt@kernel.org,
- thierry.reding@gmail.com, gustavo.pimentel@synopsys.com, jingoohan1@gmail.com,
- bhelgaas@google.com, digetx@gmail.com, jonathanh@nvidia.com,
- linux-arm-kernel@lists.infradead.org, sagar.tv@gmail.com
+Cc: Florian Fainelli <f.fainelli@gmail.com>, ard.biesheuvel@linaro.org,
+ linux-pci <linux-pci@vger.kernel.org>, linux-kernel@vger.kernel.org,
+ Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ bcm-kernel-feedback-list <bcm-kernel-feedback-list@broadcom.com>,
+ Gregory Fong <gregory.0xf0@gmail.com>, Bjorn Helgaas <bhelgaas@google.com>,
+ Brian Norris <computersforpeace@gmail.com>,
+ Robin Murphy <robin.murphy@arm.com>, Christoph Hellwig <hch@lst.de>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 6/27/2019 9:20 PM, Lorenzo Pieralisi wrote:
-> On Thu, Jun 27, 2019 at 09:03:08PM +0530, Vidya Sagar wrote:
->> On 6/27/2019 8:28 PM, Lorenzo Pieralisi wrote:
->>> On Mon, Jun 24, 2019 at 02:44:56PM +0530, Vidya Sagar wrote:
->>>> Remove multiple write enable and disable sequences of dbi registers as
->>>> Tegra194 implements writes to BAR-0 register (offset: 0x10) controlled by
->>>> DBI write-lock enable bit thereby not allowing any further writes to BAR-0
->>>> register in config space to take place. Hence enabling write permission at
->>>> the start of function and disabling the same only towards the end.
->>>
->>> I do not understand what this patch does, I would like to rephrase
->>> the commit log in a way that is easier to parse.
->>>
->>> In particular I do not get what you mean in relation to BAR-0, I am
->>> confused, please clarify.
->>>
->>> Lorenzo
->> Well, some of the Synopsys DesignWare core's DBI registers are
->> protected with a lock without which, they are read-only by default.
->> Existing code in dw_pcie_setup_rc() API tries to unlock and lock
->> multiple times whenever it wants to update those write-protected
->> registers. This patch attempts to unlock all such write-protected
->> registers for writing once in the beginning of the function and lock
->> them back towards the end.  As far as BAR-0 register (which is at
->> offset 0x10 in DBI space... nothing but the config space) in Tegra194
->> is concerned, it is one of those registers to which writes are
->> protected. I could have added unlock/lock pair around accessing this
->> register, but that would bloat this API with one more pair of
->> unlock/lock, instead I chose to remove unlock/lock pairs for all
->> protected registers and have unlock in the beginning and lock towards
->> the end.
-> 
-> Ok, so DBI space registers that require write permissions are per-IP.
-> This is clearer so the commit log must be rewritten, it is not clear at
-> all in this respect at least not as-is, if you read it you will
-> notice ;-)
-Ok. I'll update commit message in next patch series.
+Hi Jim,
 
--Vidya Sagar
-> 
-> Lorenzo
-> 
->>
->> -Vidya Sagar
->>
->>>
->>>> Signed-off-by: Vidya Sagar <vidyas@nvidia.com>
->>>> Reviewed-by: Thierry Reding <treding@nvidia.com>
->>>> Acked-by: Jingoo Han <jingoohan1@gmail.com>
->>>> ---
->>>> Changes since [v10]:
->>>> * None
->>>>
->>>> Changes since [v9]:
->>>> * None
->>>>
->>>> Changes since [v8]:
->>>> * None
->>>>
->>>> Changes since [v7]:
->>>> * None
->>>>
->>>> Changes since [v6]:
->>>> * None
->>>>
->>>> Changes since [v5]:
->>>> * Moved write enable to the beginning of the API and write disable to the end
->>>>
->>>> Changes since [v4]:
->>>> * None
->>>>
->>>> Changes since [v3]:
->>>> * None
->>>>
->>>> Changes since [v2]:
->>>> * None
->>>>
->>>> Changes since [v1]:
->>>> * None
->>>>
->>>>    drivers/pci/controller/dwc/pcie-designware-host.c | 14 ++++++++------
->>>>    1 file changed, 8 insertions(+), 6 deletions(-)
->>>>
->>>> diff --git a/drivers/pci/controller/dwc/pcie-designware-host.c b/drivers/pci/controller/dwc/pcie-designware-host.c
->>>> index f93252d0da5b..d3156446ff27 100644
->>>> --- a/drivers/pci/controller/dwc/pcie-designware-host.c
->>>> +++ b/drivers/pci/controller/dwc/pcie-designware-host.c
->>>> @@ -628,6 +628,12 @@ void dw_pcie_setup_rc(struct pcie_port *pp)
->>>>    	u32 val, ctrl, num_ctrls;
->>>>    	struct dw_pcie *pci = to_dw_pcie_from_pp(pp);
->>>> +	/*
->>>> +	 * Enable DBI read-only registers for writing/updating configuration.
->>>> +	 * Write permission gets disabled towards the end of this function.
->>>> +	 */
->>>> +	dw_pcie_dbi_ro_wr_en(pci);
->>>> +
->>>>    	dw_pcie_setup(pci);
->>>>    	if (!pp->ops->msi_host_init) {
->>>> @@ -650,12 +656,10 @@ void dw_pcie_setup_rc(struct pcie_port *pp)
->>>>    	dw_pcie_writel_dbi(pci, PCI_BASE_ADDRESS_1, 0x00000000);
->>>>    	/* Setup interrupt pins */
->>>> -	dw_pcie_dbi_ro_wr_en(pci);
->>>>    	val = dw_pcie_readl_dbi(pci, PCI_INTERRUPT_LINE);
->>>>    	val &= 0xffff00ff;
->>>>    	val |= 0x00000100;
->>>>    	dw_pcie_writel_dbi(pci, PCI_INTERRUPT_LINE, val);
->>>> -	dw_pcie_dbi_ro_wr_dis(pci);
->>>>    	/* Setup bus numbers */
->>>>    	val = dw_pcie_readl_dbi(pci, PCI_PRIMARY_BUS);
->>>> @@ -687,15 +691,13 @@ void dw_pcie_setup_rc(struct pcie_port *pp)
->>>>    	dw_pcie_wr_own_conf(pp, PCI_BASE_ADDRESS_0, 4, 0);
->>>> -	/* Enable write permission for the DBI read-only register */
->>>> -	dw_pcie_dbi_ro_wr_en(pci);
->>>>    	/* Program correct class for RC */
->>>>    	dw_pcie_wr_own_conf(pp, PCI_CLASS_DEVICE, 2, PCI_CLASS_BRIDGE_PCI);
->>>> -	/* Better disable write permission right after the update */
->>>> -	dw_pcie_dbi_ro_wr_dis(pci);
->>>>    	dw_pcie_rd_own_conf(pp, PCIE_LINK_WIDTH_SPEED_CONTROL, 4, &val);
->>>>    	val |= PORT_LOGIC_SPEED_CHANGE;
->>>>    	dw_pcie_wr_own_conf(pp, PCIE_LINK_WIDTH_SPEED_CONTROL, 4, val);
->>>> +
->>>> +	dw_pcie_dbi_ro_wr_dis(pci);
->>>>    }
->>>>    EXPORT_SYMBOL_GPL(dw_pcie_setup_rc);
->>>> -- 
->>>> 2.17.1
->>>>
->>
+Am 24.09.18 um 17:01 schrieb Jim Quinlan:
+> On Mon, Sep 24, 2018 at 4:25 AM Ard Biesheuvel
+> <ard.biesheuvel@linaro.org> wrote:
+>> On Fri, 21 Sep 2018 at 19:41, Jim Quinlan <jim2101024@gmail.com> wrote:
+>>> On Thu, Sep 20, 2018 at 5:39 PM Florian Fainelli <f.fainelli@gmail.com> wrote:
+>>>> On 09/20/2018 02:33 PM, Ard Biesheuvel wrote:
+>>>>> On 20 September 2018 at 14:31, Florian Fainelli <f.fainelli@gmail.com> wrote:
+>>>>>> On 09/20/2018 02:04 PM, Ard Biesheuvel wrote:
+>>>>>>> On 20 September 2018 at 13:55, Florian Fainelli <f.fainelli@gmail.com> wrote:
+>>>>>>>> On 09/19/2018 07:19 PM, Ard Biesheuvel wrote:
+>>>>>>>>> On 19 September 2018 at 07:31, Jim Quinlan <jim2101024@gmail.com> wrote:
+>>>>>>>>>> The Broadcom STB PCIe host controller is intimately related to the
+>>>>>>>>>> memory subsystem.  This close relationship adds complexity to how cpu
+>>>>>>>>>> system memory is mapped to PCIe memory.  Ideally, this mapping is an
+>>>>>>>>>> identity mapping, or an identity mapping off by a constant.  Not so in
+>>>>>>>>>> this case.
+
+are there any plans to release a new version of this series?
+
+The Raspberry Pi 4 uses a similiar PCIe controller, so it would be nice
+to get this upstream. Unfortunately i have no clue about PCI, so i the
+only thing i can do is testing.
+
+Regards
+Stefan
 
 
 _______________________________________________
