@@ -2,131 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DB8BF57DEF
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 27 Jun 2019 10:11:58 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E3FED57DF6
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 27 Jun 2019 10:12:29 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jciBQvodh372LE9c8vysQlwWhlBFhW1Vz4PWzxfoMm0=; b=BTd+54bDOtHkaL
-	/LcDMNlsRFcc6KS7eKFnaOQvig5E/nBnT/5V4mtH468UKcrpJwioZcvQxS3CZz1NLIzTjm4pOXi1O
-	Vn2aU5FRM2dkg3Do23T2P7gT+aXmVkZpiZp4pSgNDoA1pY130E7D1NiaS6DF8DELKDK8FehXovdBS
-	tuSqtmr2Gm1Y9cUqCp+0Y6d8NTCDYy9KVyieKZHT5NPC6ugN35+nm0p6LwO20OrcGomCPAuDKJpta
-	AFBPomQtqSRGfoe3H2uBFi58/oKAzX7lVP3mQCz22c/pUV9yzMSlY6R5AejY887CWM3I13xytCpex
-	PSzH6ogoZkmnca3QZOGg==;
+	List-Owner; bh=BbdOW8cW/pGJ0cEgjH5Uq+rqyvGxclJ9Oilt3Wh7Sww=; b=JGFoY/Du76dEk3
+	UarB3tyVmUOqhMWKDLlOm/qfCCvcyP9acwfSH/1SpuHM94p4kYSq4DVpNPDJ7l2HSqi/VFUrcGnPX
+	uFPG9+bnB6KKJ8/rOcrDEAkxbC2W08yvilNPRzeUsXCsOsNf6XrVVb+I+HfGANRHT4F8jV4KDu9UZ
+	GiLmWgQSCeMOrGRl3i+78YQKKAj8eAGQYvrQpMfI9DXdaOpqPJVfNDQy3ckmc09p5NN+t1P/+Ggd4
+	JY+PhMllG0cKFmYV7Ps2nTOT2YYmLBR9+B0VysqK5b/6LBH/gdfL8uxNGQ16qj1DdGSb5ds9GRYZS
+	FmINCdVAU7uUG5z9JFAw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hgPVa-0003aE-60; Thu, 27 Jun 2019 08:11:54 +0000
-Received: from mail-eopbgr150072.outbound.protection.outlook.com
- ([40.107.15.72] helo=EUR01-DB5-obe.outbound.protection.outlook.com)
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hgPVL-0003ZV-Be
- for linux-arm-kernel@lists.infradead.org; Thu, 27 Jun 2019 08:11:41 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=testarcselector01; d=microsoft.com; cv=none;
- b=CboDPA0u2HWSVdaaP+Df+cMpOoYieQNAXDsqrVWsbEmrJFdR+vPLOcjN1WhRWjX6ZRpZQw0pbJV8qx1hACImCsyvr/qBT+sTInHRW8uvcKFqYcEj3VecBQMb6aK5wBo6Ae1AQNOH6P4flvxifzTUwoSJy6FwCh2LTbZqOD+xa7M=
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=testarcselector01;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=OpXPcYBeYABkvaVhRdYDFSI3NN1EBjnFr6WUFBzSEU4=;
- b=moOUuVR7VxY5xCrcNteUPis53VUQYGC7yqsxY2nT606dvaYC+Z718Sbq4spnWBiU72QRR/L98RmuGjx+SFV3s7Jthd7WhcrNTKG9SlvKeGyCoNBk78s6nTh4w48aEmayjfuQnI2Tcy1TBI3pH5p6jtza1s7E5PmuNlpqwxmSQbU=
-ARC-Authentication-Results: i=1; test.office365.com
- 1;spf=none;dmarc=none;dkim=none;arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=OpXPcYBeYABkvaVhRdYDFSI3NN1EBjnFr6WUFBzSEU4=;
- b=A8cp/EdwMFkNq+yO7cSXppt98E93ZjoLbDWOuNV/jfaHjSn144gxXfJi3olVrRkoJYIBD5dkBbd1+pfrQ4m65GifVrpX3707q5scA8LlIx707LOfiC4JSkYzseCH2X2owqXCBIglegX2twIyZwRYfDzBrMRzoyZOcu0FJqe3LjQ=
-Received: from DB3PR0402MB3916.eurprd04.prod.outlook.com (52.134.72.18) by
- DB3PR0402MB3739.eurprd04.prod.outlook.com (52.134.67.22) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2008.16; Thu, 27 Jun 2019 08:11:35 +0000
-Received: from DB3PR0402MB3916.eurprd04.prod.outlook.com
- ([fe80::3945:fcda:5bdd:8191]) by DB3PR0402MB3916.eurprd04.prod.outlook.com
- ([fe80::3945:fcda:5bdd:8191%4]) with mapi id 15.20.2008.014; Thu, 27 Jun 2019
- 08:11:35 +0000
-From: Anson Huang <anson.huang@nxp.com>
-To: Daniel Lezcano <daniel.lezcano@linaro.org>, "tglx@linutronix.de"
- <tglx@linutronix.de>, "robh+dt@kernel.org" <robh+dt@kernel.org>,
- "mark.rutland@arm.com" <mark.rutland@arm.com>, "shawnguo@kernel.org"
- <shawnguo@kernel.org>, "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
- "kernel@pengutronix.de" <kernel@pengutronix.de>, "festevam@gmail.com"
- <festevam@gmail.com>, "l.stach@pengutronix.de" <l.stach@pengutronix.de>, Abel
- Vesa <abel.vesa@nxp.com>, "ccaione@baylibre.com" <ccaione@baylibre.com>,
- "angus@akkea.ca" <angus@akkea.ca>, "andrew.smirnov@gmail.com"
- <andrew.smirnov@gmail.com>, "agx@sigxcpu.org" <agx@sigxcpu.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
-Subject: RE: [PATCH RESEND V2 1/3] clocksource/drivers/sysctr: Add optional
- clock-frequency property
-Thread-Topic: [PATCH RESEND V2 1/3] clocksource/drivers/sysctr: Add optional
- clock-frequency property
-Thread-Index: AQHVKcBeREE6S4ew/U+TyYIcUsyobqas4eqAgABJq2CAAJdTAIAA60fwgAB88QCAAACyYA==
-Date: Thu, 27 Jun 2019 08:11:35 +0000
-Message-ID: <DB3PR0402MB39162DB95FA958AC1425BFFDF5FD0@DB3PR0402MB3916.eurprd04.prod.outlook.com>
-References: <20190623123850.22584-1-Anson.Huang@nxp.com>
- <55abafbd-c010-32b5-6d76-26040830d5b0@linaro.org>
- <DB3PR0402MB3916AB9F2260B0E46CCDDEC0F5E20@DB3PR0402MB3916.eurprd04.prod.outlook.com>
- <9c017ba9-ac6b-480b-d1f3-120289343101@linaro.org>
- <DB3PR0402MB3916ED4AB17B6DDD2248DD44F5FD0@DB3PR0402MB3916.eurprd04.prod.outlook.com>
- <8f8aa6e0-5f31-8047-14b5-0e1f65316453@linaro.org>
-In-Reply-To: <8f8aa6e0-5f31-8047-14b5-0e1f65316453@linaro.org>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=anson.huang@nxp.com; 
-x-originating-ip: [119.31.174.66]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: 3d5cc1ff-5e8d-492a-32de-08d6fad7128d
-x-ms-office365-filtering-ht: Tenant
-x-microsoft-antispam: BCL:0; PCL:0;
- RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600148)(711020)(4605104)(1401327)(4618075)(2017052603328)(7193020);
- SRVR:DB3PR0402MB3739; 
-x-ms-traffictypediagnostic: DB3PR0402MB3739:
-x-ms-exchange-purlcount: 2
-x-microsoft-antispam-prvs: <DB3PR0402MB3739B30A63C150BE33565C72F5FD0@DB3PR0402MB3739.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:8882;
-x-forefront-prvs: 008184426E
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(366004)(396003)(346002)(39860400002)(376002)(136003)(189003)(199004)(6306002)(305945005)(6116002)(102836004)(486006)(256004)(3846002)(476003)(74316002)(81166006)(11346002)(81156014)(446003)(2201001)(229853002)(8936002)(76176011)(68736007)(44832011)(53546011)(66066001)(99286004)(316002)(2906002)(53936002)(6246003)(26005)(2501003)(110136005)(7696005)(186003)(7736002)(9686003)(6506007)(33656002)(55016002)(966005)(7416002)(8676002)(52536014)(45080400002)(66946007)(64756008)(66476007)(76116006)(14454004)(86362001)(71190400001)(478600001)(66556008)(66446008)(73956011)(71200400001)(4326008)(25786009)(6436002)(5660300002)(921003)(1121003);
- DIR:OUT; SFP:1101; SCL:1; SRVR:DB3PR0402MB3739;
- H:DB3PR0402MB3916.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; MX:1; A:1; 
-received-spf: None (protection.outlook.com: nxp.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: AlD9QqCkGnSQYgMHKwikhLLn4MJ1YbFnxb/gupeuHgAwNlG+MKKBUxw89fAA1T7qrKtptinaCCa3l4v4rjAh9pcFAs2Ez+fvMAQcgRQwiyJEc6+nFL15kmkdUsTXdOYPuFDo1hBaXNcYzW6T6lrx2mpO+WCXWbHG/ru67DTnkxG1FArzBvxF1bMDCHlhJj37AYt38px7IF9eM7ucIC4hwW4Kdgx6ZMYRAwwYS5XIy68k5jprCr0y/HOxrVnEPRg/H4eMJectCcwIM/FvUc4JlmjxGqdr+wbrER80YG8fwXlrDE2CHHHetvOOCqzNMWbstx4fYQFkoXjFgbQlcVwUsQMsi3dp0wk73aLMwp4rpDl1XQlecyYEFSTx31gwPoC4degnX43bKHF6Vq7PIH6vYq1idMZ6kkwM8Y2NMSn8gww=
+	id 1hgPW6-0003q8-Aq; Thu, 27 Jun 2019 08:12:26 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hgPVm-0003oU-3T
+ for linux-arm-kernel@lists.infradead.org; Thu, 27 Jun 2019 08:12:08 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id C2246360;
+ Thu, 27 Jun 2019 01:12:03 -0700 (PDT)
+Received: from localhost (unknown [10.37.6.20])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 4273D3F706;
+ Thu, 27 Jun 2019 01:12:03 -0700 (PDT)
+Date: Thu, 27 Jun 2019 09:12:01 +0100
+From: Andrew Murray <andrew.murray@arm.com>
+To: Mathieu Poirier <mathieu.poirier@linaro.org>
+Subject: Re: [PATCH v1 5/5] coresight: etm4x: save/restore state across CPU
+ low power states
+Message-ID: <20190627081201.GA34530@e119886-lin.cambridge.arm.com>
+References: <20190618125433.9739-1-andrew.murray@arm.com>
+ <20190618125433.9739-6-andrew.murray@arm.com>
+ <20190618225549.GB24894@xps15>
+ <494e131a-0fcf-a4b0-6112-cb5861756004@arm.com>
+ <CANLsYkwnCMNnMM+H4+iXJv3AJADvW7V09fi+s1nVbYvvOLpuwg@mail.gmail.com>
+ <CAJ9a7VjaXqx2moWB8JGyfHxzPEdvpuKcDXwobER9PN2GdrgfQA@mail.gmail.com>
+ <CANLsYkwMO8Bq1Hz6gtaTDLcsWrTzkKfTkkDjvEpAYe2guANUhA@mail.gmail.com>
 MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 3d5cc1ff-5e8d-492a-32de-08d6fad7128d
-X-MS-Exchange-CrossTenant-originalarrivaltime: 27 Jun 2019 08:11:35.5220 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: anson.huang@nxp.com
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB3PR0402MB3739
+Content-Disposition: inline
+In-Reply-To: <CANLsYkwMO8Bq1Hz6gtaTDLcsWrTzkKfTkkDjvEpAYe2guANUhA@mail.gmail.com>
+User-Agent: Mutt/1.10.1+81 (426a6c1) (2018-08-26)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190627_011139_502178_FA4340A1 
-X-CRM114-Status: GOOD (  19.24  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190627_011206_261068_78976312 
+X-CRM114-Status: GOOD (  33.17  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.15.72 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -138,85 +67,168 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: dl-linux-imx <linux-imx@nxp.com>
+Cc: Alexander Shishkin <alexander.shishkin@linux.intel.com>,
+ Suzuki K Poulose <suzuki.poulose@arm.com>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
+ Mike Leach <mike.leach@linaro.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi, Daniel
-
-> On 27/06/2019 02:43, Anson Huang wrote:
-> > Hi, Daniel
+On Wed, Jun 26, 2019 at 10:57:17AM -0600, Mathieu Poirier wrote:
+> On Wed, 26 Jun 2019 at 04:21, Mike Leach <mike.leach@linaro.org> wrote:
 > >
-> >> On 26/06/2019 03:42, Anson Huang wrote:
-> >>> Hi, Daniel
-> >>>
-> >>>> On 23/06/2019 14:38, Anson.Huang@nxp.com wrote:
-> >>>>> From: Anson Huang <Anson.Huang@nxp.com>
-> >>>>>
-> >>>>> Systems which use platform driver model for clock driver require
-> >>>>> the clock frequency to be supplied via device tree when system
-> >>>>> counter driver is enabled.
-> >>>>>
-> >>>>> This is necessary as in the platform driver model the of_clk
-> >>>>> operations do not work correctly because system counter driver is
-> >>>>> initialized in early phase of system boot up, and clock driver
-> >>>>> using platform driver model is NOT ready at that time, it will
-> >>>>> cause system counter driver initialization failed.
-> >>>>>
-> >>>>> Add the optinal clock-frequency to the device tree bindings of the
-> >>>>> NXP system counter, so the frequency can be handed in and the
-> >>>>> of_clk operations can be skipped.
-> >>>>
-> >>>> Isn't it possible to create a fixed-clock and refer to it? So no
-> >>>> need to create a specific action before calling timer_of_init() ?
-> >>>>
-> >>>
-> >>> As the clock must be ready before the TIMER_OF_DECLARE, so adding a
-> >>> CLK_OF_DECLARE_DRIVER in clock driver to ONLY register a fixed-clock?
-> >>> The system counter's frequency are different on different platforms,
-> >>> so adding fixed clock in system counter driver is NOT a good idea,
-> >>> ONLY the DT node or the clock driver can create this fixed clock
-> >>> according to
-> >> platforms, can you advise where to create this fixed clock is better?
-> >>
-> >> Can you point me to a DT with the "nxp,sysctr-timer" ?
+> > Hi,
 > >
-> > The DT node of system counter is new added in 3/3 of this patch
-> > series, also can be found from below link:
-> > https://eur01.safelinks.protection.outlook.com/?url=https%3A%2F%2Fpatc
+> > Sorry, a bit late on this set as it didn't appear in the Coresight
+> > mailing list as expected per suzukis suggestion.
 > >
-> hwork.kernel.org%2Fpatch%2F11011703%2F&amp;data=02%7C01%7Canson.
-> huang%
+> > On Tue, 25 Jun 2019 at 20:57, Mathieu Poirier
+> > <mathieu.poirier@linaro.org> wrote:
+> > >
+> > > Hi,
+> > >
+> > > On Tue, 25 Jun 2019 at 04:07, Suzuki K Poulose <suzuki.poulose@arm.com> wrote:
+> > > >
+> > > > Hi Mathieu,
+> > > >
+> > > > On 18/06/2019 23:55, Mathieu Poirier wrote:
+> > > > > On Tue, Jun 18, 2019 at 01:54:33PM +0100, Andrew Murray wrote:
+> > > > >> Some hardware will ignore bit TRCPDCR.PU which is used to signal
+> > > > >> to hardware that power should not be removed from the trace unit.
+> > > > >> Let's mitigate against this by saving and restoring the trace
+> > > > >> unit state when the CPU enters low power states.
+> > > > >>
+> > > > >> To provide the benefit to both self-hosted and external debuggers
+> > > > >> we save/restore the entire state which includes etmv4_config data
+> > > > >> and dynamic data such as inflight counter values, sequencer
+> > > > >> states, etc.
+> > > > >>
+> > > > >> To reduce CPU suspend/resume latency the state is only saved or
+> > > > >> restored if coresight is in use as determined by the claimset
+> > > > >> registers.
+> > > > >>
+> > > > >> To aid debug of CPU suspend/resume a disable_pm_save parameter
+> > > > >> is provided to disable this feature.
+> > > > >>
+> > > > >> Signed-off-by: Andrew Murray <andrew.murray@arm.com>
+> > > >
+> > > >
+> > > > >> +static int etm4_cpu_pm_notify(struct notifier_block *nb, unsigned long cmd,
+> > > > >> +                          void *v)
+> > > > >> +{
+> > > > >> +    struct etmv4_drvdata *drvdata = container_of(nb,
+> > > > >> +                                    struct etmv4_drvdata, nb);
+> > > > >> +
+> > > > >> +    if (disable_pm_save)
+> > > > >> +            return NOTIFY_OK;
+> > > > >> +
+> > > > >> +    switch (cmd) {
+> > > > >> +    case CPU_PM_ENTER:
+> > > > >> +            /* save the state if coresight is in use */
+> > > > >> +            if (coresight_is_claimed_any(drvdata->base))
+> > > > >
+> > > > > claimed_any()? At this point if coresight_is_claimed_self_hosted() == false an
+> > > > > external agent is competing with the framework and we should abdicate.
+> > > >
+> > > > I think claimed_any() is correct check. As per PSCI, ARM DEN 0022D, section
+> > > > 6.8.1 Debug and Trace save and restore,  the OS software is
+> > > > in charge of save/restoring the context of Debug/Trace. The claim tags
+> > > > are a mechanism to indicate who is consuming the components. Also, given
+> > > > the OS software doesn't have a reliable way to communicate back to the
+> > > > the External debugger about its decision to power down the CPU, that
+> > > > makes sense to save/restore it.
+> > >
+> > > What I understand from section 6.8.1 is that supervisory and OS power
+> > > management SW are responsible to save the debug context when operating
+> > > in their respective mode, which reflects my comment above.
+> > >
+> > > I also see that two options are available to an external agent, i.e
+> > > either use the DBGNOPWRDWN and DBGPWRUPREQ bits to request powerdown
+> > > emulation or use the "OS Unlock Catch" debug event (which probably
+> > > relates to the lost of context bit) to restore the debug context.
+> > > From where I stand there is no provision for OS power management code
+> > > to take care of the debug context of an external agent.  Am I missing
+> > > something here?
+> > >
 > >
-> 40nxp.com%7C8b9519ecceb346712be808d6fad675e4%7C686ea1d3bc2b4c6f
-> a92cd99
+> > OS lock is precisely the provision designed for an OS to handle
+> > save/restore on behalf of an external debug agent. OS lock blocks the
+> > external debugger from accessing the coresight when it is powered but
+> > being updated by the OS
 > >
-> c5c301635%7C0%7C0%7C636972196338405582&amp;sdata=sOQQzDFxoCqe
-> VuHFuYPHh
-> > F8Bdj2Zu9WS7Go%2FV9lrWa8%3D&amp;reserved=0
+> > A scenario may be:-
+> > a) external debug halts core(s) & programs Coresight subsystem -
+> > likely extracting trace via TPIU.
+> > b) external debug agent restarts cores - linux (continues) running /
+> > booting - collecting the trace we want.
+> > c) Some event happens and the external debug agent regains control.
+> > (breakpoint / halt request).
+> >
+> > During b) cores may be powering up and down. When this happens we need
+> > the state to be saved and restored so that trace continues. (assuming
+> > that the various debug power requests above are either not supported
+> > in the fw/hardware or not asserted by the external agent).
+> > The external debug agent cannot safely manipulate coresight during
+> > this period - it can never know if a register is going to be available
+> > - a classic race condition.
+> >
+> > Irrespective of whoever "owns" the ETM programming - if the CPUidle
+> > notification is required due to implementation issues, then in both
+> > cases the save and restore is required.
+> >
+> > For the external agent owner I agree that everything needs to be saved
+> >  - but for self hosted, just the dynamic values should be read back,
+> > much of the remainder of the information is already held in the driver
+> > in etmv4_config. This should help reduce at least the power down
+> > latency.
+> >
+> >
 > 
-> Sorry, I was unclear. I meant a patch with the timer defined using a clock as
-> defined currently in the binding (no clock-frequency).
+> Many thanks for shedding light on the expectations of external agents.
 
-OK, for i.MX8MM, we use clocks, check below patch series:
+Indeed, thanks for the helpful feedback.
 
-https://patchwork.kernel.org/patch/11008519/
+> 
+> Andrew, from Mike's explanation the original implementation of
+> checking any of the claimtag bits to trigger a save/restore was valid.
+> It also means that contrary to one of my previous comment, context
+> save restore should always be performed regardless of whether the
+> framework is being used for self hosted debugging or not.
 
-code piece as below:
-
-+			system_counter: timer@306a0000 {
-+				compatible = "nxp,sysctr-timer";
-+				reg = <0x306a0000 0x30000>;
-+				interrupts = <GIC_SPI 47 IRQ_TYPE_LEVEL_HIGH>,
-+					     <GIC_SPI 48 IRQ_TYPE_LEVEL_HIGH>;
-+				clocks = <&clk IMX8MM_CLK_SYS_CTR>;
-+				clock-names = "per";
-+			};
+Thanks for clarifying this for me. I'll share a v2 shortly.
 
 Thanks,
-Anson.
+
+Andrew Murray
+
+> 
+> Thanks,
+> Mathieu
+> 
+> >
+> >
+> > Regards
+> >
+> > Mike
+> >
+> >
+> > > >
+> > > > Cheers
+> > > > Suzuki
+> > >
+> > > _______________________________________________
+> > > linux-arm-kernel mailing list
+> > > linux-arm-kernel@lists.infradead.org
+> > > http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+> >
+> >
+> >
+> > --
+> > Mike Leach
+> > Principal Engineer, ARM Ltd.
+> > Manchester Design Centre. UK
 
 _______________________________________________
 linux-arm-kernel mailing list
