@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0705458A9F
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 27 Jun 2019 21:04:59 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C4A9558A9D
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 27 Jun 2019 21:04:24 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,67 +11,66 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=465v8wn+7KJGzk+bWvthpB7RqrTnx13fQpEIczBDRoQ=; b=gCvy7EoZVng0xOPZbUGguxilTb
-	nnmZSbPM0sb//lITIXWJDYYJTrODC8cFakZl3qUAAXgNks/YVnqymjCIPwbVNCsZtaHLapgSyn/I+
-	uiRkbr0Vw12kHAnn1RUSOyufdUyjmc/g0Y+i1KQturxIEYiOin+z8jDdE4rgIhjRjArDfSD43usqj
-	eWzZ8M81wzAgvhsepuhg9LK3cFtGnCB/Q7Hy2CTNPVmMMNgFN6ZdFxcZfdNrsXVtxRduzaordyELC
-	LWoNvnb1w/N5HYDsvHst4+d0WUl+9t5+/zSEu2aDz/uDxe8DghwY23ca1Cs8O2AEPrQo5rfE2i51R
-	hWnwUAwA==;
+	bh=YA/1De+qP44V4+nSCMSi9BnnL1M9D72Rzra1M8652IM=; b=SA9CvdJNfWR2dipSzu2kLHlkjC
+	DLzt7sEHpOQ6SBhq5ldnFmBAkBKiuzKmVLynupFH420PC2RzU1pL+0VNV0VxSTumTUZu0Uj9QhSgN
+	/UHl59hvPiddyx6nTurVpGFqt6UGLxhMVOUaue3/pm5eUz1X09LwyFlQJ6uc0n6xbbiN9TDyXpoVw
+	dxm2Bxj3zzP12DrFypmsLrvX5Bjf4jU+Ly4tKEtjE3ojV60tAZZhkapLIdvKA0Dn8OnZXmK1+Vx77
+	xR2CMwG0xf8YRy9sUGuCy5irzPp4GbSI9JYj7JFfo2VP+fipUQRSaCQJyRk+gDsqeYZFceYt68fO7
+	PxVx0Q8A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hgZhW-00010d-VG; Thu, 27 Jun 2019 19:04:55 +0000
+	id 1hgZgz-0000TI-1q; Thu, 27 Jun 2019 19:04:21 +0000
 Received: from mout.gmx.net ([212.227.15.15])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hgZZv-0002S1-7E; Thu, 27 Jun 2019 18:57:11 +0000
+ id 1hgZZx-0002Vs-9f; Thu, 27 Jun 2019 18:57:13 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=gmx.net;
  s=badeba3b8450; t=1561661815;
- bh=xwevpd3UAGKeJbtFyF2EvwHUvugWto7ZUSOWbHEHbAQ=;
+ bh=CxR7qSbQJEaTRwxTiS+9LyZFjaKPowlzspE7tanqC4o=;
  h=X-UI-Sender-Class:From:To:Cc:Subject:Date:In-Reply-To:References;
- b=NABCt/6lAnSpd6iJn0ZVtz5xgpg1DEss5JEA5sRnjmvUFvMY4hXMLfnn5D87Dd6Ur
- z1xR/Likh8ZIrYbYxUkdg84vPf4yp86+qIkkIyVXn6y/GavT4jhHKqe0yvHu8smDut
- zHXwOPVn7d3b4EiTyBdWYUHmLYUhXZzPp8aEKmX4=
+ b=Pai7wbgycEoUg5qAS6HYlSD/ehYwSGEWsLpBVwiL2vYbs2SUgRAf/mvvIG1YeojoC
+ InlMtIcI9wv2WuW1tOAXgahRoHOjmoOwK+toSBDunI/bffWKltwDNkGeXTXzts5nFp
+ QnFFxfUQA+Q4deVBYSthIRhSfFWgTeK7HA4qK0k0=
 X-UI-Sender-Class: 01bb95c1-4bf8-414a-932a-4f6e2808ef9c
 Received: from localhost.localdomain ([37.4.249.111]) by mail.gmx.com
  (mrgmx002 [212.227.17.190]) with ESMTPSA (Nemesis) id
- 0LptId-1iAfj61ApT-00ffZM; Thu, 27 Jun 2019 20:56:55 +0200
+ 0MgcTf-1ht0Hg2sy7-00O07w; Thu, 27 Jun 2019 20:56:55 +0200
 From: Stefan Wahren <wahrenst@gmx.net>
 To: Eric Anholt <eric@anholt.net>,
  Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
  Dave Stevenson <dave.stevenson@raspberrypi.org>,
  Hans Verkuil <hverkuil@xs4all.nl>,
  Mauro Carvalho Chehab <mchehab@kernel.org>
-Subject: [PATCH 17/31] staging: bcm2835-camera: Handle empty EOS buffers
- whilst streaming
-Date: Thu, 27 Jun 2019 20:56:14 +0200
-Message-Id: <1561661788-22744-18-git-send-email-wahrenst@gmx.net>
+Subject: [PATCH 18/31] staging: bcm2835-camera: Set sequence number correctly
+Date: Thu, 27 Jun 2019 20:56:15 +0200
+Message-Id: <1561661788-22744-19-git-send-email-wahrenst@gmx.net>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1561661788-22744-1-git-send-email-wahrenst@gmx.net>
 References: <1561661788-22744-1-git-send-email-wahrenst@gmx.net>
-X-Provags-ID: V03:K1:ad5ZMW8ssO/JOMcoPglsVFDcUUPcE+j5mOD1h+5+S9QIq6KEEez
- +F/fWmiSF+kapuxSEKTXwOWP5Se38WYc1OtY1VYgSI/FFD40vMUGeLCNa1azj7bAomoZj9i
- ZdL3oFS1FFj/SLqKJ6BrZGxkaIWpSWrKgy3HzHc1yAAybwsdbBx/Bv2SxIJNTzm69yC855G
- vw2YzvmY+GvrpiH2v8K1A==
+X-Provags-ID: V03:K1:uglTV20dj89zG+7dc69VnabOIsvQyrYIv6qLM7blISuaYJWxuhz
+ 9njdmJ+t/4DkTqLssoOh56a7uaO872TVNVSzzECWQKF0YX6njhk42XhLpXCDcP8uIU5zzuB
+ X6EDxNHPcSI3+qK58uzHanyRITAW1bwqMwAhZZoUOfFiP0wxHZ5ZlrrnbLAVWJAKeCayEsy
+ T3Ws5NxW40gK9NyMmmZ2A==
 X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:EzprZ/Xai+o=:JLVbiZUaBS2wNJFY7emiS3
- wa4Qw/7oJzJPaQIfxATEnsvicsrWhLst2rFDsI+Qt2HmAe4DoXqipaldNRzgkTiIgw+gLDcQG
- p/EmD0/gCAG9isV/wW2LtKuizm370kYQzXLIViLiwLNzHSpLA0/J/JdRT8DUAz0uIlY3Adz4k
- 1f2RnIo9Vn+DSO0PrFHa9EPlL1Xj4gXHxgxLc1Sv2rmlkdaogyVCB2D+iScFeNzyKtSezjZaj
- lkljxY+gqtDipKML/kfU1mC9zcASE/Qo6oJe204B6DqTVh1x6IErP7uKSq3zK80SVLl+RfaVj
- GFPNU5oeZ1LRummQPXI2kqN9Z6vxrKfANDomTXX8WxErVAsDoiyyYRHbdB9H6wZXJXwmhYD9s
- d5eEEllnydaa6fa4MsJVOkoEKldON1qUpR3uRLDxme39F7D5/M4rlMn1yo9RMxUEtbdBeZkLK
- XAZWprC0bc6iqk/cAfVBZRiBL7Ki7uXbxgJ/Tqn5/fscjFEMap1ppV0+FtaTBMTY93OSZdN0T
- /t62yRzSC+BhrWVUW5VzUHsTQ+IlOCjCX/AzhSlrjxyayxpEKlqB5R0HYwm7/OhE5ONOn4fxR
- 4/bnbXGhScCzxheEJU62NRybJeBfcpcVL7QO9RmGX8mej87sl2FVwatHf+MxuN0gnmxbQOQnx
- RBfbJ0ShmyorMVLmQwpH/NDt3TzsM8vUo33VARhpCEahvhGO2zLTXOGrg+Q8oyIjLycNABpWc
- ZEFdIJG7Lr1eBxfLIceE2zcJKbZ7VAZzNWlierSTs4AoMNItTv4IUvTFmJIq3IvMiMvxlwEpd
- VY/PYFZj+9taP8/F23iEP6PUAcdpwNopjPOIQxuZvmZz+tlmXqBz+JoCJltTOd82nhyltZw7I
- iN3qenf/lk2rsqo6IPiLWWq7t5DHKILKpJMZPhg8u7fkjbrNL5Zpv6Of3wUxi//pvNfVJCLpd
- /+EPDi47fs4Sa77OAVUlwJOPEKXIfKTtK1vLM1/dPwJpxjm/K4UrsBdqpsAiv9ZTY8SL03QY1
- PI/qP+g9iqMPNeOZtOpimOlPfdfSAYw3dTQuZVbLGKMBHWj6zzDbRY/OGziYNHZiltmHAuRzj
- u+wYfJZyBYPA9E=
+X-UI-Out-Filterresults: notjunk:1;V03:K0:9h9q/Aa03ak=:xIVl/nRJKGM6dJxwREUv+8
+ g87d2J8v35Vt8bnrGRUY9OFqWPBZPh6+ehE1KNyQEyxx/Q1f6Nmo9oE0kCCG0mpUgpuxnFi1X
+ v6yAjUE74rywqEjaRThq0H4rMIS2dIswJ4ggc5VKeV8JgaAwS4OFd9U1k5X5Nwt/+Wgxm7M8c
+ jsNGPRSPVlyaseZfU9tbrhShkIZvrIc8ifDMHgqZrjXeTYru0gserP/sfHYpv9S3O4QlhJYG/
+ IG3lkvVDv98ZwtiCu6r4JTToXSb85RsgfgTpJAi0fAbZBcE3nSkVkcX32VEesrSTZOnYHWU69
+ HZLjH3MraQMqOvgWNVqpTTE3PvGTkegZnrbV6IcVpKVwcROVZ+1vyZ3019Gu1f2GN5VUNAkDi
+ aXdD6hbxc/i7FjFD+QGBiTGNVV1G4/0d3zquQz/ykJnJHspHf4Cl5DG9tufY/7CldD+2oiEmU
+ CgU9F0EcaCowEj8DpnCUeO6XI3Slf8ndTRfCURlZ7qF9KoFjiPU2l6Ltb8q5bhAOyVePt7KWr
+ 4hHrhUE5Dj1KS437cccjJS4buKfxe/F6rY7uZb594dmBCIWsyvuofc3TGoXXHmcCU0Qzm1wBK
+ 7+DRtqwYuYSGVfbaO3JSbEn0Phuf8YYG9qDtnfQgq1w93fMaN1olbOwrRClGm82zqspkBi+tS
+ 9Q6HX6okdn5X+nb4eGHJZAtEjzF6Y0u655wfy+LGHppZdt+jy7mMRGtITdjrfJ1Gv2EqxQGHC
+ kmHKmBIbq3ty9Mc2ZfX1+V/qLA9iKZkFdqyKRHutWQmtExbeSZfYB+A7WsfTiJuSkHLCMv0BZ
+ L5Zag5enKZHA8WlvZSnm9cUkrMxJf6Vm9ct2N/8qLLynBhffZNRJV0zGn8iWwBF7EZzOJ53y0
+ JgtQtMIymJ4SIdF8F9qsbhdYoYrw0RWScF6sVTMmDA6UfYm+1FTGGHEcAeBehEbeBT3Egh10/
+ 74zJOMDMZdBN4rpcki6SvWq7larnVURMhfHqnUv6iBCfKQT6D/iMaU0s6TVcQ93ZEz1Tq1LSF
+ YxkKzHc4H0hgRUjbLMwB58I24PdTIV5GuuBTGgxoyz5MHTd2LeyrZFKgniMKfJMhSjebZCmO7
+ 7RDxhKcpyiM/wo=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190627_115703_548124_729B0850 
-X-CRM114-Status: GOOD (  13.39  )
+X-CRM114-CacheID: sfid-20190627_115705_640993_78DA4683 
+X-CRM114-Status: GOOD (  10.72  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -111,87 +110,50 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Dave Stevenson <dave.stevenson@raspberrypi.org>
 
-The change to mapping V4L2 to MMAL buffers 1:1 didn't handle
-the condition we get with raw pixel buffers (eg YUV and RGB)
-direct from the camera's stills port. That sends the pixel buffer
-and then an empty buffer with the EOS flag set. The EOS buffer
-wasn't handled and returned an error up the stack.
+Set the sequence number in vb2_v4l2_buffer mainly so the
+latest v4l2-ctl reports the frame rate correctly.
 
-Handle the condition correctly by returning it to the component
-if streaming, or returning with an error if stopping streaming.
-
-Fixes: 938416707071 ("staging: bcm2835-camera: Remove V4L2/MMAL buffer remapping")
 Signed-off-by: Dave Stevenson <dave.stevenson@raspberrypi.org>
 ---
- .../vc04_services/bcm2835-camera/bcm2835-camera.c   | 21 ++++++++++++---------
- .../vc04_services/bcm2835-camera/mmal-vchiq.c       |  5 +++--
- 2 files changed, 15 insertions(+), 11 deletions(-)
+ drivers/staging/vc04_services/bcm2835-camera/bcm2835-camera.c | 4 ++++
+ drivers/staging/vc04_services/bcm2835-camera/bcm2835-camera.h | 2 ++
+ 2 files changed, 6 insertions(+)
 
 diff --git a/drivers/staging/vc04_services/bcm2835-camera/bcm2835-camera.c b/drivers/staging/vc04_services/bcm2835-camera/bcm2835-camera.c
-index 36eb4d6..f2e951c 100644
+index f2e951c..9967df9 100644
 --- a/drivers/staging/vc04_services/bcm2835-camera/bcm2835-camera.c
 +++ b/drivers/staging/vc04_services/bcm2835-camera/bcm2835-camera.c
-@@ -339,16 +339,13 @@ static void buffer_cb(struct vchiq_mmal_instance *instance,
-
- 	if (length == 0) {
- 		/* stream ended */
--		if (buf) {
--			/* this should only ever happen if the port is
--			 * disabled and there are buffers still queued
-+		if (dev->capture.frame_count) {
-+			/* empty buffer whilst capturing - expected to be an
-+			 * EOS, so grab another frame
- 			 */
--			vb2_buffer_done(&buf->vb.vb2_buf, VB2_BUF_STATE_ERROR);
--			pr_debug("Empty buffer");
--		} else if (dev->capture.frame_count) {
--			/* grab another frame */
- 			if (is_capturing(dev)) {
--				pr_debug("Grab another frame");
-+				v4l2_dbg(1, bcm2835_v4l2_debug, &dev->v4l2_dev,
-+					 "Grab another frame");
- 				vchiq_mmal_port_parameter_set(
- 					instance,
- 					dev->capture.camera_port,
-@@ -356,8 +353,14 @@ static void buffer_cb(struct vchiq_mmal_instance *instance,
- 					&dev->capture.frame_count,
- 					sizeof(dev->capture.frame_count));
- 			}
-+			if (vchiq_mmal_submit_buffer(instance, port, buf))
-+				v4l2_dbg(1, bcm2835_v4l2_debug, &dev->v4l2_dev,
-+					 "Failed to return EOS buffer");
- 		} else {
--			/* signal frame completion */
-+			/* stopping streaming.
-+			 * return buffer, and signal frame completion
-+			 */
-+			vb2_buffer_done(&buf->vb.vb2_buf, VB2_BUF_STATE_ERROR);
- 			complete(&dev->capture.frame_cmplt);
+@@ -398,6 +398,7 @@ static void buffer_cb(struct vchiq_mmal_instance *instance,
  		}
- 		return;
-diff --git a/drivers/staging/vc04_services/bcm2835-camera/mmal-vchiq.c b/drivers/staging/vc04_services/bcm2835-camera/mmal-vchiq.c
-index 59eb812..d0f7b67 100644
---- a/drivers/staging/vc04_services/bcm2835-camera/mmal-vchiq.c
-+++ b/drivers/staging/vc04_services/bcm2835-camera/mmal-vchiq.c
-@@ -332,8 +332,6 @@ static int bulk_receive(struct vchiq_mmal_instance *instance,
-
- 	/* store length */
- 	msg_context->u.bulk.buffer_used = rd_len;
--	msg_context->u.bulk.mmal_flags =
--	    msg->u.buffer_from_host.buffer_header.flags;
- 	msg_context->u.bulk.dts = msg->u.buffer_from_host.buffer_header.dts;
- 	msg_context->u.bulk.pts = msg->u.buffer_from_host.buffer_header.pts;
-
-@@ -461,6 +459,9 @@ static void buffer_to_host_cb(struct vchiq_mmal_instance *instance,
- 		return;
  	}
+ 	dev->capture.last_timestamp = buf->vb.vb2_buf.timestamp;
++	buf->vb.sequence = dev->capture.sequence++;
 
-+	msg_context->u.bulk.mmal_flags =
-+				msg->u.buffer_from_host.buffer_header.flags;
+ 	vb2_set_plane_payload(&buf->vb.vb2_buf, 0, length);
+ 	if (mmal_flags & MMAL_BUFFER_HEADER_FLAG_KEYFRAME)
+@@ -525,6 +526,9 @@ static int start_streaming(struct vb2_queue *vq, unsigned int count)
+ 	/* enable frame capture */
+ 	dev->capture.frame_count = 1;
+
++	/* reset sequence number */
++	dev->capture.sequence = 0;
 +
- 	if (msg->h.status != MMAL_MSG_STATUS_SUCCESS) {
- 		/* message reception had an error */
- 		pr_warn("error %d in reply\n", msg->h.status);
+ 	/* if the preview is not already running, wait for a few frames for AGC
+ 	 * to settle down.
+ 	 */
+diff --git a/drivers/staging/vc04_services/bcm2835-camera/bcm2835-camera.h b/drivers/staging/vc04_services/bcm2835-camera/bcm2835-camera.h
+index bbfe8fe..c821513 100644
+--- a/drivers/staging/vc04_services/bcm2835-camera/bcm2835-camera.h
++++ b/drivers/staging/vc04_services/bcm2835-camera/bcm2835-camera.h
+@@ -93,6 +93,8 @@ struct bm2835_mmal_dev {
+ 		ktime_t kernel_start_ts;
+ 		/* Timestamp of last frame */
+ 		u64		last_timestamp;
++		/* Sequence number of last buffer */
++		u32		sequence;
+
+ 		struct vchiq_mmal_port  *port; /* port being used for capture */
+ 		/* camera port being used for capture */
 --
 2.7.4
 
