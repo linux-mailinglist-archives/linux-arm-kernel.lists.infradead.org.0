@@ -2,111 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D612F58565
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 27 Jun 2019 17:17:21 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4A5AF58569
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 27 Jun 2019 17:18:28 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:Reply-To:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:
-	Subject:To:From:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=A4pCtlE7/xJHvlGfM8Zp+Cjndvh9kjS0G0svsI834aE=; b=q+PsazNgLvQKl6
-	8wnMEqjuxzayw+NsQG6FSbA2zbV96B3fiRqHcn0f6sBAIYiJ0TAkVuxwbbvJpZlSYrVJiImX7rwsb
-	j+WUdyNdkLkk07xcs4tmRH62JpFI9WLod6PxrhSUn1tZDR2vJw7DC2Yy5pSVEFJmcwGSBtx9g3ftH
-	D0Ur9fXjKf2Vnh/yB+XHXVTgyGMyjURfOSdm5bxndZrqkFZ7M9Xbs9NUwAH50/KlDnLOD34m7fYK8
-	7Pz7clz8hz4ZKPSQcyF8yQrEWbRCb8yyaQD7piIYU0KnTUUjy8n54ASgtbF+lrUWS9QPlZdMw0lvm
-	InsC1DS26sOlnSNSNOSA==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=vE5cK8q/boAS6TLHcH4yxbUK4z+N43TfHPyr2vhdge0=; b=oDsgLu3ls/HsSr
+	D0/IkPz+xTKNM6XDL9R2dEutBn9qNRXNtnf0kKlijDsc1QJxIsRVKnSpR5CxMEs3ggTDxumVZQMbk
+	O4eRa9ESHu4kk8bvGKSA/8yyz22upBZOGeAHoTUGW0bOP6XGn5Fwl62LzeSOTC6/YXobTX7Hsor68
+	q2GquQCSJQXyfB1r3YogjdeHVruS9jpwTgWPZp2vIC4bB9Hsc+jshGjO+kwraNZ02zVEq1tfm992W
+	/frKLNuMXK90IK4uKWcdo5PIc+NI7tHHpAJwt0GIsbzSWCqGlkJwZZI8QyYt9P8DDEpd9pXy1rrZF
+	hIFudycbs8PXzctNOlpQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hgW9E-00084U-V6; Thu, 27 Jun 2019 15:17:16 +0000
-Received: from mail-eopbgr20058.outbound.protection.outlook.com ([40.107.2.58]
- helo=EUR02-VE1-obe.outbound.protection.outlook.com)
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hgW93-00083J-Jr
- for linux-arm-kernel@lists.infradead.org; Thu, 27 Jun 2019 15:17:07 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=yBouiMCe0HxcmNbAaeTUbmnGzYQrU3TluQCQL9haies=;
- b=qAagAjoTLeemiK3fyzJ16nluljJAKGcwnFFwA6OMn85/tvNj8x2wp3PYDX8wTsn+NpBlLh9D2WDyjLVH4XAdoSZYHA+UsWPQ2bWk8F/TqhUkD5ZvMFmE6G1r4oSfCHyE1BYVZhszk1BMLOO01xylnqLvMsPg/n3gBbh9gPz661k=
-Received: from VE1PR04MB6463.eurprd04.prod.outlook.com (20.179.233.20) by
- VE1PR04MB6752.eurprd04.prod.outlook.com (20.179.235.217) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2032.17; Thu, 27 Jun 2019 15:17:00 +0000
-Received: from VE1PR04MB6463.eurprd04.prod.outlook.com
- ([fe80::a5ca:7c9c:6b18:eb0a]) by VE1PR04MB6463.eurprd04.prod.outlook.com
- ([fe80::a5ca:7c9c:6b18:eb0a%6]) with mapi id 15.20.2008.017; Thu, 27 Jun 2019
- 15:17:00 +0000
-From: Roy Pledge <roy.pledge@nxp.com>
-To: Leo Li <leoyang.li@nxp.com>, "linuxppc-dev@lists.ozlabs.org"
- <linuxppc-dev@lists.ozlabs.org>, "linux-arm-kernel@lists.infradead.org"
- <linux-arm-kernel@lists.infradead.org>, "linux-kernel@vger.kernel.org"
- <linux-kernel@vger.kernel.org>
-Subject: [PATCH] soc/fsl/qbman: Use index when accessing device tree properties
-Thread-Topic: [PATCH] soc/fsl/qbman: Use index when accessing device tree
- properties
-Thread-Index: AQHVLPteklEjY5ksH0SDrbr59mNdSA==
-Date: Thu, 27 Jun 2019 15:17:00 +0000
-Message-ID: <1561648603-11589-1-git-send-email-roy.pledge@nxp.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-x-mailer: git-send-email 2.7.4
-x-clientproxiedby: DM5PR07CA0062.namprd07.prod.outlook.com
- (2603:10b6:4:ad::27) To VE1PR04MB6463.eurprd04.prod.outlook.com
- (2603:10a6:803:11d::20)
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=roy.pledge@nxp.com; 
-x-ms-exchange-messagesentrepresentingtype: 1
-x-originating-ip: [72.142.119.78]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: bc22392e-8121-4655-b9e3-08d6fb12806d
-x-ms-office365-filtering-ht: Tenant
-x-microsoft-antispam: BCL:0; PCL:0;
- RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600148)(711020)(4605104)(1401327)(4618075)(2017052603328)(7193020);
- SRVR:VE1PR04MB6752; 
-x-ms-traffictypediagnostic: VE1PR04MB6752:
-x-ld-processed: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635,ExtAddr
-x-microsoft-antispam-prvs: <VE1PR04MB6752A2121F80C8E9891BB75486FD0@VE1PR04MB6752.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:3173;
-x-forefront-prvs: 008184426E
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(376002)(366004)(39860400002)(136003)(346002)(396003)(199004)(189003)(26005)(66446008)(66946007)(73956011)(66556008)(64756008)(52116002)(305945005)(71200400001)(71190400001)(66476007)(2906002)(7736002)(68736007)(44832011)(4326008)(186003)(486006)(110136005)(54906003)(8676002)(3450700001)(6506007)(386003)(8936002)(102836004)(2501003)(81156014)(81166006)(256004)(14444005)(316002)(4744005)(6486002)(5660300002)(43066004)(478600001)(50226002)(3846002)(6116002)(14454004)(53936002)(2201001)(36756003)(66066001)(2616005)(25786009)(86362001)(99286004)(476003)(6436002)(6512007);
- DIR:OUT; SFP:1101; SCL:1; SRVR:VE1PR04MB6752;
- H:VE1PR04MB6463.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; A:1; MX:1; 
-received-spf: None (protection.outlook.com: nxp.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: 0Db7A368V6OG2KQX9oATZntO4a+X/nGoGeihLCwE8OnGbUYSggfkibQULiAPzgS+jZ3eZRbUAkBJWjEiqM63w2e2gBCvX67PY58FHaJ15kqPQqnk1BggkHu9SS+ldoqo6EVMKpkEDadjVQ6x8pSiKTDMSKc7i6uVjQDYeu8jheylUu4CGYwrLaOIld2309hUIkT+6VFBJmEyxazaGQd/NBNwlIeRb3U6oQFtPYRnL7uU9RisLVxGEMy35+DiFeCBUrUrjZpEKjWchnSuF5m0HKwy91/uLN8phAk8VZxtv0o1Y+XadSJ5WpFPLjXos7mQV1+1hCHoBhDzX2kPv6P7EBoTzeaBtyFV41Q8znQ/ScN8BrWlFJIAfiDPqdHH9Sr2vZGE+7y3sKnmtMT7InbR069GeZXUaVljm4RyTw1tIs8=
+	id 1hgWAK-0008QI-UY; Thu, 27 Jun 2019 15:18:24 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hgWA2-0008Oy-25
+ for linux-arm-kernel@lists.infradead.org; Thu, 27 Jun 2019 15:18:07 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 1E6A5360;
+ Thu, 27 Jun 2019 08:18:05 -0700 (PDT)
+Received: from e103592.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
+ [10.121.207.14])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id D791D3F246;
+ Thu, 27 Jun 2019 08:18:03 -0700 (PDT)
+Date: Thu, 27 Jun 2019 16:18:01 +0100
+From: Dave Martin <Dave.Martin@arm.com>
+To: Catalin Marinas <catalin.marinas@arm.com>
+Subject: Re: [PATCH v2 1/3] arm64/sve: Fix missing SVE/FPSIMD endianness
+ conversions
+Message-ID: <20190627151801.GJ2790@e103592.cambridge.arm.com>
+References: <1560355234-25516-1-git-send-email-Dave.Martin@arm.com>
+ <1560355234-25516-2-git-send-email-Dave.Martin@arm.com>
+ <20190612172853.GA27039@fuggles.cambridge.arm.com>
+ <20190627135112.GC9894@arrakis.emea.arm.com>
 MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: bc22392e-8121-4655-b9e3-08d6fb12806d
-X-MS-Exchange-CrossTenant-originalarrivaltime: 27 Jun 2019 15:17:00.7768 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: roy.pledge@nxp.com
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: VE1PR04MB6752
+Content-Disposition: inline
+In-Reply-To: <20190627135112.GC9894@arrakis.emea.arm.com>
+User-Agent: Mutt/1.5.23 (2014-03-12)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190627_081705_795643_E3AF1418 
-X-CRM114-Status: GOOD (  12.21  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190627_081806_146686_567590D2 
+X-CRM114-Status: GOOD (  19.41  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.2.58 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -118,38 +65,57 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Reply-To: Roy Pledge <roy.pledge@nxp.com>
-Cc: "jocke@infinera.com" <joakim.tjernlund@infinera.com>,
- Roy Pledge <roy.pledge@nxp.com>,
- "stable@vger.kernel.org" <stable@vger.kernel.org>
+Cc: Peter Maydell <peter.maydell@linaro.org>, gdb@sourceware.org,
+ Will Deacon <will.deacon@arm.com>, Zhang Lei <zhang.lei@jp.fujitsu.com>,
+ Julien Grall <julien.grall@arm.com>, Alan Hayward <alan.hayward@arm.com>,
+ Alex =?iso-8859-1?Q?Benn=E9e?= <alex.bennee@linaro.org>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The index value should be passed to the of_parse_phandle()
-function to ensure the correct property is read.
+On Thu, Jun 27, 2019 at 02:51:13PM +0100, Catalin Marinas wrote:
+> On Wed, Jun 12, 2019 at 06:28:53PM +0100, Will Deacon wrote:
+> > On Wed, Jun 12, 2019 at 05:00:32PM +0100, Dave Martin wrote:
+> > > The in-memory representation of SVE and FPSIMD registers is
+> > > different: the FPSIMD V-registers are stored as single 128-bit
+> > > host-endian values, whereas SVE registers are stored in an
+> > > endianness-invariant byte order.
+> > > 
+> > > This means that the two representations differ when running on a
+> > > big-endian host.  But we blindly copy data from one representation
+> > > to another when converting between the two, resulting in the
+> > > register contents being unintentionally byteswapped in certain
+> > > situations.  Currently this can be triggered by the first SVE
+> > > instruction after a syscall, for example (though the potential
+> > > trigger points may vary in future).
+> > > 
+> > > So, fix the conversion functions fpsimd_to_sve(), sve_to_fpsimd()
+> > > and sve_sync_from_fpsimd_zeropad() to swab where appropriate.
+> > > 
+> > > There is no common swahl128() or swab128() that we could use here.
+> > > Maybe it would be worth making this generic, but for now add a
+> > > simple local hack.
+> > > 
+> > > Since the byte order differences are exposed in ABI, also clarify
+> > > the docuentation.
+> > > 
+> > > Fixes: bc0ee4760364 ("arm64/sve: Core task context handling")
+> > > Fixes: 8cd969d28fd2 ("arm64/sve: Signal handling support")
+> > > Fixes: 43d4da2c45b2 ("arm64/sve: ptrace and ELF coredump support")
+> > > Signed-off-by: Dave Martin <Dave.Martin@arm.com>
+> > 
+> > Thanks, Dave. I've picked this one up and pushed it out to our fixes branch
+> > for 5.2. I assume Catalin will take the other two for 5.3.
+> 
+> At least the second patch depends on the first one. So I'll postpone
+> merging them until -rc1.
 
-Signed-off-by: Roy Pledge <roy.pledge@nxp.com>
----
- drivers/soc/fsl/qbman/dpaa_sys.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+Yes, that should be fine.  Those are cleanup, supplementary to the fix.
 
-diff --git a/drivers/soc/fsl/qbman/dpaa_sys.c b/drivers/soc/fsl/qbman/dpaa_sys.c
-index 3e0a7f3..0b901a8 100644
---- a/drivers/soc/fsl/qbman/dpaa_sys.c
-+++ b/drivers/soc/fsl/qbman/dpaa_sys.c
-@@ -49,7 +49,7 @@ int qbman_init_private_mem(struct device *dev, int idx, dma_addr_t *addr,
- 			idx, ret);
- 		return -ENODEV;
- 	}
--	mem_node = of_parse_phandle(dev->of_node, "memory-region", 0);
-+	mem_node = of_parse_phandle(dev->of_node, "memory-region", idx);
- 	if (mem_node) {
- 		ret = of_property_read_u64(mem_node, "size", &size64);
- 		if (ret) {
--- 
-2.7.4
+Thanks
+---Dave
 
 _______________________________________________
 linux-arm-kernel mailing list
