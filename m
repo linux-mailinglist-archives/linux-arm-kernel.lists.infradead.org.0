@@ -2,55 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 08EA4589E3
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 27 Jun 2019 20:24:02 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0A43B589E5
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 27 Jun 2019 20:24:24 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:Subject:From:To:
 	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=0M1ayLmiHezf4/jW5gkm4DYRBXHirpIvPsV2JIrpMUk=; b=H1gt4D/wCg6wK2
-	ZuocckGjIKDN0LgEVfLWB/YLw7YFDPcStzqFsKs2BaA1arzXAPyPUgPJPltzOr3QswO+Oxh+qwPtw
-	wjpIX3xcgdwSXrHGZ1zvUq1omqZVE9sC0/lH5TkmEKO3V6LGm3j67x8M5ixCElxIP/6IBVjnSNOFc
-	EhEeptEQHIzxvOoYEf55DnrxEbXeen6SO6gV5Mj6I8LxYojbsJf4UzweYaK9PNoWHYOGlorRs9SsP
-	WgZ6hJtUIJ/ArNHLic9ZQNDFjSBtk50iTK64bDCT2+XHNvkmJxPXuq73NmkdqpfL9LWjqcKo/alSX
-	ZGfdwOl7oFXJp3bXb/Kg==;
+	List-Owner; bh=e28ljEp/AuAj1BtQjXAREa+acRF9k9f1JGtL+jAAn7M=; b=ti8WQYNGk7p5Q1
+	QfZqtYb2aFPtOiNDhTLaA5dx6zqqicUpUEVLqmXR5+B8zG5MWwPSsvTM4KubF26CDuWcX+2VNmV6G
+	5B2txGoCkHKv1zNj3vWkAmDMjnHfV/6SH0XLDZwCGkddAzaldgEBGVtjiv6FFqwrBTAayPLqI7Sdc
+	Eak8++NQSDRpxONySY1L85eto29uG7+6LfjGhp1VArMeH9EYZiTPBXIfvsasg9276ZmF1vXPe0Sv7
+	RcSPeXYV6WZFefoqLRCCMP9dp1/QYYc6h4HbY8BzAHwTmqxX7zuUKxZBoDUC4+PfQ+5jwjgxCzuE3
+	48YmngCGgVaDmao+JiwQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hgZ3w-0006nS-6O; Thu, 27 Jun 2019 18:24:00 +0000
+	id 1hgZ4G-00073R-DD; Thu, 27 Jun 2019 18:24:20 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hgZ2l-00067n-7L
- for linux-arm-kernel@lists.infradead.org; Thu, 27 Jun 2019 18:22:48 +0000
+ id 1hgZ2o-0006Af-LX
+ for linux-arm-kernel@lists.infradead.org; Thu, 27 Jun 2019 18:22:51 +0000
 Received: from kernel.org (unknown [104.132.0.74])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id C30FB20B7C;
- Thu, 27 Jun 2019 18:22:46 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 360B120B7C;
+ Thu, 27 Jun 2019 18:22:50 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1561659766;
- bh=g49iXxzydUpzQ6EBIqU04G6r6Dgb76zA9MVuso4mGfk=;
+ s=default; t=1561659770;
+ bh=R9Rju5tiNyj7OaDEDC3/TJHCT4WV1KaFzmKwdI1JROc=;
  h=In-Reply-To:References:To:From:Subject:Cc:Date:From;
- b=OY2WtXEs0Ev9EbXML0VOUPi7JIzPT+gwB+jdNCAGgWNS5wwauziKecsb7rPreWCnk
- FHheUXmnKc0nbUk2lZrD3S1D1ELk4nkl6vLs3p5HDOAVAHyYX0Etk/ZR6NmA4Jl1Kp
- upbgF1s36hpPOW3HuoFLVz30xhzbwINjesD+5dCo=
+ b=2HMriT/GvdOwPGAsrkgVFZLjbFxM8saxckDglpZ1TnRw1YEnw3EgmPg/V++92y3mh
+ 4+uiPxXsHxYVzYNItrGyQlymGu0HlyTXU3L3HAbkBHkQCEjI9cOh7lDCgqaAu4WpXL
+ ysaG9z2Yy2bicGEjpLTvcMAcac4WFpmBH7Ljt9tw=
 MIME-Version: 1.0
-In-Reply-To: <1561650825-11213-5-git-send-email-claudiu.beznea@microchip.com>
+In-Reply-To: <1561650825-11213-6-git-send-email-claudiu.beznea@microchip.com>
 References: <1561650825-11213-1-git-send-email-claudiu.beznea@microchip.com>
- <1561650825-11213-5-git-send-email-claudiu.beznea@microchip.com>
+ <1561650825-11213-6-git-send-email-claudiu.beznea@microchip.com>
 To: Claudiu Beznea <claudiu.beznea@microchip.com>,
  alexandre.belloni@bootlin.com, ludovic.desroches@microchip.com,
  mturquette@baylibre.com, nicolas.ferre@microchip.com
 From: Stephen Boyd <sboyd@kernel.org>
-Subject: Re: [PATCH v2 4/7] clk: at91: sckc: improve error path for sam9x5 sck
- register
+Subject: Re: [PATCH v2 5/7] clk: at91: sckc: remove unnecessary line
 User-Agent: alot/0.8.1
-Date: Thu, 27 Jun 2019 11:22:46 -0700
-Message-Id: <20190627182246.C30FB20B7C@mail.kernel.org>
+Date: Thu, 27 Jun 2019 11:22:49 -0700
+Message-Id: <20190627182250.360B120B7C@mail.kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190627_112247_394335_5E2A17C0 
-X-CRM114-Status: UNSURE (   5.70  )
+X-CRM114-CacheID: sfid-20190627_112250_773422_E6F5146C 
+X-CRM114-Status: UNSURE (   5.37  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -87,8 +86,8 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Quoting Claudiu Beznea (2019-06-27 08:53:42)
-> Improve error path for sam9x5 slow clock registration.
+Quoting Claudiu Beznea (2019-06-27 08:53:43)
+> Remove unnecessary line.
 > 
 > Signed-off-by: Claudiu Beznea <claudiu.beznea@microchip.com>
 > Reviewed-by: Alexandre Belloni <alexandre.belloni@bootlin.com>
