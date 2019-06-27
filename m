@@ -2,55 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DA1AD581B1
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 27 Jun 2019 13:37:22 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 703F3581CA
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 27 Jun 2019 13:42:00 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:References
-	:In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=CbvMbcrwj5WRe3Sxlw8GxyXH5/SucAyDGYb4aoko27Q=; b=rLGCjOOWXPF1or
-	zz06xLOGF3sL6akSG0WgTNR0VB+xPNaKh6Zs42B4bOmOlGTh+f3WRC88LgWig4bFQhdMMj94wwCbp
-	rjAk13BYHUzIKT/UmKip8Nqqt3Mp+zp+lNTiO2VK5F+yakRVs9YQyzOm3OZTCzeuKk7H4vh8Ro3VY
-	Cx76vLui2LvIePcAryh5k7ER3ePKO9QTO2kv3wjgJdSjty0TtQVJPG0QpWwO45VRg0cLQDefGKs9j
-	dd4TKZfiuZPyqjDTkzqYS1lCaYpBPqDO1lSwm9wfxPlQImWBQxESBH1I1NDStMsdvW6ZP5I6DWv8u
-	kUVeWOdW90rGtdf8tfnw==;
+	List-Owner; bh=lnFzeqxFNwmqMYTjmhZuvvs3l437CNg7vi0oDNj+TQo=; b=llyuzd1Qvtn/HQ
+	sCmM64Qd7aR8Ms+efYi/2a9ibwAPHWuzcJ67jpw2ZAA7s7Iv1KbOJEWUiLflS1h3rYnIGQTMjV+Tj
+	tZD1kJDwZLj3lEYzv5/xLxqY+eaWffDghQ0hPEtETK8xm+LUoClODTBj75gB+QPD3/zMyJvrHVX99
+	+8ToeebkUpzqee9HJqeVD+uh1x+QRxb33825PzpC3NNngCWYHGACtEk2wH3nRd2X6BDraucghYAfK
+	kWAfteSTTg9unqEFLREZ27Y4/gyNqjP1s65+bEpkKddyimlKfEHqS1bQ/ujUJQ0tvzcEb9ZuTIMHM
+	rYtVfJv9vM83ikR1nqqw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hgSiF-0007Xt-I9; Thu, 27 Jun 2019 11:37:11 +0000
-Received: from mga09.intel.com ([134.134.136.24])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hgShr-0007XF-3e; Thu, 27 Jun 2019 11:36:48 +0000
-X-Amp-Result: SKIPPED(no attachment in message)
-X-Amp-File-Uploaded: False
-Received: from fmsmga001.fm.intel.com ([10.253.24.23])
- by orsmga102.jf.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
- 27 Jun 2019 04:36:45 -0700
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.63,423,1557212400"; d="scan'208";a="183430789"
-Received: from jnikula-mobl3.fi.intel.com (HELO localhost) ([10.237.66.150])
- by fmsmga001.fm.intel.com with ESMTP; 27 Jun 2019 04:36:37 -0700
-From: Jani Nikula <jani.nikula@linux.intel.com>
-To: Masahiro Yamada <yamada.masahiro@socionext.com>,
- linux-kbuild@vger.kernel.org
-Subject: Re: [PATCH v2 0/4] Compile-test UAPI and kernel headers
-In-Reply-To: <20190627014617.600-1-yamada.masahiro@socionext.com>
-Organization: Intel Finland Oy - BIC 0357606-4 - Westendinkatu 7, 02160 Espoo
-References: <20190627014617.600-1-yamada.masahiro@socionext.com>
-Date: Thu, 27 Jun 2019 14:39:24 +0300
-Message-ID: <87y31np89f.fsf@intel.com>
+	id 1hgSmq-0001ms-RX; Thu, 27 Jun 2019 11:41:56 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hgSma-0001mK-Id
+ for linux-arm-kernel@lists.infradead.org; Thu, 27 Jun 2019 11:41:41 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id E9AB62B;
+ Thu, 27 Jun 2019 04:41:39 -0700 (PDT)
+Received: from localhost (unknown [10.37.6.20])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 6B3C63F718;
+ Thu, 27 Jun 2019 04:41:39 -0700 (PDT)
+Date: Thu, 27 Jun 2019 12:41:37 +0100
+From: Andrew Murray <andrew.murray@arm.com>
+To: Suzuki K Poulose <suzuki.poulose@arm.com>
+Subject: Re: [PATCH v2 2/5] coresight: etm4x: use explicit barriers on
+ enable/disable
+Message-ID: <20190627114137.GD34530@e119886-lin.cambridge.arm.com>
+References: <20190627083525.37463-1-andrew.murray@arm.com>
+ <20190627083525.37463-3-andrew.murray@arm.com>
+ <adf74525-faa7-0fd6-7ea9-6377e782b4b6@arm.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <adf74525-faa7-0fd6-7ea9-6377e782b4b6@arm.com>
+User-Agent: Mutt/1.10.1+81 (426a6c1) (2018-08-26)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190627_043647_279375_A4B9B21E 
-X-CRM114-Status: GOOD (  17.54  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20190627_044140_710847_26005544 
+X-CRM114-Status: GOOD (  23.85  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [134.134.136.24 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -64,95 +63,105 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Song Liu <songliubraving@fb.com>,
- Jakub Kicinski <jakub.kicinski@netronome.com>, linux-doc@vger.kernel.org,
- Palmer Dabbelt <palmer@sifive.com>, Alexei Starovoitov <ast@kernel.org>,
- Masahiro Yamada <yamada.masahiro@socionext.com>,
- linux-riscv@lists.infradead.org, Sam Ravnborg <sam@ravnborg.org>,
- Kees Cook <keescook@chromium.org>, xdp-newbies@vger.kernel.org,
- Daniel Borkmann <daniel@iogearbox.net>, Jonathan Corbet <corbet@lwn.net>,
- Anton Vorontsov <anton@enomsg.org>, John Fastabend <john.fastabend@gmail.com>,
- Yonghong Song <yhs@fb.com>, Albert Ou <aou@eecs.berkeley.edu>,
- Jesper Dangaard Brouer <hawk@kernel.org>,
- Michal Marek <michal.lkml@markovi.net>, linux-mediatek@lists.infradead.org,
- Matthias Brugger <matthias.bgg@gmail.com>,
- linux-arm-kernel@lists.infradead.org, Tony Luck <tony.luck@intel.com>,
- netdev@vger.kernel.org, linux-kernel@vger.kernel.org,
- "David S. Miller" <davem@davemloft.net>, Colin Cross <ccross@android.com>,
- bpf@vger.kernel.org, Martin KaFai Lau <kafai@fb.com>
+Cc: mathieu.poirier@linaro.org, alexander.shishkin@linux.intel.com,
+ coresight@lists.linaro.org, stable@vger.kernel.org, Sudeep.Holla@arm.com,
+ linux-arm-kernel@lists.infradead.org, mike.leach@linaro.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, 27 Jun 2019, Masahiro Yamada <yamada.masahiro@socionext.com> wrote:
-> 1/4: reworked v2.
->
-> 2/4: fix a flaw I noticed when I was working on this series
->
-> 3/4: maybe useful for 4/4 and in some other places
->
-> 4/4: v2. compile as many headers as possible.
->
->
-> Changes in v2:
->  - Add CONFIG_CPU_{BIG,LITTLE}_ENDIAN guard to avoid build error
->  - Use 'header-test-' instead of 'no-header-test'
->  - Avoid weird 'find' warning when cleaning
->   - New patch
->   - New patch
->   - Add everything to test coverage, and exclude broken ones
->   - Rename 'Makefile' to 'Kbuild'
->   - Add CONFIG_KERNEL_HEADER_TEST option
->
-> Masahiro Yamada (4):
->   kbuild: compile-test UAPI headers to ensure they are self-contained
->   kbuild: do not create wrappers for header-test-y
->   kbuild: support header-test-pattern-y
->   kbuild: compile-test kernel headers to ensure they are self-contained
+On Thu, Jun 27, 2019 at 10:16:17AM +0100, Suzuki K Poulose wrote:
+> Hi Andrew,
+> 
+> On 27/06/2019 09:35, Andrew Murray wrote:
+> > Synchronization is recommended before disabling the trace registers
+> > to prevent any start or stop points being speculative at the point
+> > of disabling the unit (section 7.3.77 of ARM IHI 0064D).
+> > 
+> > Synchronization is also recommended after programming the trace
+> > registers to ensure all updates are committed prior to normal code
+> > resuming (section 4.3.7 of ARM IHI 0064D).
+> > 
+> > Let's ensure these syncronization points are present in the code
+> > and clearly commented.
+> 
+> Please could you also mention why we switched from mb() ?
 
-[responding here because I didn't receive the actual patch]
+No problem.
 
-This looks like it's doing what it's supposed to, but I ran into a bunch
-of build fails with CONFIG_OF=n. Sent a fix to one [1], but stopped at
-the next. Looks like you'll have to exclude more. And I'm pretty sure
-we'll uncover more configurations where this will fail.
+> 
+> > 
+> > Note that we could rely on the barriers in CS_LOCK and
+> > coresight_disclaim_device_unlocked or the context switch to user
+> > space - however coresight may be of use in the kernel.
+> > 
+> > Signed-off-by: Andrew Murray <andrew.murray@arm.com>
+> > CC: stable@vger.kernel.org
+> 
+> 
+> 
+> > ---
+> >   drivers/hwtracing/coresight/coresight-etm4x.c | 7 ++++++-
+> >   1 file changed, 6 insertions(+), 1 deletion(-)
+> > 
+> > diff --git a/drivers/hwtracing/coresight/coresight-etm4x.c b/drivers/hwtracing/coresight/coresight-etm4x.c
+> > index c89190d464ab..68e8e3954cef 100644
+> > --- a/drivers/hwtracing/coresight/coresight-etm4x.c
+> > +++ b/drivers/hwtracing/coresight/coresight-etm4x.c
+> > @@ -188,6 +188,10 @@ static int etm4_enable_hw(struct etmv4_drvdata *drvdata)
+> >   		dev_err(etm_dev,
+> >   			"timeout while waiting for Idle Trace Status\n");
+> > +	/* As recommended by 4.3.7 of ARM IHI 0064D */
+> 
+> nit: It would be good to mention the "section name" to help the reader
+> find the same on a different version of the document. Also within the same
+> version, this is listed in the subsection:
+> "Synchronization when using the memory-mapped interface"
+> 
+> Please could you update the comment to reflect the same ?
+> 
 
-But I do applaud the goal, and I'm committed to making all include/drm
-headers self-contained. I wouldn't block this based on the issues, it's
-pretty much the only way to expose them and get them fixed/excluded, and
-it's behind a config knob after all.
-
-With the caveat that I didn't finish the build, but OTOH tested the
-rainy day scenario and had the patch find issues it's meant to find:
-
-Tested-by: Jani Nikula <jani.nikula@intel.com>
+Yes sure.
 
 
-[1] http://patchwork.freedesktop.org/patch/msgid/20190627110103.7539-1-jani.nikula@intel.com
+> > +	dsb(sy);
+> > +	isb();
+> > +
+> >   done:
+> >   	CS_LOCK(drvdata->base);
+> > @@ -454,7 +458,8 @@ static void etm4_disable_hw(void *info)
+> >   	control &= ~0x1;
+> >   	/* make sure everything completes before disabling */
+> > -	mb();
+> > +	/* As recommended by 7.3.77 of ARM IHI 0064D */
+> 
+> Nit: This refers to completely unrelated section. Shouldn't this be the same
+> as above ?
 
->
->  .gitignore                         |    1 -
->  Documentation/dontdiff             |    1 -
->  Documentation/kbuild/makefiles.txt |   13 +-
->  Makefile                           |    4 +-
->  include/Kbuild                     | 1134 ++++++++++++++++++++++++++++
->  init/Kconfig                       |   22 +
->  scripts/Makefile.build             |   10 +-
->  scripts/Makefile.lib               |   12 +-
->  scripts/cc-system-headers.sh       |    8 +
->  usr/.gitignore                     |    1 -
->  usr/Makefile                       |    2 +
->  usr/include/.gitignore             |    3 +
->  usr/include/Makefile               |  133 ++++
->  13 files changed, 1331 insertions(+), 13 deletions(-)
->  create mode 100644 include/Kbuild
->  create mode 100755 scripts/cc-system-headers.sh
->  create mode 100644 usr/include/.gitignore
->  create mode 100644 usr/include/Makefile
+Actually 4.3.7 relates to using dsb/isb after programming the trace unit
+registers and indicates this is to 'ensure that all updates are committed to
+the trace unit before normal code execution resumes'.
 
--- 
-Jani Nikula, Intel Open Source Graphics Center
+Whereas 7.3.77 (hidden awawy in the SSTATUS description) relates to using
+dsb/isb before disabling the trace unit to 'prevent any start or stop points
+being specualtive at the point of disabling the trace unit'.
+
+Both sections suggest the same course of action - however I felt that the
+description in 7.3.77 better related to the context of etm4_disable_hw.
+
+Perhaps if I also add the section name, readers are more likely to find this
+text?
+
+
+> 
+> With the above fixed:
+> 
+> Reviewed-by: Suzuki K Poulose <suzuki.poulose@arm.com>
+
+Thanks,
+
+Andrew Murray
 
 _______________________________________________
 linux-arm-kernel mailing list
