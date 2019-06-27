@@ -2,52 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 87A0858344
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 27 Jun 2019 15:18:58 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1B2F15835C
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 27 Jun 2019 15:22:46 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=QjAcgUyILtKvThxGcyE4AGn7Z21lQZSj0imastQFE7o=; b=cB/JzZX4I3dVj+
-	H3zP3nu2wsDwiJWIEIbfC/k6QQa0iFB51MWCx0B6eER1H7OHM2OdogQCE3A6u2leFFVkIzTHr/T27
-	RbkGwsNj+kst8R7yUdQmEsoaw0L/bbqXK1wws5whvZcutKvm+TxsvwEvB/pu8gUaldxQ2klXj6i6h
-	zAD8ivuruJ74z5SQu/wvMmjvgEiHN2v2Lk9fTLpghb0fHJJrxJoP5hBZENOs6Df24LsFP66dJqkiC
-	j5yjRptyIYtD9kWBZi+etumyyaKlRH65k7ExGtlIQ/kw49DWfxtJhoOdU14kFZYT46/FftcEuwnhr
-	FkRg7+Bx4/T1xbh/S08g==;
+	List-Owner; bh=gm/zGAd53OUYGZhovzgi46IMpMFgSR3MvBlz9gm8ifU=; b=etbTfcIeE2YGRT
+	tmbdITjt0D3nn2RgS5lIz8RJDr3THtQB+Vwtu5kPadz2Fr+4Td34UElYLPOdHROH3umB1mfEGYb5z
+	v+vjTMu+vbpVdINf7zLBRaC3gAUnyTLyUbv6LqJBu8xfYHxCDNxbLBYwkXgXVmN3Z80xA+gaA67tq
+	712GDUT0Fnm5RcDz6iAKN/C8iAputvuD2pV4WYTIgxcmBKnimL9PrQwSssQYKAfD5s7EKEdXYsks6
+	8WupgQqpD7SWpeIRKB2lTsvTlvW14HvP6cH5lHYTM8dXum9NogyC4U6QisKs34NlDO+Z4YgtppEkE
+	NjG6xsPU82AsM8ZLbU7g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hgUIg-00041n-O4; Thu, 27 Jun 2019 13:18:54 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hgUIP-000412-MC
- for linux-arm-kernel@lists.infradead.org; Thu, 27 Jun 2019 13:18:39 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id EE85F360;
- Thu, 27 Jun 2019 06:18:36 -0700 (PDT)
-Received: from localhost (unknown [10.37.6.20])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 6F4D83F246;
- Thu, 27 Jun 2019 06:18:36 -0700 (PDT)
-Date: Thu, 27 Jun 2019 14:18:34 +0100
-From: Andrew Murray <andrew.murray@arm.com>
-To: Catalin Marinas <catalin.marinas@arm.com>
-Subject: Re: [RFC] arm64: Detecting tagged addresses
-Message-ID: <20190627131834.GE34530@e119886-lin.cambridge.arm.com>
-References: <20190619121619.GV20984@e119886-lin.cambridge.arm.com>
- <20190626174502.GH29672@arrakis.emea.arm.com>
+	id 1hgUMM-0005nf-Ag; Thu, 27 Jun 2019 13:22:42 +0000
+Received: from relay5-d.mail.gandi.net ([217.70.183.197])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hgUM7-0005n3-7s
+ for linux-arm-kernel@lists.infradead.org; Thu, 27 Jun 2019 13:22:29 +0000
+X-Originating-IP: 92.137.69.152
+Received: from localhost (alyon-656-1-672-152.w92-137.abo.wanadoo.fr
+ [92.137.69.152])
+ (Authenticated sender: alexandre.belloni@bootlin.com)
+ by relay5-d.mail.gandi.net (Postfix) with ESMTPSA id BD3BD1C0011;
+ Thu, 27 Jun 2019 13:22:00 +0000 (UTC)
+Date: Thu, 27 Jun 2019 15:22:00 +0200
+From: Alexandre Belloni <alexandre.belloni@bootlin.com>
+To: Wolfram Sang <wsa@the-dreams.de>
+Subject: Re: I2C filtering (was Re: [PATCH v2 6/9] dt-bindings: i2c: at91:
+ add binding for enable-ana-filt)
+Message-ID: <20190627132200.GK3692@piout.net>
+References: <1561449642-26956-1-git-send-email-eugen.hristev@microchip.com>
+ <1561449642-26956-7-git-send-email-eugen.hristev@microchip.com>
+ <4e81d3c9-25f3-ca6e-f2d5-17fad5905bb8@axentia.se>
+ <84628b5e-bea7-7d91-f790-f3a2650040fa@microchip.com>
+ <20190625093156.GF5690@piout.net> <20190625095533.GC1688@kunai>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190626174502.GH29672@arrakis.emea.arm.com>
-User-Agent: Mutt/1.10.1+81 (426a6c1) (2018-08-26)
+In-Reply-To: <20190625095533.GC1688@kunai>
+User-Agent: Mutt/1.12.0 (2019-05-25)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190627_061837_827123_91439F25 
-X-CRM114-Status: GOOD (  31.43  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190627_062227_439493_DD80ED16 
+X-CRM114-Status: GOOD (  16.51  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [217.70.183.197 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -61,144 +67,61 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Andrey Konovalov <andreyknvl@google.com>, linux-kernel@vger.kernel.org,
- linux-mm@kvack.org, Luc Van Oostenryck <luc.vanoostenryck@gmail.com>,
- linux-kselftest@vger.kernel.org, vincenzo.frascino@arm.com,
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
+ linux-stm32@st-md-mailman.stormreply.com,
+ Pierre-Yves MORDRET <pierre-yves.mordret@st.com>, linux-kernel@vger.kernel.org,
+ Ludovic.Desroches@microchip.com, robh+dt@kernel.org, linux-i2c@vger.kernel.org,
+ Eugen.Hristev@microchip.com, peda@axentia.se,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Jun 26, 2019 at 06:45:03PM +0100, Catalin Marinas wrote:
-> Hi Andrew,
-> 
-> Cc'ing Luc (sparse maintainer) who's been involved in the past
-> discussions around static checking of user pointers:
-> 
-> https://lore.kernel.org/linux-arm-kernel/20180905190316.a34yycthgbamx2t3@ltop.local/
-> 
-> So I think the difference here from the previous approach is that we
-> explicitly mark functions that cannot take tagged addresses (like
-> find_vma()) and identify the callers.
-
-Indeed.
-
-
-> 
-> More comments below:
-> 
-> On Wed, Jun 19, 2019 at 01:16:20PM +0100, Andrew Murray wrote:
-> > The proposed introduction of a relaxed ARM64 ABI [1] will allow tagged memory
-> > addresses to be passed through the user-kernel syscall ABI boundary. Tagged
-> > memory addresses are those which contain a non-zero top byte (the hardware
-> > has always ignored this top byte due to TCR_EL1.TBI0) and may be useful
-> > for features such as HWASan.
+On 25/06/2019 11:55:33+0200, Wolfram Sang wrote:
+> On Tue, Jun 25, 2019 at 11:31:56AM +0200, Alexandre Belloni wrote:
+> > On 25/06/2019 09:14:13+0000, Eugen.Hristev@microchip.com wrote:
+> > > > Perhaps
+> > > > 
+> > > > 	microchip,digital-filter;
+> > > > 	microchip,analog-filter;
+> > > > 
+> > > > ?
+> > > 
+> > > Hi Peter,
+> > > 
+> > > Thanks for reviewing. The name of the property does not matter much to 
+> > > me, and we have properties prefixed with vendor, and some are not.
+> > > 
+> > > @Alexandre Belloni: which name you think it's best ?
+> > > 
 > > 
-> > To permit this relaxation a proposed patchset [2] strips the top byte (tag)
-> > from user provided memory addresses prior to use in kernel functions which
-> > require untagged addresses (for example comparasion/arithmetic of addresses).
-> > The author of this patchset relied on a variety of techniques [2] (such as
-> > grep, BUG_ON, sparse etc) to identify as many instances of possible where
-> > tags need to be stipped.
-> > 
-> > To support this effort and to catch future regressions (e.g. in new syscalls
-> > or ioctls), I've devised an additional approach for detecting the use of
-> > tagged addresses in functions that do not want them. This approach makes
-> > use of Smatch [3] and is outlined in this RFC. Due to the ability of Smatch
-> > to do flow analysis I believe we can annotate the kernel in fewer places
-> > than a similar approach in sparse.
-> > 
-> > I'm keen for feedback on the likely usefulness of this approach.
-> > 
-> > We first add some new annotations that are exclusively consumed by Smatch:
-> > 
-> > --- a/include/linux/compiler_types.h
-> > +++ b/include/linux/compiler_types.h
-> > @@ -19,6 +19,7 @@
-> >  # define __cond_lock(x,c)      ((c) ? ({ __acquire(x); 1; }) : 0)
-> >  # define __percpu      __attribute__((noderef, address_space(3)))
-> >  # define __rcu         __attribute__((noderef, address_space(4)))
-> > +# define __untagged    __attribute__((address_space(5)))
-> >  # define __private     __attribute__((noderef))
-> >  extern void __chk_user_ptr(const volatile void __user *);
-> >  extern void __chk_io_ptr(const volatile void __iomem *);
-> [...]
-> > --- a/mm/mmap.c
-> > +++ b/mm/mmap.c
-> > @@ -2224,7 +2224,7 @@ get_unmapped_area(struct file *file, unsigned long addr, unsigned long len,
-> >  EXPORT_SYMBOL(get_unmapped_area);
-> >  
-> >  /* Look up the first VMA which satisfies  addr < vm_end,  NULL if none. */
-> > -struct vm_area_struct *find_vma(struct mm_struct *mm, unsigned long addr)
-> > +struct vm_area_struct *find_vma(struct mm_struct *mm, unsigned long __untagged addr)
-> >  {
-> >         struct rb_node *rb_node;
-> >         struct vm_area_struct *vma;
-> [...]
-> > This can be further improved - the problem here is that for a given function,
-> > e.g. find_vma we look for callers where *any* of the parameters
-> > passed to find_vma are tagged addresses from userspace - i.e. not *just*
-> > the annotated parameter. This is also true for find_vma's callers' callers'.
-> > This results in the call tree having false positives.
-> > 
-> > It *is* possible to track parameters (e.g. find_vma arg 1 comes from arg 3 of
-> > do_pages_stat_array etc), but this is limited as if functions modify the
-> > data then the tracking is stopped (however this can be fixed).
-> [...]
-> > An example of a false positve is do_mlock. We untag the address and pass that
-> > to apply_vma_lock_flags - however we also pass a length - because the length
-> > came from userspace and could have the top bits set - it's flagged. However
-> > with improved parameter tracking we can remove this false positive and similar.
+> > I'm not sure, it depends on whether Wolfram thinks it is generic enough
+> > to be used without a vendor prefix.
 > 
-> Could we track only the conversions from __user * that eventually end up
-> as __untagged? (I'm not familiar with smatch, so not sure what it can
-> do).
-
-I assume you mean 'that eventually end up as an argument annotated __untagged'?
-
-The warnings smatch currently produce relate to only the conversions you
-mention - however further work is needed in smatch to improve the scripts that
-retrospectively provide call traces (without false positives).
-
-
-> We could assume that an unsigned long argument to a syscall is
-> default __untagged, unless explicitly marked as __tagged. For example,
-> sys_munmap() is allowed to take a tagged address.
-
-I'll give this some further thought.
-
-
+> I could imagine that we design a generic property for filters. The ones
+> above make me wonder, though, because they are bool. I'd think you can
+> configure the filters in some way, too?
 > 
-> > Prior to smatch I attempted a similar approach with sparse - however it seemed
-> > necessary to propogate the __untagged annotation in every function up the call tree,
-> > and resulted in adding the __untagged annotation to functions that would never
-> > get near user provided data. This leads to a littering of __untagged all over the
-> > kernel which doesn't seem appealing.
-> 
-> Indeed. We attempted this last year (see the above thread).
-> 
-> > Smatch is more capable, however it almost
-> > certainly won't pick up 100% of issues due to the difficulity of making flow
-> > analysis understand everything a compiler can.
-> > 
-> > Is it likely to be acceptable to use the __untagged annotation in user-path
-> > functions that require untagged addresses across the kernel?
-> 
-> If it helps with identifying missing untagged_addr() calls, I would say
-> yes (as long as we keep them to a minimum).
 
-Thanks for the feedback.
+Apart from enabling the filter there is indeed one configuration
+setting, the maximum pulse width of spikes to be suppressed by the input
+filter.
 
-Andrew Murray
+> I never used such filtering, so I am unaware of the parameters needed /
+> suitable. Quick grepping through I2C master drivers reveals that
+> i2c-stm32f7.c also handles filters, but only with default values. Maybe
+> DT configuration would be benefitial to that driver, too?
+> 
+> Adding some people to CC.
+> 
 
-> 
-> > [1] https://lkml.org/lkml/2019/6/13/534
-> > [2] https://patchwork.kernel.org/cover/10989517/
-> > [3] http://smatch.sourceforge.net/
-> 
-> -- 
-> Catalin
+
+
+-- 
+Alexandre Belloni, Bootlin
+Embedded Linux and Kernel engineering
+https://bootlin.com
 
 _______________________________________________
 linux-arm-kernel mailing list
