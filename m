@@ -2,31 +2,31 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D9CD1584C8
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 27 Jun 2019 16:48:21 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2F5F0584D0
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 27 Jun 2019 16:48:44 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=VycU+Z0pg5lu+pAg+gB3hcOHao+6RD23eHBt/p+PwLs=; b=sOjql1JqUywzWk
-	o81cx1L6N0cW0ZAOdpWwgjMf/LQtUdIXQmNaX2Dc0JcoqMTP/0wJ1jwW/1evIPO55tjbHwvECAO0A
-	e7xqx1pW55Q7SkqnTJAXcFW0Sr2+9DaUHn68G6paJa1VJmSXVKmwgzc29UkCLlmNgG3E2yZ6JoQTt
-	MuV6+u6tXmtSsNbt1a1zsJtJy3GBCpnN4wGw82jqgw12ts8iLltPncNlLNaCuN1iPh4tddy0EPNph
-	2wjvMRCtYNuEJCpUYXUvc89+O/fYgkpQjVULsNQ/L1aPJhTJK1NxB1TXDh0Wa0Eh1ENeSg6zIbUGp
-	JbX+OFRGeBaiI/k9g5ZQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=2tRMBFnauACbzBZsLkxj33arJQTc3+2WfW1+3Z/u7P8=; b=iyfRLNQOCG0VQa
+	/1/t6RpSW6R6254hzdaF+CgaIe9uG/yMfrczGgrv7zixnkRK/XcNAhUsYyRhJ4GaZuDQBhIKIQZRF
+	5yjCbMW98AkaIQ4LQ5P8Kec1u/WpcNP1fAaFk7YCv02/tg0iMmxYNvrgEAzoncXo0tZ/RZ98XfeMm
+	n9dBsDRzpcdy77mKWhP43DZl6Gd5nBGnmcWgBrTSL0SV6M58qKvFJh8QK5a+B9svEe1Fe1lQdmXab
+	QNuAjBSNIgCv95R5GR5xokZpEghq36EAEe/atZnUz+W73/FD1wBv9dAU4PFyAgo9fELAw4tyE0Frr
+	m5GGMewQ/P1ZE15GF4pA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hgVh9-0002fc-Ue; Thu, 27 Jun 2019 14:48:15 +0000
-Received: from esa5.microchip.iphmx.com ([216.71.150.166])
+	id 1hgVhX-0002qy-MZ; Thu, 27 Jun 2019 14:48:39 +0000
+Received: from esa4.microchip.iphmx.com ([68.232.154.123])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hgVgt-0002eO-Kb
+ id 1hgVgw-0002f9-2w
  for linux-arm-kernel@lists.infradead.org; Thu, 27 Jun 2019 14:48:03 +0000
-Received-SPF: Pass (esa5.microchip.iphmx.com: domain of
+Received-SPF: Pass (esa4.microchip.iphmx.com: domain of
  Claudiu.Beznea@microchip.com designates 198.175.253.82 as
  permitted sender) identity=mailfrom;
- client-ip=198.175.253.82; receiver=esa5.microchip.iphmx.com;
+ client-ip=198.175.253.82; receiver=esa4.microchip.iphmx.com;
  envelope-from="Claudiu.Beznea@microchip.com";
  x-sender="Claudiu.Beznea@microchip.com";
  x-conformance=spf_only; x-record-type="v=spf1";
@@ -34,41 +34,43 @@ Received-SPF: Pass (esa5.microchip.iphmx.com: domain of
  a:smtpout.microchip.com a:mx1.microchip.iphmx.com
  a:mx2.microchip.iphmx.com include:servers.mcsv.net
  include:mktomail.com include:spf.protection.outlook.com ~all"
-Received-SPF: None (esa5.microchip.iphmx.com: no sender
+Received-SPF: None (esa4.microchip.iphmx.com: no sender
  authenticity information available from domain of
  postmaster@email.microchip.com) identity=helo;
- client-ip=198.175.253.82; receiver=esa5.microchip.iphmx.com;
+ client-ip=198.175.253.82; receiver=esa4.microchip.iphmx.com;
  envelope-from="Claudiu.Beznea@microchip.com";
  x-sender="postmaster@email.microchip.com"; x-conformance=spf_only
-Authentication-Results: esa5.microchip.iphmx.com;
+Authentication-Results: esa4.microchip.iphmx.com;
  dkim=none (message not signed) header.i=none;
  spf=Pass smtp.mailfrom=Claudiu.Beznea@microchip.com;
  spf=None smtp.helo=postmaster@email.microchip.com;
  dmarc=pass (p=none dis=none) d=microchip.com
-X-IronPort-AV: E=Sophos;i="5.63,424,1557212400"; d="scan'208";a="37606820"
+X-IronPort-AV: E=Sophos;i="5.63,424,1557212400"; d="scan'208";a="38593185"
 Received: from smtpout.microchip.com (HELO email.microchip.com)
  ([198.175.253.82])
- by esa5.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
- 27 Jun 2019 07:47:57 -0700
+ by esa4.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
+ 27 Jun 2019 07:48:00 -0700
 Received: from chn-vm-ex01.mchp-main.com (10.10.87.71) by
- chn-vm-ex04.mchp-main.com (10.10.87.151) with Microsoft SMTP Server
+ chn-vm-ex02.mchp-main.com (10.10.87.72) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
- 15.1.1713.5; Thu, 27 Jun 2019 07:47:56 -0700
+ 15.1.1713.5; Thu, 27 Jun 2019 07:47:59 -0700
 Received: from m18063-ThinkPad-T460p.mchp-main.com (10.10.85.251) by
  chn-vm-ex01.mchp-main.com (10.10.85.143) with Microsoft SMTP Server id
- 15.1.1713.5 via Frontend Transport; Thu, 27 Jun 2019 07:47:52 -0700
+ 15.1.1713.5 via Frontend Transport; Thu, 27 Jun 2019 07:47:55 -0700
 From: Claudiu Beznea <claudiu.beznea@microchip.com>
 To: <mturquette@baylibre.com>, <sboyd@kernel.org>, <robh+dt@kernel.org>,
  <mark.rutland@arm.com>, <nicolas.ferre@microchip.com>,
  <alexandre.belloni@bootlin.com>, <ludovic.desroches@microchip.com>
-Subject: [PATCH v5 0/4] add slow clock support for SAM9X60
-Date: Thu, 27 Jun 2019 17:47:17 +0300
-Message-ID: <1561646841-7663-1-git-send-email-claudiu.beznea@microchip.com>
+Subject: [PATCH v5 1/4] clk: at91: sckc: sama5d4 has no bypass support
+Date: Thu, 27 Jun 2019 17:47:18 +0300
+Message-ID: <1561646841-7663-2-git-send-email-claudiu.beznea@microchip.com>
 X-Mailer: git-send-email 2.7.4
+In-Reply-To: <1561646841-7663-1-git-send-email-claudiu.beznea@microchip.com>
+References: <1561646841-7663-1-git-send-email-claudiu.beznea@microchip.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190627_074759_790253_03B5245D 
-X-CRM114-Status: UNSURE (   9.51  )
+X-CRM114-CacheID: sfid-20190627_074802_164001_7AB2EF6F 
+X-CRM114-Status: UNSURE (   6.76  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -76,7 +78,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [216.71.150.166 listed in list.dnswl.org]
+ medium trust [68.232.154.123 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -98,61 +100,45 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi,
+The slow clock of SAMA5D4 has no bypass support thus remove it.
 
-This series add slow clock support for SAM9X60. Apart from previous IPs, this
-one uses different offsets in control register for different functionalities.
-The series adapt current driver to work for all IPs using per IP
-configurations initialized at probe.
+Signed-off-by: Claudiu Beznea <claudiu.beznea@microchip.com>
+Acked-by: Alexandre Belloni <alexandre.belloni@bootlin.com>
+---
+ drivers/clk/at91/sckc.c | 6 ------
+ 1 file changed, 6 deletions(-)
 
-Stephen,
-
-I send a new version of this since I'm not seeing the patches on clk-next
-and I though you may had issues with the previous version of this series.
-
-Thank you,
-Claudiu Beznea
-
-Changes in v5:
-- get rid of Content-Transfer-Encoding: base64
-- collect Ack-by tag
-
-Changes in v4:
-- remove macros which were used to access IP specific bits for control
-  register
-- collect Acked-by, Reviewed-by tags
-
-Changes in v3:
-- add patch 1/1 that remove bypass code in the code specific to SAMA5D4
-  (there is no bypass support on SAMA5D4)
-- adapt review comments
-- register clock with of_clk_hw_onecell_get to emphasize that this IP has
-  2 output clocks MD_SLKC and TD_SLCK (I considered not necessary to
-  introduce new constants to be shared b/w driver and DT bindings; if
-  you consider otherwise, let me know)
-- adapt dt-binding patch with clock-cells changes (thus didn't introduced
-  Reviewed-by tag)
-- renamed struct clk_slow_offsets to struct clk_slow_bits and the
-  corresponding instances of it
-
-Changes in v2:
-- split patch 1/1 from v1 in 2 patches: one adding register bit offsets
-  support (patch 1/3 from this series), one adding support for SAM9X60
-  (patch 2/3 from this series)
-- fix compatible string from "microchip,at91sam9x60-sckc" to
-  "microchip,sam9x60-sckc"
-
-Claudiu Beznea (4):
-  clk: at91: sckc: sama5d4 has no bypass support
-  clk: at91: sckc: add support to specify registers bit offsets
-  dt-bindings: clk: at91: add bindings for SAM9X60's slow clock
-    controller
-  clk: at91: sckc: add support for SAM9X60
-
- .../devicetree/bindings/clock/at91-clock.txt       |   7 +-
- drivers/clk/at91/sckc.c                            | 173 ++++++++++++++++-----
- 2 files changed, 139 insertions(+), 41 deletions(-)
-
+diff --git a/drivers/clk/at91/sckc.c b/drivers/clk/at91/sckc.c
+index e76b1d64e905..6c55a7a86f79 100644
+--- a/drivers/clk/at91/sckc.c
++++ b/drivers/clk/at91/sckc.c
+@@ -429,7 +429,6 @@ static void __init of_sama5d4_sckc_setup(struct device_node *np)
+ 	struct clk_init_data init;
+ 	const char *xtal_name;
+ 	const char *parent_names[2] = { "slow_rc_osc", "slow_osc" };
+-	bool bypass;
+ 	int ret;
+ 
+ 	if (!regbase)
+@@ -443,8 +442,6 @@ static void __init of_sama5d4_sckc_setup(struct device_node *np)
+ 
+ 	xtal_name = of_clk_get_parent_name(np, 0);
+ 
+-	bypass = of_property_read_bool(np, "atmel,osc-bypass");
+-
+ 	osc = kzalloc(sizeof(*osc), GFP_KERNEL);
+ 	if (!osc)
+ 		return;
+@@ -459,9 +456,6 @@ static void __init of_sama5d4_sckc_setup(struct device_node *np)
+ 	osc->sckcr = regbase;
+ 	osc->startup_usec = 1200000;
+ 
+-	if (bypass)
+-		writel((readl(regbase) | AT91_SCKC_OSC32BYP), regbase);
+-
+ 	hw = &osc->hw;
+ 	ret = clk_hw_register(NULL, &osc->hw);
+ 	if (ret) {
 -- 
 2.7.4
 
