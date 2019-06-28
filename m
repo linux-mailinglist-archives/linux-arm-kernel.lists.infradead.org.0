@@ -2,54 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DBF1B59334
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 28 Jun 2019 07:08:14 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3879F59339
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 28 Jun 2019 07:10:06 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=mKcN+T1FaLaRC9xFR5FaxrUEPkeSjLAN0Iy4sSvBDFI=; b=a0tkKg80hBIl5T
-	TKQXl18am9G1qUKzV2gKMEm4xUIZQTr8nBE1CFce7S8+JGC1e6AvaV9/DLNwxOtFPVxnkq9qKrnWm
-	UhBy6GW25ErkuZkaKiVuC7p5ZOhahS2L0CkBYq3hyeBLbJjBWab+Y//y4WG0O/jyy/D3m3VZtQXlv
-	zSK19HR24Z0lbHv5nYD3DOQ6LaH1XKPddeASJuVhYd7hDBvnLzQuNoYf5+XPQGZbOidn98zic4ag0
-	tP1XBe5h37QPsPH3fDfOm4CWdorOEb0WI3eBGuW9w6lc32N4S8NwK5zH/ZlPITJ5PlxnjKku34YS8
-	cbY1Xtwq9ge4MJrh7cLg==;
+	List-Owner; bh=6zHH5YkNTS2GSKvdLAryDLPXsl8asFq9ELHhn/iBgdM=; b=BpP2da+EDB8kzc
+	28tb9Gp4yMdXjPDiMycPPSNU0JD3/FMxaXo19hc0pMHtNk/rmyCesNH7i1sirI41I89v0A01EWUfV
+	XqieAvtuN8oLT0XJaRQnkM3vGDSe3UX1/Eo57F6BVPlFEszgOaXTktsWmwaJ6a4d9OOWgPtu/ADy1
+	a8DRyhHk/RULWnBJnvh37oniv0IPTbMcFIxcStm0RpB1u5UOvsuFjufeGaEEFL2ohK7lmVbRCP8Q6
+	nx3t3fS7fMWmOzEXcwBwPHKeNLDk02X7ibPFksTDlyd+qflniG7JzLrNmoPsegRNGQAXChRRPb1E0
+	5TgOxtWAbRn0Llqci+dQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hgj7M-0003xl-JU; Fri, 28 Jun 2019 05:08:12 +0000
+	id 1hgj97-0004Mm-7q; Fri, 28 Jun 2019 05:10:01 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hgj78-0003xQ-VJ
- for linux-arm-kernel@lists.infradead.org; Fri, 28 Jun 2019 05:08:00 +0000
+ id 1hgj8s-0004MQ-90
+ for linux-arm-kernel@lists.infradead.org; Fri, 28 Jun 2019 05:09:47 +0000
 Received: from sol.localdomain (c-24-5-143-220.hsd1.ca.comcast.net
  [24.5.143.220])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 26E392086D;
- Fri, 28 Jun 2019 05:07:58 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id A85F3206E0;
+ Fri, 28 Jun 2019 05:09:45 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1561698478;
- bh=xFjUUYnHTlg0g5AYzulJrQaNU77kJnwSuVIIBo91h8E=;
+ s=default; t=1561698586;
+ bh=/peHflkrKmzjbuBmMuvUh/DLiTO8hGnUbfVTz+1n2Nc=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=Yo/rqnMJ4hlPwrOvSoY8j4fj8kRDmq/UzXkHIEsIiE55ez/1kSq9Sxw6kzUVUG87e
- Si78lWfLXiya9n/vIWVBJ7gX/mBLezd1CrKLb+sbBvcGjxcKDtZ/qLbfSBKiFHnXUW
- E85tlj7Bs+eB1YcVVsxR6PrA9SHIKThyel2Weehs=
-Date: Thu, 27 Jun 2019 22:07:56 -0700
+ b=tuUO3xjaZIWvv3Mbofdz1xB8AocKHnbI5XgL+ZE/Yrl4SQPS/oif9fvuu28wewGbF
+ y3INDtDd1R3SOBrBKOxq5TNIordgAutrhTvLNsVlaCsvqOX+YyuOx9JEfflt3KkCLq
+ PPafmL2uJvZ7PtFOxYWVbFGr29cYtAtZ3jO1gnHc=
+Date: Thu, 27 Jun 2019 22:09:44 -0700
 From: Eric Biggers <ebiggers@kernel.org>
 To: Keerthy <j-keerthy@ti.com>
-Subject: Re: [RESEND PATCH 02/10] crypto: sa2ul: Add crypto driver
-Message-ID: <20190628050756.GD673@sol.localdomain>
+Subject: Re: [RESEND PATCH 05/10] crypto: sha256_generic: Export the
+ Transform function
+Message-ID: <20190628050944.GE673@sol.localdomain>
 References: <20190628042745.28455-1-j-keerthy@ti.com>
- <20190628042745.28455-3-j-keerthy@ti.com>
+ <20190628042745.28455-6-j-keerthy@ti.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190628042745.28455-3-j-keerthy@ti.com>
+In-Reply-To: <20190628042745.28455-6-j-keerthy@ti.com>
 User-Agent: Mutt/1.12.1 (2019-06-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190627_220759_049334_12C74EEA 
-X-CRM114-Status: GOOD (  15.78  )
+X-CRM114-CacheID: sfid-20190627_220946_339345_BF5532FB 
+X-CRM114-Status: UNSURE (   8.20  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -82,71 +84,24 @@ Cc: nm@ti.com, devicetree@vger.kernel.org, herbert@gondor.apana.org.au,
  linux-kernel@vger.kernel.org, t-kristo@ti.com, robh+dt@kernel.org,
  linux-crypto@vger.kernel.org, davem@davemloft.net,
  linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gRnJpLCBKdW4gMjgsIDIwMTkgYXQgMDk6NTc6MzdBTSArMDUzMCwgS2VlcnRoeSB3cm90ZToK
-PiBUaGUgU2VjdXJpdHkgQWNjZWxlcmF0b3IgKFNBMl9VTCkgc3Vic3lzdGVtIHByb3ZpZGVzIGhh
-cmR3YXJlCj4gY3J5cHRvZ3JhcGhpYyBhY2NlbGVyYXRpb24gZm9yIHRoZSBmb2xsb3dpbmcgdXNl
-IGNhc2VzOgo+IOKAoiBFbmNyeXB0aW9uIGFuZCBhdXRoZW50aWNhdGlvbiBmb3Igc2VjdXJlIGJv
-b3QKPiDigKIgRW5jcnlwdGlvbiBhbmQgYXV0aGVudGljYXRpb24gb2YgY29udGVudCBpbiBhcHBs
-aWNhdGlvbnMKPiAgIHJlcXVpcmluZyBEUk0gKGRpZ2l0YWwgcmlnaHRzIG1hbmFnZW1lbnQpIGFu
-ZAo+ICAgY29udGVudC9hc3NldCBwcm90ZWN0aW9uCj4gVGhlIGRldmljZSBpbmNsdWRlcyBvbmUg
-aW5zdGFudGlhdGlvbiBvZiBTQTJfVUwgbmFtZWQgU0EyX1VMMAo+IAo+IFNBMl9VTCBzdXBwb3J0
-cyB0aGUgZm9sbG93aW5nIGNyeXB0b2dyYXBoaWMgaW5kdXN0cnkgc3RhbmRhcmRzIHRvIGVuYWJs
-ZSBkYXRhIGF1dGhlbnRpY2F0aW9uLCBkYXRhCj4gaW50ZWdyaXR5IGFuZCBkYXRhIGNvbmZpZGVu
-dGlhbGl0eS4KPiAKPiBDcnlwdG8gZnVuY3Rpb24gbGlicmFyeSBmb3Igc29mdHdhcmUgYWNjZWxl
-cmF0aW9uCj4gbyBBRVMgb3BlcmF0aW9uCj4gbyAzREVTIG9wZXJhdGlvbgo+IG8gU0hBMSBvcGVy
-YXRpb24KPiBvIE1ENSBvcGVyYXRpb24KPiBvIFNIQTIg4oCTIDIyNCwgMjU2LCAzODQsIDUxMiBv
-cGVyYXRpb24KPiAKPiBBdXRoZW50aWNhdGlvbiBzdXBwb3J0ZWQgdmlhIGZvbGxvd2luZyBoYXJk
-d2FyZSBjb3Jlcwo+IG8gU0hBMQo+IG8gTUQ1Cj4gbyBTSEEyIC0yMjQKPiBvIFNIQTItMjU2Cj4g
-byBTSEEyLTM4NAo+IG8gU0hBMi01MTIKCldoYXQgYWJvdXQgSE1BQz8gIAoKWW91ciBhY3R1YWwg
-ZHJpdmVyIG9ubHkgZXhwb3NlcyBITUFDLVNIQSosIG5vdCBTSEEqIGFueXRoaW5nLgoKV2hhdCBk
-b2VzIHRoZSBoYXJkd2FyZSBhY3R1YWxseSBzdXBwb3J0PwoKPiBkaWZmIC0tZ2l0IGEvZHJpdmVy
-cy9jcnlwdG8vS2NvbmZpZyBiL2RyaXZlcnMvY3J5cHRvL0tjb25maWcKPiBpbmRleCA2MDM0MTNm
-MjhmYTMuLmI5YTNmYTAyNmM3NCAxMDA2NDQKPiAtLS0gYS9kcml2ZXJzL2NyeXB0by9LY29uZmln
-Cj4gKysrIGIvZHJpdmVycy9jcnlwdG8vS2NvbmZpZwo+IEBAIC03ODUsNCArNzg1LDIxIEBAIGNv
-bmZpZyBDUllQVE9fREVWX0NDUkVFCj4gIAo+ICBzb3VyY2UgImRyaXZlcnMvY3J5cHRvL2hpc2ls
-aWNvbi9LY29uZmlnIgo+ICAKPiArY29uZmlnIENSWVBUT19ERVZfU0EyVUwKPiArCXRyaXN0YXRl
-ICJTdXBwb3J0IGZvciBUSSBzZWN1cml0eSBhY2NlbGVyYXRvciIKPiArCWRlcGVuZHMgb24gQVJD
-SF9LMyB8fCBDT01QSUxFX1RFU1QKPiArCXNlbGVjdCBBUk02NF9DUllQVE8KPiArCXNlbGVjdCBD
-UllQVE9fQUVTCj4gKwlzZWxlY3QgQ1JZUFRPX0FFU19BUk02NAo+ICsJc2VsZWN0IENSWVBUT19T
-SEExCj4gKwlzZWxlY3QgQ1JZUFRPX01ENQo+ICsJc2VsZWN0IENSWVBUT19BTEdBUEkKPiArCXNl
-bGVjdCBDUllQVE9fQVVUSEVOQwo+ICsJc2VsZWN0IEhXX1JBTkRPTQo+ICsJZGVmYXVsdCBtIGlm
-IEFSQ0hfSzMKPiArCWhlbHAKPiArCSAgS2V5c3RvbmUgZGV2aWNlcyBpbmNsdWRlIGEgc2VjdXJp
-dHkgYWNjZWxlcmF0b3IgZW5naW5lIHRoYXQgbWF5IGJlCj4gKwkgIHVzZWQgZm9yIGNyeXB0byBv
-ZmZsb2FkLiAgU2VsZWN0IHRoaXMgaWYgeW91IHdhbnQgdG8gdXNlIGhhcmR3YXJlCj4gKwkgIGFj
-Y2VsZXJhdGlvbiBmb3IgY3J5cHRvZ3JhcGhpYyBhbGdvcml0aG1zIG9uIHRoZXNlIGRldmljZXMu
-CgpUaGlzIHNob3VsZG4ndCBiZSBlbmFibGVkIGJ5IGRlZmF1bHQuICBOb3RlIHRoYXQgYXJtNjQg
-ZGVmY29uZmlnIHNldHMgQVJDSF9LMyBhcwp3ZWxsIGFzIGxvdHMgb2Ygb3RoZXIgQVJDSF8qIG9w
-dGlvbnMsIHNvIGNsZWFybHkganVzdCBiZWNhdXNlIEFSQ0hfSzMgaXMgc2V0CmRvZXNuJ3QgbWVh
-biB0aGUga2VybmVsIGlzIGJlaW5nIGJ1aWx0IHNwZWNpZmljYWxseSBmb3IgeW91ciBwbGF0Zm9y
-bS4KCj4gKy8qCj4gKyAqIE1vZGUgQ29udHJvbCBJbnN0cnVjdGlvbnMgZm9yIHZhcmlvdXMgS2V5
-IGxlbmd0aHMgMTI4LCAxOTIsIDI1Ngo+ICsgKiBGb3IgQ0JDIChDaXBoZXIgQmxvY2sgQ2hhaW5p
-bmcpIG1vZGUgZm9yIGVuY3J5cHRpb24KPiArICovCj4gK3N0YXRpYyB1OCBtY2lfY2JjX2VuY19h
-cnJheVszXVtNT0RFX0NPTlRST0xfQllURVNdID0gewo+ICsJewkweDIxLCAweDAwLCAweDAwLCAw
-eDE4LCAweDg4LCAweDBhLCAweGFhLCAweDRiLCAweDdlLCAweDAwLAo+ICsJCTB4MDAsIDB4MDAs
-IDB4MDAsIDB4MDAsIDB4MDAsIDB4MDAsIDB4MDAsIDB4MDAsIDB4MDAsIDB4MDAsCj4gKwkJMHgw
-MCwgMHgwMCwgMHgwMCwgMHgwMCwgMHgwMCwgMHgwMCwgMHgwMAl9LAo+ICsJewkweDIxLCAweDAw
-LCAweDAwLCAweDE4LCAweDg4LCAweDRhLCAweGFhLCAweDRiLCAweDdlLCAweDAwLAo+ICsJCTB4
-MDAsIDB4MDAsIDB4MDAsIDB4MDAsIDB4MDAsIDB4MDAsIDB4MDAsIDB4MDAsIDB4MDAsIDB4MDAs
-Cj4gKwkJMHgwMCwgMHgwMCwgMHgwMCwgMHgwMCwgMHgwMCwgMHgwMCwgMHgwMAl9LAo+ICsJewkw
-eDIxLCAweDAwLCAweDAwLCAweDE4LCAweDg4LCAweDhhLCAweGFhLCAweDRiLCAweDdlLCAweDAw
-LAo+ICsJCTB4MDAsIDB4MDAsIDB4MDAsIDB4MDAsIDB4MDAsIDB4MDAsIDB4MDAsIDB4MDAsIDB4
-MDAsIDB4MDAsCj4gKwkJMHgwMCwgMHgwMCwgMHgwMCwgMHgwMCwgMHgwMCwgMHgwMCwgMHgwMAl9
-LAo+ICt9OwoKVXNlICdjb25zdCcgZm9yIHN0YXRpYyBjb25zdGFudHMuCgo+ICtzdGF0aWMgaW50
-IHNhX2Flc19jYmNfc2V0a2V5KHN0cnVjdCBjcnlwdG9fYWJsa2NpcGhlciAqdGZtLCBjb25zdCB1
-OCAqa2V5LAo+ICsJCQkgICAgIHVuc2lnbmVkIGludCBrZXlsZW4pCj4gK3sKPiArCXN0cnVjdCBh
-bGdvX2RhdGEgKmFkID0ga3phbGxvYyhzaXplb2YoKmFkKSwgR0ZQX0tFUk5FTCk7CgpOZWVkIHRv
-IGNoZWNrIGZyb20gZXJyb3IgZm9yIGFsbCBtZW1vcnkgYWxsb2NhdGlvbnMuCgo+ICtzdGF0aWMg
-c3RydWN0IHNhX2FsZ190bXBsIHNhX2FsZ3NbXSA9IHsKPiArCXsudHlwZSA9IENSWVBUT19BTEdf
-VFlQRV9BQkxLQ0lQSEVSLAoKYWJsa2NpcGhlciBBUEkgaXMgZGVwcmVjYXRlZC4gIFVzZSBza2Np
-cGhlciBpbnN0ZWFkLgoKKFRvIGJlIGNsZWFyLCB0aGVzZSBhcmUganVzdCBhIGZldyB0aGluZ3Mg
-SSBoYXBwZW5lZCB0byBub3RpY2UgZnJvbSB2ZXJ5IHF1aWNrbHkKc2tpbW1pbmcgdGhyb3VnaCB0
-aGlzIHBhdGNoLiAgSSBkb24ndCBoYXZlIHRpbWUgdG8gZG8gYSBwcm9wZXIgcmV2aWV3IG9mIHJh
-bmRvbQpkcml2ZXJzLikKCi0gRXJpYwoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtl
-cm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxt
-YW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
+On Fri, Jun 28, 2019 at 09:57:40AM +0530, Keerthy wrote:
+> The transform function can be used as is by other crypto
+> drivers that need to transform the 256 bit key using cpu.
+> Hence export it.
+
+What is this supposed to mean?  SHA-256 is an unkeyed hash function.
+
+Also, you need to actually explain why this is needed.  If your hardware
+supports SHA-256, why do you need to use the C sha256_transform()?
+
+- Eric
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
