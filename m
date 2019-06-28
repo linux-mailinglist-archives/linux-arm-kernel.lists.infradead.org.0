@@ -2,65 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 75C1359206
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 28 Jun 2019 05:37:34 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3816F59210
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 28 Jun 2019 05:40:19 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=5Qtt66/j1xf5yZrzitaVcFBk78p3htssEHYwXX8EDjE=; b=dqwPCwvVVV1QH0JfTsHVvILT6f
-	fTtuzgqCULB9/EtRKZH0VBO+JaZ/YmK+10Pt2BsxH2OZRor8gAtfKzJwId0JEmBotqmy2LGpBwZoK
-	ncsJ8RCfkEuEFdh6GkSHxaPNALFyyarqpFSR4eBTyyzlZFGyueMKmCkqhmZ1xj9WRuVL5SC8TNos3
-	CYsf1k1nbH5R3Kel4L8h3Zb5wYAJq7X4og9gnp5eolOTFx/DTVy3Wr/RIe4WGKbRjWlhhoNr9aceV
-	2DvBgKAHLBJlWSGga56Mlla8KofTE/iTbxa6BbDlzjOKdiUtA/ZNo4Bs9BVKkqzB23GTaQLe66R3C
-	dWU/j81w==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=8GAixaJRxopqqTOy04TVmxQ7aGelieHffACyu7AbgNk=; b=ouD
+	xcgyqOvzoLACcQrYztL8sSKDWwJ+bVPt2VBxePhsGDgByXNHgUmv8g6c2qhBNY0Airz9iU7sVziSt
+	OuLgtaKGUyX/EtAtHh3n+CEXpFnuh7RPa3xCAvIMv/Kn/Guuy1wbhoOgobRshftiC97zk9YxPsStT
+	4Dft832yq0nM7JHRA7nHjUhLj9BbppLbJ7G47x33bEdAf3gdnu9np/eMV23oCABnZi7vgWEHePuKr
+	hKj++Indq9pLaCQZpvausvzrzbkRc5oIkpz92WtJlLZQ8FMQIPy0MukKx+orNKHs5jaX0IvN7cRZq
+	2TqUI4jCPeeHO1vjvwLjmhoUJd9rTpQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hghha-00011s-KJ; Fri, 28 Jun 2019 03:37:30 +0000
-Received: from inva020.nxp.com ([92.121.34.13])
+	id 1hghkG-0001tM-VY; Fri, 28 Jun 2019 03:40:17 +0000
+Received: from inva021.nxp.com ([92.121.34.21])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hghhK-00010k-Ix
- for linux-arm-kernel@lists.infradead.org; Fri, 28 Jun 2019 03:37:16 +0000
-Received: from inva020.nxp.com (localhost [127.0.0.1])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 410E91A0DAE;
- Fri, 28 Jun 2019 05:37:13 +0200 (CEST)
+ id 1hghjv-0001sF-7B
+ for linux-arm-kernel@lists.infradead.org; Fri, 28 Jun 2019 03:39:56 +0000
+Received: from inva021.nxp.com (localhost [127.0.0.1])
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id DEF1E200307;
+ Fri, 28 Jun 2019 05:39:53 +0200 (CEST)
 Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
  [165.114.16.14])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 7156B1A1043;
- Fri, 28 Jun 2019 05:37:03 +0200 (CEST)
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id E19A2200304;
+ Fri, 28 Jun 2019 05:39:42 +0200 (CEST)
 Received: from titan.ap.freescale.net (TITAN.ap.freescale.net [10.192.208.233])
- by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 71D67402B3;
- Fri, 28 Jun 2019 11:36:51 +0800 (SGT)
+ by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id DE51D402F6;
+ Fri, 28 Jun 2019 11:39:29 +0800 (SGT)
 From: Anson.Huang@nxp.com
-To: robh+dt@kernel.org, mark.rutland@arm.com, shawnguo@kernel.org,
- s.hauer@pengutronix.de, kernel@pengutronix.de, festevam@gmail.com,
- leonard.crestez@nxp.com, viresh.kumar@linaro.org, ping.bai@nxp.com,
- daniel.baluta@nxp.com, l.stach@pengutronix.de, abel.vesa@nxp.com,
- andrew.smirnov@gmail.com, ccaione@baylibre.com, angus@akkea.ca,
- agx@sigxcpu.org, devicetree@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
-Subject: [PATCH 2/2] arm64: dts: imx8mm: Correct OPP table according to latest
- datasheet
-Date: Fri, 28 Jun 2019 11:28:00 +0800
-Message-Id: <20190628032800.8428-2-Anson.Huang@nxp.com>
+To: daniel.lezcano@linaro.org, tglx@linutronix.de, robh+dt@kernel.org,
+ mark.rutland@arm.com, shawnguo@kernel.org, s.hauer@pengutronix.de,
+ kernel@pengutronix.de, festevam@gmail.com, leonard.crestez@nxp.com,
+ viresh.kumar@linaro.org, daniel.baluta@nxp.com, ping.bai@nxp.com,
+ l.stach@pengutronix.de, abel.vesa@nxp.com, andrew.smirnov@gmail.com,
+ ccaione@baylibre.com, angus@akkea.ca, agx@sigxcpu.org,
+ linux-kernel@vger.kernel.org, devicetree@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
+Subject: [PATCH V3 1/5] clocksource: timer-of: Support getting clock frequency
+ from DT
+Date: Fri, 28 Jun 2019 11:30:37 +0800
+Message-Id: <20190628033041.8513-1-Anson.Huang@nxp.com>
 X-Mailer: git-send-email 2.14.1
-In-Reply-To: <20190628032800.8428-1-Anson.Huang@nxp.com>
-References: <20190628032800.8428-1-Anson.Huang@nxp.com>
 X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190627_203714_768772_E1F2FE71 
-X-CRM114-Status: UNSURE (   9.58  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190627_203955_632516_7A2A1A6A 
+X-CRM114-Status: GOOD (  13.87  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [92.121.34.13 listed in list.dnswl.org]
+ medium trust [92.121.34.21 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -83,32 +80,106 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Anson Huang <Anson.Huang@nxp.com>
 
-According to latest datasheet (Rev.0.2, 04/2019) from below links,
-1.8GHz is ONLY available for consumer part, so the market segment
-bits for 1.8GHz opp should ONLY available for consumer part accordingly.
+More and more platforms use platform driver model for clock driver,
+so the clock driver is NOT ready during timer initialization phase,
+it will cause timer initialization failed.
 
-https://www.nxp.com/docs/en/data-sheet/IMX8MMIEC.pdf
-https://www.nxp.com/docs/en/data-sheet/IMX8MMCEC.pdf
+To support those platforms with upper scenario, introducing a new
+flag TIMER_OF_CLOCK_FREQUENCY which is mutually exclusive with
+TIMER_OF_CLOCK flag to support getting timer clock frequency from
+DT, then of_clk operations can be skipped.
 
-Fixes: f403a26c865b (arm64: dts: imx8mm: Add cpu speed grading and all OPPs)
+User needs to select either TIMER_OF_CLOCK_FREQUENCY or TIMER_OF_CLOCK
+flag if want to use timer-of driver to initialize the clock rate,
+and the corresponding clock name or property name needs to be specified.
+
 Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
 ---
- arch/arm64/boot/dts/freescale/imx8mm.dtsi | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+New patch:
+	- Add new flag of TIMER_OF_CLOCK_FREQUENCY, mutually exclusive with TIMER_OF_CLOCK, to support
+	  getting clock frequency from DT directly;
+	- Add prop_name to of_timer_clk structure, if using TIMER_OF_CLOCK_FREQUENCY flag, user needs
+	  to pass the property name for timer-of driver to get clock frequency from DT, this is to avoid
+	  the couple of timer-of driver and DT, so timer-of driver does NOT use a fixed property name.
+---
+ drivers/clocksource/timer-of.c | 23 +++++++++++++++++++++++
+ drivers/clocksource/timer-of.h |  8 +++++---
+ 2 files changed, 28 insertions(+), 3 deletions(-)
 
-diff --git a/arch/arm64/boot/dts/freescale/imx8mm.dtsi b/arch/arm64/boot/dts/freescale/imx8mm.dtsi
-index c38813d..ab0d135 100644
---- a/arch/arm64/boot/dts/freescale/imx8mm.dtsi
-+++ b/arch/arm64/boot/dts/freescale/imx8mm.dtsi
-@@ -135,7 +135,7 @@
- 			opp-hz = /bits/ 64 <1800000000>;
- 			opp-microvolt = <1000000>;
- 			/* Consumer only but rely on speed grading */
--			opp-supported-hw = <0x8>, <0x7>;
-+			opp-supported-hw = <0x8>, <0x3>;
- 			clock-latency-ns = <150000>;
- 		};
- 	};
+diff --git a/drivers/clocksource/timer-of.c b/drivers/clocksource/timer-of.c
+index 8054228..c91a8b6 100644
+--- a/drivers/clocksource/timer-of.c
++++ b/drivers/clocksource/timer-of.c
+@@ -161,6 +161,21 @@ static __init int timer_of_base_init(struct device_node *np,
+ 	return 0;
+ }
+ 
++static __init int timer_of_clk_frequency_init(struct device_node *np,
++					      struct of_timer_clk *of_clk)
++{
++	int ret;
++	u32 rate;
++
++	ret = of_property_read_u32(np, of_clk->prop_name, &rate);
++	if (!ret) {
++		of_clk->rate = rate;
++		of_clk->period = DIV_ROUND_UP(rate, HZ);
++	}
++
++	return ret;
++}
++
+ int __init timer_of_init(struct device_node *np, struct timer_of *to)
+ {
+ 	int ret = -EINVAL;
+@@ -178,6 +193,11 @@ int __init timer_of_init(struct device_node *np, struct timer_of *to)
+ 		if (ret)
+ 			goto out_fail;
+ 		flags |= TIMER_OF_CLOCK;
++	} else if (to->flags & TIMER_OF_CLOCK_FREQUENCY) {
++		ret = timer_of_clk_frequency_init(np, &to->of_clk);
++		if (ret)
++			goto out_fail;
++		flags |= TIMER_OF_CLOCK_FREQUENCY;
+ 	}
+ 
+ 	if (to->flags & TIMER_OF_IRQ) {
+@@ -201,6 +221,9 @@ int __init timer_of_init(struct device_node *np, struct timer_of *to)
+ 	if (flags & TIMER_OF_CLOCK)
+ 		timer_of_clk_exit(&to->of_clk);
+ 
++	if (flags & TIMER_OF_CLOCK_FREQUENCY)
++		to->of_clk.rate = 0;
++
+ 	if (flags & TIMER_OF_BASE)
+ 		timer_of_base_exit(&to->of_base);
+ 	return ret;
+diff --git a/drivers/clocksource/timer-of.h b/drivers/clocksource/timer-of.h
+index a5478f3..f1a083e 100644
+--- a/drivers/clocksource/timer-of.h
++++ b/drivers/clocksource/timer-of.h
+@@ -4,9 +4,10 @@
+ 
+ #include <linux/clockchips.h>
+ 
+-#define TIMER_OF_BASE	0x1
+-#define TIMER_OF_CLOCK	0x2
+-#define TIMER_OF_IRQ	0x4
++#define TIMER_OF_BASE			0x1
++#define TIMER_OF_CLOCK			0x2
++#define TIMER_OF_IRQ			0x4
++#define TIMER_OF_CLOCK_FREQUENCY	0x8
+ 
+ struct of_timer_irq {
+ 	int irq;
+@@ -26,6 +27,7 @@ struct of_timer_base {
+ struct of_timer_clk {
+ 	struct clk *clk;
+ 	const char *name;
++	const char *prop_name;
+ 	int index;
+ 	unsigned long rate;
+ 	unsigned long period;
 -- 
 2.7.4
 
