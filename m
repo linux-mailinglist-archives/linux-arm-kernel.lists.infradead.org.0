@@ -2,37 +2,37 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4E1F159A81
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 28 Jun 2019 14:21:17 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9174259B4A
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 28 Jun 2019 14:32:12 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=GV7hUoRxuxmHDCx9OrxP/pE+dMwOf5vRcoQoZRTdDCE=; b=k9KRqMCPpwKPWN
-	U1LlFMya/OsjZNhAwaNmAPzVkumRtk6Fuc0p4T1hgWHm85Wc96fasVbKPzVyEtB/LdIbxmk7bTdf3
-	kPCpzHvKfULWxqCuuAVE7RWmj4+DjQkHfa2L318jJgNP2F2rjpGlI7/2yWUoEoyJNUTUrLIxMDJpB
-	C1SsTBhtyL7RhZjSlshqRMwlMWabt8nriUDlTiKsisxogofpHhlCzubzpek7V06B61Q3K6TNYHKvb
-	bmabNbtv1m36pQC8akpw+Wn6jmzPD+IU1HrQf6ehsOb8cOWEA6Jj5FYs8EI2VhuqKlrzN+YEaUej/
-	zsbcHFS+S94oZ9TpO8Zw==;
+	List-Owner; bh=QY3Xj+pmiwhgg0cDDwkR4GIWRkZSMLLcekkuGfoysfE=; b=HjkJsZzmqayIEr
+	ME+6WUWhfpFW5xWdwShGCwW/R1ZLV8s16TGwk2cVPxJpVdo1JlG/bTjVJhIcMRfvSfHy94vqa6LUA
+	Llo2tt/uVImN27z1tfox3dnRi2htXO3TsdcSaNrIDa/CLFdDpzF3Tpmj5Rib/bPcanF7Cztw84Tv7
+	O+wFIsKkzSI+K8azeQ0wTy7GxdBh5l9AzoKdMeglMC3EaPr8vuSK+yQaJgCQJ+KdfpKu6GN9y8Em8
+	iJ+x5SOiE3YR8FdM/Wx43obmnULwt2GsXqTRNuK0Brk86k0woINcXseB/6cDHd3wIPAQlPdmBD84w
+	zRWTj66G/aKw+mJHZfsQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hgpsM-0000GL-6G; Fri, 28 Jun 2019 12:21:10 +0000
+	id 1hgq2y-00065u-MQ; Fri, 28 Jun 2019 12:32:08 +0000
 Received: from [186.213.242.156] (helo=bombadil.infradead.org)
  by bombadil.infradead.org with esmtpsa (Exim 4.92 #3 (Red Hat Linux))
- id 1hgprw-0000AQ-1F; Fri, 28 Jun 2019 12:20:44 +0000
+ id 1hgq1U-00054r-2s; Fri, 28 Jun 2019 12:30:36 +0000
 Received: from mchehab by bombadil.infradead.org with local (Exim 4.92)
  (envelope-from <mchehab@bombadil.infradead.org>)
- id 1hgpru-00059r-3y; Fri, 28 Jun 2019 09:20:42 -0300
+ id 1hgq1R-0005Qz-Va; Fri, 28 Jun 2019 09:30:33 -0300
 From: Mauro Carvalho Chehab <mchehab+samsung@kernel.org>
 To: Linux Doc Mailing List <linux-doc@vger.kernel.org>
-Subject: [PATCH 38/43] docs: perf: convert to ReST
-Date: Fri, 28 Jun 2019 09:20:34 -0300
-Message-Id: <f983005d7d210802a75dbcf48259ccf3346cc94e.1561723980.git.mchehab+samsung@kernel.org>
+Subject: [PATCH 01/39] docs: thermal: add it to the driver API
+Date: Fri, 28 Jun 2019 09:29:54 -0300
+Message-Id: <c9c7d7e0567aed7e36c4eb9c09ddfb6274913e9c.1561724493.git.mchehab+samsung@kernel.org>
 X-Mailer: git-send-email 2.21.0
-In-Reply-To: <cover.1561723979.git.mchehab+samsung@kernel.org>
-References: <cover.1561723979.git.mchehab+samsung@kernel.org>
+In-Reply-To: <cover.1561724493.git.mchehab+samsung@kernel.org>
+References: <cover.1561724493.git.mchehab+samsung@kernel.org>
 MIME-Version: 1.0
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -45,356 +45,208 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Jonathan Corbet <corbet@lwn.net>,
- linux-arm-msm@vger.kernel.org, linux-kernel@vger.kernel.org,
- Mauro Carvalho Chehab <mchehab@infradead.org>, Andy Gross <agross@kernel.org>,
- Mauro Carvalho Chehab <mchehab+samsung@kernel.org>,
- Will Deacon <will@kernel.org>, linux-arm-kernel@lists.infradead.org
+Cc: linux-samsung-soc@vger.kernel.org, Jonathan Corbet <corbet@lwn.net>,
+ Viresh Kumar <viresh.kumar@linaro.org>,
+ Amit Daniel Kachhap <amit.kachhap@gmail.com>,
+ Daniel Lezcano <daniel.lezcano@linaro.org>, linux-kernel@vger.kernel.org,
+ Krzysztof Kozlowski <krzk@kernel.org>,
+ Mauro Carvalho Chehab <mchehab@infradead.org>,
+ Eduardo Valentin <edubezval@gmail.com>, Kukjin Kim <kgene@kernel.org>,
+ linux-pm@vger.kernel.org, Mauro Carvalho Chehab <mchehab+samsung@kernel.org>,
+ Zhang Rui <rui.zhang@intel.com>, Javi Merino <javi.merino@kernel.org>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Rename the perf documentation files to ReST, add an
-index for them and adjust in order to produce a nice html
-output via the Sphinx build system.
-
-At its new index.rst, let's add a :orphan: while this is not linked to
-the main index.rst file, in order to avoid build warnings.
+The file contents mostly describes driver internals.
 
 Signed-off-by: Mauro Carvalho Chehab <mchehab+samsung@kernel.org>
 ---
- .../perf/{arm-ccn.txt => arm-ccn.rst}         | 18 +++++-----
- .../perf/{arm_dsu_pmu.txt => arm_dsu_pmu.rst} |  5 +--
- .../perf/{hisi-pmu.txt => hisi-pmu.rst}       | 35 +++++++++++--------
- Documentation/perf/index.rst                  | 16 +++++++++
- .../perf/{qcom_l2_pmu.txt => qcom_l2_pmu.rst} |  3 +-
- .../perf/{qcom_l3_pmu.txt => qcom_l3_pmu.rst} |  3 +-
- .../{thunderx2-pmu.txt => thunderx2-pmu.rst}  | 25 ++++++-------
- .../perf/{xgene-pmu.txt => xgene-pmu.rst}     |  3 +-
- MAINTAINERS                                   |  4 +--
- drivers/perf/qcom_l3_pmu.c                    |  2 +-
- 10 files changed, 72 insertions(+), 42 deletions(-)
- rename Documentation/perf/{arm-ccn.txt => arm-ccn.rst} (86%)
- rename Documentation/perf/{arm_dsu_pmu.txt => arm_dsu_pmu.rst} (92%)
- rename Documentation/perf/{hisi-pmu.txt => hisi-pmu.rst} (73%)
- create mode 100644 Documentation/perf/index.rst
- rename Documentation/perf/{qcom_l2_pmu.txt => qcom_l2_pmu.rst} (94%)
- rename Documentation/perf/{qcom_l3_pmu.txt => qcom_l3_pmu.rst} (93%)
- rename Documentation/perf/{thunderx2-pmu.txt => thunderx2-pmu.rst} (73%)
- rename Documentation/perf/{xgene-pmu.txt => xgene-pmu.rst} (96%)
+ Documentation/driver-api/index.rst                   |  1 +
+ .../{ => driver-api}/thermal/cpu-cooling-api.rst     |  0
+ .../{ => driver-api}/thermal/exynos_thermal.rst      |  0
+ .../thermal/exynos_thermal_emulation.rst             |  0
+ Documentation/{ => driver-api}/thermal/index.rst     |  2 --
+ .../{ => driver-api}/thermal/intel_powerclamp.rst    |  0
+ .../{ => driver-api}/thermal/nouveau_thermal.rst     |  0
+ .../{ => driver-api}/thermal/power_allocator.rst     |  0
+ Documentation/{ => driver-api}/thermal/sysfs-api.rst | 12 ++++++------
+ .../thermal/x86_pkg_temperature_thermal.rst          |  2 +-
+ MAINTAINERS                                          |  2 +-
+ include/linux/thermal.h                              |  4 ++--
+ 12 files changed, 11 insertions(+), 12 deletions(-)
+ rename Documentation/{ => driver-api}/thermal/cpu-cooling-api.rst (100%)
+ rename Documentation/{ => driver-api}/thermal/exynos_thermal.rst (100%)
+ rename Documentation/{ => driver-api}/thermal/exynos_thermal_emulation.rst (100%)
+ rename Documentation/{ => driver-api}/thermal/index.rst (95%)
+ rename Documentation/{ => driver-api}/thermal/intel_powerclamp.rst (100%)
+ rename Documentation/{ => driver-api}/thermal/nouveau_thermal.rst (100%)
+ rename Documentation/{ => driver-api}/thermal/power_allocator.rst (100%)
+ rename Documentation/{ => driver-api}/thermal/sysfs-api.rst (98%)
+ rename Documentation/{ => driver-api}/thermal/x86_pkg_temperature_thermal.rst (94%)
 
-diff --git a/Documentation/perf/arm-ccn.txt b/Documentation/perf/arm-ccn.rst
-similarity index 86%
-rename from Documentation/perf/arm-ccn.txt
-rename to Documentation/perf/arm-ccn.rst
-index 15cdb7bc57c3..832b0c64023a 100644
---- a/Documentation/perf/arm-ccn.txt
-+++ b/Documentation/perf/arm-ccn.rst
-@@ -1,3 +1,4 @@
-+==========================
- ARM Cache Coherent Network
- ==========================
+diff --git a/Documentation/driver-api/index.rst b/Documentation/driver-api/index.rst
+index 0dbaa987aa11..4e503e360860 100644
+--- a/Documentation/driver-api/index.rst
++++ b/Documentation/driver-api/index.rst
+@@ -56,6 +56,7 @@ available subsections can be seen below.
+    dmaengine/index
+    slimbus
+    soundwire/index
++   thermal/index
+    fpga/index
+    acpi/index
+    generic-counter
+diff --git a/Documentation/thermal/cpu-cooling-api.rst b/Documentation/driver-api/thermal/cpu-cooling-api.rst
+similarity index 100%
+rename from Documentation/thermal/cpu-cooling-api.rst
+rename to Documentation/driver-api/thermal/cpu-cooling-api.rst
+diff --git a/Documentation/thermal/exynos_thermal.rst b/Documentation/driver-api/thermal/exynos_thermal.rst
+similarity index 100%
+rename from Documentation/thermal/exynos_thermal.rst
+rename to Documentation/driver-api/thermal/exynos_thermal.rst
+diff --git a/Documentation/thermal/exynos_thermal_emulation.rst b/Documentation/driver-api/thermal/exynos_thermal_emulation.rst
+similarity index 100%
+rename from Documentation/thermal/exynos_thermal_emulation.rst
+rename to Documentation/driver-api/thermal/exynos_thermal_emulation.rst
+diff --git a/Documentation/thermal/index.rst b/Documentation/driver-api/thermal/index.rst
+similarity index 95%
+rename from Documentation/thermal/index.rst
+rename to Documentation/driver-api/thermal/index.rst
+index 8c1c00146cad..68ceb6886561 100644
+--- a/Documentation/thermal/index.rst
++++ b/Documentation/driver-api/thermal/index.rst
+@@ -1,5 +1,3 @@
+-:orphan:
+-
+ =======
+ Thermal
+ =======
+diff --git a/Documentation/thermal/intel_powerclamp.rst b/Documentation/driver-api/thermal/intel_powerclamp.rst
+similarity index 100%
+rename from Documentation/thermal/intel_powerclamp.rst
+rename to Documentation/driver-api/thermal/intel_powerclamp.rst
+diff --git a/Documentation/thermal/nouveau_thermal.rst b/Documentation/driver-api/thermal/nouveau_thermal.rst
+similarity index 100%
+rename from Documentation/thermal/nouveau_thermal.rst
+rename to Documentation/driver-api/thermal/nouveau_thermal.rst
+diff --git a/Documentation/thermal/power_allocator.rst b/Documentation/driver-api/thermal/power_allocator.rst
+similarity index 100%
+rename from Documentation/thermal/power_allocator.rst
+rename to Documentation/driver-api/thermal/power_allocator.rst
+diff --git a/Documentation/thermal/sysfs-api.rst b/Documentation/driver-api/thermal/sysfs-api.rst
+similarity index 98%
+rename from Documentation/thermal/sysfs-api.rst
+rename to Documentation/driver-api/thermal/sysfs-api.rst
+index e4930761d3e5..fab2c9b36d08 100644
+--- a/Documentation/thermal/sysfs-api.rst
++++ b/Documentation/driver-api/thermal/sysfs-api.rst
+@@ -552,7 +552,7 @@ emul_temp
+ sustainable_power
+ 	An estimate of the sustained power that can be dissipated by
+ 	the thermal zone. Used by the power allocator governor. For
+-	more information see Documentation/thermal/power_allocator.rst
++	more information see Documentation/driver-api/thermal/power_allocator.rst
  
-@@ -29,6 +30,7 @@ Crosspoint watchpoint-based events (special "event" value 0xfe)
- require "xp" and "vc" as as above plus "port" (device port index),
- "dir" (transmit/receive direction), comparator values ("cmp_l"
- and "cmp_h") and "mask", being index of the comparator mask.
-+
- Masks are defined separately from the event description
- (due to limited number of the config values) in the "cmp_mask"
- directory, with first 8 configurable by user and additional
-@@ -44,16 +46,16 @@ request the events on this processor (if not, the perf_event->cpu value
- will be overwritten anyway). In case of this processor being offlined,
- the events are migrated to another one and the attribute is updated.
+ 	Unit: milliwatts
  
--Example of perf tool use:
-+Example of perf tool use::
+@@ -563,7 +563,7 @@ k_po
+ 	controller during temperature overshoot. Temperature overshoot
+ 	is when the current temperature is above the "desired
+ 	temperature" trip point. For more information see
+-	Documentation/thermal/power_allocator.rst
++	Documentation/driver-api/thermal/power_allocator.rst
  
--/ # perf list | grep ccn
--  ccn/cycles/                                        [Kernel PMU event]
--<...>
--  ccn/xp_valid_flit,xp=?,port=?,vc=?,dir=?/          [Kernel PMU event]
--<...>
-+  / # perf list | grep ccn
-+    ccn/cycles/                                        [Kernel PMU event]
-+  <...>
-+    ccn/xp_valid_flit,xp=?,port=?,vc=?,dir=?/          [Kernel PMU event]
-+  <...>
+ 	RW, Optional
  
--/ # perf stat -a -e ccn/cycles/,ccn/xp_valid_flit,xp=1,port=0,vc=1,dir=1/ \
--                                                                       sleep 1
-+  / # perf stat -a -e ccn/cycles/,ccn/xp_valid_flit,xp=1,port=0,vc=1,dir=1/ \
-+                                                                         sleep 1
+@@ -572,7 +572,7 @@ k_pu
+ 	controller during temperature undershoot. Temperature undershoot
+ 	is when the current temperature is below the "desired
+ 	temperature" trip point. For more information see
+-	Documentation/thermal/power_allocator.rst
++	Documentation/driver-api/thermal/power_allocator.rst
  
- The driver does not support sampling, therefore "perf record" will
- not work. Per-task (without "-a") perf sessions are not supported.
-diff --git a/Documentation/perf/arm_dsu_pmu.txt b/Documentation/perf/arm_dsu_pmu.rst
-similarity index 92%
-rename from Documentation/perf/arm_dsu_pmu.txt
-rename to Documentation/perf/arm_dsu_pmu.rst
-index d611e15f5add..7fd34db75d13 100644
---- a/Documentation/perf/arm_dsu_pmu.txt
-+++ b/Documentation/perf/arm_dsu_pmu.rst
-@@ -1,3 +1,4 @@
-+==================================
- ARM DynamIQ Shared Unit (DSU) PMU
- ==================================
+ 	RW, Optional
  
-@@ -13,7 +14,7 @@ PMU doesn't support process specific events and cannot be used in sampling mode.
- The DSU provides a bitmap for a subset of implemented events via hardware
- registers. There is no way for the driver to determine if the other events
- are available or not. Hence the driver exposes only those events advertised
--by the DSU, in "events" directory under :
-+by the DSU, in "events" directory under::
+@@ -580,14 +580,14 @@ k_i
+ 	The integral term of the power allocator governor's PID
+ 	controller. This term allows the PID controller to compensate
+ 	for long term drift. For more information see
+-	Documentation/thermal/power_allocator.rst
++	Documentation/driver-api/thermal/power_allocator.rst
  
-   /sys/bus/event_sources/devices/arm_dsu_<N>/
+ 	RW, Optional
  
-@@ -23,6 +24,6 @@ and use the raw event code for the unlisted events.
- The driver also exposes the CPUs connected to the DSU instance in "associated_cpus".
+ k_d
+ 	The derivative term of the power allocator governor's PID
+ 	controller. For more information see
+-	Documentation/thermal/power_allocator.rst
++	Documentation/driver-api/thermal/power_allocator.rst
  
+ 	RW, Optional
  
--e.g usage :
-+e.g usage::
+@@ -598,7 +598,7 @@ integral_cutoff
+ 	example, if integral_cutoff is 0, then the integral term only
+ 	accumulates error when temperature is above the desired
+ 	temperature trip point. For more information see
+-	Documentation/thermal/power_allocator.rst
++	Documentation/driver-api/thermal/power_allocator.rst
  
- 	perf stat -a -e arm_dsu_0/cycles/
-diff --git a/Documentation/perf/hisi-pmu.txt b/Documentation/perf/hisi-pmu.rst
-similarity index 73%
-rename from Documentation/perf/hisi-pmu.txt
-rename to Documentation/perf/hisi-pmu.rst
-index 267a028b2741..404a5c3d9d00 100644
---- a/Documentation/perf/hisi-pmu.txt
-+++ b/Documentation/perf/hisi-pmu.rst
-@@ -1,5 +1,7 @@
-+======================================================
- HiSilicon SoC uncore Performance Monitoring Unit (PMU)
- ======================================================
-+
- The HiSilicon SoC chip includes various independent system device PMUs
- such as L3 cache (L3C), Hydra Home Agent (HHA) and DDRC. These PMUs are
- independent and have hardware logic to gather statistics and performance
-@@ -11,11 +13,13 @@ called Super CPU cluster (SCCL) and is made up of 6 CCLs. Each SCCL has
- two HHAs (0 - 1) and four DDRCs (0 - 3), respectively.
+ 	Unit: millidegree Celsius
  
- HiSilicon SoC uncore PMU driver
-----------------------------------------
-+-------------------------------
-+
- Each device PMU has separate registers for event counting, control and
- interrupt, and the PMU driver shall register perf PMU drivers like L3C,
- HHA and DDRC etc. The available events and configuration options shall
--be described in the sysfs, see :
-+be described in the sysfs, see:
-+
- /sys/devices/hisi_sccl{X}_<l3c{Y}/hha{Y}/ddrc{Y}>/, or
- /sys/bus/event_source/devices/hisi_sccl{X}_<l3c{Y}/hha{Y}/ddrc{Y}>.
- The "perf list" command shall list the available events from sysfs.
-@@ -24,27 +28,30 @@ Each L3C, HHA and DDRC is registered as a separate PMU with perf. The PMU
- name will appear in event listing as hisi_sccl<sccl-id>_module<index-id>.
- where "sccl-id" is the identifier of the SCCL and "index-id" is the index of
- module.
-+
- e.g. hisi_sccl3_l3c0/rd_hit_cpipe is READ_HIT_CPIPE event of L3C index #0 in
- SCCL ID #3.
-+
- e.g. hisi_sccl1_hha0/rx_operations is RX_OPERATIONS event of HHA index #0 in
- SCCL ID #1.
- 
- The driver also provides a "cpumask" sysfs attribute, which shows the CPU core
- ID used to count the uncore PMU event.
- 
--Example usage of perf:
--$# perf list
--hisi_sccl3_l3c0/rd_hit_cpipe/ [kernel PMU event]
--------------------------------------------
--hisi_sccl3_l3c0/wr_hit_cpipe/ [kernel PMU event]
--------------------------------------------
--hisi_sccl1_l3c0/rd_hit_cpipe/ [kernel PMU event]
--------------------------------------------
--hisi_sccl1_l3c0/wr_hit_cpipe/ [kernel PMU event]
--------------------------------------------
-+Example usage of perf::
- 
--$# perf stat -a -e hisi_sccl3_l3c0/rd_hit_cpipe/ sleep 5
--$# perf stat -a -e hisi_sccl3_l3c0/config=0x02/ sleep 5
-+  $# perf list
-+  hisi_sccl3_l3c0/rd_hit_cpipe/ [kernel PMU event]
-+  ------------------------------------------
-+  hisi_sccl3_l3c0/wr_hit_cpipe/ [kernel PMU event]
-+  ------------------------------------------
-+  hisi_sccl1_l3c0/rd_hit_cpipe/ [kernel PMU event]
-+  ------------------------------------------
-+  hisi_sccl1_l3c0/wr_hit_cpipe/ [kernel PMU event]
-+  ------------------------------------------
-+
-+  $# perf stat -a -e hisi_sccl3_l3c0/rd_hit_cpipe/ sleep 5
-+  $# perf stat -a -e hisi_sccl3_l3c0/config=0x02/ sleep 5
- 
- The current driver does not support sampling. So "perf record" is unsupported.
- Also attach to a task is unsupported as the events are all uncore.
-diff --git a/Documentation/perf/index.rst b/Documentation/perf/index.rst
-new file mode 100644
-index 000000000000..4bf848e27f26
---- /dev/null
-+++ b/Documentation/perf/index.rst
-@@ -0,0 +1,16 @@
-+:orphan:
-+
-+===========================
-+Performance monitor support
-+===========================
-+
-+.. toctree::
-+   :maxdepth: 1
-+
-+   hisi-pmu
-+   qcom_l2_pmu
-+   qcom_l3_pmu
-+   arm-ccn
-+   xgene-pmu
-+   arm_dsu_pmu
-+   thunderx2-pmu
-diff --git a/Documentation/perf/qcom_l2_pmu.txt b/Documentation/perf/qcom_l2_pmu.rst
+diff --git a/Documentation/thermal/x86_pkg_temperature_thermal.rst b/Documentation/driver-api/thermal/x86_pkg_temperature_thermal.rst
 similarity index 94%
-rename from Documentation/perf/qcom_l2_pmu.txt
-rename to Documentation/perf/qcom_l2_pmu.rst
-index b25b97659ab9..c130178a4a55 100644
---- a/Documentation/perf/qcom_l2_pmu.txt
-+++ b/Documentation/perf/qcom_l2_pmu.rst
-@@ -1,3 +1,4 @@
-+=====================================================================
- Qualcomm Technologies Level-2 Cache Performance Monitoring Unit (PMU)
- =====================================================================
+rename from Documentation/thermal/x86_pkg_temperature_thermal.rst
+rename to Documentation/driver-api/thermal/x86_pkg_temperature_thermal.rst
+index f134dbd3f5a9..2ac42ccd236f 100644
+--- a/Documentation/thermal/x86_pkg_temperature_thermal.rst
++++ b/Documentation/driver-api/thermal/x86_pkg_temperature_thermal.rst
+@@ -40,7 +40,7 @@ This contains two trip points:
+ - trip_point_1_temp
  
-@@ -28,7 +29,7 @@ The driver provides a "cpumask" sysfs attribute which contains a mask
- consisting of one CPU per cluster which will be used to handle all the PMU
- events on that cluster.
+ User can set any temperature between 0 to TJ-Max temperature. Temperature units
+-are in milli-degree Celsius. Refer to "Documentation/thermal/sysfs-api.rst" for
++are in milli-degree Celsius. Refer to "Documentation/driver-api/thermal/sysfs-api.rst" for
+ thermal sys-fs details.
  
--Examples for use with perf:
-+Examples for use with perf::
- 
-   perf stat -e l2cache_0/config=0x001/,l2cache_0/config=0x042/ -a sleep 1
- 
-diff --git a/Documentation/perf/qcom_l3_pmu.txt b/Documentation/perf/qcom_l3_pmu.rst
-similarity index 93%
-rename from Documentation/perf/qcom_l3_pmu.txt
-rename to Documentation/perf/qcom_l3_pmu.rst
-index 96b3a9444a0d..a3d014a46bfd 100644
---- a/Documentation/perf/qcom_l3_pmu.txt
-+++ b/Documentation/perf/qcom_l3_pmu.rst
-@@ -1,3 +1,4 @@
-+===========================================================================
- Qualcomm Datacenter Technologies L3 Cache Performance Monitoring Unit (PMU)
- ===========================================================================
- 
-@@ -17,7 +18,7 @@ The hardware implements 32bit event counters and has a flat 8bit event space
- exposed via the "event" format attribute. In addition to the 32bit physical
- counters the driver supports virtual 64bit hardware counters by using hardware
- counter chaining. This feature is exposed via the "lc" (long counter) format
--flag. E.g.:
-+flag. E.g.::
- 
-   perf stat -e l3cache_0_0/read-miss,lc/
- 
-diff --git a/Documentation/perf/thunderx2-pmu.txt b/Documentation/perf/thunderx2-pmu.rst
-similarity index 73%
-rename from Documentation/perf/thunderx2-pmu.txt
-rename to Documentation/perf/thunderx2-pmu.rst
-index dffc57143736..08e33675853a 100644
---- a/Documentation/perf/thunderx2-pmu.txt
-+++ b/Documentation/perf/thunderx2-pmu.rst
-@@ -1,3 +1,4 @@
-+=============================================================
- Cavium ThunderX2 SoC Performance Monitoring Unit (PMU UNCORE)
- =============================================================
- 
-@@ -24,18 +25,18 @@ and configuration options under sysfs, see
- The driver does not support sampling, therefore "perf record" will not
- work. Per-task perf sessions are also not supported.
- 
--Examples:
-+Examples::
- 
--# perf stat -a -e uncore_dmc_0/cnt_cycles/ sleep 1
-+  # perf stat -a -e uncore_dmc_0/cnt_cycles/ sleep 1
- 
--# perf stat -a -e \
--uncore_dmc_0/cnt_cycles/,\
--uncore_dmc_0/data_transfers/,\
--uncore_dmc_0/read_txns/,\
--uncore_dmc_0/write_txns/ sleep 1
-+  # perf stat -a -e \
-+  uncore_dmc_0/cnt_cycles/,\
-+  uncore_dmc_0/data_transfers/,\
-+  uncore_dmc_0/read_txns/,\
-+  uncore_dmc_0/write_txns/ sleep 1
- 
--# perf stat -a -e \
--uncore_l3c_0/read_request/,\
--uncore_l3c_0/read_hit/,\
--uncore_l3c_0/inv_request/,\
--uncore_l3c_0/inv_hit/ sleep 1
-+  # perf stat -a -e \
-+  uncore_l3c_0/read_request/,\
-+  uncore_l3c_0/read_hit/,\
-+  uncore_l3c_0/inv_request/,\
-+  uncore_l3c_0/inv_hit/ sleep 1
-diff --git a/Documentation/perf/xgene-pmu.txt b/Documentation/perf/xgene-pmu.rst
-similarity index 96%
-rename from Documentation/perf/xgene-pmu.txt
-rename to Documentation/perf/xgene-pmu.rst
-index d7cff4454e5b..644f8ed89152 100644
---- a/Documentation/perf/xgene-pmu.txt
-+++ b/Documentation/perf/xgene-pmu.rst
-@@ -1,3 +1,4 @@
-+================================================
- APM X-Gene SoC Performance Monitoring Unit (PMU)
- ================================================
- 
-@@ -33,7 +34,7 @@ each PMU, please refer to APM X-Gene User Manual.
- Each perf driver also provides a "cpumask" sysfs attribute, which contains a
- single CPU ID of the processor which will be used to handle all the PMU events.
- 
--Example for perf tool use:
-+Example for perf tool use::
- 
-  / # perf list | grep -e l3c -e iob -e mcb -e mc
-    l3c0/ackq-full/                                    [Kernel PMU event]
+ Any value other than 0 in these trip points, can trigger thermal notifications.
 diff --git a/MAINTAINERS b/MAINTAINERS
-index 808f65e06ad8..f5a2121294b3 100644
+index 7ba6d174f49f..9d3a408f5ce1 100644
 --- a/MAINTAINERS
 +++ b/MAINTAINERS
-@@ -1139,7 +1139,7 @@ APPLIED MICRO (APM) X-GENE SOC PMU
- M:	Khuong Dinh <khuong@os.amperecomputing.com>
+@@ -15762,7 +15762,7 @@ M:	Viresh Kumar <viresh.kumar@linaro.org>
+ M:	Javi Merino <javi.merino@kernel.org>
+ L:	linux-pm@vger.kernel.org
  S:	Supported
- F:	drivers/perf/xgene_pmu.c
--F:	Documentation/perf/xgene-pmu.txt
-+F:	Documentation/perf/xgene-pmu.rst
- F:	Documentation/devicetree/bindings/perf/apm-xgene-pmu.txt
+-F:	Documentation/thermal/cpu-cooling-api.rst
++F:	Documentation/driver-api/thermal/cpu-cooling-api.rst
+ F:	drivers/thermal/cpu_cooling.c
+ F:	include/linux/cpu_cooling.h
  
- APTINA CAMERA SENSOR PLL
-@@ -7207,7 +7207,7 @@ M:	Shaokun Zhang <zhangshaokun@hisilicon.com>
- W:	http://www.hisilicon.com
- S:	Supported
- F:	drivers/perf/hisilicon
--F:	Documentation/perf/hisi-pmu.txt
-+F:	Documentation/perf/hisi-pmu.rst
+diff --git a/include/linux/thermal.h b/include/linux/thermal.h
+index 681047f8cc05..e45659c75920 100644
+--- a/include/linux/thermal.h
++++ b/include/linux/thermal.h
+@@ -251,7 +251,7 @@ struct thermal_bind_params {
+ 	 * platform characterization. This value is relative to the
+ 	 * rest of the weights so a cooling device whose weight is
+ 	 * double that of another cooling device is twice as
+-	 * effective. See Documentation/thermal/sysfs-api.rst for more
++	 * effective. See Documentation/driver-api/thermal/sysfs-api.rst for more
+ 	 * information.
+ 	 */
+ 	int weight;
+@@ -259,7 +259,7 @@ struct thermal_bind_params {
+ 	/*
+ 	 * This is a bit mask that gives the binding relation between this
+ 	 * thermal zone and cdev, for a particular trip point.
+-	 * See Documentation/thermal/sysfs-api.rst for more information.
++	 * See Documentation/driver-api/thermal/sysfs-api.rst for more information.
+ 	 */
+ 	int trip_mask;
  
- HISILICON ROCE DRIVER
- M:	Lijun Ou <oulijun@huawei.com>
-diff --git a/drivers/perf/qcom_l3_pmu.c b/drivers/perf/qcom_l3_pmu.c
-index 15b8c10c2b2b..90f88ce5192b 100644
---- a/drivers/perf/qcom_l3_pmu.c
-+++ b/drivers/perf/qcom_l3_pmu.c
-@@ -8,7 +8,7 @@
-  * the slices. User space needs to aggregate to individual counts to provide
-  * a global picture.
-  *
-- * See Documentation/perf/qcom_l3_pmu.txt for more details.
-+ * See Documentation/perf/qcom_l3_pmu.rst for more details.
-  *
-  * Copyright (c) 2015-2017, The Linux Foundation. All rights reserved.
-  */
 -- 
 2.21.0
 
