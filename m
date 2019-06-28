@@ -2,95 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6A3125970E
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 28 Jun 2019 11:13:20 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8756259710
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 28 Jun 2019 11:13:41 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=H3rfn+EaCUaEAl1Mk9CZ4vX4XjBRDBa7HrPo3bt42co=; b=CiVmYwgfs2hcmH
-	ms8bymyP8qAbs7ErV7iaJKDnAFh6aHuKA4tFzxTbJR2fCnWZ2imufi6AwashXz4ZkHxJPwrLBxJ7T
-	LFS43LE/hU4HRnzdUCzIk0pDSpTj6+4v2i6Pl6rw5coJ0GJM6SvEOPzmhIaptYDw0kNaKqQtPZwfR
-	rmuKdsM9mD4k+C2idUzfa/BlNeBADzzcTHv9owzuXoYtIoObYShRLPI2CzcHityvdxelQWfr7kZvx
-	WBH5Gx/8Nwabm0MVEn8CPB0wpvuIdu/FavEvOf39vERVFekOn6do4hzJ1cPOLfdJQ/hogtiYd2PqD
-	lH9VvCZPezuemW4VZKKw==;
+	List-Owner; bh=BjbnBEHyRMqtLSNpY7mV1mDaz2q8hmQXSEGe0xF7/J0=; b=CvEDqTYtCmR7nQ
+	4FrwdhQgCiPHMRHwzzPSZnylpdKskF2A4mep7sRslNIXiPSJmmlxZiGiCPcsS180dbKjRWtG+PJmh
+	+GO0VoZkoBfltBQPRVLpovWTP9J5xcLd+3VFWNv98LcHcX9HI0Y+DHUABDI9OQdOgPRgNb6BxrbZF
+	GY9J9+4Pwg2XCL35u8rhby78Wih/kOOCmZiBj3boh1WTOrzFCgoaBo+ALMC2ejUbBX9aCHTKIpsyN
+	J/UfhOyxEn8BPTWmjOOGm5XX9HSVFU4FogGukGVAj2nuR38u5C5HRQRxDZncv73MJGJ4l7tEDv0mL
+	FWtD/6CCnvKW+jB2ye2g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hgmwX-0001mt-JW; Fri, 28 Jun 2019 09:13:17 +0000
-Received: from mail-ot1-x341.google.com ([2607:f8b0:4864:20::341])
+	id 1hgmwr-00021p-DY; Fri, 28 Jun 2019 09:13:37 +0000
+Received: from mail-ot1-f65.google.com ([209.85.210.65])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hgmwD-0001kw-HU
- for linux-arm-kernel@lists.infradead.org; Fri, 28 Jun 2019 09:12:59 +0000
-Received: by mail-ot1-x341.google.com with SMTP id n5so5312837otk.1
+ id 1hgmwP-0001tQ-VG
+ for linux-arm-kernel@lists.infradead.org; Fri, 28 Jun 2019 09:13:12 +0000
+Received: by mail-ot1-f65.google.com with SMTP id z23so5250406ote.13
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 28 Jun 2019 02:12:57 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=buNBP4ShClKhN4CDOlm6905v09cbocnR9Tn7a/yqPSU=;
- b=HuTK7xqN5oSbYcHMMKcgUNCRTFY9IilVZyhNh6390FBN8H73GptYOF3C00D1h+/a18
- BggBTtPoWIHQX2p4Z2vh2pEeMZ9K1JK1/loo23WkbOVxeuT04tp5rGB7HM14lUFDVJBg
- RlP71E5AtJC+CyskUzGANp5DX0qvA+bVU3P0iPEIWjsQ7ndnS51fwD7/wdnMxf0hFucO
- /xZ0wSdiM4vQu8GBXpSf3SuNxInAqwwbEn9L2DzpERTPdSck45Gjkf1R1v9r3+XEW3Ur
- 7DbqzF08UsNAwzpnYHzl2UkZXNbzsdW1u2oWUVAKAsJa6FIXaK1czHXDQX/c5wLe6ZaL
- hXUw==
+ Fri, 28 Jun 2019 02:13:09 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=buNBP4ShClKhN4CDOlm6905v09cbocnR9Tn7a/yqPSU=;
- b=AGb+2/jz3OHJxdzaI73f5XCcFx6wttNDZV98tC9CwUZGVL6by2uwOhsPaFAtpuJbwB
- ALKa5OH8egzskmd5OIs9jkRIrqDHoTyMWdgQeN+z1KX+nAeZSGmlWus5BFoG0pJvXm64
- e00tCPByLsN6UXcIqR/gi9zmaJZ/1t8kIu1PVztTKbVZxnH7jHHgEgLa9kLTsbhZe+eP
- J33YnjfIrizwB5qIM5HOVIjyG8zlY5II47dt1rdWoQ+uZh0oDqkcD751WWKsUfFLedpE
- d9Zc67jv5m84pIQOlEewFsO4q8eSG5vd2eOuzFfa+9l5dKIP3p8F01bgv7CqIlgn22qy
- cc+Q==
-X-Gm-Message-State: APjAAAXrloHhGG4jZDTy2kxQQF6HNRw/yzpUElE/222p3c1JvIxcmEXY
- /db7oIaXbVPjhMPx2wzcX70Yfg==
-X-Google-Smtp-Source: APXvYqx6xjxEkU7j89HMjJqTpl/uxjvxBTFjDCSWJkknfJQZ02NKjGFlDU07vg0xjfzYNFwKYKrFxw==
-X-Received: by 2002:a05:6830:1596:: with SMTP id
- i22mr7200809otr.93.1561713175500; 
- Fri, 28 Jun 2019 02:12:55 -0700 (PDT)
-Received: from leoy-ThinkPad-X240s (li964-79.members.linode.com. [45.33.10.79])
- by smtp.gmail.com with ESMTPSA id x5sm652032otb.6.2019.06.28.02.12.51
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Fri, 28 Jun 2019 02:12:54 -0700 (PDT)
-Date: Fri, 28 Jun 2019 17:12:46 +0800
-From: Leo Yan <leo.yan@linaro.org>
-To: Andrew Murray <andrew.murray@arm.com>
-Subject: Re: [PATCH v2 5/5] coresight: etm4x: save/restore state across CPU
- low power states
-Message-ID: <20190628091246.GE32370@leoy-ThinkPad-X240s>
-References: <20190627083525.37463-1-andrew.murray@arm.com>
- <20190627083525.37463-6-andrew.murray@arm.com>
- <20190628080732.GA32370@leoy-ThinkPad-X240s>
- <20190628085357.GH34530@e119886-lin.cambridge.arm.com>
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=WtAbjyzvlTxl5Wt1+2olUFeCZXxxXREPTPYalo6sLwI=;
+ b=UOg8I1YgXBmLzqE7iXht6+4MFxy6777fWIxmWvHdN39WMGruiD+apLCu6spQNvZEuo
+ G4EWN+IbaQZmVsMo3/D27xHVAc7wgydd6NZTRpfDTLHC2gvUi5QcHW+etNFViOwQ6GOX
+ K2vDytkw9XlNR170LOTAxEuqlE/LneVafRYgrDkHWSn8d35R0PRKTOEWdExe+hDClOds
+ dl41B2KoyMi0+cKGHvdnO3kHy5Ht1RyutuhpXCAqaiGXqo4DtIfNVolkINENgFl1Bi6Q
+ 42mlZ+grpN7mfN/CcQASHMFytXhcJ4XXTwXtHdgtJ3MzD1aw8AQe62zmYdkIrC0vsFDC
+ oJhA==
+X-Gm-Message-State: APjAAAVoXznt06Q8sRW1tkI1KK/MK4OF3UApLcI5EWy4hjPxkqyuKEPV
+ K/GMhqsZlmACnCpZAi02bFVqbM7WO+Q/bPdPMKc=
+X-Google-Smtp-Source: APXvYqwSG9i1P5sR8zcpSaKfCYuoC1OkUtWI5/0pY7WWcbzod1j3f1+dkTvp5OmqGtJlgFOZ3u9KJsLzGXXqLesPHR8=
+X-Received: by 2002:a9d:6959:: with SMTP id p25mr6927906oto.118.1561713188389; 
+ Fri, 28 Jun 2019 02:13:08 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190628085357.GH34530@e119886-lin.cambridge.arm.com>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+References: <20190627210209.32600-1-daniel.lezcano@linaro.org>
+ <20190627210209.32600-2-daniel.lezcano@linaro.org>
+In-Reply-To: <20190627210209.32600-2-daniel.lezcano@linaro.org>
+From: "Rafael J. Wysocki" <rafael@kernel.org>
+Date: Fri, 28 Jun 2019 11:12:56 +0200
+Message-ID: <CAJZ5v0jJzCGfQFqi-S3vqs74D73MaE4f7WYF_NVnDKawNV4Wzw@mail.gmail.com>
+Subject: Re: [PATCH V4 2/3] thermal/drivers/cpu_cooling: Unregister with the
+ policy
+To: Daniel Lezcano <daniel.lezcano@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190628_021257_593450_06A4EEA1 
-X-CRM114-Status: GOOD (  20.90  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190628_021310_268804_498AE540 
+X-CRM114-Status: GOOD (  29.66  )
+X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:341 listed in]
- [list.dnswl.org]
+ no trust [209.85.210.65 listed in list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (rjwysocki[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -102,84 +81,362 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mathieu Poirier <mathieu.poirier@linaro.org>,
- Suzuki K Poulose <suzuki.poulose@arm.com>,
- Alexander Shishkin <alexander.shishkin@linux.intel.com>,
- coresight@lists.linaro.org, Sudeep Holla <sudeep.holla@arm.com>,
- linux-arm-kernel@lists.infradead.org, Mike Leach <mike.leach@linaro.org>
+Cc: Fabio Estevam <festevam@gmail.com>,
+ "open list:CPU FREQUENCY DRIVERS - ARM BIG LITTLE"
+ <linux-pm@vger.kernel.org>, Viresh Kumar <viresh.kumar@linaro.org>,
+ Amit Daniel Kachhap <amit.kachhap@gmail.com>,
+ "Rafael J. Wysocki" <rjw@rjwysocki.net>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Eduardo Valentin <edubezval@gmail.com>,
+ "open list:TI BANDGAP AND THERMAL DRIVER" <linux-omap@vger.kernel.org>,
+ Keerthy <j-keerthy@ti.com>, NXP Linux Team <linux-imx@nxp.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Sudeep Holla <sudeep.holla@arm.com>, Zhang Rui <rui.zhang@intel.com>,
+ Javi Merino <javi.merino@kernel.org>, Shawn Guo <shawnguo@kernel.org>,
+ Sascha Hauer <s.hauer@pengutronix.de>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Jun 28, 2019 at 09:53:58AM +0100, Andrew Murray wrote:
+On Thu, Jun 27, 2019 at 11:02 PM Daniel Lezcano
+<daniel.lezcano@linaro.org> wrote:
+>
+> Currently the function cpufreq_cooling_register() returns a cooling
+> device pointer which is used back as a pointer to call the function
+> cpufreq_cooling_unregister(). Even if it is correct, it would make
+> sense to not leak the structure inside a cpufreq driver and keep the
+> code thermal code self-encapsulate. Moreover, that forces to add an
+> extra variable in each driver using this function.
+>
+> Instead of passing the cooling device to unregister, pass the policy.
+>
+> Because the cpufreq_cooling_unregister() function uses the policy to
+> unregister itself. The only purpose of the cooling device pointer is
+> to unregister the cpu cooling device.
+>
+> As there is no more need of this pointer, remove it.
+>
+> Signed-off-by: Daniel Lezcano <daniel.lezcano@linaro.org>
+> Acked-by: Viresh Kumar <viresh.kumar@linaro.org>
 
-[...]
+This doesn't apply for me.
 
-> > > diff --git a/drivers/hwtracing/coresight/coresight-etm4x.c b/drivers/hwtracing/coresight/coresight-etm4x.c
+Care to rebase it on top of the Linus' tree?
 
-[...]
+Also see below.
 
-> > > +
-> > > +#define PARAM_PM_SAVE_DISABLE	0
-> > > +#define PARAM_PM_SAVE_ENABLE	1
-> > > +#define PARAM_PM_SAVE_FIRMWARE	2
-> > > +
-> > > +static int pm_save_enable = PARAM_PM_SAVE_FIRMWARE;
-> > > +module_param(pm_save_enable, int, 0644);
-> > > +MODULE_PARM_DESC(pm_save_enable, "Save/restore state on power down: "
-> > > +				  "0 = disabled, 1 = enabled, 2 = firmware");
-> > > +
-> > 
-> > I understand if set pm_save_enable = 2 (firmware), then driver will
-> > depend on drvdata->pm_save_enable to make decision for context saving
-> > and restoring.
-> > 
-> > Maybe we can simplize to set pm_save_enable for binary value:
-> > 0 (disabled) or 1 (enabled).  The reason is if we set the module
-> > parameter 'pm_save_enable = 1', then we can set every ETM device's
-> > drvdata->pm_save_enable in initialization phase.  So in the probe
-> > function, we can use below code:
-> > 
-> >   drvdata->pm_save_enable = pm_save_enable ? : etm4_needs_save_restore(dev);
-> 
-> This means that when the module parameter is set to 1, then we only save/restore
-> if the firmware suggests it is needed.
+> ---
+>  drivers/cpufreq/arm_big_little.c              |  9 ++--
+>  drivers/cpufreq/cpufreq.c                     |  8 ++--
+>  drivers/thermal/cpu_cooling.c                 | 42 +++++++++++--------
+>  drivers/thermal/imx_thermal.c                 | 12 +++---
+>  .../ti-soc-thermal/ti-thermal-common.c        | 10 ++---
+>  include/linux/cpu_cooling.h                   |  6 +--
+>  include/linux/cpufreq.h                       |  3 --
+>  7 files changed, 45 insertions(+), 45 deletions(-)
+>
+> diff --git a/drivers/cpufreq/arm_big_little.c b/drivers/cpufreq/arm_big_little.c
+> index 7fe52fcddcf1..718c63231e66 100644
+> --- a/drivers/cpufreq/arm_big_little.c
+> +++ b/drivers/cpufreq/arm_big_little.c
+> @@ -56,7 +56,6 @@ static bool bL_switching_enabled;
+>  #define ACTUAL_FREQ(cluster, freq)  ((cluster == A7_CLUSTER) ? freq << 1 : freq)
+>  #define VIRT_FREQ(cluster, freq)    ((cluster == A7_CLUSTER) ? freq >> 1 : freq)
+>
+> -static struct thermal_cooling_device *cdev[MAX_CLUSTERS];
+>  static const struct cpufreq_arm_bL_ops *arm_bL_ops;
+>  static struct clk *clk[MAX_CLUSTERS];
+>  static struct cpufreq_frequency_table *freq_table[MAX_CLUSTERS + 1];
+> @@ -501,10 +500,8 @@ static int bL_cpufreq_exit(struct cpufreq_policy *policy)
+>         struct device *cpu_dev;
+>         int cur_cluster = cpu_to_cluster(policy->cpu);
+>
+> -       if (cur_cluster < MAX_CLUSTERS) {
+> -               cpufreq_cooling_unregister(cdev[cur_cluster]);
+> -               cdev[cur_cluster] = NULL;
+> -       }
+> +       if (cur_cluster < MAX_CLUSTERS)
+> +               cpufreq_cooling_unregister(policy);
+>
+>         cpu_dev = get_cpu_device(policy->cpu);
+>         if (!cpu_dev) {
+> @@ -527,7 +524,7 @@ static void bL_cpufreq_ready(struct cpufreq_policy *policy)
+>         if (cur_cluster >= MAX_CLUSTERS)
+>                 return;
+>
+> -       cdev[cur_cluster] = of_cpufreq_cooling_register(policy);
+> +       of_cpufreq_cooling_register(policy);
+>  }
+>
+>  static struct cpufreq_driver bL_cpufreq_driver = {
+> diff --git a/drivers/cpufreq/cpufreq.c b/drivers/cpufreq/cpufreq.c
+> index aee024e42618..1663a5601811 100644
+> --- a/drivers/cpufreq/cpufreq.c
+> +++ b/drivers/cpufreq/cpufreq.c
+> @@ -1379,7 +1379,7 @@ static int cpufreq_online(unsigned int cpu)
+>                 cpufreq_driver->ready(policy);
+>
+>         if (cpufreq_thermal_control_enabled(cpufreq_driver))
+> -               policy->cdev = of_cpufreq_cooling_register(policy);
+> +               of_cpufreq_cooling_register(policy);
+>
+>         pr_debug("initialization complete\n");
+>
+> @@ -1468,10 +1468,8 @@ static int cpufreq_offline(unsigned int cpu)
+>                 goto unlock;
+>         }
+>
+> -       if (cpufreq_thermal_control_enabled(cpufreq_driver)) {
+> -               cpufreq_cooling_unregister(policy->cdev);
+> -               policy->cdev = NULL;
+> -       }
+> +       if (cpufreq_thermal_control_enabled(cpufreq_driver))
+> +               cpufreq_cooling_unregister(policy);
+>
+>         if (cpufreq_driver->stop_cpu)
+>                 cpufreq_driver->stop_cpu(policy);
+> diff --git a/drivers/thermal/cpu_cooling.c b/drivers/thermal/cpu_cooling.c
+> index 83486775e593..be01546a656f 100644
+> --- a/drivers/thermal/cpu_cooling.c
+> +++ b/drivers/thermal/cpu_cooling.c
+> @@ -78,6 +78,7 @@ struct cpufreq_cooling_device {
+>         struct cpufreq_policy *policy;
+>         struct list_head node;
+>         struct time_in_idle *idle_time;
+> +       struct thermal_cooling_device *cdev;
+>  };
+>
+>  static DEFINE_IDA(cpufreq_ida);
+> @@ -606,6 +607,7 @@ __cpufreq_cooling_register(struct device_node *np,
+>                 goto remove_ida;
+>
+>         cpufreq_cdev->clipped_freq = get_state_freq(cpufreq_cdev, 0);
+> +       cpufreq_cdev->cdev = cdev;
+>
+>         mutex_lock(&cooling_list_lock);
+>         /* Register the notifier for first cpufreq cooling device */
+> @@ -693,35 +695,41 @@ of_cpufreq_cooling_register(struct cpufreq_policy *policy)
+>  }
+>  EXPORT_SYMBOL_GPL(of_cpufreq_cooling_register);
+>
+> +void __cpufreq_cooling_unregister(struct cpufreq_cooling_device *cpufreq_cdev, int last)
+> +{
+> +       /* Unregister the notifier for the last cpufreq cooling device */
+> +       if (last)
+> +               cpufreq_unregister_notifier(&thermal_cpufreq_notifier_block,
+> +                                           CPUFREQ_POLICY_NOTIFIER);
+> +
+> +       thermal_cooling_device_unregister(cpufreq_cdev->cdev);
+> +       ida_simple_remove(&cpufreq_ida, cpufreq_cdev->id);
+> +       kfree(cpufreq_cdev->idle_time);
+> +       kfree(cpufreq_cdev);
+> +}
+> +
+>  /**
+>   * cpufreq_cooling_unregister - function to remove cpufreq cooling device.
+>   * @cdev: thermal cooling device pointer.
+>   *
+>   * This interface function unregisters the "thermal-cpufreq-%x" cooling device.
+>   */
+> -void cpufreq_cooling_unregister(struct thermal_cooling_device *cdev)
+> +void cpufreq_cooling_unregister(struct cpufreq_policy *policy)
+>  {
+>         struct cpufreq_cooling_device *cpufreq_cdev;
 
-If the module parameter is set to 1, then we will always set every
-device 'drvdata->pm_save_enable' to 1.  So in this case, the module
-parameter will override the firmware property and always save/restore
-contexts for ETM.
+I would do
 
-> However - what happens on hardware that ignores the PU bit (and thus requires
-> save/restore), yet it's firmware doesn't have the
-> 'arm,coresight-needs-save-restore' property? There is no way to override the
-> firmware and always save/restore.
+        struct cpufreq_cooling_device *ccd, *cpufreq_cdev = NULL;
 
-Actually I suggested to give the module parameter with high priority
-and when the module parameter has set to 1, then it can override
-firmware 'arm,coresight-needs-save-restore' property.
+and then ->
 
-If we set the module parameter in kernel command line or when load the
-module, its value can be used in the function etm4_probe().  So in the
-driver probing, it detects the module parameter is 1, then it can
-directly set every device 'drvdata->pm_save_enable' to 1.  Thus we can
-always save/restore context for ignoring the PU bit case.
+>         bool last;
+>
+> -       if (!cdev)
+> -               return;
+> -
+> -       cpufreq_cdev = cdev->devdata;
+> -
+>         mutex_lock(&cooling_list_lock);
+> -       list_del(&cpufreq_cdev->node);
+> -       /* Unregister the notifier for the last cpufreq cooling device */
+> -       last = list_empty(&cpufreq_cdev_list);
+> +       list_for_each_entry(cpufreq_cdev, &cpufreq_cdev_list, node) {
 
-> (It's also quite helpful for debugging to be able to change the module parameter
-> at run time.)
+-> list_for_each_entry(ccd, &cpufreq_cdev_list, node) {
+                if (ccd->policy == policy) {
 
-[...]
+> +               if (cpufreq_cdev->policy == policy) {
 
-> > Do we need to disable trace unit at the end of saving flow?
-> 
-> At the start of this function we take the OS lock, this has the effect of
-> also disabling the trace. Therefore I don't think it's necessary to do more.
+                           cpufreq_cdev = ccd;
 
-Okay, I read the comment and thanks for reminding.
+> +                       list_del(&cpufreq_cdev->node);
+> +                       last = list_empty(&cpufreq_cdev_list);
+> +                       break;
+> +               }
+> +       }
+>         mutex_unlock(&cooling_list_lock);
 
-Thanks,
-Leo Yan
+And here
+
+if (!cpufreq_cdev)
+        return;
+
+And that's it.  No new functions needed.
+
+> -       if (last)
+> -               cpufreq_unregister_notifier(&thermal_cpufreq_notifier_block,
+> -                                           CPUFREQ_POLICY_NOTIFIER);
+> -
+
+And I don't that the above needs to be changed at all in any case.
+
+
+> -       thermal_cooling_device_unregister(cdev);
+> -       ida_simple_remove(&cpufreq_ida, cpufreq_cdev->id);
+> -       kfree(cpufreq_cdev->idle_time);
+> -       kfree(cpufreq_cdev);
+> +       if (cpufreq_cdev->policy == policy)
+> +               __cpufreq_cooling_unregister(cpufreq_cdev, last);
+>  }
+>  EXPORT_SYMBOL_GPL(cpufreq_cooling_unregister);
+> diff --git a/drivers/thermal/imx_thermal.c b/drivers/thermal/imx_thermal.c
+> index bb6754a5342c..021c0948b740 100644
+> --- a/drivers/thermal/imx_thermal.c
+> +++ b/drivers/thermal/imx_thermal.c
+> @@ -203,7 +203,6 @@ static struct thermal_soc_data thermal_imx7d_data = {
+>  struct imx_thermal_data {
+>         struct cpufreq_policy *policy;
+>         struct thermal_zone_device *tz;
+> -       struct thermal_cooling_device *cdev;
+>         enum thermal_device_mode mode;
+>         struct regmap *tempmon;
+>         u32 c1, c2; /* See formula in imx_init_calib() */
+> @@ -656,6 +655,7 @@ MODULE_DEVICE_TABLE(of, of_imx_thermal_match);
+>  static int imx_thermal_register_legacy_cooling(struct imx_thermal_data *data)
+>  {
+>         struct device_node *np;
+> +       struct thermal_cooling_device *cdev;
+>         int ret;
+>
+>         data->policy = cpufreq_cpu_get(0);
+> @@ -667,9 +667,9 @@ static int imx_thermal_register_legacy_cooling(struct imx_thermal_data *data)
+>         np = of_get_cpu_node(data->policy->cpu, NULL);
+>
+>         if (!np || !of_find_property(np, "#cooling-cells", NULL)) {
+> -               data->cdev = cpufreq_cooling_register(data->policy);
+> -               if (IS_ERR(data->cdev)) {
+> -                       ret = PTR_ERR(data->cdev);
+> +               cdev = cpufreq_cooling_register(data->policy);
+> +               if (IS_ERR(cdev)) {
+> +                       ret = PTR_ERR(cdev);
+>                         cpufreq_cpu_put(data->policy);
+>                         return ret;
+>                 }
+> @@ -680,7 +680,7 @@ static int imx_thermal_register_legacy_cooling(struct imx_thermal_data *data)
+>
+>  static void imx_thermal_unregister_legacy_cooling(struct imx_thermal_data *data)
+>  {
+> -       cpufreq_cooling_unregister(data->cdev);
+> +       cpufreq_cooling_unregister(data->policy);
+>         cpufreq_cpu_put(data->policy);
+>  }
+>
+> @@ -872,7 +872,7 @@ static int imx_thermal_remove(struct platform_device *pdev)
+>                 clk_disable_unprepare(data->thermal_clk);
+>
+>         thermal_zone_device_unregister(data->tz);
+> -       cpufreq_cooling_unregister(data->cdev);
+> +       cpufreq_cooling_unregister(data->policy);
+>         cpufreq_cpu_put(data->policy);
+>
+>         return 0;
+> diff --git a/drivers/thermal/ti-soc-thermal/ti-thermal-common.c b/drivers/thermal/ti-soc-thermal/ti-thermal-common.c
+> index b4f981daeaf2..170b70b6ec61 100644
+> --- a/drivers/thermal/ti-soc-thermal/ti-thermal-common.c
+> +++ b/drivers/thermal/ti-soc-thermal/ti-thermal-common.c
+> @@ -41,7 +41,6 @@ struct ti_thermal_data {
+>         struct cpufreq_policy *policy;
+>         struct thermal_zone_device *ti_thermal;
+>         struct thermal_zone_device *pcb_tz;
+> -       struct thermal_cooling_device *cool_dev;
+>         struct ti_bandgap *bgp;
+>         enum thermal_device_mode mode;
+>         struct work_struct thermal_wq;
+> @@ -233,6 +232,7 @@ int ti_thermal_register_cpu_cooling(struct ti_bandgap *bgp, int id)
+>  {
+>         struct ti_thermal_data *data;
+>         struct device_node *np = bgp->dev->of_node;
+> +       struct thermal_cooling_device *cdev;
+>
+>         /*
+>          * We are assuming here that if one deploys the zone
+> @@ -256,9 +256,9 @@ int ti_thermal_register_cpu_cooling(struct ti_bandgap *bgp, int id)
+>         }
+>
+>         /* Register cooling device */
+> -       data->cool_dev = cpufreq_cooling_register(data->policy);
+> -       if (IS_ERR(data->cool_dev)) {
+> -               int ret = PTR_ERR(data->cool_dev);
+> +       cdev = cpufreq_cooling_register(data->policy);
+> +       if (IS_ERR(cdev)) {
+> +               int ret = PTR_ERR(cdev);
+>                 dev_err(bgp->dev, "Failed to register cpu cooling device %d\n",
+>                         ret);
+>                 cpufreq_cpu_put(data->policy);
+> @@ -277,7 +277,7 @@ int ti_thermal_unregister_cpu_cooling(struct ti_bandgap *bgp, int id)
+>         data = ti_bandgap_get_sensor_data(bgp, id);
+>
+>         if (data) {
+> -               cpufreq_cooling_unregister(data->cool_dev);
+> +               cpufreq_cooling_unregister(data->policy);
+>                 if (data->policy)
+>                         cpufreq_cpu_put(data->policy);
+>         }
+> diff --git a/include/linux/cpu_cooling.h b/include/linux/cpu_cooling.h
+> index bae54bb7c048..89f469ee4be4 100644
+> --- a/include/linux/cpu_cooling.h
+> +++ b/include/linux/cpu_cooling.h
+> @@ -29,9 +29,9 @@ cpufreq_cooling_register(struct cpufreq_policy *policy);
+>
+>  /**
+>   * cpufreq_cooling_unregister - function to remove cpufreq cooling device.
+> - * @cdev: thermal cooling device pointer.
+> + * @policy: cpufreq policy
+>   */
+> -void cpufreq_cooling_unregister(struct thermal_cooling_device *cdev);
+> +void cpufreq_cooling_unregister(struct cpufreq_policy *policy);
+>
+>  #else /* !CONFIG_CPU_THERMAL */
+>  static inline struct thermal_cooling_device *
+> @@ -41,7 +41,7 @@ cpufreq_cooling_register(struct cpufreq_policy *policy)
+>  }
+>
+>  static inline
+> -void cpufreq_cooling_unregister(struct thermal_cooling_device *cdev)
+> +void cpufreq_cooling_unregister(struct cpufreq_policy *policy)
+>  {
+>         return;
+>  }
+> diff --git a/include/linux/cpufreq.h b/include/linux/cpufreq.h
+> index a1467aa7f58b..ce13204df972 100644
+> --- a/include/linux/cpufreq.h
+> +++ b/include/linux/cpufreq.h
+> @@ -144,9 +144,6 @@ struct cpufreq_policy {
+>
+>         /* For cpufreq driver's internal use */
+>         void                    *driver_data;
+> -
+> -       /* Pointer to the cooling device if used for thermal mitigation */
+> -       struct thermal_cooling_device *cdev;
+>  };
+>
+>  struct cpufreq_freqs {
+> --
+> 2.17.1
+>
 
 _______________________________________________
 linux-arm-kernel mailing list
