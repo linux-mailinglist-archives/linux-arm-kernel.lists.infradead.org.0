@@ -2,64 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C049C59540
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 28 Jun 2019 09:43:23 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 54EC7595A4
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 28 Jun 2019 10:07:09 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=XpA0IzVW8zwasFxphviafVHIfZEo14zZPYvDGLnMexk=; b=ZKsxRftYRjgangLYVtkRwVh7wn
-	FdS+iIC+275F/i4IIDqC68/8r9K8dZUF/ZkfZU/Kt4rHPbongxIfa0iDh8Mjnipvd4rRVuPTeZtlH
-	/Py9cmihpDS2Kgafk+Itn1M5itzIGetgeYkFSfovv0BxG4EN0LCmdh7LUwOYI98Yu8RHl3VGYaMNM
-	aQ82UBxFSZPJLFpOY6Wt9gIJobAoCPFvAkPF77p2wLVCFM+bGXKLUyLaGchSxTIp0G3bxCtTlMDGv
-	Wu6/iB99S6E9Ms9aoppRxM0mk06HvnWL+B1ehLlaw8vUFqvs4f73pwPnW11YqGAsYJfS+Rx4ZRdXN
-	RegixSLg==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=KqsdVNXw6UuKYtcAfD8/3Cs8vUwxZTqX6IC+nuKZqS0=; b=k131DBnGlJu5QE
+	EdusucNQ07qjX+ThL2ihogwE+bipe9oUrCCESiiOv0/nBAqrmG2h3Rt9oz5i2e1Lpj1KezFbNlDIu
+	UjUan4v1baTysibRSQSoepjUr1ovvwfUDyBV30uOlMAdyQUoDzbqtLrj7MHA2JMzIRpx/Lr1+bW/D
+	27jsMINvchrH+vzhdE2ZmcAylypvzNy6tS4jeuGMkm9H1LWUps2Yx6SHKH2fLHAAr01lcTit1PvKa
+	8wloMz9Ma0K1COwnMTGsF6PTGnR9fP88o0ZJMdY1EiOOWGnUwmLlgLhEuNb+jYxigShAp/wkAi7jo
+	myngGPPrW404b3BMJe2Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hglXT-0001Cy-Hu; Fri, 28 Jun 2019 07:43:19 +0000
-Received: from inva020.nxp.com ([92.121.34.13])
+	id 1hgluR-0004aG-4d; Fri, 28 Jun 2019 08:07:03 +0000
+Received: from lb2-smtp-cloud9.xs4all.net ([194.109.24.26])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hglUQ-0007Ut-2S
- for linux-arm-kernel@lists.infradead.org; Fri, 28 Jun 2019 07:40:14 +0000
-Received: from inva020.nxp.com (localhost [127.0.0.1])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id AA7961A0DC4;
- Fri, 28 Jun 2019 09:40:08 +0200 (CEST)
-Received: from inva024.eu-rdc02.nxp.com (inva024.eu-rdc02.nxp.com
- [134.27.226.22])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 9D9231A0346;
- Fri, 28 Jun 2019 09:40:08 +0200 (CEST)
-Received: from fsr-ub1864-112.ea.freescale.net
- (fsr-ub1864-112.ea.freescale.net [10.171.82.98])
- by inva024.eu-rdc02.nxp.com (Postfix) with ESMTP id B4496205D5;
- Fri, 28 Jun 2019 09:40:07 +0200 (CEST)
-From: Leonard Crestez <leonard.crestez@nxp.com>
-To: Alexandre Bailon <abailon@baylibre.com>,
- Georgi Djakov <georgi.djakov@linaro.org>, Stephen Boyd <sboyd@kernel.org>,
- Michael Turquette <mturquette@baylibre.com>,
- Viresh Kumar <viresh.kumar@linaro.org>
-Subject: [RFCv2 8/8] arm64: dts: imx8mm: Add devfreq-imx nodes
-Date: Fri, 28 Jun 2019 10:39:56 +0300
-Message-Id: <f5714b11a0f46b20cef3cad0cf615bc1093499de.1561707104.git.leonard.crestez@nxp.com>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <cover.1561707104.git.leonard.crestez@nxp.com>
-References: <cover.1561707104.git.leonard.crestez@nxp.com>
-In-Reply-To: <cover.1561707104.git.leonard.crestez@nxp.com>
-References: <cover.1561707104.git.leonard.crestez@nxp.com>
-X-Virus-Scanned: ClamAV using ClamSMTP
+ id 1hgluC-0004YK-5w; Fri, 28 Jun 2019 08:06:50 +0000
+Received: from [192.168.2.10] ([46.9.252.75])
+ by smtp-cloud9.xs4all.net with ESMTPA
+ id gltthk77qSfvXgltwhQpwi; Fri, 28 Jun 2019 10:06:40 +0200
+Subject: Re: [PATCH 00/31] staging: bcm2835-camera: Improvements
+To: Stefan Wahren <wahrenst@gmx.net>, Eric Anholt <eric@anholt.net>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Dave Stevenson <dave.stevenson@raspberrypi.org>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>
+References: <1561661788-22744-1-git-send-email-wahrenst@gmx.net>
+From: Hans Verkuil <hverkuil@xs4all.nl>
+Message-ID: <f4492041-2587-eedb-8ae5-ae610e90fde2@xs4all.nl>
+Date: Fri, 28 Jun 2019 10:06:29 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.6.1
+MIME-Version: 1.0
+In-Reply-To: <1561661788-22744-1-git-send-email-wahrenst@gmx.net>
+Content-Language: en-US
+X-CMAE-Envelope: MS4wfH5mWIQQ+78Ft5mokEb9dqgknieKCSU+WaLX+MeaWiZ5p3zjqcmUvQBpisGm3LIy6d4crj85Wc9aM3vkZWInMAGi+qqQ4uW8d3ZIqHCHLGX/KnSPsl9M
+ vAduhvd2ME1dFsHoOmGryN8elr+I0oY5IdYFYmb9o1F4RuQtWM9z95P5jqkeplwDOtgSNMO23vOd4BK4OfsV8Z+D6V0CzES/Og6mI5xg+9j7njQxJ7zMGsaa
+ 6WkeXWbDSG8GPAmmgc7cjVbHpJMQaJ1WI29CzciOMfT8X2rKYrSYz6XMAqr1Vp5XZO+XbPemkoSC7UMlrOPKNcgbo7brPq3xN6giJSx+BDH8OeRgNhAtSPQI
+ 1u86xWxF2EPmMYnFIMdPYJypdPPSV05VUtctFPpEFW6XdV3mn7iDil/dTB9CZTOKBptAkqXpbjJqr//V8bCN2sHbMWyBqMXxRV1cBNsQlVTB1CFWZEccgNRS
+ VFxkIpiet0MUVI7p
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190628_004010_474733_4F7EA2D1 
-X-CRM114-Status: UNSURE (   9.13  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20190628_010648_385115_96A554FC 
+X-CRM114-Status: GOOD (  16.84  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [92.121.34.13 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [194.109.24.26 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -73,122 +67,97 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Dong Aisheng <aisheng.dong@nxp.com>, Ulf Hansson <ulf.hansson@linaro.org>,
- Jacky Bai <ping.bai@nxp.com>, Anson Huang <Anson.Huang@nxp.com>,
- "Rafael J. Wysocki" <rafael@kernel.org>, linux-pm@vger.kernel.org,
- Krzysztof Kozlowski <krzk@kernel.org>, Saravana Kannan <saravanak@google.com>,
- Kyungmin Park <kyungmin.park@samsung.com>,
- MyungJoo Ham <myungjoo.ham@samsung.com>, linux-imx@nxp.com,
- kernel@pengutronix.de, Fabio Estevam <fabio.estevam@nxp.com>,
- Shawn Guo <shawnguo@kernel.org>, linux-clk@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, Abel Vesa <abel.vesa@nxp.com>
-MIME-Version: 1.0
+Cc: devel@driverdev.osuosl.org, linux-rpi-kernel@lists.infradead.org,
+ linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The imx8mm has multiple buses which can be scaled with some degree of
-independence. Expose them as devfreq devices for userspace scaling.
+Hi Stefan,
 
-It shouldn't be possible to get the system in a non-working state this
-way. It is primarily aimed at testing and fine performance tuning.
+On 6/27/19 8:55 PM, Stefan Wahren wrote:
+> This is an attempt to help Dave Stevenson to get all the fixes and
+> improvements of the bcm2835-camera driver into mainline.
+> 
+> Mostly i only polished the commit logs for upstream.
+> 
+> The series based on the latest bugfix V2 of staging: bcm2835-camera: Resto=
+> re
+> return behavior of ctrl_set_bitrate().
 
-Signed-off-by: Leonard Crestez <leonard.crestez@nxp.com>
----
- arch/arm64/boot/dts/freescale/imx8mm.dtsi | 54 +++++++++++++++++++++++
- 1 file changed, 54 insertions(+)
+Thank you for working on this.
 
-diff --git a/arch/arm64/boot/dts/freescale/imx8mm.dtsi b/arch/arm64/boot/dts/freescale/imx8mm.dtsi
-index 3b4b112814f7..aa9ed418652d 100644
---- a/arch/arm64/boot/dts/freescale/imx8mm.dtsi
-+++ b/arch/arm64/boot/dts/freescale/imx8mm.dtsi
-@@ -121,10 +121,32 @@
- 			opp-supported-hw = <0x8>, <0x7>;
- 			clock-latency-ns = <150000>;
- 		};
- 	};
- 
-+	ddrc_opp_table: ddrc-opp-table {
-+		compatible = "operating-points-v2";
-+
-+		opp-25M {
-+			opp-hz = /bits/ 64 <25000000>;
-+		};
-+		opp-750M {
-+			opp-hz = /bits/ 64 <750000000>;
-+		};
-+	};
-+
-+	noc_opp_table: noc-opp-table {
-+		compatible = "operating-points-v2";
-+
-+		opp-150M {
-+			opp-hz = /bits/ 64 <150000000>;
-+		};
-+		opp-750M {
-+			opp-hz = /bits/ 64 <750000000>;
-+		};
-+	};
-+
- 	memory@40000000 {
- 		device_type = "memory";
- 		reg = <0x0 0x40000000 0 0x80000000>;
- 	};
- 
-@@ -748,10 +770,35 @@
- 				status = "disabled";
- 			};
- 
- 		};
- 
-+		pl301_main: nic@32000000 {
-+			compatible = "fsl,imx8mm-nic";
-+			reg = <0x32000000 0x100000>;
-+			clocks = <&clk IMX8MM_CLK_MAIN_AXI>;
-+		};
-+
-+		pl301_wakeup: nic@32100000 {
-+			compatible = "fsl,imx8mm-nic";
-+			reg = <0x32100000 0x100000>;
-+			clocks = <&clk IMX8MM_CLK_AHB>;
-+		};
-+
-+		pl301_enet: nic@32400000 {
-+			compatible = "fsl,imx8mm-nic";
-+			reg = <0x32400000 0x100000>;
-+			clocks = <&clk IMX8MM_CLK_ENET_AXI>;
-+		};
-+
-+		noc: noc@32700000 {
-+			compatible = "fsl,imx8mm-noc";
-+			reg = <0x32700000 0x100000>;
-+			clocks = <&clk IMX8MM_CLK_NOC>;
-+			operating-points-v2 = <&noc_opp_table>;
-+		};
-+
- 		aips4: bus@32c00000 {
- 			compatible = "fsl,aips-bus", "simple-bus";
- 			#address-cells = <1>;
- 			#size-cells = <1>;
- 			ranges = <0x32c00000 0x32c00000 0x400000>;
-@@ -835,7 +882,14 @@
- 			      <0x38880000 0xc0000>; /* GICR (RD_base + SGI_base) */
- 			#interrupt-cells = <3>;
- 			interrupt-controller;
- 			interrupts = <GIC_PPI 9 IRQ_TYPE_LEVEL_HIGH>;
- 		};
-+
-+		ddrc: dram-controller@3d400000 {
-+			compatible = "fsl,imx8mm-ddrc";
-+			reg = <0x3d400000 0x400000>;
-+			clocks = <&clk IMX8MM_CLK_DRAM>;
-+			operating-points-v2 = <&ddrc_opp_table>;
-+		};
- 	};
- };
--- 
-2.17.1
+Three high-level questions:
+
+1) Can you post the output of 'v4l2-compliance -s' using the latest v4l2-compliance
+   from https://git.linuxtv.org/v4l-utils.git ?  I'm interested to see what the
+   status is of this driver w.r.t. the compliance tests.
+
+2) What is the status of this driver from your point of view? What is needed to
+   get it out of staging?
+
+3) Out of curiosity: is this driver still valid for RPi4?
+
+Regards,
+
+	Hans
+
+> 
+> Dave Stevenson (31):
+>   staging: bcm2835-camera: Ensure H264 header bytes get a sensible
+>     timestamp
+>   staging: bcm2835-camera: Check the error for REPEAT_SEQ_HEADER
+>   staging: bcm2835-camera: Replace spinlock protecting context_map with
+>     mutex
+>   staging: bcm2835-camera: Do not bulk receive from service thread
+>   staging: bcm2835-camera: Correctly denote key frames in encoded data
+>   staging: bcm2835-camera: Return early on errors
+>   staging: bcm2835-camera: Remove dead email addresses
+>   staging: bcm2835-camera: Fix comment style violations.
+>   staging: bcm2835-camera: Fix spacing around operators
+>   staging: bcm2835-camera: Reduce length of enum names
+>   staging: bcm2835-camera: Fix multiple line dereference errors
+>   staging: bcm2835-camera: Fix brace style issues.
+>   staging: bcm2835-camera: Fix missing lines between items
+>   staging: bcm2835-camera: Fix open parenthesis alignment
+>   staging: bcm2835-camera: Ensure all buffers are returned on disable
+>   staging: bcm2835-camera: Remove check of the number of buffers
+>     supplied
+>   staging: bcm2835-camera: Handle empty EOS buffers whilst streaming
+>   staging: bcm2835-camera: Set sequence number correctly
+>   staging: bcm2835-camera: Ensure timestamps never go backwards.
+>   staging: bcm2835-camera: Add multiple inclusion protection to headers
+>   staging: bcm2835-camera: Unify header inclusion defines
+>   staging: bcm2835-camera: Fix multiple assignments should be avoided
+>   staging: bcm2835-camera: Fix up mmal-parameters.h
+>   staging: bcm2835-camera: Use enums for max value in controls
+>   staging: bcm2835-camera: Correct V4L2_CID_COLORFX_CBCR behaviour
+>   staging: bcm2835-camera: Remove/amend some obsolete comments
+>   staging: mmal-vchiq: Avoid use of bool in structures
+>   staging: bcm2835-camera: Fix stride on RGB3/BGR3 formats
+>   staging: bcm2835-camera: Add sanity checks for queue_setup/CREATE_BUFS
+>   staging: bcm2835-camera: Set the field value within ach buffer
+>   staging: bcm2835-camera: Correct ctrl min/max/step/def to 64bit
+> 
+>  .../vc04_services/bcm2835-camera/bcm2835-camera.c  | 378 ++++++++++++----=
+> -----
+>  .../vc04_services/bcm2835-camera/bcm2835-camera.h  |  34 +-
+>  .../vc04_services/bcm2835-camera/controls.c        | 184 +++++-----
+>  .../vc04_services/bcm2835-camera/mmal-common.h     |  12 +-
+>  .../vc04_services/bcm2835-camera/mmal-encodings.h  |   9 +-
+>  .../vc04_services/bcm2835-camera/mmal-msg-common.h |   9 +-
+>  .../vc04_services/bcm2835-camera/mmal-msg-format.h | 104 +++---
+>  .../vc04_services/bcm2835-camera/mmal-msg-port.h   | 133 ++++----
+>  .../vc04_services/bcm2835-camera/mmal-msg.h        | 150 ++++----
+>  .../vc04_services/bcm2835-camera/mmal-parameters.h | 286 +++++++++-------
+>  .../vc04_services/bcm2835-camera/mmal-vchiq.c      | 159 +++++----
+>  .../vc04_services/bcm2835-camera/mmal-vchiq.h      |  22 +-
+>  12 files changed, 826 insertions(+), 654 deletions(-)
+> 
+> =2D-
+> 2.7.4
+> 
 
 
 _______________________________________________
