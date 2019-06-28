@@ -2,54 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 81B7859940
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 28 Jun 2019 13:27:43 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5C2AC59941
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 28 Jun 2019 13:28:06 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=uNHiLKlvfF1RBnIY08TFytms8PFGL4ZjOMbMSryXr9g=; b=l54hEmDRi5r/zc
-	20tQZTPLEQA8jyo/orbPC7iHfmjUS6XCjLLjDZkGfxV+YunKZlrH+eKWvD7zBr0F9N3rUIsoDM2U4
-	3gCaseyEN500CGuL0wPdL8CT7DqxFWRJsizOSUMyPc8lRpZaUpqGlL+hs62M9U7p17aWAvE+bzBP4
-	23oT6rjgelGQCDYNCrcwZFK3rJr7P3U1n8kmR6qpkN1eYnxYFR5gzl77L6xCs4GNI3gdIK/Sr4loe
-	GpeKvP7kfA+kTTDReY/od2Fy2QtcxV6NPDa9n7vpGXj/uZy4U5As7g7RtBkrwkqREx603TqKTt918
-	dtAfnwtSHNjkdLZuxHFQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=PTZCZim316a0/DZMhROx1gZKN0QTWEC7O7/I3wLDSW8=; b=Yy0DzjjddLsHlF
+	QB1y0ZPKSi6pi8OKEISqykdKvIqQjU6VNYyCJRHhCpLX+YRtmzDUSdji2vV9QsUzsd3PDI4ftRg/m
+	3Rf7Sv8aKh2hTaY+SZgNGPKdjuTaX7wdLzS8LNdkm+VkDzU6RAO5RjSt1bUmp8KtKA00734ntC2lS
+	2zWDc+LKLwk00gpc9s8q04plh/zCC8SMDS6R4KuMBn8qozgaYn9mNwNyeoG1WPSf7VkTY0BMWOttk
+	LO5+zhfKT++NB8IXEJfWrB76Ulyc3pWLtJrE9+tXeY+yDB+xJkmPNlt9n2O7Mdc0CAXvApXu7jEKA
+	6PvWZmFubNTwd3a5TZjQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hgp2Z-0004HY-Mo; Fri, 28 Jun 2019 11:27:39 +0000
+	id 1hgp2v-0004VF-Q8; Fri, 28 Jun 2019 11:28:01 +0000
 Received: from mx07-00178001.pphosted.com ([62.209.51.94])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hgp2G-0004FN-Qh
- for linux-arm-kernel@lists.infradead.org; Fri, 28 Jun 2019 11:27:22 +0000
-Received: from pps.filterd (m0046037.ppops.net [127.0.0.1])
+ id 1hgp2H-0004G1-S1
+ for linux-arm-kernel@lists.infradead.org; Fri, 28 Jun 2019 11:27:23 +0000
+Received: from pps.filterd (m0046668.ppops.net [127.0.0.1])
  by mx07-00178001.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id
- x5SBPqOZ020529; Fri, 28 Jun 2019 13:27:13 +0200
+ x5SBQSqA008465; Fri, 28 Jun 2019 13:27:15 +0200
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
  h=from : to : cc : subject
- : date : message-id : mime-version : content-type; s=STMicroelectronics;
- bh=gTP6fqkfQDGZanlx4ouycdMtZDyDqTFhDA9SvwI/c5k=;
- b=pfCM7MWbb6FtekqDKmEJxtxRuMl5sVREDBBbAUCkXYhErunReAjYqiMpSMvhITzG5L/Z
- eIP+yhhT9zDlSQ3m62Uxh68JS520Mf59RwAa4G//G/S+hREqF1hGjyrGcztZvlBnAj12
- LAsP+fDrggFcBXASrXRPJTlwSGDCzwVExRohoEE6EzGPd8B4pnQQjQ1HJvkLatpNYoRs
- lwsEbMAKPlI23IU9aZehrSBQ/NiGDJ321gvpL9xLd/EL9S4fjkNx2w3zfs/OJ3oyVk/j
- ey5tF80ep/TGpZbOzeLes48gMKHSKYYMr2Xi10RyxnnbNU6mnoZRDLxhTovCPalf3vJb Gw== 
+ : date : message-id : in-reply-to : references : mime-version :
+ content-type; s=STMicroelectronics;
+ bh=RJqJPwy5FupsECpRr76jUlzOG75dPg4XX7HjL42ex0k=;
+ b=EgHHT5K/GSk9XVoJ/wp0aAS6Xf34yhcc2+z0AIY/CmSxGke0kAUgtHmn+fh2J8QK1rNO
+ /M+b6oflRD0jc/AiMaMdqUewvZcDzzEvY0tiCs/mDteM2ga/ul4tq3bU+lVWKGRpGfcS
+ RUs1VzHcPVH4AzWmeFRyqm+Z7yxPcQxBeCOPl838zckkzU2ktAdduhRTaMX+KYtiOROW
+ of5YZw6mO8DwNYWCmhlK3uR0Ny0jFwDhnf4/Ml1qnt8ffGH/RTgCiTyc/tw/G5Syx7t7
+ KN/SStbES5BP8Mxktg5Sln0KYBVkj9QPhF2HwGK/DnNtTGifbREnRIhL71+SoobJ5RKW 3A== 
 Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx07-00178001.pphosted.com with ESMTP id 2tcyq0e4kq-1
+ by mx07-00178001.pphosted.com with ESMTP id 2t9d2gwgny-1
  (version=TLSv1 cipher=ECDHE-RSA-AES256-SHA bits=256 verify=NOT);
- Fri, 28 Jun 2019 13:27:13 +0200
+ Fri, 28 Jun 2019 13:27:14 +0200
 Received: from zeta.dmz-eu.st.com (zeta.dmz-eu.st.com [164.129.230.9])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 48DE031;
- Fri, 28 Jun 2019 11:27:13 +0000 (GMT)
-Received: from Webmail-eu.st.com (Safex1hubcas23.st.com [10.75.90.46])
- by zeta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 275CF27A5;
- Fri, 28 Jun 2019 11:27:13 +0000 (GMT)
-Received: from SAFEX1HUBCAS22.st.com (10.75.90.93) by SAFEX1HUBCAS23.st.com
- (10.75.90.46) with Microsoft SMTP Server (TLS) id 14.3.439.0; Fri, 28 Jun
- 2019 13:27:13 +0200
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 6F76731;
+ Fri, 28 Jun 2019 11:27:14 +0000 (GMT)
+Received: from Webmail-eu.st.com (Safex1hubcas24.st.com [10.75.90.94])
+ by zeta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 4E66127A5;
+ Fri, 28 Jun 2019 11:27:14 +0000 (GMT)
+Received: from SAFEX1HUBCAS22.st.com (10.75.90.93) by Safex1hubcas24.st.com
+ (10.75.90.94) with Microsoft SMTP Server (TLS) id 14.3.439.0; Fri, 28 Jun
+ 2019 13:27:14 +0200
 Received: from localhost (10.201.23.65) by Webmail-ga.st.com (10.75.90.48)
- with Microsoft SMTP Server (TLS) id 14.3.439.0; Fri, 28 Jun 2019 13:27:12
+ with Microsoft SMTP Server (TLS) id 14.3.439.0; Fri, 28 Jun 2019 13:27:13
  +0200
 From: Lionel Debieve <lionel.debieve@st.com>
 To: Herbert Xu <herbert@gondor.apana.org.au>, "David S . Miller"
@@ -57,17 +58,19 @@ To: Herbert Xu <herbert@gondor.apana.org.au>, "David S . Miller"
  "Alexandre Torgue" <alexandre.torgue@st.com>,
  <linux-crypto@vger.kernel.org>, <linux-arm-kernel@lists.infradead.org>,
  <linux-kernel@vger.kernel.org>
-Subject: [PATCH 0/2] crypto: stm32/hash: Fix bug in hmac mode
-Date: Fri, 28 Jun 2019 13:26:53 +0200
-Message-ID: <20190628112655.9341-1-lionel.debieve@st.com>
+Subject: [PATCH 1/2] crypto: stm32/hash: Fix hmac issue more than 256 bytes
+Date: Fri, 28 Jun 2019 13:26:54 +0200
+Message-ID: <20190628112655.9341-2-lionel.debieve@st.com>
 X-Mailer: git-send-email 2.17.1
+In-Reply-To: <20190628112655.9341-1-lionel.debieve@st.com>
+References: <20190628112655.9341-1-lionel.debieve@st.com>
 MIME-Version: 1.0
 X-Originating-IP: [10.201.23.65]
 X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:, ,
  definitions=2019-06-28_04:, , signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190628_042721_175227_6ABF3CA3 
-X-CRM114-Status: GOOD (  10.98  )
+X-CRM114-CacheID: sfid-20190628_042722_205243_99B4CF3F 
+X-CRM114-Status: GOOD (  13.63  )
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.9 points)
@@ -105,18 +108,28 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This series fixes issues discovered while using libkcapi library. Some
-more tests show wrong key management in hmac mode. It is fixes by these 
-patches and prevent a potential issue in case of interrupt while processing
-in dma mode.
+Correct condition for the second hmac loop. Key must be only
+set in the first loop. Initial condition was wrong,
+HMAC_KEY flag was not properly checked.
 
-Lionel Debieve (2):
-  crypto: stm32/hash: Fix hmac issue more than 256 bytes
-  crypto: stm32/hash: remove interruptible condition for dma
+Signed-off-by: Lionel Debieve <lionel.debieve@st.com>
+---
+ drivers/crypto/stm32/stm32-hash.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
- drivers/crypto/stm32/stm32-hash.c | 6 +++---
- 1 file changed, 3 insertions(+), 3 deletions(-)
-
+diff --git a/drivers/crypto/stm32/stm32-hash.c b/drivers/crypto/stm32/stm32-hash.c
+index 29519d1c403f..c37d1a336f98 100644
+--- a/drivers/crypto/stm32/stm32-hash.c
++++ b/drivers/crypto/stm32/stm32-hash.c
+@@ -349,7 +349,7 @@ static int stm32_hash_xmit_cpu(struct stm32_hash_dev *hdev,
+ 		return -ETIMEDOUT;
+ 
+ 	if ((hdev->flags & HASH_FLAGS_HMAC) &&
+-	    (hdev->flags & ~HASH_FLAGS_HMAC_KEY)) {
++	    (!(hdev->flags & HASH_FLAGS_HMAC_KEY))) {
+ 		hdev->flags |= HASH_FLAGS_HMAC_KEY;
+ 		stm32_hash_write_key(hdev);
+ 		if (stm32_hash_wait_busy(hdev))
 -- 
 2.17.1
 
