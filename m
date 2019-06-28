@@ -2,111 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6CCB3593F1
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 28 Jun 2019 08:01:22 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 88CBD593F8
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 28 Jun 2019 08:02:02 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:Message-ID:Date
-	:Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	List-Owner; bh=m3q2a14QvaTTzTJ8wjs4wOodK5YSm+pDziraHi9HRa8=; b=o5qNUyBlKs8ioT
-	oKbfdSlwWWOUsCDL0l6ivYyHGhueZ9835ybj628prLRI49JsOY57dzEMuZJ7H+rnfLo0d8xqKurVM
-	6kjDMWbRzjqN4pHoymEiFaFj964M8bcaV9O4ToIzL+P6R5gm3FjwaJkTBxgrOB7WOEgYijhhg+qLA
-	3rV9SMThxcQx3Ji0JBNqjL+bahMqYPT1F4uwVbhYEAxTIKLtKYxEOSPnYB+wAfb2LzC0gnb7A5l8s
-	fpQaBi6HHELIT5S6Q857Axz1eDcy6aXNl+88P1K9ADNki5mUpJDCkmepFp9E10Two1naGQjf17se8
-	7//vFUicKt9p8WZVs+dw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=waXcQx70omLq2/OZVM0+1kOJNa7wLKBbBWCDiF6/uqY=; b=SZCDwV/06M/9Zr
+	kGM3vmeh/nJOLJhI3wmU9WIdca/c5uVoXJkrVa9zwITpKOacSMSNJcThgm5dXoQHbWafNBO8TwFkA
+	fjv+bpdS3sABQPa9a4A9pCKuDDfxeOQY3nnxc/Gy+SSGEs5ErvsbCTt20G4luP1rkdFq4FhbOC4h5
+	UDzydfnDmsMtmd+KXR3AJgJX8BQuKM8xIwv0vNBKSK/R7M39FgDl8X4906eLQ5cJWW4JcSjwVS9gK
+	z5fO7oRQglzYrDYi8cviw8iCIyxyuUS+xGiUaJy54vdsEmswWfNqIWSUdxtP02pt5rH0/VRXQPrJe
+	kYdW+Bhj+Og1L5OD7xTA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hgjwm-0008Ru-QB; Fri, 28 Jun 2019 06:01:20 +0000
-Received: from mail-db5eur01on060e.outbound.protection.outlook.com
- ([2a01:111:f400:fe02::60e]
- helo=EUR01-DB5-obe.outbound.protection.outlook.com)
+	id 1hgjxP-0000HZ-BN; Fri, 28 Jun 2019 06:01:59 +0000
+Received: from mail-pl1-x644.google.com ([2607:f8b0:4864:20::644])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hgjwa-0008RR-ML
- for linux-arm-kernel@lists.infradead.org; Fri, 28 Jun 2019 06:01:10 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=testarcselector01; d=microsoft.com; cv=none;
- b=vMSZXLs2zgnXksxOvtguTdDtZrDo72XxHRZATH3eAktda2oBkHocBJDvvWUxSqJnWmaBfC8DWK3jpH1ym0aJpVoWYEOR4bBAmzxUm7Le3tWsjYeuvMO3pI3w2WQ28URmZqO/1SGv4KXuEPEzyQGC2zqk/PCtlIYTEAtgotEYoqk=
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=testarcselector01;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=n5MvjqRN8k7G3UzEiU6XyuFXA+0gesu54QUz4e9/cQk=;
- b=hx4bpta30YOriIuzTTHJm/MaM0Lj58Ws/OZlf2uO2qiLZvJcElsw9zLqCaCL/eJsqBTCOx1/FMKi/ADKAI0RmeS0pkgh8lO0Cl2NjVvjFArbC9Vz15S26WX5tKQcRJ7I+N9sQ9RS3qUMzs0EK/Te7iIXMbOzfUSLm3ak3bZuBfE=
-ARC-Authentication-Results: i=1; test.office365.com
- 1;spf=none;dmarc=none;dkim=none;arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=n5MvjqRN8k7G3UzEiU6XyuFXA+0gesu54QUz4e9/cQk=;
- b=erydpXdUkI1hSwJg3gWkU5SYCHaAmqrt2kW1L+UW5Gsw9EaBqTrAKrVgRqjZbX6qKlXVUW+cT/X419Sm4PO4ZYFrO5wE8AVvSpFTqXg/uo9nnX2LhOFK0FPGPrfAc2VOTnSBCqcqljH0IRINdsESPmHukRcKTwfKE1JDxqJKwfU=
-Received: from VI1PR04MB5055.eurprd04.prod.outlook.com (20.177.50.140) by
- VI1PR04MB4861.eurprd04.prod.outlook.com (20.177.49.146) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2008.16; Fri, 28 Jun 2019 06:01:05 +0000
-Received: from VI1PR04MB5055.eurprd04.prod.outlook.com
- ([fe80::d83:14c4:dedb:213b]) by VI1PR04MB5055.eurprd04.prod.outlook.com
- ([fe80::d83:14c4:dedb:213b%5]) with mapi id 15.20.2008.014; Fri, 28 Jun 2019
- 06:01:05 +0000
-From: Leonard Crestez <leonard.crestez@nxp.com>
-To: Anson Huang <anson.huang@nxp.com>, Jacky Bai <ping.bai@nxp.com>,
- "l.stach@pengutronix.de" <l.stach@pengutronix.de>
-Subject: Re: [PATCH 2/2] arm64: dts: imx8mm: Correct OPP table according to
- latest datasheet
-Thread-Topic: [PATCH 2/2] arm64: dts: imx8mm: Correct OPP table according to
- latest datasheet
-Thread-Index: AQHVLWLHJZvOkljf/UeBT/cVdVnPoQ==
-Date: Fri, 28 Jun 2019 06:01:05 +0000
-Message-ID: <VI1PR04MB50555399D8A3E4890D8C91E6EEFC0@VI1PR04MB5055.eurprd04.prod.outlook.com>
-References: <20190628032800.8428-1-Anson.Huang@nxp.com>
- <20190628032800.8428-2-Anson.Huang@nxp.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=leonard.crestez@nxp.com; 
-x-originating-ip: [2a04:241e:500:9200:e6e7:49ff:fe63:c221]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: f32db33f-55e1-4e34-547b-08d6fb8e01b5
-x-ms-office365-filtering-ht: Tenant
-x-microsoft-antispam: BCL:0; PCL:0;
- RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600148)(711020)(4605104)(1401327)(4618075)(2017052603328)(7193020);
- SRVR:VI1PR04MB4861; 
-x-ms-traffictypediagnostic: VI1PR04MB4861:
-x-microsoft-antispam-prvs: <VI1PR04MB4861CAB1DC4DCD309769B726EEFC0@VI1PR04MB4861.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:6430;
-x-forefront-prvs: 00826B6158
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(4636009)(376002)(39860400002)(346002)(396003)(366004)(136003)(199004)(189003)(5660300002)(52536014)(476003)(99286004)(81156014)(68736007)(66946007)(54906003)(6116002)(256004)(2501003)(110136005)(71200400001)(6246003)(6436002)(186003)(66476007)(6506007)(76176011)(7696005)(14444005)(25786009)(2906002)(55016002)(71190400001)(4744005)(46003)(229853002)(33656002)(53936002)(102836004)(53546011)(66446008)(446003)(8936002)(44832011)(316002)(478600001)(73956011)(7416002)(7736002)(76116006)(9686003)(8676002)(66556008)(486006)(4326008)(74316002)(14454004)(305945005)(86362001)(81166006)(64756008)(32563001);
- DIR:OUT; SFP:1101; SCL:1; SRVR:VI1PR04MB4861;
- H:VI1PR04MB5055.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; A:1; MX:1; 
-received-spf: None (protection.outlook.com: nxp.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: OxpCvGmj1WZuuAde2/P+msuo2ONlEXSza09xe1UrYCZX9QQedTyOb/QFeMmWeVBcNp1Nnvl/buDFqPtdPZ/EAWi1Yr/5BEpHK2ekF+d3WZ3Nxmh/fdOgF/E8s/edMBjCjdZVy2twRiiYb9+Bg+n4rFztEtWlWdtqBvoEG3KJotLNylrLkahgOpTwOTiPoCu8xKjxVTXcPFxVh8wYhn3qZAaHFvAmfRm8LiO3EqEFyK8Yzozaeu2bS8VsXZGDl3X95PS2WS6gZ2D4u3RSIQH6tEWJVkJbvH7J2xLrJWP2jk3O5EW6I5mmxFIfCwBGOdBUg269tzyqwga9NVQg3EH5K5Q7F3FQuqdhd/qi0ksiYFB5EXerYk2lgK36vZhDu1km5AYIvK25PrHIxALzEF5NEicjaqSMgnncqacy9wStvhA=
+ id 1hgjx9-0000GL-84
+ for linux-arm-kernel@lists.infradead.org; Fri, 28 Jun 2019 06:01:44 +0000
+Received: by mail-pl1-x644.google.com with SMTP id cl9so2607044plb.10
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 27 Jun 2019 23:01:42 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=yPRaQJzmFQwYi8hosJXjNAPxaw+qeTsDk1d+L2uAT1Q=;
+ b=vvNL9fbJcjLCGE94UWKp38ok8N+6iZufXNYCef+hRYEt93VhjGYVeKaRdM9GFD0kq5
+ /fTAzVWftSGRxWLvIiQf0tEwg7U4Mg2PAXVQyVIBmnSB2eO0Mvl3jq1wg7cvLF844thv
+ cwA/XYaRACYItx2RywEjMnWdNCJV8fMJSSIgsjnTiZWsICUaHkFztJsRNVxtTvyJn5fq
+ EkQxIQ7yqinxpgFe9RfhZkChUKYaAQyXeCMDcPD0hZ0uSWkb2unPMoaeDDbKx33qhn4m
+ 3sitMlJ2o/JTlsEHUBVmNpqoNA6tt79R8WgiXArCix4nvxu+S9XZVtdQ6gxEJWAenFg8
+ zpkw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=yPRaQJzmFQwYi8hosJXjNAPxaw+qeTsDk1d+L2uAT1Q=;
+ b=ApSJNwbACQERoL1vHZJv4JlgUkU0RLfo54TB4yO3pjwm/EhU2FbYXC039lsOCDp9yt
+ 3jc5R9WZTrQ6s9ITjWAjbfEv147+103knXI9zODR9wqQWzNP8P/wI15kmEdhRWJpoIcH
+ P05y3W0UckLLxvYM8gKzcspyFte+9vYMjiZSWB1G6mYcELFUNwhEJRcB0fwvB5lmhsfD
+ IfD5w+ozHzCdLIdWhYlpHcTgNOo0nexQfEKWwmozYEUWuAVB5Y9pHAGh+w2fP5C5SiCY
+ k5Aokpj04qf68dkUQXz0VnEWAgIXWIIfXMu3K6CCJpaHUrta1mGRo3+pOvMddL4YbnxV
+ daBQ==
+X-Gm-Message-State: APjAAAWs1Gd+qj4SN6EltX2bLHCua3ZBQQTFR7fpdYNBRfKq5ujcITMN
+ qIQbbK5ILmOtE8RXZlhi0Wzm/g==
+X-Google-Smtp-Source: APXvYqzbAhcap8BbHfMDCoOkrOvthmGqMacGqdcSZfyzVyXrEL6joFCpneO3Qz+XBoTszEuWTC1xEA==
+X-Received: by 2002:a17:902:8490:: with SMTP id
+ c16mr9620055plo.1.1561701702042; 
+ Thu, 27 Jun 2019 23:01:42 -0700 (PDT)
+Received: from localhost ([122.172.211.128])
+ by smtp.gmail.com with ESMTPSA id c9sm975912pfn.3.2019.06.27.23.01.40
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Thu, 27 Jun 2019 23:01:41 -0700 (PDT)
+Date: Fri, 28 Jun 2019 11:31:39 +0530
+From: Viresh Kumar <viresh.kumar@linaro.org>
+To: Daniel Lezcano <daniel.lezcano@linaro.org>
+Subject: Re: [PATCH V4 3/3] thermal/drivers/cpu_cooling:
+ cpufreq_cooling_register returns an int
+Message-ID: <20190628060139.czridjqrblu2ufjj@vireshk-i7>
+References: <20190627210209.32600-1-daniel.lezcano@linaro.org>
+ <20190627210209.32600-3-daniel.lezcano@linaro.org>
 MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: f32db33f-55e1-4e34-547b-08d6fb8e01b5
-X-MS-Exchange-CrossTenant-originalarrivaltime: 28 Jun 2019 06:01:05.0783 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: leonard.crestez@nxp.com
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1PR04MB4861
+Content-Disposition: inline
+In-Reply-To: <20190627210209.32600-3-daniel.lezcano@linaro.org>
+User-Agent: NeoMutt/20180716-391-311a52
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190627_230108_735668_B2D5442D 
-X-CRM114-Status: UNSURE (   7.59  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190627_230143_298990_8BDA5C58 
+X-CRM114-Status: GOOD (  15.41  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a01:111:f400:fe02:0:0:0:60e listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:644 listed in]
  [list.dnswl.org]
- 0.0 T_SPF_PERMERROR        SPF: test of record failed (permerror)
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -125,43 +100,48 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- Abel Vesa <abel.vesa@nxp.com>, "ccaione@baylibre.com" <ccaione@baylibre.com>,
- "andrew.smirnov@gmail.com" <andrew.smirnov@gmail.com>,
- "shawnguo@kernel.org" <shawnguo@kernel.org>,
- "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
- "angus@akkea.ca" <angus@akkea.ca>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Daniel Baluta <daniel.baluta@nxp.com>,
- "robh+dt@kernel.org" <robh+dt@kernel.org>, dl-linux-imx <linux-imx@nxp.com>,
- "kernel@pengutronix.de" <kernel@pengutronix.de>,
- "viresh.kumar@linaro.org" <viresh.kumar@linaro.org>,
- "festevam@gmail.com" <festevam@gmail.com>, "agx@sigxcpu.org" <agx@sigxcpu.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: "open list:TI BANDGAP AND THERMAL DRIVER" <linux-omap@vger.kernel.org>,
+ "open list:THERMAL/CPU_COOLING" <linux-pm@vger.kernel.org>,
+ Fabio Estevam <festevam@gmail.com>,
+ Amit Daniel Kachhap <amit.kachhap@gmail.com>, rjw@rjwysocki.net,
+ linux-kernel@vger.kernel.org, edubezval@gmail.com,
+ NXP Linux Team <linux-imx@nxp.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>, Keerthy <j-keerthy@ti.com>,
+ Zhang Rui <rui.zhang@intel.com>, Javi Merino <javi.merino@kernel.org>,
+ Shawn Guo <shawnguo@kernel.org>, Sascha Hauer <s.hauer@pengutronix.de>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 28.06.2019 06:37, Anson.Huang@nxp.com wrote:
-
-> According to latest datasheet (Rev.0.2, 04/2019) from below links,
-> 1.8GHz is ONLY available for consumer part, so the market segment
-> bits for 1.8GHz opp should ONLY available for consumer part accordingly.
+On 27-06-19, 23:02, Daniel Lezcano wrote:
+> It looks like after the changes in the patch the only reason for
+> returning (struct thermal_cooling_device *) from
+> cpufreq_cooling_register() is error checking, but it would be much
+> more straightforward to return int for this purpose.
 > 
->   			opp-hz = /bits/ 64 <1800000000>;
->   			opp-microvolt = <1000000>;
->   			/* Consumer only but rely on speed grading */
-> -			opp-supported-hw = <0x8>, <0x7>;
-> +			opp-supported-hw = <0x8>, <0x3>;
+> Moreover, that would prevent the callers of it from doing incorrect
+> things with the returned pointers (like using it to unregister the
+> cooling device).
+> 
+> Replace the returned value an integer instead of a pointer to a
+> thermal cooling device structure.
+> 
+> Suggested-by: Rafael J. Wysocki <rafael@kernel.org>
+> Signed-off-by: Daniel Lezcano <daniel.lezcano@linaro.org>
+> ---
+>  drivers/thermal/cpu_cooling.c                 | 63 +++++++++----------
+>  drivers/thermal/imx_thermal.c                 |  6 +-
+>  .../ti-soc-thermal/ti-thermal-common.c        |  7 +--
+>  include/linux/cpu_cooling.h                   | 16 ++---
+>  4 files changed, 40 insertions(+), 52 deletions(-)
 
-Only consumer parts should be fused for this highest OPP. If you don't 
-want to rely on this then maybe also delete the comment above?
+Acked-by: Viresh Kumar <viresh.kumar@linaro.org>
 
---
-Regards,
-leonard
+-- 
+viresh
 
 _______________________________________________
 linux-arm-kernel mailing list
