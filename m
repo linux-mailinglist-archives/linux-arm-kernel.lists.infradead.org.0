@@ -2,34 +2,34 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4329C59B33
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 28 Jun 2019 14:31:50 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 27FAB59B60
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 28 Jun 2019 14:32:51 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=X4wgSvrq7Mjqe8bo4qLm8qApmvakXPYdNa9yrEv00a8=; b=CKE8IUgYaQBsBz
-	6TMUKu+d3q+OBLJSeQPs0vFT+ix5NvRoYSKjbN8/qlWgaEPqR4VzrSZrc754KsMA/5/p1kF4mlvc2
-	b2LLKCExERrKnSHpOJjOLgQVfpAtJTMTBBKZLG6ZdopPWlc4cQ/XL4WdXIrAWJpaoJBp7PfTqe1Kp
-	uZmozAfbcBbqb3jVF54yIlLa0LVecqJrZ/EplAn+mbf36b4GonqXKj2VHOBU4WGGGSHleYzMvtR34
-	bu0Dp2E3N1acvJmP7cnOtPhfVz8IpvQ2NIEXp5wROZXL7JZaNpHaD2WnH0vOJ9tdBhZYH0fp+ZR8p
-	WVb4pgkvswJ829HKQYjg==;
+	List-Owner; bh=tIZIDBG8WLULzDWHFlKO6XMwjIkKLKP6AzyYuhtAWUo=; b=m/jgX1nJ1e8D+g
+	uWHIWiHILVdjztqQIaP5Ceug3PADzDH0oVIQ5jaaOc348hgnnOTTF0sLGTv/drlBe5J9sUWnELhVh
+	NtUTQ9U9q9EzeRlmFAQplDaR9aSx29yuhN86JFjc9dOFcT6YQsBkg7tXBnJkndiFhOOf6nEkqaQwG
+	GA+Jurp8ySquqvZDc72pDcbUvONcU+kI7bn7fhzV+G1QxNqc8NO1gbb9WUiOWQF6qttn8oDMUwhye
+	X7pJ52B8tTbZE0s7ln5H2hmlty013bioxyEhRnfKkv/YCmm0lZPw8614ZZ/3gahzmfQCfeRB7az32
+	Lsw+i4CRf1wsLG/fUD5g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hgq2c-0005nj-Lu; Fri, 28 Jun 2019 12:31:46 +0000
+	id 1hgq3b-0006gb-CW; Fri, 28 Jun 2019 12:32:47 +0000
 Received: from [186.213.242.156] (helo=bombadil.infradead.org)
  by bombadil.infradead.org with esmtpsa (Exim 4.92 #3 (Red Hat Linux))
- id 1hgq1T-00054t-US; Fri, 28 Jun 2019 12:30:36 +0000
+ id 1hgq1U-00055C-Fo; Fri, 28 Jun 2019 12:30:36 +0000
 Received: from mchehab by bombadil.infradead.org with local (Exim 4.92)
  (envelope-from <mchehab@bombadil.infradead.org>)
- id 1hgq1S-0005R9-0z; Fri, 28 Jun 2019 09:30:34 -0300
+ id 1hgq1S-0005Rx-94; Fri, 28 Jun 2019 09:30:34 -0300
 From: Mauro Carvalho Chehab <mchehab+samsung@kernel.org>
 To: Linux Doc Mailing List <linux-doc@vger.kernel.org>
-Subject: [PATCH 03/39] docs: perf: move to the admin-guide
-Date: Fri, 28 Jun 2019 09:29:56 -0300
-Message-Id: <cf054e7044bbba8d73ad032a0a1c9790afbfd510.1561724493.git.mchehab+samsung@kernel.org>
+Subject: [PATCH 13/39] docs: add arch doc directories to the index
+Date: Fri, 28 Jun 2019 09:30:06 -0300
+Message-Id: <df4b7dbf72f2ca0695adc6e5997ad852be2332a7.1561724493.git.mchehab+samsung@kernel.org>
 X-Mailer: git-send-email 2.21.0
 In-Reply-To: <cover.1561724493.git.mchehab+samsung@kernel.org>
 References: <cover.1561724493.git.mchehab+samsung@kernel.org>
@@ -45,140 +45,86 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- Khuong Dinh <khuong@os.amperecomputing.com>, Jonathan Corbet <corbet@lwn.net>,
- linux-arm-msm@vger.kernel.org, linux-kernel@vger.kernel.org,
+Cc: linux-s390@vger.kernel.org, Albert Ou <aou@eecs.berkeley.edu>,
+ Vasily Gorbik <gor@linux.ibm.com>, Jonathan Corbet <corbet@lwn.net>,
+ Catalin Marinas <catalin.marinas@arm.com>, Palmer Dabbelt <palmer@sifive.com>,
+ Heiko Carstens <heiko.carstens@de.ibm.com>, linux-kernel@vger.kernel.org,
  Mauro Carvalho Chehab <mchehab@infradead.org>,
- Shaokun Zhang <zhangshaokun@hisilicon.com>, Andy Gross <agross@kernel.org>,
+ Christian Borntraeger <borntraeger@de.ibm.com>,
+ Paul Mackerras <paulus@samba.org>, Michael Ellerman <mpe@ellerman.id.au>,
+ Benjamin Herrenschmidt <benh@kernel.crashing.org>,
  Mauro Carvalho Chehab <mchehab+samsung@kernel.org>,
+ linux-riscv@lists.infradead.org, linuxppc-dev@lists.ozlabs.org,
  Will Deacon <will@kernel.org>, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The perf infrastructure is used for userspace to track issues.
-At least a good part of what's described here is related to
-it.
-
-So, add it to the admin-guide.
-
-Signed-off-by: Mauro Carvalho Chehab <mchehab+samsung@kernel.org>
----
- Documentation/admin-guide/index.rst                    | 1 +
- Documentation/{ => admin-guide}/perf/arm-ccn.rst       | 0
- Documentation/{ => admin-guide}/perf/arm_dsu_pmu.rst   | 0
- Documentation/{ => admin-guide}/perf/hisi-pmu.rst      | 0
- Documentation/{ => admin-guide}/perf/index.rst         | 2 --
- Documentation/{ => admin-guide}/perf/qcom_l2_pmu.rst   | 0
- Documentation/{ => admin-guide}/perf/qcom_l3_pmu.rst   | 0
- Documentation/{ => admin-guide}/perf/thunderx2-pmu.rst | 0
- Documentation/{ => admin-guide}/perf/xgene-pmu.rst     | 0
- MAINTAINERS                                            | 4 ++--
- drivers/perf/qcom_l3_pmu.c                             | 2 +-
- 11 files changed, 4 insertions(+), 5 deletions(-)
- rename Documentation/{ => admin-guide}/perf/arm-ccn.rst (100%)
- rename Documentation/{ => admin-guide}/perf/arm_dsu_pmu.rst (100%)
- rename Documentation/{ => admin-guide}/perf/hisi-pmu.rst (100%)
- rename Documentation/{ => admin-guide}/perf/index.rst (95%)
- rename Documentation/{ => admin-guide}/perf/qcom_l2_pmu.rst (100%)
- rename Documentation/{ => admin-guide}/perf/qcom_l3_pmu.rst (100%)
- rename Documentation/{ => admin-guide}/perf/thunderx2-pmu.rst (100%)
- rename Documentation/{ => admin-guide}/perf/xgene-pmu.rst (100%)
-
-diff --git a/Documentation/admin-guide/index.rst b/Documentation/admin-guide/index.rst
-index 0066b198cad4..b7e6d18f80ca 100644
---- a/Documentation/admin-guide/index.rst
-+++ b/Documentation/admin-guide/index.rst
-@@ -38,6 +38,7 @@ problems and bugs in particular.
-    ramoops
-    dynamic-debug-howto
-    init
-+   perf/index
- 
- This is the beginning of a section with information of interest to
- application developers.  Documents covering various aspects of the kernel
-diff --git a/Documentation/perf/arm-ccn.rst b/Documentation/admin-guide/perf/arm-ccn.rst
-similarity index 100%
-rename from Documentation/perf/arm-ccn.rst
-rename to Documentation/admin-guide/perf/arm-ccn.rst
-diff --git a/Documentation/perf/arm_dsu_pmu.rst b/Documentation/admin-guide/perf/arm_dsu_pmu.rst
-similarity index 100%
-rename from Documentation/perf/arm_dsu_pmu.rst
-rename to Documentation/admin-guide/perf/arm_dsu_pmu.rst
-diff --git a/Documentation/perf/hisi-pmu.rst b/Documentation/admin-guide/perf/hisi-pmu.rst
-similarity index 100%
-rename from Documentation/perf/hisi-pmu.rst
-rename to Documentation/admin-guide/perf/hisi-pmu.rst
-diff --git a/Documentation/perf/index.rst b/Documentation/admin-guide/perf/index.rst
-similarity index 95%
-rename from Documentation/perf/index.rst
-rename to Documentation/admin-guide/perf/index.rst
-index 4bf848e27f26..9d445451ea18 100644
---- a/Documentation/perf/index.rst
-+++ b/Documentation/admin-guide/perf/index.rst
-@@ -1,5 +1,3 @@
--:orphan:
--
- ===========================
- Performance monitor support
- ===========================
-diff --git a/Documentation/perf/qcom_l2_pmu.rst b/Documentation/admin-guide/perf/qcom_l2_pmu.rst
-similarity index 100%
-rename from Documentation/perf/qcom_l2_pmu.rst
-rename to Documentation/admin-guide/perf/qcom_l2_pmu.rst
-diff --git a/Documentation/perf/qcom_l3_pmu.rst b/Documentation/admin-guide/perf/qcom_l3_pmu.rst
-similarity index 100%
-rename from Documentation/perf/qcom_l3_pmu.rst
-rename to Documentation/admin-guide/perf/qcom_l3_pmu.rst
-diff --git a/Documentation/perf/thunderx2-pmu.rst b/Documentation/admin-guide/perf/thunderx2-pmu.rst
-similarity index 100%
-rename from Documentation/perf/thunderx2-pmu.rst
-rename to Documentation/admin-guide/perf/thunderx2-pmu.rst
-diff --git a/Documentation/perf/xgene-pmu.rst b/Documentation/admin-guide/perf/xgene-pmu.rst
-similarity index 100%
-rename from Documentation/perf/xgene-pmu.rst
-rename to Documentation/admin-guide/perf/xgene-pmu.rst
-diff --git a/MAINTAINERS b/MAINTAINERS
-index 9d3a408f5ce1..55996c9f2e0a 100644
---- a/MAINTAINERS
-+++ b/MAINTAINERS
-@@ -1139,7 +1139,7 @@ APPLIED MICRO (APM) X-GENE SOC PMU
- M:	Khuong Dinh <khuong@os.amperecomputing.com>
- S:	Supported
- F:	drivers/perf/xgene_pmu.c
--F:	Documentation/perf/xgene-pmu.rst
-+F:	Documentation/admin-guide/perf/xgene-pmu.rst
- F:	Documentation/devicetree/bindings/perf/apm-xgene-pmu.txt
- 
- APTINA CAMERA SENSOR PLL
-@@ -7207,7 +7207,7 @@ M:	Shaokun Zhang <zhangshaokun@hisilicon.com>
- W:	http://www.hisilicon.com
- S:	Supported
- F:	drivers/perf/hisilicon
--F:	Documentation/perf/hisi-pmu.rst
-+F:	Documentation/admin-guide/perf/hisi-pmu.rst
- 
- HISILICON ROCE DRIVER
- M:	Lijun Ou <oulijun@huawei.com>
-diff --git a/drivers/perf/qcom_l3_pmu.c b/drivers/perf/qcom_l3_pmu.c
-index 90f88ce5192b..656e830798d9 100644
---- a/drivers/perf/qcom_l3_pmu.c
-+++ b/drivers/perf/qcom_l3_pmu.c
-@@ -8,7 +8,7 @@
-  * the slices. User space needs to aggregate to individual counts to provide
-  * a global picture.
-  *
-- * See Documentation/perf/qcom_l3_pmu.rst for more details.
-+ * See Documentation/admin-guide/perf/qcom_l3_pmu.rst for more details.
-  *
-  * Copyright (c) 2015-2017, The Linux Foundation. All rights reserved.
-  */
--- 
-2.21.0
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+Tm93IHRoYXQgc2V2ZXJhbCBhcmNoIGRvY3VtZW50cyB3ZXJlIGNvbnZlcnRlZCB0byBSZVNULAph
+ZGQgdGhlaXIgaW5kZXhlcyB0byBEb2N1bWVudGF0aW9uL2luZGV4LnJzdCBhbmQgcmVtb3ZlIHRo
+ZQo6b3JwaGFuOiAgZnJvbSB0aGVtLgoKU2lnbmVkLW9mZi1ieTogTWF1cm8gQ2FydmFsaG8gQ2hl
+aGFiIDxtY2hlaGFiK3NhbXN1bmdAa2VybmVsLm9yZz4KLS0tCiBEb2N1bWVudGF0aW9uL2FybS9p
+bmRleC5yc3QgICAgIHwgIDIgLS0KIERvY3VtZW50YXRpb24vYXJtNjQvaW5kZXgucnN0ICAgfCAg
+MiAtLQogRG9jdW1lbnRhdGlvbi9pYTY0L2luZGV4LnJzdCAgICB8ICAyIC0tCiBEb2N1bWVudGF0
+aW9uL2luZGV4LnJzdCAgICAgICAgIHwgMTAgKysrKysrKysrKwogRG9jdW1lbnRhdGlvbi9tNjhr
+L2luZGV4LnJzdCAgICB8ICAyICstCiBEb2N1bWVudGF0aW9uL3Bvd2VycGMvaW5kZXgucnN0IHwg
+IDIgKy0KIERvY3VtZW50YXRpb24vcmlzY3YvaW5kZXgucnN0ICAgfCAgMiAtLQogRG9jdW1lbnRh
+dGlvbi9zMzkwL2luZGV4LnJzdCAgICB8ICAyIC0tCiBEb2N1bWVudGF0aW9uL3NwYXJjL2luZGV4
+LnJzdCAgIHwgIDIgLS0KIERvY3VtZW50YXRpb24veHRlbnNhL2luZGV4LnJzdCAgfCAgMiArLQog
+MTAgZmlsZXMgY2hhbmdlZCwgMTMgaW5zZXJ0aW9ucygrKSwgMTUgZGVsZXRpb25zKC0pCgpkaWZm
+IC0tZ2l0IGEvRG9jdW1lbnRhdGlvbi9hcm0vaW5kZXgucnN0IGIvRG9jdW1lbnRhdGlvbi9hcm0v
+aW5kZXgucnN0CmluZGV4IGJkMzE2ZDFhMTgwMi4uOWMyZjc4MWY0Njg1IDEwMDY0NAotLS0gYS9E
+b2N1bWVudGF0aW9uL2FybS9pbmRleC5yc3QKKysrIGIvRG9jdW1lbnRhdGlvbi9hcm0vaW5kZXgu
+cnN0CkBAIC0xLDUgKzEsMyBAQAot77u/Om9ycGhhbjoKLQogPT09PT09PT09PT09PT09PQogQVJN
+IEFyY2hpdGVjdHVyZQogPT09PT09PT09PT09PT09PQpkaWZmIC0tZ2l0IGEvRG9jdW1lbnRhdGlv
+bi9hcm02NC9pbmRleC5yc3QgYi9Eb2N1bWVudGF0aW9uL2FybTY0L2luZGV4LnJzdAppbmRleCAw
+MThiNzgzNmVjYjcuLjk2YjY5NmJhNGU2YyAxMDA2NDQKLS0tIGEvRG9jdW1lbnRhdGlvbi9hcm02
+NC9pbmRleC5yc3QKKysrIGIvRG9jdW1lbnRhdGlvbi9hcm02NC9pbmRleC5yc3QKQEAgLTEsNSAr
+MSwzIEBACi06b3JwaGFuOgotCiA9PT09PT09PT09PT09PT09PT0KIEFSTTY0IEFyY2hpdGVjdHVy
+ZQogPT09PT09PT09PT09PT09PT09CmRpZmYgLS1naXQgYS9Eb2N1bWVudGF0aW9uL2lhNjQvaW5k
+ZXgucnN0IGIvRG9jdW1lbnRhdGlvbi9pYTY0L2luZGV4LnJzdAppbmRleCBhM2UzMDUyYWQ2ZTIu
+LmVmOTk0NzVmNjcyYiAxMDA2NDQKLS0tIGEvRG9jdW1lbnRhdGlvbi9pYTY0L2luZGV4LnJzdAor
+KysgYi9Eb2N1bWVudGF0aW9uL2lhNjQvaW5kZXgucnN0CkBAIC0xLDUgKzEsMyBAQAotOm9ycGhh
+bjoKLQogPT09PT09PT09PT09PT09PT09CiBJQS02NCBBcmNoaXRlY3R1cmUKID09PT09PT09PT09
+PT09PT09PQpkaWZmIC0tZ2l0IGEvRG9jdW1lbnRhdGlvbi9pbmRleC5yc3QgYi9Eb2N1bWVudGF0
+aW9uL2luZGV4LnJzdAppbmRleCA5NWRiMjZiZjI4OTkuLmY4OThkZWY4MzNmNCAxMDA2NDQKLS0t
+IGEvRG9jdW1lbnRhdGlvbi9pbmRleC5yc3QKKysrIGIvRG9jdW1lbnRhdGlvbi9pbmRleC5yc3QK
+QEAgLTExOCw3ICsxMTgsMTcgQEAgaW1wbGVtZW50YXRpb24uCiAgICA6bWF4ZGVwdGg6IDIKIAog
+ICAgc2gvaW5kZXgKKyAgIGFybS9pbmRleAorICAgYXJtNjQvaW5kZXgKKyAgIGlhNjQvaW5kZXgK
+KyAgIG02OGsvaW5kZXgKKyAgIHBvd2VycGMvaW5kZXgKKyAgIHJpc2N2L2luZGV4CisgICBzMzkw
+L2luZGV4CisgICBzaC9pbmRleAorICAgc3BhcmMvaW5kZXgKICAgIHg4Ni9pbmRleAorICAgeHRl
+bnNhL2luZGV4CiAKIEZpbGVzeXN0ZW0gRG9jdW1lbnRhdGlvbgogLS0tLS0tLS0tLS0tLS0tLS0t
+LS0tLS0tCmRpZmYgLS1naXQgYS9Eb2N1bWVudGF0aW9uL202OGsvaW5kZXgucnN0IGIvRG9jdW1l
+bnRhdGlvbi9tNjhrL2luZGV4LnJzdAppbmRleCBmMzI3M2VjMDc1YzMuLjNhNWJhN2ZlMTcwMyAx
+MDA2NDQKLS0tIGEvRG9jdW1lbnRhdGlvbi9tNjhrL2luZGV4LnJzdAorKysgYi9Eb2N1bWVudGF0
+aW9uL202OGsvaW5kZXgucnN0CkBAIC0xLDQgKzEsNCBAQAotOm9ycGhhbjoKKy4uIFNQRFgtTGlj
+ZW5zZS1JZGVudGlmaWVyOiBHUEwtMi4wCiAKID09PT09PT09PT09PT09PT09CiBtNjhrIEFyY2hp
+dGVjdHVyZQpkaWZmIC0tZ2l0IGEvRG9jdW1lbnRhdGlvbi9wb3dlcnBjL2luZGV4LnJzdCBiL0Rv
+Y3VtZW50YXRpb24vcG93ZXJwYy9pbmRleC5yc3QKaW5kZXggMWZmMTcyNjhkYjQ2Li41NDliMWNk
+ZDc3YWUgMTAwNjQ0Ci0tLSBhL0RvY3VtZW50YXRpb24vcG93ZXJwYy9pbmRleC5yc3QKKysrIGIv
+RG9jdW1lbnRhdGlvbi9wb3dlcnBjL2luZGV4LnJzdApAQCAtMSw0ICsxLDQgQEAKLTpvcnBoYW46
+CisuLiBTUERYLUxpY2Vuc2UtSWRlbnRpZmllcjogR1BMLTIuMAogCiA9PT09PT09CiBwb3dlcnBj
+CmRpZmYgLS1naXQgYS9Eb2N1bWVudGF0aW9uL3Jpc2N2L2luZGV4LnJzdCBiL0RvY3VtZW50YXRp
+b24vcmlzY3YvaW5kZXgucnN0CmluZGV4IGM0YjkwNmQ5YjVhNy4uZTNjYTA5MjJhOGMyIDEwMDY0
+NAotLS0gYS9Eb2N1bWVudGF0aW9uL3Jpc2N2L2luZGV4LnJzdAorKysgYi9Eb2N1bWVudGF0aW9u
+L3Jpc2N2L2luZGV4LnJzdApAQCAtMSw1ICsxLDMgQEAKLTpvcnBoYW46Ci0KID09PT09PT09PT09
+PT09PT09PT0KIFJJU0MtViBhcmNoaXRlY3R1cmUKID09PT09PT09PT09PT09PT09PT0KZGlmZiAt
+LWdpdCBhL0RvY3VtZW50YXRpb24vczM5MC9pbmRleC5yc3QgYi9Eb2N1bWVudGF0aW9uL3MzOTAv
+aW5kZXgucnN0CmluZGV4IDFhOTE0ZGEyYTA3Yi4uNDYwMjMxMjkwOWQzIDEwMDY0NAotLS0gYS9E
+b2N1bWVudGF0aW9uL3MzOTAvaW5kZXgucnN0CisrKyBiL0RvY3VtZW50YXRpb24vczM5MC9pbmRl
+eC5yc3QKQEAgLTEsNSArMSwzIEBACi06b3JwaGFuOgotCiA9PT09PT09PT09PT09PT09PQogczM5
+MCBBcmNoaXRlY3R1cmUKID09PT09PT09PT09PT09PT09CmRpZmYgLS1naXQgYS9Eb2N1bWVudGF0
+aW9uL3NwYXJjL2luZGV4LnJzdCBiL0RvY3VtZW50YXRpb24vc3BhcmMvaW5kZXgucnN0CmluZGV4
+IDkxZjdkNjY0M2RkNS4uNzFjZmY2MjFmMjQzIDEwMDY0NAotLS0gYS9Eb2N1bWVudGF0aW9uL3Nw
+YXJjL2luZGV4LnJzdAorKysgYi9Eb2N1bWVudGF0aW9uL3NwYXJjL2luZGV4LnJzdApAQCAtMSw1
+ICsxLDMgQEAKLTpvcnBoYW46Ci0KID09PT09PT09PT09PT09PT09PQogU3BhcmMgQXJjaGl0ZWN0
+dXJlCiA9PT09PT09PT09PT09PT09PT0KZGlmZiAtLWdpdCBhL0RvY3VtZW50YXRpb24veHRlbnNh
+L2luZGV4LnJzdCBiL0RvY3VtZW50YXRpb24veHRlbnNhL2luZGV4LnJzdAppbmRleCA1YTI0ZTM2
+NWUzNWYuLjUyZmEwNGViMzlhMyAxMDA2NDQKLS0tIGEvRG9jdW1lbnRhdGlvbi94dGVuc2EvaW5k
+ZXgucnN0CisrKyBiL0RvY3VtZW50YXRpb24veHRlbnNhL2luZGV4LnJzdApAQCAtMSw0ICsxLDQg
+QEAKLTpvcnBoYW46CisuLiBTUERYLUxpY2Vuc2UtSWRlbnRpZmllcjogR1BMLTIuMAogCiA9PT09
+PT09PT09PT09PT09PT09CiBYdGVuc2EgQXJjaGl0ZWN0dXJlCi0tIAoyLjIxLjAKCgpfX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVs
+IG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDov
+L2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
