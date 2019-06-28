@@ -2,100 +2,134 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id ECE2759890
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 28 Jun 2019 12:40:00 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A443F59895
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 28 Jun 2019 12:40:48 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:MIME-Version:
+	Date:Message-ID:From:To:Subject:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=V+H3koVN7YO6eJO1/rVej377q0gla7na2jozB85va0k=; b=pqkVX5pJDSdXbl
-	8211G4H6FBmJ9ODU56jkZed2ZkMjU1PtqBHpxRyZ/Gbnz2+Gq9UJFhsay7rfrF7Ih8J7y/Q2cNPay
-	ywHvaDHk7MANEMJ02fdCKoTnT4C7upClxIkvqXDuI87EqkpoqJYI27j7M3xCBP4DVqc16uOXP4aLB
-	FuQlIrLuB19fY7QImBLEL6eoesp2j9cTcN0m+KFiZXAfVUZ77nrSoiWhcHixSHHolFOdNIdggsXww
-	zpfDYtPwz2xl7n9cmPFDu8kj8+qTUg8xyOh1stdpHjoDYC2uqqdAQKKi47QJk4elv0AzMiSUxFCC8
-	tluWJhtW1gEEJnQGkfQg==;
+	List-Owner; bh=K50snNC0GlD2O+KmoIdPDiBNNwEtHybh57OCTddx6RI=; b=GUq5OheCEqRjln
+	GW/ovY3AGE1YZueBPoCUqD5NFUiLKp4Au8VrbhbdoDNvwv7OOGCItO0QUCX/e9HZ/lrt77T/eIgiA
+	o073NGMUvmZf8OTNuFzhaWnSkOg+NUoI3FsMA7R/zuun1XniiP9QYjAn7QeHQYeguZubLHJq3h6WE
+	3J+wIzkvuTzfs1V5Nd+pMAaccKRhjNtgsGJ5u42L0OF/WCwI+T8IlYjWH7i/e7oUeeT61f69x+19Y
+	X6eqJykUzeJNghx9pyUUA6/7J6T33QObTL9ewU4gefVbHzByX4mpK8970IGOPjR/zw3wfjwjG4vD5
+	axsI55x7Pq3E2sCpt+Fg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hgoIM-0000AR-Ad; Fri, 28 Jun 2019 10:39:54 +0000
-Received: from mx08-00252a01.pphosted.com ([91.207.212.211])
+	id 1hgoJD-0001lj-3T; Fri, 28 Jun 2019 10:40:47 +0000
+Received: from mailout1.w1.samsung.com ([210.118.77.11])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hgoI6-000091-ET
- for linux-arm-kernel@lists.infradead.org; Fri, 28 Jun 2019 10:39:41 +0000
-Received: from pps.filterd (m0102629.ppops.net [127.0.0.1])
- by mx08-00252a01.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- x5SAdZSa005157
- for <linux-arm-kernel@lists.infradead.org>; Fri, 28 Jun 2019 11:39:35 +0100
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=raspberrypi.org;
- h=mime-version :
- references : in-reply-to : from : date : message-id : subject : to : cc :
- content-type; s=pp; bh=MgvxS7rVwy/049YflKjnKGTKQ+HL2aJJ079s/pHhqUs=;
- b=hpy5Hahv7e6rq0h0AOZ3GoHHWIGAfbzxmIyMcZ+Yitlks0cbCM3zhnAYd12jLID4rJXl
- 3uFWlo43taSWyUodBTdRoiiG/wJnOEJSx7tLpMgBikXnkXp9Gx93hRc1Fzlp68LwfVMh
- we9rUBRSGNKET9E5CXoziTNrXn9jIW0oARGXGyCa82rUIFSyXiy3LGHw6u2PuTZWI0Hr
- nwYpGnlaSL46weTOip9h6kEZdxa4mGOcltsMcekMdCOpr+V0G7Ku2P0BXyC9o2TTyYLH
- 3aSPFcisbQWyaNYRDUQHK/xM0FdqoMX0c2IjpGDFAqjr+EAH6y3yDAu17plLHDTTNFKc wA== 
-Received: from mail-pg1-f199.google.com (mail-pg1-f199.google.com
- [209.85.215.199])
- by mx08-00252a01.pphosted.com with ESMTP id 2t9exhk23r-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=OK)
- for <linux-arm-kernel@lists.infradead.org>; Fri, 28 Jun 2019 11:39:35 +0100
-Received: by mail-pg1-f199.google.com with SMTP id 3so3005211pgc.5
+ id 1hgoI8-000097-Ck
+ for linux-arm-kernel@lists.infradead.org; Fri, 28 Jun 2019 10:39:42 +0000
+Received: from eucas1p2.samsung.com (unknown [182.198.249.207])
+ by mailout1.w1.samsung.com (KnoxPortal) with ESMTP id
+ 20190628103937euoutp010a6599b806df98b8758ea1f3c112befe~sVpcIrm_O0048800488euoutp01P
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 28 Jun 2019 03:39:35 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=raspberrypi.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=MgvxS7rVwy/049YflKjnKGTKQ+HL2aJJ079s/pHhqUs=;
- b=QP3bpBBqfTQcuIPIL35AL6V59Bly7/8OOBFN3vei2qCmLvwQX/x5dUpyUeJwcnJ/G8
- 5PWgIWQnOQUBbgBaRnAnIKGk+fYVKlGMfk3Hz7QQyQO7PBnHugGnlWW1JHPuIAeYveD7
- d+cQ8d2Fn/aju88j02cuciMojKrByqcz6LAIANh9q571GMfShmWfaYBaTWP5WeR90Qyo
- wLkNfMfvErt91FUfFv/BG6UDPm3x8wSBpv2zU3ar1kAzoYvF8+4L4l5IQ1+/LDJfUiNB
- JO7PnO+e3WcIgptvxpamCvYXTPq7znnTIVLZYwGvUSqCkpaZWM6HKvKF/r/HEclve2Aw
- Z64g==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=MgvxS7rVwy/049YflKjnKGTKQ+HL2aJJ079s/pHhqUs=;
- b=OFROleM5vE/iRxzVa0MHYTzAaDDx+8LNYrpPgAl9SDjX5ZlFHmeIE64b/vgm/c1vM8
- 9LxDgHeDAcIpqLPw39XUr9Gk9UiayjtLIKhPk0XsANE+kEru/2Ej8+c+N7IJUbF5EBSz
- lrjZIjJSTYS39gpCmzYtYR558R4ol9y3XPXNlIg/ECtmvEbXB9a4uNXDDPmm0mcwxMND
- O6GqLCVC5/yPini9Lwz8ogxpt4wSbBPb5ZIMUmhb+g81W+Veha5N8Dl2BPRMnIeShsz9
- kb7OZk4GcLjkS4UJkrnSu97sACdBTIuv2BSCcocmsMxBoVU7382DP/0s5TuKpotePL73
- zltw==
-X-Gm-Message-State: APjAAAXB5+GKLed6ldkEShJIXtKxFDDanVz0yMhG04r8vKODN+Y5pE+5
- XTCIguhz78MLA7CYzacu62yXR6wFhfBLwXhh/vvrt5kVqAcLo36EAceIboYiUuHgbHhwhj5rhcO
- 6Z6xWklOiW11H3gkGjO3UhYP/8gaFt0odndLR81rBuDEgZAvyHg==
-X-Received: by 2002:a63:360d:: with SMTP id d13mr8663273pga.80.1561718373360; 
- Fri, 28 Jun 2019 03:39:33 -0700 (PDT)
-X-Google-Smtp-Source: APXvYqzYUiO45rSRH0WJ6NDrEAeD1snwBUde7nzBvYLWt2tIOkSofz2vvGr8F/fz5p4u5n/tfNWRReppS1ngXIFCH/s=
-X-Received: by 2002:a63:360d:: with SMTP id d13mr8663231pga.80.1561718372896; 
- Fri, 28 Jun 2019 03:39:32 -0700 (PDT)
+ Fri, 28 Jun 2019 10:39:37 +0000 (GMT)
+DKIM-Filter: OpenDKIM Filter v2.11.0 mailout1.w1.samsung.com
+ 20190628103937euoutp010a6599b806df98b8758ea1f3c112befe~sVpcIrm_O0048800488euoutp01P
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
+ s=mail20170921; t=1561718377;
+ bh=KxYCFb299NuCBuskzrs32fM+mCiZc0Ki+XeRZlLfjq0=;
+ h=Subject:To:Cc:From:Date:In-Reply-To:References:From;
+ b=jsdULTZwxp+xU/hui5qSc5dMtcUCAD+wD4H6XURck7iAQx2nlOVnpZSO8jyOoV42M
+ z+1ogKFgVEelOCnGCxeuVB5HxL2mTPKyOQo8jpatoz0hO26WrGJrmwgQ+UlhO+LujG
+ cLeWhgUlCou8ay8nB0cMWRZTmkTyPNPalAey4PkM=
+Received: from eusmges1new.samsung.com (unknown [203.254.199.242]) by
+ eucas1p2.samsung.com (KnoxPortal) with ESMTP id
+ 20190628103936eucas1p26685f8adf006b35a11477e4280202310~sVpbOfd-B2835028350eucas1p2-;
+ Fri, 28 Jun 2019 10:39:36 +0000 (GMT)
+Received: from eucas1p2.samsung.com ( [182.198.249.207]) by
+ eusmges1new.samsung.com (EUCPMTA) with SMTP id 49.14.04298.86EE51D5; Fri, 28
+ Jun 2019 11:39:36 +0100 (BST)
+Received: from eusmtrp1.samsung.com (unknown [182.198.249.138]) by
+ eucas1p1.samsung.com (KnoxPortal) with ESMTPA id
+ 20190628103935eucas1p1ed57a3e2f9ecae6cb299cfacb48452d3~sVpaJGe031469414694eucas1p1v;
+ Fri, 28 Jun 2019 10:39:35 +0000 (GMT)
+Received: from eusmgms1.samsung.com (unknown [182.198.249.179]) by
+ eusmtrp1.samsung.com (KnoxPortal) with ESMTP id
+ 20190628103935eusmtrp1331c3b3754737d4a782136682bb7f5bf~sVpZ64OIs2528125281eusmtrp17;
+ Fri, 28 Jun 2019 10:39:35 +0000 (GMT)
+X-AuditID: cbfec7f2-f2dff700000010ca-f6-5d15ee68253a
+Received: from eusmtip2.samsung.com ( [203.254.199.222]) by
+ eusmgms1.samsung.com (EUCPMTA) with SMTP id B6.DB.04146.66EE51D5; Fri, 28
+ Jun 2019 11:39:35 +0100 (BST)
+Received: from [106.120.51.74] (unknown [106.120.51.74]) by
+ eusmtip2.samsung.com (KnoxPortal) with ESMTPA id
+ 20190628103934eusmtip265136dc79895f63db099ac34349007b6~sVpZCX4-D1929119291eusmtip2P;
+ Fri, 28 Jun 2019 10:39:34 +0000 (GMT)
+Subject: Re: [PATCH v2 7/7] arm64: dts: allwinner: a64: enable ANX6345
+ bridge on Teres-I
+To: Maxime Ripard <maxime.ripard@bootlin.com>
+From: Andrzej Hajda <a.hajda@samsung.com>
+Message-ID: <bb2c2c00-b46e-1984-088f-861ac8952331@samsung.com>
+Date: Fri, 28 Jun 2019 12:39:32 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.7.0
 MIME-Version: 1.0
-References: <1561661788-22744-1-git-send-email-wahrenst@gmx.net>
- <f4492041-2587-eedb-8ae5-ae610e90fde2@xs4all.nl>
-In-Reply-To: <f4492041-2587-eedb-8ae5-ae610e90fde2@xs4all.nl>
-From: Dave Stevenson <dave.stevenson@raspberrypi.org>
-Date: Fri, 28 Jun 2019 11:39:19 +0100
-Message-ID: <CAAoAYcMxqNiHLVB=9PyiU1QmLNkzqBEVabdO35-ZTBB5ijSwxA@mail.gmail.com>
-Subject: Re: [PATCH 00/31] staging: bcm2835-camera: Improvements
-To: Hans Verkuil <hverkuil@xs4all.nl>
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:5.22.84,1.0.8
- definitions=2019-06-28_04:2019-06-25,2019-06-28 signatures=0
+In-Reply-To: <20190612152022.c3cfhp4cauhzhfyr@flea>
+Content-Language: en-US
+X-Brightmail-Tracker: H4sIAAAAAAAAA02Se0hTYRjG+85tR2t1PC72lkW1KCrIjAo+ulHhHwciiCCKLtjKk0pOZafZ
+ xcphTrQStRBxmVlp11Wy6WqaCNNcZs7UYRcyLe2OpqmLBWmbx8D/fjzP877f93x8LMkXM7PZ
+ uISjoj5BG69hgil7g69leWz/zP0RT58E4Wx3I4FNDZ8RHrPnkfhqvZvGnpGfDPZ6nhP47I2H
+ DK6oaqbx0LX3BM7KK1Vga08Hjdurihhc9qqVwN3fahE21dQrcGd5M8I2az6JfVXFFPY5W4hN
+ ocIN3yghWIotSCi2pAif6n4ohMvGVkoo/3iPFmq8JZTgMHf6tcxCWrDezWKEfrdbITzydtNC
+ 7RWLQug67yIEW2mqUP3GyGwP2RO8PlqMj0sW9Ss2HgiO/WYbZZJs6uNDpnuUEeWEnkNBLHCr
+ IS3jGXUOBbM8dxuBK6sTBQyeG0aQb+FlYwhB4+s2+v/EcMZ1Sg7dQjB2RyeH+hB42gYVASOU
+ 2wM5tQVEgFXccsguuUQHQiTXTsPQy6/jBsMthb+2N0yAldxGyLHnjm+luEXwosk7fo2Z3G4Y
+ dliRnAmBxsLe8UwQtwrSPMNkgEkuAuqvF9Eyz4NHfUUTuhre9l4lAgcD52GhocBIyRUiIb26
+ k5A5FL67KhQyz4GmSxcmMqnQdTudlIczEVSWO0jZWAd1rtaJt9gMfwacfmb9PB1e94XIB0+H
+ i/YCUpaVkJnBy+kF0NVcObFFDWUvR5hcpDFPqmaeVMc8qY55Up0SRN1FatEg6WJEaWWCeCxc
+ 0uokQ0JM+KFEnRX5f23TqOvXYzTSdtCJOBZppinnO1T7eVqbLJ3QORGwpEalnOX2S8po7YmT
+ oj4xSm+IFyUnCmMpjVqZMqV7L8/FaI+KR0QxSdT/dwk2aLYRpQ+GrZtxeHfI4jT+ftlY/v2B
+ nvIHjrXn/7ZUj605dWyh9MmwRTX1ZtKuDX1hW76kZuQbInGlqa7QvmPV6UMDDfVZD7MvtEd1
+ fIja+bx/X+7guwiDq8NycQ6n6kj21VSEt5rcqp+XV2/7PXfrElNP4j5vTbNvgz57seJMV+kP
+ 3tRbnaKhpFjtymWkXtL+A3HRcwKxAwAA
+X-Brightmail-Tracker: H4sIAAAAAAAAA02Sa0hTYRjHec9tU1sct5lvQmWDwAKPHS/5Gir1oTgWhNAXsSQPetJoF9mZ
+ ZgU1MkOtMEtBN2+lJukg20pTEXGKZda6eMtA0zRjSQZdBotabc7Ab3/+z+/3vLzwSHF5Bxkm
+ PaU1CHotr1ZRgcSo58lsZM5KSMbua2p03TGCoeLhJYD+dlbgqGHIQaLxn18p5Bp/hqGipvsU
+ etjzgkTfb89iqLSiWYKsC5MkGuuppVDL1GsMzTn7ASruG5KgmY4XANmsVThy99QTyG1/ie1T
+ cE1uD8ZZ6i2Aq7ec5z4OLks4s/E1wXV8aCe5PlcjwXWbZrxdSQ3JWdtKKW7F4ZBwXa45kuuv
+ s0i491efYJyt+SLXO22kUoPTmUS9Lt8ghOfqREOS6hiLohk2ATHRsQkMGxOfsTc6ThWVnJgt
+ qE8VCPqo5Ewm12nzUHm20MLvxe2EEZQrykCAFNKx8MeVO0QZCJTK6RYAS8vMmH8QCnsbvuD+
+ rIC/J8soP7QMYNfAAvANFHQ6fNVftAop6Uh4vfEW6YNweoqEVZUda2tbCfi0+gHpoyh6J/xj
+ m6Z8WUYnw/LOG4QvE/QO+HzUtbo1hE6D5h4j4WeC4UjN4moOoGPgpfEfq6/hNAMfT/0i/Xkb
+ 7PpSu9aHwneLDdgNIDet003rFNM6xbROaQREG1AK+aImRyOyjMhrxHxtDpOl01iB91o6h922
+ x+DNg6N2QEuBaoMsvFuZISf5AvGsxg6gFFcpZZsd3kqWzZ89J+h1J/T5akG0gzjv5yrwsJAs
+ nff2tIYTbBwbjxLY+Jj4mD1IFSoroQeOy+kc3iCcFoQ8Qf/fw6QBYUaQpP4JJ5T2TM6T5ko6
+ +PCee3vyOWfQpju6X+Vv48IignhnxK1a5oCiM3Ne9inrcHWVLPvIYHapem+ieUmUXX6UZTBH
+ p7TuE8ZSq1siU2KTwk82ba/bksu7rU5d3xls8MLnAzdTqXnPxmXthIUNOmSn9i+tFN28WxnY
+ Ujj7besRFSHm8uwuXC/y/wB7i4BKQwMAAA==
+X-CMS-MailID: 20190628103935eucas1p1ed57a3e2f9ecae6cb299cfacb48452d3
+X-Msg-Generator: CA
+X-RootMTR: 20190607094103epcas1p4babbb11ec050974a62f2af79bc64d752
+X-EPHeader: CA
+CMS-TYPE: 201P
+X-CMS-RootMailID: 20190607094103epcas1p4babbb11ec050974a62f2af79bc64d752
+References: <20190604122150.29D6468B05@newverein.lst.de>
+ <20190604122308.98D4868B20@newverein.lst.de>
+ <CA+E=qVckHLqRngsfK=AcvstrD0ymEfRkYyhS_kBtZ3YWdE3L=g@mail.gmail.com>
+ <20190605101317.GA9345@lst.de> <20190605120237.ekmytfxcwbjaqy3x@flea>
+ <E1hYsvP-0000PY-Pz@stardust.g4.wien.funkfeuer.at>
+ <20190607062802.m5wslx3imiqooq5a@flea>
+ <CGME20190607094103epcas1p4babbb11ec050974a62f2af79bc64d752@epcas1p4.samsung.com>
+ <20190607094030.GA12373@lst.de>
+ <66707fcc-b48e-02d3-5ed7-6b7e77d53266@samsung.com>
+ <20190612152022.c3cfhp4cauhzhfyr@flea>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190628_033938_800487_EF0B4DB9 
-X-CRM114-Status: GOOD (  27.87  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20190628_033940_565064_C105464A 
+X-CRM114-Status: GOOD (  24.26  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [91.207.212.211 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [210.118.77.11 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -103,7 +137,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- 0.0 KHOP_DYNAMIC           Relay looks like a dynamic address
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -115,243 +149,101 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devel@driverdev.osuosl.org, Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- LMML <linux-media@vger.kernel.org>, Eric Anholt <eric@anholt.net>,
- "moderated list:BROADCOM BCM2835 ARM ARCHITECTURE"
- <linux-rpi-kernel@lists.infradead.org>,
- Mauro Carvalho Chehab <mchehab@kernel.org>,
- linux-arm-kernel@lists.infradead.org, Stefan Wahren <wahrenst@gmx.net>
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ devicetree <devicetree@vger.kernel.org>, Sean Paul <seanpaul@chromium.org>,
+ David Airlie <airlied@linux.ie>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ linux-kernel <linux-kernel@vger.kernel.org>,
+ dri-devel <dri-devel@lists.freedesktop.org>, Chen-Yu Tsai <wens@csie.org>,
+ Rob Herring <robh+dt@kernel.org>, Torsten Duwe <duwe@lst.de>,
+ Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
+ Daniel Vetter <daniel@ffwll.ch>, Harald Geyer <harald@ccbib.org>,
+ Thierry Reding <thierry.reding@gmail.com>,
+ Thomas Gleixner <tglx@linutronix.de>,
+ arm-linux <linux-arm-kernel@lists.infradead.org>,
+ Icenowy Zheng <icenowy@aosc.io>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Stefan
+Hi Maxime,
 
-Firstly a huge thank you for picking this up - it's been on my to-do
-list for ages, and just hasn't made it to the top.
+It seems I have missed your response.
 
-On Fri, 28 Jun 2019 at 09:06, Hans Verkuil <hverkuil@xs4all.nl> wrote:
+On 12.06.2019 17:20, Maxime Ripard wrote:
+>> I am not sure if I understand whole discussion here, but I also do not
+>> understand whole edp-connector thing.
+> The context is this one:
+> https://patchwork.freedesktop.org/patch/257352/?series=51182&rev=1
+> https://patchwork.freedesktop.org/patch/283012/?series=56163&rev=1
+> https://patchwork.freedesktop.org/patch/286468/?series=56776&rev=2
 >
-> Hi Stefan,
+> TL;DR: This bridge is being used on ARM laptops that can come with
+> different eDP panels. Some of these panels require a regulator to be
+> enabled for the panel to work, and this is obviously something that
+> should be in the DT.
 >
-> On 6/27/19 8:55 PM, Stefan Wahren wrote:
-> > This is an attempt to help Dave Stevenson to get all the fixes and
-> > improvements of the bcm2835-camera driver into mainline.
-> >
-> > Mostly i only polished the commit logs for upstream.
-> >
-> > The series based on the latest bugfix V2 of staging: bcm2835-camera: Resto=
-> > re
-> > return behavior of ctrl_set_bitrate().
+> However, we can't really describe the panel itself, since the vendor
+> uses several of them and just relies on the eDP bus to do its job at
+> retrieving the EDIDs. A generic panel isn't really working either
+> since that would mean having a generic behaviour for all the panels
+> connected to that bus, which isn't there either.
 >
-> Thank you for working on this.
+> The connector allows to expose this nicely.
+
+
+As VESA presentation says[1] eDP is based on DP but is much more
+flexible, it is up to integrator (!!!) how the connection, power
+up/down, initialization sequence should be performed. Trying to cover
+every such case in edp-connector seems to me similar to panel-simple
+attempt failure. Moreover there is no such thing as physical standard
+eDP connector. Till now I though DT connector should describe physical
+connector on the device, now I am lost, are there some DT bindings
+guidelines about definition of a connector?
+
+Maybe instead of edp-connector one would introduce integrator's specific
+connector, for example with compatible "olimex,teres-edp-connector"
+which should follow edp abstract connector rules? This will be at least
+consistent with below presentation[1] - eDP requirements depends on
+integrator. Then if olimex has standard way of dealing with panels
+present in olimex/teres platforms the driver would then create
+drm_panel/drm_connector/drm_bridge(?) according to these rules, I guess.
+Anyway it still looks fishy for me :), maybe because I am not
+familiarized with details of these platforms.
+
+[1]: https://www.vesa.org/wp-content/uploads/2010/12/DisplayPort-DevCon-Presentation-eDP-Dec-2010-v3.pdf
+
+
 >
-> Three high-level questions:
+>> According to VESA[1] eDP is "Internal display interface" - there is no
+>> external connector for eDP, the way it is connected is integrator's
+>> decision, but it is fixed - ie end user do not plug/unplug it.
+> I'm not sure if you mean DRM or DT connector here though. In DRM,
+> we're doing this all the time for panels. I'm literaly typing this
+> from a laptop that has a screen with an eDP connector.
+
+
+VESA describes only hardware, but since DT also describes hardware I
+guess it should be similar.
+
+
+Regards
+
+Andrzej
+
+
+
+
 >
-> 1) Can you post the output of 'v4l2-compliance -s' using the latest v4l2-compliance
->    from https://git.linuxtv.org/v4l-utils.git ?  I'm interested to see what the
->    status is of this driver w.r.t. the compliance tests.
-
-Hi Hans.
-
-Running it against the downstream driver (which should be nearly
-identical based on this set of patches), 4.19, on a Pi4 I get
-pi@raspberrypi:~/v4l-utils/utils/v4l2-compliance $ ./v4l2-compliance -s
-v4l2-compliance SHA: b16f9e945d74aa552abdd6f873821cb77faaf13a, 32 bits
-
-Compliance test for bm2835 mmal device /dev/video0:
-
-Driver Info:
-    Driver name      : bm2835 mmal
-    Card type        : mmal service 16.1
-    Bus info         : platform:bcm2835-v4l2
-    Driver version   : 4.19.56
-    Capabilities     : 0x85200005
-        Video Capture
-        Video Overlay
-        Read/Write
-        Streaming
-        Extended Pix Format
-        Device Capabilities
-    Device Caps      : 0x05200005
-        Video Capture
-        Video Overlay
-        Read/Write
-        Streaming
-        Extended Pix Format
-
-Required ioctls:
-    test VIDIOC_QUERYCAP: OK
-
-Allow for multiple opens:
-    test second /dev/video0 open: OK
-    test VIDIOC_QUERYCAP: OK
-    test VIDIOC_G/S_PRIORITY: OK
-    test for unlimited opens: OK
-
-Debug ioctls:
-    test VIDIOC_DBG_G/S_REGISTER: OK (Not Supported)
-    test VIDIOC_LOG_STATUS: OK
-
-Input ioctls:
-    test VIDIOC_G/S_TUNER/ENUM_FREQ_BANDS: OK (Not Supported)
-    test VIDIOC_G/S_FREQUENCY: OK (Not Supported)
-    test VIDIOC_S_HW_FREQ_SEEK: OK (Not Supported)
-    test VIDIOC_ENUMAUDIO: OK (Not Supported)
-    test VIDIOC_G/S/ENUMINPUT: OK
-    test VIDIOC_G/S_AUDIO: OK (Not Supported)
-    Inputs: 1 Audio Inputs: 0 Tuners: 0
-
-Output ioctls:
-    test VIDIOC_G/S_MODULATOR: OK (Not Supported)
-    test VIDIOC_G/S_FREQUENCY: OK (Not Supported)
-    test VIDIOC_ENUMAUDOUT: OK (Not Supported)
-    test VIDIOC_G/S/ENUMOUTPUT: OK (Not Supported)
-    test VIDIOC_G/S_AUDOUT: OK (Not Supported)
-    Outputs: 0 Audio Outputs: 0 Modulators: 0
-
-Input/Output configuration ioctls:
-    test VIDIOC_ENUM/G/S/QUERY_STD: OK (Not Supported)
-    test VIDIOC_ENUM/G/S/QUERY_DV_TIMINGS: OK (Not Supported)
-    test VIDIOC_DV_TIMINGS_CAP: OK (Not Supported)
-    test VIDIOC_G/S_EDID: OK (Not Supported)
-
-Control ioctls (Input 0):
-    test VIDIOC_QUERY_EXT_CTRL/QUERYMENU: OK
-    test VIDIOC_QUERYCTRL: OK
-    test VIDIOC_G/S_CTRL: OK
-    test VIDIOC_G/S/TRY_EXT_CTRLS: OK
-    test VIDIOC_(UN)SUBSCRIBE_EVENT/DQEVENT: OK
-    test VIDIOC_G/S_JPEGCOMP: OK (Not Supported)
-    Standard Controls: 33 Private Controls: 0
-
-Format ioctls (Input 0):
-    test VIDIOC_ENUM_FMT/FRAMESIZES/FRAMEINTERVALS: OK
-    test VIDIOC_G/S_PARM: OK
-    test VIDIOC_G_FBUF: OK
-    test VIDIOC_G_FMT: OK
-    test VIDIOC_TRY_FMT: OK
-    test VIDIOC_S_FMT: OK
-    test VIDIOC_G_SLICED_VBI_CAP: OK (Not Supported)
-    test Cropping: OK (Not Supported)
-    test Composing: OK (Not Supported)
-    test Scaling: OK
-
-Codec ioctls (Input 0):
-    test VIDIOC_(TRY_)ENCODER_CMD: OK (Not Supported)
-    test VIDIOC_G_ENC_INDEX: OK (Not Supported)
-    test VIDIOC_(TRY_)DECODER_CMD: OK (Not Supported)
-
-Buffer ioctls (Input 0):
-    test VIDIOC_REQBUFS/CREATE_BUFS/QUERYBUF: OK
-    test VIDIOC_EXPBUF: OK (Not Supported)
-    test Requests: OK (Not Supported)
-
-Test input 0:
-
-Streaming ioctls:
-    test read/write: OK
-    test blocking wait: OK
-            warn: v4l2-test-buffers.cpp(1429): Can free buffers even
-if still mmap()ed
-    test MMAP (no poll): OK
-            warn: v4l2-test-buffers.cpp(1429): Can free buffers even
-if still mmap()ed
-    test MMAP (select): OK
-            warn: v4l2-test-buffers.cpp(1429): Can free buffers even
-if still mmap()ed
-    test MMAP (epoll): OK
-    test USERPTR (no poll): OK
-    test USERPTR (select): OK
-    test DMABUF (no poll): OK (Not Supported)
-    test DMABUF (select): OK (Not Supported)
-
-Total for bm2835 mmal device /dev/video0: 53, Succeeded: 53, Failed:
-0, Warnings: 3
-
-The warnings are because downstream we have an early version of
-"media: vb2: Allow reqbufs(0) with "in use" MMAP buffers" that doesn't
-set the flag to userspace. I need to revert that and apply the
-accepted one (it's not a clean cherrypick though).
-
-I do try and run compliance every few months because I'm aware that
-you frequently add extra tests.
-
-> 2) What is the status of this driver from your point of view? What is needed to
->    get it out of staging?
-
-I think the main issue is the dependency on vchiq. I'm hoping that the
-V4L2 side of this is now relatively clean, but it probably wants a
-full review when someone has the time.
-
-> 3) Out of curiosity: is this driver still valid for RPi4?
-
-Yes, it is still valid. The imaging side hasn't changed significantly,
-it just runs a bit faster.
-
-  Dave
-
-> Regards,
+> Maxime
 >
->         Hans
->
-> >
-> > Dave Stevenson (31):
-> >   staging: bcm2835-camera: Ensure H264 header bytes get a sensible
-> >     timestamp
-> >   staging: bcm2835-camera: Check the error for REPEAT_SEQ_HEADER
-> >   staging: bcm2835-camera: Replace spinlock protecting context_map with
-> >     mutex
-> >   staging: bcm2835-camera: Do not bulk receive from service thread
-> >   staging: bcm2835-camera: Correctly denote key frames in encoded data
-> >   staging: bcm2835-camera: Return early on errors
-> >   staging: bcm2835-camera: Remove dead email addresses
-> >   staging: bcm2835-camera: Fix comment style violations.
-> >   staging: bcm2835-camera: Fix spacing around operators
-> >   staging: bcm2835-camera: Reduce length of enum names
-> >   staging: bcm2835-camera: Fix multiple line dereference errors
-> >   staging: bcm2835-camera: Fix brace style issues.
-> >   staging: bcm2835-camera: Fix missing lines between items
-> >   staging: bcm2835-camera: Fix open parenthesis alignment
-> >   staging: bcm2835-camera: Ensure all buffers are returned on disable
-> >   staging: bcm2835-camera: Remove check of the number of buffers
-> >     supplied
-> >   staging: bcm2835-camera: Handle empty EOS buffers whilst streaming
-> >   staging: bcm2835-camera: Set sequence number correctly
-> >   staging: bcm2835-camera: Ensure timestamps never go backwards.
-> >   staging: bcm2835-camera: Add multiple inclusion protection to headers
-> >   staging: bcm2835-camera: Unify header inclusion defines
-> >   staging: bcm2835-camera: Fix multiple assignments should be avoided
-> >   staging: bcm2835-camera: Fix up mmal-parameters.h
-> >   staging: bcm2835-camera: Use enums for max value in controls
-> >   staging: bcm2835-camera: Correct V4L2_CID_COLORFX_CBCR behaviour
-> >   staging: bcm2835-camera: Remove/amend some obsolete comments
-> >   staging: mmal-vchiq: Avoid use of bool in structures
-> >   staging: bcm2835-camera: Fix stride on RGB3/BGR3 formats
-> >   staging: bcm2835-camera: Add sanity checks for queue_setup/CREATE_BUFS
-> >   staging: bcm2835-camera: Set the field value within ach buffer
-> >   staging: bcm2835-camera: Correct ctrl min/max/step/def to 64bit
-> >
-> >  .../vc04_services/bcm2835-camera/bcm2835-camera.c  | 378 ++++++++++++----=
-> > -----
-> >  .../vc04_services/bcm2835-camera/bcm2835-camera.h  |  34 +-
-> >  .../vc04_services/bcm2835-camera/controls.c        | 184 +++++-----
-> >  .../vc04_services/bcm2835-camera/mmal-common.h     |  12 +-
-> >  .../vc04_services/bcm2835-camera/mmal-encodings.h  |   9 +-
-> >  .../vc04_services/bcm2835-camera/mmal-msg-common.h |   9 +-
-> >  .../vc04_services/bcm2835-camera/mmal-msg-format.h | 104 +++---
-> >  .../vc04_services/bcm2835-camera/mmal-msg-port.h   | 133 ++++----
-> >  .../vc04_services/bcm2835-camera/mmal-msg.h        | 150 ++++----
-> >  .../vc04_services/bcm2835-camera/mmal-parameters.h | 286 +++++++++-------
-> >  .../vc04_services/bcm2835-camera/mmal-vchiq.c      | 159 +++++----
-> >  .../vc04_services/bcm2835-camera/mmal-vchiq.h      |  22 +-
-> >  12 files changed, 826 insertions(+), 654 deletions(-)
-> >
-> > =2D-
-> > 2.7.4
-> >
->
+> --
+> Maxime Ripard, Bootlin
+> Embedded Linux and Kernel engineering
+> https://bootlin.com
+
+
 
 _______________________________________________
 linux-arm-kernel mailing list
