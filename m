@@ -2,71 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 048615A5E9
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 28 Jun 2019 22:32:46 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1F1E85A5FC
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 28 Jun 2019 22:38:15 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=z+nBnp2FqPXwcFU32WjeD5DleMh0S1fMXzSfodpfkPE=; b=CvljcATmY32xg5
-	RDkxfhCPO/5hGTAJrrO3pKHGuybLx0WGpyWsb2G+W3LeB7vzRxRvDSpDzZgR/m3NurCo9MFcNQlj9
-	k8BI2YmNAsEd6T/+YXrDYT8QGL9joxHXrbCuqMEHaWRcVXLHF6uIJU+dQAoLs0Bscvrq4ORo3QYAC
-	JkzXlrub2NNA8a/HdZYJf57LUUHUufT7nknSimoFM+IfIdu5aGha0+Gvm61raPYpV2ln2aNmVpCXI
-	qjnp+i7Dn672BmMFe3R510t5+sqUJaFt3i7Rmfw3f6O7LiALijY9+6jjurMmJHDACQadNA4d9S5Di
-	hM+R4tA9UV3I1Zp19Okg==;
+	List-Owner; bh=Ly1FZkyPRKs3PQDIjRf0U8nvsCLppcwzJ+SpqzrXF1Q=; b=H13b0B8l7Hlt/k
+	4SxhkTJFaUzRB0PP0y9sVaS8hdkU9MDTp2UC/DGUzweFKIMNXxZN8cmPazqsC2/jKyqgCC4IZjthr
+	P78owXnol8zrfqjUyq/5D44xUuFNMeB+Cjy+QYecvq0Z9GhTZF6OuvVkcdd8/GHliS2yl/Pa+gr/+
+	7YG3aid3iwYQ44uHQ7tS2a1Ot3NK9TMhGxqEM8hBuG+U/hCbeZ8MUBU5Ss4HkF/JKDEicxfjwVHwo
+	9BB0vIGJaDk2SFdPtSHGpeikfULn0EeosBbg6Q5lAnC6S1sBJ4T5QfLZFk6Az4RjYvA3sXBfty+Dq
+	be0O/9CnGujhZW2Ow71w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hgxY0-0002yD-9B; Fri, 28 Jun 2019 20:32:40 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1hgxdL-0004bI-HC; Fri, 28 Jun 2019 20:38:11 +0000
+Received: from fllv0016.ext.ti.com ([198.47.19.142])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hgxXo-0002xl-8x
- for linux-arm-kernel@lists.infradead.org; Fri, 28 Jun 2019 20:32:30 +0000
-Received: from mail-qk1-f172.google.com (mail-qk1-f172.google.com
- [209.85.222.172])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 78BE020828
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 28 Jun 2019 20:32:27 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1561753947;
- bh=nIIHPYVF/yLKT9Kd+T0+WBhtRttyLnFzsf/YfQlcS5I=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=wLQq17BvzxyNlq1t5I4duxVE2UpZL+u6VkeTC6m/6zhcoUjximdIIWTF4XSFIsNgP
- HNNma++/g3HknbooVG2pSr44CHsAAY8l0ade8kfv4ZVfjHezfp2y67DawPOsI+3aI5
- CjRhl8Td1qVsKPxfmFlqf3mhFIKQmHAg3lUTOuJA=
-Received: by mail-qk1-f172.google.com with SMTP id l128so6025145qke.2
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 28 Jun 2019 13:32:27 -0700 (PDT)
-X-Gm-Message-State: APjAAAVzLBMU1F4ysFXiYiqadnmUfwTSQB8JQz4ZimmHBw8J6sp53ncq
- MtmJK1p4DYzzjtx/Y9UKjZk1AILe+8b9nIZEdg==
-X-Google-Smtp-Source: APXvYqz2D0+DUUlKtR1qaP9vt2oqvuZ5e8zpaIXRl6gPIZnL9R+FlitcymlNefVcbVGbAxG1BBP1c4Nopp23cNH6MRE=
-X-Received: by 2002:a37:a48e:: with SMTP id
- n136mr10667886qke.223.1561753946755; 
- Fri, 28 Jun 2019 13:32:26 -0700 (PDT)
+ id 1hgxdB-0004al-9j
+ for linux-arm-kernel@lists.infradead.org; Fri, 28 Jun 2019 20:38:03 +0000
+Received: from lelv0266.itg.ti.com ([10.180.67.225])
+ by fllv0016.ext.ti.com (8.15.2/8.15.2) with ESMTP id x5SKbt9Q023305;
+ Fri, 28 Jun 2019 15:37:55 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
+ s=ti-com-17Q1; t=1561754275;
+ bh=qmjPdpLPSWAbNfzvl0aaOl50HSO4HcYPbHirzrfr7ZI=;
+ h=Date:From:To:CC:Subject:References:In-Reply-To;
+ b=MYQYl81UM5yoC89mnR/inx37O4v6oLP7Rm7cPKT9hnUsBYrwbOMIRnadob18bJY2v
+ VSwPajYeoR5NXWElHRiTYQ0b5/FyR3W+218zbz/XlpZBfuduO4yEvO1PLoFRGTjFDi
+ d52Cx2Ys61aX9LUA1z/BAJ0wZP6IyR6N09c8LQy4=
+Received: from DFLE105.ent.ti.com (dfle105.ent.ti.com [10.64.6.26])
+ by lelv0266.itg.ti.com (8.15.2/8.15.2) with ESMTPS id x5SKbtRB020988
+ (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
+ Fri, 28 Jun 2019 15:37:55 -0500
+Received: from DFLE110.ent.ti.com (10.64.6.31) by DFLE105.ent.ti.com
+ (10.64.6.26) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5; Fri, 28
+ Jun 2019 15:37:55 -0500
+Received: from lelv0326.itg.ti.com (10.180.67.84) by DFLE110.ent.ti.com
+ (10.64.6.31) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5 via
+ Frontend Transport; Fri, 28 Jun 2019 15:37:55 -0500
+Received: from localhost (ileax41-snat.itg.ti.com [10.172.224.153])
+ by lelv0326.itg.ti.com (8.15.2/8.15.2) with ESMTP id x5SKbtYP000389;
+ Fri, 28 Jun 2019 15:37:55 -0500
+Date: Fri, 28 Jun 2019 15:37:52 -0500
+From: Nishanth Menon <nm@ti.com>
+To: Keerthy <j-keerthy@ti.com>
+Subject: Re: [PATCH v2] arm64: Kconfig.platforms: Enable GPIO_DAVINCI for
+ ARCH_K3
+Message-ID: <20190628203752.rdb6vvc42qd5ofgd@kahuna>
+References: <20190627110920.15099-1-j-keerthy@ti.com>
+ <20190627143208.eeca4xyygml7s4n3@kahuna>
+ <39f5e726-8542-b650-3bdb-7542e8fab8ac@ti.com>
 MIME-Version: 1.0
-References: <20190627000044.12739-1-robh@kernel.org>
- <alpine.DEB.2.21.9999.1906261759390.29311@viisi.sifive.com>
-In-Reply-To: <alpine.DEB.2.21.9999.1906261759390.29311@viisi.sifive.com>
-From: Rob Herring <robh@kernel.org>
-Date: Fri, 28 Jun 2019 14:32:15 -0600
-X-Gmail-Original-Message-ID: <CAL_Jsq+Ej15JfU_Mx0g+Hkpz6+1CnMem507RPgUgW7CB0U8hCA@mail.gmail.com>
-Message-ID: <CAL_Jsq+Ej15JfU_Mx0g+Hkpz6+1CnMem507RPgUgW7CB0U8hCA@mail.gmail.com>
-Subject: Re: [PATCH] dt-bindings: arm: Limit cpus schema to only check Arm
- 'cpu' nodes
-To: Paul Walmsley <paul.walmsley@sifive.com>
+Content-Disposition: inline
+In-Reply-To: <39f5e726-8542-b650-3bdb-7542e8fab8ac@ti.com>
+User-Agent: NeoMutt/20171215
+X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190628_133228_334221_04E892E7 
-X-CRM114-Status: GOOD (  14.40  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190628_133801_468532_F525044D 
+X-CRM114-Status: GOOD (  16.37  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [198.47.19.142 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -88,35 +93,81 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>
+Cc: lokeshvutla@ti.com, catalin.marinas@arm.com, will.deacon@arm.com,
+ linux-kernel@vger.kernel.org, t-kristo@ti.com, shawnguo@kernel.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Jun 26, 2019 at 7:02 PM Paul Walmsley <paul.walmsley@sifive.com> wrote:
->
-> On Wed, 26 Jun 2019, Rob Herring wrote:
->
-> > Matching on the 'cpus' node was a bad choice because the schema is
-> > incorrectly applied to non-Arm cpus nodes. As we now have a common cpus
-> > schema which checks the general structure, it is also redundant to do so
-> > in the Arm CPU schema.
-> >
-> > The downside is one could conceivably mix different architecture's cpu
-> > nodes or have typos in the compatible string. The latter problem pretty
-> > much exists for every schema.
->
-> The RISC-V patch applies cleanly, but this one doesn't apply here on
-> either master or next-20190626.  Is there a different base commit?
+On 09:08-20190628, Keerthy wrote:
+[..]
+> > > +	select GPIO_SYSFS
+> > > +	select GPIO_DAVINCI
+> > 
+> > 
+> > Could you help explain the logic of doing this? commit message is
+> > basically the diff in English. To me, this does NOT make sense.
+> > 
+> > I understand GPIO_DAVINCI is the driver compatible, but we cant do this for
+> > every single SoC driver that is NOT absolutely mandatory for basic
+> > functionality.
+> 
+> In case of ARM64 could you help me find the right place to enable
+> such SoC specific configs?
 
-Ugg, sorry. I had another commit colliding with this in my tree. I've
-fixed it now and it's in my dt/next branch.
+Is'nt that what defconfig is supposed to be all about?
 
-Rob
+arch/arm64/configs/defconfig
+
+> 
+> > 
+> > Also keep in mind the impact to arm64/configs/defconfig -> every single
+> > SoC in the arm64 world will be now rebuild with GPIO_SYSFS.. why force
+> > that?
+> 
+> This was the practice in arm32 soc specific configs like
+> omap2plus_defconfig. GPIO_SYSFS was he only way to validate. Now i totally
+> understand your concern about every single SoC rebuilding but now where do
+> we need to enable the bare minimal GPIO_DAVINCI config?
+
+Well, SYSFS, I cannot agree testing as the rationale in
+Kconfig.platform. And, looking at [1], I see majority being mandatory
+components for the SoC bootup. However, most of the "optional" drivers
+go into arm64 as defconfig (preferably as a module?) and if you find a
+rationale for recommending DEBUG_GPIO, you could propose that to the
+community as well.
+
+Now, Thinking about this, I'd even challenge the current list of configs as
+being "select". I'd rather do an "imply"[2] - yes, you need this for the
+default dtb to boot, however a carefully carved dtb could boot with
+lesser driver set to get a smaller (and less functional) kernel.
+
+> 
+> v1 i received feedback from Tero to enable in Kconfig.platforms. Hence i
+> shifted to this approach.
+
+I noticed that you were posting a v2, for future reference, please use
+diffstat section to point to lore/patchworks link to point at v1 (I
+did notice you mentioned you had an update, thanks - link will help
+catch up on older discussions). This helps a later revision reviewer
+like me to get context.
+
+Tero, would you be able to help with a better rationale as to where the
+boundaries are to be in your mind, rather than risk every single
+peripheral driver getting into ARCH_K3?
+
+As of right now, I'd rather we do not explode the current list out of
+bounds. NAK unless we can find a better rationale.
+
+
+[1] https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/arch/arm64/Kconfig.platforms
+[2] https://www.kernel.org/doc/Documentation/kbuild/kconfig-language.txt
+
+-- 
+Regards,
+Nishanth Menon
 
 _______________________________________________
 linux-arm-kernel mailing list
