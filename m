@@ -2,68 +2,71 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1435B595B1
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 28 Jun 2019 10:08:51 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E3A25595C4
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 28 Jun 2019 10:10:07 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=CZaBdk+nj9mnJdys/TcAqY1eAOpDmYqPhsXimrOeXkA=; b=B2zw6I/lHQgqMT
-	hL8H1p4XFRF7yO+LLcCJrkXNPVmtM3jtqXw1kkYaTFKvk0pG3tm8nv9L9U49D8cv1qFyWV1mWkvfn
-	3iQgjnRRZH+ExBcFNPbvX4KO8WDuJEiTbEv2skE+rnNpo3dZDfthgJMZRkKYj6LEhTmqsPK/Cy7T5
-	HIvupFbPFUNmCxdXQPACcZILgy5LG761E+E2VlYo2PRbIji7rptoRsi2Sw2lGU89nVdvIQG1OVDrM
-	pEl4pP3LiMF9iaHh21fi0VLv1fiq1CT92mXvF2GQuzoUZG6s4Uyglf2acI58MQKR1PIyfmmRy9euR
-	dndhLkEINhkmiU81yWZA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=o5YNYPVwAc82ajZv5jyq9YW6xwB+lI+oN5rA3ulqpfQ=; b=PPncnQWLXn5EI6
+	4q0qNI7y3u5Pt+9PZ84rJQa+bnwsx8IGxVFe0p4fnG4/jHrjFcV90XrAseN/RuffV74WoL+IXv3eV
+	sYUCrldzN4WvdiuFnyz+iBwQGd8tNNJLTRpL/99WzmdBycwFDGoj3xhF5TEtA1XePo2OXH5Y1wU93
+	wLDrCVNDlTslByrHz/0HeM1BEKF4zfT9dLOrEQ02UqSRnRLVJvbr4f0X45vb/oZnnDoQkFH4YO/iL
+	G4u/9UvzYLdZgmDmWy/kV7c6xA5/zxYLHjouvpnIStb/hUEvHfcWd1SSg7np/InB20eshy2ggASl8
+	EMvommEYeygJ8K2vfQlg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hglw4-0005JM-8E; Fri, 28 Jun 2019 08:08:44 +0000
+	id 1hglxL-0006GB-7W; Fri, 28 Jun 2019 08:10:03 +0000
 Received: from mx07-00178001.pphosted.com ([62.209.51.94])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hglvj-0005Fj-I1
- for linux-arm-kernel@lists.infradead.org; Fri, 28 Jun 2019 08:08:28 +0000
+ id 1hglwB-0005Fl-F4
+ for linux-arm-kernel@lists.infradead.org; Fri, 28 Jun 2019 08:08:53 +0000
 Received: from pps.filterd (m0046668.ppops.net [127.0.0.1])
  by mx07-00178001.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id
- x5S86bL9020381; Fri, 28 Jun 2019 10:08:15 +0200
+ x5S86alf020374; Fri, 28 Jun 2019 10:08:15 +0200
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
  h=from : to : cc : subject
- : date : message-id : mime-version : content-type; s=STMicroelectronics;
- bh=OkJkWdO3ZoRZHiMztQUd9Pc0c3rpuXyKwA33SFtPdis=;
- b=xMZPk79Nw36AwFGsijRPGGVDagkAqM4WO+0RiHwIGMHiIqaZjqsAKo3y9N5X0uPR2Ogs
- FdXLh7nt5Xivm/T0Ugd3M1eBy6XCczmS+cSngYs+FFM3A+X9nw2gSAgLf6/3DInv7Phs
- c2QI/TTpDnVM3wH/bBu/wTIYUU+0h5aoQe8DBDV/Aaotb52iQObeqNUSEZitstXzvjIj
- amzsL6YfcM4T8MjYoeoQwFBfv5rTQxRpCnqT9JunHoZ+N3jaKkzl30YNkY5RU/1NYs8y
- CqX2qjsJw+bmoYwo96rtICsd2SPkyxGs9tJ8V/kYoM/RcceIjknW3gYM+RzuuRc5PBOj fA== 
+ : date : message-id : in-reply-to : references : mime-version :
+ content-type; s=STMicroelectronics;
+ bh=gFZXnm/IaqS/lZZLWx/8MO4ceDiguvcxpYNkcDkG8Ug=;
+ b=qp4Sgh3yYx+734uYa/tXMJkd2VHu5EwyXbUwYK6jE0bxGk8yC2Jg8RPGpvyzbz6yY9Nm
+ cFnc8mY/tREV9GegKQs/NCTnpN8/UTBbMGjRCCBfwzvJqs0/nkvLJNFbSwPX3vnQ3o2b
+ /4idjguob/2pM3tqrPR9GlRCRgUjx7kSWeG0FCratSR5bQedwC+5fo29+vdssxCW/u/i
+ Mhxxsk8MTzKXshN9dCReKg6PlExiZaEMulEi6GpWNs03I9bjsBrvrFIrHiwcS9K6is+g
+ WW4oWmdSZXfSexmlfg0SLvgys1D6J94vCqpw7Ifu+DhEXT34n1dBT8lXW0ibmbbUZmq6 PA== 
 Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx07-00178001.pphosted.com with ESMTP id 2t9d2gvcwq-1
+ by mx07-00178001.pphosted.com with ESMTP id 2t9d2gvcwt-1
  (version=TLSv1 cipher=ECDHE-RSA-AES256-SHA bits=256 verify=NOT);
  Fri, 28 Jun 2019 10:08:15 +0200
 Received: from zeta.dmz-eu.st.com (zeta.dmz-eu.st.com [164.129.230.9])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 7149431;
- Fri, 28 Jun 2019 08:08:14 +0000 (GMT)
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 3211834;
+ Fri, 28 Jun 2019 08:08:15 +0000 (GMT)
 Received: from Webmail-eu.st.com (sfhdag5node3.st.com [10.75.127.15])
- by zeta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 51A6616AF;
- Fri, 28 Jun 2019 08:08:14 +0000 (GMT)
+ by zeta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 057B416AF;
+ Fri, 28 Jun 2019 08:08:15 +0000 (GMT)
 Received: from localhost (10.75.127.47) by SFHDAG5NODE3.st.com (10.75.127.15)
  with Microsoft SMTP Server (TLS) id 15.0.1473.3;
- Fri, 28 Jun 2019 10:08:13 +0200
+ Fri, 28 Jun 2019 10:08:14 +0200
 From: Fabrice Gasnier <fabrice.gasnier@st.com>
 To: <broonie@kernel.org>, <lgirdwood@gmail.com>, <robh+dt@kernel.org>,
  <alexandre.torgue@st.com>
-Subject: [PATCH 0/4] regulator: add support for the STM32 ADC booster
-Date: Fri, 28 Jun 2019 10:08:05 +0200
-Message-ID: <1561709289-11174-1-git-send-email-fabrice.gasnier@st.com>
+Subject: [PATCH 1/4] dt-bindings: regulator: add support for the stm32-booster
+Date: Fri, 28 Jun 2019 10:08:06 +0200
+Message-ID: <1561709289-11174-2-git-send-email-fabrice.gasnier@st.com>
 X-Mailer: git-send-email 2.7.4
+In-Reply-To: <1561709289-11174-1-git-send-email-fabrice.gasnier@st.com>
+References: <1561709289-11174-1-git-send-email-fabrice.gasnier@st.com>
 MIME-Version: 1.0
 X-Originating-IP: [10.75.127.47]
-X-ClientProxiedBy: SFHDAG1NODE3.st.com (10.75.127.3) To SFHDAG5NODE3.st.com
+X-ClientProxiedBy: SFHDAG5NODE1.st.com (10.75.127.13) To SFHDAG5NODE3.st.com
  (10.75.127.15)
 X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:, ,
  definitions=2019-06-28_03:, , signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190628_010823_932925_1E366321 
-X-CRM114-Status: GOOD (  13.06  )
+X-CRM114-CacheID: sfid-20190628_010852_001856_C58F0808 
+X-CRM114-Status: GOOD (  14.29  )
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.9 points)
@@ -100,27 +103,43 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add support for the 3.3V booster regulator embedded in stm32h7 and stm32mp1
+Document the 3.3V booster regulator embedded in stm32h7 and stm32mp1
 devices, that can be used to supply ADC analog input switches.
-It's useful to reach full ADC performance when their supply is below 2.7V
-(vdda by default).
+It's controlled by using system configuration registers (SYSCFG).
+Introduce two compatibles as the booster regulator is controlled by:
+- a unique register/bit in STM32H7
+- a set/clear register pair in STM32MP1
 
-Fabrice Gasnier (4):
-  dt-bindings: regulator: add support for the stm32-booster
-  regulator: add support for the stm32-booster
-  ARM: multi_v7_defconfig: enable STM32 booster regulator
-  ARM: dts: stm32: add booster for ADC analog switches on stm32mp157c
-
- .../bindings/regulator/st,stm32-booster.txt        |  18 +++
- arch/arm/boot/dts/stm32mp157c.dtsi                 |   6 +
- arch/arm/configs/multi_v7_defconfig                |   1 +
- drivers/regulator/Kconfig                          |  11 ++
- drivers/regulator/Makefile                         |   1 +
- drivers/regulator/stm32-booster.c                  | 132 +++++++++++++++++++++
- 6 files changed, 169 insertions(+)
+Signed-off-by: Fabrice Gasnier <fabrice.gasnier@st.com>
+---
+ .../devicetree/bindings/regulator/st,stm32-booster.txt | 18 ++++++++++++++++++
+ 1 file changed, 18 insertions(+)
  create mode 100644 Documentation/devicetree/bindings/regulator/st,stm32-booster.txt
- create mode 100644 drivers/regulator/stm32-booster.c
 
+diff --git a/Documentation/devicetree/bindings/regulator/st,stm32-booster.txt b/Documentation/devicetree/bindings/regulator/st,stm32-booster.txt
+new file mode 100644
+index 0000000..479ad4c
+--- /dev/null
++++ b/Documentation/devicetree/bindings/regulator/st,stm32-booster.txt
+@@ -0,0 +1,18 @@
++STM32 BOOSTER - Booster for ADC analog input switches
++
++Some STM32 devices embed a 3.3V booster supplied by Vdda, that can be used
++to supply ADC analog input switches.
++
++Required properties:
++- compatible: Should be one of:
++  "st,stm32h7-booster"
++  "st,stm32mp1-booster"
++- st,syscfg: Phandle to system configuration controller.
++- vdda-supply: Phandle to the vdda input analog voltage.
++
++Example:
++	booster: regulator-booster {
++		compatible = "st,stm32mp1-booster";
++		st,syscfg = <&syscfg>;
++		vdda-supply = <&vdda>;
++	};
 -- 
 2.7.4
 
