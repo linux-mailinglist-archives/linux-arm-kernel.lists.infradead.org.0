@@ -2,45 +2,46 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A808D5A348
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 28 Jun 2019 20:15:19 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A94605A349
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 28 Jun 2019 20:15:37 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=tieH7Cgg+LmRIlDFZOjQtZpDclpP56rlc0CPyD2R71U=; b=m9QJsNANrIu40C
-	DejrfVpqn8fKQFohk7KBGKIPxnSlHa7V9S5hlFADZzaTc/trbxBAGwZphPOyBJzohvRyNxK8hkKKc
-	07lomp8eVhnt2JFmNwGVRla4dKS2r8KsEu5shW7lgkcWTZUhYTWd8vRGb5L2WprhuHkJD11tw0vpW
-	FFl6b0kII+BukFfMh30e1GpbYhZQc5YYY7o4IgIgXLZy3QNnBRW3hMvlN6CMtcOD7Q5D3P6DQkSrb
-	RqMsuTEQbhZFQuWhNNKlWtyWMa8++hMgy3/bX2KIFQ/12wVb9Yn3YSQYn0XIk835XxmHmhkTXB8vn
-	v+/FE/SgVsHoCGDH4mTA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=pH9p7lTSW57rBplnVWUAODP2AXkQdZdbNfl9PEaSS6w=; b=ta/EjvLpoYcOIL
+	Au9EZqxMgcZf4Ubf3q0oolDwflf48mP69EtsYL+kHaHFOkzO5wl5tbdvx+7Sze4wQsiVx5JF9YRo1
+	SV1PwnOCXdqr7Bj88tjDS8XZYi/lctcY65Zc/Jd2NDzNfzFf8ZXoRFWMYpFC7/+BTyWy+wh4NPG1I
+	9hzpfSFQu2shY0hMnAjHaZdmRaOVAEOzWVU9NVKhqLhoj6lNs6FfvwlzEqOKKcwMpuPzlWJLRZ9rY
+	QawfH01hk0idPXP2o/3D1cj0MsvBM7daF9TUtSvUAQfiukKSYP7vwUB/mQCQFwtX2TtyOlM+mM8kO
+	6gWBuXUCiSPBO9eFgKUA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hgvP1-0000b3-S3; Fri, 28 Jun 2019 18:15:15 +0000
+	id 1hgvPJ-0001vg-JX; Fri, 28 Jun 2019 18:15:33 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hgvOl-0000Vg-6p
- for linux-arm-kernel@lists.infradead.org; Fri, 28 Jun 2019 18:15:00 +0000
+ id 1hgvOs-00013W-7g
+ for linux-arm-kernel@lists.infradead.org; Fri, 28 Jun 2019 18:15:08 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 6CC442B;
- Fri, 28 Jun 2019 11:14:57 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 5D7812B;
+ Fri, 28 Jun 2019 11:15:05 -0700 (PDT)
 Received: from mammon-tx2.austin.arm.com (mammon-tx2.austin.arm.com
  [10.118.30.49])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 51FC83F718;
- Fri, 28 Jun 2019 11:14:57 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 556403F718;
+ Fri, 28 Jun 2019 11:15:05 -0700 (PDT)
 From: Jeremy Linton <jeremy.linton@arm.com>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH v3 0/2] arm64/PPTT ACPI 6.3 thread flag support
-Date: Fri, 28 Jun 2019 13:14:55 -0500
-Message-Id: <20190628181457.6609-1-jeremy.linton@arm.com>
+Subject: [PATCH v3 1/2] ACPI/PPTT: Add support for ACPI 6.3 thread flag
+Date: Fri, 28 Jun 2019 13:14:56 -0500
+Message-Id: <20190628181457.6609-2-jeremy.linton@arm.com>
 X-Mailer: git-send-email 2.21.0
+In-Reply-To: <20190628181457.6609-1-jeremy.linton@arm.com>
+References: <20190628181457.6609-1-jeremy.linton@arm.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190628_111459_289369_DAA74BA5 
-X-CRM114-Status: UNSURE (   7.91  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190628_111506_458569_E4A2C303 
+X-CRM114-Status: GOOD (  15.69  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -68,27 +69,122 @@ Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 ACPI 6.3 adds a flag to the CPU node to indicate whether
-the given CPU is a thread. Add a function to return that
-information for a given linux logical CPU and then utilize
-it while building the arm64 topology.
+the given PE is a thread. Add a function to return that
+information for a given linux logical CPU.
 
-v2->v3: Clarify and tweak the return from check_acpi_cpu_flag()
-	Cache the PPTT table revision to avoid repeat
-	      acpi_table_get/put calls in the case of
-	      missing or old PPTT tables.
+Signed-off-by: Jeremy Linton <jeremy.linton@arm.com>
+---
+ drivers/acpi/pptt.c  | 62 +++++++++++++++++++++++++++++++++++++++++++-
+ include/linux/acpi.h |  5 ++++
+ 2 files changed, 66 insertions(+), 1 deletion(-)
 
-v1->v2:
-	Return ENOENT instead on ENONET.
-
-Jeremy Linton (2):
-  ACPI/PPTT: Add support for ACPI 6.3 thread flag
-  arm64: topology: Use PPTT to determine if PE is a thread
-
- arch/arm64/kernel/topology.c |  8 +++--
- drivers/acpi/pptt.c          | 62 +++++++++++++++++++++++++++++++++++-
- include/linux/acpi.h         |  5 +++
- 3 files changed, 71 insertions(+), 4 deletions(-)
-
+diff --git a/drivers/acpi/pptt.c b/drivers/acpi/pptt.c
+index b72e6afaa8fb..bb6196422fad 100644
+--- a/drivers/acpi/pptt.c
++++ b/drivers/acpi/pptt.c
+@@ -517,6 +517,52 @@ static int find_acpi_cpu_topology_tag(unsigned int cpu, int level, int flag)
+ 	return retval;
+ }
+ 
++/**
++ * check_acpi_cpu_flag() - Determine if CPU node has a flag set
++ * @cpu: Kernel logical CPU number
++ * @rev: The PPTT revision defining the flag
++ * @flag: The flag itself
++ *
++ * Check the node representing a CPU for a given flag.
++ *
++ * Return: -ENOENT if the PPTT doesn't exist, the CPU cannot be found or
++ *	   the table revision isn't new enough.
++ *	   1, any passed flag set
++ *	   0, flag unset
++ */
++static int check_acpi_cpu_flag(unsigned int cpu, int rev, u32 flag)
++{
++	struct acpi_table_header *table;
++	acpi_status status;
++	u32 acpi_cpu_id = get_acpi_id_for_cpu(cpu);
++	struct acpi_pptt_processor *cpu_node = NULL;
++	int ret = -ENOENT;
++	static int saved_pptt_rev = -1;
++
++	/* Cache the PPTT revision to avoid repeat table get/put on failure */
++	if (saved_pptt_rev > -1 && saved_pptt_rev < rev)
++		return -ENOENT;
++
++	status = acpi_get_table(ACPI_SIG_PPTT, 0, &table);
++	if (ACPI_FAILURE(status)) {
++		saved_pptt_rev = 0;
++		acpi_pptt_warn_missing();
++		return ret;
++	}
++
++	saved_pptt_rev = table->revision;
++
++	if (saved_pptt_rev >= rev)
++		cpu_node = acpi_find_processor_node(table, acpi_cpu_id);
++
++	if (cpu_node)
++		ret = (cpu_node->flags & flag) != 0;
++
++	acpi_put_table(table);
++
++	return ret;
++}
++
+ /**
+  * acpi_find_last_cache_level() - Determines the number of cache levels for a PE
+  * @cpu: Kernel logical CPU number
+@@ -581,6 +627,21 @@ int cache_setup_acpi(unsigned int cpu)
+ 	return status;
+ }
+ 
++/**
++ * acpi_pptt_cpu_is_thread() - Determine if CPU is a thread
++ * @cpu: Kernel logical CPU number
++ *
++ *
++ * Return: 1, a thread
++ *         0, not a thread
++ *         -ENOENT ,if the PPTT doesn't exist, the CPU cannot be found or
++ *         the table revision isn't new enough.
++ */
++int acpi_pptt_cpu_is_thread(unsigned int cpu)
++{
++	return check_acpi_cpu_flag(cpu, 2, ACPI_PPTT_ACPI_PROCESSOR_IS_THREAD);
++}
++
+ /**
+  * find_acpi_cpu_topology() - Determine a unique topology value for a given CPU
+  * @cpu: Kernel logical CPU number
+@@ -641,7 +702,6 @@ int find_acpi_cpu_cache_topology(unsigned int cpu, int level)
+ 	return ret;
+ }
+ 
+-
+ /**
+  * find_acpi_cpu_topology_package() - Determine a unique CPU package value
+  * @cpu: Kernel logical CPU number
+diff --git a/include/linux/acpi.h b/include/linux/acpi.h
+index d315d86844e4..3e339375e213 100644
+--- a/include/linux/acpi.h
++++ b/include/linux/acpi.h
+@@ -1301,10 +1301,15 @@ static inline int lpit_read_residency_count_address(u64 *address)
+ #endif
+ 
+ #ifdef CONFIG_ACPI_PPTT
++int acpi_pptt_cpu_is_thread(unsigned int cpu);
+ int find_acpi_cpu_topology(unsigned int cpu, int level);
+ int find_acpi_cpu_topology_package(unsigned int cpu);
+ int find_acpi_cpu_cache_topology(unsigned int cpu, int level);
+ #else
++static inline int acpi_pptt_cpu_is_thread(unsigned int cpu)
++{
++	return -EINVAL;
++}
+ static inline int find_acpi_cpu_topology(unsigned int cpu, int level)
+ {
+ 	return -EINVAL;
 -- 
 2.21.0
 
