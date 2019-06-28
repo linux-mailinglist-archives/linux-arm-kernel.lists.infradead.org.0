@@ -2,65 +2,75 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id ED8E1598B7
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 28 Jun 2019 12:46:24 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BED8C598BF
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 28 Jun 2019 12:48:05 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=7lOJkiq4cocuww/X8EyojhM3f5cIJuPSIGsEadao+Cs=; b=HFilN74h9FjkzbR5i627aesCi
-	W/YHvGQkBIx/bLaPRZBGzA3MOwEGxSNBt3I3qAxaLCpkSRH4hNky8++fEhWp1N/2l0tNxwnMQBvGM
-	kSRdeyQSS+V0j80qRUTAXlGT53+mu4HGiTXwHd+ytChGOvYEESjh44M/cr9b0ZKwhKsvRlsjlmk5+
-	g4nR251VhK+XMstHXjPTnECmgonqFIHpzYkVT4sYhOxQ9yDYrtTYRCsTbWEbdklQPpN+snVOnElvq
-	vqQhxZ1SfSKXPjiCRFdTukAi7YyqDSCK+A6G0PqX5/X1as8GwOLN3pp+6FApET/m2/p7VXl+sXSQ3
-	qiCP2OjbA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=aqWj6JD+VhGbARqm/KlWvV67sxhOnnyZQ3CMo7nba6k=; b=h0vyNEwRPbkI6r
+	rlB6R+kxqknU6fSBxHR0vvupfYHGAGMw7+ED6IbBTu+JXokxaYKE+TC5jfwfE4HxCGT6ojEV030YY
+	bdKlzQKtQfyz0bTR/YeWdbKQV2C9KPQJA1hbDJzYSEqV4eQgpgC6Bhxsge4F9NQIuDkwBbURfVzyt
+	Vz/XgPSKQPY0lvMOFPj7+jSKCgMDCB053ItsY0uWR7lCe48Zshlj6+pnOJCXdnrqdc96kOTrYWeGh
+	JB/y2xaQNK8bMg6Lp4JydS84JgWq52Q8U/S6HHb58gaOrEpaVrdzJEKoPD8yOf4eZc49jY8VTOgA9
+	G+8xmys732uz5PGuvOmw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hgoOb-0004AY-GA; Fri, 28 Jun 2019 10:46:21 +0000
-Received: from szxga07-in.huawei.com ([45.249.212.35] helo=huawei.com)
+	id 1hgoQF-0004Vd-9P; Fri, 28 Jun 2019 10:48:03 +0000
+Received: from mail-qt1-f193.google.com ([209.85.160.193])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hgoOL-00049g-Pe
- for linux-arm-kernel@lists.infradead.org; Fri, 28 Jun 2019 10:46:07 +0000
-Received: from DGGEMS412-HUB.china.huawei.com (unknown [172.30.72.59])
- by Forcepoint Email with ESMTP id 2E14F48D31486AA4B2C7;
- Fri, 28 Jun 2019 18:46:01 +0800 (CST)
-Received: from [127.0.0.1] (10.202.227.238) by DGGEMS412-HUB.china.huawei.com
- (10.3.19.212) with Microsoft SMTP Server id 14.3.439.0;
- Fri, 28 Jun 2019 18:45:51 +0800
-Subject: Re: [PATCH v2 2/5] perf pmu: Support more complex PMU event aliasing
-To: Jiri Olsa <jolsa@redhat.com>
-References: <1560521283-73314-1-git-send-email-john.garry@huawei.com>
- <1560521283-73314-3-git-send-email-john.garry@huawei.com>
- <20190616095844.GC2500@krava>
- <a27e65b4-b487-9206-6dd0-6f9dcec0f1f5@huawei.com>
- <20190620182519.GA15239@krava>
- <6257fc79-b737-e6ca-2fce-f71afa36e9aa@huawei.com>
- <cafed7d6-13c7-3a92-a826-024698bc6cc8@huawei.com>
- <20190628104040.GA15960@krava>
-From: John Garry <john.garry@huawei.com>
-Message-ID: <004cb11b-e0ee-5af1-33d4-437fb8be03c0@huawei.com>
-Date: Fri, 28 Jun 2019 11:45:43 +0100
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:45.0) Gecko/20100101
- Thunderbird/45.3.0
+ id 1hgoPw-0004Ul-Cd
+ for linux-arm-kernel@lists.infradead.org; Fri, 28 Jun 2019 10:47:45 +0000
+Received: by mail-qt1-f193.google.com with SMTP id d17so5697909qtj.8
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 28 Jun 2019 03:47:42 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=NVinKh98jKS9zokr8ydHNCBWzDAiTD09mu2we75eaLU=;
+ b=RMKcs7uFyybUMQiSDWwzITreA1nLuCP7ArWddDueiWU9EbxHwElN5KRrEg5i1gNWDe
+ vRWI7gH1dBPC+EdEPONbIC06AV1g+Oi22np+C+nQvQ+pgw9jKyn9/IeC4GDXS9U2xX0/
+ Dq5uyVzHlGbbVdElYY+l+0qN8cG8iXcsWmNotmD/JFI4g+7R6ZYb6FpbIQioqbACianr
+ XYxfhQ+wg4poXlTBr3uW80j4hhe1Gtx6zrl3+CU5pj6GOcir9oE3mR4iI1MLVHu+jHuN
+ kjO6yqjJ7S7Yar+vRx1Dj9DFD5SjXUbHhVt8MlGxj5QOCRFTF8hHR7Dl4NN8FDv8D7aJ
+ j9Lw==
+X-Gm-Message-State: APjAAAXEfgnZK2DW/tvigkaoIfa0q0CfNwTQrrjZFmB504VVfKss2I1T
+ dtXO7ij8lfsofpLlqG9AM8fkMXwanZAHNk24W98=
+X-Google-Smtp-Source: APXvYqysF9BzxO+1TCPjWlwBt4glLmlNo2rduj1I87kx9rKzFs7FWUU0hg3HnQz1I0GfoEk0Btcv6dquQV2vbRxaxlw=
+X-Received: by 2002:a0c:ba2c:: with SMTP id w44mr7558111qvf.62.1561718861770; 
+ Fri, 28 Jun 2019 03:47:41 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <20190628104040.GA15960@krava>
-X-Originating-IP: [10.202.227.238]
-X-CFilter-Loop: Reflected
+References: <20190628104132.2791616-1-arnd@arndb.de>
+In-Reply-To: <20190628104132.2791616-1-arnd@arndb.de>
+From: Arnd Bergmann <arnd@arndb.de>
+Date: Fri, 28 Jun 2019 12:47:23 +0200
+Message-ID: <CAK8P3a1CV-JUpBJ0pjixwXxxOzjQOX=+E3s-mKGAz_bMBc_Vuw@mail.gmail.com>
+Subject: Re: [PATCH] mfd: davinci_voicecodec: remove pointless #include
+To: Lee Jones <lee.jones@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190628_034606_080410_2D4C0B8D 
-X-CRM114-Status: UNSURE (   9.14  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20190628_034744_428006_D386B516 
+X-CRM114-Status: GOOD (  17.27  )
+X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [45.249.212.35 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.160.193 listed in list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (arndbergmann[at]gmail.com)
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.160.193 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -72,90 +82,84 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, brueckner@linux.ibm.com, mathieu.poirier@linaro.org,
- peterz@infradead.org, tmricht@linux.ibm.com, will.deacon@arm.com,
- linux-kernel@vger.kernel.org, acme@kernel.org, linuxarm@huawei.com,
- zhangshaokun@hisilicon.com, alexander.shishkin@linux.intel.com,
- mingo@redhat.com, namhyung@kernel.org, ben@decadent.org.uk,
- linux-arm-kernel@lists.infradead.org, kan.liang@linux.intel.com
+Cc: Richard Fontana <rfontana@redhat.com>, Sekhar Nori <nsekhar@ti.com>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Bartosz Golaszewski <bgolaszewski@baylibre.com>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 28/06/2019 11:40, Jiri Olsa wrote:
-> On Thu, Jun 27, 2019 at 05:27:32PM +0100, John Garry wrote:
->
-> SNIP
->
->>>>
->>>> heya,
->>>> sry for late reply
->>>>
->>>>>
->>>>>> if tok is NULL in here we crash
->>>>>>
->>>>>
->>>>> As I see, tok could not be NULL. If str contains no delimiters, then
->>>>> we just
->>>>> return same as str in tok.
->>>>>
->>>>> Can you see tok being NULL?
->>>>
->>>> well, if there's no ',' in the str it returns NULL, right?
->>>
->>> No, it would return str in tok.
->
-> ok
->
->>>
->>>> and IIUC this function is still called for standard uncore
->>>> pmu names
->>>>
->>>>>
->>>>>>> +        res = false;
->>>>>>> +        goto out;
->>>>>>> +    }
->>>>>>> +
->>>>>>> +    for (; tok; name += strlen(tok), tok = strtok_r(NULL, ",",
->>>>>>> &tmp)) {
->>>>>>
->>>>>> why is name shifted in here?
->>>>>
->>>>> I want to ensure that we match the tokens in order and also guard
->>>>> against
->>>>> possible repeated token matches in 'name'.
->>>>
->>>> i might not understand this correctly.. so
->>>>
->>>> str is the alias name that can contain ',' now, like:
->>>>   hisi_sccl,ddrc
->>>
->>> For example of pmu_nmame=hisi_sccl,ddrc and pmu=hisi_sccl1_ddrc0, we
->>> match in this sequence:
->>>
->>> loop 1. tok=hisi_sccl name=hisi_sccl1_ddrc0
->>> loop 2. tok=ddrc name=ddrc0
->>> loop 3. tok=NULL -> breakout and return true
->
+[I missed the davinci maintainers on cc here, sorry]
 
-Hi jirka,
-
-> ok, plz put something like above into comment
+On Fri, Jun 28, 2019 at 12:41 PM Arnd Bergmann <arnd@arndb.de> wrote:
 >
-
-ok, can do.
-
-Thanks again,
-John
-
-> thanks,
-> jirka
+> When building davinci as multiplatform, we get a build error
+> in this file:
 >
-> .
+> drivers/mfd/davinci_voicecodec.c:22:10: fatal error: 'mach/hardware.h' file not found
 >
-
-
+> The header is only used to access the io_v2p() macro, but the
+> result is already known because that comes from the resource
+> a little bit earlier.
+>
+> Signed-off-by: Arnd Bergmann <arnd@arndb.de>
+> ---
+>  drivers/mfd/davinci_voicecodec.c | 9 ++++-----
+>  1 file changed, 4 insertions(+), 5 deletions(-)
+>
+> diff --git a/drivers/mfd/davinci_voicecodec.c b/drivers/mfd/davinci_voicecodec.c
+> index 13ca7203e193..e5c8bc998eb4 100644
+> --- a/drivers/mfd/davinci_voicecodec.c
+> +++ b/drivers/mfd/davinci_voicecodec.c
+> @@ -19,7 +19,6 @@
+>  #include <sound/pcm.h>
+>
+>  #include <linux/mfd/davinci_voicecodec.h>
+> -#include <mach/hardware.h>
+>
+>  static const struct regmap_config davinci_vc_regmap = {
+>         .reg_bits = 32,
+> @@ -31,6 +30,7 @@ static int __init davinci_vc_probe(struct platform_device *pdev)
+>         struct davinci_vc *davinci_vc;
+>         struct resource *res;
+>         struct mfd_cell *cell = NULL;
+> +       dma_addr_t fifo_base;
+>         int ret;
+>
+>         davinci_vc = devm_kzalloc(&pdev->dev,
+> @@ -48,6 +48,7 @@ static int __init davinci_vc_probe(struct platform_device *pdev)
+>
+>         res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
+>
+> +       fifo_base = (dma_addr_t)res->start;
+>         davinci_vc->base = devm_ioremap_resource(&pdev->dev, res);
+>         if (IS_ERR(davinci_vc->base)) {
+>                 ret = PTR_ERR(davinci_vc->base);
+> @@ -70,8 +71,7 @@ static int __init davinci_vc_probe(struct platform_device *pdev)
+>         }
+>
+>         davinci_vc->davinci_vcif.dma_tx_channel = res->start;
+> -       davinci_vc->davinci_vcif.dma_tx_addr =
+> -               (dma_addr_t)(io_v2p(davinci_vc->base) + DAVINCI_VC_WFIFO);
+> +       davinci_vc->davinci_vcif.dma_tx_addr = fifo_base + DAVINCI_VC_WFIFO;
+>
+>         res = platform_get_resource(pdev, IORESOURCE_DMA, 1);
+>         if (!res) {
+> @@ -81,8 +81,7 @@ static int __init davinci_vc_probe(struct platform_device *pdev)
+>         }
+>
+>         davinci_vc->davinci_vcif.dma_rx_channel = res->start;
+> -       davinci_vc->davinci_vcif.dma_rx_addr =
+> -               (dma_addr_t)(io_v2p(davinci_vc->base) + DAVINCI_VC_RFIFO);
+> +       davinci_vc->davinci_vcif.dma_rx_addr = fifo_base + DAVINCI_VC_RFIFO;
+>
+>         davinci_vc->dev = &pdev->dev;
+>         davinci_vc->pdev = pdev;
+> --
+> 2.20.0
+>
 
 _______________________________________________
 linux-arm-kernel mailing list
