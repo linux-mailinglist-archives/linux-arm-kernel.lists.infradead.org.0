@@ -2,56 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3879F59339
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 28 Jun 2019 07:10:06 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6902059341
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 28 Jun 2019 07:12:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=6zHH5YkNTS2GSKvdLAryDLPXsl8asFq9ELHhn/iBgdM=; b=BpP2da+EDB8kzc
-	28tb9Gp4yMdXjPDiMycPPSNU0JD3/FMxaXo19hc0pMHtNk/rmyCesNH7i1sirI41I89v0A01EWUfV
-	XqieAvtuN8oLT0XJaRQnkM3vGDSe3UX1/Eo57F6BVPlFEszgOaXTktsWmwaJ6a4d9OOWgPtu/ADy1
-	a8DRyhHk/RULWnBJnvh37oniv0IPTbMcFIxcStm0RpB1u5UOvsuFjufeGaEEFL2ohK7lmVbRCP8Q6
-	nx3t3fS7fMWmOzEXcwBwPHKeNLDk02X7ibPFksTDlyd+qflniG7JzLrNmoPsegRNGQAXChRRPb1E0
-	5TgOxtWAbRn0Llqci+dQ==;
+	List-Owner; bh=HBtv2TDl4mruh8arKG/qAT4vZb5MMws0buQNd5XJlwo=; b=Tly2k4dce9IWdU
+	p01CgPP9kINKkbvthhT/tXTPEuoSEBPVK2DYKCQnBqcaKZ3o4W6fv7dhHJiSChaIeqwZ4JiFGyOvP
+	5IErQ8SBqQ9guyOE4gl9TZp9JTu5EnbRaNT3kRgsuotF2Ql6uf6RZBMRscf27IUd29v3BI7ILHJG6
+	LzDXHWD1rywOLkaU6vFBZO8Ip2J7RpMWKxaq2dXvQZt7tdc7uQI88vLCTwmi5sNc1BfbEfdyaS3P+
+	ul5MfAYxVE56ep9aKDVCYta/HPk5cXS+sakYfCZof49VCWNtCUnMwejG89yuaTURpGPs1DU2DkpAE
+	r4OgFhQm4PBtrsXosjGg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hgj97-0004Mm-7q; Fri, 28 Jun 2019 05:10:01 +0000
+	id 1hgjBU-000668-2A; Fri, 28 Jun 2019 05:12:28 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hgj8s-0004MQ-90
- for linux-arm-kernel@lists.infradead.org; Fri, 28 Jun 2019 05:09:47 +0000
+ id 1hgjBF-00065W-TS
+ for linux-arm-kernel@lists.infradead.org; Fri, 28 Jun 2019 05:12:15 +0000
 Received: from sol.localdomain (c-24-5-143-220.hsd1.ca.comcast.net
  [24.5.143.220])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id A85F3206E0;
- Fri, 28 Jun 2019 05:09:45 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 41DAA206E0;
+ Fri, 28 Jun 2019 05:12:13 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1561698586;
- bh=/peHflkrKmzjbuBmMuvUh/DLiTO8hGnUbfVTz+1n2Nc=;
+ s=default; t=1561698733;
+ bh=IRQGF8vAku7wB0SAw6ssV5177l87E59zx30lN1xJdPM=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=tuUO3xjaZIWvv3Mbofdz1xB8AocKHnbI5XgL+ZE/Yrl4SQPS/oif9fvuu28wewGbF
- y3INDtDd1R3SOBrBKOxq5TNIordgAutrhTvLNsVlaCsvqOX+YyuOx9JEfflt3KkCLq
- PPafmL2uJvZ7PtFOxYWVbFGr29cYtAtZ3jO1gnHc=
-Date: Thu, 27 Jun 2019 22:09:44 -0700
+ b=zfm+2ze2ffcgNtvKC4TDK1/DIgMftGdqZnopkhvBrlbGxgLjqfU4oMBgvg9kihoZy
+ G6NVPWVjnswQFT9vHeCEibGN2qyDccdua7kxlBKp1wXQy3RhuGw958WxwFutCsl/sK
+ bQWBSK8Keb8nZZRdNv6Nvcg255T7iJXgHJFBaFKk=
+Date: Thu, 27 Jun 2019 22:12:11 -0700
 From: Eric Biggers <ebiggers@kernel.org>
 To: Keerthy <j-keerthy@ti.com>
-Subject: Re: [RESEND PATCH 05/10] crypto: sha256_generic: Export the
- Transform function
-Message-ID: <20190628050944.GE673@sol.localdomain>
+Subject: Re: [RESEND PATCH 06/10] crypto: sa2ul: Add hmac(sha256)cbc(aes)
+ AEAD Algo support
+Message-ID: <20190628051211.GF673@sol.localdomain>
 References: <20190628042745.28455-1-j-keerthy@ti.com>
- <20190628042745.28455-6-j-keerthy@ti.com>
+ <20190628042745.28455-7-j-keerthy@ti.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190628042745.28455-6-j-keerthy@ti.com>
+In-Reply-To: <20190628042745.28455-7-j-keerthy@ti.com>
 User-Agent: Mutt/1.12.1 (2019-06-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190627_220946_339345_BF5532FB 
-X-CRM114-Status: UNSURE (   8.20  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190627_221213_971878_BDBE9EC7 
+X-CRM114-Status: GOOD (  15.72  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -89,15 +88,47 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Jun 28, 2019 at 09:57:40AM +0530, Keerthy wrote:
-> The transform function can be used as is by other crypto
-> drivers that need to transform the 256 bit key using cpu.
-> Hence export it.
+On Fri, Jun 28, 2019 at 09:57:41AM +0530, Keerthy wrote:
+> Add aead support for hmac(sha256)cbc(aes) algorithm. Authenticated
+> encryption (AE) and authenticated encryption with associated data
+> (AEAD) is a form of encryption which simultaneously provides
+> confidentiality, integrity, and authenticity assurances on the data.
+> 
+> hmac(sha256) has a digest size of 32 bytes is used for authetication
+> and AES in CBC mode is used in conjunction for encryption/decryption.
+> 
+> Signed-off-by: Keerthy <j-keerthy@ti.com>
+> ---
+>  drivers/crypto/sa2ul.c | 92 ++++++++++++++++++++++++++++++++++++++++++
+>  1 file changed, 92 insertions(+)
+> 
+> diff --git a/drivers/crypto/sa2ul.c b/drivers/crypto/sa2ul.c
+> index 1a1bd882e0d2..9c9008e21867 100644
+> --- a/drivers/crypto/sa2ul.c
+> +++ b/drivers/crypto/sa2ul.c
+> @@ -271,6 +271,42 @@ void sa_hmac_sha1_get_pad(const u8 *key, u16 key_sz, u32 *ipad, u32 *opad)
+>  		opad[i] = cpu_to_be32(opad[i]);
+>  }
+>  
+> +void sha256_init(u32 *buf)
 
-What is this supposed to mean?  SHA-256 is an unkeyed hash function.
+This needs to be static.
 
-Also, you need to actually explain why this is needed.  If your hardware
-supports SHA-256, why do you need to use the C sha256_transform()?
+> +static int sa_aead_cbc_sha256_setkey(struct crypto_aead *authenc,
+> +				     const u8 *key, unsigned int keylen)
+> +{
+> +	struct algo_data *ad = kzalloc(sizeof(*ad), GFP_KERNEL);
+> +	struct crypto_authenc_keys keys;
+> +	int ret = 0, key_idx;
+> +
+> +	ret = crypto_authenc_extractkeys(&keys, key, keylen);
+> +	if (ret)
+> +		return ret;
+> +
+> +	/* Convert the key size (16/24/32) to the key size index (0/1/2) */
+> +	key_idx = (keys.enckeylen >> 3) - 2;
+
+Where do you validate the key length?
 
 - Eric
 
