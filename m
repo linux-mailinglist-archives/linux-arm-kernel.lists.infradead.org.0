@@ -2,66 +2,115 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 46CD7593E6
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 28 Jun 2019 07:57:51 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D59C2593E9
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 28 Jun 2019 07:59:04 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=YLWYPLJTBhCuBpI5mjwtHEfR9vzpeod6oNa+FncMUs0=; b=K+4VSiaq2gIA7k
-	OvhDC66ZIwX2CvBZu+G8OYmF7Hx6yWMGjxdN/8tVbf3bDWiO5XJR8lf5y7eUsUVSLfl9KttgB4CS5
-	OOs0BcOHkXDmdNphlvFJhY7pzWeAWTfmX7DCzYFwX0F2HApbrXIRrJElmmJHY+oztO7Gied6R2D2X
-	Xh/nXdG8Fy2Jut4YCOF2aVUHgB3FhRhjXmn4LkNAJZltXMywqos+W3uB6AVclnD5iSLhSoVLUVINQ
-	HIlgte7Pb9DaJJC6Ju1dBj6YPgCTewKoVL6BjKk7W9C4f9XvWvQke5hQL3Hl/Ee+VWabiYYUbYrD8
-	Bzi3R44ZlLsMuP0mJueA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:Message-ID:Date
+	:Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	List-Owner; bh=pVqkyzZR8A8MobOaEDB9M09y2tapbjwGc/oegxGvvXw=; b=ShcGzhHfzc/SwG
+	4Bm+Bnd08WGwhR/qgD4sKWuK35W1hcenl4KxBWEAnX9vajPt6QVFLhVI6980cjHn6tx4nnGTg0TIq
+	8HWjSlpa8WiT9VelONjTMRohve6BQqcPTU4ue9EEZ3OZtrf9wBuHTaP+WPSVVGaSaQdGwKRAj6Eu7
+	v+iWbzQV4Acm+8KqMP+TM/wgk1jXLPPkRkVwVINzusNtUiDriFA9xGKNy4fB5XR9OormtlOnFjgFJ
+	NdD1jFnzlpck8Bt5JzX1lxhaQyNKCYYW4Q/PhqloQErAJGZQGP+Pq3+oNRX+zo+RNaIzkyAYxuCZF
+	4V5CykASJ6sdF/JVZktw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hgjtJ-0006WH-La; Fri, 28 Jun 2019 05:57:45 +0000
-Received: from mailgw02.mediatek.com ([216.200.240.185])
+	id 1hgjuX-0006rB-8w; Fri, 28 Jun 2019 05:59:01 +0000
+Received: from mail-eopbgr70042.outbound.protection.outlook.com ([40.107.7.42]
+ helo=EUR04-HE1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hgjt4-0006V8-Lx; Fri, 28 Jun 2019 05:57:32 +0000
-X-UUID: f1e312a8402e416a9e681cfacb2ef1c9-20190627
-X-UUID: f1e312a8402e416a9e681cfacb2ef1c9-20190627
-Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw02.mediatek.com
- (envelope-from <ck.hu@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 45723481; Thu, 27 Jun 2019 21:57:19 -0800
-Received: from MTKMBS33N2.mediatek.inc (172.27.4.76) by
- MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Thu, 27 Jun 2019 22:57:18 -0700
-Received: from mtkcas09.mediatek.inc (172.21.101.178) by
- MTKMBS33N2.mediatek.inc (172.27.4.76) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Fri, 28 Jun 2019 13:57:14 +0800
-Received: from [172.21.77.4] (172.21.77.4) by mtkcas09.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Fri, 28 Jun 2019 13:57:14 +0800
-Message-ID: <1561701434.18399.3.camel@mtksdaap41>
-Subject: Re: [v5 2/7] drm/mediatek: fixes CMDQ reg address of mt8173 is
- different with mt2701
-From: CK Hu <ck.hu@mediatek.com>
-To: Jitao Shi <jitao.shi@mediatek.com>
-Date: Fri, 28 Jun 2019 13:57:14 +0800
-In-Reply-To: <20190627080116.40264-3-jitao.shi@mediatek.com>
-References: <20190627080116.40264-1-jitao.shi@mediatek.com>
- <20190627080116.40264-3-jitao.shi@mediatek.com>
-X-Mailer: Evolution 3.10.4-0ubuntu2 
+ id 1hgjuK-0006qT-LE
+ for linux-arm-kernel@lists.infradead.org; Fri, 28 Jun 2019 05:58:50 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=testarcselector01; d=microsoft.com; cv=none;
+ b=mTu4g7kRZ7Px/aEQUOpas/HMn/cgwk11gpWJ6eRYX8ECZAu756A2ybaCjBVGF/LKFysiUwiseAe26S9P11NfLEZjJncD/Ya37VUpjri4d+Tc2oaXCv613aH0ruhvQ1Mn0ExvkPhCmGibR3FupCR6hI9ezZT8rg8p90YNvm8+kNg=
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=testarcselector01;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=xgIr4hod7oBTVXDZKPq7UkOTgNGV5qmVQbm6noRygpA=;
+ b=S2IZSwg8lfPMRgclC4UYhGwinLanwCQXQNcvhESggYadVvtt+qLHn2G88goL1eNdtdLKrTIym1zUCScVOn54RxyrAK3Lpw43sWpey10zzN79c1daFEBrmjnld7/YU00HeNdGs+DxbSVnim+RMED0SUH5FeKRcE+oLYjmgDW61V8=
+ARC-Authentication-Results: i=1; test.office365.com
+ 1;spf=none;dmarc=none;dkim=none;arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=xgIr4hod7oBTVXDZKPq7UkOTgNGV5qmVQbm6noRygpA=;
+ b=m530JtJjEZH8uQKFcfU+uzeIxpzglQloXZGsc6Z93z9lfqQFswAHgHfzCrDrkZ4ki63ywgn7XLVlVe97LuqaXBGGhgsw4jjxwwlf92vKpFaS+P0vHQjjEdc28sISQQAk1+3PvI7tbfbi4wp5g5XIbeZ+WqmDA4EDyBlmkHZG9Ec=
+Received: from VI1PR04MB5055.eurprd04.prod.outlook.com (20.177.50.140) by
+ VI1PR04MB3023.eurprd04.prod.outlook.com (10.170.228.145) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2008.16; Fri, 28 Jun 2019 05:58:42 +0000
+Received: from VI1PR04MB5055.eurprd04.prod.outlook.com
+ ([fe80::d83:14c4:dedb:213b]) by VI1PR04MB5055.eurprd04.prod.outlook.com
+ ([fe80::d83:14c4:dedb:213b%5]) with mapi id 15.20.2008.014; Fri, 28 Jun 2019
+ 05:58:42 +0000
+From: Leonard Crestez <leonard.crestez@nxp.com>
+To: Anson Huang <anson.huang@nxp.com>, "shawnguo@kernel.org"
+ <shawnguo@kernel.org>, Jacky Bai <ping.bai@nxp.com>, "l.stach@pengutronix.de"
+ <l.stach@pengutronix.de>
+Subject: Re: [PATCH 1/2] arm64: dts: imx8mq: Correct OPP table according to
+ latest datasheet
+Thread-Topic: [PATCH 1/2] arm64: dts: imx8mq: Correct OPP table according to
+ latest datasheet
+Thread-Index: AQHVLWLGEgwa/2nQ4E+GYs5uFNg8hw==
+Date: Fri, 28 Jun 2019 05:58:42 +0000
+Message-ID: <VI1PR04MB50553915C0D978A8019BDC5CEEFC0@VI1PR04MB5055.eurprd04.prod.outlook.com>
+References: <20190628032800.8428-1-Anson.Huang@nxp.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=leonard.crestez@nxp.com; 
+x-originating-ip: [2a04:241e:500:9200:e6e7:49ff:fe63:c221]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: f41d2f26-ff64-43c7-529a-08d6fb8dacc6
+x-ms-office365-filtering-ht: Tenant
+x-microsoft-antispam: BCL:0; PCL:0;
+ RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600148)(711020)(4605104)(1401327)(4618075)(2017052603328)(7193020);
+ SRVR:VI1PR04MB3023; 
+x-ms-traffictypediagnostic: VI1PR04MB3023:
+x-microsoft-antispam-prvs: <VI1PR04MB3023D56AB103540FC6599E54EEFC0@VI1PR04MB3023.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:9508;
+x-forefront-prvs: 00826B6158
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(4636009)(396003)(136003)(376002)(346002)(366004)(39860400002)(189003)(199004)(25786009)(33656002)(66556008)(478600001)(76176011)(5660300002)(2906002)(53546011)(305945005)(66476007)(66446008)(44832011)(9686003)(55016002)(7696005)(64756008)(14454004)(256004)(6246003)(14444005)(52536014)(7736002)(54906003)(73956011)(110136005)(66946007)(446003)(68736007)(102836004)(53936002)(71190400001)(81156014)(81166006)(2501003)(6116002)(229853002)(486006)(316002)(186003)(8676002)(6436002)(74316002)(8936002)(71200400001)(7416002)(76116006)(86362001)(4326008)(476003)(46003)(6506007)(99286004)(32563001);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:VI1PR04MB3023;
+ H:VI1PR04MB5055.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; MX:1; A:1; 
+received-spf: None (protection.outlook.com: nxp.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam-message-info: J44+bz+bmMKg1ZDyfeTaRDiUjr1KmTU7x0rt8+vNhyHZwKEbOW5d5kzHI7d4kOVbl8qh736/pJQUpDhp5rd+2Ce7ovYn4su9D/QnFB3nOvkubSGLe4kEFqoXp4hsClkERzrCtCUsb7nrPRbGUS9EK+zjknncPAliiAFvZ6gWXr8UlG3ty13LhhDsysN0y9/zQfoIcUIIxjIN2Coymj0zHxvH0EG72WXU4wVFtgm8KkN/8JZObQf5eP3h+wlqOlLWvOn8Eu0XBTaWs7/8U7E4/xTn9i8wxpYpAnvXhiyd6rb28X8R40ny2YLFFnrg3/2yAmZumG0ZQU60lzHP9foH+bSL3nVcvrssdpbLPmSdd8A2zbMNZo65ydXTv+Q2XaMk1oueBX7NWRpf9eojDYgGAEArrfXp1L9XMF5FdDc6Elw=
 MIME-Version: 1.0
-X-TM-SNTS-SMTP: EFC69EF3637C30387605FE58F2031FD41C3BF0457DDCD7D8088A30B41732E1EB2000:8
-X-MTK: N
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: f41d2f26-ff64-43c7-529a-08d6fb8dacc6
+X-MS-Exchange-CrossTenant-originalarrivaltime: 28 Jun 2019 05:58:42.5373 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: leonard.crestez@nxp.com
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1PR04MB3023
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190627_225730_722964_AC672556 
-X-CRM114-Status: GOOD (  18.13  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190627_225848_800757_E2B026FF 
+X-CRM114-Status: GOOD (  10.20  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [40.107.7.42 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -73,131 +122,58 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- David Airlie <airlied@linux.ie>, stonea168@163.com,
- dri-devel@lists.freedesktop.org, yingjoe.chen@mediatek.com,
- Ajay Kumar <ajaykumar.rs@samsung.com>, Vincent Palatin <vpalatin@chromium.org>,
- cawa.cheng@mediatek.com, bibby.hsieh@mediatek.com,
- Russell King <rmk+kernel@arm.linux.org.uk>, Thierry
- Reding <treding@nvidia.com>, linux-pwm@vger.kernel.org,
- Sascha Hauer <kernel@pengutronix.de>, Pawel Moll <pawel.moll@arm.com>,
- Ian Campbell <ijc+devicetree@hellion.org.uk>, Inki
- Dae <inki.dae@samsung.com>, Rob Herring <robh+dt@kernel.org>,
- linux-mediatek@lists.infradead.org, Andy
- Yan <andy.yan@rock-chips.com>, Matthias Brugger <matthias.bgg@gmail.com>,
- eddie.huang@mediatek.com, linux-arm-kernel@lists.infradead.org,
- Rahul Sharma <rahul.sharma@samsung.com>, srv_heupstream@mediatek.com,
- linux-kernel@vger.kernel.org, Philipp Zabel <p.zabel@pengutronix.de>, Sean
- Paul <seanpaul@chromium.org>
+Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ Abel Vesa <abel.vesa@nxp.com>, "ccaione@baylibre.com" <ccaione@baylibre.com>,
+ "andrew.smirnov@gmail.com" <andrew.smirnov@gmail.com>,
+ "viresh.kumar@linaro.org" <viresh.kumar@linaro.org>,
+ "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
+ "angus@akkea.ca" <angus@akkea.ca>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Daniel Baluta <daniel.baluta@nxp.com>,
+ "robh+dt@kernel.org" <robh+dt@kernel.org>, dl-linux-imx <linux-imx@nxp.com>,
+ "kernel@pengutronix.de" <kernel@pengutronix.de>,
+ "festevam@gmail.com" <festevam@gmail.com>, "agx@sigxcpu.org" <agx@sigxcpu.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi, Jitao:
-
-On Thu, 2019-06-27 at 16:01 +0800, Jitao Shi wrote:
-> Config the different CMDQ reg address in driver data.
+On 28.06.2019 06:37, Anson.Huang@nxp.com wrote:
+> From: Anson Huang <Anson.Huang@nxp.com>
 > 
-> Signed-off-by: Jitao Shi <jitao.shi@mediatek.com>
-> ---
->  drivers/gpu/drm/mediatek/mtk_dsi.c | 29 ++++++++++++++++++++++++-----
->  1 file changed, 24 insertions(+), 5 deletions(-)
-> 
-> diff --git a/drivers/gpu/drm/mediatek/mtk_dsi.c b/drivers/gpu/drm/mediatek/mtk_dsi.c
-> index 595b3b047c7b..bd37d823c762 100644
-> --- a/drivers/gpu/drm/mediatek/mtk_dsi.c
-> +++ b/drivers/gpu/drm/mediatek/mtk_dsi.c
-> @@ -131,7 +131,6 @@
->  #define VM_CMD_EN			BIT(0)
->  #define TS_VFP_EN			BIT(5)
->  
-> -#define DSI_CMDQ0		0x180
->  #define CONFIG				(0xff << 0)
->  #define SHORT_PACKET			0
->  #define LONG_PACKET			2
-> @@ -156,6 +155,10 @@
->  
->  struct phy;
->  
-> +struct mtk_dsi_driver_data {
-> +	const u32 reg_cmdq_off;
-> +};
-> +
->  struct mtk_dsi {
->  	struct mtk_ddp_comp ddp_comp;
->  	struct device *dev;
-> @@ -182,6 +185,7 @@ struct mtk_dsi {
->  	bool enabled;
->  	u32 irq_data;
->  	wait_queue_head_t irq_wait_queue;
-> +	const struct mtk_dsi_driver_data *driver_data;
->  };
->  
->  static inline struct mtk_dsi *encoder_to_dsi(struct drm_encoder *e)
-> @@ -934,6 +938,7 @@ static void mtk_dsi_cmdq(struct mtk_dsi *dsi, const struct mipi_dsi_msg *msg)
->  	const char *tx_buf = msg->tx_buf;
->  	u8 config, cmdq_size, cmdq_off, type = msg->type;
->  	u32 reg_val, cmdq_mask, i;
-> +	u32 reg_cmdq_off = dsi->driver_data->reg_cmdq_off;
->  
->  	if (MTK_DSI_HOST_IS_READ(type))
->  		config = BTA;
-> @@ -953,9 +958,11 @@ static void mtk_dsi_cmdq(struct mtk_dsi *dsi, const struct mipi_dsi_msg *msg)
->  	}
->  
->  	for (i = 0; i < msg->tx_len; i++)
-> -		writeb(tx_buf[i], dsi->regs + DSI_CMDQ0 + cmdq_off + i);
-> +		mtk_dsi_mask(dsi, (reg_cmdq_off + cmdq_off + i) & (~0x3U),
-> +			     (0xffUL << (((i + cmdq_off) & 3U) * 8U)),
-> +			     tx_buf[i] << (((i + cmdq_off) & 3U) * 8U));
+> According to latest datasheet (Rev.1, 10/2018) from below links,
+> in the consumer datasheet, 1.5GHz is mentioned as highest opp but
+> depends on speed grading fuse, and in the industrial datasheet,
+> 1.3GHz is mentioned as highest opp but depends on speed grading
+> fuse. 1.5GHz and 1.3GHz opp use same voltage, so no need for
+> consumer part to support 1.3GHz opp, with same voltage, CPU should
+> run at highest frequency in order to go into idle as quick as
+> possible, this can save power.
 
-If writeb() has the same problem in MT2701, I think we need a patch that
-just change writeb() to mtk_dsi_mask(), and then a patch to fix CMDQ reg
-address of MT8173. So break this patch into two patches.
+I looked at the same datasheets and it's not clear to me that 1.3 Ghz 
+should be disallowed for consumer parts. Power consumption increases 
+with both voltage and frequency so having two OPPs with same voltage 
+does make sense.
 
-Regards,
-CK
+>   			opp-hz = /bits/ 64 <1300000000>;
+>   			opp-microvolt = <1000000>;
+> -			opp-supported-hw = <0xc>, <0x7>;
+> +			/* Industrial only but rely on speed grading */
+> +			opp-supported-hw = <0xc>, <0x4>;
 
->  
-> -	mtk_dsi_mask(dsi, DSI_CMDQ0, cmdq_mask, reg_val);
-> +	mtk_dsi_mask(dsi, reg_cmdq_off, cmdq_mask, reg_val);
->  	mtk_dsi_mask(dsi, DSI_CMDQ_SIZE, CMDQ_SIZE, cmdq_size);
->  }
->  
-> @@ -1099,6 +1106,8 @@ static int mtk_dsi_probe(struct platform_device *pdev)
->  	if (ret)
->  		goto err_unregister_host;
->  
-> +	dsi->driver_data = of_device_get_match_data(dev);
-> +
->  	dsi->engine_clk = devm_clk_get(dev, "engine");
->  	if (IS_ERR(dsi->engine_clk)) {
->  		ret = PTR_ERR(dsi->engine_clk);
-> @@ -1192,9 +1201,19 @@ static int mtk_dsi_remove(struct platform_device *pdev)
->  	return 0;
->  }
->  
-> +static const struct mtk_dsi_driver_data mt8173_dsi_driver_data = {
-> +	.reg_cmdq_off = 0x200,
-> +};
-> +
-> +static const struct mtk_dsi_driver_data mt2701_dsi_driver_data = {
-> +	.reg_cmdq_off = 0x180,
-> +};
-> +
->  static const struct of_device_id mtk_dsi_of_match[] = {
-> -	{ .compatible = "mediatek,mt2701-dsi" },
-> -	{ .compatible = "mediatek,mt8173-dsi" },
-> +	{ .compatible = "mediatek,mt2701-dsi",
-> +	  .data = &mt2701_dsi_driver_data },
-> +	{ .compatible = "mediatek,mt8173-dsi",
-> +	  .data = &mt8173_dsi_driver_data },
->  	{ },
->  };
->  
+Comment is false, you're explicitly excluding consumer parts via the 
+second element.
 
+>   			opp-hz = /bits/ 64 <1500000000>;
+>   			opp-microvolt = <1000000>;
+>   			/* Consumer only but rely on speed grading */
+> -			opp-supported-hw = <0x8>, <0x7>;
+> +			opp-supported-hw = <0x8>, <0x3>;
 
+If you don't want to rely on the fact that only consumer parts should be 
+fused for 1.5 Ghz then please delete the comment.
 
 _______________________________________________
 linux-arm-kernel mailing list
