@@ -2,62 +2,77 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 30D1459363
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 28 Jun 2019 07:26:05 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9EE8659368
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 28 Jun 2019 07:27:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jeoiAhQ4Fge7xxB7CLSePPZ1LWUWWpn7DdneE9xvPHQ=; b=Z3Xg3uKPTzqdnb
-	zm2VhWO4E0ZsNlYSRf//pDM16Meiojf/dUFI1OHj5bkGJ5QFMEtch7DEMbG5APSXZIJc6hcEK5VE0
-	RASzFyPnQImfNRSjP7K4QtAzPwZak3gviTQ2OckmlLYHTQIUcHmsYbvopVwWHCU2jU9RdF1LEfuIJ
-	mFLgsDS7oCe8XqyoRFLkcc6Egiq850Umw9yi7IMQ4Xs92uGJVB5m8Wf7lTGkS1ifpGkTyDzM5IUiF
-	ubw0rFTmFOHQ+PeR0LO5QdrB2PgTgCQfw/ClyqsS/ot/72IIzwK2b8QjnFkdrBHo1heKhlYrIT9rj
-	4eFuS5/mS72/z0fq8frQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=4Tr6MtRhH7K5Typv2ouyS6Ul9yBdkOANeWI5QdYRXS4=; b=jhj8NfYiJL9mGy2t/6694DFe0
+	IU1tpUqM8b6Uj4BXWereRjUQV+iMjnqEVNRwqD67xt8SA85exx6po3Kd9wYhmp6MioIDV5ogA44BA
+	uW+cPlzZel1lawMiLJMsmXHB9f6s0jy7xJc0fsCgqMtK70NKiCzd7kve7q8thCKcHvZDytMrNiSbJ
+	koGB50kBHMmHB9d5yjWpKc2JMcJyYIF3wUrYKBIbshUTPgblvq9eyGCtcvEriQs2YoWViVKQvm2zZ
+	z3d32FtUhmC349VW3TnLegoyBg1jEL77DAIRQmfkNKyxRWwBc9W3uZAKM2PGnmZjOs/ZWb2H4RD/d
+	cjR8vmloQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hgjOb-0003aw-GV; Fri, 28 Jun 2019 05:26:01 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1hgjPx-0003vA-3K; Fri, 28 Jun 2019 05:27:25 +0000
+Received: from fllv0015.ext.ti.com ([198.47.19.141])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hgjON-0003aa-2i
- for linux-arm-kernel@lists.infradead.org; Fri, 28 Jun 2019 05:25:48 +0000
-Received: from sol.localdomain (c-24-5-143-220.hsd1.ca.comcast.net
- [24.5.143.220])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id D04F72133F;
- Fri, 28 Jun 2019 05:25:45 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1561699546;
- bh=aMZfEfbPOVHaF3ps0biSxY9D0QevPh/SQ9F38VyxOOs=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=mHR7MZYSCuKftGCC0a4GEMifx1yqY1mqy6gelDQX21z2J9q+qOUS3XH3w7FJiOQox
- rFofg1nwy5fMVogvoBfoe5h6fCX6BNIhcOjt+ntd9o7GwXB9pdr3IKKYhDcBprFs8s
- XZ+4N1B18kQ5aVsT+q9V2tTe/fy2D9I93+AouszQ=
-Date: Thu, 27 Jun 2019 22:25:44 -0700
-From: Eric Biggers <ebiggers@kernel.org>
-To: keerthy <j-keerthy@ti.com>
-Subject: Re: [RESEND PATCH 00/10] crypto: k3: Add sa2ul driver
-Message-ID: <20190628052544.GH673@sol.localdomain>
+ id 1hgjPj-0003un-Nw
+ for linux-arm-kernel@lists.infradead.org; Fri, 28 Jun 2019 05:27:13 +0000
+Received: from lelv0265.itg.ti.com ([10.180.67.224])
+ by fllv0015.ext.ti.com (8.15.2/8.15.2) with ESMTP id x5S5R6oB118599;
+ Fri, 28 Jun 2019 00:27:06 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
+ s=ti-com-17Q1; t=1561699626;
+ bh=v0WcvKhwBQFtUMJMsq4+vIFQxzwxel+wYQa/dpCCq90=;
+ h=Subject:To:CC:References:From:Date:In-Reply-To;
+ b=QaDAF8j7OAbedgraNDWGF6dM0JqP56fk7lYR949dQfK1vL/2LtSwWXoRor7BuYW2F
+ EkEnQU3PkVENZ05YhKmtg7k500BDqiAx1tNgaXq4yHCBk9p4V7BQHT0VyL7leg1wt7
+ Pjc6x9zSYU4FqWuxk1jKWXoQJpCSbDZS3ophT2aY=
+Received: from DFLE100.ent.ti.com (dfle100.ent.ti.com [10.64.6.21])
+ by lelv0265.itg.ti.com (8.15.2/8.15.2) with ESMTPS id x5S5R6gp017910
+ (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
+ Fri, 28 Jun 2019 00:27:06 -0500
+Received: from DFLE100.ent.ti.com (10.64.6.21) by DFLE100.ent.ti.com
+ (10.64.6.21) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5; Fri, 28
+ Jun 2019 00:27:05 -0500
+Received: from lelv0326.itg.ti.com (10.180.67.84) by DFLE100.ent.ti.com
+ (10.64.6.21) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5 via
+ Frontend Transport; Fri, 28 Jun 2019 00:27:05 -0500
+Received: from [172.24.191.45] (ileax41-snat.itg.ti.com [10.172.224.153])
+ by lelv0326.itg.ti.com (8.15.2/8.15.2) with ESMTP id x5S5R2XE031643;
+ Fri, 28 Jun 2019 00:27:03 -0500
+Subject: Re: [RESEND PATCH 05/10] crypto: sha256_generic: Export the Transform
+ function
+To: Eric Biggers <ebiggers@kernel.org>
 References: <20190628042745.28455-1-j-keerthy@ti.com>
- <20190628045318.GC673@sol.localdomain>
- <7ca64e49-6e1f-c74e-4d8e-0e08607fe5c5@ti.com>
+ <20190628042745.28455-6-j-keerthy@ti.com>
+ <20190628050944.GE673@sol.localdomain>
+From: Keerthy <j-keerthy@ti.com>
+Message-ID: <7ddfdddc-38ba-a435-f688-4d0e29c0513c@ti.com>
+Date: Fri, 28 Jun 2019 10:57:39 +0530
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.7.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <7ca64e49-6e1f-c74e-4d8e-0e08607fe5c5@ti.com>
-User-Agent: Mutt/1.12.1 (2019-06-15)
+In-Reply-To: <20190628050944.GE673@sol.localdomain>
+Content-Language: en-US
+X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190627_222547_160207_E46FA475 
-X-CRM114-Status: GOOD (  23.76  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190627_222711_823988_555E6887 
+X-CRM114-Status: GOOD (  12.87  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [198.47.19.141 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -83,72 +98,39 @@ Cc: nm@ti.com, devicetree@vger.kernel.org, herbert@gondor.apana.org.au,
  linux-kernel@vger.kernel.org, t-kristo@ti.com, robh+dt@kernel.org,
  linux-crypto@vger.kernel.org, davem@davemloft.net,
  linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gRnJpLCBKdW4gMjgsIDIwMTkgYXQgMTA6NDQ6MjZBTSArMDUzMCwga2VlcnRoeSB3cm90ZToK
-PiAKPiAKPiBPbiA2LzI4LzIwMTkgMTA6MjMgQU0sIEVyaWMgQmlnZ2VycyB3cm90ZToKPiA+IEhp
-IEtlZXJ0aHksCj4gPiAKPiA+IE9uIEZyaSwgSnVuIDI4LCAyMDE5IGF0IDA5OjU3OjM1QU0gKzA1
-MzAsIEtlZXJ0aHkgd3JvdGU6Cj4gPiA+IFRoZSBzZXJpZXMgYWRkcyBDcnlwdG8gaGFyZHdhcmUg
-YWNjZWxlcmF0b3Igc3VwcG9ydCBmb3IgU0EyVUwuCj4gPiA+IFNBMlVMIHN0YW5kcyBmb3Igc2Vj
-dXJpdHkgYWNjZWxlcmF0b3IgdWx0cmEgbGl0ZS4KPiA+ID4gCj4gPiA+IFRoZSBTZWN1cml0eSBB
-Y2NlbGVyYXRvciAoU0EyX1VMKSBzdWJzeXN0ZW0gcHJvdmlkZXMgaGFyZHdhcmUKPiA+ID4gY3J5
-cHRvZ3JhcGhpYyBhY2NlbGVyYXRpb24gZm9yIHRoZSBmb2xsb3dpbmcgdXNlIGNhc2VzOgo+ID4g
-PiDigKIgRW5jcnlwdGlvbiBhbmQgYXV0aGVudGljYXRpb24gZm9yIHNlY3VyZSBib290Cj4gPiA+
-IOKAoiBFbmNyeXB0aW9uIGFuZCBhdXRoZW50aWNhdGlvbiBvZiBjb250ZW50IGluIGFwcGxpY2F0
-aW9ucwo+ID4gPiAgICByZXF1aXJpbmcgRFJNIChkaWdpdGFsIHJpZ2h0cyBtYW5hZ2VtZW50KSBh
-bmQKPiA+ID4gICAgY29udGVudC9hc3NldCBwcm90ZWN0aW9uCj4gPiA+IFRoZSBkZXZpY2UgaW5j
-bHVkZXMgb25lIGluc3RhbnRpYXRpb24gb2YgU0EyX1VMIG5hbWVkIFNBMl9VTDAKPiA+ID4gCj4g
-PiA+IFNBMlVMIG5lZWRzIG9uIHR4IGNoYW5uZWwgYW5kIGEgcGFpciBvZiByeCBkbWEgY2hhbm5l
-bHMuCj4gPiA+IAo+ID4gPiBUaGlzIHNlcmllcyBoYXMgZGVwZW5kZW5jeSBvbiBVRE1BIHNlcmll
-cy4gSGVuY2UgaXMgYmFzZWQgb24gdG9wIG9mOgo+ID4gPiAKPiA+ID4gaHR0cHM6Ly9wYXRjaHdv
-cmsua2VybmVsLm9yZy9wcm9qZWN0L2xpbnV4LWRtYWVuZ2luZS9saXN0Lz9zZXJpZXM9MTE0MTA1
-Cj4gPiA+IAo+ID4gPiBUaGUgYWJvdmUgc2VyaWVzIGFkZHMgY291cGxlIG9mIGRtYWVuZ2luZSBB
-UElzIHRoYXQgYXJlIHVzZWQKPiA+ID4gYnkgdGhlIHNhMnVsIGRyaXZlci4gSGVuY2UgdGhlcmUg
-aXMgYSBoYXJkIGRlcGVuZGVuY3kgb24gdGhlCj4gPiA+IGFib3ZlIHNlcmllcy4KPiA+ID4gCj4g
-PiA+IFJlc2VuZGluZyB3aXRoIGxpbnV4LWNyeXB0byBsaXN0IGluIENjLgo+ID4gPiAKPiA+ID4g
-S2VlcnRoeSAoMTApOgo+ID4gPiAgICBkdC1iaW5kaW5nczogY3J5cHRvOiBrMzogQWRkIHNhMnVs
-IGJpbmRpbmdzIGRvY3VtZW50YXRpb24KPiA+ID4gICAgY3J5cHRvOiBzYTJ1bDogQWRkIGNyeXB0
-byBkcml2ZXIKPiA+ID4gICAgY3J5cHRvOiBzYTJ1bDogQWRkIEFFUyBFQ0IgTW9kZSBzdXBwb3J0
-Cj4gPiA+ICAgIGNyeXB0bzogc2EydWw6IEFkZCBhZWFkIHN1cHBvcnQgZm9yIGhtYWMoc2hhMSlj
-YmMoYWVzKSBhbGdvcml0aG0KPiA+ID4gICAgY3J5cHRvOiBzaGEyNTZfZ2VuZXJpYzogRXhwb3J0
-IHRoZSBUcmFuc2Zvcm0gZnVuY3Rpb24KPiA+ID4gICAgY3J5cHRvOiBzYTJ1bDogQWRkIGhtYWMo
-c2hhMjU2KWNiYyhhZXMpIEFFQUQgQWxnbyBzdXBwb3J0Cj4gPiA+ICAgIGNyeXB0bzogc2EydWw6
-IEFkZCBobWFjKHNoYTEpIEhNQUMgYWxnb3JpdGhtIHN1cHBvcnQKPiA+ID4gICAgY3J5cHRvOiBz
-YTJ1bDogQWRkIGhtYWMoc2hhMjU2KSBITUFDIGFsZ29yaXRobSBzdXBwb3J0Cj4gPiA+ICAgIHNh
-MnVsOiBBZGQgM0RFUyBFQ0IgJiBDQkMgTW9kZSBzdXBwb3J0Cj4gPiA+ICAgIGFybTY0OiBkdHM6
-IGszLWFtNjogQWRkIGNyeXB0byBhY2NlbGFyYXRvciBub2RlCj4gPiA+IAo+ID4gPiAgIC4uLi9k
-ZXZpY2V0cmVlL2JpbmRpbmdzL2NyeXB0by9zYTJ1bC50eHQgICAgICB8ICAgNDcgKwo+ID4gPiAg
-IGFyY2gvYXJtNjQvYm9vdC9kdHMvdGkvazMtYW02NS1tYWluLmR0c2kgICAgICB8ICAgMzMgKwo+
-ID4gPiAgIGNyeXB0by9zaGEyNTZfZ2VuZXJpYy5jICAgICAgICAgICAgICAgICAgICAgICB8ICAg
-IDMgKy0KPiA+ID4gICBkcml2ZXJzL2NyeXB0by9LY29uZmlnICAgICAgICAgICAgICAgICAgICAg
-ICAgfCAgIDE3ICsKPiA+ID4gICBkcml2ZXJzL2NyeXB0by9NYWtlZmlsZSAgICAgICAgICAgICAg
-ICAgICAgICAgfCAgICAxICsKPiA+ID4gICBkcml2ZXJzL2NyeXB0by9zYTJ1bC5jICAgICAgICAg
-ICAgICAgICAgICAgICAgfCAyMjMyICsrKysrKysrKysrKysrKysrCj4gPiA+ICAgZHJpdmVycy9j
-cnlwdG8vc2EydWwuaCAgICAgICAgICAgICAgICAgICAgICAgIHwgIDM4NCArKysKPiA+ID4gICBp
-bmNsdWRlL2NyeXB0by9zaGEuaCAgICAgICAgICAgICAgICAgICAgICAgICAgfCAgICAxICsKPiA+
-ID4gICA4IGZpbGVzIGNoYW5nZWQsIDI3MTcgaW5zZXJ0aW9ucygrKSwgMSBkZWxldGlvbigtKQo+
-ID4gPiAgIGNyZWF0ZSBtb2RlIDEwMDY0NCBEb2N1bWVudGF0aW9uL2RldmljZXRyZWUvYmluZGlu
-Z3MvY3J5cHRvL3NhMnVsLnR4dAo+ID4gPiAgIGNyZWF0ZSBtb2RlIDEwMDY0NCBkcml2ZXJzL2Ny
-eXB0by9zYTJ1bC5jCj4gPiA+ICAgY3JlYXRlIG1vZGUgMTAwNjQ0IGRyaXZlcnMvY3J5cHRvL3Nh
-MnVsLmgKPiA+IAo+ID4gRGlkIHlvdSBydW4gdGhlIGNyeXB0byBzZWxmLXRlc3RzIG9uIHRoaXMg
-ZHJpdmVyPyAgaS5lLiBib290IGEga2VybmVsIHdpdGgKPiA+IAo+ID4gCSMgQ09ORklHX0NSWVBU
-T19NQU5BR0VSX0RJU0FCTEVfVEVTVFMgaXMgbm90IHNldAo+ID4gCUNPTkZJR19ERUJVR19LRVJO
-RUw9eQo+ID4gCUNPTkZJR19DUllQVE9fTUFOQUdFUl9FWFRSQV9URVNUUz15Cj4gPiAKPiA+IFdo
-YXQgYXJlIHRoZSByZXN1bHRzPwo+IAo+IEVyaWMsCj4gCj4gVGhhbmtzIGZvciB5b3VyIHJlc3Bv
-bnNlLiBJIGRpZCB0cnkgd2l0aCB0aGF0LiBBbGwgdGVzdCBjYXNlcwo+IHdlcmUgcGFzc2luZyBv
-biA0LjE5IGtlcm5lbCBiZWZvcmUgdGhlIHRlc3RtZ3IgcmV2YW1wLgo+IAoKVGhhdCdzIHN1cnBy
-aXNpbmcsIHNpbmNlIHlvdXIgZHJpdmVyIGRvZXNuJ3QgaW1wbGVtZW50IHVwZGF0ZSgpIGZvciBo
-YXNoaW5nLCBzbwppdCBzaG91bGQgaGF2ZSBiZWVuIGZhaWxpbmcgYXQgbGVhc3QgdGhlIEhNQUMg
-dGVzdHMuICBBcmUgeW91IHN1cmUgeW91IHJlYWxseQpyYW4gdGhlIHRlc3RzPwoKPiBDdXJyZW50
-bHkgZmV3IG9mIHRoZSB0ZXN0IGNhc2VzIGRvIGZhaWwuIEZvciBleDogQXBwZW5kaW5nCj4gdGhl
-IGxhc3QgaXZsZW4gYnl0ZXMgb2YgY2lwaGVyIHRleHQgYXMgdGhlIElWLgoKV2VsbCwgdGhlc2Ug
-bmVlZCB0byBiZSBmaXhlZC4KCj4gCj4gPiAKPiA+IEFsc28sIHRoaXMgcGF0Y2hzZXQgZG9lcyBu
-b3QgY29tcGlsZSBmb3IgbWUuCj4gCj4gVGhpcyBoYXMgZGVwZW5kZW5jeSBvbiBVRE1BIHNlcmll
-czoKPiBodHRwczovL3BhdGNod29yay5rZXJuZWwub3JnL2NvdmVyLzEwOTMwOTY5LwoKSSBoYWQg
-dGhhdCBhcHBsaWVkLgoKLSBFcmljCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2Vy
-bmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1h
-bi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
+
+
+On 28/06/19 10:39 AM, Eric Biggers wrote:
+> On Fri, Jun 28, 2019 at 09:57:40AM +0530, Keerthy wrote:
+>> The transform function can be used as is by other crypto
+>> drivers that need to transform the 256 bit key using cpu.
+>> Hence export it.
+> 
+> What is this supposed to mean?  SHA-256 is an unkeyed hash function.
+
+HMAC-SHA256 my bad.
+
+> 
+> Also, you need to actually explain why this is needed.  If your hardware
+> supports SHA-256, why do you need to use the C sha256_transform()?
+
+Hardware supports only HMAC from pre-computed inner and outer digests is 
+supported, i.e. the host must carry out initial preparation stage to
+generate intermediate hash state for both inner pad and outer pad.
+
+Hence the need to export the transform function. I will add it in the 
+commit message.
+
+> 
+> - Eric
+> 
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
