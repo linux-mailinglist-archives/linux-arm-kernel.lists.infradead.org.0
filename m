@@ -2,52 +2,50 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 315B5598F6
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 28 Jun 2019 13:04:55 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 488AB598F8
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 28 Jun 2019 13:05:14 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=7JOub7bdaCdJpdLgyIj8q04v22v9aIBRQ3FGQh0RymI=; b=GhIn2RJJ6BO+Ib
-	KZjINGOSm0NwU9dnp8v+379FfjpD/hEOX6NK3cbG0gHQoCzV7RrHOlJ6FCsf5Mt9/KnuXJ2hVb9GN
-	IgjnS12W3TFQPyuNjo5iviE+0Dgq2FawQFGfceyj5UHVAZTpOL2RhtCnMlW5CdsTsFp4SVwX3/+Q1
-	HGFMRw8vfUQ2PeRDpzc+ZjUUtZl6CUuiXPwVONFTuNy64y2hEAUVYYAEsHFW3sjYxDeVlOXrVEf03
-	r6wgMXAZLBX9aaHW6Yr6m5yNSCOq2MEmlxY2uuEqghUP7zcuMcqYN/4z0JpoU51OUhXk19vYclrKJ
-	kdBQWQFkvKcjoTwBni/g==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
+	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=s/vK0Ykk2EdvdH/vkFqOI6YixrK80n/ZPvicWAE10f0=; b=DHRqENiQ3sFTdZ
+	yXi8ipvWNMqLDDs7GMrZqqtmY3pAlMCouwoT62OyGAnVLfRBTHNUWSEfcQw7gIBV7oa4JGaID7g/H
+	3aXMMVj4ezWI0FBgzk7H0CtqiO2EQMRZXtEeY7suIA7MbAUdWWmn4kvHya4Y6NrbVfc9GefT/l2u4
+	CKKci547UT64fIX+laBDensWKlZv7qOmPE6jXv/pLFw8pyhYzuW73J3p6pfWJmWNKA8YpNm/NaNIp
+	hleR0hn6W6co7N91C0sxg0GZzRHJek2QK6M5amxJzjERs55ivl2Bs31gjO0Jv6Np8fU1VjcEPJcxu
+	irODyRGP16zy4dkD7QeA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hgogT-0002QB-Q0; Fri, 28 Jun 2019 11:04:49 +0000
+	id 1hgogq-0002bg-SW; Fri, 28 Jun 2019 11:05:12 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hgogE-0002Pg-QB
- for linux-arm-kernel@lists.infradead.org; Fri, 28 Jun 2019 11:04:36 +0000
+ id 1hgogP-0002Wg-JP
+ for linux-arm-kernel@lists.infradead.org; Fri, 28 Jun 2019 11:04:47 +0000
 Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
  bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 6B5C920645;
- Fri, 28 Jun 2019 11:04:33 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id A15F8208E3;
+ Fri, 28 Jun 2019 11:04:43 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1561719874;
- bh=YsCuJRrkfWyPVVBt0oD0GH0YAzXbA2QRQH8bnf82Amk=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=EXZ3fnFrkR0BgRwK8XSQGIFDHNHjhinFOHeufVv6dElUaQUXbiCDiAIuLu9DMtEfH
- BSQSxVCjSRLORa2GVfQaLCaYWH+bG7WS1NynjCC32oeNf4Ar12Yex9tFuTDV8yCElp
- Tvs8Kreoy4wMOPgrOCVW2TZ+J+ojSPyukgvg6Euk=
-Date: Fri, 28 Jun 2019 12:04:30 +0100
+ s=default; t=1561719884;
+ bh=StUx9PONOQCmZX0nAG2V/FqWNZznDR+tHYF35sxlupY=;
+ h=Date:From:To:Cc:Subject:From;
+ b=zGXGM3CsSPG8rNfZKBK+hI0oUX0Srt2iG3bKpubpstG79EChhiXX0vNyOqOCh4elU
+ 9CsLldWuDgRR1dDwFDGn0uMIPurfZrJq/OEtTkyt0pfdaOKWJlYHd0c6wAPHnOZ+it
+ gg06ysEXhayOj5b5+T0iZkvolN3YABe2JhuT5H8Y=
+Date: Fri, 28 Jun 2019 12:04:40 +0100
 From: Will Deacon <will@kernel.org>
-To: Mark Brown <broonie@kernel.org>
-Subject: Re: [PATCH v2] arm64: Add initial support for E0PD
-Message-ID: <20190628110430.ffdqy5on3retyr42@willie-the-truck>
-References: <20190627141532.6452-1-broonie@kernel.org>
+To: joro@8bytes.org
+Subject: [GIT PULL] iommu/arm-smmu: Updates for 5.3
+Message-ID: <20190628110440.piorghrmwrbitmtz@willie-the-truck>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190627141532.6452-1-broonie@kernel.org>
 User-Agent: NeoMutt/20170113 (1.7.2)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190628_040434_869799_1763DEC4 
-X-CRM114-Status: GOOD (  13.50  )
+X-CRM114-CacheID: sfid-20190628_040446_072317_0C320106 
+X-CRM114-Status: GOOD (  12.44  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -76,39 +74,59 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Catalin Marinas <catalin.marinas@arm.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: jean-philippe.brucker@arm.com, bjorn.andersson@linaro.org,
+ iommu@lists.linux-foundation.org, vivek.gautam@codeaurora.org,
+ robin.murphy@arm.com, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Jun 27, 2019 at 03:15:32PM +0100, Mark Brown wrote:
-> Kernel Page Table Isolation (KPTI) is used to mitigate some speculation
-> based security issues by ensuring that the kernel is not mapped when
-> userspace is running but this approach is expensive and is incompatible
-> with SPE.  E0PD, introduced in the ARMv8.5 extensions, provides an
-> alternative to this which ensures that accesses from userspace to the
-> kernel's half of the memory map to always fault with constant time,
-> preventing timing attacks without requiring constant unmapping and
-> remapping or preventing legitimate accesses.
-> 
-> This initial patch does not yet integrate with KPTI, a followup patch
-> will ensure that by default we don't use KPTI on CPUs where E0PD is
-> present which will provide a much greater benefit in general
-> configurations.
-> 
-> Signed-off-by: Mark Brown <broonie@kernel.org>
-> ---
-> 
->  - Reword commit message
->  - Change to detection as ARM64_CPUCAP_WEAK_LOCAL_CPU_FEATURE.
+Hi Joerg,
 
-Thanks for the quick v2, although I still don't see the rush to merge this
-without the associated kaslr/kpti changes we've been discussing. It's not
-like there's a whole load of 8.5 silicon we're rushing to support.
+Please pull this handful of arm-smmu updates for 5.3. These changes include
+support for the system cache present in some Qualcomm SoCs, better support
+for non-coherent page-table walkers and a larger command queue size for
+SMMUv3 implementations in preparation for some optimisations I've been
+working on.
+
+Thanks,
 
 Will
+
+--->8
+
+The following changes since commit cd6c84d8f0cdc911df435bb075ba22ce3c605b07:
+
+  Linux 5.2-rc2 (2019-05-26 16:49:19 -0700)
+
+are available in the git repository at:
+
+  git://git.kernel.org/pub/scm/linux/kernel/git/will/linux.git for-joerg/arm-smmu/updates
+
+for you to fetch changes up to 9e6ea59f3ff37192fd7aec7821dca6ece629b7d0:
+
+  iommu/io-pgtable: Support non-coherent page tables (2019-06-25 13:26:47 +0100)
+
+----------------------------------------------------------------
+Bjorn Andersson (1):
+      iommu/io-pgtable: Support non-coherent page tables
+
+Vivek Gautam (1):
+      iommu/io-pgtable-arm: Add support to use system cache
+
+Will Deacon (2):
+      iommu/arm-smmu-v3: Increase maximum size of queues
+      iommu/io-pgtable: Replace IO_PGTABLE_QUIRK_NO_DMA with specific flag
+
+ drivers/iommu/arm-smmu-v3.c        | 58 +++++++++++++++++++++++++-------------
+ drivers/iommu/arm-smmu.c           |  4 +--
+ drivers/iommu/io-pgtable-arm-v7s.c | 17 ++++++-----
+ drivers/iommu/io-pgtable-arm.c     | 40 ++++++++++++++++----------
+ drivers/iommu/ipmmu-vmsa.c         |  1 +
+ include/linux/io-pgtable.h         | 11 +++-----
+ include/linux/iommu.h              |  6 ++++
+ 7 files changed, 86 insertions(+), 51 deletions(-)
 
 _______________________________________________
 linux-arm-kernel mailing list
