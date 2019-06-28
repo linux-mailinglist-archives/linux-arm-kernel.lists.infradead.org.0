@@ -2,37 +2,38 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 706F158FDF
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 28 Jun 2019 03:48:13 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 285C958FE0
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 28 Jun 2019 03:48:29 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=RjKA9u8m0L5+ZJDNEW4PgcdRRXc16poQzSUJd7BTtyA=; b=VQJ
-	FvHENwAVLR/r+0wSLq8DBX+3CHsYGy5ZjRRdi2sHlPN75T0+4ej4v59E5yx3VbdtyEoiaVzZ92x+E
-	NyBP6WsG5f9N08RfYmzptY5/0GsFbF4aoBoougu/Nov3nDXk7X7Ty36aX8yPnb50fjobFF1ecriFh
-	Ixqb144mqBnUEIImTY0PrckmaWLQsXvi28nV+blyt2Ipch7Q3z21p7G4bdV/A7olslneLnFTUsmeX
-	IbMLVej6rLrJLzf0S3w8YCE3hSx1NMwPR4bmEpHDjQf78BIQTDKA8ipUd6HZ8REwI0+J/t2Ez14k0
-	iVJb1+HWV6sEoc7GvasEViwfri2ljMA==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=n9886TZ42KODPnspwx/h4Ojqr7BlcpvYvnUjEwKLPRE=; b=LSzILzIPraD5uhnB543hNpsXkl
+	cl89xJ5QX2f5rvghVuAwWQoBNeec4fqAlptyg2D2D3T7ZZPzzKRqGrzs057hQUR6MR41t8grlTLlK
+	7qmedvcb2fALvgrBnEAb3nXJ1+5NlYQA13Wn3DKPRHoubjG6bOKVU6lksjZUDcDfgsZNx7Xmnd3Rz
+	muy/QpEPVlnShncnm7yQJKvwUXrUMZGOrMxxz/3viTScWJ+kcGJ2+oMJLUufkPh+/H9s++JmdC9LP
+	jTG74ZDqqRJ/y48rHWn18Fl3zUQWaDw4EUGY9pdiy/8er0aEv9dcsXhq3EThrJMmxZMl52+rJhrxd
+	fkodghpQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hgfzh-0002Yv-Ed; Fri, 28 Jun 2019 01:48:05 +0000
+	id 1hgg03-0002hw-Op; Fri, 28 Jun 2019 01:48:27 +0000
 Received: from inva020.nxp.com ([92.121.34.13])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hgfzU-0002Wt-6R
- for linux-arm-kernel@lists.infradead.org; Fri, 28 Jun 2019 01:47:53 +0000
+ id 1hgfzU-0002Wv-M5
+ for linux-arm-kernel@lists.infradead.org; Fri, 28 Jun 2019 01:47:54 +0000
 Received: from inva020.nxp.com (localhost [127.0.0.1])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 003511A103B;
- Fri, 28 Jun 2019 03:47:45 +0200 (CEST)
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 0074A1A1052;
+ Fri, 28 Jun 2019 03:47:46 +0200 (CEST)
 Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
  [165.114.16.14])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 323131A1045;
- Fri, 28 Jun 2019 03:47:29 +0200 (CEST)
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 138801A104C;
+ Fri, 28 Jun 2019 03:47:31 +0200 (CEST)
 Received: from titan.ap.freescale.net (TITAN.ap.freescale.net [10.192.208.233])
- by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id A5E6F402FB;
- Fri, 28 Jun 2019 09:47:16 +0800 (SGT)
+ by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 8D10A4030E;
+ Fri, 28 Jun 2019 09:47:18 +0800 (SGT)
 From: Xiaowei Bao <xiaowei.bao@nxp.com>
 To: bhelgaas@google.com, robh+dt@kernel.org, mark.rutland@arm.com,
  shawnguo@kernel.org, leoyang.li@nxp.com, kishon@ti.com,
@@ -42,15 +43,17 @@ To: bhelgaas@google.com, robh+dt@kernel.org, mark.rutland@arm.com,
  shawn.lin@rock-chips.com, linux-pci@vger.kernel.org,
  devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org, linuxppc-dev@lists.ozlabs.org
-Subject: [PATCHv3 1/2] PCI: layerscape: Add the bar_fixed_64bit property in EP
- driver.
-Date: Fri, 28 Jun 2019 09:38:25 +0800
-Message-Id: <20190628013826.4705-1-xiaowei.bao@nxp.com>
+Subject: [PATCHv3 2/2] PCI: layerscape: Add CONFIG_PCI_LAYERSCAPE_EP to build
+ EP/RC separately
+Date: Fri, 28 Jun 2019 09:38:26 +0800
+Message-Id: <20190628013826.4705-2-xiaowei.bao@nxp.com>
 X-Mailer: git-send-email 2.14.1
+In-Reply-To: <20190628013826.4705-1-xiaowei.bao@nxp.com>
+References: <20190628013826.4705-1-xiaowei.bao@nxp.com>
 X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190627_184752_374600_4F79994F 
-X-CRM114-Status: UNSURE (   7.45  )
+X-CRM114-CacheID: sfid-20190627_184752_992791_5ACCC5D8 
+X-CRM114-Status: UNSURE (   8.72  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -79,32 +82,69 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The PCIe controller of layerscape just have 4 BARs, BAR0 and BAR1
-is 32bit, BAR3 and BAR4 is 64bit, this is determined by hardware,
-so set the bar_fixed_64bit with 0x14.
+Add CONFIG_PCI_LAYERSCAPE_EP to build EP/RC separately.
 
 Signed-off-by: Xiaowei Bao <xiaowei.bao@nxp.com>
 ---
 v2:
- - Replace value 0x14 with a macro.
-v3:
  - No change.
+v3:
+ - modify the commit message.
 
- drivers/pci/controller/dwc/pci-layerscape-ep.c |    1 +
- 1 files changed, 1 insertions(+), 0 deletions(-)
+ drivers/pci/controller/dwc/Kconfig  |   20 ++++++++++++++++++--
+ drivers/pci/controller/dwc/Makefile |    3 ++-
+ 2 files changed, 20 insertions(+), 3 deletions(-)
 
-diff --git a/drivers/pci/controller/dwc/pci-layerscape-ep.c b/drivers/pci/controller/dwc/pci-layerscape-ep.c
-index be61d96..227c33b 100644
---- a/drivers/pci/controller/dwc/pci-layerscape-ep.c
-+++ b/drivers/pci/controller/dwc/pci-layerscape-ep.c
-@@ -44,6 +44,7 @@ static int ls_pcie_establish_link(struct dw_pcie *pci)
- 	.linkup_notifier = false,
- 	.msi_capable = true,
- 	.msix_capable = false,
-+	.bar_fixed_64bit = (1 << BAR_2) | (1 << BAR_4),
- };
+diff --git a/drivers/pci/controller/dwc/Kconfig b/drivers/pci/controller/dwc/Kconfig
+index a6ce1ee..a41ccf5 100644
+--- a/drivers/pci/controller/dwc/Kconfig
++++ b/drivers/pci/controller/dwc/Kconfig
+@@ -131,13 +131,29 @@ config PCI_KEYSTONE_EP
+ 	  DesignWare core functions to implement the driver.
  
- static const struct pci_epc_features*
+ config PCI_LAYERSCAPE
+-	bool "Freescale Layerscape PCIe controller"
++	bool "Freescale Layerscape PCIe controller - Host mode"
+ 	depends on OF && (ARM || ARCH_LAYERSCAPE || COMPILE_TEST)
+ 	depends on PCI_MSI_IRQ_DOMAIN
+ 	select MFD_SYSCON
+ 	select PCIE_DW_HOST
+ 	help
+-	  Say Y here if you want PCIe controller support on Layerscape SoCs.
++	  Say Y here if you want to enable PCIe controller support on Layerscape
++	  SoCs to work in Host mode.
++	  This controller can work either as EP or RC. The RCW[HOST_AGT_PEX]
++	  determines which PCIe controller works in EP mode and which PCIe
++	  controller works in RC mode.
++
++config PCI_LAYERSCAPE_EP
++	bool "Freescale Layerscape PCIe controller - Endpoint mode"
++	depends on OF && (ARM || ARCH_LAYERSCAPE || COMPILE_TEST)
++	depends on PCI_ENDPOINT
++	select PCIE_DW_EP
++	help
++	  Say Y here if you want to enable PCIe controller support on Layerscape
++	  SoCs to work in Endpoint mode.
++	  This controller can work either as EP or RC. The RCW[HOST_AGT_PEX]
++	  determines which PCIe controller works in EP mode and which PCIe
++	  controller works in RC mode.
+ 
+ config PCI_HISI
+ 	depends on OF && (ARM64 || COMPILE_TEST)
+diff --git a/drivers/pci/controller/dwc/Makefile b/drivers/pci/controller/dwc/Makefile
+index b085dfd..824fde7 100644
+--- a/drivers/pci/controller/dwc/Makefile
++++ b/drivers/pci/controller/dwc/Makefile
+@@ -8,7 +8,8 @@ obj-$(CONFIG_PCI_EXYNOS) += pci-exynos.o
+ obj-$(CONFIG_PCI_IMX6) += pci-imx6.o
+ obj-$(CONFIG_PCIE_SPEAR13XX) += pcie-spear13xx.o
+ obj-$(CONFIG_PCI_KEYSTONE) += pci-keystone.o
+-obj-$(CONFIG_PCI_LAYERSCAPE) += pci-layerscape.o pci-layerscape-ep.o
++obj-$(CONFIG_PCI_LAYERSCAPE) += pci-layerscape.o
++obj-$(CONFIG_PCI_LAYERSCAPE_EP) += pci-layerscape-ep.o
+ obj-$(CONFIG_PCIE_QCOM) += pcie-qcom.o
+ obj-$(CONFIG_PCIE_ARMADA_8K) += pcie-armada8k.o
+ obj-$(CONFIG_PCIE_ARTPEC6) += pcie-artpec6.o
 -- 
 1.7.1
 
