@@ -2,73 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EE6AF5992D
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 28 Jun 2019 13:24:31 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 09E2D59935
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 28 Jun 2019 13:27:16 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=zjJl3RQMmOqrXk0YcdtRDttsqpgJf18L1UTr0g9ia1Y=; b=r6DVezzFnRAgRP
-	/a0wiHTZth9CSfxxyFPQK+6Xe8j3alwWcbw9DvlyM93Xv/VjCWGL2gfeER01z5HUS1zAQwMN3WI11
-	Adi/B/I5sjJ/ZA3KUxatNRvxLbDagbc4Nb5IJAFHPSrh/q3ATUhFciS3Qcu900B9mORiSLeIL2UPS
-	2UKkJUWhcs6atVsKD7VpLdWBP3zYnM6MF22K3QsO7hoXu9pX6fHrxrzpYzP/WvLaudmBML/SLyrXF
-	LOJgVSvYt2oxHbKRdqx/ALqiuozUeNmZmtuwOsyrX7PWv1Ylc4U1fvBfTagB9RorlsJsjSCPcGRun
-	l+HvOwLpp93TWZX4OSWw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=QQ8xZmBVYSALXFoDpeWxA4Dx/O4CTdQu4cChv2LUHXs=; b=p/3B+6fzwfZRPE
+	a3KEnSKp6wVutiQbWeR3gZlDk507YdyIUQhn7MVrTSO67/93yeXsAUeVv8dct/swvCyaWpzo7jBz/
+	EPrDYhE+iAc6JqlYnM5C5fgrrto/ZzI+fD4UxHYk4x1ra3dbYGq415DtKSg2bNB+d7GGue6Odt19t
+	q8+iN2M09ZQbakgjNqM9aLlh2X49mv8p96xJ88kuA8GLuJAMBfkIRsdaAVTGA8ax0jOauWGPmg0VI
+	rY6I5UU8Qlox8gJOfWFviYE6eYUm5DKLgxZDZwqxjTt+vAn/9/CHR/o0d6rSfmsyM7KuhIKqihJ7Z
+	xb56z7V6O5laFAEO2fMg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hgozU-0002Tg-3a; Fri, 28 Jun 2019 11:24:28 +0000
-Received: from mail-qt1-x843.google.com ([2607:f8b0:4864:20::843])
+	id 1hgp29-00042q-Gt; Fri, 28 Jun 2019 11:27:13 +0000
+Received: from mx07-00178001.pphosted.com ([62.209.51.94])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hgozE-0002St-VP
- for linux-arm-kernel@lists.infradead.org; Fri, 28 Jun 2019 11:24:15 +0000
-Received: by mail-qt1-x843.google.com with SMTP id i34so5803501qta.6
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 28 Jun 2019 04:24:12 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=X/Ug5dzWgzAo254GigTyB3K1N9vqEmjljvMsZ1gZJ+s=;
- b=mYrk7KIObHI2/13Kp27Vl24AfH1GeS822BC9Blo1INXT9dMN8zg1hOJrqg0OUujE9r
- o/sACm63p6WZMySZR7m28wnwBaSvEaJE65i+L0PXmSg8id7jHR/maNMUwPP1xoB6OFpK
- d55TI5ehAD9OWc3poyR68Yx5AxYZlp1MwGf0A=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=X/Ug5dzWgzAo254GigTyB3K1N9vqEmjljvMsZ1gZJ+s=;
- b=Xj9bCBkM9ADwFrrK6hZI1bVQ4KcAc/N5ocEN6kP2FgOgfB9ZDk6Lx039Z2FFccDkl8
- 3RvywEVhkArSqZ9rMg4NmtPS9Qp+y/Zz9Zb6TLDCCGf5wbFaDgfLHTj4OnJaGIP/ETYK
- SgnFSLEn1Gxp8izrXNlHkOAhnkF91zdkFwpbeRZYG+J5w7Rp1FKBFBTyCNzWF9GP7LSL
- qrNUHhTb6bLbqV6JmEkfcrIwK/C9hiPKEQ4YVmc3zGZnh6UFYZOm/N64UOr0Pprp0hQv
- A1dme0vrSNffWiqH4nR/7Cdsrl+5FGmInO0VfqTLW42C6RybEOX7AD1vjsR8PpyNIKBp
- jCWw==
-X-Gm-Message-State: APjAAAXXYr0+CMuQk3AZB9DnHHE4JPL+TQpOHG4rz3zOin2zyGUR7XPB
- LJra+q1eOk+PdGAX8+a3rRKEgh58RLANNxMsxpkZww==
-X-Google-Smtp-Source: APXvYqyma+rIlgBTxFdrPMygxhmPVjGgIj7WgGfVJNGUReXJEloaTE7RwdyJzDCp0z57gIOQR4eTrJoCGDnA/EKAxmI=
-X-Received: by 2002:ac8:4601:: with SMTP id p1mr7671783qtn.181.1561721051369; 
- Fri, 28 Jun 2019 04:24:11 -0700 (PDT)
+ id 1hgp1w-00042B-9M
+ for linux-arm-kernel@lists.infradead.org; Fri, 28 Jun 2019 11:27:02 +0000
+Received: from pps.filterd (m0046668.ppops.net [127.0.0.1])
+ by mx07-00178001.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id
+ x5SBQSq5008465; Fri, 28 Jun 2019 13:26:44 +0200
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
+ h=from : to : cc : subject
+ : date : message-id : mime-version : content-type; s=STMicroelectronics;
+ bh=3acCB+/2oJupGcCDZjqJgsqu3sTcxGcFU4Yg5GquxDg=;
+ b=O85tGj8z/N9wFxbYQZC0SC8zZsT3lwtB6gFnR0p7TfWfPffAfE+Cdg+Os67QQLFVltNO
+ sXVA1yIfOtsHyR11wl+LJQcynvK+Anru79KHuQVBmZm8QUXzC0UMMBouKBcQxTWjb4N2
+ pWqRZOFzjnwcNy6cpTeJ2RadVJFBdZ4ZKq3HKgeymQPVFR2sOj5yE3xiBZJDy9rOZknN
+ l9NySoh4VwnTwCM7OkEdckylicnr950xl6GzCdiz+z38JTwPeyWRqOhfULxJVahTF3qh
+ LWFX989O9YvPTZcU5ADD6qSb864LirR5dqECKjWT0Dr/aVHKZeMnCc2q7KjG9GUu+Wv1 /g== 
+Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
+ by mx07-00178001.pphosted.com with ESMTP id 2t9d2gwgkw-1
+ (version=TLSv1 cipher=ECDHE-RSA-AES256-SHA bits=256 verify=NOT);
+ Fri, 28 Jun 2019 13:26:44 +0200
+Received: from zeta.dmz-eu.st.com (zeta.dmz-eu.st.com [164.129.230.9])
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 83F3331;
+ Fri, 28 Jun 2019 11:26:43 +0000 (GMT)
+Received: from Webmail-eu.st.com (Safex1hubcas21.st.com [10.75.90.44])
+ by zeta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 2389527A5;
+ Fri, 28 Jun 2019 11:26:43 +0000 (GMT)
+Received: from SAFEX1HUBCAS22.st.com (10.75.90.93) by SAFEX1HUBCAS21.st.com
+ (10.75.90.44) with Microsoft SMTP Server (TLS) id 14.3.439.0; Fri, 28 Jun
+ 2019 13:26:43 +0200
+Received: from localhost (10.201.23.65) by Webmail-ga.st.com (10.75.90.48)
+ with Microsoft SMTP Server (TLS) id 14.3.439.0; Fri, 28 Jun 2019 13:26:42
+ +0200
+From: Lionel Debieve <lionel.debieve@st.com>
+To: Herbert Xu <herbert@gondor.apana.org.au>, "David S . Miller"
+ <davem@davemloft.net>, Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ "Alexandre Torgue" <alexandre.torgue@st.com>,
+ <linux-crypto@vger.kernel.org>, <linux-arm-kernel@lists.infradead.org>,
+ <linux-kernel@vger.kernel.org>
+Subject: [PATCH 1/1] crypto: stm32/crc32 - rename driver file
+Date: Fri, 28 Jun 2019 13:26:41 +0200
+Message-ID: <20190628112641.9269-1-lionel.debieve@st.com>
+X-Mailer: git-send-email 2.17.1
 MIME-Version: 1.0
-References: <20190612043258.166048-1-hsinyi@chromium.org>
- <20190612043258.166048-3-hsinyi@chromium.org>
- <20190628093529.GB36437@lakrids.cambridge.arm.com>
-In-Reply-To: <20190628093529.GB36437@lakrids.cambridge.arm.com>
-From: Hsin-Yi Wang <hsinyi@chromium.org>
-Date: Fri, 28 Jun 2019 19:23:45 +0800
-Message-ID: <CAJMQK-g_9bDHJgKr-qKpQ6HwombB+6Asg_z3r6nv+pC4q4j-Aw@mail.gmail.com>
-Subject: Re: [PATCH v6 2/3] fdt: add support for rng-seed
-To: Mark Rutland <mark.rutland@arm.com>
+X-Originating-IP: [10.201.23.65]
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:, ,
+ definitions=2019-06-28_04:, , signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190628_042413_036046_55C972A8 
-X-CRM114-Status: GOOD (  17.70  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190628_042700_802994_B31B5171 
+X-CRM114-Status: GOOD (  10.55  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:843 listed in]
- [list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [62.209.51.94 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -78,7 +84,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.0 KHOP_DYNAMIC           Relay looks like a dynamic address
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -90,71 +96,42 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Yu Zhao <yuzhao@google.com>,
- Kees Cook <keescook@chromium.org>, Ard Biesheuvel <ard.biesheuvel@linaro.org>,
- Catalin Marinas <catalin.marinas@arm.com>, Stephen Boyd <swboyd@chromium.org>,
- Will Deacon <will.deacon@arm.com>, lkml <linux-kernel@vger.kernel.org>,
- Mike Rapoport <rppt@linux.ibm.com>, Jun Yao <yaojun8558363@gmail.com>,
- Miles Chen <miles.chen@mediatek.com>, Rob Herring <robh+dt@kernel.org>,
- James Morse <james.morse@arm.com>, Andrew Murray <andrew.murray@arm.com>,
- Andrew Morton <akpm@linux-foundation.org>, Laura Abbott <labbott@redhat.com>,
- Frank Rowand <frowand.list@gmail.com>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>, Robin Murphy <robin.murphy@arm.com>
+Cc: Ludovic Barre <ludovic.barre@st.com>,
+ Benjamin Gaignard <benjamin.gaignard@st.com>,
+ Fabien Dessenne <fabien.dessenne@st.com>,
+ linux-stm32@st-md-mailman.stormreply.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Jun 28, 2019 at 5:35 PM Mark Rutland <mark.rutland@arm.com> wrote:
->
-> On Wed, Jun 12, 2019 at 12:33:00PM +0800, Hsin-Yi Wang wrote:
-> > Introducing a chosen node, rng-seed, which is an entropy that can be
-> > passed to kernel called very early to increase initial device
-> > randomness. Bootloader should provide this entropy and the value is
-> > read from /chosen/rng-seed in DT.
->
-> Could you please elaborate on this?
->
-> * What is this initial entropy used by, and why is this important? I
->   assume that devices which can populate this will have a HW RNG that
->   the kernel will eventually make use of.
-There are a few discussions here[0]. We basically want to add more
-randomness for stack canary when device just boot and not much device
-randomness was added.
-[0] https://lore.kernel.org/patchwork/patch/1070974/#1268553
+Use the same naming convention for all stm32 crypto
+drivers.
 
-On Thu, May 9, 2019 at 1:00 AM Hsin-Yi Wang <hsinyi@chromium.org> wrote:
-> This early added entropy is also going to be used for stack canary. At
-> the time it's created there's not be much entropy (before
-> boot_init_stack_canary(), there's only add_latent_entropy() and
-> command_line).
-> On arm64, there is a single canary for all tasks. If RNG is weak or
-> the seed can be read, it might be easier to figure out the canary.
+Signed-off-by: Lionel Debieve <lionel.debieve@st.com>
+---
+ drivers/crypto/stm32/Makefile                         | 2 +-
+ drivers/crypto/stm32/{stm32_crc32.c => stm32-crc32.c} | 0
+ 2 files changed, 1 insertion(+), 1 deletion(-)
+ rename drivers/crypto/stm32/{stm32_crc32.c => stm32-crc32.c} (100%)
 
-With newer compilers[1] there will be a per-task canary on arm64[2],
-which will improve this situation, but many architectures lack a
-per-task canary, unfortunately. I've also recently rearranged the RNG
-initialization[3] which should also help with better entropy mixing.
-But each of these are kind of band-aids against not having sufficient
-initial entropy, which leaves the canary potentially exposed.
+diff --git a/drivers/crypto/stm32/Makefile b/drivers/crypto/stm32/Makefile
+index ce77e38c77e0..518e0e0b11a9 100644
+--- a/drivers/crypto/stm32/Makefile
++++ b/drivers/crypto/stm32/Makefile
+@@ -1,4 +1,4 @@
+ # SPDX-License-Identifier: GPL-2.0-only
+-obj-$(CONFIG_CRYPTO_DEV_STM32_CRC) += stm32_crc32.o
++obj-$(CONFIG_CRYPTO_DEV_STM32_CRC) += stm32-crc32.o
+ obj-$(CONFIG_CRYPTO_DEV_STM32_HASH) += stm32-hash.o
+ obj-$(CONFIG_CRYPTO_DEV_STM32_CRYP) += stm32-cryp.o
+diff --git a/drivers/crypto/stm32/stm32_crc32.c b/drivers/crypto/stm32/stm32-crc32.c
+similarity index 100%
+rename from drivers/crypto/stm32/stm32_crc32.c
+rename to drivers/crypto/stm32/stm32-crc32.c
+-- 
+2.17.1
 
--Kees
-
-[1] https://gcc.gnu.org/git/?p=gcc.git;a=commitdiff;h=359c1bf35e3109d2f3882980b47a5eae46123259
-[2] https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=0a1213fa7432778b71a1c0166bf56660a3aab030
-[3] https://git.kernel.org/pub/scm/linux/kernel/git/tytso/random.git/commit/?h=dev&id=d55535232c3dbde9a523a9d10d68670f5fe5dec3
->
-> * How much entropy is necessary or sufficient?
-64 bytes should be enough. But depends on how much bootloader can provide.
->
-> * Why is the DT the right mechanism for this?
-EFI based systems can inject randomness in early boot. This is aimed
-to support DT based systems to also have this feature.
-
-https://github.com/torvalds/linux/commit/636259880a7e7d3446a707dddebc799da94bdd0b#diff-3ded2fe21b37c6f3e86c2a8418507714
-
-Thanks
 
 _______________________________________________
 linux-arm-kernel mailing list
