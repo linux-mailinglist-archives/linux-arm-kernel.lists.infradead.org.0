@@ -2,95 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F3A9D5A021
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 28 Jun 2019 18:01:49 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2F9DD5A027
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 28 Jun 2019 18:02:37 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ryZaisqaQMmv0IFxDjNa9nsCuFcrVKmMXPtsiQTtPWI=; b=tK+n0AcTIBanPF
-	HvYyetn7tJR625HN5ZYSUOCHYXxepi/aHnWseuX5iQC423oIXTef/Xz+g963tAwlErEo16z7C06QK
-	8QqyEfCZZE69nfwo3uLi5ZrTPTaKRnDTKrh5gdVcJbQhgSbgI0cruYKOsxjUv8n0Dz5LxIq+9/c8i
-	nBCdrkdxuWQU5zsmNnRqgojdZhdCRGMI2kjmolA7Uuk7QNO9E+BiV3AxqeePuGnEG7Sl/LismSuzp
-	8g6BTWQ/j+VUjsBDAZwkj0ihf1MpiNfre4CtogyjNAWuoP7CXYfGB2geFvf0rqjMYKETXKXfiYZsY
-	SC7HQjnRHZa0hpoV2UOg==;
+	List-Owner; bh=oL76n1mbHvpjMhWnS6J2JwPQwgT6Ogkl5TBch87i3yk=; b=tsarbSMlsK0SrD
+	9P/uacPi8qzjxDoulBTVcMdIxESyjy85RS3XAjdZfGQebkhIxoAgrzmw7dTTtdnbieBD6MAdJah56
+	2SlqaqydLiotIRbB+ASQ94B7U2looLYy2bl2a0gmpgCDomRIrAG982oC/6nhAzJkBxkouIpCJap5Q
+	AM4upCqiE8XIuEtZkfYtqasg1xGkmSmA1IPJGcx9eOZnKsT4ufgDKcsmBTHRoLRF1yfIxelHUfVnD
+	3Zs6pW9UD+cHeJLdweVnBo//g13JX6Pc8V9CXOlE6OoR5QfSFBPeMmouWN1QtD10W6UMNqSS+4s0g
+	0DLMb4udlheRcQ7kj3+w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hgtJo-0006Oa-20; Fri, 28 Jun 2019 16:01:44 +0000
-Received: from mail-io1-xd43.google.com ([2607:f8b0:4864:20::d43])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hgtJd-0006Nu-3v
- for linux-arm-kernel@lists.infradead.org; Fri, 28 Jun 2019 16:01:34 +0000
-Received: by mail-io1-xd43.google.com with SMTP id w25so13557428ioc.8
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 28 Jun 2019 09:01:32 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=qvsku1LsJlCMNeTol53NqA/7OgT8tqKKHqYv+Wh37GE=;
- b=CzTrUukzMMeVRGwtHonyk2yl+qyq6WCscFXVn/MC+4gnXi3vA+3kMHy6iRQGqVZrU5
- w20Qcluka+u28ayDtwVRqBQcrYz+4pCRRXefNm0+pAj+0E4hSBY3IzGe9/jYZeN6+zm7
- 0cy9PihW6uY+H+FazttpKeB7XOxwJRVWhPe0M=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=qvsku1LsJlCMNeTol53NqA/7OgT8tqKKHqYv+Wh37GE=;
- b=OgcCJ9LwTf3TAuEJUD2bAi37R6eiNNcNNHcTM4ZabF69W7+PUm/HJXv6tDFOWpmj2E
- Gt8ejDcXfKR8Pf95IrgjDo5p/GHC5waFiQ5HLgWMB1M3t/Qv1K2C+UuyNBIsqyna8Idn
- /pzR+BIKjSY2g3/c5oVGjOg1Yd8nSp+HxHatPmVMro8NSpo4mTW7Pf90jJgkV5aGURyJ
- uUcnCd1E5esWmhubeMWiADyVoaxqm2t/sjveiwVC3lhKnrgX/WKQBUdgcXj87hGwpo6E
- YGmh0mfJLEN93dbt/vjt61qxo6z77OYqWOn4HUw6ZUh4aASUJixhqyAQJMtYEHXNFq32
- hkUQ==
-X-Gm-Message-State: APjAAAUty4XgxjVmfv3QXw5tXIs3I8/Gf6IUI9H4jSMK5S+Q7SebFQAu
- hKX0k+69Ob7mFURp3Jhwa4QCkEnqe7k=
-X-Google-Smtp-Source: APXvYqy+5KM4QdFsmT+7PnMb4KhR263N22NxF4mHUuEmtJB+B26qHOST4i+qMVTkJonp5P4upNXEkw==
-X-Received: by 2002:a6b:b602:: with SMTP id g2mr11759414iof.54.1561737692082; 
- Fri, 28 Jun 2019 09:01:32 -0700 (PDT)
-Received: from mail-io1-f53.google.com (mail-io1-f53.google.com.
- [209.85.166.53])
- by smtp.gmail.com with ESMTPSA id p63sm4573626iof.45.2019.06.28.09.01.31
- for <linux-arm-kernel@lists.infradead.org>
- (version=TLS1_3 cipher=AEAD-AES128-GCM-SHA256 bits=128/128);
- Fri, 28 Jun 2019 09:01:31 -0700 (PDT)
-Received: by mail-io1-f53.google.com with SMTP id s7so13506766iob.11
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 28 Jun 2019 09:01:31 -0700 (PDT)
-X-Received: by 2002:a5d:96d8:: with SMTP id r24mr1014520iol.269.1561737344434; 
- Fri, 28 Jun 2019 08:55:44 -0700 (PDT)
+	id 1hgtKb-0006gz-6M; Fri, 28 Jun 2019 16:02:33 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hgtKN-0006fe-JD
+ for linux-arm-kernel@lists.infradead.org; Fri, 28 Jun 2019 16:02:20 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 4A3B328;
+ Fri, 28 Jun 2019 09:02:17 -0700 (PDT)
+Received: from e121166-lin.cambridge.arm.com (unknown [10.1.196.255])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 4826E3F706;
+ Fri, 28 Jun 2019 09:02:15 -0700 (PDT)
+Date: Fri, 28 Jun 2019 17:02:12 +0100
+From: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
+To: "Z.q. Hou" <zhiqiang.hou@nxp.com>
+Subject: Re: [PATCHv5 08/20] PCI: mobiveil: Use the 1st inbound window for
+ MEM inbound transactions
+Message-ID: <20190628160212.GB21829@e121166-lin.cambridge.arm.com>
+References: <20190412083635.33626-1-Zhiqiang.Hou@nxp.com>
+ <20190412083635.33626-9-Zhiqiang.Hou@nxp.com>
 MIME-Version: 1.0
-References: <20190401171724.215780-1-dianders@chromium.org>
- <20190626130007.GE23428@ravnborg.org>
- <CAD=FV=U4UU8q+CS76uuuGUP=EVnE6+BTUf8U=j7uwfczNgkrZw@mail.gmail.com>
-In-Reply-To: <CAD=FV=U4UU8q+CS76uuuGUP=EVnE6+BTUf8U=j7uwfczNgkrZw@mail.gmail.com>
-From: Doug Anderson <dianders@chromium.org>
-Date: Fri, 28 Jun 2019 08:55:38 -0700
-X-Gmail-Original-Message-ID: <CAD=FV=Vi2C7s2oWBDD0n+HK=_SuBYhRM9saMK-y6Qa0+k-g17w@mail.gmail.com>
-Message-ID: <CAD=FV=Vi2C7s2oWBDD0n+HK=_SuBYhRM9saMK-y6Qa0+k-g17w@mail.gmail.com>
-Subject: Re: [PATCH v5 0/7] drm/panel: simple: Add mode support to devicetree
-To: Sam Ravnborg <sam@ravnborg.org>
+Content-Disposition: inline
+In-Reply-To: <20190412083635.33626-9-Zhiqiang.Hou@nxp.com>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190628_090133_187613_4F8C9507 
-X-CRM114-Status: GOOD (  26.00  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190628_090219_676789_F532DCFF 
+X-CRM114-Status: GOOD (  15.70  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:d43 listed in]
- [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -102,87 +62,61 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Brian Norris <briannorris@chromium.org>, Heiko Stuebner <heiko@sntech.de>,
- David Airlie <airlied@linux.ie>, Viresh Kumar <viresh.kumar@linaro.org>,
- Dmitry Torokhov <dmitry.torokhov@gmail.com>,
- LKML <linux-kernel@vger.kernel.org>, Rob Herring <robh+dt@kernel.org>,
- "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
- Thierry Reding <thierry.reding@gmail.com>, Sean Paul <seanpaul@chromium.org>,
- dri-devel <dri-devel@lists.freedesktop.org>,
- Boris Brezillon <boris.brezillon@collabora.com>,
- =?UTF-8?Q?Enric_Balletb=C3=B2?= <enric.balletbo@collabora.com>,
- Klaus Goger <klaus.goger@theobroma-systems.com>,
- Ezequiel Garcia <ezequiel@collabora.com>, Matthias Kaehlcke <mka@chromium.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Laurent Pinchart <laurent.pinchart@ideasonboard.com>
+Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ Xiaowei Bao <xiaowei.bao@nxp.com>,
+ "linux-pci@vger.kernel.org" <linux-pci@vger.kernel.org>,
+ "l.subrahmanya@mobiveil.co.in" <l.subrahmanya@mobiveil.co.in>,
+ "will.deacon@arm.com" <will.deacon@arm.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Leo Li <leoyang.li@nxp.com>, "M.h. Lian" <minghuan.lian@nxp.com>,
+ "robh+dt@kernel.org" <robh+dt@kernel.org>, Mingkai Hu <mingkai.hu@nxp.com>,
+ "catalin.marinas@arm.com" <catalin.marinas@arm.com>,
+ "bhelgaas@google.com" <bhelgaas@google.com>,
+ "shawnguo@kernel.org" <shawnguo@kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi,
+On Fri, Apr 12, 2019 at 08:36:00AM +0000, Z.q. Hou wrote:
+> From: Hou Zhiqiang <Zhiqiang.Hou@nxp.com>
+> 
+> The inbound windows have independent register set against outbound windows.
+> This patch change the MEM inbound window to the first one.
 
-On Wed, Jun 26, 2019 at 7:41 AM Doug Anderson <dianders@chromium.org> wrote:
->
-> Hi,
->
-> On Wed, Jun 26, 2019 at 6:00 AM Sam Ravnborg <sam@ravnborg.org> wrote:
-> >
-> > Hi Douglas.
-> >
-> > On Mon, Apr 01, 2019 at 10:17:17AM -0700, Douglas Anderson wrote:
-> > > I'm reviving Sean Paul's old patchset to get mode support in device
-> > > tree.  The cover letter for his v3 is at:
-> > > https://lists.freedesktop.org/archives/dri-devel/2018-February/165162.html
-> > >
-> > > No code is different between v4 and v5, just commit messages and text
-> > > in the bindings.
-> > >
-> > > I've pulled together the patches that didn't land in v3, addressed
-> > > outstanding feedback, and reposted.  Atop them I've added patches for
-> > > rk3288-veyron-chromebook (used for jaq, jerry, mighty, speedy) and
-> > > rk3288-veryon-minnie.
-> > >
-> > > Please let me know how they look.
-> > >
-> > > In general I have added people to the whole series who I think would
-> > > like the whole series and then let get_maintainer pick extra people it
-> > > thinks are relevant to each individual patch.  If I see you respond to
-> > > any of the patches in the series, though, I'll add you to the whole
-> > > series Cc list next time.
-> > >
-> > > Changes in v5:
-> > > - Removed bit about OS may ignore (Rob/Ezequiel)
-> > > - Added Heiko's Tested-by
-> > > - It's not just jerry, it's most rk3288 Chromebooks (Heiko)
-> >
-> > What are the plans to move forward with this?
-> > Or did you drop the whole idea again?
->
-> At the moment I'm blocked on Thierry responding, either taking the
-> patch or telling me what I need to do to fix it.  I saw Sean Paul ping
-> Thierry on IRC on June 3rd and as far as I could tell there was no
-> response.
->
-> https://people.freedesktop.org/~cbrill/dri-log/?channel=dri-devel&highlight_names=&date=2019-06-03&show_html=true
->
-> ...and as you can see Heiko pinged this thread on June 14th.
->
-> Thierry: can you help give us some direction?  Are you uninterested in
-> reviewing them and would prefer that I find someone to land them in
-> drm-misc directly?
+You mean that windows 0 can be used as well as window 1 for inbound
+windows so it is better to opt for window 0 for consistency ?
 
-Sam: Oh!  I hadn't noticed that you've been added as a panel
-maintainer in commit ef0db94f94a0 ("MAINTAINERS: Add Sam as reviewer
-for drm/panel").  Does that mean you are able to provide some advice
-for how to land this series?  As far as I know everything is in order
-for it to land, but if you are aware of something I need to do to spin
-it then please let me know!
+Lorenzo
 
-Thanks!
-
--Doug
+> Signed-off-by: Hou Zhiqiang <Zhiqiang.Hou@nxp.com>
+> Reviewed-by: Minghuan Lian <Minghuan.Lian@nxp.com>
+> Reviewed-by: Subrahmanya Lingappa <l.subrahmanya@mobiveil.co.in>
+> ---
+> V5:
+>  - Corrected and retouched the subject and changelog.
+> 
+>  drivers/pci/controller/pcie-mobiveil.c | 2 +-
+>  1 file changed, 1 insertion(+), 1 deletion(-)
+> 
+> diff --git a/drivers/pci/controller/pcie-mobiveil.c b/drivers/pci/controller/pcie-mobiveil.c
+> index df71c11b4810..e88afc792a5c 100644
+> --- a/drivers/pci/controller/pcie-mobiveil.c
+> +++ b/drivers/pci/controller/pcie-mobiveil.c
+> @@ -616,7 +616,7 @@ static int mobiveil_host_init(struct mobiveil_pcie *pcie)
+>  			   CFG_WINDOW_TYPE, resource_size(pcie->ob_io_res));
+>  
+>  	/* memory inbound translation window */
+> -	program_ib_windows(pcie, WIN_NUM_1, 0, MEM_WINDOW_TYPE, IB_WIN_SIZE);
+> +	program_ib_windows(pcie, WIN_NUM_0, 0, MEM_WINDOW_TYPE, IB_WIN_SIZE);
+>  
+>  	/* Get the I/O and memory ranges from DT */
+>  	resource_list_for_each_entry(win, &pcie->resources) {
+> -- 
+> 2.17.1
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
