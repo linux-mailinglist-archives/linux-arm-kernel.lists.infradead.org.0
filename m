@@ -2,104 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A3C545962F
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 28 Jun 2019 10:33:13 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C58C35963B
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 28 Jun 2019 10:35:49 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=EccpIwk6EULYX2S8WS30V9ggrXOZ9IlksV+tS+NQkqE=; b=JCs+Rwhdm5dSy5
-	6oahngk5STCMhL8Wr/ruh1QKd82iEwmhfFv/rg3JhPMjEB4iLnwYSiQ2EsmeusHOoc+IwDza0PsAJ
-	PiIF+ZhYERzFTXCwL9Okaafg1wIV8xESbr3zHULkOlnA5h6QfJkidjDdfHMsI3cOnJ1m7W7ecP7sV
-	o+sCS+5yCBc1W1PLIQ5NKHUFcR5ZZIS9Qlj3GAP54vbawbdLDPvAGhei/QRQTuVXn0hJE7QQRF+FZ
-	B/POuDU50kuTi3/x3OdHyFnfSNOoZ4XyaYlPq2bsmrNsmxpsu1WJepyYEP+K901SPYPqhQRVjHysN
-	5bqw9ODtfa0e3CiXAx8w==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=HNHwLxCdxTHPBQ6lrTr/uj5MUWqsyXW7QFo7+KdWU78=; b=apjJvTF7jQrKBq
+	OxPHC2hkAg1rPgucZfWs3qp3cp7H+WhnUVBiMFhfjIGpcLDhI7Xwi8PG7rnRVEHUX7aePrOIlCOg5
+	8RDt4U2UPCWbI8yUJnqWk+3oD4GI5gMXfefqDBkbWuMfDsFtHVMCJI3GXNWyBx/ZSh7PxFA1LwT52
+	SFhMnzzWnzrfizsJnbDUB8/90j28Hdp6gzzjg+c5RE500N99jSKk0PthdnjYcKDymOaN94W8JNy5z
+	DXI5zkUCh9Ez7GrNVrmTnpdVMqs3d40tb57hx7BZWEtTo9LEtUchVQP2Ra57PwIk9y6lf5PWmPqeK
+	4jgchSZXu8QCYBVEE+ig==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hgmJj-0000XX-Uz; Fri, 28 Jun 2019 08:33:12 +0000
-Received: from youngberry.canonical.com ([91.189.89.112])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hgmJI-0000Sq-T3
- for linux-arm-kernel@lists.infradead.org; Fri, 28 Jun 2019 08:32:47 +0000
-Received: from 1.general.cking.uk.vpn ([10.172.193.212])
- by youngberry.canonical.com with esmtpsa (TLS1.0:RSA_AES_128_CBC_SHA1:16)
- (Exim 4.76) (envelope-from <colin.king@canonical.com>)
- id 1hgmJC-0001IW-1I; Fri, 28 Jun 2019 08:32:38 +0000
-Subject: Re: [PATCH] net: stmmac: add sanity check to
- device_property_read_u32_array call
-To: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
-References: <20190617165836.4673-1-colin.king@canonical.com>
- <20190619051308.23582-1-martin.blumenstingl@googlemail.com>
- <92f9e5a6-d2a2-6bf2-ff8a-2430fe977f93@canonical.com>
- <CAFBinCDmYVPDMcwAAYhMfxxuTsG=xunduN58_8e20zE_Mhmb7Q@mail.gmail.com>
- <CAFBinCC-LLpfXQRFcKBbUpCfKc0S9Xtt60QrhEThsOFV-T7vFw@mail.gmail.com>
- <c46d2d17-c35b-46f0-0674-0c55bea3a272@canonical.com>
- <CAFBinCBk5aPVE+vq5px3QKS1T_R=WGXXxEJMC9X676KGvi9jdg@mail.gmail.com>
-From: Colin Ian King <colin.king@canonical.com>
-Openpgp: preference=signencrypt
-Autocrypt: addr=colin.king@canonical.com; prefer-encrypt=mutual; keydata=
- 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
-Message-ID: <26646ff1-059f-fb2d-e05d-43009aeb2150@canonical.com>
-Date: Fri, 28 Jun 2019 09:32:37 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.7.2
+	id 1hgmME-0002B0-Ur; Fri, 28 Jun 2019 08:35:47 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hgmLx-00029m-My
+ for linux-arm-kernel@lists.infradead.org; Fri, 28 Jun 2019 08:35:33 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 318102B;
+ Fri, 28 Jun 2019 01:35:26 -0700 (PDT)
+Received: from localhost (unknown [10.37.6.20])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id CBB233F706;
+ Fri, 28 Jun 2019 01:35:25 -0700 (PDT)
+Date: Fri, 28 Jun 2019 09:35:24 +0100
+From: Andrew Murray <andrew.murray@arm.com>
+To: Leo Yan <leo.yan@linaro.org>
+Subject: Re: [PATCH v2 2/5] coresight: etm4x: use explicit barriers on
+ enable/disable
+Message-ID: <20190628083523.GG34530@e119886-lin.cambridge.arm.com>
+References: <20190627083525.37463-1-andrew.murray@arm.com>
+ <20190627083525.37463-3-andrew.murray@arm.com>
+ <20190628024529.GC20296@leoy-ThinkPad-X240s>
 MIME-Version: 1.0
-In-Reply-To: <CAFBinCBk5aPVE+vq5px3QKS1T_R=WGXXxEJMC9X676KGvi9jdg@mail.gmail.com>
-Content-Language: en-US
+Content-Disposition: inline
+In-Reply-To: <20190628024529.GC20296@leoy-ThinkPad-X240s>
+User-Agent: Mutt/1.10.1+81 (426a6c1) (2018-08-26)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190628_013245_588303_19C64FF7 
-X-CRM114-Status: GOOD (  15.92  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20190628_013529_839306_A355EC24 
+X-CRM114-Status: GOOD (  27.83  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [91.189.89.112 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -111,73 +63,118 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: alexandre.torgue@st.com, netdev@vger.kernel.org,
- kernel-janitors@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-stm32@st-md-mailman.stormreply.com, joabreu@synopsys.com,
- mcoquelin.stm32@gmail.com, peppe.cavallaro@st.com, davem@davemloft.net,
- linux-arm-kernel@lists.infradead.org
+Cc: Mathieu Poirier <mathieu.poirier@linaro.org>,
+ Suzuki K Poulose <suzuki.poulose@arm.com>,
+ Alexander Shishkin <alexander.shishkin@linux.intel.com>,
+ coresight@lists.linaro.org, stable@vger.kernel.org,
+ Sudeep Holla <sudeep.holla@arm.com>, linux-arm-kernel@lists.infradead.org,
+ Mike Leach <mike.leach@linaro.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 28/06/2019 05:15, Martin Blumenstingl wrote:
-> On Tue, Jun 25, 2019 at 9:58 AM Colin Ian King <colin.king@canonical.com> wrote:
->>
->> On 25/06/2019 05:44, Martin Blumenstingl wrote:
->>> Hi Colin,
->>>
->>> On Thu, Jun 20, 2019 at 3:34 AM Martin Blumenstingl
->>> <martin.blumenstingl@googlemail.com> wrote:
->>>>
->>>> Hi Colin,
->>>>
->>>> On Wed, Jun 19, 2019 at 8:55 AM Colin Ian King <colin.king@canonical.com> wrote:
->>>>>
->>>>> On 19/06/2019 06:13, Martin Blumenstingl wrote:
->>>>>> Hi Colin,
->>>>>>
->>>>>>> Currently the call to device_property_read_u32_array is not error checked
->>>>>>> leading to potential garbage values in the delays array that are then used
->>>>>>> in msleep delays.  Add a sanity check to the property fetching.
->>>>>>>
->>>>>>> Addresses-Coverity: ("Uninitialized scalar variable")
->>>>>>> Signed-off-by: Colin Ian King <colin.king@canonical.com>
->>>>>> I have also sent a patch [0] to fix initialize the array.
->>>>>> can you please look at my patch so we can work out which one to use?
->>>>>>
->>>>>> my concern is that the "snps,reset-delays-us" property is optional,
->>>>>> the current dt-bindings documentation states that it's a required
->>>>>> property. in reality it isn't, there are boards (two examples are
->>>>>> mentioned in my patch: [0]) without it.
->>>>>>
->>>>>> so I believe that the resulting behavior has to be:
->>>>>> 1. don't delay if this property is missing (instead of delaying for
->>>>>>    <garbage value> ms)
->>>>>> 2. don't error out if this property is missing
->>>>>>
->>>>>> your patch covers #1, can you please check whether #2 is also covered?
->>>>>> I tested case #2 when submitting my patch and it worked fine (even
->>>>>> though I could not reproduce the garbage values which are being read
->>>>>> on some boards)
->>> in the meantime I have tested your patch.
->>> when I don't set the "snps,reset-delays-us" property then I get the
->>> following error:
->>>   invalid property snps,reset-delays-us
->>>
->>> my patch has landed in the meantime: [0]
->>> how should we proceed with your patch?
-
-Your fix is good, so I think we should just drop/forget about my fix.
-
-Colin
-
->>
->> I'm out of the office today. I'll get back to you on this tomorrow.
-> gentle ping
-> (I will be away for the weekend but I can reply on Monday)
+On Fri, Jun 28, 2019 at 10:45:29AM +0800, Leo Yan wrote:
+> Hi Andrew,
 > 
+> On Thu, Jun 27, 2019 at 09:35:22AM +0100, Andrew Murray wrote:
+> > Synchronization is recommended before disabling the trace registers
+> > to prevent any start or stop points being speculative at the point
+> > of disabling the unit (section 7.3.77 of ARM IHI 0064D).
+> > 
+> > Synchronization is also recommended after programming the trace
+> > registers to ensure all updates are committed prior to normal code
+> > resuming (section 4.3.7 of ARM IHI 0064D).
+> > 
+> > Let's ensure these syncronization points are present in the code
+> > and clearly commented.
+> > 
+> > Note that we could rely on the barriers in CS_LOCK and
+> > coresight_disclaim_device_unlocked or the context switch to user
+> > space - however coresight may be of use in the kernel.
+> > 
+> > Signed-off-by: Andrew Murray <andrew.murray@arm.com>
+> > CC: stable@vger.kernel.org
+> > ---
+> >  drivers/hwtracing/coresight/coresight-etm4x.c | 7 ++++++-
+> >  1 file changed, 6 insertions(+), 1 deletion(-)
+> > 
+> > diff --git a/drivers/hwtracing/coresight/coresight-etm4x.c b/drivers/hwtracing/coresight/coresight-etm4x.c
+> > index c89190d464ab..68e8e3954cef 100644
+> > --- a/drivers/hwtracing/coresight/coresight-etm4x.c
+> > +++ b/drivers/hwtracing/coresight/coresight-etm4x.c
+> > @@ -188,6 +188,10 @@ static int etm4_enable_hw(struct etmv4_drvdata *drvdata)
+> >  		dev_err(etm_dev,
+> >  			"timeout while waiting for Idle Trace Status\n");
+> >  
+> > +	/* As recommended by 4.3.7 of ARM IHI 0064D */
+> > +	dsb(sy);
+> > +	isb();
+> > +
+> 
+> I read the spec, it recommends to use dsb/isb after accessing trace
+> unit, so here I think dsb(sy) is the most safe way.
+> 
+> arm64 defines barrier in arch/arm64/include/asm/barrier.h:
+> 
+>   #define mb()            dsb(sy)
+> 
+> so here I suggest to use barriers:
+> 
+>   mb();
+>   isb();
+> 
+> I wrongly assumed that mb() is for dmb operations, but actually it's
+> defined for dsb operation.  So we should use it and this is a common
+> function between arm64 and arm.
+> 
+> >  done:
+> >  	CS_LOCK(drvdata->base);
+> >  
+> > @@ -454,7 +458,8 @@ static void etm4_disable_hw(void *info)
+> >  	control &= ~0x1;
+> >  
+> >  	/* make sure everything completes before disabling */
+> > -	mb();
+> > +	/* As recommended by 7.3.77 of ARM IHI 0064D */
+> > +	dsb(sy);
+> 
+> Here the old code should be right, mb() is the same thing with
+> dsb(sy).
+> 
+> So we don't need to change at here?
 
+Correct - on arm64 there is no difference between mb and dsb(sy) so no
+functional change on this hunk.
+
+In repsonse to Suzuki's feedback on this patch, I've updated the commit
+message to describe why I've made this change, as follows:
+     
+"On armv8 the mb macro is defined as dsb(sy) - Given that the etm4x is
+only used on armv8 let's directly use dsb(sy) instead of mb(). This
+removes some ambiguity and makes it easier to correlate the code with
+the TRM."
+
+Does that make sense?
+
+Thanks,
+
+Andrew Murray
+
+> 
+> Thanks,
+> Leo Yan
+> 
+> >  	isb();
+> >  	writel_relaxed(control, drvdata->base + TRCPRGCTLR);
+> >  
+> > -- 
+> > 2.21.0
+> > 
+> > _______________________________________________
+> > CoreSight mailing list
+> > CoreSight@lists.linaro.org
+> > https://lists.linaro.org/mailman/listinfo/coresight
 
 _______________________________________________
 linux-arm-kernel mailing list
