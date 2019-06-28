@@ -2,85 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B41025A04A
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 28 Jun 2019 18:06:07 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DB3485A074
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 28 Jun 2019 18:10:37 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=iIVfeMHcQkRWEk3vL5+ZJOOHTH8D3wQ6eeSqIFsmVRU=; b=GLbFyGVHf9tull
-	xD8jHvm+LFuEBs8baGP6SJrb+c1NV2X+CwjxZnWbLhBHLSWzn3iK+IaQPu/M21dFxOlVuRLtyKYuZ
-	p7xy5t+FaacQYwsQUtxAGAcU22ixyk/MYofXUcBO7hYMVoxsBwwyI4Lf2eey4HY++e3O43mjxISoq
-	HEM2D1suPY7TriMHK5r+cU0H1wlwWcA1ZJa1MtQP1nNHBXFiXhRj0T1y3m69uPdjLSPFrWwbw5B3O
-	F8Fc5S0/yearI2/2JL+TH8GX99yrbZ+n0g2KNEacMg0xQDmlSzP8i7Cc/gPNbQFwoqUCwOWzrs0w0
-	2DmZbnfQAsAfjFn0WFww==;
+	List-Owner; bh=4DyXgugJpQpHqaj++kgmspP3W4lq5wPkEpr9vtfJ0IY=; b=fHHSOzT4j2mF1o
+	iRL8h2EoZHPXnVOYNZCsO3HFGTz4JOYFzxEz6Kc7PA94bZT4K5bLR5k67Qhb3PTXJcx8lnyHSfxen
+	BTnLWq1LAX2K5Exi0gOFiBR1IekLs1XTfWKgBK/JM8UWSvaa9ey7WB/SIHfMVoZWTUyWbFVnl3J+Y
+	vGRs5QfR58te/+N0jZmj5KT11EcqvJyVsi9b7ebQRNvAQFDcxM9zRv9Xz1fLqRyv/3uTK55DXdrHd
+	pn3b7Am5PDUIb92jkF9h3hTui88Dsmec6+yqvLWhxUTw8RpxOYK1ydJxRsty7dIGl9B3qfVBbsaNp
+	JLLfTcbv8NX6k+60hDCA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hgtNz-0000oY-VZ; Fri, 28 Jun 2019 16:06:03 +0000
-Received: from mail-ot1-x341.google.com ([2607:f8b0:4864:20::341])
+	id 1hgtSL-0003kE-Ro; Fri, 28 Jun 2019 16:10:33 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hgtNi-0000lA-5M
- for linux-arm-kernel@lists.infradead.org; Fri, 28 Jun 2019 16:05:47 +0000
-Received: by mail-ot1-x341.google.com with SMTP id z23so6448454ote.13
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 28 Jun 2019 09:05:45 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=googlemail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=rB3m6lymfmEJSrj5bHYQhYToOLJuP/M6N6+Gh/hsbFw=;
- b=bc/qm2AfIl7/pff81NO1XSTxiwj/Tf0ODnPhZSJ5FTf056oge76zhm015auns2dWOc
- RinrawyZ0O2i6XS3+Gia3nZKyP4l+hj94CO63lQVLxbXgIhu7crlszsOV628/OdmjOHs
- sgA2BP1tBdIoQGCZBW6+NVSOzl9jEECi2MCa0a/YPJDDCTBDdePstSg/jnqv6PrxCsmQ
- ThKE283f5h0W/IlmNX0oHfVqT1Ne7o8ahjcCU6dkor7BD58aVUBqhrXrvV7DJyiPPXkB
- MJa5LLDboqWiBQHW5V5SO5bR4xRlOCIXS7xPSUT6OYP8peQqJOrSThluXwg3T02RX4Hq
- coBg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=rB3m6lymfmEJSrj5bHYQhYToOLJuP/M6N6+Gh/hsbFw=;
- b=bHnc6QcZG9Jl1ZURySDHltFvixxKLPxgmMeHJQyJiurTwMifPHRPntTaLDKtUSy4W2
- pn8wRb7UrFHcxCiEV0dgNCKJAqXkJU19YAUMv6YbDTNS0Xl3cugxZU/siqLCurMBKAHE
- N9guuKBT1mFVBIcOLWAOaBLwsfPFqNNOoAS9CjrHF5v7aupUF1Vr+NdLgGXaNo/iQfFx
- j2aOsG+E/1HDzo7OlDhFxBkZ+v636MQu9+2rFfJt7oh8X3T7Bw341bkWbQ/06rJAInxw
- 2vCMGBhsVZwAQMSdRrvkOXsbQmftoSRm4Jx0ZEfmQY75p2gEVXVs2ql4vsKtGWL8QgGM
- fI4g==
-X-Gm-Message-State: APjAAAV3ndjGAoRPDs74pxCmi2evjOgw+kfA8YhLc8TT7vTtcaCwCU13
- 6ukkv/WROrsM9cDFCSv9PrHyrrvKHW9qN4qAcfg=
-X-Google-Smtp-Source: APXvYqxpqVINGUIuZUIFanNgoXeInzShDbpDl64F0HtsRM7t1NOYrZCC3Ebzuzy9/EHv7T38+pkX4a5YcGAPWYaVwrw=
-X-Received: by 2002:a9d:23ca:: with SMTP id t68mr8604745otb.98.1561737944761; 
- Fri, 28 Jun 2019 09:05:44 -0700 (PDT)
+ id 1hgtSA-0003je-Hb; Fri, 28 Jun 2019 16:10:24 +0000
+Received: from mail-qk1-f174.google.com (mail-qk1-f174.google.com
+ [209.85.222.174])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id D6FB5216E3;
+ Fri, 28 Jun 2019 16:10:21 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1561738222;
+ bh=JT2+LjdeGYwAzgiQO03rJyeR6d1ItE4i/2D95RggsE0=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=2jPfie8PRDa4umctnjlAEeWpw3BkCmoC0WH18fW0TkvsFQ7RsdkA1hCqoVP0ei99p
+ DiYQXIXkyt2+Mt+6ZLrCD09gMxB2R29SmABRJMeRvyvKaERRxanck59+m1nOVipH+B
+ x6rjzkLBBU1UFtKGMM5ebhZp3sbY2dzzZoPP7kl4=
+Received: by mail-qk1-f174.google.com with SMTP id m14so5252195qka.10;
+ Fri, 28 Jun 2019 09:10:21 -0700 (PDT)
+X-Gm-Message-State: APjAAAVXGewvnOicTBklYzLtKCroBiZFx5UmOC9Mnpma7kUn8n03eABB
+ AllNadmALLvyRUHP13gYp0vDtRsYpit6OsYY2A==
+X-Google-Smtp-Source: APXvYqyWvAhqS9/ekWTKjDusvBvbzTg0jA8Pn2h4OITXjwQUgHtqy5AWS+DPlCXsn23dZ+IMB0pxlEQeYQRMQrLcvXU=
+X-Received: by 2002:a05:620a:1447:: with SMTP id
+ i7mr9535724qkl.254.1561738221012; 
+ Fri, 28 Jun 2019 09:10:21 -0700 (PDT)
 MIME-Version: 1.0
-References: <20190617165836.4673-1-colin.king@canonical.com>
- <20190619051308.23582-1-martin.blumenstingl@googlemail.com>
- <92f9e5a6-d2a2-6bf2-ff8a-2430fe977f93@canonical.com>
- <CAFBinCDmYVPDMcwAAYhMfxxuTsG=xunduN58_8e20zE_Mhmb7Q@mail.gmail.com>
- <CAFBinCC-LLpfXQRFcKBbUpCfKc0S9Xtt60QrhEThsOFV-T7vFw@mail.gmail.com>
- <c46d2d17-c35b-46f0-0674-0c55bea3a272@canonical.com>
- <CAFBinCBk5aPVE+vq5px3QKS1T_R=WGXXxEJMC9X676KGvi9jdg@mail.gmail.com>
- <26646ff1-059f-fb2d-e05d-43009aeb2150@canonical.com>
-In-Reply-To: <26646ff1-059f-fb2d-e05d-43009aeb2150@canonical.com>
-From: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
-Date: Fri, 28 Jun 2019 18:05:33 +0200
-Message-ID: <CAFBinCAx5qrPK1z68bF-tGKpJQfKLnee65qBOxMS4nj8t381+Q@mail.gmail.com>
-Subject: Re: [PATCH] net: stmmac: add sanity check to
- device_property_read_u32_array call
-To: Colin Ian King <colin.king@canonical.com>
+References: <20190401171724.215780-1-dianders@chromium.org>
+ <20190626130007.GE23428@ravnborg.org>
+ <CAD=FV=U4UU8q+CS76uuuGUP=EVnE6+BTUf8U=j7uwfczNgkrZw@mail.gmail.com>
+ <CAD=FV=Vi2C7s2oWBDD0n+HK=_SuBYhRM9saMK-y6Qa0+k-g17w@mail.gmail.com>
+In-Reply-To: <CAD=FV=Vi2C7s2oWBDD0n+HK=_SuBYhRM9saMK-y6Qa0+k-g17w@mail.gmail.com>
+From: Rob Herring <robh+dt@kernel.org>
+Date: Fri, 28 Jun 2019 10:10:09 -0600
+X-Gmail-Original-Message-ID: <CAL_JsqJGtUTpJL+SDEKi09aDT4yDzY4x9KwYmz08NaZcn=nHfA@mail.gmail.com>
+Message-ID: <CAL_JsqJGtUTpJL+SDEKi09aDT4yDzY4x9KwYmz08NaZcn=nHfA@mail.gmail.com>
+Subject: Re: [PATCH v5 0/7] drm/panel: simple: Add mode support to devicetree
+To: Doug Anderson <dianders@chromium.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190628_090546_232388_3D341339 
-X-CRM114-Status: GOOD (  19.03  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190628_091022_615714_CD1429C6 
+X-CRM114-Status: GOOD (  26.96  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:341 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (martin.blumenstingl[at]googlemail.com)
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -90,6 +74,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -101,77 +86,95 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: alexandre.torgue@st.com, netdev@vger.kernel.org,
- kernel-janitors@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-stm32@st-md-mailman.stormreply.com, joabreu@synopsys.com,
- mcoquelin.stm32@gmail.com, peppe.cavallaro@st.com, davem@davemloft.net,
- linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Brian Norris <briannorris@chromium.org>, Heiko Stuebner <heiko@sntech.de>,
+ David Airlie <airlied@linux.ie>, Viresh Kumar <viresh.kumar@linaro.org>,
+ Dmitry Torokhov <dmitry.torokhov@gmail.com>,
+ LKML <linux-kernel@vger.kernel.org>,
+ dri-devel <dri-devel@lists.freedesktop.org>,
+ Ezequiel Garcia <ezequiel@collabora.com>,
+ "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
+ Thierry Reding <thierry.reding@gmail.com>, Sean Paul <seanpaul@chromium.org>,
+ Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
+ Boris Brezillon <boris.brezillon@collabora.com>,
+ =?UTF-8?Q?Enric_Balletb=C3=B2?= <enric.balletbo@collabora.com>,
+ Klaus Goger <klaus.goger@theobroma-systems.com>,
+ Sam Ravnborg <sam@ravnborg.org>, Matthias Kaehlcke <mka@chromium.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Colin,
-
-On Fri, Jun 28, 2019 at 10:32 AM Colin Ian King
-<colin.king@canonical.com> wrote:
+On Fri, Jun 28, 2019 at 9:55 AM Doug Anderson <dianders@chromium.org> wrote:
 >
-> On 28/06/2019 05:15, Martin Blumenstingl wrote:
-> > On Tue, Jun 25, 2019 at 9:58 AM Colin Ian King <colin.king@canonical.com> wrote:
-> >>
-> >> On 25/06/2019 05:44, Martin Blumenstingl wrote:
-> >>> Hi Colin,
-> >>>
-> >>> On Thu, Jun 20, 2019 at 3:34 AM Martin Blumenstingl
-> >>> <martin.blumenstingl@googlemail.com> wrote:
-> >>>>
-> >>>> Hi Colin,
-> >>>>
-> >>>> On Wed, Jun 19, 2019 at 8:55 AM Colin Ian King <colin.king@canonical.com> wrote:
-> >>>>>
-> >>>>> On 19/06/2019 06:13, Martin Blumenstingl wrote:
-> >>>>>> Hi Colin,
-> >>>>>>
-> >>>>>>> Currently the call to device_property_read_u32_array is not error checked
-> >>>>>>> leading to potential garbage values in the delays array that are then used
-> >>>>>>> in msleep delays.  Add a sanity check to the property fetching.
-> >>>>>>>
-> >>>>>>> Addresses-Coverity: ("Uninitialized scalar variable")
-> >>>>>>> Signed-off-by: Colin Ian King <colin.king@canonical.com>
-> >>>>>> I have also sent a patch [0] to fix initialize the array.
-> >>>>>> can you please look at my patch so we can work out which one to use?
-> >>>>>>
-> >>>>>> my concern is that the "snps,reset-delays-us" property is optional,
-> >>>>>> the current dt-bindings documentation states that it's a required
-> >>>>>> property. in reality it isn't, there are boards (two examples are
-> >>>>>> mentioned in my patch: [0]) without it.
-> >>>>>>
-> >>>>>> so I believe that the resulting behavior has to be:
-> >>>>>> 1. don't delay if this property is missing (instead of delaying for
-> >>>>>>    <garbage value> ms)
-> >>>>>> 2. don't error out if this property is missing
-> >>>>>>
-> >>>>>> your patch covers #1, can you please check whether #2 is also covered?
-> >>>>>> I tested case #2 when submitting my patch and it worked fine (even
-> >>>>>> though I could not reproduce the garbage values which are being read
-> >>>>>> on some boards)
-> >>> in the meantime I have tested your patch.
-> >>> when I don't set the "snps,reset-delays-us" property then I get the
-> >>> following error:
-> >>>   invalid property snps,reset-delays-us
-> >>>
-> >>> my patch has landed in the meantime: [0]
-> >>> how should we proceed with your patch?
+> Hi,
 >
-> Your fix is good, so I think we should just drop/forget about my fix.
-thank you for looking at the situation
+> On Wed, Jun 26, 2019 at 7:41 AM Doug Anderson <dianders@chromium.org> wrote:
+> >
+> > Hi,
+> >
+> > On Wed, Jun 26, 2019 at 6:00 AM Sam Ravnborg <sam@ravnborg.org> wrote:
+> > >
+> > > Hi Douglas.
+> > >
+> > > On Mon, Apr 01, 2019 at 10:17:17AM -0700, Douglas Anderson wrote:
+> > > > I'm reviving Sean Paul's old patchset to get mode support in device
+> > > > tree.  The cover letter for his v3 is at:
+> > > > https://lists.freedesktop.org/archives/dri-devel/2018-February/165162.html
+> > > >
+> > > > No code is different between v4 and v5, just commit messages and text
+> > > > in the bindings.
+> > > >
+> > > > I've pulled together the patches that didn't land in v3, addressed
+> > > > outstanding feedback, and reposted.  Atop them I've added patches for
+> > > > rk3288-veyron-chromebook (used for jaq, jerry, mighty, speedy) and
+> > > > rk3288-veryon-minnie.
+> > > >
+> > > > Please let me know how they look.
+> > > >
+> > > > In general I have added people to the whole series who I think would
+> > > > like the whole series and then let get_maintainer pick extra people it
+> > > > thinks are relevant to each individual patch.  If I see you respond to
+> > > > any of the patches in the series, though, I'll add you to the whole
+> > > > series Cc list next time.
+> > > >
+> > > > Changes in v5:
+> > > > - Removed bit about OS may ignore (Rob/Ezequiel)
+> > > > - Added Heiko's Tested-by
+> > > > - It's not just jerry, it's most rk3288 Chromebooks (Heiko)
+> > >
+> > > What are the plans to move forward with this?
+> > > Or did you drop the whole idea again?
+> >
+> > At the moment I'm blocked on Thierry responding, either taking the
+> > patch or telling me what I need to do to fix it.  I saw Sean Paul ping
+> > Thierry on IRC on June 3rd and as far as I could tell there was no
+> > response.
+> >
+> > https://people.freedesktop.org/~cbrill/dri-log/?channel=dri-devel&highlight_names=&date=2019-06-03&show_html=true
+> >
+> > ...and as you can see Heiko pinged this thread on June 14th.
+> >
+> > Thierry: can you help give us some direction?  Are you uninterested in
+> > reviewing them and would prefer that I find someone to land them in
+> > drm-misc directly?
+>
+> Sam: Oh!  I hadn't noticed that you've been added as a panel
+> maintainer in commit ef0db94f94a0 ("MAINTAINERS: Add Sam as reviewer
+> for drm/panel").  Does that mean you are able to provide some advice
+> for how to land this series?  As far as I know everything is in order
+> for it to land, but if you are aware of something I need to do to spin
+> it then please let me know!
 
-as far I understand the -net/-net-next tree all commits are immutable
-so if we want to remove your patch we need to send a revert
-do you want me to do that (I can do it on Monday) or will you take care of that?
+BTW, at least for the binding, this will get implicitly supported in
+the schema conversion[1] as simple-panel as a binding is gone and
+panel-common already had timing node defined. A schema for the timing
+node is still needed though (hint :) ).
 
+Rob
 
-Martin
+[1] https://patchwork.ozlabs.org/patch/1121538/
 
 _______________________________________________
 linux-arm-kernel mailing list
