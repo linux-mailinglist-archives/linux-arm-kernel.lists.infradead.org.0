@@ -2,55 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5C2AC59941
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 28 Jun 2019 13:28:06 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 47EDF59942
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 28 Jun 2019 13:28:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=PTZCZim316a0/DZMhROx1gZKN0QTWEC7O7/I3wLDSW8=; b=Yy0DzjjddLsHlF
-	QB1y0ZPKSi6pi8OKEISqykdKvIqQjU6VNYyCJRHhCpLX+YRtmzDUSdji2vV9QsUzsd3PDI4ftRg/m
-	3Rf7Sv8aKh2hTaY+SZgNGPKdjuTaX7wdLzS8LNdkm+VkDzU6RAO5RjSt1bUmp8KtKA00734ntC2lS
-	2zWDc+LKLwk00gpc9s8q04plh/zCC8SMDS6R4KuMBn8qozgaYn9mNwNyeoG1WPSf7VkTY0BMWOttk
-	LO5+zhfKT++NB8IXEJfWrB76Ulyc3pWLtJrE9+tXeY+yDB+xJkmPNlt9n2O7Mdc0CAXvApXu7jEKA
-	6PvWZmFubNTwd3a5TZjQ==;
+	List-Owner; bh=ufgFkWRc1brDJEUGZs72WZu04w+RLuw5FqZWwpYJ0+4=; b=Ct/WBSAXC+hSsK
+	5eNwBo5q0uO7oKtWhfioZxqYqDgrzBEroCc84oge2qHkTCEpBQykBu9naKM/U1CCoyIJe9LbYMF2u
+	EcTeka5falK8B0FjOSEy4QRzyuSUc31PmmxlV/d4bHb8OVqTt6qZR+nxplJMkOfkX7NJwtJU+1B34
+	4n+uXg1xOZSUTCR8Zo/tlGGgtwOT1raBS0m9aqYwU4kefnZ8bm8prfDyhNP9hHLhmWRquNyQthGl0
+	9a78fPE5/684Z7x5nfXClEydPt9xxkEKod8yffKkqi7JJp6rJZPWHJW901qzBUWFUCtqLeyLYIW2c
+	ImYfJGG1oI8X1teLBSaA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hgp2v-0004VF-Q8; Fri, 28 Jun 2019 11:28:01 +0000
+	id 1hgp3J-0004kZ-S4; Fri, 28 Jun 2019 11:28:26 +0000
 Received: from mx07-00178001.pphosted.com ([62.209.51.94])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hgp2H-0004G1-S1
- for linux-arm-kernel@lists.infradead.org; Fri, 28 Jun 2019 11:27:23 +0000
-Received: from pps.filterd (m0046668.ppops.net [127.0.0.1])
+ id 1hgp2J-0004Gp-BL
+ for linux-arm-kernel@lists.infradead.org; Fri, 28 Jun 2019 11:27:25 +0000
+Received: from pps.filterd (m0046037.ppops.net [127.0.0.1])
  by mx07-00178001.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id
- x5SBQSqA008465; Fri, 28 Jun 2019 13:27:15 +0200
+ x5SBPoTB020526; Fri, 28 Jun 2019 13:27:16 +0200
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
  h=from : to : cc : subject
  : date : message-id : in-reply-to : references : mime-version :
  content-type; s=STMicroelectronics;
- bh=RJqJPwy5FupsECpRr76jUlzOG75dPg4XX7HjL42ex0k=;
- b=EgHHT5K/GSk9XVoJ/wp0aAS6Xf34yhcc2+z0AIY/CmSxGke0kAUgtHmn+fh2J8QK1rNO
- /M+b6oflRD0jc/AiMaMdqUewvZcDzzEvY0tiCs/mDteM2ga/ul4tq3bU+lVWKGRpGfcS
- RUs1VzHcPVH4AzWmeFRyqm+Z7yxPcQxBeCOPl838zckkzU2ktAdduhRTaMX+KYtiOROW
- of5YZw6mO8DwNYWCmhlK3uR0Ny0jFwDhnf4/Ml1qnt8ffGH/RTgCiTyc/tw/G5Syx7t7
- KN/SStbES5BP8Mxktg5Sln0KYBVkj9QPhF2HwGK/DnNtTGifbREnRIhL71+SoobJ5RKW 3A== 
+ bh=B6KqXSyspmxT0bd7YntUlngpbE0mK1d5i/1VLUqBWcI=;
+ b=mUfFigTvElxyHlwiLQxFJ/k3QpDOJNIxbstkUDF7lWH4w3tSGN6OCoYGHlH178Haqnkh
+ NODZvcZA5yMsAwow863FlIj0H9PgE/zYeUvxEAmOoy9onEgPAyMBpv9wVaY59g+FP+Rw
+ X38VFHECgUvzzWg7ZU3YIFnYaHHWkbV3hJLFuocD+5seFir99rJZqEx27RluT5Ey8ixg
+ 91bi6eoP74jk8xf+5TZ/FXaTXxtcnBoWRKiqKvVQMFn48LL/Ka+LQB5Pu+owq5J81hgk
+ ODg/6bFKhiTcnNaWbHR2nGQ7aeG0NIWyrwGDaQzT+1SI8j/idjakxtP5xy08NcfoHqL6 zw== 
 Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx07-00178001.pphosted.com with ESMTP id 2t9d2gwgny-1
+ by mx07-00178001.pphosted.com with ESMTP id 2tcyq0e4kv-1
  (version=TLSv1 cipher=ECDHE-RSA-AES256-SHA bits=256 verify=NOT);
- Fri, 28 Jun 2019 13:27:14 +0200
+ Fri, 28 Jun 2019 13:27:16 +0200
 Received: from zeta.dmz-eu.st.com (zeta.dmz-eu.st.com [164.129.230.9])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 6F76731;
- Fri, 28 Jun 2019 11:27:14 +0000 (GMT)
-Received: from Webmail-eu.st.com (Safex1hubcas24.st.com [10.75.90.94])
- by zeta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 4E66127A5;
- Fri, 28 Jun 2019 11:27:14 +0000 (GMT)
-Received: from SAFEX1HUBCAS22.st.com (10.75.90.93) by Safex1hubcas24.st.com
- (10.75.90.94) with Microsoft SMTP Server (TLS) id 14.3.439.0; Fri, 28 Jun
- 2019 13:27:14 +0200
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id EEAB531;
+ Fri, 28 Jun 2019 11:27:15 +0000 (GMT)
+Received: from Webmail-eu.st.com (Safex1hubcas23.st.com [10.75.90.46])
+ by zeta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 9802827A6;
+ Fri, 28 Jun 2019 11:27:15 +0000 (GMT)
+Received: from SAFEX1HUBCAS22.st.com (10.75.90.93) by SAFEX1HUBCAS23.st.com
+ (10.75.90.46) with Microsoft SMTP Server (TLS) id 14.3.439.0; Fri, 28 Jun
+ 2019 13:27:15 +0200
 Received: from localhost (10.201.23.65) by Webmail-ga.st.com (10.75.90.48)
- with Microsoft SMTP Server (TLS) id 14.3.439.0; Fri, 28 Jun 2019 13:27:13
+ with Microsoft SMTP Server (TLS) id 14.3.439.0; Fri, 28 Jun 2019 13:27:15
  +0200
 From: Lionel Debieve <lionel.debieve@st.com>
 To: Herbert Xu <herbert@gondor.apana.org.au>, "David S . Miller"
@@ -58,9 +58,9 @@ To: Herbert Xu <herbert@gondor.apana.org.au>, "David S . Miller"
  "Alexandre Torgue" <alexandre.torgue@st.com>,
  <linux-crypto@vger.kernel.org>, <linux-arm-kernel@lists.infradead.org>,
  <linux-kernel@vger.kernel.org>
-Subject: [PATCH 1/2] crypto: stm32/hash: Fix hmac issue more than 256 bytes
-Date: Fri, 28 Jun 2019 13:26:54 +0200
-Message-ID: <20190628112655.9341-2-lionel.debieve@st.com>
+Subject: [PATCH 2/2] crypto: stm32/hash: remove interruptible condition for dma
+Date: Fri, 28 Jun 2019 13:26:55 +0200
+Message-ID: <20190628112655.9341-3-lionel.debieve@st.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20190628112655.9341-1-lionel.debieve@st.com>
 References: <20190628112655.9341-1-lionel.debieve@st.com>
@@ -69,8 +69,8 @@ X-Originating-IP: [10.201.23.65]
 X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:, ,
  definitions=2019-06-28_04:, , signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190628_042722_205243_99B4CF3F 
-X-CRM114-Status: GOOD (  13.63  )
+X-CRM114-CacheID: sfid-20190628_042723_718750_B795539D 
+X-CRM114-Status: GOOD (  13.89  )
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.9 points)
@@ -108,28 +108,31 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Correct condition for the second hmac loop. Key must be only
-set in the first loop. Initial condition was wrong,
-HMAC_KEY flag was not properly checked.
+When DMA is used, waiting for completion must not be
+interruptible as it can generate an error that is not handle
+by the driver. There is no need to put the completion
+interruptible in this driver.
 
 Signed-off-by: Lionel Debieve <lionel.debieve@st.com>
 ---
- drivers/crypto/stm32/stm32-hash.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+ drivers/crypto/stm32/stm32-hash.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
 
 diff --git a/drivers/crypto/stm32/stm32-hash.c b/drivers/crypto/stm32/stm32-hash.c
-index 29519d1c403f..c37d1a336f98 100644
+index c37d1a336f98..23061f2bc74b 100644
 --- a/drivers/crypto/stm32/stm32-hash.c
 +++ b/drivers/crypto/stm32/stm32-hash.c
-@@ -349,7 +349,7 @@ static int stm32_hash_xmit_cpu(struct stm32_hash_dev *hdev,
- 		return -ETIMEDOUT;
+@@ -447,8 +447,8 @@ static int stm32_hash_xmit_dma(struct stm32_hash_dev *hdev,
  
- 	if ((hdev->flags & HASH_FLAGS_HMAC) &&
--	    (hdev->flags & ~HASH_FLAGS_HMAC_KEY)) {
-+	    (!(hdev->flags & HASH_FLAGS_HMAC_KEY))) {
- 		hdev->flags |= HASH_FLAGS_HMAC_KEY;
- 		stm32_hash_write_key(hdev);
- 		if (stm32_hash_wait_busy(hdev))
+ 	dma_async_issue_pending(hdev->dma_lch);
+ 
+-	if (!wait_for_completion_interruptible_timeout(&hdev->dma_completion,
+-						       msecs_to_jiffies(100)))
++	if (!wait_for_completion_timeout(&hdev->dma_completion,
++					 msecs_to_jiffies(100)))
+ 		err = -ETIMEDOUT;
+ 
+ 	if (dma_async_is_tx_complete(hdev->dma_lch, cookie,
 -- 
 2.17.1
 
