@@ -2,72 +2,148 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 990335A28F
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 28 Jun 2019 19:39:43 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8C36C5A2C2
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 28 Jun 2019 19:51:35 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=/YmrZ5DIH8AyAejFE7oN3TWTLMXYGfl4fC8X5s8iUuY=; b=IQcpMo+C6isMSgRbAMKp5aPg+
-	gpEmZZ64hBxqXiP9jCsrEO3VaQ6w//ynaFdIPeFNlnPU2pEju7124bzT6V9bIAPt8umIcphJoY7IY
-	3lWPU8m7jRFA4KuHNJMYBAHkdQOq3ez0V60kKzAeOPHnZqTaOCWjn4ZMlSKmbXQbvVeIrWNTwPt1u
-	Y6C/Rv04LmytFjKP9XR7nc4ae+Ebr6uFnvsyCB+ueCsVrctWejCAbjGsj2MGttvj/xwxkw1yQIYQi
-	ZwCNwcc+ACGRad7KERPTtjjnu8FczOVH1H6KUvCJnnS220ekjHKFuJywjB9sssWKMs1b/JErbFXvL
-	DiPok5bww==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=9iAp5fN6OBcXJk6YL1Qvq+M69NERsjqO/sLH7NqI+Gk=; b=hGj9ykOqSWQGEf
+	SgY3MFDB5rj94Hs4ExpS67Sg84ZXQoduirk1yLDVGOz5bbTA0ZHeSrBSEY7ltS2fj3WSEJtKXxZtF
+	RUAUlJ0LnsVJvvm0w9Xmq02P7NmLoOKedYUiTFgIutbAz1CHvnNgoFBzAWBBElIDfFIYe1Z2/1Pp4
+	SZV3j0sBu5cDXOVwF5IIazwAKNdnbgPJKQRISGRCJuG++Z55citBtrMuvoWw7nxG0KkK4ltRC0zUp
+	i2Ua3o1MqboACApbrS8SsB0TrU4ZDgf7YdPEeDw6dyoqzbfHNgvmjwqsBziaCiSe9Ji+U1EYQhii0
+	LIG+VNx6hsCNtKllRfsg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hguqb-0002Ut-Qa; Fri, 28 Jun 2019 17:39:41 +0000
-Received: from heliosphere.sirena.org.uk ([2a01:7e01::f03c:91ff:fed4:a3b6])
+	id 1hgv22-00079P-7J; Fri, 28 Jun 2019 17:51:30 +0000
+Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hguqN-0002UM-Qs
- for linux-arm-kernel@lists.infradead.org; Fri, 28 Jun 2019 17:39:30 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sirena.org.uk; s=20170815-heliosphere; h=In-Reply-To:Content-Type:
- MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
- Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
- List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=EJVY8PpEfmwKGp5JBR9QWYoJRFzRaseDHP1AL12WcKc=; b=wBMq9EOIKMTw5Kr5km61dHFr3
- RA+1JxzCu5nkWvxqx5yDoO/iwQWu8wu+q/4j8IwbMmiHAzb3OpXEV/a1S+8pyZkmSj5B7o0ZE3By6
- 5iSzjwWjXwg7wxczXj3OO0TmZ0RTKAZmfOTDecfQ07lYuAN2WESTWtY1I2DW1rdhnECjE=;
-Received: from [2001:470:1f1d:6b5:7e7a:91ff:fede:4a45]
- (helo=finisterre.sirena.org.uk)
- by heliosphere.sirena.org.uk with esmtpsa
- (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.89)
- (envelope-from <broonie@sirena.org.uk>)
- id 1hguqH-0007HV-IS; Fri, 28 Jun 2019 17:39:21 +0000
-Received: by finisterre.sirena.org.uk (Postfix, from userid 1000)
- id BEDA3440046; Fri, 28 Jun 2019 18:39:20 +0100 (BST)
-Date: Fri, 28 Jun 2019 18:39:20 +0100
-From: Mark Brown <broonie@kernel.org>
-To: Catalin Marinas <catalin.marinas@arm.com>
-Subject: Re: [PATCH v2] arm64: Add initial support for E0PD
-Message-ID: <20190628173920.GA2793@sirena.org.uk>
-References: <20190627141532.6452-1-broonie@kernel.org>
- <20190628110430.ffdqy5on3retyr42@willie-the-truck>
- <20190628123040.GG5379@sirena.org.uk>
- <20190628163642.GB56463@arrakis.emea.arm.com>
+ id 1hgv1q-00078U-9o
+ for linux-arm-kernel@lists.infradead.org; Fri, 28 Jun 2019 17:51:19 +0000
+Received: by mail-wm1-x342.google.com with SMTP id h19so9854490wme.0
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 28 Jun 2019 10:51:17 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=subject:to:cc:references:from:openpgp:autocrypt:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=W/ZCNPYTJGzZ3L6zqlKCFXhLWCTFdIrOtI9KBg/bM4c=;
+ b=uBVp7/Q5dH6jHPryP0SEvSK2mDOjH65xdlAXIi/DV23sHjhNGTOOXrqUp6fV+YHByb
+ uL0XZB40zzTYro3piohFoJwAQBSAUrpdSZLuHXXQgKYzL6TMvOsrT6JsqsRtxst8jx2M
+ QXRJMQoXSZGm1G+LdoTYLkdlyRNcXUXY0BywbOTQD8HKECvWq13w+fsB97w9GdYN5P+8
+ EZlHU9UJdDV/pcP98Xj8JGtMklI9dpApqoXWzzf1X1UoSU/6zMAoyaO4Cr7DUmZ+p3YT
+ rZqkQB1uRvM3Usv2Mnrn4NPj7yUhT7CE0I7nKvQseKVVDI82GF+RsMCFffF8VjDRgqed
+ AtNw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:subject:to:cc:references:from:openpgp:autocrypt
+ :message-id:date:user-agent:mime-version:in-reply-to
+ :content-language:content-transfer-encoding;
+ bh=W/ZCNPYTJGzZ3L6zqlKCFXhLWCTFdIrOtI9KBg/bM4c=;
+ b=P5KNYoleyKOjc3snS8fQtbg6Z1t0ms/aWuzcqZSJOF0NznzgwpN4/B0yTHGd9/IHWk
+ NRPaQujE8QRj9r2LxVhZJA5SjH9egyly60Z3J9KKWdRhHO/3NTTidnGQiGNiMtW2Wgp8
+ zfBvLpKO/1RNYwD3uLJ0TUlwaurihz+7mE9FrmJyvYE3OsXspLMZV5hukYwM8kK1ozH4
+ uzvDLmpH/1syX9DwEfrEdt7EiGlLly9OuDlC2LHD/W8YFYw2sBXCb3Swuf41oU+Kx2pG
+ rP90suf1tGkUMgVQBE9dZJAX4Eb7N754K3oOFPOBrxJ+UXz4OdLFM3M1nVZXJxVeKDRq
+ VvKg==
+X-Gm-Message-State: APjAAAUTXEIrwmgdi8CffOR7Iu2PqaY+tMdAS6jrHTDXtz5X0PerSMSv
+ l7A5UaZjRRbROI7hGmUIojc=
+X-Google-Smtp-Source: APXvYqw2l3SjwtVoWKBhGogg6UicGh9gehFb+Mo2LVUEGL31OlYGoZxxQvMSwJSYm+RSWGyDw4yCyw==
+X-Received: by 2002:a1c:dc46:: with SMTP id t67mr7345606wmg.159.1561744275833; 
+ Fri, 28 Jun 2019 10:51:15 -0700 (PDT)
+Received: from [10.67.50.91] ([192.19.223.252])
+ by smtp.googlemail.com with ESMTPSA id h11sm3346530wrx.93.2019.06.28.10.51.13
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Fri, 28 Jun 2019 10:51:15 -0700 (PDT)
+Subject: Re: [PATCH] ARM: mm: only adjust sections of valid mm structures
+To: Doug Berger <opendmb@gmail.com>, linux-arm-kernel@lists.infradead.org
+References: <1561671168-29896-1-git-send-email-opendmb@gmail.com>
+From: Florian Fainelli <f.fainelli@gmail.com>
+Openpgp: preference=signencrypt
+Autocrypt: addr=f.fainelli@gmail.com; prefer-encrypt=mutual; keydata=
+ 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
+ M5kY0ACeNhCZJvZ5g4C2Lc9fcTHu8jxmEkI=
+Message-ID: <c279c4f8-84d5-9d7b-746b-680d08105330@gmail.com>
+Date: Fri, 28 Jun 2019 10:51:06 -0700
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.7.1
 MIME-Version: 1.0
-In-Reply-To: <20190628163642.GB56463@arrakis.emea.arm.com>
-X-Cookie: This sentence no verb.
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <1561671168-29896-1-git-send-email-opendmb@gmail.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190628_103928_020334_807C4D54 
-X-CRM114-Status: GOOD (  14.67  )
-X-Spam-Score: 0.2 (/)
+X-CRM114-CacheID: sfid-20190628_105118_350554_C8504E44 
+X-CRM114-Status: GOOD (  22.05  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:342 listed in]
+ [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (f.fainelli[at]gmail.com)
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -81,74 +157,65 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Will Deacon <will@kernel.org>, linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============5512753528871181515=="
+Cc: Rob Herring <robh@kernel.org>, Peng Fan <peng.fan@nxp.com>,
+ linux-kernel@vger.kernel.org, Russell King <linux@armlinux.org.uk>,
+ "Steven Rostedt \(VMware\)" <rostedt@goodmis.org>,
+ Mike Rapoport <rppt@linux.ibm.com>, Geert Uytterhoeven <geert@linux-m68k.org>,
+ Andrew Morton <akpm@linux-foundation.org>, Laura Abbott <labbott@redhat.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On 6/27/19 2:32 PM, Doug Berger wrote:
+> A timing hazard exists when an early fork/exec thread begins
+> exiting and sets its mm pointer to NULL while a separate core
+> tries to update the section information.
+> 
+> This commit ensures that the mm pointer is not NULL before
+> setting its section parameters. The arguments provided by
+> commit 11ce4b33aedc ("ARM: 8672/1: mm: remove tasklist locking
+> from update_sections_early()") are equally valid for not
+> requiring grabbing the task_lock around this check.
 
---===============5512753528871181515==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="vtzGhvizbBRQ85DL"
-Content-Disposition: inline
+This looks like an appropriate fix to me. For what it is worth, we were
+able to reproduce this problem with a 4.9 kernel with:
 
+CONFIG_UEVENT_HELPER=y
+CONFIG_UEVENT_HELPER_PATH="/sbin/hotplug"
 
---vtzGhvizbBRQ85DL
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
+It is made much more reliable with a lower default loglevel (e.g.: 1)
+than the default log level, but if you have e.g.: an USB thumb drive
+that needs to be scanned by the SCSI layer, then this is 100% reliable.
 
-On Fri, Jun 28, 2019 at 05:36:42PM +0100, Catalin Marinas wrote:
-> On Fri, Jun 28, 2019 at 01:30:40PM +0100, Mark Brown wrote:
-
-> > It's largely on the general theory that it's better to carry less out of
-> > tree code - there's less diff to manage, less chance of collisions with
-> > other work (in either direction), and less pending review to worry about.
-> > So long as something represents forward progress I tend to work on the
-> > basis of why not rather than why.
-
-> A reason is that once we add the support for disabling kpti based on
-> the E0PD feature, this patch may turn out to be slightly different (for
-> example, you may add a common has_e0pd() check that is called from
-> both unmap_kernel_at_el0() and the E0PD arm64_features[] entry). Given
-
-Hrm, I don't really get that - incremental patches can always be done
-(indeed they're often really helpful for people trying to understand how
-the code got to be the way it is).  Obviously you can go too far in the
-other direction as well, a middle ground is generally best.
-
-> that both patches would be relatively small, I agree with Will that
-> there is no rush to merge them independently.
-
-I guess.
-
---vtzGhvizbBRQ85DL
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAl0WUMcACgkQJNaLcl1U
-h9COdwf+I1PJG+BIpdhoPojlqyRTW8ij54l3EhqXCC+SYKw4usHJZ0wS6PjLyUaQ
-+qzK1C4sxkIo70aBd2lIrMpR60ONABeXNUamQjuUFm8D0i95V6cFta2HnB/PH+X/
-pOMoN7r+Or2XycMj9l2md+4HUJaM1SrI2fGlpLuOZcUZBSdTJonUtudEr28KFRnq
-w5nYdUeLvOKjqyXnzQtKB/7GBV0KyzAMEcpGrgSnzi8ecfFtjIKVa3AdRkNZlvug
-V0HYHVH5hhEgd3CFZc6PlAk/FKVqCIonhYNB02aHrug0hzVl2SsOM7qzXORU1aK9
-tTplqzo4IIq85gVgoutb0/Y8V93YYQ==
-=1vB8
------END PGP SIGNATURE-----
-
---vtzGhvizbBRQ85DL--
+> 
+> Fixes: 08925c2f124f ("ARM: 8464/1: Update all mm structures with section adjustments")
+> Signed-off-by: Doug Berger <opendmb@gmail.com>
+> ---
+>  arch/arm/mm/init.c | 3 ++-
+>  1 file changed, 2 insertions(+), 1 deletion(-)
+> 
+> diff --git a/arch/arm/mm/init.c b/arch/arm/mm/init.c
+> index be0b42937888..bdc70dff477b 100644
+> --- a/arch/arm/mm/init.c
+> +++ b/arch/arm/mm/init.c
+> @@ -616,7 +616,8 @@ static void update_sections_early(struct section_perm perms[], int n)
+>  		if (t->flags & PF_KTHREAD)
+>  			continue;
+>  		for_each_thread(t, s)
+> -			set_section_perms(perms, n, true, s->mm);
+> +			if (s->mm)
+> +				set_section_perms(perms, n, true, s->mm);
+>  	}
+>  	set_section_perms(perms, n, true, current->active_mm);
+>  	set_section_perms(perms, n, true, &init_mm);
+> 
 
 
---===============5512753528871181515==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+-- 
+Florian
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============5512753528871181515==--
-
