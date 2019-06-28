@@ -2,61 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A97ED59D80
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 28 Jun 2019 16:09:11 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id AED5259D9A
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 28 Jun 2019 16:17:21 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8WugcYY9q5mIrSTrw85tBb1YDUerz6pfu05ygi5/sUc=; b=JwxZ2G106M5m4D
-	oE7ZthhKjyT1eexCxN1KXrcNo9lPBAEx8U96IxW+cX9PlhfkPGfOHzwvhgu4VkdclC2LMisMBmJng
-	y9MRFdfLcxI0Enb7Bj5b44XoAIN7rLQKe79H3tOV8cDny8U7RPRrcK2YZYZHdlPT0Z5Y+mrHAHS0+
-	dYt9vHmAhc0SRCaqeswLHHnAxW8qQBSOteee8Dj4rb0CG/oXw7Zo+PElPpZySYg5103j9kCmeQ+a4
-	t88Ba2roNH7BhNixxTkWhnE4cz8sRHxmlRgy4sbZAJj/Jzgw4ErFc9i5aB8IUFIjjWYR4uk5jDFGS
-	99hRvKm9kc8ocdhDM9RA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=ZQF8YmECC2XphP/VzCCWe+nsLndeLvbnLrvCSZtbpJU=; b=kT7DTm7cIphLC6
+	DwH8/sY9dHuqfNkvv741Fl0dJrZU2WZfKs7xUA58TPYtKew+vnXis/1oxkirZCzE4GxMYMmqXnl93
+	b7NNi3ti/4nSrnvVA+mHKj9kfIybUOoiCFEWpkebTgck1DFu/ZwBpnCU2HtxOrjNbII5WrAzHWWVa
+	6HXtJ33ZKPT5ipgk5B9B7OgF4putmFjtPTaHkVTRWAOrZk+qSD2LpVNeTfCYWT0ViLA4s30LCzNeK
+	5XT/Sp61WxGUW3jcqTPixq9wcXCKE5L524GRUiwIr0w3xbqWomSrJvA1d6pEV9L+fEAni4tcM4pN7
+	3HgBHC3xjktXaMUYBNvw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hgrYo-0002Ix-2a; Fri, 28 Jun 2019 14:09:06 +0000
-Received: from lb3-smtp-cloud9.xs4all.net ([194.109.24.30])
+	id 1hgrgj-0005Om-5X; Fri, 28 Jun 2019 14:17:17 +0000
+Received: from relay8-d.mail.gandi.net ([217.70.183.201])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hgrYY-0002IE-QV; Fri, 28 Jun 2019 14:08:53 +0000
-Received: from [192.168.2.10] ([46.9.252.75])
- by smtp-cloud9.xs4all.net with ESMTPA
- id grYRhmatqSfvXgrYVhSH9J; Fri, 28 Jun 2019 16:08:47 +0200
-Subject: Re: [PATCH 01/31] staging: bcm2835-camera: Ensure H264 header bytes
- get a sensible timestamp
-To: Nicolas Dufresne <nicolas@ndufresne.ca>,
- Dave Stevenson <dave.stevenson@raspberrypi.org>
-References: <1561661788-22744-1-git-send-email-wahrenst@gmx.net>
- <1561661788-22744-2-git-send-email-wahrenst@gmx.net>
- <5e20b1d04b3c2f64173631ec2f0261a8a9597f0c.camel@ndufresne.ca>
- <CAAoAYcOvnF55U0kPMFE4cOd=nUqjoidirbGP6AWN=5Rqp0RhbQ@mail.gmail.com>
- <54088ebc2fcbcc3a202ab0fd4d32f9ad8c1e9b82.camel@ndufresne.ca>
-From: Hans Verkuil <hverkuil@xs4all.nl>
-Message-ID: <df6c4e8e-9182-f629-2bd7-a36b5697f382@xs4all.nl>
-Date: Fri, 28 Jun 2019 16:08:43 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.6.1
+ id 1hgrgV-0005NY-UL
+ for linux-arm-kernel@lists.infradead.org; Fri, 28 Jun 2019 14:17:06 +0000
+X-Originating-IP: 86.250.200.211
+Received: from mc-bl-xps13.lan (lfbn-1-17395-211.w86-250.abo.wanadoo.fr
+ [86.250.200.211])
+ (Authenticated sender: maxime.chevallier@bootlin.com)
+ by relay8-d.mail.gandi.net (Postfix) with ESMTPSA id 56A001BF205;
+ Fri, 28 Jun 2019 14:16:48 +0000 (UTC)
+From: Maxime Chevallier <maxime.chevallier@bootlin.com>
+To: Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ "Rafael J . Wysocki" <rafael@kernel.org>, Rob Herring <robh+dt@kernel.org>,
+ Frank Rowand <frowand.list@gmail.com>,
+ Russell King <linux@armlinux.org.uk>, Christoph Hellwig <hch@infradead.org>
+Subject: [PATCH] driver core: platform: Allow using a dedicated dma_mask for
+ platform_device
+Date: Fri, 28 Jun 2019 16:15:50 +0200
+Message-Id: <20190628141550.22938-1-maxime.chevallier@bootlin.com>
+X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
-In-Reply-To: <54088ebc2fcbcc3a202ab0fd4d32f9ad8c1e9b82.camel@ndufresne.ca>
-Content-Language: en-US
-X-CMAE-Envelope: MS4wfAFVr8kH07cqrycMoPg0UKoxLhH4ZEyplXokG0GMZIGrINjoHgRTsy1BaOcnzWmK6oLyxeL3/noA1gwtMP/gwqCLEH+BOikyuE9OqYvyR+mUcTmx3L/k
- 7BV/S1j2Ybk/J4mrhBrH9jZ8GL470m3J7CPvCl9cYWrt07Djb5RcoIbBx1G1UWm8k+pyEtgwJJzApxM3wOhhiIihbBMIV4RlSunb5Z8+kYbKcTJiR1R/P+dB
- RumRySCmILVB2VH0PhrTEauSp9Bl7xmk+3pdx1YUyBzdURFJ+H+GnRmJIjnVEfME7yX13RdMry7O31VPTlanBi9LqsfZ97ISg2Crs+Wjz25XnScTc0SaDkNt
- 5Ch6kIvugMGuP+ToOrL+w78VGNWWyiXogFOlR/+ev/HPsDUtNSgvub0at6jzrn5KSwfk1Oh7+4FbMLxfXC3fx+N+1yKjzVQrPKsnqxT1v9IwM3EZy5MbozJu
- DfEJgSFooPOFVj57cHFp5q8KyRBTzgeHWvxmBJF8Wwu9k1DDff55gp0q75Q=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190628_070851_020039_976F9233 
-X-CRM114-Status: GOOD (  32.43  )
+X-CRM114-CacheID: sfid-20190628_071704_294657_DC4FF078 
+X-CRM114-Status: GOOD (  18.21  )
 X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [194.109.24.30 listed in list.dnswl.org]
+ low trust [217.70.183.201 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -70,168 +63,135 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devel@driverdev.osuosl.org, Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- LMML <linux-media@vger.kernel.org>, Eric Anholt <eric@anholt.net>,
- "moderated list:BROADCOM BCM2835 ARM ARCHITECTURE"
- <linux-rpi-kernel@lists.infradead.org>,
- Mauro Carvalho Chehab <mchehab@kernel.org>,
- linux-arm-kernel@lists.infradead.org, Stefan Wahren <wahrenst@gmx.net>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Antoine Tenart <antoine.tenart@bootlin.com>, linux-kernel@vger.kernel.org,
+ Maxime Chevallier <maxime.chevallier@bootlin.com>, nadavh@marvell.com,
+ brian.brooks@linaro.org, thomas.petazzoni@bootlin.com, stefanc@marvell.com,
+ Russell King <rmk+kernel@armlinux.org.uk>, David Miller <davem@davemloft.net>,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gNi8yOC8xOSA0OjAwIFBNLCBOaWNvbGFzIER1ZnJlc25lIHdyb3RlOgo+IExlIHZlbmRyZWRp
-IDI4IGp1aW4gMjAxOSDDoCAxMToxMCArMDEwMCwgRGF2ZSBTdGV2ZW5zb24gYSDDqWNyaXQgOgo+
-PiBIaSBOaWNvbGFzCj4+Cj4+IE9uIFRodSwgMjcgSnVuIDIwMTkgYXQgMjA6NTUsIE5pY29sYXMg
-RHVmcmVzbmUgPG5pY29sYXNAbmR1ZnJlc25lLmNhPiB3cm90ZToKPj4+IEhpIERhdmUsCj4+Pgo+
-Pj4gTGUgamV1ZGkgMjcganVpbiAyMDE5IMOgIDIwOjU1ICswMjAwLCBTdGVmYW4gV2FocmVuIGEg
-w6ljcml0IDoKPj4+PiBGcm9tOiBEYXZlIFN0ZXZlbnNvbiA8ZGF2ZS5zdGV2ZW5zb25AcmFzcGJl
-cnJ5cGkub3JnPgo+Pj4+Cj4+Pj4gSDI2NCBoZWFkZXIgY29tZSBmcm9tIFZDIHdpdGggMCB0aW1l
-c3RhbXBzLCB3aGljaCBtZWFucyB0aGV5IGdldCBhCj4+Pj4gc3RyYW5nZSB0aW1lc3RhbXAgd2hl
-biBwcm9jZXNzZWQgd2l0aCBWQy9rZXJuZWwgc3RhcnQgdGltZXMsCj4+Pj4gcGFydGljdWxhcmx5
-IGlmIHVzZWQgd2l0aCB0aGUgaW5saW5lIGhlYWRlciBvcHRpb24uCj4+Pj4gUmVtZW1iZXIgdGhl
-IGxhc3QgZnJhbWUgdGltZXN0YW1wIGFuZCB1c2UgdGhhdCBpZiBzZXQsIG9yIG90aGVyd2lzZQo+
-Pj4+IHVzZSB0aGUga2VybmVsIHN0YXJ0IHRpbWUuCj4+Pgo+Pj4gTm9ybWFsbHkgSDI2NCBoZWFk
-ZXJzIGFyZSBjb25zaWRlcmVkIHRvIGJlIHBhcnQgb2YgdGhlIGZvbGxvd2luZyBmcmFtZS4KPj4+
-IEdpdmluZyBpdCB0aGUgdGltZXN0YW1wIG9mIHRoZSBwcmV2aW91cyBmcmFtZSB3aWxsIGxpa2Vs
-eSBjb25mdXNlIHNvbWUKPj4+IHVzZXJzcGFjZSBhbmQgY2F1c2UgYW4gb2ZmLWJ5LW9uZSBpbiB0
-aW1lc3RhbXAuIEkgdW5kZXJzdGFuZCB0aGlzIGlzIGEKPj4+IHdvcmthcm91bmQsIGJ1dCBhbSB3
-b25kZXJpbmcgaWYgdGhpcyBjYW4gYmUgaW1wcm92ZWQuCj4+Cj4+IFNvcnJ5LCBzbGlnaHQgYW1i
-aWd1aXR5IGluIGhvdyBJJ20gcmVhZGluZyB5b3VyIGNvbW1lbnQuCj4+Cj4+IEFyZSB5b3Ugc2F5
-aW5nIHRoYXQgdGhlIGhlYWRlciBieXRlcyB3YW50IHRvIGJlIGluIHRoZSBzYW1lIGJ1ZmZlciBh
-cwo+PiB0aGUgZm9sbG93aW5nIGZyYW1lPwo+PiBJIHRob3VnaHQgdGhpcyBoYWQgYWxzbyBiZWVu
-IGRpc2N1c3NlZCBpbiB0aGUgVjRMMiBzdGF0ZWZ1bCBjb2RlYyBBUEkKPj4gdGhyZWFkcyBhbG9u
-ZyB3aXRoIGhvdyBtYW55IGVuY29kZWQgZnJhbWVzIHdlcmUgYWxsb3dlZCBpbiBhIHNpbmdsZQo+
-PiBWNEwyIGJ1ZmZlci4gSSBjZXJ0YWlubHkgaGFkbid0IHNlZW4gYSBzdGF0ZW1lbnQgYWJvdXQg
-dGhlIGhlYWRlcgo+PiBieXRlcyBiZWluZyBjb21iaW5lZCB3aXRoIHRoZSBuZXh0IGZyYW1lLgo+
-PiBJZiB0aGUgYmVoYXZpb3VyIHJlcXVpcmVkIGJ5IFY0TDIgaXMgdGhhdCBoZWFkZXIgYnl0ZXMg
-YW5kIGZvbGxvd2luZwo+PiBmcmFtZSBhcmUgaW4gdGhlIHNhbWUgYnVmZmVyLCB0aGVuIHRoYXQg
-aXMgcmVsYXRpdmVseSBlYXN5IHRvIGFjaGlldmUKPj4gaW4gdGhlIGZpcm13YXJlLiBUaGlzIHdv
-cmthcm91bmQgY2FuIHJlbWFpbiBmb3Igb2xkZXIgZmlybXdhcmUgYXMgaXQKPj4gd2lsbCBuZXZl
-ciB0cmlnZ2VyIGlmIHRoZSBmaXJtd2FyZSBoYXMgY29tYmluZWQgdGhlIGZyYW1lcy4KPiAKPiBU
-aGUgZnJhbWUgYWxpZ25tZW50IGlzIGEgcmVxdWlyZW1lbnQgc3BlY2lmaWMgdG8gdGhlIHN0YXRl
-ZnVsIGNvZGVjCj4gQVBJLgoKSXMgaXQ/IEkgZG9uJ3QgcmVtZW1iZXIgaXQgYmVpbmcgc3BlY2lm
-aWVkIGFueXdoZXJlIGV4cGxpY2l0bHkuCkhlcmUgaXMgdGhlIGxhdGVzdCB0ZXh0OgoKaHR0cHM6
-Ly9odmVya3VpbC5ob21lLnhzNGFsbC5ubC9jb2RlYy1hcGkvdWFwaS92NGwvZGV2LWVuY29kZXIu
-aHRtbAoKSSdsbCBzdGFydCBhIG5ldyB0aHJlYWQgYWJvdXQgdGhpcywgc2luY2UgdGhpcyByZWFs
-bHkgbmVlZHMgdG8gYmUKY2xhcmlmaWVkLgoKUmVnYXJkcywKCglIYW5zCgogU3RhdGVmdWwgY29k
-ZWMgbXVzdCBpbnRlcnByZXQgX0gyNjQgZm9ybWF0IGFzIGJlaW5nIG9uZSBmdWxsIGZyYW1lCj4g
-cGVyIGJ1ZmZlciAoMSBBVSBpbiBwcm9ncmVzc2l2ZSwgYW5kIDEgdG8gMiBBVSBpbiBpbnRlcmxh
-Y2VkKSwgdGhlCj4gZmlyc3QgZnJhbWUgc2hvdWxkIGluY2x1ZGUgU1BTL1BQUyBhbmQgYW55IG90
-aGVyIHByZWZpeCBOQUxzLiBZb3UgbWF5Cj4gZm9sbG93IHRoaXMgcnVsZSBpbiB5b3VyIGNhcHR1
-cmUgZHJpdmVyIGlmIHlvdSB3YW50IHRvIG1ha2UgaXQgcG9zc2libGUKPiB0byB6ZXJvLWNvcHkg
-dGhlIGVuY29kZWQgZnJhbWVzIGZyb20gdGhlIGNhcHR1cmUgdG8gdGhlIGRlY29kZXIuCj4gVGhv
-dWdoLCB1c2Vyc3BhY2Ugd2lsbCBzdGlsbCBoYXZlIHRvIHBhcnNlIGFzIHRoZXJlIGlzIG5vIGlu
-ZGljYXRpb24KPiBmb3IgY2FwdHVyZSBkZXZpY2VzIG9mIHRoZSBIMjY0IGFsaWdubWVudCBiZWlu
-ZyB1c2VkICh0aGF0IGltcGx5IDEKPiBmcmFtZSBsYXRlbmN5KS4gQm9yaXMgaXMgd29ya2luZyBv
-biBhIGNvbnRyb2wgZm9yIHN0YXRlbGVzcyBDT0RFQyB0bwo+IGNvbnRyb2wgaWYgd2UgYXJlIHJ1
-bm5pbmcgaW4gZnVsbC1mcmFtZSBvciBwZXIgc2xpY2VzLiBJIGRvIGhvcGUgdGhpcwo+IGNvbnRy
-b2wgd2lsbCBiZSBleHRlbmRlZCBsYXRlciB0byBhbGxvdyBjYW1lcmFzIGFuZCBkZWNvZGVycyB0
-byBzaWduYWwKPiB0aGVpciBhbGlnbm1lbnQsIG9yIHNpbXBseSB0byBhbGxvdyBlbmFibGluZyBs
-b3ctbGF0ZW5jeSBtb2Rlcwo+IHN1cHBvcnRlZCBieSBDT0RBIGFuZCBaeW5NUCBmaXJtd2FyZXMu
-Cj4gCj4+Cj4+IE9yIGFyZSB5b3Ugc2F5aW5nIHRoYXQgdGhlIGhlYWRlciBieXRlcyByZW1haW4g
-aW4gdGhlaXIgb3duIGJ1ZmZlciwKPj4gYnV0IHRoZSB0aW1lc3RhbXAgd2FudHMgdG8gYmUgdGhl
-IHNhbWUgYXMgdGhlIG5leHQgZnJhbWU/IFRoYXQgaXMKPj4gaGFyZGVyIHRvIGFjaGlldmUgaW4g
-dGhlIGZpcm13YXJlLCBidXQgY291bGQgcHJvYmFibHkgYmUgZG9uZSBpbiB0aGUKPj4ga2VybmVs
-IGRyaXZlciBieSBob2xkaW5nIG9uIHRvIHRoZSBoZWFkZXIgYnl0ZXMgZnJhbWUgdW50aWwgdGhl
-IG5leHQKPj4gYnVmZmVyIGhhZCBiZWVuIHJlY2VpdmVkLCBhdCB3aGljaCBwb2ludCB0aGUgdGlt
-ZXN0YW1wIGNhbiBiZSBjb3BpZWQKPj4gYWNyb3NzLiBQb3NzaWJsZSwgYnV0IGp1c3QgbmVlZHMg
-c2xpZ2h0bHkgY2FyZWZ1bCBoYW5kbGluZyB0byBlbnN1cmUKPj4gd2UgZG9uJ3QgbG9zZSBidWZm
-ZXJzIGFjY2lkZW50YWxseS4KPiAKPiBTbyB0aGlzIGlzbid0IHNwZWNpZmllZCBieSBWNEwyIGl0
-c2VsZi4gU28gaW5zdGVhZCBJIHJlbHkgb24gSDI2NCBhbmQKPiBNUEVHIFRTIHNwZWNpZmljYXRp
-b24gdG8gYWR2YW5jZSB0aGlzLiBUaGlzIGlzIGFsc28gdGhlIGludGVycHJldGF0aW9uCj4gd2Ug
-aGF2ZSBvZiB0aW1lc3RhbXAgaW4gR1N0cmVhbWVyIChmZm1wZWcgdXNlcyBvdXQtb2YtYmFuZCBo
-ZWFkZXJzIHdpdGgKPiBmdWxsIGZyYW1lIEFWQywgc28gdGhpcyBkb2VzIG5vdCBhcHBseSkuCj4g
-Cj4gU28gSDI2NCBBVUQsIFNQUywgUFBTLCBTRUkgYW5kIG90aGVyIHByZWZpeCBOQUwgYXJlIGNv
-bnNpZGVyZWQgdG8gYmUKPiB0aGUgc3RhcnQgb2YgYSBmcmFtZS4gV2l0aCB0aGlzIGludGVycHJl
-dGF0aW9uIGluIG1pbmQsIGFjY3VtdWxhdGluZwo+IHRoZW0gaXMgY29uc2lkZXJlZCB6ZXJvLWxh
-dGVuY3kuIFRoaXMgYmFzaWNhbGx5IG1lYW5zIHRoYXQgaWYgdGhleSBhcmUKPiB0byBoYXZlIGEg
-dGltZXN0YW1wLCB0aGV5IHdvdWxkIHNoYXJlIHRoYXQgdGltZXN0YW1wIHdpdGggYWxsIHRoZQo+
-IHNsaWNlcyBvZiB0aGUgc2FtZSBmcmFtZS4gSW4gR1N0cmVhbWVyLCB3ZSBoYXZlIHRoZSBub3Rp
-b24gb2Ygbm8KPiB0aW1lc3RhbXAsIHNvIGluIHN1Y2ggYSBjYXNlIHdlJ2QgbGVhdmUgdGhlIHRp
-bWVzdGFtcCBlbXB0eSBhbmQgb3VyCj4gcGFyc2VycyB3b3VsZCBwaWNrIHRoZSBmaXJzdCB2YWxp
-ZCB0aW1lc3RhbXAgdGhhdCBmb3JtZWQgdGhlIGZ1bGwgZnJhbWUKPiBhcyBiZWluZyB0aGUgZnJh
-bWUgdGltZXN0YW1wIChpdCdzIGEgYml0IGJ1Z2dpZXIgdGhlbiB0aGF0LCBidXQgdGhhdCdzCj4g
-d2hhdCBpdCdzIHN1cHBvc2UgdG8gZG8pLgo+IAo+IE9uIHRvcCBvZiB0aGF0LCBpZiB5b3UgZG9u
-J3QgaGF2ZSBhbnkgbWVhbmluZ2Z1bCBhbGlnbm1lbnQgaW4geW91ciBIMjY0Cj4gc3RyZWFtLCB0
-aGUgTVBFRyBUUyBmb3JtYXQgc3RhdGVzIHRoYXQgdGhlIHRpbWVzdGFtcCBvZiBhIGJ1ZmZlciBz
-aG91bGQKPiBiZSB0aGUgdGltZXN0YW1wIG9mIHRoZSBmaXJzdCBOQUwgc3RhcnRpbmcgd2l0aGlu
-IHRoaXMgYnVmZmVyLCBvciB0aGUKPiB0aW1lc3RhbXAgb2YgdGhlIGN1cnJlbnQgTkFMIGlmIHRo
-ZXJlIGlzIG5vdCBOQUwgc3RhcnQuCj4gCj4gQnkgcmVzcGVjdGluZyB0aGVzZSBzdGFuZGFyZHMg
-eW91IGVuc3VyZSB0aGF0IGxhdGVuY3kgYXdhcmUgYXBwbGljYXRpb24KPiBjYW4gd29yayB3aXRo
-IHlvdXIgZHJpdmVyIHdpdGhvdXQgY2F1c2luZyBkZWxheXMsIG9yIHdvcnN0LCBoYXZpbmcgdG8K
-PiBkZWFsIHdpdGggYXJ0aWZpY2lhbGx5IGxhdGUgZnJhbWVzLgo+IAo+IEkgaG9wZSB0aGlzIGNs
-YXJpZnkgYW5kIGhlbHBzIHVuZGVyc3RhbmQgbXkgcmVxdWVzdCBmb3IgInVuaGFja2luZyIgdGhl
-Cj4gaGVhZGVycyB0aW1lc3RhbXBzLiBJIGhhZCBhc3N1bWVkIHRoZSB0aW1lc3RhbXAgY2FtZSBm
-cm9tIHRoZSBkcml2ZXIKPiAoaW5zdGVhZCBvZiBmcm9tIHRoZSBmaXJtd2FyZSksIHNvcnJ5IGlm
-IHRoYXQgY2F1c2VkIGNvbmZ1c2lvbi4gSWYKPiBtZXJnaW5nIGZ1bGwgZnJhbWVzIGlzIGVhc2ll
-ciwgSSB0aGluayBJIHdvdWxkIG9wdCBmb3IgdGhhdCBhcyBpdCdzCj4gYmVuZWZpY2lhbCB0byBw
-ZXJmb3JtYW5jZSB3aGVuIGNvbWJpbmVkIHdpdGggb3RoZXIgZnVsbCBmcmFtZSBBUElzLgo+IAo+
-IE5pY29sYXMKPiAKPj4KPj4gICBEYXZlCj4+Cj4+Pj4gTGluazogaHR0cHM6Ly9naXRodWIuY29t
-L3Jhc3BiZXJyeXBpL2xpbnV4L2lzc3Vlcy8xODM2Cj4+Pj4gU2lnbmVkLW9mZi1ieTogRGF2ZSBT
-dGV2ZW5zb24gPGRhdmUuc3RldmVuc29uQHJhc3BiZXJyeXBpLm9yZz4KPj4+PiAtLS0KPj4+PiAg
-Li4uL3N0YWdpbmcvdmMwNF9zZXJ2aWNlcy9iY20yODM1LWNhbWVyYS9iY20yODM1LWNhbWVyYS5j
-ICB8IDE0ICsrKysrKysrKysrKy0tCj4+Pj4gIC4uLi9zdGFnaW5nL3ZjMDRfc2VydmljZXMvYmNt
-MjgzNS1jYW1lcmEvYmNtMjgzNS1jYW1lcmEuaCAgfCAgMiArKwo+Pj4+ICAyIGZpbGVzIGNoYW5n
-ZWQsIDE0IGluc2VydGlvbnMoKyksIDIgZGVsZXRpb25zKC0pCj4+Pj4KPj4+PiBkaWZmIC0tZ2l0
-IGEvZHJpdmVycy9zdGFnaW5nL3ZjMDRfc2VydmljZXMvYmNtMjgzNS1jYW1lcmEvYmNtMjgzNS1j
-YW1lcmEuYyBiL2RyaXZlcnMvc3RhZ2luZy92YzA0X3NlcnZpY2VzL2JjbTI4MzUtY2FtZXJhL2Jj
-bTI4MzUtY2FtZXJhLmMKPj4+PiBpbmRleCBkY2U2ZTZkLi4wYzA0ODE1IDEwMDY0NAo+Pj4+IC0t
-LSBhL2RyaXZlcnMvc3RhZ2luZy92YzA0X3NlcnZpY2VzL2JjbTI4MzUtY2FtZXJhL2JjbTI4MzUt
-Y2FtZXJhLmMKPj4+PiArKysgYi9kcml2ZXJzL3N0YWdpbmcvdmMwNF9zZXJ2aWNlcy9iY20yODM1
-LWNhbWVyYS9iY20yODM1LWNhbWVyYS5jCj4+Pj4gQEAgLTM1OSw3ICszNTksOSBAQCBzdGF0aWMg
-dm9pZCBidWZmZXJfY2Ioc3RydWN0IHZjaGlxX21tYWxfaW5zdGFuY2UgKmluc3RhbmNlLAo+Pj4+
-ICAgICAgICAgICAgICAgfQo+Pj4+ICAgICAgIH0gZWxzZSB7Cj4+Pj4gICAgICAgICAgICAgICBp
-ZiAoZGV2LT5jYXB0dXJlLmZyYW1lX2NvdW50KSB7Cj4+Pj4gLSAgICAgICAgICAgICAgICAgICAg
-IGlmIChkZXYtPmNhcHR1cmUudmNfc3RhcnRfdGltZXN0YW1wICE9IC0xICYmIHB0cykgewo+Pj4+
-ICsgICAgICAgICAgICAgICAgICAgICBpZiAoZGV2LT5jYXB0dXJlLnZjX3N0YXJ0X3RpbWVzdGFt
-cCAhPSAtMSkgewo+Pj4+ICsgICAgICAgICAgICAgICAgICAgICAgICAgICAgIGJ1Zi0+dmIudmIy
-X2J1Zi50aW1lc3RhbXAgPSBrdGltZV9nZXRfbnMoKTsKPj4+PiArICAgICAgICAgICAgICAgICAg
-ICAgfSBlbHNlIGlmIChwdHMpIHsKPj4+PiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBr
-dGltZV90IHRpbWVzdGFtcDsKPj4+PiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBzNjQg
-cnVudGltZV91cyA9IHB0cyAtCj4+Pj4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
-IGRldi0+Y2FwdHVyZS52Y19zdGFydF90aW1lc3RhbXA7Cj4+Pj4gQEAgLTM3Miw4ICszNzQsMTUg
-QEAgc3RhdGljIHZvaWQgYnVmZmVyX2NiKHN0cnVjdCB2Y2hpcV9tbWFsX2luc3RhbmNlICppbnN0
-YW5jZSwKPj4+PiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBrdGltZV90
-b19ucyh0aW1lc3RhbXApKTsKPj4+PiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBidWYt
-PnZiLnZiMl9idWYudGltZXN0YW1wID0ga3RpbWVfdG9fbnModGltZXN0YW1wKTsKPj4+PiAgICAg
-ICAgICAgICAgICAgICAgICAgfSBlbHNlIHsKPj4+PiAtICAgICAgICAgICAgICAgICAgICAgICAg
-ICAgICBidWYtPnZiLnZiMl9idWYudGltZXN0YW1wID0ga3RpbWVfZ2V0X25zKCk7Cj4+Pj4gKyAg
-ICAgICAgICAgICAgICAgICAgICAgICAgICAgaWYgKGRldi0+Y2FwdHVyZS5sYXN0X3RpbWVzdGFt
-cCkgewo+Pj4+ICsgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgYnVmLT52Yi52
-YjJfYnVmLnRpbWVzdGFtcCA9Cj4+Pj4gKyAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
-ICAgICAgICAgICAgIGRldi0+Y2FwdHVyZS5sYXN0X3RpbWVzdGFtcDsKPj4+PiArICAgICAgICAg
-ICAgICAgICAgICAgICAgICAgICB9IGVsc2Ugewo+Pj4+ICsgICAgICAgICAgICAgICAgICAgICAg
-ICAgICAgICAgICAgICAgYnVmLT52Yi52YjJfYnVmLnRpbWVzdGFtcCA9Cj4+Pj4gKyAgICAgICAg
-ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIGt0aW1lX3RvX25zKGRldi0+Y2Fw
-dHVyZS5rZXJuZWxfc3RhcnRfdHMpOwo+Pj4+ICsgICAgICAgICAgICAgICAgICAgICAgICAgICAg
-IH0KPj4+PiAgICAgICAgICAgICAgICAgICAgICAgfQo+Pj4+ICsgICAgICAgICAgICAgICAgICAg
-ICBkZXYtPmNhcHR1cmUubGFzdF90aW1lc3RhbXAgPSBidWYtPnZiLnZiMl9idWYudGltZXN0YW1w
-Owo+Pj4+Cj4+Pj4gICAgICAgICAgICAgICAgICAgICAgIHZiMl9zZXRfcGxhbmVfcGF5bG9hZCgm
-YnVmLT52Yi52YjJfYnVmLCAwLCBsZW5ndGgpOwo+Pj4+ICAgICAgICAgICAgICAgICAgICAgICB2
-YjJfYnVmZmVyX2RvbmUoJmJ1Zi0+dmIudmIyX2J1ZiwgVkIyX0JVRl9TVEFURV9ET05FKTsKPj4+
-PiBAQCAtNTQxLDYgKzU1MCw3IEBAIHN0YXRpYyBpbnQgc3RhcnRfc3RyZWFtaW5nKHN0cnVjdCB2
-YjJfcXVldWUgKnZxLCB1bnNpZ25lZCBpbnQgY291bnQpCj4+Pj4gICAgICAgICAgICAgICAgICAg
-ICAgICBkZXYtPmNhcHR1cmUudmNfc3RhcnRfdGltZXN0YW1wLCBwYXJhbWV0ZXJfc2l6ZSk7Cj4+
-Pj4KPj4+PiAgICAgICBkZXYtPmNhcHR1cmUua2VybmVsX3N0YXJ0X3RzID0ga3RpbWVfZ2V0KCk7
-Cj4+Pj4gKyAgICAgZGV2LT5jYXB0dXJlLmxhc3RfdGltZXN0YW1wID0gMDsKPj4+Pgo+Pj4+ICAg
-ICAgIC8qIGVuYWJsZSB0aGUgY2FtZXJhIHBvcnQgKi8KPj4+PiAgICAgICBkZXYtPmNhcHR1cmUu
-cG9ydC0+Y2JfY3R4ID0gZGV2Owo+Pj4+IGRpZmYgLS1naXQgYS9kcml2ZXJzL3N0YWdpbmcvdmMw
-NF9zZXJ2aWNlcy9iY20yODM1LWNhbWVyYS9iY20yODM1LWNhbWVyYS5oIGIvZHJpdmVycy9zdGFn
-aW5nL3ZjMDRfc2VydmljZXMvYmNtMjgzNS1jYW1lcmEvYmNtMjgzNS1jYW1lcmEuaAo+Pj4+IGlu
-ZGV4IDJiNTY3OWUuLjA5MjczYjAgMTAwNjQ0Cj4+Pj4gLS0tIGEvZHJpdmVycy9zdGFnaW5nL3Zj
-MDRfc2VydmljZXMvYmNtMjgzNS1jYW1lcmEvYmNtMjgzNS1jYW1lcmEuaAo+Pj4+ICsrKyBiL2Ry
-aXZlcnMvc3RhZ2luZy92YzA0X3NlcnZpY2VzL2JjbTI4MzUtY2FtZXJhL2JjbTI4MzUtY2FtZXJh
-LmgKPj4+PiBAQCAtOTAsNiArOTAsOCBAQCBzdHJ1Y3QgYm0yODM1X21tYWxfZGV2IHsKPj4+PiAg
-ICAgICAgICAgICAgIHM2NCAgICAgICAgIHZjX3N0YXJ0X3RpbWVzdGFtcDsKPj4+PiAgICAgICAg
-ICAgICAgIC8qIEtlcm5lbCBzdGFydCB0aW1lc3RhbXAgZm9yIHN0cmVhbWluZyAqLwo+Pj4+ICAg
-ICAgICAgICAgICAga3RpbWVfdCBrZXJuZWxfc3RhcnRfdHM7Cj4+Pj4gKyAgICAgICAgICAgICAv
-KiBUaW1lc3RhbXAgb2YgbGFzdCBmcmFtZSAqLwo+Pj4+ICsgICAgICAgICAgICAgdTY0ICAgICAg
-ICAgICAgIGxhc3RfdGltZXN0YW1wOwo+Pj4+Cj4+Pj4gICAgICAgICAgICAgICBzdHJ1Y3QgdmNo
-aXFfbW1hbF9wb3J0ICAqcG9ydDsgLyogcG9ydCBiZWluZyB1c2VkIGZvciBjYXB0dXJlICovCj4+
-Pj4gICAgICAgICAgICAgICAvKiBjYW1lcmEgcG9ydCBiZWluZyB1c2VkIGZvciBjYXB0dXJlICov
-Cj4+Pj4gLS0KPj4+PiAyLjcuNAo+Pj4+CgoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJt
-LWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21h
-aWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
+This patch attempts to solve a long standing situation where
+dev->dma_mask is a pointer to dev->dma_coherent_mask, meaning that any
+change to the coherent mask will affect the streaming mask.
+
+The API allows to use different values for both masks, but for now
+platform_device built from DT will simply make the dma_mask point to the
+coherent mask.
+
+This is a problem on a least one driver, the PPv2 network driver, which
+needs different streaming and coherent masks to overcome a HW
+limitation. In this case, the issue is a performance degradation since
+the streaming mask isn't as big as it ought to be, causing a lot of
+buffer bounces.
+
+There were previous attempts to fix this issue. One of them by Brian
+Brooks, where the dma_mask is reallocated in the driver itself,
+which wasn't considered to be the best approach :
+
+https://lore.kernel.org/netdev/20180820024730.9147-1-brian.brooks@linaro.org/
+
+This lead to a discussion pointing to another attempt to solve the issue,
+by Christoph Hellwig :
+
+https://lore.kernel.org/lkml/20180829062401.8701-2-hch@lst.de/
+
+This more generic approach ended-up causing regressions on some mfd
+drivers (the sm501 was one of the reports).
+
+The current patch tries to be a bit less generic, and allows setting-up
+the dma_mask for platform devices using a dedicated helper. In this case,
+the dma_mask is allocated in struct platform_object, as suggested by
+Russell King.
+
+This helper is then used in platform_device creation code from the DT.
+
+Suggested-by: Russell King <rmk+kernel@armlinux.org.uk>
+Signed-off-by: Maxime Chevallier <maxime.chevallier@bootlin.com>
+---
+Hi everyone,
+
+This patch, if suitable, would require a lot of testing to detect
+drivers that rely on the streaming mask being the same as the coherent
+mask.
+
+Thanks,
+
+Maxime
+
+ drivers/base/platform.c         | 17 +++++++++++++++++
+ drivers/of/platform.c           |  7 +++++--
+ include/linux/platform_device.h |  1 +
+ 3 files changed, 23 insertions(+), 2 deletions(-)
+
+diff --git a/drivers/base/platform.c b/drivers/base/platform.c
+index 4d1729853d1a..35e7bdb8576c 100644
+--- a/drivers/base/platform.c
++++ b/drivers/base/platform.c
+@@ -256,9 +256,26 @@ EXPORT_SYMBOL_GPL(platform_add_devices);
+ 
+ struct platform_object {
+ 	struct platform_device pdev;
++	u64 dma_mask;
+ 	char name[];
+ };
+ 
++/**
++ * platform_device_setup_dma_mask - Sets the dma_mask pointer
++ * @pdev: platform device to configure the device's mask
++ *
++ * Sets the dma_mask of the underlying device to point to a dedicated region,
++ * that belongs to the platform_device.
++ */
++void platform_device_setup_dma_mask(struct platform_device *pdev)
++{
++	struct platform_object *pa = container_of(pdev, struct platform_object,
++						  pdev);
++
++	pa->pdev.dev.dma_mask = &pa->dma_mask;
++}
++EXPORT_SYMBOL_GPL(platform_device_setup_dma_mask);
++
+ /**
+  * platform_device_put - destroy a platform device
+  * @pdev: platform device to free
+diff --git a/drivers/of/platform.c b/drivers/of/platform.c
+index 04ad312fd85b..4a6980e3356c 100644
+--- a/drivers/of/platform.c
++++ b/drivers/of/platform.c
+@@ -186,8 +186,11 @@ static struct platform_device *of_platform_device_create_pdata(
+ 		goto err_clear_flag;
+ 
+ 	dev->dev.coherent_dma_mask = DMA_BIT_MASK(32);
+-	if (!dev->dev.dma_mask)
+-		dev->dev.dma_mask = &dev->dev.coherent_dma_mask;
++	if (!dev->dev.dma_mask) {
++		platform_device_setup_dma_mask(dev);
++		*dev->dev.dma_mask = dev->dev.coherent_dma_mask;
++	}
++
+ 	dev->dev.bus = &platform_bus_type;
+ 	dev->dev.platform_data = platform_data;
+ 	of_msi_configure(&dev->dev, dev->dev.of_node);
+diff --git a/include/linux/platform_device.h b/include/linux/platform_device.h
+index cc464850b71e..a95c2d224de9 100644
+--- a/include/linux/platform_device.h
++++ b/include/linux/platform_device.h
+@@ -181,6 +181,7 @@ extern int platform_device_add_properties(struct platform_device *pdev,
+ extern int platform_device_add(struct platform_device *pdev);
+ extern void platform_device_del(struct platform_device *pdev);
+ extern void platform_device_put(struct platform_device *pdev);
++extern void platform_device_setup_dma_mask(struct platform_device *pdev);
+ 
+ struct platform_driver {
+ 	int (*probe)(struct platform_device *);
+-- 
+2.20.1
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
