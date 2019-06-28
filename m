@@ -2,86 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DF6985920D
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 28 Jun 2019 05:38:31 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B41D959229
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 28 Jun 2019 05:46:29 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=zjvzbCCNC+0pdgl7SrW3pTcNAdacekEmC4FUAO+BEAI=; b=eKmLrhnD3j385IBRPS0Ene7BS
-	ssn+/KUpcGxRHuG59MG7VpNTLlwxJ775661eVAHY1tdOkbWcf7LW4lOIBODrR5P4fE0gWH+a53pew
-	FGb0uegInyZpQ0WiQWVH3GdF4Nazsyi6D99rl1rcbVtyJzWpMcJzoF4d6crYK/1VKNLwx1ujems0O
-	0/VQnwSnx41+rsLyBLQdX83/07qEcfNGdy6RHKnkovbDT8CIPLP/PsKridc5tM5Wy/ZS4yruhLWWi
-	pHFkXIsXgH4Pbk896JYz/5YTwXsPBvb/IRnpw1zWTLjpQkUz1Gog+QnIpCYYG86c2jwJ6Bocl/OI2
-	kJrbaqTwA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=FDQOiRc0Vumy02IFbyIvZ8AFLqmh/KLpegKO8cn6LYM=; b=dbVNzM98TbMeXw
+	ufS03j/yojhklwCXVaAFoTIfCFgp5FBqxHxflLu9xQi+KQrJE9o0PV7rABU5AwRy5v8vxZk4+iPVY
+	ovqYdiSp69l+EOUyD/7ynN2KoGZrciLE73AvOr8fZZupw1VwVsGg2ckYC5s7GPTSjcAriTb917heP
+	t68kHNP13oOaN5LkFduNSr9gT3APk8tveQ6DklPbPd8IOb14wLMBj52CcSXjplAVOEHGFI9ZGuAhg
+	tMcSfCLrRzSyW/bdSnhjF/vkNnillliCdz3WZLvxums8mroLMkXYbGad1TSVTSoWmL2bcseBZPbSg
+	qz5ZLPuzalkzJ54UmvjA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hghiW-0001Wm-3c; Fri, 28 Jun 2019 03:38:28 +0000
-Received: from lelv0142.ext.ti.com ([198.47.23.249])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hghiD-0001WP-Cj
- for linux-arm-kernel@lists.infradead.org; Fri, 28 Jun 2019 03:38:10 +0000
-Received: from fllv0035.itg.ti.com ([10.64.41.0])
- by lelv0142.ext.ti.com (8.15.2/8.15.2) with ESMTP id x5S3c3sP008526;
- Thu, 27 Jun 2019 22:38:03 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1561693083;
- bh=dzmOZZff9xHTE8ZakTRvyW2vPBFPMXEZjI/07/tzJdY=;
- h=Subject:To:CC:References:From:Date:In-Reply-To;
- b=PmTFMMrFC0XpLwzqjUEL99pdWFb5xuITGQNnRtjaNWfs6PkLQk5p4AInIwbgfDvQO
- qEK44L9+NeiThBMQ/KTdxbg3pMdQGxzLkCOz2w1K4RYZL78Jn0JuUH4TU/PGNhMXtj
- wYQl7Y+mlO72LTLWVNITvQtr+MGIG6VdR1bNrjR8=
-Received: from DFLE102.ent.ti.com (dfle102.ent.ti.com [10.64.6.23])
- by fllv0035.itg.ti.com (8.15.2/8.15.2) with ESMTPS id x5S3c3bh058049
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Thu, 27 Jun 2019 22:38:03 -0500
-Received: from DFLE115.ent.ti.com (10.64.6.36) by DFLE102.ent.ti.com
- (10.64.6.23) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5; Thu, 27
- Jun 2019 22:38:03 -0500
-Received: from fllv0039.itg.ti.com (10.64.41.19) by DFLE115.ent.ti.com
- (10.64.6.36) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5 via
- Frontend Transport; Thu, 27 Jun 2019 22:38:03 -0500
-Received: from [172.24.191.45] (ileax41-snat.itg.ti.com [10.172.224.153])
- by fllv0039.itg.ti.com (8.15.2/8.15.2) with ESMTP id x5S3c0s2064279;
- Thu, 27 Jun 2019 22:38:01 -0500
-Subject: Re: [PATCH v2] arm64: Kconfig.platforms: Enable GPIO_DAVINCI for
- ARCH_K3
-To: Nishanth Menon <nm@ti.com>
-References: <20190627110920.15099-1-j-keerthy@ti.com>
- <20190627143208.eeca4xyygml7s4n3@kahuna>
-From: Keerthy <j-keerthy@ti.com>
-Message-ID: <39f5e726-8542-b650-3bdb-7542e8fab8ac@ti.com>
-Date: Fri, 28 Jun 2019 09:08:37 +0530
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.7.1
+	id 1hghqF-0005sD-FJ; Fri, 28 Jun 2019 03:46:27 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hghq1-0005rY-6Y
+ for linux-arm-kernel@lists.infradead.org; Fri, 28 Jun 2019 03:46:14 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id EEEA72B;
+ Thu, 27 Jun 2019 20:46:10 -0700 (PDT)
+Received: from [10.162.40.144] (p8cg001049571a15.blr.arm.com [10.162.40.144])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
+ 965093F706; Thu, 27 Jun 2019 20:46:08 -0700 (PDT)
+Subject: Re: [RFC 1/2] arm64/mm: Change THP helpers to comply with generic MM
+ semantics
+To: Zi Yan <ziy@nvidia.com>
+References: <1561639696-16361-1-git-send-email-anshuman.khandual@arm.com>
+ <1561639696-16361-2-git-send-email-anshuman.khandual@arm.com>
+ <7F685152-7C6C-4E99-99DF-03DDD03D6094@nvidia.com>
+From: Anshuman Khandual <anshuman.khandual@arm.com>
+Message-ID: <5c490be8-5ac1-0a3a-32cf-d4e692fc59b5@arm.com>
+Date: Fri, 28 Jun 2019 09:16:35 +0530
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101
+ Thunderbird/52.9.1
 MIME-Version: 1.0
-In-Reply-To: <20190627143208.eeca4xyygml7s4n3@kahuna>
+In-Reply-To: <7F685152-7C6C-4E99-99DF-03DDD03D6094@nvidia.com>
 Content-Language: en-US
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190627_203809_512024_EAB1EF2B 
-X-CRM114-Status: GOOD (  17.72  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20190627_204613_334714_2642B6AF 
+X-CRM114-Status: GOOD (  16.28  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.23.249 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,67 +64,80 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: lokeshvutla@ti.com, catalin.marinas@arm.com, will.deacon@arm.com,
- linux-kernel@vger.kernel.org, t-kristo@ti.com, shawnguo@kernel.org,
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Suzuki Poulose <suzuki.poulose@arm.com>, Marc Zyngier <marc.zyngier@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, linux-kernel@vger.kernel.org,
+ linux-mm@kvack.org, Will Deacon <will@kernel.org>,
  linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 
 
-On 27/06/19 8:02 PM, Nishanth Menon wrote:
-> On 16:39-20190627, Keerthy wrote:
->> Enable GPIO_DAVINCI and related configs for TI K3 AM6 platforms.
->>
->> Signed-off-by: Keerthy <j-keerthy@ti.com>
->> ---
->>
->> Changes in v2:
->>
->>    * Enabling configs in Kconfig.platforms file instead of defconfig.
->>    * Removed GPIO_DEBUG config.
->>
->>   arch/arm64/Kconfig.platforms | 2 ++
->>   1 file changed, 2 insertions(+)
->>
->> diff --git a/arch/arm64/Kconfig.platforms b/arch/arm64/Kconfig.platforms
->> index 4778c775de1b..6e43a0995ed4 100644
->> --- a/arch/arm64/Kconfig.platforms
->> +++ b/arch/arm64/Kconfig.platforms
->> @@ -97,6 +97,8 @@ config ARCH_K3
->>   	select TI_SCI_PROTOCOL
->>   	select TI_SCI_INTR_IRQCHIP
->>   	select TI_SCI_INTA_IRQCHIP
->> +	select GPIO_SYSFS
->> +	select GPIO_DAVINCI
+On 06/27/2019 09:01 PM, Zi Yan wrote:
+> On 27 Jun 2019, at 8:48, Anshuman Khandual wrote:
 > 
+>> pmd_present() and pmd_trans_huge() are expected to behave in the following
+>> manner during various phases of a given PMD. It is derived from a previous
+>> detailed discussion on this topic [1] and present THP documentation [2].
+>>
+>> pmd_present(pmd):
+>>
+>> - Returns true if pmd refers to system RAM with a valid pmd_page(pmd)
+>> - Returns false if pmd does not refer to system RAM - Invalid pmd_page(pmd)
+>>
+>> pmd_trans_huge(pmd):
+>>
+>> - Returns true if pmd refers to system RAM and is a trans huge mapping
+>>
+>> -------------------------------------------------------------------------
+>> |	PMD states	|	pmd_present	|	pmd_trans_huge	|
+>> -------------------------------------------------------------------------
+>> |	Mapped		|	Yes		|	Yes		|
+>> -------------------------------------------------------------------------
+>> |	Splitting	|	Yes		|	Yes		|
+>> -------------------------------------------------------------------------
+>> |	Migration/Swap	|	No		|	No		|
+>> -------------------------------------------------------------------------
+>>
+>> The problem:
+>>
+>> PMD is first invalidated with pmdp_invalidate() before it's splitting. This
+>> invalidation clears PMD_SECT_VALID as below.
+>>
+>> PMD Split -> pmdp_invalidate() -> pmd_mknotpresent -> Clears PMD_SECT_VALID
+>>
+>> Once PMD_SECT_VALID gets cleared, it results in pmd_present() return false
+>> on the PMD entry. It will need another bit apart from PMD_SECT_VALID to re-
+>> affirm pmd_present() as true during the THP split process. To comply with
+>> above mentioned semantics, pmd_trans_huge() should also check pmd_present()
+>> first before testing presence of an actual transparent huge mapping.
+>>
+>> The solution:
+>>
+>> Ideally PMD_TYPE_SECT should have been used here instead. But it shares the
+>> bit position with PMD_SECT_VALID which is used for THP invalidation. Hence
+>> it will not be there for pmd_present() check after pmdp_invalidate().
+>>
+>> PTE_SPECIAL never gets used for PMD mapping i.e there is no pmd_special().
+>> Hence this bit can be set on the PMD entry during invalidation which can
+>> help in making pmd_present() return true and in recognizing the fact that
+>> it still points to memory.
+>>
+>> This bit is transient. During the split is process it will be overridden
+>> by a page table page representing the normal pages in place of erstwhile
+>> huge page. Other pmdp_invalidate() callers always write a fresh PMD value
+>> on the entry overriding this transient PTE_SPECIAL making it safe. In the
+>> past former pmd_[mk]splitting() functions used PTE_SPECIAL.
+>>
+>> [1]: https://lkml.org/lkml/2018/10/17/231
 > 
-> Could you help explain the logic of doing this? commit message is
-> basically the diff in English. To me, this does NOT make sense.
-> 
-> I understand GPIO_DAVINCI is the driver compatible, but we cant do this for
-> every single SoC driver that is NOT absolutely mandatory for basic
-> functionality.
+> Just want to point out that lkml.org link might not be stable.
+> This one would be better: https://lore.kernel.org/linux-mm/20181017020930.GN30832@redhat.com/
 
-In case of ARM64 could you help me find the right place to enable
-such SoC specific configs?
-
-> 
-> Also keep in mind the impact to arm64/configs/defconfig -> every single
-> SoC in the arm64 world will be now rebuild with GPIO_SYSFS.. why force
-> that?
-
-This was the practice in arm32 soc specific configs like 
-omap2plus_defconfig. GPIO_SYSFS was he only way to validate. Now i 
-totally understand your concern about every single SoC rebuilding but 
-now where do we need to enable the bare minimal GPIO_DAVINCI config?
-
-v1 i received feedback from Tero to enable in Kconfig.platforms. Hence i 
-shifted to this approach.
-
-> 
+Sure will update the link in the commit. Thanks !
 
 _______________________________________________
 linux-arm-kernel mailing list
