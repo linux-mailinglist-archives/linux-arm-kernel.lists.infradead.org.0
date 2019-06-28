@@ -2,62 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D9754591D7
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 28 Jun 2019 05:06:25 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D426B59200
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 28 Jun 2019 05:35:13 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=+EkNTcH3PSgXhm6DV7Pm0QeQ9KrjesErcHOXfzxqAyQ=; b=PbvSAllr7mmkGJsPGE9wP2S9j3
-	ZGnkYjyXbQ4sZifyv/IQFsD1m7WPmNEwwk6UyJpkLU/jCnMPcsfMXKl/1XnF0BqDpl/e6xLJ6OT7j
-	DiNtOwm6qbva7ZFH4IJ9Vdn2EtrnLR2yP8zrdau/Ma3GxtVVKY62tOHyMsyagc/2sGzCDhE3LMX+7
-	pp8BvpLx48sAKewaoZospOaPLzWLpto2UE5XNM2M7b3I2O6hlWbs3yfMpkYsJmwzA1EvySHvc/Xzt
-	GMgPLX0Ooi+ega3dWyVi3fp7+CbTqbXw+ZWL+DlnCK9SJb09U5AZwJl2ysLYB/E6rJ2BRe5Nep1vZ
-	o1fIvKKg==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=Rvdf5XFX//psgs8vySIN13VF8i3FO7YFkZ/v+NZkWg8=; b=nu6
+	clAxkkchK6gWgTJj24fWSL2m9vIeoKqLvWBAKYUWfJsl3VFEYgy0CnD9iF2zMO8F0qO52kbh5+xdd
+	nzrrfKP7veWkW57ztrkfX3kmPfNrvPJOU2cz5GajpdD1CBsI81qYHv9G7Kf+zAtZe2+VKuP88c3Fw
+	twp+SDrUJrp8mb98o8OnbTJIYzOykHuu0+tgOot9cRf+hSgmRmECGL9fiJw22+DbBjuW29niL3iNn
+	LiJOYAl9jdchvewgelJU2r0zypmowZh1yPY2YkkwxURGN1xoEgkNd+WEHQe8YQn1Ur1pfbQyP0dxj
+	F5AOoTZfP7EeCIRBSQPGHpD7e2BM6Qg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hghDM-00083f-4x; Fri, 28 Jun 2019 03:06:16 +0000
-Received: from mx7.zte.com.cn ([202.103.147.169] helo=mxct.zte.com.cn)
+	id 1hghfG-0007t3-JY; Fri, 28 Jun 2019 03:35:06 +0000
+Received: from inva021.nxp.com ([92.121.34.21])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hghCw-0006m7-Qw
- for linux-arm-kernel@lists.infradead.org; Fri, 28 Jun 2019 03:05:53 +0000
-Received: from mse-fl1.zte.com.cn (unknown [10.30.14.238])
- by Forcepoint Email with ESMTPS id BBF1EA339E319CD62CE4;
- Fri, 28 Jun 2019 11:03:37 +0800 (CST)
-Received: from notes_smtp.zte.com.cn ([10.30.1.239])
- by mse-fl1.zte.com.cn with ESMTP id x5S32eB1063726;
- Fri, 28 Jun 2019 11:02:40 +0800 (GMT-8)
- (envelope-from wen.yang99@zte.com.cn)
-Received: from fox-host8.localdomain ([10.74.120.8])
- by szsmtp06.zte.com.cn (Lotus Domino Release 8.5.3FP6)
- with ESMTP id 2019062811031122-1800719 ;
- Fri, 28 Jun 2019 11:03:11 +0800 
-From: Wen Yang <wen.yang99@zte.com.cn>
-To: linux-kernel@vger.kernel.org
-Subject: [PATCH 2/3] media: exynos4-is: fix leaked of_node references
-Date: Fri, 28 Jun 2019 11:01:15 +0800
-Message-Id: <1561690876-20977-3-git-send-email-wen.yang99@zte.com.cn>
-X-Mailer: git-send-email 1.8.3.1
-In-Reply-To: <1561690876-20977-1-git-send-email-wen.yang99@zte.com.cn>
-References: <1561690876-20977-1-git-send-email-wen.yang99@zte.com.cn>
-X-MIMETrack: Itemize by SMTP Server on SZSMTP06/server/zte_ltd(Release
- 8.5.3FP6|November 21, 2013) at 2019-06-28 11:03:11,
- Serialize by Router on notes_smtp/zte_ltd(Release 9.0.1FP7|August  17, 2016) at
- 2019-06-28 11:02:45, Serialize complete at 2019-06-28 11:02:45
-X-MAIL: mse-fl1.zte.com.cn x5S32eB1063726
+ id 1hghez-0007sM-KF
+ for linux-arm-kernel@lists.infradead.org; Fri, 28 Jun 2019 03:34:51 +0000
+Received: from inva021.nxp.com (localhost [127.0.0.1])
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 2A463200304;
+ Fri, 28 Jun 2019 05:34:45 +0200 (CEST)
+Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
+ [165.114.16.14])
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 567642002F0;
+ Fri, 28 Jun 2019 05:34:40 +0200 (CEST)
+Received: from titan.ap.freescale.net (TITAN.ap.freescale.net [10.192.208.233])
+ by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 308CE402B3;
+ Fri, 28 Jun 2019 11:34:34 +0800 (SGT)
+From: Anson.Huang@nxp.com
+To: shawnguo@kernel.org, s.hauer@pengutronix.de, kernel@pengutronix.de,
+ festevam@gmail.com, aisheng.dong@nxp.com, abel.vesa@nxp.com,
+ linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
+Subject: [PATCH V2] soc: imx-scu: Add SoC UID(unique identifier) support
+Date: Fri, 28 Jun 2019 11:25:44 +0800
+Message-Id: <20190628032544.8317-1-Anson.Huang@nxp.com>
+X-Mailer: git-send-email 2.14.1
+X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190627_200551_054275_BB3BDAF0 
-X-CRM114-Status: GOOD (  13.16  )
+X-CRM114-CacheID: sfid-20190627_203449_805194_D1C26730 
+X-CRM114-Status: UNSURE (   9.13  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [202.103.147.169 listed in list.dnswl.org]
+ medium trust [92.121.34.21 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -71,79 +66,88 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: wang.yi59@zte.com.cn, linux-samsung-soc@vger.kernel.org,
- Krzysztof Kozlowski <krzk@kernel.org>,
- Kyungmin Park <kyungmin.park@samsung.com>, Kukjin Kim <kgene@kernel.org>,
- Sylwester Nawrocki <s.nawrocki@samsung.com>,
- Mauro Carvalho Chehab <mchehab@kernel.org>, Wen Yang <wen.yang99@zte.com.cn>,
- linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
+Cc: Linux-imx@nxp.com
 MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The call to of_get_child_by_name returns a node pointer with refcount
-incremented thus it must be explicitly decremented after the last
-usage.
+From: Anson Huang <Anson.Huang@nxp.com>
 
-Detected by coccinelle with the following warnings:
-drivers/media/platform/exynos4-is/fimc-is.c:813:2-8: ERROR: missing of_node_put; acquired a node pointer with refcount incremented on line 807, but without a corresponding object release within this function.
-drivers/media/platform/exynos4-is/fimc-is.c:870:1-7: ERROR: missing of_node_put; acquired a node pointer with refcount incremented on line 807, but without a corresponding object release within this function.
-drivers/media/platform/exynos4-is/fimc-is.c:885:1-7: ERROR: missing of_node_put; acquired a node pointer with refcount incremented on line 807, but without a corresponding object release within this function.
-drivers/media/platform/exynos4-is/media-dev.c:545:1-7: ERROR: missing of_node_put; acquired a node pointer with refcount incremented on line 541, but without a corresponding object release within this function.
-drivers/media/platform/exynos4-is/media-dev.c:528:1-7: ERROR: missing of_node_put; acquired a node pointer with refcount incremented on line 499, but without a corresponding object release within this function.
-drivers/media/platform/exynos4-is/media-dev.c:534:1-7: ERROR: missing of_node_put; acquired a node pointer with refcount incremented on line 499, but without a corresponding object release within this function.
+Add i.MX SCU SoC's UID(unique identifier) support, user
+can read it from sysfs:
 
-Signed-off-by: Wen Yang <wen.yang99@zte.com.cn>
-Cc: Kyungmin Park <kyungmin.park@samsung.com>
-Cc: Sylwester Nawrocki <s.nawrocki@samsung.com>
-Cc: Mauro Carvalho Chehab <mchehab@kernel.org>
-Cc: Kukjin Kim <kgene@kernel.org>
-Cc: Krzysztof Kozlowski <krzk@kernel.org>
-Cc: linux-media@vger.kernel.org
-Cc: linux-arm-kernel@lists.infradead.org
-Cc: linux-samsung-soc@vger.kernel.org
-Cc: linux-kernel@vger.kernel.org
+root@imx8qxpmek:~# cat /sys/devices/soc0/soc_uid
+7B64280B57AC1898
+
+Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
 ---
- drivers/media/platform/exynos4-is/fimc-is.c   | 1 +
- drivers/media/platform/exynos4-is/media-dev.c | 2 ++
- 2 files changed, 3 insertions(+)
+Changes since V1:
+	- Improve the comment of skipping SCFW API return value check for getting UID.
+---
+ drivers/soc/imx/soc-imx-scu.c | 39 +++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 39 insertions(+)
 
-diff --git a/drivers/media/platform/exynos4-is/fimc-is.c b/drivers/media/platform/exynos4-is/fimc-is.c
-index e043d55..b7cc8e6 100644
---- a/drivers/media/platform/exynos4-is/fimc-is.c
-+++ b/drivers/media/platform/exynos4-is/fimc-is.c
-@@ -806,6 +806,7 @@ static int fimc_is_probe(struct platform_device *pdev)
- 		return -ENODEV;
+diff --git a/drivers/soc/imx/soc-imx-scu.c b/drivers/soc/imx/soc-imx-scu.c
+index 676f612..3eacb54 100644
+--- a/drivers/soc/imx/soc-imx-scu.c
++++ b/drivers/soc/imx/soc-imx-scu.c
+@@ -27,6 +27,40 @@ struct imx_sc_msg_misc_get_soc_id {
+ 	} data;
+ } __packed;
  
- 	is->pmu_regs = of_iomap(node, 0);
-+	of_node_put(node);
- 	if (!is->pmu_regs)
- 		return -ENOMEM;
++struct imx_sc_msg_misc_get_soc_uid {
++	struct imx_sc_rpc_msg hdr;
++	u32 uid_low;
++	u32 uid_high;
++} __packed;
++
++static ssize_t soc_uid_show(struct device *dev,
++			    struct device_attribute *attr, char *buf)
++{
++	struct imx_sc_msg_misc_get_soc_uid msg;
++	struct imx_sc_rpc_msg *hdr = &msg.hdr;
++	u64 soc_uid;
++
++	hdr->ver = IMX_SC_RPC_VERSION;
++	hdr->svc = IMX_SC_RPC_SVC_MISC;
++	hdr->func = IMX_SC_MISC_FUNC_UNIQUE_ID;
++	hdr->size = 1;
++
++	/*
++	 * SCU FW API always returns an error even the
++	 * function is successfully executed, so skip
++	 * returned value check.
++	 */
++	imx_scu_call_rpc(soc_ipc_handle, &msg, true);
++
++	soc_uid = msg.uid_high;
++	soc_uid <<= 32;
++	soc_uid |= msg.uid_low;
++
++	return sprintf(buf, "%016llX\n", soc_uid);
++}
++
++static DEVICE_ATTR_RO(soc_uid);
++
+ static int imx_scu_soc_id(void)
+ {
+ 	struct imx_sc_msg_misc_get_soc_id msg;
+@@ -102,6 +136,11 @@ static int imx_scu_soc_probe(struct platform_device *pdev)
+ 		goto free_revision;
+ 	}
  
-diff --git a/drivers/media/platform/exynos4-is/media-dev.c b/drivers/media/platform/exynos4-is/media-dev.c
-index d53427a..a838189 100644
---- a/drivers/media/platform/exynos4-is/media-dev.c
-+++ b/drivers/media/platform/exynos4-is/media-dev.c
-@@ -501,6 +501,7 @@ static int fimc_md_register_sensor_entities(struct fimc_md *fmd)
- 			continue;
++	ret = device_create_file(soc_device_to_device(soc_dev),
++				 &dev_attr_soc_uid);
++	if (ret)
++		goto free_revision;
++
+ 	return 0;
  
- 		ret = fimc_md_parse_port_node(fmd, port, index);
-+		of_node_put(port);
- 		if (ret < 0) {
- 			of_node_put(node);
- 			goto cleanup;
-@@ -542,6 +543,7 @@ static int __of_get_csis_id(struct device_node *np)
- 	if (!np)
- 		return -EINVAL;
- 	of_property_read_u32(np, "reg", &reg);
-+	of_node_put(np);
- 	return reg - FIMC_INPUT_MIPI_CSI2_0;
- }
- 
+ free_revision:
 -- 
-2.9.5
+2.7.4
 
 
 _______________________________________________
