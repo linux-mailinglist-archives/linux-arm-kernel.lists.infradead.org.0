@@ -2,92 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 47EDF59942
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 28 Jun 2019 13:28:30 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9478959943
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 28 Jun 2019 13:28:51 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ufgFkWRc1brDJEUGZs72WZu04w+RLuw5FqZWwpYJ0+4=; b=Ct/WBSAXC+hSsK
-	5eNwBo5q0uO7oKtWhfioZxqYqDgrzBEroCc84oge2qHkTCEpBQykBu9naKM/U1CCoyIJe9LbYMF2u
-	EcTeka5falK8B0FjOSEy4QRzyuSUc31PmmxlV/d4bHb8OVqTt6qZR+nxplJMkOfkX7NJwtJU+1B34
-	4n+uXg1xOZSUTCR8Zo/tlGGgtwOT1raBS0m9aqYwU4kefnZ8bm8prfDyhNP9hHLhmWRquNyQthGl0
-	9a78fPE5/684Z7x5nfXClEydPt9xxkEKod8yffKkqi7JJp6rJZPWHJW901qzBUWFUCtqLeyLYIW2c
-	ImYfJGG1oI8X1teLBSaA==;
+	List-Owner; bh=JryzKs9XMqQtRe35Rr7od0XAyYXUEl5ztHn1s01ObhI=; b=VAch3go0+K44bB
+	Ln+Xszx9St+IJlwTdrHlO1fdWNF/iaIkBUyHkclm7Ogdn3eROGJ0h0QfX/IGLSUxbcmlJN/eMrw27
+	yrktYI3p3sRVb0c17LEyEMs/0ZIP96yOKsUTs8Ejw9c+1Ux/SUUX9Ylz8E8M8S+vwcRV+DmYBmShA
+	PRtOsvsejA+VctlP80SGaKH4g/dJIvq04QF6sN3pXa++yPvv2lnLVVBnvcFtr0xCOMaIXFKoZwa97
+	tc6DMvtQPWQyc/L6MWDt0c3l2eHiWaMuOuDUHiI/47AIjKD7/u7+rrzhzL7C+ZK7fTylYypymWXEG
+	tah5d7IP1dU0iudWYY3Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hgp3J-0004kZ-S4; Fri, 28 Jun 2019 11:28:26 +0000
-Received: from mx07-00178001.pphosted.com ([62.209.51.94])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hgp2J-0004Gp-BL
- for linux-arm-kernel@lists.infradead.org; Fri, 28 Jun 2019 11:27:25 +0000
-Received: from pps.filterd (m0046037.ppops.net [127.0.0.1])
- by mx07-00178001.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id
- x5SBPoTB020526; Fri, 28 Jun 2019 13:27:16 +0200
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
- h=from : to : cc : subject
- : date : message-id : in-reply-to : references : mime-version :
- content-type; s=STMicroelectronics;
- bh=B6KqXSyspmxT0bd7YntUlngpbE0mK1d5i/1VLUqBWcI=;
- b=mUfFigTvElxyHlwiLQxFJ/k3QpDOJNIxbstkUDF7lWH4w3tSGN6OCoYGHlH178Haqnkh
- NODZvcZA5yMsAwow863FlIj0H9PgE/zYeUvxEAmOoy9onEgPAyMBpv9wVaY59g+FP+Rw
- X38VFHECgUvzzWg7ZU3YIFnYaHHWkbV3hJLFuocD+5seFir99rJZqEx27RluT5Ey8ixg
- 91bi6eoP74jk8xf+5TZ/FXaTXxtcnBoWRKiqKvVQMFn48LL/Ka+LQB5Pu+owq5J81hgk
- ODg/6bFKhiTcnNaWbHR2nGQ7aeG0NIWyrwGDaQzT+1SI8j/idjakxtP5xy08NcfoHqL6 zw== 
-Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx07-00178001.pphosted.com with ESMTP id 2tcyq0e4kv-1
- (version=TLSv1 cipher=ECDHE-RSA-AES256-SHA bits=256 verify=NOT);
- Fri, 28 Jun 2019 13:27:16 +0200
-Received: from zeta.dmz-eu.st.com (zeta.dmz-eu.st.com [164.129.230.9])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id EEAB531;
- Fri, 28 Jun 2019 11:27:15 +0000 (GMT)
-Received: from Webmail-eu.st.com (Safex1hubcas23.st.com [10.75.90.46])
- by zeta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 9802827A6;
- Fri, 28 Jun 2019 11:27:15 +0000 (GMT)
-Received: from SAFEX1HUBCAS22.st.com (10.75.90.93) by SAFEX1HUBCAS23.st.com
- (10.75.90.46) with Microsoft SMTP Server (TLS) id 14.3.439.0; Fri, 28 Jun
- 2019 13:27:15 +0200
-Received: from localhost (10.201.23.65) by Webmail-ga.st.com (10.75.90.48)
- with Microsoft SMTP Server (TLS) id 14.3.439.0; Fri, 28 Jun 2019 13:27:15
- +0200
-From: Lionel Debieve <lionel.debieve@st.com>
-To: Herbert Xu <herbert@gondor.apana.org.au>, "David S . Miller"
- <davem@davemloft.net>, Maxime Coquelin <mcoquelin.stm32@gmail.com>,
- "Alexandre Torgue" <alexandre.torgue@st.com>,
- <linux-crypto@vger.kernel.org>, <linux-arm-kernel@lists.infradead.org>,
- <linux-kernel@vger.kernel.org>
-Subject: [PATCH 2/2] crypto: stm32/hash: remove interruptible condition for dma
-Date: Fri, 28 Jun 2019 13:26:55 +0200
-Message-ID: <20190628112655.9341-3-lionel.debieve@st.com>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20190628112655.9341-1-lionel.debieve@st.com>
-References: <20190628112655.9341-1-lionel.debieve@st.com>
+	id 1hgp3h-00052V-NS; Fri, 28 Jun 2019 11:28:49 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hgp2b-0004W2-Nt
+ for linux-arm-kernel@lists.infradead.org; Fri, 28 Jun 2019 11:27:43 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 1B7AA28;
+ Fri, 28 Jun 2019 04:27:41 -0700 (PDT)
+Received: from lakrids.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
+ [10.121.207.14])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 3355D3F718;
+ Fri, 28 Jun 2019 04:27:40 -0700 (PDT)
+Date: Fri, 28 Jun 2019 12:27:38 +0100
+From: Mark Rutland <mark.rutland@arm.com>
+To: Dave Martin <Dave.Martin@arm.com>
+Subject: Re: [PATCH 2/3] arm64: stacktrace: Factor out backtrace initialisation
+Message-ID: <20190628112737.GH36437@lakrids.cambridge.arm.com>
+References: <20190606125402.10229-1-mark.rutland@arm.com>
+ <20190606125402.10229-3-mark.rutland@arm.com>
+ <20190621155047.GE2790@e103592.cambridge.arm.com>
 MIME-Version: 1.0
-X-Originating-IP: [10.201.23.65]
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:, ,
- definitions=2019-06-28_04:, , signatures=0
+Content-Disposition: inline
+In-Reply-To: <20190621155047.GE2790@e103592.cambridge.arm.com>
+User-Agent: Mutt/1.11.1+11 (2f07cb52) (2018-12-01)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190628_042723_718750_B795539D 
-X-CRM114-Status: GOOD (  13.89  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20190628_042741_933160_7D3FA4BA 
+X-CRM114-Status: GOOD (  20.95  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [62.209.51.94 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- 0.0 KHOP_DYNAMIC           Relay looks like a dynamic address
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -99,43 +63,148 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Ludovic Barre <ludovic.barre@st.com>,
- Benjamin Gaignard <benjamin.gaignard@st.com>,
- Fabien Dessenne <fabien.dessenne@st.com>,
- linux-stm32@st-md-mailman.stormreply.com
+Cc: catalin.marinas@arm.com, tengfeif@codeaurora.org, will.deacon@arm.com,
+ james.morse@arm.com, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-When DMA is used, waiting for completion must not be
-interruptible as it can generate an error that is not handle
-by the driver. There is no need to put the completion
-interruptible in this driver.
+On Fri, Jun 21, 2019 at 04:50:48PM +0100, Dave Martin wrote:
+> On Thu, Jun 06, 2019 at 01:54:01PM +0100, Mark Rutland wrote:
+> > From: Dave Martin <Dave.Martin@arm.com>
+> > 
+> > Some common code is required by each stacktrace user to initialise
+> > struct stackframe before the first call to unwind_frame().
+> > 
+> > In preparation for adding to the common code, this patch factors it
+> > out into a separate function start_backtrace(), and modifies the
+> > stacktrace callers appropriately.
+> > 
+> > No functional change.
+> > 
+> > Signed-off-by: Dave Martin <dave.martin@arm.com>
+> > Signed-off-by: Mark Rutland <mark.rutland@arm.com>
+> 
+> Ack (from memory you just added the CONFIG_FUNCTION_GRAPH_TRACER stuff,
+> the lack of which was causing build failures in my original version).
 
-Signed-off-by: Lionel Debieve <lionel.debieve@st.com>
----
- drivers/crypto/stm32/stm32-hash.c | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
+You handled that in the version of the seires this was picked from [1].
 
-diff --git a/drivers/crypto/stm32/stm32-hash.c b/drivers/crypto/stm32/stm32-hash.c
-index c37d1a336f98..23061f2bc74b 100644
---- a/drivers/crypto/stm32/stm32-hash.c
-+++ b/drivers/crypto/stm32/stm32-hash.c
-@@ -447,8 +447,8 @@ static int stm32_hash_xmit_dma(struct stm32_hash_dev *hdev,
- 
- 	dma_async_issue_pending(hdev->dma_lch);
- 
--	if (!wait_for_completion_interruptible_timeout(&hdev->dma_completion,
--						       msecs_to_jiffies(100)))
-+	if (!wait_for_completion_timeout(&hdev->dma_completion,
-+					 msecs_to_jiffies(100)))
- 		err = -ETIMEDOUT;
- 
- 	if (dma_async_is_tx_complete(hdev->dma_lch, cookie,
--- 
-2.17.1
+I removed the tsk parameter, which now gets added in patch 3. I can
+re-add that to this patch, or leave this as-is -- I have no strong
+feelings either way.
 
+> Have you added any new calls to start_backtrace() here?
+
+No; I have not added any new calls.
+
+Thanks,
+Mark.
+
+[1] http://lists.infradead.org/pipermail/linux-arm-kernel/2018-April/572687.html
+
+> 
+> Cheers
+> ---Dave
+> 
+> > ---
+> >  arch/arm64/include/asm/stacktrace.h | 10 ++++++++++
+> >  arch/arm64/kernel/process.c         |  6 +-----
+> >  arch/arm64/kernel/time.c            |  6 +-----
+> >  arch/arm64/kernel/traps.c           | 13 ++++++-------
+> >  4 files changed, 18 insertions(+), 17 deletions(-)
+> > 
+> > diff --git a/arch/arm64/include/asm/stacktrace.h b/arch/arm64/include/asm/stacktrace.h
+> > index 4dd569592e65..18f90bf1385c 100644
+> > --- a/arch/arm64/include/asm/stacktrace.h
+> > +++ b/arch/arm64/include/asm/stacktrace.h
+> > @@ -142,4 +142,14 @@ static inline bool on_accessible_stack(const struct task_struct *tsk,
+> >  	return false;
+> >  }
+> >  
+> > +static inline void start_backtrace(struct stackframe *frame,
+> > +				   unsigned long fp, unsigned long pc)
+> > +{
+> > +	frame->fp = fp;
+> > +	frame->pc = pc;
+> > +#ifdef CONFIG_FUNCTION_GRAPH_TRACER
+> > +	frame->graph = 0;
+> > +#endif
+> > +}
+> > +
+> >  #endif	/* __ASM_STACKTRACE_H */
+> > diff --git a/arch/arm64/kernel/process.c b/arch/arm64/kernel/process.c
+> > index 3767fb21a5b8..122d88fccd13 100644
+> > --- a/arch/arm64/kernel/process.c
+> > +++ b/arch/arm64/kernel/process.c
+> > @@ -509,11 +509,7 @@ unsigned long get_wchan(struct task_struct *p)
+> >  	if (!stack_page)
+> >  		return 0;
+> >  
+> > -	frame.fp = thread_saved_fp(p);
+> > -	frame.pc = thread_saved_pc(p);
+> > -#ifdef CONFIG_FUNCTION_GRAPH_TRACER
+> > -	frame.graph = 0;
+> > -#endif
+> > +	start_backtrace(&frame, thread_saved_fp(p), thread_saved_pc(p));
+> >  	do {
+> >  		if (unwind_frame(p, &frame))
+> >  			goto out;
+> > diff --git a/arch/arm64/kernel/time.c b/arch/arm64/kernel/time.c
+> > index a777ae90044d..aa3489f3a452 100644
+> > --- a/arch/arm64/kernel/time.c
+> > +++ b/arch/arm64/kernel/time.c
+> > @@ -49,11 +49,7 @@ unsigned long profile_pc(struct pt_regs *regs)
+> >  	if (!in_lock_functions(regs->pc))
+> >  		return regs->pc;
+> >  
+> > -	frame.fp = regs->regs[29];
+> > -	frame.pc = regs->pc;
+> > -#ifdef CONFIG_FUNCTION_GRAPH_TRACER
+> > -	frame.graph = 0;
+> > -#endif
+> > +	start_backtrace(&frame, regs->regs[29], regs->pc);
+> >  	do {
+> >  		int ret = unwind_frame(NULL, &frame);
+> >  		if (ret < 0)
+> > diff --git a/arch/arm64/kernel/traps.c b/arch/arm64/kernel/traps.c
+> > index ade32046f3fe..8053bbed8776 100644
+> > --- a/arch/arm64/kernel/traps.c
+> > +++ b/arch/arm64/kernel/traps.c
+> > @@ -119,18 +119,17 @@ void dump_backtrace(struct pt_regs *regs, struct task_struct *tsk)
+> >  		return;
+> >  
+> >  	if (tsk == current) {
+> > -		frame.fp = (unsigned long)__builtin_frame_address(0);
+> > -		frame.pc = (unsigned long)dump_backtrace;
+> > +		start_backtrace(&frame,
+> > +				(unsigned long)__builtin_frame_address(0),
+> > +				(unsigned long)dump_backtrace);
+> >  	} else {
+> >  		/*
+> >  		 * task blocked in __switch_to
+> >  		 */
+> > -		frame.fp = thread_saved_fp(tsk);
+> > -		frame.pc = thread_saved_pc(tsk);
+> > +		start_backtrace(&frame,
+> > +				thread_saved_fp(tsk),
+> > +				thread_saved_pc(tsk));
+> >  	}
+> > -#ifdef CONFIG_FUNCTION_GRAPH_TRACER
+> > -	frame.graph = 0;
+> > -#endif
+> >  
+> >  	printk("Call trace:\n");
+> >  	do {
+> > -- 
+> > 2.11.0
+> > 
+> > 
+> > _______________________________________________
+> > linux-arm-kernel mailing list
+> > linux-arm-kernel@lists.infradead.org
+> > http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
 
 _______________________________________________
 linux-arm-kernel mailing list
