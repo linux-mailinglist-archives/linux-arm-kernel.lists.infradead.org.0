@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 616AC59544
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 28 Jun 2019 09:43:59 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C049C59540
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 28 Jun 2019 09:43:23 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,38 +11,38 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=ypqtLmFaL5rlROWcyaPyx4X16JDU9Af9I7yxuy+z4BY=; b=j2VdmMLguZiItqDJVQ3irAjrl/
-	b47r54f1EuCZ5Cp87RKWCO2NS9ZzuNyUy3H7nHyGIObZBq0gqwkja5gqe1MITRW7QqpKNSW1f3RYk
-	XjDbiMLDIg/j3tHIBp6EC88fey76a4j+y5k2wXojybJXQUzBQfVQCtPvVAp5kacEHGco/FxYz1T0P
-	VmW7YRwrxUpsjoaUML9tcLEwdef6SqqvaN9S6wdE3+FM+UQSKuIWmJFusAnUm4mUFOuVE1XBDvopf
-	4cwhSGvxZFQyq45UKhJzU10tr5Mw2aMHPglsYYvjSga8Ys6FVCnX4N2do6XqQA0K56y00qfwTo3Za
-	tUZjDpyA==;
+	bh=XpA0IzVW8zwasFxphviafVHIfZEo14zZPYvDGLnMexk=; b=ZKsxRftYRjgangLYVtkRwVh7wn
+	FdS+iIC+275F/i4IIDqC68/8r9K8dZUF/ZkfZU/Kt4rHPbongxIfa0iDh8Mjnipvd4rRVuPTeZtlH
+	/Py9cmihpDS2Kgafk+Itn1M5itzIGetgeYkFSfovv0BxG4EN0LCmdh7LUwOYI98Yu8RHl3VGYaMNM
+	aQ82UBxFSZPJLFpOY6Wt9gIJobAoCPFvAkPF77p2wLVCFM+bGXKLUyLaGchSxTIp0G3bxCtTlMDGv
+	Wu6/iB99S6E9Ms9aoppRxM0mk06HvnWL+B1ehLlaw8vUFqvs4f73pwPnW11YqGAsYJfS+Rx4ZRdXN
+	RegixSLg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hglY3-0001i2-M8; Fri, 28 Jun 2019 07:43:55 +0000
-Received: from inva021.nxp.com ([92.121.34.21])
+	id 1hglXT-0001Cy-Hu; Fri, 28 Jun 2019 07:43:19 +0000
+Received: from inva020.nxp.com ([92.121.34.13])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hglUP-0007Q8-Ad
+ id 1hglUQ-0007Ut-2S
  for linux-arm-kernel@lists.infradead.org; Fri, 28 Jun 2019 07:40:14 +0000
-Received: from inva021.nxp.com (localhost [127.0.0.1])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id B0A57200D4A;
- Fri, 28 Jun 2019 09:40:07 +0200 (CEST)
+Received: from inva020.nxp.com (localhost [127.0.0.1])
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id AA7961A0DC4;
+ Fri, 28 Jun 2019 09:40:08 +0200 (CEST)
 Received: from inva024.eu-rdc02.nxp.com (inva024.eu-rdc02.nxp.com
  [134.27.226.22])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id A3A86200372;
- Fri, 28 Jun 2019 09:40:07 +0200 (CEST)
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 9D9231A0346;
+ Fri, 28 Jun 2019 09:40:08 +0200 (CEST)
 Received: from fsr-ub1864-112.ea.freescale.net
  (fsr-ub1864-112.ea.freescale.net [10.171.82.98])
- by inva024.eu-rdc02.nxp.com (Postfix) with ESMTP id BCC94205D5;
- Fri, 28 Jun 2019 09:40:06 +0200 (CEST)
+ by inva024.eu-rdc02.nxp.com (Postfix) with ESMTP id B4496205D5;
+ Fri, 28 Jun 2019 09:40:07 +0200 (CEST)
 From: Leonard Crestez <leonard.crestez@nxp.com>
 To: Alexandre Bailon <abailon@baylibre.com>,
  Georgi Djakov <georgi.djakov@linaro.org>, Stephen Boyd <sboyd@kernel.org>,
  Michael Turquette <mturquette@baylibre.com>,
  Viresh Kumar <viresh.kumar@linaro.org>
-Subject: [RFCv2 7/8] arm64: dts: imx8mm: Add interconnect node
-Date: Fri, 28 Jun 2019 10:39:55 +0300
-Message-Id: <5bb33047e7ac6fbb3a414c1c2fa764076b17792c.1561707104.git.leonard.crestez@nxp.com>
+Subject: [RFCv2 8/8] arm64: dts: imx8mm: Add devfreq-imx nodes
+Date: Fri, 28 Jun 2019 10:39:56 +0300
+Message-Id: <f5714b11a0f46b20cef3cad0cf615bc1093499de.1561707104.git.leonard.crestez@nxp.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <cover.1561707104.git.leonard.crestez@nxp.com>
 References: <cover.1561707104.git.leonard.crestez@nxp.com>
@@ -50,8 +50,8 @@ In-Reply-To: <cover.1561707104.git.leonard.crestez@nxp.com>
 References: <cover.1561707104.git.leonard.crestez@nxp.com>
 X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190628_004009_601215_7C74B8A4 
-X-CRM114-Status: UNSURE (   7.60  )
+X-CRM114-CacheID: sfid-20190628_004010_474733_4F7EA2D1 
+X-CRM114-Status: UNSURE (   9.13  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -59,7 +59,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [92.121.34.21 listed in list.dnswl.org]
+ medium trust [92.121.34.13 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -88,48 +88,105 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+The imx8mm has multiple buses which can be scaled with some degree of
+independence. Expose them as devfreq devices for userspace scaling.
+
+It shouldn't be possible to get the system in a non-working state this
+way. It is primarily aimed at testing and fine performance tuning.
+
 Signed-off-by: Leonard Crestez <leonard.crestez@nxp.com>
 ---
- arch/arm64/boot/dts/freescale/imx8mm.dtsi | 11 +++++++++++
- 1 file changed, 11 insertions(+)
+ arch/arm64/boot/dts/freescale/imx8mm.dtsi | 54 +++++++++++++++++++++++
+ 1 file changed, 54 insertions(+)
 
 diff --git a/arch/arm64/boot/dts/freescale/imx8mm.dtsi b/arch/arm64/boot/dts/freescale/imx8mm.dtsi
-index 5da905c257ad..3b4b112814f7 100644
+index 3b4b112814f7..aa9ed418652d 100644
 --- a/arch/arm64/boot/dts/freescale/imx8mm.dtsi
 +++ b/arch/arm64/boot/dts/freescale/imx8mm.dtsi
-@@ -6,10 +6,11 @@
- #include <dt-bindings/clock/imx8mm-clock.h>
- #include <dt-bindings/gpio/gpio.h>
- #include <dt-bindings/input/input.h>
- #include <dt-bindings/interrupt-controller/arm-gic.h>
- #include <dt-bindings/thermal/thermal.h>
-+#include <dt-bindings/interconnect/imx8mm.h>
- 
- #include "imx8mm-pinfunc.h"
- 
- / {
- 	compatible = "fsl,imx8mm";
-@@ -179,10 +180,20 @@
- 		interrupts = <GIC_PPI 7
- 			     (GIC_CPU_MASK_SIMPLE(6) | IRQ_TYPE_LEVEL_HIGH)>;
- 		interrupt-affinity = <&A53_0>, <&A53_1>, <&A53_2>, <&A53_3>;
+@@ -121,10 +121,32 @@
+ 			opp-supported-hw = <0x8>, <0x7>;
+ 			clock-latency-ns = <150000>;
+ 		};
  	};
  
-+	icc: interconnect {
-+		compatible = "fsl,imx8mm-interconnect";
-+		#interconnect-cells = <1>;
-+		clocks = <&clk IMX8MM_CLK_DRAM>,
-+			 <&clk IMX8MM_CLK_NOC>,
-+			 <&clk IMX8MM_CLK_AHB>,
-+			 <&clk IMX8MM_CLK_MAIN_AXI>;
-+		clock-names = "dram", "noc", "ahb", "axi";
++	ddrc_opp_table: ddrc-opp-table {
++		compatible = "operating-points-v2";
++
++		opp-25M {
++			opp-hz = /bits/ 64 <25000000>;
++		};
++		opp-750M {
++			opp-hz = /bits/ 64 <750000000>;
++		};
 +	};
 +
- 	timer {
- 		compatible = "arm,armv8-timer";
- 		interrupts = <GIC_PPI 13 (GIC_CPU_MASK_SIMPLE(6) | IRQ_TYPE_LEVEL_LOW)>, /* Physical Secure */
- 			     <GIC_PPI 14 (GIC_CPU_MASK_SIMPLE(6) | IRQ_TYPE_LEVEL_LOW)>, /* Physical Non-Secure */
- 			     <GIC_PPI 11 (GIC_CPU_MASK_SIMPLE(6) | IRQ_TYPE_LEVEL_LOW)>, /* Virtual */
++	noc_opp_table: noc-opp-table {
++		compatible = "operating-points-v2";
++
++		opp-150M {
++			opp-hz = /bits/ 64 <150000000>;
++		};
++		opp-750M {
++			opp-hz = /bits/ 64 <750000000>;
++		};
++	};
++
+ 	memory@40000000 {
+ 		device_type = "memory";
+ 		reg = <0x0 0x40000000 0 0x80000000>;
+ 	};
+ 
+@@ -748,10 +770,35 @@
+ 				status = "disabled";
+ 			};
+ 
+ 		};
+ 
++		pl301_main: nic@32000000 {
++			compatible = "fsl,imx8mm-nic";
++			reg = <0x32000000 0x100000>;
++			clocks = <&clk IMX8MM_CLK_MAIN_AXI>;
++		};
++
++		pl301_wakeup: nic@32100000 {
++			compatible = "fsl,imx8mm-nic";
++			reg = <0x32100000 0x100000>;
++			clocks = <&clk IMX8MM_CLK_AHB>;
++		};
++
++		pl301_enet: nic@32400000 {
++			compatible = "fsl,imx8mm-nic";
++			reg = <0x32400000 0x100000>;
++			clocks = <&clk IMX8MM_CLK_ENET_AXI>;
++		};
++
++		noc: noc@32700000 {
++			compatible = "fsl,imx8mm-noc";
++			reg = <0x32700000 0x100000>;
++			clocks = <&clk IMX8MM_CLK_NOC>;
++			operating-points-v2 = <&noc_opp_table>;
++		};
++
+ 		aips4: bus@32c00000 {
+ 			compatible = "fsl,aips-bus", "simple-bus";
+ 			#address-cells = <1>;
+ 			#size-cells = <1>;
+ 			ranges = <0x32c00000 0x32c00000 0x400000>;
+@@ -835,7 +882,14 @@
+ 			      <0x38880000 0xc0000>; /* GICR (RD_base + SGI_base) */
+ 			#interrupt-cells = <3>;
+ 			interrupt-controller;
+ 			interrupts = <GIC_PPI 9 IRQ_TYPE_LEVEL_HIGH>;
+ 		};
++
++		ddrc: dram-controller@3d400000 {
++			compatible = "fsl,imx8mm-ddrc";
++			reg = <0x3d400000 0x400000>;
++			clocks = <&clk IMX8MM_CLK_DRAM>;
++			operating-points-v2 = <&ddrc_opp_table>;
++		};
+ 	};
+ };
 -- 
 2.17.1
 
