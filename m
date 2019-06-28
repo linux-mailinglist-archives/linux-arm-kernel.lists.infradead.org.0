@@ -2,64 +2,104 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6132C594C2
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 28 Jun 2019 09:24:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 929A6594DC
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 28 Jun 2019 09:29:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=AvasuzCKGtt9/RI5Y6Z1T19UC+6cp4GF0MdyNsgyffY=; b=X3GtRB4fgx/5VT
-	Wqu2f5NzpfO7Cvok2XS1W0Tk8N8nBGz75oEt27hXAHsEsWm21lD1TnloaY5gt3CunPrBPQnE7hQrq
-	FTO1HHw30SIkIdJ3SXYpq6A8XZO/docdjFQj8rVoQI4CKIKgZy7AYYhoFMWF+Y/oA7o8pj0XM2YRK
-	nEYm0hbmjnqJF+TjBppj3oQa38kciYVhIGl8qDc4xixQ7yeqmALF+dRy59zA+24s272RSzKRHMv3z
-	iXqC4iOyTVW0xlrGl70YBM7dnLw7sCBSlavD04VYdo/Wto6PEFuja/CsUM2hj4DYZOOzdjCYOjGLZ
-	+E2EmTUp/356IywNstOQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=6DnC098DbiZJVScy3FVTK7GU3vEP2+Nmx4gjJmP/T0c=; b=EpRbYMRHteeiw1
+	iW0+JTyxHKm/cgklObuDw7imoKyMsCiIX39w8xzEBVSTOyzO1apJmHpHAGaLlrzENt17CkQESvDUP
+	SHuztuliRr4ZzSsC5oFSBI/J43fP4b3us9265h4VGYjXMGvlssreh7DpXICZcU6IIYeqhG6jpAXzS
+	6lItwBMW2ZkBgIGDTQLN9U8+Wk/AYMwn3R2cqtmULYaBwyRNFDGfIDP8plHUZGy3Sh9vzZvvzBOoH
+	lI9aG9MJt1NBvvTGf8p0+fCcSaN8aneBCZYm3EyKWP59yd/Sjca3gG/XxoWEgID7L4Io4GeWobKPN
+	eQ55ZIhQfIdcPWDKqIpg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hglEg-0008PP-AL; Fri, 28 Jun 2019 07:23:54 +0000
-Received: from mailgw02.mediatek.com ([216.200.240.185])
+	id 1hglJy-00021L-N5; Fri, 28 Jun 2019 07:29:22 +0000
+Received: from aserp2120.oracle.com ([141.146.126.78])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hglE8-0008GR-6T; Fri, 28 Jun 2019 07:23:21 +0000
-X-UUID: 90fa26496b9c4be8a5712c3d6fb6d532-20190627
-X-UUID: 90fa26496b9c4be8a5712c3d6fb6d532-20190627
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
- (envelope-from <weiyi.lu@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1563477876; Thu, 27 Jun 2019 23:22:53 -0800
-Received: from MTKMBS07N2.mediatek.inc (172.21.101.141) by
- MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Fri, 28 Jun 2019 00:22:52 -0700
-Received: from mtkcas09.mediatek.inc (172.21.101.178) by
- mtkmbs07n2.mediatek.inc (172.21.101.141) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Fri, 28 Jun 2019 15:22:50 +0800
-Received: from mtksdccf07.mediatek.inc (172.21.84.99) by mtkcas09.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via
- Frontend Transport; Fri, 28 Jun 2019 15:22:50 +0800
-From: Weiyi Lu <weiyi.lu@mediatek.com>
-To: Nicolas Boichat <drinkcat@chromium.org>, Matthias Brugger
- <matthias.bgg@gmail.com>, Stephen Boyd <sboyd@kernel.org>
-Subject: [PATCH v3] clk: mediatek: mt8183: Register 13MHz clock earlier for
- clocksource
-Date: Fri, 28 Jun 2019 15:22:34 +0800
-Message-ID: <1561706554-27770-1-git-send-email-weiyi.lu@mediatek.com>
-X-Mailer: git-send-email 1.8.1.1.dirty
+ id 1hglJj-00020G-9n; Fri, 28 Jun 2019 07:29:08 +0000
+Received: from pps.filterd (aserp2120.oracle.com [127.0.0.1])
+ by aserp2120.oracle.com (8.16.0.27/8.16.0.27) with SMTP id x5S7NpPT082922;
+ Fri, 28 Jun 2019 07:28:46 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=oracle.com;
+ h=date : from : to : cc
+ : subject : message-id : references : mime-version : content-type :
+ in-reply-to; s=corp-2018-07-02;
+ bh=eVp0fj2a3CahJv1vtl/9w4CV52CUJKAT7WbuznAHrjU=;
+ b=z0NzqCAF+XcgQrMDawTZaxENcIXaVUAtO8SuL0lJ/LsoodFnFt2SmvAgpr9d0Rq12nC2
+ tV3XDOuHZ5iG4wte5EcWSB9D9wnsP8CRP1vNTD3/vuFCyaehSlwGkCNNxnVLKNNm9Yyt
+ n+zMBdhsAWbY9TvojHNUmSynRqWBoMSCUL8ejzMUwK4pdW5p4eSlCYjFGIkRQpt7kq3G
+ JvvKEfCewVrExB9qjLRsx49eupODpFNjS+zI3fSBZEWgjQpi4uHhW6prheNd/YO5MJBy
+ yj4St6qLV9/8aI3QE45Dm324IrksfJycOG3PwwlnC2mCduMM3Mzfs6wnzKSVzgh5w+dm KQ== 
+Received: from userp3020.oracle.com (userp3020.oracle.com [156.151.31.79])
+ by aserp2120.oracle.com with ESMTP id 2t9c9q436f-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Fri, 28 Jun 2019 07:28:46 +0000
+Received: from pps.filterd (userp3020.oracle.com [127.0.0.1])
+ by userp3020.oracle.com (8.16.0.27/8.16.0.27) with SMTP id x5S7Rlxp161109;
+ Fri, 28 Jun 2019 07:28:45 GMT
+Received: from userv0121.oracle.com (userv0121.oracle.com [156.151.31.72])
+ by userp3020.oracle.com with ESMTP id 2tat7dt0n2-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Fri, 28 Jun 2019 07:28:45 +0000
+Received: from abhmp0022.oracle.com (abhmp0022.oracle.com [141.146.116.28])
+ by userv0121.oracle.com (8.14.4/8.13.8) with ESMTP id x5S7ShQB015527;
+ Fri, 28 Jun 2019 07:28:44 GMT
+Received: from kadam (/41.57.98.10) by default (Oracle Beehive Gateway v4.0)
+ with ESMTP ; Fri, 28 Jun 2019 00:28:43 -0700
+Date: Fri, 28 Jun 2019 10:28:34 +0300
+From: Dan Carpenter <dan.carpenter@oracle.com>
+To: Stefan Wahren <wahrenst@gmx.net>
+Subject: Re: [PATCH 01/31] staging: bcm2835-camera: Ensure H264 header bytes
+ get a sensible timestamp
+Message-ID: <20190628072834.GE19015@kadam>
+References: <1561661788-22744-1-git-send-email-wahrenst@gmx.net>
+ <1561661788-22744-2-git-send-email-wahrenst@gmx.net>
 MIME-Version: 1.0
-X-MTK: N
+Content-Disposition: inline
+In-Reply-To: <1561661788-22744-2-git-send-email-wahrenst@gmx.net>
+User-Agent: Mutt/1.9.4 (2018-02-28)
+X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9301
+ signatures=668688
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 suspectscore=0
+ malwarescore=0
+ phishscore=0 bulkscore=0 spamscore=0 mlxscore=0 mlxlogscore=863
+ adultscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.0.1-1810050000 definitions=main-1906280085
+X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9301
+ signatures=668688
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0
+ priorityscore=1501 malwarescore=0
+ suspectscore=0 phishscore=0 bulkscore=0 spamscore=0 clxscore=1015
+ lowpriorityscore=0 mlxscore=0 impostorscore=0 mlxlogscore=915 adultscore=0
+ classifier=spam adjust=0 reason=mlx scancount=1 engine=8.0.1-1810050000
+ definitions=main-1906280084
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190628_002320_264151_6A9D7EE6 
-X-CRM114-Status: UNSURE (   9.48  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190628_002907_433552_CE3BE54A 
+X-CRM114-Status: GOOD (  15.84  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [141.146.126.78 listed in list.dnswl.org]
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
  0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
  lines
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -71,114 +111,34 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Dehui Sun <dehui.sun@mediatek.com>, James Liao <jamesjj.liao@mediatek.com>,
- Weiyi Lu <weiyi.lu@mediatek.com>, srv_heupstream@mediatek.com,
- linux-kernel@vger.kernel.org, stable@vger.kernel.org,
- Fan Chen <fan.chen@mediatek.com>, linux-mediatek@lists.infradead.org,
- linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: devel@driverdev.osuosl.org, Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Hans Verkuil <hverkuil@xs4all.nl>, Eric Anholt <eric@anholt.net>,
+ linux-rpi-kernel@lists.infradead.org,
+ Dave Stevenson <dave.stevenson@raspberrypi.org>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>,
+ linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The 13MHz clock should be registered before clocksource driver is
-initialized. Use CLK_OF_DECLARE_DRIVER() to guarantee.
+On Thu, Jun 27, 2019 at 08:55:58PM +0200, Stefan Wahren wrote:
+> diff --git a/drivers/staging/vc04_services/bcm2835-camera/bcm2835-camera.h b/drivers/staging/vc04_services/bcm2835-camera/bcm2835-camera.h
+> index 2b5679e..09273b0 100644
+> --- a/drivers/staging/vc04_services/bcm2835-camera/bcm2835-camera.h
+> +++ b/drivers/staging/vc04_services/bcm2835-camera/bcm2835-camera.h
+> @@ -90,6 +90,8 @@ struct bm2835_mmal_dev {
+>  		s64         vc_start_timestamp;
+>  		/* Kernel start timestamp for streaming */
+>  		ktime_t kernel_start_ts;
+> +		/* Timestamp of last frame */
+> +		u64		last_timestamp;
 
-Fixes: acddfc2c261b ("clk: mediatek: Add MT8183 clock support")
-Cc: <stable@vger.kernel.org>
-Signed-off-by: Weiyi Lu <weiyi.lu@mediatek.com>
----
- drivers/clk/mediatek/clk-mt8183.c | 46 +++++++++++++++++++++++++++++----------
- 1 file changed, 34 insertions(+), 12 deletions(-)
+Not directly related to this patch but the indenting in this .h file is
+all higgle-piggledy.
 
-diff --git a/drivers/clk/mediatek/clk-mt8183.c b/drivers/clk/mediatek/clk-mt8183.c
-index 9d86510..bc01611 100644
---- a/drivers/clk/mediatek/clk-mt8183.c
-+++ b/drivers/clk/mediatek/clk-mt8183.c
-@@ -25,9 +25,11 @@
- 	FIXED_CLK(CLK_TOP_UNIVP_192M, "univpll_192m", "univpll", 192000000),
- };
- 
-+static const struct mtk_fixed_factor top_early_divs[] = {
-+	FACTOR(CLK_TOP_CLK13M, "clk13m", "clk26m", 1, 2),
-+};
-+
- static const struct mtk_fixed_factor top_divs[] = {
--	FACTOR(CLK_TOP_CLK13M, "clk13m", "clk26m", 1,
--		2),
- 	FACTOR(CLK_TOP_F26M_CK_D2, "csw_f26m_ck_d2", "clk26m", 1,
- 		2),
- 	FACTOR(CLK_TOP_SYSPLL_CK, "syspll_ck", "mainpll", 1,
-@@ -1167,37 +1169,57 @@ static int clk_mt8183_apmixed_probe(struct platform_device *pdev)
- 	return of_clk_add_provider(node, of_clk_src_onecell_get, clk_data);
- }
- 
-+static struct clk_onecell_data *top_clk_data;
-+
-+static void clk_mt8183_top_init_early(struct device_node *node)
-+{
-+	int i;
-+
-+	top_clk_data = mtk_alloc_clk_data(CLK_TOP_NR_CLK);
-+
-+	for (i = 0; i < CLK_TOP_NR_CLK; i++)
-+		top_clk_data->clks[i] = ERR_PTR(-EPROBE_DEFER);
-+
-+	mtk_clk_register_factors(top_early_divs, ARRAY_SIZE(top_early_divs),
-+			top_clk_data);
-+
-+	of_clk_add_provider(node, of_clk_src_onecell_get, top_clk_data);
-+}
-+
-+CLK_OF_DECLARE_DRIVER(mt8183_topckgen, "mediatek,mt8183-topckgen",
-+			clk_mt8183_top_init_early);
-+
- static int clk_mt8183_top_probe(struct platform_device *pdev)
- {
- 	struct resource *res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
- 	void __iomem *base;
--	struct clk_onecell_data *clk_data;
- 	struct device_node *node = pdev->dev.of_node;
- 
- 	base = devm_ioremap_resource(&pdev->dev, res);
- 	if (IS_ERR(base))
- 		return PTR_ERR(base);
- 
--	clk_data = mtk_alloc_clk_data(CLK_TOP_NR_CLK);
--
- 	mtk_clk_register_fixed_clks(top_fixed_clks, ARRAY_SIZE(top_fixed_clks),
--		clk_data);
-+		top_clk_data);
-+
-+	mtk_clk_register_factors(top_early_divs, ARRAY_SIZE(top_early_divs),
-+		top_clk_data);
- 
--	mtk_clk_register_factors(top_divs, ARRAY_SIZE(top_divs), clk_data);
-+	mtk_clk_register_factors(top_divs, ARRAY_SIZE(top_divs), top_clk_data);
- 
- 	mtk_clk_register_muxes(top_muxes, ARRAY_SIZE(top_muxes),
--		node, &mt8183_clk_lock, clk_data);
-+		node, &mt8183_clk_lock, top_clk_data);
- 
- 	mtk_clk_register_composites(top_aud_muxes, ARRAY_SIZE(top_aud_muxes),
--		base, &mt8183_clk_lock, clk_data);
-+		base, &mt8183_clk_lock, top_clk_data);
- 
- 	mtk_clk_register_composites(top_aud_divs, ARRAY_SIZE(top_aud_divs),
--		base, &mt8183_clk_lock, clk_data);
-+		base, &mt8183_clk_lock, top_clk_data);
- 
- 	mtk_clk_register_gates(node, top_clks, ARRAY_SIZE(top_clks),
--		clk_data);
-+		top_clk_data);
- 
--	return of_clk_add_provider(node, of_clk_src_onecell_get, clk_data);
-+	return of_clk_add_provider(node, of_clk_src_onecell_get, top_clk_data);
- }
- 
- static int clk_mt8183_infra_probe(struct platform_device *pdev)
--- 
-1.8.1.1.dirty
+regards,
+dan carpenter
 
 
 _______________________________________________
