@@ -2,60 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 89D1A5937B
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 28 Jun 2019 07:36:59 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1B27259389
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 28 Jun 2019 07:40:17 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=anJ7MqlPKWTQb5F+InSA+qNGcD3XFe8chIQC4H9dDg8=; b=htdnmlUWXgsSMRHD/yyVjwf7qL
-	KxK4gW0YfmJcCpp3b4Hyz4sFj8e9+/PO66lFHB/xmN5GulOD3td+cd6hgUTWI/FYl9/aVhu8w4Z0c
-	xeur/i+jeSKfgmRm/vTIu5OFxPMb8A2U2ghypHaUMqJpyb2HXq1+UsgctDl91NGzI0aQ7QbANT5Ye
-	fUyu5WNgGeBpjTuL5sttcQxGT9qEYIpf2R4euyLgAwvWC5GA0zXlqN66x5lkBXupauKoSmZV4f2UW
-	XlGtSQIgix3kLTUi0hDqUiO7nnvcznWgVl9yJ4FIPAqdLqpX7a14g6BfJyztgq5b25EEaWojPbdAO
-	6ElFD3AA==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=qjizwQkhOhKbxucBRcZlLPehSqioxwxw/Vbrv3h7dOE=; b=i20HKE7eDzcRIp
+	wjzBg50AGaQaPeDx6f6nw3kOwQuhDwSq/g0aupWUaAn0IhrmdM5Cn40ZOm9wiiBDlHHTjj2j48NZT
+	V/XNw2Rqd2Sy6DQslMLliL+YMZov24+6VPRM/FXOmx4PFwfIsOqQd5h+VTdTHN+3OzpxYu+9UN3wo
+	OqRav8W/XnTCggdXf9dI8BnwU/btPIh3RP/1OuwyBKqeYvLc2b0IlUhLFFSORm1kigU9DAXQTyOof
+	lmc4lHTaIb5zGO+CSHC1tHFy861984tb6898eSZL+lcCPAUAgGB7CRldipC2BX0IqqvUGIErIOQcl
+	asPRYWF7N3rRxQoRN5Sw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hgjZ9-0007pa-NJ; Fri, 28 Jun 2019 05:36:55 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1hgjcL-0008G1-5B; Fri, 28 Jun 2019 05:40:13 +0000
+Received: from mail-io1-xd44.google.com ([2607:f8b0:4864:20::d44])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hgjYf-0007fc-12
- for linux-arm-kernel@lists.infradead.org; Fri, 28 Jun 2019 05:36:26 +0000
-Received: from localhost (107-207-74-175.lightspeed.austtx.sbcglobal.net
- [107.207.74.175])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 7B2E4214AF;
- Fri, 28 Jun 2019 05:36:24 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1561700184;
- bh=+8IwKueaEBLXU1EoGhnReZv3KnbikWL+cKVAqL3KuRA=;
- h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=aNIUI4H+fKdm3axVeyiTFeo3h8A0jNA9fx7qKQgY3iNCJPbZ8QiMFeGFo/T9bMLms
- UnO6d/pU/vsERJbQcnc+svA7YhISIa3ahaY2ThIIwhzGd7/pHgkwalJ6Ui3O/PmhTD
- ybwe3ov62qzMkvZsYA27UudRS69zZmQphFY6wLGQ=
-From: Andy Gross <agross@kernel.org>
-To: arm@kernel.org
-Subject: [GIT PULL] Qualcomm Device Tree updates for 5.3 Part 2
-Date: Fri, 28 Jun 2019 00:36:22 -0500
-Message-Id: <1561700182-18108-2-git-send-email-agross@kernel.org>
-X-Mailer: git-send-email 2.7.4
-In-Reply-To: <1561700182-18108-1-git-send-email-agross@kernel.org>
-References: <1561700182-18108-1-git-send-email-agross@kernel.org>
+ id 1hgjbx-0008EU-Dp
+ for linux-arm-kernel@lists.infradead.org; Fri, 28 Jun 2019 05:39:51 +0000
+Received: by mail-io1-xd44.google.com with SMTP id j6so9998846ioa.5
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 27 Jun 2019 22:39:46 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=f7zCCFknO+HOsmowLlV2FUgURianBtkAzUMSgnXW550=;
+ b=fr57M3L1CJeYVk8J6Jw6Wde+ZU6tzqYlPULcO8WHCGfXoi8r3PoJEu+UIhtf/IwNoZ
+ hw6aWQ67K7pMGu1lz+d75PQh3KrZICJ1M6kAV07nUzTJoDzpu7hjUPw+qQGZRLno04/H
+ L8G2EctlCY6Q/ex8w951kuFaS9/r0A7DEx1AWf14DXercX81wUIPPTYIOxt5ZAnInXAt
+ LHLqwYevoYng7OUdIl6GV7zNH//jL9eRsqffbjUP01snoInxpNSXMG002F2jdc3XytCU
+ HIUV1sWc7X2U0KkJKnwxQhDixDiC9YHuNMscWDe8IZP33N5QThqVms6/uoRwom0nHv23
+ FrVQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=f7zCCFknO+HOsmowLlV2FUgURianBtkAzUMSgnXW550=;
+ b=oYW7q6/194zhW+FT27wltnD2UMbfiBgwdtcJquQv3jEYwZ4xpDOPg701TKGIDIl0qx
+ K+O7P7rublTztS3htx1b6b3iqM3oqlZC17TwpMr44D4Trs7hS/sppAXxxe/fbvA0lCyI
+ MRlyfBYCl8zcVvPCS0zBoRO3vWx8yzGiskLbt68Y/6UGRf/MnKqi4PPKdZLUG7kDP5vS
+ lO78iTzH1TACI6OkTFTZ0oq3kFZBneRv07JaKfCjBp6QA37wuxx06wEK7Ts+4am0+pLT
+ eZQ8AYMD0RgavnXf1FjyVr7nF0IyO5lm6WjaSzntlQ8xxGSz6o+kQ2mxbkpF3SsU2zFs
+ P41A==
+X-Gm-Message-State: APjAAAUkO/acGi5BCJkZfGxQN8M/hh6jkiVx0cX85L0Mo0NRPdYYMVIl
+ vdtqpHcBua3J8OLu19SfcDo3MZUuEJcyIjTRLGc=
+X-Google-Smtp-Source: APXvYqy5Fbcoxz29zSYP7uAY3MOwcB2OEM+q1p2gFJQTrcOHaWqstCucXmaI+V0IS01jwHXfZGJpKS7YdgdFEt+111Q=
+X-Received: by 2002:a6b:c886:: with SMTP id y128mr9347779iof.100.1561700385481; 
+ Thu, 27 Jun 2019 22:39:45 -0700 (PDT)
+MIME-Version: 1.0
+References: <1560534144-13896-1-git-send-email-gkulkarni@marvell.com>
+ <1560534144-13896-3-git-send-email-gkulkarni@marvell.com>
+ <20190627095730.nf5kkataptfobzue@willie-the-truck>
+In-Reply-To: <20190627095730.nf5kkataptfobzue@willie-the-truck>
+From: Ganapatrao Kulkarni <gklkml16@gmail.com>
+Date: Fri, 28 Jun 2019 11:09:33 +0530
+Message-ID: <CAKTKpr7PXFzQBHrJt+Ko=JaB+-5FdpNu+ByfkWmAm8OeiPem3w@mail.gmail.com>
+Subject: Re: [PATCH 2/2] drivers/perf: Add CCPI2 PMU support in ThunderX2
+ UNCORE driver.
+To: Will Deacon <will@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190627_223625_085245_D3928B8C 
-X-CRM114-Status: GOOD (  10.16  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190627_223949_504111_88ACE19E 
+X-CRM114-Status: GOOD (  34.56  )
+X-Spam-Score: 1.7 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (1.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:d44 listed in]
+ [list.dnswl.org]
+ 1.0 HK_RANDOM_FROM         From username looks random
+ 0.6 HK_RANDOM_ENVFROM      Envelope sender username looks random
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (gklkml16[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (gklkml16[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
@@ -64,7 +88,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -76,39 +99,416 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Arnd Bergmann <arnd@arndb.de>, linux-arm-msm@vger.kernel.org,
- Bjorn Andersson <bjorn.andersson@linaro.org>,
- Kevin Hilman <khilman@baylibre.com>, Olof Johansson <olof@lixom.net>,
- linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
+Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
+ Ganapatrao Kulkarni <gkulkarni@marvell.com>,
+ "linux-doc@vger.kernel.org" <linux-doc@vger.kernel.org>, jglauber@marvell.com,
+ "corbet@lwn.net" <corbet@lwn.net>, "Will.Deacon@arm.com" <Will.Deacon@arm.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ rrichter@marvell.com, jnair@marvell.com,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The following changes since commit 489bacb29818865d2db63d4800f4ddff56929031:
+Hi will,
 
-  ARM: dts: qcom: msm8974-hammerhead: add support for display (2019-06-16 11:27:45 -0700)
+On Thu, Jun 27, 2019 at 3:27 PM Will Deacon <will@kernel.org> wrote:
+>
+> Hi Ganapat,
+>
+> On Fri, Jun 14, 2019 at 05:42:46PM +0000, Ganapatrao Kulkarni wrote:
+> > CCPI2 is a low-latency high-bandwidth serial interface for connecting
+> > ThunderX2 processors. This patch adds support to capture CCPI2 perf events.
+> >
+> > Signed-off-by: Ganapatrao Kulkarni <gkulkarni@marvell.com>
+> > ---
+> >  drivers/perf/thunderx2_pmu.c | 179 ++++++++++++++++++++++++++++++-----
+> >  1 file changed, 157 insertions(+), 22 deletions(-)
+> >
+> > diff --git a/drivers/perf/thunderx2_pmu.c b/drivers/perf/thunderx2_pmu.c
+> > index 43d76c85da56..3791ac9b897d 100644
+> > --- a/drivers/perf/thunderx2_pmu.c
+> > +++ b/drivers/perf/thunderx2_pmu.c
+> > @@ -16,7 +16,9 @@
+> >   * they need to be sampled before overflow(i.e, at every 2 seconds).
+> >   */
+> >
+> > -#define TX2_PMU_MAX_COUNTERS         4
+> > +#define TX2_PMU_DMC_L3C_MAX_COUNTERS 4
+>
+> I find it odd that you rename this...
 
-are available in the git repository at:
+i am not sure, how to avoid this since dmc/l3c have 4 counters and ccpi2 has 8.
+i will try to make this better in v2.
+>
+> > +#define TX2_PMU_CCPI2_MAX_COUNTERS   8
+> > +
+> >  #define TX2_PMU_DMC_CHANNELS         8
+> >  #define TX2_PMU_L3_TILES             16
+> >
+> > @@ -28,11 +30,22 @@
+> >    */
+> >  #define DMC_EVENT_CFG(idx, val)              ((val) << (((idx) * 8) + 1))
+> >
+> > +#define GET_EVENTID_CCPI2(ev)                ((ev->hw.config) & 0x1ff)
+> > +/* bits[3:0] to select counters, starts from 8, bit[3] set always. */
+> > +#define GET_COUNTERID_CCPI2(ev)              ((ev->hw.idx) & 0x7)
+> > +#define CCPI2_COUNTER_OFFSET         8
+>
+>
+> ... but leave GET_EVENTID alone, even though it only applies to DMC/L3C
+> events. Saying that, if you have the event you can figure out its type,
+> so could you avoid the need for additional macros entirely and just use
+> the correct masks based on the corresponding PMU type? That might also
+> avoid some of the conditional control flow you're introducing elsewhere.
 
-  git://git.kernel.org/pub/scm/linux/kernel/git/qcom/linux.git tags/qcom-dts-for-5.3-2
+sure, i will add mask as argument to macro.
+>
+> >  #define L3C_COUNTER_CTL                      0xA8
+> >  #define L3C_COUNTER_DATA             0xAC
+> >  #define DMC_COUNTER_CTL                      0x234
+> >  #define DMC_COUNTER_DATA             0x240
+> >
+> > +#define CCPI2_PERF_CTL                       0x108
+> > +#define CCPI2_COUNTER_CTL            0x10C
+> > +#define CCPI2_COUNTER_SEL            0x12c
+> > +#define CCPI2_COUNTER_DATA_L         0x130
+> > +#define CCPI2_COUNTER_DATA_H         0x134
+> > +
+> >  /* L3C event IDs */
+> >  #define L3_EVENT_READ_REQ            0xD
+> >  #define L3_EVENT_WRITEBACK_REQ               0xE
+> > @@ -51,9 +64,16 @@
+> >  #define DMC_EVENT_READ_TXNS          0xF
+> >  #define DMC_EVENT_MAX                        0x10
+> >
+> > +#define CCPI2_EVENT_REQ_PKT_SENT     0x3D
+> > +#define CCPI2_EVENT_SNOOP_PKT_SENT   0x65
+> > +#define CCPI2_EVENT_DATA_PKT_SENT    0x105
+> > +#define CCPI2_EVENT_GIC_PKT_SENT     0x12D
+> > +#define CCPI2_EVENT_MAX                      0x200
+> > +
+> >  enum tx2_uncore_type {
+> >       PMU_TYPE_L3C,
+> >       PMU_TYPE_DMC,
+> > +     PMU_TYPE_CCPI2,
+> >       PMU_TYPE_INVALID,
+> >  };
+> >
+> > @@ -73,8 +93,8 @@ struct tx2_uncore_pmu {
+> >       u32 max_events;
+> >       u64 hrtimer_interval;
+> >       void __iomem *base;
+> > -     DECLARE_BITMAP(active_counters, TX2_PMU_MAX_COUNTERS);
+> > -     struct perf_event *events[TX2_PMU_MAX_COUNTERS];
+> > +     DECLARE_BITMAP(active_counters, TX2_PMU_CCPI2_MAX_COUNTERS);
+> > +     struct perf_event *events[TX2_PMU_DMC_L3C_MAX_COUNTERS];
+>
+> Hmm, that looks very odd. Why are they now different sizes?
 
-for you to fetch changes up to e9146339515ece09ee651f122a51a26ae652ab80:
+events[ ] is used to hold reference to active events to use in timer
+callback, which is not applicable to ccpi2, hence 4.
+active_counters is set to max of both. i.e, 8. i will try to make it
+better readable in v2.
 
-  ARM: dts: msm8974-FP2: Add vibration motor (2019-06-25 13:29:32 -0500)
+>
+> >       struct device *dev;
+> >       struct hrtimer hrtimer;
+> >       const struct attribute_group **attr_groups;
+> > @@ -92,7 +112,21 @@ static inline struct tx2_uncore_pmu *pmu_to_tx2_pmu(struct pmu *pmu)
+> >       return container_of(pmu, struct tx2_uncore_pmu, pmu);
+> >  }
+> >
+> > -PMU_FORMAT_ATTR(event,       "config:0-4");
+> > +#define TX2_PMU_FORMAT_ATTR(_var, _name, _format)                    \
+> > +static ssize_t                                                               \
+> > +__tx2_pmu_##_var##_show(struct device *dev,                          \
+> > +                            struct device_attribute *attr,           \
+> > +                            char *page)                              \
+> > +{                                                                    \
+> > +     BUILD_BUG_ON(sizeof(_format) >= PAGE_SIZE);                     \
+> > +     return sprintf(page, _format "\n");                             \
+> > +}                                                                    \
+> > +                                                                     \
+> > +static struct device_attribute format_attr_##_var =                  \
+> > +     __ATTR(_name, 0444, __tx2_pmu_##_var##_show, NULL)
+> > +
+> > +TX2_PMU_FORMAT_ATTR(event, event, "config:0-4");
+> > +TX2_PMU_FORMAT_ATTR(event_ccpi2, event, "config:0-9");
+>
+> This doesn't look right. Can perf deal with overlapping fields? It seems
+> wrong that we'd allow the user to specify both, for example.
 
-----------------------------------------------------------------
-Qualcomm Device Tree Changes for v5.3
+I am not sure what is the issue here? both are different PMUs
+root@SBR-26> cat /sys/bus/event_source/devices/uncore_dmc_0/format/event
+config:0-4
+root@SBR-26> cat /sys/bus/event_source/devices/uncore_ccpi2_0/format/event
+config:0-9
 
-* Add vibrator motor for MSM8974 based Fairphone 2
+>
+> >
+> >  static struct attribute *l3c_pmu_format_attrs[] = {
+> >       &format_attr_event.attr,
+> > @@ -104,6 +138,11 @@ static struct attribute *dmc_pmu_format_attrs[] = {
+> >       NULL,
+> >  };
+> >
+> > +static struct attribute *ccpi2_pmu_format_attrs[] = {
+> > +     &format_attr_event_ccpi2.attr,
+> > +     NULL,
+> > +};
+> > +
+> >  static const struct attribute_group l3c_pmu_format_attr_group = {
+> >       .name = "format",
+> >       .attrs = l3c_pmu_format_attrs,
+> > @@ -114,6 +153,11 @@ static const struct attribute_group dmc_pmu_format_attr_group = {
+> >       .attrs = dmc_pmu_format_attrs,
+> >  };
+> >
+> > +static const struct attribute_group ccpi2_pmu_format_attr_group = {
+> > +     .name = "format",
+> > +     .attrs = ccpi2_pmu_format_attrs,
+> > +};
+> > +
+> >  /*
+> >   * sysfs event attributes
+> >   */
+> > @@ -164,6 +208,19 @@ static struct attribute *dmc_pmu_events_attrs[] = {
+> >       NULL,
+> >  };
+> >
+> > +TX2_EVENT_ATTR(req_pktsent, CCPI2_EVENT_REQ_PKT_SENT);
+> > +TX2_EVENT_ATTR(snoop_pktsent, CCPI2_EVENT_SNOOP_PKT_SENT);
+> > +TX2_EVENT_ATTR(data_pktsent, CCPI2_EVENT_DATA_PKT_SENT);
+> > +TX2_EVENT_ATTR(gic_pktsent, CCPI2_EVENT_GIC_PKT_SENT);
+> > +
+> > +static struct attribute *ccpi2_pmu_events_attrs[] = {
+> > +     &tx2_pmu_event_attr_req_pktsent.attr.attr,
+> > +     &tx2_pmu_event_attr_snoop_pktsent.attr.attr,
+> > +     &tx2_pmu_event_attr_data_pktsent.attr.attr,
+> > +     &tx2_pmu_event_attr_gic_pktsent.attr.attr,
+> > +     NULL,
+> > +};
+> > +
+> >  static const struct attribute_group l3c_pmu_events_attr_group = {
+> >       .name = "events",
+> >       .attrs = l3c_pmu_events_attrs,
+> > @@ -174,6 +231,11 @@ static const struct attribute_group dmc_pmu_events_attr_group = {
+> >       .attrs = dmc_pmu_events_attrs,
+> >  };
+> >
+> > +static const struct attribute_group ccpi2_pmu_events_attr_group = {
+> > +     .name = "events",
+> > +     .attrs = ccpi2_pmu_events_attrs,
+> > +};
+> > +
+> >  /*
+> >   * sysfs cpumask attributes
+> >   */
+> > @@ -213,6 +275,13 @@ static const struct attribute_group *dmc_pmu_attr_groups[] = {
+> >       NULL
+> >  };
+> >
+> > +static const struct attribute_group *ccpi2_pmu_attr_groups[] = {
+> > +     &ccpi2_pmu_format_attr_group,
+> > +     &pmu_cpumask_attr_group,
+> > +     &ccpi2_pmu_events_attr_group,
+> > +     NULL
+> > +};
+> > +
+> >  static inline u32 reg_readl(unsigned long addr)
+> >  {
+> >       return readl((void __iomem *)addr);
+> > @@ -265,6 +334,17 @@ static void init_cntr_base_dmc(struct perf_event *event,
+> >               + DMC_COUNTER_DATA + (0xc * GET_COUNTERID(event));
+> >  }
+> >
+> > +static void init_cntr_base_ccpi2(struct perf_event *event,
+> > +             struct tx2_uncore_pmu *tx2_pmu)
+> > +{
+> > +
+> > +     struct hw_perf_event *hwc = &event->hw;
+> > +
+> > +     hwc->config_base = (unsigned long)tx2_pmu->base
+> > +             + CCPI2_COUNTER_CTL + (4 * GET_COUNTERID_CCPI2(event));
+> > +     hwc->event_base =  (unsigned long)tx2_pmu->base;
+> > +}
+> > +
+> >  static void uncore_start_event_l3c(struct perf_event *event, int flags)
+> >  {
+> >       u32 val;
+> > @@ -312,6 +392,29 @@ static void uncore_stop_event_dmc(struct perf_event *event)
+> >       reg_writel(val, hwc->config_base);
+> >  }
+> >
+> > +static void uncore_start_event_ccpi2(struct perf_event *event, int flags)
+> > +{
+> > +     u32 val;
+> > +     struct hw_perf_event *hwc = &event->hw;
+> > +
+> > +     /* Bit [09:00] to set event id, set level and type to 1 */
+> > +     val = reg_readl(hwc->config_base);
+> > +     reg_writel((val & ~0xFFF) | (3 << 10) |
+> > +                     GET_EVENTID_CCPI2(event), hwc->config_base);
+> > +     /* reset[4], enable[0] and start[1] counters */
+> > +     reg_writel(0x13, hwc->event_base + CCPI2_PERF_CTL);
+> > +     local64_set(&event->hw.prev_count, 0ULL);
+> > +}
+> > +
+> > +static void uncore_stop_event_ccpi2(struct perf_event *event)
+> > +{
+> > +     struct hw_perf_event *hwc = &event->hw;
+> > +
+> > +     /* disable and stop counter */
+> > +     reg_writel(0, hwc->event_base + CCPI2_PERF_CTL);
+>
+> How come you need to clear the event register here? You don't do that for
+> the DMC/L3C paths.
 
-----------------------------------------------------------------
-Luca Weiss (1):
-      ARM: dts: msm8974-FP2: Add vibration motor
+unfortunately these blocks were designed from different folks and they
+did not use same protocol/format.
+>
+> > +     reg_writel(0, hwc->config_base);
+>
+> When starting event you're careful to update this using a read-modify-write
+> sequence. Why is it safe to zero the whole thing when stopping?
 
- arch/arm/boot/dts/qcom-msm8974-fairphone-fp2.dts | 6 ++++++
- 1 file changed, 6 insertions(+)
+thanks, it is not required.
+>
+> > +}
+> > +
+> >  static void tx2_uncore_event_update(struct perf_event *event)
+> >  {
+> >       s64 prev, delta, new = 0;
+> > @@ -323,12 +426,20 @@ static void tx2_uncore_event_update(struct perf_event *event)
+> >       tx2_pmu = pmu_to_tx2_pmu(event->pmu);
+> >       type = tx2_pmu->type;
+> >       prorate_factor = tx2_pmu->prorate_factor;
+> > -
+> > -     new = reg_readl(hwc->event_base);
+> > -     prev = local64_xchg(&hwc->prev_count, new);
+> > -
+> > -     /* handles rollover of 32 bit counter */
+> > -     delta = (u32)(((1UL << 32) - prev) + new);
+> > +     if (type == PMU_TYPE_CCPI2) {
+> > +             reg_writel(CCPI2_COUNTER_OFFSET + GET_COUNTERID_CCPI2(event),
+> > +                                     hwc->event_base + CCPI2_COUNTER_SEL);
+> > +             new = reg_readl(hwc->event_base + CCPI2_COUNTER_DATA_L);
+> > +             new |= (u64)reg_readl(hwc->event_base +
+> > +                             CCPI2_COUNTER_DATA_H) << 32;
+>
+> Can you not access the event register using a 64-bit read?
+
+thanks, I will update to readq.
+>
+> > +             prev = local64_xchg(&hwc->prev_count, new);
+> > +             delta = new - prev;
+> > +     } else {
+> > +             new = reg_readl(hwc->event_base);
+> > +             prev = local64_xchg(&hwc->prev_count, new);
+> > +             /* handles rollover of 32 bit counter */
+> > +             delta = (u32)(((1UL << 32) - prev) + new);
+> > +     }
+> >
+> >       /* DMC event data_transfers granularity is 16 Bytes, convert it to 64 */
+> >       if (type == PMU_TYPE_DMC &&
+> > @@ -351,6 +462,7 @@ static enum tx2_uncore_type get_tx2_pmu_type(struct acpi_device *adev)
+> >       } devices[] = {
+> >               {"CAV901D", PMU_TYPE_L3C},
+> >               {"CAV901F", PMU_TYPE_DMC},
+> > +             {"CAV901E", PMU_TYPE_CCPI2},
+> >               {"", PMU_TYPE_INVALID}
+> >       };
+> >
+> > @@ -380,7 +492,8 @@ static bool tx2_uncore_validate_event(struct pmu *pmu,
+> >   * Make sure the group of events can be scheduled at once
+> >   * on the PMU.
+> >   */
+> > -static bool tx2_uncore_validate_event_group(struct perf_event *event)
+> > +static bool tx2_uncore_validate_event_group(struct perf_event *event,
+> > +             int max_counters)
+> >  {
+> >       struct perf_event *sibling, *leader = event->group_leader;
+> >       int counters = 0;
+> > @@ -403,7 +516,7 @@ static bool tx2_uncore_validate_event_group(struct perf_event *event)
+> >        * If the group requires more counters than the HW has,
+> >        * it cannot ever be scheduled.
+> >        */
+> > -     return counters <= TX2_PMU_MAX_COUNTERS;
+> > +     return counters <= max_counters;
+> >  }
+> >
+> >
+> > @@ -439,7 +552,7 @@ static int tx2_uncore_event_init(struct perf_event *event)
+> >       hwc->config = event->attr.config;
+> >
+> >       /* Validate the group */
+> > -     if (!tx2_uncore_validate_event_group(event))
+> > +     if (!tx2_uncore_validate_event_group(event, tx2_pmu->max_counters))
+> >               return -EINVAL;
+> >
+> >       return 0;
+> > @@ -457,7 +570,8 @@ static void tx2_uncore_event_start(struct perf_event *event, int flags)
+> >       perf_event_update_userpage(event);
+> >
+> >       /* Start timer for first event */
+> > -     if (bitmap_weight(tx2_pmu->active_counters,
+> > +     if (tx2_pmu->type != PMU_TYPE_CCPI2 &&
+> > +                     bitmap_weight(tx2_pmu->active_counters,
+> >                               tx2_pmu->max_counters) == 1) {
+> >               hrtimer_start(&tx2_pmu->hrtimer,
+> >                       ns_to_ktime(tx2_pmu->hrtimer_interval),
+> > @@ -495,7 +609,8 @@ static int tx2_uncore_event_add(struct perf_event *event, int flags)
+> >       if (hwc->idx < 0)
+> >               return -EAGAIN;
+> >
+> > -     tx2_pmu->events[hwc->idx] = event;
+> > +     if (tx2_pmu->type != PMU_TYPE_CCPI2)
+> > +             tx2_pmu->events[hwc->idx] = event;
+> >       /* set counter control and data registers base address */
+> >       tx2_pmu->init_cntr_base(event, tx2_pmu);
+> >
+> > @@ -514,10 +629,14 @@ static void tx2_uncore_event_del(struct perf_event *event, int flags)
+> >       tx2_uncore_event_stop(event, PERF_EF_UPDATE);
+> >
+> >       /* clear the assigned counter */
+> > -     free_counter(tx2_pmu, GET_COUNTERID(event));
+> > +     if (tx2_pmu->type == PMU_TYPE_CCPI2)
+> > +             free_counter(tx2_pmu, GET_COUNTERID_CCPI2(event));
+> > +     else
+> > +             free_counter(tx2_pmu, GET_COUNTERID(event));
+> >
+> >       perf_event_update_userpage(event);
+> > -     tx2_pmu->events[hwc->idx] = NULL;
+> > +     if (tx2_pmu->type != PMU_TYPE_CCPI2)
+> > +             tx2_pmu->events[hwc->idx] = NULL;
+> >       hwc->idx = -1;
+> >  }
+> >
+> > @@ -580,8 +699,12 @@ static int tx2_uncore_pmu_add_dev(struct tx2_uncore_pmu *tx2_pmu)
+> >                       cpu_online_mask);
+> >
+> >       tx2_pmu->cpu = cpu;
+> > -     hrtimer_init(&tx2_pmu->hrtimer, CLOCK_MONOTONIC, HRTIMER_MODE_REL);
+> > -     tx2_pmu->hrtimer.function = tx2_hrtimer_callback;
+> > +     /* CCPI2 counters are 64 bit counters. */
+> > +     if (tx2_pmu->type != PMU_TYPE_CCPI2) {
+> > +             hrtimer_init(&tx2_pmu->hrtimer,
+> > +                             CLOCK_MONOTONIC, HRTIMER_MODE_REL);
+> > +             tx2_pmu->hrtimer.function = tx2_hrtimer_callback;
+> > +     }
+>
+> So I take it the CCPI2 also doesn't have an IRQ, and therefore you can't
+> hook up sampling events?
+
+Yes these too are system wide PMUs, 64 bit counters and do not overflow.
+
+>
+> Will
+
+thanks,
+Ganapat
 
 _______________________________________________
 linux-arm-kernel mailing list
