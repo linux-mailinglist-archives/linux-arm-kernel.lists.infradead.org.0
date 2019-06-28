@@ -2,60 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 905CC5A1CD
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 28 Jun 2019 19:06:36 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 93E585A1C9
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 28 Jun 2019 19:06:15 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=rImAUsybFxwdmqmY7Q9SorgLqgsXYV9DQhNNIobOjU0=; b=Rgw5WO0KY6lpJ0WpyoPCKTrwP
-	rW3DUgMvJiZ+FoxaDZadosGqCXLx5yPfs+JwzKutT6H2y67N0hPbeL0Md7ABI8Y8R7n0VolN2lvSB
-	w5upG21oqWMVm9uqCEI4RqO9CLvk2fjOa3GuYA3VxtSkuq7COxsQKo1hVFEotFaTj6sY5QeKaWAdJ
-	6TmWFW0nYb24ZVlo3fUp4ftR0Q3Beew0pKrtCyFcmj+LnHKo1ReNAGwVOd2Xvq44XBIpPYSpZbIbI
-	H0TPW0KywxYfAn9p3ePCfi4iOpm6/asCG+gATpFSOHEvg3aELE4iHG+q1/4JX703Y0XGcwmCS/y6O
-	pkKX8PlRA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=VK/mcJihEjpW2Uj7prsyI7pdT3aCOtHbiz5CTIRvuL4=; b=Gd3ADFGe7ohySD
+	Z89OdZJOLnnkHJ+vryRmR8QrnfsGmQw3jn5G6p0MyYedoiHTZuJgE9znyRlYYB+4MbuCUwIQfbbCM
+	UADKqJqgKXdbcciwDlHxOMbCovOHynBoQ++vqbW7KeKDgVyD+BZ17eCeVD4pNT+2oCd5kqNp65+uA
+	7xGpUGL5vGVkrjUSZaZ8eP8Pw4/aQFgopujEHTWcedW9OJFmdaawPZuej9p43getrTvVc33/0xEKH
+	Bl5f3ckbCb+0tY98D6kCEkIThhs4RD5YQsjCHEyN35TeXAHAC3roz7GknA2yW9+ctIS2y08Vtazf8
+	fH5V/fhUj3/pF38BKWhg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hguKX-0000MP-Vo; Fri, 28 Jun 2019 17:06:34 +0000
-Received: from szxga04-in.huawei.com ([45.249.212.190] helo=huawei.com)
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hguKD-0000AP-So
- for linux-arm-kernel@lists.infradead.org; Fri, 28 Jun 2019 17:06:17 +0000
-Received: from DGGEMS406-HUB.china.huawei.com (unknown [172.30.72.59])
- by Forcepoint Email with ESMTP id 6AA019916D69D2CF479A;
- Sat, 29 Jun 2019 01:06:03 +0800 (CST)
-Received: from [127.0.0.1] (10.202.227.238) by DGGEMS406-HUB.china.huawei.com
- (10.3.19.206) with Microsoft SMTP Server id 14.3.439.0;
- Sat, 29 Jun 2019 01:05:52 +0800
-Subject: Re: [PATCH v3 1/4] perf pmu: Support more complex PMU event aliasing
-To: Andi Kleen <ak@linux.intel.com>
-References: <1561732552-143038-1-git-send-email-john.garry@huawei.com>
- <1561732552-143038-2-git-send-email-john.garry@huawei.com>
- <20190628153344.GZ31027@tassilo.jf.intel.com>
-From: John Garry <john.garry@huawei.com>
-Message-ID: <5add76dc-ea92-9778-a65b-792f3ff17040@huawei.com>
-Date: Fri, 28 Jun 2019 18:05:43 +0100
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:45.0) Gecko/20100101
- Thunderbird/45.3.0
+	id 1hguKA-00007d-NY; Fri, 28 Jun 2019 17:06:10 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hguJx-000069-Pw
+ for linux-arm-kernel@lists.infradead.org; Fri, 28 Jun 2019 17:06:00 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id BF6F928;
+ Fri, 28 Jun 2019 10:05:56 -0700 (PDT)
+Received: from e121166-lin.cambridge.arm.com (unknown [10.1.196.255])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id BC1AB3F706;
+ Fri, 28 Jun 2019 10:05:54 -0700 (PDT)
+Date: Fri, 28 Jun 2019 18:05:52 +0100
+From: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
+To: "Z.q. Hou" <zhiqiang.hou@nxp.com>
+Subject: Re: [PATCHv5 10/20] PCI: mobiveil: Fix the INTx process errors
+Message-ID: <20190628170552.GD21829@e121166-lin.cambridge.arm.com>
+References: <20190412083635.33626-1-Zhiqiang.Hou@nxp.com>
+ <20190412083635.33626-11-Zhiqiang.Hou@nxp.com>
 MIME-Version: 1.0
-In-Reply-To: <20190628153344.GZ31027@tassilo.jf.intel.com>
-X-Originating-IP: [10.202.227.238]
-X-CFilter-Loop: Reflected
+Content-Disposition: inline
+In-Reply-To: <20190412083635.33626-11-Zhiqiang.Hou@nxp.com>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190628_100614_259858_16E19783 
-X-CRM114-Status: UNSURE (   9.40  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20190628_100557_882878_55A64B2C 
+X-CRM114-Status: GOOD (  18.79  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [45.249.212.190 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -67,52 +61,89 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, brueckner@linux.ibm.com, mathieu.poirier@linaro.org,
- peterz@infradead.org, ben@decadent.org.uk, tmricht@linux.ibm.com,
- will.deacon@arm.com, linux-kernel@vger.kernel.org, acme@kernel.org,
- linuxarm@huawei.com, zhangshaokun@hisilicon.com,
- alexander.shishkin@linux.intel.com, mingo@redhat.com, namhyung@kernel.org,
- jolsa@redhat.com, linux-arm-kernel@lists.infradead.org,
- kan.liang@linux.intel.com
+Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ Xiaowei Bao <xiaowei.bao@nxp.com>,
+ "linux-pci@vger.kernel.org" <linux-pci@vger.kernel.org>,
+ "l.subrahmanya@mobiveil.co.in" <l.subrahmanya@mobiveil.co.in>,
+ "will.deacon@arm.com" <will.deacon@arm.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Leo Li <leoyang.li@nxp.com>, "M.h. Lian" <minghuan.lian@nxp.com>,
+ "robh+dt@kernel.org" <robh+dt@kernel.org>, Mingkai Hu <mingkai.hu@nxp.com>,
+ "catalin.marinas@arm.com" <catalin.marinas@arm.com>,
+ "bhelgaas@google.com" <bhelgaas@google.com>,
+ "shawnguo@kernel.org" <shawnguo@kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 28/06/2019 16:33, Andi Kleen wrote:
->> +	/*
->> +	 * Match more complex aliases where the alias name is a comma-delimited
->> +	 * list of tokens, orderly contained in the matching PMU name.
->> +	 *
->> +	 * Example: For alias "socket,pmuname" and PMU "socketX_pmunameY", we
->> +	 *	    match "socket" in "socketX_pmunameY" and then "pmuname" in
->> +	 *	    "pmunameY".
->
-> This needs to be documented in some manpage.
+On Fri, Apr 12, 2019 at 08:36:12AM +0000, Z.q. Hou wrote:
+> From: Hou Zhiqiang <Zhiqiang.Hou@nxp.com>
+> 
+> In the loop block, there is not code to update the loop key,
+> this patch updates the loop key by re-read the INTx status
+> register.
+> 
+> This patch also add the clearing of the handled INTx status.
 
-Hi Andi,
+This is two bugs and that requires two patches, each of them fixing a
+specific issue.
 
-As I see, today the man page does not mention the matching from the 
-alias events declared in the jsons.
+So split the patch into two and repost it.
 
-The perf list command shows these aliases, so I am not sure how useful 
-that info is adding to the man page.
+Lorenzo
 
-What the man page does mention is the glob matching on the PMU device 
-name - like how "imc" can match PMU device "uncore_imc_0", but I'm not 
-changing around this.
-
-Thanks,
-John
-
->
-> -Andi
->
->
-> .
->
-
-
+> Note: Need MV to test this fix.
+> 
+> Fixes: 9af6bcb11e12 ("PCI: mobiveil: Add Mobiveil PCIe Host Bridge IP driver")
+> Signed-off-by: Hou Zhiqiang <Zhiqiang.Hou@nxp.com>
+> Reviewed-by: Minghuan Lian <Minghuan.Lian@nxp.com>
+> Reviewed-by: Subrahmanya Lingappa <l.subrahmanya@mobiveil.co.in>
+> ---
+> V5:
+>  - Corrected and retouched the subject and changelog.
+> 
+>  drivers/pci/controller/pcie-mobiveil.c | 13 +++++++++----
+>  1 file changed, 9 insertions(+), 4 deletions(-)
+> 
+> diff --git a/drivers/pci/controller/pcie-mobiveil.c b/drivers/pci/controller/pcie-mobiveil.c
+> index 4ba458474e42..78e575e71f4d 100644
+> --- a/drivers/pci/controller/pcie-mobiveil.c
+> +++ b/drivers/pci/controller/pcie-mobiveil.c
+> @@ -361,6 +361,7 @@ static void mobiveil_pcie_isr(struct irq_desc *desc)
+>  	/* Handle INTx */
+>  	if (intr_status & PAB_INTP_INTX_MASK) {
+>  		shifted_status = csr_readl(pcie, PAB_INTP_AMBA_MISC_STAT);
+> +		shifted_status &= PAB_INTP_INTX_MASK;
+>  		shifted_status >>= PAB_INTX_START;
+>  		do {
+>  			for_each_set_bit(bit, &shifted_status, PCI_NUM_INTX) {
+> @@ -372,12 +373,16 @@ static void mobiveil_pcie_isr(struct irq_desc *desc)
+>  					dev_err_ratelimited(dev, "unexpected IRQ, INT%d\n",
+>  							    bit);
+>  
+> -				/* clear interrupt */
+> -				csr_writel(pcie,
+> -					   shifted_status << PAB_INTX_START,
+> +				/* clear interrupt handled */
+> +				csr_writel(pcie, 1 << (PAB_INTX_START + bit),
+>  					   PAB_INTP_AMBA_MISC_STAT);
+>  			}
+> -		} while ((shifted_status >> PAB_INTX_START) != 0);
+> +
+> +			shifted_status = csr_readl(pcie,
+> +						   PAB_INTP_AMBA_MISC_STAT);
+> +			shifted_status &= PAB_INTP_INTX_MASK;
+> +			shifted_status >>= PAB_INTX_START;
+> +		} while (shifted_status != 0);
+>  	}
+>  
+>  	/* read extra MSI status register */
+> -- 
+> 2.17.1
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
