@@ -2,70 +2,75 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9923859306
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 28 Jun 2019 06:53:41 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9303859326
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 28 Jun 2019 06:58:34 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jF2jPcUNE/w8YySy+neaj8PTMB8yWf3wi98dbDskMgQ=; b=fcBvP1PIos1Ay3
-	z5CYj5yT9ZpB190XbREDwdY46jnWSAIhEm2/KFSiaWFmCph7gVunngCQSl9ERUxh8UfvaJdgH9ol0
-	I1e+DIhM/W70YijNlf8LY5UII5fkiO/jUHw0ZTE2NTjytJ2faPLWm4nIudlySW4uP5soM8QSEGFeU
-	ULVyFOfHkPhnhfoOufkSoMtDdKQ3zgp1F49nW/EOLQ9KUAiqIXcqYAAyGxUFOTP/1S00BsDwhMVv6
-	YCqarbPdHpK7vU0ddedB9jLxqG7MDJvhFe87QaxROetFThz+YPgyQk0UZoXyWo12t6ES3bvb6qRPz
-	78XqjbrlW8aliKtVFmNg==;
+	List-Owner; bh=DbliHcF4bp2aQnnRkSptEw9Yy4cDS9h/tYao2XhEbwk=; b=W+pMKPI8pEuAzS
+	cGve5CsO+TL1RAyKSqICG6Cl4h6R3YsQaVA7CMGW654s2nytx1UyYzfw9MA8IiFUBPc7nrY5zEYIR
+	xI6u8ZeywKueGhhgr7CTxJdvJo4JyitFDBJK2UGxhPgTVtOuh5V3ywzi9S71bfrFP0M69gayxRriP
+	jri/HvKlB6zn6fF33G3EbiTCRNCHcpDJrHT6k9zemx1KEE7BtgybQMcFH9lKswEmPRoI3FRWXSyFe
+	Dh79MJ/quYbCzTZ22Souj9h0AyXXkTrb1RKlWU+u7rTVghfmIbZc5ig0LowTt4xxMMAeQB+I35Vvd
+	x038Z1e3+BO8vck7+1tQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hgitE-00072d-3N; Fri, 28 Jun 2019 04:53:36 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1hgiy0-0000c1-0U; Fri, 28 Jun 2019 04:58:32 +0000
+Received: from conssluserg-02.nifty.com ([210.131.2.81])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hgit1-00071Y-VY
- for linux-arm-kernel@lists.infradead.org; Fri, 28 Jun 2019 04:53:25 +0000
-Received: from sol.localdomain (c-24-5-143-220.hsd1.ca.comcast.net
- [24.5.143.220])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id AC29A20656;
- Fri, 28 Jun 2019 04:53:19 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1561697600;
- bh=xyfM4ZWcVSKm8cjlTQWt6Dt2SEgAkACNyGwMNKTacAo=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=Z3bBPa40+DwkDvULVLnnYbo1JZ4XWv6vjxv/VDsDg4XaHDOxyLs/a29o2G5izpXRS
- tV9rI2CL2aUtlgnfH29W2eShhpazNje3MwhMuKTERKz5mbpC59ewRFYE2CXkMeCQdj
- aQLfoPNd/8LGSWv1cB0P8081htHFDUfJPm7MmVg4=
-Date: Thu, 27 Jun 2019 21:53:18 -0700
-From: Eric Biggers <ebiggers@kernel.org>
-To: Keerthy <j-keerthy@ti.com>
-Subject: Re: [RESEND PATCH 00/10] crypto: k3: Add sa2ul driver
-Message-ID: <20190628045318.GC673@sol.localdomain>
-References: <20190628042745.28455-1-j-keerthy@ti.com>
+ id 1hgixh-0000b2-UF; Fri, 28 Jun 2019 04:58:15 +0000
+Received: from mail-vs1-f42.google.com (mail-vs1-f42.google.com
+ [209.85.217.42]) (authenticated)
+ by conssluserg-02.nifty.com with ESMTP id x5S4vmGv019235;
+ Fri, 28 Jun 2019 13:57:49 +0900
+DKIM-Filter: OpenDKIM Filter v2.10.3 conssluserg-02.nifty.com x5S4vmGv019235
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nifty.com;
+ s=dec2015msa; t=1561697869;
+ bh=SIK/nAM+sI54EJmk0mR1Usgw9j5vfYmGFrOtLjOZzLg=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=JxblWpm3C3r7r01gYCOajBSW84T6W3cnHh34fYXfzFs98o7YC0XLfQPjyIZJOe7wM
+ PY/Z814YyNy19enS/Ou211c5U7rm691JuQCgggAcE2sGPHLAj9wwCQolzRkbPaDRiu
+ FrTXIynHp8sn8Ga5l38WmMbWouAfZu8DxdTPzh8CSEslepOK3tMS5SQS+4VtUehZ9t
+ NSNHzUy1OY+BQNhszkLRTwslt4vvB1fQRAdLZXk9kVNL+2+OwXetOycQuOQ2VOQRtf
+ XghTnCtXDc6J9Kd7iUMUzD/WmoM3yPHVBRQHQLacTI0FvtiDEE2S7qU0bYPKqALUUD
+ 5RDATmr7n88Ew==
+X-Nifty-SrcIP: [209.85.217.42]
+Received: by mail-vs1-f42.google.com with SMTP id a186so3202073vsd.7;
+ Thu, 27 Jun 2019 21:57:48 -0700 (PDT)
+X-Gm-Message-State: APjAAAXhO10j9bWkfm8UWgyZm69hfK5Zp3A/owwHoWWMehQUVg1rn1LT
+ 9m3WtJXOTuZwyFcu2KMb8EyIV+OEibzN1n9HRE0=
+X-Google-Smtp-Source: APXvYqyyvmsd8AAk5R7aaNFgntOJs2TjX0FeQ1b2WdSaf2T0LzzKUcfk9Z8oacISJcBzf5zvmHjL7/Pj9m8miFmaa6o=
+X-Received: by 2002:a67:d46:: with SMTP id 67mr4682467vsn.181.1561697868020;
+ Thu, 27 Jun 2019 21:57:48 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190628042745.28455-1-j-keerthy@ti.com>
-User-Agent: Mutt/1.12.1 (2019-06-15)
+References: <20190627163903.28398-1-yamada.masahiro@socionext.com>
+In-Reply-To: <20190627163903.28398-1-yamada.masahiro@socionext.com>
+From: Masahiro Yamada <yamada.masahiro@socionext.com>
+Date: Fri, 28 Jun 2019 13:57:12 +0900
+X-Gmail-Original-Message-ID: <CAK7LNARj+A1JDnUmA_ZFC5Shsy7Tg37LtXS27H7ZTgDbp5BO2w@mail.gmail.com>
+Message-ID: <CAK7LNARj+A1JDnUmA_ZFC5Shsy7Tg37LtXS27H7ZTgDbp5BO2w@mail.gmail.com>
+Subject: Re: [PATCH v3 0/4] Compile-test UAPI and kernel headers
+To: Linux Kbuild mailing list <linux-kbuild@vger.kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190627_215324_048318_8439DEDF 
-X-CRM114-Status: GOOD (  15.42  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190627_215814_219272_5E509E58 
+X-CRM114-Status: GOOD (  11.88  )
+X-Spam-Score: 1.0 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (1.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [210.131.2.81 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [210.131.2.81 listed in wl.mailspike.net]
+ 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -77,66 +82,94 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: nm@ti.com, devicetree@vger.kernel.org, herbert@gondor.apana.org.au,
- linux-kernel@vger.kernel.org, t-kristo@ti.com, robh+dt@kernel.org,
- linux-crypto@vger.kernel.org, davem@davemloft.net,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Song Liu <songliubraving@fb.com>,
+ Jakub Kicinski <jakub.kicinski@netronome.com>,
+ "open list:DOCUMENTATION" <linux-doc@vger.kernel.org>,
+ Palmer Dabbelt <palmer@sifive.com>, Alexei Starovoitov <ast@kernel.org>,
+ linux-riscv@lists.infradead.org, Sam Ravnborg <sam@ravnborg.org>,
+ Jesper Dangaard Brouer <hawk@kernel.org>, xdp-newbies@vger.kernel.org,
+ Daniel Borkmann <daniel@iogearbox.net>, Jonathan Corbet <corbet@lwn.net>,
+ Anton Vorontsov <anton@enomsg.org>, John Fastabend <john.fastabend@gmail.com>,
+ Yonghong Song <yhs@fb.com>, Albert Ou <aou@eecs.berkeley.edu>,
+ Kees Cook <keescook@chromium.org>, Jani Nikula <jani.nikula@intel.com>,
+ Tony Luck <tony.luck@intel.com>,
+ "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
+ Michal Marek <michal.lkml@markovi.net>, Networking <netdev@vger.kernel.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Martin KaFai Lau <kafai@fb.com>, Colin Cross <ccross@android.com>,
+ bpf@vger.kernel.org, "David S. Miller" <davem@davemloft.net>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-SGkgS2VlcnRoeSwKCk9uIEZyaSwgSnVuIDI4LCAyMDE5IGF0IDA5OjU3OjM1QU0gKzA1MzAsIEtl
-ZXJ0aHkgd3JvdGU6Cj4gVGhlIHNlcmllcyBhZGRzIENyeXB0byBoYXJkd2FyZSBhY2NlbGVyYXRv
-ciBzdXBwb3J0IGZvciBTQTJVTC4KPiBTQTJVTCBzdGFuZHMgZm9yIHNlY3VyaXR5IGFjY2VsZXJh
-dG9yIHVsdHJhIGxpdGUuCj4gCj4gVGhlIFNlY3VyaXR5IEFjY2VsZXJhdG9yIChTQTJfVUwpIHN1
-YnN5c3RlbSBwcm92aWRlcyBoYXJkd2FyZQo+IGNyeXB0b2dyYXBoaWMgYWNjZWxlcmF0aW9uIGZv
-ciB0aGUgZm9sbG93aW5nIHVzZSBjYXNlczoKPiDigKIgRW5jcnlwdGlvbiBhbmQgYXV0aGVudGlj
-YXRpb24gZm9yIHNlY3VyZSBib290Cj4g4oCiIEVuY3J5cHRpb24gYW5kIGF1dGhlbnRpY2F0aW9u
-IG9mIGNvbnRlbnQgaW4gYXBwbGljYXRpb25zCj4gICByZXF1aXJpbmcgRFJNIChkaWdpdGFsIHJp
-Z2h0cyBtYW5hZ2VtZW50KSBhbmQKPiAgIGNvbnRlbnQvYXNzZXQgcHJvdGVjdGlvbgo+IFRoZSBk
-ZXZpY2UgaW5jbHVkZXMgb25lIGluc3RhbnRpYXRpb24gb2YgU0EyX1VMIG5hbWVkIFNBMl9VTDAK
-PiAKPiBTQTJVTCBuZWVkcyBvbiB0eCBjaGFubmVsIGFuZCBhIHBhaXIgb2YgcnggZG1hIGNoYW5u
-ZWxzLgo+IAo+IFRoaXMgc2VyaWVzIGhhcyBkZXBlbmRlbmN5IG9uIFVETUEgc2VyaWVzLiBIZW5j
-ZSBpcyBiYXNlZCBvbiB0b3Agb2Y6Cj4gCj4gaHR0cHM6Ly9wYXRjaHdvcmsua2VybmVsLm9yZy9w
-cm9qZWN0L2xpbnV4LWRtYWVuZ2luZS9saXN0Lz9zZXJpZXM9MTE0MTA1Cj4gCj4gVGhlIGFib3Zl
-IHNlcmllcyBhZGRzIGNvdXBsZSBvZiBkbWFlbmdpbmUgQVBJcyB0aGF0IGFyZSB1c2VkCj4gYnkg
-dGhlIHNhMnVsIGRyaXZlci4gSGVuY2UgdGhlcmUgaXMgYSBoYXJkIGRlcGVuZGVuY3kgb24gdGhl
-Cj4gYWJvdmUgc2VyaWVzLgo+IAo+IFJlc2VuZGluZyB3aXRoIGxpbnV4LWNyeXB0byBsaXN0IGlu
-IENjLgo+IAo+IEtlZXJ0aHkgKDEwKToKPiAgIGR0LWJpbmRpbmdzOiBjcnlwdG86IGszOiBBZGQg
-c2EydWwgYmluZGluZ3MgZG9jdW1lbnRhdGlvbgo+ICAgY3J5cHRvOiBzYTJ1bDogQWRkIGNyeXB0
-byBkcml2ZXIKPiAgIGNyeXB0bzogc2EydWw6IEFkZCBBRVMgRUNCIE1vZGUgc3VwcG9ydAo+ICAg
-Y3J5cHRvOiBzYTJ1bDogQWRkIGFlYWQgc3VwcG9ydCBmb3IgaG1hYyhzaGExKWNiYyhhZXMpIGFs
-Z29yaXRobQo+ICAgY3J5cHRvOiBzaGEyNTZfZ2VuZXJpYzogRXhwb3J0IHRoZSBUcmFuc2Zvcm0g
-ZnVuY3Rpb24KPiAgIGNyeXB0bzogc2EydWw6IEFkZCBobWFjKHNoYTI1NiljYmMoYWVzKSBBRUFE
-IEFsZ28gc3VwcG9ydAo+ICAgY3J5cHRvOiBzYTJ1bDogQWRkIGhtYWMoc2hhMSkgSE1BQyBhbGdv
-cml0aG0gc3VwcG9ydAo+ICAgY3J5cHRvOiBzYTJ1bDogQWRkIGhtYWMoc2hhMjU2KSBITUFDIGFs
-Z29yaXRobSBzdXBwb3J0Cj4gICBzYTJ1bDogQWRkIDNERVMgRUNCICYgQ0JDIE1vZGUgc3VwcG9y
-dAo+ICAgYXJtNjQ6IGR0czogazMtYW02OiBBZGQgY3J5cHRvIGFjY2VsYXJhdG9yIG5vZGUKPiAK
-PiAgLi4uL2RldmljZXRyZWUvYmluZGluZ3MvY3J5cHRvL3NhMnVsLnR4dCAgICAgIHwgICA0NyAr
-Cj4gIGFyY2gvYXJtNjQvYm9vdC9kdHMvdGkvazMtYW02NS1tYWluLmR0c2kgICAgICB8ICAgMzMg
-Kwo+ICBjcnlwdG8vc2hhMjU2X2dlbmVyaWMuYyAgICAgICAgICAgICAgICAgICAgICAgfCAgICAz
-ICstCj4gIGRyaXZlcnMvY3J5cHRvL0tjb25maWcgICAgICAgICAgICAgICAgICAgICAgICB8ICAg
-MTcgKwo+ICBkcml2ZXJzL2NyeXB0by9NYWtlZmlsZSAgICAgICAgICAgICAgICAgICAgICAgfCAg
-ICAxICsKPiAgZHJpdmVycy9jcnlwdG8vc2EydWwuYyAgICAgICAgICAgICAgICAgICAgICAgIHwg
-MjIzMiArKysrKysrKysrKysrKysrKwo+ICBkcml2ZXJzL2NyeXB0by9zYTJ1bC5oICAgICAgICAg
-ICAgICAgICAgICAgICAgfCAgMzg0ICsrKwo+ICBpbmNsdWRlL2NyeXB0by9zaGEuaCAgICAgICAg
-ICAgICAgICAgICAgICAgICAgfCAgICAxICsKPiAgOCBmaWxlcyBjaGFuZ2VkLCAyNzE3IGluc2Vy
-dGlvbnMoKyksIDEgZGVsZXRpb24oLSkKPiAgY3JlYXRlIG1vZGUgMTAwNjQ0IERvY3VtZW50YXRp
-b24vZGV2aWNldHJlZS9iaW5kaW5ncy9jcnlwdG8vc2EydWwudHh0Cj4gIGNyZWF0ZSBtb2RlIDEw
-MDY0NCBkcml2ZXJzL2NyeXB0by9zYTJ1bC5jCj4gIGNyZWF0ZSBtb2RlIDEwMDY0NCBkcml2ZXJz
-L2NyeXB0by9zYTJ1bC5oCgpEaWQgeW91IHJ1biB0aGUgY3J5cHRvIHNlbGYtdGVzdHMgb24gdGhp
-cyBkcml2ZXI/ICBpLmUuIGJvb3QgYSBrZXJuZWwgd2l0aAoKCSMgQ09ORklHX0NSWVBUT19NQU5B
-R0VSX0RJU0FCTEVfVEVTVFMgaXMgbm90IHNldAoJQ09ORklHX0RFQlVHX0tFUk5FTD15CglDT05G
-SUdfQ1JZUFRPX01BTkFHRVJfRVhUUkFfVEVTVFM9eQoKV2hhdCBhcmUgdGhlIHJlc3VsdHM/CgpB
-bHNvLCB0aGlzIHBhdGNoc2V0IGRvZXMgbm90IGNvbXBpbGUgZm9yIG1lLgoKRXJyb3I6IGFyY2gv
-YXJtNjQvYm9vdC9kdHMvdGkvazMtYW02NS1tYWluLmR0c2k6MTAzLjMzLTM0IHN5bnRheCBlcnJv
-cgpGQVRBTCBFUlJPUjogVW5hYmxlIHRvIHBhcnNlIGlucHV0IHRyZWUKICBEVEMgICAgIGFyY2gv
-YXJtNjQvYm9vdC9kdHMvbnZpZGlhL3RlZ3JhMjEwLXAyNTcxLmR0YgptYWtlWzJdOiAqKiogW3Nj
-cmlwdHMvTWFrZWZpbGUubGliOjI5NDogYXJjaC9hcm02NC9ib290L2R0cy90aS9rMy1hbTY1NC1i
-YXNlLWJvYXJkLmR0Yl0gRXJyb3IgMQptYWtlWzFdOiAqKiogW3NjcmlwdHMvTWFrZWZpbGUuYnVp
-bGQ6NDg5OiBhcmNoL2FybTY0L2Jvb3QvZHRzL3RpXSBFcnJvciAyCm1ha2VbMV06ICoqKiBXYWl0
-aW5nIGZvciB1bmZpbmlzaGVkIGpvYnMuLi4uCgotIEVyaWMKCl9fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0
-CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFk
-ZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
+On Fri, Jun 28, 2019 at 1:41 AM Masahiro Yamada
+<yamada.masahiro@socionext.com> wrote:
+>
+> 1/4: Compile-test exported headers (reworked in v2)
+>
+> 2/4: fix a flaw I noticed when I was working on this series.
+>      Avoid generating intermediate wrappers.
+>
+> 3/4: maybe useful for 4/4 and in some other places.
+>      Add header-test-pattern-y syntax.
+>
+> 4/4: Compile-test kernel-space headers in include/.
+>      v2: compile as many headers as possible.
+>      v3: exclude more headers causing build errors
+
+
+I push this series to
+ git://git.kernel.org/pub/scm/linux/kernel/git/masahiroy/linux-kbuild.git
+ header-test-v3
+for somebody who wants to test it.
+
+
+
+>
+> Masahiro Yamada (4):
+>   kbuild: compile-test UAPI headers to ensure they are self-contained
+>   kbuild: do not create wrappers for header-test-y
+>   kbuild: support header-test-pattern-y
+>   kbuild: compile-test kernel headers to ensure they are self-contained
+>
+>  .gitignore                         |    1 -
+>  Documentation/dontdiff             |    1 -
+>  Documentation/kbuild/makefiles.txt |   13 +-
+>  Makefile                           |    4 +-
+>  include/Kbuild                     | 1250 ++++++++++++++++++++++++++++
+>  init/Kconfig                       |   22 +
+>  scripts/Makefile.build             |   10 +-
+>  scripts/Makefile.lib               |   13 +-
+>  scripts/cc-system-headers.sh       |    8 +
+>  usr/.gitignore                     |    1 -
+>  usr/Makefile                       |    2 +
+>  usr/include/.gitignore             |    3 +
+>  usr/include/Makefile               |  134 +++
+>  13 files changed, 1449 insertions(+), 13 deletions(-)
+>  create mode 100644 include/Kbuild
+>  create mode 100755 scripts/cc-system-headers.sh
+>  create mode 100644 usr/include/.gitignore
+>  create mode 100644 usr/include/Makefile
+>
+> --
+> 2.17.1
+>
+>
+> _______________________________________________
+> linux-arm-kernel mailing list
+> linux-arm-kernel@lists.infradead.org
+> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+
+
+--
+Best Regards
+Masahiro Yamada
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
