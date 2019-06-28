@@ -2,83 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A7238592EE
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 28 Jun 2019 06:31:40 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 99345592F8
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 28 Jun 2019 06:45:24 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+A4kau+S4oefvf0Qnwuq1QUUE3Kug8VhEdo+iVt2V4k=; b=DO+613qg1Zd5V5
-	cOhXTVe5ZfCkumiWoE5MTrjHlmuTOze7kpPWEaMFxX1KQaDfbEuKOXCbKF7/3NcTytJV/ty9YS5o1
-	HMXIztkILjMEpsKONfJn5hNJTtcCwBzxD98yWAQp4wrwm+CRic+rXP4edZWhAe+sqTTf+Dz+s+wUR
-	kWHhuwr5nnGCiGvV0G9Dhg3tRActmebSdnSAnb+XL7d/3Ge0AysClIi+pv3321Gv1HpD7erMWksHL
-	bLFawoFp01dA63zptzdazin1+GTBUUK2DtWBtuGHpfQjluCB2RaTCvhfpNTSjdN2n3MNxF/ehYm4w
-	VuMXSp/p6qzkUjG5cl9Q==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=Kl57kQPWTBc2H5n8fNBWEHcadRBmbKG2KUVwXCCGMho=; b=oTT
+	Z0+qsyhluOtnCoSZxsmW5WDjLzkHgroYd/0gj/Zyqm+U1BOEh5/tAz7qboHN1Ha5D44tzo7kZLbNO
+	tQNzAVlDpyVfzpeSCOoHuhCw99rmKOHaHUFPLlhG30FagXfBjXEMwywOgPKu1J4zoNcMmics/RCzD
+	ejVoHMuFakcIbSA4fIMdBk+qJ19vSV1tAXWYkxuJ+fnKT6+P4SETGGNv1DStwnkkV6zMvvqOSjbhP
+	6BpT3czkjAPR7A5R88C3DoHXqzfH2l0y1GHQN/lCFgTudLg2xBagBG5Thza4u7ec/pMDnrTLofhlb
+	NoPKYCisVqt72kcqeeNS7w6eZcRCPUg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hgiXx-0008LP-0n; Fri, 28 Jun 2019 04:31:37 +0000
-Received: from lelv0143.ext.ti.com ([198.47.23.248])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hgiUR-0004kI-UW
- for linux-arm-kernel@lists.infradead.org; Fri, 28 Jun 2019 04:28:01 +0000
-Received: from lelv0266.itg.ti.com ([10.180.67.225])
- by lelv0143.ext.ti.com (8.15.2/8.15.2) with ESMTP id x5S4Rsjg003036;
- Thu, 27 Jun 2019 23:27:54 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1561696074;
- bh=y47Dmxqdu2axu8XFuL5chdma5kAOZBKLQnnNccav38w=;
- h=From:To:CC:Subject:Date:In-Reply-To:References;
- b=wTgnMSG1EnCSpzKdj0L05ZF21h4ZXDMeep3xa+FESUPz/zN2EaeijIQFEI3gcJ2FV
- I74buze/0BngPIlAXc7CKxkXZ2GpHDFBPdmPi+C2ckC/W5T1dN2w1a2T/oynpEn9do
- 6ngzyrV/5xkWdy+E8giwq8qVNyiEtwjD0Lu9AQ4c=
-Received: from DFLE103.ent.ti.com (dfle103.ent.ti.com [10.64.6.24])
- by lelv0266.itg.ti.com (8.15.2/8.15.2) with ESMTPS id x5S4RsqR032679
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Thu, 27 Jun 2019 23:27:54 -0500
-Received: from DFLE104.ent.ti.com (10.64.6.25) by DFLE103.ent.ti.com
- (10.64.6.24) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5; Thu, 27
- Jun 2019 23:27:54 -0500
-Received: from fllv0040.itg.ti.com (10.64.41.20) by DFLE104.ent.ti.com
- (10.64.6.25) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5 via
- Frontend Transport; Thu, 27 Jun 2019 23:27:54 -0500
-Received: from a0393675ula.india.ti.com (ileax41-snat.itg.ti.com
- [10.172.224.153])
- by fllv0040.itg.ti.com (8.15.2/8.15.2) with ESMTP id x5S4RKPU062595;
- Thu, 27 Jun 2019 23:27:51 -0500
-From: Keerthy <j-keerthy@ti.com>
-To: <herbert@gondor.apana.org.au>, <davem@davemloft.net>, <robh+dt@kernel.org>
-Subject: [RESEND PATCH 10/10] arm64: dts: k3-am6: Add crypto accelarator node
-Date: Fri, 28 Jun 2019 09:57:45 +0530
-Message-ID: <20190628042745.28455-11-j-keerthy@ti.com>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20190628042745.28455-1-j-keerthy@ti.com>
-References: <20190628042745.28455-1-j-keerthy@ti.com>
-MIME-Version: 1.0
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
+	id 1hgilE-0004ZZ-Fy; Fri, 28 Jun 2019 04:45:20 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hgil1-0004MG-9L
+ for linux-arm-kernel@lists.infradead.org; Fri, 28 Jun 2019 04:45:08 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 0E51F344;
+ Thu, 27 Jun 2019 21:45:06 -0700 (PDT)
+Received: from p8cg001049571a15.blr.arm.com (p8cg001049571a15.blr.arm.com
+ [10.162.40.144])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 3F65A3F706;
+ Thu, 27 Jun 2019 21:45:02 -0700 (PDT)
+From: Anshuman Khandual <anshuman.khandual@arm.com>
+To: linux-mm@kvack.org
+Subject: [RFC 0/2] arm64: Enable vmemmap from device memory
+Date: Fri, 28 Jun 2019 10:14:41 +0530
+Message-Id: <1561697083-7329-1-git-send-email-anshuman.khandual@arm.com>
+X-Mailer: git-send-email 2.7.4
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190627_212800_246784_FC45EE73 
-X-CRM114-Status: GOOD (  11.07  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20190627_214507_382722_446AE827 
+X-CRM114-Status: UNSURE (   8.81  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.23.248 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -90,68 +58,55 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: nm@ti.com, devicetree@vger.kernel.org, j-keerthy@ti.com,
- linux-kernel@vger.kernel.org, t-kristo@ti.com, linux-crypto@vger.kernel.org,
+Cc: Mark Rutland <mark.rutland@arm.com>, Fenghua Yu <fenghua.yu@intel.com>,
+ Tony Luck <tony.luck@intel.com>, linux-ia64@vger.kernel.org,
+ Anshuman Khandual <anshuman.khandual@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Dave Hansen <dave.hansen@linux.intel.com>, Will Deacon <will.deacon@arm.com>,
+ x86@kernel.org, linux-kernel@vger.kernel.org,
+ Andy Lutomirski <luto@kernel.org>, Andrew Morton <akpm@linux-foundation.org>,
  linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add crypto accelarator node. Define the psil specific config
-node as well. This can be used in Packet Mode alone.
+This series enables vmemmap mapping allocation from device memory ranges on
+arm64. Before that it enables vmemmap_populate_basepages() to accommodate
+struct vmem_altmap based requests.
 
-Signed-off-by: Keerthy <j-keerthy@ti.com>
----
- arch/arm64/boot/dts/ti/k3-am65-main.dtsi | 33 ++++++++++++++++++++++++
- 1 file changed, 33 insertions(+)
+This series is based on linux next (next-20190613) along with v6 arm64
+hot-remove series [1]. 
 
-diff --git a/arch/arm64/boot/dts/ti/k3-am65-main.dtsi b/arch/arm64/boot/dts/ti/k3-am65-main.dtsi
-index 91ca5bfeefc2..5e4f9ec39f01 100644
---- a/arch/arm64/boot/dts/ti/k3-am65-main.dtsi
-+++ b/arch/arm64/boot/dts/ti/k3-am65-main.dtsi
-@@ -91,6 +91,39 @@
- 		power-domains = <&k3_pds 148>;
- 	};
- 
-+	crypto: crypto@4E00000 {
-+		compatible = "ti,sa2ul-crypto";
-+		label = "crypto-aes-gbe";
-+		reg = <0x0 0x4E00000 0x0 0x1200>;
-+
-+		status = "okay";
-+		ti,psil-base = <0x4000>;
-+
-+		/* tx: crypto_pnp-1, rx: crypto_pnp-1 */
-+		dmas = <&main_udmap &crypto 0 UDMA_DIR_TX>,
-+				<&main_udmap &crypto 0 UDMA_DIR_RX>,
-+				<&main_udmap &crypto 1 UDMA_DIR_RX>;
-+		dma-names = "tx", "rx1", "rx2";
-+
-+		ti,psil-config0 {
-+			linux,udma-mode = <UDMA_PKT_MODE>;
-+			ti,needs-epib;
-+			ti,psd-size = <64>;
-+		};
-+
-+		ti,psil-config1 {
-+			linux,udma-mode = <UDMA_PKT_MODE>;
-+			ti,needs-epib;
-+			ti,psd-size = <64>;
-+		};
-+
-+		ti,psil-config2 {
-+			linux,udma-mode = <UDMA_PKT_MODE>;
-+			ti,needs-epib;
-+			ti,psd-size = <64>;
-+		};
-+	};
-+
- 	main_pmx0: pinmux@11c000 {
- 		compatible = "pinctrl-single";
- 		reg = <0x0 0x11c000 0x0 0x2e4>;
+[1] https://lkml.org/lkml/2019/6/19/3
+
+Cc: Catalin Marinas <catalin.marinas@arm.com>
+Cc: Will Deacon <will.deacon@arm.com>
+Cc: Mark Rutland <mark.rutland@arm.com>
+Cc: Tony Luck <tony.luck@intel.com>
+Cc: Fenghua Yu <fenghua.yu@intel.com>
+Cc: Dave Hansen <dave.hansen@linux.intel.com>
+Cc: Andy Lutomirski <luto@kernel.org>
+Cc: Andrew Morton <akpm@linux-foundation.org>
+Cc: linux-arm-kernel@lists.infradead.org
+Cc: linux-ia64@vger.kernel.org
+Cc: x86@kernel.org
+Cc: linux-kernel@vger.kernel.org
+
+Anshuman Khandual (2):
+  mm/sparsemem: Add vmem_altmap support in vmemmap_populate_basepages()
+  arm64/mm: Enable device memory allocation and free for vmemmap mapping
+
+ arch/arm64/mm/mmu.c      | 57 +++++++++++++++++++++++++++++++-----------------
+ arch/ia64/mm/discontig.c |  2 +-
+ arch/x86/mm/init_64.c    |  4 ++--
+ include/linux/mm.h       |  5 +++--
+ mm/sparse-vmemmap.c      | 16 +++++++++-----
+ 5 files changed, 54 insertions(+), 30 deletions(-)
+
 -- 
-2.17.1
+2.7.4
 
 
 _______________________________________________
