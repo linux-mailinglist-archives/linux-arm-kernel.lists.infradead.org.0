@@ -2,54 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 09E2D59935
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 28 Jun 2019 13:27:16 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 81B7859940
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 28 Jun 2019 13:27:43 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
 	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=QQ8xZmBVYSALXFoDpeWxA4Dx/O4CTdQu4cChv2LUHXs=; b=p/3B+6fzwfZRPE
-	a3KEnSKp6wVutiQbWeR3gZlDk507YdyIUQhn7MVrTSO67/93yeXsAUeVv8dct/swvCyaWpzo7jBz/
-	EPrDYhE+iAc6JqlYnM5C5fgrrto/ZzI+fD4UxHYk4x1ra3dbYGq415DtKSg2bNB+d7GGue6Odt19t
-	q8+iN2M09ZQbakgjNqM9aLlh2X49mv8p96xJ88kuA8GLuJAMBfkIRsdaAVTGA8ax0jOauWGPmg0VI
-	rY6I5UU8Qlox8gJOfWFviYE6eYUm5DKLgxZDZwqxjTt+vAn/9/CHR/o0d6rSfmsyM7KuhIKqihJ7Z
-	xb56z7V6O5laFAEO2fMg==;
+	List-Owner; bh=uNHiLKlvfF1RBnIY08TFytms8PFGL4ZjOMbMSryXr9g=; b=l54hEmDRi5r/zc
+	20tQZTPLEQA8jyo/orbPC7iHfmjUS6XCjLLjDZkGfxV+YunKZlrH+eKWvD7zBr0F9N3rUIsoDM2U4
+	3gCaseyEN500CGuL0wPdL8CT7DqxFWRJsizOSUMyPc8lRpZaUpqGlL+hs62M9U7p17aWAvE+bzBP4
+	23oT6rjgelGQCDYNCrcwZFK3rJr7P3U1n8kmR6qpkN1eYnxYFR5gzl77L6xCs4GNI3gdIK/Sr4loe
+	GpeKvP7kfA+kTTDReY/od2Fy2QtcxV6NPDa9n7vpGXj/uZy4U5As7g7RtBkrwkqREx603TqKTt918
+	dtAfnwtSHNjkdLZuxHFQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hgp29-00042q-Gt; Fri, 28 Jun 2019 11:27:13 +0000
+	id 1hgp2Z-0004HY-Mo; Fri, 28 Jun 2019 11:27:39 +0000
 Received: from mx07-00178001.pphosted.com ([62.209.51.94])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hgp1w-00042B-9M
- for linux-arm-kernel@lists.infradead.org; Fri, 28 Jun 2019 11:27:02 +0000
-Received: from pps.filterd (m0046668.ppops.net [127.0.0.1])
+ id 1hgp2G-0004FN-Qh
+ for linux-arm-kernel@lists.infradead.org; Fri, 28 Jun 2019 11:27:22 +0000
+Received: from pps.filterd (m0046037.ppops.net [127.0.0.1])
  by mx07-00178001.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id
- x5SBQSq5008465; Fri, 28 Jun 2019 13:26:44 +0200
+ x5SBPqOZ020529; Fri, 28 Jun 2019 13:27:13 +0200
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
  h=from : to : cc : subject
  : date : message-id : mime-version : content-type; s=STMicroelectronics;
- bh=3acCB+/2oJupGcCDZjqJgsqu3sTcxGcFU4Yg5GquxDg=;
- b=O85tGj8z/N9wFxbYQZC0SC8zZsT3lwtB6gFnR0p7TfWfPffAfE+Cdg+Os67QQLFVltNO
- sXVA1yIfOtsHyR11wl+LJQcynvK+Anru79KHuQVBmZm8QUXzC0UMMBouKBcQxTWjb4N2
- pWqRZOFzjnwcNy6cpTeJ2RadVJFBdZ4ZKq3HKgeymQPVFR2sOj5yE3xiBZJDy9rOZknN
- l9NySoh4VwnTwCM7OkEdckylicnr950xl6GzCdiz+z38JTwPeyWRqOhfULxJVahTF3qh
- LWFX989O9YvPTZcU5ADD6qSb864LirR5dqECKjWT0Dr/aVHKZeMnCc2q7KjG9GUu+Wv1 /g== 
+ bh=gTP6fqkfQDGZanlx4ouycdMtZDyDqTFhDA9SvwI/c5k=;
+ b=pfCM7MWbb6FtekqDKmEJxtxRuMl5sVREDBBbAUCkXYhErunReAjYqiMpSMvhITzG5L/Z
+ eIP+yhhT9zDlSQ3m62Uxh68JS520Mf59RwAa4G//G/S+hREqF1hGjyrGcztZvlBnAj12
+ LAsP+fDrggFcBXASrXRPJTlwSGDCzwVExRohoEE6EzGPd8B4pnQQjQ1HJvkLatpNYoRs
+ lwsEbMAKPlI23IU9aZehrSBQ/NiGDJ321gvpL9xLd/EL9S4fjkNx2w3zfs/OJ3oyVk/j
+ ey5tF80ep/TGpZbOzeLes48gMKHSKYYMr2Xi10RyxnnbNU6mnoZRDLxhTovCPalf3vJb Gw== 
 Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx07-00178001.pphosted.com with ESMTP id 2t9d2gwgkw-1
+ by mx07-00178001.pphosted.com with ESMTP id 2tcyq0e4kq-1
  (version=TLSv1 cipher=ECDHE-RSA-AES256-SHA bits=256 verify=NOT);
- Fri, 28 Jun 2019 13:26:44 +0200
+ Fri, 28 Jun 2019 13:27:13 +0200
 Received: from zeta.dmz-eu.st.com (zeta.dmz-eu.st.com [164.129.230.9])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 83F3331;
- Fri, 28 Jun 2019 11:26:43 +0000 (GMT)
-Received: from Webmail-eu.st.com (Safex1hubcas21.st.com [10.75.90.44])
- by zeta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 2389527A5;
- Fri, 28 Jun 2019 11:26:43 +0000 (GMT)
-Received: from SAFEX1HUBCAS22.st.com (10.75.90.93) by SAFEX1HUBCAS21.st.com
- (10.75.90.44) with Microsoft SMTP Server (TLS) id 14.3.439.0; Fri, 28 Jun
- 2019 13:26:43 +0200
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 48DE031;
+ Fri, 28 Jun 2019 11:27:13 +0000 (GMT)
+Received: from Webmail-eu.st.com (Safex1hubcas23.st.com [10.75.90.46])
+ by zeta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 275CF27A5;
+ Fri, 28 Jun 2019 11:27:13 +0000 (GMT)
+Received: from SAFEX1HUBCAS22.st.com (10.75.90.93) by SAFEX1HUBCAS23.st.com
+ (10.75.90.46) with Microsoft SMTP Server (TLS) id 14.3.439.0; Fri, 28 Jun
+ 2019 13:27:13 +0200
 Received: from localhost (10.201.23.65) by Webmail-ga.st.com (10.75.90.48)
- with Microsoft SMTP Server (TLS) id 14.3.439.0; Fri, 28 Jun 2019 13:26:42
+ with Microsoft SMTP Server (TLS) id 14.3.439.0; Fri, 28 Jun 2019 13:27:12
  +0200
 From: Lionel Debieve <lionel.debieve@st.com>
 To: Herbert Xu <herbert@gondor.apana.org.au>, "David S . Miller"
@@ -57,17 +57,17 @@ To: Herbert Xu <herbert@gondor.apana.org.au>, "David S . Miller"
  "Alexandre Torgue" <alexandre.torgue@st.com>,
  <linux-crypto@vger.kernel.org>, <linux-arm-kernel@lists.infradead.org>,
  <linux-kernel@vger.kernel.org>
-Subject: [PATCH 1/1] crypto: stm32/crc32 - rename driver file
-Date: Fri, 28 Jun 2019 13:26:41 +0200
-Message-ID: <20190628112641.9269-1-lionel.debieve@st.com>
+Subject: [PATCH 0/2] crypto: stm32/hash: Fix bug in hmac mode
+Date: Fri, 28 Jun 2019 13:26:53 +0200
+Message-ID: <20190628112655.9341-1-lionel.debieve@st.com>
 X-Mailer: git-send-email 2.17.1
 MIME-Version: 1.0
 X-Originating-IP: [10.201.23.65]
 X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:, ,
  definitions=2019-06-28_04:, , signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190628_042700_802994_B31B5171 
-X-CRM114-Status: GOOD (  10.55  )
+X-CRM114-CacheID: sfid-20190628_042721_175227_6ABF3CA3 
+X-CRM114-Status: GOOD (  10.98  )
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.9 points)
@@ -105,30 +105,18 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Use the same naming convention for all stm32 crypto
-drivers.
+This series fixes issues discovered while using libkcapi library. Some
+more tests show wrong key management in hmac mode. It is fixes by these 
+patches and prevent a potential issue in case of interrupt while processing
+in dma mode.
 
-Signed-off-by: Lionel Debieve <lionel.debieve@st.com>
----
- drivers/crypto/stm32/Makefile                         | 2 +-
- drivers/crypto/stm32/{stm32_crc32.c => stm32-crc32.c} | 0
- 2 files changed, 1 insertion(+), 1 deletion(-)
- rename drivers/crypto/stm32/{stm32_crc32.c => stm32-crc32.c} (100%)
+Lionel Debieve (2):
+  crypto: stm32/hash: Fix hmac issue more than 256 bytes
+  crypto: stm32/hash: remove interruptible condition for dma
 
-diff --git a/drivers/crypto/stm32/Makefile b/drivers/crypto/stm32/Makefile
-index ce77e38c77e0..518e0e0b11a9 100644
---- a/drivers/crypto/stm32/Makefile
-+++ b/drivers/crypto/stm32/Makefile
-@@ -1,4 +1,4 @@
- # SPDX-License-Identifier: GPL-2.0-only
--obj-$(CONFIG_CRYPTO_DEV_STM32_CRC) += stm32_crc32.o
-+obj-$(CONFIG_CRYPTO_DEV_STM32_CRC) += stm32-crc32.o
- obj-$(CONFIG_CRYPTO_DEV_STM32_HASH) += stm32-hash.o
- obj-$(CONFIG_CRYPTO_DEV_STM32_CRYP) += stm32-cryp.o
-diff --git a/drivers/crypto/stm32/stm32_crc32.c b/drivers/crypto/stm32/stm32-crc32.c
-similarity index 100%
-rename from drivers/crypto/stm32/stm32_crc32.c
-rename to drivers/crypto/stm32/stm32-crc32.c
+ drivers/crypto/stm32/stm32-hash.c | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
 -- 
 2.17.1
 
