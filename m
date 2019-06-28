@@ -2,116 +2,116 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9584959C35
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 28 Jun 2019 14:59:32 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2802359C3B
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 28 Jun 2019 15:00:25 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:MIME-Version:
 	Date:Message-ID:From:To:Subject:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=TmCMPmSj2NmAXU8EOkQTwENbsCxJje8m/jR+yrkMoUg=; b=Cp06p4yjM4QFVF
-	Jnv5FkHsg8QsIOfKTXz9YGd6XKEEfYJZNDrcIFMmAYw43dHDO1cYd70PvuwzRn89J0rJWuawCkztZ
-	UZEiXgJVsjHkFv0vVV85rk6wdSbnHAOozjbWFNW36VDHXIf+I/bwS36FAi7hApkTNeOJo4bIL9vWN
-	coLeHGrfsW7YbQd40YACgwKTFHTeDEwcSt/Iq33tUiJX13+AlS5NXMIFF3YnydDQ/c2aYQ2fN4/Xa
-	bQcPKGr+/HrV2KI/nIqdyG3nclsEN+G1lInnO+VEu8hmJTiijzdITCMtZO7979zLbwh5Gj/XB/mKm
-	IrUtOAZXClBqNJdhcB8Q==;
+	List-Owner; bh=A5jSLzscbtfC58YlytWCkVtwLkAO3U3HomiTAPezco0=; b=e+gwwPYR4Uw+w0
+	wVwDA6LRPpMm8fBrhZEsW/Ej2vwdn4z8eHY/DnSgCtgTmfXL3K3qq02/362nvvT7c/mNKD2zUlB+3
+	Qrjb9DRi48w0HBrOYPHr/Yr26iCTQ0PqMPYP/QPBeLT7jXZTlGoVJrbUN2RzHetIB6Q6mHnt9C/X7
+	hohkyAs1wW4ZaiA9NG4tQqPLCXRgCpGHEeMZj/lsu3KJHP3fU7NLnpjglU0H0qRcJgKbVuneEpOfu
+	iflZWrgfLlbDJ86kpBL1AiS5ZqtpuNT2JXyOE5Zw7FBKjHPeHnVbN/hgDJlk0nlZh8l2RFqKSurNI
+	EH6Gc058yI24m4z3siJw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hgqTS-0008Sm-UF; Fri, 28 Jun 2019 12:59:30 +0000
+	id 1hgqUH-0000Mu-EN; Fri, 28 Jun 2019 13:00:21 +0000
 Received: from mailout2.w1.samsung.com ([210.118.77.12])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hgqTA-0008RC-5O
- for linux-arm-kernel@lists.infradead.org; Fri, 28 Jun 2019 12:59:13 +0000
+ id 1hgqTv-0000K6-Ln
+ for linux-arm-kernel@lists.infradead.org; Fri, 28 Jun 2019 13:00:01 +0000
 Received: from eucas1p1.samsung.com (unknown [182.198.249.206])
  by mailout2.w1.samsung.com (KnoxPortal) with ESMTP id
- 20190628125910euoutp0223bbd3ad1516bbff2b773ea20e0bf651~sXjSdObkU0896208962euoutp02P
+ 20190628125958euoutp021b61d26106ce1f0068a2be6a065038a4~sXj_uLHSy0793207932euoutp02Z
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 28 Jun 2019 12:59:10 +0000 (GMT)
+ Fri, 28 Jun 2019 12:59:58 +0000 (GMT)
 DKIM-Filter: OpenDKIM Filter v2.11.0 mailout2.w1.samsung.com
- 20190628125910euoutp0223bbd3ad1516bbff2b773ea20e0bf651~sXjSdObkU0896208962euoutp02P
+ 20190628125958euoutp021b61d26106ce1f0068a2be6a065038a4~sXj_uLHSy0793207932euoutp02Z
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
- s=mail20170921; t=1561726750;
- bh=8Hd3VfBJL+xbiJrjQF90ePIZxnBEv9M00xB5/OAyKPM=;
+ s=mail20170921; t=1561726798;
+ bh=OUDwoCQGsl9WTT2taNQCoc/tSY0rgy7kUD5RRoWSEP0=;
  h=Subject:To:Cc:From:Date:In-Reply-To:References:From;
- b=FMI3ixGUI4k6ZAc1G+bgJMwhHYv20vjSnzYHzs92j8SSQ3JyQVEbpd/cBJ8jS0xti
- 2YEwFH6azYkpaqoDsuXfZSGsjWfWLA3/9KdDiEGAa9mijDRPNevB0qTnidcyVJ4lJM
- IilhMVjZmVbdX6tM4Rry90VASWPCZ9rmKPZM4dus=
-Received: from eusmges2new.samsung.com (unknown [203.254.199.244]) by
+ b=lpN08RJkHhMm8gvjKXXe9mEQuSVd64G/vr7yuIEOkO2FKNFG3Me+yhCRXRdGKhotQ
+ Ujbhs4dqHWw1B/8QV3lnvIf42GAtkBsOrGVmACOat4v8YMzvGPauVIVUe3D7VtIrph
+ 8EsB5CLs63fuTJt+m8+b3/Xo1ofFLhde1+tJjT5E=
+Received: from eusmges1new.samsung.com (unknown [203.254.199.242]) by
  eucas1p2.samsung.com (KnoxPortal) with ESMTP id
- 20190628125910eucas1p202669bfbbad1a9ea55c66706559f1029~sXjR2wB1i1911519115eucas1p2u;
- Fri, 28 Jun 2019 12:59:10 +0000 (GMT)
-Received: from eucas1p1.samsung.com ( [182.198.249.206]) by
- eusmges2new.samsung.com (EUCPMTA) with SMTP id 90.6A.04377.D1F061D5; Fri, 28
- Jun 2019 13:59:09 +0100 (BST)
+ 20190628125957eucas1p27033429a12c8ea16f19ec34e72e83a78~sXj_FgENY0785107851eucas1p2N;
+ Fri, 28 Jun 2019 12:59:57 +0000 (GMT)
+Received: from eucas1p2.samsung.com ( [182.198.249.207]) by
+ eusmges1new.samsung.com (EUCPMTA) with SMTP id D9.B5.04298.D4F061D5; Fri, 28
+ Jun 2019 13:59:57 +0100 (BST)
 Received: from eusmtrp2.samsung.com (unknown [182.198.249.139]) by
- eucas1p2.samsung.com (KnoxPortal) with ESMTPA id
- 20190628125909eucas1p272b6e6e36732ce575b70772b67ae7c6c~sXjRBheKx2972129721eucas1p2v;
- Fri, 28 Jun 2019 12:59:09 +0000 (GMT)
-Received: from eusmgms2.samsung.com (unknown [182.198.249.180]) by
+ eucas1p1.samsung.com (KnoxPortal) with ESMTPA id
+ 20190628125956eucas1p11973850c636bc43d0208f4c4bab19d30~sXj9UJ0Yy2289622896eucas1p1i;
+ Fri, 28 Jun 2019 12:59:56 +0000 (GMT)
+Received: from eusmgms1.samsung.com (unknown [182.198.249.179]) by
  eusmtrp2.samsung.com (KnoxPortal) with ESMTP id
- 20190628125909eusmtrp2b41c12b64b7e42d74f7267a2c892ddd1~sXjQzVFZ20722007220eusmtrp2h;
- Fri, 28 Jun 2019 12:59:09 +0000 (GMT)
-X-AuditID: cbfec7f4-12dff70000001119-e9-5d160f1dc589
+ 20190628125956eusmtrp22d896bdd5128a321cc2e8677b1963048~sXj9F7-uJ0792407924eusmtrp2b;
+ Fri, 28 Jun 2019 12:59:56 +0000 (GMT)
+X-AuditID: cbfec7f2-f13ff700000010ca-98-5d160f4d2074
 Received: from eusmtip1.samsung.com ( [203.254.199.221]) by
- eusmgms2.samsung.com (EUCPMTA) with SMTP id E9.44.04140.C1F061D5; Fri, 28
- Jun 2019 13:59:08 +0100 (BST)
+ eusmgms1.samsung.com (EUCPMTA) with SMTP id 1C.7B.04146.C4F061D5; Fri, 28
+ Jun 2019 13:59:56 +0100 (BST)
 Received: from [106.120.51.71] (unknown [106.120.51.71]) by
  eusmtip1.samsung.com (KnoxPortal) with ESMTPA id
- 20190628125908eusmtip1476c57280886b316413bd8d2c64e41ee~sXjQN785u0811308113eusmtip1c;
- Fri, 28 Jun 2019 12:59:08 +0000 (GMT)
-Subject: Re: [PATCH 02/12] backlight: gpio: use a helper variable for
- &pdev->dev
+ 20190628125956eusmtip10a728d1d09434b2484bc6b3dffc3dd51~sXj8gz6aU0865708657eusmtip1N;
+ Fri, 28 Jun 2019 12:59:55 +0000 (GMT)
+Subject: Re: [PATCH 03/12] backlight: gpio: pull the non-pdata device
+ probing code into probe()
 To: Bartosz Golaszewski <brgl@bgdev.pl>
 From: Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>
-Message-ID: <f6095658-8d23-c30e-7d50-b1555e9dd3e5@samsung.com>
-Date: Fri, 28 Jun 2019 14:59:07 +0200
+Message-ID: <cb6b2f51-f1cb-74f9-2638-fa7becd0b2c4@samsung.com>
+Date: Fri, 28 Jun 2019 14:59:55 +0200
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
  Thunderbird/60.6.1
 MIME-Version: 1.0
-In-Reply-To: <20190625163434.13620-3-brgl@bgdev.pl>
+In-Reply-To: <20190625163434.13620-4-brgl@bgdev.pl>
 Content-Language: en-US
-X-Brightmail-Tracker: H4sIAAAAAAAAA01SfUhTURztvq89V9PnNHfVPmBkYpFaRjzMpKLy/VFhghCK5KzX1Pxqz4/M
- P9LIaRMrKyuH5jRJW6RrC81pBRu5zFRCMbPMgUYf5EzngsCP3J6S/53fPed3zj2XS6JiK+5H
- pmRks4oMWZqUEGKtXX/7dmz08EkIfemg6dmatxhttLYS9LtfowK6vtCHHnRMEXTTbJWA/moY
- R+gxx2tA355rRGj9+BBOv7n2G6cHjNUE/apch+wXMVPDxQLmwdAnnGlXjwoYvfYqwcxc78aZ
- z0OdBDNWZkEYQ8MlxjLchjB2/aZoYZww4gyblpLLKkIiE4XJjpoRkGVGL7zQ+RaCeUQF3EhI
- 7YbK5o8CFRCSYqoJwMYPNowfZgGc/qZD+MEOYGW/CqyslE/bcZ5oBLDUurismgRQea8Odaq8
- qBhYfvW+K8SbCoSa5i8uEUq9RuGPgceEkyCocFhRonXZiqhI2PL0O+7EGBUAtU/sLqP11Ek4
- 1qXDeY0n7K6awJzYjQqDDUMzrgCUksCRidplvBm2TVajzjBIFZGw2Dy4RJBLwyFouryFr+AF
- f1qeCXi8AS621yK8vhnA+dLvy8ttS89xa4HgVXuh2fIedxqhVBBsMYbwxweg7Z4J4/3d4fCk
- J38Hd3iz9S7KH4tgqVLMq7dC3UMdsRKran+E3gBS9apm6lVt1KvaqP/nagCmBRI2h0uXs9yu
- DDYvmJOlczkZ8uDTmel6sPTvehYss8+BcS7JBCgSSNeJNEKfBDEuy+Xy000AkqjUW+Tb550g
- Fp2R5V9kFZmnFDlpLGcC/iQmlYgK1ljjxZRcls2eY9ksVrHCIqSbXyEos3gwlePmo1IDqUmd
- /3HEfaJEknVl41o2NKy2q9r2JzqG23A4bmAsJjHPwxbUzQaeL+g5uG9P7qU7vfGGw2ZJfES4
- 0qzSOYo0oL+io0m+3f/28U51naQhFdTfNCZVvYzVaKMCOM0JJZJacWTbMX3s2Y66XnVU/4GQ
- 4EMWTCzFuGTZzm2ogpP9A1lGc0xzAwAA
-X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFvrEIsWRmVeSWpSXmKPExsVy+t/xu7oy/GKxBlu/W1t8mXuKxWLXg21s
+X-Brightmail-Tracker: H4sIAAAAAAAAA02Sa0hTYRjHe8/ZOTuOtk5z6WNG5UC7QKXUh9NNEqQOkaRBoJXayoNZ3tpJ
+ ywwyzLSFaSnIRqF4d4mNmZqmXWY5tUhyKXbRjTKyyDJvFWnl2VHy2/+5/N/n+T28FK50EEup
+ mPhTnDZeE6smZZL6tl9d64IWuYX7frF6MuM3OyVMk6OeZJ596ZcyxWluzMuJbyRTOa6XMh9q
+ 32OMfeIJYvKnKjDG/L6XYNqvjhCMrekGyTzINmE75Oy3vgwpW9L7hmAbDf1S1my8TLKjOR0E
+ +7a3mWTtV6wYW1t6nrX2NWDsmHl5sOyAbFsUFxuTzGk3+B+WHSuxjGKJJZIzF6uaURrqwHXI
+ hQJ6E7wxv5XqkIxS0pUIRqwWXAzGEVTWF2JiMIag89mlmQrltOS3+Ir5CgTl3VOEGAwjmMyr
+ w4QmV1oDRT1bhBEqehUU1Qw4H8LpJzh8st0ihQJJb4FrmUYkaDntDzk/fjt3ktDeUOQwEoJe
+ QoeCvc1EiD2LoUM/KBG0C70RurImnV6cdofXg8Kmgl4BDcM3nAhAZ1DQZyghRdBAyLZVS0Xt
+ Cp+td2b1MvjbKGICXYNgOmto1t2AoCLvz6x7K7RaXxACGk6vgdtNG8R0AOQP6UjxLAroG14s
+ LqGA6/UFs9eSQ9YlpdjtA6ZyEzk3VtdYhecitWEemmEejmEejuH/3CIkMSJ3LomPi+Z4v3ju
+ 9HpeE8cnxUevP5oQZ0Yz/+7pH+voXTTRfcSCaAqpF8p/LnQLVxKaZD4lzoKAwtUqucdzVbhS
+ HqVJOctpEyK1SbEcb0GelETtLk9d4DiopKM1p7gTHJfIaeeqGOWyNA2FeTwKUhXqUlM2Zger
+ Qne0bg+u1bfYWturTWXp9wfM9t0N8sLS74qBi157e3zLQnayx6e8jPty39n6BzffK3B8PPRw
+ KDij30c7EbF/ejxCEZlx4bQ+U+X5caUi5HOq7+C5ukA+X7UrOexk6avH6VOuD/Wr96TbiwOa
+ 7d5R9q+VWQq1hD+m8VuLa3nNPzn1rkxzAwAA
+X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFvrIIsWRmVeSWpSXmKPExsVy+t/xu7o+/GKxBpOmKFp8mXuKxWLXg21s
  Fmfe3GW3WNQgZnHl63s2ixVfZrJbPN38mMni/tejjBZT/ixnstj0+BqrxYm+D6wWl3fNYbPY
  37uByYHX4/2NVnaPxddus3rsnHWX3WPTqk42j0/9J1k97lzbw+Zxv/s4k8fmJfUex29sZ/L4
  vEkugCtKz6Yov7QkVSEjv7jEVina0MJIz9DSQs/IxFLP0Ng81srIVEnfziYlNSezLLVI3y5B
- L+Pr3FuMBYeZK/ZukGxg/MvUxcjJISFgItH78TNrFyMXh5DAUkaJjj+vGbsYOYASMhLH15dB
- 1AhL/LnWxQZR85pRYtPHlWDNwgJBEr2d88BsEQF1iQXr7jGBFDELHGeWWPhiClTHekaJ5m1/
- WUCq2ASsJCa2r2IEsXkF7CTWb3zBCmKzCKhKrFr7mRnEFhWIkDjzfgULRI2gxMmZT8BsTgFj
- iSXXPoFtYwba9mfeJWYIW1zi1pP5UHF5ie1v5zBPYBSahaR9FpKWWUhaZiFpWcDIsopRJLW0
- ODc9t9hIrzgxt7g0L10vOT93EyMwvrcd+7llB2PXu+BDjAIcjEo8vAu4xGKFWBPLiitzDzFK
- cDArifBKnhOJFeJNSaysSi3Kjy8qzUktPsRoCvTcRGYp0eR8YOrJK4k3NDU0t7A0NDc2Nzaz
- UBLn7RA4GCMkkJ5YkpqdmlqQWgTTx8TBKdXAKDSj0/hlUG7WJFmH4hO3F6yyqpP7USy1vErx
- ePmO12pfLqfOdF3ImaMstOFfo6m10TqJDbM93rz7JLxY8oLxHz6Py4XMXb8Wssufc3qnqvvN
- lktD9NuKJ4za+0JZGQKkvkzzS1m8zOA73/4sz/igmg0xeRlsU4Q2ML/d+fd2+IH9Qi+yf/k4
- KLEUZyQaajEXFScCADLzI24FAwAA
-X-CMS-MailID: 20190628125909eucas1p272b6e6e36732ce575b70772b67ae7c6c
+ L2PxoU9MBYtZKlpW7mFsYDzJ3MXIwSEhYCIxZa9BFyMXh5DAUkaJRy+3M0LEZSSOry/rYuQE
+ MoUl/lzrYgOxhQReM0p0HRUBsYUFEiV6Xr5kAbFFBNQlFqy7xwQyh1ngOLPEwhdT2CCGrmeU
+ uDNtJTNIFZuAlcTE9lWMIDavgJ1E//ffYHEWAVWJBQ9WsYLYogIREmfer2CBqBGUODnzCZjN
+ KWAscb7jG1gvM9C2P/MuMUPY4hK3nsxngrDlJba/ncM8gVFoFpL2WUhaZiFpmYWkZQEjyypG
+ kdTS4tz03GJDveLE3OLSvHS95PzcTYzA6N527OfmHYyXNgYfYhTgYFTi4V3AJRYrxJpYVlyZ
+ e4hRgoNZSYRX8pxIrBBvSmJlVWpRfnxRaU5q8SFGU6DnJjJLiSbnAxNPXkm8oamhuYWlobmx
+ ubGZhZI4b4fAwRghgfTEktTs1NSC1CKYPiYOTqkGRkeTzFUPuMrW9ur5/1jbX5FaulttboNI
+ sOWh5fa/5z99JaRxI+l+AWeweHWQ0kfTDTeNWEWu35a/Wr+n0Nu9xy42p/PUzoYFO+TMXj/q
+ SrvEw8LEmHC0u/RsW9BOw8X9O1kXHWU27WVbNfX11NVxOcn//MV2XrnRHvoktS1E37JPOy07
+ cLu1EktxRqKhFnNRcSIAL20C+QQDAAA=
+X-CMS-MailID: 20190628125956eucas1p11973850c636bc43d0208f4c4bab19d30
 X-Msg-Generator: CA
-X-RootMTR: 20190625163459epcas1p39631966dbd7acbbbb1f905b18e41a2d7
+X-RootMTR: 20190625163459epcas3p1331f76cb55291f41c5a4c3e37e0713fe
 X-EPHeader: CA
 CMS-TYPE: 201P
-X-CMS-RootMailID: 20190625163459epcas1p39631966dbd7acbbbb1f905b18e41a2d7
+X-CMS-RootMailID: 20190625163459epcas3p1331f76cb55291f41c5a4c3e37e0713fe
 References: <20190625163434.13620-1-brgl@bgdev.pl>
- <CGME20190625163459epcas1p39631966dbd7acbbbb1f905b18e41a2d7@epcas1p3.samsung.com>
- <20190625163434.13620-3-brgl@bgdev.pl>
+ <CGME20190625163459epcas3p1331f76cb55291f41c5a4c3e37e0713fe@epcas3p1.samsung.com>
+ <20190625163434.13620-4-brgl@bgdev.pl>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190628_055912_352073_F7EE7B9D 
-X-CRM114-Status: GOOD (  10.91  )
+X-CRM114-CacheID: sfid-20190628_055959_852860_D24DA21F 
+X-CRM114-Status: GOOD (  12.01  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -156,8 +156,9 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 On 6/25/19 6:34 PM, Bartosz Golaszewski wrote:
 > From: Bartosz Golaszewski <bgolaszewski@baylibre.com>
 > 
-> Instead of dereferencing pdev each time, use a helper variable for
-> the associated device pointer.
+> There's no good reason to have the generic probing code in a separate
+> routine. This function is short and is inlined by the compiler anyway.
+> Move it into probe under the pdata-specific part.
 > 
 > Signed-off-by: Bartosz Golaszewski <bgolaszewski@baylibre.com>
 
