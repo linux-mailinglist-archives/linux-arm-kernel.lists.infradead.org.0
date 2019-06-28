@@ -2,86 +2,66 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 94F4859394
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 28 Jun 2019 07:43:10 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 46CD7593E6
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 28 Jun 2019 07:57:51 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=BHI/cf2JsSxfb27TwKK325fLbniAK8e5lkm+8Bzuw7U=; b=c0vMJG3pht6DMw
-	MZQQPlC2LND6wdWrobB75BlC4FjcJqROt4RZ9IRIRoy3eOejN4QJ7bm1ElRj/0b/onJwj0/KsLyT0
-	Ys9q0anZhbL/gr8gSZFDPrIWnapfeutrIRqKmaePL3J+mC4tLFFp6DRE8ZLVYqSvU2znNMDHyTOa5
-	Gpwv/bl1an2zoy271hbnAqVgpYlywdSLOKM32IgjpUdeYKnOB3D87IhHlMxhg1V7RgMXsw2xHnB4Z
-	ZG17hgKUoHO+zgD3dnN8hY6X3o0GnwTrL1bU1QnMhSiWFtEDLNvGabMegssi0aBCc0a4RIhxAOC0g
-	rYuK9JBLyBls1FNyt5wg==;
+	List-Owner; bh=YLWYPLJTBhCuBpI5mjwtHEfR9vzpeod6oNa+FncMUs0=; b=K+4VSiaq2gIA7k
+	OvhDC66ZIwX2CvBZu+G8OYmF7Hx6yWMGjxdN/8tVbf3bDWiO5XJR8lf5y7eUsUVSLfl9KttgB4CS5
+	OOs0BcOHkXDmdNphlvFJhY7pzWeAWTfmX7DCzYFwX0F2HApbrXIRrJElmmJHY+oztO7Gied6R2D2X
+	Xh/nXdG8Fy2Jut4YCOF2aVUHgB3FhRhjXmn4LkNAJZltXMywqos+W3uB6AVclnD5iSLhSoVLUVINQ
+	HIlgte7Pb9DaJJC6Ju1dBj6YPgCTewKoVL6BjKk7W9C4f9XvWvQke5hQL3Hl/Ee+VWabiYYUbYrD8
+	Bzi3R44ZlLsMuP0mJueA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hgjf9-0001XA-3y; Fri, 28 Jun 2019 05:43:07 +0000
-Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
+	id 1hgjtJ-0006WH-La; Fri, 28 Jun 2019 05:57:45 +0000
+Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hgjew-0001WP-6C
- for linux-arm-kernel@lists.infradead.org; Fri, 28 Jun 2019 05:42:55 +0000
-Received: by mail-wm1-x344.google.com with SMTP id v19so7692600wmj.5
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 27 Jun 2019 22:42:52 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=WUmauarPYj2SQlusGyMDBTJmU8hMPlbsUq3l5nJNX88=;
- b=TDTzYlFnKgzjZQ9gI/SNj822C1vpURAvVYRfwCO6x+WFL/tArkz9HkDgem1AmYnkN8
- VkOc2wFbtDh/vBJJxiNcP+GdkZpfce+UmJ6f6jRmHr/kcx/Rf+wFodmSgMl1qD6qa4SS
- KfjhEScvVvScxqLgPnnfnMgp+1muYMviMKyoY/YtdYrTiso0lZQU5FRsJHhE8UntwGQl
- aT6uTm7KoIY09VX4nVRnOC1u09cp0uwWIeJH38WL3ZBIS0zIuDXc4/spAKm2EkmoQHZx
- 62c7yUbNJVk2C5XNjnyYTOnuukHTrvVwUGft7ACLwKsZe+smc//GrsoTSQ/U8kIfjX5R
- ZSSQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=WUmauarPYj2SQlusGyMDBTJmU8hMPlbsUq3l5nJNX88=;
- b=FtZFqNo1hv5CdzD47K7Pe3bLVWSih9uFkc2Sh5/WAIH2eEyFTb0GVTe7PO6LV2s0RO
- FAc2ou7HG/wHG9wGkQPy7GKHPWub//fK00ipIAGOvryHCfrA9p65uMY9br4+q/iY8LWO
- WL1by6EtJF3NaVFmYD2gT6GgfJy6JxBbOCEghzY73GVeSMoEZUguMBpqKB8PPrtvPDJC
- rFOOrk4TTgsqzEo8vMkghqg9KBG76aXo67NXhpfVnrtgICuyWVouLIADIkPmrtwxwZqH
- NuyNu+vrgCr3xxul6qZxyNS8zxbZ9LPQ5DANQk7QmBBikExUagvuyloRgdNWdNbxLRYT
- 6KNQ==
-X-Gm-Message-State: APjAAAUMooikB26TBm7u+ZRVhjgCi8LKdRNZsf5mxW6zp4EWY0RRHcBd
- JzzsemJbmdVAmbvB32nIoHeAGrRDwQNvC5vtMnA=
-X-Google-Smtp-Source: APXvYqwAOqZmkppeFcMiIoFt4MysbFWIxUza8rc+k5ahTj8SHHHqKDGGqzwqY8kpvHG18Av+CAe4jlnYhZGZ4p0Z0Ng=
-X-Received: by 2002:a7b:c247:: with SMTP id b7mr6041397wmj.13.1561700571802;
- Thu, 27 Jun 2019 22:42:51 -0700 (PDT)
+ id 1hgjt4-0006V8-Lx; Fri, 28 Jun 2019 05:57:32 +0000
+X-UUID: f1e312a8402e416a9e681cfacb2ef1c9-20190627
+X-UUID: f1e312a8402e416a9e681cfacb2ef1c9-20190627
+Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw02.mediatek.com
+ (envelope-from <ck.hu@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 45723481; Thu, 27 Jun 2019 21:57:19 -0800
+Received: from MTKMBS33N2.mediatek.inc (172.27.4.76) by
+ MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Thu, 27 Jun 2019 22:57:18 -0700
+Received: from mtkcas09.mediatek.inc (172.21.101.178) by
+ MTKMBS33N2.mediatek.inc (172.27.4.76) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Fri, 28 Jun 2019 13:57:14 +0800
+Received: from [172.21.77.4] (172.21.77.4) by mtkcas09.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
+ Transport; Fri, 28 Jun 2019 13:57:14 +0800
+Message-ID: <1561701434.18399.3.camel@mtksdaap41>
+Subject: Re: [v5 2/7] drm/mediatek: fixes CMDQ reg address of mt8173 is
+ different with mt2701
+From: CK Hu <ck.hu@mediatek.com>
+To: Jitao Shi <jitao.shi@mediatek.com>
+Date: Fri, 28 Jun 2019 13:57:14 +0800
+In-Reply-To: <20190627080116.40264-3-jitao.shi@mediatek.com>
+References: <20190627080116.40264-1-jitao.shi@mediatek.com>
+ <20190627080116.40264-3-jitao.shi@mediatek.com>
+X-Mailer: Evolution 3.10.4-0ubuntu2 
 MIME-Version: 1.0
-References: <20190628032544.8317-1-Anson.Huang@nxp.com>
-In-Reply-To: <20190628032544.8317-1-Anson.Huang@nxp.com>
-From: Daniel Baluta <daniel.baluta@gmail.com>
-Date: Fri, 28 Jun 2019 08:42:40 +0300
-Message-ID: <CAEnQRZDgbgmKXaLNVoe0N5e_voGkC45gqp0bUjPJsSh4CXOc+w@mail.gmail.com>
-Subject: Re: [PATCH V2] soc: imx-scu: Add SoC UID(unique identifier) support
-To: Anson Huang <Anson.Huang@nxp.com>
+X-TM-SNTS-SMTP: EFC69EF3637C30387605FE58F2031FD41C3BF0457DDCD7D8088A30B41732E1EB2000:8
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190627_224254_234817_21E64CDB 
-X-CRM114-Status: UNSURE (   8.08  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190627_225730_722964_AC672556 
+X-CRM114-Status: GOOD (  18.13  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:344 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (daniel.baluta[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,31 +73,131 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Aisheng Dong <aisheng.dong@nxp.com>, Abel Vesa <abel.vesa@nxp.com>,
- Shawn Guo <shawnguo@kernel.org>, Sascha Hauer <s.hauer@pengutronix.de>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- dl-linux-imx <Linux-imx@nxp.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Fabio Estevam <festevam@gmail.com>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ David Airlie <airlied@linux.ie>, stonea168@163.com,
+ dri-devel@lists.freedesktop.org, yingjoe.chen@mediatek.com,
+ Ajay Kumar <ajaykumar.rs@samsung.com>, Vincent Palatin <vpalatin@chromium.org>,
+ cawa.cheng@mediatek.com, bibby.hsieh@mediatek.com,
+ Russell King <rmk+kernel@arm.linux.org.uk>, Thierry
+ Reding <treding@nvidia.com>, linux-pwm@vger.kernel.org,
+ Sascha Hauer <kernel@pengutronix.de>, Pawel Moll <pawel.moll@arm.com>,
+ Ian Campbell <ijc+devicetree@hellion.org.uk>, Inki
+ Dae <inki.dae@samsung.com>, Rob Herring <robh+dt@kernel.org>,
+ linux-mediatek@lists.infradead.org, Andy
+ Yan <andy.yan@rock-chips.com>, Matthias Brugger <matthias.bgg@gmail.com>,
+ eddie.huang@mediatek.com, linux-arm-kernel@lists.infradead.org,
+ Rahul Sharma <rahul.sharma@samsung.com>, srv_heupstream@mediatek.com,
+ linux-kernel@vger.kernel.org, Philipp Zabel <p.zabel@pengutronix.de>, Sean
+ Paul <seanpaul@chromium.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Jun 28, 2019 at 6:36 AM <Anson.Huang@nxp.com> wrote:
->
-> From: Anson Huang <Anson.Huang@nxp.com>
->
-> Add i.MX SCU SoC's UID(unique identifier) support, user
-> can read it from sysfs:
->
-> root@imx8qxpmek:~# cat /sys/devices/soc0/soc_uid
-> 7B64280B57AC1898
->
-> Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
+Hi, Jitao:
 
-Reviewed-by: Daniel Baluta <daniel.baluta@nxp.com>
+On Thu, 2019-06-27 at 16:01 +0800, Jitao Shi wrote:
+> Config the different CMDQ reg address in driver data.
+> 
+> Signed-off-by: Jitao Shi <jitao.shi@mediatek.com>
+> ---
+>  drivers/gpu/drm/mediatek/mtk_dsi.c | 29 ++++++++++++++++++++++++-----
+>  1 file changed, 24 insertions(+), 5 deletions(-)
+> 
+> diff --git a/drivers/gpu/drm/mediatek/mtk_dsi.c b/drivers/gpu/drm/mediatek/mtk_dsi.c
+> index 595b3b047c7b..bd37d823c762 100644
+> --- a/drivers/gpu/drm/mediatek/mtk_dsi.c
+> +++ b/drivers/gpu/drm/mediatek/mtk_dsi.c
+> @@ -131,7 +131,6 @@
+>  #define VM_CMD_EN			BIT(0)
+>  #define TS_VFP_EN			BIT(5)
+>  
+> -#define DSI_CMDQ0		0x180
+>  #define CONFIG				(0xff << 0)
+>  #define SHORT_PACKET			0
+>  #define LONG_PACKET			2
+> @@ -156,6 +155,10 @@
+>  
+>  struct phy;
+>  
+> +struct mtk_dsi_driver_data {
+> +	const u32 reg_cmdq_off;
+> +};
+> +
+>  struct mtk_dsi {
+>  	struct mtk_ddp_comp ddp_comp;
+>  	struct device *dev;
+> @@ -182,6 +185,7 @@ struct mtk_dsi {
+>  	bool enabled;
+>  	u32 irq_data;
+>  	wait_queue_head_t irq_wait_queue;
+> +	const struct mtk_dsi_driver_data *driver_data;
+>  };
+>  
+>  static inline struct mtk_dsi *encoder_to_dsi(struct drm_encoder *e)
+> @@ -934,6 +938,7 @@ static void mtk_dsi_cmdq(struct mtk_dsi *dsi, const struct mipi_dsi_msg *msg)
+>  	const char *tx_buf = msg->tx_buf;
+>  	u8 config, cmdq_size, cmdq_off, type = msg->type;
+>  	u32 reg_val, cmdq_mask, i;
+> +	u32 reg_cmdq_off = dsi->driver_data->reg_cmdq_off;
+>  
+>  	if (MTK_DSI_HOST_IS_READ(type))
+>  		config = BTA;
+> @@ -953,9 +958,11 @@ static void mtk_dsi_cmdq(struct mtk_dsi *dsi, const struct mipi_dsi_msg *msg)
+>  	}
+>  
+>  	for (i = 0; i < msg->tx_len; i++)
+> -		writeb(tx_buf[i], dsi->regs + DSI_CMDQ0 + cmdq_off + i);
+> +		mtk_dsi_mask(dsi, (reg_cmdq_off + cmdq_off + i) & (~0x3U),
+> +			     (0xffUL << (((i + cmdq_off) & 3U) * 8U)),
+> +			     tx_buf[i] << (((i + cmdq_off) & 3U) * 8U));
+
+If writeb() has the same problem in MT2701, I think we need a patch that
+just change writeb() to mtk_dsi_mask(), and then a patch to fix CMDQ reg
+address of MT8173. So break this patch into two patches.
+
+Regards,
+CK
+
+>  
+> -	mtk_dsi_mask(dsi, DSI_CMDQ0, cmdq_mask, reg_val);
+> +	mtk_dsi_mask(dsi, reg_cmdq_off, cmdq_mask, reg_val);
+>  	mtk_dsi_mask(dsi, DSI_CMDQ_SIZE, CMDQ_SIZE, cmdq_size);
+>  }
+>  
+> @@ -1099,6 +1106,8 @@ static int mtk_dsi_probe(struct platform_device *pdev)
+>  	if (ret)
+>  		goto err_unregister_host;
+>  
+> +	dsi->driver_data = of_device_get_match_data(dev);
+> +
+>  	dsi->engine_clk = devm_clk_get(dev, "engine");
+>  	if (IS_ERR(dsi->engine_clk)) {
+>  		ret = PTR_ERR(dsi->engine_clk);
+> @@ -1192,9 +1201,19 @@ static int mtk_dsi_remove(struct platform_device *pdev)
+>  	return 0;
+>  }
+>  
+> +static const struct mtk_dsi_driver_data mt8173_dsi_driver_data = {
+> +	.reg_cmdq_off = 0x200,
+> +};
+> +
+> +static const struct mtk_dsi_driver_data mt2701_dsi_driver_data = {
+> +	.reg_cmdq_off = 0x180,
+> +};
+> +
+>  static const struct of_device_id mtk_dsi_of_match[] = {
+> -	{ .compatible = "mediatek,mt2701-dsi" },
+> -	{ .compatible = "mediatek,mt8173-dsi" },
+> +	{ .compatible = "mediatek,mt2701-dsi",
+> +	  .data = &mt2701_dsi_driver_data },
+> +	{ .compatible = "mediatek,mt8173-dsi",
+> +	  .data = &mt8173_dsi_driver_data },
+>  	{ },
+>  };
+>  
+
+
 
 _______________________________________________
 linux-arm-kernel mailing list
