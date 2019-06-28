@@ -2,94 +2,87 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E0D18595CF
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 28 Jun 2019 10:13:00 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 725F9595DE
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 28 Jun 2019 10:18:07 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=iHNJAXBrSa6Ns3s7t5kCMN017pta1QwZzoJj1k88a6I=; b=GWCesBLeIJbtSA
-	UFa75V6asT6P173P/P1X63CKkWjJVfr+6i4m+SGA6DODByMcMlNq4kn1G+L0AZBdHYmMjULuzE01s
-	V9ciyW83beXZhOcn1ZE+qM5gqGvgVZc5s9+x7LHihtdaZ20fW1fmSF6KfAwPxFoM7oouFXXn/uWqv
-	orPj8r0XTxGMu2dVH2f7LLPROIuxNoe4LlbmGhSqT9Vl4kNN4ZJenloPZxH2xkMHKPUonKFWPpL7f
-	4nOGRLWTZs1jgep1Elg3H61NTS54IYH1BZch5JHgUai/SBjyQm5c/QBWs+GBi8zM+INV9vr+UAVth
-	r/TePVPRHoV8tcqa+Hrg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=qcM0EJ1ptduF2SuVE18HxmCMKhmh5AGTzA2HkYUQ3Cs=; b=MOhNNo3yuTdNxw
+	T+WTTLenkEb05djbgMdKdykU3J9L4MRfoVNnxmSj7KK5cxOSSfBiLtj/Iiwui/C1VK+F0f88UYQF1
+	wNIamtkXlrzYaxxlP34SjYZ2Gk5XjjHCl/0McVfb2O/7PqoQWZkFPOqiOGspmTKkwMqCVefNXxJof
+	lFIokz4CfKw9yK7yxYnD0CfPllxQ+mh0DRsWdza/zfTslZLtjrzsWShuMtQuHuieMSqZnlf7eqKQ5
+	oW+PdbG1yygovesdJOLpXAFRANnFwHH6E/xozN29wJe18FKaTfTOb7t6xO/ejGNN0Ak3OrWfY7ZCw
+	XbQcHZ6xORO3ShshK5Zw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hgm0A-00009y-Px; Fri, 28 Jun 2019 08:12:58 +0000
-Received: from userp2120.oracle.com ([156.151.31.85])
+	id 1hgm55-00024P-Qr; Fri, 28 Jun 2019 08:18:03 +0000
+Received: from mx07-00178001.pphosted.com ([62.209.51.94])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hglzw-000094-0u; Fri, 28 Jun 2019 08:12:45 +0000
-Received: from pps.filterd (userp2120.oracle.com [127.0.0.1])
- by userp2120.oracle.com (8.16.0.27/8.16.0.27) with SMTP id x5S89BhV010144;
- Fri, 28 Jun 2019 08:12:33 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=oracle.com;
- h=date : from : to : cc
- : subject : message-id : references : mime-version : content-type :
- in-reply-to; s=corp-2018-07-02;
- bh=lsoA1UWDq7nPbXKAtv1ZiW/0gagm4KjXwLbq4FZiBPg=;
- b=ASngeDiJjiNNpLJnzZiOLa+t+yJJ7CQq2AVaQ9mGd3Mj5nRe2Z2hl08EcSCHo3lK4BYS
- trnr90J7VJBT0MpGCDqHJv8ILBKKT5izPnxEuggKjrx5a+gBmiGRFyUtsPadP4H0Iv5W
- fbn6+sJd039YGIdMOlikCTWLh3S01R7yBYKE8gnjNlUl0gP1D/M4hxlpH5rWhLml8LK1
- MJU0jP4dwj4bfVh+2J5pCCSLooXdjQaditJ/cO+4k757RLcX2F4aUojh+bbWdhyAnChd
- pLOtxIUdwAW1lkgmzbPY6p5GSZLoxcOhZk1LDO11tHlVG0iELrkfjEQ6o1Ak4x9GIr8Q rg== 
-Received: from aserp3020.oracle.com (aserp3020.oracle.com [141.146.126.70])
- by userp2120.oracle.com with ESMTP id 2t9cyqv6pw-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Fri, 28 Jun 2019 08:12:33 +0000
-Received: from pps.filterd (aserp3020.oracle.com [127.0.0.1])
- by aserp3020.oracle.com (8.16.0.27/8.16.0.27) with SMTP id x5S8ApmK026857;
- Fri, 28 Jun 2019 08:12:32 GMT
-Received: from userv0121.oracle.com (userv0121.oracle.com [156.151.31.72])
- by aserp3020.oracle.com with ESMTP id 2t9p6vs8ky-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Fri, 28 Jun 2019 08:12:32 +0000
-Received: from abhmp0004.oracle.com (abhmp0004.oracle.com [141.146.116.10])
- by userv0121.oracle.com (8.14.4/8.13.8) with ESMTP id x5S8CSih009339;
- Fri, 28 Jun 2019 08:12:29 GMT
-Received: from kadam (/41.57.98.10) by default (Oracle Beehive Gateway v4.0)
- with ESMTP ; Fri, 28 Jun 2019 01:12:28 -0700
-Date: Fri, 28 Jun 2019 11:12:17 +0300
-From: Dan Carpenter <dan.carpenter@oracle.com>
-To: Stefan Wahren <wahrenst@gmx.net>
-Subject: Re: [PATCH 29/31] staging: bcm2835-camera: Add sanity checks for
- queue_setup/CREATE_BUFS
-Message-ID: <20190628081217.GG19015@kadam>
-References: <1561669769-2498-1-git-send-email-wahrenst@gmx.net>
- <1561669769-2498-3-git-send-email-wahrenst@gmx.net>
+ id 1hgm4m-00023c-OW
+ for linux-arm-kernel@lists.infradead.org; Fri, 28 Jun 2019 08:17:47 +0000
+Received: from pps.filterd (m0046037.ppops.net [127.0.0.1])
+ by mx07-00178001.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id
+ x5S8GpXs004733; Fri, 28 Jun 2019 10:17:38 +0200
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
+ h=subject : to : cc :
+ references : from : message-id : date : mime-version : in-reply-to :
+ content-type : content-transfer-encoding; s=STMicroelectronics;
+ bh=54p6IGTv0kpBUX5dn9ABNUkHJCNzR418aDokKNKHuT8=;
+ b=gNlAnF/gNcuAoFM+8oFLhXKZ2g2fljtJIHe6yEeb5HWkvMZJVRd4/hW1VOw/Q9LaL+Oi
+ IyxgPBv85+pLvfh02hN7GgukhCeCcsButmmZNZDD6as2X8dawA7UZxJpnWaZ1XCtv2D+
+ KD2qp2coE4KXRQBVUk17ZU9Pxvxn6dP72Cc+1K2d0jxy3ceqK3/I4z5p9lOsenaS0JZf
+ h2UKvbUqMLxVOxnzXNEv7RUu3Mqz/d091Z/n4Uvw4Gv+Y0mniMNHQFW8nmUljUtJUxN8
+ M7DDiz7aZs35GP2jefkw3rjT9DFwl1+yO70SDMHKhtZx7KZmfgIe7ZdZ3zVK4m++wTyW /w== 
+Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
+ by mx07-00178001.pphosted.com with ESMTP id 2tcyq0cy66-1
+ (version=TLSv1 cipher=ECDHE-RSA-AES256-SHA bits=256 verify=NOT);
+ Fri, 28 Jun 2019 10:17:38 +0200
+Received: from zeta.dmz-eu.st.com (zeta.dmz-eu.st.com [164.129.230.9])
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id D77493D;
+ Fri, 28 Jun 2019 08:17:37 +0000 (GMT)
+Received: from Webmail-eu.st.com (sfhdag5node3.st.com [10.75.127.15])
+ by zeta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 87AA01967;
+ Fri, 28 Jun 2019 08:17:37 +0000 (GMT)
+Received: from [10.48.0.167] (10.75.127.46) by SFHDAG5NODE3.st.com
+ (10.75.127.15) with Microsoft SMTP Server (TLS) id 15.0.1473.3; Fri, 28 Jun
+ 2019 10:17:36 +0200
+Subject: Re: [PATCH 2/3] iio: adc: stm32-adc: add analog switches supply
+ control
+To: Jonathan Cameron <jic23@kernel.org>
+References: <1560324276-681-1-git-send-email-fabrice.gasnier@st.com>
+ <1560324276-681-3-git-send-email-fabrice.gasnier@st.com>
+ <20190616160732.124a1eb9@archlinux>
+ <f1d4b47a-5910-53fe-5d63-d51da429dacd@st.com>
+ <5ea9f65d-2feb-1ec5-1ca1-0cfd2964f160@st.com>
+ <20190622120510.2215e8cc@archlinux>
+From: Fabrice Gasnier <fabrice.gasnier@st.com>
+Message-ID: <d541c501-2995-95e3-4ed1-d919287aa2f2@st.com>
+Date: Fri, 28 Jun 2019 10:17:36 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.7.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <1561669769-2498-3-git-send-email-wahrenst@gmx.net>
-User-Agent: Mutt/1.9.4 (2018-02-28)
-X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9301
- signatures=668688
-X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 suspectscore=0
- malwarescore=0
- phishscore=0 bulkscore=0 spamscore=0 mlxscore=0 mlxlogscore=999
- adultscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.0.1-1810050000 definitions=main-1906280095
-X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9301
- signatures=668688
-X-Proofpoint-Spam-Details: rule=notspam policy=default score=0
- priorityscore=1501 malwarescore=0
- suspectscore=0 phishscore=0 bulkscore=0 spamscore=0 clxscore=1015
- lowpriorityscore=0 mlxscore=0 impostorscore=0 mlxlogscore=999 adultscore=0
- classifier=spam adjust=0 reason=mlx scancount=1 engine=8.0.1-1810050000
- definitions=main-1906280095
+In-Reply-To: <20190622120510.2215e8cc@archlinux>
+Content-Language: en-US
+X-Originating-IP: [10.75.127.46]
+X-ClientProxiedBy: SFHDAG1NODE1.st.com (10.75.127.1) To SFHDAG5NODE3.st.com
+ (10.75.127.15)
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:, ,
+ definitions=2019-06-28_03:, , signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190628_011244_199357_E845F540 
-X-CRM114-Status: GOOD (  16.76  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20190628_011745_091928_81B1B005 
+X-CRM114-Status: GOOD (  28.50  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [156.151.31.85 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [62.209.51.94 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -97,9 +90,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.0 KHOP_DYNAMIC           Relay looks like a dynamic address
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -111,37 +102,459 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devel@driverdev.osuosl.org, Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Hans Verkuil <hverkuil@xs4all.nl>, Eric Anholt <eric@anholt.net>,
- linux-rpi-kernel@lists.infradead.org,
- Dave Stevenson <dave.stevenson@raspberrypi.org>,
- Mauro Carvalho Chehab <mchehab@kernel.org>,
- linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, lars@metafoo.de,
+ alexandre.torgue@st.com, linux-iio@vger.kernel.org, pmeerw@pmeerw.net,
+ linux-kernel@vger.kernel.org, robh+dt@kernel.org, mcoquelin.stm32@gmail.com,
+ knaack.h@gmx.de, linux-stm32@st-md-mailman.stormreply.com,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Jun 27, 2019 at 11:09:27PM +0200, Stefan Wahren wrote:
-> From: Dave Stevenson <dave.stevenson@raspberrypi.org>
+On 6/22/19 1:05 PM, Jonathan Cameron wrote:
+> On Wed, 19 Jun 2019 14:38:42 +0200
+> Fabrice Gasnier <fabrice.gasnier@st.com> wrote:
 > 
-> Fixes a v4l2-compliance failure when passed a buffer that is
-> too small.
-> queue_setup wasn't handling the case where !(*nplanes), as
-                                             ^^^^^^^^^^^
-This is reversed?  It wasn't handling where *nplanes is non-zero.
+>> On 6/17/19 2:43 PM, Fabrice Gasnier wrote:
+>>> On 6/16/19 5:07 PM, Jonathan Cameron wrote:  
+>>>> On Wed, 12 Jun 2019 09:24:35 +0200
+>>>> Fabrice Gasnier <fabrice.gasnier@st.com> wrote:
+>>>>  
+>>>>> On stm32h7 and stm32mp1, the ADC inputs are multiplexed with analog
+>>>>> switches which have reduced performances when their supply is below 2.7V
+>>>>> (vdda by default):
+>>>>> - vdd supply can be selected if above 2.7V by setting ANASWVDD syscfg bit
+>>>>>   (STM32MP1 only).
+>>>>> - Voltage booster can be used, to get full ADC performances by setting
+>>>>>   BOOSTE/EN_BOOSTER syscfg bit (increases power consumption).
+>>>>>
+>>>>> Make this optional, since this is a trade-off between analog performance
+>>>>> and power consumption.
+>>>>>
+>>>>> Note: STM32H7 syscfg has a set and clear register for "BOOSTE" control.
+>>>>> STM32MP1 has separate set and clear registers pair to control EN_BOOSTER
+>>>>> and ANASWVDD bits.
+>>>>>
+>>>>> Signed-off-by: Fabrice Gasnier <fabrice.gasnier@st.com>  
+>>>>
+>>>> A few minor bits inline, but mostly seems fine to me.
+>>>>
+>>>> Jonathan
+>>>>  
+>>>>> ---
+>>>>>  drivers/iio/adc/stm32-adc-core.c | 232 ++++++++++++++++++++++++++++++++++++++-
+>>>>>  1 file changed, 230 insertions(+), 2 deletions(-)
+>>>>>
+>>>>> diff --git a/drivers/iio/adc/stm32-adc-core.c b/drivers/iio/adc/stm32-adc-core.c
+>>>>> index 2327ec1..9d41b16 100644
+>>>>> --- a/drivers/iio/adc/stm32-adc-core.c
+>>>>> +++ b/drivers/iio/adc/stm32-adc-core.c
+>>>>> @@ -14,9 +14,11 @@
+>>>>>  #include <linux/irqchip/chained_irq.h>
+>>>>>  #include <linux/irqdesc.h>
+>>>>>  #include <linux/irqdomain.h>
+>>>>> +#include <linux/mfd/syscon.h>
+>>>>>  #include <linux/module.h>
+>>>>>  #include <linux/of_device.h>
+>>>>>  #include <linux/pm_runtime.h>
+>>>>> +#include <linux/regmap.h>
+>>>>>  #include <linux/regulator/consumer.h>
+>>>>>  #include <linux/slab.h>
+>>>>>  
+>>>>> @@ -51,6 +53,20 @@
+>>>>>  
+>>>>>  #define STM32_ADC_CORE_SLEEP_DELAY_MS	2000
+>>>>>  
+>>>>> +/* SYSCFG registers */
+>>>>> +#define STM32H7_SYSCFG_PMCR		0x04
+>>>>> +#define STM32MP1_SYSCFG_PMCSETR		0x04
+>>>>> +#define STM32MP1_SYSCFG_PMCCLRR		0x44
+>>>>> +
+>>>>> +/* SYSCFG bit fields */
+>>>>> +#define STM32H7_SYSCFG_BOOSTE_MASK	BIT(8)
+>>>>> +#define STM32MP1_SYSCFG_ANASWVDD_MASK	BIT(9)
+>>>>> +
+>>>>> +/* SYSCFG capability flags */
+>>>>> +#define HAS_VBOOSTER		BIT(0)
+>>>>> +#define HAS_ANASWVDD		BIT(1)
+>>>>> +#define HAS_CLEAR_REG		BIT(2)
+>>>>> +
+>>>>>  /**
+>>>>>   * stm32_adc_common_regs - stm32 common registers, compatible dependent data
+>>>>>   * @csr:	common status register offset
+>>>>> @@ -58,6 +74,11 @@
+>>>>>   * @eoc1:	adc1 end of conversion flag in @csr
+>>>>>   * @eoc2:	adc2 end of conversion flag in @csr
+>>>>>   * @eoc3:	adc3 end of conversion flag in @csr
+>>>>> + * @has_syscfg: SYSCFG capability flags
+>>>>> + * @pmcr:	SYSCFG_PMCSETR/SYSCFG_PMCR register offset
+>>>>> + * @pmcc:	SYSCFG_PMCCLRR clear register offset
+>>>>> + * @booste_msk:	SYSCFG BOOSTE / EN_BOOSTER bitmask in PMCR & PMCCLRR
+>>>>> + * @anaswvdd_msk: SYSCFG ANASWVDD bitmask in PMCR & PMCCLRR
+>>>>>   */
+>>>>>  struct stm32_adc_common_regs {
+>>>>>  	u32 csr;
+>>>>> @@ -65,6 +86,11 @@ struct stm32_adc_common_regs {
+>>>>>  	u32 eoc1_msk;
+>>>>>  	u32 eoc2_msk;
+>>>>>  	u32 eoc3_msk;
+>>>>> +	unsigned int has_syscfg;
+>>>>> +	u32 pmcr;
+>>>>> +	u32 pmcc;
+>>>>> +	u32 booste_msk;
+>>>>> +	u32 anaswvdd_msk;
+>>>>>  };
+>>>>>  
+>>>>>  struct stm32_adc_priv;
+>>>>> @@ -87,20 +113,26 @@ struct stm32_adc_priv_cfg {
+>>>>>   * @domain:		irq domain reference
+>>>>>   * @aclk:		clock reference for the analog circuitry
+>>>>>   * @bclk:		bus clock common for all ADCs, depends on part used
+>>>>> + * @vdd:		vdd supply reference
+>>>>> + * @vdda:		vdda supply reference
+>>>>>   * @vref:		regulator reference
+>>>>>   * @cfg:		compatible configuration data
+>>>>>   * @common:		common data for all ADC instances
+>>>>>   * @ccr_bak:		backup CCR in low power mode
+>>>>> + * @syscfg:		reference to syscon, system control registers
+>>>>>   */
+>>>>>  struct stm32_adc_priv {
+>>>>>  	int				irq[STM32_ADC_MAX_ADCS];
+>>>>>  	struct irq_domain		*domain;
+>>>>>  	struct clk			*aclk;
+>>>>>  	struct clk			*bclk;
+>>>>> +	struct regulator		*vdd;
+>>>>> +	struct regulator		*vdda;
+>>>>>  	struct regulator		*vref;
+>>>>>  	const struct stm32_adc_priv_cfg	*cfg;
+>>>>>  	struct stm32_adc_common		common;
+>>>>>  	u32				ccr_bak;
+>>>>> +	struct regmap			*syscfg;
+>>>>>  };
+>>>>>  
+>>>>>  static struct stm32_adc_priv *to_stm32_adc_priv(struct stm32_adc_common *com)
+>>>>> @@ -284,6 +316,22 @@ static const struct stm32_adc_common_regs stm32h7_adc_common_regs = {
+>>>>>  	.ccr = STM32H7_ADC_CCR,
+>>>>>  	.eoc1_msk = STM32H7_EOC_MST,
+>>>>>  	.eoc2_msk = STM32H7_EOC_SLV,
+>>>>> +	.has_syscfg = HAS_VBOOSTER,
+>>>>> +	.pmcr = STM32H7_SYSCFG_PMCR,
+>>>>> +	.booste_msk = STM32H7_SYSCFG_BOOSTE_MASK,
+>>>>> +};
+>>>>> +
+>>>>> +/* STM32MP1 common registers definitions */
+>>>>> +static const struct stm32_adc_common_regs stm32mp1_adc_common_regs = {
+>>>>> +	.csr = STM32H7_ADC_CSR,
+>>>>> +	.ccr = STM32H7_ADC_CCR,
+>>>>> +	.eoc1_msk = STM32H7_EOC_MST,
+>>>>> +	.eoc2_msk = STM32H7_EOC_SLV,
+>>>>> +	.has_syscfg =  HAS_VBOOSTER | HAS_ANASWVDD | HAS_CLEAR_REG,  
+>>>>
+>>>> Extra space after =  
+>>>
+>>> Hi Jonathan,
+>>>
+>>> Oops, I'll fix it in v2.
+>>>   
+>>>>
+>>>>  
+>>>>> +	.pmcr = STM32MP1_SYSCFG_PMCSETR,
+>>>>> +	.pmcc = STM32MP1_SYSCFG_PMCCLRR,
+>>>>> +	.booste_msk = STM32H7_SYSCFG_BOOSTE_MASK,
+>>>>> +	.anaswvdd_msk = STM32MP1_SYSCFG_ANASWVDD_MASK,
+>>>>>  };
+>>>>>  
+>>>>>  /* ADC common interrupt for all instances */
+>>>>> @@ -388,16 +436,145 @@ static void stm32_adc_irq_remove(struct platform_device *pdev,
+>>>>>  	}
+>>>>>  }
+>>>>>  
+>>>>> +static int stm32_adc_core_switches_supply_en(struct device *dev)
+>>>>> +{
+>>>>> +	struct stm32_adc_common *common = dev_get_drvdata(dev);
+>>>>> +	struct stm32_adc_priv *priv = to_stm32_adc_priv(common);
+>>>>> +	const struct stm32_adc_common_regs *regs = priv->cfg->regs;
+>>>>> +	int ret, vdda, vdd = 0;
+>>>>> +	u32 mask, clrmask, setmask = 0;
+>>>>> +
+>>>>> +	/*
+>>>>> +	 * On STM32H7 and STM32MP1, the ADC inputs are multiplexed with analog
+>>>>> +	 * switches (via PCSEL) which have reduced performances when their
+>>>>> +	 * supply is below 2.7V (vdda by default):
+>>>>> +	 * - Voltage booster can be used, to get full ADC performances
+>>>>> +	 *   (increases power consumption).
+>>>>> +	 * - Vdd can be used to supply them, if above 2.7V (STM32MP1 only).
+>>>>> +	 *
+>>>>> +	 * This is optional, as this is a trade-off between analog performance
+>>>>> +	 * and power consumption.
+>>>>> +	 */
+>>>>> +	if (!regs->has_syscfg || !priv->vdda || !priv->syscfg) {
+>>>>> +		dev_dbg(dev, "Not configuring analog switches\n");
+>>>>> +		return 0;
+>>>>> +	}
+>>>>> +
+>>>>> +	ret = regulator_enable(priv->vdda);
+>>>>> +	if (ret < 0) {
+>>>>> +		dev_err(dev, "vdda enable failed %d\n", ret);
+>>>>> +		return ret;
+>>>>> +	}
+>>>>> +
+>>>>> +	ret = regulator_get_voltage(priv->vdda);
+>>>>> +	if (ret < 0) {
+>>>>> +		dev_err(dev, "vdda get voltage failed %d\n", ret);
+>>>>> +		goto vdda_dis;
+>>>>> +	}
+>>>>> +	vdda = ret;
+>>>>> +  
+>>>> We only need to do the following block if vdaa is too low.  Should probably
+>>>> not turn on vdd if there is not chance we are going to use it?  
+>>>
+>>> You're right, then I probably need to move the regulator_get_voltage()
+>>> call at probe time, to avoid enabling it for nothing at runtime. (e.g.
+>>> to figure out it's not going to be used).
+>>> In fact, vdd is used also for other things on the platform (I/Os, other
+>>> supplies...), and is marked "always-on" in the device tree. But I
+>>> understand your point.
+>>>
+>>> I'll rework this and send a v2.  
+>>
+>> Hi Jonathan,
+>>
+>> When reworking this part, I figured out the vdda should be described as
+>> required supply for the STM32 ADC. So I pushed out a fix series to
+>> address this "Add missing vdda-supply to STM32 ADC". I'll resume v2 of
+>> this series that has some dependencies on the fix series .
+> 
+> Cool. Given timing  I'm taking fixes and new stuff through the togreg
+> branch anyway at the moment so dependencies on fixes are easier than
+> normal for the next week or so ;)
 
-> used from CREATE_BUFS and requiring the driver to sanity
-> check the provided buffer parameters. It was assuming that
-> it was always being used in the REQBUFS case where it provides
-> the buffer properties.
+Hi Jonathan
 
-These patches look really nice.
+I did some additional changes at my end. Just for reference, you can see
+"regulator: add support for the STM32 ADC booster" series here:
+https://lkml.org/lkml/2019/6/28/188
 
-regards,
-dan carpenter
+I think the proper way to handle the booster is to have it fully
+described as a regulator (that's one). This will also simplify handling
+it here.
 
+I'll resume this series once the regulator series has been discussed.
 
+Many thanks,
+Best regards,
+Fabrice
+
+> 
+> Jonathan
+> 
+>>
+>> Thanks
+>> Best Regards,
+>> Fabrice
+>>
+>>>
+>>> Thanks,
+>>> Fabrice
+>>>   
+>>>>  
+>>>>> +	if (priv->vdd && regs->has_syscfg & HAS_ANASWVDD) {
+>>>>> +		ret = regulator_enable(priv->vdd);
+>>>>> +		if (ret < 0) {
+>>>>> +			dev_err(dev, "vdd enable failed %d\n", ret);
+>>>>> +			goto vdda_dis;
+>>>>> +		}
+>>>>> +
+>>>>> +		ret = regulator_get_voltage(priv->vdd);
+>>>>> +		if (ret < 0) {
+>>>>> +			dev_err(dev, "vdd get voltage failed %d\n", ret);
+>>>>> +			goto vdd_dis;
+>>>>> +		}
+>>>>> +		vdd = ret;
+>>>>> +	}
+>>>>> +
+>>>>> +	/*
+>>>>> +	 * Recommended settings for ANASWVDD and EN_BOOSTER:
+>>>>> +	 * - vdda < 2.7V but vdd > 2.7V: ANASWVDD = 1, EN_BOOSTER = 0 (stm32mp1)
+>>>>> +	 * - vdda < 2.7V and vdd < 2.7V: ANASWVDD = 0, EN_BOOSTER = 1
+>>>>> +	 * - vdda >= 2.7V:               ANASWVDD = 0, EN_BOOSTER = 0 (default)
+>>>>> +	 */
+>>>>> +	if (vdda < 2700000) {
+>>>>> +		if (vdd > 2700000) {
+>>>>> +			dev_dbg(dev, "analog switches supplied by vdd\n");
+>>>>> +			setmask = regs->anaswvdd_msk;
+>>>>> +			clrmask = regs->booste_msk;
+>>>>> +		} else {
+>>>>> +			dev_dbg(dev, "Enabling voltage booster\n");
+>>>>> +			setmask = regs->booste_msk;
+>>>>> +			clrmask = regs->anaswvdd_msk;
+>>>>> +		}
+>>>>> +	} else {
+>>>>> +		dev_dbg(dev, "analog switches supplied by vdda\n");
+>>>>> +		clrmask = regs->booste_msk | regs->anaswvdd_msk;
+>>>>> +	}
+>>>>> +
+>>>>> +	mask = regs->booste_msk | regs->anaswvdd_msk;
+>>>>> +	if (regs->has_syscfg & HAS_CLEAR_REG) {
+>>>>> +		ret = regmap_write(priv->syscfg, regs->pmcc, clrmask);
+>>>>> +		if (ret) {
+>>>>> +			dev_err(dev, "syscfg clear failed, %d\n", ret);
+>>>>> +			goto vdd_dis;
+>>>>> +		}
+>>>>> +		mask = setmask;
+>>>>> +	}
+>>>>> +
+>>>>> +	ret = regmap_update_bits(priv->syscfg, regs->pmcr, mask, setmask);
+>>>>> +	if (ret) {
+>>>>> +		dev_err(dev, "syscfg update failed, %d\n", ret);
+>>>>> +		goto vdd_dis;
+>>>>> +	}
+>>>>> +
+>>>>> +	/* Booster voltage can take up to 50 us to stabilize */
+>>>>> +	if (setmask & regs->booste_msk)
+>>>>> +		usleep_range(50, 100);
+>>>>> +
+>>>>> +	return ret;
+>>>>> +
+>>>>> +vdd_dis:
+>>>>> +	if (priv->vdd && (regs->has_syscfg & HAS_ANASWVDD))
+>>>>> +		regulator_disable(priv->vdd);
+>>>>> +vdda_dis:
+>>>>> +	regulator_disable(priv->vdda);
+>>>>> +
+>>>>> +	return ret;
+>>>>> +}
+>>>>> +
+>>>>> +static void stm32_adc_core_switches_supply_dis(struct device *dev)
+>>>>> +{
+>>>>> +	struct stm32_adc_common *common = dev_get_drvdata(dev);
+>>>>> +	struct stm32_adc_priv *priv = to_stm32_adc_priv(common);
+>>>>> +	const struct stm32_adc_common_regs *regs = priv->cfg->regs;
+>>>>> +	u32 mask = regs->booste_msk | regs->anaswvdd_msk;
+>>>>> +
+>>>>> +	if (!regs->has_syscfg || !priv->vdda || !priv->syscfg)
+>>>>> +		return;
+>>>>> +
+>>>>> +	if (regs->has_syscfg & HAS_CLEAR_REG)
+>>>>> +		regmap_write(priv->syscfg, regs->pmcc, mask);
+>>>>> +	else
+>>>>> +		regmap_update_bits(priv->syscfg, regs->pmcr, mask, 0);
+>>>>> +
+>>>>> +	if (priv->vdd && (regs->has_syscfg & HAS_ANASWVDD))
+>>>>> +		regulator_disable(priv->vdd);
+>>>>> +
+>>>>> +	regulator_disable(priv->vdda);
+>>>>> +}
+>>>>> +
+>>>>>  static int stm32_adc_core_hw_start(struct device *dev)
+>>>>>  {
+>>>>>  	struct stm32_adc_common *common = dev_get_drvdata(dev);
+>>>>>  	struct stm32_adc_priv *priv = to_stm32_adc_priv(common);
+>>>>>  	int ret;
+>>>>>  
+>>>>> +	ret = stm32_adc_core_switches_supply_en(dev);
+>>>>> +	if (ret < 0)
+>>>>> +		return ret;
+>>>>> +
+>>>>>  	ret = regulator_enable(priv->vref);
+>>>>>  	if (ret < 0) {
+>>>>>  		dev_err(dev, "vref enable failed\n");
+>>>>> -		return ret;
+>>>>> +		goto err_switches_disable;
+>>>>>  	}
+>>>>>  
+>>>>>  	if (priv->bclk) {
+>>>>> @@ -425,6 +602,8 @@ static int stm32_adc_core_hw_start(struct device *dev)
+>>>>>  		clk_disable_unprepare(priv->bclk);
+>>>>>  err_regulator_disable:
+>>>>>  	regulator_disable(priv->vref);
+>>>>> +err_switches_disable:
+>>>>> +	stm32_adc_core_switches_supply_dis(dev);
+>>>>>  
+>>>>>  	return ret;
+>>>>>  }
+>>>>> @@ -441,6 +620,24 @@ static void stm32_adc_core_hw_stop(struct device *dev)
+>>>>>  	if (priv->bclk)
+>>>>>  		clk_disable_unprepare(priv->bclk);
+>>>>>  	regulator_disable(priv->vref);
+>>>>> +	stm32_adc_core_switches_supply_dis(dev);
+>>>>> +}
+>>>>> +
+>>>>> +static int stm32_adc_core_syscfg_probe(struct device_node *np,
+>>>>> +				       struct stm32_adc_priv *priv)
+>>>>> +{
+>>>>> +	if (!priv->cfg->regs->has_syscfg)
+>>>>> +		return 0;
+>>>>> +
+>>>>> +	priv->syscfg = syscon_regmap_lookup_by_phandle(np, "st,syscfg");
+>>>>> +	if (IS_ERR(priv->syscfg)) {
+>>>>> +		/* Optional */
+>>>>> +		if (PTR_ERR(priv->syscfg) != -ENODEV)
+>>>>> +			return PTR_ERR(priv->syscfg);
+>>>>> +		priv->syscfg = NULL;
+>>>>> +	}
+>>>>> +
+>>>>> +	return 0;
+>>>>>  }
+>>>>>  
+>>>>>  static int stm32_adc_probe(struct platform_device *pdev)
+>>>>> @@ -475,6 +672,30 @@ static int stm32_adc_probe(struct platform_device *pdev)
+>>>>>  		return ret;
+>>>>>  	}
+>>>>>  
+>>>>> +	priv->vdda = devm_regulator_get_optional(&pdev->dev, "vdda");
+>>>>> +	if (IS_ERR(priv->vdda)) {
+>>>>> +		ret = PTR_ERR(priv->vdda);
+>>>>> +		if (ret != -ENODEV) {
+>>>>> +			if (ret != -EPROBE_DEFER)
+>>>>> +				dev_err(&pdev->dev, "vdda get failed, %d\n",
+>>>>> +					ret);
+>>>>> +			return ret;
+>>>>> +		}
+>>>>> +		priv->vdda = NULL;
+>>>>> +	}
+>>>>> +
+>>>>> +	priv->vdd = devm_regulator_get_optional(&pdev->dev, "vdd");
+>>>>> +	if (IS_ERR(priv->vdd)) {
+>>>>> +		ret = PTR_ERR(priv->vdd);
+>>>>> +		if (ret != -ENODEV) {
+>>>>> +			if (ret != -EPROBE_DEFER)
+>>>>> +				dev_err(&pdev->dev, "vdd get failed, %d\n",
+>>>>> +					ret);
+>>>>> +			return ret;
+>>>>> +		}
+>>>>> +		priv->vdd = NULL;
+>>>>> +	}
+>>>>> +
+>>>>>  	priv->aclk = devm_clk_get(&pdev->dev, "adc");
+>>>>>  	if (IS_ERR(priv->aclk)) {
+>>>>>  		ret = PTR_ERR(priv->aclk);
+>>>>> @@ -495,6 +716,13 @@ static int stm32_adc_probe(struct platform_device *pdev)
+>>>>>  		priv->bclk = NULL;
+>>>>>  	}
+>>>>>  
+>>>>> +	ret = stm32_adc_core_syscfg_probe(np, priv);
+>>>>> +	if (ret) {
+>>>>> +		if (ret != -EPROBE_DEFER)
+>>>>> +			dev_err(&pdev->dev, "Can't probe syscfg: %d\n", ret);
+>>>>> +		return ret;
+>>>>> +	}
+>>>>> +
+>>>>>  	pm_runtime_get_noresume(dev);
+>>>>>  	pm_runtime_set_active(dev);
+>>>>>  	pm_runtime_set_autosuspend_delay(dev, STM32_ADC_CORE_SLEEP_DELAY_MS);
+>>>>> @@ -595,7 +823,7 @@ static const struct stm32_adc_priv_cfg stm32h7_adc_priv_cfg = {
+>>>>>  };
+>>>>>  
+>>>>>  static const struct stm32_adc_priv_cfg stm32mp1_adc_priv_cfg = {
+>>>>> -	.regs = &stm32h7_adc_common_regs,
+>>>>> +	.regs = &stm32mp1_adc_common_regs,
+>>>>>  	.clk_sel = stm32h7_adc_clk_sel,
+>>>>>  	.max_clk_rate_hz = 40000000,
+>>>>>  };  
+>>>>  
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
