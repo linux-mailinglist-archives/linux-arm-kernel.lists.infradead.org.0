@@ -2,49 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8D23559947
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 28 Jun 2019 13:32:24 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C9E6C59950
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 28 Jun 2019 13:36:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Re88pLw0zCzk7DPdNUZ2BaZDR3KJ+XhFpGcw8o3ec68=; b=bEgUPF2p3Oi1AD
-	mjJ+Ge2jBVkzeENXoN4Q36Lt/WrpYanPFvXZw3LT2ZgYIISnpe8bnUU0wdXXP7JyMSoBDhRjcbZdw
-	oiCiSRDytSH9QDbI5g0bWD/73D6GCggpAQ4vNF+QetYhr5o1hgLB+ZXoewcuidSgKwAA7EtrveREI
-	GPD1r5cEN54YnlLGOnfm7jVa2RGM+qshtAJQIEUlbBNzYxCJEOkAO7Nh4UI4mdzmFxxuUnfKN0kcO
-	4wqWUBt7nS90V6RTuyVVvQ1oBPiKULwfnk6x7jVjFyM5Mj1ds4KvbkIxXYXIoUvwoutpEn/OE+h2M
-	w00xn5Aycg0NIKNkse3A==;
+	List-Owner; bh=UEKWYkLOpFDcPtRnEDfwFe99xj1b8uzEj258E+1Vm38=; b=hoMnKZj0WgzCmz
+	+IPXVxiimnL323wrcmZXIH7VmIJYFV0Oo1NBgy2tXK1dwGWhSORMSgTtsvxNop1fc/jCozmFM9uUM
+	k+o29jjr09iPBg5tL6bHDhE8uomfoPB74/X3irzjNzhfYju+Tat54Vqb1YT/l/lASqZCvsSdb4B0K
+	AOSbOI0zDSFI8rm5G9OQUryRVRKr+6dlbRox36zI0m4tqf7xVHhS+x80hFvIYRFv6ATiaCBlaUjZe
+	usCHrKegthpnNe0KFO7NFWMn5lK3ob9fzjiVkv+ks7vH1TfSDCU4KH86xsKpuDLxq7uDPnn/R9VmV
+	URBu95r+hRQqu5cZLoTg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hgp75-0006p6-VB; Fri, 28 Jun 2019 11:32:20 +0000
+	id 1hgpB0-0008Rn-L1; Fri, 28 Jun 2019 11:36:22 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hgp6q-0006og-Oo
- for linux-arm-kernel@lists.infradead.org; Fri, 28 Jun 2019 11:32:06 +0000
+ id 1hgpAl-0008R6-77
+ for linux-arm-kernel@lists.infradead.org; Fri, 28 Jun 2019 11:36:08 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id E95B228;
- Fri, 28 Jun 2019 04:32:03 -0700 (PDT)
-Received: from lakrids.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
- [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 0D14E3F718;
- Fri, 28 Jun 2019 04:32:02 -0700 (PDT)
-Date: Fri, 28 Jun 2019 12:32:00 +0100
-From: Mark Rutland <mark.rutland@arm.com>
-To: Dave Martin <Dave.Martin@arm.com>
-Subject: Re: [PATCH 3/3] arm64: stacktrace: better handle corrupted stacks
-Message-ID: <20190628113200.GI36437@lakrids.cambridge.arm.com>
-References: <20190606125402.10229-1-mark.rutland@arm.com>
- <20190606125402.10229-4-mark.rutland@arm.com>
- <20190621163721.GF2790@e103592.cambridge.arm.com>
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 036A728;
+ Fri, 28 Jun 2019 04:36:04 -0700 (PDT)
+Received: from e121166-lin.cambridge.arm.com (unknown [10.1.196.255])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id F40DC3F718;
+ Fri, 28 Jun 2019 04:36:01 -0700 (PDT)
+Date: Fri, 28 Jun 2019 12:35:55 +0100
+From: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
+To: "Z.q. Hou" <zhiqiang.hou@nxp.com>
+Subject: Re: [PATCHv5 04/20] PCI: mobiveil: Remove the flag
+ MSI_FLAG_MULTI_PCI_MSI
+Message-ID: <20190628113555.GA21829@e121166-lin.cambridge.arm.com>
+References: <20190412083635.33626-1-Zhiqiang.Hou@nxp.com>
+ <20190412083635.33626-5-Zhiqiang.Hou@nxp.com>
+ <20190611165935.GA22836@redmoon>
+ <AM0PR04MB67383023B81AEB33DAF9C35584EC0@AM0PR04MB6738.eurprd04.prod.outlook.com>
+ <20190612130813.GA15747@redmoon>
+ <AM0PR04MB6738B93C7F1B5BE433753CF584E90@AM0PR04MB6738.eurprd04.prod.outlook.com>
+ <20190617093337.GD18020@e121166-lin.cambridge.arm.com>
+ <AM6PR04MB67425792524FBA1C773F137984EB0@AM6PR04MB6742.eurprd04.prod.outlook.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190621163721.GF2790@e103592.cambridge.arm.com>
-User-Agent: Mutt/1.11.1+11 (2f07cb52) (2018-12-01)
+In-Reply-To: <AM6PR04MB67425792524FBA1C773F137984EB0@AM6PR04MB6742.eurprd04.prod.outlook.com>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190628_043204_903652_A1891C17 
-X-CRM114-Status: GOOD (  25.94  )
+X-CRM114-CacheID: sfid-20190628_043607_350728_042B434D 
+X-CRM114-Status: GOOD (  21.39  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -63,114 +68,97 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: catalin.marinas@arm.com, tengfeif@codeaurora.org, will.deacon@arm.com,
- james.morse@arm.com, linux-arm-kernel@lists.infradead.org
+Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ Xiaowei Bao <xiaowei.bao@nxp.com>,
+ "linux-pci@vger.kernel.org" <linux-pci@vger.kernel.org>,
+ "l.subrahmanya@mobiveil.co.in" <l.subrahmanya@mobiveil.co.in>,
+ "will.deacon@arm.com" <will.deacon@arm.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Leo Li <leoyang.li@nxp.com>, "M.h. Lian" <minghuan.lian@nxp.com>,
+ "robh+dt@kernel.org" <robh+dt@kernel.org>, Mingkai Hu <mingkai.hu@nxp.com>,
+ "catalin.marinas@arm.com" <catalin.marinas@arm.com>,
+ "bhelgaas@google.com" <bhelgaas@google.com>,
+ "shawnguo@kernel.org" <shawnguo@kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Jun 21, 2019 at 05:37:21PM +0100, Dave Martin wrote:
-> On Thu, Jun 06, 2019 at 01:54:02PM +0100, Mark Rutland wrote:
-> > The arm64 stacktrace code is careful to only dereference frame records
-> > in valid stack ranges, ensuring that a corrupted frame record won't
-> > result in a faulting access.
+On Mon, Jun 17, 2019 at 10:34:35AM +0000, Z.q. Hou wrote:
+
+[...]
+
+> > There is nothing obvious. Write what you are fixing in the commit log and I will
+> > apply the patch, I won't write the commit log for you. Anyone should be able
+> > to understand why a patch was needed by reading the commit log, it is as
+> > important as writing the code itself.
+> 
+> With the flag MSI_FLAG_MULTI_PCI_MSI, when the Endpoint allocates
+> multiple MSI, it will trigger the "WARN_ON(nr_irqs != 1);" in
+> mobiveil_irq_msi_domain_alloc(), this is the issue this patch want to
+> fix. 
+
+And that's wrong. Marc explained why this controller does not support
+Multi MSI and that's what should go in the commit log, triggering
+a WARN_ON is the least of the problems (and the WARN_ON can even
+be removed after this patch is applied), if it was used as a bandaid
+to prevent allocating Multi MSI it is even more broken.
+
+Lorenzo
+
+> Thanks,
+> Zhiqiang
+> 
 > > 
-> > However, it's still possible for corrupt frame records to result in
-> > infinite loops in the stacktrace code, which is also undesirable.
+> > Thanks,
+> > Lorenzo
 > > 
-> > This patch ensures that we complete a stacktrace in finite time, by
-> > keeping track of which stacks we have already completed unwinding, and
-> > verifying that if the next frame record is on the same stack, it is at a
-> > higher address.
-> > 
-> > Signed-off-by: Mark Rutland <mark.rutland@arm.com>
-> > Cc: Catalin Marinas <catalin.marinas@arm.com>
-> > Cc: Dave Martin <dave.martin@arm.com>
-> > Cc: James Morse <james.morse@arm.com>
-> > Cc: Tengfei Fan <tengfeif@codeaurora.org>
-> > Cc: Will Deacon <will.deacon@arm.com>
-> > ---
-> >  arch/arm64/include/asm/stacktrace.h | 34 ++++++++++++++++++++++++++--------
-> >  arch/arm64/kernel/process.c         |  2 +-
-> >  arch/arm64/kernel/stacktrace.c      | 16 +++++++++++++++-
-> >  arch/arm64/kernel/time.c            |  2 +-
-> >  arch/arm64/kernel/traps.c           |  4 ++--
-> >  5 files changed, 45 insertions(+), 13 deletions(-)
-> > 
-> > diff --git a/arch/arm64/include/asm/stacktrace.h b/arch/arm64/include/asm/stacktrace.h
-> > index 18f90bf1385c..4ebf8a8997b0 100644
-> > --- a/arch/arm64/include/asm/stacktrace.h
-> > +++ b/arch/arm64/include/asm/stacktrace.h
-> > @@ -19,19 +19,12 @@
-> >  #include <linux/percpu.h>
-> >  #include <linux/sched.h>
-> >  #include <linux/sched/task_stack.h>
-> > +#include <linux/types.h>
-> >  
-> >  #include <asm/memory.h>
-> >  #include <asm/ptrace.h>
-> >  #include <asm/sdei.h>
-> >  
-> > -struct stackframe {
-> > -	unsigned long fp;
-> > -	unsigned long pc;
-> > -#ifdef CONFIG_FUNCTION_GRAPH_TRACER
-> > -	int graph;
-> > -#endif
-> > -};
-> > -
-> >  enum stack_type {
-> >  	STACK_TYPE_UNKNOWN,
-> >  	STACK_TYPE_TASK,
-> > @@ -39,6 +32,7 @@ enum stack_type {
-> >  	STACK_TYPE_OVERFLOW,
-> >  	STACK_TYPE_SDEI_NORMAL,
-> >  	STACK_TYPE_SDEI_CRITICAL,
-> > +	__NR_STACK_TYPES
-> 
-> The number of stack types is actually 1 less than this, and the zeroth
-> bit in stacks_done doesn't get used if we use this enum as an index.
-> 
-> Would STACK_TYPE_UNKNOWN = 0 fix this, or would that break something
-> elsewhere?
-
-Huh? STACK_TYPE_UNKNOWN is 0, as it's the first entry in the enum.
-
-__NR_STACK types is used for the bitmap, where I rely on being able to
-set the STACK_TYPE_UNKNOWN bit. I apprecaite it's one more than the
-number of real stack types, but I wasn't able to come up with an
-obviously better name.
-
-> > @@ -50,12 +52,24 @@ int notrace unwind_frame(struct task_struct *tsk, struct stackframe *frame)
-> >  	if (!tsk)
-> >  		tsk = current;
-> >  
-> > -	if (!on_accessible_stack(tsk, fp, NULL))
-> > +	if (!on_accessible_stack(tsk, fp, &info))
-> >  		return -EINVAL;
-> >  
-> > +	if (test_bit(info.type, frame->stacks_done))
-> > +		return -EINVAL;
-> 
-> Doesn't this fire when we unwind a sequence of frames on the same stack
-> (i.e., the common case)?
-> 
-> I may be missing something obvious here.
-> 
-> > +
-> > +	if (frame->stack_current != info.type) {
-> > +		set_bit(frame->stack_current, frame->stacks_done);
-> 
-> Oh, right, stacks_done is the set of stacks we have been on, excluding
-> the current one?  If so, a comment somewhere explaining that, or some
-> more explicit name, like "past_stacks" might make sense.
-
-I thought that stacks_done was sufficient, but I guess I could
-rename that to stacks_prev, to match the stack_current naming.
-
-Thanks,
-Mark.
+> > > Thanks,
+> > > Zhiqiang
+> > >
+> > > >
+> > > > Lorenzo
+> > > >
+> > > > > Subbu, did you test with Endpoint supporting multi MSI?
+> > > > >
+> > > > > Thanks,
+> > > > > Zhiqiang
+> > > > >
+> > > > > >
+> > > > > > Thanks,
+> > > > > > Lorenzo
+> > > > > >
+> > > > > > > Fixes: 1e913e58335f ("PCI: mobiveil: Add MSI support")
+> > > > > > > Signed-off-by: Hou Zhiqiang <Zhiqiang.Hou@nxp.com>
+> > > > > > > Reviewed-by: Minghuan Lian <Minghuan.Lian@nxp.com>
+> > > > > > > ---
+> > > > > > > V5:
+> > > > > > >  - Corrected the subject.
+> > > > > > >
+> > > > > > >  drivers/pci/controller/pcie-mobiveil.c | 2 +-
+> > > > > > >  1 file changed, 1 insertion(+), 1 deletion(-)
+> > > > > > >
+> > > > > > > diff --git a/drivers/pci/controller/pcie-mobiveil.c
+> > > > > > > b/drivers/pci/controller/pcie-mobiveil.c
+> > > > > > > index 563210e731d3..a0dd337c6214 100644
+> > > > > > > --- a/drivers/pci/controller/pcie-mobiveil.c
+> > > > > > > +++ b/drivers/pci/controller/pcie-mobiveil.c
+> > > > > > > @@ -703,7 +703,7 @@ static struct irq_chip
+> > > > > > > mobiveil_msi_irq_chip = {
+> > > > > > >
+> > > > > > >  static struct msi_domain_info mobiveil_msi_domain_info = {
+> > > > > > >  	.flags	= (MSI_FLAG_USE_DEF_DOM_OPS |
+> > > > > > MSI_FLAG_USE_DEF_CHIP_OPS |
+> > > > > > > -		   MSI_FLAG_MULTI_PCI_MSI | MSI_FLAG_PCI_MSIX),
+> > > > > > > +		   MSI_FLAG_PCI_MSIX),
+> > > > > > >  	.chip	= &mobiveil_msi_irq_chip,
+> > > > > > >  };
+> > > > > > >
+> > > > > > > --
+> > > > > > > 2.17.1
+> > > > > > >
 
 _______________________________________________
 linux-arm-kernel mailing list
