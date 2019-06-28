@@ -2,67 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 488AB598F8
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 28 Jun 2019 13:05:14 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id EAFE059914
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 28 Jun 2019 13:16:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
-	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=s/vK0Ykk2EdvdH/vkFqOI6YixrK80n/ZPvicWAE10f0=; b=DHRqENiQ3sFTdZ
-	yXi8ipvWNMqLDDs7GMrZqqtmY3pAlMCouwoT62OyGAnVLfRBTHNUWSEfcQw7gIBV7oa4JGaID7g/H
-	3aXMMVj4ezWI0FBgzk7H0CtqiO2EQMRZXtEeY7suIA7MbAUdWWmn4kvHya4Y6NrbVfc9GefT/l2u4
-	CKKci547UT64fIX+laBDensWKlZv7qOmPE6jXv/pLFw8pyhYzuW73J3p6pfWJmWNKA8YpNm/NaNIp
-	hleR0hn6W6co7N91C0sxg0GZzRHJek2QK6M5amxJzjERs55ivl2Bs31gjO0Jv6Np8fU1VjcEPJcxu
-	irODyRGP16zy4dkD7QeA==;
+	List-Owner; bh=PCIItv0OVohBF2l8CrekYuSUBXRtChfP4xZaBEs2hew=; b=IrLSAR/t+a1sTi
+	8POvOfS+ouBfzlzuVANJfz1l+/BUNS2RevU4UkEIicbFEDBmYxmVS18e1ZpEKjOKPKkhIBfjbD7ul
+	JZxhOtmdWXS/bENYp0oQ2EgEy9icfNBwzD56i79DAt8uDkho1stpZ7KldyEFzaUotUloGW/U/7MyA
+	y8v03STkyLBHyIZm/xj2k9Njcq51M6w4acxXpULED3M9IqEZEPja7NU0I+5lIxOkbvOh+3BMyKwxV
+	ZOgn6Y/38ZZoeFjcoSyXywjugPxtpdEllp8kQ2R0Jesr/oYJAO0iVmZzHsN+Oc72Qma6Gx/HGaY8K
+	O4aFrRA8zDcrHrtQZQpw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hgogq-0002bg-SW; Fri, 28 Jun 2019 11:05:12 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1hgorf-0007XO-Gs; Fri, 28 Jun 2019 11:16:23 +0000
+Received: from szxga04-in.huawei.com ([45.249.212.190] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hgogP-0002Wg-JP
- for linux-arm-kernel@lists.infradead.org; Fri, 28 Jun 2019 11:04:47 +0000
-Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id A15F8208E3;
- Fri, 28 Jun 2019 11:04:43 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1561719884;
- bh=StUx9PONOQCmZX0nAG2V/FqWNZznDR+tHYF35sxlupY=;
- h=Date:From:To:Cc:Subject:From;
- b=zGXGM3CsSPG8rNfZKBK+hI0oUX0Srt2iG3bKpubpstG79EChhiXX0vNyOqOCh4elU
- 9CsLldWuDgRR1dDwFDGn0uMIPurfZrJq/OEtTkyt0pfdaOKWJlYHd0c6wAPHnOZ+it
- gg06ysEXhayOj5b5+T0iZkvolN3YABe2JhuT5H8Y=
-Date: Fri, 28 Jun 2019 12:04:40 +0100
-From: Will Deacon <will@kernel.org>
-To: joro@8bytes.org
-Subject: [GIT PULL] iommu/arm-smmu: Updates for 5.3
-Message-ID: <20190628110440.piorghrmwrbitmtz@willie-the-truck>
+ id 1hgorN-0007Un-Ow
+ for linux-arm-kernel@lists.infradead.org; Fri, 28 Jun 2019 11:16:07 +0000
+Received: from DGGEMS410-HUB.china.huawei.com (unknown [172.30.72.58])
+ by Forcepoint Email with ESMTP id 061F98E3C0FF2DE709F3;
+ Fri, 28 Jun 2019 19:15:56 +0800 (CST)
+Received: from linux-ibm.site (10.175.102.37) by
+ DGGEMS410-HUB.china.huawei.com (10.3.19.210) with Microsoft SMTP Server id
+ 14.3.439.0; Fri, 28 Jun 2019 19:15:49 +0800
+From: Xiongfeng Wang <wangxiongfeng2@huawei.com>
+To: <rjw@rjwysocki.net>, <catalin.marinas@arm.com>, <james.morse@arm.com>
+Subject: [PATCH RFC 0/3] Support CPU hotplug for ARM64
+Date: Fri, 28 Jun 2019 19:13:09 +0800
+Message-ID: <1561720392-45907-1-git-send-email-wangxiongfeng2@huawei.com>
+X-Mailer: git-send-email 1.7.12.4
 MIME-Version: 1.0
-Content-Disposition: inline
-User-Agent: NeoMutt/20170113 (1.7.2)
+X-Originating-IP: [10.175.102.37]
+X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190628_040446_072317_0C320106 
-X-CRM114-Status: GOOD (  12.44  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190628_041606_040860_94957B39 
+X-CRM114-Status: UNSURE (   6.93  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [45.249.212.190 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -74,59 +62,41 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: jean-philippe.brucker@arm.com, bjorn.andersson@linaro.org,
- iommu@lists.linux-foundation.org, vivek.gautam@codeaurora.org,
- robin.murphy@arm.com, linux-arm-kernel@lists.infradead.org
+Cc: xiexiuqi@huawei.com, jonathan.cameron@huawei.com, john.garry@huawei.com,
+ linux-kernel@vger.kernel.org, linux-acpi@vger.kernel.org,
+ huawei.libin@huawei.com, guohanjun@huawei.com, wangxiongfeng2@huawei.com,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Joerg,
+This patchset mark all the GICC node in MADT as possible CPUs even though it
+is disabled. But only those enabled GICC node are marked as present CPUs.
+So that kernel will initialize some CPU related data structure in advance before
+the CPU is actually hot added into the system. This patchset also implement 
+'acpi_(un)map_cpu()' and 'arch_(un)register_cpu()' for ARM64. These functions are
+needed to enable CPU hotplug.
 
-Please pull this handful of arm-smmu updates for 5.3. These changes include
-support for the system cache present in some Qualcomm SoCs, better support
-for non-coherent page-table walkers and a larger command queue size for
-SMMUv3 implementations in preparation for some optimisations I've been
-working on.
+To support CPU hotplug, we need to add all the possible GICC node in MADT
+including those CPUs that are not present but may be hot added later. Those
+CPUs are marked as disabled in GICC nodes.
 
-Thanks,
+Xiongfeng Wang (3):
+  ACPI / scan: evaluate _STA for processors declared via ASL Device
+    statement
+  arm64: mark all the GICC nodes in MADT as possible cpu
+  arm64: Add CPU hotplug support
 
-Will
+ arch/arm64/kernel/acpi.c  | 22 ++++++++++++++++++++++
+ arch/arm64/kernel/setup.c | 19 ++++++++++++++++++-
+ arch/arm64/kernel/smp.c   | 11 +++++------
+ drivers/acpi/scan.c       | 12 ++++++++++++
+ 4 files changed, 57 insertions(+), 7 deletions(-)
 
---->8
+-- 
+1.7.12.4
 
-The following changes since commit cd6c84d8f0cdc911df435bb075ba22ce3c605b07:
-
-  Linux 5.2-rc2 (2019-05-26 16:49:19 -0700)
-
-are available in the git repository at:
-
-  git://git.kernel.org/pub/scm/linux/kernel/git/will/linux.git for-joerg/arm-smmu/updates
-
-for you to fetch changes up to 9e6ea59f3ff37192fd7aec7821dca6ece629b7d0:
-
-  iommu/io-pgtable: Support non-coherent page tables (2019-06-25 13:26:47 +0100)
-
-----------------------------------------------------------------
-Bjorn Andersson (1):
-      iommu/io-pgtable: Support non-coherent page tables
-
-Vivek Gautam (1):
-      iommu/io-pgtable-arm: Add support to use system cache
-
-Will Deacon (2):
-      iommu/arm-smmu-v3: Increase maximum size of queues
-      iommu/io-pgtable: Replace IO_PGTABLE_QUIRK_NO_DMA with specific flag
-
- drivers/iommu/arm-smmu-v3.c        | 58 +++++++++++++++++++++++++-------------
- drivers/iommu/arm-smmu.c           |  4 +--
- drivers/iommu/io-pgtable-arm-v7s.c | 17 ++++++-----
- drivers/iommu/io-pgtable-arm.c     | 40 ++++++++++++++++----------
- drivers/iommu/ipmmu-vmsa.c         |  1 +
- include/linux/io-pgtable.h         | 11 +++-----
- include/linux/iommu.h              |  6 ++++
- 7 files changed, 86 insertions(+), 51 deletions(-)
 
 _______________________________________________
 linux-arm-kernel mailing list
