@@ -2,106 +2,96 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3EBDF59686
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 28 Jun 2019 10:54:53 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8E3C85969B
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 28 Jun 2019 10:56:58 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
-	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jxwusqfkW0R+iuM27CarbFt9wWMZltA8zhktFLdypho=; b=geIKsr1TSIH9M1
-	HknK7KSAZBXEuREkb/Xi139QgdnQyiYGggJXncxOnoV2a31ZYM9CEO9o83xTz/b/KFpZIrYr7xqd2
-	d9/TiqLWwB+Kx6cvigdT0u2QWJGAQRpNMUP9Wm+K0DAjSDfV+v/HTNOOfueC/aA0SWKCCIyjdor6+
-	dWLMr9CsYntxX8CURAJnnm3l+qEDP8BG6HBdrLjFLZ06s6dVZNJbm8ufZiRWpJ/a0LFkEJnbOfv0I
-	koGF3Dy7LKp77hAdbo3XghLxoejB7cvq6p7uDp6YTmz12rr3kN/XukwgZsH+1dsREBPXC/CoqirUO
-	MlwC1SVwCZvvRinrpYag==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:Message-ID:Date
+	:Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	List-Owner; bh=aXl6kbyIcg1Pm+JIy5NeHxoDWLPzFcD2igb6ICc7aJE=; b=h6RcvMEoor4Nlo
+	+Iulp/PAQUcoLAYSnFX/CZm/cVE9HHSj/feOWMuRKtuNfooHUYV0dcjJ50lQGm494/XZtb0Ni4F6E
+	rlBUTbrTlCEOSRATS1ZPUR1OW85LoBNeVtyahgqh+IH1sXzaQavacg6jIJNw/u5ZClJUg8HbFfERU
+	7kUmWS4qYqx1HgNtAuKvG0lB2fhqd7utBEAfTe9OODtEezlU7Zc0M9u5Ov1wgeXG43BFnmGqexofL
+	L+a6+OTuStG2hE3dEN36qVDEGUDuaHM3QsJt8JXkLT8S7KxfTFpyy8EJXNGIsacE4VE2FCniqIXkD
+	eCd2H5FeF8UBMRONCHMQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hgmee-00019f-Mk; Fri, 28 Jun 2019 08:54:48 +0000
-Received: from mail-eopbgr150051.outbound.protection.outlook.com
- ([40.107.15.51] helo=EUR01-DB5-obe.outbound.protection.outlook.com)
+	id 1hgmgh-0002mm-0y; Fri, 28 Jun 2019 08:56:55 +0000
+Received: from mail-eopbgr30053.outbound.protection.outlook.com ([40.107.3.53]
+ helo=EUR03-AM5-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hgmeE-00015t-5s
- for linux-arm-kernel@lists.infradead.org; Fri, 28 Jun 2019 08:54:24 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=testarcselector01; d=microsoft.com; cv=none;
- b=j8KJHSgclwFdRTJKUyyvFtDwYD8MtF093L6zANnfxDJ82aaXIbUNFoP6KgzDv0FmCYySZCDbgdN9WKDm8BlE8xrc8Nx2Rtz4Y2VDiZBKhDXd7rFxzFzi5eEP2ADjbAuWvAAQgfTBoOcMATRkW5go3GPYyJhxoHxZllpLckvC/Xg=
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=testarcselector01;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=u+nzyl4zUiJgq2+bT9fuohbdG8XIoMf5/qIeiHjPpzo=;
- b=uoMHusDyyvDzjDJpOx1PMxewF+LaKJkMxqmmlKYFPjcLu7WlwwvU4xQ0DMNkF2dJTNexFtqcKol/EGM5XXKPUrbeld3MoP7R1Jrb/ekJyXzkzKmDOxLu213g0YoNCs0oc2s/nG+UPWJ5jUhUootsuXhIaXZVFXCaJ5vbjJ4+uO0=
-ARC-Authentication-Results: i=1; test.office365.com
- 1;spf=none;dmarc=none;dkim=none;arc=none
+ id 1hgmgR-0002m4-Jf
+ for linux-arm-kernel@lists.infradead.org; Fri, 28 Jun 2019 08:56:40 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=u+nzyl4zUiJgq2+bT9fuohbdG8XIoMf5/qIeiHjPpzo=;
- b=ptixmngYCB1kaQsOPMcF9pRSO0/qTfOnRxck1KdFsWDPFcVPzzx5clO2gbPbT8FZ13+Y0iQO1J1JQYWVRfiUwpxxuIUolVLIwzCBRESGuqnwPdyzfpBcis8p4lgB30IxofoFdU273Yy3G2fMlOR7esWc/GQ3pVct8Qou3BWdh5E=
-Received: from AM0PR04MB5779.eurprd04.prod.outlook.com (20.178.202.151) by
- AM0PR04MB5043.eurprd04.prod.outlook.com (20.177.40.148) with Microsoft SMTP
+ bh=Yh6ZDgkmlXiASlzlGNuzTF2gRBpcrNdE7OKbE2xNDMQ=;
+ b=pPij8F0zhyZ0XooiAfXqlNmNvDxDtuLuP5Sh8OKZo3/iVAkY9sZcsNumHMJd0RluFjBw48pcbNvhIpV9vPyHY56U+66xpyqZcsxJNHJY482D02vNsqiiNXwZQdbhvnv/WdWcmJU81YGOCS48xGGE/VCtsufx9KIpc4VssRqb3H0=
+Received: from VI1PR04MB5055.eurprd04.prod.outlook.com (20.177.50.140) by
+ VI1PR04MB5904.eurprd04.prod.outlook.com (20.178.205.78) with Microsoft SMTP
  Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2008.16; Fri, 28 Jun 2019 08:54:17 +0000
-Received: from AM0PR04MB5779.eurprd04.prod.outlook.com
- ([fe80::a126:d121:200:367]) by AM0PR04MB5779.eurprd04.prod.outlook.com
- ([fe80::a126:d121:200:367%7]) with mapi id 15.20.2008.014; Fri, 28 Jun 2019
- 08:54:17 +0000
-From: Abel Vesa <abel.vesa@nxp.com>
-To: Martin Kepplinger <martink@posteo.de>
-Subject: Re: [RFC 0/2] Add workaround for core wake-up on IPI for i.MX8MQ
-Thread-Topic: [RFC 0/2] Add workaround for core wake-up on IPI for i.MX8MQ
-Thread-Index: AQHVH4Y/3naZJOmQTkOgrNdQmlNuA6apM84AgAerR4A=
-Date: Fri, 28 Jun 2019 08:54:17 +0000
-Message-ID: <20190628085417.vezkoizip75yjjpl@fsr-ub1664-175>
-References: <20190610121346.15779-1-abel.vesa@nxp.com>
- <d217a9d2-fc60-e057-6775-116542e39e8d@posteo.de>
-In-Reply-To: <d217a9d2-fc60-e057-6775-116542e39e8d@posteo.de>
+ 15.20.2032.18; Fri, 28 Jun 2019 08:56:36 +0000
+Received: from VI1PR04MB5055.eurprd04.prod.outlook.com
+ ([fe80::d83:14c4:dedb:213b]) by VI1PR04MB5055.eurprd04.prod.outlook.com
+ ([fe80::d83:14c4:dedb:213b%5]) with mapi id 15.20.2008.014; Fri, 28 Jun 2019
+ 08:56:36 +0000
+From: Leonard Crestez <leonard.crestez@nxp.com>
+To: Abel Vesa <abel.vesa@nxp.com>
+Subject: Re: [RFCv2 2/8] clk: imx8m-composite: Switch to determine_rate
+Thread-Topic: [RFCv2 2/8] clk: imx8m-composite: Switch to determine_rate
+Thread-Index: AQHVLYSz7P3EKbmmJkGmgseyFA+2Lg==
+Date: Fri, 28 Jun 2019 08:56:35 +0000
+Message-ID: <VI1PR04MB50552AC6EAB0C145D638E618EEFC0@VI1PR04MB5055.eurprd04.prod.outlook.com>
+References: <cover.1561707104.git.leonard.crestez@nxp.com>
+ <5d62b31309e6402bd9fa608730518b39af823fb3.1561707104.git.leonard.crestez@nxp.com>
+ <20190628084521.d64d5g54zvxlsxsl@fsr-ub1664-175>
 Accept-Language: en-US
 Content-Language: en-US
 X-MS-Has-Attach: 
 X-MS-TNEF-Correlator: 
 authentication-results: spf=none (sender IP is )
- smtp.mailfrom=abel.vesa@nxp.com; 
+ smtp.mailfrom=leonard.crestez@nxp.com; 
 x-originating-ip: [89.37.124.34]
 x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: f8338b45-768b-4efc-fdff-08d6fba63439
+x-ms-office365-filtering-correlation-id: fba8cb19-8627-479b-a388-08d6fba6868f
 x-ms-office365-filtering-ht: Tenant
 x-microsoft-antispam: BCL:0; PCL:0;
  RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600148)(711020)(4605104)(1401327)(4618075)(2017052603328)(7193020);
- SRVR:AM0PR04MB5043; 
-x-ms-traffictypediagnostic: AM0PR04MB5043:
-x-ms-exchange-purlcount: 2
-x-microsoft-antispam-prvs: <AM0PR04MB5043F62F7252DA8694073F2CF6FC0@AM0PR04MB5043.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:9508;
+ SRVR:VI1PR04MB5904; 
+x-ms-traffictypediagnostic: VI1PR04MB5904:
+x-microsoft-antispam-prvs: <VI1PR04MB590424E23F540734F4D98106EEFC0@VI1PR04MB5904.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:4714;
 x-forefront-prvs: 00826B6158
 x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(4636009)(7916004)(346002)(396003)(39860400002)(376002)(366004)(136003)(199004)(189003)(43544003)(14454004)(81166006)(6246003)(6916009)(316002)(8676002)(6506007)(66476007)(5660300002)(9686003)(76176011)(11346002)(8936002)(73956011)(81156014)(6436002)(53936002)(91956017)(2906002)(6116002)(44832011)(229853002)(53546011)(561944003)(66556008)(66446008)(3846002)(6512007)(99286004)(64756008)(66946007)(54906003)(6306002)(7416002)(66066001)(446003)(68736007)(1076003)(25786009)(102836004)(71200400001)(86362001)(71190400001)(6486002)(33716001)(186003)(76116006)(966005)(305945005)(7736002)(4326008)(26005)(256004)(45080400002)(476003)(478600001)(486006)(7520500002);
- DIR:OUT; SFP:1101; SCL:1; SRVR:AM0PR04MB5043;
- H:AM0PR04MB5779.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ SFS:(10009020)(4636009)(39860400002)(366004)(376002)(136003)(346002)(396003)(199004)(189003)(316002)(5660300002)(6246003)(66946007)(73956011)(54906003)(66446008)(76116006)(66476007)(66556008)(64756008)(74316002)(6636002)(3846002)(6116002)(8936002)(52536014)(305945005)(8676002)(81166006)(81156014)(7736002)(86362001)(2906002)(25786009)(4326008)(71200400001)(71190400001)(6862004)(256004)(14444005)(446003)(7416002)(476003)(486006)(44832011)(26005)(14454004)(33656002)(478600001)(66066001)(68736007)(76176011)(7696005)(229853002)(6506007)(53546011)(6436002)(55016002)(102836004)(186003)(99286004)(4744005)(9686003)(53936002)(32563001);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:VI1PR04MB5904;
+ H:VI1PR04MB5055.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
  PTR:InfoNoRecords; A:1; MX:1; 
 received-spf: None (protection.outlook.com: nxp.com does not designate
  permitted sender hosts)
 x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: AKdqmSXD0EbCOW7BgjT5uOXWsjXDik2qgStOFbR6qgRz7bpsk+zaROHWc9LqgSnAz28BB6M0eHuiCeKzs81DsbtUtA9OqzLxkZWGJ6F4IbzT5S97Q9KdzfVzViMcDX2lpMCBSy69JEnlARO/q4wYQBc3daX1TUoLvctaZK353YvUmbCmmpH1IlyN1eyXPuScsFI8CN+BoQ2OCSJ6aPtuT26oHv6GXavycM6JgQKAZu1y1Gf4VwIOBIAvkI/xJbNw0IE8U7yUu5e+sj+2fouRmq/iprUxRrLmBWOyDt0TCFatSQgQbm8OxEH+Ym9OVdF8+m5X+dETMpmti8VeU7EGXKjvlFWn3bU+vqIfkuHEpDi5aHa/MIpp9SP5nFtiaB/0oCwYYQYgssi69K1BkTTZuBWOjCU8vYRjLO0+ErU5x+M=
-Content-ID: <6BD94CD1034C6640B6DAF68681C673F5@eurprd04.prod.outlook.com>
+x-microsoft-antispam-message-info: BYjYEax1jrqNb1U9U2ga45r1I7Ccj/wZ6TWsIqKDptIrLLr4UTV6d+E0trW4fh2HWCEj5XUITfhYAa12HiDTYj6beNNLwd3WsojUggUmZJnToWZ/iRDe01slEgnFMkYM1mCzcqAOU5v8EokzJDf/v6bZiCZj/a8WKEX/U3kgI8wuscxqVbgdMVGrpWMixelxEMP1uEWLzqcPFckS7yObracp3bRffWWJWASsigh8fQJRMyh3rrdH3CBo/xrFZf724u9NdewpRU4eDaAk0TkqcjO4AVW+W55BcXeqAaX0paorapmJ4QLbCQ61biqf/4VKHolXrzCkuRcKFQfh8IdmLnQU+JWhkO4dqxI1sFuTBvOMtcPaP4Y8O5tV7ZdxsCes7NGqbFw9LpEDdo8hbu7oopXcYB/Eht8ZUI1ti1WhzGo=
 MIME-Version: 1.0
 X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: f8338b45-768b-4efc-fdff-08d6fba63439
-X-MS-Exchange-CrossTenant-originalarrivaltime: 28 Jun 2019 08:54:17.7863 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: fba8cb19-8627-479b-a388-08d6fba6868f
+X-MS-Exchange-CrossTenant-originalarrivaltime: 28 Jun 2019 08:56:35.8798 (UTC)
 X-MS-Exchange-CrossTenant-fromentityheader: Hosted
 X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
 X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: abel.vesa@nxp.com
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM0PR04MB5043
+X-MS-Exchange-CrossTenant-userprincipalname: leonard.crestez@nxp.com
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1PR04MB5904
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190628_015422_410753_BEE22CB1 
-X-CRM114-Status: GOOD (  20.46  )
+X-CRM114-CacheID: sfid-20190628_015639_654233_F7B370DB 
+X-CRM114-Status: UNSURE (   8.45  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.15.51 listed in list.dnswl.org]
+ no trust [40.107.3.53 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -122,67 +112,51 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>, Jacky Bai <ping.bai@nxp.com>,
- Carlo Caione <ccaione@baylibre.com>, Marc Zyngier <marc.zyngier@arm.com>,
- Fabio Estevam <festevam@gmail.com>, Sascha Hauer <s.hauer@pengutronix.de>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Rob Herring <robh+dt@kernel.org>, dl-linux-imx <linux-imx@nxp.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Abel Vesa <abelvesa@gmail.com>, Thomas Gleixner <tglx@linutronix.de>,
- Leonard Crestez <leonard.crestez@nxp.com>, Shawn Guo <shawnguo@kernel.org>,
+Cc: Aisheng Dong <aisheng.dong@nxp.com>, Ulf Hansson <ulf.hansson@linaro.org>,
+ Jacky Bai <ping.bai@nxp.com>, Anson Huang <anson.huang@nxp.com>, "Rafael J.
+ Wysocki" <rafael@kernel.org>, Stephen Boyd <sboyd@kernel.org>,
+ Viresh Kumar <viresh.kumar@linaro.org>,
+ Michael Turquette <mturquette@baylibre.com>,
+ "linux-pm@vger.kernel.org" <linux-pm@vger.kernel.org>,
+ "linux-clk@vger.kernel.org" <linux-clk@vger.kernel.org>,
+ Krzysztof Kozlowski <krzk@kernel.org>, Saravana Kannan <saravanak@google.com>,
+ Kyungmin Park <kyungmin.park@samsung.com>,
+ MyungJoo Ham <myungjoo.ham@samsung.com>,
+ Alexandre Bailon <abailon@baylibre.com>,
+ "kernel@pengutronix.de" <kernel@pengutronix.de>,
+ Fabio Estevam <fabio.estevam@nxp.com>, Shawn Guo <shawnguo@kernel.org>,
+ Georgi Djakov <georgi.djakov@linaro.org>,
  "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- Lucas Stach <l.stach@pengutronix.de>
+ dl-linux-imx <linux-imx@nxp.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 19-06-23 13:47:26, Martin Kepplinger wrote:
-> On 10.06.19 14:13, Abel Vesa wrote:
-> > This is another alternative for the RFC:
-> > https://eur01.safelinks.protection.outlook.com/?url=https%3A%2F%2Flkml.org%2Flkml%2F2019%2F3%2F27%2F545&amp;data=02%7C01%7Cabel.vesa%40nxp.com%7C6c9d12c1017745750e3908d6f7d0935a%7C686ea1d3bc2b4c6fa92cd99c5c301635%7C0%7C0%7C636968872531886931&amp;sdata=DAN3TVPD%2FaQzseYUYAjsnfQM6odM1x8qzsVVslFXAnY%3D&amp;reserved=0
-> > 
-> > This new workaround proposal is a little bit more hacky but more contained
-> > since everything is done within the irq-imx-gpcv2 driver.
-> > 
-> > Basically, it 'hijacks' the registered gic_raise_softirq __smp_cross_call
-> > handler and registers instead a wrapper which calls in the 'hijacked' 
-> > handler, after that calling into EL3 which will take care of the actual
-> > wake up. This time, instead of expanding the PSCI ABI, we use a new vendor SIP.
-> > 
-> > I also have the patches ready for TF-A but I'll hold on to them until I see if
-> > this has a chance of getting in.
-> 
-> Let's leave out of the picture for now, how generally applicable and
-> mergable your changes are. I'd like to reproduce what you do and test
-> cpuidle on imx8mq:
-> 
-> When applying your changes here and the corresponding ATF changes (
-> https://eur01.safelinks.protection.outlook.com/?url=https%3A%2F%2Fgithub.com%2Fabelvesa%2Farm-trusted-firmware%2Ftree%2Fimx8mq-err11171&amp;data=02%7C01%7Cabel.vesa%40nxp.com%7C6c9d12c1017745750e3908d6f7d0935a%7C686ea1d3bc2b4c6fa92cd99c5c301635%7C0%7C0%7C636968872531886931&amp;sdata=nB%2FYGkuRrJYwoBJ1afTjIhoadn9Pn3c2QqRFnShWS0c%3D&amp;reserved=0 if
-> I got that right) I don't yet see any difference in the SoC heating up
-> under zero load. __cpu_do_idle() is called about every 1ms (without your
-> changes, that was even more often but I'm not yet sure if that means
-> anything).
+On 28.06.2019 11:45, Abel Vesa wrote:
+> On 19-06-28 10:39:50, Leonard Crestez wrote:
 
-You will most probably not see any change in the SoC temp since the cpuidle
-only touches the A53s. There are way many more IPs in the SoC that could
-heat it up. If you want some real numbers you'll have to measure the power
-consumtion on VDD_ARM rail. If you don't want to go through that much trouble
-you can use the idlestat tool to measure the times each A53 speends in cpu-sleep
-state.
+>> This allows consumers to use min_rate max_rate.
+>>
+>> @@ -45,10 +45,12 @@ static unsigned long imx8m_clk_composite_divider_recalc_rate(struct clk_hw *hw,
+>>   				   divider->flags, PCG_DIV_WIDTH);
+>>   }
+>>   
+>>   static int imx8m_clk_composite_compute_dividers(unsigned long rate,
+>>   						unsigned long parent_rate,
+>> +						unsigned long min_rate,
+>> +						unsigned long max_rate,
+> 
+> You should pass on the req instead of min_rate and max_rate here.
 
-> 
-> What I also see is that I get about 10x more "arch_timer" (int.3, GICv3)
-> interrupts than without your changes.
-> 
-> What am I doing wrong? I'd be happy to test, again, regardless of how
-> acceptable the workaround is in the end.
-> 
-> thanks,
-> 
->                                   martin
+Then I'd have to switch imx8m_clk_composite_divider_set_rate to allocate 
+a dummy struct clk_rate_request on the stack. It's clearer if I just 
+pass the minimum parameters required.
+
+--
+Regards,
+Leonard
+
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
