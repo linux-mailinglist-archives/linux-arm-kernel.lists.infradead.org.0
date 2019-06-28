@@ -2,58 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 463CD5975B
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 28 Jun 2019 11:22:52 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DDA9459777
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 28 Jun 2019 11:27:50 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=T/LCPUqxCSJPt0AKc1ePyxkOFRn4Kro2J3E8NnnXn30=; b=Ad/FyNMBLkh74R
-	ZmDDaZfJFegvVol+MrYrUUcjD2nUVwKDjXexnfstJEeISYMDHmYDNDRX38jbLYW1K+lL8yf7rIgdy
-	NSy0c1b2wDbPOz99mFsIAQSQWwLHrkfICbJcX2BglEboB7dOmeWGU4tlTbBNnz9E9EG98hOoVE+TN
-	ttDulfp0p8LKNsjMHa0XWKWKn+GbQtEmpE2qRnRrSAOHCYRe51dSlDIsXhbJOSZ1S+pzNpyDDn6mf
-	lXDmoGEzHgikA+SHABe3PFW+lNFaw4QYb+1Q70+u3DMHQqf1jfB19bAKC7aLxd4B83nkjIXwnJWVo
-	9fSPBFcB14gsL+r0+6iQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=nlbf6pI7bjCeUaAgv85D7hDLqZBH3vxsbPkY2xebQuM=; b=tlk/z/S2tOiAxj
+	jkK3/uoi/RmV3DbiriOYIqD249u1YqkEg/u+owqQmrdL3sFCnB1YCO6KNpEx4Ex/oV5+MI8adrg9s
+	TDOxYed8/viskiL322JgARG57sWUibTWmWaMZpr04Fb1QU6xu6m8AlZHVI+UiGvIHdVCgRuLT/EYj
+	PmpIBeqANlkiZccXJLqjR9VUsfcw93B43O2NQjEmrkYfQWstk8a3L8puIiPOedcNhsdIvngTK9Xv6
+	eZW9TcrVWoYGreqjwnv5aU2ASe3XRGet5JwcpizkRqZbbXyomo0cvgPI1z4AS/3YurnS6G8jdUYMr
+	0vAw2ZIYIVlTqQhidaew==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hgn5h-00080T-Mi; Fri, 28 Jun 2019 09:22:45 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hgn5T-000809-AS
- for linux-arm-kernel@lists.infradead.org; Fri, 28 Jun 2019 09:22:32 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 8ECFD2B;
- Fri, 28 Jun 2019 02:22:30 -0700 (PDT)
-Received: from localhost (unknown [10.37.6.20])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 0FB133F246;
- Fri, 28 Jun 2019 02:22:29 -0700 (PDT)
-Date: Fri, 28 Jun 2019 10:22:28 +0100
-From: Andrew Murray <andrew.murray@arm.com>
-To: Leo Yan <leo.yan@linaro.org>
-Subject: Re: [PATCH v2 5/5] coresight: etm4x: save/restore state across CPU
- low power states
-Message-ID: <20190628092227.GJ34530@e119886-lin.cambridge.arm.com>
-References: <20190627083525.37463-1-andrew.murray@arm.com>
- <20190627083525.37463-6-andrew.murray@arm.com>
- <20190628080732.GA32370@leoy-ThinkPad-X240s>
- <20190628085357.GH34530@e119886-lin.cambridge.arm.com>
- <20190628091246.GE32370@leoy-ThinkPad-X240s>
+	id 1hgnAY-0001hn-HZ; Fri, 28 Jun 2019 09:27:46 +0000
+Received: from fllv0016.ext.ti.com ([198.47.19.142])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hgnAK-0001hB-Ch
+ for linux-arm-kernel@lists.infradead.org; Fri, 28 Jun 2019 09:27:34 +0000
+Received: from lelv0266.itg.ti.com ([10.180.67.225])
+ by fllv0016.ext.ti.com (8.15.2/8.15.2) with ESMTP id x5S9RPEV126238;
+ Fri, 28 Jun 2019 04:27:25 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
+ s=ti-com-17Q1; t=1561714045;
+ bh=4lzPTixTG6HYSgsn449rIrKsahuLP+3PBJPmON8xrr4=;
+ h=Subject:To:CC:References:From:Date:In-Reply-To;
+ b=UNTDR6Vxo0+1Ve9+XKa4fqdgbb4dTQfBP3P/TemSWllJ36pW7/Vkibve6y7pozgvI
+ jyaaOCIn670GkXKsQomRv4snxP7ddP/uR7CbJqZlOM8V1SuPZC5IStmsW712rX+Ef8
+ bXZsH05AYCfBwF9pB0MgKMadJHQ1RBKVXzFUO9g0=
+Received: from DLEE112.ent.ti.com (dlee112.ent.ti.com [157.170.170.23])
+ by lelv0266.itg.ti.com (8.15.2/8.15.2) with ESMTPS id x5S9RP7W009488
+ (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
+ Fri, 28 Jun 2019 04:27:25 -0500
+Received: from DLEE108.ent.ti.com (157.170.170.38) by DLEE112.ent.ti.com
+ (157.170.170.23) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5; Fri, 28
+ Jun 2019 04:27:24 -0500
+Received: from fllv0040.itg.ti.com (10.64.41.20) by DLEE108.ent.ti.com
+ (157.170.170.38) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5 via
+ Frontend Transport; Fri, 28 Jun 2019 04:27:24 -0500
+Received: from [172.24.190.229] (ileax41-snat.itg.ti.com [10.172.224.153])
+ by fllv0040.itg.ti.com (8.15.2/8.15.2) with ESMTP id x5S9RLiG100189;
+ Fri, 28 Jun 2019 04:27:22 -0500
+Subject: Re: [PATCH] iommu/arm-smmu-v3: Fix incorrect fields being passed to
+ prefetch command
+To: <will@kernel.org>, <robin.murphy@arm.com>, <joro@8bytes.org>
+References: <20190628090953.23606-1-p-yadav1@ti.com>
+From: Pratyush Yadav <p-yadav1@ti.com>
+Message-ID: <b0866cd5-d073-601c-f95e-95a7128d4d75@ti.com>
+Date: Fri, 28 Jun 2019 14:57:43 +0530
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.7.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190628091246.GE32370@leoy-ThinkPad-X240s>
-User-Agent: Mutt/1.10.1+81 (426a6c1) (2018-08-26)
+In-Reply-To: <20190628090953.23606-1-p-yadav1@ti.com>
+Content-Language: en-US
+X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190628_022231_449768_F06BC39A 
-X-CRM114-Status: GOOD (  23.45  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190628_022732_521891_F49F283B 
+X-CRM114-Status: GOOD (  16.91  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [198.47.19.142 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -65,102 +92,65 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mathieu Poirier <mathieu.poirier@linaro.org>,
- Suzuki K Poulose <suzuki.poulose@arm.com>,
- Alexander Shishkin <alexander.shishkin@linux.intel.com>,
- coresight@lists.linaro.org, Sudeep Holla <sudeep.holla@arm.com>,
- linux-arm-kernel@lists.infradead.org, Mike Leach <mike.leach@linaro.org>
+Cc: lokeshvutla@ti.com, nsekhar@ti.com, linux-kernel@vger.kernel.org,
+ iommu@lists.linux-foundation.org, wmills@ti.com,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Jun 28, 2019 at 05:12:46PM +0800, Leo Yan wrote:
-> On Fri, Jun 28, 2019 at 09:53:58AM +0100, Andrew Murray wrote:
-> 
-> [...]
-> 
-> > > > diff --git a/drivers/hwtracing/coresight/coresight-etm4x.c b/drivers/hwtracing/coresight/coresight-etm4x.c
-> 
-> [...]
-> 
-> > > > +
-> > > > +#define PARAM_PM_SAVE_DISABLE	0
-> > > > +#define PARAM_PM_SAVE_ENABLE	1
-> > > > +#define PARAM_PM_SAVE_FIRMWARE	2
-> > > > +
-> > > > +static int pm_save_enable = PARAM_PM_SAVE_FIRMWARE;
-> > > > +module_param(pm_save_enable, int, 0644);
-> > > > +MODULE_PARM_DESC(pm_save_enable, "Save/restore state on power down: "
-> > > > +				  "0 = disabled, 1 = enabled, 2 = firmware");
-> > > > +
-> > > 
-> > > I understand if set pm_save_enable = 2 (firmware), then driver will
-> > > depend on drvdata->pm_save_enable to make decision for context saving
-> > > and restoring.
-> > > 
-> > > Maybe we can simplize to set pm_save_enable for binary value:
-> > > 0 (disabled) or 1 (enabled).  The reason is if we set the module
-> > > parameter 'pm_save_enable = 1', then we can set every ETM device's
-> > > drvdata->pm_save_enable in initialization phase.  So in the probe
-> > > function, we can use below code:
-> > > 
-> > >   drvdata->pm_save_enable = pm_save_enable ? : etm4_needs_save_restore(dev);
-> > 
-> > This means that when the module parameter is set to 1, then we only save/restore
-> > if the firmware suggests it is needed.
 
-Sorry, I seemingly can't read code today.
 
+On 28/06/19 2:39 PM, Pratyush Yadav wrote:> According to the SMMUv3 spec [0] section 4.2.1, command 0x1
+> (CMD_PREFETCH_CONFIG) does not take address and size as parameters. It
+> only takes  StreamID, SSec, SubstreamID, and SSV. Address and Size are
+> parameters for command 0x2 (CMD_PREFETCH_ADDR).
 > 
-> If the module parameter is set to 1, then we will always set every
-> device 'drvdata->pm_save_enable' to 1.  So in this case, the module
-> parameter will override the firmware property and always save/restore
-> contexts for ETM.
-> 
-> > However - what happens on hardware that ignores the PU bit (and thus requires
-> > save/restore), yet it's firmware doesn't have the
-> > 'arm,coresight-needs-save-restore' property? There is no way to override the
-> > firmware and always save/restore.
-> 
-> Actually I suggested to give the module parameter with high priority
-> and when the module parameter has set to 1, then it can override
-> firmware 'arm,coresight-needs-save-restore' property.
-> 
-> If we set the module parameter in kernel command line or when load the
-> module, its value can be used in the function etm4_probe().  So in the
-> driver probing, it detects the module parameter is 1, then it can
-> directly set every device 'drvdata->pm_save_enable' to 1.  Thus we can
-> always save/restore context for ignoring the PU bit case.
+> Tested on kernel 4.19 on TI J721E SOC.
 
-In any case, not only do we want to override the firmware to always
-save/restore. Sometimes we may also want to override the firmware to never
-save/restore (despite the firmware having the
-'arm,coresight-needs-save-restore' flag present). For example to debug power
-management.
+Even though I only tested on 4.19 because I don't have the setup to run 
+mainline master on this SOC, the patch is based on mainline master and I
+did compile-test it.
 
-Thus with this current approach you can override the firmware to either enable
-or disable save/restore.
-
-Thanks,
-
-Andrew Murray
-
+> [0] https://static.docs.arm.com/ihi0070/a/IHI_0070A_SMMUv3.pdf
 > 
-> > (It's also quite helpful for debugging to be able to change the module parameter
-> > at run time.)
+> Signed-off-by: Pratyush Yadav <p-yadav1@ti.com>
+> ---
+>  drivers/iommu/arm-smmu-v3.c | 7 +++++--
+>  1 file changed, 5 insertions(+), 2 deletions(-)
 > 
-> [...]
+> diff --git a/drivers/iommu/arm-smmu-v3.c b/drivers/iommu/arm-smmu-v3.c
+> index 4d5a694f02c2..2d4dfd909436 100644
+> --- a/drivers/iommu/arm-smmu-v3.c
+> +++ b/drivers/iommu/arm-smmu-v3.c
+> @@ -413,6 +413,7 @@ struct arm_smmu_cmdq_ent {
+>  	/* Command-specific fields */
+>  	union {
+>  		#define CMDQ_OP_PREFETCH_CFG	0x1
+> +		#define CMDQ_OP_PREFETCH_ADDR	0x2
+>  		struct {
+>  			u32			sid;
+>  			u8			size;
+> @@ -805,10 +806,12 @@ static int arm_smmu_cmdq_build_cmd(u64 *cmd, struct arm_smmu_cmdq_ent *ent)
+>  	case CMDQ_OP_TLBI_EL2_ALL:
+>  	case CMDQ_OP_TLBI_NSNH_ALL:
+>  		break;
+> -	case CMDQ_OP_PREFETCH_CFG:
+> -		cmd[0] |= FIELD_PREP(CMDQ_PREFETCH_0_SID, ent->prefetch.sid);
+> +	case CMDQ_OP_PREFETCH_ADDR:
+>  		cmd[1] |= FIELD_PREP(CMDQ_PREFETCH_1_SIZE, ent->prefetch.size);
+>  		cmd[1] |= ent->prefetch.addr & CMDQ_PREFETCH_1_ADDR_MASK;
+> +		/* Fallthrough */
+> +	case CMDQ_OP_PREFETCH_CFG:
+> +		cmd[0] |= FIELD_PREP(CMDQ_PREFETCH_0_SID, ent->prefetch.sid);
+>  		break;
+>  	case CMDQ_OP_CFGI_STE:
+>  		cmd[0] |= FIELD_PREP(CMDQ_CFGI_0_SID, ent->cfgi.sid);
 > 
-> > > Do we need to disable trace unit at the end of saving flow?
-> > 
-> > At the start of this function we take the OS lock, this has the effect of
-> > also disabling the trace. Therefore I don't think it's necessary to do more.
-> 
-> Okay, I read the comment and thanks for reminding.
-> 
-> Thanks,
-> Leo Yan
+-- 
+Regards,
+Pratyush Yadav
 
 _______________________________________________
 linux-arm-kernel mailing list
