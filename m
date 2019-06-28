@@ -2,61 +2,64 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8D90159E07
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 28 Jun 2019 16:39:02 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3DFB159E17
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 28 Jun 2019 16:43:24 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=DkQh4epnoFThYt9xmSQ4oqk79z7ofav2jdIuSukv1yw=; b=uNyDrh9qNGvC4i
-	upn3ecjM5SRABADRFTsIgOzdqFg5J3+DEzoxFWZZe3ECWQQv10LzVtrwViDslgoMztD7nT4h1bNlV
-	ckEjuWAMDva6k/7ihkvHcULxK0RVi7W3t3uk8zG9nZ+3gx/zj5CW0zjeQ0pmHdGSq22IsDwnPtwA1
-	oHFPl3BTXXcUYCUA0CTiktWtxPmLDA0O1ZoP+8JfmD76LL438A3dR9oBdk3KV+FGA679oelKu5531
-	eVJiymsNPHCbFLlGoJU7jxPn70DGcjqR8h1MSMmt6VzPRf8Mg87VI8IDfHkprPthd45EXzfm69322
-	hXDrazB14jD6rJR17d6w==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:From:Date:
+	MIME-Version:Subject:To:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=EcnIu7VfeDprYcZINWSusMa/juQYPtx+tEWYuxEt9Rs=; b=ell8zcAYLuLNeq7CiDO2pKGAF
+	V/OHBM2Z/C0YDvpnPsRFr7VIFeUzonUfIDC088F2aRogNJbDan482AN2zReRmM38YqsKSGDIimn8U
+	8tNkP5HJGGx1A6YlxijCtnmbqKTv35QdKbKLHaxEH5NPBnMB0AJYq77zM1y395YvAIZGEMMpc9c38
+	JafZoNENls1weMGHh98mKCSD8T+pQYoe5c75R31qNjTdF6nlitKHv6Q8U/uEV3EhanlbIRhht/5sD
+	2xN2q0dfhoXV14pstWRkmLoLE11y3xloQ5VKZ2Fiki3PU+gVbfvgPBy1w2NIpFfM8rMJdY9zAqFM3
+	ivxWd/2BQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hgs1l-0005Iu-4r; Fri, 28 Jun 2019 14:39:01 +0000
-Received: from szxga05-in.huawei.com ([45.249.212.191] helo=huawei.com)
+	id 1hgs5w-0007Md-B4; Fri, 28 Jun 2019 14:43:20 +0000
+Received: from node.akkea.ca ([192.155.83.177])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hgs0O-0004IL-Rt
- for linux-arm-kernel@lists.infradead.org; Fri, 28 Jun 2019 14:37:38 +0000
-Received: from DGGEMS405-HUB.china.huawei.com (unknown [172.30.72.60])
- by Forcepoint Email with ESMTP id 533D1AB3EDE336B3E937;
- Fri, 28 Jun 2019 22:37:32 +0800 (CST)
-Received: from localhost.localdomain (10.67.212.75) by
- DGGEMS405-HUB.china.huawei.com (10.3.19.205) with Microsoft SMTP Server id
- 14.3.439.0; Fri, 28 Jun 2019 22:37:21 +0800
-From: John Garry <john.garry@huawei.com>
-To: <peterz@infradead.org>, <mingo@redhat.com>, <acme@kernel.org>,
- <alexander.shishkin@linux.intel.com>, <jolsa@redhat.com>,
- <namhyung@kernel.org>, <tmricht@linux.ibm.com>, <brueckner@linux.ibm.com>,
- <kan.liang@linux.intel.com>, <ben@decadent.org.uk>,
- <mathieu.poirier@linaro.org>, <mark.rutland@arm.com>, <will.deacon@arm.com>
-Subject: [PATCH v3 4/4] perf jevents: Add support for Hisi hip08 L3C PMU
- aliasing
-Date: Fri, 28 Jun 2019 22:35:52 +0800
-Message-ID: <1561732552-143038-5-git-send-email-john.garry@huawei.com>
-X-Mailer: git-send-email 2.8.1
-In-Reply-To: <1561732552-143038-1-git-send-email-john.garry@huawei.com>
-References: <1561732552-143038-1-git-send-email-john.garry@huawei.com>
+ id 1hgs5k-0007Lc-LU
+ for linux-arm-kernel@lists.infradead.org; Fri, 28 Jun 2019 14:43:09 +0000
+Received: by node.akkea.ca (Postfix, from userid 33)
+ id 7298A4E204B; Fri, 28 Jun 2019 14:43:05 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=akkea.ca; s=mail;
+ t=1561732985; bh=1J+88cDkQYmjFNN7dYPO1sEt46KjdzHoKASn60xcMgM=;
+ h=To:Subject:Date:From:Cc:In-Reply-To:References;
+ b=Q+xzq109+3E6O8FugUx4bb9RjMArxdxHonnZRqtFmv3kNDPin90nQEGywk4aV5765
+ YMAoWl/uplP0dMGX6vlCtGu+6R4S3CMslXFqgdNBxm438OHnmLmSX8HlBp9TnE2kBm
+ AzAWgfCOBvNx9sCOwTEPw/QCvM76E3MCPuxtFTHk=
+To: =?UTF-8?Q?Guido_G=C3=BCnther?= <agx@sigxcpu.org>
+Subject: Re: [PATCH 1/2] arm64: dts: imx8mq: Add MIPI D-PHY
+X-PHP-Originating-Script: 1000:rcube.php
 MIME-Version: 1.0
-X-Originating-IP: [10.67.212.75]
-X-CFilter-Loop: Reflected
+Date: Fri, 28 Jun 2019 08:43:05 -0600
+From: Angus Ainslie <angus@akkea.ca>
+In-Reply-To: <613eef8ee6fd427a2fb5eb91865e71f3ee6bded6.1561451144.git.agx@sigxcpu.org>
+References: <cover.1561451144.git.agx@sigxcpu.org>
+ <613eef8ee6fd427a2fb5eb91865e71f3ee6bded6.1561451144.git.agx@sigxcpu.org>
+Message-ID: <dd48a5d849c8ddffa3c980a22777833f@www.akkea.ca>
+X-Sender: angus@akkea.ca
+User-Agent: Roundcube Webmail/1.1.3
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190628_073737_335517_3E3FBB0F 
-X-CRM114-Status: GOOD (  11.65  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20190628_074308_714272_44F0E08A 
+X-CRM114-Status: GOOD (  11.23  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [45.249.212.191 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -68,85 +71,41 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: ak@linux.intel.com, John Garry <john.garry@huawei.com>,
- linux-kernel@vger.kernel.org, linuxarm@huawei.com, zhangshaokun@hisilicon.com,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Pavel Machek <pavel@ucw.cz>, Anson Huang <Anson.Huang@nxp.com>,
+ Carlo Caione <ccaione@baylibre.com>, Andrey Smirnov <andrew.smirnov@gmail.com>,
+ Shawn Guo <shawnguo@kernel.org>, Sascha Hauer <s.hauer@pengutronix.de>,
+ linux-kernel@vger.kernel.org, Abel Vesa <abel.vesa@nxp.com>,
+ Rob Herring <robh+dt@kernel.org>, NXP Linux Team <linux-imx@nxp.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Fabio Estevam <festevam@gmail.com>, linux-arm-kernel@lists.infradead.org,
+ Lucas Stach <l.stach@pengutronix.de>
+Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="utf-8"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add support for Hisi hip08 L3C PMU aliasing.
-
-The kernel driver is in drivers/perf/hisilicon/hisi_uncore_l3c_pmu.c
-
-Signed-off-by: John Garry <john.garry@huawei.com>
----
- .../arm64/hisilicon/hip08/uncore-l3c.json     | 37 +++++++++++++++++++
- tools/perf/pmu-events/jevents.c               |  1 +
- 2 files changed, 38 insertions(+)
- create mode 100644 tools/perf/pmu-events/arch/arm64/hisilicon/hip08/uncore-l3c.json
-
-diff --git a/tools/perf/pmu-events/arch/arm64/hisilicon/hip08/uncore-l3c.json b/tools/perf/pmu-events/arch/arm64/hisilicon/hip08/uncore-l3c.json
-new file mode 100644
-index 000000000000..ca48747642e1
---- /dev/null
-+++ b/tools/perf/pmu-events/arch/arm64/hisilicon/hip08/uncore-l3c.json
-@@ -0,0 +1,37 @@
-+[
-+   {
-+	    "EventCode": "0x00",
-+	    "EventName": "uncore_hisi_l3c.rd_cpipe",
-+	    "BriefDescription": "Total read accesses",
-+	    "PublicDescription": "Total read accesses",
-+	    "Unit": "hisi_sccl,l3c",
-+   },
-+   {
-+	    "EventCode": "0x01",
-+	    "EventName": "uncore_hisi_l3c.wr_cpipe",
-+	    "BriefDescription": "Total write accesses",
-+	    "PublicDescription": "Total write accesses",
-+	    "Unit": "hisi_sccl,l3c",
-+   },
-+   {
-+	    "EventCode": "0x02",
-+	    "EventName": "uncore_hisi_l3c.rd_hit_cpipe",
-+	    "BriefDescription": "Total read hits",
-+	    "PublicDescription": "Total read hits",
-+	    "Unit": "hisi_sccl,l3c",
-+   },
-+   {
-+	    "EventCode": "0x03",
-+	    "EventName": "uncore_hisi_l3c.wr_hit_cpipe",
-+	    "BriefDescription": "Total write hits",
-+	    "PublicDescription": "Total write hits",
-+	    "Unit": "hisi_sccl,l3c",
-+   },
-+   {
-+	    "EventCode": "0x04",
-+	    "EventName": "uncore_hisi_l3c.victim_num",
-+	    "BriefDescription": "l3c precharge commands",
-+	    "PublicDescription": "l3c precharge commands",
-+	    "Unit": "hisi_sccl,l3c",
-+   },
-+]
-diff --git a/tools/perf/pmu-events/jevents.c b/tools/perf/pmu-events/jevents.c
-index 909e53e3b5bd..7d241efd03de 100644
---- a/tools/perf/pmu-events/jevents.c
-+++ b/tools/perf/pmu-events/jevents.c
-@@ -238,6 +238,7 @@ static struct map {
- 	{ "UPI LL", "uncore_upi" },
- 	{ "hisi_sccl,ddrc", "hisi_sccl,ddrc" },
- 	{ "hisi_sccl,hha", "hisi_sccl,hha" },
-+	{ "hisi_sccl,l3c", "hisi_sccl,l3c" },
- 	{}
- };
- 
--- 
-2.17.1
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gMjAxOS0wNi0yNSAwMjoyNywgR3VpZG8gR8O8bnRoZXIgd3JvdGU6Cj4gQWRkIGEgbm9kZSBm
+b3IgdGhlIE1peGVsIE1JUEkgRC1QSFksICJkaXNhYmxlZCIgYnkgZGVmYXVsdC4KPiAKPiBTaWdu
+ZWQtb2ZmLWJ5OiBHdWlkbyBHw7xudGhlciA8YWd4QHNpZ3hjcHUub3JnPgoKQWNrZWQtYnk6IEFu
+Z3VzIEFpbnNsaWUgKFB1cmlzbSkgPGFuZ3VzQGFra2VhLmNhPgoKPiAtLS0KPiAgYXJjaC9hcm02
+NC9ib290L2R0cy9mcmVlc2NhbGUvaW14OG1xLmR0c2kgfCAxMyArKysrKysrKysrKysrCj4gIDEg
+ZmlsZSBjaGFuZ2VkLCAxMyBpbnNlcnRpb25zKCspCj4gCj4gZGlmZiAtLWdpdCBhL2FyY2gvYXJt
+NjQvYm9vdC9kdHMvZnJlZXNjYWxlL2lteDhtcS5kdHNpCj4gYi9hcmNoL2FybTY0L2Jvb3QvZHRz
+L2ZyZWVzY2FsZS9pbXg4bXEuZHRzaQo+IGluZGV4IGQwOWI4MDhlZmY4Ny4uODkxZWU3NTc4YzJk
+IDEwMDY0NAo+IC0tLSBhL2FyY2gvYXJtNjQvYm9vdC9kdHMvZnJlZXNjYWxlL2lteDhtcS5kdHNp
+Cj4gKysrIGIvYXJjaC9hcm02NC9ib290L2R0cy9mcmVlc2NhbGUvaW14OG1xLmR0c2kKPiBAQCAt
+NzI4LDYgKzcyOCwxOSBAQAo+ICAJCQkJc3RhdHVzID0gImRpc2FibGVkIjsKPiAgCQkJfTsKPiAK
+PiArCQkJZHBoeTogZHBoeUAzMGEwMDMwMCB7Cj4gKwkJCQljb21wYXRpYmxlID0gImZzbCxpbXg4
+bXEtbWlwaS1kcGh5IjsKPiArCQkJCXJlZyA9IDwweDMwYTAwMzAwIDB4MTAwPjsKPiArCQkJCWNs
+b2NrcyA9IDwmY2xrIElNWDhNUV9DTEtfRFNJX1BIWV9SRUY+Owo+ICsJCQkJY2xvY2stbmFtZXMg
+PSAicGh5X3JlZiI7Cj4gKwkJCQlhc3NpZ25lZC1jbG9ja3MgPSA8JmNsayBJTVg4TVFfQ0xLX0RT
+SV9QSFlfUkVGPjsKPiArCQkJCWFzc2lnbmVkLWNsb2NrLXBhcmVudHMgPSA8JmNsayBJTVg4TVFf
+VklERU9fUExMMV9PVVQ+Owo+ICsJCQkJYXNzaWduZWQtY2xvY2stcmF0ZXMgPSA8MjQwMDAwMDA+
+Owo+ICsJCQkJI3BoeS1jZWxscyA9IDwwPjsKPiArCQkJCXBvd2VyLWRvbWFpbnMgPSA8JnBnY19t
+aXBpPjsKPiArCQkJCXN0YXR1cyA9ICJkaXNhYmxlZCI7Cj4gKwkJCX07Cj4gKwo+ICAJCQlpMmMx
+OiBpMmNAMzBhMjAwMDAgewo+ICAJCQkJY29tcGF0aWJsZSA9ICJmc2wsaW14OG1xLWkyYyIsICJm
+c2wsaW14MjEtaTJjIjsKPiAgCQkJCXJlZyA9IDwweDMwYTIwMDAwIDB4MTAwMDA+OwoKCl9fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJu
+ZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRw
+Oi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
