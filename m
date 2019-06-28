@@ -2,148 +2,87 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8C36C5A2C2
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 28 Jun 2019 19:51:35 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 599865A2EB
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 28 Jun 2019 19:58:23 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9iAp5fN6OBcXJk6YL1Qvq+M69NERsjqO/sLH7NqI+Gk=; b=hGj9ykOqSWQGEf
-	SgY3MFDB5rj94Hs4ExpS67Sg84ZXQoduirk1yLDVGOz5bbTA0ZHeSrBSEY7ltS2fj3WSEJtKXxZtF
-	RUAUlJ0LnsVJvvm0w9Xmq02P7NmLoOKedYUiTFgIutbAz1CHvnNgoFBzAWBBElIDfFIYe1Z2/1Pp4
-	SZV3j0sBu5cDXOVwF5IIazwAKNdnbgPJKQRISGRCJuG++Z55citBtrMuvoWw7nxG0KkK4ltRC0zUp
-	i2Ua3o1MqboACApbrS8SsB0TrU4ZDgf7YdPEeDw6dyoqzbfHNgvmjwqsBziaCiSe9Ji+U1EYQhii0
-	LIG+VNx6hsCNtKllRfsg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:References
+	:In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=cnO8vLjVERc1KdPP/VMBqBUIpBtBYILFaDshenjUI0Q=; b=O5Qj/MMHZ0lXUP
+	rDRIKbhEIKW/5f25aJdRDkxjjSGhe/VF22/JCF0IGUbhRL1PwyZ2wJdbGxH08KZl6bSPILvPunsZd
+	StBGTkBTK3oz9nBRshsPgr1RmjUnOQbk0Cy/YAOlWtsz55Jv9D0oOUkbV8UHMpEQ5I1pdT9SylAIl
+	J3cFWX3111NMBtGekgdi4xekgkCsrQLt4NsUE2DpKePQWMnYP0fSE7lv0cwCwkSHo2IvjGiNnICih
+	MqE5fTWFpu7+uVBNMdv2UItazuVfDg8ay6ka66wJunKBHRNkrbhYedWpj4s9reKvm5E/0d9E9Z2R0
+	NfiRRZPRcsqTFuHJghMg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hgv22-00079P-7J; Fri, 28 Jun 2019 17:51:30 +0000
-Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
+	id 1hgv8d-0000VV-8o; Fri, 28 Jun 2019 17:58:19 +0000
+Received: from mail-pl1-x629.google.com ([2607:f8b0:4864:20::629])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hgv1q-00078U-9o
- for linux-arm-kernel@lists.infradead.org; Fri, 28 Jun 2019 17:51:19 +0000
-Received: by mail-wm1-x342.google.com with SMTP id h19so9854490wme.0
+ id 1hgv8I-0000TW-Rg
+ for linux-arm-kernel@lists.infradead.org; Fri, 28 Jun 2019 17:58:01 +0000
+Received: by mail-pl1-x629.google.com with SMTP id i2so3655806plt.1
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 28 Jun 2019 10:51:17 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=subject:to:cc:references:from:openpgp:autocrypt:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=W/ZCNPYTJGzZ3L6zqlKCFXhLWCTFdIrOtI9KBg/bM4c=;
- b=uBVp7/Q5dH6jHPryP0SEvSK2mDOjH65xdlAXIi/DV23sHjhNGTOOXrqUp6fV+YHByb
- uL0XZB40zzTYro3piohFoJwAQBSAUrpdSZLuHXXQgKYzL6TMvOsrT6JsqsRtxst8jx2M
- QXRJMQoXSZGm1G+LdoTYLkdlyRNcXUXY0BywbOTQD8HKECvWq13w+fsB97w9GdYN5P+8
- EZlHU9UJdDV/pcP98Xj8JGtMklI9dpApqoXWzzf1X1UoSU/6zMAoyaO4Cr7DUmZ+p3YT
- rZqkQB1uRvM3Usv2Mnrn4NPj7yUhT7CE0I7nKvQseKVVDI82GF+RsMCFffF8VjDRgqed
- AtNw==
+ Fri, 28 Jun 2019 10:57:57 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=baylibre-com.20150623.gappssmtp.com; s=20150623;
+ h=from:to:cc:subject:in-reply-to:references:date:message-id
+ :mime-version; bh=JXDx5Of53xKpwKzie292LEzpOCIt7HdxAp/TZojOC98=;
+ b=QidYQZ1e5tVfpSNlbzJAwZ1PSEo4dbT1h4HX6qlUhaYy/0WDP2DbYNFPTucwsPtXtJ
+ P5Da3q4BSmLlg7YBmA0owHM1bUPrEb7BS8gzdHoNIWge3t/+SscDfMMBa3vx9swwjY5n
+ LFvDrn5pgiwG3LzawIGsvptYLxKuORQdAVK4jqhJjDPscsuEl0XBsIcIhtmOUiqLnY31
+ rl5J0Is/8LGOWfkwroXrx5lrTEZnf+8x1H9rCHGrYrmt0cwF3/5ZHvKqdnUE5x9l17cs
+ 65Qi5bpDUOP3xQ2tieEt795doUy4MrobU1fhvRK9NMQeo5arbU4RPh5V9yXTVNhCQ2rL
+ ovHA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:openpgp:autocrypt
- :message-id:date:user-agent:mime-version:in-reply-to
- :content-language:content-transfer-encoding;
- bh=W/ZCNPYTJGzZ3L6zqlKCFXhLWCTFdIrOtI9KBg/bM4c=;
- b=P5KNYoleyKOjc3snS8fQtbg6Z1t0ms/aWuzcqZSJOF0NznzgwpN4/B0yTHGd9/IHWk
- NRPaQujE8QRj9r2LxVhZJA5SjH9egyly60Z3J9KKWdRhHO/3NTTidnGQiGNiMtW2Wgp8
- zfBvLpKO/1RNYwD3uLJ0TUlwaurihz+7mE9FrmJyvYE3OsXspLMZV5hukYwM8kK1ozH4
- uzvDLmpH/1syX9DwEfrEdt7EiGlLly9OuDlC2LHD/W8YFYw2sBXCb3Swuf41oU+Kx2pG
- rP90suf1tGkUMgVQBE9dZJAX4Eb7N754K3oOFPOBrxJ+UXz4OdLFM3M1nVZXJxVeKDRq
- VvKg==
-X-Gm-Message-State: APjAAAUTXEIrwmgdi8CffOR7Iu2PqaY+tMdAS6jrHTDXtz5X0PerSMSv
- l7A5UaZjRRbROI7hGmUIojc=
-X-Google-Smtp-Source: APXvYqw2l3SjwtVoWKBhGogg6UicGh9gehFb+Mo2LVUEGL31OlYGoZxxQvMSwJSYm+RSWGyDw4yCyw==
-X-Received: by 2002:a1c:dc46:: with SMTP id t67mr7345606wmg.159.1561744275833; 
- Fri, 28 Jun 2019 10:51:15 -0700 (PDT)
-Received: from [10.67.50.91] ([192.19.223.252])
- by smtp.googlemail.com with ESMTPSA id h11sm3346530wrx.93.2019.06.28.10.51.13
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Fri, 28 Jun 2019 10:51:15 -0700 (PDT)
-Subject: Re: [PATCH] ARM: mm: only adjust sections of valid mm structures
-To: Doug Berger <opendmb@gmail.com>, linux-arm-kernel@lists.infradead.org
-References: <1561671168-29896-1-git-send-email-opendmb@gmail.com>
-From: Florian Fainelli <f.fainelli@gmail.com>
-Openpgp: preference=signencrypt
-Autocrypt: addr=f.fainelli@gmail.com; prefer-encrypt=mutual; keydata=
- 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
- M5kY0ACeNhCZJvZ5g4C2Lc9fcTHu8jxmEkI=
-Message-ID: <c279c4f8-84d5-9d7b-746b-680d08105330@gmail.com>
-Date: Fri, 28 Jun 2019 10:51:06 -0700
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.7.1
+ h=x-gm-message-state:from:to:cc:subject:in-reply-to:references:date
+ :message-id:mime-version;
+ bh=JXDx5Of53xKpwKzie292LEzpOCIt7HdxAp/TZojOC98=;
+ b=AW62eH/cLEF2Y+QT0DmWuTpYb1AJWLCe/qQreRoOzdep0Up0LKJtoU7uSPNQV58Ley
+ Fg59XvSW10uLifqMDwu5LICekF2UucMp7pGB3BEfVAugRMjenYebzego8iRRZy/AL75Y
+ Em+Z+KJROPfGBUb/ZvCcgsWaAFMY832tCgET3yO7hffR2ntP/Km5rDycQ66Jk9PNsa09
+ Jdy/ZsHO/MuE5tMH+7ZLpZft9QlVP8qVZR/pmnLys7Uw+W2vMGT9PEq89SPeEbQYOcpC
+ sajBrhE6FL8MEqObOzGcv78W1TVR3ExtpARtglE+NdDJJNOhWXV8CBU0zyD1rtuK/Zbq
+ LPmA==
+X-Gm-Message-State: APjAAAXHzMsEOPbsJ5GeX+JyDVUQ9quKGTzLSTHechTeBIcE6JVeH271
+ Q7TLja+prWLxXnGzc09A2r8eeA==
+X-Google-Smtp-Source: APXvYqxBvlNYSLn6PRoeEXRuFeavrw3x9z3+yywP5RFfiMDYAfvzlGijWI2kL3fNFlbko9TEHruOVA==
+X-Received: by 2002:a17:902:3341:: with SMTP id
+ a59mr12892929plc.186.1561744677360; 
+ Fri, 28 Jun 2019 10:57:57 -0700 (PDT)
+Received: from localhost (c-71-197-186-152.hsd1.wa.comcast.net.
+ [71.197.186.152])
+ by smtp.googlemail.com with ESMTPSA id c26sm2814912pfr.172.2019.06.28.10.57.56
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Fri, 28 Jun 2019 10:57:56 -0700 (PDT)
+From: Kevin Hilman <khilman@baylibre.com>
+To: Neil Armstrong <narmstrong@baylibre.com>, jbrunet@baylibre.com
+Subject: Re: [RFC/RFT v2 05/14] soc: amlogic: meson-clk-measure: protect
+ measure with a mutex
+In-Reply-To: <20190626090632.7540-6-narmstrong@baylibre.com>
+References: <20190626090632.7540-1-narmstrong@baylibre.com>
+ <20190626090632.7540-6-narmstrong@baylibre.com>
+Date: Fri, 28 Jun 2019 10:57:56 -0700
+Message-ID: <7hsgrtr3rv.fsf@baylibre.com>
 MIME-Version: 1.0
-In-Reply-To: <1561671168-29896-1-git-send-email-opendmb@gmail.com>
-Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190628_105118_350554_C8504E44 
-X-CRM114-Status: GOOD (  22.05  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190628_105758_894194_69924E94 
+X-CRM114-Status: UNSURE (   6.33  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:342 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:629 listed in]
  [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (f.fainelli[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -157,63 +96,23 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Rob Herring <robh@kernel.org>, Peng Fan <peng.fan@nxp.com>,
- linux-kernel@vger.kernel.org, Russell King <linux@armlinux.org.uk>,
- "Steven Rostedt \(VMware\)" <rostedt@goodmis.org>,
- Mike Rapoport <rppt@linux.ibm.com>, Geert Uytterhoeven <geert@linux-m68k.org>,
- Andrew Morton <akpm@linux-foundation.org>, Laura Abbott <labbott@redhat.com>
+Cc: Neil Armstrong <narmstrong@baylibre.com>,
+ martin.blumenstingl@googlemail.com, linux-kernel@vger.kernel.org,
+ linux-gpio@vger.kernel.org, linux-amlogic@lists.infradead.org,
+ linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 6/27/19 2:32 PM, Doug Berger wrote:
-> A timing hazard exists when an early fork/exec thread begins
-> exiting and sets its mm pointer to NULL while a separate core
-> tries to update the section information.
-> 
-> This commit ensures that the mm pointer is not NULL before
-> setting its section parameters. The arguments provided by
-> commit 11ce4b33aedc ("ARM: 8672/1: mm: remove tasklist locking
-> from update_sections_early()") are equally valid for not
-> requiring grabbing the task_lock around this check.
+Neil Armstrong <narmstrong@baylibre.com> writes:
 
-This looks like an appropriate fix to me. For what it is worth, we were
-able to reproduce this problem with a 4.9 kernel with:
+> In order to protect clock measuring when multiple process asks for
+> a mesure, protect the main measure function with mutexes.
+>
+> Signed-off-by: Neil Armstrong <narmstrong@baylibre.com>
 
-CONFIG_UEVENT_HELPER=y
-CONFIG_UEVENT_HELPER_PATH="/sbin/hotplug"
-
-It is made much more reliable with a lower default loglevel (e.g.: 1)
-than the default log level, but if you have e.g.: an USB thumb drive
-that needs to be scanned by the SCSI layer, then this is 100% reliable.
-
-> 
-> Fixes: 08925c2f124f ("ARM: 8464/1: Update all mm structures with section adjustments")
-> Signed-off-by: Doug Berger <opendmb@gmail.com>
-> ---
->  arch/arm/mm/init.c | 3 ++-
->  1 file changed, 2 insertions(+), 1 deletion(-)
-> 
-> diff --git a/arch/arm/mm/init.c b/arch/arm/mm/init.c
-> index be0b42937888..bdc70dff477b 100644
-> --- a/arch/arm/mm/init.c
-> +++ b/arch/arm/mm/init.c
-> @@ -616,7 +616,8 @@ static void update_sections_early(struct section_perm perms[], int n)
->  		if (t->flags & PF_KTHREAD)
->  			continue;
->  		for_each_thread(t, s)
-> -			set_section_perms(perms, n, true, s->mm);
-> +			if (s->mm)
-> +				set_section_perms(perms, n, true, s->mm);
->  	}
->  	set_section_perms(perms, n, true, current->active_mm);
->  	set_section_perms(perms, n, true, &init_mm);
-> 
-
-
--- 
-Florian
+Reviewed-by: Kevin Hilman <khilman@baylibre.com>
 
 _______________________________________________
 linux-arm-kernel mailing list
