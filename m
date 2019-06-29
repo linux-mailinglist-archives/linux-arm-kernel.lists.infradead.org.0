@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E5BC65AD22
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 29 Jun 2019 21:33:49 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A46855AD21
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 29 Jun 2019 21:33:32 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,78 +11,79 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=xSxn0VoQy2xor314N4T3AWEKwUkHcmZpCFqleoMQjOs=; b=M946ETtu0+WpY55m/tOKBBi40n
-	a46Z848CgehRMTxJfoYh0xTAz8i/6mXKns/uNY1vf875RV1EELwrt6OpWZnkQG0VG3WiJv0rHhjfc
-	9SQloINvjYNmGZfNGei8s3CYn+Kw/frRWek4saUcnpZIRmWHza+kGjd5tu2Get+bpkTcUdEBEB+jb
-	o1dE1jnb7Hh0WwstXvATrdTxupmkS87AN0j3BY8Ex1ymMm3IphLdpGOERblr3qyaLoQlMFetBfVzI
-	/bpR37FKQJxqtuSKVtsJQyKghjLQ23l2ZoghPODbMgM5aD9IUwKBfACdK9EfdvLvqUSIh3MIOIETF
-	7nUy5e9w==;
+	bh=QiT73aO3loChEORmUhq3d5mcpUFlfS2bL4H7NIL4Vbc=; b=NpgpduHLwb036SLcNchFJY9/Te
+	HdNEdiNpMnih1MuSHTmOsgcAAjlUQqC1GhtEmtVJvqcp1uMdIktEDRTW8yE4obxOwf0pzlapKo6ej
+	PQhRBNnQFVl/aV6Lc8dr5WD7fsAgey64/79hET6wBp0V65L2zJ4+R0N6OyPzfKEWECUBzOote9VCO
+	8iTIwVVIYVqEQOy0Oy/MJw7vL1lz3BnRShLKzK4TSB292X3OIezuGLo5e6MpuzIXhS23lnlbNRvjO
+	kSCdIbCP5LhjRzJ6RKuH1bD2V529syKDQQE+qA5lUrcM6AHzekVKkK2UvODEx673uCRfcea4212i4
+	ZN1mARhQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hhJ6X-0007OG-CB; Sat, 29 Jun 2019 19:33:45 +0000
-Received: from mout.gmx.net ([212.227.15.15])
+	id 1hhJ6G-00073u-Eh; Sat, 29 Jun 2019 19:33:28 +0000
+Received: from mout.gmx.net ([212.227.15.19])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hhJ5k-0006up-AW; Sat, 29 Jun 2019 19:32:58 +0000
+ id 1hhJ5j-0006ur-Mj; Sat, 29 Jun 2019 19:32:57 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=gmx.net;
  s=badeba3b8450; t=1561836763;
- bh=rK8rvK0E2D7ZbAe4zS7pHvQrYn5x7ohLrrBKZLknkUU=;
+ bh=zM+3HVUOU7axycZk2m6O4/q65gGOHHHUn7GEz8V5JCE=;
  h=X-UI-Sender-Class:From:To:Cc:Subject:Date:In-Reply-To:References;
- b=ZsSBlnTDSZMEPKIUQfRD9f8auVzzQnnbvPImq8j0bJvhsuV5RyblYgAsmmpPW5k7+
- +ZGkxNj5aVGN+PveqUip6qftjkiMLIzsFDyYNoTqzu0MBsdrSLWRZ9IzRH6dfAWhuT
- d2Y+rnvlPP6kAO0/3w5fFlRKYakv7x1MQ2Yw2N5U=
+ b=BlG7aSlG1zrMbeZbB4z/5cVTRhToCwcVyUJVekuQYLhk4RPqWoxpjhOFEV7hIerrk
+ VWDxQQk7lQvAr+ajhSWNVOFZIqUWSXX6+UTKx3/AIOmGxe7hbR5guIzc+gMMCi6cDj
+ cDF8GujlaPH7Tmwm2OzS9h1Vwmx6yCUVPJTpJwTg=
 X-UI-Sender-Class: 01bb95c1-4bf8-414a-932a-4f6e2808ef9c
 Received: from localhost.localdomain ([37.4.249.111]) by mail.gmx.com
  (mrgmx003 [212.227.17.190]) with ESMTPSA (Nemesis) id
- 0MLOMM-1hgl7g3DrG-000fz3; Sat, 29 Jun 2019 21:32:42 +0200
+ 0M8ehf-1iSnMm0i0Z-00wCUO; Sat, 29 Jun 2019 21:32:43 +0200
 From: Stefan Wahren <wahrenst@gmx.net>
 To: Eric Anholt <eric@anholt.net>,
  Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
  Dave Stevenson <dave.stevenson@raspberrypi.org>,
  Hans Verkuil <hverkuil@xs4all.nl>,
  Mauro Carvalho Chehab <mchehab@kernel.org>
-Subject: [PATCH V2 27/29] staging: bcm2835-camera: Add sanity checks for
- queue_setup/CREATE_BUFS
-Date: Sat, 29 Jun 2019 21:31:41 +0200
-Message-Id: <1561836703-2528-3-git-send-email-wahrenst@gmx.net>
+Subject: [PATCH V2 28/29] staging: bcm2835-camera: Set the field value within
+ each buffer
+Date: Sat, 29 Jun 2019 21:31:42 +0200
+Message-Id: <1561836703-2528-4-git-send-email-wahrenst@gmx.net>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1561836703-2528-1-git-send-email-wahrenst@gmx.net>
 References: <1561836703-2528-1-git-send-email-wahrenst@gmx.net>
-X-Provags-ID: V03:K1:sDOOOORNsaWE+WMzRK4FSnZQ1bYVt3B2/9OPCk1Nghqhx6Vg08C
- whJM09RSK77gyrEeJlCWCiqRQyKzXNEmEVCKKQB9emDR/jrRSNXjUo/R/2dEHlyvnOflWFI
- wrnSRvFYi2nRBRjdTaa8OTpe25ngXRbpFcCSb6vEaDY0p/4jGsQ5AeSdpOQgou1rp3L6S6d
- ilZ9Ie2P9fKd5/JdxxBdA==
+X-Provags-ID: V03:K1:t7r6ePgTJYKgQBXCyGGec452vrCZX+OEPLiqr/kONdcqUHDM1fX
+ 88fDGseAFHq3+AqTkexP08kd0jMdbwYwmDYo6mjqjXFVrVP6aL6PHhlRclbTwkp3hCjLpC5
+ VpUxpgUSJH7IBDe8GpDn+a84WsH0/WuYKXhYad/Kpq1aZPV8qj4fJMFnTMVYWCM9mbDn8N7
+ HXAwV5tBRCW29nsdgk3kw==
 X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:OBdmlzNyHJE=:V4tpvH6KCtlRVIuQuCx7N4
- uIP4XdWgNZVSM5w4NnwMRBWObJBBy4wA8taWEJTf/rFK/0zPusAOuRT1YHCHQ9WaymbfQPHP1
- dTBYbt8YxklwJYee53uOc5GHTVDExnfhOYSpjNWVnIl3KdgTzQhogP1iummvVnFx7Mw+ssucC
- L4tlohDr83gk5JLPDCoteeJuN18NWBRTZcy54qxKnuKCNkzXgS7XPxU6E810k+KQENeKlDDfd
- j25IgSeBMwC1Bhp0Q//PfSntR/wAzd6ohieB75X9baidQG82LqMNVhUo61P3jCm3gVd3UMncw
- 7QgtXgArVmnnXe0BrP3fBtC/oX1XI12QLbZIUGQ6wF7UB7MzT9J0Hsj78IJUazjj1Mxrq2QUW
- rNeSNdlmwMJANCgnMPj1VOLme08DN8LQP4AHyBW6s1m/G/YDB6X+CNAUchEb37iOhjRTdE9gQ
- CpgVha+1npK+WnF27wR8pjuvrG0fX50/E3XwTsA0RI4SnG4ZflfPr13atf4ekraC/IGl51Yxr
- f1qylPOTjfUj3tg7CI3bR3qBWNilmxg5RjdGymRikKseH3iT0QUmcMJuS3GPavBxJQXVLKC6T
- 1uazOi/q6fMTsj1OxYqo1f/d7FGK1wYOPkiS7b845pN1OimL+onTEv4nIaDteajuiNgHBlaqD
- Rtl8Ecpyk8gz6zEfxBQMf+1cQSoZTG1i3HhsfQE/g9mNavBiPEaALgvbzIUXazMEht11KNUpd
- Nh7LBHq1iHbdtBBjV1BsqIddHJRA2NnxWOA7kQPM3HRqehQEUPzb+t47mmK00cAbY5ASGPioe
- K/Yvyzf32tvkRpKnrSOfSNS0wd0UgcWOxhUfhTNJgbkgD5zMDgJaoqEW3fOzHljOkCdr2aEaI
- 7yLNbZciqNTDAbaCkTGgPqWW+jfMmCPNybpWhkC2HJvwDveP9d+XLcVhPl/HgfJ4y6b4pLbqH
- 9XuPmcqi7jd+7mL4jT1rbhhvKW7VUg06BA+VBZE2BzVerzSmFMaHRA2eFg4Iv6KU/EAalN8m4
- ZwbCKOLaTpe4zLkRXOAxZ0hEYaAZQmrwjD59kOx/wam+hg5M5Mdki4ESsvYj7TcB75pMmbKML
- 6bYYQ3HS7627i8=
+X-UI-Out-Filterresults: notjunk:1;V03:K0:g0lNzahIomE=:bMs9Ruj4BrOptRA2+kNd9d
+ 5GWRTt0RbfOpO4g3vXZKT//2wfTIXMP26DmgFQ2sRz5QJYIZ7mVraxLU+wPc5CyWg4NBprG2O
+ OK3HsUdiN6kdp4jTB5LMzndkmY6hOY6VPqaqqcvbqFpzISvZGqkR1GBwJvBRKC36O6ur1iUud
+ U2mA6B+OCPALw3NYFuriCa8m+MxO8UHxRsD4X0R6mnzrTxV0j0Wq5XTJQqy897prL6hFA0pLs
+ 34LpEM7QQJma5MPUeZMlggX0euF8g1eGM5N4aNw/hLEoHvMQKejfftpW+FzE5CeYC2XtI514A
+ ScFXHa7tp7HxstlRYixWLrBCACRzlu+C7oXPl0tpvnLq6Hx7kmTYPZUqUI8h6869r03Jok7Xs
+ 4UtD8uh89v6rTOd2EktWDQQw0xkhGVbUMoUF0RzKI4OGBOEK5BcPxUIOjVvWiW8W9jRhytE+S
+ lj/VyUHCgsdgUEzpy38QVyK051y9Sas/q03UZ0ihkKgMFjh8U56V3s5jRD7GZIVxEzJ8FkzV8
+ dErHSy2smmln0po6A4GlCdgvPoAmwNnRnOi/QNipVNMnauR5CQwuERinjwi6eny+OoggxkBBE
+ DX/KL50ysrY5+fRLs1gSLoyMHLSnCxFuwH5AnPkus2CL57CEfqFH2dAjQeEQOTGxcG7eGyi9S
+ h+E1AoSe4EyxX3PUKCcBH/cvxyAfnFUqzf2DXztCYyK4boc00mWoAavTzM4q8kaVlPkkKxooH
+ eNNVOQlJ3QS35DdSna45GxiIiguIZ9vtuMZjpBsTZFz9eXq4y1IA2g1d3V5Z7gB5Fi0TcjjwL
+ G35yAlP7jG+X8aA72j3i17Qp7tqZo/VksWCE7uZZkXnlHcsJpFQYW+RZNBsZZVpuktn4Sh6V3
+ QRN/9TaAcItbSGhyO8VZPckE0xSopaHAQxu5PThiBrEh0Zi4qIQFHoKmEBoxufQAviCdrp6GB
+ 9z3jN88Ir5IDKUmh+adV2+B2127QmXeBAfzCObmdAyZbgR53PXLExSulCYkVaqJnHoJogVB0c
+ DxsVbTj/lQR0ZnYzVKkm+pdxtknmgKjb8HhJW3keLiVH2SmsXvFFHhMGlWDtiRrjQVBkB0mgb
+ kt1ZJYPS0CJ14M=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190629_123256_679937_88303759 
-X-CRM114-Status: GOOD (  11.92  )
+X-CRM114-CacheID: sfid-20190629_123256_083020_15B96BB6 
+X-CRM114-Status: UNSURE (   8.97  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.227.15.15 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider (wahrenst[at]gmx.net)
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [212.227.15.19 listed in list.dnswl.org]
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -112,49 +113,32 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Dave Stevenson <dave.stevenson@raspberrypi.org>
 
-Fixes a v4l2-compliance failure when passed a buffer that is
-too small.
-queue_setup wasn't handling the case where *nplanes != 0, as
-used from CREATE_BUFS and requiring the driver to sanity
-check the provided buffer parameters. It was assuming that
-it was always being used in the REQBUFS case where it provides
-the buffer properties.
+Fixes a v4l2-compliance failure
+v4l2-test-buffers.cpp(415): g_field() == V4L2_FIELD_ANY
+
+The driver only ever produces progresive frames, so field should
+always be set to V4L2_FIELD_NONE.
 
 Signed-off-by: Dave Stevenson <dave.stevenson@raspberrypi.org>
 Signed-off-by: Stefan Wahren <wahrenst@gmx.net>
 Acked-by: Hans Verkuil <hverkuil-cisco@xs4all.nl>
 Acked-by: Mauro Carvalho Chehab <mchehab+samsung@kernel.org>
 ---
- .../vc04_services/bcm2835-camera/bcm2835-camera.c        | 16 ++++++++++++++++
- 1 file changed, 16 insertions(+)
+ drivers/staging/vc04_services/bcm2835-camera/bcm2835-camera.c | 1 +
+ 1 file changed, 1 insertion(+)
 
 diff --git a/drivers/staging/vc04_services/bcm2835-camera/bcm2835-camera.c b/drivers/staging/vc04_services/bcm2835-camera/bcm2835-camera.c
-index 1ad65dd..9c90d9b 100644
+index 9c90d9b..ea54cc2 100644
 --- a/drivers/staging/vc04_services/bcm2835-camera/bcm2835-camera.c
 +++ b/drivers/staging/vc04_services/bcm2835-camera/bcm2835-camera.c
-@@ -236,6 +236,22 @@ static int queue_setup(struct vb2_queue *vq,
- 		return -EINVAL;
+@@ -405,6 +405,7 @@ static void buffer_cb(struct vchiq_mmal_instance *instance,
+ 		buf->vb.vb2_buf.timestamp = ktime_get_ns();
  	}
+ 	buf->vb.sequence = dev->capture.sequence++;
++	buf->vb.field = V4L2_FIELD_NONE;
 
-+	/* Handle CREATE_BUFS situation - *nplanes != 0 */
-+	if (*nplanes) {
-+		if (*nplanes != 1 ||
-+		    sizes[0] < dev->capture.port->current_buffer.size) {
-+			v4l2_dbg(1, bcm2835_v4l2_debug, &dev->v4l2_dev,
-+				 "%s: dev:%p Invalid buffer request from CREATE_BUFS, size %u < %u, nplanes %u != 1\n",
-+				 __func__, dev, sizes[0],
-+				 dev->capture.port->current_buffer.size,
-+				 *nplanes);
-+			return -EINVAL;
-+		} else {
-+			return 0;
-+		}
-+	}
-+
-+	/* Handle REQBUFS situation */
- 	size = dev->capture.port->current_buffer.size;
- 	if (size == 0) {
- 		v4l2_err(&dev->v4l2_dev,
+ 	vb2_set_plane_payload(&buf->vb.vb2_buf, 0, length);
+ 	if (mmal_flags & MMAL_BUFFER_HEADER_FLAG_KEYFRAME)
 --
 2.7.4
 
