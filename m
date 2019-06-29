@@ -2,82 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 332FA5AB42
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 29 Jun 2019 15:02:18 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2A6B75AB46
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 29 Jun 2019 15:02:47 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=2/SFEevH1LrryxKqS0X2wJRJo0UU34YSZ7K0nHWWJr8=; b=QuYkHLnDfnD+Jl
-	W7M6jBJRzymioe1p+NUsGJ7cq91uPlpfWfMjlaXsnT1YOca3wN77PIosNFAI0M7h8Gc4AO6ArVZQI
-	EtR718lRWvMC8DOmaSZVDA2sea9xMFaMTtwFm2ngNo2mdIJBxF39FYcJZd3XzO6EvVMDfL8SBfaXC
-	F8cCackNqgNQX09tQLUVXGc/0xqrv03ITTfeuaUO1zNUyO5g6YFA+W3nKJ++C40AI1AREN2E4+RIj
-	l+yQgBgvEtnFrAuWAsDVkFN9hs5BvmmdySwHenXenzT4+tFnJX5EmmRG84/UwE073lU3hvu4nkEDx
-	QfUgCGNrV2ORw1fk3qHg==;
+	List-Owner; bh=9vXConflJKt262yE99H1njpt9cTet5mxIrw/SQmeBZw=; b=CNoqkHoNnZSbHU
+	Diz4crBYvhh/TedjJMGlNoowgco6uBhGV0EXsujAlWsSAWPCCaw/F+qrq4j7zFC+gebspqEQzGQnI
+	XNIzZ6oTuzFG7xok/Q2OBMuQnXjpLQxoABXxaubwnDY5/BtjErz/4tarLSJEnQi+B/bCgKTvaqcif
+	kv2StguNPomDyVDiKorx0slb4DlHLzOugS0RTkj9ZyC/n5ptQ3F0V0uwn2UEYw3j515FGVlgoAqm5
+	DHs6FYee84lqsOjSAj6uPq1l3E8hDGoqJ+TftUFBEHPeJQldL/1PzW9SBtAUQbArycXg4AgbgaJN+
+	U1v9/NX3ck/imL3TECNg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hhCzb-0004hk-PP; Sat, 29 Jun 2019 13:02:11 +0000
-Received: from mail-lf1-x144.google.com ([2a00:1450:4864:20::144])
+	id 1hhD05-00056n-IP; Sat, 29 Jun 2019 13:02:41 +0000
+Received: from mail-lf1-x143.google.com ([2a00:1450:4864:20::143])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hhCzN-0004gv-Rb
- for linux-arm-kernel@lists.infradead.org; Sat, 29 Jun 2019 13:01:59 +0000
-Received: by mail-lf1-x144.google.com with SMTP id a25so5773698lfg.2
+ id 1hhCzQ-0004hi-LF
+ for linux-arm-kernel@lists.infradead.org; Sat, 29 Jun 2019 13:02:02 +0000
+Received: by mail-lf1-x143.google.com with SMTP id y17so5790547lfe.0
  for <linux-arm-kernel@lists.infradead.org>;
- Sat, 29 Jun 2019 06:01:57 -0700 (PDT)
+ Sat, 29 Jun 2019 06:02:00 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=AJIo1pqQ+aFujHuHdql1oLAKsZ6dcOAKCD+S+KrStQg=;
- b=zQR54iAbGadX7yH6kb/W+A9Ev+FFwoc/g484x0VCE13ChTt4OVnLxuK03gAMFIhnUl
- a2s9RA8N93ziUXqxC4ZQbtiqRFq5+YrhUohrwTtL4UjNSSpUwjpJVTsnP5ztF+7mGcoD
- MaLZSwY/+wrc+Mrx1HIJcScmiCGvWqe6rIh6byJLfnq4HXzuuJHQwbH2tIrOgDiQcz99
- WHgvK5QzlgPMcFkkbQyB3iRjkDA2stc0/LSp4lugHsNtNHuQ4txm7SxP3GBg7pAGpzfw
- p4YL7ENLxHbwJB3rq3EQNAMUYHxs7zQQYNqFGvNcxySTPkzYoXSaECdplNiqhLg377rK
- dzeg==
+ bh=Ji8jAojLPl8vD+gcsy1dZ2LAcjvPmFSVJ5glNsjtSak=;
+ b=nAjmGaNaoXOfVZnFCs0LUWx0cgkIpWqrZKexDYARBy6576kyG3UYP+U3tLv6Z7mbun
+ 3mza7Rr4HNinHrz/Z+ZS8QeQeD2ig1Wuy5eIgVPImRlRcCxR6UE3d6lvjrMrektszXS+
+ 0CG3ahmSPlVFxu3mFx0uVQqdq4jNPLcFg8BC+yVu43Um7D3UMfNOpakEUcEVn6MuC8Ry
+ X4Gx9ihORnId7aLMGMVG+MYoXUZ7qMgU1CSiYsMEXSOfdUiBe/5UWIg8MwtVDMvToc9k
+ 2kG/2Li5Bv+dVCPKpJYsQ5s5V65k/L9JNU0oyZMgdR84ds/6gyw5txkGZP6EpXJbSn72
+ 8DlA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=AJIo1pqQ+aFujHuHdql1oLAKsZ6dcOAKCD+S+KrStQg=;
- b=LcvhTJEnJ1fMHaUCqfr/zfs59b7TmOqM3AHyhFaxotUe7Jt0DrGUgl3D0GA2rK00vU
- C+BltRdyXawirKtRUXXgT4iNXHJHyNmYpzda0bFhAkfIRq5wD8BH/qUq681d1Bn5gHVv
- qOzbwnfH1GC4yZtBuR6tjLmamAlMzGiMgcR/bpdzMebDF0gIKoYzqQbeYrBs2+n2fuWv
- F5nmfYJ/4nc6CSnquAFUtnxp5g23frXZo7Gb0Kd12JwQCkSOBrV4KkVtzoTvMxvjVyG1
- 0f/zVwJ/sLULY9sfQNDCl9acpNHzDqSVO75EyCgUO61JjistTptLEryk2+EHjdyQEGQZ
- 3Eng==
-X-Gm-Message-State: APjAAAUF2sXwj/BZbNJ9LsmiKO5XPBypECwbEA6l8Dch8RdrzXYCR326
- +4MHw0+ujsaPcKO8abm55qNi/g==
-X-Google-Smtp-Source: APXvYqxvXt6L2Ml1QCW1/zH7Sv4F1tQcoxTHgqupuETmPxNbTlWyt0OHygO+Xy9Hh1ch7/orM4lZPw==
-X-Received: by 2002:ac2:4c29:: with SMTP id u9mr7457510lfq.100.1561813316205; 
- Sat, 29 Jun 2019 06:01:56 -0700 (PDT)
+ bh=Ji8jAojLPl8vD+gcsy1dZ2LAcjvPmFSVJ5glNsjtSak=;
+ b=rL08BhgqVK+LpfI2iKbjPSz+UHvrwJyW+5A1Q/Ew32oFThj62ImGpvKBQALs1+ZBOA
+ rU0HKSINP22W+8RZu2JMOBNirtV/heqhRUbkkr0leJSbdkQ5gR8eSrU92J175I683MfH
+ 33MD+usWluTGivn4WENJcZ4M1Cr2Dkh9FvLr8bkt61wTPClmk4GTzS4jvFKHUll7/oif
+ OhH2o/G11cRDYKFpTJZIRMVWLyhzh2w9z/YPj67WiHR2R7q8Dnmi8dztimPTgYG2KzpD
+ K+IcZFHCm3scyNWNiC6fWXlmmX2r4rbs9N7Yq63voVIrTD0qktogn5Hqh9HzcB7Ch1VB
+ nMNQ==
+X-Gm-Message-State: APjAAAXb9YNRODbnefWwopKz+YtbOrlp0ol7NuEsHCUvuL8QvHcpN4L1
+ Hb2Y9jA+OW6XQOcPszGYgw6l2Q==
+X-Google-Smtp-Source: APXvYqw4JVg2KbWLoxvVW9U6jPqYrcYh2H4AXq4ph9NDkiYzD2Bg7mSbg0zvS+exFIzcUH3D8CLeKg==
+X-Received: by 2002:a19:f601:: with SMTP id x1mr7523920lfe.182.1561813318996; 
+ Sat, 29 Jun 2019 06:01:58 -0700 (PDT)
 Received: from localhost.localdomain
  (c-22cd225c.014-348-6c756e10.bbcust.telenor.se. [92.34.205.34])
- by smtp.gmail.com with ESMTPSA id v2sm1354500lfi.52.2019.06.29.06.01.54
+ by smtp.gmail.com with ESMTPSA id v2sm1354500lfi.52.2019.06.29.06.01.57
  (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Sat, 29 Jun 2019 06:01:55 -0700 (PDT)
+ Sat, 29 Jun 2019 06:01:57 -0700 (PDT)
 From: Linus Walleij <linus.walleij@linaro.org>
 To: dri-devel@lists.freedesktop.org,
  Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
  Maxime Ripard <maxime.ripard@bootlin.com>, Sean Paul <sean@poorly.run>
-Subject: [PATCH 2/7] drm/msm/dsi: Drop unused GPIO includes
-Date: Sat, 29 Jun 2019 14:59:28 +0200
-Message-Id: <20190629125933.679-2-linus.walleij@linaro.org>
+Subject: [PATCH 3/7] drm/msm/dpu: Drop unused GPIO code
+Date: Sat, 29 Jun 2019 14:59:29 +0200
+Message-Id: <20190629125933.679-3-linus.walleij@linaro.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20190629125933.679-1-linus.walleij@linaro.org>
 References: <20190629125933.679-1-linus.walleij@linaro.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190629_060157_890279_B1A7D9B9 
-X-CRM114-Status: GOOD (  10.04  )
+X-CRM114-CacheID: sfid-20190629_060200_709027_A557B236 
+X-CRM114-Status: GOOD (  13.65  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:144 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:143 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -107,8 +107,17 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This DSI driver uses the new descriptor API so these old
-GPIO API includes are surplus.
+The DPU has some kind of idea that it wants to be able to
+bring up power using GPIO lines. The struct dss_gpio is however
+completely unused and should this be done, it should be done
+using the GPIO descriptor framework rather than this API
+which relies on the global GPIO numberspace. Delete this
+code before anyone hurt themselves.
+
+The inclusion of <linux/gpio.h> was abused to get some OF
+and IRQ headers implicitly included into the DPU utilities,
+make these includes explicit and push them down into the actual
+implementation.
 
 Cc: Rob Clark <robdclark@gmail.com>
 Cc: Sean Paul <sean@poorly.run>
@@ -116,25 +125,72 @@ Cc: linux-arm-msm@vger.kernel.org
 Cc: freedreno@lists.freedesktop.org
 Signed-off-by: Linus Walleij <linus.walleij@linaro.org>
 ---
- drivers/gpu/drm/msm/dsi/dsi_host.c | 2 --
- 1 file changed, 2 deletions(-)
+ drivers/gpu/drm/msm/disp/dpu1/dpu_io_util.c | 1 +
+ drivers/gpu/drm/msm/disp/dpu1/dpu_io_util.h | 9 ---------
+ drivers/gpu/drm/msm/disp/dpu1/dpu_mdss.c    | 4 ++++
+ 3 files changed, 5 insertions(+), 9 deletions(-)
 
-diff --git a/drivers/gpu/drm/msm/dsi/dsi_host.c b/drivers/gpu/drm/msm/dsi/dsi_host.c
-index 610183db1daf..d44bad13cbaf 100644
---- a/drivers/gpu/drm/msm/dsi/dsi_host.c
-+++ b/drivers/gpu/drm/msm/dsi/dsi_host.c
-@@ -14,11 +14,9 @@
- #include <linux/clk.h>
- #include <linux/delay.h>
+diff --git a/drivers/gpu/drm/msm/disp/dpu1/dpu_io_util.c b/drivers/gpu/drm/msm/disp/dpu1/dpu_io_util.c
+index 78833c2c27f8..78f04147839f 100644
+--- a/drivers/gpu/drm/msm/disp/dpu1/dpu_io_util.c
++++ b/drivers/gpu/drm/msm/disp/dpu1/dpu_io_util.c
+@@ -15,6 +15,7 @@
+ #include <linux/clk/clk-conf.h>
  #include <linux/err.h>
+ #include <linux/delay.h>
++#include <linux/of.h>
+ 
+ #include <drm/drm_print.h>
+ 
+diff --git a/drivers/gpu/drm/msm/disp/dpu1/dpu_io_util.h b/drivers/gpu/drm/msm/disp/dpu1/dpu_io_util.h
+index bc07381d7429..a0498c7bd677 100644
+--- a/drivers/gpu/drm/msm/disp/dpu1/dpu_io_util.h
++++ b/drivers/gpu/drm/msm/disp/dpu1/dpu_io_util.h
+@@ -13,7 +13,6 @@
+ #ifndef __DPU_IO_UTIL_H__
+ #define __DPU_IO_UTIL_H__
+ 
 -#include <linux/gpio.h>
- #include <linux/gpio/consumer.h>
- #include <linux/interrupt.h>
- #include <linux/of_device.h>
--#include <linux/of_gpio.h>
- #include <linux/of_irq.h>
- #include <linux/pinctrl/consumer.h>
- #include <linux/of_graph.h>
+ #include <linux/platform_device.h>
+ #include <linux/types.h>
+ 
+@@ -22,12 +21,6 @@
+ #define DEV_WARN(fmt, args...)  pr_warn(fmt, ##args)
+ #define DEV_ERR(fmt, args...)   pr_err(fmt, ##args)
+ 
+-struct dss_gpio {
+-	unsigned int gpio;
+-	unsigned int value;
+-	char gpio_name[32];
+-};
+-
+ enum dss_clk_type {
+ 	DSS_CLK_AHB, /* no set rate. rate controlled through rpm */
+ 	DSS_CLK_PCLK,
+@@ -42,8 +35,6 @@ struct dss_clk {
+ };
+ 
+ struct dss_module_power {
+-	unsigned int num_gpio;
+-	struct dss_gpio *gpio_config;
+ 	unsigned int num_clk;
+ 	struct dss_clk *clk_config;
+ };
+diff --git a/drivers/gpu/drm/msm/disp/dpu1/dpu_mdss.c b/drivers/gpu/drm/msm/disp/dpu1/dpu_mdss.c
+index 7316b4ab1b85..9baabadc62bb 100644
+--- a/drivers/gpu/drm/msm/disp/dpu1/dpu_mdss.c
++++ b/drivers/gpu/drm/msm/disp/dpu1/dpu_mdss.c
+@@ -3,6 +3,10 @@
+  * Copyright (c) 2018, The Linux Foundation
+  */
+ 
++#include <linux/irq.h>
++#include <linux/irqchip.h>
++#include <linux/irqdesc.h>
++#include <linux/irqchip/chained_irq.h>
+ #include "dpu_kms.h"
+ 
+ #define to_dpu_mdss(x) container_of(x, struct dpu_mdss, base)
 -- 
 2.20.1
 
