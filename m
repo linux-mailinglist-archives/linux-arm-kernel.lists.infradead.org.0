@@ -2,86 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B40CE5ACF5
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 29 Jun 2019 20:58:00 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1D3255AD24
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 29 Jun 2019 21:34:17 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=0rDs43S9HsaamRl2yUyp49lmSmvqzSCIVcplx+WTlKg=; b=Z8DQRWXjHXxmTc
-	w9tI/msqEVqLnnH9IDGPzTwYL0sEM6a09HNjXS7fVMxEOcViwPf5SYlB1aap5VhEaGBxtu7qbAMMy
-	WqUqQnR1FP/q6eBtN10CMyRIyPUh+1uDiDZd3tLtW5dfGLkXGJhjnkuJOF2Oz2ngQqy4HZvUmR1Xs
-	hO8rN+Cw+IJBH7q73TZxuUyPm/z0mjmVUN5abBY43wmNEDXTJ5qJCOoXdgZCrKxPIeKooHbY9ZYv9
-	kXo1+tonUm5jMGrTTKDVvjCWZrduDFZS9OWn3C60IclYMwnYtGgbYtEEXVDculA9kR2hnTZ2hsH4E
-	wDeRHLzlDtB8ddWoD/DQ==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=/iwecheijJt3ZHIm/WAICBYrak9Tl7NtYqll2x/scDA=; b=Xk9
+	KnDjHbN9XtWuOMhNUQI3KZjsvwTSOTSWQVG7h7KuwrW9DN/Df1Yw3A0XWFGy6ZnuE4hLHC+TXCmKY
+	l+EZ/xxKw/3dAvq4+8yKtZZX8+thoDLm/tCLgj/2TGsbQtFJDzmkXNCCgf6eqwvUIVECcq46hyPT9
+	vLVJ+ZtbTXE/J+R0DI/GWXjLPOasaDRpUsqlTMa/IH8MmQyrSr1xPfbMTohacKgzYpp2IZMYrZLb4
+	0hlqruKY4+LKE7OP/AUmoycQGE2fBjb8mZjsnGLpl1DC8nbOxPH9BK4dg6J79I7XG2MroKXOZSMYg
+	0N0z4oY/NlF8ffyqvlnwNtX7k0BI75g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hhIXr-00053j-3E; Sat, 29 Jun 2019 18:57:55 +0000
-Received: from mail-pl1-x642.google.com ([2607:f8b0:4864:20::642])
+	id 1hhJ70-0007mO-On; Sat, 29 Jun 2019 19:34:14 +0000
+Received: from mout.gmx.net ([212.227.15.15])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hhIXk-00053E-9Z
- for linux-arm-kernel@lists.infradead.org; Sat, 29 Jun 2019 18:57:49 +0000
-Received: by mail-pl1-x642.google.com with SMTP id c14so5083986plo.0
- for <linux-arm-kernel@lists.infradead.org>;
- Sat, 29 Jun 2019 11:57:46 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=0uwyMT5kJax/pL1jOjeLm1qOkWd4WLOXSR140tRuxek=;
- b=qN+7iBT07Kph9Rpi4qRmEYDRkGQSIyxa1AWRbuJoBD/GGBsgzv9EMLYZuBaybUkJPO
- 928wSxRDL9iLFs9beRDmk8SaNEj3mGyQoCN7bE8qbp0hRGLUAfTX7PO6m6uhB/LAPom0
- TQELEMAje8JWX3kYiW+M6fYbdopJBNzBmmR8zBYEgM++zeqmSrZ1abMqRZ2OenGZhzI1
- gyy/JljHBQug3tZ4WsdRuG/p7M+K0GDWCHc6SOIJ074oBQxeF0BExI23iJ+SsrzdI7Xw
- QcVf9q9vK77QxtQhJFRE8WFu7fXDtBlF4j68xMnYVLdherYFN0d4Df39R19oivkg49qW
- 0MdQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=0uwyMT5kJax/pL1jOjeLm1qOkWd4WLOXSR140tRuxek=;
- b=Oajzq49VQfnxnXCtXJNacLxRQey/Nk86Rccda1XGQVLZeJIG4qvKyu8fLGPItx3ZBW
- 0KzU+TUdhZseNMhsrIIaUg62DNIMvOChWBaHjd/MyPs+80uophJqMIt4WSMlpQiv4xVM
- TBbyhfXqLs9ivSECVMn8LJg3JCNw2TqwCyu03xHHUJCpcRaZ+mpPG7o8apSU0SyqTPAz
- uL3XuvHgd1Zjkd4/1IMzZIXtpBJvtfN72xVXlTHeoUKGHtsyS+sZLfjfWMh0R4M6DKWo
- 6rSdLv3RdmxpeEfIDfsVtRSfwDpDI5OSs5M//BVTebtWvw0VsizEmvDBYrVzCSla0W9L
- Zrlg==
-X-Gm-Message-State: APjAAAUybSNmZIG+jgq0nmxwq43VxooOln8HfCPdGBHiFCBFYZN5fEED
- gPcGvl5fno63LUO1aVG4Yqwtfg==
-X-Google-Smtp-Source: APXvYqw9J7xQauFQr3WOlY6Dt3tYd3yx0nLfr/60YZFabkrGW26ZmmZkZYy/tKhQ/MO/onltwhqghg==
-X-Received: by 2002:a17:902:9688:: with SMTP id
- n8mr18660494plp.227.1561834665686; 
- Sat, 29 Jun 2019 11:57:45 -0700 (PDT)
-Received: from builder (104-188-17-28.lightspeed.sndgca.sbcglobal.net.
- [104.188.17.28])
- by smtp.gmail.com with ESMTPSA id s129sm5781898pfb.186.2019.06.29.11.57.44
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Sat, 29 Jun 2019 11:57:44 -0700 (PDT)
-Date: Sat, 29 Jun 2019 11:57:42 -0700
-From: Bjorn Andersson <bjorn.andersson@linaro.org>
-To: Suman Anna <s-anna@ti.com>
-Subject: Re: [PATCH 0/3] Add HwSpinlock support for TI K3 SoCs
-Message-ID: <20190629185742.GC23094@builder>
-References: <20190531021321.14025-1-s-anna@ti.com>
- <90211f72-7ce4-94e5-aef7-bbe14266dfbb@ti.com>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <90211f72-7ce4-94e5-aef7-bbe14266dfbb@ti.com>
-User-Agent: Mutt/1.10.0 (2018-05-17)
+ id 1hhJ5k-0006us-AU; Sat, 29 Jun 2019 19:32:59 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=gmx.net;
+ s=badeba3b8450; t=1561836762;
+ bh=BIJK7S3dp1eVapaQ1NquFN0+HEOlId3LqlyUJ2Bp7Vs=;
+ h=X-UI-Sender-Class:From:To:Cc:Subject:Date;
+ b=j541upki+Zi9GpMGYNtpzVcdTw89LDK/OLsN4IpA1upqoKpnh6ISahhjVuPHiDB7g
+ Jt+NAf9fb2abt+9pTyRbBuHRL0uBxZso6WNfDHK6uPUVhDBBmAIjQ+BGeGCLSj4Awd
+ nQDoNYjDhaYI1JCpJQM67ZXfveA74ez2KDr7EAf0=
+X-UI-Sender-Class: 01bb95c1-4bf8-414a-932a-4f6e2808ef9c
+Received: from localhost.localdomain ([37.4.249.111]) by mail.gmx.com
+ (mrgmx003 [212.227.17.190]) with ESMTPSA (Nemesis) id
+ 0M7pku-1iTcJV3vvs-00vN8x; Sat, 29 Jun 2019 21:32:42 +0200
+From: Stefan Wahren <wahrenst@gmx.net>
+To: Eric Anholt <eric@anholt.net>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Dave Stevenson <dave.stevenson@raspberrypi.org>,
+ Hans Verkuil <hverkuil@xs4all.nl>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>
+Subject: [PATCH V2 25/29] staging: mmal-vchiq: Avoid use of bool in structures
+Date: Sat, 29 Jun 2019 21:31:39 +0200
+Message-Id: <1561836703-2528-1-git-send-email-wahrenst@gmx.net>
+X-Mailer: git-send-email 2.7.4
+X-Provags-ID: V03:K1:SEQbTqFzj56akxHV9UR17gLVvJHO0jYiIWWM7BgEyKIv60EvWet
+ PoFzOsEda00YGUMzbmmDePvP5oAdO1J1Elm9GoC8jJ3LoVK19G5ppe2EC4nSxuUeu5TZnF9
+ htPyVIGRSORJh+rtElgu5uZQIqNup6uSudeXMWqkfp+lDtDvrusF8mFzY21JPDADyF7qguR
+ nlz3/iuOcRbbpof1xLypg==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:ZtQQuybeF6I=:N9KcMDZPk/RNG17uangLav
+ ZRWJ78e6rVNI9sKxkwx1uGqUQUMcop6TjyfLaLzriPCPZfknxSkomtjjcMI/Lvl6EzTOsduwJ
+ Tp6/v0S+1468zpGcPF7qpSDwR/SQtEbsQxRqvZP93nqDRXQ39ViqfdxNrI2p96OZb8ENsSwWg
+ f02ojkP45NtpOL5KrbSQsyPDkg0AX/7LhSPZkPflcovRg8VyCHE+yZvTTfjLT1FyD9w97pKr0
+ 3Rkd1S7Omq5RlSvjRUmoQhkWtOTfT0c1yuMGk1NtVYcBJAOSBgSJ/KVVfg9I+7Q/dt7SBYB4M
+ 0OM5SXG6Nm+TBPYQlyKOyzFzq+j3MHqTapQG7ChndW8h+i5xaV97fxEItrZu8qLBHeKysolZF
+ IIlN1HnYPUsdHmJgmgkQdJIuAGr6lq34WUh2p9UrS5f+8ONGZdrDA0iO7Kz8LY5aXrSrZQeYN
+ lqPfpJ6lj80I1kPb1ZHjtqt7p7lAHV7eZmC+0HTTxsyioJrxg+H+BDiA0seRYla2g5ugkcfiz
+ i1vgDDLGMX1ZZae3BxBegwUihyzeC82aDd42xb3sgMKsUWbyDsKY2oXFitVImQpKFGfrcHeaq
+ tvFl0woso5OCbE+81AbLylgCo6nm1tJGIAPBc3auAvaO4MHWLUhEaSv9MlyHNRwRam/mXLuQZ
+ 6ucqqdEOAVEiSPFnvdW8pc71hiNwsHIP4bx/n+gWdUqyuYTf/AZzlPrmC2FkZIej4O/5Eip7Q
+ K4O2WwYuIVmDuMCzCQdvQG6ayonuXAZYTjdet5TF0hg+zzeE81uQBrNc9Efky8MvqdzLniFVO
+ KwXw8yAKb1FGFvi5nuvAS6c7KpwTHtoVFv1Pc1xgcZIZdGd2N+8UZNuBSDkwzOpsDjIwa+LFV
+ yo/PbhxL2h4zek7cd1nMlPsgSfQ9BwCdoSBOp5IErpXcXyVaX+92BNZ/VnJqnLOKbrXvncZFI
+ ZU+VpFj1W4MNCGp5oWUQIJqL8jyycpo636hklfGs9E0B8C1yfFQIuiOk5pxtpbJjsu2dOkq4W
+ h5R7wwMzM6QSWgQ6uN+JuxozrIsOE4mBf+Xa2ajCqX5pRitB+pqrGd8ntNOaiAccWfU2Db7b6
+ McZC3NZyxp2pUU=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190629_115748_368010_4071B442 
-X-CRM114-Status: GOOD (  18.46  )
+X-CRM114-CacheID: sfid-20190629_123256_672767_1ABC0BD9 
+X-CRM114-Status: GOOD (  13.12  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:642 listed in]
- [list.dnswl.org]
+ no trust [212.227.15.15 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (wahrenst[at]gmx.net)
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -100,59 +97,106 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, linux-omap@vger.kernel.org,
- Rob Herring <robh+dt@kernel.org>, linux-remoteproc@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
+Cc: devel@driverdev.osuosl.org, Stefan Wahren <wahrenst@gmx.net>,
+ linux-rpi-kernel@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
+ linux-media@vger.kernel.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon 24 Jun 13:38 PDT 2019, Suman Anna wrote:
+From: Dave Stevenson <dave.stevenson@raspberrypi.org>
 
-> Hi Bjorn,
-> 
+Fixes up a checkpatch error "Avoid using bool structure members
+because of possible alignment issues".
 
-Hi Suman,
+Signed-off-by: Dave Stevenson <dave.stevenson@raspberrypi.org>
+Signed-off-by: Stefan Wahren <wahrenst@gmx.net>
+Acked-by: Hans Verkuil <hverkuil-cisco@xs4all.nl>
+Acked-by: Mauro Carvalho Chehab <mchehab+samsung@kernel.org>
+---
+ drivers/staging/vc04_services/bcm2835-camera/mmal-vchiq.c | 12 ++++++------
+ drivers/staging/vc04_services/bcm2835-camera/mmal-vchiq.h |  4 ++--
+ 2 files changed, 8 insertions(+), 8 deletions(-)
 
-> On 5/30/19 9:13 PM, Suman Anna wrote:
-> > Hi Bjorn,
-> > 
-> > The following series adds the support for the HwSpinlock IP present
-> > on the newer TI K3 AM65x and J721E SoCs. The first 2 patches are
-> > related to the K3 support, and the last patch is a minor debug related
-> > trace to see the number of locks registered on each SoC.
-> > 
-> > I will be posting the DT nodes once the binding is acked.
-> 
-> If you do not have any comments, can you please pick up this series for
-> 5.3 merge window?
-> 
+diff --git a/drivers/staging/vc04_services/bcm2835-camera/mmal-vchiq.c b/drivers/staging/vc04_services/bcm2835-camera/mmal-vchiq.c
+index d0f7b67..1c180ea 100644
+--- a/drivers/staging/vc04_services/bcm2835-camera/mmal-vchiq.c
++++ b/drivers/staging/vc04_services/bcm2835-camera/mmal-vchiq.c
+@@ -853,9 +853,9 @@ static int port_info_get(struct vchiq_mmal_instance *instance,
+ 		goto release_msg;
 
-I was waiting for Rob's ack on the dt change, but as it's just a minor
-modification I've merged the series.
+ 	if (rmsg->u.port_info_get_reply.port.is_enabled == 0)
+-		port->enabled = false;
++		port->enabled = 0;
+ 	else
+-		port->enabled = true;
++		port->enabled = 1;
 
-Thanks,
-Bjorn
+ 	/* copy the values out of the message */
+ 	port->handle = rmsg->u.port_info_get_reply.port_handle;
+@@ -1292,7 +1292,7 @@ static int port_disable(struct vchiq_mmal_instance *instance,
+ 	if (!port->enabled)
+ 		return 0;
 
-> Thanks,
-> Suman
-> 
-> > 
-> > regards
-> > Suman
-> > 
-> > Suman Anna (3):
-> >   dt-bindings: hwlock: Update OMAP binding for TI K3 SoCs
-> >   hwspinlock/omap: Add support for TI K3 SoCs
-> >   hwspinlock/omap: Add a trace during probe
-> > 
-> >  .../bindings/hwlock/omap-hwspinlock.txt       | 25 +++++++++++++++----
-> >  drivers/hwspinlock/Kconfig                    |  2 +-
-> >  drivers/hwspinlock/omap_hwspinlock.c          |  4 +++
-> >  3 files changed, 25 insertions(+), 6 deletions(-)
-> > 
-> 
+-	port->enabled = false;
++	port->enabled = 0;
+
+ 	ret = port_action_port(instance, port,
+ 			       MMAL_MSG_PORT_ACTION_TYPE_DISABLE);
+@@ -1344,7 +1344,7 @@ static int port_enable(struct vchiq_mmal_instance *instance,
+ 	if (ret)
+ 		goto done;
+
+-	port->enabled = true;
++	port->enabled = 1;
+
+ 	if (port->buffer_cb) {
+ 		/* send buffer headers to videocore */
+@@ -1511,7 +1511,7 @@ int vchiq_mmal_port_connect_tunnel(struct vchiq_mmal_instance *instance,
+ 			pr_err("failed disconnecting src port\n");
+ 			goto release_unlock;
+ 		}
+-		src->connected->enabled = false;
++		src->connected->enabled = 0;
+ 		src->connected = NULL;
+ 	}
+
+@@ -1758,7 +1758,7 @@ int vchiq_mmal_component_disable(struct vchiq_mmal_instance *instance,
+
+ 	ret = disable_component(instance, component);
+ 	if (ret == 0)
+-		component->enabled = false;
++		component->enabled = 0;
+
+ 	mutex_unlock(&instance->vchiq_mutex);
+
+diff --git a/drivers/staging/vc04_services/bcm2835-camera/mmal-vchiq.h b/drivers/staging/vc04_services/bcm2835-camera/mmal-vchiq.h
+index 1750ff0..f738e7f 100644
+--- a/drivers/staging/vc04_services/bcm2835-camera/mmal-vchiq.h
++++ b/drivers/staging/vc04_services/bcm2835-camera/mmal-vchiq.h
+@@ -48,7 +48,7 @@ typedef void (*vchiq_mmal_buffer_cb)(
+ 		unsigned long length, u32 mmal_flags, s64 dts, s64 pts);
+
+ struct vchiq_mmal_port {
+-	bool enabled;
++	u32 enabled:1;
+ 	u32 handle;
+ 	u32 type; /* port type, cached to use on port info set */
+ 	u32 index; /* port index, cached to use on port info set */
+@@ -82,7 +82,7 @@ struct vchiq_mmal_port {
+ };
+
+ struct vchiq_mmal_component {
+-	bool enabled;
++	u32 enabled:1;
+ 	u32 handle;  /* VideoCore handle for component */
+ 	u32 inputs;  /* Number of input ports */
+ 	u32 outputs; /* Number of output ports */
+--
+2.7.4
+
 
 _______________________________________________
 linux-arm-kernel mailing list
