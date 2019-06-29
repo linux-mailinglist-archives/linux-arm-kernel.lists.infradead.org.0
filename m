@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A46855AD21
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 29 Jun 2019 21:33:32 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 418FB5AD1B
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 29 Jun 2019 21:33:11 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,68 +11,67 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=QiT73aO3loChEORmUhq3d5mcpUFlfS2bL4H7NIL4Vbc=; b=NpgpduHLwb036SLcNchFJY9/Te
-	HdNEdiNpMnih1MuSHTmOsgcAAjlUQqC1GhtEmtVJvqcp1uMdIktEDRTW8yE4obxOwf0pzlapKo6ej
-	PQhRBNnQFVl/aV6Lc8dr5WD7fsAgey64/79hET6wBp0V65L2zJ4+R0N6OyPzfKEWECUBzOote9VCO
-	8iTIwVVIYVqEQOy0Oy/MJw7vL1lz3BnRShLKzK4TSB292X3OIezuGLo5e6MpuzIXhS23lnlbNRvjO
-	kSCdIbCP5LhjRzJ6RKuH1bD2V529syKDQQE+qA5lUrcM6AHzekVKkK2UvODEx673uCRfcea4212i4
-	ZN1mARhQ==;
+	bh=TpHomMyLdJGexWQOEjYReMEMI4jwNY15fldAE+BdiWk=; b=tuaVaD9eBnx0sK4bZawukSvrw3
+	epmJTRcK9GQV/uB8NvR1TP2ObUsQJ/r89nBXRFl7RHc0O6dDcokkoKoc03CH5fnTFhj1dYLchIXoL
+	BExeWvOAR3/TKzEf7ZwjspCChO6fykmVluhdV5rOIidAg/u699t3K+GlDEsOCms3ib3//Lx7wKFcC
+	9Lnw+ZBsF9vMsD6XsNRlxpvC/7+YSVVAWorBf9MavQBNO4tKqSxTzVjmQF4K5nAv3aFfyrIMblKBj
+	1h/sNyK9CB8IplumFcviVfZBgRk4lbIv7L7fW9JkjXQ/clXRZAnR2zBf8igMQsMcnU3PmON31yJPq
+	CD9l//1A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hhJ6G-00073u-Eh; Sat, 29 Jun 2019 19:33:28 +0000
+	id 1hhJ5t-0006wU-Kw; Sat, 29 Jun 2019 19:33:05 +0000
 Received: from mout.gmx.net ([212.227.15.19])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hhJ5j-0006ur-Mj; Sat, 29 Jun 2019 19:32:57 +0000
+ id 1hhJ5j-0006um-Mn; Sat, 29 Jun 2019 19:32:57 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=gmx.net;
  s=badeba3b8450; t=1561836763;
- bh=zM+3HVUOU7axycZk2m6O4/q65gGOHHHUn7GEz8V5JCE=;
+ bh=jrRQkN3aA1piA4Bl07G3I8c6oLly5GccQgg7xp8+yzY=;
  h=X-UI-Sender-Class:From:To:Cc:Subject:Date:In-Reply-To:References;
- b=BlG7aSlG1zrMbeZbB4z/5cVTRhToCwcVyUJVekuQYLhk4RPqWoxpjhOFEV7hIerrk
- VWDxQQk7lQvAr+ajhSWNVOFZIqUWSXX6+UTKx3/AIOmGxe7hbR5guIzc+gMMCi6cDj
- cDF8GujlaPH7Tmwm2OzS9h1Vwmx6yCUVPJTpJwTg=
+ b=TL3VRguo29vAIRsylpLnKAbl0ZOQxVlF7zB7RQlTgvyLIkxoD2iJrv0W6NkcPxpew
+ xV/syWOAEe/npkRjkyHU2hsn3Vn71bSF6sos2tlxhZ3y+F0uXiwL8zDku5Mywhd9zD
+ ioiraiGlRxSwI2+a16G9yq3MoXnuH2sWCKv9d8oo=
 X-UI-Sender-Class: 01bb95c1-4bf8-414a-932a-4f6e2808ef9c
 Received: from localhost.localdomain ([37.4.249.111]) by mail.gmx.com
  (mrgmx003 [212.227.17.190]) with ESMTPSA (Nemesis) id
- 0M8ehf-1iSnMm0i0Z-00wCUO; Sat, 29 Jun 2019 21:32:43 +0200
+ 0LkgAG-1iFGKV2Owe-00aYV1; Sat, 29 Jun 2019 21:32:43 +0200
 From: Stefan Wahren <wahrenst@gmx.net>
 To: Eric Anholt <eric@anholt.net>,
  Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
  Dave Stevenson <dave.stevenson@raspberrypi.org>,
  Hans Verkuil <hverkuil@xs4all.nl>,
  Mauro Carvalho Chehab <mchehab@kernel.org>
-Subject: [PATCH V2 28/29] staging: bcm2835-camera: Set the field value within
- each buffer
-Date: Sat, 29 Jun 2019 21:31:42 +0200
-Message-Id: <1561836703-2528-4-git-send-email-wahrenst@gmx.net>
+Subject: [PATCH V2 29/29] staging: bcm2835-camera: Correct ctrl
+ min/max/step/def to 64bit
+Date: Sat, 29 Jun 2019 21:31:43 +0200
+Message-Id: <1561836703-2528-5-git-send-email-wahrenst@gmx.net>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1561836703-2528-1-git-send-email-wahrenst@gmx.net>
 References: <1561836703-2528-1-git-send-email-wahrenst@gmx.net>
-X-Provags-ID: V03:K1:t7r6ePgTJYKgQBXCyGGec452vrCZX+OEPLiqr/kONdcqUHDM1fX
- 88fDGseAFHq3+AqTkexP08kd0jMdbwYwmDYo6mjqjXFVrVP6aL6PHhlRclbTwkp3hCjLpC5
- VpUxpgUSJH7IBDe8GpDn+a84WsH0/WuYKXhYad/Kpq1aZPV8qj4fJMFnTMVYWCM9mbDn8N7
- HXAwV5tBRCW29nsdgk3kw==
+X-Provags-ID: V03:K1:bgoZcbjSjDVWzSZxUn5AN5Hf5YZPfhECDzvHxY8GV8k7q6xAZ1D
+ S26PqL7/wPSstvrQ4QMSo+mHwA03PVdghA8/Zx+sBtRX1i7cUpTn3IAhH/tNBpVNajLjuOJ
+ GWehO2nKTB25aOP+23Nko5bNVBMtIIWcnQU60FL0933UEJYDaalCcqBA2nyx+gag2moRq3z
+ POo/9FZEXY2AyrlzcXCUA==
 X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:g0lNzahIomE=:bMs9Ruj4BrOptRA2+kNd9d
- 5GWRTt0RbfOpO4g3vXZKT//2wfTIXMP26DmgFQ2sRz5QJYIZ7mVraxLU+wPc5CyWg4NBprG2O
- OK3HsUdiN6kdp4jTB5LMzndkmY6hOY6VPqaqqcvbqFpzISvZGqkR1GBwJvBRKC36O6ur1iUud
- U2mA6B+OCPALw3NYFuriCa8m+MxO8UHxRsD4X0R6mnzrTxV0j0Wq5XTJQqy897prL6hFA0pLs
- 34LpEM7QQJma5MPUeZMlggX0euF8g1eGM5N4aNw/hLEoHvMQKejfftpW+FzE5CeYC2XtI514A
- ScFXHa7tp7HxstlRYixWLrBCACRzlu+C7oXPl0tpvnLq6Hx7kmTYPZUqUI8h6869r03Jok7Xs
- 4UtD8uh89v6rTOd2EktWDQQw0xkhGVbUMoUF0RzKI4OGBOEK5BcPxUIOjVvWiW8W9jRhytE+S
- lj/VyUHCgsdgUEzpy38QVyK051y9Sas/q03UZ0ihkKgMFjh8U56V3s5jRD7GZIVxEzJ8FkzV8
- dErHSy2smmln0po6A4GlCdgvPoAmwNnRnOi/QNipVNMnauR5CQwuERinjwi6eny+OoggxkBBE
- DX/KL50ysrY5+fRLs1gSLoyMHLSnCxFuwH5AnPkus2CL57CEfqFH2dAjQeEQOTGxcG7eGyi9S
- h+E1AoSe4EyxX3PUKCcBH/cvxyAfnFUqzf2DXztCYyK4boc00mWoAavTzM4q8kaVlPkkKxooH
- eNNVOQlJ3QS35DdSna45GxiIiguIZ9vtuMZjpBsTZFz9eXq4y1IA2g1d3V5Z7gB5Fi0TcjjwL
- G35yAlP7jG+X8aA72j3i17Qp7tqZo/VksWCE7uZZkXnlHcsJpFQYW+RZNBsZZVpuktn4Sh6V3
- QRN/9TaAcItbSGhyO8VZPckE0xSopaHAQxu5PThiBrEh0Zi4qIQFHoKmEBoxufQAviCdrp6GB
- 9z3jN88Ir5IDKUmh+adV2+B2127QmXeBAfzCObmdAyZbgR53PXLExSulCYkVaqJnHoJogVB0c
- DxsVbTj/lQR0ZnYzVKkm+pdxtknmgKjb8HhJW3keLiVH2SmsXvFFHhMGlWDtiRrjQVBkB0mgb
- kt1ZJYPS0CJ14M=
+X-UI-Out-Filterresults: notjunk:1;V03:K0:D3MrqUVb8cg=:LFsnxrzTQAbxiXnlCQFW3E
+ I/jdmQSM/ySirOv4nz/dqQuxk/Ghaq5Mayle8jHaxGma/hLQCnR9fetbmp5HnZKSSHvHztFx+
+ OHMIl7L/tHYYI6HEacwxAhYlLLhcVS3ScCw3Sdo+XXYPC/xd2xhSDO8TUCWtK84mrNK0M8IBm
+ 5wJGlJBAm7+ngYDss5dkUDKo0cVIeVXiciCOzDTnuup9aTar6YwLADpFNw9rl3PRMfcYGn7BL
+ VGQoshSH4RLkEe9SVicuggN67jink9qJt/v3Oc/TyZG0E9dhtW2ZlRNxPgVyyVl92m6FT20Fe
+ tdhOL13KUcWXJYqItB/filIjtcmAAC8ZamBY2a3YPzs3WQtHShUfiiWwv2EBWNvjgGv7StBa/
+ w/II9CJwJAWfVpym/Fn1TXjExbO5VA5qQ1S/5HvIqNOb0OrTaOLzPp/7xq1AabQDk5Y4ipP6G
+ Tc5pEdkXm8UfXPzcYAJ7g57VW0Yd0XI80uYV/sFH1tgX72MZLO2HvFaAGCdbttLpoRYhgHNEs
+ QKmZgHWfi+/G+ILQD9qS3MS5Q6oMeRYCArlOEf/rdZvQ6ZCiem/Z8BovM0RsLHIxdtfGPFgwC
+ WW969VzT15rxZsUFA9pQwdIWEVWMWsen4Ldi1qPPmqarIGDRsbDUI1It+Dl1QCP9Rm/80/xEX
+ 9ovcWDiyDgJSLXz+zEEdoqhNl8ivYFFSGCaS6ui+DrhTQ2ocyIL8IM3jTtekeSqFsdVry36rj
+ S7UvDFZkfNsOyPsJgRz+VIfAX40w2wJ9HnQb7zVaFP7C2Uqs8mdx0o04JNOx9vw4miaGpFJCB
+ B2/LRA5vpteMOsJMtOxUg8WOvMyjOBLZZPlD5FlHDa3b+3MPY6v62LATD2XC44K8hXHjCKeyk
+ nh7xBgtK/jOinyjFjOPggobNu5ObzO5bV/ioTemfYZA0fwo/JA7NZ1n6dY9wYxmy3TJB0opqS
+ yQJZT8plt/+39JF2sIs+2dOTP4f8Q60FdRsYu6D2gQLqPXDjAGO2trC+xDuNRrUmlzhngAwIQ
+ g4Hv1UsOoAsaeWrwXOcFtA98OwXwdWqYwF6uX9z/8WG9gXPqeEFb7GqcR8FJmO4dgE3qo79GL
+ B2wzwQ0MT9vcNw=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190629_123256_083020_15B96BB6 
-X-CRM114-Status: UNSURE (   8.97  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190629_123256_082682_2002D62A 
+X-CRM114-Status: GOOD (  12.29  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -113,32 +112,63 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Dave Stevenson <dave.stevenson@raspberrypi.org>
 
-Fixes a v4l2-compliance failure
-v4l2-test-buffers.cpp(415): g_field() == V4L2_FIELD_ANY
+The V4L2 control API was expanded to take 64 bit values in commit
+0ba2aeb6dab (Apr 16 2014), but as this driver wasn't in the mainline
+kernel at that point this was overlooked.
 
-The driver only ever produces progresive frames, so field should
-always be set to V4L2_FIELD_NONE.
+Update to use 64 bit values. This also fixes a couple of warnings
+in 64 bit builds.
 
 Signed-off-by: Dave Stevenson <dave.stevenson@raspberrypi.org>
 Signed-off-by: Stefan Wahren <wahrenst@gmx.net>
 Acked-by: Hans Verkuil <hverkuil-cisco@xs4all.nl>
 Acked-by: Mauro Carvalho Chehab <mchehab+samsung@kernel.org>
 ---
- drivers/staging/vc04_services/bcm2835-camera/bcm2835-camera.c | 1 +
- 1 file changed, 1 insertion(+)
+ drivers/staging/vc04_services/bcm2835-camera/controls.c | 14 +++++++-------
+ 1 file changed, 7 insertions(+), 7 deletions(-)
 
-diff --git a/drivers/staging/vc04_services/bcm2835-camera/bcm2835-camera.c b/drivers/staging/vc04_services/bcm2835-camera/bcm2835-camera.c
-index 9c90d9b..ea54cc2 100644
---- a/drivers/staging/vc04_services/bcm2835-camera/bcm2835-camera.c
-+++ b/drivers/staging/vc04_services/bcm2835-camera/bcm2835-camera.c
-@@ -405,6 +405,7 @@ static void buffer_cb(struct vchiq_mmal_instance *instance,
- 		buf->vb.vb2_buf.timestamp = ktime_get_ns();
- 	}
- 	buf->vb.sequence = dev->capture.sequence++;
-+	buf->vb.field = V4L2_FIELD_NONE;
+diff --git a/drivers/staging/vc04_services/bcm2835-camera/controls.c b/drivers/staging/vc04_services/bcm2835-camera/controls.c
+index 848b14a..89786c2 100644
+--- a/drivers/staging/vc04_services/bcm2835-camera/controls.c
++++ b/drivers/staging/vc04_services/bcm2835-camera/controls.c
+@@ -78,10 +78,10 @@ struct bm2835_mmal_v4l2_ctrl {
+ 	/* control minimum value or
+ 	 * mask for MMAL_CONTROL_TYPE_STD_MENU
+ 	 */
+-	s32 min;
+-	s32 max; /* maximum value of control */
+-	s32 def;  /* default value of control */
+-	s32 step; /* step size of the control */
++	s64 min;
++	s64 max; /* maximum value of control */
++	s64 def;  /* default value of control */
++	u64 step; /* step size of the control */
+ 	const s64 *imenu; /* integer menu array */
+ 	u32 mmal_id; /* mmal parameter id */
+ 	bm2835_mmal_v4l2_ctrl_cb *setter;
+@@ -1250,7 +1250,7 @@ int bm2835_mmal_init_controls(struct bm2835_mmal_dev *dev,
 
- 	vb2_set_plane_payload(&buf->vb.vb2_buf, 0, length);
- 	if (mmal_flags & MMAL_BUFFER_HEADER_FLAG_KEYFRAME)
+ 		case MMAL_CONTROL_TYPE_STD_MENU:
+ 		{
+-			int mask = ctrl->min;
++			u64 mask = ctrl->min;
+
+ 			if (ctrl->id == V4L2_CID_SCENE_MODE) {
+ 				/* Special handling to work out the mask
+@@ -1260,11 +1260,11 @@ int bm2835_mmal_init_controls(struct bm2835_mmal_dev *dev,
+ 				 */
+ 				int i;
+
+-				mask = 1 << V4L2_SCENE_MODE_NONE;
++				mask = BIT(V4L2_SCENE_MODE_NONE);
+ 				for (i = 0;
+ 				     i < ARRAY_SIZE(scene_configs);
+ 				     i++) {
+-					mask |= 1 << scene_configs[i].v4l2_scene;
++					mask |= BIT(scene_configs[i].v4l2_scene);
+ 				}
+ 				mask = ~mask;
+ 			}
 --
 2.7.4
 
