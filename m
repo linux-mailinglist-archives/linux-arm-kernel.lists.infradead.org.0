@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7CFA95AB10
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 29 Jun 2019 14:49:30 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 168755AB19
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 29 Jun 2019 14:50:40 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,74 +11,75 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=c1L0jXir6XqW4x2n1uANJSZTVxrzX4sSVUljNLhY8Uc=; b=gOsNuFN8K8rTwjbNsXauSs5+WF
-	eik+ckt+2ehd4bH0ZnSHjETeGUVcVQFNIbXpKg3cfBuD4s9Tioe3LaoaE5fU/iMb+l2pgL7DXlHae
-	UcaLx8FpRe+zIk4isnkTyeGbVEdMy4zGO/SektFNVsXVQ4y7ez6Shfc8Lqwk2oquUBmOMERAO0S/7
-	sHwf7LQGHTPK4cjjbfHqqbzVp3X9KmXFUZKSLjvamdECYdzcDL2fkIzXpOexU4Cm9JQ97+yrLMr1K
-	HJkslciZmu5hHIzcmuDD8qLpI2iaiMiCcttQQYsVVAzN1NLCh08f9/2rZIng/+juW2Ap6ym+zFNoz
-	bxvVKjfA==;
+	bh=LsztAvcIGy09M3D4eZtyfG1vy62Kc1yZgnVdUa5ZMgI=; b=ADu4Psw80PY9SdjinntNalJnzX
+	RIBH9RATXmVfL1qjxGkWRia8zN8gvQRsifMTRHpDqoyi9/G6fJoZ/WWeEzCaPKmFo/osNVi5DA5Af
+	G3T+ejZCvDIx/DoN5rIRCD8aK3q298fhW51BqXpqaj1as5JMNLKepQqLpNsy3yJ3KmHk5/yET1pJz
+	VMAqtPVdiXKWpDuKago8FwnmjBiNuqNTjQxknqofvKxYFfdVz7LWF0fGgHtDTFeFyzOj1mnV7KOdF
+	cCpXnZWZBiMfQxaqm+b52NDVRQnhlPRwDGrd65xAbfzZmIiNrRFb3Ci7aarvzKzAuCOqAt5+A06rX
+	ojt2TDQw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hhCnD-0006K1-5O; Sat, 29 Jun 2019 12:49:23 +0000
-Received: from mout.gmx.net ([212.227.17.22])
+	id 1hhCoN-0008GE-4I; Sat, 29 Jun 2019 12:50:35 +0000
+Received: from mout.gmx.net ([212.227.17.21])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hhCn1-0006Hb-HK; Sat, 29 Jun 2019 12:49:13 +0000
+ id 1hhCn3-0006Ir-64; Sat, 29 Jun 2019 12:49:15 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=gmx.net;
- s=badeba3b8450; t=1561812538;
- bh=5Lgyn/hZ3QxnIC0S6D39JFYVbTuvdGMraIyFt4x4lGs=;
+ s=badeba3b8450; t=1561812539;
+ bh=hBqLBGWSdZNpbsASbNgvGY4DcFFh5m6Ia2pIQ/9ixMw=;
  h=X-UI-Sender-Class:From:To:Cc:Subject:Date:In-Reply-To:References;
- b=PA7Zq5bp2EmyybgeQvEN3rvPpYfmxkaH3RFaWq+qCJR1lX4TZTbp12pBNT0Iwl0h3
- MeABed/uzh3gHtY0KkqoPlLmcv5yfX9YQ8gNPYqrOEC6swZbOjwKff8qkSLFg4Tbwc
- kp8HY7Gj/duYjPp8U4ANJYi0sNBmZfkO6x0e6060=
+ b=hfKuiSKNgIjpTTiMcCK/6JkO2Z/uQdJFJa2VsKi4mBr47euIlezCkYInqZ2rdZV5J
+ GIRW/gxaFJ2wqO9OtOB5yjtKvJpglQPci42im1BUusCJwi8ewj3b/s+r6V3LTZRJuZ
+ wfpKVbGMO1yRvSI5NCBIUyG211+Uen0xWs8C7X7I=
 X-UI-Sender-Class: 01bb95c1-4bf8-414a-932a-4f6e2808ef9c
 Received: from localhost.localdomain ([37.4.249.111]) by mail.gmx.com
  (mrgmx105 [212.227.17.168]) with ESMTPSA (Nemesis) id
- 1N3bSt-1ig4xl2MRH-010ddx; Sat, 29 Jun 2019 14:48:58 +0200
+ 1MGhyc-1hl4OG4ALK-00DmDA; Sat, 29 Jun 2019 14:48:59 +0200
 From: Stefan Wahren <wahrenst@gmx.net>
 To: Eric Anholt <eric@anholt.net>,
  Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
  Dave Stevenson <dave.stevenson@raspberrypi.org>,
  Hans Verkuil <hverkuil@xs4all.nl>,
  Mauro Carvalho Chehab <mchehab@kernel.org>
-Subject: [PATCH V2 17/29] staging: bcm2835-camera: Set sequence number
- correctly
-Date: Sat, 29 Jun 2019 14:48:24 +0200
-Message-Id: <1561812516-9087-2-git-send-email-wahrenst@gmx.net>
+Subject: [PATCH V2 18/29] staging: bcm2835-camera: Add multiple inclusion
+ protection to headers
+Date: Sat, 29 Jun 2019 14:48:25 +0200
+Message-Id: <1561812516-9087-3-git-send-email-wahrenst@gmx.net>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1561812516-9087-1-git-send-email-wahrenst@gmx.net>
 References: <1561812516-9087-1-git-send-email-wahrenst@gmx.net>
-X-Provags-ID: V03:K1:0IIAyh4ZU2BUuBfQtj+eM5IUn4ePO2T5pJ6qtNdfEbIRp1TKMCW
- JdLPsT4wmEP+wlWHK+LZn4hFhkcWGlnfM1pxHZRwZrhdvSCRyH+e2vl1BEjMAt7dqsTa2WX
- ax6YdI+XOww9m4y2I0PO8Gk33KqPLWtMmEwdcwoHq+jCqxrGUPBagI+MBpib/zbYS/YA3I0
- h3VB3DNfMZC9JxPSIcgBw==
+X-Provags-ID: V03:K1:93E048EqDPBDg8k1FYT8MHgk3lqlBfQDzG3WG1ig8phF50D3QCn
+ vsTHHvndx6KyhRTXj9MoYP6wIV9rGjQcfVGvUxNcion2zhGC1sqgmcgMmYaCuJNn+6znW15
+ U0pMZuTojAZYzN0Y2STPm75Nw+RBhK4qAvcUeI4d9FMvOCiy/c3qeWcpP7qnM8yH+tyERGT
+ 8KXPMqntGtvqup6tqu0EA==
 X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:HGBbzrCvBqk=:p+XzXPYOLequL4frhkS0E9
- jl6vtAuVY1WQnCCjUpu+uiWSAENgSMK1hk0fkURgVw9o6hSHt5GW2lxhOqaNM4Ba9izEnEKde
- UCOymYY9/BYsa4wwm3qA5fRrcEtu1jXqz4rnbDRUCtcf6yr3dB7nxOicVzzdiQvjVH3uRI0pA
- xaUlUUOEGJxli4oh1QCmHtfgA7OdmSLbrGPhPFMInqIShangdIucQ82Sh48OXctPhFO9xafWs
- no1mjFwDwY879B5j5y6+RCZae4uUzzB3Rv2gpEXz/WXOZeKmPadUHLWQV9J+H7vmCktJWRi5A
- nnOAVaxvRFg1QRODa8PuvWbBNeF72e63EQZUcRfKI2vhjllP3Nojou3veN9D12lvRZGrLZMBB
- ItZf7CdqBhlNiiIjyCyRmP6V42NpQ4j5jeORWDftxMGGzKbmnuKuP2qvhU08jTLrz7or2W+nx
- cZrSs8ycLN2cxw9IB6EgUHb3Mq/Tnk2Dzf0Tnezjgb0xMtROoBz+H9lSb+rncCcSI+gHOIqkq
- ijCiZj3Zd5HNQEn4pFa7/Aq7MpfZuwu3k5l+OSczP8J3btTDlkrwcxB17rKOBLmEaLdTnQTmm
- 1cVCmKK/zE+k6JUumxl8eNE7w+iQJt+4j6AMlYy0ygIJOlfNm4RoVmfslzrph1yN5ldMdeQlf
- W1l8fuxx2zzLHYGZqkFx4IJFK+37PM6bEr8uthZzxBH9G6vkudIsGyMrxOBtoap8El7od1xFV
- bGy3MOZaE+AITWEy2YXiXrKUTobxjFp03ixOu/uyqwIEj8yiKFHcssftqtV6LLaXBa6z7VxpR
- xquRVyIgbefqYxKDlljw7JiA1tqVZMYB3acjKJkpQNUxJ88J9Sr6haMqjLwkh2RfuOd45dN53
- 9HFwAh/sdBF/DcQZ8wCCim16zrhHlJsWs7y/YauLwHQoJsfbfOKV++ZkOH055Iy7DUbMQm4N8
- t5r98zLwiFiWHVz6X//jhulVKUReMtrX57SLKHWiOXY8Rr6soqmp0FxddLBsdAIpwhj6kgX+x
- 6lIjcl/RlGLpY66OB5SVJ1rluzCvFYzLfGe0zXR2ly88uDq70DKcdJZRUlxa1CjQ19SlU8Kw7
- zSYRJ5RGZQKoPE=
+X-UI-Out-Filterresults: notjunk:1;V03:K0:WZS6uLE2RKk=:27LPaaUhxhKEQtRFJ8vp1+
+ +G26dsRKJbz3HjSHLZ1VaU2+uwEWFzP2R1qyBMs3tzaJi8R+cqjtzp6e5ZCaDNxO5scwELZJD
+ S4w8BWi9G4f48tCvzjb0MAx1MdalHE6eHGze/j74einB6FtufenOHtfnK75x5se3hyAV9Vklv
+ OjOMb3zgYcaEdn3XHbrwXcfhyXffKzkglGiATb9z74YlXa5kpWF4zduFeD1BgZ1u9Tc8HoYAB
+ ujbSqKn63+bwIvJTFnSxZPZ5JDd+olxP39sODGGU90g/fBaiKWGFz5aCCPD4oitCMvZP6Asmr
+ rZy82QQhKFbz7yq0EH0hzfugrA1a/xCY1kgmwJfVONYj6WS/8EiWISuhXmeBPU6/ah8wGGsgK
+ 9oB4q5k1uIHVmKA2mc0uh4rSXW8eThrGoiMbuaa3H4wQ/WZ1mq3AFeRqdmU9QA6jWtvhE0G3Q
+ fEEeLMb0uvOcpUN2kG/8gkhdTQtY/b9WojMWeDgsdQRgABd8xJyGuvn9VSSE/i4CQe1BqWuCc
+ AeLvIt5STy08JeA/X4CH9hdnPA5Syx2iaKzjYD+9spD9CSz5zBjO74+F+qb8aO4d1iJxOPe8c
+ 8T8J1MpURVIeKCF86BZfNuMPuBiX/ZdIQZq3AFMTGZRHARAE/bSyW2/gcLZ3bGJAJqgmr/6t9
+ ArCse4bjFj6t25ZkhIeEznXMWN/gsKJw8X/CfrVGWioXu7F4CD42bZL3rXT63U8y9+dnEZkQr
+ IZ86ZQVOpiS4pXh/bdI3uuWrjO6OI3uherAvkwkkB1rzlyioYUsFoIzCEcSSgSJo8zHO6EXOm
+ Cx6Vl2Ov1ShogJKdlzdaZ2XpOn5dmduJZifI2xpU8SM6Go4b+2IAW3Hz1DsNwKcQZlVUPP74D
+ ChN9l8ertEChGrRuO1v9SxG4Du1tmYm52cvitDLbSo8JTOGMVhX9uWzzHz0sd3I2vrktu7J+e
+ hAvOEyOMpIf+RxKyusqGM4YEMXBiL0OJoVPodJz35VwRc9xtVpwXvtHxob0zaRO7lJGh5vtuo
+ 8id82ahQ/NBZaXp+dN2Xvx2wdUxL5iVCEWIqcZL8eB2/IPovEkzYVgkAPY+MF61h7B9PPMcCa
+ Ig2BzvFPfzkB94=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190629_054911_881380_6D65B791 
-X-CRM114-Status: GOOD (  12.01  )
+X-CRM114-CacheID: sfid-20190629_054913_541824_B0D55F25 
+X-CRM114-Status: UNSURE (   8.94  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [212.227.17.22 listed in list.dnswl.org]
+ low trust [212.227.17.21 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -112,53 +113,55 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Dave Stevenson <dave.stevenson@raspberrypi.org>
 
-Set the sequence number in vb2_v4l2_buffer mainly so the
-latest v4l2-ctl reports the frame rate correctly.
+mmal-common.h and mmal-msg.h didn't have the normal
+ifndef FOO / define FOO / endif protection to stop it being
+included multiple times. Add it.
 
 Signed-off-by: Dave Stevenson <dave.stevenson@raspberrypi.org>
 Signed-off-by: Stefan Wahren <wahrenst@gmx.net>
 Acked-by: Hans Verkuil <hverkuil-cisco@xs4all.nl>
 Acked-by: Mauro Carvalho Chehab <mchehab+samsung@kernel.org>
 ---
- drivers/staging/vc04_services/bcm2835-camera/bcm2835-camera.c | 4 ++++
- drivers/staging/vc04_services/bcm2835-camera/bcm2835-camera.h | 2 ++
+ drivers/staging/vc04_services/bcm2835-camera/mmal-common.h | 3 +++
+ drivers/staging/vc04_services/bcm2835-camera/mmal-msg.h    | 3 +++
  2 files changed, 6 insertions(+)
 
-diff --git a/drivers/staging/vc04_services/bcm2835-camera/bcm2835-camera.c b/drivers/staging/vc04_services/bcm2835-camera/bcm2835-camera.c
-index 5a51e4d..167c218 100644
---- a/drivers/staging/vc04_services/bcm2835-camera/bcm2835-camera.c
-+++ b/drivers/staging/vc04_services/bcm2835-camera/bcm2835-camera.c
-@@ -388,6 +388,7 @@ static void buffer_cb(struct vchiq_mmal_instance *instance,
- 	} else {
- 		buf->vb.vb2_buf.timestamp = ktime_get_ns();
- 	}
-+	buf->vb.sequence = dev->capture.sequence++;
+diff --git a/drivers/staging/vc04_services/bcm2835-camera/mmal-common.h b/drivers/staging/vc04_services/bcm2835-camera/mmal-common.h
+index 858bdcd..6f56c51 100644
+--- a/drivers/staging/vc04_services/bcm2835-camera/mmal-common.h
++++ b/drivers/staging/vc04_services/bcm2835-camera/mmal-common.h
+@@ -13,6 +13,8 @@
+  * MMAL structures
+  *
+  */
++#ifndef MMAL_COMMON_H
++#define MMAL_COMMON_H
 
- 	vb2_set_plane_payload(&buf->vb.vb2_buf, 0, length);
- 	if (mmal_flags & MMAL_BUFFER_HEADER_FLAG_KEYFRAME)
-@@ -515,6 +516,9 @@ static int start_streaming(struct vb2_queue *vq, unsigned int count)
- 	/* enable frame capture */
- 	dev->capture.frame_count = 1;
+ #define MMAL_FOURCC(a, b, c, d) ((a) | (b << 8) | (c << 16) | (d << 24))
+ #define MMAL_MAGIC MMAL_FOURCC('m', 'm', 'a', 'l')
+@@ -56,3 +58,4 @@ struct mmal_colourfx {
+ 	u32 u;
+ 	u32 v;
+ };
++#endif
+diff --git a/drivers/staging/vc04_services/bcm2835-camera/mmal-msg.h b/drivers/staging/vc04_services/bcm2835-camera/mmal-msg.h
+index 8e0aee8..43cc593 100644
+--- a/drivers/staging/vc04_services/bcm2835-camera/mmal-msg.h
++++ b/drivers/staging/vc04_services/bcm2835-camera/mmal-msg.h
+@@ -23,6 +23,8 @@
+  * implementation uses fixed size types and not the enums (though the
+  * comments have the actual enum type
+  */
++#ifndef MMAL_MSG_H
++#define MMAL_MSG_H
 
-+	/* reset sequence number */
-+	dev->capture.sequence = 0;
-+
- 	/* if the preview is not already running, wait for a few frames for AGC
- 	 * to settle down.
- 	 */
-diff --git a/drivers/staging/vc04_services/bcm2835-camera/bcm2835-camera.h b/drivers/staging/vc04_services/bcm2835-camera/bcm2835-camera.h
-index d9f0411..b5fce38 100644
---- a/drivers/staging/vc04_services/bcm2835-camera/bcm2835-camera.h
-+++ b/drivers/staging/vc04_services/bcm2835-camera/bcm2835-camera.h
-@@ -91,6 +91,8 @@ struct bm2835_mmal_dev {
- 		s64         vc_start_timestamp;
- 		/* Kernel start timestamp for streaming */
- 		ktime_t kernel_start_ts;
-+		/* Sequence number of last buffer */
-+		u32		sequence;
-
- 		struct vchiq_mmal_port  *port; /* port being used for capture */
- 		/* camera port being used for capture */
+ #define VC_MMAL_VER 15
+ #define VC_MMAL_MIN_VER 10
+@@ -401,3 +403,4 @@ struct mmal_msg {
+ 		u8 payload[MMAL_MSG_MAX_PAYLOAD];
+ 	} u;
+ };
++#endif
 --
 2.7.4
 
