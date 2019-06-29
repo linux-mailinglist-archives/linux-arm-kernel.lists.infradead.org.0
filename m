@@ -2,72 +2,93 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DBB6F5AC9C
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 29 Jun 2019 18:45:57 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B40CE5ACF5
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 29 Jun 2019 20:58:00 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=tj4h9eXZUeofRRvcFrvVz2kcRI4ZALji+NBGo+MVy5s=; b=ejhpH70sOIDfOg
-	zM9G+1YPYiGVBR1ZLck+crGIQnmVXu16rSsbG7yiWIjnVUh9E1UP1lDDbNjV2oC35N5N2FiiT1oJK
-	MSwug7jb+eFGknoRjjyZeMp/WuGgMi2/Tdk1SDvtcgEINXziUD2FUaJnBf9wtODetcjmjKIJLV6Sk
-	o0sL92SoBhzh/hIAIy17Izwn1yIKpgYEoFKfmWKZyJqw39kAhej9d0myasnc+o5e71nQjWuvpa9yz
-	FYkwx5WNhb7d4ZYES31IHVEzxV7SUZt2VVc+8d8QREnd4g+CiS+SIbPEDCHu/fQmRBpk7yIK+U1cP
-	jdelZxffWvdKFiyn/R4Q==;
+	List-Owner; bh=0rDs43S9HsaamRl2yUyp49lmSmvqzSCIVcplx+WTlKg=; b=Z8DQRWXjHXxmTc
+	w9tI/msqEVqLnnH9IDGPzTwYL0sEM6a09HNjXS7fVMxEOcViwPf5SYlB1aap5VhEaGBxtu7qbAMMy
+	WqUqQnR1FP/q6eBtN10CMyRIyPUh+1uDiDZd3tLtW5dfGLkXGJhjnkuJOF2Oz2ngQqy4HZvUmR1Xs
+	hO8rN+Cw+IJBH7q73TZxuUyPm/z0mjmVUN5abBY43wmNEDXTJ5qJCOoXdgZCrKxPIeKooHbY9ZYv9
+	kXo1+tonUm5jMGrTTKDVvjCWZrduDFZS9OWn3C60IclYMwnYtGgbYtEEXVDculA9kR2hnTZ2hsH4E
+	wDeRHLzlDtB8ddWoD/DQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hhGU4-0001tI-Uj; Sat, 29 Jun 2019 16:45:52 +0000
-Received: from smtprelay0243.hostedemail.com ([216.40.44.243]
- helo=smtprelay.hostedemail.com)
+	id 1hhIXr-00053j-3E; Sat, 29 Jun 2019 18:57:55 +0000
+Received: from mail-pl1-x642.google.com ([2607:f8b0:4864:20::642])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hhGTv-0001sQ-Ux
- for linux-arm-kernel@lists.infradead.org; Sat, 29 Jun 2019 16:45:45 +0000
-Received: from filter.hostedemail.com (clb03-v110.bra.tucows.net
- [216.40.38.60])
- by smtprelay08.hostedemail.com (Postfix) with ESMTP id 72872182CF666;
- Sat, 29 Jun 2019 16:45:32 +0000 (UTC)
-X-Session-Marker: 6A6F6540706572636865732E636F6D
-X-Spam-Summary: 2, 0, 0, , d41d8cd98f00b204, joe@perches.com,
- :::::::::::::::::::::::::::::::::::::::,
- RULES_HIT:41:355:379:599:800:960:968:973:982:988:989:1260:1277:1311:1313:1314:1345:1359:1431:1437:1515:1516:1518:1534:1541:1593:1594:1711:1730:1747:1777:1792:2393:2553:2559:2562:2828:3138:3139:3140:3141:3142:3353:3622:3865:3866:3867:3868:3870:3871:3872:3874:4037:4321:5007:6742:10004:10400:10848:10967:11232:11658:11914:12043:12297:12663:12740:12760:12895:13069:13138:13231:13311:13357:13439:14096:14097:14181:14659:14721:21080:21433:21627:30034:30054:30070:30090:30091,
- 0,
- RBL:23.242.196.136:@perches.com:.lbl8.mailshell.net-62.14.0.180 64.201.201.201,
- CacheIP:none, Bayesian:0.5, 0.5, 0.5, Netcheck:none, DomainCache:0,
- MSF:not bulk, SPF:fn, MSBL:0, DNSBL:neutral, Custom_rules:0:0:0, LFtime:24,
- LUA_SUMMARY:none
-X-HE-Tag: wood26_67b7f2b025644
-X-Filterd-Recvd-Size: 3038
-Received: from XPS-9350 (cpe-23-242-196-136.socal.res.rr.com [23.242.196.136])
- (Authenticated sender: joe@perches.com)
- by omf01.hostedemail.com (Postfix) with ESMTPA;
- Sat, 29 Jun 2019 16:45:12 +0000 (UTC)
-Message-ID: <c3b83ba7f9b003dd4fb9cad885461ce93165dc04.camel@perches.com>
-Subject: Re: [PATCH V2] include: linux: Regularise the use of FIELD_SIZEOF
- macro
-From: Joe Perches <joe@perches.com>
-To: Alexey Dobriyan <adobriyan@gmail.com>, Andreas Dilger <adilger@dilger.ca>
-Date: Sat, 29 Jun 2019 09:45:10 -0700
-In-Reply-To: <20190629142510.GA10629@avx2>
-References: <20190611193836.2772-1-shyam.saini@amarulasolutions.com>
- <20190611134831.a60c11f4b691d14d04a87e29@linux-foundation.org>
- <6DCAE4F8-3BEC-45F2-A733-F4D15850B7F3@dilger.ca>
- <20190629142510.GA10629@avx2>
-User-Agent: Evolution 3.30.5-0ubuntu0.18.10.1 
+ id 1hhIXk-00053E-9Z
+ for linux-arm-kernel@lists.infradead.org; Sat, 29 Jun 2019 18:57:49 +0000
+Received: by mail-pl1-x642.google.com with SMTP id c14so5083986plo.0
+ for <linux-arm-kernel@lists.infradead.org>;
+ Sat, 29 Jun 2019 11:57:46 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=0uwyMT5kJax/pL1jOjeLm1qOkWd4WLOXSR140tRuxek=;
+ b=qN+7iBT07Kph9Rpi4qRmEYDRkGQSIyxa1AWRbuJoBD/GGBsgzv9EMLYZuBaybUkJPO
+ 928wSxRDL9iLFs9beRDmk8SaNEj3mGyQoCN7bE8qbp0hRGLUAfTX7PO6m6uhB/LAPom0
+ TQELEMAje8JWX3kYiW+M6fYbdopJBNzBmmR8zBYEgM++zeqmSrZ1abMqRZ2OenGZhzI1
+ gyy/JljHBQug3tZ4WsdRuG/p7M+K0GDWCHc6SOIJ074oBQxeF0BExI23iJ+SsrzdI7Xw
+ QcVf9q9vK77QxtQhJFRE8WFu7fXDtBlF4j68xMnYVLdherYFN0d4Df39R19oivkg49qW
+ 0MdQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=0uwyMT5kJax/pL1jOjeLm1qOkWd4WLOXSR140tRuxek=;
+ b=Oajzq49VQfnxnXCtXJNacLxRQey/Nk86Rccda1XGQVLZeJIG4qvKyu8fLGPItx3ZBW
+ 0KzU+TUdhZseNMhsrIIaUg62DNIMvOChWBaHjd/MyPs+80uophJqMIt4WSMlpQiv4xVM
+ TBbyhfXqLs9ivSECVMn8LJg3JCNw2TqwCyu03xHHUJCpcRaZ+mpPG7o8apSU0SyqTPAz
+ uL3XuvHgd1Zjkd4/1IMzZIXtpBJvtfN72xVXlTHeoUKGHtsyS+sZLfjfWMh0R4M6DKWo
+ 6rSdLv3RdmxpeEfIDfsVtRSfwDpDI5OSs5M//BVTebtWvw0VsizEmvDBYrVzCSla0W9L
+ Zrlg==
+X-Gm-Message-State: APjAAAUybSNmZIG+jgq0nmxwq43VxooOln8HfCPdGBHiFCBFYZN5fEED
+ gPcGvl5fno63LUO1aVG4Yqwtfg==
+X-Google-Smtp-Source: APXvYqw9J7xQauFQr3WOlY6Dt3tYd3yx0nLfr/60YZFabkrGW26ZmmZkZYy/tKhQ/MO/onltwhqghg==
+X-Received: by 2002:a17:902:9688:: with SMTP id
+ n8mr18660494plp.227.1561834665686; 
+ Sat, 29 Jun 2019 11:57:45 -0700 (PDT)
+Received: from builder (104-188-17-28.lightspeed.sndgca.sbcglobal.net.
+ [104.188.17.28])
+ by smtp.gmail.com with ESMTPSA id s129sm5781898pfb.186.2019.06.29.11.57.44
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Sat, 29 Jun 2019 11:57:44 -0700 (PDT)
+Date: Sat, 29 Jun 2019 11:57:42 -0700
+From: Bjorn Andersson <bjorn.andersson@linaro.org>
+To: Suman Anna <s-anna@ti.com>
+Subject: Re: [PATCH 0/3] Add HwSpinlock support for TI K3 SoCs
+Message-ID: <20190629185742.GC23094@builder>
+References: <20190531021321.14025-1-s-anna@ti.com>
+ <90211f72-7ce4-94e5-aef7-bbe14266dfbb@ti.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <90211f72-7ce4-94e5-aef7-bbe14266dfbb@ti.com>
+User-Agent: Mutt/1.10.0 (2018-05-17)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190629_094544_139537_0B91C55C 
-X-CRM114-Status: GOOD (  14.89  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190629_115748_368010_4071B442 
+X-CRM114-Status: GOOD (  18.46  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [216.40.44.243 listed in list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ no trust [2607:f8b0:4864:20:0:0:0:642 listed in]
+ [list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -79,54 +100,59 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: keescook@chromium.org, kvm@vger.kernel.org,
- kernel-hardening@lists.openwall.com, netdev@vger.kernel.org,
- intel-gfx@lists.freedesktop.org, devel@lists.orangefs.org,
- linux-kernel@vger.kernel.org, Shyam Saini <shyam.saini@amarulasolutions.com>,
- linux-mips@vger.kernel.org, linux-mm@kvack.org, linux-sctp@vger.kernel.org,
- dri-devel@lists.freedesktop.org, Andrew Morton <akpm@linux-foundation.org>,
- linux-ext4 <linux-ext4@vger.kernel.org>, intel-gvt-dev@lists.freedesktop.org,
- bpf@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- mayhs11saini@gmail.com
+Cc: devicetree@vger.kernel.org, linux-omap@vger.kernel.org,
+ Rob Herring <robh+dt@kernel.org>, linux-remoteproc@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sat, 2019-06-29 at 17:25 +0300, Alexey Dobriyan wrote:
-> On Tue, Jun 11, 2019 at 03:00:10PM -0600, Andreas Dilger wrote:
-> > On Jun 11, 2019, at 2:48 PM, Andrew Morton <akpm@linux-foundation.org> wrote:
-> > > On Wed, 12 Jun 2019 01:08:36 +0530 Shyam Saini <shyam.saini@amarulasolutions.com> wrote:
-> > I did a check, and FIELD_SIZEOF() is used about 350x, while sizeof_field()
-> > is about 30x, and SIZEOF_FIELD() is only about 5x.
+On Mon 24 Jun 13:38 PDT 2019, Suman Anna wrote:
+
+> Hi Bjorn,
+> 
+
+Hi Suman,
+
+> On 5/30/19 9:13 PM, Suman Anna wrote:
+> > Hi Bjorn,
 > > 
-> > That said, I'm much more in favour of "sizeof_field()" or "sizeof_member()"
-> > than FIELD_SIZEOF().  Not only does that better match "offsetof()", with
-> > which it is closely related, but is also closer to the original "sizeof()".
+> > The following series adds the support for the HwSpinlock IP present
+> > on the newer TI K3 AM65x and J721E SoCs. The first 2 patches are
+> > related to the K3 support, and the last patch is a minor debug related
+> > trace to see the number of locks registered on each SoC.
 > > 
-> > Since this is a rather trivial change, it can be split into a number of
-> > patches to get approval/landing via subsystem maintainers, and there is no
-> > huge urgency to remove the original macros until the users are gone.  It
-> > would make sense to remove SIZEOF_FIELD() and sizeof_field() quickly so
-> > they don't gain more users, and the remaining FIELD_SIZEOF() users can be
-> > whittled away as the patches come through the maintainer trees.
+> > I will be posting the DT nodes once the binding is acked.
 > 
-> The signature should be
+> If you do not have any comments, can you please pick up this series for
+> 5.3 merge window?
 > 
-> 	sizeof_member(T, m)
+
+I was waiting for Rob's ack on the dt change, but as it's just a minor
+modification I've merged the series.
+
+Thanks,
+Bjorn
+
+> Thanks,
+> Suman
 > 
-> it is proper English,
-> it is lowercase, so is easier to type,
-> it uses standard term (member, not field),
-> it blends in with standard "sizeof" operator,
-
-yes please.
-
-Also, a simple script conversion applied
-immediately after an rc1 might be easiest
-rather than individual patches.
-
-
+> > 
+> > regards
+> > Suman
+> > 
+> > Suman Anna (3):
+> >   dt-bindings: hwlock: Update OMAP binding for TI K3 SoCs
+> >   hwspinlock/omap: Add support for TI K3 SoCs
+> >   hwspinlock/omap: Add a trace during probe
+> > 
+> >  .../bindings/hwlock/omap-hwspinlock.txt       | 25 +++++++++++++++----
+> >  drivers/hwspinlock/Kconfig                    |  2 +-
+> >  drivers/hwspinlock/omap_hwspinlock.c          |  4 +++
+> >  3 files changed, 25 insertions(+), 6 deletions(-)
+> > 
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
