@@ -2,95 +2,96 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0F84E5ABCA
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 29 Jun 2019 16:25:51 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E6C565ABF0
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 29 Jun 2019 16:50:29 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+CRfpnWpl9uqXn2rPceQiGq3g/0yLes2Cd4i+MOtN7w=; b=ZqeFrjiDLxUhIY
-	SgzYftajLK+7m/iF8gc2D3mDYPQy2ut3haGiu92hzwsY4A6YsJEJbVEO/IPh4z+qZX+2EQtQ//9aY
-	pGq2ukv67/14TA+sNRl28hH7iU9plMGtxMOL4lhr7FPxZI0f+Q0IdKWvNRCveCkZuQP8ch2iZdNEc
-	lJpKX6+zCV3Ua+i1NvZbabxmWUK+9CWI4/GR/lvgk892lk60CiUKPXrk+yS6qdf4W0Dba4DV6h8s0
-	I0sDGxv1Uk4oBKbkV0j29QyycyqpUYIrL951I+gZ+vrRXm9VEfdkmPccqxzgE2b0mZn1dJZPNgHVz
-	1bRi9oZKFm1pbvJQUtgg==;
+	List-Owner; bh=2BKnV58rEtR7AEcMh4MVunBUi20Hmecy29u9YLU2cUk=; b=n7UjPQG3u+FhF7
+	cp08JrKhn0kAAk0T+0Dm3Bzxub4e2lmvsH1nzORPnoNusSacb8oAuv4BeafrKOpTNHmgl1Ci8pEGO
+	qoo24UQKM4TnKhq51Jio0fa0o9+7vbTgmlwaWOgsJAHx7eJ5cVxhJ1xtGVOjZIyF4jRb2W5plfJW+
+	KP7r3XSEscmKBxrMkTwl/RhMQNcf2Y01tv9bBBFwO6MvXcDdiprxcPni6bHkCPs5SA6u0MbBVQaVY
+	k5eUsij0zV0z+jNiPv/gg6FVLqAkgw8h0ZX4L+Ibz+bi4N34Vgg8swWqLCWrKfmtREmPSZj7QZrei
+	FZPmbEk3rij58EetqxTg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hhEIS-0000Sr-LL; Sat, 29 Jun 2019 14:25:44 +0000
-Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
+	id 1hhEgI-000864-W6; Sat, 29 Jun 2019 14:50:22 +0000
+Received: from mail-pl1-x641.google.com ([2607:f8b0:4864:20::641])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hhEIG-0000S2-9v
- for linux-arm-kernel@lists.infradead.org; Sat, 29 Jun 2019 14:25:33 +0000
-Received: by mail-wm1-x344.google.com with SMTP id w9so11206317wmd.1
- for <linux-arm-kernel@lists.infradead.org>;
- Sat, 29 Jun 2019 07:25:29 -0700 (PDT)
+ id 1hhEg8-00085E-8y; Sat, 29 Jun 2019 14:50:13 +0000
+Received: by mail-pl1-x641.google.com with SMTP id c14so4880695plo.0;
+ Sat, 29 Jun 2019 07:50:11 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=date:from:to:cc:subject:message-id:references:mime-version
+ h=sender:date:from:to:cc:subject:message-id:references:mime-version
  :content-disposition:in-reply-to:user-agent;
- bh=tSfTfCg1RYrQS9+orWf92BVXcSGyjMupz270+2KJ+Us=;
- b=Wmn42cCjIZF370922nlT8XBZNT0vFC3qdUoivrJz5yLafRIjdx1Vw+bUvno+QUBVO5
- oMyQcmwqGx4DE3Y07CmSTM0IATWqZAW8kgg+hDEKwh+1CP4NznlAWonwVsCaGpQLaVCV
- I2vA/VdkUZjqS9WvauRGJBO3Xjdwe01bpXzqQP8wAMh3LJ6yI1E5Z9SfpRw+TuNVA5cx
- Mol2Xo2HUenKPsAtO6b1Hxjmm06+PdB0ii0cFoQihuSTWnRJjwjpf6NZuH7lsl3/21RK
- LnPOrpaBytkjll+vsC5zrv5VKacw2e2sTlF82+ldUSC/dM1uFOjAFEnxgQGkqlBXSG7l
- +TOw==
+ bh=gpwY9SEzwskjwipmCEjEPDzJ+JkSWKdevJdN5fw1/iM=;
+ b=AlVvTidmIeM8754EXuPmkm83s6qNg5Jm5gjt3YhUtsu7/PgF7C0PqVa6ptBpiy7P+b
+ 7w/vUfWCCFqmbb8iWdujQ5RlItRswygS1/W7QpiSFfq/fT2Nu4dRgemGkLF72hCTAl9s
+ CRIHmYzfZsico8YFuLWYJ5693A7o/b4yO4xb3CGFk8Csreadz74Dd/N3TbnDzTPI329w
+ tmx7Gx26KM0nmNFaM17rZJNe2CjctoMPNGJ1w13qOjvTkEKMGe5RVpeApLtX8/DXjhQN
+ S2voeFsnwfTZ/9nocjMAB1DWN9izRoiZR3qOpRdSjzhL8358DohG1/ewXzBcpnKciwy+
+ LQqA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=tSfTfCg1RYrQS9+orWf92BVXcSGyjMupz270+2KJ+Us=;
- b=sQicLgcoNRiTSVR1mpGvlM/JlybC6zVVl3uSH1LgCOQJe1ILeTVkJzhW7Se3MG/KoU
- /x4MBvP7RVH8ISKGIoxFVLryoklHNj8ke/bffS4lIEuu/qfhJte+U8yPCQmFmFqVrp/2
- qQ2Wx7rBHbXURrFhN5qybwUzC6mtr/dJi5zyYrfJnLBI+ETML6UHmFcDKVWwG7Q8HM2A
- +8C00peJyxp7hFeunEghGy5PSFhbm5jpRfT8b1Pps3tb/n8B3KbEAQps5O0MJhK65EBW
- siopHNn8q59rTdoUq5KM/0eMwWF9K91fSLN2B7O67zouO58H7N7Q/jJo6beoGoXTkmcw
- NntA==
-X-Gm-Message-State: APjAAAXa0FpD1/A/eOan+HQ6nF2HDVua86vkQXvu9b0MpGrkOHL+3S5l
- Yz6mB4yIpXDnFINgMLDoiQ==
-X-Google-Smtp-Source: APXvYqzYjeGlAIXCK0Otnr3tBdPOmwP6gFHgUXBBLaR5nRWD1D7mhQsGKJ7ZXMMjG4yeTA5UDqjZKg==
-X-Received: by 2002:a1c:dc46:: with SMTP id t67mr9957034wmg.159.1561818328264; 
- Sat, 29 Jun 2019 07:25:28 -0700 (PDT)
-Received: from avx2 ([46.53.248.49])
- by smtp.gmail.com with ESMTPSA id g123sm3503855wme.12.2019.06.29.07.25.26
+ h=x-gm-message-state:sender:date:from:to:cc:subject:message-id
+ :references:mime-version:content-disposition:in-reply-to:user-agent;
+ bh=gpwY9SEzwskjwipmCEjEPDzJ+JkSWKdevJdN5fw1/iM=;
+ b=W9rj+PjBYap3bt3U7FTP4WgEoaSw+3HApCQg1BxregVxHsPlDavIJMCI807R82arZO
+ i56s0HWYPWea7TSq5jO6YC1/MQwQgDqpVpM5byesk9ODVxO5YDRz5Cl9b49kJNrZbhXf
+ B1Ao4Do/xAhMDu5enGT2CeIWlxryyID1FJQ73yngGkAu4VBEa3BHTAD6I92QVSVYdAxz
+ Dztoipl8NXBUYSRdIZlQr0Rs7zrcouVvZMy4cY6cUGPqN6IEzhpNsXRwEhXhJtxCgK3Z
+ rMCRQ1vUMkBnINrkB6Ujxd+Dv6qbYvdKwBj0pTxzIiZG+9hWiHnQwFx7gQyRSsK1mEUY
+ fU2Q==
+X-Gm-Message-State: APjAAAVkSTxgKvxQYqo1KTaMK52uBY61yPLBR2yKltkHmzZvxzZkySk1
+ 5rGsleDl0WerBuSb/4FDxac=
+X-Google-Smtp-Source: APXvYqwzAvuZq8uFS3MlBSIKk71/6JUg9AHYM+1A6MpIzGTxNNk8+GY2Jbg28JKN9AieKqNESQt07g==
+X-Received: by 2002:a17:902:2bcb:: with SMTP id
+ l69mr18151254plb.155.1561819811065; 
+ Sat, 29 Jun 2019 07:50:11 -0700 (PDT)
+Received: from localhost ([2600:1700:e321:62f0:329c:23ff:fee3:9d7c])
+ by smtp.gmail.com with ESMTPSA id r196sm4899405pgr.84.2019.06.29.07.50.09
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Sat, 29 Jun 2019 07:25:27 -0700 (PDT)
-Date: Sat, 29 Jun 2019 17:25:10 +0300
-From: Alexey Dobriyan <adobriyan@gmail.com>
-To: Andreas Dilger <adilger@dilger.ca>
-Subject: Re: [PATCH V2] include: linux: Regularise the use of FIELD_SIZEOF
- macro
-Message-ID: <20190629142510.GA10629@avx2>
-References: <20190611193836.2772-1-shyam.saini@amarulasolutions.com>
- <20190611134831.a60c11f4b691d14d04a87e29@linux-foundation.org>
- <6DCAE4F8-3BEC-45F2-A733-F4D15850B7F3@dilger.ca>
+ Sat, 29 Jun 2019 07:50:10 -0700 (PDT)
+Date: Sat, 29 Jun 2019 07:50:09 -0700
+From: Guenter Roeck <linux@roeck-us.net>
+To: Anshuman Khandual <anshuman.khandual@arm.com>
+Subject: Re: [PATCH] mm: Generalize and rename notify_page_fault() as
+ kprobe_page_fault()
+Message-ID: <20190629145009.GA28613@roeck-us.net>
+References: <1560420444-25737-1-git-send-email-anshuman.khandual@arm.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <6DCAE4F8-3BEC-45F2-A733-F4D15850B7F3@dilger.ca>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <1560420444-25737-1-git-send-email-anshuman.khandual@arm.com>
+User-Agent: Mutt/1.5.24 (2015-08-30)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190629_072532_376001_EEF19C9F 
-X-CRM114-Status: GOOD (  13.66  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190629_075012_343477_10E5AEAF 
+X-CRM114-Status: GOOD (  13.42  )
+X-Spam-Score: 0.3 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:641 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (adobriyan[at]gmail.com)
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:344 listed in]
- [list.dnswl.org]
+ provider (groeck7[at]gmail.com)
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (groeck7[at]gmail.com)
+ 0.0 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
+ 0.1 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -102,47 +103,60 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: keescook@chromium.org, kvm@vger.kernel.org,
- kernel-hardening@lists.openwall.com, netdev@vger.kernel.org,
- intel-gfx@lists.freedesktop.org, devel@lists.orangefs.org,
- linux-kernel@vger.kernel.org, Shyam Saini <shyam.saini@amarulasolutions.com>,
- linux-mips@vger.kernel.org, linux-mm@kvack.org, linux-sctp@vger.kernel.org,
- dri-devel@lists.freedesktop.org, Andrew Morton <akpm@linux-foundation.org>,
- linux-ext4 <linux-ext4@vger.kernel.org>, intel-gvt-dev@lists.freedesktop.org,
- bpf@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- mayhs11saini@gmail.com
+Cc: Mark Rutland <mark.rutland@arm.com>, Michal Hocko <mhocko@suse.com>,
+ linux-ia64@vger.kernel.org, linux-sh@vger.kernel.org,
+ Peter Zijlstra <peterz@infradead.org>, James Hogan <jhogan@kernel.org>,
+ Dave Hansen <dave.hansen@linux.intel.com>, Will Deacon <will.deacon@arm.com>,
+ linux-mips@vger.kernel.org, linux-mm@kvack.org,
+ Paul Mackerras <paulus@samba.org>, sparclinux@vger.kernel.org,
+ Stephen Rothwell <sfr@canb.auug.org.au>,
+ Yoshinori Sato <ysato@users.sourceforge.jp>,
+ Michael Ellerman <mpe@ellerman.id.au>, x86@kernel.org,
+ Russell King <linux@armlinux.org.uk>, Matthew Wilcox <willy@infradead.org>,
+ Ingo Molnar <mingo@redhat.com>, Catalin Marinas <catalin.marinas@arm.com>,
+ linux-snps-arc@lists.infradead.org, Fenghua Yu <fenghua.yu@intel.com>,
+ linux-s390@vger.kernel.org, Andrey Konovalov <andreyknvl@google.com>,
+ Andy Lutomirski <luto@kernel.org>, Thomas Gleixner <tglx@linutronix.de>,
+ linux-arm-kernel@lists.infradead.org,
+ Christophe Leroy <christophe.leroy@c-s.fr>, Tony Luck <tony.luck@intel.com>,
+ Heiko Carstens <heiko.carstens@de.ibm.com>, Vineet Gupta <vgupta@synopsys.com>,
+ linux-kernel@vger.kernel.org, Ralf Baechle <ralf@linux-mips.org>,
+ Paul Burton <paul.burton@mips.com>,
+ Martin Schwidefsky <schwidefsky@de.ibm.com>,
+ Andrew Morton <akpm@linux-foundation.org>, linuxppc-dev@lists.ozlabs.org,
+ "David S. Miller" <davem@davemloft.net>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Jun 11, 2019 at 03:00:10PM -0600, Andreas Dilger wrote:
-> On Jun 11, 2019, at 2:48 PM, Andrew Morton <akpm@linux-foundation.org> wrote:
-> > 
-> > On Wed, 12 Jun 2019 01:08:36 +0530 Shyam Saini <shyam.saini@amarulasolutions.com> wrote:
+Hi,
 
-> I did a check, and FIELD_SIZEOF() is used about 350x, while sizeof_field()
-> is about 30x, and SIZEOF_FIELD() is only about 5x.
+On Thu, Jun 13, 2019 at 03:37:24PM +0530, Anshuman Khandual wrote:
+> Architectures which support kprobes have very similar boilerplate around
+> calling kprobe_fault_handler(). Use a helper function in kprobes.h to unify
+> them, based on the x86 code.
 > 
-> That said, I'm much more in favour of "sizeof_field()" or "sizeof_member()"
-> than FIELD_SIZEOF().  Not only does that better match "offsetof()", with
-> which it is closely related, but is also closer to the original "sizeof()".
+> This changes the behaviour for other architectures when preemption is
+> enabled. Previously, they would have disabled preemption while calling the
+> kprobe handler. However, preemption would be disabled if this fault was
+> due to a kprobe, so we know the fault was not due to a kprobe handler and
+> can simply return failure.
 > 
-> Since this is a rather trivial change, it can be split into a number of
-> patches to get approval/landing via subsystem maintainers, and there is no
-> huge urgency to remove the original macros until the users are gone.  It
-> would make sense to remove SIZEOF_FIELD() and sizeof_field() quickly so
-> they don't gain more users, and the remaining FIELD_SIZEOF() users can be
-> whittled away as the patches come through the maintainer trees.
+> This behaviour was introduced in the commit a980c0ef9f6d ("x86/kprobes:
+> Refactor kprobes_fault() like kprobe_exceptions_notify()")
+> 
 
-The signature should be
+With this patch applied, parisc:allmodconfig images no longer build.
 
-	sizeof_member(T, m)
+In file included from arch/parisc/mm/fixmap.c:8:
+include/linux/kprobes.h: In function 'kprobe_page_fault':
+include/linux/kprobes.h:477:9: error:
+	implicit declaration of function 'kprobe_fault_handler'; did you mean 'kprobe_page_fault'?
 
-it is proper English,
-it is lowercase, so is easier to type,
-it uses standard term (member, not field),
-it blends in with standard "sizeof" operator,
+Reverting the patch fixes the problem.
+
+Guenter
 
 _______________________________________________
 linux-arm-kernel mailing list
