@@ -2,82 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2A6B75AB46
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 29 Jun 2019 15:02:47 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 038BE5AB47
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 29 Jun 2019 15:03:06 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9vXConflJKt262yE99H1njpt9cTet5mxIrw/SQmeBZw=; b=CNoqkHoNnZSbHU
-	Diz4crBYvhh/TedjJMGlNoowgco6uBhGV0EXsujAlWsSAWPCCaw/F+qrq4j7zFC+gebspqEQzGQnI
-	XNIzZ6oTuzFG7xok/Q2OBMuQnXjpLQxoABXxaubwnDY5/BtjErz/4tarLSJEnQi+B/bCgKTvaqcif
-	kv2StguNPomDyVDiKorx0slb4DlHLzOugS0RTkj9ZyC/n5ptQ3F0V0uwn2UEYw3j515FGVlgoAqm5
-	DHs6FYee84lqsOjSAj6uPq1l3E8hDGoqJ+TftUFBEHPeJQldL/1PzW9SBtAUQbArycXg4AgbgaJN+
-	U1v9/NX3ck/imL3TECNg==;
+	List-Owner; bh=XsP6SP6JBgB3XuBirm7Z8wqN5+jJhTIgRc5aT6GOy58=; b=UHW1ay0JOd+j9J
+	phUS9GCa/xFH4SDoBvDWoCFxzo7rZb6WIldCclEw2B4japvjTCSp+LbykTMEnxDtiiGTKyL1Ryh70
+	UXq4hFavxYiVjAOvK3rpiT8NEvuiJEwyq9jwRRu+o+HUbaXc58vONYRypmyLNmPJUnoML1LI0/FeY
+	5aGlLCJlHhUD887QKR9k3kAKAgqkKgSriABZcdTWi3YBDR59JjMG1+x+WQeEkZirmQ3AiVES84wkT
+	ljqGY/bSXWj9/AUy78h6dskBSETIO+XRdMGyyzqYAY5jlSn5XBPbDLpa2QCxgx8wKdvhYY1IiO3v5
+	WCDltfBd9E6HLyh1fnjA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hhD05-00056n-IP; Sat, 29 Jun 2019 13:02:41 +0000
-Received: from mail-lf1-x143.google.com ([2a00:1450:4864:20::143])
+	id 1hhD0P-0005KK-UR; Sat, 29 Jun 2019 13:03:01 +0000
+Received: from mail-lj1-x241.google.com ([2a00:1450:4864:20::241])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hhCzQ-0004hi-LF
- for linux-arm-kernel@lists.infradead.org; Sat, 29 Jun 2019 13:02:02 +0000
-Received: by mail-lf1-x143.google.com with SMTP id y17so5790547lfe.0
+ id 1hhCzT-0004j5-7u
+ for linux-arm-kernel@lists.infradead.org; Sat, 29 Jun 2019 13:02:04 +0000
+Received: by mail-lj1-x241.google.com with SMTP id t28so8594409lje.9
  for <linux-arm-kernel@lists.infradead.org>;
- Sat, 29 Jun 2019 06:02:00 -0700 (PDT)
+ Sat, 29 Jun 2019 06:02:02 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=Ji8jAojLPl8vD+gcsy1dZ2LAcjvPmFSVJ5glNsjtSak=;
- b=nAjmGaNaoXOfVZnFCs0LUWx0cgkIpWqrZKexDYARBy6576kyG3UYP+U3tLv6Z7mbun
- 3mza7Rr4HNinHrz/Z+ZS8QeQeD2ig1Wuy5eIgVPImRlRcCxR6UE3d6lvjrMrektszXS+
- 0CG3ahmSPlVFxu3mFx0uVQqdq4jNPLcFg8BC+yVu43Um7D3UMfNOpakEUcEVn6MuC8Ry
- X4Gx9ihORnId7aLMGMVG+MYoXUZ7qMgU1CSiYsMEXSOfdUiBe/5UWIg8MwtVDMvToc9k
- 2kG/2Li5Bv+dVCPKpJYsQ5s5V65k/L9JNU0oyZMgdR84ds/6gyw5txkGZP6EpXJbSn72
- 8DlA==
+ bh=lniFIm91gCkBVo8OT7Qc6rB8XEZiKvYZhCGqRwQxgRg=;
+ b=R/OUJdhNfZGHaJoOsvmC50TZU4KNiySqOFuqTZkhUMlRuF2aiKO7gw52YdVXItSgcn
+ yULpt7pmN8Q0FFQWwWXuiz9aPOeB3pvaPkb6xxb4hn467Tb4aGWSL9SCavDLu8IkKmmy
+ qrTeh6vZQGGT0xcFf5zz72dp/fegF92Xn8K1lsaMp74Y52ZV+yXlor4P8xA3LvmbAVRg
+ tyhC8dkj7Wq74VCB6f5GSAxCnIBTYFRJrgHvcNYjkbMf39LLwokl+2KRAWR7rROFUhJW
+ 510SqwEGSIvRO7vwvVY/+PCm/RmKugHh6Jbbn1ODQskyPdvHfCTEPIlI0+NbNPr/JqAa
+ NqSA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=Ji8jAojLPl8vD+gcsy1dZ2LAcjvPmFSVJ5glNsjtSak=;
- b=rL08BhgqVK+LpfI2iKbjPSz+UHvrwJyW+5A1Q/Ew32oFThj62ImGpvKBQALs1+ZBOA
- rU0HKSINP22W+8RZu2JMOBNirtV/heqhRUbkkr0leJSbdkQ5gR8eSrU92J175I683MfH
- 33MD+usWluTGivn4WENJcZ4M1Cr2Dkh9FvLr8bkt61wTPClmk4GTzS4jvFKHUll7/oif
- OhH2o/G11cRDYKFpTJZIRMVWLyhzh2w9z/YPj67WiHR2R7q8Dnmi8dztimPTgYG2KzpD
- K+IcZFHCm3scyNWNiC6fWXlmmX2r4rbs9N7Yq63voVIrTD0qktogn5Hqh9HzcB7Ch1VB
- nMNQ==
-X-Gm-Message-State: APjAAAXb9YNRODbnefWwopKz+YtbOrlp0ol7NuEsHCUvuL8QvHcpN4L1
- Hb2Y9jA+OW6XQOcPszGYgw6l2Q==
-X-Google-Smtp-Source: APXvYqw4JVg2KbWLoxvVW9U6jPqYrcYh2H4AXq4ph9NDkiYzD2Bg7mSbg0zvS+exFIzcUH3D8CLeKg==
-X-Received: by 2002:a19:f601:: with SMTP id x1mr7523920lfe.182.1561813318996; 
- Sat, 29 Jun 2019 06:01:58 -0700 (PDT)
+ bh=lniFIm91gCkBVo8OT7Qc6rB8XEZiKvYZhCGqRwQxgRg=;
+ b=toKn69zUT1X/OhcFG8hpmLrxXEdrknq4AhS1pVwwO99x/EbTLvVi2hY6lKMakxUIaf
+ JNHW1yiKrV7mZRXh1DGE999WWmsasVVOty41TY9CPLFpCHm5oKrgoiM3kG80k0/yU9Qw
+ k8TMp/KCUUnfDXrc5SGzysjL4FKXdt6qlPviFsfbSi2QVLgigC/DNzlS6A/9NP5PmYWV
+ 0XCKuwBllP2cdGzTeZa75aywxgHc6QeNCuWeGp8oKx7sEPyPW+4jsI7tzxuh5AVK4l7T
+ pYDUe2Z/rP76j43cH3qKL+EhxqurKGfRcoaL+/SUogRoRcV2ylNS1G4AZAP5yelFnVKU
+ nkEg==
+X-Gm-Message-State: APjAAAX9GEGLHIPzn+xMtGNXTq9qu10KsBOhqXSGT7DqjhpwtGy0nM3A
+ K1ORgRzqKgYbo+ee1p7LHqh3/g==
+X-Google-Smtp-Source: APXvYqwVGU+xg50XiekYht3IIxEqFHM099dgUifn3T0K/F2g1KQaP1T9fAtfYeTQ4lNEuy0h1An6cA==
+X-Received: by 2002:a2e:8744:: with SMTP id q4mr8768966ljj.77.1561813321447;
+ Sat, 29 Jun 2019 06:02:01 -0700 (PDT)
 Received: from localhost.localdomain
  (c-22cd225c.014-348-6c756e10.bbcust.telenor.se. [92.34.205.34])
- by smtp.gmail.com with ESMTPSA id v2sm1354500lfi.52.2019.06.29.06.01.57
+ by smtp.gmail.com with ESMTPSA id v2sm1354500lfi.52.2019.06.29.06.02.00
  (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Sat, 29 Jun 2019 06:01:57 -0700 (PDT)
+ Sat, 29 Jun 2019 06:02:00 -0700 (PDT)
 From: Linus Walleij <linus.walleij@linaro.org>
 To: dri-devel@lists.freedesktop.org,
  Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
  Maxime Ripard <maxime.ripard@bootlin.com>, Sean Paul <sean@poorly.run>
-Subject: [PATCH 3/7] drm/msm/dpu: Drop unused GPIO code
-Date: Sat, 29 Jun 2019 14:59:29 +0200
-Message-Id: <20190629125933.679-3-linus.walleij@linaro.org>
+Subject: [PATCH 4/7] gpio: of: Support some legacy Qualcomm HDMI bindings
+Date: Sat, 29 Jun 2019 14:59:30 +0200
+Message-Id: <20190629125933.679-4-linus.walleij@linaro.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20190629125933.679-1-linus.walleij@linaro.org>
 References: <20190629125933.679-1-linus.walleij@linaro.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190629_060200_709027_A557B236 
-X-CRM114-Status: GOOD (  13.65  )
+X-CRM114-CacheID: sfid-20190629_060203_312151_691EF3F4 
+X-CRM114-Status: GOOD (  13.81  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:143 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:241 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -107,17 +107,12 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The DPU has some kind of idea that it wants to be able to
-bring up power using GPIO lines. The struct dss_gpio is however
-completely unused and should this be done, it should be done
-using the GPIO descriptor framework rather than this API
-which relies on the global GPIO numberspace. Delete this
-code before anyone hurt themselves.
-
-The inclusion of <linux/gpio.h> was abused to get some OF
-and IRQ headers implicitly included into the DPU utilities,
-make these includes explicit and push them down into the actual
-implementation.
+Insteaf of the MSM DRM code going around and inspecting the
+device tree nodes by itself to find "qcom,misc" GPIO phandles,
+we add a quirk to the core so that if "qcom,misc-gpios" and
+"qcom,misc-gpio" isn't found, we try to find just
+"qcom,misc" as a last resort. Provide an explicit whitelist
+for those GPIOs.
 
 Cc: Rob Clark <robdclark@gmail.com>
 Cc: Sean Paul <sean@poorly.run>
@@ -125,72 +120,74 @@ Cc: linux-arm-msm@vger.kernel.org
 Cc: freedreno@lists.freedesktop.org
 Signed-off-by: Linus Walleij <linus.walleij@linaro.org>
 ---
- drivers/gpu/drm/msm/disp/dpu1/dpu_io_util.c | 1 +
- drivers/gpu/drm/msm/disp/dpu1/dpu_io_util.h | 9 ---------
- drivers/gpu/drm/msm/disp/dpu1/dpu_mdss.c    | 4 ++++
- 3 files changed, 5 insertions(+), 9 deletions(-)
+Rob/Sean: if the approach is overall OK I will merge this
+one patch already for v5.3 so the rest can be queued for
+v5.4 later.
+---
+ drivers/gpio/gpiolib-of.c | 43 +++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 43 insertions(+)
 
-diff --git a/drivers/gpu/drm/msm/disp/dpu1/dpu_io_util.c b/drivers/gpu/drm/msm/disp/dpu1/dpu_io_util.c
-index 78833c2c27f8..78f04147839f 100644
---- a/drivers/gpu/drm/msm/disp/dpu1/dpu_io_util.c
-+++ b/drivers/gpu/drm/msm/disp/dpu1/dpu_io_util.c
-@@ -15,6 +15,7 @@
- #include <linux/clk/clk-conf.h>
- #include <linux/err.h>
- #include <linux/delay.h>
-+#include <linux/of.h>
+diff --git a/drivers/gpio/gpiolib-of.c b/drivers/gpio/gpiolib-of.c
+index aec7bd86ae7e..c927eaf6c88f 100644
+--- a/drivers/gpio/gpiolib-of.c
++++ b/drivers/gpio/gpiolib-of.c
+@@ -286,6 +286,45 @@ static struct gpio_desc *of_find_regulator_gpio(struct device *dev, const char *
+ 	return desc;
+ }
  
- #include <drm/drm_print.h>
++/*
++ * Some non-standard Qualcomm HDMI GPIOs need to be supported as they exist
++ * in random old device trees out there.
++ */
++static struct gpio_desc *of_find_hdmi_gpio(struct device *dev,
++					   const char *con_id,
++					   enum of_gpio_flags *of_flags)
++{
++	/*
++	 * These are the connection IDs we accept as legacy GPIO phandles.
++	 * If we get here, the same prefix ending with "-gpio" and "-gpios"
++	 * has already been tried so now we finally try with no suffix.
++	 */
++	const char *whitelist[] = {
++		"qcom,hdmi-tx-ddc-clk",
++		"qcom,hdmi-tx-ddc-data",
++		"qcom,hdmi-tx-hpd",
++		"qcom,hdmi-tx-mux-en",
++		"qcom,hdmi-tx-mux-sel",
++		"qcom,hdmi-tx-mux-lpm",
++	};
++	struct device_node *np = dev->of_node;
++	struct gpio_desc *desc;
++	int i;
++
++	if (!IS_ENABLED(CONFIG_DRM_MSM))
++		return ERR_PTR(-ENOENT);
++
++	if (!con_id)
++		return ERR_PTR(-ENOENT);
++
++	i = match_string(whitelist, ARRAY_SIZE(whitelist), con_id);
++	if (i < 0)
++		return ERR_PTR(-ENOENT);
++
++	desc = of_get_named_gpiod_flags(np, con_id, 0, of_flags);
++	return desc;
++}
++
+ struct gpio_desc *of_find_gpio(struct device *dev, const char *con_id,
+ 			       unsigned int idx, unsigned long *flags)
+ {
+@@ -330,6 +369,10 @@ struct gpio_desc *of_find_gpio(struct device *dev, const char *con_id,
+ 	if (IS_ERR(desc) && PTR_ERR(desc) != -EPROBE_DEFER)
+ 		desc = of_find_regulator_gpio(dev, con_id, &of_flags);
  
-diff --git a/drivers/gpu/drm/msm/disp/dpu1/dpu_io_util.h b/drivers/gpu/drm/msm/disp/dpu1/dpu_io_util.h
-index bc07381d7429..a0498c7bd677 100644
---- a/drivers/gpu/drm/msm/disp/dpu1/dpu_io_util.h
-+++ b/drivers/gpu/drm/msm/disp/dpu1/dpu_io_util.h
-@@ -13,7 +13,6 @@
- #ifndef __DPU_IO_UTIL_H__
- #define __DPU_IO_UTIL_H__
++	/* Special handling for HDMI GPIOs if used */
++	if (IS_ERR(desc) && PTR_ERR(desc) != -EPROBE_DEFER)
++		desc = of_find_hdmi_gpio(dev, con_id, &of_flags);
++
+ 	if (IS_ERR(desc))
+ 		return desc;
  
--#include <linux/gpio.h>
- #include <linux/platform_device.h>
- #include <linux/types.h>
- 
-@@ -22,12 +21,6 @@
- #define DEV_WARN(fmt, args...)  pr_warn(fmt, ##args)
- #define DEV_ERR(fmt, args...)   pr_err(fmt, ##args)
- 
--struct dss_gpio {
--	unsigned int gpio;
--	unsigned int value;
--	char gpio_name[32];
--};
--
- enum dss_clk_type {
- 	DSS_CLK_AHB, /* no set rate. rate controlled through rpm */
- 	DSS_CLK_PCLK,
-@@ -42,8 +35,6 @@ struct dss_clk {
- };
- 
- struct dss_module_power {
--	unsigned int num_gpio;
--	struct dss_gpio *gpio_config;
- 	unsigned int num_clk;
- 	struct dss_clk *clk_config;
- };
-diff --git a/drivers/gpu/drm/msm/disp/dpu1/dpu_mdss.c b/drivers/gpu/drm/msm/disp/dpu1/dpu_mdss.c
-index 7316b4ab1b85..9baabadc62bb 100644
---- a/drivers/gpu/drm/msm/disp/dpu1/dpu_mdss.c
-+++ b/drivers/gpu/drm/msm/disp/dpu1/dpu_mdss.c
-@@ -3,6 +3,10 @@
-  * Copyright (c) 2018, The Linux Foundation
-  */
- 
-+#include <linux/irq.h>
-+#include <linux/irqchip.h>
-+#include <linux/irqdesc.h>
-+#include <linux/irqchip/chained_irq.h>
- #include "dpu_kms.h"
- 
- #define to_dpu_mdss(x) container_of(x, struct dpu_mdss, base)
 -- 
 2.20.1
 
