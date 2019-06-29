@@ -2,55 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A585A5A892
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 29 Jun 2019 04:44:20 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 30BFB5A895
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 29 Jun 2019 04:44:47 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=tmIy+Gtvg0arIk+fYKNNia1fQIK08rNtQYArjKF/TgE=; b=thlo/M7WRnxVyJ
-	GK4L+I22VZn8uugj55DNCHxyyah5357CiUsC2vfMOpCEza8lQTFMLomTqeySTb4FOvBCbTpg2E5Aq
-	6tibDvrd3wjSe3rxfFBAtIN3UA4Qsruhr471EPavpg4A6pFuucikCBA2GrYOiCcAl3p5m/umMwBs/
-	Vkdmtl+clKnzv/vTA4UaX3ZvQgSCimT1GBPXwtXcQ1g7ysrUDjlUFWlMW2yNWg8+MgvisXoxxJ5/t
-	VL0fdDNNouSHKMZJ9MIHWqlwef2SjGzFi3xFckf3qbp+qtEROSNZMucbJwJfY3mtukVi/Xtsg2CMg
-	wIy79iYomhqgey3KTkNw==;
+	List-Owner; bh=Uqc8Y4lH3eylqk9tST1RebjK8UkLWn/ryaXA5dU7Nsw=; b=J3i+C4lbRUpPDc
+	QAg1hjDJ4q9u8im705SLNX9iiSgCNVW6WTqnzIl5zEar9Z5klC2kOKtADxryucGf64fvwUaoo4mpM
+	cgIJJDhxno9VRPzxFqgqOb4ibTSyX+JXSi8PpgJKzG8kmynARsDimBHaqwwqrrC3jX6cH2H8VYhte
+	GpXhm0AcyJS3X7hMWBOCm9CVbY/11kn6CXsO36sxx9iaCsq9q/RMlIREn9YMddFNKFMjIHuYglIvq
+	SaMHSdPVpcWZ0qGBeXQO5Hv91JnRNaZpx/t6uTzZt2gYZtXpItz5a2+d3f2ytWOO3DqUOp9f88Bs3
+	GVT7mmnQEg42iuh3RZzw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hh3Lc-00044e-HO; Sat, 29 Jun 2019 02:44:16 +0000
+	id 1hh3M2-0004Pv-LM; Sat, 29 Jun 2019 02:44:42 +0000
 Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hh3JX-0002gf-Uq; Sat, 29 Jun 2019 02:42:10 +0000
-X-UUID: b1150ad576804104937c46a37f817631-20190628
-X-UUID: b1150ad576804104937c46a37f817631-20190628
-Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw01.mediatek.com
+ id 1hh3Jc-0002lm-8U; Sat, 29 Jun 2019 02:42:14 +0000
+X-UUID: 3ea3f858b94a4c9baaa8182abfd617ce-20190628
+X-UUID: 3ea3f858b94a4c9baaa8182abfd617ce-20190628
+Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw01.mediatek.com
  (envelope-from <yong.wu@mediatek.com>)
  (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 2005267437; Fri, 28 Jun 2019 18:42:04 -0800
-Received: from MTKMBS01N1.mediatek.inc (172.21.101.68) by
- MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Fri, 28 Jun 2019 19:42:02 -0700
+ with ESMTP id 1491262478; Fri, 28 Jun 2019 18:42:06 -0800
+Received: from mtkmbs07n1.mediatek.inc (172.21.101.16) by
+ MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Fri, 28 Jun 2019 19:42:05 -0700
 Received: from mtkcas09.mediatek.inc (172.21.101.178) by
- mtkmbs01n1.mediatek.inc (172.21.101.68) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Sat, 29 Jun 2019 10:41:55 +0800
+ mtkmbs07n1.mediatek.inc (172.21.101.16) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Sat, 29 Jun 2019 10:42:04 +0800
 Received: from localhost.localdomain (10.17.3.153) by mtkcas09.mediatek.inc
  (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Sat, 29 Jun 2019 10:41:54 +0800
+ Transport; Sat, 29 Jun 2019 10:42:02 +0800
 From: Yong Wu <yong.wu@mediatek.com>
 To: Joerg Roedel <joro@8bytes.org>, Matthias Brugger <matthias.bgg@gmail.com>, 
  Robin Murphy <robin.murphy@arm.com>, Rob Herring <robh+dt@kernel.org>
-Subject: [PATCH v8 17/21] memory: mtk-smi: Add bus_sel for mt8183
-Date: Sat, 29 Jun 2019 10:39:51 +0800
-Message-ID: <1561775995-24963-18-git-send-email-yong.wu@mediatek.com>
+Subject: [PATCH v8 18/21] iommu/mediatek: Fix VLD_PA_RNG register backup when
+ suspend
+Date: Sat, 29 Jun 2019 10:39:52 +0800
+Message-ID: <1561775995-24963-19-git-send-email-yong.wu@mediatek.com>
 X-Mailer: git-send-email 1.9.1
 In-Reply-To: <1561775995-24963-11-git-send-email-yong.wu@mediatek.com>
 References: <1561775995-24963-11-git-send-email-yong.wu@mediatek.com>
 MIME-Version: 1.0
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190628_194208_210051_6491DEB4 
-X-CRM114-Status: GOOD (  15.87  )
+X-CRM114-CacheID: sfid-20190628_194212_523704_1DF9105E 
+X-CRM114-Status: GOOD (  10.70  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -86,108 +87,51 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-There are 2 mmu cells in a M4U HW. we could adjust some larbs entering
-mmu0 or mmu1 to balance the bandwidth via the smi-common register
-SMI_BUS_SEL(0x220)(Each larb occupy 2 bits).
+The register VLD_PA_RNG(0x118) was forgot to backup while adding 4GB
+mode support for mt2712. this patch add it.
 
-In mt8183, For better performance, we switch larb1/2/5/7 to enter
-mmu1 while the others still keep enter mmu0.
-
-In mt8173 and mt2712, we don't get the performance issue,
-Keep its default value(0x0), that means all the larbs enter mmu0.
-
-Note: smi gen1(mt2701/mt7623) don't have this bus_sel.
-
-And, the base of smi-common is completely different with smi_ao_base
-of gen1, thus I add new variable for that.
-
-CC: Matthias Brugger <matthias.bgg@gmail.com>
+Fixes: 30e2fccf9512 ("iommu/mediatek: Enlarge the validate PA range
+for 4GB mode")
 Signed-off-by: Yong Wu <yong.wu@mediatek.com>
 Reviewed-by: Evan Green <evgreen@chromium.org>
 Reviewed-by: Matthias Brugger <matthias.bgg@gmail.com>
 ---
-In this version, Add a union suggestted from Matthias.
----
- drivers/memory/mtk-smi.c | 24 ++++++++++++++++++++++--
- 1 file changed, 22 insertions(+), 2 deletions(-)
+ drivers/iommu/mtk_iommu.c | 2 ++
+ drivers/iommu/mtk_iommu.h | 1 +
+ 2 files changed, 3 insertions(+)
 
-diff --git a/drivers/memory/mtk-smi.c b/drivers/memory/mtk-smi.c
-index 9790801..71cb2cf 100644
---- a/drivers/memory/mtk-smi.c
-+++ b/drivers/memory/mtk-smi.c
-@@ -49,6 +49,12 @@
- #define SMI_LARB_NONSEC_CON(id)	(0x380 + ((id) * 4))
- #define F_MMU_EN		BIT(0)
- 
-+/* SMI COMMON */
-+#define SMI_BUS_SEL			0x220
-+#define SMI_BUS_LARB_SHIFT(larbid)	((larbid) << 1)
-+/* All are MMU0 defaultly. Only specialize mmu1 here. */
-+#define F_MMU1_LARB(larbid)		(0x1 << SMI_BUS_LARB_SHIFT(larbid))
-+
- enum mtk_smi_gen {
- 	MTK_SMI_GEN1,
- 	MTK_SMI_GEN2
-@@ -57,6 +63,7 @@ enum mtk_smi_gen {
- struct mtk_smi_common_plat {
- 	enum mtk_smi_gen gen;
- 	bool             has_gals;
-+	u32              bus_sel; /* Balance some larbs to enter mmu0 or mmu1 */
- };
- 
- struct mtk_smi_larb_gen {
-@@ -72,8 +79,10 @@ struct mtk_smi {
- 	struct clk			*clk_apb, *clk_smi;
- 	struct clk			*clk_gals0, *clk_gals1;
- 	struct clk			*clk_async; /*only needed by mt2701*/
--	void __iomem			*smi_ao_base;
--
-+	union {
-+		void __iomem		*smi_ao_base; /* only for gen1 */
-+		void __iomem		*base;	      /* only for gen2 */
-+	};
- 	const struct mtk_smi_common_plat *plat;
- };
- 
-@@ -410,6 +419,8 @@ static int __maybe_unused mtk_smi_larb_suspend(struct device *dev)
- static const struct mtk_smi_common_plat mtk_smi_common_mt8183 = {
- 	.gen      = MTK_SMI_GEN2,
- 	.has_gals = true,
-+	.bus_sel  = F_MMU1_LARB(1) | F_MMU1_LARB(2) | F_MMU1_LARB(5) |
-+		    F_MMU1_LARB(7),
- };
- 
- static const struct of_device_id mtk_smi_common_of_ids[] = {
-@@ -482,6 +493,11 @@ static int mtk_smi_common_probe(struct platform_device *pdev)
- 		ret = clk_prepare_enable(common->clk_async);
- 		if (ret)
- 			return ret;
-+	} else {
-+		res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
-+		common->base = devm_ioremap_resource(dev, res);
-+		if (IS_ERR(common->base))
-+			return PTR_ERR(common->base);
- 	}
- 	pm_runtime_enable(dev);
- 	platform_set_drvdata(pdev, common);
-@@ -497,6 +513,7 @@ static int mtk_smi_common_remove(struct platform_device *pdev)
- static int __maybe_unused mtk_smi_common_resume(struct device *dev)
- {
- 	struct mtk_smi *common = dev_get_drvdata(dev);
-+	u32 bus_sel = common->plat->bus_sel;
- 	int ret;
- 
- 	ret = mtk_smi_clk_enable(common);
-@@ -504,6 +521,9 @@ static int __maybe_unused mtk_smi_common_resume(struct device *dev)
- 		dev_err(common->dev, "Failed to enable clock(%d).\n", ret);
- 		return ret;
- 	}
-+
-+	if (common->plat->gen == MTK_SMI_GEN2 && bus_sel)
-+		writel(bus_sel, common->base + SMI_BUS_SEL);
+diff --git a/drivers/iommu/mtk_iommu.c b/drivers/iommu/mtk_iommu.c
+index 1459ec3..24600aa 100644
+--- a/drivers/iommu/mtk_iommu.c
++++ b/drivers/iommu/mtk_iommu.c
+@@ -740,6 +740,7 @@ static int __maybe_unused mtk_iommu_suspend(struct device *dev)
+ 	reg->int_control0 = readl_relaxed(base + REG_MMU_INT_CONTROL0);
+ 	reg->int_main_control = readl_relaxed(base + REG_MMU_INT_MAIN_CONTROL);
+ 	reg->ivrp_paddr = readl_relaxed(base + REG_MMU_IVRP_PADDR);
++	reg->vld_pa_rng = readl_relaxed(base + REG_MMU_VLD_PA_RNG);
+ 	clk_disable_unprepare(data->bclk);
  	return 0;
  }
+@@ -764,6 +765,7 @@ static int __maybe_unused mtk_iommu_resume(struct device *dev)
+ 	writel_relaxed(reg->int_control0, base + REG_MMU_INT_CONTROL0);
+ 	writel_relaxed(reg->int_main_control, base + REG_MMU_INT_MAIN_CONTROL);
+ 	writel_relaxed(reg->ivrp_paddr, base + REG_MMU_IVRP_PADDR);
++	writel_relaxed(reg->vld_pa_rng, base + REG_MMU_VLD_PA_RNG);
+ 	if (m4u_dom)
+ 		writel(m4u_dom->cfg.arm_v7s_cfg.ttbr[0] & MMU_PT_ADDR_MASK,
+ 		       base + REG_MMU_PT_BASE_ADDR);
+diff --git a/drivers/iommu/mtk_iommu.h b/drivers/iommu/mtk_iommu.h
+index 47063d4..3954876 100644
+--- a/drivers/iommu/mtk_iommu.h
++++ b/drivers/iommu/mtk_iommu.h
+@@ -32,6 +32,7 @@ struct mtk_iommu_suspend_reg {
+ 	u32				int_control0;
+ 	u32				int_main_control;
+ 	u32				ivrp_paddr;
++	u32				vld_pa_rng;
+ };
  
+ enum mtk_iommu_plat {
 -- 
 1.9.1
 
