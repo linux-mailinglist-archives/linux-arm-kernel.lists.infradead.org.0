@@ -2,66 +2,72 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 44E595AC55
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 29 Jun 2019 17:58:42 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DBB6F5AC9C
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 29 Jun 2019 18:45:57 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=RTiLAHR0HxXSQmNy6FtaEuR/C+Lnl3sPC6zH+SDT7K8=; b=Sx3g3sUc54DwMy
-	Swh9dwEdLVNRXoQ0+0XsPEUvEfrR8kfhgchOiaPd33f2qweeCPkolfj5LbzltGoSGQYJKVL9tLnYA
-	dUPruaqArU/esEGeEze83FNC8dRaXnxOXHKdZvUyWJZezraGTMia0B78ROHnM5duzZZIaJYoq7P46
-	Nm7Qe8C4HcLAVU8FIeSDP5FH/a6D3wt5URn8OeVjfkszVx7sOjBKMwO8fctp9UsMaI/Qn/urTSw2h
-	RMcCnw9E3/wfZp/8lwM2zJCtaHDJ8vaKtzN0It6FBlbBWkaw1/sSBcl+e+7HKCehVmW86zCTHQMop
-	3SmzEMia1fzDy8ICcUkg==;
+	List-Owner; bh=tj4h9eXZUeofRRvcFrvVz2kcRI4ZALji+NBGo+MVy5s=; b=ejhpH70sOIDfOg
+	zM9G+1YPYiGVBR1ZLck+crGIQnmVXu16rSsbG7yiWIjnVUh9E1UP1lDDbNjV2oC35N5N2FiiT1oJK
+	MSwug7jb+eFGknoRjjyZeMp/WuGgMi2/Tdk1SDvtcgEINXziUD2FUaJnBf9wtODetcjmjKIJLV6Sk
+	o0sL92SoBhzh/hIAIy17Izwn1yIKpgYEoFKfmWKZyJqw39kAhej9d0myasnc+o5e71nQjWuvpa9yz
+	FYkwx5WNhb7d4ZYES31IHVEzxV7SUZt2VVc+8d8QREnd4g+CiS+SIbPEDCHu/fQmRBpk7yIK+U1cP
+	jdelZxffWvdKFiyn/R4Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hhFkL-0003fL-Mh; Sat, 29 Jun 2019 15:58:37 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
+	id 1hhGU4-0001tI-Uj; Sat, 29 Jun 2019 16:45:52 +0000
+Received: from smtprelay0243.hostedemail.com ([216.40.44.243]
+ helo=smtprelay.hostedemail.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hhFkA-0003eH-DL; Sat, 29 Jun 2019 15:58:28 +0000
-X-UUID: 78a4af13de5945b89f6e9552d9451a6a-20190629
-X-UUID: 78a4af13de5945b89f6e9552d9451a6a-20190629
-Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw01.mediatek.com
- (envelope-from <ryder.lee@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1578522616; Sat, 29 Jun 2019 07:58:19 -0800
-Received: from mtkmbs05n2.mediatek.inc (172.21.101.140) by
- MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Sat, 29 Jun 2019 08:58:17 -0700
-Received: from MTKCAS06.mediatek.inc (172.21.101.30) by
- mtkmbs05n2.mediatek.inc (172.21.101.140) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Sat, 29 Jun 2019 23:58:16 +0800
-Received: from [172.21.77.33] (172.21.77.33) by MTKCAS06.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Sat, 29 Jun 2019 23:58:16 +0800
-Message-ID: <1561823896.29227.0.camel@mtkswgap22>
-Subject: Re: [PATCH v1] arm: dts: mediatek: add basic support for MT7629 SoC
-From: Ryder Lee <ryder.lee@mediatek.com>
-To: Kevin Hilman <khilman@baylibre.com>
-Date: Sat, 29 Jun 2019 23:58:16 +0800
-In-Reply-To: <7hy31lp9q5.fsf@baylibre.com>
-References: <a8ca0018ac8a4c5f61a7a1efc9dc5dccd768628b.1552449524.git.ryder.lee@mediatek.com>
- <7hy31lp9q5.fsf@baylibre.com>
-X-Mailer: Evolution 3.2.3-0ubuntu6 
+ id 1hhGTv-0001sQ-Ux
+ for linux-arm-kernel@lists.infradead.org; Sat, 29 Jun 2019 16:45:45 +0000
+Received: from filter.hostedemail.com (clb03-v110.bra.tucows.net
+ [216.40.38.60])
+ by smtprelay08.hostedemail.com (Postfix) with ESMTP id 72872182CF666;
+ Sat, 29 Jun 2019 16:45:32 +0000 (UTC)
+X-Session-Marker: 6A6F6540706572636865732E636F6D
+X-Spam-Summary: 2, 0, 0, , d41d8cd98f00b204, joe@perches.com,
+ :::::::::::::::::::::::::::::::::::::::,
+ RULES_HIT:41:355:379:599:800:960:968:973:982:988:989:1260:1277:1311:1313:1314:1345:1359:1431:1437:1515:1516:1518:1534:1541:1593:1594:1711:1730:1747:1777:1792:2393:2553:2559:2562:2828:3138:3139:3140:3141:3142:3353:3622:3865:3866:3867:3868:3870:3871:3872:3874:4037:4321:5007:6742:10004:10400:10848:10967:11232:11658:11914:12043:12297:12663:12740:12760:12895:13069:13138:13231:13311:13357:13439:14096:14097:14181:14659:14721:21080:21433:21627:30034:30054:30070:30090:30091,
+ 0,
+ RBL:23.242.196.136:@perches.com:.lbl8.mailshell.net-62.14.0.180 64.201.201.201,
+ CacheIP:none, Bayesian:0.5, 0.5, 0.5, Netcheck:none, DomainCache:0,
+ MSF:not bulk, SPF:fn, MSBL:0, DNSBL:neutral, Custom_rules:0:0:0, LFtime:24,
+ LUA_SUMMARY:none
+X-HE-Tag: wood26_67b7f2b025644
+X-Filterd-Recvd-Size: 3038
+Received: from XPS-9350 (cpe-23-242-196-136.socal.res.rr.com [23.242.196.136])
+ (Authenticated sender: joe@perches.com)
+ by omf01.hostedemail.com (Postfix) with ESMTPA;
+ Sat, 29 Jun 2019 16:45:12 +0000 (UTC)
+Message-ID: <c3b83ba7f9b003dd4fb9cad885461ce93165dc04.camel@perches.com>
+Subject: Re: [PATCH V2] include: linux: Regularise the use of FIELD_SIZEOF
+ macro
+From: Joe Perches <joe@perches.com>
+To: Alexey Dobriyan <adobriyan@gmail.com>, Andreas Dilger <adilger@dilger.ca>
+Date: Sat, 29 Jun 2019 09:45:10 -0700
+In-Reply-To: <20190629142510.GA10629@avx2>
+References: <20190611193836.2772-1-shyam.saini@amarulasolutions.com>
+ <20190611134831.a60c11f4b691d14d04a87e29@linux-foundation.org>
+ <6DCAE4F8-3BEC-45F2-A733-F4D15850B7F3@dilger.ca>
+ <20190629142510.GA10629@avx2>
+User-Agent: Evolution 3.30.5-0ubuntu0.18.10.1 
 MIME-Version: 1.0
-X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190629_085826_459570_BD2C3212 
-X-CRM114-Status: GOOD (  10.02  )
+X-CRM114-CacheID: sfid-20190629_094544_139537_0B91C55C 
+X-CRM114-Status: GOOD (  14.89  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [216.200.240.184 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ no trust [216.40.44.243 listed in list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -73,38 +79,52 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Steven Liu <steven.liu@mediatek.com>, Sean
- Wang <sean.wang@mediatek.com>, Weijie Gao <weijie.gao@mediatek.com>,
- linux-kernel@vger.kernel.org, Rob
- Herring <robh+dt@kernel.org>, ryder.lee@kernel.org,
- linux-mediatek@lists.infradead.org, Matthias Brugger <matthias.bgg@gmail.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: keescook@chromium.org, kvm@vger.kernel.org,
+ kernel-hardening@lists.openwall.com, netdev@vger.kernel.org,
+ intel-gfx@lists.freedesktop.org, devel@lists.orangefs.org,
+ linux-kernel@vger.kernel.org, Shyam Saini <shyam.saini@amarulasolutions.com>,
+ linux-mips@vger.kernel.org, linux-mm@kvack.org, linux-sctp@vger.kernel.org,
+ dri-devel@lists.freedesktop.org, Andrew Morton <akpm@linux-foundation.org>,
+ linux-ext4 <linux-ext4@vger.kernel.org>, intel-gvt-dev@lists.freedesktop.org,
+ bpf@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ mayhs11saini@gmail.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, 2019-06-28 at 16:32 -0700, Kevin Hilman wrote:
-> <ryder.lee@kernel.org> writes:
+On Sat, 2019-06-29 at 17:25 +0300, Alexey Dobriyan wrote:
+> On Tue, Jun 11, 2019 at 03:00:10PM -0600, Andreas Dilger wrote:
+> > On Jun 11, 2019, at 2:48 PM, Andrew Morton <akpm@linux-foundation.org> wrote:
+> > > On Wed, 12 Jun 2019 01:08:36 +0530 Shyam Saini <shyam.saini@amarulasolutions.com> wrote:
+> > I did a check, and FIELD_SIZEOF() is used about 350x, while sizeof_field()
+> > is about 30x, and SIZEOF_FIELD() is only about 5x.
+> > 
+> > That said, I'm much more in favour of "sizeof_field()" or "sizeof_member()"
+> > than FIELD_SIZEOF().  Not only does that better match "offsetof()", with
+> > which it is closely related, but is also closer to the original "sizeof()".
+> > 
+> > Since this is a rather trivial change, it can be split into a number of
+> > patches to get approval/landing via subsystem maintainers, and there is no
+> > huge urgency to remove the original macros until the users are gone.  It
+> > would make sense to remove SIZEOF_FIELD() and sizeof_field() quickly so
+> > they don't gain more users, and the remaining FIELD_SIZEOF() users can be
+> > whittled away as the patches come through the maintainer trees.
 > 
-> > From: Ryder Lee <ryder.lee@mediatek.com>
-> >
-> > This adds basic support for MT7629 reference board.
-> >
-> > Signed-off-by: Ryder Lee <ryder.lee@mediatek.com>
+> The signature should be
 > 
-> Just noticing this is not upstream yet.
+> 	sizeof_member(T, m)
 > 
-> I did a basic boot test to ramdisk on the mt7629-rfb board donated for
-> kernelCI (thanks MediaTek!) and it boots just fine.
-> 
-> Tested-by: Kevin Hilman <khilman@baylibre.com>
-> 
-> Kevin
+> it is proper English,
+> it is lowercase, so is easier to type,
+> it uses standard term (member, not field),
+> it blends in with standard "sizeof" operator,
 
-Thanks. I'll post v3 with some fixups soon.
+yes please.
 
-Ryder
+Also, a simple script conversion applied
+immediately after an rc1 might be easiest
+rather than individual patches.
 
 
 
