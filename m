@@ -2,82 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0345D5AB49
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 29 Jun 2019 15:03:26 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C9CE85AB4A
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 29 Jun 2019 15:03:42 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=xMoSb4MHihf0POo7p/Q4aBZDQF8uVu7UuHq1Yhu7z14=; b=B2OfZn4EpWxCrH
-	1PNXZCsEqIAfD1cVnJz9joJarHQdibIOri8uwOgUCifkLW+pa7KrwnaGqD4Spb52PbLZ+gh4EOJsJ
-	6tVR9OYQk0IxjEKe/VaoLxDJoC7SEwYexqZM0yKtPgWTQmpMgeZuVitm2tihJTdZej6Y2R+P7DXLR
-	21zqRICPNh8WPk1KcOLxhABPwFU1Z/SOsEKdre2H+dRxS7hTG8Ve3IrSGHcpXoXfsj1Qb5foAoTQC
-	4pTqZ9p1Y3LN6lIKa2yMi1K8Mt17BTtJlb39DAAUWoR5A+/ef73pCbAgkJOh/5eFyqhQKc1SI0hCc
-	w587RTxoWMkD1cWuWiVQ==;
+	List-Owner; bh=SAzUdhWUIV7fYeXzfqmmQwz/cqGIftvjsADmef14cS4=; b=Frn3tUdrD8SASg
+	Zkp5XSyK5puaJSx+U4KGhUu+ZTNg2QzFOxKAKHRb19AF8agUvcKqDx67YGxFxKdKEnRl5U0dxKknf
+	xl1dDJdnA616MkNFD8bhTX5sPdnTdfvSVGne9wKaci/vidx6GJu5GDFhE+wWZTCuYxjShKypsgV1J
+	QZJgL4+qsQIe8iiGzwVft7fm4FzVjhS1Gk7REeXRDXD151cwtQKXx83tEYaKEM6+ehZB3iKe5jBkX
+	/IvkWHXWNb9lOaawVWhyG1eBkFIfs+SH/hx8HapbGYjysn1CVS1E4xiJy0YmTr42kFyOpoOuVJEGn
+	qqjFwRoTyspBpKIRG8Gg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hhD0j-0005jH-Gx; Sat, 29 Jun 2019 13:03:21 +0000
-Received: from mail-lf1-x142.google.com ([2a00:1450:4864:20::142])
+	id 1hhD10-0005vd-AT; Sat, 29 Jun 2019 13:03:38 +0000
+Received: from mail-lf1-x144.google.com ([2a00:1450:4864:20::144])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hhCzX-0004oz-RE
- for linux-arm-kernel@lists.infradead.org; Sat, 29 Jun 2019 13:02:11 +0000
-Received: by mail-lf1-x142.google.com with SMTP id x144so5756232lfa.9
+ id 1hhCza-0004qo-93
+ for linux-arm-kernel@lists.infradead.org; Sat, 29 Jun 2019 13:02:12 +0000
+Received: by mail-lf1-x144.google.com with SMTP id u10so5716819lfm.12
  for <linux-arm-kernel@lists.infradead.org>;
- Sat, 29 Jun 2019 06:02:07 -0700 (PDT)
+ Sat, 29 Jun 2019 06:02:09 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=Bx02aBFfPRkMhKf40AS7qTzkWiU4y0/D0eEn128oWGQ=;
- b=HMJwmwK/OCpaYq/6HMbWpbRyQvbyRKO/I7HCpmQY60NBAA5MO22b/vxuEsNGmfSrQj
- fcBHaXH3QcaXBjlvZSLYDun/FB+rgDgBWoWalJEfqrFx7clYu5kbrkkBKrjVtZmMKlq8
- WC2B7LrGWBnyBnj7Drd4FPlumQkqf0Z7A5isRfAnVg65WJG+CsFsYRjJAAhuTNd2aVA7
- 66LsDK1Qqc8JeCr6xmMPRc8LdBJYZN0YWR33m6YI2cjRuLFu5zKVU7UmtADnzzy1MTh6
- dKR1eH+dSyDQqLMlaA0pDm4XeS752CpzhfPClsdCtntV/lFNVKMEnL93gCLgI+lOthEm
- bLVg==
+ bh=gUhHBzqpeqf9laCyRDqe0YTreYPsBAWIdDU1MBCLr1k=;
+ b=BYavBGMBtik6r+A9tFdwUyOfHqHK+Yl4c7/OJSbz75XF2NUDjc4Jw7+6wvc3ssAnDF
+ 9sq25tD60Ch3GCG0hM/5PRkqSgHcW/LYOm35ZiNdaPczwua7xlkaQTtJrqZOM9Tpv2HK
+ ZvXChwFa1/VVDUg/f4Nyh3tUquPVnrg2zNpac70vRhAUi7CZ8hpGVSeRuy+q36Hhso+h
+ Ks17fIaZ1Z+66/HbPp9dwbic5x4vw3gyVfV98DTntLs57UNkVYUKwuust+xKTjaLKoct
+ 7zQUCFkufCWR85bg3HzsRWlJ42Nostw2IEcGdvH3kk5vn0kj3ZdmlMrn0Ij8qrwefETN
+ THcA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=Bx02aBFfPRkMhKf40AS7qTzkWiU4y0/D0eEn128oWGQ=;
- b=pWLHBPd0c7PyQz5a2gTkNWSKeIo8rS9gP3TZOf5anzQ4Lk1Ey/ma5X5/65zHtNbdRL
- vbRX87AgOpvYdhdYMEFrU9neGYfH9YR+HKuUgcwrbael6mfZu6xcmJbAXOmqnU7s77cQ
- t1ksZw7sm8w8cZQ9SxNJHFdCLvaadO/9R1lIWYJ6+ACSkY6bGKrOFk0AzzvF/lrHjkLx
- /fai3QpkQDwMM5aWGEMzJthfadUXvAkKd6lIXFZJ3c5HqHXILu63ii+3TYqjhTQogHWf
- Zqmdu7A1947dj3FxsRwUbDgvcaXDtZHNUEO8WmTFtGy9kC0R8xvgMDRieNIJzNFKayXW
- DRJg==
-X-Gm-Message-State: APjAAAWDiKkePhsSxHfmmia9e9uBHfWhsvjrdahctwqwOxxg5ck8J9u2
- sYV3OKVwpikAJGK2Y86pQ2Tt3w==
-X-Google-Smtp-Source: APXvYqxTzIJVpddQHAmhA5Fk+i0uPHGclgtAxJMzxPUjiAnCGI/TQWmRQfr+sLmOyHXNV5a5lmrefQ==
-X-Received: by 2002:a19:cc45:: with SMTP id c66mr7446160lfg.171.1561813326303; 
- Sat, 29 Jun 2019 06:02:06 -0700 (PDT)
+ bh=gUhHBzqpeqf9laCyRDqe0YTreYPsBAWIdDU1MBCLr1k=;
+ b=l8OjbFv2EIzFcegmme0lfISSpJk74Xl38XDW84nuia6r968kmydrpCrKPT91Z2zuxD
+ wp0X6Zv91fNR7DunXw1pgrNSHxcGVthD0xc/1WK064MWhF/EdG9ZCSsxgkw0Yu2IYCVZ
+ tL5qi8J96A++zniQBH4mK9CXIJasxDNBd+4nWGcXxFIJQAIvN3qmah7yHZvcrmaWRqvj
+ BWxbROD9I1QEY2s+FIPi9W/hP8h9QQaDCLYcajymfQNldWUd9IgydtGiuO/XBNOuQJQq
+ 1QNeM0eFCxuMl3X1vFjM+XISbQ6txBsNZV5fXDgGLOG9cQ/TB2WYXveXzslyU0luaKE8
+ +vPw==
+X-Gm-Message-State: APjAAAWm7YHG5DQOiPu2WAOlDNmowYMmjHW8YziiiDm5O7+ugwYU7xKc
+ hvoaPf1cX/L07CDcqXNX80uyVQ==
+X-Google-Smtp-Source: APXvYqwiKTo2KmlXB88B2iDxqXfGg+cPGIjxT3oac4t0Fb8IeqR1+G3z9dw+lnnW3Vr5Kl66Lss03g==
+X-Received: by 2002:ac2:4891:: with SMTP id x17mr7657045lfc.60.1561813328311; 
+ Sat, 29 Jun 2019 06:02:08 -0700 (PDT)
 Received: from localhost.localdomain
  (c-22cd225c.014-348-6c756e10.bbcust.telenor.se. [92.34.205.34])
- by smtp.gmail.com with ESMTPSA id v2sm1354500lfi.52.2019.06.29.06.02.04
+ by smtp.gmail.com with ESMTPSA id v2sm1354500lfi.52.2019.06.29.06.02.07
  (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Sat, 29 Jun 2019 06:02:05 -0700 (PDT)
+ Sat, 29 Jun 2019 06:02:07 -0700 (PDT)
 From: Linus Walleij <linus.walleij@linaro.org>
 To: dri-devel@lists.freedesktop.org,
  Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
  Maxime Ripard <maxime.ripard@bootlin.com>, Sean Paul <sean@poorly.run>
-Subject: [PATCH 6/7] RFT: drm/msm/hdmi: Bring up HDMI connector OFF
-Date: Sat, 29 Jun 2019 14:59:32 +0200
-Message-Id: <20190629125933.679-6-linus.walleij@linaro.org>
+Subject: [PATCH 7/7] RFT: drm/msm/hdmi: Do not initialize HPD line value
+Date: Sat, 29 Jun 2019 14:59:33 +0200
+Message-Id: <20190629125933.679-7-linus.walleij@linaro.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20190629125933.679-1-linus.walleij@linaro.org>
 References: <20190629125933.679-1-linus.walleij@linaro.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190629_060207_989001_F5B8C1D0 
-X-CRM114-Status: GOOD (  17.25  )
+X-CRM114-CacheID: sfid-20190629_060210_502421_7C9BFDC3 
+X-CRM114-Status: GOOD (  15.44  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:142 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:144 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -107,17 +107,20 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-There is elaborate code in the HDMI connector handling to
-leave the connector in the state it was at power-on and
-only touch the GPIOs when the connector .enable() and
-.disable() callbacks are called.
+After untangling the MSM HDMI GPIO code we see that the code
+is deliberately setting the output value of the HPD (hot plug
+detect) line to high, even though it is being used as input
+which is of course the only viable use of a HPD pin.
 
-I don't think this is what we normally want, initialize
-the connector as OFF (possibly saving power?) using the
-appropriate GPIO descriptor flags. It will still be
-switched on/off in the enable()/disable() connector
-callback as before, but we can drop some strange surplus
-code.
+This seems dubious: GPIO lines set up as input will have high
+impedance (tristate) and the typical electronic construction
+involves this line being used with a pull-down resistor around
+10KOhm to keep it low (this is sometimes part of a levelshifter
+component) and then an inserted connector will pull it up to
+VDD and this asserts the HPD signal, as can be seen from the
+code reading the HPD GPIO.
+
+Stop try driving a value to the HPD input GPIO.
 
 Cc: Rob Clark <robdclark@gmail.com>
 Cc: Sean Paul <sean@poorly.run>
@@ -125,93 +128,21 @@ Cc: linux-arm-msm@vger.kernel.org
 Cc: freedreno@lists.freedesktop.org
 Signed-off-by: Linus Walleij <linus.walleij@linaro.org>
 ---
- drivers/gpu/drm/msm/hdmi/hdmi.c           | 19 ++++++++++++-----
- drivers/gpu/drm/msm/hdmi/hdmi_connector.c | 25 ++++++-----------------
- 2 files changed, 20 insertions(+), 24 deletions(-)
+ drivers/gpu/drm/msm/hdmi/hdmi_connector.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/drivers/gpu/drm/msm/hdmi/hdmi.c b/drivers/gpu/drm/msm/hdmi/hdmi.c
-index c8e8268c76e2..7d87f8821d2f 100644
---- a/drivers/gpu/drm/msm/hdmi/hdmi.c
-+++ b/drivers/gpu/drm/msm/hdmi/hdmi.c
-@@ -563,13 +563,22 @@ static int msm_hdmi_bind(struct device *dev, struct device *master, void *data)
- 	for (i = 0; i < HDMI_MAX_NUM_GPIO; i++) {
- 		const char *name = msm_hdmi_gpio_pdata[i].name;
- 		struct gpio_desc *gpiod;
-+		enum gpiod_flags flags;
- 
- 		/*
--		 * We are fetching the GPIO lines "as is" since the connector
--		 * code is enabling and disabling the lines. Until that point
--		 * the power-on default value will be kept.
-+		 * Notice the inverse set up here: we initialize the connector
-+		 * to OFF state.
- 		 */
--		gpiod = devm_gpiod_get_optional(dev, name, GPIOD_ASIS);
-+		if (msm_hdmi_gpio_pdata[i].output) {
-+			if (msm_hdmi_gpio_pdata[i].value)
-+				flags = GPIOD_OUT_LOW;
-+			else
-+				flags = GPIOD_OUT_HIGH;
-+		} else {
-+			flags = GPIOD_IN;
-+		}
-+
-+		gpiod = devm_gpiod_get_optional(dev, name, flags);
- 		/* This will catch e.g. -PROBE_DEFER */
- 		if (IS_ERR(gpiod))
- 			return PTR_ERR(gpiod);
-@@ -583,7 +592,7 @@ static int msm_hdmi_bind(struct device *dev, struct device *master, void *data)
- 			 * in the upstream bindings.
- 			 */
- 			if (sscanf(name, "qcom,hdmi-tx-%s", name3))
--				gpiod = devm_gpiod_get_optional(dev, name3, GPIOD_ASIS);
-+				gpiod = devm_gpiod_get_optional(dev, name3, flags);
- 			if (IS_ERR(gpiod))
- 				return PTR_ERR(gpiod);
- 			if (!gpiod)
 diff --git a/drivers/gpu/drm/msm/hdmi/hdmi_connector.c b/drivers/gpu/drm/msm/hdmi/hdmi_connector.c
-index c4e9f6d7960f..89c64cc85027 100644
+index 89c64cc85027..ecbcd8638b66 100644
 --- a/drivers/gpu/drm/msm/hdmi/hdmi_connector.c
 +++ b/drivers/gpu/drm/msm/hdmi/hdmi_connector.c
-@@ -86,16 +86,9 @@ static int gpio_config(struct hdmi *hdmi, bool on)
- 		for (i = 0; i < HDMI_MAX_NUM_GPIO; i++) {
+@@ -87,7 +87,7 @@ static int gpio_config(struct hdmi *hdmi, bool on)
  			struct hdmi_gpio_data gpio = config->gpios[i];
  
--			if (gpio.gpiod) {
--				if (gpio.output) {
--					gpiod_direction_output(gpio.gpiod,
--							       gpio.value);
--				} else {
--					gpiod_direction_input(gpio.gpiod);
--					gpiod_set_value_cansleep(gpio.gpiod,
--								 gpio.value);
--				}
--			}
-+			/* The value indicates the value for turning things on */
-+			if (gpio.gpiod)
-+				gpiod_set_value_cansleep(gpio.gpiod, gpio.value);
- 		}
- 
- 		DBG("gpio on");
-@@ -103,16 +96,10 @@ static int gpio_config(struct hdmi *hdmi, bool on)
- 		for (i = 0; i < HDMI_MAX_NUM_GPIO; i++) {
- 			struct hdmi_gpio_data gpio = config->gpios[i];
- 
--			if (!gpio.gpiod)
--				continue;
--
--			if (gpio.output) {
--				int value = gpio.value ? 0 : 1;
--
--				gpiod_set_value_cansleep(gpio.gpiod, value);
--			}
-+			/* The inverse value turns stuff off */
+ 			/* The value indicates the value for turning things on */
+-			if (gpio.gpiod)
 +			if (gpio.gpiod && gpio.output)
-+				gpiod_set_value_cansleep(gpio.gpiod, !gpio.value);
- 		};
--
- 		DBG("gpio off");
- 	}
+ 				gpiod_set_value_cansleep(gpio.gpiod, gpio.value);
+ 		}
  
 -- 
 2.20.1
