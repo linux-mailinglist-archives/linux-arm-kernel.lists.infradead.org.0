@@ -2,88 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 864995B022
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 30 Jun 2019 16:30:18 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7D51F5B058
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 30 Jun 2019 17:19:10 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
-	:Date:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=P+BlP1f+bnV65GgE3GZSCjvmVUyDaE+budjP29zxbWw=; b=CdyWNoYDERt3nh
-	t1LTQsebMLz5uVUDXrTcQ6lgZWElMC9uj9Uf90Yunx/AbsSjpYqJ2liuStJy0/ss/JzvSNdJei8aC
-	9JAU2NPnSRD7hD/d8YIfGpDQjDqWrnWysIoENwvEvZ51U7kt59b19pmAlfJj3QmiTBwLIZ7/fZC6O
-	LQdEppD8ZgxRwlqfr0aka64exBFk31X2L38sKUB6VeWAobf16EZV69GK9bMwR//pTN4cpR9MA1+Gh
-	+tdiTslra7DYWzdc7zB8NkY1344ynyTNQS6H/1n4yqPprRQ6hNIUCMAGX8AgeWAieQMo+BOL8FLlo
-	ioWxiNaPu7wI2csl62Uw==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=aKeTMWLLYWddhnnMV6Nu4GcHLxOycLO6R9fD9w1VSZk=; b=k+tiFlvLhDFD02
+	USoxmTlM53RvDUIcFVlNMahh3QG1ZjlvIShR33jud84GbA0Rd+rl0n6audaRwWJ18U3w9ms8FbdlQ
+	I2+E2OIqVGKCcD0sYqjwPEmnx4Z7G73mcatEq3Lwj0nSht6h44jf+vgzbiWplxrkfTKOgScACE3wi
+	zpQg0zNcuxGoiW+odL10ssWIMsftbpUbTYa+y3RTfcHhwvqOlxbHqkgpOImIroHzsagQ1cak0nkA0
+	R0iZ8fG/Tlxkc1mGX/+ygXq1KOBmB7YOmpjKh7kDMcaEmOh0VIk9sCU7q1IktYBprUVfM2CM3hV+J
+	JMSWpD7uoUvb7ST4Smwg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hhaqM-0004s0-Lc; Sun, 30 Jun 2019 14:30:14 +0000
-Received: from mail-pf1-x441.google.com ([2607:f8b0:4864:20::441])
+	id 1hhbbf-0002E7-Qq; Sun, 30 Jun 2019 15:19:07 +0000
+Received: from mail-lj1-x242.google.com ([2a00:1450:4864:20::242])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hhaq6-0004rE-UH
- for linux-arm-kernel@lists.infradead.org; Sun, 30 Jun 2019 14:30:00 +0000
-Received: by mail-pf1-x441.google.com with SMTP id r1so5244212pfq.12
+ id 1hhbbS-0002Dh-6e
+ for linux-arm-kernel@lists.infradead.org; Sun, 30 Jun 2019 15:18:55 +0000
+Received: by mail-lj1-x242.google.com with SMTP id k18so10448261ljc.11
  for <linux-arm-kernel@lists.infradead.org>;
- Sun, 30 Jun 2019 07:29:56 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=date:from:to:subject:message-id:mime-version:content-disposition
- :user-agent; bh=A7XL+qSvCLvsjTbzTI2K8VFDVm1pv1sO4YoeogNZP4U=;
- b=WocshXmMMY6BwgYpCy4zHm/Ouj9z7d7H/lj+vQDCYBdpdAy8OUaopHsgnr6Y+B97Fs
- Yo8D5vpgW/gh1ZWd06NpV00WlHlxcGZREd2lHacooXqMV0qV5Dlk9auViSk7sdp26KIw
- 1yjz9ZLxDkJo3nx1NHI2I/d14RslPvZsWWOLh5Q4G8zaaXLmU3+/E1Fd4cib1YDZEXJE
- 1rL2THNoIjoXaICsqz1rre+zLSWJxtoU9XuW2bdBTe0JzVWZLi7PDz0dZXvr+0LPFvlh
- /cpNCJQVjE5PKrneKsWW7v700qI0IpquHQw5+IDA2sJPkqQYBOPqv05BB2iAYvpCBDGm
- kgYA==
+ Sun, 30 Jun 2019 08:18:53 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=HpE46Z6NWvdrS3lUw3ggCLBRnMjBwHHDcERIdjH6Lfc=;
+ b=lNA5GC01Ut8STwziDZJ14QDg5Jkz1OhXo58x/jpwiIA94v/qDZQmIz+rShADdD7LZb
+ kGPohCC3lRFssrv01dW4Dmve6RPDWLS/ngQD+NbljIYFzrUXUcNFcIqz4s8S1DX8iJC+
+ okLacsbZggc128MbinPna6eeiBhSAYZsCNsGVeKTPuWVCZ3qepp0k/konAKzRPlE6+a3
+ iUnK/JBW2jnHjiHjetqnfPwqYGUTIWoHcUtSMYCqPggUVTmgHQKp8rTXo2qteSu7Z7qn
+ A5k9mr7LF23EoJvk9qC1eJ+1+QxefWLMLG8m2WztyMBKAhTr2CdoZwwpoWOMNMNnMv4v
+ ZbNA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:subject:message-id:mime-version
- :content-disposition:user-agent;
- bh=A7XL+qSvCLvsjTbzTI2K8VFDVm1pv1sO4YoeogNZP4U=;
- b=fcFP56ORm6up4qak+c6gDOm+J86dgKXlv9egTBU2mwfP0S1y0rA0ykX40IPzFK7H9r
- vQQzTj5qu9tSiS5eOqosdiHJ+KApoGPJvc7OLmRhbb6mlCJ3UYs45upXxeAnzjaT7IKA
- FI7AFgCMki2nLVmhfFoSKY5OBfg5OdHQcF6KciTBJwTdMFlIUWhHMubdwuzNuS7fcFya
- 5NAwmotR6vqth/coGAi538vublVKBSYM+d1lNS3gmCw75L/PVK73rwWTtWH0bo4x/QlU
- uiugBE/xIxzbNM+/YChQlOq+NwsLJ7JwCQ4alZBgnCCCL69VgaD7RQ5etT7HRAKRYbAt
- DnSA==
-X-Gm-Message-State: APjAAAUR6B8LmBcKsx7uGqguzgqMrknqlBcQdsrYyhVHEhw0zUPXnqvE
- rIH9Hdar0uK1D1kR3Ly2bm4=
-X-Google-Smtp-Source: APXvYqyUF3CwPFMn20FOljcrALPcEPpdki7WvtU6sHNL98Jy13f9+56fQo1hMMyrcAo/c/1QtOELnA==
-X-Received: by 2002:a63:1a5e:: with SMTP id a30mr18908127pgm.433.1561904996250; 
- Sun, 30 Jun 2019 07:29:56 -0700 (PDT)
-Received: from hari-Inspiron-1545 ([183.83.164.161])
- by smtp.gmail.com with ESMTPSA id t8sm7930660pfq.31.2019.06.30.07.29.52
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Sun, 30 Jun 2019 07:29:55 -0700 (PDT)
-Date: Sun, 30 Jun 2019 19:59:49 +0530
-From: Hariprasad Kelam <hariprasad.kelam@gmail.com>
-To: "David S. Miller" <davem@davemloft.net>,
- Florian Fainelli <f.fainelli@gmail.com>,
- bcm-kernel-feedback-list@broadcom.com, Andrew Lunn <andrew@lunn.ch>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Hariprasad Kelam <hariprasad.kelam@gmail.com>,
- YueHaibing <yuehaibing@huawei.com>, Thomas Gleixner <tglx@linutronix.de>,
- Luis Chamberlain <mcgrof@kernel.org>, netdev@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
-Subject: [PATCH] net: ethernet: broadcom: bcm63xx_enet: Remove unneeded memset
-Message-ID: <20190630142949.GA7422@hari-Inspiron-1545>
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=HpE46Z6NWvdrS3lUw3ggCLBRnMjBwHHDcERIdjH6Lfc=;
+ b=HNcgJzVayUqTuZDv4DLUSwP7giFDWpYtTVZ2c8tzoatyAmCSxZFIUiCqK+TqGOTFOq
+ 1vA7RDVSGbZW0Y05E6Vkd2a1dvrBP7bpLewIqOPlmmqhaMVeD8yrWnYfvv+awFc+bcrk
+ pGjzkAlbTpZ8gMFQlFmyOUZI/ONwiqBqhV7H/jQJjPw+Q4Zce9n7BJ6+5yGkHQsWjbig
+ gGylqCwPgDBRSjRRVJwGIGIBr1tIMKhNuNJe0AZ4CKxOhKsaOqmX6ilj3vFaNUPz8s3v
+ fVlVxzoTDQ2e/bm1NwJtVh4e79bL8+hqRS5ZZ3dtUrPaEE2tztqpphBj7I40VDDhMima
+ GsRg==
+X-Gm-Message-State: APjAAAWofk6u2cezbVoimiiTazAbcYwA41k5Sahyyt+HyIHojID2vt6P
+ m5qFNQlWMc+9UjZtAb30c592kt+B639p7waDAf2z5Q==
+X-Google-Smtp-Source: APXvYqyKV3l5gyErMxjKVpfAN7k4MLE/7m4iA8/iiX3NkTUuMtONgnsOIROJ+Gi3Fplauela34cwa52JNx/MRP7FH2A=
+X-Received: by 2002:a2e:a0cf:: with SMTP id f15mr11621890ljm.180.1561907931835; 
+ Sun, 30 Jun 2019 08:18:51 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-User-Agent: Mutt/1.5.24 (2015-08-30)
+References: <20190629125933.679-1-linus.walleij@linaro.org>
+ <20190629125933.679-4-linus.walleij@linaro.org>
+ <CAF6AEGun2QEMVyO+L3W0UJubgzVPrFr5jkVoTOwHpy9b4MeJMQ@mail.gmail.com>
+In-Reply-To: <CAF6AEGun2QEMVyO+L3W0UJubgzVPrFr5jkVoTOwHpy9b4MeJMQ@mail.gmail.com>
+From: Linus Walleij <linus.walleij@linaro.org>
+Date: Sun, 30 Jun 2019 17:18:39 +0200
+Message-ID: <CACRpkdYAmVSiUQozgCvaNe_X1hcmhAzeApQcSxdhWC_wg0tdsg@mail.gmail.com>
+Subject: Re: [PATCH 4/7] gpio: of: Support some legacy Qualcomm HDMI bindings
+To: Rob Clark <robdclark@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190630_072959_006358_042B3D62 
-X-CRM114-Status: GOOD (  12.74  )
+X-CRM114-CacheID: sfid-20190630_081854_259581_4D49A76F 
+X-CRM114-Status: UNSURE (   8.86  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:441 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:242 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (hariprasad.kelam[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -103,36 +93,33 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
+Cc: freedreno <freedreno@lists.freedesktop.org>,
+ Maxime Ripard <maxime.ripard@bootlin.com>,
+ linux-arm-msm <linux-arm-msm@vger.kernel.org>,
+ Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
+ dri-devel <dri-devel@lists.freedesktop.org>, Sean Paul <sean@poorly.run>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Remove unneeded memset as alloc_etherdev is using kvzalloc which uses
-__GFP_ZERO flag
+On Sun, Jun 30, 2019 at 3:26 PM Rob Clark <robdclark@gmail.com> wrote:
 
-Signed-off-by: Hariprasad Kelam <hariprasad.kelam@gmail.com>
----
- drivers/net/ethernet/broadcom/bcm63xx_enet.c | 3 +--
- 1 file changed, 1 insertion(+), 2 deletions(-)
+> I'm ok with this.. although I wonder if we need to try this hard for
+> backwards compat?  At least I don't see any upstream dts
+> using the old names.  Maybe it is ok to just look the other way and break them.
 
-diff --git a/drivers/net/ethernet/broadcom/bcm63xx_enet.c b/drivers/net/ethernet/broadcom/bcm63xx_enet.c
-index 85e6102..f2dd74c 100644
---- a/drivers/net/ethernet/broadcom/bcm63xx_enet.c
-+++ b/drivers/net/ethernet/broadcom/bcm63xx_enet.c
-@@ -2659,8 +2659,7 @@ static int bcm_enetsw_probe(struct platform_device *pdev)
- 	if (!dev)
- 		return -ENOMEM;
- 	priv = netdev_priv(dev);
--	memset(priv, 0, sizeof(*priv));
--
-+
- 	/* initialize default and fetch platform data */
- 	priv->enet_is_sw = true;
- 	priv->irq_rx = irq_rx;
--- 
-2.7.4
+I am usually of the opinion that if a tree falls in the forest and noone
+is there to hear it, who cares what sound it makes.
 
+So we can just apply the other patches and not this one, which
+should work just fine. It will support the variants of the
+bindings ending with "-gpios" or "-gpio".
+
+Yours,
+Linus Walleij
 
 _______________________________________________
 linux-arm-kernel mailing list
