@@ -2,79 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 41CF85AFA6
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 30 Jun 2019 12:32:25 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5AB8A5AFE6
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 30 Jun 2019 15:27:14 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=0uosm2EK3ojzBMjkGsgSetT/rALf1KQbyncE8s2Y/l4=; b=Xg1SmHbakN0R4T
-	Gkb2rW6r3A533C+Xh1IUQvcW6wmlxetxS8qHqmpxcclrZDVpGRi3GI5J0poDnPriIj/ewlhhvYjXz
-	BnxQyageDMhMQ8Mm3hLsJl+ONRPcRlB0XIgQdOdTfAtmOjm7UL5k7KGWngr0f4lBwLtQJ2aQxHf2O
-	S9XR2Ity7ljvSHrMOsMGcE6KcSB02EzgSd9G/5oxg8S21YmFkOzvdJs4isSoJoz3l1fJ8HfURquxW
-	2IwkoqVeHeGjEwWKCLGUjZzaJBZtlemB48Uk2DP+TzaSFrJ48DQ9Ws+m5wp38y+evKX/zVIr3nBE2
-	ZRtuKRGQIXf9LIcF1Duw==;
+	List-Owner; bh=roNvNNOcQ+cOe0t8jLhvjGadN8IqmkrwPvvsAWXivKM=; b=FhTSOX2TJ89ulq
+	5WcR+y2p4hzytFLGuA5x8cnWRkUWFjW+jOzufNDGSDY9KpvELlAzSTe4FjMfAiT0XNBX86tpzV9w6
+	1P5DOd3FtPHJ5OI1Lle5hhgpfLZxVMNqElcjqBz/zg33guo/y+VKguDDWWyFc+X/4g11pTbjb6GhP
+	WGkFVY74O8ln1SqyGLgCSaogKCgBdK4nIHJB3jcjR5GjgMnEkX8TwFM2oqpkZ1pWm0CoPrldJoykR
+	yFYESaP/h5z9QgSttZHB3VZvydFY9yRuF2GG2ISx/CkXzy0uFSY3Oj66sNQNkTCtFa0vl9iOizIWk
+	gunluNacEz62HvDtt+yw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hhX82-000687-9X; Sun, 30 Jun 2019 10:32:14 +0000
-Received: from mail-io1-xd43.google.com ([2607:f8b0:4864:20::d43])
+	id 1hhZrB-0003rs-Hx; Sun, 30 Jun 2019 13:27:01 +0000
+Received: from mail-ed1-x543.google.com ([2a00:1450:4864:20::543])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hhX7a-00067k-Jv
- for linux-arm-kernel@lists.infradead.org; Sun, 30 Jun 2019 10:31:48 +0000
-Received: by mail-io1-xd43.google.com with SMTP id w25so22106715ioc.8
+ id 1hhZqo-0003rK-7A
+ for linux-arm-kernel@lists.infradead.org; Sun, 30 Jun 2019 13:26:39 +0000
+Received: by mail-ed1-x543.google.com with SMTP id k8so18315408eds.7
  for <linux-arm-kernel@lists.infradead.org>;
- Sun, 30 Jun 2019 03:31:41 -0700 (PDT)
+ Sun, 30 Jun 2019 06:26:37 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc:content-transfer-encoding;
- bh=2oqIz75KNESlOqUJhBPXcjPOp+quk31+qKsCBUMp1bY=;
- b=tlU1bOJpyygzlPoTZQyUZDvcfsOWRUcyVdyAFqatjxNKTiHCepSZfFygc01h99WQG9
- rpZketCL3kRNJ2lD9X0TFADuR+R5J/Xh9l+8wxe90yq5udZW3WDs9MyKpsSwOXFwWUSc
- 1ugwmJ3EJ+m3d8u1lkWerGKlklTDpVdRzB6kdK82C8QmaPDQS9rN/eWskIZU//5TPtiy
- akxA5lp9guFiLdAXkRXAV5QvdsPy6Z25yuiIVNjxAjzadMhKK4fjtiHTC4mVxAhPPFJW
- S7Ch+ODlA8Nn7fCdG89NuAxganpscmqO/dMvs+kh8iAFf6WR79wiefaMCw/g+2KqrIwn
- SUKQ==
+ :cc; bh=TR/U35GOSzbg7ErKFjslW1/rjmDfua81/9ryZaRuObY=;
+ b=Tk0wJIMf02ZT9yzKyXRjQ1yuzqF24JjisloZxoU9WjFL18PJuddVZIAvQxqGZ+wLg/
+ 4mpu1+VgJ3s9pL8u1uF8phaixMqcr8+gWI/aH/AOrq7yx8wMH6SkloINNcQf83knVXVE
+ RPGzPWJ81VUK29UOfDgngVY6GzmQbDM5WsZuCGEblaiqKGgnn8vDJTsk+RvsJTn3bNwb
+ cZ6Yqs9ns/p+Ned0aNAoDApN3tkPWSyzhb2CwPT9FGhz0TMFEGlzFpKYHf2nbhFG2R1m
+ DgJ5N1oKowFGkQA2swBEYet28zhFjO0FBvxda0cVgdDLP2CjWJEwrJeXlo1ZB/a1wVNU
+ 80fg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc:content-transfer-encoding;
- bh=2oqIz75KNESlOqUJhBPXcjPOp+quk31+qKsCBUMp1bY=;
- b=Wig0A/wgklX9x9ebE1iAhFnKuixoXSpuVVt/sHToEP6PiCJCJ4tVhyuLSmw8YRJHxf
- lejYxGSmJfipKbfi7cgg86yP5ktTrEnibmlKwtNfLi5rEzdqDhYODxqHSHbwqMM85TPh
- /dmOnjP5P7ZSHcOjSxMqR/I31jvrdoKR14VgV1FqvRM90XsGPqrP9kHuIM/lb2cgUgDP
- G2Twb09zf1JS3JO61SziemKLwOf/nFHdQpi/gVbNCnaSjmhG2mIFZxzH+84ORed+BIJ5
- anlAKl8KfceljPsWwQmVHKPmaxVFvsElTMQX3D/aENDng5jPjAuP42P4K4xODj5ftllS
- ToAg==
-X-Gm-Message-State: APjAAAXQvI4umJ+8Opg+82Tb8TQFo7pofsFMCtTHZlnIBUELzzJY0rUn
- V1e2rEIMWJ1nH8u2WZjg/6/QCDNUl3Q5A1icpKI=
-X-Google-Smtp-Source: APXvYqzLtrrAb53eIs9wY6s+sNSZRXSfLxPUWK5FR9BnBkqBGhKdyZJzjY65DKBiSib9WSMIg5tmp/NCa4lbL2OGm5c=
-X-Received: by 2002:a02:5502:: with SMTP id e2mr21875994jab.87.1561890701191; 
- Sun, 30 Jun 2019 03:31:41 -0700 (PDT)
+ :message-id:subject:to:cc;
+ bh=TR/U35GOSzbg7ErKFjslW1/rjmDfua81/9ryZaRuObY=;
+ b=edNf2wRK4FekJDj+je20dvh+tFt2sHDMFNRjffkKIYNXmKHmzCMu2MjCnVfvNXy38J
+ HRNk5qDi418uygOd4Put8I9OhMqnoJlLkAVzn1YNBd6zH0zgQrFs+ekOG21RyoTLVtL9
+ L1/4F0w8vtS4PN8DLAoslejs0VI+kdFQsgBY3P8qgOIXGErTZkzerdTC3V8puMc3m2JT
+ 14GcQljebQTXV4eMYj5EGhIYayQswknZdp7Z5DhTT6pcwhYXhdc1UvjHOFJF8olJlUVQ
+ 1IDMPsJqwIkuplCNRVtMKe+/f4Fjqsc2/fLPi+aEEmcl6/LDFTVd97ViIMAgB89oxV6K
+ 5Xew==
+X-Gm-Message-State: APjAAAVwfIPjQv0nsFKoY/iQq4SuOd9exVV2qc15T2TGdQdQG6gdtGBs
+ NXY6JKyGGICe0rfoFoYBHXtJ6mXR7c4ddoJhd/0=
+X-Google-Smtp-Source: APXvYqzOPJhV5cAVdRoldfDPOHtp/lTr0+e/QzIsU2Vql/2sUpxAKqhx17GBjBu63jJC1o7jG/OSbnfjAlPJtxM2mAE=
+X-Received: by 2002:a50:a544:: with SMTP id z4mr22877808edb.71.1561901195731; 
+ Sun, 30 Jun 2019 06:26:35 -0700 (PDT)
 MIME-Version: 1.0
-References: <20190626082512.7637-1-michonskikrzysztof@gmail.com>
- <VI1PR04MB53274E7E20C099F0F84B18198BFD0@VI1PR04MB5327.eurprd04.prod.outlook.com>
-In-Reply-To: <VI1PR04MB53274E7E20C099F0F84B18198BFD0@VI1PR04MB5327.eurprd04.prod.outlook.com>
-From: =?UTF-8?Q?Krzysztof_Micho=C5=84ski?= <michonskikrzysztof@gmail.com>
-Date: Sun, 30 Jun 2019 12:31:30 +0200
-Message-ID: <CAOiNxGDs9Ki7_y_=Mv1tnSsqObv9EYzkdmo+yLCO6gMPBLNwYA@mail.gmail.com>
-Subject: Re: [PATCH] imx: usb: get pinctrl if it's not yet initialized
-To: Peter Chen <peter.chen@nxp.com>
+References: <20190629125933.679-1-linus.walleij@linaro.org>
+ <20190629125933.679-4-linus.walleij@linaro.org>
+In-Reply-To: <20190629125933.679-4-linus.walleij@linaro.org>
+From: Rob Clark <robdclark@gmail.com>
+Date: Sun, 30 Jun 2019 06:26:19 -0700
+Message-ID: <CAF6AEGun2QEMVyO+L3W0UJubgzVPrFr5jkVoTOwHpy9b4MeJMQ@mail.gmail.com>
+Subject: Re: [PATCH 4/7] gpio: of: Support some legacy Qualcomm HDMI bindings
+To: Linus Walleij <linus.walleij@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190630_033146_681252_8AFD720A 
-X-CRM114-Status: GOOD (  14.49  )
+X-CRM114-CacheID: sfid-20190630_062638_288238_91221E23 
+X-CRM114-Status: GOOD (  21.41  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:d43 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:543 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (michonskikrzysztof[at]gmail.com)
+ provider (robdclark[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -94,40 +93,119 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "afenkart@gmail.com" <afenkart@gmail.com>,
- "gregkh@linuxfoundation.org" <gregkh@linuxfoundation.org>,
- "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
- "linux-usb@vger.kernel.org" <linux-usb@vger.kernel.org>,
- "festevam@gmail.com" <festevam@gmail.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: freedreno <freedreno@lists.freedesktop.org>,
+ Maxime Ripard <maxime.ripard@bootlin.com>,
+ linux-arm-msm <linux-arm-msm@vger.kernel.org>,
+ Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
+ dri-devel <dri-devel@lists.freedesktop.org>, Sean Paul <sean@poorly.run>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-SGkgUGV0ZXIsClllcyB5b3UgYXJlIHJpZ2h0ISBUaGlzIGZpbGUncyBiZWVuIHBhdGNoZWQgcHJl
-dmlvdXNseSBpbiBteSBmb3JrLgpTb3JyeSBhYm91dCB0aGF0LgoKUmVnYXJkcywKS3J6eXN6dG9m
-IE1pY2hvxYRza2kKCmN6dy4sIDI3IGN6ZSAyMDE5IG8gMDU6MjIgUGV0ZXIgQ2hlbiA8cGV0ZXIu
-Y2hlbkBueHAuY29tPiBuYXBpc2HFgihhKToKPgo+Cj4gPiBJbiBjYXNlIHVzYiBwaHkgbW9kZSBp
-cyBvdGhlciB0aGFuIFVTQlBIWV9JTlRFUkZBQ0VfTU9ERV9IU0lDIHRoZSBwaW5jdHJsCj4gPiBm
-b3IgZGV2aWNlIGlzIG5vdCBhY3F1aXJlZC4gSXQgaXMgaG93ZXZlciB1c2VkIGxhdGVyIHJlZ2Fy
-ZGxlc3Mgb2YgdGhlIG1vZGUsIGhlbmNlCj4gPiBsZWFkcyB0byByZXF1ZXN0aW5nIGFjY2VzcyB0
-byB1bmluaXRpYWxpemVkIGRhdGEuCj4gPgo+ID4gU2lnbmVkLW9mZi1ieTogS3J6eXN6dG9mIE1p
-Y2hvbnNraSA8bWljaG9uc2tpa3J6eXN6dG9mQGdtYWlsLmNvbT4KPiA+IC0tLQo+ID4gIGRyaXZl
-cnMvdXNiL2NoaXBpZGVhL2NpX2hkcmNfaW14LmMgfCAzICsrKwo+ID4gIDEgZmlsZSBjaGFuZ2Vk
-LCAzIGluc2VydGlvbnMoKykKPiA+Cj4gPiBkaWZmIC0tZ2l0IGEvZHJpdmVycy91c2IvY2hpcGlk
-ZWEvY2lfaGRyY19pbXguYyBiL2RyaXZlcnMvdXNiL2NoaXBpZGVhL2NpX2hkcmNfaW14LmMKPiA+
-IGluZGV4IGE0YjQ4MmMzZGM2NS4uMmYwMmIzNWM0MGI2IDEwMDY0NAo+ID4gLS0tIGEvZHJpdmVy
-cy91c2IvY2hpcGlkZWEvY2lfaGRyY19pbXguYwo+ID4gKysrIGIvZHJpdmVycy91c2IvY2hpcGlk
-ZWEvY2lfaGRyY19pbXguYwo+ID4gQEAgLTQyOCw2ICs0MjgsOSBAQCBzdGF0aWMgaW50IGNpX2hk
-cmNfaW14X3Byb2JlKHN0cnVjdCBwbGF0Zm9ybV9kZXZpY2UgKnBkZXYpCj4gPiAgICAgICAgICAg
-ICAgIHBtX3J1bnRpbWVfZW5hYmxlKGRldik7Cj4gPiAgICAgICB9Cj4gPgo+ID4gKyAgICAgaWYg
-KCFkYXRhLT5waW5jdHJsKQo+ID4gKyAgICAgICAgICAgICBkYXRhLT5waW5jdHJsID0gZGV2bV9w
-aW5jdHJsX2dldChkZXYpOwo+ID4gKwo+ID4gICAgICAgaWYgKCFJU19FUlIoZGF0YS0+cGluY3Ry
-bCkpIHsKPiA+ICAgICAgICAgICAgICAgc3RydWN0IHBpbmN0cmxfc3RhdGUgKnN0YXRlOwo+ID4K
-Pgo+IFNvcnJ5LCB3aGF0IGtlcm5lbCB2ZXJzaW9uIHlvdSBhcmUgdXNpbmc/IFRoZSByZWNlbnQg
-a2VybmVsIGlzIGRpZmZlcmVudCB3aXRoIHRoZSBwYXRjaCB5b3UgcG9zdGVkLgo+Cj4gUGV0ZXIK
-PgoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgt
-YXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQu
-b3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJt
-LWtlcm5lbAo=
+On Sat, Jun 29, 2019 at 6:02 AM Linus Walleij <linus.walleij@linaro.org> wrote:
+>
+> Insteaf of the MSM DRM code going around and inspecting the
+> device tree nodes by itself to find "qcom,misc" GPIO phandles,
+> we add a quirk to the core so that if "qcom,misc-gpios" and
+> "qcom,misc-gpio" isn't found, we try to find just
+> "qcom,misc" as a last resort. Provide an explicit whitelist
+> for those GPIOs.
+>
+> Cc: Rob Clark <robdclark@gmail.com>
+> Cc: Sean Paul <sean@poorly.run>
+> Cc: linux-arm-msm@vger.kernel.org
+> Cc: freedreno@lists.freedesktop.org
+> Signed-off-by: Linus Walleij <linus.walleij@linaro.org>
+> ---
+> Rob/Sean: if the approach is overall OK I will merge this
+> one patch already for v5.3 so the rest can be queued for
+> v5.4 later.
+
+I'm ok with this.. although I wonder if we need to try this hard for
+backwards compat?  At least I don't see any upstream dts
+using the old names.  Maybe it is ok to just look the other way and break them.
+
+IIRC the old names were based on old downstream android kernel
+bindings.. but upstream snapdragon support is pretty good these days
+and it has been years since I've had to do drm/msm development by
+backporting the upstream driver to a crusty old android kernel.
+
+BR,
+-R
+
+> ---
+>  drivers/gpio/gpiolib-of.c | 43 +++++++++++++++++++++++++++++++++++++++
+>  1 file changed, 43 insertions(+)
+>
+> diff --git a/drivers/gpio/gpiolib-of.c b/drivers/gpio/gpiolib-of.c
+> index aec7bd86ae7e..c927eaf6c88f 100644
+> --- a/drivers/gpio/gpiolib-of.c
+> +++ b/drivers/gpio/gpiolib-of.c
+> @@ -286,6 +286,45 @@ static struct gpio_desc *of_find_regulator_gpio(struct device *dev, const char *
+>         return desc;
+>  }
+>
+> +/*
+> + * Some non-standard Qualcomm HDMI GPIOs need to be supported as they exist
+> + * in random old device trees out there.
+> + */
+> +static struct gpio_desc *of_find_hdmi_gpio(struct device *dev,
+> +                                          const char *con_id,
+> +                                          enum of_gpio_flags *of_flags)
+> +{
+> +       /*
+> +        * These are the connection IDs we accept as legacy GPIO phandles.
+> +        * If we get here, the same prefix ending with "-gpio" and "-gpios"
+> +        * has already been tried so now we finally try with no suffix.
+> +        */
+> +       const char *whitelist[] = {
+> +               "qcom,hdmi-tx-ddc-clk",
+> +               "qcom,hdmi-tx-ddc-data",
+> +               "qcom,hdmi-tx-hpd",
+> +               "qcom,hdmi-tx-mux-en",
+> +               "qcom,hdmi-tx-mux-sel",
+> +               "qcom,hdmi-tx-mux-lpm",
+> +       };
+> +       struct device_node *np = dev->of_node;
+> +       struct gpio_desc *desc;
+> +       int i;
+> +
+> +       if (!IS_ENABLED(CONFIG_DRM_MSM))
+> +               return ERR_PTR(-ENOENT);
+> +
+> +       if (!con_id)
+> +               return ERR_PTR(-ENOENT);
+> +
+> +       i = match_string(whitelist, ARRAY_SIZE(whitelist), con_id);
+> +       if (i < 0)
+> +               return ERR_PTR(-ENOENT);
+> +
+> +       desc = of_get_named_gpiod_flags(np, con_id, 0, of_flags);
+> +       return desc;
+> +}
+> +
+>  struct gpio_desc *of_find_gpio(struct device *dev, const char *con_id,
+>                                unsigned int idx, unsigned long *flags)
+>  {
+> @@ -330,6 +369,10 @@ struct gpio_desc *of_find_gpio(struct device *dev, const char *con_id,
+>         if (IS_ERR(desc) && PTR_ERR(desc) != -EPROBE_DEFER)
+>                 desc = of_find_regulator_gpio(dev, con_id, &of_flags);
+>
+> +       /* Special handling for HDMI GPIOs if used */
+> +       if (IS_ERR(desc) && PTR_ERR(desc) != -EPROBE_DEFER)
+> +               desc = of_find_hdmi_gpio(dev, con_id, &of_flags);
+> +
+>         if (IS_ERR(desc))
+>                 return desc;
+>
+> --
+> 2.20.1
+>
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
