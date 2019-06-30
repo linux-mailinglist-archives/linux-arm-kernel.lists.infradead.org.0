@@ -2,55 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 589725B072
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 30 Jun 2019 17:35:25 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1AE865B223
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 30 Jun 2019 23:45:40 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:References:
-	To:From:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=IyHmWu8pVBk9dddkAna3EvQCS0xIunvdm4F2OEgnh6E=; b=qJCOq4uRUsMNK4/r3K5PJ+2Ko
-	GhVE32Knj3iRZcEGyFXn6DVkLWxT/xRD9IFJIqDvknVgw1SnMS11teFN7FaM65oiWqOJnIvyCLYvw
-	CtUb0usYlY91/CVbu1G/zyfTI46boP6RXoIRWAhzjxFNT4ZBFWwwnbnJs2v0BYMzD1in4QeVhR0WQ
-	FKdD1pz0vFCToqQCt8MJ5uUQqmSAXe4EjpdOgZexrB03Vs1T1NeepZ+5veYLY2yoEqZj44gvBsu4I
-	cJP8SSgGAPRlv1kkFjU3PnzhoqO8yGsn3RPjolNeWpT3rUkg1upS5iJqUYsP2TgtitkyW7Y4Jw1+d
-	WWRznp9gg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:References:To:Subject:From:Reply-To:Cc:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=xeCwIZchqR2jnVpzVaa+zNahk0/Iwq1JWl5ZC7CIcZ4=; b=f/XBLmaSKVNAaUpx/wrhOpWuC/
+	1MuLJfQrkTsgf3a3pZdZc/mlKWl5Sn95nZrlyqR+y9+fju8sSVaviAbhJEZAXd4VWcfYT57ZJqTDA
+	iJqLz+a0paLf2d9J4+hWKzMHoq725AouifsuarCeD0x8QBsDvipBlYoe9k0K5yTxG2pWLE1lEZvDZ
+	CsbqqOZJlnjiXnzmfu7l+hajFzHFzuc2tCYOuPeBAHOl5kbAIK1MRp9GJ1rdTSMkXdcRqPx+/kyEA
+	XE8mQ+SKtqHOLhJxHAnHtidUuBRZ8JMvf92GDmQQekYb5lwIVwTGy78eIxJZ8IJwQJq5ttEEw0Weo
+	NiuPtxOw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hhbrP-0008O1-Bi; Sun, 30 Jun 2019 15:35:23 +0000
-Received: from relay4-d.mail.gandi.net ([217.70.183.196])
+	id 1hhhde-0006fe-Ax; Sun, 30 Jun 2019 21:45:34 +0000
+Received: from hostingweb31-40.netsons.net ([89.40.174.40])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hhbr5-0007UX-Es; Sun, 30 Jun 2019 15:35:05 +0000
-X-Originating-IP: 79.86.19.127
-Received: from [192.168.0.12] (127.19.86.79.rev.sfr.net [79.86.19.127])
- (Authenticated sender: alex@ghiti.fr)
- by relay4-d.mail.gandi.net (Postfix) with ESMTPSA id 9122DE0004;
- Sun, 30 Jun 2019 15:34:41 +0000 (UTC)
-Subject: Re: [PATCH v4 00/14] Provide generic top-down mmap layout functions
-From: Alex Ghiti <alex@ghiti.fr>
-To: Paul Burton <paul.burton@mips.com>
-References: <20190526134746.9315-1-alex@ghiti.fr>
- <bfb1565d-0468-8ea8-19f9-b862faa4f1d4@ghiti.fr>
-Message-ID: <c4049021-50fd-32e5-7052-24d58b31e072@ghiti.fr>
-Date: Sun, 30 Jun 2019 11:34:40 -0400
+ id 1hhhdQ-0005ro-6s
+ for linux-arm-kernel@lists.infradead.org; Sun, 30 Jun 2019 21:45:22 +0000
+Received: from [78.134.78.251] (port=38792 helo=[192.168.77.66])
+ by hostingweb31.netsons.net with esmtpsa
+ (TLSv1.2:ECDHE-RSA-AES128-GCM-SHA256:128) (Exim 4.92)
+ (envelope-from <luca@lucaceresoli.net>)
+ id 1hhhd6-000CcS-Hw; Sun, 30 Jun 2019 23:45:00 +0200
+From: Luca Ceresoli <luca@lucaceresoli.net>
+Subject: Re: [PATCH v9 2/2] media: v4l: xilinx: Add Xilinx MIPI CSI-2 Rx
+ Subsystem driver
+To: Vishal Sagar <vishal.sagar@xilinx.com>, Hyun Kwon <hyunk@xilinx.com>,
+ laurent.pinchart@ideasonboard.com, mchehab@kernel.org, robh+dt@kernel.org,
+ mark.rutland@arm.com, Michal Simek <michals@xilinx.com>,
+ linux-media@vger.kernel.org, devicetree@vger.kernel.org,
+ hans.verkuil@cisco.com, linux-arm-kernel@lists.infradead.org,
+ linux-kernel@vger.kernel.org, Dinesh Kumar <dineshk@xilinx.com>,
+ Sandip Kothari <sandipk@xilinx.com>, Jacopo Mondi <jacopo@jmondi.org>
+References: <1560247809-117978-1-git-send-email-vishal.sagar@xilinx.com>
+ <1560247809-117978-3-git-send-email-vishal.sagar@xilinx.com>
+Message-ID: <b51bdf5d-4002-5ec6-d687-b97b4f8bbd78@lucaceresoli.net>
+Date: Sun, 30 Jun 2019 23:45:00 +0200
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.4.0
+ Thunderbird/60.7.0
 MIME-Version: 1.0
-In-Reply-To: <bfb1565d-0468-8ea8-19f9-b862faa4f1d4@ghiti.fr>
-Content-Language: sv-FI
+In-Reply-To: <1560247809-117978-3-git-send-email-vishal.sagar@xilinx.com>
+Content-Language: en-US
+X-AntiAbuse: This header was added to track abuse,
+ please include it with any abuse report
+X-AntiAbuse: Primary Hostname - hostingweb31.netsons.net
+X-AntiAbuse: Original Domain - lists.infradead.org
+X-AntiAbuse: Originator/Caller UID/GID - [47 12] / [47 12]
+X-AntiAbuse: Sender Address Domain - lucaceresoli.net
+X-Get-Message-Sender-Via: hostingweb31.netsons.net: authenticated_id:
+ luca@lucaceresoli.net
+X-Authenticated-Sender: hostingweb31.netsons.net: luca@lucaceresoli.net
+X-Source: 
+X-Source-Args: 
+X-Source-Dir: 
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190630_083503_828069_D3E376A5 
-X-CRM114-Status: GOOD (  21.34  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20190630_144520_486066_7FC08825 
+X-CRM114-Status: GOOD (  20.31  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.183.196 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -62,188 +81,177 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Albert Ou <aou@eecs.berkeley.edu>, Kees Cook <keescook@chromium.org>,
- Catalin Marinas <catalin.marinas@arm.com>, Palmer Dabbelt <palmer@sifive.com>,
- Will Deacon <will.deacon@arm.com>, Russell King <linux@armlinux.org.uk>,
- Ralf Baechle <ralf@linux-mips.org>, linux-kernel@vger.kernel.org,
- linux-mm@kvack.org, Luis Chamberlain <mcgrof@kernel.org>,
- Alexander Viro <viro@zeniv.linux.org.uk>, James Hogan <jhogan@kernel.org>,
- linux-fsdevel@vger.kernel.org, linux-riscv@lists.infradead.org,
- linux-mips@vger.kernel.org, Christoph Hellwig <hch@lst.de>,
- Andrew Morton <akpm@linux-foundation.org>,
- linux-arm-kernel@lists.infradead.org
-Content-Transfer-Encoding: quoted-printable
-Content-Type: text/plain; charset="windows-1252"; Format="flowed"
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 6/13/19 1:29 AM, Alex Ghiti wrote:
-> On 5/26/19 9:47 AM, Alexandre Ghiti wrote:
->> This series introduces generic functions to make top-down mmap layout
->> easily accessible to architectures, in particular riscv which was
->> the initial goal of this series.
->> The generic implementation was taken from arm64 and used successively
->> by arm, mips and finally riscv.
->>
->> Note that in addition the series fixes 2 issues:
->> - stack randomization was taken into account even if not necessary.
->> - [1] fixed an issue with mmap base which did not take into account
->> =A0=A0 randomization but did not report it to arm and mips, so by moving
->> =A0=A0 arm64 into a generic library, this problem is now fixed for both
->> =A0=A0 architectures.
->>
->> This work is an effort to factorize architecture functions to avoid
->> code duplication and oversights as in [1].
->>
->> [1]: =
+Hi Vishal,
 
->> https://www.mail-archive.com/linux-kernel@vger.kernel.org/msg1429066.html
->>
->> Changes in v4:
->> =A0=A0 - Make ARCH_WANT_DEFAULT_TOPDOWN_MMAP_LAYOUT select =
+a few questions below about the SLBF error management.
 
->> ARCH_HAS_ELF_RANDOMIZE
->> =A0=A0=A0=A0 by default as suggested by Kees,
->> =A0=A0 - ARCH_WANT_DEFAULT_TOPDOWN_MMAP_LAYOUT depends on MMU and define=
-s =
+On 11/06/19 12:10, Vishal Sagar wrote:
+> The Xilinx MIPI CSI-2 Rx Subsystem soft IP is used to capture images
+> from MIPI CSI-2 camera sensors and output AXI4-Stream video data ready
+> for image processing. Please refer to PG232 for details.
+> 
+> The driver is used to set the number of active lanes, if enabled
+> in hardware. The CSI2 Rx controller filters out all packets except for
+> the packets with data type fixed in hardware. RAW8 packets are always
+> allowed to pass through.
+> 
+> It is also used to setup and handle interrupts and enable the core. It
+> logs all the events in respective counters between streaming on and off.
+> 
+> The driver supports only the video format bridge enabled configuration.
+> Some data types like YUV 422 10bpc, RAW16, RAW20 are supported when the
+> CSI v2.0 feature is enabled in design. When the VCX feature is enabled,
+> the maximum number of virtual channels becomes 16 from 4.
+> 
+> Signed-off-by: Vishal Sagar <vishal.sagar@xilinx.com>
+> Reviewed-by: Hyun Kwon <hyun.kwon@xilinx.com>
 
->> the
->> =A0=A0=A0=A0 functions needed by ARCH_HAS_ELF_RANDOMIZE =3D> architectur=
-es that =
+...
 
->> use
->> =A0=A0=A0=A0 the generic mmap topdown functions cannot have =
+> --- /dev/null
+> +++ b/drivers/media/platform/xilinx/xilinx-csi2rxss.c
 
->> ARCH_HAS_ELF_RANDOMIZE
->> =A0=A0=A0=A0 selected without MMU, but I think it's ok since randomizati=
-on =
+...
+> +/**
+> + * xcsi2rxss_irq_handler - Interrupt handler for CSI-2
+> + * @irq: IRQ number
+> + * @dev_id: Pointer to device state
+> + *
+> + * In the interrupt handler, a list of event counters are updated for
+> + * corresponding interrupts. This is useful to get status / debug.
+> + *
+> + * In case of stream line buffer full condition, the IP is reset, stopped and
+> + * an event is raised.
+> + *
+> + * Return: IRQ_HANDLED after handling interrupts
+> + *         IRQ_NONE is no interrupts
+> + */
+> +static irqreturn_t xcsi2rxss_irq_handler(int irq, void *dev_id)
+> +{
+> +	struct xcsi2rxss_state *state = (struct xcsi2rxss_state *)dev_id;
+> +	struct xcsi2rxss_core *core = &state->core;
+> +	u32 status;
+> +
+> +	status = xcsi2rxss_read(core, XCSI_ISR_OFFSET) & XCSI_ISR_ALLINTR_MASK;
+> +	dev_dbg_ratelimited(core->dev, "interrupt status = 0x%08x\n", status);
+> +
+> +	if (!status)
+> +		return IRQ_NONE;
+> +
+> +	/* Received a short packet */
+> +	if (status & XCSI_ISR_SPFIFONE) {
+> +		dev_dbg_ratelimited(core->dev, "Short packet = 0x%08x\n",
+> +				    xcsi2rxss_read(core, XCSI_SPKTR_OFFSET));
+> +	}
+> +
+> +	/* Short packet FIFO overflow */
+> +	if (status & XCSI_ISR_SPFIFOF)
+> +		dev_alert_ratelimited(core->dev, "Short packet FIFO overflowed\n");
+> +
+> +	/*
+> +	 * Stream line buffer full
+> +	 * This means there is a backpressure from downstream IP
+> +	 */
+> +	if (status & XCSI_ISR_SLBF) {
+> +		dev_alert_ratelimited(core->dev, "Stream Line Buffer Full!\n");
+> +		if (core->rst_gpio) {
+> +			gpiod_set_value(core->rst_gpio, 1);
+> +			/* minimum 40 dphy_clk_200M cycles */
+> +			ndelay(250);
+> +			gpiod_set_value(core->rst_gpio, 0);
+> +		}
+> +		xcsi2rxss_stop_stream(state);
 
->> without
->> =A0=A0=A0=A0 MMU does not add much security anyway.
->> =A0=A0 - There is no common API to determine if a process is 32b, so I =
+I've been hit by the dreadful "Stream Line Buffer Full" error, getting
+the CSI-2 RX completely stuck in SLBF and not transmitting any frames
+sporadically after glitches in the incoming MIPI stream. And I found
+that adding xcsi2rxss_start_stream() here just after
+xcsi2rxss_stop_stream() allows to continue the stream with almost no
+interruption and without userspace intervention.
 
->> came up with
->> =A0=A0=A0=A0 !IS_ENABLED(CONFIG_64BIT) || is_compat_task() in [PATCH v4 =
-12/14].
->> =A0=A0 - Mention in the change log that x86 already takes care of not =
+Do you think this is a reliable solution, or does it have side-effects I
+didn't encounter? Note I'm not using pm nor the ctrls, so register
+writes are limited to the enable/disable code paths.
 
->> offseting mmap
->> =A0=A0=A0=A0 base address if the task does not want randomization.
->> =A0=A0 - Re-introduce a comment that should not have been removed.
->> =A0=A0 - Add Reviewed/Acked-By from Paul, Christoph and Kees, thank you =
+Does video_aresetn also reset registers?
 
->> for that.
->> =A0=A0 - I tried to minimize the changes from the commits in v3 in order =
+BTW in my code I also moved xcsi2rxss_stop_stream() before the if
+(core->rst_gpio) {}. There is no strong reason for this, I didn't
+observe any functional difference, it just looks
+more logical to me to stop the IP before resetting it.
 
->> to make
->> =A0=A0=A0=A0 easier the review of the v4, the commits changed or added a=
-re:
->> =A0=A0=A0=A0 - [PATCH v4 5/14]
->> =A0=A0=A0=A0 - [PATCH v4 8/14]
->> =A0=A0=A0=A0 - [PATCH v4 11/14]
->> =A0=A0=A0=A0 - [PATCH v4 12/14]
->> =A0=A0=A0=A0 - [PATCH v4 13/14]
->
-> Hi Paul,
->
-> Compared to the previous version you already acked, patches 11, 12 and 13
-> would need your feedback, do you have time to take a look at them ?
->
-> Hope I don't bother you,
->
-> Thanks,
->
-> Alex
->
+...
 
-Hi Paul,
+> +static int xcsi2rxss_probe(struct platform_device *pdev)
+> +{
+> +	struct v4l2_subdev *subdev;
+> +	struct xcsi2rxss_state *xcsi2rxss;
+> +	struct xcsi2rxss_core *core;
+> +	struct resource *res;
+> +	int ret, num_ctrls, i;
+> +
+> +	xcsi2rxss = devm_kzalloc(&pdev->dev, sizeof(*xcsi2rxss), GFP_KERNEL);
+> +	if (!xcsi2rxss)
+> +		return -ENOMEM;
+> +
+> +	core = &xcsi2rxss->core;
+> +	core->dev = &pdev->dev;
+> +
+> +	core->clks = devm_kmemdup(core->dev, xcsi2rxss_clks,
+> +				  sizeof(xcsi2rxss_clks), GFP_KERNEL);
+> +	if (!core->clks)
+> +		return -ENOMEM;
+> +
+> +	/* Reset GPIO */
+> +	core->rst_gpio = devm_gpiod_get_optional(core->dev, "reset",
+> +						 GPIOD_OUT_HIGH);
 
-Would you have time to give your feedback on patches 11, 12 and 13 ?
+Is GPIOD_OUT_HIGH correct? video_aresetn is active low.
+
+> +	if (IS_ERR(core->rst_gpio)) {
+> +		if (PTR_ERR(core->rst_gpio) != -EPROBE_DEFER)
+> +			dev_err(core->dev, "Video Reset GPIO not setup in DT");
+> +		return PTR_ERR(core->rst_gpio);
+> +	}
+> +
+> +	mutex_init(&xcsi2rxss->lock);
+> +
+> +	ret = xcsi2rxss_parse_of(xcsi2rxss);
+> +	if (ret < 0)
+> +		return ret;
+> +
+> +	res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
+> +	core->iomem = devm_ioremap_resource(core->dev, res);
+> +	if (IS_ERR(core->iomem))
+> +		return PTR_ERR(core->iomem);
+> +
+> +	core->num_clks = ARRAY_SIZE(xcsi2rxss_clks);
+> +
+> +	ret = clk_bulk_get(core->dev, core->num_clks, core->clks);
+> +	if (ret)
+> +		return ret;
+> +
+> +	ret = clk_bulk_prepare_enable(core->num_clks, core->clks);
+> +	if (ret)
+> +		goto err_clk_put;
+> +
+> +	if (xcsi2rxss->core.rst_gpio) {
+> +		gpiod_set_value_cansleep(xcsi2rxss->core.rst_gpio, 1);
+> +		/* minimum of 40 dphy_clk_200M cycles */
+> +		usleep_range(1, 2);
+> +		gpiod_set_value_cansleep(xcsi2rxss->core.rst_gpio, 0);
+> +	}
+
+"xcsi2rxss->core" -> "core" in these lines.
 
 Thanks,
-
-Alex
-
-
->
->>
->> Changes in v3:
->> =A0=A0 - Split into small patches to ease review as suggested by Christo=
-ph
->> =A0=A0=A0=A0 Hellwig and Kees Cook
->> =A0=A0 - Move help text of new config as a comment, as suggested by =
-
->> Christoph
->> =A0=A0 - Make new config depend on MMU, as suggested by Christoph
->>
->> Changes in v2 as suggested by Christoph Hellwig:
->> =A0=A0 - Preparatory patch that moves randomize_stack_top
->> =A0=A0 - Fix duplicate config in riscv
->> =A0=A0 - Align #if defined on next line =3D> this gives rise to a checkp=
-atch
->> =A0=A0=A0=A0 warning. I found this pattern all around the tree, in the s=
-ame =
-
->> proportion
->> =A0=A0=A0=A0 as the previous pattern which was less pretty:
->> =A0=A0=A0=A0 git grep -C 1 -n -P "^#if defined.+\|\|.*\\\\$"
->>
->> Alexandre Ghiti (14):
->> =A0=A0 mm, fs: Move randomize_stack_top from fs to mm
->> =A0=A0 arm64: Make use of is_compat_task instead of hardcoding this test
->> =A0=A0 arm64: Consider stack randomization for mmap base only when neces=
-sary
->> =A0=A0 arm64, mm: Move generic mmap layout functions to mm
->> =A0=A0 arm64, mm: Make randomization selected by generic topdown mmap la=
-yout
->> =A0=A0 arm: Properly account for stack randomization and stack guard gap
->> =A0=A0 arm: Use STACK_TOP when computing mmap base address
->> =A0=A0 arm: Use generic mmap top-down layout and brk randomization
->> =A0=A0 mips: Properly account for stack randomization and stack guard gap
->> =A0=A0 mips: Use STACK_TOP when computing mmap base address
->> =A0=A0 mips: Adjust brk randomization offset to fit generic version
->> =A0=A0 mips: Replace arch specific way to determine 32bit task with gene=
-ric
->> =A0=A0=A0=A0 version
->> =A0=A0 mips: Use generic mmap top-down layout and brk randomization
->> =A0=A0 riscv: Make mmap allocation top-down by default
->>
->> =A0 arch/Kconfig=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0=A0=A0=A0 |=A0 11 +++
->> =A0 arch/arm/Kconfig=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0 |=A0=A0 2 +-
->> =A0 arch/arm/include/asm/processor.h=A0=A0 |=A0=A0 2 -
->> =A0 arch/arm/kernel/process.c=A0=A0=A0=A0=A0=A0=A0=A0=A0 |=A0=A0 5 --
->> =A0 arch/arm/mm/mmap.c=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 |=
-=A0 52 --------------
->> =A0 arch/arm64/Kconfig=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 |=
-=A0=A0 2 +-
->> =A0 arch/arm64/include/asm/processor.h |=A0=A0 2 -
->> =A0 arch/arm64/kernel/process.c=A0=A0=A0=A0=A0=A0=A0 |=A0=A0 8 ---
->> =A0 arch/arm64/mm/mmap.c=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 |=A0 =
-72 -------------------
->> =A0 arch/mips/Kconfig=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
- |=A0=A0 2 +-
->> =A0 arch/mips/include/asm/processor.h=A0 |=A0=A0 5 --
->> =A0 arch/mips/mm/mmap.c=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 |=
-=A0 84 ----------------------
->> =A0 arch/riscv/Kconfig=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 |=
-=A0 11 +++
->> =A0 fs/binfmt_elf.c=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0=A0 |=A0 20 ------
->> =A0 include/linux/mm.h=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 |=
-=A0=A0 2 +
->> =A0 kernel/sysctl.c=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0=A0 |=A0=A0 6 +-
->> =A0 mm/util.c=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0=A0=A0=A0=A0=A0 | 107 ++++++++++++++++++++++++++++-
->> =A0 17 files changed, 137 insertions(+), 256 deletions(-)
->>
->
-> _______________________________________________
-> linux-riscv mailing list
-> linux-riscv@lists.infradead.org
-> http://lists.infradead.org/mailman/listinfo/linux-riscv
+-- 
+Luca
 
 _______________________________________________
 linux-arm-kernel mailing list
