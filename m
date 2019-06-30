@@ -2,87 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 418FB5AD1B
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 29 Jun 2019 21:33:11 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1843E5AE07
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 30 Jun 2019 05:56:55 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=TpHomMyLdJGexWQOEjYReMEMI4jwNY15fldAE+BdiWk=; b=tuaVaD9eBnx0sK4bZawukSvrw3
-	epmJTRcK9GQV/uB8NvR1TP2ObUsQJ/r89nBXRFl7RHc0O6dDcokkoKoc03CH5fnTFhj1dYLchIXoL
-	BExeWvOAR3/TKzEf7ZwjspCChO6fykmVluhdV5rOIidAg/u699t3K+GlDEsOCms3ib3//Lx7wKFcC
-	9Lnw+ZBsF9vMsD6XsNRlxpvC/7+YSVVAWorBf9MavQBNO4tKqSxTzVjmQF4K5nAv3aFfyrIMblKBj
-	1h/sNyK9CB8IplumFcviVfZBgRk4lbIv7L7fW9JkjXQ/clXRZAnR2zBf8igMQsMcnU3PmON31yJPq
-	CD9l//1A==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Mime-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=Qd76cg87C6Vt+o+Qsq+XfseAFQwW1rbckMhNakK0ioE=; b=PlyAUn66BB7rFn
+	tmSWn5xBMybvcVQN1JvmNxFNWig+UrwZ3LzFn1kBT//qlv2FYskiefR33+k5eGOmdDZ3BAnmI2TUG
+	l9kYKNjmMBc1GjgAqvoSZkEMXLTcqBHo8CUea69AOTrVmBb1qPhhC7hKwaVHkZmWj01yJ68u5JOp/
+	WZ6dbZkKRN1KADk+/ibyoaoegE1kp2MHAqHL9+cXk+/GJ3LWoD8sCPCeAglr7Hggo29ynsL/xB9bD
+	iONrAf8dZo5cDKs6Zk/sg4d/teZg2p8fVkKDsvMwJVZH5ind7HOCQF9vPPwrns+NJAKEBiQOl7zic
+	IuE6qp+lv3g6lO4wuGmg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hhJ5t-0006wU-Kw; Sat, 29 Jun 2019 19:33:05 +0000
-Received: from mout.gmx.net ([212.227.15.19])
+	id 1hhQxM-0000ew-GP; Sun, 30 Jun 2019 03:56:48 +0000
+Received: from knopi.disroot.org ([178.21.23.139])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hhJ5j-0006um-Mn; Sat, 29 Jun 2019 19:32:57 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=gmx.net;
- s=badeba3b8450; t=1561836763;
- bh=jrRQkN3aA1piA4Bl07G3I8c6oLly5GccQgg7xp8+yzY=;
- h=X-UI-Sender-Class:From:To:Cc:Subject:Date:In-Reply-To:References;
- b=TL3VRguo29vAIRsylpLnKAbl0ZOQxVlF7zB7RQlTgvyLIkxoD2iJrv0W6NkcPxpew
- xV/syWOAEe/npkRjkyHU2hsn3Vn71bSF6sos2tlxhZ3y+F0uXiwL8zDku5Mywhd9zD
- ioiraiGlRxSwI2+a16G9yq3MoXnuH2sWCKv9d8oo=
-X-UI-Sender-Class: 01bb95c1-4bf8-414a-932a-4f6e2808ef9c
-Received: from localhost.localdomain ([37.4.249.111]) by mail.gmx.com
- (mrgmx003 [212.227.17.190]) with ESMTPSA (Nemesis) id
- 0LkgAG-1iFGKV2Owe-00aYV1; Sat, 29 Jun 2019 21:32:43 +0200
-From: Stefan Wahren <wahrenst@gmx.net>
-To: Eric Anholt <eric@anholt.net>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Dave Stevenson <dave.stevenson@raspberrypi.org>,
- Hans Verkuil <hverkuil@xs4all.nl>,
- Mauro Carvalho Chehab <mchehab@kernel.org>
-Subject: [PATCH V2 29/29] staging: bcm2835-camera: Correct ctrl
- min/max/step/def to 64bit
-Date: Sat, 29 Jun 2019 21:31:43 +0200
-Message-Id: <1561836703-2528-5-git-send-email-wahrenst@gmx.net>
-X-Mailer: git-send-email 2.7.4
-In-Reply-To: <1561836703-2528-1-git-send-email-wahrenst@gmx.net>
-References: <1561836703-2528-1-git-send-email-wahrenst@gmx.net>
-X-Provags-ID: V03:K1:bgoZcbjSjDVWzSZxUn5AN5Hf5YZPfhECDzvHxY8GV8k7q6xAZ1D
- S26PqL7/wPSstvrQ4QMSo+mHwA03PVdghA8/Zx+sBtRX1i7cUpTn3IAhH/tNBpVNajLjuOJ
- GWehO2nKTB25aOP+23Nko5bNVBMtIIWcnQU60FL0933UEJYDaalCcqBA2nyx+gag2moRq3z
- POo/9FZEXY2AyrlzcXCUA==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:D3MrqUVb8cg=:LFsnxrzTQAbxiXnlCQFW3E
- I/jdmQSM/ySirOv4nz/dqQuxk/Ghaq5Mayle8jHaxGma/hLQCnR9fetbmp5HnZKSSHvHztFx+
- OHMIl7L/tHYYI6HEacwxAhYlLLhcVS3ScCw3Sdo+XXYPC/xd2xhSDO8TUCWtK84mrNK0M8IBm
- 5wJGlJBAm7+ngYDss5dkUDKo0cVIeVXiciCOzDTnuup9aTar6YwLADpFNw9rl3PRMfcYGn7BL
- VGQoshSH4RLkEe9SVicuggN67jink9qJt/v3Oc/TyZG0E9dhtW2ZlRNxPgVyyVl92m6FT20Fe
- tdhOL13KUcWXJYqItB/filIjtcmAAC8ZamBY2a3YPzs3WQtHShUfiiWwv2EBWNvjgGv7StBa/
- w/II9CJwJAWfVpym/Fn1TXjExbO5VA5qQ1S/5HvIqNOb0OrTaOLzPp/7xq1AabQDk5Y4ipP6G
- Tc5pEdkXm8UfXPzcYAJ7g57VW0Yd0XI80uYV/sFH1tgX72MZLO2HvFaAGCdbttLpoRYhgHNEs
- QKmZgHWfi+/G+ILQD9qS3MS5Q6oMeRYCArlOEf/rdZvQ6ZCiem/Z8BovM0RsLHIxdtfGPFgwC
- WW969VzT15rxZsUFA9pQwdIWEVWMWsen4Ldi1qPPmqarIGDRsbDUI1It+Dl1QCP9Rm/80/xEX
- 9ovcWDiyDgJSLXz+zEEdoqhNl8ivYFFSGCaS6ui+DrhTQ2ocyIL8IM3jTtekeSqFsdVry36rj
- S7UvDFZkfNsOyPsJgRz+VIfAX40w2wJ9HnQb7zVaFP7C2Uqs8mdx0o04JNOx9vw4miaGpFJCB
- B2/LRA5vpteMOsJMtOxUg8WOvMyjOBLZZPlD5FlHDa3b+3MPY6v62LATD2XC44K8hXHjCKeyk
- nh7xBgtK/jOinyjFjOPggobNu5ObzO5bV/ioTemfYZA0fwo/JA7NZ1n6dY9wYxmy3TJB0opqS
- yQJZT8plt/+39JF2sIs+2dOTP4f8Q60FdRsYu6D2gQLqPXDjAGO2trC+xDuNRrUmlzhngAwIQ
- g4Hv1UsOoAsaeWrwXOcFtA98OwXwdWqYwF6uX9z/8WG9gXPqeEFb7GqcR8FJmO4dgE3qo79GL
- B2wzwQ0MT9vcNw=
+ id 1hhQx9-0000eA-Ra
+ for linux-arm-kernel@lists.infradead.org; Sun, 30 Jun 2019 03:56:38 +0000
+Received: from localhost (localhost [127.0.0.1])
+ by disroot.org (Postfix) with ESMTP id 82CE435AD1;
+ Sun, 30 Jun 2019 05:49:54 +0200 (CEST)
+X-Virus-Scanned: Debian amavisd-new at disroot.org
+Received: from knopi.disroot.org ([127.0.0.1])
+ by localhost (disroot.org [127.0.0.1]) (amavisd-new, port 10024)
+ with ESMTP id RcVaHcMZLjIq; Sun, 30 Jun 2019 05:49:53 +0200 (CEST)
+From: Chinmaya Krishnan Mahesh <chinmaya.mahesh@disroot.org>
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=disroot.org; s=mail;
+ t=1561866593; bh=9Ans4RlZn8dOH7qDF/10KOpQwK7T65Z7lmdyjzSs6EM=;
+ h=From:To:Cc:Subject:Date;
+ b=cxRkBFtLkJqF49ZKRJOmdQPn1WiL+0gAI0IbH2izNDvE48VmypAe/M+yVswDVcpFO
+ G0jOYvwIl4tfIuw0ErGts8jklgNnMtIWEvNlyZh8OcbO8t+B05MxH238awK/j5QT/v
+ nbXssB0o4AV839WeDkBIp/uhnTDe0fbi/XVVhvPViaoGK6bTFZNUFLBjloaQ5Di5dq
+ RXOmMjmDq8tGhSHt/U4rrmlPxmbRJOkNDNvw4+b26gcLLvKWHgsf5t5eQpesV8YC9v
+ zQX855x2+tPa8WxqO2WIhB0VOjyXG2m+5kjkuCm5D5k7o7pU+3BZF6rvzObA8kfsqZ
+ zhNvFdQA6TUqw==
+To: 
+Subject: [PATCH] media: imx7-media-csi: Remove unneeded break after return
+Date: Sat, 29 Jun 2019 22:49:04 -0500
+Message-Id: <20190630034905.7124-1-chinmaya.mahesh@disroot.org>
+Mime-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190629_123256_082682_2002D62A 
-X-CRM114-Status: GOOD (  12.29  )
+X-CRM114-CacheID: sfid-20190629_205636_177781_6C7F4910 
+X-CRM114-Status: UNSURE (   7.59  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (wahrenst[at]gmx.net)
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.227.15.19 listed in list.dnswl.org]
+ no trust [178.21.23.139 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -101,76 +76,44 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devel@driverdev.osuosl.org, Stefan Wahren <wahrenst@gmx.net>,
- linux-rpi-kernel@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
- linux-media@vger.kernel.org
-MIME-Version: 1.0
+Cc: devel@driverdev.osuosl.org, Fabio Estevam <festevam@gmail.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Sascha Hauer <s.hauer@pengutronix.de>, linux-media@vger.kernel.org,
+ linux-kernel@vger.kernel.org, Rui Miguel Silva <rmfrfs@gmail.com>,
+ NXP Linux Team <linux-imx@nxp.com>, Philipp Zabel <p.zabel@pengutronix.de>,
+ Steve Longerbeam <slongerbeam@gmail.com>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>, Shawn Guo <shawnguo@kernel.org>,
+ linux-arm-kernel@lists.infradead.org,
+ Chinmaya Krishnan Mahesh <chinmaya.mahesh@disroot.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Dave Stevenson <dave.stevenson@raspberrypi.org>
+This patch fixes the checkpatch.pl warning:
 
-The V4L2 control API was expanded to take 64 bit values in commit
-0ba2aeb6dab (Apr 16 2014), but as this driver wasn't in the mainline
-kernel at that point this was overlooked.
+WARNING: break is not useful after a goto or return
 
-Update to use 64 bit values. This also fixes a couple of warnings
-in 64 bit builds.
-
-Signed-off-by: Dave Stevenson <dave.stevenson@raspberrypi.org>
-Signed-off-by: Stefan Wahren <wahrenst@gmx.net>
-Acked-by: Hans Verkuil <hverkuil-cisco@xs4all.nl>
-Acked-by: Mauro Carvalho Chehab <mchehab+samsung@kernel.org>
+Signed-off-by: Chinmaya Krishnan Mahesh <chinmaya.mahesh@disroot.org>
 ---
- drivers/staging/vc04_services/bcm2835-camera/controls.c | 14 +++++++-------
- 1 file changed, 7 insertions(+), 7 deletions(-)
+ drivers/staging/media/imx/imx7-media-csi.c | 1 -
+ 1 file changed, 1 deletion(-)
 
-diff --git a/drivers/staging/vc04_services/bcm2835-camera/controls.c b/drivers/staging/vc04_services/bcm2835-camera/controls.c
-index 848b14a..89786c2 100644
---- a/drivers/staging/vc04_services/bcm2835-camera/controls.c
-+++ b/drivers/staging/vc04_services/bcm2835-camera/controls.c
-@@ -78,10 +78,10 @@ struct bm2835_mmal_v4l2_ctrl {
- 	/* control minimum value or
- 	 * mask for MMAL_CONTROL_TYPE_STD_MENU
- 	 */
--	s32 min;
--	s32 max; /* maximum value of control */
--	s32 def;  /* default value of control */
--	s32 step; /* step size of the control */
-+	s64 min;
-+	s64 max; /* maximum value of control */
-+	s64 def;  /* default value of control */
-+	u64 step; /* step size of the control */
- 	const s64 *imenu; /* integer menu array */
- 	u32 mmal_id; /* mmal parameter id */
- 	bm2835_mmal_v4l2_ctrl_cb *setter;
-@@ -1250,7 +1250,7 @@ int bm2835_mmal_init_controls(struct bm2835_mmal_dev *dev,
-
- 		case MMAL_CONTROL_TYPE_STD_MENU:
- 		{
--			int mask = ctrl->min;
-+			u64 mask = ctrl->min;
-
- 			if (ctrl->id == V4L2_CID_SCENE_MODE) {
- 				/* Special handling to work out the mask
-@@ -1260,11 +1260,11 @@ int bm2835_mmal_init_controls(struct bm2835_mmal_dev *dev,
- 				 */
- 				int i;
-
--				mask = 1 << V4L2_SCENE_MODE_NONE;
-+				mask = BIT(V4L2_SCENE_MODE_NONE);
- 				for (i = 0;
- 				     i < ARRAY_SIZE(scene_configs);
- 				     i++) {
--					mask |= 1 << scene_configs[i].v4l2_scene;
-+					mask |= BIT(scene_configs[i].v4l2_scene);
- 				}
- 				mask = ~mask;
- 			}
---
-2.7.4
+diff --git a/drivers/staging/media/imx/imx7-media-csi.c b/drivers/staging/media/imx/imx7-media-csi.c
+index a708a0340eb1..c15acca1dc0d 100644
+--- a/drivers/staging/media/imx/imx7-media-csi.c
++++ b/drivers/staging/media/imx/imx7-media-csi.c
+@@ -1021,7 +1021,6 @@ static int imx7_csi_try_fmt(struct imx7_csi *csi,
+ 		break;
+ 	default:
+ 		return -EINVAL;
+-		break;
+ 	}
+ 	return 0;
+ }
+-- 
+2.22.0
 
 
 _______________________________________________
