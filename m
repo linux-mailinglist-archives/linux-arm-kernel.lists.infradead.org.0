@@ -2,76 +2,87 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4AFBE5AF51
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 30 Jun 2019 09:59:16 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 41CF85AFA6
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 30 Jun 2019 12:32:25 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ex1VQi4ze0pp+jnx5exuLo1CFIR1GCeIXDfqJUi+V7U=; b=HnSVWCbefpJSWY
-	+uCKZzihHWzz2MV/HGXLN26ZDsoxBXIt9XLrz1ZPSRwVYHP9rWVmahwLXP08dei9Mew6QNbhgfcOB
-	Im5ap6r9b350KwnI0c9U0iXCAELZoXbuutmR4ekBsCaLNhUYqU94e2/p2cInSByzn5h9Sn3cwN+1T
-	7jLO6K4zOBxhQhRvl32Dp6hQJGXA3SD5zQMYDrZWz/gHmRt1Q9RU0pMMksJl69+JuhZZb3KFyU4UF
-	7qDaaPex9Mgq8lWCl43uP0IAxx9m2dQToSFCX/NmdgQAwccKKjKUpZ7InG2tZcvyIRFLQ0bIXWPBu
-	5A+E1SrSXMTW2ewQpKuA==;
+	List-Owner; bh=0uosm2EK3ojzBMjkGsgSetT/rALf1KQbyncE8s2Y/l4=; b=Xg1SmHbakN0R4T
+	Gkb2rW6r3A533C+Xh1IUQvcW6wmlxetxS8qHqmpxcclrZDVpGRi3GI5J0poDnPriIj/ewlhhvYjXz
+	BnxQyageDMhMQ8Mm3hLsJl+ONRPcRlB0XIgQdOdTfAtmOjm7UL5k7KGWngr0f4lBwLtQJ2aQxHf2O
+	S9XR2Ity7ljvSHrMOsMGcE6KcSB02EzgSd9G/5oxg8S21YmFkOzvdJs4isSoJoz3l1fJ8HfURquxW
+	2IwkoqVeHeGjEwWKCLGUjZzaJBZtlemB48Uk2DP+TzaSFrJ48DQ9Ws+m5wp38y+evKX/zVIr3nBE2
+	ZRtuKRGQIXf9LIcF1Duw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hhUjr-00019d-1X; Sun, 30 Jun 2019 07:59:07 +0000
-Received: from conssluserg-05.nifty.com ([210.131.2.90])
+	id 1hhX82-000687-9X; Sun, 30 Jun 2019 10:32:14 +0000
+Received: from mail-io1-xd43.google.com ([2607:f8b0:4864:20::d43])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hhUjN-00019C-7J; Sun, 30 Jun 2019 07:58:38 +0000
-Received: from mail-ua1-f49.google.com (mail-ua1-f49.google.com
- [209.85.222.49]) (authenticated)
- by conssluserg-05.nifty.com with ESMTP id x5U7vxd9012600;
- Sun, 30 Jun 2019 16:58:00 +0900
-DKIM-Filter: OpenDKIM Filter v2.10.3 conssluserg-05.nifty.com x5U7vxd9012600
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nifty.com;
- s=dec2015msa; t=1561881480;
- bh=+9brw8RpKfPCHLaNnVG0ALKGMwnUyxhWFifAcm1Jy9A=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=zUawODtU0vhTiPl5qaNgEo9ByKy2yYb9HTAWd7jH5/KmRFRbCTqDf1r2buPkH6eY7
- 9KWkOkbCmnK9rkMatOmM0itxGnwHB/mMPuqRIjog1NzLgK//i1B3cXHhcTtE4pC6OU
- VNXerozMf6mNDQ2YuNycgdEq1clJ5Ax3fRXt2Pykx7Eg5zzgtutbB8rwb3gug/dYXr
- O98/bPfya6esIc3ETSzeD3199w5ae4W/Lwcu2gAXFoPoyufabN5ofgPBt7+mBFPuRl
- yTH6VnFiqBpTquzJOkRU+fykLB1M8/iymSMC+5w1Mo4YIFRRu6hO3v+dQXWv3IKe2k
- Skm8IrMNwnxoQ==
-X-Nifty-SrcIP: [209.85.222.49]
-Received: by mail-ua1-f49.google.com with SMTP id v20so3859788uao.3;
- Sun, 30 Jun 2019 00:58:00 -0700 (PDT)
-X-Gm-Message-State: APjAAAWctrw7b+P6D4G2Biblb3SwrL83sEz0gq3kmVLgrphmjT8puEtC
- 8apvNwx4jD11DD34ZQrOWyPoci5ZHpHHSdD7Rfo=
-X-Google-Smtp-Source: APXvYqzyVZpInW2H6+hLd4o8U+kv7ZbqLoJ5DBzo4XhAbsuYuwZv3Nes7LIrEN98cU8HrIW65l38Jgqlp5UdZQn0x3E=
-X-Received: by 2002:a9f:25e9:: with SMTP id 96mr10993006uaf.95.1561881479132; 
- Sun, 30 Jun 2019 00:57:59 -0700 (PDT)
+ id 1hhX7a-00067k-Jv
+ for linux-arm-kernel@lists.infradead.org; Sun, 30 Jun 2019 10:31:48 +0000
+Received: by mail-io1-xd43.google.com with SMTP id w25so22106715ioc.8
+ for <linux-arm-kernel@lists.infradead.org>;
+ Sun, 30 Jun 2019 03:31:41 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc:content-transfer-encoding;
+ bh=2oqIz75KNESlOqUJhBPXcjPOp+quk31+qKsCBUMp1bY=;
+ b=tlU1bOJpyygzlPoTZQyUZDvcfsOWRUcyVdyAFqatjxNKTiHCepSZfFygc01h99WQG9
+ rpZketCL3kRNJ2lD9X0TFADuR+R5J/Xh9l+8wxe90yq5udZW3WDs9MyKpsSwOXFwWUSc
+ 1ugwmJ3EJ+m3d8u1lkWerGKlklTDpVdRzB6kdK82C8QmaPDQS9rN/eWskIZU//5TPtiy
+ akxA5lp9guFiLdAXkRXAV5QvdsPy6Z25yuiIVNjxAjzadMhKK4fjtiHTC4mVxAhPPFJW
+ S7Ch+ODlA8Nn7fCdG89NuAxganpscmqO/dMvs+kh8iAFf6WR79wiefaMCw/g+2KqrIwn
+ SUKQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc:content-transfer-encoding;
+ bh=2oqIz75KNESlOqUJhBPXcjPOp+quk31+qKsCBUMp1bY=;
+ b=Wig0A/wgklX9x9ebE1iAhFnKuixoXSpuVVt/sHToEP6PiCJCJ4tVhyuLSmw8YRJHxf
+ lejYxGSmJfipKbfi7cgg86yP5ktTrEnibmlKwtNfLi5rEzdqDhYODxqHSHbwqMM85TPh
+ /dmOnjP5P7ZSHcOjSxMqR/I31jvrdoKR14VgV1FqvRM90XsGPqrP9kHuIM/lb2cgUgDP
+ G2Twb09zf1JS3JO61SziemKLwOf/nFHdQpi/gVbNCnaSjmhG2mIFZxzH+84ORed+BIJ5
+ anlAKl8KfceljPsWwQmVHKPmaxVFvsElTMQX3D/aENDng5jPjAuP42P4K4xODj5ftllS
+ ToAg==
+X-Gm-Message-State: APjAAAXQvI4umJ+8Opg+82Tb8TQFo7pofsFMCtTHZlnIBUELzzJY0rUn
+ V1e2rEIMWJ1nH8u2WZjg/6/QCDNUl3Q5A1icpKI=
+X-Google-Smtp-Source: APXvYqzLtrrAb53eIs9wY6s+sNSZRXSfLxPUWK5FR9BnBkqBGhKdyZJzjY65DKBiSib9WSMIg5tmp/NCa4lbL2OGm5c=
+X-Received: by 2002:a02:5502:: with SMTP id e2mr21875994jab.87.1561890701191; 
+ Sun, 30 Jun 2019 03:31:41 -0700 (PDT)
 MIME-Version: 1.0
-References: <20190627163903.28398-1-yamada.masahiro@socionext.com>
- <20190627163903.28398-5-yamada.masahiro@socionext.com>
- <20190628180057.GA22758@ravnborg.org>
-In-Reply-To: <20190628180057.GA22758@ravnborg.org>
-From: Masahiro Yamada <yamada.masahiro@socionext.com>
-Date: Sun, 30 Jun 2019 16:57:23 +0900
-X-Gmail-Original-Message-ID: <CAK7LNAQDqtm5F_JoPAjPOuf6s3d0F1=Ctyq6s0u2DWNpbFr5vg@mail.gmail.com>
-Message-ID: <CAK7LNAQDqtm5F_JoPAjPOuf6s3d0F1=Ctyq6s0u2DWNpbFr5vg@mail.gmail.com>
-Subject: Re: [PATCH v3 4/4] kbuild: compile-test kernel headers to ensure they
- are self-contained
-To: Sam Ravnborg <sam@ravnborg.org>
+References: <20190626082512.7637-1-michonskikrzysztof@gmail.com>
+ <VI1PR04MB53274E7E20C099F0F84B18198BFD0@VI1PR04MB5327.eurprd04.prod.outlook.com>
+In-Reply-To: <VI1PR04MB53274E7E20C099F0F84B18198BFD0@VI1PR04MB5327.eurprd04.prod.outlook.com>
+From: =?UTF-8?Q?Krzysztof_Micho=C5=84ski?= <michonskikrzysztof@gmail.com>
+Date: Sun, 30 Jun 2019 12:31:30 +0200
+Message-ID: <CAOiNxGDs9Ki7_y_=Mv1tnSsqObv9EYzkdmo+yLCO6gMPBLNwYA@mail.gmail.com>
+Subject: Re: [PATCH] imx: usb: get pinctrl if it's not yet initialized
+To: Peter Chen <peter.chen@nxp.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190630_005837_486480_0B94D66A 
-X-CRM114-Status: GOOD (  17.57  )
-X-Spam-Score: 1.0 (+)
+X-CRM114-CacheID: sfid-20190630_033146_681252_8AFD720A 
+X-CRM114-Status: GOOD (  14.49  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (1.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [210.131.2.90 listed in list.dnswl.org]
- 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
+ no trust [2607:f8b0:4864:20:0:0:0:d43 listed in]
+ [list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (michonskikrzysztof[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -83,111 +94,40 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Song Liu <songliubraving@fb.com>,
- Jakub Kicinski <jakub.kicinski@netronome.com>,
- Alexei Starovoitov <ast@kernel.org>, Kees Cook <keescook@chromium.org>,
- xdp-newbies@vger.kernel.org, Daniel Borkmann <daniel@iogearbox.net>,
- Anton Vorontsov <anton@enomsg.org>, John Fastabend <john.fastabend@gmail.com>,
- Yonghong Song <yhs@fb.com>, Jesper Dangaard Brouer <hawk@kernel.org>,
- Linux Kbuild mailing list <linux-kbuild@vger.kernel.org>,
- Jani Nikula <jani.nikula@intel.com>, Michal Marek <michal.lkml@markovi.net>,
- "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
- Matthias Brugger <matthias.bgg@gmail.com>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
- Tony Luck <tony.luck@intel.com>, Networking <netdev@vger.kernel.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Martin KaFai Lau <kafai@fb.com>, Colin Cross <ccross@android.com>,
- bpf@vger.kernel.org, "David S. Miller" <davem@davemloft.net>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: "afenkart@gmail.com" <afenkart@gmail.com>,
+ "gregkh@linuxfoundation.org" <gregkh@linuxfoundation.org>,
+ "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
+ "linux-usb@vger.kernel.org" <linux-usb@vger.kernel.org>,
+ "festevam@gmail.com" <festevam@gmail.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Sam,
-
-
-On Sat, Jun 29, 2019 at 3:01 AM Sam Ravnborg <sam@ravnborg.org> wrote:
->
-> Hi Masahiro.
->
-> On Fri, Jun 28, 2019 at 01:39:02AM +0900, Masahiro Yamada wrote:
-> > The headers in include/ are globally used in the kernel source tree
-> > to provide common APIs. They are included from external modules, too.
-> >
-> > It will be useful to make as many headers self-contained as possible
-> > so that we do not have to rely on a specific include order.
-> >
-> > There are more than 4000 headers in include/. In my rough analysis,
-> > 70% of them are already self-contained. With efforts, most of them
-> > can be self-contained.
-> >
-> > For now, we must exclude more than 1000 headers just because they
-> > cannot be compiled as standalone units. I added them to header-test-.
-> > The black list was mostly generated by a script, so should be checked
-> > later.
-> The list is smaller than I had expected.
-> And I see why you insisted on avoiding a maze ok Kbuild files.
-> It looks good, except there is a few issues..
->
->
-> The file kernel/kheaders_data.tar.xz includes all the .s files.
-> Something needs to be done to exclude the .s files...
-
-Good catch. I will change scripts/gen_kheaders.sh
-
-
-> When building a full kernel the build fails like this:
->   LD      vmlinux.o
-> aarch64-linux-gnu-ld: cannot find include/lib.a: No such file or directory
-> make[1]: *** [/home/sam/kernel/linux-kbuild.git/Makefile:1054: vmlinux] Error 1
-> make[1]: Leaving directory '/home/sam/kernel/linux-kbuild.git/.build/arm64-allyesconfig'
-> make: *** [Makefile:179: sub-make] Error 2
-
-My bad - I built only include/,
-without testing full build.
-
-I will fix.
-
-
->
-> include/uapi/linux/mman.h fails when building sparc64 allmodconfig.
-> There is likely more header files that will fail when we start to
-> throw this after diverse randconfigs.
-> I have no good idea how to catch this.
-> Unless your scripts could automate this across several architectures.
-
-Thanks. I excluded a little more headers.
-
-
-> I did not continue my testing futher.
->
-> > +header-test-                 += uapi/drm/vmwgfx_drm.h
-> > +header-test-                 += uapi/linux/a.out.h
-> > +header-test-                 += uapi/linux/coda.h
-> ...
-> > +header-test-                 += uapi/xen/evtchn.h
-> > +header-test-                 += uapi/xen/gntdev.h
-> > +header-test-                 += uapi/xen/privcmd.h
->
-> I though uapi files were covered by another Makefile?
-> If they are added because we pull them in using a pattern, maybe they
-> should be removed using a specific filer-out?
-
-I have not looked at this closely yet.
-
-usr/include/Makefile tests UAPI headers
-crafted by scripts/headers_install.sh
-
-Testing UAPI headers in their raw form
-makes sense, I think.
-
-
-
--- 
-Best Regards
-Masahiro Yamada
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+SGkgUGV0ZXIsClllcyB5b3UgYXJlIHJpZ2h0ISBUaGlzIGZpbGUncyBiZWVuIHBhdGNoZWQgcHJl
+dmlvdXNseSBpbiBteSBmb3JrLgpTb3JyeSBhYm91dCB0aGF0LgoKUmVnYXJkcywKS3J6eXN6dG9m
+IE1pY2hvxYRza2kKCmN6dy4sIDI3IGN6ZSAyMDE5IG8gMDU6MjIgUGV0ZXIgQ2hlbiA8cGV0ZXIu
+Y2hlbkBueHAuY29tPiBuYXBpc2HFgihhKToKPgo+Cj4gPiBJbiBjYXNlIHVzYiBwaHkgbW9kZSBp
+cyBvdGhlciB0aGFuIFVTQlBIWV9JTlRFUkZBQ0VfTU9ERV9IU0lDIHRoZSBwaW5jdHJsCj4gPiBm
+b3IgZGV2aWNlIGlzIG5vdCBhY3F1aXJlZC4gSXQgaXMgaG93ZXZlciB1c2VkIGxhdGVyIHJlZ2Fy
+ZGxlc3Mgb2YgdGhlIG1vZGUsIGhlbmNlCj4gPiBsZWFkcyB0byByZXF1ZXN0aW5nIGFjY2VzcyB0
+byB1bmluaXRpYWxpemVkIGRhdGEuCj4gPgo+ID4gU2lnbmVkLW9mZi1ieTogS3J6eXN6dG9mIE1p
+Y2hvbnNraSA8bWljaG9uc2tpa3J6eXN6dG9mQGdtYWlsLmNvbT4KPiA+IC0tLQo+ID4gIGRyaXZl
+cnMvdXNiL2NoaXBpZGVhL2NpX2hkcmNfaW14LmMgfCAzICsrKwo+ID4gIDEgZmlsZSBjaGFuZ2Vk
+LCAzIGluc2VydGlvbnMoKykKPiA+Cj4gPiBkaWZmIC0tZ2l0IGEvZHJpdmVycy91c2IvY2hpcGlk
+ZWEvY2lfaGRyY19pbXguYyBiL2RyaXZlcnMvdXNiL2NoaXBpZGVhL2NpX2hkcmNfaW14LmMKPiA+
+IGluZGV4IGE0YjQ4MmMzZGM2NS4uMmYwMmIzNWM0MGI2IDEwMDY0NAo+ID4gLS0tIGEvZHJpdmVy
+cy91c2IvY2hpcGlkZWEvY2lfaGRyY19pbXguYwo+ID4gKysrIGIvZHJpdmVycy91c2IvY2hpcGlk
+ZWEvY2lfaGRyY19pbXguYwo+ID4gQEAgLTQyOCw2ICs0MjgsOSBAQCBzdGF0aWMgaW50IGNpX2hk
+cmNfaW14X3Byb2JlKHN0cnVjdCBwbGF0Zm9ybV9kZXZpY2UgKnBkZXYpCj4gPiAgICAgICAgICAg
+ICAgIHBtX3J1bnRpbWVfZW5hYmxlKGRldik7Cj4gPiAgICAgICB9Cj4gPgo+ID4gKyAgICAgaWYg
+KCFkYXRhLT5waW5jdHJsKQo+ID4gKyAgICAgICAgICAgICBkYXRhLT5waW5jdHJsID0gZGV2bV9w
+aW5jdHJsX2dldChkZXYpOwo+ID4gKwo+ID4gICAgICAgaWYgKCFJU19FUlIoZGF0YS0+cGluY3Ry
+bCkpIHsKPiA+ICAgICAgICAgICAgICAgc3RydWN0IHBpbmN0cmxfc3RhdGUgKnN0YXRlOwo+ID4K
+Pgo+IFNvcnJ5LCB3aGF0IGtlcm5lbCB2ZXJzaW9uIHlvdSBhcmUgdXNpbmc/IFRoZSByZWNlbnQg
+a2VybmVsIGlzIGRpZmZlcmVudCB3aXRoIHRoZSBwYXRjaCB5b3UgcG9zdGVkLgo+Cj4gUGV0ZXIK
+PgoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgt
+YXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQu
+b3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJt
+LWtlcm5lbAo=
