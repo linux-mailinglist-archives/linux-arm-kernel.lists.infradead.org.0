@@ -2,92 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4007E5AF0C
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 30 Jun 2019 08:22:54 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4AFBE5AF51
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 30 Jun 2019 09:59:16 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3CpkyKHF+cam9cNrpodVDtcDNH+Ko94BRBBuUhH7Xwc=; b=Evb7k62Id8zn9x
-	pa6P4fj2vqBu14bR/mrPEWxfdhVgFclzFYqQXJNC1cGyoFrmwafguvrPgH4i44D57w2289G0Lb4ZY
-	7TE0P7CYtWLhFMalZJZ7kk3NxsstW3saI4mqLE0X2tqPHjWxbJxFE/gtWF3DfGEYOumPrcTyDHknX
-	Rq8E5pL7xRJIyMGqK7KVTRlXewVp1TAPeYUb+TFJovqhFXD/lESdlfPlybrp++SNTau+ofp0mqfGC
-	j6VfyHvVtTLd7iM0r1/UvHQABU6OSPN0ehnctQG3LB+ePLt17UtBfqgJ4m9+G1kRYdUWQsKe3WPS8
-	mivq15LdFrAzzPLbTevA==;
+	List-Owner; bh=ex1VQi4ze0pp+jnx5exuLo1CFIR1GCeIXDfqJUi+V7U=; b=HnSVWCbefpJSWY
+	+uCKZzihHWzz2MV/HGXLN26ZDsoxBXIt9XLrz1ZPSRwVYHP9rWVmahwLXP08dei9Mew6QNbhgfcOB
+	Im5ap6r9b350KwnI0c9U0iXCAELZoXbuutmR4ekBsCaLNhUYqU94e2/p2cInSByzn5h9Sn3cwN+1T
+	7jLO6K4zOBxhQhRvl32Dp6hQJGXA3SD5zQMYDrZWz/gHmRt1Q9RU0pMMksJl69+JuhZZb3KFyU4UF
+	7qDaaPex9Mgq8lWCl43uP0IAxx9m2dQToSFCX/NmdgQAwccKKjKUpZ7InG2tZcvyIRFLQ0bIXWPBu
+	5A+E1SrSXMTW2ewQpKuA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hhTEh-00057i-Op; Sun, 30 Jun 2019 06:22:51 +0000
-Received: from mail-lf1-x144.google.com ([2a00:1450:4864:20::144])
+	id 1hhUjr-00019d-1X; Sun, 30 Jun 2019 07:59:07 +0000
+Received: from conssluserg-05.nifty.com ([210.131.2.90])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hhTBv-0001WI-7a; Sun, 30 Jun 2019 06:20:08 +0000
-Received: by mail-lf1-x144.google.com with SMTP id j29so6559944lfk.10;
- Sat, 29 Jun 2019 23:19:58 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=sender:from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=XAeqPK1yLenLfxS4mll3E4fkiCo6w4OOQPJX/DKUs9I=;
- b=beH6GJxzGwyvScEEhIVCjj5PQ1ie4rjKZ2jc+geRGeG6Sb1Ra38v4HpBtOIApg/7Qe
- pJh/zllR9MazvwFliiIGzeNIBrh3RoIctiOk64wEj6q7LdEBJjDwAS+AGh4KeD5/m35T
- t3bySpUWP6uB4QO/rEC2IVUSTi22smTmuRe/lOZpnLuml4ZaVqBJ2TkI6MNohiSbrSjq
- DXw8VZMHUqoDtXAVCNXPcOfkT0dNcuvY5HUlZMGd6S5tvuqPs4NDM7/XSOEWp1Y04TEl
- YrsokWkNpu89IW0nj3Yy/FTEtzKhIqyHpq2wN18Dr864A97w+mn1vTq1GbuA+jJ5o9EU
- FCrQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:sender:from:to:cc:subject:date:message-id
- :in-reply-to:references:mime-version:content-transfer-encoding;
- bh=XAeqPK1yLenLfxS4mll3E4fkiCo6w4OOQPJX/DKUs9I=;
- b=AJaxbDHKMQVtq5NZXgUWiN3jOQdDCnma09zdoRMfJHR0fhDZfyJBY6UeAwi2PaFrdq
- 8lMDfLsMZa+PlNG3vT54/GMdQbn6Rm81PfWUgCNCgi7+Mg2VIK3++ANLeRfR36Fp+G9a
- 6hu2LMqeGAD+lBD4y+Qt8vKC+8eaxJN7sJpV3OAaNuh0UsIjRtQCFkkcuv7Ofh3tR6vi
- GTRpbjmKXGKKAYWUYRldWOCzrMcFKxntXhAYrwKKoie/MuKq+zaUVbAz8XA2NdDu1RM2
- v6dOrPc0+TzTDtJjTAWj658YJ2hjnnhDCPsdeGdaH9v8byMzsdHy8GX430ZvAHw3xILc
- Hwiw==
-X-Gm-Message-State: APjAAAVYD5CilAMycibkKvb3Cbmao3ROhLFUzzhf4fWGEDQ+pgwDhAn/
- n5eHYPmAiahdSt6czscJvGw=
-X-Google-Smtp-Source: APXvYqwack84kxAXMtS2M350I/6+sEO7W20vMNhc8sQOTLovoOqG22add9MPmFXXeB4rfaB3zAWjOQ==
-X-Received: by 2002:ac2:51a3:: with SMTP id f3mr7891343lfk.125.1561875597407; 
- Sat, 29 Jun 2019 23:19:57 -0700 (PDT)
-Received: from saturn.lan (18.158-248-194.customer.lyse.net. [158.248.194.18])
- by smtp.gmail.com with ESMTPSA id
- o74sm1794024lff.46.2019.06.29.23.19.56
- (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Sat, 29 Jun 2019 23:19:57 -0700 (PDT)
-From: Sam Ravnborg <sam@ravnborg.org>
-To: dri-devel@lists.freedesktop.org
-Subject: [PATCH v1 29/33] drm/mediatek: drop use of drmP.h
-Date: Sun, 30 Jun 2019 08:19:18 +0200
-Message-Id: <20190630061922.7254-30-sam@ravnborg.org>
-X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20190630061922.7254-1-sam@ravnborg.org>
-References: <20190630061922.7254-1-sam@ravnborg.org>
+ id 1hhUjN-00019C-7J; Sun, 30 Jun 2019 07:58:38 +0000
+Received: from mail-ua1-f49.google.com (mail-ua1-f49.google.com
+ [209.85.222.49]) (authenticated)
+ by conssluserg-05.nifty.com with ESMTP id x5U7vxd9012600;
+ Sun, 30 Jun 2019 16:58:00 +0900
+DKIM-Filter: OpenDKIM Filter v2.10.3 conssluserg-05.nifty.com x5U7vxd9012600
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nifty.com;
+ s=dec2015msa; t=1561881480;
+ bh=+9brw8RpKfPCHLaNnVG0ALKGMwnUyxhWFifAcm1Jy9A=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=zUawODtU0vhTiPl5qaNgEo9ByKy2yYb9HTAWd7jH5/KmRFRbCTqDf1r2buPkH6eY7
+ 9KWkOkbCmnK9rkMatOmM0itxGnwHB/mMPuqRIjog1NzLgK//i1B3cXHhcTtE4pC6OU
+ VNXerozMf6mNDQ2YuNycgdEq1clJ5Ax3fRXt2Pykx7Eg5zzgtutbB8rwb3gug/dYXr
+ O98/bPfya6esIc3ETSzeD3199w5ae4W/Lwcu2gAXFoPoyufabN5ofgPBt7+mBFPuRl
+ yTH6VnFiqBpTquzJOkRU+fykLB1M8/iymSMC+5w1Mo4YIFRRu6hO3v+dQXWv3IKe2k
+ Skm8IrMNwnxoQ==
+X-Nifty-SrcIP: [209.85.222.49]
+Received: by mail-ua1-f49.google.com with SMTP id v20so3859788uao.3;
+ Sun, 30 Jun 2019 00:58:00 -0700 (PDT)
+X-Gm-Message-State: APjAAAWctrw7b+P6D4G2Biblb3SwrL83sEz0gq3kmVLgrphmjT8puEtC
+ 8apvNwx4jD11DD34ZQrOWyPoci5ZHpHHSdD7Rfo=
+X-Google-Smtp-Source: APXvYqzyVZpInW2H6+hLd4o8U+kv7ZbqLoJ5DBzo4XhAbsuYuwZv3Nes7LIrEN98cU8HrIW65l38Jgqlp5UdZQn0x3E=
+X-Received: by 2002:a9f:25e9:: with SMTP id 96mr10993006uaf.95.1561881479132; 
+ Sun, 30 Jun 2019 00:57:59 -0700 (PDT)
 MIME-Version: 1.0
+References: <20190627163903.28398-1-yamada.masahiro@socionext.com>
+ <20190627163903.28398-5-yamada.masahiro@socionext.com>
+ <20190628180057.GA22758@ravnborg.org>
+In-Reply-To: <20190628180057.GA22758@ravnborg.org>
+From: Masahiro Yamada <yamada.masahiro@socionext.com>
+Date: Sun, 30 Jun 2019 16:57:23 +0900
+X-Gmail-Original-Message-ID: <CAK7LNAQDqtm5F_JoPAjPOuf6s3d0F1=Ctyq6s0u2DWNpbFr5vg@mail.gmail.com>
+Message-ID: <CAK7LNAQDqtm5F_JoPAjPOuf6s3d0F1=Ctyq6s0u2DWNpbFr5vg@mail.gmail.com>
+Subject: Re: [PATCH v3 4/4] kbuild: compile-test kernel headers to ensure they
+ are self-contained
+To: Sam Ravnborg <sam@ravnborg.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190629_231959_581195_A1766159 
-X-CRM114-Status: GOOD (  11.84  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190630_005837_486480_0B94D66A 
+X-CRM114-Status: GOOD (  17.57  )
+X-Spam-Score: 1.0 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (1.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:144 listed in]
- [list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ no trust [210.131.2.90 listed in list.dnswl.org]
+ 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (sam.ravnborg[at]gmail.com)
- 0.0 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -99,344 +83,109 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Philipp Zabel <p.zabel@pengutronix.de>, David Airlie <airlied@linux.ie>,
- Matthias Brugger <matthias.bgg@gmail.com>, linux-mediatek@lists.infradead.org,
- Daniel Vetter <daniel@ffwll.ch>, CK Hu <ck.hu@mediatek.com>,
- Sam Ravnborg <sam@ravnborg.org>, linux-arm-kernel@lists.infradead.org
+Cc: Song Liu <songliubraving@fb.com>,
+ Jakub Kicinski <jakub.kicinski@netronome.com>,
+ Alexei Starovoitov <ast@kernel.org>, Kees Cook <keescook@chromium.org>,
+ xdp-newbies@vger.kernel.org, Daniel Borkmann <daniel@iogearbox.net>,
+ Anton Vorontsov <anton@enomsg.org>, John Fastabend <john.fastabend@gmail.com>,
+ Yonghong Song <yhs@fb.com>, Jesper Dangaard Brouer <hawk@kernel.org>,
+ Linux Kbuild mailing list <linux-kbuild@vger.kernel.org>,
+ Jani Nikula <jani.nikula@intel.com>, Michal Marek <michal.lkml@markovi.net>,
+ "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
+ Tony Luck <tony.luck@intel.com>, Networking <netdev@vger.kernel.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Martin KaFai Lau <kafai@fb.com>, Colin Cross <ccross@android.com>,
+ bpf@vger.kernel.org, "David S. Miller" <davem@davemloft.net>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Drop use of the deprecated drmP.h header file.
+Hi Sam,
 
-While touching the include files divide them up in blocks
-in the typical order:
 
-\#include <linux/*>
+On Sat, Jun 29, 2019 at 3:01 AM Sam Ravnborg <sam@ravnborg.org> wrote:
+>
+> Hi Masahiro.
+>
+> On Fri, Jun 28, 2019 at 01:39:02AM +0900, Masahiro Yamada wrote:
+> > The headers in include/ are globally used in the kernel source tree
+> > to provide common APIs. They are included from external modules, too.
+> >
+> > It will be useful to make as many headers self-contained as possible
+> > so that we do not have to rely on a specific include order.
+> >
+> > There are more than 4000 headers in include/. In my rough analysis,
+> > 70% of them are already self-contained. With efforts, most of them
+> > can be self-contained.
+> >
+> > For now, we must exclude more than 1000 headers just because they
+> > cannot be compiled as standalone units. I added them to header-test-.
+> > The black list was mostly generated by a script, so should be checked
+> > later.
+> The list is smaller than I had expected.
+> And I see why you insisted on avoiding a maze ok Kbuild files.
+> It looks good, except there is a few issues..
+>
+>
+> The file kernel/kheaders_data.tar.xz includes all the .s files.
+> Something needs to be done to exclude the .s files...
 
-\#include <video/*>
+Good catch. I will change scripts/gen_kheaders.sh
 
-\#include <drm/*>
 
-\#include ""
+> When building a full kernel the build fails like this:
+>   LD      vmlinux.o
+> aarch64-linux-gnu-ld: cannot find include/lib.a: No such file or directory
+> make[1]: *** [/home/sam/kernel/linux-kbuild.git/Makefile:1054: vmlinux] Error 1
+> make[1]: Leaving directory '/home/sam/kernel/linux-kbuild.git/.build/arm64-allyesconfig'
+> make: *** [Makefile:179: sub-make] Error 2
 
-And sort the includes in the blocks
-Add the necessary includes to fix build after removal of drmP.h
+My bad - I built only include/,
+without testing full build.
 
-Signed-off-by: Sam Ravnborg <sam@ravnborg.org>
-Cc: CK Hu <ck.hu@mediatek.com>
-Cc: Philipp Zabel <p.zabel@pengutronix.de>
-Cc: David Airlie <airlied@linux.ie>
-Cc: Daniel Vetter <daniel@ffwll.ch>
-Cc: Matthias Brugger <matthias.bgg@gmail.com>
-Cc: linux-arm-kernel@lists.infradead.org
-Cc: linux-mediatek@lists.infradead.org
----
-The list of cc: was too large to add all recipients to the cover letter.
-Please find cover letter here:
-https://lists.freedesktop.org/archives/dri-devel/2019-June/thread.html
-Search for "drm: drop use of drmp.h in drm-misc"
+I will fix.
 
-        Sam
 
- drivers/gpu/drm/mediatek/mtk_disp_color.c   |  2 +-
- drivers/gpu/drm/mediatek/mtk_disp_ovl.c     |  2 +-
- drivers/gpu/drm/mediatek/mtk_disp_rdma.c    |  2 +-
- drivers/gpu/drm/mediatek/mtk_dpi.c          | 18 ++++++++++--------
- drivers/gpu/drm/mediatek/mtk_drm_crtc.c     | 10 ++++++----
- drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.c |  2 +-
- drivers/gpu/drm/mediatek/mtk_drm_drv.c      | 16 ++++++++++------
- drivers/gpu/drm/mediatek/mtk_drm_fb.c       |  7 ++++---
- drivers/gpu/drm/mediatek/mtk_drm_gem.c      |  6 ++++--
- drivers/gpu/drm/mediatek/mtk_drm_plane.c    |  2 +-
- drivers/gpu/drm/mediatek/mtk_dsi.c          | 14 ++++++++------
- drivers/gpu/drm/mediatek/mtk_hdmi.c         | 14 +++++++++-----
- 12 files changed, 56 insertions(+), 39 deletions(-)
+>
+> include/uapi/linux/mman.h fails when building sparc64 allmodconfig.
+> There is likely more header files that will fail when we start to
+> throw this after diverse randconfigs.
+> I have no good idea how to catch this.
+> Unless your scripts could automate this across several architectures.
 
-diff --git a/drivers/gpu/drm/mediatek/mtk_disp_color.c b/drivers/gpu/drm/mediatek/mtk_disp_color.c
-index f33d98b356d6..59de2a46aa49 100644
---- a/drivers/gpu/drm/mediatek/mtk_disp_color.c
-+++ b/drivers/gpu/drm/mediatek/mtk_disp_color.c
-@@ -3,9 +3,9 @@
-  * Copyright (c) 2017 MediaTek Inc.
-  */
- 
--#include <drm/drmP.h>
- #include <linux/clk.h>
- #include <linux/component.h>
-+#include <linux/module.h>
- #include <linux/of_device.h>
- #include <linux/of_irq.h>
- #include <linux/platform_device.h>
-diff --git a/drivers/gpu/drm/mediatek/mtk_disp_ovl.c b/drivers/gpu/drm/mediatek/mtk_disp_ovl.c
-index c4f07c28c74f..21851756c579 100644
---- a/drivers/gpu/drm/mediatek/mtk_disp_ovl.c
-+++ b/drivers/gpu/drm/mediatek/mtk_disp_ovl.c
-@@ -3,9 +3,9 @@
-  * Copyright (c) 2015 MediaTek Inc.
-  */
- 
--#include <drm/drmP.h>
- #include <linux/clk.h>
- #include <linux/component.h>
-+#include <linux/module.h>
- #include <linux/of_device.h>
- #include <linux/of_irq.h>
- #include <linux/platform_device.h>
-diff --git a/drivers/gpu/drm/mediatek/mtk_disp_rdma.c b/drivers/gpu/drm/mediatek/mtk_disp_rdma.c
-index 9a6f0a29e43c..405afef31407 100644
---- a/drivers/gpu/drm/mediatek/mtk_disp_rdma.c
-+++ b/drivers/gpu/drm/mediatek/mtk_disp_rdma.c
-@@ -3,9 +3,9 @@
-  * Copyright (c) 2015 MediaTek Inc.
-  */
- 
--#include <drm/drmP.h>
- #include <linux/clk.h>
- #include <linux/component.h>
-+#include <linux/module.h>
- #include <linux/of_device.h>
- #include <linux/of_irq.h>
- #include <linux/platform_device.h>
-diff --git a/drivers/gpu/drm/mediatek/mtk_dpi.c b/drivers/gpu/drm/mediatek/mtk_dpi.c
-index bacd989cc9aa..be6d95c5ff25 100644
---- a/drivers/gpu/drm/mediatek/mtk_dpi.c
-+++ b/drivers/gpu/drm/mediatek/mtk_dpi.c
-@@ -3,21 +3,23 @@
-  * Copyright (c) 2014 MediaTek Inc.
-  * Author: Jie Qiu <jie.qiu@mediatek.com>
-  */
--#include <drm/drmP.h>
--#include <drm/drm_crtc.h>
--#include <drm/drm_atomic_helper.h>
--#include <drm/drm_of.h>
--#include <linux/kernel.h>
-+
-+#include <linux/clk.h>
- #include <linux/component.h>
--#include <linux/platform_device.h>
-+#include <linux/interrupt.h>
-+#include <linux/kernel.h>
- #include <linux/of.h>
- #include <linux/of_device.h>
- #include <linux/of_graph.h>
--#include <linux/interrupt.h>
-+#include <linux/platform_device.h>
- #include <linux/types.h>
--#include <linux/clk.h>
-+
- #include <video/videomode.h>
- 
-+#include <drm/drm_atomic_helper.h>
-+#include <drm/drm_crtc.h>
-+#include <drm/drm_of.h>
-+
- #include "mtk_dpi_regs.h"
- #include "mtk_drm_ddp_comp.h"
- 
-diff --git a/drivers/gpu/drm/mediatek/mtk_drm_crtc.c b/drivers/gpu/drm/mediatek/mtk_drm_crtc.c
-index a9007210dda1..34a731755791 100644
---- a/drivers/gpu/drm/mediatek/mtk_drm_crtc.c
-+++ b/drivers/gpu/drm/mediatek/mtk_drm_crtc.c
-@@ -3,14 +3,16 @@
-  * Copyright (c) 2015 MediaTek Inc.
-  */
- 
-+#include <linux/clk.h>
-+#include <linux/pm_runtime.h>
-+
- #include <asm/barrier.h>
--#include <drm/drmP.h>
-+#include <soc/mediatek/smi.h>
-+
- #include <drm/drm_atomic_helper.h>
- #include <drm/drm_plane_helper.h>
- #include <drm/drm_probe_helper.h>
--#include <linux/clk.h>
--#include <linux/pm_runtime.h>
--#include <soc/mediatek/smi.h>
-+#include <drm/drm_vblank.h>
- 
- #include "mtk_drm_drv.h"
- #include "mtk_drm_crtc.h"
-diff --git a/drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.c b/drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.c
-index b38963f1f2ec..efa85973e46b 100644
---- a/drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.c
-+++ b/drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.c
-@@ -12,7 +12,7 @@
- #include <linux/of_irq.h>
- #include <linux/of_platform.h>
- #include <linux/platform_device.h>
--#include <drm/drmP.h>
-+
- #include "mtk_drm_drv.h"
- #include "mtk_drm_plane.h"
- #include "mtk_drm_ddp_comp.h"
-diff --git a/drivers/gpu/drm/mediatek/mtk_drm_drv.c b/drivers/gpu/drm/mediatek/mtk_drm_drv.c
-index 2d5caf532431..2ee809a6f3dc 100644
---- a/drivers/gpu/drm/mediatek/mtk_drm_drv.c
-+++ b/drivers/gpu/drm/mediatek/mtk_drm_drv.c
-@@ -4,22 +4,26 @@
-  * Author: YT SHEN <yt.shen@mediatek.com>
-  */
- 
--#include <drm/drmP.h>
-+#include <linux/component.h>
-+#include <linux/iommu.h>
-+#include <linux/module.h>
-+#include <linux/of_address.h>
-+#include <linux/of_platform.h>
-+#include <linux/pm_runtime.h>
-+
- #include <drm/drm_atomic.h>
- #include <drm/drm_atomic_helper.h>
-+#include <drm/drm_drv.h>
- #include <drm/drm_fb_helper.h>
- #include <drm/drm_gem.h>
- #include <drm/drm_gem_cma_helper.h>
- #include <drm/drm_of.h>
- #include <drm/drm_probe_helper.h>
--#include <linux/component.h>
--#include <linux/iommu.h>
--#include <linux/of_address.h>
--#include <linux/of_platform.h>
--#include <linux/pm_runtime.h>
-+#include <drm/drm_vblank.h>
- 
- #include "mtk_drm_crtc.h"
- #include "mtk_drm_ddp.h"
-+#include "mtk_drm_ddp.h"
- #include "mtk_drm_ddp_comp.h"
- #include "mtk_drm_drv.h"
- #include "mtk_drm_fb.h"
-diff --git a/drivers/gpu/drm/mediatek/mtk_drm_fb.c b/drivers/gpu/drm/mediatek/mtk_drm_fb.c
-index 396ba497986d..ae40b080ae47 100644
---- a/drivers/gpu/drm/mediatek/mtk_drm_fb.c
-+++ b/drivers/gpu/drm/mediatek/mtk_drm_fb.c
-@@ -3,13 +3,14 @@
-  * Copyright (c) 2015 MediaTek Inc.
-  */
- 
--#include <drm/drmP.h>
-+#include <linux/dma-buf.h>
-+#include <linux/reservation.h>
-+
- #include <drm/drm_modeset_helper.h>
- #include <drm/drm_fb_helper.h>
-+#include <drm/drm_fourcc.h>
- #include <drm/drm_gem.h>
- #include <drm/drm_gem_framebuffer_helper.h>
--#include <linux/dma-buf.h>
--#include <linux/reservation.h>
- 
- #include "mtk_drm_drv.h"
- #include "mtk_drm_fb.h"
-diff --git a/drivers/gpu/drm/mediatek/mtk_drm_gem.c b/drivers/gpu/drm/mediatek/mtk_drm_gem.c
-index 0d69698f8173..9434f88c6341 100644
---- a/drivers/gpu/drm/mediatek/mtk_drm_gem.c
-+++ b/drivers/gpu/drm/mediatek/mtk_drm_gem.c
-@@ -3,10 +3,12 @@
-  * Copyright (c) 2015 MediaTek Inc.
-  */
- 
--#include <drm/drmP.h>
--#include <drm/drm_gem.h>
- #include <linux/dma-buf.h>
- 
-+#include <drm/drm_device.h>
-+#include <drm/drm_gem.h>
-+#include <drm/drm_prime.h>
-+
- #include "mtk_drm_drv.h"
- #include "mtk_drm_gem.h"
- 
-diff --git a/drivers/gpu/drm/mediatek/mtk_drm_plane.c b/drivers/gpu/drm/mediatek/mtk_drm_plane.c
-index 42cc9823eaaa..584a9ecadce6 100644
---- a/drivers/gpu/drm/mediatek/mtk_drm_plane.c
-+++ b/drivers/gpu/drm/mediatek/mtk_drm_plane.c
-@@ -4,9 +4,9 @@
-  * Author: CK Hu <ck.hu@mediatek.com>
-  */
- 
--#include <drm/drmP.h>
- #include <drm/drm_atomic.h>
- #include <drm/drm_atomic_helper.h>
-+#include <drm/drm_fourcc.h>
- #include <drm/drm_plane_helper.h>
- #include <drm/drm_gem_framebuffer_helper.h>
- 
-diff --git a/drivers/gpu/drm/mediatek/mtk_dsi.c b/drivers/gpu/drm/mediatek/mtk_dsi.c
-index b91c4616644a..224afb666881 100644
---- a/drivers/gpu/drm/mediatek/mtk_dsi.c
-+++ b/drivers/gpu/drm/mediatek/mtk_dsi.c
-@@ -3,12 +3,6 @@
-  * Copyright (c) 2015 MediaTek Inc.
-  */
- 
--#include <drm/drmP.h>
--#include <drm/drm_atomic_helper.h>
--#include <drm/drm_mipi_dsi.h>
--#include <drm/drm_panel.h>
--#include <drm/drm_of.h>
--#include <drm/drm_probe_helper.h>
- #include <linux/clk.h>
- #include <linux/component.h>
- #include <linux/iopoll.h>
-@@ -17,9 +11,17 @@
- #include <linux/of_platform.h>
- #include <linux/phy/phy.h>
- #include <linux/platform_device.h>
-+
- #include <video/mipi_display.h>
- #include <video/videomode.h>
- 
-+#include <drm/drm_atomic_helper.h>
-+#include <drm/drm_mipi_dsi.h>
-+#include <drm/drm_of.h>
-+#include <drm/drm_panel.h>
-+#include <drm/drm_print.h>
-+#include <drm/drm_probe_helper.h>
-+
- #include "mtk_drm_ddp_comp.h"
- 
- #define DSI_START		0x00
-diff --git a/drivers/gpu/drm/mediatek/mtk_hdmi.c b/drivers/gpu/drm/mediatek/mtk_hdmi.c
-index 5d6a9f094df5..ce91b61364eb 100644
---- a/drivers/gpu/drm/mediatek/mtk_hdmi.c
-+++ b/drivers/gpu/drm/mediatek/mtk_hdmi.c
-@@ -3,11 +3,7 @@
-  * Copyright (c) 2014 MediaTek Inc.
-  * Author: Jie Qiu <jie.qiu@mediatek.com>
-  */
--#include <drm/drmP.h>
--#include <drm/drm_atomic_helper.h>
--#include <drm/drm_crtc.h>
--#include <drm/drm_probe_helper.h>
--#include <drm/drm_edid.h>
-+
- #include <linux/arm-smccc.h>
- #include <linux/clk.h>
- #include <linux/delay.h>
-@@ -23,7 +19,15 @@
- #include <linux/phy/phy.h>
- #include <linux/platform_device.h>
- #include <linux/regmap.h>
-+
- #include <sound/hdmi-codec.h>
-+
-+#include <drm/drm_atomic_helper.h>
-+#include <drm/drm_crtc.h>
-+#include <drm/drm_edid.h>
-+#include <drm/drm_print.h>
-+#include <drm/drm_probe_helper.h>
-+
- #include "mtk_cec.h"
- #include "mtk_hdmi.h"
- #include "mtk_hdmi_regs.h"
+Thanks. I excluded a little more headers.
+
+
+> I did not continue my testing futher.
+>
+> > +header-test-                 += uapi/drm/vmwgfx_drm.h
+> > +header-test-                 += uapi/linux/a.out.h
+> > +header-test-                 += uapi/linux/coda.h
+> ...
+> > +header-test-                 += uapi/xen/evtchn.h
+> > +header-test-                 += uapi/xen/gntdev.h
+> > +header-test-                 += uapi/xen/privcmd.h
+>
+> I though uapi files were covered by another Makefile?
+> If they are added because we pull them in using a pattern, maybe they
+> should be removed using a specific filer-out?
+
+I have not looked at this closely yet.
+
+usr/include/Makefile tests UAPI headers
+crafted by scripts/headers_install.sh
+
+Testing UAPI headers in their raw form
+makes sense, I think.
+
+
+
 -- 
-2.20.1
-
+Best Regards
+Masahiro Yamada
 
 _______________________________________________
 linux-arm-kernel mailing list
