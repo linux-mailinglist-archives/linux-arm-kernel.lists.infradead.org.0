@@ -2,49 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 81CEA5B815
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  1 Jul 2019 11:34:35 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D9E455B819
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  1 Jul 2019 11:35:19 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=qQPnc0tJKaEPzHa+GK9v6efK06WQa4E52iRq299T6Cs=; b=Kd5v9wDDqp57+i
-	r63BB/VveYKje+6EBSVbJuuh2ol5Qh3NSpj6SNr+hEVCJe9LF5oT+vlgbl6LyY4tH4uNOQb8cOQNl
-	ag4Co1tntn8xK1cdZggDr9YyDz1RM+cSeny/hwUEcd+x3Ecj7LyRyS2hPG4RcMDlBDtn9xNa7Mnmp
-	K8kqAaunNmOCypQZxAkXqHnmhWe2xD/Pa5Vm6iV+knIYTBh3QxxnvFb2nOgHh1fro5QniM6KIm+ux
-	0gCVeUshK1ns+hG8OIXOYJalCGF1qrcVwC20PkRx1NcS1GUukuRC5wJjVjHVWM9NMCf35zZQFoCIb
-	fBXUVMNwUudt9amYaJbw==;
+	List-Owner; bh=EYB6+KICrrqmGuPpYi13rO4NZ5EmGUu69gcYgBDA4Io=; b=lPHtjeBsFL0BzW
+	7MNj8nN2hmHZm+86CDnBvcTPB7NGs0BHdZV+TPWGC6vSOZImUa3/9O8A2QdHGfjelnwOrPcIja8S2
+	I8d/tevFMt5RV9V+C1Cz9Aff8BISfsgrO0Q1FTFIRhQ5lxPCABlal5NWIdYvya4HE000JKNL3/fDW
+	+lc2e23/BW00ABpUh/uM/j7/RzxuJpcTqE/fWLmIQ6Z6lBsoyj8eYRY4ML4FqlpGWXV6NVl71TbQP
+	9XiVThZNNUbw0viUVXAOzsuCrcfJ34t/mIIzRljM8KNSYi94k0hXwDX4T/p3yYfy0LqKMgmciAIjv
+	wbZmqO/AkCyvzXE2FeTw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hhshl-0006nm-Iu; Mon, 01 Jul 2019 09:34:33 +0000
-Received: from gloria.sntech.de ([185.11.138.130])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hhshZ-0006n9-G8; Mon, 01 Jul 2019 09:34:22 +0000
-Received: from ip5f5a6320.dynamic.kabel-deutschland.de ([95.90.99.32]
- helo=phil.localnet)
- by gloria.sntech.de with esmtpsa (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
- (Exim 4.89) (envelope-from <heiko@sntech.de>)
- id 1hhshY-0001oz-5u; Mon, 01 Jul 2019 11:34:20 +0200
-From: Heiko Stuebner <heiko@sntech.de>
-To: arm@kernel.org
-Subject: [GIT PULL 2/2] Rockchip dts64 updates for 5.3 round 2
-Date: Mon, 01 Jul 2019 11:34:19 +0200
-Message-ID: <1845795.d5AgpU8gu5@phil>
-In-Reply-To: <1883297.MJ2kjSRBWT@phil>
-References: <1883297.MJ2kjSRBWT@phil>
+	id 1hhsiT-0007yi-Fx; Mon, 01 Jul 2019 09:35:17 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hhsiF-00079w-Jc
+ for linux-arm-kernel@lists.infradead.org; Mon, 01 Jul 2019 09:35:05 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id EF8D62B;
+ Mon,  1 Jul 2019 02:35:00 -0700 (PDT)
+Received: from localhost (unknown [10.37.6.20])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 709323F718;
+ Mon,  1 Jul 2019 02:35:00 -0700 (PDT)
+Date: Mon, 1 Jul 2019 10:34:58 +0100
+From: Andrew Murray <andrew.murray@arm.com>
+To: Leo Yan <leo.yan@linaro.org>
+Subject: Re: [PATCH v2 5/5] coresight: etm4x: save/restore state across CPU
+ low power states
+Message-ID: <20190701093458.GA27745@e119886-lin.cambridge.arm.com>
+References: <20190627083525.37463-1-andrew.murray@arm.com>
+ <20190627083525.37463-6-andrew.murray@arm.com>
+ <20190628080732.GA32370@leoy-ThinkPad-X240s>
+ <20190628085357.GH34530@e119886-lin.cambridge.arm.com>
+ <20190628091246.GE32370@leoy-ThinkPad-X240s>
+ <20190628092227.GJ34530@e119886-lin.cambridge.arm.com>
+ <20190701020710.GC28475@leoy-ThinkPad-X240s>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20190701020710.GC28475@leoy-ThinkPad-X240s>
+User-Agent: Mutt/1.10.1+81 (426a6c1) (2018-08-26)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190701_023421_689256_4406B8BC 
-X-CRM114-Status: GOOD (  14.22  )
+X-CRM114-CacheID: sfid-20190701_023503_744348_02EDACB5 
+X-CRM114-Status: GOOD (  26.35  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -56,93 +67,111 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-rockchip@lists.infradead.org, linux-arm-kernel@lists.infradead.org
+Cc: Mathieu Poirier <mathieu.poirier@linaro.org>,
+ Suzuki K Poulose <suzuki.poulose@arm.com>,
+ Alexander Shishkin <alexander.shishkin@linux.intel.com>,
+ coresight@lists.linaro.org, Sudeep Holla <sudeep.holla@arm.com>,
+ linux-arm-kernel@lists.infradead.org, Mike Leach <mike.leach@linaro.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The following changes since commit 45fa7c3838715b34ccea661e4b7b261d91668b17:
+On Mon, Jul 01, 2019 at 10:07:10AM +0800, Leo Yan wrote:
+> Hi Andrew,
+> 
+> On Fri, Jun 28, 2019 at 10:22:28AM +0100, Andrew Murray wrote:
+> > On Fri, Jun 28, 2019 at 05:12:46PM +0800, Leo Yan wrote:
+> > > On Fri, Jun 28, 2019 at 09:53:58AM +0100, Andrew Murray wrote:
+> > > 
+> > > [...]
+> > > 
+> > > > > > diff --git a/drivers/hwtracing/coresight/coresight-etm4x.c b/drivers/hwtracing/coresight/coresight-etm4x.c
+> > > 
+> > > [...]
+> > > 
+> > > > > > +
+> > > > > > +#define PARAM_PM_SAVE_DISABLE	0
+> > > > > > +#define PARAM_PM_SAVE_ENABLE	1
+> > > > > > +#define PARAM_PM_SAVE_FIRMWARE	2
+> > > > > > +
+> > > > > > +static int pm_save_enable = PARAM_PM_SAVE_FIRMWARE;
+> > > > > > +module_param(pm_save_enable, int, 0644);
+> > > > > > +MODULE_PARM_DESC(pm_save_enable, "Save/restore state on power down: "
+> > > > > > +				  "0 = disabled, 1 = enabled, 2 = firmware");
+> > > > > > +
+> > > > > 
+> > > > > I understand if set pm_save_enable = 2 (firmware), then driver will
+> > > > > depend on drvdata->pm_save_enable to make decision for context saving
+> > > > > and restoring.
+> > > > > 
+> > > > > Maybe we can simplize to set pm_save_enable for binary value:
+> > > > > 0 (disabled) or 1 (enabled).  The reason is if we set the module
+> > > > > parameter 'pm_save_enable = 1', then we can set every ETM device's
+> > > > > drvdata->pm_save_enable in initialization phase.  So in the probe
+> > > > > function, we can use below code:
+> > > > > 
+> > > > >   drvdata->pm_save_enable = pm_save_enable ? : etm4_needs_save_restore(dev);
+> > > > 
+> > > > This means that when the module parameter is set to 1, then we only save/restore
+> > > > if the firmware suggests it is needed.
+> > 
+> > Sorry, I seemingly can't read code today.
+> > 
+> > > 
+> > > If the module parameter is set to 1, then we will always set every
+> > > device 'drvdata->pm_save_enable' to 1.  So in this case, the module
+> > > parameter will override the firmware property and always save/restore
+> > > contexts for ETM.
+> > > 
+> > > > However - what happens on hardware that ignores the PU bit (and thus requires
+> > > > save/restore), yet it's firmware doesn't have the
+> > > > 'arm,coresight-needs-save-restore' property? There is no way to override the
+> > > > firmware and always save/restore.
+> > > 
+> > > Actually I suggested to give the module parameter with high priority
+> > > and when the module parameter has set to 1, then it can override
+> > > firmware 'arm,coresight-needs-save-restore' property.
+> > > 
+> > > If we set the module parameter in kernel command line or when load the
+> > > module, its value can be used in the function etm4_probe().  So in the
+> > > driver probing, it detects the module parameter is 1, then it can
+> > > directly set every device 'drvdata->pm_save_enable' to 1.  Thus we can
+> > > always save/restore context for ignoring the PU bit case.
+> > 
+> > In any case, not only do we want to override the firmware to always
+> > save/restore. Sometimes we may also want to override the firmware to never
+> > save/restore (despite the firmware having the
+> > 'arm,coresight-needs-save-restore' flag present). For example to debug power
+> > management.
+> > 
+> > Thus with this current approach you can override the firmware to either enable
+> > or disable save/restore.
+> 
+> Thanks for explanation and agree with this.  Just a suggestion, maybe we
+> can initialize 'drvdata->pm_save_enable' in probe as below:
+> 
+>         if (pm_save_enable == PARAM_PM_SAVE_FIRMWARE)
+>                 drvdata->pm_save_enable = etm4_needs_save_restore(dev);
+>         else
+>                 drvdata->pm_save_enable = pm_save_enable;
+> 
+> From then on, we can only use 'drvdata->pm_save_enable' and don't need
+> to check the module parameter anymore.
 
-  arm64: dts: rockchip: add WiFi+BT support on ROCK Pi4 board (2019-06-04 15:38:54 +0200)
+This is OK, however it means you can't then change the mode once the driver
+is probed. I.e. you can't echo values into
+/sys/module/coresight-etm4x/pm_save_enable at runtime. This was useful to
+me during testing, I assumed it may be useful for others too (especially
+given that you can't unload the module).
 
-are available in the Git repository at:
+Thanks,
 
-  git://git.kernel.org/pub/scm/linux/kernel/git/mmind/linux-rockchip.git tags/v5.3-rockchip-dts64-2
+Andrew Murray
 
-for you to fetch changes up to e1d9149e8389f1690cdd4e4056766dd26488a0fe:
-
-  arm64: dts: rockchip: Fix USB3 Type-C on rk3399-sapphire (2019-06-27 16:40:02 +0200)
-
-----------------------------------------------------------------
-New boards the Khadas Edge family of sbcs and the Hugsun X99 TV box,
-both based on rk3399. Small improvements for RockPi, Sapphire and
-rk3328-roc-cc boards. Improvements for the thermal handling on rk3399
-as well as the rock960 board. rk3399 dwc3 clock updates and a small
-start of the dtsi for the new rk3399pro (the one with the connected
-npu).
-
-----------------------------------------------------------------
-Daniel Lezcano (2):
-      arm64: dts: rockchip: Fix multiple thermal zones conflict in rk3399.dtsi
-      arm64: dts: rockchip: Define values for the IPA governor for rock960
-
-Enric Balletbo i Serra (1):
-      arm64: dts: rockchip: Update DWC3 modules on RK3399 SoCs
-
-Ezequiel Garcia (1):
-      arm64: dts: rockchip: Enable HDMI audio on Rock Pi
-
-Heiko Stuebner (3):
-      clk: rockchip: add clock id for watchdog pclk on rk3328
-      clk: rockchip: add clock id for hdmi_phy special clock on rk3228
-      Merge branch 'v5.3-shared/clk-ids' into v5.3-armsoc/dts64
-
-Jianqun Xu (1):
-      arm64: dts: rockchip: add core dtsi file for RK3399Pro SoCs
-
-Leonidas P. Papadakos (1):
-      arm64: dts: rockchip: enable rk3328 watchdog clock
-
-Nick Xie (1):
-      arm64: dts: rockchip: Add support for Khadas Edge/Edge-V/Captain boards
-
-Peter Geis (1):
-      arm64: dts: rockchip: improve rk3328-roc-cc rgmii performance.
-
-Vicente Bergas (1):
-      arm64: dts: rockchip: Fix USB3 Type-C on rk3399-sapphire
-
-Vivek Unune (1):
-      arm64: dts: rockchip: Add support for Hugsun X99 TV Box
-
- .../devicetree/bindings/arm/rockchip.yaml          |  13 +
- .../devicetree/bindings/vendor-prefixes.yaml       |   2 +
- arch/arm64/boot/dts/rockchip/Makefile              |   4 +
- arch/arm64/boot/dts/rockchip/rk3328-roc-cc.dts     |   4 +-
- arch/arm64/boot/dts/rockchip/rk3328.dtsi           |   1 +
- arch/arm64/boot/dts/rockchip/rk3399-hugsun-x99.dts | 733 +++++++++++++++++++
- .../dts/rockchip/rk3399-khadas-edge-captain.dts    |  27 +
- .../boot/dts/rockchip/rk3399-khadas-edge-v.dts     |  27 +
- .../arm64/boot/dts/rockchip/rk3399-khadas-edge.dts |  13 +
- .../boot/dts/rockchip/rk3399-khadas-edge.dtsi      | 804 +++++++++++++++++++++
- arch/arm64/boot/dts/rockchip/rk3399-rock-pi-4.dts  |   4 +
- arch/arm64/boot/dts/rockchip/rk3399-rock960.dts    |  39 +
- arch/arm64/boot/dts/rockchip/rk3399-sapphire.dtsi  |   5 +-
- arch/arm64/boot/dts/rockchip/rk3399.dtsi           |  15 +-
- arch/arm64/boot/dts/rockchip/rk3399pro.dtsi        |  22 +
- include/dt-bindings/clock/rk3228-cru.h             |   1 +
- include/dt-bindings/clock/rk3328-cru.h             |   1 +
- 17 files changed, 1702 insertions(+), 13 deletions(-)
- create mode 100644 arch/arm64/boot/dts/rockchip/rk3399-hugsun-x99.dts
- create mode 100644 arch/arm64/boot/dts/rockchip/rk3399-khadas-edge-captain.dts
- create mode 100644 arch/arm64/boot/dts/rockchip/rk3399-khadas-edge-v.dts
- create mode 100644 arch/arm64/boot/dts/rockchip/rk3399-khadas-edge.dts
- create mode 100644 arch/arm64/boot/dts/rockchip/rk3399-khadas-edge.dtsi
- create mode 100644 arch/arm64/boot/dts/rockchip/rk3399pro.dtsi
-
-
-
+> 
+> Thanks,
+> Leo Yan
 
 _______________________________________________
 linux-arm-kernel mailing list
