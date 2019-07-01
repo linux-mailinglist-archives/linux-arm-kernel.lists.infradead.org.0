@@ -2,69 +2,72 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1F88F5BE64
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  1 Jul 2019 16:35:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5716A5BE85
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  1 Jul 2019 16:41:49 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8uS4ysZd5ig71+VVLcZ9Qdh1154u83GjnDdHtTn0PFU=; b=X7tQT8tOdepdGx
-	bHD8upsaWzUDt/8eQJAmhNQBAL/X7tCGQQz1fhg1jkXwJ8ihyeynq/oQPNsM8qsf2JDHNZEIiLrMt
-	W9DkqUzLdB0e17wVUhSjpr/Wl+Btedb29NjzWHe73J80LT6S8ASosJtZ6uDqBZTBOKTp6GMjNuos9
-	B41MupTg+MC6aeeA/wBpEAcXbnT2VnVyuqkt3DnWhgdxiX25JQ8yfLzQpBBSun5jCj6+xf2Y7yCS5
-	A74FjyKYBCYiVRA79xjgFhZqr5Z6D1LSx7w7qfCgOSG66/miKrQ33CKsdo4EKv3HEiLZQMSR86hva
-	YtSVGVaeD4J6u7aTXNhQ==;
+	List-Owner; bh=dzhCdVrMgHeGr/O8SZRDCEVeCrO20DwDr7ev6kZrgnA=; b=HbQlQGvt+AUh6G
+	4fGYqztam+9v+TIK85erLNZwuFUVIsIP4apUVKNr2UPtG3i7J5/Ykst3WTnCfIaY6G9a3kJ/wawou
+	vFhrm167ptYh0djLvB0hZygJSQuPP/7SQZwT+k0qEWSeYjG9C3oYHYdy6mH4XKyQVr96gaE3DPiFt
+	Aoh1c6kT2UttSSTk7+y7TC/7wfwuQAOkSj6SpXXsg2UqwuSZSEv+i3K2ZdzghDBcOkt1jS6jPi/yL
+	CVUtjCVJ2slheVCIbxPwYFnESrRT6q2mFkAcztS2ZIXWcW4SQPu+rD5ml1JJjcOw36mbo57Mu85Qy
+	s9oKdV7JDuQ39R/uCsAw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hhxOV-0000xw-AZ; Mon, 01 Jul 2019 14:34:59 +0000
+	id 1hhxV5-0004Ko-1P; Mon, 01 Jul 2019 14:41:47 +0000
 Received: from lelv0143.ext.ti.com ([198.47.23.248])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hhxOO-0000wG-2e
- for linux-arm-kernel@lists.infradead.org; Mon, 01 Jul 2019 14:34:53 +0000
-Received: from fllv0035.itg.ti.com ([10.64.41.0])
- by lelv0143.ext.ti.com (8.15.2/8.15.2) with ESMTP id x61EYeUV073343;
- Mon, 1 Jul 2019 09:34:40 -0500
+ id 1hhxUy-0004KN-3V
+ for linux-arm-kernel@lists.infradead.org; Mon, 01 Jul 2019 14:41:41 +0000
+Received: from fllv0034.itg.ti.com ([10.64.40.246])
+ by lelv0143.ext.ti.com (8.15.2/8.15.2) with ESMTP id x61Eel75075389;
+ Mon, 1 Jul 2019 09:40:47 -0500
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1561991680;
- bh=cyHop+GSfkh1vgGnTZxWTEXAnODsgbNOUZbNoREaWBk=;
+ s=ti-com-17Q1; t=1561992047;
+ bh=v09DKmxdyp0eEsvf+kyn4y4hnlTkeSpL6c6F1V4f4FA=;
  h=Subject:To:CC:References:From:Date:In-Reply-To;
- b=H3tkKiHKfD6ud1lt5vFApjgzjfGno+OkXw3AKgEI3tyv3jA35s8m12VorgAgpurrf
- hZP4sNJf+olbTEG2a1Sstz4TygkTAGhfxdLYwH5oADbGlIEDxsd1kCnS3YZ5BsIyND
- E3kCaOOuOKLvMndMrQazA3YE75/KBs7gHPrGZFG0=
-Received: from DLEE105.ent.ti.com (dlee105.ent.ti.com [157.170.170.35])
- by fllv0035.itg.ti.com (8.15.2/8.15.2) with ESMTPS id x61EYexg100699
+ b=oLkEnK10lOzZSr8kWXvyIEzwRTGPy9yC0AqouKKQ5P0FswISZynDNwYfWMhmiESnO
+ And5l8d/dgLdTP0j/yDzwkkEYIZZXxsL2/pm9cog/7jNYxFgiEpeHFw0/VSWgS6ceC
+ gC3uk1kSLls9pkjZPE1FSx5VuIP5L7DrnYuD+2Ps=
+Received: from DLEE111.ent.ti.com (dlee111.ent.ti.com [157.170.170.22])
+ by fllv0034.itg.ti.com (8.15.2/8.15.2) with ESMTPS id x61EelNv091078
  (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Mon, 1 Jul 2019 09:34:40 -0500
-Received: from DLEE101.ent.ti.com (157.170.170.31) by DLEE105.ent.ti.com
- (157.170.170.35) with Microsoft SMTP Server (version=TLS1_2,
+ Mon, 1 Jul 2019 09:40:47 -0500
+Received: from DLEE112.ent.ti.com (157.170.170.23) by DLEE111.ent.ti.com
+ (157.170.170.22) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5; Mon, 1 Jul
- 2019 09:34:39 -0500
-Received: from lelv0327.itg.ti.com (10.180.67.183) by DLEE101.ent.ti.com
- (157.170.170.31) with Microsoft SMTP Server (version=TLS1_2,
+ 2019 09:40:47 -0500
+Received: from lelv0327.itg.ti.com (10.180.67.183) by DLEE112.ent.ti.com
+ (157.170.170.23) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5 via
- Frontend Transport; Mon, 1 Jul 2019 09:34:39 -0500
+ Frontend Transport; Mon, 1 Jul 2019 09:40:47 -0500
 Received: from [172.24.190.172] (ileax41-snat.itg.ti.com [10.172.224.153])
- by lelv0327.itg.ti.com (8.15.2/8.15.2) with ESMTP id x61EYajr076737;
- Mon, 1 Jul 2019 09:34:37 -0500
-Subject: Re: [PATCH] media: davinci-vpbe: remove obsolete includes
-To: Arnd Bergmann <arnd@arndb.de>, "Lad, Prabhakar"
- <prabhakar.csengg@gmail.com>, Mauro Carvalho Chehab <mchehab@kernel.org>
-References: <20190628105131.3130257-1-arnd@arndb.de>
+ by lelv0327.itg.ti.com (8.15.2/8.15.2) with ESMTP id x61Eegav086236;
+ Mon, 1 Jul 2019 09:40:44 -0500
+Subject: Re: [PATCH 00/12] ARM: davinci: da850-evm: remove more legacy GPIO
+ calls
+To: Bartosz Golaszewski <brgl@bgdev.pl>, Kevin Hilman <khilman@kernel.org>,
+ Lee Jones <lee.jones@linaro.org>, Daniel Thompson
+ <daniel.thompson@linaro.org>, Jingoo Han <jingoohan1@gmail.com>, Bartlomiej
+ Zolnierkiewicz <b.zolnierkie@samsung.com>, David Lechner
+ <david@lechnology.com>, Linus Walleij <linus.walleij@linaro.org>
+References: <20190625163434.13620-1-brgl@bgdev.pl>
 From: Sekhar Nori <nsekhar@ti.com>
-Message-ID: <77b1444b-6d37-28d4-50c3-3f9f79b7a1ea@ti.com>
-Date: Mon, 1 Jul 2019 20:04:36 +0530
+Message-ID: <fe42c0e1-2bfb-2b1c-2c38-0e176e88ec6e@ti.com>
+Date: Mon, 1 Jul 2019 20:10:41 +0530
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
  Thunderbird/60.7.1
 MIME-Version: 1.0
-In-Reply-To: <20190628105131.3130257-1-arnd@arndb.de>
+In-Reply-To: <20190625163434.13620-1-brgl@bgdev.pl>
 Content-Language: en-US
 X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190701_073452_207135_BB94BDDA 
-X-CRM114-Status: UNSURE (   9.14  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190701_074140_235442_6124955F 
+X-CRM114-Status: GOOD (  15.34  )
 X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.5 points)
@@ -94,23 +97,48 @@ List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: Bartosz Golaszewski <bgolaszewski@baylibre.com>,
- Hans Verkuil <hans.verkuil@cisco.com>, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
+ dri-devel@lists.freedesktop.org, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-fbdev@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 28/06/19 4:21 PM, Arnd Bergmann wrote:
-> The driver builds fine without these, and they cause build
-> problems once davinci multiplatform support is enabled.
-> 
-> Signed-off-by: Arnd Bergmann <arnd@arndb.de>
+Hi Lee, Daniel, Jingoo,
 
-Acked-by: Sekhar Nori <nsekhar@ti.com>
+On 25/06/19 10:04 PM, Bartosz Golaszewski wrote:
+> From: Bartosz Golaszewski <bgolaszewski@baylibre.com>
+> 
+> This is another small step on the path to liberating davinci from legacy
+> GPIO API calls and shrinking the davinci GPIO driver by not having to
+> support the base GPIO number anymore.
+> 
+> This time we're removing the legacy calls used indirectly by the LCDC
+> fbdev driver.
+> 
+> The first three patches modify the GPIO backlight driver. The first
+> of them adds the necessary functionality, the other two are just
+> tweaks and cleanups.
+
+Can you take the first three patches for v5.3 - if its not too late? I
+think that will make it easy for rest of patches to make into subsequent
+kernel releases.
+
+> 
+> Next two patches enable the GPIO backlight driver in
+> davinci_all_defconfig.
+> 
+> Patch 6/12 models the backlight GPIO as an actual GPIO backlight device.
+> 
+> Patches 7-9 extend the fbdev driver with regulator support and convert
+> the da850-evm board file to using it.
+> 
+> Last three patches are improvements to the da8xx fbdev driver since
+> we're already touching it in this series.
 
 Thanks,
 Sekhar
+
 
 _______________________________________________
 linux-arm-kernel mailing list
