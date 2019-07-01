@@ -2,108 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 603F05BCBF
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  1 Jul 2019 15:21:03 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 374215BDE6
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  1 Jul 2019 16:16:33 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:Message-ID:Date
-	:Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	List-Owner; bh=NjcQZKsNiLPfaeLE82GAsIplzN4oYKMMSxFz79c4dmo=; b=BrcRJxRz+J4YQ3
-	dtaDZMSBSDl78vwD/3cdi7O2rwszQC2qd+B8KiMnL2udwEZMskgeEm940rCxFz4D7nB4hp1Q+NjHU
-	GJT601sHfKyeXK+4nXAxKwlIs3557WWEFm35cgeTGY2rtpYX0mbuCMK1Kyz1H+ai/3vPIXsvHwSk8
-	eX1UF/kBmNRJmsZcW8hLh/R01GE/MI9kAmB/C/BYvZzxNVAQ34d9qAfuSYJrU6xl8BexV/E8DFQbJ
-	B2T/Vb07PY0o9u9vslLYk6oUsxViEH5/CTJ4HT1R8nHNB0v0vX8o/RP1JfyKG9JaeKlJ2xUtjqfbB
-	UVS7yOQ5sIX9C1lOCoeQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=sFUzmXq9JZEs3inBIO1ktaczRy9ABd1c5o21ItNA3ok=; b=SqRpnCPidVu1UC
+	e/eZ6+yW5FyrythIsSU9mfDzdyFMBB+UchFmdw5tSR7idlkmQoEgNlvxqVhklRR4oTG/5ry5S0h6V
+	xOCqUDQ9hSxVo3oyklIeNYxSeEDSzOnCB1DGxEAE2veFTB01XuttuLYUHR82KhIBFYmSxdK6hN/20
+	kmlP/fUsf3tfpktTcwQe0jHBXOanmMmzVPOv30h77r0neMqo8Z++WAEFQC3EgnIan7soz6RTxAQXy
+	oWZljdsOF85OxLC9/D3wMMate7eETIBxtuYXa3L/JLYqkXp6KsiEuEH8z7hwDU4vVUi1fzsurUJDg
+	R6hM74hOorl6L0smvIsw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hhwEu-0006M6-Jg; Mon, 01 Jul 2019 13:21:00 +0000
-Received: from mail-db5eur03on0623.outbound.protection.outlook.com
- ([2a01:111:f400:fe0a::623]
- helo=EUR03-DB5-obe.outbound.protection.outlook.com)
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hhwEm-0006LV-Q2
- for linux-arm-kernel@lists.infradead.org; Mon, 01 Jul 2019 13:20:54 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=OaUAOPXohnVzqkJWmyYjhVRxTzpR9ETGSfw0coirnpU=;
- b=BmqZP4N45I/2fHOuCtgjfLP3ZAJet3nMAo+14RhKTh0uxm5AoT7GLIxlr/ZQjoVTiUH8rMwpb+W/OhXrm0WMY4vhQAub9M6s4qdVqOW1mt9d833ln8iCntkmxgB1nMoT50decNxniXVdZhlUjBM29UCIr/KCeR50Z/itUMNyIZQ=
-Received: from VI1PR04MB5055.eurprd04.prod.outlook.com (20.177.50.140) by
- VI1PR04MB5133.eurprd04.prod.outlook.com (20.177.50.158) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2032.20; Mon, 1 Jul 2019 13:20:49 +0000
-Received: from VI1PR04MB5055.eurprd04.prod.outlook.com
- ([fe80::d83:14c4:dedb:213b]) by VI1PR04MB5055.eurprd04.prod.outlook.com
- ([fe80::d83:14c4:dedb:213b%5]) with mapi id 15.20.2032.019; Mon, 1 Jul 2019
- 13:20:49 +0000
-From: Leonard Crestez <leonard.crestez@nxp.com>
-To: Anson Huang <anson.huang@nxp.com>, "shawnguo@kernel.org"
- <shawnguo@kernel.org>
-Subject: Re: [PATCH V2 1/2] arm64: dts: imx8mm: Correct OPP table according to
- latest datasheet
-Thread-Topic: [PATCH V2 1/2] arm64: dts: imx8mm: Correct OPP table according
- to latest datasheet
-Thread-Index: AQHVLmXFrcvuT+m33U+Utu0uFxLfsA==
-Date: Mon, 1 Jul 2019 13:20:49 +0000
-Message-ID: <VI1PR04MB5055B324BD963A50698A0AA9EEF90@VI1PR04MB5055.eurprd04.prod.outlook.com>
-References: <20190629102157.8026-1-Anson.Huang@nxp.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=leonard.crestez@nxp.com; 
-x-originating-ip: [82.144.34.2]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: 87341a7a-cb93-4da3-a19e-08d6fe26ef54
-x-ms-office365-filtering-ht: Tenant
-x-microsoft-antispam: BCL:0; PCL:0;
- RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600148)(711020)(4605104)(1401327)(4618075)(2017052603328)(7193020);
- SRVR:VI1PR04MB5133; 
-x-ms-traffictypediagnostic: VI1PR04MB5133:
-x-microsoft-antispam-prvs: <VI1PR04MB51337C39C1D510A69D7404B6EEF90@VI1PR04MB5133.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:6790;
-x-forefront-prvs: 00851CA28B
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(4636009)(366004)(39860400002)(396003)(346002)(376002)(136003)(199004)(189003)(66476007)(66556008)(66446008)(66946007)(64756008)(44832011)(66066001)(446003)(86362001)(81156014)(53936002)(55016002)(8676002)(81166006)(25786009)(6246003)(316002)(73956011)(486006)(52536014)(54906003)(478600001)(14454004)(71190400001)(71200400001)(76116006)(91956017)(476003)(33656002)(9686003)(110136005)(7416002)(76176011)(53546011)(6506007)(102836004)(229853002)(5660300002)(26005)(186003)(2501003)(256004)(4744005)(99286004)(7696005)(6436002)(4326008)(8936002)(305945005)(7736002)(6116002)(3846002)(74316002)(68736007)(2906002)(32563001);
- DIR:OUT; SFP:1101; SCL:1; SRVR:VI1PR04MB5133;
- H:VI1PR04MB5055.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; A:1; MX:1; 
-received-spf: None (protection.outlook.com: nxp.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: SItNQtVosjwD7wxDstdr9fpgogvf1z9tMFPOFSKY9ie2CqihiE9AQJrVGVrg2Q5g43Q0EVClLvpDmYXyowYupni8sabTO4SMGj+BK+/o37M1p3BGQVOxqHWp6om703LXwHLyV76DsL55eXCsvjB/caWKUpsIkvB176AZISZJyOsEpAhIUnYobAwfw7/z/daSJtLgv1o26ky0pLBw9+dMZKMoquKWiTi8fgjW0rqko+zBb7qGLRlKR6BB92azR8JiULgmsh+vlR40vpjzBKtLlcTTkMX51dWdzlGiD5qIuab36MbR1M7iuWasP+KW/Cv3TvApqrh9C8AuqaNG63hMsf5cdJlGKwgyovDj1UGu8Aw3EBrua+yd41AScq0iN2dZ5nIE4IbWPYpdT61YiGT9/z14yAopUNfl3xilS8no/Uo=
+	id 1hhx6d-00035W-78; Mon, 01 Jul 2019 14:16:31 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hhx6W-00034d-PT
+ for linux-arm-kernel@lists.infradead.org; Mon, 01 Jul 2019 14:16:26 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 336B8344;
+ Mon,  1 Jul 2019 07:16:23 -0700 (PDT)
+Received: from e103592.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
+ [10.121.207.14])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 4645C3F246;
+ Mon,  1 Jul 2019 07:16:22 -0700 (PDT)
+Date: Mon, 1 Jul 2019 15:16:20 +0100
+From: Dave Martin <Dave.Martin@arm.com>
+To: Mark Rutland <mark.rutland@arm.com>
+Subject: Re: [PATCHv2 3/3] arm64: stacktrace: better handle corrupted stacks
+Message-ID: <20190701141619.GN2790@e103592.cambridge.arm.com>
+References: <20190628154639.5308-1-mark.rutland@arm.com>
+ <20190628154639.5308-4-mark.rutland@arm.com>
+ <20190701105656.GM2790@e103592.cambridge.arm.com>
+ <20190701125351.GE10975@lakrids.cambridge.arm.com>
 MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 87341a7a-cb93-4da3-a19e-08d6fe26ef54
-X-MS-Exchange-CrossTenant-originalarrivaltime: 01 Jul 2019 13:20:49.5638 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: leonard.crestez@nxp.com
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1PR04MB5133
+Content-Disposition: inline
+In-Reply-To: <20190701125351.GE10975@lakrids.cambridge.arm.com>
+User-Agent: Mutt/1.5.23 (2014-03-12)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190701_062052_849433_65FA1321 
-X-CRM114-Status: UNSURE (   7.46  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190701_071624_923334_6343F3EE 
+X-CRM114-Status: GOOD (  32.97  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a01:111:f400:fe0a:0:0:0:623 listed in]
- [list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- 0.0 T_SPF_PERMERROR        SPF: test of record failed (permerror)
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -115,40 +64,222 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- Jacky Bai <ping.bai@nxp.com>, "ccaione@baylibre.com" <ccaione@baylibre.com>,
- "andrew.smirnov@gmail.com" <andrew.smirnov@gmail.com>,
- "viresh.kumar@linaro.org" <viresh.kumar@linaro.org>,
- "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
- "angus@akkea.ca" <angus@akkea.ca>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Daniel Baluta <daniel.baluta@nxp.com>, Abel Vesa <abel.vesa@nxp.com>,
- "robh+dt@kernel.org" <robh+dt@kernel.org>, dl-linux-imx <linux-imx@nxp.com>,
- "kernel@pengutronix.de" <kernel@pengutronix.de>,
- "festevam@gmail.com" <festevam@gmail.com>, "agx@sigxcpu.org" <agx@sigxcpu.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- "l.stach@pengutronix.de" <l.stach@pengutronix.de>
+Cc: catalin.marinas@arm.com, tengfeif@codeaurora.org, will.deacon@arm.com,
+ james.morse@arm.com, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 6/29/2019 1:31 PM, Anson.Huang@nxp.com wrote:
-> From: Anson Huang <Anson.Huang@nxp.com>
+On Mon, Jul 01, 2019 at 01:53:52PM +0100, Mark Rutland wrote:
+> On Mon, Jul 01, 2019 at 11:56:56AM +0100, Dave Martin wrote:
+> > On Fri, Jun 28, 2019 at 04:46:39PM +0100, Mark Rutland wrote:
+> > > The arm64 stacktrace code is careful to only dereference frame records
+> > > in valid stack ranges, ensuring that a corrupted frame record won't
+> > > result in a faulting access.
+> > > 
+> > > However, it's still possible for corrupt frame records to result in
+> > > infinite loops in the stacktrace code, which is also undesirable.
+> > > 
+> > > This patch ensures that we complete a stacktrace in finite time, by
+> > > keeping track of which stacks we have already completed unwinding, and
+> > > verifying that if the next frame record is on the same stack, it is at a
+> > > higher address.
+> > > 
+> > > Signed-off-by: Mark Rutland <mark.rutland@arm.com>
+> > > Cc: Catalin Marinas <catalin.marinas@arm.com>
+> > > Cc: Dave Martin <dave.martin@arm.com>
+> > > Cc: James Morse <james.morse@arm.com>
+> > > Cc: Tengfei Fan <tengfeif@codeaurora.org>
+> > > Cc: Will Deacon <will.deacon@arm.com>
+> > > ---
+> > >  arch/arm64/include/asm/stacktrace.h | 32 ++++++++++++++++++++++++--------
+> > >  arch/arm64/kernel/stacktrace.c      | 15 ++++++++++++++-
+> > >  2 files changed, 38 insertions(+), 9 deletions(-)
+> > > 
+> > > diff --git a/arch/arm64/include/asm/stacktrace.h b/arch/arm64/include/asm/stacktrace.h
+> > > index 18f90bf1385c..938b96ba1f0f 100644
+> > > --- a/arch/arm64/include/asm/stacktrace.h
+> > > +++ b/arch/arm64/include/asm/stacktrace.h
+> > > @@ -19,19 +19,12 @@
+> > >  #include <linux/percpu.h>
+> > >  #include <linux/sched.h>
+> > >  #include <linux/sched/task_stack.h>
+> > > +#include <linux/types.h>
+> > >  
+> > >  #include <asm/memory.h>
+> > >  #include <asm/ptrace.h>
+> > >  #include <asm/sdei.h>
+> > >  
+> > > -struct stackframe {
+> > > -	unsigned long fp;
+> > > -	unsigned long pc;
+> > > -#ifdef CONFIG_FUNCTION_GRAPH_TRACER
+> > > -	int graph;
+> > > -#endif
+> > > -};
+> > > -
+> > >  enum stack_type {
+> > >  	STACK_TYPE_UNKNOWN,
+> > >  	STACK_TYPE_TASK,
+> > > @@ -39,6 +32,7 @@ enum stack_type {
+> > >  	STACK_TYPE_OVERFLOW,
+> > >  	STACK_TYPE_SDEI_NORMAL,
+> > >  	STACK_TYPE_SDEI_CRITICAL,
+> > > +	__NR_STACK_TYPES
+> > >  };
+> > >  
+> > >  struct stack_info {
+> > > @@ -47,6 +41,17 @@ struct stack_info {
+> > >  	enum stack_type type;
+> > >  };
+> > >  
+> > > +struct stackframe {
+> > > +	unsigned long fp;
+> > > +	unsigned long pc;
+> > > +#ifdef CONFIG_FUNCTION_GRAPH_TRACER
+> > > +	int graph;
+> > > +#endif
+> > > +	DECLARE_BITMAP(stacks_done, __NR_STACK_TYPES);
+> > > +	unsigned long prev_fp;
+> > > +	enum stack_type prev_type;
+> > > +};
+> > > +
+> > >  extern int unwind_frame(struct task_struct *tsk, struct stackframe *frame);
+> > >  extern void walk_stackframe(struct task_struct *tsk, struct stackframe *frame,
+> > >  			    int (*fn)(struct stackframe *, void *), void *data);
+> > > @@ -128,6 +133,9 @@ static inline bool on_accessible_stack(const struct task_struct *tsk,
+> > >  				       unsigned long sp,
+> > >  				       struct stack_info *info)
+> > >  {
+> > > +	if (info)
+> > > +		info->type = STACK_TYPE_UNKNOWN;
+> > > +
+> > >  	if (on_task_stack(tsk, sp, info))
+> > >  		return true;
+> > >  	if (tsk != current || preemptible())
+> > > @@ -150,6 +158,14 @@ static inline void start_backtrace(struct stackframe *frame,
+> > >  #ifdef CONFIG_FUNCTION_GRAPH_TRACER
+> > >  	frame->graph = 0;
+> > >  #endif
+> > > +
+> > > +	/*
+> > > +	 * Prime the first unwind, which will be treated as a transition from
+> > > +	 * STACK_TYPE_UNKNOWN to some valid stack.
+> > > +	 */
+> > > +	bitmap_zero(frame->stacks_done, __NR_STACK_TYPES);
+> > > +	frame->prev_fp = 0;
+> > > +	frame->prev_type = STACK_TYPE_UNKNOWN;
+> > >  }
+> > >  
+> > >  #endif	/* __ASM_STACKTRACE_H */
+> > > diff --git a/arch/arm64/kernel/stacktrace.c b/arch/arm64/kernel/stacktrace.c
+> > > index e5338216deaa..2e4b59e10e71 100644
+> > > --- a/arch/arm64/kernel/stacktrace.c
+> > > +++ b/arch/arm64/kernel/stacktrace.c
+> > > @@ -43,6 +43,7 @@
+> > >  int notrace unwind_frame(struct task_struct *tsk, struct stackframe *frame)
+> > >  {
+> > >  	unsigned long fp = frame->fp;
+> > > +	struct stack_info info, prev_info;
+> > >  
+> > >  	if (fp & 0xf)
+> > >  		return -EINVAL;
+> > > @@ -50,11 +51,23 @@ int notrace unwind_frame(struct task_struct *tsk, struct stackframe *frame)
+> > >  	if (!tsk)
+> > >  		tsk = current;
+> > >  
+> > > -	if (!on_accessible_stack(tsk, fp, NULL))
+> > > +	if (!on_accessible_stack(tsk, fp, &info))
+> > >  		return -EINVAL;
+> > >  
+> > > +	if (test_bit(info.type, frame->stacks_done))
+> > > +		return -EINVAL;
+> > > +
+> > > +	if (info.type == frame->prev_type) {
+> > > +		if (fp <= frame->prev_fp)
+> > > +			return -EINVAL;
+> > > +	} else {
+> > > +		set_bit(prev_info.type, frame->stacks_done);
+> > > +	}
+> > > +
+> > >  	frame->fp = READ_ONCE_NOCHECK(*(unsigned long *)(fp));
+> > >  	frame->pc = READ_ONCE_NOCHECK(*(unsigned long *)(fp + 8));
+> > > +	frame->prev_fp = fp;
+> > > +	frame->prev_type = info.type;
+> > 
+> > As in my response on the last series, do we really need to track 2
+> > frames at the same time in struct stackframe?
 > 
-> According to latest datasheet (Rev.0.2, 04/2019) from below links,
-> 1.8GHz is ONLY available for consumer part, so the market segment
-> bits for 1.8GHz opp should ONLY available for consumer part accordingly.
->  > Fixes: f403a26c865b (arm64: dts: imx8mm: Add cpu speed grading and 
-all OPPs)
-> Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
+> It's better to think of this as tracking the location and contents of
+> one stackframe.
+> 
+> If we back up a bit, I want to ensure that if we have a chain A->B->C
+> and the B->C transition is bogus, we report A and B in the backtrace.
+> 
+> The struct stackframe is a snapshot of the frame record A (which may
+> have been the FP and LR rather than an in-memory record). The contents
+> of A tells us where the B can be found, but we need the location of A so
+> that we can check intra-stack whether A < B.
+> 
+> > The transition (i.e., where we came from and where we're going to should
+> > be visible in unwind_frame().  I don't see why we need additional history
+> > in order to detect stack changes or track which stacks have been visited.
+> 
+> Please see my prior reply to James, where I described this.
+> 
+> > So, say (incomplete paste-o-code):
+>  
+> Let's consider this for the above A->B->C transition.
+> 
+> > 	unsigned long fp = frame->fp;
+> > 	enum stack_type fp_stack = frame->fp_stack;
+> 
+> When we enter with frame describing A, frame->fp points at B, and
+> frame->fp_stack describes where A is (i.e. it describes the same thing
+> as prev_type in my code).
+> 
+> > 
+> >   	frame->fp = READ_ONCE_NOCHECK(*(unsigned long *)(fp));
+> >   	frame->pc = READ_ONCE_NOCHECK(*(unsigned long *)(fp + 8));
+> 
+> Here we update frame to be the contents of B.
+> 
+> > 	if (!on_accessible_stack(tsk, frame->fp, &info))
+> > 		return -EINVAL;
+> 
+> ... and here we bail out if C is inaccessible, before we report B.
+> 
+> > 
+> > 	if (test_bit(info.type, frame->stacks_done))
+> > 		return -EINVAL;
+> 
+> Likewise, here we check C's stack type, and bail out an entry earlier
+> than necessary.
+> 
+> > 
+> > 	if (info.type == frame->fp_stack) {
+> 
+> We haven't updated frame->fp_stack  yet, so this is comparing A's
+> location to C's location, ignoring B.
 
-For both:
-Reviewed-by: Leonard Crestez <leonard.crestez@nxp.com>
+No it isn't.  on_accessible_stack() updated info.type to describe B (I
+think).
 
-The vendor tree goes through a lot of testing so switching to the exact 
-speed grading interpretation from there does make sense.
+I think I've understood, though: the bad transition is detected when
+calling unwind_frame() on the prior frame to the transitioning frame.
+So, my version causes us to abandon the backtrace one frame early.
+
+I still think that can be delayed in a more straightforward way
+by sticking in "invalid" flag in struct stackframe, then checking
+that as the first step of unwind_frame().
+
+However, the logic of your updated patch makes sense to me now.  I have
+a suspicion that we're somehow making this problem more complex than it
+is, but unless I can come up with something better, I'll shut up!
+
+Cheers
+---Dave
 
 _______________________________________________
 linux-arm-kernel mailing list
