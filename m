@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D32BC5BEE6
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  1 Jul 2019 16:59:33 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 822FB5BEEE
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  1 Jul 2019 17:00:16 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
@@ -11,35 +11,36 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	Message-ID:From:References:To:Subject:Reply-To:Cc:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=7qE/DnrjL2wBeo3y7TJPEX8Wz7FRAbyHbjTrEed3jZk=; b=YRNAC/k0YPvUtrCXgcbR0GnN9I
-	r8OS+V/rePkz2K1P/KG8whkgs6wxTzQ3sW9HVXRshyH8a6awg6vuQwwHqJ1Uxtxl3EE57uqF/Iu78
-	ANG+yOrOXsGvVsG0S9ylAEp2bmzY8ZsalmOsq5dBTo5W3/eYjYJbx08dnEFUUotw66Me45zEXOzaE
-	ROoOEbSMXMh4o+KT0zDBEXEaE93MS+JV77hCZv0176jCv895RFHBc+T844LJRv1hoc8+pSgRVtsAC
-	gCY6I4odnvuw52pHnCRB5Mn1SokUUd8FrVldhDk1lWMqW7PADKLhUcXIMhv9HUaV7JhJf272XccbJ
-	2s5HPAtg==;
+	bh=s06eQPY7LDLrgMFHb+n23eJG+jZU8xMoUdm62js/dbI=; b=oM+k/uXbSGOhBA61sFjnk5Jayr
+	LyBTO2ZrBstYzvZfm90EO6/c9xUBQqzALExxbTFPQz4w80LkGVTofkBKMyp96C4nEhq5fQ6BBRQcz
+	wRvVQdel8yql54X4NZBi6ypAac0cY4XGKnVHFIBMWObbyUAKlxN9AME7/XwgfmIWPIXH/3jnKK7ir
+	StAJfytnGJblPTbnVmVh85cvf2hNNGOXtl+fIq29Fz894pGaFZmeJ+DoUJ3JkbJw8Y5Gk5yURZ78s
+	TUkopVwsDbez1JksElLhZwaJ+puVKexF/4u5e4C8vYJ7Z52L8Qz6CqYL6OlIDlJHNh5DHt2MYt+nX
+	a1qkwMcg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hhxmF-0002ei-DS; Mon, 01 Jul 2019 14:59:31 +0000
+	id 1hhxmx-0002w1-3P; Mon, 01 Jul 2019 15:00:15 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hhxm8-0002eP-JV
- for linux-arm-kernel@lists.infradead.org; Mon, 01 Jul 2019 14:59:25 +0000
+ id 1hhxmg-0002v7-52
+ for linux-arm-kernel@lists.infradead.org; Mon, 01 Jul 2019 14:59:59 +0000
 Received: from [192.168.1.25] (cpe-70-114-128-244.austin.res.rr.com
  [70.114.128.244])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 13D7220665;
- Mon,  1 Jul 2019 14:59:23 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id A895920665;
+ Mon,  1 Jul 2019 14:59:57 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1561993164;
- bh=qxBYiZ6A8sSwedBT9jAGdlRW6+e12OBLgqhM3lDgcVw=;
+ s=default; t=1561993197;
+ bh=tz/JBzX87VpvRMIlnyHxxvfz3exQrkZglqtnXrgshjo=;
  h=Subject:To:References:From:Date:In-Reply-To:From;
- b=yfaU8M1WS5+yvylNG+GPieTZlk+kS5f2bpKB0UhRP1s9hqA5ZhLkV2w3dBd01Zzn+
- DtQeuy/jXy1egZPRp3b2a4sD1y6qGDWp5xSXUl2lEZXcG24YgM7mRtKNI0IAzTLFFX
- Y87Aof4ddEXLhqpeVLp7fM/ZdwoG+zf9qOsuI7OI=
-Subject: Re: [PATCH] ARM: dts: socfpga: Fix up button mapping on VINING FPGA
+ b=n2k5RoQHxKWOL2g61ATCBvfNm+C0QDdFXL8g0v1EgTv8qykeCdcXkz+K9ZYssKDRB
+ ta/p8hFl5K9kjEDJJ2GtqsO6n3KbtdjXGhiAQaBFN5nkpQaHda78kBUOpdhr1N80pW
+ iY7QHkju/4OCdlVTEGJjhXAlS10fl3GKodV2g0R0=
+Subject: Re: [PATCH] ARM: dts: socfpga: Adjust GMAC1 clock and TXD lines skew
+ on VINING FPGA
 To: Marek Vasut <marex@denx.de>, linux-arm-kernel@lists.infradead.org
-References: <20190628001920.1416-1-marex@denx.de>
+References: <20190628001944.1478-1-marex@denx.de>
 From: Dinh Nguyen <dinguyen@kernel.org>
 Openpgp: preference=signencrypt
 Autocrypt: addr=dinguyen@kernel.org; prefer-encrypt=mutual; keydata=
@@ -84,16 +85,16 @@ Autocrypt: addr=dinguyen@kernel.org; prefer-encrypt=mutual; keydata=
  cJEJNezizexE0dVclt9OS2U9Xwb3VOjs1ITMEYUf8T1j83iiCCFuXqH4U3Eji0nDEiEN5Ac0
  Jn/EGOBG2qGyKZ4uOec9j5ABF7J6hyO7H6LJaX5bLtp0Z7wUbyVaR4UIGdIOchNgNQk4stfm
  JiyuXyoFl/1ihREfvUG/e7+VAAoOBnMjitE5/qUERDoEkkuQkMcAHyEyd+XZMyXY
-Message-ID: <753915da-b55a-7244-2839-feda2c0b1ed6@kernel.org>
-Date: Mon, 1 Jul 2019 09:59:22 -0500
+Message-ID: <c22a5144-2ab7-8c0b-2e6c-465dd80f4001@kernel.org>
+Date: Mon, 1 Jul 2019 09:59:56 -0500
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
  Thunderbird/60.7.0
 MIME-Version: 1.0
-In-Reply-To: <20190628001920.1416-1-marex@denx.de>
+In-Reply-To: <20190628001944.1478-1-marex@denx.de>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190701_075924_682197_43E570EE 
-X-CRM114-Status: GOOD (  14.39  )
+X-CRM114-CacheID: sfid-20190701_075958_234442_625FCE67 
+X-CRM114-Status: GOOD (  13.44  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -130,21 +131,20 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 
 On 6/27/19 7:19 PM, Marek Vasut wrote:
-> Add missing buttons and signals to the VINING FPGA device tree,
-> so they are presented to the userspace via gpio-keys evdev.
+> Adjust GMAC1 clock lines skew to maximum (+960 ps) and TXD lines skew
+> to minimum (-420 ps), to improve signal integrity.
 > 
 > Signed-off-by: Marek Vasut <marex@denx.de>
 > Cc: Dinh Nguyen <dinguyen@kernel.org>
 > ---
->  .../boot/dts/socfpga_cyclone5_vining_fpga.dts | 22 ++++++++++++++-----
->  1 file changed, 17 insertions(+), 5 deletions(-)
+>  arch/arm/boot/dts/socfpga_cyclone5_vining_fpga.dts | 8 ++++++--
+>  1 file changed, 6 insertions(+), 2 deletions(-)
 > 
 > diff --git a/arch/arm/boot/dts/socfpga_cyclone5_vining_fpga.dts b/arch/arm/boot/dts/socfpga_cyclone5_vining_fpga.dts
-> index 355b3dbf438d..622cc7cc1471 100644
+> index 622cc7cc1471..a060718758b6 100644
 > --- a/arch/arm/boot/dts/socfpga_cyclone5_vining_fpga.dts
 > +++ b/arch/arm/boot/dts/socfpga_cyclone5_vining_fpga.dts
-> @@ -36,21 +36,33 @@
->  
+> @@ -96,10 +96,14 @@
 
 Applied!
 
