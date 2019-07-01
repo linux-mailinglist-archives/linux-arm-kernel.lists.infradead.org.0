@@ -2,88 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1888F5B7E5
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  1 Jul 2019 11:19:27 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C420C5B7E7
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  1 Jul 2019 11:19:46 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=n/Qf0Yu/YHlL95bXFxwBj+TFisTnto0cxKnKGscR2xo=; b=I6GmyKJGheU+Dt
-	66mGvc4UImkTUlewfhMAfse4jQkuoWU/GWjrqXUvIH8SY6yNenFIY/Fud8fgiCRcXYpHoNShkvZxN
-	DU1GASeFjNA5LE9k1hu5DySCW81RHH5cbzZbt2baZD6iGjhDjPahv8FflC84bgs9vCjZXJbw5EIAU
-	ezF7s466QZipY98PXRVyWwAhP8YrqC1F0jsgqUjV2Uw7kd1TW0vN/pjAN2lnvueUCjGwkNDM3l/PZ
-	zk2WaDAjOAMN5v0dUotoNW+2fqdFbVuwxV7CS7OtHAgyGUOvQZlFXcbxOP8m/OahWsa4VTI3xZJ6F
-	JvQObUL01hXwfBOOcnsQ==;
+	List-Owner; bh=0C59CvrqDXm4rtAuLnB0RAD0/QSH51TwDIX8uXrsAyg=; b=IEkbDnk7f9zzQy
+	St1wr2Hj9iH1vR7p5nDWfOViacbcarpaNzfX8Uqo7hMYpeYERM18qYuOAzPPPnuGP6+O8niB7I7nD
+	iNLUvXMilkJXFDz0W2EqThSBtVOyrqteCMyfFJqH8TesDLAzm1m+uJYJ+jYsxawRCHxd8wxVeVRDN
+	2zOrl8UTG9ImKXolLgPCX1T9plVSOqCMNFsTuUVgsabpTBJJHhMSg8c0LIZLoasazXXInVXI8aGbN
+	TsJihpTAK2S/caVnocAnwsOBZkbnUD31esTiJdKSCfzV3nrUbyMHqN2PIqJIFUcb71w3tfb5RFCje
+	6F+9L0/wAnhx1r+Aq4OA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hhsT7-0000Z6-Fh; Mon, 01 Jul 2019 09:19:25 +0000
-Received: from mail-wm1-x332.google.com ([2a00:1450:4864:20::332])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hhsNL-0003R5-HZ
- for linux-arm-kernel@lists.infradead.org; Mon, 01 Jul 2019 09:13:36 +0000
-Received: by mail-wm1-x332.google.com with SMTP id w9so14077044wmd.1
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 01 Jul 2019 02:13:27 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=baylibre-com.20150623.gappssmtp.com; s=20150623;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=GjwR8P1WN2zr3jyekwyJE7GslmESzQQSwJmGgaHfGbg=;
- b=i2M8126mf8X3M4vK0EjuDX/AJytE9Pww/P65WWzwFfFVlL+EjQVVg00VFQu7SKzmP/
- qgYng4GTe56VohSeptGBNoYvCLVCnGpPwCAC6XwFBxByMaDVo1iwiYgKH6qhLys+651i
- 8hhNaYVG98pa2Aztn+lCwEbybgHuAHp2GyasbIl1m3I88EO4R2Nn5aVk8jU4xXY7+W3w
- nm9Vz4x2caZXAuGVK8BILaXUDlu/g6FDZ3um5mbe2GjV4eWg8/d/jt7Rkn/nKTDuD2TT
- h5FrU847Ay2GHEUNr8TliJcckC4kL6R9nRIUzkiwfs+WGjUq9HFHybxezcZG4616+SMA
- olZQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=GjwR8P1WN2zr3jyekwyJE7GslmESzQQSwJmGgaHfGbg=;
- b=DAdsbdLvCRUczuSXGw1JNsBXzXUjZ8S9NxGc4iyIZEtbKMbC9g5ZzM1HoY+iw5i5Tg
- 4kVgT12FtZvHaVVZq5sJgPCRuJLfsn6IS9zEcgeXcxXKjhX1MawC6L/EDd5BYzHiho2n
- gfEguqCXKtz/0m3RgfaUEWtYejAYPBG6HxGXp7+eNA7R/HAUjgVAP9httPUG8Uih7JQt
- DYwhHjyu68/nWq7cE92gbJu+hlD1bYj6TnoMNnZ4bzDb/y0zh1JrPffGHb/9Sr9QSOv5
- IGPfF40iwDcjfXMrw9pYk+FZEUC41t+h+9vibmkVQffGbjgNXeKeyVstFXniiqcLCgMo
- lRvg==
-X-Gm-Message-State: APjAAAUXPmySIHrYy4LPHGUDOcSCPZBhrw7JyDOipdVjbngwoeydVdYK
- 78VtwXxYwGxwxBXjarwp54OVwA==
-X-Google-Smtp-Source: APXvYqxoHWs7jKJAEU+tVZvhQRloCB4HDTdk1xzQq8evQEaWBhoayWGvwJtIAz+ofTyYFOanLGRv7A==
-X-Received: by 2002:a1c:7008:: with SMTP id l8mr15428817wmc.64.1561972405524; 
- Mon, 01 Jul 2019 02:13:25 -0700 (PDT)
-Received: from localhost.localdomain (176-150-251-154.abo.bbox.fr.
- [176.150.251.154])
- by smtp.gmail.com with ESMTPSA id i16sm6305659wrm.37.2019.07.01.02.13.24
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-SHA bits=128/128);
- Mon, 01 Jul 2019 02:13:24 -0700 (PDT)
-From: Neil Armstrong <narmstrong@baylibre.com>
-To: jbrunet@baylibre.com,
-	khilman@baylibre.com
-Subject: [RFC/RFT v3 14/14] arm64: dts: meson-g12b-odroid-n2: enable DVFS
-Date: Mon,  1 Jul 2019 11:12:58 +0200
-Message-Id: <20190701091258.3870-15-narmstrong@baylibre.com>
-X-Mailer: git-send-email 2.21.0
-In-Reply-To: <20190701091258.3870-1-narmstrong@baylibre.com>
-References: <20190701091258.3870-1-narmstrong@baylibre.com>
+	id 1hhsTQ-0000qf-JC; Mon, 01 Jul 2019 09:19:44 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hhsR5-0007VD-Cc; Mon, 01 Jul 2019 09:17:22 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id D1A8BCFC;
+ Mon,  1 Jul 2019 02:17:16 -0700 (PDT)
+Received: from arrakis.emea.arm.com (arrakis.cambridge.arm.com [10.1.196.78])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
+ 62CC23F718; Mon,  1 Jul 2019 02:17:14 -0700 (PDT)
+Date: Mon, 1 Jul 2019 10:17:12 +0100
+From: Catalin Marinas <catalin.marinas@arm.com>
+To: Guo Ren <guoren@kernel.org>
+Subject: Re: [PATCH RFC 11/14] arm64: Move the ASID allocator code in a
+ separate file
+Message-ID: <20190701091711.GA21774@arrakis.emea.arm.com>
+References: <20190321163623.20219-1-julien.grall@arm.com>
+ <20190321163623.20219-12-julien.grall@arm.com>
+ <0dfe120b-066a-2ac8-13bc-3f5a29e2caa3@arm.com>
+ <CAJF2gTTXHHgDboaexdHA284y6kNZVSjLis5-Q2rDnXCxr4RSmA@mail.gmail.com>
+ <c871a5ae-914f-a8bb-9474-1dcfec5d45bf@arm.com>
+ <CAJF2gTStSR7Jmu7=HaO5Wxz=Zn8A5-RD8ktori3oKEhM9vozAA@mail.gmail.com>
+ <20190621141606.GF18954@arrakis.emea.arm.com>
+ <CAJF2gTTVUToRkRtxTmtWDotMGXy5YQCpL1h_2neTBuN3e6oz1w@mail.gmail.com>
+ <20190624153820.GH29120@arrakis.emea.arm.com>
+ <CAJF2gTRUzHUNV+nzECUp5n2L1akdy=Aovb6tSd+PNVnpasBrqw@mail.gmail.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <CAJF2gTRUzHUNV+nzECUp5n2L1akdy=Aovb6tSd+PNVnpasBrqw@mail.gmail.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190701_021327_618622_CEB89055 
-X-CRM114-Status: GOOD (  13.39  )
+X-CRM114-CacheID: sfid-20190701_021719_604931_A002A64C 
+X-CRM114-Status: GOOD (  20.74  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:332 listed in]
- [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -95,160 +69,102 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Neil Armstrong <narmstrong@baylibre.com>,
- martin.blumenstingl@googlemail.com, linux-kernel@vger.kernel.org,
- linux-gpio@vger.kernel.org, linux-amlogic@lists.infradead.org,
- linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: julien.thierry@arm.com, aou@eecs.berkeley.edu, james.morse@arm.com,
+ suzuki.poulose@arm.com, Marc Zyngier <marc.zyngier@arm.com>,
+ Anup Patel <anup.Patel@wdc.com>, Will Deacon <will.deacon@arm.com>,
+ linux-kernel@vger.kernel.org, rppt@linux.ibm.com, hch@infradead.org,
+ Atish Patra <Atish.Patra@wdc.com>, Julien Grall <julien.grall@arm.com>,
+ Palmer Dabbelt <palmer@sifive.com>, gary@garyguo.net, paul.walmsley@sifive.com,
+ christoffer.dall@arm.com, linux-riscv@lists.infradead.org,
+ kvmarm@lists.cs.columbia.edu, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Enable DVFS for the Odroid-N2 by setting the clock, OPP and supply
-for each cores of each CPU clusters.
+On Sun, Jun 30, 2019 at 12:29:46PM +0800, Guo Ren wrote:
+> On Mon, Jun 24, 2019 at 11:38 PM Catalin Marinas
+> <catalin.marinas@arm.com> wrote:
+> > On Mon, Jun 24, 2019 at 12:35:35AM +0800, Guo Ren wrote:
+> > > On Fri, Jun 21, 2019 at 10:16 PM Catalin Marinas
+> > > <catalin.marinas@arm.com> wrote:
+> > > > BTW, if you find the algorithm fairly straightforward ;), see this
+> > > > bug-fix which took a formal model to identify: a8ffaaa060b8 ("arm64:
+> > > > asid: Do not replace active_asids if already 0").
+> > [...]
+> > > Btw, Is this detected by arm's aisd allocator TLA+ model ? Or a real
+> > > bug report ?
+> >
+> > This specific bug was found by the TLA+ model checker (at the time we
+> > were actually tracking down another bug with multi-threaded CPU sharing
+> > the TLB, bug also confirmed by the formal model).
+> 
+> Could you tell me the ref-link about "another bug with multi-threaded
+> CPU sharing the TLB" ?
+> 
+> In my concept, the multi-core asid mechanism is also applicable to
+> multi-thread shared TLB, but it will generate redundant tlbflush. From
+> the software design logic, multi-threaded is treated as multi-cores
+> without error, but performance is not optimized.
 
-The first cluster uses the "VDDCPU_B" power supply, and the second
-cluster uses the "VDDCPU_A" power supply.
+From the ASID reservation/allocation perspective, the mechanism is the
+same between multi-threaded with a shared TLB and multi-core. On arm64,
+a local_flush_tlb_all() on a thread invalidates the TLB for the other
+threads of the same core.
 
-Each power supply can achieve 0.73V to 1.01V using 2 distinct PWM
-outputs clocked at 800KHz with an inverse duty-cycle.
+The actual problem with multi-threaded CPUs is a lot more subtle.
+Digging some internal email from 1.5 years ago and pasting it below
+(where "current ASID algorithm" refers to the one prior to the fix and
+CnP - Common Not Private - means shared TLBs on a multi-threaded CPU):
 
-DVFS has been tested by running the arm64 cpuburn at [1] and cycling
-between all the possible cpufreq translations of each cluster and
-checking the final frequency using the clock-measurer, script at [2].
 
-[1] https://github.com/ssvb/cpuburn-arm/blob/master/cpuburn-a53.S
-[2] https://gist.github.com/superna9999/d4de964dbc0f84b7d527e1df2ddea25f
+The current ASID roll-over algorithm allows for a small window where
+active_asids for a CPU (P1) is different from the actual ASID in TTBR0.
+This can lead to a roll-over on a different CPU (P2) allocating an ASID
+(for a different task) which is still hardware-active on P1.
 
-Signed-off-by: Neil Armstrong <narmstrong@baylibre.com>
----
- .../boot/dts/amlogic/meson-g12b-odroid-n2.dts | 96 +++++++++++++++++++
- 1 file changed, 96 insertions(+)
+A TLBI on a CPU (or a peer CPU with CnP) does not guarantee that all the
+entries corresponding to a valid TTBRx are removed as they can still be
+speculatively loaded immediately after TLBI.
 
-diff --git a/arch/arm64/boot/dts/amlogic/meson-g12b-odroid-n2.dts b/arch/arm64/boot/dts/amlogic/meson-g12b-odroid-n2.dts
-index 81780ffcc7f0..75ff8a7e373d 100644
---- a/arch/arm64/boot/dts/amlogic/meson-g12b-odroid-n2.dts
-+++ b/arch/arm64/boot/dts/amlogic/meson-g12b-odroid-n2.dts
-@@ -114,6 +114,44 @@
- 		/* FIXME: actually controlled by VDDCPU_B_EN */
- 	};
- 
-+	vddcpu_a: regulator-vddcpu-a {
-+		/*
-+		 * MP8756GD Regulator.
-+		 */
-+		compatible = "pwm-regulator";
-+
-+		regulator-name = "VDDCPU_A";
-+		regulator-min-microvolt = <721000>;
-+		regulator-max-microvolt = <1022000>;
-+
-+		vin-supply = <&main_12v>;
-+
-+		pwms = <&pwm_ab 0 1250 0>;
-+		pwm-dutycycle-range = <100 0>;
-+
-+		regulator-boot-on;
-+		regulator-always-on;
-+	};
-+
-+	vddcpu_b: regulator-vddcpu-b {
-+		/*
-+		 * Silergy SY8120B1ABC Regulator.
-+		 */
-+		compatible = "pwm-regulator";
-+
-+		regulator-name = "VDDCPU_B";
-+		regulator-min-microvolt = <721000>;
-+		regulator-max-microvolt = <1022000>;
-+
-+		vin-supply = <&main_12v>;
-+
-+		pwms = <&pwm_AO_cd 1 1250 0>;
-+		pwm-dutycycle-range = <100 0>;
-+
-+		regulator-boot-on;
-+		regulator-always-on;
-+	};
-+
- 	hub_5v: regulator-hub_5v {
- 		compatible = "regulator-fixed";
- 		regulator-name = "HUB_5V";
-@@ -245,6 +283,48 @@
- 	status = "okay";
- };
- 
-+&cpu0 {
-+	cpu-supply = <&vddcpu_b>;
-+	operating-points-v2 = <&cpu_opp_table_0>;
-+	clocks = <&clkc CLKID_CPU_CLK>;
-+	clock-latency = <50000>;
-+};
-+
-+&cpu1 {
-+	cpu-supply = <&vddcpu_b>;
-+	operating-points-v2 = <&cpu_opp_table_0>;
-+	clocks = <&clkc CLKID_CPU_CLK>;
-+	clock-latency = <50000>;
-+};
-+
-+&cpu100 {
-+	cpu-supply = <&vddcpu_a>;
-+	operating-points-v2 = <&cpub_opp_table_1>;
-+	clocks = <&clkc CLKID_CPUB_CLK>;
-+	clock-latency = <50000>;
-+};
-+
-+&cpu101 {
-+	cpu-supply = <&vddcpu_a>;
-+	operating-points-v2 = <&cpub_opp_table_1>;
-+	clocks = <&clkc CLKID_CPUB_CLK>;
-+	clock-latency = <50000>;
-+};
-+
-+&cpu102 {
-+	cpu-supply = <&vddcpu_a>;
-+	operating-points-v2 = <&cpub_opp_table_1>;
-+	clocks = <&clkc CLKID_CPUB_CLK>;
-+	clock-latency = <50000>;
-+};
-+
-+&cpu103 {
-+	cpu-supply = <&vddcpu_a>;
-+	operating-points-v2 = <&cpub_opp_table_1>;
-+	clocks = <&clkc CLKID_CPUB_CLK>;
-+	clock-latency = <50000>;
-+};
-+
- &ext_mdio {
- 	external_phy: ethernet-phy@0 {
- 		/* Realtek RTL8211F (0x001cc916) */	
-@@ -316,6 +396,22 @@
- 	pinctrl-names = "default";
- };
- 
-+&pwm_ab {
-+	pinctrl-0 = <&pwm_a_e_pins>;
-+	pinctrl-names = "default";
-+	clocks = <&xtal>;
-+	clock-names = "clkin0";
-+	status = "okay";
-+};
-+
-+&pwm_AO_cd {
-+	pinctrl-0 = <&pwm_ao_d_e_pins>;
-+	pinctrl-names = "default";
-+	clocks = <&xtal>;
-+	clock-names = "clkin1";
-+	status = "okay";
-+};
-+
- /* SD card */
- &sd_emmc_b {
- 	status = "okay";
+While having two different page tables with the same ASID on different
+CPUs should be fine without CnP, it becomes problematic when CnP is
+enabled:
+
+P1                                      P2
+--                                      --
+TTBR0.BADDR = T1
+TTBR0.ASID = A1
+check_and_switch_context(T2,A2)
+  asid_maps[P1] = A2
+  goto fastpath
+                                        check_and_switch_context(T3,A0)
+                                          new_context
+                                            ASID roll-over allocates A1
+                                              since it is not active
+                                          TLBI ALL
+speculate TTBR0.ASID = A1 entry
+                                          TTBR0.BADDR = T3
+                                          TTBR0.ASID = A1
+  TTBR0.BADDR = T2
+  TTBR0.ASID = A2
+
+After this, the common TLB on P1 and P2 (CnP) contains entries
+corresponding to the old T1 and A1. Task T3 using the same ASID A1 can
+hit such entries. (T1,A1) will eventually be removed from the TLB on the
+next context switch on P1 since tlb_flush_pending was set but this is
+not guaranteed to happen.
+
+
+The fix on arm64 (as part of 5ffdfaedfa0a - "arm64: mm: Support Common
+Not Private translations") was to set the reserved TTBR0 in
+check_and_switch_context(), preventing speculative loads into the TLB
+being tagged with the wrong ASID. So this is specific to the ARM CPUs
+behaviour w.r.t. speculative TLB loads, it may not be the case (yet) for
+your architecture.
+
 -- 
-2.21.0
-
+Catalin
 
 _______________________________________________
 linux-arm-kernel mailing list
