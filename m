@@ -2,83 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9C36C5B968
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  1 Jul 2019 12:50:32 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 96D885B969
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  1 Jul 2019 12:50:48 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=VCuVqZ/RRNjKF11DTBpqzLd58BVmBT10Qm6Z3dKvlbw=; b=ok4iYN71xdZ4Ng
-	EL3A219eJw9PvQzJGo4OuOJTicIy/g5jTuG9hle4UN7rvxprMhaJGADtO9RuMHmfkdG3CzD6wjVLT
-	a1cTqVlPNTS/zjrGMspUVvxwOe/WbWitnUgXbS8qinXV8XNEV19Tjelsr0/8QW8tV6KZwRhHKc2zA
-	gUmbeRIFVMqSRRbO8M0KklqZd9CueWnpsEbd76G2+JoNFjNzixl+ll2aBJ+KLU2KxE5VtXLl3f21Q
-	OJyQJHr2oJ9AP0ISLH/88gDZlIlZIE1YFbujkiL5b6VB4qhCyqQH5WfreOwCsM8agD1i450Ct7a7M
-	BKbrOWklGuE07ht2YAzA==;
+	List-Owner; bh=TdxHx3w2b/cy+vVZ/iz8Ph/h+0wvwmpfdWuOMRzg38Y=; b=nTNk/XVIuVceBI
+	NH2J66P1SXKfA+HBZ4VRZGJdPNvYfrSN2dlS952eb1iYJo109gP1ZQES3vGuTg+rxZCK1Ji7B+tJs
+	RzV+fbOrdtWLdmBbeI0tWipqM3gJ80WYdT4xJkFWhkk+Zt9ECy6aXaKiN68pnymSO4bGD1cynyJKr
+	LL06yzKTY29UmCoLtihHNp+Iq78ORGJGASKadHaJR9BQjptDX6p0YM94pdJ+05gVIysT6sMlmclTO
+	FEsQ/S7uoy0eU/u0MM8kAOabHclyVBXV7W5GKlVkYSVra8FfgdpaWuATtbC68wTbLjbjRuDFJVYDC
+	f91qDP0RMvlQxEY23J7g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hhttG-00020R-NW; Mon, 01 Jul 2019 10:50:30 +0000
-Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
+	id 1hhttV-0002EI-O6; Mon, 01 Jul 2019 10:50:45 +0000
+Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hhtqQ-0006h9-S9
- for linux-arm-kernel@lists.infradead.org; Mon, 01 Jul 2019 10:47:40 +0000
-Received: by mail-wr1-x441.google.com with SMTP id v14so13270369wrr.4
+ id 1hhtqR-0006i0-Tm
+ for linux-arm-kernel@lists.infradead.org; Mon, 01 Jul 2019 10:47:42 +0000
+Received: by mail-wr1-x443.google.com with SMTP id v14so13270455wrr.4
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 01 Jul 2019 03:47:34 -0700 (PDT)
+ Mon, 01 Jul 2019 03:47:35 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=baylibre-com.20150623.gappssmtp.com; s=20150623;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=cDNMs7vyeGU4ItBEGrxn4uIQX4icW4tE6CY0BwZzeYU=;
- b=F2tVnR2jB1XsZNfj2okEZqzs3xC3S6Oouj9gTyIXZeHtZkiw7Tr7BpMKwvWpEsrnEF
- 9r0B+gGVGc/sGn7hHLtY8ANc5U1LcH+3Y1eCtdPqJfPltCwiMBEkgJ9G+OKTHAaZlJ48
- yma5ZbqOeVvZh0Eg0T9x+OQQhHnKlMoCgEkD9vYf9NMkRZI3nDx6/gIw2WceJc8G42Wg
- YIsplADMwrUIO7ccZkoaRCM8QfNQjENnDuZVZQNBHjTEE1TlicwLy/mShIMkXuMPsdgV
- Wc53lZRkmtAimiE45onkPUne/3lB73K3/Onicirxd0UcJgqg9IFAhnN9PEwJZzHlgdBH
- SXmQ==
+ bh=/4UPHUJqymNIvh4OVWT1OKmRPEHJo2Lj3+lnzK2tYUo=;
+ b=KxTJ3P6vYWvoeekgNvzAP9lc8MoxyqRuFej615Ayg2uLwsUgnldjA4vcnbkWTh1F8g
+ R6PniMERSsAU2jYgMmLr5D1zAjKhcMC2G0N85ek4nuKexzSXjq2BjRk5W4OyfrWNNoOL
+ 3zM1yMgtPqw5Ws9mnYSgS3d563B7/ZyW61iNEecPKnewn3FDN476UWuVtwZu9Y1xCkkk
+ eaKstKovBxwqapM2zW33zcUlP0k1Zx6nqmPTXFv+TwCLKNp8fzzzK8fK3jioJdwH3d7U
+ 8HnPbkxqIcJOhJynC7D85eWb0UDLSrBPRwmN16+OacU/uXtNoM2z16vG80xknbua7EIr
+ 4vNg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=cDNMs7vyeGU4ItBEGrxn4uIQX4icW4tE6CY0BwZzeYU=;
- b=mF4gdFYtbA++snyHFRPca4PZWhO+dAjO3rc1qWZ4iYfjk60WuI7V3H/1LX8VJRD4nv
- +CW/JW/fGBfLRk+Id7ORi8cyKhQvp1u9Wfp0qM6xL3ng9Wt2V/9OY0ssfkwj0RgRB4rJ
- ma5u+rf5lhjMN5yoggmVY4oJL5wH0Vw/NtP/A5Rduk6/XNZr+xqXAzFUtIH1SL0hJ8lG
- HhF14wjipfJrzQWR+uRa4KrNHcFMmsV4oXEt7bn4vJsHOmnUeLY750KXuQWk+YB9AN1l
- SgnOBifmLhuil4kXTR8qhfYY6IUhhYRdwtULB4ogq13XPvMcAt3YltIwlBrrTiyT1R+5
- rPKw==
-X-Gm-Message-State: APjAAAUyeIiCAE34YJJkrVXuE3y1oa1Eujs6GWe0I8PRqzzaHS5Awj4N
- GBU+Xz+lUQsBy1EZqNLz+ZlZhA==
-X-Google-Smtp-Source: APXvYqxpvZ+wXD54f65Y9xIdncQZjnJsorwD7241UA/QyH8HN4LyX5o51WdwgdOmqi81S5Pu3reXYQ==
-X-Received: by 2002:a5d:5112:: with SMTP id s18mr17922728wrt.111.1561978052849; 
- Mon, 01 Jul 2019 03:47:32 -0700 (PDT)
+ bh=/4UPHUJqymNIvh4OVWT1OKmRPEHJo2Lj3+lnzK2tYUo=;
+ b=ibZCeMlDP05iYhHdgO0wVeZTZtcbuLIiNcV9ipFonFKvuWgFxVlfUgjj9P1WzT4ldj
+ 8i+v3x06yLAvzGd+t8U1ruDeVixG12IkPBq+xikw/2ynkkie3lKwcuKpBs5JzTUA5hOG
+ QX0s3q29Hwt2jtkOH2M3kHpvvFe6cAAkfPxSCI6PN4Jt31c87BTe37yICsUMPULkR6jL
+ 5RYOIVd2rQbyO9TMJU/e8C90JKSh4gVl7JYhHbiScvavhrwHl4tV/91X19McS0EPIoEV
+ HcbNBfZg+c1tywAzf9gds3vnbk9xMJ8ILRls2bFwwbwm3EvepNOmMho+P0yQ8y+AKLyy
+ bASg==
+X-Gm-Message-State: APjAAAWQemF6iKedFQDjmuUq9ZUweLLZXzRcWlvEsrt6QEfogdGLazM7
+ 4AKwSgmTSHsqwB2tW8wpttPJWw==
+X-Google-Smtp-Source: APXvYqzGt+8nbW5RLL8NhHySbKn5TUNmB8G81MM3qlOxbnBA4I6WaZrShqXYcTWSlDjBoDCWjuK2Dg==
+X-Received: by 2002:a5d:6b90:: with SMTP id n16mr7830338wrx.206.1561978054117; 
+ Mon, 01 Jul 2019 03:47:34 -0700 (PDT)
 Received: from localhost.localdomain (176-150-251-154.abo.bbox.fr.
  [176.150.251.154])
- by smtp.gmail.com with ESMTPSA id d24sm11658802wra.43.2019.07.01.03.47.31
+ by smtp.gmail.com with ESMTPSA id d24sm11658802wra.43.2019.07.01.03.47.32
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-SHA bits=128/128);
- Mon, 01 Jul 2019 03:47:31 -0700 (PDT)
+ Mon, 01 Jul 2019 03:47:33 -0700 (PDT)
 From: Neil Armstrong <narmstrong@baylibre.com>
 To: jbrunet@baylibre.com,
-	khilman@baylibre.com,
-	linux-media@vger.kernel.org
-Subject: [RFC 08/11] media: platform: meson-ao-cec-g12a: add support for SM1
-Date: Mon,  1 Jul 2019 12:47:02 +0200
-Message-Id: <20190701104705.18271-9-narmstrong@baylibre.com>
+	khilman@baylibre.com
+Subject: [RFC 09/11] dt-bindings: arm: amlogic: add SM1 bindings
+Date: Mon,  1 Jul 2019 12:47:03 +0200
+Message-Id: <20190701104705.18271-10-narmstrong@baylibre.com>
 X-Mailer: git-send-email 2.21.0
 In-Reply-To: <20190701104705.18271-1-narmstrong@baylibre.com>
 References: <20190701104705.18271-1-narmstrong@baylibre.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190701_034734_950069_141FDFE4 
-X-CRM114-Status: GOOD (  15.27  )
+X-CRM114-CacheID: sfid-20190701_034735_977171_EDB9F142 
+X-CRM114-Status: GOOD (  11.19  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:441 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:443 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -103,107 +102,31 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add support for the Amlogic SM1 SoC Family to the G12A AO-CECB
-derivative.
+Add bindings for the new Amlogic SM1 SoC Family.
 
-It only adds a single init register.
+It a derivative of the G12A SoC Family with :
+- Cortex-A55 core instead of A53
+- more power domains
+- a neural network co-processor
+- a CSI input and image processor
 
 Signed-off-by: Neil Armstrong <narmstrong@baylibre.com>
 ---
- drivers/media/platform/meson/ao-cec-g12a.c | 37 +++++++++++++++++++++-
- 1 file changed, 36 insertions(+), 1 deletion(-)
+ Documentation/devicetree/bindings/arm/amlogic.yaml | 3 +++
+ 1 file changed, 3 insertions(+)
 
-diff --git a/drivers/media/platform/meson/ao-cec-g12a.c b/drivers/media/platform/meson/ao-cec-g12a.c
-index 3620a1e310f5..1c696a126ee8 100644
---- a/drivers/media/platform/meson/ao-cec-g12a.c
-+++ b/drivers/media/platform/meson/ao-cec-g12a.c
-@@ -121,6 +121,9 @@
- #define CECB_CTRL_TYPE_NEXT	2
+diff --git a/Documentation/devicetree/bindings/arm/amlogic.yaml b/Documentation/devicetree/bindings/arm/amlogic.yaml
+index 325c6fd3566d..0b419fd0bac2 100644
+--- a/Documentation/devicetree/bindings/arm/amlogic.yaml
++++ b/Documentation/devicetree/bindings/arm/amlogic.yaml
+@@ -141,4 +141,7 @@ properties:
+               - hardkernel,odroid-n2
+           - const: amlogic,g12b
  
- #define CECB_CTRL2		0x01
-+
-+#define CECB_CTRL2_RISE_DEL_MAX	GENMASK(4, 0)
-+
- #define CECB_INTR_MASK		0x02
- #define CECB_LADD_LOW		0x05
- #define CECB_LADD_HIGH		0x06
-@@ -165,6 +168,11 @@
- 
- #define CECB_WAKEUPCTRL		0x31
- 
-+struct meson_ao_cec_g12a_data {
-+	/* Setup the internal CECB_CTRL2 register */
-+	bool				ctrl2_setup;
-+};
-+
- struct meson_ao_cec_g12a_device {
- 	struct platform_device		*pdev;
- 	struct regmap			*regmap;
-@@ -175,6 +183,7 @@ struct meson_ao_cec_g12a_device {
- 	struct cec_msg			rx_msg;
- 	struct clk			*oscin;
- 	struct clk			*core;
-+	const struct meson_ao_cec_g12a_data *data;
- };
- 
- static const struct regmap_config meson_ao_cec_g12a_regmap_conf = {
-@@ -620,6 +629,10 @@ static int meson_ao_cec_g12a_adap_enable(struct cec_adapter *adap, bool enable)
- 	regmap_update_bits(ao_cec->regmap, CECB_GEN_CNTL_REG,
- 			   CECB_GEN_CNTL_RESET, 0);
- 
-+	if (ao_cec->data->ctrl2_setup)
-+		regmap_write(ao_cec->regmap_cec, CECB_CTRL2,
-+			     FIELD_PREP(CECB_CTRL2_RISE_DEL_MAX, 2));
-+
- 	meson_ao_cec_g12a_irq_setup(ao_cec, true);
- 
- 	return 0;
-@@ -639,6 +652,7 @@ static int meson_ao_cec_g12a_probe(struct platform_device *pdev)
- 	void __iomem *base;
- 	int ret, irq;
- 
-+
- 	hdmi_dev = cec_notifier_parse_hdmi_phandle(&pdev->dev);
- 	if (IS_ERR(hdmi_dev))
- 		return PTR_ERR(hdmi_dev);
-@@ -647,6 +661,12 @@ static int meson_ao_cec_g12a_probe(struct platform_device *pdev)
- 	if (!ao_cec)
- 		return -ENOMEM;
- 
-+	ao_cec->data = of_device_get_match_data(&pdev->dev);
-+	if (!ao_cec->data) {
-+		dev_err(&pdev->dev, "failed to get match data\n");
-+		return -ENODEV;
-+	}
-+
- 	spin_lock_init(&ao_cec->cec_reg_lock);
- 	ao_cec->pdev = pdev;
- 
-@@ -757,8 +777,23 @@ static int meson_ao_cec_g12a_remove(struct platform_device *pdev)
- 	return 0;
- }
- 
-+static const struct meson_ao_cec_g12a_data ao_cec_g12a_data = {
-+	.ctrl2_setup = false,
-+};
-+
-+static const struct meson_ao_cec_g12a_data ao_cec_sm1_data = {
-+	.ctrl2_setup = true,
-+};
-+
- static const struct of_device_id meson_ao_cec_g12a_of_match[] = {
--	{ .compatible = "amlogic,meson-g12a-ao-cec", },
-+	{
-+		.compatible = "amlogic,meson-g12a-ao-cec",
-+		.data = &ao_cec_g12a_data,
-+	},
-+	{
-+		.compatible = "amlogic,meson-sm1-ao-cec",
-+		.data = &ao_cec_sm1_data,
-+	},
- 	{ /* sentinel */ }
- };
- MODULE_DEVICE_TABLE(of, meson_ao_cec_g12a_of_match);
++      - description: Boards with the Amlogic Meson SM1 S905X3 SoC
++        items:
++          - const: amlogic,sm1
+ ...
 -- 
 2.21.0
 
