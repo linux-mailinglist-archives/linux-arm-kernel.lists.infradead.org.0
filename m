@@ -2,70 +2,70 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2E1995B437
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  1 Jul 2019 07:34:37 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D2DFB5B419
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  1 Jul 2019 07:32:37 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=JPSBsEtTXNzJN3Z4mczYcpX/Aj6hi/TTN1QlrdKssbA=; b=dbbFZ1FnM0mBOx
-	pLkuUCK1Bfcm21APKw3ZGD3/Ce9hdfqNEm+HSG/PjSpoli5d7ad5OL6b/CiHzOFjgmMK7BKCNB6eF
-	0GCqQEV8VnHGqWFuggL/BIWxafrWv9ucTnIBuZtVgtkcQoeihnpRpss37ob0rwM4EwOzlk6ZGZT1+
-	Lq09zIv0hX8Jv4VaIDLGMoC3F5RplpZsRA7ZMJms1aCF8UCMQxYETjmHOS91duqLCH5auOg4tEexw
-	lUiKSxDrFkIvrWcr9gMkAMsgC8w4qa0iDjHKxS6P1okpPmGB42/WXG1G1IV5SUcuB0akQt4Z1Bpnu
-	51sEKzGnns2xZ5A1bfOA==;
+	List-Owner; bh=JwF23i14+2XaKm7aX304fzJcUjDp2DWPzfx/uIrqT84=; b=mr7K0XfB+oHjFE
+	omSJjaX+9zM6wVxwQ9wE5l3zrjq6i0PJPq4dL2baQVS+iML7tpAuX8CPD+rgby5v9GNULLiOqO5xC
+	d1WyfDSCvf5xtT18qZDsUYjonGVd9HCp/zX/vtp3ggIa8lPexhFpMEaj6LRhmRHq/tZu124bXJPPh
+	drm1I9/7776NX3UxFBwyL58rQpb2AyM3VACndNQ2u5zy7uOGPbWdPThjilIRqrwrZjKS+yrSBhCHc
+	3H4kyBbttsbyKH1OUnQ80eve2FZcS8gJGyfFq1XJ9QGVLhndLLdrcrT4qRbT4QOUx/UNWR+cbkmnF
+	NKBL37z3jIzBVn3oYWhw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hhoxX-0002FQ-JH; Mon, 01 Jul 2019 05:34:35 +0000
-Received: from mail-eopbgr810088.outbound.protection.outlook.com
- ([40.107.81.88] helo=NAM01-BY2-obe.outbound.protection.outlook.com)
+	id 1hhovb-0000c4-Fz; Mon, 01 Jul 2019 05:32:35 +0000
+Received: from mail-eopbgr810081.outbound.protection.outlook.com
+ ([40.107.81.81] helo=NAM01-BY2-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hhotL-0007LJ-85; Mon, 01 Jul 2019 05:30:18 +0000
+ id 1hhotH-0007LN-H1; Mon, 01 Jul 2019 05:30:15 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=xilinx.onmicrosoft.com; s=selector1-xilinx-onmicrosoft-com;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=SFHTLeHuK318EaTUgjBJUU/s3/x/ymnBh8YX7NBuHlc=;
- b=n8aVhIPoxdaiBWKDTabPY6as6Q9O1RxwnlZ48ie+mVvlDr0MfRVaztuYNuyQm9FqtM9rdyYFFr1IKZA1LYDH9EKZwnpIO0LlzwSQ7ZtO633jabzyvpcYr4NmglhnPrunww1pMxFbzfYfpvKdUU25ytHd077RmbW+5KnkIPfAMhA=
-Received: from SN4PR0201CA0015.namprd02.prod.outlook.com
- (2603:10b6:803:2b::25) by BYAPR02MB5238.namprd02.prod.outlook.com
- (2603:10b6:a03:68::27) with Microsoft SMTP Server (version=TLS1_2,
+ bh=SgDItzVZ3yu8TkV+8TULcYmqkZicXfC342KqM0bl+TM=;
+ b=aFRAiVqYlB9jtQgrWBazUdh1oAezb8ktIefPjruK1C5O7ZPuzTTfaofFl5YcpIHyFcNx7vnUmK3Px8QINRc1OFpT9sc5VYLFHRnMUG8Y+y4S5X5lDq8pe2Xzkh7bcHE3E1pTJ66CfTYI6+ofDXrpr0X+t2B3s+0XrVuadJ/MVXk=
+Received: from DM6PR02CA0051.namprd02.prod.outlook.com (2603:10b6:5:177::28)
+ by DM5PR0201MB3400.namprd02.prod.outlook.com (2603:10b6:4:76::13) with
+ Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2032.20; Mon, 1 Jul
- 2019 05:30:07 +0000
-Received: from BL2NAM02FT055.eop-nam02.prod.protection.outlook.com
- (2a01:111:f400:7e46::206) by SN4PR0201CA0015.outlook.office365.com
- (2603:10b6:803:2b::25) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384) id 15.20.2032.20 via Frontend
- Transport; Mon, 1 Jul 2019 05:30:07 +0000
-Authentication-Results: spf=pass (sender IP is 149.199.60.100)
+ 2019 05:30:09 +0000
+Received: from BL2NAM02FT015.eop-nam02.prod.protection.outlook.com
+ (2a01:111:f400:7e46::202) by DM6PR02CA0051.outlook.office365.com
+ (2603:10b6:5:177::28) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384) id 15.20.2032.18 via Frontend
+ Transport; Mon, 1 Jul 2019 05:30:09 +0000
+Authentication-Results: spf=pass (sender IP is 149.199.60.83)
  smtp.mailfrom=xilinx.com; vger.kernel.org; dkim=none (message not signed)
  header.d=none;vger.kernel.org; dmarc=bestguesspass action=none
  header.from=xilinx.com;
 Received-SPF: Pass (protection.outlook.com: domain of xilinx.com designates
- 149.199.60.100 as permitted sender) receiver=protection.outlook.com;
- client-ip=149.199.60.100; helo=xsj-pvapsmtpgw02;
-Received: from xsj-pvapsmtpgw02 (149.199.60.100) by
- BL2NAM02FT055.mail.protection.outlook.com (10.152.77.126) with Microsoft SMTP
+ 149.199.60.83 as permitted sender) receiver=protection.outlook.com;
+ client-ip=149.199.60.83; helo=xsj-pvapsmtpgw01;
+Received: from xsj-pvapsmtpgw01 (149.199.60.83) by
+ BL2NAM02FT015.mail.protection.outlook.com (10.152.77.167) with Microsoft SMTP
  Server (version=TLS1_0, cipher=TLS_RSA_WITH_AES_256_CBC_SHA) id 15.20.2032.15
- via Frontend Transport; Mon, 1 Jul 2019 05:30:06 +0000
-Received: from unknown-38-66.xilinx.com ([149.199.38.66]:35925
- helo=xsj-pvapsmtp01) by xsj-pvapsmtpgw02 with esmtp (Exim 4.63)
+ via Frontend Transport; Mon, 1 Jul 2019 05:30:08 +0000
+Received: from unknown-38-66.xilinx.com ([149.199.38.66] helo=xsj-pvapsmtp01)
+ by xsj-pvapsmtpgw01 with esmtp (Exim 4.63)
  (envelope-from <manish.narani@xilinx.com>)
- id 1hhotC-0006Tf-1G; Sun, 30 Jun 2019 22:30:06 -0700
+ id 1hhotE-0002ry-1j; Sun, 30 Jun 2019 22:30:08 -0700
 Received: from [127.0.0.1] (helo=localhost)
  by xsj-pvapsmtp01 with smtp (Exim 4.63)
  (envelope-from <manish.narani@xilinx.com>)
- id 1hhot6-0003EO-To; Sun, 30 Jun 2019 22:30:00 -0700
-Received: from xsj-pvapsmtp01 (smtp3.xilinx.com [149.199.38.66])
- by xsj-smtp-dlp2.xlnx.xilinx.com (8.13.8/8.13.1) with ESMTP id x615Tu2M008188; 
+ id 1hhot8-0003EO-SB; Sun, 30 Jun 2019 22:30:02 -0700
+Received: from xsj-pvapsmtp01 (xsj-smtp.xilinx.com [149.199.38.66])
+ by xsj-smtp-dlp1.xlnx.xilinx.com (8.13.8/8.13.1) with ESMTP id x615Tuq5023636; 
  Sun, 30 Jun 2019 22:29:56 -0700
 Received: from [172.23.64.106] (helo=xhdvnc125.xilinx.com)
  by xsj-pvapsmtp01 with esmtp (Exim 4.63)
  (envelope-from <mnarani@xilinx.com>)
- id 1hhot2-0003Cb-4O; Sun, 30 Jun 2019 22:29:56 -0700
+ id 1hhot2-0003Ce-4R; Sun, 30 Jun 2019 22:29:56 -0700
 Received: by xhdvnc125.xilinx.com (Postfix, from userid 16987)
- id 53D1D12174C; Mon,  1 Jul 2019 10:59:54 +0530 (IST)
+ id 5A01612174D; Mon,  1 Jul 2019 10:59:54 +0530 (IST)
 From: Manish Narani <manish.narani@xilinx.com>
 To: ulf.hansson@linaro.org, robh+dt@kernel.org, mark.rutland@arm.com,
  heiko@sntech.de, michal.simek@xilinx.com, adrian.hunter@intel.com,
@@ -75,10 +75,9 @@ To: ulf.hansson@linaro.org, robh+dt@kernel.org, mark.rutland@arm.com,
  tony.xie@rock-chips.com, rajan.vaja@xilinx.com, jolly.shah@xilinx.com,
  nava.manne@xilinx.com, mdf@kernel.org, manish.narani@xilinx.com,
  olof@lixom.net
-Subject: [PATCH v2 08/11] mmc: sdhci-of-arasan: Add support to set clock phase
- delays for SD
-Date: Mon,  1 Jul 2019 10:59:48 +0530
-Message-Id: <1561958991-21935-9-git-send-email-manish.narani@xilinx.com>
+Subject: [PATCH v2 09/11] firmware: xilinx: Add SDIO Tap Delay APIs
+Date: Mon,  1 Jul 2019 10:59:49 +0530
+Message-Id: <1561958991-21935-10-git-send-email-manish.narani@xilinx.com>
 X-Mailer: git-send-email 2.1.1
 In-Reply-To: <1561958991-21935-1-git-send-email-manish.narani@xilinx.com>
 References: <1561958991-21935-1-git-send-email-manish.narani@xilinx.com>
@@ -87,42 +86,42 @@ X-TM-AS-Product-Ver: IMSS-7.1.0.1224-8.2.0.1013-23620.005
 X-TM-AS-User-Approved-Sender: Yes;Yes
 X-EOPAttributedMessage: 0
 X-MS-Office365-Filtering-HT: Tenant
-X-Forefront-Antispam-Report: CIP:149.199.60.100; IPV:NLI; CTRY:US; EFV:NLI;
+X-Forefront-Antispam-Report: CIP:149.199.60.83; IPV:NLI; CTRY:US; EFV:NLI;
  SFV:NSPM;
- SFS:(10009020)(4636009)(376002)(346002)(39860400002)(136003)(396003)(2980300002)(189003)(199004)(8676002)(186003)(2906002)(14444005)(336012)(70586007)(356004)(52956003)(70206006)(44832011)(50466002)(36386004)(486006)(48376002)(81156014)(11346002)(47776003)(305945005)(4326008)(16586007)(81166006)(446003)(103686004)(6266002)(26005)(6666004)(2616005)(36756003)(7416002)(63266004)(426003)(476003)(5660300002)(126002)(478600001)(8936002)(72206003)(42186006)(316002)(50226002)(106002)(76176011)(51416003)(921003)(1121003)(5001870100001);
- DIR:OUT; SFP:1101; SCL:1; SRVR:BYAPR02MB5238; H:xsj-pvapsmtpgw02; FPR:;
- SPF:Pass; LANG:en; PTR:unknown-60-100.xilinx.com,xapps1.xilinx.com; MX:1; A:1;
+ SFS:(10009020)(4636009)(346002)(376002)(136003)(396003)(39860400002)(2980300002)(189003)(199004)(336012)(4326008)(6266002)(5660300002)(426003)(52956003)(106002)(103686004)(42186006)(478600001)(72206003)(50226002)(2906002)(63266004)(51416003)(36756003)(476003)(81166006)(70206006)(126002)(8936002)(50466002)(26005)(356004)(76176011)(186003)(6666004)(7416002)(47776003)(81156014)(446003)(2616005)(8676002)(36386004)(11346002)(305945005)(14444005)(316002)(486006)(48376002)(44832011)(16586007)(70586007)(921003)(1121003);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:DM5PR0201MB3400; H:xsj-pvapsmtpgw01; FPR:;
+ SPF:Pass; LANG:en; PTR:unknown-60-83.xilinx.com; MX:1; A:1; 
 MIME-Version: 1.0
 X-MS-PublicTrafficType: Email
-X-MS-Office365-Filtering-Correlation-Id: 556ee824-2d45-44f8-e92e-08d6fde52d49
+X-MS-Office365-Filtering-Correlation-Id: 196119bb-2e0d-4dc7-24cf-08d6fde52e82
 X-Microsoft-Antispam: BCL:0; PCL:0;
  RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600148)(711020)(4605104)(4709080)(1401327)(2017052603328);
- SRVR:BYAPR02MB5238; 
-X-MS-TrafficTypeDiagnostic: BYAPR02MB5238:
+ SRVR:DM5PR0201MB3400; 
+X-MS-TrafficTypeDiagnostic: DM5PR0201MB3400:
+X-Microsoft-Antispam-PRVS: <DM5PR0201MB3400AA60D2035B877AC06E07C1F90@DM5PR0201MB3400.namprd02.prod.outlook.com>
 X-Auto-Response-Suppress: DR, RN, NRN, OOF, AutoReply
-X-Microsoft-Antispam-PRVS: <BYAPR02MB52388A978CB4284290DEA17BC1F90@BYAPR02MB5238.namprd02.prod.outlook.com>
-X-MS-Oob-TLC-OOBClassifiers: OLM:8882;
+X-MS-Oob-TLC-OOBClassifiers: OLM:4714;
 X-Forefront-PRVS: 00851CA28B
 X-MS-Exchange-SenderADCheck: 1
-X-Microsoft-Antispam-Message-Info: 3ownFba+ATxmANaOZ1BIg51Z9KnyWqxyv77/HUWXaqD8zvmtyXZvlcMSX74WKVgD4cRv8uhF6xFqI2s8w/5EKIWVDyUJhbzSCuvDPWNH5FkTUjH1V5sM8kdHxpklGrqzaKyF3C1AShcSVCqweudex8idho5y1rLgxN6le8QGno/Ts7tqSUERcDHmz+nVRMVg803KHxL33U3Yve2BJbHKG8CXb1jbuOGsbNG88HJaINq/3P7BjYmhZplyooC9E8OozWUQlKdZAqO3JYD/7yKF4sNuo00jOsd311TcfUgUosed9cCk0EkLXcUIS6PgcM6Qp1n1wiP95Nw28G2u6k8VNTTzAm+4UPQiGAwbhF/EtzDmlnmFePzkZKVZ4VXECK4bL+KSJmnJN1PASv1II9jGJalWtnAt6B1SzLBcUjkdVWQ=
+X-Microsoft-Antispam-Message-Info: pzuOqnQULFbbPuV/goUsg1X6v4+Ex4YCTbT3JycYBDlQ1s4hI2PNsJIeZR3WxzmZBe/t31hF9CMZNAlCmQ4FP3v4khH0slfH4NkVtJNpo3ST9zIVh5jegftNUBhrTF5lq4h5W+CW62LBSg208AgaUK6O+rLOy59gQINSR5joS1lRuM+4MYx/Sm9sf/VTVBcgwyu6EATMEI4BpdPLPcxApnqe8uyaqpn5QGB1j1kUFvwH6hqs1Qroyo4guP7n1CwJBjeNqqMIx/+4hxs7rG+IHLJdDo/ZP8LMT+fOIoxTmNQzhPZJIqG8DfEQMvEBjHm1lKumQ3H3t5+WtR6EDXy7Ya6CjghcMBesyUSpXL0s6fAjCOxRMaStfIyu4YcfiNjPzqqJyiBXdI2pv3CbKiKntLqa8Sj93VsLqLM6l7Vr+kQ=
 X-OriginatorOrg: xilinx.com
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 01 Jul 2019 05:30:06.6288 (UTC)
-X-MS-Exchange-CrossTenant-Network-Message-Id: 556ee824-2d45-44f8-e92e-08d6fde52d49
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 01 Jul 2019 05:30:08.6750 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 196119bb-2e0d-4dc7-24cf-08d6fde52e82
 X-MS-Exchange-CrossTenant-Id: 657af505-d5df-48d0-8300-c31994686c5c
-X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=657af505-d5df-48d0-8300-c31994686c5c; Ip=[149.199.60.100];
- Helo=[xsj-pvapsmtpgw02]
+X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=657af505-d5df-48d0-8300-c31994686c5c; Ip=[149.199.60.83];
+ Helo=[xsj-pvapsmtpgw01]
 X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: BYAPR02MB5238
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DM5PR0201MB3400
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190630_223015_328819_29DDDAD1 
-X-CRM114-Status: GOOD (  14.26  )
+X-CRM114-CacheID: sfid-20190630_223011_612513_3FFFE9FD 
+X-CRM114-Status: GOOD (  12.13  )
 X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.81.88 listed in list.dnswl.org]
+ no trust [40.107.81.81 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -147,153 +146,120 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add support to read Clock Phase Delays from the DT and set it via
-clk_set_phase() API from clock framework. Some of the controllers might
-have their own handling of setting clock delays, for this keep the
-set_clk_delays as function pointer which can be assigned controller
-specific handling of the same.
+Add APIs for setting SDIO Tap Delays on ZynqMP platform.
 
 Signed-off-by: Manish Narani <manish.narani@xilinx.com>
 ---
- drivers/mmc/host/sdhci-of-arasan.c | 91 ++++++++++++++++++++++++++++++++++++++
- 1 file changed, 91 insertions(+)
+ drivers/firmware/xilinx/zynqmp.c     | 48 ++++++++++++++++++++++++++++++++++++
+ include/linux/firmware/xlnx-zynqmp.h | 15 ++++++++++-
+ 2 files changed, 62 insertions(+), 1 deletion(-)
 
-diff --git a/drivers/mmc/host/sdhci-of-arasan.c b/drivers/mmc/host/sdhci-of-arasan.c
-index 9513813..a545221 100644
---- a/drivers/mmc/host/sdhci-of-arasan.c
-+++ b/drivers/mmc/host/sdhci-of-arasan.c
-@@ -77,12 +77,18 @@ struct sdhci_arasan_soc_ctl_map {
-  * @sdcardclk:		Pointer to normal 'struct clock' for sdcardclk_hw.
-  * @sampleclk_hw:	Struct for the clock we might provide to a PHY.
-  * @sampleclk:		Pointer to normal 'struct clock' for sampleclk_hw.
-+ * @clk_phase_in:	Array of Input Clock Phase Delays for all speed modes
-+ * @clk_phase_out:	Array of Output Clock Phase Delays for all speed modes
-+ * @set_clk_delays:	Function pointer for setting Clock Delays
-  */
- struct sdhci_arasan_clk_data {
- 	struct clk_hw	sdcardclk_hw;
- 	struct clk      *sdcardclk;
- 	struct clk_hw	sampleclk_hw;
- 	struct clk      *sampleclk;
-+	int		clk_phase_in[MMC_TIMING_MMC_HS400 + 1];
-+	int		clk_phase_out[MMC_TIMING_MMC_HS400 + 1];
-+	void		(*set_clk_delays)(struct sdhci_host *host);
- };
- 
- /**
-@@ -180,6 +186,7 @@ static void sdhci_arasan_set_clock(struct sdhci_host *host, unsigned int clock)
- {
- 	struct sdhci_pltfm_host *pltfm_host = sdhci_priv(host);
- 	struct sdhci_arasan_data *sdhci_arasan = sdhci_pltfm_priv(pltfm_host);
-+	struct sdhci_arasan_clk_data *clk_data = &sdhci_arasan->clk_data;
- 	bool ctrl_phy = false;
- 
- 	if (!IS_ERR(sdhci_arasan->phy)) {
-@@ -221,6 +228,10 @@ static void sdhci_arasan_set_clock(struct sdhci_host *host, unsigned int clock)
- 		sdhci_arasan->is_phy_on = false;
- 	}
- 
-+	/* Set the Input and Output Clock Phase Delays */
-+	if (clk_data->set_clk_delays)
-+		clk_data->set_clk_delays(host);
-+
- 	sdhci_set_clock(host, clock);
- 
- 	if (sdhci_arasan->quirks & SDHCI_ARASAN_QUIRK_CLOCK_UNSTABLE)
-@@ -635,6 +646,84 @@ static void sdhci_arasan_update_baseclkfreq(struct sdhci_host *host)
- 	sdhci_arasan_syscon_write(host, &soc_ctl_map->baseclkfreq, mhz);
+diff --git a/drivers/firmware/xilinx/zynqmp.c b/drivers/firmware/xilinx/zynqmp.c
+index fd3d837..b81f1be 100644
+--- a/drivers/firmware/xilinx/zynqmp.c
++++ b/drivers/firmware/xilinx/zynqmp.c
+@@ -664,6 +664,52 @@ static int zynqmp_pm_set_requirement(const u32 node, const u32 capabilities,
+ 				   qos, ack, NULL);
  }
  
-+static void sdhci_arasan_set_clk_delays(struct sdhci_host *host)
++/**
++ * zynqmp_pm_sdio_out_setphase() - PM call to set clock output delays for SD
++ * @device_id:		Device ID of the SD controller
++ * @tap_delay:		Tap Delay value for output clock
++ *
++ * This API function is to be used for setting the clock output delays for SD
++ * clock.
++ *
++ * Return: Returns status, either success or error+reason
++ */
++static int zynqmp_pm_sdio_out_setphase(u32 device_id, u8 tap_delay)
 +{
-+	struct sdhci_pltfm_host *pltfm_host = sdhci_priv(host);
-+	struct sdhci_arasan_data *sdhci_arasan = sdhci_pltfm_priv(pltfm_host);
-+	struct sdhci_arasan_clk_data *clk_data = &sdhci_arasan->clk_data;
++	u32 node_id = (!device_id) ? NODE_SD_0 : NODE_SD_1;
++	int ret;
 +
-+	clk_set_phase(clk_data->sampleclk,
-+		      clk_data->clk_phase_in[host->timing]);
-+	clk_set_phase(clk_data->sdcardclk,
-+		      clk_data->clk_phase_out[host->timing]);
-+}
++	ret = zynqmp_pm_ioctl(node_id, IOCTL_SET_SD_TAPDELAY,
++			      PM_TAPDELAY_OUTPUT, tap_delay, NULL);
++	if (ret)
++		pr_err("Error setting Output Tap Delay\n");
 +
-+static void arasan_dt_read_clk_phase(struct device *dev,
-+				     struct sdhci_arasan_clk_data *clk_data,
-+				     unsigned int timing, const char *prop)
-+{
-+	struct device_node *np = dev->of_node;
-+
-+	int clk_phase[2] = {0};
-+
-+	/*
-+	 * Read Tap Delay values from DT, if the DT does not contain the
-+	 * Tap Values then use the pre-defined values.
-+	 */
-+	if (of_property_read_variable_u32_array(np, prop, &clk_phase[0],
-+	    2, 0)) {
-+		dev_dbg(dev, "Using predefined clock phase for %s = %d %d\n",
-+			prop, clk_data->clk_phase_in[timing],
-+			clk_data->clk_phase_out[timing]);
-+		return;
-+	}
-+
-+	/* The values read are Input and Output Clock Delays in order */
-+	clk_data->clk_phase_in[timing] = clk_phase[0];
-+	clk_data->clk_phase_out[timing] = clk_phase[1];
++	return ret;
 +}
 +
 +/**
-+ * arasan_dt_parse_clk_phases - Read Clock Delay values from DT
++ * zynqmp_pm_sdio_in_setphase() - PM call to set clock input delays for SD
++ * @device_id:		Device ID of the SD controller
++ * @tap_delay:		Tap Delay value for input clock
 + *
-+ * Called at initialization to parse the values of Clock Delays.
++ * This API function is to be used for setting the clock input delays for SD
++ * clock.
 + *
-+ * @dev:		Pointer to our struct device.
++ * Return: Returns status, either success or error+reason
 + */
-+static void arasan_dt_parse_clk_phases(struct device *dev,
-+				      struct sdhci_arasan_clk_data *clk_data)
++static int zynqmp_pm_sdio_in_setphase(u32 device_id, u8 tap_delay)
 +{
-+	/*
-+	 * This has been kept as a pointer and is assigned a function here.
-+	 * So that different controller variants can assign their own handling
-+	 * function.
-+	 */
-+	clk_data->set_clk_delays = sdhci_arasan_set_clk_delays;
++	u32 node_id = (!device_id) ? NODE_SD_0 : NODE_SD_1;
++	int ret;
 +
-+	arasan_dt_read_clk_phase(dev, clk_data, MMC_TIMING_LEGACY,
-+				 "clk-phase-legacy");
-+	arasan_dt_read_clk_phase(dev, clk_data, MMC_TIMING_MMC_HS,
-+				 "clk-phase-mmc-hs");
-+	arasan_dt_read_clk_phase(dev, clk_data, MMC_TIMING_SD_HS,
-+				 "clk-phase-sd-hs");
-+	arasan_dt_read_clk_phase(dev, clk_data, MMC_TIMING_UHS_SDR12,
-+				 "clk-phase-uhs-sdr12");
-+	arasan_dt_read_clk_phase(dev, clk_data, MMC_TIMING_UHS_SDR25,
-+				 "clk-phase-uhs-sdr25");
-+	arasan_dt_read_clk_phase(dev, clk_data, MMC_TIMING_UHS_SDR50,
-+				 "clk-phase-uhs-sdr50");
-+	arasan_dt_read_clk_phase(dev, clk_data, MMC_TIMING_UHS_SDR104,
-+				 "clk-phase-uhs-sdr104");
-+	arasan_dt_read_clk_phase(dev, clk_data, MMC_TIMING_UHS_DDR50,
-+				 "clk-phase-uhs-ddr50");
-+	arasan_dt_read_clk_phase(dev, clk_data, MMC_TIMING_MMC_DDR52,
-+				 "clk-phase-mmc-ddr52");
-+	arasan_dt_read_clk_phase(dev, clk_data, MMC_TIMING_MMC_HS200,
-+				 "clk-phase-mmc-hs200");
-+	arasan_dt_read_clk_phase(dev, clk_data, MMC_TIMING_MMC_HS400,
-+				 "clk-phase-mmc-hs400");
++	ret = zynqmp_pm_ioctl(node_id, IOCTL_SET_SD_TAPDELAY,
++			      PM_TAPDELAY_INPUT, tap_delay, NULL);
++	if (ret)
++		pr_err("Error setting Input Tap Delay\n");
++
++	return ret;
 +}
 +
- /**
-  * sdhci_arasan_register_sdcardclk - Register the sdcardclk for a PHY to use
-  *
-@@ -923,6 +1012,8 @@ static int sdhci_arasan_probe(struct platform_device *pdev)
- 	if (ret)
- 		goto unreg_clk;
+ static const struct zynqmp_eemi_ops eemi_ops = {
+ 	.get_api_version = zynqmp_pm_get_api_version,
+ 	.get_chipid = zynqmp_pm_get_chipid,
+@@ -687,6 +733,8 @@ static const struct zynqmp_eemi_ops eemi_ops = {
+ 	.set_requirement = zynqmp_pm_set_requirement,
+ 	.fpga_load = zynqmp_pm_fpga_load,
+ 	.fpga_get_status = zynqmp_pm_fpga_get_status,
++	.sdio_out_setphase = zynqmp_pm_sdio_out_setphase,
++	.sdio_in_setphase = zynqmp_pm_sdio_in_setphase,
+ };
  
-+	arasan_dt_parse_clk_phases(&pdev->dev, &sdhci_arasan->clk_data);
+ /**
+diff --git a/include/linux/firmware/xlnx-zynqmp.h b/include/linux/firmware/xlnx-zynqmp.h
+index 1262ea6..d9b53e5 100644
+--- a/include/linux/firmware/xlnx-zynqmp.h
++++ b/include/linux/firmware/xlnx-zynqmp.h
+@@ -92,7 +92,8 @@ enum pm_ret_status {
+ };
+ 
+ enum pm_ioctl_id {
+-	IOCTL_SET_PLL_FRAC_MODE = 8,
++	IOCTL_SET_SD_TAPDELAY = 7,
++	IOCTL_SET_PLL_FRAC_MODE,
+ 	IOCTL_GET_PLL_FRAC_MODE,
+ 	IOCTL_SET_PLL_FRAC_DATA,
+ 	IOCTL_GET_PLL_FRAC_DATA,
+@@ -251,6 +252,16 @@ enum zynqmp_pm_request_ack {
+ 	ZYNQMP_PM_REQUEST_ACK_NON_BLOCKING,
+ };
+ 
++enum pm_node_id {
++	NODE_SD_0 = 39,
++	NODE_SD_1,
++};
 +
- 	ret = mmc_of_parse(host->mmc);
- 	if (ret) {
- 		if (ret != -EPROBE_DEFER)
++enum tap_delay_type {
++	PM_TAPDELAY_INPUT = 0,
++	PM_TAPDELAY_OUTPUT,
++};
++
+ /**
+  * struct zynqmp_pm_query_data - PM query data
+  * @qid:	query ID
+@@ -295,6 +306,8 @@ struct zynqmp_eemi_ops {
+ 			       const u32 capabilities,
+ 			       const u32 qos,
+ 			       const enum zynqmp_pm_request_ack ack);
++	int (*sdio_out_setphase)(u32 device_id, u8 tap_delay);
++	int (*sdio_in_setphase)(u32 device_id, u8 tap_delay);
+ };
+ 
+ int zynqmp_pm_invoke_fn(u32 pm_api_id, u32 arg0, u32 arg1,
 -- 
 2.1.1
 
