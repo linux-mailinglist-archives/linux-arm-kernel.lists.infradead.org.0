@@ -2,89 +2,73 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 58E5F5B2E1
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  1 Jul 2019 04:07:38 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 04A8F5B2F4
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  1 Jul 2019 04:56:11 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=2G7kpVdsZbnjL7VK4af/AeftDEe80lgH0YKCF993rHw=; b=GvM+GR1IWZ4UH2
-	gVtgQbt9TPIwEDa4DQDXbzQFg3h+Pb/kanUKfFbVzQ9jrFJCH5E8kfc5OvCIHlzi/jaCFwObCaQIK
-	9ZhwCyObrOiFMG/SCFGba19v+otwG9RD48ol9/k122tUO/9cjES7NSJ1m6hX49YQEFi6MCkcIJ6N5
-	Rtd7UmFiRNeiR0QRCCXYYJbzHhpQGDBzgxnPk60FgcLr+ucYnCZLBrrdnczqZxY7NlbxaRQ7sSmeG
-	Ej1P/vkAmVLOQ7VqQ8AaEX+uJREE/hVdXNYwHVLeKgeaH2thGPyvNJA5MzgvJRfhhmWobZ2X23Qhk
-	qJYhMc2sqA4plTsK7xRQ==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=9MaCkgj2h/iQL4FvG5ZFe57Ga9OPPehAc17JMr2HDEQ=; b=Fp/O6JHf3t5OOu
+	DPAW34eTqVuTE5DF0Fw2aIWcD2vgsPoVNQYA2DMC7VjjK7wYXXD/LAGUu/qcKO2tuvqdLwVX14OuL
+	99drYdOgnPQVn0MvgydSNCdygKf0v0sLuRPd2CJA50FY+M7Az/1ZY1zGBL/gRvy6jjMns+WNmGkP4
+	3pJtVUH36mo4G5PByqr97pMtZ6TlQUQi1jG8P8PhTc1pl2NXRuas/JPwcNStW5hIoZzSyOKS2+a3O
+	9h9mgqJl9eKF36ReJ7zgNrDuroyhgqkkIOVYk3M2DaKFEEeFsu5I5dfr0Hm5mlHV3vzKKBtje6Tem
+	TMYWt+u1YucSLA7IFKDw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hhljE-0001QD-BL; Mon, 01 Jul 2019 02:07:36 +0000
-Received: from mail-oi1-x242.google.com ([2607:f8b0:4864:20::242])
+	id 1hhmUC-0006nl-95; Mon, 01 Jul 2019 02:56:08 +0000
+Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hhliz-0001PX-0r
- for linux-arm-kernel@lists.infradead.org; Mon, 01 Jul 2019 02:07:23 +0000
-Received: by mail-oi1-x242.google.com with SMTP id w196so8656716oie.7
+ id 1hhmTy-0006nQ-K6
+ for linux-arm-kernel@lists.infradead.org; Mon, 01 Jul 2019 02:55:56 +0000
+Received: by mail-wm1-x342.google.com with SMTP id v19so14133954wmj.5
  for <linux-arm-kernel@lists.infradead.org>;
- Sun, 30 Jun 2019 19:07:17 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=EVdvKnpZj72tyZM1EYeWQ7sF7QV+8GFQzNoS/JBtswU=;
- b=RASLjrn93DCsGyPxiTtMLcZAymkv8wT2PsnxOd/riO+Xrv40fzI0ZiH5/5jfOUaMPW
- OXN3VNVt4vzeppOevZh5I31+O9A52qhXpoXBlT51jJT+7FQW/UUJpZbLk4w/3E3c3UNN
- mwJ5/tW/TTbScJIlxFlX6vQaHNYJrCTufnDNVryUr4fcbJrawJ9o4yb5eEotW0XOMigq
- SfG0xF/6VlGdLbolnOnZwHKFmIOzEsr7GiwxTNm9Upkgxg4fi2737NYEEsH5l+BhM/63
- J14GBUR7KA8hZlxaPY9QJ35EM060nvNb8NhrRSwQySOND4gHXksWCfgkGMppZVsHVOme
- ij0g==
+ Sun, 30 Jun 2019 19:55:52 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:from:date:message-id:subject:to:cc;
+ bh=L4cWwNm32RFRgoWIXUw3hUkM6dfEeibv92xpbRvX6tM=;
+ b=sTIFs+o+O8iJWWs/AHYc9QJgAgZt81UEctc+f9lkOv6bSuZH+7gsMnzlKJp5UzuEnR
+ auBN5f0vk5v0Z1L1FKLdGOIxZy+U6GUTGWhMYXHgfoUQg3bNq6RPIHnYmJVfUYevGTX5
+ d+0gFDSJe9cA7FHLBTfiXLV8+7GwMAjWHuXLvK8nqNWY9dyvz2mMOXy7y1j4ZwRBrLDl
+ 6Y4wpIXuRICPwXxdsj2dcFSIbLAGAxH2rNWsZTxdr6XS4riiiwckc6U1h9RFt44cd1e9
+ 7joI8w+Y0kgC03bElib3mt3QsgcB6tnRAAKgKkSUMYi2CackM1X+xoB64Te0kqCL/zB0
+ BgGg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=EVdvKnpZj72tyZM1EYeWQ7sF7QV+8GFQzNoS/JBtswU=;
- b=gWTrQgfVR5G63r1ewyJTdeuC/ZnWU3dUBi0wTqKvpY6whKiQOIfbJ0c5+1/veUNjCJ
- 3d4fXLv9mhadA6gPGfio80sipEw/mI/4LPc4qH69Bn/2ypHL9Ml629DP0dMUUOXdvKOu
- wHpky4tReCdrPkACuvsqQygEMQcC9HNkx6oHYiJLTDzOxrOFVuhM4U3JMdlDcHGCfvWw
- OBRK396deeVznFQE/LoS68HHKZk/7uIT70zWErPxoLj/IRyHjxE84azmghowocuQugIF
- tgHVeJtUN44kFvozrTxaF2wblf8yZ0MV+mdCDBIj8YTlOCH9xcJvJmMPM+vB6tAsaRnF
- ldoA==
-X-Gm-Message-State: APjAAAWddKd+mOuD/s3ho5Qw23REduoul0Zb+sNUI1giZMlxmifgfMvy
- P2+a7QDJ7fZEkr0e+mufgkWAeQ==
-X-Google-Smtp-Source: APXvYqzDRkiUcjissHTFd7dyaU5hkK7WApOxC0xqnq9s56TqFbXP/zYcO0DLj9yIy7vlYoaAr02/kg==
-X-Received: by 2002:a05:6808:3d5:: with SMTP id
- o21mr5111397oie.108.1561946836336; 
- Sun, 30 Jun 2019 19:07:16 -0700 (PDT)
-Received: from leoy-ThinkPad-X240s (li964-79.members.linode.com. [45.33.10.79])
- by smtp.gmail.com with ESMTPSA id j8sm3407814otl.9.2019.06.30.19.07.13
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Sun, 30 Jun 2019 19:07:15 -0700 (PDT)
-Date: Mon, 1 Jul 2019 10:07:10 +0800
-From: Leo Yan <leo.yan@linaro.org>
-To: Andrew Murray <andrew.murray@arm.com>
-Subject: Re: [PATCH v2 5/5] coresight: etm4x: save/restore state across CPU
- low power states
-Message-ID: <20190701020710.GC28475@leoy-ThinkPad-X240s>
-References: <20190627083525.37463-1-andrew.murray@arm.com>
- <20190627083525.37463-6-andrew.murray@arm.com>
- <20190628080732.GA32370@leoy-ThinkPad-X240s>
- <20190628085357.GH34530@e119886-lin.cambridge.arm.com>
- <20190628091246.GE32370@leoy-ThinkPad-X240s>
- <20190628092227.GJ34530@e119886-lin.cambridge.arm.com>
+ h=x-gm-message-state:mime-version:from:date:message-id:subject:to:cc;
+ bh=L4cWwNm32RFRgoWIXUw3hUkM6dfEeibv92xpbRvX6tM=;
+ b=oIhc/H/xlcdvIFZ2YAo2k/Xobups5yFPbAvKoQTbXp7i4CXoyCpP3aHSInnpruYvn8
+ ERn3bW6syJDn9aggxGvN6tibeH+eR7qMEOjppdu1OEHlwiqNN2plC3OMk2jKdjMd1I0t
+ Sq6bw43scKl0vdtZ/TqXNNdImvY5rq/3IJzIvb9bLULa+7Vompaus5oUj+o96MRTRlfq
+ Vww/4eGCB2SMWjjEt89B41ARgwkmi/5mIUQuYDmZ1/eWWdTRZaw59CFztq+/P+UvVN+7
+ 30KMlNzSMGCjaMGcrR764WD87ejfpqNnIO/bFOvYHhxYVARuwD/VDrZyffljJ2uOuW3F
+ K6Cg==
+X-Gm-Message-State: APjAAAWyZoMEC7Vn4p254agqYa+gKMPzePfYQA6uJEfcDdflhx4c1Kid
+ gcCqzqgVQgOcZi4zJH8I+3IF0pxs0vNJmf8sJ7s=
+X-Google-Smtp-Source: APXvYqwUIoQh1+OTBdWevP7rJ+JlasEW1wk6qIjFHHw7YFZtY0o78cbW26EcYQ/J7NYJTCwUnrSsCswIrWquKlpshF0=
+X-Received: by 2002:a1c:1d8d:: with SMTP id d135mr14243860wmd.54.1561949751359; 
+ Sun, 30 Jun 2019 19:55:51 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190628092227.GJ34530@e119886-lin.cambridge.arm.com>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+From: Chunyan Zhang <zhang.lyra@gmail.com>
+Date: Mon, 1 Jul 2019 10:55:15 +0800
+Message-ID: <CAAfSe-uzOO+YkpsxO_G=h17dN1yaVAVdZV1NV=VPXD6dQ6dLOg@mail.gmail.com>
+Subject: [GIT PULL] dts: sprd: Changes for v5.3-rc1
+To: "arm@kernel.org" <arm@kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190630_190721_271935_3B7FF0CB 
-X-CRM114-Status: GOOD (  23.29  )
+X-CRM114-CacheID: sfid-20190630_195554_686500_05568350 
+X-CRM114-Status: UNSURE (   9.39  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:242 listed in]
- [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (zhang.lyra[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -93,6 +77,9 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:342 listed in]
+ [list.dnswl.org]
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -104,99 +91,40 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mathieu Poirier <mathieu.poirier@linaro.org>,
- Suzuki K Poulose <suzuki.poulose@arm.com>,
- Alexander Shishkin <alexander.shishkin@linux.intel.com>,
- coresight@lists.linaro.org, Sudeep Holla <sudeep.holla@arm.com>,
- linux-arm-kernel@lists.infradead.org, Mike Leach <mike.leach@linaro.org>
+Cc: Orson Zhai <orsonzhai@gmail.com>, Baolin Wang <baolin.wang@linaro.org>,
+ Leo Yan <leo.yan@linaro.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Andrew,
+Hi,
 
-On Fri, Jun 28, 2019 at 10:22:28AM +0100, Andrew Murray wrote:
-> On Fri, Jun 28, 2019 at 05:12:46PM +0800, Leo Yan wrote:
-> > On Fri, Jun 28, 2019 at 09:53:58AM +0100, Andrew Murray wrote:
-> > 
-> > [...]
-> > 
-> > > > > diff --git a/drivers/hwtracing/coresight/coresight-etm4x.c b/drivers/hwtracing/coresight/coresight-etm4x.c
-> > 
-> > [...]
-> > 
-> > > > > +
-> > > > > +#define PARAM_PM_SAVE_DISABLE	0
-> > > > > +#define PARAM_PM_SAVE_ENABLE	1
-> > > > > +#define PARAM_PM_SAVE_FIRMWARE	2
-> > > > > +
-> > > > > +static int pm_save_enable = PARAM_PM_SAVE_FIRMWARE;
-> > > > > +module_param(pm_save_enable, int, 0644);
-> > > > > +MODULE_PARM_DESC(pm_save_enable, "Save/restore state on power down: "
-> > > > > +				  "0 = disabled, 1 = enabled, 2 = firmware");
-> > > > > +
-> > > > 
-> > > > I understand if set pm_save_enable = 2 (firmware), then driver will
-> > > > depend on drvdata->pm_save_enable to make decision for context saving
-> > > > and restoring.
-> > > > 
-> > > > Maybe we can simplize to set pm_save_enable for binary value:
-> > > > 0 (disabled) or 1 (enabled).  The reason is if we set the module
-> > > > parameter 'pm_save_enable = 1', then we can set every ETM device's
-> > > > drvdata->pm_save_enable in initialization phase.  So in the probe
-> > > > function, we can use below code:
-> > > > 
-> > > >   drvdata->pm_save_enable = pm_save_enable ? : etm4_needs_save_restore(dev);
-> > > 
-> > > This means that when the module parameter is set to 1, then we only save/restore
-> > > if the firmware suggests it is needed.
-> 
-> Sorry, I seemingly can't read code today.
-> 
-> > 
-> > If the module parameter is set to 1, then we will always set every
-> > device 'drvdata->pm_save_enable' to 1.  So in this case, the module
-> > parameter will override the firmware property and always save/restore
-> > contexts for ETM.
-> > 
-> > > However - what happens on hardware that ignores the PU bit (and thus requires
-> > > save/restore), yet it's firmware doesn't have the
-> > > 'arm,coresight-needs-save-restore' property? There is no way to override the
-> > > firmware and always save/restore.
-> > 
-> > Actually I suggested to give the module parameter with high priority
-> > and when the module parameter has set to 1, then it can override
-> > firmware 'arm,coresight-needs-save-restore' property.
-> > 
-> > If we set the module parameter in kernel command line or when load the
-> > module, its value can be used in the function etm4_probe().  So in the
-> > driver probing, it detects the module parameter is 1, then it can
-> > directly set every device 'drvdata->pm_save_enable' to 1.  Thus we can
-> > always save/restore context for ignoring the PU bit case.
-> 
-> In any case, not only do we want to override the firmware to always
-> save/restore. Sometimes we may also want to override the firmware to never
-> save/restore (despite the firmware having the
-> 'arm,coresight-needs-save-restore' flag present). For example to debug power
-> management.
-> 
-> Thus with this current approach you can override the firmware to either enable
-> or disable save/restore.
+The following changes since commit cd6c84d8f0cdc911df435bb075ba22ce3c605b07:
 
-Thanks for explanation and agree with this.  Just a suggestion, maybe we
-can initialize 'drvdata->pm_save_enable' in probe as below:
+  Linux 5.2-rc2 (2019-05-26 16:49:19 -0700)
 
-        if (pm_save_enable == PARAM_PM_SAVE_FIRMWARE)
-                drvdata->pm_save_enable = etm4_needs_save_restore(dev);
-        else
-                drvdata->pm_save_enable = pm_save_enable;
+are available in the Git repository at:
 
-From then on, we can only use 'drvdata->pm_save_enable' and don't need
-to check the module parameter anymore.
+  https://github.com/lyrazhang/linux.git tags/sprd-dt-v5.3-rc1
 
-Thanks,
-Leo Yan
+for you to fetch changes up to b04832ed1f70457ee9c702fe7669460e005dcaa2:
+
+  arm64: dts: sc9860: Update coresight DT bindings (2019-06-20 18:44:54 +0800)
+
+----------------------------------------------------------------
+Spreadtrum's devicetree for v5.3-rc1
+
+This tag contains only two patches for updating coresight compatible
+string for Spreadtrum's platforms.
+----------------------------------------------------------------
+Leo Yan (2):
+      arm64: dts: sc9836: Update coresight DT bindings
+      arm64: dts: sc9860: Update coresight DT bindings
+
+ arch/arm64/boot/dts/sprd/sc9836.dtsi | 2 +-
+ arch/arm64/boot/dts/sprd/sc9860.dtsi | 8 ++++----
+ 2 files changed, 5 insertions(+), 5 deletions(-)
 
 _______________________________________________
 linux-arm-kernel mailing list
