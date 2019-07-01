@@ -2,84 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 737A45C33F
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  1 Jul 2019 20:52:30 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4F1D25C348
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  1 Jul 2019 20:56:07 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:Message-ID:
 	In-Reply-To:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=7VAr1Z5+cEdF7ReVqYH84WloMfRDImDIy8wpcMWjQgE=; b=SCU9y4pu+sIMAQ
-	K1Ur3JMfn2WIIn3JDuy+VbzhZpNol/WsN3uVNoai3MxarSXzVgMV1r2u76cIfkT9/BGu8SM39Z3xc
-	zbvbXpOj+uIM2k/+rczvRm+5VDvfRm0B4lGIy4UeU97rjD58Chst0OXdvB99EoYvaegKTR9KONp9r
-	JfDkogtrxvngpxgTOzkFSHuay0CEalDQXYEceEBbNRgPd8wXjveF+jwrGyNzg06tUymQKtYyumwik
-	bQqZfuFllRXBOh4c53NyH/Rh4rNqcG5hR2QPXfv1X02qV0LAJZo6bTmz6Ie3PpfmD4MjJ2fotrwMQ
-	rONkxlyX50JN00LNO8HA==;
+	List-Owner; bh=lNjFdwVQs2dhO5YADLqVrG71CUscrg7PMT8RZta6HcA=; b=HP+J44Q9MEulYx
+	1XkO8156hAPPh4QSCbQZaTgY9EJNPWWadeyHkbyfeFEsQr31u9/iFaziJxUwXLfYKcxAX/7q7+KBB
+	JKfu9nlUNb8BvTnyAIWuuC/s2CRdEquRlXWb/PsIU2Qxc475WjAu5DI6PPz5c9uzHaO+0fbyqDrDN
+	6qvc4f15yEg2gZFB1ETlkHng8bdhgyhlj2c+Gsks152Y9/ty2YAlJIgPkc9yp7fhPv5JmIUgXxMbk
+	MneoouevzEfY2oDzXnP20FHlh1ytJcp6gjAQX8+Duh0X3hlhTeW7olgZ7+iGErpGvBo2kDz4XUy5N
+	LeObEMC9qLMhWnrtW4qw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hi1Pg-0002PI-VV; Mon, 01 Jul 2019 18:52:29 +0000
-Received: from mail-io1-xd41.google.com ([2607:f8b0:4864:20::d41])
+	id 1hi1T9-0004Y5-MG; Mon, 01 Jul 2019 18:56:03 +0000
+Received: from mail-io1-xd42.google.com ([2607:f8b0:4864:20::d42])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hi1P7-00028h-MA
- for linux-arm-kernel@lists.infradead.org; Mon, 01 Jul 2019 18:51:55 +0000
-Received: by mail-io1-xd41.google.com with SMTP id j6so31195493ioa.5
+ id 1hi1Ss-0004TR-BF
+ for linux-arm-kernel@lists.infradead.org; Mon, 01 Jul 2019 18:55:47 +0000
+Received: by mail-io1-xd42.google.com with SMTP id k20so4862510ios.10
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 01 Jul 2019 11:51:53 -0700 (PDT)
+ Mon, 01 Jul 2019 11:55:46 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sifive.com; s=google;
  h=date:from:to:cc:subject:in-reply-to:message-id:references
  :user-agent:mime-version;
- bh=DYrhizvtIbWqHkjv2BkSfsRwmy8RzQ5cYYvDtrQv3lo=;
- b=KZy85/4tTSnfbHIjMO+VoX0+BzXfz2fZQXO03A8+ppgNGdVN1iiRyi0w65nxrfVUZl
- LepUYO6VLS+jWb4ZEZIP29HDqaCzsslQpNBhXbiOlIoxgSn2uuIl4ssVV9xuCXFt8tUT
- TL+Z5XhuSUaJjo0+lMAckhVGAYw8uHtOm4kXAp4cKTJsd9jeJqnnFl8VS6x5iUdwAk4o
- bvnvtEKAJCVVT91seyxUHFcUgBIhvWFC6h1heJaNnYcHpP3SG2SKIXfdKgofJ/rKSkPj
- aYy7DtYis+jalc6jZkzq+JsJ81egv/yIQivLKN+bVoPVv6YsKV8EOVJwFQr95bRlUiwD
- dPAg==
+ bh=RJ0nEuxA5ZfGEtI2ORfLwcWi8vWMBFVOAlEHomBChyQ=;
+ b=HbzLSATlu0bOPE6tk/xnT9HDbbVtyy45AYUGmkUYAX6YsI55Lpn71MXmredYkGWMbq
+ 1VDR9JEMs83A5H6kwLxkMrdr44fypQJHUNuTDthZLSWTaTyEibYd0g2IUL2UbrIo1tcN
+ vXYVBHOzPTaZlFut6jN8aNqd4M2DQbXo0H2btfX9eCdhG1WbruSR2gRKWR38BsjypdHc
+ 2sLzgCevrNW8pEQM6BKC4Fr9c+vwXxv6Lw202eSNQgMQB4RNLkGrVAa2JfAzn6+a1oND
+ fX186svC9PpMypUq4VhzVOmMN0oIsPB/0BdKcPV2A9uIUyNo+FksHyv5Qu0Sl/eP4FUs
+ L9OA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:in-reply-to:message-id
  :references:user-agent:mime-version;
- bh=DYrhizvtIbWqHkjv2BkSfsRwmy8RzQ5cYYvDtrQv3lo=;
- b=H/rn5oAgOli0JSnTqebVzOEim+z2d1m8VOBPlLTRMQC0ZP1tcrzZ8wKsvRKLpF5KO0
- 7U3lpbktrznSLHsZesjmSqLaHPuuaG5mLPIjX9sOOkz6GnDCc9gAHG1ykw3DkwDFyVxt
- tXHmh0et50ltEyKXKXXuNNr4N9hQ1JNQwpYeWjxrmhiuEWdA4iwVITtHbqQF171ZBy38
- MIom6tBdsMRztaNm+Ftzt0GAvwhHSNWg2gdhiG0gZ30aNHAioulCU3piNNSU7Vb8v8rE
- 9anhdCxEuIf89W3B4QLs4uwyjjfMl4QdnA8mD5fgTKGDtDGpkTblRcSRmdQ8R3yo+ddj
- Ho1A==
-X-Gm-Message-State: APjAAAUtr4kKJDNul4N+rljROB4brUBDd8n6Wu+klXyXMxMnFoRFr6Xb
- 4aMHbzLHxY46g6D6U8BmqpGi0g==
-X-Google-Smtp-Source: APXvYqx8evMbqCB5mcUZCJSlJkUvQvODT7P9GsKOEHqnl7p98ygfjhRMioyAwvw2nWgeKnX/BBIurQ==
-X-Received: by 2002:a02:cb96:: with SMTP id u22mr30802401jap.118.1562007111969; 
- Mon, 01 Jul 2019 11:51:51 -0700 (PDT)
+ bh=RJ0nEuxA5ZfGEtI2ORfLwcWi8vWMBFVOAlEHomBChyQ=;
+ b=fH72LFSSX1EvsAP6+FDCy0S/lKVDiY9YVYzYnoaOm/6DDSHBzbrcM0A31hMrlYtaci
+ 8Gk7a7+zwvpfRidj9AdZDSAxUnbHcXxvyEhudzhUQz778xL5Tex7QuEGv87rzrqpHWNV
+ rWhgC0fiftUloEfQSipni971dgrDcB9RF+yY3VFv9nTOTw8rSGIedYZaYnfUvJPwXO83
+ d+wT2OCiikgPv643wDkG/U6TVn2x/+REeXf7Gf/vpm093OLIjap7zHDCrCbTlwveq/QY
+ zOYa0wBkrzY1SC9lihbLbVuAXsSHeOgQIW9mglVqb1LGscHXByx2l0VZs/H4QZT5q3pW
+ XO6A==
+X-Gm-Message-State: APjAAAU05b96rOFjjJJm7+63N5Cqx/mmZwi0pjo1DWkem+c8oqsLbla1
+ d/wdIBjkk28UAk09zKkP75KUOQ==
+X-Google-Smtp-Source: APXvYqwL+eY8ECnhe7jn5wjvS3/54CfYE6LIGPJ7PbOYEamcU5iLZxD/gx7lxHGv1GuBLS9usOFDKA==
+X-Received: by 2002:a02:bb08:: with SMTP id y8mr2038974jan.51.1562007345538;
+ Mon, 01 Jul 2019 11:55:45 -0700 (PDT)
 Received: from localhost (c-73-95-159-87.hsd1.co.comcast.net. [73.95.159.87])
  by smtp.gmail.com with ESMTPSA id
- r5sm9977978iom.42.2019.07.01.11.51.51
+ r139sm24862445iod.61.2019.07.01.11.55.45
  (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Mon, 01 Jul 2019 11:51:51 -0700 (PDT)
-Date: Mon, 1 Jul 2019 11:51:50 -0700 (PDT)
+ Mon, 01 Jul 2019 11:55:45 -0700 (PDT)
+Date: Mon, 1 Jul 2019 11:55:44 -0700 (PDT)
 From: Paul Walmsley <paul.walmsley@sifive.com>
 X-X-Sender: paulw@viisi.sifive.com
-To: Palmer Dabbelt <palmer@sifive.com>, 
- Catalin Marinas <catalin.marinas@arm.com>
-Subject: Re: [PATCH v3 1/2] x86, arm64: Move ARCH_WANT_HUGE_PMD_SHARE config
- in arch/Kconfig
-In-Reply-To: <20190701175900.4034-2-alex@ghiti.fr>
-Message-ID: <alpine.DEB.2.21.9999.1907011146550.3867@viisi.sifive.com>
-References: <20190701175900.4034-1-alex@ghiti.fr>
- <20190701175900.4034-2-alex@ghiti.fr>
+To: Atish Patra <Atish.Patra@wdc.com>
+Subject: Re: [PATCH v8 0/7] Unify CPU topology across ARM & RISC-V
+In-Reply-To: <5f31cb3c576bdbd89665614582af66d04ece8f29.camel@wdc.com>
+Message-ID: <alpine.DEB.2.21.9999.1907011154310.3867@viisi.sifive.com>
+References: <20190627195302.28300-1-atish.patra@wdc.com>
+ <alpine.DEB.2.21.9999.1907011143520.3867@viisi.sifive.com>
+ <5f31cb3c576bdbd89665614582af66d04ece8f29.camel@wdc.com>
 User-Agent: Alpine 2.21.9999 (DEB 301 2018-08-15)
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190701_115153_739215_48A2CAEE 
-X-CRM114-Status: GOOD (  10.13  )
+X-CRM114-CacheID: sfid-20190701_115546_398362_43B36068 
+X-CRM114-Status: GOOD (  11.96  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:d41 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:d42 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -101,38 +100,54 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Albert Ou <aou@eecs.berkeley.edu>, "H . Peter Anvin" <hpa@zytor.com>,
- Alexandre Ghiti <alex@ghiti.fr>, Catalin Marinas <catalin.marinas@arm.com>,
- Palmer Dabbelt <palmer@sifive.com>, Will Deacon <will.deacon@arm.com>,
- x86@kernel.org, linux-kernel@vger.kernel.org,
- Christoph Hellwig <hch@infradead.org>, Ingo Molnar <mingo@redhat.com>,
- Borislav Petkov <bp@alien8.de>, Hanjun Guo <guohanjun@huawei.com>,
- Thomas Gleixner <tglx@linutronix.de>, linux-riscv@lists.infradead.org,
- linux-arm-kernel@lists.infradead.org, Mike Kravetz <mike.kravetz@oracle.com>
+Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
+ "rafael@kernel.org" <rafael@kernel.org>,
+ "peterz@infradead.org" <peterz@infradead.org>,
+ "catalin.marinas@arm.com" <catalin.marinas@arm.com>,
+ "linus.walleij@linaro.org" <linus.walleij@linaro.org>,
+ "palmer@sifive.com" <palmer@sifive.com>,
+ "will.deacon@arm.com" <will.deacon@arm.com>,
+ "mchehab+samsung@kernel.org" <mchehab+samsung@kernel.org>,
+ "linux-riscv@lists.infradead.org" <linux-riscv@lists.infradead.org>,
+ "will@kernel.org" <will@kernel.org>, "mingo@kernel.org" <mingo@kernel.org>,
+ "anup@brainfault.org" <anup@brainfault.org>,
+ "linux@armlinux.org.uk" <linux@armlinux.org.uk>,
+ "morten.rasmussen@arm.com" <morten.rasmussen@arm.com>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ "aou@eecs.berkeley.edu" <aou@eecs.berkeley.edu>,
+ "johan@kernel.org" <johan@kernel.org>,
+ "robh+dt@kernel.org" <robh+dt@kernel.org>,
+ "tglx@linutronix.de" <tglx@linutronix.de>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ "gregkh@linuxfoundation.org" <gregkh@linuxfoundation.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "jeremy.linton@arm.com" <jeremy.linton@arm.com>,
+ "ottosabart@seberm.com" <ottosabart@seberm.com>,
+ "sudeep.holla@arm.com" <sudeep.holla@arm.com>,
+ "davem@davemloft.net" <davem@davemloft.net>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Catalin, Palmer,
+On Mon, 1 Jul 2019, Atish Patra wrote:
 
-On Mon, 1 Jul 2019, Alexandre Ghiti wrote:
-
-> ARCH_WANT_HUGE_PMD_SHARE config was declared in both architectures:
-> move this declaration in arch/Kconfig and make those architectures
-> select it.
+> On Mon, 2019-07-01 at 11:44 -0700, Paul Walmsley wrote:
+> > 
+> > Looks like patches 1, 6, and 7 are missing your Signed-off-by:.  Can I 
+> > add those?
+> > 
+> Sure. 
 > 
-> Signed-off-by: Alexandre Ghiti <alex@ghiti.fr>
+> Is it a common practice to add "Signed-off-by:" the sender even if the
+> sender has not touched the patch at all?
 
-Since the change from v2 to v3 was minor (the removal of the "config 
-ARCH_WANT_HUGE_PMD_SHARE" line from the arm64 port), I'm planning to 
-apply your Reviewed-by:s and acks from 
+Yes, see section 11(c) here:
 
-https://lore.kernel.org/linux-riscv/20190603172723.GH63283@arrakis.emea.arm.com/
+https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/Documentation/process/submitting-patches.rst#n418
 
-https://lore.kernel.org/linux-riscv/mhng-4d1d4acb-f65f-4ed4-bc86-85a14b7c3e16@palmer-si-x1e/
-
-If there's any objection, please let me know as soon as possible.
+The main factor here is that you collected and resent the patches - thus 
+you're in the patch submission chain.
 
 
 - Paul
