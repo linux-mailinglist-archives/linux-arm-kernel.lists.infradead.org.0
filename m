@@ -2,98 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A0C625BE2F
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  1 Jul 2019 16:26:02 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 85B985BE59
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  1 Jul 2019 16:33:12 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=0r17zb4gVZcVEjzISuDbf48o8Dx3jkC/DujrKfLHJsE=; b=rH2d4+mrNIm8XA
-	i3Qc00qraQ30OMJDiyxIRDGZFr08XiRskW2P5dwDoye/UrE/AF8sSxYeftFMeLontieli52zCbv6V
-	tUv47x1LqcCoDSd5ZgOqzDly3jahnzTpPOIPgid2pwRi04xe1BBWQGin8VNu4xz72dxUgSk13m3eq
-	msCDHBTAQQT1O33POCAuX3fJP+F7H+67WWUzvS32LJccngdz8ReldNYtRuqXW1LbMqSCqjc/VF5N9
-	EBmCkrkT7elg6A0pKY8ZZukqnW7/RZMuTQ5zHhSUEl98U75MYs0+4ZaGN2lMyaEAyMP3KDC7FwZTm
-	hw5NlcI4UwEpkRuyYCwg==;
+	List-Owner; bh=n5T0OB8eMMtkELZfXCpt+VkTnl6A7yLVyUq8VtNPgJg=; b=WGgYulJwWk/fo1
+	ruoRhLy7upqeXOXQ/xBvBsDbgvrDiKt4URPmmSI1BB5qXot4tYxan/UEwKxE5t6/QSlMy3ywTpKgN
+	JTu/E2Vd48Sy+Lgri0y+fd/paGTez967NQxq9YHbb3MKmap2jxl/uwpOO+Xluy9EDxg2beCHeEyUV
+	Xxwkwbteoy99S95pIHiJP8bHcnr8j4RTUZbKg2AuUv6vxCZ4hj0wYyMQNr1NvAMWL96wqBftfMeZz
+	l4wwPsfVjxkSJ8CwmBPokT0j8pZ4aRquAHWpWb8PiK215N3uwLLtOhHnM7Mp8bdu0vhKZMY6C599L
+	zAeNXk2CDLudUMvzUdRw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hhxFn-0006si-M8; Mon, 01 Jul 2019 14:25:59 +0000
-Received: from mail-vs1-xe44.google.com ([2607:f8b0:4864:20::e44])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hhxFg-0006sK-OJ
- for linux-arm-kernel@lists.infradead.org; Mon, 01 Jul 2019 14:25:54 +0000
-Received: by mail-vs1-xe44.google.com with SMTP id v6so9025278vsq.4
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 01 Jul 2019 07:25:52 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=prX1E0RG7UeUBzCLq0Q5Oi12RHYXNZyfW5bTMLlL8JI=;
- b=arAwgdST9DjY9vxXrFWg7C4mcvo7W/JT82sW+gnGtZsku0jghjgd5ceLmlW/DD9MeW
- SXkWG25P0KqPSmuIRtC+91B/URngWnXzXO8GJCmxhhbMGJQqlEiWIiugydsHUWvn4xMP
- fLUMKKSyPDRVGraoestBcMoB/SGklheTHS1bG1NorskLUwMXCHe8BQZPTckzxHVWrkH0
- dSgyjWmIUs2c0Togy+4bsvPsYEpRzGGfMHrKl0nRw4vnMSAFdwJFAi62yo8VoJYFgkFK
- k+mbzCq1HV6m3HieHAh0vw3OvFpjQBSH70WCR/VZt+fI0mNEPME9QrW2RFWol/gfdiYe
- BMAw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=prX1E0RG7UeUBzCLq0Q5Oi12RHYXNZyfW5bTMLlL8JI=;
- b=Jm1NwWw2uAwAIdj3moJ4h0n1r0TX+fEF8TZg/9bQcVpX9lRN/dZ8uOt1Pfuo72Dq7d
- 8KbFOIwAop3udgxLxv4kfQ+mli7Tu+H5LJQh7qsFH28uCI4BbKBkfKq/FT6fvL9D606c
- DcibyUjr7QARGLKbwulDvzmWyyTbhZZucZKqX58Ay0/sDdxn5TCfJl7ZN+fCldG3FtAX
- n93Iyo+3YiFzQMeGZ8JJ1q9FZFUty//2B12xb0KBSGtPSxFkiLw1hAguCl1FZpi6HSOc
- zsO5p004xEvZc4GY9l4KhMPsRWmAJMHmUfCkusrl6twFv9WB8lzTuyvUDgIGrGkdv1F9
- qoCg==
-X-Gm-Message-State: APjAAAWj3Bz1In3zDBPYO54fm/fCcSp+9Qp7fDzvxlKO1wGUiZRc6JyM
- aM9XoEe4OFoM/QC6yzs3862QX+aiaH6MmcHC/mA=
-X-Google-Smtp-Source: APXvYqzWTG5NkVuWmj3+DO56fz33iIrbZisyvuVAbbQwtuyydaLXGbJH3yLGRx0Z49Q2eGRBQaNkmTqk5JK8s6+zHXM=
-X-Received: by 2002:a67:3195:: with SMTP id
- x143mr15188071vsx.144.1561991151262; 
- Mon, 01 Jul 2019 07:25:51 -0700 (PDT)
+	id 1hhxMk-0000PI-Sf; Mon, 01 Jul 2019 14:33:10 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hhxMe-0000Oz-GR
+ for linux-arm-kernel@lists.infradead.org; Mon, 01 Jul 2019 14:33:06 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id ACBC3344;
+ Mon,  1 Jul 2019 07:33:03 -0700 (PDT)
+Received: from lakrids.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
+ [10.121.207.14])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id B90113F246;
+ Mon,  1 Jul 2019 07:33:02 -0700 (PDT)
+Date: Mon, 1 Jul 2019 15:33:00 +0100
+From: Mark Rutland <mark.rutland@arm.com>
+To: Dave Martin <Dave.Martin@arm.com>
+Subject: Re: [PATCHv2 3/3] arm64: stacktrace: better handle corrupted stacks
+Message-ID: <20190701143300.GB31063@lakrids.cambridge.arm.com>
+References: <20190628154639.5308-1-mark.rutland@arm.com>
+ <20190628154639.5308-4-mark.rutland@arm.com>
+ <20190701105656.GM2790@e103592.cambridge.arm.com>
+ <20190701125351.GE10975@lakrids.cambridge.arm.com>
+ <20190701141619.GN2790@e103592.cambridge.arm.com>
 MIME-Version: 1.0
-References: <CAOuPNLiBA9VjEoG_D2y2O5mKiqsDNW1VZXOk1eWXpGY+h86acg@mail.gmail.com>
- <CAOMZO5BcLaS0gXUPi6oN6vjqagS5yf+rHh+EUjmi-Wi1OX7vqQ@mail.gmail.com>
- <CAOuPNLgEEfDca4aeT1+q8GfUfGzbJ4x6JwGf-ROB1pgpXUBHSw@mail.gmail.com>
- <CAOMZO5BY8JcLNMCRCC_d=emy8HR6kE=dB9f5qfZ=ci_c+Jak0w@mail.gmail.com>
- <CAOuPNLjYhkP_kL+q-ZpiDZMMpOHrU88BFBc2agtnCzXt8dihOg@mail.gmail.com>
- <CAOMZO5ADK1L5UMM9XZetHvmjTvmvUg99G7VPdeXitgpctGLCkw@mail.gmail.com>
- <CAOuPNLhZhgN26rquLQq9zHBct1QxK-7hXAza0xk-0QooPGYLNw@mail.gmail.com>
- <CAOMZO5BsJWTw0nCeUboam4kuKyCO3N_Ch5ZW8k5Y9KFtQBanhQ@mail.gmail.com>
- <CAOuPNLjrAU_C_TUKFMs1d0eGsw=AxuG6d6FhNHtHFwVhfYZGgA@mail.gmail.com>
- <CAOuPNLhstoCjxijrnKNmV1iKWjAXvSZ38Z13tfd5bvGbYSqPAA@mail.gmail.com>
- <CAOMZO5CD-QQaZwNfiX6mOLAup4J8dBiqEb_V_6jz_z5jXZ5cEw@mail.gmail.com>
- <CAOuPNLj=L_3RoC=9ws4yn1Q7QLoS3OEZ8FLRrF04HRQtQvc0Jg@mail.gmail.com>
-In-Reply-To: <CAOuPNLj=L_3RoC=9ws4yn1Q7QLoS3OEZ8FLRrF04HRQtQvc0Jg@mail.gmail.com>
-From: Pintu Agarwal <pintu.ping@gmail.com>
-Date: Mon, 1 Jul 2019 19:55:39 +0530
-Message-ID: <CAOuPNLg5A1bB-Tmndm4PvsJ40tj0yn-bJ2mfifEpjAF-t84wiQ@mail.gmail.com>
-Subject: Re: [IMX] [DRM]: suspend/resume support
-To: Fabio Estevam <festevam@gmail.com>, s.hauer@pengutronix.de,
- p.zabel@pengutronix.de
+Content-Disposition: inline
+In-Reply-To: <20190701141619.GN2790@e103592.cambridge.arm.com>
+User-Agent: Mutt/1.11.1+11 (2f07cb52) (2018-12-01)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190701_072552_818809_CD172FDA 
-X-CRM114-Status: GOOD (  19.83  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190701_073304_640594_AEB7558C 
+X-CRM114-Status: GOOD (  36.73  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:e44 listed in]
- [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (pintu.ping[at]gmail.com)
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -105,97 +65,246 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-pm@vger.kernel.org, open list <linux-kernel@vger.kernel.org>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>,
- Kernelnewbies <kernelnewbies@kernelnewbies.org>
+Cc: catalin.marinas@arm.com, tengfeif@codeaurora.org, will.deacon@arm.com,
+ james.morse@arm.com, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sat, Jun 22, 2019 at 1:43 PM Pintu Agarwal <pintu.ping@gmail.com> wrote:
->
-> On Fri, Jun 21, 2019 at 9:09 PM Fabio Estevam <festevam@gmail.com> wrote:
-> >
-> > On Fri, Jun 21, 2019 at 12:13 PM Pintu Agarwal <pintu.ping@gmail.com> wrote:
-> >
-> > > Okay there is some update on the 2nd part.
-> > > Now I am able to successfully install all imx modules after the resume
-> > > (no hang).
-> > > But, I got some errors after install finish:
-> > > [drm] disabling vblank on crtc 1
-> > > [IMX]: imx_drm_disable_vblank - called
-> > > [drm:drm_atomic_helper_commit_cleanup_done] *ERROR* [CRTC:24:crtc-0]
-> > > flip_done timed out
-> > >
-> > > Also I am able to start the weston successfully.
-> > > But I see LCD/HDMI display is not working (only some backlight is visible).
-> > >
-> > > And, I noticed, weston also reports the following errors:
-> > > imx-ipuv3 2400000.ipu: DC stop timeout after 50 ms
-> > > [IMX]: drm_crtc_vblank_off - called
-> > > [IMX]: imx_drm_disable_vblank - called
-> > > INFO: rcu_preempt detected stalls on CPUs/tasks: { 1} (detected by 0,
-> > > t=6002 jiffies, g=289, c=288, q=8)
-> > > Task dump for CPU 1:
-> > > weston          R running      0   306      1 0x00000000
-> > > [<c05282d8>] (__schedule) from [<00080193>] (0x80193)
-> > >
-> > > Do you have any clue about these errors ?
-> >
-> > Which kernel version is this?
->
+On Mon, Jul 01, 2019 at 03:16:20PM +0100, Dave Martin wrote:
+> On Mon, Jul 01, 2019 at 01:53:52PM +0100, Mark Rutland wrote:
+> > On Mon, Jul 01, 2019 at 11:56:56AM +0100, Dave Martin wrote:
+> > > On Fri, Jun 28, 2019 at 04:46:39PM +0100, Mark Rutland wrote:
+> > > > The arm64 stacktrace code is careful to only dereference frame records
+> > > > in valid stack ranges, ensuring that a corrupted frame record won't
+> > > > result in a faulting access.
+> > > > 
+> > > > However, it's still possible for corrupt frame records to result in
+> > > > infinite loops in the stacktrace code, which is also undesirable.
+> > > > 
+> > > > This patch ensures that we complete a stacktrace in finite time, by
+> > > > keeping track of which stacks we have already completed unwinding, and
+> > > > verifying that if the next frame record is on the same stack, it is at a
+> > > > higher address.
+> > > > 
+> > > > Signed-off-by: Mark Rutland <mark.rutland@arm.com>
+> > > > Cc: Catalin Marinas <catalin.marinas@arm.com>
+> > > > Cc: Dave Martin <dave.martin@arm.com>
+> > > > Cc: James Morse <james.morse@arm.com>
+> > > > Cc: Tengfei Fan <tengfeif@codeaurora.org>
+> > > > Cc: Will Deacon <will.deacon@arm.com>
+> > > > ---
+> > > >  arch/arm64/include/asm/stacktrace.h | 32 ++++++++++++++++++++++++--------
+> > > >  arch/arm64/kernel/stacktrace.c      | 15 ++++++++++++++-
+> > > >  2 files changed, 38 insertions(+), 9 deletions(-)
+> > > > 
+> > > > diff --git a/arch/arm64/include/asm/stacktrace.h b/arch/arm64/include/asm/stacktrace.h
+> > > > index 18f90bf1385c..938b96ba1f0f 100644
+> > > > --- a/arch/arm64/include/asm/stacktrace.h
+> > > > +++ b/arch/arm64/include/asm/stacktrace.h
+> > > > @@ -19,19 +19,12 @@
+> > > >  #include <linux/percpu.h>
+> > > >  #include <linux/sched.h>
+> > > >  #include <linux/sched/task_stack.h>
+> > > > +#include <linux/types.h>
+> > > >  
+> > > >  #include <asm/memory.h>
+> > > >  #include <asm/ptrace.h>
+> > > >  #include <asm/sdei.h>
+> > > >  
+> > > > -struct stackframe {
+> > > > -	unsigned long fp;
+> > > > -	unsigned long pc;
+> > > > -#ifdef CONFIG_FUNCTION_GRAPH_TRACER
+> > > > -	int graph;
+> > > > -#endif
+> > > > -};
+> > > > -
+> > > >  enum stack_type {
+> > > >  	STACK_TYPE_UNKNOWN,
+> > > >  	STACK_TYPE_TASK,
+> > > > @@ -39,6 +32,7 @@ enum stack_type {
+> > > >  	STACK_TYPE_OVERFLOW,
+> > > >  	STACK_TYPE_SDEI_NORMAL,
+> > > >  	STACK_TYPE_SDEI_CRITICAL,
+> > > > +	__NR_STACK_TYPES
+> > > >  };
+> > > >  
+> > > >  struct stack_info {
+> > > > @@ -47,6 +41,17 @@ struct stack_info {
+> > > >  	enum stack_type type;
+> > > >  };
+> > > >  
+> > > > +struct stackframe {
+> > > > +	unsigned long fp;
+> > > > +	unsigned long pc;
+> > > > +#ifdef CONFIG_FUNCTION_GRAPH_TRACER
+> > > > +	int graph;
+> > > > +#endif
+> > > > +	DECLARE_BITMAP(stacks_done, __NR_STACK_TYPES);
+> > > > +	unsigned long prev_fp;
+> > > > +	enum stack_type prev_type;
+> > > > +};
+> > > > +
+> > > >  extern int unwind_frame(struct task_struct *tsk, struct stackframe *frame);
+> > > >  extern void walk_stackframe(struct task_struct *tsk, struct stackframe *frame,
+> > > >  			    int (*fn)(struct stackframe *, void *), void *data);
+> > > > @@ -128,6 +133,9 @@ static inline bool on_accessible_stack(const struct task_struct *tsk,
+> > > >  				       unsigned long sp,
+> > > >  				       struct stack_info *info)
+> > > >  {
+> > > > +	if (info)
+> > > > +		info->type = STACK_TYPE_UNKNOWN;
+> > > > +
+> > > >  	if (on_task_stack(tsk, sp, info))
+> > > >  		return true;
+> > > >  	if (tsk != current || preemptible())
+> > > > @@ -150,6 +158,14 @@ static inline void start_backtrace(struct stackframe *frame,
+> > > >  #ifdef CONFIG_FUNCTION_GRAPH_TRACER
+> > > >  	frame->graph = 0;
+> > > >  #endif
+> > > > +
+> > > > +	/*
+> > > > +	 * Prime the first unwind, which will be treated as a transition from
+> > > > +	 * STACK_TYPE_UNKNOWN to some valid stack.
+> > > > +	 */
+> > > > +	bitmap_zero(frame->stacks_done, __NR_STACK_TYPES);
+> > > > +	frame->prev_fp = 0;
+> > > > +	frame->prev_type = STACK_TYPE_UNKNOWN;
+> > > >  }
+> > > >  
+> > > >  #endif	/* __ASM_STACKTRACE_H */
+> > > > diff --git a/arch/arm64/kernel/stacktrace.c b/arch/arm64/kernel/stacktrace.c
+> > > > index e5338216deaa..2e4b59e10e71 100644
+> > > > --- a/arch/arm64/kernel/stacktrace.c
+> > > > +++ b/arch/arm64/kernel/stacktrace.c
+> > > > @@ -43,6 +43,7 @@
+> > > >  int notrace unwind_frame(struct task_struct *tsk, struct stackframe *frame)
+> > > >  {
+> > > >  	unsigned long fp = frame->fp;
+> > > > +	struct stack_info info, prev_info;
+> > > >  
+> > > >  	if (fp & 0xf)
+> > > >  		return -EINVAL;
+> > > > @@ -50,11 +51,23 @@ int notrace unwind_frame(struct task_struct *tsk, struct stackframe *frame)
+> > > >  	if (!tsk)
+> > > >  		tsk = current;
+> > > >  
+> > > > -	if (!on_accessible_stack(tsk, fp, NULL))
+> > > > +	if (!on_accessible_stack(tsk, fp, &info))
+> > > >  		return -EINVAL;
+> > > >  
+> > > > +	if (test_bit(info.type, frame->stacks_done))
+> > > > +		return -EINVAL;
+> > > > +
+> > > > +	if (info.type == frame->prev_type) {
+> > > > +		if (fp <= frame->prev_fp)
+> > > > +			return -EINVAL;
+> > > > +	} else {
+> > > > +		set_bit(prev_info.type, frame->stacks_done);
+> > > > +	}
+> > > > +
+> > > >  	frame->fp = READ_ONCE_NOCHECK(*(unsigned long *)(fp));
+> > > >  	frame->pc = READ_ONCE_NOCHECK(*(unsigned long *)(fp + 8));
+> > > > +	frame->prev_fp = fp;
+> > > > +	frame->prev_type = info.type;
+> > > 
+> > > As in my response on the last series, do we really need to track 2
+> > > frames at the same time in struct stackframe?
+> > 
+> > It's better to think of this as tracking the location and contents of
+> > one stackframe.
+> > 
+> > If we back up a bit, I want to ensure that if we have a chain A->B->C
+> > and the B->C transition is bogus, we report A and B in the backtrace.
+> > 
+> > The struct stackframe is a snapshot of the frame record A (which may
+> > have been the FP and LR rather than an in-memory record). The contents
+> > of A tells us where the B can be found, but we need the location of A so
+> > that we can check intra-stack whether A < B.
+> > 
+> > > The transition (i.e., where we came from and where we're going to should
+> > > be visible in unwind_frame().  I don't see why we need additional history
+> > > in order to detect stack changes or track which stacks have been visited.
+> > 
+> > Please see my prior reply to James, where I described this.
+> > 
+> > > So, say (incomplete paste-o-code):
+> >  
+> > Let's consider this for the above A->B->C transition.
+> > 
+> > > 	unsigned long fp = frame->fp;
+> > > 	enum stack_type fp_stack = frame->fp_stack;
+> > 
+> > When we enter with frame describing A, frame->fp points at B, and
+> > frame->fp_stack describes where A is (i.e. it describes the same thing
+> > as prev_type in my code).
+> > 
+> > > 
+> > >   	frame->fp = READ_ONCE_NOCHECK(*(unsigned long *)(fp));
+> > >   	frame->pc = READ_ONCE_NOCHECK(*(unsigned long *)(fp + 8));
+> > 
+> > Here we update frame to be the contents of B.
+> > 
+> > > 	if (!on_accessible_stack(tsk, frame->fp, &info))
+> > > 		return -EINVAL;
+> > 
+> > ... and here we bail out if C is inaccessible, before we report B.
+> > 
+> > > 
+> > > 	if (test_bit(info.type, frame->stacks_done))
+> > > 		return -EINVAL;
+> > 
+> > Likewise, here we check C's stack type, and bail out an entry earlier
+> > than necessary.
+> > 
+> > > 
+> > > 	if (info.type == frame->fp_stack) {
+> > 
+> > We haven't updated frame->fp_stack  yet, so this is comparing A's
+> > location to C's location, ignoring B.
+> 
+> No it isn't.  on_accessible_stack() updated info.type to describe B (I
+> think).
 
-Now, I am using Kernel 4.9 (custom) with some internal changes.
-After the hibernate-resume, I am trying to install the modules in
-following order:
-insmod imxdrm.ko
-insmod parallel-display.ko
-insmod dw-hdmi.ko
-insmod dw_hdmi-imx.ko
-insmod imx-ipu-v3.ko
-insmod imx-ipuv3-crtc.ko
-insmod imx-ldb.ko
+it describes C:
 
-I noticed that if I don't install the "crtc" or "ldb" module at last,
-then system will hang.
-Otherwise, the modules are installed successfully.
+* At entry to the function, frame has the values of A, and thus
+  frame->fp pointed at B.
 
-But, I get following errors:
-[drm:drm_atomic_helper_wait_for_flip_done] *ERROR* [CRTC:24:crtc-0]
-flip_done timed out
-[drm:drm_atomic_helper_commit_cleanup_done] *ERROR* [CRTC:24:crtc-0]
-flip_done timed out
+* We updated frame with B's values, reading the fp and pc. Thus after
+  the READ_ONCE_NOCHECK()s, frame->fp points at C.
 
-But, hdmi could be detected from the logs:
-dwhdmi-imx 120000.hdmi: Detected HDMI controller 0x13:0x1a:0xa0:0xc1
+* We checked which stack C was on with:
+  on_accessible_stack(tsk, frame->fp, &info);
 
-However, after I start weston, there is no display in LCD and HDMI.
-I can only see the backlight.
+  ... and thus info describes C.
 
-One more thing, I observed that, there was a huge delay after
-component_bind_all():
-[IMX]: imx_drm_driver_load - component_bind_all - DONE
-<-------------- delay --------------->
-Then we get flip_done timeout.
+> I think I've understood, though: the bad transition is detected when
+> calling unwind_frame() on the prior frame to the transitioning frame.
+> So, my version causes us to abandon the backtrace one frame early.
 
-So, my question is:
-1) If we have to test hibernation on iMX6/7 then which is the suitable way?
-2) Is it possible to support this feature by performing module
-installation after resume?
-3) If yes, then which modules should be chosen as loadable, and which
-can be in-built?
-    (So, we don't have to implement suspend/resume for each module)
+Yup!
 
-4) I also compared clock_summary in normal boot and after resume (with
-module installed).
-    I found below difference in clock frequency (pll5, pll4)
-    Example:
--    pll5                        1           1            1188000007
-+    pll5                        1           1            1040000015
+> I still think that can be delayed in a more straightforward way
+> by sticking in "invalid" flag in struct stackframe, then checking
+> that as the first step of unwind_frame().
+> 
+> However, the logic of your updated patch makes sense to me now.  I have
+> a suspicion that we're somehow making this problem more complex than it
+> is, but unless I can come up with something better, I'll shut up!
 
-what does this indicates? Is there any issue?
+I've tried a number of approaches now, and this is about as simple as it
+can be, I'm afraid. Every simplification ended up missing some info
+necessary for an edge case. At minimum we need the previous FP value,
+AFAICT.
+
+I will try to write a comprehensive comment to explain what we're doing
+and why.
+
+Thanks,
+Mark.
 
 _______________________________________________
 linux-arm-kernel mailing list
