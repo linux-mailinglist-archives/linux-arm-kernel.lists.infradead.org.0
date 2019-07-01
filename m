@@ -2,83 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 129955B7BE
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  1 Jul 2019 11:15:31 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id EA3E05B7C1
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  1 Jul 2019 11:16:00 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Yscm9dHRQROrNwxk62QIJeggNCkFtpJRQZ5/JWE9NFg=; b=RuDXaIVPsAwktS
-	n+5FQE6CGTWeXocGNTfYxPY4gmr7Tk5MZ6bhG6TkZ7hH180nA/wGhr6Y2Nt5hPLhM/nyzzUJ9ouj/
-	QKD6aXUz7revTlFDLZXk7W7PuYnNd4Ll3fYoEZiy0ecfYAnPd3AkgAxpp8L3u/AukbJcX0XBiy4KE
-	8nYZuIpU1Cjdlb5DknvT5CYI7DkcphzkWiFme2z4EWmHlXAI//gDnnULGFFdHvrsbYv6jjbQDwea4
-	0Wp/rowUFHAUUDoLOHuaTWz/Fd0jaZooNzjTJMgOnN5bB4GHhiJmEApo9dXO0fzmXGQ+WxAY616rN
-	l3uLh3dBuCnYndFx7Wzw==;
+	List-Owner; bh=YQKpdkN9svK5CN3xh1C/Bkqzy+MIeA/YMn64Gbpl0uw=; b=GbTTsQArSSi46V
+	qS3/Q7BhbRdYqhWJW2Z0Y1EE40qkILxFLEcLtkuTfiHS6KTRda6Zkdb5DJn42FGB0QVSTYxEAnNgY
+	sNYGTi5nTrySvK9WTeDoeVvIvejSGhrGR8sY+742gsvJ1rvc6ftTeMzmPe/y0MfPmnX/ZevEY/1gN
+	YoLMn29CbBhh93gb5acm3nHy6rwY76VT4DxU0M9Ygrr/i0sg3xZk8SAyUBwll4Xy8NaKeRisNil3p
+	S8ODMzf5yzyd0BlU2TRJdDydR8u8hw3+J91l535tD0gLURCW7ADjzvpsPruIlJcjexyc2vBhOWbN6
+	+sldrOtl2ey5F5jLk7hg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hhsPJ-00061z-Hv; Mon, 01 Jul 2019 09:15:29 +0000
-Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
+	id 1hhsPn-0006UE-HP; Mon, 01 Jul 2019 09:15:59 +0000
+Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hhsNB-0003Gu-Qh
+ id 1hhsND-0003II-2Y
  for linux-arm-kernel@lists.infradead.org; Mon, 01 Jul 2019 09:13:20 +0000
-Received: by mail-wr1-x441.google.com with SMTP id e3so3369318wrs.11
+Received: by mail-wr1-x444.google.com with SMTP id u18so4751973wru.1
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 01 Jul 2019 02:13:17 -0700 (PDT)
+ Mon, 01 Jul 2019 02:13:18 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=baylibre-com.20150623.gappssmtp.com; s=20150623;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=UjWYkkIZxFPFv0EhClixGF6nOSS0O5IaIRSoIWr4uvE=;
- b=OBTityny8NehxM86CMotZmVqU4h7f1j91UFQ3Ng4d88mxR7xGes+5JtDYbHuiXgfvl
- tZ1DtseVHRrFkLhNeNfy84n1y/nWP6R+6KaQM/2rLaEHRMDMZEnBQkY/zmfBe/LqGEYU
- KAjH1b00DjcrHy11zu847kt7uN4Y4cBTJ8jQLszkSYN02rJRdxFwV9w+S6G/WcKzAXwF
- tKAa0iMJgcrApKQiymYS7qy8OQdrE1CnXCVg7F/I9U4gUIB92lFDzusgoPB7NBXqUaYC
- DZAgRgksY81lE2PdxnTefmyUnGVTcPtiAnG/rQ3LZ7H4Jmzz1+49UQldqp4nmwCNvND0
- 4Mpw==
+ bh=f/zYZrOrlfrcoTvw7mvtGdakqdn7f0Uy5ZLJztZMxJc=;
+ b=jRzfrZu54oaHH9lzNLfyY2wrp+Pq4BxLB4iB1oIRVg2Ay5S0iUzODpbgfVQflutwZV
+ sqiN/g0BukVBNkx/N10FPPLHfpgw1BxgaJkJCKbp+aiW+M+FQV1035udymDkdHQJBIYo
+ jCzg4WWh9xAuL7MT9BD+Ep/OiajKsKphOX+6OouSNa0tlXellYT82BaB912w8mZQ2yVL
+ ZfqRIG1FUamlLELYDb80kOC+J37SDrv6iF6MxRywtYDBKdohz+rQeOmBE0ADwpkuquau
+ lj6OLV+SwVbBNOtBGifq0R/fn/CAMBFAuV2LZY7Yvk5xKQrJhRRu2h2ZSwcnaxnN1Wt7
+ 79Jg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=UjWYkkIZxFPFv0EhClixGF6nOSS0O5IaIRSoIWr4uvE=;
- b=AIcVbppvTNyITJojs0pAPBBlOwqhEZKFp7mX6W7j1SCuk+Zl6bCytTl1B7IWIrB6+7
- 8KAw46ib2L4NoGG4XQWYkEJQgqFE2ZNC5cF4D9w5sMQCvKpeoXxJGz5W1mI3l3Z0HR8e
- OdU5+YP5e3ik23bhhqxqXxBBjya0/QlAD2WNMF5P0LNO/gAivqKT+PYGNUcBpdwe3+hI
- lnCGYKfGsUMbe+Fu0BLThqrODzPt5tHGZJ93/+N0CA/gS+JnuKYkQJeGhEuQivszMV4o
- nYShrtmxLxf+/HhI4V0gLP5zQbzBKukdELGgn2hYoxi/AhUXqoJgNA1Cxp7WsaCQ89uN
- kG6Q==
-X-Gm-Message-State: APjAAAXZpODYgYZDZu/Wz2gIvyLgX9UI77QBOdCZ8sSZ9lWsl6xN6G81
- 5wpdoDwolCkzCtBUNoBfzVXzCw==
-X-Google-Smtp-Source: APXvYqwBMTcbw5rlap0jViAbnSmrPSuRWsUL0g7rV9xchUwDtgLw5W194G1AFcFz013gxJR1rX643w==
-X-Received: by 2002:a5d:554b:: with SMTP id g11mr16183465wrw.10.1561972395925; 
- Mon, 01 Jul 2019 02:13:15 -0700 (PDT)
+ bh=f/zYZrOrlfrcoTvw7mvtGdakqdn7f0Uy5ZLJztZMxJc=;
+ b=ncJ+GU48b73BGhMDqkErLkzxfLQ7M1MLT/XJxea/+pSSacf6AFn5/E8o8gGd7lTVWe
+ zZ1WRDDwDPa/7LzjgQXCjeL2g9tE25UO2moJCgeHwTl42Hs6ir0YsnuUdy8NW0e++Xhl
+ PJ44ub2Yzhh2pKJcnRnFwg4GvhbLd0vscMcbURqCOfN3zEVVRYIbuqNRhPWa2N0mCzpc
+ N+Hout63b3snifXaIJ9ur41zQq/+di8gBR8N+2KZJXj/D9rSznYACHhAuoYTu3N12DyO
+ vfnbg9W0565n+9Kr1Hw9voiVEK1M3gOCkBGs2k9zSrljrRmA2V++DDd0TqHa9pBHMGri
+ UvsA==
+X-Gm-Message-State: APjAAAVwsnTsxWJ4NjPNsR0vTEqCkq374WJziLtfUsGuRcWnLtlVbM6R
+ yp4AqCKsPEsl7yeB6Zs9Qvqlog==
+X-Google-Smtp-Source: APXvYqyT0fpf4ZW2lN6qRHzI9//R+u71j9/hU2ekwUjUyuAJAi3E756tCjzYWkYWKgweFITAkrBOag==
+X-Received: by 2002:adf:f706:: with SMTP id r6mr9088993wrp.23.1561972396951;
+ Mon, 01 Jul 2019 02:13:16 -0700 (PDT)
 Received: from localhost.localdomain (176-150-251-154.abo.bbox.fr.
  [176.150.251.154])
  by smtp.gmail.com with ESMTPSA id i16sm6305659wrm.37.2019.07.01.02.13.15
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-SHA bits=128/128);
- Mon, 01 Jul 2019 02:13:15 -0700 (PDT)
+ Mon, 01 Jul 2019 02:13:16 -0700 (PDT)
 From: Neil Armstrong <narmstrong@baylibre.com>
 To: jbrunet@baylibre.com,
 	khilman@baylibre.com
-Subject: [RFC/RFT v3 05/14] soc: amlogic: meson-clk-measure: protect measure
- with a mutex
-Date: Mon,  1 Jul 2019 11:12:49 +0200
-Message-Id: <20190701091258.3870-6-narmstrong@baylibre.com>
+Subject: [RFC/RFT v3 06/14] soc: amlogic: meson-clk-measure: add G12B second
+ cluster cpu clk
+Date: Mon,  1 Jul 2019 11:12:50 +0200
+Message-Id: <20190701091258.3870-7-narmstrong@baylibre.com>
 X-Mailer: git-send-email 2.21.0
 In-Reply-To: <20190701091258.3870-1-narmstrong@baylibre.com>
 References: <20190701091258.3870-1-narmstrong@baylibre.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190701_021317_893471_E11D70D0 
-X-CRM114-Status: GOOD (  13.14  )
+X-CRM114-CacheID: sfid-20190701_021319_163710_7F078A36 
+X-CRM114-Status: GOOD (  10.27  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:441 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:444 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -105,60 +105,29 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-In order to protect clock measuring when multiple process asks for
-a measure, protect the main measure function with mutexes.
+Add the G12B second CPU cluster CPU and SYS_PLL measure IDs.
+
+These IDs returns 0Hz on G12A.
 
 Reviewed-by: Kevin Hilman <khilman@baylibre.com>
 Signed-off-by: Neil Armstrong <narmstrong@baylibre.com>
 ---
- drivers/soc/amlogic/meson-clk-measure.c | 12 +++++++++++-
- 1 file changed, 11 insertions(+), 1 deletion(-)
+ drivers/soc/amlogic/meson-clk-measure.c | 2 ++
+ 1 file changed, 2 insertions(+)
 
 diff --git a/drivers/soc/amlogic/meson-clk-measure.c b/drivers/soc/amlogic/meson-clk-measure.c
-index 19d4cbc93a17..c470e24f1dfa 100644
+index c470e24f1dfa..f09b404b39d3 100644
 --- a/drivers/soc/amlogic/meson-clk-measure.c
 +++ b/drivers/soc/amlogic/meson-clk-measure.c
-@@ -11,6 +11,8 @@
- #include <linux/debugfs.h>
- #include <linux/regmap.h>
- 
-+static DEFINE_MUTEX(measure_lock);
-+
- #define MSR_CLK_DUTY		0x0
- #define MSR_CLK_REG0		0x4
- #define MSR_CLK_REG1		0x8
-@@ -360,6 +362,10 @@ static int meson_measure_id(struct meson_msr_id *clk_msr_id,
- 	unsigned int val;
- 	int ret;
- 
-+	ret = mutex_lock_interruptible(&measure_lock);
-+	if (ret)
-+		return ret;
-+
- 	regmap_write(priv->regmap, MSR_CLK_REG0, 0);
- 
- 	/* Set measurement duration */
-@@ -377,8 +383,10 @@ static int meson_measure_id(struct meson_msr_id *clk_msr_id,
- 
- 	ret = regmap_read_poll_timeout(priv->regmap, MSR_CLK_REG0,
- 				       val, !(val & MSR_BUSY), 10, 10000);
--	if (ret)
-+	if (ret) {
-+		mutex_unlock(&measure_lock);
- 		return ret;
-+	}
- 
- 	/* Disable */
- 	regmap_update_bits(priv->regmap, MSR_CLK_REG0, MSR_ENABLE, 0);
-@@ -386,6 +394,8 @@ static int meson_measure_id(struct meson_msr_id *clk_msr_id,
- 	/* Get the value in multiple of gate time counts */
- 	regmap_read(priv->regmap, MSR_CLK_REG2, &val);
- 
-+	mutex_unlock(&measure_lock);
-+
- 	if (val >= MSR_VAL_MASK)
- 		return -EINVAL;
- 
+@@ -324,6 +324,8 @@ static struct meson_msr_id clk_msr_g12a[CLK_MSR_MAX] = {
+ 	CLK_MSR_ID(84, "co_tx"),
+ 	CLK_MSR_ID(89, "hdmi_todig"),
+ 	CLK_MSR_ID(90, "hdmitx_sys"),
++	CLK_MSR_ID(91, "sys_cpub_div16"),
++	CLK_MSR_ID(92, "sys_pll_cpub_div16"),
+ 	CLK_MSR_ID(94, "eth_phy_rx"),
+ 	CLK_MSR_ID(95, "eth_phy_pll"),
+ 	CLK_MSR_ID(96, "vpu_b"),
 -- 
 2.21.0
 
