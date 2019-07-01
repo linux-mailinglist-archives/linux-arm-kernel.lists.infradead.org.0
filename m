@@ -2,83 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B665F5B7A6
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  1 Jul 2019 11:14:03 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D7B6F5B7AF
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  1 Jul 2019 11:14:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=brDGCz19eXhuj81x+qeMHUrtPDk7ZwtsKTM5a6J0xqo=; b=X40yuBzHHcyLhd
-	0rbmbgNcnIgkwWx4PoGnoAoH/gv3HVo338TynOSPllaRnWFbDCrQn8VRCJTBKf/ZkydkKNL89tsq8
-	a+MqGSJZIgj/8faAbPVvJiNZ63APIGOg51jWBEgqcEYcMC3oIOV68Aoj0BulWEyQlGZQJV5ND59hS
-	vsn6s5DbEkeGFICVvMG8qDxuU7oFXD3jTXvQN+P2cGjYQm1sxg/IyBZlQefC4oQGKBfEJv2xhtO30
-	097eiFEmHtxBLtRvnUJbx7xyLQq4sItmk80cIdi3I1CzIZWhDwW91V7dik0YHfUh2CndKdyj0ta7z
-	9X7lsUZVnZhgEzvOBXXQ==;
+	List-Owner; bh=5/Ugxz7Ek/EuRqX4tla6d0KErz7xwt6Y8lnJh/Ld0uc=; b=kE4OqQ8S7utlPw
+	IUct23EnJY+yHamPCjqaX3P1+LAMclLhlI5DiiAuafF7sSsD1NAtFIdf8zdBXJKfN5cWkU/pIb26y
+	xr+n7IdXsNu13C19lk8JhKbTVYJLyJgT/ZBIlw8GJVtsrTG8iB9DMb4INkDsMHazELvUWhsfcya6A
+	Bc6HURU0xrimZQ5qICASi5e/DSXkU0qB4FyXDZA0XXskpatvv9gRIS+Z3PbW56E25xK5wNzcAyW/b
+	ALnbuRr1vE4JuW49SzT8Nk6NL3kbRt1cnzrxsaqnENpz+h1t8abzh6n0YkmcMLH2pVsUJ9KnYT6WS
+	pxNYp7v2mgvHvx/+f10A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hhsNt-0003gz-P0; Mon, 01 Jul 2019 09:14:01 +0000
-Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
+	id 1hhsOG-0003z8-VA; Mon, 01 Jul 2019 09:14:25 +0000
+Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hhsN7-0003Du-6t
+ id 1hhsN8-0003Eo-7i
  for linux-arm-kernel@lists.infradead.org; Mon, 01 Jul 2019 09:13:16 +0000
-Received: by mail-wm1-x342.google.com with SMTP id u8so15011060wmm.1
+Received: by mail-wm1-x341.google.com with SMTP id s3so15004057wms.2
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 01 Jul 2019 02:13:13 -0700 (PDT)
+ Mon, 01 Jul 2019 02:13:14 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=baylibre-com.20150623.gappssmtp.com; s=20150623;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=qYJwtVX2r7KnFTDIFCTGswCpHKhjGFZMmXuYYyexqis=;
- b=r81XUdllxw5uXCyKEsvqIiwFjD4+Lrm0Imlfz2u7g/nBUVEQ/H/q2CcOkbeh1IoekK
- XqmukpLUNFQgaTn4IzOvgmZdqpd98YvfrZ7VM1YVyM7O5eDofTXxiSS1mEh+NDA/Dbr/
- Z3rI9N48FtEgbYu/2B2DhrOANpStsKc6vG9zfUvuIwAIhkKO792IlVEEN/ne/3TDpBV2
- UMhi4YZeH4ltR34+Y1erlZG1nyZ5RNqBMezdYHN4zSt9QqeyPrjfBFHM9wEpAnv1QO1z
- /3GabGCSPZoKQPdlx6VzaT707o+ONkoZ9Yy3YgxKcPSkOCS95zyEqQqYpKHXjSJMRrcy
- iJ+Q==
+ bh=3PBhHywaKoqeEXor4qGKKEbTn6ANfeSg4ls1LrAVLLs=;
+ b=HsAPm2yLJUTmVQ7VrhIS3c6633P/oVY1hyXWdRrTSY0DaJFH5bo3iwB4WDLzqoIjFb
+ +ofZX4UV7FR6yYxUXONipQWUjI3LKOc/TveJvoc3qP8bVzL0lMb2xqRjT3Aj98RxHlB+
+ GpNhcY2zmaGoJcTVbOliiJ6VXhUVfeSD7wO9C2/2prWgE9+Gdr833y2faMoNUxwUOhv4
+ Ty6IF1dEIyHgu4lzo46tWct6hPdW3k3KdsfcG0Wy5bOHVMxjZgNe2KVsQXBtDH5beIQX
+ zOrKkgH/T2TGdTUlj9ohM0pkt2w+MnhOGAblF+pefLHBIOfNrheg34r/1SMhDhjzwlLK
+ yNKw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=qYJwtVX2r7KnFTDIFCTGswCpHKhjGFZMmXuYYyexqis=;
- b=RrpUoPJiJTOWUextKR8KYAKtWZZOlH3n4LNsy/VlLqhm5JdSzzxFmfUkZF/vzljCRA
- rxrxI/IXbyCTn/9ZbUWai7LaT3wF+3vPB9TP8GxtN2NWuk/WrNzziwGcSCMwxo/0BC+L
- och+UiXUwgU+dAHmfIoAvn+2N00Byoz80CkvNc7AbZKdmr0GaD+X0KC96HEHn38tZwzt
- XvQqqMcUX6tUJ8d3yLeM3DwJxWzyjWAbMjGPIHOycHn9oOypJV3UfOdHGulKN9+2RV68
- 0BHMXKskrye/t5cXlaBDHeNyMy+8Oc46nzbxPPp3i1gvmCvmxXL5cl25/kKDCW3KX/YF
- sYYA==
-X-Gm-Message-State: APjAAAWA95FvcEl9CNE4FRuuDQBrguv9xdXIUJGVpY9n1nUuDZT1DUQ9
- mUVKvkV79hjKwWDWfrD3NMfesw==
-X-Google-Smtp-Source: APXvYqyKAKMyxCAc6vR2xD8svMCql407vi8e1s9D1IiPlHCg1OCzLfGcgLf5UyySc+lgVIZBWOUuTA==
-X-Received: by 2002:a05:600c:303:: with SMTP id
- q3mr16802095wmd.130.1561972391870; 
- Mon, 01 Jul 2019 02:13:11 -0700 (PDT)
+ bh=3PBhHywaKoqeEXor4qGKKEbTn6ANfeSg4ls1LrAVLLs=;
+ b=BujOXsChADheZYjbXmGAOeIkiOxQQf4MN2EihR0UC9rsQ9ArPldmFY0pHE8HQ38Fds
+ spLeQ7fGk+XMwc/wFvpIVyD5W7Tq1sZwUvZtGWQ9EuuW/uwmflcIBLl+RIfNBxr3xLjS
+ jDRHE3oA/7TLJ8vk2EvyAX0h3HzBwmKQZuRLXK4cvxY++/vVGuCrnKoqCoZdWPbERUUr
+ peDHGZvoIyGPC3PLAkNx2lLCg14sntv07/999woAlvBddeofBF0zCerctfIuHUNplRNp
+ nOjQaCtJAVQvk/3+XseV1TeQHEWU3Lr4DmuyXYh5rc61SvUzTYzZLCNTvDUPGIVNwJJa
+ 73XQ==
+X-Gm-Message-State: APjAAAXPLNjanGfq1MIKs2VO7D4JC/rme1QfftQdneOoDNjr2GEobL41
+ iBdmBirwV7RE6pF+OTJ61Cwb1g==
+X-Google-Smtp-Source: APXvYqwUZnbG+qavm8RsJY6F9HtxkvEbIBbdChezRZVD4NLmW5HAZs5R0eARFRcCFjxg92naHMdEkQ==
+X-Received: by 2002:a1c:c14b:: with SMTP id r72mr16534969wmf.166.1561972392885; 
+ Mon, 01 Jul 2019 02:13:12 -0700 (PDT)
 Received: from localhost.localdomain (176-150-251-154.abo.bbox.fr.
  [176.150.251.154])
- by smtp.gmail.com with ESMTPSA id i16sm6305659wrm.37.2019.07.01.02.13.10
+ by smtp.gmail.com with ESMTPSA id i16sm6305659wrm.37.2019.07.01.02.13.11
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-SHA bits=128/128);
- Mon, 01 Jul 2019 02:13:11 -0700 (PDT)
+ Mon, 01 Jul 2019 02:13:12 -0700 (PDT)
 From: Neil Armstrong <narmstrong@baylibre.com>
 To: jbrunet@baylibre.com,
 	khilman@baylibre.com
-Subject: [RFC/RFT v3 01/14] pinctrl: meson-g12a: add pwm_a on GPIOE_2 pinmux
-Date: Mon,  1 Jul 2019 11:12:45 +0200
-Message-Id: <20190701091258.3870-2-narmstrong@baylibre.com>
+Subject: [RFC/RFT v3 02/14] clk: core: introduce clk_hw_set_parent()
+Date: Mon,  1 Jul 2019 11:12:46 +0200
+Message-Id: <20190701091258.3870-3-narmstrong@baylibre.com>
 X-Mailer: git-send-email 2.21.0
 In-Reply-To: <20190701091258.3870-1-narmstrong@baylibre.com>
 References: <20190701091258.3870-1-narmstrong@baylibre.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190701_021313_266030_F6D34D00 
-X-CRM114-Status: GOOD (  11.40  )
+X-CRM114-CacheID: sfid-20190701_021314_274037_11A5D098 
+X-CRM114-Status: GOOD (  11.29  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:342 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:341 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -105,55 +104,48 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add the missing pinmux for the pwm_a function on the GPIOE_2 pin.
+Introduce the clk_hw_set_parent() provider call to change parent of
+a clock by using the clk_hw pointers.
 
-Reviewed-by: Kevin Hilman <khilman@baylibre.com>
+This eases the clock reparenting from clock rate notifiers and
+implementing DVFS with simpler code avoiding the boilerplates
+functions as __clk_lookup(clk_hw_get_name()) then clk_set_parent().
+
 Signed-off-by: Neil Armstrong <narmstrong@baylibre.com>
 ---
- drivers/pinctrl/meson/pinctrl-meson-g12a.c | 9 +++++++++
- 1 file changed, 9 insertions(+)
+ drivers/clk/clk.c            | 6 ++++++
+ include/linux/clk-provider.h | 1 +
+ 2 files changed, 7 insertions(+)
 
-diff --git a/drivers/pinctrl/meson/pinctrl-meson-g12a.c b/drivers/pinctrl/meson/pinctrl-meson-g12a.c
-index d494492e98e9..f69af4fa7cf8 100644
---- a/drivers/pinctrl/meson/pinctrl-meson-g12a.c
-+++ b/drivers/pinctrl/meson/pinctrl-meson-g12a.c
-@@ -801,6 +801,9 @@ static const unsigned int remote_ao_input_pins[]	= { GPIOAO_5 };
- /* ir_out */
- static const unsigned int remote_ao_out_pins[]		= { GPIOAO_4 };
+diff --git a/drivers/clk/clk.c b/drivers/clk/clk.c
+index aa51756fd4d6..06e1abe3391c 100644
+--- a/drivers/clk/clk.c
++++ b/drivers/clk/clk.c
+@@ -2490,6 +2490,12 @@ static int clk_core_set_parent_nolock(struct clk_core *core,
+ 	return ret;
+ }
  
-+/* pwm_a_e */
-+static const unsigned int pwm_a_e_pins[]		= { GPIOE_2 };
++int clk_hw_set_parent(struct clk_hw *hw, struct clk_hw *parent)
++{
++	return clk_core_set_parent_nolock(hw->core, parent->core);
++}
++EXPORT_SYMBOL_GPL(clk_hw_set_parent);
 +
- /* pwm_ao_a */
- static const unsigned int pwm_ao_a_pins[]		= { GPIOAO_11 };
- static const unsigned int pwm_ao_a_hiz_pins[]		= { GPIOAO_11 };
-@@ -888,6 +891,7 @@ static struct meson_pmx_group meson_g12a_aobus_groups[] = {
- 	GROUP(i2c_ao_slave_sda,		3),
- 	GROUP(remote_ao_input,		1),
- 	GROUP(remote_ao_out,		1),
-+	GROUP(pwm_a_e,			3),
- 	GROUP(pwm_ao_a,			3),
- 	GROUP(pwm_ao_a_hiz,		2),
- 	GROUP(pwm_ao_b,			3),
-@@ -1192,6 +1196,10 @@ static const char * const remote_ao_out_groups[] = {
- 	"remote_ao_out",
- };
- 
-+static const char * const pwm_a_e_groups[] = {
-+	"pwm_a_e",
-+};
-+
- static const char * const pwm_ao_a_groups[] = {
- 	"pwm_ao_a", "pwm_ao_a_hiz",
- };
-@@ -1290,6 +1298,7 @@ static struct meson_pmx_func meson_g12a_aobus_functions[] = {
- 	FUNCTION(i2c_ao_slave),
- 	FUNCTION(remote_ao_input),
- 	FUNCTION(remote_ao_out),
-+	FUNCTION(pwm_a_e),
- 	FUNCTION(pwm_ao_a),
- 	FUNCTION(pwm_ao_b),
- 	FUNCTION(pwm_ao_c),
+ /**
+  * clk_set_parent - switch the parent of a mux clk
+  * @clk: the mux clk whose input we are switching
+diff --git a/include/linux/clk-provider.h b/include/linux/clk-provider.h
+index bb6118f79784..8a453380f9a4 100644
+--- a/include/linux/clk-provider.h
++++ b/include/linux/clk-provider.h
+@@ -812,6 +812,7 @@ unsigned int clk_hw_get_num_parents(const struct clk_hw *hw);
+ struct clk_hw *clk_hw_get_parent(const struct clk_hw *hw);
+ struct clk_hw *clk_hw_get_parent_by_index(const struct clk_hw *hw,
+ 					  unsigned int index);
++int clk_hw_set_parent(struct clk_hw *hw, struct clk_hw *new_parent);
+ unsigned int __clk_get_enable_count(struct clk *clk);
+ unsigned long clk_hw_get_rate(const struct clk_hw *hw);
+ unsigned long __clk_get_flags(struct clk *clk);
 -- 
 2.21.0
 
