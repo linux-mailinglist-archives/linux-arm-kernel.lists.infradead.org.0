@@ -2,54 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 82E085B6A3
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  1 Jul 2019 10:16:37 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 596EF5B6C3
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  1 Jul 2019 10:25:53 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Yc/L5tNaiYEUDexNYTw+UpRswultvXy/3+wYzFIAvtY=; b=O/eRIU/tnum1KE
-	CD72rkgKrhEANjalxNxw0zHxvbgUGnJ6JGs3IE6WRHA8iw8TFFU1cVwz7GzVHFqyBHrUGS/gb3PtD
-	TcaNUlld6HH3IJFEqETxVPuVUVAX1l/hRqTZzCbAOVJEBwYT31cocZTMJf4URsK3+wv6xHytHEBzY
-	XeedbA+XEVZqOYJyKnaYnNp4uYgeqVuIjMKgKyNz83Jz1qgzSHP2osVXysq4HbKi1OECqx+eRH3sT
-	J5Ay1tYvEDZzwV91X+K3qnCmX755WSvkDEz5RZDxQvWtqT+W9wEjAteQd3PYu6UnpGo0qKHuMM/u1
-	ycDo4tf1ugTM1pLGLpOQ==;
+	List-Owner; bh=FuWjqBeo8UkK0xPv0HBgHZfBP9MDo+KJZPHXMEFAK1w=; b=md9X9bIUfPoo/I
+	eucvZxp8+dWIatdL048g5JNGUyJncTHnI3gNcnMz67vyLQo1dw3eGsjVeKqktMIcRa3tmzaITPVZ0
+	f5MuUmBs3CNObY12FyknGD3DskR6cIAe455XxTbpuBhpB/Gw0om5AY99XTduAtBZ5rj/1e8qC6ZAw
+	1exXdRkdRo28L1mRcm6vc4jZjRFRWgA4JgrJ48/+avm0EInbeHvNSXe6MccFD4e1wavyb7wydZiw9
+	0ds5ME+4NS4FCWfxl/IcZknVOILt4GCOOkvEC3Y9qzEgE5W2JCtTHrsAfaLfKq3Ab/2oxIoGjWq9P
+	GB4K4p7JlUHM3IPog3wg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hhrUJ-0004u8-SK; Mon, 01 Jul 2019 08:16:35 +0000
-Received: from mx2.suse.de ([195.135.220.15] helo=mx1.suse.de)
+	id 1hhrdH-0008Ug-OW; Mon, 01 Jul 2019 08:25:51 +0000
+Received: from mail-oi1-x244.google.com ([2607:f8b0:4864:20::244])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hhrSw-0003Qt-J1
- for linux-arm-kernel@lists.infradead.org; Mon, 01 Jul 2019 08:15:14 +0000
-X-Virus-Scanned: by amavisd-new at test-mx.suse.de
-Received: from relay2.suse.de (unknown [195.135.220.254])
- by mx1.suse.de (Postfix) with ESMTP id 227FEAE60;
- Mon,  1 Jul 2019 08:15:09 +0000 (UTC)
-Date: Mon, 1 Jul 2019 10:15:08 +0200
-From: Michal Hocko <mhocko@kernel.org>
-To: David Hildenbrand <david@redhat.com>
-Subject: Re: [PATCH v3 08/11] mm/memory_hotplug: Drop MHP_MEMBLOCK_API
-Message-ID: <20190701081508.GH6376@dhcp22.suse.cz>
-References: <20190527111152.16324-1-david@redhat.com>
- <20190527111152.16324-9-david@redhat.com>
+ id 1hhrd5-0008Qq-Ch
+ for linux-arm-kernel@lists.infradead.org; Mon, 01 Jul 2019 08:25:40 +0000
+Received: by mail-oi1-x244.google.com with SMTP id g7so9266283oia.8
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 01 Jul 2019 01:25:38 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=Ym5J0gHrzU1eWCK3FfxSZBqLOjejvpidzKKQjL50u94=;
+ b=lrFMLxnOPq9Gb4mDjYntgsL52S+LiOMwxA+1CiKwpqm4bkAWQubeuEmTZpgocpqb1O
+ RAcp9m/7a0j4QRvd0YAw38RKxvt/1oTVBpg1e4CJhVXm8HQaub6o2PBzn/ulBOMj22Rx
+ CkzVm+UvtSCDVNLF7ZzqHa9sNj0fafonaOsqFucDJPC6m3a42lqKMfIC1vWzEFOE59VS
+ CeyNiVYUsDAlSknBKDNFEfihY3tvpvide7MUlvcLOdZXw7uygqo0Taos7eVX0O2+ZmpK
+ Q50V+aszXieivGJH8paa5nh8T95E+br14g5T+ucz4JGmUF23vUMJXugn/SVcmxeiqDfw
+ afDg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=Ym5J0gHrzU1eWCK3FfxSZBqLOjejvpidzKKQjL50u94=;
+ b=iD52HpcCSe0g8kOyEqiLx4aiywcKjKhO8wtjb/zTjgMvDaT0YDQAzfDjcfYCYyO6hs
+ yK5ChpbEZfkrKcBUtCIoTTzZ1WvO3KStIbf4HvRBfgviURFYDctTuUydRTFUI1N41GoM
+ KBv005O1CQNyxykTEfAdECdyFJ2MVAA0QcXkPxI4opXfGon4kvfo7XBrwkYvG4uJFstK
+ pEjy5bsj9goaIDL5heYWplTZWxV1aA9jZttMOhKKZUp2uUzVwX1POP13n1gKa7Xx1enD
+ C9ki71vzf8zaGN3JUh2J1Z1N//KUkP44eh3YKtbVObyy5rNYiq6O6lABUFzmkiwiUtb0
+ 3ztA==
+X-Gm-Message-State: APjAAAWe44nOrBWNYog9qwO0ZzMLmGT1/7rdmGHPZW2fULMIII/BYmbV
+ jC4cp7CFJcRj3TxcXEsJUHMpfLH67JKDiENixSY=
+X-Google-Smtp-Source: APXvYqxeodXSxesbEQ96QbUQET7l2bQnzyKbxYSjLJV6c1xtLUMOy0COHZ8cHF5Dpw+SxIReWGDUZpFyqCz5TXzs5Ss=
+X-Received: by 2002:aca:f08a:: with SMTP id o132mr5877714oih.101.1561969537943; 
+ Mon, 01 Jul 2019 01:25:37 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190527111152.16324-9-david@redhat.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+References: <20190628105131.3130257-1-arnd@arndb.de>
+In-Reply-To: <20190628105131.3130257-1-arnd@arndb.de>
+From: "Lad, Prabhakar" <prabhakar.csengg@gmail.com>
+Date: Mon, 1 Jul 2019 09:25:11 +0100
+Message-ID: <CA+V-a8s5FtLik_BKhWPuG=JywN64kN7cM1vbyx+-EbrrVdjmsA@mail.gmail.com>
+Subject: Re: [PATCH] media: davinci-vpbe: remove obsolete includes
+To: Arnd Bergmann <arnd@arndb.de>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190701_011511_405275_2B8AE6CA 
-X-CRM114-Status: GOOD (  16.90  )
-X-Spam-Score: -1.3 (-)
+X-CRM114-CacheID: sfid-20190701_012539_456010_092EF75A 
+X-CRM114-Status: GOOD (  12.24  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-1.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [195.135.220.15 listed in list.dnswl.org]
- 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:244 listed in]
+ [list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (prabhakar.csengg[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -61,103 +92,89 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Oscar Salvador <osalvador@suse.com>, linux-s390@vger.kernel.org,
- linux-ia64@vger.kernel.org, Pavel Tatashin <pasha.tatashin@soleen.com>,
- linux-sh@vger.kernel.org, Mathieu Malaterre <malat@debian.org>,
- Joonsoo Kim <iamjoonsoo.kim@lge.com>, linux-kernel@vger.kernel.org,
- Wei Yang <richard.weiyang@gmail.com>, linux-mm@kvack.org,
- Arun KS <arunks@codeaurora.org>, Qian Cai <cai@lca.pw>,
- Igor Mammedov <imammedo@redhat.com>, akpm@linux-foundation.org,
- linuxppc-dev@lists.ozlabs.org, Dan Williams <dan.j.williams@intel.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: Sekhar Nori <nsekhar@ti.com>, LKML <linux-kernel@vger.kernel.org>,
+ Bartosz Golaszewski <bgolaszewski@baylibre.com>,
+ Hans Verkuil <hans.verkuil@cisco.com>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>,
+ LAK <linux-arm-kernel@lists.infradead.org>,
+ linux-media <linux-media@vger.kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon 27-05-19 13:11:49, David Hildenbrand wrote:
-> No longer needed, the callers of arch_add_memory() can handle this
-> manually.
-> 
-> Cc: Andrew Morton <akpm@linux-foundation.org>
-> Cc: David Hildenbrand <david@redhat.com>
-> Cc: Michal Hocko <mhocko@suse.com>
-> Cc: Oscar Salvador <osalvador@suse.com>
-> Cc: Pavel Tatashin <pasha.tatashin@soleen.com>
-> Cc: Wei Yang <richard.weiyang@gmail.com>
-> Cc: Joonsoo Kim <iamjoonsoo.kim@lge.com>
-> Cc: Qian Cai <cai@lca.pw>
-> Cc: Arun KS <arunks@codeaurora.org>
-> Cc: Mathieu Malaterre <malat@debian.org>
-> Signed-off-by: David Hildenbrand <david@redhat.com>
+Hi Arnd,
 
-Acked-by: Michal Hocko <mhocko@suse.com>
+Thank you for the patch.
 
+On Fri, Jun 28, 2019 at 11:51 AM Arnd Bergmann <arnd@arndb.de> wrote:
+>
+> The driver builds fine without these, and they cause build
+> problems once davinci multiplatform support is enabled.
+>
+> Signed-off-by: Arnd Bergmann <arnd@arndb.de>
 > ---
->  include/linux/memory_hotplug.h | 8 --------
->  mm/memory_hotplug.c            | 9 +++------
->  2 files changed, 3 insertions(+), 14 deletions(-)
-> 
-> diff --git a/include/linux/memory_hotplug.h b/include/linux/memory_hotplug.h
-> index 2d4de313926d..2f1f87e13baa 100644
-> --- a/include/linux/memory_hotplug.h
-> +++ b/include/linux/memory_hotplug.h
-> @@ -128,14 +128,6 @@ extern void arch_remove_memory(int nid, u64 start, u64 size,
->  extern void __remove_pages(struct zone *zone, unsigned long start_pfn,
->  			   unsigned long nr_pages, struct vmem_altmap *altmap);
->  
-> -/*
-> - * Do we want sysfs memblock files created. This will allow userspace to online
-> - * and offline memory explicitly. Lack of this bit means that the caller has to
-> - * call move_pfn_range_to_zone to finish the initialization.
-> - */
-> -
-> -#define MHP_MEMBLOCK_API               (1<<0)
-> -
->  /* reasonably generic interface to expand the physical pages */
->  extern int __add_pages(int nid, unsigned long start_pfn, unsigned long nr_pages,
->  		       struct mhp_restrictions *restrictions);
-> diff --git a/mm/memory_hotplug.c b/mm/memory_hotplug.c
-> index b1fde90bbf19..9a92549ef23b 100644
-> --- a/mm/memory_hotplug.c
-> +++ b/mm/memory_hotplug.c
-> @@ -251,7 +251,7 @@ void __init register_page_bootmem_info_node(struct pglist_data *pgdat)
->  #endif /* CONFIG_HAVE_BOOTMEM_INFO_NODE */
->  
->  static int __meminit __add_section(int nid, unsigned long phys_start_pfn,
-> -		struct vmem_altmap *altmap, bool want_memblock)
-> +				   struct vmem_altmap *altmap)
->  {
->  	int ret;
->  
-> @@ -294,8 +294,7 @@ int __ref __add_pages(int nid, unsigned long phys_start_pfn,
->  	}
->  
->  	for (i = start_sec; i <= end_sec; i++) {
-> -		err = __add_section(nid, section_nr_to_pfn(i), altmap,
-> -				restrictions->flags & MHP_MEMBLOCK_API);
-> +		err = __add_section(nid, section_nr_to_pfn(i), altmap);
->  
->  		/*
->  		 * EEXIST is finally dealt with by ioresource collision
-> @@ -1067,9 +1066,7 @@ static int online_memory_block(struct memory_block *mem, void *arg)
->   */
->  int __ref add_memory_resource(int nid, struct resource *res)
->  {
-> -	struct mhp_restrictions restrictions = {
-> -		.flags = MHP_MEMBLOCK_API,
-> -	};
-> +	struct mhp_restrictions restrictions = {};
->  	u64 start, size;
->  	bool new_node = false;
->  	int ret;
-> -- 
-> 2.20.1
-> 
+>  drivers/media/platform/davinci/vpbe_display.c | 4 ----
+>  drivers/media/platform/davinci/vpbe_osd.c     | 5 -----
+>  drivers/media/platform/davinci/vpbe_venc.c    | 5 -----
+>  3 files changed, 14 deletions(-)
+>
 
--- 
-Michal Hocko
-SUSE Labs
+Acked-by: Lad, Prabhakar <prabhakar.csengg@gmail.com>
+
+Cheers,
+--Prabhakar Lad
+
+> diff --git a/drivers/media/platform/davinci/vpbe_display.c b/drivers/media/platform/davinci/vpbe_display.c
+> index 000b191c42d8..18f9408013d1 100644
+> --- a/drivers/media/platform/davinci/vpbe_display.c
+> +++ b/drivers/media/platform/davinci/vpbe_display.c
+> @@ -19,10 +19,6 @@
+>
+>  #include <asm/pgtable.h>
+>
+> -#ifdef CONFIG_ARCH_DAVINCI
+> -#include <mach/cputype.h>
+> -#endif
+> -
+>  #include <media/v4l2-dev.h>
+>  #include <media/v4l2-common.h>
+>  #include <media/v4l2-ioctl.h>
+> diff --git a/drivers/media/platform/davinci/vpbe_osd.c b/drivers/media/platform/davinci/vpbe_osd.c
+> index 491842ef33c5..91b571a0ac2c 100644
+> --- a/drivers/media/platform/davinci/vpbe_osd.c
+> +++ b/drivers/media/platform/davinci/vpbe_osd.c
+> @@ -16,11 +16,6 @@
+>  #include <linux/clk.h>
+>  #include <linux/slab.h>
+>
+> -#ifdef CONFIG_ARCH_DAVINCI
+> -#include <mach/cputype.h>
+> -#include <mach/hardware.h>
+> -#endif
+> -
+>  #include <media/davinci/vpss.h>
+>  #include <media/v4l2-device.h>
+>  #include <media/davinci/vpbe_types.h>
+> diff --git a/drivers/media/platform/davinci/vpbe_venc.c b/drivers/media/platform/davinci/vpbe_venc.c
+> index 425f91f07165..8caa084e5704 100644
+> --- a/drivers/media/platform/davinci/vpbe_venc.c
+> +++ b/drivers/media/platform/davinci/vpbe_venc.c
+> @@ -14,11 +14,6 @@
+>  #include <linux/videodev2.h>
+>  #include <linux/slab.h>
+>
+> -#ifdef CONFIG_ARCH_DAVINCI
+> -#include <mach/hardware.h>
+> -#include <mach/mux.h>
+> -#endif
+> -
+>  #include <linux/platform_data/i2c-davinci.h>
+>
+>  #include <linux/io.h>
+> --
+> 2.20.0
+>
 
 _______________________________________________
 linux-arm-kernel mailing list
