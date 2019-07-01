@@ -2,116 +2,96 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CBC8D5BE0B
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  1 Jul 2019 16:21:44 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A0C625BE2F
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  1 Jul 2019 16:26:02 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
-	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=cDxooZcLx/G4zKAyejaYLUrWQE6htl47QRIFa5opjCE=; b=s4JNAjJdMVYwgZ
-	BXyS9EkGmY9GsTbsuRrxzScJMic7x/OZFrZpFWUmP7din2gd40g2KFYYU4Hy0S60zoaUlCKPRfCbi
-	2BpK8xPHiR5cBVXsH5FCrEBFYp8/sOmm4EF4lr3Nt2OQNAVaXUfZZeObSZ5IpvIbqGRZEJrJsq0rK
-	PejaAPG9fJVS8kcSJlWxBIsWF8g4KOvsE5E/FeSQRd8S06UhNbyB/ddYqeeVPNHTyTiRXnhL5O0e4
-	ILVvX6630vJ/330fmSdJZIhHlc32h+TvyvyW/c7nUNUMZb2+mTSe6XYN9XNsnj99Lyk5Z+XvBjCx1
-	Lt6zq+ztqDI8+uKoAHEA==;
+	List-Owner; bh=0r17zb4gVZcVEjzISuDbf48o8Dx3jkC/DujrKfLHJsE=; b=rH2d4+mrNIm8XA
+	i3Qc00qraQ30OMJDiyxIRDGZFr08XiRskW2P5dwDoye/UrE/AF8sSxYeftFMeLontieli52zCbv6V
+	tUv47x1LqcCoDSd5ZgOqzDly3jahnzTpPOIPgid2pwRi04xe1BBWQGin8VNu4xz72dxUgSk13m3eq
+	msCDHBTAQQT1O33POCAuX3fJP+F7H+67WWUzvS32LJccngdz8ReldNYtRuqXW1LbMqSCqjc/VF5N9
+	EBmCkrkT7elg6A0pKY8ZZukqnW7/RZMuTQ5zHhSUEl98U75MYs0+4ZaGN2lMyaEAyMP3KDC7FwZTm
+	hw5NlcI4UwEpkRuyYCwg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hhxBe-0004uu-Dh; Mon, 01 Jul 2019 14:21:42 +0000
-Received: from mx0a-00128a01.pphosted.com ([148.163.135.77])
+	id 1hhxFn-0006si-M8; Mon, 01 Jul 2019 14:25:59 +0000
+Received: from mail-vs1-xe44.google.com ([2607:f8b0:4864:20::e44])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hhxBY-0004uQ-Fo; Mon, 01 Jul 2019 14:21:37 +0000
-Received: from pps.filterd (m0167089.ppops.net [127.0.0.1])
- by mx0a-00128a01.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id
- x61EHrmT013428; Mon, 1 Jul 2019 10:21:24 -0400
-Received: from nam04-co1-obe.outbound.protection.outlook.com
- (mail-co1nam04lp2055.outbound.protection.outlook.com [104.47.45.55])
- by mx0a-00128a01.pphosted.com with ESMTP id 2tf787hpw5-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-SHA384 bits=256 verify=NOT);
- Mon, 01 Jul 2019 10:21:24 -0400
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=analog.onmicrosoft.com; s=selector1-analog-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=PL2UCeaP0xmAf+vDDIAWoxQ7Zln1Kf2hM+JltlrPB78=;
- b=wjJ/ltQLwG2bbelYqFGMUA7Q/u0FogCOWvTxXLs9BN9zwXvZzi3wMcFwhi2IeMcGbfRkTiyQlN0MpY29WXXvnPuOeGPuymv/za6qUnmLMNfnNcpn/Nfo5Hrll91Wcs+NH0ZoawSjntk/gVXzfRdxKdHhmmnfzxIPnRlQfDjH/c4=
-Received: from BL2PR03MB577.namprd03.prod.outlook.com (10.141.92.20) by
- BL2PR03MB545.namprd03.prod.outlook.com (10.141.90.14) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2032.20; Mon, 1 Jul 2019 14:21:21 +0000
-Received: from BL2PR03MB577.namprd03.prod.outlook.com
- ([fe80::d70:e601:2346:3616]) by BL2PR03MB577.namprd03.prod.outlook.com
- ([fe80::d70:e601:2346:3616%5]) with mapi id 15.20.2032.019; Mon, 1 Jul 2019
- 14:21:21 +0000
-From: "Sa, Nuno" <Nuno.Sa@analog.com>
-To: "lukas@wunner.de" <lukas@wunner.de>
-Subject: Re: [PATCH] spi: spi-bcm2835.c: Fix 3-wire mode
-Thread-Topic: [PATCH] spi: spi-bcm2835.c: Fix 3-wire mode
-Thread-Index: AQHVLcWKil6b5DVA2k6/uFd6YOkY56axa+0AgAP0lwCAAEuWAIAAKOmA
-Date: Mon, 1 Jul 2019 14:21:21 +0000
-Message-ID: <42a533cbf1e47ab8c8a44c5e865ec15193a2e956.camel@analog.com>
-References: <20190628123023.4696-1-nuno.sa@analog.com>
- <1b932c61-982b-aae0-1fef-3c574e7d17eb@gmx.net>
- <20190628190022.vya4h2lihm6x2xpb@wunner.de>
- <54323339606a36febc6a8633a8d3a7db84b975c4.camel@analog.com>
- <20190701115506.42rr4o4hbuvwytjc@wunner.de>
-In-Reply-To: <20190701115506.42rr4o4hbuvwytjc@wunner.de>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-x-originating-ip: [137.71.226.54]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: f9f2f8b0-6a09-4e20-c97a-08d6fe2f643c
-x-ms-office365-filtering-ht: Tenant
-x-microsoft-antispam: BCL:0; PCL:0;
- RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600148)(711020)(4605104)(1401327)(4618075)(2017052603328)(7193020);
- SRVR:BL2PR03MB545; 
-x-ms-traffictypediagnostic: BL2PR03MB545:
-x-microsoft-antispam-prvs: <BL2PR03MB5453F0813F53F2EE7A01FAF99F90@BL2PR03MB545.namprd03.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:8882;
-x-forefront-prvs: 00851CA28B
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(366004)(136003)(39860400002)(396003)(346002)(376002)(189003)(199004)(40764003)(54906003)(6246003)(102836004)(316002)(26005)(2906002)(81156014)(68736007)(2501003)(81166006)(1730700003)(14444005)(14454004)(11346002)(6512007)(8936002)(71190400001)(71200400001)(5640700003)(6486002)(118296001)(4744005)(66066001)(8676002)(229853002)(99286004)(256004)(486006)(6506007)(305945005)(446003)(53936002)(476003)(7736002)(5660300002)(6436002)(2616005)(2351001)(66946007)(66556008)(76176011)(25786009)(36756003)(64756008)(66446008)(7416002)(66476007)(86362001)(3846002)(91956017)(478600001)(72206003)(73956011)(76116006)(6116002)(4326008)(6916009)(186003);
- DIR:OUT; SFP:1101; SCL:1; SRVR:BL2PR03MB545;
- H:BL2PR03MB577.namprd03.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; MX:1; A:1; 
-received-spf: None (protection.outlook.com: analog.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: LoxZMXUMARUMAQWGAT7OvwbLZlxaKKE81ypygX7ndY/4wAc7guJ5BOg+89OvF6qGxQMNI9Hd8iOd+ILSN4pBaKMcIew0eVduX1gB6EnpoHvaBHFVDK7KnHu0e5WLbzoxHttveIR9waxHRkBrww+33EDcAuGo506tPyK+Gh8iaPF81VyelyPbAPgD5cxIWYnB4TenUuo1MDUqYzLmqDo+GntMY2u3rMT7YtQbhuiW6Z8qlNEfIcVoWCRoT8PBvv6xQ02RPnRt8SxzlP0BU6gtDMmUHR0gr6HMU4oYe23ZCB03CV6pZqwvpnyayfyfPptHG0PK08a94RYaejuH/yaU+lcm8dxzr5xDFnATXuYOwh0Rmt2rHUv7vEb4mzBAYUxsLEM9Q/w0UkGyZ5rlke0ggtvvtNeX+MkLScqtolFpOmI=
-Content-ID: <8396F84502FD1D4AABB8932E32F898B0@namprd03.prod.outlook.com>
+ id 1hhxFg-0006sK-OJ
+ for linux-arm-kernel@lists.infradead.org; Mon, 01 Jul 2019 14:25:54 +0000
+Received: by mail-vs1-xe44.google.com with SMTP id v6so9025278vsq.4
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 01 Jul 2019 07:25:52 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=prX1E0RG7UeUBzCLq0Q5Oi12RHYXNZyfW5bTMLlL8JI=;
+ b=arAwgdST9DjY9vxXrFWg7C4mcvo7W/JT82sW+gnGtZsku0jghjgd5ceLmlW/DD9MeW
+ SXkWG25P0KqPSmuIRtC+91B/URngWnXzXO8GJCmxhhbMGJQqlEiWIiugydsHUWvn4xMP
+ fLUMKKSyPDRVGraoestBcMoB/SGklheTHS1bG1NorskLUwMXCHe8BQZPTckzxHVWrkH0
+ dSgyjWmIUs2c0Togy+4bsvPsYEpRzGGfMHrKl0nRw4vnMSAFdwJFAi62yo8VoJYFgkFK
+ k+mbzCq1HV6m3HieHAh0vw3OvFpjQBSH70WCR/VZt+fI0mNEPME9QrW2RFWol/gfdiYe
+ BMAw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=prX1E0RG7UeUBzCLq0Q5Oi12RHYXNZyfW5bTMLlL8JI=;
+ b=Jm1NwWw2uAwAIdj3moJ4h0n1r0TX+fEF8TZg/9bQcVpX9lRN/dZ8uOt1Pfuo72Dq7d
+ 8KbFOIwAop3udgxLxv4kfQ+mli7Tu+H5LJQh7qsFH28uCI4BbKBkfKq/FT6fvL9D606c
+ DcibyUjr7QARGLKbwulDvzmWyyTbhZZucZKqX58Ay0/sDdxn5TCfJl7ZN+fCldG3FtAX
+ n93Iyo+3YiFzQMeGZ8JJ1q9FZFUty//2B12xb0KBSGtPSxFkiLw1hAguCl1FZpi6HSOc
+ zsO5p004xEvZc4GY9l4KhMPsRWmAJMHmUfCkusrl6twFv9WB8lzTuyvUDgIGrGkdv1F9
+ qoCg==
+X-Gm-Message-State: APjAAAWj3Bz1In3zDBPYO54fm/fCcSp+9Qp7fDzvxlKO1wGUiZRc6JyM
+ aM9XoEe4OFoM/QC6yzs3862QX+aiaH6MmcHC/mA=
+X-Google-Smtp-Source: APXvYqzWTG5NkVuWmj3+DO56fz33iIrbZisyvuVAbbQwtuyydaLXGbJH3yLGRx0Z49Q2eGRBQaNkmTqk5JK8s6+zHXM=
+X-Received: by 2002:a67:3195:: with SMTP id
+ x143mr15188071vsx.144.1561991151262; 
+ Mon, 01 Jul 2019 07:25:51 -0700 (PDT)
 MIME-Version: 1.0
-X-OriginatorOrg: analog.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: f9f2f8b0-6a09-4e20-c97a-08d6fe2f643c
-X-MS-Exchange-CrossTenant-originalarrivaltime: 01 Jul 2019 14:21:21.6485 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: eaa689b4-8f87-40e0-9c6f-7228de4d754a
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: Nuno.Sa@analog.com
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: BL2PR03MB545
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:, ,
- definitions=2019-07-01_09:, , signatures=0
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- priorityscore=1501
- malwarescore=0 suspectscore=0 phishscore=0 bulkscore=0 spamscore=0
- clxscore=1015 lowpriorityscore=0 mlxscore=0 impostorscore=0
- mlxlogscore=900 adultscore=0 classifier=spam adjust=0 reason=mlx
- scancount=1 engine=8.0.1-1810050000 definitions=main-1907010177
+References: <CAOuPNLiBA9VjEoG_D2y2O5mKiqsDNW1VZXOk1eWXpGY+h86acg@mail.gmail.com>
+ <CAOMZO5BcLaS0gXUPi6oN6vjqagS5yf+rHh+EUjmi-Wi1OX7vqQ@mail.gmail.com>
+ <CAOuPNLgEEfDca4aeT1+q8GfUfGzbJ4x6JwGf-ROB1pgpXUBHSw@mail.gmail.com>
+ <CAOMZO5BY8JcLNMCRCC_d=emy8HR6kE=dB9f5qfZ=ci_c+Jak0w@mail.gmail.com>
+ <CAOuPNLjYhkP_kL+q-ZpiDZMMpOHrU88BFBc2agtnCzXt8dihOg@mail.gmail.com>
+ <CAOMZO5ADK1L5UMM9XZetHvmjTvmvUg99G7VPdeXitgpctGLCkw@mail.gmail.com>
+ <CAOuPNLhZhgN26rquLQq9zHBct1QxK-7hXAza0xk-0QooPGYLNw@mail.gmail.com>
+ <CAOMZO5BsJWTw0nCeUboam4kuKyCO3N_Ch5ZW8k5Y9KFtQBanhQ@mail.gmail.com>
+ <CAOuPNLjrAU_C_TUKFMs1d0eGsw=AxuG6d6FhNHtHFwVhfYZGgA@mail.gmail.com>
+ <CAOuPNLhstoCjxijrnKNmV1iKWjAXvSZ38Z13tfd5bvGbYSqPAA@mail.gmail.com>
+ <CAOMZO5CD-QQaZwNfiX6mOLAup4J8dBiqEb_V_6jz_z5jXZ5cEw@mail.gmail.com>
+ <CAOuPNLj=L_3RoC=9ws4yn1Q7QLoS3OEZ8FLRrF04HRQtQvc0Jg@mail.gmail.com>
+In-Reply-To: <CAOuPNLj=L_3RoC=9ws4yn1Q7QLoS3OEZ8FLRrF04HRQtQvc0Jg@mail.gmail.com>
+From: Pintu Agarwal <pintu.ping@gmail.com>
+Date: Mon, 1 Jul 2019 19:55:39 +0530
+Message-ID: <CAOuPNLg5A1bB-Tmndm4PvsJ40tj0yn-bJ2mfifEpjAF-t84wiQ@mail.gmail.com>
+Subject: Re: [IMX] [DRM]: suspend/resume support
+To: Fabio Estevam <festevam@gmail.com>, s.hauer@pengutronix.de,
+ p.zabel@pengutronix.de
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190701_072136_725925_38C6A0AD 
-X-CRM114-Status: UNSURE (   8.37  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190701_072552_818809_CD172FDA 
+X-CRM114-Status: GOOD (  19.83  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [148.163.135.77 listed in list.dnswl.org]
+ no trust [2607:f8b0:4864:20:0:0:0:e44 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (pintu.ping[at]gmail.com)
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -125,35 +105,99 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "f.fainelli@gmail.com" <f.fainelli@gmail.com>,
- "sbranden@broadcom.com" <sbranden@broadcom.com>,
- "rjui@broadcom.com" <rjui@broadcom.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "linux-spi@vger.kernel.org" <linux-spi@vger.kernel.org>,
- "eric@anholt.net" <eric@anholt.net>, "broonie@kernel.org" <broonie@kernel.org>,
- "bcm-kernel-feedback-list@broadcom.com"
- <bcm-kernel-feedback-list@broadcom.com>, "wahrenst@gmx.net" <wahrenst@gmx.net>,
- "kernel@martin.sperl.org" <kernel@martin.sperl.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- "linux-rpi-kernel@lists.infradead.org" <linux-rpi-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: linux-pm@vger.kernel.org, open list <linux-kernel@vger.kernel.org>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>,
+ Kernelnewbies <kernelnewbies@kernelnewbies.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gTW9uLCAyMDE5LTA3LTAxIGF0IDEzOjU1ICswMjAwLCBMdWthcyBXdW5uZXIgd3JvdGU6DQo+
-IEkgc2VlLiAgSW4gdGhhdCBjYXNlLCB0cnk6DQo+IA0KPiAgCS8qIGhhbmRsZSBhbGwgdGhlIDMt
-d2lyZSBtb2RlICovDQo+IC0JaWYgKChzcGktPm1vZGUgJiBTUElfM1dJUkUpICYmICh0ZnItPnJ4
-X2J1ZikpDQo+ICsJaWYgKChzcGktPm1vZGUgJiBTUElfM1dJUkUpICYmICh0ZnItPnJ4X2J1ZiAh
-PSBjdGxyLT5kdW1teV9yeCkpDQo+ICAJCWNzIHw9IEJDTTI4MzVfU1BJX0NTX1JFTjsNCj4gIAll
-bHNlDQo+ICAJCWNzICY9IH5CQ00yODM1X1NQSV9DU19SRU47DQo+IA0KDQpUaGlzIHdvcmtlZCBm
-aW5lLiBBbHNvLCBJIGRpZCBhIHF1aWNrIGJhY2twb3J0IG9mIHRoZSBzdGF0ZSBvZiB5b3VyDQpk
-cml2ZXIncyAoYm90aCBzcGktYmNtMjgzNSBhbmQgYmNtMjgzNS1kbWEpIGluIHJldnBpX3N0YWdp
-bmcgYW5kIGl0DQphbHNvIHdvcmtlZCBmaW5lIHdpdGggbXkgZGV2aWNlLg0KU28sIGFzIGZhciBh
-cyBJIHVuZGVyc3RhbmQsIHRoZSBhYm92ZSBzdWdnZXN0aW9uIChvciBteSBwYXRjaCkgaXMgbm90
-DQppbnRlbmRlZCB0byBiZSB1cHN0cmVhbWVkLCByaWdodD8gSXQgaXMganVzdCBhIHRlbXBvcmFy
-eSBmaXggdGhhdCBJIGNhbg0KdXNlIHdoaWxlIHlvdXIgcGF0Y2hzZXQgZ2V0cyB1cHN0cmVhbS4N
-Cg0KVGhhbmtzIGZvciB5b3VyIGhlbHAhDQpOdW5vIFPDoQ0KDQpfX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlz
-dApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJh
-ZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
+On Sat, Jun 22, 2019 at 1:43 PM Pintu Agarwal <pintu.ping@gmail.com> wrote:
+>
+> On Fri, Jun 21, 2019 at 9:09 PM Fabio Estevam <festevam@gmail.com> wrote:
+> >
+> > On Fri, Jun 21, 2019 at 12:13 PM Pintu Agarwal <pintu.ping@gmail.com> wrote:
+> >
+> > > Okay there is some update on the 2nd part.
+> > > Now I am able to successfully install all imx modules after the resume
+> > > (no hang).
+> > > But, I got some errors after install finish:
+> > > [drm] disabling vblank on crtc 1
+> > > [IMX]: imx_drm_disable_vblank - called
+> > > [drm:drm_atomic_helper_commit_cleanup_done] *ERROR* [CRTC:24:crtc-0]
+> > > flip_done timed out
+> > >
+> > > Also I am able to start the weston successfully.
+> > > But I see LCD/HDMI display is not working (only some backlight is visible).
+> > >
+> > > And, I noticed, weston also reports the following errors:
+> > > imx-ipuv3 2400000.ipu: DC stop timeout after 50 ms
+> > > [IMX]: drm_crtc_vblank_off - called
+> > > [IMX]: imx_drm_disable_vblank - called
+> > > INFO: rcu_preempt detected stalls on CPUs/tasks: { 1} (detected by 0,
+> > > t=6002 jiffies, g=289, c=288, q=8)
+> > > Task dump for CPU 1:
+> > > weston          R running      0   306      1 0x00000000
+> > > [<c05282d8>] (__schedule) from [<00080193>] (0x80193)
+> > >
+> > > Do you have any clue about these errors ?
+> >
+> > Which kernel version is this?
+>
+
+Now, I am using Kernel 4.9 (custom) with some internal changes.
+After the hibernate-resume, I am trying to install the modules in
+following order:
+insmod imxdrm.ko
+insmod parallel-display.ko
+insmod dw-hdmi.ko
+insmod dw_hdmi-imx.ko
+insmod imx-ipu-v3.ko
+insmod imx-ipuv3-crtc.ko
+insmod imx-ldb.ko
+
+I noticed that if I don't install the "crtc" or "ldb" module at last,
+then system will hang.
+Otherwise, the modules are installed successfully.
+
+But, I get following errors:
+[drm:drm_atomic_helper_wait_for_flip_done] *ERROR* [CRTC:24:crtc-0]
+flip_done timed out
+[drm:drm_atomic_helper_commit_cleanup_done] *ERROR* [CRTC:24:crtc-0]
+flip_done timed out
+
+But, hdmi could be detected from the logs:
+dwhdmi-imx 120000.hdmi: Detected HDMI controller 0x13:0x1a:0xa0:0xc1
+
+However, after I start weston, there is no display in LCD and HDMI.
+I can only see the backlight.
+
+One more thing, I observed that, there was a huge delay after
+component_bind_all():
+[IMX]: imx_drm_driver_load - component_bind_all - DONE
+<-------------- delay --------------->
+Then we get flip_done timeout.
+
+So, my question is:
+1) If we have to test hibernation on iMX6/7 then which is the suitable way?
+2) Is it possible to support this feature by performing module
+installation after resume?
+3) If yes, then which modules should be chosen as loadable, and which
+can be in-built?
+    (So, we don't have to implement suspend/resume for each module)
+
+4) I also compared clock_summary in normal boot and after resume (with
+module installed).
+    I found below difference in clock frequency (pll5, pll4)
+    Example:
+-    pll5                        1           1            1188000007
++    pll5                        1           1            1040000015
+
+what does this indicates? Is there any issue?
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
