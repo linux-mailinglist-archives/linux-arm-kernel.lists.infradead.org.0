@@ -2,62 +2,72 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BCE9E5B86C
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  1 Jul 2019 11:55:00 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2DDAE5B872
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  1 Jul 2019 11:57:02 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Ao6DU2oFaNA8YLP2DEKkEwqx44QulmzellJ0tGhNlkY=; b=Psfbx1EMi2afW2
-	vPQBOSzyNlNgeRLNFEkQr7yEpGmb0xWFO7Rk34UrEr9O4CPhRR9Sl5msUkymro1AsmVAr3u8LNGoo
-	6gmEcqnQasVEvJ06NWyxcGayIcyywenqkbWUeQjPbbONPOpaT54BTuRBRLq/LaUG0z9RDgXvO6ajt
-	Vs3X0NMtmBD0u2KvJoT+Roc8hPVQ3T/4GNKxmva7lMr412C+aHmslE+DDRQ0p38nn8twveOwoW+CI
-	oJNil1FQZGti4TDenhtNOnTn8rV4Yxqk8jQP+FfX6GR8g1B/ToeP9gqNMFGxMvULGoPzwUKjbFiE3
-	WzRzUNjaLnnZA8aBNUXg==;
+	List-Owner; bh=m6dimwO1bR0X1i2/Aq8fFj9SwjU1nZP8+IWNxSraSFw=; b=aSu+sxeMzT+8d2
+	gGw69hVPO9a1B9bjqv8RLfdimxSy0NULuviurOmrvEC1/gJjeIVkPikjx6WbTccQikfuFsbnPZV+Y
+	bF6gP0FMNb1dxoRvOkMRLjXfDzK8EHwq3H51dY+skfZMB6aL/kyRmpjLGjEcl/c+TdlwgsT9BGb9V
+	OiRT1WjJQfOLQuYav7grRahPcB1GtK0eI8nH40xD3z2XDCtgsyROlvwRXRcTlExL7jV0d9aT8hkGI
+	4wJ1MtlOHNUIHPHfjX+UrNSttSr39haF56Mt0GUoI6u2qxfFIl7/KI7LmkTPP4/MINdkJ7mdq6jEj
+	eCkHCZGheD2Q/fNcAshA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hht1W-0008Pv-Kl; Mon, 01 Jul 2019 09:54:58 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hht1L-0008Pb-CD
- for linux-arm-kernel@lists.infradead.org; Mon, 01 Jul 2019 09:54:48 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 952D32B;
- Mon,  1 Jul 2019 02:54:46 -0700 (PDT)
-Received: from localhost (unknown [10.37.6.20])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 168153F718;
- Mon,  1 Jul 2019 02:54:45 -0700 (PDT)
-Date: Mon, 1 Jul 2019 10:54:44 +0100
-From: Andrew Murray <andrew.murray@arm.com>
-To: Leo Yan <leo.yan@linaro.org>
-Subject: Re: [PATCH v2 5/5] coresight: etm4x: save/restore state across CPU
- low power states
-Message-ID: <20190701095444.GB27745@e119886-lin.cambridge.arm.com>
-References: <20190627083525.37463-1-andrew.murray@arm.com>
- <20190627083525.37463-6-andrew.murray@arm.com>
- <20190628080732.GA32370@leoy-ThinkPad-X240s>
- <20190628085357.GH34530@e119886-lin.cambridge.arm.com>
- <20190628091246.GE32370@leoy-ThinkPad-X240s>
- <20190628092227.GJ34530@e119886-lin.cambridge.arm.com>
- <20190701020710.GC28475@leoy-ThinkPad-X240s>
- <20190701093458.GA27745@e119886-lin.cambridge.arm.com>
- <20190701094811.GB32042@leoy-ThinkPad-X240s>
+	id 1hht3U-0001ov-Cw; Mon, 01 Jul 2019 09:57:00 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hht3E-0001nZ-SR; Mon, 01 Jul 2019 09:56:46 +0000
+X-UUID: b887bd6f4d904b869eaad4349bb65b7d-20190701
+X-UUID: b887bd6f4d904b869eaad4349bb65b7d-20190701
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
+ (envelope-from <walter-zh.wu@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 1396231371; Mon, 01 Jul 2019 01:56:39 -0800
+Received: from mtkmbs07n1.mediatek.inc (172.21.101.16) by
+ MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Mon, 1 Jul 2019 02:56:37 -0700
+Received: from mtkcas08.mediatek.inc (172.21.101.126) by
+ mtkmbs07n1.mediatek.inc (172.21.101.16) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Mon, 1 Jul 2019 17:56:36 +0800
+Received: from [172.21.84.99] (172.21.84.99) by mtkcas08.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
+ Transport; Mon, 1 Jul 2019 17:56:35 +0800
+Message-ID: <1561974995.18866.1.camel@mtksdccf07>
+Subject: Re: [PATCH v3] kasan: add memory corruption identification for
+ software tag-based mode
+From: Walter Wu <walter-zh.wu@mediatek.com>
+To: Dmitry Vyukov <dvyukov@google.com>
+Date: Mon, 1 Jul 2019 17:56:35 +0800
+In-Reply-To: <1560774735.15814.54.camel@mtksdccf07>
+References: <20190613081357.1360-1-walter-zh.wu@mediatek.com>
+ <da7591c9-660d-d380-d59e-6d70b39eaa6b@virtuozzo.com>
+ <1560447999.15814.15.camel@mtksdccf07>
+ <1560479520.15814.34.camel@mtksdccf07>
+ <1560744017.15814.49.camel@mtksdccf07>
+ <CACT4Y+Y3uS59rXf92ByQuFK_G4v0H8NNnCY1tCbr4V+PaZF3ag@mail.gmail.com>
+ <1560774735.15814.54.camel@mtksdccf07>
+X-Mailer: Evolution 3.2.3-0ubuntu6 
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190701094811.GB32042@leoy-ThinkPad-X240s>
-User-Agent: Mutt/1.10.1+81 (426a6c1) (2018-08-26)
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190701_025447_464828_6AB640E2 
-X-CRM114-Status: GOOD (  15.74  )
+X-CRM114-CacheID: sfid-20190701_025644_921708_3A901445 
+X-CRM114-Status: GOOD (  28.37  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [216.200.240.184 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -69,56 +79,126 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mathieu Poirier <mathieu.poirier@linaro.org>,
- Suzuki K Poulose <suzuki.poulose@arm.com>,
- Alexander Shishkin <alexander.shishkin@linux.intel.com>,
- coresight@lists.linaro.org, Sudeep Holla <sudeep.holla@arm.com>,
- linux-arm-kernel@lists.infradead.org, Mike Leach <mike.leach@linaro.org>
+Cc: wsd_upstream <wsd_upstream@mediatek.com>, "Jason
+ A . Donenfeld" <Jason@zx2c4.com>, Vasily
+ Gorbik <gor@linux.ibm.com>, Arnd Bergmann <arnd@arndb.de>,
+ Linux-MM <linux-mm@kvack.org>, Andrey Konovalov <andreyknvl@google.com>,
+ linux-mediatek@lists.infradead.org, LKML <linux-kernel@vger.kernel.org>,
+ kasan-dev <kasan-dev@googlegroups.com>, Pekka Enberg <penberg@kernel.org>,
+ Martin
+ Schwidefsky <schwidefsky@de.ibm.com>, Miles Chen <miles.chen@mediatek.com>,
+ Alexander Potapenko <glider@google.com>, David Rientjes <rientjes@google.com>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ Andrey Ryabinin <aryabinin@virtuozzo.com>, Christoph Lameter <cl@linux.com>,
+ Joonsoo Kim <iamjoonsoo.kim@lge.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Jul 01, 2019 at 05:48:11PM +0800, Leo Yan wrote:
-> On Mon, Jul 01, 2019 at 10:34:58AM +0100, Andrew Murray wrote:
-> 
-> [...]
-> 
-> > > > In any case, not only do we want to override the firmware to always
-> > > > save/restore. Sometimes we may also want to override the firmware to never
-> > > > save/restore (despite the firmware having the
-> > > > 'arm,coresight-needs-save-restore' flag present). For example to debug power
-> > > > management.
-> > > > 
-> > > > Thus with this current approach you can override the firmware to either enable
-> > > > or disable save/restore.
-> > > 
-> > > Thanks for explanation and agree with this.  Just a suggestion, maybe we
-> > > can initialize 'drvdata->pm_save_enable' in probe as below:
-> > > 
-> > >         if (pm_save_enable == PARAM_PM_SAVE_FIRMWARE)
-> > >                 drvdata->pm_save_enable = etm4_needs_save_restore(dev);
-> > >         else
-> > >                 drvdata->pm_save_enable = pm_save_enable;
-> > > 
-> > > From then on, we can only use 'drvdata->pm_save_enable' and don't need
-> > > to check the module parameter anymore.
+On Mon, 2019-06-17 at 20:32 +0800, Walter Wu wrote:
+> On Mon, 2019-06-17 at 13:57 +0200, Dmitry Vyukov wrote:
+> > On Mon, Jun 17, 2019 at 6:00 AM Walter Wu <walter-zh.wu@mediatek.com> wrote:
+> > >
+> > > On Fri, 2019-06-14 at 10:32 +0800, Walter Wu wrote:
+> > > > On Fri, 2019-06-14 at 01:46 +0800, Walter Wu wrote:
+> > > > > On Thu, 2019-06-13 at 15:27 +0300, Andrey Ryabinin wrote:
+> > > > > >
+> > > > > > On 6/13/19 11:13 AM, Walter Wu wrote:
+> > > > > > > This patch adds memory corruption identification at bug report for
+> > > > > > > software tag-based mode, the report show whether it is "use-after-free"
+> > > > > > > or "out-of-bound" error instead of "invalid-access" error.This will make
+> > > > > > > it easier for programmers to see the memory corruption problem.
+> > > > > > >
+> > > > > > > Now we extend the quarantine to support both generic and tag-based kasan.
+> > > > > > > For tag-based kasan, the quarantine stores only freed object information
+> > > > > > > to check if an object is freed recently. When tag-based kasan reports an
+> > > > > > > error, we can check if the tagged addr is in the quarantine and make a
+> > > > > > > good guess if the object is more like "use-after-free" or "out-of-bound".
+> > > > > > >
+> > > > > >
+> > > > > >
+> > > > > > We already have all the information and don't need the quarantine to make such guess.
+> > > > > > Basically if shadow of the first byte of object has the same tag as tag in pointer than it's out-of-bounds,
+> > > > > > otherwise it's use-after-free.
+> > > > > >
+> > > > > > In pseudo-code it's something like this:
+> > > > > >
+> > > > > > u8 object_tag = *(u8 *)kasan_mem_to_shadow(nearest_object(cacche, page, access_addr));
+> > > > > >
+> > > > > > if (access_addr_tag == object_tag && object_tag != KASAN_TAG_INVALID)
+> > > > > >   // out-of-bounds
+> > > > > > else
+> > > > > >   // use-after-free
+> > > > >
+> > > > > Thanks your explanation.
+> > > > > I see, we can use it to decide corruption type.
+> > > > > But some use-after-free issues, it may not have accurate free-backtrace.
+> > > > > Unfortunately in that situation, free-backtrace is the most important.
+> > > > > please see below example
+> > > > >
+> > > > > In generic KASAN, it gets accurate free-backrace(ptr1).
+> > > > > In tag-based KASAN, it gets wrong free-backtrace(ptr2). It will make
+> > > > > programmer misjudge, so they may not believe tag-based KASAN.
+> > > > > So We provide this patch, we hope tag-based KASAN bug report is the same
+> > > > > accurate with generic KASAN.
+> > > > >
+> > > > > ---
+> > > > >     ptr1 = kmalloc(size, GFP_KERNEL);
+> > > > >     ptr1_free(ptr1);
+> > > > >
+> > > > >     ptr2 = kmalloc(size, GFP_KERNEL);
+> > > > >     ptr2_free(ptr2);
+> > > > >
+> > > > >     ptr1[size] = 'x';  //corruption here
+> > > > >
+> > > > >
+> > > > > static noinline void ptr1_free(char* ptr)
+> > > > > {
+> > > > >     kfree(ptr);
+> > > > > }
+> > > > > static noinline void ptr2_free(char* ptr)
+> > > > > {
+> > > > >     kfree(ptr);
+> > > > > }
+> > > > > ---
+> > > > >
+> > > > We think of another question about deciding by that shadow of the first
+> > > > byte.
+> > > > In tag-based KASAN, it is immediately released after calling kfree(), so
+> > > > the slub is easy to be used by another pointer, then it will change
+> > > > shadow memory to the tag of new pointer, it will not be the
+> > > > KASAN_TAG_INVALID, so there are many false negative cases, especially in
+> > > > small size allocation.
+> > > >
+> > > > Our patch is to solve those problems. so please consider it, thanks.
+> > > >
+> > > Hi, Andrey and Dmitry,
+> > >
+> > > I am sorry to bother you.
+> > > Would you tell me what you think about this patch?
+> > > We want to use tag-based KASAN, so we hope its bug report is clear and
+> > > correct as generic KASAN.
+> > >
+> > > Thanks your review.
+> > > Walter
 > > 
-> > This is OK, however it means you can't then change the mode once the driver
-> > is probed. I.e. you can't echo values into
-> > /sys/module/coresight-etm4x/pm_save_enable at runtime. This was useful to
-> > me during testing, I assumed it may be useful for others too (especially
-> > given that you can't unload the module).
+> > Hi Walter,
+> > 
+> > I will probably be busy till the next week. Sorry for delays.
 > 
-> Ah, okay, this is fine for me.  Thanks for sharing the knowledge.
+> It's ok. Thanks your kindly help.
+> I hope I can contribute to tag-based KASAN. It is a very important tool
+> for us.
 
-Thanks for the review, can I add your Reviewed-By?
+Hi, Dmitry,
 
-Andrew Murray
+Would you have free time to discuss this patch together?
+Thanks.
 
-> 
-> Thanks,
-> Leo Yan
+Walter
+
 
 _______________________________________________
 linux-arm-kernel mailing list
