@@ -2,107 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2BDCA5BCA9
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  1 Jul 2019 15:14:15 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 27C345BCB0
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  1 Jul 2019 15:16:00 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:Message-ID:Date
-	:Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	List-Owner; bh=Wj1RnmXLRczw+2HNtAsN0/Cvn0NSWo9CJeR3F5wP89E=; b=C0umJkSs8IHVWp
-	RtB71lX3kflCvX6EYGHeuP8TobHvSdmcTBeay8Iri0VphTTLDSZEm73wSfdNLhH+EqVtnOR+vg8G5
-	PUJf5wPpVuqos/PacowlGXYN9x5U+w1MueGgTl6v0NEjnu8+d8seqAh9lx6vbNs2TwsE4RMe/gITc
-	WY1OO4ajUp1ByixbFj6PSFDsQNAF2pKb0GeAKxdVnVodqXZdkmiKechDF0vio42C13Jo7AlFxHSUS
-	YHzJEZs1BNEpNE0L1nZvpwoFYHnDSq6g+2VgX9jt6GIucI7EDA4k6FHk13Q+orFFmaxd9lr5VYTbC
-	+gCYlRQBsVx6cqiR4GTw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=oY5hN2ojTBTuzqegcfKG9L8oH0tMgRM/L6DhxQtUHNg=; b=MtvE78160hM2wH5AvCKWg6Zmc
+	tG0CQZj6aBpG/Pdfjpk7OwIWZHSZovnoYEBy6GDZY8Qi2iuwixKCYQju8RXhTvCswtgqdDrEWYaCC
+	xEb7E+5Yx/FvclaqqhzamnQQ61Lr5LmbtklyTrVbQeRUHlucoIBUltd6+BYIK5rn/Y8j7Nugkc1WY
+	DnoB3zkCZohfOfrYAbWU304NtVlSYvMDnLS1XUV0SfSr3U0TkoNfHH6AFjCnquDHhNzBLTmkI9N2y
+	dbFcTwt3iNRyIbm5E0i4eYD9SAyiL+oojuHPtBoRClPqPRBCLpZinxpY3q3sIr2nsoFAJJe1wK65T
+	xK+lUqZYA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hhw8K-0002Mp-Q1; Mon, 01 Jul 2019 13:14:12 +0000
-Received: from mail-ve1eur02on060d.outbound.protection.outlook.com
- ([2a01:111:f400:fe06::60d]
- helo=EUR02-VE1-obe.outbound.protection.outlook.com)
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hhw87-00026l-Su
- for linux-arm-kernel@lists.infradead.org; Mon, 01 Jul 2019 13:14:01 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=2fueU2UwK+/gsfQtwExuuI6ZQTbXw3lV0Mpoy/e8Zu0=;
- b=QVMHP+mTT55Z2ZJmvmEhaxijb34dupKo/QYFdN/WiSvYagsfXIyursqKP4BBJ5yIuGJwbk0egXfj9SOKNiom8qSQwuBm+9KOON4H0B9wX0Qy0lWrjwNYRp5MUOoyruvtUWrvaIgL6fqF6pyCWBMnDLAQ+5kRZc8i9/pb/GI4T2A=
-Received: from VI1PR04MB5055.eurprd04.prod.outlook.com (20.177.50.140) by
- VI1PR04MB5136.eurprd04.prod.outlook.com (20.177.50.161) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2032.20; Mon, 1 Jul 2019 13:13:52 +0000
-Received: from VI1PR04MB5055.eurprd04.prod.outlook.com
- ([fe80::d83:14c4:dedb:213b]) by VI1PR04MB5055.eurprd04.prod.outlook.com
- ([fe80::d83:14c4:dedb:213b%5]) with mapi id 15.20.2032.019; Mon, 1 Jul 2019
- 13:13:52 +0000
-From: Leonard Crestez <leonard.crestez@nxp.com>
-To: Stephen Boyd <sboyd@kernel.org>, Geert Uytterhoeven <geert@linux-m68k.org>
-Subject: Re: [PATCH v2] clk: Add clk_min/max_rate entries in debugfs
-Thread-Topic: [PATCH v2] clk: Add clk_min/max_rate entries in debugfs
-Thread-Index: AQHVLajUq4SmNwzvekSbL/iOzo8zow==
-Date: Mon, 1 Jul 2019 13:13:52 +0000
-Message-ID: <VI1PR04MB50555EBAFE8CF34189635B18EEF90@VI1PR04MB5055.eurprd04.prod.outlook.com>
-References: <0c12208398cadb7450b6b7745e99c55770c0ccf8.1561709827.git.leonard.crestez@nxp.com>
- <CAMuHMdWVoYPZFZPmfTWMU3pZc633uqkn70MyApcPhgUSgmCW-A@mail.gmail.com>
- <20190628193556.BC814208CB@mail.kernel.org>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=leonard.crestez@nxp.com; 
-x-originating-ip: [82.144.34.2]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: 40dd0c26-23db-427a-796e-08d6fe25f68f
-x-ms-office365-filtering-ht: Tenant
-x-microsoft-antispam: BCL:0; PCL:0;
- RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600148)(711020)(4605104)(1401327)(4618075)(2017052603328)(7193020);
- SRVR:VI1PR04MB5136; 
-x-ms-traffictypediagnostic: VI1PR04MB5136:
-x-microsoft-antispam-prvs: <VI1PR04MB51362912B69052ABD788C92DEEF90@VI1PR04MB5136.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:8882;
-x-forefront-prvs: 00851CA28B
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(4636009)(346002)(39860400002)(396003)(376002)(366004)(136003)(199004)(189003)(102836004)(53936002)(8676002)(76176011)(55016002)(99286004)(5660300002)(3846002)(9686003)(54906003)(53546011)(71190400001)(6246003)(8936002)(186003)(81166006)(81156014)(6116002)(229853002)(316002)(14454004)(26005)(6436002)(7696005)(71200400001)(6506007)(25786009)(4326008)(110136005)(478600001)(446003)(256004)(66066001)(14444005)(476003)(74316002)(66556008)(44832011)(2906002)(86362001)(73956011)(66946007)(66476007)(486006)(66446008)(64756008)(68736007)(91956017)(76116006)(7736002)(33656002)(52536014)(305945005);
- DIR:OUT; SFP:1101; SCL:1; SRVR:VI1PR04MB5136;
- H:VI1PR04MB5055.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; A:1; MX:1; 
-received-spf: None (protection.outlook.com: nxp.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: SBTYgtpRajBVQzl+AWbogus3M3DNdhvBh3J/bQZwdiitgKbs0XjirHGoqg3DDoIZ9k3mKT6LZjyXo00+GhYjDFTxwIV9ot7+ss70MtuPQs2jX6HKnOWBHlpH54qMYRzfQuxqAb+diCiYFKJzD3wSQznU0bf/x7rXG9wmg0zogO52LiXtMdQDEUT0GVK8UhpZQqf5Ux5/n4cg7hjht2jM1SpPxDESt1V98ssE45makkoznWAmKZuiZ0phHxasdVR5LOa2uTT5P+5DwYa5gw9f3QoOcU9L2vG0HVr56j7r6jelU310mjNXVpG6pZ+CxyAzqPZC9VMmqpqlPcJy/pPpkZgzH4eP9zHzV7WUZ64FjuDsi8dpIHQV92XgfVgpJ1JjSluy/uAf5e7b3vmpOXGRH3YPF+cSvnlkt929VZ64t4Y=
+	id 1hhwA2-0004Os-Gz; Mon, 01 Jul 2019 13:15:58 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hhw9w-0004OM-Bt
+ for linux-arm-kernel@lists.infradead.org; Mon, 01 Jul 2019 13:15:53 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 4618C344;
+ Mon,  1 Jul 2019 06:15:51 -0700 (PDT)
+Received: from dawn-kernel.cambridge.arm.com (dawn-kernel.cambridge.arm.com
+ [10.1.197.116])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 5AA9D3F246;
+ Mon,  1 Jul 2019 06:15:50 -0700 (PDT)
+Subject: Re: [PATCH v2 5/5] coresight: etm4x: save/restore state across CPU
+ low power states
+To: andrew.murray@arm.com, mathieu.poirier@linaro.org,
+ alexander.shishkin@linux.intel.com
+References: <20190627083525.37463-1-andrew.murray@arm.com>
+ <20190627083525.37463-6-andrew.murray@arm.com>
+From: Suzuki K Poulose <suzuki.poulose@arm.com>
+Message-ID: <13dde41d-5ef4-e9a0-7310-ed5ead5e8230@arm.com>
+Date: Mon, 1 Jul 2019 14:15:49 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.3.0
 MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 40dd0c26-23db-427a-796e-08d6fe25f68f
-X-MS-Exchange-CrossTenant-originalarrivaltime: 01 Jul 2019 13:13:52.1887 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: leonard.crestez@nxp.com
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1PR04MB5136
+In-Reply-To: <20190627083525.37463-6-andrew.murray@arm.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190701_061400_055911_43C41F4B 
-X-CRM114-Status: UNSURE (   9.66  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190701_061552_499638_2C1E1A7E 
+X-CRM114-Status: GOOD (  28.00  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a01:111:f400:fe06:0:0:0:60d listed in]
- [list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- 0.0 T_SPF_PERMERROR        SPF: test of record failed (permerror)
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -114,48 +65,158 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Michael Turquette <mturquette@baylibre.com>,
- linux-clk <linux-clk@vger.kernel.org>,
- Geert Uytterhoeven <geert+renesas@glider.be>
-Content-Type: text/plain; charset="us-ascii"
+Cc: coresight@lists.linaro.org, Sudeep.Holla@arm.com,
+ linux-arm-kernel@lists.infradead.org, mike.leach@linaro.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 6/28/2019 10:36 PM, Stephen Boyd wrote:
-> Quoting Geert Uytterhoeven (2019-06-28 04:58:27)
->> On Fri, Jun 28, 2019 at 10:19 AM Leonard Crestez
->>
->>> --- a/drivers/clk/clk.c
->>> +++ b/drivers/clk/clk.c
->>> @@ -591,10 +591,12 @@ static void clk_core_get_boundaries(struct clk_core *core,
->>>                                      unsigned long *min_rate,
->>>                                      unsigned long *max_rate)
->>>   {
->>>          struct clk *clk_user;
->>>
->>> +       lockdep_assert_held(&prepare_lock);
->>> +
->>
->> I guess the clock maintainers want to see the addition of this check
->> spun off into a separate patch....
+
+
+On 27/06/2019 09:35, Andrew Murray wrote:
+> Some hardware will ignore bit TRCPDCR.PU which is used to signal
+> to hardware that power should not be removed from the trace unit.
+> Let's mitigate against this by conditionally saving and restoring
+> the trace unit state when the CPU enters low power states.
 > 
-> Yes. I'm not sure we should have the assertion in there. I seem to
-> recall that we thought it might not always be necessary to have the
-> lock, but maybe that was wrong.
+> This patchset introduces a firmware property named
+> 'arm,coresight-needs-save-restore' - when this is present the
+> hardware state will be conditionally saved and restored.
+> 
+> A module parameter 'pm_save_enable' is also introduced which can
+> be configured to override the firmware property. This can be set
+> to never allow save/restore, to conditionally allow it, or to
+> do as the firmware indicates (default).
+> 
+> The hardware state is only ever saved and restored when the claim
+> tags indicate that coresight is in use.
+> 
 
-The clk_core_get_boundaries function iterates consumers so locking is 
-required. Looking at other functions manipulating clks_node (such as 
-__clk_put, clk_core_link/unlink_consumer) this is always done under 
-prepare_lock.
+> diff --git a/drivers/hwtracing/coresight/coresight-etm4x.c b/drivers/hwtracing/coresight/coresight-etm4x.c
+> index 86945f054cf8..eff317cd3a03 100644
+> --- a/drivers/hwtracing/coresight/coresight-etm4x.c
+> +++ b/drivers/hwtracing/coresight/coresight-etm4x.c
+> @@ -18,6 +18,7 @@
+>   #include <linux/stat.h>
+>   #include <linux/clk.h>
+>   #include <linux/cpu.h>
+> +#include <linux/cpu_pm.h>
+>   #include <linux/coresight.h>
+>   #include <linux/coresight-pmu.h>
+>   #include <linux/pm_wakeup.h>
+> @@ -26,6 +27,7 @@
+>   #include <linux/uaccess.h>
+>   #include <linux/perf_event.h>
+>   #include <linux/pm_runtime.h>
+> +#include <linux/property.h>
+>   #include <asm/sections.h>
+>   #include <asm/local.h>
+>   #include <asm/virt.h>
+> @@ -37,6 +39,16 @@ static int boot_enable;
+>   module_param(boot_enable, int, 0444);
+>   MODULE_PARM_DESC(boot_enable, "Enable tracing on boot");
+>   
+> +
+> +#define PARAM_PM_SAVE_DISABLE	0
+> +#define PARAM_PM_SAVE_ENABLE	1
+> +#define PARAM_PM_SAVE_FIRMWARE	2
+> +
+> +static int pm_save_enable = PARAM_PM_SAVE_FIRMWARE;
+> +module_param(pm_save_enable, int, 0644);
+> +MODULE_PARM_DESC(pm_save_enable, "Save/restore state on power down: "
+> +				  "0 = disabled, 1 = enabled, 2 = firmware");
 
-In theory without locking debugfs could read freed memory if it happens 
-at the same time as device removal.
+nit: Please could you add a comment to explain the implications of "firmware"
+and how this interacts with "disabled" as it is explained in your thread with
+Leo. That will be quite helpful for someone looking to use the parameter.
 
---
-Regards,
-Leonard
+> +
+> +static int etm4_cpu_pm_register(struct etmv4_drvdata *drvdata)
+> +{
+> +	drvdata->nb.notifier_call = etm4_cpu_pm_notify;
+> +	return cpu_pm_register_notifier(&drvdata->nb);
+> +}
+
+Do we need to tie the notifer_block to etmv4_drvdata ? We could simply
+use a static one for the entire driver, given we don't rely on the
+"drvdata". Also, we register for only one ETM device at the moment, which
+is problematic if that CPU goes down and we decide to unregister the ETM
+device (in the future).
+
+> +
+> +static void etm4_cpu_pm_unregister(struct etmv4_drvdata *drvdata)
+> +{
+> +	if (drvdata->nb.notifier_call)
+> +		cpu_pm_unregister_notifier(&drvdata->nb);
+> +}
+> +#else
+> +static int etm4_cpu_pm_register(struct etmv4_drvdata *drvdata) { return 0; }
+> +static void etm4_cpu_pm_unregister(struct etmv4_drvdata *drvdata) { }
+> +#endif
+> +
+> +static inline bool etm4_needs_save_restore(struct device *dev)
+> +{
+> +	return fwnode_property_present(dev->fwnode,
+> +				       "arm,coresight-needs-save-restore");
+> +}
+> +
+>   static int etm4_probe(struct amba_device *adev, const struct amba_id *id)
+>   {
+>   	int ret;
+> @@ -1095,6 +1386,8 @@ static int etm4_probe(struct amba_device *adev, const struct amba_id *id)
+>   
+>   	dev_set_drvdata(dev, drvdata);
+>   
+> +	drvdata->pm_save_enable = etm4_needs_save_restore(dev);
+> +
+>   	/* Validity for the resource is already checked by the AMBA core */
+>   	base = devm_ioremap_resource(dev, res);
+>   	if (IS_ERR(base))
+> @@ -1126,6 +1419,10 @@ static int etm4_probe(struct amba_device *adev, const struct amba_id *id)
+>   		if (ret < 0)
+>   			goto err_arch_supported;
+>   		hp_online = ret;
+> +
+> +		ret = etm4_cpu_pm_register(drvdata);
+> +		if (ret)
+> +			goto err_arch_supported;
+>   	}
+
+>   /**
+>    * struct etm4_drvdata - specifics associated to an ETM component
+>    * @base:       Memory mapped base address for this component.
+> @@ -336,6 +396,8 @@ struct etmv4_config {
+>    * @atbtrig:	If the implementation can support ATB triggers
+>    * @lpoverride:	If the implementation can support low-power state over.
+>    * @config:	structure holding configuration parameters.
+> + * @save_state:	State to be preserved across power loss
+> + * @nb:		CPU PM notifier
+>    */
+>   struct etmv4_drvdata {
+>   	void __iomem			*base;
+> @@ -367,6 +429,7 @@ struct etmv4_drvdata {
+>   	u8				q_support;
+>   	bool				sticky_enable;
+>   	bool				boot_enable;
+> +	bool				pm_save_enable;
+>   	bool				os_unlock;
+>   	bool				instrp0;
+>   	bool				trcbb;
+> @@ -381,6 +444,9 @@ struct etmv4_drvdata {
+>   	bool				atbtrig;
+>   	bool				lpoverride;
+>   	struct etmv4_config		config;
+> +	struct etmv4_save_state		save_state;
+
+We may potentially reduce the memory usage by dynamically allocating this
+structure the variable below. So you may make this a ptr instead.
+
+> +	bool				state_needs_restore;
+
+Rest looks good to me.
+
+Suzuki
 
 _______________________________________________
 linux-arm-kernel mailing list
