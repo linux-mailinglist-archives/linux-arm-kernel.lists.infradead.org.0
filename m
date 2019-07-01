@@ -2,52 +2,98 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2C5975BED0
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  1 Jul 2019 16:56:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D32BC5BEE6
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  1 Jul 2019 16:59:33 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=P0r/bd+HLXbEdh4zX/2HJcxgVhDvw8pQEIKEG17kTQg=; b=VL+ZtIff1tEgMh
-	OVC7ovoeEFpy8xJgmKl4UuBWPKQ3fCr3d7lCpgzMEHOPeKyvjZjFwTRrjhQPyPWmaB/ruIDCHRPpF
-	xGJd/2znxQ1QnOm9sKAJsLp3irAOXm6oOv9wOR5Zh+ZEbXPo4bBtQxP0q66fXBDpw73ExNbvgTEe2
-	eLAfqpdwo2xSMpkJXtM1lU/aFkDRf+BhRcVPUltaJAiYH2cF2cn+ArjHBAHpX/97WCXEJN4JWsJEG
-	zbXanj1eKwiQBATYDv2/Scb2GCQIoY/gWEQvI1kgCbl+y6VYMOLkcaHhRzBrAvtzo5LraE34HrZE6
-	wRmlwtixj8Ka0dJsq39Q==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Cc:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=7qE/DnrjL2wBeo3y7TJPEX8Wz7FRAbyHbjTrEed3jZk=; b=YRNAC/k0YPvUtrCXgcbR0GnN9I
+	r8OS+V/rePkz2K1P/KG8whkgs6wxTzQ3sW9HVXRshyH8a6awg6vuQwwHqJ1Uxtxl3EE57uqF/Iu78
+	ANG+yOrOXsGvVsG0S9ylAEp2bmzY8ZsalmOsq5dBTo5W3/eYjYJbx08dnEFUUotw66Me45zEXOzaE
+	ROoOEbSMXMh4o+KT0zDBEXEaE93MS+JV77hCZv0176jCv895RFHBc+T844LJRv1hoc8+pSgRVtsAC
+	gCY6I4odnvuw52pHnCRB5Mn1SokUUd8FrVldhDk1lWMqW7PADKLhUcXIMhv9HUaV7JhJf272XccbJ
+	2s5HPAtg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hhxio-0002Av-Mp; Mon, 01 Jul 2019 14:55:58 +0000
+	id 1hhxmF-0002ei-DS; Mon, 01 Jul 2019 14:59:31 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hhxig-0002AL-30
- for linux-arm-kernel@lists.infradead.org; Mon, 01 Jul 2019 14:55:51 +0000
-Received: from localhost.localdomain (cpe-70-114-128-244.austin.res.rr.com
+ id 1hhxm8-0002eP-JV
+ for linux-arm-kernel@lists.infradead.org; Mon, 01 Jul 2019 14:59:25 +0000
+Received: from [192.168.1.25] (cpe-70-114-128-244.austin.res.rr.com
  [70.114.128.244])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id AB8EA2064B;
- Mon,  1 Jul 2019 14:55:48 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 13D7220665;
+ Mon,  1 Jul 2019 14:59:23 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1561992949;
- bh=l8bzr4Ae9+jizLwolBwo+0nVG7sfR/kOF80EVfSOE80=;
- h=From:To:Cc:Subject:Date:From;
- b=eHde0xrjAFaUXvFuHxi7NXNRdOoOOZswS7uSvJ0gwLwiXKsAF87o5K+R9im6cl0hD
- W/wDAYttWofPqDqCMcgs5D3dQpPbZImyQnGEuEYHuU4GEEHtMJM6vj67KDw4IzdyhA
- ZYhdcZFwc1/MFPd4GCL9GErmt5dMzsa5L/G+EZx0=
+ s=default; t=1561993164;
+ bh=qxBYiZ6A8sSwedBT9jAGdlRW6+e12OBLgqhM3lDgcVw=;
+ h=Subject:To:References:From:Date:In-Reply-To:From;
+ b=yfaU8M1WS5+yvylNG+GPieTZlk+kS5f2bpKB0UhRP1s9hqA5ZhLkV2w3dBd01Zzn+
+ DtQeuy/jXy1egZPRp3b2a4sD1y6qGDWp5xSXUl2lEZXcG24YgM7mRtKNI0IAzTLFFX
+ Y87Aof4ddEXLhqpeVLp7fM/ZdwoG+zf9qOsuI7OI=
+Subject: Re: [PATCH] ARM: dts: socfpga: Fix up button mapping on VINING FPGA
+To: Marek Vasut <marex@denx.de>, linux-arm-kernel@lists.infradead.org
+References: <20190628001920.1416-1-marex@denx.de>
 From: Dinh Nguyen <dinguyen@kernel.org>
-To: robh+dt@kernel.org,
-	mark.rutland@arm.com
-Subject: [PATCH] arm64: dts: stratix10: Add NAND device node
-Date: Mon,  1 Jul 2019 09:55:38 -0500
-Message-Id: <20190701145538.351-1-dinguyen@kernel.org>
-X-Mailer: git-send-email 2.20.0
+Openpgp: preference=signencrypt
+Autocrypt: addr=dinguyen@kernel.org; prefer-encrypt=mutual; keydata=
+ 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
+Message-ID: <753915da-b55a-7244-2839-feda2c0b1ed6@kernel.org>
+Date: Mon, 1 Jul 2019 09:59:22 -0500
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.7.0
 MIME-Version: 1.0
+In-Reply-To: <20190628001920.1416-1-marex@denx.de>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190701_075550_150593_533EF65A 
-X-CRM114-Status: UNSURE (   9.94  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190701_075924_682197_43E570EE 
+X-CRM114-Status: GOOD (  14.39  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -76,50 +122,34 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: dinguyen@kernel.org, linux-arm-kernel@lists.infradead.org,
- devicetree@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add the NAND device node to the base Stratix10 DTS.
 
-Signed-off-by: Dinh Nguyen <dinguyen@kernel.org>
----
- .../arm64/boot/dts/altera/socfpga_stratix10.dtsi | 16 ++++++++++++++++
- 1 file changed, 16 insertions(+)
 
-diff --git a/arch/arm64/boot/dts/altera/socfpga_stratix10.dtsi b/arch/arm64/boot/dts/altera/socfpga_stratix10.dtsi
-index 5db9ff05fc33..7fea8ec4bab2 100644
---- a/arch/arm64/boot/dts/altera/socfpga_stratix10.dtsi
-+++ b/arch/arm64/boot/dts/altera/socfpga_stratix10.dtsi
-@@ -313,6 +313,22 @@
- 			status = "disabled";
- 		};
- 
-+		nand: nand@ffb90000 {
-+			#address-cells = <1>;
-+			#size-cells = <0>;
-+			compatible = "altr,socfpga-denali-nand";
-+			reg = <0xffb90000 0x10000>,
-+			      <0xffb80000 0x1000>;
-+			reg-names = "nand_data", "denali_reg";
-+			interrupts = <0 97 4>;
-+			clocks = <&clkmgr STRATIX10_NAND_CLK>,
-+				 <&clkmgr STRATIX10_NAND_X_CLK>,
-+				 <&clkmgr STRATIX10_NAND_ECC_CLK>;
-+			clock-names = "nand", "nand_x", "ecc";
-+			resets = <&rst NAND_RESET>, <&rst NAND_OCP_RESET>;
-+			status = "disabled";
-+		};
-+
- 		ocram: sram@ffe00000 {
- 			compatible = "mmio-sram";
- 			reg = <0xffe00000 0x100000>;
--- 
-2.20.0
+On 6/27/19 7:19 PM, Marek Vasut wrote:
+> Add missing buttons and signals to the VINING FPGA device tree,
+> so they are presented to the userspace via gpio-keys evdev.
+> 
+> Signed-off-by: Marek Vasut <marex@denx.de>
+> Cc: Dinh Nguyen <dinguyen@kernel.org>
+> ---
+>  .../boot/dts/socfpga_cyclone5_vining_fpga.dts | 22 ++++++++++++++-----
+>  1 file changed, 17 insertions(+), 5 deletions(-)
+> 
+> diff --git a/arch/arm/boot/dts/socfpga_cyclone5_vining_fpga.dts b/arch/arm/boot/dts/socfpga_cyclone5_vining_fpga.dts
+> index 355b3dbf438d..622cc7cc1471 100644
+> --- a/arch/arm/boot/dts/socfpga_cyclone5_vining_fpga.dts
+> +++ b/arch/arm/boot/dts/socfpga_cyclone5_vining_fpga.dts
+> @@ -36,21 +36,33 @@
+>  
 
+Applied!
+
+Thanks,
+Dinh
 
 _______________________________________________
 linux-arm-kernel mailing list
