@@ -2,46 +2,46 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 71CC95BC15
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  1 Jul 2019 14:47:29 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CF5F25BC1D
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  1 Jul 2019 14:48:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=vImCYTx67kAujJmtvOdad/rVhaaCOuiAM9ivNF6ueIw=; b=i52S2O+4bvdBaP
-	qVZ4Pyaoe0C6tdaYaLnZBF3K3a2yHmHC6ASwjsqpu1nZP3sF24HbpxzRm+7W83BbD07YUs30wzWzV
-	2lg8D4THrl/pocKiSzuueITdt5hMybG0ZG8rjmyN/G4yT7+7IEfwLtJvmY0m3j4O1NwU0cbG1Xtt5
-	iyPfUWyg/FmOoDOPYIoSO9djcBrROpxa7tQmCaBeL9/MccuB79+PhnMoVQg/eTU4GANKLU5ZAggFw
-	WuzD4TBUUFGkeNWRhk9ZfNZCsteXJgE/0nukzNdxXZbgZMm83kDXVW6kyKYorYZQq1kyJQP/EvjCO
-	LQ8BWPI8UVU2rQ/ghtmw==;
+	List-Owner; bh=NOLwFI+8jushlIV92lT8fZCwUDnFdqh9pS2PjPYLps8=; b=UDSb59uRz/dKUR
+	JZXMsSmGvyKeQvUFKU0kp9GjboRNqdik8FiX3cJuYRSBEwLtnvGNtRXuDZbGLgArK6qIpPEuoCDCa
+	8IcJgdeQJvtUZPyroiMBITeKUoomre+7Uok1mrNctnnCsUBqQ36juhhX1C2dfMLdsW0y12XxzJREX
+	rdsgsTNiWYo7W30S34LT2g6NcCd4UCr88ck1Xtzynea1YFayVCkwi3z4el8EtvJzrCYua/XnbHIhK
+	ka9/NwdQUbWyVBmfLFPWnPv1v23QiO7X4sZwQ2dXk1pfdeydjvs9nz1a+W+lTMMiU4B2tCS/tiRwU
+	DFacnTpz3F5IwUK2lHHQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hhviR-00089P-S5; Mon, 01 Jul 2019 12:47:27 +0000
+	id 1hhvjM-00009P-ST; Mon, 01 Jul 2019 12:48:24 +0000
 Received: from mx2.suse.de ([195.135.220.15] helo=mx1.suse.de)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hhviJ-000891-0t
- for linux-arm-kernel@lists.infradead.org; Mon, 01 Jul 2019 12:47:20 +0000
+ id 1hhvj9-00008r-Uq
+ for linux-arm-kernel@lists.infradead.org; Mon, 01 Jul 2019 12:48:13 +0000
 X-Virus-Scanned: by amavisd-new at test-mx.suse.de
 Received: from relay2.suse.de (unknown [195.135.220.254])
- by mx1.suse.de (Postfix) with ESMTP id B8ACFAEF5;
- Mon,  1 Jul 2019 12:47:17 +0000 (UTC)
-Date: Mon, 1 Jul 2019 14:47:17 +0200
+ by mx1.suse.de (Postfix) with ESMTP id 80FCEAF2C;
+ Mon,  1 Jul 2019 12:48:10 +0000 (UTC)
+Date: Mon, 1 Jul 2019 14:48:09 +0200
 From: Michal Hocko <mhocko@kernel.org>
 To: David Hildenbrand <david@redhat.com>
-Subject: Re: [PATCH v3 03/11] s390x/mm: Implement arch_remove_memory()
-Message-ID: <20190701124717.GU6376@dhcp22.suse.cz>
+Subject: Re: [PATCH v3 04/11] arm64/mm: Add temporary arch_remove_memory()
+ implementation
+Message-ID: <20190701124809.GV6376@dhcp22.suse.cz>
 References: <20190527111152.16324-1-david@redhat.com>
- <20190527111152.16324-4-david@redhat.com>
- <20190701074503.GD6376@dhcp22.suse.cz>
+ <20190527111152.16324-5-david@redhat.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190701074503.GD6376@dhcp22.suse.cz>
+In-Reply-To: <20190527111152.16324-5-david@redhat.com>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190701_054719_208105_27D82E5B 
-X-CRM114-Status: GOOD (  16.96  )
+X-CRM114-CacheID: sfid-20190701_054812_239662_963CC2EE 
+X-CRM114-Status: GOOD (  19.05  )
 X-Spam-Score: -1.3 (-)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-1.3 points)
@@ -62,74 +62,83 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Oscar Salvador <osalvador@suse.com>, linux-s390@vger.kernel.org,
- linux-ia64@vger.kernel.org, Vasily Gorbik <gor@linux.ibm.com>,
- linux-sh@vger.kernel.org, Heiko Carstens <heiko.carstens@de.ibm.com>,
+Cc: Mark Rutland <mark.rutland@arm.com>, linux-s390@vger.kernel.org,
+ linux-ia64@vger.kernel.org, Yu Zhao <yuzhao@google.com>,
+ Anshuman Khandual <anshuman.khandual@arm.com>, linux-sh@vger.kernel.org,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>, Will Deacon <will.deacon@arm.com>,
  linux-kernel@vger.kernel.org, Wei Yang <richard.weiyang@gmail.com>,
- linux-mm@kvack.org, Mike Rapoport <rppt@linux.vnet.ibm.com>,
- Martin Schwidefsky <schwidefsky@de.ibm.com>,
- Igor Mammedov <imammedo@redhat.com>, akpm@linux-foundation.org,
+ Jun Yao <yaojun8558363@gmail.com>, linux-mm@kvack.org,
+ Chintan Pandya <cpandya@codeaurora.org>, Igor Mammedov <imammedo@redhat.com>,
+ akpm@linux-foundation.org, Mike Rapoport <rppt@linux.ibm.com>,
  linuxppc-dev@lists.ozlabs.org, Dan Williams <dan.j.williams@intel.com>,
- linux-arm-kernel@lists.infradead.org
+ linux-arm-kernel@lists.infradead.org, Robin Murphy <robin.murphy@arm.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon 01-07-19 09:45:03, Michal Hocko wrote:
-> On Mon 27-05-19 13:11:44, David Hildenbrand wrote:
-> > Will come in handy when wanting to handle errors after
-> > arch_add_memory().
+On Mon 27-05-19 13:11:45, David Hildenbrand wrote:
+> A proper arch_remove_memory() implementation is on its way, which also
+> cleanly removes page tables in arch_add_memory() in case something goes
+> wrong.
 > 
-> I do not understand this. Why do you add a code for something that is
-> not possible on this HW (based on the comment - is it still valid btw?)
-
-Same as the previous patch (drop it).
-
-> > Cc: Martin Schwidefsky <schwidefsky@de.ibm.com>
-> > Cc: Heiko Carstens <heiko.carstens@de.ibm.com>
-> > Cc: Andrew Morton <akpm@linux-foundation.org>
-> > Cc: Michal Hocko <mhocko@suse.com>
-> > Cc: Mike Rapoport <rppt@linux.vnet.ibm.com>
-> > Cc: David Hildenbrand <david@redhat.com>
-> > Cc: Vasily Gorbik <gor@linux.ibm.com>
-> > Cc: Oscar Salvador <osalvador@suse.com>
-> > Signed-off-by: David Hildenbrand <david@redhat.com>
-> > ---
-> >  arch/s390/mm/init.c | 13 +++++++------
-> >  1 file changed, 7 insertions(+), 6 deletions(-)
-> > 
-> > diff --git a/arch/s390/mm/init.c b/arch/s390/mm/init.c
-> > index d552e330fbcc..14955e0a9fcf 100644
-> > --- a/arch/s390/mm/init.c
-> > +++ b/arch/s390/mm/init.c
-> > @@ -243,12 +243,13 @@ int arch_add_memory(int nid, u64 start, u64 size,
-> >  void arch_remove_memory(int nid, u64 start, u64 size,
-> >  			struct vmem_altmap *altmap)
-> >  {
-> > -	/*
-> > -	 * There is no hardware or firmware interface which could trigger a
-> > -	 * hot memory remove on s390. So there is nothing that needs to be
-> > -	 * implemented.
-> > -	 */
-> > -	BUG();
-> > +	unsigned long start_pfn = start >> PAGE_SHIFT;
-> > +	unsigned long nr_pages = size >> PAGE_SHIFT;
-> > +	struct zone *zone;
-> > +
-> > +	zone = page_zone(pfn_to_page(start_pfn));
-> > +	__remove_pages(zone, start_pfn, nr_pages, altmap);
-> > +	vmem_remove_mapping(start, size);
-> >  }
-> >  #endif
-> >  #endif /* CONFIG_MEMORY_HOTPLUG */
-> > -- 
-> > 2.20.1
-> > 
+> As we want to use arch_remove_memory() in case something goes wrong
+> during memory hotplug after arch_add_memory() finished, let's add
+> a temporary hack that is sufficient enough until we get a proper
+> implementation that cleans up page table entries.
 > 
+> We will remove CONFIG_MEMORY_HOTREMOVE around this code in follow up
+> patches.
+
+I would drop this one as well (like s390 counterpart).
+ 
+> Cc: Catalin Marinas <catalin.marinas@arm.com>
+> Cc: Will Deacon <will.deacon@arm.com>
+> Cc: Mark Rutland <mark.rutland@arm.com>
+> Cc: Andrew Morton <akpm@linux-foundation.org>
+> Cc: Ard Biesheuvel <ard.biesheuvel@linaro.org>
+> Cc: Chintan Pandya <cpandya@codeaurora.org>
+> Cc: Mike Rapoport <rppt@linux.ibm.com>
+> Cc: Jun Yao <yaojun8558363@gmail.com>
+> Cc: Yu Zhao <yuzhao@google.com>
+> Cc: Robin Murphy <robin.murphy@arm.com>
+> Cc: Anshuman Khandual <anshuman.khandual@arm.com>
+> Signed-off-by: David Hildenbrand <david@redhat.com>
+> ---
+>  arch/arm64/mm/mmu.c | 19 +++++++++++++++++++
+>  1 file changed, 19 insertions(+)
+> 
+> diff --git a/arch/arm64/mm/mmu.c b/arch/arm64/mm/mmu.c
+> index a1bfc4413982..e569a543c384 100644
+> --- a/arch/arm64/mm/mmu.c
+> +++ b/arch/arm64/mm/mmu.c
+> @@ -1084,4 +1084,23 @@ int arch_add_memory(int nid, u64 start, u64 size,
+>  	return __add_pages(nid, start >> PAGE_SHIFT, size >> PAGE_SHIFT,
+>  			   restrictions);
+>  }
+> +#ifdef CONFIG_MEMORY_HOTREMOVE
+> +void arch_remove_memory(int nid, u64 start, u64 size,
+> +			struct vmem_altmap *altmap)
+> +{
+> +	unsigned long start_pfn = start >> PAGE_SHIFT;
+> +	unsigned long nr_pages = size >> PAGE_SHIFT;
+> +	struct zone *zone;
+> +
+> +	/*
+> +	 * FIXME: Cleanup page tables (also in arch_add_memory() in case
+> +	 * adding fails). Until then, this function should only be used
+> +	 * during memory hotplug (adding memory), not for memory
+> +	 * unplug. ARCH_ENABLE_MEMORY_HOTREMOVE must not be
+> +	 * unlocked yet.
+> +	 */
+> +	zone = page_zone(pfn_to_page(start_pfn));
+> +	__remove_pages(zone, start_pfn, nr_pages, altmap);
+> +}
+> +#endif
+>  #endif
 > -- 
-> Michal Hocko
-> SUSE Labs
+> 2.20.1
 
 -- 
 Michal Hocko
