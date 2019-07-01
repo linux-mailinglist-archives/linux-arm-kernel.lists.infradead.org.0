@@ -2,83 +2,113 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9A5535C35F
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  1 Jul 2019 21:00:50 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 15D885C43A
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  1 Jul 2019 22:19:05 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
+	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=O4cNuKZfgbhZSacQzlb2h2bDaYieumeXlcp9EhKaePY=; b=b7HXCZM+uAiQ0f
-	AfWFDXmFXMVvq7NiXItUaE5uj5GkcLV9dTRRY3JozZu/dRS7kUsyQbwS+bHeR1QJS7SK1U6zHNnp+
-	4tDZbtXU9SNEQKNAWxqM9DDiLN318kyQ1A71SLyqsJpMAZPgm6lSYXIg59ZqkDQZh1H/Q0n27xEbd
-	u1VfTiRqM6FihpA5b+wuv4FhRMdSvBam+0y8OgiLif85xRsY9+yEOeRZ1fIr7GTswDhf0vsg9oJpp
-	WhNVGkI/WXc338Adg5RQDbiVZWfMP9/GhFnTC3Sr8e75QrFwEsBz4Z5aDi5ZWOKoQzRNXyQn4m2V0
-	juw3r0LpVTxSY60A6MHA==;
+	List-Owner; bh=QnOWU5rbFenWEZRLIJ0VWvjbA4phQRCaWmM6uuNFxRI=; b=EQsJ3ki0o+/dDl
+	KwjRjXpGtBDJtQTGCJE43KIDjquVsYgpTwizoSls1stfUfD661yeRLRSR/hQJvRNzKYI67i2IiYaL
+	4XZKG0cFPMnmDlN62UmSRRh89UK1qLh1tdkMFsCCmWVeeHxRI9qzed6DJmKlj0seZN3CEyTiaUvdx
+	HyX64PfJvVIV3aygRRiZ3NXKpFR1AvSvs9ADVBj21Mwn8q5YCkrff+HYrau9LvKb/aNh9tMyO4v0E
+	sl9cpL1uuMzU1ZZCXb1/Tm8ZfxaJEPfHNJjIzzxePTzoaIsP4nRc1nv7rNr+pI9J8xWztTgD5M9+4
+	GOb9AvwuLyfZ5nOlIkEQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hi1Xk-0006V2-35; Mon, 01 Jul 2019 19:00:48 +0000
-Received: from mail-io1-xd44.google.com ([2607:f8b0:4864:20::d44])
+	id 1hi2lP-00055f-Vj; Mon, 01 Jul 2019 20:19:00 +0000
+Received: from esa2.hgst.iphmx.com ([68.232.143.124])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hi1XP-0006PU-UY
- for linux-arm-kernel@lists.infradead.org; Mon, 01 Jul 2019 19:00:30 +0000
-Received: by mail-io1-xd44.google.com with SMTP id k20so4892467ios.10
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 01 Jul 2019 12:00:26 -0700 (PDT)
+ id 1hi2lF-000552-BR; Mon, 01 Jul 2019 20:18:51 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple;
+ d=wdc.com; i=@wdc.com; q=dns/txt; s=dkim.wdc.com;
+ t=1562012339; x=1593548339;
+ h=from:to:cc:subject:date:message-id:references:
+ in-reply-to:content-id:content-transfer-encoding: mime-version;
+ bh=N8FdXl9fQhVeMl/osm7KAlS6gPFgaAA9xTyaCj4BAvw=;
+ b=hE0mA2cokNguxHHDHrioNJGNB0qvih89X+kTGL1KeZjjTWKx1InYKbqh
+ uWHVbTX72vlcAB23LMBTNdfdlAt859pjdE9apWJMXWUcj1S3A168yCxwK
+ fLVBtJHDuu54RMG9nsV9JNzjQ18dfIFEehMIGX1DsonFa0fvkGywEVxDd
+ 7Osw+AD4uJf7gO2Y3QwBMxrBqzQNS5H6tPdripdgkUKyDJahyWJh1J+DB
+ f2ooI8G+mIixy74bniwE73BJbDg5qncKqi7O0CUlzQvbLGLMeqn7ezRub
+ YxLMPeMzfY9m3K/VShqP4mH/iBT5ImDAUxEpdSjIyQB2SFyzh40bR1omf g==;
+X-IronPort-AV: E=Sophos;i="5.63,440,1557158400"; d="scan'208";a="211832433"
+Received: from mail-by2nam03lp2056.outbound.protection.outlook.com (HELO
+ NAM03-BY2-obe.outbound.protection.outlook.com) ([104.47.42.56])
+ by ob1.hgst.iphmx.com with ESMTP; 02 Jul 2019 04:18:55 +0800
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=amarulasolutions.com; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=+f5WCOBjqPd+mXSelV53JnH0oa33fcfgISGQjk/o+98=;
- b=GtunnfKPZkOzEInOloFGVQzAruinV1O3Ru6XEUnKvluOKdqXNXm9o5Off751DaeDAy
- UXKZND2fBEjFTfj3NRrxARYumPYVA9+BCBKr6Qdysj5fiNCksoM7z8cSEd/o3V5qOuF9
- DEUrEj7CwrILvF5/BWXYdLq2tWCyHdYkpga9w=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=+f5WCOBjqPd+mXSelV53JnH0oa33fcfgISGQjk/o+98=;
- b=re43FSWQmEpJFdXw6fVjGnCfnTKxIob3roDot14GoZWrQ6e2oDnuxqyp/7tME1KiUb
- nbtrj1EqyLJ7/aVRJFItEr7NBv02Md6wa2F3s+w7QctX1MA+xgCb7n1opb/nsDfXc5iX
- FWP25YBEKiFzLkXXv7vZ0h8BDvNnLNERIbtSDvg+g3F30ACtJzciU/m3zGgLJtDBEgMB
- YTZpd31koCE9yIfOlSFrW+Rsv2aBwBBE/8mFfVT66VOOgifTI6t2uOtN6KKmoOpY6K4z
- bruDFbi1dqO/mpkJJ7lxxzGfrcOSFBA+xIY86TBxirvZ2NH42ryS8q72r3e5gx5nF3rv
- ODJg==
-X-Gm-Message-State: APjAAAXtYSZkkZd8v18Pp9TqBX+Rfx1xtfuwQaZfYXEQDCh0IglKm/99
- a+fSN/nyH7U6lgfhyZNkQUaLQ1aHqXfAWQAV3nIjuQ==
-X-Google-Smtp-Source: APXvYqzlff56fV607aJrbZ+PhwePJXkwWoh4PIJ4Lt3BpMrSA97jegtE3JU7TZfOYSvAE6wdvv/6g86fFlR3Sp4wxAY=
-X-Received: by 2002:a6b:6b14:: with SMTP id g20mr2643215ioc.28.1562007625979; 
- Mon, 01 Jul 2019 12:00:25 -0700 (PDT)
+ d=sharedspace.onmicrosoft.com; s=selector2-sharedspace-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=N8FdXl9fQhVeMl/osm7KAlS6gPFgaAA9xTyaCj4BAvw=;
+ b=fUaChbDyboOJkSkpFbOeD6ynlDJk3hv5TXEFgpEXSHjJ4Szj4f1xiw4DH6HGUMATnS585m3k1VXdlqfQOziVg30gOiGGwf88/18iAwoXBWFxg6OVVuCnNyNRPzqmwtampVfXnGNRiynkbfq3e9UjSlYinVOhTjnadOw8rJ2wq84=
+Received: from BYAPR04MB3782.namprd04.prod.outlook.com (52.135.214.142) by
+ BYAPR04MB5509.namprd04.prod.outlook.com (20.178.232.27) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2032.20; Mon, 1 Jul 2019 20:18:45 +0000
+Received: from BYAPR04MB3782.namprd04.prod.outlook.com
+ ([fe80::65e3:6069:d7d5:90a2]) by BYAPR04MB3782.namprd04.prod.outlook.com
+ ([fe80::65e3:6069:d7d5:90a2%5]) with mapi id 15.20.2032.019; Mon, 1 Jul 2019
+ 20:18:45 +0000
+From: Atish Patra <Atish.Patra@wdc.com>
+To: "paul.walmsley@sifive.com" <paul.walmsley@sifive.com>
+Subject: Re: [PATCH v8 0/7] Unify CPU topology across ARM & RISC-V
+Thread-Topic: [PATCH v8 0/7] Unify CPU topology across ARM & RISC-V
+Thread-Index: AQHVLSJGz+hI7exIqkGm7p6W+lzWB6a2H8CAgAACBYCAAAEiAIAAFy+A
+Date: Mon, 1 Jul 2019 20:18:44 +0000
+Message-ID: <daaf6f4e6512402bd8b6fcefc3dba9c045921b38.camel@wdc.com>
+References: <20190627195302.28300-1-atish.patra@wdc.com>
+ <alpine.DEB.2.21.9999.1907011143520.3867@viisi.sifive.com>
+ <5f31cb3c576bdbd89665614582af66d04ece8f29.camel@wdc.com>
+ <alpine.DEB.2.21.9999.1907011154310.3867@viisi.sifive.com>
+In-Reply-To: <alpine.DEB.2.21.9999.1907011154310.3867@viisi.sifive.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=Atish.Patra@wdc.com; 
+x-originating-ip: [199.255.45.61]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: 392baa72-e3fe-4abc-8622-08d6fe615186
+x-ms-office365-filtering-ht: Tenant
+x-microsoft-antispam: BCL:0; PCL:0;
+ RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600148)(711020)(4605104)(1401327)(4618075)(2017052603328)(7193020);
+ SRVR:BYAPR04MB5509; 
+x-ms-traffictypediagnostic: BYAPR04MB5509:
+x-ms-exchange-purlcount: 1
+x-microsoft-antispam-prvs: <BYAPR04MB5509E1C8D65A9917F7C2D528FAF90@BYAPR04MB5509.namprd04.prod.outlook.com>
+wdcipoutbound: EOP-TRUE
+x-ms-oob-tlc-oobclassifiers: OLM:6790;
+x-forefront-prvs: 00851CA28B
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10019020)(4636009)(346002)(39860400002)(396003)(366004)(376002)(136003)(51914003)(199004)(189003)(478600001)(76176011)(118296001)(25786009)(102836004)(99286004)(54906003)(26005)(5660300002)(6306002)(6512007)(6246003)(66476007)(5640700003)(316002)(72206003)(6506007)(68736007)(66446008)(6486002)(66556008)(64756008)(6916009)(73956011)(229853002)(7416002)(66946007)(76116006)(6436002)(86362001)(486006)(446003)(11346002)(2616005)(476003)(81156014)(81166006)(2906002)(36756003)(66066001)(966005)(3846002)(6116002)(14454004)(2501003)(8936002)(71190400001)(186003)(2351001)(53936002)(71200400001)(4326008)(4744005)(7736002)(305945005)(8676002)(256004);
+ DIR:OUT; SFP:1102; SCL:1; SRVR:BYAPR04MB5509;
+ H:BYAPR04MB3782.namprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; A:1; MX:1; 
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam-message-info: DmK/3pHc9Bd04sX1oPOoOSDuOu9s7ntx/WZT3Mizz7c47m29yOQe6UjfIzZz2IMXnEILYkg5h+GGCzZmnm6CMXHQtDsB212OpPb0pl2GM7WwVi/Liwei84bfApPMHiilt4lkniFuOgrLzE9lxyux7ClpwqKeUqoZV9ksizKHgctG7hhWKV8nhKpdnjn4IKmgdcSu0c3z+DlNwiaLdxP/lbpCKpNnE6EofBTzfNUQVC8ZcpSi+ilpT39pXFiv74DoMIVxNDJIuoPgDvpZTcJHAKXzuxGzYpp7MBfKN9mhVm9DS4sArjNgjK6pAcQhBr805YeZVifxKJ3hK8D+pPaYAMoEgncSMgXl4AByAt12tnlDPMDjkx/J5b67+8vdP7uGqqs185LyhGUesXJkrIngUdRzMqH9K/YBwVUt14cxZtc=
+Content-ID: <19593EB42262524DBDC8DEE9233E70C3@namprd04.prod.outlook.com>
 MIME-Version: 1.0
-References: <20190520090318.27570-1-jagan@amarulasolutions.com>
- <20190520090318.27570-5-jagan@amarulasolutions.com>
- <20190523204823.mx7l4ozklzdh7npn@flea>
- <CAMty3ZA0S=+8NBrQZvP6sFdzSYWqhNZL_KjkJAQ0jTc2RVivrw@mail.gmail.com>
- <20190604143016.fcx3ezmga244xakp@flea>
- <CAMty3ZAAK4RoE6g_LAZ-Q38On_1s_TTOz65YG7PVd88mwp-+4Q@mail.gmail.com>
- <20190613131626.7zbwvrvd4e7eafrc@flea>
- <CAMty3ZBDkMJkZm8FudNB1wQ+L-q3XVKa3zR2M0wZ5Uncdy_Ayg@mail.gmail.com>
- <20190624130442.ww4l3zctykr4i2e2@flea>
- <CAMty3ZB+eZUh5mr-LMZuEd_wrwLCN0mbf7arcRQHj8=uUNNq=Q@mail.gmail.com>
- <20190625143747.3czd7sit4waz75b6@flea>
-In-Reply-To: <20190625143747.3czd7sit4waz75b6@flea>
-From: Jagan Teki <jagan@amarulasolutions.com>
-Date: Tue, 2 Jul 2019 00:30:14 +0530
-Message-ID: <CAMty3ZCh+C9+zgcL633tTw6aPW_WOLnYN7FzJHX+3zu8=8Unpg@mail.gmail.com>
-Subject: Re: [linux-sunxi] Re: [PATCH v10 04/11] drm/sun4i: tcon: Compute DCLK
- dividers based on format, lanes
-To: Maxime Ripard <maxime.ripard@bootlin.com>
+X-OriginatorOrg: wdc.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 392baa72-e3fe-4abc-8622-08d6fe615186
+X-MS-Exchange-CrossTenant-originalarrivaltime: 01 Jul 2019 20:18:44.9279 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: b61c8803-16f3-4c35-9b17-6f65f441df86
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: Atish.Patra@wdc.com
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: BYAPR04MB5509
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190701_120028_294014_1B1ABC24 
-X-CRM114-Status: GOOD (  30.61  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190701_131849_518157_BAD0DB5C 
+X-CRM114-Status: GOOD (  15.12  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:d44 listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [68.232.143.124 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -99,153 +129,66 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Bhushan Shah <bshah@mykolab.com>, David Airlie <airlied@linux.ie>,
- linux-sunxi <linux-sunxi@googlegroups.com>,
- linux-kernel <linux-kernel@vger.kernel.org>,
- dri-devel <dri-devel@lists.freedesktop.org>,
- =?UTF-8?B?5Z2a5a6a5YmN6KGM?= <powerpan@qq.com>, Chen-Yu Tsai <wens@csie.org>,
- Daniel Vetter <daniel@ffwll.ch>,
- Michael Trimarchi <michael@amarulasolutions.com>,
- linux-amarula <linux-amarula@amarulasolutions.com>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
+ "rafael@kernel.org" <rafael@kernel.org>,
+ "peterz@infradead.org" <peterz@infradead.org>,
+ "catalin.marinas@arm.com" <catalin.marinas@arm.com>,
+ "linus.walleij@linaro.org" <linus.walleij@linaro.org>,
+ "palmer@sifive.com" <palmer@sifive.com>,
+ "will.deacon@arm.com" <will.deacon@arm.com>,
+ "mchehab+samsung@kernel.org" <mchehab+samsung@kernel.org>,
+ "linux-riscv@lists.infradead.org" <linux-riscv@lists.infradead.org>,
+ "will@kernel.org" <will@kernel.org>,
+ "morten.rasmussen@arm.com" <morten.rasmussen@arm.com>,
+ "anup@brainfault.org" <anup@brainfault.org>,
+ "linux@armlinux.org.uk" <linux@armlinux.org.uk>,
+ "mingo@kernel.org" <mingo@kernel.org>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ "aou@eecs.berkeley.edu" <aou@eecs.berkeley.edu>,
+ "johan@kernel.org" <johan@kernel.org>,
+ "robh+dt@kernel.org" <robh+dt@kernel.org>,
+ "tglx@linutronix.de" <tglx@linutronix.de>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ "gregkh@linuxfoundation.org" <gregkh@linuxfoundation.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "jeremy.linton@arm.com" <jeremy.linton@arm.com>,
+ "ottosabart@seberm.com" <ottosabart@seberm.com>,
+ "sudeep.holla@arm.com" <sudeep.holla@arm.com>,
+ "davem@davemloft.net" <davem@davemloft.net>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Jun 25, 2019 at 8:07 PM Maxime Ripard <maxime.ripard@bootlin.com> wrote:
->
-> On Mon, Jun 24, 2019 at 09:32:11PM +0530, Jagan Teki wrote:
-> > On Mon, Jun 24, 2019 at 6:34 PM Maxime Ripard <maxime.ripard@bootlin.com> wrote:
-> > >
-> > > On Fri, Jun 14, 2019 at 05:33:23PM +0530, Jagan Teki wrote:
-> > > > On Thu, Jun 13, 2019 at 7:28 PM Maxime Ripard <maxime.ripard@bootlin.com> wrote:
-> > > > >
-> > > > > On Wed, Jun 05, 2019 at 01:11:44PM +0530, Jagan Teki wrote:
-> > > > > > On Tue, Jun 4, 2019 at 8:00 PM Maxime Ripard <maxime.ripard@bootlin.com> wrote:
-> > > > > > >
-> > > > > > > On Fri, May 24, 2019 at 03:37:36PM +0530, Jagan Teki wrote:
-> > > > > > > > On Fri, May 24, 2019 at 2:18 AM Maxime Ripard <maxime.ripard@bootlin.com> wrote:
-> > > > > > > > >
-> > > > > > > > > On Mon, May 20, 2019 at 02:33:11PM +0530, Jagan Teki wrote:
-> > > > > > > > > > pll-video => pll-mipi => tcon0 => tcon0-pixel-clock is the typical
-> > > > > > > > > > MIPI clock topology in Allwinner DSI controller.
-> > > > > > > > > >
-> > > > > > > > > > TCON dotclock driver is computing the desired DCLK divider based on
-> > > > > > > > > > panel pixel clock along with input DCLK min, max divider values from
-> > > > > > > > > > tcon driver and that would eventually set the pll-mipi clock rate.
-> > > > > > > > > >
-> > > > > > > > > > The current code is passing dsi min and max divider value as 4 via
-> > > > > > > > > > tcon driver which would ended-up triggering below vblank wait timed out
-> > > > > > > > > > warning on "bananapi,s070wv20-ct16" panel.
-> > > > > > > > > >
-> > > > > > > > > >  WARNING: CPU: 0 PID: 31 at drivers/gpu/drm/drm_atomic_helper.c:1429 drm_atomic_helper_wait_for_vblanks.part.1+0x298/0x2a0
-> > > > > > > > > >  [CRTC:46:crtc-0] vblank wait timed out
-> > > > > > > > > >  Modules linked in:
-> > > > > > > > > >  CPU: 0 PID: 31 Comm: kworker/0:1 Not tainted 5.1.0-next-20190514-00025-g5186cdf10757-dirty #6
-> > > > > > > > > >  Hardware name: Allwinner sun8i Family
-> > > > > > > > > >  Workqueue: events deferred_probe_work_func
-> > > > > > > > > >  [<c010ed54>] (unwind_backtrace) from [<c010b76c>] (show_stack+0x10/0x14)
-> > > > > > > > > >  [<c010b76c>] (show_stack) from [<c0688c70>] (dump_stack+0x84/0x98)
-> > > > > > > > > >  [<c0688c70>] (dump_stack) from [<c011d9e4>] (__warn+0xfc/0x114)
-> > > > > > > > > >  [<c011d9e4>] (__warn) from [<c011da40>] (warn_slowpath_fmt+0x44/0x68)
-> > > > > > > > > >  [<c011da40>] (warn_slowpath_fmt) from [<c040cd50>] (drm_atomic_helper_wait_for_vblanks.part.1+0x298/0x2a0)
-> > > > > > > > > >  [<c040cd50>] (drm_atomic_helper_wait_for_vblanks.part.1) from [<c040e694>] (drm_atomic_helper_commit_tail_rpm+0x5c/0x6c)
-> > > > > > > > > >  [<c040e694>] (drm_atomic_helper_commit_tail_rpm) from [<c040e4dc>] (commit_tail+0x40/0x6c)
-> > > > > > > > > >  [<c040e4dc>] (commit_tail) from [<c040e5cc>] (drm_atomic_helper_commit+0xbc/0x128)
-> > > > > > > > > >  [<c040e5cc>] (drm_atomic_helper_commit) from [<c0411b64>] (restore_fbdev_mode_atomic+0x1cc/0x1dc)
-> > > > > > > > > >  [<c0411b64>] (restore_fbdev_mode_atomic) from [<c04156f8>] (drm_fb_helper_restore_fbdev_mode_unlocked+0x54/0xa0)
-> > > > > > > > > >  [<c04156f8>] (drm_fb_helper_restore_fbdev_mode_unlocked) from [<c0415774>] (drm_fb_helper_set_par+0x30/0x54)
-> > > > > > > > > >  [<c0415774>] (drm_fb_helper_set_par) from [<c03ad450>] (fbcon_init+0x560/0x5ac)
-> > > > > > > > > >  [<c03ad450>] (fbcon_init) from [<c03eb8a0>] (visual_init+0xbc/0x104)
-> > > > > > > > > >  [<c03eb8a0>] (visual_init) from [<c03ed1b8>] (do_bind_con_driver+0x1b0/0x390)
-> > > > > > > > > >  [<c03ed1b8>] (do_bind_con_driver) from [<c03ed780>] (do_take_over_console+0x13c/0x1c4)
-> > > > > > > > > >  [<c03ed780>] (do_take_over_console) from [<c03ad800>] (do_fbcon_takeover+0x74/0xcc)
-> > > > > > > > > >  [<c03ad800>] (do_fbcon_takeover) from [<c013c9c8>] (notifier_call_chain+0x44/0x84)
-> > > > > > > > > >  [<c013c9c8>] (notifier_call_chain) from [<c013cd20>] (__blocking_notifier_call_chain+0x48/0x60)
-> > > > > > > > > >  [<c013cd20>] (__blocking_notifier_call_chain) from [<c013cd50>] (blocking_notifier_call_chain+0x18/0x20)
-> > > > > > > > > >  [<c013cd50>] (blocking_notifier_call_chain) from [<c03a6e44>] (register_framebuffer+0x1e0/0x2f8)
-> > > > > > > > > >  [<c03a6e44>] (register_framebuffer) from [<c04153c0>] (__drm_fb_helper_initial_config_and_unlock+0x2fc/0x50c)
-> > > > > > > > > >  [<c04153c0>] (__drm_fb_helper_initial_config_and_unlock) from [<c04158c8>] (drm_fbdev_client_hotplug+0xe8/0x1b8)
-> > > > > > > > > >  [<c04158c8>] (drm_fbdev_client_hotplug) from [<c0415a20>] (drm_fbdev_generic_setup+0x88/0x118)
-> > > > > > > > > >  [<c0415a20>] (drm_fbdev_generic_setup) from [<c043f060>] (sun4i_drv_bind+0x128/0x160)
-> > > > > > > > > >  [<c043f060>] (sun4i_drv_bind) from [<c044b588>] (try_to_bring_up_master+0x164/0x1a0)
-> > > > > > > > > >  [<c044b588>] (try_to_bring_up_master) from [<c044b658>] (__component_add+0x94/0x140)
-> > > > > > > > > >  [<c044b658>] (__component_add) from [<c0445e0c>] (sun6i_dsi_probe+0x144/0x234)
-> > > > > > > > > >  [<c0445e0c>] (sun6i_dsi_probe) from [<c0452ee4>] (platform_drv_probe+0x48/0x9c)
-> > > > > > > > > >  [<c0452ee4>] (platform_drv_probe) from [<c04512bc>] (really_probe+0x1dc/0x2c8)
-> > > > > > > > > >  [<c04512bc>] (really_probe) from [<c0451508>] (driver_probe_device+0x60/0x160)
-> > > > > > > > > >  [<c0451508>] (driver_probe_device) from [<c044f794>] (bus_for_each_drv+0x74/0xb8)
-> > > > > > > > > >  [<c044f794>] (bus_for_each_drv) from [<c045106c>] (__device_attach+0xd0/0x13c)
-> > > > > > > > > >  [<c045106c>] (__device_attach) from [<c0450464>] (bus_probe_device+0x84/0x8c)
-> > > > > > > > > >  [<c0450464>] (bus_probe_device) from [<c04508f0>] (deferred_probe_work_func+0x64/0x90)
-> > > > > > > > > >  [<c04508f0>] (deferred_probe_work_func) from [<c0135970>] (process_one_work+0x204/0x420)
-> > > > > > > > > >  [<c0135970>] (process_one_work) from [<c013690c>] (worker_thread+0x274/0x5a0)
-> > > > > > > > > >  [<c013690c>] (worker_thread) from [<c013b3d8>] (kthread+0x11c/0x14c)
-> > > > > > > > > >  [<c013b3d8>] (kthread) from [<c01010e8>] (ret_from_fork+0x14/0x2c)
-> > > > > > > > > >  Exception stack(0xde539fb0 to 0xde539ff8)
-> > > > > > > > > >  9fa0:                                     00000000 00000000 00000000 00000000
-> > > > > > > > > >  9fc0: 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000
-> > > > > > > > > >  9fe0: 00000000 00000000 00000000 00000000 00000013 00000000
-> > > > > > > > > >  ---[ end trace 4017fea4906ab391 ]---
-> > > > > > > > > >
-> > > > > > > > > > But accordingly to Allwinner A33, A64 BSP codes [1] [2] this divider
-> > > > > > > > > > is clearly using 'format/lanes' for dsi divider value, dsi_clk.clk_div
-> > > > > > > > > >
-> > > > > > > > > > Which would compute the pll_freq and set a clock rate for it in
-> > > > > > > > > > [3] and [4] respectively.
-> > > > > > > > > >
-> > > > > > > > > > The same issue has reproduced in A33, A64 with 4-lane and 2-lane devices
-> > > > > > > > > > and got fixed with this computation logic 'format/lanes', so this patch
-> > > > > > > > > > using dclk min and max dividers as per BSP.
-> > > > > > > > > >
-> > > > > > > > > > [1] https://github.com/BPI-SINOVOIP/BPI-M2M-bsp/blob/master/linux-sunxi/drivers/video/sunxi/disp/de/disp_lcd.c#L1106
-> > > > > > > > > > [2] https://github.com/BPI-SINOVOIP/BPI-M64-bsp/blob/master/linux-sunxi/drivers/video/sunxi/disp2/disp/de/lowlevel_sun50iw1/disp_al.c#L213
-> > > > > > > > > > [3] https://github.com/BPI-SINOVOIP/BPI-M2M-bsp/blob/master/linux-sunxi/drivers/video/sunxi/disp/de/disp_lcd.c#L1127
-> > > > > > > > > > [4] https://github.com/BPI-SINOVOIP/BPI-M2M-bsp/blob/master/linux-sunxi/drivers/video/sunxi/disp/de/disp_lcd.c#L1161
-> > > > > > > > >
-> > > > > > > > > In that mail, I've pointed out that clk_div isn't used for the TCON dclk divider:
-> > > > > > > > > http://lists.infradead.org/pipermail/linux-arm-kernel/2019-February/629596.html
-> > > > > > > > >
-> > > > > > > > > The only reply you've sent is that you indeed see that the divider is
-> > > > > > > > > set to 4 in the BSP, but you're now saying that the BSP can change
-> > > > > > > > > it. If so, then please point exactly the flaw in the explanation in
-> > > > > > > > > that mail.
-> > > > > > > >
-> > > > > > > > Frankly, I have explained these details in commit message and previous
-> > > > > > > > version patch[1] with print messages on the code.
-> > > > > > > >
-> > > > > > > > BSP has tcon_div and dsi_div. dsi_div is dynamic which depends on
-> > > > > > > > bpp/lanes and it indeed depends on PLL computation (not tcon_div),
-> > > > > > > > anyway I have explained again on this initial link you mentioned.
-> > > > > > > > Please have a look and get back.
-> > > > > > >
-> > > > > > > I'll have a look, thanks.
-> > > > > > >
-> > > > > > > I've given your patches a try on my setup though, and this patch
-> > > > > > > breaks it with vblank timeouts and some horizontal lines that looks
-> > > > > > > like what should be displayed, but blinking and on the right of the
-> > > > > > > display. The previous ones are fine though.
-> > > > > >
-> > > > > > Would you please send me the link of panel driver.
-> > > > >
-> > > > > It's drivers/gpu/drm/panel/panel-ronbo-rb070d30.c
-> > > >
-> > > > Look like this panel work even w/o any vendor sequence. it's similar
-> > > > to the 4-lane panel I have with RGB888, so the dclk div is 6, is it
-> > > > working with this divider?
-> > >
-> > > It works with 4, it doesn't work with 6.
-> >
-> > Can be the pixel clock with associated timings can make this diff.
-> > Would you send me the pixel clock, pll_rate and timings this panel
-> > used it from BSP?
->
-> This board never had an Allwinner BSP
+On Mon, 2019-07-01 at 11:55 -0700, Paul Walmsley wrote:
+> On Mon, 1 Jul 2019, Atish Patra wrote:
+> 
+> > On Mon, 2019-07-01 at 11:44 -0700, Paul Walmsley wrote:
+> > > Looks like patches 1, 6, and 7 are missing your Signed-off-
+> > > by:.  Can I 
+> > > add those?
+> > > 
+> > Sure. 
+> > 
+> > Is it a common practice to add "Signed-off-by:" the sender even if
+> > the
+> > sender has not touched the patch at all?
+> 
+> Yes, see section 11(c) here:
+> 
+> https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/Documentation/process/submitting-patches.rst#n418
+> 
+> The main factor here is that you collected and resent the patches -
+> thus 
+> you're in the patch submission chain.
+> 
 
-Running on BSP would help to understand some clue, anyway would you
-send me the the value PLL_MIPI register (devme 0x1c20040) on this
-board. I'm trying to understand how it value in your case.
+Ahh okay. Thanks for the link. I will keep this in mind in future.
+
+Regards,
+Atish
+> 
+> - Paul
 
 _______________________________________________
 linux-arm-kernel mailing list
