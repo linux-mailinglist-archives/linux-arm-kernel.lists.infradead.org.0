@@ -2,63 +2,89 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 89AA75B4F9
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  1 Jul 2019 08:23:34 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D21665B531
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  1 Jul 2019 08:41:10 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=ZDFNFpQJKUlf7DBkMjPaL0Oh+N60bkOolieIAfv+t6w=; b=GsCB0ZV7LeEOXvthLGt5sHTSh
-	9tKgH3ed48Kgocevo79t4oLc4Y7/AOdphFQG40BYPJSRQOXhXYEYb/uT9kOXdzqlf1VfUIPO+tY7H
-	V57r4Om2l+Mi578d2yrL6Ue1fpGMvKx1njlC6wl1qGE0BueBEaa42WWPrxCzS82e91szYZ9lE3Lt0
-	OSTLGuW89sOpFunVoRs3e+kGiGOZQAeVlDzS2sEC1oD2ViKhJFYOZcnkTuwq8S2LIrl9abxnY4tQl
-	k6BBr479BcHWKpv9yNRte6jsPL32rFq9m6JIdHQpowbd80jpgIJBiyeOPi6snbO1GmuC9gHSFf9OQ
-	LRMmxIK3Q==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=MMl8OowmJsTUqfrkexN7tdJSoOsi5CN/EAH7iCKlB5w=; b=vBTtRHqhsusGWj
+	LRrnCQFrRuEZ4N6r9Vl+GSISoZhtcyUfmRUOXQUtU75/0woQcfEsISyhmY3KjCXVxpMxQkygUH6IJ
+	XJsoBRbTse7c/3cSJHmPpgctdYIHFcDFZ3nGmZrgDBTOjLajNZMuPXjgshKHNpNouCAiMLSX2b38q
+	0NKiJXVUd2y4Yf4BoWi+iWBaVS1LvoRTKtZyLzwZk7/wKp99G9su7jUfDHf0sK3Nw+GnfsY8v8+1Z
+	N74SY2K6VG/8cxWGaelcjca1dyZOmkiMwner6kskvybQ+vwXhfFhRH6htkqInHoY6LYwBPlZhXjNV
+	fvMhSk7zU20BOYuWN6gA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hhpit-0004bf-3I; Mon, 01 Jul 2019 06:23:31 +0000
-Received: from szxga07-in.huawei.com ([45.249.212.35] helo=huawei.com)
+	id 1hhpzu-0005cO-6m; Mon, 01 Jul 2019 06:41:06 +0000
+Received: from mail-pf1-x444.google.com ([2607:f8b0:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hhpif-0004aE-Nh
- for linux-arm-kernel@lists.infradead.org; Mon, 01 Jul 2019 06:23:19 +0000
-Received: from DGGEMS414-HUB.china.huawei.com (unknown [172.30.72.59])
- by Forcepoint Email with ESMTP id 68DFBF79AA04DEFD7165;
- Mon,  1 Jul 2019 14:23:05 +0800 (CST)
-Received: from [127.0.0.1] (10.57.101.250) by DGGEMS414-HUB.china.huawei.com
- (10.3.19.214) with Microsoft SMTP Server id 14.3.439.0; Mon, 1 Jul 2019
- 14:22:58 +0800
-Subject: Re: [GIT PULL] Hisilicon fixes for v5.2
-To: Olof Johansson <olof@lixom.net>, John Garry <john.garry@huawei.com>
-References: <b89ef8f0-d102-7f78-f373-cbcc7faddee3@hisilicon.com>
- <20190625112148.ckj7sgdgvyeel7vy@localhost>
- <CAOesGMj+aNkOT1YVHTSBLkOfEujk7uer3R1AmE-sa1TwCijbBg@mail.gmail.com>
- <7e215bd7-daab-b6cf-8d0f-9513bd7c4f6d@huawei.com>
- <20190627021937.kk4lklv2uz3mogoq@localhost>
-From: Wei Xu <xuwei5@hisilicon.com>
-Message-ID: <5D19A6C1.70104@hisilicon.com>
-Date: Mon, 1 Jul 2019 14:22:57 +0800
-User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:38.0) Gecko/20100101
- Thunderbird/38.2.0
+ id 1hhpzh-0005bE-Ex
+ for linux-arm-kernel@lists.infradead.org; Mon, 01 Jul 2019 06:40:54 +0000
+Received: by mail-pf1-x444.google.com with SMTP id q10so6042543pff.9
+ for <linux-arm-kernel@lists.infradead.org>;
+ Sun, 30 Jun 2019 23:40:49 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=dcNOnkZ3QNA3naQZL2QsN8O60WJ6liuss/shdVWzI/w=;
+ b=jt7i+Ah0OIALx3FcRZ1UZkdX1H4ILpm/ltZc9KwQYbH8WrH3GEdinTHq+ex7/HsTed
+ Q/DFlt5PofGsqai1Az11oYNvC8+cxbsQJXJx40MYtNrrkVLO3bvbYJT8wLGxeNRtOg+o
+ 57Hf/eY+JfZUT3NpcNl6/8Uk+X1AO8MWtOT3zpnCnacQdmAqcwOrmxUTuqxdZ7RhEzqK
+ Am48lIIHnwHV8AfSk/jpE+HgXctcEK5PWZhSQXmtFvkQPkQZ3BwTSuM3AfroF++KSYjC
+ 9/BpKeJlEHYoI/ciZKoAF3S3Fc7bM+QF/p7hCLb11IzbCjyKkltoxPZepQ/YfMGX1jkD
+ GVlQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=dcNOnkZ3QNA3naQZL2QsN8O60WJ6liuss/shdVWzI/w=;
+ b=j/kE9cxArHVKl1dTrt5PiuWcKRFbH469bHKqwOAj3sqW0crBeFKb6wRD9rK+21M2us
+ SzgEKXi1adpsGr+rGr8z28A4L+QVRdcZ0z/GBa5T5j6+jZ7oSmuly3KB1aZaHPimpsp7
+ hZYTyqRXZBQ+9lth6zcAWyq5oNAlaOvUcQLCkfZQ2DHUXQxLT79aqIp83TzPyTox8wPu
+ +jVxF5hkFoZ/2W/ORnhW7fIG9+Ks9uEgMMaUevyfBAOi9syLKdzdAvf3xTsWo1P79gGb
+ yCGt1eW+NvXv1+ypXxObP+Mt1Jp7xx0EQlMva5G1WKRHryc6U1o6d6KHQ3Tka2cPxYQs
+ FFCQ==
+X-Gm-Message-State: APjAAAXN8T7DriytZbtUK92s1XpmHxOQDjf/Z5tMmKDj82I+farAAND8
+ lSRz5G25lXD8TmB95tJw8do=
+X-Google-Smtp-Source: APXvYqyhm6G/Dxj/LNC8ofHNrlWkegS32az/Q37ZJ9wniqzmJWd0cS85z1rpS5JiVW3uLe2ZPBrYNQ==
+X-Received: by 2002:a65:5248:: with SMTP id q8mr14304334pgp.259.1561963249300; 
+ Sun, 30 Jun 2019 23:40:49 -0700 (PDT)
+Received: from bobo.ozlabs.ibm.com ([122.99.82.10])
+ by smtp.gmail.com with ESMTPSA id x128sm24238285pfd.17.2019.06.30.23.40.45
+ (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
+ Sun, 30 Jun 2019 23:40:48 -0700 (PDT)
+From: Nicholas Piggin <npiggin@gmail.com>
+To: "linux-mm @ kvack . org" <linux-mm@kvack.org>
+Subject: [PATCH v2 0/3] fix vmalloc_to_page for huge vmap mappings
+Date: Mon,  1 Jul 2019 16:40:23 +1000
+Message-Id: <20190701064026.970-1-npiggin@gmail.com>
+X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
-In-Reply-To: <20190627021937.kk4lklv2uz3mogoq@localhost>
-X-Originating-IP: [10.57.101.250]
-X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190630_232318_021448_1AC052A6 
-X-CRM114-Status: GOOD (  11.38  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20190630_234053_530096_8B012A38 
+X-CRM114-Status: GOOD (  11.09  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [45.249.212.35 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (npiggin[at]gmail.com)
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:444 listed in]
+ [list.dnswl.org]
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -70,74 +96,49 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Salil Mehta <salil.mehta@huawei.com>, jinying@hisilicon.com,
- Tangkunshan <tangkunshan@huawei.com>, Arnd Bergmann <arnd@arndb.de>,
- linux-pci@vger.kernel.org, "Rafael J.
- Wysocki" <rjw@rjwysocki.net>, Linuxarm <linuxarm@huawei.com>,
- Shameerali Kolothum Thodi <shameerali.kolothum.thodi@huawei.com>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- ARM-SoC Maintainers <arm@kernel.org>, huangdaode <huangdaode@hisilicon.com>,
- "xuwei \(O\)" <xuwei5@huawei.com>,
- Jonathan Cameron <Jonathan.Cameron@huawei.com>, Bjorn
- Helgaas <bhelgaas@google.com>, "Liguozhu \(Kenneth\)" <liguozhu@hisilicon.com>,
- Zhangyi ac <zhangyi.ac@huawei.com>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
- Shiju Jose <shiju.jose@huawei.com>
+Cc: Christophe Leroy <christophe.leroy@c-s.fr>,
+ Mark Rutland <mark.rutland@arm.com>,
+ Anshuman Khandual <anshuman.khandual@arm.com>,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>,
+ Nicholas Piggin <npiggin@gmail.com>, Andrew Morton <akpm@linux-foundation.org>,
+ "linuxppc-dev @ lists . ozlabs . org" <linuxppc-dev@lists.ozlabs.org>,
+ "linux-arm-kernel @ lists . infradead . org"
+ <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Olof,
+This is a change broken out from the huge vmap vmalloc series as
+requested. There is a little bit of dependency juggling across
+trees, but patches are pretty trivial. Ideally if Andrew accepts
+this patch and queues it up for next, then the arch patches would
+be merged through those trees then patch 3 gets sent by Andrew.
 
-On 2019/6/27 10:19, Olof Johansson wrote:
-> On Tue, Jun 25, 2019 at 02:31:26PM +0100, John Garry wrote:
->> On 25/06/2019 14:03, Olof Johansson wrote:
->>>>> are available in the Git repository at:
->>>>>>>    git://github.com/hisilicon/linux-hisi.git tags/hisi-fixes-for-5.2
->>>>>>>
->>>>>>> for you to fetch changes up to 07c811af1c00d7b4212eac86900b023b6405a954:
->>>>>>>
->>>>>>>    lib: logic_pio: Enforce LOGIC_PIO_INDIRECT region ops are set at registration (2019-06-25 09:40:42 +0100)
->>>>>>>
->>>>>>> ----------------------------------------------------------------
->>>>>>> Hisilicon fixes for v5.2-rc
->>>>>>>
->>>>>>> - fixed RCU usage in logical PIO
->>>>>>> - Added a function to unregister a logical PIO range in logical PIO
->>>>>>>    to support the fixes in the hisi-lpc driver
->>>>>>> - fixed and optimized hisi-lpc driver to avoid potential use-after-free
->>>>>>>    and driver unbind crash
->>>>> Merged to fixes, thanks.
->>> This broke arm64 allmodconfig:
->>>
->>>         arm64.allmodconfig:
->>> drivers/bus/hisi_lpc.c:656:3: error: implicit declaration of function
->>> 'hisi_lpc_acpi_remove'; did you mean 'hisi_lpc_acpi_probe'?
->>> [-Werror=implicit-function-declaration]
->>>
->>>
->> Uhhh, that's my fault - I didn't provide a stub for !ACPI. Sorry. I'll send
->> a fixed v3 series.
-> No worries, it happens -- but it's good if maintainers do at least a few test
-> builds before sending in pull requests so we don't catch all of it at our end.
+I've tested this with other powerpc and vmalloc patches, with code
+that explicitly tests vmalloc_to_page on vmalloced memory and
+results look fine.
 
-Sorry for the late reply!
-I had a trip last week and did the pull request in a hurry that forgot 
-to do the some building
-test like allmodconfig, allyesconfig and so on.
-In the future, I will do more testing before sending out to avoid this 
-kind fault.
+v2: change the order of testing pxx_large and pxx_bad, to avoid issues
+    with arm64
 
-Best Regards,
-Wei
+Thanks,
+Nick
 
->
-> -Olof
->
-> .
->
+Nicholas Piggin (3):
+  arm64: mm: Add p?d_large() definitions
+  powerpc/64s: Add p?d_large definitions
+  mm/vmalloc: fix vmalloc_to_page for huge vmap mappings
 
+ arch/arm64/include/asm/pgtable.h             |  2 ++
+ arch/powerpc/include/asm/book3s/64/pgtable.h | 24 ++++++++-----
+ include/asm-generic/4level-fixup.h           |  1 +
+ include/asm-generic/5level-fixup.h           |  1 +
+ mm/vmalloc.c                                 | 37 +++++++++++++-------
+ 5 files changed, 43 insertions(+), 22 deletions(-)
+
+-- 
+2.20.1
 
 
 _______________________________________________
