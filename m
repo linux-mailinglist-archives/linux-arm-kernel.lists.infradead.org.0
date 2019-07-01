@@ -2,51 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5C70C5C0F1
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  1 Jul 2019 18:12:37 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A8F315C131
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  1 Jul 2019 18:36:17 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Mva0TUfKkYOubpmG//Ue4AeuPRANF1GvWc8xfM+fYzU=; b=M0xeEtZtQLGYw6
-	OdRRKPiaZzMHh7DZuO0S8nUpio0NBjGAFo7YOQcf9bAqmqOdBJGg6JR0W+WzANncy8GU6i7/FzSnD
-	9EhSqdsZVMK3Fd0+Wj+aDGBsf8JANyQRRtkcvR392sT55qS5fpmhafzf/XKMJvS53CyYP0zRBE8Kw
-	QV/ebwFYfgU9+vY6CWuggY61ChzlsGTdkIORMJgHMGm7+X6YQvjwpkbBliGE/ROzWGZDhqgNDdjsr
-	iHpo7TzBxohW3B+h3R3ybgfWnD1wOkY4UTRazBr/ggiYRCdkVL3SyDtUzeuR/BqF8SAPqVSh2uY73
-	nfPJ+K1qeJ256ijQ2dTw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=uF+JUjayYE0Is4TDrWGfpt9anixrTdo+wZm+VJi+540=; b=chCS7yOanrzSd32CEhacdQdUI
+	Rst1uY4MyTQUJTG9tSR663qWUNCDjm0I4kxQMouWnr2BXoSG8Swqs3Lj1xfZqz5jV1H7lx6xMhFgP
+	/fjnHH+X6rW2WsGOQQfnJyYhYm/VnvTAshZrn/puu3hLFUGqCa9VPkyDpEBDclVnGe1iMNfo9UNzo
+	btiAseLfzZYcW7+R41c8+/E9Tb3nGxvLWTiTl6xtyHY3gZ/jnHq7Ln0bwbkV5f2ktp/kqcrrBCQIH
+	3baOM9bBxF8OAsh57cgvrRkAYXVxpyxuAKOfPK0fo4XlBQknaTiWGv1R56uSXA8pVgNptq7AmIPtF
+	K7/jCnQnA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hhyuw-0005NP-Hk; Mon, 01 Jul 2019 16:12:34 +0000
+	id 1hhzHr-0004YJ-5D; Mon, 01 Jul 2019 16:36:15 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hhyuq-0005Mo-DQ
- for linux-arm-kernel@lists.infradead.org; Mon, 01 Jul 2019 16:12:29 +0000
+ id 1hhzHi-0004Xg-Od
+ for linux-arm-kernel@lists.infradead.org; Mon, 01 Jul 2019 16:36:08 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 4D27E2B;
- Mon,  1 Jul 2019 09:12:26 -0700 (PDT)
-Received: from [10.1.31.185] (unknown [10.1.31.185])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 3AE1C3F703;
- Mon,  1 Jul 2019 09:12:25 -0700 (PDT)
-Subject: Re: [PATCH 18/59] KVM: arm64: nv: Trap EL1 VM register accesses in
- virtual EL2
-To: Marc Zyngier <marc.zyngier@arm.com>,
- linux-arm-kernel@lists.infradead.org, kvmarm@lists.cs.columbia.edu,
- kvm@vger.kernel.org
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 81ED62B;
+ Mon,  1 Jul 2019 09:36:05 -0700 (PDT)
+Received: from dawn-kernel.cambridge.arm.com (dawn-kernel.cambridge.arm.com
+ [10.1.197.116])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 466FC3F703;
+ Mon,  1 Jul 2019 09:36:04 -0700 (PDT)
+Subject: Re: [PATCH 07/59] KVM: arm64: nv: Add EL2 system registers to vcpu
+ context
+To: marc.zyngier@arm.com, linux-arm-kernel@lists.infradead.org,
+ kvmarm@lists.cs.columbia.edu, kvm@vger.kernel.org
 References: <20190621093843.220980-1-marc.zyngier@arm.com>
- <20190621093843.220980-19-marc.zyngier@arm.com>
-From: Alexandru Elisei <alexandru.elisei@arm.com>
-Message-ID: <37c2b50d-7a5a-335a-ed5e-6d568ee94cb7@arm.com>
-Date: Mon, 1 Jul 2019 17:12:23 +0100
+ <20190621093843.220980-8-marc.zyngier@arm.com>
+From: Suzuki K Poulose <suzuki.poulose@arm.com>
+Message-ID: <37d056e6-85e1-5d6e-3c1c-e89d00140fdf@arm.com>
+Date: Mon, 1 Jul 2019 17:36:03 +0100
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.7.0
+ Thunderbird/60.3.0
 MIME-Version: 1.0
-In-Reply-To: <20190621093843.220980-19-marc.zyngier@arm.com>
+In-Reply-To: <20190621093843.220980-8-marc.zyngier@arm.com>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190701_091228_546413_C306562D 
-X-CRM114-Status: GOOD (  21.96  )
+X-CRM114-CacheID: sfid-20190701_093606_894814_CF833B8A 
+X-CRM114-Status: GOOD (  22.80  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -65,86 +65,99 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Andre Przywara <andre.przywara@arm.com>, Dave Martin <Dave.Martin@arm.com>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: julien.thierry@arm.com, andre.przywara@arm.com, christoffer.dall@arm.com,
+ dave.martin@arm.com, james.morse@arm.com, jintack@cs.columbia.edu
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Ck9uIDYvMjEvMTkgMTA6MzggQU0sIE1hcmMgWnluZ2llciB3cm90ZToKPiBGcm9tOiBDaHJpc3Rv
-ZmZlciBEYWxsIDxjaHJpc3RvZmZlci5kYWxsQGxpbmFyby5vcmc+Cj4KPiBXaGVuIHJ1bm5pbmcg
-aW4gdmlydHVhbCBFTDIgbW9kZSwgd2UgYWN0dWFsbHkgcnVuIHRoZSBoYXJkd2FyZSBpbiBFTDEK
-PiBhbmQgdGhlcmVmb3JlIGhhdmUgdG8gdXNlIHRoZSBFTDEgcmVnaXN0ZXJzIHRvIGVuc3VyZSBj
-b3JyZWN0IG9wZXJhdGlvbi4KPgo+IEJ5IHNldHRpbmcgdGhlIEhDUi5UVk0gYW5kIEhDUi5UVlJN
-IHdlIGVuc3VyZSB0aGF0IHRoZSB2aXJ0dWFsIEVMMiBtb2RlCj4gZG9lc24ndCBzaG9vdCBpdHNl
-bGYgaW4gdGhlIGZvb3Qgd2hlbiBzZXR0aW5nIHVwIHdoYXQgaXQgYmVsaWV2ZXMgdG8gYmUKPiBh
-IGRpZmZlcmVudCBtb2RlJ3Mgc3lzdGVtIHJlZ2lzdGVyIHN0YXRlIChmb3IgZXhhbXBsZSB3aGVu
-IHByZXBhcmluZyB0bwo+IHN3aXRjaCB0byBhIFZNKS4KQSBndWVzdCBoeXBlcnZpc29yIHdpdGgg
-dmhlIGVuYWJsZWQgdXNlcyB0aGUgX0VMMTIgcmVnaXN0ZXIgbmFtZXMgd2hlbiBwcmVwYXJpbmcK
-dG8gcnVuIGEgZ3Vlc3QsIGFuZCBhY2Nlc3NlcyB0byB0aG9zZSByZWdpc3RlcnMgYXJlIGFscmVh
-ZHkgdHJhcHBlZCB3aGVuIHNldHRpbmcKSENSX0VMMi5OVi4gVGhpcyBwYXRjaCBhZmZlY3RzIG9u
-bHkgbm9uLXZoZSBndWVzdCBoeXBlcnZpc29ycywgd291bGQgeW91IG1pbmQKdXBkYXRpbmcgdGhl
-IG1lc3NhZ2UgdG8gcmVmbGVjdCB0aGF0Pwo+Cj4gV2UgY2FuIGxldmVyYWdlIHRoZSBleGlzdGlu
-ZyBzeXNyZWdzIGluZnJhc3RydWN0dXJlIHRvIHN1cHBvcnQgdHJhcHBlZAo+IGFjY2Vzc2VzIHRv
-IHRoZXNlIHJlZ2lzdGVycy4KPgo+IFNpZ25lZC1vZmYtYnk6IENocmlzdG9mZmVyIERhbGwgPGNo
-cmlzdG9mZmVyLmRhbGxAbGluYXJvLm9yZz4KPiBTaWduZWQtb2ZmLWJ5OiBNYXJjIFp5bmdpZXIg
-PG1hcmMuenluZ2llckBhcm0uY29tPgo+IC0tLQo+ICBhcmNoL2FybTY0L2t2bS9oeXAvc3dpdGNo
-LmMgfCA0ICsrKysKPiAgYXJjaC9hcm02NC9rdm0vc3lzX3JlZ3MuYyAgIHwgNyArKysrKystCj4g
-IDIgZmlsZXMgY2hhbmdlZCwgMTAgaW5zZXJ0aW9ucygrKSwgMSBkZWxldGlvbigtKQo+Cj4gZGlm
-ZiAtLWdpdCBhL2FyY2gvYXJtNjQva3ZtL2h5cC9zd2l0Y2guYyBiL2FyY2gvYXJtNjQva3ZtL2h5
-cC9zd2l0Y2guYwo+IGluZGV4IDdiNTVjMTFiMzBmYi4uNzkxYjI2NTcwMzQ3IDEwMDY0NAo+IC0t
-LSBhL2FyY2gvYXJtNjQva3ZtL2h5cC9zd2l0Y2guYwo+ICsrKyBiL2FyY2gvYXJtNjQva3ZtL2h5
-cC9zd2l0Y2guYwo+IEBAIC0xMzUsNiArMTM1LDEwIEBAIHN0YXRpYyB2b2lkIF9faHlwX3RleHQg
-X19hY3RpdmF0ZV90cmFwcyhzdHJ1Y3Qga3ZtX3ZjcHUgKnZjcHUpCj4gIHsKPiAgCXU2NCBoY3Ig
-PSB2Y3B1LT5hcmNoLmhjcl9lbDI7Cj4gIAo+ICsJLyogVHJhcCBWTSBzeXNyZWcgYWNjZXNzZXMg
-aWYgYW4gRUwyIGd1ZXN0IGlzIG5vdCB1c2luZyBWSEUuICovCj4gKwlpZiAodmNwdV9tb2RlX2Vs
-Mih2Y3B1KSAmJiAhdmNwdV9lbDJfZTJoX2lzX3NldCh2Y3B1KSkKPiArCQloY3IgfD0gSENSX1RW
-TSB8IEhDUl9UUlZNOwo+ICsKPiAgCXdyaXRlX3N5c3JlZyhoY3IsIGhjcl9lbDIpOwo+ICAKPiAg
-CWlmIChjcHVzX2hhdmVfY29uc3RfY2FwKEFSTTY0X0hBU19SQVNfRVhUTikgJiYgKGhjciAmIEhD
-Ul9WU0UpKQo+IGRpZmYgLS1naXQgYS9hcmNoL2FybTY0L2t2bS9zeXNfcmVncy5jIGIvYXJjaC9h
-cm02NC9rdm0vc3lzX3JlZ3MuYwo+IGluZGV4IGUxODEzNTlhZGFkZi4uMDQ2NGQ4ZTI5Y2JhIDEw
-MDY0NAo+IC0tLSBhL2FyY2gvYXJtNjQva3ZtL3N5c19yZWdzLmMKPiArKysgYi9hcmNoL2FybTY0
-L2t2bS9zeXNfcmVncy5jCj4gQEAgLTQ0MCw3ICs0NDAsMTIgQEAgc3RhdGljIGJvb2wgYWNjZXNz
-X3ZtX3JlZyhzdHJ1Y3Qga3ZtX3ZjcHUgKnZjcHUsCj4gIAl1NjQgdmFsOwo+ICAJaW50IHJlZyA9
-IHItPnJlZzsKPiAgCj4gLQlCVUdfT04oIXAtPmlzX3dyaXRlKTsKPiArCUJVR19PTighdmNwdV9t
-b2RlX2VsMih2Y3B1KSAmJiAhcC0+aXNfd3JpdGUpOwo+ICsKPiArCWlmICghcC0+aXNfd3JpdGUp
-IHsKPiArCQlwLT5yZWd2YWwgPSB2Y3B1X3JlYWRfc3lzX3JlZyh2Y3B1LCByZWcpOwo+ICsJCXJl
-dHVybiB0cnVlOwo+ICsJfQo+ICAKPiAgCS8qIFNlZSB0aGUgMzJiaXQgbWFwcGluZyBpbiBrdm1f
-aG9zdC5oICovCj4gIAlpZiAocC0+aXNfYWFyY2gzMikKCkZvciBtb3JlIGNvbnRleHQ6CgpkaWZm
-IC0tZ2l0IGEvYXJjaC9hcm02NC9rdm0vc3lzX3JlZ3MuYyBiL2FyY2gvYXJtNjQva3ZtL3N5c19y
-ZWdzLmMKaW5kZXggZTE4MTM1OWFkYWRmLi4wNDY0ZDhlMjljYmEgMTAwNjQ0Ci0tLSBhL2FyY2gv
-YXJtNjQva3ZtL3N5c19yZWdzLmMKKysrIGIvYXJjaC9hcm02NC9rdm0vc3lzX3JlZ3MuYwpAQCAt
-NDI4LDMxICs0MjgsMzYgQEAgc3RhdGljIGJvb2wgYWNjZXNzX2Rjc3coc3RydWN0IGt2bV92Y3B1
-ICp2Y3B1LArCoH0KwqAKwqAvKgrCoCAqIEdlbmVyaWMgYWNjZXNzb3IgZm9yIFZNIHJlZ2lzdGVy
-cy4gT25seSBjYWxsZWQgYXMgbG9uZyBhcyBIQ1JfVFZNCsKgICogaXMgc2V0LiBJZiB0aGUgZ3Vl
-c3QgZW5hYmxlcyB0aGUgTU1VLCB3ZSBzdG9wIHRyYXBwaW5nIHRoZSBWTQrCoCAqIHN5c19yZWdz
-IGFuZCBsZWF2ZSBpdCBpbiBjb21wbGV0ZSBjb250cm9sIG9mIHRoZSBjYWNoZXMuCsKgICovCsKg
-c3RhdGljIGJvb2wgYWNjZXNzX3ZtX3JlZyhzdHJ1Y3Qga3ZtX3ZjcHUgKnZjcHUsCsKgwqDCoMKg
-wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIHN0cnVjdCBzeXNfcmVn
-X3BhcmFtcyAqcCwKwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDC
-oMKgwqAgY29uc3Qgc3RydWN0IHN5c19yZWdfZGVzYyAqcikKwqB7CsKgwqDCoMKgwqDCoMKgIGJv
-b2wgd2FzX2VuYWJsZWQgPSB2Y3B1X2hhc19jYWNoZV9lbmFibGVkKHZjcHUpOwrCoMKgwqDCoMKg
-wqDCoCB1NjQgdmFsOwrCoMKgwqDCoMKgwqDCoCBpbnQgcmVnID0gci0+cmVnOwrCoAotwqDCoMKg
-wqDCoMKgIEJVR19PTighcC0+aXNfd3JpdGUpOworwqDCoMKgwqDCoMKgIEJVR19PTighdmNwdV9t
-b2RlX2VsMih2Y3B1KSAmJiAhcC0+aXNfd3JpdGUpOworCivCoMKgwqDCoMKgwqAgaWYgKCFwLT5p
-c193cml0ZSkgeworwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCBwLT5yZWd2YWwgPSB2Y3B1
-X3JlYWRfc3lzX3JlZyh2Y3B1LCByZWcpOworwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCBy
-ZXR1cm4gdHJ1ZTsKK8KgwqDCoMKgwqDCoCB9CsKgCsKgwqDCoMKgwqDCoMKgIC8qIFNlZSB0aGUg
-MzJiaXQgbWFwcGluZyBpbiBrdm1faG9zdC5oICovCsKgwqDCoMKgwqDCoMKgIGlmIChwLT5pc19h
-YXJjaDMyKQrCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgcmVnID0gci0+cmVnIC8gMjsK
-wqAKwqDCoMKgwqDCoMKgwqAgaWYgKCFwLT5pc19hYXJjaDMyIHx8ICFwLT5pc18zMmJpdCkgewrC
-oMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgdmFsID0gcC0+cmVndmFsOwrCoMKgwqDCoMKg
-wqDCoCB9IGVsc2UgewrCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgdmFsID0gdmNwdV9y
-ZWFkX3N5c19yZWcodmNwdSwgcmVnKTsKwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIGlm
-IChyLT5yZWcgJSAyKQrCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDC
-oMKgIHZhbCA9IChwLT5yZWd2YWwgPDwgMzIpIHwgKHU2NClsb3dlcl8zMl9iaXRzKHZhbCk7CsKg
-wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCBlbHNlCsKgwqDCoMKgwqDCoMKgwqDCoMKgwqDC
-oMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgdmFsID0gKCh1NjQpdXBwZXJfMzJfYml0cyh2YWwpIDw8
-IDMyKSB8CsKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
-wqDCoMKgwqDCoMKgIGxvd2VyXzMyX2JpdHMocC0+cmVndmFsKTsKwqDCoMKgwqDCoMKgwqAgfQoK
-UGVyaGFwcyB0aGUgZnVuY3Rpb24gY29tbWVudCBzaG91bGQgYmUgdXBkYXRlZCB0byByZWZsZWN0
-IHRoYXQgdGhlIGZ1bmN0aW9uIGlzCmFsc28gdXNlZCBmb3IgVk0gcmVnaXN0ZXIgdHJhcHMgZm9y
-IGEgbm9uLXZoZSBndWVzdCBoeXBlcnZpc29yPwoKCl9fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4
-LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9y
-Zy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
+Hi Marc,
+
+On 21/06/2019 10:37, Marc Zyngier wrote:
+> From: Jintack Lim <jintack.lim@linaro.org>
+> 
+> ARM v8.3 introduces a new bit in the HCR_EL2, which is the NV bit. When
+> this bit is set, accessing EL2 registers in EL1 traps to EL2. In
+> addition, executing the following instructions in EL1 will trap to EL2:
+> tlbi, at, eret, and msr/mrs instructions to access SP_EL1. Most of the
+> instructions that trap to EL2 with the NV bit were undef at EL1 prior to
+> ARM v8.3. The only instruction that was not undef is eret.
+> 
+> This patch sets up a handler for EL2 registers and SP_EL1 register
+> accesses at EL1. The host hypervisor keeps those register values in
+> memory, and will emulate their behavior.
+> 
+> This patch doesn't set the NV bit yet. It will be set in a later patch
+> once nested virtualization support is completed.
+> 
+> Signed-off-by: Jintack Lim <jintack.lim@linaro.org>
+> Signed-off-by: Marc Zyngier <marc.zyngier@arm.com>
+> ---
+>   arch/arm64/include/asm/kvm_host.h | 37 +++++++++++++++-
+>   arch/arm64/include/asm/sysreg.h   | 50 ++++++++++++++++++++-
+>   arch/arm64/kvm/sys_regs.c         | 74 ++++++++++++++++++++++++++++---
+>   3 files changed, 154 insertions(+), 7 deletions(-)
+> 
+> diff --git a/arch/arm64/include/asm/kvm_host.h b/arch/arm64/include/asm/kvm_host.h
+> index 4bcd9c1291d5..2d4290d2513a 100644
+> --- a/arch/arm64/include/asm/kvm_host.h
+> +++ b/arch/arm64/include/asm/kvm_host.h
+> @@ -173,12 +173,47 @@ enum vcpu_sysreg {
+>   	APGAKEYLO_EL1,
+>   	APGAKEYHI_EL1,
+>   
+> -	/* 32bit specific registers. Keep them at the end of the range */
+> +	/* 32bit specific registers. */
+>   	DACR32_EL2,	/* Domain Access Control Register */
+>   	IFSR32_EL2,	/* Instruction Fault Status Register */
+>   	FPEXC32_EL2,	/* Floating-Point Exception Control Register */
+>   	DBGVCR32_EL2,	/* Debug Vector Catch Register */
+>   
+> +	/* EL2 registers sorted ascending by Op0, Op1, CRn, CRm, Op2 */
+> +	FIRST_EL2_SYSREG,
+> +	VPIDR_EL2 = FIRST_EL2_SYSREG,
+> +			/* Virtualization Processor ID Register */
+> +	VMPIDR_EL2,	/* Virtualization Multiprocessor ID Register */
+> +	SCTLR_EL2,	/* System Control Register (EL2) */
+> +	ACTLR_EL2,	/* Auxiliary Control Register (EL2) */
+> +	HCR_EL2,	/* Hypervisor Configuration Register */
+> +	MDCR_EL2,	/* Monitor Debug Configuration Register (EL2) */
+> +	CPTR_EL2,	/* Architectural Feature Trap Register (EL2) */
+> +	HSTR_EL2,	/* Hypervisor System Trap Register */
+> +	HACR_EL2,	/* Hypervisor Auxiliary Control Register */
+> +	TTBR0_EL2,	/* Translation Table Base Register 0 (EL2) */
+> +	TTBR1_EL2,	/* Translation Table Base Register 1 (EL2) */
+> +	TCR_EL2,	/* Translation Control Register (EL2) */
+> +	VTTBR_EL2,	/* Virtualization Translation Table Base Register */
+> +	VTCR_EL2,	/* Virtualization Translation Control Register */
+> +	SPSR_EL2,	/* EL2 saved program status register */
+> +	ELR_EL2,	/* EL2 exception link register */
+> +	AFSR0_EL2,	/* Auxiliary Fault Status Register 0 (EL2) */
+> +	AFSR1_EL2,	/* Auxiliary Fault Status Register 1 (EL2) */
+> +	ESR_EL2,	/* Exception Syndrome Register (EL2) */
+> +	FAR_EL2,	/* Hypervisor IPA Fault Address Register */
+> +	HPFAR_EL2,	/* Hypervisor IPA Fault Address Register */
+> +	MAIR_EL2,	/* Memory Attribute Indirection Register (EL2) */
+> +	AMAIR_EL2,	/* Auxiliary Memory Attribute Indirection Register (EL2) */
+> +	VBAR_EL2,	/* Vector Base Address Register (EL2) */
+> +	RVBAR_EL2,	/* Reset Vector Base Address Register */
+> +	RMR_EL2,	/* Reset Management Register */
+> +	CONTEXTIDR_EL2,	/* Context ID Register (EL2) */
+> +	TPIDR_EL2,	/* EL2 Software Thread ID Register */
+> +	CNTVOFF_EL2,	/* Counter-timer Virtual Offset register */
+> +	CNTHCTL_EL2,	/* Counter-timer Hypervisor Control register */
+> +	SP_EL2,		/* EL2 Stack Pointer */
+
+Does it need to include the following registers Counter-timer Hyp Physical timer
+registers ? i.e, CNTHP_{CTL,CVAL,TVAL}_EL2. Or do we have some other magic with
+NV for the virtual EL2 ?
+
+Cheers
+Suzuki
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
