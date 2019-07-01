@@ -2,67 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3252A5B65B
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  1 Jul 2019 10:07:53 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4BFE75B687
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  1 Jul 2019 10:14:39 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=TnC0KrAAxKNJxXrUO8w0gn8zy3jBYFcUCwdeX6/iC1U=; b=fwXOkphNbU65OO
-	d7+WMAj1wbfu/Fud7Tz5y1Cx9lOXaUWEMYsH4ZNUgD6eqiGDOUBXlbIqoJ2sW4OgVcpBpd3kdqZlr
-	Cinf4TviEcrFR5R39RIcXBPSMtuM/QCckgMHLl6h4tKeusGzMCydcRPHiQQXJFVr/QLPvRJqIRFoN
-	lOhbxvVwUuxJRnLpAR2IZrONgoiKElGcWTqLNpmypuh/TRaoLfURqCmdgCeB6l1Qc99DRsBLGk9LT
-	L3wqSkhu5duoMxw3JiDcF9v7cqw9g22McqjnHBvd/YSsB8qEZmbyIsD42uTAYgPvh80jWYepMFuW3
-	T0Hrj2xrCVqu+VGrdLxw==;
+	List-Owner; bh=Y3iGVgiilQ2a5hfMJ8NduShT+kC0Um359hiSl1Wl92E=; b=IAdAUEn5oShHbO
+	02XFgYLPVXmyAeBFNeEqFnKE/rMO2/bZ7VjD2onZymNN1jMTkbjIG/y8DMJbdVR5Nn2Bn+K2ISeSL
+	8HO5NI5kcdv+hHgkkBJl8Yy7tjwCRaNUhTAKEmR02zBrVGPiWF9C9qtQXsJ1F3TG0EuYY7FTcDr77
+	XOQW8Dw2nF7Uee33qOFr2n+4wbSXonZzzVbmWBfyGkHJ6uYYnnxqdBPlc2u5huK52YwsewiCOaiJU
+	JKde9w683Sno+oJ77NLOsgSBtDYeNiCUFvTUQ4PkhzQBIqhvhtJxrQ1ML5uMRjdA9sv6ZAwlzr36M
+	a/IVCphJ53tMPVtMTSSA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hhrLr-0008MP-6i; Mon, 01 Jul 2019 08:07:51 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
+	id 1hhrSO-0002MW-14; Mon, 01 Jul 2019 08:14:36 +0000
+Received: from mx2.suse.de ([195.135.220.15] helo=mx1.suse.de)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hhrLd-0008Lw-R5; Mon, 01 Jul 2019 08:07:39 +0000
-X-UUID: 9d320a1673e14ca099d1be5b37da8780-20190701
-X-UUID: 9d320a1673e14ca099d1be5b37da8780-20190701
-Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw01.mediatek.com
- (envelope-from <ck.hu@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 890626543; Mon, 01 Jul 2019 00:07:29 -0800
-Received: from MTKMBS01N1.mediatek.inc (172.21.101.68) by
- MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Mon, 1 Jul 2019 01:07:28 -0700
-Received: from mtkcas09.mediatek.inc (172.21.101.178) by
- mtkmbs01n1.mediatek.inc (172.21.101.68) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Mon, 1 Jul 2019 16:07:26 +0800
-Received: from [172.21.77.4] (172.21.77.4) by mtkcas09.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Mon, 1 Jul 2019 16:07:26 +0800
-Message-ID: <1561968446.3524.1.camel@mtksdaap41>
-Subject: Re: [PATCH v10 11/12] soc: mediatek: cmdq: add
- cmdq_dev_get_client_reg function
-From: CK Hu <ck.hu@mediatek.com>
-To: Bibby Hsieh <bibby.hsieh@mediatek.com>
-Date: Mon, 1 Jul 2019 16:07:26 +0800
-In-Reply-To: <20190701074842.15401-12-bibby.hsieh@mediatek.com>
-References: <20190701074842.15401-1-bibby.hsieh@mediatek.com>
- <20190701074842.15401-12-bibby.hsieh@mediatek.com>
-X-Mailer: Evolution 3.10.4-0ubuntu2 
+ id 1hhrSB-0002MA-2A
+ for linux-arm-kernel@lists.infradead.org; Mon, 01 Jul 2019 08:14:25 +0000
+X-Virus-Scanned: by amavisd-new at test-mx.suse.de
+Received: from relay2.suse.de (unknown [195.135.220.254])
+ by mx1.suse.de (Postfix) with ESMTP id 49BC4ACFB;
+ Mon,  1 Jul 2019 08:14:21 +0000 (UTC)
+Date: Mon, 1 Jul 2019 10:14:20 +0200
+From: Michal Hocko <mhocko@kernel.org>
+To: David Hildenbrand <david@redhat.com>
+Subject: Re: [PATCH v3 07/11] mm/memory_hotplug: Create memory block devices
+ after arch_add_memory()
+Message-ID: <20190701081420.GG6376@dhcp22.suse.cz>
+References: <20190527111152.16324-1-david@redhat.com>
+ <20190527111152.16324-8-david@redhat.com>
 MIME-Version: 1.0
-X-MTK: N
+Content-Disposition: inline
+In-Reply-To: <20190527111152.16324-8-david@redhat.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190701_010737_874783_AE907499 
-X-CRM114-Status: GOOD (  15.01  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190701_011423_399461_617921CF 
+X-CRM114-Status: GOOD (  30.39  )
+X-Spam-Score: -1.3 (-)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-1.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [216.200.240.184 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [195.135.220.15 listed in list.dnswl.org]
+ 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -74,116 +62,263 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Nicolas Boichat <drinkcat@chromium.org>,
- Philipp Zabel <p.zabel@pengutronix.de>, srv_heupstream@mediatek.com,
- Daoyuan Huang <daoyuan.huang@mediatek.com>,
- Sascha Hauer <s.hauer@pengutronix.de>, Jassi Brar <jassisinghbrar@gmail.com>,
- linux-kernel@vger.kernel.org, Daniel Kurtz <djkurtz@chromium.org>,
- Dennis-YC Hsieh <dennis-yc.hsieh@mediatek.com>, YT
- Shen <yt.shen@mediatek.com>, Rob Herring <robh+dt@kernel.org>,
- linux-mediatek@lists.infradead.org, Houlong Wei <houlong.wei@mediatek.com>,
- Sascha Hauer <kernel@pengutronix.de>,
- Matthias Brugger <matthias.bgg@gmail.com>,
- Jiaguang Zhang <jiaguang.zhang@mediatek.com>,
- linux-arm-kernel@lists.infradead.org, ginny.chen@mediatek.com
+Cc: Ingo Molnar <mingo@kernel.org>, linux-s390@vger.kernel.org,
+ linux-ia64@vger.kernel.org, Pavel Tatashin <pasha.tatashin@soleen.com>,
+ linux-sh@vger.kernel.org, "mike.travis@hpe.com" <mike.travis@hpe.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ "Rafael J. Wysocki" <rafael@kernel.org>, Mathieu Malaterre <malat@debian.org>,
+ linux-kernel@vger.kernel.org, Arun KS <arunks@codeaurora.org>,
+ Wei Yang <richard.weiyang@gmail.com>, linux-mm@kvack.org,
+ Andrew Banman <andrew.banman@hpe.com>, Qian Cai <cai@lca.pw>,
+ Igor Mammedov <imammedo@redhat.com>, akpm@linux-foundation.org,
+ linuxppc-dev@lists.ozlabs.org, Dan Williams <dan.j.williams@intel.com>,
+ linux-arm-kernel@lists.infradead.org, Oscar Salvador <osalvador@suse.de>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi, Bibby:
-
-On Mon, 2019-07-01 at 15:48 +0800, Bibby Hsieh wrote:
-> GCE cannot know the register base address, this function
-> can help cmdq client to get the cmdq_client_reg structure.
+On Mon 27-05-19 13:11:48, David Hildenbrand wrote:
+> Only memory to be added to the buddy and to be onlined/offlined by
+> user space using /sys/devices/system/memory/... needs (and should have!)
+> memory block devices.
 > 
+> Factor out creation of memory block devices. Create all devices after
+> arch_add_memory() succeeded. We can later drop the want_memblock parameter,
+> because it is now effectively stale.
+> 
+> Only after memory block devices have been added, memory can be onlined
+> by user space. This implies, that memory is not visible to user space at
+> all before arch_add_memory() succeeded.
 
-Reviewed-by: CK Hu <ck.hu@mediatek.com>
+I like the memblock API to go away from the low level hotplug handling.
+The current implementation is just too convoluted and I remember I was
+fighting with subtle expectations wired deep in call chains when
+touching that code in the past (some memblocks didn't get created etc.).
+Maybe those have been addressed in the meantime.
 
-> Signed-off-by: Bibby Hsieh <bibby.hsieh@mediatek.com>
+> While at it
+> - use WARN_ON_ONCE instead of BUG_ON in moved unregister_memory()
+
+This would better be a separate patch with an explanation
+
+> - introduce find_memory_block_by_id() to search via block id
+> - Use find_memory_block_by_id() in init_memory_block() to catch
+>   duplicates
+> 
+> Cc: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+> Cc: "Rafael J. Wysocki" <rafael@kernel.org>
+> Cc: David Hildenbrand <david@redhat.com>
+> Cc: "mike.travis@hpe.com" <mike.travis@hpe.com>
+> Cc: Andrew Morton <akpm@linux-foundation.org>
+> Cc: Ingo Molnar <mingo@kernel.org>
+> Cc: Andrew Banman <andrew.banman@hpe.com>
+> Cc: Oscar Salvador <osalvador@suse.de>
+> Cc: Michal Hocko <mhocko@suse.com>
+> Cc: Pavel Tatashin <pasha.tatashin@soleen.com>
+> Cc: Qian Cai <cai@lca.pw>
+> Cc: Wei Yang <richard.weiyang@gmail.com>
+> Cc: Arun KS <arunks@codeaurora.org>
+> Cc: Mathieu Malaterre <malat@debian.org>
+> Signed-off-by: David Hildenbrand <david@redhat.com>
+
+Other than that looks good to me.
+Acked-by: Michal Hocko <mhocko@suse.com>
+
 > ---
->  drivers/soc/mediatek/mtk-cmdq-helper.c | 28 ++++++++++++++++++++++++++
->  include/linux/soc/mediatek/mtk-cmdq.h  | 21 +++++++++++++++++++
->  2 files changed, 49 insertions(+)
+>  drivers/base/memory.c  | 82 +++++++++++++++++++++++++++---------------
+>  include/linux/memory.h |  2 +-
+>  mm/memory_hotplug.c    | 15 ++++----
+>  3 files changed, 63 insertions(+), 36 deletions(-)
 > 
-> diff --git a/drivers/soc/mediatek/mtk-cmdq-helper.c b/drivers/soc/mediatek/mtk-cmdq-helper.c
-> index 70ad4d806fac..ad52ac3ccfbb 100644
-> --- a/drivers/soc/mediatek/mtk-cmdq-helper.c
-> +++ b/drivers/soc/mediatek/mtk-cmdq-helper.c
-> @@ -27,6 +27,34 @@ struct cmdq_instruction {
->  	u8 op;
->  };
+> diff --git a/drivers/base/memory.c b/drivers/base/memory.c
+> index ac17c95a5f28..5a0370f0c506 100644
+> --- a/drivers/base/memory.c
+> +++ b/drivers/base/memory.c
+> @@ -39,6 +39,11 @@ static inline int base_memory_block_id(int section_nr)
+>  	return section_nr / sections_per_block;
+>  }
 >  
-> +int cmdq_dev_get_client_reg(struct device *dev,
-> +			    struct cmdq_client_reg *client_reg, int idx)
+> +static inline int pfn_to_block_id(unsigned long pfn)
 > +{
-> +	struct of_phandle_args spec;
-> +	int err;
+> +	return base_memory_block_id(pfn_to_section_nr(pfn));
+> +}
 > +
-> +	if (!client_reg)
-> +		return -ENOENT;
+>  static int memory_subsys_online(struct device *dev);
+>  static int memory_subsys_offline(struct device *dev);
+>  
+> @@ -582,10 +587,9 @@ int __weak arch_get_memory_phys_device(unsigned long start_pfn)
+>   * A reference for the returned object is held and the reference for the
+>   * hinted object is released.
+>   */
+> -struct memory_block *find_memory_block_hinted(struct mem_section *section,
+> -					      struct memory_block *hint)
+> +static struct memory_block *find_memory_block_by_id(int block_id,
+> +						    struct memory_block *hint)
+>  {
+> -	int block_id = base_memory_block_id(__section_nr(section));
+>  	struct device *hintdev = hint ? &hint->dev : NULL;
+>  	struct device *dev;
+>  
+> @@ -597,6 +601,14 @@ struct memory_block *find_memory_block_hinted(struct mem_section *section,
+>  	return to_memory_block(dev);
+>  }
+>  
+> +struct memory_block *find_memory_block_hinted(struct mem_section *section,
+> +					      struct memory_block *hint)
+> +{
+> +	int block_id = base_memory_block_id(__section_nr(section));
 > +
-> +	err = of_parse_phandle_with_args(dev->of_node, "mediatek,gce-client-reg",
-> +					 "#subsys-cells", idx, &spec);
-> +	if (err < 0) {
-> +		dev_err(dev,
-> +			"error %d can't parse gce-client-reg property (%d)",
-> +			err, idx);
+> +	return find_memory_block_by_id(block_id, hint);
+> +}
 > +
-> +		return err;
+>  /*
+>   * For now, we have a linear search to go find the appropriate
+>   * memory_block corresponding to a particular phys_index. If
+> @@ -658,6 +670,11 @@ static int init_memory_block(struct memory_block **memory, int block_id,
+>  	unsigned long start_pfn;
+>  	int ret = 0;
+>  
+> +	mem = find_memory_block_by_id(block_id, NULL);
+> +	if (mem) {
+> +		put_device(&mem->dev);
+> +		return -EEXIST;
+> +	}
+>  	mem = kzalloc(sizeof(*mem), GFP_KERNEL);
+>  	if (!mem)
+>  		return -ENOMEM;
+> @@ -699,44 +716,53 @@ static int add_memory_block(int base_section_nr)
+>  	return 0;
+>  }
+>  
+> +static void unregister_memory(struct memory_block *memory)
+> +{
+> +	if (WARN_ON_ONCE(memory->dev.bus != &memory_subsys))
+> +		return;
+> +
+> +	/* drop the ref. we got via find_memory_block() */
+> +	put_device(&memory->dev);
+> +	device_unregister(&memory->dev);
+> +}
+> +
+>  /*
+> - * need an interface for the VM to add new memory regions,
+> - * but without onlining it.
+> + * Create memory block devices for the given memory area. Start and size
+> + * have to be aligned to memory block granularity. Memory block devices
+> + * will be initialized as offline.
+>   */
+> -int hotplug_memory_register(int nid, struct mem_section *section)
+> +int create_memory_block_devices(unsigned long start, unsigned long size)
+>  {
+> -	int block_id = base_memory_block_id(__section_nr(section));
+> -	int ret = 0;
+> +	const int start_block_id = pfn_to_block_id(PFN_DOWN(start));
+> +	int end_block_id = pfn_to_block_id(PFN_DOWN(start + size));
+>  	struct memory_block *mem;
+> +	unsigned long block_id;
+> +	int ret = 0;
+>  
+> -	mutex_lock(&mem_sysfs_mutex);
+> +	if (WARN_ON_ONCE(!IS_ALIGNED(start, memory_block_size_bytes()) ||
+> +			 !IS_ALIGNED(size, memory_block_size_bytes())))
+> +		return -EINVAL;
+>  
+> -	mem = find_memory_block(section);
+> -	if (mem) {
+> -		mem->section_count++;
+> -		put_device(&mem->dev);
+> -	} else {
+> +	mutex_lock(&mem_sysfs_mutex);
+> +	for (block_id = start_block_id; block_id != end_block_id; block_id++) {
+>  		ret = init_memory_block(&mem, block_id, MEM_OFFLINE);
+>  		if (ret)
+> -			goto out;
+> -		mem->section_count++;
+> +			break;
+> +		mem->section_count = sections_per_block;
+> +	}
+> +	if (ret) {
+> +		end_block_id = block_id;
+> +		for (block_id = start_block_id; block_id != end_block_id;
+> +		     block_id++) {
+> +			mem = find_memory_block_by_id(block_id, NULL);
+> +			mem->section_count = 0;
+> +			unregister_memory(mem);
+> +		}
+>  	}
+> -
+> -out:
+>  	mutex_unlock(&mem_sysfs_mutex);
+>  	return ret;
+>  }
+>  
+> -static void
+> -unregister_memory(struct memory_block *memory)
+> -{
+> -	BUG_ON(memory->dev.bus != &memory_subsys);
+> -
+> -	/* drop the ref. we got via find_memory_block() */
+> -	put_device(&memory->dev);
+> -	device_unregister(&memory->dev);
+> -}
+> -
+>  void unregister_memory_section(struct mem_section *section)
+>  {
+>  	struct memory_block *mem;
+> diff --git a/include/linux/memory.h b/include/linux/memory.h
+> index 474c7c60c8f2..db3e8567f900 100644
+> --- a/include/linux/memory.h
+> +++ b/include/linux/memory.h
+> @@ -111,7 +111,7 @@ extern int register_memory_notifier(struct notifier_block *nb);
+>  extern void unregister_memory_notifier(struct notifier_block *nb);
+>  extern int register_memory_isolate_notifier(struct notifier_block *nb);
+>  extern void unregister_memory_isolate_notifier(struct notifier_block *nb);
+> -int hotplug_memory_register(int nid, struct mem_section *section);
+> +int create_memory_block_devices(unsigned long start, unsigned long size);
+>  extern void unregister_memory_section(struct mem_section *);
+>  extern int memory_dev_init(void);
+>  extern int memory_notify(unsigned long val, void *v);
+> diff --git a/mm/memory_hotplug.c b/mm/memory_hotplug.c
+> index 4b9d2974f86c..b1fde90bbf19 100644
+> --- a/mm/memory_hotplug.c
+> +++ b/mm/memory_hotplug.c
+> @@ -259,13 +259,7 @@ static int __meminit __add_section(int nid, unsigned long phys_start_pfn,
+>  		return -EEXIST;
+>  
+>  	ret = sparse_add_one_section(nid, phys_start_pfn, altmap);
+> -	if (ret < 0)
+> -		return ret;
+> -
+> -	if (!want_memblock)
+> -		return 0;
+> -
+> -	return hotplug_memory_register(nid, __pfn_to_section(phys_start_pfn));
+> +	return ret < 0 ? ret : 0;
+>  }
+>  
+>  /*
+> @@ -1107,6 +1101,13 @@ int __ref add_memory_resource(int nid, struct resource *res)
+>  	if (ret < 0)
+>  		goto error;
+>  
+> +	/* create memory block devices after memory was added */
+> +	ret = create_memory_block_devices(start, size);
+> +	if (ret) {
+> +		arch_remove_memory(nid, start, size, NULL);
+> +		goto error;
 > +	}
 > +
-> +	client_reg->subsys = spec.args[0];
-> +	client_reg->offset = spec.args[1];
-> +	client_reg->size = spec.args[2];
-> +	of_node_put(spec.np);
-> +
-> +	return 0;
-> +}
-> +EXPORT_SYMBOL(cmdq_dev_get_client_reg);
-> +
->  static void cmdq_client_timeout(struct timer_list *t)
->  {
->  	struct cmdq_client *client = from_timer(client, t, timer);
-> diff --git a/include/linux/soc/mediatek/mtk-cmdq.h b/include/linux/soc/mediatek/mtk-cmdq.h
-> index a345870a6d10..be402c4c740e 100644
-> --- a/include/linux/soc/mediatek/mtk-cmdq.h
-> +++ b/include/linux/soc/mediatek/mtk-cmdq.h
-> @@ -15,6 +15,12 @@
->  
->  struct cmdq_pkt;
->  
-> +struct cmdq_client_reg {
-> +	u8 subsys;
-> +	u16 offset;
-> +	u16 size;
-> +};
-> +
->  struct cmdq_client {
->  	spinlock_t lock;
->  	u32 pkt_cnt;
-> @@ -142,4 +148,19 @@ int cmdq_pkt_flush_async(struct cmdq_pkt *pkt, cmdq_async_flush_cb cb,
->   */
->  int cmdq_pkt_flush(struct cmdq_pkt *pkt);
->  
-> +/**
-> + * cmdq_dev_get_client_reg() - parse cmdq client reg from the device
-> + *			       node of CMDQ client
-> + * @dev:	device of CMDQ mailbox clienti
-> + * @client_reg: CMDQ client reg pointer
-> + * @idx:	the index of desired reg
-> + *
-> + * Return: 0 for success; else the error code is returned
-> + *
-> + * Help CMDQ client pasing the cmdq client reg
-> + * from the device node of CMDQ client.
-> + */
-> +int cmdq_dev_get_client_reg(struct device *dev,
-> +			    struct cmdq_client_reg *client_reg, int idx);
-> +
->  #endif	/* __MTK_CMDQ_H__ */
+>  	if (new_node) {
+>  		/* If sysfs file of new node can't be created, cpu on the node
+>  		 * can't be hot-added. There is no rollback way now.
+> -- 
+> 2.20.1
+> 
 
-
+-- 
+Michal Hocko
+SUSE Labs
 
 _______________________________________________
 linux-arm-kernel mailing list
