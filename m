@@ -2,74 +2,64 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1AE865B223
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 30 Jun 2019 23:45:40 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 180AC5B299
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  1 Jul 2019 03:01:43 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:References:To:Subject:From:Reply-To:Cc:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=xeCwIZchqR2jnVpzVaa+zNahk0/Iwq1JWl5ZC7CIcZ4=; b=f/XBLmaSKVNAaUpx/wrhOpWuC/
-	1MuLJfQrkTsgf3a3pZdZc/mlKWl5Sn95nZrlyqR+y9+fju8sSVaviAbhJEZAXd4VWcfYT57ZJqTDA
-	iJqLz+a0paLf2d9J4+hWKzMHoq725AouifsuarCeD0x8QBsDvipBlYoe9k0K5yTxG2pWLE1lEZvDZ
-	CsbqqOZJlnjiXnzmfu7l+hajFzHFzuc2tCYOuPeBAHOl5kbAIK1MRp9GJ1rdTSMkXdcRqPx+/kyEA
-	XE8mQ+SKtqHOLhJxHAnHtidUuBRZ8JMvf92GDmQQekYb5lwIVwTGy78eIxJZ8IJwQJq5ttEEw0Weo
-	NiuPtxOw==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=eEfask9h/5JdAhYpodzinD5wjjmHT97wz5NyLmtoBDY=; b=eCd
+	5Ye10Wy0UYEKiS8yKfU3PB2Hj86s5e5PQpl/PNJK9FF11XU4+Tb8Is6Ge1glE5a3UMpD4Wn7lm1T0
+	RbEBq2LulUiOdkrC7in4vR+5VaenxMIXBZnGeSBFqizCb5dwfwdOxq1eYAKGt4eqijD+ZJyNaDpry
+	3m9hmgxbmCtbt2NyogyyKIMplOr6wDlkizJIalAypR57zb9crvwPDAYHknSH2x8WRS1ANcL6I1sNt
+	REFnVEIFLT4G/BmoXkz5sgEEh4rzQmFzgqljwH1hbLCDAWwAj/h7B8ken29VRaV2LpJyyGbTUOEBK
+	PM33uTh7oH4mgMZIDuRUh5SF67JYePA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hhhde-0006fe-Ax; Sun, 30 Jun 2019 21:45:34 +0000
-Received: from hostingweb31-40.netsons.net ([89.40.174.40])
+	id 1hhkhQ-0005tD-MN; Mon, 01 Jul 2019 01:01:40 +0000
+Received: from conuserg-12.nifty.com ([210.131.2.79])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hhhdQ-0005ro-6s
- for linux-arm-kernel@lists.infradead.org; Sun, 30 Jun 2019 21:45:22 +0000
-Received: from [78.134.78.251] (port=38792 helo=[192.168.77.66])
- by hostingweb31.netsons.net with esmtpsa
- (TLSv1.2:ECDHE-RSA-AES128-GCM-SHA256:128) (Exim 4.92)
- (envelope-from <luca@lucaceresoli.net>)
- id 1hhhd6-000CcS-Hw; Sun, 30 Jun 2019 23:45:00 +0200
-From: Luca Ceresoli <luca@lucaceresoli.net>
-Subject: Re: [PATCH v9 2/2] media: v4l: xilinx: Add Xilinx MIPI CSI-2 Rx
- Subsystem driver
-To: Vishal Sagar <vishal.sagar@xilinx.com>, Hyun Kwon <hyunk@xilinx.com>,
- laurent.pinchart@ideasonboard.com, mchehab@kernel.org, robh+dt@kernel.org,
- mark.rutland@arm.com, Michal Simek <michals@xilinx.com>,
- linux-media@vger.kernel.org, devicetree@vger.kernel.org,
- hans.verkuil@cisco.com, linux-arm-kernel@lists.infradead.org,
- linux-kernel@vger.kernel.org, Dinesh Kumar <dineshk@xilinx.com>,
- Sandip Kothari <sandipk@xilinx.com>, Jacopo Mondi <jacopo@jmondi.org>
-References: <1560247809-117978-1-git-send-email-vishal.sagar@xilinx.com>
- <1560247809-117978-3-git-send-email-vishal.sagar@xilinx.com>
-Message-ID: <b51bdf5d-4002-5ec6-d687-b97b4f8bbd78@lucaceresoli.net>
-Date: Sun, 30 Jun 2019 23:45:00 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.7.0
-MIME-Version: 1.0
-In-Reply-To: <1560247809-117978-3-git-send-email-vishal.sagar@xilinx.com>
-Content-Language: en-US
-X-AntiAbuse: This header was added to track abuse,
- please include it with any abuse report
-X-AntiAbuse: Primary Hostname - hostingweb31.netsons.net
-X-AntiAbuse: Original Domain - lists.infradead.org
-X-AntiAbuse: Originator/Caller UID/GID - [47 12] / [47 12]
-X-AntiAbuse: Sender Address Domain - lucaceresoli.net
-X-Get-Message-Sender-Via: hostingweb31.netsons.net: authenticated_id:
- luca@lucaceresoli.net
-X-Authenticated-Sender: hostingweb31.netsons.net: luca@lucaceresoli.net
-X-Source: 
-X-Source-Args: 
-X-Source-Dir: 
+ id 1hhkgT-0005cQ-H0; Mon, 01 Jul 2019 01:00:43 +0000
+Received: from grover.flets-west.jp (softbank126125154139.bbtec.net
+ [126.125.154.139]) (authenticated)
+ by conuserg-12.nifty.com with ESMTP id x610x4fr000634;
+ Mon, 1 Jul 2019 09:59:05 +0900
+DKIM-Filter: OpenDKIM Filter v2.10.3 conuserg-12.nifty.com x610x4fr000634
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nifty.com;
+ s=dec2015msa; t=1561942746;
+ bh=k6lypsY8EtklIWOXM9lo9DSpQkaOGO3EP2tLY2qrygs=;
+ h=From:To:Cc:Subject:Date:From;
+ b=RV7ivx/luT13tyKFQqp2bzeMpPuELrJCg9fzB9Izj3h9p/ZMwQ1dZT6LLW+TGOiia
+ y7GXNUCQeMJvbLyYJp4c6896ESTp4uj92EuSL6k9rlafDuvM+I5/D/zuLKRV7aX5Mr
+ hKleV/abWphBI55RVHfAyHVvem0AZalk/lBgfViVIVL2e3dI9lRxL0wq3+JfFGanC5
+ mv6ZNUnGJUBGxfJbiLw9xV/uRqek9ZvLivUrGDZ0JN/YI/Bxjikn/ddnD2lc99zBwI
+ nic+be8jWSUlygiFUgs6kWl8faUFT40BXRNmZSzifX/qacxH8tCcUgk4os320VPQke
+ eIRoc/XiFB7og==
+X-Nifty-SrcIP: [126.125.154.139]
+From: Masahiro Yamada <yamada.masahiro@socionext.com>
+To: linux-kbuild@vger.kernel.org
+Subject: [PATCH 0/7] Compile-test UAPI and kernel headers
+Date: Mon,  1 Jul 2019 09:58:38 +0900
+Message-Id: <20190701005845.12475-1-yamada.masahiro@socionext.com>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190630_144520_486066_7FC08825 
-X-CRM114-Status: GOOD (  20.31  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190630_180041_815117_6FBC1E05 
+X-CRM114-Status: UNSURE (   7.55  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 1.0 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (1.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [210.131.2.79 listed in list.dnswl.org]
+ 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -81,177 +71,81 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
+Cc: Song Liu <songliubraving@fb.com>,
+ Jakub Kicinski <jakub.kicinski@netronome.com>, linux-doc@vger.kernel.org,
+ Palmer Dabbelt <palmer@sifive.com>, Alexei Starovoitov <ast@kernel.org>,
+ Masahiro Yamada <yamada.masahiro@socionext.com>,
+ Joel Fernandes <joel@joelfernandes.org>, linux-riscv@lists.infradead.org,
+ Sam Ravnborg <sam@ravnborg.org>, Kees Cook <keescook@chromium.org>,
+ xdp-newbies@vger.kernel.org, Daniel Borkmann <daniel@iogearbox.net>,
+ Jonathan Corbet <corbet@lwn.net>, Anton Vorontsov <anton@enomsg.org>,
+ John Fastabend <john.fastabend@gmail.com>, Yonghong Song <yhs@fb.com>,
+ Albert Ou <aou@eecs.berkeley.edu>, Jesper Dangaard Brouer <hawk@kernel.org>,
+ Michal Marek <michal.lkml@markovi.net>, linux-mediatek@lists.infradead.org,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ linux-arm-kernel@lists.infradead.org, Tony Luck <tony.luck@intel.com>,
+ netdev@vger.kernel.org, linux-kernel@vger.kernel.org,
+ "David S. Miller" <davem@davemloft.net>, Colin Cross <ccross@android.com>,
+ bpf@vger.kernel.org, Martin KaFai Lau <kafai@fb.com>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Vishal,
 
-a few questions below about the SLBF error management.
+1/7: add CONFIG_CC_CAN_LINK to use it in 2/7
 
-On 11/06/19 12:10, Vishal Sagar wrote:
-> The Xilinx MIPI CSI-2 Rx Subsystem soft IP is used to capture images
-> from MIPI CSI-2 camera sensors and output AXI4-Stream video data ready
-> for image processing. Please refer to PG232 for details.
-> 
-> The driver is used to set the number of active lanes, if enabled
-> in hardware. The CSI2 Rx controller filters out all packets except for
-> the packets with data type fixed in hardware. RAW8 packets are always
-> allowed to pass through.
-> 
-> It is also used to setup and handle interrupts and enable the core. It
-> logs all the events in respective counters between streaming on and off.
-> 
-> The driver supports only the video format bridge enabled configuration.
-> Some data types like YUV 422 10bpc, RAW16, RAW20 are supported when the
-> CSI v2.0 feature is enabled in design. When the VCX feature is enabled,
-> the maximum number of virtual channels becomes 16 from 4.
-> 
-> Signed-off-by: Vishal Sagar <vishal.sagar@xilinx.com>
-> Reviewed-by: Hyun Kwon <hyun.kwon@xilinx.com>
+2/7: Compile-test exported headers
 
-...
+3/7: Do not generate intermediate wrappers.
+     This will avoid header search path issue.
 
-> --- /dev/null
-> +++ b/drivers/media/platform/xilinx/xilinx-csi2rxss.c
+4/7: maybe useful for 7/7 and in some other places.
+     Add header-test-pattern-y syntax.
 
-...
-> +/**
-> + * xcsi2rxss_irq_handler - Interrupt handler for CSI-2
-> + * @irq: IRQ number
-> + * @dev_id: Pointer to device state
-> + *
-> + * In the interrupt handler, a list of event counters are updated for
-> + * corresponding interrupts. This is useful to get status / debug.
-> + *
-> + * In case of stream line buffer full condition, the IP is reset, stopped and
-> + * an event is raised.
-> + *
-> + * Return: IRQ_HANDLED after handling interrupts
-> + *         IRQ_NONE is no interrupts
-> + */
-> +static irqreturn_t xcsi2rxss_irq_handler(int irq, void *dev_id)
-> +{
-> +	struct xcsi2rxss_state *state = (struct xcsi2rxss_state *)dev_id;
-> +	struct xcsi2rxss_core *core = &state->core;
-> +	u32 status;
-> +
-> +	status = xcsi2rxss_read(core, XCSI_ISR_OFFSET) & XCSI_ISR_ALLINTR_MASK;
-> +	dev_dbg_ratelimited(core->dev, "interrupt status = 0x%08x\n", status);
-> +
-> +	if (!status)
-> +		return IRQ_NONE;
-> +
-> +	/* Received a short packet */
-> +	if (status & XCSI_ISR_SPFIFONE) {
-> +		dev_dbg_ratelimited(core->dev, "Short packet = 0x%08x\n",
-> +				    xcsi2rxss_read(core, XCSI_SPKTR_OFFSET));
-> +	}
-> +
-> +	/* Short packet FIFO overflow */
-> +	if (status & XCSI_ISR_SPFIFOF)
-> +		dev_alert_ratelimited(core->dev, "Short packet FIFO overflowed\n");
-> +
-> +	/*
-> +	 * Stream line buffer full
-> +	 * This means there is a backpressure from downstream IP
-> +	 */
-> +	if (status & XCSI_ISR_SLBF) {
-> +		dev_alert_ratelimited(core->dev, "Stream Line Buffer Full!\n");
-> +		if (core->rst_gpio) {
-> +			gpiod_set_value(core->rst_gpio, 1);
-> +			/* minimum 40 dphy_clk_200M cycles */
-> +			ndelay(250);
-> +			gpiod_set_value(core->rst_gpio, 0);
-> +		}
-> +		xcsi2rxss_stop_stream(state);
+5/7: Minor cleanup of gen_kheaders.sh
 
-I've been hit by the dreadful "Stream Line Buffer Full" error, getting
-the CSI-2 RX completely stuck in SLBF and not transmitting any frames
-sporadically after glitches in the incoming MIPI stream. And I found
-that adding xcsi2rxss_start_stream() here just after
-xcsi2rxss_stop_stream() allows to continue the stream with almost no
-interruption and without userspace intervention.
+6/7: Exclude all files without ".h" extension
+     from the kheaders_data.tar.xz
+     This will be needed by 7/7 because we need to
+     exclude "*.h.s" from the archive
 
-Do you think this is a reliable solution, or does it have side-effects I
-didn't encounter? Note I'm not using pm nor the ctrls, so register
-writes are limited to the enable/disable code paths.
+7/7: Compile-test kernel-space headers in include/.
 
-Does video_aresetn also reset registers?
 
-BTW in my code I also moved xcsi2rxss_stop_stream() before the if
-(core->rst_gpio) {}. There is no strong reason for this, I didn't
-observe any functional difference, it just looks
-more logical to me to stop the IP before resetting it.
+Masahiro Yamada (7):
+  init/Kconfig: add CONFIG_CC_CAN_LINK
+  kbuild: compile-test exported headers to ensure they are
+    self-contained
+  kbuild: do not create wrappers for header-test-y
+  kbuild: support header-test-pattern-y
+  kheaders: remove meaningless -R option of 'ls'
+  kheaders: include only headers into kheaders_data.tar.xz
+  kbuild: compile-test kernel headers to ensure they are self-contained
 
-...
+ .gitignore                         |    1 -
+ Documentation/dontdiff             |    1 -
+ Documentation/kbuild/makefiles.txt |   13 +-
+ Makefile                           |    4 +-
+ include/Kbuild                     | 1253 ++++++++++++++++++++++++++++
+ init/Kconfig                       |   24 +
+ kernel/gen_kheaders.sh             |   51 +-
+ net/bpfilter/Kconfig               |    2 +-
+ scripts/Makefile.build             |   10 +-
+ scripts/Makefile.lib               |   13 +-
+ usr/.gitignore                     |    1 -
+ usr/Makefile                       |    2 +
+ usr/include/.gitignore             |    3 +
+ usr/include/Makefile               |  131 +++
+ 14 files changed, 1462 insertions(+), 47 deletions(-)
+ create mode 100644 include/Kbuild
+ create mode 100644 usr/include/.gitignore
+ create mode 100644 usr/include/Makefile
 
-> +static int xcsi2rxss_probe(struct platform_device *pdev)
-> +{
-> +	struct v4l2_subdev *subdev;
-> +	struct xcsi2rxss_state *xcsi2rxss;
-> +	struct xcsi2rxss_core *core;
-> +	struct resource *res;
-> +	int ret, num_ctrls, i;
-> +
-> +	xcsi2rxss = devm_kzalloc(&pdev->dev, sizeof(*xcsi2rxss), GFP_KERNEL);
-> +	if (!xcsi2rxss)
-> +		return -ENOMEM;
-> +
-> +	core = &xcsi2rxss->core;
-> +	core->dev = &pdev->dev;
-> +
-> +	core->clks = devm_kmemdup(core->dev, xcsi2rxss_clks,
-> +				  sizeof(xcsi2rxss_clks), GFP_KERNEL);
-> +	if (!core->clks)
-> +		return -ENOMEM;
-> +
-> +	/* Reset GPIO */
-> +	core->rst_gpio = devm_gpiod_get_optional(core->dev, "reset",
-> +						 GPIOD_OUT_HIGH);
-
-Is GPIOD_OUT_HIGH correct? video_aresetn is active low.
-
-> +	if (IS_ERR(core->rst_gpio)) {
-> +		if (PTR_ERR(core->rst_gpio) != -EPROBE_DEFER)
-> +			dev_err(core->dev, "Video Reset GPIO not setup in DT");
-> +		return PTR_ERR(core->rst_gpio);
-> +	}
-> +
-> +	mutex_init(&xcsi2rxss->lock);
-> +
-> +	ret = xcsi2rxss_parse_of(xcsi2rxss);
-> +	if (ret < 0)
-> +		return ret;
-> +
-> +	res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
-> +	core->iomem = devm_ioremap_resource(core->dev, res);
-> +	if (IS_ERR(core->iomem))
-> +		return PTR_ERR(core->iomem);
-> +
-> +	core->num_clks = ARRAY_SIZE(xcsi2rxss_clks);
-> +
-> +	ret = clk_bulk_get(core->dev, core->num_clks, core->clks);
-> +	if (ret)
-> +		return ret;
-> +
-> +	ret = clk_bulk_prepare_enable(core->num_clks, core->clks);
-> +	if (ret)
-> +		goto err_clk_put;
-> +
-> +	if (xcsi2rxss->core.rst_gpio) {
-> +		gpiod_set_value_cansleep(xcsi2rxss->core.rst_gpio, 1);
-> +		/* minimum of 40 dphy_clk_200M cycles */
-> +		usleep_range(1, 2);
-> +		gpiod_set_value_cansleep(xcsi2rxss->core.rst_gpio, 0);
-> +	}
-
-"xcsi2rxss->core" -> "core" in these lines.
-
-Thanks,
 -- 
-Luca
+2.17.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
