@@ -2,142 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2A1A95BB7B
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  1 Jul 2019 14:28:13 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 60E895BB84
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  1 Jul 2019 14:30:21 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:MIME-Version:
-	Date:Message-ID:From:To:Subject:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8pt+hRBfR75WRWFDUzCDRM6YDlxdCSG0MJfv7IZFdig=; b=hmnI+I+QcMcH/D
-	Pn8z2UdOhj7ppxUC50Ml73E2j83Sbcfh5ViMZz+Ofqze0sX01P9vny3exz2ol6tsOuQ96i+ige447
-	t+3RV7iiMU7fwFOuPYxP5jzNW+lQxzvu/tR2IO8iXqTQndiaiLqR3Te9dw4Qt3JUW+N7CTFngIM4h
-	iSYqv9YMAMRbNKKZzHMT7JuiCsMf18IOqoAWgl3FoV/0szQyoIxNkxB/xMaB84HTXG0DqqeIf0etR
-	4NpThYAI+yyimKrOQWQORv9V70epoEpl1/yI+Pha9sKK/1l4qSI6oGC2Cf4sIOdY9ri2tULX9EeAs
-	7ecOT885ZklBrKqdpTpQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=lrRrUe+j2F0RG0DJVByAykdNEo1LUXaJfRn6aX5H7XU=; b=dyAH3p3EUDEazTEXJV9F8kDHr
+	zGHL7WJmvQOlZAlhTx+G8uJR7ZfKwoStkG8GkR+0BpQEEZeDLZbIddYgSDoP1vAcPj5MlyW/EbsEQ
+	z+e+HueijtR5vDZlflzJuBa1LQGr9SRUzg6D2lPOA3ERRgyEtz897OQAKWq1N6bCbd9bPdFE2W30O
+	dWsuUdp/wHO0BMu3To+KLLRtamMlH6b/K6vSeLKjcwI1kn3roLJxhCBX/dNpkbUCBGGb70vqY8Suh
+	o1ahyJqugxtKGC8N0h3c7md9eiTu2LlmCHMRFF8QCQePRMB6U2IwLtrHYxF9EmxGgWK7Daks6O+Pj
+	LwJIA2bhA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hhvPl-0004pF-Ak; Mon, 01 Jul 2019 12:28:09 +0000
-Received: from mailout2.w1.samsung.com ([210.118.77.12])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hhvPb-0004ec-U8
- for linux-arm-kernel@lists.infradead.org; Mon, 01 Jul 2019 12:28:02 +0000
-Received: from eucas1p2.samsung.com (unknown [182.198.249.207])
- by mailout2.w1.samsung.com (KnoxPortal) with ESMTP id
- 20190701122756euoutp02e8f3c2ba6bad80f22c48399f37218772~tSD3yQuM-1868818688euoutp02z
- for <linux-arm-kernel@lists.infradead.org>;
- Mon,  1 Jul 2019 12:27:56 +0000 (GMT)
-DKIM-Filter: OpenDKIM Filter v2.11.0 mailout2.w1.samsung.com
- 20190701122756euoutp02e8f3c2ba6bad80f22c48399f37218772~tSD3yQuM-1868818688euoutp02z
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
- s=mail20170921; t=1561984076;
- bh=Hx0x2zbLgjF0f2X6qYJaj0io7AMHEwjMRrJnmP/v1+4=;
- h=Subject:To:Cc:From:Date:In-Reply-To:References:From;
- b=DTWV0hy755ozyTq+W60ZrT7/Ho/DdXqpu5b9Qg5dL3ANvIMrKbfKgMJ7p2bTYwPyl
- xfqXeeKUN+UHb8SEdDy64KKgnsQAhbbwG47uU/QgVL1Ky0927ASMTl18KqRwobrJMi
- nC9wsGxp4kg/9hFs0Wy2tCUN5TStoCpY9ZlS3Ii8=
-Received: from eusmges3new.samsung.com (unknown [203.254.199.245]) by
- eucas1p1.samsung.com (KnoxPortal) with ESMTP id
- 20190701122755eucas1p156372a2c826bc0f7e86607f6e65ce63c~tSD22MBCl1727617276eucas1p1c;
- Mon,  1 Jul 2019 12:27:55 +0000 (GMT)
-Received: from eucas1p1.samsung.com ( [182.198.249.206]) by
- eusmges3new.samsung.com (EUCPMTA) with SMTP id 01.80.04325.B4CF91D5; Mon,  1
- Jul 2019 13:27:55 +0100 (BST)
-Received: from eusmtrp1.samsung.com (unknown [182.198.249.138]) by
- eucas1p1.samsung.com (KnoxPortal) with ESMTPA id
- 20190701122754eucas1p1d3dec4883761c4669591cd4a712dc539~tSD2BZGcb1707717077eucas1p1R;
- Mon,  1 Jul 2019 12:27:54 +0000 (GMT)
-Received: from eusmgms2.samsung.com (unknown [182.198.249.180]) by
- eusmtrp1.samsung.com (KnoxPortal) with ESMTP id
- 20190701122754eusmtrp1c37c4c15b12c2b0c6b3bb97ffd3e5dce~tSD1zHN_Y2350123501eusmtrp1M;
- Mon,  1 Jul 2019 12:27:54 +0000 (GMT)
-X-AuditID: cbfec7f5-b8fff700000010e5-07-5d19fc4b1623
-Received: from eusmtip1.samsung.com ( [203.254.199.221]) by
- eusmgms2.samsung.com (EUCPMTA) with SMTP id 42.64.04140.A4CF91D5; Mon,  1
- Jul 2019 13:27:54 +0100 (BST)
-Received: from [106.120.51.74] (unknown [106.120.51.74]) by
- eusmtip1.samsung.com (KnoxPortal) with ESMTPA id
- 20190701122753eusmtip107a13dc98816fd15e9c713a96ba8c60e~tSD1EUDm13120331203eusmtip1_;
- Mon,  1 Jul 2019 12:27:53 +0000 (GMT)
-Subject: Re: [PATCH v2 7/7] arm64: dts: allwinner: a64: enable ANX6345
- bridge on Teres-I
-To: Maxime Ripard <maxime.ripard@bootlin.com>
-From: Andrzej Hajda <a.hajda@samsung.com>
-Message-ID: <64471471-5b4d-3c1f-a0e3-e02ee78ca23c@samsung.com>
-Date: Mon, 1 Jul 2019 14:27:51 +0200
+	id 1hhvRq-0006fW-Oq; Mon, 01 Jul 2019 12:30:18 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hhvRh-0006M1-Tx
+ for linux-arm-kernel@lists.infradead.org; Mon, 01 Jul 2019 12:30:12 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 32942344;
+ Mon,  1 Jul 2019 05:30:07 -0700 (PDT)
+Received: from [10.1.197.57] (e110467-lin.cambridge.arm.com [10.1.197.57])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id E450D3F246;
+ Mon,  1 Jul 2019 05:30:05 -0700 (PDT)
+Subject: Re: [PATCH] iommu: io-pgtable: Support non-coherent page tables
+To: Will Deacon <will@kernel.org>, Will Deacon <will.deacon@arm.com>,
+ bjorn.andersson@linaro.org
+References: <20190515233234.22990-1-bjorn.andersson@linaro.org>
+ <20190618173929.GG4270@fuggles.cambridge.arm.com>
+ <20190624115349.f62uqypyt7l73skf@willie-the-truck>
+ <20190625115646.pgsuhz6dza5bsa6q@willie-the-truck>
+From: Robin Murphy <robin.murphy@arm.com>
+Message-ID: <22833309-753c-2ded-f0ba-247eb577e74f@arm.com>
+Date: Mon, 1 Jul 2019 13:30:00 +0100
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.7.1
+ Thunderbird/60.6.1
 MIME-Version: 1.0
-In-Reply-To: <20190701095842.fvganvycce2cy7jn@flea>
-Content-Language: en-US
-X-Brightmail-Tracker: H4sIAAAAAAAAA02Sa0hTcRjG+5/bjqPFcVa+WnRZERRollb/KKQrnagPXb6UIXasg0k6Y0ft
- Sq3MMMuyJGVLNyujqYPEy9KVraYpJU5NKy1tdiULTfIC62I5j4HffrzP87wvD7wsqTYzgWys
- NlHUaYU4DaOkbHUeV9CW3wGRIefapuEM11MCp9Z9Rviv7QqJzbUuGrcNfWfwcNszAqfcusvg
- cnsjjQduvCXw+SsFClz64SWNW+25DL79qoXA3T0OhFOraxW4q6QR4bLSayT22E0U9jibiDV+
- /C3PCMFbTVbEm6zH+U813xT8dX0LxZe8L6b56uF8iq8ydo3O0gw0X1p0nuH7XC4Ff2+4m+Yd
- eVYF775QT/BlBaf4+x16ZptvhHL1fjEuNlnULQ7fqzxgTPlFHvo048jw4yqkRw3T05EPC1wY
- PM94RKUjJavmLAgMxiKFV1BzgwgGCxbIwgCCdo+F+Z/4YX5NysIdBE32wvF4L4LirEuE1+XH
- RcBlR84YT+WCICM/i/aaSK6VhoHmL2MCwy2EP2UdY2tVXDh49HbSyxQ3H5rM3bSXp3G7oLXc
- jmSPLzw1fKS87MOFgsnxbmwPyYVA7c1cWubZcK83l5TZH15/NBPew8C1s/DC2q+QO2yAcnfL
- OPvB1/rycZ4JDVkXKZlPgdtylpTDaQgqSqpIWVgFNfUttMxr4We/c5TZUZ4C7b2+8uEpcNWW
- Q8pjFaSdU8vuueBurBjf4g+3m4eYTKQxTqhmnFDHOKGOcUKdfEQVIX8xSYqPEaVQrXg4WBLi
- pSRtTPC+hPhSNPq2DSP1Q5Xo4e9oJ+JYpJms0ndCpJoWkqWj8U4ELKmZqnJYAiLVqv3C0WOi
- LiFKlxQnSk40g6U0/qrjk7r3qLkYIVE8KIqHRN1/lWB9AvUoKt1Wq5qzr7hGFztnxBBRqQ1/
- ELZ1R8iznr7+2c1bMxICCoXd2WSPru7S+sG1fW98LSeWLis7vWuJ4a3R3RX8pDpw78qdrphH
- mSu/RJ30+5mXmb7ZdP2MNWy5LSg1O3TFNU/2u4vK6HzVuo60zk0plkHhw6yNycS8nEnvE6Sz
- i/9u/6yhpAPCkkWkThL+AUKHY5WyAwAA
-X-Brightmail-Tracker: H4sIAAAAAAAAA02Sa0hTYRjHec9tR2l1nLdXI8whXWm2TfO10kqIDn4K6kNZYiMPKu0iO1t0
- +dBiZbbQlLJomluoJGa0VFJnMlpmqDgzU1FYXlKji7cuo5ldnCvw24/n+f8eeOBP46LHZCSd
- o9ZxWrVCKaYCia7fL93bUhcj0rdf+bwOFbg6MHS5fQqgP0+KcWRpc5HozfdZCnnedGLIWPGI
- Qg32bhJ9vfcWQ1eLKwWo7t0AifrsZRSqGuzF0OgHB0CXW9sEyG3rBqi+rgRHXns5gbzOHmxv
- MFvh/Y2xteW1gC2vPc9OPv8kYEsNvQRrG39Asq0eK8E2m91Ls/w7JFtXc5ViZ1wuAdvoGSVZ
- x91aATty7SXG1ldeYFuGDNTBoDTJbq1Gr+PWZ2t4XZL4mBTJJNJEJJHFJUqk8oT0nbJ4cWzy
- 7kxOmXOa08Ymn5Bkm40/8dzJtWc8z5qBAXSFmUAADZk4+MUyjJtAIC1iqgC85R6h/Itw2GKZ
- xv0cDBcHTJQ/9AnAi5dmBL5FMJMGXzmMy6EQZhsssN4gfSGcGSRhyU0b4TfuE3DOUbR8lmI2
- w1/1Q8ssZJKh12BftgkmBvZYRkkfhzJHYGFe6b9MEOy4M0H4OICRw3LHGOZjnJHApsEF0s9R
- sHG6DPdzOByesGBFQGReoZtXKOYVinmFYgVEDQjh9LwqS8XLJLxCxevVWZKTGlUdWKrLk3Zv
- QxMwzRxyAoYG4lXCTcMwXUQqTvNnVU4AaVwcInRUR6SLhJmKs+c4rSZDq1dyvBPELz1XjEeG
- ntQslU+ty5DGSxNQojRBniDfgcThwnzm2XERk6XQcac4LpfT/vcwOiDSAIpSzIUvqnYl9RdP
- O0tWhe7ZN2enD6f+Cnt9N2B87sfUgktHzSibvRWPjTJr33viW0fmhuh8W76wIGh7YZ99fqgz
- 9li/1ZRkK6ONu/Qx16PsUUeDZxdGD4cc2O/pdY3lyhNLHdFtqx+qK/Ma5j/mbNzauOZ2R/XT
- vSkp7Up3niFNTPDZCukWXMsr/gKK1jwnRAMAAA==
-X-CMS-MailID: 20190701122754eucas1p1d3dec4883761c4669591cd4a712dc539
-X-Msg-Generator: CA
-X-RootMTR: 20190607094103epcas1p4babbb11ec050974a62f2af79bc64d752
-X-EPHeader: CA
-CMS-TYPE: 201P
-X-CMS-RootMailID: 20190607094103epcas1p4babbb11ec050974a62f2af79bc64d752
-References: <CA+E=qVckHLqRngsfK=AcvstrD0ymEfRkYyhS_kBtZ3YWdE3L=g@mail.gmail.com>
- <20190605101317.GA9345@lst.de> <20190605120237.ekmytfxcwbjaqy3x@flea>
- <E1hYsvP-0000PY-Pz@stardust.g4.wien.funkfeuer.at>
- <20190607062802.m5wslx3imiqooq5a@flea>
- <CGME20190607094103epcas1p4babbb11ec050974a62f2af79bc64d752@epcas1p4.samsung.com>
- <20190607094030.GA12373@lst.de>
- <66707fcc-b48e-02d3-5ed7-6b7e77d53266@samsung.com>
- <20190612152022.c3cfhp4cauhzhfyr@flea>
- <bb2c2c00-b46e-1984-088f-861ac8952331@samsung.com>
- <20190701095842.fvganvycce2cy7jn@flea>
+In-Reply-To: <20190625115646.pgsuhz6dza5bsa6q@willie-the-truck>
+Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190701_052800_279444_63F45EB8 
-X-CRM114-Status: GOOD (  28.01  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190701_053010_063597_8DE7B643 
+X-CRM114-Status: GOOD (  45.11  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [210.118.77.12 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -149,108 +65,352 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- devicetree <devicetree@vger.kernel.org>, Sean Paul <seanpaul@chromium.org>,
- David Airlie <airlied@linux.ie>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- linux-kernel <linux-kernel@vger.kernel.org>,
- dri-devel <dri-devel@lists.freedesktop.org>, Chen-Yu Tsai <wens@csie.org>,
- Rob Herring <robh+dt@kernel.org>, Torsten Duwe <duwe@lst.de>,
- Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
- Daniel Vetter <daniel@ffwll.ch>, Harald Geyer <harald@ccbib.org>,
- Thierry Reding <thierry.reding@gmail.com>,
- Thomas Gleixner <tglx@linutronix.de>,
- arm-linux <linux-arm-kernel@lists.infradead.org>,
- Icenowy Zheng <icenowy@aosc.io>
-Content-Type: text/plain; charset="us-ascii"
+Cc: linux-arm-msm@vger.kernel.org, Joerg Roedel <joro@8bytes.org>,
+ Vivek Gautam <vgautam@qti.qualcomm.com>, linux-kernel@vger.kernel.org,
+ iommu@lists.linux-foundation.org, linux-arm-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 01.07.2019 11:58, Maxime Ripard wrote:
-> Hi!
->
-> On Fri, Jun 28, 2019 at 12:39:32PM +0200, Andrzej Hajda wrote:
->> On 12.06.2019 17:20, Maxime Ripard wrote:
->>>> I am not sure if I understand whole discussion here, but I also do not
->>>> understand whole edp-connector thing.
->>> The context is this one:
->>> https://patchwork.freedesktop.org/patch/257352/?series=51182&rev=1
->>> https://patchwork.freedesktop.org/patch/283012/?series=56163&rev=1
->>> https://patchwork.freedesktop.org/patch/286468/?series=56776&rev=2
+On 25/06/2019 12:56, Will Deacon wrote:
+> On Mon, Jun 24, 2019 at 12:53:49PM +0100, Will Deacon wrote:
+>> On Tue, Jun 18, 2019 at 06:39:33PM +0100, Will Deacon wrote:
+>>> On Wed, May 15, 2019 at 04:32:34PM -0700, Bjorn Andersson wrote:
+>>>> Describe the memory related to page table walks as non-cachable for iommu
+>>>> instances that are not DMA coherent.
+>>>>
+>>>> Signed-off-by: Bjorn Andersson <bjorn.andersson@linaro.org>
+>>>> ---
+>>>>   drivers/iommu/io-pgtable-arm.c | 12 +++++++++---
+>>>>   1 file changed, 9 insertions(+), 3 deletions(-)
+>>>>
+>>>> diff --git a/drivers/iommu/io-pgtable-arm.c b/drivers/iommu/io-pgtable-arm.c
+>>>> index 4e21efbc4459..68ff22ffd2cb 100644
+>>>> --- a/drivers/iommu/io-pgtable-arm.c
+>>>> +++ b/drivers/iommu/io-pgtable-arm.c
+>>>> @@ -803,9 +803,15 @@ arm_64_lpae_alloc_pgtable_s1(struct io_pgtable_cfg *cfg, void *cookie)
+>>>>   		return NULL;
+>>>>   
+>>>>   	/* TCR */
+>>>> -	reg = (ARM_LPAE_TCR_SH_IS << ARM_LPAE_TCR_SH0_SHIFT) |
+>>>> -	      (ARM_LPAE_TCR_RGN_WBWA << ARM_LPAE_TCR_IRGN0_SHIFT) |
+>>>> -	      (ARM_LPAE_TCR_RGN_WBWA << ARM_LPAE_TCR_ORGN0_SHIFT);
+>>>> +	if (cfg->quirks & IO_PGTABLE_QUIRK_NO_DMA) {
+>>>> +		reg = (ARM_LPAE_TCR_SH_IS << ARM_LPAE_TCR_SH0_SHIFT) |
+>>>> +		      (ARM_LPAE_TCR_RGN_WBWA << ARM_LPAE_TCR_IRGN0_SHIFT) |
+>>>> +		      (ARM_LPAE_TCR_RGN_WBWA << ARM_LPAE_TCR_ORGN0_SHIFT);
+>>>> +	} else {
+>>>> +		reg = (ARM_LPAE_TCR_SH_IS << ARM_LPAE_TCR_SH0_SHIFT) |
 >>>
->>> TL;DR: This bridge is being used on ARM laptops that can come with
->>> different eDP panels. Some of these panels require a regulator to be
->>> enabled for the panel to work, and this is obviously something that
->>> should be in the DT.
+>>> Nit: this should be outer-shareable (ARM_LPAE_TCR_SH_OS).
 >>>
->>> However, we can't really describe the panel itself, since the vendor
->>> uses several of them and just relies on the eDP bus to do its job at
->>> retrieving the EDIDs. A generic panel isn't really working either
->>> since that would mean having a generic behaviour for all the panels
->>> connected to that bus, which isn't there either.
->>>
->>> The connector allows to expose this nicely.
->> As VESA presentation says[1] eDP is based on DP but is much more
->> flexible, it is up to integrator (!!!) how the connection, power
->> up/down, initialization sequence should be performed. Trying to cover
->> every such case in edp-connector seems to me similar to panel-simple
->> attempt failure. Moreover there is no such thing as physical standard
->> eDP connector. Till now I though DT connector should describe physical
->> connector on the device, now I am lost, are there some DT bindings
->> guidelines about definition of a connector?
-> This might be semantics but I guess we're in some kind of grey area?
->
-> Like, for eDP, if it's soldered I guess we could say that there's no
-> connector. But what happens if for some other board, that signal is
-> routed through a ribbon?
->
-> You could argue that there's no physical connector in both cases, or
-> that there's one in both, or one for the ribbon and no connector for
-> the one soldered in.
+>>>> +		      (ARM_LPAE_TCR_RGN_NC << ARM_LPAE_TCR_IRGN0_SHIFT) |
+>>>> +		      (ARM_LPAE_TCR_RGN_NC << ARM_LPAE_TCR_ORGN0_SHIFT);
+>>>> +	}>>
+>>> Should we also be doing something similar for the short-descriptor code
+>>> in io-pgtable-arm-v7s.c? Looks like you just need to use ARM_V7S_RGN_NC
+>>> instead of ARM_V7S_RGN_WBWA when initialising ttbr0 for non-coherent
+>>> SMMUs.
+>>
+>> Do you plan to respin this? I'll need it this week if you're shooting for
+>> 5.3.
+> 
+> I started having a crack at this myself, but in doing so I realised that
+> using IO_PGTABLE_QUIRK_NO_DMA for this isn't quite right based on its
+> current description. When that flag is set, we can rely on the page-table walker
+> being coherent, but I don't think it works the other way around: you can't
+> rely on the flag being clear meaning that the page-table walker is not
+> coherent.
+> 
+> Ideally, we'd use something like is_device_dma_coherent, but that's a Xen
+> thing and it doesn't look reliable for the IOMMU.
+> 
+> Looking at the users of io-pgtable, we have:
+> 
+> panfrost_mmu.c	- I can't see where the page-table even gets installed...
+> arm-smmu.c	- IO_PGTABLE_QUIRK_NO_DMA is reliable
+> arm-smmu-v3.c	- IO_PGTABLE_QUIRK_NO_DMA is reliable
+> ipmmu-vmsa.c	- Always sets TTBCR as cacheable (ignores tcr)
+> msm_iommu.c	- Always non-coherent
+> mtk_iommu.c	- Ignores tcr
+> qcom_iommu.c	- Always non-coherent
+> 
+> so we could go ahead and change IO_PGTABLE_QUIRK_NO_DMA to do what you want
+> without breaking any drivers. In any case, the driver is free to override
+> the control register if it knows better, as seems to be the case for some
+> of these already.
+> 
+> See patch below. I'll rework your patch on top.
+> 
+> Will
+> 
+> --->8
+> 
+>  From 4f41845b340783eaec9cc2840fe3cb9a00574054 Mon Sep 17 00:00:00 2001
+> From: Will Deacon <will@kernel.org>
+> Date: Tue, 25 Jun 2019 12:51:25 +0100
+> Subject: [PATCH] iommu/io-pgtable: Replace IO_PGTABLE_QUIRK_NO_DMA with
+>   specific flag
+> 
+> IO_PGTABLE_QUIRK_NO_DMA is a bit of a misnomer, since it's really just
+> an indication of whether or not the page-table walker for the IOMMU is
+> coherent with the CPU caches. Since cache coherency is more than just a
+> quirk, replace the flag with its own field in the io_pgtable_cfg
+> structure.
 
+The comment may have ended up being a bit misleading, but the name 
+itself wasn't a misnomer - it specifically meant "skip DMA API calls", 
+which served two purposes:
 
-This is not about ribbon vs soldering. It is about usage: this
-connection is static across the whole life of the device (except
-exceptional things: repair, non-standard usage, etc).
+  - Firstly, for the selftests where we didn't have a valid DMA API 
+device available.
+  - Secondly, as a performance hack to short-circuit the DMA API call 
+overhead (and fiddly intermediate-table-flush-flag logic) when, due to 
+other assumptions elsewhere, we could be sure that they would be no-ops.
 
-And "the real connector" is (at least for me) something where end-user
-can connect/disconnect different things: USB, HDMI, ethernet, etc. And
-obviously to be functional it should be somehow standardized. So even if
-there could be some grey area, I do not see it here.
+I don't massively object to this change having been merged (after all, 
+the original reasoning was mine[1]), but I don't believe it really makes 
+anything better either - it's mostly just moving the goalposts. As it 
+stands, now it looks like you can make a coherent SMMU do non-cacheable 
+walks on a per-context basis by choosing not to set this flag, but 
+anyone trying that will quickly find it subtly and fundamentally broken.
 
+Robin.
 
->
->> Maybe instead of edp-connector one would introduce integrator's specific
->> connector, for example with compatible "olimex,teres-edp-connector"
->> which should follow edp abstract connector rules? This will be at least
->> consistent with below presentation[1] - eDP requirements depends on
->> integrator. Then if olimex has standard way of dealing with panels
->> present in olimex/teres platforms the driver would then create
->> drm_panel/drm_connector/drm_bridge(?) according to these rules, I guess.
->> Anyway it still looks fishy for me :), maybe because I am not
->> familiarized with details of these platforms.
-> That makes sense yes
+[1] 
+https://lore.kernel.org/linux-arm-kernel/a508a6a5-8e1f-3660-51ef-e65bc382931e@arm.com/
 
-
-And what if some panel can be used with this pseudo-connecter and in
-some different hw directly? Code duplication? DT overlays?
-
-
-Regards
-
-Andrzej
-
-
->
-> Maxime
->
-> --
-> Maxime Ripard, Bootlin
-> Embedded Linux and Kernel engineering
-> https://bootlin.com
-
-
+> Cc: Bjorn Andersson <bjorn.andersson@linaro.org>
+> Signed-off-by: Will Deacon <will@kernel.org>
+> ---
+>   drivers/iommu/arm-smmu-v3.c        |  4 +---
+>   drivers/iommu/arm-smmu.c           |  4 +---
+>   drivers/iommu/io-pgtable-arm-v7s.c | 10 +++++-----
+>   drivers/iommu/io-pgtable-arm.c     | 19 ++++++++-----------
+>   drivers/iommu/ipmmu-vmsa.c         |  1 +
+>   include/linux/io-pgtable.h         | 11 ++++-------
+>   6 files changed, 20 insertions(+), 29 deletions(-)
+> 
+> diff --git a/drivers/iommu/arm-smmu-v3.c b/drivers/iommu/arm-smmu-v3.c
+> index 65de2458999f..8ff8f61d9e1c 100644
+> --- a/drivers/iommu/arm-smmu-v3.c
+> +++ b/drivers/iommu/arm-smmu-v3.c
+> @@ -1789,13 +1789,11 @@ static int arm_smmu_domain_finalise(struct iommu_domain *domain)
+>   		.pgsize_bitmap	= smmu->pgsize_bitmap,
+>   		.ias		= ias,
+>   		.oas		= oas,
+> +		.coherent_walk	= smmu->features & ARM_SMMU_FEAT_COHERENCY,
+>   		.tlb		= &arm_smmu_gather_ops,
+>   		.iommu_dev	= smmu->dev,
+>   	};
+>   
+> -	if (smmu->features & ARM_SMMU_FEAT_COHERENCY)
+> -		pgtbl_cfg.quirks = IO_PGTABLE_QUIRK_NO_DMA;
+> -
+>   	if (smmu_domain->non_strict)
+>   		pgtbl_cfg.quirks |= IO_PGTABLE_QUIRK_NON_STRICT;
+>   
+> diff --git a/drivers/iommu/arm-smmu.c b/drivers/iommu/arm-smmu.c
+> index 5e54cc0a28b3..009156bb6d42 100644
+> --- a/drivers/iommu/arm-smmu.c
+> +++ b/drivers/iommu/arm-smmu.c
+> @@ -895,13 +895,11 @@ static int arm_smmu_init_domain_context(struct iommu_domain *domain,
+>   		.pgsize_bitmap	= smmu->pgsize_bitmap,
+>   		.ias		= ias,
+>   		.oas		= oas,
+> +		.coherent_walk	= smmu->features & ARM_SMMU_FEAT_COHERENT_WALK,
+>   		.tlb		= smmu_domain->tlb_ops,
+>   		.iommu_dev	= smmu->dev,
+>   	};
+>   
+> -	if (smmu->features & ARM_SMMU_FEAT_COHERENT_WALK)
+> -		pgtbl_cfg.quirks = IO_PGTABLE_QUIRK_NO_DMA;
+> -
+>   	if (smmu_domain->non_strict)
+>   		pgtbl_cfg.quirks |= IO_PGTABLE_QUIRK_NON_STRICT;
+>   
+> diff --git a/drivers/iommu/io-pgtable-arm-v7s.c b/drivers/iommu/io-pgtable-arm-v7s.c
+> index 9a8a8870e267..8454de93e356 100644
+> --- a/drivers/iommu/io-pgtable-arm-v7s.c
+> +++ b/drivers/iommu/io-pgtable-arm-v7s.c
+> @@ -215,7 +215,7 @@ static void *__arm_v7s_alloc_table(int lvl, gfp_t gfp,
+>   		dev_err(dev, "Page table does not fit in PTE: %pa", &phys);
+>   		goto out_free;
+>   	}
+> -	if (table && !(cfg->quirks & IO_PGTABLE_QUIRK_NO_DMA)) {
+> +	if (table && !cfg->coherent_walk) {
+>   		dma = dma_map_single(dev, table, size, DMA_TO_DEVICE);
+>   		if (dma_mapping_error(dev, dma))
+>   			goto out_free;
+> @@ -249,7 +249,7 @@ static void __arm_v7s_free_table(void *table, int lvl,
+>   	struct device *dev = cfg->iommu_dev;
+>   	size_t size = ARM_V7S_TABLE_SIZE(lvl);
+>   
+> -	if (!(cfg->quirks & IO_PGTABLE_QUIRK_NO_DMA))
+> +	if (!cfg->coherent_walk)
+>   		dma_unmap_single(dev, __arm_v7s_dma_addr(table), size,
+>   				 DMA_TO_DEVICE);
+>   	if (lvl == 1)
+> @@ -261,7 +261,7 @@ static void __arm_v7s_free_table(void *table, int lvl,
+>   static void __arm_v7s_pte_sync(arm_v7s_iopte *ptep, int num_entries,
+>   			       struct io_pgtable_cfg *cfg)
+>   {
+> -	if (cfg->quirks & IO_PGTABLE_QUIRK_NO_DMA)
+> +	if (cfg->coherent_walk)
+>   		return;
+>   
+>   	dma_sync_single_for_device(cfg->iommu_dev, __arm_v7s_dma_addr(ptep),
+> @@ -727,7 +727,6 @@ static struct io_pgtable *arm_v7s_alloc_pgtable(struct io_pgtable_cfg *cfg,
+>   			    IO_PGTABLE_QUIRK_NO_PERMS |
+>   			    IO_PGTABLE_QUIRK_TLBI_ON_MAP |
+>   			    IO_PGTABLE_QUIRK_ARM_MTK_4GB |
+> -			    IO_PGTABLE_QUIRK_NO_DMA |
+>   			    IO_PGTABLE_QUIRK_NON_STRICT))
+>   		return NULL;
+>   
+> @@ -846,7 +845,8 @@ static int __init arm_v7s_do_selftests(void)
+>   		.tlb = &dummy_tlb_ops,
+>   		.oas = 32,
+>   		.ias = 32,
+> -		.quirks = IO_PGTABLE_QUIRK_ARM_NS | IO_PGTABLE_QUIRK_NO_DMA,
+> +		.coherent_walk = true,
+> +		.quirks = IO_PGTABLE_QUIRK_ARM_NS,
+>   		.pgsize_bitmap = SZ_4K | SZ_64K | SZ_1M | SZ_16M,
+>   	};
+>   	unsigned int iova, size, iova_start;
+> diff --git a/drivers/iommu/io-pgtable-arm.c b/drivers/iommu/io-pgtable-arm.c
+> index 2454ac11aa97..91d0a4228b58 100644
+> --- a/drivers/iommu/io-pgtable-arm.c
+> +++ b/drivers/iommu/io-pgtable-arm.c
+> @@ -252,7 +252,7 @@ static void *__arm_lpae_alloc_pages(size_t size, gfp_t gfp,
+>   		return NULL;
+>   
+>   	pages = page_address(p);
+> -	if (!(cfg->quirks & IO_PGTABLE_QUIRK_NO_DMA)) {
+> +	if (!cfg->coherent_walk) {
+>   		dma = dma_map_single(dev, pages, size, DMA_TO_DEVICE);
+>   		if (dma_mapping_error(dev, dma))
+>   			goto out_free;
+> @@ -278,7 +278,7 @@ static void *__arm_lpae_alloc_pages(size_t size, gfp_t gfp,
+>   static void __arm_lpae_free_pages(void *pages, size_t size,
+>   				  struct io_pgtable_cfg *cfg)
+>   {
+> -	if (!(cfg->quirks & IO_PGTABLE_QUIRK_NO_DMA))
+> +	if (!cfg->coherent_walk)
+>   		dma_unmap_single(cfg->iommu_dev, __arm_lpae_dma_addr(pages),
+>   				 size, DMA_TO_DEVICE);
+>   	free_pages((unsigned long)pages, get_order(size));
+> @@ -296,7 +296,7 @@ static void __arm_lpae_set_pte(arm_lpae_iopte *ptep, arm_lpae_iopte pte,
+>   {
+>   	*ptep = pte;
+>   
+> -	if (!(cfg->quirks & IO_PGTABLE_QUIRK_NO_DMA))
+> +	if (!cfg->coherent_walk)
+>   		__arm_lpae_sync_pte(ptep, cfg);
+>   }
+>   
+> @@ -374,8 +374,7 @@ static arm_lpae_iopte arm_lpae_install_table(arm_lpae_iopte *table,
+>   
+>   	old = cmpxchg64_relaxed(ptep, curr, new);
+>   
+> -	if ((cfg->quirks & IO_PGTABLE_QUIRK_NO_DMA) ||
+> -	    (old & ARM_LPAE_PTE_SW_SYNC))
+> +	if (cfg->coherent_walk || (old & ARM_LPAE_PTE_SW_SYNC))
+>   		return old;
+>   
+>   	/* Even if it's not ours, there's no point waiting; just kick it */
+> @@ -416,8 +415,7 @@ static int __arm_lpae_map(struct arm_lpae_io_pgtable *data, unsigned long iova,
+>   		pte = arm_lpae_install_table(cptep, ptep, 0, cfg);
+>   		if (pte)
+>   			__arm_lpae_free_pages(cptep, tblsz, cfg);
+> -	} else if (!(cfg->quirks & IO_PGTABLE_QUIRK_NO_DMA) &&
+> -		   !(pte & ARM_LPAE_PTE_SW_SYNC)) {
+> +	} else if (!cfg->coherent_walk && !(pte & ARM_LPAE_PTE_SW_SYNC)) {
+>   		__arm_lpae_sync_pte(ptep, cfg);
+>   	}
+>   
+> @@ -799,7 +797,7 @@ arm_64_lpae_alloc_pgtable_s1(struct io_pgtable_cfg *cfg, void *cookie)
+>   	u64 reg;
+>   	struct arm_lpae_io_pgtable *data;
+>   
+> -	if (cfg->quirks & ~(IO_PGTABLE_QUIRK_ARM_NS | IO_PGTABLE_QUIRK_NO_DMA |
+> +	if (cfg->quirks & ~(IO_PGTABLE_QUIRK_ARM_NS |
+>   			    IO_PGTABLE_QUIRK_NON_STRICT))
+>   		return NULL;
+>   
+> @@ -894,8 +892,7 @@ arm_64_lpae_alloc_pgtable_s2(struct io_pgtable_cfg *cfg, void *cookie)
+>   	struct arm_lpae_io_pgtable *data;
+>   
+>   	/* The NS quirk doesn't apply at stage 2 */
+> -	if (cfg->quirks & ~(IO_PGTABLE_QUIRK_NO_DMA |
+> -			    IO_PGTABLE_QUIRK_NON_STRICT))
+> +	if (cfg->quirks & ~(IO_PGTABLE_QUIRK_NON_STRICT))
+>   		return NULL;
+>   
+>   	data = arm_lpae_alloc_pgtable(cfg);
+> @@ -1230,7 +1227,7 @@ static int __init arm_lpae_do_selftests(void)
+>   	struct io_pgtable_cfg cfg = {
+>   		.tlb = &dummy_tlb_ops,
+>   		.oas = 48,
+> -		.quirks = IO_PGTABLE_QUIRK_NO_DMA,
+> +		.coherent_walk = true,
+>   	};
+>   
+>   	for (i = 0; i < ARRAY_SIZE(pgsize); ++i) {
+> diff --git a/drivers/iommu/ipmmu-vmsa.c b/drivers/iommu/ipmmu-vmsa.c
+> index 9a380c10655e..12bcb95bdaa8 100644
+> --- a/drivers/iommu/ipmmu-vmsa.c
+> +++ b/drivers/iommu/ipmmu-vmsa.c
+> @@ -431,6 +431,7 @@ static int ipmmu_domain_init_context(struct ipmmu_vmsa_domain *domain)
+>   	 * TODO: Add support for coherent walk through CCI with DVM and remove
+>   	 * cache handling. For now, delegate it to the io-pgtable code.
+>   	 */
+> +	domain->cfg.coherent_walk = false;
+>   	domain->cfg.iommu_dev = domain->mmu->root->dev;
+>   
+>   	/*
+> diff --git a/include/linux/io-pgtable.h b/include/linux/io-pgtable.h
+> index 76969a564831..b5a450a3bb47 100644
+> --- a/include/linux/io-pgtable.h
+> +++ b/include/linux/io-pgtable.h
+> @@ -44,6 +44,8 @@ struct iommu_gather_ops {
+>    *                 tables.
+>    * @ias:           Input address (iova) size, in bits.
+>    * @oas:           Output address (paddr) size, in bits.
+> + * @coherent_walk  A flag to indicate whether or not page table walks made
+> + *                 by the IOMMU are coherent with the CPU caches.
+>    * @tlb:           TLB management callbacks for this set of tables.
+>    * @iommu_dev:     The device representing the DMA configuration for the
+>    *                 page table walker.
+> @@ -68,11 +70,6 @@ struct io_pgtable_cfg {
+>   	 *	when the SoC is in "4GB mode" and they can only access the high
+>   	 *	remap of DRAM (0x1_00000000 to 0x1_ffffffff).
+>   	 *
+> -	 * IO_PGTABLE_QUIRK_NO_DMA: Guarantees that the tables will only ever
+> -	 *	be accessed by a fully cache-coherent IOMMU or CPU (e.g. for a
+> -	 *	software-emulated IOMMU), such that pagetable updates need not
+> -	 *	be treated as explicit DMA data.
+> -	 *
+>   	 * IO_PGTABLE_QUIRK_NON_STRICT: Skip issuing synchronous leaf TLBIs
+>   	 *	on unmap, for DMA domains using the flush queue mechanism for
+>   	 *	delayed invalidation.
+> @@ -81,12 +78,12 @@ struct io_pgtable_cfg {
+>   	#define IO_PGTABLE_QUIRK_NO_PERMS	BIT(1)
+>   	#define IO_PGTABLE_QUIRK_TLBI_ON_MAP	BIT(2)
+>   	#define IO_PGTABLE_QUIRK_ARM_MTK_4GB	BIT(3)
+> -	#define IO_PGTABLE_QUIRK_NO_DMA		BIT(4)
+> -	#define IO_PGTABLE_QUIRK_NON_STRICT	BIT(5)
+> +	#define IO_PGTABLE_QUIRK_NON_STRICT	BIT(4)
+>   	unsigned long			quirks;
+>   	unsigned long			pgsize_bitmap;
+>   	unsigned int			ias;
+>   	unsigned int			oas;
+> +	bool				coherent_walk;
+>   	const struct iommu_gather_ops	*tlb;
+>   	struct device			*iommu_dev;
+>   
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
