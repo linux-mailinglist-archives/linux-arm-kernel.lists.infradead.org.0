@@ -2,54 +2,87 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DF3795B62F
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  1 Jul 2019 09:56:33 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id EA00B5B63E
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  1 Jul 2019 10:02:32 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=epPqp5tilZcQKEyO5O1r41LpFxIYoZeFnb9D94uzmB0=; b=r9nD/EcibjNz+P
-	t2AL/gHjLriHBokdzEUTs6tRRJlvgh4CDU9oMPNiY7zYtL0uOb9uyy78Ynp42YUvni7k4aJdJ/JOI
-	lBWolyZyV1o5WXg2VioRO4K1pYG45JN7qyi85wnl5JFnugqk/hY2ehNqSnhUxaGVa7x+Smpi5xMvw
-	TpO7NqOJOLxqMU3UZMck119klG79SUvxbq1aHociY6BwHtcUi7fTj/KPRjyXBEUfEociY7URQniRe
-	j+IJs0adorw+FZJJpCuAW+Xs5IN3E33KPcClCFjOvbTtCvzx4fvIDmDA5UDynoB8lUVTFhmyxP01q
-	yyZV3STN9Tly7LnvQeag==;
+	List-Owner; bh=Ome6cNTbm2NBkLFT4jKbr8pRotjFBmFx4aVvJjjCy+A=; b=ZnNqn3ayRYgn2i
+	YftXk7QBnGKA6cosYpaOPTMcFCsD2VhlLmkqiE5alNy0df0bt7y5QXbvqVIbURLz/1ReM3aLaodJo
+	UcNtBlik1DoATtZlaQNMJBx3niItwI11SqwTs5E1m0DTPOLvQwMIbEOGLQqzs0GG7KbydXn2zjtyT
+	YrAo18mWtNJ7qXbGnwyzza3ob3NEL4BCcMN/uGyDkmluRRn81xnjH2/mM6PzDbl6Toyh0rq+1DOD8
+	sKhOTgi4ttUzzeV8mSPRj/D+13gd1jU2RfE7UIKaa//sVw3EWrPJdYeLGMQzIMnwdLm/tsLnkHpEQ
+	EOtYRgYuKkhuLKMsspZg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hhrAt-0004Uz-Eo; Mon, 01 Jul 2019 07:56:31 +0000
-Received: from mx2.suse.de ([195.135.220.15] helo=mx1.suse.de)
+	id 1hhrGe-0006Jh-U5; Mon, 01 Jul 2019 08:02:29 +0000
+Received: from esa1.microchip.iphmx.com ([68.232.147.91])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hhrAf-0004UP-3w
- for linux-arm-kernel@lists.infradead.org; Mon, 01 Jul 2019 07:56:18 +0000
-X-Virus-Scanned: by amavisd-new at test-mx.suse.de
-Received: from relay2.suse.de (unknown [195.135.220.254])
- by mx1.suse.de (Postfix) with ESMTP id 9AD85AEBD;
- Mon,  1 Jul 2019 07:56:15 +0000 (UTC)
-Date: Mon, 1 Jul 2019 09:56:15 +0200
-From: Michal Hocko <mhocko@kernel.org>
-To: David Hildenbrand <david@redhat.com>
-Subject: Re: [PATCH v3 05/11] drivers/base/memory: Pass a block_id to
- init_memory_block()
-Message-ID: <20190701075615.GE6376@dhcp22.suse.cz>
-References: <20190527111152.16324-1-david@redhat.com>
- <20190527111152.16324-6-david@redhat.com>
+ id 1hhrGR-0006Ik-Hs
+ for linux-arm-kernel@lists.infradead.org; Mon, 01 Jul 2019 08:02:18 +0000
+Received-SPF: Pass (esa1.microchip.iphmx.com: domain of
+ Ludovic.Desroches@microchip.com designates 198.175.253.82 as
+ permitted sender) identity=mailfrom;
+ client-ip=198.175.253.82; receiver=esa1.microchip.iphmx.com;
+ envelope-from="Ludovic.Desroches@microchip.com";
+ x-sender="Ludovic.Desroches@microchip.com";
+ x-conformance=spf_only; x-record-type="v=spf1";
+ x-record-text="v=spf1 mx a:ushub1.microchip.com
+ a:smtpout.microchip.com a:mx1.microchip.iphmx.com
+ a:mx2.microchip.iphmx.com include:servers.mcsv.net
+ include:mktomail.com include:spf.protection.outlook.com ~all"
+Received-SPF: None (esa1.microchip.iphmx.com: no sender
+ authenticity information available from domain of
+ postmaster@email.microchip.com) identity=helo;
+ client-ip=198.175.253.82; receiver=esa1.microchip.iphmx.com;
+ envelope-from="Ludovic.Desroches@microchip.com";
+ x-sender="postmaster@email.microchip.com"; x-conformance=spf_only
+Authentication-Results: esa1.microchip.iphmx.com;
+ dkim=none (message not signed) header.i=none;
+ spf=Pass smtp.mailfrom=Ludovic.Desroches@microchip.com;
+ spf=None smtp.helo=postmaster@email.microchip.com;
+ dmarc=pass (p=none dis=none) d=microchip.com
+X-IronPort-AV: E=Sophos;i="5.63,438,1557212400"; d="scan'208";a="41012022"
+Received: from smtpout.microchip.com (HELO email.microchip.com)
+ ([198.175.253.82])
+ by esa1.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
+ 01 Jul 2019 01:02:13 -0700
+Received: from chn-vm-ex01.mchp-main.com (10.10.87.71) by
+ chn-vm-ex03.mchp-main.com (10.10.87.152) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
+ 15.1.1713.5; Mon, 1 Jul 2019 01:02:10 -0700
+Received: from localhost (10.10.85.251) by chn-vm-ex01.mchp-main.com
+ (10.10.85.143) with Microsoft SMTP Server id 15.1.1713.5 via Frontend
+ Transport; Mon, 1 Jul 2019 01:02:09 -0700
+Date: Mon, 1 Jul 2019 10:00:51 +0200
+From: Ludovic Desroches <ludovic.desroches@microchip.com>
+To: Raag Jadav <raagjadav@gmail.com>
+Subject: Re: [PATCH] dmaengine: at_xdmac: check for non-empty xfers_list
+ before invoking callback
+Message-ID: <20190701080050.np5krtatlifnvtq5@M43218.corp.atmel.com>
+Mail-Followup-To: Raag Jadav <raagjadav@gmail.com>,
+ dmaengine@vger.kernel.org, Vinod Koul <vkoul@kernel.org>,
+ Dan Williams <dan.j.williams@intel.com>,
+ linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
+References: <1561796448-3321-1-git-send-email-raagjadav@gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190527111152.16324-6-david@redhat.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <1561796448-3321-1-git-send-email-raagjadav@gmail.com>
+User-Agent: NeoMutt/20180716
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190701_005617_304001_8A7A60D5 
-X-CRM114-Status: GOOD (  16.85  )
-X-Spam-Score: -1.3 (-)
+X-CRM114-CacheID: sfid-20190701_010215_748398_DE247236 
+X-CRM114-Status: GOOD (  12.66  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-1.3 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [195.135.220.15 listed in list.dnswl.org]
- 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
+ medium trust [68.232.147.91 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -62,94 +95,56 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-s390@vger.kernel.org, linux-ia64@vger.kernel.org,
- linux-sh@vger.kernel.org, Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- "Rafael J. Wysocki" <rafael@kernel.org>, linux-kernel@vger.kernel.org,
- Wei Yang <richard.weiyang@gmail.com>, linux-mm@kvack.org,
- Igor Mammedov <imammedo@redhat.com>, akpm@linux-foundation.org,
- linuxppc-dev@lists.ozlabs.org, Dan Williams <dan.j.williams@intel.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: dmaengine@vger.kernel.org, Vinod Koul <vkoul@kernel.org>,
+ Dan Williams <dan.j.williams@intel.com>, linux-arm-kernel@lists.infradead.org,
+ linux-kernel@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon 27-05-19 13:11:46, David Hildenbrand wrote:
-> We'll rework hotplug_memory_register() shortly, so it no longer consumes
-> pass a section.
+On Sat, Jun 29, 2019 at 01:50:48PM +0530, Raag Jadav wrote:
 > 
-> Cc: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
-> Cc: "Rafael J. Wysocki" <rafael@kernel.org>
-> Signed-off-by: David Hildenbrand <david@redhat.com>
+> tx descriptor retrieved from an empty xfers_list may not have valid
+> pointers to the callback functions.
+> Avoid calling dmaengine_desc_get_callback_invoke if xfers_list is empty.
+> 
+> Signed-off-by: Raag Jadav <raagjadav@gmail.com>
+Acked-by: Ludovic Desroches <ludovic.desroches@microchip.com>
 
-Acked-by: Michal Hocko <mhocko@suse.com>
+Thanks
 
 > ---
->  drivers/base/memory.c | 15 +++++++--------
->  1 file changed, 7 insertions(+), 8 deletions(-)
+>  drivers/dma/at_xdmac.c | 11 +++++++----
+>  1 file changed, 7 insertions(+), 4 deletions(-)
 > 
-> diff --git a/drivers/base/memory.c b/drivers/base/memory.c
-> index f180427e48f4..f914fa6fe350 100644
-> --- a/drivers/base/memory.c
-> +++ b/drivers/base/memory.c
-> @@ -651,21 +651,18 @@ int register_memory(struct memory_block *memory)
->  	return ret;
+> diff --git a/drivers/dma/at_xdmac.c b/drivers/dma/at_xdmac.c
+> index 627ef3e..b58ac72 100644
+> --- a/drivers/dma/at_xdmac.c
+> +++ b/drivers/dma/at_xdmac.c
+> @@ -1568,11 +1568,14 @@ static void at_xdmac_handle_cyclic(struct at_xdmac_chan *atchan)
+>  	struct at_xdmac_desc		*desc;
+>  	struct dma_async_tx_descriptor	*txd;
+>  
+> -	desc = list_first_entry(&atchan->xfers_list, struct at_xdmac_desc, xfer_node);
+> -	txd = &desc->tx_dma_desc;
+> +	if (!list_empty(&atchan->xfers_list)) {
+> +		desc = list_first_entry(&atchan->xfers_list,
+> +					struct at_xdmac_desc, xfer_node);
+> +		txd = &desc->tx_dma_desc;
+>  
+> -	if (txd->flags & DMA_PREP_INTERRUPT)
+> -		dmaengine_desc_get_callback_invoke(txd, NULL);
+> +		if (txd->flags & DMA_PREP_INTERRUPT)
+> +			dmaengine_desc_get_callback_invoke(txd, NULL);
+> +	}
 >  }
 >  
-> -static int init_memory_block(struct memory_block **memory,
-> -			     struct mem_section *section, unsigned long state)
-> +static int init_memory_block(struct memory_block **memory, int block_id,
-> +			     unsigned long state)
->  {
->  	struct memory_block *mem;
->  	unsigned long start_pfn;
-> -	int scn_nr;
->  	int ret = 0;
->  
->  	mem = kzalloc(sizeof(*mem), GFP_KERNEL);
->  	if (!mem)
->  		return -ENOMEM;
->  
-> -	scn_nr = __section_nr(section);
-> -	mem->start_section_nr =
-> -			base_memory_block_id(scn_nr) * sections_per_block;
-> +	mem->start_section_nr = block_id * sections_per_block;
->  	mem->end_section_nr = mem->start_section_nr + sections_per_block - 1;
->  	mem->state = state;
->  	start_pfn = section_nr_to_pfn(mem->start_section_nr);
-> @@ -694,7 +691,8 @@ static int add_memory_block(int base_section_nr)
->  
->  	if (section_count == 0)
->  		return 0;
-> -	ret = init_memory_block(&mem, __nr_to_section(section_nr), MEM_ONLINE);
-> +	ret = init_memory_block(&mem, base_memory_block_id(base_section_nr),
-> +				MEM_ONLINE);
->  	if (ret)
->  		return ret;
->  	mem->section_count = section_count;
-> @@ -707,6 +705,7 @@ static int add_memory_block(int base_section_nr)
->   */
->  int hotplug_memory_register(int nid, struct mem_section *section)
->  {
-> +	int block_id = base_memory_block_id(__section_nr(section));
->  	int ret = 0;
->  	struct memory_block *mem;
->  
-> @@ -717,7 +716,7 @@ int hotplug_memory_register(int nid, struct mem_section *section)
->  		mem->section_count++;
->  		put_device(&mem->dev);
->  	} else {
-> -		ret = init_memory_block(&mem, section, MEM_OFFLINE);
-> +		ret = init_memory_block(&mem, block_id, MEM_OFFLINE);
->  		if (ret)
->  			goto out;
->  		mem->section_count++;
+>  static void at_xdmac_handle_error(struct at_xdmac_chan *atchan)
 > -- 
-> 2.20.1
-
--- 
-Michal Hocko
-SUSE Labs
+> 2.7.4
+> 
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
