@@ -2,83 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B308B5B94A
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  1 Jul 2019 12:48:05 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 60ADF5B953
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  1 Jul 2019 12:48:34 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=sGaT02RkTY93P/3Q365Xo6xPZlq4T+cVHiGjCez1Da0=; b=Ph+NIq+kFrtyMQ
-	W+I5n7H2wxCHNElTJ4xwtZkVaZPbjVk18GWZOr9eQXrfZN0OXMghyfbXnE6kW/NBdpj0ErvdjesH1
-	GrGK/X5lhQTr3ltLZ2r7lkNaohiXVL6bMG3C3f7uXh1/BB9ATssiQEywIbEkFYyB3fxX0atzPX77f
-	T55gD1fuLXyxAaC8EhI5QvhV0mKAAhLkUnS4vgDxUKETQ3RmSNEnmfMQ7MZcxQTqRLZoQwCZjwkO4
-	CfNqr1l+kJVChthRQcDBfZfwAQ6RFmXrM0KPD7KWSqaszQ9svjboDlJnpxJutDc6KGsKqDX1eTOvd
-	XpXtr1NLQJj7sCUkqklg==;
+	List-Owner; bh=fWS2xnkEo2PzJaBy+Ly8dE5ORaklXQU6RCzGyQkcU4k=; b=ODriD3tJNuBU9D
+	RfwNqhlvQPHbQwt0PxC+7KwIkEzpB4Q7o47kt9kZ6wtuvfSZnVt8Cp0jblDp1hroecFHn6MYKXsBv
+	kAqpW9KCAt+SpIdakpBYFDiefgdUSa8SRqlyj/akUZUl2t17F7GRrOb87aRbja+m2h654L8I9hg64
+	kBgcBOb2al0kRoG++RFZVTzlIx+0W7axFUns+QS7K794vfHtoIXY5lmqYhZHbsPT/hBqSpa8XE7+K
+	Tai3TM073HF7y8OCixJ+bvNeNbLscuJsuTz+WbVc0EodblLBoh2NvGO/TD7c8neODM++Uu1c/hJWF
+	mR0u7OW/DfvVEJjRGNuw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hhtqt-0006uI-QL; Mon, 01 Jul 2019 10:48:03 +0000
-Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
+	id 1hhtrM-0007Oj-Jt; Mon, 01 Jul 2019 10:48:32 +0000
+Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hhtqI-0006YN-L6
- for linux-arm-kernel@lists.infradead.org; Mon, 01 Jul 2019 10:47:28 +0000
-Received: by mail-wm1-x342.google.com with SMTP id u8so15369105wmm.1
+ id 1hhtqJ-0006Z5-NY
+ for linux-arm-kernel@lists.infradead.org; Mon, 01 Jul 2019 10:47:29 +0000
+Received: by mail-wr1-x444.google.com with SMTP id c2so13260470wrm.8
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 01 Jul 2019 03:47:26 -0700 (PDT)
+ Mon, 01 Jul 2019 03:47:27 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=baylibre-com.20150623.gappssmtp.com; s=20150623;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=wfgjAQ3M5HY2NtkjVQDzRJpLev5yRfzCJhptr2owUzY=;
- b=zPBzDYcjDqHiHXy9jMFQwxCKaAAzbtCKZS+bwK61KcgKKpDtVjmshT4h915qhXcnxN
- GvwfCIK4DBZEZ4s2JPKlmLDWsh/l7icG41GIM20ZorILqhFXmjfYjLllTB8xnsfodCps
- Zt+QSHs1sZfGVGgZZgtsDLCQcMfhzB1vBZArWhJ6b3MIfCOM38RuEI6qunfj61p08z17
- x0U0vbKHjuPy4nXo3/46YLS53egemjbBMuCI4TRDKO/+a6HKHDCsWM05WohCj+QuxeRj
- 3bDhWP5je88qRmMmnqCYb1z3f8ld5CRz3z04Rx50kwxO3V4eR8c42qaac+j76eVocv7Z
- QwQg==
+ bh=QoklnP0bi5VlneOSfMMO/1j0O/akzR/UGUOVoiR4zJg=;
+ b=rYaIP9Z8AFkt6CFzPHllnzifEfoS3M8n6vylLz93bKjw4ukFm0EwmOLEOruJaaMNFV
+ THRhW7V96RN3MeWc9jECmk0UnxywaKuuM395kQUTkVkQ91otdIVspn3NAoz1lCVoqQXr
+ jIhtpPYC2GNXsA1fk09adtYfVcer1x+/YlVaWcSb4CdXyCtdDZbnHmgXa0tomJtTg6Ml
+ JuaCUL3mE4xkgN07UmouRA3Rib1L+P6Sm6QkL6u5UzPEplW7vKFQJhaZKKv9giKCty0Y
+ 45D/viPJ7aVxT6ZfzTMack7XC03RGwNQUpVGXylbCkr7iBcleCnXyehjG0NYDfvPY+fJ
+ b36Q==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=wfgjAQ3M5HY2NtkjVQDzRJpLev5yRfzCJhptr2owUzY=;
- b=NJggKXXwYi/wObs3D1chZbuUxdRgD1b7tSM6x/4ne6BBFf5G0Syg1P8I1vnrkF+HQB
- eH9zyfYJZxv5Aye8aVk3FUEosNAru4cfsYloWXh23s3DnbLKDUtxeLa69j5mF+hR/M8O
- 4pX6wRGMWFnrTZ11Ep/1EJnHkVqY6gkIABVTicUkLBJl5Ngnt1uItzLswCqRy5+NyOkM
- q2OdQwcX2SMzM7CXDegRWqjwuqNpb5ZYV9eQB7Cqv9Ajt3YVQbHOM/VLWG9FXYDjxD+j
- O3fDSui0nft3Kig1iFy4QKCvWXLWbGnFl/SNk6whvxGHv+bzqvX3HYK2xP2yC2hkjFP2
- xNMg==
-X-Gm-Message-State: APjAAAVlIaQxIeaGRgejpMIVvKaQWaSdEdFYbPlpjeLs0Lq7lHf1vjCu
- 5hV7KYg14Y+8NWwWFOtd+52J/A==
-X-Google-Smtp-Source: APXvYqzrQnQF/+v+bIQvryP/j5lpMQ4UpR0oBp9qdOxkvujlAZoajK57bDQABJ8zj0Dn/XghUa8Djw==
-X-Received: by 2002:a05:600c:1150:: with SMTP id
- z16mr16105586wmz.168.1561978044919; 
- Mon, 01 Jul 2019 03:47:24 -0700 (PDT)
+ bh=QoklnP0bi5VlneOSfMMO/1j0O/akzR/UGUOVoiR4zJg=;
+ b=UCBus0dIftsFZH8Vi8IgoVHleMgoQl8RxPgQUaCV6x+OQYymlo8QlaOpk0h4AXTGoM
+ wm4dTsUgkl7kOyD2oZH0nBeTt7yFstb73Nkk38hbEa45S954Cd/DIved1oIpF7ozhmQe
+ 9LdkdRjob54H1juU3XPakHfcRYY/DncXba7CVZCyvzVkSXKYcWygcQEGg8L1Zzb6dgO7
+ wXt0Spp5CKfeCPK8DBjjcE8mRTiRp/FjUtivSGCgNPbNuUoRaLoQmYSBw9irCOqX5lSj
+ AfFO9/mtfRqrY1Jkh+dcaOxGT++wfe81pDAJaIXvFp49ls161S5oOBZOeUazkCArD6WR
+ VO8w==
+X-Gm-Message-State: APjAAAU8wAOYsaIpq/lxMqYDAMcGoR9gBw6nfd3pL28h+YzdeGuYKbBx
+ Un5ZmcWphCXbikNjAttfow6V6g==
+X-Google-Smtp-Source: APXvYqyTP4k0eF1dNYLfLBPz3xOUZqajJ8MktdmUINp3t0MNrFM4AUYuYE5IkIEDgwrBspHaABU2FA==
+X-Received: by 2002:a5d:5589:: with SMTP id i9mr9222404wrv.198.1561978045919; 
+ Mon, 01 Jul 2019 03:47:25 -0700 (PDT)
 Received: from localhost.localdomain (176-150-251-154.abo.bbox.fr.
  [176.150.251.154])
  by smtp.gmail.com with ESMTPSA id d24sm11658802wra.43.2019.07.01.03.47.24
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-SHA bits=128/128);
- Mon, 01 Jul 2019 03:47:24 -0700 (PDT)
+ Mon, 01 Jul 2019 03:47:25 -0700 (PDT)
 From: Neil Armstrong <narmstrong@baylibre.com>
 To: jbrunet@baylibre.com,
-	khilman@baylibre.com
-Subject: [RFC 01/11] soc: amlogic: meson-gx-socinfo: Add SM1 and S905X3 IDs
-Date: Mon,  1 Jul 2019 12:46:55 +0200
-Message-Id: <20190701104705.18271-2-narmstrong@baylibre.com>
+	khilman@baylibre.com,
+	devicetree@vger.kernel.org
+Subject: [RFC 02/11] dt-bindings: power: amlogic,
+ meson-gx-pwrc: Add SM1 bindings
+Date: Mon,  1 Jul 2019 12:46:56 +0200
+Message-Id: <20190701104705.18271-3-narmstrong@baylibre.com>
 X-Mailer: git-send-email 2.21.0
 In-Reply-To: <20190701104705.18271-1-narmstrong@baylibre.com>
 References: <20190701104705.18271-1-narmstrong@baylibre.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190701_034726_689517_42C6B83F 
-X-CRM114-Status: GOOD (  10.33  )
+X-CRM114-CacheID: sfid-20190701_034727_765113_82038DA1 
+X-CRM114-Status: GOOD (  13.72  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:342 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:444 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -103,33 +104,90 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add the SoC IDs for the S905X3 Amlogic SM1 SoC.
+Add bindings for the Amlogic SM1 Power control:
+- the VPU power control compatible
+- the general-purpose power controller, controlling the USB, PCIe, NNA and
+  GE2D power domains.
 
 Signed-off-by: Neil Armstrong <narmstrong@baylibre.com>
 ---
- drivers/soc/amlogic/meson-gx-socinfo.c | 2 ++
- 1 file changed, 2 insertions(+)
+ .../bindings/power/amlogic,meson-gx-pwrc.txt  | 35 +++++++++++++++++++
+ include/dt-bindings/power/meson-sm1-power.h   | 15 ++++++++
+ 2 files changed, 50 insertions(+)
+ create mode 100644 include/dt-bindings/power/meson-sm1-power.h
 
-diff --git a/drivers/soc/amlogic/meson-gx-socinfo.c b/drivers/soc/amlogic/meson-gx-socinfo.c
-index bca34954518e..eb81d391b620 100644
---- a/drivers/soc/amlogic/meson-gx-socinfo.c
-+++ b/drivers/soc/amlogic/meson-gx-socinfo.c
-@@ -39,6 +39,7 @@ static const struct meson_gx_soc_id {
- 	{ "TXHD", 0x27 },
- 	{ "G12A", 0x28 },
- 	{ "G12B", 0x29 },
-+	{ "SM1", 0x2b },
+diff --git a/Documentation/devicetree/bindings/power/amlogic,meson-gx-pwrc.txt b/Documentation/devicetree/bindings/power/amlogic,meson-gx-pwrc.txt
+index 0fdc3dd1125e..f0a1e20555bf 100644
+--- a/Documentation/devicetree/bindings/power/amlogic,meson-gx-pwrc.txt
++++ b/Documentation/devicetree/bindings/power/amlogic,meson-gx-pwrc.txt
+@@ -19,6 +19,7 @@ Required properties:
+ - compatible: should be one of the following :
+ 	- "amlogic,meson-gx-pwrc-vpu" for the Meson GX SoCs
+ 	- "amlogic,meson-g12a-pwrc-vpu" for the Meson G12A SoCs
++	- "amlogic,meson-sm1-pwrc-vpu" for the Meson SM1 SoCs
+ - #power-domain-cells: should be 0
+ - amlogic,hhi-sysctrl: phandle to the HHI sysctrl node
+ - resets: phandles to the reset lines needed for this power demain sequence
+@@ -60,4 +61,38 @@ ao_sysctrl: sys-ctrl@0 {
+ 	};
  };
  
- static const struct meson_gx_package_id {
-@@ -65,6 +66,7 @@ static const struct meson_gx_package_id {
- 	{ "S905D2", 0x28, 0x10, 0xf0 },
- 	{ "S905X2", 0x28, 0x40, 0xf0 },
- 	{ "S922X", 0x29, 0x40, 0xf0 },
-+	{ "S905X3", 0x2b, 0x50, 0xf0 },
- };
++General Purpose Power Controller
++--------------------------------
  
- static inline unsigned int socinfo_to_major(u32 socinfo)
++The Amlogic SM1 SoCs embeds a General Purpose Power Controller used
++to control the power domain for, at least, the USB PHYs and PCIe
++peripherals.
++
++
++Device Tree Bindings:
++---------------------
++
++Required properties:
++- compatible: should be one of the following :
++	- "amlogic,meson-sm1-pwrc" for the Meson SM1 SoCs
++- #power-domain-cells: should be 0
++- amlogic,hhi-sysctrl: phandle to the HHI sysctrl node
++
++Parent node should have the following properties :
++- compatible: "amlogic,meson-gx-ao-sysctrl", "syscon", "simple-mfd"
++- reg: base address and size of the AO system control register space.
++
++
++Example:
++-------
++
++ao_sysctrl: sys-ctrl@0 {
++	compatible = "amlogic,meson-gx-ao-sysctrl", "syscon", "simple-mfd";
++	reg =  <0x0 0x0 0x0 0x100>;
++
++	pwrc: power-controller {
++		compatible = "amlogic,meson-sm1-pwrc";
++		#power-domain-cells = <1>;
++		amlogic,hhi-sysctrl = <&hhi>;
++	};
++};
+diff --git a/include/dt-bindings/power/meson-sm1-power.h b/include/dt-bindings/power/meson-sm1-power.h
+new file mode 100644
+index 000000000000..30e17e4a478e
+--- /dev/null
++++ b/include/dt-bindings/power/meson-sm1-power.h
+@@ -0,0 +1,15 @@
++/* SPDX-License-Identifier: (GPL-2.0+ or MIT) */
++/*
++ * Copyright (c) 2019 BayLibre, SAS
++ * Author: Neil Armstrong <narmstrong@baylibre.com>
++ */
++
++#ifndef _DT_BINDINGS_MESON_SM1_POWER_H
++#define _DT_BINDINGS_MESON_SM1_POWER_H
++
++#define PWRC_SM1_NNA_ID		0
++#define PWRC_SM1_USB_ID		1
++#define PWRC_SM1_PCIE_ID	2
++#define PWRC_SM1_GE2D_ID	3
++
++#endif
 -- 
 2.21.0
 
