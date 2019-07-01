@@ -2,81 +2,92 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 398275C5A8
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  2 Jul 2019 00:25:22 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 07A875C5BA
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  2 Jul 2019 00:43:07 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=tTlv9+bGkUetk5ZOKkcZ1jNhhHXKXIYDA+JrMLQvfdM=; b=A5nEjRPsWUcUQ2
-	IRAtq+d6rNwggLNneVkbiQq3E4zb5lxw1CNa/tufY8ZxBKOeG2UnA7DSaSBdsdg9K+MbMGeRgZs4b
-	DmcgFAkkILjPN0nr3zaKJdB5utz8JZoPHdoK8oq/kHA4LtgpDZdHsVnJauvDCeJLU5C6g07XDjE9X
-	9XwVDDst1IP1KJ3nVpiMkilOcpoqJklcDZLplw7voB8ChNCTcn6MKu5f1KU3JjtbFEAZwbvc4S0SX
-	BKKtgGjW0cv4dFztu7j0ODyzF0u2ZnLTtbXgYBAhwmBBstwc7yWLvkdU1Law58YiRC67IOMgcYaOA
-	C8JoTJj+2b8KF/1KhyNA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=WmnebABDuRhWM/z9WcHiFPF52Bsz3ulsgZDxlcD3vNc=; b=kUnuxPEZDWWjhY
+	XKw0iuDC5XZTawxKutOKpFFJBUYVwNUKfIfoRyvfRwVYSTYjYAnTa7vsdqhzg2je8nzhSi7ABjOYF
+	Wtj7dufwilgl5mPw4rfXLJWiojbDNvzjbbV5e9zkDc5uwffADBS2ePAXNJv9hm7dRI8YYbQO4XHsm
+	ykWE/2WsU5vfsiRnVQyISybTvH4g7eoMDNyVCfFFxMkJrUd05VL6OmaOl2HPdo60VoKe2TqyFPxce
+	8qOC+XNJ0OZgG8k1d/nL9tz1s3QDznL4BlpVf8j0eP6fy5TJh/+4ciEylMsnolr1vGUDel3pc4c4r
+	/4q1177gb45YrIO8EmPg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hi4jg-0002VZ-Om; Mon, 01 Jul 2019 22:25:20 +0000
-Received: from mail-io1-xd42.google.com ([2607:f8b0:4864:20::d42])
+	id 1hi50r-0000kW-3F; Mon, 01 Jul 2019 22:43:05 +0000
+Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hi4j3-0002KZ-Q6
- for linux-arm-kernel@lists.infradead.org; Mon, 01 Jul 2019 22:24:43 +0000
-Received: by mail-io1-xd42.google.com with SMTP id h6so32560175ioh.3
+ id 1hi50c-0000jx-Mu
+ for linux-arm-kernel@lists.infradead.org; Mon, 01 Jul 2019 22:42:52 +0000
+Received: by mail-wr1-x441.google.com with SMTP id c2so15519452wrm.8
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 01 Jul 2019 15:24:41 -0700 (PDT)
+ Mon, 01 Jul 2019 15:42:50 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=lixom-net.20150623.gappssmtp.com; s=20150623;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=XMyri1Kc2uUO6xCU2IcO24Tpe83UI0VvKrQ6KZuOhAU=;
- b=b1pYdXjvGR6IJz3r7vcZ/W10d9xEy0Q1egU4/nIpgqiWZSCQGbmC0Yj2PgA+Jj+bpk
- xourNJKMfRItRibpvw2EtaCtOQbu0FOHAJboaMi002paWpVJAnjCFZpnuE8CKKZilMs2
- Lo0iBT68D/W/toSa6E9HDhMCZFjL/m1FrSqqmabPVOyg2JqAQDA7EK66D5jvzklgtj5h
- 0WFkjFOVDU5kRYDhqRhDcFkAlfg2TpVCKGyOLHEM4LM9Pd5PH2TAkgyj1shjYGPmHGEs
- 8Vgv4Q3Wnpmqih2V29LcCNXhSb5YPBNp+9voq7pM3E52O1JLvLz05kLYFARm6Rcatk1/
- rC2Q==
+ d=googlemail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=TG7WWB3lc3BPx5FG8dO3TIxLT0YfJ51715wfOfLXzjQ=;
+ b=T5Wxgwrms3KLGReGHlwzTm5Mul15wvFJJSk0VFFNa+Q6//0DYJiyakj5yjRNrq+W7B
+ /GDpBBqrYBK8CYcCQ5oESw7BdCxDIkEs4buUoiJnDm2MRcFzLaqQktaxTCkrWhU0xgsq
+ h2yUShZcPyYtQPZ+edVbFohhIp708yduOWe0eoQpVgKROAgRK8vCQv/V7zh6MD7GzqZH
+ 3QmudLqgVRQDR7Ux1GfqTJGWPtqDbOf91QQwUZ0BYn0GMxdPLKEQr0ZseVy5CObg6j4D
+ EfkoUmjv6odiZwLzVj9GrZYbh56ptUTTL2x20RVwtT3M/REDzbebpaR2kvJIsoLTj48E
+ ZvOQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=XMyri1Kc2uUO6xCU2IcO24Tpe83UI0VvKrQ6KZuOhAU=;
- b=cORSKevvpyoGqNUX0FZ9u7TFcNl+nuhBE9eoP+0PUyPGXqZoh+wx7nJ4Mczj92nbBP
- Gz21BcAMaQn++ewURf3cjVvm2ldIYo2kYoXP/lpsfAeX8ljnEULVfY6hRCbsaXnvqkgp
- XQaw5epNfrlXAKhHgdaUillMIB+MkQoRIVr2Zb7T+GFN96fW75+5b5SHn510TrDNnS2C
- JMYf82cbtAIZem4Lny75mwMIV6Dqlf01nA0gCkCytagwJiKBU5rd0FI+by5sgXIMlyG+
- D/M8Z0HV59+cYDSytg8ghpeUyUanUDNv+cM97FWmfKRnock1FYzNlDJw10hHuQS7bXu1
- sRlw==
-X-Gm-Message-State: APjAAAURBv7uhGk65gMJFi2OVCO4btisu0f9Fr4eBKDFI9rTSfJLSG66
- AAsB4H+FOzUWzVy/iJMJ8hoyLt+xI4WYvLglg8yFcQ==
-X-Google-Smtp-Source: APXvYqy0De/UfjY18/K1X7cMzz6lbB+XBq2gow9/0FqRHaaXvxyzPvE5Fls4BG2oJGxMFbwvX3/fSGu32V+4cDt83OM=
-X-Received: by 2002:a5d:915a:: with SMTP id y26mr20178482ioq.207.1562019880815; 
- Mon, 01 Jul 2019 15:24:40 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=TG7WWB3lc3BPx5FG8dO3TIxLT0YfJ51715wfOfLXzjQ=;
+ b=kpEpzWj8XfS+kwXAIj40AATwDmdrgylubgxhVRTjJiYzacPKqxtcizPhq8iKTtc3+o
+ UojwNHIR2JUj0Y5vHLy8x3PcIbVuuuvH72f68DaMUBZUDwFvKJQMzl+JPwlipJY/Lq/l
+ qp9qTn6W5uY7SHoHLENQFTQZYqLa5tv7GXzRz4xCalQMmFX0kr57S00LOVtBSiVnKQK1
+ EG7TZmkDCgL680IMvjEk/rbgOLnHvyt5Y7ERcU/9DWmLwNrXrmusl9PSUUcRKKQMdyiM
+ sXTto0/sXc1BVNUv/A3lKly08pfyHEwCFBMo1GBCi6YhWzn3eDcIvIRbf94uN7obZ+q3
+ aaLA==
+X-Gm-Message-State: APjAAAWnM8tjDAGg5TZ/smtYdc7QKCS8QXDaH1H2f3af6kT/zlyv4Je3
+ 5jqUw31RF4Nm0Mqy8R5TT0U=
+X-Google-Smtp-Source: APXvYqxqieuIsfPGN7KpgIU60C0J3+zTqMhptvL/dVoBjEqwAqMxYmd+wA9rGlO4+B//2gj75LEEmA==
+X-Received: by 2002:a5d:5008:: with SMTP id e8mr588448wrt.147.1562020968754;
+ Mon, 01 Jul 2019 15:42:48 -0700 (PDT)
+Received: from blackbox.darklights.net
+ (p200300F133FCEE00B45C38AFF5505594.dip0.t-ipconnect.de.
+ [2003:f1:33fc:ee00:b45c:38af:f550:5594])
+ by smtp.googlemail.com with ESMTPSA id v5sm13201632wre.50.2019.07.01.15.42.47
+ (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
+ Mon, 01 Jul 2019 15:42:48 -0700 (PDT)
+From: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
+To: davem@davemloft.net,
+	netdev@vger.kernel.org,
+	colin.king@canonical.com
+Subject: [PATCH] net: stmmac: make "snps,reset-delays-us" optional again
+Date: Tue,  2 Jul 2019 00:42:25 +0200
+Message-Id: <20190701224225.19701-1-martin.blumenstingl@googlemail.com>
+X-Mailer: git-send-email 2.22.0
 MIME-Version: 1.0
-References: <20190617130149.1782930-1-arnd@arndb.de>
- <7a96a4d2-25e7-f9cf-1109-23c5495325a8@oracle.com>
-In-Reply-To: <7a96a4d2-25e7-f9cf-1109-23c5495325a8@oracle.com>
-From: Olof Johansson <olof@lixom.net>
-Date: Mon, 1 Jul 2019 15:24:29 -0700
-Message-ID: <CAOesGMi5urJPF3cKfF+UB_KrK50_VQw+MMS5w_UqKzEMYKeXFA@mail.gmail.com>
-Subject: Re: [PATCH] soc: ti: fix irq-ti-sci link error
-To: Santosh Shilimkar <santosh.shilimkar@oracle.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190701_152441_903232_2F403777 
-X-CRM114-Status: GOOD (  15.10  )
-X-Spam-Score: 1.7 (+)
+X-CRM114-CacheID: sfid-20190701_154250_952569_3FD60B6B 
+X-CRM114-Status: GOOD (  13.51  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (1.7 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 1.7 URIBL_BLACK            Contains an URL listed in the URIBL blacklist
- [URIs: kernle.org]
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:d42 listed in]
- [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (martin.blumenstingl[at]googlemail.com)
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:441 listed in]
+ [list.dnswl.org]
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -90,51 +101,76 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Nishanth Menon <nm@ti.com>, Arnd Bergmann <arnd@arndb.de>,
- Lokesh Vutla <lokeshvutla@ti.com>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Marc Zyngier <marc.zyngier@arm.com>, Tony Lindgren <tony@atomide.com>,
- Santosh Shilimkar <ssantosh@kernel.org>,
- Linux ARM Mailing List <linux-arm-kernel@lists.infradead.org>
+Cc: alexandre.torgue@st.com,
+ Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
+ linux-kernel@vger.kernel.org, joabreu@synopsys.com, peppe.cavallaro@st.com,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Jul 1, 2019 at 10:36 AM <santosh.shilimkar@oracle.com> wrote:
->
-> On 6/17/19 6:01 AM, Arnd Bergmann wrote:
-> > The irqchip driver depends on the SoC specific driver, but we want
-> > to be able to compile-test it elsewhere:
-> >
-> > WARNING: unmet direct dependencies detected for TI_SCI_INTA_MSI_DOMAIN
-> >    Depends on [n]: SOC_TI [=n]
-> >    Selected by [y]:
-> >    - TI_SCI_INTA_IRQCHIP [=y] && TI_SCI_PROTOCOL [=y]
-> >
-> > drivers/irqchip/irq-ti-sci-inta.o: In function `ti_sci_inta_irq_domain_probe':
-> > irq-ti-sci-inta.c:(.text+0x204): undefined reference to `ti_sci_inta_msi_create_irq_domain'
-> >
-> > Rearrange the Kconfig and Makefile so we build the soc driver whenever
-> > its users are there, regardless of the SOC_TI option.
-> >
-> > Fixes: 49b323157bf1 ("soc: ti: Add MSI domain bus support for Interrupt Aggregator")
-> > Fixes: f011df6179bd ("irqchip/ti-sci-inta: Add msi domain support")
-> > Signed-off-by: Arnd Bergmann <arnd@arndb.de>
-> > ---
-> Thanks Arnd. Will you be able to add it to your fixes queue.
->
-> FWIW, Acked-by: Santosh Shilimkar <ssantosh@kernle.org>
+Commit 760f1dc2958022 ("net: stmmac: add sanity check to
+device_property_read_u32_array call") introduced error checking of the
+device_property_read_u32_array() call in stmmac_mdio_reset().
+This results in the following error when the "snps,reset-delays-us"
+property is not defined in devicetree:
+  invalid property snps,reset-delays-us
 
-Cc:ing to arm@kernel.org is the best way to make sure it surfaces.
+This sanity check made sense until commit 84ce4d0f9f55b4 ("net: stmmac:
+initialize the reset delay array") ensured that there are fallback
+values for the reset delay if the "snps,reset-delays-us" property is
+absent. That was at the cost of making that property mandatory though.
 
-Also, please do Acked-by on separate line so the tools catch it next
-time (also, check for typos. :)
+Drop the sanity check for device_property_read_u32_array() and thus make
+the "snps,reset-delays-us" property optional again (avoiding the error
+message while loading the stmmac driver with a .dtb where the property
+is absent).
 
-Applying to fixes.
+Fixes: 760f1dc2958022 ("net: stmmac: add sanity check to device_property_read_u32_array call")
+Signed-off-by: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
+---
+This is a fix for a patch in net-next and should either go into net-next
+or 5.3-rcX.
 
 
--Olof
+ drivers/net/ethernet/stmicro/stmmac/stmmac_mdio.c | 13 +++----------
+ 1 file changed, 3 insertions(+), 10 deletions(-)
+
+diff --git a/drivers/net/ethernet/stmicro/stmmac/stmmac_mdio.c b/drivers/net/ethernet/stmicro/stmmac/stmmac_mdio.c
+index f8061e34122f..18cadf0b0d66 100644
+--- a/drivers/net/ethernet/stmicro/stmmac/stmmac_mdio.c
++++ b/drivers/net/ethernet/stmicro/stmmac/stmmac_mdio.c
+@@ -242,7 +242,6 @@ int stmmac_mdio_reset(struct mii_bus *bus)
+ 	if (priv->device->of_node) {
+ 		struct gpio_desc *reset_gpio;
+ 		u32 delays[3] = { 0, 0, 0 };
+-		int ret;
+ 
+ 		reset_gpio = devm_gpiod_get_optional(priv->device,
+ 						     "snps,reset",
+@@ -250,15 +249,9 @@ int stmmac_mdio_reset(struct mii_bus *bus)
+ 		if (IS_ERR(reset_gpio))
+ 			return PTR_ERR(reset_gpio);
+ 
+-		ret = device_property_read_u32_array(priv->device,
+-						     "snps,reset-delays-us",
+-						     delays,
+-						     ARRAY_SIZE(delays));
+-		if (ret) {
+-			dev_err(ndev->dev.parent,
+-				"invalid property snps,reset-delays-us\n");
+-			return -EINVAL;
+-		}
++		device_property_read_u32_array(priv->device,
++					       "snps,reset-delays-us",
++					       delays, ARRAY_SIZE(delays));
+ 
+ 		if (delays[0])
+ 			msleep(DIV_ROUND_UP(delays[0], 1000));
+-- 
+2.22.0
+
 
 _______________________________________________
 linux-arm-kernel mailing list
