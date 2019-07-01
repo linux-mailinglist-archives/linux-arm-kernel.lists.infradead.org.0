@@ -2,129 +2,71 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C30755B320
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  1 Jul 2019 05:28:14 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5FB575B32D
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  1 Jul 2019 05:56:02 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=eblwOKKxILwIpYMVMzpwrR1hubwy9N8l0F6MeIdyKb8=; b=nI0Lhqg7jxNiHw
-	XNsDAfzPM52B0NFPlEfhCeahEOWVIAmiblM3kMDtMPAcD7kHSxhdGSW9WYcdDlcqylvTXCQ0BG2bH
-	D54WcBVA9Et8oiqrBMyuIYqcdbVNVFPBM23AloaGYryXe+WLFR5Dmf1NF5XpaT4tczrrNhxfDGA6a
-	u42QcBKC911outEiCIr8QALW4i6H0Mkt5P4Q1Tp3lw6EllA02Sip7auZ0ChjjWZeRXsBCjaiEgbMh
-	tYLZFAy3VqBBfzhQwOroMWd3qqw0iS+Kg3jWcxzEdIvjGzGnOLGYvitfxNi2no3ViKoF+k6J91mT9
-	k4gAousCNcS78NO+VyFA==;
+	List-Owner; bh=s5Mo40UIGlAlwJ/lQUTECHtiUJPjPxEW0mw8DpsBp4k=; b=KjdrNaO0+DLk78
+	yFE3aQaUME4EqKCyuVu0R5kOiII2AeoNzYAuClqAPnTh/fE05AbxyNEnDwrwyWvowBxNs1/vzGjaB
+	JU7vzgZQPqYhreFV6DQi98W0CdbJhLnhkprT3Glai5gMqfTmk67RIwWavlqj0yVVkeQXTzDRfxzt1
+	Idd5xC+FP94nTPTLsmdpuiAKDjgsHBOLW3lWEe1+jzKkrInsgf2ug41nsfOED/gutMJAdXAJ56sHT
+	rRgnO8zX6PHeVN2GtOJrqbQLn+yZ3gG9y4x0pAwMx1yib07yk+7Xv1ACZHZFB0Om4SphDeCUAlBLR
+	w80iqTXKAuxJqS0S32Ow==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hhmzE-0001eq-2T; Mon, 01 Jul 2019 03:28:12 +0000
-Received: from mail-eopbgr700119.outbound.protection.outlook.com
- ([40.107.70.119] helo=NAM04-SN1-obe.outbound.protection.outlook.com)
+	id 1hhnQ7-0002uC-UM; Mon, 01 Jul 2019 03:56:00 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hhmyy-0001e0-Og
- for linux-arm-kernel@lists.infradead.org; Mon, 01 Jul 2019 03:27:58 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=FrNORCwtZsZKEWGZ3GV8CruU9C2G7KstaldjjwhbL7qmHctG5+aLxq0jvlNHVJ99kvP6TV+2on2lK6PsxW9IQnpCWkGYuwVrKBliXShThySMwi4BZ80GJYoBdcHPjxHhq309vNY4BeB2F2ySt6GqxgSNV4hlrv/wv8F0pmtbCqtFJDlLGpGb201VCX9nhZmx+EYdXs7MACSOGPbKfc01zf3EZv4ETf4QA3G9/uyi6hfyHDPwBA7HAfJzlRBAZYlA9ea2CxMVOoLQmeoC0baIoenospP5i5bYaE2U7cwXIGXbRbXyt6tMNdXopi9G8SYo+nlp9IirHVctoePxzpU4/A==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=jKRoCriyhBHZNDqbw+vDECV9rcNqCG2i59H7fVDIvr4=;
- b=jOSbzm8T2U21zrJLFHNTWFTndJFjXGHwQ5mCukFWjRtZv/wWQC/M6LQxfUjN3A7GDLpr7qAgGEq74SwVoI5bZ/Z42Y6+9TO6dl9MwRbLwvKneq98hB7BAxteMOLNP91i3MYVntVu+VeFhlEgBIg7UbQGtWGz8dTe/014oP6JOExWfHec1UE7qT1cRb/WIUeaKud4XgbcbpXmfLF9x6ZYqZoEmpcbyEdAqeLcJHfIjd+TtmeiNb3vNLfKVRjpQX9zB5n1LW80HkAIdCcDi0EBs8vMhDOG1UIZlOQA3xGhAjpTKrY6oKSEO+9X/yKBiimGwGh4JMHmyqsoKpHUlhyM3A==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1;spf=pass
- smtp.mailfrom=microsoft.com;dmarc=pass action=none
- header.from=microsoft.com;dkim=pass header.d=microsoft.com;arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=selector1;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=jKRoCriyhBHZNDqbw+vDECV9rcNqCG2i59H7fVDIvr4=;
- b=WVHsO9VPkvw8AnVfRPiZfiTd/drLpjp77IFRfjBr+buDPFE/gAoT7sgLEdUOoXsBadw4oVb4HekrtVcffbWAHQNWw2QZZ8+C5Yl3MvlTvxYQesjXgvYkHmK9S19oD/uwocKUE178TGJUwRspBhWl9fGkKl9WqoQIbhLaB8tqHbU=
-Received: from BL0PR2101MB1348.namprd21.prod.outlook.com (20.177.244.150) by
- BL0PR2101MB0980.namprd21.prod.outlook.com (52.132.23.154) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2052.4; Mon, 1 Jul 2019 03:27:53 +0000
-Received: from BL0PR2101MB1348.namprd21.prod.outlook.com
- ([fe80::4814:2790:9342:9582]) by BL0PR2101MB1348.namprd21.prod.outlook.com
- ([fe80::4814:2790:9342:9582%2]) with mapi id 15.20.2052.005; Mon, 1 Jul 2019
- 03:27:53 +0000
-From: Michael Kelley <mikelley@microsoft.com>
-To: Thomas Gleixner <tglx@linutronix.de>
-Subject: RE: [PATCH v4 2/2] Drivers: hv: Move Hyper-V clocksource code to new
- clocksource driver
-Thread-Topic: [PATCH v4 2/2] Drivers: hv: Move Hyper-V clocksource code to new
- clocksource driver
-Thread-Index: AQHVLeAUo+4Nh9AV+0+GDvg9Z9lPQKayNgEAgALl1SA=
-Date: Mon, 1 Jul 2019 03:27:46 +0000
-Message-ID: <BL0PR2101MB1348F33B06FEAFFD4AC5474ED7F90@BL0PR2101MB1348.namprd21.prod.outlook.com>
-References: <1561746758-23216-1-git-send-email-mikelley@microsoft.com>
- <1561746758-23216-3-git-send-email-mikelley@microsoft.com>
- <alpine.DEB.2.21.1906290850220.1802@nanos.tec.linutronix.de>
-In-Reply-To: <alpine.DEB.2.21.1906290850220.1802@nanos.tec.linutronix.de>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-msip_labels: MSIP_Label_f42aa342-8706-4288-bd11-ebb85995028c_Enabled=True;
- MSIP_Label_f42aa342-8706-4288-bd11-ebb85995028c_SiteId=72f988bf-86f1-41af-91ab-2d7cd011db47;
- MSIP_Label_f42aa342-8706-4288-bd11-ebb85995028c_Owner=mikelley@ntdev.microsoft.com;
- MSIP_Label_f42aa342-8706-4288-bd11-ebb85995028c_SetDate=2019-07-01T03:27:43.2532613Z;
- MSIP_Label_f42aa342-8706-4288-bd11-ebb85995028c_Name=General;
- MSIP_Label_f42aa342-8706-4288-bd11-ebb85995028c_Application=Microsoft Azure
- Information Protection;
- MSIP_Label_f42aa342-8706-4288-bd11-ebb85995028c_ActionId=fe0f6f5a-265f-46a6-abab-be1d9e7097d7;
- MSIP_Label_f42aa342-8706-4288-bd11-ebb85995028c_Extended_MSFT_Method=Automatic
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=mikelley@microsoft.com; 
-x-originating-ip: [24.22.167.197]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: eb3a0540-b1b4-4eb5-8551-08d6fdd419fd
-x-ms-office365-filtering-ht: Tenant
-x-microsoft-antispam: BCL:0; PCL:0;
- RULEID:(2390118)(7020095)(4652040)(8989299)(5600148)(711020)(4605104)(1401327)(4618075)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(2017052603328)(7193020);
- SRVR:BL0PR2101MB0980; 
-x-ms-traffictypediagnostic: BL0PR2101MB0980:
-x-ld-processed: 72f988bf-86f1-41af-91ab-2d7cd011db47,ExtAddr
-x-microsoft-antispam-prvs: <BL0PR2101MB0980C6F7F1B6BC00CFCD8310D7F90@BL0PR2101MB0980.namprd21.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:10000;
-x-forefront-prvs: 00851CA28B
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10019020)(4636009)(376002)(136003)(346002)(39860400002)(396003)(366004)(189003)(199004)(25786009)(14454004)(66066001)(66476007)(7416002)(66946007)(73956011)(6116002)(3846002)(76116006)(7406005)(76176011)(7696005)(66556008)(66446008)(6916009)(476003)(99286004)(11346002)(446003)(64756008)(6246003)(486006)(53936002)(256004)(14444005)(71190400001)(71200400001)(54906003)(52536014)(6666004)(22452003)(316002)(102836004)(229853002)(55016002)(186003)(9686003)(8676002)(26005)(6436002)(4326008)(6506007)(10290500003)(81166006)(8936002)(81156014)(5660300002)(10090500001)(33656002)(478600001)(2906002)(68736007)(305945005)(74316002)(7736002)(8990500004)(86362001);
- DIR:OUT; SFP:1102; SCL:1; SRVR:BL0PR2101MB0980;
- H:BL0PR2101MB1348.namprd21.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; MX:1; A:1; 
-received-spf: None (protection.outlook.com: microsoft.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: 9EmBNhIM6Gc1BnIDqAlZbJxmM5SVpDVIm1KgIQvi141SbmOs2qHu22suD2smfntS7kJv/IgjDEgK8kmE55M+JibFpfnseOejcvHetKgJIu58DBeGUFMRto2bXhoSxfkvlZZNutJ+V1u19qeDcw5lpEEfVVQ/ufv8HZo4alffSwRhfuSi22+L/Q67n0mwg7faMepsVRFYWKbuH7QCONqI/OEpE44CIPrC376qWPgUbmk2+9096+t5tu5LgJRWTvJpzClWwoV7Xe946uRcDQlJ5mU8NyNc1FdNPLuemS+df6+jHRQYoLWMRCxQUYJveS2eTsd7CM3FVuQte8XUDqW6WTA2Tft82pXDIYcBXiilqz8Tg0IBvPwW3RHrBET09PoSusasaavetX+ubhq+KU+Lp5qfXaPyagFtM3Om7zB18to=
+ id 1hhnPo-0002se-Ih; Mon, 01 Jul 2019 03:55:42 +0000
+X-UUID: 76ba95d6d2514c458ff21c20a745eb5d-20190630
+X-UUID: 76ba95d6d2514c458ff21c20a745eb5d-20190630
+Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw01.mediatek.com
+ (envelope-from <ck.hu@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 228163531; Sun, 30 Jun 2019 19:55:34 -0800
+Received: from mtkcas09.mediatek.inc (172.21.101.178) by
+ MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Sun, 30 Jun 2019 20:55:31 -0700
+Received: from [172.21.77.4] (172.21.77.4) by mtkcas09.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
+ Transport; Mon, 1 Jul 2019 11:55:17 +0800
+Message-ID: <1561953318.25914.9.camel@mtksdaap41>
+Subject: Re: [PATCH v5 08/12] dt-bindings: mediatek: Change the binding for
+ mmsys clocks
+From: CK Hu <ck.hu@mediatek.com>
+To: Matthias Brugger <mbrugger@suse.com>
+Date: Mon, 1 Jul 2019 11:55:18 +0800
+In-Reply-To: <a229bfc7-683f-5b0d-7b71-54f934de6214@suse.com>
+References: <20181116125449.23581-1-matthias.bgg@kernel.org>
+ <20181116125449.23581-9-matthias.bgg@kernel.org>
+ <20181116231522.GA18006@bogus>
+ <2a23e407-4cd4-2e2b-97a5-4e2bb96846e0@gmail.com>
+ <CAL_JsqKJQwfDJbpmwW+oCxiDkSp5+6mG-uoURmCQVEMP_jFOEg@mail.gmail.com>
+ <154281878765.88331.10581984256202566195@swboyd.mtv.corp.google.com>
+ <458178ac-c0fc-9671-7fc8-ed2d6f61424c@suse.com>
+ <154356023767.88331.18401188808548429052@swboyd.mtv.corp.google.com>
+ <a229bfc7-683f-5b0d-7b71-54f934de6214@suse.com>
+X-Mailer: Evolution 3.10.4-0ubuntu2 
 MIME-Version: 1.0
-X-OriginatorOrg: microsoft.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: eb3a0540-b1b4-4eb5-8551-08d6fdd419fd
-X-MS-Exchange-CrossTenant-originalarrivaltime: 01 Jul 2019 03:27:46.3472 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 72f988bf-86f1-41af-91ab-2d7cd011db47
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: mikelley@ntdev.microsoft.com
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: BL0PR2101MB0980
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190630_202756_809464_AF36C8B7 
-X-CRM114-Status: GOOD (  21.47  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190630_205540_625544_22D4A58D 
+X-CRM114-Status: GOOD (  26.62  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.70.119 listed in list.dnswl.org]
+ no trust [216.200.240.184 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -136,193 +78,133 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
- "linux-hyperv@vger.kernel.org" <linux-hyperv@vger.kernel.org>,
- "daniel.lezcano@linaro.org" <daniel.lezcano@linaro.org>,
- "linux@rasmusvillemoes.dk" <linux@rasmusvillemoes.dk>,
- "rkrcmar@redhat.com" <rkrcmar@redhat.com>,
- "catalin.marinas@arm.com" <catalin.marinas@arm.com>,
- "jasowang@redhat.com" <jasowang@redhat.com>,
- "will.deacon@arm.com" <will.deacon@arm.com>,
- "linux-mips@vger.kernel.org" <linux-mips@vger.kernel.org>,
- "linux-kselftest@vger.kernel.org" <linux-kselftest@vger.kernel.org>,
- "vincenzo.frascino@arm.com" <vincenzo.frascino@arm.com>,
- "shuah@kernel.org" <shuah@kernel.org>, "sashal@kernel.org" <sashal@kernel.org>,
- "sfr@canb.auug.org.au" <sfr@canb.auug.org.au>,
- KY Srinivasan <kys@microsoft.com>, "kvm@vger.kernel.org" <kvm@vger.kernel.org>,
- "x86@kernel.org" <x86@kernel.org>,
- "linux@armlinux.org.uk" <linux@armlinux.org.uk>,
- "mingo@redhat.com" <mingo@redhat.com>,
- "marcelo.cerri@canonical.com" <marcelo.cerri@canonical.com>,
- "linux-arch@vger.kernel.org" <linux-arch@vger.kernel.org>,
- "olaf@aepfle.de" <olaf@aepfle.de>, "arnd@arndb.de" <arnd@arndb.de>,
- "0x7f454c46@gmail.com" <0x7f454c46@gmail.com>, "bp@alien8.de" <bp@alien8.de>,
- "apw@canonical.com" <apw@canonical.com>,
- Sunil Muthuswamy <sunilmut@microsoft.com>, "pcc@google.com" <pcc@google.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- "huw@codeweavers.com" <huw@codeweavers.com>,
- "gregkh@linuxfoundation.org" <gregkh@linuxfoundation.org>,
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ Sean Wang <Sean.Wang@mediatek.com>, "moderated list:ARM/FREESCALE IMX /
+ MXC ARM ARCHITECTURE" <linux-arm-kernel@lists.infradead.org>,
+ Rob Herring <robh@kernel.org>, Stephen Boyd <sboyd@kernel.org>,
+ Michael Turquette <mturquette@baylibre.com>, Sean Wang <sean.wang@kernel.org>,
+ Stephen Boyd <sboyd@codeaurora.org>,
  "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "ralf@linux-mips.org" <ralf@linux-mips.org>,
- "salyzyn@android.com" <salyzyn@android.com>,
- "paul.burton@mips.com" <paul.burton@mips.com>,
- "pbonzini@redhat.com" <pbonzini@redhat.com>, vkuznets <vkuznets@redhat.com>
+ dri-devel <dri-devel@lists.freedesktop.org>, David
+ Airlie <airlied@linux.ie>, Chen-Yu Tsai <wens@csie.org>,
+ "linux-mediatek@lists.infradead.org" <linux-mediatek@lists.infradead.org>,
+ Randy
+ Dunlap <rdunlap@infradead.org>, Philipp Zabel <p.zabel@pengutronix.de>,
+ "matthias.bgg@kernel.org" <matthias.bgg@kernel.org>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ linux-clk <linux-clk@vger.kernel.org>,
+ Ulrich Hecht <ulrich.hecht+renesas@gmail.com>,
+ Laurent Pinchart <laurent.pinchart@ideasonboard.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Thomas Gleixner <tglx@linutronix.de> Sent: Saturday, June 29, 2019 12:04 AM
-> 
-> On Fri, 28 Jun 2019, Michael Kelley wrote:
-> 
-> See the other reply vs. prefix and summary
-> 
-> > Continue consolidating Hyper-V clock and timer code into an ISA
-> ...
-> 
-> > +#ifdef CONFIG_HYPERV_TSCPAGE
-> > +
-> > +static struct ms_hyperv_tsc_page *tsc_pg;
-> > +
-> > +struct ms_hyperv_tsc_page *hv_get_tsc_page(void)
-> > +{
-> > +	return tsc_pg;
-> > +}
-> > +EXPORT_SYMBOL_GPL(hv_get_tsc_page);
-> 
-> > +static u64 read_hv_sched_clock_tsc(void)
-> 
-> Lacks a notrace annotation as it is used as sched clock.
+Hi, Matthias:
 
-Will add to this and to read_hv_sched_clock_msr().
+On Fri, 2018-11-30 at 16:59 +0800, Matthias Brugger wrote:
+> 
+> On 30/11/2018 07:43, Stephen Boyd wrote:
+> > Quoting Matthias Brugger (2018-11-21 09:09:52)
+> >>
+> >>
+> >> On 21/11/2018 17:46, Stephen Boyd wrote:
+> >>> Quoting Rob Herring (2018-11-19 11:15:16)
+> >>>> On Sun, Nov 18, 2018 at 11:12 AM Matthias Brugger
+> >>>> <matthias.bgg@gmail.com> wrote:
+> >>>>> On 11/17/18 12:15 AM, Rob Herring wrote:
+> >>>>>> On Fri, Nov 16, 2018 at 01:54:45PM +0100, matthias.bgg@kernel.org wrote:
+> >>>>>>> -    #clock-cells = <1>;
+> >>>>>>> +
+> >>>>>>> +    mmsys_clk: clock-controller@14000000 {
+> >>>>>>> +            compatible = "mediatek,mt2712-mmsys-clk";
+> >>>>>>> +            #clock-cells = <1>;
+> >>>>>>
+> >>>>>> This goes against the general direction of not defining separate nodes
+> >>>>>> for providers with no resources.
+> >>>>>>
+> >>>>>> Why do you need this and what does it buy if you have to continue to
+> >>>>>> support the existing chips?
+> >>>>>>
+> >>>>>
+> >>>>> It would show explicitly that the mmsys block is used to probe two
+> >>>>> drivers, one for the gpu and one for the clocks. Otherwise that is
+> >>>>> hidden in the drm driver code. I think it is cleaner to describe that in
+> >>>>> the device tree.
+> >>>>
+> >>>> No, that's maybe cleaner for the driver implementation in the Linux
+> >>>> kernel. What about other OS's or when Linux drivers and subsystems
+> >>>> needs change? Cleaner for DT is design bindings that reflect the h/w.
+> >>>> Hardware is sometimes just messy.
+> >>>>
+> >>>
+> >>> I agree. I fail to see what this patch series is doing besides changing
+> >>> driver probe and device creation methods and making a backwards
+> >>> incompatible change to DT. Is there any other benefit here?
+> >>>
+> >>
+> >> You are referring whole series?
+> >> Citing the cover letter:
+> >> "MMSYS in Mediatek SoCs has some registers to control clock gates (which is
+> >> used in the clk driver) and some registers to set the routing and enable
+> >> the differnet (sic!) blocks of the display subsystem.
+> >>
+> >> Up to now both drivers, clock and drm are probed with the same device tree
+> >> compatible. But only the first driver get probed, which in effect breaks
+> >> graphics on mt8173 and mt2701.
+> > 
+> > Ouch!
+> > 
+> 
+> Yes :)
+> 
+> >>
+> >> This patch uses a platform device registration in the DRM driver, which
+> >> will trigger the probe of the corresponding clock driver. It was tested on the
+> >> bananapi-r2 and the Acer R13 Chromebook."
+> > 
+> > Alright, please don't add nodes in DT just to make device drivers probe.
+> > Instead, register clks from the drm driver or create a child platform
+> > device for the clk bits purely in the drm driver and have that probe the
+> > associated clk driver from there.
+> > 
+> 
+> I'll make the other SoCs probe via a child platform device from the drm driver,
+> as already done in 2/12 and 3/12.
 
-> 
-> > +{
-> > +	u64 current_tick = hv_read_tsc_page(tsc_pg);
-> > +
-> > +	if (current_tick == U64_MAX)
-> > +		hv_get_time_ref_count(current_tick);
-> > +
-> > +	return current_tick;
-> > +}
-> > +
-> > +static u64 read_hv_clock_tsc(struct clocksource *arg)
-> > +{
-> > +	return read_hv_sched_clock_tsc();
-> > +}
-> > +
-> > +static struct clocksource hyperv_cs_tsc = {
-> > +		.name		= "hyperv_clocksource_tsc_page",
-> > +		.rating		= 400,
-> > +		.read		= read_hv_clock_tsc,
-> > +		.mask		= CLOCKSOURCE_MASK(64),
-> > +		.flags		= CLOCK_SOURCE_IS_CONTINUOUS,
-> 
-> One tab indent is sufficient
+This series have been pending for half an year, would you keep going on
+this series? If you're busy, I could complete this series, but I need to
+know what you have plan to do.
 
-Will fix.
+I guess that 1/12 ~ 5/12 is for MT2701/MT8173 and that patches meet this
+discussion. 6/12 ~ 12/12 is for MT2712/MT6797 but that patches does not
+meet this discussion. So the unfinished work is to make MT2712/MT6797 to
+align MT2701/MT8173, is this right?
 
-> 
-> > +};
-> > +#endif
-> 
-> > +void __init hv_init_clocksource(void)
-> > +{
-> > +#ifdef CONFIG_HYPERV_TSCPAGE
-> 
-> Can you please avoid ifdef blocks in the code and just split out this into
-> a helper function and provide an empty stub for the TSCPAGE=n case?
-> 
-> Then you can spare one indent and the ifdeffery is confined. Get's rid of
-> the goto as well.
-
-I was trying not to change code unrelated to reorganizing into a clocksource
-driver, but I've coded the approach you suggest and the result is a lot
-cleaner.  I'll include the new approach in v5 of the patch.
-
-> 
-> > +	if (ms_hyperv.features & HV_MSR_REFERENCE_TSC_AVAILABLE) {
-> > +
-> > +		u64		tsc_msr;
-> > +		phys_addr_t	phys_addr;
-> > +
-> > +		tsc_pg = vmalloc(PAGE_SIZE);
-> > +		if (!tsc_pg)
-> > +			goto register_msr_cs;
-> > +
-> > +		hyperv_cs = &hyperv_cs_tsc;
-> > +		phys_addr = page_to_phys(vmalloc_to_page(tsc_pg));
-> > +
-> > +		/* The Hyper-V TLFS specifies to preserve the value of
-> 
-> Please use proper multi line comments formatting:
-> 
-> 		/*
-> 		 * This is a proper formatted multi-line comment.
-> 		 * See?
-> 		 */
-
-Argh.  Old habits ...
+Regards,
+CK
 
 > 
-> > +		 * reserved bits in registers.  So read the existing
-> > +		 * value, preserve the low order 12 bits, and add in
-> > +		 * the guest physical address (which already has at
-> > +		 * least the low 12 bits set to zero since it is page
-> > +		 * aligned). Also set the "enable" bit, which is bit 0.
-> > +		 */
-> > +		hv_get_reference_tsc(tsc_msr);
-> > +		tsc_msr &= GENMASK_ULL(11, 0);
-> > +		tsc_msr = tsc_msr | 0x1 | (u64)phys_addr;
-> > +		hv_set_reference_tsc(tsc_msr);
-> > +
-> > +		hv_set_clocksource_vdso(hyperv_cs_tsc);
-> > +		clocksource_register_hz(&hyperv_cs_tsc, NSEC_PER_SEC/100);
-> > +
-> > +		/*
-> > +		 * sched_clock_register is needed on ARM64 but
-> > +		 * is a no-op on x86
-> > +		 */
-> > +		sched_clock_register(read_hv_sched_clock_tsc,
-> > +						64, HV_CLOCK_HZ);
+> Regards,
+> Matthias
 > 
-> If you have to use line breaks, then please align them properly
+> >>
+> >> DT is broken right now, because two drivers rely on the same node, which gets
+> >> consumed just once. The new DT introduced does not break anything because it is
+> >> only used for boards that: "[..] are not available to the general public
+> >> (mt2712e) or only have the mmsys clock driver part implemented (mt6797)."
+> > 
+> > Ok, so backwards compatibility is irrelevant then. Sounds fine to me.
+> > 
+> > 
 > 
-> 		sched_clock_register(read_hv_sched_clock_tsc,
-> 				     64, HV_CLOCK_HZ);
-> 
+> _______________________________________________
+> Linux-mediatek mailing list
+> Linux-mediatek@lists.infradead.org
+> http://lists.infradead.org/mailman/listinfo/linux-mediatek
 
-Got it.  The line break is no longer needed in the new version anyway.
 
-> 
-> > +		return;
-> > +	}
-> > +register_msr_cs:
-> > +#endif
-> > +	/*
-> > +	 * For 32 bit guests just use the MSR based mechanism for reading
-> > +	 * the partition counter.
-> > +	 */
-> > +	hyperv_cs = &hyperv_cs_msr;
-> > +	if (ms_hyperv.features & HV_MSR_TIME_REF_COUNT_AVAILABLE) {
-> > +		clocksource_register_hz(&hyperv_cs_msr, NSEC_PER_SEC/100);
-> > +
-> > +		/*
-> > +		 * sched_clock_register is needed on ARM64 but
-> > +		 * is a no-op on x86
-> > +		 */
-> > +		sched_clock_register(read_hv_sched_clock_msr,
-> > +						64, HV_CLOCK_HZ);
-> 
-> Ditto. But again if you return when the feature is not available you spare
-> an indent and the line break.
-
-Agreed.
-
-Thanks,
-
-Michael
 
 _______________________________________________
 linux-arm-kernel mailing list
