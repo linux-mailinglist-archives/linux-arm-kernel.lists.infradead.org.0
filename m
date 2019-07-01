@@ -2,67 +2,66 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6B3155B2D8
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  1 Jul 2019 03:59:48 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 03D875B2DC
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  1 Jul 2019 04:01:16 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Cc:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=AA7PmcBVXT6ZecohD9eZuFJes6l4QqLmbudraQwWUFk=; b=OO0kgROSHu3RZOwa54WoyY3pHp
-	tonlOiXmjR3Ks5dGtTCORgxFc/KnHsmhvAMzeSuORZw0z2MswwaZJTMjS02PyLhrWgUxOBwc9UHmB
-	tb7f7oT2wSNGYTNKmTCrkx5fTH9z4UpHjY48+7gsyxRxD4DniNlrpCctcKxIBI2xKiXWVD0L4zLQX
-	OLF2Bkj5jM1nPYplJpRccgjQ63jAWUKdGwd4oachceYgqOynZ0sh9Ktc3272u+DdAVQVvDIeRZdXj
-	3VR0N5Pp4hwi93Yfdu/3+lgJmp26QQoVn27vmkfTM5NMfbKxTPzatpg2fXrcghwOcgfOoDvuOoTlE
-	uKqsLikA==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=3KziTRyasDpNZ5hT9F+RUAKcZoy79aqBn/rMmFt7gNY=; b=EOHTxZ1J40TQ8m
+	IwktieqV51fV+aHpM2sF1v5gDF+BLqrfqm3vfFGi/8AhVwypdJXVLXo25cYiMCSEVQpfMVqmTag5Q
+	85ukbvN6pULrCfptQzu/B9nssVj/kL+gDS7HXbUqcFi4zeVSy9ZY5wWwJTN+OYpHyldydS94fvP3g
+	7FRl8ba6TNxqCdDI8O2h2EmtS/AJBKhfSuIMSgFc4DZaW1wzeh1bRMr8KlGMqHBmMGw1Y8KJTrupY
+	O6tRgpZHd4hGHmyciQ4t9m0Pph2euaBUsU/M/gWfumr87iUoH34KKjK+z2H735+bsiCjB2hpugAlr
+	29MohNsXNf7lUDgjB7Qw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hhlbZ-000665-Jp; Mon, 01 Jul 2019 01:59:41 +0000
-Received: from szxga04-in.huawei.com ([45.249.212.190] helo=huawei.com)
+	id 1hhld0-0007rA-I3; Mon, 01 Jul 2019 02:01:11 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hhlau-00064M-JH; Mon, 01 Jul 2019 01:59:02 +0000
-Received: from DGGEMS401-HUB.china.huawei.com (unknown [172.30.72.58])
- by Forcepoint Email with ESMTP id 1CFB8B58BBD1B7700B70;
- Mon,  1 Jul 2019 09:58:50 +0800 (CST)
-Received: from [127.0.0.1] (10.177.223.23) by DGGEMS401-HUB.china.huawei.com
- (10.3.19.201) with Microsoft SMTP Server id 14.3.439.0; Mon, 1 Jul 2019
- 09:58:45 +0800
-Subject: Re: [PATCH REBASE v2 1/2] x86, arm64: Move ARCH_WANT_HUGE_PMD_SHARE
- config in arch/Kconfig
-To: Alexandre Ghiti <alex@ghiti.fr>, Christoph Hellwig <hch@infradead.org>,
- Mike Kravetz <mike.kravetz@oracle.com>, Catalin Marinas
- <catalin.marinas@arm.com>, Will Deacon <will.deacon@arm.com>, Palmer Dabbelt
- <palmer@sifive.com>, Albert Ou <aou@eecs.berkeley.edu>, Thomas Gleixner
- <tglx@linutronix.de>, Ingo Molnar <mingo@redhat.com>, Borislav Petkov
- <bp@alien8.de>, "H . Peter Anvin" <hpa@zytor.com>, <x86@kernel.org>,
- <linux-kernel@vger.kernel.org>, <linux-arm-kernel@lists.infradead.org>,
- <linux-riscv@lists.infradead.org>
-References: <20190526125038.8419-1-alex@ghiti.fr>
- <20190526125038.8419-2-alex@ghiti.fr>
-From: Hanjun Guo <guohanjun@huawei.com>
-Message-ID: <7bfe451b-3f6b-2a26-5d43-692dde891cc0@huawei.com>
-Date: Mon, 1 Jul 2019 09:58:32 +0800
-User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:52.0) Gecko/20100101
- Thunderbird/52.5.0
+ id 1hhlbM-0006Cx-BM; Mon, 01 Jul 2019 01:59:30 +0000
+X-UUID: b406a144fa1f4310880c6fb01dbaec01-20190630
+X-UUID: b406a144fa1f4310880c6fb01dbaec01-20190630
+Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw01.mediatek.com
+ (envelope-from <ck.hu@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 1601671361; Sun, 30 Jun 2019 17:59:22 -0800
+Received: from mtkcas07.mediatek.inc (172.21.101.84) by
+ MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Sun, 30 Jun 2019 18:59:21 -0700
+Received: from mtkcas07.mediatek.inc (172.21.101.84) by mtkcas07.mediatek.inc
+ (172.21.101.84) with Microsoft SMTP Server (TLS) id 15.0.1395.4;
+ Mon, 1 Jul 2019 09:59:19 +0800
+Received: from [172.21.77.4] (172.21.77.4) by mtkcas07.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
+ Transport; Mon, 1 Jul 2019 09:59:19 +0800
+Message-ID: <1561946359.23228.0.camel@mtksdaap41>
+Subject: Re: [PATCH v4 4/4] drm/mtk: add panel orientation property
+From: CK Hu <ck.hu@mediatek.com>
+To: Derek Basehore <dbasehore@chromium.org>
+Date: Mon, 1 Jul 2019 09:59:19 +0800
+In-Reply-To: <20190622034105.188454-5-dbasehore@chromium.org>
+References: <20190622034105.188454-1-dbasehore@chromium.org>
+ <20190622034105.188454-5-dbasehore@chromium.org>
+X-Mailer: Evolution 3.10.4-0ubuntu2 
 MIME-Version: 1.0
-In-Reply-To: <20190526125038.8419-2-alex@ghiti.fr>
-Content-Language: en-US
-X-Originating-IP: [10.177.223.23]
-X-CFilter-Loop: Reflected
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190630_185900_868492_CD4B82C1 
-X-CRM114-Status: GOOD (  13.65  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20190630_185928_714325_BFA2575F 
+X-CRM114-Status: GOOD (  12.69  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [45.249.212.190 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [216.200.240.184 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -74,61 +73,61 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
+Cc: Daniel Vetter <daniel@ffwll.ch>, Maxime Ripard <maxime.ripard@bootlin.com>,
+ Sean Paul <sean@poorly.run>, intel-gfx@lists.freedesktop.org,
+ Joonas Lahtinen <joonas.lahtinen@linux.intel.com>,
+ Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
+ linux-kernel@vger.kernel.org, Jani Nikula <jani.nikula@linux.intel.com>,
+ David Airlie <airlied@linux.ie>, Thierry
+ Reding <thierry.reding@gmail.com>, linux-mediatek@lists.infradead.org,
+ dri-devel@lists.freedesktop.org, Philipp Zabel <p.zabel@pengutronix.de>,
+ Rodrigo Vivi <rodrigo.vivi@intel.com>,
+ Matthias Brugger <matthias.bgg@gmail.com>, Sam Ravnborg <sam@ravnborg.org>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 2019/5/26 20:50, Alexandre Ghiti wrote:
-> ARCH_WANT_HUGE_PMD_SHARE config was declared in both architectures:
-> move this declaration in arch/Kconfig and make those architectures
-> select it.
+Hi, Derek:
+
+On Fri, 2019-06-21 at 20:41 -0700, Derek Basehore wrote:
+> This inits the panel orientation property for the mediatek dsi driver
+> if the panel orientation (connector.display_info.panel_orientation) is
+> not DRM_MODE_PANEL_ORIENTATION_UNKNOWN.
 > 
-> Signed-off-by: Alexandre Ghiti <alex@ghiti.fr>
-> Reviewed-by: Palmer Dabbelt <palmer@sifive.com>
+
+Reviewed-by: CK Hu <ck.hu@mediatek.com>
+
+> Signed-off-by: Derek Basehore <dbasehore@chromium.org>
 > ---
->  arch/Kconfig       | 3 +++
->  arch/arm64/Kconfig | 2 +-
->  arch/x86/Kconfig   | 4 +---
->  3 files changed, 5 insertions(+), 4 deletions(-)
+>  drivers/gpu/drm/mediatek/mtk_dsi.c | 8 ++++++++
+>  1 file changed, 8 insertions(+)
 > 
-> diff --git a/arch/Kconfig b/arch/Kconfig
-> index c47b328eada0..d2f212dc8e72 100644
-> --- a/arch/Kconfig
-> +++ b/arch/Kconfig
-> @@ -577,6 +577,9 @@ config HAVE_ARCH_TRANSPARENT_HUGEPAGE_PUD
->  config HAVE_ARCH_HUGE_VMAP
->  	bool
->  
-> +config ARCH_WANT_HUGE_PMD_SHARE
-> +	bool
+> diff --git a/drivers/gpu/drm/mediatek/mtk_dsi.c b/drivers/gpu/drm/mediatek/mtk_dsi.c
+> index 4a0b9150a7bb..08ffdc7526dd 100644
+> --- a/drivers/gpu/drm/mediatek/mtk_dsi.c
+> +++ b/drivers/gpu/drm/mediatek/mtk_dsi.c
+> @@ -782,10 +782,18 @@ static int mtk_dsi_create_connector(struct drm_device *drm, struct mtk_dsi *dsi)
+>  			DRM_ERROR("Failed to attach panel to drm\n");
+>  			goto err_connector_cleanup;
+>  		}
 > +
->  config HAVE_ARCH_SOFT_DIRTY
->  	bool
+> +		ret = drm_connector_init_panel_orientation_property(&dsi->conn);
+> +		if (ret) {
+> +			DRM_ERROR("Failed to init panel orientation\n");
+> +			goto err_panel_detach;
+> +		}
+>  	}
 >  
-> diff --git a/arch/arm64/Kconfig b/arch/arm64/Kconfig
-> index 4780eb7af842..dee7f750c42f 100644
-> --- a/arch/arm64/Kconfig
-> +++ b/arch/arm64/Kconfig
-> @@ -70,6 +70,7 @@ config ARM64
->  	select ARCH_SUPPORTS_NUMA_BALANCING
->  	select ARCH_WANT_COMPAT_IPC_PARSE_VERSION
->  	select ARCH_WANT_FRAME_POINTERS
-> +	select ARCH_WANT_HUGE_PMD_SHARE if ARM64_4K_PAGES || (ARM64_16K_PAGES && !ARM64_VA_BITS_36)
->  	select ARCH_HAS_UBSAN_SANITIZE_ALL
->  	select ARM_AMBA
->  	select ARM_ARCH_TIMER
-> @@ -884,7 +885,6 @@ config SYS_SUPPORTS_HUGETLBFS
->  	def_bool y
+>  	return 0;
 >  
->  config ARCH_WANT_HUGE_PMD_SHARE
-> -	def_bool y if ARM64_4K_PAGES || (ARM64_16K_PAGES && !ARM64_VA_BITS_36)
+> +err_panel_detach:
+> +	drm_panel_detach(dsi->panel);
+>  err_connector_cleanup:
+>  	drm_connector_cleanup(&dsi->conn);
+>  	return ret;
 
-Why not remove config ARCH_WANT_HUGE_PMD_SHARE as well?
-Did I miss something?
-
-Thanks
-Hanjun
 
 
 _______________________________________________
