@@ -2,56 +2,87 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7C2FA5D387
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  2 Jul 2019 17:51:56 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E806A5D394
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  2 Jul 2019 17:53:32 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=QbCIgLBiqMkGnyS/d9nA9mdpr8B6FkjVrV72XqZ25mc=; b=Y2Ruce8K0GdjW/Mm2tTlfk7Iy
-	jeHZoTG9EZxW+l1HtwHoq9wlVOixvx7mgbSE7Kr8+qTy6U5rx4/h+QakT1rGFC0XSXJfdnMvOWYIU
-	PAg51dYts8Wp1qYlwTGYfZCRjZHV6MWrAYKYw9kT+2vTMXFej6Tj5+LQzHC5lM9P4EnWkDNAS5Bqr
-	carNQPhKANzCN7e89vgm2l+ksh80B1P4fBAIbQ/l2p7aeNXM8embvdmiSa5hbHWnj35x+G5YxqV6y
-	oAp2b5fAtlHjB2MJu8C6Pn+z0V/PIlMAECijrWyaioj8z9WSFnN5uvXbRUObgVw5xRRO3Qac2wBvZ
-	YqB4EEXDA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=CtjzwF8ZhpgPCHIN/ZGlZX8dH36zJBqlHWGZ2q57BDk=; b=bWcMsh6CbbAeFW
+	nLo/ZdTKvlhvGYmiN+L/4EXS1wFKxT8HNs8E9zl2Xhjtwh31F4SqEL3kXt//DBzxcAvyjLSjNswkJ
+	7ITlfhASKP5a+chTUvzTcHdzVta0AdIY31iPcVPxKw5f87UB2iHZYeWTvQ1EPeb1QKWs7L7PgvneP
+	uQdCJhx5NQkAOyrUrv5fzJhUfqfUY04YuJg65Fn5517+p13sG1pR21P7MVr2JATqKpASd7LKYN/7B
+	CBEzIK0yPD9vwp+h057KU6MU64n8sSWq+bvZD/rvbqRfx6Js0eNWH3cQG2v8O3k05X+HwUCeLfA+8
+	J/gLBBxXhy5eF0c43MLw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hiL4T-0003cP-VG; Tue, 02 Jul 2019 15:51:54 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hiL4H-0003c1-NZ
- for linux-arm-kernel@lists.infradead.org; Tue, 02 Jul 2019 15:51:43 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 29B3A28;
- Tue,  2 Jul 2019 08:51:41 -0700 (PDT)
-Received: from [10.1.26.178] (unknown [10.1.26.178])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 330173F246;
- Tue,  2 Jul 2019 08:51:40 -0700 (PDT)
-Subject: Re: [PATCH 08/13] kselftest: arm64: mangle_pstate_ssbs_regs
-To: Dave Martin <Dave.Martin@arm.com>
-References: <20190613111335.7645-1-cristian.marussi@arm.com>
- <20190613111335.7645-9-cristian.marussi@arm.com>
- <20190621103554.GP2790@e103592.cambridge.arm.com>
-From: Cristian Marussi <cristian.marussi@arm.com>
-Message-ID: <b4365458-2034-2f06-4235-a101f17d4751@arm.com>
-Date: Tue, 2 Jul 2019 16:51:38 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.7.1
+	id 1hiL61-0003xS-Jv; Tue, 02 Jul 2019 15:53:29 +0000
+Received: from mx08-00178001.pphosted.com ([91.207.212.93]
+ helo=mx07-00178001.pphosted.com)
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hiL5n-0003w6-8A
+ for linux-arm-kernel@lists.infradead.org; Tue, 02 Jul 2019 15:53:16 +0000
+Received: from pps.filterd (m0046660.ppops.net [127.0.0.1])
+ by mx08-00178001.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id
+ x62For4k006850; Tue, 2 Jul 2019 17:53:08 +0200
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
+ h=from : to : cc : subject
+ : date : message-id : mime-version : content-type; s=STMicroelectronics;
+ bh=WguALeMhkUtWxuHtx66uBT18JBfrfAVkyGQwbkKrA0c=;
+ b=uT9HFMfr7zJ2nalYpnCpCxB2nNqrGY619JcE/DwHz88dKpU42zYSqOR55wt5dOgq/cEM
+ I+ByeRLGu8HnOnFlUkU7dVhLTRl2TRsTWIfpzox4zz6D4KnSC+z2v3TnkUH6ZtsB8bR/
+ zKpT8EJr9wcxo134fxMNCBEQPrqKNAsxEg4NQQdmftHxys+A1Bd39cJ5svJiFPvmVwB6
+ CMXFm1CprT1NXM6h2iqRFt2BegULQ/+qR0Tl4IFX2TJfWYUAxY1eXIYIlaHwIuv5Ob6R
+ Upbfs3N950t+A9R9jgHAjAVVUS0KnjXH1gNxxeS9YGWhcMJ3dMApAXEVHcoKLQ54BhPG DQ== 
+Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
+ by mx08-00178001.pphosted.com with ESMTP id 2tdw49wgy7-1
+ (version=TLSv1 cipher=ECDHE-RSA-AES256-SHA bits=256 verify=NOT);
+ Tue, 02 Jul 2019 17:53:08 +0200
+Received: from zeta.dmz-eu.st.com (zeta.dmz-eu.st.com [164.129.230.9])
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 412FA31;
+ Tue,  2 Jul 2019 15:53:07 +0000 (GMT)
+Received: from Webmail-eu.st.com (Safex1hubcas21.st.com [10.75.90.44])
+ by zeta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 216C94ADC;
+ Tue,  2 Jul 2019 15:53:07 +0000 (GMT)
+Received: from SAFEX1HUBCAS24.st.com (10.75.90.95) by SAFEX1HUBCAS21.st.com
+ (10.75.90.44) with Microsoft SMTP Server (TLS) id 14.3.439.0; Tue, 2 Jul 2019
+ 17:53:07 +0200
+Received: from localhost (10.201.23.19) by webmail-ga.st.com (10.75.90.48)
+ with Microsoft SMTP Server (TLS) id 14.3.439.0; Tue, 2 Jul 2019 17:53:06
+ +0200
+From: Hugues Fruchet <hugues.fruchet@st.com>
+To: Alexandre Torgue <alexandre.torgue@st.com>, Mauro Carvalho Chehab
+ <mchehab@kernel.org>, Hans Verkuil <hverkuil@xs4all.nl>, Sakari Ailus
+ <sakari.ailus@linux.intel.com>
+Subject: [PATCH v3 0/3] DCMI bridge support
+Date: Tue, 2 Jul 2019 17:52:56 +0200
+Message-ID: <1562082779-31165-1-git-send-email-hugues.fruchet@st.com>
+X-Mailer: git-send-email 2.7.4
 MIME-Version: 1.0
-In-Reply-To: <20190621103554.GP2790@e103592.cambridge.arm.com>
-Content-Language: en-US
+X-Originating-IP: [10.201.23.19]
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:, ,
+ definitions=2019-07-02_08:, , signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190702_085141_859412_7FC3625E 
-X-CRM114-Status: GOOD (  22.21  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190702_085315_589355_C357132A 
+X-CRM114-Status: GOOD (  11.53  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [91.207.212.93 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -63,116 +94,63 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: andreyknvl@google.com, shuah@kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-kselftest@vger.kernel.org
+Cc: Mickael GUENE <mickael.guene@st.com>, linux-kernel@vger.kernel.org,
+ Philippe CORNU <philippe.cornu@st.com>, Yannick Fertre <yannick.fertre@st.com>,
+ Benjamin Gaignard <benjamin.gaignard@linaro.org>, Hugues
+ Fruchet <hugues.fruchet@st.com>, linux-stm32@st-md-mailman.stormreply.com,
+ linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi
+This patch serie allows to connect non-parallel camera sensor to
+DCMI thanks to a bridge connected in between such as STMIPID02 [1].
 
-On 6/21/19 11:35 AM, Dave Martin wrote:
-> On Thu, Jun 13, 2019 at 12:13:30PM +0100, Cristian Marussi wrote:
->> Added a simple mangle testcase which messes with the ucontext_t
->> from within the sig_handler, trying to toggle PSTATE SSBS bit.
->> Expect SIGILL if SSBS feature unsupported or that the value set in
->> PSTATE.SSBS is preserved on test PASS.
->>
->> Signed-off-by: Cristian Marussi <cristian.marussi@arm.com>
->> ---
->>   .../arm64/signal/testcases/.gitignore         |  1 +
->>   .../testcases/mangle_pstate_ssbs_regs.c       | 41 +++++++++++++++++++
->>   2 files changed, 42 insertions(+)
->>   create mode 100644 tools/testing/selftests/arm64/signal/testcases/mangle_pstate_ssbs_regs.c
->>
->> diff --git a/tools/testing/selftests/arm64/signal/testcases/.gitignore b/tools/testing/selftests/arm64/signal/testcases/.gitignore
->> index e7a1d998b650..c2972c3f33ca 100644
->> --- a/tools/testing/selftests/arm64/signal/testcases/.gitignore
->> +++ b/tools/testing/selftests/arm64/signal/testcases/.gitignore
->> @@ -5,3 +5,4 @@ mangle_pstate_invalid_state_toggle
->>   mangle_pstate_invalid_mode_el1
->>   mangle_pstate_invalid_mode_el2
->>   mangle_pstate_invalid_mode_el3
->> +mangle_pstate_ssbs_regs
->> diff --git a/tools/testing/selftests/arm64/signal/testcases/mangle_pstate_ssbs_regs.c b/tools/testing/selftests/arm64/signal/testcases/mangle_pstate_ssbs_regs.c
->> new file mode 100644
->> index 000000000000..d997ebf742d9
->> --- /dev/null
->> +++ b/tools/testing/selftests/arm64/signal/testcases/mangle_pstate_ssbs_regs.c
->> @@ -0,0 +1,41 @@
->> +/* SPDX-License-Identifier: GPL-2.0 */
->> +/* Copyright (C) 2019 ARM Limited */
->> +
->> +#include "test_signals_utils.h"
->> +#include "testcases.h"
->> +
->> +static int mangle_invalid_pstate_ssbs_run(struct tdescr *td,
->> +					  siginfo_t *si, ucontext_t *uc)
->> +{
->> +	ASSERT_GOOD_CONTEXT(uc);
->> +
->> +	/* toggle bit value */
->> +	uc->uc_mcontext.pstate ^= PSR_SSBS_BIT;
->> +	/* Save after mangling...it should be preserved */
->> +	td->saved_uc = *uc;
->> +
->> +	return 1;
->> +}
->> +
->> +static int pstate_ssbs_bit_checks(struct tdescr *td)
->> +{
->> +	uint64_t val = 0;
->> +
->> +	get_regval(MRS_SSBS_SYSREG, val);
->> +	/* pass when preserved */
->> +	td->pass = (!!(val & MRS_SSBS_BIT) ==
->> +		    !!(td->saved_uc.uc_mcontext.pstate & PSR_SSBS_BIT));
-> 
-> Nit: there's a redundant level of ! here, and the outer () are unnecessary:
-> 
-> 	(!!a == !!b) -> !a == !b
->
+Media controller support is introduced first, then support of
+several sub-devices within pipeline with dynamic linking
+between them.
+In order to keep backward compatibility with applications
+relying on V4L2 interface only, format set on video node
+is propagated to all sub-devices connected to camera interface.
 
-This was me badly convinced (not sure where I got this) that the bitpos 
-of PSR_SSBS_BIT in pstate was different from the bitpos as reported in 
-the output of MRS SSBS, so I was trying to normalize the comparison to 1 
-== 1 or 0 == 0
+[1] https://www.spinics.net/lists/devicetree/msg278002.html
 
-...but in fact bitpos is the same between PSTATE and MSR SSBS so it can 
-be compared directly.
+===========
+= history =
+===========
+version 3:
+  - Drop media device registry to not expose media controller
+    interface to userspace as per Laurent' suggestion:
+    https://www.spinics.net/lists/linux-media/msg153417.html
+  - Prefer "source" instead of "sensor" and keep it in 
+    dcmi_graph_entity struct, move asd as first member
+    of struct as per Sakari' suggestion:
+    https://www.spinics.net/lists/linux-media/msg153119.html
+  - Drop dcmi_graph_deinit() as per Sakari' suggestion:
+    https://www.spinics.net/lists/linux-media/msg153417.html
 
+version 2:
+  - Fix bus_info not consistent between media and V4L:
+    https://www.spinics.net/lists/arm-kernel/msg717676.html
+  - Propagation of format set on video node to the sub-devices
+    chain connected on camera interface
 
+version 1:
+  - Initial submission
 
-> [...]
-> 
-> Can we trigger a second signal after the first returns, to grab the
-> updated ucontext and check SSBS in there directly?
-> 
-> Checking that the updated value is _also_ visible via MRS remains
-> useful though, so we should keep that.
-> 
+Hugues Fruchet (3):
+  media: stm32-dcmi: improve sensor subdev naming
+  media: stm32-dcmi: add media controller support
+  media: stm32-dcmi: add support of several sub-devices
 
-I have added an informational message that reports the PSTATE and the 
-status of SSBS as grabbed from uc via an induced SIGUSR2.
-Test outcome is anyway  determined on MRS SSBS result.
+ drivers/media/platform/Kconfig            |   2 +-
+ drivers/media/platform/stm32/stm32-dcmi.c | 294 +++++++++++++++++++++++++-----
+ 2 files changed, 247 insertions(+), 49 deletions(-)
 
-If HWCAP_SSBS is available the feature is considered available and so 
-MRS SSBS MUST work.
-If instead feature is NOT supported as stated in HWCAP_SSBS the test is 
-anyway run but the MRS SSBS is expected to cause a SIGILL (COULD not 
-SHOULD...since HW_CAP could be reporting wrong caps and so MRS SSBS will 
-still work)
+-- 
+2.7.4
 
-Moreover I fixed a small glitch: I was toggling the SSBS bit in uc 
-PSTATE, BUT this make no sense...toggling to zero there's NO way I can 
-check if Kernel preserve it to zero...so now I'm setting to 1 and then 
-check if it has been preserved by Kernel
-
-Cristian
-> Cheers
-> ---Dave
-> 
 
 _______________________________________________
 linux-arm-kernel mailing list
