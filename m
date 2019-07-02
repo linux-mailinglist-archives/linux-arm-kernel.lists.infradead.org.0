@@ -2,85 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 26D615D862
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  3 Jul 2019 01:25:20 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 049825D865
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  3 Jul 2019 01:27:12 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=pv1r/YAC9gVGBec9CYY/QVQBNflqvUjXN0OwIrIAHmo=; b=Hy2jv6RPYIqeJY
-	CV3MTdeXO4iZNmbT3aKm6zTYeMYqMRUfQUaKIlhYb2EsbWvrWaTUx9DuhL/l0FQG14UKdgNi1eBAF
-	PTPKDX0Ms8oH2XrO4LI5U6jP49bFNnoNlcYByNn/EhvIYk7SLa2foTFPM+RnskeYvjoiLVQgXsvFU
-	PPInJY9ZFojZRx6cmqOYSzaHR4l9xGeyZR9k94v76apoBTDBIU9iIGtsCPFQAq0FJ4PUciGR/ZJU/
-	LRmQI4wuhdaeStCOcg7XyZBezd2XSzM2z5+Czwzl9vG0Q/wKsm9Bv6LVpZVt9yU3pKyNZ6I7MngeG
-	dAgYzPwkakX6fA3vYPfw==;
+	List-Owner; bh=k5YPZIuWHny2lQSdn3rjucBHfWzHqD8FNi0xJRn71ik=; b=utQI8tKAEpKpR+
+	6DGMCr9alqWxB2B8Q30sQVcfhqcpEGCsoI5lIV3L7oCMdOQH1YrysykpY7USOZdZ+HvpGcDZJJ69c
+	9bEIweXWeYuHLlVbCccxvkWQOPbTAFx2r09N0tnJlQoZqzu2hZzkrxwg+RdL7D+lee+EXNf69R+GN
+	WJCqFJcDzHwzEY4mrNvEjMZaHrIFeDliPpMS/XWS3cE4YaeYJWeTyiR0p1ApW+g3hFPm5Az7bI3vG
+	QJRiafvyihABpuXpW16+IZdTvaryYNGLBZ4Nqg/Jsl6+Qt2F8SMxqmjc1XrSnvHio4TZU1BF6RUFW
+	xEB2eQzUviu2f2hfc+gg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hiS9G-0004W3-8c; Tue, 02 Jul 2019 23:25:18 +0000
-Received: from mail-ed1-x542.google.com ([2a00:1450:4864:20::542])
+	id 1hiSB3-00059t-Hu; Tue, 02 Jul 2019 23:27:09 +0000
+Received: from mail-qt1-x842.google.com ([2607:f8b0:4864:20::842])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hiS92-0003pw-Np
- for linux-arm-kernel@lists.infradead.org; Tue, 02 Jul 2019 23:25:06 +0000
-Received: by mail-ed1-x542.google.com with SMTP id w13so210502eds.4
+ id 1hiSAq-00059U-SW
+ for linux-arm-kernel@lists.infradead.org; Tue, 02 Jul 2019 23:26:58 +0000
+Received: by mail-qt1-x842.google.com with SMTP id s15so512380qtk.9
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 02 Jul 2019 16:25:04 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=NZtVuNGmIL9iaoOv0S9sHPsevjMvF/JVL4gPcjO5NUI=;
- b=SHh1FgYPa22DIxBnLW3RbawjFoO5Ews8pSLyOZtbQLVFUITDB/8JUBPIyVCQQqif2o
- jh0XBWcmHMPfugvHT4zk9ZjmT/ikZnm/p6VSJjTMfg4cwitT7AT/HiFcTuSR1FBLDQPa
- rBV2OXCkJgC371eYAR/rFiKQQGs535az8ojnru1tfAIBz0Fgoj2YMtZVCdSpmLxem0pq
- IlUoJcxyhGdbJq/Nszm0bvjhzXKF0PXEfoUwkQ6S1AxufB4AinVLqzLZI5XvXwBdawlg
- AaKBWT7X2DMQfSWdzKY7fMrxBY/iWG0flIV3U8h2rXGA2uCmaP3WkWxPLubhXjDjb5Y8
- CkOg==
+ Tue, 02 Jul 2019 16:26:54 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=5c4oP4xTk1IBbNBe2Xnvi/hVZ3pLkXGkSfkFWUiE8zI=;
+ b=or3ER8GL2VWQXZAyB6TKaLxj3ZFYyknrFx+DqXSLqFoMdoX/GpuCyI8Accipx9XSXu
+ 7qN7Ep0mMjEOze0iArZLcQaghY0h7AfTzceaWGUg6xA9X+NG6ztolo43eA4dK09rLJH6
+ UDQ+gdYIBXGT2OUYEgAjjMhPTuRlsCjnwRpIP8fzur/UOBQEhT5v4++uOi6vy9q2Q41s
+ heeBlwdOLLZq4T2WfFmg7MWEv8ML15czbGavD1JSf2FDogclfmr2HtzlrJaqmPOhNF4I
+ YtAz6LaBVmDaKQH3Pcj6S6S+8lKrewvtQE+kVftBUH1B7tjPcMY94B1BIPKJSc3+10+U
+ MNPg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=NZtVuNGmIL9iaoOv0S9sHPsevjMvF/JVL4gPcjO5NUI=;
- b=S2wwdQdlydKHWhUS0QjEjL9Wh+P/txh6f964Z2hgJAJnpDv/oTv8XDUsRe5Iexx4OX
- ipKsw0Wi+Pf1u3Y4WtHsY0DbL6Yxnc9QC2WIylf8EBP1yXMaSAFC+Bc2TlYgSdBeRKOm
- wUXk7Kj6cjX9Gf7TW+xihFWTOcqiwIPjm1wB78yn4vMzLFzF8esi1blpOle+HFouYe18
- drdTwUWfh83MID0ORLTqGmvggE557oFnXERhvPjEep1KAJKlsCFhQ9F8TnNrYn7USDCK
- uR+cM9jH6NaUYzIUzookffY+13/DuGuNY07FP6x0+8eLqyl7ckKFwt1l5ncupWcIis2U
- PkGg==
-X-Gm-Message-State: APjAAAXXbZRfrnTSZ41IUxzcNz8Ig8O6DmkSPfdZbUsUCwk3OQROeO1p
- rmYe6o5lbJCNexqzQkdRS8U=
-X-Google-Smtp-Source: APXvYqy+5foubNJ06De2DuMgU5AFGqLcI3pTtf/zTzuWwlpy+qCo7LSTAegL5DC5/UAsumZaZbpBRw==
-X-Received: by 2002:a50:ec03:: with SMTP id g3mr38512006edr.233.1562109902787; 
- Tue, 02 Jul 2019 16:25:02 -0700 (PDT)
-Received: from archlinux-epyc ([2a01:4f9:2b:2b15::2])
- by smtp.gmail.com with ESMTPSA id s52sm135306edm.55.2019.07.02.16.25.01
- (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Tue, 02 Jul 2019 16:25:01 -0700 (PDT)
-Date: Tue, 2 Jul 2019 16:24:59 -0700
-From: Nathan Chancellor <natechancellor@gmail.com>
-To: Nathan Huckleberry <nhuck@google.com>
-Subject: Re: [PATCH] arm64: mm: Fix dead assignment of old_pte
-Message-ID: <20190702232459.GA14941@archlinux-epyc>
-References: <20190702231302.60727-1-nhuck@google.com>
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=5c4oP4xTk1IBbNBe2Xnvi/hVZ3pLkXGkSfkFWUiE8zI=;
+ b=YEhCd0VuKoV1bBUFVZrXlHiGj5GiybTXsCaQzV3J3CeCKwUmchyCk3lN9g+pnO20nd
+ uIBasb3VsSJpP7/hSZp7HO5vEw9ST7qcS4oqaI488gPEdOA6SfS578vG4VnRqQAo+tb7
+ p8bNtTuzIRBQeRgWaB+eqaAhRmVZG0Sb3XzEc9iJCPvYKjEAuVTxrESrJDZ9IzpbzeeM
+ a7JTEDAo4CofzuIyJDUMh6bP0Gz01loprhPG2ZxCW8GsqqCo5Ch+h3Trfy4cN6ZUvUjD
+ saiSFQu18QvPdOYSKdcKk2s4lXzXi7ATWYXl38VR9SPilrIPpV06Un096eqEPXn/N8sm
+ wsag==
+X-Gm-Message-State: APjAAAUZ00iA89IA/rLz7fvtAShAbu9GU6/I7XETlfCTMa+u0wimKnmu
+ FPiZ5lv7D7AdGCaKg9knD4r/cH/sMVsfcs1o+l2NUA==
+X-Google-Smtp-Source: APXvYqyngmd2Rg7LbbyIIoGmaR3URsrZvldAi9oHTTvEW7shZpguleHzKCoPWfRQ0zGoAN9CeBeNA81xUQUG0rbjvsw=
+X-Received: by 2002:ac8:1a59:: with SMTP id q25mr27066278qtk.76.1562110013149; 
+ Tue, 02 Jul 2019 16:26:53 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190702231302.60727-1-nhuck@google.com>
-User-Agent: Mutt/1.12.1 (2019-06-15)
+References: <20190702231302.60727-1-nhuck@google.com>
+ <20190702232459.GA14941@archlinux-epyc>
+In-Reply-To: <20190702232459.GA14941@archlinux-epyc>
+From: Nathan Huckleberry <nhuck@google.com>
+Date: Tue, 2 Jul 2019 16:26:42 -0700
+Message-ID: <CAJkfWY4yvVVmJoQ0WwyoFBkWYsUJnnQPNU+-g23-m-L3ETe_hQ@mail.gmail.com>
+Subject: Re: [PATCH] arm64: mm: Fix dead assignment of old_pte
+To: Nathan Chancellor <natechancellor@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190702_162504_815204_37B4008C 
-X-CRM114-Status: GOOD (  18.79  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190702_162656_953171_422A8401 
+X-CRM114-Status: GOOD (  25.78  )
+X-Spam-Score: -15.7 (---------------)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-15.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:542 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:842 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
+ white-list
+ -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
+ white-list
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (natechancellor[at]gmail.com)
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -88,6 +84,8 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
+ -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
+ Match -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -106,89 +104,103 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Jul 02, 2019 at 04:13:02PM -0700, 'Nathan Huckleberry' via Clang Built Linux wrote:
-> When analyzed with the clang static analyzer the
-> following warning occurs
-> 
-> line 251, column 2
-> Value stored to 'old_pte' is never read
-> 
-> This warning is repeated every time pgtable.h is
-> included by another file and produces ~3500
-> extra warnings.
-> 
-> Moving old_pte into preprocessor guard.
-> 
-> Cc: clang-built-linux@googlegroups.com
-> Signed-off-by: Nathan Huckleberry <nhuck@google.com>
-> ---
->  arch/arm64/include/asm/pgtable.h | 8 +++++---
->  1 file changed, 5 insertions(+), 3 deletions(-)
-> 
-> diff --git a/arch/arm64/include/asm/pgtable.h b/arch/arm64/include/asm/pgtable.h
-> index fca26759081a..42ca4fc67f27 100644
-> --- a/arch/arm64/include/asm/pgtable.h
-> +++ b/arch/arm64/include/asm/pgtable.h
-> @@ -238,8 +238,6 @@ extern void __sync_icache_dcache(pte_t pteval);
->  static inline void set_pte_at(struct mm_struct *mm, unsigned long addr,
->  			      pte_t *ptep, pte_t pte)
->  {
-> -	pte_t old_pte;
-> -
->  	if (pte_present(pte) && pte_user_exec(pte) && !pte_special(pte))
->  		__sync_icache_dcache(pte);
->  
-> @@ -248,8 +246,11 @@ static inline void set_pte_at(struct mm_struct *mm, unsigned long addr,
->  	 * hardware updates of the pte (ptep_set_access_flags safely changes
->  	 * valid ptes without going through an invalid entry).
->  	 */
-> +	#if IS_ENABLED(CONFIG_DEBUG_VM)
-> +	pte_t old_pte;
-> +
->  	old_pte = READ_ONCE(*ptep);
-> -	if (IS_ENABLED(CONFIG_DEBUG_VM) && pte_valid(old_pte) && pte_valid(pte) &&
-> +	if (pte_valid(old_pte) && pte_valid(pte) &&
->  	   (mm == current->active_mm || atomic_read(&mm->mm_users) > 1)) {
->  		VM_WARN_ONCE(!pte_young(pte),
->  			     "%s: racy access flag clearing: 0x%016llx -> 0x%016llx",
-> @@ -258,6 +259,7 @@ static inline void set_pte_at(struct mm_struct *mm, unsigned long addr,
->  			     "%s: racy dirty state clearing: 0x%016llx -> 0x%016llx",
->  			     __func__, pte_val(old_pte), pte_val(pte));
->  	}
-> +	#endif
->  
->  	set_pte(ptep, pte);
->  }
-> -- 
-> 2.22.0.410.gd8fdbe21b5-goog
-> 
+Oops I forgot moving the variable declaration would cause a warning.
+Will send a V2.
 
-Hi Nathan,
+Thanks,
+Nathan Huckleberry
 
-This does not apply on -next because of https://git.kernel.org/arm64/c/9b604722059039a1a3ff69fb8dfd024264046024.
-I would get into the habit of testing -next to see if the warning is
-present there first because someone may have independently fixed it
-already (I'd be surprised if it wasn't fixed by that commit from a quick
-glance).
-
-Additionally, when I do apply this patch to mainline and build, I see
-the following warning:
-
-In file included from /home/nathan/cbl/linux/arch/arm64/kernel/asm-offsets.c:10:
-In file included from /home/nathan/cbl/linux/include/linux/arm_sdei.h:14:
-In file included from /home/nathan/cbl/linux/include/acpi/ghes.h:5:
-In file included from /home/nathan/cbl/linux/include/acpi/apei.h:9:
-In file included from /home/nathan/cbl/linux/include/linux/acpi.h:34:
-In file included from /home/nathan/cbl/linux/include/acpi/acpi_io.h:5:
-In file included from /home/nathan/cbl/linux/include/linux/io.h:13:
-In file included from /home/nathan/cbl/linux/arch/arm64/include/asm/io.h:18:
-/home/nathan/cbl/linux/arch/arm64/include/asm/pgtable.h:250:8: warning: ISO C90 forbids mixing declarations and code [-Wdeclaration-after-statement]
-        pte_t old_pte;
-              ^
-1 warning generated.
-
-Cheers,
-Nathan
+On Tue, Jul 2, 2019 at 4:25 PM Nathan Chancellor
+<natechancellor@gmail.com> wrote:
+>
+> On Tue, Jul 02, 2019 at 04:13:02PM -0700, 'Nathan Huckleberry' via Clang Built Linux wrote:
+> > When analyzed with the clang static analyzer the
+> > following warning occurs
+> >
+> > line 251, column 2
+> > Value stored to 'old_pte' is never read
+> >
+> > This warning is repeated every time pgtable.h is
+> > included by another file and produces ~3500
+> > extra warnings.
+> >
+> > Moving old_pte into preprocessor guard.
+> >
+> > Cc: clang-built-linux@googlegroups.com
+> > Signed-off-by: Nathan Huckleberry <nhuck@google.com>
+> > ---
+> >  arch/arm64/include/asm/pgtable.h | 8 +++++---
+> >  1 file changed, 5 insertions(+), 3 deletions(-)
+> >
+> > diff --git a/arch/arm64/include/asm/pgtable.h b/arch/arm64/include/asm/pgtable.h
+> > index fca26759081a..42ca4fc67f27 100644
+> > --- a/arch/arm64/include/asm/pgtable.h
+> > +++ b/arch/arm64/include/asm/pgtable.h
+> > @@ -238,8 +238,6 @@ extern void __sync_icache_dcache(pte_t pteval);
+> >  static inline void set_pte_at(struct mm_struct *mm, unsigned long addr,
+> >                             pte_t *ptep, pte_t pte)
+> >  {
+> > -     pte_t old_pte;
+> > -
+> >       if (pte_present(pte) && pte_user_exec(pte) && !pte_special(pte))
+> >               __sync_icache_dcache(pte);
+> >
+> > @@ -248,8 +246,11 @@ static inline void set_pte_at(struct mm_struct *mm, unsigned long addr,
+> >        * hardware updates of the pte (ptep_set_access_flags safely changes
+> >        * valid ptes without going through an invalid entry).
+> >        */
+> > +     #if IS_ENABLED(CONFIG_DEBUG_VM)
+> > +     pte_t old_pte;
+> > +
+> >       old_pte = READ_ONCE(*ptep);
+> > -     if (IS_ENABLED(CONFIG_DEBUG_VM) && pte_valid(old_pte) && pte_valid(pte) &&
+> > +     if (pte_valid(old_pte) && pte_valid(pte) &&
+> >          (mm == current->active_mm || atomic_read(&mm->mm_users) > 1)) {
+> >               VM_WARN_ONCE(!pte_young(pte),
+> >                            "%s: racy access flag clearing: 0x%016llx -> 0x%016llx",
+> > @@ -258,6 +259,7 @@ static inline void set_pte_at(struct mm_struct *mm, unsigned long addr,
+> >                            "%s: racy dirty state clearing: 0x%016llx -> 0x%016llx",
+> >                            __func__, pte_val(old_pte), pte_val(pte));
+> >       }
+> > +     #endif
+> >
+> >       set_pte(ptep, pte);
+> >  }
+> > --
+> > 2.22.0.410.gd8fdbe21b5-goog
+> >
+>
+> Hi Nathan,
+>
+> This does not apply on -next because of https://git.kernel.org/arm64/c/9b604722059039a1a3ff69fb8dfd024264046024.
+> I would get into the habit of testing -next to see if the warning is
+> present there first because someone may have independently fixed it
+> already (I'd be surprised if it wasn't fixed by that commit from a quick
+> glance).
+>
+> Additionally, when I do apply this patch to mainline and build, I see
+> the following warning:
+>
+> In file included from /home/nathan/cbl/linux/arch/arm64/kernel/asm-offsets.c:10:
+> In file included from /home/nathan/cbl/linux/include/linux/arm_sdei.h:14:
+> In file included from /home/nathan/cbl/linux/include/acpi/ghes.h:5:
+> In file included from /home/nathan/cbl/linux/include/acpi/apei.h:9:
+> In file included from /home/nathan/cbl/linux/include/linux/acpi.h:34:
+> In file included from /home/nathan/cbl/linux/include/acpi/acpi_io.h:5:
+> In file included from /home/nathan/cbl/linux/include/linux/io.h:13:
+> In file included from /home/nathan/cbl/linux/arch/arm64/include/asm/io.h:18:
+> /home/nathan/cbl/linux/arch/arm64/include/asm/pgtable.h:250:8: warning: ISO C90 forbids mixing declarations and code [-Wdeclaration-after-statement]
+>         pte_t old_pte;
+>               ^
+> 1 warning generated.
+>
+> Cheers,
+> Nathan
+>
+> --
+> You received this message because you are subscribed to the Google Groups "Clang Built Linux" group.
+> To unsubscribe from this group and stop receiving emails from it, send an email to clang-built-linux+unsubscribe@googlegroups.com.
+> To view this discussion on the web visit https://groups.google.com/d/msgid/clang-built-linux/20190702232459.GA14941%40archlinux-epyc.
 
 _______________________________________________
 linux-arm-kernel mailing list
