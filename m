@@ -2,108 +2,63 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BFAE75C6A1
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  2 Jul 2019 03:32:45 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BB4DB5C6D0
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  2 Jul 2019 03:53:32 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=VUaF8RxB3/HJdWstpLSDKjVt1QS0lMa+hTk4G4aw/60=; b=eUuElLeAibEgg98aUHDvSECru
-	pvi75JmiQ/LG2Xdg04mxKTt1oyWrvlpi5xO6e90ELDeMP0IkIL6mpHJU6t0ZJ62LmIQQro/0BW2tQ
-	BbfI3zVq56i6G2WVseL7hKH+2kEix1JYBwxX7mRyQhbBA2jCqpLiCe83w7vgwykKZfInJMzQEsJKH
-	Yn11DEbeSz7z8OE0MQ8nRojxPjX/b+jH1vhX/9Jd1+Gg9q+dKzdA/8N8kuMfXLWaIT3tGox+LYB3I
-	ZegyxesUiPOe5lJbi5Y/g/gWqdI+WUY51LMsr9q9RTKsOzlT7bFoZuOzKKm+aWVLIW40WJwmRGZdj
-	OLoIY8waw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=xGFRRbHSegVl2WNMIVmo3Ez8I0gP8DixHlml8SErMeM=; b=AZg
+	ReZY3Yg9Pqmci7u6EQa8cAUXGA+wxMwdfZXvVw41JAJ8X5WvQHdK/t9eVrofntkGa+yDHcHsJGR+A
+	GO1F/zKlJfDScwogqBYasyRO/LWheJQKKrBWqG8SqaCqjSd6gqaWiytFiqMNKD5VpoJBUmAdQMYS2
+	2UvFeJqLkqpx2jrkRloisDSeoRoD1d1UF9GxKFljRLGefM3u7JrU1f6oH2DyV9JOAsPDYEhhRA+MX
+	ClKXduJn4jL3AGqUSGjnjt+CxKBS0cPOo02Qllbx59OPK9p6NXz4NgiA9nnHke/LrozqmlPCS+Z3W
+	jJH9T7EWQQ+OPzIDI8OF+QraZ7pOmcw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hi7f1-0002MT-8s; Tue, 02 Jul 2019 01:32:43 +0000
-Received: from userp2120.oracle.com ([156.151.31.85])
+	id 1hi7z7-0001Rj-3u; Tue, 02 Jul 2019 01:53:29 +0000
+Received: from inva020.nxp.com ([92.121.34.13])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hi7eo-0002M5-Ng
- for linux-arm-kernel@lists.infradead.org; Tue, 02 Jul 2019 01:32:32 +0000
-Received: from pps.filterd (userp2120.oracle.com [127.0.0.1])
- by userp2120.oracle.com (8.16.0.27/8.16.0.27) with SMTP id x621IeTc170139;
- Tue, 2 Jul 2019 01:32:15 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=oracle.com;
- h=subject : to : cc :
- references : from : message-id : date : mime-version : in-reply-to :
- content-type : content-transfer-encoding; s=corp-2018-07-02;
- bh=CTmK2bG4LfuAj+OGk5lCbn5r1g3VskoESmcpOd+WCVk=;
- b=PHuaCxD02WjFRnUJ0yL8NVZgO4T7q7BEmHAMOV5o9R9/JS8Q+ePLiaUb2NCNYvk/mUMC
- pQnfRR5Ko7UcMlbnXNbAe2rjXBr62NZHhOpAD5k1aT5bWjazZtUvKheBop1Y/eOMozHO
- Ub5k3EToCB2v6o4SkEc+JRpDkEUmpW+UEnZoDoqzNyN6oiEQJTD0oGxWUpy7ACDzEk93
- RkIuy4JL8XIXg6EnfgwGnMa9pxdbyl9yomSdTjoulOmiNs6WTxPf/0AAsDQwa1SlwWCN
- +9APY4EzjyIUIXo9sumxogh/scE9JS597BkUUtLMOClQsEY2tCVyovnNMCBRFbRfJ3l3 vw== 
-Received: from userp3030.oracle.com (userp3030.oracle.com [156.151.31.80])
- by userp2120.oracle.com with ESMTP id 2te61prhk2-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Tue, 02 Jul 2019 01:32:15 +0000
-Received: from pps.filterd (userp3030.oracle.com [127.0.0.1])
- by userp3030.oracle.com (8.16.0.27/8.16.0.27) with SMTP id x621N30L022377;
- Tue, 2 Jul 2019 01:30:15 GMT
-Received: from userv0122.oracle.com (userv0122.oracle.com [156.151.31.75])
- by userp3030.oracle.com with ESMTP id 2tebqg7pkm-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Tue, 02 Jul 2019 01:30:14 +0000
-Received: from abhmp0009.oracle.com (abhmp0009.oracle.com [141.146.116.15])
- by userv0122.oracle.com (8.14.4/8.14.4) with ESMTP id x621UAkk007677;
- Tue, 2 Jul 2019 01:30:11 GMT
-Received: from [10.159.132.152] (/10.159.132.152)
- by default (Oracle Beehive Gateway v4.0)
- with ESMTP ; Mon, 01 Jul 2019 18:30:10 -0700
-Subject: Re: [PATCH] soc: ti: fix irq-ti-sci link error
-To: Olof Johansson <olof@lixom.net>
-References: <20190617130149.1782930-1-arnd@arndb.de>
- <7a96a4d2-25e7-f9cf-1109-23c5495325a8@oracle.com>
- <CAOesGMi5urJPF3cKfF+UB_KrK50_VQw+MMS5w_UqKzEMYKeXFA@mail.gmail.com>
-From: santosh.shilimkar@oracle.com
-Organization: Oracle Corporation
-Message-ID: <f767335b-eed9-13fd-3a85-774bde43eba4@oracle.com>
-Date: Mon, 1 Jul 2019 18:30:09 -0700
-User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:52.0)
- Gecko/20100101 Thunderbird/52.9.1
-MIME-Version: 1.0
-In-Reply-To: <CAOesGMi5urJPF3cKfF+UB_KrK50_VQw+MMS5w_UqKzEMYKeXFA@mail.gmail.com>
-Content-Language: en-US
-X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9305
- signatures=668688
-X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 suspectscore=0
- malwarescore=0
- phishscore=0 bulkscore=0 spamscore=0 mlxscore=0 mlxlogscore=999
- adultscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.0.1-1810050000 definitions=main-1907020012
-X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9305
- signatures=668688
-X-Proofpoint-Spam-Details: rule=notspam policy=default score=0
- priorityscore=1501 malwarescore=0
- suspectscore=0 phishscore=0 bulkscore=0 spamscore=0 clxscore=1015
- lowpriorityscore=0 mlxscore=0 impostorscore=0 mlxlogscore=999 adultscore=0
- classifier=spam adjust=0 reason=mlx scancount=1 engine=8.0.1-1810050000
- definitions=main-1907020012
+ id 1hi7yt-0001Qr-Dv
+ for linux-arm-kernel@lists.infradead.org; Tue, 02 Jul 2019 01:53:16 +0000
+Received: from inva020.nxp.com (localhost [127.0.0.1])
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id E56EE1A01F8;
+ Tue,  2 Jul 2019 03:53:12 +0200 (CEST)
+Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
+ [165.114.16.14])
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id D3DF71A0B0B;
+ Tue,  2 Jul 2019 03:53:02 +0200 (CEST)
+Received: from titan.ap.freescale.net (TITAN.ap.freescale.net [10.192.208.233])
+ by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id CFDB9402D9;
+ Tue,  2 Jul 2019 09:52:50 +0800 (SGT)
+From: Anson.Huang@nxp.com
+To: robh+dt@kernel.org, mark.rutland@arm.com, shawnguo@kernel.org,
+ s.hauer@pengutronix.de, kernel@pengutronix.de, festevam@gmail.com,
+ leonard.crestez@nxp.com, viresh.kumar@linaro.org, ping.bai@nxp.com,
+ daniel.baluta@nxp.com, l.stach@pengutronix.de, abel.vesa@nxp.com,
+ andrew.smirnov@gmail.com, angus@akkea.ca, ccaione@baylibre.com,
+ agx@sigxcpu.org, devicetree@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
+Subject: [PATCH 1/2] arm64: dts: imx8mq: Add gpio-ranges property
+Date: Tue,  2 Jul 2019 09:43:59 +0800
+Message-Id: <20190702014400.33554-1-Anson.Huang@nxp.com>
+X-Mailer: git-send-email 2.14.1
+X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190701_183230_910166_D7826383 
-X-CRM114-Status: GOOD (  21.00  )
-X-Spam-Score: -0.8 (/)
+X-CRM114-CacheID: sfid-20190701_185315_610257_C46F1BA8 
+X-CRM114-Status: UNSURE (   5.73  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.8 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [156.151.31.85 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ medium trust [92.121.34.13 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 1.7 URIBL_BLACK            Contains an URL listed in the URIBL blacklist
- [URIs: kernle.org]
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -115,54 +70,70 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Nishanth Menon <nm@ti.com>, Arnd Bergmann <arnd@arndb.de>,
- Lokesh Vutla <lokeshvutla@ti.com>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Marc Zyngier <marc.zyngier@arm.com>, Tony Lindgren <tony@atomide.com>,
- Santosh Shilimkar <ssantosh@kernel.org>,
- Linux ARM Mailing List <linux-arm-kernel@lists.infradead.org>
+Cc: Linux-imx@nxp.com
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 7/1/19 3:24 PM, Olof Johansson wrote:
-> On Mon, Jul 1, 2019 at 10:36 AM <santosh.shilimkar@oracle.com> wrote:
->>
->> On 6/17/19 6:01 AM, Arnd Bergmann wrote:
->>> The irqchip driver depends on the SoC specific driver, but we want
->>> to be able to compile-test it elsewhere:
->>>
->>> WARNING: unmet direct dependencies detected for TI_SCI_INTA_MSI_DOMAIN
->>>     Depends on [n]: SOC_TI [=n]
->>>     Selected by [y]:
->>>     - TI_SCI_INTA_IRQCHIP [=y] && TI_SCI_PROTOCOL [=y]
->>>
->>> drivers/irqchip/irq-ti-sci-inta.o: In function `ti_sci_inta_irq_domain_probe':
->>> irq-ti-sci-inta.c:(.text+0x204): undefined reference to `ti_sci_inta_msi_create_irq_domain'
->>>
->>> Rearrange the Kconfig and Makefile so we build the soc driver whenever
->>> its users are there, regardless of the SOC_TI option.
->>>
->>> Fixes: 49b323157bf1 ("soc: ti: Add MSI domain bus support for Interrupt Aggregator")
->>> Fixes: f011df6179bd ("irqchip/ti-sci-inta: Add msi domain support")
->>> Signed-off-by: Arnd Bergmann <arnd@arndb.de>
->>> ---
->> Thanks Arnd. Will you be able to add it to your fixes queue.
->>
->> FWIW, Acked-by: Santosh Shilimkar <ssantosh@kernle.org>
-> 
-> Cc:ing to arm@kernel.org is the best way to make sure it surfaces.
-> 
-> Also, please do Acked-by on separate line so the tools catch it next
-Will do..
+From: Anson Huang <Anson.Huang@nxp.com>
 
-> time (also, check for typos. :)
-> 
-:- )
+Add "gpio-ranges" property to establish connections between GPIOs
+and PINs on i.MX8MQ pinctrl driver.
 
-> Applying to fixes.
-Thanks for picking it up.
+Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
+---
+ arch/arm64/boot/dts/freescale/imx8mq.dtsi | 5 +++++
+ 1 file changed, 5 insertions(+)
+
+diff --git a/arch/arm64/boot/dts/freescale/imx8mq.dtsi b/arch/arm64/boot/dts/freescale/imx8mq.dtsi
+index 477c523..3187428 100644
+--- a/arch/arm64/boot/dts/freescale/imx8mq.dtsi
++++ b/arch/arm64/boot/dts/freescale/imx8mq.dtsi
+@@ -287,6 +287,7 @@
+ 				#gpio-cells = <2>;
+ 				interrupt-controller;
+ 				#interrupt-cells = <2>;
++				gpio-ranges = <&iomuxc 0 10 30>;
+ 			};
+ 
+ 			gpio2: gpio@30210000 {
+@@ -299,6 +300,7 @@
+ 				#gpio-cells = <2>;
+ 				interrupt-controller;
+ 				#interrupt-cells = <2>;
++				gpio-ranges = <&iomuxc 0 40 21>;
+ 			};
+ 
+ 			gpio3: gpio@30220000 {
+@@ -311,6 +313,7 @@
+ 				#gpio-cells = <2>;
+ 				interrupt-controller;
+ 				#interrupt-cells = <2>;
++				gpio-ranges = <&iomuxc 0 61 26>;
+ 			};
+ 
+ 			gpio4: gpio@30230000 {
+@@ -323,6 +326,7 @@
+ 				#gpio-cells = <2>;
+ 				interrupt-controller;
+ 				#interrupt-cells = <2>;
++				gpio-ranges = <&iomuxc 0 87 32>;
+ 			};
+ 
+ 			gpio5: gpio@30240000 {
+@@ -335,6 +339,7 @@
+ 				#gpio-cells = <2>;
+ 				interrupt-controller;
+ 				#interrupt-cells = <2>;
++				gpio-ranges = <&iomuxc 0 119 30>;
+ 			};
+ 
+ 			tmu: tmu@30260000 {
+-- 
+2.7.4
+
 
 _______________________________________________
 linux-arm-kernel mailing list
