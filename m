@@ -2,56 +2,63 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 541EB5CDE1
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  2 Jul 2019 12:51:06 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 192EC5CE1A
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  2 Jul 2019 13:08:06 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=hGSSeDC3Y1y9no4uZXwgiTM9HAPshffqQ1nZZkRfX2o=; b=ipxQ9bUpCcoEL8
-	MNpKTmOEwg9Gb0WqTmQ9kG/oU/8vtJ7xvZQb+C9LyVOqNcHNXmSWR9hmbJ8oTPGHJigJGHTWyp/KJ
-	bAI7WZsVxqT5/OLW0ZDpLEc8fitjw2y2oL+q8lantfkXwf7BwbMajEAjtCWlMVZy2iPSSkSsdOxad
-	gm2wkOqfA2GbfEwgjikOCg1dQsdBYmLklzpYN9ZjtAJhWnRJI4st0tPFGFUvhKvI+PvLZ7UlNswGA
-	3vOEd61lVP0HsFl2vNCmj+eKmzYHIhMaNN+38VkftMeMelW139+NCfh0cKdFSVPODNTkgIyHyIDfc
-	+0ql0JB4Ikfr2Btqszrg==;
+	List-Owner; bh=uPKySUGbUpGZWG7OBjhIRv1UaqKBg8PhBuieYmBPZx4=; b=hffcWFszER45xd
+	g+PvbIod9JbjUeWg24XLwHoUP2tVPF+kGo+lGcsF1QxpmJbiX0llCSJwaMqHZNNH1j71wZyzZpLUR
+	55NShDdPnYvNSIzhdZuvr057/Ervi4+AiJhMy67qFA18e64USn2MzYW8k4fMSyt3bQ19svwN/NTBp
+	S+Mv+zxBCEBZ9g2K5xkmtIxXYGndRT2nc7jUGxGpvDssRtNyKh59o+fHszUVD45jHmnuv965bxRoA
+	1ISH+nNrZfQFZ39EiZcGugMHC5pzM9nhbxfXfskP+T68+fRcT09DWOPKfpIpR1BxF8TxAMQxoqHbn
+	Jsxc5xYo+3nGUdMT6BHQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hiGNJ-0003in-DI; Tue, 02 Jul 2019 10:51:01 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hiGN5-0003iF-PU
- for linux-arm-kernel@lists.infradead.org; Tue, 02 Jul 2019 10:50:49 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id C8D45344;
- Tue,  2 Jul 2019 03:50:44 -0700 (PDT)
-Received: from lakrids.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
- [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id DF86D3F246;
- Tue,  2 Jul 2019 03:50:43 -0700 (PDT)
-Date: Tue, 2 Jul 2019 11:50:32 +0100
-From: Mark Rutland <mark.rutland@arm.com>
-To: James Morse <james.morse@arm.com>
-Subject: Re: [PATCHv2 3/3] arm64: stacktrace: better handle corrupted stacks
-Message-ID: <20190702105032.GA34718@lakrids.cambridge.arm.com>
-References: <20190628154639.5308-1-mark.rutland@arm.com>
- <20190628154639.5308-4-mark.rutland@arm.com>
- <caffff42-3a37-bb28-25a4-c0c79289e15f@arm.com>
+	id 1hiGdm-0008Lv-UA; Tue, 02 Jul 2019 11:08:03 +0000
+Received: from mx1.redhat.com ([209.132.183.28])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hiGda-0008LW-V6
+ for linux-arm-kernel@lists.infradead.org; Tue, 02 Jul 2019 11:07:52 +0000
+Received: from smtp.corp.redhat.com (int-mx01.intmail.prod.int.phx2.redhat.com
+ [10.5.11.11])
+ (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
+ (No client certificate requested)
+ by mx1.redhat.com (Postfix) with ESMTPS id E79EA120D7;
+ Tue,  2 Jul 2019 11:07:38 +0000 (UTC)
+Received: from krava (unknown [10.43.17.81])
+ by smtp.corp.redhat.com (Postfix) with SMTP id 2AB116F921;
+ Tue,  2 Jul 2019 11:07:29 +0000 (UTC)
+Date: Tue, 2 Jul 2019 13:07:28 +0200
+From: Jiri Olsa <jolsa@redhat.com>
+To: Leo Yan <leo.yan@linaro.org>
+Subject: Re: [PATCH v1 06/11] perf hists: Smatch: Fix potential NULL pointer
+ dereference
+Message-ID: <20190702110728.GA15322@krava>
+References: <20190702103420.27540-1-leo.yan@linaro.org>
+ <20190702103420.27540-7-leo.yan@linaro.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <caffff42-3a37-bb28-25a4-c0c79289e15f@arm.com>
-User-Agent: Mutt/1.11.1+11 (2f07cb52) (2018-12-01)
+In-Reply-To: <20190702103420.27540-7-leo.yan@linaro.org>
+User-Agent: Mutt/1.12.0 (2019-05-25)
+X-Scanned-By: MIMEDefang 2.79 on 10.5.11.11
+X-Greylist: Sender IP whitelisted, not delayed by milter-greylist-4.5.16
+ (mx1.redhat.com [10.5.110.26]); Tue, 02 Jul 2019 11:07:48 +0000 (UTC)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190702_035047_868780_D3D7235B 
-X-CRM114-Status: GOOD (  15.51  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190702_040751_026279_3145272A 
+X-CRM114-Status: GOOD (  18.39  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [209.132.183.28 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -63,77 +70,74 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: catalin.marinas@arm.com, tengfeif@codeaurora.org, will.deacon@arm.com,
- dave.martin@arm.com, linux-arm-kernel@lists.infradead.org
+Cc: Song Liu <songliubraving@fb.com>, Peter Zijlstra <peterz@infradead.org>,
+ Rasmus Villemoes <linux@rasmusvillemoes.dk>, linux-kernel@vger.kernel.org,
+ Jin Yao <yao.jin@linux.intel.com>, Andi Kleen <ak@linux.intel.com>,
+ Eric Saint-Etienne <eric.saint.etienne@oracle.com>,
+ Konstantin Khlebnikov <khlebnikov@yandex-team.ru>,
+ Ingo Molnar <mingo@redhat.com>, Suzuki K Poulose <suzuki.poulose@arm.com>,
+ Arnaldo Carvalho de Melo <acme@kernel.org>,
+ Alexios Zavras <alexios.zavras@intel.com>, Davidlohr Bueso <dave@stgolabs.net>,
+ Namhyung Kim <namhyung@kernel.org>, Thomas Gleixner <tglx@linutronix.de>,
+ linux-arm-kernel@lists.infradead.org,
+ Mathieu Poirier <mathieu.poirier@linaro.org>,
+ Thomas Richter <tmricht@linux.ibm.com>,
+ Adrian Hunter <adrian.hunter@intel.com>,
+ Alexander Shishkin <alexander.shishkin@linux.intel.com>,
+ "David S. Miller" <davem@davemloft.net>, Changbin Du <changbin.du@intel.com>,
+ Alexey Budankov <alexey.budankov@linux.intel.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Jul 02, 2019 at 10:33:51AM +0100, James Morse wrote:
-> On 28/06/2019 16:46, Mark Rutland wrote:
-> > +struct stackframe {
-> > +	unsigned long fp;
-> > +	unsigned long pc;
+On Tue, Jul 02, 2019 at 06:34:15PM +0800, Leo Yan wrote:
+> Based on the following report from Smatch, fix the potential
+> NULL pointer dereference check.
 > 
-> > +#ifdef CONFIG_FUNCTION_GRAPH_TRACER
-> > +	int graph;
-> > +#endif
+>   tools/perf/ui/browsers/hists.c:641
+>   hist_browser__run() error: we previously assumed 'hbt' could be
+>   null (see line 625)
 > 
-> (Could we get rid of this #ifdef? It just prevents us using IS_ENABLED() elsewhere)
-
-I think we could, but I think that would be a separate patch.
-
-I can look at that as a followup.
-
-> > @@ -50,11 +51,23 @@ int notrace unwind_frame(struct task_struct *tsk, struct stackframe *frame)
-> >  	if (!tsk)
-> >  		tsk = current;
-> >  
-> > -	if (!on_accessible_stack(tsk, fp, NULL))
-> > +	if (!on_accessible_stack(tsk, fp, &info))
-> >  		return -EINVAL;
-> >  
-> > +	if (test_bit(info.type, frame->stacks_done))
-> > +		return -EINVAL;
-> > +
-> > +	if (info.type == frame->prev_type) {
-> > +		if (fp <= frame->prev_fp)
-> > +			return -EINVAL;
-> > +	} else {
+>   tools/perf/ui/browsers/hists.c:3088
+>   perf_evsel__hists_browse() error: we previously assumed
+>   'browser->he_selection' could be null (see line 2902)
 > 
-> > +		set_bit(prev_info.type, frame->stacks_done);
+>   tools/perf/ui/browsers/hists.c:3272
+>   perf_evsel_menu__run() error: we previously assumed 'hbt' could be
+>   null (see line 3260)
 > 
-> What is prev_info for? This looks like we're setting $uninitialised_stack bit.
-
-Ugh -- that's a leftover from before I added stack_info::prev_type, when
-I always derived the type from prev_fp. Having prev_type ends up much
-simpler.
-
-> > +	}
-> > +
-> >  	frame->fp = READ_ONCE_NOCHECK(*(unsigned long *)(fp));
-> >  	frame->pc = READ_ONCE_NOCHECK(*(unsigned long *)(fp + 8));
-> > +	frame->prev_fp = fp;
-> > +	frame->prev_type = info.type;
+> This patch firstly validating the pointers before access them, so can
+> fix potential NULL pointer dereference.
 > 
+> Signed-off-by: Leo Yan <leo.yan@linaro.org>
+> ---
+>  tools/perf/ui/browsers/hists.c | 13 +++++++++----
+>  1 file changed, 9 insertions(+), 4 deletions(-)
 > 
-> With prev_info, this doesn't boot when lockdep is enabled. The pre-linear-map stacktrace
-> calls generate bad addresses and we panic() before earlycon.
-> 
-> With that set_bit() line changed to read:
-> |		set_bit(frame->prev_type, frame->stacks_done);
-> 
-> this works with perf and ftrace, and stepping off the sdei stack.
+> diff --git a/tools/perf/ui/browsers/hists.c b/tools/perf/ui/browsers/hists.c
+> index 3421ecbdd3f0..2ba33040ddd8 100644
+> --- a/tools/perf/ui/browsers/hists.c
+> +++ b/tools/perf/ui/browsers/hists.c
+> @@ -638,7 +638,9 @@ int hist_browser__run(struct hist_browser *browser, const char *help,
+>  		switch (key) {
+>  		case K_TIMER: {
 
-Thanks, I'll fold that in
+not sure this can really happen, perhaps WARN_ON_ONCE(!hbt) would be
+good in here
 
-> Reviewed-by: James Morse <james.morse@arm.com>
-> Tested-by: James Morse <james.morse@arm.com>
+jirka
 
-Cheers!
+>  			u64 nr_entries;
+> -			hbt->timer(hbt->arg);
+> +
+> +			if (hbt)
+> +				hbt->timer(hbt->arg);
+>  
+>  			if (hist_browser__has_filter(browser) ||
+>  			    symbol_conf.report_hierarchy)
 
-Mark.
+SNIP
 
 _______________________________________________
 linux-arm-kernel mailing list
