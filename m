@@ -2,88 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6FD635CBF2
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  2 Jul 2019 10:19:00 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E0AFC5CC46
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  2 Jul 2019 10:58:04 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=dPOmr9LBfu/SwPZtkIjhcyfIwglWLmBjI/pW6lsbKoM=; b=sWhXCKbsUne4pQ
-	e5zKIhe0bCWoD0E3+kAmUpDRZiLnllb+2vCzctG/Ke7fq/FICd6fVMV99dx6muX+39sgTuYoFXBhv
-	9gN6tqGFb+bWY3PH+RzB6JGFGwRPAwwekIKsLTMOhgT6xRiGvKEg11wixtYopKxWsXizwbyXJYsMp
-	aG1C5jE3B/X47msSzmX2reW6y0ZGFKdIzvfRMIL2HhjN42uNA8G61EHrfWI1Nsk7NBt52AoxOhMB/
-	EJhtrhSkvw8IborDgsV0Vp1485zmi5VBj5jJv1WbPnhnpLS4l1IokxtoJjoyVZxCnIPitfFeNScaD
-	W4Vpm8X0GaRcf4Ium8uA==;
+	List-Owner; bh=qsNjDiZYOs201qZaq7GdDj8ibpQz5JtiQZJJeXeJ4QI=; b=dcu1se54sdqq9x
+	Gb3siw2nB2yqD1cbYf6L2MLEJxs+qMmiMTZJqg9l6z6P1q9dNQ/SRkZroLGpwPuEdAZkuBy5QxuQK
+	DkA0SA2nyUcsiDCEA1ONjrXT5MVwDX6wengGHvfgIompmDDh1hvbsW7liRWmlLuo7gNFAlMTZQSUL
+	/icrzl6WMsHeEr+rY39CYexN/OPjEpkM/U85ocXFv2XdPypiJArX/eq4DQ2yWZu8B9YgOyTpvygOi
+	KzpxKHlCoCA3YHm3fbjA6L+LyBDCPjIzGe+6NxdUsV/BSSYMkZqLxqXxULQo8gBWi4M5SoQhTQEIp
+	sVSQdf0q2q1OyZojL75w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hiE0A-0004Ch-79; Tue, 02 Jul 2019 08:18:58 +0000
-Received: from mail-yb1-xb43.google.com ([2607:f8b0:4864:20::b43])
+	id 1hiEbx-0000Ha-Dw; Tue, 02 Jul 2019 08:58:01 +0000
+Received: from mail-ot1-f67.google.com ([209.85.210.67])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hiDzw-0004CK-Qb
- for linux-arm-kernel@lists.infradead.org; Tue, 02 Jul 2019 08:18:46 +0000
-Received: by mail-yb1-xb43.google.com with SMTP id p2so994063ybl.13
+ id 1hiEbo-0000H6-IE
+ for linux-arm-kernel@lists.infradead.org; Tue, 02 Jul 2019 08:57:54 +0000
+Received: by mail-ot1-f67.google.com with SMTP id r6so16426036oti.3
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 02 Jul 2019 01:18:44 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc:content-transfer-encoding;
- bh=HAdClOUcHZ3IYsbl5G0rdG7nEVZII6d9JlEQ/5XRWdk=;
- b=FwZV5NXMNI5saJ1G6bx15kCv6z1R0kIQ/OlYpnallmC4052OFYRIMUdar2Pnl7GUFT
- Q3bKhIRB0X9PALZKZh8ZbQGLPGGBaGTdk3nXfc/IZuBhK2i3ge+qe8vSc+czhI9SiGWm
- oqj+2aBO/F6z9BoxoDfIJI37e9B7gRULfaQsthCZfuUL5r7pwHHCxQ/nspoLDRVJzrCZ
- f2aJRey0bxy9ncHKWSneF8WW4QPHPrgarhs9/N/Zwy1bziHC/quawgJGgzu61s5nIMiO
- RRGAi91FpAYcHZZbHGNcMElnzDj+5BIK9LJpBavEQoVi9ZmQx/vPu4FwOhh1Dk6UfHqV
- XUhg==
+ Tue, 02 Jul 2019 01:57:51 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc:content-transfer-encoding;
- bh=HAdClOUcHZ3IYsbl5G0rdG7nEVZII6d9JlEQ/5XRWdk=;
- b=OPRMZinP+oi+WFbzV6P7B0ez7EB5Z96t8BUspVAFfnyuWmV7SLxVl1dqCnbOhZpLMQ
- mTxX5Z9zXW4ZDSX9jI9NZunqqQrjhzJQLXiXU/dv5fHztI7cu6GO/3wvk18sfQPsUGZy
- EzbCAJV0LiqGNMZt8Key7GFYLiHNCnqIuwOm+T1l16TiQoxtrFNW21yJ++P4vXtmXsrQ
- JythTk6DXeic4mTERR8bMctHJA/bjcQWDMjTXc9SKCbbVTMAOaNX+miDUFkMFd8z721j
- aZ+Oq+oL4E+NhZ4OJrap/P3ifPr4Z/JyCEMwhzHVGli7UAFA/2MrFIG/Tzhxpk1rQC9n
- eYgA==
-X-Gm-Message-State: APjAAAX6fhVyBJtjz+RFihcYFNc19nkTwQ69MNxSxF/LX4/Td5U3wcop
- x0cOrn3BO9HtE9sdd4VomEbwbQTPOmiBBFF8DT4=
-X-Google-Smtp-Source: APXvYqwClpSzv6om5yiHw+9Sq3JuKWwAJ3+EDe4nfSlCRU988YJhWO0Q93wVfyW/7gxXqZfMBwixd3t50uVQ5DNxGB4=
-X-Received: by 2002:a25:9347:: with SMTP id g7mr5943206ybo.277.1562055523517; 
- Tue, 02 Jul 2019 01:18:43 -0700 (PDT)
+ :message-id:subject:to:cc;
+ bh=KPdp31UDhXFHPHF96pwPoQJdgvKVE+Ch51jcPatIAZE=;
+ b=hOc2qSmn77KN4x6ux1+jAWeSmUqj3GCoiwmsvHJkl/x3eP/Eku/nAWr4sz16q+ARDc
+ sSxN2xq9L8dw5NPb3waCEfAqetbQ1NFAghxgZz4VLxoMRM8TBngsSimoKzoqJrTXXjaf
+ G6dv6WMz88fM/8xyz+bhe/8rJkxx+PrjutZIWd894eoTmGQng+3gLTl8LDb0rxZddugp
+ 6nic16Oj42bwm/1XP7eok4DHM0rUZRsmPQHkdNx5Dd74uWqnSBh5ejDggcSk8r9ZeRy7
+ +p6JOIsy2C+LlwHEclAAZ3Rzkr4jzM3xUeC81CXOtRJNE19Impbe0RGcriz4ACiGQBbJ
+ iDHg==
+X-Gm-Message-State: APjAAAVSm8ozrZ+9XD5sRzOX13833AHUw13HsOXE4xhrafjs7V/mFQfh
+ QE2n42fIYrg5hILR/iHVQFGJthfdGUgDBRe5DTc=
+X-Google-Smtp-Source: APXvYqyUtHMNDxfrXFzOq+tZrJAEALoWsfCJ/SvSccMFZtCQWjU1KrI34Wl7Fw6scnjhNChjBk9KaqX5fS13sng+Mqw=
+X-Received: by 2002:a9d:529:: with SMTP id 38mr19987430otw.145.1562057870358; 
+ Tue, 02 Jul 2019 01:57:50 -0700 (PDT)
 MIME-Version: 1.0
-References: <20190701032342.25971-1-huangfq.daxian@gmail.com>
- <20190701075255.GD172968@dtor-ws>
-In-Reply-To: <20190701075255.GD172968@dtor-ws>
-From: Fuqian Huang <huangfq.daxian@gmail.com>
-Date: Tue, 2 Jul 2019 16:18:32 +0800
-Message-ID: <CABXRUiSO2Fos1V3hR5t3AviZ9Hit_y+E-Tp3PNOQj6-FKUBJBw@mail.gmail.com>
-Subject: Re: [PATCH 2/4] input: keyboard/mouse/touchscreen/misc: Use
- dev_get_drvdata()
-To: Dmitry Torokhov <dmitry.torokhov@gmail.com>
+References: <20190624105224.23927-1-horms+renesas@verge.net.au>
+ <20190624105224.23927-2-horms+renesas@verge.net.au>
+In-Reply-To: <20190624105224.23927-2-horms+renesas@verge.net.au>
+From: Geert Uytterhoeven <geert@linux-m68k.org>
+Date: Tue, 2 Jul 2019 10:57:39 +0200
+Message-ID: <CAMuHMdX2c9QCitfzFeKG2BFoK0VEp9+KUiN=OVV51=mR=kNd9Q@mail.gmail.com>
+Subject: Re: [PATCH v3 1/2] arm64: dts: renesas: r8a77990: Add cpg reset for DU
+To: Simon Horman <horms+renesas@verge.net.au>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190702_011844_868400_5B56F4A5 
-X-CRM114-Status: GOOD (  11.11  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190702_015752_606348_E01E38E9 
+X-CRM114-Status: UNSURE (   9.44  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:b43 listed in]
- [list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ no trust [209.85.210.67 listed in list.dnswl.org]
+ 0.0 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (huangfq.daxian[at]gmail.com)
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ provider (geert.uytterhoeven[at]gmail.com)
+ 0.1 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -95,42 +81,42 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Kate Stewart <kstewart@linuxfoundation.org>,
- Tony Lindgren <tony@atomide.com>, Richard Fontana <rfontana@redhat.com>,
- Laxman Dewangan <ldewangan@nvidia.com>, Fabio Estevam <festevam@gmail.com>,
- Rob Herring <robh@kernel.org>, Florian Fainelli <f.fainelli@gmail.com>,
- Anson Huang <anson.huang@nxp.com>, Lee Jones <lee.jones@linaro.org>,
- Jonathan Hunter <jonathanh@nvidia.com>, Luca Weiss <luca@z3ntu.xyz>,
- NXP Linux Team <linux-imx@nxp.com>, Sylvain Lemieux <slemieux.tyco@gmail.com>,
- Dan Carpenter <dan.carpenter@oracle.com>, Brian Masney <masneyb@onstation.org>,
- Arnd Bergmann <arnd@arndb.de>, Sascha Hauer <s.hauer@pengutronix.de>,
- linux-input@vger.kernel.org, Vladimir Zapolskiy <vz@mleia.com>,
- Alexios Zavras <alexios.zavras@intel.com>, linux-tegra@vger.kernel.org,
- Thomas Gleixner <tglx@linutronix.de>,
- Andy Shevchenko <andriy.shevchenko@linux.intel.com>,
- Allison Randal <allison@lohutok.net>, linux-arm-kernel@lists.infradead.org,
- Pascal PAILLET-LME <p.paillet@st.com>, Shawn Guo <shawnguo@kernel.org>,
- linux-kernel@vger.kernel.org, H Hartley Sweeten <hsweeten@visionengravers.com>,
- Thierry Reding <thierry.reding@gmail.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Olof Johansson <olof@lixom.net>, Christian Hoff <christian_hoff@gmx.net>,
- Enrico Weigelt <info@metux.net>, Gabriel Fernandez <gabriel.fernandez@st.com>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Linux-Renesas <linux-renesas-soc@vger.kernel.org>,
+ Yoshihiro Kaneko <ykaneko0929@gmail.com>, Magnus Damm <magnus.damm@gmail.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Geert Uytterhoeven <geert+renesas@glider.be>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-SSBhbSBub3QgYW4gZXhwZXJ0IG9uIHRoaXMuIEkganVzdCB3cml0ZSBhIGNvY2NpbmVsbGUgc2Ny
-aXB0IHRvIHNlYXJjaAp0aGlzIGtpbmQgb2YgbWlzdXNlIGFuZCBmaXggaXQgaW4gYSBuYWl2ZSB3
-YXkuCkNvdWxkIHlvdSB0ZWxsIG1lIGFib3V0IGhvdyB0byB1c2UgdGhlIHByb3BlciBidXMgYWNj
-ZXNzb3JzPyBUaGVuIEkKd2lsbCBmaXggaXQgdXAgYW5kIHJlc2VuZCBhIHYyIHBhdGNoIHNldC4K
-ClRoYW5rcy4KCkRtaXRyeSBUb3Jva2hvdiA8ZG1pdHJ5LnRvcm9raG92QGdtYWlsLmNvbT4g5pa8
-IDIwMTnlubQ35pyIMeaXpemAseS4gCDkuIvljYgzOjUy5a+r6YGT77yaCj4KPiBIaSBGdXFpYW4s
-Cj4KPiBPbiBNb24sIEp1bCAwMSwgMjAxOSBhdCAxMToyMzoxMkFNICswODAwLCBGdXFpYW4gSHVh
-bmcgd3JvdGU6Cj4gPiBVc2luZyBkZXZfZ2V0X2RydmRhdGEgZGlyZWN0bHkuCj4gPgo+Cj4gSSBw
-cmVmZXIgdXNpbmcgcHJvcGVyIGJ1cyBhY2Nlc3NvcnMuCj4KPiBUaGFua3MuCj4KPiAtLQo+IERt
-aXRyeQoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGlu
-dXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRl
-YWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgt
-YXJtLWtlcm5lbAo=
+On Mon, Jun 24, 2019 at 12:52 PM Simon Horman
+<horms+renesas@verge.net.au> wrote:
+> From: Takeshi Kihara <takeshi.kihara.df@renesas.com>
+>
+> Add CPG reset properties to DU node of E3 (r8a77990) SoC.
+>
+> According to Laurent Pinchart, R-Car Gen3 reset is handled at the group
+> level so specifying one reset entry per group is sufficient.
+>
+> Signed-off-by: Takeshi Kihara <takeshi.kihara.df@renesas.com>
+> Signed-off-by: Yoshihiro Kaneko <ykaneko0929@gmail.com>
+> Signed-off-by: Simon Horman <horms+renesas@verge.net.au>
+
+Thanks, applied and queued for v5.4.
+
+Gr{oetje,eeting}s,
+
+                        Geert
+
+-- 
+Geert Uytterhoeven -- There's lots of Linux beyond ia32 -- geert@linux-m68k.org
+
+In personal conversations with technical people, I call myself a hacker. But
+when I'm talking to journalists I just say "programmer" or something like that.
+                                -- Linus Torvalds
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
