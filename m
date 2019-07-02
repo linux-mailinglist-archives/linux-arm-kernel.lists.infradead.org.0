@@ -2,57 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1DB7A5D01D
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  2 Jul 2019 15:05:46 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4C3C15D020
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  2 Jul 2019 15:06:04 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
 	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Date:Message-Id:
 	In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	References:List-Owner; bh=TU88bnElURd1Ip0+GQMg69E10MOuil8JgyALwrQmGvo=; b=JQI
-	8ygvMyEkzygA9cjzvHFvGy1kSmI9/tPQWtzKQQvaBa6NhS4NJGpfIf8K/mjH+TCmcLLYBcR0uTVJL
-	12oBfXFnhLww1MBW3unD4MGNgrIEkBbCK69H4riKfpTBcgKXsN0Gl9Kwv4E9eLAcuCKJgywxRgnPo
-	RvYj8hfAjTHp7+Ia0+OAF74aObrzS+bxfDNRula39GzbZlWDojpn1OtjPfTSaoh7Q8/k+9+821RRn
-	LGN5IQImyKZvKzKgOsZnLX4GQYlKEOM4Iiw9KnisjRodrcTEiVr8kOKJ8TnGwab8I1dXEvnvU1Xkq
-	Vt4CQL1E17n4f3ny/LKDiZgQvB8+mkw==;
+	References:List-Owner; bh=o7bAHtlCn/TGhcBh6RElFEV3Cu9Z1c6ZZIa6167xq9w=; b=sg1
+	liuSuo7oP94Ao04h4bGwrylk+BD1SFotdTvLeZ5LDsdvRpNRHk3erehNXkY1e0PgUC7ouLw7C1APy
+	QMErXT+/HW6jSlOhlEJP8DspcJvljAEPqhzysLRzngJ1gtVdJCZSugcebIlVVKKSEaaGhdm+KaBM/
+	NmVDHx07nFMJgbtn69jnCRmOEx/z3fTCWLhKZC3b23VulTDS3QeXMM6Uowh1IV2ENFE00DTh9GIie
+	7rpq9fJ3K/ybmt8mWY+/BQvITgPf3r4oz+5D6/kamcBc0LfSCs/OEc9ChB9zqf0muBt/uF3skfiP/
+	4YRgcn5i7i4z9M+w56OrPmoOntGXIrQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hiITg-0004gK-KR; Tue, 02 Jul 2019 13:05:44 +0000
+	id 1hiITy-0004tq-Qj; Tue, 02 Jul 2019 13:06:02 +0000
 Received: from heliosphere.sirena.org.uk ([2a01:7e01::f03c:91ff:fed4:a3b6])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hiISv-00033B-Ct
- for linux-arm-kernel@lists.infradead.org; Tue, 02 Jul 2019 13:04:59 +0000
+ id 1hiISw-00033H-FW
+ for linux-arm-kernel@lists.infradead.org; Tue, 02 Jul 2019 13:05:00 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=sirena.org.uk; s=20170815-heliosphere; h=Date:Message-Id:In-Reply-To:
  Subject:Cc:To:From:Sender:Reply-To:MIME-Version:Content-Type:
  Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
  Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
  List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:
- List-Archive; bh=F04tVE/uH/qRXJLC7CQfRhTRh00eEbuM9Ceb3EulQu4=; b=vuTUc0fLJ4Ie
- Kirr/Md+2YiI56rIZ2ERMo4aA/e+A3/1YJpEm4rNlWvlOMEH3PI+athaNTilFWsgqu5xeLImE63qD
- gPhjEOiwtRYWg6wXHLCV9IbyexojLs28VfkEBPw08+eiXhFl6OFQrPslyos710c5sbWq6GS31sAfr
- Fe238=;
-Received: from cpc102320-sgyl38-2-0-cust46.18-2.cable.virginm.net
- ([82.37.168.47] helo=finisterre.sirena.org.uk)
+ List-Archive; bh=EXZcCEZ51ZisvJHtaBCKmIdJTSbF5mTt/3It5b3+/0s=; b=Sdx1KffC6Q07
+ BdBYw5jsi3uIXUS8PUpC1FrUMHCcvFtyixsFOQdnjfv7tGBEkcAn4hE+aLqdAIir8P6xKliy50bBq
+ j4m0ucYg27bYQCn0zxK4ouRyxM2yOdW9M36bij9+J+QdiOlpnv21l56Dzh3iLYSGZ/nOpvgk+cYwg
+ dHA+g=;
+Received: from [2001:470:1f1d:6b5:7e7a:91ff:fede:4a45]
+ (helo=finisterre.sirena.org.uk)
  by heliosphere.sirena.org.uk with esmtpsa
  (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.89)
  (envelope-from <broonie@sirena.org.uk>)
- id 1hiISm-0002O2-O7; Tue, 02 Jul 2019 13:04:48 +0000
+ id 1hiISt-0002Oc-4C; Tue, 02 Jul 2019 13:04:55 +0000
 Received: by finisterre.sirena.org.uk (Postfix, from userid 1000)
- id 36CAD440049; Tue,  2 Jul 2019 14:04:48 +0100 (BST)
+ id 6FCC0440046; Tue,  2 Jul 2019 14:04:54 +0100 (BST)
 From: Mark Brown <broonie@kernel.org>
-To: Fabrice Gasnier <fabrice.gasnier@st.com>
-Subject: Applied "regulator: add support for the stm32-booster" to the
- regulator tree
-In-Reply-To: <1561968865-22037-3-git-send-email-fabrice.gasnier@st.com>
+To: Tudor Ambarus <tudor.ambarus@microchip.com>
+Subject: Applied "spi: atmel-quadspi: fix resume call" to the spi tree
+In-Reply-To: <20190628153009.7571-3-tudor.ambarus@microchip.com>
 X-Patchwork-Hint: ignore
-Message-Id: <20190702130448.36CAD440049@finisterre.sirena.org.uk>
-Date: Tue,  2 Jul 2019 14:04:48 +0100 (BST)
+Message-Id: <20190702130454.6FCC0440046@finisterre.sirena.org.uk>
+Date: Tue,  2 Jul 2019 14:04:54 +0100 (BST)
 X-Bad-Reply: In-Reply-To but no 'Re:' in Subject.
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190702_060457_583326_7ED1D2B9 
-X-CRM114-Status: GOOD (  20.72  )
+X-CRM114-CacheID: sfid-20190702_060458_663586_B0973170 
+X-CRM114-Status: GOOD (  16.53  )
 X-Spam-Score: -0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.1 points)
@@ -78,10 +77,9 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, alexandre.torgue@st.com, lgirdwood@gmail.com,
- robh+dt@kernel.org, linux-kernel@vger.kernel.org,
- Mark Brown <broonie@kernel.org>, mcoquelin.stm32@gmail.com,
- fabrice.gasnier@st.com, linux-stm32@st-md-mailman.stormreply.com,
+Cc: alexandre.belloni@bootlin.com, Tudor.Ambarus@microchip.com,
+ mdeneen@gmail.com, linux-spi@vger.kernel.org, Ludovic.Desroches@microchip.com,
+ Mark Brown <broonie@kernel.org>, Claudiu.Beznea@microchip.com,
  linux-arm-kernel@lists.infradead.org
 MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
@@ -91,11 +89,11 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 The patch
 
-   regulator: add support for the stm32-booster
+   spi: atmel-quadspi: fix resume call
 
-has been applied to the regulator tree at
+has been applied to the spi tree at
 
-   https://git.kernel.org/pub/scm/linux/kernel/git/broonie/regulator.git for-5.3
+   https://git.kernel.org/pub/scm/linux/kernel/git/broonie/spi.git for-5.3
 
 All being well this means that it will be integrated into the linux-next
 tree (usually sometime in the next 24 hours) and sent to Linus during
@@ -116,199 +114,73 @@ to this mail.
 Thanks,
 Mark
 
-From 4e210fbeee8e2f0eb04761c624fcccc8401eba4c Mon Sep 17 00:00:00 2001
-From: Fabrice Gasnier <fabrice.gasnier@st.com>
-Date: Mon, 1 Jul 2019 10:14:23 +0200
-Subject: [PATCH] regulator: add support for the stm32-booster
+From 0db3a61b4b3ceaea68b748ee63cc88f110757b7f Mon Sep 17 00:00:00 2001
+From: Tudor Ambarus <tudor.ambarus@microchip.com>
+Date: Fri, 28 Jun 2019 15:30:34 +0000
+Subject: [PATCH] spi: atmel-quadspi: fix resume call
 
-Add support for the 3.3V booster regulator embedded in stm32h7 and stm32mp1
-devices, that can be used to supply ADC analog input switches.
+When waking up from the Suspend-to-RAM state, the following error
+was seen:
 
-This regulator is supplied by vdda. It's controlled by using SYSCFG:
-- STM32H7 has a unique register to set/clear the booster enable bit
-- STM32MP1 has separate set and clear registers to configure it.
+m25p80 spi2.0: flash operation timed out
 
-Signed-off-by: Fabrice Gasnier <fabrice.gasnier@st.com>
+The flash remained in an undefined state, returning 0xFFs.
+Fix it by setting the Serial Clock Baud Rate, as it was set
+before the conversion to SPIMEM.
+
+Tested with sama5d2_xplained and mx25l25673g spi-nor in
+Backup + Self-Refresh and Suspend modes.
+
+Fixes: 0e6aae08e9ae ("spi: Add QuadSPI driver for Atmel SAMA5D2")
+Reported-by: Mark Deneen <mdeneen@gmail.com>
+Signed-off-by: Tudor Ambarus <tudor.ambarus@microchip.com>
 Signed-off-by: Mark Brown <broonie@kernel.org>
 ---
- drivers/regulator/Kconfig         |  11 +++
- drivers/regulator/Makefile        |   1 +
- drivers/regulator/stm32-booster.c | 132 ++++++++++++++++++++++++++++++
- 3 files changed, 144 insertions(+)
- create mode 100644 drivers/regulator/stm32-booster.c
+ drivers/spi/atmel-quadspi.c | 10 +++++++---
+ 1 file changed, 7 insertions(+), 3 deletions(-)
 
-diff --git a/drivers/regulator/Kconfig b/drivers/regulator/Kconfig
-index 0e7d425ba9b1..1e590ecf1a9d 100644
---- a/drivers/regulator/Kconfig
-+++ b/drivers/regulator/Kconfig
-@@ -839,6 +839,17 @@ config REGULATOR_SLG51000
- 	  The SLG51000 is seven compact and customizable low dropout
- 	  regulators.
+diff --git a/drivers/spi/atmel-quadspi.c b/drivers/spi/atmel-quadspi.c
+index 32eb7447c31a..6a7d7b553d95 100644
+--- a/drivers/spi/atmel-quadspi.c
++++ b/drivers/spi/atmel-quadspi.c
+@@ -151,6 +151,7 @@ struct atmel_qspi {
+ 	const struct atmel_qspi_caps *caps;
+ 	u32			pending;
+ 	u32			mr;
++	u32			scr;
+ 	struct completion	cmd_completion;
+ };
  
-+config REGULATOR_STM32_BOOSTER
-+	tristate "STMicroelectronics STM32 BOOSTER"
-+	depends on ARCH_STM32 || COMPILE_TEST
-+	help
-+	  This driver supports internal booster (3V3) embedded in some
-+	  STMicroelectronics STM32 chips. It can be used to supply ADC analog
-+	  input switches when vdda supply is below 2.7V.
+@@ -382,7 +383,7 @@ static int atmel_qspi_setup(struct spi_device *spi)
+ 	struct spi_controller *ctrl = spi->master;
+ 	struct atmel_qspi *aq = spi_controller_get_devdata(ctrl);
+ 	unsigned long src_rate;
+-	u32 scr, scbr;
++	u32 scbr;
+ 
+ 	if (ctrl->busy)
+ 		return -EBUSY;
+@@ -399,8 +400,8 @@ static int atmel_qspi_setup(struct spi_device *spi)
+ 	if (scbr > 0)
+ 		scbr--;
+ 
+-	scr = QSPI_SCR_SCBR(scbr);
+-	writel_relaxed(scr, aq->regs + QSPI_SCR);
++	aq->scr = QSPI_SCR_SCBR(scbr);
++	writel_relaxed(aq->scr, aq->regs + QSPI_SCR);
+ 
+ 	return 0;
+ }
+@@ -584,6 +585,9 @@ static int __maybe_unused atmel_qspi_resume(struct device *dev)
+ 	clk_prepare_enable(aq->qspick);
+ 
+ 	atmel_qspi_init(aq);
 +
-+	  This driver can also be built as a module. If so, the module
-+	  will be called stm32-booster.
++	writel_relaxed(aq->scr, aq->regs + QSPI_SCR);
 +
- config REGULATOR_STM32_VREFBUF
- 	tristate "STMicroelectronics STM32 VREFBUF"
- 	depends on ARCH_STM32 || COMPILE_TEST
-diff --git a/drivers/regulator/Makefile b/drivers/regulator/Makefile
-index c15b0b613766..eef73b5a35a4 100644
---- a/drivers/regulator/Makefile
-+++ b/drivers/regulator/Makefile
-@@ -105,6 +105,7 @@ obj-$(CONFIG_REGULATOR_S5M8767) += s5m8767.o
- obj-$(CONFIG_REGULATOR_SC2731) += sc2731-regulator.o
- obj-$(CONFIG_REGULATOR_SKY81452) += sky81452-regulator.o
- obj-$(CONFIG_REGULATOR_SLG51000) += slg51000-regulator.o
-+obj-$(CONFIG_REGULATOR_STM32_BOOSTER) += stm32-booster.o
- obj-$(CONFIG_REGULATOR_STM32_VREFBUF) += stm32-vrefbuf.o
- obj-$(CONFIG_REGULATOR_STM32_PWR) += stm32-pwr.o
- obj-$(CONFIG_REGULATOR_STPMIC1) += stpmic1_regulator.o
-diff --git a/drivers/regulator/stm32-booster.c b/drivers/regulator/stm32-booster.c
-new file mode 100644
-index 000000000000..2a897666c650
---- /dev/null
-+++ b/drivers/regulator/stm32-booster.c
-@@ -0,0 +1,132 @@
-+// SPDX-License-Identifier: GPL-2.0
-+// Copyright (C) STMicroelectronics 2019
-+// Author(s): Fabrice Gasnier <fabrice.gasnier@st.com>.
-+
-+#include <linux/mfd/syscon.h>
-+#include <linux/module.h>
-+#include <linux/of_device.h>
-+#include <linux/platform_device.h>
-+#include <linux/regmap.h>
-+#include <linux/regulator/driver.h>
-+#include <linux/regulator/of_regulator.h>
-+
-+/* STM32H7 SYSCFG register */
-+#define STM32H7_SYSCFG_PMCR		0x04
-+#define STM32H7_SYSCFG_BOOSTE_MASK	BIT(8)
-+
-+/* STM32MP1 SYSCFG has set and clear registers */
-+#define STM32MP1_SYSCFG_PMCSETR		0x04
-+#define STM32MP1_SYSCFG_PMCCLRR		0x44
-+#define STM32MP1_SYSCFG_EN_BOOSTER_MASK	BIT(8)
-+
-+static const struct regulator_ops stm32h7_booster_ops = {
-+	.list_voltage	= regulator_list_voltage_linear,
-+	.enable		= regulator_enable_regmap,
-+	.disable	= regulator_disable_regmap,
-+	.is_enabled	= regulator_is_enabled_regmap,
-+};
-+
-+static const struct regulator_desc stm32h7_booster_desc = {
-+	.name = "booster",
-+	.supply_name = "vdda",
-+	.n_voltages = 1,
-+	.type = REGULATOR_VOLTAGE,
-+	.min_uV = 3300000,
-+	.fixed_uV = 3300000,
-+	.ramp_delay = 66000, /* up to 50us to stabilize */
-+	.ops = &stm32h7_booster_ops,
-+	.enable_reg = STM32H7_SYSCFG_PMCR,
-+	.enable_mask = STM32H7_SYSCFG_BOOSTE_MASK,
-+	.owner = THIS_MODULE,
-+};
-+
-+static int stm32mp1_booster_enable(struct regulator_dev *rdev)
-+{
-+	return regmap_write(rdev->regmap, STM32MP1_SYSCFG_PMCSETR,
-+			    STM32MP1_SYSCFG_EN_BOOSTER_MASK);
-+}
-+
-+static int stm32mp1_booster_disable(struct regulator_dev *rdev)
-+{
-+	return regmap_write(rdev->regmap, STM32MP1_SYSCFG_PMCCLRR,
-+			    STM32MP1_SYSCFG_EN_BOOSTER_MASK);
-+}
-+
-+static const struct regulator_ops stm32mp1_booster_ops = {
-+	.list_voltage	= regulator_list_voltage_linear,
-+	.enable		= stm32mp1_booster_enable,
-+	.disable	= stm32mp1_booster_disable,
-+	.is_enabled	= regulator_is_enabled_regmap,
-+};
-+
-+static const struct regulator_desc stm32mp1_booster_desc = {
-+	.name = "booster",
-+	.supply_name = "vdda",
-+	.n_voltages = 1,
-+	.type = REGULATOR_VOLTAGE,
-+	.min_uV = 3300000,
-+	.fixed_uV = 3300000,
-+	.ramp_delay = 66000,
-+	.ops = &stm32mp1_booster_ops,
-+	.enable_reg = STM32MP1_SYSCFG_PMCSETR,
-+	.enable_mask = STM32MP1_SYSCFG_EN_BOOSTER_MASK,
-+	.owner = THIS_MODULE,
-+};
-+
-+static int stm32_booster_probe(struct platform_device *pdev)
-+{
-+	struct device *dev = &pdev->dev;
-+	struct device_node *np = pdev->dev.of_node;
-+	struct regulator_config config = { };
-+	const struct regulator_desc *desc;
-+	struct regulator_dev *rdev;
-+	struct regmap *regmap;
-+	int ret;
-+
-+	regmap = syscon_regmap_lookup_by_phandle(np, "st,syscfg");
-+	if (IS_ERR(regmap))
-+		return PTR_ERR(regmap);
-+
-+	desc = (const struct regulator_desc *)
-+		of_match_device(dev->driver->of_match_table, dev)->data;
-+
-+	config.regmap = regmap;
-+	config.dev = dev;
-+	config.of_node = np;
-+	config.init_data = of_get_regulator_init_data(dev, np, desc);
-+
-+	rdev = devm_regulator_register(dev, desc, &config);
-+	if (IS_ERR(rdev)) {
-+		ret = PTR_ERR(rdev);
-+		dev_err(dev, "register failed with error %d\n", ret);
-+		return ret;
-+	}
-+
-+	return 0;
-+}
-+
-+static const struct of_device_id stm32_booster_of_match[] = {
-+	{
-+		.compatible = "st,stm32h7-booster",
-+		.data = (void *)&stm32h7_booster_desc
-+	}, {
-+		.compatible = "st,stm32mp1-booster",
-+		.data = (void *)&stm32mp1_booster_desc
-+	}, {
-+	},
-+};
-+MODULE_DEVICE_TABLE(of, stm32_booster_of_match);
-+
-+static struct platform_driver stm32_booster_driver = {
-+	.probe = stm32_booster_probe,
-+	.driver = {
-+		.name  = "stm32-booster",
-+		.of_match_table = of_match_ptr(stm32_booster_of_match),
-+	},
-+};
-+module_platform_driver(stm32_booster_driver);
-+
-+MODULE_LICENSE("GPL v2");
-+MODULE_AUTHOR("Fabrice Gasnier <fabrice.gasnier@st.com>");
-+MODULE_DESCRIPTION("STMicroelectronics STM32 booster regulator driver");
-+MODULE_ALIAS("platform:stm32-booster");
+ 	return 0;
+ }
+ 
 -- 
 2.20.1
 
