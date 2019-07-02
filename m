@@ -2,87 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8CF805C7C7
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  2 Jul 2019 05:24:40 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E6A9A5C7DF
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  2 Jul 2019 05:37:23 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=7kN3YmnyvwQ6VObG54agFmRi3jN9OgZrkjn3UrNlBCI=; b=Tp4o7ZxNAMkvb2
-	5n2IRswGPjaWLyngB2/h2Nvtl1X2josQ9CKiYkFC/h7zfZi2f8aGRpA2BkYPHL71F+AlTJd+xJzMF
-	0Q0Y2aRG+xG8woTXd76WqIjD+bzvhbjI5QZqxTyT+1R/w/IHfIB/Umnbk0u5N4DhmOd5oWzNwC9mK
-	BrJUeTGdN7qCbfxzA5XUmBfEwXXieFHG5PY60hpHGOB9OkZ6XlHaLYOr+fhOlCDcvgaQyxsuucJm9
-	uMhbY3ieZ+EYLtvOgb1PVxbD8zXCDxWrHn76cvY8zEh0FQu+zAFcbyRwaZC4Pgk7goqfG8AeTkfmA
-	MrSMY55EkLX3I/kWh//w==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:References:To:Subject:From:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=x6u2xx1ZQ2vGlQzD0UfNuGulth3L8J4XdgJbtsx8zug=; b=ZVDQTCZCXAn16Z
+	zNS4cB2B12KNXojav8HpNa6BgP6GTLkRZBVLGOZ1xtKSCwJOiFKCKi+hHIdlBuhUFNwIL8D1l795P
+	sgGfYHA6bCIYplm4lrvdzCK46r7lKJ7HOm1HUl3goFqh6qWlamDRCcwoSdCoHWZORZHl97/xsOP3T
+	lKkt8z6WYePQOL9+hBO48NsrTVQBuArXwCEVpYLXQrSaG4uJGS4JWuaSoxhExBXD26i9gDAxdEPFF
+	bfaRM1YJkADjhNOzO54nTUr+iQ9w56P8SalXe/4TdyG8lQBtSkgfsF88frdoOu5as9JhJFDVRBgYE
+	rN7Ffmo9aUxWGhldtcIQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hi9PL-0005iz-0x; Tue, 02 Jul 2019 03:24:39 +0000
-Received: from mail-vs1-xe44.google.com ([2607:f8b0:4864:20::e44])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hi9P1-0005gG-LO
- for linux-arm-kernel@lists.infradead.org; Tue, 02 Jul 2019 03:24:24 +0000
-Received: by mail-vs1-xe44.google.com with SMTP id k9so10298536vso.5
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 01 Jul 2019 20:24:15 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc:content-transfer-encoding;
- bh=NF9sKdd1kTn5hPJQxmdOYAoq8V4x3KJMw7Y6I60fnA0=;
- b=VOTidcWX/vtw+RMbBDMJUzDasnoGqq6CHYdrWRZz3nA3y8ARzIg+9ZV0Mde+Xn055l
- 72eOksANj/TrjSKI9swRwHr/3/J1SxmgmB+I9cP1D0bWxRA0UqDlSAmO/qVMBrznaHJ0
- fj8lvRTJAO22Wz0k7X76NClEAN673VrwZ8Fe8=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc:content-transfer-encoding;
- bh=NF9sKdd1kTn5hPJQxmdOYAoq8V4x3KJMw7Y6I60fnA0=;
- b=jSUCYm9ENT5+QWu9T7iJ60lXLRhmEfdsLJ20s/t2BYep7S11OOHoaapdoovRYAHnJ2
- 2EWrj43LOrviR3tjvmrhUWRCiw2ahJ51q+gUVM1bzUF09cIs+Nw2McZrXEI/CROYLCDu
- ijWEfLMOr7vW6HkC8bK24hBtSBpBVYjqAWPCseEifPYOiR9DQvt8vS4lJ/auSGHtLywg
- b09K+jJ34JBsoE1EPXZichCvv76iSbKfAeF0igEU7k1yOaQE/aM8xdadIbxIV2uFX6zR
- 7EGlhT2b4tlxWSYneB03O9J3qSkg85iCS8nzJDbHVKwhfuitZkvRQyTcKvS6So0pcT6Z
- dfag==
-X-Gm-Message-State: APjAAAUSK2BYd1VykaltN3V8hK2+xvStmlW2MMIWlEtxMFtBt9mJXlhe
- DkDiaidb9TKHYU01aN4MAO/c9XnejH3oA5ruEuPh1g==
-X-Google-Smtp-Source: APXvYqz+Qs9OSpISvLsVtvlCKaQDDzKFeS7ZErnVs6OE/TEItC6SlKxAzJ4IUK1ZOIt0hue4JXmvkCpPszGYyssZDFA=
-X-Received: by 2002:a67:7d13:: with SMTP id y19mr16261630vsc.232.1562037854259; 
- Mon, 01 Jul 2019 20:24:14 -0700 (PDT)
+	id 1hi9bb-0001mq-79; Tue, 02 Jul 2019 03:37:19 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hi9bO-0001mU-66
+ for linux-arm-kernel@lists.infradead.org; Tue, 02 Jul 2019 03:37:08 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id B7BBD28;
+ Mon,  1 Jul 2019 20:37:04 -0700 (PDT)
+Received: from [10.163.1.231] (unknown [10.163.1.231])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 9F2973F703;
+ Mon,  1 Jul 2019 20:37:01 -0700 (PDT)
+From: Anshuman Khandual <anshuman.khandual@arm.com>
+Subject: Re: [RFC 1/2] arm64/mm: Change THP helpers to comply with generic MM
+ semantics
+To: Catalin Marinas <catalin.marinas@arm.com>
+References: <1561639696-16361-1-git-send-email-anshuman.khandual@arm.com>
+ <1561639696-16361-2-git-send-email-anshuman.khandual@arm.com>
+ <20190628102003.GA56463@arrakis.emea.arm.com>
+Message-ID: <82237e21-1f14-ab6e-0f80-9706141e2172@arm.com>
+Date: Tue, 2 Jul 2019 09:07:28 +0530
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101
+ Thunderbird/52.9.1
 MIME-Version: 1.0
-References: <20190622034105.188454-1-dbasehore@chromium.org>
- <20190622034105.188454-4-dbasehore@chromium.org>
- <20190624132413.GN5942@intel.com>
-In-Reply-To: <20190624132413.GN5942@intel.com>
-From: "dbasehore ." <dbasehore@chromium.org>
-Date: Mon, 1 Jul 2019 20:24:03 -0700
-Message-ID: <CAGAzgsreBg1kpVUtvi70P6ufJ+b6m=LdJk+E9hB4yp3N_ZePkg@mail.gmail.com>
-Subject: Re: [Intel-gfx] [PATCH v3 3/4] drm/connector: Split out orientation
- quirk detection
-To: =?UTF-8?B?VmlsbGUgU3lyasOkbMOk?= <ville.syrjala@linux.intel.com>
+In-Reply-To: <20190628102003.GA56463@arrakis.emea.arm.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190701_202422_991178_5DA6E3CF 
-X-CRM114-Status: GOOD (  22.96  )
-X-Spam-Score: -7.6 (-------)
+X-CRM114-CacheID: sfid-20190701_203706_321750_C226B388 
+X-CRM114-Status: GOOD (  27.22  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-7.6 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:e44 listed in]
- [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
- white-list
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,154 +64,156 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Maxime Ripard <maxime.ripard@bootlin.com>,
- Intel Graphics <intel-gfx@lists.freedesktop.org>,
- linux-kernel <linux-kernel@vger.kernel.org>,
- dri-devel <dri-devel@lists.freedesktop.org>, David Airlie <airlied@linux.ie>,
- CK Hu <ck.hu@mediatek.com>,
- "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
- Philipp Zabel <p.zabel@pengutronix.de>,
- Matthias Brugger <matthias.bgg@gmail.com>, Sam Ravnborg <sam@ravnborg.org>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Mark Rutland <mark.rutland@arm.com>, Andrea Arcangeli <aarcange@redhat.com>,
+ Suzuki Poulose <suzuki.poulose@arm.com>, Marc Zyngier <marc.zyngier@arm.com>,
+ linux-kernel@vger.kernel.org, linux-mm@kvack.org,
+ Will Deacon <will@kernel.org>, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gTW9uLCBKdW4gMjQsIDIwMTkgYXQgNjoyNCBBTSBWaWxsZSBTeXJqw6Rsw6QKPHZpbGxlLnN5
-cmphbGFAbGludXguaW50ZWwuY29tPiB3cm90ZToKPgo+IE9uIEZyaSwgSnVuIDIxLCAyMDE5IGF0
-IDA4OjQxOjA0UE0gLTA3MDAsIERlcmVrIEJhc2Vob3JlIHdyb3RlOgo+ID4gTm90IGV2ZXJ5IHBs
-YXRmb3JtIG5lZWRzIHF1aXJrIGRldGVjdGlvbiBmb3IgcGFuZWwgb3JpZW50YXRpb24sIHNvCj4g
-PiBzcGxpdCB0aGUgZHJtX2Nvbm5lY3Rvcl9pbml0X3BhbmVsX29yaWVudGF0aW9uX3Byb3BlcnR5
-IGludG8gdHdvCj4gPiBmdW5jdGlvbnMuIE9uZSBmb3IgcGxhdGZvcm1zIHdpdGhvdXQgdGhlIG5l
-ZWQgZm9yIHF1aXJrcywgYW5kIHRoZQo+ID4gb3RoZXIgZm9yIHBsYXRmb3JtcyB0aGF0IG5lZWQg
-cXVpcmtzLgo+ID4KPiA+IFNpZ25lZC1vZmYtYnk6IERlcmVrIEJhc2Vob3JlIDxkYmFzZWhvcmVA
-Y2hyb21pdW0ub3JnPgo+ID4gLS0tCj4gPiAgZHJpdmVycy9ncHUvZHJtL2RybV9jb25uZWN0b3Iu
-YyB8IDQ1ICsrKysrKysrKysrKysrKysrKysrKysrKy0tLS0tLS0tLQo+ID4gIGRyaXZlcnMvZ3B1
-L2RybS9pOTE1L2ludGVsX2RwLmMgfCAgNCArLS0KPiA+ICBkcml2ZXJzL2dwdS9kcm0vaTkxNS92
-bHZfZHNpLmMgIHwgIDUgKystLQo+ID4gIGluY2x1ZGUvZHJtL2RybV9jb25uZWN0b3IuaCAgICAg
-fCAgMiArKwo+ID4gIDQgZmlsZXMgY2hhbmdlZCwgMzkgaW5zZXJ0aW9ucygrKSwgMTcgZGVsZXRp
-b25zKC0pCj4gPgo+ID4gZGlmZiAtLWdpdCBhL2RyaXZlcnMvZ3B1L2RybS9kcm1fY29ubmVjdG9y
-LmMgYi9kcml2ZXJzL2dwdS9kcm0vZHJtX2Nvbm5lY3Rvci5jCj4gPiBpbmRleCBlMTc1ODZhYWE4
-MGYuLmM0YjAxYWRmOTI3YSAxMDA2NDQKPiA+IC0tLSBhL2RyaXZlcnMvZ3B1L2RybS9kcm1fY29u
-bmVjdG9yLmMKPiA+ICsrKyBiL2RyaXZlcnMvZ3B1L2RybS9kcm1fY29ubmVjdG9yLmMKPiA+IEBA
-IC0xODk0LDMxICsxODk0LDIzIEBAIEVYUE9SVF9TWU1CT0woZHJtX2Nvbm5lY3Rvcl9zZXRfdnJy
-X2NhcGFibGVfcHJvcGVydHkpOwo+ID4gICAqIGRybV9jb25uZWN0b3JfaW5pdF9wYW5lbF9vcmll
-bnRhdGlvbl9wcm9wZXJ0eSAtCj4gPiAgICogICBpbml0aWFsaXplIHRoZSBjb25uZWN0ZXJzIHBh
-bmVsX29yaWVudGF0aW9uIHByb3BlcnR5Cj4gPiAgICogQGNvbm5lY3RvcjogY29ubmVjdG9yIGZv
-ciB3aGljaCB0byBpbml0IHRoZSBwYW5lbC1vcmllbnRhdGlvbiBwcm9wZXJ0eS4KPiA+IC0gKiBA
-d2lkdGg6IHdpZHRoIGluIHBpeGVscyBvZiB0aGUgcGFuZWwsIHVzZWQgZm9yIHBhbmVsIHF1aXJr
-IGRldGVjdGlvbgo+ID4gLSAqIEBoZWlnaHQ6IGhlaWdodCBpbiBwaXhlbHMgb2YgdGhlIHBhbmVs
-LCB1c2VkIGZvciBwYW5lbCBxdWlyayBkZXRlY3Rpb24KPiA+ICAgKgo+ID4gICAqIFRoaXMgZnVu
-Y3Rpb24gc2hvdWxkIG9ubHkgYmUgY2FsbGVkIGZvciBidWlsdC1pbiBwYW5lbHMsIGFmdGVyIHNl
-dHRpbmcKPiA+ICAgKiBjb25uZWN0b3ItPmRpc3BsYXlfaW5mby5wYW5lbF9vcmllbnRhdGlvbiBm
-aXJzdCAoaWYga25vd24pLgo+ID4gICAqCj4gPiAtICogVGhpcyBmdW5jdGlvbiB3aWxsIGNoZWNr
-IGZvciBwbGF0Zm9ybSBzcGVjaWZpYyAoZS5nLiBETUkgYmFzZWQpIHF1aXJrcwo+ID4gLSAqIG92
-ZXJyaWRpbmcgZGlzcGxheV9pbmZvLnBhbmVsX29yaWVudGF0aW9uIGZpcnN0LCB0aGVuIGlmIHBh
-bmVsX29yaWVudGF0aW9uCj4gPiAtICogaXMgbm90IERSTV9NT0RFX1BBTkVMX09SSUVOVEFUSU9O
-X1VOS05PV04gaXQgd2lsbCBhdHRhY2ggdGhlCj4gPiAtICogInBhbmVsIG9yaWVudGF0aW9uIiBw
-cm9wZXJ0eSB0byB0aGUgY29ubmVjdG9yLgo+ID4gKyAqIFRoaXMgZnVuY3Rpb24gd2lsbCBjaGVj
-ayBpZiB0aGUgcGFuZWxfb3JpZW50YXRpb24gaXMgbm90Cj4gPiArICogRFJNX01PREVfUEFORUxf
-T1JJRU5UQVRJT05fVU5LTk9XTi4gSWYgbm90LCBpdCB3aWxsIGF0dGFjaCB0aGUgInBhbmVsCj4g
-PiArICogb3JpZW50YXRpb24iIHByb3BlcnR5IHRvIHRoZSBjb25uZWN0b3IuCj4gPiAgICoKPiA+
-ICAgKiBSZXR1cm5zOgo+ID4gICAqIFplcm8gb24gc3VjY2VzcywgbmVnYXRpdmUgZXJybm8gb24g
-ZmFpbHVyZS4KPiA+ICAgKi8KPiA+ICBpbnQgZHJtX2Nvbm5lY3Rvcl9pbml0X3BhbmVsX29yaWVu
-dGF0aW9uX3Byb3BlcnR5KAo+ID4gLSAgICAgc3RydWN0IGRybV9jb25uZWN0b3IgKmNvbm5lY3Rv
-ciwgaW50IHdpZHRoLCBpbnQgaGVpZ2h0KQo+ID4gKyAgICAgc3RydWN0IGRybV9jb25uZWN0b3Ig
-KmNvbm5lY3RvcikKPiA+ICB7Cj4gPiAgICAgICBzdHJ1Y3QgZHJtX2RldmljZSAqZGV2ID0gY29u
-bmVjdG9yLT5kZXY7Cj4gPiAgICAgICBzdHJ1Y3QgZHJtX2Rpc3BsYXlfaW5mbyAqaW5mbyA9ICZj
-b25uZWN0b3ItPmRpc3BsYXlfaW5mbzsKPiA+ICAgICAgIHN0cnVjdCBkcm1fcHJvcGVydHkgKnBy
-b3A7Cj4gPiAtICAgICBpbnQgb3JpZW50YXRpb25fcXVpcms7Cj4gPiAtCj4gPiAtICAgICBvcmll
-bnRhdGlvbl9xdWlyayA9IGRybV9nZXRfcGFuZWxfb3JpZW50YXRpb25fcXVpcmsod2lkdGgsIGhl
-aWdodCk7Cj4gPiAtICAgICBpZiAob3JpZW50YXRpb25fcXVpcmsgIT0gRFJNX01PREVfUEFORUxf
-T1JJRU5UQVRJT05fVU5LTk9XTikKPiA+IC0gICAgICAgICAgICAgaW5mby0+cGFuZWxfb3JpZW50
-YXRpb24gPSBvcmllbnRhdGlvbl9xdWlyazsKPiA+Cj4gPiAgICAgICBpZiAoaW5mby0+cGFuZWxf
-b3JpZW50YXRpb24gPT0gRFJNX01PREVfUEFORUxfT1JJRU5UQVRJT05fVU5LTk9XTikKPiA+ICAg
-ICAgICAgICAgICAgcmV0dXJuIDA7Cj4gPiBAQCAtMTk0MSw2ICsxOTMzLDM1IEBAIGludCBkcm1f
-Y29ubmVjdG9yX2luaXRfcGFuZWxfb3JpZW50YXRpb25fcHJvcGVydHkoCj4gPiAgfQo+ID4gIEVY
-UE9SVF9TWU1CT0woZHJtX2Nvbm5lY3Rvcl9pbml0X3BhbmVsX29yaWVudGF0aW9uX3Byb3BlcnR5
-KTsKPiA+Cj4gPiArLyoqCj4gPiArICogZHJtX2Nvbm5lY3Rvcl9pbml0X3BhbmVsX29yaWVudGF0
-aW9uX3Byb3BlcnR5X3F1aXJrIC0KPiA+ICsgKiAgIGluaXRpYWxpemUgdGhlIGNvbm5lY3RlcnMg
-cGFuZWxfb3JpZW50YXRpb24gcHJvcGVydHkgd2l0aCBhIHF1aXJrCj4gPiArICogICBvdmVycmlk
-ZQo+ID4gKyAqIEBjb25uZWN0b3I6IGNvbm5lY3RvciBmb3Igd2hpY2ggdG8gaW5pdCB0aGUgcGFu
-ZWwtb3JpZW50YXRpb24gcHJvcGVydHkuCj4gPiArICogQHdpZHRoOiB3aWR0aCBpbiBwaXhlbHMg
-b2YgdGhlIHBhbmVsLCB1c2VkIGZvciBwYW5lbCBxdWlyayBkZXRlY3Rpb24KPiA+ICsgKiBAaGVp
-Z2h0OiBoZWlnaHQgaW4gcGl4ZWxzIG9mIHRoZSBwYW5lbCwgdXNlZCBmb3IgcGFuZWwgcXVpcmsg
-ZGV0ZWN0aW9uCj4gPiArICoKPiA+ICsgKiBUaGlzIGZ1bmN0aW9uIHdpbGwgY2hlY2sgZm9yIHBs
-YXRmb3JtIHNwZWNpZmljIChlLmcuIERNSSBiYXNlZCkgcXVpcmtzCj4gPiArICogb3ZlcnJpZGlu
-ZyBkaXNwbGF5X2luZm8ucGFuZWxfb3JpZW50YXRpb24gZmlyc3QsIHRoZW4gaWYgcGFuZWxfb3Jp
-ZW50YXRpb24KPiA+ICsgKiBpcyBub3QgRFJNX01PREVfUEFORUxfT1JJRU5UQVRJT05fVU5LTk9X
-TiBpdCB3aWxsIGF0dGFjaCB0aGUKPiA+ICsgKiAicGFuZWwgb3JpZW50YXRpb24iIHByb3BlcnR5
-IHRvIHRoZSBjb25uZWN0b3IuCj4gPiArICoKPiA+ICsgKiBSZXR1cm5zOgo+ID4gKyAqIFplcm8g
-b24gc3VjY2VzcywgbmVnYXRpdmUgZXJybm8gb24gZmFpbHVyZS4KPiA+ICsgKi8KPiA+ICtpbnQg
-ZHJtX2Nvbm5lY3Rvcl9pbml0X3BhbmVsX29yaWVudGF0aW9uX3Byb3BlcnR5X3F1aXJrKAo+ID4g
-KyAgICAgc3RydWN0IGRybV9jb25uZWN0b3IgKmNvbm5lY3RvciwgaW50IHdpZHRoLCBpbnQgaGVp
-Z2h0KQo+ID4gK3sKPiA+ICsgICAgIGludCBvcmllbnRhdGlvbl9xdWlyazsKPiA+ICsKPiA+ICsg
-ICAgIG9yaWVudGF0aW9uX3F1aXJrID0gZHJtX2dldF9wYW5lbF9vcmllbnRhdGlvbl9xdWlyayh3
-aWR0aCwgaGVpZ2h0KTsKPiA+ICsgICAgIGlmIChvcmllbnRhdGlvbl9xdWlyayAhPSBEUk1fTU9E
-RV9QQU5FTF9PUklFTlRBVElPTl9VTktOT1dOKQo+ID4gKyAgICAgICAgICAgICBjb25uZWN0b3It
-PmRpc3BsYXlfaW5mby5wYW5lbF9vcmllbnRhdGlvbiA9IG9yaWVudGF0aW9uX3F1aXJrOwo+ID4g
-Kwo+ID4gKyAgICAgcmV0dXJuIGRybV9jb25uZWN0b3JfaW5pdF9wYW5lbF9vcmllbnRhdGlvbl9w
-cm9wZXJ0eShjb25uZWN0b3IpOwo+ID4gK30KPiA+ICtFWFBPUlRfU1lNQk9MKGRybV9jb25uZWN0
-b3JfaW5pdF9wYW5lbF9vcmllbnRhdGlvbl9wcm9wZXJ0eV9xdWlyayk7Cj4gPiArCj4gPiAgaW50
-IGRybV9jb25uZWN0b3Jfc2V0X29ial9wcm9wKHN0cnVjdCBkcm1fbW9kZV9vYmplY3QgKm9iaiwK
-PiA+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBzdHJ1Y3QgZHJtX3Byb3BlcnR5
-ICpwcm9wZXJ0eSwKPiA+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB1aW50NjRf
-dCB2YWx1ZSkKPiA+IGRpZmYgLS1naXQgYS9kcml2ZXJzL2dwdS9kcm0vaTkxNS9pbnRlbF9kcC5j
-IGIvZHJpdmVycy9ncHUvZHJtL2k5MTUvaW50ZWxfZHAuYwo+ID4gaW5kZXggYjA5OWE5ZGMyOGZk
-Li43ZDRlNjFjZjU0NjMgMTAwNjQ0Cj4gPiAtLS0gYS9kcml2ZXJzL2dwdS9kcm0vaTkxNS9pbnRl
-bF9kcC5jCj4gPiArKysgYi9kcml2ZXJzL2dwdS9kcm0vaTkxNS9pbnRlbF9kcC5jCj4gPiBAQCAt
-NzI4Miw4ICs3MjgyLDggQEAgc3RhdGljIGJvb2wgaW50ZWxfZWRwX2luaXRfY29ubmVjdG9yKHN0
-cnVjdCBpbnRlbF9kcCAqaW50ZWxfZHAsCj4gPiAgICAgICBpbnRlbF9wYW5lbF9zZXR1cF9iYWNr
-bGlnaHQoY29ubmVjdG9yLCBwaXBlKTsKPiA+Cj4gPiAgICAgICBpZiAoZml4ZWRfbW9kZSkKPiA+
-IC0gICAgICAgICAgICAgZHJtX2Nvbm5lY3Rvcl9pbml0X3BhbmVsX29yaWVudGF0aW9uX3Byb3Bl
-cnR5KAo+ID4gLSAgICAgICAgICAgICAgICAgICAgIGNvbm5lY3RvciwgZml4ZWRfbW9kZS0+aGRp
-c3BsYXksIGZpeGVkX21vZGUtPnZkaXNwbGF5KTsKPiA+ICsgICAgICAgICAgICAgZHJtX2Nvbm5l
-Y3Rvcl9pbml0X3BhbmVsX29yaWVudGF0aW9uX3Byb3BlcnR5X3F1aXJrKGNvbm5lY3RvciwKPiA+
-ICsgICAgICAgICAgICAgICAgICAgICAgICAgICAgIGZpeGVkX21vZGUtPmhkaXNwbGF5LCBmaXhl
-ZF9tb2RlLT52ZGlzcGxheSk7Cj4gPgo+ID4gICAgICAgcmV0dXJuIHRydWU7Cj4gPgo+ID4gZGlm
-ZiAtLWdpdCBhL2RyaXZlcnMvZ3B1L2RybS9pOTE1L3Zsdl9kc2kuYyBiL2RyaXZlcnMvZ3B1L2Ry
-bS9pOTE1L3Zsdl9kc2kuYwo+ID4gaW5kZXggYmZlMjg5MWVhYzM3Li5mYTk4MzNkYmUzNTkgMTAw
-NjQ0Cj4gPiAtLS0gYS9kcml2ZXJzL2dwdS9kcm0vaTkxNS92bHZfZHNpLmMKPiA+ICsrKyBiL2Ry
-aXZlcnMvZ3B1L2RybS9pOTE1L3Zsdl9kc2kuYwo+ID4gQEAgLTE2NTAsNiArMTY1MCw3IEBAIHN0
-YXRpYyB2b2lkIGludGVsX2RzaV9hZGRfcHJvcGVydGllcyhzdHJ1Y3QgaW50ZWxfY29ubmVjdG9y
-ICpjb25uZWN0b3IpCj4gPgo+ID4gICAgICAgaWYgKGNvbm5lY3Rvci0+cGFuZWwuZml4ZWRfbW9k
-ZSkgewo+ID4gICAgICAgICAgICAgICB1MzIgYWxsb3dlZF9zY2FsZXJzOwo+ID4gKyAgICAgICAg
-ICAgICBpbnQgb3JpZW50YXRpb247Cj4gPgo+ID4gICAgICAgICAgICAgICBhbGxvd2VkX3NjYWxl
-cnMgPSBCSVQoRFJNX01PREVfU0NBTEVfQVNQRUNUKSB8IEJJVChEUk1fTU9ERV9TQ0FMRV9GVUxM
-U0NSRUVOKTsKPiA+ICAgICAgICAgICAgICAgaWYgKCFIQVNfR01DSChkZXZfcHJpdikpCj4gPiBA
-QCAtMTY2MCw5ICsxNjYxLDcgQEAgc3RhdGljIHZvaWQgaW50ZWxfZHNpX2FkZF9wcm9wZXJ0aWVz
-KHN0cnVjdCBpbnRlbF9jb25uZWN0b3IgKmNvbm5lY3RvcikKPiA+Cj4gPiAgICAgICAgICAgICAg
-IGNvbm5lY3Rvci0+YmFzZS5zdGF0ZS0+c2NhbGluZ19tb2RlID0gRFJNX01PREVfU0NBTEVfQVNQ
-RUNUOwo+ID4KPiA+IC0gICAgICAgICAgICAgY29ubmVjdG9yLT5iYXNlLmRpc3BsYXlfaW5mby5w
-YW5lbF9vcmllbnRhdGlvbiA9Cj4gPiAtICAgICAgICAgICAgICAgICAgICAgdmx2X2RzaV9nZXRf
-cGFuZWxfb3JpZW50YXRpb24oY29ubmVjdG9yKTsKPgo+IFdoZXJlIGRpZCB0aGF0IGdvPwoKT29w
-cy4gTmljZSBjYXRjaC4KCj4KPiA+IC0gICAgICAgICAgICAgZHJtX2Nvbm5lY3Rvcl9pbml0X3Bh
-bmVsX29yaWVudGF0aW9uX3Byb3BlcnR5KAo+ID4gKyAgICAgICAgICAgICBkcm1fY29ubmVjdG9y
-X2luaXRfcGFuZWxfb3JpZW50YXRpb25fcHJvcGVydHlfcXVpcmsoCj4gPiAgICAgICAgICAgICAg
-ICAgICAgICAgICAgICAgICAmY29ubmVjdG9yLT5iYXNlLAo+ID4gICAgICAgICAgICAgICAgICAg
-ICAgICAgICAgICAgY29ubmVjdG9yLT5wYW5lbC5maXhlZF9tb2RlLT5oZGlzcGxheSwKPiA+ICAg
-ICAgICAgICAgICAgICAgICAgICAgICAgICAgIGNvbm5lY3Rvci0+cGFuZWwuZml4ZWRfbW9kZS0+
-dmRpc3BsYXkpOwo+ID4gZGlmZiAtLWdpdCBhL2luY2x1ZGUvZHJtL2RybV9jb25uZWN0b3IuaCBi
-L2luY2x1ZGUvZHJtL2RybV9jb25uZWN0b3IuaAo+ID4gaW5kZXggNDdlNzQ5Yjc0ZTVmLi4wNDY4
-ZmQ5YTQ0MTggMTAwNjQ0Cj4gPiAtLS0gYS9pbmNsdWRlL2RybS9kcm1fY29ubmVjdG9yLmgKPiA+
-ICsrKyBiL2luY2x1ZGUvZHJtL2RybV9jb25uZWN0b3IuaAo+ID4gQEAgLTEzNzAsNiArMTM3MCw4
-IEBAIHZvaWQgZHJtX2Nvbm5lY3Rvcl9zZXRfbGlua19zdGF0dXNfcHJvcGVydHkoc3RydWN0IGRy
-bV9jb25uZWN0b3IgKmNvbm5lY3RvciwKPiA+ICB2b2lkIGRybV9jb25uZWN0b3Jfc2V0X3Zycl9j
-YXBhYmxlX3Byb3BlcnR5KAo+ID4gICAgICAgICAgICAgICBzdHJ1Y3QgZHJtX2Nvbm5lY3RvciAq
-Y29ubmVjdG9yLCBib29sIGNhcGFibGUpOwo+ID4gIGludCBkcm1fY29ubmVjdG9yX2luaXRfcGFu
-ZWxfb3JpZW50YXRpb25fcHJvcGVydHkoCj4gPiArICAgICBzdHJ1Y3QgZHJtX2Nvbm5lY3RvciAq
-Y29ubmVjdG9yKTsKPiA+ICtpbnQgZHJtX2Nvbm5lY3Rvcl9pbml0X3BhbmVsX29yaWVudGF0aW9u
-X3Byb3BlcnR5X3F1aXJrKAo+ID4gICAgICAgc3RydWN0IGRybV9jb25uZWN0b3IgKmNvbm5lY3Rv
-ciwgaW50IHdpZHRoLCBpbnQgaGVpZ2h0KTsKPiA+ICBpbnQgZHJtX2Nvbm5lY3Rvcl9hdHRhY2hf
-bWF4X2JwY19wcm9wZXJ0eShzdHJ1Y3QgZHJtX2Nvbm5lY3RvciAqY29ubmVjdG9yLAo+ID4gICAg
-ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIGludCBtaW4sIGludCBtYXgpOwo+
-ID4gLS0KPiA+IDIuMjIuMC40MTAuZ2Q4ZmRiZTIxYjUtZ29vZwo+ID4KPiA+IF9fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCj4gPiBJbnRlbC1nZnggbWFpbGlu
-ZyBsaXN0Cj4gPiBJbnRlbC1nZnhAbGlzdHMuZnJlZWRlc2t0b3Aub3JnCj4gPiBodHRwczovL2xp
-c3RzLmZyZWVkZXNrdG9wLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2ludGVsLWdmeAo+Cj4gLS0KPiBW
-aWxsZSBTeXJqw6Rsw6QKPiBJbnRlbAoKVGhhbmtzIGZvciB0aGUgcmV2aWV3CgpfX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1h
-aWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xp
-c3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
+
+On 06/28/2019 03:50 PM, Catalin Marinas wrote:
+> Hi Anshuman,
+
+Hello Catalin,
+
+> 
+> On Thu, Jun 27, 2019 at 06:18:15PM +0530, Anshuman Khandual wrote:
+>> pmd_present() and pmd_trans_huge() are expected to behave in the following
+>> manner during various phases of a given PMD. It is derived from a previous
+>> detailed discussion on this topic [1] and present THP documentation [2].
+>>
+>> pmd_present(pmd):
+>>
+>> - Returns true if pmd refers to system RAM with a valid pmd_page(pmd)
+>> - Returns false if pmd does not refer to system RAM - Invalid pmd_page(pmd)
+>>
+>> pmd_trans_huge(pmd):
+>>
+>> - Returns true if pmd refers to system RAM and is a trans huge mapping
+>>
+>> -------------------------------------------------------------------------
+>> |	PMD states	|	pmd_present	|	pmd_trans_huge	|
+>> -------------------------------------------------------------------------
+>> |	Mapped		|	Yes		|	Yes		|
+>> -------------------------------------------------------------------------
+>> |	Splitting	|	Yes		|	Yes		|
+>> -------------------------------------------------------------------------
+>> |	Migration/Swap	|	No		|	No		|
+>> -------------------------------------------------------------------------
+> 
+> Before we actually start fixing this, I would strongly suggest that you
+> add a boot selftest (see lib/Kconfig.debug for other similar cases)
+> which checks the consistency of the page table macros w.r.t. the
+> expected mm semantics. Once the mm maintainers agreed with the
+> semantics, it will really help architecture maintainers in implementing
+> them correctly.
+
+Sure and it will help all architectures to be in sync wrt semantics.
+
+> 
+> You wouldn't need actual page tables, just things like assertions on
+> pmd_trans_huge(pmd_mkhuge(pmd)) == true. You could go further and have
+> checks on pmdp_invalidate(&dummy_vma, dummy_addr, &dummy_pmd) with the
+> dummy_* variables on the stack.
+
+Hmm. I guess macros which operate directly on a page table entry will be
+okay but the ones which check on specific states for VMA or MM might be
+bit tricky. Try to emulate VMA/MM states while on stack ?. But sure, will
+explore adding such a test.
+
+> 
+>> The problem:
+>>
+>> PMD is first invalidated with pmdp_invalidate() before it's splitting. This
+>> invalidation clears PMD_SECT_VALID as below.
+>>
+>> PMD Split -> pmdp_invalidate() -> pmd_mknotpresent -> Clears PMD_SECT_VALID
+>>
+>> Once PMD_SECT_VALID gets cleared, it results in pmd_present() return false
+>> on the PMD entry.
+> 
+> I think that's an inconsistency in the expected semantics here. Do you
+> mean that pmd_present(pmd_mknotpresent(pmd)) should be true? If not, do
+
+Actually that is true (more so if we are using generic pmdp_invalidate). Else
+in general pmd_present(pmdp_invalidate(pmd)) needs to be true to successfully
+represent a splitting THP. That is what Andrea explained back on this thread
+(https://lkml.org/lkml/2018/10/17/231).
+
+Extracting relevant sections from that thread -
+
+"pmd_present never meant the real present bit in the pte was set, it just means
+the pmd points to RAM. It means it doesn't point to swap or migration entry and
+you can do pmd_to_page and it works fine."
+
+"The clear of the real present bit during pmd (virtual) splitting is done with
+pmdp_invalidate, that is created specifically to keeps pmd_trans_huge=true,
+pmd_present=true despite the present bit is not set. So you could imagine
+_PAGE_PSE as the real present bit."
+
+pmd_present() and pmd_mknotpresent() are not exact inverse.
+
+Problem is all platforms using generic pmdp_invalidate() calls pmd_mknotpresent()
+which invariably across platforms remove the valid or present bit from the entry.
+The point to note here is that pmd_mknotpresent() invalidates the entry from MMU
+point of view but pmd_present() does not check for a MMU valid PMD entry. Hence
+pmd_present(pmd_mknotpresent(pmd)) can still be true.
+
+In absence of a positive section mapping bit on arm64, PTE_SPECIAL is being set
+temporarily to remember that it was a mapped PMD which got invalidated recently
+but which still points to memory. Hence pmd_present() must evaluate true.
+
+pmd_mknotpresent() does not make !pmd_present() it just invalidates the entry.
+
+> we need to implement our own pmdp_invalidate() or change the generic one
+> to set a "special" bit instead of just a pmd_mknotpresent?
+
+Though arm64 can subscribe __HAVE_ARCH_PMDP_INVALIDATE and implement it's own
+pmdp_invalidate() in order to not call pmd_mknotpresent() and instead operate
+on the invalid and special bits directly. But its not going to alter relevant
+semantics here. AFAICS it might be bit better as it saves pmd_mknotpresent()
+from putting in that special bit in there which it is not supposed do.
+
+IFAICS there is no compelling reason for generic pmdp_invalidate() to change
+either. It calls pmd_mknotpresent() which invalidates the entry through valid
+or present bit and platforms which have dedicated huge page bit can still test
+positive for pmd_present() after it's invalidation. It works for such platforms.
+Platform specific override is required when invalidation via pmd_mknotpresent()
+is not enough.
+
+> 
+>> +static inline int pmd_present(pmd_t pmd)
+>> +{
+>> +	if (pte_present(pmd_pte(pmd)))
+>> +		return 1;
+>> +
+>> +	return pte_special(pmd_pte(pmd));
+>> +}
+> [...]
+>> +static inline pmd_t pmd_mknotpresent(pmd_t pmd)
+>> +{
+>> +	pmd = pte_pmd(pte_mkspecial(pmd_pte(pmd)));
+>> +	return __pmd(pmd_val(pmd) & ~PMD_SECT_VALID);
+>> +}
+> 
+> I'm not sure I agree with the semantics here where pmd_mknotpresent()
+> does not actually make pmd_present() == false.
+
+As Andrea explained, pmd_present() does not check validity of the PMD entry
+from MMU perspective but the presence of a valid pmd_page() which still refers
+to a valid struct page in the memory. It is irrespective of whether the entry
+in itself is valid for MMU walk or not.
+
++ Cc: Andrea Arcangeli <aarcange@redhat.com>
+
+I have added Andrea on this thread if he would like to add something.
+
+- Anshuman
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
