@@ -2,26 +2,26 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4C3C15D020
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  2 Jul 2019 15:06:04 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3AA6E5D021
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  2 Jul 2019 15:06:22 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
 	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Date:Message-Id:
 	In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	References:List-Owner; bh=o7bAHtlCn/TGhcBh6RElFEV3Cu9Z1c6ZZIa6167xq9w=; b=sg1
-	liuSuo7oP94Ao04h4bGwrylk+BD1SFotdTvLeZ5LDsdvRpNRHk3erehNXkY1e0PgUC7ouLw7C1APy
-	QMErXT+/HW6jSlOhlEJP8DspcJvljAEPqhzysLRzngJ1gtVdJCZSugcebIlVVKKSEaaGhdm+KaBM/
-	NmVDHx07nFMJgbtn69jnCRmOEx/z3fTCWLhKZC3b23VulTDS3QeXMM6Uowh1IV2ENFE00DTh9GIie
-	7rpq9fJ3K/ybmt8mWY+/BQvITgPf3r4oz+5D6/kamcBc0LfSCs/OEc9ChB9zqf0muBt/uF3skfiP/
-	4YRgcn5i7i4z9M+w56OrPmoOntGXIrQ==;
+	References:List-Owner; bh=AUHfVE8xBPGRM/pBEaYpAG510omFJQBY7IEr/594lHE=; b=bBV
+	mv8+YG3tfyWT5r9TmiJFpQXiD4ZqjiN7yNasczzY+k+ku2JNVneHkmeeDjIJPcCOTuwLbQY0YtXRx
+	Ow+Z3URPIRHurkY+hTqPaGbnXDf1ioSzmiteLzxjOQOD4o8jFOGUKjQ6nXNrbD4RhlHU7LMaDqMNF
+	X2VcH6ZNmPoQkcvqrSgKAfO3FooLzprWRa1PebZi6jA9sTEXGE4fbuqeQEibEzIuoCx/Ag3SDECJF
+	UXx8AxNyIsk6SLQIDLt2PfIN+PygwW93D+OUzGYjzIkR3rdewUHNyhZKnmqrOtwPnrafOstxBI1qu
+	KRA7TYtaSdZ/tNRTtEwyCLlbuG5MyUg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hiITy-0004tq-Qj; Tue, 02 Jul 2019 13:06:02 +0000
+	id 1hiIUG-00059U-Gv; Tue, 02 Jul 2019 13:06:20 +0000
 Received: from heliosphere.sirena.org.uk ([2a01:7e01::f03c:91ff:fed4:a3b6])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hiISw-00033H-FW
+ id 1hiISw-00033n-Us
  for linux-arm-kernel@lists.infradead.org; Tue, 02 Jul 2019 13:05:00 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=sirena.org.uk; s=20170815-heliosphere; h=Date:Message-Id:In-Reply-To:
@@ -29,29 +29,30 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
  Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
  List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:
- List-Archive; bh=EXZcCEZ51ZisvJHtaBCKmIdJTSbF5mTt/3It5b3+/0s=; b=Sdx1KffC6Q07
- BdBYw5jsi3uIXUS8PUpC1FrUMHCcvFtyixsFOQdnjfv7tGBEkcAn4hE+aLqdAIir8P6xKliy50bBq
- j4m0ucYg27bYQCn0zxK4ouRyxM2yOdW9M36bij9+J+QdiOlpnv21l56Dzh3iLYSGZ/nOpvgk+cYwg
- dHA+g=;
+ List-Archive; bh=4tXMGhA9HB+xSbITfE6TXcIxJQpL64/y+Mh3Eq0Tq/g=; b=XIffDlh1p5vL
+ 4nxGkGeQpuB/DgBZ5GzhYwOwizqi7gzuvzg1xbnEHMzhPrQHAEDV6rR/IKAkMOjtY6qN8A/5g5YE0
+ 2hoANufXazBWI5hiMxjLdWQO3oDka+a5tUOyRa2biGZkg2S123i3AvNaboCKG10lvthR6VnEi06H/
+ mnAR4=;
 Received: from [2001:470:1f1d:6b5:7e7a:91ff:fede:4a45]
  (helo=finisterre.sirena.org.uk)
  by heliosphere.sirena.org.uk with esmtpsa
  (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.89)
  (envelope-from <broonie@sirena.org.uk>)
- id 1hiISt-0002Oc-4C; Tue, 02 Jul 2019 13:04:55 +0000
+ id 1hiISt-0002Og-Eb; Tue, 02 Jul 2019 13:04:55 +0000
 Received: by finisterre.sirena.org.uk (Postfix, from userid 1000)
- id 6FCC0440046; Tue,  2 Jul 2019 14:04:54 +0100 (BST)
+ id BCAC644004B; Tue,  2 Jul 2019 14:04:54 +0100 (BST)
 From: Mark Brown <broonie@kernel.org>
 To: Tudor Ambarus <tudor.ambarus@microchip.com>
-Subject: Applied "spi: atmel-quadspi: fix resume call" to the spi tree
-In-Reply-To: <20190628153009.7571-3-tudor.ambarus@microchip.com>
+Subject: Applied "spi: atmel-quadspi: void return type for atmel_qspi_init()"
+ to the spi tree
+In-Reply-To: <20190628153009.7571-2-tudor.ambarus@microchip.com>
 X-Patchwork-Hint: ignore
-Message-Id: <20190702130454.6FCC0440046@finisterre.sirena.org.uk>
+Message-Id: <20190702130454.BCAC644004B@finisterre.sirena.org.uk>
 Date: Tue,  2 Jul 2019 14:04:54 +0100 (BST)
 X-Bad-Reply: In-Reply-To but no 'Re:' in Subject.
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190702_060458_663586_B0973170 
-X-CRM114-Status: GOOD (  16.53  )
+X-CRM114-CacheID: sfid-20190702_060459_134749_D91EF557 
+X-CRM114-Status: GOOD (  14.75  )
 X-Spam-Score: -0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.1 points)
@@ -89,7 +90,7 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 The patch
 
-   spi: atmel-quadspi: fix resume call
+   spi: atmel-quadspi: void return type for atmel_qspi_init()
 
 has been applied to the spi tree at
 
@@ -114,73 +115,64 @@ to this mail.
 Thanks,
 Mark
 
-From 0db3a61b4b3ceaea68b748ee63cc88f110757b7f Mon Sep 17 00:00:00 2001
+From 5b74e9a306267be3b371b309faef8626b18e6423 Mon Sep 17 00:00:00 2001
 From: Tudor Ambarus <tudor.ambarus@microchip.com>
-Date: Fri, 28 Jun 2019 15:30:34 +0000
-Subject: [PATCH] spi: atmel-quadspi: fix resume call
+Date: Fri, 28 Jun 2019 15:30:32 +0000
+Subject: [PATCH] spi: atmel-quadspi: void return type for atmel_qspi_init()
 
-When waking up from the Suspend-to-RAM state, the following error
-was seen:
+commit 2d30ac5ed633 ("mtd: spi-nor: atmel-quadspi: Use spi-mem interface for atmel-quadspi driver")
+removed the error path from atmel_qspi_init(), but not changed the
+function's return type. Set void return type for atmel_qspi_init().
 
-m25p80 spi2.0: flash operation timed out
-
-The flash remained in an undefined state, returning 0xFFs.
-Fix it by setting the Serial Clock Baud Rate, as it was set
-before the conversion to SPIMEM.
-
-Tested with sama5d2_xplained and mx25l25673g spi-nor in
-Backup + Self-Refresh and Suspend modes.
-
-Fixes: 0e6aae08e9ae ("spi: Add QuadSPI driver for Atmel SAMA5D2")
-Reported-by: Mark Deneen <mdeneen@gmail.com>
 Signed-off-by: Tudor Ambarus <tudor.ambarus@microchip.com>
 Signed-off-by: Mark Brown <broonie@kernel.org>
 ---
- drivers/spi/atmel-quadspi.c | 10 +++++++---
- 1 file changed, 7 insertions(+), 3 deletions(-)
+ drivers/spi/atmel-quadspi.c | 11 ++++-------
+ 1 file changed, 4 insertions(+), 7 deletions(-)
 
 diff --git a/drivers/spi/atmel-quadspi.c b/drivers/spi/atmel-quadspi.c
-index 32eb7447c31a..6a7d7b553d95 100644
+index 9f24d5f0b431..32eb7447c31a 100644
 --- a/drivers/spi/atmel-quadspi.c
 +++ b/drivers/spi/atmel-quadspi.c
-@@ -151,6 +151,7 @@ struct atmel_qspi {
- 	const struct atmel_qspi_caps *caps;
- 	u32			pending;
- 	u32			mr;
-+	u32			scr;
- 	struct completion	cmd_completion;
- };
- 
-@@ -382,7 +383,7 @@ static int atmel_qspi_setup(struct spi_device *spi)
- 	struct spi_controller *ctrl = spi->master;
- 	struct atmel_qspi *aq = spi_controller_get_devdata(ctrl);
- 	unsigned long src_rate;
--	u32 scr, scbr;
-+	u32 scbr;
- 
- 	if (ctrl->busy)
- 		return -EBUSY;
-@@ -399,8 +400,8 @@ static int atmel_qspi_setup(struct spi_device *spi)
- 	if (scbr > 0)
- 		scbr--;
- 
--	scr = QSPI_SCR_SCBR(scbr);
--	writel_relaxed(scr, aq->regs + QSPI_SCR);
-+	aq->scr = QSPI_SCR_SCBR(scbr);
-+	writel_relaxed(aq->scr, aq->regs + QSPI_SCR);
- 
+@@ -405,7 +405,7 @@ static int atmel_qspi_setup(struct spi_device *spi)
  	return 0;
  }
-@@ -584,6 +585,9 @@ static int __maybe_unused atmel_qspi_resume(struct device *dev)
+ 
+-static int atmel_qspi_init(struct atmel_qspi *aq)
++static void atmel_qspi_init(struct atmel_qspi *aq)
+ {
+ 	/* Reset the QSPI controller */
+ 	writel_relaxed(QSPI_CR_SWRST, aq->regs + QSPI_CR);
+@@ -416,8 +416,6 @@ static int atmel_qspi_init(struct atmel_qspi *aq)
+ 
+ 	/* Enable the QSPI controller */
+ 	writel_relaxed(QSPI_CR_QSPIEN, aq->regs + QSPI_CR);
+-
+-	return 0;
+ }
+ 
+ static irqreturn_t atmel_qspi_interrupt(int irq, void *dev_id)
+@@ -536,9 +534,7 @@ static int atmel_qspi_probe(struct platform_device *pdev)
+ 	if (err)
+ 		goto disable_qspick;
+ 
+-	err = atmel_qspi_init(aq);
+-	if (err)
+-		goto disable_qspick;
++	atmel_qspi_init(aq);
+ 
+ 	err = spi_register_controller(ctrl);
+ 	if (err)
+@@ -587,7 +583,8 @@ static int __maybe_unused atmel_qspi_resume(struct device *dev)
+ 	clk_prepare_enable(aq->pclk);
  	clk_prepare_enable(aq->qspick);
  
- 	atmel_qspi_init(aq);
-+
-+	writel_relaxed(aq->scr, aq->regs + QSPI_SCR);
-+
- 	return 0;
+-	return atmel_qspi_init(aq);
++	atmel_qspi_init(aq);
++	return 0;
  }
  
+ static SIMPLE_DEV_PM_OPS(atmel_qspi_pm_ops, atmel_qspi_suspend,
 -- 
 2.20.1
 
