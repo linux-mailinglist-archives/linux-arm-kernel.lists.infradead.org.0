@@ -2,58 +2,100 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 182435D29D
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  2 Jul 2019 17:20:29 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id EA2E55D2AB
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  2 Jul 2019 17:21:29 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=ogORCK02urUn3a0SUa0LaliZNPBBdnPe6JJ44HlyIws=; b=HrS
-	XNa0OM4JXyHR+96/CVRZM5cxWDE+ORR0KDwIsT4ROfa2CBK2+cDMte3PpdBAV9Pwh7a5hbtjec+0E
-	TJpqDgJV8idkpbM+yfQOkRoEb+ABGinpAfshpsCifEeCbpHAEB7LlvsQWjjlX0u8bQdGLNoLnGOCZ
-	eVnKsCq1jByVRX4iO39uI7Uubmb1ddW17rVA9X9SH5vA83w9lRIU9io8NC17X1qD3XbsUuhIInSMt
-	wZQghk5L1u54Is74v2qlr7RJj/tm3s+fJje7C3fEdxu04bm3p8LlzMuK/nwU4xFNI4coqajvVuC47
-	OTR3GHDQIHoJ9cKJkQ4WqJRN2YP2mqA==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
+	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=vd8k3YFkSV8jzOZF9ralcPkSbe0MCn+RS61lmL8Cmmk=; b=peZXn8ceFj5nTp
+	cesZP9QMG6krKxWVn7EvCSCtciDGEZ+Ep4Ez6JAVlJY1bWEMZrWcXY0/t4t0BUD4AW7FcFoWjjIWj
+	HwyGKF/AsLnoLFRWuPwBzSTEeHKnAMqQTlhzkXCRanuJV5HhpWLgVFinvTJ5Af0f2QtiPig6KKRA1
+	1e4NeSi+6bJMTpSr1qmt5paShKCjbfDQXTkAZJxPlbHHB97QLYgi5Rl9xYgUSY+Ga67Bxv13YwSYo
+	O1P2KUiEvzoqSKIWICWZ/z9nv2z9XkmleszLczzRRaRJI/XoCnU2xqvCp4ZdTAk7FHj0uBDffC0E/
+	sFKC0G8FLa5hZQY+2cDw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hiKa3-0006TX-6s; Tue, 02 Jul 2019 15:20:27 +0000
-Received: from inva021.nxp.com ([92.121.34.21])
+	id 1hiKb1-0006mv-LZ; Tue, 02 Jul 2019 15:21:27 +0000
+Received: from mx08-00178001.pphosted.com ([91.207.212.93]
+ helo=mx07-00178001.pphosted.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hiKZo-0006Sf-BQ
- for linux-arm-kernel@lists.infradead.org; Tue, 02 Jul 2019 15:20:13 +0000
-Received: from inva021.nxp.com (localhost [127.0.0.1])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 247E2200C2C;
- Tue,  2 Jul 2019 17:20:09 +0200 (CEST)
-Received: from inva024.eu-rdc02.nxp.com (inva024.eu-rdc02.nxp.com
- [134.27.226.22])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 18162200C27;
- Tue,  2 Jul 2019 17:20:09 +0200 (CEST)
-Received: from fsr-ub1864-103.ea.freescale.net
- (fsr-ub1864-103.ea.freescale.net [10.171.82.17])
- by inva024.eu-rdc02.nxp.com (Postfix) with ESMTP id 5EFBF205ED;
- Tue,  2 Jul 2019 17:20:08 +0200 (CEST)
-From: Daniel Baluta <daniel.baluta@nxp.com>
-To: shawnguo@kernel.org
-Subject: [PATCH] clk: imx8: Add DSP related clocks
-Date: Tue,  2 Jul 2019 18:20:07 +0300
-Message-Id: <20190702152007.12190-1-daniel.baluta@nxp.com>
-X-Mailer: git-send-email 2.17.1
-X-Virus-Scanned: ClamAV using ClamSMTP
+ id 1hiKam-0006mG-Fy
+ for linux-arm-kernel@lists.infradead.org; Tue, 02 Jul 2019 15:21:15 +0000
+Received: from pps.filterd (m0046661.ppops.net [127.0.0.1])
+ by mx08-00178001.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id
+ x62F82Ro028002; Tue, 2 Jul 2019 17:21:01 +0200
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
+ h=from : to : cc : subject
+ : date : message-id : references : in-reply-to : content-type : content-id
+ : content-transfer-encoding : mime-version; s=STMicroelectronics;
+ bh=SzjDcNB2QeMrFWCWKsns2sD9pi5HfWIIUWIJ0NlH42M=;
+ b=cI9ZfrboxcM0+cXQJkuFam761VrzZpIob6TvGDdYkNRaMLDK25m21kXCDDKDwkTrvzXJ
+ FFn1IFYPeosPHTYIWw0sy1r+05ncgsx6y9L2L+s4OizRYjfpG4MyELmS2KThXh0qcwNi
+ judIE+udSHlTtiefTfr1UDd7f4fLM6sfmgGsjuRJ8WdMQmagM9Y21lkprCagyb75EcnR
+ zsJrjpLwPYmPtbEQXPkHfTMqe4CQYv2z7KHiv0uRrIA2Tp5MFfRUYB3EHKK4nQE6tgDi
+ TY6SPi9It/IXQYsJC4Qo7FK6XzUAaQvHALZZ0RgqzdfvE1iMJyJqyAXR4EPHipJYaac5 +A== 
+Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
+ by mx08-00178001.pphosted.com with ESMTP id 2tdxvhvvsc-1
+ (version=TLSv1 cipher=ECDHE-RSA-AES256-SHA bits=256 verify=NOT);
+ Tue, 02 Jul 2019 17:21:01 +0200
+Received: from zeta.dmz-eu.st.com (zeta.dmz-eu.st.com [164.129.230.9])
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id C10383D;
+ Tue,  2 Jul 2019 15:21:00 +0000 (GMT)
+Received: from Webmail-eu.st.com (sfhdag5node3.st.com [10.75.127.15])
+ by zeta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 8BFD42D05;
+ Tue,  2 Jul 2019 15:21:00 +0000 (GMT)
+Received: from SFHDAG5NODE1.st.com (10.75.127.13) by SFHDAG5NODE3.st.com
+ (10.75.127.15) with Microsoft SMTP Server (TLS) id 15.0.1473.3; Tue, 2 Jul
+ 2019 17:21:00 +0200
+Received: from SFHDAG5NODE1.st.com ([fe80::cc53:528c:36c8:95f6]) by
+ SFHDAG5NODE1.st.com ([fe80::cc53:528c:36c8:95f6%20]) with mapi id
+ 15.00.1347.000; Tue, 2 Jul 2019 17:21:00 +0200
+From: Hugues FRUCHET <hugues.fruchet@st.com>
+To: Sakari Ailus <sakari.ailus@linux.intel.com>
+Subject: Re: [PATCH v2 1/3] media: stm32-dcmi: improve sensor subdev naming
+Thread-Topic: [PATCH v2 1/3] media: stm32-dcmi: improve sensor subdev naming
+Thread-Index: AQHVJ3yZHgnJxvOZ40OVy3POWcVYXaa3YwCA
+Date: Tue, 2 Jul 2019 15:21:00 +0000
+Message-ID: <c3dfcddd-199d-f322-a957-8c0ff1d2f5b2@st.com>
+References: <1560242912-17138-1-git-send-email-hugues.fruchet@st.com>
+ <1560242912-17138-2-git-send-email-hugues.fruchet@st.com>
+ <20190620152640.chd4u4u5hd56ausk@kekkonen.localdomain>
+In-Reply-To: <20190620152640.chd4u4u5hd56ausk@kekkonen.localdomain>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+user-agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.7.1
+x-ms-exchange-messagesentrepresentingtype: 1
+x-ms-exchange-transport-fromentityheader: Hosted
+x-originating-ip: [10.75.127.48]
+Content-ID: <DDD382B92050594481214CD96E888BBA@st.com>
+MIME-Version: 1.0
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:, ,
+ definitions=2019-07-02_08:, , signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190702_082012_534226_C2370A49 
-X-CRM114-Status: UNSURE (   6.91  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20190702_082113_804342_0424EED7 
+X-CRM114-Status: GOOD (  19.29  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [92.121.34.21 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [91.207.212.93 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -65,69 +107,53 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, aisheng.dong@nxp.com, shengjiu.wang@nxp.com,
- devicetree@vger.kernel.org, sboyd@kernel.org,
- Daniel Baluta <daniel.baluta@nxp.com>, mturquette@baylibre.com,
- linux-kernel@vger.kernel.org, linux-clk@vger.kernel.org, robh+dt@kernel.org,
- weiyongjun1@huawei.com, linux-imx@nxp.com, kernel@pengutronix.de,
- festevam@gmail.com, s.hauer@pengutronix.de,
- linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
+Cc: Yannick FERTRE <yannick.fertre@st.com>,
+ Alexandre TORGUE <alexandre.torgue@st.com>,
+ Mickael GUENE <mickael.guene@st.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Philippe CORNU <philippe.cornu@st.com>, Hans Verkuil <hverkuil@xs4all.nl>,
+ Benjamin Gaignard <benjamin.gaignard@linaro.org>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>,
+ "linux-stm32@st-md-mailman.stormreply.com"
+ <linux-stm32@st-md-mailman.stormreply.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ "linux-media@vger.kernel.org" <linux-media@vger.kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-i.MX8QXP contains Hifi4 DSP. There are four clocks
-associated with DSP:
-  * dsp_lpcg_core_clk
-  * dsp_lpcg_ipg_clk
-  * dsp_lpcg_adb_aclk
-  * ocram_lpcg_ipg_clk
+Hi Sakari,
 
-Signed-off-by: Daniel Baluta <daniel.baluta@nxp.com>
----
- drivers/clk/imx/clk-imx8qxp-lpcg.c     | 5 +++++
- include/dt-bindings/clock/imx8-clock.h | 6 +++++-
- 2 files changed, 10 insertions(+), 1 deletion(-)
+On 6/20/19 5:26 PM, Sakari Ailus wrote:
+> Hi Hugues,
+> 
+> On Tue, Jun 11, 2019 at 10:48:30AM +0200, Hugues Fruchet wrote:
+>> Add a new "sensor" field to dcmi struct instead of
+>> reusing entity->subdev to address sensor subdev.
+As discussed on IRC, fixed in v3,
+> 
+> The purpose of the struct binding image source's async subdev as well as
+> related information is to allow associating the two. This patch breaks
+> that. If your device can support a single sensor, it might not be a big
+> deal. The end result remains somewhat inconsistent as subdev specific
+> information is spread across struct stm32_dcmi and struct
+> dcmi_graph_entity.
+As discussed on IRC, fixed in v3,
 
-diff --git a/drivers/clk/imx/clk-imx8qxp-lpcg.c b/drivers/clk/imx/clk-imx8qxp-lpcg.c
-index fb6edf1b8aa2..c0aff7ca6374 100644
---- a/drivers/clk/imx/clk-imx8qxp-lpcg.c
-+++ b/drivers/clk/imx/clk-imx8qxp-lpcg.c
-@@ -72,6 +72,11 @@ static const struct imx8qxp_lpcg_data imx8qxp_lpcg_adma[] = {
- 	{ IMX_ADMA_LPCG_I2C2_CLK, "i2c2_lpcg_clk", "i2c2_clk", 0, ADMA_LPI2C_2_LPCG, 0, 0, },
- 	{ IMX_ADMA_LPCG_I2C3_IPG_CLK, "i2c3_lpcg_ipg_clk", "dma_ipg_clk_root", 0, ADMA_LPI2C_3_LPCG, 16, 0, },
- 	{ IMX_ADMA_LPCG_I2C3_CLK, "i2c3_lpcg_clk", "i2c3_clk", 0, ADMA_LPI2C_3_LPCG, 0, 0, },
-+
-+	{ IMX_ADMA_LPCG_DSP_CORE_CLK, "dsp_lpcg_core_clk", "dma_ipg_clk_root", 0, ADMA_HIFI_LPCG, 28, 0, },
-+	{ IMX_ADMA_LPCG_DSP_IPG_CLK, "dsp_lpcg_ipg_clk", "dma_ipg_clk_root", 0, ADMA_HIFI_LPCG, 20, 0, },
-+	{ IMX_ADMA_LPCG_DSP_ADB_CLK, "dsp_lpcg_adb_clk", "dma_ipg_clk_root", 0, ADMA_HIFI_LPCG, 16, 0, },
-+	{ IMX_ADMA_LPCG_OCRAM_IPG_CLK, "ocram_lpcg_ipg_clk", "dma_ipg_clk_root", 0, ADMA_OCRAM_LPCG, 16, 0, },
- };
- 
- static const struct imx8qxp_ss_lpcg imx8qxp_ss_adma = {
-diff --git a/include/dt-bindings/clock/imx8-clock.h b/include/dt-bindings/clock/imx8-clock.h
-index 4236818e3be5..673a8c662340 100644
---- a/include/dt-bindings/clock/imx8-clock.h
-+++ b/include/dt-bindings/clock/imx8-clock.h
-@@ -283,7 +283,11 @@
- #define IMX_ADMA_LPCG_PWM_IPG_CLK			38
- #define IMX_ADMA_LPCG_LCD_PIX_CLK			39
- #define IMX_ADMA_LPCG_LCD_APB_CLK			40
-+#define IMX_ADMA_LPCG_DSP_ADB_CLK			41
-+#define IMX_ADMA_LPCG_DSP_IPG_CLK			42
-+#define IMX_ADMA_LPCG_DSP_CORE_CLK			43
-+#define IMX_ADMA_LPCG_OCRAM_IPG_CLK			44
- 
--#define IMX_ADMA_LPCG_CLK_END				41
-+#define IMX_ADMA_LPCG_CLK_END				45
- 
- #endif /* __DT_BINDINGS_CLOCK_IMX_H */
--- 
-2.17.1
+> 
+> In general you don't need to know the sensor as you can always find it
+> using media_entity_remote_pad(). This driver is a little different though
+> as it could presumably continue to work without MC. Was that the intent?
+> 
+> On a side note: struct dcmi_graph_entity does NOT have struct
+> v4l2_async_subdev as its first member. Please fix that and prepend the fix
+> to this set.
+> 
+As discussed on IRC, fixed in v3,
 
-
+BR,
+Hugues.
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
