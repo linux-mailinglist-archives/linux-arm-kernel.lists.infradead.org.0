@@ -2,61 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 192EC5CE1A
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  2 Jul 2019 13:08:06 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1AD1A5CE21
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  2 Jul 2019 13:09:13 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=uPKySUGbUpGZWG7OBjhIRv1UaqKBg8PhBuieYmBPZx4=; b=hffcWFszER45xd
-	g+PvbIod9JbjUeWg24XLwHoUP2tVPF+kGo+lGcsF1QxpmJbiX0llCSJwaMqHZNNH1j71wZyzZpLUR
-	55NShDdPnYvNSIzhdZuvr057/Ervi4+AiJhMy67qFA18e64USn2MzYW8k4fMSyt3bQ19svwN/NTBp
-	S+Mv+zxBCEBZ9g2K5xkmtIxXYGndRT2nc7jUGxGpvDssRtNyKh59o+fHszUVD45jHmnuv965bxRoA
-	1ISH+nNrZfQFZ39EiZcGugMHC5pzM9nhbxfXfskP+T68+fRcT09DWOPKfpIpR1BxF8TxAMQxoqHbn
-	Jsxc5xYo+3nGUdMT6BHQ==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Cc:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=8pm2y4PqacPJwy6akLQxXPcZYxZGTlDIXxY8RvQ5PHU=; b=nExhepMPUDX/sFUORk1ZoHwpIB
+	RXHBZaDabuPaXHlf8uylYwRKNjwa91cM/Y8E40INqQxWwunloPXLhigQFY4yz/s45t8RvOvs34fmr
+	eB1dFRtb60XooCHRyBgDjGYJ4OpUO3tAGtczAMwXsx/3RsStveg3dwN2oSkTa4YCXG7s4dcKn/W9z
+	/a7J98kO+9ggyq93xyHqKas9ktok9l9ghl1sB8V8+A2Zs4hQYIr7QhghUQ1jD/lB/1NoEkhuUPGb/
+	P7N+wyPF7iERk/07uWoa/W5T7AlM0PHsQsHvMjH59StKDoFoGiZxY43fA3QUbxvhYyDiD7NrxNVGk
+	JhJBr7+A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hiGdm-0008Lv-UA; Tue, 02 Jul 2019 11:08:03 +0000
-Received: from mx1.redhat.com ([209.132.183.28])
+	id 1hiGes-0000Zq-UI; Tue, 02 Jul 2019 11:09:10 +0000
+Received: from mga12.intel.com ([192.55.52.136])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hiGda-0008LW-V6
- for linux-arm-kernel@lists.infradead.org; Tue, 02 Jul 2019 11:07:52 +0000
-Received: from smtp.corp.redhat.com (int-mx01.intmail.prod.int.phx2.redhat.com
- [10.5.11.11])
- (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
- (No client certificate requested)
- by mx1.redhat.com (Postfix) with ESMTPS id E79EA120D7;
- Tue,  2 Jul 2019 11:07:38 +0000 (UTC)
-Received: from krava (unknown [10.43.17.81])
- by smtp.corp.redhat.com (Postfix) with SMTP id 2AB116F921;
- Tue,  2 Jul 2019 11:07:29 +0000 (UTC)
-Date: Tue, 2 Jul 2019 13:07:28 +0200
-From: Jiri Olsa <jolsa@redhat.com>
-To: Leo Yan <leo.yan@linaro.org>
-Subject: Re: [PATCH v1 06/11] perf hists: Smatch: Fix potential NULL pointer
- dereference
-Message-ID: <20190702110728.GA15322@krava>
+ id 1hiGee-0000ZW-FT
+ for linux-arm-kernel@lists.infradead.org; Tue, 02 Jul 2019 11:08:57 +0000
+X-Amp-Result: SKIPPED(no attachment in message)
+X-Amp-File-Uploaded: False
+Received: from orsmga003.jf.intel.com ([10.7.209.27])
+ by fmsmga106.fm.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
+ 02 Jul 2019 04:08:55 -0700
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="5.63,443,1557212400"; d="scan'208";a="166156966"
+Received: from ahunter-desktop.fi.intel.com (HELO [10.237.72.122])
+ ([10.237.72.122])
+ by orsmga003.jf.intel.com with ESMTP; 02 Jul 2019 04:08:48 -0700
+Subject: Re: [PATCH v1 10/11] perf intel-pt: Smatch: Fix potential NULL
+ pointer dereference
+To: Leo Yan <leo.yan@linaro.org>, Arnaldo Carvalho de Melo <acme@kernel.org>, 
+ Peter Zijlstra <peterz@infradead.org>, Ingo Molnar <mingo@redhat.com>,
+ Alexander Shishkin <alexander.shishkin@linux.intel.com>,
+ Jiri Olsa <jolsa@redhat.com>, Namhyung Kim <namhyung@kernel.org>,
+ Mathieu Poirier <mathieu.poirier@linaro.org>,
+ Suzuki K Poulose <suzuki.poulose@arm.com>, Andi Kleen <ak@linux.intel.com>,
+ "David S. Miller" <davem@davemloft.net>, Davidlohr Bueso
+ <dave@stgolabs.net>, Rasmus Villemoes <linux@rasmusvillemoes.dk>,
+ Jin Yao <yao.jin@linux.intel.com>, Song Liu <songliubraving@fb.com>,
+ Alexios Zavras <alexios.zavras@intel.com>,
+ Thomas Gleixner <tglx@linutronix.de>, Changbin Du <changbin.du@intel.com>,
+ Eric Saint-Etienne <eric.saint.etienne@oracle.com>,
+ Konstantin Khlebnikov <khlebnikov@yandex-team.ru>,
+ Thomas Richter <tmricht@linux.ibm.com>,
+ Alexey Budankov <alexey.budankov@linux.intel.com>,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
 References: <20190702103420.27540-1-leo.yan@linaro.org>
- <20190702103420.27540-7-leo.yan@linaro.org>
+ <20190702103420.27540-11-leo.yan@linaro.org>
+From: Adrian Hunter <adrian.hunter@intel.com>
+Organization: Intel Finland Oy, Registered Address: PL 281, 00181 Helsinki,
+ Business Identity Code: 0357606 - 4, Domiciled in Helsinki
+Message-ID: <cfef1777-141e-4223-e0c1-1a3f3aee1d3c@intel.com>
+Date: Tue, 2 Jul 2019 14:07:40 +0300
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.7.2
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190702103420.27540-7-leo.yan@linaro.org>
-User-Agent: Mutt/1.12.0 (2019-05-25)
-X-Scanned-By: MIMEDefang 2.79 on 10.5.11.11
-X-Greylist: Sender IP whitelisted, not delayed by milter-greylist-4.5.16
- (mx1.redhat.com [10.5.110.26]); Tue, 02 Jul 2019 11:07:48 +0000 (UTC)
+In-Reply-To: <20190702103420.27540-11-leo.yan@linaro.org>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190702_040751_026279_3145272A 
-X-CRM114-Status: GOOD (  18.39  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20190702_040856_578756_C8D294F0 
+X-CRM114-Status: GOOD (  18.76  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [209.132.183.28 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [192.55.52.136 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -70,74 +87,82 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Song Liu <songliubraving@fb.com>, Peter Zijlstra <peterz@infradead.org>,
- Rasmus Villemoes <linux@rasmusvillemoes.dk>, linux-kernel@vger.kernel.org,
- Jin Yao <yao.jin@linux.intel.com>, Andi Kleen <ak@linux.intel.com>,
- Eric Saint-Etienne <eric.saint.etienne@oracle.com>,
- Konstantin Khlebnikov <khlebnikov@yandex-team.ru>,
- Ingo Molnar <mingo@redhat.com>, Suzuki K Poulose <suzuki.poulose@arm.com>,
- Arnaldo Carvalho de Melo <acme@kernel.org>,
- Alexios Zavras <alexios.zavras@intel.com>, Davidlohr Bueso <dave@stgolabs.net>,
- Namhyung Kim <namhyung@kernel.org>, Thomas Gleixner <tglx@linutronix.de>,
- linux-arm-kernel@lists.infradead.org,
- Mathieu Poirier <mathieu.poirier@linaro.org>,
- Thomas Richter <tmricht@linux.ibm.com>,
- Adrian Hunter <adrian.hunter@intel.com>,
- Alexander Shishkin <alexander.shishkin@linux.intel.com>,
- "David S. Miller" <davem@davemloft.net>, Changbin Du <changbin.du@intel.com>,
- Alexey Budankov <alexey.budankov@linux.intel.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Jul 02, 2019 at 06:34:15PM +0800, Leo Yan wrote:
+On 2/07/19 1:34 PM, Leo Yan wrote:
 > Based on the following report from Smatch, fix the potential
 > NULL pointer dereference check.
+
+It never is NULL.  Remove the NULL test if you want:
+
+-	if (session->itrace_synth_opts && session->itrace_synth_opts->set) {
++	if (session->itrace_synth_opts->set) {
+
+But blindly making changes like below is questionable.
+
 > 
->   tools/perf/ui/browsers/hists.c:641
->   hist_browser__run() error: we previously assumed 'hbt' could be
->   null (see line 625)
+>   tools/perf/util/intel-pt.c:3200
+>   intel_pt_process_auxtrace_info() error: we previously assumed
+>   'session->itrace_synth_opts' could be null (see line 3196)
 > 
->   tools/perf/ui/browsers/hists.c:3088
->   perf_evsel__hists_browse() error: we previously assumed
->   'browser->he_selection' could be null (see line 2902)
+>   tools/perf/util/intel-pt.c:3206
+>   intel_pt_process_auxtrace_info() warn: variable dereferenced before
+>   check 'session->itrace_synth_opts' (see line 3200)
 > 
->   tools/perf/ui/browsers/hists.c:3272
->   perf_evsel_menu__run() error: we previously assumed 'hbt' could be
->   null (see line 3260)
+> tools/perf/util/intel-pt.c
+> 3196         if (session->itrace_synth_opts && session->itrace_synth_opts->set) {
+> 3197                 pt->synth_opts = *session->itrace_synth_opts;
+> 3198         } else {
+> 3199                 itrace_synth_opts__set_default(&pt->synth_opts,
+> 3200                                 session->itrace_synth_opts->default_no_sample);
+>                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 3201                 if (!session->itrace_synth_opts->default_no_sample &&
+> 3202                     !session->itrace_synth_opts->inject) {
+> 3203                         pt->synth_opts.branches = false;
+> 3204                         pt->synth_opts.callchain = true;
+> 3205                 }
+> 3206                 if (session->itrace_synth_opts)
+>                          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 3207                         pt->synth_opts.thread_stack =
+> 3208                                 session->itrace_synth_opts->thread_stack;
+> 3209         }
 > 
-> This patch firstly validating the pointers before access them, so can
-> fix potential NULL pointer dereference.
+> To dismiss the potential NULL pointer dereference, this patch validates
+> the pointer 'session->itrace_synth_opts' before access its elements.
 > 
 > Signed-off-by: Leo Yan <leo.yan@linaro.org>
 > ---
->  tools/perf/ui/browsers/hists.c | 13 +++++++++----
->  1 file changed, 9 insertions(+), 4 deletions(-)
+>  tools/perf/util/intel-pt.c | 5 ++---
+>  1 file changed, 2 insertions(+), 3 deletions(-)
 > 
-> diff --git a/tools/perf/ui/browsers/hists.c b/tools/perf/ui/browsers/hists.c
-> index 3421ecbdd3f0..2ba33040ddd8 100644
-> --- a/tools/perf/ui/browsers/hists.c
-> +++ b/tools/perf/ui/browsers/hists.c
-> @@ -638,7 +638,9 @@ int hist_browser__run(struct hist_browser *browser, const char *help,
->  		switch (key) {
->  		case K_TIMER: {
-
-not sure this can really happen, perhaps WARN_ON_ONCE(!hbt) would be
-good in here
-
-jirka
-
->  			u64 nr_entries;
-> -			hbt->timer(hbt->arg);
-> +
-> +			if (hbt)
-> +				hbt->timer(hbt->arg);
+> diff --git a/tools/perf/util/intel-pt.c b/tools/perf/util/intel-pt.c
+> index 550db6e77968..88b567bdf1f9 100644
+> --- a/tools/perf/util/intel-pt.c
+> +++ b/tools/perf/util/intel-pt.c
+> @@ -3195,7 +3195,7 @@ int intel_pt_process_auxtrace_info(union perf_event *event,
 >  
->  			if (hist_browser__has_filter(browser) ||
->  			    symbol_conf.report_hierarchy)
+>  	if (session->itrace_synth_opts && session->itrace_synth_opts->set) {
+>  		pt->synth_opts = *session->itrace_synth_opts;
+> -	} else {
+> +	} else if (session->itrace_synth_opts) {
+>  		itrace_synth_opts__set_default(&pt->synth_opts,
+>  				session->itrace_synth_opts->default_no_sample);
+>  		if (!session->itrace_synth_opts->default_no_sample &&
+> @@ -3203,8 +3203,7 @@ int intel_pt_process_auxtrace_info(union perf_event *event,
+>  			pt->synth_opts.branches = false;
+>  			pt->synth_opts.callchain = true;
+>  		}
+> -		if (session->itrace_synth_opts)
+> -			pt->synth_opts.thread_stack =
+> +		pt->synth_opts.thread_stack =
+>  				session->itrace_synth_opts->thread_stack;
+>  	}
+>  
+> 
 
-SNIP
 
 _______________________________________________
 linux-arm-kernel mailing list
