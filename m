@@ -2,66 +2,65 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E0AFC5CC46
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  2 Jul 2019 10:58:04 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D24E65CC4A
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  2 Jul 2019 10:58:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=qsNjDiZYOs201qZaq7GdDj8ibpQz5JtiQZJJeXeJ4QI=; b=dcu1se54sdqq9x
-	Gb3siw2nB2yqD1cbYf6L2MLEJxs+qMmiMTZJqg9l6z6P1q9dNQ/SRkZroLGpwPuEdAZkuBy5QxuQK
-	DkA0SA2nyUcsiDCEA1ONjrXT5MVwDX6wengGHvfgIompmDDh1hvbsW7liRWmlLuo7gNFAlMTZQSUL
-	/icrzl6WMsHeEr+rY39CYexN/OPjEpkM/U85ocXFv2XdPypiJArX/eq4DQ2yWZu8B9YgOyTpvygOi
-	KzpxKHlCoCA3YHm3fbjA6L+LyBDCPjIzGe+6NxdUsV/BSSYMkZqLxqXxULQo8gBWi4M5SoQhTQEIp
-	sVSQdf0q2q1OyZojL75w==;
+	List-Owner; bh=LQzG9O7nj4NvTr7cLPVIhahyqdy408piH22Ak9ldKZc=; b=Xxf33TBNEEon72
+	7CH3litrmzIfpoiNUPq9Y31Twfzy48IYV0whXDZPMJggYCFHJMcLPTjcqlP0VOFYR5DIS+Y9MjM/x
+	6N4B1NQxZUCT/4nxqyya1sGArm1gptu3O+JFQBQgSAig8Czhj60f+wOBigYO7F8Hg0QMWRJOXGw1B
+	j6kJeyTL1mb6xUtYiG/fkbxtM6ohkhWnypxsCJdzSk1x3i/3RgUWKvk1CpTwsXhaQuW9V4R4JpNDj
+	OumA3ie8aqkP5t5n8X1saGBtwDHpRD3ezcl4GAH2l6aDjXk+aKSyx9DwokW1aE6T/aot0XV2YGFrJ
+	D6H404A/h7h6bTOj7t6Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hiEbx-0000Ha-Dw; Tue, 02 Jul 2019 08:58:01 +0000
-Received: from mail-ot1-f67.google.com ([209.85.210.67])
+	id 1hiEcP-0000az-Dn; Tue, 02 Jul 2019 08:58:29 +0000
+Received: from mail-oi1-f194.google.com ([209.85.167.194])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hiEbo-0000H6-IE
- for linux-arm-kernel@lists.infradead.org; Tue, 02 Jul 2019 08:57:54 +0000
-Received: by mail-ot1-f67.google.com with SMTP id r6so16426036oti.3
+ id 1hiEc9-0000Yl-B1
+ for linux-arm-kernel@lists.infradead.org; Tue, 02 Jul 2019 08:58:16 +0000
+Received: by mail-oi1-f194.google.com with SMTP id v186so12420256oie.5
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 02 Jul 2019 01:57:51 -0700 (PDT)
+ Tue, 02 Jul 2019 01:58:11 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=KPdp31UDhXFHPHF96pwPoQJdgvKVE+Ch51jcPatIAZE=;
- b=hOc2qSmn77KN4x6ux1+jAWeSmUqj3GCoiwmsvHJkl/x3eP/Eku/nAWr4sz16q+ARDc
- sSxN2xq9L8dw5NPb3waCEfAqetbQ1NFAghxgZz4VLxoMRM8TBngsSimoKzoqJrTXXjaf
- G6dv6WMz88fM/8xyz+bhe/8rJkxx+PrjutZIWd894eoTmGQng+3gLTl8LDb0rxZddugp
- 6nic16Oj42bwm/1XP7eok4DHM0rUZRsmPQHkdNx5Dd74uWqnSBh5ejDggcSk8r9ZeRy7
- +p6JOIsy2C+LlwHEclAAZ3Rzkr4jzM3xUeC81CXOtRJNE19Impbe0RGcriz4ACiGQBbJ
- iDHg==
-X-Gm-Message-State: APjAAAVSm8ozrZ+9XD5sRzOX13833AHUw13HsOXE4xhrafjs7V/mFQfh
- QE2n42fIYrg5hILR/iHVQFGJthfdGUgDBRe5DTc=
-X-Google-Smtp-Source: APXvYqyUtHMNDxfrXFzOq+tZrJAEALoWsfCJ/SvSccMFZtCQWjU1KrI34Wl7Fw6scnjhNChjBk9KaqX5fS13sng+Mqw=
-X-Received: by 2002:a9d:529:: with SMTP id 38mr19987430otw.145.1562057870358; 
- Tue, 02 Jul 2019 01:57:50 -0700 (PDT)
+ bh=pb4hIlPtBxu+eWlV5MavugzJlWlGVOugSZum+zG+KJU=;
+ b=ck0rPFuBuzCao8Jw/wHrdLmrw3SxVXHuB88I9iEXrvNTTBDX65Rbe8NHZ5auksEi+T
+ XP/arhgss9vcoChqlzoddCn52Kod4zEtYEva3+EsWvIWLD0wJs03LEnzevFT3axKvhNs
+ SvAzcPw7QvX2GwOVefMXsdKBcP+shdXxSoKioAJiXvtAnGzMkk/llPxD7B+KhNBxVxhz
+ B+lZbLOJHv39v20kOKeU/rH/jzQ7o2Tc5XYRmLlr7FZAyjBkf3YM4bgLnPhPE4szDwwO
+ EX4CVT4bdC+bXpM6fxSjjMVGy2b04XOajFvd3mp4YV7g9FHg/pdgln3GaKTm3Cae0Jdz
+ kt/A==
+X-Gm-Message-State: APjAAAXoQmUZa0eVcDrPk6YrUiaPdfOF2qaIUg0wxqmX6My+b2qSPFvw
+ v3BQDpfSqzex/YjZp/FwYBgQfd2ppt+pB4drgtg=
+X-Google-Smtp-Source: APXvYqyfQUJ0oEfJxk7/b2/K3FRe9as/LnCeH7oYgYZYd/X1ze/KZsHM8di8yh3wqbFRL0AWB3C21OAFERAirvm7UsU=
+X-Received: by 2002:aca:3bc6:: with SMTP id i189mr2173610oia.153.1562057891205; 
+ Tue, 02 Jul 2019 01:58:11 -0700 (PDT)
 MIME-Version: 1.0
 References: <20190624105224.23927-1-horms+renesas@verge.net.au>
- <20190624105224.23927-2-horms+renesas@verge.net.au>
-In-Reply-To: <20190624105224.23927-2-horms+renesas@verge.net.au>
+ <20190624105224.23927-3-horms+renesas@verge.net.au>
+In-Reply-To: <20190624105224.23927-3-horms+renesas@verge.net.au>
 From: Geert Uytterhoeven <geert@linux-m68k.org>
-Date: Tue, 2 Jul 2019 10:57:39 +0200
-Message-ID: <CAMuHMdX2c9QCitfzFeKG2BFoK0VEp9+KUiN=OVV51=mR=kNd9Q@mail.gmail.com>
-Subject: Re: [PATCH v3 1/2] arm64: dts: renesas: r8a77990: Add cpg reset for DU
+Date: Tue, 2 Jul 2019 10:58:00 +0200
+Message-ID: <CAMuHMdW8dUOuPmdvuWyRxWzSuLW7fmzJYr2fmCnpZLbrye31yw@mail.gmail.com>
+Subject: Re: [PATCH v3 2/2] arm64: dts: renesas: r8a77995: Add cpg reset for DU
 To: Simon Horman <horms+renesas@verge.net.au>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190702_015752_606348_E01E38E9 
-X-CRM114-Status: UNSURE (   9.44  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190702_015813_394290_0633691A 
+X-CRM114-Status: GOOD (  11.07  )
 X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.210.67 listed in list.dnswl.org]
+ no trust [209.85.167.194 listed in list.dnswl.org]
  0.0 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
  mail domains are different
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -92,14 +91,16 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 On Mon, Jun 24, 2019 at 12:52 PM Simon Horman
 <horms+renesas@verge.net.au> wrote:
-> From: Takeshi Kihara <takeshi.kihara.df@renesas.com>
+> From: Yoshihiro Kaneko <ykaneko0929@gmail.com>
 >
-> Add CPG reset properties to DU node of E3 (r8a77990) SoC.
+> Add CPG reset properties to DU node of D3 (r8a77995) SoC.
 >
 > According to Laurent Pinchart, R-Car Gen3 reset is handled at the group
 > level so specifying one reset entry per group is sufficient.
 >
-> Signed-off-by: Takeshi Kihara <takeshi.kihara.df@renesas.com>
+> This patch was inspired by a patch in the BSP by
+> Takeshi Kihara <takeshi.kihara.df@renesas.com>.
+>
 > Signed-off-by: Yoshihiro Kaneko <ykaneko0929@gmail.com>
 > Signed-off-by: Simon Horman <horms+renesas@verge.net.au>
 
