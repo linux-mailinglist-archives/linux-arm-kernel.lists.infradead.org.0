@@ -2,74 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A51AF5CDD5
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  2 Jul 2019 12:46:45 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 541EB5CDE1
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  2 Jul 2019 12:51:06 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=hUxvspmJS+Kya9AouS8/jm8kJAdovUDbm9SEwwW2dEM=; b=HRbmb36z0+OKVH
-	JDwN7J7IQLHpPoj9IVfcUc9FI0sy0V13P6bOioJrDpnfdENJGT76KWmpUdo8ymEB/S/ldkZGnoiU7
-	naQmVAENCRmwWmmwPg1TsTgh4e3z7T8GveFHfaP/4cIHtTilfBGfJUVlj9VkvJoIQKl8+fclRfVur
-	DyDJAresH/sDuazK7fankmY6YkvKmzsgChE0fyVA1qi2osuWt8LqJD5U1PWNI+dNTxOFY7lDhOvzu
-	RuUv0Y0RFz0f3FzbrlyW1bspVuUTqMfKIbiPLFhqQ+sEfLeex1r6hBE3uSzvaanU60Glj4uW9otI/
-	i+xvS9YlFWERukII1+4A==;
+	List-Owner; bh=hGSSeDC3Y1y9no4uZXwgiTM9HAPshffqQ1nZZkRfX2o=; b=ipxQ9bUpCcoEL8
+	MNpKTmOEwg9Gb0WqTmQ9kG/oU/8vtJ7xvZQb+C9LyVOqNcHNXmSWR9hmbJ8oTPGHJigJGHTWyp/KJ
+	bAI7WZsVxqT5/OLW0ZDpLEc8fitjw2y2oL+q8lantfkXwf7BwbMajEAjtCWlMVZy2iPSSkSsdOxad
+	gm2wkOqfA2GbfEwgjikOCg1dQsdBYmLklzpYN9ZjtAJhWnRJI4st0tPFGFUvhKvI+PvLZ7UlNswGA
+	3vOEd61lVP0HsFl2vNCmj+eKmzYHIhMaNN+38VkftMeMelW139+NCfh0cKdFSVPODNTkgIyHyIDfc
+	+0ql0JB4Ikfr2Btqszrg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hiGJA-00020K-7l; Tue, 02 Jul 2019 10:46:44 +0000
-Received: from mail.kernel.org ([198.145.29.99])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hiGIv-0001zh-E9
- for linux-arm-kernel@lists.infradead.org; Tue, 02 Jul 2019 10:46:30 +0000
-Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 1F1912089C;
- Tue,  2 Jul 2019 10:46:26 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1562064389;
- bh=d+I6qmH/QCTka+zqQ3WJk0DN02qfJCa2dtx6zDjiFBw=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=lHT1gLTx89TB/WseAPEgeg3jwtTWQV6ml6he79iKQjNFXeKsq2Y/pY0Qx/aENG06K
- 5DpyVTVBeZpDKR0tWxu8dHhMryM4/aMUuF6qEwhyWZfjnxML3x5zfiPL6RrMGHFpNu
- 6t0z6xuHoV/H6X4hqAqpwROND3ZAIpBEhas5HSAI=
-Date: Tue, 2 Jul 2019 11:46:24 +0100
-From: Will Deacon <will@kernel.org>
-To: Nicholas Piggin <npiggin@gmail.com>
-Subject: Re: Re: [PATCH 1/3] arm64: mm: Add p?d_large() definitions
-Message-ID: <20190702104623.6mgpqt5ns4sj32in@willie-the-truck>
-References: <20190623094446.28722-1-npiggin@gmail.com>
- <20190623094446.28722-2-npiggin@gmail.com>
- <20190701092756.s4u5rdjr7gazvu66@willie-the-truck>
- <3d002af8-d8cd-f750-132e-12109e1e3039@arm.com>
- <20190701101510.qup3nd6vm6cbdgjv@willie-the-truck>
- <1562036522.cz5nnz6ri2.astroid@bobo.none>
+	id 1hiGNJ-0003in-DI; Tue, 02 Jul 2019 10:51:01 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hiGN5-0003iF-PU
+ for linux-arm-kernel@lists.infradead.org; Tue, 02 Jul 2019 10:50:49 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id C8D45344;
+ Tue,  2 Jul 2019 03:50:44 -0700 (PDT)
+Received: from lakrids.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
+ [10.121.207.14])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id DF86D3F246;
+ Tue,  2 Jul 2019 03:50:43 -0700 (PDT)
+Date: Tue, 2 Jul 2019 11:50:32 +0100
+From: Mark Rutland <mark.rutland@arm.com>
+To: James Morse <james.morse@arm.com>
+Subject: Re: [PATCHv2 3/3] arm64: stacktrace: better handle corrupted stacks
+Message-ID: <20190702105032.GA34718@lakrids.cambridge.arm.com>
+References: <20190628154639.5308-1-mark.rutland@arm.com>
+ <20190628154639.5308-4-mark.rutland@arm.com>
+ <caffff42-3a37-bb28-25a4-c0c79289e15f@arm.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <1562036522.cz5nnz6ri2.astroid@bobo.none>
-User-Agent: NeoMutt/20170113 (1.7.2)
+In-Reply-To: <caffff42-3a37-bb28-25a4-c0c79289e15f@arm.com>
+User-Agent: Mutt/1.11.1+11 (2f07cb52) (2018-12-01)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190702_034629_489149_507552DC 
-X-CRM114-Status: GOOD (  14.30  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190702_035047_868780_D3D7235B 
+X-CRM114-Status: GOOD (  15.51  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -81,42 +63,77 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Christophe Leroy <christophe.leroy@c-s.fr>,
- Mark Rutland <mark.rutland@arm.com>,
- Ard Biesheuvel <ard.biesheuvel@linaro.org>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Anshuman Khandual <anshuman.khandual@arm.com>,
- Will Deacon <will.deacon@arm.com>, Steven Price <steven.price@arm.com>,
- linux-mm@kvack.org, Andrew Morton <akpm@linux-foundation.org>,
- linuxppc-dev@lists.ozlabs.org, linux-arm-kernel@lists.infradead.org
+Cc: catalin.marinas@arm.com, tengfeif@codeaurora.org, will.deacon@arm.com,
+ dave.martin@arm.com, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Jul 02, 2019 at 01:07:11PM +1000, Nicholas Piggin wrote:
-> Will Deacon's on July 1, 2019 8:15 pm:
-> > On Mon, Jul 01, 2019 at 11:03:51AM +0100, Steven Price wrote:
-> >> On 01/07/2019 10:27, Will Deacon wrote:
-> >> > On Sun, Jun 23, 2019 at 07:44:44PM +1000, Nicholas Piggin wrote:
-> >> >> walk_page_range() is going to be allowed to walk page tables other than
-> >> >> those of user space. For this it needs to know when it has reached a
-> >> >> 'leaf' entry in the page tables. This information will be provided by the
-> >> >> p?d_large() functions/macros.
-> >> > 
-> >> > I can't remember whether or not I asked this before, but why not call
-> >> > this macro p?d_leaf() if that's what it's identifying? "Large" and "huge"
-> >> > are usually synonymous, so I find this naming needlessly confusing based
-> >> > on this patch in isolation.
+On Tue, Jul 02, 2019 at 10:33:51AM +0100, James Morse wrote:
+> On 28/06/2019 16:46, Mark Rutland wrote:
+> > +struct stackframe {
+> > +	unsigned long fp;
+> > +	unsigned long pc;
 > 
-> Those page table macro names are horrible. Large, huge, leaf, wtf?
-> They could do with a sensible renaming. But this series just follows
-> naming that's alreay there on x86.
+> > +#ifdef CONFIG_FUNCTION_GRAPH_TRACER
+> > +	int graph;
+> > +#endif
+> 
+> (Could we get rid of this #ifdef? It just prevents us using IS_ENABLED() elsewhere)
 
-I realise that, and I wasn't meaning to have a go at you. Just wanted to
-make my opinion clear by having a moan :)
+I think we could, but I think that would be a separate patch.
 
-Will
+I can look at that as a followup.
+
+> > @@ -50,11 +51,23 @@ int notrace unwind_frame(struct task_struct *tsk, struct stackframe *frame)
+> >  	if (!tsk)
+> >  		tsk = current;
+> >  
+> > -	if (!on_accessible_stack(tsk, fp, NULL))
+> > +	if (!on_accessible_stack(tsk, fp, &info))
+> >  		return -EINVAL;
+> >  
+> > +	if (test_bit(info.type, frame->stacks_done))
+> > +		return -EINVAL;
+> > +
+> > +	if (info.type == frame->prev_type) {
+> > +		if (fp <= frame->prev_fp)
+> > +			return -EINVAL;
+> > +	} else {
+> 
+> > +		set_bit(prev_info.type, frame->stacks_done);
+> 
+> What is prev_info for? This looks like we're setting $uninitialised_stack bit.
+
+Ugh -- that's a leftover from before I added stack_info::prev_type, when
+I always derived the type from prev_fp. Having prev_type ends up much
+simpler.
+
+> > +	}
+> > +
+> >  	frame->fp = READ_ONCE_NOCHECK(*(unsigned long *)(fp));
+> >  	frame->pc = READ_ONCE_NOCHECK(*(unsigned long *)(fp + 8));
+> > +	frame->prev_fp = fp;
+> > +	frame->prev_type = info.type;
+> 
+> 
+> With prev_info, this doesn't boot when lockdep is enabled. The pre-linear-map stacktrace
+> calls generate bad addresses and we panic() before earlycon.
+> 
+> With that set_bit() line changed to read:
+> |		set_bit(frame->prev_type, frame->stacks_done);
+> 
+> this works with perf and ftrace, and stepping off the sdei stack.
+
+Thanks, I'll fold that in
+
+> Reviewed-by: James Morse <james.morse@arm.com>
+> Tested-by: James Morse <james.morse@arm.com>
+
+Cheers!
+
+Mark.
 
 _______________________________________________
 linux-arm-kernel mailing list
