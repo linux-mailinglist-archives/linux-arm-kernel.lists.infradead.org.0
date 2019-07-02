@@ -2,96 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BAB6E5D5B6
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  2 Jul 2019 19:53:41 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 133AD5D695
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  2 Jul 2019 21:07:45 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:References:To:Subject:From:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=yIEMXiEVsENcGevb2EDIRRQK5jWvtFWrYlCA+C1R3AE=; b=NF9bBrDLFeMcqv
-	hdbpLsHK7Rnfi9mGbZT4jBaR4LJjhfUsU7Xi4+nn++JIx8yoMCs3oWPVjZfjOIyjhpbkYMt9k6d9f
-	b1XRbHdTHOkmlXuMtMbOt84xVUYVThNUagRNMXcTjIXHNDsI7fdxgLClj3YUDSZosBP0VxIS3zS1F
-	ojKs0fcKr23Z62twX59SJl0VuqRqR+p/NyFCAn1E3jb0QE5XqzSheWwjVIKirSG631RF+9BS0KQat
-	LYBfjfGk02wTJb2iAVJctoK3F6JTYvueu3smJN+jWXrQv/gnYKkumW7f1EE9v91a+Tr0d2mUA+8FB
-	9Nw12lMOfVZp190JoJlg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=ZoqFaAjn0chwS69B6GwMrZf90NqXSBYaR0+kzXgNTgc=; b=fNfnBbzCJFfp+1
+	72nmysn1j12YTA7GS/OyZpPWuBv1S5JDL185m7zdbBxStoXAUurK0sOi4C3NxbdILP6k1sV5ANQ9G
+	etmObgUjLKGKaxlIRwrs/zRlUky01xnTJ6aUYZbNZcMRcbJpus5Lz+LxL8StvCFRmdXF4RNxGVbue
+	86a6En+R5JU5eq77rBbtOEJhadaX2g2bipQXgxXYu00I9Z6xb628F/K0fMxCXW5SkYBXewJnjEA7D
+	wSa5qijP7VxpSJXRswW9RsE1HhX6aIm9tzL5U1b6cej5fUeTMQdFIBFNk60NsV4f9FjLsHptUbkW/
+	taCKLn9+X3Pu9nJnvfhw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hiMy9-0004uG-1s; Tue, 02 Jul 2019 17:53:29 +0000
-Received: from mail-lj1-x242.google.com ([2a00:1450:4864:20::242])
+	id 1hiO7x-00053g-48; Tue, 02 Jul 2019 19:07:41 +0000
+Received: from merlin.infradead.org ([2001:8b0:10b:1231::1])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hiMxl-0004rw-Mg
- for linux-arm-kernel@lists.infradead.org; Tue, 02 Jul 2019 17:53:07 +0000
-Received: by mail-lj1-x242.google.com with SMTP id a21so17821631ljh.7
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 02 Jul 2019 10:53:04 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=cogentembedded-com.20150623.gappssmtp.com; s=20150623;
- h=from:subject:to:cc:references:organization:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=cMEn3za16fAfd/FKzUgXJWhBF6QU4UvnxjnbeEXsMGQ=;
- b=AjJ3nxm/0ds+e2hRRivY37RuUEa4V59EPE1atiQr2SXEYP2cvI8PWEN+FZ9oVOntUT
- XehNOna7XdSk5ef3/jinBVRzP0Zgoq2nXWU3UGYsYB9ehUh1D+3vpTcj0OvQA+seZDU3
- JCrKct+QFMpmJzw4R3IcICYfPlRQ1z1j0MHz+N34dj9P+l1gqNZyUktAudZ07GKlOlak
- joM3F9dzbJiwS1J8pbV/0g+ni/mDtPKuRtxDgvKK6H4TmP8PVNY8odrp5u1fzRFWaBUi
- Kev+nrvUBH6P4kht+SWadQWqeUZhn9Drib2vk3mjXbi89a1I0olyW75z856NBQ1TpbAj
- 6QMQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:subject:to:cc:references:organization
- :message-id:date:user-agent:mime-version:in-reply-to
- :content-language:content-transfer-encoding;
- bh=cMEn3za16fAfd/FKzUgXJWhBF6QU4UvnxjnbeEXsMGQ=;
- b=S8360TWNGnKIB52D4TAo2vAMbbxMxbzjL5UGPFGr8VDYQD9N32/1C19bsIidH909Lx
- lg8DDpSN/ZY2PtEXP9lPEZJIUWLcfZfHaAs5sfwLMJ4uKk4frEQCWB6S7hMpCePR2oS4
- dooII2l0iu8kK6cYDVoLhYn6IoISr7XFm6SQFWziug7lEi3jmitSTguScut6p37E231U
- iMd/F6kn6ZVOAAX5nwp3EuZdy6lygifI3TqRmNTPavc4RK7Fjq7limZLPhddCX4QRL6a
- gD8/CTRG67fv96BHVIS5JIgI6DC1jIpIx8+OFIAITuRBvihblGloQsYziEp44oi6CSW7
- OANw==
-X-Gm-Message-State: APjAAAXdpEn16UdDy89bI0oSXglFWsOzQZa8h7tnOrQhKqLcO/8blSC0
- +Goe3fnxg4Ad9n47JBm4TmnbiA==
-X-Google-Smtp-Source: APXvYqyHA/Ov/gzsKWtHLKt+DUZw1yLzTQf05oQbnhdSu9EIi9OqdKbPqDmV3siOLcwZvcf9+6nKTA==
-X-Received: by 2002:a2e:93cc:: with SMTP id p12mr18387950ljh.11.1562089983427; 
- Tue, 02 Jul 2019 10:53:03 -0700 (PDT)
-Received: from wasted.cogentembedded.com
- ([2a00:1fa0:48c7:f2be:45b6:c800:b809:e0f2])
- by smtp.gmail.com with ESMTPSA id g76sm3954000lje.43.2019.07.02.10.53.01
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Tue, 02 Jul 2019 10:53:02 -0700 (PDT)
-From: Sergei Shtylyov <sergei.shtylyov@cogentembedded.com>
-Subject: Re: [PATCH v8 3/5] mtd: Add support for HyperBus memory devices
-To: Vignesh Raghavendra <vigneshr@ti.com>,
- Boris Brezillon <bbrezillon@kernel.org>, Marek Vasut
- <marek.vasut@gmail.com>, Richard Weinberger <richard@nod.at>,
- Rob Herring <robh+dt@kernel.org>
-References: <20190625075746.10439-1-vigneshr@ti.com>
- <20190625075746.10439-4-vigneshr@ti.com>
-Organization: Cogent Embedded
-Message-ID: <31657fd1-c1c9-7672-14c1-e6f67eee6ac1@cogentembedded.com>
-Date: Tue, 2 Jul 2019 20:53:00 +0300
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101
- Thunderbird/52.2.1
+ id 1hiO7m-00053X-JP
+ for linux-arm-kernel@bombadil.infradead.org; Tue, 02 Jul 2019 19:07:30 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=infradead.org; s=merlin.20170209; h=In-Reply-To:Content-Transfer-Encoding:
+ Content-Type:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
+ Sender:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+ Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:
+ List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=wQ2eWjX8ogKBuOp00qcklecjDoXf2f54BF8WB0/TWII=; b=MTC07qsmWuhkvUtxvwQmc5AHnD
+ NXnCRd9XSaJgQh/sELDpYy2ix/lyRR+9jcqCnWsbsUHbTX8MOViJEPvD94r97ULu1saYaV9J58rQu
+ kfgs7vwILDpxXNShd1UreSLiXK08oJ02EQXKfy6VNFpZ8qf4cCJOe+glKQ1t2A14UO3xsfQL+zs6t
+ 3dKEXrKwxBq5k+JkGSdCTy8zn6Aw242cMmI1RVkExyUF6ox6zS/q8xQ74pQQRo73EYGnlfo6VGk7Q
+ /XQP/cAa8febaJ1dNWFB1xzpfnQaXxl/ndxAA8uIGCmjURHI/X/MCxXWXwSuN9flBGpFNu3NiXOgS
+ M3MxnU5g==;
+Received: from [179.97.35.11] (helo=quaco.ghostprotocols.net)
+ by merlin.infradead.org with esmtpsa (Exim 4.92 #3 (Red Hat Linux))
+ id 1hiO7j-0000Zf-7D; Tue, 02 Jul 2019 19:07:27 +0000
+Received: by quaco.ghostprotocols.net (Postfix, from userid 1000)
+ id 80F8741153; Tue,  2 Jul 2019 16:07:24 -0300 (-03)
+Date: Tue, 2 Jul 2019 16:07:24 -0300
+From: Arnaldo Carvalho de Melo <acme@kernel.org>
+To: John Garry <john.garry@huawei.com>
+Subject: Re: [PATCH v3 1/4] perf pmu: Support more complex PMU event aliasing
+Message-ID: <20190702190724.GM15462@kernel.org>
+References: <1561732552-143038-1-git-send-email-john.garry@huawei.com>
+ <1561732552-143038-2-git-send-email-john.garry@huawei.com>
 MIME-Version: 1.0
-In-Reply-To: <20190625075746.10439-4-vigneshr@ti.com>
-Content-Language: en-MW
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190702_105305_883227_1C00D4B8 
-X-CRM114-Status: GOOD (  25.66  )
-X-Spam-Score: 0.0 (/)
-X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
- pts rule name              description
- ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:242 listed in]
- [list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+Content-Disposition: inline
+In-Reply-To: <1561732552-143038-2-git-send-email-john.garry@huawei.com>
+X-Url: http://acmel.wordpress.com
+User-Agent: Mutt/1.11.3 (2019-02-01)
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -103,127 +63,80 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Tokunori Ikegami <ikegami.t@gmail.com>,
- linux-kernel@vger.kernel.org, linux-mtd@lists.infradead.org,
- Miquel Raynal <miquel.raynal@bootlin.com>,
- Mason Yang <masonccyang@mxic.com.tw>, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: mark.rutland@arm.com, brueckner@linux.ibm.com, ak@linux.intel.com,
+ mathieu.poirier@linaro.org, peterz@infradead.org, ben@decadent.org.uk,
+ tmricht@linux.ibm.com, will.deacon@arm.com, linux-kernel@vger.kernel.org,
+ linuxarm@huawei.com, zhangshaokun@hisilicon.com,
+ alexander.shishkin@linux.intel.com, mingo@redhat.com, namhyung@kernel.org,
+ jolsa@redhat.com, linux-arm-kernel@lists.infradead.org,
+ kan.liang@linux.intel.com
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hello!
-
-On 06/25/2019 10:57 AM, Vignesh Raghavendra wrote:
-
-> Cypress' HyperBus is Low Signal Count, High Performance Double Data Rate
-> Bus interface between a host system master and one or more slave
-> interfaces. HyperBus is used to connect microprocessor, microcontroller,
-> or ASIC devices with random access NOR flash memory (called HyperFlash)
-> or self refresh DRAM (called HyperRAM).
-> 
-> Its a 8-bit data bus (DQ[7:0]) with  Read-Write Data Strobe (RWDS)
-> signal and either Single-ended clock(3.0V parts) or Differential clock
-> (1.8V parts). It uses ChipSelect lines to select b/w multiple slaves.
-> At bus level, it follows a separate protocol described in HyperBus
-> specification[1].
-> 
-> HyperFlash follows CFI AMD/Fujitsu Extended Command Set (0x0002) similar
-> to that of existing parallel NORs. Since HyperBus is x8 DDR bus,
-> its equivalent to x16 parallel NOR flash with respect to bits per clock
-> cycle. But HyperBus operates at >166MHz frequencies.
-> HyperRAM provides direct random read/write access to flash memory
-> array.
-> 
-> But, HyperBus memory controllers seem to abstract implementation details
-> and expose a simple MMIO interface to access connected flash.
-> 
-> Add support for registering HyperFlash devices with MTD framework. MTD
-> maps framework along with CFI chip support framework are used to support
-> communicating with flash.
-> 
-> Framework is modelled along the lines of spi-nor framework. HyperBus
-> memory controller (HBMC) drivers calls hyperbus_register_device() to
-> register a single HyperFlash device. HyperFlash core parses MMIO access
-> information from DT, sets up the map_info struct, probes CFI flash and
-> registers it with MTD framework.
-> 
-> Some HBMC masters need calibration/training sequence[3] to be carried
-> out, in order for DLL inside the controller to lock, by reading a known
-> string/pattern. This is done by repeatedly reading CFI Query
-> Identification String. Calibration needs to be done before trying to detect
-> flash as part of CFI flash probe.
-> 
-> HyperRAM is not supported at the moment.
-> 
-> HyperBus specification can be found at[1]
-> HyperFlash datasheet can be found at[2]
-> 
-> [1] https://www.cypress.com/file/213356/download
-> [2] https://www.cypress.com/file/213346/download
-> [3] http://www.ti.com/lit/ug/spruid7b/spruid7b.pdf
->     Table 12-5741. HyperFlash Access Sequence
-> 
-> Signed-off-by: Vignesh Raghavendra <vigneshr@ti.com>
-[...]
-
-   I have at least created my HyperBus driver and unfortunately I'm having serious
-issues with the design of the support core (see below)...
-
-[...]
-> diff --git a/drivers/mtd/hyperbus/hyperbus-core.c b/drivers/mtd/hyperbus/hyperbus-core.c
-> new file mode 100644
-> index 000000000000..63a9e64895bc
-> --- /dev/null
-> +++ b/drivers/mtd/hyperbus/hyperbus-core.c
-> @@ -0,0 +1,154 @@
-[...]
-> +int hyperbus_register_device(struct hyperbus_device *hbdev)
-> +{
-> +	const struct hyperbus_ops *ops;
-> +	struct hyperbus_ctlr *ctlr;
-> +	struct device_node *np;
-> +	struct map_info *map;
-> +	struct resource res;
-> +	struct device *dev;
-> +	int ret;
-> +
-> +	if (!hbdev || !hbdev->np || !hbdev->ctlr || !hbdev->ctlr->dev) {
-> +		pr_err("hyperbus: please fill all the necessary fields!\n");
-> +		return -EINVAL;
-> +	}
-> +
-> +	np = hbdev->np;
-> +	ctlr = hbdev->ctlr;
-> +	if (!of_device_is_compatible(np, "cypress,hyperflash"))
-> +		return -ENODEV;
-> +
-> +	hbdev->memtype = HYPERFLASH;
-> +
-> +	ret = of_address_to_resource(np, 0, &res);
-
-   Hm, I doubt that the HB devices are wholly mapped into memory space, that seems
-like a property of the HB controller. In my case, the flash device in the DT has
-only single-cell "reg" prop (equal to the chip select #). Then this function returns 
--EINVAL and the registration fails. Also, in my case such mapping is R/O, not R/W.
-
-> +	if (ret)
-> +		return ret;
-> +
-> +	dev = ctlr->dev;
-> +	map = &hbdev->map;
-> +	map->size = resource_size(&res);
-> +	map->virt = devm_ioremap_resource(dev, &res);
-> +	if (IS_ERR(map->virt))
-> +		return PTR_ERR(map->virt);
-
-   Again, I doubt that this should be done here, and not in the HB controller driver...
-
-[...]
-
-MBR, Sergei
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+RW0gRnJpLCBKdW4gMjgsIDIwMTkgYXQgMTA6MzU6NDlQTSArMDgwMCwgSm9obiBHYXJyeSBlc2Ny
+ZXZldToKPiBUaGUgamV2ZW50ICJVbml0IiBmaWVsZCBpcyB1c2VkIGZvciB1bmNvcmUgUE1VIGFs
+aWFzIGRlZmluaXRpb24uCj4gCj4gVGhlIGZvcm0gdW5jb3JlX3BtdV9leGFtcGxlX1ggaXMgc3Vw
+cG9ydGVkLCB3aGVyZSAiWCIgaXMgYSB3aWxkY2FyZCwKPiB0byBzdXBwb3J0IG11bHRpcGxlIGlu
+c3RhbmNlcyBvZiB0aGUgc2FtZSBQTVUgaW4gYSBzeXN0ZW0uCj4gCj4gVW5mb3J0dW5hdGVseSB0
+aGlzIGZvcm1hdCBub3Qgc3VpdGFibGUgZm9yIGFsbCB1bmNvcmUgUE1VczsgdGFrZSB0aGUgSGlz
+aQo+IEREUkMgdW5jb3JlIFBNVSBmb3IgZXhhbXBsZSwgd2hlcmUgdGhlIG5hbWUgaXMgaW4gdGhl
+IGZvcm0KPiBoaXNpX3NjY2xYX2RkcmNZLgo+IAo+IEZvciBmb3IgY3VycmVudCBqZXZlbnQgcGFy
+c2luZywgd2Ugd291bGQgYmUgcmVxdWlyZWQgdG8gaGFyZGNvZGUgYW4gdW5jb3JlCj4gYWxpYXMg
+dHJhbnNsYXRpb24gZm9yIGVhY2ggcG9zc2libGUgdmFsdWUgb2YgWC4gVGhpcyBpcyBub3Qgc2Nh
+bGFibGUuCj4gCj4gSW5zdGVhZCwgYWRkIHN1cHBvcnQgZm9yICJVbml0IiBmaWVsZCBpbiB0aGUg
+Zm9ybSAiaGlzaV9zY2NsLGRkcmMiLCB3aGVyZQo+IHdlIGNhbiBtYXRjaCBieSBoaXNpX3NjY2xY
+IGFuZCBkZHJjWS4gVG9rZW5zICBpbiBVbml0IGZpZWxkCj4gYXJlIGRlbGltaXRlZCBieSAnLCcu
+Cj4gCj4gU2lnbmVkLW9mZi1ieTogSm9obiBHYXJyeSA8am9obi5nYXJyeUBodWF3ZWkuY29tPgo+
+IC0tLQo+ICB0b29scy9wZXJmL3V0aWwvcG11LmMgfCA0NiArKysrKysrKysrKysrKysrKysrKysr
+KysrKysrKysrKysrKysrKy0tLS0tCj4gIDEgZmlsZSBjaGFuZ2VkLCA0MSBpbnNlcnRpb25zKCsp
+LCA1IGRlbGV0aW9ucygtKQo+IAo+IGRpZmYgLS1naXQgYS90b29scy9wZXJmL3V0aWwvcG11LmMg
+Yi90b29scy9wZXJmL3V0aWwvcG11LmMKPiBpbmRleCA3ZTcyOTlmZWU1NTAuLmNmYzkxNjgxOWM1
+OSAxMDA2NDQKPiAtLS0gYS90b29scy9wZXJmL3V0aWwvcG11LmMKPiArKysgYi90b29scy9wZXJm
+L3V0aWwvcG11LmMKPiBAQCAtNzAwLDYgKzcwMCw0NiBAQCBzdHJ1Y3QgcG11X2V2ZW50c19tYXAg
+KnBlcmZfcG11X19maW5kX21hcChzdHJ1Y3QgcGVyZl9wbXUgKnBtdSkKPiAgCXJldHVybiBtYXA7
+Cj4gIH0KPiAgCj4gK3N0YXRpYyBib29sIHBtdV91bmNvcmVfYWxpYXNfbWF0Y2goY29uc3QgY2hh
+ciAqcG11X25hbWUsIGNvbnN0IGNoYXIgKm5hbWUpCj4gK3sKPiArCWNoYXIgKnRtcCwgKnRvaywg
+KnN0cjsKPiArCWJvb2wgcmVzOwo+ICsKPiArCXN0ciA9IHN0cmR1cChwbXVfbmFtZSk7Cj4gKwlp
+ZiAoIXN0cikKPiArCQlyZXR1cm4gZmFsc2U7Cj4gKwo+ICsJLyoKPiArCSAqIHVuY29yZSBhbGlh
+cyBtYXkgYmUgZnJvbSBkaWZmZXJlbnQgUE1VIHdpdGggY29tbW9uIHByZWZpeAo+ICsJICovCj4g
+Kwl0b2sgPSBzdHJ0b2tfcihzdHIsICIsIiwgJnRtcCk7CgpJbiBzb21lIHBsYWNlcywgZS5nLiBn
+Y2MgdmVyc2lvbiA0LjEuMjoKCiAgQ0MgICAgICAgL3RtcC9idWlsZC9wZXJmL3V0aWwvcG11Lm8K
+Y2MxOiB3YXJuaW5ncyBiZWluZyB0cmVhdGVkIGFzIGVycm9ycwp1dGlsL3BtdS5jOiBJbiBmdW5j
+dGlvbiDigJhwbXVfbG9va3Vw4oCZOgp1dGlsL3BtdS5jOjcwNjogd2FybmluZzog4oCYdG1w4oCZ
+IG1heSBiZSB1c2VkIHVuaW5pdGlhbGl6ZWQgaW4gdGhpcyBmdW5jdGlvbgptdjogY2Fubm90IHN0
+YXQgYC90bXAvYnVpbGQvcGVyZi91dGlsLy5wbXUuby50bXAnOiBObyBzdWNoIGZpbGUgb3IgZGly
+ZWN0b3J5CgpUaGlzIHNpbGVuY2VzIGl0LCBhZGRpbmcuCgpkaWZmIC0tZ2l0IGEvdG9vbHMvcGVy
+Zi91dGlsL3BtdS5jIGIvdG9vbHMvcGVyZi91dGlsL3BtdS5jCmluZGV4IDkxMzYzM2FlMGJmOC4u
+NTVmNGRlNjQ0MmUzIDEwMDY0NAotLS0gYS90b29scy9wZXJmL3V0aWwvcG11LmMKKysrIGIvdG9v
+bHMvcGVyZi91dGlsL3BtdS5jCkBAIC03MDMsNyArNzAzLDcgQEAgc3RydWN0IHBtdV9ldmVudHNf
+bWFwICpwZXJmX3BtdV9fZmluZF9tYXAoc3RydWN0IHBlcmZfcG11ICpwbXUpCiAKIHN0YXRpYyBi
+b29sIHBtdV91bmNvcmVfYWxpYXNfbWF0Y2goY29uc3QgY2hhciAqcG11X25hbWUsIGNvbnN0IGNo
+YXIgKm5hbWUpCiB7Ci0JY2hhciAqdG1wLCAqdG9rLCAqc3RyOworCWNoYXIgKnRtcCA9IE5VTEws
+ICp0b2ssICpzdHI7CiAJYm9vbCByZXM7CiAKIAlzdHIgPSBzdHJkdXAocG11X25hbWUpOwoKCj4g
+KwlpZiAoc3RybmNtcChwbXVfbmFtZSwgdG9rLCBzdHJsZW4odG9rKSkpIHsKPiArCQlyZXMgPSBm
+YWxzZTsKPiArCQlnb3RvIG91dDsKPiArCX0KPiArCj4gKwkvKgo+ICsJICogTWF0Y2ggbW9yZSBj
+b21wbGV4IGFsaWFzZXMgd2hlcmUgdGhlIGFsaWFzIG5hbWUgaXMgYSBjb21tYS1kZWxpbWl0ZWQK
+PiArCSAqIGxpc3Qgb2YgdG9rZW5zLCBvcmRlcmx5IGNvbnRhaW5lZCBpbiB0aGUgbWF0Y2hpbmcg
+UE1VIG5hbWUuCj4gKwkgKgo+ICsJICogRXhhbXBsZTogRm9yIGFsaWFzICJzb2NrZXQscG11bmFt
+ZSIgYW5kIFBNVSAic29ja2V0WF9wbXVuYW1lWSIsIHdlCj4gKwkgKgkgICAgbWF0Y2ggInNvY2tl
+dCIgaW4gInNvY2tldFhfcG11bmFtZVkiIGFuZCB0aGVuICJwbXVuYW1lIiBpbgo+ICsJICoJICAg
+ICJwbXVuYW1lWSIuCj4gKwkgKi8KPiArCWZvciAoOyB0b2s7IG5hbWUgKz0gc3RybGVuKHRvayks
+IHRvayA9IHN0cnRva19yKE5VTEwsICIsIiwgJnRtcCkpIHsKPiArCQluYW1lID0gc3Ryc3RyKG5h
+bWUsIHRvayk7Cj4gKwkJaWYgKCFuYW1lKSB7Cj4gKwkJCXJlcyA9IGZhbHNlOwo+ICsJCQlnb3Rv
+IG91dDsKPiArCQl9Cj4gKwl9Cj4gKwo+ICsJcmVzID0gdHJ1ZTsKPiArb3V0Ogo+ICsJZnJlZShz
+dHIpOwo+ICsJcmV0dXJuIHJlczsKPiArfQo+ICsKPiAgLyoKPiAgICogRnJvbSB0aGUgcG11X2V2
+ZW50c19tYXAsIGZpbmQgdGhlIHRhYmxlIG9mIFBNVSBldmVudHMgdGhhdCBjb3JyZXNwb25kcwo+
+ICAgKiB0byB0aGUgY3VycmVudCBydW5uaW5nIENQVS4gVGhlbiwgYWRkIGFsbCBQTVUgZXZlbnRz
+IGZyb20gdGhhdCB0YWJsZQo+IEBAIC03MzAsMTIgKzc3MCw4IEBAIHN0YXRpYyB2b2lkIHBtdV9h
+ZGRfY3B1X2FsaWFzZXMoc3RydWN0IGxpc3RfaGVhZCAqaGVhZCwgc3RydWN0IHBlcmZfcG11ICpw
+bXUpCj4gIAkJCWJyZWFrOwo+ICAJCX0KPiAgCj4gLQkJLyoKPiAtCQkgKiB1bmNvcmUgYWxpYXMg
+bWF5IGJlIGZyb20gZGlmZmVyZW50IFBNVQo+IC0JCSAqIHdpdGggY29tbW9uIHByZWZpeAo+IC0J
+CSAqLwo+ICAJCWlmIChwbXVfaXNfdW5jb3JlKG5hbWUpICYmCj4gLQkJICAgICFzdHJuY21wKHBu
+YW1lLCBuYW1lLCBzdHJsZW4ocG5hbWUpKSkKPiArCQkgICAgcG11X3VuY29yZV9hbGlhc19tYXRj
+aChwbmFtZSwgbmFtZSkpCj4gIAkJCWdvdG8gbmV3X2FsaWFzOwo+ICAKPiAgCQlpZiAoc3RyY21w
+KHBuYW1lLCBuYW1lKSkKPiAtLSAKPiAyLjE3LjEKCi0tIAoKLSBBcm5hbGRvCgpfX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1h
+aWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xp
+c3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
