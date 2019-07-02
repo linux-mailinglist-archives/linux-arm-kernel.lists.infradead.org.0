@@ -2,100 +2,117 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 781985CEFD
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  2 Jul 2019 14:01:30 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 054115CF62
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  2 Jul 2019 14:25:34 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=LQP8glSCTImY0K8bKnuAxG5nrOya39mEbeH4UQ524aY=; b=ZYi0nS1ZxESnnp
-	OsOEM00e/x7cimumcl/gRtDAXql5rOXg33Tk3GT5g8kLEOwz7U/zEbLTbb3RCoothpDB7HYxF4NSh
-	QE0sWtBqi31ETTXJv49xz4mSqQn+YBiEGg08uRxb4zedMq8wVrMr1zxV2i3ntYfGMp0G1SUJ+WNaM
-	sWdfsh2w79zMBdUzRdGJofg1olvbfasYpZIisAPS+r0bxSSWxdRqrDAEcbYeXu4qJQXiEOH0pN3bv
-	Ulis+sCO+ANwxcwWw151yTkd9QBNY0ZKLF1MmjW/4J7eYOIuj55D3Ge26cB46D7TA2Uw1EMV5nr7I
-	+lPI3FSqtQscTtaABXxA==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Cc:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=ya9cXFGFPq5FsLdxG9b0TKi/gZN+ZVMF6NZIzERt2T8=; b=c2Hk7C8JRAWAlT
+	chiyfZCiD0e4G2mGgxJIsKxmeocvUF05uoIlBtu6UJorEdvMAxtNNXfKueGxXCevJ6SMl3YUnaCY2
+	zU3Z7l8+nlXQbAj+7UhXCh4UAfaRQzdHBX+yVCE9f0Ca4q16RvacoNB0rlh2/bzLkRIJOiM6BkThK
+	zg+H6BHL68g36KyUBi2m9nsWMp2w4837790M4L9+fUIc5ZzyP/jewZ5YYqkw2XkfGCEkb4ANse92n
+	yRKaietA1wVcTskkb4zaqWIp8ffYCCUrpvrqEx3njQULtW0p4ffdRkDnJvj+HQ8ySZv/8b+zv+JGu
+	m+sWQILYGTtksgIlar0A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hiHTV-00031i-7Y; Tue, 02 Jul 2019 12:01:29 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hiHTH-00030w-KQ
- for linux-arm-kernel@lists.infradead.org; Tue, 02 Jul 2019 12:01:16 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id F2699344;
- Tue,  2 Jul 2019 05:01:12 -0700 (PDT)
-Received: from [10.1.197.61] (usa-sjc-imap-foss1.foss.arm.com [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
- B305F3F246; Tue,  2 Jul 2019 05:01:11 -0700 (PDT)
-Subject: Re: support for aarch64 + gic v2
-To: Avi Fishman <avifishman70@gmail.com>,
- Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>
-References: <CAKKbWA6SFgy=4+L4xXz7dy8OKFxtgZnqchzVuuq1XHXpC=2MnQ@mail.gmail.com>
-From: Marc Zyngier <marc.zyngier@arm.com>
-Openpgp: preference=signencrypt
-Autocrypt: addr=marc.zyngier@arm.com; prefer-encrypt=mutual; keydata=
- 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
- Z46HaNmN2hZS/oJ69c1DI5Rcww==
-Organization: ARM Ltd
-Message-ID: <22ed84e8-04e0-9f32-1deb-b51f58382f91@arm.com>
-Date: Tue, 2 Jul 2019 13:01:10 +0100
-User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
- Thunderbird/60.7.2
-MIME-Version: 1.0
-In-Reply-To: <CAKKbWA6SFgy=4+L4xXz7dy8OKFxtgZnqchzVuuq1XHXpC=2MnQ@mail.gmail.com>
+	id 1hiHqj-0002Ks-7y; Tue, 02 Jul 2019 12:25:29 +0000
+Received: from mail-eopbgr680065.outbound.protection.outlook.com
+ ([40.107.68.65] helo=NAM04-BN3-obe.outbound.protection.outlook.com)
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hiHqX-0002Jr-FD
+ for linux-arm-kernel@lists.infradead.org; Tue, 02 Jul 2019 12:25:19 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=xilinx.onmicrosoft.com; s=selector1-xilinx-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=XPMkIUvDiHI7f3kP3OP9mw2bnBRuZY05EIeALjI5fsQ=;
+ b=LNca50U3bqoQ/dioAA0L3CV8EvEFDxHo+Ny8IdiaAUv9+PmSJm3h6qAzDnhTOMCnahI+f2/EL+mHbQUu/iXez9QbeSwgQZVOFIK/3agKxm9KSHxEEZ0AP5xr5/ChkLn5nQI+xiNACgTJCLMBTyRc4seEfTK4roPOn3wqBMTQO8Q=
+Received: from CH2PR02MB6088.namprd02.prod.outlook.com (52.132.228.94) by
+ CH2PR02MB6375.namprd02.prod.outlook.com (52.132.231.141) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2032.20; Tue, 2 Jul 2019 12:25:11 +0000
+Received: from CH2PR02MB6088.namprd02.prod.outlook.com
+ ([fe80::456d:ace7:7c55:8639]) by CH2PR02MB6088.namprd02.prod.outlook.com
+ ([fe80::456d:ace7:7c55:8639%3]) with mapi id 15.20.2032.019; Tue, 2 Jul 2019
+ 12:25:11 +0000
+From: Vishal Sagar <vsagar@xilinx.com>
+To: Luca Ceresoli <luca@lucaceresoli.net>, Vishal Sagar
+ <vishal.sagar@xilinx.com>, Hyun Kwon <hyunk@xilinx.com>,
+ "laurent.pinchart@ideasonboard.com" <laurent.pinchart@ideasonboard.com>,
+ "mchehab@kernel.org" <mchehab@kernel.org>, "robh+dt@kernel.org"
+ <robh+dt@kernel.org>, "mark.rutland@arm.com" <mark.rutland@arm.com>, Michal
+ Simek <michals@xilinx.com>, "linux-media@vger.kernel.org"
+ <linux-media@vger.kernel.org>, "devicetree@vger.kernel.org"
+ <devicetree@vger.kernel.org>, "hans.verkuil@cisco.com"
+ <hans.verkuil@cisco.com>, "linux-arm-kernel@lists.infradead.org"
+ <linux-arm-kernel@lists.infradead.org>, "linux-kernel@vger.kernel.org"
+ <linux-kernel@vger.kernel.org>, Dinesh Kumar <dineshk@xilinx.com>, Sandip
+ Kothari <sandipk@xilinx.com>, Jacopo Mondi <jacopo@jmondi.org>
+Subject: RE: [PATCH v9 2/2] media: v4l: xilinx: Add Xilinx MIPI CSI-2 Rx
+ Subsystem driver
+Thread-Topic: [PATCH v9 2/2] media: v4l: xilinx: Add Xilinx MIPI CSI-2 Rx
+ Subsystem driver
+Thread-Index: AQHVID4PYfrRtfYgTECjjXwqUQCuJaa02aUAgAKAjsA=
+Date: Tue, 2 Jul 2019 12:25:10 +0000
+Message-ID: <CH2PR02MB6088AF87A011C148BA07C7AFA7F80@CH2PR02MB6088.namprd02.prod.outlook.com>
+References: <1560247809-117978-1-git-send-email-vishal.sagar@xilinx.com>
+ <1560247809-117978-3-git-send-email-vishal.sagar@xilinx.com>
+ <b51bdf5d-4002-5ec6-d687-b97b4f8bbd78@lucaceresoli.net>
+In-Reply-To: <b51bdf5d-4002-5ec6-d687-b97b4f8bbd78@lucaceresoli.net>
+Accept-Language: en-US
 Content-Language: en-US
+X-MS-Has-Attach: 
+X-Auto-Response-Suppress: DR, RN, NRN, OOF, AutoReply
+X-MS-TNEF-Correlator: 
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=vsagar@xilinx.com; 
+x-originating-ip: [149.199.50.133]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: 8a281673-4e17-4adf-cb42-08d6fee853bb
+x-ms-office365-filtering-ht: Tenant
+x-microsoft-antispam: BCL:0; PCL:0;
+ RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600148)(711020)(4605104)(1401327)(4618075)(2017052603328)(7193020);
+ SRVR:CH2PR02MB6375; 
+x-ms-traffictypediagnostic: CH2PR02MB6375:
+x-ms-exchange-purlcount: 1
+x-microsoft-antispam-prvs: <CH2PR02MB6375A8784C81078DBBA0BF14A7F80@CH2PR02MB6375.namprd02.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:9508;
+x-forefront-prvs: 008663486A
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(4636009)(376002)(366004)(136003)(396003)(39860400002)(346002)(199004)(189003)(51914003)(13464003)(74316002)(7736002)(66066001)(305945005)(5660300002)(229853002)(966005)(446003)(2501003)(478600001)(110136005)(8936002)(71190400001)(8676002)(11346002)(25786009)(486006)(33656002)(476003)(71200400001)(81156014)(81166006)(2906002)(68736007)(316002)(7416002)(76176011)(102836004)(53546011)(6506007)(7696005)(6246003)(26005)(66556008)(66446008)(64756008)(66476007)(6116002)(73956011)(66946007)(186003)(52536014)(14444005)(86362001)(76116006)(6306002)(256004)(6436002)(9686003)(3846002)(55016002)(2201001)(53936002)(99286004)(14454004)(921003)(1121003);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:CH2PR02MB6375;
+ H:CH2PR02MB6088.namprd02.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; A:1; MX:1; 
+received-spf: None (protection.outlook.com: xilinx.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam-message-info: NFvY5tW9L9gEjBCakKQwdwBfYixOy9sG4TBHJ2MW7kvBMtEEd6V4BR500MkbAyGTIPRiXoDo2kMhSIAC8KdOfHskgGPMmeV7bKS1/oXj5xQ8gMGicNYnJrrjlj6HxOYSdhNPChzhNVeTOCU8M7GYCWW9jS6bmw1OTga9KI+cCyUdmkYb48LKciN92PxXBDHBJZUIKtcYM5D30l6TA/1AbKG97RsLptBnwjifR4ElxGZ6xWqL0RTc3LbIeowbHY8wmUdjqD48WDvRJhX6rU2v4os1eEuVreFH19WWDlsjqNlUBTB1URwNRVt1Hqdg6Cad1AFjlju3Jd6G75Eh4dWfl2E/abRT7OhRrmjWl8/I1O2VH/4eASDQkx8tlHCkR42lYGT4MlD0cml92tTwSvaa1/3SLUPs11PLnza374h/vgk=
+MIME-Version: 1.0
+X-OriginatorOrg: xilinx.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 8a281673-4e17-4adf-cb42-08d6fee853bb
+X-MS-Exchange-CrossTenant-originalarrivaltime: 02 Jul 2019 12:25:10.8159 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 657af505-d5df-48d0-8300-c31994686c5c
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: vsagar@xilinx.com
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: CH2PR02MB6375
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190702_050115_758870_9CA55117 
-X-CRM114-Status: GOOD (  11.08  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190702_052517_578654_C7D7CC4B 
+X-CRM114-Status: GOOD (  29.58  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [40.107.68.65 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -107,37 +124,229 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Julien Thierry <julien.thierry@arm.com>, uri.trichter@nuvoton.com,
- ofer.eilon@nuvoton.com, eyal.cohen@nuvoton.com, yoel.hayon@nuvoton.com,
- Tomer Maimon <tomer.maimon@nuvoton.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Avi,
+Hi Luca,
 
-On 02/07/2019 12:20, Avi Fishman wrote:
-> Hi Catalin & Will,
+Thanks for the review.
+
+> -----Original Message-----
+> From: Luca Ceresoli [mailto:luca@lucaceresoli.net]
+> Sent: Monday, July 01, 2019 3:15 AM
+> To: Vishal Sagar <vishal.sagar@xilinx.com>; Hyun Kwon <hyunk@xilinx.com>;
+> laurent.pinchart@ideasonboard.com; mchehab@kernel.org;
+> robh+dt@kernel.org; mark.rutland@arm.com; Michal Simek
+> <michals@xilinx.com>; linux-media@vger.kernel.org;
+> devicetree@vger.kernel.org; hans.verkuil@cisco.com; linux-arm-
+> kernel@lists.infradead.org; linux-kernel@vger.kernel.org; Dinesh Kumar
+> <dineshk@xilinx.com>; Sandip Kothari <sandipk@xilinx.com>; Jacopo Mondi
+> <jacopo@jmondi.org>
+> Subject: Re: [PATCH v9 2/2] media: v4l: xilinx: Add Xilinx MIPI CSI-2 Rx
+> Subsystem driver
 > 
-> I approch you as maintainers of arch/arm64/include/asm/arch_gicv3.h
-> We have an architecture of Cortex-A35 (v8) and GIC400 (GIC v2) in development.
-> 1. Do you think there will be in the near future also arch_gicv2.h?
-> 2. If not, can we use GIC v2 with arch_gicv3.h (maybe with some
-> CONFIG_ selection)?
-> 3. Any other solution?
+> EXTERNAL EMAIL
+> 
+> Hi Vishal,
+> 
+> a few questions below about the SLBF error management.
+> 
+> On 11/06/19 12:10, Vishal Sagar wrote:
+> > The Xilinx MIPI CSI-2 Rx Subsystem soft IP is used to capture images
+> > from MIPI CSI-2 camera sensors and output AXI4-Stream video data ready
+> > for image processing. Please refer to PG232 for details.
+> >
+> > The driver is used to set the number of active lanes, if enabled
+> > in hardware. The CSI2 Rx controller filters out all packets except for
+> > the packets with data type fixed in hardware. RAW8 packets are always
+> > allowed to pass through.
+> >
+> > It is also used to setup and handle interrupts and enable the core. It
+> > logs all the events in respective counters between streaming on and off.
+> >
+> > The driver supports only the video format bridge enabled configuration.
+> > Some data types like YUV 422 10bpc, RAW16, RAW20 are supported when
+> the
+> > CSI v2.0 feature is enabled in design. When the VCX feature is enabled,
+> > the maximum number of virtual channels becomes 16 from 4.
+> >
+> > Signed-off-by: Vishal Sagar <vishal.sagar@xilinx.com>
+> > Reviewed-by: Hyun Kwon <hyun.kwon@xilinx.com>
+> 
+> ...
+> 
+> > --- /dev/null
+> > +++ b/drivers/media/platform/xilinx/xilinx-csi2rxss.c
+> 
+> ...
+> > +/**
+> > + * xcsi2rxss_irq_handler - Interrupt handler for CSI-2
+> > + * @irq: IRQ number
+> > + * @dev_id: Pointer to device state
+> > + *
+> > + * In the interrupt handler, a list of event counters are updated for
+> > + * corresponding interrupts. This is useful to get status / debug.
+> > + *
+> > + * In case of stream line buffer full condition, the IP is reset, stopped and
+> > + * an event is raised.
+> > + *
+> > + * Return: IRQ_HANDLED after handling interrupts
+> > + *         IRQ_NONE is no interrupts
+> > + */
+> > +static irqreturn_t xcsi2rxss_irq_handler(int irq, void *dev_id)
+> > +{
+> > +     struct xcsi2rxss_state *state = (struct xcsi2rxss_state *)dev_id;
+> > +     struct xcsi2rxss_core *core = &state->core;
+> > +     u32 status;
+> > +
+> > +     status = xcsi2rxss_read(core, XCSI_ISR_OFFSET) &
+> XCSI_ISR_ALLINTR_MASK;
+> > +     dev_dbg_ratelimited(core->dev, "interrupt status = 0x%08x\n", status);
+> > +
+> > +     if (!status)
+> > +             return IRQ_NONE;
+> > +
+> > +     /* Received a short packet */
+> > +     if (status & XCSI_ISR_SPFIFONE) {
+> > +             dev_dbg_ratelimited(core->dev, "Short packet = 0x%08x\n",
+> > +                                 xcsi2rxss_read(core, XCSI_SPKTR_OFFSET));
+> > +     }
+> > +
+> > +     /* Short packet FIFO overflow */
+> > +     if (status & XCSI_ISR_SPFIFOF)
+> > +             dev_alert_ratelimited(core->dev, "Short packet FIFO overflowed\n");
+> > +
+> > +     /*
+> > +      * Stream line buffer full
+> > +      * This means there is a backpressure from downstream IP
+> > +      */
+> > +     if (status & XCSI_ISR_SLBF) {
+> > +             dev_alert_ratelimited(core->dev, "Stream Line Buffer Full!\n");
+> > +             if (core->rst_gpio) {
+> > +                     gpiod_set_value(core->rst_gpio, 1);
+> > +                     /* minimum 40 dphy_clk_200M cycles */
+> > +                     ndelay(250);
+> > +                     gpiod_set_value(core->rst_gpio, 0);
+> > +             }
+> > +             xcsi2rxss_stop_stream(state);
+> 
+> I've been hit by the dreadful "Stream Line Buffer Full" error, getting
+> the CSI-2 RX completely stuck in SLBF and not transmitting any frames
+> sporadically after glitches in the incoming MIPI stream. And I found
+> that adding xcsi2rxss_start_stream() here just after
+> xcsi2rxss_stop_stream() allows to continue the stream with almost no
+> interruption and without userspace intervention.
+> 
+> Do you think this is a reliable solution, or does it have side-effects I
+> didn't encounter? Note I'm not using pm nor the ctrls, so register
+> writes are limited to the enable/disable code paths.
+> 
 
-GICv2 is fully supported already (see CONFIG_GIC), and enabled by
-default on all arm64 builds. No need to do anything, it should work out
-of the box.
+When a stream line buffer full condition occurs it means that there is a rate mismatch.
+It is best to recheck the design. Hence the intention of the code is to notify about this error and stop streaming.
 
-Thanks,
+If you want to restart streaming then the correct sequence would be to 
+1 - stop stream 
+2 - apply video_aresetn
+3 - start stream
 
-	M.
--- 
-Jazz is not dead. It just smells funny...
+I will correct my sequence to to stop the stream first and then apply video_aresetn.
+But restarting the stream will only mask the design / system issue.
+So I think it is better to stop the stream.
 
+> Does video_aresetn also reset registers?
+> 
+
+Applying the video_aresetn only resets the IP logic and not the registers.
+
+> BTW in my code I also moved xcsi2rxss_stop_stream() before the if
+> (core->rst_gpio) {}. There is no strong reason for this, I didn't
+> observe any functional difference, it just looks
+> more logical to me to stop the IP before resetting it.
+> 
+
+That is right.
+
+> ...
+> 
+> > +static int xcsi2rxss_probe(struct platform_device *pdev)
+> > +{
+> > +     struct v4l2_subdev *subdev;
+> > +     struct xcsi2rxss_state *xcsi2rxss;
+> > +     struct xcsi2rxss_core *core;
+> > +     struct resource *res;
+> > +     int ret, num_ctrls, i;
+> > +
+> > +     xcsi2rxss = devm_kzalloc(&pdev->dev, sizeof(*xcsi2rxss), GFP_KERNEL);
+> > +     if (!xcsi2rxss)
+> > +             return -ENOMEM;
+> > +
+> > +     core = &xcsi2rxss->core;
+> > +     core->dev = &pdev->dev;
+> > +
+> > +     core->clks = devm_kmemdup(core->dev, xcsi2rxss_clks,
+> > +                               sizeof(xcsi2rxss_clks), GFP_KERNEL);
+> > +     if (!core->clks)
+> > +             return -ENOMEM;
+> > +
+> > +     /* Reset GPIO */
+> > +     core->rst_gpio = devm_gpiod_get_optional(core->dev, "reset",
+> > +                                              GPIOD_OUT_HIGH);
+> 
+> Is GPIOD_OUT_HIGH correct? video_aresetn is active low.
+
+This is correct. In the device tree, we mark this as reset-gpio with GPIO_ACTIVE_LOW.
+Please refer to https://www.kernel.org/doc/Documentation/gpio/board.txt power-gpios example.
+
+> 
+> > +     if (IS_ERR(core->rst_gpio)) {
+> > +             if (PTR_ERR(core->rst_gpio) != -EPROBE_DEFER)
+> > +                     dev_err(core->dev, "Video Reset GPIO not setup in DT");
+> > +             return PTR_ERR(core->rst_gpio);
+> > +     }
+> > +
+> > +     mutex_init(&xcsi2rxss->lock);
+> > +
+> > +     ret = xcsi2rxss_parse_of(xcsi2rxss);
+> > +     if (ret < 0)
+> > +             return ret;
+> > +
+> > +     res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
+> > +     core->iomem = devm_ioremap_resource(core->dev, res);
+> > +     if (IS_ERR(core->iomem))
+> > +             return PTR_ERR(core->iomem);
+> > +
+> > +     core->num_clks = ARRAY_SIZE(xcsi2rxss_clks);
+> > +
+> > +     ret = clk_bulk_get(core->dev, core->num_clks, core->clks);
+> > +     if (ret)
+> > +             return ret;
+> > +
+> > +     ret = clk_bulk_prepare_enable(core->num_clks, core->clks);
+> > +     if (ret)
+> > +             goto err_clk_put;
+> > +
+> > +     if (xcsi2rxss->core.rst_gpio) {
+> > +             gpiod_set_value_cansleep(xcsi2rxss->core.rst_gpio, 1);
+> > +             /* minimum of 40 dphy_clk_200M cycles */
+> > +             usleep_range(1, 2);
+> > +             gpiod_set_value_cansleep(xcsi2rxss->core.rst_gpio, 0);
+> > +     }
+> 
+> "xcsi2rxss->core" -> "core" in these lines.
+> 
+
+Agree. I will fix this in next version. 
+
+Regards
+
+Vishal Sagar
+
+> Thanks,
+> --
+> Luca
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
