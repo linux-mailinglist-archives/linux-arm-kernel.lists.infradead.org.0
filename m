@@ -2,107 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8C3DF5CDB8
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  2 Jul 2019 12:38:58 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 43A895CDBA
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  2 Jul 2019 12:39:48 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=PMH2xnwyr/5SQ3MebKxdKHTO5Tn3UA0Hintwshe4NaY=; b=ZuTX7b6Z+OLsXzMNcUJd8FVCs1
-	LLubrGFZIycLZOeIOZV0uWVdzqJgEjKOqzYeja5jY8IB+hE1eTzwnaSPukJiucuPfZvdWbnpwIuAW
-	icljDt9AK/fO+kNV0hLjO/QfX/Nh6HhZnf1yn+b0w8SQj2dXaPsDNZ6f9pwfjhz8xctxOjsInNkyw
-	ULXdID9trEXbKorkw0NIkK048oh4KCydCBS4mbh05G9pzvanbQlT3pPhC+KvCDn6uzHT8d+yOmM2C
-	x9RSWAJoI5VnxoagItVdHBeHjIIkGU0+pUFcWIB/FFRKgqR3y7/Jnu2xKLaY98PF/FImZ5klFiDcH
-	0KQFot9A==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=QWJmtG2sHU7UJXkajRQE0E3XKgX6bxUX1JoDp7w/+n4=; b=hH1
+	hdUBCR9NzEB9kptMEq/oWk3yniOBKCBxRQc84eV5oZrHS+Lhexg1PG/eGfU7SxKB36scNmm49Bo+s
+	40aYSNnvksiG0hcAUIwTPmkM5g5XDCm+CCZsKI2cG0lnJ510kPlXscDNEajZNIqs9w654+BbJz6JM
+	FPC5NWW6gWhZcyXr1xPbUn4uVjVkWVbMCV6nMEdXYO0QKMx8ykQDgdd+vvr+FbYd8QD6xy8NBlYyr
+	8IwfIYrU/GAyZpC0CZ9uMy206criDEGr5SbydHTBd6PqT9VtojwKqBRo/j0lDpWLlFDKjcaPajw4Z
+	8ljCsFj7g3MoXhifhdznvJC1k6+ZlDQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hiGBc-0006Gl-NX; Tue, 02 Jul 2019 10:38:56 +0000
-Received: from mail-oi1-x243.google.com ([2607:f8b0:4864:20::243])
+	id 1hiGCP-0006ri-Vn; Tue, 02 Jul 2019 10:39:45 +0000
+Received: from mx7.zte.com.cn ([202.103.147.169] helo=mxct.zte.com.cn)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hiG8z-0004Na-3B
- for linux-arm-kernel@lists.infradead.org; Tue, 02 Jul 2019 10:36:14 +0000
-Received: by mail-oi1-x243.google.com with SMTP id 65so12602492oid.13
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 02 Jul 2019 03:36:13 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=dQcQ7p8oORqYUmw8MhMOFx6e3+qYvK2rxF9oxDoZM7o=;
- b=JjPXkNjNwzvim2+CUz73ozuGlX5deuQwPQXRLkI9Fyk/R2nArA59R51YaLMo8npnVO
- oDx52w/nnl82obHSJkgpF8mTIFXGgbsPgPRY0VhOjMmYjUfylrDBve/OsYv5SO5HwI/t
- fJtTAVO+HkS47kqFPjOMzwwEZDDJvwgP7lEbyF1Voea5leDzo8xMvT97Wip/cBsMj5HC
- qb+vN0sL1ae3v1Lp2+ZMoD6/7mRVeEM/HozhAt6Nchk7yTPvTc9H31mPH+gFGlRyx5hx
- n8EIseeSRFabSWYYZvbYMFwVKE8LJaUpguIJXOkH/Nu/sENoYoO49Zw4nIctWDhGf81L
- pkfg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references;
- bh=dQcQ7p8oORqYUmw8MhMOFx6e3+qYvK2rxF9oxDoZM7o=;
- b=qYhzhvJ/pzS1xK4T6/u2eL/0wThrt9As+9AE6ifmu9JLpAN5NkRjslyJlFUOiqWOKj
- VVO3XWq/rrpTiYaOcnBSiCT9WD+xqKrDeJ4P1pItwTzDM3NLdKBX8RXlAJuuFluFuPRD
- r4NXN4hcc9xEysGkQMzZ2Z+e+Lpg94Ies3aY6dJDy4z4ZETdpCHowL3s8udIx6AsRv71
- KqREiiC7P918O9tRpaqC7K1N5XUbOM9loC1+TECGmg0enPU2R0ZyfnjoBDQVXM2XsUA0
- y5n+VJ5beTjgpW7Gskl+YKr4GzyB4J6HAgmrZWBqd70XlAPcH+vOOcWiZcXIEw8TfO4n
- B5Og==
-X-Gm-Message-State: APjAAAUmzMQ9aLTXZTEOEbWkhMBXZA/f+H+2ogb9uVk51HqaBqu4fmdp
- SdnnNB7UF198vs/vBWzJhPAmcg==
-X-Google-Smtp-Source: APXvYqy4PfZ2f8WzbFVNWCQAGxoRu5uiQd1w+JSL9GGeOLIehFvhdbjrx+tZn3DQYJaC+vao4GhoPg==
-X-Received: by 2002:aca:be88:: with SMTP id o130mr2506821oif.122.1562063772431; 
- Tue, 02 Jul 2019 03:36:12 -0700 (PDT)
-Received: from localhost.localdomain (li964-79.members.linode.com.
- [45.33.10.79])
- by smtp.gmail.com with ESMTPSA id 61sm5139805otx.8.2019.07.02.03.36.05
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Tue, 02 Jul 2019 03:36:11 -0700 (PDT)
-From: Leo Yan <leo.yan@linaro.org>
-To: Arnaldo Carvalho de Melo <acme@kernel.org>,
- Peter Zijlstra <peterz@infradead.org>, Ingo Molnar <mingo@redhat.com>,
- Alexander Shishkin <alexander.shishkin@linux.intel.com>,
- Jiri Olsa <jolsa@redhat.com>, Namhyung Kim <namhyung@kernel.org>,
- Mathieu Poirier <mathieu.poirier@linaro.org>,
- Suzuki K Poulose <suzuki.poulose@arm.com>, Andi Kleen <ak@linux.intel.com>,
- "David S. Miller" <davem@davemloft.net>,
- Davidlohr Bueso <dave@stgolabs.net>,
- Rasmus Villemoes <linux@rasmusvillemoes.dk>,
- Jin Yao <yao.jin@linux.intel.com>, Song Liu <songliubraving@fb.com>,
- Adrian Hunter <adrian.hunter@intel.com>,
- Alexios Zavras <alexios.zavras@intel.com>,
- Thomas Gleixner <tglx@linutronix.de>, Changbin Du <changbin.du@intel.com>,
- Eric Saint-Etienne <eric.saint.etienne@oracle.com>,
- Konstantin Khlebnikov <khlebnikov@yandex-team.ru>,
- Thomas Richter <tmricht@linux.ibm.com>,
- Alexey Budankov <alexey.budankov@linux.intel.com>,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
-Subject: [PATCH v1 11/11] perf cs-etm: Smatch: Fix potential NULL pointer
- dereference
-Date: Tue,  2 Jul 2019 18:34:20 +0800
-Message-Id: <20190702103420.27540-12-leo.yan@linaro.org>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20190702103420.27540-1-leo.yan@linaro.org>
-References: <20190702103420.27540-1-leo.yan@linaro.org>
+ id 1hiGC7-0005Dr-Dk
+ for linux-arm-kernel@lists.infradead.org; Tue, 02 Jul 2019 10:39:29 +0000
+Received: from mse-fl1.zte.com.cn (unknown [10.30.14.238])
+ by Forcepoint Email with ESMTPS id AD43B7CD32A124E37288;
+ Tue,  2 Jul 2019 18:37:16 +0800 (CST)
+Received: from notes_smtp.zte.com.cn ([10.30.1.239])
+ by mse-fl1.zte.com.cn with ESMTP id x62AaXJO076507;
+ Tue, 2 Jul 2019 18:36:33 +0800 (GMT-8)
+ (envelope-from wang.yi59@zte.com.cn)
+Received: from fox-host8.localdomain ([10.74.120.8])
+ by szsmtp06.zte.com.cn (Lotus Domino Release 8.5.3FP6)
+ with ESMTP id 2019070218364750-2029626 ;
+ Tue, 2 Jul 2019 18:36:47 +0800 
+From: Yi Wang <wang.yi59@zte.com.cn>
+To: catalin.marinas@arm.com
+Subject: [PATCH] remove the initrd resource in /proc/iomem as the initrd has
+ freed the reserved memblock.
+Date: Tue, 2 Jul 2019 18:34:53 +0800
+Message-Id: <1562063693-1541-1-git-send-email-wang.yi59@zte.com.cn>
+X-Mailer: git-send-email 1.8.3.1
+X-MIMETrack: Itemize by SMTP Server on SZSMTP06/server/zte_ltd(Release
+ 8.5.3FP6|November 21, 2013) at 2019-07-02 18:36:47,
+ Serialize by Router on notes_smtp/zte_ltd(Release 9.0.1FP7|August  17, 2016) at
+ 2019-07-02 18:36:36, Serialize complete at 2019-07-02 18:36:36
+X-MAIL: mse-fl1.zte.com.cn x62AaXJO076507
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190702_033613_207763_D7CEE580 
-X-CRM114-Status: GOOD (  13.66  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190702_033927_724145_5DAC97E5 
+X-CRM114-Status: GOOD (  12.97  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:243 listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [202.103.147.169 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -114,53 +69,77 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Leo Yan <leo.yan@linaro.org>
+Cc: wang.yi59@zte.com.cn, f.fainelli@gmail.com, jiang.xuexin@zte.com.cn,
+ david@redhat.com, robin.murphy@arm.com, will.deacon@arm.com,
+ linux-kernel@vger.kernel.org, rppt@linux.vnet.ibm.com, xue.zhihong@zte.com.cn,
+ hannes@cmpxchg.org, Junhua Huang <huang.junhua@zte.com.cn>,
+ akpm@linux-foundation.org, logang@deltatee.com,
+ linux-arm-kernel@lists.infradead.org, ghackmann@android.com
 MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Based on the following report from Smatch, fix the potential
-NULL pointer dereference check.
+From: Junhua Huang <huang.junhua@zte.com.cn>
 
-  tools/perf/util/cs-etm.c:2545
-  cs_etm__process_auxtrace_info() error: we previously assumed
-  'session->itrace_synth_opts' could be null (see line 2541)
+The 'commit 50d7ba36b916 ("arm64: export memblock_reserve()d regions via /proc/iomem")'
+show the reserved memblock in /proc/iomem. But the initrd's reserved memblock
+will be freed in free_initrd_mem(), which executes after the reserve_memblock_reserved_regions().
+So there are some incorrect information shown in /proc/iomem. e.g.:
+80000000-bbdfffff : System RAM
+  80080000-813effff : Kernel code
+  813f0000-8156ffff : reserved
+  81570000-817fcfff : Kernel data
+  83400000-83ffffff : reserved
+  90000000-90004fff : reserved
+  b0000000-b2618fff : reserved
+  b8c00000-bbbfffff : reserved
+In this case, the range from b0000000 to b2618fff is reserved for initrd, which should be
+clean from the resource tree after it was freed. As kexec-tool will collect the iomem reserved info 
+and use it in second kernel, which causes error message generated a second time.
 
-tools/perf/util/cs-etm.c
-2541         if (session->itrace_synth_opts && session->itrace_synth_opts->set) {
-2542                 etm->synth_opts = *session->itrace_synth_opts;
-2543         } else {
-2544                 itrace_synth_opts__set_default(&etm->synth_opts,
-2545                                 session->itrace_synth_opts->default_no_sample);
-                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^
-2546                 etm->synth_opts.callchain = false;
-2547         }
+At the same time, we should free the reserved memblock in an aligned manner because 
+the initrd reserves the memblock in an aligned manner in arm64_memblock_init(). 
+Otherwise there are some fragments in memblock_reserved regions. e.g.:
+/sys/kernel/debug/memblock # cat reserved 
+   0: 0x0000000080080000..0x00000000817fafff
+   1: 0x0000000083400000..0x0000000083ffffff
+   2: 0x0000000090000000..0x000000009000407f
+   3: 0x00000000b0000000..0x00000000b000003f
+   4: 0x00000000b26184ea..0x00000000b2618fff
+The fragments like the ranges from b0000000 to b000003f and from b26184ea to b2618fff 
+should be freed.
 
-To dismiss the potential NULL pointer dereference, this patch validates
-the pointer 'session->itrace_synth_opts' before access its elements.
-
-Signed-off-by: Leo Yan <leo.yan@linaro.org>
+Signed-off-by: Junhua Huang <huang.junhua@zte.com.cn>
 ---
- tools/perf/util/cs-etm.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+ arch/arm64/mm/init.c | 10 +++++++++-
+ 1 file changed, 9 insertions(+), 1 deletion(-)
 
-diff --git a/tools/perf/util/cs-etm.c b/tools/perf/util/cs-etm.c
-index 0c7776b51045..b79df56eb9df 100644
---- a/tools/perf/util/cs-etm.c
-+++ b/tools/perf/util/cs-etm.c
-@@ -2540,7 +2540,7 @@ int cs_etm__process_auxtrace_info(union perf_event *event,
+diff --git a/arch/arm64/mm/init.c b/arch/arm64/mm/init.c
+index d2adffb81b5d..14ba8113eab5 100644
+--- a/arch/arm64/mm/init.c
++++ b/arch/arm64/mm/init.c
+@@ -580,8 +580,16 @@ void free_initmem(void)
+ #ifdef CONFIG_BLK_DEV_INITRD
+ void __init free_initrd_mem(unsigned long start, unsigned long end)
+ {
++	struct resource *res = NULL;
++
+ 	free_reserved_area((void *)start, (void *)end, 0, "initrd");
+-	memblock_free(__virt_to_phys(start), end - start);
++	start = __virt_to_phys(start) & PAGE_MASK;
++	end = PAGE_ALIGN(__virt_to_phys(end));
++	memblock_free(start, end - start);
++	res = lookup_resource(&iomem_resource, memblock_start_of_DRAM());
++	if (res != NULL)
++		__release_region(res, start, end - start);
++
+ }
+ #endif
  
- 	if (session->itrace_synth_opts && session->itrace_synth_opts->set) {
- 		etm->synth_opts = *session->itrace_synth_opts;
--	} else {
-+	} else if (session->itrace_synth_opts) {
- 		itrace_synth_opts__set_default(&etm->synth_opts,
- 				session->itrace_synth_opts->default_no_sample);
- 		etm->synth_opts.callchain = false;
 -- 
-2.17.1
+2.15.2
 
 
 _______________________________________________
