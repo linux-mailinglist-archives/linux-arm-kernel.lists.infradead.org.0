@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A17C35CDA3
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  2 Jul 2019 12:35:36 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9700B5CDA7
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  2 Jul 2019 12:35:57 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,52 +11,52 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=9q7KYYjIU8O+m05cbDG2vgsUK6LQYb9mCiHHURzcQ3U=; b=UA+S7IdLIKsSWUK/qZgokEG9wL
-	PfrnmsKsbA9cIv7xPmSNGuvuwxjAIjJPRXJ2a7FnJfUupPl2Em1FgQ9s2y2EJKDgGIXK+7IhtSkxY
-	Px9yHT8JSaQXfO9URP4n0zWW7OBvr3boCDuRMAzLB7ABTXNDrfhcQH0SExwF6efHZtLfxQzCNKbbC
-	8fQCdnJDtaDaIlQphLq26e1Es37dEYoI0klBj7EVmfS34g/BUYGWYdSp3FZbuwxY4iYYq4vJy5pY6
-	MBT3x4kl4o+vq9PGGK22pDPPuDSAo4piFOgJo0sJlP7K5nLXmx1v4ta/3LolZv7sKfANjHnHsFmtr
-	CSRoFi0A==;
+	bh=r/BipNOpVBGmBKYkgfQUHBMvTMs624/WwRxqxze4Pzg=; b=mfVo01WFmczLYoXs6ZMIF2vaDh
+	kwdRXXLsk6dG32+zDjUyLFUPi+hcSwwK4ziRODuflMaW3ChueSNh2em4yEcbEzzdxhbwI9PfAFZu3
+	bWV3VXiz6XJ+zirlKLkR0VwDKaGBpOKp5V0nZ4WoTW0EiOV7asDJWPJaQggEwk/qipeMge1QOGg88
+	aRX7l8HfZJdBlekiG/v+X2Ulm/gQ1OQFprJxoVOMn/7yLxhxvHXG2AhlcxhN8myTeiuIuyj9uWkAq
+	3r6wqVxr1frYjQ2kk3oA1D20Gt6NjNWZNwhNTuQM9vAKu66lg25ImyQOxLBb2mSn7qMi5iTwYzxch
+	yPLP5PUw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hiG8M-0003cB-P0; Tue, 02 Jul 2019 10:35:35 +0000
-Received: from mail-oi1-x242.google.com ([2607:f8b0:4864:20::242])
+	id 1hiG8i-0003sR-63; Tue, 02 Jul 2019 10:35:56 +0000
+Received: from mail-ot1-x342.google.com ([2607:f8b0:4864:20::342])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hiG7j-0002GH-1I
- for linux-arm-kernel@lists.infradead.org; Tue, 02 Jul 2019 10:34:58 +0000
-Received: by mail-oi1-x242.google.com with SMTP id u15so12494442oiv.0
+ id 1hiG7r-0002KY-PE
+ for linux-arm-kernel@lists.infradead.org; Tue, 02 Jul 2019 10:35:05 +0000
+Received: by mail-ot1-x342.google.com with SMTP id e8so16623007otl.7
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 02 Jul 2019 03:34:54 -0700 (PDT)
+ Tue, 02 Jul 2019 03:35:02 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=F1cJQod20rlh4JhiBTdx2PH6KqMq30JuyoSJBz8Qo1U=;
- b=s70513xyDTidEr5Ppvu38moEO3tF4ILImM8v234mxyFjRqgVL7SFC8HyivT+ff4BNd
- wxGqLRz7aP+i61gRKfuH7f8z7WdX2tqXxbAgbQVVOGp+FcOfBbceh+Z0vBLp2jNZQqrs
- WAEP/LJXy6qfpj1dlbOlmWHvTcZp8tVA372DlFQZoDTSj6PhAMPwBV/3xMYn2Pc3hCp5
- tZCXr+LfJZtmlV2gC4Dv7HoGfDrJ43YxMfEIHYkyuuPPMyn+01SC86WD3fU0uQvp7Wlq
- cpolfqTfxRJQh6j8ZyxIdCmR+7ly3pT5tC68g9KVPQ2P2nGKQINU3FBmCxa3UMKBeKqJ
- 8WnQ==
+ bh=KMNCKIxUd7C3QCEkBdcu4g6ofRmUIVRG/BHPe4FFBiI=;
+ b=b3Ynb3mmyQPqXrGhUFTeBcfcKHtyocPl8Z41p2F8I32GBNu0jF2BwO2+v3JgI33/vX
+ jdTP5yPdtLr0AmtRijQulnFrapU3F7Wo1t9ouWCA8DB3JJmF+5U2+qFa/t67GXudzCMz
+ ly/Us9RlBLH/YWRpgziYH+onbCeHqjhF+Jsx8f+BdbQnJpk0sZsc1lMdFG2vqOxBUmi3
+ zREazE8Zg6hRzYOeK/wcN6BSghqPHghcuZXM/aLU82P664LzADeiNUaoRo96TUXapNFl
+ VMQxHdl/BOL+DLppX1ABrQiPd4KpJ6Qar4Ka5KVHxxtBxrd0PruJ1D9m2pAFFESgzNds
+ V19Q==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=F1cJQod20rlh4JhiBTdx2PH6KqMq30JuyoSJBz8Qo1U=;
- b=es6oFUjhhwtKI8x1vSpO97RRx/6icM7H5UglwBNmL2jOG1B3t2Le3CkG42oiTDPM/P
- 01wrmMKQF7j9ENFalow9ZyxsqRN/rx4oPWJOi0boHn3qwv9H1o+JUGNHXq36/0WM86mD
- Tymv9IOahe8EqBKbCs4JcFyZC/TByjPqag3AEgDOTia+iYRn+xv2Wny8myEOD4L/6tCB
- 4KU72bJuWsG7Li+HlOOZLT2fwcleHE15A/RJzhHC2dZPavjmnqcP+B2jCMrIcwsWHda6
- +Asrd+xc/+dVS3DYHcGBaGKimFYENbDptjUy5N1d4A1xj4TBPkRW7aB43obzjSn30cPx
- Idxg==
-X-Gm-Message-State: APjAAAXbE4/EXvAnYEJwnh/7OoVsYu8Bgh69x0K98mxkmU3kaQF0z60s
- 1q/4GHMRv7RbuBhSYjmIiVtFtA==
-X-Google-Smtp-Source: APXvYqwXUGBWMvijX1rTe9gC+TubnyPy0SebRYMoaXww6u6Jlauk/K+tVBQqpLLVrWIfnLXQKnU2rA==
-X-Received: by 2002:aca:3bc6:: with SMTP id i189mr2397047oia.153.1562063693989; 
- Tue, 02 Jul 2019 03:34:53 -0700 (PDT)
+ bh=KMNCKIxUd7C3QCEkBdcu4g6ofRmUIVRG/BHPe4FFBiI=;
+ b=FQVF6d4G9Jg2pd8PUs0g+CqepuFxP0btFrHP1s9SNfvRfWg8Pylj3pcp4zJyLO1iq3
+ D+HCRcSVqnPMyXTw+ZzpJ4cg0cH74FIVksaUzY370Gx+nTW5AtD08VBev/QBOvqpRNJk
+ ijd574kFUlsyI9vp4KizYYhCPwxgelJxfNDWLGMR2WgNccjZxXjDRQrgSSDqWVT1uZRg
+ W5rYgyJaBkjIRr1Na5j/t0AYFlA4daM4jcxjh1pNcTMP/XgmWIHLn8w6duRKqNGT6DJb
+ DXGvM3B2dubDi22AzRL8/PX/3zeSLzthTpOivjhiswjh35ktYFp9QSGFb1/B5XTjut3W
+ RXvw==
+X-Gm-Message-State: APjAAAXzuzB7xKd6FlP4MXklkeZqdZa8z/HIBI54ouh9Wa9CHtH1V+bN
+ EG2YSMlbSdou2gV2C1O2jsZ+9A==
+X-Google-Smtp-Source: APXvYqwRW1eo9HwE7l93QclNUXgFCxIkpcB0HGbeFgij2hTMSad7SU3toR850JGxhkFCj/Cfl4JFQA==
+X-Received: by 2002:a9d:6ac9:: with SMTP id m9mr19994522otq.242.1562063701875; 
+ Tue, 02 Jul 2019 03:35:01 -0700 (PDT)
 Received: from localhost.localdomain (li964-79.members.linode.com.
  [45.33.10.79])
- by smtp.gmail.com with ESMTPSA id 61sm5139805otx.8.2019.07.02.03.34.45
+ by smtp.gmail.com with ESMTPSA id 61sm5139805otx.8.2019.07.02.03.34.54
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Tue, 02 Jul 2019 03:34:53 -0700 (PDT)
+ Tue, 02 Jul 2019 03:35:01 -0700 (PDT)
 From: Leo Yan <leo.yan@linaro.org>
 To: Arnaldo Carvalho de Melo <acme@kernel.org>,
  Peter Zijlstra <peterz@infradead.org>, Ingo Molnar <mingo@redhat.com>,
@@ -76,23 +76,22 @@ To: Arnaldo Carvalho de Melo <acme@kernel.org>,
  Thomas Richter <tmricht@linux.ibm.com>,
  Alexey Budankov <alexey.budankov@linux.intel.com>,
  linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
-Subject: [PATCH v1 01/11] perf report: Smatch: Fix potential NULL pointer
- dereference
-Date: Tue,  2 Jul 2019 18:34:10 +0800
-Message-Id: <20190702103420.27540-2-leo.yan@linaro.org>
+Subject: [PATCH v1 02/11] perf stat: Smatch: Fix use-after-freed pointer
+Date: Tue,  2 Jul 2019 18:34:11 +0800
+Message-Id: <20190702103420.27540-3-leo.yan@linaro.org>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20190702103420.27540-1-leo.yan@linaro.org>
 References: <20190702103420.27540-1-leo.yan@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190702_033455_745314_548484A0 
-X-CRM114-Status: GOOD (  12.58  )
+X-CRM114-CacheID: sfid-20190702_033503_988958_8DBAEF19 
+X-CRM114-Status: GOOD (  13.53  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:242 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:342 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -121,46 +120,35 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Based on the following report from Smatch, fix the potential
-NULL pointer dereference check.
+Based on the following report from Smatch, fix the use-after-freed
+pointer.
 
-  tools/perf/builtin-report.c:304
-  process_read_event() error: we previously assumed 'evsel' could be null (see line 301)
+  tools/perf/builtin-stat.c:1353
+  add_default_attributes() warn: passing freed memory 'str'.
 
-tools/perf/builtin-report.c
-301                 const char *name = evsel ? perf_evsel__name(evsel) : "unknown";
-302                 int err = perf_read_values_add_value(&rep->show_threads_values,
-303                                            event->read.pid, event->read.tid,
-304                                            evsel->idx,
-                                               ^^^^^^^
-305                                            name,
-306                                            event->read.value);
-
-This patch checks if 'evsel' is NULL pointer then pass UINT64_MAX as idx
-parameter.
+The pointer 'str' has been freed but later it is still passed into the
+function parse_events_print_error().  This patch fixes this
+use-after-freed issue.
 
 Signed-off-by: Leo Yan <leo.yan@linaro.org>
 ---
- tools/perf/builtin-report.c | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
+ tools/perf/builtin-stat.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/tools/perf/builtin-report.c b/tools/perf/builtin-report.c
-index 91c40808380d..a894ce7cd04e 100644
---- a/tools/perf/builtin-report.c
-+++ b/tools/perf/builtin-report.c
-@@ -299,10 +299,10 @@ static int process_read_event(struct perf_tool *tool,
- 
- 	if (rep->show_threads) {
- 		const char *name = evsel ? perf_evsel__name(evsel) : "unknown";
-+		int idx = evsel ? evsel->idx : INT_MAX;
- 		int err = perf_read_values_add_value(&rep->show_threads_values,
- 					   event->read.pid, event->read.tid,
--					   evsel->idx,
--					   name,
-+					   idx, name,
- 					   event->read.value);
- 
- 		if (err)
+diff --git a/tools/perf/builtin-stat.c b/tools/perf/builtin-stat.c
+index 8a35fc5a7281..de0f6d0e96a2 100644
+--- a/tools/perf/builtin-stat.c
++++ b/tools/perf/builtin-stat.c
+@@ -1349,8 +1349,8 @@ static int add_default_attributes(void)
+ 				fprintf(stderr,
+ 					"Cannot set up top down events %s: %d\n",
+ 					str, err);
+-				free(str);
+ 				parse_events_print_error(&errinfo, str);
++				free(str);
+ 				return -1;
+ 			}
+ 		} else {
 -- 
 2.17.1
 
