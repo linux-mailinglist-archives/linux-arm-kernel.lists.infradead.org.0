@@ -2,97 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0D43C5CEAF
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  2 Jul 2019 13:46:03 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A4E7C5CEB3
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  2 Jul 2019 13:47:43 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
-	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=IGUEUuMNJgxsAirxInsxoHa7iEjXvVWxImre213KeiY=; b=WyFIBKmyBst30V
-	2QdwCnA1ni3vB23P7PavVVnbi93Qy2Sl2+rwvKzluO8mJe2V1DCspluWtm59WuheLRtTiIBTyRCUH
-	1pT/z5v+bb0ClnFZM7a2KuMUO/XZyevTnx8Mh62KeNpoalFnJUIJmlikdAVTNGkMjNWiAcg7pS50D
-	xCKdeF3tlEfrPAzsQf1FQz5QOXXfD20dE9rt1jrOUwhWmuoGnz6YSGlhKJptAo3QsgcpH/La1oj+b
-	pfAOqjq8vKaW9l9V3jEUy2FaaPruccRf1aTZvNVeQbPCKBSO7HgNE2N8AeYKe4wHylG0kuzpT7aGy
-	h6pugS4oHFZuyPV+8zFg==;
+	List-Owner; bh=hXLjdNgtZchHHqo2dznXzkMwmd9pW0b6l5F9seZKvV0=; b=Eykf5xKFwvO5ml
+	X2/7xQEMgLlYeFNBwD+lu5n8o32pMw2/EKWDpTHRf232p7oK+BSzWS22fLBrZwUY4tHgLwnhdV6W4
+	j6cuiKKG9Rgg8edV96FxJhNHCKwPYOgWYgf9ncDl6s5rBzd52DdQ+0Q4FYdGce8/7DJ7o3ivj2yew
+	TEtSoqozwmwuGGmr3i97LoyVGW+GuR8PXC4qiNk0ONPosLrcu30Z27j5xTZBn/PAjHsw5WYebGxzJ
+	11gMFiy4vDyU7YN/Mm/Pz77GyoEzgmJyZhlj86AHR9ribauA/DnMKSX/xzPm6uWFPR2SHkUVQQ36J
+	IVXS51v6V0UCJuKEd8KA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hiHEW-0006LB-MK; Tue, 02 Jul 2019 11:46:00 +0000
-Received: from mail-eopbgr40056.outbound.protection.outlook.com ([40.107.4.56]
- helo=EUR03-DB5-obe.outbound.protection.outlook.com)
+	id 1hiHG9-0006ey-O2; Tue, 02 Jul 2019 11:47:41 +0000
+Received: from mail-yb1-xb41.google.com ([2607:f8b0:4864:20::b41])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hiHEJ-0006Kd-U0
- for linux-arm-kernel@lists.infradead.org; Tue, 02 Jul 2019 11:45:49 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=Hl2hrmuB6iUCeVR3BZgMfhCmzZ47paNqJX57ARDY4Ho=;
- b=Q0B5Du3x8UKq+29h450EpdpA1Lbj7OlvjMWztPRp1cBmtCMzddBLsOCq2lnqB7xaGaDUezPdCtigGYMD1j9apkVUXyo74YeHnkitNOW1X6tMWgwij8LpwHj5F/m4jD0OvsiXlczeBpd36TUacGJxvhrpjZAjG0J1LEZicrq1GLo=
-Received: from AM0PR04MB5779.eurprd04.prod.outlook.com (20.178.202.151) by
- AM0PR04MB5732.eurprd04.prod.outlook.com (20.178.117.145) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2032.20; Tue, 2 Jul 2019 11:45:43 +0000
-Received: from AM0PR04MB5779.eurprd04.prod.outlook.com
- ([fe80::a126:d121:200:367]) by AM0PR04MB5779.eurprd04.prod.outlook.com
- ([fe80::a126:d121:200:367%7]) with mapi id 15.20.2032.019; Tue, 2 Jul 2019
- 11:45:43 +0000
-From: Abel Vesa <abel.vesa@nxp.com>
-To: Andra Danciu <andradanciu1997@gmail.com>
-Subject: Re: [PATCH] arm64: dts: imx8mq: Add sai6 node
-Thread-Topic: [PATCH] arm64: dts: imx8mq: Add sai6 node
-Thread-Index: AQHVMMsRKx0kk913gkG41z6iIMo/Oaa3NcQA
-Date: Tue, 2 Jul 2019 11:45:43 +0000
-Message-ID: <20190702114542.2eoc6nm2kyhode43@fsr-ub1664-175>
-References: <20190702114102.1254-1-andradanciu1997@gmail.com>
-In-Reply-To: <20190702114102.1254-1-andradanciu1997@gmail.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=abel.vesa@nxp.com; 
-x-originating-ip: [89.37.124.34]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: 5b065002-f472-4adc-06ee-08d6fee2d0a7
-x-ms-office365-filtering-ht: Tenant
-x-microsoft-antispam: BCL:0; PCL:0;
- RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600148)(711020)(4605104)(1401327)(4618075)(2017052603328)(7193020);
- SRVR:AM0PR04MB5732; 
-x-ms-traffictypediagnostic: AM0PR04MB5732:
-x-microsoft-antispam-prvs: <AM0PR04MB573244E413686D540A52B719F6F80@AM0PR04MB5732.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:81;
-x-forefront-prvs: 008663486A
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(7916004)(4636009)(376002)(136003)(39860400002)(396003)(366004)(346002)(199004)(189003)(66556008)(66946007)(73956011)(68736007)(6116002)(3846002)(66476007)(91956017)(64756008)(66446008)(86362001)(5660300002)(478600001)(66066001)(305945005)(7736002)(1411001)(81166006)(76116006)(4326008)(81156014)(25786009)(8936002)(26005)(6486002)(76176011)(446003)(11346002)(44832011)(6512007)(9686003)(14454004)(256004)(486006)(53936002)(7416002)(102836004)(14444005)(53546011)(2906002)(476003)(54906003)(6506007)(8676002)(33716001)(229853002)(71190400001)(71200400001)(316002)(6436002)(1076003)(99286004)(6916009)(6246003)(186003)(32563001);
- DIR:OUT; SFP:1101; SCL:1; SRVR:AM0PR04MB5732;
- H:AM0PR04MB5779.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; A:1; MX:1; 
-received-spf: None (protection.outlook.com: nxp.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: AZlKDosgEzmi1eL4BssCxys0i8851aJr70pwgxuLYY0/RJO7se9yCNwoq/TQLmcIOTh9pUsBDCpusCKFvGnNNgyiW3HKpq2C0UEZbSm9/rOhfgetHyd6Ttv+eZ7Fl4HaybXeJJX23iBOYFvjraIP5n379O2j8WoiThobKOdiNoLVVf+Q81nr6fnOkTa4to+3HbN10KKcnTyMtSuo4pmYCdncVPC9Rgi5RtKaQzztUGJ8D+tphwaCF3Tga6BN5X0LmWb4IbfQ5QIkL6nx87pvTG8vN+NtHr88R31ZcyIlols4nnsPhSZDUWIibydBBBlYTc6OyZk5hoZr8jXRs6Sjr9W7BKaygXbauegC9HIb0PbrBhKBhxqk5NqoSX/yAe9RzzJUiOyudLnhec5ROXCPdiEaW/hzZKUwP+IdZoSvSC8=
-Content-ID: <F3B412D4A179564BBCAB6261F2913C80@eurprd04.prod.outlook.com>
+ id 1hiHFw-0006eR-VL
+ for linux-arm-kernel@lists.infradead.org; Tue, 02 Jul 2019 11:47:30 +0000
+Received: by mail-yb1-xb41.google.com with SMTP id x4so1202725ybk.0
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 02 Jul 2019 04:47:28 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc:content-transfer-encoding;
+ bh=iYZrmys3/TfpaazA2XWiT/TSEbAAksLqlj6ZynD2xWk=;
+ b=lcJQMmt6baOOctsuGbaQsTWjGgM7s7CKLXoYb0+CQzOpJsTRHYREzkd/8Q/dfuuOUZ
+ HX5qKdQrVQcWelEAVhoj8ZHzlvUJbmFcgX3J17+3GeWR6DYYZ3u3vNuHEmeJQTLpZRiW
+ dwNVl6CnmpahWLTAJDUTCqo7ttR0m18gI69RjBhI1/mklFkd4L0UQj7VyvSur4gONpgV
+ 6cvlO1adRD0gqNnpmOv//P9QnnH87CTmkgwz/7N8MRqRrdH8DHEaEJJbJkakHFbx8dsU
+ 6u3/iJ1+gJQXn4un5aUg806xORKwn1LVi4nP95gxS17fO8lZ+tXKBIEO/H7CPTsrcu1j
+ SVlA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc:content-transfer-encoding;
+ bh=iYZrmys3/TfpaazA2XWiT/TSEbAAksLqlj6ZynD2xWk=;
+ b=ea/0gHlMG1fiAomIvaun6ahljj3VLzAUJvJPnJCjii/nu8X0Im8318ddBwOknlDVZF
+ hLoBIUNVJVRkdNPMX8U9X8kTrPGnetMbqW1pu1owzs1hV/sZdIm77HcRew+8EkcnADqM
+ uCXETUdEWruBVF5vPDueXha6pcTVCAGKIkiYJJQiqbg49/t0a4pRJ+M/wdjpEUgWXlT9
+ liytqr7pwFPpwBt4a9bZ2i/ZYSkJIJOupydQ1LiWsHgWAHvvxryLJchxG3QBAUbK3aRb
+ xmzBgaDq+1YOfGtcmAdjXxEe7cl94noET/er7xcaDblfTF2tCOY4Pn77tPdJfz9jSOL+
+ fl7A==
+X-Gm-Message-State: APjAAAUg0FD5mlV4s9xgPqas15pgVxjr9V1Z+xUB3HtrS9LYMHVvSbtJ
+ mQbw7J/Inyn04X2pMrPyCLRJ1OscSbQokwqzzXk=
+X-Google-Smtp-Source: APXvYqyFfoChK3rqQLCksZ9VPYQx8ymAFP/2n5xhyywi4ep5LxSGcw3v0w5ozKJd6MUYJVOjINhiPlBbnXX9M9M2A+g=
+X-Received: by 2002:a25:9347:: with SMTP id g7mr6440701ybo.277.1562068047954; 
+ Tue, 02 Jul 2019 04:47:27 -0700 (PDT)
 MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 5b065002-f472-4adc-06ee-08d6fee2d0a7
-X-MS-Exchange-CrossTenant-originalarrivaltime: 02 Jul 2019 11:45:43.5205 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: abel.vesa@nxp.com
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM0PR04MB5732
+References: <20190701032342.25971-1-huangfq.daxian@gmail.com>
+ <20190701075255.GD172968@dtor-ws>
+ <CABXRUiSO2Fos1V3hR5t3AviZ9Hit_y+E-Tp3PNOQj6-FKUBJBw@mail.gmail.com>
+ <CAHp75VeUo2Au66tETo3zneBpeaVU+Y+-h5zghpo+hPuB=a6-eA@mail.gmail.com>
+In-Reply-To: <CAHp75VeUo2Au66tETo3zneBpeaVU+Y+-h5zghpo+hPuB=a6-eA@mail.gmail.com>
+From: Fuqian Huang <huangfq.daxian@gmail.com>
+Date: Tue, 2 Jul 2019 19:47:16 +0800
+Message-ID: <CABXRUiQ77feNzEdQ7GqNxLS9YAMybVG3eAWWSDPFdGvERaxCyg@mail.gmail.com>
+Subject: Re: [PATCH 2/4] input: keyboard/mouse/touchscreen/misc: Use
+ dev_get_drvdata()
+To: Andy Shevchenko <andy.shevchenko@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190702_044547_971145_13280796 
-X-CRM114-Status: GOOD (  12.18  )
+X-CRM114-CacheID: sfid-20190702_044729_040612_0C79071D 
+X-CRM114-Status: GOOD (  15.05  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.4.56 listed in list.dnswl.org]
+ no trust [2607:f8b0:4864:20:0:0:0:b41 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (huangfq.daxian[at]gmail.com)
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -111,64 +97,54 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- Anson Huang <anson.huang@nxp.com>,
- "ccaione@baylibre.com" <ccaione@baylibre.com>,
- "andrew.smirnov@gmail.com" <andrew.smirnov@gmail.com>,
- "shawnguo@kernel.org" <shawnguo@kernel.org>,
- "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
- "angus@akkea.ca" <angus@akkea.ca>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "robh+dt@kernel.org" <robh+dt@kernel.org>, dl-linux-imx <linux-imx@nxp.com>,
- "kernel@pengutronix.de" <kernel@pengutronix.de>,
- "festevam@gmail.com" <festevam@gmail.com>, "agx@sigxcpu.org" <agx@sigxcpu.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- "l.stach@pengutronix.de" <l.stach@pengutronix.de>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Kate Stewart <kstewart@linuxfoundation.org>,
+ Tony Lindgren <tony@atomide.com>, Richard Fontana <rfontana@redhat.com>,
+ Laxman Dewangan <ldewangan@nvidia.com>, Fabio Estevam <festevam@gmail.com>,
+ Rob Herring <robh@kernel.org>, Florian Fainelli <f.fainelli@gmail.com>,
+ Anson Huang <anson.huang@nxp.com>, Lee Jones <lee.jones@linaro.org>,
+ Jonathan Hunter <jonathanh@nvidia.com>, Luca Weiss <luca@z3ntu.xyz>,
+ NXP Linux Team <linux-imx@nxp.com>, Sylvain Lemieux <slemieux.tyco@gmail.com>,
+ Dan Carpenter <dan.carpenter@oracle.com>, Brian Masney <masneyb@onstation.org>,
+ Arnd Bergmann <arnd@arndb.de>, Sascha Hauer <s.hauer@pengutronix.de>,
+ linux-input <linux-input@vger.kernel.org>, Vladimir Zapolskiy <vz@mleia.com>,
+ Alexios Zavras <alexios.zavras@intel.com>, linux-tegra@vger.kernel.org,
+ Thomas Gleixner <tglx@linutronix.de>,
+ Andy Shevchenko <andriy.shevchenko@linux.intel.com>,
+ Allison Randal <allison@lohutok.net>,
+ linux-arm Mailing List <linux-arm-kernel@lists.infradead.org>,
+ Pascal PAILLET-LME <p.paillet@st.com>, Shawn Guo <shawnguo@kernel.org>,
+ Dmitry Torokhov <dmitry.torokhov@gmail.com>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ H Hartley Sweeten <hsweeten@visionengravers.com>,
+ Thierry Reding <thierry.reding@gmail.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Olof Johansson <olof@lixom.net>, Christian Hoff <christian_hoff@gmx.net>,
+ Enrico Weigelt <info@metux.net>, Gabriel Fernandez <gabriel.fernandez@st.com>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 19-07-02 14:41:02, Andra Danciu wrote:
-
-Missing commit message here. Please add one.
-
-> Cc: Daniel Baluta <daniel.baluta@nxp.com>
-> Signed-off-by: Andra Danciu <andradanciu1997@gmail.com>
-> ---
->  arch/arm64/boot/dts/freescale/imx8mq.dtsi | 14 ++++++++++++++
->  1 file changed, 14 insertions(+)
-> 
-> diff --git a/arch/arm64/boot/dts/freescale/imx8mq.dtsi b/arch/arm64/boot/dts/freescale/imx8mq.dtsi
-> index d09b808eff87..1ff664523f56 100644
-> --- a/arch/arm64/boot/dts/freescale/imx8mq.dtsi
-> +++ b/arch/arm64/boot/dts/freescale/imx8mq.dtsi
-> @@ -278,6 +278,20 @@
->  			#size-cells = <1>;
->  			ranges = <0x30000000 0x30000000 0x400000>;
->  
-> +			sai6: sai@30030000 {
-> +				compatible = "fsl,imx8mq-sai",
-> +					"fsl,imx6sx-sai";
-> +				reg = <0x30030000 0x10000>;
-> +				interrupts = <GIC_SPI 90 IRQ_TYPE_LEVEL_HIGH>;
-> +				clocks = <&clk IMX8MQ_CLK_SAI6_IPG>,
-> +					<&clk IMX8MQ_CLK_SAI6_ROOT>,
-> +					<&clk IMX8MQ_CLK_DUMMY>, <&clk IMX8MQ_CLK_DUMMY>;
-> +				clock-names = "bus", "mclk1", "mclk2", "mclk3";
-> +				dmas = <&sdma2 4 24 0>, <&sdma2 5 24 0>;
-> +				dma-names = "rx", "tx";
-> +				status = "disabled";
-> +			};
-> +
->  			gpio1: gpio@30200000 {
->  				compatible = "fsl,imx8mq-gpio", "fsl,imx35-gpio";
->  				reg = <0x30200000 0x10000>;
-> -- 
-> 2.11.0
-> 
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+QW5keSBTaGV2Y2hlbmtvIDxhbmR5LnNoZXZjaGVua29AZ21haWwuY29tPiDmlrwgMjAxOeW5tDfm
+nIgy5pel6YCx5LqMIOS4i+WNiDU6NTHlr6vpgZPvvJoKPgo+IE9uIFR1ZSwgSnVsIDIsIDIwMTkg
+YXQgMTE6MjAgQU0gRnVxaWFuIEh1YW5nIDxodWFuZ2ZxLmRheGlhbkBnbWFpbC5jb20+IHdyb3Rl
+Ogo+ID4KPiA+IEkgYW0gbm90IGFuIGV4cGVydCBvbiB0aGlzLiBJIGp1c3Qgd3JpdGUgYSBjb2Nj
+aW5lbGxlIHNjcmlwdCB0byBzZWFyY2gKPiA+IHRoaXMga2luZCBvZiBtaXN1c2UgYW5kIGZpeCBp
+dCBpbiBhIG5haXZlIHdheS4KPiA+IENvdWxkIHlvdSB0ZWxsIG1lIGFib3V0IGhvdyB0byB1c2Ug
+dGhlIHByb3BlciBidXMgYWNjZXNzb3JzPyBUaGVuIEkKPiA+IHdpbGwgZml4IGl0IHVwIGFuZCBy
+ZXNlbmQgYSB2MiBwYXRjaCBzZXQuCj4KPiBGaXJzdCwgZG9uJ3QgdG9wIHBvc3QuCj4gQW5kIGFu
+c3dlcmluZyB0byB0aGlzLCBzaW1wbGUgZHJvcCB0aGUgcGF0Y2guCj4gUHJvcGVyIGJ1cyBhY2Nl
+c3NvcnMgaXMgZXhhY3RseSB3aGF0IGl0J3MgdXNlZCBpbiB0aGUgY3VycmVudCBjb2RlLgoKQnV0
+IHdoeSBub3QgdXNlIGRldl9nZXRfZHJ2ZGF0YSBkaXJlY3RseS4KSXQgc2ltcGxpZmllcyBnZXR0
+aW5nIHRoZSAnZHJpdmVyX2RhdGEnIGZyb20gJ3N0cnVjdCBkZXZpY2UnIGRpcmVjdGx5LgpBbmQg
+dGhlIHBsYXRmb3JtX2RldmljZSBoZXJlIGlzIG5vdCByZXF1aXJlZC4KUmVwbGFjZSBpdCBjYW4g
+cmVtb3ZlIHRoZSB1bm5lY2Vzc2FyeSBzdGVwIGJhY2sgYW5kIGZvcnRoLiAoZGV2IC0+IHBkZXYg
+LT4gZGV2KS4KCkp1c3QgbGlrZSB0aGUgY29tbWl0CmVkODM1MTM2ZWU2NyAoIm1mZDogVXNlIGRl
+dl9nZXRfZHJ2ZGF0YSgpIGRpcmVjdGx5IikKMTk0OGQ0OThkY2Y2KCJ0aGVybWFsOiBpbnRlbDog
+aW50MzQweDogcHJvY2Vzc29yX3RoZXJtYWxfZGV2aWNlOgpzaW1wbGlmeSB0byBnZXQgZHJpdmVy
+IGRhdGEiKQphbmQgbWFueSBvdGhlciBzaW1pbGFyIGNvbW1pdHMgaW4gdGhlIExpbnV4IGdpdCBs
+b2cuCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51
+eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVh
+ZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1h
+cm0ta2VybmVsCg==
