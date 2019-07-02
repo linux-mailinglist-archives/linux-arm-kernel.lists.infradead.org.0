@@ -2,89 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0F2C45CCF9
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  2 Jul 2019 11:51:54 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0FA505CCFE
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  2 Jul 2019 11:52:16 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:References
+	:In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Uwr+uI7oMFXUXbFvUaXpVjXPWBN4RnWhtgDFPkVvvts=; b=GtxUcTTeAvOV+b
-	luT1cA2zPEwn6NYLMjsCdQjv9RqS6DdJAOuLTfQvbR5nhcapA6EA/PC1NTmr6qeWNJBBsITYM4+ph
-	HO/Gk0fvp9zFyAVzcbHjPZd+3SPTobYfnxbHrNoSpv1cVGTEnfuXbhFTAmNEzz3OIXvwvT8/qTj45
-	0MgtQ3FZDzzT3/2q91GSv1lENL4At/OhBZP7/QqWMCdxIKz4Iuebo+Cpq16WE7rJaLpw4imWHtIz9
-	yp5swgRzg3oY936KMbJu4qNllF9MnJE/3J7JDHtc/7trPOoxsYLmrltFZf9rrzj7bSkrsXhW6L+tC
-	zJIN/eY1KYdZfOQpRdFA==;
+	List-Owner; bh=EyrbpNJS7MXxlc2ScrUTyia1CReIDn5G4ceUVa/aXAI=; b=t1lbNbz4dHOBPU
+	H0RMA6Y5NzVgjMnHEe4NOxMk1EyQC3tfxRabOS6k/lOWeqjQBuYHgdec28z5t98f/dfZBIvVUX/fK
+	pe2SfKjdtzCabYhASHEeWdvunna2cG1na7G7eZj1TTFn6vCr0uzNuHUDMflTDbQbJgZS08OGI7KZI
+	vq2pNby1SrrlJceI6QEu7bs9M4rT2uF6y98Or1ronRUUNKG7dGeWekk4S2jQ4O/rEXDlyRuv3d6SH
+	j47AUJMb8sEwI0KdHj9UbUGr8fqoQGBkCjGN5pCJkke2Vt3tNYF8XjYUGf0MHNMs/UojEf+PGWi3F
+	lnt/MU+3kOrTAHQin5dQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hiFS4-0005DF-Ck; Tue, 02 Jul 2019 09:51:52 +0000
-Received: from mail-pl1-x641.google.com ([2607:f8b0:4864:20::641])
+	id 1hiFSQ-0005SH-7Q; Tue, 02 Jul 2019 09:52:14 +0000
+Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hiFRq-0005CQ-NY
- for linux-arm-kernel@lists.infradead.org; Tue, 02 Jul 2019 09:51:39 +0000
-Received: by mail-pl1-x641.google.com with SMTP id 9so105282ple.5
+ id 1hiFS8-0005PL-Hk
+ for linux-arm-kernel@lists.infradead.org; Tue, 02 Jul 2019 09:51:58 +0000
+Received: by mail-wr1-x441.google.com with SMTP id v14so17023899wrr.4
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 02 Jul 2019 02:51:38 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=96/3jtqs845f5zIFwO5nxuuVCQy9SyepnoAKFsIrIMw=;
- b=JfZyrUjlJL43ILmmdwAy6F7txZsfdzO4AQzkvU7IZPP/iF9/X6mtv5kQO6hMGe4MJV
- 2l0FeeMmm6hwQNIyj1F/HRmwbXPZJxWLb+aw+9WQ+CbJpEYfWp2N7nLI+xWWUA0TJddq
- J1SrIjHpPakOu+/2qOzUTtgqt0GDGhKM+5lqGldG1FvUP7qTXUHsZLLs3KmEJ2mmKzc6
- C0hgtVgTsJFWst0ts15bRtKuNlwucq4HLOHhSZuiWhCIsNxLQzP8oppYwIx6iYl5TZEl
- 3kcJwVcth2oV3/nxOU2RR9CqWxMtosf0r3x2Ok+Rq1pTgO/MbphyI9wQ0PhKI1a//55F
- yo4w==
+ Tue, 02 Jul 2019 02:51:56 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=baylibre-com.20150623.gappssmtp.com; s=20150623;
+ h=from:to:cc:subject:in-reply-to:references:date:message-id
+ :mime-version; bh=q5AKb2Aq5cM23CpGFfqHRfDVm9/c55zJeMrlP2X57BQ=;
+ b=qBSK4mPHwueHeFFFdMnsPrDgtnMK2xQQNILFIFKDGb5AgaTdKhFX0gEYTMeiS1C9e0
+ KrPknp/kJO8pWTVTXeT+vODB4Z3ijy42pYYLFy0JwLBpizW5Z1K8vAIY6af5qUwYEQBr
+ Drf/kb7mGBV+f3zKuaIEgtseCKCaaMKiI9+w6Of6tFcq1OuwoXGemJgNokc+1CBdxmuH
+ 4+2PMSH3e24bwhavxxTXHYHMvBMNHY0ZjQI44RRK9H+WuZ7IARVgxcs7uV3lqeiPLOOJ
+ SsC37UqfBaqtk2IvxtMf2sSBPqGQXWSrFOkbBphM1aPpAI3Cn9nEiqAj87531tMI4VST
+ bGog==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=96/3jtqs845f5zIFwO5nxuuVCQy9SyepnoAKFsIrIMw=;
- b=twOc4kHs69mwJ43yjv2UaZu+prkcn4I1Z14AK+0a98J9yq21jw/sn6FviNL0Te9DzD
- v0VVcfBEukuLejY2sAVo/u+WapmmF9N+YjmBnngBZtGgZkvQmiA74krxzcrEpyMOKCp8
- 15VwsKubTJm4mlQtswaphuteEDcft+OfmQvUs5bY+70gn8s1zPmdl+th5M1W982k1aVK
- Ei7qtse+XKzDHsizmw2iylonDYtz3+O7HJK5SJyEHQdKP+dsIlrg7BoOON9PV6xQNxZ+
- Ym6+bdw7/b63Yy0ghh8r8QcGhHAeYGwvDfnNyyUdKWh6CIqMFByJQC6/zf3p/RtoU17A
- gklA==
-X-Gm-Message-State: APjAAAU9L1a+1hXIJaRO1dEnrni5lEiu4wdSsIOt/4VzuV9s+RiI0vnH
- RfVmB5DacjZ/Tkomqc3t/V2KvKcPSW4ukVS52Xs=
-X-Google-Smtp-Source: APXvYqxhyUjR0CrI9KX1v9haSzz6fkp5zqzu2IxjxZvlFO45fy5nIdN3K4RDU2J0uhXSTOlvwyIMohZj8GfA+WQFMqk=
-X-Received: by 2002:a17:902:934a:: with SMTP id
- g10mr34957358plp.18.1562061097869; 
- Tue, 02 Jul 2019 02:51:37 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:in-reply-to:references:date
+ :message-id:mime-version;
+ bh=q5AKb2Aq5cM23CpGFfqHRfDVm9/c55zJeMrlP2X57BQ=;
+ b=b9bhGXI6EghSkosHKzcvv7agpKu/XJXqs2FrkU52eRoCF9Qq84qxQLwWJdf8KVcDkq
+ yNeFpl79iU9P+l74+ZDcESbbnSX67lw5hQYjjvkfDi1aznRA4sBUq7U28NQ8VSbscCtX
+ D3vY//6S+hBjlLwuoASR+t1oaI7Mzym1SKdNblK8Ar4QUl6P3m/WZydU6MAlDDWwrmE/
+ EIJ2kWeTzHVCwFf4vsZQaiBIrU5u7Jx0AXf1VhcWfiJtv5mUevohnBByRwuR8RFUpPIc
+ xpq8Ez8Pdvx3oEPj2XtLAp5G/G+ihphk5vfEURS8WrHt906os17G2cQbNOFuDN+ab47O
+ OwDQ==
+X-Gm-Message-State: APjAAAWRKq/aqBO/tVLRMz/BnKmv4ZbQMMOMJzbj2xvW/dJuAupGr440
+ Y+gKgLsFF2F92bTJWjf7ASLt0A==
+X-Google-Smtp-Source: APXvYqzI8kW9XU8FUJQ7IGAFwA6pRPzGymWZ5cX2bvdpELwcRzBOCEXK8fgrUKd0pUhUkjJf8qWPdQ==
+X-Received: by 2002:adf:8028:: with SMTP id 37mr22701037wrk.106.1562061114977; 
+ Tue, 02 Jul 2019 02:51:54 -0700 (PDT)
+Received: from localhost (lmontsouris-657-1-212-31.w90-63.abo.wanadoo.fr.
+ [90.63.244.31])
+ by smtp.gmail.com with ESMTPSA id 32sm27240587wra.35.2019.07.02.02.51.54
+ (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
+ Tue, 02 Jul 2019 02:51:54 -0700 (PDT)
+From: Jerome Brunet <jbrunet@baylibre.com>
+To: Neil Armstrong <narmstrong@baylibre.com>, khilman@baylibre.com
+Subject: Re: [RFC 01/11] soc: amlogic: meson-gx-socinfo: Add SM1 and S905X3 IDs
+In-Reply-To: <20190701104705.18271-2-narmstrong@baylibre.com>
+References: <20190701104705.18271-1-narmstrong@baylibre.com>
+ <20190701104705.18271-2-narmstrong@baylibre.com>
+Date: Tue, 02 Jul 2019 11:51:53 +0200
+Message-ID: <1jwoh03gsm.fsf@starbuckisacylon.baylibre.com>
 MIME-Version: 1.0
-References: <20190701032342.25971-1-huangfq.daxian@gmail.com>
- <20190701075255.GD172968@dtor-ws>
- <CABXRUiSO2Fos1V3hR5t3AviZ9Hit_y+E-Tp3PNOQj6-FKUBJBw@mail.gmail.com>
-In-Reply-To: <CABXRUiSO2Fos1V3hR5t3AviZ9Hit_y+E-Tp3PNOQj6-FKUBJBw@mail.gmail.com>
-From: Andy Shevchenko <andy.shevchenko@gmail.com>
-Date: Tue, 2 Jul 2019 12:51:25 +0300
-Message-ID: <CAHp75VeUo2Au66tETo3zneBpeaVU+Y+-h5zghpo+hPuB=a6-eA@mail.gmail.com>
-Subject: Re: [PATCH 2/4] input: keyboard/mouse/touchscreen/misc: Use
- dev_get_drvdata()
-To: Fuqian Huang <huangfq.daxian@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190702_025138_793761_310C95DA 
-X-CRM114-Status: GOOD (  12.58  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190702_025156_637786_4263DA4E 
+X-CRM114-Status: GOOD (  10.02  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:641 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:441 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (andy.shevchenko[at]gmail.com)
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -96,50 +93,47 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Kate Stewart <kstewart@linuxfoundation.org>,
- Tony Lindgren <tony@atomide.com>, Richard Fontana <rfontana@redhat.com>,
- Laxman Dewangan <ldewangan@nvidia.com>, Fabio Estevam <festevam@gmail.com>,
- Rob Herring <robh@kernel.org>, Florian Fainelli <f.fainelli@gmail.com>,
- Anson Huang <anson.huang@nxp.com>, Lee Jones <lee.jones@linaro.org>,
- Jonathan Hunter <jonathanh@nvidia.com>, Luca Weiss <luca@z3ntu.xyz>,
- NXP Linux Team <linux-imx@nxp.com>, Sylvain Lemieux <slemieux.tyco@gmail.com>,
- Dan Carpenter <dan.carpenter@oracle.com>, Brian Masney <masneyb@onstation.org>,
- Arnd Bergmann <arnd@arndb.de>, Sascha Hauer <s.hauer@pengutronix.de>,
- linux-input <linux-input@vger.kernel.org>, Vladimir Zapolskiy <vz@mleia.com>,
- Alexios Zavras <alexios.zavras@intel.com>, linux-tegra@vger.kernel.org,
- Thomas Gleixner <tglx@linutronix.de>,
- Andy Shevchenko <andriy.shevchenko@linux.intel.com>,
- Allison Randal <allison@lohutok.net>,
- linux-arm Mailing List <linux-arm-kernel@lists.infradead.org>,
- Pascal PAILLET-LME <p.paillet@st.com>, Shawn Guo <shawnguo@kernel.org>,
- Dmitry Torokhov <dmitry.torokhov@gmail.com>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- H Hartley Sweeten <hsweeten@visionengravers.com>,
- Thierry Reding <thierry.reding@gmail.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Olof Johansson <olof@lixom.net>, Christian Hoff <christian_hoff@gmx.net>,
- Enrico Weigelt <info@metux.net>, Gabriel Fernandez <gabriel.fernandez@st.com>
+Cc: linux-amlogic@lists.infradead.org, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, Neil Armstrong <narmstrong@baylibre.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Jul 2, 2019 at 11:20 AM Fuqian Huang <huangfq.daxian@gmail.com> wrote:
+On Mon 01 Jul 2019 at 12:46, Neil Armstrong <narmstrong@baylibre.com> wrote:
+
+> Add the SoC IDs for the S905X3 Amlogic SM1 SoC.
 >
-> I am not an expert on this. I just write a coccinelle script to search
-> this kind of misuse and fix it in a naive way.
-> Could you tell me about how to use the proper bus accessors? Then I
-> will fix it up and resend a v2 patch set.
+> Signed-off-by: Neil Armstrong <narmstrong@baylibre.com>
 
-First, don't top post.
-And answering to this, simple drop the patch.
-Proper bus accessors is exactly what it's used in the current code.
+Reviewed-by: Jerome Brunet <jbrunet@baylibre.com>
 
-
--- 
-With Best Regards,
-Andy Shevchenko
+> ---
+>  drivers/soc/amlogic/meson-gx-socinfo.c | 2 ++
+>  1 file changed, 2 insertions(+)
+>
+> diff --git a/drivers/soc/amlogic/meson-gx-socinfo.c b/drivers/soc/amlogic/meson-gx-socinfo.c
+> index bca34954518e..eb81d391b620 100644
+> --- a/drivers/soc/amlogic/meson-gx-socinfo.c
+> +++ b/drivers/soc/amlogic/meson-gx-socinfo.c
+> @@ -39,6 +39,7 @@ static const struct meson_gx_soc_id {
+>  	{ "TXHD", 0x27 },
+>  	{ "G12A", 0x28 },
+>  	{ "G12B", 0x29 },
+> +	{ "SM1", 0x2b },
+>  };
+>  
+>  static const struct meson_gx_package_id {
+> @@ -65,6 +66,7 @@ static const struct meson_gx_package_id {
+>  	{ "S905D2", 0x28, 0x10, 0xf0 },
+>  	{ "S905X2", 0x28, 0x40, 0xf0 },
+>  	{ "S922X", 0x29, 0x40, 0xf0 },
+> +	{ "S905X3", 0x2b, 0x50, 0xf0 },
+>  };
+>  
+>  static inline unsigned int socinfo_to_major(u32 socinfo)
+> -- 
+> 2.21.0
 
 _______________________________________________
 linux-arm-kernel mailing list
