@@ -2,49 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7A7A05C9CC
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  2 Jul 2019 09:11:33 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 693115C9D3
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  2 Jul 2019 09:14:19 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
 	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=6eY2unxD4HgmqqGF+HfO17jFtRTu426gNHKJfJe7IEo=; b=f85BYBwsDjLxZD
-	X4ehoffa9lRS2uOU3aBj0SrHh0T4jW6a+y+4MLOMEzMqEeyLlDx2hV0VK2ofEYSyzsvMR7Rw+Jasl
-	V3OgwMm2ZkLds85aIprhOmjjxS5l0jaJPg7n59VaqEkGADSu3R4WDR5P5sNJq4OTA2cXLr5Mv+xif
-	feM18j90BxJfgJlhJ7GtukSQU6lG3FQ4GZojzrzUCZtH+NYaP2y5oz3UTcPbl7pC4dJfNcvxnW2Dx
-	F/XbWmPMWnZYsMEzCBKaCn+v50GOGFj3EUxhY9vlABr0HKJAeC+UInwnJ2gzM6OYnUMGryjkVajXw
-	7XTk8EyymsH7edIY/tAQ==;
+	List-Owner; bh=qFdBqgq26fVL2UweQgUykpGRCNOUrkzqxceU2QRZdfc=; b=YxmYvMlaGqEWWY
+	YX9mtsFf3ZDlFew0YFhpuC4kKQO12Tfw6PuhfyKY4nRM9k/eMi/NtN+gyG+GEdmhX8OS2xCITiBKf
+	5rHOPwZ35ZIFvCxpzaifYELm3AcUpcpjRmbdgAd8oicr9vIlvhSm9EaQn47OQZ3qzftrzEXpAFCfL
+	Iw1eZK+FZlYQPNimqN3SNN/90lVqTbizTGhjJnzery16WVFXqT8CTriD8aZjVzsHxQAw4cJKHvp1k
+	Ygtl9aVH9lwwT6zfw8tWFmB9VCNrOpB3WZoS+EQ8oWUwLz9Qq0H0eJgYav7j5L70bKGgCRhVfdBur
+	h3OMdcvnBQJMjWuapYyw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hiCwn-0004fc-JH; Tue, 02 Jul 2019 07:11:26 +0000
-Received: from mail-eopbgr40084.outbound.protection.outlook.com ([40.107.4.84]
- helo=EUR03-DB5-obe.outbound.protection.outlook.com)
+	id 1hiCzY-00052S-DG; Tue, 02 Jul 2019 07:14:16 +0000
+Received: from mail-ve1eur01on0627.outbound.protection.outlook.com
+ ([2a01:111:f400:fe1f::627]
+ helo=EUR01-VE1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hiCwP-0004ex-Az
- for linux-arm-kernel@lists.infradead.org; Tue, 02 Jul 2019 07:11:03 +0000
+ id 1hiCzK-00051v-4X
+ for linux-arm-kernel@lists.infradead.org; Tue, 02 Jul 2019 07:14:03 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=Ml8b3bmleiJ+EnnNbsC/cfZEUZOZ5DfDOhuK5hwN9zM=;
- b=TqJ+1FtaPs4svkf9KHdXrh6I8tNfzC5TnaXXznLb/qDMh9qddsD9vpyQyZrnP9p5Si24xvQqSQ1bfSibyCi6GD6NufjpNnF2qmbX5LslPk59W7CiNkkMZ1xU1O5SMRdAurjgXZy6PHr8ZxWTtOWITWPkSNwbfS8cLbJmgeQGXLE=
+ bh=NPxsmxOfL36rrzoAwvi4M3tNWKnJjVQKptP09mfuhTE=;
+ b=pOOc1NS0Q0TKh4K3va0Dd3ozWST0cRPKRtHT8bfDWMHWNOjLZNmE10O9Eelj4Q0ECHoNSOSOeF5oawUkrLPzn32JI9sHqLcTu7h99hnD9q9z3x2qmkhl/wv1cG1ZBzJKQ8QmtgxJ4QreDFzKrbU9WNSlYBG0O1IZJeKlaxG+pCc=
 Received: from AM0PR04MB5779.eurprd04.prod.outlook.com (20.178.202.151) by
- AM0PR04MB4659.eurprd04.prod.outlook.com (52.135.144.150) with Microsoft SMTP
+ AM0PR04MB5251.eurprd04.prod.outlook.com (20.177.41.218) with Microsoft SMTP
  Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2032.20; Tue, 2 Jul 2019 07:10:55 +0000
+ 15.20.2032.20; Tue, 2 Jul 2019 07:13:56 +0000
 Received: from AM0PR04MB5779.eurprd04.prod.outlook.com
  ([fe80::a126:d121:200:367]) by AM0PR04MB5779.eurprd04.prod.outlook.com
  ([fe80::a126:d121:200:367%7]) with mapi id 15.20.2032.019; Tue, 2 Jul 2019
- 07:10:55 +0000
+ 07:13:56 +0000
 From: Abel Vesa <abel.vesa@nxp.com>
-To: Anson Huang <anson.huang@nxp.com>
-Subject: Re: [PATCH 1/2] arm64: dts: imx8mq: Add gpio-ranges property
-Thread-Topic: [PATCH 1/2] arm64: dts: imx8mq: Add gpio-ranges property
-Thread-Index: AQHVMHjq3v4Y93P/8kSdLqwCVV5mEqa26aEA
-Date: Tue, 2 Jul 2019 07:10:55 +0000
-Message-ID: <20190702071054.t7v4fis436klmgdv@fsr-ub1664-175>
-References: <20190702014400.33554-1-Anson.Huang@nxp.com>
-In-Reply-To: <20190702014400.33554-1-Anson.Huang@nxp.com>
+To: Leonard Crestez <leonard.crestez@nxp.com>
+Subject: Re: [RFCv2 2/8] clk: imx8m-composite: Switch to determine_rate
+Thread-Topic: [RFCv2 2/8] clk: imx8m-composite: Switch to determine_rate
+Thread-Index: AQHVLYSzFhiWj3SboUyyXoLKKvuOrKa28GGA
+Date: Tue, 2 Jul 2019 07:13:56 +0000
+Message-ID: <20190702071355.gb5e5qxupojshgun@fsr-ub1664-175>
+References: <cover.1561707104.git.leonard.crestez@nxp.com>
+ <5d62b31309e6402bd9fa608730518b39af823fb3.1561707104.git.leonard.crestez@nxp.com>
+ <20190628084521.d64d5g54zvxlsxsl@fsr-ub1664-175>
+ <VI1PR04MB50552AC6EAB0C145D638E618EEFC0@VI1PR04MB5055.eurprd04.prod.outlook.com>
+In-Reply-To: <VI1PR04MB50552AC6EAB0C145D638E618EEFC0@VI1PR04MB5055.eurprd04.prod.outlook.com>
 Accept-Language: en-US
 Content-Language: en-US
 X-MS-Has-Attach: 
@@ -53,48 +57,47 @@ authentication-results: spf=none (sender IP is )
  smtp.mailfrom=abel.vesa@nxp.com; 
 x-originating-ip: [89.37.124.34]
 x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: e9c79e1b-52b7-457e-c958-08d6febc6cca
+x-ms-office365-filtering-correlation-id: 17fa0e7d-f0a5-457a-7aa2-08d6febcd8ce
 x-ms-office365-filtering-ht: Tenant
 x-microsoft-antispam: BCL:0; PCL:0;
  RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600148)(711020)(4605104)(1401327)(4618075)(2017052603328)(7193020);
- SRVR:AM0PR04MB4659; 
-x-ms-traffictypediagnostic: AM0PR04MB4659:
-x-microsoft-antispam-prvs: <AM0PR04MB4659EA7D8730C11BD0287DF7F6F80@AM0PR04MB4659.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:291;
+ SRVR:AM0PR04MB5251; 
+x-ms-traffictypediagnostic: AM0PR04MB5251:
+x-microsoft-antispam-prvs: <AM0PR04MB5251C4BE5C7E5BFAFA70FAF7F6F80@AM0PR04MB5251.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:4714;
 x-forefront-prvs: 008663486A
 x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(4636009)(7916004)(376002)(136003)(346002)(39860400002)(396003)(366004)(199004)(189003)(4326008)(256004)(26005)(66556008)(186003)(1076003)(5660300002)(66476007)(66946007)(6862004)(25786009)(91956017)(76116006)(64756008)(14454004)(66066001)(6506007)(6116002)(99286004)(76176011)(3846002)(86362001)(68736007)(53546011)(102836004)(6636002)(6486002)(305945005)(2906002)(73956011)(229853002)(8936002)(66446008)(53936002)(6246003)(8676002)(54906003)(81156014)(81166006)(316002)(9686003)(6512007)(486006)(478600001)(476003)(6436002)(7416002)(44832011)(71190400001)(71200400001)(11346002)(446003)(7736002)(33716001)(32563001);
- DIR:OUT; SFP:1101; SCL:1; SRVR:AM0PR04MB4659;
+ SFS:(10009020)(7916004)(4636009)(376002)(396003)(39860400002)(136003)(366004)(346002)(199004)(189003)(76116006)(73956011)(7416002)(66946007)(1076003)(68736007)(33716001)(4326008)(2906002)(91956017)(6862004)(3846002)(486006)(44832011)(6116002)(5660300002)(64756008)(71200400001)(6636002)(66556008)(66476007)(71190400001)(66446008)(316002)(54906003)(11346002)(6512007)(26005)(6246003)(14454004)(53546011)(81156014)(81166006)(6506007)(86362001)(229853002)(53936002)(446003)(476003)(4744005)(305945005)(7736002)(8676002)(102836004)(186003)(99286004)(256004)(478600001)(6436002)(66066001)(14444005)(25786009)(8936002)(9686003)(6486002)(76176011)(32563001);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:AM0PR04MB5251;
  H:AM0PR04MB5779.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
  PTR:InfoNoRecords; A:1; MX:1; 
 received-spf: None (protection.outlook.com: nxp.com does not designate
  permitted sender hosts)
 x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: ComcYnyxFhySALoTX5PEsZQpWkkN/p8wk6gTcvt3jW+3khhBp2I1MuOntVhDfrSC0SUwoH6LBikWyd4+IhJRvO+CKVMzu2dGfBqqL5nUQXPj7phrvVygY3k+eVCOaM+TuOP2/b5GeXny5gpunsOf4Gy2PZiQnCbUDLPx956LBVi9Kl1DIbPXys1cXycaRFSHTMMnRUTOxX5LbObeVBoO7MOoqVF+jRzBKjmbiGiG7W5rUJjGKNAzV+40PJK0jbRnzBPVsRfmA+6OGhC9PxZNCZPBA2sCPX2IbCOO3Al+7K5sVQCl5PqP5wYJCj7fLEUiHMnwAbELlKUzjLGl51T9NOeS7grlBVCkHjh8E75vpJZBjJrD00KY9GyM/sr+KVD2PUIRTeAjxqi9i1z3cdyTCKdeVXEJVtL6q0y1HHu80t4=
-Content-ID: <61459D010418E24189C3AAB936B4F9BA@eurprd04.prod.outlook.com>
+x-microsoft-antispam-message-info: D3+CJMiDAaG+AjtXEqGTnjfmEXOERY4ndRNUK/zj/+SjrZvyNua28FwbEMJxKHw0IZJ31qybuwjI8S6wca2AhOHePAkoe6vCXJJxScDI8QS5atWrs5xgzhqj/LEB8w3FkOIFh5wy0FfmOniBAbu4DCaT3FX2YYubiJIM55JCAvgW4uHBfx1bnSTxKNz0O2Vv+ebw2WgoMEXiF5oVTD9uBA8uSUxaZNowt252mL/g3e2wgob8aBbyqLUIf6BoFbhzwbV+UYz6NBC5y3x6/6CRo0nHMB/P7LEOO040s96QfvXE5xjfZqHREnj5lvXHBtnySOrZvVc0v9lWSUmN9BuEMSsDmcI4CC59vWSaOGJK3sM3ncgyJGH82RWRDhlZUMaftDeEI6WGurydpBYZqj7v18C+tPV7bPhNTW4dXDq11H4=
+Content-ID: <B69BB4B1168AF5449762D788617CD65F@eurprd04.prod.outlook.com>
 MIME-Version: 1.0
 X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: e9c79e1b-52b7-457e-c958-08d6febc6cca
-X-MS-Exchange-CrossTenant-originalarrivaltime: 02 Jul 2019 07:10:55.1010 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 17fa0e7d-f0a5-457a-7aa2-08d6febcd8ce
+X-MS-Exchange-CrossTenant-originalarrivaltime: 02 Jul 2019 07:13:56.2182 (UTC)
 X-MS-Exchange-CrossTenant-fromentityheader: Hosted
 X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
 X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
 X-MS-Exchange-CrossTenant-userprincipalname: abel.vesa@nxp.com
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM0PR04MB4659
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM0PR04MB5251
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190702_001101_503734_E0E591D6 
-X-CRM114-Status: GOOD (  12.55  )
-X-Spam-Score: -0.3 (/)
+X-CRM114-CacheID: sfid-20190702_001402_183483_DE82E731 
+X-CRM114-Status: GOOD (  12.43  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.1 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [40.107.4.84 listed in wl.mailspike.net]
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.4.84 listed in list.dnswl.org]
+ no trust [2a01:111:f400:fe1f:0:0:0:627 listed in]
+ [list.dnswl.org]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 T_SPF_PERMERROR        SPF: test of record failed (permerror)
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -113,89 +116,54 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- Jacky Bai <ping.bai@nxp.com>, "ccaione@baylibre.com" <ccaione@baylibre.com>,
- "andrew.smirnov@gmail.com" <andrew.smirnov@gmail.com>,
- "shawnguo@kernel.org" <shawnguo@kernel.org>,
- "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
- "angus@akkea.ca" <angus@akkea.ca>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Daniel Baluta <daniel.baluta@nxp.com>,
- "robh+dt@kernel.org" <robh+dt@kernel.org>, dl-linux-imx <linux-imx@nxp.com>,
+Cc: Aisheng Dong <aisheng.dong@nxp.com>, Ulf Hansson <ulf.hansson@linaro.org>,
+ Jacky Bai <ping.bai@nxp.com>, Anson Huang <anson.huang@nxp.com>, "Rafael J.
+ Wysocki" <rafael@kernel.org>, Stephen Boyd <sboyd@kernel.org>,
+ Viresh Kumar <viresh.kumar@linaro.org>,
+ Michael Turquette <mturquette@baylibre.com>,
+ "linux-pm@vger.kernel.org" <linux-pm@vger.kernel.org>,
+ "linux-clk@vger.kernel.org" <linux-clk@vger.kernel.org>,
+ Krzysztof Kozlowski <krzk@kernel.org>, Saravana Kannan <saravanak@google.com>,
+ Kyungmin Park <kyungmin.park@samsung.com>,
+ MyungJoo Ham <myungjoo.ham@samsung.com>,
+ Alexandre Bailon <abailon@baylibre.com>,
  "kernel@pengutronix.de" <kernel@pengutronix.de>,
- "viresh.kumar@linaro.org" <viresh.kumar@linaro.org>,
- Leonard Crestez <leonard.crestez@nxp.com>,
- "festevam@gmail.com" <festevam@gmail.com>, "agx@sigxcpu.org" <agx@sigxcpu.org>,
+ Fabio Estevam <fabio.estevam@nxp.com>, Shawn Guo <shawnguo@kernel.org>,
+ Georgi Djakov <georgi.djakov@linaro.org>,
  "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- "l.stach@pengutronix.de" <l.stach@pengutronix.de>
+ dl-linux-imx <linux-imx@nxp.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 19-07-02 09:43:59, Anson.Huang@nxp.com wrote:
-> From: Anson Huang <Anson.Huang@nxp.com>
+On 19-06-28 08:56:35, Leonard Crestez wrote:
+> On 28.06.2019 11:45, Abel Vesa wrote:
+> > On 19-06-28 10:39:50, Leonard Crestez wrote:
 > 
-> Add "gpio-ranges" property to establish connections between GPIOs
-> and PINs on i.MX8MQ pinctrl driver.
+> >> This allows consumers to use min_rate max_rate.
+> >>
+> >> @@ -45,10 +45,12 @@ static unsigned long imx8m_clk_composite_divider_recalc_rate(struct clk_hw *hw,
+> >>   				   divider->flags, PCG_DIV_WIDTH);
+> >>   }
+> >>   
+> >>   static int imx8m_clk_composite_compute_dividers(unsigned long rate,
+> >>   						unsigned long parent_rate,
+> >> +						unsigned long min_rate,
+> >> +						unsigned long max_rate,
+> > 
+> > You should pass on the req instead of min_rate and max_rate here.
 > 
-> Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
-
-For both patches:
-
-Reviewed-by: Abel Vesa <abel.vesa@nxp.com>
-
-> ---
->  arch/arm64/boot/dts/freescale/imx8mq.dtsi | 5 +++++
->  1 file changed, 5 insertions(+)
+> Then I'd have to switch imx8m_clk_composite_divider_set_rate to allocate 
+> a dummy struct clk_rate_request on the stack. It's clearer if I just 
+> pass the minimum parameters required.
 > 
-> diff --git a/arch/arm64/boot/dts/freescale/imx8mq.dtsi b/arch/arm64/boot/dts/freescale/imx8mq.dtsi
-> index 477c523..3187428 100644
-> --- a/arch/arm64/boot/dts/freescale/imx8mq.dtsi
-> +++ b/arch/arm64/boot/dts/freescale/imx8mq.dtsi
-> @@ -287,6 +287,7 @@
->  				#gpio-cells = <2>;
->  				interrupt-controller;
->  				#interrupt-cells = <2>;
-> +				gpio-ranges = <&iomuxc 0 10 30>;
->  			};
->  
->  			gpio2: gpio@30210000 {
-> @@ -299,6 +300,7 @@
->  				#gpio-cells = <2>;
->  				interrupt-controller;
->  				#interrupt-cells = <2>;
-> +				gpio-ranges = <&iomuxc 0 40 21>;
->  			};
->  
->  			gpio3: gpio@30220000 {
-> @@ -311,6 +313,7 @@
->  				#gpio-cells = <2>;
->  				interrupt-controller;
->  				#interrupt-cells = <2>;
-> +				gpio-ranges = <&iomuxc 0 61 26>;
->  			};
->  
->  			gpio4: gpio@30230000 {
-> @@ -323,6 +326,7 @@
->  				#gpio-cells = <2>;
->  				interrupt-controller;
->  				#interrupt-cells = <2>;
-> +				gpio-ranges = <&iomuxc 0 87 32>;
->  			};
->  
->  			gpio5: gpio@30240000 {
-> @@ -335,6 +339,7 @@
->  				#gpio-cells = <2>;
->  				interrupt-controller;
->  				#interrupt-cells = <2>;
-> +				gpio-ranges = <&iomuxc 0 119 30>;
->  			};
->  
->  			tmu: tmu@30260000 {
-> -- 
-> 2.7.4
+
+That is correct. Nevermind my earlier comment then.
+
+> --
+> Regards,
+> Leonard
 > 
 _______________________________________________
 linux-arm-kernel mailing list
