@@ -2,88 +2,89 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A2E245C77E
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  2 Jul 2019 04:55:48 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 50C895C78D
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  2 Jul 2019 05:07:47 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Message-Id:MIME-Version:In-Reply-To:
 	References:To:Subject:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=r8jsHCdRfNzKawqoaqsbhovekyfZKMGefe/Yiv8ZdzI=; b=Ob2pnMy6vKTazq
-	RAWcMnLvBXZiDyd5TtXsNRKH2l++32DBWhjbrtMOefBhlHb0Ln2apRQ6Lb6NT4eIyl8/ojfu54DsY
-	uwiCdR7QLF3spHRLR/MAF7l01mU8iuLaq5Ff2AnMN26oaI1MAkIW9zphP2L20+ogGx9qJvIj1MTSw
-	iVtu5qvGdGU5Zb7iQQcfkomui2Y0Djzr+pyYcFjV8oojjbMG/XETY0vvmM0xmcJSxjlyE/1/+VZYh
-	lfS45YUy8o00AUETLs241oJzES1hwr+sUq4TAw14GQWEV3XlO30HaNCvdlKyAgud/xLQ4A8VDoWUe
-	OFDZ0mI0NfHSzdvb7EbQ==;
+	List-Owner; bh=z5PF/pUKsaM5T1W6xA+sCxWvQptmfJRDBheLU73XBWs=; b=aknFJy3Ujuo6Pq
+	n/jQyoRg8uee2jfTWDfWKLrYxGEdRUAHUZp5ZwU0ScGRvgyb3te1fvLQqAbWHPE81s0G5oDJszcYE
+	XZg7OI0zBFdvQ6jYf/lfilHCSn6V8TqeIvChA0SMHYSx+c95QTZrv3PVvVMQp9Qcgc5DYdMPXviFf
+	wb3i6ahCUTURKlEtuDlq8HNVC8gSe9Byay1dVMuH8F24pa/f4rmqWd8v86Fuk26OJKBFiGPj+di2z
+	oCml7jULj4w6GCvrj9z3pkHLl5uGBwNi57tRpKFs4qvyvQIEbVw3r9U2cMuzDc9o8mCSVgnQgu2Yq
+	SjWYQM/W+pamtfFfyXzw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hi8xN-0004j0-6D; Tue, 02 Jul 2019 02:55:45 +0000
-Received: from mail-pl1-x644.google.com ([2607:f8b0:4864:20::644])
+	id 1hi98z-0007rY-1i; Tue, 02 Jul 2019 03:07:45 +0000
+Received: from mail-pg1-x543.google.com ([2607:f8b0:4864:20::543])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hi8xB-0004iT-C2
- for linux-arm-kernel@lists.infradead.org; Tue, 02 Jul 2019 02:55:34 +0000
-Received: by mail-pl1-x644.google.com with SMTP id cl9so8314863plb.10
+ id 1hi98n-0007rF-HE
+ for linux-arm-kernel@lists.infradead.org; Tue, 02 Jul 2019 03:07:34 +0000
+Received: by mail-pg1-x543.google.com with SMTP id m4so6953962pgk.0
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 01 Jul 2019 19:55:32 -0700 (PDT)
+ Mon, 01 Jul 2019 20:07:32 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=date:from:subject:to:cc:references:in-reply-to:mime-version
  :user-agent:message-id:content-transfer-encoding;
- bh=yh72SMFSBekrHMHAzJEsEH43qcxL2exqJGEt88fMstM=;
- b=OQloBSmLK7yZ68Nmhh3ZNo6BLX04mI8FD6n8AeTw37MNwj0uMNbWidDAheX5FJ/Znt
- FRzI3+hb/f6xTgs8hr0qR9TZ9OHETLisz4gXDouc1TOgihYQlbeV4GUgK1BwxOdpvGMc
- hGQj+HGKUJUHtHB1LSlUfu6YD9ajCK+Jq5Giva1slXFpNcXTmhPFtFKvyolKV+VnvwCs
- +mcnr4ORNAQD3T8DPa0Izny+94iWrnftJZ5i+foB8mwBago8ICdTU4o6YjGfQgtq2Gjs
- 0fIyhWwDKZdJk7d3KDG2qYX7D/1tuC7vaBUyAchhzuMG+JtMHLXqu3nFv+R8NsJW09zS
- 9omA==
+ bh=JEjj/PPo3yxC7A/OXv38wkR3+utyXU9OEcFxU+K+Oro=;
+ b=Al5//5gOeoq+S2jUF4fWN70LRFW/gTgt2BAn2B0baRvM15+mvep+e5s4otLVXnFidS
+ xBIE1sEHhvdBjGVQNKvZJxJgS3UdF4SDPQWO2bZ1qZ6vVx4wQIRlG/Q0PHTSe7GdH1CN
+ 9cMVFo4aSiPy+/dKIODZEmbH7MLbzA/dmpvmep3x/AmEilTks2v/Y+pWLjIn9LQ0PH9R
+ y3GTlAck0dxdUgSPhIuZPl2WokIMtkaDzckYgT3LAIei69JVQwqvYIY52W+nZxNG0pqj
+ e8Okec5QN1hZ74rwLSruZokYUZf+wjNVH5HrnYrKVrKxKFTKrXBjDp1EUoQxYsO+hF7X
+ 1bMg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:subject:to:cc:references:in-reply-to
  :mime-version:user-agent:message-id:content-transfer-encoding;
- bh=yh72SMFSBekrHMHAzJEsEH43qcxL2exqJGEt88fMstM=;
- b=bgmdoiYsqeuyUxobORYtbUoKaWIgNAPEbXgNuxmS0Refe0ii2aJBy+Ijwj/OZVjwml
- 1KsGpqCa5qVXZ+HrVg9GLncOFqOOKv5B9onAvuTgdzwYDXmpckAio/J6/6bhtHURLieY
- DQ5FQP0C331PKGOFDWrijZmSoqnTUmZWQU7zm5+UwNG2zEuSdRFfvvERyZLaupPPrOME
- vWgjwAwv997R5d9AUZi4GmPIqXjVK/avykfZpC1JJHokBBEtXdtFhGlvEK+CEIi/9GC9
- abtw0j4P2a0641gbn5ZWrBLUPM7CIHitNClbnMN3RaGjjOIljKk1aMi20xYCC9FEeEKI
- /Sfg==
-X-Gm-Message-State: APjAAAVVq4P9Oo1qDJCqGLd010uZvxkJYxZsczQcQjAAyuaZbCwo9qP0
- AE2Uqhueb3E14RqqSHuRgPpN1JDy
-X-Google-Smtp-Source: APXvYqx4btuHxQBeOFukhSzSKKwHsk18ZBVKxKzevK0qIIRUp7DmMiBws+GtDKL9X7ZhzyJrivZoIg==
-X-Received: by 2002:a17:902:f204:: with SMTP id
- gn4mr32852271plb.3.1562036132165; 
- Mon, 01 Jul 2019 19:55:32 -0700 (PDT)
+ bh=JEjj/PPo3yxC7A/OXv38wkR3+utyXU9OEcFxU+K+Oro=;
+ b=H5LgV6fz22d2tghN2jcQYuM/OrQUFLgm+jibDItjTVKTe641zwtYo9NNSaqRc4sN43
+ apJ7AsyGYm7VxUKdJzOvb4u2R/fWaseW++W7nqqvY3DlY6cxFiq2jVuTtZmZ3UVqsCqk
+ fRGiIwQG6V2uqX4Am9EBAyhDmGp9J87i4jP7l5Ym8ISWAhmHYhtn2lQ2SeOAhd08/8Pn
+ uFaFScJxpRsOLwDGa00jAM464GFyAfi6GR256o9E/1b0Qa6I5+mgYVNip3/lI4O3We6P
+ 1qlrg3WBN20fl8mPLigEnm96dgCm6/iYIM6g4SKNmEICd/TSkKaNao492AUi5FfdDnWj
+ JpKg==
+X-Gm-Message-State: APjAAAXSfHenNwR5ggOlkifluudnGStR+qCcTEqqmGAVjop82kSbkDEf
+ nlBFq3l8DJ1aUhJw2Tqh0UU=
+X-Google-Smtp-Source: APXvYqxOVg0HFcmLKK0QMTMU/kWLAUMGqHvjW+x4ulftF7VETnHP5SSk6O+UdayEdNaJVHGmMdn0Lw==
+X-Received: by 2002:a65:6102:: with SMTP id z2mr27238296pgu.194.1562036851675; 
+ Mon, 01 Jul 2019 20:07:31 -0700 (PDT)
 Received: from localhost ([175.45.73.101])
- by smtp.gmail.com with ESMTPSA id cq4sm769147pjb.23.2019.07.01.19.55.30
+ by smtp.gmail.com with ESMTPSA id f11sm10274123pga.59.2019.07.01.20.07.30
  (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Mon, 01 Jul 2019 19:55:31 -0700 (PDT)
-Date: Tue, 02 Jul 2019 12:55:12 +1000
+ Mon, 01 Jul 2019 20:07:30 -0700 (PDT)
+Date: Tue, 02 Jul 2019 13:07:11 +1000
 From: Nicholas Piggin <npiggin@gmail.com>
-Subject: Re: [PATCH v2 1/3] arm64: mm: Add p?d_large() definitions
-To: "linux-mm @ kvack . org" <linux-mm@kvack.org>, Steven Price
- <steven.price@arm.com>
-References: <20190701064026.970-1-npiggin@gmail.com>
- <20190701064026.970-2-npiggin@gmail.com>
- <0a3e0833-908d-b7eb-e6e7-6413b2e37094@arm.com>
-In-Reply-To: <0a3e0833-908d-b7eb-e6e7-6413b2e37094@arm.com>
+Subject: Re: Re: [PATCH 1/3] arm64: mm: Add p?d_large() definitions
+To: Steven Price <steven.price@arm.com>, Will Deacon <will@kernel.org>
+References: <20190623094446.28722-1-npiggin@gmail.com>
+ <20190623094446.28722-2-npiggin@gmail.com>
+ <20190701092756.s4u5rdjr7gazvu66@willie-the-truck>
+ <3d002af8-d8cd-f750-132e-12109e1e3039@arm.com>
+ <20190701101510.qup3nd6vm6cbdgjv@willie-the-truck>
+In-Reply-To: <20190701101510.qup3nd6vm6cbdgjv@willie-the-truck>
 MIME-Version: 1.0
 User-Agent: astroid/0.14.0 (https://github.com/astroidmail/astroid)
-Message-Id: <1562035876.apiyxfrmrw.astroid@bobo.none>
+Message-Id: <1562036522.cz5nnz6ri2.astroid@bobo.none>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190701_195533_415603_C5D291AC 
-X-CRM114-Status: GOOD (  15.86  )
+X-CRM114-CacheID: sfid-20190701_200733_599761_5BBE9930 
+X-CRM114-Status: UNSURE (   9.56  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:644 listed in]
- [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider (npiggin[at]gmail.com)
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:543 listed in]
+ [list.dnswl.org]
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -107,63 +108,34 @@ Cc: Christophe Leroy <christophe.leroy@c-s.fr>,
  Ard Biesheuvel <ard.biesheuvel@linaro.org>,
  Catalin Marinas <catalin.marinas@arm.com>,
  Anshuman Khandual <anshuman.khandual@arm.com>,
- Will Deacon <will.deacon@arm.com>, Andrew Morton <akpm@linux-foundation.org>,
- "linuxppc-dev @ lists . ozlabs . org" <linuxppc-dev@lists.ozlabs.org>,
- "linux-arm-kernel @ lists . infradead . org"
- <linux-arm-kernel@lists.infradead.org>
+ Will Deacon <will.deacon@arm.com>, linux-mm@kvack.org,
+ Andrew Morton <akpm@linux-foundation.org>, linuxppc-dev@lists.ozlabs.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Steven Price's on July 1, 2019 7:57 pm:
-> On 01/07/2019 07:40, Nicholas Piggin wrote:
->> walk_page_range() is going to be allowed to walk page tables other than
->> those of user space. For this it needs to know when it has reached a
->> 'leaf' entry in the page tables. This information will be provided by the
->> p?d_large() functions/macros.
->> 
->> For arm64, we already have p?d_sect() macros which we can reuse for
->> p?d_large().
->> 
->> pud_sect() is defined as a dummy function when CONFIG_PGTABLE_LEVELS < 3
->> or CONFIG_ARM64_64K_PAGES is defined. However when the kernel is
->> configured this way then architecturally it isn't allowed to have a
->> large page that this level, and any code using these page walking macros
->> is implicitly relying on the page size/number of levels being the same as
->> the kernel. So it is safe to reuse this for p?d_large() as it is an
->> architectural restriction.
->> 
->> Cc: Catalin Marinas <catalin.marinas@arm.com>
->> Cc: Will Deacon <will.deacon@arm.com>
->> Signed-off-by: Steven Price <steven.price@arm.com>
-> 
-> Hi Nicolas,
-> 
-> This appears to my patch which I originally posted as part of converting
-> x86/arm64 to use a generic page walk code[1].
+Will Deacon's on July 1, 2019 8:15 pm:
+> On Mon, Jul 01, 2019 at 11:03:51AM +0100, Steven Price wrote:
+>> On 01/07/2019 10:27, Will Deacon wrote:
+>> > On Sun, Jun 23, 2019 at 07:44:44PM +1000, Nicholas Piggin wrote:
+>> >> walk_page_range() is going to be allowed to walk page tables other than
+>> >> those of user space. For this it needs to know when it has reached a
+>> >> 'leaf' entry in the page tables. This information will be provided by the
+>> >> p?d_large() functions/macros.
+>> > 
+>> > I can't remember whether or not I asked this before, but why not call
+>> > this macro p?d_leaf() if that's what it's identifying? "Large" and "huge"
+>> > are usually synonymous, so I find this naming needlessly confusing based
+>> > on this patch in isolation.
 
-Hey, yeah it is, I'd intended to mark you as the author but must have
-forgot to change it in git.
-
-> I'm not sure that this
-> patch makes much sense on its own, in particular it was working up to
-> having a generic macro[2] which means the _large() macros could be used
-> across all architectures.
-
-It goes with this series which makes _large macros usable for archs
-that define HUGE_VMAP. I posted the same thing earlier and Anshuman
-noted you'd done it too so I deferred to yours (I thought it would
-go via arm64 tree and that this would just allow Andrew to easily
-reconcile the merge).
-
-If your series is not going upstream this time then the changelog
-probably doesn't make so much sense, so I could just send my version
-to the arm64 tree.
+Those page table macro names are horrible. Large, huge, leaf, wtf?
+They could do with a sensible renaming. But this series just follows
+naming that's alreay there on x86.
 
 Thanks,
 Nick
-
 
 _______________________________________________
 linux-arm-kernel mailing list
