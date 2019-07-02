@@ -2,108 +2,106 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 611075C985
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  2 Jul 2019 08:48:40 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7A7A05C9CC
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  2 Jul 2019 09:11:33 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=6K+F1arnsXiX9AMmgsKBoqk2EcWBum+CTP/wWUTaZuc=; b=rw1mHdS2W3buI3
-	YoNO0yywKosT7F1dQ2guv+aZAh1dVYpbhNqT8IJMYWsXJCEfgI1q2sLvJtIJHdPJcULAcLw8TR/p9
-	9zI6zyzMVuuuBLZYumkayrVY0hzjUwsSS45tPQG4LnHX7vOjVhxrZUITIZxsoJdxJYuwZQy9GyvZb
-	SSJgT5Pm8fD6NWYlDz+WwLGA745kpI1zOJ9uRkgCfGCwRlJBO1W2xumJbyE8MgwmVuomIUwpuu0OY
-	E4k1orCT4j72W/WHwmFW8V3a+0cHtUp4B3dzQ3BL5BwXdAJIiVW8JyNeZRpZaNqqLLRNBZn7+nAnM
-	R7j4Z77PkEYeeLzpeEjg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
+	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=6eY2unxD4HgmqqGF+HfO17jFtRTu426gNHKJfJe7IEo=; b=f85BYBwsDjLxZD
+	X4ehoffa9lRS2uOU3aBj0SrHh0T4jW6a+y+4MLOMEzMqEeyLlDx2hV0VK2ofEYSyzsvMR7Rw+Jasl
+	V3OgwMm2ZkLds85aIprhOmjjxS5l0jaJPg7n59VaqEkGADSu3R4WDR5P5sNJq4OTA2cXLr5Mv+xif
+	feM18j90BxJfgJlhJ7GtukSQU6lG3FQ4GZojzrzUCZtH+NYaP2y5oz3UTcPbl7pC4dJfNcvxnW2Dx
+	F/XbWmPMWnZYsMEzCBKaCn+v50GOGFj3EUxhY9vlABr0HKJAeC+UInwnJ2gzM6OYnUMGryjkVajXw
+	7XTk8EyymsH7edIY/tAQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hiCak-0005Vc-Mj; Tue, 02 Jul 2019 06:48:38 +0000
-Received: from youngberry.canonical.com ([91.189.89.112])
+	id 1hiCwn-0004fc-JH; Tue, 02 Jul 2019 07:11:26 +0000
+Received: from mail-eopbgr40084.outbound.protection.outlook.com ([40.107.4.84]
+ helo=EUR03-DB5-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hiCaW-0005UV-Gy
- for linux-arm-kernel@lists.infradead.org; Tue, 02 Jul 2019 06:48:26 +0000
-Received: from cpc129250-craw9-2-0-cust139.know.cable.virginm.net
- ([82.43.126.140] helo=[192.168.0.10])
- by youngberry.canonical.com with esmtpsa (TLS1.0:RSA_AES_128_CBC_SHA1:16)
- (Exim 4.76) (envelope-from <colin.king@canonical.com>)
- id 1hiCaQ-0003VS-53; Tue, 02 Jul 2019 06:48:18 +0000
-Subject: Re: [PATCH] net: stmmac: add sanity check to
- device_property_read_u32_array call
-To: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
-References: <20190617165836.4673-1-colin.king@canonical.com>
- <20190619051308.23582-1-martin.blumenstingl@googlemail.com>
- <92f9e5a6-d2a2-6bf2-ff8a-2430fe977f93@canonical.com>
- <CAFBinCDmYVPDMcwAAYhMfxxuTsG=xunduN58_8e20zE_Mhmb7Q@mail.gmail.com>
- <CAFBinCC-LLpfXQRFcKBbUpCfKc0S9Xtt60QrhEThsOFV-T7vFw@mail.gmail.com>
- <c46d2d17-c35b-46f0-0674-0c55bea3a272@canonical.com>
- <CAFBinCBk5aPVE+vq5px3QKS1T_R=WGXXxEJMC9X676KGvi9jdg@mail.gmail.com>
- <26646ff1-059f-fb2d-e05d-43009aeb2150@canonical.com>
- <CAFBinCAx5qrPK1z68bF-tGKpJQfKLnee65qBOxMS4nj8t381+Q@mail.gmail.com>
- <CAFBinCCpJLSQiUeqpQTKQDgjy7-ROgjYa913Xe1My_oc6miTzw@mail.gmail.com>
-From: Colin Ian King <colin.king@canonical.com>
-Openpgp: preference=signencrypt
-Autocrypt: addr=colin.king@canonical.com; prefer-encrypt=mutual; keydata=
- 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
-Message-ID: <ae0207d3-6523-c197-d5b1-bdafafb800f9@canonical.com>
-Date: Tue, 2 Jul 2019 07:48:17 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.7.2
-MIME-Version: 1.0
-In-Reply-To: <CAFBinCCpJLSQiUeqpQTKQDgjy7-ROgjYa913Xe1My_oc6miTzw@mail.gmail.com>
+ id 1hiCwP-0004ex-Az
+ for linux-arm-kernel@lists.infradead.org; Tue, 02 Jul 2019 07:11:03 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=Ml8b3bmleiJ+EnnNbsC/cfZEUZOZ5DfDOhuK5hwN9zM=;
+ b=TqJ+1FtaPs4svkf9KHdXrh6I8tNfzC5TnaXXznLb/qDMh9qddsD9vpyQyZrnP9p5Si24xvQqSQ1bfSibyCi6GD6NufjpNnF2qmbX5LslPk59W7CiNkkMZ1xU1O5SMRdAurjgXZy6PHr8ZxWTtOWITWPkSNwbfS8cLbJmgeQGXLE=
+Received: from AM0PR04MB5779.eurprd04.prod.outlook.com (20.178.202.151) by
+ AM0PR04MB4659.eurprd04.prod.outlook.com (52.135.144.150) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2032.20; Tue, 2 Jul 2019 07:10:55 +0000
+Received: from AM0PR04MB5779.eurprd04.prod.outlook.com
+ ([fe80::a126:d121:200:367]) by AM0PR04MB5779.eurprd04.prod.outlook.com
+ ([fe80::a126:d121:200:367%7]) with mapi id 15.20.2032.019; Tue, 2 Jul 2019
+ 07:10:55 +0000
+From: Abel Vesa <abel.vesa@nxp.com>
+To: Anson Huang <anson.huang@nxp.com>
+Subject: Re: [PATCH 1/2] arm64: dts: imx8mq: Add gpio-ranges property
+Thread-Topic: [PATCH 1/2] arm64: dts: imx8mq: Add gpio-ranges property
+Thread-Index: AQHVMHjq3v4Y93P/8kSdLqwCVV5mEqa26aEA
+Date: Tue, 2 Jul 2019 07:10:55 +0000
+Message-ID: <20190702071054.t7v4fis436klmgdv@fsr-ub1664-175>
+References: <20190702014400.33554-1-Anson.Huang@nxp.com>
+In-Reply-To: <20190702014400.33554-1-Anson.Huang@nxp.com>
+Accept-Language: en-US
 Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=abel.vesa@nxp.com; 
+x-originating-ip: [89.37.124.34]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: e9c79e1b-52b7-457e-c958-08d6febc6cca
+x-ms-office365-filtering-ht: Tenant
+x-microsoft-antispam: BCL:0; PCL:0;
+ RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600148)(711020)(4605104)(1401327)(4618075)(2017052603328)(7193020);
+ SRVR:AM0PR04MB4659; 
+x-ms-traffictypediagnostic: AM0PR04MB4659:
+x-microsoft-antispam-prvs: <AM0PR04MB4659EA7D8730C11BD0287DF7F6F80@AM0PR04MB4659.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:291;
+x-forefront-prvs: 008663486A
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(4636009)(7916004)(376002)(136003)(346002)(39860400002)(396003)(366004)(199004)(189003)(4326008)(256004)(26005)(66556008)(186003)(1076003)(5660300002)(66476007)(66946007)(6862004)(25786009)(91956017)(76116006)(64756008)(14454004)(66066001)(6506007)(6116002)(99286004)(76176011)(3846002)(86362001)(68736007)(53546011)(102836004)(6636002)(6486002)(305945005)(2906002)(73956011)(229853002)(8936002)(66446008)(53936002)(6246003)(8676002)(54906003)(81156014)(81166006)(316002)(9686003)(6512007)(486006)(478600001)(476003)(6436002)(7416002)(44832011)(71190400001)(71200400001)(11346002)(446003)(7736002)(33716001)(32563001);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:AM0PR04MB4659;
+ H:AM0PR04MB5779.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; A:1; MX:1; 
+received-spf: None (protection.outlook.com: nxp.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam-message-info: ComcYnyxFhySALoTX5PEsZQpWkkN/p8wk6gTcvt3jW+3khhBp2I1MuOntVhDfrSC0SUwoH6LBikWyd4+IhJRvO+CKVMzu2dGfBqqL5nUQXPj7phrvVygY3k+eVCOaM+TuOP2/b5GeXny5gpunsOf4Gy2PZiQnCbUDLPx956LBVi9Kl1DIbPXys1cXycaRFSHTMMnRUTOxX5LbObeVBoO7MOoqVF+jRzBKjmbiGiG7W5rUJjGKNAzV+40PJK0jbRnzBPVsRfmA+6OGhC9PxZNCZPBA2sCPX2IbCOO3Al+7K5sVQCl5PqP5wYJCj7fLEUiHMnwAbELlKUzjLGl51T9NOeS7grlBVCkHjh8E75vpJZBjJrD00KY9GyM/sr+KVD2PUIRTeAjxqi9i1z3cdyTCKdeVXEJVtL6q0y1HHu80t4=
+Content-ID: <61459D010418E24189C3AAB936B4F9BA@eurprd04.prod.outlook.com>
+MIME-Version: 1.0
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: e9c79e1b-52b7-457e-c958-08d6febc6cca
+X-MS-Exchange-CrossTenant-originalarrivaltime: 02 Jul 2019 07:10:55.1010 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: abel.vesa@nxp.com
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM0PR04MB4659
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190701_234824_701698_E35BBDBD 
-X-CRM114-Status: GOOD (  17.61  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20190702_001101_503734_E0E591D6 
+X-CRM114-Status: GOOD (  12.55  )
+X-Spam-Score: -0.3 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-0.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [91.189.89.112 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.1 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [40.107.4.84 listed in wl.mailspike.net]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [40.107.4.84 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -115,87 +113,90 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: alexandre.torgue@st.com, netdev@vger.kernel.org,
- kernel-janitors@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-stm32@st-md-mailman.stormreply.com, joabreu@synopsys.com,
- mcoquelin.stm32@gmail.com, peppe.cavallaro@st.com, davem@davemloft.net,
- linux-arm-kernel@lists.infradead.org
+Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ Jacky Bai <ping.bai@nxp.com>, "ccaione@baylibre.com" <ccaione@baylibre.com>,
+ "andrew.smirnov@gmail.com" <andrew.smirnov@gmail.com>,
+ "shawnguo@kernel.org" <shawnguo@kernel.org>,
+ "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
+ "angus@akkea.ca" <angus@akkea.ca>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Daniel Baluta <daniel.baluta@nxp.com>,
+ "robh+dt@kernel.org" <robh+dt@kernel.org>, dl-linux-imx <linux-imx@nxp.com>,
+ "kernel@pengutronix.de" <kernel@pengutronix.de>,
+ "viresh.kumar@linaro.org" <viresh.kumar@linaro.org>,
+ Leonard Crestez <leonard.crestez@nxp.com>,
+ "festevam@gmail.com" <festevam@gmail.com>, "agx@sigxcpu.org" <agx@sigxcpu.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ "l.stach@pengutronix.de" <l.stach@pengutronix.de>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 01/07/2019 23:43, Martin Blumenstingl wrote:
-> On Fri, Jun 28, 2019 at 6:05 PM Martin Blumenstingl
-> <martin.blumenstingl@googlemail.com> wrote:
->>
->> Hi Colin,
->>
->> On Fri, Jun 28, 2019 at 10:32 AM Colin Ian King
->> <colin.king@canonical.com> wrote:
->>>
->>> On 28/06/2019 05:15, Martin Blumenstingl wrote:
->>>> On Tue, Jun 25, 2019 at 9:58 AM Colin Ian King <colin.king@canonical.com> wrote:
->>>>>
->>>>> On 25/06/2019 05:44, Martin Blumenstingl wrote:
->>>>>> Hi Colin,
->>>>>>
->>>>>> On Thu, Jun 20, 2019 at 3:34 AM Martin Blumenstingl
->>>>>> <martin.blumenstingl@googlemail.com> wrote:
->>>>>>>
->>>>>>> Hi Colin,
->>>>>>>
->>>>>>> On Wed, Jun 19, 2019 at 8:55 AM Colin Ian King <colin.king@canonical.com> wrote:
->>>>>>>>
->>>>>>>> On 19/06/2019 06:13, Martin Blumenstingl wrote:
->>>>>>>>> Hi Colin,
->>>>>>>>>
->>>>>>>>>> Currently the call to device_property_read_u32_array is not error checked
->>>>>>>>>> leading to potential garbage values in the delays array that are then used
->>>>>>>>>> in msleep delays.  Add a sanity check to the property fetching.
->>>>>>>>>>
->>>>>>>>>> Addresses-Coverity: ("Uninitialized scalar variable")
->>>>>>>>>> Signed-off-by: Colin Ian King <colin.king@canonical.com>
->>>>>>>>> I have also sent a patch [0] to fix initialize the array.
->>>>>>>>> can you please look at my patch so we can work out which one to use?
->>>>>>>>>
->>>>>>>>> my concern is that the "snps,reset-delays-us" property is optional,
->>>>>>>>> the current dt-bindings documentation states that it's a required
->>>>>>>>> property. in reality it isn't, there are boards (two examples are
->>>>>>>>> mentioned in my patch: [0]) without it.
->>>>>>>>>
->>>>>>>>> so I believe that the resulting behavior has to be:
->>>>>>>>> 1. don't delay if this property is missing (instead of delaying for
->>>>>>>>>    <garbage value> ms)
->>>>>>>>> 2. don't error out if this property is missing
->>>>>>>>>
->>>>>>>>> your patch covers #1, can you please check whether #2 is also covered?
->>>>>>>>> I tested case #2 when submitting my patch and it worked fine (even
->>>>>>>>> though I could not reproduce the garbage values which are being read
->>>>>>>>> on some boards)
->>>>>> in the meantime I have tested your patch.
->>>>>> when I don't set the "snps,reset-delays-us" property then I get the
->>>>>> following error:
->>>>>>   invalid property snps,reset-delays-us
->>>>>>
->>>>>> my patch has landed in the meantime: [0]
->>>>>> how should we proceed with your patch?
->>>
->>> Your fix is good, so I think we should just drop/forget about my fix.
->> thank you for looking at the situation
->>
->> as far I understand the -net/-net-next tree all commits are immutable
->> so if we want to remove your patch we need to send a revert
->> do you want me to do that (I can do it on Monday) or will you take care of that?
-> I just sent the patch: [0]
-
-Thank you, much appreciated.
+On 19-07-02 09:43:59, Anson.Huang@nxp.com wrote:
+> From: Anson Huang <Anson.Huang@nxp.com>
 > 
+> Add "gpio-ranges" property to establish connections between GPIOs
+> and PINs on i.MX8MQ pinctrl driver.
 > 
-> [0] https://patchwork.ozlabs.org/patch/1125686/
+> Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
+
+For both patches:
+
+Reviewed-by: Abel Vesa <abel.vesa@nxp.com>
+
+> ---
+>  arch/arm64/boot/dts/freescale/imx8mq.dtsi | 5 +++++
+>  1 file changed, 5 insertions(+)
 > 
-
-
+> diff --git a/arch/arm64/boot/dts/freescale/imx8mq.dtsi b/arch/arm64/boot/dts/freescale/imx8mq.dtsi
+> index 477c523..3187428 100644
+> --- a/arch/arm64/boot/dts/freescale/imx8mq.dtsi
+> +++ b/arch/arm64/boot/dts/freescale/imx8mq.dtsi
+> @@ -287,6 +287,7 @@
+>  				#gpio-cells = <2>;
+>  				interrupt-controller;
+>  				#interrupt-cells = <2>;
+> +				gpio-ranges = <&iomuxc 0 10 30>;
+>  			};
+>  
+>  			gpio2: gpio@30210000 {
+> @@ -299,6 +300,7 @@
+>  				#gpio-cells = <2>;
+>  				interrupt-controller;
+>  				#interrupt-cells = <2>;
+> +				gpio-ranges = <&iomuxc 0 40 21>;
+>  			};
+>  
+>  			gpio3: gpio@30220000 {
+> @@ -311,6 +313,7 @@
+>  				#gpio-cells = <2>;
+>  				interrupt-controller;
+>  				#interrupt-cells = <2>;
+> +				gpio-ranges = <&iomuxc 0 61 26>;
+>  			};
+>  
+>  			gpio4: gpio@30230000 {
+> @@ -323,6 +326,7 @@
+>  				#gpio-cells = <2>;
+>  				interrupt-controller;
+>  				#interrupt-cells = <2>;
+> +				gpio-ranges = <&iomuxc 0 87 32>;
+>  			};
+>  
+>  			gpio5: gpio@30240000 {
+> @@ -335,6 +339,7 @@
+>  				#gpio-cells = <2>;
+>  				interrupt-controller;
+>  				#interrupt-cells = <2>;
+> +				gpio-ranges = <&iomuxc 0 119 30>;
+>  			};
+>  
+>  			tmu: tmu@30260000 {
+> -- 
+> 2.7.4
+> 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
