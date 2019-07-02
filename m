@@ -2,97 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8B9165CCE3
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  2 Jul 2019 11:49:06 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 57FA05CCE7
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  2 Jul 2019 11:49:53 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
 	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
 	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=lQgYK0+LOuLrawa/irgcEvAnSasw2DEkUa1Ve/2mIqY=; b=iAAmrPKiodFnKjMOm83Nuxbgs
-	bqVsw2gHjmX/7+TlXx7i/ePuASnWDwNIq1iIAObay4a+yHHvWhkoy8KLwkLg5YTovvVPcckjrgR0x
-	L5rb3oJ6GQmWzzmBTloVBmVQvgPkYDu8wVz8OoPHcmCMLgu06L7zyUO1SmQU+lv3Y59Jy70B/8GXu
-	LvCKVp2RBH1kTeMrSPVbBxJOH/fJ4WZp/z3QWYbDduLLLvonLFGIFo3Kfy+W6bvf4mslKjuuCdUS7
-	gZnMDeHW/E16YtbbmoWTpKX8UMW6/hK/2JaGMyzs3YwAbMbd7FwYeKuYTLvyWli08dzwGjXeOePO7
-	ghNkT1z2w==;
+	 bh=Qbpbv1xuR3NvkWpW0tkFTYO6L/cq4c6lDgadigxX2OE=; b=tGSYxXG8AV1J/yYJXiVD+0rui
+	IvvaJDNYsZr4u/TwNnSFNukY61jmaCs1LLK77jXQy8XZvyrSgkBpSlQLT9B+DwTfMVFc219XtlEpL
+	bL4UjZP5cqCUvI7UjuUjyzBrwEaIrKgQ5+nxP1emyyvrg4a/Zr826GUe5KXUH9JRQtbWu+ThZA3AO
+	Ywh+p+BbZZISvn79jKMFtTAB8OFiZaHau5Ct0a74WMLMPdm20oEK/fPrd/0JHQDqIizy7bS8lI78Q
+	+1a44O+TP+eHibpAQB+PChGhWd7PGW+2jB9MmBwnx1kkVvt89r3Sfksn07ecyY54hPFJjsp61E93J
+	o6u9lEiLA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hiFPM-0003N2-OV; Tue, 02 Jul 2019 09:49:04 +0000
-Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hiFP8-0003Md-Bp
- for linux-arm-kernel@lists.infradead.org; Tue, 02 Jul 2019 09:48:51 +0000
-Received: by mail-wr1-x441.google.com with SMTP id c27so9311927wrb.2
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 02 Jul 2019 02:48:49 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=broadcom.com; s=google;
- h=subject:to:cc:references:from:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=UdYCIZGQ7tAt7A88vWqWA422Qpx5IuQReKn9P3m3xX8=;
- b=PZuM9EJbQb3YhMp+qaw+VF6BwkhSSyYMquhljCcVZSO+tjIcy06ofVIGPbwYNmREXi
- pRcuGFWqgU+nSlEobDVIi97m26fD20LGHZVCL/m/+eGewb0yAO7NlvlF/9gBYN5Rgy0B
- UVcUnIeulg2Ui8pzjNF76wVB55J/p/3pN/YrI=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=UdYCIZGQ7tAt7A88vWqWA422Qpx5IuQReKn9P3m3xX8=;
- b=U+9mEJs095sJv9BAn19AI1+1/fsNGS+Y3gqm1I5+neCKrDC9cAFvNrpTVAEPF1qje1
- CrSBZPgHecq26t9YqXgQvpn/Tu8FwpQXVIBzMoVOFcqmXDBxxAYjrke1l4zl4V+1O7jd
- 4PrhdQ75CzH9Z05HW91VpzxwDX0S2ox0DREQyG6AZGbsUl+SFMJDm7karxOyiOz+ScOv
- aemceHznAdydO316XLf9qx1+9ljzimv0LWilUTP+27xgVjCdF4ue+3lDIAhWE3egNDjN
- FA9ruPBzUJ0KqkIlJFz1yVqnpN/egbQCeJiShlcg6/sY98NloPHxzeS4mnChfmXE/V5/
- Nutw==
-X-Gm-Message-State: APjAAAWCh5fCMkQQBDsUCNfQkaq17rg789CIU7ZqAmbx/7gzoGz2fVpm
- uuOlxXcdSSqO+x5C4qbZ+NmjLg==
-X-Google-Smtp-Source: APXvYqw+cs3wphtlInYiqa/iYYLL5YBkbuaWsrCFwdpkqDK8kfUrPvl8YI8TNOvUo+26MvPNs1E1Ng==
-X-Received: by 2002:adf:9487:: with SMTP id 7mr9588274wrr.114.1562060928176;
- Tue, 02 Jul 2019 02:48:48 -0700 (PDT)
-Received: from [10.176.68.244] ([192.19.248.250])
- by smtp.gmail.com with ESMTPSA id l124sm2421987wmf.36.2019.07.02.02.48.46
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Tue, 02 Jul 2019 02:48:47 -0700 (PDT)
-Subject: Re: use exact allocation for dma coherent memory
-To: Christoph Hellwig <hch@lst.de>,
- Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
- Maxime Ripard <maxime.ripard@bootlin.com>, Sean Paul <sean@poorly.run>,
- David Airlie <airlied@linux.ie>, Daniel Vetter <daniel@ffwll.ch>,
- Jani Nikula <jani.nikula@linux.intel.com>,
- Joonas Lahtinen <joonas.lahtinen@linux.intel.com>,
- Rodrigo Vivi <rodrigo.vivi@intel.com>, Ian Abbott <abbotti@mev.co.uk>,
- H Hartley Sweeten <hsweeten@visionengravers.com>
-References: <20190614134726.3827-1-hch@lst.de> <20190701084833.GA22927@lst.de>
-From: Arend Van Spriel <arend.vanspriel@broadcom.com>
-Message-ID: <74eb9d99-6aa6-d1ad-e66d-6cc9c496b2f3@broadcom.com>
-Date: Tue, 2 Jul 2019 11:48:44 +0200
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:60.0) Gecko/20100101
- Thunderbird/60.7.2
+	id 1hiFQ6-0003fb-MK; Tue, 02 Jul 2019 09:49:50 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hiFPq-0003et-PF
+ for linux-arm-kernel@lists.infradead.org; Tue, 02 Jul 2019 09:49:35 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 56C71344;
+ Tue,  2 Jul 2019 02:49:32 -0700 (PDT)
+Received: from [10.1.196.120] (e121650-lin.cambridge.arm.com [10.1.196.120])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 677CC3F718;
+ Tue,  2 Jul 2019 02:49:31 -0700 (PDT)
+Subject: Re: [RFC V3 12/18] arm64: assembler: Add macro to annotate asm
+ function having non standard stack-frame.
+To: Catalin Marinas <catalin.marinas@arm.com>
+References: <20190624095548.8578-1-raphael.gault@arm.com>
+ <20190624095548.8578-13-raphael.gault@arm.com>
+ <20190701144039.GD21774@arrakis.emea.arm.com>
+From: Raphael Gault <raphael.gault@arm.com>
+Message-ID: <7ddc9d27-e4ea-c07a-ad12-3fac59aeb4fc@arm.com>
+Date: Tue, 2 Jul 2019 10:49:30 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.6.1
 MIME-Version: 1.0
-In-Reply-To: <20190701084833.GA22927@lst.de>
+In-Reply-To: <20190701144039.GD21774@arrakis.emea.arm.com>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190702_024850_418979_79A7C4B0 
-X-CRM114-Status: GOOD (  15.84  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190702_024934_865806_858956C1 
+X-CRM114-Status: GOOD (  14.27  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:441 listed in]
- [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -104,54 +64,51 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devel@driverdev.osuosl.org, linux-s390@vger.kernel.org,
- Intel Linux Wireless <linuxwifi@intel.com>, linux-rdma@vger.kernel.org,
- netdev@vger.kernel.org, intel-gfx@lists.freedesktop.org,
- linux-wireless@vger.kernel.org, linux-kernel@vger.kernel.org,
- dri-devel@lists.freedesktop.org, linux-mm@kvack.org,
- iommu@lists.linux-foundation.org,
- "moderated list:ARM PORT" <linux-arm-kernel@lists.infradead.org>,
- linux-media@vger.kernel.org
+Cc: julien.thierry@arm.com, peterz@infradead.org, will.deacon@arm.com,
+ linux-kernel@vger.kernel.org, jpoimboe@redhat.com,
+ linux-arm-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
 Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Hi,
 
-
-On 7/1/2019 10:48 AM, Christoph Hellwig wrote:
-> On Fri, Jun 14, 2019 at 03:47:10PM +0200, Christoph Hellwig wrote:
->> Switching to a slightly cleaned up alloc_pages_exact is pretty easy,
->> but it turns out that because we didn't filter valid gfp_t flags
->> on the DMA allocator, a bunch of drivers were passing __GFP_COMP
->> to it, which is rather bogus in too many ways to explain.  Arm has
->> been filtering it for a while, but this series instead tries to fix
->> the drivers and warn when __GFP_COMP is passed, which makes it much
->> larger than just adding the functionality.
+On 7/1/19 3:40 PM, Catalin Marinas wrote:
+> On Mon, Jun 24, 2019 at 10:55:42AM +0100, Raphael Gault wrote:
+>> --- a/arch/arm64/include/asm/assembler.h
+>> +++ b/arch/arm64/include/asm/assembler.h
+>> @@ -752,4 +752,17 @@ USER(\label, ic	ivau, \tmp2)			// invalidate I line PoU
+>>   .Lyield_out_\@ :
+>>   	.endm
+>>   
+>> +	/*
+>> +	 * This macro is the arm64 assembler equivalent of the
+>> +	 * macro STACK_FRAME_NON_STANDARD define at
+>> +	 * ~/include/linux/frame.h
+>> +	 */
+>> +	.macro	asm_stack_frame_non_standard	func
+>> +#ifdef	CONFIG_STACK_VALIDATION
+>> +	.pushsection ".discard.func_stack_frame_non_standard"
+>> +	.8byte	\func
 > 
-> Dear driver maintainers,
+> Nitpicks:
 > 
-> can you look over the patches touching your drivers, please?  I'd
-> like to get as much as possible of the driver patches into this
-> merge window, so that it can you through your maintainer trees.
+> Does .quad vs .8byte make any difference?
+> 
 
-You made me look ;-) Actually not touching my drivers so I'm off the 
-hook. However, I was wondering if drivers could know so I decided to 
-look into the DMA-API.txt documentation which currently states:
+No it doesn't, I'll use .quad then.
 
-"""
-The flag parameter (dma_alloc_coherent() only) allows the caller to
-specify the ``GFP_`` flags (see kmalloc()) for the allocation (the
-implementation may choose to ignore flags that affect the location of
-the returned memory, like GFP_DMA).
-"""
+> Could we place this in include/linux/frame.h directly with a generic
+> name (and some __ASSEMBLY__ guards)? It doesn't look to be arm specific.
+> 
 
-I do expect you are going to change that description as well now that 
-you are going to issue a warning on __GFP_COMP. Maybe include that in 
-patch 15/16 where you introduce that warning.
+It might be more consistent indeed, I'll do that.
 
-Regards,
-Arend
+Thanks,
+
+-- 
+Raphael Gault
 
 _______________________________________________
 linux-arm-kernel mailing list
