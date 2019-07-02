@@ -2,59 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 001875CE40
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  2 Jul 2019 13:17:59 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6D8C25CE48
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  2 Jul 2019 13:21:16 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=twWuWfTMs5L6Vn1rpTzAMLa+Uu8pEsrdA9KvWpzszto=; b=Qb4Mg4VscDJseF
-	Lxpf1PbDq6onAzlf0Amx+I4/SqdOl7sQ2p122bXJcT0ZNrTDmOG0e+FMfkhty509eeO86gicRk2Q5
-	sunlh+vNisgwqWlcj7fzs2BsMk7CYaWNLpi6Cc3vIHYQZok0/BN/rMeqGnD8GR2HeAkBkDMgY+f61
-	XKlCrHiB3kXMyIzP6z6wBXQAKiFtA6TQW3TxYEYBX65pAKPHQ8gDoKbFWdioI+lzrI51Lypn6IGwj
-	58xIRDzc6D9ciJNPbCwOZRjr+lS6cP1fHn4u/7kIH3P0QnlqeU1zoj0NBXJ1VFW0qvcefGOIstpr6
-	tj5UNMK9iVFT/PF1qC9Q==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=cR/IYUB3rcf/YnjvqhobACLMMsE3caqKEXVCFxil4gU=; b=DsF49G2AAc+bQ4
+	zlko4/TGacLWZaHXSSefiJQbgct8C5Czz29V50yXsGE2U5bjBon2Vu4BsDdUtMm9DeE0LhnncKlJY
+	vujrvuB/Mbi0lV7Pcg4y21gigwAWemNvwgQHNw3VMBeY2gK8MLats880p6ILrcMWxJFT3AkfjI7Ok
+	2d4t3/+FvvZDdNqAR2MPtoAU6fSYSpcW8Hop7w8sfLEykm7YKYvKif/1rXyrL0QUErtAolTpgV3wb
+	ebhhsOrM9z0IVjydHHVYC0Q30o5D+cslxXwEuvn3GYR1WRR/XSbsLoqLeS+1Aa5Smdqulkbf5OQjf
+	DrfL7ArKeR0OWIBTP4/w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hiGnO-0003ze-Hi; Tue, 02 Jul 2019 11:17:58 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hiGnC-0003yO-5z
- for linux-arm-kernel@lists.infradead.org; Tue, 02 Jul 2019 11:17:48 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 1179E344;
- Tue,  2 Jul 2019 04:17:34 -0700 (PDT)
-Received: from e103592.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
- [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 250D13F246;
- Tue,  2 Jul 2019 04:17:33 -0700 (PDT)
-Date: Tue, 2 Jul 2019 12:17:31 +0100
-From: Dave Martin <Dave.Martin@arm.com>
-To: Mark Rutland <mark.rutland@arm.com>
-Subject: Re: [PATCHv2 3/3] arm64: stacktrace: better handle corrupted stacks
-Message-ID: <20190702111730.GO2790@e103592.cambridge.arm.com>
-References: <20190628154639.5308-1-mark.rutland@arm.com>
- <20190628154639.5308-4-mark.rutland@arm.com>
- <20190701105656.GM2790@e103592.cambridge.arm.com>
- <20190701125351.GE10975@lakrids.cambridge.arm.com>
- <20190701141619.GN2790@e103592.cambridge.arm.com>
- <20190701143300.GB31063@lakrids.cambridge.arm.com>
+	id 1hiGqY-0005XZ-GG; Tue, 02 Jul 2019 11:21:14 +0000
+Received: from mail-io1-xd41.google.com ([2607:f8b0:4864:20::d41])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hiGqM-0005XD-V0
+ for linux-arm-kernel@lists.infradead.org; Tue, 02 Jul 2019 11:21:04 +0000
+Received: by mail-io1-xd41.google.com with SMTP id e3so36020352ioc.12
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 02 Jul 2019 04:21:02 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:from:date:message-id:subject:to:cc;
+ bh=SWyq779/RJxz//9FsVhMFPivZnrtvx7eZyUyfwAdDXY=;
+ b=PTUdqlZqJ9AUdPgOFSXY8kPC0YhjibrXxkZ2YdPjiev9XKUi5vpwYUOD7wJiGIRZ4G
+ KGOz2C8TBbpmtON1S6Oc8lVi3HRsM6TfhA9qINLISuP8Y6dck/VNu6hIKMtieEoKkJ2x
+ v5HMmAuQGj8su13BMTWrnmmgVW8IfpzVm6q03dpmTM7U1uXpOQqMjvgbZe3mT1hDh2Zx
+ F1LCGr8GaROydu5ZsQSWaxJPaXH+pquFjU7vP0Z1XLIaqeXJVuRPGP8YdXPgWCrS7rva
+ 1qwxbKTqC4InDMM+6GeBZl+jOYFXF6QHtPdzXn3Mfm4Scm4NZbL5rVOwhfwlACKTrr1H
+ URvg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:from:date:message-id:subject:to:cc;
+ bh=SWyq779/RJxz//9FsVhMFPivZnrtvx7eZyUyfwAdDXY=;
+ b=ejQ8uXO+k4OmrFnMqciHJ+eh+Kggrjh/bZvqSRtXmfqO39ryglHCmylSSs4I14Hlqj
+ O0iYgxalIK1YR/VradJdDC2UqoIEPpVr2M9KYDo2zDh2hN887IBr8SlUkknNrSX8Ww5g
+ Z/eeNy5qdrmTP28pm/2OO0Jvl7XvNRx+Tib1Js0xul3b+Ys4Ao/hI1OCkm74teK8Uf0u
+ HxodR+taY/iqWnCpJAmDLyzBlcxZGS0g7vy57WvmhFk/J1b9Na6Z8ulAphScrKNjaiIF
+ sX4jWgJUPKfkb0dcLrxetnN9pE5/HMwO0FWPof2Zi9quH8Pkc7GP7xbnVexD09ShmS5O
+ myoA==
+X-Gm-Message-State: APjAAAWW/3sLI4GRV2UI/XxrNimTuFc6FtuL9QDMuRd1JUQBI4rV7Lbr
+ pC+Qp2UoCZGeLSDfkilrTFXC6Bsh8U2/IT2KKQ==
+X-Google-Smtp-Source: APXvYqy+Wg/jPo33TpqGxqxZfqir7nrBba55XY69+1Y0u7tYAuEjMvTCgUFHSBL/LbG5eCRubtZvZQcInbCi6+PuoqY=
+X-Received: by 2002:a02:b914:: with SMTP id v20mr34663761jan.83.1562066461826; 
+ Tue, 02 Jul 2019 04:21:01 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190701143300.GB31063@lakrids.cambridge.arm.com>
-User-Agent: Mutt/1.5.23 (2014-03-12)
+From: Avi Fishman <avifishman70@gmail.com>
+Date: Tue, 2 Jul 2019 14:20:18 +0300
+Message-ID: <CAKKbWA6SFgy=4+L4xXz7dy8OKFxtgZnqchzVuuq1XHXpC=2MnQ@mail.gmail.com>
+Subject: support for aarch64 + gic v2
+To: Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190702_041746_319746_D94590C1 
-X-CRM114-Status: GOOD (  41.66  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190702_042103_002734_60EFA7E8 
+X-CRM114-Status: UNSURE (   4.50  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:d41 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (avifishman70[at]gmail.com)
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (avifishman70[at]gmail.com)
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -66,258 +92,28 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: catalin.marinas@arm.com, tengfeif@codeaurora.org, will.deacon@arm.com,
- james.morse@arm.com, linux-arm-kernel@lists.infradead.org
+Cc: uri.trichter@nuvoton.com, Marc Zyngier <marc.zyngier@arm.com>,
+ Julien Thierry <julien.thierry@arm.com>, eyal.cohen@nuvoton.com,
+ Avi Fishman <avifishman70@gmail.com>, yoel.hayon@nuvoton.com,
+ Tomer Maimon <tomer.maimon@nuvoton.com>, ofer.eilon@nuvoton.com,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Jul 01, 2019 at 03:33:00PM +0100, Mark Rutland wrote:
-> On Mon, Jul 01, 2019 at 03:16:20PM +0100, Dave Martin wrote:
-> > On Mon, Jul 01, 2019 at 01:53:52PM +0100, Mark Rutland wrote:
-> > > On Mon, Jul 01, 2019 at 11:56:56AM +0100, Dave Martin wrote:
-> > > > On Fri, Jun 28, 2019 at 04:46:39PM +0100, Mark Rutland wrote:
-> > > > > The arm64 stacktrace code is careful to only dereference frame records
-> > > > > in valid stack ranges, ensuring that a corrupted frame record won't
-> > > > > result in a faulting access.
-> > > > > 
-> > > > > However, it's still possible for corrupt frame records to result in
-> > > > > infinite loops in the stacktrace code, which is also undesirable.
-> > > > > 
-> > > > > This patch ensures that we complete a stacktrace in finite time, by
-> > > > > keeping track of which stacks we have already completed unwinding, and
-> > > > > verifying that if the next frame record is on the same stack, it is at a
-> > > > > higher address.
-> > > > > 
-> > > > > Signed-off-by: Mark Rutland <mark.rutland@arm.com>
-> > > > > Cc: Catalin Marinas <catalin.marinas@arm.com>
-> > > > > Cc: Dave Martin <dave.martin@arm.com>
-> > > > > Cc: James Morse <james.morse@arm.com>
-> > > > > Cc: Tengfei Fan <tengfeif@codeaurora.org>
-> > > > > Cc: Will Deacon <will.deacon@arm.com>
-> > > > > ---
-> > > > >  arch/arm64/include/asm/stacktrace.h | 32 ++++++++++++++++++++++++--------
-> > > > >  arch/arm64/kernel/stacktrace.c      | 15 ++++++++++++++-
-> > > > >  2 files changed, 38 insertions(+), 9 deletions(-)
-> > > > > 
-> > > > > diff --git a/arch/arm64/include/asm/stacktrace.h b/arch/arm64/include/asm/stacktrace.h
-> > > > > index 18f90bf1385c..938b96ba1f0f 100644
-> > > > > --- a/arch/arm64/include/asm/stacktrace.h
-> > > > > +++ b/arch/arm64/include/asm/stacktrace.h
-> > > > > @@ -19,19 +19,12 @@
-> > > > >  #include <linux/percpu.h>
-> > > > >  #include <linux/sched.h>
-> > > > >  #include <linux/sched/task_stack.h>
-> > > > > +#include <linux/types.h>
-> > > > >  
-> > > > >  #include <asm/memory.h>
-> > > > >  #include <asm/ptrace.h>
-> > > > >  #include <asm/sdei.h>
-> > > > >  
-> > > > > -struct stackframe {
-> > > > > -	unsigned long fp;
-> > > > > -	unsigned long pc;
-> > > > > -#ifdef CONFIG_FUNCTION_GRAPH_TRACER
-> > > > > -	int graph;
-> > > > > -#endif
-> > > > > -};
-> > > > > -
-> > > > >  enum stack_type {
-> > > > >  	STACK_TYPE_UNKNOWN,
-> > > > >  	STACK_TYPE_TASK,
-> > > > > @@ -39,6 +32,7 @@ enum stack_type {
-> > > > >  	STACK_TYPE_OVERFLOW,
-> > > > >  	STACK_TYPE_SDEI_NORMAL,
-> > > > >  	STACK_TYPE_SDEI_CRITICAL,
-> > > > > +	__NR_STACK_TYPES
-> > > > >  };
-> > > > >  
-> > > > >  struct stack_info {
-> > > > > @@ -47,6 +41,17 @@ struct stack_info {
-> > > > >  	enum stack_type type;
-> > > > >  };
-> > > > >  
-> > > > > +struct stackframe {
-> > > > > +	unsigned long fp;
-> > > > > +	unsigned long pc;
-> > > > > +#ifdef CONFIG_FUNCTION_GRAPH_TRACER
-> > > > > +	int graph;
-> > > > > +#endif
-> > > > > +	DECLARE_BITMAP(stacks_done, __NR_STACK_TYPES);
-> > > > > +	unsigned long prev_fp;
-> > > > > +	enum stack_type prev_type;
-> > > > > +};
-> > > > > +
-> > > > >  extern int unwind_frame(struct task_struct *tsk, struct stackframe *frame);
-> > > > >  extern void walk_stackframe(struct task_struct *tsk, struct stackframe *frame,
-> > > > >  			    int (*fn)(struct stackframe *, void *), void *data);
-> > > > > @@ -128,6 +133,9 @@ static inline bool on_accessible_stack(const struct task_struct *tsk,
-> > > > >  				       unsigned long sp,
-> > > > >  				       struct stack_info *info)
-> > > > >  {
-> > > > > +	if (info)
-> > > > > +		info->type = STACK_TYPE_UNKNOWN;
-> > > > > +
-> > > > >  	if (on_task_stack(tsk, sp, info))
-> > > > >  		return true;
-> > > > >  	if (tsk != current || preemptible())
-> > > > > @@ -150,6 +158,14 @@ static inline void start_backtrace(struct stackframe *frame,
-> > > > >  #ifdef CONFIG_FUNCTION_GRAPH_TRACER
-> > > > >  	frame->graph = 0;
-> > > > >  #endif
-> > > > > +
-> > > > > +	/*
-> > > > > +	 * Prime the first unwind, which will be treated as a transition from
-> > > > > +	 * STACK_TYPE_UNKNOWN to some valid stack.
-> > > > > +	 */
-> > > > > +	bitmap_zero(frame->stacks_done, __NR_STACK_TYPES);
-> > > > > +	frame->prev_fp = 0;
-> > > > > +	frame->prev_type = STACK_TYPE_UNKNOWN;
-> > > > >  }
-> > > > >  
-> > > > >  #endif	/* __ASM_STACKTRACE_H */
-> > > > > diff --git a/arch/arm64/kernel/stacktrace.c b/arch/arm64/kernel/stacktrace.c
-> > > > > index e5338216deaa..2e4b59e10e71 100644
-> > > > > --- a/arch/arm64/kernel/stacktrace.c
-> > > > > +++ b/arch/arm64/kernel/stacktrace.c
-> > > > > @@ -43,6 +43,7 @@
-> > > > >  int notrace unwind_frame(struct task_struct *tsk, struct stackframe *frame)
-> > > > >  {
-> > > > >  	unsigned long fp = frame->fp;
-> > > > > +	struct stack_info info, prev_info;
-> > > > >  
-> > > > >  	if (fp & 0xf)
-> > > > >  		return -EINVAL;
-> > > > > @@ -50,11 +51,23 @@ int notrace unwind_frame(struct task_struct *tsk, struct stackframe *frame)
-> > > > >  	if (!tsk)
-> > > > >  		tsk = current;
-> > > > >  
-> > > > > -	if (!on_accessible_stack(tsk, fp, NULL))
-> > > > > +	if (!on_accessible_stack(tsk, fp, &info))
-> > > > >  		return -EINVAL;
-> > > > >  
-> > > > > +	if (test_bit(info.type, frame->stacks_done))
-> > > > > +		return -EINVAL;
-> > > > > +
-> > > > > +	if (info.type == frame->prev_type) {
-> > > > > +		if (fp <= frame->prev_fp)
-> > > > > +			return -EINVAL;
-> > > > > +	} else {
-> > > > > +		set_bit(prev_info.type, frame->stacks_done);
-> > > > > +	}
-> > > > > +
-> > > > >  	frame->fp = READ_ONCE_NOCHECK(*(unsigned long *)(fp));
-> > > > >  	frame->pc = READ_ONCE_NOCHECK(*(unsigned long *)(fp + 8));
-> > > > > +	frame->prev_fp = fp;
-> > > > > +	frame->prev_type = info.type;
-> > > > 
-> > > > As in my response on the last series, do we really need to track 2
-> > > > frames at the same time in struct stackframe?
-> > > 
-> > > It's better to think of this as tracking the location and contents of
-> > > one stackframe.
-> > > 
-> > > If we back up a bit, I want to ensure that if we have a chain A->B->C
-> > > and the B->C transition is bogus, we report A and B in the backtrace.
-> > > 
-> > > The struct stackframe is a snapshot of the frame record A (which may
-> > > have been the FP and LR rather than an in-memory record). The contents
-> > > of A tells us where the B can be found, but we need the location of A so
-> > > that we can check intra-stack whether A < B.
-> > > 
-> > > > The transition (i.e., where we came from and where we're going to should
-> > > > be visible in unwind_frame().  I don't see why we need additional history
-> > > > in order to detect stack changes or track which stacks have been visited.
-> > > 
-> > > Please see my prior reply to James, where I described this.
-> > > 
-> > > > So, say (incomplete paste-o-code):
-> > >  
-> > > Let's consider this for the above A->B->C transition.
-> > > 
-> > > > 	unsigned long fp = frame->fp;
-> > > > 	enum stack_type fp_stack = frame->fp_stack;
-> > > 
-> > > When we enter with frame describing A, frame->fp points at B, and
-> > > frame->fp_stack describes where A is (i.e. it describes the same thing
-> > > as prev_type in my code).
-> > > 
-> > > > 
-> > > >   	frame->fp = READ_ONCE_NOCHECK(*(unsigned long *)(fp));
-> > > >   	frame->pc = READ_ONCE_NOCHECK(*(unsigned long *)(fp + 8));
-> > > 
-> > > Here we update frame to be the contents of B.
-> > > 
-> > > > 	if (!on_accessible_stack(tsk, frame->fp, &info))
-> > > > 		return -EINVAL;
-> > > 
-> > > ... and here we bail out if C is inaccessible, before we report B.
-> > > 
-> > > > 
-> > > > 	if (test_bit(info.type, frame->stacks_done))
-> > > > 		return -EINVAL;
-> > > 
-> > > Likewise, here we check C's stack type, and bail out an entry earlier
-> > > than necessary.
-> > > 
-> > > > 
-> > > > 	if (info.type == frame->fp_stack) {
-> > > 
-> > > We haven't updated frame->fp_stack  yet, so this is comparing A's
-> > > location to C's location, ignoring B.
-> > 
-> > No it isn't.  on_accessible_stack() updated info.type to describe B (I
-> > think).
-> 
-> it describes C:
-> 
-> * At entry to the function, frame has the values of A, and thus
->   frame->fp pointed at B.
-> 
-> * We updated frame with B's values, reading the fp and pc. Thus after
->   the READ_ONCE_NOCHECK()s, frame->fp points at C.
-> 
-> * We checked which stack C was on with:
->   on_accessible_stack(tsk, frame->fp, &info);
-> 
->   ... and thus info describes C.
-> 
-> > I think I've understood, though: the bad transition is detected when
-> > calling unwind_frame() on the prior frame to the transitioning frame.
-> > So, my version causes us to abandon the backtrace one frame early.
-> 
-> Yup!
-> 
-> > I still think that can be delayed in a more straightforward way
-> > by sticking in "invalid" flag in struct stackframe, then checking
-> > that as the first step of unwind_frame().
-> > 
-> > However, the logic of your updated patch makes sense to me now.  I have
-> > a suspicion that we're somehow making this problem more complex than it
-> > is, but unless I can come up with something better, I'll shut up!
-> 
-> I've tried a number of approaches now, and this is about as simple as it
-> can be, I'm afraid. Every simplification ended up missing some info
-> necessary for an edge case. At minimum we need the previous FP value,
-> AFAICT.
-> 
-> I will try to write a comprehensive comment to explain what we're doing
-> and why.
+Hi Catalin & Will,
 
-Sounds good.
+I approch you as maintainers of arch/arm64/include/asm/arch_gicv3.h
+We have an architecture of Cortex-A35 (v8) and GIC400 (GIC v2) in development.
+1. Do you think there will be in the near future also arch_gicv2.h?
+2. If not, can we use GIC v2 with arch_gicv3.h (maybe with some
+CONFIG_ selection)?
+3. Any other solution?
 
-I'm still not that keen on the new approach, but getting rid of the
-pipelined state in struct stackframe seems to require additional
-refactoring elsewhere, and I'm not sure it's worth it given that we'd
-probably introduce new bugs in the process...
-
-So, FWIW,
-
-Acked-by: Dave Martin <Dave.Martin@arm.com>
-
-Cheers
----Dave
+-- 
+Regards,
+Avi
 
 _______________________________________________
 linux-arm-kernel mailing list
