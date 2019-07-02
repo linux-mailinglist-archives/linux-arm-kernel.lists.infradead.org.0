@@ -2,73 +2,100 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D24E65CC4A
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  2 Jul 2019 10:58:30 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 779885CC4E
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  2 Jul 2019 11:02:20 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=LQzG9O7nj4NvTr7cLPVIhahyqdy408piH22Ak9ldKZc=; b=Xxf33TBNEEon72
-	7CH3litrmzIfpoiNUPq9Y31Twfzy48IYV0whXDZPMJggYCFHJMcLPTjcqlP0VOFYR5DIS+Y9MjM/x
-	6N4B1NQxZUCT/4nxqyya1sGArm1gptu3O+JFQBQgSAig8Czhj60f+wOBigYO7F8Hg0QMWRJOXGw1B
-	j6kJeyTL1mb6xUtYiG/fkbxtM6ohkhWnypxsCJdzSk1x3i/3RgUWKvk1CpTwsXhaQuW9V4R4JpNDj
-	OumA3ie8aqkP5t5n8X1saGBtwDHpRD3ezcl4GAH2l6aDjXk+aKSyx9DwokW1aE6T/aot0XV2YGFrJ
-	D6H404A/h7h6bTOj7t6Q==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=KQiK/P1bfNuIwlentxRQ2g9i+dSmYEiBf/18sxSh/8M=; b=b5/dvpUuyHWgwwOin8NyG3Uh7
+	H1XWrZPzTTGbixToemLpOboTF7d5vYSFpz6Eq6H1dWCIdtZ1OTFvlG9pKSSPbbWZ28Gyh5Y2S77mk
+	UjDd5HUF/EcSpOC4VKcKu0IbReW4q3sNLxt5dE/KgJuwLquCowqAAJkomyKhw78GRQO3EFoj4a/Jo
+	WMfXSaDG4APKTfAr3wGVxwJrl8UFmjEQDVnpeHVTOW9kqcaAHLSWZ+fmfV4E2VraOooRQhzztTzoy
+	8LC3r0NhhliqlqY1WPEd8qGuEQhvXLE2Fe4rCmuiXKNbp9xHNkCKPjS1gN9J4lsUvcMkKuaXCg8Jc
+	M5hdUH9bw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hiEcP-0000az-Dn; Tue, 02 Jul 2019 08:58:29 +0000
-Received: from mail-oi1-f194.google.com ([209.85.167.194])
+	id 1hiEg6-0002Co-O9; Tue, 02 Jul 2019 09:02:19 +0000
+Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hiEc9-0000Yl-B1
- for linux-arm-kernel@lists.infradead.org; Tue, 02 Jul 2019 08:58:16 +0000
-Received: by mail-oi1-f194.google.com with SMTP id v186so12420256oie.5
+ id 1hiEfv-0002BJ-7T
+ for linux-arm-kernel@lists.infradead.org; Tue, 02 Jul 2019 09:02:08 +0000
+Received: by mail-wr1-x443.google.com with SMTP id u18so314039wru.1
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 02 Jul 2019 01:58:11 -0700 (PDT)
+ Tue, 02 Jul 2019 02:02:06 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=subject:to:cc:references:from:message-id:date:user-agent
+ :mime-version:in-reply-to:content-language:content-transfer-encoding;
+ bh=UYqevnI0spcyedfiOLJ3vdJN7KeUhPxc6owycWTRKgQ=;
+ b=kNZfMLh00xnDEGdyC0iMBLY3n5hKUNwtHEhscIYyRu5QdBU8iXikuYKclzZ4F+RGCK
+ S6LNIhsKN0ymzqyVPrK9D4krSgW29DhsBIMN8qLF13phqddvbHbk3QsIowLUof5CiE3W
+ Adhoe3+1xqurjhsFfPGGjmFerkhGU8fxZHZZ83yVnrtCXpMli/vgDurTNBYZYzIrK189
+ ll8jNF8I6Ry98ZCfRnt3Luin+fFFYxhHCS3vDGnefmmSsVhe7w42q0IRzxQ3DrWrWBSy
+ 6Wv5vwS9v8z/uz7RDdfqT/GI1sdH96WAO0YFRg960KbLyx3V81mfc5Y2fr5RzWHcdzym
+ nZdQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=pb4hIlPtBxu+eWlV5MavugzJlWlGVOugSZum+zG+KJU=;
- b=ck0rPFuBuzCao8Jw/wHrdLmrw3SxVXHuB88I9iEXrvNTTBDX65Rbe8NHZ5auksEi+T
- XP/arhgss9vcoChqlzoddCn52Kod4zEtYEva3+EsWvIWLD0wJs03LEnzevFT3axKvhNs
- SvAzcPw7QvX2GwOVefMXsdKBcP+shdXxSoKioAJiXvtAnGzMkk/llPxD7B+KhNBxVxhz
- B+lZbLOJHv39v20kOKeU/rH/jzQ7o2Tc5XYRmLlr7FZAyjBkf3YM4bgLnPhPE4szDwwO
- EX4CVT4bdC+bXpM6fxSjjMVGy2b04XOajFvd3mp4YV7g9FHg/pdgln3GaKTm3Cae0Jdz
- kt/A==
-X-Gm-Message-State: APjAAAXoQmUZa0eVcDrPk6YrUiaPdfOF2qaIUg0wxqmX6My+b2qSPFvw
- v3BQDpfSqzex/YjZp/FwYBgQfd2ppt+pB4drgtg=
-X-Google-Smtp-Source: APXvYqyfQUJ0oEfJxk7/b2/K3FRe9as/LnCeH7oYgYZYd/X1ze/KZsHM8di8yh3wqbFRL0AWB3C21OAFERAirvm7UsU=
-X-Received: by 2002:aca:3bc6:: with SMTP id i189mr2173610oia.153.1562057891205; 
- Tue, 02 Jul 2019 01:58:11 -0700 (PDT)
+ h=x-gm-message-state:subject:to:cc:references:from:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=UYqevnI0spcyedfiOLJ3vdJN7KeUhPxc6owycWTRKgQ=;
+ b=M9+LdsbiA+RRBJu2QE8mflP4CjoODbUh9GeOaEIN39ySFkUB0wdHEZYIRE0dfoA7Gc
+ iE9A6EHk+O4hD46hVDhX3JsveSy8hlaN04NrRnD5Zv/LVaYcnUoL22nJtVHyMq5zJ2Nu
+ TJKCvRLovkJGkhg9/QjEIZFmiF52ElMk2qoLEsgb/X2hP9CqkWNNXadYTaJdjfE34J+q
+ 0sN4f+kgOZCLl5F5sKPyVlkCvnLtWnlNJ4VApAtZGIgYP+KB0eZ0OsgcAe2EDSbmBkY8
+ V0q6CYw3H7NLN7QsfnoDTCxFn9dsTX9MMt2rXRue+Wt1crYToailiLnYYl3i3HG/vbdh
+ YOZA==
+X-Gm-Message-State: APjAAAXb1C/HdsMAcgikGcWOLT03+lTjG6yoys7R2pLBk8hsxszjrmBj
+ d5Fs2onHQ6lVn8hThU7Ohpypew==
+X-Google-Smtp-Source: APXvYqwe8Sm/0nT25qcnzu4by7nlxEbs2dugrf6wEZ/ThBZTX0iMnPIhJfIGmRRbZlCWJVwSZilmew==
+X-Received: by 2002:a5d:5450:: with SMTP id w16mr13519041wrv.128.1562058125256; 
+ Tue, 02 Jul 2019 02:02:05 -0700 (PDT)
+Received: from holly.lan (cpc141214-aztw34-2-0-cust773.18-1.cable.virginm.net.
+ [86.9.19.6])
+ by smtp.googlemail.com with ESMTPSA id z5sm11056873wrh.16.2019.07.02.02.02.04
+ (version=TLS1_3 cipher=AEAD-AES128-GCM-SHA256 bits=128/128);
+ Tue, 02 Jul 2019 02:02:04 -0700 (PDT)
+Subject: Re: [PATCH 01/12] backlight: gpio: allow to probe non-pdata devices
+ from board files
+To: Bartosz Golaszewski <brgl@bgdev.pl>, Sekhar Nori <nsekhar@ti.com>,
+ Kevin Hilman <khilman@kernel.org>, Lee Jones <lee.jones@linaro.org>,
+ Jingoo Han <jingoohan1@gmail.com>,
+ Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>,
+ David Lechner <david@lechnology.com>,
+ Linus Walleij <linus.walleij@linaro.org>
+References: <20190625163434.13620-1-brgl@bgdev.pl>
+ <20190625163434.13620-2-brgl@bgdev.pl>
+From: Daniel Thompson <daniel.thompson@linaro.org>
+Message-ID: <57229b83-c876-1042-2866-1a63e6654bd4@linaro.org>
+Date: Tue, 2 Jul 2019 10:02:03 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.7.2
 MIME-Version: 1.0
-References: <20190624105224.23927-1-horms+renesas@verge.net.au>
- <20190624105224.23927-3-horms+renesas@verge.net.au>
-In-Reply-To: <20190624105224.23927-3-horms+renesas@verge.net.au>
-From: Geert Uytterhoeven <geert@linux-m68k.org>
-Date: Tue, 2 Jul 2019 10:58:00 +0200
-Message-ID: <CAMuHMdW8dUOuPmdvuWyRxWzSuLW7fmzJYr2fmCnpZLbrye31yw@mail.gmail.com>
-Subject: Re: [PATCH v3 2/2] arm64: dts: renesas: r8a77995: Add cpg reset for DU
-To: Simon Horman <horms+renesas@verge.net.au>
+In-Reply-To: <20190625163434.13620-2-brgl@bgdev.pl>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190702_015813_394290_0633691A 
-X-CRM114-Status: GOOD (  11.07  )
-X-Spam-Score: 0.1 (/)
+X-CRM114-CacheID: sfid-20190702_020207_275838_78022B07 
+X-CRM114-Status: GOOD (  23.08  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.167.194 listed in list.dnswl.org]
- 0.0 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
+ no trust [2a00:1450:4864:20:0:0:0:443 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (geert.uytterhoeven[at]gmail.com)
- 0.1 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -80,42 +107,107 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Linux-Renesas <linux-renesas-soc@vger.kernel.org>,
- Yoshihiro Kaneko <ykaneko0929@gmail.com>, Magnus Damm <magnus.damm@gmail.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Geert Uytterhoeven <geert+renesas@glider.be>
-Content-Type: text/plain; charset="us-ascii"
+Cc: Bartosz Golaszewski <bgolaszewski@baylibre.com>,
+ dri-devel@lists.freedesktop.org, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-fbdev@vger.kernel.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Jun 24, 2019 at 12:52 PM Simon Horman
-<horms+renesas@verge.net.au> wrote:
-> From: Yoshihiro Kaneko <ykaneko0929@gmail.com>
->
-> Add CPG reset properties to DU node of D3 (r8a77995) SoC.
->
-> According to Laurent Pinchart, R-Car Gen3 reset is handled at the group
-> level so specifying one reset entry per group is sufficient.
->
-> This patch was inspired by a patch in the BSP by
-> Takeshi Kihara <takeshi.kihara.df@renesas.com>.
->
-> Signed-off-by: Yoshihiro Kaneko <ykaneko0929@gmail.com>
-> Signed-off-by: Simon Horman <horms+renesas@verge.net.au>
+On 25/06/2019 17:34, Bartosz Golaszewski wrote:
+> From: Bartosz Golaszewski <bgolaszewski@baylibre.com>
+> 
+> Currently we can only probe devices that either use device tree or pass
+> platform data to probe(). Rename gpio_backlight_probe_dt() to
+> gpio_backlight_probe_prop() and use generic device properties instead
+> of OF specific helpers.
 
-Thanks, applied and queued for v5.4.
+This has already been done in (which IIRC did get queued for the next 
+release):
+https://www.spinics.net/lists/dri-devel/msg215050.html
 
-Gr{oetje,eeting}s,
+> Reverse the logic checking the presence of
+> platform data in probe(). This way we can probe devices() registered
+> from machine code that neither have a DT node nor use platform data.
 
-                        Geert
+Andy's patch did not reverse this logic... but it does check 
+pdev->dev.fwnode rather than of_node .
 
--- 
-Geert Uytterhoeven -- There's lots of Linux beyond ia32 -- geert@linux-m68k.org
 
-In personal conversations with technical people, I call myself a hacker. But
-when I'm talking to journalists I just say "programmer" or something like that.
-                                -- Linus Torvalds
+Daniel.
+
+
+> 
+> Signed-off-by: Bartosz Golaszewski <bgolaszewski@baylibre.com>
+> ---
+>   drivers/video/backlight/gpio_backlight.c | 24 ++++++++----------------
+>   1 file changed, 8 insertions(+), 16 deletions(-)
+> 
+> diff --git a/drivers/video/backlight/gpio_backlight.c b/drivers/video/backlight/gpio_backlight.c
+> index b9300f3e1ee6..654c19d3a81d 100644
+> --- a/drivers/video/backlight/gpio_backlight.c
+> +++ b/drivers/video/backlight/gpio_backlight.c
+> @@ -54,15 +54,14 @@ static const struct backlight_ops gpio_backlight_ops = {
+>   	.check_fb	= gpio_backlight_check_fb,
+>   };
+>   
+> -static int gpio_backlight_probe_dt(struct platform_device *pdev,
+> -				   struct gpio_backlight *gbl)
+> +static int gpio_backlight_probe_prop(struct platform_device *pdev,
+> +				     struct gpio_backlight *gbl)
+>   {
+>   	struct device *dev = &pdev->dev;
+> -	struct device_node *np = dev->of_node;
+>   	enum gpiod_flags flags;
+>   	int ret;
+>   
+> -	gbl->def_value = of_property_read_bool(np, "default-on");
+> +	gbl->def_value = device_property_read_bool(dev, "default-on");
+>   	flags = gbl->def_value ? GPIOD_OUT_HIGH : GPIOD_OUT_LOW;
+>   
+>   	gbl->gpiod = devm_gpiod_get(dev, NULL, flags);
+> @@ -86,26 +85,15 @@ static int gpio_backlight_probe(struct platform_device *pdev)
+>   	struct backlight_properties props;
+>   	struct backlight_device *bl;
+>   	struct gpio_backlight *gbl;
+> -	struct device_node *np = pdev->dev.of_node;
+>   	int ret;
+>   
+> -	if (!pdata && !np) {
+> -		dev_err(&pdev->dev,
+> -			"failed to find platform data or device tree node.\n");
+> -		return -ENODEV;
+> -	}
+> -
+>   	gbl = devm_kzalloc(&pdev->dev, sizeof(*gbl), GFP_KERNEL);
+>   	if (gbl == NULL)
+>   		return -ENOMEM;
+>   
+>   	gbl->dev = &pdev->dev;
+>   
+> -	if (np) {
+> -		ret = gpio_backlight_probe_dt(pdev, gbl);
+> -		if (ret)
+> -			return ret;
+> -	} else {
+> +	if (pdata) {
+>   		/*
+>   		 * Legacy platform data GPIO retrieveal. Do not expand
+>   		 * the use of this code path, currently only used by one
+> @@ -126,6 +114,10 @@ static int gpio_backlight_probe(struct platform_device *pdev)
+>   		gbl->gpiod = gpio_to_desc(pdata->gpio);
+>   		if (!gbl->gpiod)
+>   			return -EINVAL;
+> +	} else {
+> +		ret = gpio_backlight_probe_prop(pdev, gbl);
+> +		if (ret)
+> +			return ret;
+>   	}
+>   
+>   	memset(&props, 0, sizeof(props));
+> 
+
 
 _______________________________________________
 linux-arm-kernel mailing list
