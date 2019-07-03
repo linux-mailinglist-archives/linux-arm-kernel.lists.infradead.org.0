@@ -2,112 +2,70 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4653D5EE0D
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  3 Jul 2019 23:02:03 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 860D75EE1E
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  3 Jul 2019 23:09:55 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:Reply-To:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:
-	References:Message-ID:Date:Subject:To:From:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=wN8o/r9lORN07av4QoQlZXEWnRDh7ifzmwWkCiGuQlI=; b=QZxE0qEhqP0nK5
-	1iBAGOdf5xF1ejyvSbPu1Ujq54YfTbytPDGYhJToRftKbJtk9c8hV1r44dTrQ52b+AygYrgSZqIE0
-	GjPPm+KjF59/yP0X2svbiYfPYtsgEdq2WME+nkOfr0Pq4jbGKI+EuK2luUT13CGvBJN6y+pTdbnOn
-	oAAw9yBqPG2ZVEovz1jvmNADJmISPOI5GYqX6oYBOEFKCds4ubuAUst8G4xjYhZ0n5T7t2UynQL/T
-	g9KWZs6ENEpgTNTJQRd43zKYjrZ9Rh33FEMWszxAUhDUvF7dr/A3MjhsI7ipU1yrQCimKOYt02kMn
-	VwMQzWlHjIM50ggzTfJg==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=tT1dwdNpe1nRIa3LkiCOQS1wdQ5jFg/PRbanDS+VGyM=; b=FYkJP58ezdegtu
+	rt6PasYzJaZPTR6nHprkDcVFQjs1FWMcOTwgu5Cm2lbd+QPIGFivmUBGXLw+avUBRZjayMgq1ToqI
+	w9KguisiXshPc7k61wk3d79jpsyHx7REjENQNocECUTOxKQOESK5Ymq7/pk3uxzZK3z/7kdMXUlUV
+	JGHLkS1uVVZbslZNg5Rk4vK1JO6WK9HlreEfDGWWRQJhcH7NEGznUbrE6oqUXZf4xK+4kCJVTjGW5
+	3wwBl3NLp+W7hu5vL0wLbNeE80cpSfSCxiplgVVovcGaBGcIKNJQbznRqwK27OmnxcRY/JOuRflJM
+	mh8pZ0oaBqjdpT2u+Y1Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1himO8-00011l-Ix; Wed, 03 Jul 2019 21:02:00 +0000
-Received: from mail-eopbgr80041.outbound.protection.outlook.com ([40.107.8.41]
- helo=EUR04-VI1-obe.outbound.protection.outlook.com)
+	id 1himVl-0003Va-6H; Wed, 03 Jul 2019 21:09:53 +0000
+Received: from atlmailgw1.ami.com ([63.147.10.40])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1himLu-0006Jq-6S
- for linux-arm-kernel@lists.infradead.org; Wed, 03 Jul 2019 20:59:43 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=8l34xPK1ENwFo+vU3ZrImWB+9FvYzYicyTDcI7YCSPQ=;
- b=oV0CsNCG/xhovuKXgCc6V3/QJIECYTuhZ/mI3cIoDw+9hda5z0nsYswoX1zT/XSVMtavq0mV4W1JFFWiW+QkG5PRsp+fjiDrxvf4Ep6/sVPFWgr6OM1vNCpaOS6v35V7suH6rYJD+bYS5urz+UEDBk+UUhHchG2j4W9N9ztPwAI=
-Received: from VE1PR04MB6463.eurprd04.prod.outlook.com (20.179.233.20) by
- VE1PR04MB6464.eurprd04.prod.outlook.com (20.179.233.21) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2032.20; Wed, 3 Jul 2019 20:59:37 +0000
-Received: from VE1PR04MB6463.eurprd04.prod.outlook.com
- ([fe80::a5ca:7c9c:6b18:eb0a]) by VE1PR04MB6463.eurprd04.prod.outlook.com
- ([fe80::a5ca:7c9c:6b18:eb0a%6]) with mapi id 15.20.2032.019; Wed, 3 Jul 2019
- 20:59:37 +0000
-From: Roy Pledge <roy.pledge@nxp.com>
-To: "linuxppc-dev@lists.ozlabs.org" <linuxppc-dev@lists.ozlabs.org>,
- "linux-arm-kernel@lists.infradead.org"
- <linux-arm-kernel@lists.infradead.org>, "linux-kernel@vger.kernel.org"
- <linux-kernel@vger.kernel.org>, Leo Li <leoyang.li@nxp.com>
-Subject: [PATCH v2 7/7] soc/fsl/qbman: Update device tree with reserved memory
-Thread-Topic: [PATCH v2 7/7] soc/fsl/qbman: Update device tree with reserved
- memory
-Thread-Index: AQHVMeI56zAwyfNlCka3bcuWCdBEJA==
-Date: Wed, 3 Jul 2019 20:59:37 +0000
-Message-ID: <1562187548-32261-8-git-send-email-roy.pledge@nxp.com>
-References: <1562187548-32261-1-git-send-email-roy.pledge@nxp.com>
-In-Reply-To: <1562187548-32261-1-git-send-email-roy.pledge@nxp.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-x-mailer: git-send-email 2.7.4
-x-clientproxiedby: SN6PR15CA0005.namprd15.prod.outlook.com
- (2603:10b6:805:16::18) To VE1PR04MB6463.eurprd04.prod.outlook.com
- (2603:10a6:803:11d::20)
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=roy.pledge@nxp.com; 
-x-ms-exchange-messagesentrepresentingtype: 1
-x-originating-ip: [72.142.119.78]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: 1974ab8d-a9dd-4a7e-6d1b-08d6fff95bf7
-x-ms-office365-filtering-ht: Tenant
-x-microsoft-antispam: BCL:0; PCL:0;
- RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600148)(711020)(4605104)(1401327)(4618075)(2017052603328)(7193020);
- SRVR:VE1PR04MB6464; 
-x-ms-traffictypediagnostic: VE1PR04MB6464:
-x-microsoft-antispam-prvs: <VE1PR04MB646465C46DEC0A8EA8BEF97886FB0@VE1PR04MB6464.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:8273;
-x-forefront-prvs: 00872B689F
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(4636009)(396003)(376002)(39860400002)(346002)(366004)(136003)(189003)(199004)(14454004)(2501003)(81156014)(81166006)(4326008)(478600001)(305945005)(8676002)(2906002)(7736002)(50226002)(476003)(486006)(2616005)(446003)(25786009)(11346002)(3450700001)(86362001)(2201001)(68736007)(44832011)(36756003)(66946007)(26005)(66476007)(66556008)(64756008)(73956011)(71200400001)(71190400001)(66066001)(53936002)(6116002)(52116002)(386003)(6506007)(66446008)(8936002)(256004)(102836004)(186003)(99286004)(6486002)(5660300002)(110136005)(316002)(3846002)(6436002)(43066004)(6512007)(6636002)(76176011);
- DIR:OUT; SFP:1101; SCL:1; SRVR:VE1PR04MB6464;
- H:VE1PR04MB6463.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; MX:1; A:1; 
-received-spf: None (protection.outlook.com: nxp.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: bmfwSjLg0I0SAXb5GVXJr7E4v6/Nx12AEwcS9uKBjaKuO/foqlEdfzLkt3IQUGd7Xogkp83N4N8qHZnQ9BfzRISwlQkUtTnCn44NWGf2pT8AEQoixmC+6pOLMKix45oaWNBcTsMAJIZcHDyA/lEiMrsDc6LIeS5buwgScjeThccDfMm9UNRKCak+HpnasfD/vnVLAX/6GRoCYvRoYaX7d3XSJmqNOBiLzgaxSZplZsqnf6cjxs4TpyKkxNmu88LuXLdigyjFrR0IcLnDBYlY+1zfGKGKQRINd/Z7bBlviDAoGtfNMo87qeGaNPFvlp51qGmmWzOtTSKvizarE3iTbA6Hc4ZvWjo47aJ70MJidqNsvAcvH2vpK5tbubY2eVS2NVYLfWMjrrhbaAltO5mKRcFinZFU4eHXchIk4rkSw9g=
+ id 1himVa-0003Ut-T5
+ for linux-arm-kernel@lists.infradead.org; Wed, 03 Jul 2019 21:09:45 +0000
+X-AuditID: ac1060b2-2cbff70000003d86-96-5d1d198fa34d
+Received: from atlms1.us.megatrends.com (atlms1.us.megatrends.com
+ [172.16.96.144])
+ (using TLS with cipher ECDHE-RSA-AES256-SHA384 (256/256 bits))
+ (Client did not present a certificate)
+ by atlmailgw1.ami.com (Symantec Messaging Gateway) with SMTP id
+ D8.4E.15750.F891D1D5; Wed,  3 Jul 2019 17:09:35 -0400 (EDT)
+Received: from hongweiz-Ubuntu-AMI.us.megatrends.com (172.16.98.93) by
+ atlms1.us.megatrends.com (172.16.96.144) with Microsoft SMTP Server (TLS) id
+ 14.3.408.0; Wed, 3 Jul 2019 17:09:35 -0400
+From: Hongwei Zhang <hongweiz@ami.com>
+To: Bartosz Golaszewski <bgolaszewski@baylibre.com>, Joel Stanley
+ <joel@jms.id.au>, Andrew Jeffery <andrew@aj.id.au>, Linus Walleij
+ <linus.walleij@linaro.org>
+Subject: [PATCH 2/3 linux,dev-5.1 v1] ARM: dts: aspeed: Add SGPIO driver
+Date: Wed, 3 Jul 2019 17:09:32 -0400
+Message-ID: <1562188172-23178-1-git-send-email-hongweiz@ami.com>
+X-Mailer: git-send-email 2.7.4
 MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 1974ab8d-a9dd-4a7e-6d1b-08d6fff95bf7
-X-MS-Exchange-CrossTenant-originalarrivaltime: 03 Jul 2019 20:59:37.8153 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: roy.pledge@nxp.com
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: VE1PR04MB6464
+X-Originating-IP: [172.16.98.93]
+X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFtrKLMWRmVeSWpSXmKPExsWyRiBhgm6/pGysQdtFBYtdlzksvsw9xWLx
+ +/xfZospf5YzWWx6fI3Vonn1OWaLzfP/MFpc3jWHzYHD42r7LnaP9zda2T0ufjzG7HHn2h42
+ j81L6j3Oz1jI6PF5k1wAexSXTUpqTmZZapG+XQJXRuPFWSwF/1Iq7h+fwNjAeDGwi5GDQ0LA
+ RKJ3UUYXIxeHkMAuJok3z/qYIJxDjBJbfy5l7GLk5GATUJPYu3kOWEJEYBGjxNffM9lBHGaB
+ 9YwSXcuXs4FUCQt4SFw8s4sdxGYRUJFY0LWCBcTmFXCQOPxnMzOILSEgJ3HzXCczRFxQ4uTM
+ J2A1zAISEgdfvACLCwnIStw69JgJol5B4nnfY5YJjHyzkLTMQtKygJFpFaNQYklObmJmTnq5
+ oV5ibqZecn7uJkZI0G7awdhy0fwQIxMHI9BLHMxKIrzff8vECvGmJFZWpRblxxeV5qQWH2KU
+ 5mBREuddueZbjJBAemJJanZqakFqEUyWiYNTqoFRf3K7zil7t/N/979WF5kptnLrtVhOhlNp
+ Tr9MxNurfm2qPV3eauMeH7xlamdnQ+USK5GjPCqPZNbFTNGq+GHofD5/s/ym4z83bTu9Ougr
+ J+uJmlmzJX7L6xpqzb3Yd3DLtnXZ4Uk7b8+Pv5LjkJ6gajVpu47ege+XTgos1ol6vHPi/KmG
+ khsclViKMxINtZiLihMB/rSdn0gCAAA=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190703_135942_276474_D04C3D03 
-X-CRM114-Status: GOOD (  16.08  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190703_140943_074531_B42F6AA2 
+X-CRM114-Status: GOOD (  18.11  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.8.41 listed in list.dnswl.org]
+ no trust [63.147.10.40 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -119,106 +77,498 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Reply-To: Roy Pledge <roy.pledge@nxp.com>
-Cc: Roy Pledge <roy.pledge@nxp.com>
+Cc: linux-gpio@vger.kernel.org, linux-aspeed@lists.ozlabs.org,
+ Hongwei Zhang <hongweiz@ami.com>, linux-arm-kernel@lists.infradead.org,
+ linux-kernel@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-When using the reserved memory node in the device tree there are
-two options - dynamic or static. If a dynamic allocation was
-selected (where the kernel selects the address for the allocation)
-convert it to a static allocation by inserting the reg property.
-This will ensure the same memory is reused after a kexec()
+Add SGPIO driver support for Aspeed AST2500 SoC.
 
-Signed-off-by: Roy Pledge <roy.pledge@nxp.com>
+Signed-off-by: Hongwei Zhang <hongweiz@ami.com>
 ---
- drivers/soc/fsl/qbman/dpaa_sys.c | 60 ++++++++++++++++++++++++----------------
- 1 file changed, 36 insertions(+), 24 deletions(-)
+ drivers/gpio/sgpio-aspeed.c | 470 ++++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 470 insertions(+)
+ create mode 100644 drivers/gpio/sgpio-aspeed.c
 
-diff --git a/drivers/soc/fsl/qbman/dpaa_sys.c b/drivers/soc/fsl/qbman/dpaa_sys.c
-index 3e0a7f3..9dd8bb5 100644
---- a/drivers/soc/fsl/qbman/dpaa_sys.c
-+++ b/drivers/soc/fsl/qbman/dpaa_sys.c
-@@ -37,41 +37,53 @@
- int qbman_init_private_mem(struct device *dev, int idx, dma_addr_t *addr,
- 				size_t *size)
- {
--	int ret;
- 	struct device_node *mem_node;
--	u64 size64;
- 	struct reserved_mem *rmem;
-+	struct property *prop;
-+	int len, err;
-+	__be32 *res_array;
- 
--	ret = of_reserved_mem_device_init_by_idx(dev, dev->of_node, idx);
--	if (ret) {
--		dev_err(dev,
--			"of_reserved_mem_device_init_by_idx(%d) failed 0x%x\n",
--			idx, ret);
--		return -ENODEV;
--	}
--	mem_node = of_parse_phandle(dev->of_node, "memory-region", 0);
--	if (mem_node) {
--		ret = of_property_read_u64(mem_node, "size", &size64);
--		if (ret) {
--			dev_err(dev, "of_address_to_resource fails 0x%x\n",
--			        ret);
--			return -ENODEV;
--		}
--		*size = size64;
--	} else {
-+	mem_node = of_parse_phandle(dev->of_node, "memory-region", idx);
-+	if (!mem_node) {
- 		dev_err(dev, "No memory-region found for index %d\n", idx);
- 		return -ENODEV;
- 	}
- 
- 	rmem = of_reserved_mem_lookup(mem_node);
-+	if (!rmem) {
-+		dev_err(dev, "of_reserved_mem_lookup() returned NULL\n");
-+		return -ENODEV;
+diff --git a/drivers/gpio/sgpio-aspeed.c b/drivers/gpio/sgpio-aspeed.c
+new file mode 100644
+index 0000000..108ed13
+--- /dev/null
++++ b/drivers/gpio/sgpio-aspeed.c
+@@ -0,0 +1,470 @@
++/*
++ * Copyright 2019 American Megatrends International LLC. 
++ *  
++ * This program is free software; you can redistribute it and/or
++ * modify it under the terms of the GNU General Public License
++ * as published by the Free Software Foundation; either version
++ * 2 of the License, or (at your option) any later version.
++ */
++
++#include <linux/gpio/driver.h>
++#include <linux/gpio/aspeed.h>
++#include <linux/hashtable.h>
++#include <linux/init.h>
++#include <linux/io.h>
++#include <linux/kernel.h>
++#include <linux/module.h>
++#include <linux/pinctrl/consumer.h>
++#include <linux/platform_device.h>
++#include <linux/spinlock.h>
++#include <linux/string.h>
++
++#define NR_SGPIO        80
++
++struct aspeed_sgpio {
++	struct gpio_chip chip;
++	spinlock_t lock;
++	void __iomem *base;
++	int irq;
++};
++
++struct aspeed_sgpio_bank {
++	uint16_t    val_regs;
++	uint16_t    rdata_reg;
++	uint16_t    irq_regs;
++	const char  names[4][3];
++};
++
++/*
++ * Note: The "value" register returns the input value sampled on the
++ *       line even when the GPIO is configured as an output. Since
++ *       that input goes through synchronizers, writing, then reading
++ *       back may not return the written value right away.
++ *
++ *       The "rdata" register returns the content of the write latch
++ *       and thus can be used to read back what was last written
++ *       reliably.
++ */
++
++static const struct aspeed_sgpio_bank aspeed_sgpio_banks[] = {
++	{
++		.val_regs = 0x0000,
++		.rdata_reg = 0x0070,
++		.irq_regs = 0x0004,
++		.names = { "A", "B", "C", "D" },
++	},
++	{
++		.val_regs = 0x001C,
++		.rdata_reg = 0x0074,
++		.irq_regs = 0x0020,
++		.names = { "E", "F", "G", "H" },
++	},
++	{
++		.val_regs = 0x0038,
++		.rdata_reg = 0x0078,
++		.irq_regs = 0x003C,
++		.names = { "I", "J" },
++	},
++};
++
++enum aspeed_sgpio_reg {
++	reg_val,
++	reg_rdata,
++	reg_irq_enable,
++	reg_irq_type0,
++	reg_irq_type1,
++	reg_irq_type2,
++	reg_irq_status,
++};
++
++#define GPIO_VAL_VALUE      0x00
++#define GPIO_VAL_DIR        0x04
++#define GPIO_IRQ_ENABLE     0x00
++#define GPIO_IRQ_TYPE0      0x04
++#define GPIO_IRQ_TYPE1      0x08
++#define GPIO_IRQ_TYPE2      0x0C
++#define GPIO_IRQ_STATUS     0x10
++
++/* This will be resolved at compile time */
++static inline void __iomem *bank_reg(struct aspeed_sgpio *gpio,
++				     const struct aspeed_sgpio_bank *bank,
++				     const enum aspeed_sgpio_reg reg)
++{
++	switch (reg) {
++	case reg_val:
++		return gpio->base + bank->val_regs + GPIO_VAL_VALUE;
++	case reg_rdata:
++		return gpio->base + bank->rdata_reg;
++	case reg_irq_enable:
++		return gpio->base + bank->irq_regs + GPIO_IRQ_ENABLE;
++	case reg_irq_type0:
++		return gpio->base + bank->irq_regs + GPIO_IRQ_TYPE0;
++	case reg_irq_type1:
++		return gpio->base + bank->irq_regs + GPIO_IRQ_TYPE1;
++	case reg_irq_type2:
++		return gpio->base + bank->irq_regs + GPIO_IRQ_TYPE2;
++	case reg_irq_status:
++		return gpio->base + bank->irq_regs + GPIO_IRQ_STATUS;
 +	}
- 	*addr = rmem->base;
-+	*size = rmem->size;
- 
- 	/*
--	 * Disassociate the reserved memory area from the device
--	 * because a device can only have one DMA memory area. This
--	 * should be fine since the memory is allocated and initialized
--	 * and only ever accessed by the QBMan device from now on
-+	 * Check if the reg property exists - if not insert the node
-+	 * so upon kexec() the same memory region address will be preserved.
-+	 * This is needed because QBMan HW does not allow the base address/
-+	 * size to be modified once set.
- 	 */
--	of_reserved_mem_device_release(dev);
-+	prop = of_find_property(mem_node, "reg", &len);
-+	if (!prop) {
-+		prop = devm_kzalloc(dev, sizeof(*prop), GFP_KERNEL);
-+		if (!prop)
-+			return -ENOMEM;
-+		prop->value = res_array = devm_kzalloc(dev, sizeof(__be32) * 4,
-+						       GFP_KERNEL);
-+		if (!prop->value)
-+			return -ENOMEM;
-+		res_array[0] = cpu_to_be32(upper_32_bits(*addr));
-+		res_array[1] = cpu_to_be32(lower_32_bits(*addr));
-+		res_array[2] = cpu_to_be32(upper_32_bits(*size));
-+		res_array[3] = cpu_to_be32(lower_32_bits(*size));
-+		prop->length = sizeof(__be32) * 4;
-+		prop->name = devm_kstrdup(dev, "reg", GFP_KERNEL);
-+		if (!prop->name)
-+			return -ENOMEM;
-+		err = of_add_property(mem_node, prop);
-+		if (err)
-+			return err;
++	BUG_ON(1);
++}
++
++#define GPIO_BANK(x)    ((x) >> 5)
++#define GPIO_OFFSET(x)  ((x) & 0x1f)
++#define GPIO_BIT(x)     BIT(GPIO_OFFSET(x))
++
++static const struct aspeed_sgpio_bank *to_bank(unsigned int offset)
++{
++	unsigned int bank = GPIO_BANK(offset);
++
++	WARN_ON(bank >= ARRAY_SIZE(aspeed_sgpio_banks));
++	return &aspeed_sgpio_banks[bank];
++}
++
++static inline bool have_gpio(struct aspeed_sgpio *gpio, unsigned int offset)
++{
++	const struct aspeed_sgpio_bank *bank = to_bank(offset);
++	unsigned int group = GPIO_OFFSET(offset) / 8;
++
++	return bank->names[group][0] != '\0';
++}
++
++static int aspeed_sgpio_get(struct gpio_chip *gc, unsigned int offset)
++{
++	struct aspeed_sgpio *gpio = gpiochip_get_data(gc);
++	const struct aspeed_sgpio_bank *bank = to_bank(offset);
++
++	return !!(ioread32(bank_reg(gpio, bank, reg_val)) & GPIO_BIT(offset));
++}
++
++static void __aspeed_sgpio_set(struct gpio_chip *gc, unsigned int offset,
++			       int val)
++{
++	struct aspeed_sgpio *gpio = gpiochip_get_data(gc);
++	const struct aspeed_sgpio_bank *bank = to_bank(offset);
++	void __iomem *addr;
++	u32 reg;
++
++	addr = bank_reg(gpio, bank, reg_val);
++
++	if (val)
++		reg |= GPIO_BIT(offset);
++	else
++		reg &= ~GPIO_BIT(offset);
++
++	iowrite32(reg, addr);
++}
++
++static void aspeed_sgpio_set(struct gpio_chip *gc, unsigned int offset,
++			     int val)
++{
++	struct aspeed_sgpio *gpio = gpiochip_get_data(gc);
++	unsigned long flags;
++
++	spin_lock_irqsave(&gpio->lock, flags);
++
++	__aspeed_sgpio_set(gc, offset, val);
++
++	spin_unlock_irqrestore(&gpio->lock, flags);
++}
++
++static int aspeed_sgpio_dir_in(struct gpio_chip *gc, unsigned int offset)
++{
++	/* By default all SGPIO Pins are input */
++	return 0;
++}
++
++static int aspeed_sgpio_get_direction(struct gpio_chip *gc, unsigned int offset)
++{
++	/* By default all SGPIO Pins are input */
++	return 1;
++
++}
++
++static inline int irqd_to_aspeed_sgpio_data(struct irq_data *d,
++					    struct aspeed_sgpio **gpio,
++					    const struct aspeed_sgpio_bank **bank,
++					    u32 *bit, int *offset)
++{
++	struct aspeed_sgpio *internal;
++
++	*offset = irqd_to_hwirq(d);
++
++	internal = irq_data_get_irq_chip_data(d);
++
++	*gpio = internal;
++	*bank = to_bank(*offset);
++	*bit = GPIO_BIT(*offset);
++
++	return 0;
++}
++
++static void aspeed_sgpio_irq_ack(struct irq_data *d)
++{
++	const struct aspeed_sgpio_bank *bank;
++	struct aspeed_sgpio *gpio;
++	unsigned long flags;
++	void __iomem *status_addr;
++	int rc, offset;
++	u32 bit;
++
++	rc = irqd_to_aspeed_sgpio_data(d, &gpio, &bank, &bit, &offset);
++	if (rc)
++		return;
++
++	status_addr = bank_reg(gpio, bank, reg_irq_status);
++
++	spin_lock_irqsave(&gpio->lock, flags);
++
++	iowrite32(bit, status_addr);
++
++	spin_unlock_irqrestore(&gpio->lock, flags);
++}
++
++static void aspeed_sgpio_irq_set_mask(struct irq_data *d, bool set)
++{
++	const struct aspeed_sgpio_bank *bank;
++	struct aspeed_sgpio *gpio;
++	unsigned long flags;
++	u32 reg, bit;
++	void __iomem *addr;
++	int rc, offset;
++
++	rc = irqd_to_aspeed_sgpio_data(d, &gpio, &bank, &bit, &offset);
++	if (rc)
++		return;
++
++	addr = bank_reg(gpio, bank, reg_irq_enable);
++
++	spin_lock_irqsave(&gpio->lock, flags);
++
++	reg = ioread32(addr);
++	if (set)
++		reg |= bit;
++	else
++		reg &= ~bit;
++
++	iowrite32(reg, addr);
++
++	spin_unlock_irqrestore(&gpio->lock, flags);
++}
++
++static void aspeed_sgpio_irq_mask(struct irq_data *d)
++{
++	aspeed_sgpio_irq_set_mask(d, false);
++}
++
++static void aspeed_sgpio_irq_unmask(struct irq_data *d)
++{
++	aspeed_sgpio_irq_set_mask(d, true);
++}
++
++static int aspeed_sgpio_set_type(struct irq_data *d, unsigned int type)
++{
++	u32 type0 = 0;
++	u32 type1 = 0;
++	u32 type2 = 0;
++	u32 bit, reg;
++	const struct aspeed_sgpio_bank *bank;
++	irq_flow_handler_t handler;
++	struct aspeed_sgpio *gpio;
++	unsigned long flags;
++	void __iomem *addr;
++	int rc, offset;
++
++	rc = irqd_to_aspeed_sgpio_data(d, &gpio, &bank, &bit, &offset);
++	if (rc)
++		return -EINVAL;
++
++	switch (type & IRQ_TYPE_SENSE_MASK) {
++	case IRQ_TYPE_EDGE_BOTH:
++		type2 |= bit;
++		/* fall through */
++	case IRQ_TYPE_EDGE_RISING:
++		type0 |= bit;
++		/* fall through */
++	case IRQ_TYPE_EDGE_FALLING:
++		handler = handle_edge_irq;
++		break;
++	case IRQ_TYPE_LEVEL_HIGH:
++		type0 |= bit;
++		/* fall through */
++	case IRQ_TYPE_LEVEL_LOW:
++		type1 |= bit;
++		handler = handle_level_irq;
++		break;
++	default:
++		return -EINVAL;
 +	}
 +
- 	return 0;
- }
++	spin_lock_irqsave(&gpio->lock, flags);
++
++	addr = bank_reg(gpio, bank, reg_irq_type0);
++	reg = ioread32(addr);
++	reg = (reg & ~bit) | type0;
++	iowrite32(reg, addr);
++
++	addr = bank_reg(gpio, bank, reg_irq_type1);
++	reg = ioread32(addr);
++	reg = (reg & ~bit) | type1;
++	iowrite32(reg, addr);
++
++	addr = bank_reg(gpio, bank, reg_irq_type2);
++	reg = ioread32(addr);
++	reg = (reg & ~bit) | type2;
++	iowrite32(reg, addr);
++
++	spin_unlock_irqrestore(&gpio->lock, flags);
++
++	irq_set_handler_locked(d, handler);
++
++	return 0;
++}
++
++static void aspeed_sgpio_irq_handler(struct irq_desc *desc)
++{
++	struct gpio_chip *gc = irq_desc_get_handler_data(desc);
++	struct irq_chip *ic = irq_desc_get_chip(desc);
++	struct aspeed_sgpio *data = gpiochip_get_data(gc);
++	unsigned int i, p, girq;
++	unsigned long reg;
++
++	chained_irq_enter(ic, desc);
++
++	for (i = 0; i < ARRAY_SIZE(aspeed_sgpio_banks); i++) {
++		const struct aspeed_sgpio_bank *bank = &aspeed_sgpio_banks[i];
++
++		reg = ioread32(bank_reg(data, bank, reg_irq_status));
++
++		for_each_set_bit(p, &reg, 32) {
++			girq = irq_find_mapping(gc->irq.domain, i * 32 + p);
++			generic_handle_irq(girq);
++		}
++
++	}
++
++	chained_irq_exit(ic, desc);
++}
++
++static struct irq_chip aspeed_sgpio_irqchip = {
++	.name       = "aspeed-sgpio",
++	.irq_ack    = aspeed_sgpio_irq_ack,
++	.irq_mask   = aspeed_sgpio_irq_mask,
++	.irq_unmask = aspeed_sgpio_irq_unmask,
++	.irq_set_type   = aspeed_sgpio_set_type,
++};
++
++static int aspeed_sgpio_setup_irqs(struct aspeed_sgpio *gpio,
++				   struct platform_device *pdev)
++{
++	int rc, i;
++	const struct aspeed_sgpio_bank *bank;
++
++	rc = platform_get_irq(pdev, 0);
++	if (rc < 0)
++		return rc;
++
++	gpio->irq = rc;
++
++	/* Disable IRQ and clear Interrupt status registers for all SPGIO Pins. */
++	for (i = 0; i < ARRAY_SIZE(aspeed_sgpio_banks); i++) {
++		bank =  &aspeed_sgpio_banks[i];
++		/* disable irq enable bits */
++		iowrite32(0x00000000, bank_reg(gpio, bank, reg_irq_enable));
++		/* clear status bits */
++		iowrite32(0xffffffff, bank_reg(gpio, bank, reg_irq_status));
++	}
++
++	rc = gpiochip_irqchip_add(&gpio->chip, &aspeed_sgpio_irqchip,
++				  0, handle_bad_irq, IRQ_TYPE_NONE);
++	if (rc) {
++		dev_info(&pdev->dev, "Could not add irqchip\n");
++		return rc;
++	}
++
++	gpiochip_set_chained_irqchip(&gpio->chip, &aspeed_sgpio_irqchip,
++				     gpio->irq, aspeed_sgpio_irq_handler);
++
++	/* set IRQ settings and Enable Interrupt */
++	for (i = 0; i < ARRAY_SIZE(aspeed_sgpio_banks); i++) {
++		bank = &aspeed_sgpio_banks[i];
++		/* set falling or level-low irq */
++		iowrite32(0x00000000, bank_reg(gpio, bank, reg_irq_type0));
++		/* trigger type is edge */
++		iowrite32(0x00000000, bank_reg(gpio, bank, reg_irq_type1));
++		/* dual edge trigger mode. */
++		iowrite32(0xffffffff, bank_reg(gpio, bank, reg_irq_type2));
++		/* enable irq */
++		iowrite32(0xffffffff, bank_reg(gpio, bank, reg_irq_enable));
++	}
++
++	return 0;
++}
++
++static int aspeed_sgpio_request(struct gpio_chip *chip, unsigned int offset)
++{
++	if (!have_gpio(gpiochip_get_data(chip), offset))
++		return -ENODEV;
++
++	return 0;
++}
++
++static const struct of_device_id aspeed_sgpio_of_table[] = {
++	{ .compatible = "aspeed,ast2400-sgpio", .data = NULL, },
++	{ .compatible = "aspeed,ast2500-sgpio", .data = NULL,},
++	{}
++};
++MODULE_DEVICE_TABLE(of, aspeed_sgpio_of_table);
++
++static int __init aspeed_sgpio_probe(struct platform_device *pdev)
++{
++	const struct of_device_id *gpio_id;
++	struct aspeed_sgpio *gpio;
++	struct resource *res;
++	int rc, i;
++
++	gpio = devm_kzalloc(&pdev->dev, sizeof(*gpio), GFP_KERNEL);
++	if (!gpio)
++		return -ENOMEM;
++
++	res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
++	gpio->base = devm_ioremap_resource(&pdev->dev, res);
++	if (IS_ERR(gpio->base))
++		return PTR_ERR(gpio->base);
++
++	spin_lock_init(&gpio->lock);
++
++	gpio_id = of_match_node(aspeed_sgpio_of_table, pdev->dev.of_node);
++	if (!gpio_id)
++		return -EINVAL;
++
++	gpio->chip.parent = &pdev->dev;
++	gpio->chip.ngpio = NR_SGPIO;
++	gpio->chip.direction_input = aspeed_sgpio_dir_in;
++	gpio->chip.direction_output = NULL;
++	gpio->chip.get_direction = aspeed_sgpio_get_direction;
++	gpio->chip.request = aspeed_sgpio_request;
++	gpio->chip.free = NULL;
++	gpio->chip.get = aspeed_sgpio_get;
++	gpio->chip.set = aspeed_sgpio_set;
++	gpio->chip.set_config = NULL;
++	gpio->chip.label = dev_name(&pdev->dev);
++	gpio->chip.base = -1;
++
++	rc = devm_gpiochip_add_data(&pdev->dev, &gpio->chip, gpio);
++	if (rc < 0)
++		return rc;
++
++	return aspeed_sgpio_setup_irqs(gpio, pdev);
++}
++
++static struct platform_driver aspeed_sgpio_driver = {
++	.driver = {
++		.name = KBUILD_MODNAME,
++		.of_match_table = aspeed_sgpio_of_table,
++	},
++};
++
++module_platform_driver_probe(aspeed_sgpio_driver, aspeed_sgpio_probe);
++MODULE_DESCRIPTION("Aspeed Serial GPIO Driver");
++MODULE_LICENSE("GPL");
 -- 
 2.7.4
 
