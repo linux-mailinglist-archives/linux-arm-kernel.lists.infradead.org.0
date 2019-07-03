@@ -2,50 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F3A1C5E883
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  3 Jul 2019 18:14:13 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 927CD5E8B4
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  3 Jul 2019 18:24:34 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=m194yoVm9WAjAPsTkzNCYySwCM57cBMPCuIqf7RWtVc=; b=EWP9YJ5SUN6svF
-	CTZ+Wqrdlu5LkwGbvFWuaNwsX45P2pUTaoRM3QKs44B8hyFijsuzWtgF9JC3I67e5MuKjzAh+dSv1
-	ddStjuC1t0QvP3MouV6BB8+bOGqdDg06/l8q4iobBVCfkzfeADGudVeY3WyhETefzUX5UkGCdm/Ln
-	/x89caypeATyvI0uVAR3BY87txMRhJkdZFIzeWEX0tcQRA5zXKDFjIirxnn6moDxgu29r9JBsU4Ax
-	W+DbAxpOj9vC7tCscrCQ+T/vjSA+36Wpj/5F33VMq3MjUxA1UAOXfohY2V+ABWQ7E4ZYxT2fgka8M
-	0ChpoEHlqG1Fm7T7L51Q==;
+	List-Owner; bh=PQkHEYhjKXLSHSq1iDM37Yy1LQclblkuwHqokoXQHcM=; b=gNucY4l0DcVvIi
+	x/Q96lXjvLwiN75DXuwFGoMbXENCmgd+et+NSsVJ5whBmqmcO7Opc4elmiJ0Ie6KaR21zGN9yxtsn
+	aWfklcgzb+G0dCK4IPxY5LA+cBPzYuHprr03JyLQMq9SmQtei9hcy2dshAP8chY4XCrFbDfcLEJd8
+	rhBuLipgKSHJJGRLhecRWwmTbOU5cyuxWJ/QubwIJFrZ8MBf4701uSvlazoNul39elmYYGWZNbjk4
+	TFGcD4fyJIJO+tKcHvu9bDz+ZGYL6giXEHnqx+ndpbuudvjY94npXzigzodUSSigv+CE9kNwee04G
+	F9Rup/tcKnqN8RldxPgQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hihta-0001FY-1F; Wed, 03 Jul 2019 16:14:10 +0000
+	id 1hii3b-0004Zp-PS; Wed, 03 Jul 2019 16:24:31 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hihtO-0001ED-R3
- for linux-arm-kernel@lists.infradead.org; Wed, 03 Jul 2019 16:14:00 +0000
+ id 1hii3O-0004Z9-PX
+ for linux-arm-kernel@lists.infradead.org; Wed, 03 Jul 2019 16:24:20 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 2DB5B344;
- Wed,  3 Jul 2019 09:13:56 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id AF569344;
+ Wed,  3 Jul 2019 09:24:15 -0700 (PDT)
 Received: from e103592.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
  [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 5FEE63F718;
- Wed,  3 Jul 2019 09:13:55 -0700 (PDT)
-Date: Wed, 3 Jul 2019 17:13:53 +0100
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id E0EFF3F718;
+ Wed,  3 Jul 2019 09:24:14 -0700 (PDT)
+Date: Wed, 3 Jul 2019 17:24:12 +0100
 From: Dave Martin <Dave.Martin@arm.com>
 To: Marc Zyngier <marc.zyngier@arm.com>
-Subject: Re: [PATCH 02/59] KVM: arm64: Move __load_guest_stage2 to kvm_mmu.h
-Message-ID: <20190703161353.GT2790@e103592.cambridge.arm.com>
+Subject: Re: [PATCH 04/59] KVM: arm64: nv: Introduce nested virtualization
+ VCPU feature
+Message-ID: <20190703162412.GU2790@e103592.cambridge.arm.com>
 References: <20190621093843.220980-1-marc.zyngier@arm.com>
- <20190621093843.220980-3-marc.zyngier@arm.com>
- <20190624111924.GK2790@e103592.cambridge.arm.com>
- <bf4e43db-a0ea-9489-1a8c-280a72950cad@arm.com>
+ <20190621093843.220980-5-marc.zyngier@arm.com>
+ <20190624114329.GO2790@e103592.cambridge.arm.com>
+ <5bd65cc0-89a1-0849-2041-b6016d58e4f2@arm.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <bf4e43db-a0ea-9489-1a8c-280a72950cad@arm.com>
+In-Reply-To: <5bd65cc0-89a1-0849-2041-b6016d58e4f2@arm.com>
 User-Agent: Mutt/1.5.23 (2014-03-12)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190703_091358_924305_29745191 
-X-CRM114-Status: GOOD (  17.42  )
+X-CRM114-CacheID: sfid-20190703_092418_885656_A747E238 
+X-CRM114-Status: GOOD (  15.98  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -72,34 +73,57 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Jul 03, 2019 at 10:30:03AM +0100, Marc Zyngier wrote:
-> On 24/06/2019 12:19, Dave Martin wrote:
-> > On Fri, Jun 21, 2019 at 10:37:46AM +0100, Marc Zyngier wrote:
-> >> Having __load_guest_stage2 in kvm_hyp.h is quickly going to trigger
-> >> a circular include problem. In order to avoid this, let's move
-> >> it to kvm_mmu.h, where it will be a better fit anyway.
+On Wed, Jul 03, 2019 at 12:56:51PM +0100, Marc Zyngier wrote:
+> On 24/06/2019 12:43, Dave Martin wrote:
+> > On Fri, Jun 21, 2019 at 10:37:48AM +0100, Marc Zyngier wrote:
+> >> From: Christoffer Dall <christoffer.dall@arm.com>
 > >>
-> >> In the process, drop the __hyp_text annotation, which doesn't help
-> >> as the function is marked as __always_inline.
+> >> Introduce the feature bit and a primitive that checks if the feature is
+> >> set behind a static key check based on the cpus_have_const_cap check.
+> >>
+> >> Checking nested_virt_in_use() on systems without nested virt enabled
+> >> should have neglgible overhead.
+> >>
+> >> We don't yet allow userspace to actually set this feature.
+> >>
+> >> Signed-off-by: Christoffer Dall <christoffer.dall@arm.com>
+> >> Signed-off-by: Marc Zyngier <marc.zyngier@arm.com>
+> >> ---
 > > 
-> > Does GCC always inline things marked __always_inline?
+> > [...]
 > > 
-> > I seem to remember some gotchas in this area, but I may be being
-> > paranoid.
-> 
-> Yes, this is a strong guarantee. Things like static keys rely on that,
-> for example.
-> 
+> >> diff --git a/arch/arm64/include/asm/kvm_nested.h b/arch/arm64/include/asm/kvm_nested.h
+> >> new file mode 100644
+> >> index 000000000000..8a3d121a0b42
+> >> --- /dev/null
+> >> +++ b/arch/arm64/include/asm/kvm_nested.h
+> >> @@ -0,0 +1,13 @@
+> >> +/* SPDX-License-Identifier: GPL-2.0 */
+> >> +#ifndef __ARM64_KVM_NESTED_H
+> >> +#define __ARM64_KVM_NESTED_H
+> >> +
+> >> +#include <linux/kvm_host.h>
+> >> +
+> >> +static inline bool nested_virt_in_use(const struct kvm_vcpu *vcpu)
+> >> +{
+> >> +	return cpus_have_const_cap(ARM64_HAS_NESTED_VIRT) &&
+> >> +		test_bit(KVM_ARM_VCPU_NESTED_VIRT, vcpu->arch.features);
+> >> +}
 > > 
-> > If this still only called from hyp, I'd be tempted to heep the
-> > __hyp_text annotation just to be on the safe side.
+> > Also, is it worth having a vcpu->arch.flags flag for this, similarly to
+> > SVE and ptrauth?
 > 
-> The trouble with that is that re-introduces the circular dependency with
-> kvm_hyp.h that this patch is trying to break...
+> What would we expose through this flag?
 
-Ah, right.
+Nothing new, put possibly more efficient to access.
 
-I guess it's easier to put up with this, then.
+AFAIK, test_bit() always results in an explicit load, whereas
+vcpu->arch.flags is just a variable, which we already access on some hot
+paths.  So the compiler can read it once and cache it, with a bit of
+luck.
+
+For flags that are fixed after vcpu init, or flags that are only read/
+written by the vcpu thread itself, this should work fine.
 
 Cheers
 ---Dave
