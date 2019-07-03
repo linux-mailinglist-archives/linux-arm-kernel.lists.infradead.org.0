@@ -2,68 +2,72 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 94FFD5E1A9
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  3 Jul 2019 12:09:09 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 768665E1A1
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  3 Jul 2019 12:08:53 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=bd4w1cRrPAVX+u9in+gW6P8lfnKvOtSlXSHONrllFUo=; b=cyGct0245XPDEU
-	zWtvLFnWMGu0It3EcZJ87UlIO5YkCOcn25GmwX12OrV8VgsE1aM84hHWFrA3Lzs+b7hi2qWlXWXjj
-	cSfqG57UbykLCiGocS/va/m0zm6H470Bq0Ri2VMAk+JGI/nZ+i4ecTMCgxatlvS1Yq01iFwdJBo51
-	lLXr5Q8zSb//x99YYWQRKeNk00RSTlUbexwbJMwq30pZ1+fiAnv6cYSDSqEgI985L12eTfeZKFXoY
-	JsDqmf6KOWCBcKa0ZHvAz8rqggiTHRWiCubwSyURGkwb+RW0EXl/Cdebg02EspzRqIwRqjYI1oqPP
-	KzJ5JQcMwR1OPyzSo/Ew==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=T8FqucXwN+z9Q4DIQQnIOXFfnA1oy9oJJfkVK/CFxGU=; b=Gf6K2UBW4GO7ib
+	02//3aiM0MMEFHDHATuCCmYuqwmGQ1ZuBR+7nZDyx/Xrd+d0f2APvidIGz06QMMl8Z5G0YqzoXk9J
+	XaGJW5YNo922jL5juNyLU/L2Qb7prt9twWSVwMl1KqceGMlA7G+vpbi/q1P87aSenVOB2BMBRZWMv
+	bYV9IZi7OO4QtCg/Xi0gLqVbY11Qw5619XvZIGLRWo6XgeotsV0k4grj3vu4zWatkxPVFUm4K9GIS
+	ruIBjvanIfXMSc2fSXG3m+qtzBwATDSlfvu/8EA+c9XktipIfPgv4Yg7lIE9vTlK1+DyeR0NVdo/9
+	SNxQZxotrgXfvEXprf1g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hicCJ-0008Bd-NX; Wed, 03 Jul 2019 10:09:07 +0000
+	id 1hicC2-000820-VZ; Wed, 03 Jul 2019 10:08:51 +0000
 Received: from mx07-00178001.pphosted.com ([62.209.51.94])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hicBp-00080d-9Z
+ id 1hicBp-00080V-9X
  for linux-arm-kernel@lists.infradead.org; Wed, 03 Jul 2019 10:08:39 +0000
-Received: from pps.filterd (m0046037.ppops.net [127.0.0.1])
+Received: from pps.filterd (m0046668.ppops.net [127.0.0.1])
  by mx07-00178001.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id
- x63A78vA000403; Wed, 3 Jul 2019 12:08:27 +0200
+ x63A73hP017468; Wed, 3 Jul 2019 12:08:25 +0200
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
  h=from : to : cc : subject
- : date : message-id : mime-version : content-type; s=STMicroelectronics;
- bh=yQLPGIAaYXazeAIq/YODkM7dpT27pO1tgwGE1je5OLc=;
- b=NPPjohpl4RNSBC7RN6FWvoNHRNykLuIpwfpJ0wKleYHtrYmiXHHp0rL6nIsIxhOj3XPt
- wvPP4xrcOtebmS/LHq/xKBBj3uWO+R5t46SeolR0ZCGwjUWIuw3JPOrO0bFbZYopEf0k
- p8xbGCliCA2pNjMK9n/tho7/8x8ZPcKK3SCQ5jvOwJSI59jBcgGzBouElFPgzuAMJofr
- kBgxG5LdWfl0A2EHqjQAhIrAFMWuI6szWjnngs2IMYLp2ZneuA83AIFmnEkwbCuKqTOS
- EgI11ymbmakYjj6o31+aVu02Vlwx1QZ1/QaaOMJ9LBXCQgPC9HKB6VmwBJaGUkM2DtXB hQ== 
+ : date : message-id : in-reply-to : references : mime-version :
+ content-type; s=STMicroelectronics;
+ bh=p8aelPu0ml7yIy5BgbpgQ7yP/tD7IVrIHl6DxHuKiZ4=;
+ b=tlFQE1OF+dfIEYXfZ8AHDmZT0ZWLF9GojP0qwXzAKpq07NOzrXRSDQ/+eS+Oo61fBGf8
+ EBTYg2KaLjv+kJK/EPKoIBsnVTb+Eekdlt70/zCJqzh0FrY4Rsuch92bpRTa5Qi5a58P
+ 5Rrp+ur3ujiTgHaRd74VsuhsQv4U3oIHVyHQmPRbefWYRTKP0bvQz+f7XLOgB5mDK8zl
+ B/1PDeype/7U7AEvSu2PZ+wMQgR9L6kq+hmVFDtcioNcJxsoRA8tlsVNibzZoi1A+T/F
+ PF1FScSjNdq7yXgBeMK2upMQnX+JvjiSgr7PgtEiBVLNalCiWEHIBg8fMpvt51HnQGmO Ow== 
 Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx07-00178001.pphosted.com with ESMTP id 2tdwrv2j5b-1
+ by mx07-00178001.pphosted.com with ESMTP id 2tdwf12pxx-1
  (version=TLSv1 cipher=ECDHE-RSA-AES256-SHA bits=256 verify=NOT);
- Wed, 03 Jul 2019 12:08:26 +0200
+ Wed, 03 Jul 2019 12:08:25 +0200
 Received: from zeta.dmz-eu.st.com (zeta.dmz-eu.st.com [164.129.230.9])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id E4D1231;
- Wed,  3 Jul 2019 10:08:23 +0000 (GMT)
-Received: from Webmail-eu.st.com (Safex1hubcas24.st.com [10.75.90.94])
- by zeta.dmz-eu.st.com (STMicroelectronics) with ESMTP id B01B92681;
- Wed,  3 Jul 2019 10:08:23 +0000 (GMT)
-Received: from SAFEX1HUBCAS23.st.com (10.75.90.47) by Safex1hubcas24.st.com
- (10.75.90.94) with Microsoft SMTP Server (TLS) id 14.3.439.0; Wed, 3 Jul 2019
- 12:08:23 +0200
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id EDD1A34;
+ Wed,  3 Jul 2019 10:08:24 +0000 (GMT)
+Received: from Webmail-eu.st.com (Safex1hubcas22.st.com [10.75.90.92])
+ by zeta.dmz-eu.st.com (STMicroelectronics) with ESMTP id C0314267F;
+ Wed,  3 Jul 2019 10:08:24 +0000 (GMT)
+Received: from SAFEX1HUBCAS23.st.com (10.75.90.47) by Safex1hubcas22.st.com
+ (10.75.90.92) with Microsoft SMTP Server (TLS) id 14.3.439.0; Wed, 3 Jul 2019
+ 12:08:24 +0200
 Received: from localhost (10.48.0.167) by webmail-ga.st.com (10.75.90.48) with
  Microsoft SMTP Server (TLS) id 14.3.439.0;
- Wed, 3 Jul 2019 12:08:23 +0200
+ Wed, 3 Jul 2019 12:08:24 +0200
 From: Fabrice Gasnier <fabrice.gasnier@st.com>
 To: <jic23@kernel.org>, <robh+dt@kernel.org>, <alexandre.torgue@st.com>
-Subject: [PATCH v2 0/3] STM32 ADC analog switches supply control
-Date: Wed, 3 Jul 2019 12:08:13 +0200
-Message-ID: <1562148496-26789-1-git-send-email-fabrice.gasnier@st.com>
+Subject: [PATCH v2 1/3] dt-bindings: iio: adc: stm32: add analog switches
+ supply control
+Date: Wed, 3 Jul 2019 12:08:14 +0200
+Message-ID: <1562148496-26789-2-git-send-email-fabrice.gasnier@st.com>
 X-Mailer: git-send-email 2.7.4
+In-Reply-To: <1562148496-26789-1-git-send-email-fabrice.gasnier@st.com>
+References: <1562148496-26789-1-git-send-email-fabrice.gasnier@st.com>
 MIME-Version: 1.0
 X-Originating-IP: [10.48.0.167]
 X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:, ,
  definitions=2019-07-03_03:, , signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190703_030837_945591_17274EA7 
-X-CRM114-Status: GOOD (  12.29  )
+X-CRM114-CacheID: sfid-20190703_030837_945919_88CE6C3D 
+X-CRM114-Status: GOOD (  11.81  )
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.9 points)
@@ -101,34 +105,45 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This series adds support for SYSCFG bits that control ADC analog switches
-supply on STM32MP1 and STM32H7.
+On stm32h7 and stm32mp1, the ADC inputs are multiplexed with analog
+switches which have reduced performances when their supply is below 2.7V
+(vdda by default). Booster or vdd can be used, to get full ADC
+performances.
 
-The ADC inputs are multiplexed with analog switches which have reduced
-performances when their supply is below 2.7V. Analog switches supply
-can be controlled using SYSCFG bits, to reach full ADC performance.
+Add documentation for:
+- optional booster-supply that can be used on stm32h7 and stm32mp1.
+- optional vdd-supply that can be used on stm32mp1 to supply analog
+  circuitry, selected by syscfg.
+Mark these as optional, since this is a trade-off between analog
+performance and power consumption.
 
+Signed-off-by: Fabrice Gasnier <fabrice.gasnier@st.com>
 ---
 Changes in v2:
-- Rework since: "Add missing vdda-supply to STM32 ADC" series [1].
-- Booster is handled by a regulator driver, see
-  "regulator: add support for the STM32 ADC booster" series [2].
-- Only enable vdd regulator when needed
-- Fix typos
+- Rework since: "Add missing vdda-supply to STM32 ADC" series.
+- Add booster-supply regulator description
+- typo: input switches
+---
+ Documentation/devicetree/bindings/iio/adc/st,stm32-adc.txt | 6 ++++++
+ 1 file changed, 6 insertions(+)
 
-[1] https://lkml.org/lkml/2019/6/19/411
-[2] https://lkml.org/lkml/2019/6/28/188
-
-Fabrice Gasnier (3):
-  dt-bindings: iio: adc: stm32: add analog switches supply control
-  iio: adc: stm32-adc: add analog switches supply control
-  ARM: dts: stm32: add syscfg to ADC on stm32mp157c
-
- .../devicetree/bindings/iio/adc/st,stm32-adc.txt   |   6 +
- arch/arm/boot/dts/stm32mp157c.dtsi                 |   1 +
- drivers/iio/adc/stm32-adc-core.c                   | 193 ++++++++++++++++++++-
- 3 files changed, 199 insertions(+), 1 deletion(-)
-
+diff --git a/Documentation/devicetree/bindings/iio/adc/st,stm32-adc.txt b/Documentation/devicetree/bindings/iio/adc/st,stm32-adc.txt
+index 93a0bd2..4c0da8c 100644
+--- a/Documentation/devicetree/bindings/iio/adc/st,stm32-adc.txt
++++ b/Documentation/devicetree/bindings/iio/adc/st,stm32-adc.txt
+@@ -47,6 +47,12 @@ Required properties:
+ Optional properties:
+ - A pinctrl state named "default" for each ADC channel may be defined to set
+   inX ADC pins in mode of operation for analog input on external pin.
++- booster-supply: Phandle to the embedded booster regulator that can be used
++  to supply ADC analog input switches on stm32h7 and stm32mp1.
++- vdd-supply: Phandle to the vdd input voltage. It can be used to supply ADC
++  analog input switches on stm32mp1.
++- st,syscfg: Phandle to system configuration controller. It can be used to
++  control the analog circuitry on stm32mp1.
+ 
+ Contents of a stm32 adc child node:
+ -----------------------------------
 -- 
 2.7.4
 
