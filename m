@@ -2,82 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 581DD5E48F
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  3 Jul 2019 14:53:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 49E285E491
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  3 Jul 2019 14:53:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=SsKeOYn2AQL7D/xSWRsTzRI26JXZDwXTR/dDPb4cpGE=; b=SOKtJ+EMiI1+uK
-	GD9MrFn2WsDk4mXULXlWLKp1tJg9wxxZUpA0N+XQfJeLjPl4eRH/Kk7u8fF1GI/vj37rv8I0Z8z0U
-	tOqgKGWIh+zGdP3lLk98387g9HyRk7P8Q9zGUavf6n/9H1unXAIyPrXkCjGSLMRj3XRCcVFA6H9W8
-	a0QHLvWi0Y4W5jRIr6Bt73tfwiFecjJxBAUcsAH8w3riuehase7cYtl99lveggLitlN8LtA0ueZ+J
-	bYpWm7snAhpy75D0QmxbmtPWH2mGzPJ6KDQhTu+1WdhF66A4zCUrVQNmzRGh+PntIei9WJzq0tuZc
-	Nu7gFDzQybFOX4ti8M6g==;
+	List-Owner; bh=1BIbJ8ESF4slmeXxyVRP78qMmkOWJ/F41nUka348Ll4=; b=XxOciykOWdsxEx
+	+tTNA5OgHmkFFvfAVqdwAqQ+2ZdUwMp+A9BYUXoprBAgQNXH38h8fkhzujLZ6kJbviOO/e581Umv8
+	M2a5NeyKm/mPXWvC6a/s8nJrnruF9wjExCx6edSevTfXwhzSGSY0m1qIHBj99ur7Y/xL4gwOZsVXE
+	kT4vvb0M0kVqK8e4ZO+nxPQ+/dNUEyJiNf1U7UMUarCX3CkdhsnAzQvs0ALcWPoNj6Qikc+MQVU/N
+	dNjBV6saKnuI44tZkQ4oVCLHU3+bo5G3ud0TnBRWuVmu3bk1oucIPEZA9gc4PKVpzl9km4xSnK50+
+	BGmbikxZLAE7VOq9opbg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hiekt-00087H-LY; Wed, 03 Jul 2019 12:52:59 +0000
-Received: from mail-pf1-x443.google.com ([2607:f8b0:4864:20::443])
+	id 1hielM-0008Ru-Aw; Wed, 03 Jul 2019 12:53:28 +0000
+Received: from mail-pl1-x643.google.com ([2607:f8b0:4864:20::643])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hiefc-0003Fq-Tt
- for linux-arm-kernel@lists.infradead.org; Wed, 03 Jul 2019 12:47:36 +0000
-Received: by mail-pf1-x443.google.com with SMTP id m30so1227885pff.8
+ id 1hiefg-0003Hm-Es
+ for linux-arm-kernel@lists.infradead.org; Wed, 03 Jul 2019 12:47:39 +0000
+Received: by mail-pl1-x643.google.com with SMTP id bh12so1202105plb.4
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 03 Jul 2019 05:47:32 -0700 (PDT)
+ Wed, 03 Jul 2019 05:47:36 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=amarulasolutions.com; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=dwxpgTdnKFZzWn/Z7ANmt0sn7isUuMpO/riyi3cCAJw=;
- b=dbIcaoFcCFDeDEkLkNNLnMdJS4l7hM2oTSloCObYKVHAbr2zAUbh0+t2Hcbe5OPDZW
- VJmSAwYFKwky3v3dTydsbcsIEMP28Jqg4iFq5KZgVKKDS9g37INKP7IOCLwMQ2CA8UBB
- VWFCvnA/IFu2SjSfknlZgG8H5p1qjEzxEdbEU=
+ bh=S1ba1K9fyy+5qb8wq4Py+5mYj4w5zxZQVOLZoJxTMuo=;
+ b=LldCI44X9Xgj+KQ7igQdPCvoeKY0QkFSIUlew9W5MKMM2GTLawR4+nrFnrdV8SZ9Qn
+ rcORCaRaadNquMSWMLkpMiNHI1A05QbSxvlS3xUfr6fqsELlZ2grn220xNi9ijvDZ2Ok
+ E5LErPRoJAdtNNWe4+Nrq/dxyRQFLp1agKtVo=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=dwxpgTdnKFZzWn/Z7ANmt0sn7isUuMpO/riyi3cCAJw=;
- b=c1V0nxv+atWtJkEn3o5ElCV/7X0wKlErhQpcp9R7Xt/YALlVZrpmx3pePRrCCPcYCl
- TCV3Bsv2Pq20RfzmBUs32QLr5XjM0X+enyDNRC7kd5sr2mFjLe/GBlZBzoOk7/sPJWcg
- L35v1hXSRMB9hmEY6mVlDH8xBPFpK6cAg1gB0zFbNkosN4qgAVft6zsCwyBY6S/2Cl+N
- chXX8/FEOTZ1uDLSmILSqKYnZHEx+3dLTgPGVPZLd08cLA2IpU38g+C+YVHHV/83WVnm
- qnbA3zYuMohIK/OD8eujzjt/t2q4HoYoqt6lnf6o2bKlydVmvbpE3k1DAlJlqLXHX4dF
- TqMw==
-X-Gm-Message-State: APjAAAVl9ObJPBslWGr5PVG3O8uPC7UQeNwShKt2wCDXlxZMfjSXqroE
- IejLvK9/WHoVD16rRgKfG1NE+Q==
-X-Google-Smtp-Source: APXvYqxEwm3K3EY8j0XttU05aGOZb3Xwv6TqTylVAmfSl/4YVXJNFbqi3zaupoW/Mrb8jbK9fy4LWw==
-X-Received: by 2002:a63:6ec6:: with SMTP id
- j189mr21797377pgc.168.1562158051991; 
- Wed, 03 Jul 2019 05:47:31 -0700 (PDT)
+ bh=S1ba1K9fyy+5qb8wq4Py+5mYj4w5zxZQVOLZoJxTMuo=;
+ b=TiZ/AnuuhXb2pEHSoYBdbvIg76YlsM+ZedXzeP9BdgwTN8Zp6ZbBc+TKl1zea2vXxG
+ cJSJ3v6LeppJST7OYnsRXnoyy+9C85B1Dp/O0fhqWFFFXY3XmAJjQnkbeiEDL67BY+2b
+ 5dDPhxBMgWHB2fTbKBidgifcC+f3fcUbnPnBnS1akNMQgFtQe1F8MrXGlmHNMUq9VLkT
+ TgcuuG3jBu7tOxFihMeh3AfERESkizYz9CjtDxtVulgVWiGxCtPCCSfD1rv8RLxzo7ER
+ Fi6WY2P85BJJ/5I94CgO9fzG5jMvOggeM7tWYWJIq7VTSabpHu375GkJIaHibKGD112s
+ MGhA==
+X-Gm-Message-State: APjAAAUUBlPTR9TmfbzBEkPVdWJAFyJByc1h6VlAKoYqt4SviiIAt+c3
+ n5+NMCAwNnUzOgD2lLoB+riv1Q==
+X-Google-Smtp-Source: APXvYqy9jbP5SSZotDo314YorMjS7X521i23RpMvXcpJM8TBaNiAnm8ovF/1KztULAYD0rntbprk1g==
+X-Received: by 2002:a17:902:8f81:: with SMTP id
+ z1mr41260972plo.290.1562158055385; 
+ Wed, 03 Jul 2019 05:47:35 -0700 (PDT)
 Received: from localhost.localdomain ([183.82.231.32])
- by smtp.gmail.com with ESMTPSA id q1sm3735890pfn.178.2019.07.03.05.47.28
+ by smtp.gmail.com with ESMTPSA id q1sm3735890pfn.178.2019.07.03.05.47.32
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Wed, 03 Jul 2019 05:47:31 -0700 (PDT)
+ Wed, 03 Jul 2019 05:47:34 -0700 (PDT)
 From: Jagan Teki <jagan@amarulasolutions.com>
 To: Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
  Maxime Ripard <maxime.ripard@bootlin.com>, Chen-Yu Tsai <wens@csie.org>,
  devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
  linux-kernel@vger.kernel.org
-Subject: [PATCH 14/25] ARM: dts: sun8i: Switch A83T dts(i) to use SPDX
- identifier
-Date: Wed,  3 Jul 2019 18:15:58 +0530
-Message-Id: <20190703124609.21435-15-jagan@amarulasolutions.com>
+Subject: [PATCH 15/25] ARM: dts: sun8i: Switch H2+ dts to use SPDX identifier
+Date: Wed,  3 Jul 2019 18:15:59 +0530
+Message-Id: <20190703124609.21435-16-jagan@amarulasolutions.com>
 X-Mailer: git-send-email 2.18.0.321.gffc6fa0e3
 In-Reply-To: <20190703124609.21435-1-jagan@amarulasolutions.com>
 References: <20190703124609.21435-1-jagan@amarulasolutions.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190703_054732_993422_2C01D6F6 
-X-CRM114-Status: GOOD (  18.73  )
+X-CRM114-CacheID: sfid-20190703_054736_759500_137CD7DD 
+X-CRM114-Status: GOOD (  18.78  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:443 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:643 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -108,7 +107,7 @@ Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 Adopt the SPDX license identifier headers to ease license
-compliance management on Allwinner A83T dts(i) files.
+compliance management on Allwinner H2+ dts files.
 
 While the text specifies "of the GPL or the X11 license"
 but the actual license text matches the MIT license as
@@ -118,22 +117,18 @@ specified at [0]
 
 Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
 ---
- .../dts/sun8i-a83t-allwinner-h8homlet-v2.dts  | 39 +------------------
- arch/arm/boot/dts/sun8i-a83t-bananapi-m3.dts  | 39 +------------------
- .../boot/dts/sun8i-a83t-cubietruck-plus.dts   | 39 +------------------
- arch/arm/boot/dts/sun8i-a83t-tbs-a711.dts     | 39 +------------------
- arch/arm/boot/dts/sun8i-a83t.dtsi             | 39 +------------------
- 5 files changed, 5 insertions(+), 190 deletions(-)
+ .../boot/dts/sun8i-h2-plus-orangepi-r1.dts    | 39 +------------------
+ .../boot/dts/sun8i-h2-plus-orangepi-zero.dts  | 39 +------------------
+ 2 files changed, 2 insertions(+), 76 deletions(-)
 
-diff --git a/arch/arm/boot/dts/sun8i-a83t-allwinner-h8homlet-v2.dts b/arch/arm/boot/dts/sun8i-a83t-allwinner-h8homlet-v2.dts
-index 9c006fc18821..172a15694ad6 100644
---- a/arch/arm/boot/dts/sun8i-a83t-allwinner-h8homlet-v2.dts
-+++ b/arch/arm/boot/dts/sun8i-a83t-allwinner-h8homlet-v2.dts
-@@ -1,44 +1,7 @@
+diff --git a/arch/arm/boot/dts/sun8i-h2-plus-orangepi-r1.dts b/arch/arm/boot/dts/sun8i-h2-plus-orangepi-r1.dts
+index 3356f4210d45..ff31d817b551 100644
+--- a/arch/arm/boot/dts/sun8i-h2-plus-orangepi-r1.dts
++++ b/arch/arm/boot/dts/sun8i-h2-plus-orangepi-r1.dts
+@@ -1,43 +1,6 @@
 +// SPDX-License-Identifier: (GPL-2.0 OR MIT)
  /*
-  * Copyright 2015 Vishnu Patekar
-  * Vishnu Patekar <vishnupatekar0510@gmail.com>
+  * Copyright (C) 2017 Icenowy Zheng <icenowy@aosc.xyz>
 - *
 - * This file is dual-licensed: you can use it either under the terms
 - * of the GPL or the X11 license, at your option. Note that this dual
@@ -174,17 +169,18 @@ index 9c006fc18821..172a15694ad6 100644
 - *     OTHER DEALINGS IN THE SOFTWARE.
   */
  
- /dts-v1/;
-diff --git a/arch/arm/boot/dts/sun8i-a83t-bananapi-m3.dts b/arch/arm/boot/dts/sun8i-a83t-bananapi-m3.dts
-index 9d34eabba121..ff1eec61ab53 100644
---- a/arch/arm/boot/dts/sun8i-a83t-bananapi-m3.dts
-+++ b/arch/arm/boot/dts/sun8i-a83t-bananapi-m3.dts
-@@ -1,45 +1,8 @@
+ /* Orange Pi R1 is based on Orange Pi Zero design */
+diff --git a/arch/arm/boot/dts/sun8i-h2-plus-orangepi-zero.dts b/arch/arm/boot/dts/sun8i-h2-plus-orangepi-zero.dts
+index f19ed981da9d..c2a4d8f5f251 100644
+--- a/arch/arm/boot/dts/sun8i-h2-plus-orangepi-zero.dts
++++ b/arch/arm/boot/dts/sun8i-h2-plus-orangepi-zero.dts
+@@ -1,46 +1,9 @@
 +// SPDX-License-Identifier: (GPL-2.0 OR MIT)
  /*
-  * Copyright 2017 Chen-Yu Tsai
+  * Copyright (C) 2016 Icenowy Zheng <icenowy@aosc.xyz>
   *
-  * Chen-Yu Tsai <wens@csie.org>
+  * Based on sun8i-h3-orangepi-one.dts, which is:
+  *   Copyright (C) 2016 Hans de Goede <hdegoede@redhat.com>
 - *
 - * This file is dual-licensed: you can use it either under the terms
 - * of the GPL or the X11 license, at your option. Note that this dual
@@ -226,158 +222,6 @@ index 9d34eabba121..ff1eec61ab53 100644
   */
  
  /dts-v1/;
-diff --git a/arch/arm/boot/dts/sun8i-a83t-cubietruck-plus.dts b/arch/arm/boot/dts/sun8i-a83t-cubietruck-plus.dts
-index ea299d3d84d0..312508871ae1 100644
---- a/arch/arm/boot/dts/sun8i-a83t-cubietruck-plus.dts
-+++ b/arch/arm/boot/dts/sun8i-a83t-cubietruck-plus.dts
-@@ -1,45 +1,8 @@
-+// SPDX-License-Identifier: (GPL-2.0 OR MIT)
- /*
-  * Copyright 2015 Chen-Yu Tsai
-  *
-  * Chen-Yu Tsai <wens@csie.org>
-- *
-- * This file is dual-licensed: you can use it either under the terms
-- * of the GPL or the X11 license, at your option. Note that this dual
-- * licensing only applies to this file, and not this project as a
-- * whole.
-- *
-- *  a) This file is free software; you can redistribute it and/or
-- *     modify it under the terms of the GNU General Public License as
-- *     published by the Free Software Foundation; either version 2 of the
-- *     License, or (at your option) any later version.
-- *
-- *     This file is distributed in the hope that it will be useful,
-- *     but WITHOUT ANY WARRANTY; without even the implied warranty of
-- *     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-- *     GNU General Public License for more details.
-- *
-- * Or, alternatively,
-- *
-- *  b) Permission is hereby granted, free of charge, to any person
-- *     obtaining a copy of this software and associated documentation
-- *     files (the "Software"), to deal in the Software without
-- *     restriction, including without limitation the rights to use,
-- *     copy, modify, merge, publish, distribute, sublicense, and/or
-- *     sell copies of the Software, and to permit persons to whom the
-- *     Software is furnished to do so, subject to the following
-- *     conditions:
-- *
-- *     The above copyright notice and this permission notice shall be
-- *     included in all copies or substantial portions of the Software.
-- *
-- *     THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
-- *     EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
-- *     OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
-- *     NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
-- *     HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
-- *     WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
-- *     FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
-- *     OTHER DEALINGS IN THE SOFTWARE.
-  */
- 
- /dts-v1/;
-diff --git a/arch/arm/boot/dts/sun8i-a83t-tbs-a711.dts b/arch/arm/boot/dts/sun8i-a83t-tbs-a711.dts
-index 568b90ece342..93a14c227789 100644
---- a/arch/arm/boot/dts/sun8i-a83t-tbs-a711.dts
-+++ b/arch/arm/boot/dts/sun8i-a83t-tbs-a711.dts
-@@ -1,44 +1,7 @@
-+// SPDX-License-Identifier: (GPL-2.0 OR MIT)
- /*
-  * Copyright (C) 2017 Touchless Biometric Systems AG
-  * Tomas Novotny <tomas@novotny.cz>
-- *
-- * This file is dual-licensed: you can use it either under the terms
-- * of the GPL or the X11 license, at your option. Note that this dual
-- * licensing only applies to this file, and not this project as a
-- * whole.
-- *
-- *  a) This file is free software; you can redistribute it and/or
-- *     modify it under the terms of the GNU General Public License as
-- *     published by the Free Software Foundation; either version 2 of the
-- *     License, or (at your option) any later version.
-- *
-- *     This file is distributed in the hope that it will be useful,
-- *     but WITHOUT ANY WARRANTY; without even the implied warranty of
-- *     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-- *     GNU General Public License for more details.
-- *
-- * Or, alternatively,
-- *
-- *  b) Permission is hereby granted, free of charge, to any person
-- *     obtaining a copy of this software and associated documentation
-- *     files (the "Software"), to deal in the Software without
-- *     restriction, including without limitation the rights to use,
-- *     copy, modify, merge, publish, distribute, sublicense, and/or
-- *     sell copies of the Software, and to permit persons to whom the
-- *     Software is furnished to do so, subject to the following
-- *     conditions:
-- *
-- *     The above copyright notice and this permission notice shall be
-- *     included in all copies or substantial portions of the Software.
-- *
-- *     THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
-- *     EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
-- *     OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
-- *     NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
-- *     HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
-- *     WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
-- *     FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
-- *     OTHER DEALINGS IN THE SOFTWARE.
-  */
- 
- /dts-v1/;
-diff --git a/arch/arm/boot/dts/sun8i-a83t.dtsi b/arch/arm/boot/dts/sun8i-a83t.dtsi
-index ada6d08bc540..f7471f4d63db 100644
---- a/arch/arm/boot/dts/sun8i-a83t.dtsi
-+++ b/arch/arm/boot/dts/sun8i-a83t.dtsi
-@@ -1,45 +1,8 @@
-+// SPDX-License-Identifier: (GPL-2.0 OR MIT)
- /*
-  * Copyright 2015 Vishnu Patekar
-  *
-  * Vishnu Patekar <vishnupatekar0510@gmail.com>
-- *
-- * This file is dual-licensed: you can use it either under the terms
-- * of the GPL or the X11 license, at your option. Note that this dual
-- * licensing only applies to this file, and not this project as a
-- * whole.
-- *
-- *  a) This file is free software; you can redistribute it and/or
-- *     modify it under the terms of the GNU General Public License as
-- *     published by the Free Software Foundation; either version 2 of the
-- *     License, or (at your option) any later version.
-- *
-- *     This file is distributed in the hope that it will be useful,
-- *     but WITHOUT ANY WARRANTY; without even the implied warranty of
-- *     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-- *     GNU General Public License for more details.
-- *
-- * Or, alternatively,
-- *
-- *  b) Permission is hereby granted, free of charge, to any person
-- *     obtaining a copy of this software and associated documentation
-- *     files (the "Software"), to deal in the Software without
-- *     restriction, including without limitation the rights to use,
-- *     copy, modify, merge, publish, distribute, sublicense, and/or
-- *     sell copies of the Software, and to permit persons to whom the
-- *     Software is furnished to do so, subject to the following
-- *     conditions:
-- *
-- *     The above copyright notice and this permission notice shall be
-- *     included in all copies or substantial portions of the Software.
-- *
-- *     THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
-- *     EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
-- *     OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
-- *     NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
-- *     HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
-- *     WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
-- *     FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
-- *     OTHER DEALINGS IN THE SOFTWARE.
-  */
- 
- #include <dt-bindings/interrupt-controller/arm-gic.h>
 -- 
 2.18.0.321.gffc6fa0e3
 
