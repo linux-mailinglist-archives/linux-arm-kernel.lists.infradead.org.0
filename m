@@ -2,49 +2,45 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A73D65E292
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  3 Jul 2019 13:07:53 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3315A5E2C8
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  3 Jul 2019 13:25:37 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=SCrazHHDTDHMFUvpplt68w2XQSAcACvaW+LOAoVfA5s=; b=GCiehiXmv5Y+Bg
-	VSpS4GiDH0uA27Hpxbng/587EulzX+OzFGmXbNzQAEk9BLIp/83R+q0G0SY6dOImG7CDxPxev6kd5
-	iYjDGuoNAodL0IDpAM+5uuHksuNCyfaUQTKXuNZmiHu8CSM4oXNx2bK6TwqOKgvRb/tK3jVTLYEz8
-	2+MH2wOa+/qRvYRMVZLo7W22ZYU6z2z0koS0wpS6AQDUghSZyJVHY0cWwj9lzOYHYGAQHEp1U6FP/
-	YFskaZsYxPaQnw+CepLCvdXLjgSPX+boY6LaXm93laOd70gqKJzykU+txwpp+TN6pyNyWjunchfA4
-	xFxZVpEZ8WxYK2JyzB7g==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=b9VpiKi236sbCE5rtxKjgLja8zE+WxB2A/p8lyKBmFg=; b=LJ0kJb+kyH4iVm
+	8EUPMEVoOjHCleb+dI0iuTWVrfLwsJs01BgCwlMSqspWC2QdZoJuKf0TTq3x4ROyXpH1+ItHGG1Kq
+	xaBIZnMAszV29PWIz5xEUrIFjMKgJt99t0/AAmHxsSuM3uy+8Cv4hSQmpZ7WzIi1nEVI/dmtEPh4u
+	PLt6S4MgtH/QitFkxp1H4Ro4OYi4IBs0zRxWJcN4ds+AdWYzcKyVbvLgPft0JaOcIxKj1HbyGQz7w
+	W6hPtrh69Rrw5ReUcl4NuBw8CW8UlEGltwIcolv9e0gdFPfsnMvFVzBxPrb8IGN1zfLzU9ltgCB84
+	VYoW6KRvnq/cd1c1N24Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hid7A-0004vO-3s; Wed, 03 Jul 2019 11:07:52 +0000
+	id 1hidOJ-0003HU-7k; Wed, 03 Jul 2019 11:25:35 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hid6u-0004tx-BA
- for linux-arm-kernel@lists.infradead.org; Wed, 03 Jul 2019 11:07:37 +0000
+ id 1hidO6-0003H4-14
+ for linux-arm-kernel@lists.infradead.org; Wed, 03 Jul 2019 11:25:23 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 882C7344;
- Wed,  3 Jul 2019 04:07:34 -0700 (PDT)
-Received: from e103592.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
- [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 4D44E3F703;
- Wed,  3 Jul 2019 04:07:33 -0700 (PDT)
-Date: Wed, 3 Jul 2019 12:07:31 +0100
-From: Dave Martin <Dave.Martin@arm.com>
-To: Will Deacon <will.deacon@arm.com>
-Subject: Re: [PATCH kvmtool v4 0/8] arm64: Pointer Authentication and SVE
- support
-Message-ID: <20190703110730.GS2790@e103592.cambridge.arm.com>
-References: <1559906789-20936-1-git-send-email-Dave.Martin@arm.com>
- <20190703093537.GC3122@fuggles.cambridge.arm.com>
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 580EC344;
+ Wed,  3 Jul 2019 04:25:21 -0700 (PDT)
+Received: from ostrya.cambridge.arm.com (ostrya.cambridge.arm.com
+ [10.1.196.129])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 8861A3F703;
+ Wed,  3 Jul 2019 04:25:20 -0700 (PDT)
+From: Jean-Philippe Brucker <jean-philippe.brucker@arm.com>
+To: will@kernel.org
+Subject: [PATCH] iommu/arm-smmu-v3: Invalidate ATC when detaching a device
+Date: Wed,  3 Jul 2019 12:19:20 +0100
+Message-Id: <20190703111920.23637-1-jean-philippe.brucker@arm.com>
+X-Mailer: git-send-email 2.21.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190703093537.GC3122@fuggles.cambridge.arm.com>
-User-Agent: Mutt/1.5.23 (2014-03-12)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190703_040736_437015_239139FF 
-X-CRM114-Status: GOOD (  10.99  )
+X-CRM114-CacheID: sfid-20190703_042522_119541_3F287E8B 
+X-CRM114-Status: UNSURE (   8.96  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -63,31 +59,58 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Christoffer Dall <cdall@kernel.org>, Marc Zyngier <marc.zyngier@arm.com>,
- Andre Przywara <andre.przywara@arm.com>,
- Kristina Martsenko <kristina.martsenko@arm.com>,
- Zhang Lei <zhang.lei@jp.fujitsu.com>,
- Amit Daniel Kachhap <amit.kachhap@arm.com>, kvmarm@lists.cs.columbia.edu,
+Cc: joro@8bytes.org, robin.murphy@arm.com, iommu@lists.linux-foundation.org,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Jul 03, 2019 at 10:35:37AM +0100, Will Deacon wrote:
-> On Fri, Jun 07, 2019 at 12:26:21PM +0100, Dave Martin wrote:
-> > This series, based on kvmtool master [1], implements basic support for
-> > pointer authentication and SVE for guests.  This superseded the
-> > previous v3 series [2].
-> 
-> I'd prefer to use the release headers for 5.2, so I've taken the first three
-> patches for now, but I'll wait for you to repost once 5.2 is out before I
-> take the rest.
+We make the invalid assumption in arm_smmu_detach_dev() that the ATC is
+clear after calling pci_disable_ats(). For one thing, only enabling the
+PCIe ATS capability constitutes an implicit invalidation event, so the
+comment was wrong. More importantly, the ATS capability isn't necessarily
+disabled by pci_disable_ats() in a PF, if the associated VFs have ATS
+enabled. Explicitly invalidate all ATC entries in arm_smmu_detach_dev().
+The endpoint cannot form new ATC entries because STE.EATS is clear.
 
-Ack 
+Fixes: 9ce27afc0830 ("iommu/arm-smmu-v3: Add support for PCI ATS")
+Reported-by: Manoj Kumar <Manoj.Kumar3@arm.com>
+Reported-by: Robin Murphy <Robin.Murphy@arm.com>
+Signed-off-by: Jean-Philippe Brucker <jean-philippe.brucker@arm.com>
+---
+ drivers/iommu/arm-smmu-v3.c | 5 ++++-
+ 1 file changed, 4 insertions(+), 1 deletion(-)
 
-Cheers
----Dave
+diff --git a/drivers/iommu/arm-smmu-v3.c b/drivers/iommu/arm-smmu-v3.c
+index 4d5a694f02c2..0fee8f7957ec 100644
+--- a/drivers/iommu/arm-smmu-v3.c
++++ b/drivers/iommu/arm-smmu-v3.c
+@@ -1884,9 +1884,13 @@ static int arm_smmu_enable_ats(struct arm_smmu_master *master)
+ 
+ static void arm_smmu_disable_ats(struct arm_smmu_master *master)
+ {
++	struct arm_smmu_cmdq_ent cmd;
++
+ 	if (!master->ats_enabled || !dev_is_pci(master->dev))
+ 		return;
+ 
++	arm_smmu_atc_inv_to_cmd(0, 0, 0, &cmd);
++	arm_smmu_atc_inv_master(master, &cmd);
+ 	pci_disable_ats(to_pci_dev(master->dev));
+ 	master->ats_enabled = false;
+ }
+@@ -1906,7 +1910,6 @@ static void arm_smmu_detach_dev(struct arm_smmu_master *master)
+ 	master->domain = NULL;
+ 	arm_smmu_install_ste_for_dev(master);
+ 
+-	/* Disabling ATS invalidates all ATC entries */
+ 	arm_smmu_disable_ats(master);
+ }
+ 
+-- 
+2.21.0
+
 
 _______________________________________________
 linux-arm-kernel mailing list
