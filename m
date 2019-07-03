@@ -2,69 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5ED055E309
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  3 Jul 2019 13:45:28 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 50E9F5E311
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  3 Jul 2019 13:46:20 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=DCAC82r7RShl80POiDsf4v6vXpn410Tf8YHgpm8y5xs=; b=SFi5GM+jUA2zA8
-	PHZoHOSuadjqQNxXXP5mDjEadrRXZoQI+o1Dnx6G9r2tushvnoILsMo/XHKnyoTG/RGyU/xZRGrWc
-	o1y1KhmBgnRxwmmNm7Xt4EwHk2mq+Evid4AhK3gW5VqWE42AuK2USsCWOOaAVqCG8pgjtIjq+5KkJ
-	8LXuPq30GgIv4NWvXimb6sKnWQiyhvtHFme7t8C7T7WnfIE5Ok/6mJcdL2kpwbZWRfKbv+3DGfJEG
-	bD14v1fKTLGwQeOPTjb4XeVceMO7s9vvHTEJCE+E80HzfACG2drrqz74plenRhMeQA+GJ6wrJYQZ3
-	X+EJmVA9CghDCsQbkyRw==;
+	List-Owner; bh=acqUl/7IkbPmGETe5fwl5egfw4tY9Irmdp8i4+tPfZ4=; b=locYuluDI/vd9N
+	TNcvYiHGZKe4ai0aFODZwnYMIZ6uDH82h2k8y74WG/nAkbNQFdvZEZsTMnNfE1TP8vvQsRwF+F6AQ
+	dTWHKArg25dbR8HerTfi9GCc7gg9QakIn42t5vvY14TVHWVwPyCr7i7OG2PCaW0DdHmsRBsMFPZw7
+	ypAs5l8sVULJfBz9xfZQeed3EHDpEtiz6MSHR4/X6hq913he+4sfg5XE7dEfdNLLt/ug4J1KfCEd7
+	9bZ27zmDrT86QLBSRPSDPbhj2XGkcPpYd/m6DnwQG3CK0ncrMS5I9Q/bTxiNMo0w/qX3ChPKsFJxk
+	SYgACk9JFadyZ5EnAWLg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hidhT-0001FX-LS; Wed, 03 Jul 2019 11:45:23 +0000
-Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
+	id 1hidiM-0001av-Na; Wed, 03 Jul 2019 11:46:18 +0000
+Received: from mail-wm1-x32d.google.com ([2a00:1450:4864:20::32d])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hidh8-0008Ng-L7
- for linux-arm-kernel@lists.infradead.org; Wed, 03 Jul 2019 11:45:05 +0000
-Received: by mail-wm1-x341.google.com with SMTP id a15so1865178wmj.5
+ id 1hidi3-0001Yh-MN
+ for linux-arm-kernel@lists.infradead.org; Wed, 03 Jul 2019 11:46:00 +0000
+Received: by mail-wm1-x32d.google.com with SMTP id g135so1868928wme.4
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 03 Jul 2019 04:44:57 -0700 (PDT)
+ Wed, 03 Jul 2019 04:45:59 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=baylibre-com.20150623.gappssmtp.com; s=20150623;
  h=subject:to:cc:references:from:openpgp:autocrypt:organization
  :message-id:date:user-agent:mime-version:in-reply-to
  :content-language:content-transfer-encoding;
- bh=xRM3DVh9DsuQz16USxYQS7Smf9h6SGJQ053F4dMRpRU=;
- b=008PJMdwKFL2Oxdt2I5iMPhyZ3qVvnb5aME0kmmtc0GTVVxzy1c8mMdK1Ev5ILA5O2
- 55KzKDHcgmyPERgyfBQdCIpl7i34/xMgWGtyI1n2GDG5u8+qzUceCoCaRL10e+8gVihE
- QBSlmpptkADAqWWgyTOn8qpsNjo1ivBNFObhwjr5QQxRA5YbPIUoB0ysw824tvFNqv3g
- ABqJNiB1kB0PaDZew2/r3ZzQYBG56gBJ3INrF4e4EJkbYQaGU9FC6OY60lP0tU/qfhWi
- 8nsbvzCSQjI3oY4gVKcRFtifPn+RALASmAkRkh9oGFuomkGj50d/13S4V+kk+imEbSBe
- g8OA==
+ bh=GOBgbpxojxMl8coS8J3cq4yo2RoH1jW/e7h/wxggz4c=;
+ b=ykrBiKDZ51FcAY735DtHGeIYEPrwR/4jtBD/q5JY+AXGKOFDRQ5B+CPwXu+OCuibRt
+ GhGIS8Qw0R6gbW8wgKA+ami4A2cbrtgCTd+WAxQwT2YzIWLIai1ieek/BgeGtiLu1JAY
+ +43EQoCC94+kipR1XJoab2Xfl2kAIRgLvgPhoGOF7pURLSGx0gW+EA7qGtXPdrW+kAW7
+ Yz6eqjvgIQ5leHLc8u9ayuz3Ow0Q8RisuJNz6jBGm+1DMBh1IhcyBR8gmrI7OTBUnR6N
+ stvlF2wPN7PprcPJyvcoR9x/CbARLrpc9LkxEkl2+JmuGK0m/cbgQDhKKG324fnPD0Z7
+ 1EgQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:subject:to:cc:references:from:openpgp:autocrypt
  :organization:message-id:date:user-agent:mime-version:in-reply-to
  :content-language:content-transfer-encoding;
- bh=xRM3DVh9DsuQz16USxYQS7Smf9h6SGJQ053F4dMRpRU=;
- b=enLnYnkEvLR+wQfuTcuRsMDGgsTqKpJSnNSfesif147eyK1vk4h10Vx3bxinoLIkQS
- x0tZkx3zjFc0lxg6u7ZYwta8m+fdSuo2Kzwt5yTE7319Mn1muyiA/6af+MoLSP8Ccqx8
- UKZw0Gj8YRzZycUKblejAcMQ33kcAaZloqUyv4uezz0QriHZ1Sm9I0loMJBKwwSPJNin
- h+gaDVCKdfG9WwQnTWFPLeFEFx/DNEpCfh2SWXXuoJKhwTDJeTr+rl+HxF7CitpkfpVV
- X00pj4x+LaqcbgUCzB8aEXdf/BSPWQOXMQGG+QgUOgKZk9hA7qgSBy4MsL5Txrkv/7YK
- waKw==
-X-Gm-Message-State: APjAAAX8NT51HgUbPc5cZv8FHfu610s9cQSsdx/oyCUlc5UGeNcT2iRU
- o7SNGtPQVrcwGaBzE1vuiS1lL7tjXz4=
-X-Google-Smtp-Source: APXvYqxDoWWv8HvVXmL+edDBfuGwhfZa/FRH6SaeQwpQNUT+YtGlMokLtVzi9wOEdoQLYaytnzb4NQ==
-X-Received: by 2002:a1c:b707:: with SMTP id h7mr7699725wmf.45.1562154295737;
- Wed, 03 Jul 2019 04:44:55 -0700 (PDT)
+ bh=GOBgbpxojxMl8coS8J3cq4yo2RoH1jW/e7h/wxggz4c=;
+ b=YdxDU2pVQ3LgwLWeNQH4MrWm2LGDbIf3qfWcSgILmrM4v/m+0dmNQpSmXXMKwgQtOW
+ JlrACESxRI66tUxYdk7GpeQ8ja5ibkU3vAHjvC9VCjjGMvs5GR513aN182Bku72NY7Ny
+ PtyJTYjsMfWEBAAomNH5QBig1VwVo/xzwXhXyt+W5kvND14ECVk1phthCYdedp52p4hq
+ lpob514P2AvOYX/hrHynZ41i+8kOBDVDsXjvZracqz9grtmaJScRJgmUH0dOBnAK3EIr
+ 5YmOADXC3hHRB6sigPUFRKFiJVoM5O1lCWR6ilNrsmDapgDrD1z54cNg77E8b/0jF8AW
+ TG8A==
+X-Gm-Message-State: APjAAAUBn4iEO15Vdhvpfthhs4cYVz/dHf/A1CnzrRf3/YRsBhnCwJl0
+ Gd0OXt6kL584UZbxXiuXV36+mA==
+X-Google-Smtp-Source: APXvYqw+skoO2LrF8gWtsaxalNiHg0yjnfbTvFDIZ518EQIeqbT4UgASAm+Yr22eQXGR43xzLm+8wA==
+X-Received: by 2002:a1c:cf0b:: with SMTP id f11mr8111165wmg.138.1562154357836; 
+ Wed, 03 Jul 2019 04:45:57 -0700 (PDT)
 Received: from [10.1.2.12] (lmontsouris-657-1-212-31.w90-63.abo.wanadoo.fr.
  [90.63.244.31])
- by smtp.gmail.com with ESMTPSA id t63sm1870384wmt.6.2019.07.03.04.44.54
+ by smtp.gmail.com with ESMTPSA id q12sm1271288wrp.83.2019.07.03.04.45.57
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Wed, 03 Jul 2019 04:44:55 -0700 (PDT)
-Subject: Re: [RFC 06/11] soc: amlogic: clk-measure: Add support for SM1
+ Wed, 03 Jul 2019 04:45:57 -0700 (PDT)
+Subject: Re: [RFC/RFT v3 04/14] clk: meson: eeclk: add setup callback
 To: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
-References: <20190701104705.18271-1-narmstrong@baylibre.com>
- <20190701104705.18271-7-narmstrong@baylibre.com>
- <CAFBinCD8aBVo-WTaKTe7JyxqFyd=cVXDzHpwED4dx=rUtE3Uig@mail.gmail.com>
+References: <20190701091258.3870-1-narmstrong@baylibre.com>
+ <20190701091258.3870-5-narmstrong@baylibre.com>
+ <CAFBinCA1gUUbEj=++1rGcFQ1RdyxSheofAo=TKw3-UaenFAcug@mail.gmail.com>
 From: Neil Armstrong <narmstrong@baylibre.com>
 Openpgp: preference=signencrypt
 Autocrypt: addr=narmstrong@baylibre.com; prefer-encrypt=mutual; keydata=
@@ -117,23 +117,23 @@ Autocrypt: addr=narmstrong@baylibre.com; prefer-encrypt=mutual; keydata=
  VsbXrP9BZ6snXyHfebPnno/te5XRqZTL9aJOytB/1iUna+1MAwBxGFPvqeEUUyT+gx1l3Acl
  ZaTUOEkgIor5losDrePdPgE=
 Organization: Baylibre
-Message-ID: <eebfb5d6-21bf-f759-c74e-3eb7d04820e4@baylibre.com>
-Date: Wed, 3 Jul 2019 13:44:54 +0200
+Message-ID: <301695b6-52ba-92b1-ca1a-d4d587b33eeb@baylibre.com>
+Date: Wed, 3 Jul 2019 13:45:56 +0200
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
  Thunderbird/60.7.0
 MIME-Version: 1.0
-In-Reply-To: <CAFBinCD8aBVo-WTaKTe7JyxqFyd=cVXDzHpwED4dx=rUtE3Uig@mail.gmail.com>
+In-Reply-To: <CAFBinCA1gUUbEj=++1rGcFQ1RdyxSheofAo=TKw3-UaenFAcug@mail.gmail.com>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190703_044502_765238_AFC299FE 
-X-CRM114-Status: GOOD (  15.25  )
+X-CRM114-CacheID: sfid-20190703_044559_736790_C8FCEB0C 
+X-CRM114-Status: GOOD (  15.45  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:341 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:32d listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -152,122 +152,42 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: khilman@baylibre.com, linux-amlogic@lists.infradead.org,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+Cc: amergnat@baylibre.com, khilman@baylibre.com, linux-kernel@vger.kernel.org,
+ linux-gpio@vger.kernel.org, linux-amlogic@lists.infradead.org,
+ linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
  jbrunet@baylibre.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 03/07/2019 01:51, Martin Blumenstingl wrote:
-> Hi Neil,
+On 03/07/2019 01:16, Martin Blumenstingl wrote:
+> +Cc Alexandre Mergnat
 > 
-> On Mon, Jul 1, 2019 at 12:49 PM Neil Armstrong <narmstrong@baylibre.com> wrote:
+> On Mon, Jul 1, 2019 at 11:13 AM Neil Armstrong <narmstrong@baylibre.com> wrote:
 >>
->> Add the clk-measurer clocks IDs for the Amlogic SM1 SoC family.
+>> Add a setup() callback in the eeclk structure, to call an optional
+>> call() function at end of eeclk probe to setup clocks.
+>>
+>> It's used for the G12A clock controller to setup the CPU clock notifiers.
 >>
 >> Signed-off-by: Neil Armstrong <narmstrong@baylibre.com>
->> ---
->>  drivers/soc/amlogic/meson-clk-measure.c | 134 ++++++++++++++++++++++++
->>  1 file changed, 134 insertions(+)
->>
->> diff --git a/drivers/soc/amlogic/meson-clk-measure.c b/drivers/soc/amlogic/meson-clk-measure.c
->> index f09b404b39d3..e32e97613000 100644
->> --- a/drivers/soc/amlogic/meson-clk-measure.c
->> +++ b/drivers/soc/amlogic/meson-clk-measure.c
->> @@ -357,6 +357,136 @@ static struct meson_msr_id clk_msr_g12a[CLK_MSR_MAX] = {
->>         CLK_MSR_ID(122, "audio_pdm_dclk"),
->>  };
->>
->> +static struct meson_msr_id clk_msr_sm1[CLK_MSR_MAX] = {
->> +       CLK_MSR_ID(0, "ring_osc_out_ee_0"),
->> +       CLK_MSR_ID(1, "ring_osc_out_ee_1"),
->> +       CLK_MSR_ID(2, "ring_osc_out_ee_2"),
->> +       CLK_MSR_ID(3, "ring_osc_out_ee_3"),
->> +       CLK_MSR_ID(4, "gp0_pll"),
->> +       CLK_MSR_ID(5, "gp1_pll"),
->> +       CLK_MSR_ID(6, "enci"),
->> +       CLK_MSR_ID(7, "clk81"),
->> +       CLK_MSR_ID(8, "encp"),
->> +       CLK_MSR_ID(9, "encl"),
->> +       CLK_MSR_ID(10, "vdac"),
->> +       CLK_MSR_ID(11, "eth_tx"),
->> +       CLK_MSR_ID(12, "hifi_pll"),
->> +       CLK_MSR_ID(13, "mod_tcon"),
->> +       CLK_MSR_ID(14, "fec_0"),
->> +       CLK_MSR_ID(15, "fec_1"),
->> +       CLK_MSR_ID(16, "fec_2"),
->> +       CLK_MSR_ID(17, "sys_pll_div16"),
->> +       CLK_MSR_ID(18, "sys_cpu_div16"),
->> +       CLK_MSR_ID(19, "lcd_an_ph2"),
->> +       CLK_MSR_ID(20, "rtc_osc_out"),
->> +       CLK_MSR_ID(21, "lcd_an_ph3"),
->> +       CLK_MSR_ID(22, "eth_phy_ref"),
->> +       CLK_MSR_ID(23, "mpll_50m"),
->> +       CLK_MSR_ID(24, "eth_125m"),
->> +       CLK_MSR_ID(25, "eth_rmii"),
->> +       CLK_MSR_ID(26, "sc_int"),
->> +       CLK_MSR_ID(27, "in_mac"),
->> +       CLK_MSR_ID(28, "sar_adc"),
->> +       CLK_MSR_ID(29, "pcie_inp"),
->> +       CLK_MSR_ID(30, "pcie_inn"),
->> +       CLK_MSR_ID(31, "mpll_test_out"),
->> +       CLK_MSR_ID(32, "vdec"),
->> +       CLK_MSR_ID(34, "eth_mpll_50m"),
->> +       CLK_MSR_ID(35, "mali"),
->> +       CLK_MSR_ID(36, "hdmi_tx_pixel"),
->> +       CLK_MSR_ID(37, "cdac"),
->> +       CLK_MSR_ID(38, "vdin_meas"),
->> +       CLK_MSR_ID(39, "bt656"),
->> +       CLK_MSR_ID(40, "arm_ring_osc_out_4"),
->> +       CLK_MSR_ID(41, "eth_rx_or_rmii"),
->> +       CLK_MSR_ID(42, "mp0_out"),
->> +       CLK_MSR_ID(43, "fclk_div5"),
->> +       CLK_MSR_ID(44, "pwm_b"),
->> +       CLK_MSR_ID(45, "pwm_a"),
->> +       CLK_MSR_ID(46, "vpu"),
->> +       CLK_MSR_ID(47, "ddr_dpll_pt"),
->> +       CLK_MSR_ID(48, "mp1_out"),
->> +       CLK_MSR_ID(49, "mp2_out"),
->> +       CLK_MSR_ID(50, "mp3_out"),
->> +       CLK_MSR_ID(51, "sd_emmc_c"),
->> +       CLK_MSR_ID(52, "sd_emmc_b"),
->> +       CLK_MSR_ID(53, "sd_emmc_a"),
->> +       CLK_MSR_ID(54, "vpu_clkc"),
->> +       CLK_MSR_ID(55, "vid_pll_div_out"),
->> +       CLK_MSR_ID(56, "wave420l_a"),
->> +       CLK_MSR_ID(57, "wave420l_c"),
->> +       CLK_MSR_ID(58, "wave420l_b"),
->> +       CLK_MSR_ID(59, "hcodec"),
->> +       CLK_MSR_ID(40, "arm_ring_osc_out_5"),
-> is this index 40 or 60?
-
-Exact it's 60, thanks for spotting
-
+> this will probably work fine, but I want do double check first
 > 
->> +       CLK_MSR_ID(61, "gpio_msr"),
->> +       CLK_MSR_ID(62, "hevcb"),
->> +       CLK_MSR_ID(63, "dsi_meas"),
->> +       CLK_MSR_ID(64, "spicc_1"),
->> +       CLK_MSR_ID(65, "spicc_0"),
->> +       CLK_MSR_ID(66, "vid_lock"),
->> +       CLK_MSR_ID(67, "dsi_phy"),
->> +       CLK_MSR_ID(68, "hdcp22_esm"),
->> +       CLK_MSR_ID(69, "hdcp22_skp"),
->> +       CLK_MSR_ID(70, "pwm_f"),
->> +       CLK_MSR_ID(71, "pwm_e"),
->> +       CLK_MSR_ID(72, "pwm_d"),
->> +       CLK_MSR_ID(73, "pwm_c"),
->> +       CLK_MSR_ID(74, "arm_ring_osc_out_6"),
->> +       CLK_MSR_ID(75, "hevcf"),
->> +       CLK_MSR_ID(74, "arm_ring_osc_out_7"),
-> is this index 74 or 76?
-> 
+> are we planning to get rid of meson-eeclk (mid-term)?
 
-Exact, it's 76 !
+AFAIK no, but maybe I'm not aware of it !
 
 Neil
+
+> Alex has some patches to get rid of all these IN_PREFIX logic.
+> I'm asking because if we want to get rid of meson-eeclk it may be the
+> time to do so now to have less logic to migrate later on
+> 
+> 
+> Martin
+> 
+
 
 _______________________________________________
 linux-arm-kernel mailing list
