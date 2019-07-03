@@ -2,77 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D86785EF6F
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  4 Jul 2019 01:03:46 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E3E785EF72
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  4 Jul 2019 01:04:07 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=YGn+QFgyHzZiFoihiUzkCb6l1+Sxy6AsW/g3mGYNBoM=; b=cesa5K/8hYPQiF
-	9M0PhZsiozKnQrlYKo7yqJl4LK08Z0XRkrJ6k4rkFblmfAvH6/sfsx5lGJTsHf5514vdflGPYRyR1
-	rB3Pry78jB8lnCMAzlUDbux1YHiFTRoYU0GsI8w1WuX+7vRb+rFRLfrTtcLnD3pcF4Q1b3h4flwpu
-	T4o9E9M3KUH2YAs/g3HWqy00UBl+B9KSp61uDHP65RrMNm1TBSYXqfZFBUg2Z9OgT1ZiAbfzL3eP9
-	QcD2P403AGVO4LVcxvHtGqGqIJqAYDFAfZAmrP5IkoW+6GujcoFYkg3oJpFf4UTbsXfVeFd+M8nPZ
-	VaNt9ZnJ3gI+hKS3q3DQ==;
+	List-Owner; bh=Msy70CMySgbs+iIzL0OyPC+qwFOZqNGNc6ji1hG0jVM=; b=M4Hw3EQjT0x8Nm
+	yXGDhX8C7lg/+xJVhZWviCXHPbKN1Q349xY0lIPDqASmU82JtYZlZmaE6wjk2cTDIlBRfcggJgBcN
+	xOU5ClqDfiRe/goy/XKQvLcmOSBXgYr612rj5JtMnKh4S4xqaGVRuhrZJP3JG5bZkDQO0rFRoLmwG
+	G7fRWuh9A806QNkvKRJ7RaGvUwGUKEuNYHDwdZ6C2dtQ/ZUzsSFL8vl6ryXsypOd6XZ0JOA30SW4g
+	ZGwa8RPMK121D1ZvWDXDEZGzCuvAKvC5rq0qjwhEWRjPztdWI6Nk/a9eLKwrY5dh80KGDYEQFaf++
+	3le0HYRL7CJv5lA/CUMg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hioHw-0007yV-MA; Wed, 03 Jul 2019 23:03:44 +0000
-Received: from mail-pl1-x643.google.com ([2607:f8b0:4864:20::643])
+	id 1hioII-0008I2-78; Wed, 03 Jul 2019 23:04:06 +0000
+Received: from mail-pf1-x441.google.com ([2607:f8b0:4864:20::441])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hioGZ-00072x-A1
- for linux-arm-kernel@lists.infradead.org; Wed, 03 Jul 2019 23:02:21 +0000
-Received: by mail-pl1-x643.google.com with SMTP id b7so2009806pls.6
+ id 1hioGa-00074D-AR
+ for linux-arm-kernel@lists.infradead.org; Wed, 03 Jul 2019 23:02:22 +0000
+Received: by mail-pf1-x441.google.com with SMTP id p184so1968567pfp.7
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 03 Jul 2019 16:02:19 -0700 (PDT)
+ Wed, 03 Jul 2019 16:02:20 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=bBVhvAORuxa08E5bVyE4KLrue551lcg8cyCDKswqftI=;
- b=lLPz2AEydp02tkSoEhP9SXY7a96EaFW/sEWl5Z9jyX1Oiof3E30YoRsS0CERy0MaiP
- d9nVLGPJFwytYl2TGnWz8A+1pEzGjuBY8MBcUpsYDiAMqeGLy0xpT694AoSbaILKWmaJ
- Z7rrznqr0uyvDDtaLQEEAf79XwmuMMeCM+7Yg=
+ bh=vxC6cpJeD3A10tWWsNE37FjIALjzLREnlwwa6KDygFo=;
+ b=KoFbuYFaOMgz+CA9HtkLNTvAr+pabLlsPrLFWh8/CDrvglaCWGGLw4Pnxd6skHFk9D
+ q3Vow7aYTiXXFCeiDRL8qO677+a7piMs8y1uZhje39FRkVgbfJ0BDZ+RweMNQAxf5gWi
+ dXTZ2iVaBDwYMJGt3iTUEcM1C9Zfdf2BI1S3A=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=bBVhvAORuxa08E5bVyE4KLrue551lcg8cyCDKswqftI=;
- b=mMcNEi8zP354DtB/KA8jLSgsCYlmbOAxw9kXR0v2dghSGQoJmN+O52FG1tGKdK6uVL
- bETOAgOCpG9MzSh38H6QlN5Z+BWUQjIiI3XQ+p6IBShiwnAjqAcoZc1LWTew2aqkZfAD
- ZpzNxqRIxDzF0fKgLmfWyHZhDo6+Y+ZLPZ7isOXDrk583hjPE+Wf+3kI5/OrUg8X7IXa
- rITgU5A+FiTGV9S1xKsEtlj928oeNAEHKkMDChUjqa51Pp5sTSQqtkTwVugtDicA1OOR
- /LWfsspdhaMUIskwEvDdBH8AhxkEu6i72iNfP5xvIag2eGnlEmGUmqA2FUKy/8pxAzjX
- ymkw==
-X-Gm-Message-State: APjAAAW/oukV5pW39wUXEnAUQJM/gdsv7lxFjp3sNS2bvOHHFLfLAen2
- xJymGZMzSN6rhatlRsDhEBtIXA==
-X-Google-Smtp-Source: APXvYqx1dBa7fMtdjGGtTPjJ5F+4gW6sLKd7o94AIZQqD3Yz8/ExXznJ3JfaBlBEvam9DZvdNPLYDQ==
-X-Received: by 2002:a17:902:403:: with SMTP id 3mr44361012ple.66.1562194938800; 
- Wed, 03 Jul 2019 16:02:18 -0700 (PDT)
+ bh=vxC6cpJeD3A10tWWsNE37FjIALjzLREnlwwa6KDygFo=;
+ b=ODMDmwMSIRLYLLt65JPN5FekZZUjKeYDeMjZ415w3p+9Cs79++gRXxEWkYDISzNH7k
+ DdEnFdM8HqQ/AY1h2/hJnBeLaa7OqQLfCrHOBN2yTccTIE2+SOQYNaJqYlzjUHkQzr65
+ DH1p9PT5tVpFQiNCaPj1ybTNabm55qpYbM5QdQ78jpfZZP+zONEY9lGtuUM1dCpxxoRr
+ AI8UQQuhYEBS/N3o6/ao5n3WllgtIq20H6VzqXROJ6Ja8LOwXkv9ZCNhK9nHLVyCFxx8
+ onkpXlmYdiS67PrXQFreQfeWrSmrlzVrt9/Gylnwayp9Ab5DHuPTXSk7YjIAc4GIEDi3
+ TMDw==
+X-Gm-Message-State: APjAAAXY4CSE99v+sITG5XOD+sVNJ/g2nEcKUHHx6T4UdjOlFXIhu7dd
+ dVogFfN21PbqCTFbWX5HuiK/4A==
+X-Google-Smtp-Source: APXvYqyG7F1sqItbURwJvHhS/2DarvFHk2VbgTA5dTpR7guaFyZ6mbPUxyay/cbBh1DPeX4KcfiwJA==
+X-Received: by 2002:a17:90a:cf8f:: with SMTP id
+ i15mr14955387pju.110.1562194939953; 
+ Wed, 03 Jul 2019 16:02:19 -0700 (PDT)
 Received: from exogeni.mtv.corp.google.com
  ([2620:15c:202:1:5be8:f2a6:fd7b:7459])
- by smtp.gmail.com with ESMTPSA id t8sm4245171pfq.31.2019.07.03.16.02.17
+ by smtp.gmail.com with ESMTPSA id t8sm4245171pfq.31.2019.07.03.16.02.18
  (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Wed, 03 Jul 2019 16:02:18 -0700 (PDT)
+ Wed, 03 Jul 2019 16:02:19 -0700 (PDT)
 From: Derek Basehore <dbasehore@chromium.org>
 To: linux-kernel@vger.kernel.org
-Subject: [PATCH v5 3/4] drm/connector: Split out orientation quirk detection
-Date: Wed,  3 Jul 2019 16:02:09 -0700
-Message-Id: <20190703230210.85342-4-dbasehore@chromium.org>
+Subject: [PATCH v5 4/4] drm/mtk: add panel orientation property
+Date: Wed,  3 Jul 2019 16:02:10 -0700
+Message-Id: <20190703230210.85342-5-dbasehore@chromium.org>
 X-Mailer: git-send-email 2.22.0.410.gd8fdbe21b5-goog
 In-Reply-To: <20190703230210.85342-1-dbasehore@chromium.org>
 References: <20190703230210.85342-1-dbasehore@chromium.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190703_160219_518533_B55B45DB 
-X-CRM114-Status: GOOD (  16.44  )
+X-CRM114-CacheID: sfid-20190703_160220_521985_359FE781 
+X-CRM114-Status: GOOD (  11.88  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:643 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:441 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -113,136 +114,38 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Not every platform needs quirk detection for panel orientation, so
-split the drm_connector_init_panel_orientation_property into two
-functions. One for platforms without the need for quirks, and the
-other for platforms that need quirks.
+This inits the panel orientation property for the mediatek dsi driver
+if the panel orientation (connector.display_info.panel_orientation) is
+not DRM_MODE_PANEL_ORIENTATION_UNKNOWN.
 
 Signed-off-by: Derek Basehore <dbasehore@chromium.org>
 ---
- drivers/gpu/drm/drm_connector.c         | 45 ++++++++++++++++++-------
- drivers/gpu/drm/i915/display/intel_dp.c |  4 +--
- drivers/gpu/drm/i915/display/vlv_dsi.c  |  2 +-
- include/drm/drm_connector.h             |  2 ++
- 4 files changed, 38 insertions(+), 15 deletions(-)
+ drivers/gpu/drm/mediatek/mtk_dsi.c | 8 ++++++++
+ 1 file changed, 8 insertions(+)
 
-diff --git a/drivers/gpu/drm/drm_connector.c b/drivers/gpu/drm/drm_connector.c
-index b3f2cf7eae9c..52777d647494 100644
---- a/drivers/gpu/drm/drm_connector.c
-+++ b/drivers/gpu/drm/drm_connector.c
-@@ -1892,31 +1892,23 @@ EXPORT_SYMBOL(drm_connector_set_vrr_capable_property);
-  * drm_connector_init_panel_orientation_property -
-  *	initialize the connecters panel_orientation property
-  * @connector: connector for which to init the panel-orientation property.
-- * @width: width in pixels of the panel, used for panel quirk detection
-- * @height: height in pixels of the panel, used for panel quirk detection
-  *
-  * This function should only be called for built-in panels, after setting
-  * connector->display_info.panel_orientation first (if known).
-  *
-- * This function will check for platform specific (e.g. DMI based) quirks
-- * overriding display_info.panel_orientation first, then if panel_orientation
-- * is not DRM_MODE_PANEL_ORIENTATION_UNKNOWN it will attach the
-- * "panel orientation" property to the connector.
-+ * This function will check if the panel_orientation is not
-+ * DRM_MODE_PANEL_ORIENTATION_UNKNOWN. If not, it will attach the "panel
-+ * orientation" property to the connector.
-  *
-  * Returns:
-  * Zero on success, negative errno on failure.
-  */
- int drm_connector_init_panel_orientation_property(
--	struct drm_connector *connector, int width, int height)
-+	struct drm_connector *connector)
- {
- 	struct drm_device *dev = connector->dev;
- 	struct drm_display_info *info = &connector->display_info;
- 	struct drm_property *prop;
--	int orientation_quirk;
--
--	orientation_quirk = drm_get_panel_orientation_quirk(width, height);
--	if (orientation_quirk != DRM_MODE_PANEL_ORIENTATION_UNKNOWN)
--		info->panel_orientation = orientation_quirk;
- 
- 	if (info->panel_orientation == DRM_MODE_PANEL_ORIENTATION_UNKNOWN)
- 		return 0;
-@@ -1939,6 +1931,35 @@ int drm_connector_init_panel_orientation_property(
- }
- EXPORT_SYMBOL(drm_connector_init_panel_orientation_property);
- 
-+/**
-+ * drm_connector_init_panel_orientation_property_quirk -
-+ *	initialize the connecters panel_orientation property with a quirk
-+ *	override
-+ * @connector: connector for which to init the panel-orientation property.
-+ * @width: width in pixels of the panel, used for panel quirk detection
-+ * @height: height in pixels of the panel, used for panel quirk detection
-+ *
-+ * This function will check for platform specific (e.g. DMI based) quirks
-+ * overriding display_info.panel_orientation first, then if panel_orientation
-+ * is not DRM_MODE_PANEL_ORIENTATION_UNKNOWN it will attach the
-+ * "panel orientation" property to the connector.
-+ *
-+ * Returns:
-+ * Zero on success, negative errno on failure.
-+ */
-+int drm_connector_init_panel_orientation_property_quirk(
-+	struct drm_connector *connector, int width, int height)
-+{
-+	int orientation_quirk;
+diff --git a/drivers/gpu/drm/mediatek/mtk_dsi.c b/drivers/gpu/drm/mediatek/mtk_dsi.c
+index b91c4616644a..2920458ae2fb 100644
+--- a/drivers/gpu/drm/mediatek/mtk_dsi.c
++++ b/drivers/gpu/drm/mediatek/mtk_dsi.c
+@@ -790,10 +790,18 @@ static int mtk_dsi_create_connector(struct drm_device *drm, struct mtk_dsi *dsi)
+ 			DRM_ERROR("Failed to attach panel to drm\n");
+ 			goto err_connector_cleanup;
+ 		}
 +
-+	orientation_quirk = drm_get_panel_orientation_quirk(width, height);
-+	if (orientation_quirk != DRM_MODE_PANEL_ORIENTATION_UNKNOWN)
-+		connector->display_info.panel_orientation = orientation_quirk;
-+
-+	return drm_connector_init_panel_orientation_property(connector);
-+}
-+EXPORT_SYMBOL(drm_connector_init_panel_orientation_property_quirk);
-+
- int drm_connector_set_obj_prop(struct drm_mode_object *obj,
- 				    struct drm_property *property,
- 				    uint64_t value)
-diff --git a/drivers/gpu/drm/i915/display/intel_dp.c b/drivers/gpu/drm/i915/display/intel_dp.c
-index 8f7188d71d08..45b637419085 100644
---- a/drivers/gpu/drm/i915/display/intel_dp.c
-+++ b/drivers/gpu/drm/i915/display/intel_dp.c
-@@ -7068,8 +7068,8 @@ static bool intel_edp_init_connector(struct intel_dp *intel_dp,
- 	intel_panel_setup_backlight(connector, pipe);
++		ret = drm_connector_init_panel_orientation_property(&dsi->conn);
++		if (ret) {
++			DRM_ERROR("Failed to init panel orientation\n");
++			goto err_panel_detach;
++		}
+ 	}
  
- 	if (fixed_mode)
--		drm_connector_init_panel_orientation_property(
--			connector, fixed_mode->hdisplay, fixed_mode->vdisplay);
-+		drm_connector_init_panel_orientation_property_quirk(connector,
-+				fixed_mode->hdisplay, fixed_mode->vdisplay);
+ 	return 0;
  
- 	return true;
- 
-diff --git a/drivers/gpu/drm/i915/display/vlv_dsi.c b/drivers/gpu/drm/i915/display/vlv_dsi.c
-index e272d826210a..dd7fa806f95c 100644
---- a/drivers/gpu/drm/i915/display/vlv_dsi.c
-+++ b/drivers/gpu/drm/i915/display/vlv_dsi.c
-@@ -1662,7 +1662,7 @@ static void intel_dsi_add_properties(struct intel_connector *connector)
- 
- 		connector->base.display_info.panel_orientation =
- 			vlv_dsi_get_panel_orientation(connector);
--		drm_connector_init_panel_orientation_property(
-+		drm_connector_init_panel_orientation_property_quirk(
- 				&connector->base,
- 				connector->panel.fixed_mode->hdisplay,
- 				connector->panel.fixed_mode->vdisplay);
-diff --git a/include/drm/drm_connector.h b/include/drm/drm_connector.h
-index ca745d9feaf5..940254b06767 100644
---- a/include/drm/drm_connector.h
-+++ b/include/drm/drm_connector.h
-@@ -1512,6 +1512,8 @@ void drm_connector_set_link_status_property(struct drm_connector *connector,
- void drm_connector_set_vrr_capable_property(
- 		struct drm_connector *connector, bool capable);
- int drm_connector_init_panel_orientation_property(
-+	struct drm_connector *connector);
-+int drm_connector_init_panel_orientation_property_quirk(
- 	struct drm_connector *connector, int width, int height);
- int drm_connector_attach_max_bpc_property(struct drm_connector *connector,
- 					  int min, int max);
++err_panel_detach:
++	drm_panel_detach(dsi->panel);
+ err_connector_cleanup:
+ 	drm_connector_cleanup(&dsi->conn);
+ 	return ret;
 -- 
 2.22.0.410.gd8fdbe21b5-goog
 
