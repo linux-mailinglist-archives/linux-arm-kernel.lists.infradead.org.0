@@ -2,82 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EA3335E483
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  3 Jul 2019 14:49:41 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B1AF55E484
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  3 Jul 2019 14:50:18 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=82wIzvH2pPtnQVV3y8ZmTgj1J83NhvtOO6nOG8OrGxA=; b=HiE9UT9AXGsqw2
-	OtatkuULsALpvZIFHgMlIlxxQXCDfltXhVCXC5aChabG3HcAqA4HX0UTebHyEzbb+HEi99dKn+Okl
-	l+OEaz3LOPCnP2T55BjvtxRTIRmX2X9J9qkouqqUhNJPVpPJG9pRtGOy9oVq2e0wpH82LNESTtQxW
-	ZLANPP875cu9b2UbekP59bl5MwdLYB6YLjBCKO8xMn0IPNcaHi4uexnRdALnvbN9ZSD7EgfikMlcu
-	jgdg2xd6dz0uUKFbvtS22GMlADFn0/3peaOXOF4onWGadQAA0PO64E2POvbyOh5XLfrJ2KGHwjfXV
-	SE6xnEMFTRxVVkHpwP7w==;
+	List-Owner; bh=fYwYQcw6nHFZbpZh4yxz1knlIae5J328JPUW/qoQBd4=; b=MaCn2kuSdCJ9AJ
+	00zfpoReYMn7DjSqKvWEPgjYfTTAL7BucOonb+xloTL5cfHv6R+Xx2Jl+p0wCTiRLjcNE7ZB5cyoA
+	YTw7iu6c+cAtw8yyfTzaz83ff2Bq6aTeig6oyoqAvaTulwxSMUqD4WUF6L1GpLdLbDtieNU5qEFht
+	dFmsauV+oN0HjytohbYw6ur5nF5A+tEfnIY4sxTCdPBCJeReEoqgfL/NO0vVtTjOsAam6bAZq2Ozf
+	F78iIq0F8D1JIVbqODodC/L5K1hJpsYebpZ0C7UUbRpkI9XwRU58niXA0Rdz24TbfpOy1FXyQy6Uq
+	GeIx49u0gQs0hujf3PfA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hiehg-0004eb-0c; Wed, 03 Jul 2019 12:49:40 +0000
-Received: from mail-pl1-x644.google.com ([2607:f8b0:4864:20::644])
+	id 1hieiH-000509-8u; Wed, 03 Jul 2019 12:50:17 +0000
+Received: from mail-pg1-x541.google.com ([2607:f8b0:4864:20::541])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hiefC-0002ud-H4
- for linux-arm-kernel@lists.infradead.org; Wed, 03 Jul 2019 12:47:10 +0000
-Received: by mail-pl1-x644.google.com with SMTP id ay6so1186484plb.9
+ id 1hiefF-0002xY-Ft
+ for linux-arm-kernel@lists.infradead.org; Wed, 03 Jul 2019 12:47:12 +0000
+Received: by mail-pg1-x541.google.com with SMTP id t132so1191324pgb.9
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 03 Jul 2019 05:47:06 -0700 (PDT)
+ Wed, 03 Jul 2019 05:47:09 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=amarulasolutions.com; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=vWBkVJMd9kSkqWTZ94RFDaq4kMzggq1qJPbrnpTpzLE=;
- b=A0ynj0bP/AnmKqe+3uQ6iLE3Dq5lVKa1LInR/NyY/B+cgALdaRk2d8uh4hmO6h2jL7
- NEFxNlkpBnhbGC++aFhCnVEi/KzebwPN39+byyaA0m9qWjZIDpawnwQuaPmYwZ6dEva+
- Ol0ISFKF3f5fIOQFarSyg7rDY1F/JFbkc1Zuk=
+ bh=NRw5FVh3W11dJ0YvVWLadZFRKbaZEwCs5pcDkjCkZAo=;
+ b=rXSn3zCnCMNc3JzPFgOgAlCZqJr/dIAa3/SvUrVAGdjJt94O2NZgh2wBFNB3ldj5SO
+ xOBsBGeObr3xMb2cyIDj3WjIr4DDgAC7X0XgfVAP9WDSa+hR604ITYVWzO5h+q1vgRKY
+ H+EmmjZveXjI6H9R3oVOEINVXQwHOq6awjoF0=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=vWBkVJMd9kSkqWTZ94RFDaq4kMzggq1qJPbrnpTpzLE=;
- b=qx5Jz1VHHM5GE5GRpkOb/bnZSnRwOfGZgjvxo2EYz6ZuO3ielOVuI+pxAziaIxAEvu
- 3L1ZsBG8MvzzfurEdYVbBXwX44gzciKrwJ5x6y5eWROAYffPuibVu6oqJztVl6d2Sl4i
- U6GW/Qj/4PBZ+pLGJHfw+ph/DkOwUAxgrxcoTmIoRcl1LeAjlaI4aJBsr6toDoNRBECE
- Rahpp77IZ1MbQ6BgGrMjIKLRHPeNEUNX9UL39zZFFgrmYLkrH3ll8UA9OqfvNQRXwiWA
- lLeV4kzIc9c5ImBgq1dToMItSOwdN9/jKwEmss2VyqLS6En5r5fgpTiPsMnb5V0t2kBi
- fOnw==
-X-Gm-Message-State: APjAAAUfg5cVjc73M+V2HBGCcGKcXlTwJYDMsuxq3XK/O5bJXe4TX49U
- rzmZU55NvQIOFFdF7nQXZioD0Q==
-X-Google-Smtp-Source: APXvYqzZzhfuBDT6AVh2znk4kxh/5HDJ3WKGbsy02VFdL6UBU9pLfVbHzX5iIFeGpGOsnbE0sNUmAg==
-X-Received: by 2002:a17:902:684:: with SMTP id
- 4mr42247347plh.138.1562158025244; 
- Wed, 03 Jul 2019 05:47:05 -0700 (PDT)
+ bh=NRw5FVh3W11dJ0YvVWLadZFRKbaZEwCs5pcDkjCkZAo=;
+ b=kfPV2o38QCvspg+jGZhK9CbDRjmiAEzJRfpixZy+w7KIHhqspPXbDXJyRieMm1u34m
+ KoZW+rPeGW5R52beeRxaW+T1haWLmA+l00Et4tQZdKlUGUqG+J7OSyfbUTsN2K43HJI5
+ rjtnPzknSHGFoe2ZfCyNeNeRzqrK5y1KyVjm7ax5m7FPKqc/jY/6UNiW+8kdP5AXN766
+ LKFF79EgkGrzRb6I8jwX/67xJ6gHe27uebNUazismogrEElVvZRScUvMFhaDScQdLChc
+ xg7o3l4HwWHJVQPWp7C4Ojfl/IvSQ4GZR9IWaqv9RPQAiQWsTuaSPY3TcqB2vKMHgD1Q
+ x2hQ==
+X-Gm-Message-State: APjAAAVAsVBJu4WLo1U/b/WwUHcxlx1Ls4goMkMEwkVjgrMntS9QZWxQ
+ 6QxwDBvW0j84W+2SnGQFDF449A==
+X-Google-Smtp-Source: APXvYqzUiYJ9fp4S55iVmWsYjbiJgSSsbKK8y5/KgBCsd/H33rVzIVn+ZmmbRtZvN/GmkPW1mWD9zA==
+X-Received: by 2002:a63:ff20:: with SMTP id k32mr30140601pgi.445.1562158028517; 
+ Wed, 03 Jul 2019 05:47:08 -0700 (PDT)
 Received: from localhost.localdomain ([183.82.231.32])
- by smtp.gmail.com with ESMTPSA id q1sm3735890pfn.178.2019.07.03.05.47.02
+ by smtp.gmail.com with ESMTPSA id q1sm3735890pfn.178.2019.07.03.05.47.05
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Wed, 03 Jul 2019 05:47:04 -0700 (PDT)
+ Wed, 03 Jul 2019 05:47:08 -0700 (PDT)
 From: Jagan Teki <jagan@amarulasolutions.com>
 To: Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
  Maxime Ripard <maxime.ripard@bootlin.com>, Chen-Yu Tsai <wens@csie.org>,
  devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
  linux-kernel@vger.kernel.org
-Subject: [PATCH 06/25] ARM: dts: sun5i: Switch A13 dts(i) to use SPDX
+Subject: [PATCH 07/25] ARM: dts: sun5i: Switch GR8 dts(i) to use SPDX
  identifier
-Date: Wed,  3 Jul 2019 18:15:50 +0530
-Message-Id: <20190703124609.21435-7-jagan@amarulasolutions.com>
+Date: Wed,  3 Jul 2019 18:15:51 +0530
+Message-Id: <20190703124609.21435-8-jagan@amarulasolutions.com>
 X-Mailer: git-send-email 2.18.0.321.gffc6fa0e3
 In-Reply-To: <20190703124609.21435-1-jagan@amarulasolutions.com>
 References: <20190703124609.21435-1-jagan@amarulasolutions.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190703_054706_610154_F4736E70 
-X-CRM114-Status: GOOD (  17.74  )
+X-CRM114-CacheID: sfid-20190703_054709_872445_546DB452 
+X-CRM114-Status: GOOD (  18.57  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:644 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:541 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -102,638 +101,235 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>,
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: linux-sunxi@googlegroups.com, linux-amarula@amarulasolutions.com,
  Jagan Teki <jagan@amarulasolutions.com>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Adopt the SPDX license identifier headers to ease license
-compliance management on Allwinner A13 dts(i) files.
-
-While the text specifies "of the GPL or the X11 license"
-but the actual license text matches the MIT license as
-specified at [0]
-
-[0] https://spdx.org/licenses/MIT.html
-
-Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
----
- .../boot/dts/sun5i-a13-difrnce-dit4350.dts    | 39 +------------------
- .../dts/sun5i-a13-empire-electronix-d709.dts  | 39 +------------------
- .../dts/sun5i-a13-empire-electronix-m712.dts  | 39 +------------------
- arch/arm/boot/dts/sun5i-a13-hsg-h702.dts      | 39 +------------------
- arch/arm/boot/dts/sun5i-a13-inet-98v-rev2.dts | 39 +------------------
- arch/arm/boot/dts/sun5i-a13-licheepi-one.dts  | 39 +------------------
- .../boot/dts/sun5i-a13-olinuxino-micro.dts    | 39 +------------------
- arch/arm/boot/dts/sun5i-a13-olinuxino.dts     | 39 +------------------
- arch/arm/boot/dts/sun5i-a13-q8-tablet.dts     | 39 +------------------
- arch/arm/boot/dts/sun5i-a13-utoo-p66.dts      | 39 +------------------
- arch/arm/boot/dts/sun5i-a13.dtsi              | 39 +------------------
- .../dts/sun5i-reference-design-tablet.dtsi    | 39 +------------------
- 12 files changed, 12 insertions(+), 456 deletions(-)
-
-diff --git a/arch/arm/boot/dts/sun5i-a13-difrnce-dit4350.dts b/arch/arm/boot/dts/sun5i-a13-difrnce-dit4350.dts
-index 894c4c4f9a1f..2396bc758520 100644
---- a/arch/arm/boot/dts/sun5i-a13-difrnce-dit4350.dts
-+++ b/arch/arm/boot/dts/sun5i-a13-difrnce-dit4350.dts
-@@ -1,43 +1,6 @@
-+// SPDX-License-Identifier: (GPL-2.0 OR MIT)
- /*
-  * Copyright 2016 Hans de Goede <hdegoede@redhat.com>
-- *
-- * This file is dual-licensed: you can use it either under the terms
-- * of the GPL or the X11 license, at your option. Note that this dual
-- * licensing only applies to this file, and not this project as a
-- * whole.
-- *
-- *  a) This file is free software; you can redistribute it and/or
-- *     modify it under the terms of the GNU General Public License as
-- *     published by the Free Software Foundation; either version 2 of the
-- *     License, or (at your option) any later version.
-- *
-- *     This file is distributed in the hope that it will be useful,
-- *     but WITHOUT ANY WARRANTY; without even the implied warranty of
-- *     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-- *     GNU General Public License for more details.
-- *
-- * Or, alternatively,
-- *
-- *  b) Permission is hereby granted, free of charge, to any person
-- *     obtaining a copy of this software and associated documentation
-- *     files (the "Software"), to deal in the Software without
-- *     restriction, including without limitation the rights to use,
-- *     copy, modify, merge, publish, distribute, sublicense, and/or
-- *     sell copies of the Software, and to permit persons to whom the
-- *     Software is furnished to do so, subject to the following
-- *     conditions:
-- *
-- *     The above copyright notice and this permission notice shall be
-- *     included in all copies or substantial portions of the Software.
-- *
-- *     THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
-- *     EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
-- *     OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
-- *     NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
-- *     HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
-- *     WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
-- *     FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
-- *     OTHER DEALINGS IN THE SOFTWARE.
-  */
- 
- /dts-v1/;
-diff --git a/arch/arm/boot/dts/sun5i-a13-empire-electronix-d709.dts b/arch/arm/boot/dts/sun5i-a13-empire-electronix-d709.dts
-index a23bf24792ec..cefb621db3fe 100644
---- a/arch/arm/boot/dts/sun5i-a13-empire-electronix-d709.dts
-+++ b/arch/arm/boot/dts/sun5i-a13-empire-electronix-d709.dts
-@@ -1,43 +1,6 @@
-+// SPDX-License-Identifier: (GPL-2.0 OR MIT)
- /*
-  * Copyright 2015 Hans de Goede <hdegoede@redhat.com>
-- *
-- * This file is dual-licensed: you can use it either under the terms
-- * of the GPL or the X11 license, at your option. Note that this dual
-- * licensing only applies to this file, and not this project as a
-- * whole.
-- *
-- *  a) This file is free software; you can redistribute it and/or
-- *     modify it under the terms of the GNU General Public License as
-- *     published by the Free Software Foundation; either version 2 of the
-- *     License, or (at your option) any later version.
-- *
-- *     This file is distributed in the hope that it will be useful,
-- *     but WITHOUT ANY WARRANTY; without even the implied warranty of
-- *     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-- *     GNU General Public License for more details.
-- *
-- * Or, alternatively,
-- *
-- *  b) Permission is hereby granted, free of charge, to any person
-- *     obtaining a copy of this software and associated documentation
-- *     files (the "Software"), to deal in the Software without
-- *     restriction, including without limitation the rights to use,
-- *     copy, modify, merge, publish, distribute, sublicense, and/or
-- *     sell copies of the Software, and to permit persons to whom the
-- *     Software is furnished to do so, subject to the following
-- *     conditions:
-- *
-- *     The above copyright notice and this permission notice shall be
-- *     included in all copies or substantial portions of the Software.
-- *
-- *     THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
-- *     EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
-- *     OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
-- *     NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
-- *     HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
-- *     WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
-- *     FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
-- *     OTHER DEALINGS IN THE SOFTWARE.
-  */
- 
- /dts-v1/;
-diff --git a/arch/arm/boot/dts/sun5i-a13-empire-electronix-m712.dts b/arch/arm/boot/dts/sun5i-a13-empire-electronix-m712.dts
-index b1e2afd9de52..03a2b432803d 100644
---- a/arch/arm/boot/dts/sun5i-a13-empire-electronix-m712.dts
-+++ b/arch/arm/boot/dts/sun5i-a13-empire-electronix-m712.dts
-@@ -1,43 +1,6 @@
-+// SPDX-License-Identifier: (GPL-2.0 OR MIT)
- /*
-  * Copyright 2016 Hans de Goede <hdegoede@redhat.com>
-- *
-- * This file is dual-licensed: you can use it either under the terms
-- * of the GPL or the X11 license, at your option. Note that this dual
-- * licensing only applies to this file, and not this project as a
-- * whole.
-- *
-- *  a) This file is free software; you can redistribute it and/or
-- *     modify it under the terms of the GNU General Public License as
-- *     published by the Free Software Foundation; either version 2 of the
-- *     License, or (at your option) any later version.
-- *
-- *     This file is distributed in the hope that it will be useful,
-- *     but WITHOUT ANY WARRANTY; without even the implied warranty of
-- *     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-- *     GNU General Public License for more details.
-- *
-- * Or, alternatively,
-- *
-- *  b) Permission is hereby granted, free of charge, to any person
-- *     obtaining a copy of this software and associated documentation
-- *     files (the "Software"), to deal in the Software without
-- *     restriction, including without limitation the rights to use,
-- *     copy, modify, merge, publish, distribute, sublicense, and/or
-- *     sell copies of the Software, and to permit persons to whom the
-- *     Software is furnished to do so, subject to the following
-- *     conditions:
-- *
-- *     The above copyright notice and this permission notice shall be
-- *     included in all copies or substantial portions of the Software.
-- *
-- *     THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
-- *     EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
-- *     OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
-- *     NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
-- *     HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
-- *     WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
-- *     FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
-- *     OTHER DEALINGS IN THE SOFTWARE.
-  */
- 
- /dts-v1/;
-diff --git a/arch/arm/boot/dts/sun5i-a13-hsg-h702.dts b/arch/arm/boot/dts/sun5i-a13-hsg-h702.dts
-index 9b9f2a574851..95f3241aa5a3 100644
---- a/arch/arm/boot/dts/sun5i-a13-hsg-h702.dts
-+++ b/arch/arm/boot/dts/sun5i-a13-hsg-h702.dts
-@@ -1,43 +1,6 @@
-+// SPDX-License-Identifier: (GPL-2.0 OR MIT)
- /*
-  * Copyright 2014 Chen-Yu Tsai <wens@csie.org>
-- *
-- * This file is dual-licensed: you can use it either under the terms
-- * of the GPL or the X11 license, at your option. Note that this dual
-- * licensing only applies to this file, and not this project as a
-- * whole.
-- *
-- *  a) This file is free software; you can redistribute it and/or
-- *     modify it under the terms of the GNU General Public License as
-- *     published by the Free Software Foundation; either version 2 of the
-- *     License, or (at your option) any later version.
-- *
-- *     This file is distributed in the hope that it will be useful,
-- *     but WITHOUT ANY WARRANTY; without even the implied warranty of
-- *     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-- *     GNU General Public License for more details.
-- *
-- * Or, alternatively,
-- *
-- *  b) Permission is hereby granted, free of charge, to any person
-- *     obtaining a copy of this software and associated documentation
-- *     files (the "Software"), to deal in the Software without
-- *     restriction, including without limitation the rights to use,
-- *     copy, modify, merge, publish, distribute, sublicense, and/or
-- *     sell copies of the Software, and to permit persons to whom the
-- *     Software is furnished to do so, subject to the following
-- *     conditions:
-- *
-- *     The above copyright notice and this permission notice shall be
-- *     included in all copies or substantial portions of the Software.
-- *
-- *     THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
-- *     EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
-- *     OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
-- *     NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
-- *     HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
-- *     WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
-- *     FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
-- *     OTHER DEALINGS IN THE SOFTWARE.
-  */
- 
- /dts-v1/;
-diff --git a/arch/arm/boot/dts/sun5i-a13-inet-98v-rev2.dts b/arch/arm/boot/dts/sun5i-a13-inet-98v-rev2.dts
-index 439ae3b537df..8977a093972b 100644
---- a/arch/arm/boot/dts/sun5i-a13-inet-98v-rev2.dts
-+++ b/arch/arm/boot/dts/sun5i-a13-inet-98v-rev2.dts
-@@ -1,43 +1,6 @@
-+// SPDX-License-Identifier: (GPL-2.0 OR MIT)
- /*
-  * Copyright 2015 Hans de Goede <hdegoede@redhat.com>
-- *
-- * This file is dual-licensed: you can use it either under the terms
-- * of the GPL or the X11 license, at your option. Note that this dual
-- * licensing only applies to this file, and not this project as a
-- * whole.
-- *
-- *  a) This file is free software; you can redistribute it and/or
-- *     modify it under the terms of the GNU General Public License as
-- *     published by the Free Software Foundation; either version 2 of the
-- *     License, or (at your option) any later version.
-- *
-- *     This file is distributed in the hope that it will be useful,
-- *     but WITHOUT ANY WARRANTY; without even the implied warranty of
-- *     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-- *     GNU General Public License for more details.
-- *
-- * Or, alternatively,
-- *
-- *  b) Permission is hereby granted, free of charge, to any person
-- *     obtaining a copy of this software and associated documentation
-- *     files (the "Software"), to deal in the Software without
-- *     restriction, including without limitation the rights to use,
-- *     copy, modify, merge, publish, distribute, sublicense, and/or
-- *     sell copies of the Software, and to permit persons to whom the
-- *     Software is furnished to do so, subject to the following
-- *     conditions:
-- *
-- *     The above copyright notice and this permission notice shall be
-- *     included in all copies or substantial portions of the Software.
-- *
-- *     THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
-- *     EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
-- *     OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
-- *     NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
-- *     HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
-- *     WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
-- *     FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
-- *     OTHER DEALINGS IN THE SOFTWARE.
-  */
- 
- /dts-v1/;
-diff --git a/arch/arm/boot/dts/sun5i-a13-licheepi-one.dts b/arch/arm/boot/dts/sun5i-a13-licheepi-one.dts
-index ba8d75b3c716..1b5b03cba26e 100644
---- a/arch/arm/boot/dts/sun5i-a13-licheepi-one.dts
-+++ b/arch/arm/boot/dts/sun5i-a13-licheepi-one.dts
-@@ -1,47 +1,10 @@
-+// SPDX-License-Identifier: (GPL-2.0 OR MIT)
- /*
-  * Copyright 2016 Icenowy Zheng <icenowy@aosc.xyz>
-  *
-  * Based on sun5i-a13-olinuxino.dts, which is
-  *   Copyright 2012 Maxime Ripard <maxime.ripard@free-electrons.com>
-  *   Copyright 2013 Hans de Goede <hdegoede@redhat.com>
-- *
-- * This file is dual-licensed: you can use it either under the terms
-- * of the GPL or the X11 license, at your option. Note that this dual
-- * licensing only applies to this file, and not this project as a
-- * whole.
-- *
-- *  a) This file is free software; you can redistribute it and/or
-- *     modify it under the terms of the GNU General Public License as
-- *     published by the Free Software Foundation; either version 2 of the
-- *     License, or (at your option) any later version.
-- *
-- *     This file is distributed in the hope that it will be useful,
-- *     but WITHOUT ANY WARRANTY; without even the implied warranty of
-- *     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-- *     GNU General Public License for more details.
-- *
-- * Or, alternatively,
-- *
-- *  b) Permission is hereby granted, free of charge, to any person
-- *     obtaining a copy of this software and associated documentation
-- *     files (the "Software"), to deal in the Software without
-- *     restriction, including without limitation the rights to use,
-- *     copy, modify, merge, publish, distribute, sublicense, and/or
-- *     sell copies of the Software, and to permit persons to whom the
-- *     Software is furnished to do so, subject to the following
-- *     conditions:
-- *
-- *     The above copyright notice and this permission notice shall be
-- *     included in all copies or substantial portions of the Software.
-- *
-- *     THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
-- *     EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
-- *     OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
-- *     NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
-- *     HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
-- *     WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
-- *     FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
-- *     OTHER DEALINGS IN THE SOFTWARE.
-  */
- 
- /dts-v1/;
-diff --git a/arch/arm/boot/dts/sun5i-a13-olinuxino-micro.dts b/arch/arm/boot/dts/sun5i-a13-olinuxino-micro.dts
-index 5df398d77238..d7cb6deab700 100644
---- a/arch/arm/boot/dts/sun5i-a13-olinuxino-micro.dts
-+++ b/arch/arm/boot/dts/sun5i-a13-olinuxino-micro.dts
-@@ -1,44 +1,7 @@
-+// SPDX-License-Identifier: (GPL-2.0 OR MIT)
- /*
-  * Copyright 2012 Maxime Ripard <maxime.ripard@free-electrons.com>
-  * Copyright 2013 Hans de Goede <hdegoede@redhat.com>
-- *
-- * This file is dual-licensed: you can use it either under the terms
-- * of the GPL or the X11 license, at your option. Note that this dual
-- * licensing only applies to this file, and not this project as a
-- * whole.
-- *
-- *  a) This file is free software; you can redistribute it and/or
-- *     modify it under the terms of the GNU General Public License as
-- *     published by the Free Software Foundation; either version 2 of the
-- *     License, or (at your option) any later version.
-- *
-- *     This file is distributed in the hope that it will be useful,
-- *     but WITHOUT ANY WARRANTY; without even the implied warranty of
-- *     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-- *     GNU General Public License for more details.
-- *
-- * Or, alternatively,
-- *
-- *  b) Permission is hereby granted, free of charge, to any person
-- *     obtaining a copy of this software and associated documentation
-- *     files (the "Software"), to deal in the Software without
-- *     restriction, including without limitation the rights to use,
-- *     copy, modify, merge, publish, distribute, sublicense, and/or
-- *     sell copies of the Software, and to permit persons to whom the
-- *     Software is furnished to do so, subject to the following
-- *     conditions:
-- *
-- *     The above copyright notice and this permission notice shall be
-- *     included in all copies or substantial portions of the Software.
-- *
-- *     THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
-- *     EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
-- *     OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
-- *     NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
-- *     HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
-- *     WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
-- *     FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
-- *     OTHER DEALINGS IN THE SOFTWARE.
-  */
- 
- /dts-v1/;
-diff --git a/arch/arm/boot/dts/sun5i-a13-olinuxino.dts b/arch/arm/boot/dts/sun5i-a13-olinuxino.dts
-index 39101228a755..0f0f723cbf88 100644
---- a/arch/arm/boot/dts/sun5i-a13-olinuxino.dts
-+++ b/arch/arm/boot/dts/sun5i-a13-olinuxino.dts
-@@ -1,45 +1,8 @@
-+// SPDX-License-Identifier: (GPL-2.0 OR MIT)
- /*
-  * Copyright 2012 Maxime Ripard
-  *
-  * Maxime Ripard <maxime.ripard@free-electrons.com>
-- *
-- * This file is dual-licensed: you can use it either under the terms
-- * of the GPL or the X11 license, at your option. Note that this dual
-- * licensing only applies to this file, and not this project as a
-- * whole.
-- *
-- *  a) This file is free software; you can redistribute it and/or
-- *     modify it under the terms of the GNU General Public License as
-- *     published by the Free Software Foundation; either version 2 of the
-- *     License, or (at your option) any later version.
-- *
-- *     This file is distributed in the hope that it will be useful,
-- *     but WITHOUT ANY WARRANTY; without even the implied warranty of
-- *     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-- *     GNU General Public License for more details.
-- *
-- * Or, alternatively,
-- *
-- *  b) Permission is hereby granted, free of charge, to any person
-- *     obtaining a copy of this software and associated documentation
-- *     files (the "Software"), to deal in the Software without
-- *     restriction, including without limitation the rights to use,
-- *     copy, modify, merge, publish, distribute, sublicense, and/or
-- *     sell copies of the Software, and to permit persons to whom the
-- *     Software is furnished to do so, subject to the following
-- *     conditions:
-- *
-- *     The above copyright notice and this permission notice shall be
-- *     included in all copies or substantial portions of the Software.
-- *
-- *     THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
-- *     EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
-- *     OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
-- *     NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
-- *     HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
-- *     WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
-- *     FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
-- *     OTHER DEALINGS IN THE SOFTWARE.
-  */
- 
- /dts-v1/;
-diff --git a/arch/arm/boot/dts/sun5i-a13-q8-tablet.dts b/arch/arm/boot/dts/sun5i-a13-q8-tablet.dts
-index fde559a8b61e..7a1a61e24651 100644
---- a/arch/arm/boot/dts/sun5i-a13-q8-tablet.dts
-+++ b/arch/arm/boot/dts/sun5i-a13-q8-tablet.dts
-@@ -1,43 +1,6 @@
-+// SPDX-License-Identifier: (GPL-2.0 OR MIT)
- /*
-  * Copyright 2015 Hans de Goede <hdegoede@redhat.com>
-- *
-- * This file is dual-licensed: you can use it either under the terms
-- * of the GPL or the X11 license, at your option. Note that this dual
-- * licensing only applies to this file, and not this project as a
-- * whole.
-- *
-- *  a) This file is free software; you can redistribute it and/or
-- *     modify it under the terms of the GNU General Public License as
-- *     published by the Free Software Foundation; either version 2 of the
-- *     License, or (at your option) any later version.
-- *
-- *     This file is distributed in the hope that it will be useful,
-- *     but WITHOUT ANY WARRANTY; without even the implied warranty of
-- *     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-- *     GNU General Public License for more details.
-- *
-- * Or, alternatively,
-- *
-- *  b) Permission is hereby granted, free of charge, to any person
-- *     obtaining a copy of this software and associated documentation
-- *     files (the "Software"), to deal in the Software without
-- *     restriction, including without limitation the rights to use,
-- *     copy, modify, merge, publish, distribute, sublicense, and/or
-- *     sell copies of the Software, and to permit persons to whom the
-- *     Software is furnished to do so, subject to the following
-- *     conditions:
-- *
-- *     The above copyright notice and this permission notice shall be
-- *     included in all copies or substantial portions of the Software.
-- *
-- *     THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
-- *     EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
-- *     OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
-- *     NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
-- *     HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
-- *     WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
-- *     FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
-- *     OTHER DEALINGS IN THE SOFTWARE.
-  */
- 
- /dts-v1/;
-diff --git a/arch/arm/boot/dts/sun5i-a13-utoo-p66.dts b/arch/arm/boot/dts/sun5i-a13-utoo-p66.dts
-index be486d28d04f..6c4ba0d62ff9 100644
---- a/arch/arm/boot/dts/sun5i-a13-utoo-p66.dts
-+++ b/arch/arm/boot/dts/sun5i-a13-utoo-p66.dts
-@@ -1,43 +1,6 @@
-+// SPDX-License-Identifier: (GPL-2.0 OR MIT)
- /*
-  * Copyright 2015 Hans de Goede <hdegoede@redhat.com>
-- *
-- * This file is dual-licensed: you can use it either under the terms
-- * of the GPL or the X11 license, at your option. Note that this dual
-- * licensing only applies to this file, and not this project as a
-- * whole.
-- *
-- *  a) This file is free software; you can redistribute it and/or
-- *     modify it under the terms of the GNU General Public License as
-- *     published by the Free Software Foundation; either version 2 of the
-- *     License, or (at your option) any later version.
-- *
-- *     This file is distributed in the hope that it will be useful,
-- *     but WITHOUT ANY WARRANTY; without even the implied warranty of
-- *     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-- *     GNU General Public License for more details.
-- *
-- * Or, alternatively,
-- *
-- *  b) Permission is hereby granted, free of charge, to any person
-- *     obtaining a copy of this software and associated documentation
-- *     files (the "Software"), to deal in the Software without
-- *     restriction, including without limitation the rights to use,
-- *     copy, modify, merge, publish, distribute, sublicense, and/or
-- *     sell copies of the Software, and to permit persons to whom the
-- *     Software is furnished to do so, subject to the following
-- *     conditions:
-- *
-- *     The above copyright notice and this permission notice shall be
-- *     included in all copies or substantial portions of the Software.
-- *
-- *     THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
-- *     EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
-- *     OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
-- *     NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
-- *     HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
-- *     WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
-- *     FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
-- *     OTHER DEALINGS IN THE SOFTWARE.
-  */
- 
- /dts-v1/;
-diff --git a/arch/arm/boot/dts/sun5i-a13.dtsi b/arch/arm/boot/dts/sun5i-a13.dtsi
-index ae04955fd9a3..cdbf8ce54a05 100644
---- a/arch/arm/boot/dts/sun5i-a13.dtsi
-+++ b/arch/arm/boot/dts/sun5i-a13.dtsi
-@@ -1,45 +1,8 @@
-+// SPDX-License-Identifier: (GPL-2.0 OR MIT)
- /*
-  * Copyright 2012 Maxime Ripard
-  *
-  * Maxime Ripard <maxime.ripard@free-electrons.com>
-- *
-- * This file is dual-licensed: you can use it either under the terms
-- * of the GPL or the X11 license, at your option. Note that this dual
-- * licensing only applies to this file, and not this project as a
-- * whole.
-- *
-- *  a) This library is free software; you can redistribute it and/or
-- *     modify it under the terms of the GNU General Public License as
-- *     published by the Free Software Foundation; either version 2 of the
-- *     License, or (at your option) any later version.
-- *
-- *     This library is distributed in the hope that it will be useful,
-- *     but WITHOUT ANY WARRANTY; without even the implied warranty of
-- *     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-- *     GNU General Public License for more details.
-- *
-- * Or, alternatively,
-- *
-- *  b) Permission is hereby granted, free of charge, to any person
-- *     obtaining a copy of this software and associated documentation
-- *     files (the "Software"), to deal in the Software without
-- *     restriction, including without limitation the rights to use,
-- *     copy, modify, merge, publish, distribute, sublicense, and/or
-- *     sell copies of the Software, and to permit persons to whom the
-- *     Software is furnished to do so, subject to the following
-- *     conditions:
-- *
-- *     The above copyright notice and this permission notice shall be
-- *     included in all copies or substantial portions of the Software.
-- *
-- *     THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
-- *     EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
-- *     OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
-- *     NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
-- *     HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
-- *     WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
-- *     FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
-- *     OTHER DEALINGS IN THE SOFTWARE.
-  */
- 
- #include "sun5i.dtsi"
-diff --git a/arch/arm/boot/dts/sun5i-reference-design-tablet.dtsi b/arch/arm/boot/dts/sun5i-reference-design-tablet.dtsi
-index 1a9926d71410..42ccea0add15 100644
---- a/arch/arm/boot/dts/sun5i-reference-design-tablet.dtsi
-+++ b/arch/arm/boot/dts/sun5i-reference-design-tablet.dtsi
-@@ -1,43 +1,6 @@
-+// SPDX-License-Identifier: (GPL-2.0 OR MIT)
- /*
-  * Copyright 2015 Hans de Goede <hdegoede@redhat.com>
-- *
-- * This file is dual-licensed: you can use it either under the terms
-- * of the GPL or the X11 license, at your option. Note that this dual
-- * licensing only applies to this file, and not this project as a
-- * whole.
-- *
-- *  a) This file is free software; you can redistribute it and/or
-- *     modify it under the terms of the GNU General Public License as
-- *     published by the Free Software Foundation; either version 2 of the
-- *     License, or (at your option) any later version.
-- *
-- *     This file is distributed in the hope that it will be useful,
-- *     but WITHOUT ANY WARRANTY; without even the implied warranty of
-- *     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-- *     GNU General Public License for more details.
-- *
-- * Or, alternatively,
-- *
-- *  b) Permission is hereby granted, free of charge, to any person
-- *     obtaining a copy of this software and associated documentation
-- *     files (the "Software"), to deal in the Software without
-- *     restriction, including without limitation the rights to use,
-- *     copy, modify, merge, publish, distribute, sublicense, and/or
-- *     sell copies of the Software, and to permit persons to whom the
-- *     Software is furnished to do so, subject to the following
-- *     conditions:
-- *
-- *     The above copyright notice and this permission notice shall be
-- *     included in all copies or substantial portions of the Software.
-- *
-- *     THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
-- *     EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
-- *     OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
-- *     NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
-- *     HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
-- *     WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
-- *     FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
-- *     OTHER DEALINGS IN THE SOFTWARE.
-  */
- #include "sunxi-reference-design-tablet.dtsi"
- 
--- 
-2.18.0.321.gffc6fa0e3
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+QWRvcHQgdGhlIFNQRFggbGljZW5zZSBpZGVudGlmaWVyIGhlYWRlcnMgdG8gZWFzZSBsaWNlbnNl
+CmNvbXBsaWFuY2UgbWFuYWdlbWVudCBvbiBBbGx3aW5uZXIgR1I4IGR0cyhpKSBmaWxlcy4KCldo
+aWxlIHRoZSB0ZXh0IHNwZWNpZmllcyAib2YgdGhlIEdQTCBvciB0aGUgWDExIGxpY2Vuc2UiCmJ1
+dCB0aGUgYWN0dWFsIGxpY2Vuc2UgdGV4dCBtYXRjaGVzIHRoZSBNSVQgbGljZW5zZSBhcwpzcGVj
+aWZpZWQgYXQgWzBdCgpbMF0gaHR0cHM6Ly9zcGR4Lm9yZy9saWNlbnNlcy9NSVQuaHRtbAoKU2ln
+bmVkLW9mZi1ieTogSmFnYW4gVGVraSA8amFnYW5AYW1hcnVsYXNvbHV0aW9ucy5jb20+Ci0tLQog
+YXJjaC9hcm0vYm9vdC9kdHMvc3VuNWktZ3I4LWNoaXAtcHJvLmR0cyB8IDM5ICstLS0tLS0tLS0t
+LS0tLS0tLS0tLS0tLQogYXJjaC9hcm0vYm9vdC9kdHMvc3VuNWktZ3I4LWV2Yi5kdHMgICAgICB8
+IDM5ICstLS0tLS0tLS0tLS0tLS0tLS0tLS0tLQogYXJjaC9hcm0vYm9vdC9kdHMvc3VuNWktZ3I4
+LmR0c2kgICAgICAgICB8IDM5ICstLS0tLS0tLS0tLS0tLS0tLS0tLS0tLQogYXJjaC9hcm0vYm9v
+dC9kdHMvc3VuNWktcjgtY2hpcC5kdHMgICAgICB8IDM5ICstLS0tLS0tLS0tLS0tLS0tLS0tLS0t
+LQogYXJjaC9hcm0vYm9vdC9kdHMvc3VuNWktcjguZHRzaSAgICAgICAgICB8IDM5ICstLS0tLS0t
+LS0tLS0tLS0tLS0tLS0tLQogNSBmaWxlcyBjaGFuZ2VkLCA1IGluc2VydGlvbnMoKyksIDE5MCBk
+ZWxldGlvbnMoLSkKCmRpZmYgLS1naXQgYS9hcmNoL2FybS9ib290L2R0cy9zdW41aS1ncjgtY2hp
+cC1wcm8uZHRzIGIvYXJjaC9hcm0vYm9vdC9kdHMvc3VuNWktZ3I4LWNoaXAtcHJvLmR0cwppbmRl
+eCBhMzJjZGUzZTMyZWIuLjhlMmIwOTk4NjA0NSAxMDA2NDQKLS0tIGEvYXJjaC9hcm0vYm9vdC9k
+dHMvc3VuNWktZ3I4LWNoaXAtcHJvLmR0cworKysgYi9hcmNoL2FybS9ib290L2R0cy9zdW41aS1n
+cjgtY2hpcC1wcm8uZHRzCkBAIC0xLDQ2ICsxLDkgQEAKKy8vIFNQRFgtTGljZW5zZS1JZGVudGlm
+aWVyOiAoR1BMLTIuMCBPUiBNSVQpCiAvKgogICogQ29weXJpZ2h0IDIwMTYgRnJlZSBFbGVjdHJv
+bnMKICAqIENvcHlyaWdodCAyMDE2IE5leHRUaGluZyBDbwogICoKICAqIE1heGltZSBSaXBhcmQg
+PG1heGltZS5yaXBhcmRAZnJlZS1lbGVjdHJvbnMuY29tPgotICoKLSAqIFRoaXMgZmlsZSBpcyBk
+dWFsLWxpY2Vuc2VkOiB5b3UgY2FuIHVzZSBpdCBlaXRoZXIgdW5kZXIgdGhlIHRlcm1zCi0gKiBv
+ZiB0aGUgR1BMIG9yIHRoZSBYMTEgbGljZW5zZSwgYXQgeW91ciBvcHRpb24uIE5vdGUgdGhhdCB0
+aGlzIGR1YWwKLSAqIGxpY2Vuc2luZyBvbmx5IGFwcGxpZXMgdG8gdGhpcyBmaWxlLCBhbmQgbm90
+IHRoaXMgcHJvamVjdCBhcyBhCi0gKiB3aG9sZS4KLSAqCi0gKiAgYSkgVGhpcyBmaWxlIGlzIGZy
+ZWUgc29mdHdhcmU7IHlvdSBjYW4gcmVkaXN0cmlidXRlIGl0IGFuZC9vcgotICogICAgIG1vZGlm
+eSBpdCB1bmRlciB0aGUgdGVybXMgb2YgdGhlIEdOVSBHZW5lcmFsIFB1YmxpYyBMaWNlbnNlIGFz
+Ci0gKiAgICAgcHVibGlzaGVkIGJ5IHRoZSBGcmVlIFNvZnR3YXJlIEZvdW5kYXRpb247IGVpdGhl
+ciB2ZXJzaW9uIDIgb2YgdGhlCi0gKiAgICAgTGljZW5zZSwgb3IgKGF0IHlvdXIgb3B0aW9uKSBh
+bnkgbGF0ZXIgdmVyc2lvbi4KLSAqCi0gKiAgICAgVGhpcyBmaWxlIGlzIGRpc3RyaWJ1dGVkIGlu
+IHRoZSBob3BlIHRoYXQgaXQgd2lsbCBiZSB1c2VmdWwsCi0gKiAgICAgYnV0IFdJVEhPVVQgQU5Z
+IFdBUlJBTlRZOyB3aXRob3V0IGV2ZW4gdGhlIGltcGxpZWQgd2FycmFudHkgb2YKLSAqICAgICBN
+RVJDSEFOVEFCSUxJVFkgb3IgRklUTkVTUyBGT1IgQSBQQVJUSUNVTEFSIFBVUlBPU0UuICBTZWUg
+dGhlCi0gKiAgICAgR05VIEdlbmVyYWwgUHVibGljIExpY2Vuc2UgZm9yIG1vcmUgZGV0YWlscy4K
+LSAqCi0gKiBPciwgYWx0ZXJuYXRpdmVseSwKLSAqCi0gKiAgYikgUGVybWlzc2lvbiBpcyBoZXJl
+YnkgZ3JhbnRlZCwgZnJlZSBvZiBjaGFyZ2UsIHRvIGFueSBwZXJzb24KLSAqICAgICBvYnRhaW5p
+bmcgYSBjb3B5IG9mIHRoaXMgc29mdHdhcmUgYW5kIGFzc29jaWF0ZWQgZG9jdW1lbnRhdGlvbgot
+ICogICAgIGZpbGVzICh0aGUgIlNvZnR3YXJlIiksIHRvIGRlYWwgaW4gdGhlIFNvZnR3YXJlIHdp
+dGhvdXQKLSAqICAgICByZXN0cmljdGlvbiwgaW5jbHVkaW5nIHdpdGhvdXQgbGltaXRhdGlvbiB0
+aGUgcmlnaHRzIHRvIHVzZSwKLSAqICAgICBjb3B5LCBtb2RpZnksIG1lcmdlLCBwdWJsaXNoLCBk
+aXN0cmlidXRlLCBzdWJsaWNlbnNlLCBhbmQvb3IKLSAqICAgICBzZWxsIGNvcGllcyBvZiB0aGUg
+U29mdHdhcmUsIGFuZCB0byBwZXJtaXQgcGVyc29ucyB0byB3aG9tIHRoZQotICogICAgIFNvZnR3
+YXJlIGlzIGZ1cm5pc2hlZCB0byBkbyBzbywgc3ViamVjdCB0byB0aGUgZm9sbG93aW5nCi0gKiAg
+ICAgY29uZGl0aW9uczoKLSAqCi0gKiAgICAgVGhlIGFib3ZlIGNvcHlyaWdodCBub3RpY2UgYW5k
+IHRoaXMgcGVybWlzc2lvbiBub3RpY2Ugc2hhbGwgYmUKLSAqICAgICBpbmNsdWRlZCBpbiBhbGwg
+Y29waWVzIG9yIHN1YnN0YW50aWFsIHBvcnRpb25zIG9mIHRoZSBTb2Z0d2FyZS4KLSAqCi0gKiAg
+ICAgVEhFIFNPRlRXQVJFIElTIFBST1ZJREVEICJBUyBJUyIsIFdJVEhPVVQgV0FSUkFOVFkgT0Yg
+QU5ZIEtJTkQsCi0gKiAgICAgRVhQUkVTUyBPUiBJTVBMSUVELCBJTkNMVURJTkcgQlVUIE5PVCBM
+SU1JVEVEIFRPIFRIRSBXQVJSQU5USUVTCi0gKiAgICAgT0YgTUVSQ0hBTlRBQklMSVRZLCBGSVRO
+RVNTIEZPUiBBIFBBUlRJQ1VMQVIgUFVSUE9TRSBBTkQKLSAqICAgICBOT05JTkZSSU5HRU1FTlQu
+IElOIE5PIEVWRU5UIFNIQUxMIFRIRSBBVVRIT1JTIE9SIENPUFlSSUdIVAotICogICAgIEhPTERF
+UlMgQkUgTElBQkxFIEZPUiBBTlkgQ0xBSU0sIERBTUFHRVMgT1IgT1RIRVIgTElBQklMSVRZLAot
+ICogICAgIFdIRVRIRVIgSU4gQU4gQUNUSU9OIE9GIENPTlRSQUNULCBUT1JUIE9SIE9USEVSV0lT
+RSwgQVJJU0lORwotICogICAgIEZST00sIE9VVCBPRiBPUiBJTiBDT05ORUNUSU9OIFdJVEggVEhF
+IFNPRlRXQVJFIE9SIFRIRSBVU0UgT1IKLSAqICAgICBPVEhFUiBERUFMSU5HUyBJTiBUSEUgU09G
+VFdBUkUuCiAgKi8KIAogL2R0cy12MS87CmRpZmYgLS1naXQgYS9hcmNoL2FybS9ib290L2R0cy9z
+dW41aS1ncjgtZXZiLmR0cyBiL2FyY2gvYXJtL2Jvb3QvZHRzL3N1bjVpLWdyOC1ldmIuZHRzCmlu
+ZGV4IDRjMjBkNzMxYTljNi4uNDFiYmQ2ZjJmMTAwIDEwMDY0NAotLS0gYS9hcmNoL2FybS9ib290
+L2R0cy9zdW41aS1ncjgtZXZiLmR0cworKysgYi9hcmNoL2FybS9ib290L2R0cy9zdW41aS1ncjgt
+ZXZiLmR0cwpAQCAtMSw0NiArMSw5IEBACisvLyBTUERYLUxpY2Vuc2UtSWRlbnRpZmllcjogKEdQ
+TC0yLjAgT1IgTUlUKQogLyoKICAqIENvcHlyaWdodCAyMDE2IEZyZWUgRWxlY3Ryb25zCiAgKiBD
+b3B5cmlnaHQgMjAxNiBOZXh0VGhpbmcgQ28KICAqCiAgKiBNeWzDqG5lIEpvc3NlcmFuZCA8bXls
+ZW5lLmpvc3NlcmFuZEBmcmVlLWVsZWN0cm9ucy5jb20+Ci0gKgotICogVGhpcyBmaWxlIGlzIGR1
+YWwtbGljZW5zZWQ6IHlvdSBjYW4gdXNlIGl0IGVpdGhlciB1bmRlciB0aGUgdGVybXMKLSAqIG9m
+IHRoZSBHUEwgb3IgdGhlIFgxMSBsaWNlbnNlLCBhdCB5b3VyIG9wdGlvbi4gTm90ZSB0aGF0IHRo
+aXMgZHVhbAotICogbGljZW5zaW5nIG9ubHkgYXBwbGllcyB0byB0aGlzIGZpbGUsIGFuZCBub3Qg
+dGhpcyBwcm9qZWN0IGFzIGEKLSAqIHdob2xlLgotICoKLSAqICBhKSBUaGlzIGZpbGUgaXMgZnJl
+ZSBzb2Z0d2FyZTsgeW91IGNhbiByZWRpc3RyaWJ1dGUgaXQgYW5kL29yCi0gKiAgICAgbW9kaWZ5
+IGl0IHVuZGVyIHRoZSB0ZXJtcyBvZiB0aGUgR05VIEdlbmVyYWwgUHVibGljIExpY2Vuc2UgYXMK
+LSAqICAgICBwdWJsaXNoZWQgYnkgdGhlIEZyZWUgU29mdHdhcmUgRm91bmRhdGlvbjsgZWl0aGVy
+IHZlcnNpb24gMiBvZiB0aGUKLSAqICAgICBMaWNlbnNlLCBvciAoYXQgeW91ciBvcHRpb24pIGFu
+eSBsYXRlciB2ZXJzaW9uLgotICoKLSAqICAgICBUaGlzIGZpbGUgaXMgZGlzdHJpYnV0ZWQgaW4g
+dGhlIGhvcGUgdGhhdCBpdCB3aWxsIGJlIHVzZWZ1bCwKLSAqICAgICBidXQgV0lUSE9VVCBBTlkg
+V0FSUkFOVFk7IHdpdGhvdXQgZXZlbiB0aGUgaW1wbGllZCB3YXJyYW50eSBvZgotICogICAgIE1F
+UkNIQU5UQUJJTElUWSBvciBGSVRORVNTIEZPUiBBIFBBUlRJQ1VMQVIgUFVSUE9TRS4gIFNlZSB0
+aGUKLSAqICAgICBHTlUgR2VuZXJhbCBQdWJsaWMgTGljZW5zZSBmb3IgbW9yZSBkZXRhaWxzLgot
+ICoKLSAqIE9yLCBhbHRlcm5hdGl2ZWx5LAotICoKLSAqICBiKSBQZXJtaXNzaW9uIGlzIGhlcmVi
+eSBncmFudGVkLCBmcmVlIG9mIGNoYXJnZSwgdG8gYW55IHBlcnNvbgotICogICAgIG9idGFpbmlu
+ZyBhIGNvcHkgb2YgdGhpcyBzb2Z0d2FyZSBhbmQgYXNzb2NpYXRlZCBkb2N1bWVudGF0aW9uCi0g
+KiAgICAgZmlsZXMgKHRoZSAiU29mdHdhcmUiKSwgdG8gZGVhbCBpbiB0aGUgU29mdHdhcmUgd2l0
+aG91dAotICogICAgIHJlc3RyaWN0aW9uLCBpbmNsdWRpbmcgd2l0aG91dCBsaW1pdGF0aW9uIHRo
+ZSByaWdodHMgdG8gdXNlLAotICogICAgIGNvcHksIG1vZGlmeSwgbWVyZ2UsIHB1Ymxpc2gsIGRp
+c3RyaWJ1dGUsIHN1YmxpY2Vuc2UsIGFuZC9vcgotICogICAgIHNlbGwgY29waWVzIG9mIHRoZSBT
+b2Z0d2FyZSwgYW5kIHRvIHBlcm1pdCBwZXJzb25zIHRvIHdob20gdGhlCi0gKiAgICAgU29mdHdh
+cmUgaXMgZnVybmlzaGVkIHRvIGRvIHNvLCBzdWJqZWN0IHRvIHRoZSBmb2xsb3dpbmcKLSAqICAg
+ICBjb25kaXRpb25zOgotICoKLSAqICAgICBUaGUgYWJvdmUgY29weXJpZ2h0IG5vdGljZSBhbmQg
+dGhpcyBwZXJtaXNzaW9uIG5vdGljZSBzaGFsbCBiZQotICogICAgIGluY2x1ZGVkIGluIGFsbCBj
+b3BpZXMgb3Igc3Vic3RhbnRpYWwgcG9ydGlvbnMgb2YgdGhlIFNvZnR3YXJlLgotICoKLSAqICAg
+ICBUSEUgU09GVFdBUkUgSVMgUFJPVklERUQgIkFTIElTIiwgV0lUSE9VVCBXQVJSQU5UWSBPRiBB
+TlkgS0lORCwKLSAqICAgICBFWFBSRVNTIE9SIElNUExJRUQsIElOQ0xVRElORyBCVVQgTk9UIExJ
+TUlURUQgVE8gVEhFIFdBUlJBTlRJRVMKLSAqICAgICBPRiBNRVJDSEFOVEFCSUxJVFksIEZJVE5F
+U1MgRk9SIEEgUEFSVElDVUxBUiBQVVJQT1NFIEFORAotICogICAgIE5PTklORlJJTkdFTUVOVC4g
+SU4gTk8gRVZFTlQgU0hBTEwgVEhFIEFVVEhPUlMgT1IgQ09QWVJJR0hUCi0gKiAgICAgSE9MREVS
+UyBCRSBMSUFCTEUgRk9SIEFOWSBDTEFJTSwgREFNQUdFUyBPUiBPVEhFUiBMSUFCSUxJVFksCi0g
+KiAgICAgV0hFVEhFUiBJTiBBTiBBQ1RJT04gT0YgQ09OVFJBQ1QsIFRPUlQgT1IgT1RIRVJXSVNF
+LCBBUklTSU5HCi0gKiAgICAgRlJPTSwgT1VUIE9GIE9SIElOIENPTk5FQ1RJT04gV0lUSCBUSEUg
+U09GVFdBUkUgT1IgVEhFIFVTRSBPUgotICogICAgIE9USEVSIERFQUxJTkdTIElOIFRIRSBTT0ZU
+V0FSRS4KICAqLwogCiAvZHRzLXYxLzsKZGlmZiAtLWdpdCBhL2FyY2gvYXJtL2Jvb3QvZHRzL3N1
+bjVpLWdyOC5kdHNpIGIvYXJjaC9hcm0vYm9vdC9kdHMvc3VuNWktZ3I4LmR0c2kKaW5kZXggOThh
+OGZkNWU4OWU4Li45ZmViMTNkOTI5YzUgMTAwNjQ0Ci0tLSBhL2FyY2gvYXJtL2Jvb3QvZHRzL3N1
+bjVpLWdyOC5kdHNpCisrKyBiL2FyY2gvYXJtL2Jvb3QvZHRzL3N1bjVpLWdyOC5kdHNpCkBAIC0x
+LDQ1ICsxLDggQEAKKy8vIFNQRFgtTGljZW5zZS1JZGVudGlmaWVyOiAoR1BMLTIuMCBPUiBNSVQp
+CiAvKgogICogQ29weXJpZ2h0IDIwMTYgTXlsw6huZSBKb3NzZXJhbmQKICAqCiAgKiBNeWzDqG5l
+IEpvc3NlcmFuZCA8bXlsZW5lLmpvc3NlcmFuZEBmcmVlLWVsZWN0cm9ucy5jb20+Ci0gKgotICog
+VGhpcyBmaWxlIGlzIGR1YWwtbGljZW5zZWQ6IHlvdSBjYW4gdXNlIGl0IGVpdGhlciB1bmRlciB0
+aGUgdGVybXMKLSAqIG9mIHRoZSBHUEwgb3IgdGhlIFgxMSBsaWNlbnNlLCBhdCB5b3VyIG9wdGlv
+bi4gTm90ZSB0aGF0IHRoaXMgZHVhbAotICogbGljZW5zaW5nIG9ubHkgYXBwbGllcyB0byB0aGlz
+IGZpbGUsIGFuZCBub3QgdGhpcyBwcm9qZWN0IGFzIGEKLSAqIHdob2xlLgotICoKLSAqICBhKSBU
+aGlzIGxpYnJhcnkgaXMgZnJlZSBzb2Z0d2FyZTsgeW91IGNhbiByZWRpc3RyaWJ1dGUgaXQgYW5k
+L29yCi0gKiAgICAgbW9kaWZ5IGl0IHVuZGVyIHRoZSB0ZXJtcyBvZiB0aGUgR05VIEdlbmVyYWwg
+UHVibGljIExpY2Vuc2UgYXMKLSAqICAgICBwdWJsaXNoZWQgYnkgdGhlIEZyZWUgU29mdHdhcmUg
+Rm91bmRhdGlvbjsgZWl0aGVyIHZlcnNpb24gMiBvZiB0aGUKLSAqICAgICBMaWNlbnNlLCBvciAo
+YXQgeW91ciBvcHRpb24pIGFueSBsYXRlciB2ZXJzaW9uLgotICoKLSAqICAgICBUaGlzIGxpYnJh
+cnkgaXMgZGlzdHJpYnV0ZWQgaW4gdGhlIGhvcGUgdGhhdCBpdCB3aWxsIGJlIHVzZWZ1bCwKLSAq
+ICAgICBidXQgV0lUSE9VVCBBTlkgV0FSUkFOVFk7IHdpdGhvdXQgZXZlbiB0aGUgaW1wbGllZCB3
+YXJyYW50eSBvZgotICogICAgIE1FUkNIQU5UQUJJTElUWSBvciBGSVRORVNTIEZPUiBBIFBBUlRJ
+Q1VMQVIgUFVSUE9TRS4gIFNlZSB0aGUKLSAqICAgICBHTlUgR2VuZXJhbCBQdWJsaWMgTGljZW5z
+ZSBmb3IgbW9yZSBkZXRhaWxzLgotICoKLSAqIE9yLCBhbHRlcm5hdGl2ZWx5LAotICoKLSAqICBi
+KSBQZXJtaXNzaW9uIGlzIGhlcmVieSBncmFudGVkLCBmcmVlIG9mIGNoYXJnZSwgdG8gYW55IHBl
+cnNvbgotICogICAgIG9idGFpbmluZyBhIGNvcHkgb2YgdGhpcyBzb2Z0d2FyZSBhbmQgYXNzb2Np
+YXRlZCBkb2N1bWVudGF0aW9uCi0gKiAgICAgZmlsZXMgKHRoZSAiU29mdHdhcmUiKSwgdG8gZGVh
+bCBpbiB0aGUgU29mdHdhcmUgd2l0aG91dAotICogICAgIHJlc3RyaWN0aW9uLCBpbmNsdWRpbmcg
+d2l0aG91dCBsaW1pdGF0aW9uIHRoZSByaWdodHMgdG8gdXNlLAotICogICAgIGNvcHksIG1vZGlm
+eSwgbWVyZ2UsIHB1Ymxpc2gsIGRpc3RyaWJ1dGUsIHN1YmxpY2Vuc2UsIGFuZC9vcgotICogICAg
+IHNlbGwgY29waWVzIG9mIHRoZSBTb2Z0d2FyZSwgYW5kIHRvIHBlcm1pdCBwZXJzb25zIHRvIHdo
+b20gdGhlCi0gKiAgICAgU29mdHdhcmUgaXMgZnVybmlzaGVkIHRvIGRvIHNvLCBzdWJqZWN0IHRv
+IHRoZSBmb2xsb3dpbmcKLSAqICAgICBjb25kaXRpb25zOgotICoKLSAqICAgICBUaGUgYWJvdmUg
+Y29weXJpZ2h0IG5vdGljZSBhbmQgdGhpcyBwZXJtaXNzaW9uIG5vdGljZSBzaGFsbCBiZQotICog
+ICAgIGluY2x1ZGVkIGluIGFsbCBjb3BpZXMgb3Igc3Vic3RhbnRpYWwgcG9ydGlvbnMgb2YgdGhl
+IFNvZnR3YXJlLgotICoKLSAqICAgICBUSEUgU09GVFdBUkUgSVMgUFJPVklERUQgIkFTIElTIiwg
+V0lUSE9VVCBXQVJSQU5UWSBPRiBBTlkgS0lORCwKLSAqICAgICBFWFBSRVNTIE9SIElNUExJRUQs
+IElOQ0xVRElORyBCVVQgTk9UIExJTUlURUQgVE8gVEhFIFdBUlJBTlRJRVMKLSAqICAgICBPRiBN
+RVJDSEFOVEFCSUxJVFksIEZJVE5FU1MgRk9SIEEgUEFSVElDVUxBUiBQVVJQT1NFIEFORAotICog
+ICAgIE5PTklORlJJTkdFTUVOVC4gSU4gTk8gRVZFTlQgU0hBTEwgVEhFIEFVVEhPUlMgT1IgQ09Q
+WVJJR0hUCi0gKiAgICAgSE9MREVSUyBCRSBMSUFCTEUgRk9SIEFOWSBDTEFJTSwgREFNQUdFUyBP
+UiBPVEhFUiBMSUFCSUxJVFksCi0gKiAgICAgV0hFVEhFUiBJTiBBTiBBQ1RJT04gT0YgQ09OVFJB
+Q1QsIFRPUlQgT1IgT1RIRVJXSVNFLCBBUklTSU5HCi0gKiAgICAgRlJPTSwgT1VUIE9GIE9SIElO
+IENPTk5FQ1RJT04gV0lUSCBUSEUgU09GVFdBUkUgT1IgVEhFIFVTRSBPUgotICogICAgIE9USEVS
+IERFQUxJTkdTIElOIFRIRSBTT0ZUV0FSRS4KICAqLwogCiAjaW5jbHVkZSAic3VuNWkuZHRzaSIK
+ZGlmZiAtLWdpdCBhL2FyY2gvYXJtL2Jvb3QvZHRzL3N1bjVpLXI4LWNoaXAuZHRzIGIvYXJjaC9h
+cm0vYm9vdC9kdHMvc3VuNWktcjgtY2hpcC5kdHMKaW5kZXggNGJmNDk0M2Q0ZWI3Li5jMjE3Nzhi
+YmZiMmQgMTAwNjQ0Ci0tLSBhL2FyY2gvYXJtL2Jvb3QvZHRzL3N1bjVpLXI4LWNoaXAuZHRzCisr
+KyBiL2FyY2gvYXJtL2Jvb3QvZHRzL3N1bjVpLXI4LWNoaXAuZHRzCkBAIC0xLDQ2ICsxLDkgQEAK
+Ky8vIFNQRFgtTGljZW5zZS1JZGVudGlmaWVyOiAoR1BMLTIuMCBPUiBNSVQpCiAvKgogICogQ29w
+eXJpZ2h0IDIwMTUgRnJlZSBFbGVjdHJvbnMKICAqIENvcHlyaWdodCAyMDE1IE5leHRUaGluZyBD
+bwogICoKICAqIE1heGltZSBSaXBhcmQgPG1heGltZS5yaXBhcmRAZnJlZS1lbGVjdHJvbnMuY29t
+PgotICoKLSAqIFRoaXMgZmlsZSBpcyBkdWFsLWxpY2Vuc2VkOiB5b3UgY2FuIHVzZSBpdCBlaXRo
+ZXIgdW5kZXIgdGhlIHRlcm1zCi0gKiBvZiB0aGUgR1BMIG9yIHRoZSBYMTEgbGljZW5zZSwgYXQg
+eW91ciBvcHRpb24uIE5vdGUgdGhhdCB0aGlzIGR1YWwKLSAqIGxpY2Vuc2luZyBvbmx5IGFwcGxp
+ZXMgdG8gdGhpcyBmaWxlLCBhbmQgbm90IHRoaXMgcHJvamVjdCBhcyBhCi0gKiB3aG9sZS4KLSAq
+Ci0gKiAgYSkgVGhpcyBmaWxlIGlzIGZyZWUgc29mdHdhcmU7IHlvdSBjYW4gcmVkaXN0cmlidXRl
+IGl0IGFuZC9vcgotICogICAgIG1vZGlmeSBpdCB1bmRlciB0aGUgdGVybXMgb2YgdGhlIEdOVSBH
+ZW5lcmFsIFB1YmxpYyBMaWNlbnNlIGFzCi0gKiAgICAgcHVibGlzaGVkIGJ5IHRoZSBGcmVlIFNv
+ZnR3YXJlIEZvdW5kYXRpb247IGVpdGhlciB2ZXJzaW9uIDIgb2YgdGhlCi0gKiAgICAgTGljZW5z
+ZSwgb3IgKGF0IHlvdXIgb3B0aW9uKSBhbnkgbGF0ZXIgdmVyc2lvbi4KLSAqCi0gKiAgICAgVGhp
+cyBmaWxlIGlzIGRpc3RyaWJ1dGVkIGluIHRoZSBob3BlIHRoYXQgaXQgd2lsbCBiZSB1c2VmdWws
+Ci0gKiAgICAgYnV0IFdJVEhPVVQgQU5ZIFdBUlJBTlRZOyB3aXRob3V0IGV2ZW4gdGhlIGltcGxp
+ZWQgd2FycmFudHkgb2YKLSAqICAgICBNRVJDSEFOVEFCSUxJVFkgb3IgRklUTkVTUyBGT1IgQSBQ
+QVJUSUNVTEFSIFBVUlBPU0UuICBTZWUgdGhlCi0gKiAgICAgR05VIEdlbmVyYWwgUHVibGljIExp
+Y2Vuc2UgZm9yIG1vcmUgZGV0YWlscy4KLSAqCi0gKiBPciwgYWx0ZXJuYXRpdmVseSwKLSAqCi0g
+KiAgYikgUGVybWlzc2lvbiBpcyBoZXJlYnkgZ3JhbnRlZCwgZnJlZSBvZiBjaGFyZ2UsIHRvIGFu
+eSBwZXJzb24KLSAqICAgICBvYnRhaW5pbmcgYSBjb3B5IG9mIHRoaXMgc29mdHdhcmUgYW5kIGFz
+c29jaWF0ZWQgZG9jdW1lbnRhdGlvbgotICogICAgIGZpbGVzICh0aGUgIlNvZnR3YXJlIiksIHRv
+IGRlYWwgaW4gdGhlIFNvZnR3YXJlIHdpdGhvdXQKLSAqICAgICByZXN0cmljdGlvbiwgaW5jbHVk
+aW5nIHdpdGhvdXQgbGltaXRhdGlvbiB0aGUgcmlnaHRzIHRvIHVzZSwKLSAqICAgICBjb3B5LCBt
+b2RpZnksIG1lcmdlLCBwdWJsaXNoLCBkaXN0cmlidXRlLCBzdWJsaWNlbnNlLCBhbmQvb3IKLSAq
+ICAgICBzZWxsIGNvcGllcyBvZiB0aGUgU29mdHdhcmUsIGFuZCB0byBwZXJtaXQgcGVyc29ucyB0
+byB3aG9tIHRoZQotICogICAgIFNvZnR3YXJlIGlzIGZ1cm5pc2hlZCB0byBkbyBzbywgc3ViamVj
+dCB0byB0aGUgZm9sbG93aW5nCi0gKiAgICAgY29uZGl0aW9uczoKLSAqCi0gKiAgICAgVGhlIGFi
+b3ZlIGNvcHlyaWdodCBub3RpY2UgYW5kIHRoaXMgcGVybWlzc2lvbiBub3RpY2Ugc2hhbGwgYmUK
+LSAqICAgICBpbmNsdWRlZCBpbiBhbGwgY29waWVzIG9yIHN1YnN0YW50aWFsIHBvcnRpb25zIG9m
+IHRoZSBTb2Z0d2FyZS4KLSAqCi0gKiAgICAgVEhFIFNPRlRXQVJFIElTIFBST1ZJREVEICJBUyBJ
+UyIsIFdJVEhPVVQgV0FSUkFOVFkgT0YgQU5ZIEtJTkQsCi0gKiAgICAgRVhQUkVTUyBPUiBJTVBM
+SUVELCBJTkNMVURJTkcgQlVUIE5PVCBMSU1JVEVEIFRPIFRIRSBXQVJSQU5USUVTCi0gKiAgICAg
+T0YgTUVSQ0hBTlRBQklMSVRZLCBGSVRORVNTIEZPUiBBIFBBUlRJQ1VMQVIgUFVSUE9TRSBBTkQK
+LSAqICAgICBOT05JTkZSSU5HRU1FTlQuIElOIE5PIEVWRU5UIFNIQUxMIFRIRSBBVVRIT1JTIE9S
+IENPUFlSSUdIVAotICogICAgIEhPTERFUlMgQkUgTElBQkxFIEZPUiBBTlkgQ0xBSU0sIERBTUFH
+RVMgT1IgT1RIRVIgTElBQklMSVRZLAotICogICAgIFdIRVRIRVIgSU4gQU4gQUNUSU9OIE9GIENP
+TlRSQUNULCBUT1JUIE9SIE9USEVSV0lTRSwgQVJJU0lORwotICogICAgIEZST00sIE9VVCBPRiBP
+UiBJTiBDT05ORUNUSU9OIFdJVEggVEhFIFNPRlRXQVJFIE9SIFRIRSBVU0UgT1IKLSAqICAgICBP
+VEhFUiBERUFMSU5HUyBJTiBUSEUgU09GVFdBUkUuCiAgKi8KIAogL2R0cy12MS87CmRpZmYgLS1n
+aXQgYS9hcmNoL2FybS9ib290L2R0cy9zdW41aS1yOC5kdHNpIGIvYXJjaC9hcm0vYm9vdC9kdHMv
+c3VuNWktcjguZHRzaQppbmRleCBkZTM1ZGJjZDExOTEuLmI1NGY4YjMyYTU2OSAxMDA2NDQKLS0t
+IGEvYXJjaC9hcm0vYm9vdC9kdHMvc3VuNWktcjguZHRzaQorKysgYi9hcmNoL2FybS9ib290L2R0
+cy9zdW41aS1yOC5kdHNpCkBAIC0xLDQ2ICsxLDkgQEAKKy8vIFNQRFgtTGljZW5zZS1JZGVudGlm
+aWVyOiAoR1BMLTIuMCBPUiBNSVQpCiAvKgogICogQ29weXJpZ2h0IDIwMTUgRnJlZSBFbGVjdHJv
+bnMKICAqIENvcHlyaWdodCAyMDE1IE5leHRUaGluZyBDbwogICoKICAqIE1heGltZSBSaXBhcmQg
+PG1heGltZS5yaXBhcmRAZnJlZS1lbGVjdHJvbnMuY29tPgotICoKLSAqIFRoaXMgZmlsZSBpcyBk
+dWFsLWxpY2Vuc2VkOiB5b3UgY2FuIHVzZSBpdCBlaXRoZXIgdW5kZXIgdGhlIHRlcm1zCi0gKiBv
+ZiB0aGUgR1BMIG9yIHRoZSBYMTEgbGljZW5zZSwgYXQgeW91ciBvcHRpb24uIE5vdGUgdGhhdCB0
+aGlzIGR1YWwKLSAqIGxpY2Vuc2luZyBvbmx5IGFwcGxpZXMgdG8gdGhpcyBmaWxlLCBhbmQgbm90
+IHRoaXMgcHJvamVjdCBhcyBhCi0gKiB3aG9sZS4KLSAqCi0gKiAgYSkgVGhpcyBmaWxlIGlzIGZy
+ZWUgc29mdHdhcmU7IHlvdSBjYW4gcmVkaXN0cmlidXRlIGl0IGFuZC9vcgotICogICAgIG1vZGlm
+eSBpdCB1bmRlciB0aGUgdGVybXMgb2YgdGhlIEdOVSBHZW5lcmFsIFB1YmxpYyBMaWNlbnNlIGFz
+Ci0gKiAgICAgcHVibGlzaGVkIGJ5IHRoZSBGcmVlIFNvZnR3YXJlIEZvdW5kYXRpb247IGVpdGhl
+ciB2ZXJzaW9uIDIgb2YgdGhlCi0gKiAgICAgTGljZW5zZSwgb3IgKGF0IHlvdXIgb3B0aW9uKSBh
+bnkgbGF0ZXIgdmVyc2lvbi4KLSAqCi0gKiAgICAgVGhpcyBmaWxlIGlzIGRpc3RyaWJ1dGVkIGlu
+IHRoZSBob3BlIHRoYXQgaXQgd2lsbCBiZSB1c2VmdWwsCi0gKiAgICAgYnV0IFdJVEhPVVQgQU5Z
+IFdBUlJBTlRZOyB3aXRob3V0IGV2ZW4gdGhlIGltcGxpZWQgd2FycmFudHkgb2YKLSAqICAgICBN
+RVJDSEFOVEFCSUxJVFkgb3IgRklUTkVTUyBGT1IgQSBQQVJUSUNVTEFSIFBVUlBPU0UuICBTZWUg
+dGhlCi0gKiAgICAgR05VIEdlbmVyYWwgUHVibGljIExpY2Vuc2UgZm9yIG1vcmUgZGV0YWlscy4K
+LSAqCi0gKiBPciwgYWx0ZXJuYXRpdmVseSwKLSAqCi0gKiAgYikgUGVybWlzc2lvbiBpcyBoZXJl
+YnkgZ3JhbnRlZCwgZnJlZSBvZiBjaGFyZ2UsIHRvIGFueSBwZXJzb24KLSAqICAgICBvYnRhaW5p
+bmcgYSBjb3B5IG9mIHRoaXMgc29mdHdhcmUgYW5kIGFzc29jaWF0ZWQgZG9jdW1lbnRhdGlvbgot
+ICogICAgIGZpbGVzICh0aGUgIlNvZnR3YXJlIiksIHRvIGRlYWwgaW4gdGhlIFNvZnR3YXJlIHdp
+dGhvdXQKLSAqICAgICByZXN0cmljdGlvbiwgaW5jbHVkaW5nIHdpdGhvdXQgbGltaXRhdGlvbiB0
+aGUgcmlnaHRzIHRvIHVzZSwKLSAqICAgICBjb3B5LCBtb2RpZnksIG1lcmdlLCBwdWJsaXNoLCBk
+aXN0cmlidXRlLCBzdWJsaWNlbnNlLCBhbmQvb3IKLSAqICAgICBzZWxsIGNvcGllcyBvZiB0aGUg
+U29mdHdhcmUsIGFuZCB0byBwZXJtaXQgcGVyc29ucyB0byB3aG9tIHRoZQotICogICAgIFNvZnR3
+YXJlIGlzIGZ1cm5pc2hlZCB0byBkbyBzbywgc3ViamVjdCB0byB0aGUgZm9sbG93aW5nCi0gKiAg
+ICAgY29uZGl0aW9uczoKLSAqCi0gKiAgICAgVGhlIGFib3ZlIGNvcHlyaWdodCBub3RpY2UgYW5k
+IHRoaXMgcGVybWlzc2lvbiBub3RpY2Ugc2hhbGwgYmUKLSAqICAgICBpbmNsdWRlZCBpbiBhbGwg
+Y29waWVzIG9yIHN1YnN0YW50aWFsIHBvcnRpb25zIG9mIHRoZSBTb2Z0d2FyZS4KLSAqCi0gKiAg
+ICAgVEhFIFNPRlRXQVJFIElTIFBST1ZJREVEICJBUyBJUyIsIFdJVEhPVVQgV0FSUkFOVFkgT0Yg
+QU5ZIEtJTkQsCi0gKiAgICAgRVhQUkVTUyBPUiBJTVBMSUVELCBJTkNMVURJTkcgQlVUIE5PVCBM
+SU1JVEVEIFRPIFRIRSBXQVJSQU5USUVTCi0gKiAgICAgT0YgTUVSQ0hBTlRBQklMSVRZLCBGSVRO
+RVNTIEZPUiBBIFBBUlRJQ1VMQVIgUFVSUE9TRSBBTkQKLSAqICAgICBOT05JTkZSSU5HRU1FTlQu
+IElOIE5PIEVWRU5UIFNIQUxMIFRIRSBBVVRIT1JTIE9SIENPUFlSSUdIVAotICogICAgIEhPTERF
+UlMgQkUgTElBQkxFIEZPUiBBTlkgQ0xBSU0sIERBTUFHRVMgT1IgT1RIRVIgTElBQklMSVRZLAot
+ICogICAgIFdIRVRIRVIgSU4gQU4gQUNUSU9OIE9GIENPTlRSQUNULCBUT1JUIE9SIE9USEVSV0lT
+RSwgQVJJU0lORwotICogICAgIEZST00sIE9VVCBPRiBPUiBJTiBDT05ORUNUSU9OIFdJVEggVEhF
+IFNPRlRXQVJFIE9SIFRIRSBVU0UgT1IKLSAqICAgICBPVEhFUiBERUFMSU5HUyBJTiBUSEUgU09G
+VFdBUkUuCiAgKi8KIAogI2luY2x1ZGUgInN1bjVpLWExMy5kdHNpIgotLSAKMi4xOC4wLjMyMS5n
+ZmZjNmZhMGUzCgoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5p
+bmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8v
+bGludXgtYXJtLWtlcm5lbAo=
