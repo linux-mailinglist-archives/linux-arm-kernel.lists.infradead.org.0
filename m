@@ -2,104 +2,67 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id ABFD55E5B8
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  3 Jul 2019 15:47:50 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 16BFC5E5E2
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  3 Jul 2019 15:58:47 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=U0YkkyptqmreBOw9t0oyMVhgmzfHcWbwpGlrqKcHL+c=; b=sXqOdF+0w5B7xD
-	r5L5qx9bbijj9vjyIMF76/2QxcWSMOZ88PLLo5gWDBePQNaju+3CN/fczSqsI/cZ4jSLaipcUtq5e
-	oPujUU/p9gPeUXxXQpVpWktJGuoiNySRvg1HHQoqXB7GenwQzFeNeY6UZPOzaHedEsmaxGhLH19Ga
-	4f0qzdLnwRMUCn79dViWeaZvTP0ki73kYXmvngKuYIypBPeTZe+CvtLi4rzeC6EHElBnGuxce/6HV
-	rw9lmIaf8ao8ZynWaoQIw7Fu1h6tzC+7wSrFpK6AOv9RE90It0u+ahKfqJ+y73fC4nM8tJ9S+71Re
-	Zd2Z3642Gd+z7hV4C7Ug==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:From:Date:
+	MIME-Version:Subject:To:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=OmMKvi6AtDndgjsxOmm3vZQfL1Jp86fVUWCjGpDKKOc=; b=FFGKX+fN0xdLOApCOUIESJPLH
+	E7VHS0n2NBZ7qSQ8LKtbxZrTIcAMb9MI0R74xoAbuR27JjIU67WWOU3PXsEO/ZP+6f2BcJyr7UpUo
+	tmAmKXFBw0DAuXz3PESMUqjWB614pJzmRIlPBNWeivVI6tRiKfKWofIEZGyCo0GPdJ7BNZWUvNI5l
+	vMcK6aZNlFtp+kI4kWODKRwqH6BtYrW1M+wGGUvG2eTQlY3rbYQfB3csdA/3kBJtvZ7FibrxK3bOV
+	cKsnzqeYvhayVsBgXPaKBKP/JxjUEiRaRUdkXnCj2j2mrKWCEVlVA/mZNVmSmWrUlS8QKioz7eiiY
+	1DPgJi6CA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hifbv-00032i-6C; Wed, 03 Jul 2019 13:47:47 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hifbl-00032M-Di
- for linux-arm-kernel@lists.infradead.org; Wed, 03 Jul 2019 13:47:39 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id C075A2B;
- Wed,  3 Jul 2019 06:47:36 -0700 (PDT)
-Received: from [10.1.197.61] (usa-sjc-imap-foss1.foss.arm.com [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
- EFE253F718; Wed,  3 Jul 2019 06:47:35 -0700 (PDT)
-Subject: Re: [PATCH 35/59] KVM: arm/arm64: nv: Support multiple nested stage 2
- mmu structures
-To: Alexandru Elisei <alexandru.elisei@arm.com>,
- linux-arm-kernel@lists.infradead.org, kvmarm@lists.cs.columbia.edu,
- kvm@vger.kernel.org
-References: <20190621093843.220980-1-marc.zyngier@arm.com>
- <20190621093843.220980-36-marc.zyngier@arm.com>
- <6a59df67-1b5e-6737-449c-d779537adf3e@arm.com>
-From: Marc Zyngier <marc.zyngier@arm.com>
-Openpgp: preference=signencrypt
-Autocrypt: addr=marc.zyngier@arm.com; prefer-encrypt=mutual; keydata=
- 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
- Z46HaNmN2hZS/oJ69c1DI5Rcww==
-Organization: ARM Ltd
-Message-ID: <0e0de9a8-b165-572e-af8f-6828e7aee49f@arm.com>
-Date: Wed, 3 Jul 2019 14:47:33 +0100
-User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
- Thunderbird/60.7.2
+	id 1hifmX-0006YO-3P; Wed, 03 Jul 2019 13:58:45 +0000
+Received: from node.akkea.ca ([192.155.83.177])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hifmL-0006Xp-Gg
+ for linux-arm-kernel@lists.infradead.org; Wed, 03 Jul 2019 13:58:34 +0000
+Received: by node.akkea.ca (Postfix, from userid 33)
+ id B606E4E204B; Wed,  3 Jul 2019 13:58:32 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=akkea.ca; s=mail;
+ t=1562162312; bh=UHIUaVsVDuz0yZjRB09x+PshwKLK6UHG+Qvlw7TIC58=;
+ h=To:Subject:Date:From:Cc:In-Reply-To:References;
+ b=SpfH1iV5gPGx0vLKUhzKfEvLCQNmPLkUyJlyLG3cW8wfWxKgAPFOR+aGMwiCtP5qV
+ S+TSC/nxxbenLnoRMlQrsfUB2MXIUMeQmR2zwJ5dfti+3LJyKCNajnNEm6XcjeReqg
+ E8fKNY+j2dOhPI2vMmPmQD/ssHXJFGIGur51ElBA=
+To: Daniel Baluta <daniel.baluta@gmail.com>
+Subject: Re: [PATCH v3] arm64: dts: imx8mq: Add sai3 and sai6 nodes
+X-PHP-Originating-Script: 1000:rcube.php
 MIME-Version: 1.0
-In-Reply-To: <6a59df67-1b5e-6737-449c-d779537adf3e@arm.com>
-Content-Language: en-US
+Date: Wed, 03 Jul 2019 07:58:32 -0600
+From: Angus Ainslie <angus@akkea.ca>
+In-Reply-To: <CAEnQRZCoOyyZVs0=BjXB5=wYe3XW9GOF9JvwjhSU9BsChh08uA@mail.gmail.com>
+References: <20190702132353.18632-1-andradanciu1997@gmail.com>
+ <9ea5109f8645c3f27a9e350c5f9b2d4c@www.akkea.ca>
+ <CAEnQRZDCpPju7xBBY9=e0dWt=A9c3t3g88pEw+teoZmmOiiKXQ@mail.gmail.com>
+ <9e196ce51eac9ce9c327198c4a2911a8@www.akkea.ca>
+ <CAEnQRZCoOyyZVs0=BjXB5=wYe3XW9GOF9JvwjhSU9BsChh08uA@mail.gmail.com>
+Message-ID: <8ebfeaae8541132ad39e4109d135cd5f@www.akkea.ca>
+X-Sender: angus@akkea.ca
+User-Agent: Roundcube Webmail/1.1.3
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190703_064737_551995_84037BBC 
-X-CRM114-Status: GOOD (  21.80  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190703_065833_597379_8CB80885 
+X-CRM114-Status: GOOD (  23.06  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -111,215 +74,127 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Andre Przywara <andre.przywara@arm.com>, Dave Martin <Dave.Martin@arm.com>
-Content-Type: text/plain; charset="us-ascii"
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Devicetree List <devicetree@vger.kernel.org>,
+ Andra Danciu <andradanciu1997@gmail.com>, Abel Vesa <abel.vesa@nxp.com>,
+ Anson Huang <Anson.Huang@nxp.com>, Carlo Caione <ccaione@baylibre.com>,
+ andrew.smirnov@gmail.com, Fabio Estevam <festevam@gmail.com>,
+ Sascha Hauer <s.hauer@pengutronix.de>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Rob Herring <robh+dt@kernel.org>, dl-linux-imx <linux-imx@nxp.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Shawn Guo <shawnguo@kernel.org>,
+ =?UTF-8?Q?Guido_G=C3=BCnther?= <agx@sigxcpu.org>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
+ Lucas Stach <l.stach@pengutronix.de>
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 25/06/2019 13:19, Alexandru Elisei wrote:
-> On 6/21/19 10:38 AM, Marc Zyngier wrote:
->> From: Christoffer Dall <christoffer.dall@arm.com>
->>
->> Add stage 2 mmu data structures for virtual EL2 and for nested guests.
->> We don't yet populate shadow stage 2 page tables, but we now have a
->> framework for getting to a shadow stage 2 pgd.
->>
->> We allocate twice the number of vcpus as stage 2 mmu structures because
->> that's sufficient for each vcpu running two VMs without having to flush
->> the stage 2 page tables.
->>
->> Signed-off-by: Christoffer Dall <christoffer.dall@arm.com>
->> Signed-off-by: Marc Zyngier <marc.zyngier@arm.com>
->> ---
->>  arch/arm/include/asm/kvm_host.h     |   4 +
->>  arch/arm/include/asm/kvm_mmu.h      |   3 +
->>  arch/arm64/include/asm/kvm_host.h   |  28 +++++
->>  arch/arm64/include/asm/kvm_mmu.h    |   8 ++
->>  arch/arm64/include/asm/kvm_nested.h |   7 ++
->>  arch/arm64/kvm/nested.c             | 172 ++++++++++++++++++++++++++++
->>  virt/kvm/arm/arm.c                  |  16 ++-
->>  virt/kvm/arm/mmu.c                  |  31 ++---
->>  8 files changed, 254 insertions(+), 15 deletions(-)
->>
->> diff --git a/arch/arm/include/asm/kvm_host.h b/arch/arm/include/asm/kvm_host.h
->> index e3217c4ad25b..b821eb2383ad 100644
->> --- a/arch/arm/include/asm/kvm_host.h
->> +++ b/arch/arm/include/asm/kvm_host.h
->> @@ -424,4 +424,8 @@ static inline bool kvm_arm_vcpu_is_finalized(struct kvm_vcpu *vcpu)
->>  	return true;
->>  }
->>  
->> +static inline void kvm_vcpu_load_hw_mmu(struct kvm_vcpu *vcpu) {}
->> +static inline void kvm_vcpu_put_hw_mmu(struct kvm_vcpu *vcpu) {}
->> +static inline int kvm_vcpu_init_nested(struct kvm_vcpu *vcpu) { return 0; }
->> +
->>  #endif /* __ARM_KVM_HOST_H__ */
->> diff --git a/arch/arm/include/asm/kvm_mmu.h b/arch/arm/include/asm/kvm_mmu.h
->> index be23e3f8e08c..e6984b6da2ce 100644
->> --- a/arch/arm/include/asm/kvm_mmu.h
->> +++ b/arch/arm/include/asm/kvm_mmu.h
->> @@ -420,6 +420,9 @@ static inline int hyp_map_aux_data(void)
->>  
->>  static inline void kvm_set_ipa_limit(void) {}
->>  
->> +static inline void kvm_init_s2_mmu(struct kvm_s2_mmu *mmu) {}
->> +static inline void kvm_init_nested(struct kvm *kvm) {}
->> +
->>  static __always_inline u64 kvm_get_vttbr(struct kvm_s2_mmu *mmu)
->>  {
->>  	struct kvm_vmid *vmid = &mmu->vmid;
->> diff --git a/arch/arm64/include/asm/kvm_host.h b/arch/arm64/include/asm/kvm_host.h
->> index 3dee5e17a4ee..cc238de170d2 100644
->> --- a/arch/arm64/include/asm/kvm_host.h
->> +++ b/arch/arm64/include/asm/kvm_host.h
->> @@ -88,11 +88,39 @@ struct kvm_s2_mmu {
->>  	phys_addr_t	pgd_phys;
->>  
->>  	struct kvm *kvm;
->> +
->> +	/*
->> +	 * For a shadow stage-2 MMU, the virtual vttbr programmed by the guest
->> +	 * hypervisor.  Unused for kvm_arch->mmu. Set to 1 when the structure
->> +	 * contains no valid information.
->> +	 */
->> +	u64	vttbr;
->> +
->> +	/* true when this represents a nested context where virtual HCR_EL2.VM == 1 */
->> +	bool	nested_stage2_enabled;
->> +
->> +	/*
->> +	 *  0: Nobody is currently using this, check vttbr for validity
->> +	 * >0: Somebody is actively using this.
->> +	 */
->> +	atomic_t refcnt;
->>  };
->>  
->> +static inline bool kvm_s2_mmu_valid(struct kvm_s2_mmu *mmu)
->> +{
->> +	return !(mmu->vttbr & 1);
->> +}
->> +
->>  struct kvm_arch {
->>  	struct kvm_s2_mmu mmu;
->>  
->> +	/*
->> +	 * Stage 2 paging stage for VMs with nested virtual using a virtual
->> +	 * VMID.
->> +	 */
->> +	struct kvm_s2_mmu *nested_mmus;
->> +	size_t nested_mmus_size;
->> +
->>  	/* VTCR_EL2 value for this VM */
->>  	u64    vtcr;
->>  
->> diff --git a/arch/arm64/include/asm/kvm_mmu.h b/arch/arm64/include/asm/kvm_mmu.h
->> index 1eb6e0ca61c2..32bcaa1845dc 100644
->> --- a/arch/arm64/include/asm/kvm_mmu.h
->> +++ b/arch/arm64/include/asm/kvm_mmu.h
->> @@ -100,6 +100,7 @@ alternative_cb_end
->>  #include <asm/mmu_context.h>
->>  #include <asm/pgtable.h>
->>  #include <asm/kvm_emulate.h>
->> +#include <asm/kvm_nested.h>
->>  
->>  void kvm_update_va_mask(struct alt_instr *alt,
->>  			__le32 *origptr, __le32 *updptr, int nr_inst);
->> @@ -164,6 +165,7 @@ int create_hyp_exec_mappings(phys_addr_t phys_addr, size_t size,
->>  			     void **haddr);
->>  void free_hyp_pgds(void);
->>  
->> +void kvm_unmap_stage2_range(struct kvm_s2_mmu *mmu, phys_addr_t start, u64 size);
->>  void stage2_unmap_vm(struct kvm *kvm);
->>  int kvm_alloc_stage2_pgd(struct kvm_s2_mmu *mmu);
->>  void kvm_free_stage2_pgd(struct kvm_s2_mmu *mmu);
->> @@ -635,5 +637,11 @@ static __always_inline void __load_guest_stage2(struct kvm_s2_mmu *mmu)
->>  	asm(ALTERNATIVE("nop", "isb", ARM64_WORKAROUND_1165522));
->>  }
->>  
->> +static inline u64 get_vmid(u64 vttbr)
->> +{
->> +	return (vttbr & VTTBR_VMID_MASK(kvm_get_vmid_bits())) >>
->> +		VTTBR_VMID_SHIFT;
->> +}
->> +
->>  #endif /* __ASSEMBLY__ */
->>  #endif /* __ARM64_KVM_MMU_H__ */
->> diff --git a/arch/arm64/include/asm/kvm_nested.h b/arch/arm64/include/asm/kvm_nested.h
->> index 61e71d0d2151..d4021d0892bd 100644
->> --- a/arch/arm64/include/asm/kvm_nested.h
->> +++ b/arch/arm64/include/asm/kvm_nested.h
->> @@ -10,6 +10,13 @@ static inline bool nested_virt_in_use(const struct kvm_vcpu *vcpu)
->>  		test_bit(KVM_ARM_VCPU_NESTED_VIRT, vcpu->arch.features);
->>  }
->>  
->> +extern void kvm_init_nested(struct kvm *kvm);
->> +extern int kvm_vcpu_init_nested(struct kvm_vcpu *vcpu);
->> +extern void kvm_init_s2_mmu(struct kvm_s2_mmu *mmu);
->> +extern struct kvm_s2_mmu *lookup_s2_mmu(struct kvm *kvm, u64 vttbr, u64 hcr);
->> +extern void kvm_vcpu_load_hw_mmu(struct kvm_vcpu *vcpu);
->> +extern void kvm_vcpu_put_hw_mmu(struct kvm_vcpu *vcpu);
->> +
->>  int handle_wfx_nested(struct kvm_vcpu *vcpu, bool is_wfe);
->>  extern bool forward_traps(struct kvm_vcpu *vcpu, u64 control_bit);
->>  extern bool forward_nv_traps(struct kvm_vcpu *vcpu);
->> diff --git a/arch/arm64/kvm/nested.c b/arch/arm64/kvm/nested.c
->> index 3872e3cf1691..4b38dc5c0be3 100644
->> --- a/arch/arm64/kvm/nested.c
->> +++ b/arch/arm64/kvm/nested.c
->> @@ -18,7 +18,161 @@
->>  #include <linux/kvm.h>
->>  #include <linux/kvm_host.h>
->>  
->> +#include <asm/kvm_arm.h>
->>  #include <asm/kvm_emulate.h>
->> +#include <asm/kvm_mmu.h>
->> +#include <asm/kvm_nested.h>
->> +
->> +void kvm_init_nested(struct kvm *kvm)
->> +{
->> +	kvm_init_s2_mmu(&kvm->arch.mmu);
->> +
->> +	kvm->arch.nested_mmus = NULL;
->> +	kvm->arch.nested_mmus_size = 0;
->> +}
->> +
->> +int kvm_vcpu_init_nested(struct kvm_vcpu *vcpu)
->> +{
->> +	struct kvm *kvm = vcpu->kvm;
->> +	struct kvm_s2_mmu *tmp;
->> +	int num_mmus;
->> +	int ret = -ENOMEM;
->> +
->> +	if (!test_bit(KVM_ARM_VCPU_NESTED_VIRT, vcpu->arch.features))
->> +		return 0;
->> +
->> +	if (!cpus_have_const_cap(ARM64_HAS_NESTED_VIRT))
->> +		return -EINVAL;
+Hi Daniel,
+
+On 2019-07-03 07:25, Daniel Baluta wrote:
+> On Wed, Jul 3, 2019 at 4:12 PM Angus Ainslie <angus@akkea.ca> wrote:
+>> 
+>> Hi Daniel,
+>> 
+>> On 2019-07-03 07:10, Daniel Baluta wrote:
+>> > On Wed, Jul 3, 2019 at 4:01 PM Angus Ainslie <angus@akkea.ca> wrote:
+>> >>
+>> >> Hi Andra,
+>> >>
+>> >> I tried this out on linux-next and I'm not able to record or play
+>> >> sound.
+>> >>
+>> >> I also added the sai2 entry to test out our devkit and get a PCM
+>> >> timeout
+>> >> with that.
+>> >
+>> > Hi Angus,
+>> >
+>> > There are still lots of SAI patches that need to be upstream. Me and
+>> > Andra
+>> > will be working on that over this summer.
+>> >
+>> >>
+>> >> On 2019-07-02 07:23, Andra Danciu wrote:
+>> >> > SAI3 and SAI6 nodes are used to connect to an external codec.
+>> >> > They have 1 Tx and 1 Rx dataline.
+>> >> >
+>> >> > Cc: Daniel Baluta <daniel.baluta@nxp.com>
+>> >> > Signed-off-by: Andra Danciu <andradanciu1997@gmail.com>
+>> >> > ---
+>> >> > Changes since v2:
+>> >> >       - removed multiple new lines
+>> >> >
+>> >> > Changes since v1:
+>> >> >       - Added sai3 node because we need it to enable audio on pico-pi-8m
+>> >> >       - Added commit description
+>> >> >
+>> >> >  arch/arm64/boot/dts/freescale/imx8mq.dtsi | 29
+>> >> > +++++++++++++++++++++++++++++
+>> >> >  1 file changed, 29 insertions(+)
+>> >> >
+>> >> > diff --git a/arch/arm64/boot/dts/freescale/imx8mq.dtsi
+>> >> > b/arch/arm64/boot/dts/freescale/imx8mq.dtsi
+>> >> > index d09b808eff87..736cf81b695e 100644
+>> >> > --- a/arch/arm64/boot/dts/freescale/imx8mq.dtsi
+>> >> > +++ b/arch/arm64/boot/dts/freescale/imx8mq.dtsi
+>> >> > @@ -278,6 +278,20 @@
+>> >> >                       #size-cells = <1>;
+>> >> >                       ranges = <0x30000000 0x30000000 0x400000>;
+>> >> >
+>> >> > +                     sai6: sai@30030000 {
+>> >> > +                             compatible = "fsl,imx8mq-sai",
+>> >>
+>> >> I don't find this compatible string in sound/soc/fsl/fsl_sai.c. Aren't
+>> >> the registers at a different offset from "fsl,imx6sx-sai".
+>> >
+>> > Yes, you are right on this. We are trying to slowly push all our
+>> > internal-tree
+>> > patches to mainline. Obviously, with started with low hanging fruits,
+>> > DTS
+>> > nodes and small SAI fixes.
+>> >
+>> > Soon, we will start to send patches for SAI IP ipgrade for imx8.
+>> >
+>> >>
+>> >> How is this supposed to work ?
+>> >>
+>> >
+>> > For the moment it won't work unless we will upstream all our SAI
+>> > internal patches.
+>> > But we will get there hopefully this summer.
+>> >
+>> 
+>> Shouldn't a working driver be upstream before enabling it in the
+>> devicetree ?
 > 
-> Here we fail if KVM_ARM_VCPU_NESTED_VIRT features was requested from the virtual
-> vcpu, but the nested capability isn't present. This function is called as a
-> result of the KVM_ARM_VCPU_INIT, and when this function fails, the
-> KVM_ARM_VCPU_INIT ioctl will also fail. This means that we cannot have a vcpu
-> with the nested virt feature on a system which doesn't support nested
-> virtualization.
+> I see your point here and maybe your suggestion is the ideal
+> way to do things.
 > 
-> However, commit 04/59 "KVM: arm64: nv: Introduce nested virtualization VCPU
-> feature" added the function nested_virt_in_use (in
-> arch/arm64/include/asm/kvm_nested.h) which checks for **both** conditions before
-> returning true. I believe the capability check is not required in
-> nested_virt_in_use.
+> Anyhow, I don't see a problem with adding the node in dts
+> because CONFIG_FSL_SAI is not set in the default config.
+> 
 
-The capability check is a static branch, meaning that if there is no
-actual evaluation, just a branch. If you remove this branch, you end-up
-checking the feature bit even on systems that do not have NV, and that'd
-be a measurable performance drag.
+I think the assumption is that devices in the devicetree are tested and 
+working. That's not currently the case for sai on imx8mq.
 
-Thanks,
+> We try to speedup the upstreaming process giving the fact
+> that SAI patches will go through audio maintainer's tree and
+> the DTS patches will most likely go through Shawn's tree.
+> 
 
-	M.
--- 
-Jazz is not dead. It just smells funny...
+Ok I can see them being committed concurrently but I haven't even seen a 
+v1 of the sai patches.
+
+Thanks
+Angus
+
+> thanks,
+> Daniel.
+
 
 _______________________________________________
 linux-arm-kernel mailing list
