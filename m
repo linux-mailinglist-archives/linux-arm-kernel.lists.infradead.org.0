@@ -2,39 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DD1865EB6A
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  3 Jul 2019 20:18:36 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3EE4E5EB70
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  3 Jul 2019 20:19:02 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3vA6Emo2bkNSyOYohQC+quHCjEuzAPe5ieiJjt7r80Q=; b=ssWV9ssH/HE0lK
-	+PwVkBEZZQRfkC0s0mb2CtrUKaK36G5DfFEn7c6nsbX7KgiQy+//hhN1ztbJal5+NHjiO43zHnWDS
-	AxVmqPZAhG+TMdIYhQEbV02QVy5fnYTmyjqpKUakKWlz53P/JEEE07iG+S40y8KpSvTsoJcdMMLEK
-	7ZME7Vj9qrvDIbu7fy/HdMpYjiLd7muvZCbOiFifftZ+6X6zo1+FC75lInbYl82FLy5yuXz8FeCPj
-	eiVkhCAx6pzXMUs22TW1zL5MKX3VE7brqAldeW6W6+gY0bppwUx5emglGxUOy2enkPwUC5SbhQMn+
-	cVslcmlZ3gTUtw4fwe/g==;
+	List-Owner; bh=lWB0VZbBMjT02CeSM1ocIsRvCTZaU8nUQHI5LUfD9Yg=; b=Ykg4LAumsBHzkj
+	VFNVue2koD752N9UuYGurw6PoC0SucjCkRthmEpwktcOYyNknQLkH9bBB53XDmEOqN95PgXF5vYek
+	mpGOQwPRV3/rnSNSsT9WpEobdQgkZ+NPJPfUlSNdrA43g0JQgBgfTgKxbLM3hNMVPzqeBO+GP9O+J
+	EYgYq8diZqGbvSVI/K/3chJ3KKn7eXSio8e1GywHF1noKyC4GB7V1UD9H7cg+XCPMxa3aHE5vuA0U
+	+9C4wGSW94gdCriVDOux8tYEcLVjz8FZnQYnWZwFulSMhcMxm5HBn4oWpYIIUUn4KUu9h/JRLEUFq
+	4H3jFJRRGVqzvLYjN9EA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hijpy-0006IS-Pn; Wed, 03 Jul 2019 18:18:34 +0000
+	id 1hijqO-0006Yo-Mz; Wed, 03 Jul 2019 18:19:00 +0000
+Received: from merlin.infradead.org ([2001:8b0:10b:1231::1])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hijqE-0006YX-9i
+ for linux-arm-kernel@bombadil.infradead.org; Wed, 03 Jul 2019 18:18:50 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=infradead.org; s=merlin.20170209; h=In-Reply-To:Content-Type:MIME-Version:
+ References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=DCpM7nms5B5RUVgOYjG5X7MCBjiWqWHo1JgqvBcjmHM=; b=dhKGk9kkUlTV/wCSZEiNLkuel
+ iZTrtRELGJh/0jy6hfJsXF5QpUTphgNSMTV8+uMGdDh1S6ro/1NDNfqTI0xh+Uc2CmEVRRjrIi+gA
+ tWYRaJ6+9WhFZ/CVGV2IIc1no1ZXWFI3pjc51YJUQ8O5sNxXm3PoloLctMXe6FTJ5Qsal6G16x5AC
+ rDP+F6jlAdW4XlfLjwWv/a4vnslujFxl3v5nGBvcWcKB3sygrrjib0TeTlLfD7bDFkSXR3Qw8a3sy
+ wLU89SRllIl2kTRjOsFnI36PImiFWXXr0QtnqMoWmcsMFaUz9htGTayqL/PEOsD6FDZP/R8IpoAMr
+ WUWE9FKTQ==;
 Received: from [177.195.209.182] (helo=quaco.ghostprotocols.net)
- by bombadil.infradead.org with esmtpsa (Exim 4.92 #3 (Red Hat Linux))
- id 1hijpm-0006IA-8T; Wed, 03 Jul 2019 18:18:23 +0000
+ by merlin.infradead.org with esmtpsa (Exim 4.92 #3 (Red Hat Linux))
+ id 1hijqC-0000R1-61; Wed, 03 Jul 2019 18:18:48 +0000
 Received: by quaco.ghostprotocols.net (Postfix, from userid 1000)
- id A69A741153; Wed,  3 Jul 2019 15:18:15 -0300 (-03)
-Date: Wed, 3 Jul 2019 15:18:15 -0300
+ id BF8DF41153; Wed,  3 Jul 2019 15:18:41 -0300 (-03)
+Date: Wed, 3 Jul 2019 15:18:41 -0300
 From: Arnaldo Carvalho de Melo <acme@kernel.org>
 To: Leo Yan <leo.yan@linaro.org>
-Subject: Re: [PATCH v1 00/11] perf: Fix errors detected by Smatch
-Message-ID: <20190703181815.GB10740@kernel.org>
+Subject: Re: [PATCH v1 02/11] perf stat: Smatch: Fix use-after-freed pointer
+Message-ID: <20190703181841.GC10740@kernel.org>
 References: <20190702103420.27540-1-leo.yan@linaro.org>
- <20190702110743.GA12694@krava>
- <20190703014808.GC6852@leoy-ThinkPad-X240s>
+ <20190702103420.27540-3-leo.yan@linaro.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190703014808.GC6852@leoy-ThinkPad-X240s>
+In-Reply-To: <20190702103420.27540-3-leo.yan@linaro.org>
 X-Url: http://acmel.wordpress.com
 User-Agent: Mutt/1.11.3 (2019-02-01)
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -69,73 +84,40 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Em Wed, Jul 03, 2019 at 09:48:08AM +0800, Leo Yan escreveu:
-> On Tue, Jul 02, 2019 at 01:07:43PM +0200, Jiri Olsa wrote:
-> > On Tue, Jul 02, 2019 at 06:34:09PM +0800, Leo Yan wrote:
-> > > When I used static checker Smatch for perf building, the main target is
-> > > to check if there have any potential issues in Arm cs-etm code.  So
-> > > finally I get many reporting for errors/warnings.
-> > > 
-> > > I used below command for using static checker with perf building:
-> > > 
-> > >   # make VF=1 CORESIGHT=1 -C tools/perf/ \
-> > >     CHECK="/root/Work/smatch/smatch --full-path" \
-> > >     CC=/root/Work/smatch/cgcc | tee smatch_reports.txt
-> > > 
-> > > I reviewed the errors one by one, if I understood some of these errors
-> > > so changed the code as I can, this patch set is the working result; but
-> > > still leave some errors due to I don't know what's the best way to fix
-> > > it.  There also have many inconsistent indenting warnings.  So I firstly
-> > > send out this patch set and let's see what's the feedback from public
-> > > reviewing.
-> > > 
-> > > Leo Yan (11):
-> > >   perf report: Smatch: Fix potential NULL pointer dereference
-> > >   perf stat: Smatch: Fix use-after-freed pointer
-> > >   perf top: Smatch: Fix potential NULL pointer dereference
-> > >   perf annotate: Smatch: Fix dereferencing freed memory
-> > >   perf trace: Smatch: Fix potential NULL pointer dereference
-> > >   perf hists: Smatch: Fix potential NULL pointer dereference
-> > >   perf map: Smatch: Fix potential NULL pointer dereference
-> > >   perf session: Smatch: Fix potential NULL pointer dereference
-> > >   perf intel-bts: Smatch: Fix potential NULL pointer dereference
-> > >   perf intel-pt: Smatch: Fix potential NULL pointer dereference
-> > >   perf cs-etm: Smatch: Fix potential NULL pointer dereference
-> > 
-> > from quick look it all looks good to me, nice tool ;-)
-> > 
-> > Acked-by: Jiri Olsa <jolsa@kernel.org>
+Em Tue, Jul 02, 2019 at 06:34:11PM +0800, Leo Yan escreveu:
+> Based on the following report from Smatch, fix the use-after-freed
+> pointer.
 > 
-> Thanks for reviewing, Jiri.
+>   tools/perf/builtin-stat.c:1353
+>   add_default_attributes() warn: passing freed memory 'str'.
 > 
-> @Arnaldo, Just want to check, will you firstly pick up 01~05, 07,
-> 08/11 patches if you think they are okay?  Or you want to wait me to
-> spin new patch set with all patches after I gather all comments?
+> The pointer 'str' has been freed but later it is still passed into the
+> function parse_events_print_error().  This patch fixes this
+> use-after-freed issue.
 
-I'm picking up the uncontrovertial, will push to my perf/core branch,
-continue from there, please.
-
-- Arnaldo
+thanks, applied.
  
-> Thanks,
-> Leo Yan
+> Signed-off-by: Leo Yan <leo.yan@linaro.org>
+> ---
+>  tools/perf/builtin-stat.c | 2 +-
+>  1 file changed, 1 insertion(+), 1 deletion(-)
 > 
-> > >  tools/perf/builtin-report.c    |  4 ++--
-> > >  tools/perf/builtin-stat.c      |  2 +-
-> > >  tools/perf/builtin-top.c       |  8 ++++++--
-> > >  tools/perf/builtin-trace.c     |  5 +++--
-> > >  tools/perf/ui/browsers/hists.c | 13 +++++++++----
-> > >  tools/perf/util/annotate.c     |  6 ++----
-> > >  tools/perf/util/cs-etm.c       |  2 +-
-> > >  tools/perf/util/intel-bts.c    |  5 ++---
-> > >  tools/perf/util/intel-pt.c     |  5 ++---
-> > >  tools/perf/util/map.c          |  7 +++++--
-> > >  tools/perf/util/session.c      |  3 +++
-> > >  11 files changed, 36 insertions(+), 24 deletions(-)
-> > > 
-> > > -- 
-> > > 2.17.1
-> > > 
+> diff --git a/tools/perf/builtin-stat.c b/tools/perf/builtin-stat.c
+> index 8a35fc5a7281..de0f6d0e96a2 100644
+> --- a/tools/perf/builtin-stat.c
+> +++ b/tools/perf/builtin-stat.c
+> @@ -1349,8 +1349,8 @@ static int add_default_attributes(void)
+>  				fprintf(stderr,
+>  					"Cannot set up top down events %s: %d\n",
+>  					str, err);
+> -				free(str);
+>  				parse_events_print_error(&errinfo, str);
+> +				free(str);
+>  				return -1;
+>  			}
+>  		} else {
+> -- 
+> 2.17.1
 
 -- 
 
