@@ -2,86 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 41A695E677
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  3 Jul 2019 16:22:55 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B7B995E69C
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  3 Jul 2019 16:28:04 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=y/pl1HZ06hMxkSf01AUg5RrU/snLLGv3eQR2ntfhTVc=; b=G8J1mEr5QB+sID
-	H4CubTtmEuUBcOHBG7ejDooymF06z0Ffgt0GjADMIobSomJM/Kp5BFI2dvdP8uvJjic9I2qZeJuBw
-	Wl0lIGVyvtXCiwJQuzTnFmsWrXhJ0cSi8dCglWbBvNbhorRsJBsHHp5hToiVvfUpbn4MsLaltlkjC
-	MvOgPuA+u8maDaMdpt/Sb8aCwRT4ItA2SAEHBjtIRrLIH8ThD/GYwOAOen/a3q33Kt28hngaJLuDX
-	d+muH/f4yQQEU/F52sCoAVIzyKAWzPWZYs5kkKwZF9dKeSIdwArcCppeC4MNXLkEidj8lpu4Fu5qU
-	/X5AL8GrfPLk4UnE6UVg==;
+	List-Owner; bh=sGd8szwFZXyfi8bT5tlX7pnzAU6oTToGZ/HP5jUkMSY=; b=ZPfWVZ5VUlc6zm
+	PxqEyUcQluPcV76TKAwF0kUerIA/wSAwM11XLs+VQprWtPOp5K3ls3t5mNK15reRAupFWvXUzJ/sy
+	eagkStLNoISDf57pxTpreCdRnmKZpHAODq4eGjkgEVqw6ha0ojHrSC5kVV10gWDo+sBRmFBLl5jur
+	jjc9EjLbAS8jW3IXTN9wV6DWMMscrjr4sFSHGzCgoNhPz97uI9uGF3jvKUOGXf1+gRdQaT3zpZ2wL
+	Qsy9uXvRtbAGIHLX07GYux5BVrOJKINpiKN+xrBqOugC+2P92/TGVS32s0hCZaPQLAJYwrScLv3x1
+	XK4GkP4Ws4bBj4wF0G3A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hig9t-0007qh-5U; Wed, 03 Jul 2019 14:22:53 +0000
-Received: from mail-io1-xd43.google.com ([2607:f8b0:4864:20::d43])
+	id 1higEs-0001LP-LV; Wed, 03 Jul 2019 14:28:02 +0000
+Received: from helcar.hmeau.com ([216.24.177.18] helo=deadmen.hmeau.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hig9g-0007pv-F1
- for linux-arm-kernel@lists.infradead.org; Wed, 03 Jul 2019 14:22:42 +0000
-Received: by mail-io1-xd43.google.com with SMTP id e5so811776iok.4
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 03 Jul 2019 07:22:39 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=amarulasolutions.com; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=3jOjcCBZEWo1w1sLHMo+7YDCUkeYC1q2tao/STlCVFc=;
- b=gj1NqSMk5FsHkkWbt1vPKGA6H759JOiNTm55WzGDptuNznkuH8Cf70mK1tbIg4jUGs
- BJP2wSPCVmVas/t415+sHOmOta41zS2jYMqXZBhnvg/k7m9zP7t12JwNNZcJmykd3ppF
- FeiJhLCis6scWAIADX5Sn5ZZcEgMC26sy9NIA=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=3jOjcCBZEWo1w1sLHMo+7YDCUkeYC1q2tao/STlCVFc=;
- b=bnJ6+Jf3VElqbuMY2GQ6VW04eTDZWUzhhWlszVJKmnC6n8fJBomjtI+KuP/+uikNpS
- 3rPUF5gY6UQnuKgt+WrWkBqT7DDwyLxZYmQqHNwnSi1AGChvMpxMSyDUC6VsPNRyvfsH
- hGYX7UQYzRrGCZM+6rge7odx64vVHIbvsxRnFLVRwaPangiRbpw5SVBYjdZaxPyYCUJI
- LrX4wuYcAXVR1UZLAX8FLwHllzV4rYsbdDAoHPk9zaB2JNzCMlEVOyyBBHEyCB2FtVN5
- uLnFRibU0xur/L55fyH9f5DNtukl/G9tUck8Y87ORy2Dyw9mGQbgsoRljg47qJejkztC
- Dqcg==
-X-Gm-Message-State: APjAAAV7w837z30pMyOJoS0jSpEzqLHs18b/vgS78PVl9spnYYe5TXOc
- aPJG73aH4bqJgzl02ooFYLyfiCrx4KkLbxD9u5ISNw==
-X-Google-Smtp-Source: APXvYqz7dfwX/rO1C1CJlykOSigszl+TALdETbQAlr7homcQ7+eKR2HVUrZS/bcVykHb3jNfUNyum1SqZCpa6EsyOhM=
-X-Received: by 2002:a05:6638:3d6:: with SMTP id
- r22mr4047585jaq.71.1562163759062; 
- Wed, 03 Jul 2019 07:22:39 -0700 (PDT)
+ id 1higEf-0001KL-Tx
+ for linux-arm-kernel@lists.infradead.org; Wed, 03 Jul 2019 14:27:51 +0000
+Received: from gondobar.mordor.me.apana.org.au ([192.168.128.4] helo=gondobar)
+ by deadmen.hmeau.com with esmtps (Exim 4.89 #2 (Debian))
+ id 1higEZ-0000dZ-Er; Wed, 03 Jul 2019 22:27:43 +0800
+Received: from herbert by gondobar with local (Exim 4.89)
+ (envelope-from <herbert@gondor.apana.org.au>)
+ id 1higEW-0000Uz-3u; Wed, 03 Jul 2019 22:27:40 +0800
+Date: Wed, 3 Jul 2019 22:27:40 +0800
+From: Herbert Xu <herbert@gondor.apana.org.au>
+To: Ard Biesheuvel <ard.biesheuvel@linaro.org>
+Subject: Re: [PATCH 0/2] crypto: arm64/aes-ce - implement 5-way interleave
+ for some modes
+Message-ID: <20190703142740.55cpcpkas4zhgxx5@gondor.apana.org.au>
+References: <20190624173831.8375-1-ard.biesheuvel@linaro.org>
 MIME-Version: 1.0
-References: <20190703124609.21435-1-jagan@amarulasolutions.com>
- <20190703124609.21435-2-jagan@amarulasolutions.com>
- <20190703132838.nhewz5wzsijl65s5@flea>
-In-Reply-To: <20190703132838.nhewz5wzsijl65s5@flea>
-From: Jagan Teki <jagan@amarulasolutions.com>
-Date: Wed, 3 Jul 2019 19:52:27 +0530
-Message-ID: <CAMty3ZDyx_RSkU=OndsvzS5reOzab0DBkrarSeHt+-gtsdyKuQ@mail.gmail.com>
-Subject: Re: [PATCH 01/25] arm64: dts: allwinner: Switch A64 dts(i) to use
- SPDX identifier
-To: Maxime Ripard <maxime.ripard@bootlin.com>
+Content-Disposition: inline
+In-Reply-To: <20190624173831.8375-1-ard.biesheuvel@linaro.org>
+User-Agent: NeoMutt/20170113 (1.7.2)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190703_072240_942621_BF65B5B7 
-X-CRM114-Status: GOOD (  21.43  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190703_072750_123776_9368D6DD 
+X-CRM114-Status: UNSURE (   8.08  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:d43 listed in]
- [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.0 T_PDS_NO_HELO_DNS      High profile HELO but no A record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,82 +62,34 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- devicetree <devicetree@vger.kernel.org>,
- linux-sunxi <linux-sunxi@googlegroups.com>,
- linux-kernel <linux-kernel@vger.kernel.org>, Chen-Yu Tsai <wens@csie.org>,
- Rob Herring <robh+dt@kernel.org>,
- linux-amarula <linux-amarula@amarulasolutions.com>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Cc: ebiggers@kernel.org, linux-crypto@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, steve.capper@arm.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Jul 3, 2019 at 6:58 PM Maxime Ripard <maxime.ripard@bootlin.com> wrote:
->
-> On Wed, Jul 03, 2019 at 06:15:45PM +0530, Jagan Teki wrote:
-> > Adopt the SPDX license identifier headers to ease license
-> > compliance management on Allwinner A64 dts(i) files.
-> >
-> > While the text specifies "of the GPL or the X11 license"
-> > but the actual license text matches the MIT license as
-> > specified at [0]
-> >
-> > [0] https://spdx.org/licenses/MIT.html
-> >
-> > Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
-> > ---
-> >  .../dts/allwinner/sun50i-a64-bananapi-m64.dts | 39 +------------------
-> >  .../dts/allwinner/sun50i-a64-nanopi-a64.dts   | 39 +------------------
-> >  .../dts/allwinner/sun50i-a64-olinuxino.dts    | 39 +------------------
-> >  .../dts/allwinner/sun50i-a64-orangepi-win.dts | 39 +------------------
-> >  .../dts/allwinner/sun50i-a64-pine64-plus.dts  | 39 +------------------
-> >  .../boot/dts/allwinner/sun50i-a64-pine64.dts  | 39 +------------------
-> >  .../allwinner/sun50i-a64-sopine-baseboard.dts | 39 +------------------
-> >  .../boot/dts/allwinner/sun50i-a64-sopine.dtsi | 39 +------------------
-> >  arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi | 39 +------------------
-> >  9 files changed, 9 insertions(+), 342 deletions(-)
-> >
-> > diff --git a/arch/arm64/boot/dts/allwinner/sun50i-a64-bananapi-m64.dts b/arch/arm64/boot/dts/allwinner/sun50i-a64-bananapi-m64.dts
-> > index 208373efee49..efdd84c362b0 100644
-> > --- a/arch/arm64/boot/dts/allwinner/sun50i-a64-bananapi-m64.dts
-> > +++ b/arch/arm64/boot/dts/allwinner/sun50i-a64-bananapi-m64.dts
-> > @@ -1,43 +1,6 @@
-> > +// SPDX-License-Identifier: (GPL-2.0 OR MIT)
->
-> You say that this is a GPL2 only license
->
-> >  /*
-> >   * Copyright (c) 2016 ARM Ltd.
-> > - *
-> > - * This file is dual-licensed: you can use it either under the terms
-> > - * of the GPL or the X11 license, at your option. Note that this dual
-> > - * licensing only applies to this file, and not this project as a
-> > - * whole.
-> > - *
-> > - *  a) This library is free software; you can redistribute it and/or
-> > - *     modify it under the terms of the GNU General Public License as
-> > - *     published by the Free Software Foundation; either version 2 of the
-> > - *     License, or (at your option) any later version.
->
-> While this is GPL2 or later.
+On Mon, Jun 24, 2019 at 07:38:29PM +0200, Ard Biesheuvel wrote:
+> As it turns out, even a 4-way interleave is not sufficient to saturate
+> the ThunderX2 pipeline with AES instructions, so this series implements
+> 5-way interleave for modes that can be modified without running out of
+> registers to maintain chaining mode state across the encryption operation,
+> i.e., ECB, CBC-decryption and CTR.
+> 
+> Ard Biesheuvel (2):
+>   crypto: arm64/aes-ce - add 5 way interleave routines
+>   crypto: arm64/aes-ce - implement 5 way interleave for ECB, CBC and CTR
+> 
+>  arch/arm64/crypto/aes-ce.S    |  60 ++++++----
+>  arch/arm64/crypto/aes-modes.S | 118 +++++++++++++++-----
+>  arch/arm64/crypto/aes-neon.S  |  48 +-------
+>  3 files changed, 127 insertions(+), 99 deletions(-)
 
-Yes, this is where I was confused with compared to existing
-architectures. It seems like it is a call from author of the file or
-make GPL-2.0 for generic purpose [1], not really sure.
-
->
-> Also, I'm not sure why we need 25 patches to do that. Can't you just
-> send one (there's no even need to separate arm and arm64, since we
-> will do only a single PR from now as opposed to what we were doing
-> before).
-
-Just to make a clear conversion possible with individual SoC + boards
-files, I did based on existing arch's does. np, if require I can send
-it in single patch.
-
-[1] https://patchwork.kernel.org/patch/10963113/
+All applied.  Thanks.
+-- 
+Email: Herbert Xu <herbert@gondor.apana.org.au>
+Home Page: http://gondor.apana.org.au/~herbert/
+PGP Key: http://gondor.apana.org.au/~herbert/pubkey.txt
 
 _______________________________________________
 linux-arm-kernel mailing list
