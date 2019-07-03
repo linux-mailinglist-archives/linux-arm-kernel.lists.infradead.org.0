@@ -2,39 +2,39 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6E4E15EBD4
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  3 Jul 2019 20:44:44 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 682485EBE8
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  3 Jul 2019 20:46:25 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=dTMQ94SPjkaLryWKAQlUnTlO/DiBlJ40yYCzooe13Qg=; b=bElyg9y0RpFDq5
-	ihx9FEpNyvzHzsexCzv5TfiaVSLfTbrrsGZ33druTy1TM2ZI85Fpnvf14thEA3o9Ya346WoxkXE7J
-	lg/+mDe2J1L8opFfBVhlCMXBlH7qMgEJT0rduz+M0X+3XQRDoxBG8jjICFECdE4NoT6YxSHuCAefs
-	esKcp3nm/Kjd5y4wkqYTqcMHgxEYGiJ7KOV2AN2Y5OJXxVdCibEQPuJShuZkyxXEPxI33S9YHbK+c
-	G5t7RhVyoSLfihmNeR/K8UDEYWsON1zE4Kuoz60qZ4MIpLeZZnpYs7r19SHDnzCWMmXP3K8bZn8L1
-	Z1vc38phlMVpgCxn67Qg==;
+	List-Owner; bh=1WPUZgtSfuOMDLXCV86txjXtanbixomxTUZr+0WvJ/A=; b=BayF7MSNQFe7fX
+	PREaURBNj5j36e68cQ+BkjsT+KoQqJvFMCZtBJr7HMfRfcryqmIX7mCZtgdsYxVTWM/11vv87EFl4
+	Hd21Aclp0tOYZ/uE0e8uYT/GbGcq2I+SXiu3crGBMZ3VAtM5SLeCtmm1fMzxPP7GY0/NN+LNOrOLG
+	OH6jFvcnXV7RNyeLK5mokowifx4gJ4VsSHJcSBnzXQKo5Qm7vK7m+05UpldCwOT8ksD7o94y5HX6H
+	7P9ztmf/zLjbMpYUCmkn6MNL5vzEECyoizkHuzdq+QxJON2w70iLmFLle4jtxp0uya0jrMepQ06AU
+	7C1XaoPw0Lv7XzosB2dQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hikFG-0006VX-9f; Wed, 03 Jul 2019 18:44:42 +0000
+	id 1hikGs-0008Uj-TW; Wed, 03 Jul 2019 18:46:22 +0000
 Received: from [177.195.209.182] (helo=quaco.ghostprotocols.net)
  by bombadil.infradead.org with esmtpsa (Exim 4.92 #3 (Red Hat Linux))
- id 1hikF6-0006SG-Sd; Wed, 03 Jul 2019 18:44:33 +0000
+ id 1hikGh-0008UR-Du; Wed, 03 Jul 2019 18:46:12 +0000
 Received: by quaco.ghostprotocols.net (Postfix, from userid 1000)
- id 7149D41153; Wed,  3 Jul 2019 15:43:46 -0300 (-03)
-Date: Wed, 3 Jul 2019 15:43:46 -0300
+ id CAA0141154; Wed,  3 Jul 2019 15:46:06 -0300 (-03)
+Date: Wed, 3 Jul 2019 15:46:06 -0300
 From: Arnaldo Carvalho de Melo <acme@kernel.org>
 To: Leo Yan <leo.yan@linaro.org>
-Subject: Re: [PATCH v1 04/11] perf annotate: Smatch: Fix dereferencing freed
- memory
-Message-ID: <20190703184346.GE10740@kernel.org>
+Subject: Re: [PATCH v1 05/11] perf trace: Smatch: Fix potential NULL pointer
+ dereference
+Message-ID: <20190703184606.GF10740@kernel.org>
 References: <20190702103420.27540-1-leo.yan@linaro.org>
- <20190702103420.27540-5-leo.yan@linaro.org>
+ <20190702103420.27540-6-leo.yan@linaro.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190702103420.27540-5-leo.yan@linaro.org>
+In-Reply-To: <20190702103420.27540-6-leo.yan@linaro.org>
 X-Url: http://acmel.wordpress.com
 User-Agent: Mutt/1.11.3 (2019-02-01)
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -69,49 +69,53 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Em Tue, Jul 02, 2019 at 06:34:13PM +0800, Leo Yan escreveu:
+Em Tue, Jul 02, 2019 at 06:34:14PM +0800, Leo Yan escreveu:
 > Based on the following report from Smatch, fix the potential
-> dereferencing freed memory check.
+> NULL pointer dereference check.
 > 
->   tools/perf/util/annotate.c:1125
->   disasm_line__parse() error: dereferencing freed memory 'namep'
+>   tools/perf/builtin-trace.c:1044
+>   thread_trace__new() error: we previously assumed 'ttrace' could be
+>   null (see line 1041).
 > 
-> tools/perf/util/annotate.c
-> 1100 static int disasm_line__parse(char *line, const char **namep, char **rawp)
-> 1101 {
-> 1102         char tmp, *name = ltrim(line);
+> tools/perf/builtin-trace.c
+> 1037 static struct thread_trace *thread_trace__new(void)
+> 1038 {
+> 1039         struct thread_trace *ttrace =  zalloc(sizeof(struct thread_trace));
+> 1040
+> 1041         if (ttrace)
+> 1042                 ttrace->files.max = -1;
+> 1043
+> 1044         ttrace->syscall_stats = intlist__new(NULL);
+>              ^^^^^^^^
+> 1045
+> 1046         return ttrace;
+> 1047 }
 > 
-> [...]
-> 
-> 1114         *namep = strdup(name);
-> 1115
-> 1116         if (*namep == NULL)
-> 1117                 goto out_free_name;
-> 
-> [...]
-> 
-> 1124 out_free_name:
-> 1125         free((void *)namep);
->                           ^^^^^
-> 1126         *namep = NULL;
->              ^^^^^^
-> 1127         return -1;
-> 1128 }
-> 
-> If strdup() fails to allocate memory space for *namep, we don't need to
-> free memory with pointer 'namep', which is resident in data structure
-> disasm_line::ins::name; and *namep is NULL pointer for this failure, so
-> it's pointless to assign NULL to *namep again.
+> This patch directly returns NULL when fail to allocate memory for
+> ttrace; this can avoid potential NULL pointer dereference.
 
-Applied, with this extra comment:
+I did it slightly different, to avoid having two return lines, and that
+is what most other constructors (foo__new()) do in tools/perf/, kept
+your changeset comment and patch authorship, thanks.
 
-
-Committer note:
-
-Freeing namep, which is the address of the first entry of the 'struct
-ins' that is the first member of struct disasm_line would in fact free
-that disasm_line instance, if it was allocated via malloc/calloc, which,
-later, would a dereference of freed memory.
+diff --git a/tools/perf/builtin-trace.c b/tools/perf/builtin-trace.c
+index d0eb7224dd36..e3fc9062f136 100644
+--- a/tools/perf/builtin-trace.c
++++ b/tools/perf/builtin-trace.c
+@@ -1038,10 +1038,10 @@ static struct thread_trace *thread_trace__new(void)
+ {
+ 	struct thread_trace *ttrace =  zalloc(sizeof(struct thread_trace));
+ 
+-	if (ttrace)
++	if (ttrace) {
+ 		ttrace->files.max = -1;
+-
+-	ttrace->syscall_stats = intlist__new(NULL);
++		ttrace->syscall_stats = intlist__new(NULL);
++	}
+ 
+ 	return ttrace;
+ }
 
 _______________________________________________
 linux-arm-kernel mailing list
