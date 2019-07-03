@@ -2,52 +2,48 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D84E95E0A1
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  3 Jul 2019 11:11:35 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 80AA55E0AC
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  3 Jul 2019 11:13:20 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:References:To:From:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Ns+C0r7UAgK/wJPIugZVWmGjFCOZ4RdqvYc7sTa6fdw=; b=H/4+zgE63zuojN
-	GIUDxPetQ0zmR0JeKOHKemILJLHI400wPzipiEh8m+Ir1iSG5l/5HSOYSLGIXKmCfqMOtMY2XcWZ8
-	hqXaMUqCFifk3D6rJXnaWpTUSxGZcKb/wdQClYsa4kSIHy7gzNXpUWHBZUtneCFhMXxBxD/KCcbil
-	2z7dvZU6ZHJqZMBZexKjf4qsPgyGfL+FIZSLCAMNf11l1vJOl/oa3lVIlZL/THfUaA9879QnZfX8a
-	pVK+z5L+yh2mWwVOzru2jTmkNfuNB7tn4ITSmXx7r37ts9t+RFkA3mEFzF+qM83rwtjRACYGtWaER
-	qr6tgF1JR0gBWWhONrjg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=MaFEQZo5R+YIs/NO80fGxqdaofC6igtsBanNB4iRmE0=; b=Cv1WmtnyXWVXX6
+	/DjOOE5Jb2UjS1E3eP6l3tlCLZ0EAxVUO/xFnhX7L5xHq8zBXpCf+rbJB5azC9KILYAOUx7oaIkR2
+	yNoZ8r3FAOH8duOtwYygZ0E8a9zwJSE7PkeCvrALZVjgg0sK4VJvGPavycHZjrJJc20MSV2Nwv0PS
+	i/bprsWBhUFUZ24GdRf3rpzguMNW5/7f9fmyhvTosFcOUhNmH8BJOosKN+5Ua/tagv0ntZD408+yd
+	63V2AO/gW3w+Pzzig/LFa7iCWHK84F4kGJAu4sGekteYA7FuhP0VGEcEj+gQndnsOy32L+NsGPcND
+	af7aLU+teXC+b28kZu7w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hibIX-0001x7-17; Wed, 03 Jul 2019 09:11:29 +0000
+	id 1hibKI-0002LE-M9; Wed, 03 Jul 2019 09:13:18 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hibI6-0001wS-W6
- for linux-arm-kernel@lists.infradead.org; Wed, 03 Jul 2019 09:11:04 +0000
+ id 1hibK5-0002KW-1c
+ for linux-arm-kernel@lists.infradead.org; Wed, 03 Jul 2019 09:13:06 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 1DE15344;
- Wed,  3 Jul 2019 02:11:02 -0700 (PDT)
-Received: from [10.1.31.185] (unknown [10.1.31.185])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id D43CF3F246;
- Wed,  3 Jul 2019 02:11:00 -0700 (PDT)
-Subject: Re: [PATCH 28/59] KVM: arm64: nv: Respect the virtual HCR_EL2.NV1 bit
- setting
-From: Alexandru Elisei <alexandru.elisei@arm.com>
-To: Marc Zyngier <marc.zyngier@arm.com>,
- linux-arm-kernel@lists.infradead.org, kvmarm@lists.cs.columbia.edu,
- kvm@vger.kernel.org
-References: <20190621093843.220980-1-marc.zyngier@arm.com>
- <20190621093843.220980-29-marc.zyngier@arm.com>
- <f19e36aa-2468-899c-6f7c-bc215e4128eb@arm.com>
-Message-ID: <4e0f2630-2405-e0f2-c745-131e1027b3bc@arm.com>
-Date: Wed, 3 Jul 2019 10:10:59 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.7.0
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 67BE0344;
+ Wed,  3 Jul 2019 02:13:04 -0700 (PDT)
+Received: from e103592.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
+ [10.121.207.14])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 7F1A53F246;
+ Wed,  3 Jul 2019 02:13:03 -0700 (PDT)
+Date: Wed, 3 Jul 2019 10:13:01 +0100
+From: Dave Martin <Dave.Martin@arm.com>
+To: Mark Rutland <mark.rutland@arm.com>
+Subject: Re: [PATCHv3 3/3] arm64: stacktrace: better handle corrupted stacks
+Message-ID: <20190703091301.GR2790@e103592.cambridge.arm.com>
+References: <20190702130729.19615-1-mark.rutland@arm.com>
+ <20190702130729.19615-4-mark.rutland@arm.com>
 MIME-Version: 1.0
-In-Reply-To: <f19e36aa-2468-899c-6f7c-bc215e4128eb@arm.com>
-Content-Language: en-US
+Content-Disposition: inline
+In-Reply-To: <20190702130729.19615-4-mark.rutland@arm.com>
+User-Agent: Mutt/1.5.23 (2014-03-12)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190703_021103_125023_29580B5D 
-X-CRM114-Status: GOOD (  17.68  )
+X-CRM114-CacheID: sfid-20190703_021305_186534_C4D5616C 
+X-CRM114-Status: GOOD (  30.29  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -66,98 +62,213 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Andre Przywara <andre.przywara@arm.com>, Dave Martin <Dave.Martin@arm.com>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: catalin.marinas@arm.com, tengfeif@codeaurora.org, will.deacon@arm.com,
+ james.morse@arm.com, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Ck9uIDcvMi8xOSA1OjMyIFBNLCBBbGV4YW5kcnUgRWxpc2VpIHdyb3RlOgo+IE9uIDYvMjEvMTkg
-MTA6MzggQU0sIE1hcmMgWnluZ2llciB3cm90ZToKPj4gRnJvbTogSmludGFjayBMaW0gPGppbnRh
-Y2tAY3MuY29sdW1iaWEuZWR1Pgo+Pgo+PiBGb3J3YXJkIEVMUl9FTDEsIFNQU1JfRUwxIGFuZCBW
-QkFSX0VMMSB0cmFwcyB0byB0aGUgdmlydHVhbCBFTDIgaWYgdGhlCj4+IHZpcnR1YWwgSENSX0VM
-Mi5OViBiaXQgaXMgc2V0Lgo+IEhDUl9FTDIuTlYxPwo+PiBUaGlzIGlzIGZvciByZWN1cnNpdmUg
-bmVzdGVkIHZpcnR1YWxpemF0aW9uLgo+Pgo+PiBTaWduZWQtb2ZmLWJ5OiBKaW50YWNrIExpbSA8
-amludGFja0Bjcy5jb2x1bWJpYS5lZHU+Cj4+IFNpZ25lZC1vZmYtYnk6IE1hcmMgWnluZ2llciA8
-bWFyYy56eW5naWVyQGFybS5jb20+Cj4+IC0tLQo+PiAgYXJjaC9hcm02NC9pbmNsdWRlL2FzbS9r
-dm1fYXJtLmggfCAgMSArCj4+ICBhcmNoL2FybTY0L2t2bS9zeXNfcmVncy5jICAgICAgICB8IDE5
-ICsrKysrKysrKysrKysrKysrLS0KPj4gIDIgZmlsZXMgY2hhbmdlZCwgMTggaW5zZXJ0aW9ucygr
-KSwgMiBkZWxldGlvbnMoLSkKPj4KPj4gZGlmZiAtLWdpdCBhL2FyY2gvYXJtNjQvaW5jbHVkZS9h
-c20va3ZtX2FybS5oIGIvYXJjaC9hcm02NC9pbmNsdWRlL2FzbS9rdm1fYXJtLmgKPj4gaW5kZXgg
-ZDIxNDg2Mjc0ZWViLi41NWY0NTI1YzExMmMgMTAwNjQ0Cj4+IC0tLSBhL2FyY2gvYXJtNjQvaW5j
-bHVkZS9hc20va3ZtX2FybS5oCj4+ICsrKyBiL2FyY2gvYXJtNjQvaW5jbHVkZS9hc20va3ZtX2Fy
-bS5oCj4+IEBAIC0yNCw2ICsyNCw3IEBACj4+ICAKPj4gIC8qIEh5cCBDb25maWd1cmF0aW9uIFJl
-Z2lzdGVyIChIQ1IpIGJpdHMgKi8KPj4gICNkZWZpbmUgSENSX0ZXQgkJKFVMKDEpIDw8IDQ2KQo+
-PiArI2RlZmluZSBIQ1JfTlYxCQkoVUwoMSkgPDwgNDMpCj4+ICAjZGVmaW5lIEhDUl9OVgkJKFVM
-KDEpIDw8IDQyKQo+PiAgI2RlZmluZSBIQ1JfQVBJCQkoVUwoMSkgPDwgNDEpCj4+ICAjZGVmaW5l
-IEhDUl9BUEsJCShVTCgxKSA8PCA0MCkKPj4gZGlmZiAtLWdpdCBhL2FyY2gvYXJtNjQva3ZtL3N5
-c19yZWdzLmMgYi9hcmNoL2FybTY0L2t2bS9zeXNfcmVncy5jCj4+IGluZGV4IDBmNzRiOTI3N2E4
-Ni4uYmVhZGViY2ZjODg4IDEwMDY0NAo+PiAtLS0gYS9hcmNoL2FybTY0L2t2bS9zeXNfcmVncy5j
-Cj4+ICsrKyBiL2FyY2gvYXJtNjQva3ZtL3N5c19yZWdzLmMKPj4gQEAgLTQ3Myw4ICs0NzMsMTAg
-QEAgc3RhdGljIGJvb2wgYWNjZXNzX3ZtX3JlZyhzdHJ1Y3Qga3ZtX3ZjcHUgKnZjcHUsCj4+ICAJ
-aWYgKGVsMTJfcmVnKHApICYmIGZvcndhcmRfbnZfdHJhcHModmNwdSkpCj4+ICAJCXJldHVybiBm
-YWxzZTsKPj4gIAo+PiAtCWlmICghZWwxMl9yZWcocCkgJiYgZm9yd2FyZF92bV90cmFwcyh2Y3B1
-LCBwKSkKPj4gLQkJcmV0dXJuIGt2bV9pbmplY3RfbmVzdGVkX3N5bmModmNwdSwga3ZtX3ZjcHVf
-Z2V0X2hzcih2Y3B1KSk7Cj4+ICsJaWYgKCFlbDEyX3JlZyhwKSAmJiBmb3J3YXJkX3ZtX3RyYXBz
-KHZjcHUsIHApKSB7Cj4+ICsJCWt2bV9pbmplY3RfbmVzdGVkX3N5bmModmNwdSwga3ZtX3ZjcHVf
-Z2V0X2hzcih2Y3B1KSk7Cj4+ICsJCXJldHVybiBmYWxzZTsKPj4gKwl9Cj4+ICAKPj4gIAlCVUdf
-T04oIXZjcHVfbW9kZV9lbDIodmNwdSkgJiYgIXAtPmlzX3dyaXRlKTsKPj4gIAo+PiBAQCAtMTY0
-Myw2ICsxNjQ1LDEzIEBAIHN0YXRpYyBib29sIGFjY2Vzc19zcF9lbDEoc3RydWN0IGt2bV92Y3B1
-ICp2Y3B1LAo+PiAgCXJldHVybiB0cnVlOwo+PiAgfQo+PiAgCj4+ICsKPj4gKy8qIFRoaXMgZnVu
-Y3Rpb24gaXMgdG8gc3VwcG9ydCB0aGUgcmVjdXJzaXZlIG5lc3RlZCB2aXJ0dWFsaXphdGlvbiAq
-Lwo+PiArc3RhdGljIGJvb2wgZm9yd2FyZF9udjFfdHJhcHMoc3RydWN0IGt2bV92Y3B1ICp2Y3B1
-LCBzdHJ1Y3Qgc3lzX3JlZ19wYXJhbXMgKnApCj4gV2h5IHRoZSBzdHJ1Y3Qgc3lzX3JlZ19wYXJh
-bXMgKnAgYXJndW1lbnQ/IEl0IGlzbid0IHVzZWQgYnkgdGhlIGZ1bmN0aW9uLgo+PiArewo+PiAr
-CXJldHVybiBmb3J3YXJkX3RyYXBzKHZjcHUsIEhDUl9OVjEpOwo+PiArfQo+PiArCj4+ICBzdGF0
-aWMgYm9vbCBhY2Nlc3NfZWxyKHN0cnVjdCBrdm1fdmNwdSAqdmNwdSwKPj4gIAkJICAgICAgIHN0
-cnVjdCBzeXNfcmVnX3BhcmFtcyAqcCwKPj4gIAkJICAgICAgIGNvbnN0IHN0cnVjdCBzeXNfcmVn
-X2Rlc2MgKnIpCj4+IEBAIC0xNjUwLDYgKzE2NTksOSBAQCBzdGF0aWMgYm9vbCBhY2Nlc3NfZWxy
-KHN0cnVjdCBrdm1fdmNwdSAqdmNwdSwKPj4gIAlpZiAoZWwxMl9yZWcocCkgJiYgZm9yd2FyZF9u
-dl90cmFwcyh2Y3B1KSkKPj4gIAkJcmV0dXJuIGZhbHNlOwo+PiAgCj4+ICsJaWYgKCFlbDEyX3Jl
-ZyhwKSAmJiBmb3J3YXJkX252MV90cmFwcyh2Y3B1LCBwKSkKPj4gKwkJcmV0dXJuIGZhbHNlOwo+
-PiArCj4+ICAJaWYgKHAtPmlzX3dyaXRlKQo+PiAgCQl2Y3B1LT5hcmNoLmN0eHQuZ3BfcmVncy5l
-bHJfZWwxID0gcC0+cmVndmFsOwo+PiAgCWVsc2UKPj4gQEAgLTE2NjUsNiArMTY3Nyw5IEBAIHN0
-YXRpYyBib29sIGFjY2Vzc19zcHNyKHN0cnVjdCBrdm1fdmNwdSAqdmNwdSwKPj4gIAlpZiAoZWwx
-Ml9yZWcocCkgJiYgZm9yd2FyZF9udl90cmFwcyh2Y3B1KSkKPj4gIAkJcmV0dXJuIGZhbHNlOwo+
-PiAgCj4+ICsJaWYgKCFlbDEyX3JlZyhwKSAmJiBmb3J3YXJkX252MV90cmFwcyh2Y3B1LCBwKSkK
-Pj4gKwkJcmV0dXJuIGZhbHNlOwo+PiArCj4+ICAJaWYgKHAtPmlzX3dyaXRlKQo+PiAgCQl2Y3B1
-LT5hcmNoLmN0eHQuZ3BfcmVncy5zcHNyW0tWTV9TUFNSX0VMMV0gPSBwLT5yZWd2YWw7Cj4+ICAJ
-ZWxzZQo+IFRoZSBjb21taXQgbWVzc2FnZSBtZW50aW9ucyBWQkFSX0VMMSwgYnV0IHRoZXJlJ3Mg
-bm8gY2hhbmdlIHJlbGF0ZWQgdG8gaXQuCj4gUGFyaGFwcyB5b3UncmUgbWlzc2luZyB0aGlzIChi
-dWlsZCB0ZXN0ZWQgb25seSk6Cj4KPiBkaWZmIC0tZ2l0IGEvYXJjaC9hcm02NC9rdm0vc3lzX3Jl
-Z3MuYyBiL2FyY2gvYXJtNjQva3ZtL3N5c19yZWdzLmMKPiBpbmRleCBiZDIxZjBmNDVhODYuLjA4
-MmRjMzFmZjUzMyAxMDA2NDQKPiAtLS0gYS9hcmNoL2FybTY0L2t2bS9zeXNfcmVncy5jCj4gKysr
-IGIvYXJjaC9hcm02NC9rdm0vc3lzX3JlZ3MuYwo+IEBAIC00MDEsNiArNDAxLDEyIEBAIHN0YXRp
-YyBib29sIGVsMTJfcmVnKHN0cnVjdCBzeXNfcmVnX3BhcmFtcyAqcCkKPiDCoMKgwqDCoMKgwqDC
-oCByZXR1cm4gKHAtPk9wMSA9PSA1KTsKPiDCoH0KPiDCoAo+ICsvKiBUaGlzIGZ1bmN0aW9uIGlz
-IHRvIHN1cHBvcnQgdGhlIHJlY3Vyc2l2ZSBuZXN0ZWQgdmlydHVhbGl6YXRpb24gKi8KPiArc3Rh
-dGljIGJvb2wgZm9yd2FyZF9udjFfdHJhcHMoc3RydWN0IGt2bV92Y3B1ICp2Y3B1LCBzdHJ1Y3Qg
-c3lzX3JlZ19wYXJhbXMgKnApCj4gK3sKPiArwqDCoMKgwqDCoMKgIHJldHVybiBmb3J3YXJkX3Ry
-YXBzKHZjcHUsIEhDUl9OVjEpOwo+ICt9Cj4gKwo+IMKgc3RhdGljIGJvb2wgYWNjZXNzX3J3KHN0
-cnVjdCBrdm1fdmNwdSAqdmNwdSwKPiDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
-wqDCoMKgwqAgc3RydWN0IHN5c19yZWdfcGFyYW1zICpwLAo+IMKgwqDCoMKgwqDCoMKgwqDCoMKg
-wqDCoMKgwqDCoMKgwqDCoMKgwqDCoCBjb25zdCBzdHJ1Y3Qgc3lzX3JlZ19kZXNjICpyKQo+IEBA
-IC00MDgsNiArNDE0LDEwIEBAIHN0YXRpYyBib29sIGFjY2Vzc19ydyhzdHJ1Y3Qga3ZtX3ZjcHUg
-KnZjcHUsCj4gwqDCoMKgwqDCoMKgwqAgaWYgKGVsMTJfcmVnKHApICYmIGZvcndhcmRfbnZfdHJh
-cHModmNwdSkpCj4gwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIHJldHVybiBmYWxzZTsK
-PiDCoAo+ICvCoMKgwqDCoMKgwqAgaWYgKHN5c19yZWcocC0+T3AwLCBwLT5PcDEsIHAtPkNSbiwg
-cC0+Q1JtLCBwLT5PcDIpID09IFNZU19WQkFSX0VMMSAmJgo+ICvCoMKgwqDCoMKgwqDCoMKgwqDC
-oCBmb3J3YXJkX252MV90cmFwcyh2Y3B1LCBwKSkKCkFoZW0uLi4gdGhpcyBpcyBwcm9iYWJseSBi
-ZXR0ZXI6CgorwqDCoMKgwqDCoMKgIGlmIChyLT5yZWcgPT0gVkJBUl9FTDEgJiYgZm9yd2FyZF9u
-djFfdHJhcHModmNwdSwgcCkpCgo+ICvCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIHJldHVy
-biBmYWxzZTsKPiArCj4gwqDCoMKgwqDCoMKgwqAgaWYgKHAtPmlzX3dyaXRlKQo+IMKgwqDCoMKg
-wqDCoMKgwqDCoMKgwqDCoMKgwqDCoCB2Y3B1X3dyaXRlX3N5c19yZWcodmNwdSwgcC0+cmVndmFs
-LCByLT5yZWcpOwo+IMKgwqDCoMKgwqDCoMKgIGVsc2UKPiBAQCAtMTc5NCwxMiArMTgwNCw2IEBA
-IHN0YXRpYyBib29sIGZvcndhcmRfdHRsYl90cmFwcyhzdHJ1Y3Qga3ZtX3ZjcHUgKnZjcHUpCj4g
-wqDCoMKgwqDCoMKgwqAgcmV0dXJuIGZvcndhcmRfdHJhcHModmNwdSwgSENSX1RUTEIpOwo+IMKg
-fQo+IMKgCj4gLS8qIFRoaXMgZnVuY3Rpb24gaXMgdG8gc3VwcG9ydCB0aGUgcmVjdXJzaXZlIG5l
-c3RlZCB2aXJ0dWFsaXphdGlvbiAqLwo+IC1zdGF0aWMgYm9vbCBmb3J3YXJkX252MV90cmFwcyhz
-dHJ1Y3Qga3ZtX3ZjcHUgKnZjcHUsIHN0cnVjdCBzeXNfcmVnX3BhcmFtcyAqcCkKPiAtewo+IC3C
-oMKgwqDCoMKgwqAgcmV0dXJuIGZvcndhcmRfdHJhcHModmNwdSwgSENSX05WMSk7Cj4gLX0KPiAt
-Cj4gwqBzdGF0aWMgYm9vbCBhY2Nlc3NfZWxyKHN0cnVjdCBrdm1fdmNwdSAqdmNwdSwKPiDCoMKg
-wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCBzdHJ1Y3Qgc3lzX3JlZ19w
-YXJhbXMgKnAsCj4gwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAg
-Y29uc3Qgc3RydWN0IHN5c19yZWdfZGVzYyAqcikKPgoKX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGlu
-dXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQu
-b3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
+On Tue, Jul 02, 2019 at 02:07:29PM +0100, Mark Rutland wrote:
+> The arm64 stacktrace code is careful to only dereference frame records
+> in valid stack ranges, ensuring that a corrupted frame record won't
+> result in a faulting access.
+> 
+> However, it's still possible for corrupt frame records to result in
+> infinite loops in the stacktrace code, which is also undesirable.
+> 
+> This patch ensures that we complete a stacktrace in finite time, by
+> keeping track of which stacks we have already completed unwinding, and
+> verifying that if the next frame record is on the same stack, it is at a
+> higher address.
+> 
+> As this has turned out to be particularly subtle, comments are added to
+> explain the procedure.
+> 
+> Signed-off-by: Mark Rutland <mark.rutland@arm.com>
+> Reviewed-by: James Morse <james.morse@arm.com>
+> Tested-by: James Morse <james.morse@arm.com>
+> Acked-by: Dave Martin <Dave.Martin@arm.com>
+> Cc: Catalin Marinas <catalin.marinas@arm.com>
+> Cc: Tengfei Fan <tengfeif@codeaurora.org>
+> Cc: Will Deacon <will.deacon@arm.com>
+> ---
+>  arch/arm64/include/asm/stacktrace.h | 57 +++++++++++++++++++++++++++++++------
+>  arch/arm64/kernel/stacktrace.c      | 40 +++++++++++++++++++++++++-
+>  2 files changed, 88 insertions(+), 9 deletions(-)
+> 
+> diff --git a/arch/arm64/include/asm/stacktrace.h b/arch/arm64/include/asm/stacktrace.h
+> index 18f90bf1385c..b3e03bbb69ea 100644
+> --- a/arch/arm64/include/asm/stacktrace.h
+> +++ b/arch/arm64/include/asm/stacktrace.h
+> @@ -19,19 +19,12 @@
+>  #include <linux/percpu.h>
+>  #include <linux/sched.h>
+>  #include <linux/sched/task_stack.h>
+> +#include <linux/types.h>
+>  
+>  #include <asm/memory.h>
+>  #include <asm/ptrace.h>
+>  #include <asm/sdei.h>
+>  
+> -struct stackframe {
+> -	unsigned long fp;
+> -	unsigned long pc;
+> -#ifdef CONFIG_FUNCTION_GRAPH_TRACER
+> -	int graph;
+> -#endif
+> -};
+> -
+>  enum stack_type {
+>  	STACK_TYPE_UNKNOWN,
+>  	STACK_TYPE_TASK,
+> @@ -39,6 +32,7 @@ enum stack_type {
+>  	STACK_TYPE_OVERFLOW,
+>  	STACK_TYPE_SDEI_NORMAL,
+>  	STACK_TYPE_SDEI_CRITICAL,
+> +	__NR_STACK_TYPES
+>  };
+>  
+>  struct stack_info {
+> @@ -47,6 +41,37 @@ struct stack_info {
+>  	enum stack_type type;
+>  };
+>  
+> +/*
+> + * A snapshot of a frame record or fp/lr register values, along with some
+> + * accounting information necessary for robust unwinding.
+> + *
+> + * @fp:          The fp value in the frame record (or the real fp)
+> + * @pc:          The fp value in the frame record (or the real lr)
+> + *
+> + * @stacks_done: Stacks which have been entirely unwound, for which it is no
+> + *               longer valid to unwind to.
+> + *
+> + * @prev_fp:     The fp that pointed to this frame record, or a synthetic value
+> + *               of 0. This is used to ensure that within a stack, each
+> + *               subsequent frame record is at an increasing address.
+> + * @prev_type:   The type of stack this frame record was on, or a synthetic
+> + *               value of STACK_TYPE_UNKNOWN. This is used to detect a
+> + *               transition from one stack to another.
+> + *
+> + * @graph:       When FUNCTION_GRAPH_TRACER is selected, holds the index of a
+> + *               replacement lr value in the ftrace graph stack.
+> + */
+> +struct stackframe {
+> +	unsigned long fp;
+> +	unsigned long pc;
+> +	DECLARE_BITMAP(stacks_done, __NR_STACK_TYPES);
+> +	unsigned long prev_fp;
+> +	enum stack_type prev_type;
+> +#ifdef CONFIG_FUNCTION_GRAPH_TRACER
+> +	int graph;
+> +#endif
+> +};
+> +
+>  extern int unwind_frame(struct task_struct *tsk, struct stackframe *frame);
+>  extern void walk_stackframe(struct task_struct *tsk, struct stackframe *frame,
+>  			    int (*fn)(struct stackframe *, void *), void *data);
+> @@ -128,6 +153,9 @@ static inline bool on_accessible_stack(const struct task_struct *tsk,
+>  				       unsigned long sp,
+>  				       struct stack_info *info)
+>  {
+> +	if (info)
+> +		info->type = STACK_TYPE_UNKNOWN;
+> +
+>  	if (on_task_stack(tsk, sp, info))
+>  		return true;
+>  	if (tsk != current || preemptible())
+> @@ -150,6 +178,19 @@ static inline void start_backtrace(struct stackframe *frame,
+>  #ifdef CONFIG_FUNCTION_GRAPH_TRACER
+>  	frame->graph = 0;
+>  #endif
+> +
+> +	/*
+> +	 * Prime the first unwind.
+> +	 *
+> +	 * In unwind_frame() we'll check that the FP points to a valid stack,
+> +	 * which can't be STACK_TYPE_UNKNOWN, and the first unwind will be
+> +	 * treated as a transition to whichever stack that happens to be. The
+> +	 * prev_fp value won't be used, but we set it to 0 such that it is
+> +	 * definitely not an accessible stack address.
+> +	 */
+> +	bitmap_zero(frame->stacks_done, __NR_STACK_TYPES);
+> +	frame->prev_fp = 0;
+> +	frame->prev_type = STACK_TYPE_UNKNOWN;
+>  }
+>  
+>  #endif	/* __ASM_STACKTRACE_H */
+> diff --git a/arch/arm64/kernel/stacktrace.c b/arch/arm64/kernel/stacktrace.c
+> index e5338216deaa..8094bfe654f5 100644
+> --- a/arch/arm64/kernel/stacktrace.c
+> +++ b/arch/arm64/kernel/stacktrace.c
+> @@ -40,9 +40,18 @@
+>   *	ldp	x29, x30, [sp]
+>   *	add	sp, sp, #0x10
+>   */
+> +
+> +/*
+> + * Unwind from one frame record (A) to the next frame record (B).
+> + *
+> + * We terminate early if the location of B indicates a malformed chain of frame
+> + * records (e.g. a cycle), determined based on the location and fp value of A
+> + * and the location (but not the fp value) of B.
+> + */
+>  int notrace unwind_frame(struct task_struct *tsk, struct stackframe *frame)
+>  {
+>  	unsigned long fp = frame->fp;
+> +	struct stack_info info;
+>  
+>  	if (fp & 0xf)
+>  		return -EINVAL;
+> @@ -50,11 +59,40 @@ int notrace unwind_frame(struct task_struct *tsk, struct stackframe *frame)
+>  	if (!tsk)
+>  		tsk = current;
+>  
+> -	if (!on_accessible_stack(tsk, fp, NULL))
+> +	if (!on_accessible_stack(tsk, fp, &info))
+>  		return -EINVAL;
+>  
+> +	if (test_bit(info.type, frame->stacks_done))
+> +		return -EINVAL;
+> +
+> +	/*
+> +	 * As stacks grow downward, any valid record on the same stack must be
+> +	 * at a strictly higher address than the prior record.
+> +	 *
+> +	 * Stacks can nest in several valid orders, e.g.
+> +	 *
+> +	 * TASK -> IRQ -> OVERFLOW -> SDEI_NORMAL
+> +	 * TASK -> SDEI_NORMAL -> SDEI_CRITICAL -> OVERFLOW
+> +	 *
+> +	 * ... but the nesting itself is strict. Once we transition from one
+> +	 * stack to another, it's never valid to unwind back to that first
+> +	 * stack.
+> +	 */
+> +	if (info.type == frame->prev_type) {
+> +		if (fp <= frame->prev_fp)
+> +			return -EINVAL;
+> +	} else {
+> +		set_bit(frame->prev_type, frame->stacks_done);
+> +	}
+> +
+> +	/*
+> +	 * Record this frame record's values and location. The prev_fp and
+> +	 * prev_type are only meaningful to the next unwind_frame() invocation.
+> +	 */
+>  	frame->fp = READ_ONCE_NOCHECK(*(unsigned long *)(fp));
+>  	frame->pc = READ_ONCE_NOCHECK(*(unsigned long *)(fp + 8));
+> +	frame->prev_fp = fp;
+> +	frame->prev_type = info.type;
+
+Thanks for the explanation.
+
+This looks less complicated that I had feared.
+
+Cheers
+---Dave
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
