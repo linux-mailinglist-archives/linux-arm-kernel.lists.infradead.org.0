@@ -2,82 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4705B5E498
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  3 Jul 2019 14:54:45 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CAE6F5E49C
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  3 Jul 2019 14:55:10 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=HYRzWTesoDGcJ6wcLCiIfd3HLhBaQf/dUYyKzdQHSjI=; b=I4nb6G+9rXWYzV
-	2RvefOGDWZEMwWiLJ1msvKButo1AyLc4RL8sakMIh4Esga2AZWRzcdchkMeMVEdw0VYUn9ss5vxTO
-	Jl0BcFRlY0KBqrw/UFnHEbNy/pBhIuqzsiQMScMZIPkxe/8EStiZM8SxbJWpTgmoVZhBX2OAqeBur
-	mwyNx1MvdfLnaO/zjes7nL2F5TG+D/e2RxdgQXeng65+ypQpaRgrqohmLvsaeESp6Wda/qiMAUTYz
-	GEya6xUYQQ7smnEMLtF2VCJup8hMJEYPgcGk1+y2B+niOTfrWAPsICS+FmmPvLcoFtRIBem0aDhg8
-	vuH9r9If+9yi7TYpZJZg==;
+	List-Owner; bh=cQE5WySRJmr6gAaBKvuP4ITYwROFYdI359JXuYZFiJU=; b=GEOF7GOmtYjm2S
+	E/pBjvNi/jiCDYExqk9+N9gdgzOzB2bsYLHRMJCpc9I6u5d+UgVtp0xVyA3Bt+4lTcaxJx37ecu7F
+	nOQ7AGdvpwGEzD5cMmr5z6wHCCX1tHr7iOXTZBJUKkhpKSY1Mq45PrNW4FGuphyGR5PLBV4OnU/yZ
+	BKdr0z5o+CBA20+0cJV3OTmorrw6TQT/6gzxuqlHb+KnnmyJ+EPMlpzQGNa5sGUadVzht5BqEZIoe
+	RIpp2WAlMPdRWC9H+k0SgPlb19ZLSyXYrjNXpnJfefWE/dsPF9pr20rPXyA6ik3goZV3s7ww0+rOr
+	/yF43TxhIfYa0i2ZxVfw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hiemZ-0000sG-Hi; Wed, 03 Jul 2019 12:54:43 +0000
-Received: from mail-pf1-x443.google.com ([2607:f8b0:4864:20::443])
+	id 1hiemy-00018W-BP; Wed, 03 Jul 2019 12:55:08 +0000
+Received: from mail-pl1-x644.google.com ([2607:f8b0:4864:20::644])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hiefp-0003Qp-Ql
- for linux-arm-kernel@lists.infradead.org; Wed, 03 Jul 2019 12:47:53 +0000
-Received: by mail-pf1-x443.google.com with SMTP id p184so1229887pfp.7
+ id 1hieft-0003TL-2f
+ for linux-arm-kernel@lists.infradead.org; Wed, 03 Jul 2019 12:47:54 +0000
+Received: by mail-pl1-x644.google.com with SMTP id i2so1212985plt.1
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 03 Jul 2019 05:47:45 -0700 (PDT)
+ Wed, 03 Jul 2019 05:47:48 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=amarulasolutions.com; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=mCaH1zDEb7rXxWPODznJD5TDB60K/MIWgCsOM7DfWzA=;
- b=XvV+sepbyVPb+bqVU2ddMHjUGfV6gsYJqGiOzXoE/sVnssSmwxNK1X6jp5hrH2J5YW
- xgo5xIC+eY8tZ+GQOEVNvPJuiAyb6ezfK5zX55JNViaJ4byIvaNsPY/i1uYaMsBAPQU3
- MreXhMg8B0Lgh/XizVxucFy7pZA5Skkrgkcr0=
+ bh=tDtGb2gl2+bAR083VEQ0C1YFFA9fTSJvLPzaZvwJiHw=;
+ b=dOW8Ju+5kHdKBC8y/ypx+K2YiG21KMqLPH32imSoUCST9FqoGwETmA6G0mfjoCcgsf
+ u5JpXzpKpv8+poibB30Bcn8Q/U3vcJbRwqgu5Y1DNgsMerHgcwj4F1detr6hcIeNLxqs
+ N6cGdbRH0SJPc248wBTxlTgG8giENqzpF6sw8=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=mCaH1zDEb7rXxWPODznJD5TDB60K/MIWgCsOM7DfWzA=;
- b=jE/0hAjNqNi6Vw8neoeTwdV3G4I0GeTGjH3AS09j4TjFTuI9bGvzUQGEvTdgE9+Pag
- sYAu1msHXYScXTqXo2gRbR2R+UqwQS8xI8UOthTG+4/0l5vn6gj9pgDgeQn1GAyxyuaS
- 3DNrgIcB97N7JdtadrNA+YybSHGOmQZbUX6iH5Pea42vI/wE6ALhxOQImMG7HIos7cuy
- WQ4Rnep2D6LFH2CQethK88wXK3YJwaHbEcZF9fZhDW17AG1zqTryIkSW1eY0WPt0SKGW
- 1acRCoR86pALcivYENVYT8PXymlkrg3qmE8bJwDKIszlr8jyx/xbYX68DkFYuwTzNcG7
- a1Qw==
-X-Gm-Message-State: APjAAAVYhpfsaKksS3U0jmR8pqBGQGlSrz2KYeEmjt3UsHvyaAl309Mi
- 2/poxVpJgcBOu5HDAlAk0Qbc0w==
-X-Google-Smtp-Source: APXvYqxW4FLjVoMYU10WvTiwLBq6QAA8nfXkzjUHAjIh87ID+gr/EINN1eTCTytChKyOdBqJLzJvmQ==
-X-Received: by 2002:a63:89c2:: with SMTP id
- v185mr36489258pgd.241.1562158065157; 
- Wed, 03 Jul 2019 05:47:45 -0700 (PDT)
+ bh=tDtGb2gl2+bAR083VEQ0C1YFFA9fTSJvLPzaZvwJiHw=;
+ b=Gng+WMx9GayNjgVDHeR24tCEpu9Y74HVbeFJcI5jGkGA3UfthA2o38hhf0UMUE7x3z
+ UO0OQV0UX8TfnFo/CxN0zXk2C7KQ4za9j3XVL2mI9YD/4bk9kBgf8LFq0DVDGHp/qPFn
+ D3A6S6+VvTH4YuLoCL19f8n4behaABVxqiJl2yUxx0x/6JccDakurzdSuRQV6fw5VfmU
+ ajNb6hlLD/L5no/XTyyXw0CYmH1dUqh03HRHSd2iXmoGeOeOhrOBMEigxi+lRs9GZSa/
+ A43s+i17k2fu3ghEBYSxLxty69fRzLmSav1v8bC63ElUzGkTU5IHXRkaXuc4vXVPXCuS
+ weWQ==
+X-Gm-Message-State: APjAAAX36anhSh8ktQasnKkT4/ssPs7WXv0NE7rcgABFAkESJnA9uL6m
+ jFz1SGyl67CgA1eKejeN/tafIQ==
+X-Google-Smtp-Source: APXvYqyNx93/e0rN/cEseT/8xOVk34uiaCblcRiSsfQZqKWYGZjF8uIh9/KbQtlOUlyBBm0/kXCrGg==
+X-Received: by 2002:a17:902:ac85:: with SMTP id
+ h5mr42788602plr.198.1562158068444; 
+ Wed, 03 Jul 2019 05:47:48 -0700 (PDT)
 Received: from localhost.localdomain ([183.82.231.32])
- by smtp.gmail.com with ESMTPSA id q1sm3735890pfn.178.2019.07.03.05.47.42
+ by smtp.gmail.com with ESMTPSA id q1sm3735890pfn.178.2019.07.03.05.47.45
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Wed, 03 Jul 2019 05:47:44 -0700 (PDT)
+ Wed, 03 Jul 2019 05:47:48 -0700 (PDT)
 From: Jagan Teki <jagan@amarulasolutions.com>
 To: Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
  Maxime Ripard <maxime.ripard@bootlin.com>, Chen-Yu Tsai <wens@csie.org>,
  devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
  linux-kernel@vger.kernel.org
-Subject: [PATCH 18/25] ARM: dts: sun8i: Switch V3s dts(i) to use SPDX
+Subject: [PATCH 19/25] ARM: dts: sun9i: Switch A80 dts(i) to use SPDX
  identifier
-Date: Wed,  3 Jul 2019 18:16:02 +0530
-Message-Id: <20190703124609.21435-19-jagan@amarulasolutions.com>
+Date: Wed,  3 Jul 2019 18:16:03 +0530
+Message-Id: <20190703124609.21435-20-jagan@amarulasolutions.com>
 X-Mailer: git-send-email 2.18.0.321.gffc6fa0e3
 In-Reply-To: <20190703124609.21435-1-jagan@amarulasolutions.com>
 References: <20190703124609.21435-1-jagan@amarulasolutions.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190703_054745_923195_7E4F3373 
-X-CRM114-Status: GOOD (  18.97  )
+X-CRM114-CacheID: sfid-20190703_054749_175439_8FC1D912 
+X-CRM114-Status: GOOD (  18.66  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:443 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:644 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -108,7 +108,7 @@ Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 Adopt the SPDX license identifier headers to ease license
-compliance management on Allwinner V3s dts(i) files.
+compliance management on Allwinner A80 dts(i) files.
 
 While the text specifies "of the GPL or the X11 license"
 but the actual license text matches the MIT license as
@@ -118,68 +118,22 @@ specified at [0]
 
 Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
 ---
- .../boot/dts/sun8i-v3s-licheepi-zero-dock.dts | 39 +------------------
- arch/arm/boot/dts/sun8i-v3s-licheepi-zero.dts | 39 +------------------
- arch/arm/boot/dts/sun8i-v3s.dtsi              | 39 +------------------
+ arch/arm/boot/dts/sun9i-a80-cubieboard4.dts | 39 +--------------------
+ arch/arm/boot/dts/sun9i-a80-optimus.dts     | 39 +--------------------
+ arch/arm/boot/dts/sun9i-a80.dtsi            | 39 +--------------------
  3 files changed, 3 insertions(+), 114 deletions(-)
 
-diff --git a/arch/arm/boot/dts/sun8i-v3s-licheepi-zero-dock.dts b/arch/arm/boot/dts/sun8i-v3s-licheepi-zero-dock.dts
-index db5cd0b8574b..314e5fbca327 100644
---- a/arch/arm/boot/dts/sun8i-v3s-licheepi-zero-dock.dts
-+++ b/arch/arm/boot/dts/sun8i-v3s-licheepi-zero-dock.dts
-@@ -1,43 +1,6 @@
+diff --git a/arch/arm/boot/dts/sun9i-a80-cubieboard4.dts b/arch/arm/boot/dts/sun9i-a80-cubieboard4.dts
+index 18156ffa3ce9..a9c80fda1c5e 100644
+--- a/arch/arm/boot/dts/sun9i-a80-cubieboard4.dts
++++ b/arch/arm/boot/dts/sun9i-a80-cubieboard4.dts
+@@ -1,46 +1,9 @@
 +// SPDX-License-Identifier: (GPL-2.0 OR MIT)
  /*
-  * Copyright (C) 2016 Icenowy Zheng <icenowy@aosc.xyz>
-- *
-- * This file is dual-licensed: you can use it either under the terms
-- * of the GPL or the X11 license, at your option. Note that this dual
-- * licensing only applies to this file, and not this project as a
-- * whole.
-- *
-- *  a) This file is free software; you can redistribute it and/or
-- *     modify it under the terms of the GNU General Public License as
-- *     published by the Free Software Foundation; either version 2 of the
-- *     License, or (at your option) any later version.
-- *
-- *     This file is distributed in the hope that it will be useful,
-- *     but WITHOUT ANY WARRANTY; without even the implied warranty of
-- *     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-- *     GNU General Public License for more details.
-- *
-- * Or, alternatively,
-- *
-- *  b) Permission is hereby granted, free of charge, to any person
-- *     obtaining a copy of this software and associated documentation
-- *     files (the "Software"), to deal in the Software without
-- *     restriction, including without limitation the rights to use,
-- *     copy, modify, merge, publish, distribute, sublicense, and/or
-- *     sell copies of the Software, and to permit persons to whom the
-- *     Software is furnished to do so, subject to the following
-- *     conditions:
-- *
-- *     The above copyright notice and this permission notice shall be
-- *     included in all copies or substantial portions of the Software.
-- *
-- *     THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
-- *     EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
-- *     OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
-- *     NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
-- *     HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
-- *     WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
-- *     FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
-- *     OTHER DEALINGS IN THE SOFTWARE.
-  */
- 
- #include "sun8i-v3s-licheepi-zero.dts"
-diff --git a/arch/arm/boot/dts/sun8i-v3s-licheepi-zero.dts b/arch/arm/boot/dts/sun8i-v3s-licheepi-zero.dts
-index 2e4587d26ce5..c690fade42b3 100644
---- a/arch/arm/boot/dts/sun8i-v3s-licheepi-zero.dts
-+++ b/arch/arm/boot/dts/sun8i-v3s-licheepi-zero.dts
-@@ -1,43 +1,6 @@
-+// SPDX-License-Identifier: (GPL-2.0 OR MIT)
- /*
-  * Copyright (C) 2016 Icenowy Zheng <icenowy@aosc.xyz>
+  * Copyright 2015 Tyler Baker
+  *
+  * Tyler Baker <tyler.baker@linaro.org>
+  * Chen-Yu Tsai <wens@csie.org>
 - *
 - * This file is dual-licensed: you can use it either under the terms
 - * of the GPL or the X11 license, at your option. Note that this dual
@@ -221,14 +175,67 @@ index 2e4587d26ce5..c690fade42b3 100644
   */
  
  /dts-v1/;
-diff --git a/arch/arm/boot/dts/sun8i-v3s.dtsi b/arch/arm/boot/dts/sun8i-v3s.dtsi
-index d7aef128acb3..3961fb7b3ca8 100644
---- a/arch/arm/boot/dts/sun8i-v3s.dtsi
-+++ b/arch/arm/boot/dts/sun8i-v3s.dtsi
-@@ -1,43 +1,6 @@
+diff --git a/arch/arm/boot/dts/sun9i-a80-optimus.dts b/arch/arm/boot/dts/sun9i-a80-optimus.dts
+index 2ed28d9e2787..8179ce00c63f 100644
+--- a/arch/arm/boot/dts/sun9i-a80-optimus.dts
++++ b/arch/arm/boot/dts/sun9i-a80-optimus.dts
+@@ -1,45 +1,8 @@
 +// SPDX-License-Identifier: (GPL-2.0 OR MIT)
  /*
-  * Copyright (C) 2016 Icenowy Zheng <icenowy@aosc.xyz>
+  * Copyright 2014 Chen-Yu Tsai
+  *
+  * Chen-Yu Tsai <wens@csie.org>
+- *
+- * This file is dual-licensed: you can use it either under the terms
+- * of the GPL or the X11 license, at your option. Note that this dual
+- * licensing only applies to this file, and not this project as a
+- * whole.
+- *
+- *  a) This file is free software; you can redistribute it and/or
+- *     modify it under the terms of the GNU General Public License as
+- *     published by the Free Software Foundation; either version 2 of the
+- *     License, or (at your option) any later version.
+- *
+- *     This file is distributed in the hope that it will be useful,
+- *     but WITHOUT ANY WARRANTY; without even the implied warranty of
+- *     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+- *     GNU General Public License for more details.
+- *
+- * Or, alternatively,
+- *
+- *  b) Permission is hereby granted, free of charge, to any person
+- *     obtaining a copy of this software and associated documentation
+- *     files (the "Software"), to deal in the Software without
+- *     restriction, including without limitation the rights to use,
+- *     copy, modify, merge, publish, distribute, sublicense, and/or
+- *     sell copies of the Software, and to permit persons to whom the
+- *     Software is furnished to do so, subject to the following
+- *     conditions:
+- *
+- *     The above copyright notice and this permission notice shall be
+- *     included in all copies or substantial portions of the Software.
+- *
+- *     THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+- *     EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
+- *     OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+- *     NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+- *     HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+- *     WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+- *     FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+- *     OTHER DEALINGS IN THE SOFTWARE.
+  */
+ 
+ /dts-v1/;
+diff --git a/arch/arm/boot/dts/sun9i-a80.dtsi b/arch/arm/boot/dts/sun9i-a80.dtsi
+index 0c1eec9000e3..494ecdca6c46 100644
+--- a/arch/arm/boot/dts/sun9i-a80.dtsi
++++ b/arch/arm/boot/dts/sun9i-a80.dtsi
+@@ -1,45 +1,8 @@
++// SPDX-License-Identifier: (GPL-2.0 OR MIT)
+ /*
+  * Copyright 2014 Chen-Yu Tsai
+  *
+  * Chen-Yu Tsai <wens@csie.org>
 - *
 - * This file is dual-licensed: you can use it either under the terms
 - * of the GPL or the X11 license, at your option. Note that this dual
