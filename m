@@ -2,84 +2,98 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C58895EB48
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  3 Jul 2019 20:12:44 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8CA8E5EB58
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  3 Jul 2019 20:14:42 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=eoRZrDYP/TZcaNXD1f+KTJcGGxCZbNTqV6kVXMgH6uU=; b=rLB+UygGCdQo0t
-	yvWa7esE7o+HPIgpWLsD2QdPHocfwfIWitpySWE4UPA81pkZfcb8YDn1flbCJ4tl2Juebsq/HAeys
-	YCntV40aFfuSAzwDthsVIebebYhAn+ks+pyx+Z2v4ghE+K+ILYiybzhSlJ9MHcyofwnFWlyngTbnx
-	9f7dQ0AM5PaD+7FP0ap+LUbbnh3JdgRJokNvLm+pXbv6cTxHSO4d8n0RcnYeCg2WTNjQkG6oobzpw
-	1Prv5MegsToHj8eXe1OyQP/bVymKx0A7nEqLb6JoNqfeWyJ9DNTQsdq82LVfo48Tu4u1KfiXEmIR8
-	ScxMQ9RuP62rnxR8rPEg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=0EO+duYrnZuckm87zSSkDvQ8amxm3H5255E8tY5YxFs=; b=E7yGw64L+n9M4F
+	PdaxWp792nrFKRahC/XBSDwlqxPZ3cMMEN0f0tOKJ7tsJJpSQ1BEmmNRkCKhXhpvqJd/hoVdAZQrF
+	ZHly2ZmGtJloNFhBFpegv4l++lNnJf8uuGsyNzWSyUSquUD+W4Wbj2ns1b3kbxyFINI3MpxezNRl2
+	P8M2oC798vsBl0oCqO9Zuk7SjdW0S9vvIDbKkc8NuZHL7/LH7R315sQve0mf4xojf8z+x2vhMUECT
+	r4heIUDwukjy10HxnTrfv17QHdGNqmRxz0bEmYzWvMB29/975hNFdXCp5MAAZyGDTRi3s2Bm9sekX
+	KONFoBv1kQfzXJK/Gw2Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hijkI-0003qf-EU; Wed, 03 Jul 2019 18:12:42 +0000
-Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
+	id 1hijmC-0004U1-4h; Wed, 03 Jul 2019 18:14:40 +0000
+Received: from mail-lj1-x244.google.com ([2a00:1450:4864:20::244])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hijk6-0003q1-In
- for linux-arm-kernel@lists.infradead.org; Wed, 03 Jul 2019 18:12:32 +0000
-Received: by mail-wm1-x341.google.com with SMTP id x15so3161386wmj.3
+ id 1hijle-0004JY-E0
+ for linux-arm-kernel@lists.infradead.org; Wed, 03 Jul 2019 18:14:08 +0000
+Received: by mail-lj1-x244.google.com with SMTP id v24so3439032ljg.13
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 03 Jul 2019 11:12:29 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=1Zu+iQbOSEd0rMrREHLa5z1p4r2/gyHlDFJcNe0nihk=;
- b=j4w8VEylhwzWb53tz1zaVAvW/HVTvZ3zWoi4f3tN9fDVe9jqMbMAsgDiM9Vxplv7O2
- LeCjvqajuBASWMDE6UbM5dqF4GoQMXb8CVGe042E5NXYrciY5R1+b4GAgpjYUtinuLLC
- 5MS8CDrHlrJN3/4QBH9Nrf3e1qwuOpSjlgnEsjK7PBjlqB/IqraWWFAVoOZ6kWe8LbRq
- b0/q+xB7xHCJ3iLDJSB24mJne1ICFwgQP1xbRpNvQF15Qju68H8yWQmMzfQNgjxRBXhG
- AKanBAwwmFsyTFeqUcZYkSxA/x/rsihsen9lkjQqFvWYJ4isljosRe1uT4Rr02eMrgSP
- T24g==
+ Wed, 03 Jul 2019 11:14:05 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=cogentembedded-com.20150623.gappssmtp.com; s=20150623;
+ h=subject:to:cc:references:from:organization:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=Chz7KpzfDvb4cnBPbwvegn1AV1XaBRdzu8IfAxBfQ5I=;
+ b=EbX/sgaxxHFwsU8r1WEvx2OotnABVYExtQp10LvIyCVm9iETlGlR0qTT/HGyH4ncpI
+ dsfpLRJ4yceh680j4RwwUkSvmS+FUTReqoSu8asLR3dTcJtGaT1Im4/p060H9dj7FZLf
+ DTxBgsrXJ35tib7SreK4cIC0eJcI4vNdDroQnYoSiSllACf1Appfu5TuhnRPE6sU8Hn1
+ HABwqoVCDdsOKcWWZJqxJC1q0QKulmoxO7nuuKcH11gVvjuHSH8z6ZtrmKfvzTkPu5s6
+ WJ1st9bKhy0Yqtzx+khfGOGRRrcVDfN/Tp0BMnW5GdZ9FQ5piRaJyinPh7gWRrb+yXOK
+ C7Yw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=1Zu+iQbOSEd0rMrREHLa5z1p4r2/gyHlDFJcNe0nihk=;
- b=i9aq+NGTZ8937pFVducAQABNeikpi97cf+L/A95uI3YTuqpIjYEZeyJg3LY82bXyYQ
- XZJsuNw27goVUJhboILetmcCLwGcsdjn2STGAqCO03+iy8g8Fhka6GyM2lpapuaagU1m
- D96InCRDg7oQpOZe8txK6PmEUgxI8YOt62a3Q4EUzspCyvvty8EVVRQcQ9mQ9UxpM0MW
- JPQ0sQu1eOgxj8nTbsgX1v/yPaorTvrKRl8DSJfmk4nBF6I57ye3x6WQU4TuwK3CWGDd
- 9zs98WrboUyTcdaT9z5qgXhzUS+ziT2WzhTSiHO7Eou0lliWYjVlgKpGbl4GkX/08b9P
- wSNA==
-X-Gm-Message-State: APjAAAU/kVYhaPSO7OemoeFbuULdHXh6hG7C+pVk4dM/7uJcr+xdb/2T
- HJGMyZm/r42x5JSZMJcP5pQopNWLN51+tHr4qvmmcA==
-X-Google-Smtp-Source: APXvYqwgSiXJ/x8P9392VinOJNhPhyU6xHNrU7W7zk3RnAn8ApzgtMd2MiNU2+ijGzq7awIRltR3R2CMqZM5Kh+VU94=
-X-Received: by 2002:a1c:b706:: with SMTP id h6mr8554088wmf.119.1562177548139; 
- Wed, 03 Jul 2019 11:12:28 -0700 (PDT)
+ h=x-gm-message-state:subject:to:cc:references:from:organization
+ :message-id:date:user-agent:mime-version:in-reply-to
+ :content-language:content-transfer-encoding;
+ bh=Chz7KpzfDvb4cnBPbwvegn1AV1XaBRdzu8IfAxBfQ5I=;
+ b=Q+Bfe7az33DJI4hYT0zVU95UdeLNdMlnNfgXnnqQ+im4XN4rdil6aTTQxEqoq86eV0
+ szzEoDU2JFKH0zH+KuXvgIqw6GoXX2HfdceXpjrsOrZSOvcKpu9iNiwXQOacRWi3LL20
+ yrUuPPgTdccW+/K1Ld9PfqaLlkHx5OQbLoq+t9d6BoY7dagvBg0U5Uc3di8DCuRoIY+i
+ UBs0+TJPwmFoP2qjoDbinJIi+GYDR5UWOyIacnOYonhMJVmvlMUtVA4VmcCiCMmVgciI
+ 8YtvYdRv9hZ+pIb4y/I3kuV71WH/w4bv5fyUxQNjAk2UhDIwlg4730VBWK1vaKKzmIv+
+ 3HrQ==
+X-Gm-Message-State: APjAAAXOgaFYBQp2tS1EnALJaRDrE9KncwaLfn9ruf20RIHs/YhNj7sP
+ pP10zup/+P2EURH9X/JJHzCi2g==
+X-Google-Smtp-Source: APXvYqyCTmvLLhwVshn+D5oXeVY+RnKmA+Y7RMGMyZofLc+vtv0Lv16PyM/ltRfxdVX7UHnCc08LNg==
+X-Received: by 2002:a2e:9213:: with SMTP id k19mr22028028ljg.237.1562177644239; 
+ Wed, 03 Jul 2019 11:14:04 -0700 (PDT)
+Received: from wasted.cogentembedded.com
+ ([2a00:1fa0:4463:651e:e5a9:49e2:7053:81e9])
+ by smtp.gmail.com with ESMTPSA id o11sm496196lfl.15.2019.07.03.11.14.02
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Wed, 03 Jul 2019 11:14:03 -0700 (PDT)
+Subject: Re: [PATCH v8 3/5] mtd: Add support for HyperBus memory devices
+To: Vignesh Raghavendra <vigneshr@ti.com>,
+ Boris Brezillon <bbrezillon@kernel.org>, Marek Vasut
+ <marek.vasut@gmail.com>, Richard Weinberger <richard@nod.at>,
+ Rob Herring <robh+dt@kernel.org>
+References: <20190625075746.10439-1-vigneshr@ti.com>
+ <20190625075746.10439-4-vigneshr@ti.com>
+ <31657fd1-c1c9-7672-14c1-e6f67eee6ac1@cogentembedded.com>
+ <5009c418-a051-a42a-f78a-360f7230dd2b@ti.com>
+From: Sergei Shtylyov <sergei.shtylyov@cogentembedded.com>
+Organization: Cogent Embedded
+Message-ID: <8e870356-90ba-4762-b1fd-8a13ce6ebcc8@cogentembedded.com>
+Date: Wed, 3 Jul 2019 21:14:01 +0300
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101
+ Thunderbird/52.2.1
 MIME-Version: 1.0
-References: <20190619105431.2630-1-ard.biesheuvel@linaro.org>
- <20190703134028.6aru52r2zd2jnpm4@willie-the-truck>
-In-Reply-To: <20190703134028.6aru52r2zd2jnpm4@willie-the-truck>
-From: Ard Biesheuvel <ard.biesheuvel@linaro.org>
-Date: Wed, 3 Jul 2019 20:12:12 +0200
-Message-ID: <CAKv+Gu9bCuXxJ54WMt=GcsRhkbwn_jXnjwJGuopS-7V3dHipLw@mail.gmail.com>
-Subject: Re: [PATCH v5] arm64: kernel: implement fast refcount checking
-To: Will Deacon <will@kernel.org>
+In-Reply-To: <5009c418-a051-a42a-f78a-360f7230dd2b@ti.com>
+Content-Language: en-MW
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190703_111230_690171_39543805 
-X-CRM114-Status: GOOD (  22.36  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190703_111406_872141_827DE1DA 
+X-CRM114-Status: GOOD (  23.39  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:341 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:244 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  0.0 T_PDS_NO_HELO_DNS      High profile HELO but no A record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -92,129 +106,145 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Kees Cook <keescook@chromium.org>,
- Catalin Marinas <catalin.marinas@arm.com>, Jan Glauber <jglauber@marvell.com>,
- Will Deacon <will.deacon@arm.com>,
- Jayachandran Chandrasekharan Nair <jnair@marvell.com>,
- Hanjun Guo <guohanjun@huawei.com>,
- Linus Torvalds <torvalds@linux-foundation.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Cc: devicetree@vger.kernel.org, Tokunori Ikegami <ikegami.t@gmail.com>,
+ linux-kernel@vger.kernel.org, linux-mtd@lists.infradead.org,
+ Miquel Raynal <miquel.raynal@bootlin.com>,
+ Mason Yang <masonccyang@mxic.com.tw>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, 3 Jul 2019 at 15:40, Will Deacon <will@kernel.org> wrote:
->
-> Hi Ard,
->
-> On Wed, Jun 19, 2019 at 12:54:31PM +0200, Ard Biesheuvel wrote:
-> > This adds support to arm64 for fast refcount checking, as contributed
-> > by Kees for x86 based on the implementation by grsecurity/PaX.
-> >
-> > The general approach is identical: the existing atomic_t helpers are
-> > cloned for refcount_t, with the arithmetic instruction modified to set
-> > the PSTATE flags, and one or two branch instructions added that jump to
-> > an out of line handler if overflow, decrement to zero or increment from
-> > zero are detected.
-> >
-> > One complication that we have to deal with on arm64 is the fact that
-> > it has two atomics implementations: the original LL/SC implementation
-> > using load/store exclusive loops, and the newer LSE one that does mostly
-> > the same in a single instruction. So we need to clone some parts of
-> > both for the refcount handlers, but we also need to deal with the way
-> > LSE builds fall back to LL/SC at runtime if the hardware does not
-> > support it.
->
-> I've been looking at this today and I still don't understand why this can't
-> be written as simple wrappers around atomic_t. What am I missing? To be more
-> concrete, why can't we implement the refcount functions along the lines of
-> the code below?
->
+Hello!
 
-There was a lot of pushback against the use of refcount_t in the
-beginning, given that the checked flavor was slower than unchecked
-atomic_t, and IIRC, it was mainly the networking folks that opposed
-it. So the whole idea is that the code performs as closely to atomic_t
-as possible, which is why the code is simply the atomic_t asm
-implementations, but with a -s suffix added to the arithmetic
-instructions so they set PSTATE, and one or two conditional branch
-instructions added.
+On 07/03/2019 07:41 AM, Vignesh Raghavendra wrote:
 
-Your approach is going to require one or two additional compare
-instructions, increasing the instruction count. This may not matter on
-fast OoO cores, but it probably will affect somebody's benchmark
-somewhere.
+>>> Cypress' HyperBus is Low Signal Count, High Performance Double Data Rate
+>>> Bus interface between a host system master and one or more slave
+>>> interfaces. HyperBus is used to connect microprocessor, microcontroller,
+>>> or ASIC devices with random access NOR flash memory (called HyperFlash)
+>>> or self refresh DRAM (called HyperRAM).
+>>>
+>>> Its a 8-bit data bus (DQ[7:0]) with  Read-Write Data Strobe (RWDS)
+>>> signal and either Single-ended clock(3.0V parts) or Differential clock
+>>> (1.8V parts). It uses ChipSelect lines to select b/w multiple slaves.
+>>> At bus level, it follows a separate protocol described in HyperBus
+>>> specification[1].
+>>>
+>>> HyperFlash follows CFI AMD/Fujitsu Extended Command Set (0x0002) similar
+>>> to that of existing parallel NORs. Since HyperBus is x8 DDR bus,
+>>> its equivalent to x16 parallel NOR flash with respect to bits per clock
+>>> cycle. But HyperBus operates at >166MHz frequencies.
+>>> HyperRAM provides direct random read/write access to flash memory
+>>> array.
+>>>
+>>> But, HyperBus memory controllers seem to abstract implementation details
+>>> and expose a simple MMIO interface to access connected flash.
+>>>
+>>> Add support for registering HyperFlash devices with MTD framework. MTD
+>>> maps framework along with CFI chip support framework are used to support
+>>> communicating with flash.
+>>>
+>>> Framework is modelled along the lines of spi-nor framework. HyperBus
+>>> memory controller (HBMC) drivers calls hyperbus_register_device() to
+>>> register a single HyperFlash device. HyperFlash core parses MMIO access
+>>> information from DT, sets up the map_info struct, probes CFI flash and
+>>> registers it with MTD framework.
+>>>
+>>> Some HBMC masters need calibration/training sequence[3] to be carried
+>>> out, in order for DLL inside the controller to lock, by reading a known
+>>> string/pattern. This is done by repeatedly reading CFI Query
+>>> Identification String. Calibration needs to be done before trying to detect
+>>> flash as part of CFI flash probe.
+>>>
+>>> HyperRAM is not supported at the moment.
+>>>
+>>> HyperBus specification can be found at[1]
+>>> HyperFlash datasheet can be found at[2]
+>>>
+>>> [1] https://www.cypress.com/file/213356/download
+>>> [2] https://www.cypress.com/file/213346/download
+>>> [3] http://www.ti.com/lit/ug/spruid7b/spruid7b.pdf
+>>>     Table 12-5741. HyperFlash Access Sequence
+>>>
+>>> Signed-off-by: Vignesh Raghavendra <vigneshr@ti.com>
+>> [...]
+>>
+>>    I have at least created my HyperBus driver and unfortunately I'm having serious
 
-However, I'd be in favour of switching to your code, since it is much
-simpler and more maintainable, so if you spin it as a proper patch, we
-can do some comparative analysis of the performance.
+   At last. :-)
 
-> We can't call refcount_error_report() like this, but perhaps a
-> WARN_ON_RATELIMIT would be enough. However, I'm sure there's a reason
-> for the complexity in your proposal -- I just can't spot it.
->
+>> issues with the design of the support core (see below)...
+>>
+>> [...]
+>>> diff --git a/drivers/mtd/hyperbus/hyperbus-core.c b/drivers/mtd/hyperbus/hyperbus-core.c
+>>> new file mode 100644
+>>> index 000000000000..63a9e64895bc
+>>> --- /dev/null
+>>> +++ b/drivers/mtd/hyperbus/hyperbus-core.c
+>>> @@ -0,0 +1,154 @@
+>> [...]
+>>> +int hyperbus_register_device(struct hyperbus_device *hbdev)
+>>> +{
+>>> +	const struct hyperbus_ops *ops;
+>>> +	struct hyperbus_ctlr *ctlr;
+>>> +	struct device_node *np;
+>>> +	struct map_info *map;
+>>> +	struct resource res;
+>>> +	struct device *dev;
+>>> +	int ret;
+>>> +
+>>> +	if (!hbdev || !hbdev->np || !hbdev->ctlr || !hbdev->ctlr->dev) {
+>>> +		pr_err("hyperbus: please fill all the necessary fields!\n");
+>>> +		return -EINVAL;
+>>> +	}
+>>> +
+>>> +	np = hbdev->np;
+>>> +	ctlr = hbdev->ctlr;
+>>> +	if (!of_device_is_compatible(np, "cypress,hyperflash"))
+>>> +		return -ENODEV;
+>>> +
+>>> +	hbdev->memtype = HYPERFLASH;
+>>> +
+>>> +	ret = of_address_to_resource(np, 0, &res);
+>>
+>>    Hm, I doubt that the HB devices are wholly mapped into memory space, that seems
+>> like a property of the HB controller. In my case, the flash device in the DT has
+>> only single-cell "reg" prop (equal to the chip select #). Then this function returns 
+>> -EINVAL and the registration fails. Also, in my case such mapping is R/O, not R/W.
+>>
+> 
+> You could declare R/O MMIO region in controla and set up a translation using ranges
+> from slave's reg CS based reg mapping like:
 
+   No, not all HB controllers work the same (simple) way as yours. In case of RPC-IF,
+the direct read map is a 64 MiB window into a possibly larger flash chip, it has a
+register supplying address bits 25:31...
 
-> --->8
->
-> static __always_inline void refcount_add(int i, refcount_t *r)
-> {
->         int old = atomic_fetch_add_relaxed(i, &r->refs);
->
->         if (unlikely(old <= 0 || old + i <= 0))
->                 refcount_set(r, INT_MIN / 2);
-> }
->
-> static __always_inline void refcount_inc(refcount_t *r)
-> {
->         refcount_add(1, r);
-> }
->
-> static __always_inline void refcount_dec(refcount_t *r)
-> {
->         int old = atomic_fetch_sub_release(1, &r->refs);
->
->         if (unlikely(old <= 1))
->                 refcount_set(r, INT_MIN / 2);
-> }
->
-> static __always_inline __must_check bool refcount_sub_and_test(int i,
->                                                                refcount_t *r)
-> {
->         int old = atomic_fetch_sub(i, &r->refs);
->
->         if (old - i < 0)
->                 refcount_set(r, INT_MIN / 2);
->
->         return old == i;
-> }
->
-> static __always_inline __must_check bool refcount_dec_and_test(refcount_t *r)
-> {
->         return refcount_sub_and_test(1, r);
-> }
->
-> static __always_inline __must_check bool refcount_add_not_zero(int i,
->                                                                refcount_t *r)
-> {
->         int old = refcount_read(r);
->
->         do {
->                 if (!old)
->                         break;
->         } while (!atomic_try_cmpxchg_relaxed(&r->refs, &old, old + i));
->
->         if (old < 0 || old + i < 0)
->                 refcount_set(r, INT_MIN / 2);
->
->         return old;
-> }
->
-> static __always_inline __must_check bool refcount_inc_not_zero(refcount_t *r)
-> {
->         return refcount_add_not_zero(1, r);
-> }
+> +	hbmc: hyperbus@47034000 {
+> +		compatible = "ti,am654-hbmc";
+> +		reg = <0x0 0x47034000 0x0 0x100>,
+> +			<0x5 0x00000000 0x1 0x0000000>;
+> +		#address-cells = <2>;
+> +		#size-cells = <1>;
+> +		ranges = <0x0 0x0 0x5 0x00000000 0x4000000>, /* CS0 - 64MB */
+> +			 <0x1 0x0 0x5 0x04000000 0x4000000>; /* CS1 - 64MB */
+> +
+> +		/* Slave flash node */
+> +		flash@0,0 {
+> +			compatible = "cypress,hyperflash", "cfi-flash";
+> +			reg = <0x0 0x0 0x4000000>;
+> +		};
+> +	};
+> 
+> If you use just CS# how would you handle CS to MMIO region mapping? 
+> Does both CS use the same MMIO base for reads?
+
+   The RPC-IF HF mode only has a single CS signal.
+
+[...]
+
+MBR, Sergei
 
 _______________________________________________
 linux-arm-kernel mailing list
