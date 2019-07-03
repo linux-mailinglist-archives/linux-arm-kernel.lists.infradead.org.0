@@ -2,93 +2,103 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 067515EA67
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  3 Jul 2019 19:25:00 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 953EC5EA7E
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  3 Jul 2019 19:31:17 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=W5V6e9GtkmtgSs+95IascLStunLd23w3b2sh0NiGWBw=; b=BLAIkz9BykAqJf
-	MvJJjAAXlNWM/LduDrHaU8uz2PfgXILUUVoPpHuZ2sZrbYIaJUVpp+sGjnakzMppjYz/V5lUW3AwN
-	cnayEu/hYP7PWQk8YV+KhAsF+6ti05pJLaR8Yq3CzUilH0DRRCoSRuDRtLUkWat/iDoPQtUuNELVk
-	RduVjdxEOrfgwEzMFcyngoU08KnDu/P7PFu3pG95kEb2/P4cK8G9qRHdx6hSbaWHywPHuzH+GKbK0
-	YFoytqJ7YaiYZWTyDmfGjAe4KGYAVbOx1temzkquLjtHgGfAv1RBZn7kGKoY59LyHJpZfJf+sGrFl
-	aRVoUY5LVeADlGsjTkZA==;
+	List-Owner; bh=CtmfAHVSENUB/WHcF0ygESVADyiGxjGr0BHFq+E/BaA=; b=Ubjd0O3nrZZ6Zc
+	Y/RiVarn5sY3IjJ6GrvsjMbp9yx9Mj9+6AfYeVfD6IZ6YKLvAB/GxT+1ob4l+7aBFMOcM12JZXPlz
+	Qt4MiZGZc/7A+Xyr/7WMA5qDKMizFrUjtKOWiDQ9zLdLSkQpftLQRuspaPS9B2IBrPokMlMvP7i0h
+	IocBzdCrOeC+lMyogBQDQ+1Tu70f2g2g19YVRdViDuor7p86FD78HW+7oRLu7M3p2taHgVDvBX/jS
+	V4kHU//BqnS/EI/v0kqgX/LwiIJhS6ObJWV3uXpMQ1bOrKvo9asUjMPGzVD7D5YfpcckgzbARSh3r
+	bZlxmJNtxp4ZGILJrxUQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hij05-0007sv-T3; Wed, 03 Jul 2019 17:24:57 +0000
-Received: from mail-qt1-x842.google.com ([2607:f8b0:4864:20::842])
+	id 1hij6A-0002o9-Un; Wed, 03 Jul 2019 17:31:15 +0000
+Received: from mail-eopbgr770101.outbound.protection.outlook.com
+ ([40.107.77.101] helo=NAM02-SN1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hiizn-0007sE-DU
- for linux-arm-kernel@lists.infradead.org; Wed, 03 Jul 2019 17:24:41 +0000
-Received: by mail-qt1-x842.google.com with SMTP id d23so4614739qto.2
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 03 Jul 2019 10:24:38 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=jWLpZXNsM3p1lTZJX7ibWXQLVjnLmHCj16wtFukaXUE=;
- b=K+Z/emuyyEu2GtrW6DwpMUytgxyzefDmap3xK+ih+5k6Yz7qGbT2WMhfe5xiksDjr2
- nq97Vzlb15tYoo6y/uCV+CZ6cpxvdy8VudBrG0l3x0MbQP5y7ql8BK5BXXk3GnlVbW7I
- ZjVnV6pBuABhtaAksWCOFGGiMV3oN2JBn4NtMAjdE5rA3EQdLuHx8I0D0Fv5uRd0D8zL
- VGjDOQ+g2tVgYGb/jebFO8OR0CM109mmu2hfJgLPlPoHRaeeHiFQfme10QHCfyF4gfgm
- SIkAn7hMXPgV7MKcSFoGIRdT1DyVwpIv7Rs4ckHb3sZNgoP5LksLeVYuaiS8HIAvvw4p
- 8QpQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=jWLpZXNsM3p1lTZJX7ibWXQLVjnLmHCj16wtFukaXUE=;
- b=rcfnZimzVmTHV7QAxpj0WWSiF0GeFxYbfQVClLifmzE/QQZ3T04AMhLUDLaZk959wg
- Ong2z72wlt56sfvNQGp52dqj+1Lj+FJN/RuWDuLu0ij4l2FaV3EWLHcqQa6HBosFK4qn
- oguRoo8aldHd+JfUh4LRhPMpme6ovpxzB2/3mrjcpj2ldfMHB1iTFmavQf/AVeB60Rbd
- nF2rfAQeQVVEMClGZTHqBn0zQE85MjVIRlRrJNTmcyF0bQnkD/7mBlZeFInunUeGZZpg
- ff9THHmsupC1b4Sj/BmQYJCzgODERInpvPIQSg0qWuu+sAKo541euWmWd0Tc8xvaJ418
- 5otQ==
-X-Gm-Message-State: APjAAAUHBQ58h9cjA6GHlcSUxWQSHPZEs/da/qK+Z+EePt3Qv2mz4hoW
- SeGOTPN4AmHdPS6P5F86wfEoTOh+VGYOFujPkvGSzw==
-X-Google-Smtp-Source: APXvYqzfCXHR7AdEFmhAVziQehhOQUss9jDtQBcLd32WC6403cGso4D3MyynOBLu1Lg4Gj24PStyaR78IU3QTlpr2aw=
-X-Received: by 2002:ac8:6c9:: with SMTP id j9mr854936qth.76.1562174678092;
- Wed, 03 Jul 2019 10:24:38 -0700 (PDT)
+ id 1hij5v-0002nX-GU
+ for linux-arm-kernel@lists.infradead.org; Wed, 03 Jul 2019 17:31:01 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=os.amperecomputing.com; s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=bRrUeuOpZfh+jwPjUR9o3dRGkv9uGaOzk48zS0qaGAo=;
+ b=HNkwqEJ5rHHMge66sYMc7Ke4kAa1KM8JRsTtW9kQoSQvYNkihEMt3BwA/t+rXd8a0Bkvq0JQLAFEbpH25RPKQO0T4DtzdfJpFGnUCJh6yFJOyXyg+WlNvM8Yf4KGuwbJ2G+Ydn9oj25bScANU6Jh18jVWpwJIYUTviKWo4eQ2cw=
+Received: from DM5PR0102MB3383.prod.exchangelabs.com (52.132.128.150) by
+ DM5PR0102MB3445.prod.exchangelabs.com (52.132.129.139) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2032.20; Wed, 3 Jul 2019 17:30:54 +0000
+Received: from DM5PR0102MB3383.prod.exchangelabs.com
+ ([fe80::2560:7ba6:c491:dcce]) by DM5PR0102MB3383.prod.exchangelabs.com
+ ([fe80::2560:7ba6:c491:dcce%7]) with mapi id 15.20.2032.019; Wed, 3 Jul 2019
+ 17:30:53 +0000
+From: Tyler Baicar OS <baicar@os.amperecomputing.com>
+To: Andrew Murray <andrew.murray@arm.com>
+Subject: Re: [PATCH RFC 1/4] ACPI/AEST: Initial AEST driver
+Thread-Topic: [PATCH RFC 1/4] ACPI/AEST: Initial AEST driver
+Thread-Index: AQHVMPZqphfhRm1STkOzQdqBSPqI3aa4oK4AgABm5Mc=
+Date: Wed, 3 Jul 2019 17:30:53 +0000
+Message-ID: <DM5PR0102MB33834E69835C641D7B167A82E3FB0@DM5PR0102MB3383.prod.exchangelabs.com>
+References: <1562086280-5351-1-git-send-email-baicar@os.amperecomputing.com>
+ <1562086280-5351-2-git-send-email-baicar@os.amperecomputing.com>,
+ <20190703092549.GA51483@e119886-lin.cambridge.arm.com>
+In-Reply-To: <20190703092549.GA51483@e119886-lin.cambridge.arm.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=baicar@os.amperecomputing.com; 
+x-originating-ip: [174.109.142.144]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: 35e4bc7c-22a1-44fe-54e0-08d6ffdc336c
+x-microsoft-antispam: BCL:0; PCL:0;
+ RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600148)(711020)(4605104)(1401327)(2017052603328)(7193020);
+ SRVR:DM5PR0102MB3445; 
+x-ms-traffictypediagnostic: DM5PR0102MB3445:
+x-microsoft-antispam-prvs: <DM5PR0102MB344593F8FE0B7B72DCC09014E3FB0@DM5PR0102MB3445.prod.exchangelabs.com>
+x-ms-oob-tlc-oobclassifiers: OLM:1201;
+x-forefront-prvs: 00872B689F
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10019020)(4636009)(346002)(376002)(396003)(366004)(39840400004)(136003)(189003)(199004)(256004)(30864003)(81166006)(81156014)(33656002)(3846002)(8936002)(53936002)(102836004)(14444005)(74316002)(7736002)(76176011)(55016002)(86362001)(7696005)(6436002)(186003)(9686003)(229853002)(11346002)(2906002)(446003)(26005)(6246003)(53546011)(8676002)(6506007)(305945005)(6116002)(486006)(68736007)(91956017)(66476007)(66556008)(64756008)(66446008)(73956011)(25786009)(14454004)(76116006)(66946007)(71190400001)(52536014)(6916009)(5660300002)(316002)(4326008)(54906003)(478600001)(476003)(66066001)(99286004)(71200400001)(7416002);
+ DIR:OUT; SFP:1102; SCL:1; SRVR:DM5PR0102MB3445;
+ H:DM5PR0102MB3383.prod.exchangelabs.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; MX:1; A:0; 
+received-spf: None (protection.outlook.com: os.amperecomputing.com does not
+ designate permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam-message-info: 9K/71CZQpauB/pvhbyFC3ny0DYjMLrl6shGbzPxl8hlfwWPoC6MWftI2OuwmJH+PDFEFvuWDih7QkCjk7w9nkopKn3JX5iKs8ZCI9WGLKJ16WQPyYKbMQhHpSYf88pByI6Vx5WIGsT60Dn/d6erqNHe+j+PKJDKw27X3EpVqHvG0SOqrA1Q6Z+3tXR1xYpcPKrJrKM9PXONW3J+mtuU2Mw8b39ISHAt3oLRsN3LXIckVcO4gH6cTV4GhU670Eo9HljDWBY33hBZtITouTU5hNebS9WpWE8XTwYKzVnGAxtZo8xWjKDbiBLq0xDkd12FQeUJXYz2j57Cf7F23uAPSHCwVh2VIjtKm+pVkRIe8Vj4ARP87soeqQu4Z7iSAhixPyqIjni4WVC1kZJeWefMtbGwuZsSHUmIIGWvyNJomQnQ=
 MIME-Version: 1.0
-References: <CAJkfWY4yvVVmJoQ0WwyoFBkWYsUJnnQPNU+-g23-m-L3ETe_hQ@mail.gmail.com>
- <20190702234135.78780-1-nhuck@google.com>
- <20190703112139.GA29570@lakrids.cambridge.arm.com>
-In-Reply-To: <20190703112139.GA29570@lakrids.cambridge.arm.com>
-From: Nathan Huckleberry <nhuck@google.com>
-Date: Wed, 3 Jul 2019 10:24:26 -0700
-Message-ID: <CAJkfWY6kZnd3TSTvZ3CqhPOT7Lu+koCsfwS6ACEg04xXX6szgw@mail.gmail.com>
-Subject: Re: [PATCH v2] arm64: mm: Fix dead assignment of old_pte
-To: Mark Rutland <mark.rutland@arm.com>
+X-OriginatorOrg: os.amperecomputing.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 35e4bc7c-22a1-44fe-54e0-08d6ffdc336c
+X-MS-Exchange-CrossTenant-originalarrivaltime: 03 Jul 2019 17:30:53.7650 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 3bc2b170-fd94-476d-b0ce-4229bdc904a7
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: Baicar@os.amperecomputing.com
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DM5PR0102MB3445
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190703_102439_489798_28EFC119 
-X-CRM114-Status: GOOD (  20.52  )
-X-Spam-Score: -15.7 (---------------)
+X-CRM114-CacheID: sfid-20190703_103059_620177_BD68E739 
+X-CRM114-Status: GOOD (  28.10  )
+X-Spam-Score: -0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-15.7 points)
+ Content analysis details:   (-0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:842 listed in]
- [list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
- white-list
+ no trust [40.107.77.101 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
- white-list
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
- Match
- 0.0 T_PDS_NO_HELO_DNS      High profile HELO but no A record
- -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -100,106 +110,384 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: catalin.marinas@arm.com, will@kernel.org, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, clang-built-linux@googlegroups.com
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
+ "lorenzo.pieralisi@arm.com" <lorenzo.pieralisi@arm.com>,
+ "catalin.marinas@arm.com" <catalin.marinas@arm.com>,
+ "sudeep.holla@arm.com" <sudeep.holla@arm.com>,
+ "rjw@rjwysocki.net" <rjw@rjwysocki.net>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "Matteo.Carlini@arm.com" <Matteo.Carlini@arm.com>,
+ "linux-acpi@vger.kernel.org" <linux-acpi@vger.kernel.org>,
+ "tony.luck@intel.com" <tony.luck@intel.com>,
+ "james.morse@arm.com" <james.morse@arm.com>,
+ "guohanjun@huawei.com" <guohanjun@huawei.com>, "bp@alien8.de" <bp@alien8.de>,
+ Open Source Submission <patches@amperecomputing.com>,
+ "lenb@kernel.org" <lenb@kernel.org>, "will@kernel.org" <will@kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ "linux-edac@vger.kernel.org" <linux-edac@vger.kernel.org>
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Warning is not triggered in next. Looks like this patch is unnecessary.
+Hello Andrew,
+
+Thank you for the=A0feedback!
+
+On Wed, Jul 3, 2019 at 5:26 AM Andrew Murray <andrew.murray@arm.com> wrote:
+>
+> On Tue, Jul 02, 2019 at 04:51:38PM +0000, Tyler Baicar OS wrote:
+> > Add support for parsing the ARM Error Source Table and basic handling of
+> > errors reported through both memory mapped and system register interfac=
+es.
+> >
+> > Signed-off-by: Tyler Baicar <baicar@os.amperecomputing.com>
+> > ---
+> >  arch/arm64/include/asm/ras.h |  41 +++++
+> >  arch/arm64/kernel/Makefile   |   2 +-
+> >  arch/arm64/kernel/ras.c      |  67 ++++++++
+> >  drivers/acpi/arm64/Kconfig   |   3 +
+> >  drivers/acpi/arm64/Makefile  |   1 +
+> >  drivers/acpi/arm64/aest.c    | 362 +++++++++++++++++++++++++++++++++++=
+++++++++
+> >  include/linux/acpi_aest.h    |  94 +++++++++++
+> >  7 files changed, 569 insertions(+), 1 deletion(-)
+> >  create mode 100644 arch/arm64/include/asm/ras.h
+> >  create mode 100644 arch/arm64/kernel/ras.c
+> >  create mode 100644 drivers/acpi/arm64/aest.c
+> >  create mode 100644 include/linux/acpi_aest.h
+> >
+> > diff --git a/arch/arm64/include/asm/ras.h b/arch/arm64/include/asm/ras.h
+> > new file mode 100644
+> > index 0000000..36bfff4
+> > --- /dev/null
+> > +++ b/arch/arm64/include/asm/ras.h
+> > @@ -0,0 +1,41 @@
+> > +/* SPDX-License-Identifier: GPL-2.0 */
+> > +#ifndef __ASM_RAS_H
+> > +#define __ASM_RAS_H
+> > +
+> > +#define ERR_STATUS_AV                BIT(31)
+> > +#define ERR_STATUS_V         BIT(30)
+> > +#define ERR_STATUS_UE                BIT(29)
+> > +#define ERR_STATUS_ER                BIT(28)
+> > +#define ERR_STATUS_OF                BIT(27)
+> > +#define ERR_STATUS_MV                BIT(26)
+> > +#define ERR_STATUS_CE_SHIFT  24
+> > +#define ERR_STATUS_CE_MASK   0x3
+> > +#define ERR_STATUS_DE                BIT(23)
+> > +#define ERR_STATUS_PN                BIT(22)
+> > +#define ERR_STATUS_UET_SHIFT 20
+> > +#define ERR_STATUS_UET_MASK  0x3
+> > +#define ERR_STATUS_IERR_SHIFT        8
+> > +#define ERR_STATUS_IERR_MASK 0xff
+> > +#define ERR_STATUS_SERR_SHIFT        0
+> > +#define ERR_STATUS_SERR_MASK 0xff
+>
+> Some of these (_ER, _OF, _CE*, _PN, _UET*) are not used anywhere in the s=
+eries,
+> I'd suggest you drop the unused ones.
+
+Yes, I'll remove them in the next version.
+
+> There may be some merit in renaming these to match the register names in =
+the
+> spec, e.g. ERXSTATUS_EL1 instead of ERR_STATUS.
+
+ERX* are the register names for the system registers, but these macros are =
+used
+for both system registers and memory mapped registers. The memory mapped
+registers have prefix ERR<n>*. Also, the spec definition of the ERX* system
+registers is "accesses ERR<n>* for the error record selected by
+ERRSELR_EL1.SEL." So really, the registers being accessed in all cases are
+ERR<n>*. Either way, if folks think these names should be changed I can cha=
+nge
+them.
+
+> > +
+> > +#define ERR_FR_CEC_SHIFT     12
+> > +#define ERR_FR_CEC_MASK              0x7
+> > +
+> > +#define ERR_FR_8B_CEC                BIT(1)
+> > +#define ERR_FR_16B_CEC               BIT(2)
+>
+> All of these ERR_FR_ defines aren't used anywhere either.
+
+Will remove.
+
+> > +
+> > +struct ras_ext_regs {
+> > +     u64 err_fr;
+> > +     u64 err_ctlr;
+> > +     u64 err_status;
+> > +     u64 err_addr;
+> > +     u64 err_misc0;
+> > +     u64 err_misc1;
+> > +     u64 err_misc2;
+> > +     u64 err_misc3;
+> > +};
+> > +
+> > +void arch_arm_ras_report_error(void);
+> > +
+> > +#endif       /* __ASM_RAS_H */
+> > diff --git a/arch/arm64/kernel/Makefile b/arch/arm64/kernel/Makefile
+> > index 9e7dcb2..294f602 100644
+> > --- a/arch/arm64/kernel/Makefile
+> > +++ b/arch/arm64/kernel/Makefile
+> > @@ -19,7 +19,7 @@ obj-y                       :=3D debug-monitors.o ent=
+ry.o irq.o fpsimd.o              \
+> >                          return_address.o cpuinfo.o cpu_errata.o       =
+       \
+> >                          cpufeature.o alternative.o cacheinfo.o        =
+       \
+> >                          smp.o smp_spin_table.o topology.o smccc-call.o=
+       \
+> > -                        syscall.o
+> > +                        syscall.o ras.o
+>
+> Given that arch_arm_ras_report_error depends on the ARM64_HAS_RAS_EXTN
+> capability, which in turn depends on CONFIG_ARM64_RAS_EXTN - you should
+> probably conditionally build ras.o only if CONFIG_ARM64_RAS_EXTN is defin=
+ed
+> (and provide a stub in the header for when it isn't defined).
+
+Yes, I can do that.
+
+> > =
+
+> >  extra-$(CONFIG_EFI)                  :=3D efi-entry.o
+> > =
+
+> > diff --git a/arch/arm64/kernel/ras.c b/arch/arm64/kernel/ras.c
+> > new file mode 100644
+> > index 0000000..ca47efa
+> > --- /dev/null
+> > +++ b/arch/arm64/kernel/ras.c
+> > @@ -0,0 +1,67 @@
+> > +// SPDX-License-Identifier: GPL-2.0
+> > +
+> > +#include <linux/kernel.h>
+> > +#include <linux/cpu.h>
+> > +#include <linux/smp.h>
+> > +
+> > +#include <asm/ras.h>
+> > +
+> > +void arch_arm_ras_report_error(void)
+> > +{
+> > +     u64 num_records;
+> > +     unsigned int i, cpu_num;
+> > +     bool fatal =3D false;
+> > +     struct ras_ext_regs regs;
+> > +
+> > +     if (!this_cpu_has_cap(ARM64_HAS_RAS_EXTN))
+> > +             return;
+> > +
+> > +     cpu_num =3D get_cpu();
+> > +     num_records =3D read_sysreg_s(SYS_ERRIDR_EL1);
+>
+> This value should be masked to exclude the reserved bits. This will
+> also prevent you writing to reserved bits in ERRSELR.
+
+True, I'll add that in the next version.
+
+> > +
+> > +     for (i =3D 0; i < num_records; i++) {
+> > +             write_sysreg_s(i, SYS_ERRSELR_EL1);
+>
+> There should be an isb here, this will ensure the record selection has
+> happened before reading the record.
+
+I'll add that in the next version.
+
+> > +             regs.err_status =3D read_sysreg_s(SYS_ERXSTATUS_EL1);
+> > +
+> > +             if (!(regs.err_status & ERR_STATUS_V))
+> > +                     continue;
+> > +
+> > +             pr_err("CPU%u: ERR%uSTATUS: 0x%llx\n", cpu_num, i,
+> > +                    regs.err_status);
+> > +
+> > +             if (regs.err_status & ERR_STATUS_AV) {
+> > +                     regs.err_addr =3D read_sysreg_s(SYS_ERXSTATUS_EL1=
+);
+>
+> This should be SYS_ERXADDR_EL1 not SYS_ERXSTATUS_EL1!
+
+Oops, good catch! I missed this in testing because none=A0of the errors inj=
+ected
+resulted in valid address info in the system registers.
+
+> > +                     pr_err("CPU%u: ERR%uADDR: 0x%llx\n", cpu_num, i,
+> > +                            regs.err_addr);
+> > +             } else
+> > +                     regs.err_addr =3D 0;
+>
+> Or perhaps set "regs =3D { }" at the start of the function instead?
+
+Yes, I could do that.
+
+> > +
+> > +             regs.err_fr =3D read_sysreg_s(SYS_ERXFR_EL1);
+> > +             pr_err("CPU%u: ERR%uFR: 0x%llx\n", cpu_num, i, regs.err_f=
+r);
+> > +             regs.err_ctlr =3D read_sysreg_s(SYS_ERXCTLR_EL1);
+> > +             pr_err("CPU%u: ERR%uCTLR: 0x%llx\n", cpu_num, i, regs.err=
+_ctlr);
+> > +
+> > +             if (regs.err_status & ERR_STATUS_MV) {
+> > +                     regs.err_misc0 =3D read_sysreg_s(SYS_ERXMISC0_EL1=
+);
+> > +                     pr_err("CPU%u: ERR%uMISC0: 0x%llx\n", cpu_num, i,
+> > +                            regs.err_misc0);
+> > +                     regs.err_misc1 =3D read_sysreg_s(SYS_ERXMISC1_EL1=
+);
+> > +                     pr_err("CPU%u: ERR%uMISC1: 0x%llx\n", cpu_num, i,
+> > +                            regs.err_misc1);
+> > +             }
+> > +
+> > +             /*
+> > +              * In the future, we will treat UER conditions as potenti=
+ally
+> > +              * recoverable.
+> > +              */
+> > +             if (regs.err_status & ERR_STATUS_UE)
+> > +                     fatal =3D true;
+> > +
+> > +             write_sysreg_s(regs.err_status, SYS_ERXSTATUS_EL1);
+> > +     }
+> > +
+> > +     if (fatal)
+> > +             panic("uncorrectable error encountered");
+>
+> On the do_serror path, we will already panic if arm64_is_fatal_ras_serror
+> indicates uncorrectable errors. Is this here for the other paths?
+
+This same function is called for the SEA path and also from AEST for errors
+that are reported through the system register interface.
+
+> > +
+> > +     put_cpu();
+> > +}
+>
+> Finally, should we clear the errors when we see them?
+
+Each error is being cleared at the end of the loop above by writing the val=
+ue
+read from the status register back to the status register. The status regis=
+ter
+bits are write 1 to clear and writing back the same value that was read
+guarantees that a higher priority error that occurs between the read and wr=
+ite
+isn't cleared.
+
+> > diff --git a/drivers/acpi/arm64/Kconfig b/drivers/acpi/arm64/Kconfig
+> > index 6dba187..8d5cf99 100644
+> > --- a/drivers/acpi/arm64/Kconfig
+> > +++ b/drivers/acpi/arm64/Kconfig
+> > @@ -8,3 +8,6 @@ config ACPI_IORT
+> > =
+
+> >  config ACPI_GTDT
+> >       bool
+> > +
+> > +config ACPI_AEST
+> > +     bool "ARM Error Source Table Support"
+> > diff --git a/drivers/acpi/arm64/Makefile b/drivers/acpi/arm64/Makefile
+> > index 6ff50f4..ea1ba28 100644
+> > --- a/drivers/acpi/arm64/Makefile
+> > +++ b/drivers/acpi/arm64/Makefile
+> > @@ -1,3 +1,4 @@
+> >  # SPDX-License-Identifier: GPL-2.0-only
+> >  obj-$(CONFIG_ACPI_IORT)      +=3D iort.o
+> >  obj-$(CONFIG_ACPI_GTDT)      +=3D gtdt.o
+> > +obj-$(CONFIG_ACPI_AEST)      +=3D aest.o
+> > diff --git a/drivers/acpi/arm64/aest.c b/drivers/acpi/arm64/aest.c
+> > new file mode 100644
+> > index 0000000..fd4f3b5
+> > --- /dev/null
+> > +++ b/drivers/acpi/arm64/aest.c
+> > @@ -0,0 +1,362 @@
+> > +// SPDX-License-Identifier: GPL-2.0
+> > +
+> > +/* ARM Error Source Table Support */
+> > +
+> > +#include <linux/acpi.h>
+> > +#include <linux/acpi_aest.h>
+> > +#include <linux/init.h>
+> > +#include <linux/interrupt.h>
+> > +#include <linux/io.h>
+> > +#include <linux/irq.h>
+> > +#include <linux/kernel.h>
+> > +#include <linux/percpu.h>
+> > +#include <linux/ratelimit.h>
+> > +
+> > +#include <asm/ras.h>
+> > +
+> > +#undef pr_fmt
+> > +#define pr_fmt(fmt) "ACPI AEST: " fmt
+> > +
+> > +static struct acpi_table_header *aest_table;
+> > +
+> > +static struct aest_node_data __percpu **ppi_data;
+> > +static u8 num_ppi;
+> > +static u8 ppi_idx;
+> > +
+> > +static void aest_print(struct aest_node_data *data, struct ras_ext_reg=
+s regs,
+> > +                    int index)
+> > +{
+> > +     /* No more than 2 corrected messages every 5 seconds */
+> > +     static DEFINE_RATELIMIT_STATE(ratelimit_corrected, 5*HZ, 2);
+> > +
+> > +     if (regs.err_status & ERR_STATUS_UE ||
+> > +         regs.err_status & ERR_STATUS_DE ||
+> > +         __ratelimit(&ratelimit_corrected)) {
+> > +             switch (data->node_type) {
+> > +             case AEST_NODE_TYPE_PROC:
+> > +                     pr_err("error from processor 0x%x\n",
+> > +                            data->data.proc.id);
+> > +                     break;
+> > +             case AEST_NODE_TYPE_MEM:
+> > +                     pr_err("error from memory domain 0x%x\n",
+> > +                            data->data.mem.domain);
+> > +                     break;
+> > +             case AEST_NODE_TYPE_VENDOR:
+> > +                     pr_err("error from vendor specific source 0x%x\n",
+> > +                            data->data.vendor.id);
+> > +             }
+> > +
+> > +             pr_err("ERR%dSTATUS =3D 0x%llx\n", index, regs.err_status=
+);
+> > +             if (regs.err_status & ERR_STATUS_AV)
+> > +                     pr_err("ERR%dADDR =3D 0x%llx\n", index, regs.err_=
+addr);
+> > +
+> > +             pr_err("ERR%dFR =3D 0x%llx\n", index, regs.err_fr);
+> > +             pr_err("ERR%dCTLR =3D 0x%llx\n", index, regs.err_ctlr);
+> > +
+> > +             if (regs.err_status & ERR_STATUS_MV) {
+> > +                     pr_err("ERR%dMISC0 =3D 0x%llx\n", index, regs.err=
+_misc0);
+> > +                     pr_err("ERR%dMISC1 =3D 0x%llx\n", index, regs.err=
+_misc1);
+> > +             }
+>
+> Given that we have a ras_ext_regs struct, can't we use a single function =
+to
+> print the error - rather than have duplicate pr_err's here and in
+> arch_arm_ras_report_error?
+
+That was an option I had thought about, but I left it as is to get other
+opinions. Right now the system register reporting prefixes everything with =
+the
+CPU number that the error occurred on...but now that I think about it more=
+=A0I
+could just have the print function take a prefix as a parameter. I'll unify=
+ the
+printing into a single function in the next version.
 
 Thanks,
-Nathan Huckleberry
-
-On Wed, Jul 3, 2019 at 4:23 AM Mark Rutland <mark.rutland@arm.com> wrote:
->
-> On Tue, Jul 02, 2019 at 04:41:35PM -0700, Nathan Huckleberry wrote:
-> > When analyzed with the clang static analyzer the
-> > following warning occurs
-> >
-> > line 251, column 2
-> > Value stored to 'old_pte' is never read
-> >
-> > This warning is repeated every time pgtable.h is
-> > included by another file and produces ~3500
-> > extra warnings.
-> >
-> > Moving old_pte into preprocessor guard.
-> >
-> > Cc: clang-built-linux@googlegroups.com
-> > Signed-off-by: Nathan Huckleberry <nhuck@google.com>
-> > ---
-> > Changes from v1 -> v2
-> > * Added scope to avoid [-Wdeclaration-after-statement]
-> >  arch/arm64/include/asm/pgtable.h | 27 ++++++++++++++++-----------
-> >  1 file changed, 16 insertions(+), 11 deletions(-)
->
-> As Will asked, does this also trigger in linux-next?
->
-> I rewrote this code to avoid to only perform the READ_ONCE() when we'd
-> use the value, and IIUC that may be sufficient to avoid the warning:
->
-> https://git.kernel.org/pub/scm/linux/kernel/git/arm64/linux.git/commit/?h=for-next/core&id=9b604722059039a1a3ff69fb8dfd024264046024
->
-> Thanks,
-> Mark.
->
-> >
-> > diff --git a/arch/arm64/include/asm/pgtable.h b/arch/arm64/include/asm/pgtable.h
-> > index fca26759081a..12b7f08db40d 100644
-> > --- a/arch/arm64/include/asm/pgtable.h
-> > +++ b/arch/arm64/include/asm/pgtable.h
-> > @@ -238,8 +238,6 @@ extern void __sync_icache_dcache(pte_t pteval);
-> >  static inline void set_pte_at(struct mm_struct *mm, unsigned long addr,
-> >                             pte_t *ptep, pte_t pte)
-> >  {
-> > -     pte_t old_pte;
-> > -
-> >       if (pte_present(pte) && pte_user_exec(pte) && !pte_special(pte))
-> >               __sync_icache_dcache(pte);
-> >
-> > @@ -248,16 +246,23 @@ static inline void set_pte_at(struct mm_struct *mm, unsigned long addr,
-> >        * hardware updates of the pte (ptep_set_access_flags safely changes
-> >        * valid ptes without going through an invalid entry).
-> >        */
-> > -     old_pte = READ_ONCE(*ptep);
-> > -     if (IS_ENABLED(CONFIG_DEBUG_VM) && pte_valid(old_pte) && pte_valid(pte) &&
-> > -        (mm == current->active_mm || atomic_read(&mm->mm_users) > 1)) {
-> > -             VM_WARN_ONCE(!pte_young(pte),
-> > -                          "%s: racy access flag clearing: 0x%016llx -> 0x%016llx",
-> > -                          __func__, pte_val(old_pte), pte_val(pte));
-> > -             VM_WARN_ONCE(pte_write(old_pte) && !pte_dirty(pte),
-> > -                          "%s: racy dirty state clearing: 0x%016llx -> 0x%016llx",
-> > -                          __func__, pte_val(old_pte), pte_val(pte));
-> > +     #if IS_ENABLED(CONFIG_DEBUG_VM)
-> > +     {
-> > +             pte_t old_pte;
-> > +
-> > +             old_pte = READ_ONCE(*ptep);
-> > +             if (pte_valid(old_pte) && pte_valid(pte) &&
-> > +               (mm == current->active_mm ||
-> > +                atomic_read(&mm->mm_users) > 1)) {
-> > +                     VM_WARN_ONCE(!pte_young(pte),
-> > +                                  "%s: racy access flag clearing: 0x%016llx -> 0x%016llx",
-> > +                                  __func__, pte_val(old_pte), pte_val(pte));
-> > +                     VM_WARN_ONCE(pte_write(old_pte) && !pte_dirty(pte),
-> > +                                  "%s: racy dirty state clearing: 0x%016llx -> 0x%016llx",
-> > +                                  __func__, pte_val(old_pte), pte_val(pte));
-> > +             }
-> >       }
-> > +     #endif
-> >
-> >       set_pte(ptep, pte);
-> >  }
-> > --
-> > 2.22.0.410.gd8fdbe21b5-goog
-> >
-> >
-> > _______________________________________________
-> > linux-arm-kernel mailing list
-> > linux-arm-kernel@lists.infradead.org
-> > http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+Tyler
 
 _______________________________________________
 linux-arm-kernel mailing list
