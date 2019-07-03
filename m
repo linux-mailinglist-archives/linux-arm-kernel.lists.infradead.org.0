@@ -2,57 +2,87 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 078EA5EC28
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  3 Jul 2019 21:04:16 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id EEB895EC1E
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  3 Jul 2019 21:03:00 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=FmmGQHx+E1Xmsq+WQZtLg9ULY/rq7Zy2NajjqFLevIU=; b=CId/Ofcf7EdVyK
-	hQs5ryO6PX+UTqfWwo006H9qefEx41JCa1nLv3t2jyboETf0mM/vT9xpxZAOpExPFOW50bkfvMODK
-	pd9lkxw3kJmuHvtDUipc8QABi0V05Jmhx4bosqFMZ3UsOf20FxsDGQGaf0pIUo0pb8uKAbV5A+9EY
-	5a3EnVLnqQyuHmXegE/Vy5f13r/I7jnw83YNb+X+LZvYjpHgvoWDYkuvSau4E4QL4Oi3k7t9Oye68
-	l2jX1LYWv/LFqUohu4VMs4SsfZrdzS5cC5f9joY9qRhi3FIqWzxu91Ns4E6s/hZT2edAzO9jLzSwg
-	+qvKKeyojGKltbEhrjFw==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=OfeQlAl6CHAe41gKf9zi3OxkSDKEqq/W6koBqOOQwHc=; b=AIl
+	To+qyB+NIX8YEraZa8c0zjxfOFRRwkUle9wlu3rI1rCSitpPHCIChLxcr+2lI8jNTSeD5xUW6s7dr
+	UTbzjaFyr97UH+G5oT4ioe0YdlO9MgIYojGrBE67IbdKFTW9xWOIkeSEKRRDMps6tKCJqhxdVK0Uy
+	ajfbyaeKH5pyZMipqZzbDUxxcOVa0RpqdwLvCa8fuORoCQBbsgoJ4BdCNcS0R1oxEASv3iRrXJudD
+	FWMjmbNHj0XiucSyMLPn5qNloiXBc43rhlG7pw1BLMj3/tFDYcEyakOu+i/aBJ8TviIuZoNckJ0uu
+	9R3/QX5PvvUHzv/HUdCb0fKE4kpqRsQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hikY9-0007Cn-JC; Wed, 03 Jul 2019 19:04:13 +0000
-Received: from merlin.infradead.org ([2001:8b0:10b:1231::1])
+	id 1hikWv-0006AB-4k; Wed, 03 Jul 2019 19:02:57 +0000
+Received: from mail-pg1-x544.google.com ([2607:f8b0:4864:20::544])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hikXH-0006gd-BB
- for linux-arm-kernel@bombadil.infradead.org; Wed, 03 Jul 2019 19:03:19 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=infradead.org; s=merlin.20170209; h=In-Reply-To:Content-Type:MIME-Version:
- References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
- Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
- List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=9j91QuzZiuA3k9yRtiEcwirJNujPfeZz+gfvWzqG4sM=; b=P1VEgFwTZfuElTcCPQMWMuwwV
- 2yZfwwe3QwvmXVA6IfxdEPaYhq5qXo5Ty6kpKy+izCa1rLxVWQDYQZmdC4Pg/iXewnSUxiyxecEr7
- 8jiRQ5uGVPfcOQVtzvQOGaM/BLAmZvtgsjZ+1jJOImVU/xKRLuFl4wkbb6oeiT699jJfgflzKM2VS
- jhosPBZ5UlUQWLfXTNt+gGz4qCpPzinK4/DIK3r6ZM0Opq/+4lPjWQhwTlAc76tIDEtsQO3GMfEMZ
- 2mCj06EEzoUbA8sHNPExDNagG7w9lz8TmcM/kYb7LK+zT41UU/GXbqOixYQPPLb0+E/pfNhV25EP1
- HPuqhE7eQ==;
-Received: from [177.195.209.182] (helo=quaco.ghostprotocols.net)
- by merlin.infradead.org with esmtpsa (Exim 4.92 #3 (Red Hat Linux))
- id 1hikXF-0000hO-85; Wed, 03 Jul 2019 19:03:17 +0000
-Received: by quaco.ghostprotocols.net (Postfix, from userid 1000)
- id 7CFD341153; Wed,  3 Jul 2019 16:01:57 -0300 (-03)
-Date: Wed, 3 Jul 2019 16:01:57 -0300
-From: Arnaldo Carvalho de Melo <acme@kernel.org>
-To: Leo Yan <leo.yan@linaro.org>
-Subject: Re: [PATCH v1 08/11] perf session: Smatch: Fix potential NULL
- pointer dereference
-Message-ID: <20190703190157.GG10740@kernel.org>
-References: <20190702103420.27540-1-leo.yan@linaro.org>
- <20190702103420.27540-9-leo.yan@linaro.org>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190702103420.27540-9-leo.yan@linaro.org>
-X-Url: http://acmel.wordpress.com
-User-Agent: Mutt/1.11.3 (2019-02-01)
+ id 1hikWj-00069U-7y
+ for linux-arm-kernel@lists.infradead.org; Wed, 03 Jul 2019 19:02:46 +0000
+Received: by mail-pg1-x544.google.com with SMTP id i8so1670335pgm.13
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 03 Jul 2019 12:02:44 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=from:to:cc:subject:date:message-id;
+ bh=aooip+kWJxLFJyvTQdfnMiqXuVARSg/BQD76gFdkiao=;
+ b=wx/uWhK5+yfTepystjQ2YkC6otrYPFbC/x/pda4pFsEQBh3iaTxVjp86GM7kjW6z/4
+ bNhTE1Pm8RdGVPFzJo+a3a7IExJHK3dr0OWCIPw/27PzoepOl32N5zAwpk3fR+j2VUhL
+ DjZGMUIj/PWPkvxTJm8cYVmnf1dX+JGNJawAv9UyFLo3mUF8SaWty+r2YGkGODd4MZBR
+ hyh9XvCnVMgIbA5C1ty35B8i7RdYOHI25fE3+wE3o93BXESmlPkIdKowVi5zkzKqG3Lx
+ tKt+2v3sPvxFOeLSBnCOo2Tp5GM2fMk6yZKs7vxtyOxejk7sXGVOH/U68GQSXhen2wrl
+ tI1Q==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=aooip+kWJxLFJyvTQdfnMiqXuVARSg/BQD76gFdkiao=;
+ b=by/lqAGrryi47yZ/e2dJrMK/UQA/wdHoFv24QYo1rOgqv3G8QvIclqKXOd6w0IPTcD
+ tAflCpIVIFS7G6ho85tPfh9tbeIqTl0mOUXMf1TbU6uwDvcB/UjCG7F6Y/q3XDg62dpe
+ zeDvaNHtW99FwyDqTs0XtBq5Ysk72XqwlURYb7lTm7QgOpZUJCjMA1Xqwxr+qTJZMw77
+ +w4KW8VBXpYtNfeGIIW+a0ClpZs9P8Y9Bun+rg0EO2gM64CxsMzm1hWXeesrfca3bH6E
+ IEBMJ5Ngea19VPUhAAweTomeDyK6PZVfoj7I/+TVvNdlO4h47seaAgOFjk6mHIboJjSV
+ yOfA==
+X-Gm-Message-State: APjAAAXn9QOhzPQmdXfahANTopvu82W+lqOyfDPNqG8HUsvVuvqohHZ1
+ WloSzvyGoRXx5KM9zpny51o9
+X-Google-Smtp-Source: APXvYqxqgH24xGX/KDx7bfh7omWTueZWvVekD9k694CbKHhIt6GaoeEScEcolwsrGHYfYSfUKvrc4A==
+X-Received: by 2002:a63:5d45:: with SMTP id o5mr39174199pgm.40.1562180564114; 
+ Wed, 03 Jul 2019 12:02:44 -0700 (PDT)
+Received: from localhost.localdomain ([2409:4072:117:d72f:1d34:d0bb:bb4e:3065])
+ by smtp.gmail.com with ESMTPSA id j14sm3631503pfn.120.2019.07.03.12.02.37
+ (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
+ Wed, 03 Jul 2019 12:02:42 -0700 (PDT)
+From: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
+To: mchehab@kernel.org,
+	robh+dt@kernel.org
+Subject: [PATCH 0/3] Add IMX290 CMOS image sensor support
+Date: Thu,  4 Jul 2019 00:32:27 +0530
+Message-Id: <20190703190230.12392-1-manivannan.sadhasivam@linaro.org>
+X-Mailer: git-send-email 2.17.1
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20190703_120245_296042_1D58F63C 
+X-CRM114-Status: UNSURE (   9.35  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
+X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
+ Content analysis details:   (-0.2 points)
+ pts rule name              description
+ ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:544 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.0 T_PDS_NO_HELO_DNS      High profile HELO but no A record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -64,95 +94,54 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Song Liu <songliubraving@fb.com>, Peter Zijlstra <peterz@infradead.org>,
- Rasmus Villemoes <linux@rasmusvillemoes.dk>, linux-kernel@vger.kernel.org,
- Jin Yao <yao.jin@linux.intel.com>, Jiri Olsa <jolsa@redhat.com>,
- Andi Kleen <ak@linux.intel.com>,
- Eric Saint-Etienne <eric.saint.etienne@oracle.com>,
- Konstantin Khlebnikov <khlebnikov@yandex-team.ru>,
- Ingo Molnar <mingo@redhat.com>, Suzuki K Poulose <suzuki.poulose@arm.com>,
- Alexios Zavras <alexios.zavras@intel.com>, Davidlohr Bueso <dave@stgolabs.net>,
- Namhyung Kim <namhyung@kernel.org>, Thomas Gleixner <tglx@linutronix.de>,
- linux-arm-kernel@lists.infradead.org,
- Mathieu Poirier <mathieu.poirier@linaro.org>,
- Thomas Richter <tmricht@linux.ibm.com>,
- Adrian Hunter <adrian.hunter@intel.com>,
- Alexander Shishkin <alexander.shishkin@linux.intel.com>,
- "David S. Miller" <davem@davemloft.net>, Changbin Du <changbin.du@intel.com>,
- Alexey Budankov <alexey.budankov@linux.intel.com>
+Cc: devicetree@vger.kernel.org, c.barrett@framos.com,
+ linux-kernel@vger.kernel.org, a.brela@framos.com,
+ Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>,
+ linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Em Tue, Jul 02, 2019 at 06:34:17PM +0800, Leo Yan escreveu:
-> Based on the following report from Smatch, fix the potential
-> NULL pointer dereference check.
-> 
->   tools/perf/util/session.c:1252
->   dump_read() error: we previously assumed 'evsel' could be null
->   (see line 1249)
-> 
-> tools/perf/util/session.c
-> 1240 static void dump_read(struct perf_evsel *evsel, union perf_event *event)
-> 1241 {
-> 1242         struct read_event *read_event = &event->read;
-> 1243         u64 read_format;
-> 1244
-> 1245         if (!dump_trace)
-> 1246                 return;
-> 1247
-> 1248         printf(": %d %d %s %" PRIu64 "\n", event->read.pid, event->read.tid,
-> 1249                evsel ? perf_evsel__name(evsel) : "FAIL",
-> 1250                event->read.value);
-> 1251
-> 1252         read_format = evsel->attr.read_format;
->                            ^^^^^^^
-> 
-> 'evsel' could be NULL pointer, for this case this patch directly bails
-> out without dumping read_event.
+Hello,
 
-So this needs another hunk, adding it.
+This patchset adds support for IMX290 CMOS image sensor from Sony.
+Sensor can be programmed through I2C and 4-wire interface but the
+current driver only supports I2C interface. Also, the sensor is
+capable of outputting frames in following 3 interfaces:
 
-diff --git a/tools/perf/builtin-inject.c b/tools/perf/builtin-inject.c
-index 8e0e06d3edfc..f4591a1438b4 100644
---- a/tools/perf/builtin-inject.c
-+++ b/tools/perf/builtin-inject.c
-@@ -224,7 +224,7 @@ static int perf_event__repipe_sample(struct perf_tool *tool,
- 				     struct perf_evsel *evsel,
- 				     struct machine *machine)
- {
--	if (evsel->handler) {
-+	if (evsel && evsel->handler) {
- 		inject_handler f = evsel->handler;
- 		return f(tool, event, sample, evsel, machine);
- 	}
- 
-> Signed-off-by: Leo Yan <leo.yan@linaro.org>
-> ---
->  tools/perf/util/session.c | 3 +++
->  1 file changed, 3 insertions(+)
-> 
-> diff --git a/tools/perf/util/session.c b/tools/perf/util/session.c
-> index 54cf163347f7..2e61dd6a3574 100644
-> --- a/tools/perf/util/session.c
-> +++ b/tools/perf/util/session.c
-> @@ -1249,6 +1249,9 @@ static void dump_read(struct perf_evsel *evsel, union perf_event *event)
->  	       evsel ? perf_evsel__name(evsel) : "FAIL",
->  	       event->read.value);
->  
-> +	if (!evsel)
-> +		return;
-> +
->  	read_format = evsel->attr.read_format;
->  
->  	if (read_format & PERF_FORMAT_TOTAL_TIME_ENABLED)
-> -- 
-> 2.17.1
+* CMOS logic parallel SDR output
+* Low voltage LVDS serial DDR output
+* CSI-2 serial data output
+
+But the current driver only supports CSI-2 output available from 4 lanes.
+In the case of sensor resolution, driver only supports 1920x1080 and
+1280x720 at mid data rate of 445.5 Mpbs.
+
+The driver has been validated using Framos IMX290 module interfaced to
+96Boards Dragonboard410c.
+
+Thanks,
+Mani
+
+Manivannan Sadhasivam (3):
+  dt-bindings: media: i2c: Add IMX290 CMOS sensor binding
+  media: i2c: Add IMX290 CMOS image sensor driver
+  MAINTAINERS: Add entry for IMX290 CMOS image sensor driver
+
+ .../devicetree/bindings/media/i2c/imx290.txt  |  51 ++
+ MAINTAINERS                                   |   8 +
+ drivers/media/i2c/Kconfig                     |  11 +
+ drivers/media/i2c/Makefile                    |   1 +
+ drivers/media/i2c/imx290.c                    | 845 ++++++++++++++++++
+ 5 files changed, 916 insertions(+)
+ create mode 100644 Documentation/devicetree/bindings/media/i2c/imx290.txt
+ create mode 100644 drivers/media/i2c/imx290.c
 
 -- 
+2.17.1
 
-- Arnaldo
 
 _______________________________________________
 linux-arm-kernel mailing list
