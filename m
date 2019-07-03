@@ -2,81 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E7C605E4AE
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  3 Jul 2019 14:59:12 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A99835E4B2
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  3 Jul 2019 14:59:33 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=aAaFbBfzsQ2krCyKNU8jtv8S1Etqn0JvxaFkVN8fvf8=; b=TpCmUDxwJiOSPR
-	jJTWmi3vE6iPJdhKSPQZmfxlu8KbRycHz4p6mpuxp3UretzHBsqrFMmjCQrWKrCY/yE2WhqqWRfzx
-	CQbCV3zU2WxG6Dp9T0vHJakxJyZZyTwkEVsi/JgYy3drGoZAK4a3uYZtoBfxcLbCTQgFsLondlavE
-	A5ovZQ+kONBKC7bVWd8qrJyKj+GfUNCwv1ibnxSI3eS65S1qY1gChhhlVNBylWj57l5a3igl3E/ml
-	Xqh4u78efsztqxyysEmvZV/WHV+L7S/hWfkNrBoKRAJUdNGwGk26JMDbOXRU6VFW4QCvf42PC9oBk
-	binUJgrT8Qa/zlhs05VA==;
+	List-Owner; bh=pLo36KiHyXeKlO6p8wYKWVpDzQ2anxxQG3Cb62BDGxg=; b=dYiuPrsB5Nx2M/
+	FZHyCxx09LDptawJFv6OtwBzdLD/IifyWSe44qfW/ltJ7tvThlYwTlcPb/tcMT8k7nrjGJ5yBzxIq
+	W9mecGy9Qrl7jCNAebuYI/3+t4WyDtBW1Z/mVxHfdMV22fNAJH9OpUn6+LUena+wt8FeTjZly2IcG
+	WN0upOkSJCGe4QSBIoyOcpPXBXwNjWmjZaNxeWLW1cKpVcF2zAPdXPbzSPa8nQ8t832O4eiPZhyjL
+	BSZlzDR1IJ6Ce/KYkb/QRvD2ECrJ1z618+RNo4RIC5epyk/RotWnUC6BvreSH+pmEXqXBoHUvWg6d
+	YpEdKyBOCWvuDdAjeIxw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hieqt-000478-Ar; Wed, 03 Jul 2019 12:59:11 +0000
-Received: from mail-pl1-x644.google.com ([2607:f8b0:4864:20::644])
+	id 1hierE-0004Kh-3s; Wed, 03 Jul 2019 12:59:32 +0000
+Received: from mail-pl1-x643.google.com ([2607:f8b0:4864:20::643])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hieg9-0003gU-5f
- for linux-arm-kernel@lists.infradead.org; Wed, 03 Jul 2019 12:48:07 +0000
-Received: by mail-pl1-x644.google.com with SMTP id a93so1200836pla.7
+ id 1hiegC-0003jS-9l
+ for linux-arm-kernel@lists.infradead.org; Wed, 03 Jul 2019 12:48:12 +0000
+Received: by mail-pl1-x643.google.com with SMTP id t7so1191411plr.11
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 03 Jul 2019 05:48:05 -0700 (PDT)
+ Wed, 03 Jul 2019 05:48:08 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=amarulasolutions.com; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=E6uRjcermCh0vpVDEIEhbk7Fmo6X2a/vaz5WmKDnX10=;
- b=b0zu5dXrKN9pCZXKQexawbFEbckTVyo7Y/CfUphYXkxBdh2IGsT/Jiic87Zy8Is5az
- kcSfZXgiA2mF/PXqlXlpWn1OqxsBgwmr+4kug7T0brB9AekUPJb1WqzOoXeJ9OtHcQgf
- nP0sPALi9wKcBwgWOflx1NbBZUv2KO7vIVEZ8=
+ bh=LeVp32fCyZqIo/d5l2qER2CwKv5pwBDkf2I+uhwHe8s=;
+ b=V3DnPL5zk4ThmbRKSVn94ZksxfRwmk+EVcnMl4nlTJjcLknY6+1hlvBh1dwBNrzDmH
+ ow6ZFZ9mcmPWii7TglC+rrCdK73BpOUrC8/anenKLMKn3oQamFdpn8xSt+5i2cd9ji2Q
+ a6kCGn3aBBOHeDz1BP/vL739Wi/HVnRTxr6NI=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=E6uRjcermCh0vpVDEIEhbk7Fmo6X2a/vaz5WmKDnX10=;
- b=KBudnVE9OhpGu8MO8Vaf0iD4lnTIkwggb4VjlQOAnWlEke08wXzwZ7Q2vOee7g4PyJ
- jMwvEijSsmB+O/jvYBcVn4YhEp7DcLJfB5qr9VxQQjiTj5JHtDreBQ9WzhzwYCmYYe2o
- rdm1E8GllYm7hC7ay6fGMTJMR9iwXUq1zci1x22sAZvXl0//Mal1plPBRUBI1knLrZzi
- Zo+TXErvkbkRwuJrfqNl1X5SCUKfoSrfZLBJcsfyXkJFFcncwp2EOp6JRp34a4RZySzW
- HZbQwJenMDf5SFc/hrIkPGYHac00SSZL1yUnkXfPjp81EevipFzteLyXW+LGbsMgTW4B
- eO7w==
-X-Gm-Message-State: APjAAAVkne1MgUMQjRu3pkZy3TbRrKMYK+U7Jl+tM2TgbInyWr84LPjp
- Y7y4gYj+x7bAsLH2Cw/aAgsfNA==
-X-Google-Smtp-Source: APXvYqzwwj7W+UdpQxGHCSMx8CuXgmzpcfjEKHlgFijFZGBYMqD+T8XyO9rvp8IZ+HN0rWDQ0Iu9EA==
-X-Received: by 2002:a17:902:a60d:: with SMTP id
- u13mr34396176plq.144.1562158084588; 
- Wed, 03 Jul 2019 05:48:04 -0700 (PDT)
+ bh=LeVp32fCyZqIo/d5l2qER2CwKv5pwBDkf2I+uhwHe8s=;
+ b=tTNFd87RiJN6hH49COonAH7CbImtzLDD7nHiQ87ETFJhvAWc+vLwo+uK4ZaGzgG97q
+ EN9fa6jpyszd1CuZ6yyI+Kj2GmdkZB00Ls9JgWT63q1/wSOysF3ooyR7hkhs+v9mS7ME
+ h+nUfLR3/4avYmFOVZvLsvTB1bfK67hK9B2onEkxkREl6N/okWXucO13uchMPrSZ1WAM
+ kKKue0NTrVHtwX9vg9SmdQ3ttbbpHbiSce7/cohCXisHD+QMHHJd5Kt5c4OoATXMgL8Y
+ CeoltPXfz4jdBsh/O6+xVUXoWERuQrTM+6h/Wiol48GbyG8Nnm+R/4/hGR63bEyYeBf/
+ DVeg==
+X-Gm-Message-State: APjAAAUVG166aDjOUGz55HfMD6NqUGFlYNpQqBdJqRHAgGQoxhT9NjLf
+ BPY3AEnJHgzYnsJpZEg16j6BCg==
+X-Google-Smtp-Source: APXvYqyl7oeWpq55E1rWzd8jsC71JAFEsVI26A8LO4PA4TcVfWTWVvZXb3P77i9AiNKVYR8cn1ZRLA==
+X-Received: by 2002:a17:902:2a6b:: with SMTP id
+ i98mr39877642plb.75.1562158087779; 
+ Wed, 03 Jul 2019 05:48:07 -0700 (PDT)
 Received: from localhost.localdomain ([183.82.231.32])
- by smtp.gmail.com with ESMTPSA id q1sm3735890pfn.178.2019.07.03.05.48.01
+ by smtp.gmail.com with ESMTPSA id q1sm3735890pfn.178.2019.07.03.05.48.04
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Wed, 03 Jul 2019 05:48:04 -0700 (PDT)
+ Wed, 03 Jul 2019 05:48:07 -0700 (PDT)
 From: Jagan Teki <jagan@amarulasolutions.com>
 To: Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
  Maxime Ripard <maxime.ripard@bootlin.com>, Chen-Yu Tsai <wens@csie.org>,
  devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
  linux-kernel@vger.kernel.org
-Subject: [PATCH 24/25] ARM: dts: axp809: Switch to use SPDX identifier
-Date: Wed,  3 Jul 2019 18:16:08 +0530
-Message-Id: <20190703124609.21435-25-jagan@amarulasolutions.com>
+Subject: [PATCH 25/25] ARM: dts: axp81x: Switch to use SPDX identifier
+Date: Wed,  3 Jul 2019 18:16:09 +0530
+Message-Id: <20190703124609.21435-26-jagan@amarulasolutions.com>
 X-Mailer: git-send-email 2.18.0.321.gffc6fa0e3
 In-Reply-To: <20190703124609.21435-1-jagan@amarulasolutions.com>
 References: <20190703124609.21435-1-jagan@amarulasolutions.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190703_054805_552556_39B0E668 
-X-CRM114-Status: GOOD (  18.97  )
+X-CRM114-CacheID: sfid-20190703_054810_447336_0F212D03 
+X-CRM114-Status: GOOD (  18.86  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:644 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:643 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -107,7 +107,7 @@ Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 Adopt the SPDX license identifier headers to ease license
-compliance management on axp809.dtsi.
+compliance management on axp81x.dtsi.
 
 While the text specifies "of the GPL or the X11 license"
 but the actual license text matches the MIT license as
@@ -117,17 +117,17 @@ specified at [0]
 
 Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
 ---
- arch/arm/boot/dts/axp809.dtsi | 39 +----------------------------------
+ arch/arm/boot/dts/axp81x.dtsi | 39 +----------------------------------
  1 file changed, 1 insertion(+), 38 deletions(-)
 
-diff --git a/arch/arm/boot/dts/axp809.dtsi b/arch/arm/boot/dts/axp809.dtsi
-index ab8e5f2d9246..53a902b29d6f 100644
---- a/arch/arm/boot/dts/axp809.dtsi
-+++ b/arch/arm/boot/dts/axp809.dtsi
+diff --git a/arch/arm/boot/dts/axp81x.dtsi b/arch/arm/boot/dts/axp81x.dtsi
+index 1dfeeceabf4c..83649e75f86d 100644
+--- a/arch/arm/boot/dts/axp81x.dtsi
++++ b/arch/arm/boot/dts/axp81x.dtsi
 @@ -1,45 +1,8 @@
 +// SPDX-License-Identifier: (GPL-2.0 OR MIT)
  /*
-  * Copyright 2015 Chen-Yu Tsai
+  * Copyright 2017 Chen-Yu Tsai
   *
   * Chen-Yu Tsai <wens@csie.org>
 - *
@@ -170,7 +170,7 @@ index ab8e5f2d9246..53a902b29d6f 100644
 - *     OTHER DEALINGS IN THE SOFTWARE.
   */
  
- /*
+ /* AXP813/818 Integrated Power Management Chip */
 -- 
 2.18.0.321.gffc6fa0e3
 
