@@ -2,49 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9D0A25DEF3
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  3 Jul 2019 09:33:44 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D8D015DEF2
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  3 Jul 2019 09:33:20 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=3k8MnAl/aMZapInC33yNPrpEw+z1pqlZu5CNCMaTiSg=; b=PLD
-	1q/A5hGS2k3xWUTca6kKV5czOyvVZKPN28HA6ZKDUlnzRdQuf+xXAPssw+gKRCib9ymA1zfxZ7Hw5
-	4xQf2mjzaxUgLaBSZlkDhbO9x9ic5cTeFAq6b5JGR5DjTh/WLW32RKxjw4RY5sqFHUdcDwac2LCRG
-	VWcdMF4n2DbDkeaK69D5gr3PXmO1CPx+IJpqe9dpXBwa6iaM/Qpo0BoeATlMLyrOp3w6Lck6TlQ2V
-	0A7VpLVBlEj6kUSYy9Lw0jEIHiMeSSwK5vIPkLXexTsBS4dWSCrQYjbB4pnAXES4nxajHYCBk8VJp
-	wY2aRGMkDRqbr1Fm84tWVYjGr/uK8BA==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=f3I6EQhvtMiIPtbERvvLhlY8uhPk+2JS08DpU5eLgAk=; b=mof3tQsdziBFXGD8dIzgXlmcJg
+	dvUQcEKRBUiQHizmTK1vgXopasZa3j38A8i2Ts1RdVTcJpMdfhXoxbFogHKd3W0npNeJInC4/asj6
+	2MeEpyFzTYMk1j0pTY4ws3yK9h2L5jZZfReZUERVZcm4N/aam1sdpVCUUNZvjcKYyxa0032tdByPq
+	uGbL5EYl9D47vDho67F8tbo30Xn8HF4mxcBH3kGOHzIZw9h+5+03HPWJ2V81FUU8+y37cIz0yWanM
+	bDrrjSTE2KeKcgVLwxKx5To93tyJbMNBjn97k+woHVqaIjcofFvZkNRB/+qMSJNlkKcnyvNFN98wV
+	UHMzAVPA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hiZlu-0006aK-Ug; Wed, 03 Jul 2019 07:33:43 +0000
+	id 1hiZlX-0006Ej-6K; Wed, 03 Jul 2019 07:33:19 +0000
 Received: from inva021.nxp.com ([92.121.34.21])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hiZl0-00064N-FF
- for linux-arm-kernel@lists.infradead.org; Wed, 03 Jul 2019 07:32:47 +0000
+ id 1hiZky-00064O-I8
+ for linux-arm-kernel@lists.infradead.org; Wed, 03 Jul 2019 07:32:46 +0000
 Received: from inva021.nxp.com (localhost [127.0.0.1])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 48410200350;
- Wed,  3 Jul 2019 09:32:40 +0200 (CEST)
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 986AE2000AF;
+ Wed,  3 Jul 2019 09:32:41 +0200 (CEST)
 Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
  [165.114.16.14])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 66F372000AF;
- Wed,  3 Jul 2019 09:32:30 +0200 (CEST)
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id B6B89200363;
+ Wed,  3 Jul 2019 09:32:31 +0200 (CEST)
 Received: from titan.ap.freescale.net (TITAN.ap.freescale.net [10.192.208.233])
- by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 54C86402E1;
- Wed,  3 Jul 2019 15:32:18 +0800 (SGT)
+ by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 2C486402EC;
+ Wed,  3 Jul 2019 15:32:20 +0800 (SGT)
 From: jun.li@nxp.com
 To: shawnguo@kernel.org,
 	sboyd@kernel.org,
 	robh+dt@kernel.org
-Subject: [PATCH 3/5] clk: imx8mm: correct the usb1_ctrl parent to be usb_bus
-Date: Wed,  3 Jul 2019 15:23:25 +0800
-Message-Id: <20190703072327.38165-1-jun.li@nxp.com>
+Subject: [PATCH 4/5] arm64: dts: imx8mm: Remove setting for
+ IMX8MM_CLK_USB_CORE_REF
+Date: Wed,  3 Jul 2019 15:23:26 +0800
+Message-Id: <20190703072327.38165-2-jun.li@nxp.com>
 X-Mailer: git-send-email 2.14.1
+In-Reply-To: <20190703072327.38165-1-jun.li@nxp.com>
+References: <20190703072327.38165-1-jun.li@nxp.com>
 X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190703_003246_648107_486B4C56 
-X-CRM114-Status: UNSURE (   8.16  )
+X-CRM114-CacheID: sfid-20190703_003244_740169_CE813513 
+X-CRM114-Status: UNSURE (   7.93  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -80,27 +84,44 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Li Jun <jun.li@nxp.com>
 
-Per latest imx8mm datasheet of CCM, the parent of usb1_ctrl_root_clk
-should be usb_bus.
+Since IMX8MM_CLK_USB_CORE_REF is not used at all, so remove the setting
+for it.
 
 Signed-off-by: Li Jun <jun.li@nxp.com>
 ---
- drivers/clk/imx/clk-imx8mm.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+ arch/arm64/boot/dts/freescale/imx8mm.dtsi | 12 ++++--------
+ 1 file changed, 4 insertions(+), 8 deletions(-)
 
-diff --git a/drivers/clk/imx/clk-imx8mm.c b/drivers/clk/imx/clk-imx8mm.c
-index 6b8e75d..735cf9d 100644
---- a/drivers/clk/imx/clk-imx8mm.c
-+++ b/drivers/clk/imx/clk-imx8mm.c
-@@ -631,7 +631,7 @@ static int __init imx8mm_clocks_init(struct device_node *ccm_node)
- 	clks[IMX8MM_CLK_UART2_ROOT] = imx_clk_gate4("uart2_root_clk", "uart2", base + 0x44a0, 0);
- 	clks[IMX8MM_CLK_UART3_ROOT] = imx_clk_gate4("uart3_root_clk", "uart3", base + 0x44b0, 0);
- 	clks[IMX8MM_CLK_UART4_ROOT] = imx_clk_gate4("uart4_root_clk", "uart4", base + 0x44c0, 0);
--	clks[IMX8MM_CLK_USB1_CTRL_ROOT] = imx_clk_gate4("usb1_ctrl_root_clk", "usb_core_ref", base + 0x44d0, 0);
-+	clks[IMX8MM_CLK_USB1_CTRL_ROOT] = imx_clk_gate4("usb1_ctrl_root_clk", "usb_bus", base + 0x44d0, 0);
- 	clks[IMX8MM_CLK_GPU3D_ROOT] = imx_clk_gate4("gpu3d_root_clk", "gpu3d_div", base + 0x44f0, 0);
- 	clks[IMX8MM_CLK_USDHC1_ROOT] = imx_clk_gate4("usdhc1_root_clk", "usdhc1", base + 0x4510, 0);
- 	clks[IMX8MM_CLK_USDHC2_ROOT] = imx_clk_gate4("usdhc2_root_clk", "usdhc2", base + 0x4520, 0);
+diff --git a/arch/arm64/boot/dts/freescale/imx8mm.dtsi b/arch/arm64/boot/dts/freescale/imx8mm.dtsi
+index 232a741..5d691a5 100644
+--- a/arch/arm64/boot/dts/freescale/imx8mm.dtsi
++++ b/arch/arm64/boot/dts/freescale/imx8mm.dtsi
+@@ -743,10 +743,8 @@
+ 				interrupts = <GIC_SPI 40 IRQ_TYPE_LEVEL_HIGH>;
+ 				clocks = <&clk IMX8MM_CLK_USB1_CTRL_ROOT>;
+ 				clock-names = "usb1_ctrl_root_clk";
+-				assigned-clocks = <&clk IMX8MM_CLK_USB_BUS>,
+-						  <&clk IMX8MM_CLK_USB_CORE_REF>;
+-				assigned-clock-parents = <&clk IMX8MM_SYS_PLL2_500M>,
+-							 <&clk IMX8MM_SYS_PLL1_100M>;
++				assigned-clocks = <&clk IMX8MM_CLK_USB_BUS>;
++				assigned-clock-parents = <&clk IMX8MM_SYS_PLL2_500M>;
+ 				fsl,usbphy = <&usbphynop1>;
+ 				fsl,usbmisc = <&usbmisc1 0>;
+ 				status = "disabled";
+@@ -764,10 +762,8 @@
+ 				interrupts = <GIC_SPI 41 IRQ_TYPE_LEVEL_HIGH>;
+ 				clocks = <&clk IMX8MM_CLK_USB1_CTRL_ROOT>;
+ 				clock-names = "usb1_ctrl_root_clk";
+-				assigned-clocks = <&clk IMX8MM_CLK_USB_BUS>,
+-						  <&clk IMX8MM_CLK_USB_CORE_REF>;
+-				assigned-clock-parents = <&clk IMX8MM_SYS_PLL2_500M>,
+-							 <&clk IMX8MM_SYS_PLL1_100M>;
++				assigned-clocks = <&clk IMX8MM_CLK_USB_BUS>;
++				assigned-clock-parents = <&clk IMX8MM_SYS_PLL2_500M>;
+ 				fsl,usbphy = <&usbphynop2>;
+ 				fsl,usbmisc = <&usbmisc2 0>;
+ 				status = "disabled";
 -- 
 2.7.4
 
