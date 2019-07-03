@@ -2,62 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 006A65EBF6
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  3 Jul 2019 20:49:48 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 078EA5EC28
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  3 Jul 2019 21:04:16 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=TpvKtCHQlMkPiJpZEJKxoLOMjdrtBF4rvOdKdaAGMxI=; b=a8CczJLwRzZkVv
-	/1Eo6E6NvC3I2NbCG4oFhVbh1MVkdy5rEtC8S6jhic5O90Bf45MNxgdyYyqloWfIBGqT41Kg0MwoG
-	KCgsXL4wjl6eVnHMYgkXa5YfYa70BDGQF8Lr20zntcYSrfbhqMEXpqJx+5bebcRNIYD0KENgoQZqE
-	ZvOXP6lGY+YsyJT2H4c5KVq4hgK1MEnxFmzqNwegMy89UVoimDwWes4uFvKn6Gf2s8L0SnpyDvpFj
-	k64uuwrPlOIeF6wfAAbIxYikmIoDK71FMs+emYB+dVyy1ZICXskBN7JeAqjVdcttGSka959dWXF9y
-	tYKxv+9jA26jUet2r4wg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=FmmGQHx+E1Xmsq+WQZtLg9ULY/rq7Zy2NajjqFLevIU=; b=CId/Ofcf7EdVyK
+	hQs5ryO6PX+UTqfWwo006H9qefEx41JCa1nLv3t2jyboETf0mM/vT9xpxZAOpExPFOW50bkfvMODK
+	pd9lkxw3kJmuHvtDUipc8QABi0V05Jmhx4bosqFMZ3UsOf20FxsDGQGaf0pIUo0pb8uKAbV5A+9EY
+	5a3EnVLnqQyuHmXegE/Vy5f13r/I7jnw83YNb+X+LZvYjpHgvoWDYkuvSau4E4QL4Oi3k7t9Oye68
+	l2jX1LYWv/LFqUohu4VMs4SsfZrdzS5cC5f9joY9qRhi3FIqWzxu91Ns4E6s/hZT2edAzO9jLzSwg
+	+qvKKeyojGKltbEhrjFw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hikKB-0000ud-G2; Wed, 03 Jul 2019 18:49:47 +0000
-Received: from mail.z3ntu.xyz ([128.199.32.197])
+	id 1hikY9-0007Cn-JC; Wed, 03 Jul 2019 19:04:13 +0000
+Received: from merlin.infradead.org ([2001:8b0:10b:1231::1])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hikJz-0000tv-0f
- for linux-arm-kernel@lists.infradead.org; Wed, 03 Jul 2019 18:49:36 +0000
-Received: from localhost.localdomain (80-110-121-20.cgn.dynamic.surfer.at
- [80.110.121.20])
- by mail.z3ntu.xyz (Postfix) with ESMTPSA id 0074BC642D;
- Wed,  3 Jul 2019 18:49:31 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=z3ntu.xyz; s=z3ntu;
- t=1562179772; bh=9DizQ8OziyzZDK+fmM5mzABZl479bhqpI8LTwVmMOKE=;
- h=From:To:Cc:Subject:Date;
- b=jAVEnO7uq2QTRWst/+QFsN5w8bdWbv4Yu49XUV4jnqn02gYxiZCP5+eUopcycjO0g
- nC3c2tYhQL4HY3kK28juYm59IkLBCEmq4xwhkkJHrd6EgwmZb2TVIrL3s2769eJ9AC
- pTGoG5yeYxZ/Ifz0xSAWg5lZAr6+O4hLE1Rk7dzM=
-From: Luca Weiss <luca@z3ntu.xyz>
-To: alsa-devel@alsa-project.org
-Subject: [PATCH v2] ASoC: sunxi: sun50i-codec-analog: Add earpiece
-Date: Wed,  3 Jul 2019 20:48:11 +0200
-Message-Id: <20190703184814.27191-1-luca@z3ntu.xyz>
-X-Mailer: git-send-email 2.22.0
+ id 1hikXH-0006gd-BB
+ for linux-arm-kernel@bombadil.infradead.org; Wed, 03 Jul 2019 19:03:19 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=infradead.org; s=merlin.20170209; h=In-Reply-To:Content-Type:MIME-Version:
+ References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=9j91QuzZiuA3k9yRtiEcwirJNujPfeZz+gfvWzqG4sM=; b=P1VEgFwTZfuElTcCPQMWMuwwV
+ 2yZfwwe3QwvmXVA6IfxdEPaYhq5qXo5Ty6kpKy+izCa1rLxVWQDYQZmdC4Pg/iXewnSUxiyxecEr7
+ 8jiRQ5uGVPfcOQVtzvQOGaM/BLAmZvtgsjZ+1jJOImVU/xKRLuFl4wkbb6oeiT699jJfgflzKM2VS
+ jhosPBZ5UlUQWLfXTNt+gGz4qCpPzinK4/DIK3r6ZM0Opq/+4lPjWQhwTlAc76tIDEtsQO3GMfEMZ
+ 2mCj06EEzoUbA8sHNPExDNagG7w9lz8TmcM/kYb7LK+zT41UU/GXbqOixYQPPLb0+E/pfNhV25EP1
+ HPuqhE7eQ==;
+Received: from [177.195.209.182] (helo=quaco.ghostprotocols.net)
+ by merlin.infradead.org with esmtpsa (Exim 4.92 #3 (Red Hat Linux))
+ id 1hikXF-0000hO-85; Wed, 03 Jul 2019 19:03:17 +0000
+Received: by quaco.ghostprotocols.net (Postfix, from userid 1000)
+ id 7CFD341153; Wed,  3 Jul 2019 16:01:57 -0300 (-03)
+Date: Wed, 3 Jul 2019 16:01:57 -0300
+From: Arnaldo Carvalho de Melo <acme@kernel.org>
+To: Leo Yan <leo.yan@linaro.org>
+Subject: Re: [PATCH v1 08/11] perf session: Smatch: Fix potential NULL
+ pointer dereference
+Message-ID: <20190703190157.GG10740@kernel.org>
+References: <20190702103420.27540-1-leo.yan@linaro.org>
+ <20190702103420.27540-9-leo.yan@linaro.org>
 MIME-Version: 1.0
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190703_114935_413793_2A81B060 
-X-CRM114-Status: UNSURE (   9.19  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.3 (/)
-X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.3 points)
- pts rule name              description
- ---- ---------------------- --------------------------------------------------
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain 0.5 FROM_SUSPICIOUS_NTLD   From abused NTLD
+Content-Disposition: inline
+In-Reply-To: <20190702103420.27540-9-leo.yan@linaro.org>
+X-Url: http://acmel.wordpress.com
+User-Agent: Mutt/1.11.3 (2019-02-01)
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -69,128 +64,95 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-kernel@vger.kernel.org, Maxime Ripard <maxime.ripard@bootlin.com>,
- ~martijnbraam/pmos-upstream@lists.sr.ht, Takashi Iwai <tiwai@suse.com>,
- Liam Girdwood <lgirdwood@gmail.com>, Luca Weiss <luca@z3ntu.xyz>,
- Chen-Yu Tsai <wens@csie.org>, Mark Brown <broonie@kernel.org>,
- Jaroslav Kysela <perex@perex.cz>, linux-arm-kernel@lists.infradead.org
+Cc: Song Liu <songliubraving@fb.com>, Peter Zijlstra <peterz@infradead.org>,
+ Rasmus Villemoes <linux@rasmusvillemoes.dk>, linux-kernel@vger.kernel.org,
+ Jin Yao <yao.jin@linux.intel.com>, Jiri Olsa <jolsa@redhat.com>,
+ Andi Kleen <ak@linux.intel.com>,
+ Eric Saint-Etienne <eric.saint.etienne@oracle.com>,
+ Konstantin Khlebnikov <khlebnikov@yandex-team.ru>,
+ Ingo Molnar <mingo@redhat.com>, Suzuki K Poulose <suzuki.poulose@arm.com>,
+ Alexios Zavras <alexios.zavras@intel.com>, Davidlohr Bueso <dave@stgolabs.net>,
+ Namhyung Kim <namhyung@kernel.org>, Thomas Gleixner <tglx@linutronix.de>,
+ linux-arm-kernel@lists.infradead.org,
+ Mathieu Poirier <mathieu.poirier@linaro.org>,
+ Thomas Richter <tmricht@linux.ibm.com>,
+ Adrian Hunter <adrian.hunter@intel.com>,
+ Alexander Shishkin <alexander.shishkin@linux.intel.com>,
+ "David S. Miller" <davem@davemloft.net>, Changbin Du <changbin.du@intel.com>,
+ Alexey Budankov <alexey.budankov@linux.intel.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This adds the necessary registers and audio routes to play audio using
-the Earpiece, that's supported on the A64.
+Em Tue, Jul 02, 2019 at 06:34:17PM +0800, Leo Yan escreveu:
+> Based on the following report from Smatch, fix the potential
+> NULL pointer dereference check.
+> 
+>   tools/perf/util/session.c:1252
+>   dump_read() error: we previously assumed 'evsel' could be null
+>   (see line 1249)
+> 
+> tools/perf/util/session.c
+> 1240 static void dump_read(struct perf_evsel *evsel, union perf_event *event)
+> 1241 {
+> 1242         struct read_event *read_event = &event->read;
+> 1243         u64 read_format;
+> 1244
+> 1245         if (!dump_trace)
+> 1246                 return;
+> 1247
+> 1248         printf(": %d %d %s %" PRIu64 "\n", event->read.pid, event->read.tid,
+> 1249                evsel ? perf_evsel__name(evsel) : "FAIL",
+> 1250                event->read.value);
+> 1251
+> 1252         read_format = evsel->attr.read_format;
+>                            ^^^^^^^
+> 
+> 'evsel' could be NULL pointer, for this case this patch directly bails
+> out without dumping read_event.
 
-Signed-off-by: Luca Weiss <luca@z3ntu.xyz>
----
-Changes v1 -> v2:
-* Make the earpiece enable register a DAPM widget
-* Adjust the audio routes to include the new Earpiece Amp widget
-* Left/Right Analog Mixer => Left/Right Mixer
+So this needs another hunk, adding it.
 
- sound/soc/sunxi/sun50i-codec-analog.c | 50 +++++++++++++++++++++++++++
- 1 file changed, 50 insertions(+)
+diff --git a/tools/perf/builtin-inject.c b/tools/perf/builtin-inject.c
+index 8e0e06d3edfc..f4591a1438b4 100644
+--- a/tools/perf/builtin-inject.c
++++ b/tools/perf/builtin-inject.c
+@@ -224,7 +224,7 @@ static int perf_event__repipe_sample(struct perf_tool *tool,
+ 				     struct perf_evsel *evsel,
+ 				     struct machine *machine)
+ {
+-	if (evsel->handler) {
++	if (evsel && evsel->handler) {
+ 		inject_handler f = evsel->handler;
+ 		return f(tool, event, sample, evsel, machine);
+ 	}
+ 
+> Signed-off-by: Leo Yan <leo.yan@linaro.org>
+> ---
+>  tools/perf/util/session.c | 3 +++
+>  1 file changed, 3 insertions(+)
+> 
+> diff --git a/tools/perf/util/session.c b/tools/perf/util/session.c
+> index 54cf163347f7..2e61dd6a3574 100644
+> --- a/tools/perf/util/session.c
+> +++ b/tools/perf/util/session.c
+> @@ -1249,6 +1249,9 @@ static void dump_read(struct perf_evsel *evsel, union perf_event *event)
+>  	       evsel ? perf_evsel__name(evsel) : "FAIL",
+>  	       event->read.value);
+>  
+> +	if (!evsel)
+> +		return;
+> +
+>  	read_format = evsel->attr.read_format;
+>  
+>  	if (read_format & PERF_FORMAT_TOTAL_TIME_ENABLED)
+> -- 
+> 2.17.1
 
-diff --git a/sound/soc/sunxi/sun50i-codec-analog.c b/sound/soc/sunxi/sun50i-codec-analog.c
-index d105c90c3706..6d1de565350e 100644
---- a/sound/soc/sunxi/sun50i-codec-analog.c
-+++ b/sound/soc/sunxi/sun50i-codec-analog.c
-@@ -49,6 +49,15 @@
- #define SUN50I_ADDA_OR_MIX_CTRL_DACR		1
- #define SUN50I_ADDA_OR_MIX_CTRL_DACL		0
- 
-+#define SUN50I_ADDA_EARPIECE_CTRL0	0x03
-+#define SUN50I_ADDA_EARPIECE_CTRL0_EAR_RAMP_TIME	4
-+#define SUN50I_ADDA_EARPIECE_CTRL0_ESPSR		0
-+
-+#define SUN50I_ADDA_EARPIECE_CTRL1	0x04
-+#define SUN50I_ADDA_EARPIECE_CTRL1_ESPPA_EN	7
-+#define SUN50I_ADDA_EARPIECE_CTRL1_ESPPA_MUTE	6
-+#define SUN50I_ADDA_EARPIECE_CTRL1_ESP_VOL	0
-+
- #define SUN50I_ADDA_LINEOUT_CTRL0	0x05
- #define SUN50I_ADDA_LINEOUT_CTRL0_LEN		7
- #define SUN50I_ADDA_LINEOUT_CTRL0_REN		6
-@@ -172,6 +181,10 @@ static const DECLARE_TLV_DB_RANGE(sun50i_codec_lineout_vol_scale,
- 	2, 31, TLV_DB_SCALE_ITEM(-4350, 150, 0),
- );
- 
-+static const DECLARE_TLV_DB_RANGE(sun50i_codec_earpiece_vol_scale,
-+	0, 1, TLV_DB_SCALE_ITEM(TLV_DB_GAIN_MUTE, 0, 1),
-+	2, 31, TLV_DB_SCALE_ITEM(-4350, 150, 0),
-+);
- 
- /* volume / mute controls */
- static const struct snd_kcontrol_new sun50i_a64_codec_controls[] = {
-@@ -225,6 +238,15 @@ static const struct snd_kcontrol_new sun50i_a64_codec_controls[] = {
- 		   SUN50I_ADDA_LINEOUT_CTRL0_LEN,
- 		   SUN50I_ADDA_LINEOUT_CTRL0_REN, 1, 0),
- 
-+	SOC_SINGLE_TLV("Earpiece Playback Volume",
-+		       SUN50I_ADDA_EARPIECE_CTRL1,
-+		       SUN50I_ADDA_EARPIECE_CTRL1_ESP_VOL, 0x1f, 0,
-+		       sun50i_codec_earpiece_vol_scale),
-+
-+	SOC_SINGLE("Earpiece Playback Switch",
-+		   SUN50I_ADDA_EARPIECE_CTRL1,
-+		   SUN50I_ADDA_EARPIECE_CTRL1_ESPPA_MUTE, 1, 0),
-+
- };
- 
- static const char * const sun50i_codec_hp_src_enum_text[] = {
-@@ -257,6 +279,20 @@ static const struct snd_kcontrol_new sun50i_codec_lineout_src[] = {
- 		      sun50i_codec_lineout_src_enum),
- };
- 
-+static const char * const sun50i_codec_earpiece_src_enum_text[] = {
-+	"DACR", "DACL", "Right Mixer", "Left Mixer",
-+};
-+
-+static SOC_ENUM_SINGLE_DECL(sun50i_codec_earpiece_src_enum,
-+			    SUN50I_ADDA_EARPIECE_CTRL0,
-+			    SUN50I_ADDA_EARPIECE_CTRL0_ESPSR,
-+			    sun50i_codec_earpiece_src_enum_text);
-+
-+static const struct snd_kcontrol_new sun50i_codec_earpiece_src[] = {
-+	SOC_DAPM_ENUM("Earpiece Source Playback Route",
-+		      sun50i_codec_earpiece_src_enum),
-+};
-+
- static const struct snd_soc_dapm_widget sun50i_a64_codec_widgets[] = {
- 	/* DAC */
- 	SND_SOC_DAPM_DAC("Left DAC", NULL, SUN50I_ADDA_MIX_DAC_CTRL,
-@@ -285,6 +321,12 @@ static const struct snd_soc_dapm_widget sun50i_a64_codec_widgets[] = {
- 			 SND_SOC_NOPM, 0, 0, sun50i_codec_lineout_src),
- 	SND_SOC_DAPM_OUTPUT("LINEOUT"),
- 
-+	SND_SOC_DAPM_MUX("Earpiece Source Playback Route",
-+			 SND_SOC_NOPM, 0, 0, sun50i_codec_earpiece_src),
-+	SND_SOC_DAPM_OUT_DRV("Earpiece Amp", SUN50I_ADDA_EARPIECE_CTRL1,
-+			     SUN50I_ADDA_EARPIECE_CTRL1_ESPPA_EN, 0, NULL, 0),
-+	SND_SOC_DAPM_OUTPUT("EARPIECE"),
-+
- 	/* Microphone inputs */
- 	SND_SOC_DAPM_INPUT("MIC1"),
- 
-@@ -388,6 +430,14 @@ static const struct snd_soc_dapm_route sun50i_a64_codec_routes[] = {
- 	{ "Line Out Source Playback Route", "Mono Differential",
- 		"Right Mixer" },
- 	{ "LINEOUT", NULL, "Line Out Source Playback Route" },
-+
-+	/* Earpiece Routes */
-+	{ "Earpiece Source Playback Route", "DACL", "Left DAC" },
-+	{ "Earpiece Source Playback Route", "DACR", "Right DAC" },
-+	{ "Earpiece Source Playback Route", "Left Mixer", "Left Mixer" },
-+	{ "Earpiece Source Playback Route", "Right Mixer", "Right Mixer" },
-+	{ "Earpiece Amp", NULL, "Earpiece Source Playback Route" },
-+	{ "EARPIECE", NULL, "Earpiece Amp" },
- };
- 
- static const struct snd_soc_component_driver sun50i_codec_analog_cmpnt_drv = {
 -- 
-2.22.0
 
+- Arnaldo
 
 _______________________________________________
 linux-arm-kernel mailing list
