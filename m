@@ -2,83 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6D5685E03E
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  3 Jul 2019 10:52:05 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 616CA5E059
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  3 Jul 2019 10:56:56 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:Date:Subject:To:
-	From:Message-ID:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jFFP+Gj/rTO8FPSlpvGJT45pwClCutbWmk0QlTDVzls=; b=HWi5VVVyxj6EWJ
-	T0xqolSADyFBhVYoqVFrt70D49IO/dOaI7ypjuzgHpIU5sOt17TxvDKLNaWe4UuMcZQ2Uj27C79wi
-	/dwis6I9lzF62Yw0L6NMuiZrCPCutKf974XYKUfdkMLjBAugRzJMAkdl8xpBL5u0F3+VMsnGlP4IK
-	a+3HgwGJXENcOOkW9CDO1iDMZg2i2sWRCQaAhluDtaOl5MTgDske+2b1h/vsxFhEg43PkAl5XFIkN
-	4/ZxWrR6m/LDAzQJp7E/Dw6nXCSWPnzOZBSQ+OUTrIhNcBD0jeutQ3xNjITExcNQTUnYghcjmn300
-	ZLRKc3L/SAWfrcBvDKyw==;
+	List-Owner; bh=E8WRAIrYvxSPYXPePAk+YeKdS016TtD4E/dhROLfi8Q=; b=FZZFzIZr+Ivm3l
+	FYtSpVmx/tjjKB7VMr+C4rUNbHw6VFTZUiJUhKMDzXTzS4I98A1zTxzbwClTVQXHX9J1Jt+MED81d
+	SrmKdjH3gksfc03ku6YEkOHh5Mt3gF7iNlCGxZJwie+bR3J+mxVfEYPDQ7veL/hifICzPwpP10Pxc
+	nXdxWRTJ2Zcx0ykv7QGtS2mJ9u67mcHqqHlKAHzn+ZjYe01l/c+/dQll7fJGQ5XCjlaCIb5rsYw4P
+	RpzQSnZu00H5TpxKI88XdqYNaBmH+FueFV+caFK33dUfK1Uv9ClJj/ichDsKP+Shrr0LgDnZ/W5Le
+	0J5ouFp0ZoEpTpSgQvTw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hiaze-0002Cy-IW; Wed, 03 Jul 2019 08:51:58 +0000
-Received: from mout.gmx.net ([212.227.15.18])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hiazE-0002Bg-DS; Wed, 03 Jul 2019 08:51:34 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=gmx.net;
- s=badeba3b8450; t=1562143879;
- bh=9PB186LEloBouYC1p2ldmUewg113AS/sk7TTgnQz8eE=;
- h=X-UI-Sender-Class:From:To:Cc:Subject:Date:In-Reply-To:References;
- b=GP5yP5IwXwZWTpXfe8SA3N/3zIgAF+n+xBPjg9pP/80VsehK5SJFrQkblA+mcm8DL
- sUdghrvHHHWKKaCfmCJ0D3UG6/YDOjOQpxkP1ZLW5p34Vlg8nDHz2GbATIjAq4iZnF
- HMkkGm05EwVq93gDCm9rVb23E/04+chH5Y0S9mZk=
-X-UI-Sender-Class: 01bb95c1-4bf8-414a-932a-4f6e2808ef9c
-Received: from [217.61.158.204] ([217.61.158.204]) by web-mail.gmx.net
- (3c-app-gmx-bs07.server.lan [172.19.170.56]) (via HTTP); Wed, 3 Jul 2019
- 10:51:18 +0200
+	id 1hib4Q-0004HS-Mz; Wed, 03 Jul 2019 08:56:54 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hib4B-0004Gw-QE
+ for linux-arm-kernel@lists.infradead.org; Wed, 03 Jul 2019 08:56:41 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id E55C6344;
+ Wed,  3 Jul 2019 01:56:38 -0700 (PDT)
+Received: from e103592.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
+ [10.121.207.14])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 23DE83F718;
+ Wed,  3 Jul 2019 01:56:38 -0700 (PDT)
+Date: Wed, 3 Jul 2019 09:56:36 +0100
+From: Dave Martin <Dave.Martin@arm.com>
+To: Cristian Marussi <cristian.marussi@arm.com>
+Subject: Re: [PATCH 08/13] kselftest: arm64: mangle_pstate_ssbs_regs
+Message-ID: <20190703085633.GQ2790@e103592.cambridge.arm.com>
+References: <20190613111335.7645-1-cristian.marussi@arm.com>
+ <20190613111335.7645-9-cristian.marussi@arm.com>
+ <20190621103554.GP2790@e103592.cambridge.arm.com>
+ <b4365458-2034-2f06-4235-a101f17d4751@arm.com>
 MIME-Version: 1.0
-Message-ID: <trinity-ca99ab22-eda4-42dd-b6eb-8e4bb5c99165-1562143878858@3c-app-gmx-bs07>
-From: "Frank Wunderlich" <frank-w@public-files.de>
-To: "Matthias Brugger" <matthias.bgg@gmail.com>
-Subject: Aw: Re: [PATCH 3/3] add driver and MAINTAINERS for poweroff
-Date: Wed, 3 Jul 2019 10:51:18 +0200
-Importance: normal
-Sensitivity: Normal
-In-Reply-To: <c1358da0-60a4-49dd-71a8-77e90178c9c9@gmail.com>
-References: <20190702094045.3652-1-frank-w@public-files.de>
- <20190702094045.3652-4-frank-w@public-files.de>
- <c1358da0-60a4-49dd-71a8-77e90178c9c9@gmail.com>
-X-UI-Message-Type: mail
-X-Priority: 3
-X-Provags-ID: V03:K1:JPZTCh1ZfJHpWzb5eYAk5s1kOodanJvlOtH0JoIL8Th5cL5eBNXN53MDJZG4Tiea1rQbA
- ZPZUQ2sgDFECxxKapNnBOheINb976QRPW6Wr+OzxgmAp/lN91irS9iqxWTnAZKTjmXV12PyN+sy4
- NbqHa0eaADVQOZFLcZBw3UAFT3quKZoGm9gT5BJ8AnNIp6Q2+Xhtg56dlrva6jfmPpBj/aPTgVlv
- qN998m7tH0wsHPJGQ0k3O8vu3SoNVkokqEOBJ0FoektvVCYGUVcdxc8BFFzZ+UHMiman3Qxnb3Kr
- 1I=
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:1DICHQPpQTI=:A+NaXAfFhjiJt8kS1grdXD
- I8q+xw9r5eK5Hs0XxMcq9YAmZoEbhl5ngXLZirqdMYPNCsnaKMeVeOGCf9SfEUioYjkiIUQZB
- TiTU8Tw6t6rLww2mYVN1zH/UGj6ISVUDdFgBQzicUwLNh7UP13UCGyLB+vaa+JHKeyjJhppkh
- BOkc62et0yP0yk/E6tM1TaT+Q8NjGJhKTNSJ4AR2VqJJKLaFVhE/S5qmusGjjOrn7imr1sP2J
- YWSqbIRWftYdT90MSZWM/nf5wB0aEcYxrwElx37L5KD4b1WAMyQSQCHqKYDuqkDnO6nhM4tzb
- VnWUJ/TP7MdswuWgS3pfMJr5XBXJkMnvTgVk0LTfAtgRqeIz2VeNu6nQ/ixPwXb91Wj7ozvzq
- yFfBYU/ahOjjVvEO01PVk+8Mkmf//BE6fUQMqH98N5YHiAXJiP9SzCkZ1r7FFSAa6+hJC3nJs
- pr6O7q1FU1E5qaHAM6+fUin6y8Ub+D5hgJ4C7Mhe7dAnun5Ww3Kx9D39Vl4lk6sFiVxJbDO1j
- SFZGpLKXUGusvNivSBCQDEA6xIf6PV3Cx3dTQdyTIE5iXnp/dPMTYDFgVmWmyZNl89b1elkg9
- sbM2p9+6MwlcJiHH4VvESL7N3bbu3YQlskn0BljRWyD9FjsUmDrJRvl1abkbvjegDrIJ3Ue/u
- BODs=
+Content-Disposition: inline
+In-Reply-To: <b4365458-2034-2f06-4235-a101f17d4751@arm.com>
+User-Agent: Mutt/1.5.23 (2014-03-12)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190703_015132_786819_ADA0FDD7 
-X-CRM114-Status: GOOD (  11.56  )
+X-CRM114-CacheID: sfid-20190703_015639_941934_085E8749 
+X-CRM114-Status: GOOD (  30.09  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.227.15.18 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -90,40 +64,138 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Josef Friedl <josef.friedl@speed.at>, Ryder Lee <ryder.lee@mediatek.com>, Sean
- Wang <sean.wang@mediatek.com>, linux-kernel@vger.kernel.org,
- Rob Herring <robh+dt@kernel.org>, linux-mediatek@lists.infradead.org,
+Cc: andreyknvl@google.com, shuah@kernel.org, linux-kselftest@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Mathias
+On Tue, Jul 02, 2019 at 04:51:38PM +0100, Cristian Marussi wrote:
+> Hi
+> 
+> On 6/21/19 11:35 AM, Dave Martin wrote:
+> > On Thu, Jun 13, 2019 at 12:13:30PM +0100, Cristian Marussi wrote:
+> >> Added a simple mangle testcase which messes with the ucontext_t
+> >> from within the sig_handler, trying to toggle PSTATE SSBS bit.
+> >> Expect SIGILL if SSBS feature unsupported or that the value set in
+> >> PSTATE.SSBS is preserved on test PASS.
+> >>
+> >> Signed-off-by: Cristian Marussi <cristian.marussi@arm.com>
+> >> ---
+> >>   .../arm64/signal/testcases/.gitignore         |  1 +
+> >>   .../testcases/mangle_pstate_ssbs_regs.c       | 41 +++++++++++++++++++
+> >>   2 files changed, 42 insertions(+)
+> >>   create mode 100644 tools/testing/selftests/arm64/signal/testcases/mangle_pstate_ssbs_regs.c
+> >>
+> >> diff --git a/tools/testing/selftests/arm64/signal/testcases/.gitignore b/tools/testing/selftests/arm64/signal/testcases/.gitignore
+> >> index e7a1d998b650..c2972c3f33ca 100644
+> >> --- a/tools/testing/selftests/arm64/signal/testcases/.gitignore
+> >> +++ b/tools/testing/selftests/arm64/signal/testcases/.gitignore
+> >> @@ -5,3 +5,4 @@ mangle_pstate_invalid_state_toggle
+> >>   mangle_pstate_invalid_mode_el1
+> >>   mangle_pstate_invalid_mode_el2
+> >>   mangle_pstate_invalid_mode_el3
+> >> +mangle_pstate_ssbs_regs
+> >> diff --git a/tools/testing/selftests/arm64/signal/testcases/mangle_pstate_ssbs_regs.c b/tools/testing/selftests/arm64/signal/testcases/mangle_pstate_ssbs_regs.c
+> >> new file mode 100644
+> >> index 000000000000..d997ebf742d9
+> >> --- /dev/null
+> >> +++ b/tools/testing/selftests/arm64/signal/testcases/mangle_pstate_ssbs_regs.c
+> >> @@ -0,0 +1,41 @@
+> >> +/* SPDX-License-Identifier: GPL-2.0 */
+> >> +/* Copyright (C) 2019 ARM Limited */
+> >> +
+> >> +#include "test_signals_utils.h"
+> >> +#include "testcases.h"
+> >> +
+> >> +static int mangle_invalid_pstate_ssbs_run(struct tdescr *td,
+> >> +					  siginfo_t *si, ucontext_t *uc)
+> >> +{
+> >> +	ASSERT_GOOD_CONTEXT(uc);
+> >> +
+> >> +	/* toggle bit value */
+> >> +	uc->uc_mcontext.pstate ^= PSR_SSBS_BIT;
+> >> +	/* Save after mangling...it should be preserved */
+> >> +	td->saved_uc = *uc;
+> >> +
+> >> +	return 1;
+> >> +}
+> >> +
+> >> +static int pstate_ssbs_bit_checks(struct tdescr *td)
+> >> +{
+> >> +	uint64_t val = 0;
+> >> +
+> >> +	get_regval(MRS_SSBS_SYSREG, val);
+> >> +	/* pass when preserved */
+> >> +	td->pass = (!!(val & MRS_SSBS_BIT) ==
+> >> +		    !!(td->saved_uc.uc_mcontext.pstate & PSR_SSBS_BIT));
+> > 
+> > Nit: there's a redundant level of ! here, and the outer () are unnecessary:
+> > 
+> > 	(!!a == !!b) -> !a == !b
+> >
+> 
+> This was me badly convinced (not sure where I got this) that the bitpos 
+> of PSR_SSBS_BIT in pstate was different from the bitpos as reported in 
+> the output of MRS SSBS, so I was trying to normalize the comparison to 1 
+> == 1 or 0 == 0
+> 
+> ...but in fact bitpos is the same between PSTATE and MSR SSBS so it can 
+> be compared directly.
 
-thank you for first look on this. Patchseries is originally from Josef Friedl i got some time ago for getting poweroff working on bananapi r2. There it works and maybe on another devices too.
+Since the #defines are separate, it may be more readable to avoid
+assuming that they have the same value (even if they do).
 
-drivers/rtc/rtc-mt6397.c and drivers/rtc/rtc-mt7622.c look very differently on a diff (you've commented in part 1/3)
+But I'm happy either way.
 
-maybe code is compatible but i have not the knowledge to compare this...maybe sean (sorry, that i missed you) or ryder can say a word about the compatibility.
+> > [...]
+> > 
+> > Can we trigger a second signal after the first returns, to grab the
+> > updated ucontext and check SSBS in there directly?
+> > 
+> > Checking that the updated value is _also_ visible via MRS remains
+> > useful though, so we should keep that.
+> > 
+> 
+> I have added an informational message that reports the PSTATE and the 
+> status of SSBS as grabbed from uc via an induced SIGUSR2.
+> Test outcome is anyway  determined on MRS SSBS result.
 
-> Fix the commit message. MAINTAINERS get normally send a independent patch.
-> Split patches between RTC and PWRC.
-> If not a new patch it should be stated in the commit message at least.
+OK, sounds reasonable.
 
-i will try to split this
+> If HWCAP_SSBS is available the feature is considered available and so 
+> MRS SSBS MUST work.
 
-> > + * Author: Tianping.Fang <tianping.fang@mediatek.com>
-> > + *        Sean Wang <sean.wang@mediatek.com>
->
-> You are the author of this file, aren't you?
+Yup
 
-no, afaik these is code taken from rtc-mt6397.c and put in a separate header-file to use it in multiple c-files.
+> If instead feature is NOT supported as stated in HWCAP_SSBS the test is 
+> anyway run but the MRS SSBS is expected to cause a SIGILL (COULD not 
+> SHOULD...since HW_CAP could be reporting wrong caps and so MRS SSBS will 
+> still work)
 
-sidenote on encoding/word-wrap. i use only "git sendemail" which afaik calls sendmail (no other mta like thunderbird or similar) on ubuntu 18.4....curently have no idea how to fix this...have searched before, but not yet found anything. if you have an idea please give me a hint.
+Probably reasonable.  I don't recall whether the architecture actually
+guarantees a SIGILL though, or whether other things could happen (such
+as executing as a NOP, or reading a fixed value such as 0).
 
-regards Frank
+Can this MRS be trapped?  I'm wondering whether it will still just
+execute normally if running on hardware that has it, but on an old
+kernel that doesn't report HWCAP_SSBS.  Some of the other tests may
+fail on such a kernel though -- valid_user_regs() would probaly
+mask the bit out when setting the register through sigreturn or ptrace.
+
+> Moreover I fixed a small glitch: I was toggling the SSBS bit in uc 
+> PSTATE, BUT this make no sense...toggling to zero there's NO way I can 
+> check if Kernel preserve it to zero...so now I'm setting to 1 and then 
+> check if it has been preserved by Kernel
+
+Well, I guess you can check both ways, but the bit was previously RES0,
+so if the kernel masks it out it should be stuck at 0.
+
+So agreed, attempting to set it to 1 is the more interesting test.
+
+Cheers
+---Dave
 
 _______________________________________________
 linux-arm-kernel mailing list
