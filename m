@@ -2,48 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 80AA55E0AC
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  3 Jul 2019 11:13:20 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6FEFF5E0D4
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  3 Jul 2019 11:18:16 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=MaFEQZo5R+YIs/NO80fGxqdaofC6igtsBanNB4iRmE0=; b=Cv1WmtnyXWVXX6
-	/DjOOE5Jb2UjS1E3eP6l3tlCLZ0EAxVUO/xFnhX7L5xHq8zBXpCf+rbJB5azC9KILYAOUx7oaIkR2
-	yNoZ8r3FAOH8duOtwYygZ0E8a9zwJSE7PkeCvrALZVjgg0sK4VJvGPavycHZjrJJc20MSV2Nwv0PS
-	i/bprsWBhUFUZ24GdRf3rpzguMNW5/7f9fmyhvTosFcOUhNmH8BJOosKN+5Ua/tagv0ntZD408+yd
-	63V2AO/gW3w+Pzzig/LFa7iCWHK84F4kGJAu4sGekteYA7FuhP0VGEcEj+gQndnsOy32L+NsGPcND
-	af7aLU+teXC+b28kZu7w==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=2CGI5ffxL8UzocJ0RrTgIxG6fRlq8imDHZi52WLM8Ks=; b=eSefJtzkWSC1c6
+	v1x6AjiMaoOEGJTF/sskqCKdcZVuCttDpIvckmKS8HBwCExFsx7ybsUGw75BqDJv4RXJA5OlkXe3C
+	zDBSmwpMYGjeUmyWs+PopEXY+y3KhN325C5bISAZn1YgnLOdUFhsMwVGmaiIMdM9sJLctHM3rV8n+
+	6hrncQwfb9UmiVSih4fZPEbN2XGoeuryOfSVLD9FqokYUSApGvwoqOMiTGuZThU9tyo/Gm3f0+bMy
+	r2xDkzyUcGR7uCi04IcbAj+r1xMkUbcnQ6fPhl72Ra5qN9BRt5zVbZnLnGxBUcJnHbpi3XL+d4wMC
+	7Qys51jaHk52Kx9uAyJg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hibKI-0002LE-M9; Wed, 03 Jul 2019 09:13:18 +0000
+	id 1hibP3-0004ys-O3; Wed, 03 Jul 2019 09:18:13 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hibK5-0002KW-1c
- for linux-arm-kernel@lists.infradead.org; Wed, 03 Jul 2019 09:13:06 +0000
+ id 1hibNf-0004AF-MQ
+ for linux-arm-kernel@lists.infradead.org; Wed, 03 Jul 2019 09:16:56 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 67BE0344;
- Wed,  3 Jul 2019 02:13:04 -0700 (PDT)
-Received: from e103592.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
- [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 7F1A53F246;
- Wed,  3 Jul 2019 02:13:03 -0700 (PDT)
-Date: Wed, 3 Jul 2019 10:13:01 +0100
-From: Dave Martin <Dave.Martin@arm.com>
-To: Mark Rutland <mark.rutland@arm.com>
-Subject: Re: [PATCHv3 3/3] arm64: stacktrace: better handle corrupted stacks
-Message-ID: <20190703091301.GR2790@e103592.cambridge.arm.com>
-References: <20190702130729.19615-1-mark.rutland@arm.com>
- <20190702130729.19615-4-mark.rutland@arm.com>
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 2E1A4344;
+ Wed,  3 Jul 2019 02:16:46 -0700 (PDT)
+Received: from [10.1.31.185] (unknown [10.1.31.185])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id B377F3F246;
+ Wed,  3 Jul 2019 02:16:44 -0700 (PDT)
+Subject: Re: [PATCH 29/59] KVM: arm64: nv: Emulate EL12 register accesses from
+ the virtual EL2
+To: Marc Zyngier <marc.zyngier@arm.com>,
+ linux-arm-kernel@lists.infradead.org, kvmarm@lists.cs.columbia.edu,
+ kvm@vger.kernel.org
+References: <20190621093843.220980-1-marc.zyngier@arm.com>
+ <20190621093843.220980-30-marc.zyngier@arm.com>
+From: Alexandru Elisei <alexandru.elisei@arm.com>
+Message-ID: <5785f00f-889f-cc35-f84c-58ed98d1cee2@arm.com>
+Date: Wed, 3 Jul 2019 10:16:42 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.7.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190702130729.19615-4-mark.rutland@arm.com>
-User-Agent: Mutt/1.5.23 (2014-03-12)
+In-Reply-To: <20190621093843.220980-30-marc.zyngier@arm.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190703_021305_186534_C4D5616C 
-X-CRM114-Status: GOOD (  30.29  )
+X-CRM114-CacheID: sfid-20190703_021648_590248_0A60AFEB 
+X-CRM114-Status: GOOD (  15.92  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -62,211 +65,64 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: catalin.marinas@arm.com, tengfeif@codeaurora.org, will.deacon@arm.com,
- james.morse@arm.com, linux-arm-kernel@lists.infradead.org
+Cc: Andre Przywara <andre.przywara@arm.com>, Dave Martin <Dave.Martin@arm.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Jul 02, 2019 at 02:07:29PM +0100, Mark Rutland wrote:
-> The arm64 stacktrace code is careful to only dereference frame records
-> in valid stack ranges, ensuring that a corrupted frame record won't
-> result in a faulting access.
-> 
-> However, it's still possible for corrupt frame records to result in
-> infinite loops in the stacktrace code, which is also undesirable.
-> 
-> This patch ensures that we complete a stacktrace in finite time, by
-> keeping track of which stacks we have already completed unwinding, and
-> verifying that if the next frame record is on the same stack, it is at a
-> higher address.
-> 
-> As this has turned out to be particularly subtle, comments are added to
-> explain the procedure.
-> 
-> Signed-off-by: Mark Rutland <mark.rutland@arm.com>
-> Reviewed-by: James Morse <james.morse@arm.com>
-> Tested-by: James Morse <james.morse@arm.com>
-> Acked-by: Dave Martin <Dave.Martin@arm.com>
-> Cc: Catalin Marinas <catalin.marinas@arm.com>
-> Cc: Tengfei Fan <tengfeif@codeaurora.org>
-> Cc: Will Deacon <will.deacon@arm.com>
+
+On 6/21/19 10:38 AM, Marc Zyngier wrote:
+> From: Jintack Lim <jintack.lim@linaro.org>
+>
+> With HCR_EL2.NV bit set, accesses to EL12 registers in the virtual EL2
+> trap to EL2. Handle those traps just like we do for EL1 registers.
+>
+> One exception is CNTKCTL_EL12. We don't trap on CNTKCTL_EL1 for non-VHE
+> virtual EL2 because we don't have to. However, accessing CNTKCTL_EL12
+> will trap since it's one of the EL12 registers controlled by HCR_EL2.NV
+> bit.  Therefore, add a handler for it and don't treat it as a
+> non-trap-registers when preparing a shadow context.
+>
+> Move EL12 system register macros to a common place to reuse them.
+
+I see no change related to moving macros, is this a left over from a rebase?
+
+>
+> Signed-off-by: Jintack Lim <jintack.lim@linaro.org>
+> Signed-off-by: Marc Zyngier <marc.zyngier@arm.com>
 > ---
->  arch/arm64/include/asm/stacktrace.h | 57 +++++++++++++++++++++++++++++++------
->  arch/arm64/kernel/stacktrace.c      | 40 +++++++++++++++++++++++++-
->  2 files changed, 88 insertions(+), 9 deletions(-)
-> 
-> diff --git a/arch/arm64/include/asm/stacktrace.h b/arch/arm64/include/asm/stacktrace.h
-> index 18f90bf1385c..b3e03bbb69ea 100644
-> --- a/arch/arm64/include/asm/stacktrace.h
-> +++ b/arch/arm64/include/asm/stacktrace.h
-> @@ -19,19 +19,12 @@
->  #include <linux/percpu.h>
->  #include <linux/sched.h>
->  #include <linux/sched/task_stack.h>
-> +#include <linux/types.h>
+>  arch/arm64/kvm/sys_regs.c | 17 +++++++++++++++++
+>  1 file changed, 17 insertions(+)
+>
+> diff --git a/arch/arm64/kvm/sys_regs.c b/arch/arm64/kvm/sys_regs.c
+> index beadebcfc888..34f1b79f7856 100644
+> --- a/arch/arm64/kvm/sys_regs.c
+> +++ b/arch/arm64/kvm/sys_regs.c
+> @@ -2039,6 +2039,23 @@ static const struct sys_reg_desc sys_reg_descs[] = {
+>  	{ SYS_DESC(SYS_CNTVOFF_EL2), access_rw, reset_val, CNTVOFF_EL2, 0 },
+>  	{ SYS_DESC(SYS_CNTHCTL_EL2), access_rw, reset_val, CNTHCTL_EL2, 0 },
 >  
->  #include <asm/memory.h>
->  #include <asm/ptrace.h>
->  #include <asm/sdei.h>
->  
-> -struct stackframe {
-> -	unsigned long fp;
-> -	unsigned long pc;
-> -#ifdef CONFIG_FUNCTION_GRAPH_TRACER
-> -	int graph;
-> -#endif
-> -};
-> -
->  enum stack_type {
->  	STACK_TYPE_UNKNOWN,
->  	STACK_TYPE_TASK,
-> @@ -39,6 +32,7 @@ enum stack_type {
->  	STACK_TYPE_OVERFLOW,
->  	STACK_TYPE_SDEI_NORMAL,
->  	STACK_TYPE_SDEI_CRITICAL,
-> +	__NR_STACK_TYPES
+> +	{ SYS_DESC(SYS_SCTLR_EL12), access_vm_reg, reset_val, SCTLR_EL1, 0x00C50078 },
+> +	{ SYS_DESC(SYS_CPACR_EL12), access_rw, reset_val, CPACR_EL1, 0 },
+> +	{ SYS_DESC(SYS_TTBR0_EL12), access_vm_reg, reset_unknown, TTBR0_EL1 },
+> +	{ SYS_DESC(SYS_TTBR1_EL12), access_vm_reg, reset_unknown, TTBR1_EL1 },
+> +	{ SYS_DESC(SYS_TCR_EL12), access_vm_reg, reset_val, TCR_EL1, 0 },
+> +	{ SYS_DESC(SYS_SPSR_EL12), access_spsr},
+> +	{ SYS_DESC(SYS_ELR_EL12), access_elr},
+> +	{ SYS_DESC(SYS_AFSR0_EL12), access_vm_reg, reset_unknown, AFSR0_EL1 },
+> +	{ SYS_DESC(SYS_AFSR1_EL12), access_vm_reg, reset_unknown, AFSR1_EL1 },
+> +	{ SYS_DESC(SYS_ESR_EL12), access_vm_reg, reset_unknown, ESR_EL1 },
+> +	{ SYS_DESC(SYS_FAR_EL12), access_vm_reg, reset_unknown, FAR_EL1 },
+> +	{ SYS_DESC(SYS_MAIR_EL12), access_vm_reg, reset_unknown, MAIR_EL1 },
+> +	{ SYS_DESC(SYS_AMAIR_EL12), access_vm_reg, reset_amair_el1, AMAIR_EL1 },
+> +	{ SYS_DESC(SYS_VBAR_EL12), access_rw, reset_val, VBAR_EL1, 0 },
+> +	{ SYS_DESC(SYS_CONTEXTIDR_EL12), access_vm_reg, reset_val, CONTEXTIDR_EL1, 0 },
+> +	{ SYS_DESC(SYS_CNTKCTL_EL12), access_rw, reset_val, CNTKCTL_EL1, 0 },
+> +
+>  	{ SYS_DESC(SYS_SP_EL2), NULL, reset_unknown, SP_EL2 },
 >  };
 >  
->  struct stack_info {
-> @@ -47,6 +41,37 @@ struct stack_info {
->  	enum stack_type type;
->  };
->  
-> +/*
-> + * A snapshot of a frame record or fp/lr register values, along with some
-> + * accounting information necessary for robust unwinding.
-> + *
-> + * @fp:          The fp value in the frame record (or the real fp)
-> + * @pc:          The fp value in the frame record (or the real lr)
-> + *
-> + * @stacks_done: Stacks which have been entirely unwound, for which it is no
-> + *               longer valid to unwind to.
-> + *
-> + * @prev_fp:     The fp that pointed to this frame record, or a synthetic value
-> + *               of 0. This is used to ensure that within a stack, each
-> + *               subsequent frame record is at an increasing address.
-> + * @prev_type:   The type of stack this frame record was on, or a synthetic
-> + *               value of STACK_TYPE_UNKNOWN. This is used to detect a
-> + *               transition from one stack to another.
-> + *
-> + * @graph:       When FUNCTION_GRAPH_TRACER is selected, holds the index of a
-> + *               replacement lr value in the ftrace graph stack.
-> + */
-> +struct stackframe {
-> +	unsigned long fp;
-> +	unsigned long pc;
-> +	DECLARE_BITMAP(stacks_done, __NR_STACK_TYPES);
-> +	unsigned long prev_fp;
-> +	enum stack_type prev_type;
-> +#ifdef CONFIG_FUNCTION_GRAPH_TRACER
-> +	int graph;
-> +#endif
-> +};
-> +
->  extern int unwind_frame(struct task_struct *tsk, struct stackframe *frame);
->  extern void walk_stackframe(struct task_struct *tsk, struct stackframe *frame,
->  			    int (*fn)(struct stackframe *, void *), void *data);
-> @@ -128,6 +153,9 @@ static inline bool on_accessible_stack(const struct task_struct *tsk,
->  				       unsigned long sp,
->  				       struct stack_info *info)
->  {
-> +	if (info)
-> +		info->type = STACK_TYPE_UNKNOWN;
-> +
->  	if (on_task_stack(tsk, sp, info))
->  		return true;
->  	if (tsk != current || preemptible())
-> @@ -150,6 +178,19 @@ static inline void start_backtrace(struct stackframe *frame,
->  #ifdef CONFIG_FUNCTION_GRAPH_TRACER
->  	frame->graph = 0;
->  #endif
-> +
-> +	/*
-> +	 * Prime the first unwind.
-> +	 *
-> +	 * In unwind_frame() we'll check that the FP points to a valid stack,
-> +	 * which can't be STACK_TYPE_UNKNOWN, and the first unwind will be
-> +	 * treated as a transition to whichever stack that happens to be. The
-> +	 * prev_fp value won't be used, but we set it to 0 such that it is
-> +	 * definitely not an accessible stack address.
-> +	 */
-> +	bitmap_zero(frame->stacks_done, __NR_STACK_TYPES);
-> +	frame->prev_fp = 0;
-> +	frame->prev_type = STACK_TYPE_UNKNOWN;
->  }
->  
->  #endif	/* __ASM_STACKTRACE_H */
-> diff --git a/arch/arm64/kernel/stacktrace.c b/arch/arm64/kernel/stacktrace.c
-> index e5338216deaa..8094bfe654f5 100644
-> --- a/arch/arm64/kernel/stacktrace.c
-> +++ b/arch/arm64/kernel/stacktrace.c
-> @@ -40,9 +40,18 @@
->   *	ldp	x29, x30, [sp]
->   *	add	sp, sp, #0x10
->   */
-> +
-> +/*
-> + * Unwind from one frame record (A) to the next frame record (B).
-> + *
-> + * We terminate early if the location of B indicates a malformed chain of frame
-> + * records (e.g. a cycle), determined based on the location and fp value of A
-> + * and the location (but not the fp value) of B.
-> + */
->  int notrace unwind_frame(struct task_struct *tsk, struct stackframe *frame)
->  {
->  	unsigned long fp = frame->fp;
-> +	struct stack_info info;
->  
->  	if (fp & 0xf)
->  		return -EINVAL;
-> @@ -50,11 +59,40 @@ int notrace unwind_frame(struct task_struct *tsk, struct stackframe *frame)
->  	if (!tsk)
->  		tsk = current;
->  
-> -	if (!on_accessible_stack(tsk, fp, NULL))
-> +	if (!on_accessible_stack(tsk, fp, &info))
->  		return -EINVAL;
->  
-> +	if (test_bit(info.type, frame->stacks_done))
-> +		return -EINVAL;
-> +
-> +	/*
-> +	 * As stacks grow downward, any valid record on the same stack must be
-> +	 * at a strictly higher address than the prior record.
-> +	 *
-> +	 * Stacks can nest in several valid orders, e.g.
-> +	 *
-> +	 * TASK -> IRQ -> OVERFLOW -> SDEI_NORMAL
-> +	 * TASK -> SDEI_NORMAL -> SDEI_CRITICAL -> OVERFLOW
-> +	 *
-> +	 * ... but the nesting itself is strict. Once we transition from one
-> +	 * stack to another, it's never valid to unwind back to that first
-> +	 * stack.
-> +	 */
-> +	if (info.type == frame->prev_type) {
-> +		if (fp <= frame->prev_fp)
-> +			return -EINVAL;
-> +	} else {
-> +		set_bit(frame->prev_type, frame->stacks_done);
-> +	}
-> +
-> +	/*
-> +	 * Record this frame record's values and location. The prev_fp and
-> +	 * prev_type are only meaningful to the next unwind_frame() invocation.
-> +	 */
->  	frame->fp = READ_ONCE_NOCHECK(*(unsigned long *)(fp));
->  	frame->pc = READ_ONCE_NOCHECK(*(unsigned long *)(fp + 8));
-> +	frame->prev_fp = fp;
-> +	frame->prev_type = info.type;
-
-Thanks for the explanation.
-
-This looks less complicated that I had feared.
-
-Cheers
----Dave
 
 _______________________________________________
 linux-arm-kernel mailing list
