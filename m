@@ -2,89 +2,88 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 76D625DF5F
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  3 Jul 2019 10:14:02 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D51E65DF90
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  3 Jul 2019 10:17:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ne82rVM1Z+sGORStK+OMwEM6ZzkhZRDkJs5G8EI5ggI=; b=PHjq5AepVsmQga
-	OqLPRnj7dHAlf7k1me3rf7RAOAn0djY9Hd/Bbr5aY4ml8EvZ8jCUTkiMQv/2CRfaGqESSjqxt2tck
-	GWohq3WUa8xm8lGmQfSP4s92fnb0EKAwqU7rwCOHJ11G9Zwogw5aUQS/iawwmAOOZVbdLLM0vZA3q
-	Q+/AtjEYUE19KSigSr3nar9mGd1gXSaHRKtEGAwgxwiOrxWN/m7llcdbHgEHLiapYdQ7LOoKPHznX
-	RbKT1FVGJUX8aBusFvzIS4r11UPqp+3BCAdTW4DpeV0NMiieDs88Ei58fUjHBDG16qOYRelSJhWa5
-	CoHuXm8CzbB7K1gHun+w==;
+	List-Owner; bh=rCt1uQ+udY4UbeinRiDfNFfdS0TCzl6+RM3Xu9aLNG4=; b=FWHPJH3g+Ik9mR
+	zg5zQFJbiJ5Tp9p3fbxCzf2rUPYscZBAXU0QigZyORVBs9zKq8hWLqRi9aaVH2sxlQ0WDqHjxYhGz
+	KNFgVFNs7iJ3lmCqLKuIQILG/Sr5pWx5mMNmzMG9yVzYnVu2uNR1zXy+F5NVTj3E5AqGAZQ4m9PyG
+	Zh3tdRb3ScKpCMN3wPH6O+IsetEAHxlNspSpL5OSKL7u6naons7TXPB10iatR6CCXSYqrxA50g+H8
+	BEtVN2kvTGOhktERr3GgB45fDb69TpDNdYE41Qb7x1pYsAdpwpdqeWdMqPUuA1bCLP7jET6LGOKAJ
+	SJXgJ4Xatax46JK1r3eg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hiaOu-0003gA-Vi; Wed, 03 Jul 2019 08:14:01 +0000
-Received: from mail-pf1-x444.google.com ([2607:f8b0:4864:20::444])
+	id 1hiaSC-0005ZQ-J5; Wed, 03 Jul 2019 08:17:24 +0000
+Received: from mail-ot1-x342.google.com ([2607:f8b0:4864:20::342])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hiaOU-0003WY-Vf
- for linux-arm-kernel@lists.infradead.org; Wed, 03 Jul 2019 08:13:36 +0000
-Received: by mail-pf1-x444.google.com with SMTP id i189so844106pfg.10
+ id 1hiaS0-0005Yt-Dy
+ for linux-arm-kernel@lists.infradead.org; Wed, 03 Jul 2019 08:17:13 +0000
+Received: by mail-ot1-x342.google.com with SMTP id z23so1406290ote.13
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 03 Jul 2019 01:13:34 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=jpedf64g2nGaIs7kgKn6od/wbXCzG2Hoh0kidvPp7dk=;
- b=tOprpnLAEEu6fBkdjXEIJ34BuvWtKBDm5oEf54+Da+m50nWfaYSHHYYdb5/6Vg0El4
- GJXh6N9s/2RFeP58PZSTqgYb2ZdhyQS2yTWrNvpC6u1D9qtX1/Qlc4cRYCxvCgbG0De5
- jguuTe0m9jiGaF+yO+h2AMOilbpq1WM7maY29R5L9CrC/EYcCkNr9OWivOSCFOjuq69D
- EczBnsIA5UnKpZuB9Ia+uJvA+97afMhGs5Rm1HCuUAZfMqJdl+6ll0oGKFfn9b2dITd7
- BNZ2sm9qhOeUAIBRDu9q74BmWc5/WvUNz0KwH+MVw2Lb26Xh5Rqc3UaLLh7sTs8/xFit
- RP8Q==
+ Wed, 03 Jul 2019 01:17:12 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=KbUJk2ldtGkFXbb/hUiSZglrGE0E+zl75r+apGMwxXc=;
+ b=taHtVk2prlLVdkCLv7izJLUW8aglmKjNUhvyHAfVNVSnYnAW3untkvdgmFWHmoiuwi
+ uQ8enVGVbsPu+lIBQi6hrm2Au6jS5v209ePxq8WxNT16IrRx4heT1SvAS+fgiHDSZWGp
+ 7eFBC72rZ19FCVg7ZYwIBT8Ck8L5IhR/+dLEk/3fq5F50Bm5Cp0labne5B2MNjOmdkHc
+ bzdQNCIZCMNySeqcr+VsOB9MkTA6+T36eeEAVvhXXf/hmU4lNZGVKVt74Ar8obEX9bS+
+ cdAIhdpiL5/KzW1J9yHW1xqM8vM340ZZYmRcSXGMjRROIQw645spS05tc0xGNMfN9wFd
+ AOhg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=jpedf64g2nGaIs7kgKn6od/wbXCzG2Hoh0kidvPp7dk=;
- b=GAZk4nnR878HLpqfTUT9LptZjAGPttZw4yYi634QlIsWa/EJD3P/bDcWEKVwTXJnxU
- ZzcHsypTi3xj8eFCsTXoI/FuU7suAuMCGlUBYr1GMh9TQAsYPlcxpF1oDLe+F4ZTZtCU
- wK5OY0idshv3COFw505s7mRcFrT11rxI9WgGB40MNmrD/bgyAWPx5Z5fZaf6dRPQpHud
- jSacVQJNVSjIrdggHKrljUZZSXL7yO8/qXjTr/rTU4h2LGluO0oDePzQ3PJeTni3qLh7
- m+oxIuTBorc7YmlkDZsn+kRWVlUqk5yGFF6OhAVtBecTsCerU0WO72k1xT4c5iAAlPv5
- fH7A==
-X-Gm-Message-State: APjAAAWU7X0BVsLpG3ZNVvumPazfAHc40n+LksazHEhKDZW1fIEZgipE
- 22wEMskONWNJDtXma5qoXlI=
-X-Google-Smtp-Source: APXvYqzNOnUDpfrEJM1ib6cYQUAiqJDL28YiIUT8L7BJ5nYJWLkdmVuLfk19mXffx4aXSbV1sHUrBQ==
-X-Received: by 2002:a17:90a:a116:: with SMTP id
- s22mr11066464pjp.47.1562141614267; 
- Wed, 03 Jul 2019 01:13:34 -0700 (PDT)
-Received: from localhost.localdomain ([122.163.64.117])
- by smtp.gmail.com with ESMTPSA id m6sm1176450pjl.18.2019.07.03.01.13.30
- (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Wed, 03 Jul 2019 01:13:33 -0700 (PDT)
-From: Nishka Dasgupta <nishkadg.linux@gmail.com>
-To: maxime.ripard@bootlin.com, paul.kocialkowski@bootlin.com,
- mchehab@kernel.org, gregkh@linuxfoundation.org, wens@csie.org,
- linux-media@vger.kernel.org, devel@driverdev.osuosl.org,
- linux-arm-kernel@lists.infradead.org
-Subject: [PATCH 2/2] staging: media: sunxi: Replace function
- cedrus_check_format()
-Date: Wed,  3 Jul 2019 13:43:17 +0530
-Message-Id: <20190703081317.22795-2-nishkadg.linux@gmail.com>
-X-Mailer: git-send-email 2.19.1
-In-Reply-To: <20190703081317.22795-1-nishkadg.linux@gmail.com>
-References: <20190703081317.22795-1-nishkadg.linux@gmail.com>
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=KbUJk2ldtGkFXbb/hUiSZglrGE0E+zl75r+apGMwxXc=;
+ b=otvPoXfTIsiKxqiPK7Fl64RSIPiUtbHX47jam3cSMUw0MpzpgKOw2cudafzorGrK6y
+ QEl+ZDJ2ocGedy9cSgas7UolAy65z1WUer+/Q9n4K1EbteGYFL3qJ31qE/yelNdaYeh/
+ eR0wgsPYVOBaNTMpEg3XvqDKU1qu11XXjDSdPvg/3n48hRgEhk1BSAqDD7pFA22tolvO
+ vdbgjntpaYvfENrytYAvB+FDD6BwQxK2QtGmfkfPLvxCnk+UCGEnsAcJ+XHWUBOAf4mn
+ bIswoZS0FaJ8YSDvVTeN3B79e7BIOBg5g65UJvYtwD7I0sGr0x3xtF0sIfbaBVveEo1n
+ Gzgg==
+X-Gm-Message-State: APjAAAUAuAPhKHXkEeOKcMqWb3O7KQHgu9xi+OpfzVh8HIVgmDcLwMu/
+ TWeVPZHS5yrBhAsfMo6ENjT2xw==
+X-Google-Smtp-Source: APXvYqx99yi1XCUO1gr95zNH/ZhvnymqBxz9z0Odjb8hu2+hmpd3LCWQlN/dWNdu5Dn+13anYfM4hA==
+X-Received: by 2002:a9d:1718:: with SMTP id i24mr26800741ota.269.1562141831330; 
+ Wed, 03 Jul 2019 01:17:11 -0700 (PDT)
+Received: from leoy-ThinkPad-X240s (li964-79.members.linode.com. [45.33.10.79])
+ by smtp.gmail.com with ESMTPSA id d200sm554816oih.26.2019.07.03.01.17.01
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Wed, 03 Jul 2019 01:17:10 -0700 (PDT)
+Date: Wed, 3 Jul 2019 16:16:57 +0800
+From: Leo Yan <leo.yan@linaro.org>
+To: Adrian Hunter <adrian.hunter@intel.com>
+Subject: Re: [PATCH v1 10/11] perf intel-pt: Smatch: Fix potential NULL
+ pointer dereference
+Message-ID: <20190703081657.GD6852@leoy-ThinkPad-X240s>
+References: <20190702103420.27540-1-leo.yan@linaro.org>
+ <20190702103420.27540-11-leo.yan@linaro.org>
+ <cfef1777-141e-4223-e0c1-1a3f3aee1d3c@intel.com>
+ <20190703013553.GB6852@leoy-ThinkPad-X240s>
+ <b65cf4c6-3484-85c8-d191-35021ed6ed3e@intel.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <b65cf4c6-3484-85c8-d191-35021ed6ed3e@intel.com>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190703_011335_081012_81A2F8DD 
-X-CRM114-Status: GOOD (  10.75  )
+X-CRM114-CacheID: sfid-20190703_011712_499905_CE9BA7F6 
+X-CRM114-Status: GOOD (  19.58  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:444 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:342 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (nishkadg.linux[at]gmail.com)
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -103,54 +102,73 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Nishka Dasgupta <nishkadg.linux@gmail.com>
+Cc: Song Liu <songliubraving@fb.com>, Peter Zijlstra <peterz@infradead.org>,
+ Rasmus Villemoes <linux@rasmusvillemoes.dk>, Jin Yao <yao.jin@linux.intel.com>,
+ Jiri Olsa <jolsa@redhat.com>, Andi Kleen <ak@linux.intel.com>,
+ Eric Saint-Etienne <eric.saint.etienne@oracle.com>,
+ Konstantin Khlebnikov <khlebnikov@yandex-team.ru>,
+ Ingo Molnar <mingo@redhat.com>, Suzuki K Poulose <suzuki.poulose@arm.com>,
+ Arnaldo Carvalho de Melo <acme@kernel.org>,
+ Alexios Zavras <alexios.zavras@intel.com>, Davidlohr Bueso <dave@stgolabs.net>,
+ Namhyung Kim <namhyung@kernel.org>, Thomas Gleixner <tglx@linutronix.de>,
+ linux-arm-kernel@lists.infradead.org,
+ Mathieu Poirier <mathieu.poirier@linaro.org>,
+ Thomas Richter <tmricht@linux.ibm.com>, linux-kernel@vger.kernel.org,
+ Alexander Shishkin <alexander.shishkin@linux.intel.com>,
+ "David S. Miller" <davem@davemloft.net>, Changbin Du <changbin.du@intel.com>,
+ Alexey Budankov <alexey.budankov@linux.intel.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Remove function cedrus_check_format as all it does is call
-cedrus_find_format.
-Rename cedrus_find_format to cedrus_check_format to maintain
-compatibility with call sites.
-Issue found with Coccinelle.
+On Wed, Jul 03, 2019 at 08:19:19AM +0300, Adrian Hunter wrote:
+> On 3/07/19 4:35 AM, Leo Yan wrote:
+> > Hi Adrian,
+> > 
+> > On Tue, Jul 02, 2019 at 02:07:40PM +0300, Adrian Hunter wrote:
+> >> On 2/07/19 1:34 PM, Leo Yan wrote:
+> >>> Based on the following report from Smatch, fix the potential
+> >>> NULL pointer dereference check.
+> >>
+> >> It never is NULL.  Remove the NULL test if you want:
+> >>
+> >> -	if (session->itrace_synth_opts && session->itrace_synth_opts->set) {
+> >> +	if (session->itrace_synth_opts->set) {
+> >>
+> >> But blindly making changes like below is questionable.
+> > 
+> > Thanks for suggestions.
+> > 
+> > I checked report and script commands, as you said, both command will
+> > always set session->itrace_synth_opts.  For these two commands, we can
+> > safely remove the NULL test.
+> > 
+> > Because perf tool contains many sub commands, so I don't have much
+> > confidence it's very safe to remove the NULL test for all cases; e.g.
+> > there have cases which will process aux trace buffer but without
+> > itrace options; for this case, session->itrace_synth_opts might be NULL.
+> > 
+> > For either way (remove NULL test or keep NULL test), I don't want to
+> > introduce regression and extra efforts by my patch.  So want to double
+> > confirm with you for this :)
+> 
+> Yes, intel_pt_process_auxtrace_info() only gets called if a tool sets up the
+> tools->auxtrace_info() callback.  The tools that do that also set
+> session->itrace_synth_opts.
 
-Signed-off-by: Nishka Dasgupta <nishkadg.linux@gmail.com>
----
- drivers/staging/media/sunxi/cedrus/cedrus_video.c | 10 ++--------
- 1 file changed, 2 insertions(+), 8 deletions(-)
+Yes.
 
-diff --git a/drivers/staging/media/sunxi/cedrus/cedrus_video.c b/drivers/staging/media/sunxi/cedrus/cedrus_video.c
-index 0ec31b9e0aea..d5cc9ed04fd2 100644
---- a/drivers/staging/media/sunxi/cedrus/cedrus_video.c
-+++ b/drivers/staging/media/sunxi/cedrus/cedrus_video.c
-@@ -55,8 +55,8 @@ static inline struct cedrus_ctx *cedrus_file2ctx(struct file *file)
- 	return container_of(file->private_data, struct cedrus_ctx, fh);
- }
- 
--static bool cedrus_find_format(u32 pixelformat, u32 directions,
--			       unsigned int capabilities)
-+static bool cedrus_check_format(u32 pixelformat, u32 directions,
-+				unsigned int capabilities)
- {
- 	struct cedrus_format *fmt;
- 	unsigned int i;
-@@ -76,12 +76,6 @@ static bool cedrus_find_format(u32 pixelformat, u32 directions,
- 	return false;
- }
- 
--static bool cedrus_check_format(u32 pixelformat, u32 directions,
--				unsigned int capabilities)
--{
--	return cedrus_find_format(pixelformat, directions, capabilities);
--}
--
- static void cedrus_prepare_format(struct v4l2_pix_format *pix_fmt)
- {
- 	unsigned int width = pix_fmt->width;
--- 
-2.19.1
+I also checked the another case for 'perf inject', just as you said,
+it sets both inject->tool.auxtrace_info and session->itrace_synth_opts
+if we use 'itrace' option.  So it's safe to remove the NULL test for
+session->itrace_synth_opts.
 
+Will follow your suggestion for new patches.  Thanks a lot for
+confirmation and suggestions.
+
+Thanks,
+Leo Yan
 
 _______________________________________________
 linux-arm-kernel mailing list
