@@ -2,53 +2,44 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 916865E927
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  3 Jul 2019 18:33:14 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8F1B55E952
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  3 Jul 2019 18:37:28 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=O/k2UxBqIOfDfZiX3fMuuFKi/zSoSTN6v49tHBfy8aE=; b=MJBvR3vqP2qIs0
-	RoLAslldXeFtJ+hgfRVWsSOnkNc6IuFDWJZnhMc0MyawxPYRb58sgIFxWhj/wV8aGTUjJmp15lhvc
-	fEcP01/rqGN43QUsOMV/Sg4JrMA7FuclcJdUs4wC4aR4Nxau9xizzxfvhuiQnpDNPfH1iM+7LDhDy
-	bNTb4vh/Plm6cKKYq7pnQpaX3YgJZmGQrxlnv3QhGc0TczZejmQZP9bkG2Hg5qoTeWp2+PGFx7cfr
-	I0GJR2xeBJUdptqAXI6BhHq3+TtiLyqw4YjPBZcMVdRf+j4ksIgzY0aA9Ka4CdCT3xctLkvA/o7ca
-	WFyYYo1B2zUJGoX/XXnQ==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=Ne+/lDrkyP3RswBzOY+q6bt1IhNVukHDHJCb2EOT8mM=; b=cuK
+	z/kuAS0u+PRTTui4mzc8ZrJZtRa5rJxPYYCgQO+bNIk2lsTZK/KhwwdUWDLf/4wAT43XyX/QKsJas
+	LARazSaOqa/OZUmOqAyaVHgG2QKXhwaXcziOvlUU2BlbxcjyK1L37YHSk1YZCEFm0Fh2C6Oxpk3ds
+	/e5deSvY0B6YMDZZO87YU5rHhKV7KopWwtv/OIEAgaTxnDA9vbYYW1bv+4UpJAOmKqY2vpABUxGd6
+	4lFI/nNhvjTTXjxLBcwU+xQR31yWqrdC8IkN+a4QWiE8kw4AnAaCrnTdSuRduCGQrUc4gf0sYJwWt
+	JolCvu8xZ5Rix6k7zPWTkRMq4Q72o3g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hiiC1-0001GR-6f; Wed, 03 Jul 2019 16:33:13 +0000
+	id 1hiiG7-0003nV-7W; Wed, 03 Jul 2019 16:37:27 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hiiBg-0001D0-AY
- for linux-arm-kernel@lists.infradead.org; Wed, 03 Jul 2019 16:32:54 +0000
+ id 1hiiF0-00035v-9d
+ for linux-arm-kernel@lists.infradead.org; Wed, 03 Jul 2019 16:36:20 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id CCDF4344;
- Wed,  3 Jul 2019 09:32:51 -0700 (PDT)
-Received: from [10.1.31.185] (unknown [10.1.31.185])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 5EDFD3F718;
- Wed,  3 Jul 2019 09:32:50 -0700 (PDT)
-Subject: Re: [PATCH 13/59] KVM: arm64: nv: Handle virtual EL2 registers in
- vcpu_read/write_sys_reg()
-To: Marc Zyngier <marc.zyngier@arm.com>,
- linux-arm-kernel@lists.infradead.org, kvmarm@lists.cs.columbia.edu,
- kvm@vger.kernel.org
-References: <20190621093843.220980-1-marc.zyngier@arm.com>
- <20190621093843.220980-14-marc.zyngier@arm.com>
- <6a866fda-a332-9881-b466-2a855deea6a5@arm.com>
- <13886346-cbbc-a17c-b83d-e189a30e0696@arm.com>
-From: Alexandru Elisei <alexandru.elisei@arm.com>
-Message-ID: <c3138f83-ccfb-5d01-3cac-be47f1eb916c@arm.com>
-Date: Wed, 3 Jul 2019 17:32:48 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.7.0
-MIME-Version: 1.0
-In-Reply-To: <13886346-cbbc-a17c-b83d-e189a30e0696@arm.com>
-Content-Language: en-US
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 4D702344;
+ Wed,  3 Jul 2019 09:36:13 -0700 (PDT)
+Received: from e120937-lin.cambridge.arm.com (e120937-lin.cambridge.arm.com
+ [10.1.197.50])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 7F2F23F718;
+ Wed,  3 Jul 2019 09:36:12 -0700 (PDT)
+From: Cristian Marussi <cristian.marussi@arm.com>
+To: linux-kselftest@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ shuah@kernel.org
+Subject: [PATCH v2 00/10] Add arm64/signal initial kselftest support
+Date: Wed,  3 Jul 2019 17:35:22 +0100
+Message-Id: <20190703163532.7485-1-cristian.marussi@arm.com>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190703_093252_615967_6B7FCE92 
-X-CRM114-Status: GOOD (  41.10  )
+X-CRM114-CacheID: sfid-20190703_093618_448961_EA6FDA5F 
+X-CRM114-Status: GOOD (  13.39  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -67,307 +58,145 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Andre Przywara <andre.przywara@arm.com>, Dave Martin <Dave.Martin@arm.com>
+Cc: andreyknvl@google.com, dave.martin@arm.com
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Hi
 
-On 7/3/19 4:59 PM, Marc Zyngier wrote:
-> On 25/06/2019 16:18, Alexandru Elisei wrote:
->> Hi Marc,
->>
->> A question regarding this patch. This patch modifies vcpu_{read,write}_sys_reg
->> to handle virtual EL2 registers. However, the file kvm/emulate-nested.c added by
->> patch 10/59 "KVM: arm64: nv: Support virtual EL2 exceptions" already uses
->> vcpu_{read,write}_sys_reg to access EL2 registers. In my opinion, it doesn't
->> really matter which comes first because nested support is only enabled in the
->> last patch of the series, but I thought I should bring this up in case it is not
->> what you intended.
-> It doesn't really matter at that stage. The only thing I'm trying to
-> achieve in the middle of the series is not to break the build, and not
-> to cause non-NV to fail.
->
->> On 6/21/19 10:37 AM, Marc Zyngier wrote:
->>> From: Andre Przywara <andre.przywara@arm.com>
->>>
->>> KVM internally uses accessor functions when reading or writing the
->>> guest's system registers. This takes care of accessing either the stored
->>> copy or using the "live" EL1 system registers when the host uses VHE.
->>>
->>> With the introduction of virtual EL2 we add a bunch of EL2 system
->>> registers, which now must also be taken care of:
->>> - If the guest is running in vEL2, and we access an EL1 sysreg, we must
->>>   revert to the stored version of that, and not use the CPU's copy.
->>> - If the guest is running in vEL1, and we access an EL2 sysreg, we must
->>>   also use the stored version, since the CPU carries the EL1 copy.
->>> - Some EL2 system registers are supposed to affect the current execution
->>>   of the system, so we need to put them into their respective EL1
->>>   counterparts. For this we need to define a mapping between the two.
->>>   This is done using the newly introduced struct el2_sysreg_map.
->>> - Some EL2 system registers have a different format than their EL1
->>>   counterpart, so we need to translate them before writing them to the
->>>   CPU. This is done using an (optional) translate function in the map.
->>> - There are the three special registers SP_EL2, SPSR_EL2 and ELR_EL2,
->>>   which need some separate handling.
->> I see no change in this patch related to SPSR_EL2. Special handling of SPSR_EL2
->> is added in the next patch, patch 14/59 "KVM: arm64: nv: Handle SPSR_EL2 specially".
-> Indeed, this needs rewriting (we ended-up splitting the SPSR stuff out
-> as it was messy and not completely correct). I may take the rest of the
-> special stuff out as well.
->
->>> All of these cases are now wrapped into the existing accessor functions,
->>> so KVM users wouldn't need to care whether they access EL2 or EL1
->>> registers and also which state the guest is in.
->>>
->>> This handles what was formerly known as the "shadow state" dynamically,
->>> without requiring a separate copy for each vCPU EL.
->>>
->>> Signed-off-by: Andre Przywara <andre.przywara@arm.com>
->>> Signed-off-by: Marc Zyngier <marc.zyngier@arm.com>
->>> ---
->>>  arch/arm64/include/asm/kvm_emulate.h |   6 +
->>>  arch/arm64/include/asm/kvm_host.h    |   5 +
->>>  arch/arm64/kvm/sys_regs.c            | 163 +++++++++++++++++++++++++++
->>>  3 files changed, 174 insertions(+)
->>>
->>> diff --git a/arch/arm64/include/asm/kvm_emulate.h b/arch/arm64/include/asm/kvm_emulate.h
->>> index c43aac5fed69..f37006b6eec4 100644
->>> --- a/arch/arm64/include/asm/kvm_emulate.h
->>> +++ b/arch/arm64/include/asm/kvm_emulate.h
->>> @@ -70,6 +70,12 @@ void kvm_emulate_nested_eret(struct kvm_vcpu *vcpu);
->>>  int kvm_inject_nested_sync(struct kvm_vcpu *vcpu, u64 esr_el2);
->>>  int kvm_inject_nested_irq(struct kvm_vcpu *vcpu);
->>>  
->>> +u64 translate_tcr(u64 tcr);
->>> +u64 translate_cptr(u64 tcr);
->>> +u64 translate_sctlr(u64 tcr);
->>> +u64 translate_ttbr0(u64 tcr);
->>> +u64 translate_cnthctl(u64 tcr);
->>> +
->>>  static inline bool vcpu_el1_is_32bit(struct kvm_vcpu *vcpu)
->>>  {
->>>  	return !(vcpu->arch.hcr_el2 & HCR_RW);
->>> diff --git a/arch/arm64/include/asm/kvm_host.h b/arch/arm64/include/asm/kvm_host.h
->>> index 2d4290d2513a..dae9c42a7219 100644
->>> --- a/arch/arm64/include/asm/kvm_host.h
->>> +++ b/arch/arm64/include/asm/kvm_host.h
->>> @@ -217,6 +217,11 @@ enum vcpu_sysreg {
->>>  	NR_SYS_REGS	/* Nothing after this line! */
->>>  };
->>>  
->>> +static inline bool sysreg_is_el2(int reg)
->>> +{
->>> +	return reg >= FIRST_EL2_SYSREG && reg < NR_SYS_REGS;
->>> +}
->>> +
->>>  /* 32bit mapping */
->>>  #define c0_MPIDR	(MPIDR_EL1 * 2)	/* MultiProcessor ID Register */
->>>  #define c0_CSSELR	(CSSELR_EL1 * 2)/* Cache Size Selection Register */
->>> diff --git a/arch/arm64/kvm/sys_regs.c b/arch/arm64/kvm/sys_regs.c
->>> index 693dd063c9c2..d024114da162 100644
->>> --- a/arch/arm64/kvm/sys_regs.c
->>> +++ b/arch/arm64/kvm/sys_regs.c
->>> @@ -76,11 +76,142 @@ static bool write_to_read_only(struct kvm_vcpu *vcpu,
->>>  	return false;
->>>  }
->>>  
->>> +static u64 tcr_el2_ips_to_tcr_el1_ps(u64 tcr_el2)
->> The code seems to suggest that you are translating TCR_EL2.PS to TCR_EL1.IPS.
->> Perhaps the function should be named tcr_el2_ps_to_tcr_el1_ips?
-> yup.
->
->>> +{
->>> +	return ((tcr_el2 & TCR_EL2_PS_MASK) >> TCR_EL2_PS_SHIFT)
->>> +		<< TCR_IPS_SHIFT;
->>> +}
->>> +
->>> +u64 translate_tcr(u64 tcr)
->>> +{
->>> +	return TCR_EPD1_MASK |				/* disable TTBR1_EL1 */
->>> +	       ((tcr & TCR_EL2_TBI) ? TCR_TBI0 : 0) |
->>> +	       tcr_el2_ips_to_tcr_el1_ps(tcr) |
->>> +	       (tcr & TCR_EL2_TG0_MASK) |
->>> +	       (tcr & TCR_EL2_ORGN0_MASK) |
->>> +	       (tcr & TCR_EL2_IRGN0_MASK) |
->>> +	       (tcr & TCR_EL2_T0SZ_MASK);
->>> +}
->>> +
->>> +u64 translate_cptr(u64 cptr_el2)
->> The argument name is not consistent with the other translate_* functions. I
->> think it is reasonably obvious that you are translating an EL2 register.
-> That's pretty much immaterial, and the variable could be called zorglub.
-> Consistency is good, but I don't think we need to worry about that level
-> of detail.
+this patchset aims to add the initial arch-specific arm64 support to
+kselftest starting with signals-related test-cases.
+A common internal test-case layout is proposed which then it is
+anyway wired-up to the toplevel kselftest Makefile, so that it
+should be possible at the end to run it on an arm64 target in the
+usual way with KSFT.
 
-Sure.
+~/linux# make TARGETS=arm64 kselftest
 
->
->>> +{
->>> +	u64 cpacr_el1 = 0;
->>> +
->>> +	if (!(cptr_el2 & CPTR_EL2_TFP))
->>> +		cpacr_el1 |= CPACR_EL1_FPEN;
->>> +	if (cptr_el2 & CPTR_EL2_TTA)
->>> +		cpacr_el1 |= CPACR_EL1_TTA;
->>> +	if (!(cptr_el2 & CPTR_EL2_TZ))
->>> +		cpacr_el1 |= CPACR_EL1_ZEN;
->>> +
->>> +	return cpacr_el1;
->>> +}
->>> +
->>> +u64 translate_sctlr(u64 sctlr)
->>> +{
->>> +	/* Bit 20 is RES1 in SCTLR_EL1, but RES0 in SCTLR_EL2 */
->>> +	return sctlr | BIT(20);
->>> +}
->>> +
->>> +u64 translate_ttbr0(u64 ttbr0)
->>> +{
->>> +	/* Force ASID to 0 (ASID 0 or RES0) */
->> Are you forcing ASID to 0 because you are only expecting a non-vhe guest
->> hypervisor to access ttbr0_el2, in which case the architecture says that the
->> ASID field is RES0? Is it so unlikely that a vhe guest hypervisor will access
->> ttbr0_el2 directly that it's not worth adding a check for that?
-> Like all the translate_* function, this is only called when running a
-> non-VHE guest so that the EL2 register is translated to the EL1 format.
-> A VHE guest usually has its sysregs in the EL1 format, and certainly
-> does for TTBR0_EL2.
+New KSFT arm64 testcases live inside tools/testing/selftests/arm64 grouped by
+family inside subdirectories: arm64/signal is the first family proposed with
+this series. arm64/signal tests can be run via KSFT or standalone.
 
-Yeah, figured that out after I sent this patch.
+Thanks
 
->
->>> +	return ttbr0 & ~GENMASK_ULL(63, 48);
->>> +}
->>> +
->>> +u64 translate_cnthctl(u64 cnthctl)
->>> +{
->>> +	return ((cnthctl & 0x3) << 10) | (cnthctl & 0xfc);
->> Patch 16/59 "KVM: arm64: nv: Save/Restore vEL2 sysregs" suggests that you are
->> translating CNTHCTL to write it to CNTKCTL_EL1. Looking at ARM DDI 0487D.b,
->> CNTKCTL_EL1 has bits 63:10 RES0. I think the correct value should be ((cnthctl &
->> 0x3) << 8) | (cnthctl & 0xfc).
-> Rookie mistake! When HCR_EL2.E2h==1 (which is always the case for NV),
-> CNTKCTL_EL1 accesses CNTHCTL_EL2. What you have here is the translation
-> of non-VHE CNTHCTL_EL2 to its VHE equivalent.
+Cristian
 
-Indeed! Thank you for pointing it out.
 
->
->>> +}
->>> +
->>> +#define EL2_SYSREG(el2, el1, translate)	\
->>> +	[el2 - FIRST_EL2_SYSREG] = { el2, el1, translate }
->>> +#define PURE_EL2_SYSREG(el2) \
->>> +	[el2 - FIRST_EL2_SYSREG] = { el2,__INVALID_SYSREG__, NULL }
->>> +/*
->>> + * Associate vEL2 registers to their EL1 counterparts on the CPU.
->>> + * The translate function can be NULL, when the register layout is identical.
->>> + */
->>> +struct el2_sysreg_map {
->>> +	int sysreg;	/* EL2 register index into the array above */
->>> +	int mapping;	/* associated EL1 register */
->>> +	u64 (*translate)(u64 value);
->>> +} nested_sysreg_map[NR_SYS_REGS - FIRST_EL2_SYSREG] = {
->>> +	PURE_EL2_SYSREG( VPIDR_EL2 ),
->>> +	PURE_EL2_SYSREG( VMPIDR_EL2 ),
->>> +	PURE_EL2_SYSREG( ACTLR_EL2 ),
->>> +	PURE_EL2_SYSREG( HCR_EL2 ),
->>> +	PURE_EL2_SYSREG( MDCR_EL2 ),
->>> +	PURE_EL2_SYSREG( HSTR_EL2 ),
->>> +	PURE_EL2_SYSREG( HACR_EL2 ),
->>> +	PURE_EL2_SYSREG( VTTBR_EL2 ),
->>> +	PURE_EL2_SYSREG( VTCR_EL2 ),
->>> +	PURE_EL2_SYSREG( RVBAR_EL2 ),
->>> +	PURE_EL2_SYSREG( RMR_EL2 ),
->>> +	PURE_EL2_SYSREG( TPIDR_EL2 ),
->>> +	PURE_EL2_SYSREG( CNTVOFF_EL2 ),
->>> +	PURE_EL2_SYSREG( CNTHCTL_EL2 ),
->>> +	PURE_EL2_SYSREG( HPFAR_EL2 ),
->>> +	EL2_SYSREG(      SCTLR_EL2,  SCTLR_EL1,      translate_sctlr ),
->>> +	EL2_SYSREG(      CPTR_EL2,   CPACR_EL1,      translate_cptr  ),
->>> +	EL2_SYSREG(      TTBR0_EL2,  TTBR0_EL1,      translate_ttbr0 ),
->>> +	EL2_SYSREG(      TTBR1_EL2,  TTBR1_EL1,      NULL            ),
->>> +	EL2_SYSREG(      TCR_EL2,    TCR_EL1,        translate_tcr   ),
->>> +	EL2_SYSREG(      VBAR_EL2,   VBAR_EL1,       NULL            ),
->>> +	EL2_SYSREG(      AFSR0_EL2,  AFSR0_EL1,      NULL            ),
->>> +	EL2_SYSREG(      AFSR1_EL2,  AFSR1_EL1,      NULL            ),
->>> +	EL2_SYSREG(      ESR_EL2,    ESR_EL1,        NULL            ),
->>> +	EL2_SYSREG(      FAR_EL2,    FAR_EL1,        NULL            ),
->>> +	EL2_SYSREG(      MAIR_EL2,   MAIR_EL1,       NULL            ),
->>> +	EL2_SYSREG(      AMAIR_EL2,  AMAIR_EL1,      NULL            ),
->>> +};
->> Figuring out which registers are in this map and which aren't and are supposed
->> to be treated differently is really cumbersome because they are split into two
->> types of el2 registers and their order is different from the order in enum
->> vcpu_sysreg (in kvm_host.h). Perhaps adding a comment about what registers will
->> be treated differently would make the code a bit easier to follow?
-> I'm not sure what this buys us. We have 3 categories of EL2 sysregs:
-> - Purely emulated
-> - Directly mapped onto an EL1 sysreg
-> - Translated from EL2 to EL1
->
-> I think the wrappers represent that pretty well, although we could split
-> EL2_SYSREG into DIRECT_EL2_SYSREG and TRANSLATE_EL2_SYSREG. As for the
-> order, does it really matter? We also have the trap table order, which
-> is also different from the enum. Do you propose we reorder everything?
+Notes:
+-----
+- further details in the included READMEs
 
-The wrappers and the naming are fine.
+- more tests still to be written (current strategy is going through the related
+  Kernel signal-handling code and write a test for each possible and sensible code-path)
 
-I was trying to figure out which EL2 registers are in the nested_sysreg_map and
-which aren't (that's what I meant by "two types of registers") by looking at the
-vcpu_sysreg enum. Because the order in the map is different than the order in
-the enum, I was having a difficult time figuring out which registers are not in
-the nested_sysreg_map to make sure we haven't somehow forgot to emulate a register.
+- a bit of overlap around KSFT arm64/ Makefiles is expected with this recently
+  proposed patch-series:
+  http://lists.infradead.org/pipermail/linux-arm-kernel/2019-June/659432.html
 
-So no, I wasn't asking to reorder everything. I was asking if it would be
-appropriate to write a comment stating the intention to treat registers X, Y and
-Z separately from the registers in nested_sysreg_map.
 
->
->>> +
->>> +static
->>> +const struct el2_sysreg_map *find_el2_sysreg(const struct el2_sysreg_map *map,
->>> +					     int reg)
->>> +{
->>> +	const struct el2_sysreg_map *entry;
->>> +
->>> +	if (!sysreg_is_el2(reg))
->>> +		return NULL;
->>> +
->>> +	entry = &nested_sysreg_map[reg - FIRST_EL2_SYSREG];
->>> +	if (entry->sysreg == __INVALID_SYSREG__)
->>> +		return NULL;
->>> +
->>> +	return entry;
->>> +}
->>> +
->>>  u64 vcpu_read_sys_reg(const struct kvm_vcpu *vcpu, int reg)
->>>  {
->>> +
->>>  	if (!vcpu->arch.sysregs_loaded_on_cpu)
->>>  		goto immediate_read;
->>>  
->>> +	if (unlikely(sysreg_is_el2(reg))) {
->>> +		const struct el2_sysreg_map *el2_reg;
->>> +
->>> +		if (!is_hyp_ctxt(vcpu))
->>> +			goto immediate_read;
->> I'm confused by this. is_hyp_ctxt returns false when the guest is not in vEL2
->> AND HCR_EL.E2H or HCR_EL2.TGE are not set. In this case, the NV bit will not be
->> set and the hardware will raise an undefined instruction exception when
->> accessing an EL2 register from EL1. What am I missing?
-> You don't necessarily access an EL2 register just because you run at
-> EL2. You also access it because you emulate an EL1 instruction whose
-> behaviour is conditioned by an EL2 register.
+Changes:
+--------
 
-Got it, now it makes a lot more sense.
+ v1-->v2:
+- rebased on 5.2-rc7
+- various makefile's cleanups
+- mixed READMEs fixes
+- fixed test_arm64_signals.sh runner script
+- cleaned up assembly code in signal.S
+- improved get_current_context() logic
+- fixed SAFE_WRITE()
+- common support code splitted into more chunks, each one introduced when
+  needed by some new testcases
+- fixed some headers validation routines in testcases.c
+- removed some still broken/immature tests:
+  + fake_sigreturn_misaligned
+  + fake_sigreturn_overflow_reserved
+  + mangle_pc_invalid
+  + mangle_sp_misaligned
+- fixed some other testcases:
+  + mangle_pstate_ssbs_regs: better checks of SSBS bit when feature unsupported
+  + mangle_pstate_invalid_compat_toggle: name fix
+  + mangle_pstate_invalid_mode_el[1-3]: precautionary zeroing PSTATE.MODE
+  + fake_sigreturn_bad_magic, fake_sigreturn_bad_size,
+    fake_sigreturn_bad_size_for_magic0:
+    - accounting for available space...dropping extra when needed
+    - keeping alignent
+- new testcases on FPSMID context:
+  + fake_sigreturn_missing_fpsimd
+  + fake_sigreturn_duplicated_fpsimd
 
->
-> Thanks,
->
-> 	M.
+
+Cristian Marussi (10):
+  kselftest: arm64: introduce new boilerplate code
+  kselftest: arm64: adds first test and common utils
+  kselftest: arm64: mangle_pstate_invalid_daif_bits
+  kselftest: arm64: mangle_pstate_invalid_mode_el
+  kselftest: arm64: mangle_pstate_ssbs_regs
+  kselftest: arm64: fake_sigreturn_bad_magic
+  kselftest: arm64: fake_sigreturn_bad_size_for_magic0
+  kselftest: arm64: fake_sigreturn_missing_fpsimd
+  kselftest: arm64: fake_sigreturn_duplicated_fpsimd
+  kselftest: arm64: fake_sigreturn_bad_size
+
+ tools/testing/selftests/Makefile              |   1 +
+ tools/testing/selftests/arm64/Makefile        |  51 +++
+ tools/testing/selftests/arm64/README          |  43 +++
+ .../testing/selftests/arm64/signal/.gitignore |   5 +
+ tools/testing/selftests/arm64/signal/Makefile |  86 +++++
+ tools/testing/selftests/arm64/signal/README   |  59 ++++
+ .../testing/selftests/arm64/signal/signals.S  |  64 ++++
+ .../arm64/signal/test_arm64_signals.sh        |  55 +++
+ .../selftests/arm64/signal/test_signals.c     |  26 ++
+ .../selftests/arm64/signal/test_signals.h     | 141 ++++++++
+ .../arm64/signal/test_signals_utils.c         | 331 ++++++++++++++++++
+ .../arm64/signal/test_signals_utils.h         |  31 ++
+ .../arm64/signal/testcases/.gitignore         |  11 +
+ .../testcases/fake_sigreturn_bad_magic.c      |  63 ++++
+ .../testcases/fake_sigreturn_bad_size.c       |  85 +++++
+ .../fake_sigreturn_bad_size_for_magic0.c      |  57 +++
+ .../fake_sigreturn_duplicated_fpsimd.c        |  62 ++++
+ .../testcases/fake_sigreturn_missing_fpsimd.c |  44 +++
+ .../mangle_pstate_invalid_compat_toggle.c     |  25 ++
+ .../mangle_pstate_invalid_daif_bits.c         |  28 ++
+ .../mangle_pstate_invalid_mode_el1.c          |  29 ++
+ .../mangle_pstate_invalid_mode_el2.c          |  29 ++
+ .../mangle_pstate_invalid_mode_el3.c          |  29 ++
+ .../testcases/mangle_pstate_ssbs_regs.c       |  56 +++
+ .../arm64/signal/testcases/testcases.c        | 150 ++++++++
+ .../arm64/signal/testcases/testcases.h        |  83 +++++
+ 26 files changed, 1644 insertions(+)
+ create mode 100644 tools/testing/selftests/arm64/Makefile
+ create mode 100644 tools/testing/selftests/arm64/README
+ create mode 100644 tools/testing/selftests/arm64/signal/.gitignore
+ create mode 100644 tools/testing/selftests/arm64/signal/Makefile
+ create mode 100644 tools/testing/selftests/arm64/signal/README
+ create mode 100644 tools/testing/selftests/arm64/signal/signals.S
+ create mode 100755 tools/testing/selftests/arm64/signal/test_arm64_signals.sh
+ create mode 100644 tools/testing/selftests/arm64/signal/test_signals.c
+ create mode 100644 tools/testing/selftests/arm64/signal/test_signals.h
+ create mode 100644 tools/testing/selftests/arm64/signal/test_signals_utils.c
+ create mode 100644 tools/testing/selftests/arm64/signal/test_signals_utils.h
+ create mode 100644 tools/testing/selftests/arm64/signal/testcases/.gitignore
+ create mode 100644 tools/testing/selftests/arm64/signal/testcases/fake_sigreturn_bad_magic.c
+ create mode 100644 tools/testing/selftests/arm64/signal/testcases/fake_sigreturn_bad_size.c
+ create mode 100644 tools/testing/selftests/arm64/signal/testcases/fake_sigreturn_bad_size_for_magic0.c
+ create mode 100644 tools/testing/selftests/arm64/signal/testcases/fake_sigreturn_duplicated_fpsimd.c
+ create mode 100644 tools/testing/selftests/arm64/signal/testcases/fake_sigreturn_missing_fpsimd.c
+ create mode 100644 tools/testing/selftests/arm64/signal/testcases/mangle_pstate_invalid_compat_toggle.c
+ create mode 100644 tools/testing/selftests/arm64/signal/testcases/mangle_pstate_invalid_daif_bits.c
+ create mode 100644 tools/testing/selftests/arm64/signal/testcases/mangle_pstate_invalid_mode_el1.c
+ create mode 100644 tools/testing/selftests/arm64/signal/testcases/mangle_pstate_invalid_mode_el2.c
+ create mode 100644 tools/testing/selftests/arm64/signal/testcases/mangle_pstate_invalid_mode_el3.c
+ create mode 100644 tools/testing/selftests/arm64/signal/testcases/mangle_pstate_ssbs_regs.c
+ create mode 100644 tools/testing/selftests/arm64/signal/testcases/testcases.c
+ create mode 100644 tools/testing/selftests/arm64/signal/testcases/testcases.h
+
+-- 
+2.17.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
