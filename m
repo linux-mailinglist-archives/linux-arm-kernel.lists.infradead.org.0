@@ -2,51 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3B3055E8D4
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  3 Jul 2019 18:27:25 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6C6A05E90E
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  3 Jul 2019 18:31:29 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=hTboRd5TrMt8kLL6xOBHSkcqi5h/xT7mduSODhNbMAg=; b=DoROnfftiXGY7h
-	dts2MxwVYlCPU9GHffKu2IaOL1kRDmex2Ia2JHVUpKKxrIfopbs2C5/0tg77BkqVaQJnqNMvYzRYb
-	LcmqA0X0kL5z84ygzr2yF8cjUBk0bCR8dr+YLz/ZIAVuFiAyotn7cWP+KHGZJ5zK7avjm/xViCt8b
-	90f4HIpbKIRbx48e6YOfBayx16W7aiPHYzZvOZd3aa3wq4p2aJyhkdVW/AuCcWKRpMsDlJxMWt2YW
-	FiV2dk41F/YFC2SqU+1WNOw0FApRb5fWUOSxiAKXn05V2wYRYszJhQ15gk18X8NzwkytCNfmp1U9O
-	DwIpEBFG04ac1cRdAAUQ==;
+	List-Owner; bh=IWu+cvKkzGa9oNVVR8q83CBaGtTRIqqtHV6MPqLn9vE=; b=KfidSQ2gWx+25y
+	1VaOuOODC4hSbpQrowEo7wh0//ZrxbWtLr1DYowaZsVWYkqvIgMNsVea2ebKOp4lvyylPkg2s8efk
+	FnVLCZNhpbELyhzcY8znI2yOma2Z8nKfh+UAzQ522BeH4x7uQF3M7z8e4c0axsAR62SI2sLryPDHW
+	ggAmayYkZCxuIhtDo77uhfNJc/jcaPMwjr75CxTWfQpTJbqx188ovBuW3T2VqneZ1MBcWK90XHgQg
+	hyYBibIDkqzJ+dqkOflUlwLq3vwd0ABtLa5DUp+RZ5tREydLPZQFxIfg2oq1ub9SaU5aTiSFex8Wt
+	6cZvHuuyhdM2UEjX70Hw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hii6N-0006Kj-Jv; Wed, 03 Jul 2019 16:27:23 +0000
+	id 1hiiAJ-0000OE-2k; Wed, 03 Jul 2019 16:31:27 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hii6A-0006Jl-Do
- for linux-arm-kernel@lists.infradead.org; Wed, 03 Jul 2019 16:27:11 +0000
+ id 1hiiA6-0000Nk-Mm
+ for linux-arm-kernel@lists.infradead.org; Wed, 03 Jul 2019 16:31:16 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id DF292344;
- Wed,  3 Jul 2019 09:27:09 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 2531E344;
+ Wed,  3 Jul 2019 09:31:14 -0700 (PDT)
 Received: from e103592.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
  [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 1E05F3F718;
- Wed,  3 Jul 2019 09:27:09 -0700 (PDT)
-Date: Wed, 3 Jul 2019 17:27:07 +0100
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 56F7D3F718;
+ Wed,  3 Jul 2019 09:31:13 -0700 (PDT)
+Date: Wed, 3 Jul 2019 17:31:11 +0100
 From: Dave Martin <Dave.Martin@arm.com>
 To: Marc Zyngier <marc.zyngier@arm.com>
-Subject: Re: [PATCH 04/59] KVM: arm64: nv: Introduce nested virtualization
- VCPU feature
-Message-ID: <20190703162706.GV2790@e103592.cambridge.arm.com>
+Subject: Re: [PATCH 07/59] KVM: arm64: nv: Add EL2 system registers to vcpu
+ context
+Message-ID: <20190703163111.GW2790@e103592.cambridge.arm.com>
 References: <20190621093843.220980-1-marc.zyngier@arm.com>
- <20190621093843.220980-5-marc.zyngier@arm.com>
- <20190624112851.GM2790@e103592.cambridge.arm.com>
- <01e61a51-5bf0-8943-6f68-7a5cea59f093@arm.com>
+ <20190621093843.220980-8-marc.zyngier@arm.com>
+ <20190624125416.GQ2790@e103592.cambridge.arm.com>
+ <bf624c54-41f6-85d0-e8c1-7943e065ec98@arm.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <01e61a51-5bf0-8943-6f68-7a5cea59f093@arm.com>
+In-Reply-To: <bf624c54-41f6-85d0-e8c1-7943e065ec98@arm.com>
 User-Agent: Mutt/1.5.23 (2014-03-12)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190703_092710_556610_11182095 
-X-CRM114-Status: GOOD (  21.52  )
+X-CRM114-CacheID: sfid-20190703_093114_837246_9B71C72C 
+X-CRM114-Status: GOOD (  24.60  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -73,96 +73,108 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Jul 03, 2019 at 12:53:58PM +0100, Marc Zyngier wrote:
-> On 24/06/2019 12:28, Dave Martin wrote:
-> > On Fri, Jun 21, 2019 at 10:37:48AM +0100, Marc Zyngier wrote:
-> >> From: Christoffer Dall <christoffer.dall@arm.com>
+On Wed, Jul 03, 2019 at 01:20:55PM +0100, Marc Zyngier wrote:
+> On 24/06/2019 13:54, Dave Martin wrote:
+> > On Fri, Jun 21, 2019 at 10:37:51AM +0100, Marc Zyngier wrote:
+> >> From: Jintack Lim <jintack.lim@linaro.org>
 > >>
-> >> Introduce the feature bit and a primitive that checks if the feature is
-> >> set behind a static key check based on the cpus_have_const_cap check.
+> >> ARM v8.3 introduces a new bit in the HCR_EL2, which is the NV bit. When
+> >> this bit is set, accessing EL2 registers in EL1 traps to EL2. In
+> >> addition, executing the following instructions in EL1 will trap to EL2:
+> >> tlbi, at, eret, and msr/mrs instructions to access SP_EL1. Most of the
+> >> instructions that trap to EL2 with the NV bit were undef at EL1 prior to
+> >> ARM v8.3. The only instruction that was not undef is eret.
 > >>
-> >> Checking nested_virt_in_use() on systems without nested virt enabled
-> >> should have neglgible overhead.
+> >> This patch sets up a handler for EL2 registers and SP_EL1 register
+> >> accesses at EL1. The host hypervisor keeps those register values in
+> >> memory, and will emulate their behavior.
 > >>
-> >> We don't yet allow userspace to actually set this feature.
+> >> This patch doesn't set the NV bit yet. It will be set in a later patch
+> >> once nested virtualization support is completed.
 > >>
-> >> Signed-off-by: Christoffer Dall <christoffer.dall@arm.com>
+> >> Signed-off-by: Jintack Lim <jintack.lim@linaro.org>
 > >> Signed-off-by: Marc Zyngier <marc.zyngier@arm.com>
 > >> ---
-> >>  arch/arm/include/asm/kvm_nested.h   |  9 +++++++++
-> >>  arch/arm64/include/asm/kvm_nested.h | 13 +++++++++++++
-> >>  arch/arm64/include/uapi/asm/kvm.h   |  1 +
-> >>  3 files changed, 23 insertions(+)
-> >>  create mode 100644 arch/arm/include/asm/kvm_nested.h
-> >>  create mode 100644 arch/arm64/include/asm/kvm_nested.h
+> >>  arch/arm64/include/asm/kvm_host.h | 37 +++++++++++++++-
+> >>  arch/arm64/include/asm/sysreg.h   | 50 ++++++++++++++++++++-
+> >>  arch/arm64/kvm/sys_regs.c         | 74 ++++++++++++++++++++++++++++---
+> >>  3 files changed, 154 insertions(+), 7 deletions(-)
 > >>
-> >> diff --git a/arch/arm/include/asm/kvm_nested.h b/arch/arm/include/asm/kvm_nested.h
-> >> new file mode 100644
-> >> index 000000000000..124ff6445f8f
-> >> --- /dev/null
-> >> +++ b/arch/arm/include/asm/kvm_nested.h
-> >> @@ -0,0 +1,9 @@
-> >> +/* SPDX-License-Identifier: GPL-2.0 */
-> >> +#ifndef __ARM_KVM_NESTED_H
-> >> +#define __ARM_KVM_NESTED_H
-> >> +
-> >> +#include <linux/kvm_host.h>
-> >> +
-> >> +static inline bool nested_virt_in_use(const struct kvm_vcpu *vcpu) { return false; }
-> >> +
-> >> +#endif /* __ARM_KVM_NESTED_H */
-> >> diff --git a/arch/arm64/include/asm/kvm_nested.h b/arch/arm64/include/asm/kvm_nested.h
-> >> new file mode 100644
-> >> index 000000000000..8a3d121a0b42
-> >> --- /dev/null
-> >> +++ b/arch/arm64/include/asm/kvm_nested.h
-> >> @@ -0,0 +1,13 @@
-> >> +/* SPDX-License-Identifier: GPL-2.0 */
-> >> +#ifndef __ARM64_KVM_NESTED_H
-> >> +#define __ARM64_KVM_NESTED_H
-> >> +
-> >> +#include <linux/kvm_host.h>
-> >> +
-> >> +static inline bool nested_virt_in_use(const struct kvm_vcpu *vcpu)
-> >> +{
-> >> +	return cpus_have_const_cap(ARM64_HAS_NESTED_VIRT) &&
-> >> +		test_bit(KVM_ARM_VCPU_NESTED_VIRT, vcpu->arch.features);
-> >> +}
-> >> +
-> >> +#endif /* __ARM64_KVM_NESTED_H */
-> >> diff --git a/arch/arm64/include/uapi/asm/kvm.h b/arch/arm64/include/uapi/asm/kvm.h
-> >> index d819a3e8b552..563e2a8bae93 100644
-> >> --- a/arch/arm64/include/uapi/asm/kvm.h
-> >> +++ b/arch/arm64/include/uapi/asm/kvm.h
-> >> @@ -106,6 +106,7 @@ struct kvm_regs {
-> >>  #define KVM_ARM_VCPU_SVE		4 /* enable SVE for this CPU */
-> >>  #define KVM_ARM_VCPU_PTRAUTH_ADDRESS	5 /* VCPU uses address authentication */
-> >>  #define KVM_ARM_VCPU_PTRAUTH_GENERIC	6 /* VCPU uses generic authentication */
-> >> +#define KVM_ARM_VCPU_NESTED_VIRT	7 /* Support nested virtualization */
+> >> diff --git a/arch/arm64/include/asm/kvm_host.h b/arch/arm64/include/asm/kvm_host.h
+> >> index 4bcd9c1291d5..2d4290d2513a 100644
+> >> --- a/arch/arm64/include/asm/kvm_host.h
+> >> +++ b/arch/arm64/include/asm/kvm_host.h
+> >> @@ -173,12 +173,47 @@ enum vcpu_sysreg {
+> >>  	APGAKEYLO_EL1,
+> >>  	APGAKEYHI_EL1,
+> >>  
+> >> -	/* 32bit specific registers. Keep them at the end of the range */
+> >> +	/* 32bit specific registers. */
 > > 
-> > This seems weirdly named:
-> > 
-> > Isn't the feature we're exposing here really EL2?  In that case, the
-> > feature the guest gets with this flag enabled is plain virtualisation,
-> > possibly with the option to nest further.
-> > 
-> > Does the guest also get nested virt (i.e., recursively nested virt from
-> > the host's PoV) as a side effect, or would require an explicit extra
-> > flag?
+> > Out of interest, why did we originally want these to be at the end?
+> > Because they're not at the end any more...
 > 
-> So far, there is no extra flag to describe further nesting, and it
-> directly comes from EL2 being emulated. I don't mind renaming this to
-> KVM_ARM_VCPU_HAS_EL2, or something similar... Whether we want userspace
-> to control the exposure of the nesting capability (i.e. EL2 with
-> ARMv8.3-NV) is another question.
+> I seem to remember the original assembly switch code used that property.
+> This is a long gone requirement, thankfully.
 
-Agreed.
+Ah, right.
 
-KVM_ARM_VCPU_HAS_EL2 seems a reasonable name to me.
+> >>  	DACR32_EL2,	/* Domain Access Control Register */
+> >>  	IFSR32_EL2,	/* Instruction Fault Status Register */
+> >>  	FPEXC32_EL2,	/* Floating-Point Exception Control Register */
+> >>  	DBGVCR32_EL2,	/* Debug Vector Catch Register */
+> >>  
+> >> +	/* EL2 registers sorted ascending by Op0, Op1, CRn, CRm, Op2 */
+> >> +	FIRST_EL2_SYSREG,
+> >> +	VPIDR_EL2 = FIRST_EL2_SYSREG,
+> >> +			/* Virtualization Processor ID Register */
+> >> +	VMPIDR_EL2,	/* Virtualization Multiprocessor ID Register */
+> >> +	SCTLR_EL2,	/* System Control Register (EL2) */
+> >> +	ACTLR_EL2,	/* Auxiliary Control Register (EL2) */
+> >> +	HCR_EL2,	/* Hypervisor Configuration Register */
+> >> +	MDCR_EL2,	/* Monitor Debug Configuration Register (EL2) */
+> >> +	CPTR_EL2,	/* Architectural Feature Trap Register (EL2) */
+> >> +	HSTR_EL2,	/* Hypervisor System Trap Register */
+> >> +	HACR_EL2,	/* Hypervisor Auxiliary Control Register */
+> >> +	TTBR0_EL2,	/* Translation Table Base Register 0 (EL2) */
+> >> +	TTBR1_EL2,	/* Translation Table Base Register 1 (EL2) */
+> >> +	TCR_EL2,	/* Translation Control Register (EL2) */
+> >> +	VTTBR_EL2,	/* Virtualization Translation Table Base Register */
+> >> +	VTCR_EL2,	/* Virtualization Translation Control Register */
+> >> +	SPSR_EL2,	/* EL2 saved program status register */
+> >> +	ELR_EL2,	/* EL2 exception link register */
+> >> +	AFSR0_EL2,	/* Auxiliary Fault Status Register 0 (EL2) */
+> >> +	AFSR1_EL2,	/* Auxiliary Fault Status Register 1 (EL2) */
+> >> +	ESR_EL2,	/* Exception Syndrome Register (EL2) */
+> >> +	FAR_EL2,	/* Hypervisor IPA Fault Address Register */
+> >> +	HPFAR_EL2,	/* Hypervisor IPA Fault Address Register */
+> >> +	MAIR_EL2,	/* Memory Attribute Indirection Register (EL2) */
+> >> +	AMAIR_EL2,	/* Auxiliary Memory Attribute Indirection Register (EL2) */
+> >> +	VBAR_EL2,	/* Vector Base Address Register (EL2) */
+> >> +	RVBAR_EL2,	/* Reset Vector Base Address Register */
+> >> +	RMR_EL2,	/* Reset Management Register */
+> >> +	CONTEXTIDR_EL2,	/* Context ID Register (EL2) */
+> >> +	TPIDR_EL2,	/* EL2 Software Thread ID Register */
+> >> +	CNTVOFF_EL2,	/* Counter-timer Virtual Offset register */
+> >> +	CNTHCTL_EL2,	/* Counter-timer Hypervisor Control register */
+> >> +	SP_EL2,		/* EL2 Stack Pointer */
+> >> +
+> > 
+> > I wonder whether we could make these conditionally present somehow.  Not
+> > worth worrying about for now to save 200-odd bytes per vcpu though.
+> 
+> With 8.4-NV, these 200 bytes turn into a whole 8kB (4kB page, plus
+> almost 4kB of padding that I need to reduce one way or another). So I'm
+> not too worried about this for now.
+> 
+> I really want the NV code to always be present though, in order to avoid
+> configuration related regressions. I'm not sure how to make this better.
 
-If we have have an internal flag in vcpu_arch.flags we could call that
-something different (i.e., keep the NESTED_VIRT naming) if it's natural
-to do so.
+Fair enough -- sounds like addressing this would probably be premature
+optimisation, then.
+
+I suppose we could have two alternate layouts, but would likely be a
+source of overhead, and bugs...
 
 Cheers
 ---Dave
