@@ -2,46 +2,46 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7CCDC5E6B1
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  3 Jul 2019 16:29:44 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 385065E6B5
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  3 Jul 2019 16:30:05 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=i/TJhvb0QIlX9SEaqA+sUyPMMmg65bsHInbkMw7TR2o=; b=MlWaUJjhahWrzc
-	it0ACj8Sm/o7mEbEqY9KyaVr2nyOTCUGLTbLvPuGYAUKN9z2JWGDvGrGynTxEkGigKhORE8Ffr8vf
-	OrWxJgIZ2zSD7OIccwOPw3BfporzCEGgTSkp+lfglI/7viLRAi0GPoht7QRhjiO34yZzaq59vSMog
-	i4R/fDoM9vTqp3gZjrgIcyP7LtJgfhtcRYPQb25uLvqXyiIgBK/bXykxVeOEU9hmmd5OJCRawsKbJ
-	xTyoLw1svKyRpTPtwxBho4DmR78kW2S2LASBHOhoPIzPQHoAlLNak2WOMDjcqiTK2aE21NXQa6qqA
-	kFQsz1VfP1xI2vj2itMg==;
+	List-Owner; bh=e/fjsknhppKCOqOBk4cSb9YL6TVl4usYuvWpBEZy+7E=; b=oxc8WTSROeL8VI
+	2A5pfGU0JgH5y8Vm3bdUXdR1H9NqDuE29wz/fpJprXlyaCObxzRYSa+FsqHm24m0ohUnOThx9iB1q
+	VESn7CpFFd4+DK22Lm3nQhXeoUSPFY+ziRcqR1shqVWiY/dFTsd9HOS+4IY4F02wIa8tmqRIGVm8c
+	MmiX+9gYZ2YDS7NbHAHjnbG7Up5+bTyTQl+vsZkN9Dmdw+hjNf5/LhM+oIUNeGN0uRsjkhm/E32Im
+	kU6+p1DDBiVPcPbeQYu6gVUM6ZYe2Qwcr7bhD7V2M7ZZ3WbLoxkqh0UUo8Cx2hVKb30TTLOT+qcT+
+	UakXUGj6TStfnVFdbNFA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1higGT-0001rj-DZ; Wed, 03 Jul 2019 14:29:41 +0000
+	id 1higGp-00025Z-BL; Wed, 03 Jul 2019 14:30:03 +0000
 Received: from helcar.hmeau.com ([216.24.177.18] helo=deadmen.hmeau.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1higGE-0001jY-OH
- for linux-arm-kernel@lists.infradead.org; Wed, 03 Jul 2019 14:29:28 +0000
+ id 1higGJ-0001rh-F3
+ for linux-arm-kernel@lists.infradead.org; Wed, 03 Jul 2019 14:29:33 +0000
 Received: from gondobar.mordor.me.apana.org.au ([192.168.128.4] helo=gondobar)
  by deadmen.hmeau.com with esmtps (Exim 4.89 #2 (Debian))
- id 1higGD-0000jF-Ee; Wed, 03 Jul 2019 22:29:25 +0800
+ id 1higGH-0000jP-W1; Wed, 03 Jul 2019 22:29:30 +0800
 Received: from herbert by gondobar with local (Exim 4.89)
  (envelope-from <herbert@gondor.apana.org.au>)
- id 1higGC-0000Xk-BF; Wed, 03 Jul 2019 22:29:24 +0800
-Date: Wed, 3 Jul 2019 22:29:24 +0800
+ id 1higGH-0000Xy-Rv; Wed, 03 Jul 2019 22:29:29 +0800
+Date: Wed, 3 Jul 2019 22:29:29 +0800
 From: Herbert Xu <herbert@gondor.apana.org.au>
 To: Lionel Debieve <lionel.debieve@st.com>
-Subject: Re: [PATCH 1/1] crypto: stm32/crc32 - rename driver file
-Message-ID: <20190703142924.i6y44cqspgklb7ek@gondor.apana.org.au>
-References: <20190628112641.9269-1-lionel.debieve@st.com>
+Subject: Re: [PATCH 0/2] crypto: stm32/hash: Fix bug in hmac mode
+Message-ID: <20190703142929.one55xcdpoce2wdw@gondor.apana.org.au>
+References: <20190628112655.9341-1-lionel.debieve@st.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190628112641.9269-1-lionel.debieve@st.com>
+In-Reply-To: <20190628112655.9341-1-lionel.debieve@st.com>
 User-Agent: NeoMutt/20170113 (1.7.2)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190703_072926_945005_C9789617 
-X-CRM114-Status: UNSURE (   7.28  )
+X-CRM114-CacheID: sfid-20190703_072931_682196_3654C7DD 
+X-CRM114-Status: UNSURE (   8.47  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -73,18 +73,20 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Jun 28, 2019 at 01:26:41PM +0200, Lionel Debieve wrote:
-> Use the same naming convention for all stm32 crypto
-> drivers.
+On Fri, Jun 28, 2019 at 01:26:53PM +0200, Lionel Debieve wrote:
+> This series fixes issues discovered while using libkcapi library. Some
+> more tests show wrong key management in hmac mode. It is fixes by these 
+> patches and prevent a potential issue in case of interrupt while processing
+> in dma mode.
 > 
-> Signed-off-by: Lionel Debieve <lionel.debieve@st.com>
-> ---
->  drivers/crypto/stm32/Makefile                         | 2 +-
->  drivers/crypto/stm32/{stm32_crc32.c => stm32-crc32.c} | 0
->  2 files changed, 1 insertion(+), 1 deletion(-)
->  rename drivers/crypto/stm32/{stm32_crc32.c => stm32-crc32.c} (100%)
+> Lionel Debieve (2):
+>   crypto: stm32/hash: Fix hmac issue more than 256 bytes
+>   crypto: stm32/hash: remove interruptible condition for dma
+> 
+>  drivers/crypto/stm32/stm32-hash.c | 6 +++---
+>  1 file changed, 3 insertions(+), 3 deletions(-)
 
-Patch applied.  Thanks.
+All applied.  Thanks.
 -- 
 Email: Herbert Xu <herbert@gondor.apana.org.au>
 Home Page: http://gondor.apana.org.au/~herbert/
