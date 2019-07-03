@@ -2,69 +2,103 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BA9145E5A6
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  3 Jul 2019 15:40:53 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B8D8E5E5AA
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  3 Jul 2019 15:43:15 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=7qMAWia8rCd0Gahdl33LQwSdI/RcrgL05EyVfrc9Irc=; b=Fp5Mrp7BuXMoP6
-	aofagHPLdB4LYahX4VZw3EyElKqbH3bZx9yuTOqAJpn1t+llhoLR4yJGrrffb7YIMlqljYAMxHAfq
-	t0Y8ZwH7tMeFoSeQNcw+5lgJAGRpJ7qtrL6Cy/q6BOd5G/epeOYtivlU1X5hP0TS/jQKO9Zc7kztW
-	Hd+N3CCkDW6karybRClzhpLXWhfD56uqv3l74UPMi+ern6Zf1F38h+W7ITEBCpkhT2nSZ+gKm4WIE
-	18FLTog/Njijl6xC9YdQB4H+zRj9lvWZq7v0NuWl+/Kpt9PAaK6m/7XaGzU2nkHIbgVny7QW37T42
-	KcJUEguYfXWdRjgb3ZuA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=h6299XY+I5oQf6ST8tWviwWIEe7q6UWfVAhl8KOJ6oc=; b=l88AZSKsPFP5Fj
+	f98SV1VuwrM1un/UzrRY00WqHLIS8NQg6Xkg0Wl3UQCEMoDaauxSw2+OSFHDudGbZtPf0+nP90RCL
+	E8L/Vk8B8LNyKajyU40WWkHZHzlq22YmlhahOD34aeeYh8i5Xs3LmjqR/T4SVs4Syu+USjDjRYUr7
+	CvClIMrurDHrJwFXgaQO9TUI2ZEnl0xIAPxeztWvMsRGVhhXzp9kYXG5RAK+QY54eCpiWlfNUFP4y
+	KbfOrM3BSJxiMHdhxyu2SOhiXC6ncLG0MZm1dVUgHBVETt9YjipgK1wW4YNORI84CMDWP2tPW02jF
+	nqiVNgVoEoY4hbYkNggg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hifVC-0000io-Hs; Wed, 03 Jul 2019 13:40:51 +0000
-Received: from mail.kernel.org ([198.145.29.99])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hifUx-0000iT-30
- for linux-arm-kernel@lists.infradead.org; Wed, 03 Jul 2019 13:40:36 +0000
-Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 8695E218A4;
- Wed,  3 Jul 2019 13:40:32 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1562161234;
- bh=iiZYJUTmXTahovWO+uzNBwAagJgLV9416eN7X5yYOIU=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=e3Npt7CPoH857BiaHSLbfm/YWLVKUTS+3VzdKLUsJt0EHgaRT1lE4Zi9HTE45y1UB
- bt6LSz3jh0RSV/lu3Z00ZEl5Ohbg2wslkdSczZKRJ5ToOlC47SewS3ra42mrspVhCQ
- e4wZyxQn/ZLsJedO7dJlXo8mYXO4V62uRg+Oi7jE=
-Date: Wed, 3 Jul 2019 14:40:29 +0100
-From: Will Deacon <will@kernel.org>
-To: Ard Biesheuvel <ard.biesheuvel@linaro.org>
-Subject: Re: [PATCH v5] arm64: kernel: implement fast refcount checking
-Message-ID: <20190703134028.6aru52r2zd2jnpm4@willie-the-truck>
-References: <20190619105431.2630-1-ard.biesheuvel@linaro.org>
+	id 1hifXV-0001Gj-DE; Wed, 03 Jul 2019 13:43:13 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hifXI-0001GJ-0H
+ for linux-arm-kernel@lists.infradead.org; Wed, 03 Jul 2019 13:43:01 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id E6A202B;
+ Wed,  3 Jul 2019 06:42:58 -0700 (PDT)
+Received: from [10.1.197.61] (usa-sjc-imap-foss1.foss.arm.com [10.121.207.14])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
+ 76CD23F718; Wed,  3 Jul 2019 06:42:57 -0700 (PDT)
+Subject: Re: [PATCH 16/59] KVM: arm64: nv: Save/Restore vEL2 sysregs
+To: Julien Thierry <julien.thierry@arm.com>,
+ linux-arm-kernel@lists.infradead.org, kvmarm@lists.cs.columbia.edu,
+ kvm@vger.kernel.org
+References: <20190621093843.220980-1-marc.zyngier@arm.com>
+ <20190621093843.220980-17-marc.zyngier@arm.com>
+ <800f3e9a-5b67-951b-34c2-60367c0697f9@arm.com>
+From: Marc Zyngier <marc.zyngier@arm.com>
+Openpgp: preference=signencrypt
+Autocrypt: addr=marc.zyngier@arm.com; prefer-encrypt=mutual; keydata=
+ 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
+ Z46HaNmN2hZS/oJ69c1DI5Rcww==
+Organization: ARM Ltd
+Message-ID: <7102a9ab-ede8-bd08-ce9b-12e3f36e40e1@arm.com>
+Date: Wed, 3 Jul 2019 14:42:55 +0100
+User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
+ Thunderbird/60.7.2
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190619105431.2630-1-ard.biesheuvel@linaro.org>
-User-Agent: NeoMutt/20170113 (1.7.2)
+In-Reply-To: <800f3e9a-5b67-951b-34c2-60367c0697f9@arm.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190703_064035_162824_770CE466 
-X-CRM114-Status: GOOD (  15.57  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190703_064300_138479_8E525F6F 
+X-CRM114-Status: GOOD (  18.87  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -76,108 +110,151 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Kees Cook <keescook@chromium.org>,
- Catalin Marinas <catalin.marinas@arm.com>, Jan Glauber <jglauber@marvell.com>,
- Will Deacon <will.deacon@arm.com>,
- Jayachandran Chandrasekharan Nair <jnair@marvell.com>,
- Hanjun Guo <guohanjun@huawei.com>,
- Linus Torvalds <torvalds@linux-foundation.org>,
- linux-arm-kernel@lists.infradead.org
+Cc: Suzuki K Poulose <suzuki.poulose@arm.com>,
+ Andre Przywara <andre.przywara@arm.com>,
+ Christoffer Dall <christoffer.dall@arm.com>, Dave Martin <Dave.Martin@arm.com>,
+ James Morse <james.morse@arm.com>, Jintack Lim <jintack@cs.columbia.edu>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Ard,
-
-On Wed, Jun 19, 2019 at 12:54:31PM +0200, Ard Biesheuvel wrote:
-> This adds support to arm64 for fast refcount checking, as contributed
-> by Kees for x86 based on the implementation by grsecurity/PaX.
+On 25/06/2019 09:48, Julien Thierry wrote:
 > 
-> The general approach is identical: the existing atomic_t helpers are
-> cloned for refcount_t, with the arithmetic instruction modified to set
-> the PSTATE flags, and one or two branch instructions added that jump to
-> an out of line handler if overflow, decrement to zero or increment from
-> zero are detected.
 > 
-> One complication that we have to deal with on arm64 is the fact that
-> it has two atomics implementations: the original LL/SC implementation
-> using load/store exclusive loops, and the newer LSE one that does mostly
-> the same in a single instruction. So we need to clone some parts of
-> both for the refcount handlers, but we also need to deal with the way
-> LSE builds fall back to LL/SC at runtime if the hardware does not
-> support it.
+> On 06/21/2019 10:38 AM, Marc Zyngier wrote:
+>> From: Andre Przywara <andre.przywara@arm.com>
+>>
+>> Whenever we need to restore the guest's system registers to the CPU, we
+>> now need to take care of the EL2 system registers as well. Most of them
+>> are accessed via traps only, but some have an immediate effect and also
+>> a guest running in VHE mode would expect them to be accessible via their
+>> EL1 encoding, which we do not trap.
+>>
+>> Split the current __sysreg_{save,restore}_el1_state() functions into
+>> handling common sysregs, then differentiate between the guest running in
+>> vEL2 and vEL1.
+>>
+>> For vEL2 we write the virtual EL2 registers with an identical format directly
+>> into their EL1 counterpart, and translate the few registers that have a
+>> different format for the same effect on the execution when running a
+>> non-VHE guest guest hypervisor.
+>>
+>>   [ Commit message reworked and many bug fixes applied by Marc Zyngier
+>>     and Christoffer Dall. ]
+>>
+>> Signed-off-by: Andre Przywara <andre.przywara@arm.com>
+>> Signed-off-by: Marc Zyngier <marc.zyngier@arm.com>
+>> Signed-off-by: Christoffer Dall <christoffer.dall@arm.com>
+>> ---
+>>  arch/arm64/kvm/hyp/sysreg-sr.c | 160 +++++++++++++++++++++++++++++++--
+>>  1 file changed, 153 insertions(+), 7 deletions(-)
+>>
+>> diff --git a/arch/arm64/kvm/hyp/sysreg-sr.c b/arch/arm64/kvm/hyp/sysreg-sr.c
+>> index 62866a68e852..2abb9c3ff24f 100644
+>> --- a/arch/arm64/kvm/hyp/sysreg-sr.c
+>> +++ b/arch/arm64/kvm/hyp/sysreg-sr.c
+> 
+> [...]
+> 
+>> @@ -124,10 +167,91 @@ static void __hyp_text __sysreg_restore_user_state(struct kvm_cpu_context *ctxt)
+>>  	write_sysreg(ctxt->sys_regs[TPIDRRO_EL0],	tpidrro_el0);
+>>  }
+>>  
+>> -static void __hyp_text __sysreg_restore_el1_state(struct kvm_cpu_context *ctxt)
+>> +static void __sysreg_restore_vel2_state(struct kvm_cpu_context *ctxt)
+>>  {
+>> +	u64 val;
+>> +
+>> +	write_sysreg(read_cpuid_id(),			vpidr_el2);
+>>  	write_sysreg(ctxt->sys_regs[MPIDR_EL1],		vmpidr_el2);
+>> -	write_sysreg(ctxt->sys_regs[CSSELR_EL1],	csselr_el1);
+>> +	write_sysreg_el1(ctxt->sys_regs[MAIR_EL2],	SYS_MAIR);
+>> +	write_sysreg_el1(ctxt->sys_regs[VBAR_EL2],	SYS_VBAR);
+>> +	write_sysreg_el1(ctxt->sys_regs[CONTEXTIDR_EL2],SYS_CONTEXTIDR);
+>> +	write_sysreg_el1(ctxt->sys_regs[AMAIR_EL2],	SYS_AMAIR);
+>> +
+>> +	if (__vcpu_el2_e2h_is_set(ctxt)) {
+>> +		/*
+>> +		 * In VHE mode those registers are compatible between
+>> +		 * EL1 and EL2.
+>> +		 */
+>> +		write_sysreg_el1(ctxt->sys_regs[SCTLR_EL2],	SYS_SCTLR);
+>> +		write_sysreg_el1(ctxt->sys_regs[CPTR_EL2],	SYS_CPACR);
+>> +		write_sysreg_el1(ctxt->sys_regs[TTBR0_EL2],	SYS_TTBR0);
+>> +		write_sysreg_el1(ctxt->sys_regs[TTBR1_EL2],	SYS_TTBR1);
+>> +		write_sysreg_el1(ctxt->sys_regs[TCR_EL2],	SYS_TCR);
+>> +		write_sysreg_el1(ctxt->sys_regs[CNTHCTL_EL2],	SYS_CNTKCTL);
+>> +	} else {
+>> +		write_sysreg_el1(translate_sctlr(ctxt->sys_regs[SCTLR_EL2]),
+>> +				 SYS_SCTLR);
+>> +		write_sysreg_el1(translate_cptr(ctxt->sys_regs[CPTR_EL2]),
+>> +				 SYS_CPACR);
+>> +		write_sysreg_el1(translate_ttbr0(ctxt->sys_regs[TTBR0_EL2]),
+>> +				 SYS_TTBR0);
+>> +		write_sysreg_el1(translate_tcr(ctxt->sys_regs[TCR_EL2]),
+>> +				 SYS_TCR);
+>> +		write_sysreg_el1(translate_cnthctl(ctxt->sys_regs[CNTHCTL_EL2]),
+>> +				 SYS_CNTKCTL);
+>> +	}
+>> +
+>> +	/*
+>> +	 * These registers can be modified behind our back by a fault
+>> +	 * taken inside vEL2. Save them, always.
+>> +	 */
+>> +	write_sysreg_el1(ctxt->sys_regs[ESR_EL2],	SYS_ESR);
+>> +	write_sysreg_el1(ctxt->sys_regs[AFSR0_EL2],	SYS_AFSR0);
+>> +	write_sysreg_el1(ctxt->sys_regs[AFSR1_EL2],	SYS_AFSR1);
+>> +	write_sysreg_el1(ctxt->sys_regs[FAR_EL2],	SYS_FAR);
+>> +	write_sysreg(ctxt->sys_regs[SP_EL2],		sp_el1);
+>> +	write_sysreg_el1(ctxt->sys_regs[ELR_EL2],	SYS_ELR);
+>> +
+>> +	val = __fixup_spsr_el2_write(ctxt, ctxt->sys_regs[SPSR_EL2]);
+>> +	write_sysreg_el1(val,	SYS_SPSR);
+>> +}
+>> +
+>> +static void __hyp_text __sysreg_restore_vel1_state(struct kvm_cpu_context *ctxt)
+>> +{
+>> +	u64 mpidr;
+>> +
+>> +	if (has_vhe()) {
+>> +		struct kvm_vcpu *vcpu;
+>> +
+>> +		/*
+>> +		 * Warning: this hack only works on VHE, because we only
+>> +		 * call this with the *guest* context, which is part of
+>> +		 * struct kvm_vcpu. On a host context, you'd get pure junk.
+>> +		 */
+>> +		vcpu = container_of(ctxt, struct kvm_vcpu, arch.ctxt);
+> 
+> This seems very fragile, just to find out whether the guest has hyp
+> capabilities. It would be at least nice to make sure this is indeed a
+> guest context.
 
-I've been looking at this today and I still don't understand why this can't
-be written as simple wrappers around atomic_t. What am I missing? To be more
-concrete, why can't we implement the refcount functions along the lines of
-the code below?
+Oh come on! It is such a nice hack! ;-) I distinctly remember
+Christoffer being >that< close to vomiting when he saw that first.
 
-We can't call refcount_error_report() like this, but perhaps a
-WARN_ON_RATELIMIT would be enough. However, I'm sure there's a reason
-for the complexity in your proposal -- I just can't spot it.
+More seriously, we know what the context is by construction.
 
-Will
+> The *clean* way to do it could be to have a pointer to kvm_vcpu in the
+> kvm_cpu_context which would be NULL for host contexts.
 
---->8
+Funny you mention that. We have the exact opposite (host context
+pointing to the running vcpu, and NULL in the guest context). Maybe we
+can come up with something that always point to the vcpu, assuming
+nothing yet checks for NULL to identify a guest context! ;-)
 
-static __always_inline void refcount_add(int i, refcount_t *r)
-{
-	int old = atomic_fetch_add_relaxed(i, &r->refs);
+> Otherwise, I'm under the impression that for a host context,
+> ctxt->sys_reg[HCR_EL2] == 0 and that this would also be true for a guest
+> without nested virt capability. Could we use something like that here?
 
-	if (unlikely(old <= 0 || old + i <= 0))
-		refcount_set(r, INT_MIN / 2);
-}
+Urgh. I think I'd prefer the above suggestion. Or even my hack.
 
-static __always_inline void refcount_inc(refcount_t *r)
-{
-	refcount_add(1, r);
-}
+Thanks,
 
-static __always_inline void refcount_dec(refcount_t *r)
-{
-	int old = atomic_fetch_sub_release(1, &r->refs);
-
-	if (unlikely(old <= 1))
-		refcount_set(r, INT_MIN / 2);
-}
-
-static __always_inline __must_check bool refcount_sub_and_test(int i,
-							       refcount_t *r)
-{
-	int old = atomic_fetch_sub(i, &r->refs);
-
-	if (old - i < 0)
-		refcount_set(r, INT_MIN / 2);
-
-	return old == i;
-}
-
-static __always_inline __must_check bool refcount_dec_and_test(refcount_t *r)
-{
-	return refcount_sub_and_test(1, r);
-}
-
-static __always_inline __must_check bool refcount_add_not_zero(int i,
-							       refcount_t *r)
-{
-	int old = refcount_read(r);
-
-	do {
-		if (!old)
-			break;
-	} while (!atomic_try_cmpxchg_relaxed(&r->refs, &old, old + i));
-
-	if (old < 0 || old + i < 0)
-		refcount_set(r, INT_MIN / 2);
-
-	return old;
-}
-
-static __always_inline __must_check bool refcount_inc_not_zero(refcount_t *r)
-{
-	return refcount_add_not_zero(1, r);
-}
+	M.
+-- 
+Jazz is not dead. It just smells funny...
 
 _______________________________________________
 linux-arm-kernel mailing list
