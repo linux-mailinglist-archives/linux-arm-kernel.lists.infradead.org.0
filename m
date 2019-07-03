@@ -2,51 +2,97 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2D3615E62F
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  3 Jul 2019 16:13:32 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CE5BD5E63C
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  3 Jul 2019 16:15:54 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=gA1jAFCgcAOpWIvxuIyeoa+KBTpdeH6Kx/y/dk1m9g4=; b=ZnzWQtUR6/cuOK
-	JwtDPr1l+pYaemzfsrc9SYIKKgGagJmJAMx5LL1H0qbdtOoTC49/JvHpeqbaKCo85kA5tCSoGpgHK
-	hVf9+jnZyYw68kn/2WkUvR1stQduplO8MtAJ8ekzYveH9c6pMQXcXti9RXmrl9wnkxjA72WokomKV
-	d1+IKZK4/m6nuih9g4wcMB+w6ws6BBTaajZ+12r+Gbu2M1vGUw8+lQNAeKMkel7MS+FM7/qn0NWpG
-	W+jlZRKxFs8dEMMfpEg7MzGTb1uFvX2NwrDOMsH34gATOihrp7rm6WPbpQ4BWeH3U3CVAHm5NaFCo
-	zqykmyLDC4wYaZ+BntIg==;
+	List-Owner; bh=T+jcwgkxZoUYSlZiOuKBVaLMcHDOMpEEeMcFSBis0gk=; b=f1CeObHmMWIwCd
+	zki3Et6t7rCIYllYiBigeKEOcJMeFJL5SrErikGEHyFhLJaoXnV3V6RImVvckWLrdoo8L+kCp4jOS
+	UXbCYN+UbMb6mOtl0N26Rc29P2PHPbad9Lv3+396Q142nhILdWSNgVpKFzqMOgAO4boqPH8bFLEO6
+	xSXSWJz2kSzPizMSYU0XS3FS2x1WecQbq6xDqOndv312Qm8rdEyksUXtXckVnoK4BhBav/ycc3Pre
+	M5NW6H2Fjl0eX/XqDut16npiGUr6RHz4I6W7qUfWx7hN7tvQfhi9zNWOr7eY8bKu3YWxxNgBeAhZc
+	OJojYJDXtBbgOi5ir3qg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hig0n-00079V-9E; Wed, 03 Jul 2019 14:13:29 +0000
+	id 1hig36-0003wC-8G; Wed, 03 Jul 2019 14:15:52 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hig0a-000782-BQ
- for linux-arm-kernel@lists.infradead.org; Wed, 03 Jul 2019 14:13:17 +0000
+ id 1hig2r-0003vo-T1
+ for linux-arm-kernel@lists.infradead.org; Wed, 03 Jul 2019 14:15:39 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id AED2B2B;
- Wed,  3 Jul 2019 07:13:10 -0700 (PDT)
-Received: from [10.1.31.185] (unknown [10.1.31.185])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 3F9943F718;
- Wed,  3 Jul 2019 07:13:09 -0700 (PDT)
-Subject: Re: [PATCH 33/59] KVM: arm64: nv: Pretend we only support
- larger-than-host page sizes
-To: Marc Zyngier <marc.zyngier@arm.com>,
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id CE5462B;
+ Wed,  3 Jul 2019 07:15:36 -0700 (PDT)
+Received: from [10.1.197.61] (usa-sjc-imap-foss1.foss.arm.com [10.121.207.14])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
+ 656F83F718; Wed,  3 Jul 2019 07:15:35 -0700 (PDT)
+Subject: Re: [PATCH 21/59] KVM: arm64: nv: Set a handler for the system
+ instruction traps
+To: Julien Thierry <julien.thierry@arm.com>,
  linux-arm-kernel@lists.infradead.org, kvmarm@lists.cs.columbia.edu,
  kvm@vger.kernel.org
 References: <20190621093843.220980-1-marc.zyngier@arm.com>
- <20190621093843.220980-34-marc.zyngier@arm.com>
-From: Alexandru Elisei <alexandru.elisei@arm.com>
-Message-ID: <f99c2f11-a59c-485f-a264-69848e1e40c7@arm.com>
-Date: Wed, 3 Jul 2019 15:13:07 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.7.0
+ <20190621093843.220980-22-marc.zyngier@arm.com>
+ <880f9a31-10bb-0fbd-987a-03dabf536f2f@arm.com>
+From: Marc Zyngier <marc.zyngier@arm.com>
+Openpgp: preference=signencrypt
+Autocrypt: addr=marc.zyngier@arm.com; prefer-encrypt=mutual; keydata=
+ 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
+ Z46HaNmN2hZS/oJ69c1DI5Rcww==
+Organization: ARM Ltd
+Message-ID: <736ac3bf-20f4-56de-979b-6a77853f1517@arm.com>
+Date: Wed, 3 Jul 2019 15:15:34 +0100
+User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
+ Thunderbird/60.7.2
 MIME-Version: 1.0
-In-Reply-To: <20190621093843.220980-34-marc.zyngier@arm.com>
+In-Reply-To: <880f9a31-10bb-0fbd-987a-03dabf536f2f@arm.com>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190703_071316_502506_98F34B5F 
-X-CRM114-Status: GOOD (  23.35  )
+X-CRM114-CacheID: sfid-20190703_071538_030754_E671E2BA 
+X-CRM114-Status: GOOD (  19.31  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -65,117 +111,123 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Andre Przywara <andre.przywara@arm.com>, Dave Martin <Dave.Martin@arm.com>
+Cc: Suzuki K Poulose <suzuki.poulose@arm.com>,
+ Andre Przywara <andre.przywara@arm.com>,
+ Christoffer Dall <christoffer.dall@arm.com>, Dave Martin <Dave.Martin@arm.com>,
+ James Morse <james.morse@arm.com>, Jintack Lim <jintack@cs.columbia.edu>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On 25/06/2019 13:55, Julien Thierry wrote:
+> 
+> 
+> On 06/21/2019 10:38 AM, Marc Zyngier wrote:
+>> From: Jintack Lim <jintack.lim@linaro.org>
+>>
+>> When HCR.NV bit is set, execution of the EL2 translation regime address
+>> aranslation instructions and TLB maintenance instructions are trapped to
+>> EL2. In addition, execution of the EL1 translation regime address
+>> aranslation instructions and TLB maintenance instructions that are only
+> 
+> What's "translation regime address aranslation" ? I would guess
+> "aranslation" should be removed, but since the same pattern appears
+> twice in the commit doubt took over me :) .
 
-On 6/21/19 10:38 AM, Marc Zyngier wrote:
-> From: Jintack Lim <jintack.lim@linaro.org>
->
-> Exposing memory management support to the virtual EL2 as is exposed to
-> the host hypervisor would make the implementation too complex and
-> inefficient. Therefore expose limited memory management support for the
-> following two cases.
->
-> We expose same or larger page granules than the one host uses.  We can
-> theoretically support a guest hypervisor having smaller-than-host
-> granularities but it is not worth it since it makes the implementation
-> complicated and it would waste memory.
->
-> We expose 40 bits of physical address range to the virtual EL2, because
-> we only support a 40bit IPA for the guest. Eventually, this will change.
->
->   [ This was only trapping on the 32-bit encoding, also using the
->     current target register value as a base for the sanitisation.
->
->     Use as the handler for the 64-bit sysreg as well, also load the
->     sanitised version of the sysreg before clearing and setting bits.
->
->     -- Andre Przywara ]
->
-> Signed-off-by: Jintack Lim <jintack.lim@linaro.org>
-> Signed-off-by: Andre Przywara <andre.przywara@arm.com>
-> Signed-off-by: Marc Zyngier <marc.zyngier@arm.com>
-> ---
->  arch/arm64/kvm/sys_regs.c | 50 ++++++++++++++++++++++++++++++++++++++-
->  1 file changed, 49 insertions(+), 1 deletion(-)
->
-> diff --git a/arch/arm64/kvm/sys_regs.c b/arch/arm64/kvm/sys_regs.c
-> index ec34b81da936..cc994ec3c121 100644
-> --- a/arch/arm64/kvm/sys_regs.c
-> +++ b/arch/arm64/kvm/sys_regs.c
-> @@ -1710,6 +1710,54 @@ static bool access_spsr_el2(struct kvm_vcpu *vcpu,
->  	return true;
->  }
->  
-> +static bool access_id_aa64mmfr0_el1(struct kvm_vcpu *v,
-> +				    struct sys_reg_params *p,
-> +				    const struct sys_reg_desc *r)
-> +{
-> +	u64 val;
-> +
-> +	if (p->is_write)
-> +		return write_to_read_only(v, p, r);
-> +
-> +	val = read_id_reg(v, r, false);
-> +
-> +	if (!nested_virt_in_use(v))
-> +		goto out;
-> +
-> +	/*
-> +	 * Don't expose granules smaller than the host's granule to the guest.
-> +	 * We can theoretically support a guest hypervisor having
-> +	 * smaller-than-host granularities but it is not worth it since it
-> +	 * makes the implementation complicated and it would waste memory.
-> +	 */
-> +	switch (PAGE_SIZE) {
-> +	case SZ_64K:
-> +		/* 16KB granule not supported */
-> +		val &= ~(0xf << ID_AA64MMFR0_TGRAN16_SHIFT);
-> +		val |= (ID_AA64MMFR0_TGRAN16_NI << ID_AA64MMFR0_TGRAN16_SHIFT);
-> +		/* fall through */
-> +	case SZ_16K:
-> +		/* 4KB granule not supported */
-> +		val &= ~(0xf << ID_AA64MMFR0_TGRAN4_SHIFT);
-> +		val |= (ID_AA64MMFR0_TGRAN4_NI << ID_AA64MMFR0_TGRAN4_SHIFT);
-> +		break;
-> +	case SZ_4K:
-> +		/* All granule sizes are supported */
-> +		break;
-> +	default:
-> +		unreachable();
-> +	}
-> +
-> +	/* Expose only 40 bits physical address range to the guest hypervisor */
-> +	val &= ~(0xf << ID_AA64MMFR0_PARANGE_SHIFT);
-> +	val |= (0x2 << ID_AA64MMFR0_PARANGE_SHIFT); /* 40 bits */
+It's a whole new concept. Still working on it though! ;-)
 
-There are already defines for ID_AA64MMFR0_PARANGE_48 and
-ID_AA64MMFR0_PARANGE_52 in sysreg.h, perhaps a similar define for
-ID_AA64MMFR0_PARANGE_40 would be appropriate?
+> 
+>> accessible from EL2 and above are trapped to EL2. In these cases,
+>> ESR_EL2.EC will be set to 0x18.
+>>
+>> Change the existing handler to handle those system instructions as well
+>> as MRS/MSR instructions.  Emulation of each system instructions will be
+>> done in separate patches.
+>>
+>> Signed-off-by: Jintack Lim <jintack.lim@linaro.org>
+>> Signed-off-by: Marc Zyngier <marc.zyngier@arm.com>
+>> ---
+>>  arch/arm64/include/asm/kvm_coproc.h |  2 +-
+>>  arch/arm64/kvm/handle_exit.c        |  2 +-
+>>  arch/arm64/kvm/sys_regs.c           | 53 +++++++++++++++++++++++++----
+>>  arch/arm64/kvm/trace.h              |  2 +-
+>>  4 files changed, 50 insertions(+), 9 deletions(-)
+>>
+>> diff --git a/arch/arm64/include/asm/kvm_coproc.h b/arch/arm64/include/asm/kvm_coproc.h
+>> index 0b52377a6c11..1b3d21bd8adb 100644
+>> --- a/arch/arm64/include/asm/kvm_coproc.h
+>> +++ b/arch/arm64/include/asm/kvm_coproc.h
+>> @@ -43,7 +43,7 @@ int kvm_handle_cp14_32(struct kvm_vcpu *vcpu, struct kvm_run *run);
+>>  int kvm_handle_cp14_64(struct kvm_vcpu *vcpu, struct kvm_run *run);
+>>  int kvm_handle_cp15_32(struct kvm_vcpu *vcpu, struct kvm_run *run);
+>>  int kvm_handle_cp15_64(struct kvm_vcpu *vcpu, struct kvm_run *run);
+>> -int kvm_handle_sys_reg(struct kvm_vcpu *vcpu, struct kvm_run *run);
+>> +int kvm_handle_sys(struct kvm_vcpu *vcpu, struct kvm_run *run);
+>>  
+>>  #define kvm_coproc_table_init kvm_sys_reg_table_init
+>>  void kvm_sys_reg_table_init(void);
+>> diff --git a/arch/arm64/kvm/handle_exit.c b/arch/arm64/kvm/handle_exit.c
+>> index 2517711f034f..e662f23b63a1 100644
+>> --- a/arch/arm64/kvm/handle_exit.c
+>> +++ b/arch/arm64/kvm/handle_exit.c
+>> @@ -236,7 +236,7 @@ static exit_handle_fn arm_exit_handlers[] = {
+>>  	[ESR_ELx_EC_SMC32]	= handle_smc,
+>>  	[ESR_ELx_EC_HVC64]	= handle_hvc,
+>>  	[ESR_ELx_EC_SMC64]	= handle_smc,
+>> -	[ESR_ELx_EC_SYS64]	= kvm_handle_sys_reg,
+>> +	[ESR_ELx_EC_SYS64]	= kvm_handle_sys,
+>>  	[ESR_ELx_EC_SVE]	= handle_sve,
+>>  	[ESR_ELx_EC_ERET]	= kvm_handle_eret,
+>>  	[ESR_ELx_EC_IABT_LOW]	= kvm_handle_guest_abort,
+>> diff --git a/arch/arm64/kvm/sys_regs.c b/arch/arm64/kvm/sys_regs.c
+>> index 1d1312425cf2..e711dde4511c 100644
+>> --- a/arch/arm64/kvm/sys_regs.c
+>> +++ b/arch/arm64/kvm/sys_regs.c
+>> @@ -2597,6 +2597,40 @@ static int emulate_sys_reg(struct kvm_vcpu *vcpu,
+>>  	return 1;
+>>  }
+>>  
+>> +static int emulate_tlbi(struct kvm_vcpu *vcpu,
+>> +			     struct sys_reg_params *params)
+>> +{
+>> +	/* TODO: support tlbi instruction emulation*/
+>> +	kvm_inject_undefined(vcpu);
+>> +	return 1;
+>> +}
+>> +
+>> +static int emulate_at(struct kvm_vcpu *vcpu,
+>> +			     struct sys_reg_params *params)
+>> +{
+>> +	/* TODO: support address translation instruction emulation */
+>> +	kvm_inject_undefined(vcpu);
+>> +	return 1;
+>> +}
+>> +
+>> +static int emulate_sys_instr(struct kvm_vcpu *vcpu,
+>> +			     struct sys_reg_params *params)
+>> +{
+>> +	int ret = 0;
+>> +
+>> +	/* TLB maintenance instructions*/
+>> +	if (params->CRn == 0b1000)
+>> +		ret = emulate_tlbi(vcpu, params);
+>> +	/* Address Translation instructions */
+>> +	else if (params->CRn == 0b0111 && params->CRm == 0b1000)
+>> +		ret = emulate_at(vcpu, params);
+>> +
+> 
+> So, in theory the NV bit shouldn't trap other Op0 == 1 instructions.
+> Would it be worth adding a WARN() or BUG() in an "else" branch here,
+> just in case?
 
-> +
-> +out:
-> +	p->regval = val;
-> +
-> +	return true;
-> +}
-> +
->  static bool access_id_aa64pfr0_el1(struct kvm_vcpu *v,
->  				   struct sys_reg_params *p,
->  				   const struct sys_reg_desc *r)
-> @@ -1846,7 +1894,7 @@ static const struct sys_reg_desc sys_reg_descs[] = {
->  	ID_UNALLOCATED(6,7),
->  
->  	/* CRm=7 */
-> -	ID_SANITISED(ID_AA64MMFR0_EL1),
-> +	ID_SANITISED_FN(ID_AA64MMFR0_EL1, access_id_aa64mmfr0_el1),
->  	ID_SANITISED(ID_AA64MMFR1_EL1),
->  	ID_SANITISED(ID_AA64MMFR2_EL1),
->  	ID_UNALLOCATED(7,3),
+Probably not a BUG(), but a WARN_ONCE() would be good.
+
+Thanks,
+
+	M.
+-- 
+Jazz is not dead. It just smells funny...
 
 _______________________________________________
 linux-arm-kernel mailing list
