@@ -2,81 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B1AF55E484
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  3 Jul 2019 14:50:18 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7358C5E485
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  3 Jul 2019 14:50:39 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fYwYQcw6nHFZbpZh4yxz1knlIae5J328JPUW/qoQBd4=; b=MaCn2kuSdCJ9AJ
-	00zfpoReYMn7DjSqKvWEPgjYfTTAL7BucOonb+xloTL5cfHv6R+Xx2Jl+p0wCTiRLjcNE7ZB5cyoA
-	YTw7iu6c+cAtw8yyfTzaz83ff2Bq6aTeig6oyoqAvaTulwxSMUqD4WUF6L1GpLdLbDtieNU5qEFht
-	dFmsauV+oN0HjytohbYw6ur5nF5A+tEfnIY4sxTCdPBCJeReEoqgfL/NO0vVtTjOsAam6bAZq2Ozf
-	F78iIq0F8D1JIVbqODodC/L5K1hJpsYebpZ0C7UUbRpkI9XwRU58niXA0Rdz24TbfpOy1FXyQy6Uq
-	GeIx49u0gQs0hujf3PfA==;
+	List-Owner; bh=MEuE8GkjMW3xWDhHOm+o66PA3vpIbDzLfdK+DsUJST8=; b=S7jLPJwOn7n0Bb
+	0U8cIgYsxVsjx4VP3MGtAcSX8uMmWTjG4t7DnAMKzClug6E8G1arnuWI3XVFGE+5qC/QTPW0RGkli
+	LljuyZoPMVkYRD01WZ+lMYVKiYhrkKWu2mvRjpPZfOIRef6AFUfBoyWcIHRkQB8EXRFuSfVSZ6owf
+	6NM7i8jkDFyz3dMaaVu+9XASQcGzP7a+LlSuqFWVLnzgZAjJYjF5PT3bNOJlNOOtsT1QqCQzPvYQY
+	StlDwRqJIgsVdTlV1lwBkj3Jl5I1a/Aiv+ntEAQ7aFpz+K6sdXOgmIzssZ9TDMdIbl0b7Z0l+wqu9
+	VT62OdLFdN/kBeI9srjg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hieiH-000509-8u; Wed, 03 Jul 2019 12:50:17 +0000
-Received: from mail-pg1-x541.google.com ([2607:f8b0:4864:20::541])
+	id 1hieib-0006Q2-NE; Wed, 03 Jul 2019 12:50:37 +0000
+Received: from mail-pf1-x444.google.com ([2607:f8b0:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hiefF-0002xY-Ft
- for linux-arm-kernel@lists.infradead.org; Wed, 03 Jul 2019 12:47:12 +0000
-Received: by mail-pg1-x541.google.com with SMTP id t132so1191324pgb.9
+ id 1hiefJ-000314-Ab
+ for linux-arm-kernel@lists.infradead.org; Wed, 03 Jul 2019 12:47:17 +0000
+Received: by mail-pf1-x444.google.com with SMTP id x15so1249648pfq.0
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 03 Jul 2019 05:47:09 -0700 (PDT)
+ Wed, 03 Jul 2019 05:47:12 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=amarulasolutions.com; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=NRw5FVh3W11dJ0YvVWLadZFRKbaZEwCs5pcDkjCkZAo=;
- b=rXSn3zCnCMNc3JzPFgOgAlCZqJr/dIAa3/SvUrVAGdjJt94O2NZgh2wBFNB3ldj5SO
- xOBsBGeObr3xMb2cyIDj3WjIr4DDgAC7X0XgfVAP9WDSa+hR604ITYVWzO5h+q1vgRKY
- H+EmmjZveXjI6H9R3oVOEINVXQwHOq6awjoF0=
+ bh=eLJmm2lTppA+VRHmYY0bI3kobyHD2aRfMpmFoc3y5b4=;
+ b=DKkvEMWK5pbP5m6g6K/mKj6ibu7zHFdk/StwTMkCPINVtJN9DpMab6SRKSmGBbABXc
+ T3kBCqO+HfGNIlWFruDbDvxjSq/ZTl9kN5c+df5Al6BHvwbPjLLb5vfOX9CwdwjkAHXL
+ sU3y9n62yyRz6fUqx8IGjQjJMURz4fhSVgu6I=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=NRw5FVh3W11dJ0YvVWLadZFRKbaZEwCs5pcDkjCkZAo=;
- b=kfPV2o38QCvspg+jGZhK9CbDRjmiAEzJRfpixZy+w7KIHhqspPXbDXJyRieMm1u34m
- KoZW+rPeGW5R52beeRxaW+T1haWLmA+l00Et4tQZdKlUGUqG+J7OSyfbUTsN2K43HJI5
- rjtnPzknSHGFoe2ZfCyNeNeRzqrK5y1KyVjm7ax5m7FPKqc/jY/6UNiW+8kdP5AXN766
- LKFF79EgkGrzRb6I8jwX/67xJ6gHe27uebNUazismogrEElVvZRScUvMFhaDScQdLChc
- xg7o3l4HwWHJVQPWp7C4Ojfl/IvSQ4GZR9IWaqv9RPQAiQWsTuaSPY3TcqB2vKMHgD1Q
- x2hQ==
-X-Gm-Message-State: APjAAAVAsVBJu4WLo1U/b/WwUHcxlx1Ls4goMkMEwkVjgrMntS9QZWxQ
- 6QxwDBvW0j84W+2SnGQFDF449A==
-X-Google-Smtp-Source: APXvYqzUiYJ9fp4S55iVmWsYjbiJgSSsbKK8y5/KgBCsd/H33rVzIVn+ZmmbRtZvN/GmkPW1mWD9zA==
-X-Received: by 2002:a63:ff20:: with SMTP id k32mr30140601pgi.445.1562158028517; 
- Wed, 03 Jul 2019 05:47:08 -0700 (PDT)
+ bh=eLJmm2lTppA+VRHmYY0bI3kobyHD2aRfMpmFoc3y5b4=;
+ b=E3uIwNA2l+6+tqKMuVy6Muz1Lt2OoQfmuvsD0RXvy1HFf9HeHy5YP12XYnnd4tCVSX
+ /bzhYTlFchZ3uQnxlBVkBKMcfLHarBpG3lz8yf5n5yEJw7WffpobKpboH5eH8CpOj5r5
+ vys/eiFHuU6KJbyvvbTCle9IS/phm8y8o81kafASzx43YIJxkxeoxc/c092mJ8bLoGNR
+ ouMtNs8ZC4088fTX8gjQ/frU1LOIWH1fZ5lFysMFRmfKJDV7SnU9E5z8Z7xPaUf7e7EZ
+ vPUX5Zkw478dVWKyBH2SGtVToKagYNdYQGVrENPb2xnAx8jxgWtrfqhLs4eCEnm3dHbi
+ NzVg==
+X-Gm-Message-State: APjAAAXUWXaGzdoz5Q+OEed5NG/G9lbsm7JgbIQeMrk4sPylmfLkZpRn
+ q4+cZQXjucBhO21I1/IejMQtug==
+X-Google-Smtp-Source: APXvYqwCGbzgBWM50xAXT52h5zVc5m605ENXI6zCsGB7x73SWNG7Dr/QYsXXE2/sP81kQ8RK0X3X0Q==
+X-Received: by 2002:a17:90a:9b08:: with SMTP id
+ f8mr12693628pjp.103.1562158031889; 
+ Wed, 03 Jul 2019 05:47:11 -0700 (PDT)
 Received: from localhost.localdomain ([183.82.231.32])
- by smtp.gmail.com with ESMTPSA id q1sm3735890pfn.178.2019.07.03.05.47.05
+ by smtp.gmail.com with ESMTPSA id q1sm3735890pfn.178.2019.07.03.05.47.08
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Wed, 03 Jul 2019 05:47:08 -0700 (PDT)
+ Wed, 03 Jul 2019 05:47:11 -0700 (PDT)
 From: Jagan Teki <jagan@amarulasolutions.com>
 To: Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
  Maxime Ripard <maxime.ripard@bootlin.com>, Chen-Yu Tsai <wens@csie.org>,
  devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
  linux-kernel@vger.kernel.org
-Subject: [PATCH 07/25] ARM: dts: sun5i: Switch GR8 dts(i) to use SPDX
+Subject: [PATCH 08/25] ARM: dts: sun6i: Switch A31 dts(i) to use SPDX
  identifier
-Date: Wed,  3 Jul 2019 18:15:51 +0530
-Message-Id: <20190703124609.21435-8-jagan@amarulasolutions.com>
+Date: Wed,  3 Jul 2019 18:15:52 +0530
+Message-Id: <20190703124609.21435-9-jagan@amarulasolutions.com>
 X-Mailer: git-send-email 2.18.0.321.gffc6fa0e3
 In-Reply-To: <20190703124609.21435-1-jagan@amarulasolutions.com>
 References: <20190703124609.21435-1-jagan@amarulasolutions.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190703_054709_872445_546DB452 
-X-CRM114-Status: GOOD (  18.57  )
+X-CRM114-CacheID: sfid-20190703_054713_453725_3E674237 
+X-CRM114-Status: GOOD (  18.18  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:541 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:444 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -101,235 +102,387 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>,
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: linux-sunxi@googlegroups.com, linux-amarula@amarulasolutions.com,
  Jagan Teki <jagan@amarulasolutions.com>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-QWRvcHQgdGhlIFNQRFggbGljZW5zZSBpZGVudGlmaWVyIGhlYWRlcnMgdG8gZWFzZSBsaWNlbnNl
-CmNvbXBsaWFuY2UgbWFuYWdlbWVudCBvbiBBbGx3aW5uZXIgR1I4IGR0cyhpKSBmaWxlcy4KCldo
-aWxlIHRoZSB0ZXh0IHNwZWNpZmllcyAib2YgdGhlIEdQTCBvciB0aGUgWDExIGxpY2Vuc2UiCmJ1
-dCB0aGUgYWN0dWFsIGxpY2Vuc2UgdGV4dCBtYXRjaGVzIHRoZSBNSVQgbGljZW5zZSBhcwpzcGVj
-aWZpZWQgYXQgWzBdCgpbMF0gaHR0cHM6Ly9zcGR4Lm9yZy9saWNlbnNlcy9NSVQuaHRtbAoKU2ln
-bmVkLW9mZi1ieTogSmFnYW4gVGVraSA8amFnYW5AYW1hcnVsYXNvbHV0aW9ucy5jb20+Ci0tLQog
-YXJjaC9hcm0vYm9vdC9kdHMvc3VuNWktZ3I4LWNoaXAtcHJvLmR0cyB8IDM5ICstLS0tLS0tLS0t
-LS0tLS0tLS0tLS0tLQogYXJjaC9hcm0vYm9vdC9kdHMvc3VuNWktZ3I4LWV2Yi5kdHMgICAgICB8
-IDM5ICstLS0tLS0tLS0tLS0tLS0tLS0tLS0tLQogYXJjaC9hcm0vYm9vdC9kdHMvc3VuNWktZ3I4
-LmR0c2kgICAgICAgICB8IDM5ICstLS0tLS0tLS0tLS0tLS0tLS0tLS0tLQogYXJjaC9hcm0vYm9v
-dC9kdHMvc3VuNWktcjgtY2hpcC5kdHMgICAgICB8IDM5ICstLS0tLS0tLS0tLS0tLS0tLS0tLS0t
-LQogYXJjaC9hcm0vYm9vdC9kdHMvc3VuNWktcjguZHRzaSAgICAgICAgICB8IDM5ICstLS0tLS0t
-LS0tLS0tLS0tLS0tLS0tLQogNSBmaWxlcyBjaGFuZ2VkLCA1IGluc2VydGlvbnMoKyksIDE5MCBk
-ZWxldGlvbnMoLSkKCmRpZmYgLS1naXQgYS9hcmNoL2FybS9ib290L2R0cy9zdW41aS1ncjgtY2hp
-cC1wcm8uZHRzIGIvYXJjaC9hcm0vYm9vdC9kdHMvc3VuNWktZ3I4LWNoaXAtcHJvLmR0cwppbmRl
-eCBhMzJjZGUzZTMyZWIuLjhlMmIwOTk4NjA0NSAxMDA2NDQKLS0tIGEvYXJjaC9hcm0vYm9vdC9k
-dHMvc3VuNWktZ3I4LWNoaXAtcHJvLmR0cworKysgYi9hcmNoL2FybS9ib290L2R0cy9zdW41aS1n
-cjgtY2hpcC1wcm8uZHRzCkBAIC0xLDQ2ICsxLDkgQEAKKy8vIFNQRFgtTGljZW5zZS1JZGVudGlm
-aWVyOiAoR1BMLTIuMCBPUiBNSVQpCiAvKgogICogQ29weXJpZ2h0IDIwMTYgRnJlZSBFbGVjdHJv
-bnMKICAqIENvcHlyaWdodCAyMDE2IE5leHRUaGluZyBDbwogICoKICAqIE1heGltZSBSaXBhcmQg
-PG1heGltZS5yaXBhcmRAZnJlZS1lbGVjdHJvbnMuY29tPgotICoKLSAqIFRoaXMgZmlsZSBpcyBk
-dWFsLWxpY2Vuc2VkOiB5b3UgY2FuIHVzZSBpdCBlaXRoZXIgdW5kZXIgdGhlIHRlcm1zCi0gKiBv
-ZiB0aGUgR1BMIG9yIHRoZSBYMTEgbGljZW5zZSwgYXQgeW91ciBvcHRpb24uIE5vdGUgdGhhdCB0
-aGlzIGR1YWwKLSAqIGxpY2Vuc2luZyBvbmx5IGFwcGxpZXMgdG8gdGhpcyBmaWxlLCBhbmQgbm90
-IHRoaXMgcHJvamVjdCBhcyBhCi0gKiB3aG9sZS4KLSAqCi0gKiAgYSkgVGhpcyBmaWxlIGlzIGZy
-ZWUgc29mdHdhcmU7IHlvdSBjYW4gcmVkaXN0cmlidXRlIGl0IGFuZC9vcgotICogICAgIG1vZGlm
-eSBpdCB1bmRlciB0aGUgdGVybXMgb2YgdGhlIEdOVSBHZW5lcmFsIFB1YmxpYyBMaWNlbnNlIGFz
-Ci0gKiAgICAgcHVibGlzaGVkIGJ5IHRoZSBGcmVlIFNvZnR3YXJlIEZvdW5kYXRpb247IGVpdGhl
-ciB2ZXJzaW9uIDIgb2YgdGhlCi0gKiAgICAgTGljZW5zZSwgb3IgKGF0IHlvdXIgb3B0aW9uKSBh
-bnkgbGF0ZXIgdmVyc2lvbi4KLSAqCi0gKiAgICAgVGhpcyBmaWxlIGlzIGRpc3RyaWJ1dGVkIGlu
-IHRoZSBob3BlIHRoYXQgaXQgd2lsbCBiZSB1c2VmdWwsCi0gKiAgICAgYnV0IFdJVEhPVVQgQU5Z
-IFdBUlJBTlRZOyB3aXRob3V0IGV2ZW4gdGhlIGltcGxpZWQgd2FycmFudHkgb2YKLSAqICAgICBN
-RVJDSEFOVEFCSUxJVFkgb3IgRklUTkVTUyBGT1IgQSBQQVJUSUNVTEFSIFBVUlBPU0UuICBTZWUg
-dGhlCi0gKiAgICAgR05VIEdlbmVyYWwgUHVibGljIExpY2Vuc2UgZm9yIG1vcmUgZGV0YWlscy4K
-LSAqCi0gKiBPciwgYWx0ZXJuYXRpdmVseSwKLSAqCi0gKiAgYikgUGVybWlzc2lvbiBpcyBoZXJl
-YnkgZ3JhbnRlZCwgZnJlZSBvZiBjaGFyZ2UsIHRvIGFueSBwZXJzb24KLSAqICAgICBvYnRhaW5p
-bmcgYSBjb3B5IG9mIHRoaXMgc29mdHdhcmUgYW5kIGFzc29jaWF0ZWQgZG9jdW1lbnRhdGlvbgot
-ICogICAgIGZpbGVzICh0aGUgIlNvZnR3YXJlIiksIHRvIGRlYWwgaW4gdGhlIFNvZnR3YXJlIHdp
-dGhvdXQKLSAqICAgICByZXN0cmljdGlvbiwgaW5jbHVkaW5nIHdpdGhvdXQgbGltaXRhdGlvbiB0
-aGUgcmlnaHRzIHRvIHVzZSwKLSAqICAgICBjb3B5LCBtb2RpZnksIG1lcmdlLCBwdWJsaXNoLCBk
-aXN0cmlidXRlLCBzdWJsaWNlbnNlLCBhbmQvb3IKLSAqICAgICBzZWxsIGNvcGllcyBvZiB0aGUg
-U29mdHdhcmUsIGFuZCB0byBwZXJtaXQgcGVyc29ucyB0byB3aG9tIHRoZQotICogICAgIFNvZnR3
-YXJlIGlzIGZ1cm5pc2hlZCB0byBkbyBzbywgc3ViamVjdCB0byB0aGUgZm9sbG93aW5nCi0gKiAg
-ICAgY29uZGl0aW9uczoKLSAqCi0gKiAgICAgVGhlIGFib3ZlIGNvcHlyaWdodCBub3RpY2UgYW5k
-IHRoaXMgcGVybWlzc2lvbiBub3RpY2Ugc2hhbGwgYmUKLSAqICAgICBpbmNsdWRlZCBpbiBhbGwg
-Y29waWVzIG9yIHN1YnN0YW50aWFsIHBvcnRpb25zIG9mIHRoZSBTb2Z0d2FyZS4KLSAqCi0gKiAg
-ICAgVEhFIFNPRlRXQVJFIElTIFBST1ZJREVEICJBUyBJUyIsIFdJVEhPVVQgV0FSUkFOVFkgT0Yg
-QU5ZIEtJTkQsCi0gKiAgICAgRVhQUkVTUyBPUiBJTVBMSUVELCBJTkNMVURJTkcgQlVUIE5PVCBM
-SU1JVEVEIFRPIFRIRSBXQVJSQU5USUVTCi0gKiAgICAgT0YgTUVSQ0hBTlRBQklMSVRZLCBGSVRO
-RVNTIEZPUiBBIFBBUlRJQ1VMQVIgUFVSUE9TRSBBTkQKLSAqICAgICBOT05JTkZSSU5HRU1FTlQu
-IElOIE5PIEVWRU5UIFNIQUxMIFRIRSBBVVRIT1JTIE9SIENPUFlSSUdIVAotICogICAgIEhPTERF
-UlMgQkUgTElBQkxFIEZPUiBBTlkgQ0xBSU0sIERBTUFHRVMgT1IgT1RIRVIgTElBQklMSVRZLAot
-ICogICAgIFdIRVRIRVIgSU4gQU4gQUNUSU9OIE9GIENPTlRSQUNULCBUT1JUIE9SIE9USEVSV0lT
-RSwgQVJJU0lORwotICogICAgIEZST00sIE9VVCBPRiBPUiBJTiBDT05ORUNUSU9OIFdJVEggVEhF
-IFNPRlRXQVJFIE9SIFRIRSBVU0UgT1IKLSAqICAgICBPVEhFUiBERUFMSU5HUyBJTiBUSEUgU09G
-VFdBUkUuCiAgKi8KIAogL2R0cy12MS87CmRpZmYgLS1naXQgYS9hcmNoL2FybS9ib290L2R0cy9z
-dW41aS1ncjgtZXZiLmR0cyBiL2FyY2gvYXJtL2Jvb3QvZHRzL3N1bjVpLWdyOC1ldmIuZHRzCmlu
-ZGV4IDRjMjBkNzMxYTljNi4uNDFiYmQ2ZjJmMTAwIDEwMDY0NAotLS0gYS9hcmNoL2FybS9ib290
-L2R0cy9zdW41aS1ncjgtZXZiLmR0cworKysgYi9hcmNoL2FybS9ib290L2R0cy9zdW41aS1ncjgt
-ZXZiLmR0cwpAQCAtMSw0NiArMSw5IEBACisvLyBTUERYLUxpY2Vuc2UtSWRlbnRpZmllcjogKEdQ
-TC0yLjAgT1IgTUlUKQogLyoKICAqIENvcHlyaWdodCAyMDE2IEZyZWUgRWxlY3Ryb25zCiAgKiBD
-b3B5cmlnaHQgMjAxNiBOZXh0VGhpbmcgQ28KICAqCiAgKiBNeWzDqG5lIEpvc3NlcmFuZCA8bXls
-ZW5lLmpvc3NlcmFuZEBmcmVlLWVsZWN0cm9ucy5jb20+Ci0gKgotICogVGhpcyBmaWxlIGlzIGR1
-YWwtbGljZW5zZWQ6IHlvdSBjYW4gdXNlIGl0IGVpdGhlciB1bmRlciB0aGUgdGVybXMKLSAqIG9m
-IHRoZSBHUEwgb3IgdGhlIFgxMSBsaWNlbnNlLCBhdCB5b3VyIG9wdGlvbi4gTm90ZSB0aGF0IHRo
-aXMgZHVhbAotICogbGljZW5zaW5nIG9ubHkgYXBwbGllcyB0byB0aGlzIGZpbGUsIGFuZCBub3Qg
-dGhpcyBwcm9qZWN0IGFzIGEKLSAqIHdob2xlLgotICoKLSAqICBhKSBUaGlzIGZpbGUgaXMgZnJl
-ZSBzb2Z0d2FyZTsgeW91IGNhbiByZWRpc3RyaWJ1dGUgaXQgYW5kL29yCi0gKiAgICAgbW9kaWZ5
-IGl0IHVuZGVyIHRoZSB0ZXJtcyBvZiB0aGUgR05VIEdlbmVyYWwgUHVibGljIExpY2Vuc2UgYXMK
-LSAqICAgICBwdWJsaXNoZWQgYnkgdGhlIEZyZWUgU29mdHdhcmUgRm91bmRhdGlvbjsgZWl0aGVy
-IHZlcnNpb24gMiBvZiB0aGUKLSAqICAgICBMaWNlbnNlLCBvciAoYXQgeW91ciBvcHRpb24pIGFu
-eSBsYXRlciB2ZXJzaW9uLgotICoKLSAqICAgICBUaGlzIGZpbGUgaXMgZGlzdHJpYnV0ZWQgaW4g
-dGhlIGhvcGUgdGhhdCBpdCB3aWxsIGJlIHVzZWZ1bCwKLSAqICAgICBidXQgV0lUSE9VVCBBTlkg
-V0FSUkFOVFk7IHdpdGhvdXQgZXZlbiB0aGUgaW1wbGllZCB3YXJyYW50eSBvZgotICogICAgIE1F
-UkNIQU5UQUJJTElUWSBvciBGSVRORVNTIEZPUiBBIFBBUlRJQ1VMQVIgUFVSUE9TRS4gIFNlZSB0
-aGUKLSAqICAgICBHTlUgR2VuZXJhbCBQdWJsaWMgTGljZW5zZSBmb3IgbW9yZSBkZXRhaWxzLgot
-ICoKLSAqIE9yLCBhbHRlcm5hdGl2ZWx5LAotICoKLSAqICBiKSBQZXJtaXNzaW9uIGlzIGhlcmVi
-eSBncmFudGVkLCBmcmVlIG9mIGNoYXJnZSwgdG8gYW55IHBlcnNvbgotICogICAgIG9idGFpbmlu
-ZyBhIGNvcHkgb2YgdGhpcyBzb2Z0d2FyZSBhbmQgYXNzb2NpYXRlZCBkb2N1bWVudGF0aW9uCi0g
-KiAgICAgZmlsZXMgKHRoZSAiU29mdHdhcmUiKSwgdG8gZGVhbCBpbiB0aGUgU29mdHdhcmUgd2l0
-aG91dAotICogICAgIHJlc3RyaWN0aW9uLCBpbmNsdWRpbmcgd2l0aG91dCBsaW1pdGF0aW9uIHRo
-ZSByaWdodHMgdG8gdXNlLAotICogICAgIGNvcHksIG1vZGlmeSwgbWVyZ2UsIHB1Ymxpc2gsIGRp
-c3RyaWJ1dGUsIHN1YmxpY2Vuc2UsIGFuZC9vcgotICogICAgIHNlbGwgY29waWVzIG9mIHRoZSBT
-b2Z0d2FyZSwgYW5kIHRvIHBlcm1pdCBwZXJzb25zIHRvIHdob20gdGhlCi0gKiAgICAgU29mdHdh
-cmUgaXMgZnVybmlzaGVkIHRvIGRvIHNvLCBzdWJqZWN0IHRvIHRoZSBmb2xsb3dpbmcKLSAqICAg
-ICBjb25kaXRpb25zOgotICoKLSAqICAgICBUaGUgYWJvdmUgY29weXJpZ2h0IG5vdGljZSBhbmQg
-dGhpcyBwZXJtaXNzaW9uIG5vdGljZSBzaGFsbCBiZQotICogICAgIGluY2x1ZGVkIGluIGFsbCBj
-b3BpZXMgb3Igc3Vic3RhbnRpYWwgcG9ydGlvbnMgb2YgdGhlIFNvZnR3YXJlLgotICoKLSAqICAg
-ICBUSEUgU09GVFdBUkUgSVMgUFJPVklERUQgIkFTIElTIiwgV0lUSE9VVCBXQVJSQU5UWSBPRiBB
-TlkgS0lORCwKLSAqICAgICBFWFBSRVNTIE9SIElNUExJRUQsIElOQ0xVRElORyBCVVQgTk9UIExJ
-TUlURUQgVE8gVEhFIFdBUlJBTlRJRVMKLSAqICAgICBPRiBNRVJDSEFOVEFCSUxJVFksIEZJVE5F
-U1MgRk9SIEEgUEFSVElDVUxBUiBQVVJQT1NFIEFORAotICogICAgIE5PTklORlJJTkdFTUVOVC4g
-SU4gTk8gRVZFTlQgU0hBTEwgVEhFIEFVVEhPUlMgT1IgQ09QWVJJR0hUCi0gKiAgICAgSE9MREVS
-UyBCRSBMSUFCTEUgRk9SIEFOWSBDTEFJTSwgREFNQUdFUyBPUiBPVEhFUiBMSUFCSUxJVFksCi0g
-KiAgICAgV0hFVEhFUiBJTiBBTiBBQ1RJT04gT0YgQ09OVFJBQ1QsIFRPUlQgT1IgT1RIRVJXSVNF
-LCBBUklTSU5HCi0gKiAgICAgRlJPTSwgT1VUIE9GIE9SIElOIENPTk5FQ1RJT04gV0lUSCBUSEUg
-U09GVFdBUkUgT1IgVEhFIFVTRSBPUgotICogICAgIE9USEVSIERFQUxJTkdTIElOIFRIRSBTT0ZU
-V0FSRS4KICAqLwogCiAvZHRzLXYxLzsKZGlmZiAtLWdpdCBhL2FyY2gvYXJtL2Jvb3QvZHRzL3N1
-bjVpLWdyOC5kdHNpIGIvYXJjaC9hcm0vYm9vdC9kdHMvc3VuNWktZ3I4LmR0c2kKaW5kZXggOThh
-OGZkNWU4OWU4Li45ZmViMTNkOTI5YzUgMTAwNjQ0Ci0tLSBhL2FyY2gvYXJtL2Jvb3QvZHRzL3N1
-bjVpLWdyOC5kdHNpCisrKyBiL2FyY2gvYXJtL2Jvb3QvZHRzL3N1bjVpLWdyOC5kdHNpCkBAIC0x
-LDQ1ICsxLDggQEAKKy8vIFNQRFgtTGljZW5zZS1JZGVudGlmaWVyOiAoR1BMLTIuMCBPUiBNSVQp
-CiAvKgogICogQ29weXJpZ2h0IDIwMTYgTXlsw6huZSBKb3NzZXJhbmQKICAqCiAgKiBNeWzDqG5l
-IEpvc3NlcmFuZCA8bXlsZW5lLmpvc3NlcmFuZEBmcmVlLWVsZWN0cm9ucy5jb20+Ci0gKgotICog
-VGhpcyBmaWxlIGlzIGR1YWwtbGljZW5zZWQ6IHlvdSBjYW4gdXNlIGl0IGVpdGhlciB1bmRlciB0
-aGUgdGVybXMKLSAqIG9mIHRoZSBHUEwgb3IgdGhlIFgxMSBsaWNlbnNlLCBhdCB5b3VyIG9wdGlv
-bi4gTm90ZSB0aGF0IHRoaXMgZHVhbAotICogbGljZW5zaW5nIG9ubHkgYXBwbGllcyB0byB0aGlz
-IGZpbGUsIGFuZCBub3QgdGhpcyBwcm9qZWN0IGFzIGEKLSAqIHdob2xlLgotICoKLSAqICBhKSBU
-aGlzIGxpYnJhcnkgaXMgZnJlZSBzb2Z0d2FyZTsgeW91IGNhbiByZWRpc3RyaWJ1dGUgaXQgYW5k
-L29yCi0gKiAgICAgbW9kaWZ5IGl0IHVuZGVyIHRoZSB0ZXJtcyBvZiB0aGUgR05VIEdlbmVyYWwg
-UHVibGljIExpY2Vuc2UgYXMKLSAqICAgICBwdWJsaXNoZWQgYnkgdGhlIEZyZWUgU29mdHdhcmUg
-Rm91bmRhdGlvbjsgZWl0aGVyIHZlcnNpb24gMiBvZiB0aGUKLSAqICAgICBMaWNlbnNlLCBvciAo
-YXQgeW91ciBvcHRpb24pIGFueSBsYXRlciB2ZXJzaW9uLgotICoKLSAqICAgICBUaGlzIGxpYnJh
-cnkgaXMgZGlzdHJpYnV0ZWQgaW4gdGhlIGhvcGUgdGhhdCBpdCB3aWxsIGJlIHVzZWZ1bCwKLSAq
-ICAgICBidXQgV0lUSE9VVCBBTlkgV0FSUkFOVFk7IHdpdGhvdXQgZXZlbiB0aGUgaW1wbGllZCB3
-YXJyYW50eSBvZgotICogICAgIE1FUkNIQU5UQUJJTElUWSBvciBGSVRORVNTIEZPUiBBIFBBUlRJ
-Q1VMQVIgUFVSUE9TRS4gIFNlZSB0aGUKLSAqICAgICBHTlUgR2VuZXJhbCBQdWJsaWMgTGljZW5z
-ZSBmb3IgbW9yZSBkZXRhaWxzLgotICoKLSAqIE9yLCBhbHRlcm5hdGl2ZWx5LAotICoKLSAqICBi
-KSBQZXJtaXNzaW9uIGlzIGhlcmVieSBncmFudGVkLCBmcmVlIG9mIGNoYXJnZSwgdG8gYW55IHBl
-cnNvbgotICogICAgIG9idGFpbmluZyBhIGNvcHkgb2YgdGhpcyBzb2Z0d2FyZSBhbmQgYXNzb2Np
-YXRlZCBkb2N1bWVudGF0aW9uCi0gKiAgICAgZmlsZXMgKHRoZSAiU29mdHdhcmUiKSwgdG8gZGVh
-bCBpbiB0aGUgU29mdHdhcmUgd2l0aG91dAotICogICAgIHJlc3RyaWN0aW9uLCBpbmNsdWRpbmcg
-d2l0aG91dCBsaW1pdGF0aW9uIHRoZSByaWdodHMgdG8gdXNlLAotICogICAgIGNvcHksIG1vZGlm
-eSwgbWVyZ2UsIHB1Ymxpc2gsIGRpc3RyaWJ1dGUsIHN1YmxpY2Vuc2UsIGFuZC9vcgotICogICAg
-IHNlbGwgY29waWVzIG9mIHRoZSBTb2Z0d2FyZSwgYW5kIHRvIHBlcm1pdCBwZXJzb25zIHRvIHdo
-b20gdGhlCi0gKiAgICAgU29mdHdhcmUgaXMgZnVybmlzaGVkIHRvIGRvIHNvLCBzdWJqZWN0IHRv
-IHRoZSBmb2xsb3dpbmcKLSAqICAgICBjb25kaXRpb25zOgotICoKLSAqICAgICBUaGUgYWJvdmUg
-Y29weXJpZ2h0IG5vdGljZSBhbmQgdGhpcyBwZXJtaXNzaW9uIG5vdGljZSBzaGFsbCBiZQotICog
-ICAgIGluY2x1ZGVkIGluIGFsbCBjb3BpZXMgb3Igc3Vic3RhbnRpYWwgcG9ydGlvbnMgb2YgdGhl
-IFNvZnR3YXJlLgotICoKLSAqICAgICBUSEUgU09GVFdBUkUgSVMgUFJPVklERUQgIkFTIElTIiwg
-V0lUSE9VVCBXQVJSQU5UWSBPRiBBTlkgS0lORCwKLSAqICAgICBFWFBSRVNTIE9SIElNUExJRUQs
-IElOQ0xVRElORyBCVVQgTk9UIExJTUlURUQgVE8gVEhFIFdBUlJBTlRJRVMKLSAqICAgICBPRiBN
-RVJDSEFOVEFCSUxJVFksIEZJVE5FU1MgRk9SIEEgUEFSVElDVUxBUiBQVVJQT1NFIEFORAotICog
-ICAgIE5PTklORlJJTkdFTUVOVC4gSU4gTk8gRVZFTlQgU0hBTEwgVEhFIEFVVEhPUlMgT1IgQ09Q
-WVJJR0hUCi0gKiAgICAgSE9MREVSUyBCRSBMSUFCTEUgRk9SIEFOWSBDTEFJTSwgREFNQUdFUyBP
-UiBPVEhFUiBMSUFCSUxJVFksCi0gKiAgICAgV0hFVEhFUiBJTiBBTiBBQ1RJT04gT0YgQ09OVFJB
-Q1QsIFRPUlQgT1IgT1RIRVJXSVNFLCBBUklTSU5HCi0gKiAgICAgRlJPTSwgT1VUIE9GIE9SIElO
-IENPTk5FQ1RJT04gV0lUSCBUSEUgU09GVFdBUkUgT1IgVEhFIFVTRSBPUgotICogICAgIE9USEVS
-IERFQUxJTkdTIElOIFRIRSBTT0ZUV0FSRS4KICAqLwogCiAjaW5jbHVkZSAic3VuNWkuZHRzaSIK
-ZGlmZiAtLWdpdCBhL2FyY2gvYXJtL2Jvb3QvZHRzL3N1bjVpLXI4LWNoaXAuZHRzIGIvYXJjaC9h
-cm0vYm9vdC9kdHMvc3VuNWktcjgtY2hpcC5kdHMKaW5kZXggNGJmNDk0M2Q0ZWI3Li5jMjE3Nzhi
-YmZiMmQgMTAwNjQ0Ci0tLSBhL2FyY2gvYXJtL2Jvb3QvZHRzL3N1bjVpLXI4LWNoaXAuZHRzCisr
-KyBiL2FyY2gvYXJtL2Jvb3QvZHRzL3N1bjVpLXI4LWNoaXAuZHRzCkBAIC0xLDQ2ICsxLDkgQEAK
-Ky8vIFNQRFgtTGljZW5zZS1JZGVudGlmaWVyOiAoR1BMLTIuMCBPUiBNSVQpCiAvKgogICogQ29w
-eXJpZ2h0IDIwMTUgRnJlZSBFbGVjdHJvbnMKICAqIENvcHlyaWdodCAyMDE1IE5leHRUaGluZyBD
-bwogICoKICAqIE1heGltZSBSaXBhcmQgPG1heGltZS5yaXBhcmRAZnJlZS1lbGVjdHJvbnMuY29t
-PgotICoKLSAqIFRoaXMgZmlsZSBpcyBkdWFsLWxpY2Vuc2VkOiB5b3UgY2FuIHVzZSBpdCBlaXRo
-ZXIgdW5kZXIgdGhlIHRlcm1zCi0gKiBvZiB0aGUgR1BMIG9yIHRoZSBYMTEgbGljZW5zZSwgYXQg
-eW91ciBvcHRpb24uIE5vdGUgdGhhdCB0aGlzIGR1YWwKLSAqIGxpY2Vuc2luZyBvbmx5IGFwcGxp
-ZXMgdG8gdGhpcyBmaWxlLCBhbmQgbm90IHRoaXMgcHJvamVjdCBhcyBhCi0gKiB3aG9sZS4KLSAq
-Ci0gKiAgYSkgVGhpcyBmaWxlIGlzIGZyZWUgc29mdHdhcmU7IHlvdSBjYW4gcmVkaXN0cmlidXRl
-IGl0IGFuZC9vcgotICogICAgIG1vZGlmeSBpdCB1bmRlciB0aGUgdGVybXMgb2YgdGhlIEdOVSBH
-ZW5lcmFsIFB1YmxpYyBMaWNlbnNlIGFzCi0gKiAgICAgcHVibGlzaGVkIGJ5IHRoZSBGcmVlIFNv
-ZnR3YXJlIEZvdW5kYXRpb247IGVpdGhlciB2ZXJzaW9uIDIgb2YgdGhlCi0gKiAgICAgTGljZW5z
-ZSwgb3IgKGF0IHlvdXIgb3B0aW9uKSBhbnkgbGF0ZXIgdmVyc2lvbi4KLSAqCi0gKiAgICAgVGhp
-cyBmaWxlIGlzIGRpc3RyaWJ1dGVkIGluIHRoZSBob3BlIHRoYXQgaXQgd2lsbCBiZSB1c2VmdWws
-Ci0gKiAgICAgYnV0IFdJVEhPVVQgQU5ZIFdBUlJBTlRZOyB3aXRob3V0IGV2ZW4gdGhlIGltcGxp
-ZWQgd2FycmFudHkgb2YKLSAqICAgICBNRVJDSEFOVEFCSUxJVFkgb3IgRklUTkVTUyBGT1IgQSBQ
-QVJUSUNVTEFSIFBVUlBPU0UuICBTZWUgdGhlCi0gKiAgICAgR05VIEdlbmVyYWwgUHVibGljIExp
-Y2Vuc2UgZm9yIG1vcmUgZGV0YWlscy4KLSAqCi0gKiBPciwgYWx0ZXJuYXRpdmVseSwKLSAqCi0g
-KiAgYikgUGVybWlzc2lvbiBpcyBoZXJlYnkgZ3JhbnRlZCwgZnJlZSBvZiBjaGFyZ2UsIHRvIGFu
-eSBwZXJzb24KLSAqICAgICBvYnRhaW5pbmcgYSBjb3B5IG9mIHRoaXMgc29mdHdhcmUgYW5kIGFz
-c29jaWF0ZWQgZG9jdW1lbnRhdGlvbgotICogICAgIGZpbGVzICh0aGUgIlNvZnR3YXJlIiksIHRv
-IGRlYWwgaW4gdGhlIFNvZnR3YXJlIHdpdGhvdXQKLSAqICAgICByZXN0cmljdGlvbiwgaW5jbHVk
-aW5nIHdpdGhvdXQgbGltaXRhdGlvbiB0aGUgcmlnaHRzIHRvIHVzZSwKLSAqICAgICBjb3B5LCBt
-b2RpZnksIG1lcmdlLCBwdWJsaXNoLCBkaXN0cmlidXRlLCBzdWJsaWNlbnNlLCBhbmQvb3IKLSAq
-ICAgICBzZWxsIGNvcGllcyBvZiB0aGUgU29mdHdhcmUsIGFuZCB0byBwZXJtaXQgcGVyc29ucyB0
-byB3aG9tIHRoZQotICogICAgIFNvZnR3YXJlIGlzIGZ1cm5pc2hlZCB0byBkbyBzbywgc3ViamVj
-dCB0byB0aGUgZm9sbG93aW5nCi0gKiAgICAgY29uZGl0aW9uczoKLSAqCi0gKiAgICAgVGhlIGFi
-b3ZlIGNvcHlyaWdodCBub3RpY2UgYW5kIHRoaXMgcGVybWlzc2lvbiBub3RpY2Ugc2hhbGwgYmUK
-LSAqICAgICBpbmNsdWRlZCBpbiBhbGwgY29waWVzIG9yIHN1YnN0YW50aWFsIHBvcnRpb25zIG9m
-IHRoZSBTb2Z0d2FyZS4KLSAqCi0gKiAgICAgVEhFIFNPRlRXQVJFIElTIFBST1ZJREVEICJBUyBJ
-UyIsIFdJVEhPVVQgV0FSUkFOVFkgT0YgQU5ZIEtJTkQsCi0gKiAgICAgRVhQUkVTUyBPUiBJTVBM
-SUVELCBJTkNMVURJTkcgQlVUIE5PVCBMSU1JVEVEIFRPIFRIRSBXQVJSQU5USUVTCi0gKiAgICAg
-T0YgTUVSQ0hBTlRBQklMSVRZLCBGSVRORVNTIEZPUiBBIFBBUlRJQ1VMQVIgUFVSUE9TRSBBTkQK
-LSAqICAgICBOT05JTkZSSU5HRU1FTlQuIElOIE5PIEVWRU5UIFNIQUxMIFRIRSBBVVRIT1JTIE9S
-IENPUFlSSUdIVAotICogICAgIEhPTERFUlMgQkUgTElBQkxFIEZPUiBBTlkgQ0xBSU0sIERBTUFH
-RVMgT1IgT1RIRVIgTElBQklMSVRZLAotICogICAgIFdIRVRIRVIgSU4gQU4gQUNUSU9OIE9GIENP
-TlRSQUNULCBUT1JUIE9SIE9USEVSV0lTRSwgQVJJU0lORwotICogICAgIEZST00sIE9VVCBPRiBP
-UiBJTiBDT05ORUNUSU9OIFdJVEggVEhFIFNPRlRXQVJFIE9SIFRIRSBVU0UgT1IKLSAqICAgICBP
-VEhFUiBERUFMSU5HUyBJTiBUSEUgU09GVFdBUkUuCiAgKi8KIAogL2R0cy12MS87CmRpZmYgLS1n
-aXQgYS9hcmNoL2FybS9ib290L2R0cy9zdW41aS1yOC5kdHNpIGIvYXJjaC9hcm0vYm9vdC9kdHMv
-c3VuNWktcjguZHRzaQppbmRleCBkZTM1ZGJjZDExOTEuLmI1NGY4YjMyYTU2OSAxMDA2NDQKLS0t
-IGEvYXJjaC9hcm0vYm9vdC9kdHMvc3VuNWktcjguZHRzaQorKysgYi9hcmNoL2FybS9ib290L2R0
-cy9zdW41aS1yOC5kdHNpCkBAIC0xLDQ2ICsxLDkgQEAKKy8vIFNQRFgtTGljZW5zZS1JZGVudGlm
-aWVyOiAoR1BMLTIuMCBPUiBNSVQpCiAvKgogICogQ29weXJpZ2h0IDIwMTUgRnJlZSBFbGVjdHJv
-bnMKICAqIENvcHlyaWdodCAyMDE1IE5leHRUaGluZyBDbwogICoKICAqIE1heGltZSBSaXBhcmQg
-PG1heGltZS5yaXBhcmRAZnJlZS1lbGVjdHJvbnMuY29tPgotICoKLSAqIFRoaXMgZmlsZSBpcyBk
-dWFsLWxpY2Vuc2VkOiB5b3UgY2FuIHVzZSBpdCBlaXRoZXIgdW5kZXIgdGhlIHRlcm1zCi0gKiBv
-ZiB0aGUgR1BMIG9yIHRoZSBYMTEgbGljZW5zZSwgYXQgeW91ciBvcHRpb24uIE5vdGUgdGhhdCB0
-aGlzIGR1YWwKLSAqIGxpY2Vuc2luZyBvbmx5IGFwcGxpZXMgdG8gdGhpcyBmaWxlLCBhbmQgbm90
-IHRoaXMgcHJvamVjdCBhcyBhCi0gKiB3aG9sZS4KLSAqCi0gKiAgYSkgVGhpcyBmaWxlIGlzIGZy
-ZWUgc29mdHdhcmU7IHlvdSBjYW4gcmVkaXN0cmlidXRlIGl0IGFuZC9vcgotICogICAgIG1vZGlm
-eSBpdCB1bmRlciB0aGUgdGVybXMgb2YgdGhlIEdOVSBHZW5lcmFsIFB1YmxpYyBMaWNlbnNlIGFz
-Ci0gKiAgICAgcHVibGlzaGVkIGJ5IHRoZSBGcmVlIFNvZnR3YXJlIEZvdW5kYXRpb247IGVpdGhl
-ciB2ZXJzaW9uIDIgb2YgdGhlCi0gKiAgICAgTGljZW5zZSwgb3IgKGF0IHlvdXIgb3B0aW9uKSBh
-bnkgbGF0ZXIgdmVyc2lvbi4KLSAqCi0gKiAgICAgVGhpcyBmaWxlIGlzIGRpc3RyaWJ1dGVkIGlu
-IHRoZSBob3BlIHRoYXQgaXQgd2lsbCBiZSB1c2VmdWwsCi0gKiAgICAgYnV0IFdJVEhPVVQgQU5Z
-IFdBUlJBTlRZOyB3aXRob3V0IGV2ZW4gdGhlIGltcGxpZWQgd2FycmFudHkgb2YKLSAqICAgICBN
-RVJDSEFOVEFCSUxJVFkgb3IgRklUTkVTUyBGT1IgQSBQQVJUSUNVTEFSIFBVUlBPU0UuICBTZWUg
-dGhlCi0gKiAgICAgR05VIEdlbmVyYWwgUHVibGljIExpY2Vuc2UgZm9yIG1vcmUgZGV0YWlscy4K
-LSAqCi0gKiBPciwgYWx0ZXJuYXRpdmVseSwKLSAqCi0gKiAgYikgUGVybWlzc2lvbiBpcyBoZXJl
-YnkgZ3JhbnRlZCwgZnJlZSBvZiBjaGFyZ2UsIHRvIGFueSBwZXJzb24KLSAqICAgICBvYnRhaW5p
-bmcgYSBjb3B5IG9mIHRoaXMgc29mdHdhcmUgYW5kIGFzc29jaWF0ZWQgZG9jdW1lbnRhdGlvbgot
-ICogICAgIGZpbGVzICh0aGUgIlNvZnR3YXJlIiksIHRvIGRlYWwgaW4gdGhlIFNvZnR3YXJlIHdp
-dGhvdXQKLSAqICAgICByZXN0cmljdGlvbiwgaW5jbHVkaW5nIHdpdGhvdXQgbGltaXRhdGlvbiB0
-aGUgcmlnaHRzIHRvIHVzZSwKLSAqICAgICBjb3B5LCBtb2RpZnksIG1lcmdlLCBwdWJsaXNoLCBk
-aXN0cmlidXRlLCBzdWJsaWNlbnNlLCBhbmQvb3IKLSAqICAgICBzZWxsIGNvcGllcyBvZiB0aGUg
-U29mdHdhcmUsIGFuZCB0byBwZXJtaXQgcGVyc29ucyB0byB3aG9tIHRoZQotICogICAgIFNvZnR3
-YXJlIGlzIGZ1cm5pc2hlZCB0byBkbyBzbywgc3ViamVjdCB0byB0aGUgZm9sbG93aW5nCi0gKiAg
-ICAgY29uZGl0aW9uczoKLSAqCi0gKiAgICAgVGhlIGFib3ZlIGNvcHlyaWdodCBub3RpY2UgYW5k
-IHRoaXMgcGVybWlzc2lvbiBub3RpY2Ugc2hhbGwgYmUKLSAqICAgICBpbmNsdWRlZCBpbiBhbGwg
-Y29waWVzIG9yIHN1YnN0YW50aWFsIHBvcnRpb25zIG9mIHRoZSBTb2Z0d2FyZS4KLSAqCi0gKiAg
-ICAgVEhFIFNPRlRXQVJFIElTIFBST1ZJREVEICJBUyBJUyIsIFdJVEhPVVQgV0FSUkFOVFkgT0Yg
-QU5ZIEtJTkQsCi0gKiAgICAgRVhQUkVTUyBPUiBJTVBMSUVELCBJTkNMVURJTkcgQlVUIE5PVCBM
-SU1JVEVEIFRPIFRIRSBXQVJSQU5USUVTCi0gKiAgICAgT0YgTUVSQ0hBTlRBQklMSVRZLCBGSVRO
-RVNTIEZPUiBBIFBBUlRJQ1VMQVIgUFVSUE9TRSBBTkQKLSAqICAgICBOT05JTkZSSU5HRU1FTlQu
-IElOIE5PIEVWRU5UIFNIQUxMIFRIRSBBVVRIT1JTIE9SIENPUFlSSUdIVAotICogICAgIEhPTERF
-UlMgQkUgTElBQkxFIEZPUiBBTlkgQ0xBSU0sIERBTUFHRVMgT1IgT1RIRVIgTElBQklMSVRZLAot
-ICogICAgIFdIRVRIRVIgSU4gQU4gQUNUSU9OIE9GIENPTlRSQUNULCBUT1JUIE9SIE9USEVSV0lT
-RSwgQVJJU0lORwotICogICAgIEZST00sIE9VVCBPRiBPUiBJTiBDT05ORUNUSU9OIFdJVEggVEhF
-IFNPRlRXQVJFIE9SIFRIRSBVU0UgT1IKLSAqICAgICBPVEhFUiBERUFMSU5HUyBJTiBUSEUgU09G
-VFdBUkUuCiAgKi8KIAogI2luY2x1ZGUgInN1bjVpLWExMy5kdHNpIgotLSAKMi4xOC4wLjMyMS5n
-ZmZjNmZhMGUzCgoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5p
-bmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8v
-bGludXgtYXJtLWtlcm5lbAo=
+Adopt the SPDX license identifier headers to ease license
+compliance management on Allwinner A31 dts(i) files.
+
+While the text specifies "of the GPL or the X11 license"
+but the actual license text matches the MIT license as
+specified at [0]
+
+[0] https://spdx.org/licenses/MIT.html
+
+Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
+---
+ arch/arm/boot/dts/sun6i-a31-app4-evb1.dts     | 39 +------------------
+ arch/arm/boot/dts/sun6i-a31-colombus.dts      | 39 +------------------
+ arch/arm/boot/dts/sun6i-a31-hummingbird.dts   | 39 +------------------
+ arch/arm/boot/dts/sun6i-a31-i7.dts            | 39 +------------------
+ arch/arm/boot/dts/sun6i-a31-m9.dts            | 39 +------------------
+ .../boot/dts/sun6i-a31-mele-a1000g-quad.dts   | 39 +------------------
+ arch/arm/boot/dts/sun6i-a31.dtsi              | 39 +------------------
+ 7 files changed, 7 insertions(+), 266 deletions(-)
+
+diff --git a/arch/arm/boot/dts/sun6i-a31-app4-evb1.dts b/arch/arm/boot/dts/sun6i-a31-app4-evb1.dts
+index 32d22025ac99..4195a744d792 100644
+--- a/arch/arm/boot/dts/sun6i-a31-app4-evb1.dts
++++ b/arch/arm/boot/dts/sun6i-a31-app4-evb1.dts
+@@ -1,45 +1,8 @@
++// SPDX-License-Identifier: (GPL-2.0 OR MIT)
+ /*
+  * Copyright 2014 Boris Brezillon
+  *
+  * Boris Brezillon <boris.brezillon@free-electrons.com>
+- *
+- * This file is dual-licensed: you can use it either under the terms
+- * of the GPL or the X11 license, at your option. Note that this dual
+- * licensing only applies to this file, and not this project as a
+- * whole.
+- *
+- *  a) This file is free software; you can redistribute it and/or
+- *     modify it under the terms of the GNU General Public License as
+- *     published by the Free Software Foundation; either version 2 of the
+- *     License, or (at your option) any later version.
+- *
+- *     This file is distributed in the hope that it will be useful,
+- *     but WITHOUT ANY WARRANTY; without even the implied warranty of
+- *     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+- *     GNU General Public License for more details.
+- *
+- * Or, alternatively,
+- *
+- *  b) Permission is hereby granted, free of charge, to any person
+- *     obtaining a copy of this software and associated documentation
+- *     files (the "Software"), to deal in the Software without
+- *     restriction, including without limitation the rights to use,
+- *     copy, modify, merge, publish, distribute, sublicense, and/or
+- *     sell copies of the Software, and to permit persons to whom the
+- *     Software is furnished to do so, subject to the following
+- *     conditions:
+- *
+- *     The above copyright notice and this permission notice shall be
+- *     included in all copies or substantial portions of the Software.
+- *
+- *     THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+- *     EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
+- *     OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+- *     NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+- *     HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+- *     WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+- *     FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+- *     OTHER DEALINGS IN THE SOFTWARE.
+  */
+ 
+ /dts-v1/;
+diff --git a/arch/arm/boot/dts/sun6i-a31-colombus.dts b/arch/arm/boot/dts/sun6i-a31-colombus.dts
+index c3d56dc93513..faf03ca74e63 100644
+--- a/arch/arm/boot/dts/sun6i-a31-colombus.dts
++++ b/arch/arm/boot/dts/sun6i-a31-colombus.dts
+@@ -1,45 +1,8 @@
++// SPDX-License-Identifier: (GPL-2.0 OR MIT)
+ /*
+  * Copyright 2013 Maxime Ripard
+  *
+  * Maxime Ripard <maxime.ripard@free-electrons.com>
+- *
+- * This file is dual-licensed: you can use it either under the terms
+- * of the GPL or the X11 license, at your option. Note that this dual
+- * licensing only applies to this file, and not this project as a
+- * whole.
+- *
+- *  a) This file is free software; you can redistribute it and/or
+- *     modify it under the terms of the GNU General Public License as
+- *     published by the Free Software Foundation; either version 2 of the
+- *     License, or (at your option) any later version.
+- *
+- *     This file is distributed in the hope that it will be useful,
+- *     but WITHOUT ANY WARRANTY; without even the implied warranty of
+- *     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+- *     GNU General Public License for more details.
+- *
+- * Or, alternatively,
+- *
+- *  b) Permission is hereby granted, free of charge, to any person
+- *     obtaining a copy of this software and associated documentation
+- *     files (the "Software"), to deal in the Software without
+- *     restriction, including without limitation the rights to use,
+- *     copy, modify, merge, publish, distribute, sublicense, and/or
+- *     sell copies of the Software, and to permit persons to whom the
+- *     Software is furnished to do so, subject to the following
+- *     conditions:
+- *
+- *     The above copyright notice and this permission notice shall be
+- *     included in all copies or substantial portions of the Software.
+- *
+- *     THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+- *     EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
+- *     OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+- *     NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+- *     HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+- *     WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+- *     FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+- *     OTHER DEALINGS IN THE SOFTWARE.
+  */
+ 
+ /dts-v1/;
+diff --git a/arch/arm/boot/dts/sun6i-a31-hummingbird.dts b/arch/arm/boot/dts/sun6i-a31-hummingbird.dts
+index 09832b4e8fc8..c95a09e3661a 100644
+--- a/arch/arm/boot/dts/sun6i-a31-hummingbird.dts
++++ b/arch/arm/boot/dts/sun6i-a31-hummingbird.dts
+@@ -1,45 +1,8 @@
++// SPDX-License-Identifier: (GPL-2.0 OR MIT)
+ /*
+  * Copyright 2014 Maxime Ripard
+  *
+  * Maxime Ripard <maxime.ripard@free-electrons.com>
+- *
+- * This file is dual-licensed: you can use it either under the terms
+- * of the GPL or the X11 license, at your option. Note that this dual
+- * licensing only applies to this file, and not this project as a
+- * whole.
+- *
+- *  a) This file is free software; you can redistribute it and/or
+- *     modify it under the terms of the GNU General Public License as
+- *     published by the Free Software Foundation; either version 2 of the
+- *     License, or (at your option) any later version.
+- *
+- *     This file is distributed in the hope that it will be useful,
+- *     but WITHOUT ANY WARRANTY; without even the implied warranty of
+- *     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+- *     GNU General Public License for more details.
+- *
+- * Or, alternatively,
+- *
+- *  b) Permission is hereby granted, free of charge, to any person
+- *     obtaining a copy of this software and associated documentation
+- *     files (the "Software"), to deal in the Software without
+- *     restriction, including without limitation the rights to use,
+- *     copy, modify, merge, publish, distribute, sublicense, and/or
+- *     sell copies of the Software, and to permit persons to whom the
+- *     Software is furnished to do so, subject to the following
+- *     conditions:
+- *
+- *     The above copyright notice and this permission notice shall be
+- *     included in all copies or substantial portions of the Software.
+- *
+- *     THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+- *     EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
+- *     OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+- *     NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+- *     HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+- *     WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+- *     FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+- *     OTHER DEALINGS IN THE SOFTWARE.
+  */
+ 
+ /dts-v1/;
+diff --git a/arch/arm/boot/dts/sun6i-a31-i7.dts b/arch/arm/boot/dts/sun6i-a31-i7.dts
+index 091eb2ac53b3..46909769ac2b 100644
+--- a/arch/arm/boot/dts/sun6i-a31-i7.dts
++++ b/arch/arm/boot/dts/sun6i-a31-i7.dts
+@@ -1,43 +1,6 @@
++// SPDX-License-Identifier: (GPL-2.0 OR MIT)
+ /*
+  * Copyright 2015 Marcus Cooper <codekipper@gmail.com>
+- *
+- * This file is dual-licensed: you can use it either under the terms
+- * of the GPL or the X11 license, at your option. Note that this dual
+- * licensing only applies to this file, and not this project as a
+- * whole.
+- *
+- *  a) This file is free software; you can redistribute it and/or
+- *     modify it under the terms of the GNU General Public License as
+- *     published by the Free Software Foundation; either version 2 of the
+- *     License, or (at your option) any later version.
+- *
+- *     This file is distributed in the hope that it will be useful,
+- *     but WITHOUT ANY WARRANTY; without even the implied warranty of
+- *     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+- *     GNU General Public License for more details.
+- *
+- * Or, alternatively,
+- *
+- *  b) Permission is hereby granted, free of charge, to any person
+- *     obtaining a copy of this software and associated documentation
+- *     files (the "Software"), to deal in the Software without
+- *     restriction, including without limitation the rights to use,
+- *     copy, modify, merge, publish, distribute, sublicense, and/or
+- *     sell copies of the Software, and to permit persons to whom the
+- *     Software is furnished to do so, subject to the following
+- *     conditions:
+- *
+- *     The above copyright notice and this permission notice shall be
+- *     included in all copies or substantial portions of the Software.
+- *
+- *     THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+- *     EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
+- *     OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+- *     NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+- *     HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+- *     WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+- *     FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+- *     OTHER DEALINGS IN THE SOFTWARE.
+  */
+ 
+ /dts-v1/;
+diff --git a/arch/arm/boot/dts/sun6i-a31-m9.dts b/arch/arm/boot/dts/sun6i-a31-m9.dts
+index 6eafb6361a26..1ab26f6b2b5f 100644
+--- a/arch/arm/boot/dts/sun6i-a31-m9.dts
++++ b/arch/arm/boot/dts/sun6i-a31-m9.dts
+@@ -1,43 +1,6 @@
++// SPDX-License-Identifier: (GPL-2.0 OR MIT)
+ /*
+  * Copyright 2014 Hans de Goede <hdegoede@redhat.com>
+- *
+- * This file is dual-licensed: you can use it either under the terms
+- * of the GPL or the X11 license, at your option. Note that this dual
+- * licensing only applies to this file, and not this project as a
+- * whole.
+- *
+- *  a) This file is free software; you can redistribute it and/or
+- *     modify it under the terms of the GNU General Public License as
+- *     published by the Free Software Foundation; either version 2 of the
+- *     License, or (at your option) any later version.
+- *
+- *     This file is distributed in the hope that it will be useful,
+- *     but WITHOUT ANY WARRANTY; without even the implied warranty of
+- *     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+- *     GNU General Public License for more details.
+- *
+- * Or, alternatively,
+- *
+- *  b) Permission is hereby granted, free of charge, to any person
+- *     obtaining a copy of this software and associated documentation
+- *     files (the "Software"), to deal in the Software without
+- *     restriction, including without limitation the rights to use,
+- *     copy, modify, merge, publish, distribute, sublicense, and/or
+- *     sell copies of the Software, and to permit persons to whom the
+- *     Software is furnished to do so, subject to the following
+- *     conditions:
+- *
+- *     The above copyright notice and this permission notice shall be
+- *     included in all copies or substantial portions of the Software.
+- *
+- *     THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+- *     EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
+- *     OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+- *     NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+- *     HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+- *     WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+- *     FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+- *     OTHER DEALINGS IN THE SOFTWARE.
+  */
+ 
+ /dts-v1/;
+diff --git a/arch/arm/boot/dts/sun6i-a31-mele-a1000g-quad.dts b/arch/arm/boot/dts/sun6i-a31-mele-a1000g-quad.dts
+index ca036f97923a..45670476803d 100644
+--- a/arch/arm/boot/dts/sun6i-a31-mele-a1000g-quad.dts
++++ b/arch/arm/boot/dts/sun6i-a31-mele-a1000g-quad.dts
+@@ -1,43 +1,6 @@
++// SPDX-License-Identifier: (GPL-2.0 OR MIT)
+ /*
+  * Copyright 2014 Hans de Goede <hdegoede@redhat.com>
+- *
+- * This file is dual-licensed: you can use it either under the terms
+- * of the GPL or the X11 license, at your option. Note that this dual
+- * licensing only applies to this file, and not this project as a
+- * whole.
+- *
+- *  a) This file is free software; you can redistribute it and/or
+- *     modify it under the terms of the GNU General Public License as
+- *     published by the Free Software Foundation; either version 2 of the
+- *     License, or (at your option) any later version.
+- *
+- *     This file is distributed in the hope that it will be useful,
+- *     but WITHOUT ANY WARRANTY; without even the implied warranty of
+- *     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+- *     GNU General Public License for more details.
+- *
+- * Or, alternatively,
+- *
+- *  b) Permission is hereby granted, free of charge, to any person
+- *     obtaining a copy of this software and associated documentation
+- *     files (the "Software"), to deal in the Software without
+- *     restriction, including without limitation the rights to use,
+- *     copy, modify, merge, publish, distribute, sublicense, and/or
+- *     sell copies of the Software, and to permit persons to whom the
+- *     Software is furnished to do so, subject to the following
+- *     conditions:
+- *
+- *     The above copyright notice and this permission notice shall be
+- *     included in all copies or substantial portions of the Software.
+- *
+- *     THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+- *     EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
+- *     OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+- *     NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+- *     HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+- *     WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+- *     FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+- *     OTHER DEALINGS IN THE SOFTWARE.
+  */
+ 
+ /dts-v1/;
+diff --git a/arch/arm/boot/dts/sun6i-a31.dtsi b/arch/arm/boot/dts/sun6i-a31.dtsi
+index dcddc3392460..d9c2a1e4efdd 100644
+--- a/arch/arm/boot/dts/sun6i-a31.dtsi
++++ b/arch/arm/boot/dts/sun6i-a31.dtsi
+@@ -1,45 +1,8 @@
++// SPDX-License-Identifier: (GPL-2.0 OR MIT)
+ /*
+  * Copyright 2013 Maxime Ripard
+  *
+  * Maxime Ripard <maxime.ripard@free-electrons.com>
+- *
+- * This file is dual-licensed: you can use it either under the terms
+- * of the GPL or the X11 license, at your option. Note that this dual
+- * licensing only applies to this file, and not this project as a
+- * whole.
+- *
+- *  a) This file is free software; you can redistribute it and/or
+- *     modify it under the terms of the GNU General Public License as
+- *     published by the Free Software Foundation; either version 2 of the
+- *     License, or (at your option) any later version.
+- *
+- *     This file is distributed in the hope that it will be useful,
+- *     but WITHOUT ANY WARRANTY; without even the implied warranty of
+- *     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+- *     GNU General Public License for more details.
+- *
+- * Or, alternatively,
+- *
+- *  b) Permission is hereby granted, free of charge, to any person
+- *     obtaining a copy of this software and associated documentation
+- *     files (the "Software"), to deal in the Software without
+- *     restriction, including without limitation the rights to use,
+- *     copy, modify, merge, publish, distribute, sublicense, and/or
+- *     sell copies of the Software, and to permit persons to whom the
+- *     Software is furnished to do so, subject to the following
+- *     conditions:
+- *
+- *     The above copyright notice and this permission notice shall be
+- *     included in all copies or substantial portions of the Software.
+- *
+- *     THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+- *     EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
+- *     OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+- *     NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+- *     HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+- *     WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+- *     FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+- *     OTHER DEALINGS IN THE SOFTWARE.
+  */
+ 
+ #include <dt-bindings/interrupt-controller/arm-gic.h>
+-- 
+2.18.0.321.gffc6fa0e3
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
