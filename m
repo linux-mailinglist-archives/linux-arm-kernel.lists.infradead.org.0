@@ -2,50 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4048E5EE0B
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  3 Jul 2019 23:01:43 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4653D5EE0D
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  3 Jul 2019 23:02:03 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:Reply-To:List-Subscribe:List-Help:
 	List-Post:List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:
 	References:Message-ID:Date:Subject:To:From:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8EaNntIUc4VDdIaCZTpe50dnGZooaI8IWwOA43ebEoo=; b=i9kqjRIwCo7EPX
-	8BV9d1JIDK4rVtmCK7N1ohYontX6AhmWjTJKWbgbiFjx+7D+TRXY5OcrW3mrqJrmD2O67UO5H8qA1
-	/0UPPOqGrQ5F2pc0g4lDA+Hja+tg7nFKCi75Bzdg/Neifak/h2VibBNG5rcDPsCda4GT50ldqwWAh
-	e+7aAqxgcrbErZYLyCeC2ZmGOB1GR/x4OUzXysRp9djMIKqRKu0oYms3LyZyF/snUGyVXM9L7foXY
-	rAaGmKDHtaSNUmhR9jxvBBN2W7cETxG5GHjhVAssASF2fv8FNAMYl0b/teEWjnqnJ2tLfQzOsn+K9
-	8Xn1ACsN4aXjOpf2P6NA==;
+	List-Owner; bh=wN8o/r9lORN07av4QoQlZXEWnRDh7ifzmwWkCiGuQlI=; b=QZxE0qEhqP0nK5
+	1iBAGOdf5xF1ejyvSbPu1Ujq54YfTbytPDGYhJToRftKbJtk9c8hV1r44dTrQ52b+AygYrgSZqIE0
+	GjPPm+KjF59/yP0X2svbiYfPYtsgEdq2WME+nkOfr0Pq4jbGKI+EuK2luUT13CGvBJN6y+pTdbnOn
+	oAAw9yBqPG2ZVEovz1jvmNADJmISPOI5GYqX6oYBOEFKCds4ubuAUst8G4xjYhZ0n5T7t2UynQL/T
+	g9KWZs6ENEpgTNTJQRd43zKYjrZ9Rh33FEMWszxAUhDUvF7dr/A3MjhsI7ipU1yrQCimKOYt02kMn
+	VwMQzWlHjIM50ggzTfJg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1himNp-0000mA-Ro; Wed, 03 Jul 2019 21:01:41 +0000
+	id 1himO8-00011l-Ix; Wed, 03 Jul 2019 21:02:00 +0000
 Received: from mail-eopbgr80041.outbound.protection.outlook.com ([40.107.8.41]
  helo=EUR04-VI1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1himLs-0006Jq-4F
- for linux-arm-kernel@lists.infradead.org; Wed, 03 Jul 2019 20:59:41 +0000
+ id 1himLu-0006Jq-6S
+ for linux-arm-kernel@lists.infradead.org; Wed, 03 Jul 2019 20:59:43 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=xFNdC7m1i8uotIquKhicAzTe3cTAsKe+GtuQ3m5P6r0=;
- b=n0omfFAU9OlfOke2OVsdjc+QBqx8I1c62bqzsHLPbo3/1p+59pG11yuh2XBP1CFgpsCRJwueh2UGqxFRbznOvPwZZSgepg+ubq1dRTxTPYvIqqDHekj4nzYyqpsqIOX4vO7vcv/uCPR3qeNB7oRLJswWFCHvznLpVultKXMMbK4=
+ bh=8l34xPK1ENwFo+vU3ZrImWB+9FvYzYicyTDcI7YCSPQ=;
+ b=oV0CsNCG/xhovuKXgCc6V3/QJIECYTuhZ/mI3cIoDw+9hda5z0nsYswoX1zT/XSVMtavq0mV4W1JFFWiW+QkG5PRsp+fjiDrxvf4Ep6/sVPFWgr6OM1vNCpaOS6v35V7suH6rYJD+bYS5urz+UEDBk+UUhHchG2j4W9N9ztPwAI=
 Received: from VE1PR04MB6463.eurprd04.prod.outlook.com (20.179.233.20) by
  VE1PR04MB6464.eurprd04.prod.outlook.com (20.179.233.21) with Microsoft SMTP
  Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2032.20; Wed, 3 Jul 2019 20:59:36 +0000
+ 15.20.2032.20; Wed, 3 Jul 2019 20:59:37 +0000
 Received: from VE1PR04MB6463.eurprd04.prod.outlook.com
  ([fe80::a5ca:7c9c:6b18:eb0a]) by VE1PR04MB6463.eurprd04.prod.outlook.com
  ([fe80::a5ca:7c9c:6b18:eb0a%6]) with mapi id 15.20.2032.019; Wed, 3 Jul 2019
- 20:59:36 +0000
+ 20:59:37 +0000
 From: Roy Pledge <roy.pledge@nxp.com>
 To: "linuxppc-dev@lists.ozlabs.org" <linuxppc-dev@lists.ozlabs.org>,
  "linux-arm-kernel@lists.infradead.org"
  <linux-arm-kernel@lists.infradead.org>, "linux-kernel@vger.kernel.org"
  <linux-kernel@vger.kernel.org>, Leo Li <leoyang.li@nxp.com>
-Subject: [PATCH v2 6/7] soc/fsl/qbman: Fixup qman_shutdown_fq()
-Thread-Topic: [PATCH v2 6/7] soc/fsl/qbman: Fixup qman_shutdown_fq()
-Thread-Index: AQHVMeI4r3TjNVl6XUOD+mjo2lQ0Mg==
-Date: Wed, 3 Jul 2019 20:59:36 +0000
-Message-ID: <1562187548-32261-7-git-send-email-roy.pledge@nxp.com>
+Subject: [PATCH v2 7/7] soc/fsl/qbman: Update device tree with reserved memory
+Thread-Topic: [PATCH v2 7/7] soc/fsl/qbman: Update device tree with reserved
+ memory
+Thread-Index: AQHVMeI56zAwyfNlCka3bcuWCdBEJA==
+Date: Wed, 3 Jul 2019 20:59:37 +0000
+Message-ID: <1562187548-32261-8-git-send-email-roy.pledge@nxp.com>
 References: <1562187548-32261-1-git-send-email-roy.pledge@nxp.com>
 In-Reply-To: <1562187548-32261-1-git-send-email-roy.pledge@nxp.com>
 Accept-Language: en-US
@@ -61,36 +62,36 @@ authentication-results: spf=none (sender IP is )
 x-ms-exchange-messagesentrepresentingtype: 1
 x-originating-ip: [72.142.119.78]
 x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: 2a074c9b-667a-4524-d6d5-08d6fff95ae5
+x-ms-office365-filtering-correlation-id: 1974ab8d-a9dd-4a7e-6d1b-08d6fff95bf7
 x-ms-office365-filtering-ht: Tenant
 x-microsoft-antispam: BCL:0; PCL:0;
  RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600148)(711020)(4605104)(1401327)(4618075)(2017052603328)(7193020);
  SRVR:VE1PR04MB6464; 
 x-ms-traffictypediagnostic: VE1PR04MB6464:
-x-microsoft-antispam-prvs: <VE1PR04MB64646A85341E6C87AACB2CD086FB0@VE1PR04MB6464.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:169;
+x-microsoft-antispam-prvs: <VE1PR04MB646465C46DEC0A8EA8BEF97886FB0@VE1PR04MB6464.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:8273;
 x-forefront-prvs: 00872B689F
 x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(4636009)(396003)(376002)(39860400002)(346002)(366004)(136003)(189003)(199004)(14454004)(2501003)(81156014)(81166006)(4326008)(478600001)(305945005)(8676002)(14444005)(2906002)(7736002)(50226002)(476003)(486006)(2616005)(446003)(25786009)(11346002)(3450700001)(86362001)(2201001)(68736007)(44832011)(36756003)(66946007)(26005)(66476007)(66556008)(64756008)(73956011)(71200400001)(71190400001)(66066001)(53936002)(6116002)(52116002)(386003)(6506007)(66446008)(8936002)(256004)(102836004)(186003)(99286004)(6486002)(5660300002)(110136005)(316002)(3846002)(6436002)(43066004)(6512007)(6636002)(76176011);
+ SFS:(10009020)(4636009)(396003)(376002)(39860400002)(346002)(366004)(136003)(189003)(199004)(14454004)(2501003)(81156014)(81166006)(4326008)(478600001)(305945005)(8676002)(2906002)(7736002)(50226002)(476003)(486006)(2616005)(446003)(25786009)(11346002)(3450700001)(86362001)(2201001)(68736007)(44832011)(36756003)(66946007)(26005)(66476007)(66556008)(64756008)(73956011)(71200400001)(71190400001)(66066001)(53936002)(6116002)(52116002)(386003)(6506007)(66446008)(8936002)(256004)(102836004)(186003)(99286004)(6486002)(5660300002)(110136005)(316002)(3846002)(6436002)(43066004)(6512007)(6636002)(76176011);
  DIR:OUT; SFP:1101; SCL:1; SRVR:VE1PR04MB6464;
  H:VE1PR04MB6463.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
  PTR:InfoNoRecords; MX:1; A:1; 
 received-spf: None (protection.outlook.com: nxp.com does not designate
  permitted sender hosts)
 x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: e/1X7oWlkcs+fMkVbF07zBq6XmYVAlleINYe+Q8rcG8V7Ug1DXXWXwrVJdzwga8AIk7svMI9f8uPG+wS6ONt1ebmM++0ETYVVzKotqzBT5qOByV7G1RoXkhhFI94GPPdjXtkW2y6TrjAJMpyQFBvVcV1XRx2kWY676aa5o3wB0HCNlvaGsNREa1ZolEKQbStNqlKdb21qtIFrwExonTxk7npXZinxFeAYNcghZt76C4dsNb5aV9gXZ28XTm/BbCQUMGEt+wpupojsF0L5wGjLL9bIFhErlMwGRHFpJWttTIp5fn9wPIKdbE5+OdscLorntoi0ufKC12+fB0QRE15mBJwQwc6Ow2uhERVigNii8y+tgNxQFuoqi4o9GFLJSsrtiofy1ltDU9Jm0pHIzBVhxwiM6XGiU5weUkG9iavMOU=
+x-microsoft-antispam-message-info: bmfwSjLg0I0SAXb5GVXJr7E4v6/Nx12AEwcS9uKBjaKuO/foqlEdfzLkt3IQUGd7Xogkp83N4N8qHZnQ9BfzRISwlQkUtTnCn44NWGf2pT8AEQoixmC+6pOLMKix45oaWNBcTsMAJIZcHDyA/lEiMrsDc6LIeS5buwgScjeThccDfMm9UNRKCak+HpnasfD/vnVLAX/6GRoCYvRoYaX7d3XSJmqNOBiLzgaxSZplZsqnf6cjxs4TpyKkxNmu88LuXLdigyjFrR0IcLnDBYlY+1zfGKGKQRINd/Z7bBlviDAoGtfNMo87qeGaNPFvlp51qGmmWzOtTSKvizarE3iTbA6Hc4ZvWjo47aJ70MJidqNsvAcvH2vpK5tbubY2eVS2NVYLfWMjrrhbaAltO5mKRcFinZFU4eHXchIk4rkSw9g=
 MIME-Version: 1.0
 X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 2a074c9b-667a-4524-d6d5-08d6fff95ae5
-X-MS-Exchange-CrossTenant-originalarrivaltime: 03 Jul 2019 20:59:36.0083 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 1974ab8d-a9dd-4a7e-6d1b-08d6fff95bf7
+X-MS-Exchange-CrossTenant-originalarrivaltime: 03 Jul 2019 20:59:37.8153 (UTC)
 X-MS-Exchange-CrossTenant-fromentityheader: Hosted
 X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
 X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
 X-MS-Exchange-CrossTenant-userprincipalname: roy.pledge@nxp.com
 X-MS-Exchange-Transport-CrossTenantHeadersStamped: VE1PR04MB6464
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190703_135940_294215_E7897FC3 
-X-CRM114-Status: GOOD (  13.97  )
+X-CRM114-CacheID: sfid-20190703_135942_276474_D04C3D03 
+X-CRM114-Status: GOOD (  16.08  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -125,133 +126,99 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-When shutting down a FQ on a dedicated channel only the
-SW portal associated with that channel can dequeue from it.
-Make sure the correct portal is use.
+When using the reserved memory node in the device tree there are
+two options - dynamic or static. If a dynamic allocation was
+selected (where the kernel selects the address for the allocation)
+convert it to a static allocation by inserting the reg property.
+This will ensure the same memory is reused after a kexec()
 
 Signed-off-by: Roy Pledge <roy.pledge@nxp.com>
 ---
- drivers/soc/fsl/qbman/qman.c | 53 +++++++++++++++++++++++++++++++++++---------
- 1 file changed, 42 insertions(+), 11 deletions(-)
+ drivers/soc/fsl/qbman/dpaa_sys.c | 60 ++++++++++++++++++++++++----------------
+ 1 file changed, 36 insertions(+), 24 deletions(-)
 
-diff --git a/drivers/soc/fsl/qbman/qman.c b/drivers/soc/fsl/qbman/qman.c
-index 4a99ce5..bf68d86 100644
---- a/drivers/soc/fsl/qbman/qman.c
-+++ b/drivers/soc/fsl/qbman/qman.c
-@@ -1018,6 +1018,20 @@ static inline void put_affine_portal(void)
- 	put_cpu_var(qman_affine_portal);
- }
+diff --git a/drivers/soc/fsl/qbman/dpaa_sys.c b/drivers/soc/fsl/qbman/dpaa_sys.c
+index 3e0a7f3..9dd8bb5 100644
+--- a/drivers/soc/fsl/qbman/dpaa_sys.c
++++ b/drivers/soc/fsl/qbman/dpaa_sys.c
+@@ -37,41 +37,53 @@
+ int qbman_init_private_mem(struct device *dev, int idx, dma_addr_t *addr,
+ 				size_t *size)
+ {
+-	int ret;
+ 	struct device_node *mem_node;
+-	u64 size64;
+ 	struct reserved_mem *rmem;
++	struct property *prop;
++	int len, err;
++	__be32 *res_array;
  
-+
-+static inline struct qman_portal *get_portal_for_channel(u16 channel)
-+{
-+	int i;
-+
-+	for (i = 0; i < num_possible_cpus(); i++) {
-+		if (affine_portals[i] &&
-+		    affine_portals[i]->config->channel == channel)
-+			return affine_portals[i];
+-	ret = of_reserved_mem_device_init_by_idx(dev, dev->of_node, idx);
+-	if (ret) {
+-		dev_err(dev,
+-			"of_reserved_mem_device_init_by_idx(%d) failed 0x%x\n",
+-			idx, ret);
+-		return -ENODEV;
+-	}
+-	mem_node = of_parse_phandle(dev->of_node, "memory-region", 0);
+-	if (mem_node) {
+-		ret = of_property_read_u64(mem_node, "size", &size64);
+-		if (ret) {
+-			dev_err(dev, "of_address_to_resource fails 0x%x\n",
+-			        ret);
+-			return -ENODEV;
+-		}
+-		*size = size64;
+-	} else {
++	mem_node = of_parse_phandle(dev->of_node, "memory-region", idx);
++	if (!mem_node) {
+ 		dev_err(dev, "No memory-region found for index %d\n", idx);
+ 		return -ENODEV;
+ 	}
+ 
+ 	rmem = of_reserved_mem_lookup(mem_node);
++	if (!rmem) {
++		dev_err(dev, "of_reserved_mem_lookup() returned NULL\n");
++		return -ENODEV;
++	}
+ 	*addr = rmem->base;
++	*size = rmem->size;
+ 
+ 	/*
+-	 * Disassociate the reserved memory area from the device
+-	 * because a device can only have one DMA memory area. This
+-	 * should be fine since the memory is allocated and initialized
+-	 * and only ever accessed by the QBMan device from now on
++	 * Check if the reg property exists - if not insert the node
++	 * so upon kexec() the same memory region address will be preserved.
++	 * This is needed because QBMan HW does not allow the base address/
++	 * size to be modified once set.
+ 	 */
+-	of_reserved_mem_device_release(dev);
++	prop = of_find_property(mem_node, "reg", &len);
++	if (!prop) {
++		prop = devm_kzalloc(dev, sizeof(*prop), GFP_KERNEL);
++		if (!prop)
++			return -ENOMEM;
++		prop->value = res_array = devm_kzalloc(dev, sizeof(__be32) * 4,
++						       GFP_KERNEL);
++		if (!prop->value)
++			return -ENOMEM;
++		res_array[0] = cpu_to_be32(upper_32_bits(*addr));
++		res_array[1] = cpu_to_be32(lower_32_bits(*addr));
++		res_array[2] = cpu_to_be32(upper_32_bits(*size));
++		res_array[3] = cpu_to_be32(lower_32_bits(*size));
++		prop->length = sizeof(__be32) * 4;
++		prop->name = devm_kstrdup(dev, "reg", GFP_KERNEL);
++		if (!prop->name)
++			return -ENOMEM;
++		err = of_add_property(mem_node, prop);
++		if (err)
++			return err;
 +	}
 +
-+	return NULL;
-+}
-+
- static struct workqueue_struct *qm_portal_wq;
- 
- int qman_dqrr_set_ithresh(struct qman_portal *portal, u8 ithresh)
-@@ -2601,7 +2615,7 @@ static int _qm_dqrr_consume_and_match(struct qm_portal *p, u32 fqid, int s,
- 
- int qman_shutdown_fq(u32 fqid)
- {
--	struct qman_portal *p;
-+	struct qman_portal *p, *channel_portal;
- 	struct device *dev;
- 	union qm_mc_command *mcc;
- 	union qm_mc_result *mcr;
-@@ -2641,17 +2655,28 @@ int qman_shutdown_fq(u32 fqid)
- 	channel = qm_fqd_get_chan(&mcr->queryfq.fqd);
- 	wq = qm_fqd_get_wq(&mcr->queryfq.fqd);
- 
-+	if (channel < qm_channel_pool1) {
-+		channel_portal = get_portal_for_channel(channel);
-+		if (channel_portal == NULL) {
-+			dev_err(dev, "Can't find portal for dedicated channel 0x%x\n",
-+				channel);
-+			ret = -EIO;
-+			goto out;
-+		}
-+	} else
-+		channel_portal = p;
-+
- 	switch (state) {
- 	case QM_MCR_NP_STATE_TEN_SCHED:
- 	case QM_MCR_NP_STATE_TRU_SCHED:
- 	case QM_MCR_NP_STATE_ACTIVE:
- 	case QM_MCR_NP_STATE_PARKED:
- 		orl_empty = 0;
--		mcc = qm_mc_start(&p->p);
-+		mcc = qm_mc_start(&channel_portal->p);
- 		qm_fqid_set(&mcc->fq, fqid);
--		qm_mc_commit(&p->p, QM_MCC_VERB_ALTER_RETIRE);
--		if (!qm_mc_result_timeout(&p->p, &mcr)) {
--			dev_err(dev, "QUERYFQ_NP timeout\n");
-+		qm_mc_commit(&channel_portal->p, QM_MCC_VERB_ALTER_RETIRE);
-+		if (!qm_mc_result_timeout(&channel_portal->p, &mcr)) {
-+			dev_err(dev, "ALTER_RETIRE timeout\n");
- 			ret = -ETIMEDOUT;
- 			goto out;
- 		}
-@@ -2659,6 +2684,9 @@ int qman_shutdown_fq(u32 fqid)
- 			    QM_MCR_VERB_ALTER_RETIRE);
- 		res = mcr->result; /* Make a copy as we reuse MCR below */
- 
-+		if (res == QM_MCR_RESULT_OK)
-+			drain_mr_fqrni(&channel_portal->p);
-+
- 		if (res == QM_MCR_RESULT_PENDING) {
- 			/*
- 			 * Need to wait for the FQRN in the message ring, which
-@@ -2688,21 +2716,25 @@ int qman_shutdown_fq(u32 fqid)
- 			}
- 			/* Set the sdqcr to drain this channel */
- 			if (channel < qm_channel_pool1)
--				qm_dqrr_sdqcr_set(&p->p,
-+				qm_dqrr_sdqcr_set(&channel_portal->p,
- 						  QM_SDQCR_TYPE_ACTIVE |
- 						  QM_SDQCR_CHANNELS_DEDICATED);
- 			else
--				qm_dqrr_sdqcr_set(&p->p,
-+				qm_dqrr_sdqcr_set(&channel_portal->p,
- 						  QM_SDQCR_TYPE_ACTIVE |
- 						  QM_SDQCR_CHANNELS_POOL_CONV
- 						  (channel));
- 			do {
- 				/* Keep draining DQRR while checking the MR*/
--				qm_dqrr_drain_nomatch(&p->p);
-+				qm_dqrr_drain_nomatch(&channel_portal->p);
- 				/* Process message ring too */
--				found_fqrn = qm_mr_drain(&p->p, FQRN);
-+				found_fqrn = qm_mr_drain(&channel_portal->p,
-+							 FQRN);
- 				cpu_relax();
- 			} while (!found_fqrn);
-+			/* Restore SDQCR */
-+			qm_dqrr_sdqcr_set(&channel_portal->p,
-+					  channel_portal->sdqcr);
- 
- 		}
- 		if (res != QM_MCR_RESULT_OK &&
-@@ -2733,9 +2765,8 @@ int qman_shutdown_fq(u32 fqid)
- 				 * Wait for a dequeue and process the dequeues,
- 				 * making sure to empty the ring completely
- 				 */
--			} while (qm_dqrr_drain_wait(&p->p, fqid, FQ_EMPTY));
-+			} while (!qm_dqrr_drain_wait(&p->p, fqid, FQ_EMPTY));
- 		}
--		qm_dqrr_sdqcr_set(&p->p, 0);
- 
- 		while (!orl_empty) {
- 			/* Wait for the ORL to have been completely drained */
+ 	return 0;
+ }
 -- 
 2.7.4
 
