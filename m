@@ -2,57 +2,75 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6DA035EAEA
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  3 Jul 2019 19:53:12 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6B1DE5EAFE
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  3 Jul 2019 19:58:45 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1jJ10zdfW2epfcu7peqJOzVdlhzRKu4kKKIY3tNUCGE=; b=gtL4hCAPZDdDe0
-	Z3ZBcluXNEQtO2QfQO0ZK1JHOLZ3+7Bxc4g5R+qTTNNSRWhQgws3tRqP6lF/4V3sseywiuA+swBM/
-	Ti2T18/kZHmxyj+pfGb2Z0p6WxCPF6nze9NN+XMGAhImNeA/js98Uq24RMbyEIhXGJxdUTJVrMl8l
-	LKV2PoBML7FeyOc7YO2TYL4Oc7J8GgucsHNEWALjdgNwnRf7aIXnf9YKVNlovHnK5qQ2aAugEFjVD
-	gRPiFkCS8BLq6OuRWSH6PtYd7dMwm8nRIextA0dF+KknzL/bH838NO1I8T7Tl40tugL5mmGAs901y
-	FRJCXGVzzIIDjyC8wy9A==;
+	List-Owner; bh=fscl2R1KSbOiywAMBkEpa3DiYYuiteTlSth3y9IUxBE=; b=jN7lJDBIF3WdWt
+	zZDq/5G8ebSiVGNkbU7Db3RlJozpODFda3jAeIljJqlXB9z2Jzf3aHH4yCFrF87bgOVaeznDFj/Jr
+	DqGoFQGcHRcnrViORba+ITnUIF9/I9reexgjrRpIMVsqR4/KvBGgwXGzE0W6ylMd3r1OrHZTfi+we
+	ZgRmqO41jUR6HPydZb3bUJ+jtwVzfPvlaLhUdcpNRk69G7Wk/EPAEnKhovgqWJ5tayjXMxhH2jK6v
+	noI001LeATSrtuXqeeEQTMUpLIplSG+hMPMtCaFLw0KDJs026By/ZvOk4waSmREotE5oeTT6UadMO
+	Q6XkgONdu1dHloZLlcFQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hijRO-0004Ly-Ap; Wed, 03 Jul 2019 17:53:10 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hijRA-0004LC-NZ
- for linux-arm-kernel@lists.infradead.org; Wed, 03 Jul 2019 17:52:58 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 5D5B2344;
- Wed,  3 Jul 2019 10:52:54 -0700 (PDT)
-Received: from arrakis.emea.arm.com (arrakis.cambridge.arm.com [10.1.196.78])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
- 250823F718; Wed,  3 Jul 2019 10:52:53 -0700 (PDT)
-Date: Wed, 3 Jul 2019 18:52:51 +0100
-From: Catalin Marinas <catalin.marinas@arm.com>
-To: Anshuman Khandual <anshuman.khandual@arm.com>
-Subject: Re: [RFC 1/2] arm64/mm: Change THP helpers to comply with generic MM
- semantics
-Message-ID: <20190703175250.GF48312@arrakis.emea.arm.com>
-References: <1561639696-16361-1-git-send-email-anshuman.khandual@arm.com>
- <1561639696-16361-2-git-send-email-anshuman.khandual@arm.com>
- <20190628102003.GA56463@arrakis.emea.arm.com>
- <82237e21-1f14-ab6e-0f80-9706141e2172@arm.com>
+	id 1hijWk-0006Ph-47; Wed, 03 Jul 2019 17:58:42 +0000
+Received: from mail-qt1-f193.google.com ([209.85.160.193])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hijWX-0006OP-My; Wed, 03 Jul 2019 17:58:31 +0000
+Received: by mail-qt1-f193.google.com with SMTP id h18so2517043qtm.9;
+ Wed, 03 Jul 2019 10:58:29 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=SBoVgDxevh+0orMCb2YPrkAIPpPXPXsDVuRye2tAk2k=;
+ b=e9wgGMwGbPfytsu2ar7VJx6T3cN0SJdfJsa6Et3fgezPx+SoJQ+sz0jX+VdfxmOrcD
+ kMhHAqmBpaASI9GplPkxMrZyxVK9d9LfTgP4e0Bx1FMSfh/r4L5/m4ULHbsXD7jS65Uy
+ hBgHM8Wzx7TPccPtLruC1NivaRA8gYLstloSp9e7hPZpzv5DSD7dAVucaiCD+CwAhVDk
+ cNagQePHZ940YwYlgRACM43VmOQ4OnX9SIf1f/A4Dmi5Pu5d0XjRncjLiJXLOdYbxyPb
+ AENF7l10NmtOjzM4ascqFdDBCKL8ZbE8Sie5Sb8HyEs5gEKPzCGAB0r0BSbCwTkP2Z/b
+ cQEA==
+X-Gm-Message-State: APjAAAWWKQ2E4WOC3nU18MMndJ5T/E59ENa/h4pTJ3GQcZJC+ENNLUiI
+ bf2C7M8BF8XYY+VZg6eMWevXZoMkSB726Z0vPOk=
+X-Google-Smtp-Source: APXvYqxf8mmbpvC31jKkb8dNVoAULaDG6q3i0PfGuKmnoUA7EPFs/+lF1YWPl9jqzm58WQs2s/8ws2mh2h1uXrUftwc=
+X-Received: by 2002:ac8:5311:: with SMTP id t17mr30964672qtn.304.1562176708215; 
+ Wed, 03 Jul 2019 10:58:28 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <82237e21-1f14-ab6e-0f80-9706141e2172@arm.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+References: <20190703153112.2767411-1-arnd@arndb.de>
+ <20190703165919.GC118075@archlinux-epyc>
+In-Reply-To: <20190703165919.GC118075@archlinux-epyc>
+From: Arnd Bergmann <arnd@arndb.de>
+Date: Wed, 3 Jul 2019 19:58:08 +0200
+Message-ID: <CAK8P3a098AZfkz0bxfgN_XXk7QSQYi1V-EEmqLjQPjzR7986aA@mail.gmail.com>
+Subject: Re: [PATCH] soc: rockchip: work around clang warning
+To: Nathan Chancellor <natechancellor@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190703_105256_860632_7C819DA5 
-X-CRM114-Status: GOOD (  29.52  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190703_105829_750949_E181C3EC 
+X-CRM114-Status: GOOD (  19.15  )
+X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.160.193 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.160.193 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (arndbergmann[at]gmail.com)
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
+ 0.0 T_PDS_NO_HELO_DNS      High profile HELO but no A record
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -64,116 +82,64 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Andrea Arcangeli <aarcange@redhat.com>,
- Suzuki Poulose <suzuki.poulose@arm.com>, Marc Zyngier <marc.zyngier@arm.com>,
- linux-kernel@vger.kernel.org, linux-mm@kvack.org,
- Will Deacon <will@kernel.org>, linux-arm-kernel@lists.infradead.org
+Cc: Heiko Stuebner <heiko@sntech.de>,
+ clang-built-linux <clang-built-linux@googlegroups.com>,
+ Nick Desaulniers <ndesaulniers@google.com>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Nathan Huckleberry <nhuck@google.com>,
+ "open list:ARM/Rockchip SoC support" <linux-rockchip@lists.infradead.org>,
+ arm-soc <arm@kernel.org>, Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Jul 02, 2019 at 09:07:28AM +0530, Anshuman Khandual wrote:
-> On 06/28/2019 03:50 PM, Catalin Marinas wrote:
-> > On Thu, Jun 27, 2019 at 06:18:15PM +0530, Anshuman Khandual wrote:
-> >> pmd_present() and pmd_trans_huge() are expected to behave in the following
-> >> manner during various phases of a given PMD. It is derived from a previous
-> >> detailed discussion on this topic [1] and present THP documentation [2].
-> >>
-> >> pmd_present(pmd):
-> >>
-> >> - Returns true if pmd refers to system RAM with a valid pmd_page(pmd)
-> >> - Returns false if pmd does not refer to system RAM - Invalid pmd_page(pmd)
-> >>
-> >> pmd_trans_huge(pmd):
-> >>
-> >> - Returns true if pmd refers to system RAM and is a trans huge mapping
-[...]
-> > Before we actually start fixing this, I would strongly suggest that you
-> > add a boot selftest (see lib/Kconfig.debug for other similar cases)
-> > which checks the consistency of the page table macros w.r.t. the
-> > expected mm semantics. Once the mm maintainers agreed with the
-> > semantics, it will really help architecture maintainers in implementing
-> > them correctly.
-> 
-> Sure and it will help all architectures to be in sync wrt semantics.
-> 
-> > You wouldn't need actual page tables, just things like assertions on
-> > pmd_trans_huge(pmd_mkhuge(pmd)) == true. You could go further and have
-> > checks on pmdp_invalidate(&dummy_vma, dummy_addr, &dummy_pmd) with the
-> > dummy_* variables on the stack.
-> 
-> Hmm. I guess macros which operate directly on a page table entry will be
-> okay but the ones which check on specific states for VMA or MM might be
-> bit tricky. Try to emulate VMA/MM states while on stack ?. But sure, will
-> explore adding such a test.
+On Wed, Jul 3, 2019 at 6:59 PM Nathan Chancellor
+<natechancellor@gmail.com> wrote:
+> On Wed, Jul 03, 2019 at 05:30:59PM +0200, Arnd Bergmann wrote:
+> > clang emits a warning about a negative shift count for an
+> > unused part of a conditional constant expression:
+> >
+> > drivers/soc/rockchip/pm_domains.c:795:21: error: shift count is negative [-Werror,-Wshift-count-negative]
+> >         [RK3328_PD_VIO]         = DOMAIN_RK3328(-1, 8, 8, false),
+> >                                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+> > drivers/soc/rockchip/pm_domains.c:129:2: note: expanded from macro 'DOMAIN_RK3328'
+> >         DOMAIN_M(pwr, pwr, req, (req) + 10, req, wakeup)
+> >         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+> > drivers/soc/rockchip/pm_domains.c:105:33: note: expanded from macro 'DOMAIN_M'
+> >         .status_mask = (status >= 0) ? BIT(status) : 0, \
+> >                                        ^~~~~~~~~~~
+> > include/linux/bits.h:6:24: note: expanded from macro 'BIT'
+> >
+> > This is a bug in clang that will be fixed in the future, but in order
+> > to build cleanly with clang-8, it would be helpful to shut up this
+> > warning. This file is the only instance reported by kernelci at the
+> > moment.
+> >
+> > The best solution I could come up with is to move the BIT() usage
+> > out of the macro into the instantiation, so we can avoid using
+> > BIT(-1).
+> >
+> > Link: https://bugs.llvm.org/show_bug.cgi?id=38789
+> > Signed-off-by: Arnd Bergmann <arnd@arndb.de>
+>
+> Nick recently mentioned that Nathan was working on a fix on the clang
+> side. It might be worth holding off on this to see if it can make it
+> into LLVM 9, which will branch in about two weeks and be released at
+> the end of August (according to llvm.org).
 
-You can pretend that the page table is on the stack. See the _pmd
-variable in do_huge_pmd_wp_page_fallback() and
-__split_huge_zero_page_pmd(). Similarly, the vma and even the mm can be
-faked on the stack (see the arm64 tlb_flush()).
+I think fixing it in llvm is a good idea regardless of the workaround.
+My main goal for the workaround is to get a clean kernelci build
+again, and it will probably take a little while to move that to a fixed
+clang-9 build (release or prerelease).
 
-> >> The problem:
-> >>
-> >> PMD is first invalidated with pmdp_invalidate() before it's splitting. This
-> >> invalidation clears PMD_SECT_VALID as below.
-> >>
-> >> PMD Split -> pmdp_invalidate() -> pmd_mknotpresent -> Clears PMD_SECT_VALID
-> >>
-> >> Once PMD_SECT_VALID gets cleared, it results in pmd_present() return false
-> >> on the PMD entry.
-> > 
-> > I think that's an inconsistency in the expected semantics here. Do you
-> > mean that pmd_present(pmd_mknotpresent(pmd)) should be true? If not, do
-[...]
-> pmd_present() and pmd_mknotpresent() are not exact inverse.
+> I don't feel strongly about it though so if this is going in:
+>
+> Reviewed-by: Nathan Chancellor <natechancellor@gmail.com>
 
-I find this very confusing (not your fault, just the semantics expected
-by the core code). I can see that x86 is using _PAGE_PSE to make
-pmd_present(pmd_mknotpresent()) == true. However, for pud that's not the
-case (because it's not used for transhuge).
+Thanks!
 
-I'd rather have this renamed to pmd_mknotvalid().
-
-> In absence of a positive section mapping bit on arm64, PTE_SPECIAL is being set
-> temporarily to remember that it was a mapped PMD which got invalidated recently
-> but which still points to memory. Hence pmd_present() must evaluate true.
-
-I wonder if we can encode this safely for arm64 in the bottom two bits
-of a pmd :
-
-0b00 - not valid, not present
-0b10 - not valid, present, huge
-0b01 - valid, present, huge
-0b11 - valid, table (not huge)
-
-Do we ever call pmdp_invalidate() on a table entry? I don't think we do.
-
-So a pte_mknotvalid would set bit 1 and I think swp_entry_to_pmd() would
-have to clear it so that pmd_present() actually returns false for a swp
-pmd entry.
-
-> > we need to implement our own pmdp_invalidate() or change the generic one
-> > to set a "special" bit instead of just a pmd_mknotpresent?
-> 
-> Though arm64 can subscribe __HAVE_ARCH_PMDP_INVALIDATE and implement it's own
-> pmdp_invalidate() in order to not call pmd_mknotpresent() and instead operate
-> on the invalid and special bits directly. But its not going to alter relevant
-> semantics here. AFAICS it might be bit better as it saves pmd_mknotpresent()
-> from putting in that special bit in there which it is not supposed do.
-> 
-> IFAICS there is no compelling reason for generic pmdp_invalidate() to change
-> either. It calls pmd_mknotpresent() which invalidates the entry through valid
-> or present bit and platforms which have dedicated huge page bit can still test
-> positive for pmd_present() after it's invalidation. It works for such platforms.
-> Platform specific override is required when invalidation via pmd_mknotpresent()
-> is not enough.
-
-I'd really like the mknotpresent to be renamed to mknotvalid and then we
-can keep pmdp_invalidate unchanged (well, calling mknotvalid instead).
-
--- 
-Catalin
+      Arnd
 
 _______________________________________________
 linux-arm-kernel mailing list
