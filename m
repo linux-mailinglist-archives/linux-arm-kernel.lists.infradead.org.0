@@ -2,145 +2,102 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B823B5E33C
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  3 Jul 2019 13:53:36 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4E1585E341
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  3 Jul 2019 13:54:18 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=wBnC6DvcW60YdTut/jw1F53w0OPhxFPCSoEe6Zkn5uw=; b=U/U6PyofndF9Gr
-	gZKuPKIYW52miRLQqos4w2pn73KlMvc/6OlYjfG3fj0d71RgK8xQVCOG0MmZbEA3wi/hK1sW6Oaxb
-	b8BZfbZP1njjV9nOqWFPHqSPXDvGQSRknFGJb1avHh+NhkILvq+Ot1bh7+p1EinMxyesMJN5EqUU0
-	ykvntJZt/pjLnEanEuV8nJXqTtbguO4mLDZD4PAaAGuO2JKElRdKw+ZOMsWjdDaF3Ec2ulHc6wsoa
-	ExXr3VsFqFoLb0+9PZX4LAufeTaFciNpohXlwwn6CnAxw4Gf6Fns01eH3PT4oL4zgXeM+oyzJAzGB
-	9yI3s5sQTKSSsoVDj3Og==;
+	List-Owner; bh=B0qZCYdoscGQ/On2rB7WRYPBfdEpDmX2iayVMJykt+M=; b=Wfd12oVdaOPhY5
+	FZlZFR0K8z3IpmAp8etM3B5/It3CYR2cPSJ+jygVq4orhs5PEqG11foXnL7N31gkSKmR3fsA4mpj1
+	JWnEpQVLe708SwXd1P/+DwzjURI6n28QcWCQkSJRBdr6r0+DRehRgfaWJKCsd5lK6/XwT5yHYKeNF
+	yUSt20pNe5KC77mjoo9k2JlERanmgIHlsP0DVkWR0tWkLXhdsoBPpp3Jcu1y5mx3PnUmp2VeVmkuI
+	FsI/CBObSMZh0Il45qbLJVu6+u5E85ZWKttZuFNv6GXS71ABNTeCxHz1F7yM8s/bA3zn7INZnCCsk
+	3WUyVk6PCtmTl38WyA+w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hidpO-0004yh-Ka; Wed, 03 Jul 2019 11:53:34 +0000
-Received: from mail-wm1-x334.google.com ([2a00:1450:4864:20::334])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hidp8-0004wz-Jc
- for linux-arm-kernel@lists.infradead.org; Wed, 03 Jul 2019 11:53:19 +0000
-Received: by mail-wm1-x334.google.com with SMTP id x15so1899098wmj.3
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 03 Jul 2019 04:53:18 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=baylibre-com.20150623.gappssmtp.com; s=20150623;
- h=subject:to:cc:references:from:openpgp:autocrypt:organization
- :message-id:date:user-agent:mime-version:in-reply-to
- :content-language:content-transfer-encoding;
- bh=ECYcI8AlM2+Up/9U9dhONTZIuaFVroymFXWiMWPGvhA=;
- b=Lo998VzvGouMh4VaHm3pLpdC8XOaBts7PQecaj21Fj9ykSqkytbOHmWEHR/xa/XM2Q
- m12klRrbHu6kFGbfGpU6YcyM1Vx0SywqPrcGUud+p67+r+FBP413FPAZeeTzkQMb5b6K
- 5diORxd/AlYNhcAGRNaP+MB5StUHBcRKWkqzuoADPICZfKVTmc0X99fHnTquMn4HaAVi
- ws9XvLVo11qAE0qVeAuq5at6M68rPd5cx7IwPLoPL+qX58tfv7oCpukPnfEEa7L0URRY
- 9voXuft/bbTLaVXm4pnm94Yvy79QB634ZVvTTcY6GPhsA0RkrtaqIRnoyG7gGdAtMIT7
- 1xCg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:openpgp:autocrypt
- :organization:message-id:date:user-agent:mime-version:in-reply-to
- :content-language:content-transfer-encoding;
- bh=ECYcI8AlM2+Up/9U9dhONTZIuaFVroymFXWiMWPGvhA=;
- b=OdZh2np43lU85ClTCehc7HnV0iFMNFDYlgweMeFVlGYlga4bdRdtped0B8QIe375Qh
- AjV0mWqywrBax5ytNXApUjt/6Nze8vyBkBxDdx3dzWObnKGN+SlB6q3iLvKPstHDLbEv
- 7j2UKRR418+kDUPngLDOBdty/eJcLGz8WZCLRQZHbgCQX3BYNyvh7AqgOitsEPQDHx45
- 6n1LG0sbtuvr8V+79aK4H+u/9ZQQP0iLcybnj3L7+j1/z9XCOoVS5PzGpeuv603DQ6r/
- Msesn6GTlMxDnYscLC2R/dtrq12fJDCQ+hmVwvdNkQAKJxLCMVYYuOVRBXGmpZ+Fpmrm
- Q6Ag==
-X-Gm-Message-State: APjAAAU7qdmwEHmG9UFEQuWdvTQAvsjTdmoVqptib2hmcfiHqtqQuIwV
- EoU0Z2VLYniAN0zODDkhOWnRNA==
-X-Google-Smtp-Source: APXvYqw1UydkA6XdM3tn/Mh6Trc55NumI7hz88+bOC34gP3xPxq6ffraSlp3cxtYo3lA+fJa+NR25g==
-X-Received: by 2002:a7b:cf27:: with SMTP id m7mr8004579wmg.7.1562154796842;
- Wed, 03 Jul 2019 04:53:16 -0700 (PDT)
-Received: from [10.1.2.12] (lmontsouris-657-1-212-31.w90-63.abo.wanadoo.fr.
- [90.63.244.31])
- by smtp.gmail.com with ESMTPSA id h8sm2000695wmf.12.2019.07.03.04.53.16
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Wed, 03 Jul 2019 04:53:16 -0700 (PDT)
-Subject: Re: [RFC/RFT v3 11/14] arm64: dts: meson-g12a: add cpus OPP table
-To: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
-References: <20190701091258.3870-1-narmstrong@baylibre.com>
- <20190701091258.3870-12-narmstrong@baylibre.com>
- <CAFBinCBg57gh1x3CKs-YrCvTD0WR2s5zVGWtycb=RGqMiQ-VgA@mail.gmail.com>
-From: Neil Armstrong <narmstrong@baylibre.com>
+	id 1hidq4-0005Tj-OP; Wed, 03 Jul 2019 11:54:16 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hidpq-0005Sh-86
+ for linux-arm-kernel@lists.infradead.org; Wed, 03 Jul 2019 11:54:03 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 18C68344;
+ Wed,  3 Jul 2019 04:54:01 -0700 (PDT)
+Received: from [10.1.197.61] (usa-sjc-imap-foss1.foss.arm.com [10.121.207.14])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
+ B48D33F703; Wed,  3 Jul 2019 04:53:59 -0700 (PDT)
+Subject: Re: [PATCH 04/59] KVM: arm64: nv: Introduce nested virtualization
+ VCPU feature
+To: Dave Martin <Dave.Martin@arm.com>
+References: <20190621093843.220980-1-marc.zyngier@arm.com>
+ <20190621093843.220980-5-marc.zyngier@arm.com>
+ <20190624112851.GM2790@e103592.cambridge.arm.com>
+From: Marc Zyngier <marc.zyngier@arm.com>
 Openpgp: preference=signencrypt
-Autocrypt: addr=narmstrong@baylibre.com; prefer-encrypt=mutual; keydata=
- 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
- ZaTUOEkgIor5losDrePdPgE=
-Organization: Baylibre
-Message-ID: <7acdafc1-39e7-a2ec-886f-ca337c60dfe7@baylibre.com>
-Date: Wed, 3 Jul 2019 13:53:15 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.7.0
+Autocrypt: addr=marc.zyngier@arm.com; prefer-encrypt=mutual; keydata=
+ mQINBE6Jf0UBEADLCxpix34Ch3kQKA9SNlVQroj9aHAEzzl0+V8jrvT9a9GkK+FjBOIQz4KE
+ g+3p+lqgJH4NfwPm9H5I5e3wa+Scz9wAqWLTT772Rqb6hf6kx0kKd0P2jGv79qXSmwru28vJ
+ t9NNsmIhEYwS5eTfCbsZZDCnR31J6qxozsDHpCGLHlYym/VbC199Uq/pN5gH+5JHZyhyZiNW
+ ozUCjMqC4eNW42nYVKZQfbj/k4W9xFfudFaFEhAf/Vb1r6F05eBP1uopuzNkAN7vqS8XcgQH
+ qXI357YC4ToCbmqLue4HK9+2mtf7MTdHZYGZ939OfTlOGuxFW+bhtPQzsHiW7eNe0ew0+LaL
+ 3wdNzT5abPBscqXWVGsZWCAzBmrZato+Pd2bSCDPLInZV0j+rjt7MWiSxEAEowue3IcZA++7
+ ifTDIscQdpeKT8hcL+9eHLgoSDH62SlubO/y8bB1hV8JjLW/jQpLnae0oz25h39ij4ijcp8N
+ t5slf5DNRi1NLz5+iaaLg4gaM3ywVK2VEKdBTg+JTg3dfrb3DH7ctTQquyKun9IVY8AsxMc6
+ lxl4HxrpLX7HgF10685GG5fFla7R1RUnW5svgQhz6YVU33yJjk5lIIrrxKI/wLlhn066mtu1
+ DoD9TEAjwOmpa6ofV6rHeBPehUwMZEsLqlKfLsl0PpsJwov8TQARAQABtCNNYXJjIFp5bmdp
+ ZXIgPG1hcmMuenluZ2llckBhcm0uY29tPokCTwQTAQIAOQIbAwYLCQgHAwIGFQgCCQoLBBYC
+ AwECHgECF4AWIQSf1RxT4LVjGP2VnD0j0NC60T16QwUCXO+WxgAKCRAj0NC60T16QzfuEACd
+ oPsSJdUg3nm61VKq86Pp0mfCC5IVyD/vTDw3jDErsmtT7t8mMVgidSJe9cMEudLO5xske/mY
+ sC7ZZ4GFNRRsFs3wY5g+kg4yk2UY6q18HXRQJwzWCug2bkJPUxbh71nS3KPsvq4BBOeQiTIX
+ Xr0lTyReFAp+JZ0HpanAU/iD2usEZLDNLXYLRjaHlfkwouxt02XcTKbqRWNtKl3Ybj+mz5IA
+ qEQnA5Z8Nt9ZQmlZ4ASiXVVCbZKIR3RewBL6BP4OhYrvcPCtkoqlqKWZoHBs3ZicRXvcVUr/
+ nqUyZpqhmfht2mIE063L3kTfBqxJ1SQqPc0ZIModTh4ATEjC44x8ObQvtnmgL8EKJBhxJfjY
+ EUYLnwSejH1h+qgj94vn7n1RMVqXpCrWHyF7pCDBqq3gBxtDu6TWgi4iwh4CtdOzXBw2V39D
+ LlnABnrZl5SdVbRwV+Ek1399s/laceH8e4uNea50ho89WmP9AUCrXlawHohfDE3GMOV4BdQ2
+ DbJAtZnENQXaRK9gr86jbGQBga9VDvsBbRd+uegEmQ8nPspryWIz/gDRZLXIG8KE9Jj9OhwE
+ oiusVTLsw7KS4xKDK2Ixb/XGtJPLtUXbMM1n9YfLsB5JPZ3B08hhrv+8Vmm734yCXtxI0+7B
+ F1V4T2njuJKWTsmJWmx+tIY8y9muUK9rabkCDQROiX9FARAAz/al0tgJaZ/eu0iI/xaPk3DK
+ NIvr9SsKFe2hf3CVjxriHcRfoTfriycglUwtvKvhvB2Y8pQuWfLtP9Hx3H+YI5a78PO2tU1C
+ JdY5Momd3/aJBuUFP5blbx6n+dLDepQhyQrAp2mVC3NIp4T48n4YxL4Og0MORytWNSeygISv
+ Rordw7qDmEsa7wgFsLUIlhKmmV5VVv+wAOdYXdJ9S8n+XgrxSTgHj5f3QqkDtT0yG8NMLLmY
+ kZpOwWoMumeqn/KppPY/uTIwbYTD56q1UirDDB5kDRL626qm63nF00ByyPY+6BXH22XD8smj
+ f2eHw2szECG/lpD4knYjxROIctdC+gLRhz+Nlf8lEHmvjHgiErfgy/lOIf+AV9lvDF3bztjW
+ M5oP2WGeR7VJfkxcXt4JPdyDIH6GBK7jbD7bFiXf6vMiFCrFeFo/bfa39veKUk7TRlnX13go
+ gIZxqR6IvpkG0PxOu2RGJ7Aje/SjytQFa2NwNGCDe1bH89wm9mfDW3BuZF1o2+y+eVqkPZj0
+ mzfChEsiNIAY6KPDMVdInILYdTUAC5H26jj9CR4itBUcjE/tMll0n2wYRZ14Y/PM+UosfAhf
+ YfN9t2096M9JebksnTbqp20keDMEBvc3KBkboEfoQLU08NDo7ncReitdLW2xICCnlkNIUQGS
+ WlFVPcTQ2sMAEQEAAYkCHwQYAQIACQUCTol/RQIbDAAKCRAj0NC60T16QwsFD/9T4y30O0Wn
+ MwIgcU8T2c2WwKbvmPbaU2LDqZebHdxQDemX65EZCv/NALmKdA22MVSbAaQeqsDD5KYbmCyC
+ czilJ1i+tpZoJY5kJALHWWloI6Uyi2s1zAwlMktAZzgGMnI55Ifn0dAOK0p8oy7/KNGHNPwJ
+ eHKzpHSRgysQ3S1t7VwU4mTFJtXQaBFMMXg8rItP5GdygrFB7yUbG6TnrXhpGkFBrQs9p+SK
+ vCqRS3Gw+dquQ9QR+QGWciEBHwuSad5gu7QC9taN8kJQfup+nJL8VGtAKgGr1AgRx/a/V/QA
+ ikDbt/0oIS/kxlIdcYJ01xuMrDXf1jFhmGZdocUoNJkgLb1iFAl5daV8MQOrqciG+6tnLeZK
+ HY4xCBoigV7E8KwEE5yUfxBS0yRreNb+pjKtX6pSr1Z/dIo+td/sHfEHffaMUIRNvJlBeqaj
+ BX7ZveskVFafmErkH7HC+7ErIaqoM4aOh/Z0qXbMEjFsWA5yVXvCoJWSHFImL9Bo6PbMGpI0
+ 9eBrkNa1fd6RGcktrX6KNfGZ2POECmKGLTyDC8/kb180YpDJERN48S0QBa3Rvt06ozNgFgZF
+ Wvu5Li5PpY/t/M7AAkLiVTtlhZnJWyEJrQi9O2nXTzlG1PeqGH2ahuRxn7txA5j5PHZEZdL1
+ Z46HaNmN2hZS/oJ69c1DI5Rcww==
+Organization: ARM Ltd
+Message-ID: <01e61a51-5bf0-8943-6f68-7a5cea59f093@arm.com>
+Date: Wed, 3 Jul 2019 12:53:58 +0100
+User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
+ Thunderbird/60.7.2
 MIME-Version: 1.0
-In-Reply-To: <CAFBinCBg57gh1x3CKs-YrCvTD0WR2s5zVGWtycb=RGqMiQ-VgA@mail.gmail.com>
+In-Reply-To: <20190624112851.GM2790@e103592.cambridge.arm.com>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190703_045318_645359_38E555B9 
-X-CRM114-Status: GOOD (  15.15  )
+X-CRM114-CacheID: sfid-20190703_045402_377609_BDF1DD57 
+X-CRM114-Status: GOOD (  17.15  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:334 listed in]
- [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.0 T_PDS_NO_HELO_DNS      High profile HELO but no A record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -152,46 +109,104 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: khilman@baylibre.com, linux-kernel@vger.kernel.org,
- linux-gpio@vger.kernel.org, linux-amlogic@lists.infradead.org,
- linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- jbrunet@baylibre.com
+Cc: kvm@vger.kernel.org, Julien Thierry <julien.thierry@arm.com>,
+ Andre Przywara <andre.przywara@arm.com>,
+ Suzuki K Poulose <suzuki.poulose@arm.com>,
+ Christoffer Dall <christoffer.dall@arm.com>,
+ Jintack Lim <jintack@cs.columbia.edu>, James Morse <james.morse@arm.com>,
+ kvmarm@lists.cs.columbia.edu, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 03/07/2019 01:47, Martin Blumenstingl wrote:
-> Hi Neil,
+On 24/06/2019 12:28, Dave Martin wrote:
+> On Fri, Jun 21, 2019 at 10:37:48AM +0100, Marc Zyngier wrote:
+>> From: Christoffer Dall <christoffer.dall@arm.com>
+>>
+>> Introduce the feature bit and a primitive that checks if the feature is
+>> set behind a static key check based on the cpus_have_const_cap check.
+>>
+>> Checking nested_virt_in_use() on systems without nested virt enabled
+>> should have neglgible overhead.
+>>
+>> We don't yet allow userspace to actually set this feature.
+>>
+>> Signed-off-by: Christoffer Dall <christoffer.dall@arm.com>
+>> Signed-off-by: Marc Zyngier <marc.zyngier@arm.com>
+>> ---
+>>  arch/arm/include/asm/kvm_nested.h   |  9 +++++++++
+>>  arch/arm64/include/asm/kvm_nested.h | 13 +++++++++++++
+>>  arch/arm64/include/uapi/asm/kvm.h   |  1 +
+>>  3 files changed, 23 insertions(+)
+>>  create mode 100644 arch/arm/include/asm/kvm_nested.h
+>>  create mode 100644 arch/arm64/include/asm/kvm_nested.h
+>>
+>> diff --git a/arch/arm/include/asm/kvm_nested.h b/arch/arm/include/asm/kvm_nested.h
+>> new file mode 100644
+>> index 000000000000..124ff6445f8f
+>> --- /dev/null
+>> +++ b/arch/arm/include/asm/kvm_nested.h
+>> @@ -0,0 +1,9 @@
+>> +/* SPDX-License-Identifier: GPL-2.0 */
+>> +#ifndef __ARM_KVM_NESTED_H
+>> +#define __ARM_KVM_NESTED_H
+>> +
+>> +#include <linux/kvm_host.h>
+>> +
+>> +static inline bool nested_virt_in_use(const struct kvm_vcpu *vcpu) { return false; }
+>> +
+>> +#endif /* __ARM_KVM_NESTED_H */
+>> diff --git a/arch/arm64/include/asm/kvm_nested.h b/arch/arm64/include/asm/kvm_nested.h
+>> new file mode 100644
+>> index 000000000000..8a3d121a0b42
+>> --- /dev/null
+>> +++ b/arch/arm64/include/asm/kvm_nested.h
+>> @@ -0,0 +1,13 @@
+>> +/* SPDX-License-Identifier: GPL-2.0 */
+>> +#ifndef __ARM64_KVM_NESTED_H
+>> +#define __ARM64_KVM_NESTED_H
+>> +
+>> +#include <linux/kvm_host.h>
+>> +
+>> +static inline bool nested_virt_in_use(const struct kvm_vcpu *vcpu)
+>> +{
+>> +	return cpus_have_const_cap(ARM64_HAS_NESTED_VIRT) &&
+>> +		test_bit(KVM_ARM_VCPU_NESTED_VIRT, vcpu->arch.features);
+>> +}
+>> +
+>> +#endif /* __ARM64_KVM_NESTED_H */
+>> diff --git a/arch/arm64/include/uapi/asm/kvm.h b/arch/arm64/include/uapi/asm/kvm.h
+>> index d819a3e8b552..563e2a8bae93 100644
+>> --- a/arch/arm64/include/uapi/asm/kvm.h
+>> +++ b/arch/arm64/include/uapi/asm/kvm.h
+>> @@ -106,6 +106,7 @@ struct kvm_regs {
+>>  #define KVM_ARM_VCPU_SVE		4 /* enable SVE for this CPU */
+>>  #define KVM_ARM_VCPU_PTRAUTH_ADDRESS	5 /* VCPU uses address authentication */
+>>  #define KVM_ARM_VCPU_PTRAUTH_GENERIC	6 /* VCPU uses generic authentication */
+>> +#define KVM_ARM_VCPU_NESTED_VIRT	7 /* Support nested virtualization */
 > 
-> On Mon, Jul 1, 2019 at 11:13 AM Neil Armstrong <narmstrong@baylibre.com> wrote:
->>
->> Add the OPP table taken from the vendor u200 and u211 DTS.
->>
->> The Amlogic G12A SoC seems to available in 3 types :
->> - low-speed: up to 1,8GHz
->> - mid-speed: up to 1,908GHz
->> - high-speed: up to 2.1GHz
->>
->> And the S905X2 opp voltages are slightly higher than the S905D2
->> OPP voltages for the low-speed table.
->>
->> This adds the conservative OPP table with the S905X2 higher voltages
->> and the maximum low-speed OPP frequency.
-> have you considered all three as separate voltage tables?
-> you're other patches are assigning the OPP table to the CPU in the
-> board.dts anyways, so it's easy to use different OPP tables for
-> different boards
-
-We can't assume the board and the CPU type :-/
-
-Kevin told me about cpufreq policy, where we could add a policy reading the
-eFUSE and changing the max frequency, then we could add the whole OPP table.
-
-Neil
-
+> This seems weirdly named:
 > 
+> Isn't the feature we're exposing here really EL2?  In that case, the
+> feature the guest gets with this flag enabled is plain virtualisation,
+> possibly with the option to nest further.
+> 
+> Does the guest also get nested virt (i.e., recursively nested virt from
+> the host's PoV) as a side effect, or would require an explicit extra
+> flag?
 
+So far, there is no extra flag to describe further nesting, and it
+directly comes from EL2 being emulated. I don't mind renaming this to
+KVM_ARM_VCPU_HAS_EL2, or something similar... Whether we want userspace
+to control the exposure of the nesting capability (i.e. EL2 with
+ARMv8.3-NV) is another question.
+
+Thanks,
+
+	M.
+-- 
+Jazz is not dead. It just smells funny...
 
 _______________________________________________
 linux-arm-kernel mailing list
