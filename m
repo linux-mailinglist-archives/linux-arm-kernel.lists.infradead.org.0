@@ -2,54 +2,95 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 57BC95E963
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  3 Jul 2019 18:39:43 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C5E8C5E979
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  3 Jul 2019 18:46:20 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=+m8Mi8MnSxa27TeqFuu91akxipB9BFchGCPlkaK1SJg=; b=io4iouJT8MDU9aKps9PvKnA8LM
-	nBKER1yCYNgls/XiP/oBwVsZbs9J4VyaDFOX/XL+ywUTqNfccEZ5pWZuOtUYi7Ii7LAWhxahezxHh
-	CT0P7F6+14rfLB5H4bmN7Kb/nzUy1eWqnqpivef7AmbUfIED1rAV9WgsRoD3hCMWI6N5LDwQT4xtb
-	PvH6Iu4OrlM/F2gX31vxkeffXD2q81KWa8DrHMUuX9XRnS+MYyJ8J7yFazZl6W/f9MdiUop6oQMN2
-	s3jH6meWPnsukS5G/3D/pk8wtNriRzSDLXxxzGqlkpv/3KmkTRI1/mOkaB7KldOQfZZ9gFUJbInTy
-	R3zHciTA==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=w5KXBQ+Xs6m/Om7+ZIX92xG/QKn9/JQOqBxtla9ZqjA=; b=jaMbJTiiZh2KDA
+	XRvNY9E+2VEtiagvmfVO0AaK6SgjaPOtNCz8b9XNKYJmCF5H2vAjkm4vUTt5e/GH3GaOcHMm2qUUU
+	bEf2CEdbymRa5iaEe0A18WOtIT1WMKfBlbjht6Y9SuKZjEhfuHP0jl8wO0NAfBkU+MaMdGGtzUN2S
+	6s3KQzHfBXY7YooNO7GwkF8lg2AcnZ8bzCwe4h8blExH7+JT1r687m9UeYUjg9uU3KOwGmZXwds/a
+	yp3746XsdiYouBHB9ktn5p1RMIGHZvLitnnFUd40iOTUGqtqbzZz50KMojJuJ1TREacJ0zhuZqIJX
+	EGF17t0XfiYH9V9VOEXg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hiiIH-0005bz-Tr; Wed, 03 Jul 2019 16:39:42 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hiiF5-00036p-Mj
- for linux-arm-kernel@lists.infradead.org; Wed, 03 Jul 2019 16:36:25 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 8A6451477;
- Wed,  3 Jul 2019 09:36:23 -0700 (PDT)
-Received: from e120937-lin.cambridge.arm.com (e120937-lin.cambridge.arm.com
- [10.1.197.50])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id BD7E93F718;
- Wed,  3 Jul 2019 09:36:22 -0700 (PDT)
-From: Cristian Marussi <cristian.marussi@arm.com>
-To: linux-kselftest@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- shuah@kernel.org
-Subject: [PATCH v2 10/10] kselftest: arm64: fake_sigreturn_bad_size
-Date: Wed,  3 Jul 2019 17:35:32 +0100
-Message-Id: <20190703163532.7485-11-cristian.marussi@arm.com>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20190703163532.7485-1-cristian.marussi@arm.com>
-References: <20190703163532.7485-1-cristian.marussi@arm.com>
+	id 1hiiOg-0000Hn-Np; Wed, 03 Jul 2019 16:46:18 +0000
+Received: from mail-ed1-x544.google.com ([2a00:1450:4864:20::544])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hiiOU-0000HB-3x
+ for linux-arm-kernel@lists.infradead.org; Wed, 03 Jul 2019 16:46:08 +0000
+Received: by mail-ed1-x544.google.com with SMTP id k8so2735148eds.7
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 03 Jul 2019 09:46:05 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=08FT7ddsmk9tLgvVvr2oQycyQXe5HFBk71BAZ/FmXUk=;
+ b=TWa4pc2EdmtLNNbcdyQZTBp7Y2NNRNhRU25KJV9GQNIpuMKkvzYyNvnWH7nRRamPjb
+ /caum6h7iO4vYiEkff6fwK5UakxNxnG7joCZz2ztHg18jvm1EzUT1MVhQUAdq6q6nmlh
+ 82j59LytSemhPZWkaRojDdtxLTfmB0aT4QJc8vxqebnnxqkcQ6Wtz6QBDJXsWnnofHPh
+ 2WF0ehgVKHOIAaLQ6W69V8wxdHlaBd0SOTcldZ+6dWpo3IR2VBG8l/WRdWfnpOcQFk7Q
+ KkRJJkh4BFNw5XmVgmjlpoBmP5BhcLKyzDbmUjJ9zdsbCCnt6JHPtnNQj0qqrIbVFNEh
+ aSng==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=08FT7ddsmk9tLgvVvr2oQycyQXe5HFBk71BAZ/FmXUk=;
+ b=ZfAstdwoWQSqjA576HFSwSf63yIvLx/Wte9MmPM5dmkL6z0v5UBSwtzPgaC3rGy3eV
+ xdTRHGzaocxC29glqISPJSERVDr3wfghDH3RMlordYZPIPJl8tl3sCaJi1A2wXkiw+Zq
+ oTTGb+mI5yMP+kCAbM0wzClppfzHSNphBx934jNmEMFPxTt+2vNab8zEdJLRE9Kin1nG
+ b2NY0yI5XTY6TQSU1tdxNEWS2ap6fSPQzur+upnKTth3rYm56OtYnP9k0hNtRJ6wmZMa
+ hW3GQsRCq11F+4uykgPP3CvT7PNggiBr69btED9IzJ6ZzL3RM/rGUcrKMdgu4Keg6ASW
+ YIrg==
+X-Gm-Message-State: APjAAAWoc8K4dUC1yNWitwo8qGqSl+UaiZrlESO4GRbNF/AU8efAQZUl
+ FlWmUhXqPgmk0nXyv93plp4=
+X-Google-Smtp-Source: APXvYqyQneHl9k0YePcXIOIWu0hzBiE7uHghqSPjYIrF6KJ/fdAgv7pH7XVLT+Hdo0nRWBLT+8kdhg==
+X-Received: by 2002:aa7:c754:: with SMTP id c20mr43184865eds.265.1562172363746; 
+ Wed, 03 Jul 2019 09:46:03 -0700 (PDT)
+Received: from localhost (ip1f10d6e1.dynamic.kabel-deutschland.de.
+ [31.16.214.225])
+ by smtp.gmail.com with ESMTPSA id h10sm845881eda.85.2019.07.03.09.46.02
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Wed, 03 Jul 2019 09:46:02 -0700 (PDT)
+Date: Wed, 3 Jul 2019 18:46:00 +0200
+From: Oliver Graute <oliver.graute@gmail.com>
+To: Shawn Guo <shawnguo@kernel.org>
+Subject: Re: [PATCHv3 0/2] Variscite DART-6UL SoM support
+Message-ID: <20190703164600.GA9261@ripley>
+References: <1559839624-12286-1-git-send-email-oliver.graute@gmail.com>
+ <20190613013830.GC20747@dragon>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20190613013830.GC20747@dragon>
+User-Agent: Mutt/1.5.24 (2015-08-30)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190703_093623_837347_20BC0DCA 
-X-CRM114-Status: GOOD (  14.73  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190703_094607_146775_03FE776F 
+X-CRM114-Status: GOOD (  13.32  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:544 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (oliver.graute[at]gmail.com)
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.0 T_PDS_NO_HELO_DNS      High profile HELO but no A record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -61,127 +102,46 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: andreyknvl@google.com, dave.martin@arm.com
-MIME-Version: 1.0
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ narmstrong@baylibre.com, Sascha Hauer <s.hauer@pengutronix.de>,
+ linux-kernel@vger.kernel.org, Rob Herring <robh+dt@kernel.org>,
+ NXP Linux Team <linux-imx@nxp.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Fabio Estevam <festevam@gmail.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Added a simple fake_sigreturn testcase which builds a ucontext_t
-with a badly sized header that causes a overrun in the __reserved
-area and place it onto the stack. Expects a SIGSEGV on test PASS.
+On 13/06/19, Shawn Guo wrote:
+> On Thu, Jun 06, 2019 at 06:47:00PM +0200, Oliver Graute wrote:
+> > Need feedback to the following patches which adds support for a DART-6UL Board
+> > 
+> > Product Page: https://www.variscite.com/product/evaluation-kits/dart-6ul-kits
+> > 
+> > Oliver Graute (2):
+> >   ARM: dts: imx6ul: Add Variscite DART-6UL SoM support
+> >   ARM: dts: Add support for i.MX6 UltraLite DART Variscite Customboard
+> 
+> It's already v3?  I did not find previous versions.  What's changed
+> since previous versions?
 
-Signed-off-by: Cristian Marussi <cristian.marussi@arm.com>
----
- .../arm64/signal/testcases/.gitignore         |  1 +
- .../testcases/fake_sigreturn_bad_size.c       | 85 +++++++++++++++++++
- 2 files changed, 86 insertions(+)
- create mode 100644 tools/testing/selftests/arm64/signal/testcases/fake_sigreturn_bad_size.c
+The first two version you can find here. I splitted board and SoM part
+according Neils and Fabios comments.
 
-diff --git a/tools/testing/selftests/arm64/signal/testcases/.gitignore b/tools/testing/selftests/arm64/signal/testcases/.gitignore
-index 94f9baaf638c..3408e0f5ba98 100644
---- a/tools/testing/selftests/arm64/signal/testcases/.gitignore
-+++ b/tools/testing/selftests/arm64/signal/testcases/.gitignore
-@@ -8,3 +8,4 @@ fake_sigreturn_bad_magic
- fake_sigreturn_bad_size_for_magic0
- fake_sigreturn_missing_fpsimd
- fake_sigreturn_duplicated_fpsimd
-+fake_sigreturn_bad_size
-diff --git a/tools/testing/selftests/arm64/signal/testcases/fake_sigreturn_bad_size.c b/tools/testing/selftests/arm64/signal/testcases/fake_sigreturn_bad_size.c
-new file mode 100644
-index 000000000000..1467fb534d8b
---- /dev/null
-+++ b/tools/testing/selftests/arm64/signal/testcases/fake_sigreturn_bad_size.c
-@@ -0,0 +1,85 @@
-+/* SPDX-License-Identifier: GPL-2.0 */
-+/* Copyright (C) 2019 ARM Limited */
-+
-+#include <stdio.h>
-+#include <ucontext.h>
-+
-+#include "test_signals_utils.h"
-+#include "testcases.h"
-+
-+struct fake_sigframe sf;
-+
-+#define MIN_SZ_ALIGN	16
-+
-+static int fake_sigreturn_bad_size_run(struct tdescr *td,
-+				       siginfo_t *si, ucontext_t *uc)
-+{
-+	size_t resv_sz, need_sz, offset;
-+	struct _aarch64_ctx *shead = GET_SF_RESV_HEAD(sf), *head;
-+
-+	/* just to fill the ucontext_t with something real */
-+	if (!get_current_context(td, &sf.uc))
-+		return 1;
-+
-+	resv_sz = GET_SF_RESV_SIZE(sf);
-+	/*
-+	 * find the terminator, preserving existing headers
-+	 * and verify amount of spare room in __reserved area.
-+	 */
-+	head = get_terminator(shead, resv_sz, &offset);
-+	/*
-+	 * try stripping extra_context header when low on space:
-+	 * we need at least  for the bad sized esr_context.
-+	 */
-+	need_sz = HDR_SZ + sizeof(struct esr_context);
-+	if (head && resv_sz - offset < need_sz) {
-+		fprintf(stderr, "Low on space:%zd. Discarding extra_context.\n",
-+			resv_sz - offset);
-+		head = get_header(shead, EXTRA_MAGIC, resv_sz, &offset);
-+	}
-+	/* just give up and timeout if still not enough space */
-+	if (head && resv_sz - offset >= need_sz) {
-+		fprintf(stderr, "Mangling template header. Spare space:%zd\n",
-+			resv_sz - offset);
-+		/*
-+		 * Use an esr_context to build a fake header with a
-+		 * size greater then the free __reserved area minus HDR_SZ;
-+		 * using ESR_MAGIC here since it is not checked for size nor
-+		 * is limited to one instance.
-+		 *
-+		 * At first inject an additional normal esr_context
-+		 */
-+		head->magic = ESR_MAGIC;
-+		head->size = sizeof(struct esr_context);
-+		/* and terminate properly */
-+		write_terminator_record(GET_RESV_NEXT_HEAD(head));
-+		ASSERT_GOOD_CONTEXT(&sf.uc);
-+
-+		/*
-+		 * now mess with fake esr_context size: leaving less space than
-+		 * neededwhile keeping size value 16-aligned
-+		 *
-+		 * It must trigger a SEGV from Kernel on:
-+		 *
-+		 *	resv_sz - offset < sizeof(*head)
-+		 */
-+		/* at first set the maximum good 16-aligned size */
-+		head->size = (resv_sz - offset - need_sz + MIN_SZ_ALIGN) & ~0xfUL;
-+		/* plus a bit more of 16-aligned sized stuff */
-+		head->size += MIN_SZ_ALIGN;
-+		/* and terminate properly */
-+		write_terminator_record(GET_RESV_NEXT_HEAD(head));
-+		ASSERT_BAD_CONTEXT(&sf.uc);
-+		fake_sigreturn(&sf, sizeof(sf), 16);
-+	}
-+
-+	return 1;
-+}
-+
-+struct tdescr tde = {
-+		.name = "FAKE_SIGRETURN_BAD_SIZE",
-+		.descr = "Triggers a fake sigreturn with a sigframe including a badly sized header which overruns the __reserved area",
-+		.sig_ok = SIGSEGV,
-+		.timeout = 3,
-+		.run = fake_sigreturn_bad_size_run,
-+};
--- 
-2.17.1
+v1
+https://patchwork.kernel.org/project/linux-arm-kernel/list/?series=59259
 
+v2 
+https://patchwork.kernel.org/patch/10748361/
+
+Please review the latest version v4:
+
+https://patchwork.kernel.org/project/linux-arm-kernel/list/?series=137257
+
+Thx for your time and patience.
+
+Oliver
 
 _______________________________________________
 linux-arm-kernel mailing list
