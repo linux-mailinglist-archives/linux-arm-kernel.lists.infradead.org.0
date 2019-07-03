@@ -2,70 +2,110 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9E6AA5EDF9
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  3 Jul 2019 22:57:04 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 285715EDFD
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  3 Jul 2019 22:59:46 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=uVcQtQLtxs/4YXNu4ZrsOFdP3hQzqfh8SAW7Q0kLz+Y=; b=Pdvsp0vruiUN2V
-	n6Bn9o62kEDZiy9EEi98lS3ipYiQUTJsEkNSduzoBu4edAKQjV7sqzRDeK3HuVqRF12HWH1F7MDny
-	X/irDnlovsBrQd4gY9Bd/o1oScREs0J7Ye8UGNfTzjn47bx9NiAEHqiuz+vymq/+ToLZM61g7cmnB
-	oncest0datz+RvbuehN6JRfz1otwsoRKUAgTaE6PGVd/KzOQYjTJOX+/WBTvlC6pI8aSfydMagarV
-	ATopba1ASQ4jMa1+I3TJH3TH1P+aLuOuJqJ76mYmCNb5mN6TKt9HpiEG56DqLNVIQ/m+elVwEvHKE
-	7gag8W/iHi4je7Sc5CHg==;
+	Content-Transfer-Encoding:Content-Type:Cc:Reply-To:List-Subscribe:List-Help:
+	List-Post:List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:
+	Subject:To:From:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=uIiridvAPmeGryygV/lzESLADH67pnc4BwxA7EF+cAI=; b=kA05/3RYXGkoXc
+	u4J52+q5TpcSOLBcs87HvIai379/sWhcID/Tdtc/U/3RbRwHYmBUAHc72gIKN3UmulCqTyma6o1CB
+	IC2QSQ4uk7VlEIayPvp/fU7M8BOtKM5bpvluspXCwnE5EKmyDGaKpjuNVczo/1iqWuKaCjVccTVuz
+	Dg0oII9smGeK/3RuDF4Jvwq0upyiTbQLVS/ZKoCFehtjeJUQOIM0UEQErIn9DJRPfSfqBvBAcTVHN
+	HINu6enhOQeVR7pfQqhwam8Zdy8bV3K9YTEQK9d+KSzN+0kBcwZhk4Zy5IqgsCYL3jyVE6FjTtSKi
+	hDmjkjKjORgRGLnG43aA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1himJK-0005vH-VD; Wed, 03 Jul 2019 20:57:03 +0000
-Received: from mout.kundenserver.de ([212.227.126.187])
+	id 1himLv-0006LG-BX; Wed, 03 Jul 2019 20:59:43 +0000
+Received: from mail-eopbgr80041.outbound.protection.outlook.com ([40.107.8.41]
+ helo=EUR04-VI1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1himJ8-0005uW-D0
- for linux-arm-kernel@lists.infradead.org; Wed, 03 Jul 2019 20:56:52 +0000
-Received: from threadripper.lan ([149.172.19.189]) by mrelayeu.kundenserver.de
- (mreue010 [212.227.15.129]) with ESMTPA (Nemesis) id
- 1MCbZL-1hrszW1Wi3-009fcz; Wed, 03 Jul 2019 22:56:37 +0200
-From: Arnd Bergmann <arnd@arndb.de>
-To: Florian Fainelli <f.fainelli@gmail.com>
-Subject: [PATCH 3/3] kasan: increase 32-bit stack frame warning limit
-Date: Wed,  3 Jul 2019 22:54:38 +0200
-Message-Id: <20190703205527.955320-3-arnd@arndb.de>
-X-Mailer: git-send-email 2.20.0
-In-Reply-To: <20190703205527.955320-1-arnd@arndb.de>
-References: <20190703205527.955320-1-arnd@arndb.de>
+ id 1himLi-0006Jq-KT
+ for linux-arm-kernel@lists.infradead.org; Wed, 03 Jul 2019 20:59:32 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=+LGnDyzf1Nf9qX67cl5Ry+Kwov3oatuWiMcH3vAM3o4=;
+ b=eygtER5twLXpHb6oBDMihNF9QsBDIUO+9jaLnfkQCZLbtc1WXhcTqnGbZLyOccmCNZeY50l/mYSEJF5OUJXY2+egSilTQ2WrCt+LquDyd5h4V/8yUqH9ykw0d5AReNNDK1ba3CuSVePFarfdfC65CS41GQh0bPAbi2vdmdgkQIo=
+Received: from VE1PR04MB6463.eurprd04.prod.outlook.com (20.179.233.20) by
+ VE1PR04MB6464.eurprd04.prod.outlook.com (20.179.233.21) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2032.20; Wed, 3 Jul 2019 20:59:24 +0000
+Received: from VE1PR04MB6463.eurprd04.prod.outlook.com
+ ([fe80::a5ca:7c9c:6b18:eb0a]) by VE1PR04MB6463.eurprd04.prod.outlook.com
+ ([fe80::a5ca:7c9c:6b18:eb0a%6]) with mapi id 15.20.2032.019; Wed, 3 Jul 2019
+ 20:59:24 +0000
+From: Roy Pledge <roy.pledge@nxp.com>
+To: "linuxppc-dev@lists.ozlabs.org" <linuxppc-dev@lists.ozlabs.org>,
+ "linux-arm-kernel@lists.infradead.org"
+ <linux-arm-kernel@lists.infradead.org>, "linux-kernel@vger.kernel.org"
+ <linux-kernel@vger.kernel.org>, Leo Li <leoyang.li@nxp.com>
+Subject: [PATCH v2 0/7] soc/fsl/qbman: Enable Kexec for DPAA1 devices
+Thread-Topic: [PATCH v2 0/7] soc/fsl/qbman: Enable Kexec for DPAA1 devices
+Thread-Index: AQHVMeIxggwE/pgZKkC1gIn9RzIwTA==
+Date: Wed, 3 Jul 2019 20:59:24 +0000
+Message-ID: <1562187548-32261-1-git-send-email-roy.pledge@nxp.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-mailer: git-send-email 2.7.4
+x-clientproxiedby: SN6PR15CA0005.namprd15.prod.outlook.com
+ (2603:10b6:805:16::18) To VE1PR04MB6463.eurprd04.prod.outlook.com
+ (2603:10a6:803:11d::20)
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=roy.pledge@nxp.com; 
+x-ms-exchange-messagesentrepresentingtype: 1
+x-originating-ip: [72.142.119.78]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: 0b7775e0-3fb2-454b-2541-08d6fff95404
+x-ms-office365-filtering-ht: Tenant
+x-microsoft-antispam: BCL:0; PCL:0;
+ RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600148)(711020)(4605104)(1401327)(4618075)(2017052603328)(7193020);
+ SRVR:VE1PR04MB6464; 
+x-ms-traffictypediagnostic: VE1PR04MB6464:
+x-microsoft-antispam-prvs: <VE1PR04MB64645D3910FBD5F6F5D4139E86FB0@VE1PR04MB6464.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:7691;
+x-forefront-prvs: 00872B689F
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(4636009)(396003)(376002)(39860400002)(346002)(366004)(136003)(189003)(199004)(14454004)(2501003)(81156014)(81166006)(4326008)(478600001)(305945005)(8676002)(14444005)(2906002)(7736002)(50226002)(476003)(486006)(2616005)(25786009)(3450700001)(86362001)(2201001)(68736007)(44832011)(36756003)(66946007)(26005)(66476007)(66556008)(64756008)(73956011)(71200400001)(71190400001)(66066001)(53936002)(6116002)(52116002)(386003)(6506007)(66446008)(8936002)(256004)(102836004)(186003)(99286004)(6486002)(5660300002)(110136005)(316002)(3846002)(6436002)(43066004)(6512007)(6636002);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:VE1PR04MB6464;
+ H:VE1PR04MB6463.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; MX:1; A:1; 
+received-spf: None (protection.outlook.com: nxp.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam-message-info: kEgrJ/76lvuSbcdISeEYNOGofK4u6rhLdtPFgo8ujbzETNSWb5+E8qa5rpY7rsSiIn+XrRpaSzGiAeGUbqm9KH6jRiLJJB6AYe2Cfe040dD22Au+brdMfBhTXTpm7oJWyVnYmqUaN+Jhr1b/vCH5fk7TxwHrxWRTJPLAVNnL0XtnGe0xWLAlICaYF1k8ct6Xxg03WYPKjX2BV6u5EO9bJBh/PjcWwe63WLppquDHROGpVNn/rQ3HSbP0dqFTEvaj38bG5qoRu152CfM14EMIuL1n0LMLz7Ekf4ei87ksXEyh4hCWV4brO7/9eVnQEVK6qFUfbIGblgyJ0lUrC6SVwAz7GE+x8gaXqQEsbZQBb5NpxNFXvXg3P7N/ZWjH13aAKVpmvQobXjSkbv4RYAp98qZOdDdNy8Q+7OKsDxb2ev4=
 MIME-Version: 1.0
-X-Provags-ID: V03:K1:8pSJiH+6Agod8nzM29uheH50kgOrBaKHZzl6ndhrvPiQDTdiHui
- W5pteQ/meterbUyb16uPXBdh/bTTq2+X7Dk5d7PAcip6R5BCBPu9tNJQGkCbISINyzxc4E3
- ufLi+uJnI/JUTqJcROzbiTnzXM5lLSFjTSMLV+q7duZFqGKVqJd+NvheDVswutkffm0UA2T
- TfDWqX7IhnITKKyiWsxrA==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:3Ix8Jf1u9lw=:pjqfTjTFLOmjIDonH9fhGO
- mHR6MCXiiA+Fcqph4cAytscXm6iAv/rKcr/9/TiHbHVVsjckLsemrX4ckG9DSoruNNgcyJZU6
- iOh8oppdJ0CmQLWMXd9XwgOkCOhnP9vSEcCbJv0xxPSh5jCSx9DuUzhZyzfxwQUQSPTD8ZZ2i
- t8FXl40rX/HMeA4I13WzDKH/5A2FNnIENm7M9rUTO700Bd7uTcBKAa7mlM+VdnwpaYWJ2RRtA
- WfqrTrQsGfObU4oOpKitmyB50dNiiNQMY56Dn6Dsh76mVyRlLUnc6QHQ4N0elrylTNwYj/ihI
- 61Ox5FaGZmJDnXmnGoFY2sD2hny0rzusVuk5DpRThYWLJ5aatwd+B3ce7oeeO9NJRExGDIni4
- BHuWsm+m/eCraU0WPVTSM87vm1asD/ayohcM1+LdMTcoMzb9LlWx0ALq9MJu/CKgV9De8/3b9
- d3/VN94DYA9jeePRDe7XPFDTNj2Tn+7KpCruJu15FS9qth6rpir7mcXY3UcNbIiiAW0gMe7w+
- /OOpsa7lPMhg8f39gUMxhnjD6EufdR5k/B56MNvwwXPkkoRSgsJHf6gc9m7CmmxVLAsNOqOJm
- hN2h21mCFCGBXsyB5O/KCiZHxoEKeC65vGSjC034oyin5/vtkSzw+IjuYpdEELk2rIyJOnRgX
- zFxLbriBO8AJIvgkUiCOqFp7zMO5cjWvACRnImwP8b5VHSmDtbyQA6vmdcyt/fVyBlbr/1b48
- GyzK0D05aGULm/4LZ3MsFTAW2SkdaJZmX220Qg==
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 0b7775e0-3fb2-454b-2541-08d6fff95404
+X-MS-Exchange-CrossTenant-originalarrivaltime: 03 Jul 2019 20:59:24.4689 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: roy.pledge@nxp.com
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: VE1PR04MB6464
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190703_135650_729230_F991F1F6 
-X-CRM114-Status: GOOD (  14.36  )
-X-Spam-Score: -0.1 (/)
+X-CRM114-CacheID: sfid-20190703_135930_725363_6482064D 
+X-CRM114-Status: UNSURE (   9.16  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.1 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.227.126.187 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- -0.1 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [212.227.126.187 listed in wl.mailspike.net]
+ no trust [40.107.8.41 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -77,64 +117,47 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Kees Cook <keescook@chromium.org>, Arnd Bergmann <arnd@arndb.de>,
- Abbott Liu <liuwenliang@huawei.com>, Linus Walleij <linus.walleij@linaro.org>,
- linux-kernel@vger.kernel.org, kasan-dev@googlegroups.com,
- Masahiro Yamada <yamada.masahiro@socionext.com>,
- Andrey Ryabinin <aryabinin@virtuozzo.com>,
- Andrew Morton <akpm@linux-foundation.org>,
- linux-arm-kernel@lists.infradead.org
+Reply-To: Roy Pledge <roy.pledge@nxp.com>
+Cc: Roy Pledge <roy.pledge@nxp.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Enabling kasan on 32-bit ARM introduces some new warnings in the
-allmodconfig build due to mildly increased kernel stack usage, even when
-asan-stack is disabled:
+Most DPAA1 devices do not support a soft reset which is an issue if
+Kexec starts a new kernel. This patch series allows Kexec to function
+by detecting that the QBMan device was previously initialized.
 
-fs/select.c:621:5: error: stack frame size of 1032 bytes in function 'core_sys_select'
-net/mac80211/mlme.c:4047:6: error: stack frame size of 1032 bytes in function 'ieee80211_sta_rx_queued_mgmt'
-drivers/infiniband/sw/rxe/rxe_req.c:583:5: error: stack frame size of 1152 bytes in function 'rxe_requester'
-fs/ubifs/replay.c:1193:5: error: stack frame size of 1152 bytes in function 'ubifs_replay_journal'
-drivers/mtd/chips/cfi_cmdset_0001.c:1868:12: error: stack frame size of 1104 bytes in function 'cfi_intelext_writev'
-drivers/ntb/hw/idt/ntb_hw_idt.c:1041:27: error: stack frame size of 1032 bytes in function 'idt_scan_mws'
-drivers/mtd/nftlcore.c:674:12: error: stack frame size of 1120 bytes in function 'nftl_writeblock'
-drivers/net/wireless/cisco/airo.c:3793:12: error: stack frame size of 1040 bytes in function 'setup_card'
-drivers/staging/fbtft/fbtft-core.c:989:5: error: stack frame size of 1232 bytes in function 'fbtft_init_display'
-drivers/staging/fbtft/fbtft-core.c:907:12: error: stack frame size of 1072 bytes in function 'fbtft_init_display_dt'
-drivers/staging/wlan-ng/cfg80211.c:272:12: error: stack frame size of 1040 bytes in function 'prism2_scan'
+The patches fix some issues with device cleanup as well as ensuring
+that the location of the QBMan private memories has not changed
+after the execution of the Kexec.
 
-Some of these are intentionally high, others are from sloppy coding
-practice and should perhaps be reduced a lot.
+Changes since v1:
+	- Removed a bug fix and sent it separately to ease backporting
 
-For 64-bit, the limit is currently much higher at 2048 bytes, which
-does not cause many warnings and could even be reduced. Changing the
-limit to 1280 bytes with KASAN also takes care of all cases I see.
-If we go beyond that with KASAN, or over the normal 1024 byte limit
-without it, that is however something we should definitely address
-in the code.
+Roy Pledge (7):
+  soc/fsl/qbman: Rework QBMan private memory setup
+  soc/fsl/qbman: Cleanup buffer pools if BMan was initialized prior to
+    bootup
+  soc/fsl/qbman: Cleanup QMan queues if device was already initialized
+  soc/fsl/qbman: Fix drain_mr_fqni()
+  soc/fsl/qbman: Disable interrupts during portal recovery
+  soc/fsl/qbman: Fixup qman_shutdown_fq()
+  soc/fsl/qbman: Update device tree with reserved memory
 
-Signed-off-by: Arnd Bergmann <arnd@arndb.de>
----
- lib/Kconfig.debug | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+ drivers/soc/fsl/qbman/bman.c        | 17 ++++----
+ drivers/soc/fsl/qbman/bman_ccsr.c   | 36 +++++++++++++++-
+ drivers/soc/fsl/qbman/bman_portal.c | 18 +++++++-
+ drivers/soc/fsl/qbman/bman_priv.h   |  5 +++
+ drivers/soc/fsl/qbman/dpaa_sys.c    | 63 ++++++++++++++++------------
+ drivers/soc/fsl/qbman/qman.c        | 83 +++++++++++++++++++++++++++++--------
+ drivers/soc/fsl/qbman/qman_ccsr.c   | 59 +++++++++++++++++++++++---
+ drivers/soc/fsl/qbman/qman_portal.c | 18 +++++++-
+ drivers/soc/fsl/qbman/qman_priv.h   |  8 ++++
+ 9 files changed, 246 insertions(+), 61 deletions(-)
 
-diff --git a/lib/Kconfig.debug b/lib/Kconfig.debug
-index 6d2799190fba..41b0ae9d05d9 100644
---- a/lib/Kconfig.debug
-+++ b/lib/Kconfig.debug
-@@ -251,7 +251,7 @@ config FRAME_WARN
- 	int "Warn for stack frames larger than (needs gcc 4.4)"
- 	range 0 8192
- 	default 2048 if GCC_PLUGIN_LATENT_ENTROPY
--	default 1280 if (!64BIT && PARISC)
-+	default 1280 if (!64BIT && (PARISC || KASAN))
- 	default 1024 if (!64BIT && !PARISC)
- 	default 2048 if 64BIT
- 	help
--- 
-2.20.0
+--
+2.7.4
 
 
 _______________________________________________
