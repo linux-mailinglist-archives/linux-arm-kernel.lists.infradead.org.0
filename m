@@ -2,104 +2,88 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9C5F95F2F2
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  4 Jul 2019 08:37:10 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5D6715F302
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  4 Jul 2019 08:44:03 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=q7m3WRQ2MReSKOGA6p17ULyodbL/naUC6NKrztZVBHA=; b=gRdnK4KxtNdhx+
-	8XXBmJ/UiBCaI+r38Swkt8S+ECt8T6I+aNQRq4yiSQtAcsVGso6o7/E5fYWR3ei7moENDnTfgcmUT
-	xQzOCqoWZGBrdls/yKQ/ssUmf16VeitFWQcS212RoB1ZqXCWSVi+mPM+EwEiyg7Y1FAIepJwM0pzx
-	W2k8P16f1P6tufjQARmPjHzAE+3VGIZl8ZmsCgC61+Qav09YeNWRjWKdZ92lpry2pkOlO+AynVjo2
-	L38ZLAJ+w+xuuMRwIQ/WmdFEZbrx04m/q3nMUDw0ldZbjXs+vFRkRJ38PotRqIVprFhkCPcBBU7nr
-	8lM9chec/Kjf3jV4GuVw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=HAgG7Hn9X6UvD0FZtxhn3PFrW8Ww6sorjgTbrLcGn/8=; b=CrwzNFXZ0hwXR7M8YwprWIaXs
+	luoFAdTDrXrW1kgh9xy51MUftShx//Q+pcFZyknc29XhL+NeD2iyyExsC12iaxvfISzUwnM8GbN9T
+	ltikQxy8Q3GHMRu3BlAb6J4hNvBf9C0v3Ckiv0Sw7ZV6I8t393qT5RMcvJrzbiOKO8ZpgLVmHgfa+
+	qJ5fPN8DfO6hf3AB8lMT2juzyK2QDgzhhU1Re3HZhX6N1e1axDRGlaqGjPQAKjTsjYuRUKaFdG13O
+	bgt3YDJrud6EvVmfP2A70Fn97i03tJcsjHjwaoEXSZhUJ9uKTKjXYUKCdQa3jAGS2xHPJSyfUykg4
+	hFlGHdFxw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hivMi-0000zg-Rs; Thu, 04 Jul 2019 06:37:08 +0000
-Received: from mail-eopbgr40048.outbound.protection.outlook.com ([40.107.4.48]
- helo=EUR03-DB5-obe.outbound.protection.outlook.com)
+	id 1hivTN-0004rz-QT; Thu, 04 Jul 2019 06:44:01 +0000
+Received: from smtp.codeaurora.org ([198.145.29.96])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hivLt-0000Xx-9D
- for linux-arm-kernel@lists.infradead.org; Thu, 04 Jul 2019 06:36:18 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=2zvhJxy+/VT8/geBJOCit8CRBU1IjRO26ApHidHFX80=;
- b=g4zOfCUJ6gHoZhCcFjOpB19ZMsYl48K8QijFaoxt/6hqoUgQEETXvFLJ6PcwR/POhAkPrV0uP6J2/70OgFgUule7FMBQJAnnSVKpCgVbZZMYrAn7QidDkbnVildnotFH/J3sh6iH60KVevdZ/C6EXHWQcuGTpqqK6B3Le2WgU1Y=
-Received: from AM0PR0402MB3570.eurprd04.prod.outlook.com (52.133.46.11) by
- AM0PR0402MB3810.eurprd04.prod.outlook.com (52.133.39.26) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2032.20; Thu, 4 Jul 2019 06:36:15 +0000
-Received: from AM0PR0402MB3570.eurprd04.prod.outlook.com
- ([fe80::dd66:8e13:93f0:65eb]) by AM0PR0402MB3570.eurprd04.prod.outlook.com
- ([fe80::dd66:8e13:93f0:65eb%7]) with mapi id 15.20.2032.019; Thu, 4 Jul 2019
- 06:36:15 +0000
-From: Richard Zhu <hongxing.zhu@nxp.com>
-To: "shawnguo@kernel.org" <shawnguo@kernel.org>, "s.hauer@pengutronix.de"
- <s.hauer@pengutronix.de>, "kernel@pengutronix.de" <kernel@pengutronix.de>,
- "festevam@gmail.com" <festevam@gmail.com>, dl-linux-imx <linux-imx@nxp.com>,
- Richard Zhu <hongxing.zhu@nxp.com>
-Subject: [RFC 2/2] arm64: dts: imx8qxp: add the rpmsg support
-Thread-Topic: [RFC 2/2] arm64: dts: imx8qxp: add the rpmsg support
-Thread-Index: AQHVMjLHiSg2fXbpNU25ac/l48MBWw==
-Date: Thu, 4 Jul 2019 06:36:15 +0000
-Message-ID: <1562220905-13875-3-git-send-email-hongxing.zhu@nxp.com>
-References: <1562220905-13875-1-git-send-email-hongxing.zhu@nxp.com>
-In-Reply-To: <1562220905-13875-1-git-send-email-hongxing.zhu@nxp.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-x-mailer: git-send-email 2.7.4
-x-clientproxiedby: HK0P153CA0016.APCP153.PROD.OUTLOOK.COM
- (2603:1096:203:18::28) To AM0PR0402MB3570.eurprd04.prod.outlook.com
- (2603:10a6:208:1c::11)
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=hongxing.zhu@nxp.com; 
-x-ms-exchange-messagesentrepresentingtype: 1
-x-originating-ip: [119.31.174.66]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: 89824b49-8040-4880-f317-08d70049e9d9
-x-ms-office365-filtering-ht: Tenant
-x-microsoft-antispam: BCL:0; PCL:0;
- RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600148)(711020)(4605104)(1401327)(4618075)(2017052603328)(7193020);
- SRVR:AM0PR0402MB3810; 
-x-ms-traffictypediagnostic: AM0PR0402MB3810:
-x-microsoft-antispam-prvs: <AM0PR0402MB381078BD23162538072E20168CFA0@AM0PR0402MB3810.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:6790;
-x-forefront-prvs: 0088C92887
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(4636009)(39860400002)(366004)(136003)(376002)(396003)(346002)(189003)(199004)(316002)(6116002)(3846002)(110136005)(7736002)(66066001)(186003)(50226002)(2501003)(305945005)(478600001)(26005)(14444005)(256004)(25786009)(14454004)(2906002)(4326008)(446003)(11346002)(2616005)(476003)(486006)(76176011)(386003)(6506007)(8936002)(102836004)(7049001)(52116002)(6436002)(99286004)(8676002)(71200400001)(71190400001)(5660300002)(81166006)(81156014)(36756003)(66556008)(64756008)(66476007)(66446008)(68736007)(86362001)(73956011)(66946007)(6486002)(6512007)(53936002)(2201001)(32563001);
- DIR:OUT; SFP:1101; SCL:1; SRVR:AM0PR0402MB3810;
- H:AM0PR0402MB3570.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; MX:1; A:1; 
-received-spf: None (protection.outlook.com: nxp.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: KrbtEgzEYfNeRkqVzxchecUnFYGauS282DXGTfbpYBwGycoMT5Mgun/7wyZ6Tx51hqgRj47npaAab7HvbWKEFSS0Dn1i1+6OYZoW7FEqjvvtOA2hBxwIhPog+nRT7SMkeRhYuXD2MWu+xSWRotshPPigGQAmHd0gqciNEcTWcEMX2eIMw1KBhx88og8Nj2/u2z1G+vnfQRHh4v2t7JbtMlnGk21HZc/KVLlFcc202+S8qp6UsQuXgMpny3xGH8wn0kpu0gm0mmWuowKO2XAeITM7qIz6qMqHqeNUHVchr5cmoETsDIbaYsxjIvgDC1fvpaPIgPaTMs5oSTG5I0peRJrwBnx4GH8nJe1BjLW5Ty9+cQC8VMwMvbg9+l4RYPOjb93CoW8sNoR+szYUguuYD/eX/dmoM0/XmAUzLulr7wo=
+ id 1hivTA-0004qj-Du
+ for linux-arm-kernel@lists.infradead.org; Thu, 04 Jul 2019 06:43:49 +0000
+Received: by smtp.codeaurora.org (Postfix, from userid 1000)
+ id 80A5860A0A; Thu,  4 Jul 2019 06:43:47 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=codeaurora.org;
+ s=default; t=1562222627;
+ bh=1X/a5esYpZeGW1CmQBkAPcwko0xcLOWRgFpb3G9ejjY=;
+ h=Subject:To:Cc:References:From:Date:In-Reply-To:From;
+ b=TDFiiZlHMxnN57/LFYoPv6c+Gkc63IWQfUlT6IhwzsASpgTfmtLCao62YhK6daOLU
+ Cmmrwb7tfyu6OIPj8RHTGHlVqyATWtcbQr3kXjQHpE/UKVzp26tYJTP0zC5po6UKxi
+ RPfK7QlzC7zUxLBtt8hfuxZiRa+rIQ7oHo3HbR/g=
+X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
+ pdx-caf-mail.web.codeaurora.org
+X-Spam-Level: 
+X-Spam-Status: No, score=-2.7 required=2.0 tests=ALL_TRUSTED,BAYES_00,
+ DKIM_INVALID,DKIM_SIGNED,SPF_NONE autolearn=no autolearn_force=no
+ version=3.4.0
+Received: from [10.79.136.27]
+ (blr-bdr-fw-01_globalnat_allzones-outside.qualcomm.com [103.229.18.19])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ (Authenticated sender: saiprakash.ranjan@smtp.codeaurora.org)
+ by smtp.codeaurora.org (Postfix) with ESMTPSA id 212DE60746;
+ Thu,  4 Jul 2019 06:43:41 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=codeaurora.org;
+ s=default; t=1562222625;
+ bh=1X/a5esYpZeGW1CmQBkAPcwko0xcLOWRgFpb3G9ejjY=;
+ h=Subject:To:Cc:References:From:Date:In-Reply-To:From;
+ b=KRGgTCsifDpZLY9tI3ska6jievMGw/EIJcJ3lv8kwsvKdb8mNaCfow6cAz8g0jBQk
+ Q1OkSLf/uqSZF9CB0U48cddTgbY27CgikhpDPRFvQ5e17G0fFEUzOf1TmSrNI/D/IZ
+ RzcPCf65cH7d8K0vBQKF1EcOko4byceHgddG2LPo=
+DMARC-Filter: OpenDMARC Filter v1.3.2 smtp.codeaurora.org 212DE60746
+Authentication-Results: pdx-caf-mail.web.codeaurora.org;
+ dmarc=none (p=none dis=none) header.from=codeaurora.org
+Authentication-Results: pdx-caf-mail.web.codeaurora.org; spf=none
+ smtp.mailfrom=saiprakash.ranjan@codeaurora.org
+Subject: Re: [PATCHv5 1/2] dt-bindings: coresight: Change CPU phandle to
+ required property
+To: Mathieu Poirier <mathieu.poirier@linaro.org>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+References: <cover.1561659046.git.saiprakash.ranjan@codeaurora.org>
+ <2afedb941294af7ba0658496b4aca3759a4e43ff.1561659046.git.saiprakash.ranjan@codeaurora.org>
+ <CANLsYkxvh+qUDvqG45o7qh61Noq=a=BJ4-p68ipdzxYt6n5bNA@mail.gmail.com>
+From: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>
+Message-ID: <8fb5947e-acf8-faff-5594-2a32151ebee7@codeaurora.org>
+Date: Thu, 4 Jul 2019 12:13:40 +0530
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:60.0) Gecko/20100101
+ Thunderbird/60.7.2
 MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 89824b49-8040-4880-f317-08d70049e9d9
-X-MS-Exchange-CrossTenant-originalarrivaltime: 04 Jul 2019 06:36:15.4830 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: hongxing.zhu@nxp.com
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM0PR0402MB3810
+In-Reply-To: <CANLsYkxvh+qUDvqG45o7qh61Noq=a=BJ4-p68ipdzxYt6n5bNA@mail.gmail.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190703_233617_331577_3CF84CE9 
-X-CRM114-Status: GOOD (  12.45  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190703_234348_505929_4BBF7B38 
+X-CRM114-Status: GOOD (  15.91  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.4.48 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [198.145.29.96 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -118,120 +102,48 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "linux-arm-kernel@lists.infradead.org"
- <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Rajendra Nayak <rnayak@codeaurora.org>,
+ Suzuki K Poulose <suzuki.poulose@arm.com>,
+ Alexander Shishkin <alexander.shishkin@linux.intel.com>,
+ linux-arm-msm <linux-arm-msm@vger.kernel.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ David Brown <david.brown@linaro.org>, Rob Herring <robh+dt@kernel.org>,
+ Sibi Sankar <sibis@codeaurora.org>, Vivek Gautam <vivek.gautam@codeaurora.org>,
+ Leo Yan <leo.yan@linaro.org>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add the rpmsg support.
-- Setup the rpmsg reserved memory, one is used for vring, the other one
-is used for shared buffers.
-- The mailbox of the lsio mu5a is used by rpmsg on imx8qxp platforms.
+On 7/4/2019 1:32 AM, Mathieu Poirier wrote:
+> Hi Greg,
+> 
+> On Thu, 27 Jun 2019 at 12:15, Sai Prakash Ranjan
+> <saiprakash.ranjan@codeaurora.org> wrote:
+>>
+>> Do not assume the affinity to CPU0 if cpu phandle is omitted.
+>> Update the DT binding rules to reflect the same by changing it
+>> to a required property.
+>>
+>> Signed-off-by: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>
+>> Reviewed-by: Suzuki K Poulose <suzuki.poulose@arm.com>
+> 
+> I'm all good with this patch - can you pick this up for the coming
+> merge window?  If not I'll simply keep it in my tree for 5.4.
+> 
+> Tested-by: Mathieu Poirier <mathieu.poirier@linaro.org>
+> Reviewed-by: Mathieu Poirier <mathieu.poirier@linaro.org>
+> 
 
-Signed-off-by: Richard Zhu <hongxing.zhu@nxp.com>
----
- arch/arm64/boot/dts/freescale/imx8qxp-mek.dts | 36 +++++++++++++++++++++++++++
- arch/arm64/boot/dts/freescale/imx8qxp.dtsi    | 23 +++++++++++++++++
- 2 files changed, 59 insertions(+)
+I think you missed adding Greg, adding him now ;)
 
-diff --git a/arch/arm64/boot/dts/freescale/imx8qxp-mek.dts b/arch/arm64/boot/dts/freescale/imx8qxp-mek.dts
-index bfdada2..83cf611b 100644
---- a/arch/arm64/boot/dts/freescale/imx8qxp-mek.dts
-+++ b/arch/arm64/boot/dts/freescale/imx8qxp-mek.dts
-@@ -20,6 +20,32 @@
- 		reg = <0x00000000 0x80000000 0 0x40000000>;
- 	};
- 
-+	reserved-memory {
-+		#address-cells = <2>;
-+		#size-cells = <2>;
-+		ranges;
-+
-+		/*
-+		 * 0x8800_0000 ~ 0x8FFF_FFFF is reserved for M4
-+		 * Shouldn't be used at A core and Linux side.
-+		 *
-+		 */
-+		m4_reserved: m4@0x88000000 {
-+			no-map;
-+			reg = <0 0x88000000 0 0x8000000>;
-+		};
-+
-+		rpmsg_reserved: rpmsg@0x90000000 {
-+			no-map;
-+			reg = <0 0x90000000 0 0x400000>;
-+		};
-+		rpmsg_dma_reserved:rpmsg_dma@0x90400000 {
-+			compatible = "shared-dma-pool";
-+			no-map;
-+			reg = <0 0x90400000 0 0x100000>;
-+		};
-+	};
-+
- 	reg_usdhc2_vmmc: usdhc2-vmmc {
- 		compatible = "regulator-fixed";
- 		regulator-name = "SD1_SPWR";
-@@ -136,6 +162,16 @@
- 	};
- };
- 
-+&rpmsg{
-+	/*
-+	 * 64K for one rpmsg instance:
-+	 */
-+	vdev-nums = <2>;
-+	reg = <0x0 0x90000000 0x0 0x20000>;
-+	memory-region = <&rpmsg_dma_reserved>;
-+	status = "okay";
-+};
-+
- &usdhc1 {
- 	pinctrl-names = "default";
- 	pinctrl-0 = <&pinctrl_usdhc1>;
-diff --git a/arch/arm64/boot/dts/freescale/imx8qxp.dtsi b/arch/arm64/boot/dts/freescale/imx8qxp.dtsi
-index 05fa0b7..e211fff 100644
---- a/arch/arm64/boot/dts/freescale/imx8qxp.dtsi
-+++ b/arch/arm64/boot/dts/freescale/imx8qxp.dtsi
-@@ -544,6 +544,14 @@
- 			status = "disabled";
- 		};
- 
-+		lsio_mu5: mailbox@5d200000 {
-+			compatible = "fsl,imx8qxp-mu", "fsl,imx6sx-mu";
-+			reg = <0x5d200000 0x10000>;
-+			interrupts = <GIC_SPI 184 IRQ_TYPE_LEVEL_HIGH>;
-+			#mbox-cells = <2>;
-+			power-domains = <&pd IMX_SC_R_MU_5A>;
-+		};
-+
- 		lsio_mu13: mailbox@5d280000 {
- 			compatible = "fsl,imx8qxp-mu", "fsl,imx6sx-mu";
- 			reg = <0x5d280000 0x10000>;
-@@ -558,4 +566,19 @@
- 			#clock-cells = <1>;
- 		};
- 	};
-+
-+	rpmsg: rpmsg{
-+		compatible = "fsl,imx8qxp-rpmsg";
-+		/* up to now, the following channels are used in imx rpmsg
-+		 * - tx1/rx1: messages channel.
-+		 * - general interrupt1: remote proc finish re-init rpmsg stack
-+		 *   when A core is partition reset.
-+		 */
-+		mbox-names = "tx", "rx", "rxdb";
-+		mboxes = <&lsio_mu5 0 1
-+			  &lsio_mu5 1 1
-+			  &lsio_mu5 3 1>;
-+		mub-partition = <3>;
-+		status = "disabled";
-+	};
- };
+-Sai
+
 -- 
-2.7.4
-
+QUALCOMM INDIA, on behalf of Qualcomm Innovation Center, Inc. is a member
+of Code Aurora Forum, hosted by The Linux Foundation
 
 _______________________________________________
 linux-arm-kernel mailing list
