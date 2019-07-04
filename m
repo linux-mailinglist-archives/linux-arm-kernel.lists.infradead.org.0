@@ -2,88 +2,77 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C661C5FD08
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  4 Jul 2019 20:36:55 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3CC9E5FD21
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  4 Jul 2019 20:53:43 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=b17W1akdj/GhU1o1IOPlWdnVQvVx/MxEagsOM+sJiI8=; b=fPOANH2nBWpBeB
-	WTetpTKlZshMvP4XnxYXqLa/PfcLRllklZIcukgI+clQbWTdfDcwHsrBpOFtvlZ6B5c2+God4Jvw/
-	iqHI3V6mwInJOzracMoepNqzK3s2AHSb7i7Jds8o28GC25CgH/kw3EcU+TdKvV+EeY6KpY6pmvPzw
-	z4rT++MQS5MfQyY5M3+7lzZOFrAOInRHBJP6GLQuGo1UoK19vNHWIj4sSKcxNogcTLsrtxDk7tUS9
-	avfygbioODtsM33qAhV0w3FLB8/RnUa2mvJ9KzyNBDP2KocDiNIkV2+8yaWIzFkFZAcYAmO5Yex4h
-	xHT/8sdST5LvfiXjJs3w==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:In-Reply-To:
+	Message-Id:Subject:To:From:Date:Reply-To:Cc:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=+e4rpAKFxoHD3IrIMSAEWxWrsWNYjMz2NXw1HVrSOV0=; b=KroYLFuVRKogy0
+	qYl6dkE/ueYZAYQJkFtiyCwsIUHo5neXqAUGNmQlwMRAW03lWFPO9dkbJFnMrCBfQ5Csbfb3Tw/tU
+	kXhhO7HbVaeDnxM3QnBy5/qdXVCcK4es2hdGN6CYMUjJidNXDTN2GZDCSs4JgXaClR2LSVQIBeIk1
+	2sGzt6xJijXQAicx00kEUR+1kGbMAm6Oi38nYuFdekvuMRRrSxxGrcDFv09P85iZ8B3HwWaPbwpX6
+	HnpW2PAL5rh9tFmBhvqHEg4mhh7UAMvlD4pthTPJKixuGu1Apu71+CDC33HoozdnkqVDw3SdJN1Xy
+	Wloy+FEqJyZ8/4j4xFsg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hj6bF-0002j4-6I; Thu, 04 Jul 2019 18:36:53 +0000
-Received: from lelv0142.ext.ti.com ([198.47.23.249])
+	id 1hj6rT-0007Le-MC; Thu, 04 Jul 2019 18:53:39 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hj6ab-0002Y7-65; Thu, 04 Jul 2019 18:36:15 +0000
-Received: from lelv0265.itg.ti.com ([10.180.67.224])
- by lelv0142.ext.ti.com (8.15.2/8.15.2) with ESMTP id x64Ia5PO086916;
- Thu, 4 Jul 2019 13:36:05 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1562265365;
- bh=4JPL9pnm+iB2iTUZQC/vFrSNpJCZTCAhwh/sCW9W0hg=;
- h=Subject:To:CC:References:From:Date:In-Reply-To;
- b=RiGaM3sZYABJcMlEOQsoFKMXW95tlVPvdN9xHnN3UWdFVEiueQnnJMoFd+jd87Tj7
- KBQQ3EjQwQD46s54gHhKfLow4caRNZZDTSXqdDjvaCNP4RqOfB/OMRWbu+mlTEFI4M
- bWU0Tfg37Z2drLzHzo5m4xnA6TOUQHBqFm2tBa9k=
-Received: from DLEE108.ent.ti.com (dlee108.ent.ti.com [157.170.170.38])
- by lelv0265.itg.ti.com (8.15.2/8.15.2) with ESMTPS id x64Ia51u127311
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Thu, 4 Jul 2019 13:36:05 -0500
-Received: from DLEE107.ent.ti.com (157.170.170.37) by DLEE108.ent.ti.com
- (157.170.170.38) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5; Thu, 4 Jul
- 2019 13:36:04 -0500
-Received: from lelv0327.itg.ti.com (10.180.67.183) by DLEE107.ent.ti.com
- (157.170.170.37) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5 via
- Frontend Transport; Thu, 4 Jul 2019 13:36:04 -0500
-Received: from [10.250.132.195] (ileax41-snat.itg.ti.com [10.172.224.153])
- by lelv0327.itg.ti.com (8.15.2/8.15.2) with ESMTP id x64IZwM5127168;
- Thu, 4 Jul 2019 13:35:59 -0500
-Subject: Re: [PATCH v8 3/5] mtd: Add support for HyperBus memory devices
-To: Sergei Shtylyov <sergei.shtylyov@cogentembedded.com>, Boris Brezillon
- <bbrezillon@kernel.org>, Marek Vasut <marek.vasut@gmail.com>, Richard
- Weinberger <richard@nod.at>, Rob Herring <robh+dt@kernel.org>
-References: <20190625075746.10439-1-vigneshr@ti.com>
- <20190625075746.10439-4-vigneshr@ti.com>
- <31657fd1-c1c9-7672-14c1-e6f67eee6ac1@cogentembedded.com>
- <5009c418-a051-a42a-f78a-360f7230dd2b@ti.com>
- <8e870356-90ba-4762-b1fd-8a13ce6ebcc8@cogentembedded.com>
-From: Vignesh Raghavendra <vigneshr@ti.com>
-Message-ID: <45f0beda-08a6-5db7-a8f1-a63b6e879b81@ti.com>
-Date: Fri, 5 Jul 2019 00:05:58 +0530
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:60.0) Gecko/20100101
- Thunderbird/60.7.2
-MIME-Version: 1.0
-In-Reply-To: <8e870356-90ba-4762-b1fd-8a13ce6ebcc8@cogentembedded.com>
-Content-Language: en-US
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
+ id 1hj6rG-0007LJ-DV
+ for linux-arm-kernel@lists.infradead.org; Thu, 04 Jul 2019 18:53:27 +0000
+Received: from localhost.localdomain (c-73-223-200-170.hsd1.ca.comcast.net
+ [73.223.200.170])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id AFC8621738;
+ Thu,  4 Jul 2019 18:53:24 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1562266405;
+ bh=qkDBOADvWshMyVN7H3BLz2q7D8CF8WI3UnSO0p9XJrk=;
+ h=Date:From:To:Subject:In-Reply-To:References:From;
+ b=YP1CWkmH0JmPvIb/iq31MuI00kd3EDa/9+C6FkMW9xNGhHlkejojh07VR/3oy9+KK
+ IaMaAVuXl15/ma/jlj84cLS06pu+hF+aZFECnsfjJYLa1fqDGmLqdbwVk7A2KeDeKQ
+ /qpQ+nlJ635aiqGfp36Mf66+8oo8W3i8EH5ciKR8=
+Date: Thu, 4 Jul 2019 11:53:24 -0700
+From: Andrew Morton <akpm@linux-foundation.org>
+To: Jason Gunthorpe <jgg@mellanox.com>, Christoph Hellwig
+ <hch@infradead.org>, Mark Rutland <mark.rutland@arm.com>, Robin Murphy
+ <robin.murphy@arm.com>, "linux-mm@kvack.org" <linux-mm@kvack.org>,
+ "will.deacon@arm.com" <will.deacon@arm.com>, "catalin.marinas@arm.com"
+ <catalin.marinas@arm.com>, "anshuman.khandual@arm.com"
+ <anshuman.khandual@arm.com>, "linux-arm-kernel@lists.infradead.org"
+ <linux-arm-kernel@lists.infradead.org>, "linux-kernel@vger.kernel.org"
+ <linux-kernel@vger.kernel.org>, Michal Hocko <mhocko@suse.com>, Robin
+ Murphy <robin.murphy@arm.com>, Dan Williams <dan.j.williams@intel.com>
+Subject: Re: [PATCH v3 0/4] Devmap cleanups + arm64 support
+Message-Id: <20190704115324.c9780d01ef6938ab41403bf9@linux-foundation.org>
+In-Reply-To: <20190626203551.4612e12be27be3458801703b@linux-foundation.org>
+References: <cover.1558547956.git.robin.murphy@arm.com>
+ <20190626073533.GA24199@infradead.org>
+ <20190626123139.GB20635@lakrids.cambridge.arm.com>
+ <20190626153829.GA22138@infradead.org>
+ <20190626154532.GA3088@mellanox.com>
+ <20190626203551.4612e12be27be3458801703b@linux-foundation.org>
+X-Mailer: Sylpheed 3.5.1 (GTK+ 2.24.31; x86_64-pc-linux-gnu)
+Mime-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190704_113613_375848_3B50C219 
-X-CRM114-Status: GOOD (  21.71  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20190704_115326_473730_5890C90B 
+X-CRM114-Status: GOOD (  11.62  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.23.249 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -96,168 +85,52 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Tokunori Ikegami <ikegami.t@gmail.com>,
- linux-kernel@vger.kernel.org, linux-mtd@lists.infradead.org,
- Miquel Raynal <miquel.raynal@bootlin.com>,
- Mason Yang <masonccyang@mxic.com.tw>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On Wed, 26 Jun 2019 20:35:51 -0700 Andrew Morton <akpm@linux-foundation.org> wrote:
 
-
-On 03-Jul-19 11:44 PM, Sergei Shtylyov wrote:
-> Hello!
+> > Let me know and I can help orchestate this.
 > 
-> On 07/03/2019 07:41 AM, Vignesh Raghavendra wrote:
-> 
->>>> Cypress' HyperBus is Low Signal Count, High Performance Double Data Rate
->>>> Bus interface between a host system master and one or more slave
->>>> interfaces. HyperBus is used to connect microprocessor, microcontroller,
->>>> or ASIC devices with random access NOR flash memory (called HyperFlash)
->>>> or self refresh DRAM (called HyperRAM).
->>>>
->>>> Its a 8-bit data bus (DQ[7:0]) with  Read-Write Data Strobe (RWDS)
->>>> signal and either Single-ended clock(3.0V parts) or Differential clock
->>>> (1.8V parts). It uses ChipSelect lines to select b/w multiple slaves.
->>>> At bus level, it follows a separate protocol described in HyperBus
->>>> specification[1].
->>>>
->>>> HyperFlash follows CFI AMD/Fujitsu Extended Command Set (0x0002) similar
->>>> to that of existing parallel NORs. Since HyperBus is x8 DDR bus,
->>>> its equivalent to x16 parallel NOR flash with respect to bits per clock
->>>> cycle. But HyperBus operates at >166MHz frequencies.
->>>> HyperRAM provides direct random read/write access to flash memory
->>>> array.
->>>>
->>>> But, HyperBus memory controllers seem to abstract implementation details
->>>> and expose a simple MMIO interface to access connected flash.
->>>>
->>>> Add support for registering HyperFlash devices with MTD framework. MTD
->>>> maps framework along with CFI chip support framework are used to support
->>>> communicating with flash.
->>>>
->>>> Framework is modelled along the lines of spi-nor framework. HyperBus
->>>> memory controller (HBMC) drivers calls hyperbus_register_device() to
->>>> register a single HyperFlash device. HyperFlash core parses MMIO access
->>>> information from DT, sets up the map_info struct, probes CFI flash and
->>>> registers it with MTD framework.
->>>>
->>>> Some HBMC masters need calibration/training sequence[3] to be carried
->>>> out, in order for DLL inside the controller to lock, by reading a known
->>>> string/pattern. This is done by repeatedly reading CFI Query
->>>> Identification String. Calibration needs to be done before trying to detect
->>>> flash as part of CFI flash probe.
->>>>
->>>> HyperRAM is not supported at the moment.
->>>>
->>>> HyperBus specification can be found at[1]
->>>> HyperFlash datasheet can be found at[2]
->>>>
->>>> [1] https://www.cypress.com/file/213356/download
->>>> [2] https://www.cypress.com/file/213346/download
->>>> [3] http://www.ti.com/lit/ug/spruid7b/spruid7b.pdf
->>>>     Table 12-5741. HyperFlash Access Sequence
->>>>
->>>> Signed-off-by: Vignesh Raghavendra <vigneshr@ti.com>
->>> [...]
->>>
->>>    I have at least created my HyperBus driver and unfortunately I'm having serious
-> 
->    At last. :-)
-> 
+> Well.  Whatever works.  In this situation I'd stage the patches after
+> linux-next and would merge them up after the prereq patches have been
+> merged into mainline.  Easy.
 
-So, I guess driver works for limited memory size?
+All right, what the hell just happened?  A bunch of new material has
+just been introduced into linux-next.  I've partially unpicked the
+resulting mess, haven't dared trying to compile it yet.  To get this
+far I'll need to drop two patch series and one individual patch:
 
->>> issues with the design of the support core (see below)...
->>>
->>> [...]
->>>> diff --git a/drivers/mtd/hyperbus/hyperbus-core.c b/drivers/mtd/hyperbus/hyperbus-core.c
->>>> new file mode 100644
->>>> index 000000000000..63a9e64895bc
->>>> --- /dev/null
->>>> +++ b/drivers/mtd/hyperbus/hyperbus-core.c
->>>> @@ -0,0 +1,154 @@
->>> [...]
->>>> +int hyperbus_register_device(struct hyperbus_device *hbdev)
->>>> +{
->>>> +	const struct hyperbus_ops *ops;
->>>> +	struct hyperbus_ctlr *ctlr;
->>>> +	struct device_node *np;
->>>> +	struct map_info *map;
->>>> +	struct resource res;
->>>> +	struct device *dev;
->>>> +	int ret;
->>>> +
->>>> +	if (!hbdev || !hbdev->np || !hbdev->ctlr || !hbdev->ctlr->dev) {
->>>> +		pr_err("hyperbus: please fill all the necessary fields!\n");
->>>> +		return -EINVAL;
->>>> +	}
->>>> +
->>>> +	np = hbdev->np;
->>>> +	ctlr = hbdev->ctlr;
->>>> +	if (!of_device_is_compatible(np, "cypress,hyperflash"))
->>>> +		return -ENODEV;
->>>> +
->>>> +	hbdev->memtype = HYPERFLASH;
->>>> +
->>>> +	ret = of_address_to_resource(np, 0, &res);
->>>
->>>    Hm, I doubt that the HB devices are wholly mapped into memory space, that seems
->>> like a property of the HB controller. In my case, the flash device in the DT has
->>> only single-cell "reg" prop (equal to the chip select #). Then this function returns 
->>> -EINVAL and the registration fails. Also, in my case such mapping is R/O, not R/W.
->>>
->>
->> You could declare R/O MMIO region in controla and set up a translation using ranges
->> from slave's reg CS based reg mapping like:
-> 
->    No, not all HB controllers work the same (simple) way as yours. In case of RPC-IF,
-> the direct read map is a 64 MiB window into a possibly larger flash chip, it has a
-> register supplying address bits 25:31...
 
-Okay, this limitation was not made clear earlier. I thought RPC-IF also
-supported MMIO accesses for all reads
+mm-clean-up-is_device__page-definitions.patch
+mm-introduce-arch_has_pte_devmap.patch
+arm64-mm-implement-pte_devmap-support.patch
+arm64-mm-implement-pte_devmap-support-fix.patch
 
-I will look into changes needed to support HB controllers that don't
-have MMIO interface next week.
+mm-sparsemem-introduce-struct-mem_section_usage.patch
+mm-sparsemem-introduce-a-section_is_early-flag.patch
+mm-sparsemem-add-helpers-track-active-portions-of-a-section-at-boot.patch
+mm-hotplug-prepare-shrink_zone-pgdat_span-for-sub-section-removal.patch
+mm-sparsemem-convert-kmalloc_section_memmap-to-populate_section_memmap.patch
+mm-hotplug-kill-is_dev_zone-usage-in-__remove_pages.patch
+mm-kill-is_dev_zone-helper.patch
+mm-sparsemem-prepare-for-sub-section-ranges.patch
+mm-sparsemem-support-sub-section-hotplug.patch
+mm-document-zone_device-memory-model-implications.patch
+mm-document-zone_device-memory-model-implications-fix.patch
+mm-devm_memremap_pages-enable-sub-section-remap.patch
+libnvdimm-pfn-fix-fsdax-mode-namespace-info-block-zero-fields.patch
+libnvdimm-pfn-stop-padding-pmem-namespaces-to-section-alignment.patch
 
-Regards
-Vignesh
+mm-sparsemem-cleanup-section-number-data-types.patch
+mm-sparsemem-cleanup-section-number-data-types-fix.patch
 
-> 
->> +	hbmc: hyperbus@47034000 {
->> +		compatible = "ti,am654-hbmc";
->> +		reg = <0x0 0x47034000 0x0 0x100>,
->> +			<0x5 0x00000000 0x1 0x0000000>;
->> +		#address-cells = <2>;
->> +		#size-cells = <1>;
->> +		ranges = <0x0 0x0 0x5 0x00000000 0x4000000>, /* CS0 - 64MB */
->> +			 <0x1 0x0 0x5 0x04000000 0x4000000>; /* CS1 - 64MB */
->> +
->> +		/* Slave flash node */
->> +		flash@0,0 {
->> +			compatible = "cypress,hyperflash", "cfi-flash";
->> +			reg = <0x0 0x0 0x4000000>;
->> +		};
->> +	};
->>
->> If you use just CS# how would you handle CS to MMIO region mapping? 
->> Does both CS use the same MMIO base for reads?
-> 
->    The RPC-IF HF mode only has a single CS signal.
-> 
 
-I see...
-
-> [...]
-> 
-> MBR, Sergei
-> 
-
-Regards
-Vignesh
+I thought you were just going to move material out of -mm and into
+hmm.git.  Didn't begin to suspect that new and quite disruptive
+material would be introduced late in -rc7!!
 
 _______________________________________________
 linux-arm-kernel mailing list
