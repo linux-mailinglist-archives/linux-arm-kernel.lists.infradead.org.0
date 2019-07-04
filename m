@@ -2,81 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 80BFA5F9BD
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  4 Jul 2019 16:08:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C94915F9BE
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  4 Jul 2019 16:08:19 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=x1+pQPh4n5TqWQRq6rfFyAstUOL5kM+VicbLMWqnA0s=; b=JOlIWgSUcKWVlC
-	gZrN1B4jDRJbrkJ11l8E8sYr0nuJehqqxHLZ79dUnJ3Os0MZf9r3rCUPrc4ylMRr9e5U9f/b88p5d
-	aWNxtRn2PBSQToTqtvxWF0XFVug4PkWpsBIvwLHlmF1nj6kxtUyrM0QAqX0JHGaLRPGeKqGlXg87e
-	JONCR2GSg8ALdiN+s0uxrk8w4BluWDbdOHOzRSVa4VjgjFBmYTOPWdRzqT2+eMU3rqcZpp3VU1qlF
-	nNmM3qa0aTWY0hUXGCWrtqMxQT6ubqN9KdsLhbJZjmPbMYP2HXH2Y/tKSmaEiU2/4O0cGvQd2p3Rm
-	VEz34m7b44sk/bWhq0Ew==;
+	List-Owner; bh=iqafFTfkmWK/35gna4ZWovKUQd6fAD/xCSG5D+p6uj4=; b=bPGTLOPlojVBJZ
+	2yjA8caJClhXIwA1gzTKmoiGlne+O+hpVtHYrceJvJ82fViGI0kq1bUiMM1iL0n1p3gtcGPpVa8TB
+	c97rpL1GPd7GTWrQoLkLovNG1oCziIqbBc2gHc5YyV9DKQ+PAEe7KeK/HjpZvcWyPNx84yFNHdYKt
+	WDWYxovOK+y3DdFSjPRXzD06MX6FHiVQTf3N443a7TQmjtcmCEyvAZ40ccFkpMVHRh1kq0JzGbBYb
+	Z29uUKd5c8PArAwziyrH/nRjoQLlHRLwYNYLyvs7RJnCotYOgmENzicBsPGKYig/8xpQ3eZQMkFCr
+	r7e0ou6EIFxEK2RHX1zA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hj2P2-000649-2O; Thu, 04 Jul 2019 14:08:00 +0000
-Received: from mail-lf1-x144.google.com ([2a00:1450:4864:20::144])
+	id 1hj2PK-0006Ms-AH; Thu, 04 Jul 2019 14:08:18 +0000
+Received: from mail-lj1-x242.google.com ([2a00:1450:4864:20::242])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hj2OV-0005pj-RO
+ id 1hj2OW-0005qO-KR
  for linux-arm-kernel@lists.infradead.org; Thu, 04 Jul 2019 14:07:29 +0000
-Received: by mail-lf1-x144.google.com with SMTP id z15so4310576lfh.13
+Received: by mail-lj1-x242.google.com with SMTP id a21so6309862ljh.7
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 04 Jul 2019 07:07:26 -0700 (PDT)
+ Thu, 04 Jul 2019 07:07:28 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=lixom-net.20150623.gappssmtp.com; s=20150623;
  h=date:from:to:cc:subject:message-id:references:mime-version
  :content-disposition:in-reply-to:user-agent;
- bh=RFXHQZa1viuRQOoVay4WlCqr/Ea3/QL2OlXOP1Oaqq4=;
- b=TCbAD2BW/3bilUX5Aa3cCkbuTWB+tFSXHdNdXrkKRs4ijLlWW1fBPq4uSkAOLyI0DS
- QjNQUi8jy0sc/dEuHnfWzAtB1RFCAxOsIp0dLxUCXdzk8dMmZtumY1V9mWUxW6f8ATnw
- rPv0w7exkS53Ehnmo91hnwQwfh2dssvVwqXyszzJMLwkzLTkevbKDDzzJxrKhdRb002A
- 9HrCD3m3MkHayQIPgdixtfLuB0cNhXK+A6tKABBXmhVKYD0Mt6jts+gjq7MkEu7D+ATE
- QVDD2kY475AhVUMp6GNcWVJjUJfkhRWXrjG1Y6EBfpMOjew3MkORK/uiq4ciuFJL89Bv
- rGNQ==
+ bh=Kj1x8IFnuBK6ev5K60Y42PoI/WzWOZCFAcszDhR0liI=;
+ b=JtAsm1rBm/ojEyGe6v9N+WyV4TCeYdWZpGff35S7iVTTBUAGF85qRyDGj5//OdXJlH
+ 9cRpn+XSDaztOO+NPCn9uiugVwwM4xKT0Xr9krl1S7iquQAyYrw4HG2FVVq93bKtH0Sr
+ cyb1mXMA1r3ivyxAX1B0psR3OMdXPmeZSbE2TOxYs/XBYl2/1L+OytdHAT0i3ZzPZyFI
+ k27mgjYIBk9Nppf6ClaNJHjzOxeACX+Z1iL1J+OE8xnMKtNlkKVfpd679w2VGFoLzefX
+ zq3cENsZN4CsmpgmtA3ZjwHcGHqC09rlSu0ecWmIY19hQ544g0GJoG4vIoBYaOlMZj3u
+ jFVA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to:user-agent;
- bh=RFXHQZa1viuRQOoVay4WlCqr/Ea3/QL2OlXOP1Oaqq4=;
- b=sfLqUgK1ndIQagpxakSrQvHq+XA9V1eNGurxf1LfWTlIwx6CjKl+KlS8i812zGfgui
- HYuVHZmMbdCUv8XIql9OWGQYSMTWOdusFQuLYwd7ymt1esmOrV1yumVQpxDuu3rBiNPs
- 5O2dqmhc9REhjADVyRjF2yDfN5S1o3CCTesR6QbdgZmIuhJilpzvGgcdygPOYv7BnIpI
- 75ivPmDvpSjExSrvMLrB0IHd4bPFcg6aHbI6hp6kwIxHcemFkqXWp0QgwK2NvvMtaosD
- srb0DK6w71NNPOhsbTIVeARwNUkZXCj6ZvmxOCJpEyN1PJiqJcUWQiGy0W98GUeM5Qh5
- 4Rhw==
-X-Gm-Message-State: APjAAAVKnmni79BXjJpeG5P7GIiODcGNXDNOc5oxZi0JvrSvDfygfTXA
- qIniz8Z1Mv3yC0JBrZw5lESPLg==
-X-Google-Smtp-Source: APXvYqxhenNvHieClvgoziYMI/LmkNvo4GSO1jEfcPxxhnsFLbw39L9SKThh3AhyxqfVfATpf3sZZg==
-X-Received: by 2002:a19:8c06:: with SMTP id o6mr20977941lfd.176.1562249245230; 
- Thu, 04 Jul 2019 07:07:25 -0700 (PDT)
+ bh=Kj1x8IFnuBK6ev5K60Y42PoI/WzWOZCFAcszDhR0liI=;
+ b=eFKwOh8o0iOTFuxDNQsRHqTO4FnHA4ty9FdbNw2oFjUtV8SAAYg1DvR9F3kJzBsV3u
+ KoUbTq0yTHg1tV2hU6KMInvVDjrtny5WhMwE7JlUiIxNlAGH3yBWoGfqH/Qpgn6hRYw2
+ eWRUC/cN9pIyK0+/zQMpV069l9iNFZr5U5Yx9uwSTLQ4FvXLFhDh0HEH8gX+8gCXy2gB
+ H4y6VM3XwQ+e5P3clu5p4hoHs/nPBlkcFqCZWaFgN5o7cUm7nQTUWxJy31aTHmOIqKf0
+ jGEnkAagKmBpSwnJOt7osL78TGoqq/AlgWl0+uWJN1XXFCCeHUegD1Nqa1kAuxexgYb8
+ AELQ==
+X-Gm-Message-State: APjAAAVhWwh8XdSiHIDEDzfuv3BNZi/p2dA9GfPz3O3AdNWVRXNUebr+
+ WouKRmQg1oD497RMuhta20liuQ==
+X-Google-Smtp-Source: APXvYqz7IgO3mcsMwiirUW4rRBp2r13jTnNFkvKGbvbS7RQS/ZpA8HrIQ8uJvmY7wzY8NPUuSxB5vw==
+X-Received: by 2002:a2e:654d:: with SMTP id z74mr25008799ljb.111.1562249247325; 
+ Thu, 04 Jul 2019 07:07:27 -0700 (PDT)
 Received: from localhost (h85-30-9-151.cust.a3fiber.se. [85.30.9.151])
- by smtp.gmail.com with ESMTPSA id m17sm989369lfb.9.2019.07.04.07.07.24
+ by smtp.gmail.com with ESMTPSA id f1sm1136982ljk.86.2019.07.04.07.07.25
  (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Thu, 04 Jul 2019 07:07:24 -0700 (PDT)
-Date: Thu, 4 Jul 2019 07:05:08 -0700
+ Thu, 04 Jul 2019 07:07:26 -0700 (PDT)
+Date: Thu, 4 Jul 2019 07:05:35 -0700
 From: Olof Johansson <olof@lixom.net>
 To: Philipp Zabel <p.zabel@pengutronix.de>
-Subject: Re: Reset controller fix for v5.2
-Message-ID: <20190704140508.6w5ovzqqsseerhyu@localhost>
-References: <1562236626.6641.13.camel@pengutronix.de>
+Subject: Re: Reset controller changes for v5.3
+Message-ID: <20190704140535.hnmynkexdamazc3z@localhost>
+References: <1562236632.6641.14.camel@pengutronix.de>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <1562236626.6641.13.camel@pengutronix.de>
+In-Reply-To: <1562236632.6641.14.camel@pengutronix.de>
 User-Agent: NeoMutt/20170113 (1.7.2)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190704_070727_887208_8BA0CFED 
-X-CRM114-Status: GOOD (  14.05  )
+X-CRM114-CacheID: sfid-20190704_070728_689341_E9F852D5 
+X-CRM114-Status: GOOD (  13.80  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:144 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:242 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
@@ -101,7 +101,7 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Jul 04, 2019 at 12:37:06PM +0200, Philipp Zabel wrote:
+On Thu, Jul 04, 2019 at 12:37:12PM +0200, Philipp Zabel wrote:
 > Dear arm-soc maintainers,
 > 
 > The following changes since commit a188339ca5a396acc588e5851ed7e19f66b0ebd9:
@@ -110,29 +110,20 @@ On Thu, Jul 04, 2019 at 12:37:06PM +0200, Philipp Zabel wrote:
 > 
 > are available in the Git repository at:
 > 
->   git://git.pengutronix.de/git/pza/linux.git tags/reset-fixes-for-v5.2
+>   git://git.pengutronix.de/git/pza/linux.git tags/reset-for-v5.3
 > 
-> for you to fetch changes up to a71dcd3757e29cc8b43383ff18595d707cf08345:
+> for you to fetch changes up to b108ad53bb65c19ae8e2d9c7fc0d052b3d9c153b:
 > 
->   reset: remove redundant null check on pointer dev (2019-07-04 12:10:55 +0200)
-> 
-> ----------------------------------------------------------------
-> Reset controller fix for v5.2
-> 
-> This tag removes a redundant device pointer NULL check from
-> __reset_control_get_from_lookup to fix a static code checker
-> warning.
+>   dt-bindings: reset: imx7: Fix the spelling of 'indices' (2019-07-01 17:08:13 +0200)
 > 
 > ----------------------------------------------------------------
-> Colin Ian King (1):
->       reset: remove redundant null check on pointer dev
+> Reset controller changes for v5.3
+> 
+> This tag adds support for the Bitmain BM1880 reset controller to the
+> reset-simple driver and fixes a spelling mistake in the i.MX7 reset
+> controller binding document.
 
-Given that we're so late in the release, and this fixes only a warning
-for redundant checks, I've merged it in the drivers branch for the
-merge window.
-
-
-Thanks!
+Merged, thanks!
 
 
 -Olof
