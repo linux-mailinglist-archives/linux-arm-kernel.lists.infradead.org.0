@@ -2,51 +2,75 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 50E6C5FB44
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  4 Jul 2019 17:54:47 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 655315FB62
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  4 Jul 2019 18:03:10 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
-	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=0vDbeTa5CbFNrpZ6u2NDEJDQIdDO56fHgR0YBE5QfDM=; b=l0Av628GssK+VR
-	Pg2Sxcjm6H9GjZg4m5r7hJ+YuKCtmd9+i+k3OPfMooR7B5wPrjCr6HdqmIFCTUv0C0cwneo9xRfhR
-	ZhnxJWsDpcpInxC3b+D2RRXQMcX029OghCAy/0IH/ZtCeiZvu/bT6zBTz3+KvHiYBJfPAcLBXXrAm
-	u3mmpBCPs5XpM/PTnrvLp8BrXgKoyatTvz8rOidJPqosUOWeASLGrbukiyGR4gZfJLquMOLvpAhBr
-	qK/TxUgygoFV7kIKfhTIFoo9mTqt7hL/A0HtlnIWNO+YbxUrSFr/95FGuLy6f3GkBhi+5a15+2075
-	HH7qU3xJu4T9ypRFUbow==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Cc:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=UkVOY7ZkmwAuERPs3pXHr3U35tuRvr28pBriSJGthyI=; b=UnE9jHCruhw9S7
+	QHYywNO4b/CcYfWnVjTLCNFs7FHGf+ZbGju8tlotNDyAWCWyOi6z9zGqlsOAyiwbtX8d/6pa/ci1H
+	WLHntfrSG0No2HzLmqWUvycRKyMgEHoPc6nCKzbTc1c/PBaOm3SaX86mAn+wxa5WFvMozRRmrv5pP
+	A0u78W2QLDWDx6JSZemH75v4eicvPc8KO/XS9/q848QcrnfpEmwE011PU+Rlmu3EV5mGny8eqPGqi
+	a7zWr3NSr9qX4h5j7kCn7IgeSFkL/UCD1EA9JJoGM2u4r8hZMzPqOVDUEonAcJG3EgmXHOWtU4Ijo
+	TbLCtxosJySY5ONsBsgw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hj44L-0006B8-Sf; Thu, 04 Jul 2019 15:54:45 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hj448-0006Ae-SI
- for linux-arm-kernel@lists.infradead.org; Thu, 04 Jul 2019 15:54:34 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 0D24A2B;
- Thu,  4 Jul 2019 08:54:32 -0700 (PDT)
-Received: from arrakis.emea.arm.com (arrakis.cambridge.arm.com [10.1.196.78])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
- 5B6503F703; Thu,  4 Jul 2019 08:54:31 -0700 (PDT)
-Date: Thu, 4 Jul 2019 16:54:29 +0100
-From: Catalin Marinas <catalin.marinas@arm.com>
-To: Linus Torvalds <torvalds@linux-foundation.org>
-Subject: [GIT PULL] arm64 updates for 5.3
-Message-ID: <20190704155427.GA48571@arrakis.emea.arm.com>
+	id 1hj4CS-0000wQ-HV; Thu, 04 Jul 2019 16:03:08 +0000
+Received: from lhrrgout.huawei.com ([185.176.76.210] helo=huawei.com)
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hj4CF-0000vP-6Z
+ for linux-arm-kernel@lists.infradead.org; Thu, 04 Jul 2019 16:02:57 +0000
+Received: from lhreml709-cah.china.huawei.com (unknown [172.18.7.107])
+ by Forcepoint Email with ESMTP id D06F562F263445D85588;
+ Thu,  4 Jul 2019 17:02:40 +0100 (IST)
+Received: from LHREML523-MBS.china.huawei.com ([169.254.9.195]) by
+ lhreml709-cah.china.huawei.com ([10.201.108.32]) with mapi id 14.03.0415.000; 
+ Thu, 4 Jul 2019 17:02:35 +0100
+From: Shiju Jose <shiju.jose@huawei.com>
+To: Tyler Baicar OS <baicar@os.amperecomputing.com>, Open Source Submission
+ <patches@amperecomputing.com>, "linux-arm-kernel@lists.infradead.org"
+ <linux-arm-kernel@lists.infradead.org>, "linux-kernel@vger.kernel.org"
+ <linux-kernel@vger.kernel.org>, "linux-acpi@vger.kernel.org"
+ <linux-acpi@vger.kernel.org>, "linux-edac@vger.kernel.org"
+ <linux-edac@vger.kernel.org>, "james.morse@arm.com" <james.morse@arm.com>,
+ "catalin.marinas@arm.com" <catalin.marinas@arm.com>, "will@kernel.org"
+ <will@kernel.org>, "lorenzo.pieralisi@arm.com" <lorenzo.pieralisi@arm.com>,
+ "Guohanjun (Hanjun Guo)" <guohanjun@huawei.com>, "sudeep.holla@arm.com"
+ <sudeep.holla@arm.com>, "rjw@rjwysocki.net" <rjw@rjwysocki.net>,
+ "lenb@kernel.org" <lenb@kernel.org>, "mark.rutland@arm.com"
+ <mark.rutland@arm.com>, "tony.luck@intel.com" <tony.luck@intel.com>,
+ "bp@alien8.de" <bp@alien8.de>, "Matteo.Carlini@arm.com"
+ <Matteo.Carlini@arm.com>, "Andrew.Murray@arm.com" <Andrew.Murray@arm.com>
+Subject: RE: [PATCH RFC 1/4] ACPI/AEST: Initial AEST driver
+Thread-Topic: [PATCH RFC 1/4] ACPI/AEST: Initial AEST driver
+Thread-Index: AQHVMPZqphfhRm1STkOzQdqBSPqI3aa6dWVQ
+Date: Thu, 4 Jul 2019 16:02:34 +0000
+Message-ID: <86258A5CC0A3704780874CF6004BA8A6584514BF@lhreml523-mbs.china.huawei.com>
+References: <1562086280-5351-1-git-send-email-baicar@os.amperecomputing.com>
+ <1562086280-5351-2-git-send-email-baicar@os.amperecomputing.com>
+In-Reply-To: <1562086280-5351-2-git-send-email-baicar@os.amperecomputing.com>
+Accept-Language: en-GB, en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-originating-ip: [10.202.226.53]
 MIME-Version: 1.0
-Content-Disposition: inline
-User-Agent: Mutt/1.10.1 (2018-07-13)
+X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190704_085433_004759_18F389A6 
-X-CRM114-Status: GOOD (  22.78  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190704_090255_392003_22CB2726 
+X-CRM114-Status: GOOD (  13.28  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [185.176.76.210 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -58,253 +82,162 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: will@kernel.org, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Linus,
+Hi Tyler,
 
-I'm sending an early pull request for 5.3 as I'll be on holiday for the
-next two weeks. The PTRACE_SYSEMU patches touch powerpc and x86 lightly
-(the acks are in place). There are a few conflicts but nothing
-complicated, the resolution is as per linux-next. If anything goes
-wrong, Will is around during the merging window.
+>-----Original Message-----
+>From: linux-acpi-owner@vger.kernel.org [mailto:linux-acpi-
+>owner@vger.kernel.org] On Behalf Of Tyler Baicar OS
+>Sent: 02 July 2019 17:52
+>To: Open Source Submission <patches@amperecomputing.com>; linux-arm-
+>kernel@lists.infradead.org; linux-kernel@vger.kernel.org; linux-
+>acpi@vger.kernel.org; linux-edac@vger.kernel.org; james.morse@arm.com;
+>catalin.marinas@arm.com; will@kernel.org; lorenzo.pieralisi@arm.com;
+>Guohanjun (Hanjun Guo) <guohanjun@huawei.com>; sudeep.holla@arm.com;
+>rjw@rjwysocki.net; lenb@kernel.org; mark.rutland@arm.com;
+>tony.luck@intel.com; bp@alien8.de; Matteo.Carlini@arm.com;
+>Andrew.Murray@arm.com
+>Cc: Tyler Baicar OS <baicar@os.amperecomputing.com>
+>Subject: [PATCH RFC 1/4] ACPI/AEST: Initial AEST driver
+>
+>Add support for parsing the ARM Error Source Table and basic handling of
+>errors reported through both memory mapped and system register interfaces.
+>
+>Signed-off-by: Tyler Baicar <baicar@os.amperecomputing.com>
+>---
+> arch/arm64/include/asm/ras.h |  41 +++++
+> arch/arm64/kernel/Makefile   |   2 +-
+> arch/arm64/kernel/ras.c      |  67 ++++++++
+> drivers/acpi/arm64/Kconfig   |   3 +
+> drivers/acpi/arm64/Makefile  |   1 +
+> drivers/acpi/arm64/aest.c    | 362
+>+++++++++++++++++++++++++++++++++++++++++++
+> include/linux/acpi_aest.h    |  94 +++++++++++
+> 7 files changed, 569 insertions(+), 1 deletion(-)  create mode 100644
+>arch/arm64/include/asm/ras.h  create mode 100644 arch/arm64/kernel/ras.c
+>create mode 100644 drivers/acpi/arm64/aest.c  create mode 100644
+>include/linux/acpi_aest.h
+>
+>diff --git a/arch/arm64/include/asm/ras.h b/arch/arm64/include/asm/ras.h
+>new file mode 100644 index 0000000..36bfff4
+>--- /dev/null
+>+++ b/arch/arm64/include/asm/ras.h
+>@@ -0,0 +1,41 @@
+>+/* SPDX-License-Identifier: GPL-2.0 */
+>+#ifndef __ASM_RAS_H
+>+#define __ASM_RAS_H
+>+
+>+#define ERR_STATUS_AV		BIT(31)
+>+#define ERR_STATUS_V		BIT(30)
+>+#define ERR_STATUS_UE		BIT(29)
+>+#define ERR_STATUS_ER		BIT(28)
+>+#define ERR_STATUS_OF		BIT(27)
+>+#define ERR_STATUS_MV		BIT(26)
+>+#define ERR_STATUS_CE_SHIFT	24
+>+#define ERR_STATUS_CE_MASK	0x3
+>+#define ERR_STATUS_DE		BIT(23)
+>+#define ERR_STATUS_PN		BIT(22)
+>+#define ERR_STATUS_UET_SHIFT	20
+>+#define ERR_STATUS_UET_MASK	0x3
+>+#define ERR_STATUS_IERR_SHIFT	8
+>+#define ERR_STATUS_IERR_MASK	0xff
+>+#define ERR_STATUS_SERR_SHIFT	0
+>+#define ERR_STATUS_SERR_MASK	0xff
+>+
+>+#define ERR_FR_CEC_SHIFT	12
+>+#define ERR_FR_CEC_MASK		0x7
+>+
+>+#define ERR_FR_8B_CEC		BIT(1)
+>+#define ERR_FR_16B_CEC		BIT(2)
+>+
+>+struct ras_ext_regs {
+>+	u64 err_fr;
+>+	u64 err_ctlr;
+>+	u64 err_status;
+>+	u64 err_addr;
+>+	u64 err_misc0;
+>+	u64 err_misc1;
+>+	u64 err_misc2;
+>+	u64 err_misc3;
+err_misc2 and err_misc3 are not used. Are they for the future purpose?
 
-Thanks.
+>+};
+>+
+>+void arch_arm_ras_report_error(void);
+>+
+>+#endif	/* __ASM_RAS_H */
+[...]
+>+
+>+int __init acpi_aest_init(void)
+>+{
+>+	struct acpi_table_aest *aest;
+>+	struct aest_type_header *aest_node, *aest_end;
+>+	int i, ret = 0;
+>+
+>+	if (acpi_disabled)
+>+		return 0;
+>+
+>+	if (ACPI_FAILURE(acpi_get_table(ACPI_SIG_AEST, 0, &aest_table)))
+>+		return -EINVAL;
+>+
+>+	aest = (struct acpi_table_aest *)aest_table;
+>+
+>+	/* Get the first AEST node */
+>+	aest_node = ACPI_ADD_PTR(struct aest_type_header, aest,
+>+				 sizeof(struct acpi_table_aest));
+>+	/* Pointer to the end of the AEST table */
+>+	aest_end = ACPI_ADD_PTR(struct aest_type_header, aest,
+>+				aest_table->length);
+>+
+>+	while (aest_node < aest_end) {
+>+		if (((u64)aest_node + aest_node->length) > (u64)aest_end) {
+>+			pr_err("AEST node pointer overflow, bad table\n");
+>+			return -EINVAL;
+>+		}
+>+
+>+		aest_count_ppi(aest_node);
+>+
+>+		aest_node = ACPI_ADD_PTR(struct aest_type_header,
+>aest_node,
+>+					 aest_node->length);
+>+	}
+>+
+>+	if (num_ppi > AEST_MAX_PPI) {
+>+		pr_err("Limiting PPI support to %d PPIs\n", AEST_MAX_PPI);
+>+		num_ppi = AEST_MAX_PPI;
+>+	}
+>+
+>+	ppi_data = kcalloc(num_ppi, sizeof(struct aest_node_data *),
+>+			   GFP_KERNEL);
+>+
+>+	for (i = 0; i < num_ppi; i++) {
+>+		ppi_data[i] = alloc_percpu(struct aest_node_data);
+>+		if (!ppi_data[i]) {
+>+			ret = -ENOMEM;
+>+			break;
+>+		}
+>+	}
+>+
+>+	if (ret) {
+>+		pr_err("Failed percpu allocation\n");
+>+		for (i = 0; i < num_ppi; i++)
+>+			free_percpu(ppi_data[i]);
+I think 'ppi_data' to be freed here?
 
-The following changes since commit f2c7c76c5d0a443053e94adb9f0918fa2fb85c3a:
+>+		return ret;
+[...]
+>+
+>+#endif /* AEST_H */
+>--
+>1.8.3.1
 
-  Linux 5.2-rc3 (2019-06-02 13:55:33 -0700)
+Thanks,
+Shiju
 
-are available in the Git repository at:
-
-  git://git.kernel.org/pub/scm/linux/kernel/git/arm64/linux tags/arm64-upstream
-
-for you to fetch changes up to 0c61efd322b75ed3143e3d130ebecbebf561adf5:
-
-  Merge branch 'for-next/perf' of git://git.kernel.org/pub/scm/linux/kernel/git/will/linux (2019-07-01 15:53:35 +0100)
-
-----------------------------------------------------------------
-arm64 updates for 5.3:
-
-- arm64 support for syscall emulation via PTRACE_SYSEMU{,_SINGLESTEP}
-
-- Wire up VM_FLUSH_RESET_PERMS for arm64, allowing the core code to
-  manage the permissions of executable vmalloc regions more strictly
-
-- Slight performance improvement by keeping softirqs enabled while
-  touching the FPSIMD/SVE state (kernel_neon_begin/end)
-
-- Expose a couple of ARMv8.5 features to user (HWCAP): CondM (new XAFLAG
-  and AXFLAG instructions for floating point comparison flags
-  manipulation) and FRINT (rounding floating point numbers to integers)
-
-- Re-instate ARM64_PSEUDO_NMI support which was previously marked as
-  BROKEN due to some bugs (now fixed)
-
-- Improve parking of stopped CPUs and implement an arm64-specific
-  panic_smp_self_stop() to avoid warning on not being able to stop
-  secondary CPUs during panic
-
-- perf: enable the ARM Statistical Profiling Extensions (SPE) on ACPI
-  platforms
-
-- perf: DDR performance monitor support for iMX8QXP
-
-- cache_line_size() can now be set from DT or ACPI/PPTT if provided to
-  cope with a system cache info not exposed via the CPUID registers
-
-- Avoid warning on hardware cache line size greater than
-  ARCH_DMA_MINALIGN if the system is fully coherent
-
-- arm64 do_page_fault() and hugetlb cleanups
-
-- Refactor set_pte_at() to avoid redundant READ_ONCE(*ptep)
-
-- Ignore ACPI 5.1 FADTs reported as 5.0 (infer from the 'arm_boot_flags'
-  introduced in 5.1)
-
-- CONFIG_RANDOMIZE_BASE now enabled in defconfig
-
-- Allow the selection of ARM64_MODULE_PLTS, currently only done via
-  RANDOMIZE_BASE (and an erratum workaround), allowing modules to spill
-  over into the vmalloc area
-
-- Make ZONE_DMA32 configurable
-
-----------------------------------------------------------------
-Aaro Koskinen (1):
-      arm64: Implement panic_smp_self_stop()
-
-Anshuman Khandual (10):
-      arm64/hugetlb: Use macros for contiguous huge page sizes
-      arm64/mm: Move PTE_VALID from SW defined to HW page table entry definitions
-      arm64/mm: Simplify protection flag creation for kernel huge mappings
-      arm64/mm: Change BUG_ON() to VM_BUG_ON() in [pmd|pud]_set_huge()
-      arm64/mm: Identify user instruction aborts
-      arm64/mm: Drop mmap_sem before calling __do_kernel_fault()
-      arm64/mm: Drop task_struct argument from __do_page_fault()
-      arm64/mm: Document write abort detection from ESR
-      arm64/mm: Refactor __do_page_fault()
-      arm64/mm: Drop [PTE|PMD]_TYPE_FAULT
-
-Ard Biesheuvel (5):
-      acpi/arm64: ignore 5.1 FADTs that are reported as 5.0
-      arm64: module: create module allocations without exec permissions
-      arm64/mm: wire up CONFIG_ARCH_HAS_SET_DIRECT_MAP
-      arm64/kprobes: set VM_FLUSH_RESET_PERMS on kprobe instruction pages
-      arm64: bpf: do not allocate executable memory
-
-Bartlomiej Zolnierkiewicz (1):
-      arm64: remove redundant 'default n' from Kconfig
-
-Catalin Marinas (2):
-      arm64: ARM64_MODULES_PLTS must depend on MODULES
-      Merge branch 'for-next/perf' of git://git.kernel.org/.../will/linux
-
-Florian Fainelli (1):
-      arm64: Allow user selection of ARM64_MODULE_PLTS
-
-Frank Li (3):
-      dt-bindings: perf: imx8-ddr: add imx8qxp ddr performance monitor
-      drivers/perf: imx_ddr: Add DDR performance counter support to perf
-      MAINTAINERS: Add maintainer entry for the imx8 DDR PMU driver
-
-Jayachandran C (1):
-      arm64: Improve parking of stopped CPUs
-
-Jeremy Linton (4):
-      ACPI/PPTT: Modify node flag detection to find last IDENTICAL
-      ACPI/PPTT: Add function to return ACPI 6.3 Identical tokens
-      arm_pmu: acpi: spe: Add initial MADT/SPE probing
-      perf: arm_spe: Enable ACPI/Platform automatic module loading
-
-Julien Grall (4):
-      arm64/fpsimd: Remove the prototype for sve_flush_cpu_state()
-      arm64/fpsimd: Introduce fpsimd_save_and_flush_cpu_state() and use it
-      arm64/fpsimd: Don't disable softirq when touching FPSIMD/SVE state
-      arm64/cpufeature: Convert hook_lock to raw_spin_lock_t in cpu_enable_ssbs()
-
-Julien Thierry (7):
-      arm64: Do not enable IRQs for ct_user_exit
-      arm64: irqflags: Pass flags as readonly operand to restore instruction
-      arm64: irqflags: Add condition flags to inline asm clobber list
-      arm64: Fix interrupt tracing in the presence of NMIs
-      arm64: Fix incorrect irqflag restore for priority masking
-      arm64: irqflags: Introduce explicit debugging for IRQ priorities
-      arm64: Allow selecting Pseudo-NMI again
-
-Liu Song (1):
-      arm64: kernel: use aff3 instead of aff2 in comment
-
-Mark Brown (2):
-      arm64: Expose ARMv8.5 CondM capability to userspace
-      arm64: Expose FRINT capabilities to userspace
-
-Mark Rutland (1):
-      arm64: mm: avoid redundant READ_ONCE(*ptep)
-
-Masayoshi Mizuma (1):
-      arm64/mm: Correct the cache line size warning with non coherent device
-
-Miles Chen (1):
-      arm64: mm: make CONFIG_ZONE_DMA32 configurable
-
-Nick Desaulniers (1):
-      arm64: defconfig: enable CONFIG_RANDOMIZE_BASE
-
-Odin Ugedal (1):
-      arm64: Fix comment after #endif
-
-Shaokun Zhang (2):
-      drivers: base: cacheinfo: Add variable to record max cache line size
-      arm64: cacheinfo: Update cache_line_size detected from DT or PPTT
-
-Sudeep Holla (4):
-      ptrace: move clearing of TIF_SYSCALL_EMU flag to core
-      arm64: add PTRACE_SYSEMU{,SINGLESTEP} definations to uapi headers
-      arm64: ptrace: add support for syscall emulation
-      x86/entry: Simplify _TIF_SYSCALL_EMU handling
-
-Wei Li (1):
-      arm64: fix kernel stack overflow in kdump capture kernel
-
-jinho lim (1):
-      arm64: rename dump_instr as dump_kernel_instr
-
- Documentation/arm64/elf_hwcaps.txt                 |   8 +
- .../devicetree/bindings/perf/fsl-imx-ddr.txt       |  21 +
- MAINTAINERS                                        |   7 +
- arch/arm64/Kconfig                                 |  35 +-
- arch/arm64/configs/defconfig                       |   1 +
- arch/arm64/include/asm/acpi.h                      |   3 +
- arch/arm64/include/asm/arch_gicv3.h                |   4 +-
- arch/arm64/include/asm/cache.h                     |   5 +-
- arch/arm64/include/asm/cacheflush.h                |   3 +
- arch/arm64/include/asm/cpufeature.h                |   6 +
- arch/arm64/include/asm/daifflags.h                 |  75 ++-
- arch/arm64/include/asm/fpsimd.h                    |   5 +-
- arch/arm64/include/asm/hwcap.h                     |   2 +
- arch/arm64/include/asm/irqflags.h                  |  79 ++-
- arch/arm64/include/asm/kvm_host.h                  |   7 +-
- arch/arm64/include/asm/pgtable-hwdef.h             |   3 +-
- arch/arm64/include/asm/pgtable-prot.h              |   1 -
- arch/arm64/include/asm/pgtable.h                   |  56 ++-
- arch/arm64/include/asm/ptrace.h                    |  10 +-
- arch/arm64/include/asm/simd.h                      |  10 +-
- arch/arm64/include/asm/sysreg.h                    |   1 +
- arch/arm64/include/asm/thread_info.h               |   5 +-
- arch/arm64/include/uapi/asm/hwcap.h                |   2 +
- arch/arm64/include/uapi/asm/ptrace.h               |   3 +
- arch/arm64/kernel/acpi.c                           |  10 +-
- arch/arm64/kernel/cacheinfo.c                      |   9 +
- arch/arm64/kernel/cpufeature.c                     |   8 +-
- arch/arm64/kernel/cpuinfo.c                        |   2 +
- arch/arm64/kernel/entry.S                          |  84 +++-
- arch/arm64/kernel/fpsimd.c                         | 139 ++++--
- arch/arm64/kernel/irq.c                            |  26 +
- arch/arm64/kernel/module.c                         |   4 +-
- arch/arm64/kernel/probes/kprobes.c                 |   4 +-
- arch/arm64/kernel/process.c                        |   2 +-
- arch/arm64/kernel/ptrace.c                         |   6 +-
- arch/arm64/kernel/sleep.S                          |   2 +-
- arch/arm64/kernel/smp.c                            |  27 +-
- arch/arm64/kernel/traps.c                          |  23 +-
- arch/arm64/kvm/fpsimd.c                            |   4 +-
- arch/arm64/kvm/hyp/switch.c                        |   2 +-
- arch/arm64/mm/dma-mapping.c                        |  12 +-
- arch/arm64/mm/fault.c                              |  61 ++-
- arch/arm64/mm/hugetlbpage.c                        |  12 +-
- arch/arm64/mm/init.c                               |   5 +-
- arch/arm64/mm/mmu.c                                |  14 +-
- arch/arm64/mm/pageattr.c                           |  48 +-
- arch/arm64/net/bpf_jit_comp.c                      |   2 +-
- arch/powerpc/kernel/ptrace.c                       |   1 -
- arch/x86/entry/common.c                            |  17 +-
- arch/x86/kernel/ptrace.c                           |   3 -
- drivers/acpi/pptt.c                                |  61 ++-
- drivers/base/cacheinfo.c                           |   5 +
- drivers/irqchip/irq-gic-v3.c                       |   7 +
- drivers/perf/Kconfig                               |   8 +
- drivers/perf/Makefile                              |   1 +
- drivers/perf/arm_pmu_acpi.c                        |  72 +++
- drivers/perf/arm_spe_pmu.c                         |  12 +-
- drivers/perf/fsl_imx8_ddr_perf.c                   | 554 +++++++++++++++++++++
- include/linux/acpi.h                               |   5 +
- include/linux/cacheinfo.h                          |   2 +
- include/linux/perf/arm_pmu.h                       |   2 +
- kernel/irq/irqdesc.c                               |   8 +-
- kernel/ptrace.c                                    |   3 +
- mm/vmalloc.c                                       |  11 -
- 64 files changed, 1318 insertions(+), 312 deletions(-)
- create mode 100644 Documentation/devicetree/bindings/perf/fsl-imx-ddr.txt
- create mode 100644 drivers/perf/fsl_imx8_ddr_perf.c
-
--- 
-Catalin
 
 _______________________________________________
 linux-arm-kernel mailing list
