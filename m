@@ -2,67 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E0D5D5F643
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  4 Jul 2019 12:03:45 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 69EAC5F647
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  4 Jul 2019 12:04:55 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=YRGlEJwBThjKIZx3VtGontt2l+DEQqwqaQGYrJs83Mk=; b=AjGlswf9joXtKJ
-	IITeEqjes9uEEelK0esWwdhXV4BX8ZR4u2Scga4LAEv0Kan7acQ7/F4A2Fkbbxii1gVhDEaaprlIP
-	VI58wZBjzoyKKfKi2OSwvulkGWIbpfeXbMJn4JhJHRFfUK868sSTdFNNaprVufpJjY81477qdbmi+
-	ypRVnJgp28U9+CkMcllo1D+w2osbt47uswnWLDEVtAilM+O7d+bSBGABUh63u3UPhpEaTZyeqZ9RS
-	1i9f3LJE7eRxnhIMzWmbm8/Kc/oNrsHAPa2yl2dSuVYdcmD6Bjv8PvL1m0BnJU/2zbclgcc10CQXY
-	XuAL5U4OG4tnfIo33a9w==;
+	List-Owner; bh=qLFtVYCwRUeFxDie2WUw36VHov1fJe3DvIYtOWGPJtE=; b=oJET75dQePy48B
+	WoyQLqi6JTrdCG/d9mNvU0Por+qkL+wxSPK4QD39sO6tIUq03YkHkn8j5oY1ecOVXKORqFuUca1c4
+	3jjx36Cp+AZcln9dkT8DhTWpdKM6rG2c3cv0PMSfjRCwFcKtkSvPHWKkKyexE+fmY2v9XR42Li1Ec
+	1gYvRXlE2cq5Is1/TaeVmTh56AKU2KVvDFRwN3TBnorGGvBBcnBNbryDyuzhD9umd01053zGiZZY5
+	5Kfv28RJotAW+WMvxo5XjkpLVPrg0B9nBDd9ITtzN0/YAAdoQ1keJuaVXIMSzCZSZDwrp7hIBKB27
+	quKKnv+uPn8sbog/rh1w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hiyad-0002fK-NL; Thu, 04 Jul 2019 10:03:43 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
+	id 1hiybl-00031z-2H; Thu, 04 Jul 2019 10:04:53 +0000
+Received: from mgwym02.jp.fujitsu.com ([211.128.242.41])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hiyaO-0002ev-9d; Thu, 04 Jul 2019 10:03:30 +0000
-X-UUID: eebe83aff02e475e8af239dbfa4b2f67-20190704
-X-UUID: eebe83aff02e475e8af239dbfa4b2f67-20190704
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
- (envelope-from <ran.bi@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 662178774; Thu, 04 Jul 2019 02:03:17 -0800
-Received: from mtkmbs08n2.mediatek.inc (172.21.101.56) by
- MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Thu, 4 Jul 2019 03:03:15 -0700
-Received: from MTKCAS36.mediatek.inc (172.27.4.186) by mtkmbs08n2.mediatek.inc
- (172.21.101.56) with Microsoft SMTP Server (TLS) id 15.0.1395.4;
- Thu, 4 Jul 2019 18:03:12 +0800
-Received: from [10.17.3.153] (172.27.4.253) by MTKCAS36.mediatek.inc
- (172.27.4.170) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Thu, 4 Jul 2019 18:03:09 +0800
-Message-ID: <1562234589.19751.16.camel@mhfsdcap03>
-Subject: Re: [PATCH v2 5/7] power: reset: add driver for mt6323 poweroff
-From: Ran Bi <ran.bi@mediatek.com>
-To: Frank Wunderlich <frank-w@public-files.de>
-Date: Thu, 4 Jul 2019 18:03:09 +0800
-In-Reply-To: <20190703164822.17924-6-frank-w@public-files.de>
-References: <20190703164822.17924-1-frank-w@public-files.de>
- <20190703164822.17924-6-frank-w@public-files.de>
-X-Mailer: Evolution 3.10.4-0ubuntu2 
+ id 1hiybX-00031V-CU
+ for linux-arm-kernel@lists.infradead.org; Thu, 04 Jul 2019 10:04:41 +0000
+Received: from yt-mxauth.gw.nic.fujitsu.com (unknown [192.168.229.68]) by
+ mgwym02.jp.fujitsu.com with smtp
+ id 559c_571c_6c510d86_f44b_4ba8_ba35_dd111fa15d8e;
+ Thu, 04 Jul 2019 19:04:33 +0900
+Received: from g01jpfmpwkw01.exch.g01.fujitsu.local
+ (g01jpfmpwkw01.exch.g01.fujitsu.local [10.0.193.38])
+ by yt-mxauth.gw.nic.fujitsu.com (Postfix) with ESMTP id 4B8E7AC02D9
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu,  4 Jul 2019 19:04:33 +0900 (JST)
+Received: from G01JPEXCHKW16.g01.fujitsu.local
+ (G01JPEXCHKW16.g01.fujitsu.local [10.0.194.55])
+ by g01jpfmpwkw01.exch.g01.fujitsu.local (Postfix) with ESMTP id 30060692720;
+ Thu,  4 Jul 2019 19:04:10 +0900 (JST)
+Received: from G01JPEXMBKW03.g01.fujitsu.local ([10.0.194.67]) by
+ g01jpexchkw16 ([10.0.194.55]) with mapi id 14.03.0439.000; Thu, 4 Jul 2019
+ 19:04:11 +0900
+From: "Zhang, Lei" <zhang.lei@jp.fujitsu.com>
+To: 'Dave Martin' <Dave.Martin@arm.com>, Viresh Kumar <viresh.kumar@linaro.org>
+Subject: RE: [PATCH] KVM: arm64/sve: Fix vq_present() macro to yield a bool
+Thread-Topic: [PATCH] KVM: arm64/sve: Fix vq_present() macro to yield a bool
+Thread-Index: AQHVMcbm4thAjrk2VU+dkXrvfiHl5Ka5L4IAgABczYCAAK3FQA==
+Date: Thu, 4 Jul 2019 10:04:08 +0000
+Message-ID: <8898674D84E3B24BA3A2D289B872026A78BAAE43@G01JPEXMBKW03>
+References: <1562175770-10952-1-git-send-email-Dave.Martin@arm.com>
+ <20190704030252.4gzvoh4rxdmmddu5@vireshk-i7>
+ <20190704083459.GY2790@e103592.cambridge.arm.com>
+In-Reply-To: <20190704083459.GY2790@e103592.cambridge.arm.com>
+Accept-Language: ja-JP, en-US
+Content-Language: ja-JP
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-originating-ip: [10.18.70.226]
 MIME-Version: 1.0
-X-TM-SNTS-SMTP: 5DE4835C1875B5950092AA7126EE354752A756CA69AC4641991F64CEFDA4E85A2000:8
-X-MTK: N
+X-SecurityPolicyCheck-GC: OK by FENCE-Mail
+X-TM-AS-GCONF: 00
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190704_030328_344183_9ED9B4E7 
-X-CRM114-Status: GOOD (  23.66  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190704_030439_673687_5844219A 
+X-CRM114-Status: GOOD (  22.05  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [216.200.240.184 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [211.128.242.41 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -74,200 +81,112 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- Alexandre Belloni <alexandre.belloni@bootlin.com>,
- Linus Walleij <linus.walleij@linaro.org>, linux-kernel@vger.kernel.org,
- Richard Fontana <rfontana@redhat.com>,
- Mauro Carvalho Chehab <mchehab+samsung@kernel.org>,
- "Paul E . McKenney" <paulmck@linux.ibm.com>, Lee Jones <lee.jones@linaro.org>,
- linux-rtc@vger.kernel.org, Rob Herring <robh@kernel.org>,
- linux-arm-kernel@lists.infradead.org, Yingjoe Chen <yingjoe.chen@mediatek.com>,
- devicetree@vger.kernel.org, linux-pm@vger.kernel.org,
- Ran Bi <ran.bi@mediatek.com>, Sean Wang <sean.wang@mediatek.com>,
- Rob Herring <robh+dt@kernel.org>, linux-mediatek@lists.infradead.org,
- Matthias Brugger <matthias.bgg@gmail.com>, Thomas
- Gleixner <tglx@linutronix.de>, Eddie Huang <eddie.huang@mediatek.com>,
- Allison Randal <allison@lohutok.net>, Alessandro Zummo <a.zummo@towertech.it>,
- Josef Friedl <josef.friedl@speed.at>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Sebastian Reichel <sre@kernel.org>, "David S . Miller" <davem@davemloft.net>
-Content-Type: text/plain; charset="us-ascii"
+Cc: "Okamoto, Takayuki" <tokamoto@jp.fujitsu.com>,
+ Christoffer Dall <cdall@kernel.org>,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>,
+ Marc Zyngier <marc.zyngier@arm.com>, Catalin Marinas <catalin.marinas@arm.com>,
+ Will Deacon <will.deacon@arm.com>, Julien Grall <julien.grall@arm.com>,
+ "kvmarm@lists.cs.columbia.edu" <kvmarm@lists.cs.columbia.edu>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="iso-2022-jp"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, 2019-07-03 at 18:48 +0200, Frank Wunderlich wrote:
-> From: Josef Friedl <josef.friedl@speed.at>
-> 
-> Suggested-by: Frank Wunderlich <frank-w@public-files.de>
-> Signed-off-by: Josef Friedl <josef.friedl@speed.at>
-> Signed-off-by: Frank Wunderlich <frank-w@public-files.de>
-> ---
->  drivers/power/reset/Kconfig           | 10 +++
->  drivers/power/reset/Makefile          |  1 +
->  drivers/power/reset/mt6323-poweroff.c | 97 +++++++++++++++++++++++++++
->  include/linux/mfd/mt6397/core.h       |  2 +
->  4 files changed, 110 insertions(+)
->  create mode 100644 drivers/power/reset/mt6323-poweroff.c
-> 
-> --
-> 2.17.1
-> 
-> diff --git a/drivers/power/reset/Kconfig b/drivers/power/reset/Kconfig
-> index 980951dff834..492678e22088 100644
-> --- a/drivers/power/reset/Kconfig
-> +++ b/drivers/power/reset/Kconfig
-> @@ -140,6 +140,16 @@ config POWER_RESET_LTC2952
->  	  This driver supports an external powerdown trigger and board power
->  	  down via the LTC2952. Bindings are made in the device tree.
-> 
-> +config POWER_RESET_MT6323
-> +       bool "MediaTek MT6323 power-off driver"
-> +       depends on MFD_MT6397
-> +       help
-> +         The power-off driver is responsible for externally shutdown down
-> +         the power of a remote MediaTek SoC MT6323 is connected to through
-> +         controlling a tiny circuit BBPU inside MT6323 RTC.
-> +
-> +         Say Y if you have a board where MT6323 could be found.
-> +
->  config POWER_RESET_QNAP
->  	bool "QNAP power-off driver"
->  	depends on OF_GPIO && PLAT_ORION
-> diff --git a/drivers/power/reset/Makefile b/drivers/power/reset/Makefile
-> index 0aebee954ac1..94eaceb01d66 100644
-> --- a/drivers/power/reset/Makefile
-> +++ b/drivers/power/reset/Makefile
-> @@ -11,6 +11,7 @@ obj-$(CONFIG_POWER_RESET_GPIO) += gpio-poweroff.o
->  obj-$(CONFIG_POWER_RESET_GPIO_RESTART) += gpio-restart.o
->  obj-$(CONFIG_POWER_RESET_HISI) += hisi-reboot.o
->  obj-$(CONFIG_POWER_RESET_MSM) += msm-poweroff.o
-> +obj-$(CONFIG_POWER_RESET_MT6323) += mt6323-poweroff.o
->  obj-$(CONFIG_POWER_RESET_QCOM_PON) += qcom-pon.o
->  obj-$(CONFIG_POWER_RESET_OCELOT_RESET) += ocelot-reset.o
->  obj-$(CONFIG_POWER_RESET_PIIX4_POWEROFF) += piix4-poweroff.o
-> diff --git a/drivers/power/reset/mt6323-poweroff.c b/drivers/power/reset/mt6323-poweroff.c
-> new file mode 100644
-> index 000000000000..1caf43d9e46d
-> --- /dev/null
-> +++ b/drivers/power/reset/mt6323-poweroff.c
-> @@ -0,0 +1,97 @@
-> +// SPDX-License-Identifier: GPL-2.0
-> +/*
-> + * Power off through MediaTek PMIC
-> + *
-> + * Copyright (C) 2018 MediaTek Inc.
-> + *
-> + * Author: Sean Wang <sean.wang@mediatek.com>
-> + *
-> + */
-> +
-> +#include <linux/err.h>
-> +#include <linux/module.h>
-> +#include <linux/of.h>
-> +#include <linux/platform_device.h>
-> +#include <linux/mfd/mt6397/core.h>
-> +#include <linux/mfd/mt6397/rtc.h>
-> +
-> +struct mt6323_pwrc {
-> +	struct device *dev;
-> +	struct regmap *regmap;
-> +	u32 base;
-> +};
-> +
-> +static struct mt6323_pwrc *mt_pwrc;
-> +
-> +static void mt6323_do_pwroff(void)
-> +{
-> +	struct mt6323_pwrc *pwrc = mt_pwrc;
-> +	unsigned int val;
-> +	int ret;
-> +
-> +	regmap_write(pwrc->regmap, pwrc->base + RTC_BBPU, RTC_BBPU_KEY);
-> +	regmap_write(pwrc->regmap, pwrc->base + RTC_WRTGR, 1);
-> +
-> +	ret = regmap_read_poll_timeout(pwrc->regmap,
-> +					pwrc->base + RTC_BBPU, val,
-> +					!(val & RTC_BBPU_CBUSY),
-> +					MTK_RTC_POLL_DELAY_US,
-> +					MTK_RTC_POLL_TIMEOUT);
-> +	if (ret)
-> +		dev_err(pwrc->dev, "failed to write BBPU: %d\n", ret);
-> +
-> +	/* Wait some time until system down, otherwise, notice with a warn */
-> +	mdelay(1000);
-> +
-> +	WARN_ONCE(1, "Unable to power off system\n");
-> +}
-> +
-> +static int mt6323_pwrc_probe(struct platform_device *pdev)
-> +{
-> +	struct mt6397_chip *mt6397_chip = dev_get_drvdata(pdev->dev.parent);
-> +	struct mt6323_pwrc *pwrc;
-> +	struct resource *res;
-> +
-> +	pwrc = devm_kzalloc(&pdev->dev, sizeof(*pwrc), GFP_KERNEL);
-> +	if (!pwrc)
-> +		return -ENOMEM;
-> +
-> +	res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
-> +	pwrc->base = res->start;
-> +	pwrc->regmap = mt6397_chip->regmap;
-> +	pwrc->dev = &pdev->dev;
-> +	mt_pwrc = pwrc;
-> +
-> +	pm_power_off = &mt6323_do_pwroff;
+Hi guys,
 
-We had implement MT8173 poweroff function in arm-trusted-firmware's PSCI
-plat_system_off() function. MT8173 SoC is using PMIC MT6397. (Ref:
-https://github.com/ARM-software/arm-trusted-firmware/blob/master/plat/mediatek/mt8173/plat_pm.c and https://github.com/ARM-software/arm-trusted-firmware/blob/master/plat/mediatek/mt8173/drivers/rtc) Do you think it's better to implement poweroff function into arm-trusted-firmware compared to hijack pm_poweroff() function in Kernel? Right now, we are doing the upstream of other PMIC chip like MT6358's poweroff function in arm-trusted-firmware too.
+I have started up KVM guest os successfully with SVE feature with Dave' patch.
 
-> +
-> +	return 0;
-> +}
-> +
-> +static int mt6323_pwrc_remove(struct platform_device *pdev)
-> +{
-> +	if (pm_power_off == &mt6323_do_pwroff)
-> +		pm_power_off = NULL;
-> +
-> +	return 0;
-> +}
-> +
-> +static const struct of_device_id mt6323_pwrc_dt_match[] = {
-> +	{ .compatible = "mediatek,mt6323-pwrc" },
-> +	{},
-> +};
-> +MODULE_DEVICE_TABLE(of, mt6323_pwrc_dt_match);
-> +
-> +static struct platform_driver mt6323_pwrc_driver = {
-> +	.probe          = mt6323_pwrc_probe,
-> +	.remove         = mt6323_pwrc_remove,
-> +	.driver         = {
-> +		.name   = "mt6323-pwrc",
-> +		.of_match_table = mt6323_pwrc_dt_match,
-> +	},
-> +};
-> +
-> +module_platform_driver(mt6323_pwrc_driver);
-> +
-> +MODULE_DESCRIPTION("Poweroff driver for MT6323 PMIC");
-> +MODULE_AUTHOR("Sean Wang <sean.wang@mediatek.com>");
-> +MODULE_LICENSE("GPL v2");
-> diff --git a/include/linux/mfd/mt6397/core.h b/include/linux/mfd/mt6397/core.h
-> index 25a95e72179b..652da61e3711 100644
-> --- a/include/linux/mfd/mt6397/core.h
-> +++ b/include/linux/mfd/mt6397/core.h
-> @@ -7,6 +7,8 @@
->  #ifndef __MFD_MT6397_CORE_H__
->  #define __MFD_MT6397_CORE_H__
+Tested-by: Zhang Lei <zhang.lei@jp.fujitsu.com >
+
+> -----Original Message-----
+> From: Dave Martin <Dave.Martin@arm.com>
+> Sent: Thursday, July 04, 2019 5:35 PM
+> To: Viresh Kumar <viresh.kumar@linaro.org>
+> Cc: Okamoto, Takayuki/岡本 高幸 <tokamoto@jp.fujitsu.com>; Christoffer
+> Dall <cdall@kernel.org>; Ard Biesheuvel <ard.biesheuvel@linaro.org>; Marc
+> Zyngier <marc.zyngier@arm.com>; Catalin Marinas
+> <catalin.marinas@arm.com>; Will Deacon <will.deacon@arm.com>; Zhang,
+> Lei/張 雷 <zhang.lei@jp.fujitsu.com>; Julien Grall <julien.grall@arm.com>;
+> kvmarm@lists.cs.columbia.edu; linux-arm-kernel@lists.infradead.org
+> Subject: Re: [PATCH] KVM: arm64/sve: Fix vq_present() macro to yield a bool
 > 
-> +#include <linux/mutex.h>
-> +
->  enum mt6397_irq_numbers {
->  	MT6397_IRQ_SPKL_AB = 0,
-
-
+> On Thu, Jul 04, 2019 at 08:32:52AM +0530, Viresh Kumar wrote:
+> > On 03-07-19, 18:42, Dave Martin wrote:
+> > > From: Zhang Lei <zhang.lei@jp.fujitsu.com>
+> > >
+> > > The original implementation of vq_present() relied on aggressive
+> > > inlining in order for the compiler to know that the code is correct,
+> > > due to some const-casting issues.  This was causing sparse and clang
+> > > to complain, while GCC compiled cleanly.
+> > >
+> > > Commit 0c529ff789bc addressed this problem, but since vq_present()
+> > > is no longer a function, there is now no implicit casting of the
+> > > returned value to the return type (bool).
+> > >
+> > > In set_sve_vls(), this uncast bit value is compared against a bool,
+> > > and so may spuriously compare as unequal when both are nonzero.  As
+> > > a result, KVM may reject valid SVE vector length configurations as
+> > > invalid, and vice versa.
+> > >
+> > > Fix it by forcing the returned value to a bool.
+> > >
+> > > Signed-off-by: Zhang Lei <zhang.lei@jp.fujitsu.com>
+> > > Fixes: 0c529ff789bc ("KVM: arm64: Implement vq_present() as a
+> > > macro")
+> > > Signed-off-by: Dave Martin <Dave.Martin@arm.com> [commit message
+> > > rewrite]
+> > > Cc: Viresh Kumar <viresh.kumar@linaro.org>
+> > >
+> > > ---
+> > >
+> > > Posting this under Zhang Lei's authorship, due to the need to turn
+> > > this fix around quickly.  The fix is as per the original suggestion [1].
+> > >
+> > > Originally observed with the QEMU KVM SVE support under review:
+> > > https://lists.gnu.org/archive/html/qemu-devel/2019-06/msg04945.html
+> > >
+> > > Bug reproduced and fix tested on the Arm Fast Model, with
+> > > http://linux-arm.org/git?p=kvmtool-dm.git;a=shortlog;h=refs/heads/sv
+> > > e/v3/head (After rerunning util/update_headers.sh.)
+> > >
+> > > (the --sve-vls command line argument was removed in v4 of the
+> > > kvmtool patches).
+> > >
+> > > [1]
+> > > http://lists.infradead.org/pipermail/linux-arm-kernel/2019-July/6646
+> > > 33.html
+> > > ---
+> > >  arch/arm64/kvm/guest.c | 2 +-
+> > >  1 file changed, 1 insertion(+), 1 deletion(-)
+> > >
+> > > diff --git a/arch/arm64/kvm/guest.c b/arch/arm64/kvm/guest.c index
+> > > c2afa79..dfd6264 100644
+> > > --- a/arch/arm64/kvm/guest.c
+> > > +++ b/arch/arm64/kvm/guest.c
+> > > @@ -208,7 +208,7 @@ static int set_core_reg(struct kvm_vcpu *vcpu,
+> > > const struct kvm_one_reg *reg)
+> > >
+> > >  #define vq_word(vq) (((vq) - SVE_VQ_MIN) / 64)  #define vq_mask(vq)
+> > > ((u64)1 << ((vq) - SVE_VQ_MIN) % 64) -#define vq_present(vqs, vq)
+> > > ((vqs)[vq_word(vq)] & vq_mask(vq))
+> > > +#define vq_present(vqs, vq) (!!((vqs)[vq_word(vq)] & vq_mask(vq)))
+> > >
+> > >  static int get_sve_vls(struct kvm_vcpu *vcpu, const struct
+> > > kvm_one_reg *reg)  {
+> >
+> > It was a really nice bug :)
+> >
+> > Reviewed-by: Viresh Kumar <viresh.kumar@linaro.org>
+> 
+> Thanks for the quick review!
+> 
+> Maybe it makes sense to write equality comparisons on bools as !x == !y to be
+> more defensive against this kind of thing.  Anyway, probably best to leave this
+> as-is while the dust settles.
+> 
+> Cheers
+> ---Dave
 
 _______________________________________________
 linux-arm-kernel mailing list
