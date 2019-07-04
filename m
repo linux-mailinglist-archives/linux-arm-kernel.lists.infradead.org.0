@@ -2,88 +2,93 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5D6715F302
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  4 Jul 2019 08:44:03 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3EDF95F30E
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  4 Jul 2019 08:46:39 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
 	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
 	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=HAgG7Hn9X6UvD0FZtxhn3PFrW8Ww6sorjgTbrLcGn/8=; b=CrwzNFXZ0hwXR7M8YwprWIaXs
-	luoFAdTDrXrW1kgh9xy51MUftShx//Q+pcFZyknc29XhL+NeD2iyyExsC12iaxvfISzUwnM8GbN9T
-	ltikQxy8Q3GHMRu3BlAb6J4hNvBf9C0v3Ckiv0Sw7ZV6I8t393qT5RMcvJrzbiOKO8ZpgLVmHgfa+
-	qJ5fPN8DfO6hf3AB8lMT2juzyK2QDgzhhU1Re3HZhX6N1e1axDRGlaqGjPQAKjTsjYuRUKaFdG13O
-	bgt3YDJrud6EvVmfP2A70Fn97i03tJcsjHjwaoEXSZhUJ9uKTKjXYUKCdQa3jAGS2xHPJSyfUykg4
-	hFlGHdFxw==;
+	 bh=L8YcAJuM6cmkfreTkNzndZTNwU/qD2rZBSGWZQEhhAc=; b=EYnfmP5yD8rTlNEqBZfY1dFhv
+	PKCfBc1tmW/nHxQiwMs0LhhQTtJQbvDZNZc3pWmG8PpNErA4meFOJreBf6KHh+5YX7WP0rKy1q3Hk
+	LlYX0HFZdWGAXEMoWoOMJ8YlrfHRfr/PWTX3lAkukzVaac7/n2D8mme/H//rJGVKQkYbou/MQ3qLo
+	U7mB6BGHK+jnQsF1e0uy/nHuUFnDLfSDMIBfq85H37U4arBs3H0OujQHQb4K7pEj3+GcgUfpYOl0B
+	Eh0/mVINntHO/prY+afADv3xM7gUkD0C8ZYDImdz/BX1pZlo2c7AtaDgipVQW30HyOvROsyDFbtXt
+	zX6UbfWlQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hivTN-0004rz-QT; Thu, 04 Jul 2019 06:44:01 +0000
-Received: from smtp.codeaurora.org ([198.145.29.96])
+	id 1hivVs-0007JN-Ko; Thu, 04 Jul 2019 06:46:36 +0000
+Received: from mail-pf1-x442.google.com ([2607:f8b0:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hivTA-0004qj-Du
- for linux-arm-kernel@lists.infradead.org; Thu, 04 Jul 2019 06:43:49 +0000
-Received: by smtp.codeaurora.org (Postfix, from userid 1000)
- id 80A5860A0A; Thu,  4 Jul 2019 06:43:47 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=codeaurora.org;
- s=default; t=1562222627;
- bh=1X/a5esYpZeGW1CmQBkAPcwko0xcLOWRgFpb3G9ejjY=;
- h=Subject:To:Cc:References:From:Date:In-Reply-To:From;
- b=TDFiiZlHMxnN57/LFYoPv6c+Gkc63IWQfUlT6IhwzsASpgTfmtLCao62YhK6daOLU
- Cmmrwb7tfyu6OIPj8RHTGHlVqyATWtcbQr3kXjQHpE/UKVzp26tYJTP0zC5po6UKxi
- RPfK7QlzC7zUxLBtt8hfuxZiRa+rIQ7oHo3HbR/g=
-X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
- pdx-caf-mail.web.codeaurora.org
-X-Spam-Level: 
-X-Spam-Status: No, score=-2.7 required=2.0 tests=ALL_TRUSTED,BAYES_00,
- DKIM_INVALID,DKIM_SIGNED,SPF_NONE autolearn=no autolearn_force=no
- version=3.4.0
-Received: from [10.79.136.27]
- (blr-bdr-fw-01_globalnat_allzones-outside.qualcomm.com [103.229.18.19])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- (Authenticated sender: saiprakash.ranjan@smtp.codeaurora.org)
- by smtp.codeaurora.org (Postfix) with ESMTPSA id 212DE60746;
- Thu,  4 Jul 2019 06:43:41 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=codeaurora.org;
- s=default; t=1562222625;
- bh=1X/a5esYpZeGW1CmQBkAPcwko0xcLOWRgFpb3G9ejjY=;
- h=Subject:To:Cc:References:From:Date:In-Reply-To:From;
- b=KRGgTCsifDpZLY9tI3ska6jievMGw/EIJcJ3lv8kwsvKdb8mNaCfow6cAz8g0jBQk
- Q1OkSLf/uqSZF9CB0U48cddTgbY27CgikhpDPRFvQ5e17G0fFEUzOf1TmSrNI/D/IZ
- RzcPCf65cH7d8K0vBQKF1EcOko4byceHgddG2LPo=
-DMARC-Filter: OpenDMARC Filter v1.3.2 smtp.codeaurora.org 212DE60746
-Authentication-Results: pdx-caf-mail.web.codeaurora.org;
- dmarc=none (p=none dis=none) header.from=codeaurora.org
-Authentication-Results: pdx-caf-mail.web.codeaurora.org; spf=none
- smtp.mailfrom=saiprakash.ranjan@codeaurora.org
-Subject: Re: [PATCHv5 1/2] dt-bindings: coresight: Change CPU phandle to
- required property
-To: Mathieu Poirier <mathieu.poirier@linaro.org>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>
-References: <cover.1561659046.git.saiprakash.ranjan@codeaurora.org>
- <2afedb941294af7ba0658496b4aca3759a4e43ff.1561659046.git.saiprakash.ranjan@codeaurora.org>
- <CANLsYkxvh+qUDvqG45o7qh61Noq=a=BJ4-p68ipdzxYt6n5bNA@mail.gmail.com>
-From: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>
-Message-ID: <8fb5947e-acf8-faff-5594-2a32151ebee7@codeaurora.org>
-Date: Thu, 4 Jul 2019 12:13:40 +0530
+ id 1hivVe-0007Iu-77
+ for linux-arm-kernel@lists.infradead.org; Thu, 04 Jul 2019 06:46:23 +0000
+Received: by mail-pf1-x442.google.com with SMTP id x15so2483602pfq.0
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 03 Jul 2019 23:46:21 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=subject:to:cc:references:from:organization:message-id:date
+ :user-agent:mime-version:in-reply-to:content-transfer-encoding;
+ bh=7u3j/qlpuiMl7q0crcwHK5qvOp5dbyAVCcaxQlei5BY=;
+ b=d/u6QSi/W+Hep7xnLOkGy1zQzus/xm9kmEi9zJteGC+By7PW4KjgQWcSHcyR+Ga6ql
+ I8H3C5il13o4RAUqeRGoK6OzmIU63054kYPrcXXtpL7MbrWqdhKClhb5jCqiwIXAnKay
+ XKaHDrWkk/bpKY3G54zKktlypLL1MgPOfQyFt93BtOdisfS31RODJIyEVHuTDiyPKhlZ
+ xsrvAiVLNtXgqk767s8NWPBwfZxUgYq5fI0z+FEn+0ZyDskl7UbQM5AROxEpw+KH5Wc9
+ AjMtSRwBN+MCLdDP9DONVwz54+Sjj5YB5NJZh3//3UFZ7/ViVX8/BcYA4v54LWpZat3j
+ ZlPg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:subject:to:cc:references:from:organization
+ :message-id:date:user-agent:mime-version:in-reply-to
+ :content-transfer-encoding;
+ bh=7u3j/qlpuiMl7q0crcwHK5qvOp5dbyAVCcaxQlei5BY=;
+ b=YKjdj2Htytsq39NoAHmwMJi06+496PAdOj64Aws82u5zTLZf/4d+35cFroVJaZ4aFB
+ 8L9yeLYJ5VwvKxIpJ50YXEVHjlHasyrmAONPCuwsrJXTlPx189vq8178Ch2/19JGW6Ne
+ JOjcTp8qx//I55zxjsnJJwGkehntn4RzEFzKENOzUSNy5QjLBcRdAOPju8LfqDqXcPcX
+ RSpCw/nCTZNVsY2j9vffU/LFwK+WhMfFS8TIAbKU/MtyLT1iEj5QWmg7kJFa8KF0/Wa5
+ TGIAwuwKgPK7jB+zcl3iOfbjxleMkHE8h9TmRJNuQYoPaGjKLFSbflWymhtZ2i1wDp24
+ 6+YQ==
+X-Gm-Message-State: APjAAAWJMchDVNJG9mXtX0BAAxJ0Ou0cLxHUKLEjDFuxwWpjmQcfMCoZ
+ rwyj1WBX2R5hhPPYCOjPEx0=
+X-Google-Smtp-Source: APXvYqy/s0Ljvqpnt4JWFhbvPuiQt4Q13IXhAAOtCo9uJyfuMIBmYhhpcuhs0o6/ztVpgX4DicG89w==
+X-Received: by 2002:a63:2b8e:: with SMTP id
+ r136mr13258143pgr.216.1562222781277; 
+ Wed, 03 Jul 2019 23:46:21 -0700 (PDT)
+Received: from [0.0.0.0] ([80.240.31.150])
+ by smtp.gmail.com with ESMTPSA id z20sm8169915pfk.72.2019.07.03.23.46.10
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Wed, 03 Jul 2019 23:46:20 -0700 (PDT)
+Subject: Re: [RFC PATCH v2 2/3] arm64: mark all the GICC nodes in MADT as
+ possible cpu
+To: Xiongfeng Wang <wangxiongfeng2@huawei.com>, rjw@rjwysocki.net,
+ catalin.marinas@arm.com, james.morse@arm.com
+References: <1561776155-38975-1-git-send-email-wangxiongfeng2@huawei.com>
+ <1561776155-38975-3-git-send-email-wangxiongfeng2@huawei.com>
+From: Jia He <jiakernel2@gmail.com>
+Organization: ARM
+Message-ID: <762be90e-7629-ab5e-4c2d-6566b100f2e5@gmail.com>
+Date: Thu, 4 Jul 2019 14:46:06 +0800
 User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:60.0) Gecko/20100101
  Thunderbird/60.7.2
 MIME-Version: 1.0
-In-Reply-To: <CANLsYkxvh+qUDvqG45o7qh61Noq=a=BJ4-p68ipdzxYt6n5bNA@mail.gmail.com>
-Content-Language: en-US
+In-Reply-To: <1561776155-38975-3-git-send-email-wangxiongfeng2@huawei.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190703_234348_505929_4BBF7B38 
-X-CRM114-Status: GOOD (  15.91  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20190703_234622_290105_9ABE565E 
+X-CRM114-Status: GOOD (  19.50  )
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.145.29.96 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:442 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (jiakernel2[at]gmail.com)
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (jiakernel2[at]gmail.com)
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -91,6 +96,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
+ 0.0 T_PDS_NO_HELO_DNS      High profile HELO but no A record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -102,48 +108,92 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Rajendra Nayak <rnayak@codeaurora.org>,
- Suzuki K Poulose <suzuki.poulose@arm.com>,
- Alexander Shishkin <alexander.shishkin@linux.intel.com>,
- linux-arm-msm <linux-arm-msm@vger.kernel.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- David Brown <david.brown@linaro.org>, Rob Herring <robh+dt@kernel.org>,
- Sibi Sankar <sibis@codeaurora.org>, Vivek Gautam <vivek.gautam@codeaurora.org>,
- Leo Yan <leo.yan@linaro.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Cc: xiexiuqi@huawei.com, jonathan.cameron@huawei.com, john.garry@huawei.com,
+ linux-kernel@vger.kernel.org, linux-acpi@vger.kernel.org,
+ huawei.libin@huawei.com, guohanjun@huawei.com,
+ linux-arm-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
 Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 7/4/2019 1:32 AM, Mathieu Poirier wrote:
-> Hi Greg,
-> 
-> On Thu, 27 Jun 2019 at 12:15, Sai Prakash Ranjan
-> <saiprakash.ranjan@codeaurora.org> wrote:
->>
->> Do not assume the affinity to CPU0 if cpu phandle is omitted.
->> Update the DT binding rules to reflect the same by changing it
->> to a required property.
->>
->> Signed-off-by: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>
->> Reviewed-by: Suzuki K Poulose <suzuki.poulose@arm.com>
-> 
-> I'm all good with this patch - can you pick this up for the coming
-> merge window?  If not I'll simply keep it in my tree for 5.4.
-> 
-> Tested-by: Mathieu Poirier <mathieu.poirier@linaro.org>
-> Reviewed-by: Mathieu Poirier <mathieu.poirier@linaro.org>
-> 
 
-I think you missed adding Greg, adding him now ;)
+On 2019/6/29 10:42, Xiongfeng Wang wrote:
+> We set 'cpu_possible_mask' based on the enabled GICC node in MADT. If
+> the GICC node is disabled, we will skip initializing the kernel data
+> structure for that CPU.
+>
+> To support CPU hotplug, we need to initialize some CPU related data
+> structure in advance. This patch mark all the GICC nodes as possible CPU
+> and only these enabled GICC nodes as present CPU.
+>
+> Signed-off-by: Xiongfeng Wang <wangxiongfeng2@huawei.com>
+> ---
+>   arch/arm64/kernel/setup.c |  2 +-
+>   arch/arm64/kernel/smp.c   | 11 +++++------
+>   2 files changed, 6 insertions(+), 7 deletions(-)
+>
+> diff --git a/arch/arm64/kernel/setup.c b/arch/arm64/kernel/setup.c
+> index 7e541f9..7f4d12a 100644
+> --- a/arch/arm64/kernel/setup.c
+> +++ b/arch/arm64/kernel/setup.c
+> @@ -359,7 +359,7 @@ static int __init topology_init(void)
+>   	for_each_online_node(i)
+>   		register_one_node(i);
+>   
+> -	for_each_possible_cpu(i) {
+> +	for_each_online_cpu(i) {
 
--Sai
+Have you considered the case in non-acpi mode? and setting "maxcpus=n" in host 
+kernel boot
+
+parameters?
+
+---
+Cheers,
+Justin (Jia He)
+
+
+>   		struct cpu *cpu = &per_cpu(cpu_data.cpu, i);
+>   		cpu->hotpluggable = 1;
+>   		register_cpu(cpu, i);
+> diff --git a/arch/arm64/kernel/smp.c b/arch/arm64/kernel/smp.c
+> index 6dcf960..6d9983c 100644
+> --- a/arch/arm64/kernel/smp.c
+> +++ b/arch/arm64/kernel/smp.c
+> @@ -525,16 +525,14 @@ struct acpi_madt_generic_interrupt *acpi_cpu_get_madt_gicc(int cpu)
+>   {
+>   	u64 hwid = processor->arm_mpidr;
+>   
+> -	if (!(processor->flags & ACPI_MADT_ENABLED)) {
+> -		pr_debug("skipping disabled CPU entry with 0x%llx MPIDR\n", hwid);
+> -		return;
+> -	}
+> -
+>   	if (hwid & ~MPIDR_HWID_BITMASK || hwid == INVALID_HWID) {
+>   		pr_err("skipping CPU entry with invalid MPIDR 0x%llx\n", hwid);
+>   		return;
+>   	}
+>   
+> +	if (!(processor->flags & ACPI_MADT_ENABLED))
+> +		pr_debug("disabled CPU entry with 0x%llx MPIDR\n", hwid);
+> +
+>   	if (is_mpidr_duplicate(cpu_count, hwid)) {
+>   		pr_err("duplicate CPU MPIDR 0x%llx in MADT\n", hwid);
+>   		return;
+> @@ -755,7 +753,8 @@ void __init smp_prepare_cpus(unsigned int max_cpus)
+>   		if (err)
+>   			continue;
+>   
+> -		set_cpu_present(cpu, true);
+> +		if ((cpu_madt_gicc[cpu].flags & ACPI_MADT_ENABLED))
+> +			set_cpu_present(cpu, true);
+>   		numa_store_cpu_info(cpu);
+>   	}
+>   }
 
 -- 
-QUALCOMM INDIA, on behalf of Qualcomm Innovation Center, Inc. is a member
-of Code Aurora Forum, hosted by The Linux Foundation
+
 
 _______________________________________________
 linux-arm-kernel mailing list
