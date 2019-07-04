@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 41B525F583
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  4 Jul 2019 11:24:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id AB6315F584
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  4 Jul 2019 11:24:21 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,29 +11,29 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=dziemImQ2mvLu9yBOCzt2uB7M4Z5yYW3wMvHTQRbKc0=; b=MMqhn0tMS3RLUT+Wf6KhuTLn+F
-	0xRsaksk7PeQ2Spl33Thgun2kFEHnEzeHFJpSERBFiAXI3bVsEF7sJY1ZLGy8j/alP/f2s0SpbvWG
-	gvxxUQPFx+JD/99dCrIDUPNVzWShXTfEGG0NXNyjw4xlnThOL1H27AoXjwaJ6TFj/sR0YH1hpV3E1
-	KhnPe1JJQNBiG3biQ7OG7hNo/866S7JNZf9D9hOti3IVn+iPtcT2Dys8P/dVlIS6b1DoY9WdGoZrn
-	OXhAXDJvb/9zcGCsjqUaBFqwZUIAfHI/jQoN0xWW0+i0b9Myr+gz9EV2EMfHVLmlln4uIUGbW0W+n
-	Y2Jl+2pw==;
+	bh=v++T29S9p9kSeh0EYzqEnzvXvfX4+8cL99nmg222eh0=; b=WVxFdKpX0qGzE6jJca2nzRmS8S
+	RifdAlObdYza+klau0NqAOXjlnIaDgQgdTvQCTbM/d4pV0jNoA29wjEr3J7plKwa3cBNUi70XXOMa
+	C6qYNF0hKJuJETP241wWthDQULCTLkkYevGfSNLKY/A3umwWM2U780UK7mKRQZPwrVyFkuWztF2GH
+	sLqMOl5P0F3n3mklitnpI8p8bXOk4IwJXypnpx1sjWQI+cxv0CDy4QbZB9lNnPDK+ERIrmPJR4npS
+	mxvrLDMHaok343AJRLwTaAR4n5okn2J3xoHgHvdB2lI43QNXvwf6CqAR6zXI/cPtlseFHy3orKrOC
+	bm/p0KfQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hixyB-0008RK-Rz; Thu, 04 Jul 2019 09:23:59 +0000
-Received: from inva021.nxp.com ([92.121.34.21])
+	id 1hixyW-0000GO-5g; Thu, 04 Jul 2019 09:24:20 +0000
+Received: from inva020.nxp.com ([92.121.34.13])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hixww-0007eC-9R
- for linux-arm-kernel@lists.infradead.org; Thu, 04 Jul 2019 09:22:43 +0000
-Received: from inva021.nxp.com (localhost [127.0.0.1])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id CE184200582;
- Thu,  4 Jul 2019 11:22:40 +0200 (CEST)
+ id 1hixwy-0007gb-9E
+ for linux-arm-kernel@lists.infradead.org; Thu, 04 Jul 2019 09:22:45 +0000
+Received: from inva020.nxp.com (localhost [127.0.0.1])
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 107091A0562;
+ Thu,  4 Jul 2019 11:22:43 +0200 (CEST)
 Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
  [165.114.16.14])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 399DC200220;
- Thu,  4 Jul 2019 11:22:26 +0200 (CEST)
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 70EE51A0570;
+ Thu,  4 Jul 2019 11:22:28 +0200 (CEST)
 Received: from titan.ap.freescale.net (TITAN.ap.freescale.net [10.192.208.233])
- by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id CAAB5402C3;
- Thu,  4 Jul 2019 17:22:12 +0800 (SGT)
+ by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 1E8D4402E5;
+ Thu,  4 Jul 2019 17:22:15 +0800 (SGT)
 From: Anson.Huang@nxp.com
 To: rui.zhang@intel.com, edubezval@gmail.com, daniel.lezcano@linaro.org,
  robh+dt@kernel.org, mark.rutland@arm.com, shawnguo@kernel.org,
@@ -45,16 +45,16 @@ To: rui.zhang@intel.com, edubezval@gmail.com, daniel.lezcano@linaro.org,
  enric.balletbo@collabora.com, marcin.juszkiewicz@linaro.org,
  linux-pm@vger.kernel.org, devicetree@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
-Subject: [PATCH 3/4] arm64: defconfig: Enable CONFIG_IMX8MM_THERMAL as module
-Date: Thu,  4 Jul 2019 17:13:12 +0800
-Message-Id: <20190704091313.9516-4-Anson.Huang@nxp.com>
+Subject: [PATCH 4/4] arm64: dts: imx8mm: Add thermal zone support
+Date: Thu,  4 Jul 2019 17:13:13 +0800
+Message-Id: <20190704091313.9516-5-Anson.Huang@nxp.com>
 X-Mailer: git-send-email 2.14.1
 In-Reply-To: <20190704091313.9516-1-Anson.Huang@nxp.com>
 References: <20190704091313.9516-1-Anson.Huang@nxp.com>
 X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190704_022242_593276_66FE139C 
-X-CRM114-Status: UNSURE (   6.84  )
+X-CRM114-CacheID: sfid-20190704_022244_616732_7852AFFC 
+X-CRM114-Status: UNSURE (   7.96  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -62,7 +62,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [92.121.34.21 listed in list.dnswl.org]
+ medium trust [92.121.34.13 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -85,26 +85,104 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Anson Huang <Anson.Huang@nxp.com>
 
-Enable CONFIG_IMX8MM_THERMAL as module to support i.MX8MM
-thermal driver.
+Add thermal zone and tmu node to support i.MX8MM thermal
+driver, ONLY cpu thermal zone is supported, and cpu cooling
+is also added.
 
 Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
 ---
- arch/arm64/configs/defconfig | 1 +
- 1 file changed, 1 insertion(+)
+ arch/arm64/boot/dts/freescale/imx8mm.dtsi | 43 +++++++++++++++++++++++++++++++
+ 1 file changed, 43 insertions(+)
 
-diff --git a/arch/arm64/configs/defconfig b/arch/arm64/configs/defconfig
-index 126665f..eeedd3f 100644
---- a/arch/arm64/configs/defconfig
-+++ b/arch/arm64/configs/defconfig
-@@ -434,6 +434,7 @@ CONFIG_CPU_THERMAL=y
- CONFIG_THERMAL_EMULATION=y
- CONFIG_QORIQ_THERMAL=m
- CONFIG_IMX_SC_THERMAL=m
-+CONFIG_IMX8MM_THERMAL=m
- CONFIG_ROCKCHIP_THERMAL=m
- CONFIG_RCAR_THERMAL=y
- CONFIG_RCAR_GEN3_THERMAL=y
+diff --git a/arch/arm64/boot/dts/freescale/imx8mm.dtsi b/arch/arm64/boot/dts/freescale/imx8mm.dtsi
+index 3a62407..1870c89 100644
+--- a/arch/arm64/boot/dts/freescale/imx8mm.dtsi
++++ b/arch/arm64/boot/dts/freescale/imx8mm.dtsi
+@@ -70,6 +70,7 @@
+ 			nvmem-cells = <&cpu_speed_grade>;
+ 			nvmem-cell-names = "speed_grade";
+ 			cpu-idle-states = <&cpu_sleep_wait>;
++			#cooling-cells = <2>;
+ 		};
+ 
+ 		A53_1: cpu@1 {
+@@ -82,6 +83,7 @@
+ 			next-level-cache = <&A53_L2>;
+ 			operating-points-v2 = <&a53_opp_table>;
+ 			cpu-idle-states = <&cpu_sleep_wait>;
++			#cooling-cells = <2>;
+ 		};
+ 
+ 		A53_2: cpu@2 {
+@@ -94,6 +96,7 @@
+ 			next-level-cache = <&A53_L2>;
+ 			operating-points-v2 = <&a53_opp_table>;
+ 			cpu-idle-states = <&cpu_sleep_wait>;
++			#cooling-cells = <2>;
+ 		};
+ 
+ 		A53_3: cpu@3 {
+@@ -106,6 +109,7 @@
+ 			next-level-cache = <&A53_L2>;
+ 			operating-points-v2 = <&a53_opp_table>;
+ 			cpu-idle-states = <&cpu_sleep_wait>;
++			#cooling-cells = <2>;
+ 		};
+ 
+ 		A53_L2: l2-cache0 {
+@@ -209,6 +213,38 @@
+ 		arm,no-tick-in-suspend;
+ 	};
+ 
++	thermal-zones {
++		cpu-thermal {
++			polling-delay-passive = <250>;
++			polling-delay = <2000>;
++			thermal-sensors = <&tmu>;
++			trips {
++				cpu_alert0: trip0 {
++					temperature = <85000>;
++					hysteresis = <2000>;
++					type = "passive";
++				};
++
++				cpu_crit0: trip1 {
++					temperature = <95000>;
++					hysteresis = <2000>;
++					type = "critical";
++				};
++			};
++
++			cooling-maps {
++				map0 {
++					trip = <&cpu_alert0>;
++					cooling-device =
++						<&A53_0 THERMAL_NO_LIMIT THERMAL_NO_LIMIT>,
++						<&A53_1 THERMAL_NO_LIMIT THERMAL_NO_LIMIT>,
++						<&A53_2 THERMAL_NO_LIMIT THERMAL_NO_LIMIT>,
++						<&A53_3 THERMAL_NO_LIMIT THERMAL_NO_LIMIT>;
++				};
++			};
++		};
++	};
++
+ 	usbphynop1: usbphynop1 {
+ 		compatible = "usb-nop-xceiv";
+ 		clocks = <&clk IMX8MM_CLK_USB_PHY_REF>;
+@@ -368,6 +404,13 @@
+ 				gpio-ranges = <&iomuxc 0 119 30>;
+ 			};
+ 
++			tmu: tmu@30260000 {
++				compatible = "fsl,imx8mm-tmu";
++				reg = <0x30260000 0x10000>;
++				clocks = <&clk IMX8MM_CLK_TMU_ROOT>;
++				#thermal-sensor-cells = <0>;
++			};
++
+ 			wdog1: watchdog@30280000 {
+ 				compatible = "fsl,imx8mm-wdt", "fsl,imx21-wdt";
+ 				reg = <0x30280000 0x10000>;
 -- 
 2.7.4
 
