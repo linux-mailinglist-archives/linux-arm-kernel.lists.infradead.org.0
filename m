@@ -2,96 +2,88 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 93E465F00F
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  4 Jul 2019 02:29:09 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 801125F166
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  4 Jul 2019 04:23:49 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:To:From:Date:References:
-	In-Reply-To:Message-Id:Mime-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=0qh3SW8fqU0wFejZA1dBM/V5a5NihjLEU1JdbISW3t8=; b=SzYvweBrVLMkaE
-	ztzjfClzndzi8UJKW5fYJQFyLCCNOdasx6zPO1Ah6T0Jo4blUaKa3ZmiN6xBDucsPwzFQsZpAy46T
-	W6Ul8ZnAHjip7JO57JjSYConaUwkhoAstFhReChHjbkYGpgMZWAptucLB8w3YvKcw0usDTIqCGDAa
-	iMwoL7CwQsOvKIdTbljgGg/o4++3ZTRbHtBxmr7VTqGnNNukf5nFTvBnXjmaF2lkJu6hw3bhAsC4H
-	+GBQ8T7zppA8F5izwCJTXbAmpgRBG+/KMt3h2CdckmuLGs+nCDLLlcU6GnHHD9/85yG0grKNo8fpG
-	E3HfyXQLtpd9hUTzJc2A==;
+	List-Owner; bh=KYCLUl5vZLEYr4ww9OTixVN6Rbkxl2RyrodqTOdU4T0=; b=ZcMtFmGFqI8p30
+	YNTMvpNQ+TSvKMEyIim7QbQDqMAL65SwD87dtzss/yIR+0dfyZ8CJM1RvxWozk8S8Fa26TUaIAdh/
+	tsADNVb8uA0IOe7KCEbCiUa9mi4KWvERn5ioaWh9fPrYLlJxW0JVlNJx+748F9iaK2J0CLJ3EU4Zd
+	ClbKo0q5NNYY7TOSNeeQuSXQ3tVPvOwfmp64boODTdaRhqPwKe3jltdXrsrvXHCL7Do4tiAtOhERk
+	SAaldJv8rnRQPK8ZKjsIVWIyhohlraNs6K4dWliXLwgaC4rKU+YxJvGcRrIvhjfBNR4TO7yPC+fkQ
+	dKvmEZhVodhcj2TV9Kiw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hipcY-0003gn-BY; Thu, 04 Jul 2019 00:29:06 +0000
-Received: from new2-smtp.messagingengine.com ([66.111.4.224])
+	id 1hirPR-0006DI-JJ; Thu, 04 Jul 2019 02:23:41 +0000
+Received: from mail-lf1-x141.google.com ([2a00:1450:4864:20::141])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hipcK-0003gA-B2
- for linux-arm-kernel@lists.infradead.org; Thu, 04 Jul 2019 00:28:53 +0000
-Received: from compute4.internal (compute4.nyi.internal [10.202.2.44])
- by mailnew.nyi.internal (Postfix) with ESMTP id A7BC91BC6;
- Wed,  3 Jul 2019 20:28:50 -0400 (EDT)
-Received: from imap2 ([10.202.2.52])
- by compute4.internal (MEProxy); Wed, 03 Jul 2019 20:28:50 -0400
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=aj.id.au; h=
- mime-version:message-id:in-reply-to:references:date:from:to:cc
- :subject:content-type; s=fm3; bh=OWn2mLh7/XUi0TJMekxt7yvjPNcgULS
- BCoi83C82YNo=; b=oHFzw8noCMYk24pCj0ny/IlupuxDjd+p4ys/R9Ec8OJoqgX
- b3W4LGtgKvAEv8CvF0/syCO2IACosaB667bLAIzW1fCsT4+tekeXDMyl3zEFaOMC
- X3wfdHDxlVZ2cTvRtREUMNFakBGD3FdqJwxIFMPo9D5x+SRmJWwsmgZea8ZIokzx
- qFrQHBEN70Np0VbSVFiJ/FMG6m7Jvf/TSMEiuAnbFyR2Tj5P/2x3ep6feeqpCRUM
- /XQM4H5W+qvlFlPR14RfVf+2+cx9GET41XeY7GI/7STl9Yln4aJ0ywSKGl7l0hKk
- d7EGxMsXHkwxl3k9BOZNgrK3iFSDGCjK9ibJrrw==
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
- messagingengine.com; h=cc:content-type:date:from:in-reply-to
- :message-id:mime-version:references:subject:to:x-me-proxy
- :x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm3; bh=OWn2mL
- h7/XUi0TJMekxt7yvjPNcgULSBCoi83C82YNo=; b=bJ2K1ryWC7mcx8ZrhtqG4p
- bjjDnClvZrJYisIta3ipWFXcHpUGkV/rnES74wiSO7RXuYiJVFVOG11bOPSZakuq
- efd8A+CAL9GVQaAiVrOlVZjqmdNj6hfv4JF8muUrXYaOdM8DJysv26hKoV9mgYrz
- UmJmWhxbXsIqSIS52KU/Kh/OU1wznmLyrn8+0mVHz4Uo7fXM75evRKb0Mh9Q6Py0
- mm3IwOJuNDTEtwNCEiqGvlLZwKQP4wClYP0BP01Ts2j/ix14AKaVBexjLqKcAlyA
- fZP4j3Z40fb+1wberXaFsYGNdkKBfKdRRVRg836sXTQlOB5kkMZIg5joW6eXgqSQ
- ==
-X-ME-Sender: <xms:QEgdXaQCmhwW6lVppTwfGyVi11eyWy8KVOPmoh1yLSlVp3N1IFZpbA>
-X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduvddrfedugdefhecutefuodetggdotefrodftvf
- curfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfghnecu
- uegrihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmdenuc
- fjughrpefofgggkfgjfhffhffvufgtsehttdertderredtnecuhfhrohhmpedftehnughr
- vgifucflvghffhgvrhihfdcuoegrnhgurhgvfiesrghjrdhiugdrrghuqeenucfrrghrrg
- hmpehmrghilhhfrhhomheprghnughrvgifsegrjhdrihgurdgruhenucevlhhushhtvghr
- ufhiiigvpedt
-X-ME-Proxy: <xmx:QEgdXddXftyY9CXDkmK4PtChKPg5uBek0H_VhgWsl11Dtv6_rfcivA>
- <xmx:QEgdXf53eT9-j9HP3nKzzEA7iAzI-6jSOkqbwtDVfPRDkMbXPLzIJw>
- <xmx:QEgdXeYtH0YWySTHIsemK5URyZ09CZlpVSlM3hwA-MMUfvxqQKc5Iw>
- <xmx:QkgdXeWYmYs6ZpjvMHl1vd32N4O17eliMjdtMYZk0YDJLRSaiEL4ig>
-Received: by mailuser.nyi.internal (Postfix, from userid 501)
- id BCEECE00A2; Wed,  3 Jul 2019 20:28:48 -0400 (EDT)
-X-Mailer: MessagingEngine.com Webmail Interface
-User-Agent: Cyrus-JMAP/3.1.6-731-g19d3b16-fmstable-20190627v1
-Mime-Version: 1.0
-Message-Id: <022b6528-7ab3-449f-807d-d711b6d2db51@www.fastmail.com>
-In-Reply-To: <CACRpkdaxiFR3ezt4FzhRxpqc4DYYjsbBeysPUaaQH+_QgYjudw@mail.gmail.com>
-References: <20190628023838.15426-1-andrew@aj.id.au>
- <CACRpkdaxiFR3ezt4FzhRxpqc4DYYjsbBeysPUaaQH+_QgYjudw@mail.gmail.com>
-Date: Thu, 04 Jul 2019 10:28:45 +1000
-From: "Andrew Jeffery" <andrew@aj.id.au>
-To: "Linus Walleij" <linus.walleij@linaro.org>
-Subject: Re: [PATCH v2 0/8] pinctrl: aspeed: Preparation for AST2600
+ id 1hirOx-0006CP-Nf
+ for linux-arm-kernel@lists.infradead.org; Thu, 04 Jul 2019 02:23:13 +0000
+Received: by mail-lf1-x141.google.com with SMTP id j29so3097456lfk.10
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 03 Jul 2019 19:23:10 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=lixom-net.20150623.gappssmtp.com; s=20150623;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=+J4G3+w2a6rqwsRd6naD6kRP3PZ6p5YJ6mI8owInsUY=;
+ b=pnCXRsvCD/RtzrcOSH9XKM3pNpuZOmeLWIatc8U7JlkVMu98m1tFHyX9W8gckaXPfe
+ b17ruB40N/kd408MIOehV98cOnIGdS2i5T85oAKHFtbQungZe4RQZXnoR3DvdoUOY49T
+ A8Qralpdl860WzVeFgeSpieoUbth90cEXEwDDfG2ufwTCrsWhxFOKEEtU/VdnRP/Ma1P
+ crPt3nVPNZZP45KVGlF3FSxFbEvNPhhYU+4eKXQyZkt8EnoLeDvdkLNiM9WDsGZxLtVf
+ vkQFJrmKD9kDeXJtME/5Hl5v6hn8fG8k5HTT33wk8Phx9tWBoUoQbHDcM06FR4ZmfGpB
+ MiQQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=+J4G3+w2a6rqwsRd6naD6kRP3PZ6p5YJ6mI8owInsUY=;
+ b=KkbFQpKqtlTL6EW69KtttpYCddS0rZb6ZvabheQkglR0ea1N1ZI/fknIl/yfSd2mTi
+ u5m3M6/qZUFWjAnk2J3kaXOUhAm3UGDEy5iTnOmYYPiPccQoN3rd4zRCERSGJchsGpOX
+ X7pcxh2NeRt2q/k3HnH7l+AgGQijctYaWM/QzXD15zBLwy9UP4uZZVzM/IAWos/pKk3x
+ Cdfavqau/UmKBDtClnUJu9ySH0zPNzcSU9VJz/h0EXTgX5m4mej1S8z1TLiJzwFY71/Q
+ ai22LOQGPzO7p+QE0XJ5/yZkZTlOhVzCo3Oab4eGL8GoRho8Vp5rB6xMsI/6G3CtZqIX
+ BJyQ==
+X-Gm-Message-State: APjAAAXIh4ENDp70mys8suCHZB1j4IVso6tu+gxc4r8IrKUBwRwXEzsy
+ W5csk5nnyYT5on7mehgHeFcb+A==
+X-Google-Smtp-Source: APXvYqwF1IDr3Zsnm8ndisg8PoI+GaRFZUtCxu7aZqBri2om9izSF5ZXvmOqrvAsLWKwdQBn04FOlA==
+X-Received: by 2002:ac2:4351:: with SMTP id o17mr297792lfl.100.1562206988730; 
+ Wed, 03 Jul 2019 19:23:08 -0700 (PDT)
+Received: from localhost (h85-30-9-151.cust.a3fiber.se. [85.30.9.151])
+ by smtp.gmail.com with ESMTPSA id o11sm635357lfl.15.2019.07.03.19.23.07
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Wed, 03 Jul 2019 19:23:07 -0700 (PDT)
+Date: Wed, 3 Jul 2019 19:20:43 -0700
+From: Olof Johansson <olof@lixom.net>
+To: Arnd Bergmann <arnd@arndb.de>
+Subject: Re: [PATCH] soc: rockchip: work around clang warning
+Message-ID: <20190704022043.gwcwasi6jni2qctm@localhost>
+References: <20190703153112.2767411-1-arnd@arndb.de>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20190703153112.2767411-1-arnd@arndb.de>
+User-Agent: NeoMutt/20170113 (1.7.2)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190703_172852_523466_9B6B6002 
-X-CRM114-Status: GOOD (  11.81  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20190703_192311_928104_F055662C 
+X-CRM114-Status: GOOD (  13.84  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [66.111.4.224 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:141 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ 0.0 T_PDS_NO_HELO_DNS      High profile HELO but no A record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -103,44 +95,45 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
- <devicetree@vger.kernel.org>, Ryan Chen <ryan_chen@aspeedtech.com>,
- linux-aspeed@lists.ozlabs.org, OpenBMC Maillist <openbmc@lists.ozlabs.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
- Rob Herring <robh+dt@kernel.org>, Joel Stanley <joel@jms.id.au>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: Heiko Stuebner <heiko@sntech.de>, clang-built-linux@googlegroups.com,
+ linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org,
+ arm@kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-
-
-On Wed, 3 Jul 2019, at 18:40, Linus Walleij wrote:
-> Hi Andrew,
+On Wed, Jul 03, 2019 at 05:30:59PM +0200, Arnd Bergmann wrote:
+> clang emits a warning about a negative shift count for an
+> unused part of a conditional constant expression:
 > 
-> On Fri, Jun 28, 2019 at 4:39 AM Andrew Jeffery <andrew@aj.id.au> wrote:
-> >
-> > Hello!
-> >
-> > The ASPEED AST2600 is in the pipeline, and we have enough information to start
-> > preparing to upstream support for it. This series lays some ground work;
-> > splitting the bindings and dicing the implementation up a little further to
-> > facilitate differences between the 2600 and previous SoC generations.
-> >
-> > v2 addresses Rob's comments on the bindings conversion patches. v1 can be found
-> > here:
+> drivers/soc/rockchip/pm_domains.c:795:21: error: shift count is negative [-Werror,-Wshift-count-negative]
+>         [RK3328_PD_VIO]         = DOMAIN_RK3328(-1, 8, 8, false),
+>                                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+> drivers/soc/rockchip/pm_domains.c:129:2: note: expanded from macro 'DOMAIN_RK3328'
+>         DOMAIN_M(pwr, pwr, req, (req) + 10, req, wakeup)
+>         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+> drivers/soc/rockchip/pm_domains.c:105:33: note: expanded from macro 'DOMAIN_M'
+>         .status_mask = (status >= 0) ? BIT(status) : 0, \
+>                                        ^~~~~~~~~~~
+> include/linux/bits.h:6:24: note: expanded from macro 'BIT'
 > 
-> I have applied this series, I had to strip some changes of the header
-> because it was based on some SPDX cleanups upstream but no
-> big deal I think. Check the result please.
+> This is a bug in clang that will be fixed in the future, but in order
+> to build cleanly with clang-8, it would be helpful to shut up this
+> warning. This file is the only instance reported by kernelci at the
+> moment.
+> 
+> The best solution I could come up with is to move the BIT() usage
+> out of the macro into the instantiation, so we can avoid using
+> BIT(-1).
+> 
+> Link: https://bugs.llvm.org/show_bug.cgi?id=38789
+> Signed-off-by: Arnd Bergmann <arnd@arndb.de>
 
-Thanks. Have you pushed the branch yet? I just fetched your pinctrl tree
-and can't see the patches.
+Thanks, queued under arm/drivers now.
 
-Andrew
+
+-Olof
 
 _______________________________________________
 linux-arm-kernel mailing list
