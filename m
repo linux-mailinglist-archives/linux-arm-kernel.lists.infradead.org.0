@@ -2,57 +2,94 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9CA495F5EC
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  4 Jul 2019 11:46:32 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 46AA85F60A
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  4 Jul 2019 11:53:33 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
 	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=fjl8g1JX7M0BVL2h0lMTANtdE7S66JTSENk+q1EhVrI=; b=fyKrRGqjkSBOS8
-	6PPN16e5DegYBTncclBO7JJzzGu8az5IdFbgZQHG0mCkJts/qSoX/F98pkjCfEgswCyH4UYVYYRy1
-	zIlMEgNC1/M6eQgTYWjGZKw3xlmU/2VKOzTNKQCDXO1O9EuG+QPSVczGr4MIyZj3bSF8JfppZZHBL
-	V15TfDDJUTSSNMDHlTlHPWg8c15e+Pa1ZjEE5XPv/bqN3D0Xk5O+7rRbIkm60siB3bl1H9VlkNRxV
-	S4N4ogxWmtAeVibhUSBXzkl3PFJkQapt+gpZcKG09c4RvXInvCpLqXW22WwdT18iCpjJFaIqeQH0M
-	aUktd9Qtm1VxmFRRu1iw==;
+	List-Owner; bh=2qCLWj6K2UqZuOk1jsSISnP7CaaMLq9RbAJavJ3BqgU=; b=GDqkvfzOjm1htp
+	8KjyMh4g+fLYQbYlD3CK4yEKnHD5vHk5rveyvoecbSUcWIfasLjMmwi6iQLdmMatUtmHhGezM4cWe
+	GsaqreQV3k6CHHUUOb3JIaMtI0RK2bVBLho7H6/GCpH7qgN0Dd1tQeZsYv/rQ6yBABan6Eu43zGI3
+	urrgpOea+bjL3bDtVIONKDoNJkD7DJ8uAA1qYk2fqUbL8Wi/lEITS9VuEOcfQxgqBEiNqiLoEsJK2
+	CTmpcoU1uzQ40VshPRhXBZPlxRfhdgZwgSQWjlxOzlqOTpVPfxi8WdD69/Q1dR/GAvDw1s9VP3mnX
+	I35AFBquzcYuEeXZZGag==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hiyJy-0002Tg-58; Thu, 04 Jul 2019 09:46:30 +0000
-Received: from szxga07-in.huawei.com ([45.249.212.35] helo=huawei.com)
+	id 1hiyQk-000593-61; Thu, 04 Jul 2019 09:53:30 +0000
+Received: from smtp.codeaurora.org ([198.145.29.96])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hiyJk-0002Si-Rf
- for linux-arm-kernel@lists.infradead.org; Thu, 04 Jul 2019 09:46:18 +0000
-Received: from DGGEMS407-HUB.china.huawei.com (unknown [172.30.72.60])
- by Forcepoint Email with ESMTP id 89A0C282A6D9B3730D51;
- Thu,  4 Jul 2019 17:46:03 +0800 (CST)
-Received: from localhost.localdomain.localdomain (10.175.113.25) by
- DGGEMS407-HUB.china.huawei.com (10.3.19.207) with Microsoft SMTP Server id
- 14.3.439.0; Thu, 4 Jul 2019 17:45:57 +0800
-From: Wei Yongjun <weiyongjun1@huawei.com>
-To: Sascha Hauer <s.hauer@pengutronix.de>, Pengutronix Kernel Team
- <kernel@pengutronix.de>, Bartlomiej Zolnierkiewicz
- <b.zolnierkie@samsung.com>, Shawn Guo <shawnguo@kernel.org>, Fabio Estevam
- <festevam@gmail.com>, NXP Linux Team <linux-imx@nxp.com>
-Subject: [PATCH -next] video: fbdev: imxfb: fix a typo in imxfb_probe()
-Date: Thu, 4 Jul 2019 09:52:25 +0000
-Message-ID: <20190704095225.143177-1-weiyongjun1@huawei.com>
-X-Mailer: git-send-email 2.20.1
+ id 1hiyQW-000586-S4
+ for linux-arm-kernel@lists.infradead.org; Thu, 04 Jul 2019 09:53:18 +0000
+Received: by smtp.codeaurora.org (Postfix, from userid 1000)
+ id DBD7860A33; Thu,  4 Jul 2019 09:53:15 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=codeaurora.org;
+ s=default; t=1562233995;
+ bh=QeoQfyhhocOPz+WPQ+yiBCio4xbmUZqRMcevfLOOPG8=;
+ h=From:To:Cc:Subject:Date:From;
+ b=CH5IIIxktA5ZMJmlg7boC+GmPk5bhNpN0D/joDdldLgZ6H4vfk56ZPhQKcxGCdHIf
+ AFKTmzi6Ab4KBn9RjxrQVRl4YGK4gbs2dmDiGg+JsFrDyOifQi1ix6U65jVQuecwlV
+ lhA/qXUAvv04w45OXOW7g2ftYdNO8pghZ8gGJx7o=
+X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
+ pdx-caf-mail.web.codeaurora.org
+X-Spam-Level: 
+X-Spam-Status: No, score=-2.7 required=2.0 tests=ALL_TRUSTED,BAYES_00,
+ DKIM_INVALID,DKIM_SIGNED,SPF_NONE autolearn=no autolearn_force=no
+ version=3.4.0
+Received: from blr-ubuntu-311.qualcomm.com
+ (blr-bdr-fw-01_globalnat_allzones-outside.qualcomm.com [103.229.18.19])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-SHA256 (128/128 bits))
+ (No client certificate requested)
+ (Authenticated sender: saiprakash.ranjan@codeaurora.org)
+ by smtp.codeaurora.org (Postfix) with ESMTPSA id EBFD860388;
+ Thu,  4 Jul 2019 09:53:10 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=codeaurora.org;
+ s=default; t=1562233995;
+ bh=QeoQfyhhocOPz+WPQ+yiBCio4xbmUZqRMcevfLOOPG8=;
+ h=From:To:Cc:Subject:Date:From;
+ b=CH5IIIxktA5ZMJmlg7boC+GmPk5bhNpN0D/joDdldLgZ6H4vfk56ZPhQKcxGCdHIf
+ AFKTmzi6Ab4KBn9RjxrQVRl4YGK4gbs2dmDiGg+JsFrDyOifQi1ix6U65jVQuecwlV
+ lhA/qXUAvv04w45OXOW7g2ftYdNO8pghZ8gGJx7o=
+DMARC-Filter: OpenDMARC Filter v1.3.2 smtp.codeaurora.org EBFD860388
+Authentication-Results: pdx-caf-mail.web.codeaurora.org;
+ dmarc=none (p=none dis=none) header.from=codeaurora.org
+Authentication-Results: pdx-caf-mail.web.codeaurora.org; spf=none
+ smtp.mailfrom=saiprakash.ranjan@codeaurora.org
+From: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>
+To: Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Mathieu Poirier <mathieu.poirier@linaro.org>,
+ Suzuki K Poulose <suzuki.poulose@arm.com>, Leo Yan <leo.yan@linaro.org>,
+ Alexander Shishkin <alexander.shishkin@linux.intel.com>,
+ Andy Gross <andy.gross@linaro.org>, David Brown <david.brown@linaro.org>,
+ Mark Rutland <mark.rutland@arm.com>
+Subject: [RESEND PATCHv5 0/2] coresight: Do not default to CPU0 for missing
+ CPU phandle
+Date: Thu,  4 Jul 2019 15:23:03 +0530
+Message-Id: <cover.1562229018.git.saiprakash.ranjan@codeaurora.org>
+X-Mailer: git-send-email 2.22.0
 MIME-Version: 1.0
-X-Originating-IP: [10.175.113.25]
-X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190704_024617_124108_BC4DBF70 
-X-CRM114-Status: GOOD (  10.54  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20190704_025316_944687_DC4D5F35 
+X-CRM114-Status: UNSURE (   9.77  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [45.249.212.35 listed in list.dnswl.org]
+ medium trust [198.145.29.96 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -64,38 +101,56 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: kernel-janitors@vger.kernel.org, linux-fbdev@vger.kernel.org,
- Wei Yongjun <weiyongjun1@huawei.com>, dri-devel@lists.freedesktop.org,
+Cc: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>,
+ Rajendra Nayak <rnayak@codeaurora.org>,
+ Marc Gonzalez <marc.w.gonzalez@free.fr>, linux-arm-msm@vger.kernel.org,
+ linux-kernel@vger.kernel.org, Sibi Sankar <sibis@codeaurora.org>,
+ Vivek Gautam <vivek.gautam@codeaurora.org>,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Fix the return value check which testing the wrong variable
-in imxfb_probe().
+In case of missing CPU phandle, the affinity is set default to
+CPU0 which is not a correct assumption. Fix this in coresight
+platform to set affinity to invalid and abort the probe in drivers.
+Also update the dt-bindings accordingly.
 
-Fixes: 739a6439c2bf ("video: fbdev: imxfb: fix sparse warnings about using incorrect types")
-Signed-off-by: Wei Yongjun <weiyongjun1@huawei.com>
----
- drivers/video/fbdev/imxfb.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+Resending with tags added.
 
-diff --git a/drivers/video/fbdev/imxfb.c b/drivers/video/fbdev/imxfb.c
-index 8d1053e9ef9f..b3286d1fa543 100644
---- a/drivers/video/fbdev/imxfb.c
-+++ b/drivers/video/fbdev/imxfb.c
-@@ -976,7 +976,7 @@ static int imxfb_probe(struct platform_device *pdev)
- 	fbi->map_size = PAGE_ALIGN(info->fix.smem_len);
- 	info->screen_buffer = dma_alloc_wc(&pdev->dev, fbi->map_size,
- 					   &fbi->map_dma, GFP_KERNEL);
--	if (!info->screen_base) {
-+	if (!info->screen_buffer) {
- 		dev_err(&pdev->dev, "Failed to allocate video RAM: %d\n", ret);
- 		ret = -ENOMEM;
- 		goto failed_map;
+v5:
+ * Separate out the dt-bindings patch.
 
+v4:
+ * Fix return for !CONFIG_ACPI and !CONFIG_OF.
 
+v3:
+ * Addressed review comments from Suzuki and updated
+   acpi_coresight_get_cpu.
+ * Removed patch 2 which had invalid check for online
+   cpus.
+
+v2:
+ * Addressed review comments from Suzuki and Mathieu.
+ * Allows the probe of etm and cpu-debug to abort earlier
+   in case of unavailability of respective cpus.
+
+Sai Prakash Ranjan (2):
+  dt-bindings: coresight: Change CPU phandle to required property
+  coresight: Do not default to CPU0 for missing CPU phandle
+
+ .../bindings/arm/coresight-cpu-debug.txt      |  4 ++--
+ .../devicetree/bindings/arm/coresight.txt     |  8 +++++---
+ .../hwtracing/coresight/coresight-cpu-debug.c |  3 +++
+ drivers/hwtracing/coresight/coresight-etm3x.c |  3 +++
+ drivers/hwtracing/coresight/coresight-etm4x.c |  3 +++
+ .../hwtracing/coresight/coresight-platform.c  | 20 +++++++++----------
+ 6 files changed, 26 insertions(+), 15 deletions(-)
+
+-- 
+QUALCOMM INDIA, on behalf of Qualcomm Innovation Center, Inc. is a member
+of Code Aurora Forum, hosted by The Linux Foundation
 
 
 _______________________________________________
