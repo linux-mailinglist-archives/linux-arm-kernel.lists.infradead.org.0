@@ -2,137 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9DA425F43A
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  4 Jul 2019 10:04:20 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id ED89F5F446
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  4 Jul 2019 10:06:42 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Cc:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=cL/nt3giG0r1FZVGTvwsgiaR5kuMZpHxpnMIB/oE6N0=; b=BpOE6sKyOc8pmT5mF3cADGcOMG
-	Td4RXwlanFIKM+vkaKGo01PCNJwZDkrGkLWlchoRbOgo3KeDwVmOfu0M4XZHYd5VSDuHLXM7m1f/A
-	q0YC6kk8vuJ5iGb7ZZts6KFFiiKKdKIvvBEn9EMCX9G7zGJ00DukHQqBw0ZIpfRf9UCWiE1KUAjkS
-	cKPs5WbcZkAeGkbGBAlyorQGVgG06OTipl8alDqt1WdEo1pgrvQR5zHiz2N1ZHPYWGgQPBx8Lh8aa
-	7tp5nk7Lp52Y4ovxJQ1wQNz5dYBhuaZWo8DTl9fCShm1iJecw2AAEijjk/T3i7aDnpk/qY0Dg3ObN
-	lY7C/syg==;
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=fucZJLSCvKq3jXRCMwgtcxj4k2WJqL/D68RaOfYjMLs=; b=U7xEq731ux0Q+v
+	Shj2+YYHcxlLT8zfRFGpxDHNavVSZtvmf00uv9ft+PkOMp8XZJ7IUg2tih7GmfGNyJN3R+V/1ywXG
+	i3o9pCY0vDSnmebow7OmUgQ1DT397yOVFZYudLRv7MxrzYsnDsw+RKY3PyOFgqsouNtKjQ3+xrjsr
+	2LyDghR+twnQKbnAVDehsZ+lY0L2TFZGTWIakxcdtRGYp02LfDVOTi2gwZPe2aAS/tlc9OElah2FJ
+	0I+2YOZ9llsq5RbSzdAkkEJBVnKQgPDYTyJxKUiKtlspqdhb7Ru+BT0lHuA7ML1kdGUHZs2Fpp+9J
+	yg/LBhPdKefQo8j2Xt0Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hiwj4-000424-KQ; Thu, 04 Jul 2019 08:04:18 +0000
-Received: from lelv0142.ext.ti.com ([198.47.23.249])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hiwiV-0003xc-Cx
- for linux-arm-kernel@lists.infradead.org; Thu, 04 Jul 2019 08:03:46 +0000
-Received: from fllv0035.itg.ti.com ([10.64.41.0])
- by lelv0142.ext.ti.com (8.15.2/8.15.2) with ESMTP id x6483QBk046220;
- Thu, 4 Jul 2019 03:03:26 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1562227406;
- bh=0kq++ky63kGYSgR8djc1FO813K4IO89kI5DZxoHH1Ls=;
- h=Subject:To:References:From:Date:In-Reply-To;
- b=v3Rl3LsLlDGsKmW/8RW/yIWhVVS8XfQTQ2NS6dlPI36OsKRxQf9cTRxz0yIaR7RbQ
- /v7N3xDAMCajJSdhY4wyW53dO3hj/VCZBFbS2wQCwXpX0EuEECVuI8ZkALvtMhQK+5
- 8IK5JaTNigxy+6m+EkiDhJ/5qHVvrF1GRauSmzGE=
-Received: from DLEE114.ent.ti.com (dlee114.ent.ti.com [157.170.170.25])
- by fllv0035.itg.ti.com (8.15.2/8.15.2) with ESMTPS id x6483Q5K060792
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Thu, 4 Jul 2019 03:03:26 -0500
-Received: from DLEE103.ent.ti.com (157.170.170.33) by DLEE114.ent.ti.com
- (157.170.170.25) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5; Thu, 4 Jul
- 2019 03:03:25 -0500
-Received: from lelv0327.itg.ti.com (10.180.67.183) by DLEE103.ent.ti.com
- (157.170.170.33) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5 via
- Frontend Transport; Thu, 4 Jul 2019 03:03:25 -0500
-Received: from [10.1.3.6] (ileax41-snat.itg.ti.com [10.172.224.153])
- by lelv0327.itg.ti.com (8.15.2/8.15.2) with ESMTP id x6483MZX009020;
- Thu, 4 Jul 2019 03:03:22 -0500
-Subject: Re: [PATCH 1/3] drm/bridge: sii902x: fix missing reference to mclk
- clock
-To: Olivier Moysan <olivier.moysan@st.com>, <a.hajda@samsung.com>,
- <narmstrong@baylibre.com>, <Laurent.pinchart@ideasonboard.com>,
- <jonas@kwiboo.se>, <jernej.skrabec@siol.net>, <airlied@linux.ie>,
- <daniel@ffwll.ch>, <dri-devel@lists.freedesktop.org>,
- <linux-kernel@vger.kernel.org>, <benjamin.gaignard@st.com>,
- <alexandre.torgue@st.com>, <linux-arm-kernel@lists.infradead.org>,
- <linux-stm32@st-md-mailman.stormreply.com>, <robh+dt@kernel.org>,
- <mark.rutland@arm.com>, <devicetree@vger.kernel.org>
-References: <1562082426-14876-1-git-send-email-olivier.moysan@st.com>
- <1562082426-14876-2-git-send-email-olivier.moysan@st.com>
-From: Jyri Sarha <jsarha@ti.com>
-Openpgp: preference=signencrypt
-Autocrypt: addr=jsarha@ti.com; prefer-encrypt=mutual; keydata=
- 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
-Message-ID: <36194ec6-2ea7-6c0d-6142-a6bb24a65ccb@ti.com>
-Date: Thu, 4 Jul 2019 11:03:21 +0300
+	id 1hiwlK-0005ih-VL; Thu, 04 Jul 2019 08:06:39 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hiwl5-0005i6-Ch
+ for linux-arm-kernel@lists.infradead.org; Thu, 04 Jul 2019 08:06:24 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 97DD6344;
+ Thu,  4 Jul 2019 01:06:22 -0700 (PDT)
+Received: from [10.1.197.45] (e112298-lin.cambridge.arm.com [10.1.197.45])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 5B5273F703;
+ Thu,  4 Jul 2019 01:06:21 -0700 (PDT)
+Subject: Re: [PATCH 53/59] KVM: arm64: nv: Implement maintenance interrupt
+ forwarding
+To: Marc Zyngier <marc.zyngier@arm.com>,
+ linux-arm-kernel@lists.infradead.org, kvmarm@lists.cs.columbia.edu,
+ kvm@vger.kernel.org
+References: <20190621093843.220980-1-marc.zyngier@arm.com>
+ <20190621093843.220980-54-marc.zyngier@arm.com>
+From: Julien Thierry <julien.thierry@arm.com>
+Message-ID: <d6d1e40d-e289-b957-0e30-d9d072cabfcb@arm.com>
+Date: Thu, 4 Jul 2019 09:06:20 +0100
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.7.1
+ Thunderbird/60.6.1
 MIME-Version: 1.0
-In-Reply-To: <1562082426-14876-2-git-send-email-olivier.moysan@st.com>
-Content-Language: en-GB
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
+In-Reply-To: <20190621093843.220980-54-marc.zyngier@arm.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190704_010343_542140_84B59A8D 
-X-CRM114-Status: GOOD (  15.29  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20190704_010623_559266_1A3B6FB1 
+X-CRM114-Status: GOOD (  26.55  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.23.249 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -144,48 +65,185 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
+Cc: Suzuki K Poulose <suzuki.poulose@arm.com>,
+ Andre Przywara <andre.przywara@arm.com>,
+ Christoffer Dall <christoffer.dall@arm.com>, Dave Martin <Dave.Martin@arm.com>,
+ James Morse <james.morse@arm.com>, Jintack Lim <jintack@cs.columbia.edu>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 02/07/2019 18:47, Olivier Moysan wrote:
-> Add devm_clk_get call to retrieve reference to master clock.
+
+
+On 21/06/2019 10:38, Marc Zyngier wrote:
+> When we take a maintenance interrupt, we need to decide whether
+> it is generated on an action from the guest, or if it is something
+> that needs to be forwarded to the guest hypervisor.
 > 
-> Fixes: ff5781634c41 ("drm/bridge: sii902x: Implement HDMI audio support")
-> 
-> Signed-off-by: Olivier Moysan <olivier.moysan@st.com>
-
-Reviewed-by: Jyri Sarha <jsarha@ti.com>
-
-I wonder how that line was dropped and how the code past my final test.
-Any way, this fix is definitely needed.
-
-Thanks,
-Jyri
-
+> Signed-off-by: Marc Zyngier <marc.zyngier@arm.com>
 > ---
->  drivers/gpu/drm/bridge/sii902x.c | 1 +
->  1 file changed, 1 insertion(+)
+>  arch/arm64/kvm/nested.c            |  2 +-
+>  virt/kvm/arm/vgic/vgic-init.c      | 30 ++++++++++++++++++++++++++++++
+>  virt/kvm/arm/vgic/vgic-v3-nested.c | 25 +++++++++++++++++++++----
+>  3 files changed, 52 insertions(+), 5 deletions(-)
 > 
-> diff --git a/drivers/gpu/drm/bridge/sii902x.c b/drivers/gpu/drm/bridge/sii902x.c
-> index dd7aa466b280..36acc256e67e 100644
-> --- a/drivers/gpu/drm/bridge/sii902x.c
-> +++ b/drivers/gpu/drm/bridge/sii902x.c
-> @@ -750,6 +750,7 @@ static int sii902x_audio_codec_init(struct sii902x *sii902x,
->  		sii902x->audio.i2s_fifo_sequence[i] |= audio_fifo_id[i] |
->  			i2s_lane_id[lanes[i]] |	SII902X_TPI_I2S_FIFO_ENABLE;
+> diff --git a/arch/arm64/kvm/nested.c b/arch/arm64/kvm/nested.c
+> index df2db9ab7cfb..ab61f0f30ee6 100644
+> --- a/arch/arm64/kvm/nested.c
+> +++ b/arch/arm64/kvm/nested.c
+> @@ -545,7 +545,7 @@ bool vgic_state_is_nested(struct kvm_vcpu *vcpu)
+>  	bool imo = __vcpu_sys_reg(vcpu, HCR_EL2) & HCR_IMO;
+>  	bool fmo = __vcpu_sys_reg(vcpu, HCR_EL2) & HCR_FMO;
 >  
-> +	sii902x->audio.mclk = devm_clk_get(dev, "mclk");
->  	if (IS_ERR(sii902x->audio.mclk)) {
->  		dev_err(dev, "%s: No clock (audio mclk) found: %ld\n",
->  			__func__, PTR_ERR(sii902x->audio.mclk));
-> 
+> -	WARN(imo != fmo, "Separate virtual IRQ/FIQ settings not supported\n");
+> +	WARN_ONCE(imo != fmo, "Separate virtual IRQ/FIQ settings not supported\n");
+>  
+>  	return nested_virt_in_use(vcpu) && imo && fmo && !is_hyp_ctxt(vcpu);
+>  }
+> diff --git a/virt/kvm/arm/vgic/vgic-init.c b/virt/kvm/arm/vgic/vgic-init.c
+> index 3bdb31eaed64..ec54bc8d5126 100644
+> --- a/virt/kvm/arm/vgic/vgic-init.c
+> +++ b/virt/kvm/arm/vgic/vgic-init.c
+> @@ -17,9 +17,11 @@
+>  #include <linux/uaccess.h>
+>  #include <linux/interrupt.h>
+>  #include <linux/cpu.h>
+> +#include <linux/irq.h>
+>  #include <linux/kvm_host.h>
+>  #include <kvm/arm_vgic.h>
+>  #include <asm/kvm_mmu.h>
+> +#include <asm/kvm_nested.h>
+>  #include "vgic.h"
+>  
+>  /*
+> @@ -240,6 +242,16 @@ int kvm_vgic_vcpu_init(struct kvm_vcpu *vcpu)
+>  	if (!irqchip_in_kernel(vcpu->kvm))
+>  		return 0;
+>  
+> +	if (nested_virt_in_use(vcpu)) {
+> +		/* FIXME: remove this hack */
+> +		if (vcpu->kvm->arch.vgic.maint_irq == 0)
+> +			vcpu->kvm->arch.vgic.maint_irq = kvm_vgic_global_state.maint_irq;
+> +		ret = kvm_vgic_set_owner(vcpu, vcpu->kvm->arch.vgic.maint_irq,
+> +					 vcpu);
 
+Having this here, does it mean that the userland needs to set the
+maintenance irq attribute before creating any vCPU for the VM?
+
+If so, should it be clarified in the documentation? Or is it a general
+rule that (vGIC?) attributes should be set before creating vCPUs?
+
+Cheers,
+
+Julien
+
+> +		if (ret)
+> +			return ret;
+> +	}
+> +
+>  	/*
+>  	 * If we are creating a VCPU with a GICv3 we must also register the
+>  	 * KVM io device for the redistributor that belongs to this VCPU.
+> @@ -455,12 +467,23 @@ static int vgic_init_cpu_dying(unsigned int cpu)
+>  
+>  static irqreturn_t vgic_maintenance_handler(int irq, void *data)
+>  {
+> +	struct kvm_vcpu *vcpu = *(struct kvm_vcpu **)data;
+> +
+>  	/*
+>  	 * We cannot rely on the vgic maintenance interrupt to be
+>  	 * delivered synchronously. This means we can only use it to
+>  	 * exit the VM, and we perform the handling of EOIed
+>  	 * interrupts on the exit path (see vgic_fold_lr_state).
+>  	 */
+> +
+> +	/* If not nested, deactivate */
+> +	if (!vcpu || !vgic_state_is_nested(vcpu)) {
+> +		irq_set_irqchip_state(irq, IRQCHIP_STATE_ACTIVE, false);
+> +		return IRQ_HANDLED;
+> +	}
+> +
+> +	/* Assume nested from now */
+> +	vgic_v3_handle_nested_maint_irq(vcpu);
+>  	return IRQ_HANDLED;
+>  }
+>  
+> @@ -531,6 +554,13 @@ int kvm_vgic_hyp_init(void)
+>  		return ret;
+>  	}
+>  
+> +	ret = irq_set_vcpu_affinity(kvm_vgic_global_state.maint_irq,
+> +				    kvm_get_running_vcpus());
+> +	if (ret) {
+> +		kvm_err("Error setting vcpu affinity\n");
+> +		goto out_free_irq;
+> +	}
+> +
+>  	ret = cpuhp_setup_state(CPUHP_AP_KVM_ARM_VGIC_INIT_STARTING,
+>  				"kvm/arm/vgic:starting",
+>  				vgic_init_cpu_starting, vgic_init_cpu_dying);
+> diff --git a/virt/kvm/arm/vgic/vgic-v3-nested.c b/virt/kvm/arm/vgic/vgic-v3-nested.c
+> index c917d49e4a14..7c5f82ae68e0 100644
+> --- a/virt/kvm/arm/vgic/vgic-v3-nested.c
+> +++ b/virt/kvm/arm/vgic/vgic-v3-nested.c
+> @@ -172,10 +172,20 @@ void vgic_v3_sync_nested(struct kvm_vcpu *vcpu)
+>  void vgic_v3_load_nested(struct kvm_vcpu *vcpu)
+>  {
+>  	struct vgic_cpu *vgic_cpu = &vcpu->arch.vgic_cpu;
+> +	struct vgic_irq *irq;
+> +	unsigned long flags;
+>  
+>  	vgic_cpu->shadow_vgic_v3 = vgic_cpu->nested_vgic_v3;
+>  	vgic_v3_create_shadow_lr(vcpu);
+>  	__vgic_v3_restore_state(vcpu_shadow_if(vcpu));
+> +
+> +	irq = vgic_get_irq(vcpu->kvm, vcpu, vcpu->kvm->arch.vgic.maint_irq);
+> +	raw_spin_lock_irqsave(&irq->irq_lock, flags);
+> +	if (irq->line_level || irq->active)
+> +		irq_set_irqchip_state(kvm_vgic_global_state.maint_irq,
+> +				      IRQCHIP_STATE_ACTIVE, true);
+> +	raw_spin_unlock_irqrestore(&irq->irq_lock, flags);
+> +	vgic_put_irq(vcpu->kvm, irq);
+>  }
+>  
+>  void vgic_v3_put_nested(struct kvm_vcpu *vcpu)
+> @@ -190,11 +200,14 @@ void vgic_v3_put_nested(struct kvm_vcpu *vcpu)
+>  	 */
+>  	vgic_v3_fixup_shadow_lr_state(vcpu);
+>  	vgic_cpu->nested_vgic_v3 = vgic_cpu->shadow_vgic_v3;
+> +	irq_set_irqchip_state(kvm_vgic_global_state.maint_irq,
+> +			      IRQCHIP_STATE_ACTIVE, false);
+>  }
+>  
+>  void vgic_v3_handle_nested_maint_irq(struct kvm_vcpu *vcpu)
+>  {
+>  	struct vgic_v3_cpu_if *cpu_if = vcpu_nested_if(vcpu);
+> +	bool state;
+>  
+>  	/*
+>  	 * If we exit a nested VM with a pending maintenance interrupt from the
+> @@ -202,8 +215,12 @@ void vgic_v3_handle_nested_maint_irq(struct kvm_vcpu *vcpu)
+>  	 * can re-sync the appropriate LRs and sample level triggered interrupts
+>  	 * again.
+>  	 */
+> -	if (vgic_state_is_nested(vcpu) &&
+> -	    (cpu_if->vgic_hcr & ICH_HCR_EN) &&
+> -	    vgic_v3_get_misr(vcpu))
+> -		kvm_inject_nested_irq(vcpu);
+> +	if (!vgic_state_is_nested(vcpu))
+> +		return;
+> +
+> +	state  = cpu_if->vgic_hcr & ICH_HCR_EN;
+> +	state &= vgic_v3_get_misr(vcpu);
+> +
+> +	kvm_vgic_inject_irq(vcpu->kvm, vcpu->vcpu_id,
+> +			    vcpu->kvm->arch.vgic.maint_irq, state, vcpu);
+>  }
+> 
 
 -- 
-Texas Instruments Finland Oy, Porkkalankatu 22, 00180 Helsinki.
-Y-tunnus/Business ID: 0615521-4. Kotipaikka/Domicile: Helsinki
+Julien Thierry
 
 _______________________________________________
 linux-arm-kernel mailing list
