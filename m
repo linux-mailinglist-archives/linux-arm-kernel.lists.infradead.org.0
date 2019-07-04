@@ -2,55 +2,89 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 026625FC35
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  4 Jul 2019 19:05:46 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C661C5FD08
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  4 Jul 2019 20:36:55 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jgPnbZglhW9xrGwpND2WSjNLhXIIUxaZkglTcgx2XJ8=; b=kkllDBTZix+F9g
-	uKz9CJGe1geblMR141IQhigLQZp3WjgsHG+g0pKay+lKaTh8/XkQNbeSR6oOmKFdOQ1SG1E5SsIbM
-	id4gCApHMc0LhqnBx9oZznsmnX6njeCORvGAjHtFofYpVWf5wmOoe6U4Vc/bkR5r8M5ybFpxLfpnt
-	hDZEklraLpfdkhGv72eryQcwOi0l57sQf2Shl9HFU8a/OqyUrnqkZL49b/lriowU0aEbxT+OokL36
-	VviNCqt9/xYMQBy+4U6HYhX1fxk6nnVdH8QSkZ+nBSZpY/mR2E/QW6PMFj2R+VC0Id8DLDDSowo6A
-	SJyKh8c/U2Jz2PUJz5Fg==;
+	List-Owner; bh=b17W1akdj/GhU1o1IOPlWdnVQvVx/MxEagsOM+sJiI8=; b=fPOANH2nBWpBeB
+	WTetpTKlZshMvP4XnxYXqLa/PfcLRllklZIcukgI+clQbWTdfDcwHsrBpOFtvlZ6B5c2+God4Jvw/
+	iqHI3V6mwInJOzracMoepNqzK3s2AHSb7i7Jds8o28GC25CgH/kw3EcU+TdKvV+EeY6KpY6pmvPzw
+	z4rT++MQS5MfQyY5M3+7lzZOFrAOInRHBJP6GLQuGo1UoK19vNHWIj4sSKcxNogcTLsrtxDk7tUS9
+	avfygbioODtsM33qAhV0w3FLB8/RnUa2mvJ9KzyNBDP2KocDiNIkV2+8yaWIzFkFZAcYAmO5Yex4h
+	xHT/8sdST5LvfiXjJs3w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hj5B2-0006SR-Ig; Thu, 04 Jul 2019 17:05:44 +0000
-Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
+	id 1hj6bF-0002j4-6I; Thu, 04 Jul 2019 18:36:53 +0000
+Received: from lelv0142.ext.ti.com ([198.47.23.249])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hj5AB-0004z8-B0; Thu, 04 Jul 2019 17:04:53 +0000
-Received: from [IPv6:2804:431:c7f5:f63c:d711:794d:1c68:5ed3] (unknown
- [IPv6:2804:431:c7f5:f63c:d711:794d:1c68:5ed3])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested) (Authenticated sender: tonyk)
- by bhuna.collabora.co.uk (Postfix) with ESMTPSA id B79B728B0E7;
- Thu,  4 Jul 2019 18:04:43 +0100 (BST)
-Subject: Re: [PATCH v7 11/14] dt-bindings: Document the Rockchip MIPI RX D-PHY
- bindings
-To: Helen Koike <helen.koike@collabora.com>, linux-rockchip@lists.infradead.org
-References: <20190703190910.32633-1-helen.koike@collabora.com>
- <20190703190910.32633-12-helen.koike@collabora.com>
-From: =?UTF-8?Q?Andr=c3=a9_Almeida?= <andrealmeid@collabora.com>
-Message-ID: <e9102ab5-3e79-bda5-fefc-0541958c215f@collabora.com>
-Date: Thu, 4 Jul 2019 14:04:00 -0300
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ id 1hj6ab-0002Y7-65; Thu, 04 Jul 2019 18:36:15 +0000
+Received: from lelv0265.itg.ti.com ([10.180.67.224])
+ by lelv0142.ext.ti.com (8.15.2/8.15.2) with ESMTP id x64Ia5PO086916;
+ Thu, 4 Jul 2019 13:36:05 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
+ s=ti-com-17Q1; t=1562265365;
+ bh=4JPL9pnm+iB2iTUZQC/vFrSNpJCZTCAhwh/sCW9W0hg=;
+ h=Subject:To:CC:References:From:Date:In-Reply-To;
+ b=RiGaM3sZYABJcMlEOQsoFKMXW95tlVPvdN9xHnN3UWdFVEiueQnnJMoFd+jd87Tj7
+ KBQQ3EjQwQD46s54gHhKfLow4caRNZZDTSXqdDjvaCNP4RqOfB/OMRWbu+mlTEFI4M
+ bWU0Tfg37Z2drLzHzo5m4xnA6TOUQHBqFm2tBa9k=
+Received: from DLEE108.ent.ti.com (dlee108.ent.ti.com [157.170.170.38])
+ by lelv0265.itg.ti.com (8.15.2/8.15.2) with ESMTPS id x64Ia51u127311
+ (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
+ Thu, 4 Jul 2019 13:36:05 -0500
+Received: from DLEE107.ent.ti.com (157.170.170.37) by DLEE108.ent.ti.com
+ (157.170.170.38) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5; Thu, 4 Jul
+ 2019 13:36:04 -0500
+Received: from lelv0327.itg.ti.com (10.180.67.183) by DLEE107.ent.ti.com
+ (157.170.170.37) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5 via
+ Frontend Transport; Thu, 4 Jul 2019 13:36:04 -0500
+Received: from [10.250.132.195] (ileax41-snat.itg.ti.com [10.172.224.153])
+ by lelv0327.itg.ti.com (8.15.2/8.15.2) with ESMTP id x64IZwM5127168;
+ Thu, 4 Jul 2019 13:35:59 -0500
+Subject: Re: [PATCH v8 3/5] mtd: Add support for HyperBus memory devices
+To: Sergei Shtylyov <sergei.shtylyov@cogentembedded.com>, Boris Brezillon
+ <bbrezillon@kernel.org>, Marek Vasut <marek.vasut@gmail.com>, Richard
+ Weinberger <richard@nod.at>, Rob Herring <robh+dt@kernel.org>
+References: <20190625075746.10439-1-vigneshr@ti.com>
+ <20190625075746.10439-4-vigneshr@ti.com>
+ <31657fd1-c1c9-7672-14c1-e6f67eee6ac1@cogentembedded.com>
+ <5009c418-a051-a42a-f78a-360f7230dd2b@ti.com>
+ <8e870356-90ba-4762-b1fd-8a13ce6ebcc8@cogentembedded.com>
+From: Vignesh Raghavendra <vigneshr@ti.com>
+Message-ID: <45f0beda-08a6-5db7-a8f1-a63b6e879b81@ti.com>
+Date: Fri, 5 Jul 2019 00:05:58 +0530
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:60.0) Gecko/20100101
  Thunderbird/60.7.2
 MIME-Version: 1.0
-In-Reply-To: <20190703190910.32633-12-helen.koike@collabora.com>
+In-Reply-To: <8e870356-90ba-4762-b1fd-8a13ce6ebcc8@cogentembedded.com>
 Content-Language: en-US
+X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190704_100451_518104_8D55D507 
-X-CRM114-Status: GOOD (  18.46  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20190704_113613_375848_3B50C219 
+X-CRM114-Status: GOOD (  21.71  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [198.47.23.249 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -62,59 +96,170 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- eddie.cai.linux@gmail.com, kernel@collabora.com, heiko@sntech.de,
- Rob Herring <robh@kernel.org>, jacob2.chen@rock-chips.com,
- jeffy.chen@rock-chips.com, zyc@rock-chips.com, linux-kernel@vger.kernel.org,
- tfiga@chromium.org, Rob Herring <robh+dt@kernel.org>, hans.verkuil@cisco.com,
- laurent.pinchart@ideasonboard.com, sakari.ailus@linux.intel.com,
- zhengsq@rock-chips.com, mchehab@kernel.org, ezequiel@collabora.com,
- linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: devicetree@vger.kernel.org, Tokunori Ikegami <ikegami.t@gmail.com>,
+ linux-kernel@vger.kernel.org, linux-mtd@lists.infradead.org,
+ Miquel Raynal <miquel.raynal@bootlin.com>,
+ Mason Yang <masonccyang@mxic.com.tw>, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-SGVsbG8gSGVsZW4sCgpPbiA3LzMvMTkgNDowOSBQTSwgSGVsZW4gS29pa2Ugd3JvdGU6Cj4gRnJv
-bTogSmFjb2IgQ2hlbiA8amFjb2IyLmNoZW5Acm9jay1jaGlwcy5jb20+Cj4KPiBBZGQgRFQgYmlu
-ZGluZ3MgZG9jdW1lbnRhdGlvbiBmb3IgUm9ja2NoaXAgTUlQSSBELVBIWSBSWAo+Cj4gU2lnbmVk
-LW9mZi1ieTogSmFjb2IgQ2hlbiA8amFjb2IyLmNoZW5Acm9jay1jaGlwcy5jb20+Cj4gUmV2aWV3
-ZWQtYnk6IFJvYiBIZXJyaW5nIDxyb2JoQGtlcm5lbC5vcmc+Cj4gW3VwZGF0ZSBmb3IgdXBzdHJl
-YW1dCj4gU2lnbmVkLW9mZi1ieTogSGVsZW4gS29pa2UgPGhlbGVuLmtvaWtlQGNvbGxhYm9yYS5j
-b20+Cj4KPiAtLS0KPgo+IENoYW5nZXMgaW4gdjc6Cj4gLSB1cGRhdGVkIGRvYyB3aXRoIG5ldyBk
-ZXNpZ24gYW5kIHRlc3RlZCBleGFtcGxlCj4KPiAgLi4uL2JpbmRpbmdzL21lZGlhL3JvY2tjaGlw
-LW1pcGktZHBoeS50eHQgICAgIHwgMzggKysrKysrKysrKysrKysrKysrKwo+ICAxIGZpbGUgY2hh
-bmdlZCwgMzggaW5zZXJ0aW9ucygrKQo+ICBjcmVhdGUgbW9kZSAxMDA2NDQgRG9jdW1lbnRhdGlv
-bi9kZXZpY2V0cmVlL2JpbmRpbmdzL21lZGlhL3JvY2tjaGlwLW1pcGktZHBoeS50eHQKPgo+IGRp
-ZmYgLS1naXQgYS9Eb2N1bWVudGF0aW9uL2RldmljZXRyZWUvYmluZGluZ3MvbWVkaWEvcm9ja2No
-aXAtbWlwaS1kcGh5LnR4dCBiL0RvY3VtZW50YXRpb24vZGV2aWNldHJlZS9iaW5kaW5ncy9tZWRp
-YS9yb2NrY2hpcC1taXBpLWRwaHkudHh0Cj4gbmV3IGZpbGUgbW9kZSAxMDA2NDQKPiBpbmRleCAw
-MDAwMDAwMDAwMDAuLjIzMDVkNDRkOTJkYgo+IC0tLSAvZGV2L251bGwKPiArKysgYi9Eb2N1bWVu
-dGF0aW9uL2RldmljZXRyZWUvYmluZGluZ3MvbWVkaWEvcm9ja2NoaXAtbWlwaS1kcGh5LnR4dAo+
-IEBAIC0wLDAgKzEsMzggQEAKPiArUm9ja2NoaXAgU29DIE1JUEkgUlggRC1QSFkKPiArLS0tLS0t
-LS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLQpI
-ZXJlIEkgd291bGQgYWxzbyByZW1vdmUgdGhvc2UgZXh0cmEgYC0tLWAuCgpUaGFua3MsCsKgwqDC
-oCBBbmRyw6kKPiArCj4gK1JlcXVpcmVkIHByb3BlcnRpZXM6Cj4gKy0gY29tcGF0aWJsZTogdmFs
-dWUgc2hvdWxkIGJlIG9uZSBvZiB0aGUgZm9sbG93aW5nCj4gKwkicm9ja2NoaXAscmszMjg4LW1p
-cGktZHBoeSIKPiArCSJyb2NrY2hpcCxyazMzOTktbWlwaS1kcGh5Igo+ICstIGNsb2NrcyA6IGxp
-c3Qgb2YgY2xvY2sgc3BlY2lmaWVycywgY29ycmVzcG9uZGluZyB0byBlbnRyaWVzIGluCj4gKwlj
-bG9jay1uYW1lcyBwcm9wZXJ0eTsKPiArLSBjbG9jay1uYW1lczogcmVxdWlyZWQgY2xvY2sgbmFt
-ZS4KPiArLSAjcGh5LWNlbGxzOiBOdW1iZXIgb2YgY2VsbHMgaW4gYSBQSFkgc3BlY2lmaWVyOyBT
-aG91bGQgYmUgMC4KPiArCj4gK01JUEkgUlggRC1QSFkgdXNlIHJlZ2lzdGVycyBpbiAiZ2VuZXJh
-bCByZWdpc3RlciBmaWxlcyIsIGl0Cj4gK3Nob3VsZCBiZSBhIGNoaWxkIG9mIHRoZSBHUkYuCj4g
-Kwo+ICtPcHRpb25hbCBwcm9wZXJ0aWVzOgo+ICstIHJlZzogb2Zmc2V0IGFuZCBsZW5ndGggb2Yg
-dGhlIHJlZ2lzdGVyIHNldCBmb3IgdGhlIGRldmljZS4KPiArLSByb2NrY2hpcCxncmY6IE1JUEkg
-VFgxUlgxIEQtUEhZIG5vdCBvbmx5IGhhcyBpdHMgb3duIHJlZ2lzdGVyIGJ1dCBhbHNvCj4gKwkJ
-dGhlIEdSRiwgc28gaXQgaXMgb25seSBuZWNlc3NhcnkgZm9yIE1JUEkgVFgxUlgxIEQtUEhZLgo+
-ICsKPiArRGV2aWNlIG5vZGUgZXhhbXBsZQo+ICstLS0tLS0tLS0tLS0tLS0tLS0tCj4gKwo+ICtn
-cmY6IHN5c2NvbkBmZjc3MDAwMCB7Cj4gKwljb21wYXRpYmxlID0gInJvY2tjaGlwLHJrMzM5OS1n
-cmYiLCAic3lzY29uIiwgInNpbXBsZS1tZmQiOwo+ICsKPiArLi4uCj4gKwo+ICsJZHBoeTogbWlw
-aS1kcGh5IHsKPiArCQljb21wYXRpYmxlID0gInJvY2tjaGlwLHJrMzM5OS1taXBpLWRwaHkiOwo+
-ICsJCWNsb2NrcyA9IDwmY3J1IFNDTEtfTUlQSURQSFlfUkVGPiwKPiArCQkJPCZjcnUgU0NMS19E
-UEhZX1JYMF9DRkc+LAo+ICsJCQk8JmNydSBQQ0xLX1ZJT19HUkY+Owo+ICsJCWNsb2NrLW5hbWVz
-ID0gImRwaHktcmVmIiwgImRwaHktY2ZnIiwgImdyZiI7Cj4gKwkJcG93ZXItZG9tYWlucyA9IDwm
-cG93ZXIgUkszMzk5X1BEX1ZJTz47Cj4gKwkJI3BoeS1jZWxscyA9IDwwPjsKPiArCX07Cj4gK307
-CgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1h
-cm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5v
-cmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0t
-a2VybmVsCg==
+
+
+On 03-Jul-19 11:44 PM, Sergei Shtylyov wrote:
+> Hello!
+> 
+> On 07/03/2019 07:41 AM, Vignesh Raghavendra wrote:
+> 
+>>>> Cypress' HyperBus is Low Signal Count, High Performance Double Data Rate
+>>>> Bus interface between a host system master and one or more slave
+>>>> interfaces. HyperBus is used to connect microprocessor, microcontroller,
+>>>> or ASIC devices with random access NOR flash memory (called HyperFlash)
+>>>> or self refresh DRAM (called HyperRAM).
+>>>>
+>>>> Its a 8-bit data bus (DQ[7:0]) with  Read-Write Data Strobe (RWDS)
+>>>> signal and either Single-ended clock(3.0V parts) or Differential clock
+>>>> (1.8V parts). It uses ChipSelect lines to select b/w multiple slaves.
+>>>> At bus level, it follows a separate protocol described in HyperBus
+>>>> specification[1].
+>>>>
+>>>> HyperFlash follows CFI AMD/Fujitsu Extended Command Set (0x0002) similar
+>>>> to that of existing parallel NORs. Since HyperBus is x8 DDR bus,
+>>>> its equivalent to x16 parallel NOR flash with respect to bits per clock
+>>>> cycle. But HyperBus operates at >166MHz frequencies.
+>>>> HyperRAM provides direct random read/write access to flash memory
+>>>> array.
+>>>>
+>>>> But, HyperBus memory controllers seem to abstract implementation details
+>>>> and expose a simple MMIO interface to access connected flash.
+>>>>
+>>>> Add support for registering HyperFlash devices with MTD framework. MTD
+>>>> maps framework along with CFI chip support framework are used to support
+>>>> communicating with flash.
+>>>>
+>>>> Framework is modelled along the lines of spi-nor framework. HyperBus
+>>>> memory controller (HBMC) drivers calls hyperbus_register_device() to
+>>>> register a single HyperFlash device. HyperFlash core parses MMIO access
+>>>> information from DT, sets up the map_info struct, probes CFI flash and
+>>>> registers it with MTD framework.
+>>>>
+>>>> Some HBMC masters need calibration/training sequence[3] to be carried
+>>>> out, in order for DLL inside the controller to lock, by reading a known
+>>>> string/pattern. This is done by repeatedly reading CFI Query
+>>>> Identification String. Calibration needs to be done before trying to detect
+>>>> flash as part of CFI flash probe.
+>>>>
+>>>> HyperRAM is not supported at the moment.
+>>>>
+>>>> HyperBus specification can be found at[1]
+>>>> HyperFlash datasheet can be found at[2]
+>>>>
+>>>> [1] https://www.cypress.com/file/213356/download
+>>>> [2] https://www.cypress.com/file/213346/download
+>>>> [3] http://www.ti.com/lit/ug/spruid7b/spruid7b.pdf
+>>>>     Table 12-5741. HyperFlash Access Sequence
+>>>>
+>>>> Signed-off-by: Vignesh Raghavendra <vigneshr@ti.com>
+>>> [...]
+>>>
+>>>    I have at least created my HyperBus driver and unfortunately I'm having serious
+> 
+>    At last. :-)
+> 
+
+So, I guess driver works for limited memory size?
+
+>>> issues with the design of the support core (see below)...
+>>>
+>>> [...]
+>>>> diff --git a/drivers/mtd/hyperbus/hyperbus-core.c b/drivers/mtd/hyperbus/hyperbus-core.c
+>>>> new file mode 100644
+>>>> index 000000000000..63a9e64895bc
+>>>> --- /dev/null
+>>>> +++ b/drivers/mtd/hyperbus/hyperbus-core.c
+>>>> @@ -0,0 +1,154 @@
+>>> [...]
+>>>> +int hyperbus_register_device(struct hyperbus_device *hbdev)
+>>>> +{
+>>>> +	const struct hyperbus_ops *ops;
+>>>> +	struct hyperbus_ctlr *ctlr;
+>>>> +	struct device_node *np;
+>>>> +	struct map_info *map;
+>>>> +	struct resource res;
+>>>> +	struct device *dev;
+>>>> +	int ret;
+>>>> +
+>>>> +	if (!hbdev || !hbdev->np || !hbdev->ctlr || !hbdev->ctlr->dev) {
+>>>> +		pr_err("hyperbus: please fill all the necessary fields!\n");
+>>>> +		return -EINVAL;
+>>>> +	}
+>>>> +
+>>>> +	np = hbdev->np;
+>>>> +	ctlr = hbdev->ctlr;
+>>>> +	if (!of_device_is_compatible(np, "cypress,hyperflash"))
+>>>> +		return -ENODEV;
+>>>> +
+>>>> +	hbdev->memtype = HYPERFLASH;
+>>>> +
+>>>> +	ret = of_address_to_resource(np, 0, &res);
+>>>
+>>>    Hm, I doubt that the HB devices are wholly mapped into memory space, that seems
+>>> like a property of the HB controller. In my case, the flash device in the DT has
+>>> only single-cell "reg" prop (equal to the chip select #). Then this function returns 
+>>> -EINVAL and the registration fails. Also, in my case such mapping is R/O, not R/W.
+>>>
+>>
+>> You could declare R/O MMIO region in controla and set up a translation using ranges
+>> from slave's reg CS based reg mapping like:
+> 
+>    No, not all HB controllers work the same (simple) way as yours. In case of RPC-IF,
+> the direct read map is a 64 MiB window into a possibly larger flash chip, it has a
+> register supplying address bits 25:31...
+
+Okay, this limitation was not made clear earlier. I thought RPC-IF also
+supported MMIO accesses for all reads
+
+I will look into changes needed to support HB controllers that don't
+have MMIO interface next week.
+
+Regards
+Vignesh
+
+> 
+>> +	hbmc: hyperbus@47034000 {
+>> +		compatible = "ti,am654-hbmc";
+>> +		reg = <0x0 0x47034000 0x0 0x100>,
+>> +			<0x5 0x00000000 0x1 0x0000000>;
+>> +		#address-cells = <2>;
+>> +		#size-cells = <1>;
+>> +		ranges = <0x0 0x0 0x5 0x00000000 0x4000000>, /* CS0 - 64MB */
+>> +			 <0x1 0x0 0x5 0x04000000 0x4000000>; /* CS1 - 64MB */
+>> +
+>> +		/* Slave flash node */
+>> +		flash@0,0 {
+>> +			compatible = "cypress,hyperflash", "cfi-flash";
+>> +			reg = <0x0 0x0 0x4000000>;
+>> +		};
+>> +	};
+>>
+>> If you use just CS# how would you handle CS to MMIO region mapping? 
+>> Does both CS use the same MMIO base for reads?
+> 
+>    The RPC-IF HF mode only has a single CS signal.
+> 
+
+I see...
+
+> [...]
+> 
+> MBR, Sergei
+> 
+
+Regards
+Vignesh
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
