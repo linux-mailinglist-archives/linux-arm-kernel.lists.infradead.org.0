@@ -2,36 +2,36 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 46AA85F60A
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  4 Jul 2019 11:53:33 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C82CE5F611
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  4 Jul 2019 11:53:54 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=2qCLWj6K2UqZuOk1jsSISnP7CaaMLq9RbAJavJ3BqgU=; b=GDqkvfzOjm1htp
-	8KjyMh4g+fLYQbYlD3CK4yEKnHD5vHk5rveyvoecbSUcWIfasLjMmwi6iQLdmMatUtmHhGezM4cWe
-	GsaqreQV3k6CHHUUOb3JIaMtI0RK2bVBLho7H6/GCpH7qgN0Dd1tQeZsYv/rQ6yBABan6Eu43zGI3
-	urrgpOea+bjL3bDtVIONKDoNJkD7DJ8uAA1qYk2fqUbL8Wi/lEITS9VuEOcfQxgqBEiNqiLoEsJK2
-	CTmpcoU1uzQ40VshPRhXBZPlxRfhdgZwgSQWjlxOzlqOTpVPfxi8WdD69/Q1dR/GAvDw1s9VP3mnX
-	I35AFBquzcYuEeXZZGag==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=1Ow1ajFHmvhnDBdHH9mxPsffgKS5BG/BOiOvtPSQsgE=; b=ZLxHOCGUBX9eCs
+	EXwSnoB9nM2uASTU42eqMnt9bDB/+BpLn1/aYfehGT00qEaYan2f7deqwyuGRjZCllrGjEkyIy9fo
+	desK2p46yLTyGhbmCPgdADtfmHhrHQmq+ugw5zZLbwkDptWFfy5X6xkPZlD9N4S3q5EtLHh36P+Sd
+	rUA7fJqfluNawumQLJjRZuj6//c5YRC6w+CqduCKXPuzXWlwN+0MuoBQJ+LMnFAXG6Rp+r21h0XLM
+	EP3mLDX0oqg7T6N+vLUdRSVfLJ6NbFglYo3F8fHwRhieKfNYtLiE5C7J2ntumzrCnd8quIKoINAgA
+	6+ZMYKe09rZRy9rVwo0A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hiyQk-000593-61; Thu, 04 Jul 2019 09:53:30 +0000
+	id 1hiyR7-0005QC-4a; Thu, 04 Jul 2019 09:53:53 +0000
 Received: from smtp.codeaurora.org ([198.145.29.96])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hiyQW-000586-S4
- for linux-arm-kernel@lists.infradead.org; Thu, 04 Jul 2019 09:53:18 +0000
+ id 1hiyQe-0005ES-Cq
+ for linux-arm-kernel@lists.infradead.org; Thu, 04 Jul 2019 09:53:25 +0000
 Received: by smtp.codeaurora.org (Postfix, from userid 1000)
- id DBD7860A33; Thu,  4 Jul 2019 09:53:15 +0000 (UTC)
+ id 217B560E5F; Thu,  4 Jul 2019 09:53:23 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=codeaurora.org;
- s=default; t=1562233995;
- bh=QeoQfyhhocOPz+WPQ+yiBCio4xbmUZqRMcevfLOOPG8=;
- h=From:To:Cc:Subject:Date:From;
- b=CH5IIIxktA5ZMJmlg7boC+GmPk5bhNpN0D/joDdldLgZ6H4vfk56ZPhQKcxGCdHIf
- AFKTmzi6Ab4KBn9RjxrQVRl4YGK4gbs2dmDiGg+JsFrDyOifQi1ix6U65jVQuecwlV
- lhA/qXUAvv04w45OXOW7g2ftYdNO8pghZ8gGJx7o=
+ s=default; t=1562234004;
+ bh=lSCRmpdQlCEd/Kj8Ntu2jR3/PZflhefTpXcBTNR9qDk=;
+ h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+ b=Y4uuTthmGafAC0u/UrIeqk12SrX26Bg6zbfUaqfUNB+A/rQapXdLSOh3Semg+idZg
+ m+LkjMQlXRaNlodRbxv5H6dozjMPAuUZ1RO1L6wu65nUnkhSC/7uO1LGLUWMKuV+6C
+ 38cTy0rkYkvVRTIuiDJA9hIgvj8iXiuNux9+pBBQ=
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
  pdx-caf-mail.web.codeaurora.org
 X-Spam-Level: 
@@ -43,16 +43,16 @@ Received: from blr-ubuntu-311.qualcomm.com
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-SHA256 (128/128 bits))
  (No client certificate requested)
  (Authenticated sender: saiprakash.ranjan@codeaurora.org)
- by smtp.codeaurora.org (Postfix) with ESMTPSA id EBFD860388;
- Thu,  4 Jul 2019 09:53:10 +0000 (UTC)
+ by smtp.codeaurora.org (Postfix) with ESMTPSA id 414FB60A44;
+ Thu,  4 Jul 2019 09:53:17 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=codeaurora.org;
- s=default; t=1562233995;
- bh=QeoQfyhhocOPz+WPQ+yiBCio4xbmUZqRMcevfLOOPG8=;
- h=From:To:Cc:Subject:Date:From;
- b=CH5IIIxktA5ZMJmlg7boC+GmPk5bhNpN0D/joDdldLgZ6H4vfk56ZPhQKcxGCdHIf
- AFKTmzi6Ab4KBn9RjxrQVRl4YGK4gbs2dmDiGg+JsFrDyOifQi1ix6U65jVQuecwlV
- lhA/qXUAvv04w45OXOW7g2ftYdNO8pghZ8gGJx7o=
-DMARC-Filter: OpenDMARC Filter v1.3.2 smtp.codeaurora.org EBFD860388
+ s=default; t=1562234001;
+ bh=lSCRmpdQlCEd/Kj8Ntu2jR3/PZflhefTpXcBTNR9qDk=;
+ h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+ b=IDed2RoA9pvh4fkzjnfjW6cplh1uxpriqW9kZW7wY1JcEwBlX+Kf3AuiSDv0b8shZ
+ aciHGwkeIZJrSFlm6YdhGA78o9Y5wrMeLIssWaKwXzYnhVaT1ajxY9N3v0nW/aGAD6
+ iVD37F0EqmGjwBQbqSp3UIo4yNVH0q1fTimnZBEA=
+DMARC-Filter: OpenDMARC Filter v1.3.2 smtp.codeaurora.org 414FB60A44
 Authentication-Results: pdx-caf-mail.web.codeaurora.org;
  dmarc=none (p=none dis=none) header.from=codeaurora.org
 Authentication-Results: pdx-caf-mail.web.codeaurora.org; spf=none
@@ -64,16 +64,17 @@ To: Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
  Alexander Shishkin <alexander.shishkin@linux.intel.com>,
  Andy Gross <andy.gross@linaro.org>, David Brown <david.brown@linaro.org>,
  Mark Rutland <mark.rutland@arm.com>
-Subject: [RESEND PATCHv5 0/2] coresight: Do not default to CPU0 for missing
- CPU phandle
-Date: Thu,  4 Jul 2019 15:23:03 +0530
-Message-Id: <cover.1562229018.git.saiprakash.ranjan@codeaurora.org>
+Subject: [RESEND PATCHv5 1/2] dt-bindings: coresight: Change CPU phandle to
+ required property
+Date: Thu,  4 Jul 2019 15:23:04 +0530
+Message-Id: <0f7f4105d5ffea6ca4313271f3b3fee69da2106a.1562229018.git.saiprakash.ranjan@codeaurora.org>
 X-Mailer: git-send-email 2.22.0
+In-Reply-To: <cover.1562229018.git.saiprakash.ranjan@codeaurora.org>
+References: <cover.1562229018.git.saiprakash.ranjan@codeaurora.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190704_025316_944687_DC4D5F35 
-X-CRM114-Status: UNSURE (   9.77  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190704_025324_518659_418ED2B6 
+X-CRM114-Status: GOOD (  13.60  )
 X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.5 points)
@@ -112,42 +113,60 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-In case of missing CPU phandle, the affinity is set default to
-CPU0 which is not a correct assumption. Fix this in coresight
-platform to set affinity to invalid and abort the probe in drivers.
-Also update the dt-bindings accordingly.
+Do not assume the affinity to CPU0 if cpu phandle is omitted.
+Update the DT binding rules to reflect the same by changing it
+to a required property.
 
-Resending with tags added.
+Signed-off-by: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>
+Reviewed-by: Suzuki K Poulose <suzuki.poulose@arm.com>
+Tested-by: Mathieu Poirier <mathieu.poirier@linaro.org>
+Reviewed-by: Mathieu Poirier <mathieu.poirier@linaro.org>
+---
+ .../devicetree/bindings/arm/coresight-cpu-debug.txt       | 4 ++--
+ Documentation/devicetree/bindings/arm/coresight.txt       | 8 +++++---
+ 2 files changed, 7 insertions(+), 5 deletions(-)
 
-v5:
- * Separate out the dt-bindings patch.
-
-v4:
- * Fix return for !CONFIG_ACPI and !CONFIG_OF.
-
-v3:
- * Addressed review comments from Suzuki and updated
-   acpi_coresight_get_cpu.
- * Removed patch 2 which had invalid check for online
-   cpus.
-
-v2:
- * Addressed review comments from Suzuki and Mathieu.
- * Allows the probe of etm and cpu-debug to abort earlier
-   in case of unavailability of respective cpus.
-
-Sai Prakash Ranjan (2):
-  dt-bindings: coresight: Change CPU phandle to required property
-  coresight: Do not default to CPU0 for missing CPU phandle
-
- .../bindings/arm/coresight-cpu-debug.txt      |  4 ++--
- .../devicetree/bindings/arm/coresight.txt     |  8 +++++---
- .../hwtracing/coresight/coresight-cpu-debug.c |  3 +++
- drivers/hwtracing/coresight/coresight-etm3x.c |  3 +++
- drivers/hwtracing/coresight/coresight-etm4x.c |  3 +++
- .../hwtracing/coresight/coresight-platform.c  | 20 +++++++++----------
- 6 files changed, 26 insertions(+), 15 deletions(-)
-
+diff --git a/Documentation/devicetree/bindings/arm/coresight-cpu-debug.txt b/Documentation/devicetree/bindings/arm/coresight-cpu-debug.txt
+index 298291211ea4..f1de3247c1b7 100644
+--- a/Documentation/devicetree/bindings/arm/coresight-cpu-debug.txt
++++ b/Documentation/devicetree/bindings/arm/coresight-cpu-debug.txt
+@@ -26,8 +26,8 @@ Required properties:
+ 		processor core is clocked by the internal CPU clock, so it
+ 		is enabled with CPU clock by default.
+ 
+-- cpu : the CPU phandle the debug module is affined to. When omitted
+-	the module is considered to belong to CPU0.
++- cpu : the CPU phandle the debug module is affined to. Do not assume it
++        to default to CPU0 if omitted.
+ 
+ Optional properties:
+ 
+diff --git a/Documentation/devicetree/bindings/arm/coresight.txt b/Documentation/devicetree/bindings/arm/coresight.txt
+index 8a88ddebc1a2..fcc3bacfd8bc 100644
+--- a/Documentation/devicetree/bindings/arm/coresight.txt
++++ b/Documentation/devicetree/bindings/arm/coresight.txt
+@@ -59,6 +59,11 @@ its hardware characteristcs.
+ 
+ 	* port or ports: see "Graph bindings for Coresight" below.
+ 
++* Additional required property for Embedded Trace Macrocell (version 3.x and
++  version 4.x):
++	* cpu: the cpu phandle this ETM/PTM is affined to. Do not
++	  assume it to default to CPU0 if omitted.
++
+ * Additional required properties for System Trace Macrocells (STM):
+ 	* reg: along with the physical base address and length of the register
+ 	  set as described above, another entry is required to describe the
+@@ -87,9 +92,6 @@ its hardware characteristcs.
+ 	* arm,cp14: must be present if the system accesses ETM/PTM management
+ 	  registers via co-processor 14.
+ 
+-	* cpu: the cpu phandle this ETM/PTM is affined to. When omitted the
+-	  source is considered to belong to CPU0.
+-
+ * Optional property for TMC:
+ 
+ 	* arm,buffer-size: size of contiguous buffer space for TMC ETR
 -- 
 QUALCOMM INDIA, on behalf of Qualcomm Innovation Center, Inc. is a member
 of Code Aurora Forum, hosted by The Linux Foundation
