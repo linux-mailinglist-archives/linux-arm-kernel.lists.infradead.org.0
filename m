@@ -2,85 +2,63 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 611E55F778
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  4 Jul 2019 13:50:39 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id EE1095F78A
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  4 Jul 2019 13:54:50 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:Date:Subject:To:
-	From:Message-ID:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=xBHdnHEtawgKmrA5gpCZVgyL152Fgq7TwG3JAPyVM1g=; b=X35rXxxmO/urI+
-	sYA7DaIwtoRweMNIGtiw10x49T45HbuFQXmdp/yrN7CZ2IfgAThAde/YyvF7JwpHvnwJPirMgUSDN
-	Aw1O5V+oHfZGFL0A4L4wU+tnaUQf9MaE+uI+k27/pN4vlmpkyDaVgz4hZGUDTzRjvOMUaI236e5mh
-	HIve/Wv6ud98b1EAwvzlZZUiCG3HiCUAuiqsQCXeu2wIR8OjM8OMlldIX2B8vAYu+m2ayb1m3SSwF
-	4VRjSX212G2OqGhvgS54R7Q8SRFFWWzBEmRX1c5lioP3kyQrrVNQp8klU5qjxJy7PMApo9Eszt+C4
-	ymHOsbCjgAYWOW8wAu7g==;
+	List-Owner; bh=wh3qRf9FS/V7AioomkZAhPdbBiSuZtgkqAHYhwukiz8=; b=sO7VuIGL+u7hCz
+	95D5Gc3Ylv22OW0haIVVjpHEoCMANEzSrKYWXrRd31irfgV75PG+BfIK2LgyapX0AfHYecqYs2Z+m
+	FygC02QXzhRNZjK1wytzJtZ/ADdD92vr5Yk0I9Cslv8pk8spy2r+4qccZiWlLEy3o3DeOca+lRA8G
+	SbLtkAaVOBT2US4p9oiA0oMK9zJ1pDzum9YRnGR7rcfxyREkgFEAoBVYyTuZ06jP/GSCf4KKfCxNn
+	1axx74uR57+aJjOTFlHRvKUxonQoUD5JXZ/PyhtqWvyTN1mv5ZP7vdhKTelwSXeyy3ir96DecLJ1v
+	SgO3bfM719KvfeplUe8A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hj0G5-0001YP-F2; Thu, 04 Jul 2019 11:50:37 +0000
-Received: from mout.gmx.net ([212.227.15.19])
+	id 1hj0K7-00024L-Mq; Thu, 04 Jul 2019 11:54:47 +0000
+Received: from mx1.redhat.com ([209.132.183.28])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hj0Fg-0001Xu-Ou; Thu, 04 Jul 2019 11:50:14 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=gmx.net;
- s=badeba3b8450; t=1562240946;
- bh=3XgfK29g7vLa/3fkH4yqnV5cnFE1yxc49nWYpw/CAjE=;
- h=X-UI-Sender-Class:From:To:Cc:Subject:Date:In-Reply-To:References;
- b=knmHJll2oZI2vMmwAv/1ME4hVpqS0PWrF9Ii8PkJp7W5/sqfcY/qrsUAkKjVViwQn
- 3CxBSzc/FCwAmnBG2/JJ/9Qcs9UnGrsKgur1158+rpQ4xA/L8ZOOZucSZQ+H3zoH/H
- r8/kl+3pUg6RVhZL4FTDAvNzcrsZD9G5hCVre2hI=
-X-UI-Sender-Class: 01bb95c1-4bf8-414a-932a-4f6e2808ef9c
-Received: from [217.61.145.121] ([217.61.145.121]) by web-mail.gmx.net
- (3c-app-gmx-bs27.server.lan [172.19.170.79]) (via HTTP); Thu, 4 Jul 2019
- 13:49:06 +0200
+ id 1hj0Jp-00023U-V2
+ for linux-arm-kernel@lists.infradead.org; Thu, 04 Jul 2019 11:54:31 +0000
+Received: from smtp.corp.redhat.com (int-mx03.intmail.prod.int.phx2.redhat.com
+ [10.5.11.13])
+ (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
+ (No client certificate requested)
+ by mx1.redhat.com (Postfix) with ESMTPS id 705D03083394;
+ Thu,  4 Jul 2019 11:54:28 +0000 (UTC)
+Received: from carbon (ovpn-200-17.brq.redhat.com [10.40.200.17])
+ by smtp.corp.redhat.com (Postfix) with ESMTP id 99A408E61A;
+ Thu,  4 Jul 2019 11:54:15 +0000 (UTC)
+Date: Thu, 4 Jul 2019 13:54:14 +0200
+From: Jesper Dangaard Brouer <brouer@redhat.com>
+To: Jose Abreu <Jose.Abreu@synopsys.com>
+Subject: Re: [PATCH net-next 3/3] net: stmmac: Introducing support for Page
+ Pool
+Message-ID: <20190704135414.0dd5df76@carbon>
+In-Reply-To: <BN8PR12MB3266BC5322AADFAC49D9BAFAD3FA0@BN8PR12MB3266.namprd12.prod.outlook.com>
+References: <cover.1562149883.git.joabreu@synopsys.com>
+ <1b254bb7fc6044c5e6e2fdd9e00088d1d13a808b.1562149883.git.joabreu@synopsys.com>
+ <20190704120018.4523a119@carbon>
+ <BN8PR12MB3266BC5322AADFAC49D9BAFAD3FA0@BN8PR12MB3266.namprd12.prod.outlook.com>
 MIME-Version: 1.0
-Message-ID: <trinity-cc209a43-af34-4788-8b7a-8495052c8ca6-1562240946454@3c-app-gmx-bs27>
-From: "Frank Wunderlich" <frank-w@public-files.de>
-To: "Matthias Brugger" <matthias.bgg@gmail.com>
-Subject: Aw: Re: [PATCH v2 2/7] rtc: mt6397: move some common definitions
- into rtc.h
-Date: Thu, 4 Jul 2019 13:49:06 +0200
-Importance: normal
-Sensitivity: Normal
-In-Reply-To: <62a4c4ce-7ab3-2f9d-a85e-be92340724a9@gmail.com>
-References: <20190703164822.17924-1-frank-w@public-files.de>
- <20190703164822.17924-3-frank-w@public-files.de>
- <62a4c4ce-7ab3-2f9d-a85e-be92340724a9@gmail.com>
-X-UI-Message-Type: mail
-X-Priority: 3
-X-Provags-ID: V03:K1:7WCJDoI4ExT7kJKMPI6fq7FNUW7pRNwLc1tUO/5cmP72zZnoBU2v1Y8uix/fw2i48d5FF
- Wd8wvTQJl1I2afIhS99OdBd4Iyh67OTcrpdbEQzhKKf6oNe+8evBVlNA3mdt3sLZ9EfauHTySxHm
- DPZWCXm6h5c0Phecn2JIbp8F6eSFLCyZzdI2+ijkEM1IUpZ0cT5dqCmnk8hPwd9Sd1EJDKwLDMdM
- fnT5RJ/tuLvBBpxa3bA56T8T1C/9SuiwHF1TDpcf69rvk2/9SvDHsBp3GT6hMIlCS4ZRbzcYD2dP
- 58=
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:mW1rCx44iLA=:/Gajeu7to3A6Ht4fEOGmOM
- VrVkYrIOaOWFbVz0dUB19QotgPqpUaNZ9s5JK+j8PjaEBomafj/raSFiwvRW1i7F+V8c1yXi3
- 7UJr7dAlUe5CK5xzgHEMiBNl7adKcmNKYRE/o0poTjKZAwuMVnHV9J+fkUdRrQDVrVkNZQDtY
- LHvQnas9brIhuezksYFzH9Pol+hd3YXpTP1J/k9Tep1e6ppE6zX3awixfJVVyPXj09b9iFFPP
- nPpETdXzqQspp2OaySgm9TbPNosj+TI6fbPcuIA9018AH3QcfASNas9uoobDSzUAKc7u2CYCl
- SmsdGV0F41hBk0LaPWMD5JmQE14GDfYBjsG1BP29GHify4oGtvVCBqrZwZKRCtbUz3G7i9KQG
- IknEjSp92+qsc71cN9DiVh3WD72v2MeCIqH32Vt5HLNfOb2hbBvkYRepx+55v6D+PY0s0xKDY
- ld9U5E2roDTiHXZ+GymN4caVOKAi3lsJT8kr9E3JCAEFOuqkGsPN8VrnmnDmvFOlxOumyBJki
- NqU8IwX2kaZfTf99CDBU5Ortk+6ZMl98egmxvVuWkpX9nml7w1lACPqpLuB1FFc0rFvC1MzXB
- wDNcELXrKOYz9pdcvEr6jUKFQoA9gQsQbd6KNaUd8V3CtnvF7ZGL1GdRH8I4RJ7AKDsyEeUsy
- Ekr8=
+X-Scanned-By: MIMEDefang 2.79 on 10.5.11.13
+X-Greylist: Sender IP whitelisted, not delayed by milter-greylist-4.5.16
+ (mx1.redhat.com [10.5.110.44]); Thu, 04 Jul 2019 11:54:28 +0000 (UTC)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190704_045013_107450_440669E4 
-X-CRM114-Status: UNSURE (   5.76  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190704_045430_093856_BE76D856 
+X-CRM114-Status: GOOD (  25.51  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.227.15.19 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [209.132.183.28 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -92,53 +70,92 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- Alexandre Belloni <alexandre.belloni@bootlin.com>, Linus
- Walleij <linus.walleij@linaro.org>, linux-kernel@vger.kernel.org,
- Richard Fontana <rfontana@redhat.com>,
- Mauro Carvalho Chehab <mchehab+samsung@kernel.org>,
- "Paul E . McKenney" <paulmck@linux.ibm.com>, Lee Jones <lee.jones@linaro.org>,
- linux-rtc@vger.kernel.org, Rob Herring <robh@kernel.org>,
- linux-arm-kernel@lists.infradead.org, devicetree@vger.kernel.org,
- linux-pm@vger.kernel.org, Sean Wang <sean.wang@mediatek.com>,
- Rob Herring <robh+dt@kernel.org>, linux-mediatek@lists.infradead.org,
- Thomas Gleixner <tglx@linutronix.de>, Eddie Huang <eddie.huang@mediatek.com>,
- Allison Randal <allison@lohutok.net>, Alessandro
- Zummo <a.zummo@towertech.it>, Josef Friedl <josef.friedl@speed.at>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Sebastian Reichel <sre@kernel.org>, "David S .
- Miller" <davem@davemloft.net>
+Cc: Joao Pinto <Joao.Pinto@synopsys.com>,
+ Alexandre Torgue <alexandre.torgue@st.com>,
+ Maxime Ripard <maxime.ripard@bootlin.com>,
+ "netdev@vger.kernel.org" <netdev@vger.kernel.org>,
+ Ilias Apalodimas <ilias.apalodimas@linaro.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "linux-stm32@st-md-mailman.stormreply.com"
+ <linux-stm32@st-md-mailman.stormreply.com>, Chen-Yu Tsai <wens@csie.org>,
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>, brouer@redhat.com,
+ Giuseppe Cavallaro <peppe.cavallaro@st.com>,
+ "David S . Miller" <davem@davemloft.net>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-> Still missing commit message. Describe here why you need to do that.
+On Thu, 4 Jul 2019 10:13:37 +0000
+Jose Abreu <Jose.Abreu@synopsys.com> wrote:
 
-ok, added note that headers are reused in power-off-driver
+> From: Jesper Dangaard Brouer <brouer@redhat.com>
+> 
+> > The page_pool DMA mapping cannot be "kept" when page traveling into the
+> > network stack attached to an SKB.  (Ilias and I have a long term plan[1]
+> > to allow this, but you cannot do it ATM).  
+> 
+> The reason I recycle the page is this previous call to:
+> 
+> 	skb_copy_to_linear_data()
+> 
+> So, technically, I'm syncing to CPU the page(s) and then memcpy to a 
+> previously allocated SKB ... So it's safe to just recycle the mapping I 
+> think.
 
-https://github.com/frank-w/BPI-R2-4.14/commits/5.2-poweroff-mainline
+I didn't notice the skb_copy_to_linear_data(), will copy the entire
+frame, thus leaving the page unused and avail for recycle.
 
-> Please check your email setting as discussed offline. Otherwise your patches
-> won't get accepted.
+Then it looks like you are doing the correct thing.  I will appreciate
+if you could add a comment above the call like:
 
-tested with webmailer where it looks good :(
+   /* Data payload copied into SKB, page ready for recycle */
+   page_pool_recycle_direct(rx_q->page_pool, buf->page);
 
-seems the problem is only shown when imported to patchwork
 
-using only git sendemail in ubuntu 18.4 without any mta (have sendmail not installed) and no changes made to git sendemail except authentication.
+> Its kind of using bounce buffers and I do see performance gain in this 
+> (I think the reason is because my setup uses swiotlb for DMA mapping).
+> 
+> Anyway, I'm open to some suggestions on how to improve this ...
 
-i see that (except cover-letter which is quoted-printable) all is send with
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+I was surprised to see page_pool being used outside the surrounding XDP
+APIs (included/net/xdp.h).  For you use-case, where you "just" use
+page_pool as a driver-local fast recycle-allocator for RX-ring that
+keeps pages DMA mapped, it does make a lot of sense.  It simplifies the
+driver a fair amount:
 
-so i have forced git sendemail now to
-sendemail.composeencoding UTF-8
+  3 files changed, 63 insertions(+), 144 deletions(-)
 
-if this does not work i can try instead
-sendemail.transferEncoding 8bit
+Thanks for demonstrating a use-case for page_pool besides XDP, and for
+simplifying a driver with this.
 
-regards Frank
+
+> > Also remember that the page_pool requires you driver to do the
+> > DMA-sync operation.  I see a dma_sync_single_for_cpu(), but I
+> > didn't see a dma_sync_single_for_device() (well, I noticed one
+> > getting removed). (For some HW Ilias tells me that the
+> > dma_sync_single_for_device can be elided, so maybe this can still
+> > be correct for you).  
+> 
+> My HW just needs descriptors refilled which are in different coherent 
+> region so I don't see any reason for dma_sync_single_for_device() ...
+
+For you use-case, given you are copying out the data, and not writing
+into it, then I don't think you need to do sync for device (before
+giving the device the page again for another RX-ring cycle).
+
+The way I understand the danger: if writing to the DMA memory region,
+and not doing the DMA-sync for-device, then the HW/coherency-system can
+write-back the memory later.  Which creates a race with the DMA-device,
+if it is receiving a packet and is doing a write into same DMA memory
+region.  Someone correct me if I misunderstood this...
+
+-- 
+Best regards,
+  Jesper Dangaard Brouer
+  MSc.CS, Principal Kernel Engineer at Red Hat
+  LinkedIn: http://www.linkedin.com/in/brouer
 
 _______________________________________________
 linux-arm-kernel mailing list
