@@ -2,99 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9F9A95F47C
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  4 Jul 2019 10:20:38 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CEA5D5F481
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  4 Jul 2019 10:21:19 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=yuEbk9qRpQM5hk0PnZqEcxuRZowlTYSJeRzjk1k5nmg=; b=Hm26K6LYS1UCiN/o/2pOycKT0
-	wOEm3hK/k2ueZbIpLuW1TM7f1dLl804jgHMTeX2A8JGxk1ET7NQ7HxyGQCpampWHOGD6ix/7bor32
-	H8MmmGxSD/qiSbcgEbhT+QXXhOkc53lwW5JWHuWQ5O8ZeGfaLnrse9wNYcIcY/QCnie+M3RhPyazO
-	O1PWKFT+2c9o6GYjCMwvfWriDbTZNmKIzqkvTq86DwceJn5KHGsJbPKsrfP6UBpZMKrqCROEsyCbN
-	uzJDAaoFBHY95npy21OFJ2aRmvT5EVFGAacxxqkzROX7GpGDxEbuVb9ICNUTtutUx4rKpcNPc2Kvg
-	gq4dPy+BQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Subject:To:From:Message-ID:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Uj9ZPb4BdqiaHdkEyFqoWzqfzPphoun2VmaWslGzOy4=; b=NgDV3vMhxnKDOO
+	LpSmRPPmpEuUQf8XO1+oMglDbEuzWbnqbjnPPbZNybNaNhO6f/feByVNP1q8CNHaqCyfGLJII7//M
+	hgvI7cTwJ+aB5a8A7AATyvArVxF6jc8x/1Ok3dK3h0+lXI3wdUVED9E+pEXodKZxGXOsd4qXGrw/d
+	yBV7YcKarOTUXiEuPesnNNIkIv9LML5goElswF8G7Kdf0xctlvVaZVDWlPhbGMCe6B2m9SjB+blhG
+	49FCQmd1NfteUv3BsKNKjQ2M7HnQgsKCj42VnEobuSI/THAAl/GX/qAWgbFgOa/GecyA86jyuQ5Ue
+	QBo8sbwonjMYrETWF18g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hiwyq-0003mM-OY; Thu, 04 Jul 2019 08:20:37 +0000
-Received: from smtp.codeaurora.org ([198.145.29.96])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hiwyb-0003lU-Un
- for linux-arm-kernel@lists.infradead.org; Thu, 04 Jul 2019 08:20:23 +0000
-Received: by smtp.codeaurora.org (Postfix, from userid 1000)
- id 57B88608CE; Thu,  4 Jul 2019 08:20:21 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=codeaurora.org;
- s=default; t=1562228421;
- bh=e3LVeam8xHza2h/bBVN0DBF1TS9LLsikvz2by4TYNK0=;
- h=Subject:To:Cc:References:From:Date:In-Reply-To:From;
- b=o1nX1rIEVX9PmkpL9vvaoLrYmqRl7250ucDcDKod4rWv9BrXOBrFwu3ZavYcYTjJp
- oWLs7uGXh6If3cJblrTvTrXX4S2qRdfoWW25TH6fZ/I3FaAEA3tVVjRCIYdgXNAf3L
- B4naa3JpCdNJQuzyy++1jjqlMzxUbEUAvXZfmOL8=
-X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
- pdx-caf-mail.web.codeaurora.org
-X-Spam-Level: 
-X-Spam-Status: No, score=-2.7 required=2.0 tests=ALL_TRUSTED,BAYES_00,
- DKIM_INVALID,DKIM_SIGNED,SPF_NONE autolearn=no autolearn_force=no
- version=3.4.0
-Received: from [10.79.136.27]
- (blr-bdr-fw-01_globalnat_allzones-outside.qualcomm.com [103.229.18.19])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- (Authenticated sender: saiprakash.ranjan@smtp.codeaurora.org)
- by smtp.codeaurora.org (Postfix) with ESMTPSA id 8C8BE607B9;
- Thu,  4 Jul 2019 08:20:19 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=codeaurora.org;
- s=default; t=1562228420;
- bh=e3LVeam8xHza2h/bBVN0DBF1TS9LLsikvz2by4TYNK0=;
- h=Subject:To:Cc:References:From:Date:In-Reply-To:From;
- b=kTRnmF5qslu9CZ531rF3c/nEm0w4Yu7ojSWtAGuRTX9wwBfX1aR4auTv50AgrWsNk
- Hg0tJNEH9ChCSVuNGtps9ha6eBoE/JILUeAtmg4kwIQa9sc5vmmWEHIcqiNwWwNBs9
- BKTcX9aj6xdWtESurCHYnD2wsnH0dz/1CITGFN8k=
-DMARC-Filter: OpenDMARC Filter v1.3.2 smtp.codeaurora.org 8C8BE607B9
-Authentication-Results: pdx-caf-mail.web.codeaurora.org;
- dmarc=none (p=none dis=none) header.from=codeaurora.org
-Authentication-Results: pdx-caf-mail.web.codeaurora.org; spf=none
- smtp.mailfrom=saiprakash.ranjan@codeaurora.org
-Subject: Re: [PATCHv5 1/2] dt-bindings: coresight: Change CPU phandle to
- required property
-To: Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Marc Gonzalez <marc.w.gonzalez@free.fr>
-References: <cover.1561659046.git.saiprakash.ranjan@codeaurora.org>
- <2afedb941294af7ba0658496b4aca3759a4e43ff.1561659046.git.saiprakash.ranjan@codeaurora.org>
- <CANLsYkxvh+qUDvqG45o7qh61Noq=a=BJ4-p68ipdzxYt6n5bNA@mail.gmail.com>
- <8fb5947e-acf8-faff-5594-2a32151ebee7@codeaurora.org>
- <20190704070239.GB32707@kroah.com>
- <72dff807-7172-7882-83fc-d7ff4cafe39f@free.fr>
- <20190704081822.GD6438@kroah.com>
-From: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>
-Message-ID: <7497db57-4462-87a0-6719-6db1330ce0a7@codeaurora.org>
-Date: Thu, 4 Jul 2019 13:50:17 +0530
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:60.0) Gecko/20100101
- Thunderbird/60.7.2
-MIME-Version: 1.0
-In-Reply-To: <20190704081822.GD6438@kroah.com>
-Content-Language: en-US
+	id 1hiwzV-00043K-Rn; Thu, 04 Jul 2019 08:21:18 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hiwzH-00042a-3E
+ for linux-arm-kernel@lists.infradead.org; Thu, 04 Jul 2019 08:21:04 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id BFFDC344;
+ Thu,  4 Jul 2019 01:21:01 -0700 (PDT)
+Received: from big-swifty.misterjones.org (unknown [172.31.20.19])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 1378E3F703;
+ Thu,  4 Jul 2019 01:20:57 -0700 (PDT)
+Date: Thu, 04 Jul 2019 09:20:54 +0100
+Message-ID: <86wogynrbt.wl-marc.zyngier@arm.com>
+From: Marc Zyngier <marc.zyngier@arm.com>
+To: Dave Martin <Dave.Martin@arm.com>, Paolo Bonzini <pbonzini@redhat.com>,
+ Radim =?UTF-8?B?S3LEjW3DocWZ?= <rkrcmar@redhat.com>
+Subject: Re: [PATCH] KVM: arm64/sve: Fix vq_present() macro to yield a bool
+In-Reply-To: <1562175770-10952-1-git-send-email-Dave.Martin@arm.com>
+References: <1562175770-10952-1-git-send-email-Dave.Martin@arm.com>
+User-Agent: Wanderlust/2.15.9 (Almost Unreal) SEMI-EPG/1.14.7 (Harue)
+ FLIM/1.14.9 (=?UTF-8?B?R29qxY0=?=) APEL/10.8 EasyPG/1.0.0 Emacs/26
+ (aarch64-unknown-linux-gnu) MULE/6.0 (HANACHIRUSATO)
+Organization: ARM Ltd
+MIME-Version: 1.0 (generated by SEMI-EPG 1.14.7 - "Harue")
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190704_012022_022167_1F64C28D 
-X-CRM114-Status: GOOD (  16.17  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20190704_012103_226228_1CF500E8 
+X-CRM114-Status: GOOD (  22.09  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.145.29.96 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -106,62 +63,97 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: MSM <linux-arm-msm@vger.kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Mathieu Poirier <mathieu.poirier@linaro.org>
+Cc: Peter Maydell <peter.maydell@linaro.org>,
+ Okamoto Takayuki <tokamoto@jp.fujitsu.com>,
+ Christoffer Dall <cdall@kernel.org>, kvm <kvm@vger.kernel.org>,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>,
+ Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will.deacon@arm.com>,
+ Zhang Lei <zhang.lei@jp.fujitsu.com>, Julien Grall <julien.grall@arm.com>,
+ Viresh Kumar <viresh.kumar@linaro.org>,
+ Alex =?UTF-8?B?QmVubsOpZQ==?= <alex.bennee@linaro.org>,
+ kvmarm@lists.cs.columbia.edu, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 7/4/2019 1:48 PM, Greg Kroah-Hartman wrote:
-> On Thu, Jul 04, 2019 at 10:08:24AM +0200, Marc Gonzalez wrote:
->> [ Trimming recipients list ]
->>
->> On 04/07/2019 09:02, Greg Kroah-Hartman wrote:
->>
->>> On Thu, Jul 04, 2019 at 12:13:40PM +0530, Sai Prakash Ranjan wrote:
->>>
->>>> On 7/4/2019 1:32 AM, Mathieu Poirier wrote:
->>>>
->>>>> Hi Greg,
->>>>>
->>>>> On Thu, 27 Jun 2019 at 12:15, Sai Prakash Ranjan wrote:
->>>>>>
->>>>>> Do not assume the affinity to CPU0 if cpu phandle is omitted.
->>>>>> Update the DT binding rules to reflect the same by changing it
->>>>>> to a required property.
->>>>>>
->>>>>> Signed-off-by: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>
->>>>>> Reviewed-by: Suzuki K Poulose <suzuki.poulose@arm.com>
->>>>>
->>>>> I'm all good with this patch - can you pick this up for the coming
->>>>> merge window?  If not I'll simply keep it in my tree for 5.4.
->>>>>
->>>>> Tested-by: Mathieu Poirier <mathieu.poirier@linaro.org>
->>>>> Reviewed-by: Mathieu Poirier <mathieu.poirier@linaro.org>
->>>>
->>>> I think you missed adding Greg, adding him now ;)
->>>
->>> I don't see any patch here for me to actually take :(
->>
->> I see what you're doing here ^_^
->>
->> https://lore.kernel.org/patchwork/patch/1094935/
-> 
-> What can I do with a random url?
-> 
-> Please send patches as emails, if you want me to be able to actually
-> take it.
-> 
-> greg k-h
-> 
++KVM, Paolo and Radim,
 
-No worries I will resend them. And thanks Marc :)
+Guys, do you mind picking this single patch and sending it to Linus?
+That's the only fix left for 5.2. Alternatively, I can send you a pull
+request, but it feels overkill.
+
+Either way, please let me know.
+
+Thanks,
+
+	M.
+
+On Wed, 03 Jul 2019 18:42:50 +0100,
+Dave Martin <Dave.Martin@arm.com> wrote:
+> 
+> From: Zhang Lei <zhang.lei@jp.fujitsu.com>
+> 
+> The original implementation of vq_present() relied on aggressive
+> inlining in order for the compiler to know that the code is
+> correct, due to some const-casting issues.  This was causing sparse
+> and clang to complain, while GCC compiled cleanly.
+> 
+> Commit 0c529ff789bc addressed this problem, but since vq_present()
+> is no longer a function, there is now no implicit casting of the
+> returned value to the return type (bool).
+> 
+> In set_sve_vls(), this uncast bit value is compared against a bool,
+> and so may spuriously compare as unequal when both are nonzero.  As
+> a result, KVM may reject valid SVE vector length configurations as
+> invalid, and vice versa.
+> 
+> Fix it by forcing the returned value to a bool.
+> 
+> Signed-off-by: Zhang Lei <zhang.lei@jp.fujitsu.com>
+> Fixes: 0c529ff789bc ("KVM: arm64: Implement vq_present() as a macro")
+> Signed-off-by: Dave Martin <Dave.Martin@arm.com> [commit message rewrite]
+> Cc: Viresh Kumar <viresh.kumar@linaro.org>
+> 
+> ---
+> 
+> Posting this under Zhang Lei's authorship, due to the need to turn this
+> fix around quickly.  The fix is as per the original suggestion [1].
+> 
+> Originally observed with the QEMU KVM SVE support under review:
+> https://lists.gnu.org/archive/html/qemu-devel/2019-06/msg04945.html
+> 
+> Bug reproduced and fix tested on the Arm Fast Model, with
+> http://linux-arm.org/git?p=kvmtool-dm.git;a=shortlog;h=refs/heads/sve/v3/head
+> (After rerunning util/update_headers.sh.)
+> 
+> (the --sve-vls command line argument was removed in v4 of the
+> kvmtool patches).
+> 
+> [1] http://lists.infradead.org/pipermail/linux-arm-kernel/2019-July/664633.html
+> ---
+>  arch/arm64/kvm/guest.c | 2 +-
+>  1 file changed, 1 insertion(+), 1 deletion(-)
+> 
+> diff --git a/arch/arm64/kvm/guest.c b/arch/arm64/kvm/guest.c
+> index c2afa79..dfd6264 100644
+> --- a/arch/arm64/kvm/guest.c
+> +++ b/arch/arm64/kvm/guest.c
+> @@ -208,7 +208,7 @@ static int set_core_reg(struct kvm_vcpu *vcpu, const struct kvm_one_reg *reg)
+>  
+>  #define vq_word(vq) (((vq) - SVE_VQ_MIN) / 64)
+>  #define vq_mask(vq) ((u64)1 << ((vq) - SVE_VQ_MIN) % 64)
+> -#define vq_present(vqs, vq) ((vqs)[vq_word(vq)] & vq_mask(vq))
+> +#define vq_present(vqs, vq) (!!((vqs)[vq_word(vq)] & vq_mask(vq)))
+>  
+>  static int get_sve_vls(struct kvm_vcpu *vcpu, const struct kvm_one_reg *reg)
+>  {
+> -- 
+> 2.1.4
+> 
 
 -- 
-QUALCOMM INDIA, on behalf of Qualcomm Innovation Center, Inc. is a member
-of Code Aurora Forum, hosted by The Linux Foundation
+Jazz is not dead, it just smells funny.
 
 _______________________________________________
 linux-arm-kernel mailing list
