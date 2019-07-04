@@ -2,110 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 75FCF5FE32
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  4 Jul 2019 23:29:39 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8E8EC5FEAD
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  5 Jul 2019 01:32:40 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
-	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=13kLjDoVuLmy4QhUdT+BaiWGWtCY4kQQRea39vXUALQ=; b=UgFFzd976EVyDb
-	X6xJ5SHtU552jOIwMCxdN43vu61CAZ2el4JWb/gsYTPLQp7DKGV4Jkvh9os8B9WCRFZ27n984IjJR
-	0aJ5nrC9mKgd1YUix8kZM77HhHWpz1VXY0ubM04bH0GFjB9AAjdrNIahbCSqDDBqdODwdF/7b6yZ7
-	HebHa/W+RGy4nTfoQRjYMV67ROBpGFTv8xj2sJQu2psVOR2ej7W3QQWHSTghrMowMODZ9DuNg1tA5
-	IUdRvTWCIun8G3L67VrvNzVs+te4VDZHux1muI3ScSC+1NLgyAr/vJPdLf+zWdyZINWwvgQXKbmze
-	EdATsANsULGvzFoC+ONA==;
+	List-Owner; bh=CMxVkDtEGefRu7wEYrSbrvvdV6LNNQY/qDrmbfAzGLA=; b=XPtuEFMzuQTgA9
+	nhTxVjLBobvth5VKtk+ic8zr6z4mRxI2a0/W0gdGh3p7D02aSK6GdLRvyNmLuHsNZ2xq3AgkySfGA
+	0BRUjHzhdLn18aEUIHooOaUsKrynWg2z5LMEujKGKI3nJbWbzsHJOyQ2IHwzWusJ5LzK4oRd854H0
+	6WzWiPmDgSsYlruTSwiW5EdHqoofd6sX45V5zZe5alCulN1TCpdZ2T/0Lmeg+fDVXBiNGx+kuQKTz
+	8kQjP4NCcPSLSXefeld4446lPm02hRzGwf22d1LYvfB5XUhWmXriRic2izerGmC8SqBF/gDAotdgY
+	uScba/j8DHq6/AHJxUyA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hj9IP-0001RL-O0; Thu, 04 Jul 2019 21:29:37 +0000
-Received: from mail-eopbgr20056.outbound.protection.outlook.com ([40.107.2.56]
- helo=EUR02-VE1-obe.outbound.protection.outlook.com)
+	id 1hjBDP-00040O-JR; Thu, 04 Jul 2019 23:32:35 +0000
+Received: from mail-ed1-x543.google.com ([2a00:1450:4864:20::543])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hj9Hn-0001DG-Ct
- for linux-arm-kernel@lists.infradead.org; Thu, 04 Jul 2019 21:29:01 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=Mellanox.com;
- s=selector2;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=FzrIxZPRXFQpJbkXBZfe9b+ex1RCZ3jZqSg6FVANuEg=;
- b=k14i41lKIR7K3YX4vICpwjjL8lxmU5cY2GWO7zYln0REMVAjOvxSzdt8QSBIxl6a0MD9iLQ2QNOsVGBZ+/8Css1cHoBSPsMyutusm6HgIauANlw7V+cke7T80UzaJ3XUwIKIRi8rfLtxqg4QLTn+se4uzoptMWKD5V2ifoV7wsI=
-Received: from VI1PR05MB4141.eurprd05.prod.outlook.com (10.171.182.144) by
- VI1PR05MB6014.eurprd05.prod.outlook.com (20.178.127.148) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2052.18; Thu, 4 Jul 2019 21:28:54 +0000
-Received: from VI1PR05MB4141.eurprd05.prod.outlook.com
- ([fe80::f5d8:df9:731:682e]) by VI1PR05MB4141.eurprd05.prod.outlook.com
- ([fe80::f5d8:df9:731:682e%5]) with mapi id 15.20.2032.019; Thu, 4 Jul 2019
- 21:28:54 +0000
-From: Jason Gunthorpe <jgg@mellanox.com>
-To: Andrew Morton <akpm@linux-foundation.org>
-Subject: Re: [PATCH v3 0/4] Devmap cleanups + arm64 support
-Thread-Topic: [PATCH v3 0/4] Devmap cleanups + arm64 support
-Thread-Index: AQHVK/HAM2r3dJ5EjUuvQfApLyHQmKat3lEAgAA0MoCAAAH5AIAAxnaAgAwArgCAABJ8AIAADxQAgAAJ3QA=
-Date: Thu, 4 Jul 2019 21:28:54 +0000
-Message-ID: <20190704212850.GB23542@mellanox.com>
-References: <cover.1558547956.git.robin.murphy@arm.com>
- <20190626073533.GA24199@infradead.org>
- <20190626123139.GB20635@lakrids.cambridge.arm.com>
- <20190626153829.GA22138@infradead.org> <20190626154532.GA3088@mellanox.com>
- <20190626203551.4612e12be27be3458801703b@linux-foundation.org>
- <20190704115324.c9780d01ef6938ab41403bf9@linux-foundation.org>
- <20190704195934.GA23542@mellanox.com>
- <20190704135332.234891ac6ce641bf29913d06@linux-foundation.org>
-In-Reply-To: <20190704135332.234891ac6ce641bf29913d06@linux-foundation.org>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-x-clientproxiedby: MN2PR04CA0006.namprd04.prod.outlook.com
- (2603:10b6:208:d4::19) To VI1PR05MB4141.eurprd05.prod.outlook.com
- (2603:10a6:803:4d::16)
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=jgg@mellanox.com; 
-x-ms-exchange-messagesentrepresentingtype: 1
-x-originating-ip: [156.34.55.100]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: d5ea08e7-e074-4157-6e83-08d700c69d65
-x-ms-office365-filtering-ht: Tenant
-x-microsoft-antispam: BCL:0; PCL:0;
- RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600148)(711020)(4605104)(1401327)(4618075)(2017052603328)(7193020);
- SRVR:VI1PR05MB6014; 
-x-ms-traffictypediagnostic: VI1PR05MB6014:
-x-ms-exchange-purlcount: 1
-x-microsoft-antispam-prvs: <VI1PR05MB601420B2E47CBEC22759ECACCFFA0@VI1PR05MB6014.eurprd05.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:6108;
-x-forefront-prvs: 0088C92887
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(4636009)(346002)(39860400002)(136003)(396003)(376002)(366004)(189003)(199004)(6306002)(8676002)(81166006)(36756003)(6512007)(53936002)(81156014)(6436002)(2906002)(102836004)(26005)(6916009)(99286004)(52116002)(76176011)(14444005)(256004)(186003)(6506007)(386003)(68736007)(66066001)(8936002)(6486002)(1076003)(229853002)(6116002)(7416002)(11346002)(305945005)(2616005)(476003)(316002)(6246003)(54906003)(14454004)(86362001)(478600001)(446003)(66476007)(71200400001)(33656002)(73956011)(71190400001)(66446008)(66556008)(66946007)(64756008)(966005)(4326008)(486006)(25786009)(5660300002)(3846002)(7736002);
- DIR:OUT; SFP:1101; SCL:1; SRVR:VI1PR05MB6014;
- H:VI1PR05MB4141.eurprd05.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; MX:1; A:1; 
-received-spf: None (protection.outlook.com: mellanox.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: GZhpXph8JQTGJITEs1uAnNGeBubFnAoQYzEo901XU5xi1gvsUfc2XUrlN9pMi+ZO6mQX/YsukdIcAoDfJq7YWux0bFz2RHa7DKPr8JVkYm0pu7+qsrV2LVCupYivVRjdUnPkwFCB1ZFZrGhh9aU6lBeWzr5MGsfHaY9GD+VbKELzIldDZB/61wVeOd88ade/tPRAUFpeOTkKjlOwM0fuA9iKsewiXCsvddPMRnTY2k3YMqAS4tl4h6ED5DiOfUXkwM7MzlTzMUOnQwRYDLmK3E7XrTKr6+bmIZqa6zkiYbjZ5bKGoirb3zVYAhhfPlp1bV6uA2orjwL+mNNs7tn+EbJxk70PTMtPLqy/VKWJCK5wUC8SQSN/U485oOOwGAC7sXW5GnD6W82hKBOu7f6sDa8vbiD939d7ZmnTp5fWDTA=
-Content-ID: <9DE2EFC78892704782174E84794C9CF6@eurprd05.prod.outlook.com>
+ id 1hjBDE-0003zT-FW
+ for linux-arm-kernel@lists.infradead.org; Thu, 04 Jul 2019 23:32:26 +0000
+Received: by mail-ed1-x543.google.com with SMTP id v15so16417eds.9
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 04 Jul 2019 16:32:22 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=cX6nHtTKELS0nlqmaRfVAhra97bpjvwlsmKbwJvPrso=;
+ b=rxl1wTXi046K+QqtyHJvHyAJgrlScrICo4IcfjX78f7TBSCH6gB+2yKRSQChPuc0x2
+ 6so96zGpdM1L5QmCnq3tQqZZJHTtqc6z5VtiaKA/xM14WOkTv7KfSp+9GE6j+n4k/gLb
+ FH/XIN6SSU/8GfvtL57cO4NYTDiZHE+roDOuZng/6OcVdu7/UVItQzAIYDL100fB3TGl
+ MHBbmZRYz+I7LW0kIVIK77oU7leOx9DDqh8VXyJEWysbfH3g0V9BirA/CZAqdCAp/JD6
+ exjODXOaliCajA2UgpL95TJlvOy2kfpVZaIDFnfTHWio87wMdnxWdnanWXzv2TQ1toXk
+ 3gPA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=cX6nHtTKELS0nlqmaRfVAhra97bpjvwlsmKbwJvPrso=;
+ b=nku5gmRP8euBGaskcTc2k0d/6YLWbcQSgsC1ibhiKzJ3DTiuFTsRz286Nu+j63UnCD
+ 00m4QPxcKVy/j1LloC+9tnSv1Hw8DNw5Icg71njPtoYzkMhJKKk6IDbTigCs35pg5Zza
+ YuSvl4Yuhulso+Pt7jGH48YsHgvyiqZEog4sR1N9wOhklcw8gxmA4qfbMIVi79SGwTi+
+ g9qm++IF/4Qp+XcWcunBS06VIxHhN8xE+2mEkyMWK+srZN1MwEchCj//d4nPiyOJU9fF
+ rrdRYgvB4IjByysf+I0cIbdzwHU813rDL9ZfQj7075j5+if4uUMyFAlIlPmvAeSrAZYe
+ Z0UQ==
+X-Gm-Message-State: APjAAAW7C1J/oY6K7wqseWhsu9uW7+/2AFEzldHJFCtTSovBV03tIX/A
+ 6+Fy4u38wM67lehip0uxUG7IaDsfbBWpRy/WTPo=
+X-Google-Smtp-Source: APXvYqwubu8GnrljQuP6hpQyT0Bj/7SRpfGpd1V8szw8gCaTzMPhkSeoUuAvBgEbpax9UIQXw7I/eJvRRVTgRPDSEf8=
+X-Received: by 2002:a50:aa14:: with SMTP id o20mr1159284edc.165.1562283141133; 
+ Thu, 04 Jul 2019 16:32:21 -0700 (PDT)
 MIME-Version: 1.0
-X-OriginatorOrg: Mellanox.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: d5ea08e7-e074-4157-6e83-08d700c69d65
-X-MS-Exchange-CrossTenant-originalarrivaltime: 04 Jul 2019 21:28:54.2548 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: a652971c-7d2e-4d9b-a6a4-d149256f461b
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: jgg@mellanox.com
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1PR05MB6014
+References: <1561131532-14860-1-git-send-email-claudiu.manoil@nxp.com>
+ <1561131532-14860-5-git-send-email-claudiu.manoil@nxp.com>
+ <20190621164940.GL31306@lunn.ch>
+ <VI1PR04MB4880D8F90BBCD30BF8A69C9696E00@VI1PR04MB4880.eurprd04.prod.outlook.com>
+ <20190624115558.GA5690@piout.net> <20190624142625.GR31306@lunn.ch>
+ <20190624152344.3bv46jjhhygo6zwl@lx-anielsen.microsemi.net>
+ <20190624162431.GX31306@lunn.ch> <20190624182614.GC5690@piout.net>
+In-Reply-To: <20190624182614.GC5690@piout.net>
+From: Vladimir Oltean <olteanv@gmail.com>
+Date: Fri, 5 Jul 2019 02:32:09 +0300
+Message-ID: <CA+h21hqGtA5ou7a3wjSuHxa_4fXk4GZohTAxnUdfLZjV3nq5Eg@mail.gmail.com>
+Subject: Re: [PATCH net-next 4/6] arm64: dts: fsl: ls1028a: Add Felix switch
+ port DT node
+To: Alexandre Belloni <alexandre.belloni@bootlin.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190704_142859_959625_8556D05F 
-X-CRM114-Status: GOOD (  24.33  )
+X-CRM114-CacheID: sfid-20190704_163224_548663_2D8B30A5 
+X-CRM114-Status: GOOD (  34.80  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.2.56 listed in list.dnswl.org]
+ no trust [2a00:1450:4864:20:0:0:0:543 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (olteanv[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -113,6 +88,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
+ 0.0 T_PDS_NO_HELO_DNS      High profile HELO but no A record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -124,76 +100,135 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Michal Hocko <mhocko@suse.com>,
- "anshuman.khandual@arm.com" <anshuman.khandual@arm.com>,
- "catalin.marinas@arm.com" <catalin.marinas@arm.com>,
- "will.deacon@arm.com" <will.deacon@arm.com>,
+Cc: Andrew Lunn <andrew@lunn.ch>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ "netdev@vger.kernel.org" <netdev@vger.kernel.org>,
+ Alexandru Marginean <alexandru.marginean@nxp.com>,
  "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Christoph Hellwig <hch@infradead.org>,
- "linux-mm@kvack.org" <linux-mm@kvack.org>,
- Dan Williams <dan.j.williams@intel.com>, Robin Murphy <robin.murphy@arm.com>,
+ "UNGLinuxDriver@microchip.com" <UNGLinuxDriver@microchip.com>,
+ Allan Nielsen <Allan.Nielsen@microsemi.com>,
+ Claudiu Manoil <claudiu.manoil@nxp.com>, Rob Herring <robh+dt@kernel.org>,
+ "Allan W. Nielsen" <allan.nielsen@microchip.com>,
+ "David S . Miller" <davem@davemloft.net>,
  "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Jul 04, 2019 at 01:53:32PM -0700, Andrew Morton wrote:
-> On Thu, 4 Jul 2019 19:59:38 +0000 Jason Gunthorpe <jgg@mellanox.com> wrote:
-> 
-> > On Thu, Jul 04, 2019 at 11:53:24AM -0700, Andrew Morton wrote:
-> > > On Wed, 26 Jun 2019 20:35:51 -0700 Andrew Morton <akpm@linux-foundation.org> wrote:
-> > > 
-> > > > > Let me know and I can help orchestate this.
-> > > > 
-> > > > Well.  Whatever works.  In this situation I'd stage the patches after
-> > > > linux-next and would merge them up after the prereq patches have been
-> > > > merged into mainline.  Easy.
-> > > 
-> > > All right, what the hell just happened? 
-> > 
-> > Christoph's patch series for the devmap & hmm rework finally made it
-> > into linux-next
-> 
-> We're talking about "dev_pagemap related cleanups v4", yes?
+On Tue, 25 Jun 2019 at 00:23, Alexandre Belloni
+<alexandre.belloni@bootlin.com> wrote:
 >
-> I note that linux-next contains "mm: remove the HMM config option"
-> which was present in Christoph's v3 series but wasn't present in v4. 
-> Perhaps something has gone wrong here.
+> On 24/06/2019 18:24:31+0200, Andrew Lunn wrote:
+> > On Mon, Jun 24, 2019 at 05:23:45PM +0200, Allan W. Nielsen wrote:
+> > > Hi Andrew,
+> > >
+> > > The 06/24/2019 16:26, Andrew Lunn wrote:
+> > > > > > Yeah, there are 2 ethernet controller ports (managed by the enetc driver)
+> > > > > > connected inside the SoC via SGMII links to 2 of the switch ports, one of
+> > > > > > these switch ports can be configured as CPU port (with follow-up patches).
+> > > > > >
+> > > > > > This configuration may look prettier on DSA, but the main restriction here
+> > > > > > is that the entire functionality is provided by the ocelot driver which is a
+> > > > > > switchdev driver.  I don't think it would be a good idea to copy-paste code
+> > > > > > from ocelot to a separate dsa driver.
+> > > > > >
+> > > > >
+> > > > > We should probably make the ocelot driver a DSA driver then...
+> > > > An important part of DSA is being able to direct frames out specific
+> > > > ports when they ingress via the CPU port. Does the silicon support
+> > > > this? At the moment, i think it is using polled IO.
+> > >
+> > > That is supported, it requires a bit of initial configuration of the Chip, but
+> > > nothing big (I believe this configuration is part of Claudiu's change-set).
+> > >
+> > > But how do you envision this done?
+> > >
+> > > - Let the existing SwitchDev driver and the DSA driver use a set of common
+> > >   functions.
+> > > - Convert the existing Ocelot driver from SwitchDev to DSA
+> > > - Fork (copy) the existing driver of Ocelot, and modify it as needed for the
+> > >   Felix driver
+> > >
+> > > My guess is the first one, but I would like to understand what you have in mind.
+> >
+> > I don't know the various architectures the switch is used in. But it
+> > does seem like a core library, and then a switchdev wrapper for Ocelot
+> > and a DSA wrapper for Felix would make sense.
+>
+> Ocelot could also be used in a DSA setting where one port can be
+> connected to an external MAC and be used to inject/extract frames
+> to/from any other ports. In that case, the IFH would serve as the DSA
+> tag.
+>
+>
+> --
+> Alexandre Belloni, Bootlin
+> Embedded Linux and Kernel engineering
+> https://bootlin.com
 
-When CH sent v4 to the list it was corrupted, v3 is the one to
-reference for content.
+Hi everyone,
 
-Here is the mailing thread discussing this:
+Thank you for the nice discussion.
+I've been talking off-list to Claudiu and Alexandru about switchdev vs
+DSA for the Felix/Ocelot switches.
+My initial reaction was the same as Andrew's - there's a CPU-facing
+Ethernet MAC with some vendor-defined injection and extraction
+headers? Sounds like DSA.
+But then we discussed about what DSA for Felix/Ocelot would look like.
+Here are some points to consider:
+- DSA is typically used for discrete switches, switchdev is typically
+used for embedded ones. As far as I understand from Allan's message,
+Ocelot is really an entire switching SoC that's running Linux inside
+(on the MIPS CPU) with a switchdev driver. There is no (mainline?)
+driver that would control the Ocelot SoC from a higher-level Linux
+system. The latter would (maybe) fit DSA more.
+- The D in DSA is for cascaded switches. Apart from the absence of
+such a "Ocelot SoC" driver (which maybe can be written, I don't know),
+I think the switching core itself has some fundamental limitations
+that make a DSA implementation questionable:
+    1. The switch has a single port which can apply these vendor tags.
+Also the injection header is different than the extraction header. See
+more at #4.
+    2. The switch will tag all frames that go upstream on this port
+towards the CPU, no matter what source port they came from. It can't
+be told "hey, don't add a tag for frames coming from this
+downstream-facing port, because it's a DSA port and not front-panel,
+so there's another switch underneath you who already added a tag to
+the frame". So frames that arrive at the CPU through an array of N
+cascaded Felix/Ocelot switches will need to be peeled off, one by one,
+by N vendor tags.
+    3. The extraction header does not contain a field for the "switch
+id", only for the "source port". This means that if you want to figure
+out the switch id, you really *need* to make a topology out of those
+stacked vendor tags and figure out which switch it was by counting the
+tags. It also means that you can only have Felix/Ocelot in a linear
+topology.
+    4. The switch cannot parse its own vendor tags. This is a big one,
+because it means that for an autonomously forwarded frame which
+transits two cascaded switches but doesn't reach the CPU, there is no
+one in the path who's going to consume the vendor tag. So the frame
+will exit the other front-panel port with extra bytes in it.
 
-https://lore.kernel.org/linux-mm/20190702184201.GO31718@mellanox.com/
+Ok, let's say that all of the above limitations have one thing in
+common - the vendor tags aren't really thought out with DSA-like
+setups in mind. In theory it's possible to not use the native tags and
+instead implement a dsa_8021q tagger for it. But then, RX timestamps
+for PTP are also transmitted to the CPU through this vendor header,
+and losing PTP is a big no-no.
 
-> > sorry, it took quite a few iterations on the list to
-> > get all the reviews and tests, and figure out how to resolve some
-> > other conflicting things. So it just made it this week.
-> > 
-> > Recall, this is the patch series I asked you about routing a few weeks
-> > ago, as it really exceeded the small area that hmm.git was supposed to
-> > cover. I think we are both caught off guard how big the conflict is!
-> 
-> I guess I was distracted - I should have taken a look to see how
-> mergable it all was.
-
-Okay, fair enough. I also could have also done more checks myself with
-linux-next
-
-> It's a large patchset and it appears to be mainly (entirely?) code
-> cleanups.  I don't think such material would be appropriate for a late
-> -rc7 merge even if it didn't conflict with lots of other higher
-> priority pending functional changes and fixes!
-
-I see your other email you resolved the conflicts - so please let me
-know if you want to proceed with dropping CH's series or not, I'll
-make a special effort to get that change into tomorrows linux-next if
-you want (it is already 6pm here)
+So my conclusion is that DSA for Felix/Ocelot doesn't make a lot of
+sense if the whole purpose is to hide the CPU-facing netdev.
+In a cascaded setup, these switches could only sit at the top of tree,
+and ironically, they'd be better modeled as a switchdev DSA master
+port than part of the DSA tree itself. Put these switches anywhere
+else in the tree and they're just troublemakers.
+As for the LS1028A, I think that connecting this embedded switch via
+two Ethernet MACs is just poorly thought out design, but that doesn't
+mean DSA is going to help it in any way other than perhaps cosmetic.
 
 Regards,
-Jason
+-Vladimir
 
 _______________________________________________
 linux-arm-kernel mailing list
