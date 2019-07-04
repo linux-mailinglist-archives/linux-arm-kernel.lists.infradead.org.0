@@ -2,51 +2,67 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 938FD5F44F
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  4 Jul 2019 10:08:05 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C12185F451
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  4 Jul 2019 10:08:46 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=okL3/PxkdotjgJeM1wGD5aKxbwCUc9c+UR4V8uYZ9SA=; b=L+MqI8KX3Y+2YK
-	qvdjOagbR+fSfhESm1PmH3m+H4Izpi5jtcNtj2wHRQGZAiWRsRk0nwd4wef1F1E5cHmUxCVlRi+R1
-	0ZbDDgemRRWQKIDx0wbZzdIKUNxY03EZpYSyOZWMiWf/HppXk5StrhrD3qd02z7dit59lkj9pBQhe
-	P9AXJuzEPzQpHOOA0BNzJPI05Euk69m+M226OiNQ1hmV+Q/GY2YY7dcpjlqIuCy8K2ihb96e5hLHh
-	aerc9sJ9lNiJzrDEIxs7W5EIaQDGc2MuUOf2LDtz8j2V3taR5JNPQhXEVckoWHAPNQu/YH4OGl5y1
-	ae/u2zfFwML4p0ETxqCA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=RCTL0gfoOLZCgepZmLtdAN5gzL/O+TyeFddn70tOdiQ=; b=H0CPx4tjs3PLSE
+	Ys7Ve5KYr3NgAFw1vCtK1KeRO/b1WgtynDRE8zJbMd4l5+D3XwGM6iO/Uh4kkkX3SMDGOrZyhDFi/
+	IXbm4YjMDvZksfe7vzxRJA/+9TFTyzzXiWiAG/Ih7zlYWpMkdk/+8gJCD2IfyujyujUyInFUcY5Rc
+	nDZR+qyiuUWD1A+eUeXhWPpBu8wgzPoQmQuyYBRzn8JDaTr6Y6rrJuZXr1KANztbzqkU664ZXappe
+	wJA7aJBGN6XWqLD0kZO6bNzU7nZkdRJvt9hOpYp1mWxJtjnOevGTFDNTA1ntPGkbNrRcG137sQihc
+	rAaHAKGf5VaZHKHZla7A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hiwmi-00066O-62; Thu, 04 Jul 2019 08:08:04 +0000
-Received: from 8bytes.org ([2a01:238:4383:600:38bc:a715:4b6d:a889]
- helo=theia.8bytes.org)
+	id 1hiwnN-0006MZ-FY; Thu, 04 Jul 2019 08:08:45 +0000
+Received: from ns.iliad.fr ([212.27.33.1])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hiwmU-000651-R5
- for linux-arm-kernel@lists.infradead.org; Thu, 04 Jul 2019 08:07:52 +0000
-Received: by theia.8bytes.org (Postfix, from userid 1000)
- id 9B9D42FB; Thu,  4 Jul 2019 10:07:41 +0200 (CEST)
-Date: Thu, 4 Jul 2019 10:07:40 +0200
-From: Joerg Roedel <joro@8bytes.org>
-To: Jean-Philippe Brucker <jean-philippe.brucker@arm.com>
-Subject: Re: [PATCH] iommu/arm-smmu-v3: Invalidate ATC when detaching a device
-Message-ID: <20190704080739.GB6546@8bytes.org>
-References: <20190703111920.23637-1-jean-philippe.brucker@arm.com>
+ id 1hiwn5-0006M3-Qt
+ for linux-arm-kernel@lists.infradead.org; Thu, 04 Jul 2019 08:08:29 +0000
+Received: from ns.iliad.fr (localhost [127.0.0.1])
+ by ns.iliad.fr (Postfix) with ESMTP id 1E46320AC3;
+ Thu,  4 Jul 2019 10:08:25 +0200 (CEST)
+Received: from [192.168.108.49] (freebox.vlq16.iliad.fr [213.36.7.13])
+ by ns.iliad.fr (Postfix) with ESMTP id 04561206B9;
+ Thu,  4 Jul 2019 10:08:25 +0200 (CEST)
+Subject: Re: [PATCHv5 1/2] dt-bindings: coresight: Change CPU phandle to
+ required property
+To: Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>,
+ Mathieu Poirier <mathieu.poirier@linaro.org>
+References: <cover.1561659046.git.saiprakash.ranjan@codeaurora.org>
+ <2afedb941294af7ba0658496b4aca3759a4e43ff.1561659046.git.saiprakash.ranjan@codeaurora.org>
+ <CANLsYkxvh+qUDvqG45o7qh61Noq=a=BJ4-p68ipdzxYt6n5bNA@mail.gmail.com>
+ <8fb5947e-acf8-faff-5594-2a32151ebee7@codeaurora.org>
+ <20190704070239.GB32707@kroah.com>
+From: Marc Gonzalez <marc.w.gonzalez@free.fr>
+Message-ID: <72dff807-7172-7882-83fc-d7ff4cafe39f@free.fr>
+Date: Thu, 4 Jul 2019 10:08:24 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.6.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190703111920.23637-1-jean-philippe.brucker@arm.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <20190704070239.GB32707@kroah.com>
+Content-Language: en-US
+X-Virus-Scanned: ClamAV using ClamSMTP ; ns.iliad.fr ;
+ Thu Jul  4 10:08:25 2019 +0200 (CEST)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190704_010751_023257_5DFF1610 
-X-CRM114-Status: UNSURE (   6.52  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20190704_010828_017054_EDE54847 
+X-CRM114-Status: GOOD (  10.36  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [212.27.33.1 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (marc.w.gonzalez[at]free.fr)
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -58,18 +74,47 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: robin.murphy@arm.com, iommu@lists.linux-foundation.org, will@kernel.org,
- linux-arm-kernel@lists.infradead.org
+Cc: MSM <linux-arm-msm@vger.kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Jul 03, 2019 at 12:19:20PM +0100, Jean-Philippe Brucker wrote:
->  drivers/iommu/arm-smmu-v3.c | 5 ++++-
->  1 file changed, 4 insertions(+), 1 deletion(-)
+[ Trimming recipients list ]
 
-Applied, thanks.
+On 04/07/2019 09:02, Greg Kroah-Hartman wrote:
+
+> On Thu, Jul 04, 2019 at 12:13:40PM +0530, Sai Prakash Ranjan wrote:
+>
+>> On 7/4/2019 1:32 AM, Mathieu Poirier wrote:
+>>
+>>> Hi Greg,
+>>>
+>>> On Thu, 27 Jun 2019 at 12:15, Sai Prakash Ranjan wrote:
+>>>>
+>>>> Do not assume the affinity to CPU0 if cpu phandle is omitted.
+>>>> Update the DT binding rules to reflect the same by changing it
+>>>> to a required property.
+>>>>
+>>>> Signed-off-by: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>
+>>>> Reviewed-by: Suzuki K Poulose <suzuki.poulose@arm.com>
+>>>
+>>> I'm all good with this patch - can you pick this up for the coming
+>>> merge window?  If not I'll simply keep it in my tree for 5.4.
+>>>
+>>> Tested-by: Mathieu Poirier <mathieu.poirier@linaro.org>
+>>> Reviewed-by: Mathieu Poirier <mathieu.poirier@linaro.org>
+>>
+>> I think you missed adding Greg, adding him now ;)
+> 
+> I don't see any patch here for me to actually take :(
+
+I see what you're doing here ^_^
+
+https://lore.kernel.org/patchwork/patch/1094935/
+
+Regards.
 
 _______________________________________________
 linux-arm-kernel mailing list
