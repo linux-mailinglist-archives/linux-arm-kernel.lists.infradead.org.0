@@ -2,84 +2,72 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C1CDB5F45F
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  4 Jul 2019 10:14:04 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id F30015F471
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  4 Jul 2019 10:18:41 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=pk5MIUOYWmKPxGAnW3HswCZpxoRFiBtHDGugFLnU7Gg=; b=Y77kPhk2Frv4cd
-	8THVaX+i9imYFOzzFDmi75QID3qSdfay2UBjakQzlpNhsfavdjHxrhwCkiBeYjE+nS0Mqu1waZx6i
-	r7ZO28PGBG9Cd1qoJ3GtvR8nlkqPEQVQSH2FmcqNtfWEazJzbIfqnsa8HVlhvuPbmk7MXzRnDAkL8
-	FiIsFwE45zuxphCH3umUBRXvZcvp3BooUwT/xceq6BGft+VWOeyPA6brVt530wJz/7zAgETHAvotR
-	ioGiPd+wph6/ZOS4KDvgiAsCFcMmugBpQr9bvouQx3B5+SqDIsMbRIbfyJBpbAPJFcapCmge4SBYl
-	4X3SiQO8ojnuMrp9bLaQ==;
+	List-Owner; bh=JTCVp10hkYBfQrlhBmB3eZxCdjJFL8amqxzk+rmOdK0=; b=JmnsK7mFjj9YMT
+	U+3Z8AaP38LkZY8RezGqYSN59ZtAYkoc5fCuOLB1+cDlL2kU5BzSkJlp5llv7HlXi8EUnTCVjwNqP
+	uVyqsVigTDBD77hB71dpsWwuKPeKCr/S7mloWFLRcEykXE05LdNyi+PqevV9fyVlfTBYGvZkdhX2b
+	Ppcs7cqgM+ZJZxBCE/CenYIwIh+5zVIixDCXSnkyOzTpbSbcFl8wyMgLyhL8tEIMwUdBQMTWilEaG
+	0BCTQVuA3QXJMEdzF/zFhLMjCitz5BOZORl9FGn0rfUNmIrpU/DJ9RwXf3DBvsgLdz3d4yqvGLnYD
+	4pL1ylSvAXZK0FYVgQcQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hiwsP-0008Ht-UD; Thu, 04 Jul 2019 08:13:57 +0000
-Received: from mail-lj1-x241.google.com ([2a00:1450:4864:20::241])
+	id 1hiwwx-0001nQ-No; Thu, 04 Jul 2019 08:18:39 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hiwsD-0008H3-HN
- for linux-arm-kernel@lists.infradead.org; Thu, 04 Jul 2019 08:13:47 +0000
-Received: by mail-lj1-x241.google.com with SMTP id i21so5268796ljj.3
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 04 Jul 2019 01:13:42 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=W8/CcxemkjOqw5vcRGpz7IYCIwc+17181uPGqaEJ7DY=;
- b=APAkpnfHLvATo/cfO3VfhryPgqeKWK3eEzpcEb4pRP1HLVWneySxnm8R2wn6T44lcQ
- Dvum7So8gTEHI6athp0y5DDOIDKEr0UHL+SMuN2r/iWLAGUUSXBKo7ee6X6SNTXN2PSx
- K70PNJw0ET+Lrq1cVf0W28fL1Tmw1yhEshBcTe0DhcFgAAomD/C0Uhock2tBPmZNYQsD
- Nei1naxT+HjPVUa2JIPGcD5/JCqHQlpx5c8cVIhBHTJWl9U072uiFf2h7Poz6hQ2UgWB
- VPR7dETeyIFU2ISmA5ow6Az2GQL85/AFU+803NNSYdJlGXM3lFkBM+ppggCKbJXnQg4i
- Q6kg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=W8/CcxemkjOqw5vcRGpz7IYCIwc+17181uPGqaEJ7DY=;
- b=XYugYd7rZTLaJvwYBsG7BYwEXuh74ZxJVXMdj+y++WwV0PPbjD0/+N/sm9xoMcEvcT
- MquugpSnBbeZRSOXFqPbRhJfBmHJYJ84xltoAzNAf7xl/S1YxaXZgVLsl7yXHBAMYGRE
- 819g6dypT7LNR2myJVCqfQHa3faDZhfe2GGSb21Zl+pxaLecddvLciJ0aqoUkTkMe3j2
- Mji0hmNUYSXOJ+SPtsDNPtyLsvnB1K1nXhi7hMPwvD9ub3vvrl8bYl+T6m0bstKo9mvu
- HWPPI9q2XZtNLfc7lfjE9xfZ/YGO2OgM/5/dKeEEI6BibD7Qo9k/NTaoj5Xt0pEL5Z29
- apIg==
-X-Gm-Message-State: APjAAAXODYocqCr1I30AXG+tmgAzbRnQvCZVNDFaNRCi52493OxX/Z+r
- cEnpJWI2BEjVs/xSFlq3lvgeo6bvdz/2ekAH7OmucQ==
-X-Google-Smtp-Source: APXvYqwqS8eE5mm2UJA47bQpgGFKawwQlQgyL0E+56rYCcHzHx7Ty1GdAApYQ9TLFZ0jRsmLISKBV0pCKV38BATWBLI=
-X-Received: by 2002:a2e:a0cf:: with SMTP id f15mr24105118ljm.180.1562228020926; 
- Thu, 04 Jul 2019 01:13:40 -0700 (PDT)
+ id 1hiwwk-0001n0-Dn
+ for linux-arm-kernel@lists.infradead.org; Thu, 04 Jul 2019 08:18:27 +0000
+Received: from localhost (83-86-89-107.cable.dynamic.v4.ziggo.nl
+ [83.86.89.107])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 4173620693;
+ Thu,  4 Jul 2019 08:18:24 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1562228304;
+ bh=UeYtLQxzdmwhfH9GJRF3txc6Hp4+NVNVV1h+wH9zNLs=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=zqQKPvTwzowYgDTm2mEztindHizh8BRoAbAsYALovpvP69cYxlxk567QkQsnSu3Cb
+ uFGTfZdxYBK5aV9V9ILwmly2LN10tMb7G93Bqv7dXzkk92xIMTbyg1DzRxSa832pxt
+ 1tpIpeeMS0z1Y3jnb+93mRUNqViTnIKllbvPQIT0=
+Date: Thu, 4 Jul 2019 10:18:22 +0200
+From: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+To: Marc Gonzalez <marc.w.gonzalez@free.fr>
+Subject: Re: [PATCHv5 1/2] dt-bindings: coresight: Change CPU phandle to
+ required property
+Message-ID: <20190704081822.GD6438@kroah.com>
+References: <cover.1561659046.git.saiprakash.ranjan@codeaurora.org>
+ <2afedb941294af7ba0658496b4aca3759a4e43ff.1561659046.git.saiprakash.ranjan@codeaurora.org>
+ <CANLsYkxvh+qUDvqG45o7qh61Noq=a=BJ4-p68ipdzxYt6n5bNA@mail.gmail.com>
+ <8fb5947e-acf8-faff-5594-2a32151ebee7@codeaurora.org>
+ <20190704070239.GB32707@kroah.com>
+ <72dff807-7172-7882-83fc-d7ff4cafe39f@free.fr>
 MIME-Version: 1.0
-References: <20190625210441.199514-1-ndesaulniers@google.com>
-In-Reply-To: <20190625210441.199514-1-ndesaulniers@google.com>
-From: Linus Walleij <linus.walleij@linaro.org>
-Date: Thu, 4 Jul 2019 10:13:29 +0200
-Message-ID: <CACRpkdb+WO4WDS5S1uqPgYFHnz1ch0=DwTKaAxTF3_zid+zH4g@mail.gmail.com>
-Subject: Re: [PATCH] ARM: Kconfig: default to AEABI w/ Clang
-To: Nick Desaulniers <ndesaulniers@google.com>
+Content-Disposition: inline
+In-Reply-To: <72dff807-7172-7882-83fc-d7ff4cafe39f@free.fr>
+User-Agent: Mutt/1.12.1 (2019-06-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190704_011345_580814_AF2C47E0 
-X-CRM114-Status: GOOD (  13.66  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190704_011826_482070_1BC5D9AE 
+X-CRM114-Status: GOOD (  14.66  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:241 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.0 T_PDS_NO_HELO_DNS      High profile HELO but no A record
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -91,56 +79,55 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- Arnd Bergmann <arnd@arndb.de>, Masahiro Yamada <yamada.masahiro@socionext.com>,
- Marc Zyngier <marc.zyngier@arm.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Ard Biesheuvel <ard.biesheuvel@linaro.org>,
- Russell King <linux@armlinux.org.uk>, Mike Rapoport <rppt@linux.ibm.com>,
- clang-built-linux@googlegroups.com, Paul Burton <paul.burton@mips.com>,
- Mark Brown <broonie@kernel.org>, Palmer Dabbelt <palmer@sifive.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: MSM <linux-arm-msm@vger.kernel.org>,
+ Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Mathieu Poirier <mathieu.poirier@linaro.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Jun 25, 2019 at 11:04 PM Nick Desaulniers
-<ndesaulniers@google.com> wrote:
+On Thu, Jul 04, 2019 at 10:08:24AM +0200, Marc Gonzalez wrote:
+> [ Trimming recipients list ]
+> 
+> On 04/07/2019 09:02, Greg Kroah-Hartman wrote:
+> 
+> > On Thu, Jul 04, 2019 at 12:13:40PM +0530, Sai Prakash Ranjan wrote:
+> >
+> >> On 7/4/2019 1:32 AM, Mathieu Poirier wrote:
+> >>
+> >>> Hi Greg,
+> >>>
+> >>> On Thu, 27 Jun 2019 at 12:15, Sai Prakash Ranjan wrote:
+> >>>>
+> >>>> Do not assume the affinity to CPU0 if cpu phandle is omitted.
+> >>>> Update the DT binding rules to reflect the same by changing it
+> >>>> to a required property.
+> >>>>
+> >>>> Signed-off-by: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>
+> >>>> Reviewed-by: Suzuki K Poulose <suzuki.poulose@arm.com>
+> >>>
+> >>> I'm all good with this patch - can you pick this up for the coming
+> >>> merge window?  If not I'll simply keep it in my tree for 5.4.
+> >>>
+> >>> Tested-by: Mathieu Poirier <mathieu.poirier@linaro.org>
+> >>> Reviewed-by: Mathieu Poirier <mathieu.poirier@linaro.org>
+> >>
+> >> I think you missed adding Greg, adding him now ;)
+> > 
+> > I don't see any patch here for me to actually take :(
+> 
+> I see what you're doing here ^_^
+> 
+> https://lore.kernel.org/patchwork/patch/1094935/
 
-> Clang produces references to __aeabi_uidivmod and __aeabi_idivmod for
-> arm-linux-gnueabi and arm-linux-gnueabihf targets incorrectly when AEABI
-> is not selected (such as when OABI_COMPAT is selected).
->
-> While this means that OABI userspaces wont be able to upgraded to
-> kernels built with Clang, it means that boards that don't enable AEABI
-> like s3c2410_defconfig will stop failing to link in KernelCI when built
-> with Clang.
->
-> Link: https://github.com/ClangBuiltLinux/linux/issues/482
-> Link: https://groups.google.com/forum/#!msg/clang-built-linux/yydsAAux5hk/GxjqJSW-AQAJ
-> Suggested-by: Arnd Bergmann <arnd@arndb.de>
-> Signed-off-by: Nick Desaulniers <ndesaulniers@google.com>
+What can I do with a random url?
 
-As reflecting the state of things with CLANG it's:
-Reviewed-by: Linus Walleij <linus.walleij@linaro.org>
+Please send patches as emails, if you want me to be able to actually
+take it.
 
-But I think we in general need to have some discussion on how to
-proceed with OABI userspaces.
-
-I am well aware of distributions like OpenWrt using EABI even
-on ARMv4 with "tricks" like this:
-https://github.com/openwrt/openwrt/blob/master/toolchain/gcc/patches/9.1.0/840-armv4_pass_fix-v4bx_to_ld.patch
-
-I have one OABI that I can think of would be nice to live on
-and it's the RedHat derivative on my Foorbridge NetWinder.
-OK I wouldn't cry if we have to kill it because it is too hard to
-keep supporting it, but it has been running the latest kernels
-all along so if it's not a huge effort I'd be interested in knowing
-the options.
-
-Yours,
-Linus Walleij
+greg k-h
 
 _______________________________________________
 linux-arm-kernel mailing list
