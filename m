@@ -2,67 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 243D65F5F5
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  4 Jul 2019 11:48:15 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1382D5F5F9
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  4 Jul 2019 11:48:50 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=lpzq2U3wOM7dgo9r2QJXNjPgI11KhPA6up/KSKbEZBg=; b=aIRr7DiRzG6rha
-	8EojIE/QsX7dlDD1MJwLRo3qqhQeFwE5rpURz9XqfJZqsHOEdTIzV624KF0+YWbVqY2NzmwwTVcDN
-	JmdEKPQOTmaBPyHbuSqB8ziCJpwCk2gxRb9OlLdcxEAPcwuUYmlUHvYpy7q3sAmJNPnrHKswK0YIl
-	O94qc+mvaZ8M7pjrue6eYg1nG0n+S/32qAj9J6Gyc+ADEq5W/wdwKb6OVaPIT2KBddM5033mZZdUd
-	ddVXll8kg34k8GcqfFeNqXTIm7GP4SobmPdU4YhIqIHAJ38mH+j8pePEwwyhLF+GDOKAKGuv4bNJw
-	wY9Z3Hhzknr1LhYhYrvQ==;
+	List-Owner; bh=pOILC/4AEctvwpKVTiAkre13dhBM8SXJsACiwr/9974=; b=mdjuu8HufV+/iH
+	xSmkeOEx7L/bHjBauTigGKJGOHlFnm6Kjor/6vK3lZKVOfG/aCD9GQ1n9lgeklP7I2Jcm/uNigLXd
+	eUvj3D2KSHVESpri/haNaB2OopbuKLkYvCbDf8kHVltbJxi5g0iGzw06MMNRSZxnW6hZy687SnuD4
+	GI0qrug417K88jK/el40bFM89pXQFVUsCSf6lV5FRwSSlkrdyNdEDu6m0so6kilK4LVh+7YZJ5Xk+
+	1eSulQaX/P+q9TROJhfHfTw3zwJ3NgCVsOgEZ5Dgy7fKyQiLXJLSHIhF6glGw0t62MSwlBOpDgMf7
+	kL9LJDnpWfbIHhHDxUDg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hiyLc-00032r-Tj; Thu, 04 Jul 2019 09:48:12 +0000
-Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
+	id 1hiyMC-0003JJ-9H; Thu, 04 Jul 2019 09:48:48 +0000
+Received: from mx1.redhat.com ([209.132.183.28])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hiyLQ-00031y-3n
- for linux-arm-kernel@lists.infradead.org; Thu, 04 Jul 2019 09:48:01 +0000
-Received: from lupine.hi.pengutronix.de
- ([2001:67c:670:100:3ad5:47ff:feaf:1a17] helo=lupine)
- by metis.ext.pengutronix.de with esmtp (Exim 4.92)
- (envelope-from <p.zabel@pengutronix.de>)
- id 1hiyLH-0002sf-TQ; Thu, 04 Jul 2019 11:47:51 +0200
-Message-ID: <1562233671.6641.9.camel@pengutronix.de>
-Subject: Re: [PATCH V2 1/2] dt-bindings: reset: imx7: Add support for i.MX8MM
-From: Philipp Zabel <p.zabel@pengutronix.de>
-To: Anson Huang <anson.huang@nxp.com>, "robh+dt@kernel.org"
- <robh+dt@kernel.org>,  "mark.rutland@arm.com" <mark.rutland@arm.com>,
- "shawnguo@kernel.org" <shawnguo@kernel.org>,  "s.hauer@pengutronix.de"
- <s.hauer@pengutronix.de>, "kernel@pengutronix.de" <kernel@pengutronix.de>, 
- "festevam@gmail.com" <festevam@gmail.com>, Leonard Crestez
- <leonard.crestez@nxp.com>, Jacky Bai <ping.bai@nxp.com>, Daniel Baluta
- <daniel.baluta@nxp.com>,  "devicetree@vger.kernel.org"
- <devicetree@vger.kernel.org>, "linux-arm-kernel@lists.infradead.org"
- <linux-arm-kernel@lists.infradead.org>, "linux-kernel@vger.kernel.org"
- <linux-kernel@vger.kernel.org>
-Date: Thu, 04 Jul 2019 11:47:51 +0200
-In-Reply-To: <DB3PR0402MB39167FBAA2A3867148063F83F5FA0@DB3PR0402MB3916.eurprd04.prod.outlook.com>
-References: <20190704092600.38015-1-Anson.Huang@nxp.com>
- <1562233305.6641.8.camel@pengutronix.de>
- <DB3PR0402MB39167FBAA2A3867148063F83F5FA0@DB3PR0402MB3916.eurprd04.prod.outlook.com>
-X-Mailer: Evolution 3.22.6-1+deb9u2 
-Mime-Version: 1.0
-X-SA-Exim-Connect-IP: 2001:67c:670:100:3ad5:47ff:feaf:1a17
-X-SA-Exim-Mail-From: p.zabel@pengutronix.de
-X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
- SAEximRunCond expanded to false
-X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
+ id 1hiyLw-0003IS-Pc
+ for linux-arm-kernel@lists.infradead.org; Thu, 04 Jul 2019 09:48:34 +0000
+Received: from smtp.corp.redhat.com (int-mx07.intmail.prod.int.phx2.redhat.com
+ [10.5.11.22])
+ (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
+ (No client certificate requested)
+ by mx1.redhat.com (Postfix) with ESMTPS id 3064A859FB;
+ Thu,  4 Jul 2019 09:48:17 +0000 (UTC)
+Received: from carbon (ovpn-200-17.brq.redhat.com [10.40.200.17])
+ by smtp.corp.redhat.com (Postfix) with ESMTP id 3643E1001DC8;
+ Thu,  4 Jul 2019 09:48:05 +0000 (UTC)
+Date: Thu, 4 Jul 2019 11:48:04 +0200
+From: Jesper Dangaard Brouer <brouer@redhat.com>
+To: Jose Abreu <Jose.Abreu@synopsys.com>
+Subject: Re: [PATCH net-next 3/3] net: stmmac: Introducing support for Page
+ Pool
+Message-ID: <20190704114804.10c38b42@carbon>
+In-Reply-To: <1b254bb7fc6044c5e6e2fdd9e00088d1d13a808b.1562149883.git.joabreu@synopsys.com>
+References: <cover.1562149883.git.joabreu@synopsys.com>
+ <1b254bb7fc6044c5e6e2fdd9e00088d1d13a808b.1562149883.git.joabreu@synopsys.com>
+MIME-Version: 1.0
+X-Scanned-By: MIMEDefang 2.84 on 10.5.11.22
+X-Greylist: Sender IP whitelisted, not delayed by milter-greylist-4.5.16
+ (mx1.redhat.com [10.5.110.26]); Thu, 04 Jul 2019 09:48:32 +0000 (UTC)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190704_024800_152471_03763550 
-X-CRM114-Status: GOOD (  16.76  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190704_024832_846022_6CC5F52B 
+X-CRM114-Status: GOOD (  14.25  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [209.132.183.28 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -74,51 +68,69 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: dl-linux-imx <linux-imx@nxp.com>
+Cc: Joao Pinto <Joao.Pinto@synopsys.com>,
+ Alexandre Torgue <alexandre.torgue@st.com>,
+ Maxime Ripard <maxime.ripard@bootlin.com>, netdev@vger.kernel.org,
+ Ilias Apalodimas <ilias.apalodimas@linaro.org>, linux-kernel@vger.kernel.org,
+ "David S . Miller" <davem@davemloft.net>, Chen-Yu Tsai <wens@csie.org>,
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>, brouer@redhat.com,
+ Giuseppe Cavallaro <peppe.cavallaro@st.com>,
+ linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, 2019-07-04 at 09:46 +0000, Anson Huang wrote:
-> Hi, Philipp
-> 
-> > On Thu, 2019-07-04 at 17:25 +0800, Anson.Huang@nxp.com wrote:
-> > > From: Anson Huang <Anson.Huang@nxp.com>
-> > > 
-> > > i.MX8MM can reuse i.MX8MQ's reset driver, update the compatible
-> > > property and related info to support i.MX8MM.
-> > > 
-> > > Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
-> > > ---
-> > > New patch.
-> > > ---
-> > >  Documentation/devicetree/bindings/reset/fsl,imx7-src.txt | 4 ++--
-> > >  1 file changed, 2 insertions(+), 2 deletions(-)
-> > > 
-> > > diff --git a/Documentation/devicetree/bindings/reset/fsl,imx7-src.txt
-> > > b/Documentation/devicetree/bindings/reset/fsl,imx7-src.txt
-> > > index 13e0951..bc24c45 100644
-> > > --- a/Documentation/devicetree/bindings/reset/fsl,imx7-src.txt
-> > > +++ b/Documentation/devicetree/bindings/reset/fsl,imx7-src.txt
-> > > @@ -7,7 +7,7 @@ controller binding usage.
-> > >  Required properties:
-> > >  - compatible:
-> > >  	- For i.MX7 SoCs should be "fsl,imx7d-src", "syscon"
-> > > -	- For i.MX8MQ SoCs should be "fsl,imx8mq-src", "syscon"
-> > > +	- For i.MX8MQ/i.MX8MM SoCs should be "fsl,imx8mq-src", "syscon"
-> > 
-> > Please still add the "fsl,imx8mm-src" for i.MX8MM, just in case a significant
-> > difference is discovered later.
-> 
-> OK, then I will add a new line as below:
-> 
-> For i.MX8MM SoCs should be "fsl,imx8mm-src", "fsl,imx8mq-src", "syscon"
+On Wed,  3 Jul 2019 12:37:50 +0200
+Jose Abreu <Jose.Abreu@synopsys.com> wrote:
 
-Yes, that looks good, thanks.
+> --- a/drivers/net/ethernet/stmicro/stmmac/stmmac_main.c
+> +++ b/drivers/net/ethernet/stmicro/stmmac/stmmac_main.c
+> @@ -1197,26 +1197,14 @@ static int stmmac_init_rx_buffers(struct stmmac_priv *priv, struct dma_desc *p,
+>  				  int i, gfp_t flags, u32 queue)
+>  {
+>  	struct stmmac_rx_queue *rx_q = &priv->rx_queue[queue];
+> -	struct sk_buff *skb;
+> +	struct stmmac_rx_buffer *buf = &rx_q->buf_pool[i];
+>  
+> -	skb = __netdev_alloc_skb_ip_align(priv->dev, priv->dma_buf_sz, flags);
+> -	if (!skb) {
+> -		netdev_err(priv->dev,
+> -			   "%s: Rx init fails; skb is NULL\n", __func__);
+> +	buf->page = page_pool_dev_alloc_pages(rx_q->page_pool);
+> +	if (!buf->page)
+>  		return -ENOMEM;
+> -	}
+> -	rx_q->rx_skbuff[i] = skb;
+> -	rx_q->rx_skbuff_dma[i] = dma_map_single(priv->device, skb->data,
+> -						priv->dma_buf_sz,
+> -						DMA_FROM_DEVICE);
+> -	if (dma_mapping_error(priv->device, rx_q->rx_skbuff_dma[i])) {
+> -		netdev_err(priv->dev, "%s: DMA mapping error\n", __func__);
+> -		dev_kfree_skb_any(skb);
+> -		return -EINVAL;
+> -	}
+> -
+> -	stmmac_set_desc_addr(priv, p, rx_q->rx_skbuff_dma[i]);
+>  
+> +	buf->addr = buf->page->dma_addr;
 
-regards
-Philipp
+We/Ilias added a wrapper/helper function for accessing dma_addr, as it
+will help us later identifying users.
+
+ page_pool_get_dma_addr(page)
+
+> +	stmmac_set_desc_addr(priv, p, buf->addr);
+>  	if (priv->dma_buf_sz == BUF_SIZE_16KiB)
+>  		stmmac_init_desc3(priv, p);
+>  
+
+
+-- 
+Best regards,
+  Jesper Dangaard Brouer
+  MSc.CS, Principal Kernel Engineer at Red Hat
+  LinkedIn: http://www.linkedin.com/in/brouer
 
 _______________________________________________
 linux-arm-kernel mailing list
