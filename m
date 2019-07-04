@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CE1D05F8CA
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  4 Jul 2019 15:03:07 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7CA035F8CB
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  4 Jul 2019 15:03:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,65 +11,63 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=jPLzpknnuc4tvUlnIVKonzGfntCep0z89Q7+WliPvN4=; b=hlpVYaOFZdMpXXxuUScI6HOBRS
-	lKV9EsO3FCohqm2mVK6UO8dC36bpIbP/w8OS5MovWN0ia6GOt4trsyc9bB4Cgtbpv+DumTbQzlvMl
-	cN0Gp1oliUVkEsJqUnYwLWmon/kictOY3cHZmZUxn72yyCYG1oDLxTEp51zUJC1YDxVR3twLwk7s3
-	gMQLqEu25yYR0QceYhPpmeJnSkKEVWzJjt1/nh7eacVn5rgQCdMGrXaOlA+SYFnTYa57cMM+8oWC6
-	t3v8+cFzEMen1bEMEewDDWow7AujM/Dcc3dl0clgEwABeThWyfwS3pTw+nsve3AFAF7gsFd/erk6p
-	sbWio71w==;
+	bh=laLkmzvZ8MuZKFUwqSjXip8rEW0md6BM7yZQes3DpZU=; b=R9uxh8U44NSMtj46RYmRNQfiIo
+	rv6tHwEM5KNuFLJyjhP+VOHD9YUe5k+nv7PQcI2+4lSm4UNWxeIuU2IqtwZUZHpcMNHUUhi5kydAy
+	djm59RVAhjn0KVo0hLr7KlQ00jDvfXrq2ZGwrvkj6qvghQetR7g42X9llqeaQ4jncK6duOMXbRffr
+	teVCEzNLiLn2QxQdxlk6qjOwdOWUfBvJTaNSidrpYiJQFH3+rwRHizoMAmtNsCMnPHBeqG80HsKKI
+	s8d2RUFXv8VcjNKUBtgeKWlS+OdCFZfVkiaX2MzjtoGi193DrV82SASnogNUrLwGuBx145ZLIZPBz
+	gZtRyZDQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hj1OE-0001Y1-8j; Thu, 04 Jul 2019 13:03:06 +0000
+	id 1hj1OW-0001ms-9y; Thu, 04 Jul 2019 13:03:24 +0000
 Received: from mail-lj1-x241.google.com ([2a00:1450:4864:20::241])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hj1MM-0008VS-Q5
+ id 1hj1MN-00005C-0T
  for linux-arm-kernel@lists.infradead.org; Thu, 04 Jul 2019 13:01:12 +0000
-Received: by mail-lj1-x241.google.com with SMTP id v24so6072455ljg.13
+Received: by mail-lj1-x241.google.com with SMTP id 205so6091105ljj.8
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 04 Jul 2019 06:01:09 -0700 (PDT)
+ Thu, 04 Jul 2019 06:01:10 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=Vjqg27zo8GSuJgU6iVxhR1yNRE/ZU22ne3V7jvRsp28=;
- b=QS9k6FW9w4E7lJVl91rKZEbJwQCPFf4dXHEnx92561O9pq8FV57Bu8VQzOZ+tF3acv
- HDzFIeV2nfNItPM1raEZQIs/7jmltHT3/csXL89AmcdXvreOTEUFHhhQnnqiP/bVv15N
- 22h/KyIhu8lHKV8Cf0Qq9A/G3avCLY1DOKN7tDHVmuVTAZdUcpemBdo6hJqt5T8oHiPX
- tOBCkYMYXDYXW3Kz5NR4VuRhTR7BkcupkchrFvRKaMcKH31jlQGdchMyyhN9e3NzlzrT
- 810EPE02SA7TXnkVI0WJGJ/93KkoCgVyyuP8dppfZ1DkD8cEQfSXpBT3QT20GrAs8tH8
- cQ5w==
+ bh=iFkawdZ5Qbd64aBfLB7G/2IByrJZ52xv8EKcLUHUKyg=;
+ b=gZwrSvC6Ql2DUkwL/tYLzFq7GY821LeLxgRRNN082KZr7oErJNkbsU5t2Yqo9mCTBW
+ X6tX/94+bNZHkEwZawbARckZhMteoiYs8DfsqNOt6OG5ITHEW7Jft5T2rNtYrlVX6ih0
+ pLhDzflHHAWeItnEsYZqEJrWR9olupRNXzUEbme8n2ry5CBpxFwV26USLYQS183kyuJG
+ dRLI2RGDNTOjl7kX0+ovRbjmo7GyAev8h2RESl939EyHe7cJXO2o4aysrekgw/HvlMSK
+ 54rtLrnjUdGKSquoeWinuVDVtgK108jXTT5kLEZ/1zPpIZ68SRXIEZoGU1J/sOkBq+lt
+ TVCA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=Vjqg27zo8GSuJgU6iVxhR1yNRE/ZU22ne3V7jvRsp28=;
- b=gG2IfCMsHinOlEJnidnWdJ/JjiKZsDfLPaqaC13HRYvNJ9ieoas7iVjqySqWIEZaDL
- kbGnD180qIEsEIWs4wniiRYkEngUvzVJyof/X4UFyQ9qbXkvQXfaDVq8uctURGIpUcvq
- zUfl4pbUZmdWiM4bmyijgk2DUsuRnjalkUMcdjNFtKkrbzXSGknfh5PPO6M9kIvhmRc9
- A1WjbcvU8r2jHLmNOJmJrHFFn6qkiopKCpDLjti/BctDRoyzxD95gL4fOVe73+sHSLzT
- EaxGcjo3n+1eoXEpfXlujV5ZOc9Yl/ACad3tzjGKblr2Sfd6gNSZOyx2XbYdqd9ar71Q
- qUHg==
-X-Gm-Message-State: APjAAAX6tRSraULN4x7iK248tYr1ORFjlgq9YVyIeqSPfLoRAFkEHjDf
- TnSA4AyXxRB8Z/UUM9ytK/I=
-X-Google-Smtp-Source: APXvYqy0O6Yaej+AxploccL21axdxsQ4p5RQt1Xg5aioHDDia+DQANIaVf69pxKtMsc+zBt44esfiw==
-X-Received: by 2002:a05:651c:150:: with SMTP id
- c16mr8505844ljd.193.1562245268095; 
- Thu, 04 Jul 2019 06:01:08 -0700 (PDT)
+ bh=iFkawdZ5Qbd64aBfLB7G/2IByrJZ52xv8EKcLUHUKyg=;
+ b=nBs7zJbbKHazWcWjJIpQhZ8ylZbLrwWluQWCk9SXQw1eYzI2GP+KSZpxgHTRKbVc6w
+ PEY0AZHYYONhoLTkXTxsWFN2cFBatxqyVugFyvS0O8kAcug1v3LvElaKaR4f7qcSFG24
+ p0qdLac0Ip1+Rpm01wSoBnbgtjUtCBWw8HLSK5DulYx1rqrOD7A0ipWXczPWtyuh9Zc9
+ kotkcISvMYllDZ+xqtt8FrDPLNdzPqgaMT2eiCmHnL88REabmj9osy6sXwkrPsAp0MzA
+ jR5v5oeQibwQ5qFpNeMGwRm5JSc/7wzJkKjaRh9Yf2ZxoPBIegRgdc4RNwdsL1KhH9nT
+ vd/A==
+X-Gm-Message-State: APjAAAW+IazP+V6NiUcV7/67BBoKdSmCoF1cBKPpXus4Ojl51f+otm1J
+ y3svAfe8Dp5IZc1fR31djww=
+X-Google-Smtp-Source: APXvYqzi+zB+DMQHWPOrhTYHDsuybi9IxDE3XFE0vNOu//S6piBaknj6RbeenK5U7P/fYa9NUJABLw==
+X-Received: by 2002:a2e:8846:: with SMTP id z6mr23896366ljj.20.1562245269472; 
+ Thu, 04 Jul 2019 06:01:09 -0700 (PDT)
 Received: from osv.localdomain ([89.175.180.246])
- by smtp.gmail.com with ESMTPSA id h1sm485914lfj.21.2019.07.04.06.01.06
+ by smtp.gmail.com with ESMTPSA id h1sm485914lfj.21.2019.07.04.06.01.08
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-SHA bits=128/128);
- Thu, 04 Jul 2019 06:01:07 -0700 (PDT)
+ Thu, 04 Jul 2019 06:01:08 -0700 (PDT)
 From: Sergey Organov <sorganov@gmail.com>
 To: linux-serial@vger.kernel.org
-Subject: [PATCH v3 6/7] serial: imx: set_mctrl(): correctly restore autoRTS
- state
-Date: Thu,  4 Jul 2019 16:00:28 +0300
-Message-Id: <1562245229-709-7-git-send-email-sorganov@gmail.com>
+Subject: [PATCH v3 7/7] serial: imx: get rid of imx_uart_rts_auto()
+Date: Thu,  4 Jul 2019 16:00:29 +0300
+Message-Id: <1562245229-709-8-git-send-email-sorganov@gmail.com>
 X-Mailer: git-send-email 2.1.4
 In-Reply-To: <1562245229-709-1-git-send-email-sorganov@gmail.com>
 References: <20190614072801.3187-1-s.hauer@pengutronix.de>
  <1562245229-709-1-git-send-email-sorganov@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190704_060111_036950_86D8A3F0 
-X-CRM114-Status: GOOD (  14.09  )
+X-CRM114-CacheID: sfid-20190704_060111_407727_456DC93D 
+X-CRM114-Status: GOOD (  12.98  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -113,46 +111,46 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-imx_uart_set_mctrl() happened to set UCR2_CTSC bit whenever TIOCM_RTS
-was set, no matter if RTS/CTS handshake is enabled or not. Now fixed by
-turning handshake on only when CRTSCTS bit for the port is set.
+Called in only one place, for RS232, it only obscures things, as it
+doesn't go well with 2 similar named functions,
+imx_uart_rts_inactive() and imx_uart_rts_active(), that both are
+RS485-specific.
 
 Reviewed-by: Sascha Hauer <s.hauer@pengutronix.de>
 Tested-by: Sascha Hauer <s.hauer@pengutronix.de>
 Signed-off-by: Sergey Organov <sorganov@gmail.com>
 ---
- drivers/tty/serial/imx.c | 16 ++++++++++++++--
- 1 file changed, 14 insertions(+), 2 deletions(-)
+ drivers/tty/serial/imx.c | 10 ++--------
+ 1 file changed, 2 insertions(+), 8 deletions(-)
 
 diff --git a/drivers/tty/serial/imx.c b/drivers/tty/serial/imx.c
-index 5532887..582a3fd 100644
+index 582a3fd..f4e9d1a 100644
 --- a/drivers/tty/serial/imx.c
 +++ b/drivers/tty/serial/imx.c
-@@ -970,10 +970,22 @@ static void imx_uart_set_mctrl(struct uart_port *port, unsigned int mctrl)
- 	if (!(port->rs485.flags & SER_RS485_ENABLED)) {
- 		u32 ucr2;
+@@ -402,13 +402,6 @@ static void imx_uart_rts_inactive(struct imx_port *sport, u32 *ucr2)
+ 	mctrl_gpio_set(sport->gpios, sport->port.mctrl);
+ }
  
-+		/*
-+		 * Turn off autoRTS if RTS is lowered and restore autoRTS
-+		 * setting if RTS is raised.
-+		 */
- 		ucr2 = imx_uart_readl(sport, UCR2);
- 		ucr2 &= ~(UCR2_CTS | UCR2_CTSC);
--		if (mctrl & TIOCM_RTS)
--			ucr2 |= UCR2_CTS | UCR2_CTSC;
-+		if (mctrl & TIOCM_RTS) {
-+			ucr2 |= UCR2_CTS;
-+			/*
-+			 * UCR2_IRTS is unset if and only if the port is
-+			 * configured for CRTSCTS, so we use inverted UCR2_IRTS
-+			 * to get the state to restore to.
-+			 */
-+			if (!(ucr2 & UCR2_IRTS))
-+				ucr2 |= UCR2_CTSC;
-+		}
- 		imx_uart_writel(sport, ucr2, UCR2);
+-/* called with port.lock taken and irqs caller dependent */
+-static void imx_uart_rts_auto(struct imx_port *sport, u32 *ucr2)
+-{
+-	if (*ucr2 & UCR2_CTS)
+-		*ucr2 |= UCR2_CTSC;
+-}
+-
+ /* called with port.lock taken and irqs off */
+ static void imx_uart_start_rx(struct uart_port *port)
+ {
+@@ -1602,7 +1595,8 @@ imx_uart_set_termios(struct uart_port *port, struct ktermios *termios,
+ 			imx_uart_rts_inactive(sport, &ucr2);
+ 
+ 	} else if (termios->c_cflag & CRTSCTS) {
+-		imx_uart_rts_auto(sport, &ucr2);
++		if (ucr2 & UCR2_CTS)
++			ucr2 |= UCR2_CTSC;
  	}
  
+ 	if (termios->c_cflag & CRTSCTS)
 -- 
 2.10.0.1.g57b01a3
 
