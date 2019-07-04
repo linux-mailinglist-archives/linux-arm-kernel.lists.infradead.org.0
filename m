@@ -2,91 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4E68D5FAEC
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  4 Jul 2019 17:34:13 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C2CFA5FAF1
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  4 Jul 2019 17:35:49 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Subject:References:
-	In-Reply-To:Message-ID:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=GrIOStkjO9RKlHwZAkTly7qaj/4vrCUpGyZn8sWn8Js=; b=HXUvNzt6CHpv9v
-	cX4DurDHjkRgMPKEnN5yZS5IaOFaC8JI3eHpBhkiCgMDNbMjxVrcv18JPJLQiZHOBnO8rLO1sDl3g
-	JfwvlnotiKVXX6h57BEHuncLK0jkRqyzBi/GhgIRJsW/LXbRjAFwg69MC47ChKGOZho35cV2IiaAW
-	Ivflp0PJtL1vLSUTNoQV1dRsqjhwxXjkIMg8frTi5eUsILEPnBVQCthTNRRmyQocsA0tY3izRyMJT
-	gCTj2uHsOXfMbuGL+6EugSU90VNA/Hr4VTnly0ebvU/aedYUJiVcI3uR7tgbe/ASoayqnUaYUWwfp
-	MlPSml5VupiUVVzFBmyg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=v2djvMXcGMHvUvgUN9hdXLt7aVMU1UXr/i47qUYiIYY=; b=ukwQyrXQnmV2d/
+	ySpFbeAPA3wWmhRuiUqgrpRpzVbO5AXp8bG2hTU3Z9abEBkk1ZCrVI/cpZo63WoZhSmrB4X1ikQqQ
+	Ee6mpwqsAniMjwrdIvfgrwS2fKYVDt42Sbc5hyOiOgQoykhqbrbRnHz6ZLeow0DU0p45199VDoQ0v
+	ycaN5Br2j54aO3/7mKEhCx8tv5IiRDp0OAi6TdlRHVCj4nc0b9AHWIUhAsfWR+qzewaOs6AN9AqX1
+	3rHFJvU4WK7Tl8dy83UTE5d0daai/pTHyrNMXzO3YEpo2DFNd+O425LWp3WV5o7OwoJCQZjMRNgdS
+	f8zM0VQSQlwJ5i/mfMrw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hj3kR-0007E7-UI; Thu, 04 Jul 2019 15:34:11 +0000
-Received: from mo6-p02-ob.smtp.rzone.de ([2a01:238:20a:202:5302::5])
+	id 1hj3m0-0000Rq-CE; Thu, 04 Jul 2019 15:35:48 +0000
+Received: from mout.kundenserver.de ([212.227.17.10])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hj3k6-00071a-Hl; Thu, 04 Jul 2019 15:33:52 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; t=1562254424;
- s=strato-dkim-0002; d=fpond.eu;
- h=Subject:References:In-Reply-To:Message-ID:Cc:To:From:Date:
- X-RZG-CLASS-ID:X-RZG-AUTH:From:Subject:Sender;
- bh=gou5Zh0HIbQCcM7c2CWEWnJ04+a+qFsD/mEWP+ODjjE=;
- b=J234T43gvxKe/gjHLYNWzODXb761nfwLa+rSoVZTcgN1QUyceMdxAcxi56dx2Ejmpd
- nADwFLWCb+5QjnsWFdixlfqxiuLLm6OAkv/WhdnczLpEKiKixPXVJgQEwPOrGbit24+3
- NOWVrz+AwH5T4r15ZGC4sLWDIhty7zsRqk0ovQUFcd7RGNEKXg2AzOJALYwVsK8umLUI
- hgLm+NBlFy3KoTimyAG6z1dDR20PMRwjH7nriy1b30zdPiDDujgDHHaqaFhBA2xrS62X
- ONag4hTK62Y+KA2SRFHFJraQY+wgwiLKGfpzvrgjjqWZczamd/UTJi+l4jQMlhIQGx7b
- Ugyg==
-X-RZG-AUTH: ":OWANVUa4dPFUgKR/3dpvnYP0Np73amq+g13rqGzmt2bYDnKIKaws6YXTsc4="
-X-RZG-CLASS-ID: mo00
-Received: from oxapp01-01.back.ox.d0m.de by smtp-ox.front (RZmta 44.24 AUTH)
- with ESMTPSA id h0a328v64FXe11g
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (curve X9_62_prime256v1
- with 256 ECDH bits, eq. 3072 bits RSA))
- (Client did not present a certificate);
- Thu, 4 Jul 2019 17:33:40 +0200 (CEST)
-Date: Thu, 4 Jul 2019 17:33:40 +0200 (CEST)
-From: Ulrich Hecht <uli@fpond.eu>
-To: Matthias Brugger <matthias.bgg@gmail.com>, CK Hu <ck.hu@mediatek.com>,
- Matthias Brugger <mbrugger@suse.com>
-Message-ID: <100944512.353257.1562254420397@webmail.strato.com>
-In-Reply-To: <84d1c444-d6cb-9537-1bf5-b4e736443239@gmail.com>
-References: <20181116125449.23581-1-matthias.bgg@kernel.org>
- <20181116125449.23581-9-matthias.bgg@kernel.org>
- <20181116231522.GA18006@bogus>
- <2a23e407-4cd4-2e2b-97a5-4e2bb96846e0@gmail.com>
- <CAL_JsqKJQwfDJbpmwW+oCxiDkSp5+6mG-uoURmCQVEMP_jFOEg@mail.gmail.com>
- <154281878765.88331.10581984256202566195@swboyd.mtv.corp.google.com>
- <458178ac-c0fc-9671-7fc8-ed2d6f61424c@suse.com>
- <154356023767.88331.18401188808548429052@swboyd.mtv.corp.google.com>
- <a229bfc7-683f-5b0d-7b71-54f934de6214@suse.com>
- <1561953318.25914.9.camel@mtksdaap41>
- <84d1c444-d6cb-9537-1bf5-b4e736443239@gmail.com>
-Subject: Re: [PATCH v5 08/12] dt-bindings: mediatek: Change the binding for
- mmsys clocks
+ id 1hj3lo-0000R4-Aj
+ for linux-arm-kernel@lists.infradead.org; Thu, 04 Jul 2019 15:35:37 +0000
+Received: from [192.168.1.110] ([77.7.33.110]) by mrelayeu.kundenserver.de
+ (mreue107 [212.227.15.183]) with ESMTPSA (Nemesis) id
+ 1MzyAy-1iTzcq2h9C-00x4Qg; Thu, 04 Jul 2019 17:35:30 +0200
+Subject: Re: Trying to make sa1100 serial driver test-compile'able
+To: Russell King - ARM Linux admin <linux@armlinux.org.uk>
+References: <bafd71d3-da72-32b4-9374-9cf7711e3b33@metux.net>
+ <20190703173945.z6vpyysc45cyysv2@shell.armlinux.org.uk>
+From: "Enrico Weigelt, metux IT consult" <lkml@metux.net>
+Organization: metux IT consult
+Message-ID: <2486fe95-d27e-d606-b165-453ec3e937a2@metux.net>
+Date: Thu, 4 Jul 2019 17:35:29 +0200
+User-Agent: Mozilla/5.0 (X11; Linux i686 on x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.2.1
 MIME-Version: 1.0
-X-Priority: 3
-Importance: Medium
-X-Mailer: Open-Xchange Mailer v7.8.4-Rev59
-X-Originating-IP: 85.212.144.69
-X-Originating-Client: open-xchange-appsuite
+In-Reply-To: <20190703173945.z6vpyysc45cyysv2@shell.armlinux.org.uk>
+Content-Language: en-US
+X-Provags-ID: V03:K1:ez3yBRKFoVkFFn3TL5mcXdjaLRqdIsu5IrETH8E11kunLD9MUtl
+ GjUmIRGf0eYzMyHX38JykF3fU2rCQE2HTgqelNgJcWfrLUYgHffPzy2pCCUBNKGUzEhtSMa
+ HX7mlpNfDkFRiBnPIrLCMB8CI7u34fOKTOWni8TOQCX/2XvAd8Wn+3Pp+BFWIef0lPNcc4s
+ XX5hSeoDGhmqbFVXZIsow==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:fpTW4fCxtA8=:VO1WQjLgF2mfgJQHTNpEHj
+ RouM1StkuqjLTIlD2lQubd0vavigjEn7PgSel8/80K7/FY1s1Fnbg22FBUuFSUkDtqf0W+j7E
+ wqdfHrvC2HkDRuhCb/y18Ms6haDTlKgVBS/PfzLKCJyJNbR+EPy6mlwS+m26IY+cmuXRvLiXe
+ 5BM/SUSAg+FYtqh2JiVWXn4NjZDx4X8aGv8/gHLVGcQ3ur05UKy/ToPIY0R+YaLJgMSJABOJy
+ hERYELy4qYlgPzkptzL4MbN/kkkeoaARVgJG0zB1WjNAeSmcBL9hcV5rqzUI2raYmSjlXbTY5
+ gcd8ZSBCIwFhW2WQWRpDPW2SP30OF7nUcYfH02/8a4BHid9shtjzmYyKHVGaeilEklgyC28Z+
+ qo10TF+uQQRgFsRNtZO5JE6zMu79LrbymUYpQbsI5rcbVxrjG3cwoNODZezsJfLMHwG37/6Ok
+ v+7mEPiqWKH/EIr5zZxGDLhb+jh65FpbZWFWO/fIJv/wcRkFD7gsZpmf+nIB+P6z5D08GG3Ka
+ pU9FXvhR9/Xp+rSllggWHY1l9WyzvodhqicNajE3l2TjsLa8GhCx5ygKBKxJRejsfugFXypbN
+ TPo2LE6fv7O0NCWups73jHBSb51OKF9n3xD0Pn0Vf5G/BHk4aBHs6FA7d8R6Dvx6kFQRlQm2Z
+ XY9tNzhLUH6V5bRAM4faz5aDVO2Lz5ZlrnE2IxtYadcKzUCRvzRRFgCe9p6YOKNhQtUcAROyx
+ dKrVV+jNVLPyjFM+sx7lVhy47Ay9E3GFls2rA+r2Nv6JSFJSAuICy4dIhrk=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190704_083351_201946_F3BD1335 
-X-CRM114-Status: UNSURE (   7.25  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20190704_083536_667230_B8CFDADF 
+X-CRM114-Status: GOOD (  13.34  )
+X-Spam-Score: -0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [2a01:238:20a:202:5302:0:0:5 listed in]
- [list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [212.227.17.10 listed in list.dnswl.org]
+ -0.1 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [212.227.17.10 listed in wl.mailspike.net]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -98,35 +81,47 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Rob Herring <robh@kernel.org>,
- Sean Wang <Sean.Wang@mediatek.com>, devicetree@vger.kernel.org,
- Stephen Boyd <sboyd@kernel.org>, Michael Turquette <mturquette@baylibre.com>,
- Sean Wang <sean.wang@kernel.org>, Stephen Boyd <sboyd@codeaurora.org>,
- linux-kernel@vger.kernel.org, dri-devel <dri-devel@lists.freedesktop.org>,
- David Airlie <airlied@linux.ie>, Chen-Yu Tsai <wens@csie.org>,
- linux-mediatek@lists.infradead.org, Randy Dunlap <rdunlap@infradead.org>,
- Philipp Zabel <p.zabel@pengutronix.de>, matthias.bgg@kernel.org,
- Ulrich Hecht <ulrich.hecht+renesas@gmail.com>,
- linux-clk <linux-clk@vger.kernel.org>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>,
- Laurent Pinchart <laurent.pinchart@ideasonboard.com>
+Cc: linux-arm Mailing List <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On 03.07.19 19:39, Russell King - ARM Linux admin wrote:
 
-> On July 4, 2019 at 11:08 AM Matthias Brugger <matthias.bgg@gmail.com> wrote:
-> You are right, it took far too long for me to respond with a new version of the
-> series. The problem I face is, that I use my mt8173 based chromebook for
-> testing. It needs some downstream patches and broke somewhere between my last
-> email and a few month ago.
+Hi,
 
-If that Chromebook is an Acer R13 and you need a working kernel, you may want to have a look at https://github.com/uli/kernel/tree/elm-working-5.2 .
+>> I'd like to make the sa1100 serial driver test-compile'able. This needs
+>> the UTCR* define's from arch/arm/mach-sa1100/include/mach/SA-1100.h.
+> 
+> Let's wait for the patch series that's already queued for this merge
+> window to land before we consider doing further big changes.  
 
-CU
-Uli
+Okay.
+
+> What's your motivation here?
+
+Make it test-compile'able (adding || COMPILE_TEST ...).
+
+I've got some patches for reducing some boilerplate - nothing really
+spectacular: just moving the common request/release_port() functions
+into generic functions, so several drivers don't need their own
+implementations anymore. (they'll just have to set the .mapsize field
+and use use the generic functions in the ops vector).
+
+Didn't wanna send it to the lists before at least doing some compile
+test cycles. But I don't have that hw nor a suited toolchain, so I'd
+like to get compile-tests running first.
+
+Do you have some sa1100 environment that could test my patch queue ?
+
+
+--mtx
+
+-- 
+Enrico Weigelt, metux IT consult
+Free software and Linux embedded engineering
+info@metux.net -- +49-151-27565287
 
 _______________________________________________
 linux-arm-kernel mailing list
