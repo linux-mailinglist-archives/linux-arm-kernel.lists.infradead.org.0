@@ -2,62 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 515D95F502
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  4 Jul 2019 10:55:02 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 862FE5F503
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  4 Jul 2019 10:55:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=pEKbd9Odsf8+eKODtums7plyLg13EcqjaoUvtqHuTq0=; b=kqFdIT2XhJ29MPmZC5d0vu1ACv
-	/+xNJ/VDqq7pesZtNIfcKoqC8Oh92ZzvgGyM1LODCVEhRHubIM93mxORiqWxWiw8TB7DsaWUSAqL1
-	jCMjfYQ+cHQoSVzgaUuZY5PQLly2tm8NdoMKqK5t/OIyfsd3Ybl1VA5GOjeRheBW5aFgbfQemvsEc
-	jX53kWvTjqYLGG9gsoZqZfIguj0owbhLc937SNFA9Ii8TGrpHQL4/8mElkErPfsOf7sYHPFmhAUY7
-	6QACpi11eVyQTIeAqVsunwALw0HPC3VBG6HmI8HMyOf7cyiAWFJeCR6sR6Ll96xdor0VBbChAF8Ik
-	kEKLcCrA==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=2SjxJp18r3o8cN40pVmrOYsVMBBeZOqiMUV3T+O6RRM=; b=UycygqH5y8Vlu9
+	q6fZ99jmmjgdfeTDL0tvnyHv3WOSDxcNnqMbsIKGd1AZ4qazD6Qp4Fe/3KhzC/t6MT+Tz2aImf1DM
+	Xtndno7Lx3y6pe75OmeO7cPMMGVK/OnpNTDn8hDnL8yvjgEfTuSBGjI4TmC14DOjCe2++3DQImyeQ
+	FuX9Zdl0gOdWHDIpc91uG/sGZZjC7vXFqWtQCHyCjSKvI325VeeMhEnRwT82mAuQ9ZjTLJOrwj2pz
+	bJQo+dYd6yVObmorCEIEAslPVEpQPTtS8sBndChZXh2bxS2k2slVDH3vMOcH3KI59qpdpe7ZYiR94
+	2BDX+7RYy5gfr+O+HXsw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hixW7-0001qs-To; Thu, 04 Jul 2019 08:55:00 +0000
-Received: from inva021.nxp.com ([92.121.34.21])
+	id 1hixWX-00027A-8R; Thu, 04 Jul 2019 08:55:25 +0000
+Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hixUn-0001AD-Pd
- for linux-arm-kernel@lists.infradead.org; Thu, 04 Jul 2019 08:53:39 +0000
-Received: from inva021.nxp.com (localhost [127.0.0.1])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 98B33200579;
- Thu,  4 Jul 2019 10:53:36 +0200 (CEST)
-Received: from inva024.eu-rdc02.nxp.com (inva024.eu-rdc02.nxp.com
- [134.27.226.22])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 8A9CA200150;
- Thu,  4 Jul 2019 10:53:36 +0200 (CEST)
-Received: from fsr-ub1864-112.ea.freescale.net
- (fsr-ub1864-112.ea.freescale.net [10.171.82.98])
- by inva024.eu-rdc02.nxp.com (Postfix) with ESMTP id C4B84205D9;
- Thu,  4 Jul 2019 10:53:35 +0200 (CEST)
-From: Leonard Crestez <leonard.crestez@nxp.com>
-To: Shawn Guo <shawnguo@kernel.org>, Will Deacon <will@kernel.org>,
- Frank Li <Frank.li@nxp.com>
-Subject: [PATCH 3/3] arm64: defconfig: Build imx8 ddr pmu as module
-Date: Thu,  4 Jul 2019 11:53:22 +0300
-Message-Id: <e51a2f95044f0a9003c3be2e82c3c4b2653670a7.1562230183.git.leonard.crestez@nxp.com>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <cover.1562230183.git.leonard.crestez@nxp.com>
-References: <cover.1562230183.git.leonard.crestez@nxp.com>
-In-Reply-To: <cover.1562230183.git.leonard.crestez@nxp.com>
-References: <cover.1562230183.git.leonard.crestez@nxp.com>
-X-Virus-Scanned: ClamAV using ClamSMTP
+ id 1hixVN-0001Up-3p
+ for linux-arm-kernel@lists.infradead.org; Thu, 04 Jul 2019 08:54:15 +0000
+Received: from lupine.hi.pengutronix.de
+ ([2001:67c:670:100:3ad5:47ff:feaf:1a17] helo=lupine)
+ by metis.ext.pengutronix.de with esmtp (Exim 4.92)
+ (envelope-from <p.zabel@pengutronix.de>)
+ id 1hixVF-0004h8-53; Thu, 04 Jul 2019 10:54:05 +0200
+Message-ID: <1562230444.6641.2.camel@pengutronix.de>
+Subject: Re: [PATCH 1/2] reset: imx7: Add support for i.MX8MM SoC
+From: Philipp Zabel <p.zabel@pengutronix.de>
+To: Anson.Huang@nxp.com, robh+dt@kernel.org, mark.rutland@arm.com, 
+ shawnguo@kernel.org, s.hauer@pengutronix.de, kernel@pengutronix.de, 
+ festevam@gmail.com, leonard.crestez@nxp.com, viresh.kumar@linaro.org, 
+ daniel.baluta@nxp.com, ping.bai@nxp.com, devicetree@vger.kernel.org, 
+ linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
+Date: Thu, 04 Jul 2019 10:54:04 +0200
+In-Reply-To: <20190701093944.5540-1-Anson.Huang@nxp.com>
+References: <20190701093944.5540-1-Anson.Huang@nxp.com>
+X-Mailer: Evolution 3.22.6-1+deb9u2 
+Mime-Version: 1.0
+X-SA-Exim-Connect-IP: 2001:67c:670:100:3ad5:47ff:feaf:1a17
+X-SA-Exim-Mail-From: p.zabel@pengutronix.de
+X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
+ SAEximRunCond expanded to false
+X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190704_015337_965963_3ACC1F2F 
-X-CRM114-Status: UNSURE (   7.16  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20190704_015413_197184_FC52F640 
+X-CRM114-Status: GOOD (  19.71  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [92.121.34.21 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -71,44 +67,71 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Dong Aisheng <aisheng.dong@nxp.com>,
- Jacky Bai <ping.bai@nxp.com>, devicetree@vger.kernel.org,
- Andrey Smirnov <andrew.smirnov@gmail.com>, Rob Herring <robh+dt@kernel.org>,
- linux-imx@nxp.com, kernel@pengutronix.de,
- Fabio Estevam <fabio.estevam@nxp.com>, linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
+Cc: Linux-imx@nxp.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This is available on all imx8 but is not "boot critical" in any way so
-build as a module.
+Hi Anson,
 
-Signed-off-by: Leonard Crestez <leonard.crestez@nxp.com>
----
- arch/arm64/configs/defconfig | 1 +
- 1 file changed, 1 insertion(+)
+On Mon, 2019-07-01 at 17:39 +0800, Anson.Huang@nxp.com wrote:
+> From: Anson Huang <Anson.Huang@nxp.com>
+> 
+> i.MX8MM SoC has a subset of i.MX8MQ IP block variant, it can reuse
+> the i.MX8MQ reset controller driver and just skip those non-existing
+> IP blocks, add support for i.MX8MM SoC reset control.
+> 
+> Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
+> ---
+>  drivers/reset/reset-imx7.c | 20 ++++++++++++++++++++
+>  1 file changed, 20 insertions(+)
+> 
+> diff --git a/drivers/reset/reset-imx7.c b/drivers/reset/reset-imx7.c
+> index 3ecd770..941131f 100644
+> --- a/drivers/reset/reset-imx7.c
+> +++ b/drivers/reset/reset-imx7.c
+> @@ -207,6 +207,26 @@ static int imx8mq_reset_set(struct reset_controller_dev *rcdev,
+>  	const unsigned int bit = imx7src->signals[id].bit;
+>  	unsigned int value = assert ? bit : 0;
+>  
+> +	if (of_machine_is_compatible("fsl,imx8mm")) {
 
-diff --git a/arch/arm64/configs/defconfig b/arch/arm64/configs/defconfig
-index 812fe887477d..134a4067846f 100644
---- a/arch/arm64/configs/defconfig
-+++ b/arch/arm64/configs/defconfig
-@@ -766,10 +766,11 @@ CONFIG_PHY_ROCKCHIP_INNO_USB2=y
- CONFIG_PHY_ROCKCHIP_PCIE=m
- CONFIG_PHY_ROCKCHIP_TYPEC=y
- CONFIG_PHY_UNIPHIER_USB2=y
- CONFIG_PHY_UNIPHIER_USB3=y
- CONFIG_PHY_TEGRA_XUSB=y
-+CONFIG_FSL_IMX8_DDR_PMU=m
- CONFIG_HISI_PMU=y
- CONFIG_QCOM_L2_PMU=y
- CONFIG_QCOM_L3_PMU=y
- CONFIG_NVMEM_SUNXI_SID=y
- CONFIG_NVMEM_IMX_OCOTP=y
--- 
-2.17.1
+This should be checked once during probe, not in every reset_set, if
+this check has to be made at all. On i.MX8MM these unused reset controls
+are not going to be hooked up via phandle, so this function should never
+be called with the values that are filtered out here anyway.
+And in case somebody makes an error in the device tree, does writing 1
+to the reserved bits on i.MX8MM have any negative side effects at all?
+Or are these bits just not hooked up? If this is no problem, I assume
+this patch is not needed at all.
 
+The correct way to protect against DT writers hooking up the non-
+existing reset lines would be to replace rcdev.of_xlate with a version
+that returns -EINVAL for them on i.MX8MM. Also in that case I'd check
+the reset-controller compatible, not the machine compatible.
+
+> +		switch (id) {
+> +		case IMX8MQ_RESET_HDMI_PHY_APB_RESET:
+> +		case IMX8MQ_RESET_PCIEPHY2: /* fallthrough */
+> +		case IMX8MQ_RESET_PCIEPHY2_PERST: /* fallthrough */
+> +		case IMX8MQ_RESET_PCIE2_CTRL_APPS_EN: /* fallthrough */
+> +		case IMX8MQ_RESET_PCIE2_CTRL_APPS_TURNOFF: /* fallthrough */
+> +		case IMX8MQ_RESET_MIPI_CSI1_CORE_RESET: /* fallthrough */
+> +		case IMX8MQ_RESET_MIPI_CSI1_PHY_REF_RESET: /* fallthrough */
+> +		case IMX8MQ_RESET_MIPI_CSI1_ESC_RESET: /* fallthrough */
+> +		case IMX8MQ_RESET_MIPI_CSI2_CORE_RESET: /* fallthrough */
+> +		case IMX8MQ_RESET_MIPI_CSI2_PHY_REF_RESET: /* fallthrough */
+> +		case IMX8MQ_RESET_MIPI_CSI2_ESC_RESET: /* fallthrough */
+> +		case IMX8MQ_RESET_DDRC2_PHY_RESET: /* fallthrough */
+> +		case IMX8MQ_RESET_DDRC2_CORE_RESET: /* fallthrough */
+> +		case IMX8MQ_RESET_DDRC2_PRST: /* fallthrough */
+
+I think it would make sense to add IMX8MM_RESET_* defines for all but
+these, to avoid confusion when reading the imx8mm.dtsi
+
+regards
+Philipp
 
 _______________________________________________
 linux-arm-kernel mailing list
