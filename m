@@ -2,55 +2,126 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E252C5FD28
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  4 Jul 2019 20:55:23 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id AB6E95FD80
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  4 Jul 2019 21:41:09 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=isai3DHGtsXXStohfGDVnUZJ91QFQ76mZs3wwUmrsWw=; b=A9W9qNyOCpI87n
-	QlsAgPXEkveZaXfyPudtAq3vp19cmYkRLrJ3NvnmiNNOaIeIrXZaL5g0DnXuLBUtDwN5Q7nIlAmh9
-	5+SNbEddHnCyjYCo9dYoECYEN15lk70ZFlyYJyUfhPJgIwuD8V2MZmK0pCiM6u5ETbwVSMcdQLM18
-	nG/+aLknj+kC6ai4/gEqmVNC/fLoE7oK+8h5hvBGA4Asn4jb1trdZDY/SzL84eaLwLTDAt5f87zj5
-	mGKSOdij4C258jhRRvy+5emCBOQX2Def+xHNJ/dKS+WBn7bmmkFW38/72H8r+3P4OJyxPVyavhfqg
-	p9J6qVTToOK0/Y2bHGhA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=+3BNKNPKwEbkwwIlWmnriA6zpv3CO4v6PjkPhoBmWXU=; b=Zf4KGvRfHCFXYQ
+	bE0cb3gxrCkQTlhSuxzYO+y4LtYkDTso6MXJc42oGisVu4ZgfpJdw8WxWoTU/b/MkUhRBYMpyyCSN
+	GbshVVRdqk3LHrnmiJtiU8iRg0UMAo6TuBTrP4CQpxnVj9GtyCu4Pamf/RPb+oB8AGq4865GZHcMK
+	6TGqdBRlhI0mDUP578W0yU5bOjhG0Bpd3STQ7DOrGcZe1G2MsctWe54iXOtag/gDC4RoLNMG/09m3
+	0OL7XrvJ+oQFsulDgM+g1pTLujIvSLiGPSYjyu5WhU+WcJhebJhDqJKCSOe79RUGaH9jgSGiCszbL
+	FLvvFHhyQZISE1UctuCg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hj6t7-0000UA-Na; Thu, 04 Jul 2019 18:55:21 +0000
-Received: from relay5-d.mail.gandi.net ([217.70.183.197])
+	id 1hj7bM-00069r-T4; Thu, 04 Jul 2019 19:41:04 +0000
+Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hj6ss-0007e5-L0; Thu, 04 Jul 2019 18:55:09 +0000
-X-Originating-IP: 90.65.161.137
-Received: from localhost (lfbn-1-1545-137.w90-65.abo.wanadoo.fr
- [90.65.161.137])
- (Authenticated sender: alexandre.belloni@bootlin.com)
- by relay5-d.mail.gandi.net (Postfix) with ESMTPSA id 565C21C0009;
- Thu,  4 Jul 2019 18:54:48 +0000 (UTC)
-Date: Thu, 4 Jul 2019 20:54:48 +0200
-From: Alexandre Belloni <alexandre.belloni@bootlin.com>
-To: Frank Wunderlich <frank-w@public-files.de>
-Subject: Re: [PATCH v2 1/7] docs: dt-bindings: add poweroff
-Message-ID: <20190704185448.GI3692@piout.net>
-References: <20190703164822.17924-1-frank-w@public-files.de>
- <20190703164822.17924-2-frank-w@public-files.de>
+ id 1hj7b9-00068q-RE; Thu, 04 Jul 2019 19:40:54 +0000
+Received: from [127.0.0.1] (localhost [127.0.0.1])
+ (Authenticated sender: koike) with ESMTPSA id A926828B136
+Subject: Re: [PATCH v7 00/14] Rockchip ISP1 Driver
+To: linux-rockchip@lists.infradead.org, linux-media@vger.kernel.org
+References: <20190703190910.32633-1-helen.koike@collabora.com>
+From: Helen Koike <helen.koike@collabora.com>
+Openpgp: preference=signencrypt
+Autocrypt: addr=helen.koike@collabora.com; keydata=
+ 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
+Message-ID: <e910e64a-de76-a78a-82cf-0516dfa5a1f1@collabora.com>
+Date: Thu, 4 Jul 2019 16:40:37 -0300
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.7.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190703164822.17924-2-frank-w@public-files.de>
-User-Agent: Mutt/1.12.0 (2019-05-25)
+In-Reply-To: <20190703190910.32633-1-helen.koike@collabora.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190704_115507_385511_1D2D6B65 
-X-CRM114-Status: GOOD (  23.18  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20190704_124052_151819_13591B01 
+X-CRM114-Status: GOOD (  36.93  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.183.197 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -62,152 +133,447 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- Linus Walleij <linus.walleij@linaro.org>, linux-kernel@vger.kernel.org,
- Richard Fontana <rfontana@redhat.com>,
- Mauro Carvalho Chehab <mchehab+samsung@kernel.org>,
- "Paul E . McKenney" <paulmck@linux.ibm.com>, Lee Jones <lee.jones@linaro.org>,
- linux-rtc@vger.kernel.org, Rob Herring <robh@kernel.org>,
- linux-arm-kernel@lists.infradead.org, devicetree@vger.kernel.org,
- linux-pm@vger.kernel.org, Sean Wang <sean.wang@mediatek.com>,
- Rob Herring <robh+dt@kernel.org>, linux-mediatek@lists.infradead.org,
- Matthias Brugger <matthias.bgg@gmail.com>,
- Thomas Gleixner <tglx@linutronix.de>, Eddie Huang <eddie.huang@mediatek.com>,
- Allison Randal <allison@lohutok.net>, Alessandro Zummo <a.zummo@towertech.it>,
- Josef Friedl <josef.friedl@speed.at>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Sebastian Reichel <sre@kernel.org>, "David S . Miller" <davem@davemloft.net>
+Cc: devicetree@vger.kernel.org, eddie.cai.linux@gmail.com, kernel@collabora.com,
+ heiko@sntech.de, Tony Xie <tony.xie@rock-chips.com>, zhengsq@rock-chips.com,
+ jeffy.chen@rock-chips.com, zyc@rock-chips.com, linux-kernel@vger.kernel.org,
+ tfiga@chromium.org, Hans Verkuil <hverkuil@xs4all.nl>, jacob-chen@iotwrt.com,
+ laurent.pinchart@ideasonboard.com, sakari.ailus@linux.intel.com,
+ mchehab@kernel.org, ezequiel@collabora.com,
+ linux-arm-kernel@lists.infradead.org, Zheng Yang <zhengyang@rock-chips.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Please use a better subject line.
 
-On 03/07/2019 18:48:16+0200, Frank Wunderlich wrote:
-> From: Josef Friedl <josef.friedl@speed.at>
-> 
-> add documentation for pmic, rtc and power/reset devicetree bindings
-> 
-> Suggested-by: Frank Wunderlich <frank-w@public-files.de>
-> Signed-off-by: Josef Friedl <josef.friedl@speed.at>
-> Signed-off-by: Frank Wunderlich <frank-w@public-files.de>
-> ---
->  .../devicetree/bindings/mfd/mt6397.txt        | 10 ++++++-
->  .../bindings/power/reset/mt6323-poweroff.txt  | 20 +++++++++++++
->  .../devicetree/bindings/rtc/rtc-mt6397.txt    | 29 +++++++++++++++++++
 
-This file is unrelated to the patch, it should be separated.
+On 7/3/19 4:08 PM, Helen Koike wrote:
+> Hello,
+> 
+> I'm re-sending a new version of ISP(Camera) v4l2 driver for rockchip
+> rk3399 SoC.
+> 
+> It is not perfect yet (see known issues below), but I'm sending in case
+> some other people already wants to start playing with it.
+> I believe de main design is ok (please let me know if
+> it is not) and it would be great to get some reviews already.
+> 
+> This patchset is also available at:
+> https://gitlab.collabora.com/koike/linux/tree/rockchip/isp/v7
+> 
+> Libcamera patched to work with this version:
+> https://gitlab.collabora.com/koike/libcamera
+> (I'll also sent it to the libcamera dev mailing list)
+> 
+> I tested on the rockpi 4 with a rpi v1.3 sensor and also with the
+> Scarlet Chromebook.
+> Images from the Scarlet are a bit dark and green for some reason, but I
+> believe it's a problem in the sensor's drivers as images from the
+> rockpi looks ok.
 
->  3 files changed, 58 insertions(+), 1 deletion(-)
->  create mode 100644 Documentation/devicetree/bindings/power/reset/mt6323-poweroff.txt
->  create mode 100644 Documentation/devicetree/bindings/rtc/rtc-mt6397.txt
-> 
-> diff --git a/Documentation/devicetree/bindings/mfd/mt6397.txt b/Documentation/devicetree/bindings/mfd/mt6397.txt
-> index 0ebd08af777d..44acb9827716 100644
-> --- a/Documentation/devicetree/bindings/mfd/mt6397.txt
-> +++ b/Documentation/devicetree/bindings/mfd/mt6397.txt
-> @@ -8,6 +8,7 @@ MT6397/MT6323 is a multifunction device with the following sub modules:
->  - Clock
->  - LED
->  - Keys
-> +- Power controller
-> 
->  It is interfaced to host controller using SPI interface by a proprietary hardware
->  called PMIC wrapper or pwrap. MT6397/MT6323 MFD is a child device of pwrap.
-> @@ -22,8 +23,10 @@ compatible: "mediatek,mt6397" or "mediatek,mt6323"
->  Optional subnodes:
-> 
->  - rtc
-> -	Required properties:
-> +	Required properties: Should be one of follows
-> +		- compatible: "mediatek,mt6323-rtc"
->  		- compatible: "mediatek,mt6397-rtc"
-> +	For details, see Documentation/devicetree/bindings/rtc/rtc-mt6397.txt
->  - regulators
->  	Required properties:
->  		- compatible: "mediatek,mt6397-regulator"
-> @@ -46,6 +49,11 @@ Optional subnodes:
->  		- compatible: "mediatek,mt6397-keys" or "mediatek,mt6323-keys"
->  	see Documentation/devicetree/bindings/input/mtk-pmic-keys.txt
-> 
-> +- power-controller
-> +	Required properties:
-> +		- compatible: "mediatek,mt6323-pwrc"
-> +	For details, see Documentation/devicetree/bindings/power/reset/mt6323-poweroff.txt
-> +
->  Example:
->  	pwrap: pwrap@1000f000 {
->  		compatible = "mediatek,mt8135-pwrap";
-> diff --git a/Documentation/devicetree/bindings/power/reset/mt6323-poweroff.txt b/Documentation/devicetree/bindings/power/reset/mt6323-poweroff.txt
-> new file mode 100644
-> index 000000000000..933f0c48e887
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/power/reset/mt6323-poweroff.txt
-> @@ -0,0 +1,20 @@
-> +Device Tree Bindings for Power Controller on MediaTek PMIC
-> +
-> +The power controller which could be found on PMIC is responsible for externally
-> +powering off or on the remote MediaTek SoC through the circuit BBPU.
-> +
-> +Required properties:
-> +- compatible: Should be one of follows
-> +       "mediatek,mt6323-pwrc": for MT6323 PMIC
-> +
-> +Example:
-> +
-> +       pmic {
-> +               compatible = "mediatek,mt6323";
-> +
-> +               ...
-> +
-> +               power-controller {
-> +                       compatible = "mediatek,mt6323-pwrc";
-> +               };
-> +       }
-> diff --git a/Documentation/devicetree/bindings/rtc/rtc-mt6397.txt b/Documentation/devicetree/bindings/rtc/rtc-mt6397.txt
-> new file mode 100644
-> index 000000000000..ebd1cf80dcc8
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/rtc/rtc-mt6397.txt
-> @@ -0,0 +1,29 @@
-> +Device-Tree bindings for MediaTek PMIC based RTC
-> +
-> +MediaTek PMIC based RTC is an independent function of MediaTek PMIC that works
-> +as a type of multi-function device (MFD). The RTC can be configured and set up
-> +with PMIC wrapper bus which is a common resource shared with the other
-> +functions found on the same PMIC.
-> +
-> +For MediaTek PMIC MFD bindings, see:
-> +Documentation/devicetree/bindings/mfd/mt6397.txt
-> +
-> +For MediaTek PMIC wrapper bus bindings, see:
-> +Documentation/devicetree/bindings/soc/mediatek/pwrap.txt
-> +
-> +Required properties:
-> +- compatible: Should be one of follows
-> +       "mediatek,mt6323-rtc": for MT6323 PMIC
-> +       "mediatek,mt6397-rtc": for MT6397 PMIC
-> +
-> +Example:
-> +
-> +       pmic {
-> +               compatible = "mediatek,mt6323";
-> +
-> +               ...
-> +
-> +               rtc {
-> +                       compatible = "mediatek,mt6323-rtc";
-> +               };
-> +       };
-> --
-> 2.17.1
-> 
+Hi,
 
--- 
-Alexandre Belloni, Bootlin
-Embedded Linux and Kernel engineering
-https://bootlin.com
+[dropping some people in CC, I should be more careful with patman]
+
+Just to be easier to review, follow below the media topology in the Scarlet:
+
+media-ctl --print-dot -> file available at: http://ix.io/1NIH
+
+root@debian:~# media-ctl -p
+Media controller API version 5.2.0
+
+Media device information
+------------------------
+driver          rkisp1
+model           rkisp1
+serial
+bus info        platform: rkisp1
+hw revision     0x0
+driver version  5.2.0
+
+Device topology
+- entity 1: rkisp1-isp-subdev (4 pads, 6 links)
+            type V4L2 subdev subtype Unknown flags 0
+            device node name /dev/v4l-subdev0
+        pad0: Sink
+                [fmt:SBGGR10_1X10/1920x1080 field:none
+                 crop.bounds:(0,0)/1920x1080
+                 crop:(0,0)/800x600]
+                <- "ov2685 7-003c":0 []
+                <- "ov5695 7-0036":0 [ENABLED]
+        pad1: Sink
+                [fmt:FIXED/800x600 field:none]
+                <- "rkisp1-input-params":0 []
+        pad2: Source
+                [fmt:YUYV8_2X8/800x600 field:none
+                 crop.bounds:(0,0)/800x600
+                 crop:(0,0)/800x600]
+                -> "rkisp1_selfpath":0 []
+                -> "rkisp1_mainpath":0 [ENABLED]
+        pad3: Source
+                [fmt:FIXED/800x600 field:none]
+                -> "rkisp1-statistics":0 []
+
+- entity 6: rkisp1_mainpath (1 pad, 1 link)
+            type Node subtype V4L flags 0
+            device node name /dev/video0
+        pad0: Sink
+                <- "rkisp1-isp-subdev":2 [ENABLED]
+
+- entity 10: rkisp1_selfpath (1 pad, 1 link)
+             type Node subtype V4L flags 0
+             device node name /dev/video1
+        pad0: Sink
+                <- "rkisp1-isp-subdev":2 []
+
+- entity 14: rkisp1-statistics (1 pad, 1 link)
+             type Node subtype V4L flags 0
+             device node name /dev/video2
+        pad0: Sink
+                <- "rkisp1-isp-subdev":3 []
+
+- entity 18: rkisp1-input-params (1 pad, 1 link)
+             type Node subtype V4L flags 0
+             device node name /dev/video3
+        pad0: Source
+                -> "rkisp1-isp-subdev":1 []
+
+- entity 22: ov2685 7-003c (1 pad, 1 link)
+             type V4L2 subdev subtype Sensor flags 0
+             device node name /dev/v4l-subdev1
+        pad0: Source
+                [fmt:SBGGR10_1X10/1600x1200 field:none]
+                -> "rkisp1-isp-subdev":0 []
+
+- entity 24: ov5695 7-0036 (1 pad, 1 link)
+             type V4L2 subdev subtype Sensor flags 0
+             device node name /dev/v4l-subdev2
+        pad0: Source
+                [fmt:SBGGR10_1X10/1920x1080 field:none]
+                -> "rkisp1-isp-subdev":0 [ENABLED]
+
+
+Thanks
+Helen
+
+> 
+> The main differences from previous version are (in a macro pov):
+> ----------------------------------------------------------------
+> - dphy specific code migrated to drivers/phy
+> - design change: droped the subdevice for the interface. Now, in the
+> media topology, the sensors connect directly to the ISP1.
+> - v4l2-compliance fixes
+> - dropped rk3288 (as I'm not testing it)
+> - dropped txrx dphy support (as I'm not testing it and it requires a bit
+> more work to support dsi too)
+> - interrupts and hw config fixes
+> - minor bug fixes and cleanups
+> - I added myself in the MAINTAINERS, as I'm not sure if previous people
+> still wants to maintain it, please let me know if I should keep the old
+> names there.
+> 
+> Known issues:
+> -------------
+> - Reloading the module doesn't work (there is some missing cleanup when
+> unloading)
+> - When capturing in bayer format, changing the size doesn't seem to
+> affect the image.
+> - crop needs more tests
+> - v4l2-compliance error:
+>         fail: v4l2-test-controls.cpp(824): subscribe event for control 'Image Processing Controls' failed
+> test VIDIOC_(UN)SUBSCRIBE_EVENT/DQEVENT: FAIL
+> It seems that if controls are supported, v4l2-compliance says that
+> controls of type 'Image Processing Controls' are mandatory, is this
+> correct?
+> - It seems there are still some issues with interrupts, but I couldn't
+> isolate them yet.
+> 
+> Reasoning for the design change:
+> --------------------------------
+> In the previous version, the isp subdevice call the mipidphy_g_mbus
+> from rkisp1.c, so it can get
+> informations from the sensor such as the type of mbus (V4L2_MBUS_BT656,
+> V4L2_MBUS_PARALLEL or V4L2_MBUS_CSI2_CPHY), the number of csi2 lanes,
+> flags (V4L2_MBUS_PCLK_SAMPLE_RISING, V4L2_MBUS_VSYNC_ACTIVE_LOW or
+> V4L2_MBUS_HSYNC_ACTIVE_LOW). And the isp driver uses those info to configure
+> the hardware properly.
+> 
+> These information come from the DT node of the sensor. And the current
+> implementation is propagating this information from the sensor to the isp
+> through this mipidphy_g_mbus_config() (thus the hack)
+> 
+> * 1st attempt to solve this hack) Separating the interface code from the isp.
+> 
+> With the topology:
+> 
+> isp -> csi2 -> sensor
+> 
+> I was trying to migrate the CSI2 hardware configuration to the csi2 subdevice code.
+> But the problem I found was that in the DT, the csi2 regs is in the middle of the isp1
+> regs, and declaring the same "regs = <>" in both nodes (isp0 and csi2) is no good.
+> 
+> * 2nd attempt) flatening the DT
+> So instead of having two DT nodes (isp0 and csi2), we can have a single node, similar
+> to omap3isp.
+> And we can have a property, "rk,phy-type" that defines the interface (csi2, bt656 or parallel).
+> 
+> But, now my question is: can the isp be connected to multiple interfaces at a
+> time? If yes, then this is not a good solution (as we won't be able to describe
+> multiple interfaces in the DT node).
+> 
+> * 3rd attemp - WIP) get rid of the interface subdevice (chosen design)
+> Is there a reason to have the topology like:
+> 
+> isp -> interface - - -> sensor1
+>         |   |-------->  sensor2
+>         | - - - - - - > sensor3
+> 
+> (only one sensor can be active at a time)
+> 
+> ?
+> 
+> Would it be ok if I just hide the interface from the topology? Like:
+> 
+> isp - - - - - -> sensor1
+> | |----------->  sensor2
+> |- - - - - - - > sensor3
+> 
+> Like this, I could cleanup a bunch of v4l2 code from the interface node,
+> the isp would know the active sensor (and its configs), and it can
+> configure everything itself.
+> 
+> I don't really see a big reason to expose the interface (csi2,
+> bt656 or parallel) in the topology.
+> Unless I'm missing something.
+> 
+> Previous changelog:
+> -------------------
+> 
+> changes in V6:
+>   - add mipi txrx phy support
+>   - remove bool and enum from uapi header
+>   - add buf_prepare op
+>   - correct some spelling problems
+>   - return all queued buffers when starting stream failed
+> 
+> changes in V5: Sync with local changes,
+>   - fix the SP height limit
+>   - speed up the second stream capture
+>   - the second stream can't force sync for rsz when start/stop streaming
+>   - add frame id to param vb2 buf
+>   - enable luminance maximum threshold
+> 
+> changes in V4:
+>   - fix some bugs during development
+>   - move quantization settings to rkisp1 subdev
+>   - correct some spelling problems
+>   - describe ports in dt-binding documents
+> 
+> changes in V3:
+>   - add some comments
+>   - fix wrong use of v4l2_async_subdev_notifier_register
+>   - optimize two paths capture at a time
+>   - remove compose
+>   - re-struct headers
+>   - add a tmp wiki page: http://opensource.rock-chips.com/wiki_Rockchip-isp1
+> 
+> changes in V2:
+>   mipi-phy:
+>     - use async probing
+>     - make it be a child device of the GRF
+>   isp:
+>     - add dummy buffer
+>     - change the way to get bus configuration, which make it possible to
+>             add parallel sensor support in the future(without mipi-phy driver).
+> 
+> ------------------
+> 
+> Changes in v7:
+> - s/IPU3/RK_ISP1
+> - s/correspond/corresponding
+> - s/use/uses
+> - s/docuemnt/document
+> - Fix checkpatch errors (lines over 80 and SPDX)
+> - Add TODO to improve docs
+> - Migrate dphy specific code from
+> drivers/media/platform/rockchip/isp1/mipi_dphy_sy.c
+> to drivers/phy/rockchip/phy-rockchip-dphy.c
+> - Drop support for rk3288
+> - Drop support for dphy txrx
+> - code styling and checkpatch fixes
+> - fixed warning because of unknown entity type
+> - fixed v4l2-compliance errors regarding rkisp1 formats, try formats
+> and default values
+> - fix typo riksp1/rkisp1
+> - redesign: remove mipi/csi subdevice, sensors connect directly to the
+> isp subdevice in the media topology now. As a consequence, remove the
+> hack in mipidphy_g_mbus_config() where information from the sensor was
+> being propagated through the topology.
+> - From the old dphy:
+>         * cache get_remote_sensor() in s_stream
+>         * use V4L2_CID_PIXEL_RATE instead of V4L2_CID_LINK_FREQ
+> - Replace stream state with a boolean
+> - code styling and checkpatch fixes
+> - fix stop_stream (return after calling stop, do not reenable the stream)
+> - fix rkisp1_isp_sd_get_selection when V4L2_SUBDEV_FORMAT_TRY is set
+> - fix get format in output (isp_sd->out_fmt.mbus_code was being ignored)
+> - s/intput/input
+> - remove #define sd_to_isp_sd(_sd), add a static inline as it will be
+> reused by the capture
+> - s/strlcpy/strscpy
+> - sort out the locks in isp stats
+> - code styling and checkpatch fixes
+> - s/strlcpy/strscpy
+> - s/strcpy/strscpy
+> - fix config lsc error
+> LSC data table size is 17x17, but when configuring data to ISP,
+> should be aligned to 18x17. That means every last data of last
+> line should be filled with 0, and not filled with the data of
+> next line.
+> - Update new ISP parameters immediately
+> For those sub modules that have shadow registers in core isp, the
+> new programing parameters would not be active if both
+> CIF_ISP_CTRL_ISP_CFG_UPD_PERMANENT and CFG_UPD are not set. Now
+> we configure CFG_UPD to force update the shadow registers when new
+> ISP parameters are configured.
+> - fix some ISP parameters config error
+> Some ISP parameter config functions may override the old enable
+> bit value, because the enable bits of these modules are in the
+> same registers with parameters. So we should save the old enable
+> bits firstly.
+> - code styling and checkpatch fixes
+> - s/strlcpy/strscpy
+> - Fix v4l2-compliance issues:
+>         * remove input ioctls
+> media api can be used to define the topology, this input api is not
+> required. Besides it, if an input is enumerated, v4l2-compliance is not
+> happy with G_FMT returning the default colorspace instead of something
+> more specific.
+>         * return the pixelformat to the userspace
+> G_/S_/TRY_ FORMAT should return a valid pixelformat to the user, even if
+> the user gave an invalid one
+>         * add missing default colorspace and ycbcr
+>         * fix wrong pixformat in mp_fmts[] table
+>         * add buf type check in s_/g_selection
+>         * queue_setup - check sizes
+>         * normalize bus_info name
+>         * fix field any v4l2-compliance -s complain - set field none
+>         when streaming
+> - Fix compiling error: s/vidioc_enum_fmt_vid_cap_mplane/vidioc_enum_fmt_vid_cap
+> - Replace stream state with a boolean
+> The rkisp1_state enum consists only of 3 entries, where 1 is completely
+> unused and the other two respectively mean not streaming or streaming.
+> Replace it with a boolean called "streaming".
+> - Simplify MI interrupt handling
+> Rather than adding unnecessary indirection, just use stream index to
+> handle MI interrupt enable/disable/clear, since the stream index matches
+> the order of bits now, thanks to previous patch. While at it, remove
+> some dead code.
+> - code styling and checkpatch fixes
+> - add link_validate: don't allow a link with bayer/non-bayer mismatch
+> - VIDEO_ROCKCHIP_ISP1 selects VIDEOBUF2_VMALLOC
+> - add PHY_ROCKCHIP_DPHY as a dependency for VIDEO_ROCKCHIP_ISP1
+> - Fix compilation and runtime errors due to bitrotting
+> The code has bit-rotten since March 2018, fix compilation errors.
+> The new V4L2 async notifier API requires notifiers to be initialized by
+> a call to v4l2_async_notifier_init() before being used, do so.
+> - Add missing module device table
+> - use clk_bulk framework
+> - add missing notifiers cleanups
+> - s/strlcpy/strscpy
+> - normalize bus_info name
+> - fix s_stream error path, stream_cnt wans't being decremented properly
+> - use devm_platform_ioremap_resource() helper
+> - s/deice/device
+> - redesign: remove mipi/csi subdevice, sensors connect directly to the
+> isp subdevice in the media topology now.
+> - remove "saved_state" member from rkisp1_stream struct
+> - Reverse the order of MIs
+> - Simplify MI interrupt handling
+> Rather than adding unnecessary indirection, just use stream index to
+> handle MI interrupt enable/disable/clear, since the stream index matches
+> the order of bits now, thanks to previous patch. While at it, remove
+> some dead code.
+> - code styling and checkpatch fixes
+> - update document with new design and tested example
+> - updated doc with new design and tested example
+> - add phy properties
+> - add ports
+> - add phy-cells
+> 
+> Helen Koike (1):
+>   MAINTAINERS: add entry for Rockchip ISP1 driver
+> 
+> Jacob Chen (9):
+>   media: doc: add document for rkisp1 meta buffer format
+>   media: rkisp1: add Rockchip MIPI Synopsys DPHY driver
+>   media: rkisp1: add Rockchip ISP1 subdev driver
+>   media: rkisp1: add ISP1 statistics driver
+>   media: rkisp1: add ISP1 params driver
+>   media: rkisp1: add capture device driver
+>   media: rkisp1: add rockchip isp1 core driver
+>   dt-bindings: Document the Rockchip ISP1 bindings
+>   dt-bindings: Document the Rockchip MIPI RX D-PHY bindings
+> 
+> Jeffy Chen (1):
+>   media: rkisp1: Add user space ABI definitions
+> 
+> Shunqian Zheng (3):
+>   media: videodev2.h, v4l2-ioctl: add rkisp1 meta buffer format
+>   arm64: dts: rockchip: add isp0 node for rk3399
+>   arm64: dts: rockchip: add rx0 mipi-phy for rk3399
+> 
+>  .../bindings/media/rockchip-isp1.txt          |   71 +
+>  .../bindings/media/rockchip-mipi-dphy.txt     |   38 +
+>  Documentation/media/uapi/v4l/meta-formats.rst |    2 +
+>  .../uapi/v4l/pixfmt-meta-rkisp1-params.rst    |   20 +
+>  .../uapi/v4l/pixfmt-meta-rkisp1-stat.rst      |   18 +
+>  MAINTAINERS                                   |    8 +
+>  arch/arm64/boot/dts/rockchip/rk3399.dtsi      |   36 +
+>  drivers/media/platform/Kconfig                |   12 +
+>  drivers/media/platform/Makefile               |    1 +
+>  drivers/media/platform/rockchip/isp1/Makefile |    7 +
+>  .../media/platform/rockchip/isp1/capture.c    | 1754 +++++++++++++++++
+>  .../media/platform/rockchip/isp1/capture.h    |  164 ++
+>  drivers/media/platform/rockchip/isp1/common.h |  101 +
+>  drivers/media/platform/rockchip/isp1/dev.c    |  675 +++++++
+>  drivers/media/platform/rockchip/isp1/dev.h    |   97 +
+>  .../media/platform/rockchip/isp1/isp_params.c | 1604 +++++++++++++++
+>  .../media/platform/rockchip/isp1/isp_params.h |   50 +
+>  .../media/platform/rockchip/isp1/isp_stats.c  |  508 +++++
+>  .../media/platform/rockchip/isp1/isp_stats.h  |   60 +
+>  drivers/media/platform/rockchip/isp1/regs.c   |  223 +++
+>  drivers/media/platform/rockchip/isp1/regs.h   | 1525 ++++++++++++++
+>  drivers/media/platform/rockchip/isp1/rkisp1.c | 1286 ++++++++++++
+>  drivers/media/platform/rockchip/isp1/rkisp1.h |  111 ++
+>  drivers/media/v4l2-core/v4l2-ioctl.c          |    2 +
+>  drivers/phy/rockchip/Kconfig                  |    8 +
+>  drivers/phy/rockchip/Makefile                 |    1 +
+>  drivers/phy/rockchip/phy-rockchip-dphy.c      |  412 ++++
+>  include/uapi/linux/rkisp1-config.h            |  816 ++++++++
+>  include/uapi/linux/videodev2.h                |    4 +
+>  29 files changed, 9614 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/media/rockchip-isp1.txt
+>  create mode 100644 Documentation/devicetree/bindings/media/rockchip-mipi-dphy.txt
+>  create mode 100644 Documentation/media/uapi/v4l/pixfmt-meta-rkisp1-params.rst
+>  create mode 100644 Documentation/media/uapi/v4l/pixfmt-meta-rkisp1-stat.rst
+>  create mode 100644 drivers/media/platform/rockchip/isp1/Makefile
+>  create mode 100644 drivers/media/platform/rockchip/isp1/capture.c
+>  create mode 100644 drivers/media/platform/rockchip/isp1/capture.h
+>  create mode 100644 drivers/media/platform/rockchip/isp1/common.h
+>  create mode 100644 drivers/media/platform/rockchip/isp1/dev.c
+>  create mode 100644 drivers/media/platform/rockchip/isp1/dev.h
+>  create mode 100644 drivers/media/platform/rockchip/isp1/isp_params.c
+>  create mode 100644 drivers/media/platform/rockchip/isp1/isp_params.h
+>  create mode 100644 drivers/media/platform/rockchip/isp1/isp_stats.c
+>  create mode 100644 drivers/media/platform/rockchip/isp1/isp_stats.h
+>  create mode 100644 drivers/media/platform/rockchip/isp1/regs.c
+>  create mode 100644 drivers/media/platform/rockchip/isp1/regs.h
+>  create mode 100644 drivers/media/platform/rockchip/isp1/rkisp1.c
+>  create mode 100644 drivers/media/platform/rockchip/isp1/rkisp1.h
+>  create mode 100644 drivers/phy/rockchip/phy-rockchip-dphy.c
+>  create mode 100644 include/uapi/linux/rkisp1-config.h
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
