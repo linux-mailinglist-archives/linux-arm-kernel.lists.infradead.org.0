@@ -2,106 +2,132 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E174F5FA33
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  4 Jul 2019 16:39:27 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7F28A5FA46
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  4 Jul 2019 16:46:19 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=s1Hyh/ezpNu8EoN+7f0dZE4L2WFlQFf5+nOnv+VWQCA=; b=LKJGphjtYUkVhc
-	r3R6CMAv/cJGgObL15rfyDGR2YtQ7r9XrAdGjTIJrr27UOk63dEZek/ofxEVBHJtXO+r9zE3/h5EJ
-	6sU7vlRePJkyXXRsuqfD8aKWPas5SpvDg6l702Cdxvn8mIBNTukGIaErePAxmUt32P3tcyv723UGT
-	6NaJoiYIwcH+Oj+KDE9bdc/OW1TNxZGXGH9bZkFUuClMRSrMgy0t+ASDnRtqFt6KK91UXKjwYcDWz
-	kc5GlWEzWLleKaT+omKp43/f+aYZj9w726XDxJNqgo3y9Q5sMOMUghH0pGCkpXP6bZSppGfWf/wms
-	RA4AHMOf83zhXJa20sCQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=SB9vfv3KaM2ihSbievgc/j/8Fk8htlaOfyxewjQzEfg=; b=B3Qt9yQ9xqtM5J
+	lYKpQATVMXaUspg7qr3NKBE3ImktJah7iK9PtU0rK/duZq03YlvK8OqcnP88+LKCnFwil12kmX0Dm
+	5LD8fG09W0O9wZiF6vIkfDu60/bOy0aEMuOs2iTMIdnPsRfztFGEenOIOzqKIdadTHzKkfhWxejQT
+	4FMFkjlbOgrKHWn5Kl/QdhfLrUuG5ciC1tCIMZxB9nK8OzI046VwK/rtCCeGru8htaBBsWKCg+Jfd
+	ftk0AG5SelEgeu91sntIIRXhs+hlDYRRdggjHVbie6YyskJqO9RJ7QZz9C5jj9ItdFIWpX1OY94Mu
+	3WsMZtFA9ws3P+PGF7Fw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hj2tQ-0001oq-Np; Thu, 04 Jul 2019 14:39:24 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hj2tE-0001oA-DO
- for linux-arm-kernel@lists.infradead.org; Thu, 04 Jul 2019 14:39:13 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id A173528;
- Thu,  4 Jul 2019 07:39:09 -0700 (PDT)
-Received: from [10.1.197.61] (usa-sjc-imap-foss1.foss.arm.com [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
- A738F3F738; Thu,  4 Jul 2019 07:39:08 -0700 (PDT)
-Subject: Re: [PATCH 13/59] KVM: arm64: nv: Handle virtual EL2 registers in
- vcpu_read/write_sys_reg()
-To: Alexandru Elisei <alexandru.elisei@arm.com>,
- linux-arm-kernel@lists.infradead.org, kvmarm@lists.cs.columbia.edu,
- kvm@vger.kernel.org
-References: <20190621093843.220980-1-marc.zyngier@arm.com>
- <20190621093843.220980-14-marc.zyngier@arm.com>
- <6a866fda-a332-9881-b466-2a855deea6a5@arm.com>
- <13886346-cbbc-a17c-b83d-e189a30e0696@arm.com>
- <c3138f83-ccfb-5d01-3cac-be47f1eb916c@arm.com>
-From: Marc Zyngier <marc.zyngier@arm.com>
-Openpgp: preference=signencrypt
-Autocrypt: addr=marc.zyngier@arm.com; prefer-encrypt=mutual; keydata=
- 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
- Z46HaNmN2hZS/oJ69c1DI5Rcww==
-Organization: ARM Ltd
-Message-ID: <a22b4745-7fa1-554b-c897-9359fffa3a1f@arm.com>
-Date: Thu, 4 Jul 2019 15:39:07 +0100
-User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
- Thunderbird/60.7.2
-MIME-Version: 1.0
-In-Reply-To: <c3138f83-ccfb-5d01-3cac-be47f1eb916c@arm.com>
+	id 1hj305-0006DK-4x; Thu, 04 Jul 2019 14:46:17 +0000
+Received: from smtprelay-out1.synopsys.com ([198.182.47.102])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hj2zt-00068z-EH
+ for linux-arm-kernel@lists.infradead.org; Thu, 04 Jul 2019 14:46:06 +0000
+Received: from mailhost.synopsys.com (dc2-mailhost2.synopsys.com
+ [10.12.135.162])
+ (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
+ (No client certificate requested)
+ by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id 4FE88C263A;
+ Thu,  4 Jul 2019 14:46:03 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=synopsys.com; s=mail;
+ t=1562251564; bh=wrFtPaXbv2rSgRV5CDYWYhI4aVx2bKPpFIRxTBiKEBs=;
+ h=From:To:CC:Subject:Date:References:In-Reply-To:From;
+ b=dBEBjkFiMdD++q98gqxU/jTnMJG5LWMM6pQsPETxzuj/fJCrO9nLpwasc21GIixkU
+ nbvyHCOe8ixQfRIsy20PtRFF3nvk+yAdzvekOeO5YwRnNeiWalKmIkR44hSefM4iUZ
+ D22ed6Ojv9lRPbu3lEOdwfmtpDFnzsmSHtHsIPw+z4aXQVGt1GFrcLRgEU66A8KXc2
+ rkbN4LXPChshwLxp/ho4ZH0piD74D+xGc/2/hd65in2x8H3mLNlCqJrQzIa0sVWn0/
+ 5iOobaXGbgRNOGJnB0PSIympiegZXSkqbykPkq2EVVyeJmOBsG6UZkvQuejZu+o3h5
+ gLdFJqrss6E/w==
+Received: from US01WEHTC2.internal.synopsys.com
+ (us01wehtc2.internal.synopsys.com [10.12.239.237])
+ (using TLSv1.2 with cipher AES128-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mailhost.synopsys.com (Postfix) with ESMTPS id 86610A009A;
+ Thu,  4 Jul 2019 14:46:01 +0000 (UTC)
+Received: from US01HYBRID2.internal.synopsys.com (10.15.246.24) by
+ US01WEHTC2.internal.synopsys.com (10.12.239.237) with Microsoft SMTP Server
+ (TLS) id 14.3.408.0; Thu, 4 Jul 2019 07:46:00 -0700
+Received: from NAM01-BY2-obe.outbound.protection.outlook.com (10.13.134.195)
+ by mrs.synopsys.com (10.15.246.24) with Microsoft SMTP Server (TLS) id
+ 14.3.408.0; Thu, 4 Jul 2019 07:46:00 -0700
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=synopsys.onmicrosoft.com; s=selector1-synopsys-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=wrFtPaXbv2rSgRV5CDYWYhI4aVx2bKPpFIRxTBiKEBs=;
+ b=bz5U+y7SS/0fpxJBvuppHhiLYnEcR4o2yM8/sjgvUsIVdFE7o4vqv/dp3VFDj6Qi8iv/7PdPPLrKRpEceEtCaGP03a9yN0Yv/UwDY2Us5e9lpmGxWOsV91VZNmMBWIJM3vEpg8d1G37EOpayY8TcdJIr0NajoNG/T+3hErKz4Ys=
+Received: from BYAPR12MB3269.namprd12.prod.outlook.com (20.179.93.146) by
+ BYAPR12MB3541.namprd12.prod.outlook.com (20.179.94.150) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2032.20; Thu, 4 Jul 2019 14:45:59 +0000
+Received: from BYAPR12MB3269.namprd12.prod.outlook.com
+ ([fe80::f5b8:ac6e:ea68:cb1c]) by BYAPR12MB3269.namprd12.prod.outlook.com
+ ([fe80::f5b8:ac6e:ea68:cb1c%4]) with mapi id 15.20.2052.010; Thu, 4 Jul 2019
+ 14:45:59 +0000
+From: Jose Abreu <Jose.Abreu@synopsys.com>
+To: Jesper Dangaard Brouer <brouer@redhat.com>,
+ Jose Abreu <Jose.Abreu@synopsys.com>
+Subject: RE: [PATCH net-next 3/3] net: stmmac: Introducing support for Page
+ Pool
+Thread-Topic: [PATCH net-next 3/3] net: stmmac: Introducing support for Page
+ Pool
+Thread-Index: AQHVMYtq2Zx4WVoG/U2kL8GCK0bP/aa6NZoAgABVQYA=
+Date: Thu, 4 Jul 2019 14:45:59 +0000
+Message-ID: <BYAPR12MB326902688C3F40BB3DA6EEEBD3FA0@BYAPR12MB3269.namprd12.prod.outlook.com>
+References: <cover.1562149883.git.joabreu@synopsys.com>
+ <1b254bb7fc6044c5e6e2fdd9e00088d1d13a808b.1562149883.git.joabreu@synopsys.com>
+ <20190704113916.665de2ec@carbon>
+In-Reply-To: <20190704113916.665de2ec@carbon>
+Accept-Language: en-US
 Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=joabreu@synopsys.com; 
+x-originating-ip: [83.174.63.141]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: b8f8545f-d62f-4d54-68c3-08d7008e5434
+x-microsoft-antispam: BCL:0; PCL:0;
+ RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600148)(711020)(4605104)(1401327)(2017052603328)(7193020);
+ SRVR:BYAPR12MB3541; 
+x-ms-traffictypediagnostic: BYAPR12MB3541:
+x-microsoft-antispam-prvs: <BYAPR12MB3541648C6FADB7CE2C5119DBD3FA0@BYAPR12MB3541.namprd12.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:8273;
+x-forefront-prvs: 0088C92887
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10019020)(396003)(39860400002)(366004)(346002)(376002)(136003)(199004)(189003)(5660300002)(64756008)(476003)(73956011)(33656002)(6246003)(66066001)(86362001)(68736007)(7736002)(446003)(7416002)(26005)(6436002)(14454004)(66446008)(316002)(110136005)(55016002)(25786009)(54906003)(99286004)(76176011)(478600001)(8936002)(256004)(4744005)(6506007)(6116002)(71200400001)(8676002)(102836004)(2906002)(52536014)(229853002)(186003)(66556008)(66946007)(11346002)(74316002)(305945005)(71190400001)(76116006)(6636002)(486006)(4326008)(14444005)(66476007)(81166006)(9686003)(7696005)(81156014)(3846002)(53936002);
+ DIR:OUT; SFP:1102; SCL:1; SRVR:BYAPR12MB3541;
+ H:BYAPR12MB3269.namprd12.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; A:1; MX:1; 
+received-spf: None (protection.outlook.com: synopsys.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam-message-info: oTS6YRHj2w/eYAvpJQHKqJyDLWwHk0ZELDrT/rzbr/mIW/cdu02ndRu10N1U8EfUcbfbmrKJdF1ma2qv2Jn5PjHul3LgBy/r8NU1Z8cCyAWvFysgWKNLLgbdvGAY+hu0YKiOhNutRBtHb4mArOidKo4kEPtDcOR9+ATfuXZvJffu/r6peuk41VTn1UCOuGq3+Z99OcU5Ig0xiq0xqlgOcycOImooqNPaXAbOVelI8ys7p2liSWxqNZMvflLXUm0ScMrWEOlQVmgyAP7jAztzh1ahg4F6o0J39bZ3TPzSyP3MXDzyjX+2o+NKoQM88H9saIIvr4gn62BnC8EYXh0QsrOVrplqzh/QaCW5Xu5OF44lAIC0YiNHjVPASn8x9JPrRRPTXpdiXxzQj2ADPqs1TZH0cIkezkSN2D9GO16ncvI=
+MIME-Version: 1.0
+X-MS-Exchange-CrossTenant-Network-Message-Id: b8f8545f-d62f-4d54-68c3-08d7008e5434
+X-MS-Exchange-CrossTenant-originalarrivaltime: 04 Jul 2019 14:45:59.2512 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: c33c9f88-1eb7-4099-9700-16013fd9e8aa
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: joabreu@synopsys.com
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: BYAPR12MB3541
+X-OriginatorOrg: synopsys.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190704_073912_542834_1FC7D27F 
-X-CRM114-Status: GOOD (  17.27  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190704_074605_545159_635E1CF4 
+X-CRM114-Status: GOOD (  11.82  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -113,93 +139,37 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Andre Przywara <andre.przywara@arm.com>, Dave Martin <Dave.Martin@arm.com>
+Cc: Joao Pinto <Joao.Pinto@synopsys.com>,
+ Alexandre Torgue <alexandre.torgue@st.com>,
+ Maxime Ripard <maxime.ripard@bootlin.com>,
+ "netdev@vger.kernel.org" <netdev@vger.kernel.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "linux-stm32@st-md-mailman.stormreply.com"
+ <linux-stm32@st-md-mailman.stormreply.com>, Chen-Yu Tsai <wens@csie.org>,
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ Giuseppe Cavallaro <peppe.cavallaro@st.com>,
+ "David S . Miller" <davem@davemloft.net>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 03/07/2019 17:32, Alexandru Elisei wrote:
+From: Jesper Dangaard Brouer <brouer@redhat.com>
 
-[...]
-
->>>> +}
->>>> +
->>>> +#define EL2_SYSREG(el2, el1, translate)	\
->>>> +	[el2 - FIRST_EL2_SYSREG] = { el2, el1, translate }
->>>> +#define PURE_EL2_SYSREG(el2) \
->>>> +	[el2 - FIRST_EL2_SYSREG] = { el2,__INVALID_SYSREG__, NULL }
->>>> +/*
->>>> + * Associate vEL2 registers to their EL1 counterparts on the CPU.
->>>> + * The translate function can be NULL, when the register layout is identical.
->>>> + */
->>>> +struct el2_sysreg_map {
->>>> +	int sysreg;	/* EL2 register index into the array above */
->>>> +	int mapping;	/* associated EL1 register */
->>>> +	u64 (*translate)(u64 value);
->>>> +} nested_sysreg_map[NR_SYS_REGS - FIRST_EL2_SYSREG] = {
->>>> +	PURE_EL2_SYSREG( VPIDR_EL2 ),
->>>> +	PURE_EL2_SYSREG( VMPIDR_EL2 ),
->>>> +	PURE_EL2_SYSREG( ACTLR_EL2 ),
->>>> +	PURE_EL2_SYSREG( HCR_EL2 ),
->>>> +	PURE_EL2_SYSREG( MDCR_EL2 ),
->>>> +	PURE_EL2_SYSREG( HSTR_EL2 ),
->>>> +	PURE_EL2_SYSREG( HACR_EL2 ),
->>>> +	PURE_EL2_SYSREG( VTTBR_EL2 ),
->>>> +	PURE_EL2_SYSREG( VTCR_EL2 ),
->>>> +	PURE_EL2_SYSREG( RVBAR_EL2 ),
->>>> +	PURE_EL2_SYSREG( RMR_EL2 ),
->>>> +	PURE_EL2_SYSREG( TPIDR_EL2 ),
->>>> +	PURE_EL2_SYSREG( CNTVOFF_EL2 ),
->>>> +	PURE_EL2_SYSREG( CNTHCTL_EL2 ),
->>>> +	PURE_EL2_SYSREG( HPFAR_EL2 ),
->>>> +	EL2_SYSREG(      SCTLR_EL2,  SCTLR_EL1,      translate_sctlr ),
->>>> +	EL2_SYSREG(      CPTR_EL2,   CPACR_EL1,      translate_cptr  ),
->>>> +	EL2_SYSREG(      TTBR0_EL2,  TTBR0_EL1,      translate_ttbr0 ),
->>>> +	EL2_SYSREG(      TTBR1_EL2,  TTBR1_EL1,      NULL            ),
->>>> +	EL2_SYSREG(      TCR_EL2,    TCR_EL1,        translate_tcr   ),
->>>> +	EL2_SYSREG(      VBAR_EL2,   VBAR_EL1,       NULL            ),
->>>> +	EL2_SYSREG(      AFSR0_EL2,  AFSR0_EL1,      NULL            ),
->>>> +	EL2_SYSREG(      AFSR1_EL2,  AFSR1_EL1,      NULL            ),
->>>> +	EL2_SYSREG(      ESR_EL2,    ESR_EL1,        NULL            ),
->>>> +	EL2_SYSREG(      FAR_EL2,    FAR_EL1,        NULL            ),
->>>> +	EL2_SYSREG(      MAIR_EL2,   MAIR_EL1,       NULL            ),
->>>> +	EL2_SYSREG(      AMAIR_EL2,  AMAIR_EL1,      NULL            ),
->>>> +};
->>> Figuring out which registers are in this map and which aren't and are supposed
->>> to be treated differently is really cumbersome because they are split into two
->>> types of el2 registers and their order is different from the order in enum
->>> vcpu_sysreg (in kvm_host.h). Perhaps adding a comment about what registers will
->>> be treated differently would make the code a bit easier to follow?
->> I'm not sure what this buys us. We have 3 categories of EL2 sysregs:
->> - Purely emulated
->> - Directly mapped onto an EL1 sysreg
->> - Translated from EL2 to EL1
->>
->> I think the wrappers represent that pretty well, although we could split
->> EL2_SYSREG into DIRECT_EL2_SYSREG and TRANSLATE_EL2_SYSREG. As for the
->> order, does it really matter? We also have the trap table order, which
->> is also different from the enum. Do you propose we reorder everything?
+> The page_pool_request_shutdown() API return indication if there are any
+> in-flight frames/pages, to know when it is safe to call
+> page_pool_free(), which you are also missing a call to.
 > 
-> The wrappers and the naming are fine.
-> 
-> I was trying to figure out which EL2 registers are in the nested_sysreg_map and
-> which aren't (that's what I meant by "two types of registers") by looking at the
-> vcpu_sysreg enum. Because the order in the map is different than the order in
-> the enum, I was having a difficult time figuring out which registers are not in
-> the nested_sysreg_map to make sure we haven't somehow forgot to emulate a register.
-> 
-> So no, I wasn't asking to reorder everything. I was asking if it would be
-> appropriate to write a comment stating the intention to treat registers X, Y and
-> Z separately from the registers in nested_sysreg_map.
+> This page_pool_request_shutdown() is only intended to be called from
+> xdp_rxq_info_unreg() code, that handles and schedule a work queue if it
+> need to wait for in-flight frames/pages.
 
-Ah, fair enough. Yes, that's a very reasonable suggestion.
+So you mean I can't call it or I should implement the same deferred work 
+?
 
-Thanks,
-
-	M.
--- 
-Jazz is not dead. It just smells funny...
+Notice that in stmmac case there will be no in-flight frames/pages 
+because we free them all before calling this ...
 
 _______________________________________________
 linux-arm-kernel mailing list
