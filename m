@@ -2,53 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9BF315F9DF
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  4 Jul 2019 16:16:17 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 35B475FA17
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  4 Jul 2019 16:29:35 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=EdtJLyH1KF42r7jk2kyNbFWE3jDSga9avjJtA9TqGTk=; b=EhbBOEwbOpetTz
-	04kvDwImh9dOIpzxi3e7xQSKD2So3BvZCpbaOI29V0BnrKAEhgidPVUgt6BXw7bX4RZJwb/LuXR9z
-	DYRCqb5iAnkRfbKN/2dQKKaVerDFZdEEL8J6KW46K77rwqi4C7tKcX95uhu/sNSrYJv9pT9gnglfN
-	Q92Gmsq/32quGj693RUwRXKR/da/vqs4vv+FUW0xXpgyH1vtGtKKcvzek60HVN/Rs9/ukZW2DMTbD
-	7a4k3OSofvDFj6MpF032cS4ciG7JblpZNcTqBxr1vr0044ycbO/LRrS8h1wNoO23D7MiVyTl5gj09
-	usVltf5Ks08TLwsq0NcQ==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=vLq6BI7stYcC+nIdm/WlJlatdUy3AqwPfi4iWQuanNc=; b=lT6
+	4MuyhRt2EAkiWqpuw3Mb4JuSVPJIp3kiB7iLyY287GVCAZXRNlTativXxCwTUzQskV0raAV5hbTDv
+	Io+0kapv4BYVi0CUHUsjrg2JRXvIR/UqXjfEt4EXlAGD2EWGaWqB7tM7OvheLLk6mybsaTuxFt+SC
+	3a3HZ00vXpeTtOzqF4aZ1QYkymj1c5Q578DOPWuavBdmPYJjDfgv/o6TDXihuuVcdzLcQLe+skypK
+	H7uYFdbtF3uA/TfMpCy/EnEWpFHj2fcGSqA7992xJMebi4s1vh75/srZcK844c+cmfvtnJ8rBVtUr
+	CeU/eqInNeGJ2mT8UZVljUvIIEsHWpw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hj2X1-0001kc-NA; Thu, 04 Jul 2019 14:16:15 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hj2Wp-0001kH-SL
- for linux-arm-kernel@lists.infradead.org; Thu, 04 Jul 2019 14:16:05 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 2413728;
- Thu,  4 Jul 2019 07:16:03 -0700 (PDT)
-Received: from arrakis.emea.arm.com (arrakis.cambridge.arm.com [10.1.196.78])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
- DEC253F738; Thu,  4 Jul 2019 07:16:01 -0700 (PDT)
-Date: Thu, 4 Jul 2019 15:15:59 +0100
-From: Catalin Marinas <catalin.marinas@arm.com>
-To: Dave Martin <Dave.Martin@arm.com>
-Subject: Re: [RFC PATCH v2 7/8] arm64/sve: Don't disable SVE on syscalls return
-Message-ID: <20190704141559.GA51773@arrakis.emea.arm.com>
-References: <20190613161656.20765-1-julien.grall@arm.com>
- <20190613161656.20765-8-julien.grall@arm.com>
- <20190621153316.GC2790@e103592.cambridge.arm.com>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190621153316.GC2790@e103592.cambridge.arm.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+	id 1hj2js-0006L2-UA; Thu, 04 Jul 2019 14:29:32 +0000
+Received: from inva021.nxp.com ([92.121.34.21])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hj2jh-0006KZ-B7
+ for linux-arm-kernel@lists.infradead.org; Thu, 04 Jul 2019 14:29:22 +0000
+Received: from inva021.nxp.com (localhost [127.0.0.1])
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id B52EE2000B3;
+ Thu,  4 Jul 2019 16:29:19 +0200 (CEST)
+Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
+ [165.114.16.14])
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id E28DB200DA6;
+ Thu,  4 Jul 2019 16:29:14 +0200 (CEST)
+Received: from titan.ap.freescale.net (TITAN.ap.freescale.net [10.192.208.233])
+ by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 2E9FB402C0;
+ Thu,  4 Jul 2019 22:29:09 +0800 (SGT)
+From: fugang.duan@nxp.com
+To: srinivas.kandagatla@linaro.org, shawnguo@kernel.org, s.hauer@pengutronix.de
+Subject: [PATCH nvmem 1/1] nvmem: imx: correct the fuse word index
+Date: Thu,  4 Jul 2019 22:20:15 +0800
+Message-Id: <20190704142015.10701-1-fugang.duan@nxp.com>
+X-Mailer: git-send-email 2.14.1
+X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190704_071603_959222_0E48BC46 
-X-CRM114-Status: GOOD (  18.04  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190704_072921_518756_6B470987 
+X-CRM114-Status: UNSURE (   8.55  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [92.121.34.21 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -62,56 +64,57 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Anton.Kirilov@arm.com, will.deacon@arm.com, oleg@redhat.com,
- zhang.lei@jp.fujitsu.com, Julien Grall <julien.grall@arm.com>,
- alex.bennee@linaro.org, linux-arm-kernel@lists.infradead.org,
- Daniel.Kiss@arm.com
+Cc: fugang.duan@nxp.com, gregkh@linuxfoundation.org,
+ linux-kernel@vger.kernel.org, kernel@pengutronix.de, festevam@gmail.com,
+ linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Jun 21, 2019 at 04:33:16PM +0100, Dave P Martin wrote:
-> On Thu, Jun 13, 2019 at 05:16:55PM +0100, Julien Grall wrote:
-> > Per the syscalls ABI, SVE registers will be unknown after a syscalls. In
-> 
-> This patch is quite hard to understand, though this is more down to the
-> code being modified than the patch itself.  So, I may ask some stupid
-> questions...
-> 
-> In particular, we now have up to 8 task states (all the combinations of
-> TIF_FOREIGN_FPSTATE, TIF_SVE and TIF_SVE_NEEDS_FLUSH).  Sketching out
-> the state machine and highlighting any states that we consider invalid
-> may be a useful exercise, but I've not attempted that yes.
+From: Fugang Duan <fugang.duan@nxp.com>
 
-We definitely need a state machine sketched out (and a formal model as I
-can't really get all of it in my head at once). I don't fully understand
-the need for a new TIF_SVE_NEEDS_FLUSH. Maybe it becomes obvious if we
-had a state machine description.
+iMX8 fuse word index represent as one 4-bytes word,
+it should not be divided by 4.
 
-So, we currently have (IIUC):
+Exp:
+- MAC0 address layout in fuse:
+offset 708: MAC[3] MAC[2] MAC[1] MAC[0]
+offset 709: XX     xx     MAC[5] MAC[4]
 
-TIF_SVE - tells us whether the user space can access SVE registers
-without a fault (doesn't CPACR_EL1 tell us this already on kernel entry?
-I guess we'd need to store it in a TIF flag anyway for switch_to). The
-implications of TIF_SVE on kernel entry is that the SVE state could have
-been touched by the user. If entering via syscall, we discard this state
-in sve_user_discard().
+Signed-off-by: Fugang Duan <fugang.duan@nxp.com>
+---
+ drivers/nvmem/imx-ocotp-scu.c | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
 
-TIF_FOREIGN_FPSTATE - tells us whether the hardware state is out of sync
-with the current thread.
-
-For flushing the SVE state on return from syscall, can we not handle
-this entirely in el0_svc_handler while enabling the SVE access at the
-same time to avoid a subsequent trap? We need to know whether the SVE
-state is valid when we do the context switching but we have TIF_SVE for
-this, cleared on syscall entry but can be set again on return from
-syscall if we enable access in CPACR_EL1 (sve_user_enable()).
-
-It probably needs some more thinking on signal handling.
-
+diff --git a/drivers/nvmem/imx-ocotp-scu.c b/drivers/nvmem/imx-ocotp-scu.c
+index d9dc482..be2f5f0 100644
+--- a/drivers/nvmem/imx-ocotp-scu.c
++++ b/drivers/nvmem/imx-ocotp-scu.c
+@@ -71,8 +71,8 @@ static int imx_scu_ocotp_read(void *context, unsigned int offset,
+ 	void *p;
+ 	int i, ret;
+ 
+-	index = offset >> 2;
+-	num_bytes = round_up((offset % 4) + bytes, 4);
++	index = offset;
++	num_bytes = round_up(bytes, 4);
+ 	count = num_bytes >> 2;
+ 
+ 	if (count > (priv->data->nregs - index))
+@@ -100,7 +100,7 @@ static int imx_scu_ocotp_read(void *context, unsigned int offset,
+ 		buf++;
+ 	}
+ 
+-	memcpy(val, (u8 *)p + offset % 4, bytes);
++	memcpy(val, (u8 *)p, bytes);
+ 
+ 	kfree(p);
+ 
 -- 
-Catalin
+2.7.4
+
 
 _______________________________________________
 linux-arm-kernel mailing list
