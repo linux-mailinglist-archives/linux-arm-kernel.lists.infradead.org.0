@@ -2,66 +2,64 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A50125F4E2
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  4 Jul 2019 10:47:36 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B2E335F4E5
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  4 Jul 2019 10:47:56 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ZQkm9wGpDSNby50eEyx2lgez4qKa0a0TSg8NYyYaHms=; b=TNASmYjJ0lD4OJ
-	lIeXEgJS9kokY5lvb3C3tg9+6Zn7naT+a+HPzsHFaut9gC1TYjLv+mh9Q0BLUcPZLjeUMActR/aJV
-	UQ4StfAv5pdcBtbA1zDeEadsvtHKRcP6spAEdAskWHFgJMoXDbHM4UZQ2qz72h96q5P/VsvnCknMu
-	cvvZlEhtquKopOhbgpPiiipqXXRaGXOVUh8OW6rgHcgp4WSsB0DiY7cQE+ZB0FG0r6+dH/7kNtMyY
-	zWRKsk0pCKj6TQGIf11SzmEVvdu6QyNKf0JjsA71UpTJbcI8GM8GIKLTYHg7lggjFwc6K0A7sk+hf
-	zQ3/YxZf9PtbHYY/nckw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=wOXIxeB2S0uZt+mmzw4DqBm0efQFguaDBcAkWWqGmrQ=; b=DzcXdE6SGDdiw2
+	6nIfoyCikOvVv7QgWOnNLOL0NRVC6jl3rv68LyzQlLHG+LcAXoC1W9o7qFyHGiF3A2QRGTsTDK/Gz
+	kxygaKL8VQWfGG16iRaF0REXO7s2Lup2IdrMCL5JeRABcM/T20MsiWBCLEkXDvY7329DSBSVNgYE1
+	6NwgZSjXVQVoXu0BTnmdCWDeqj42ygilAyujgxgVui6Sr33pP+UO51MVZF0paAHHU2gOwVS4jRVMv
+	IQNSBxBeQ1gmh11g+7hEY46Mt8MPbqw/8xyw3KzXhb3u6zrF24XBzmdQfHAglwjPUj/juEBGwjuyF
+	FcSUrPcqJP68JXoKKzZA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hixOx-0006F4-7q; Thu, 04 Jul 2019 08:47:35 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1hixPG-0006Yg-Mf; Thu, 04 Jul 2019 08:47:54 +0000
+Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hixOS-00064t-QB
- for linux-arm-kernel@lists.infradead.org; Thu, 04 Jul 2019 08:47:06 +0000
-Received: from localhost (83-86-89-107.cable.dynamic.v4.ziggo.nl
- [83.86.89.107])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 090A3218BC;
- Thu,  4 Jul 2019 08:47:03 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1562230024;
- bh=zxScwFkLjiixqdeZRh7a5dXv8jDdQ8T3PHXavOyUF88=;
- h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=Dv6zzAeEQOLrSruoBnVNVkmd1VvWZ2P/o3R8uv4G3LheVuxIeaLnayVa+Wg0bHN40
- Vzq//RNvbEZmNAWyoAv35LneKIUggwAXGlWL5w34unYMha2SjdH34WS2Vg6+MY6SYz
- NJzaOTuLMWTPi+zxqcoS2IylbU2vM4unYytSg4X0=
-From: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
-To: linux-kernel@vger.kernel.org
-Subject: [PATCH 08/11] video: fbdev: w100fb: convert platform driver to use
- dev_groups
-Date: Thu,  4 Jul 2019 10:46:14 +0200
-Message-Id: <20190704084617.3602-9-gregkh@linuxfoundation.org>
-X-Mailer: git-send-email 2.22.0
-In-Reply-To: <20190704084617.3602-1-gregkh@linuxfoundation.org>
-References: <20190704084617.3602-1-gregkh@linuxfoundation.org>
+ id 1hixOw-0006RH-6j; Thu, 04 Jul 2019 08:47:35 +0000
+X-UUID: d89efbad04b34e2eba5c11e3070a92e1-20190704
+X-UUID: d89efbad04b34e2eba5c11e3070a92e1-20190704
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
+ (envelope-from <dongchun.zhu@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 844656512; Thu, 04 Jul 2019 00:47:27 -0800
+Received: from mtkmbs07n1.mediatek.inc (172.21.101.16) by
+ MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Thu, 4 Jul 2019 01:47:25 -0700
+Received: from mtkcas07.mediatek.inc (172.21.101.84) by
+ mtkmbs07n1.mediatek.inc (172.21.101.16) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Thu, 4 Jul 2019 16:47:24 +0800
+Received: from localhost.localdomain (10.17.3.153) by mtkcas07.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
+ Transport; Thu, 4 Jul 2019 16:47:23 +0800
+From: <dongchun.zhu@mediatek.com>
+To: <mchehab@kernel.org>, <robh+dt@kernel.org>, <mark.rutland@arm.com>,
+ <sakari.ailus@linux.intel.com>, <--to=drinkcat@chromium.org>,
+ <tfiga@chromium.org>, <matthias.bgg@gmail.com>, <bingbu.cao@intel.com>
+Subject: [RFC,V2,0/2] media: add support for OV02A10 sensor
+Date: Thu, 4 Jul 2019 16:46:49 +0800
+Message-ID: <20190704084651.3105-1-dongchun.zhu@mediatek.com>
+X-Mailer: git-send-email 2.9.2
 MIME-Version: 1.0
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190704_014705_066232_5C05EA32 
-X-CRM114-Status: GOOD (  12.07  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20190704_014734_319773_51CFACB6 
+X-CRM114-Status: UNSURE (   9.35  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -73,87 +71,52 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-fbdev@vger.kernel.org,
- Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- dri-devel@lists.freedesktop.org, Tony Prisk <linux@prisktech.co.nz>,
- linux-arm-kernel@lists.infradead.org
+Cc: devicetree@vger.kernel.org, srv_heupstream@mediatek.com,
+ shengnan.wang@mediatek.com, sj.huang@mediatek.com,
+ linux-mediatek@lists.infradead.org, dongchun.zhu@mediatek.com,
+ louis.kuo@mediatek.com, linux-arm-kernel@lists.infradead.org,
+ linux-media@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Platform drivers now have the option to have the platform core create
-and remove any needed sysfs attribute files.  So take advantage of that
-and do not register "by hand" a bunch of sysfs files.
+From: Dongchun Zhu <dongchun.zhu@mediatek.com>
 
-Cc: Tony Prisk <linux@prisktech.co.nz>
-Cc: Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>
-Cc: linux-arm-kernel@lists.infradead.org
-Cc: dri-devel@lists.freedesktop.org
-Cc: linux-fbdev@vger.kernel.org
-Signed-off-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
----
- drivers/video/fbdev/w100fb.c | 23 ++++++++++-------------
- 1 file changed, 10 insertions(+), 13 deletions(-)
+Hello,
 
-diff --git a/drivers/video/fbdev/w100fb.c b/drivers/video/fbdev/w100fb.c
-index 696106ecdff0..4be3afcc1c93 100644
---- a/drivers/video/fbdev/w100fb.c
-+++ b/drivers/video/fbdev/w100fb.c
-@@ -168,6 +168,15 @@ static ssize_t fastpllclk_store(struct device *dev, struct device_attribute *att
- 
- static DEVICE_ATTR_RW(fastpllclk);
- 
-+static struct attribute *w100fb_attrs[] = {
-+	&dev_attr_fastpllclk.attr,
-+	&dev_attr_reg_read.attr,
-+	&dev_attr_reg_write.attr,
-+	&dev_attr_flip.attr,
-+	NULL,
-+};
-+ATTRIBUTE_GROUPS(w100fb);
-+
- /*
-  * Some touchscreens need hsync information from the video driver to
-  * function correctly. We export it here.
-@@ -756,14 +765,6 @@ int w100fb_probe(struct platform_device *pdev)
- 		goto out;
- 	}
- 
--	err = device_create_file(&pdev->dev, &dev_attr_fastpllclk);
--	err |= device_create_file(&pdev->dev, &dev_attr_reg_read);
--	err |= device_create_file(&pdev->dev, &dev_attr_reg_write);
--	err |= device_create_file(&pdev->dev, &dev_attr_flip);
--
--	if (err != 0)
--		fb_warn(info, "failed to register attributes (%d)\n", err);
--
- 	fb_info(info, "%s frame buffer device\n", info->fix.id);
- 	return 0;
- out:
-@@ -788,11 +789,6 @@ static int w100fb_remove(struct platform_device *pdev)
- 	struct fb_info *info = platform_get_drvdata(pdev);
- 	struct w100fb_par *par=info->par;
- 
--	device_remove_file(&pdev->dev, &dev_attr_fastpllclk);
--	device_remove_file(&pdev->dev, &dev_attr_reg_read);
--	device_remove_file(&pdev->dev, &dev_attr_reg_write);
--	device_remove_file(&pdev->dev, &dev_attr_flip);
--
- 	unregister_framebuffer(info);
- 
- 	vfree(par->saved_intmem);
-@@ -1630,6 +1626,7 @@ static struct platform_driver w100fb_driver = {
- 	.driver		= {
- 		.name	= "w100fb",
- 	},
-+	.dev_groups	= w100fb_groups,
- };
- 
- module_platform_driver(w100fb_driver);
+This patch adds driver and bindings for Omnivision's OV02A10 2 megapixel CMOS 1/5" sensor,
+which has a single MIPI lane interface and output format of 10-bit Raw.
+
+The driver is implemented wth V4L2 framework.
+1. Async registered as a V4L2 I2C sub-device.
+2. A media entity that can provide several source pads and sink pads to link with other device like Seninf, ISP one after another
+   to create a default overall camera topology, image frame or meta-data from sensor can flow through particular path to output
+   preview or capture image or 3A info.
+
+Mainly changes of v2 are addressing the comments from Nicolas, Bingbu, Sakari, Rob,
+including,
+ - Put dt binding before driver in series
+ - Add MAINTAINERS entries
+ - Squash the MAINTAINERS entry and Kconfig to driver patch
+ - Add rotation support for driver
+ - Fix other reviewed issues in v1
+
+Dongchun Zhu (2):
+  media: dt-bindings: media: i2c: Add bindings for OV02A10
+  media: i2c: Add Omnivision OV02A10 camera sensor driver
+
+ .../devicetree/bindings/media/i2c/ov02a10.txt      |   43 +
+ MAINTAINERS                                        |    8 +
+ drivers/media/i2c/Kconfig                          |   12 +
+ drivers/media/i2c/Makefile                         |    1 +
+ drivers/media/i2c/ov02a10.c                        | 1017 ++++++++++++++++++++
+ 5 files changed, 1081 insertions(+)
+ create mode 100644 Documentation/devicetree/bindings/media/i2c/ov02a10.txt
+ create mode 100644 drivers/media/i2c/ov02a10.c
+
 -- 
-2.22.0
+2.9.2
 
 
 _______________________________________________
