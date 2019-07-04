@@ -2,99 +2,129 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DFDF05F431
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  4 Jul 2019 10:00:52 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9DA425F43A
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  4 Jul 2019 10:04:20 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=cKjhGGYHQ4hkMV6/0EeJCfbhaIp4R58OKoXdmJRyWFI=; b=Uge9+5q1WwaFlu
-	Yg/P7gT/bPTcoI8QQrF1fa6q04paD/eiYpDIz2G/6gzt9d0GTIeCsxIUSjMK77EPpr9k43RGIBndk
-	I87y8l2/1fcbuautlo9hGgEAarvK4wpe2Dmwy2Es5TvMdkN5L5l7I6b0HOuzob358Pu+VxoB+Jz/W
-	96DB996itaXQFHE4+OmudGa9W0x1vkEkFiwggRdnavWocg7pdUWxnzKCc6RtBlGcjyK5l/C0KsV9F
-	BzeJuZpLa2vOHwOqzjsq8Y1MRlb+e1ioPRAjsyiTfaN3qxMKB4VsjAg81uJ55eeJ8CgUE/W5ekGjq
-	mM5pvR3Du4bLWdsOX8Tw==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Cc:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=cL/nt3giG0r1FZVGTvwsgiaR5kuMZpHxpnMIB/oE6N0=; b=BpOE6sKyOc8pmT5mF3cADGcOMG
+	Td4RXwlanFIKM+vkaKGo01PCNJwZDkrGkLWlchoRbOgo3KeDwVmOfu0M4XZHYd5VSDuHLXM7m1f/A
+	q0YC6kk8vuJ5iGb7ZZts6KFFiiKKdKIvvBEn9EMCX9G7zGJ00DukHQqBw0ZIpfRf9UCWiE1KUAjkS
+	cKPs5WbcZkAeGkbGBAlyorQGVgG06OTipl8alDqt1WdEo1pgrvQR5zHiz2N1ZHPYWGgQPBx8Lh8aa
+	7tp5nk7Lp52Y4ovxJQ1wQNz5dYBhuaZWo8DTl9fCShm1iJecw2AAEijjk/T3i7aDnpk/qY0Dg3ObN
+	lY7C/syg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hiwfd-0003Xz-Oy; Thu, 04 Jul 2019 08:00:46 +0000
-Received: from mail-eopbgr00066.outbound.protection.outlook.com ([40.107.0.66]
- helo=EUR02-AM5-obe.outbound.protection.outlook.com)
+	id 1hiwj4-000424-KQ; Thu, 04 Jul 2019 08:04:18 +0000
+Received: from lelv0142.ext.ti.com ([198.47.23.249])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hiwfO-0003XQ-9y
- for linux-arm-kernel@lists.infradead.org; Thu, 04 Jul 2019 08:00:31 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=0Os2M1u4hQFlUUZir5WG6cu5oF/YNz5e4IzKf5ru3hA=;
- b=XV/qNoVv0eEDPHrJ7os5NpML4t7YVkZz1DfCFCrOOEj6Cdh+i31ww8sV4yV2/bbiyo7vTC7pN4e3VClSjDJYjObLoxHr8ML8/Bs7r/kk2GTtMKzeMkSAFz5LV+r3bhHstTlDzpP43aSKlRDhZdbluJrONRUOMNf2PZ/3N00rpJ8=
-Received: from DB3PR0402MB3916.eurprd04.prod.outlook.com (52.134.72.18) by
- DB3PR0402MB3738.eurprd04.prod.outlook.com (52.134.70.145) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2032.20; Thu, 4 Jul 2019 08:00:25 +0000
-Received: from DB3PR0402MB3916.eurprd04.prod.outlook.com
- ([fe80::3945:fcda:5bdd:8191]) by DB3PR0402MB3916.eurprd04.prod.outlook.com
- ([fe80::3945:fcda:5bdd:8191%4]) with mapi id 15.20.2052.010; Thu, 4 Jul 2019
- 08:00:25 +0000
-From: Anson Huang <anson.huang@nxp.com>
-To: Leonard Crestez <leonard.crestez@nxp.com>, "viresh.kumar@linaro.org"
- <viresh.kumar@linaro.org>
-Subject: RE: [PATCH 2/2] arm64: dts: imx8mm: Assign highest opp as suspend opp
-Thread-Topic: [PATCH 2/2] arm64: dts: imx8mm: Assign highest opp as suspend opp
-Thread-Index: AQHVMjD62bccyXxndUyDszIpSDkBnaa6F2SA
-Date: Thu, 4 Jul 2019 08:00:24 +0000
-Message-ID: <DB3PR0402MB39165D27F23501EE358DE607F5FA0@DB3PR0402MB3916.eurprd04.prod.outlook.com>
-References: <20190704061403.8249-1-Anson.Huang@nxp.com>
- <20190704061403.8249-2-Anson.Huang@nxp.com>
- <DB7PR04MB50519C02D90675070F21501DEEFA0@DB7PR04MB5051.eurprd04.prod.outlook.com>
-In-Reply-To: <DB7PR04MB50519C02D90675070F21501DEEFA0@DB7PR04MB5051.eurprd04.prod.outlook.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=anson.huang@nxp.com; 
-x-originating-ip: [119.31.174.66]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: f97e96a1-60ef-4b23-f80b-08d70055abce
-x-ms-office365-filtering-ht: Tenant
-x-microsoft-antispam: BCL:0; PCL:0;
- RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600148)(711020)(4605104)(1401327)(4618075)(2017052603328)(7193020);
- SRVR:DB3PR0402MB3738; 
-x-ms-traffictypediagnostic: DB3PR0402MB3738:
-x-microsoft-antispam-prvs: <DB3PR0402MB37385D5D32BA1619C0B548E9F5FA0@DB3PR0402MB3738.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:8882;
-x-forefront-prvs: 0088C92887
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(4636009)(376002)(396003)(39860400002)(346002)(136003)(366004)(199004)(189003)(8676002)(99286004)(229853002)(102836004)(66066001)(76176011)(7696005)(53546011)(25786009)(54906003)(6506007)(110136005)(3846002)(6116002)(33656002)(14454004)(7416002)(7736002)(305945005)(186003)(4326008)(8936002)(316002)(15650500001)(2906002)(81166006)(81156014)(478600001)(74316002)(26005)(68736007)(2501003)(71200400001)(71190400001)(53936002)(6246003)(66556008)(66946007)(76116006)(66446008)(66476007)(64756008)(73956011)(5660300002)(55016002)(486006)(44832011)(86362001)(52536014)(9686003)(6436002)(256004)(14444005)(446003)(11346002)(476003)(32563001);
- DIR:OUT; SFP:1101; SCL:1; SRVR:DB3PR0402MB3738;
- H:DB3PR0402MB3916.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; A:1; MX:1; 
-received-spf: None (protection.outlook.com: nxp.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: sSACyW0V1pdegfYmDUfMLyW7K29iXC8f2vzGlbt4SxRekcCRm34M++/kyxkisjUtYV3nSkV2cTkXHDDiYoWSBzTxdG9rCyLJACd/2aa66quUtNbaqDZ+VyBomXf5/eq+U7SEvYlxBhW9s5T0D6svscgCdYZY+jlUujDAIcBvLjw3AC2E12Av8Xc7cIFtzocUFmkrNJIGYXt1MSd+K3v/4B3Fq1gBplOET9ClPaPxCP1rsNLjbSHY+sLRFdSraqptJgjTtnXIJNKHH9qgr2Z5AyiSpn2Vp0+YqsJjxcSlnLZhalspzcRwZRuwZvr+XhE6TrseeoG+t3VoGlC6Ub0M8/K8PtIJQXHZMG3SLMvYxKApyqCJ2CkGwi8fls9o1lrF/+J35IbFcomVPGds/MJijDYENvTG7Lm6c7w9TfcS6Bs=
+ id 1hiwiV-0003xc-Cx
+ for linux-arm-kernel@lists.infradead.org; Thu, 04 Jul 2019 08:03:46 +0000
+Received: from fllv0035.itg.ti.com ([10.64.41.0])
+ by lelv0142.ext.ti.com (8.15.2/8.15.2) with ESMTP id x6483QBk046220;
+ Thu, 4 Jul 2019 03:03:26 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
+ s=ti-com-17Q1; t=1562227406;
+ bh=0kq++ky63kGYSgR8djc1FO813K4IO89kI5DZxoHH1Ls=;
+ h=Subject:To:References:From:Date:In-Reply-To;
+ b=v3Rl3LsLlDGsKmW/8RW/yIWhVVS8XfQTQ2NS6dlPI36OsKRxQf9cTRxz0yIaR7RbQ
+ /v7N3xDAMCajJSdhY4wyW53dO3hj/VCZBFbS2wQCwXpX0EuEECVuI8ZkALvtMhQK+5
+ 8IK5JaTNigxy+6m+EkiDhJ/5qHVvrF1GRauSmzGE=
+Received: from DLEE114.ent.ti.com (dlee114.ent.ti.com [157.170.170.25])
+ by fllv0035.itg.ti.com (8.15.2/8.15.2) with ESMTPS id x6483Q5K060792
+ (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
+ Thu, 4 Jul 2019 03:03:26 -0500
+Received: from DLEE103.ent.ti.com (157.170.170.33) by DLEE114.ent.ti.com
+ (157.170.170.25) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5; Thu, 4 Jul
+ 2019 03:03:25 -0500
+Received: from lelv0327.itg.ti.com (10.180.67.183) by DLEE103.ent.ti.com
+ (157.170.170.33) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5 via
+ Frontend Transport; Thu, 4 Jul 2019 03:03:25 -0500
+Received: from [10.1.3.6] (ileax41-snat.itg.ti.com [10.172.224.153])
+ by lelv0327.itg.ti.com (8.15.2/8.15.2) with ESMTP id x6483MZX009020;
+ Thu, 4 Jul 2019 03:03:22 -0500
+Subject: Re: [PATCH 1/3] drm/bridge: sii902x: fix missing reference to mclk
+ clock
+To: Olivier Moysan <olivier.moysan@st.com>, <a.hajda@samsung.com>,
+ <narmstrong@baylibre.com>, <Laurent.pinchart@ideasonboard.com>,
+ <jonas@kwiboo.se>, <jernej.skrabec@siol.net>, <airlied@linux.ie>,
+ <daniel@ffwll.ch>, <dri-devel@lists.freedesktop.org>,
+ <linux-kernel@vger.kernel.org>, <benjamin.gaignard@st.com>,
+ <alexandre.torgue@st.com>, <linux-arm-kernel@lists.infradead.org>,
+ <linux-stm32@st-md-mailman.stormreply.com>, <robh+dt@kernel.org>,
+ <mark.rutland@arm.com>, <devicetree@vger.kernel.org>
+References: <1562082426-14876-1-git-send-email-olivier.moysan@st.com>
+ <1562082426-14876-2-git-send-email-olivier.moysan@st.com>
+From: Jyri Sarha <jsarha@ti.com>
+Openpgp: preference=signencrypt
+Autocrypt: addr=jsarha@ti.com; prefer-encrypt=mutual; keydata=
+ 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
+Message-ID: <36194ec6-2ea7-6c0d-6142-a6bb24a65ccb@ti.com>
+Date: Thu, 4 Jul 2019 11:03:21 +0300
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.7.1
 MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: f97e96a1-60ef-4b23-f80b-08d70055abce
-X-MS-Exchange-CrossTenant-originalarrivaltime: 04 Jul 2019 08:00:24.9793 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: anson.huang@nxp.com
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB3PR0402MB3738
+In-Reply-To: <1562082426-14876-2-git-send-email-olivier.moysan@st.com>
+Content-Language: en-GB
+X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190704_010030_350769_2E2B985C 
-X-CRM114-Status: GOOD (  17.58  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190704_010343_542140_84B59A8D 
+X-CRM114-Status: GOOD (  15.29  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [198.47.23.249 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.0.66 listed in list.dnswl.org]
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -102,6 +132,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -113,71 +144,48 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- Jacky Bai <ping.bai@nxp.com>, "ccaione@baylibre.com" <ccaione@baylibre.com>,
- "andrew.smirnov@gmail.com" <andrew.smirnov@gmail.com>,
- "shawnguo@kernel.org" <shawnguo@kernel.org>,
- "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
- "angus@akkea.ca" <angus@akkea.ca>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Daniel Baluta <daniel.baluta@nxp.com>, Abel Vesa <abel.vesa@nxp.com>,
- "robh+dt@kernel.org" <robh+dt@kernel.org>, dl-linux-imx <linux-imx@nxp.com>,
- "kernel@pengutronix.de" <kernel@pengutronix.de>,
- "festevam@gmail.com" <festevam@gmail.com>, "agx@sigxcpu.org" <agx@sigxcpu.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- "l.stach@pengutronix.de" <l.stach@pengutronix.de>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi, Leonard
-
-> On 7/4/2019 9:23 AM, Anson.Huang@nxp.com wrote:
-> > From: Anson Huang <Anson.Huang@nxp.com>
-> >
-> > Assign highest OPP as suspend OPP to reduce suspend/resume latency on
-> > i.MX8MM.
-> >
-> > Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
-> > ---
-> >   arch/arm64/boot/dts/freescale/imx8mm.dtsi | 1 +
-> >   1 file changed, 1 insertion(+)
-> >
-> > diff --git a/arch/arm64/boot/dts/freescale/imx8mm.dtsi
-> > b/arch/arm64/boot/dts/freescale/imx8mm.dtsi
-> > index b11fc5e..3a62407 100644
-> > --- a/arch/arm64/boot/dts/freescale/imx8mm.dtsi
-> > +++ b/arch/arm64/boot/dts/freescale/imx8mm.dtsi
-> > @@ -136,6 +136,7 @@
-> >   			opp-microvolt = <1000000>;
-> >   			opp-supported-hw = <0x8>, <0x3>;
-> >   			clock-latency-ns = <150000>;
-> > +			opp-suspend;
-> >   		};
-> >   	};
+On 02/07/2019 18:47, Olivier Moysan wrote:
+> Add devm_clk_get call to retrieve reference to master clock.
 > 
-> What if the highest OPP is unavailable due to speed grading? Ideally we
-> should find a way to suspend at the highest *supported* OPP.
+> Fixes: ff5781634c41 ("drm/bridge: sii902x: Implement HDMI audio support")
 > 
-> Maybe the opp-suspend marking could be assigned from imx-cpufreq-dt
-> driver code?
+> Signed-off-by: Olivier Moysan <olivier.moysan@st.com>
 
-Yes, this is also my concern, the current OPP driver does NOT handle it well, and
-I was thinking to assigne it from imx-cpufreq-dt driver, 1 option is to runtime add
-"suspend-opp" property into DT OPP node after parsing the speed grading fuse and
-OPP table, but I do NOT like that very much, as we need to manually create a property,
-the other option is to change cpu freq policy inside imx-cpufreq-dt driver in suspend/resume
-callback? Which one do you prefer?
+Reviewed-by: Jyri Sarha <jsarha@ti.com>
+
+I wonder how that line was dropped and how the code past my final test.
+Any way, this fix is definitely needed.
 
 Thanks,
-Anson
+Jyri
 
+> ---
+>  drivers/gpu/drm/bridge/sii902x.c | 1 +
+>  1 file changed, 1 insertion(+)
 > 
-> --
-> Regards,
-> Leonard
+> diff --git a/drivers/gpu/drm/bridge/sii902x.c b/drivers/gpu/drm/bridge/sii902x.c
+> index dd7aa466b280..36acc256e67e 100644
+> --- a/drivers/gpu/drm/bridge/sii902x.c
+> +++ b/drivers/gpu/drm/bridge/sii902x.c
+> @@ -750,6 +750,7 @@ static int sii902x_audio_codec_init(struct sii902x *sii902x,
+>  		sii902x->audio.i2s_fifo_sequence[i] |= audio_fifo_id[i] |
+>  			i2s_lane_id[lanes[i]] |	SII902X_TPI_I2S_FIFO_ENABLE;
+>  
+> +	sii902x->audio.mclk = devm_clk_get(dev, "mclk");
+>  	if (IS_ERR(sii902x->audio.mclk)) {
+>  		dev_err(dev, "%s: No clock (audio mclk) found: %ld\n",
+>  			__func__, PTR_ERR(sii902x->audio.mclk));
+> 
+
+
+-- 
+Texas Instruments Finland Oy, Porkkalankatu 22, 00180 Helsinki.
+Y-tunnus/Business ID: 0615521-4. Kotipaikka/Domicile: Helsinki
 
 _______________________________________________
 linux-arm-kernel mailing list
