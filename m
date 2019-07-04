@@ -2,77 +2,90 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E29F55F25C
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  4 Jul 2019 07:44:59 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 867125F27E
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  4 Jul 2019 07:55:50 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=4x2QUQAlhJ0tCG8D6s8wpWEqUBo0iUycG9xKRNQqbA4=; b=t+4HHOx8R5sPyC
-	jD3Rn53CB1c+0zHmZbZM+mruHS0l9c93mRqKRyKLODS0huTC6qUrIQYvURtzxyUi24S4Mc+VsOemg
-	Lt8znlwVhHBZca1iy7aZInydZmLNRZ7G3Wwt7uS1j2/Qf6U5qGojmdQQ1vojCdMYPBOjbauY9B+Hs
-	/j3DMTlOwdv6rx+rR6yzMnWA6zKzGt2P/kx6zO4X9AuMvLe+TyaXD4GwnC7ilcWzIz78LF64tT7nH
-	K08ni5j38p8Azj+wxrph77ecbrz+QoAbz6QKRSB8lzErSVzWOQ/n/LTr8NMi2LLvYecdnz1LuhxiD
-	pGbvHpW3cbvzeF/xMj3g==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=a9W+TXhKqePO0djcZ0Xw5ZccWC9nXnqFeMyTDifhAe0=; b=MKLIkNfCZFSWWllIT2ssJTw/G
+	lUYckbWSBeJYaWAQfgmI89zM1QP9h7TbdOr+G5SHTi6jLe/FcjPOYTwEqmjiB0/jKQSiyyLkdnoy9
+	8lfaaLU/zkpsdxzzw8J4BVvryFKFeNA6a6akRITTZmFQ+A7fzOy/mVv6FlvTxH2ed7IIaH7SdbtV/
+	Xs/c4WcChHR96VyqhM8Q2IGV485gya1aX4QEYnACDxjSXct8BITmldbGEAx6fjQEQUfFRXza0e7ta
+	Iqkg2kXIb7y6MCpP+XNDAJaa7jQdO6Ga3mi4WkkMrJWr56vxc+JGUtf28ICCm3nds1Aa+qdVNOQQ0
+	iV+NRo5Xw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hiuYC-0005iA-HF; Thu, 04 Jul 2019 05:44:56 +0000
-Received: from fllv0016.ext.ti.com ([198.47.19.142])
+	id 1hiuif-0001py-VX; Thu, 04 Jul 2019 05:55:46 +0000
+Received: from mail-pf1-x441.google.com ([2607:f8b0:4864:20::441])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hiuXy-0005h4-UJ
- for linux-arm-kernel@lists.infradead.org; Thu, 04 Jul 2019 05:44:44 +0000
-Received: from lelv0265.itg.ti.com ([10.180.67.224])
- by fllv0016.ext.ti.com (8.15.2/8.15.2) with ESMTP id x645ibfs072388;
- Thu, 4 Jul 2019 00:44:37 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1562219077;
- bh=EVhEn5SNjk6DFUpfMbARfkLAt+eli2X/lQdLrgCRKT8=;
- h=Subject:To:CC:References:From:Date:In-Reply-To;
- b=lW5JI5VwE8TQPvMUiSX79gKRrh+I5ejJaR2lXq7YtuHbcZDbxzY67n6MsXJbyhxVP
- TyRYBrffij1F2S9lf3rEUxbd5Svd/Q/Y8l7r+Z281QzwFq/MBcm04hWPzkjsWz8MZY
- dkNp5sbnbq5eguSxKeE/s6qrq5YF/tXOZgq2i6IQ=
-Received: from DFLE100.ent.ti.com (dfle100.ent.ti.com [10.64.6.21])
- by lelv0265.itg.ti.com (8.15.2/8.15.2) with ESMTPS id x645ibut124203
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Thu, 4 Jul 2019 00:44:37 -0500
-Received: from DFLE115.ent.ti.com (10.64.6.36) by DFLE100.ent.ti.com
- (10.64.6.21) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5; Thu, 4 Jul
- 2019 00:44:37 -0500
-Received: from fllv0039.itg.ti.com (10.64.41.19) by DFLE115.ent.ti.com
- (10.64.6.36) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5 via
- Frontend Transport; Thu, 4 Jul 2019 00:44:37 -0500
-Received: from [172.24.190.172] (ileax41-snat.itg.ti.com [10.172.224.153])
- by fllv0039.itg.ti.com (8.15.2/8.15.2) with ESMTP id x645iYR5082836;
- Thu, 4 Jul 2019 00:44:35 -0500
-Subject: Re: [GIT PULL] DaVinci fixes for v5.2
-To: Olof Johansson <olof@lixom.net>
-References: <3c31314e-1ac1-324d-5dfa-80b0c5074919@ti.com>
- <CAOesGMgh_6Ymxpsm3xG27+jgdSZLkL7PB7r38xh60sV6NiDs2Q@mail.gmail.com>
-From: Sekhar Nori <nsekhar@ti.com>
-Message-ID: <cdf15991-8d44-6563-873b-1b85a9f4dcaf@ti.com>
-Date: Thu, 4 Jul 2019 11:14:34 +0530
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ id 1hiuiT-0001p0-82
+ for linux-arm-kernel@lists.infradead.org; Thu, 04 Jul 2019 05:55:34 +0000
+Received: by mail-pf1-x441.google.com with SMTP id x15so2418547pfq.0
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 03 Jul 2019 22:55:31 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=subject:to:cc:references:from:organization:message-id:date
+ :user-agent:mime-version:in-reply-to:content-transfer-encoding;
+ bh=BX5JDaciana7ktLIahHDZ8Rm/ZU0HX0KyhCu3VI68A8=;
+ b=ES/LWPfND6i8EUl8ALV5oWggRPVLI7ruCB9fs/GvPzxHMIPoN81XcE8xKezsMra/y6
+ dSwtmhsVOcDEDLA3+63LTMxSlFWvNLIzPEdZZiYtQ3E0aqVn5T5Alw1PRyomomnXkJD6
+ 8TSPx95eZ4q2HFnM+Y18aqUHNumIeDhdJuw7YW81gRweXQIH3ei5iN4365L5rHuTezoO
+ mbv+3O9cU982/pSlPyZrIJGuMZwxmgH2I//jRmEenMlfFtkEaW8stYKYUR7edjVF4Wln
+ rsVaLY8yfmeSuPwncUDuN/KSvjXMeRrokfWjIUtYnBY04EyiTl/bZoKHY9T/rp7ef961
+ F3RQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:subject:to:cc:references:from:organization
+ :message-id:date:user-agent:mime-version:in-reply-to
+ :content-transfer-encoding;
+ bh=BX5JDaciana7ktLIahHDZ8Rm/ZU0HX0KyhCu3VI68A8=;
+ b=qHB9UFsNTudybpOu0cChSonHsjwcxrO6oVwrc4HNNdclExrJ5Vb904walxf9nmAE9H
+ KxfkWAL+fuLCSDrNG8F71bBPJ7NkrEKmXqdZeqJgf6SmSz9m5tCzS8SRqCHdcabntCSX
+ sfxE8z4taXFkmKNZj7ox/pc0Rxqi0qk1NkNcFS7AixFsQ7ZLByd+irxcvw410rJxz+gM
+ kP6wfVqiyHxpvrwMK9dEVncAfYQ3HgseXPVoKC6pphAugOIkfa7WtLiosKJnK8ilhR4y
+ jDUIii9F3S1QIZl+EqIf1L1td7U+aW3U+xo9NGHtmu1zm4WkCZpv5RgMwHIuYuW6EOdG
+ 6dJw==
+X-Gm-Message-State: APjAAAVDE0urM+z1HfMzJFrxtuXitP/am+Fl4qFCME7Tves+wB2CtcBz
+ 8n/3uD2OiYVWEZem0eqJXXA=
+X-Google-Smtp-Source: APXvYqwDEIQv50OOSV4lqbB7mHxRneKKwMjQFsVni/kO8fTksoN52y09PuYbOrKCqczquTT9hKw8LQ==
+X-Received: by 2002:a63:c508:: with SMTP id f8mr10813454pgd.48.1562219731123; 
+ Wed, 03 Jul 2019 22:55:31 -0700 (PDT)
+Received: from [0.0.0.0] ([80.240.31.150])
+ by smtp.gmail.com with ESMTPSA id j11sm5792476pfa.2.2019.07.03.22.55.20
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Wed, 03 Jul 2019 22:55:30 -0700 (PDT)
+Subject: Re: [PATCH RFC 0/3] Support CPU hotplug for ARM64
+To: Xiongfeng Wang <wangxiongfeng2@huawei.com>, rjw@rjwysocki.net,
+ catalin.marinas@arm.com, james.morse@arm.com
+References: <1561720392-45907-1-git-send-email-wangxiongfeng2@huawei.com>
+ <2b22cf4d-9646-9f20-41ae-cceb83d9791b@gmail.com>
+ <135ee490-a5a6-46c9-208e-81849b20d6b6@huawei.com>
+From: Jia He <hejianet@gmail.com>
+Organization: ARM
+Message-ID: <adfea83d-fb86-f388-3409-eea9564b938a@gmail.com>
+Date: Thu, 4 Jul 2019 13:55:16 +0800
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:60.0) Gecko/20100101
  Thunderbird/60.7.2
 MIME-Version: 1.0
-In-Reply-To: <CAOesGMgh_6Ymxpsm3xG27+jgdSZLkL7PB7r38xh60sV6NiDs2Q@mail.gmail.com>
-Content-Language: en-US
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
+In-Reply-To: <135ee490-a5a6-46c9-208e-81849b20d6b6@huawei.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190703_224443_067017_FE4DAC61 
-X-CRM114-Status: GOOD (  10.44  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20190703_225533_367363_DD5BD20F 
+X-CRM114-Status: GOOD (  10.92  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.19.142 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:441 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (hejianet[at]gmail.com)
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -80,7 +93,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.0 T_PDS_NO_HELO_DNS      High profile HELO but no A record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -92,34 +105,25 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Bartosz Golaszewski <bgolaszewski@baylibre.com>,
- ARM-SoC Maintainers <arm@kernel.org>,
- Linux ARM Kernel List <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: xiexiuqi@huawei.com, jonathan.cameron@huawei.com, john.garry@huawei.com,
+ linux-kernel@vger.kernel.org, linux-acpi@vger.kernel.org,
+ huawei.libin@huawei.com, guohanjun@huawei.com,
+ linux-arm-kernel@lists.infradead.org
+Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="utf-8"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Olof,
-
-On 03/07/19 3:44 AM, Olof Johansson wrote:
-> On Tue, Jul 2, 2019 at 8:27 AM Sekhar Nori <nsekhar@ti.com> wrote:
->>
->> The following changes since commit 6fbc7275c7a9ba97877050335f290341a1fd8dbf:
->>
->>   Linux 5.2-rc7 (2019-06-30 11:25:36 +0800)
-> 
-> It would have been nice to base it on an older -rc, generally go as
-> old as possible. :)
-
-Okay, I was trying to get some fixes I had sent earlier into an -rc
-baseline. Looking back, looks like I could have used -rc6 as well. Will
-do for next time.
-
-Thanks,
-Sekhar
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+SGkgWGlvbmdmZW5nCgpPbiAyMDE5LzcvNCAxMToyNiwgWGlvbmdmZW5nIFdhbmcgd3JvdGU6Cj4g
+SGkgSnVzdGluLAo+Cj4gT24gMjAxOS83LzQgMTE6MDAsIEppYSBIZSB3cm90ZToKPj4gSGkgWGlv
+bmdmZW5nCj4+Cj4+IEl0IGlzIGEgbGl0dGxlIGJpdCBhd2tmdWwgdGhhdCBJIGFtIGFsc2/CoCBp
+bnZlc3RpZ2F0aW5nIGFjcGkgYmFzZWQgY3B1IGhvdHBsdWcgaXNzdWUgc2lsaW1hciB3aXRoCj4+
+Cj4+IHlvdXIgaWRlYS4gTXkgcXVlc3Rpb24gaXMgeW91ciBwdXJwb3NlIHRvIGltcGxlbWVudCB0
+aGUgdmNwdSBob3RwbHVnIGluIGFybTY0IHFlbXU/Cj4gWWVzLCBteSBwdXJwb3NlIGlzIHRvIGlt
+cGxlbWVudCB0aGUgdmNwdSBob3RwbHVnIGluIGFybTY0IHFlbXUuIFNvIHRoYXQgSSBjYW4gYWRk
+IG9yIHJlbW92ZSB2Y3B1Cj4gd2l0aG91dCBzaHV0dGluZyBkb3duIHRoZSBHdWVzdCBPUy4KClRo
+YW5rcyBmb3IgdGhlIGluZm9yLCBJIGd1ZXNzIHlvdSB1c2VkIEdFRCBkZXZpY2UgaW4gcWVtdSA7
+LSk/CgotLS0KQ2hlZXJzLApKdXN0aW4gKEppYSBIZSkKCgpfX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdAps
+aW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVh
+ZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
