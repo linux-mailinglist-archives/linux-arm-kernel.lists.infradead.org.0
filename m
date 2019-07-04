@@ -2,41 +2,41 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 126EF5F6B2
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  4 Jul 2019 12:37:27 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 72D865F6B6
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  4 Jul 2019 12:37:45 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Mime-Version:Date:To:From:Subject:
 	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=FwJ45fthAdDZsDsC/asBBcjxxGB6WashXpig3V7chts=; b=oTuxV6SRLaEM+b
-	eEPwKRtZdcZrpndsH6ywvDNaYNS3KyILEJRhXd2UeS5AGcpM4du1tSWPqiJWFqPD1dq3/V+y5/GTr
-	5tZ12PyWQlK+bxfPvwzTpv9auZ43frjOONUfLzShUX2w+TuuAt4l0wuQ/hlM4yoXZ8KKDQMBIgihe
-	lfD7heorlFXzZpUYCxFxBOtDi1xDKAkFILFcVLAzKQbFy/FlbcU5T8Q8HYV6YCRmL2DdhnXz0vnae
-	M9ZPv0bFhHDO2RXiTUc2ydrmQQPjSGYSMhIL4OFQAZbMWjqilBE9asWRI1OyMCrodEKrDeLJHKJNc
-	mICBy0EGXSg0q+xgpTTg==;
+	List-Owner; bh=u2/6/aUJrCgzl+GVSsEv/4lKaOOvZEHKKErRcwgP7Lk=; b=ldYvxfG3Ro1hKd
+	Ccn2qgxvppqEMH0w5bFQ5NCZeGBpbNnk1j+KwUAbCtebD9MBSniFmUQ9ZJyfKe3vbNUhEr/wW8D5Y
+	gIazUD7bHMzf//+StYpRBzB0cF1nSjcmcpfF9rWzH11lUu2oorQqLic1v3RyaYikJEOExIot3QeCd
+	BHqiTsHV7E88pWISUMcqjMZkFYCX6htQaM7lePtxb73BipN/suES96yMzN99lusXkg8JxIPQb+0zO
+	9cj2616FaeQt+xBoCM50kM0V4keRaq6A5uf0MT8GIpj70R3/cLvU4RSOdhF51Mc2Y2T9iZOPkrpAC
+	IodRch/FNbwtqe4KtyLg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hiz7B-00082O-LE; Thu, 04 Jul 2019 10:37:21 +0000
+	id 1hiz7X-0008H3-MO; Thu, 04 Jul 2019 10:37:43 +0000
 Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hiz6y-00081G-UP
- for linux-arm-kernel@lists.infradead.org; Thu, 04 Jul 2019 10:37:10 +0000
+ id 1hiz74-00084P-4Q
+ for linux-arm-kernel@lists.infradead.org; Thu, 04 Jul 2019 10:37:15 +0000
 Received: from lupine.hi.pengutronix.de
  ([2001:67c:670:100:3ad5:47ff:feaf:1a17] helo=lupine)
  by metis.ext.pengutronix.de with esmtps
  (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
  (envelope-from <p.zabel@pengutronix.de>)
- id 1hiz6x-0008Me-7G; Thu, 04 Jul 2019 12:37:07 +0200
+ id 1hiz72-0008OL-Qv; Thu, 04 Jul 2019 12:37:12 +0200
 Received: from pza by lupine with local (Exim 4.89)
  (envelope-from <p.zabel@pengutronix.de>)
- id 1hiz6w-0000uQ-Tg; Thu, 04 Jul 2019 12:37:06 +0200
-Message-ID: <1562236626.6641.13.camel@pengutronix.de>
-Subject: Reset controller fix for v5.2
+ id 1hiz72-0000uc-J5; Thu, 04 Jul 2019 12:37:12 +0200
+Message-ID: <1562236632.6641.14.camel@pengutronix.de>
+Subject: Reset controller changes for v5.3
 From: Philipp Zabel <p.zabel@pengutronix.de>
 To: arm@kernel.org
-Date: Thu, 04 Jul 2019 12:37:06 +0200
+Date: Thu, 04 Jul 2019 12:37:12 +0200
 X-Mailer: Evolution 3.22.6-1+deb9u2 
 Mime-Version: 1.0
 X-SA-Exim-Connect-IP: 2001:67c:670:100:3ad5:47ff:feaf:1a17
@@ -45,9 +45,8 @@ X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
  SAEximRunCond expanded to false
 X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190704_033708_982454_4026CB02 
-X-CRM114-Status: UNSURE (   7.75  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190704_033714_198854_79AF1466 
+X-CRM114-Status: GOOD (  10.98  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -80,25 +79,35 @@ The following changes since commit a188339ca5a396acc588e5851ed7e19f66b0ebd9:
 
 are available in the Git repository at:
 
-  git://git.pengutronix.de/git/pza/linux.git tags/reset-fixes-for-v5.2
+  git://git.pengutronix.de/git/pza/linux.git tags/reset-for-v5.3
 
-for you to fetch changes up to a71dcd3757e29cc8b43383ff18595d707cf08345:
+for you to fetch changes up to b108ad53bb65c19ae8e2d9c7fc0d052b3d9c153b:
 
-  reset: remove redundant null check on pointer dev (2019-07-04 12:10:55 +0200)
-
-----------------------------------------------------------------
-Reset controller fix for v5.2
-
-This tag removes a redundant device pointer NULL check from
-__reset_control_get_from_lookup to fix a static code checker
-warning.
+  dt-bindings: reset: imx7: Fix the spelling of 'indices' (2019-07-01 17:08:13 +0200)
 
 ----------------------------------------------------------------
-Colin Ian King (1):
-      reset: remove redundant null check on pointer dev
+Reset controller changes for v5.3
 
- drivers/reset/core.c | 3 ---
- 1 file changed, 3 deletions(-)
+This tag adds support for the Bitmain BM1880 reset controller to the
+reset-simple driver and fixes a spelling mistake in the i.MX7 reset
+controller binding document.
+
+----------------------------------------------------------------
+Fabio Estevam (1):
+      dt-bindings: reset: imx7: Fix the spelling of 'indices'
+
+Manivannan Sadhasivam (2):
+      dt-bindings: reset: Add devicetree binding for BM1880 reset controller
+      reset: Add reset controller support for BM1880 SoC
+
+ .../bindings/reset/bitmain,bm1880-reset.txt        | 18 ++++++++
+ .../devicetree/bindings/reset/fsl,imx7-src.txt     |  2 +-
+ drivers/reset/Kconfig                              |  3 +-
+ drivers/reset/reset-simple.c                       |  2 +
+ include/dt-bindings/reset/bitmain,bm1880-reset.h   | 51 ++++++++++++++++++++++
+ 5 files changed, 74 insertions(+), 2 deletions(-)
+ create mode 100644 Documentation/devicetree/bindings/reset/bitmain,bm1880-reset.txt
+ create mode 100644 include/dt-bindings/reset/bitmain,bm1880-reset.h
 
 _______________________________________________
 linux-arm-kernel mailing list
