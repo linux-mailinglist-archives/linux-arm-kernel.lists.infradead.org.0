@@ -2,49 +2,48 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AA9825F9DE
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  4 Jul 2019 16:15:44 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9BF315F9DF
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  4 Jul 2019 16:16:17 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=sjq4Mb8iQpU+K5Vu8J0UfxKnRIgJqIEYzKQ84XJXj5M=; b=Iizf9NBsE2Vna4
-	0OlOJXXwC0Op/uDhdn3kBAUbcr/Lp8kpe+jm2tAnm4J/fRE1iRfpBGl11nk9dt3Dbgb2n9tSDQ8eo
-	SNexSG2ryIJoEQeRW/H+2ywz3J4gibsMFEum6VGGpje0/Ugathe8IYw6FqVlXYowx4nvn7o0d8NJ4
-	O+ZwLtFV7Ria07dgLCq+sjP2Xy7UyisvxADKXZrQ9Eke1bipd2fMOjhmrkgqYp3Jk6OBEIyEfUBvH
-	RPWmAze3Xcr92YKNQrZGZPaFaZ48+nNdY8+kcrsXgAeV3BsMvaVIzEllTFyMuQc1wRBQnVmENW5I7
-	sMOTGdg8b7rd/X09vNfQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=EdtJLyH1KF42r7jk2kyNbFWE3jDSga9avjJtA9TqGTk=; b=EhbBOEwbOpetTz
+	04kvDwImh9dOIpzxi3e7xQSKD2So3BvZCpbaOI29V0BnrKAEhgidPVUgt6BXw7bX4RZJwb/LuXR9z
+	DYRCqb5iAnkRfbKN/2dQKKaVerDFZdEEL8J6KW46K77rwqi4C7tKcX95uhu/sNSrYJv9pT9gnglfN
+	Q92Gmsq/32quGj693RUwRXKR/da/vqs4vv+FUW0xXpgyH1vtGtKKcvzek60HVN/Rs9/ukZW2DMTbD
+	7a4k3OSofvDFj6MpF032cS4ciG7JblpZNcTqBxr1vr0044ycbO/LRrS8h1wNoO23D7MiVyTl5gj09
+	usVltf5Ks08TLwsq0NcQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hj2WU-0001Vf-8h; Thu, 04 Jul 2019 14:15:42 +0000
+	id 1hj2X1-0001kc-NA; Thu, 04 Jul 2019 14:16:15 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hj2WJ-0001Ux-94
- for linux-arm-kernel@lists.infradead.org; Thu, 04 Jul 2019 14:15:33 +0000
+ id 1hj2Wp-0001kH-SL
+ for linux-arm-kernel@lists.infradead.org; Thu, 04 Jul 2019 14:16:05 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 17BCD28;
- Thu,  4 Jul 2019 07:15:30 -0700 (PDT)
-Received: from [10.1.197.45] (e112298-lin.cambridge.arm.com [10.1.197.45])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id CF9BB3F738;
- Thu,  4 Jul 2019 07:15:28 -0700 (PDT)
-Subject: Re: [PATCH v4.4 10/45] mm/kasan: add API to check memory regions
-To: Viresh Kumar <viresh.kumar@linaro.org>,
- linux-arm-kernel@lists.infradead.org
-References: <cover.1560480942.git.viresh.kumar@linaro.org>
- <0cedfc51f5941ab2c2e9a09149d34c7451efda56.1560480942.git.viresh.kumar@linaro.org>
-From: Julien Thierry <julien.thierry@arm.com>
-Message-ID: <9c5374d4-1775-572d-ba79-b161a82190c6@arm.com>
-Date: Thu, 4 Jul 2019 15:15:27 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.6.1
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 2413728;
+ Thu,  4 Jul 2019 07:16:03 -0700 (PDT)
+Received: from arrakis.emea.arm.com (arrakis.cambridge.arm.com [10.1.196.78])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
+ DEC253F738; Thu,  4 Jul 2019 07:16:01 -0700 (PDT)
+Date: Thu, 4 Jul 2019 15:15:59 +0100
+From: Catalin Marinas <catalin.marinas@arm.com>
+To: Dave Martin <Dave.Martin@arm.com>
+Subject: Re: [RFC PATCH v2 7/8] arm64/sve: Don't disable SVE on syscalls return
+Message-ID: <20190704141559.GA51773@arrakis.emea.arm.com>
+References: <20190613161656.20765-1-julien.grall@arm.com>
+ <20190613161656.20765-8-julien.grall@arm.com>
+ <20190621153316.GC2790@e103592.cambridge.arm.com>
 MIME-Version: 1.0
-In-Reply-To: <0cedfc51f5941ab2c2e9a09149d34c7451efda56.1560480942.git.viresh.kumar@linaro.org>
-Content-Language: en-US
+Content-Disposition: inline
+In-Reply-To: <20190621153316.GC2790@e103592.cambridge.arm.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190704_071531_412789_3D593605 
-X-CRM114-Status: GOOD (  20.36  )
+X-CRM114-CacheID: sfid-20190704_071603_959222_0E48BC46 
+X-CRM114-Status: GOOD (  18.04  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -63,123 +62,56 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Marc Zyngier <marc.zyngier@arm.com>,
- Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will.deacon@arm.com>,
- stable@vger.kernel.org, mark.brown@arm.com,
- Russell King <rmk+kernel@arm.linux.org.uk>
+Cc: Anton.Kirilov@arm.com, will.deacon@arm.com, oleg@redhat.com,
+ zhang.lei@jp.fujitsu.com, Julien Grall <julien.grall@arm.com>,
+ alex.bennee@linaro.org, linux-arm-kernel@lists.infradead.org,
+ Daniel.Kiss@arm.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Viresh,
-
-On 14/06/2019 04:07, Viresh Kumar wrote:
-> From: Andrey Ryabinin <aryabinin@virtuozzo.com>
+On Fri, Jun 21, 2019 at 04:33:16PM +0100, Dave P Martin wrote:
+> On Thu, Jun 13, 2019 at 05:16:55PM +0100, Julien Grall wrote:
+> > Per the syscalls ABI, SVE registers will be unknown after a syscalls. In
 > 
-> commit 64f8ebaf115bcddc4aaa902f981c57ba6506bc42 upstream.
+> This patch is quite hard to understand, though this is more down to the
+> code being modified than the patch itself.  So, I may ask some stupid
+> questions...
 > 
-> Memory access coded in an assembly won't be seen by KASAN as a compiler
-> can instrument only C code.  Add kasan_check_[read,write]() API which is
-> going to be used to check a certain memory range.
-> 
-> Link: http://lkml.kernel.org/r/1462538722-1574-3-git-send-email-aryabinin@virtuozzo.com
-> Signed-off-by: Andrey Ryabinin <aryabinin@virtuozzo.com>
-> Acked-by: Alexander Potapenko <glider@google.com>
-> Cc: Dmitry Vyukov <dvyukov@google.com>
-> Cc: Ingo Molnar <mingo@elte.hu>
-> Cc: "H. Peter Anvin" <hpa@zytor.com>
-> Cc: Thomas Gleixner <tglx@linutronix.de>
-> Signed-off-by: Andrew Morton <akpm@linux-foundation.org>
-> Signed-off-by: Linus Torvalds <torvalds@linux-foundation.org>
-> [ v4.4: Fixed MAINTAINERS conflict and added whole kasan entry ]
-> Signed-off-by: Viresh Kumar <viresh.kumar@linaro.org>
-> ---
->  MAINTAINERS                  | 14 ++++++++++++++
->  include/linux/kasan-checks.h | 12 ++++++++++++
->  mm/kasan/kasan.c             | 12 ++++++++++++
->  3 files changed, 38 insertions(+)
->  create mode 100644 include/linux/kasan-checks.h
-> 
-> diff --git a/MAINTAINERS b/MAINTAINERS
-> index f4d4a5544dc1..2a8826732967 100644
-> --- a/MAINTAINERS
-> +++ b/MAINTAINERS
-> @@ -5982,6 +5982,20 @@ S:	Maintained
->  F:	Documentation/hwmon/k8temp
->  F:	drivers/hwmon/k8temp.c
->  
-> +KASAN
-> +M:	Andrey Ryabinin <aryabinin@virtuozzo.com>
-> +R:	Alexander Potapenko <glider@google.com>
-> +R:	Dmitry Vyukov <dvyukov@google.com>
-> +L:	kasan-dev@googlegroups.com
-> +S:	Maintained
-> +F:	arch/*/include/asm/kasan.h
-> +F:	arch/*/mm/kasan_init*
-> +F:	Documentation/kasan.txt
-> +F:	include/linux/kasan*.h
-> +F:	lib/test_kasan.c
-> +F:	mm/kasan/
-> +F:	scripts/Makefile.kasan
-> +
->  KCONFIG
->  M:	"Yann E. MORIN" <yann.morin.1998@free.fr>
->  L:	linux-kbuild@vger.kernel.org
-> diff --git a/include/linux/kasan-checks.h b/include/linux/kasan-checks.h
-> new file mode 100644
-> index 000000000000..b7f8aced7870
-> --- /dev/null
-> +++ b/include/linux/kasan-checks.h
-> @@ -0,0 +1,12 @@
-> +#ifndef _LINUX_KASAN_CHECKS_H
-> +#define _LINUX_KASAN_CHECKS_H
-> +
-> +#ifdef CONFIG_KASAN
-> +void kasan_check_read(const void *p, unsigned int size);
-> +void kasan_check_write(const void *p, unsigned int size);
-> +#else
-> +static inline void kasan_check_read(const void *p, unsigned int size) { }
-> +static inline void kasan_check_write(const void *p, unsigned int size) { }
-> +#endif
-> +
-> +#endif
-> diff --git a/mm/kasan/kasan.c b/mm/kasan/kasan.c
-> index b7397b459960..3ad31df33e76 100644
-> --- a/mm/kasan/kasan.c
-> +++ b/mm/kasan/kasan.c
-> @@ -274,6 +274,18 @@ static __always_inline void check_memory_region(unsigned long addr,
->  void __asan_loadN(unsigned long addr, size_t size);
->  void __asan_storeN(unsigned long addr, size_t size);
->  
-> +void kasan_check_read(const void *p, unsigned int size)
-> +{
-> +	check_memory_region((unsigned long)p, size, false, _RET_IP_);
+> In particular, we now have up to 8 task states (all the combinations of
+> TIF_FOREIGN_FPSTATE, TIF_SVE and TIF_SVE_NEEDS_FLUSH).  Sketching out
+> the state machine and highlighting any states that we consider invalid
+> may be a useful exercise, but I've not attempted that yes.
 
-I know you have updated the code since then but the issue seems to be
-also present on your updated branch.
+We definitely need a state machine sketched out (and a formal model as I
+can't really get all of it in my head at once). I don't fully understand
+the need for a new TIF_SVE_NEEDS_FLUSH. Maybe it becomes obvious if we
+had a state machine description.
 
-This patch breaks the build when enabling CONFIG_KASAN because in 4.4
-check_memory_region() only takes 3 arguments.
+So, we currently have (IIUC):
 
-> +}
-> +EXPORT_SYMBOL(kasan_check_read);
-> +
-> +void kasan_check_write(const void *p, unsigned int size)
-> +{
-> +	check_memory_region((unsigned long)p, size, true, _RET_IP_);
-> +}
-> +EXPORT_SYMBOL(kasan_check_write);
-> +
->  #undef memset
->  void *memset(void *addr, int c, size_t len)
->  {
-> 
+TIF_SVE - tells us whether the user space can access SVE registers
+without a fault (doesn't CPACR_EL1 tell us this already on kernel entry?
+I guess we'd need to store it in a TIF flag anyway for switch_to). The
+implications of TIF_SVE on kernel entry is that the SVE state could have
+been touched by the user. If entering via syscall, we discard this state
+in sve_user_discard().
 
-Cheers,
+TIF_FOREIGN_FPSTATE - tells us whether the hardware state is out of sync
+with the current thread.
+
+For flushing the SVE state on return from syscall, can we not handle
+this entirely in el0_svc_handler while enabling the SVE access at the
+same time to avoid a subsequent trap? We need to know whether the SVE
+state is valid when we do the context switching but we have TIF_SVE for
+this, cleared on syscall entry but can be set again on return from
+syscall if we enable access in CPACR_EL1 (sve_user_enable()).
+
+It probably needs some more thinking on signal handling.
 
 -- 
-Julien Thierry
+Catalin
 
 _______________________________________________
 linux-arm-kernel mailing list
