@@ -2,115 +2,72 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 06AA16083C
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  5 Jul 2019 16:46:58 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3AF1C60983
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  5 Jul 2019 17:44:11 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
-	References:Message-ID:Date:Subject:To:From:Reply-To:Cc:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3R/oGS9Sd1eHocuLP08TUP9pxyDH70AUqXjr6wkACfI=; b=ohnx5Y1xxbcWCS
-	KIdzC47bCHaNwIvch78kqVP4VUNhcKUmh8BlcNy7HSVAX+vUXgGM9s0U0uaRJam0czBvlfBrF06yu
-	e4h1YkHBSCtHSc8F/Spp+FY13uuk5AQJz0yjgnUKccIfay/fh8aQtGLAUUfQaRnnJA28AZ08NnHkr
-	iSblvvbIf4HnybqCTtQHDQefa0yiqB3JH8DRClfSdGT0JIfxzaPyruipoIDBRGzow1hJTwiONg9dE
-	1kxLPRUrl0CSKsKz4WoRGlXgrw7OxlHVBt4ZTu+aF3N5QHFazSHUoQv8kqhYfjaqbAKf39nceN2bd
-	s+OBqABNCXIy/pEg6+cQ==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Message-ID:
+	Subject:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
+	List-Owner; bh=Px/j40XUo70KD1qiS0PE9lRYpJhfBrjAy233EaV15dg=; b=lsQT+zO41DnadD
+	v6K+xeMv4+Flf8xP/GggT+XgjphIfZSYOdxUP/9mEJzeaHlIx23gNQ1m5jBbl0dIrViqmlg9a+eTv
+	s5x8zKwSS2L62QDq5rm7xjTgTWkDUvR8JHi9akWmA2GxjvtiPnCC5s9WmMAx+hCkHtGP1i2zFnaHh
+	Fi9UPUfQbT2l260sqiT5NfTzopV4C3QPBBctjIUXN8TLZU16IqLMmyuIL0NM3aZbHQee1u/a6gAmc
+	pKgg3MxCdWj9fnC9fbbLwDBsksIScICZcfHmvsePGjLFIgqzSokBzZQ6ud/B0itXcrySxwCBA89us
+	V6PsEyudyhI6EXqnNqTA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hjPUF-00023n-RW; Fri, 05 Jul 2019 14:46:55 +0000
+	id 1hjQNd-0005ZZ-Qw; Fri, 05 Jul 2019 15:44:09 +0000
 Received: from merlin.infradead.org ([2001:8b0:10b:1231::1])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hjPRc-0006DO-WC
- for linux-arm-kernel@bombadil.infradead.org; Fri, 05 Jul 2019 14:44:13 +0000
+ id 1hjQN4-0005BS-6r
+ for linux-arm-kernel@bombadil.infradead.org; Fri, 05 Jul 2019 15:43:34 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=infradead.org; s=merlin.20170209; h=MIME-Version:Content-Transfer-Encoding:
- Content-ID:Content-Type:In-Reply-To:References:Message-ID:Date:Subject:To:
- From:Sender:Reply-To:Cc:Content-Description:Resent-Date:Resent-From:
- Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:
+ d=infradead.org; s=merlin.20170209; h=In-Reply-To:Content-Type:MIME-Version:
+ Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:Content-Transfer-Encoding:
+ Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+ Resent-To:Resent-Cc:Resent-Message-ID:References:List-Id:List-Help:
  List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=qh28dI5DvFVPJdueAPSh1Hk6ECUAJ6MLaEbc5I2IPDs=; b=o1rX6DgZQchdkOUPHVapv4TIli
- v2cEDc1Eo5OrdsjUtJVaecL5Vz8ih2NlEVrX54MtSti8mpWD51wELPwmEBXN8d/Vry6LjvZ5RsfjR
- /yCPbRZuVPjWlDkFFYSJ5QqRlLHhYOQLAKGqAm8nRkq7Ea19gQXx9aEUEF4vzuwRVgf2DTrHhFX7h
- Ra6ZyGhGAP94b5nbbZANrUNsAlUDA4DO6bJjGYN+cGM4raxnwMWehJDTYT7x5Zym9tTta7gBfa3gO
- tsTKlItMbUKkexTIDg0jUk1eKmemllsJnRBBE+c60jKIuAt6BFOUtvKGD8RmVcYtU6MmcC2adlGu7
- xWk8gqZQ==;
-Received: from mx07-00178001.pphosted.com ([62.209.51.94])
+ bh=YbnmQrRaRRYrhxs7kdeDWzo/0iNG1JldZLQum4NDd4E=; b=eGB3LBfIfS0iQm7VIYCNLHREEp
+ oQRZeotpMqmtxN8tJqTZ/QHg45BYmrTteBcXgZLKL0z6mm86rU5FwYtmyeMVa3yEPqAt0nZ0/AKHT
+ R6e9l77TpSdm3fDXbHJAbIpmGeEvX5Vm8F+6lAyfkh/SwQvE8YXR0j93akxGDeeZxh3HiSAb3E7oX
+ gzIjUKOARw05KvUlmQgz1N+r3qC6Bbc8e9cKPuY1M7o+zPJxHoGbb+Kp7kyN2ZhLyKREZZObum5mV
+ ojfN2AlaPgcjAbVSsVitsnVTHsASfnjIz9chahCjDvljiC6HuZ7ecf0QL6H1vopvS96s7lc7I69a9
+ vYo4iqtg==;
+Received: from mail.kernel.org ([198.145.29.99])
  by merlin.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hjNXf-0001xb-LN
- for linux-arm-kernel@lists.infradead.org; Fri, 05 Jul 2019 12:42:21 +0000
-Received: from pps.filterd (m0046668.ppops.net [127.0.0.1])
- by mx07-00178001.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id
- x65CbDxP001281; Fri, 5 Jul 2019 14:41:05 +0200
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
- h=from : to : subject :
- date : message-id : references : in-reply-to : content-type : content-id :
- content-transfer-encoding : mime-version; s=STMicroelectronics;
- bh=qh28dI5DvFVPJdueAPSh1Hk6ECUAJ6MLaEbc5I2IPDs=;
- b=WcHpYZjYL64+yCVvOf1KAWbOCHMXUugif32Iyp6Dx0GO5T1alRnS5102dKuCLa/vY/Jh
- 4RtA46QSdUmF/7miKyJ6CZ3zS4d/0yxAh9bjUblx02BIlT02CJ5lt6uOoXrcQhQBUYoM
- u/yKBA9ZzVk3JTl74xYHJdt3omDCYcdgth0PR4OhZ4AUtyPnvPEQ4F4OW3LB7fz47VWt
- GF6SAF7vPuWYMVIK9K3HTUM76veghmNsD+WqswgJZDnannj90aPPvBr4bSb+SLxOe6/g
- 0bYsT8Fv+gEgQypIcr5PaI0SVufEOw3Ou8CeiltVAMGvlVCMkw5kMFUha6xppJWLW+FT pA== 
-Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx07-00178001.pphosted.com with ESMTP id 2tdwf1jjjq-1
- (version=TLSv1 cipher=ECDHE-RSA-AES256-SHA bits=256 verify=NOT);
- Fri, 05 Jul 2019 14:41:05 +0200
-Received: from zeta.dmz-eu.st.com (zeta.dmz-eu.st.com [164.129.230.9])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id CB5F731;
- Fri,  5 Jul 2019 12:41:03 +0000 (GMT)
-Received: from Webmail-eu.st.com (sfhdag3node1.st.com [10.75.127.7])
- by zeta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 9F3182CC3;
- Fri,  5 Jul 2019 12:41:03 +0000 (GMT)
-Received: from SFHDAG6NODE3.st.com (10.75.127.18) by SFHDAG3NODE1.st.com
- (10.75.127.7) with Microsoft SMTP Server (TLS) id 15.0.1347.2; Fri, 5 Jul
- 2019 14:41:03 +0200
-Received: from SFHDAG6NODE3.st.com ([fe80::d04:5337:ab17:b6f6]) by
- SFHDAG6NODE3.st.com ([fe80::d04:5337:ab17:b6f6%20]) with mapi id
- 15.00.1473.003; Fri, 5 Jul 2019 14:41:03 +0200
-From: Philippe CORNU <philippe.cornu@st.com>
-To: Olivier MOYSAN <olivier.moysan@st.com>, "a.hajda@samsung.com"
- <a.hajda@samsung.com>, "narmstrong@baylibre.com" <narmstrong@baylibre.com>,
- "Laurent.pinchart@ideasonboard.com" <Laurent.pinchart@ideasonboard.com>,
- "jonas@kwiboo.se" <jonas@kwiboo.se>, "jernej.skrabec@siol.net"
- <jernej.skrabec@siol.net>, "airlied@linux.ie" <airlied@linux.ie>,
- "daniel@ffwll.ch" <daniel@ffwll.ch>, "dri-devel@lists.freedesktop.org"
- <dri-devel@lists.freedesktop.org>, "linux-kernel@vger.kernel.org"
- <linux-kernel@vger.kernel.org>,
- Benjamin GAIGNARD <benjamin.gaignard@st.com>,
- Alexandre TORGUE <alexandre.torgue@st.com>,
- "linux-arm-kernel@lists.infradead.org"
- <linux-arm-kernel@lists.infradead.org>,
- "linux-stm32@st-md-mailman.stormreply.com"
- <linux-stm32@st-md-mailman.stormreply.com>, "jsarha@ti.com" <jsarha@ti.com>
-Subject: Re: [PATCH] drm/bridge: sii902x: add audio graph card support
-Thread-Topic: [PATCH] drm/bridge: sii902x: add audio graph card support
-Thread-Index: AQHVMXX5EUvh0puEZ0ygMEtXg5C9Kaa72VsA
-Date: Fri, 5 Jul 2019 12:41:03 +0000
-Message-ID: <7c17b3f2-afee-7548-7620-b67d11d09b24@st.com>
-References: <1562141052-26221-1-git-send-email-olivier.moysan@st.com>
-In-Reply-To: <1562141052-26221-1-git-send-email-olivier.moysan@st.com>
-Accept-Language: fr-FR, en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-user-agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.7.2
-x-ms-exchange-messagesentrepresentingtype: 1
-x-ms-exchange-transport-fromentityheader: Hosted
-x-originating-ip: [10.75.127.45]
-Content-ID: <019DC7758BBDE148B1C01A127A8F5761@st.com>
+ id 1hjNfi-00021q-2p
+ for linux-arm-kernel@lists.infradead.org; Fri, 05 Jul 2019 12:50:39 +0000
+Received: from localhost (unknown [122.167.76.109])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 1C2E62184C;
+ Fri,  5 Jul 2019 12:50:02 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1562331006;
+ bh=SkovIuVVyMzxFaOZoi3i2O3ZZrHSAu1M22ejXxbkKQw=;
+ h=Date:From:To:Cc:Subject:In-Reply-To:From;
+ b=bCrhMQNjtA9DVZoUzobukEaip6FmeXbLASfbZAuxtV8yRQgYaUCv6wTUQMIYNZgGU
+ tfrpEoPDeuagdnvy4wjXW5nsfjkaVrp72kkqyPXvjJjXphh2ei+eBpCPsofGJGhILQ
+ XOdUk4T3JIfbFC4y2LBBSZGE4lVYSsAhDg8Obk5w=
+Date: Fri, 5 Jul 2019 18:16:46 +0530
+From: Vinod Koul <vkoul@kernel.org>
+To: Sven Van Asbroeck <thesven73@gmail.com>
+Subject: Re: [PATCH] dmaengine: imx-sdma: fix use-after-free on probe error
+ path
+Message-ID: <20190705124646.GD2911@vkoul-mobl>
 MIME-Version: 1.0
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:, ,
- definitions=2019-07-05_05:, , signatures=0
+Content-Disposition: inline
+In-Reply-To: <CAGngYiVsUZwCUEsqRk-YtZPGYxsqzHzD7U5GeeHyAa2Yw9Z6WA@mail.gmail.com>
+ <20190624140731.24080-1-TheSven73@gmail.com>
+User-Agent: Mutt/1.11.3 (2019-02-01)
 X-Spam-Note: CRM114 invocation failed
-X-Spam-Score: -0.9 (/)
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on merlin.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [62.209.51.94 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -120,6 +77,10 @@ X-Spam-Report: SpamAssassin version 3.4.2 on merlin.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
+ 0.0 FAKE_REPLY_C           No description available.
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -131,75 +92,82 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
+Cc: Shawn Guo <shawnguo@kernel.org>, Sascha Hauer <s.hauer@pengutronix.de>,
+ linux-kernel@vger.kernel.org, NXP Linux Team <linux-imx@nxp.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>, dmaengine@vger.kernel.org,
+ Dan Williams <dan.j.williams@intel.com>, Robin Gong <yibin.gong@nxp.com>,
+ Fabio Estevam <festevam@gmail.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Olivier,
-and many thanks for your patch.
-Good to have the audio graph card support, looks ok.
-Reviewed-by: Philippe Cornu <philippe.cornu@st.com>
-Philippe :-)
+On 24-06-19, 10:07, Sven Van Asbroeck wrote:
 
-On 7/3/19 10:04 AM, Olivier Moysan wrote:
-> Implement get_dai_id callback of audio HDMI codec
-> to support ASoC audio graph card.
-> HDMI audio output has to be connected to sii902x port 3.
-> get_dai_id callback maps this port to ASoC DAI index 0.
+Quoting orignal patch for better context:
+
+> +	if (pdata) {
+> +		ret = sdma_get_firmware(sdma, pdata->fw_name);
+> +		if (ret)
+> +			dev_warn(&pdev->dev, "failed to get firmware from platform data\n");
+> +	} else {
+> +		/*
+> +		 * Because that device tree does not encode ROM script address,
+> +		 * the RAM script in firmware is mandatory for device tree
+> +		 * probe, otherwise it fails.
+> +		 */
+> +		ret = of_property_read_string(np, "fsl,sdma-ram-script-name",
+> +					      &fw_name);
+> +		if (ret)
+> +			dev_warn(&pdev->dev, "failed to get firmware name\n");
+> +		else {
+> +			ret = sdma_get_firmware(sdma, fw_name);
+> +			if (ret)
+> +				dev_warn(&pdev->dev, "failed to get firmware from device tree\n");
+> +		}
+> +	}
+> +
+
+On 05-07-19, 08:26, Sven Van Asbroeck wrote:
+> Hi Vinod,
 > 
-> Signed-off-by: Olivier Moysan <olivier.moysan@st.com>
-> ---
->   drivers/gpu/drm/bridge/sii902x.c | 23 +++++++++++++++++++++++
->   1 file changed, 23 insertions(+)
+> On Fri, Jul 5, 2019 at 3:32 AM Vinod Koul <vkoul@kernel.org> wrote:
+> >
+> > > +             if (ret)
+> > > +                     dev_warn(&pdev->dev, "failed to get firmware name\n");
+> >
+> > if should have braces!
+> > Applied after fixing braces!
 > 
-> diff --git a/drivers/gpu/drm/bridge/sii902x.c b/drivers/gpu/drm/bridge/sii902x.c
-> index dd7aa466b280..daf9ef3cd817 100644
-> --- a/drivers/gpu/drm/bridge/sii902x.c
-> +++ b/drivers/gpu/drm/bridge/sii902x.c
-> @@ -158,6 +158,8 @@
->   
->   #define SII902X_I2C_BUS_ACQUISITION_TIMEOUT_MS	500
->   
-> +#define SII902X_AUDIO_PORT_INDEX		3
-> +
->   struct sii902x {
->   	struct i2c_client *i2c;
->   	struct regmap *regmap;
-> @@ -690,11 +692,32 @@ static int sii902x_audio_get_eld(struct device *dev, void *data,
->   	return 0;
->   }
->   
-> +static int sii902x_audio_get_dai_id(struct snd_soc_component *component,
-> +				    struct device_node *endpoint)
-> +{
-> +	struct of_endpoint of_ep;
-> +	int ret;
-> +
-> +	ret = of_graph_parse_endpoint(endpoint, &of_ep);
-> +	if (ret < 0)
-> +		return ret;
-> +
-> +	/*
-> +	 * HDMI sound should be located at reg = <3>
-> +	 * Return expected DAI index 0.
-> +	 */
-> +	if (of_ep.port == SII902X_AUDIO_PORT_INDEX)
-> +		return 0;
-> +
-> +	return -EINVAL;
-> +}
-> +
->   static const struct hdmi_codec_ops sii902x_audio_codec_ops = {
->   	.hw_params = sii902x_audio_hw_params,
->   	.audio_shutdown = sii902x_audio_shutdown,
->   	.digital_mute = sii902x_audio_digital_mute,
->   	.get_eld = sii902x_audio_get_eld,
-> +	.get_dai_id = sii902x_audio_get_dai_id,
->   };
->   
->   static int sii902x_audio_codec_init(struct sii902x *sii902x,
+> checkpatch.pl output after adding braces:
 > 
+> WARNING: braces {} are not necessary for single statement blocks
+> #102: FILE: drivers/dma/imx-sdma.c:2165:
+> + if (ret) {
+> + dev_warn(&pdev->dev, "failed to get firmware from device tree\n");
+> + }
+
+there is an else here too!
+
+With the patch the checkpatch warns:
+
+CHECK: braces {} should be used on all arms of this statement
+#201: FILE: drivers/dma/imx-sdma.c:2161:
++		if (ret)
+[...]
++		else {
+[...]
+
+
+Even if the if is a single block and else being multi block, if would
+need matching brances. With the change pushed:
+
+total: 0 errors, 0 warnings, 0 checks, 60 lines checked
+
+
+-- 
+~Vinod
+
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
