@@ -2,83 +2,71 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3113460DD7
-	for <lists+linux-arm-kernel@lfdr.de>; Sat,  6 Jul 2019 00:30:17 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id EAE8560DE4
+	for <lists+linux-arm-kernel@lfdr.de>; Sat,  6 Jul 2019 00:37:15 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=57coO9Mfc5SGh+MMGZSCUt5B4ng53XOgUaNXvAiNyl8=; b=e2ep3paCDVsL6L
-	PcQyi3OfWG+XonD8N0ekf6XUjZJ4AtlsW71aw/wPt8EhDkx77ZPD3r6gOzefel6Q8PTMOQtaoFWdo
-	aW9OyM6ujAFIEyjxEf3RFFH5dHxIaYlZ5So+xjOu8J7uAqmb6EjqhEDL/YYzlYIUIWpaMcnN2oX7Q
-	WOrwhF1acM0/menBPJw6ZPQSxA2JrUL+DrFbAYFfo4lBoQlF+7lxdKLrU65NtTV4tQkTEsuNY6+Mc
-	W3oya+mJgTXVWRv+/YAeyDJpKBCY48+Sg279xq5mGHRytMPBD71zuZvlvi/4G6ipalIDDcIx79RJa
-	+eHdebF47lSBNiSNh1mg==;
+	List-Owner; bh=66MaSxYIEmw8w2weD6sjLYsK0a5ZRednyKWWndvvB6M=; b=nDg2x2T3iNmN9+
+	iiB22IJMFz5R8DBUgmcHvttL7enjRCNTEFrDRiDNrhgSzIs1drwX6kPX5kOYs8UOEz3fB2cgzr/8Q
+	MT0h/6PUvlCYX5dLbv6+cI+uKlTwUbIqECJ5X+88shkCcRHO34Zamil/Ec4p/nKsCk5CBLDTseiDF
+	DAR12w5hvaIjWO5h1D9jdBnlRRtV+HxSpyQCDUgAUXujwHdDHt6YfVbAdRMc+NK4dWq8rkfNjQ+SL
+	nQ+LGGxdOMn1jEfmUMYCLyYRwhlhtd5M9SaF8rNTeq3uLqS9wqSzj1UlYFshr0vvO00kInFa7k3ll
+	4WDP9ISnlLo7txU6ey7A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hjWid-0001WO-Ny; Fri, 05 Jul 2019 22:30:15 +0000
-Received: from mail-io1-xd41.google.com ([2607:f8b0:4864:20::d41])
+	id 1hjWpN-0004bm-89; Fri, 05 Jul 2019 22:37:13 +0000
+Received: from casper.infradead.org ([2001:8b0:10b:1236::1])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hjWiM-0001Vh-Oh
- for linux-arm-kernel@lists.infradead.org; Fri, 05 Jul 2019 22:29:59 +0000
-Received: by mail-io1-xd41.google.com with SMTP id k8so22203273iot.1
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 05 Jul 2019 15:29:58 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=lixom-net.20150623.gappssmtp.com; s=20150623;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=TiHoVMsFcSLIQMr9uOZIpXIgFEvQNZbBssFZ43ZIIe8=;
- b=kEgPCwANMUFzB8Tbmw0ykNs9VmJkGcKJRMnmQpfjnitHffAN6aT8hGO0cfsK5uox5+
- P0rr3Dc8i0HzwW0k8l/P5waoyng9xc6GttS9MlwMqNljBTc+pUEr9k9F16iopjSwPkkp
- JGxvgcJ3Evzu7W928BVVu8+Bvu4rHhjlX3wxvWpm5GlRYby/ni5DX+/B4sIrXwxyQcW3
- UNy/7pEyCeCC466IWnOqIoDp73E85Yy6cvfo1+E46aMGrkb5U9HAub/FQ2mU3IrnoW8f
- BUcOVZDvtwhXrXo+6XjEZ5X0a6ZE782e3NTITo2MZ2jCidpIpR2uXlVuv2ljV2fTVYWM
- a0Dw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=TiHoVMsFcSLIQMr9uOZIpXIgFEvQNZbBssFZ43ZIIe8=;
- b=lCgST+UZs6R8VfJwPsoU0O/fdBn1CGaG8rfPfU/1n+3Nbb4B2Q1+aoYH0AC3/rlIKi
- DZJqUJ2rcvAbtqtbdVqMGVFLPNVCuNiqkoTdfsGv+vO6M8lXNJFhQ/I5Fdci7Nodwhm+
- xdCTE8cas/UP/JQ8ICfINc1t9Khsvt6lmxUqaCCfmN+pMzbRTD3o6qVHPJ98kRx4N1Q5
- xm2Jedxttct5/zZwzhfV9v1X2X1rcXyaW39IN738saLJm8hMzrS31cDxtWGM23O5RlhR
- H2lPdr7ffFbkrdmpuV0uzj0QzWFk3NgLkG8o2/AsAPpBXRMfvq94Ziio4CbMKWZwczRJ
- Mg2Q==
-X-Gm-Message-State: APjAAAVB7P54f+Z0v4iVQ2rDUa3WGcEGpbvgBZrwMJZCMtiF3GEcD8rS
- dK8OKPd1oMFzaqIa+EPJmj3xrd/UivAlzO8pSERYlw==
-X-Google-Smtp-Source: APXvYqxkIW246ER+0x11WTY5HcsLZYgY0kDKBdaZ85h3vZe4O7pl2xjdYiJwW2/mXxrxy6EmgNSpsuwt+g6Gcc/XNPg=
-X-Received: by 2002:a5d:9282:: with SMTP id s2mr6264093iom.36.1562365798212;
- Fri, 05 Jul 2019 15:29:58 -0700 (PDT)
+ id 1hjWpD-0004bY-UC
+ for linux-arm-kernel@bombadil.infradead.org; Fri, 05 Jul 2019 22:37:03 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=infradead.org; s=casper.20170209; h=In-Reply-To:Content-Type:MIME-Version:
+ References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=4aSyW2GmZvef/8f5We2/s8cnQWKE6nXUhEn5WBo3z2I=; b=njUJ8nKL0L5/dl3a0CWhsoV1J
+ UjXtt0LNI5ZbDQVO2td2xW29Drjzy9BTAuEDd1Q7MeAcOqSLLCmNiqR3AhDFKHMazkgFMDCwOMeGm
+ ij3EgYIjE4YC9ch6zqvOq3YBWk0wKMNeLJxLXa+lIuQSkVGUYGX0jWC+1djOyBoUfWDkiVIS2iT+F
+ OscJ2rahRv16NWBZB2LamEOU0Xg292bzJsP4ByaJgCMetqQ0gkuuF0Ik79MzeBocUkNCbdGEUR4FW
+ gltuM6XnTZGWp9+vOIhVkxZlUP26jFuGPFyHrEMSShXj6OMLd0jzLsbGL2qxoSZ3gFqhuHwn36jap
+ +6j6M5wDA==;
+Received: from relay12.mail.gandi.net ([217.70.178.232])
+ by casper.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hjWpG-0006V9-DY
+ for linux-arm-kernel@lists.infradead.org; Fri, 05 Jul 2019 22:37:08 +0000
+Received: from localhost (lfbn-1-1545-137.w90-65.abo.wanadoo.fr
+ [90.65.161.137])
+ (Authenticated sender: alexandre.belloni@bootlin.com)
+ by relay12.mail.gandi.net (Postfix) with ESMTPSA id 7A95A200006;
+ Fri,  5 Jul 2019 22:36:17 +0000 (UTC)
+Date: Sat, 6 Jul 2019 00:36:17 +0200
+From: Alexandre Belloni <alexandre.belloni@bootlin.com>
+To: Markus Elfring <Markus.Elfring@web.de>
+Subject: Re: [PATCH] rtc: zynqmp: One function call less in
+ xlnx_rtc_alarm_irq_enable()
+Message-ID: <20190705223617.GC12409@piout.net>
+References: <6f1db217-cb0a-9f6c-0e2e-5d932103f6ef@web.de>
 MIME-Version: 1.0
-References: <1559636093-26005-1-git-send-email-krzk@kernel.org>
- <15AEA3356BFC1A54.4080@linux.kernel.org>
-In-Reply-To: <15AEA3356BFC1A54.4080@linux.kernel.org>
-From: Olof Johansson <olof@lixom.net>
-Date: Fri, 5 Jul 2019 15:29:46 -0700
-Message-ID: <CAOesGMhBs4qJPis4cO3f6kmwgqpbP2OF00y2PZ3_AE82mYnDkw@mail.gmail.com>
-Subject: Re: [PATCH v2] ARM: configs: Remove useless UEVENT_HELPER_PATH
-To: patchwork-soc+owner@linux.kernel.org
+Content-Disposition: inline
+In-Reply-To: <6f1db217-cb0a-9f6c-0e2e-5d932103f6ef@web.de>
+User-Agent: Mutt/1.12.0 (2019-05-25)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190705_152958_803663_7F161A1E 
-X-CRM114-Status: UNSURE (   7.77  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
-X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+X-CRM114-CacheID: sfid-20190705_233706_520080_9AA74192 
+X-CRM114-Status: GOOD (  19.66  )
+X-Spam-Score: -0.7 (/)
+X-Spam-Report: SpamAssassin version 3.4.2 on casper.infradead.org summary:
+ Content analysis details:   (-0.7 points, 5.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:d41 listed in]
- [list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [217.70.178.232 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- 0.0 T_PDS_NO_HELO_DNS      High profile HELO but no A record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -90,41 +78,64 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Andrew Lunn <andrew@lunn.ch>,
- Alexandre Belloni <alexandre.belloni@bootlin.com>,
- Mans Rullgard <mans@mansr.com>, linux-aspeed@lists.ozlabs.org,
- Tony Lindgren <tony@atomide.com>, Liviu Dudau <liviu.dudau@arm.com>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Fabio Estevam <festevam@gmail.com>,
- Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- Geert Uytterhoeven <geert+renesas@glider.be>,
- Aaro Koskinen <aaro.koskinen@iki.fi>,
- Gregory Clement <gregory.clement@bootlin.com>,
- Russell King <linux@armlinux.org.uk>, Krzysztof Kozlowski <krzk@kernel.org>,
- Ludovic Desroches <ludovic.desroches@microchip.com>,
- ARM-SoC Maintainers <arm@kernel.org>, Joel Stanley <joel@jms.id.au>,
- Sylvain Lemieux <slemieux.tyco@gmail.com>,
- Sebastian Hesselbarth <sebastian.hesselbarth@gmail.com>,
- Jason Cooper <jason@lakedaemon.net>, Arnd Bergmann <arnd@arndb.de>,
- Marc Gonzalez <marc.w.gonzalez@free.fr>, Sascha Hauer <s.hauer@pengutronix.de>,
- Vladimir Zapolskiy <vz@mleia.com>, NXP Linux Team <linux-imx@nxp.com>,
- linux-omap <linux-omap@vger.kernel.org>,
- Linux ARM Mailing List <linux-arm-kernel@lists.infradead.org>,
- Andrew Jeffery <andrew@aj.id.au>, Dinh Nguyen <dinguyen@kernel.org>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Sudeep Holla <sudeep.holla@arm.com>, Shawn Guo <shawnguo@kernel.org>
+Cc: linux-rtc@vger.kernel.org, Alessandro Zummo <a.zummo@towertech.it>,
+ kernel-janitors@vger.kernel.org, Michal Simek <michal.simek@xilinx.com>,
+ LKML <linux-kernel@vger.kernel.org>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Jul 5, 2019 at 3:26 PM Olof Johansson via Linux.Kernel.Org
-<olof=lixom.net@linux.kernel.org> wrote:
+On 05/07/2019 22:45:39+0200, Markus Elfring wrote:
+> From: Markus Elfring <elfring@users.sourceforge.net>
+> Date: Fri, 5 Jul 2019 22:37:58 +0200
+> 
+> Avoid an extra function call by using a ternary operator instead of
+> a conditional statement for a setting selection.
+> 
 
-This didn't work as I anticipated. Please ignore, apologies for the spam.
+Please elaborate on why this is a good thing.
 
+> This issue was detected by using the Coccinelle software.
+> 
 
--Olof
+Unless you use an upstream coccinelle script or you share the one you
+are using, this is not a useful information.
+
+> Signed-off-by: Markus Elfring <elfring@users.sourceforge.net>
+> ---
+>  drivers/rtc/rtc-zynqmp.c | 7 ++-----
+>  1 file changed, 2 insertions(+), 5 deletions(-)
+> 
+> diff --git a/drivers/rtc/rtc-zynqmp.c b/drivers/rtc/rtc-zynqmp.c
+> index 00639594de0c..4631019a54e2 100644
+> --- a/drivers/rtc/rtc-zynqmp.c
+> +++ b/drivers/rtc/rtc-zynqmp.c
+> @@ -124,11 +124,8 @@ static int xlnx_rtc_alarm_irq_enable(struct device *dev, u32 enabled)
+>  {
+>  	struct xlnx_rtc_dev *xrtcdev = dev_get_drvdata(dev);
+> 
+> -	if (enabled)
+> -		writel(RTC_INT_ALRM, xrtcdev->reg_base + RTC_INT_EN);
+> -	else
+> -		writel(RTC_INT_ALRM, xrtcdev->reg_base + RTC_INT_DIS);
+> -
+> +	writel(RTC_INT_ALRM,
+> +	       xrtcdev->reg_base + (enabled ? RTC_INT_EN : RTC_INT_DIS));
+
+This makes the code less readable.
+
+>  	return 0;
+>  }
+> 
+> --
+> 2.22.0
+> 
+
+-- 
+Alexandre Belloni, Bootlin
+Embedded Linux and Kernel engineering
+https://bootlin.com
 
 _______________________________________________
 linux-arm-kernel mailing list
