@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7B44160736
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  5 Jul 2019 16:05:28 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 37481607DC
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  5 Jul 2019 16:28:36 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
@@ -18,14 +18,30 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	MP8BHdSc7+1RA6OHWkMg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hjFnA-00059j-1r; Fri, 05 Jul 2019 04:25:48 +0000
-Received: from mail-ed1-x543.google.com ([2a00:1450:4864:20::543])
+	id 1hjPCU-00023s-CR; Fri, 05 Jul 2019 14:28:34 +0000
+Received: from casper.infradead.org ([2001:8b0:10b:1236::1])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hjFmo-0003uh-3i
- for linux-arm-kernel@lists.infradead.org; Fri, 05 Jul 2019 04:25:41 +0000
-Received: by mail-ed1-x543.google.com with SMTP id r12so7017338edo.5
+ id 1hjPBk-0001S8-AI
+ for linux-arm-kernel@bombadil.infradead.org; Fri, 05 Jul 2019 14:27:48 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=infradead.org; s=casper.20170209; h=Content-Type:Cc:To:Subject:Message-ID:
+ Date:From:In-Reply-To:References:MIME-Version:Sender:Reply-To:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=b/iqhNLUC3DokEFuYS2ehal98gCGJpPh7k8hIbKXDDw=; b=K5QADdoyEQ6riu47YWZLd/TQE
+ hUKq96lCorwpv+VxJDWPBCNcWFrfkqkezm7QS3Kb56DNSC+aPGgsk5riUcUoC/EaCoaSrdZ7tpsz0
+ 9w0i+4knUrhNzj/3oxpFd6IMx6ubtiTl5Y0XuBOBZnpefHlph9knR5Kaol16IXVZ7XqPDbRNgLlE4
+ Zizhcvx7+Ee3v72uT+ZFIWbS4dzrZ1WeeOeWKh8dL8kTMkpGzFtrbpNg4EhxHTkLHicFRj3vkIP8m
+ Y1r4KiAV+HFf3pWLJjIFFu3TvsuCCmsraDNBz4MwdRiHH8GRiY6dRor1936KjrrO6TlF0xNzJSVUL
+ 6GxAgpcnA==;
+Received: from mail-ed1-x541.google.com ([2a00:1450:4864:20::541])
+ by casper.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hjG1J-0006qJ-GR
+ for linux-arm-kernel@lists.infradead.org; Fri, 05 Jul 2019 04:40:27 +0000
+Received: by mail-ed1-x541.google.com with SMTP id w20so7052135edd.2
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 04 Jul 2019 21:22:45 -0700 (PDT)
+ Thu, 04 Jul 2019 21:40:19 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
  :cc; bh=b/iqhNLUC3DokEFuYS2ehal98gCGJpPh7k8hIbKXDDw=;
@@ -37,14 +53,14 @@ X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
  bh=b/iqhNLUC3DokEFuYS2ehal98gCGJpPh7k8hIbKXDDw=;
- b=jU/fFNNAhi2WSLSGJ/jS7TsDUO70nDC4U4eD7NbzkJWOOLNjEvuQlLiD6oDMMd8WE0
- qzqaUYCoG3l5tFhmYN8OL44MFbka4WQmPDy7QuUQDjlIHoJ9GQJxtnyCey2HXXHUqhpK
- eg40AddATUg79HFVxCnVIrMXYvkBjuaVMVPXTxpor+kwFcYGbhdM3H321YiSq09teTeD
- kQrjFqekNig491RdIBDU3QPHb1vIkA63qqqyv8PkEJGs5hg+N1gpG7qdZ34NYVFe5WeF
- z17D0/TIZXpZ78MUGJUYc51nj3RUlsypHjJNh0g+y0i+Stts9IsiWhoTt5D6u/6gmWxT
- pa3Q==
-X-Gm-Message-State: APjAAAUP/dWNP0r/5XzZSd2dUFDtvgg+vtbuVntfQqM38GpBpVE9w2ns
- IO2iwK8FPLVp8RV+1gjlkgiPrLxSVxg=
+ b=inP5TI7lo3sBaqLzKvBGgbFYNeq94kWsBVoG1vUkrXE8AKNSb6HFDd7t8xRHpPAzqj
+ 8cGJPJnJwbt6+4MzDPxoFI1B7Yyz8KKmCK1kaszdMNukF+abNTJRE6LuTcTXISesI3U6
+ CM99JfYUuOHg1tKUEhNFTLOWIZjUBO0YyDNcSRkZL6DBE4HLNCeRP7j84AiKgiroLF0w
+ JYqoHGURmnwyeGas+RCBHJnTIGyOxINkDUx+vVV+WLTyvm0ryDJb3TVAAW379RhxrlOz
+ xRzbxliQ6Ws9vPYI7Ca9buuy2/jzjDCURz83H/RUoO6q5vOoS8Etxa/6RBlEvVZ6vir2
+ wWng==
+X-Gm-Message-State: APjAAAVG6VoiAYFkL423yzV3T758YMgLNjmJ9HlEk1e5FWOfpU3gHFZu
+ 0EZtqra9jbEEuYPNah8WcgmZLfvGt2Q=
 X-Google-Smtp-Source: APXvYqw62XtSTNTaQa5AxBVFw8NDL1tSRCD3yDmLV7ZXz1wc8HaoOZszcRlLWFdYiJoS6MuJy2P6WA==
 X-Received: by 2002:a17:906:310c:: with SMTP id
  12mr1390379ejx.259.1562300564056; 
@@ -75,25 +91,25 @@ Subject: Re: [RFC,
  v3 9/9] media: platform: Add Mediatek ISP P1 shared memory device
 To: Jungo Lin <jungo.lin@mediatek.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190704_212529_386453_56F75CE2 
-X-CRM114-Status: GOOD (  31.49  )
+X-CRM114-CacheID: sfid-20190705_054025_576647_43B4D8D1 
+X-CRM114-Status: GOOD (  46.82  )
 X-Spam-Score: -0.2 (/)
-X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+X-Spam-Report: SpamAssassin version 3.4.2 on casper.infradead.org summary:
+ Content analysis details:   (-0.2 points, 5.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:541 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:543 listed in]
- [list.dnswl.org]
  0.0 T_PDS_NO_HELO_DNS      High profile HELO but no A record
  -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
