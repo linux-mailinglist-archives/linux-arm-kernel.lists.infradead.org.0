@@ -2,110 +2,147 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4A19F60827
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  5 Jul 2019 16:44:17 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CA99460725
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  5 Jul 2019 16:04:17 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=vR2kbIu4sIecw75JmJC4s/fJg7m9lTE3kC8YCOk9bI8=; b=sb/YrIyDU+inv5
-	gveQNFDkczWXUVjN+fgJlfufUTQdqGXhbOabqW9K6WSxNeHz8wwMOxPRumQGVgJNBzoGZSE5DeKhr
-	d7JljHQI2GEjC/RMWnbkKz4xrma/TFOg/l2+jjtlbPm9cKKO0AkvulO2EupwuQt93+Vk4RBXggXxV
-	9sGIiUVfuvboIGN+9Rxu3riE4ddi45oVFIrRDE1tAQIkdPS5iIrZpychVejWrBcc0w5dDkNj80E56
-	nRXe+/Ok6gYQteyut7SV2UlRP8J0xK7sjUO+/G1jsEArYLy8GzpaKQyALIUOJKU9nd6zoI0sd8FBy
-	dY05gIBTqYMD1AeNez9g==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=fBWRe5kLQeDYYXZynGUnJiSs2nInODihBJenQ7C0iKY=; b=HGM3iQLrd0g4XW
+	2HB8kYe+nOhqHzmeBKROFJLGKHUJALjR5bopPxmtnwf2aQhOuzblhM1BxLXMiM0OmLOLQg/a5TvV0
+	qlFb/lLPKvZUuCFirv+PrJGTibpxTZeFdn+i516aCd/I1hT7qs7lNUuF7AuVSdxIyQCHap8mTcu4x
+	/xNHYWppK2CNJpAfldkru06QEGdzudCXBzK/HhOxbd48T8lqgGMnLT7K2njvuf/g5ocTSjfiKQ8DV
+	3/7VtSvW9r2BlXJf1yvnr0p4azmv+F1H6pead/8dfeL+4GxiRPcJZIWtMiwh3Iw40M1ZQ6tA3CacC
+	WXvJwwz52QfyZSnOKGgg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hjPRf-00063d-Iy; Fri, 05 Jul 2019 14:44:15 +0000
-Received: from merlin.infradead.org ([2001:8b0:10b:1231::1])
+	id 1hjOoy-00088s-0q; Fri, 05 Jul 2019 14:04:16 +0000
+Received: from casper.infradead.org ([2001:8b0:10b:1236::1])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hjPQx-0005KO-Om
- for linux-arm-kernel@bombadil.infradead.org; Fri, 05 Jul 2019 14:43:31 +0000
+ id 1hjOgB-0005qa-Vz
+ for linux-arm-kernel@bombadil.infradead.org; Fri, 05 Jul 2019 13:55:12 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=infradead.org; s=merlin.20170209; h=Content-Type:Cc:To:Subject:Message-ID:
- Date:From:In-Reply-To:References:MIME-Version:Sender:Reply-To:
- Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
- List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=kSiMC23ISGGQqVJSQMfXoclzcfCXE9jKziQow8Aqu58=; b=wrJ9PY6MWbxzmxeE6ynradzPT
- M0hJ0o7XjYxi9fQYC9Lgt1YglaQLIxNC+urziclwLCkl4o6XxdsLTDVQuoIOibJJx4wsEc7OpbLcQ
- nK5J/XZwYHyeqWGHDeMygyiYnX5Z0R5p2oqCi3aSusbl3u4EJU/G2eyhNkXPK60rrjbWcs0DFnqCG
- MVbjtPuUoF+eAUKiJ9Zh8PfCmD0gNVlpvugoaV4MnlPWQDiowEHHo1NTG7j1m5K7HxH/q7sNbkiml
- v3tG+FUE/7zwY5TgxoPA02uRe5YYPfun6EByYRGc+/MIKYEmfUGY4gaQyofafAm4ewPtiXwl6mBIv
- cdi2qpywA==;
-Received: from mail-ed1-x543.google.com ([2a00:1450:4864:20::543])
- by merlin.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hjKF9-0000mk-AO
- for linux-arm-kernel@lists.infradead.org; Fri, 05 Jul 2019 09:11:00 +0000
-Received: by mail-ed1-x543.google.com with SMTP id v15so966351eds.9
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 05 Jul 2019 02:10:57 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=kSiMC23ISGGQqVJSQMfXoclzcfCXE9jKziQow8Aqu58=;
- b=bV5DgE/awiZCo70PJlZnyqIWgNigM3VnXItEoGqIjp2VwZAjg1Xtuv4hQpPEB0Jt6F
- Fq5BSo7B/rY4PMP/4Nwu27G69SQWZt+J6PAH2WXApCEy7ZPAb3tfWAIIP1vcjgWxUGlW
- eNQwjSrBPEfkUsBUD50OmCAvjzjhzwnTWIysIdTelYTQHmRPPTMScD6/trE7whDBf6HV
- G2WCWOFKxTlOoQwaIFS2Tr5i7U7WxlJCtJalVwHV9bXmlsNH/BVDB9FOg1yy7PB5xxRR
- H9Q5HcXpRB4X31oxQyBpicdAK4o0cRVRE8CevPbt2rFH5oT+MCW3xSEYts34UIcnBtz0
- GbAA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=kSiMC23ISGGQqVJSQMfXoclzcfCXE9jKziQow8Aqu58=;
- b=DYUOhi9c2BiBX8xFrNfJXzavNPdVCdCFFQziRtCVbo38yvrnGqk3gFfejvMQdQZNg8
- mlGFjmu2Kk1SmjBK+fmvBhqVmeFYpJ+rE5bnGY4UuYgN0OWW+cyK5A9NVb9sevnRaiyz
- 6kxqJ2QPDG8a7fOR0p1iXsR9gm1lWA4IKLFE9tsOUUp82K8gkMQCsZtbrYun3Fv8ZJBX
- aanIrz87Sj4AdoRagRRuJp9eKslzg1icpX3+Pp0CeGEfAHPykp6nymZup/NJDorwqKOp
- 6U1w8vXbqf8Wvuo/GveV/dWnNWRG5U7S9hLUCqcwKDMZcI2a+M1BE/AtSdLPiG+rd0U3
- yWuA==
-X-Gm-Message-State: APjAAAUZUmW2GR/42xw0V5esB1xRMVwQ+TtRKLdVKAHSOzT/QVpb8uv0
- 8xzTIF/dASmFDB0V7pk3Neot4mTmf3deghtPXrU=
-X-Google-Smtp-Source: APXvYqx22fS+pUeLNsjnHvqrFs6EQGY5EsmKNI1CNKh15QT+gqZBMDoV2f19y7PER6ojlIisVn9BH1EpPtvyAEyWL8k=
-X-Received: by 2002:a17:906:b7d8:: with SMTP id
- fy24mr2518380ejb.230.1562317736258; 
- Fri, 05 Jul 2019 02:08:56 -0700 (PDT)
+ d=infradead.org; s=casper.20170209; h=MIME-Version:Content-Transfer-Encoding:
+ Content-Type:Message-ID:Date:Subject:CC:To:From:Sender:Reply-To:Content-ID:
+ Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+ :Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
+ List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=1fvGHigX+JPbD17m06eLJdyTZyDdNNkwbNVO9U/U+Uw=; b=jgayNaEKeUXLRQlTc/2quE+KTG
+ CuJnYMNFcexT1dEwMElQxwSFCnEGJ+Ml4hMuF6LIDX0S9JxIUf6t0cNVJkRXJvkbziTT0XX/zFrpc
+ 5f33qxmpEa5D4OerXX9X1eMUbLB5d/5pBJUK5CnD89+R5J9fc8vP2UaRoEZzfrXiY9gsVxcQoJjDJ
+ 6wtZxLBhYj9n/3nEUEkiKaZwUrd9ixrShgg1HUGoYUEXD/G49FHjIuzxrxyRmZq7RmDXulf7Qf7dp
+ v1OGSv5+61A2ml5k45AxI6ROauDRQbYc3gEjENJV2WlR9q0O+tulXIn7bROwk/RzMBHTx7ZfbvnD1
+ sk1b0CsA==;
+Received: from mx0b-0016f401.pphosted.com ([67.231.156.173])
+ by casper.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hjKIb-0007o9-Q7
+ for linux-arm-kernel@lists.infradead.org; Fri, 05 Jul 2019 09:14:36 +0000
+Received: from pps.filterd (m0045851.ppops.net [127.0.0.1])
+ by mx0b-0016f401.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id
+ x6596Al2025365; Fri, 5 Jul 2019 02:13:03 -0700
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=marvell.com;
+ h=from : to : cc :
+ subject : date : message-id : content-type : content-transfer-encoding :
+ mime-version; s=pfpt0818; bh=1fvGHigX+JPbD17m06eLJdyTZyDdNNkwbNVO9U/U+Uw=;
+ b=SqOzIjS8/YV+997kE368ssNutPLoKWBKmGBrn6R7KbjR3sU3qQTALlINnYLaDQ7bCA3Q
+ U0KvSWlnMMY4B4Tz8Zfc7kcTFifoQNbCH+K0Ji3eMmhLoaLy87t/ivXoVRrHygt6OXUh
+ kP9mFelqvLgP1/d8d062FLp5UrySUasMGssW0RR8DtDN4608BSA1SUfjmKHzI9BHTCC7
+ YLu6eGIDSvSIJPKfXteromWlJ1H3W7592micSVRHqzVZKNJbBnuDPq8DZImNcwpA66Cl
+ 7OTE8G3BMWAsJFM0uIr2n5KlfEXB0JUPz7b6G1bugidjBfyewhM8ZCqevMT2BlQB7Bm6 Xg== 
+Received: from sc-exch03.marvell.com ([199.233.58.183])
+ by mx0b-0016f401.pphosted.com with ESMTP id 2thjyrb616-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-SHA384 bits=256 verify=NOT);
+ Fri, 05 Jul 2019 02:13:03 -0700
+Received: from SC-EXCH02.marvell.com (10.93.176.82) by SC-EXCH03.marvell.com
+ (10.93.176.83) with Microsoft SMTP Server (TLS) id 15.0.1367.3; Fri, 5 Jul
+ 2019 02:13:01 -0700
+Received: from NAM01-SN1-obe.outbound.protection.outlook.com (104.47.32.50) by
+ SC-EXCH02.marvell.com (10.93.176.82) with Microsoft SMTP Server
+ (TLS) id
+ 15.0.1367.3 via Frontend Transport; Fri, 5 Jul 2019 02:13:01 -0700
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=marvell.onmicrosoft.com; s=selector2-marvell-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=1fvGHigX+JPbD17m06eLJdyTZyDdNNkwbNVO9U/U+Uw=;
+ b=j7h9ExJglelgMPdnu2pQ1STeeEG92SJC2PwoXPW/PcYQkhsQAkzqPg0bbr5yf4nPoEwHVsgbFfrJQ3LwQxe+LpL+0CQ2n7efxXfm7lk3m3Fm4mDQZOb96Cu85qICWTOrF6BRS1eRGSZf3hNzg1gjRnsZ4o+McwwdG04njV102sY=
+Received: from MWHPR1801MB2030.namprd18.prod.outlook.com (10.164.205.31) by
+ MWHPR1801MB1982.namprd18.prod.outlook.com (10.164.205.19) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2052.18; Fri, 5 Jul 2019 09:12:55 +0000
+Received: from MWHPR1801MB2030.namprd18.prod.outlook.com
+ ([fe80::5a8:540b:6bb7:fa20]) by MWHPR1801MB2030.namprd18.prod.outlook.com
+ ([fe80::5a8:540b:6bb7:fa20%7]) with mapi id 15.20.2052.010; Fri, 5 Jul 2019
+ 09:12:55 +0000
+From: Ganapatrao Kulkarni <gkulkarni@marvell.com>
+To: "linux-doc@vger.kernel.org" <linux-doc@vger.kernel.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Subject: [PATCH v2 0/2] Add CCPI2 PMU support
+Thread-Topic: [PATCH v2 0/2] Add CCPI2 PMU support
+Thread-Index: AQHVMxHU8ANznhvUkUSheWYP9y2KJA==
+Date: Fri, 5 Jul 2019 09:12:55 +0000
+Message-ID: <1562317967-16329-1-git-send-email-gkulkarni@marvell.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-clientproxiedby: BYAPR05CA0067.namprd05.prod.outlook.com
+ (2603:10b6:a03:74::44) To MWHPR1801MB2030.namprd18.prod.outlook.com
+ (2603:10b6:301:69::31)
+x-ms-exchange-messagesentrepresentingtype: 1
+x-mailer: git-send-email 1.8.3.1
+x-originating-ip: [199.233.59.128]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: c0bc1f7d-7a41-4620-fc48-08d70128f707
+x-microsoft-antispam: BCL:0; PCL:0;
+ RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600148)(711020)(4605104)(1401327)(2017052603328)(7193020);
+ SRVR:MWHPR1801MB1982; 
+x-ms-traffictypediagnostic: MWHPR1801MB1982:
+x-ms-exchange-purlcount: 1
+x-microsoft-antispam-prvs: <MWHPR1801MB1982735BFCD59BD8C48ECF87B2F50@MWHPR1801MB1982.namprd18.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:2958;
+x-forefront-prvs: 008960E8EC
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(4636009)(366004)(376002)(39850400004)(396003)(346002)(136003)(189003)(199004)(14454004)(2616005)(4744005)(6436002)(66066001)(2501003)(4720700003)(36756003)(4326008)(50226002)(256004)(14444005)(478600001)(3846002)(6116002)(966005)(52116002)(7736002)(99286004)(486006)(476003)(6306002)(186003)(6512007)(305945005)(25786009)(26005)(386003)(6506007)(6486002)(102836004)(54906003)(110136005)(71200400001)(71190400001)(5660300002)(53936002)(8936002)(68736007)(316002)(81166006)(86362001)(2201001)(81156014)(73956011)(8676002)(64756008)(66946007)(66556008)(66446008)(2906002)(66476007);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:MWHPR1801MB1982;
+ H:MWHPR1801MB2030.namprd18.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; MX:1; A:1; 
+received-spf: None (protection.outlook.com: marvell.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam-message-info: KiBH4Ki+SBNtSwq6lQoG3/ZbGpsFbjZoocvMqzn7iU+91du0WrvpQICSSiFeaWrXtzQ571/56BBwAu6ZmONdo+AR1w/qMnDI6ZCu4KV1JJayRnpczpntPKvlK1EccDaa2zRRRQi3BJski2K16zDsw4Yp4e8br/p6l42FOh2Wd7tBldfvxQCu2o65BI56ONnu9CHUjQtC7xNZ99gRVZW/HZrMSCw2JPZzKyvGqW/FAZHgn+gEj6fZ4P2kRu16A7NHZff8qREDCYGK0IwIdIaOLuy1vbHKy+MsrtESa1Hu80nmSrkqxdeuWSHwYEjez87fIJ0H6Sg5hoTM0SwdkzC6BpcHfD464ULBR6VaaKvNrKX2Vcpt90oPXEJZK7Kw8BXtgnRjJ/Ap9l0osqcw27ftuEaeCN83AQsDWW95rmAyZm4=
 MIME-Version: 1.0
-References: <1561131532-14860-1-git-send-email-claudiu.manoil@nxp.com>
- <1561131532-14860-5-git-send-email-claudiu.manoil@nxp.com>
- <20190621164940.GL31306@lunn.ch>
- <VI1PR04MB4880D8F90BBCD30BF8A69C9696E00@VI1PR04MB4880.eurprd04.prod.outlook.com>
- <20190624115558.GA5690@piout.net> <20190624142625.GR31306@lunn.ch>
- <20190624152344.3bv46jjhhygo6zwl@lx-anielsen.microsemi.net>
- <20190624162431.GX31306@lunn.ch> <20190624182614.GC5690@piout.net>
- <CA+h21hqGtA5ou7a3wjSuHxa_4fXk4GZohTAxnUdfLZjV3nq5Eg@mail.gmail.com>
- <20190705044945.GA30115@lunn.ch>
-In-Reply-To: <20190705044945.GA30115@lunn.ch>
-From: Vladimir Oltean <olteanv@gmail.com>
-Date: Fri, 5 Jul 2019 12:08:45 +0300
-Message-ID: <CA+h21hqU1H1PefBWKjnsmkMsLhx0p0HJTsp-UYrSgmVnsfqULA@mail.gmail.com>
-Subject: Re: [PATCH net-next 4/6] arm64: dts: fsl: ls1028a: Add Felix switch
- port DT node
-To: Andrew Lunn <andrew@lunn.ch>
-X-Spam-Note: CRM114 invocation failed
-X-Spam-Score: -0.2 (/)
-X-Spam-Report: SpamAssassin version 3.4.2 on merlin.infradead.org summary:
- Content analysis details:   (-0.2 points)
+X-MS-Exchange-CrossTenant-Network-Message-Id: c0bc1f7d-7a41-4620-fc48-08d70128f707
+X-MS-Exchange-CrossTenant-originalarrivaltime: 05 Jul 2019 09:12:55.3988 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 70e1fb47-1155-421d-87fc-2e58f638b6e0
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: gkulkarni@marvell.com
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: MWHPR1801MB1982
+X-OriginatorOrg: marvell.com
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:, ,
+ definitions=2019-07-05_03:, , signatures=0
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20190705_101434_105484_6DF8B200 
+X-CRM114-Status: GOOD (  11.06  )
+X-Spam-Score: -0.9 (/)
+X-Spam-Report: SpamAssassin version 3.4.2 on casper.infradead.org summary:
+ Content analysis details:   (-0.9 points, 5.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:543 listed in]
- [list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (olteanv[at]gmail.com)
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [67.231.156.173 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- 0.0 T_PDS_NO_HELO_DNS      High profile HELO but no A record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -117,91 +154,38 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- Alexandre Belloni <alexandre.belloni@bootlin.com>,
- "netdev@vger.kernel.org" <netdev@vger.kernel.org>,
- Alexandru Marginean <alexandru.marginean@nxp.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "UNGLinuxDriver@microchip.com" <UNGLinuxDriver@microchip.com>,
- Allan Nielsen <Allan.Nielsen@microsemi.com>,
- Claudiu Manoil <claudiu.manoil@nxp.com>, Rob Herring <robh+dt@kernel.org>,
- "Allan W. Nielsen" <allan.nielsen@microchip.com>,
- "David S . Miller" <davem@davemloft.net>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
+ "rrichter@marvell.coma" <rrichter@marvell.coma>,
+ "corbet@lwn.net" <corbet@lwn.net>, Jan Glauber <jglauber@marvell.com>,
+ "Will.Deacon@arm.com" <Will.Deacon@arm.com>,
+ "gklkml16@gmail.com" <gklkml16@gmail.com>, Jayachandran
+ Chandrasekharan Nair <jnair@marvell.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Andrew,
+Add Cavium Coherent Processor Interconnect (CCPI2) PMU
+support in ThunderX2 Uncore driver.
 
-On Fri, 5 Jul 2019 at 07:49, Andrew Lunn <andrew@lunn.ch> wrote:
->
-> Hi Vladimir
->
-> > - DSA is typically used for discrete switches, switchdev is typically
-> > used for embedded ones.
->
-> Typically DSA is for discrete switches, but not exclusively. The
-> b53/SF2 is embedded in a number of Broadcom SoCs. So this is no
-> different to Ocelot, except ARM vs MIPS. Also, i would disagree that
-> switchdev is used for embedded ones. Mellonex devices are discrete, on
-> a PCIe bus. I believe Netronome devices are also discrete PCIe
-> devices. In fact, i think ocelot is the only embedded switchdev
-> switch.
->
-> So embedded vs discrete plays no role here at all.
->
+v2: Updated with review comments [1]
 
-drivers/staging/fsl-dpaa2/ethsw/ is another example of switchdev
-driver for an embedded switch.
-I would give it to you that the sample size is probably too small to
-say 'typically', but my point was that in order to support cascaded
-switches it makes more sense for those to be discrete.
+[1] https://lkml.org/lkml/2019/6/14/965
 
-> > - The D in DSA is for cascaded switches. Apart from the absence of
-> > such a "Ocelot SoC" driver (which maybe can be written, I don't know),
-> > I think the switching core itself has some fundamental limitations
-> > that make a DSA implementation questionable:
->
-> There is no requirement to implement D in DSA. In fact, only Marvell
-> does. None of the other switches do. And you will also find that most
-> boards with a Marvell switch use a single device. D in DSA is totally
-> optional. In fact, DSA is built from the ground up that nearly
-> everything is optional. Take a look at mv88e6060, as an example. It
-> implements nearly nothing. It cannot even offload a bridge to the
-> switch.
->
+v1: initial patch
 
-Let me see if I get your point.
-The D is optional, and the S is optional. So what's left? :)
-Also, there's a big difference between "the hardware can't do it" and
-"the driver doesn't implement it". If I follow your argument, would
-you write a DSA driver for a device that doesn't do L2 switching?
-Along that same line, what benefit does the DSA model bring to a
-switch that can't do cascading, compared to switchdev? I'm asking this
-as a user, not as a developer.
+Ganapatrao Kulkarni (2):
+  Documentation: perf: Update documentation for ThunderX2 PMU uncore
+    driver
+  drivers/perf: Add CCPI2 PMU support in ThunderX2 UNCORE driver.
 
-> > So my conclusion is that DSA for Felix/Ocelot doesn't make a lot of
-> > sense if the whole purpose is to hide the CPU-facing netdev.
->
-> You actually convinced me the exact opposite. You described the
-> headers which are needed to implement DSA. The switch sounds like it
-> can do what DSA requires. So DSA is the correct model.
->
->      Andrew
+ Documentation/perf/thunderx2-pmu.txt |  20 ++-
+ drivers/perf/thunderx2_pmu.c         | 248 +++++++++++++++++++++++----
+ 2 files changed, 225 insertions(+), 43 deletions(-)
 
-Somebody actually asked, with the intention of building a board, if
-it's possible to cascade the LS1028A embedded switch (Felix) with
-discrete SJA1105 devices - Felix being at the top of the switch tree.
-Does the DSA model support heterogeneous setups (parsing stacked
-headers)? I can't tell if that's how EDSA tags work. With switchdev
-for Felix there wouldn't be any problem - it just wouldn't be part of
-the DSA tree and its own driver would remove its tags before DSA would
-look at the rest.
+-- 
+2.17.1
 
-Regards,
--Vladimir
 
 _______________________________________________
 linux-arm-kernel mailing list
