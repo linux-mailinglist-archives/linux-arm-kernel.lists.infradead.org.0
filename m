@@ -2,102 +2,88 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 16FF460842
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  5 Jul 2019 16:48:11 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 82740606E6
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  5 Jul 2019 15:54:59 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:From:Subject:Mime-Version:Message-Id
-	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=dCeR8NGai+zGTrKZW9fLTCZCJbGf2nzdqVG5jnYRDxQ=; b=DGorWLsSOpvBMx
-	GKcBbmRc3pLEbDkAtiIbHhJ/NcLzCMOdXy/VJEKFKO1RiPuadqwN0a2YZZFylC6x/9fLMJAvvwD/u
-	CRsXCdIr4LK6Ggabd0V8SM+2m5kaGCyGm3EPrQR1d4rewguPXLbAiEEl5s3jZuZUMgy6yigFUTTXu
-	Rj7v1+DyAqH0mKL3fXXS08AAMEJW5MgJ/z5GTtkUdsSk/OoP6cYH6JvQriA6SgxdHRzRKc53LRFrA
-	MsIPg6r03hhfx1o7z9aY7Z/cP2vciiqZIt7+kgAPhJ2HDi3D8NkcWQ1ZxIMaykUcC98sZiZVzhWoQ
-	je9qrVcxv1jpd9agClLw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Z5tcgoIrXIF16JzUp3lU2UD3z3VJ+vmltkWO2og3h0U=; b=DlvZnVvhl2GDj4
+	R4F89g3FsWX/rKqFTHyhWDoHyMS2QC8PfcQmF7W8r0sQ8siTNQ8HLnzFQrGEMH8bNJ/3rC0OPMhq/
+	C97tndwyCYeNFKNWEcDPPekjXpo8+XUn2o/dSah+Vz2BkEywS55gSfOHodZQVt5CO7xHrmF7Gj2d4
+	wuZbjGgk+aYiL20a6o8Nv8EP+Y2wpob8Di6EhnCcS4PW73DGEQUBnOkEWPaWKmx/92XFJ8J/Ovzg4
+	0Ll5at7DUrWBkNs6ZdWmSHpn/BMmXeu3JLpatg1q7YXADs9QiNxgh/OwCmcV+KMYcgbwiTsyceMxN
+	5ooJlo2H414cH1Jdp31w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hjPVR-0003Km-4a; Fri, 05 Jul 2019 14:48:09 +0000
-Received: from merlin.infradead.org ([2001:8b0:10b:1231::1])
+	id 1hjOfy-0004pg-4U; Fri, 05 Jul 2019 13:54:58 +0000
+Received: from casper.infradead.org ([2001:8b0:10b:1236::1])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hjPRo-0006PQ-UZ
- for linux-arm-kernel@bombadil.infradead.org; Fri, 05 Jul 2019 14:44:25 +0000
+ id 1hjJEv-0002JM-M0
+ for linux-arm-kernel@bombadil.infradead.org; Fri, 05 Jul 2019 08:06:41 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=infradead.org; s=merlin.20170209; h=Content-Type:Cc:To:From:Subject:
- Mime-Version:Message-Id:Date:Sender:Reply-To:Content-Transfer-Encoding:
- Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
- Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Id:
+ d=infradead.org; s=casper.20170209; h=In-Reply-To:Content-Type:MIME-Version:
+ References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
  List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=hhX2XwkgEKB93Pn3qfFnxuuo6Qt0MPLsM6lUEhZlszI=; b=FU+DoKsJF8pW2uqvdMzx5LHsu
- h2zjp2K9qB7QWo5hSdWosuKD9rFxo3TRVkn590TZ1qlDaTnV+fiQM5qXtBCxvVILTUkH5hLSogLXh
- KcdqN6jGs6EnEbntO0jvU9Vf2dCanvLpbA/9RJ2hUTXDq1o0A2WQXgpOlZxdiQrcE5j5EerH7mBJ9
- 7apjwLqe8f1nc92XcSJGiW9de5Hal9ADvilUXdEQoq3lTbPecn9Lv3T2gOuppLY63iuAD3I9rmwI2
- FIdlVgnMQx+DXdwoviTUSrGkom32MVg+N1hQG3Lx1FgCa707+h5+rW1oA05XqkFsaHr/z8/JAbbb2
- HRfclUA6A==;
-Received: from mail-pl1-x649.google.com ([2607:f8b0:4864:20::649])
- by merlin.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hjJDS-0000O4-DN
- for linux-arm-kernel@lists.infradead.org; Fri, 05 Jul 2019 08:05:11 +0000
-Received: by mail-pl1-x649.google.com with SMTP id bb9so4601126plb.2
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 05 Jul 2019 01:05:03 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
- h=date:message-id:mime-version:subject:from:to:cc;
- bh=hhX2XwkgEKB93Pn3qfFnxuuo6Qt0MPLsM6lUEhZlszI=;
- b=KyCapYyMEFW13KgaR1Hz7jzg+VCg37rBGVzeH+/5kwkA8AVbdlZdH/7k9ce6fpQWWM
- l5sP9Uh/CUrf2IIJ0E+QpibgDzGQV9fErVzuZkOej24N+2Po8yK831bkoTtJOeXPao6h
- uSAk/j0m+0v6EXt9OGWiYwUoqme4ntwiehVo8rf8lh4zEuaNGjEJmfbN9rPkoie4+kGf
- IYL5l8+ASgoUeDAZAy0cSvJv1SydBBi4Pa+DCckI0Z2MUkOrGJ9W1s4I5Za1TBD1zr2v
- stQ9sp1qpA29Hx5YP2B4F0SVkWtxyiP2i4i+8HO7U6YuW2r7ul3cH/G3Zg1xCmkKBy2J
- HZuA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:message-id:mime-version:subject:from:to:cc;
- bh=hhX2XwkgEKB93Pn3qfFnxuuo6Qt0MPLsM6lUEhZlszI=;
- b=bRczAQAF2u4WqNEeeTXwbPCGmJbJBQ/Zy/rg416Xb+HHvORp4/3qA6RjTG/UlmpOZE
- S5suYTLTige+oAbvCuUqMSMBmyHEdtacgEwESU8VCTP1UXT7gEYq4kKkICNUCflMdye5
- KuyTa3fVOaIitXxJ3PXAupG+w6+MI9torzvR7yYJxCvOAorgoVPJvg7/NI0zaToTj0mN
- g8W2Xe32EZEOJTyM5SZZWsYLj0+IZo+Y7K6Ry8Li2MXkY9e7ErfBf4LBlXDKU/ctd2pd
- lJN2w4s3VQ0kl30qM+cxlTTA6bfIdMkj/e9KzSeEupSvp3xeYcxVdNF360NY9uuF0eAW
- 1i3Q==
-X-Gm-Message-State: APjAAAWaBT6EPPYUjfsHzxjJIzSvMc7UQGjptnbYNb76iiBcGD0E84IF
- 6F6jJY1Ou7O33vvE7/HltOpz4gE=
-X-Google-Smtp-Source: APXvYqwq1jZ+MGgu0KbqrUdMYz2S9QOU7rDp3MFFryIT4Qwk1mGcR6tiMIpWJmGk7ukxCf8FhQB/0xs=
-X-Received: by 2002:a63:7a4f:: with SMTP id j15mr3736770pgn.427.1562313780600; 
- Fri, 05 Jul 2019 01:03:00 -0700 (PDT)
-Date: Fri,  5 Jul 2019 01:02:31 -0700
-Message-Id: <20190705080231.123522-1-pcc@google.com>
-Mime-Version: 1.0
-X-Mailer: git-send-email 2.22.0.410.gd8fdbe21b5-goog
-Subject: [PATCH] arm64: Add support for relocating the kernel with RELR
- relocations
-From: Peter Collingbourne <pcc@google.com>
-To: Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>, 
- Mark Rutland <mark.rutland@arm.com>,
- Ard Biesheuvel <ard.biesheuvel@linaro.org>
-X-Spam-Note: CRM114 invocation failed
-X-Spam-Score: -7.7 (-------)
-X-Spam-Report: SpamAssassin version 3.4.2 on merlin.infradead.org summary:
- Content analysis details:   (-7.7 points)
+ bh=IQ2QJXOXjhBfCeV3QHMxZRZfc7xsrOvmP35eTyYqx9c=; b=tbkre6wWUrUTea8MkZp84zCGb
+ +ZKegenaiOGt/NrDwiS0nAYWMQDdDSCUjaiSJ4PBwlhvho5TTMjKJl10DWXx5ueK5UqleOSUKXQR5
+ Mdwnf4wRv18fcWhZPL5DU4eRx1LIqQNCkYNqhH5Gz7gfUApodkONWbrdwAgnAlii7KgtV60JyNukH
+ hCuWPn/8ek0ZRmUAD7FaA0rD8kwj9AgRAZqinY6SFy2eZyu03Z9HAhecJp0qgOWg1crXpyWUQS8T5
+ Vow8nzhCinkgsdk2lH57dBQjcSmqIzvIIjbfxG+7N+OLp8dj6gFEWtcDpEmVP40ZmqeQfQIhAYTtU
+ r7gXFTT2Q==;
+Received: from perceval.ideasonboard.com ([213.167.242.64])
+ by casper.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hjJEU-0004mW-7Z
+ for linux-arm-kernel@lists.infradead.org; Fri, 05 Jul 2019 08:06:16 +0000
+Received: from pendragon.ideasonboard.com
+ (dfj612yhrgyx302h3jwwy-3.rev.dnainternet.fi
+ [IPv6:2001:14ba:21f5:5b00:ce28:277f:58d7:3ca4])
+ by perceval.ideasonboard.com (Postfix) with ESMTPSA id 6CC2E24B;
+ Fri,  5 Jul 2019 10:04:45 +0200 (CEST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=ideasonboard.com;
+ s=mail; t=1562313885;
+ bh=vM8j+9EAhOK78IsrgxkMvUfXdGfaHhZN4ekKfz0Lbbk=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=f3uox6TmH8R5eN8DSIpCRZwmKP+vMoBS8EtRmOs3H+BN4//O25ar+6i8Nw23Kfo54
+ 1CYrKGQJAh103UWCPEpmTdGKz9fKQfHobVKI23mtAWO6K8uoyj4t6QTzv5b/lwAgRZ
+ 3mBbLjzZMzvKsk3pspGm9KF6UqeUekJmqIIwOOLM=
+Date: Fri, 5 Jul 2019 11:04:24 +0300
+From: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
+To: Sakari Ailus <sakari.ailus@linux.intel.com>
+Subject: Re: [PATCH v2 0/3] DCMI bridge support
+Message-ID: <20190705080424.GA4994@pendragon.ideasonboard.com>
+References: <1560242912-17138-1-git-send-email-hugues.fruchet@st.com>
+ <20190620161721.h3wn4nibomrvriw4@kekkonen.localdomain>
+ <ae097d67-58fe-82d7-78d6-2445664f28db@st.com>
+ <20190626172503.GB6118@pendragon.ideasonboard.com>
+ <b21efe64-7762-308b-c2e5-503589041c35@st.com>
+ <20190627133824.GC5021@pendragon.ideasonboard.com>
+ <20190705075522.o7kuptdy3p3o64l7@paasikivi.fi.intel.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20190705075522.o7kuptdy3p3o64l7@paasikivi.fi.intel.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20190705_090614_347206_A4C0FB1A 
+X-CRM114-Status: GOOD (  55.60  )
+X-Spam-Score: -0.2 (/)
+X-Spam-Report: SpamAssassin version 3.4.2 on casper.infradead.org summary:
+ Content analysis details:   (-0.2 points, 5.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
- white-list
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:649 listed in]
- [list.dnswl.org]
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- 0.0 T_PDS_NO_HELO_DNS      High profile HELO but no A record
- -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -109,201 +95,188 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: clang-built-linux@googlegroups.com, Peter Collingbourne <pcc@google.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: Yannick FERTRE <yannick.fertre@st.com>,
+ Alexandre TORGUE <alexandre.torgue@st.com>,
+ Mickael GUENE <mickael.guene@st.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Philippe CORNU <philippe.cornu@st.com>, Hans Verkuil <hverkuil@xs4all.nl>,
+ Benjamin Gaignard <benjamin.gaignard@linaro.org>,
+ Hugues FRUCHET <hugues.fruchet@st.com>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>,
+ "linux-stm32@st-md-mailman.stormreply.com"
+ <linux-stm32@st-md-mailman.stormreply.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ "linux-media@vger.kernel.org" <linux-media@vger.kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-RELR is a relocation packing format for relative relocations.
-The format is described in a generic-abi proposal:
-https://groups.google.com/d/topic/generic-abi/bX460iggiKg/discussion
+Hi Sakari,
 
-The LLD linker can be instructed to pack relocations in the RELR
-format by passing the flag --pack-dyn-relocs=relr.
+On Fri, Jul 05, 2019 at 10:55:22AM +0300, Sakari Ailus wrote:
+> On Thu, Jun 27, 2019 at 04:38:24PM +0300, Laurent Pinchart wrote:
+> > On Thu, Jun 27, 2019 at 12:38:40PM +0000, Hugues FRUCHET wrote:
+> >> On 6/26/19 7:25 PM, Laurent Pinchart wrote:
+> >>> On Mon, Jun 24, 2019 at 10:10:05AM +0000, Hugues FRUCHET wrote:
+> >>>> Hi Sakari,
+> >>>>
+> >>>>> - Where's the sub-device representing the bridge itself?
+> >>>>
+> >>>> This is pointed by [1]: drivers/media/i2c/st-mipid02.c
+> >>>>
+> >>>>> - As the driver becomes MC-centric, crop configuration takes place through
+> >>>>>   V4L2 sub-device interface, not through the video device node.
+> >>>>> - Same goes for accessing sensor configuration: it does not take place
+> >>>>>   through video node but through the sub-device nodes.
+> >>>>
+> >>>> Our objective is to be able to support either a simple parallel sensor
+> >>>> or a CSI-2 sensor connected through a bridge without any changes on
+> >>>> userspace side because no additional processing or conversion involved,
+> >>>> only deserialisation is m.
+> >>>> With the proposed set of patches, we succeeded to do so, the same
+> >>>> non-regression tests campaign is passed with OV5640 parallel sensor
+> >>>> (STM32MP1 evaluation board) or OV5640 CSI-2 sensor (Avenger96 board with
+> >>>> D3 mezzanine board).
+> >>>>
+> >>>> We don't want driver to be MC-centric, media controller support was
+> >>>> required only to get access to the set of functions needed to link and
+> >>>> walk trough subdevices: media_create_pad_link(),
+> >>>> media_entity_remote_pad(), etc...
+> >>>>
+> >>>> We did a try with the v1 version of this patchset, delegating subdevices
+> >>>> handling to userspace, by using media-controller, but this require to
+> >>>> configure first the pipeline for each single change of resolution and
+> >>>> format before making any capture using v4l2-ctl or GStreamer, quite
+> >>>> heavy in fact.
+> >>>> Benjamin did another try using new libcamera codebase, but even for a
+> >>>> basic capture use-case, negotiation code is quite tricky in order to
+> >>>> match the right subdevices bus format to the required V4L2 format.
+> >>> 
+> >>> Why would it be trickier in userspace than in the kernel ? The V4L2
+> >>> subdev operations are more or less expose verbatim through the subdev
+> >>> userspace API.
+> >>> 
+> >>>> Moreover, it was not clear how to call libcamera library prior to any
+> >>>> v4l2-ctl or GStreamer calls.
+> >>> 
+> >>> libcamera isn't meant to be called before v4l2-ctl or GStreamer.
+> >>> Applications are supposed to be based directly on libcamera, or, for
+> >>> existing userspace APIs such as V4L2 or GStreamer, compatibility layers
+> >>> are supposed to be developed. For V4L2 it will take the form of a
+> >>> LD_PRELOAD-able .so that will intercept the V4L2 API calls, making most
+> >>> V4L2 applications work with libcamera unmodified (I said most as 100%
+> >>> compatibility will likely not be achievable). For GStreamer it will take
+> >>> the form of a GStreamer libcamera element that will replace the V4L2
+> >>> source element.
+> >>> 
+> >>>> Adding 100 lines of code into DCMI to well configure resolution and
+> >>>> formats fixes the point and allows us to keep backward compatibility
+> >>>> as per our objective, so it seems far more reasonable to us to do so
+> >>>> even if DCMI controls more than the subdevice it is connected to.
+> >>>> Moreover we found similar code in other video interfaces code like
+> >>>> qcom/camss/camss.c and xilinx/xilinx-dma.c, controlling the whole
+> >>>> pipeline, so it seems to us quite natural to go this way.
+> >>> 
+> >>> I can't comment on the qcom-camss driver as I'm not aware of its
+> >>> internals, but where have you found such code in the Xilinx V4L2 drivers
+> >>> ?
+> >> 
+> >> For ex. in xilinx/xilinx-dma.c, stream on/off is propagated to all 
+> >> subdevices within pipeline:
+> >>   * Walk the entities chain starting at the pipeline output video node 
+> >> static int xvip_pipeline_start_stop(struct xvip_pipeline *pipe, bool start)
+> >> 
+> >> Same for qcom/camss/camss-video.c:
+> >> static int video_start_streaming(struct vb2_queue *q, unsigned int count)
+> > 
+> > For stream start/stop, that's expected. Userspace only controls the
+> > stream start/stop on the video node, and the kernel propagates that
+> > along the pipeline. There is no VIDIOC_STREAMON or VIDIOC_STREAMOFF
+> > ioctl exposed to userspace for V4L2 subdevs. What is not propagated in
+> > the kernel for MC-centric devices is the pipeline configuration (formats
+> > and selection rectangles).
+> > 
+> >> For resolution/format, in exynos4-is/fimc-capture.c:
+> >> static int fimc_pipeline_try_format(struct fimc_ctx *ctx,
+> >> ...
+> >> 	while (1) {
+> >> ...
+> >> 		/* set format on all pipeline subdevs */
+> >> 		while (me != &fimc->vid_cap.subdev.entity) {
+> >> ...
+> >> 			ret = v4l2_subdev_call(sd, pad, set_fmt, NULL, &sfmt);
+> > 
+> > As explained below, propagating formats is fine for video node-centric
+> > drivers, but comes with limitations.
+> > 
+> >>>> To summarize, if we cannot do the negotiation within kernel, delegating
+> >>>> this to userspace implies far more complexity and breaks compatibility
+> >>>> with existing applications without adding new functionalities.
+> >>>>
+> >>>> Having all that in mind, what should be reconsidered in your opinion
+> >>>> Sakari ? Do you have some alternatives ?
+> >>> 
+> >>> First of all, let's note that your patch series performs to related but
+> >>> still independent changes: it enables MC support, *and* enables the V4L2
+> >>> subdev userspace API. The former is clearly needed and will allow you to
+> >>> use the MC API internally in the kernel, simplifying pipeline traversal.
+> >>> The latter then enables the V4L2 subdev userspace API, moving the
+> >>> pipeline configuration responsibility to userspace.
+> >>> 
+> >>> You could in theory move to the MC API inside the kernel, without
+> >>> enabling support for the V4L2 subdev userspace API. Configuring the
+> >>> pipeline and propagating the formats would then be the responsibility of
+> >>> the kernel driver.
+> >> 
+> >> Yes this is exactly what we want to do.
+> >> If I understand well, to disable the V4L2 subdev userspace API, I just 
+> >> have to remove the media device registry:
+> >> 
+> >> -	/* Register the media device */
+> >> -	ret = media_device_register(&dcmi->mdev);
+> >> -	if (ret) {
+> >> -		dev_err(dcmi->dev, "Failed to register media device (%d)\n",
+> >> -			ret);
+> >> -		goto err_media_device_cleanup;
+> >> -	}
+> >> 
+> >> Do you see any additional things to do ?
+> > 
+> > That should be it. Note that in that case pipeline configuration has to
+> > be handled by the master driver (DCMI in this case), the external
+> > subdevs involved (such as the CSI-2 to parallel bridge) must not handle
+> > any propagation of formats or selection rectangles.
+> 
+> I wonder what we'd do in the case when someone needs to connect something
+> else to the pipeline, such as a sensor with more than one sub-device, or a
+> flash or a lens controller.
+> 
+> For future-proofness, I'd just use MC for hardware that may be part of a
+> complex pipeline. In this case, if you think backwards compatibility is
+> important (and for most hardware it probably is), I don't think there are
+> perfect solutions if your existing driver is not MC-enabled.
 
-This patch adds a new config option, CONFIG_RELR. Enabling this option
-instructs the linker to pack vmlinux's relative relocations in the RELR
-format, and causes the kernel to apply the relocations at startup along
-with the RELA relocations. RELA relocations still need to be applied
-because the linker will emit RELA relative relocations if they are
-unrepresentable in the RELR format (i.e. address not a multiple of 2).
+Oh, I fully agree with you, which is why I mentioned in another e-mail
+that using a video node-centric approach would come with limitations,
+such as not being able to support more complex pipelines, ever.
 
-Enabling CONFIG_RELR reduces the size of a defconfig kernel image
-with CONFIG_RANDOMIZE_BASE by 3.5MB/16% uncompressed, or 550KB/5%
-compressed (lz4).
+> A reasonable compromise would be to add a Kconfig option that allows
+> enabling MC. This way you can provide backwards compatibility and allow
+> making use of the full potential of the hardware. That's also why hardware
+> that may be part of a non-trivial MC pipeline should start with MC-enabled
+> so we wouldn't run into this.
 
-Signed-off-by: Peter Collingbourne <pcc@google.com>
----
- arch/arm64/Kconfig              |  9 +++++
- arch/arm64/Makefile             |  4 ++
- arch/arm64/kernel/head.S        | 70 ++++++++++++++++++++++++++++-----
- arch/arm64/kernel/vmlinux.lds.S |  9 +++++
- 4 files changed, 83 insertions(+), 9 deletions(-)
+I really don't like this, as it introduces additional complexity. My
+recommendation is to go for an MC-centric approach. Going for a video
+node-centric approach is really shooting oneself in the foot regarding
+future extensions. But that being said, if there's a strong desire to go
+for foot self-shooting, the way to go is explained above.
 
-diff --git a/arch/arm64/Kconfig b/arch/arm64/Kconfig
-index 697ea05107298..f0cd0d2607e70 100644
---- a/arch/arm64/Kconfig
-+++ b/arch/arm64/Kconfig
-@@ -1447,6 +1447,15 @@ config RELOCATABLE
- 	  relocation pass at runtime even if the kernel is loaded at the
- 	  same address it was linked at.
- 
-+config RELR
-+	bool "Use RELR relocation packing"
-+	depends on RELOCATABLE && $(ld-option,--pack-dyn-relocs=relr)
-+	help
-+	  Store the kernel's dynamic relocations in the RELR relocation packing
-+	  format. Requires a compatible linker (currently only LLD supports
-+	  this feature), as well as compatible NM and OBJCOPY utilities
-+	  (llvm-nm and llvm-objcopy are compatible).
-+
- config RANDOMIZE_BASE
- 	bool "Randomize the address of the kernel image"
- 	select ARM64_MODULE_PLTS if MODULES
-diff --git a/arch/arm64/Makefile b/arch/arm64/Makefile
-index e9d2e578cbe67..16a8636f815c9 100644
---- a/arch/arm64/Makefile
-+++ b/arch/arm64/Makefile
-@@ -22,6 +22,10 @@ LDFLAGS_vmlinux		+= -shared -Bsymbolic -z notext -z norelro \
- 			$(call ld-option, --no-apply-dynamic-relocs)
- endif
- 
-+ifeq ($(CONFIG_RELR),y)
-+  LDFLAGS_vmlinux += --pack-dyn-relocs=relr
-+endif
-+
- ifeq ($(CONFIG_ARM64_ERRATUM_843419),y)
-   ifeq ($(call ld-option, --fix-cortex-a53-843419),)
- $(warning ld does not support --fix-cortex-a53-843419; kernel may be susceptible to erratum)
-diff --git a/arch/arm64/kernel/head.S b/arch/arm64/kernel/head.S
-index 2cdacd1c141b9..9b27d5e7d8f70 100644
---- a/arch/arm64/kernel/head.S
-+++ b/arch/arm64/kernel/head.S
-@@ -102,6 +102,7 @@ pe_header:
- 	 *  x23        stext() .. start_kernel()  physical misalignment/KASLR offset
- 	 *  x28        __create_page_tables()     callee preserved temp register
- 	 *  x19/x20    __primary_switch()         callee preserved temp registers
-+	 *  x24        __primary_switch()         current RELR displacement
- 	 */
- ENTRY(stext)
- 	bl	preserve_boot_args
-@@ -824,24 +825,63 @@ __relocate_kernel:
- 	 * Iterate over each entry in the relocation table, and apply the
- 	 * relocations in place.
- 	 */
--	ldr	w9, =__rela_offset		// offset to reloc table
--	ldr	w10, =__rela_size		// size of reloc table
--
- 	mov_q	x11, KIMAGE_VADDR		// default virtual offset
- 	add	x11, x11, x23			// actual virtual offset
-+
-+	ldr	w9, =__rela_offset		// offset to reloc table
-+	ldr	w10, =__rela_size		// size of reloc table
- 	add	x9, x9, x11			// __va(.rela)
- 	add	x10, x9, x10			// __va(.rela) + sizeof(.rela)
- 
- 0:	cmp	x9, x10
- 	b.hs	1f
--	ldp	x11, x12, [x9], #24
--	ldr	x13, [x9, #-8]
--	cmp	w12, #R_AARCH64_RELATIVE
-+	ldp	x12, x13, [x9], #24
-+	ldr	x14, [x9, #-8]
-+	cmp	w13, #R_AARCH64_RELATIVE
- 	b.ne	0b
--	add	x13, x13, x23			// relocate
--	str	x13, [x11, x23]
-+	add	x14, x14, x23			// relocate
-+	str	x14, [x12, x23]
- 	b	0b
--1:	ret
-+
-+1:
-+#ifdef CONFIG_RELR
-+	ldr	w9, =__relr_offset		// offset to reloc table
-+	ldr	w10, =__relr_size		// size of reloc table
-+	add	x9, x9, x11			// __va(.relr)
-+	add	x10, x9, x10			// __va(.relr) + sizeof(.relr)
-+
-+	sub	x15, x23, x24			// delta from previous offset
-+	cbz	x15, 7f				// nothing to do if unchanged
-+	mov	x24, x23			// save new offset
-+
-+2:	cmp	x9, x10
-+	b.hs	7f
-+	ldr	x11, [x9], #8
-+	tbnz	x11, #0, 3f			// branch to handle bitmaps
-+	add	x13, x11, x23
-+	ldr	x12, [x13]			// relocate address entry
-+	add	x12, x12, x15
-+	str	x12, [x13], #8			// adjust to start of bitmap
-+	b	2b
-+
-+3:	mov	x14, x13
-+4:	lsr	x11, x11, #1
-+	cbz	x11, 6f
-+	tbz	x11, #0, 5f			// skip bit if not set
-+	ldr	x12, [x14]			// relocate bit
-+	add	x12, x12, x15
-+	str	x12, [x14]
-+
-+5:	add	x14, x14, #8			// move to next bit's address
-+	b	4b
-+
-+6:	add	x13, x13, #(8 * 63)		// move to next bitmap's address
-+	b	2b
-+
-+7:
-+#endif
-+	ret
-+
- ENDPROC(__relocate_kernel)
- #endif
- 
-@@ -854,6 +894,18 @@ __primary_switch:
- 	adrp	x1, init_pg_dir
- 	bl	__enable_mmu
- #ifdef CONFIG_RELOCATABLE
-+#ifdef CONFIG_RELR
-+	/*
-+	 * RELR is similar to REL in that the addends are stored in place in the
-+	 * binary. This means that RELR relocations cannot be applied
-+	 * idempotently. We use x24 to keep track of the currently applied
-+	 * displacement so that we can correctly relocate if __relocate_kernel
-+	 * is called twice with non-zero displacements (i.e. if there is both a
-+	 * physical misalignment and a KASLR displacement). We start off at 0
-+	 * because no displacement has been applied yet.
-+	 */
-+	mov	x24, #0
-+#endif
- 	bl	__relocate_kernel
- #ifdef CONFIG_RANDOMIZE_BASE
- 	ldr	x8, =__primary_switched
-diff --git a/arch/arm64/kernel/vmlinux.lds.S b/arch/arm64/kernel/vmlinux.lds.S
-index 7fa0083749078..31716afa30f65 100644
---- a/arch/arm64/kernel/vmlinux.lds.S
-+++ b/arch/arm64/kernel/vmlinux.lds.S
-@@ -200,6 +200,15 @@ SECTIONS
- 	__rela_offset	= ABSOLUTE(ADDR(.rela.dyn) - KIMAGE_VADDR);
- 	__rela_size	= SIZEOF(.rela.dyn);
- 
-+#ifdef CONFIG_RELR
-+	.relr.dyn : ALIGN(8) {
-+		*(.relr.dyn)
-+	}
-+
-+	__relr_offset	= ABSOLUTE(ADDR(.relr.dyn) - KIMAGE_VADDR);
-+	__relr_size	= SIZEOF(.relr.dyn);
-+#endif
-+
- 	. = ALIGN(SEGMENT_ALIGN);
- 	__initdata_end = .;
- 	__init_end = .;
 -- 
-2.22.0.410.gd8fdbe21b5-goog
+Regards,
 
+Laurent Pinchart
 
 _______________________________________________
 linux-arm-kernel mailing list
