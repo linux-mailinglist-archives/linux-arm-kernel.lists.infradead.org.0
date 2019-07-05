@@ -2,52 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8788F60B66
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  5 Jul 2019 20:28:48 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D00CA60B89
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  5 Jul 2019 20:48:02 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=dyddvNJ00iOH3W6V7sNW8kSfl8uH16KO4TA6tSgkQew=; b=Ng0r/17MTabdK2wkLsybkLaAJ
-	HvxuWURTS28HlpeMmmV2yZOAYAW1eiF2/ZthUuHBxRUdefhkCs/hYdiOSTy9Z3ZRGNHQ4I2h1etWU
-	msZ2f0UkLw4/Bw+nIxfB8UW2+BgpHDzX3UJxL2RjkDY5+EwIjcZFk+TP9d8S+LXkdICSzlNx2AL5n
-	oDEDuctrf2W5k4aah7QJoQborHF3eQZow9CnovLiBEkjUlJTWk0BGvBqiYduDgcmKpQqzWfuABmJp
-	rT956dkEf8qV+j8e1+JxInanIzoXv4u0qwHic1SUNJXLDe3Tj3Am0drq9BDGMWsrdd7bs/FtPfhCl
-	3ldnQ7U8g==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=vFJzOr3rrUqvXW5oLP4OfgGLTHQIJNdXEjSVbOsyd8g=; b=NKd5oa12N/3KL9
+	khZKqfr1nWNME0OFa8HUrXBf2UPQc6qKuqQMpPwrYHaoP0oCxLZQTvr5N3Wug2TRN8rLn1OctbwhM
+	Qq53s8Jw0XlmD02+ZPXHoLUGb3gQZR905NF2oDtd9e3e4fRNJftgLQlDnqxWVT/CdG+oIUsU81srv
+	6QFxqDhSBLNvMDVDxAUpMOS0k515mccExHmtibmgN0Ju82EjNh8XDkT4B9iMFqgsVFCtJP4Gopwmi
+	IdwpANGXfhAnZLHx69ibWDfw9RBbF1WfACsWsZaDmip/0Y2Fczr7UrksCXHt0UvhTFRjpWLd1lbR1
+	h0/xKMOSauui08adFswg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hjSwu-0004vp-87; Fri, 05 Jul 2019 18:28:44 +0000
-Received: from sauhun.de ([88.99.104.3] helo=pokefinder.org)
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hjSwi-0004v8-3g; Fri, 05 Jul 2019 18:28:33 +0000
-Received: from localhost (p54B334DF.dip0.t-ipconnect.de [84.179.52.223])
- by pokefinder.org (Postfix) with ESMTPSA id 7B41A2C0398;
- Fri,  5 Jul 2019 20:28:27 +0200 (CEST)
-Date: Fri, 5 Jul 2019 20:28:27 +0200
-From: Wolfram Sang <wsa@the-dreams.de>
-To: YueHaibing <yuehaibing@huawei.com>
-Subject: Re: [PATCH -next] i2c: mt7621: Fix platform_no_drv_owner.cocci
- warnings
-Message-ID: <20190705182826.GA4717@kunai>
-References: <20190629024421.177153-1-yuehaibing@huawei.com>
+	id 1hjTFR-0002e5-Oj; Fri, 05 Jul 2019 18:47:53 +0000
+Received: from mout.kundenserver.de ([212.227.126.135])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hjTFE-0002dU-H5
+ for linux-arm-kernel@lists.infradead.org; Fri, 05 Jul 2019 18:47:42 +0000
+Received: from threadripper.lan ([149.172.19.189]) by mrelayeu.kundenserver.de
+ (mreue011 [212.227.15.129]) with ESMTPA (Nemesis) id
+ 1MVMqF-1i83313Aox-00SRHt; Fri, 05 Jul 2019 20:47:28 +0200
+From: Arnd Bergmann <arnd@arndb.de>
+To: stable@kernel.org
+Subject: [PATCH] [STABLE backport 4.9] arm64, vdso: Define vdso_{start,
+ end} as array
+Date: Fri,  5 Jul 2019 20:47:20 +0200
+Message-Id: <20190705184726.3221252-1-arnd@arndb.de>
+X-Mailer: git-send-email 2.20.0
 MIME-Version: 1.0
-In-Reply-To: <20190629024421.177153-1-yuehaibing@huawei.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+X-Provags-ID: V03:K1:J9Iu2hOBd57Q5rq9Xf8IC+BxgXaa2P4hpSWsU2FjYCLv76+DrHz
+ 8Om4XxSDxit042SEcgbBJojWhWuX3ms8kLLZ0IhZVAbWrjfxqn/8obfIUTFBf1tZGfwY9Tq
+ 7O71ICLIT6PSSmGFd3yFRqb/wvZHg9z8RoO6UK3B2dchqEXvDIwdj8MpDQWj0ZOA7iGOaiD
+ WYtZrPmhiPbCFUe9IOhPQ==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:7nP5IUNxmBg=:GluX+cDzMCpvsK0wDxyVon
+ hxx8ZemSFuhMU8FOCAU/vUcHFfErh+a2DLTfZEhFl09E4ech10S/X/pne8GbU4hJO4wtlZfxW
+ B4xr453d2QYywoHHI6WtnmE7H2elddWjcM+dJPmoZyAyr3/GXEL2Ta7YcPmPzccTT60Ty/5c8
+ cpXO64PMiM3/wbUVPR2rCUeJ3+lPAEPFl5H/CKaARIBV4YB1U+O4UMxhGE+F9WZJUfZnyunmo
+ jRCWnqQzSdgQlU3kySHD3z4s9t2UK4BfHlMUhbqHzRAoII2EkfxJaeCXGdmkmsGyx78CQY/zg
+ TIo5SuwFnGiz+3dIPONQZ1ACL8L3H6xXCRqopgNvt+ComAfC10aDVqsOR/0CmeowEOXNmjpzJ
+ UujOFG9NFzJpbDvP/0xYmkDWe5PdcMJbbs7+gcla2IrT5yXdy8Hxk1tJl2GUe3sqZlSfgfAh/
+ zBPzcttmBhtgOzvHPGwKUQJVNznDlhPC32eXWN9rrnLQsXe3PlcRIVsun8DpKpzeltTsXcSvE
+ 5PrBozokZucix/q5igEZRSmSVjqRt+63Nq/3BPJ7ZBb85bbl2NOF9lFxs8WCloOmtTDGeSbOc
+ cgwjb3uPJwwdEHFg5+KMGCbnYpDchMfGCjoKbtvYsF2lQAxTUO2hefGi3iSnrPV4TAGmswqmb
+ xD5Br6J0U0edvnGCYSx5cp0OF+UJ8EiVdQcw8rlsh7mb9J8TG0C2xmPLgFHKb/9XITIjRIhi3
+ Qzf7LN/AO0fw4ug5SdTqBMco7djdJGL32gblgw==
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190705_112832_303330_BDCA0EA0 
-X-CRM114-Status: UNSURE (   4.93  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20190705_114740_868494_DF3B53F3 
+X-CRM114-Status: GOOD (  14.60  )
+X-Spam-Score: -0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [88.99.104.3 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ no trust [212.227.126.135 listed in list.dnswl.org]
+ -0.1 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [212.227.126.135 listed in wl.mailspike.net]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -59,67 +76,85 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: kernel-janitors@vger.kernel.org, linux-mediatek@lists.infradead.org,
- linux-i2c@vger.kernel.org, Matthias Brugger <matthias.bgg@gmail.com>,
- Stefan Roese <sr@denx.de>, linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============0646849259813631560=="
+Cc: Mark Rutland <mark.rutland@arm.com>, Jisheng Zhang <jszhang@marvell.com>,
+ Kees Cook <keescook@chromium.org>, Arnd Bergmann <arnd@arndb.de>,
+ Sasha Levin <sashal@kernel.org>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Will Deacon <will.deacon@arm.com>, linux-kernel@vger.kernel.org,
+ Sasha Levin <alexander.levin@microsoft.com>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Vincenzo Frascino <vincenzo.frascino@arm.com>,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+From: Kees Cook <keescook@chromium.org>
 
---===============0646849259813631560==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="0OAP2g/MAC+5xKAE"
-Content-Disposition: inline
+Commit dbbb08f500d6146398b794fdc68a8e811366b451 upstream.
 
+Adjust vdso_{start|end} to be char arrays to avoid compile-time analysis
+that flags "too large" memcmp() calls with CONFIG_FORTIFY_SOURCE.
 
---0OAP2g/MAC+5xKAE
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
+Cc: Jisheng Zhang <jszhang@marvell.com>
+Acked-by: Catalin Marinas <catalin.marinas@arm.com>
+Suggested-by: Mark Rutland <mark.rutland@arm.com>
+Signed-off-by: Kees Cook <keescook@chromium.org>
+Signed-off-by: Will Deacon <will.deacon@arm.com>
+Signed-off-by: Arnd Bergmann <arnd@arndb.de>
+---
+Backported to 4.9, which is lacking the rework from
+2077be6783b5 ("arm64: Use __pa_symbol for kernel symbols")
+---
+ arch/arm64/kernel/vdso.c | 10 +++++-----
+ 1 file changed, 5 insertions(+), 5 deletions(-)
 
-On Sat, Jun 29, 2019 at 02:44:21AM +0000, YueHaibing wrote:
-> Remove .owner field if calls are used which set it automatically
-> Generated by: scripts/coccinelle/api/platform_no_drv_owner.cocci
->=20
-> Signed-off-by: YueHaibing <yuehaibing@huawei.com>
+diff --git a/arch/arm64/kernel/vdso.c b/arch/arm64/kernel/vdso.c
+index c9b9a5a322eb..c0f315ecfa7c 100644
+--- a/arch/arm64/kernel/vdso.c
++++ b/arch/arm64/kernel/vdso.c
+@@ -37,7 +37,7 @@
+ #include <asm/vdso.h>
+ #include <asm/vdso_datapage.h>
+ 
+-extern char vdso_start, vdso_end;
++extern char vdso_start[], vdso_end[];
+ static unsigned long vdso_pages __ro_after_init;
+ 
+ /*
+@@ -124,14 +124,14 @@ static int __init vdso_init(void)
+ 	int i;
+ 	struct page **vdso_pagelist;
+ 
+-	if (memcmp(&vdso_start, "\177ELF", 4)) {
++	if (memcmp(vdso_start, "\177ELF", 4)) {
+ 		pr_err("vDSO is not a valid ELF object!\n");
+ 		return -EINVAL;
+ 	}
+ 
+-	vdso_pages = (&vdso_end - &vdso_start) >> PAGE_SHIFT;
++	vdso_pages = (vdso_end - vdso_start) >> PAGE_SHIFT;
+ 	pr_info("vdso: %ld pages (%ld code @ %p, %ld data @ %p)\n",
+-		vdso_pages + 1, vdso_pages, &vdso_start, 1L, vdso_data);
++		vdso_pages + 1, vdso_pages, vdso_start, 1L, vdso_data);
+ 
+ 	/* Allocate the vDSO pagelist, plus a page for the data. */
+ 	vdso_pagelist = kcalloc(vdso_pages + 1, sizeof(struct page *),
+@@ -144,7 +144,7 @@ static int __init vdso_init(void)
+ 
+ 	/* Grab the vDSO code pages. */
+ 	for (i = 0; i < vdso_pages; i++)
+-		vdso_pagelist[i + 1] = pfn_to_page(PHYS_PFN(__pa(&vdso_start)) + i);
++		vdso_pagelist[i + 1] = pfn_to_page(PHYS_PFN(__pa(vdso_start)) + i);
+ 
+ 	vdso_spec[0].pages = &vdso_pagelist[0];
+ 	vdso_spec[1].pages = &vdso_pagelist[1];
+-- 
+2.20.0
 
-Stefan?
-
-
---0OAP2g/MAC+5xKAE
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQIzBAABCgAdFiEEOZGx6rniZ1Gk92RdFA3kzBSgKbYFAl0flr8ACgkQFA3kzBSg
-KbbmGQ/8DtsJ1Pi75zlktzq6cz/ZsmCZgkI5B/ChnJzExHCwj+tVQfFwd3j1euEa
-vlzXpx26dy5Cxf4Mxa2gq90aA0I+ZDPAKG+RdxX83EycyzLBakuapYZVisSCMEYr
-RgB+Fe/TKnhKIeRNz5sFjk99CcLjC0cFXDdjed+v5CdY+ieUuJgEbR1g+o+umwA3
-zbq5i2u4qKv0Ih7HCzF8Pq5//7JOdQkq0KFkUbjweGR0Xu/ChzvmCWg87ksdLHwe
-sff8QM48E1e5NhFPPKk/T6WTu13Td4nxsaYorxtc5HHrjf5DoWv9VxS4MiMWuElh
-tjF/1D7ZHP+dKtKM15jq6pJWLNLyvgrFoMg+BCmfxTiv+wIJSmOQe0fd5jHGfwxj
-0askgPzwL4ouq33pRiEUHmp0GzBpwr8b9EwO/5Rha5WaO22fil9RL+UhoSHJpC7P
-58DWeus73nA9UULf9ONo/V/qaVeDWeQ3iF9S0oJaBzNv4UUuEW37yui7xjH5Haaa
-01izcn5sZyZRzhVzW9FQ4HexpqM8njSBIe5EI5g76LdUH/bBvYvHsS4o4v8N88bj
-SCalJMhr5+1FahooeCvhCjlu7mK+KPFl3w0xbyYifIk5UxRUhh+cvyshpsHF0yT7
-jPr++EfMGPF2hV6XrSbtrbrb1V4meWPe9UQmoi3r2zb/5kJYJz4=
-=rson
------END PGP SIGNATURE-----
-
---0OAP2g/MAC+5xKAE--
-
-
---===============0646849259813631560==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============0646849259813631560==--
-
