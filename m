@@ -2,106 +2,93 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2F4E9609E8
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  5 Jul 2019 18:03:36 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C390D60A13
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  5 Jul 2019 18:18:03 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=wKZND19N3DCHbOhnSkviD1P4VuS18Dsv1V94ad5YLqo=; b=hGHTdn5jIHJEcx
-	keIdwZ4vmmU1vda2xl3a2f5rv8a1ZELyjt3qjTLCo+24MrFuM+wVbsct9+hgyFSLTNERVxAynczKE
-	PYyGC3VdN6rUbJXXxX+1ALWgTVmk1VAk5kw42A4Hh/3yJ43KkzLUEVdoMtsyZtZqcIjaSbeUoW6ZU
-	mBfShgCIXXb3CAftQRCaewOhR/r7weEfGjBEecMHeu1eA6TqmUZRcfZ5Dr2MwmZqoUGEpmgkycnc4
-	N+miCrrGqQTjfhR+w9w8bpNK6xNReCQ8/AI76va1mhuQnMuj733TXRmTnopONTVSRlxYiv0GQqwL7
-	E5QBslnfe7TL7jo3nLZQ==;
+	List-Owner; bh=iiaa3ih2/cBi7ypVq0VOD57xIl4spm0zuDqF1XTZ5JI=; b=lupXtgdt4NaXGl
+	Y09V1f85M6f8ZwRRm01W2p35k+kHN+hJAR+e6ryKLQjvDDZCjEMZxiDlNfraoWHNSPgbDiECuM0lb
+	GVOhdJRzeAjGm2kPcUK0n7bEQOYtCqV5/lRaA4k+7gZ0PobsST36FKhzWUHaJtiusKyWZIduM5ruY
+	GDOY3EfUY29Hah7yUM4K8tOCOFfYNQHu1A70VOW8jzoSn5mMXaIriiTOFt4mXegfSq8ZXooZK3Cwo
+	+zIl/yVVIcMSSJq7A0mOHUZrsFCh0+jIGHgX6lhRPRC8pV7J5pkRNK5JrTvA+x8SgO7Wh5jKLJTKS
+	+DyrxSSbooJkCAdwe+vg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hjQgO-0004Yb-UC; Fri, 05 Jul 2019 16:03:32 +0000
-Received: from mail-pl1-x644.google.com ([2607:f8b0:4864:20::644])
+	id 1hjQuQ-00020z-0v; Fri, 05 Jul 2019 16:18:02 +0000
+Received: from mail-pl1-x641.google.com ([2607:f8b0:4864:20::641])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hjQgF-0004WZ-SU
- for linux-arm-kernel@lists.infradead.org; Fri, 05 Jul 2019 16:03:25 +0000
-Received: by mail-pl1-x644.google.com with SMTP id a93so4813829pla.7
+ id 1hjQuH-00020L-NY
+ for linux-arm-kernel@lists.infradead.org; Fri, 05 Jul 2019 16:17:55 +0000
+Received: by mail-pl1-x641.google.com with SMTP id ay6so4803075plb.9
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 05 Jul 2019 09:03:20 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=subject:to:cc:references:from:openpgp:message-id:date:user-agent
+ Fri, 05 Jul 2019 09:17:52 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=kernel-dk.20150623.gappssmtp.com; s=20150623;
+ h=subject:to:cc:references:from:message-id:date:user-agent
  :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=Tpm/49CMge9GGSgW5OlmplqW6PGiorTO4o8V9fLZ7hE=;
- b=ZVbjMfv4tekvvXfIui1y1EotpSdh0IvEFyS/dHxd0l1Qx63+wLnBabygQzc0U1Fz/G
- ETJ0SI8RS/UaEKKH5+pk9PguG9pYwxhppYGHvKcEg7oGOa+CpxN1+IqYrmp22Xuu5l5T
- a4bcsWAW5Rf835AsHzlgv1qsWDBzKqRtKCSq9I9qOfL2dAVXpI13p0woJOdtjQkil6EA
- iske6VhLtgmOl6P2vDZHsWdbi23HmdoDu4y3h9JPIEu366d81joZFconmiLUUogsjrmN
- 7PxDecJyrECO88iNV4/rPMFqHuK3++7udWJmlC7dTTQWPF6tiVCvKVcICeucbcD+cYjy
- vn6A==
+ bh=0I5KUts4VK47WZ4vJqCHUl93jM/IRvCySns2OuZKj5U=;
+ b=i9sFNsbbwhBUwn2kzFjOMQ+J1FA1ixrVIsSqUR9F2AMXvy/w7lOnNtn1pmqqoGOZeO
+ SrI8U9d39OKR9lfF/YPcxiFPKsbro8D0ADO65DeQLBgTlFlfm6UTL1hFWKLfDTo82FUw
+ TF7g56Vg+GhvFl4PXBkWrikkcteMF9BUbPPdkD7KxJs0NlPfsEJZFyBwN7AAl0XSMRns
+ 3SCA6vdJG67WWpfjvkA5b6eE9t/anTl/9VcwavLMXODs9WUmCjKCmtZRRoHTckM12DE9
+ Lzre8a3OFvyS8KgEvyn4Pgf75nPTewY9xe+5hX72QvZNf/1BxuEx4XtGMmkfu4Pi1gXD
+ zxiQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:openpgp:message-id
- :date:user-agent:mime-version:in-reply-to:content-language
+ h=x-gm-message-state:subject:to:cc:references:from:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language
  :content-transfer-encoding;
- bh=Tpm/49CMge9GGSgW5OlmplqW6PGiorTO4o8V9fLZ7hE=;
- b=U/mQNZ87eRgssMvMA/gZWhUyKC91BhIsD+syBy/VCA0g5TNu3VviyfsJl5cbB7OU7k
- gByZovGF6geh/GmneTzaGlrQFfzHfmAx97ECUDf07Ln09q/HxoVSUCecGl5vwWb3LBa0
- sHchhQ0ZiJrliIk1uaoLXQ+ZNJo3LEa0TrA44rcVyWCdbEUj5A6UPdVw3csAbTv1h1qF
- LiNtm39WEAmkmznR5zsok4KI1c2YRW1qwYWVwjTYn74ZMlKwctH7YU05jIuvUdvQgyba
- wVg65GwJQMyZOkiCIKtu/46C09r0gtgB9TMPrJ+g4UFBPzsMTbXnjAFPEfv8fQF4lm7Z
- jRDg==
-X-Gm-Message-State: APjAAAVRBgn80+d37dmcbjGAailup970a/jkdEVU/RhgBt1YeXVakwlZ
- IrpNY1pCzwD1QPXjPzw+/cZlqRnk
-X-Google-Smtp-Source: APXvYqxGzCdLXelAJUEGE3ud5sNVpGihTJoNCAeK33dQhBfTKH/g3SgJIePXQFNOshDssjw1qneJBw==
-X-Received: by 2002:a17:902:a714:: with SMTP id
- w20mr6485494plq.127.1562342599378; 
- Fri, 05 Jul 2019 09:03:19 -0700 (PDT)
-Received: from [192.168.1.3] (ip68-101-123-102.oc.oc.cox.net. [68.101.123.102])
- by smtp.gmail.com with ESMTPSA id b36sm22013156pjc.16.2019.07.05.09.03.17
+ bh=0I5KUts4VK47WZ4vJqCHUl93jM/IRvCySns2OuZKj5U=;
+ b=sUZKsNdN0J053mlWtS0KI+LkoZukhK9f0P6Js+66Bx0JqXi/S0Wc33ykR54iVmeJ1N
+ Wh5vxYUJLk+RQwKWdtm/bsPixdBmgznNyy8NRIKV8OxYzq0Y+YUWx896IQ3xoE7ULVhH
+ LZYW7PxKNGyxjwU38vYxrppBJhxXTsiaY0kcyO9IC52BvltlNtOWkNoqQVxZoJXLuRyn
+ O4ziNRIec4212c51MDGG2ZLb/S+mIvev7f8EIXjR6/wwkHySLZ3tSsAeSrMTaW2z8SrQ
+ 0bcaWUVBYtVO8zM/u8x7CTfq1M0g/XRKh8vLdlEhh3/BXduHa+crCi7VnvyzFyVfj5Kt
+ INjg==
+X-Gm-Message-State: APjAAAUOmfOu/uopk/PTRCX0PxdasU3q8pFm8GPimX0GYf7SSTYDIsZ3
+ d4wakoTximZ08WSUgkNx07x6aQ==
+X-Google-Smtp-Source: APXvYqzxEuhVW3KDLiQAp3uXNeKs3THT2g+AY1h90RyNz5d71niFsZLZg/AxNcJenf7+oIBrLlnpPA==
+X-Received: by 2002:a17:902:8f93:: with SMTP id
+ z19mr6355312plo.97.1562343472095; 
+ Fri, 05 Jul 2019 09:17:52 -0700 (PDT)
+Received: from [192.168.1.121] (66.29.164.166.static.utbb.net. [66.29.164.166])
+ by smtp.gmail.com with ESMTPSA id h6sm10118921pfb.20.2019.07.05.09.17.49
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Fri, 05 Jul 2019 09:03:18 -0700 (PDT)
-Subject: Re: [PATCH net-next 4/6] arm64: dts: fsl: ls1028a: Add Felix switch
- port DT node
-To: Vladimir Oltean <olteanv@gmail.com>, Andrew Lunn <andrew@lunn.ch>
-References: <1561131532-14860-1-git-send-email-claudiu.manoil@nxp.com>
- <1561131532-14860-5-git-send-email-claudiu.manoil@nxp.com>
- <20190621164940.GL31306@lunn.ch>
- <VI1PR04MB4880D8F90BBCD30BF8A69C9696E00@VI1PR04MB4880.eurprd04.prod.outlook.com>
- <20190624115558.GA5690@piout.net> <20190624142625.GR31306@lunn.ch>
- <20190624152344.3bv46jjhhygo6zwl@lx-anielsen.microsemi.net>
- <20190624162431.GX31306@lunn.ch> <20190624182614.GC5690@piout.net>
- <CA+h21hqGtA5ou7a3wjSuHxa_4fXk4GZohTAxnUdfLZjV3nq5Eg@mail.gmail.com>
- <20190705044945.GA30115@lunn.ch>
- <CA+h21hqU1H1PefBWKjnsmkMsLhx0p0HJTsp-UYrSgmVnsfqULA@mail.gmail.com>
-From: Florian Fainelli <f.fainelli@gmail.com>
-Openpgp: preference=signencrypt
-Message-ID: <c60df66a-b3c9-1445-36c6-cad7c6b75550@gmail.com>
-Date: Fri, 5 Jul 2019 09:03:17 -0700
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:60.0) Gecko/20100101
+ Fri, 05 Jul 2019 09:17:50 -0700 (PDT)
+Subject: Re: [PATCH v3] drivers: ata: ahci_sunxi: Increased SATA/AHCI DMA
+ TX/RX FIFOs
+To: Uenal Mutlu <um@mutluit.com>, Maxime Ripard <maxime.ripard@bootlin.com>,
+ Chen-Yu Tsai <wens@csie.org>, linux-ide@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
+References: <20190513142410.9299-1-um@mutluit.com>
+From: Jens Axboe <axboe@kernel.dk>
+Message-ID: <95b399ff-86ef-134b-7c55-d4205cbe9eed@kernel.dk>
+Date: Fri, 5 Jul 2019 10:17:48 -0600
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
  Thunderbird/60.7.2
 MIME-Version: 1.0
-In-Reply-To: <CA+h21hqU1H1PefBWKjnsmkMsLhx0p0HJTsp-UYrSgmVnsfqULA@mail.gmail.com>
+In-Reply-To: <20190513142410.9299-1-um@mutluit.com>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190705_090323_933810_D816773C 
-X-CRM114-Status: GOOD (  27.96  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190705_091753_823798_269574B6 
+X-CRM114-Status: GOOD (  14.41  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:644 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:641 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (f.fainelli[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  0.0 T_PDS_NO_HELO_DNS      High profile HELO but no A record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -114,125 +101,48 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- Alexandre Belloni <alexandre.belloni@bootlin.com>,
- "netdev@vger.kernel.org" <netdev@vger.kernel.org>,
- Alexandru Marginean <alexandru.marginean@nxp.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "UNGLinuxDriver@microchip.com" <UNGLinuxDriver@microchip.com>,
- Allan Nielsen <Allan.Nielsen@microsemi.com>,
- Claudiu Manoil <claudiu.manoil@nxp.com>, Rob Herring <robh+dt@kernel.org>,
- "Allan W. Nielsen" <allan.nielsen@microchip.com>,
- "David S . Miller" <davem@davemloft.net>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: Mark Rutland <mark.rutland@arm.com>, Oliver Schinagl <oliver@schinagl.nl>,
+ Andre Przywara <andre.przywara@arm.com>,
+ Linus Walleij <linus.walleij@linaro.org>,
+ Pablo Greco <pgreco@centosproject.org>, FUKAUMI Naoki <naobsd@gmail.com>,
+ Hans de Goede <hdegoede@redhat.com>, linux-sunxi@googlegroups.com,
+ Jagan Teki <jagan@amarulasolutions.com>, linux-amarula@amarulasolutions.com,
+ Stefan Monnier <monnier@iro.umontreal.ca>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-
-
-On 7/5/2019 2:08 AM, Vladimir Oltean wrote:
-> Hi Andrew,
+On 5/13/19 8:24 AM, Uenal Mutlu wrote:
+> Increasing the SATA/AHCI DMA TX/RX FIFOs (P0DMACR.TXTS and .RXTS, ie.
+> TX_TRANSACTION_SIZE and RX_TRANSACTION_SIZE) from default 0x0 each
+> to 0x3 each, gives a write performance boost of 120 MiB/s to 132 MiB/s
+> from lame 36 MiB/s to 45 MiB/s previously.
+> Read performance is above 200 MiB/s.
+> [tested on SSD using dd bs=4K/8K/12K/16K/20K/24K/32K: peak-perf at 12K]
 > 
-> On Fri, 5 Jul 2019 at 07:49, Andrew Lunn <andrew@lunn.ch> wrote:
->>
->> Hi Vladimir
->>
->>> - DSA is typically used for discrete switches, switchdev is typically
->>> used for embedded ones.
->>
->> Typically DSA is for discrete switches, but not exclusively. The
->> b53/SF2 is embedded in a number of Broadcom SoCs. So this is no
->> different to Ocelot, except ARM vs MIPS. Also, i would disagree that
->> switchdev is used for embedded ones. Mellonex devices are discrete, on
->> a PCIe bus. I believe Netronome devices are also discrete PCIe
->> devices. In fact, i think ocelot is the only embedded switchdev
->> switch.
->>
->> So embedded vs discrete plays no role here at all.
->>
+> Tested on the SBCs Banana Pi R1 (aka Lamobo R1) and Banana Pi M1 which
+> are based on the Allwinner A20 32bit-SoC (ARMv7-a / arm-linux-gnueabihf).
+> These devices are RaspberryPi-like small devices.
 > 
-> drivers/staging/fsl-dpaa2/ethsw/ is another example of switchdev
-> driver for an embedded switch.
-> I would give it to you that the sample size is probably too small to
-> say 'typically', but my point was that in order to support cascaded
-> switches it makes more sense for those to be discrete.
+> This problem of slow SATA write-speed with these small devices lasts
+> for about 7 years now (beginning with the A10 SoC). Many commentators
+> throughout the years wrongly assumed the slow write speed was a
+> hardware limitation. This patch finally solves the problem, which
+> in fact was just a hard-to-find software problem due to lack of
+> SATA/AHCI documentation by the SoC-maker Allwinner Technology.
 > 
->>> - The D in DSA is for cascaded switches. Apart from the absence of
->>> such a "Ocelot SoC" driver (which maybe can be written, I don't know),
->>> I think the switching core itself has some fundamental limitations
->>> that make a DSA implementation questionable:
->>
->> There is no requirement to implement D in DSA. In fact, only Marvell
->> does. None of the other switches do. And you will also find that most
->> boards with a Marvell switch use a single device. D in DSA is totally
->> optional. In fact, DSA is built from the ground up that nearly
->> everything is optional. Take a look at mv88e6060, as an example. It
->> implements nearly nothing. It cannot even offload a bridge to the
->> switch.
->>
-> 
-> Let me see if I get your point.
-> The D is optional, and the S is optional. So what's left? :)
-> Also, there's a big difference between "the hardware can't do it" and
-> "the driver doesn't implement it". If I follow your argument, would
-> you write a DSA driver for a device that doesn't do L2 switching?
-> Along that same line, what benefit does the DSA model bring to a
-> switch that can't do cascading, compared to switchdev? I'm asking this
-> as a user, not as a developer.
+> Lists of the affected sunxi and other boards and SoCs with SATA using
+> the ahci_sunxi driver:
+>    $ grep -i -e "^&ahci" arch/arm/boot/dts/sun*dts
+>    and http://linux-sunxi.org/SATA#Devices_with_SATA_ports
+>    See also http://linux-sunxi.org/Category:Devices_with_SATA_port
 
-As an user, I don't think there are compelling arguments to either
-switchdev or DSA because the end result is the same: network devices
-that can offload "stuff". As a developer though, there is much less code
-to write with DSA than with switchdev to get your HW live.
+Applied for 5.3, thanks.
 
-> 
->>> So my conclusion is that DSA for Felix/Ocelot doesn't make a lot of
->>> sense if the whole purpose is to hide the CPU-facing netdev.
->>
->> You actually convinced me the exact opposite. You described the
->> headers which are needed to implement DSA. The switch sounds like it
->> can do what DSA requires. So DSA is the correct model.
->>
->>      Andrew
-> 
-> Somebody actually asked, with the intention of building a board, if
-> it's possible to cascade the LS1028A embedded switch (Felix) with
-> discrete SJA1105 devices - Felix being at the top of the switch tree.
-> Does the DSA model support heterogeneous setups (parsing stacked
-> headers)? I can't tell if that's how EDSA tags work. With switchdev
-> for Felix there wouldn't be any problem - it just wouldn't be part of
-> the DSA tree and its own driver would remove its tags before DSA would
-> look at the rest.
-
-DSA not does not make any particular assumptions about how the stacking
-is done actually because each slave network device is expected to
-provided standard Ethernet frames to the network stack. How you get to
-that point is entirely specific to what the hardware can do.
-
-You do what Andrew described about one of my setup (bcm_sf2 w/ tagging
-enabled and b53 w/o tagging, see more below why [1]]) and both being
-discrete switch trees, with the master netdev of the b53 being a slave
-netdev provided by bcm_sf2. If your tagging protocol supports it you can
-make them part of the same DSA switch tree and just have them have
-different switch identifiers, that is what Marvell switches do and it
-works just great. In your case, I suppose you could even use double VLAN
-tagging to get such cascading to work, that would limit you to a two
-level of cascading, unless you invent something custom.
-
-[1]: The original Broadcom tag format introduced with BCM5325/5365 did
-support cascading in the same way that Marvell did where a switch
-identifier can be added in addition to a port number within the tag. The
-newest Broadcom tag that was introduced with 5395 and newer dropped
-support for the switch identifier and the switch will "terminate" the
-first (from start of Ethernet frame) tag that it receives. This is the
-reason why we need to disable tagging on the outermost B53 device that
-we are connected to. This means those network devices are mainly
-configuration endpoints and not passing data (DSA_TAG_PROTO_NONE),
-though we could use DSA_TAG_PROTO_8021Q and resolve that now.
 -- 
-Florian
+Jens Axboe
+
 
 _______________________________________________
 linux-arm-kernel mailing list
