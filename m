@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 835086099D
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  5 Jul 2019 17:48:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C5FC66099B
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  5 Jul 2019 17:47:46 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,55 +11,55 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=2QTyhdNT2cJRciwkiWbT0RDMS/j/ISeEhBzDx4xh87I=; b=s6vTuAF7V5KPjFKA4jkN0L8gw0
-	RNSUocCkcrD+bcM7IfeJ7+5vwJermQFuDfCExmTTLYw6DmHHG7zGkKtk11uCH+uDzJWbfWXDNkXUK
-	oVRwfwvJHsEj2Kgvs2XkjSQlFLWdTS4Knz1ed1k3qOyjWWLZqavzBXheyldZToEJ4WHqJOhWaZq+7
-	Q2OLblkJZFjb/zrZX2sVBoQLFN4nEv2GY1absw+yFPKYM0QsHnOc4Bb2RXESO9rAb2jpole+XCSUf
-	K77EwMB+kpLLSBSCPDbDapCc+WeF8gjNF+HqLnI1T5G0KlZf18oqI7BZr79YUb/vSe2aFpAY41qnT
-	ElEvfwPw==;
+	bh=sV3yp+5WmfKWYM0aV8g+p8ovXU5qeFJEf1w6kKJB1jA=; b=e8Q+gfzyuXAa9h2MI0sRiE0fMR
+	QoOQHO1MYcI+VwfcN3ZQKoCWri3+1J3MJ4gDDGvl356qLU9bdZLdIePjm5KrKu1tuPX3Gjsz35Aus
+	38NYLZRIJ54NMYYqsuI67olN5qV9vJ40j5wY+PvHP7oud66+nUbM8Cz8XKZP4CO9JBB2Yk/+wrKdn
+	HzM/7CrBQyhm/JMW4NQvX98ivcfj+kcPTvKPzLa70A2ZBRbVT/qgbGqbwkbv2+mZo6iw7erpHu0IN
+	QlfjwkFk8cvsosSXT9qOUmzs3Zkab60mOd86DpZfwLK8QIH7S3W+N8mjywFLfA8phQvGgbzUj2rGs
+	eIy/StDg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hjQRL-0002Ca-ED; Fri, 05 Jul 2019 15:47:59 +0000
+	id 1hjQR7-0001xb-7e; Fri, 05 Jul 2019 15:47:45 +0000
 Received: from merlin.infradead.org ([2001:8b0:10b:1231::1])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hjQNa-0005jt-EC
- for linux-arm-kernel@bombadil.infradead.org; Fri, 05 Jul 2019 15:44:06 +0000
+ id 1hjQNc-0005lm-7b
+ for linux-arm-kernel@bombadil.infradead.org; Fri, 05 Jul 2019 15:44:08 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=infradead.org; s=merlin.20170209; h=References:In-Reply-To:Message-Id:Date:
  Subject:Cc:To:From:Sender:Reply-To:MIME-Version:Content-Type:
  Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
  Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
  List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=iWtIwe6VuQKPO/zZtnjvYA9s7qTxDs1Y+nef1iEuKkg=; b=oPb24hj9WL/bOyIYtCVtBjT9g
- fGTrrZEj88vR5Jn9hvjfPXTOEOGK3K1M/0hzHvhH/90Ut37h+l++X5DwBIHKIy6NjunpQI7zLy7/T
- 2LITjx2bbq2xhLsYZae6fAe+13FYoFkngFL49D5R63JZcSrLXvEBIQZfRb5wBdzTQRgeygcctAvdI
- 7GaEkEYfCyljLdsQEo7/xpf8nB3wu/sGps08dPiJ6nXNhL4JX+aBimW814fLufS/K6MHGGCKRmvPc
- cadtqCSMsfTCRocNjIjn3nMq/lTlntYV8Sj/CuvG735KRJGwY5oUMUoF/RjV5lwcDmYiPp6Y4o4sP
- XT4QmDp6w==;
+ bh=OqdilTd74/dymFnWJkYOEC+EeE0DJRfuniVNlOUVBjw=; b=XaXSERgOLEMq7iSQEUNw5okft
+ UV8I1Ci2dI+5A0khbYrszAljvYWPJjdVkp5YZZyybViYPIn76DwE41l+k3TwKpzGzwvq5PSahZ5NE
+ pdAnzZVp31jM7ikjxmAF2/YuS1m1AIiucNdrAsPEq9OU3/5m8+RdUrUce/PFY7lRyqE42RLqbCNAU
+ i7rXcpgGpHxM0FAAkpKNe5RgR01Noex9poan9nQXMD0C9zkqfe8QYEze2vUhByIxV+PrGuD7ugDiJ
+ WPef0IERcI47pVDpfDd86oINsZ11nzIQASkPJQWHIkdsVSfSBLzKf+VZv4SEOoSWqu+KCciXv1AFG
+ 34QrlVJ3A==;
 Received: from inva020.nxp.com ([92.121.34.13])
  by merlin.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hjL7r-0000zl-Qz
- for linux-arm-kernel@lists.infradead.org; Fri, 05 Jul 2019 10:07:32 +0000
+ id 1hjL7s-0000zs-DK
+ for linux-arm-kernel@lists.infradead.org; Fri, 05 Jul 2019 10:07:33 +0000
 Received: from inva020.nxp.com (localhost [127.0.0.1])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id E8E221A0EA4;
- Fri,  5 Jul 2019 12:07:23 +0200 (CEST)
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 8BAF21A0EAF;
+ Fri,  5 Jul 2019 12:07:24 +0200 (CEST)
 Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
  [165.114.16.14])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 6BCA81A0EAB;
- Fri,  5 Jul 2019 12:07:15 +0200 (CEST)
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 0DCC01A0779;
+ Fri,  5 Jul 2019 12:07:16 +0200 (CEST)
 Received: from titan.ap.freescale.net (TITAN.ap.freescale.net [10.192.208.233])
- by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 85B024032B;
- Fri,  5 Jul 2019 18:07:01 +0800 (SGT)
+ by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 4059E402DF;
+ Fri,  5 Jul 2019 18:07:03 +0800 (SGT)
 From: Hou Zhiqiang <Zhiqiang.Hou@nxp.com>
 To: linux-pci@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
  devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
  bhelgaas@google.com, robh+dt@kernel.org, mark.rutland@arm.com,
  l.subrahmanya@mobiveil.co.in, shawnguo@kernel.org, leoyang.li@nxp.com,
  lorenzo.pieralisi@arm.com, catalin.marinas@arm.com, will.deacon@arm.com
-Subject: [PATCHv6 11/28] PCI: mobiveil: Fix devfn check in
- mobiveil_pcie_valid_device()
-Date: Fri,  5 Jul 2019 17:56:39 +0800
-Message-Id: <20190705095656.19191-12-Zhiqiang.Hou@nxp.com>
+Subject: [PATCHv6 12/28] dt-bindings: PCI: mobiveil: Change gpio_slave and
+ apb_csr to optional
+Date: Fri,  5 Jul 2019 17:56:40 +0800
+Message-Id: <20190705095656.19191-13-Zhiqiang.Hou@nxp.com>
 X-Mailer: git-send-email 2.14.1
 In-Reply-To: <20190705095656.19191-1-Zhiqiang.Hou@nxp.com>
 References: <20190705095656.19191-1-Zhiqiang.Hou@nxp.com>
@@ -93,37 +93,36 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Current check for devfn number in mobiveil_pci_valid_device() is
-wrong in that it flags as invalid functions present in PCI device 0
-in the root bus while it is perfectly valid to access all functions
-in PCI device 0 in the root bus.
+Change the "gpio_slave" and "apb_csr" to optional, the "gpio_slave"
+is not used in current code, and "apb_csr" is not used by some platforms.
 
-Update the check in mobiveil_pci_valid_device() to fix the issue.
-
-Fixes: 9af6bcb11e12 ("PCI: mobiveil: Add Mobiveil PCIe Host Bridge IP driver")
 Signed-off-by: Hou Zhiqiang <Zhiqiang.Hou@nxp.com>
-Signed-off-by: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
+Acked-by: Subrahmanya Lingappa <l.subrahmanya@mobiveil.co.in>
+Acked-by: Rob Herring <robh@kernel.org>
 Reviewed-by: Minghuan Lian <Minghuan.Lian@nxp.com>
+Reviewed-by: Subrahmanya Lingappa <l.subrahmanya@mobiveil.co.in>
 ---
 V6:
  - Rebased the patch, no functional change.
 
- drivers/pci/controller/pcie-mobiveil.c |    2 +-
- 1 files changed, 1 insertions(+), 1 deletions(-)
+ .../devicetree/bindings/pci/mobiveil-pcie.txt      |    2 ++
+ 1 files changed, 2 insertions(+), 0 deletions(-)
 
-diff --git a/drivers/pci/controller/pcie-mobiveil.c b/drivers/pci/controller/pcie-mobiveil.c
-index 8f56130..c9bf565 100644
---- a/drivers/pci/controller/pcie-mobiveil.c
-+++ b/drivers/pci/controller/pcie-mobiveil.c
-@@ -283,7 +283,7 @@ static bool mobiveil_pcie_valid_device(struct pci_bus *bus, unsigned int devfn)
- 	 * Do not read more than one device on the bus directly
- 	 * attached to RC
- 	 */
--	if ((bus->primary == pcie->root_bus_nr) && (devfn > 0))
-+	if ((bus->primary == pcie->root_bus_nr) && (PCI_SLOT(devfn) > 0))
- 		return false;
+diff --git a/Documentation/devicetree/bindings/pci/mobiveil-pcie.txt b/Documentation/devicetree/bindings/pci/mobiveil-pcie.txt
+index a618d47..6415699 100644
+--- a/Documentation/devicetree/bindings/pci/mobiveil-pcie.txt
++++ b/Documentation/devicetree/bindings/pci/mobiveil-pcie.txt
+@@ -10,8 +10,10 @@ Required properties:
+ 	interrupt source. The value must be 1.
+ - compatible: Should contain "mbvl,gpex40-pcie"
+ - reg: Should contain PCIe registers location and length
++	Mandatory:
+ 	"config_axi_slave": PCIe controller registers
+ 	"csr_axi_slave"	  : Bridge config registers
++	Optional:
+ 	"gpio_slave"	  : GPIO registers to control slot power
+ 	"apb_csr"	  : MSI registers
  
- 	return true;
 -- 
 1.7.1
 
