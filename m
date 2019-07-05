@@ -2,66 +2,66 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1CD44608D6
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  5 Jul 2019 17:13:22 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D34F8608DD
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  5 Jul 2019 17:13:35 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3p62JEGDFnK3I8/51YBDc3n2OkFlk97p4O3qMc1srig=; b=XCGhOp6uHY0lj5
-	bgjRJ73GvBJ2L0oLO8AnPuIy1qm7LJ1A/e7C9MR8qK6epBqQauaA4oeZyQQQ51Yz1wlFk/jAORHJS
-	JX7RzPrT3qL+c+CyM//ZBZfJnVxtM5gqSHLkQaSePg3D0xtlFJZTVsYWmatJ66x8Ae8e5XWMYTnhY
-	WXC/16GQ/XqInse9A4v4mbmHGD4WPOft6EoxS1iSbxU3yqdkAnr+LcaUYP5ValGLPHLA4XNBXlZ4I
-	d4XI7yITvV08TuKQm5tKQLCLK4I3z5ssgawSftRFJnACb5ZoebF7JRfgmSbXLds8mY509dK659LB6
-	/TG/NGMWCsDUN0LCAXyA==;
+	List-Owner; bh=HEuqLbAZzNJsLI0I+8wWq9PzDGgCj87I7PlugwdvA8A=; b=Kpqi3cjSy71Wsd
+	d+2A21UJm1zcccHW8JM95kW7KG8QbVs1x8ZiTrRsS655FYa5SSujJLxnzrRzinI7SNKY0OTmkpL5z
+	iNg1CQKWUjOp7lNpHRGyngdjghXLjuHOKtNZuxYWYO3SSnG7nFSFeOL6ntUJa+lqW2DLS1ZAn9gph
+	uajJv7s2v2oqvZlllnKiIQxesh5U118tzXUEylYfiLs1W46GEr1hN9Ubq12b4p75dXCDj9DtKG6C+
+	5VC1SkkPY77I/tTpanVZOvUq0GZsG3Q3yadveixWnlU1TrqeIAKaQ1bBza/392XeY1HZVRWyAyEvd
+	LalLCEhzJ4iA/6RRD6LA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hjPtn-0007Im-Q2; Fri, 05 Jul 2019 15:13:19 +0000
+	id 1hjPu1-0007ay-Gq; Fri, 05 Jul 2019 15:13:33 +0000
 Received: from fllv0015.ext.ti.com ([198.47.19.141])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hjPtV-0007CB-Rt
- for linux-arm-kernel@lists.infradead.org; Fri, 05 Jul 2019 15:13:03 +0000
-Received: from lelv0265.itg.ti.com ([10.180.67.224])
- by fllv0015.ext.ti.com (8.15.2/8.15.2) with ESMTP id x65FD0Od112731;
- Fri, 5 Jul 2019 10:13:00 -0500
+ id 1hjPtd-0007NG-8H
+ for linux-arm-kernel@lists.infradead.org; Fri, 05 Jul 2019 15:13:10 +0000
+Received: from lelv0266.itg.ti.com ([10.180.67.225])
+ by fllv0015.ext.ti.com (8.15.2/8.15.2) with ESMTP id x65FD7gI112774;
+ Fri, 5 Jul 2019 10:13:07 -0500
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1562339580;
- bh=Z3348jTxSQPyURwc46vrJOUi9hMLdEHin3sWtU/Y7iY=;
+ s=ti-com-17Q1; t=1562339587;
+ bh=R9/ML2By2Vb9VJ9ig9TmuZ+7bbZ0eArmGw/7g8VKZyU=;
  h=From:To:CC:Subject:Date:In-Reply-To:References;
- b=s65pE+Ma3cFY7UsEqY3RtmTn/BL68Ywc3FA2H6KchPwem4eNst/9+SyYTh2SDzll/
- czIKfeTQQcCXKDWDc9ikJvWs2cofPvY3JB3G9SOnEf63Sw4zLtNdpTpNELADtaKcZh
- uPhtrtLH/ux7UQc0mM4QcBMbOqH+z94rxkkKmT3Q=
+ b=FW1rubOekYEudYR25THRGs25j+KTtaOZJUEMd3kNJqpKS9uVSLA59Fuqta4Yc7/SX
+ +VCRwHaHxNau3FSg+wmF6+RMsPTRad1mBZ6FQj1ZzT2C6v8mTYuzbvcfmUdZB0EH+h
+ dW72Kv8Z5WCJgzlf7rR+zMKoCZB+DXoB07AGb7Mk=
 Received: from DFLE113.ent.ti.com (dfle113.ent.ti.com [10.64.6.34])
- by lelv0265.itg.ti.com (8.15.2/8.15.2) with ESMTPS id x65FD0cv040178
+ by lelv0266.itg.ti.com (8.15.2/8.15.2) with ESMTPS id x65FD78D012366
  (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Fri, 5 Jul 2019 10:13:00 -0500
-Received: from DFLE107.ent.ti.com (10.64.6.28) by DFLE113.ent.ti.com
+ Fri, 5 Jul 2019 10:13:07 -0500
+Received: from DFLE110.ent.ti.com (10.64.6.31) by DFLE113.ent.ti.com
  (10.64.6.34) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5; Fri, 5 Jul
- 2019 10:13:00 -0500
-Received: from fllv0039.itg.ti.com (10.64.41.19) by DFLE107.ent.ti.com
- (10.64.6.28) with Microsoft SMTP Server (version=TLS1_2,
+ 2019 10:13:07 -0500
+Received: from lelv0326.itg.ti.com (10.180.67.84) by DFLE110.ent.ti.com
+ (10.64.6.31) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5 via
- Frontend Transport; Fri, 5 Jul 2019 10:12:59 -0500
+ Frontend Transport; Fri, 5 Jul 2019 10:13:07 -0500
 Received: from localhost (ileax41-snat.itg.ti.com [10.172.224.153])
- by fllv0039.itg.ti.com (8.15.2/8.15.2) with ESMTP id x65FCwAq094259;
- Fri, 5 Jul 2019 10:12:59 -0500
+ by lelv0326.itg.ti.com (8.15.2/8.15.2) with ESMTP id x65FD64p111909;
+ Fri, 5 Jul 2019 10:13:07 -0500
 From: Grygorii Strashko <grygorii.strashko@ti.com>
 To: Santosh Shilimkar <ssantosh@kernel.org>
-Subject: [RESEND PATCH next v2 1/6] ARM: dts: keystone-clocks: add input fixed
- clocks
-Date: Fri, 5 Jul 2019 18:12:42 +0300
-Message-ID: <20190705151247.30422-2-grygorii.strashko@ti.com>
+Subject: [RESEND PATCH next v2 2/6] ARM: dts: k2e-clocks: add input ext. fixed
+ clocks tsipclka/b
+Date: Fri, 5 Jul 2019 18:12:43 +0300
+Message-ID: <20190705151247.30422-3-grygorii.strashko@ti.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20190705151247.30422-1-grygorii.strashko@ti.com>
 References: <20190705151247.30422-1-grygorii.strashko@ti.com>
 MIME-Version: 1.0
 X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190705_081302_011652_72F4A9EE 
-X-CRM114-Status: GOOD (  10.59  )
+X-CRM114-CacheID: sfid-20190705_081309_393731_DB8F0E49 
+X-CRM114-Status: GOOD (  10.50  )
 X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.5 points)
@@ -98,23 +98,23 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add set of fixed, external input clocks definitions for TIMI0, TIMI1,
-TSREFCLK clocks. Such clocks can be used as reference clocks for some HW
-modules (as cpts, for example) by configuring corresponding clock muxes.
-For these clocks real frequencies have to be defined in board files.
+Add set of fixed, external input clocks definitions for TSIPCLKA, TSIPCLKB
+clocks. Such clocks can be used as reference clocks for some HW modules (as
+cpts, for example) by configuring corresponding clock muxes. For these
+clocks real frequencies have to be defined in board files.
 
 Signed-off-by: Grygorii Strashko <grygorii.strashko@ti.com>
 ---
- arch/arm/boot/dts/keystone-clocks.dtsi | 27 ++++++++++++++++++++++++++
- 1 file changed, 27 insertions(+)
+ arch/arm/boot/dts/keystone-k2e-clocks.dtsi | 20 ++++++++++++++++++++
+ 1 file changed, 20 insertions(+)
 
-diff --git a/arch/arm/boot/dts/keystone-clocks.dtsi b/arch/arm/boot/dts/keystone-clocks.dtsi
-index 457515b0736a..0397c3423d2d 100644
---- a/arch/arm/boot/dts/keystone-clocks.dtsi
-+++ b/arch/arm/boot/dts/keystone-clocks.dtsi
-@@ -408,4 +408,31 @@ clocks {
+diff --git a/arch/arm/boot/dts/keystone-k2e-clocks.dtsi b/arch/arm/boot/dts/keystone-k2e-clocks.dtsi
+index f7592155a740..cf30e007fea3 100644
+--- a/arch/arm/boot/dts/keystone-k2e-clocks.dtsi
++++ b/arch/arm/boot/dts/keystone-k2e-clocks.dtsi
+@@ -71,4 +71,24 @@ clocks {
  		reg-names = "control", "domain";
- 		domain-id = <0>;
+ 		domain-id = <29>;
  	};
 +
 +	/*
@@ -123,25 +123,18 @@ index 457515b0736a..0397c3423d2d 100644
 +	 * Those clocks can be used as reference clocks for some HW modules
 +	 * (as cpts, for example) by configuring corresponding clock muxes.
 +	 */
-+	timi0: timi0 {
++	tsipclka: tsipclka {
 +		#clock-cells = <0>;
 +		compatible = "fixed-clock";
 +		clock-frequency = <0>;
-+		clock-output-names = "timi0";
++		clock-output-names = "tsipclka";
 +	};
 +
-+	timi1: timi1 {
++	tsipclkb: tsipclkb {
 +		#clock-cells = <0>;
 +		compatible = "fixed-clock";
 +		clock-frequency = <0>;
-+		clock-output-names = "timi1";
-+	};
-+
-+	tsrefclk: tsrefclk {
-+		#clock-cells = <0>;
-+		compatible = "fixed-clock";
-+		clock-frequency = <0>;
-+		clock-output-names = "tsrefclk";
++		clock-output-names = "tsipclkb";
 +	};
  };
 -- 
