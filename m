@@ -2,84 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6FF7260720
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  5 Jul 2019 16:03:21 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id EA55E60996
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  5 Jul 2019 17:47:16 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:In-Reply-To:
 	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=PVdOebZEESG58M+TJTw/bebsfAvY9+vNCEbxRqnEJ4s=; b=HDuX12naXrbHWS
-	w87s/zfYOc2V9yRW2kMx7EUjHw2H2wha02AwZ97a1PY1Q7W4n8SVdXHK2LJKtCO66VVT9ujGPs8kf
-	lJZzjNNtBJ1i8oHi4HEvwHjDSSIv1VzumdbJhPgSeA1lNoMjLwf8LcBCFJq8E7aFb1jB3uo//zxRs
-	TZydED/FuoEXXDmsrMkZoSynNAy2wal6KFdyKi3iZeURathsxVi/o70fR7pVK8Vesww8i3BSu9RJa
-	+1lHgaE7mIOmjfDPAeF2bGt/rJok/qzaOdmRizKqMgzbqwQQ8J1RMQwj91YjfjHXVHSEMZXLfroxN
-	qCbbzrqSgZ/cmS82kgZw==;
+	List-Owner; bh=nMl3uKr2uAQa7L0ZLIbXVaFLHAXBKDW+c1AdGbrbyiE=; b=EzjvppdQSGuUqn
+	WuyKeYU8GD8NIzc9g8/JoPN7CDoNhPdKRJr/44EZUWY9zEKOX1YPrnyu0KWG/mq6wbXB6qx/ExsFa
+	YxUI3M17aNQmNbgLlssqBCyHf8cOMXstWqx7byOq0VuTkZPny8WdBjCrOpfsqj4O6/TNxAVCvIfl3
+	y1Wsk4hxpClHpDhifWgTXG91vTlbBKbiCYXxHrbuqybG6AFW1P5vRwH4GtjJnQbx8KTkF2RwR1K30
+	zr0iNWHKXufBsiOKVTzHq3MhJMKrPEvVKrwyIeQdS+qVDYQMPT2cZqLQeSUgYr/8E7jIeCK7QUEtF
+	5O62zY/TIEdGvga81Www==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hjOo2-00073n-Nc; Fri, 05 Jul 2019 14:03:18 +0000
-Received: from casper.infradead.org ([2001:8b0:10b:1236::1])
+	id 1hjQQd-0001Qj-A7; Fri, 05 Jul 2019 15:47:15 +0000
+Received: from merlin.infradead.org ([2001:8b0:10b:1231::1])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hjOfp-000544-QV; Fri, 05 Jul 2019 13:54:49 +0000
+ id 1hjQNW-0005fs-ER
+ for linux-arm-kernel@bombadil.infradead.org; Fri, 05 Jul 2019 15:44:02 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=infradead.org; s=casper.20170209; h=MIME-Version:Content-Transfer-Encoding:
- Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID:Sender
+ d=infradead.org; s=merlin.20170209; h=Content-Transfer-Encoding:Mime-Version:
+ Content-Type:References:In-Reply-To:Date:Cc:To:From:Subject:Message-ID:Sender
  :Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
  Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:
  List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=hyudu+hNNSmtU4eC9sn2X8JbiWNZ+/c2Se38zvMvqEE=; b=CrZsFedOrrfOfur4bWmBSfR2Wg
- iNS/Nc8ubW13Igr2B2PAeUaXF9yzg7mG2aKOjYyCURQaRteV3O5SBTDPJOAvuzi5cmqcVBQJ33BPm
- veKVir37xEt3e4BvhDpjq26vkATWCgPhqDlr5QN8spBPYwGMvJDWSbUnfY1e1Rzw3/1b3t1K+z5C/
- GJulrPD2XPfJw716h0f5TffUsuYB/YK5XvXCKTDm5VGqgUzyB76U4fCNxQomPCBouQCbbIf16AKTc
- YqR5MYzZjq+pJaJNEkG0BpuBxVA1qbcgMQN8fpnc1By39RjvGdh/VAOmAWNhA9bzQ7n0SZrvcYKfD
- pDxwkseQ==;
-Received: from mailgw02.mediatek.com ([216.200.240.185])
- by casper.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hjJ9o-0004d0-P7; Fri, 05 Jul 2019 08:01:28 +0000
-X-UUID: 7c1c13ac422641fa922e06f1d471fa6b-20190704
-X-UUID: 7c1c13ac422641fa922e06f1d471fa6b-20190704
-Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw02.mediatek.com
- (envelope-from <jungo.lin@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 969946169; Thu, 04 Jul 2019 23:59:43 -0800
-Received: from MTKMBS07N2.mediatek.inc (172.21.101.141) by
- MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Fri, 5 Jul 2019 00:59:41 -0700
-Received: from mtkcas08.mediatek.inc (172.21.101.126) by
- mtkmbs07n2.mediatek.inc (172.21.101.141) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Fri, 5 Jul 2019 15:59:39 +0800
-Received: from [172.21.84.99] (172.21.84.99) by mtkcas08.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Fri, 5 Jul 2019 15:59:39 +0800
-Message-ID: <1562313579.1212.73.camel@mtksdccf07>
-Subject: Re: [RFC,v3 9/9] media: platform: Add Mediatek ISP P1 shared memory
- device
-From: Jungo Lin <jungo.lin@mediatek.com>
-To: Tomasz Figa <tfiga@chromium.org>
-Date: Fri, 5 Jul 2019 15:59:39 +0800
-In-Reply-To: <CAAFQd5BaTQ-Q7gsE0X+d4_81OZq9WHaCYkmALt7_4A1JFo=_8g@mail.gmail.com>
-References: <jungo.lin@mediatek.com>
- <20190611035344.29814-1-jungo.lin@mediatek.com>
- <20190611035344.29814-10-jungo.lin@mediatek.com>
- <20190701072532.GB137710@chromium.org>
- <1562297618.1212.46.camel@mtksdccf07>
- <CAAFQd5BaTQ-Q7gsE0X+d4_81OZq9WHaCYkmALt7_4A1JFo=_8g@mail.gmail.com>
-X-Mailer: Evolution 3.2.3-0ubuntu6 
-MIME-Version: 1.0
-X-MTK: N
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190705_090125_103672_56AFF3A6 
-X-CRM114-Status: GOOD (  22.16  )
+ bh=BY8TPzgiQE6FdNT5fQQkpJfEkQ90WKwXgFewQnPm0Ic=; b=bp3u6mHjsD/Pw/FFUH91lKo9en
+ /bHHQxAr9+9tGgsy7zYTb/nGy/6M3NIuWxomr5M8Jx/n8eXncARjIH/rS1+lDOoMBwE481uEazUS9
+ TmC7+VG/GMjboJ7ujvPE46kNk/ZymWWMNUSWbQeRIpkj8nYnfU+uoqTsU08oW7T7eZWx/T7Pf5SL/
+ Nc0K3pUNfyZqGBpYKteGp6X+kRRC6ACky0N6mTFGdtIe0y3gizlo2i1yu19/5NvxPkyOr2NgCMLSk
+ 73frcg0RBe0wj7qb6iMVd7OjzlxxFHm+3AhthCvItNXq6NeOhwlIoyHptlKJC2qpT5khvysFcnMF7
+ CrDDl/OA==;
+Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
+ by merlin.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hjJFN-0000OM-6W
+ for linux-arm-kernel@lists.infradead.org; Fri, 05 Jul 2019 08:07:10 +0000
+Received: from lupine.hi.pengutronix.de
+ ([2001:67c:670:100:3ad5:47ff:feaf:1a17] helo=lupine)
+ by metis.ext.pengutronix.de with esmtp (Exim 4.92)
+ (envelope-from <p.zabel@pengutronix.de>)
+ id 1hjJAu-0001cv-SN; Fri, 05 Jul 2019 10:02:32 +0200
+Message-ID: <1562313748.4291.3.camel@pengutronix.de>
+Subject: Re: [PATCH V3 1/2] dt-bindings: reset: imx7: Add support for i.MX8MM
+From: Philipp Zabel <p.zabel@pengutronix.de>
+To: Anson Huang <anson.huang@nxp.com>, "robh+dt@kernel.org"
+ <robh+dt@kernel.org>,  "mark.rutland@arm.com" <mark.rutland@arm.com>,
+ "shawnguo@kernel.org" <shawnguo@kernel.org>,  "s.hauer@pengutronix.de"
+ <s.hauer@pengutronix.de>, "kernel@pengutronix.de" <kernel@pengutronix.de>, 
+ "festevam@gmail.com" <festevam@gmail.com>, Leonard Crestez
+ <leonard.crestez@nxp.com>, Jacky Bai <ping.bai@nxp.com>, Daniel Baluta
+ <daniel.baluta@nxp.com>,  "devicetree@vger.kernel.org"
+ <devicetree@vger.kernel.org>, "linux-arm-kernel@lists.infradead.org"
+ <linux-arm-kernel@lists.infradead.org>, "linux-kernel@vger.kernel.org"
+ <linux-kernel@vger.kernel.org>
+Date: Fri, 05 Jul 2019 10:02:28 +0200
+In-Reply-To: <DB3PR0402MB39167B9A3CFAE6D8798B3CAEF5F50@DB3PR0402MB3916.eurprd04.prod.outlook.com>
+References: <20190704094416.4757-1-Anson.Huang@nxp.com>
+ <1562235363.6641.10.camel@pengutronix.de>
+ <DB3PR0402MB39167B9A3CFAE6D8798B3CAEF5F50@DB3PR0402MB3916.eurprd04.prod.outlook.com>
+X-Mailer: Evolution 3.22.6-1+deb9u2 
+Mime-Version: 1.0
+X-SA-Exim-Connect-IP: 2001:67c:670:100:3ad5:47ff:feaf:1a17
+X-SA-Exim-Mail-From: p.zabel@pengutronix.de
+X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
+ SAEximRunCond expanded to false
+X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
+X-Spam-Note: CRM114 invocation failed
 X-Spam-Score: 0.0 (/)
-X-Spam-Report: SpamAssassin version 3.4.2 on casper.infradead.org summary:
- Content analysis details:   (0.0 points, 5.0 required)
+X-Spam-Report: SpamAssassin version 3.4.2 on merlin.infradead.org summary:
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -91,119 +88,60 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org,
- Sean Cheng =?UTF-8?Q?=28=E9=84=AD=E6=98=87=E5=BC=98=29?=
- <sean.cheng@mediatek.com>, Mauro Carvalho Chehab <mchehab@kernel.org>,
- Rynn Wu =?UTF-8?Q?=28=E5=90=B3=E8=82=B2=E6=81=A9=29?= <rynn.wu@mediatek.com>,
- srv_heupstream <srv_heupstream@mediatek.com>, Rob Herring <robh@kernel.org>,
- Ryan Yu =?UTF-8?Q?=28=E4=BD=99=E5=AD=9F=E4=BF=AE=29?= <ryan.yu@mediatek.com>,
- Frankie Chiu =?UTF-8?Q?=28=E9=82=B1=E6=96=87=E5=87=B1=29?=
- <frankie.chiu@mediatek.com>, Hans Verkuil <hverkuil@xs4all.nl>,
- Matthias Brugger <matthias.bgg@gmail.com>, Sj Huang <sj.huang@mediatek.com>,
- "moderated
- list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>, Laurent
- Pinchart <laurent.pinchart@ideasonboard.com>, ddavenport@chromium.org,
- Frederic Chen =?UTF-8?Q?=28=E9=99=B3=E4=BF=8A=E5=85=83=29?=
- <frederic.chen@mediatek.com>,
- "list@263.net:IOMMU DRIVERS <iommu@lists.linux-foundation.org>, Joerg
- Roedel <joro@8bytes.org>," <linux-arm-kernel@lists.infradead.org>, Linux
- Media Mailing List <linux-media@vger.kernel.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: dl-linux-imx <linux-imx@nxp.com>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Tomasz:
-
-On Fri, 2019-07-05 at 13:22 +0900, Tomasz Figa wrote:
-> Hi Jungo,
-> 
-> On Fri, Jul 5, 2019 at 12:33 PM Jungo Lin <jungo.lin@mediatek.com> wrote:
-> >
-> > Hi Tomasz,
-
-[snip]
-
-> > After applying your suggestion in SCP device driver, we could remove
-> > mtk_cam-smem.h/c. Currently, we use dma_alloc_coherent with SCP device
-> > to get SCP address. We could touch the buffer with this SCP address in
-> > SCP processor.
-> >
-> > After that, we use dma_map_page_attrs with P1 device which supports
-> > IOMMU domain to get IOVA address. For this address, we will assign
-> > it to our ISP HW device to proceed.
-> >
-> > Below is the snippet for ISP P1 compose buffer initialization.
-> >
-> >         ptr = dma_alloc_coherent(p1_dev->cam_dev.smem_dev,
-> >                                  MAX_COMPOSER_SIZE, &addr, GFP_KERNEL);
-> >         if (!ptr) {
-> >                 dev_err(dev, "failed to allocate compose memory\n");
-> >                 return -ENOMEM;
-> >         }
-> >         isp_ctx->scp_mem_pa = addr;
-> 
-> addr contains a DMA address, not a physical address. Could we call it
-> scp_mem_dma instead?
-> 
-> >         dev_dbg(dev, "scp addr:%pad\n", &addr);
-> >
-> >         /* get iova address */
-> >         addr = dma_map_page_attrs(dev, phys_to_page(addr), 0,
-> 
-> addr is a DMA address, so phys_to_page() can't be called on it. The
-> simplest thing here would be to use dma_map_single() with ptr as the
-> CPU address expected.
-> 
-
-We have changed to use ma_map_single() with ptr, but encounter IOMMU
-error. From the debug log of iommu_dma_map_page[3], we got
-0x0000000054800000 instead of expected address: 0x0000000050800000[2].
-There is a address offset(0x4000000). If we change to use
-dma_map_page_attrs with phys_to_page(addr), the address is correct as we
-expected[2]. Do you have any suggestion on this issue? Do we miss
-something?
-
-[1]
-[    1.344786] __dma_alloc_from_coherent: 0x800000 PAGE_SHIFT:12
-device_base:0x0000000050000000 dma:0x0000000050800000
-virt_base:ffffff8014000000 va:ffffff8014800000
-
-[    1.346890] mtk-cam 1a000000.camisp: scp addr:0x0000000050800000
-va:ffffff8014800000
-
-[    1.347864] iommu_dma_map_page:0x0000000054800000 offset:0
-[    1.348562] mtk-cam 1a000000.camisp: iova addr:0x00000000fde00000
-
-[2]
-[    1.346738] __dma_alloc_from_coherent: 0x800000 PAGE_SHIFT:12
-device_base:0x0000000050000000 dma:0x0000000050800000
-virt_base:ffffff8014000000 va:ffffff8014800000
-[    1.348841] mtk-cam 1a000000.camisp: scp addr:0x0000000050800000
-va:ffffff8014800000
-[    1.349816] iommu_dma_map_page:0x0000000050800000 offset:0
-[    1.350514] mtk-cam 1a000000.camisp: iova addr:0x00000000fde00000
-
-
-[3]
-dma_addr_t iommu_dma_map_page(struct device *dev, struct page *page,
-		unsigned long offset, size_t size, int prot)
-{
-	phys_addr_t phys = page_to_phys(page);
-	pr_err("iommu_dma_map_page:%pa offset:%lu\n", &phys, offset);
-
-	return __iommu_dma_map(dev, page_to_phys(page) + offset, size, prot,
-			iommu_get_dma_domain(dev));
-}
-
-[snip]
-
-Best regards,
-
-Jungo
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+SGkgQW5zb24sCgpPbiBGcmksIDIwMTktMDctMDUgYXQgMDA6MjYgKzAwMDAsIEFuc29uIEh1YW5n
+IHdyb3RlOgo+IEhpLCBQaGlsaXBwCj4gCj4gPiBPbiBUaHUsIDIwMTktMDctMDQgYXQgMTc6NDQg
+KzA4MDAsIEFuc29uLkh1YW5nQG54cC5jb20gd3JvdGU6Cj4gPiA+IEZyb206IEFuc29uIEh1YW5n
+IDxBbnNvbi5IdWFuZ0BueHAuY29tPgo+ID4gPiAKPiA+ID4gaS5NWDhNTSBjYW4gcmV1c2UgaS5N
+WDhNUSdzIHJlc2V0IGRyaXZlciwgdXBkYXRlIHRoZSBjb21wYXRpYmxlCj4gPiA+IHByb3BlcnR5
+IGFuZCByZWxhdGVkIGluZm8gdG8gc3VwcG9ydCBpLk1YOE1NLgo+ID4gPiAKPiA+ID4gU2lnbmVk
+LW9mZi1ieTogQW5zb24gSHVhbmcgPEFuc29uLkh1YW5nQG54cC5jb20+Cj4gPiA+IC0tLQo+ID4g
+PiBDaGFuZ2VzIHNpbmNlIFYyOgo+ID4gPiAJLSBBZGQgc2VwYXJhdGUgbGluZSBmb3IgaS5NWDhN
+TSBpbiBjYXNlIGFueXRoaW5nIGRpZmZlcmVudCBsYXRlciBmb3IKPiA+IAo+ID4gaS5NWDhNTS4K
+PiA+ID4gLS0tCj4gPiA+ICBEb2N1bWVudGF0aW9uL2RldmljZXRyZWUvYmluZGluZ3MvcmVzZXQv
+ZnNsLGlteDctc3JjLnR4dCB8IDYgKysrKy0tCj4gPiA+ICAxIGZpbGUgY2hhbmdlZCwgNCBpbnNl
+cnRpb25zKCspLCAyIGRlbGV0aW9ucygtKQo+ID4gPiAKPiA+ID4gZGlmZiAtLWdpdCBhL0RvY3Vt
+ZW50YXRpb24vZGV2aWNldHJlZS9iaW5kaW5ncy9yZXNldC9mc2wsaW14Ny1zcmMudHh0Cj4gPiA+
+IGIvRG9jdW1lbnRhdGlvbi9kZXZpY2V0cmVlL2JpbmRpbmdzL3Jlc2V0L2ZzbCxpbXg3LXNyYy50
+eHQKPiA+ID4gaW5kZXggMTNlMDk1MS4uYzI0ODllNCAxMDA2NDQKPiA+ID4gLS0tIGEvRG9jdW1l
+bnRhdGlvbi9kZXZpY2V0cmVlL2JpbmRpbmdzL3Jlc2V0L2ZzbCxpbXg3LXNyYy50eHQKPiA+ID4g
+KysrIGIvRG9jdW1lbnRhdGlvbi9kZXZpY2V0cmVlL2JpbmRpbmdzL3Jlc2V0L2ZzbCxpbXg3LXNy
+Yy50eHQKPiA+ID4gQEAgLTgsNiArOCw3IEBAIFJlcXVpcmVkIHByb3BlcnRpZXM6Cj4gPiA+ICAt
+IGNvbXBhdGlibGU6Cj4gPiA+ICAJLSBGb3IgaS5NWDcgU29DcyBzaG91bGQgYmUgImZzbCxpbXg3
+ZC1zcmMiLCAic3lzY29uIgo+ID4gPiAgCS0gRm9yIGkuTVg4TVEgU29DcyBzaG91bGQgYmUgImZz
+bCxpbXg4bXEtc3JjIiwgInN5c2NvbiIKPiA+ID4gKwktIEZvciBpLk1YOE1NIFNvQ3Mgc2hvdWxk
+IGJlICJmc2wsaW14OG1tLXNyYyIsICJmc2wsaW14OG1xLXNyYyIsCj4gPiAKPiA+ICJzeXNjb24i
+Cj4gPiA+ICAtIHJlZzogc2hvdWxkIGJlIHJlZ2lzdGVyIGJhc2UgYW5kIGxlbmd0aCBhcyBkb2N1
+bWVudGVkIGluIHRoZQo+ID4gPiAgICBkYXRhc2hlZXQKPiA+ID4gIC0gaW50ZXJydXB0czogU2hv
+dWxkIGNvbnRhaW4gU1JDIGludGVycnVwdCBAQCAtNDYsNSArNDcsNiBAQCBFeGFtcGxlOgo+ID4g
+PiAKPiA+ID4gCj4gPiA+ICBGb3IgbGlzdCBvZiBhbGwgdmFsaWQgcmVzZXQgaW5kaWNlcyBzZWUK
+PiA+ID4gLTxkdC1iaW5kaW5ncy9yZXNldC9pbXg3LXJlc2V0Lmg+IGZvciBpLk1YNyBhbmQKPiA+
+ID4gLTxkdC1iaW5kaW5ncy9yZXNldC9pbXg4bXEtcmVzZXQuaD4gZm9yIGkuTVg4TVEKPiA+ID4g
+KzxkdC1iaW5kaW5ncy9yZXNldC9pbXg3LXJlc2V0Lmg+IGZvciBpLk1YNywKPiA+ID4gKzxkdC1i
+aW5kaW5ncy9yZXNldC9pbXg4bXEtcmVzZXQuaD4gZm9yIGkuTVg4TVEgYW5kCj4gPiA+ICs8ZHQt
+YmluZGluZ3MvcmVzZXQvaW14OG1xLXJlc2V0Lmg+IGZvciBpLk1YOE1NCj4gPiAKPiA+IFRoZSBs
+YXN0IGxpbmUgaXMgbWlzbGVhZGluZywgYXMgdGhhdCBmaWxlIGNvbnRhaW5zIHJlc2V0IGluZGlj
+ZXMgdGhhdCBhcmUgaW52YWxpZAo+ID4gZm9yIGkuTVg4TU0uCj4gCj4gV2hhdCBpcyB5b3VyIHN1
+Z2dlc3Rpb24gYWJvdXQgdGhpcyBsaW5lPwoKSSB3b3VsZCBwcmVmZXIgdG8gYWRkIGFuIGlteDht
+bS1yZXNldC5oIHdpdGggb25seSB0aGUgZXhpc3RpbmcgcmVzZXQKYml0cywgdXNpbmcgdGhlIElN
+WDhNTV9SRVNFVF8gcHJlZml4LsKgVGhhdCB3b3VsZCBtYWtlIGl0IGVhc3kgdG8gc3BvdAplcnJv
+cnMgaW4gdGhlIGR0c2kgKGFueXRoaW5nIHN0YXJ0aW5nIHdpdGggSU1YOE1RXyBpcyBwb3RlbnRp
+YWxseQp3cm9uZykuCgo+IEp1c3QgTk9UIGNoYW5nZSBpdD8KClRoZSBjaGFuZ2UgaXMgZ29vZCBp
+biBwcmluY2lwbGUuIEl0IGp1c3Qgc2hvdWxkIHBvaW50IHRvIGFuIGlteDhtbS0KcmVzZXQuaCB3
+aXRoIG9ubHkgdGhlIGV4aXN0aW5nIHJlc2V0cyBvbiBpLk1YOE1NLCBvciBpbXg4bXEtcmVzZXQu
+aApzaG91bGQgYmUgbW9kaWZpZWQgdG8gYWN0dWFsbHkgbWFrZSBjbGVhciB3aGljaCByZXNldHMg
+YXJlIHZhbGlkIG9uCmkuTVg4TU0uCgo+IE9yIGFkZGluZyBhIG5ldyBmaWxlwqBpbXg4bW0tcmVz
+ZXQuaCBidXQgc3RpbGwgdXNlIHRoZSBJTVg4TVFfUkVTRVRfIGFzCj4gcHJlZml4ID8KCkkgZG9u
+J3QgdGhpbmsgeW91IHNob3VsZCByZWRlZmluZSB0aGUgc2FtZSBtYWNyb3MgaW4gaW14OG1tLXJl
+c2V0LmguIEluCnRoaXMgY2FzZSB1c2luZyBJTVg4TU1fUkVTRVRfIHdvdWxkIGJlIGJldHRlci4K
+Cj4gT3Iga2VlcCB3aGF0IEkgY2hhbmdlZCwgYnV0IGFkZGluZyBzb21lIGNvbW1lbnRzIGluIHRo
+b3NlIG1hY3JvcyB0aGF0Cj4gaS5NWDhNTSBkb2VzIE5PVCBzdXBwb3J0PwoKVGhhdCB3b3VsZCBi
+ZSBhY2NlcHRhYmxlIGFzIHdlbGwuCgpyZWdhcmRzClBoaWxpcHAKCl9fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBs
+aXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5m
+cmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
