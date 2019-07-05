@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E725F60808
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  5 Jul 2019 16:39:56 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id F0F716080A
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  5 Jul 2019 16:40:20 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,62 +11,62 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=zXRGv12VvCvEWeG0jzw+qimHsFrWDY+UVwqeRupDc0g=; b=tm8PNaC1U1W58hdJqh1T1CHJfX
-	sxyYYQnWkFCT5c0rSdSMYCOuMVqHyevTQpJe2F0eYit823yulg0FyvHCpRj58ab/ThMyplcNlVHVW
-	Ht9+6lu/pQIBhvTC2HDaZlShwN4BlZowpII7Eh7urQuscYVAEvg5PWDN2Mdq/flM5PkOx9eU1BUGJ
-	J7If/BUEyStyWUxzfmh7q+sjvfznI4cFMvZu25pmvHJDUjNcAaQL1NP8k0OYW+h8uUhzsoG2AtisI
-	hPnB/jRjblmbhADDxw/AdPUdG1HUg2bOlEsyB13EGemIIcoJts2j4k3zf8wv1RPpdt4Iz2RYhunB9
-	xWpkO/DQ==;
+	bh=Q/xlO29HySFWo0Py58PTmo3RfHk4pAQQ5amjd2frAJ4=; b=B4BkdYBDxiLJkeS1dbStFcW19o
+	WHmAOcuh32hN9ZTCu4VhqpTV+IO2fhA3szS4PTE8W0n0cPci9KBKbpbyg2A3MNsu5W639/RJVHGkD
+	UEBGAkNrsPwYvtNqYu3B3sy0/jw1zVxJbr+Nyfgm9pUGoMILqdtAWS7rd/3JhQSHy2+6W0skoL26i
+	K04ySfQNoZGOX3VZi7abo3SBlC0IiOSsCBKrIdn9P/iTN+b0NBFT3onfV+tk3uMZ5lVe48HCJEuKq
+	61GInaMGZSihGZNs3KzIqfKMoooSGKNnvxpKZJgBFpf4BhP9DN7bH2R6xDVWLc1AW25/L7FiVv8pj
+	QMOB7CxQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hjPNS-0001ZL-Dw; Fri, 05 Jul 2019 14:39:54 +0000
+	id 1hjPNq-0001qg-Ko; Fri, 05 Jul 2019 14:40:18 +0000
 Received: from casper.infradead.org ([2001:8b0:10b:1236::1])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hjPKE-0006KX-N1
- for linux-arm-kernel@bombadil.infradead.org; Fri, 05 Jul 2019 14:36:34 +0000
+ id 1hjPKG-0006LN-GI
+ for linux-arm-kernel@bombadil.infradead.org; Fri, 05 Jul 2019 14:36:36 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=infradead.org; s=casper.20170209; h=References:In-Reply-To:Message-Id:Date:
  Subject:Cc:To:From:Sender:Reply-To:MIME-Version:Content-Type:
  Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
  Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
  List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=c88fNFs+5FBWoyhqVR2SEPd6ztlLhbQlLL8aqnjmS1k=; b=agOmX3TixFwxeuMqBsy4Z6Im4
- qhxBlG1ziR+tWtQkEg0p9ECdTii6mWRznBnNU0X5vchVq87BSfEPd/d6FVuQpFDB86EoirRbiWaKR
- HeLkJ4XTnlipB+/VjE9yJbW8lE4aLiQ7qk7CoC7+mmmw5Rw/76uxoQ/WBopyiR/TQ6ZEmzJUSFZ1R
- Z3MRXQI5LMD9LfcDZ9NIHlXEW+i0ThUuz55ot1WCL3vH13nzjSp6WLl1xcX27PCN2oFa+2LQRLfmo
- HEMD2OXd4pcU1rZlX7GFBo2i2D7QoRH+e0Ca+PkrrEubO5LYZO8MulZJ3ltpmcVntTCVhgp6MOEc3
- sIDVssKVg==;
+ bh=AZTkwAKvu+YSvTEfYjt4PrBulSdtSrSRI8uddEwOfgE=; b=So3aAXP2Qi2limAUfDWNXX9Tr
+ zParnHQ7pRSKh/I7EqXzMmi80l9D6mffYoe/dPoZUuV2jC/PXQIwjSmGTlEkcEnCY6oVY98tx9PHW
+ 2lgMUCvu0wX3NwVnfzJ84XuVnHjDh9f5+3I5VUjCvNaoD4mnmvUP5IL4R5I115vE4pxf/PRMr+9nm
+ P+WTC/fgF3HNVlE2hjuD11e/kFgULCgqkiSgdRYr2MCqyUnsACmlm6Lc8IA4bMXk457HkVYwnG6Y3
+ UL86uVknRZRCyLUyG8mVIF7OKzSv78VJgcEqJ+N20bzEjCgjgKUliVoJNRWII+Df7MGlNNnyxQUa7
+ 8qV7U9XMg==;
 Received: from inva020.nxp.com ([92.121.34.13])
  by casper.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hjL7x-00022y-SV
+ id 1hjL7x-00022z-Su
  for linux-arm-kernel@lists.infradead.org; Fri, 05 Jul 2019 10:07:40 +0000
 Received: from inva020.nxp.com (localhost [127.0.0.1])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 208CB1A0EB7;
- Fri,  5 Jul 2019 12:07:27 +0200 (CEST)
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 72D771A077B;
+ Fri,  5 Jul 2019 12:07:28 +0200 (CEST)
 Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
  [165.114.16.14])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 939521A0EA8;
- Fri,  5 Jul 2019 12:07:18 +0200 (CEST)
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id E9F5B1A0EB9;
+ Fri,  5 Jul 2019 12:07:19 +0200 (CEST)
 Received: from titan.ap.freescale.net (TITAN.ap.freescale.net [10.192.208.233])
- by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 2064A4032F;
- Fri,  5 Jul 2019 18:07:08 +0800 (SGT)
+ by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id B0AA7402EB;
+ Fri,  5 Jul 2019 18:07:09 +0800 (SGT)
 From: Hou Zhiqiang <Zhiqiang.Hou@nxp.com>
 To: linux-pci@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
  devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
  bhelgaas@google.com, robh+dt@kernel.org, mark.rutland@arm.com,
  l.subrahmanya@mobiveil.co.in, shawnguo@kernel.org, leoyang.li@nxp.com,
  lorenzo.pieralisi@arm.com, catalin.marinas@arm.com, will.deacon@arm.com
-Subject: [PATCHv6 15/28] PCI: mobiveil: Revise the MEM/IO outbound window
- initialization
-Date: Fri,  5 Jul 2019 17:56:43 +0800
-Message-Id: <20190705095656.19191-16-Zhiqiang.Hou@nxp.com>
+Subject: [PATCHv6 16/28] PCI: mobiveil: Fix the returned error number
+Date: Fri,  5 Jul 2019 17:56:44 +0800
+Message-Id: <20190705095656.19191-17-Zhiqiang.Hou@nxp.com>
 X-Mailer: git-send-email 2.14.1
 In-Reply-To: <20190705095656.19191-1-Zhiqiang.Hou@nxp.com>
 References: <20190705095656.19191-1-Zhiqiang.Hou@nxp.com>
 X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190705_110737_969706_2854A996 
-X-CRM114-Status: GOOD (  10.84  )
+X-CRM114-CacheID: sfid-20190705_110738_001563_35E17069 
+X-CRM114-Status: UNSURE (   9.96  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on casper.infradead.org summary:
  Content analysis details:   (-2.3 points, 5.0 required)
@@ -95,60 +95,49 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Move the resource type check into a if..else block, and only
-set up outbound window for MEM and IO resource. No functional
-change.
+This patch modified the returned error number by convention.
 
 Signed-off-by: Hou Zhiqiang <Zhiqiang.Hou@nxp.com>
 Reviewed-by: Minghuan Lian <Minghuan.Lian@nxp.com>
+Reviewed-by: Subrahmanya Lingappa <l.subrahmanya@mobiveil.co.in>
 ---
 V6:
- - Splited from #2 of v5 patches, no functional change.
+ - Splited from #3 of v5 patches, no functional change.
 
- drivers/pci/controller/pcie-mobiveil.c |   20 ++++++++++----------
- 1 files changed, 10 insertions(+), 10 deletions(-)
+ drivers/pci/controller/pcie-mobiveil.c |    6 +++---
+ 1 files changed, 3 insertions(+), 3 deletions(-)
 
 diff --git a/drivers/pci/controller/pcie-mobiveil.c b/drivers/pci/controller/pcie-mobiveil.c
-index 906299b..965f89a 100644
+index 965f89a..51cbe53 100644
 --- a/drivers/pci/controller/pcie-mobiveil.c
 +++ b/drivers/pci/controller/pcie-mobiveil.c
-@@ -565,7 +565,7 @@ static void mobiveil_pcie_enable_msi(struct mobiveil_pcie *pcie)
+@@ -822,7 +822,7 @@ static int mobiveil_pcie_init_irq_domain(struct mobiveil_pcie *pcie)
  
- static int mobiveil_host_init(struct mobiveil_pcie *pcie)
- {
--	u32 value, pab_ctrl, type = 0;
-+	u32 value, pab_ctrl, type;
- 	struct resource_entry *win;
- 
- 	/* setup bus numbers */
-@@ -617,18 +617,18 @@ static int mobiveil_host_init(struct mobiveil_pcie *pcie)
- 
- 	/* Get the I/O and memory ranges from DT */
- 	resource_list_for_each_entry(win, &pcie->resources) {
--		type = 0;
- 		if (resource_type(win->res) == IORESOURCE_MEM)
- 			type = MEM_WINDOW_TYPE;
--		if (resource_type(win->res) == IORESOURCE_IO)
-+		else if (resource_type(win->res) == IORESOURCE_IO)
- 			type = IO_WINDOW_TYPE;
--		if (type) {
--			/* configure outbound translation window */
--			program_ob_windows(pcie, pcie->ob_wins_configured,
--					   win->res->start,
--					   win->res->start - win->offset,
--					   type, resource_size(win->res));
--		}
-+		else
-+			continue;
-+
-+		/* configure outbound translation window */
-+		program_ob_windows(pcie, pcie->ob_wins_configured,
-+				   win->res->start,
-+				   win->res->start - win->offset,
-+				   type, resource_size(win->res));
+ 	if (!pcie->intx_domain) {
+ 		dev_err(dev, "Failed to get a INTx IRQ domain\n");
+-		return -ENODEV;
++		return -ENOMEM;
  	}
  
- 	/* fixup for PCIe class register */
+ 	raw_spin_lock_init(&pcie->intx_mask_lock);
+@@ -848,7 +848,7 @@ static int mobiveil_pcie_probe(struct platform_device *pdev)
+ 	/* allocate the PCIe port */
+ 	bridge = devm_pci_alloc_host_bridge(dev, sizeof(*pcie));
+ 	if (!bridge)
+-		return -ENODEV;
++		return -ENOMEM;
+ 
+ 	pcie = pci_host_bridge_priv(bridge);
+ 	if (!pcie)
+@@ -869,7 +869,7 @@ static int mobiveil_pcie_probe(struct platform_device *pdev)
+ 						    &pcie->resources, &iobase);
+ 	if (ret) {
+ 		dev_err(dev, "Getting bridge resources failed\n");
+-		return -ENOMEM;
++		return ret;
+ 	}
+ 
+ 	/*
 -- 
 1.7.1
 
