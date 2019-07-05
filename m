@@ -2,70 +2,138 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8BA4060AF5
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  5 Jul 2019 19:21:00 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C25B760B29
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  5 Jul 2019 19:41:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Date:Message-Id:
-	In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	References:List-Owner; bh=jBhIPaTG0EXECbIfJ4mqVDC4tI+/LcnHZftc5YXgGwU=; b=j+I
-	DP84zx9mUFpDsgCOBxrWuJWK2NdQuNwbKcziEO2M+jG/yZZOgssgoAg242JlTgd03Ec35PRuaZThJ
-	o2czIGUrRQJeXEpgnYfSn4IWJUNYRfxIaCfnHqjMn8RG84aRQfH5KJO6LT+WtXVFymTX5zzH/Y1UZ
-	QIREXRQsgO0uLYmOf49ot7YcRfWdwVbmFAvqkkbGPuBF0g893tQQNiFQoQqFwo1srMdZLzP7Mrn6w
-	Jnbnws40ecYD0DXsabO84c+2R+nYiTDNkhp/pPlO1QvbOyBsqn44XpVpEVMxG1HyRgRQAJdZH8xKP
-	UyBQOAqL7jCoATPQCFTx5wtHKt+eW1w==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-ID:Subject:
+	From:To:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=K981er3IVat7Bt2FJnwf6Drjz2x4P7mc9i/FDtGhZjw=; b=YtjPvj/B/A/O5h
+	Zo7Z1+88Lwsv7vPIjOodDuBL6NELkFyvy6kihLF5iueitPuJj+emoaKdO1EbgpIINTE5IO9FVxSfd
+	FXtREABv9j2Q2B93+IKMMCye48zyf6xkWH2rNaZJ8EDAjG/t9cLxWrBxfJnzK8IGN1u1CtD9PQymQ
+	E1SjVjfeUvbrTxdQ5A/cPpN6zNNPwiCnQn5BLJtd38C/CNqYE52B7VRYx7BkoDS8wZtlIhtzfGdmS
+	tXtyYeBarQ8om6QwbmDW6o1YxacBXZaAGFBjcZESd4jg/jQH2wkrcXlrSdKdc8mP1oTq/8gPCaQ9g
+	F+BUrQFFISiHilFVKftg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hjRtH-000069-9A; Fri, 05 Jul 2019 17:20:55 +0000
-Received: from heliosphere.sirena.org.uk ([2a01:7e01::f03c:91ff:fed4:a3b6])
+	id 1hjSD2-0007fu-Qg; Fri, 05 Jul 2019 17:41:21 +0000
+Received: from mout.web.de ([212.227.15.3])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hjRsM-0008Uy-II
- for linux-arm-kernel@lists.infradead.org; Fri, 05 Jul 2019 17:20:00 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sirena.org.uk; s=20170815-heliosphere; h=Date:Message-Id:In-Reply-To:
- Subject:Cc:To:From:Sender:Reply-To:MIME-Version:Content-Type:
- Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
- List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:
- List-Archive; bh=2ThStbfjZy7dGop/GZdJqX18mi147KcSga4aEJ1WmBY=; b=QAqVfaywNc2V
- GqFHGj+VWP6HuirLc6CWTUgwCZQhrsH9+SSKkf3XvSSObPbvi+o9ORi4z3PYkmnTFbaIyjFo5bqbW
- HshpLWIFyrqMuDbmlsIPm9FnUh9pRLRgoRM4KMS6keRQ6cHIZ+iOUcSZNP9VIfvqgHZejYR0R6tQA
- pMQ/E=;
-Received: from ypsilon.sirena.org.uk ([2001:470:1f1d:6b5::7])
- by heliosphere.sirena.org.uk with esmtpsa
- (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.89)
- (envelope-from <broonie@sirena.org.uk>)
- id 1hjRsF-0004ZP-AR; Fri, 05 Jul 2019 17:19:51 +0000
-Received: by ypsilon.sirena.org.uk (Postfix, from userid 1000)
- id 9C2F82742B3A; Fri,  5 Jul 2019 18:19:50 +0100 (BST)
-From: Mark Brown <broonie@kernel.org>
-To: Luca Weiss <luca@z3ntu.xyz>
-Subject: Applied "ASoC: sunxi: sun50i-codec-analog: Add earpiece" to the asoc
- tree
-In-Reply-To: <20190703184814.27191-1-luca@z3ntu.xyz>
-X-Patchwork-Hint: ignore
-Message-Id: <20190705171950.9C2F82742B3A@ypsilon.sirena.org.uk>
-Date: Fri,  5 Jul 2019 18:19:50 +0100 (BST)
-X-Bad-Reply: In-Reply-To but no 'Re:' in Subject.
+ id 1hjSC1-0007ez-Vx
+ for linux-arm-kernel@lists.infradead.org; Fri, 05 Jul 2019 17:40:20 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=web.de;
+ s=dbaedf251592; t=1562348401;
+ bh=3s4zi/KXhlNeymnbYyVzT+9uWHz+szz7bFcSG09ueIs=;
+ h=X-UI-Sender-Class:To:Cc:From:Subject:Date;
+ b=py+g2sQWu41/X3QbIc5sRfl0aTFUE4ihNEtC3xihyNsPJ0KNypiq0P1Yw8OusyR+b
+ 5aGjlB5h084FnqU8ICC4GiXeVa5/5vvyr7N1SaU0W5LoJbF3bzvxrJkFV8UpWIIJd8
+ s3xl4mN2hUm4lwVWLsLhCT2X00NsHNvYH1eEVVEA=
+X-UI-Sender-Class: c548c8c5-30a9-4db5-a2e7-cb6cb037b8f9
+Received: from [192.168.1.2] ([2.244.45.164]) by smtp.web.de (mrweb003
+ [213.165.67.108]) with ESMTPSA (Nemesis) id 0MMmwZ-1hawGs1Get-008dCk; Fri, 05
+ Jul 2019 19:40:01 +0200
+To: linux-arm-kernel@lists.infradead.org,
+ Alexander Shishkin <alexander.shishkin@linux.intel.com>,
+ Mathieu Poirier <mathieu.poirier@linaro.org>,
+ "Suzuki K. Poulose" <suzuki.poulose@arm.com>
+From: Markus Elfring <Markus.Elfring@web.de>
+Subject: [PATCH] coresight: etm4x: Two function calls less
+Openpgp: preference=signencrypt
+Autocrypt: addr=Markus.Elfring@web.de; prefer-encrypt=mutual; keydata=
+ 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 FEE=
+Message-ID: <172e04b2-65a5-4007-8464-cc7701e76e36@web.de>
+Date: Fri, 5 Jul 2019 19:39:59 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.7.2
+MIME-Version: 1.0
+Content-Language: en-US
+X-Provags-ID: V03:K1:RTKROpMOLmuIHuftSLTu+x2yu721m+pN04wTJ2FGUcWVto/Qy0K
+ 6cD4ccGWAGdDQfB85sDOmlOdBbgvDbervhDz5iEvtpE5LFyzSihiQMRUFhJBTrSAIaQd9gh
+ n+CQbgk1U+3vlrTP92CiET2az/FQh4Gd/782YV5MUywrpDtNNInsCmhXlCm5vetCbOIepRD
+ 1tmE5wVAfunWNWxhoT+gg==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:GTOt7FqlfTA=:LB7vqqcy25vCUySAAJF6t7
+ CFsbSHGcUlYYfiMhTRQm6T4p2aP/jGr7W3CCj9j3aP1Zrde10V9ut5BQ3E23F5wuuK8yr0hW8
+ bqw78McEVpFwcgAeQVAZmr6utU3BXxDD78ope8qM+23remFn9IbGaSC9GIVaPtT28JJ/E90Il
+ FK5GnMsRytexIm4A2/KWNussiWWpnNaMNGGE21z9Ihgu0Mp7t30lW2HiuIULE3ZVDGu+XqOM0
+ +NR0aBTmo4voTNpM23PxRp0giNzlzYVX/BMMOo270RrUQrUR8+mFXCXGaAO6X2lAjFJgQQ3hK
+ 0uWXYwCLeNVvJmNvtBsSEeelK2al0eDfkU5aRPxFtemFoj2sXdfC/ue+BRM+nxpIYxR941zqp
+ XN/iNaU+QCB5rkOKK61F+tsBFl1dHsYsO/X9d1BtkF6w6sFmOC2SP0kH8/04lRpMySfsDPVgT
+ XjpQaEzGESdnmIofkGk8NugUT0z+i7JjEpgVkI6lWZPId7CoGLYZxnazlCjYImpmK+mWkPVhz
+ 7U0zbMK4fTIXrnCgJuFlBBBCpj2E0l9F0c/qquIVFwyHgYYhgdmP2ZgOQQanXQ2OUJl1ENLXo
+ oUPXsNW9et9OTnelsXiV51ZkXW5lh2ss4l0h29/K1mya8rKjy65vG1kWS+J/18o4o2z0mHN+J
+ ztPrff0BHS+RBPCqMdW90xiknHbe+4RsgPjO5Czfv3OO+TVxdcM+hnYtQe8tzahawReKyVn5o
+ Zj4VvYZ5LdpZCh4LlUByJwzeWuluN9UwJGBC2eQ6gNmHkJ2LdIR7S665r26aSetbno7C/RDmJ
+ MvOhzLWpmwQoOktgE81Hm4WbQDvdW7djMhlRK+aqhpNNiElsceziCK3wjjNSZiWTNLWasZFHW
+ 62vV0HhgcHlEMv4jh+l6L1c8UhZLjZeD3VY5XpdL6VQXnP7i9BhqbeCnNrqAnYhRjdYV0A4Hp
+ IFq5Pqkj+o6SFUKxpvfrivARbVvH9s+eoca+8C5NmVWC4cs4cEksMsMkAfUY5d4zIYA0Zb3v0
+ bL+/VTnIU2Gvc1gsQPcQsqbyUnzlHkXNdeRfEDHOkWofJ3vyVEQAqjpCwRoIHFVkqZ7e3Ryac
+ sLVimzHiZrK00KbDkiJHyr+Iz/nYpMPU4Ey
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190705_101958_877802_D67BC6C3 
-X-CRM114-Status: GOOD (  13.30  )
-X-Spam-Score: -0.1 (/)
+X-CRM114-CacheID: sfid-20190705_104018_536380_2C13315B 
+X-CRM114-Status: UNSURE (   9.05  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.1 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [212.227.15.3 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (markus.elfring[at]web.de)
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -77,158 +145,58 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: alsa-devel@alsa-project.org, Maxime Ripard <maxime.ripard@bootlin.com>,
- ~martijnbraam/pmos-upstream@lists.sr.ht, Takashi Iwai <tiwai@suse.com>,
- Liam Girdwood <lgirdwood@gmail.com>, linux-kernel@vger.kernel.org,
- Chen-Yu Tsai <wens@csie.org>, Mark Brown <broonie@kernel.org>,
- Jaroslav Kysela <perex@perex.cz>, linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
+Cc: kernel-janitors@vger.kernel.org, LKML <linux-kernel@vger.kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The patch
+From: Markus Elfring <elfring@users.sourceforge.net>
+Date: Fri, 5 Jul 2019 19:33:26 +0200
 
-   ASoC: sunxi: sun50i-codec-analog: Add earpiece
+Avoid an extra function call in two function implementations
+by using a ternary operator instead of a conditional statement.
 
-has been applied to the asoc tree at
+This issue was detected by using the Coccinelle software.
 
-   https://git.kernel.org/pub/scm/linux/kernel/git/broonie/sound.git for-5.3
-
-All being well this means that it will be integrated into the linux-next
-tree (usually sometime in the next 24 hours) and sent to Linus during
-the next merge window (or sooner if it is a bug fix), however if
-problems are discovered then the patch may be dropped or reverted.  
-
-You may get further e-mails resulting from automated or manual testing
-and review of the tree, please engage with people reporting problems and
-send followup patches addressing any issues that are reported if needed.
-
-If any updates are required or you are submitting further changes they
-should be sent as incremental updates against current git, existing
-patches will not be replaced.
-
-Please add any relevant lists and maintainers to the CCs when replying
-to this mail.
-
-Thanks,
-Mark
-
-From 1fe08602d1179e7bfb2e805b22e8f57f4916c51e Mon Sep 17 00:00:00 2001
-From: Luca Weiss <luca@z3ntu.xyz>
-Date: Wed, 3 Jul 2019 20:48:11 +0200
-Subject: [PATCH] ASoC: sunxi: sun50i-codec-analog: Add earpiece
-
-This adds the necessary registers and audio routes to play audio using
-the Earpiece, that's supported on the A64.
-
-Signed-off-by: Luca Weiss <luca@z3ntu.xyz>
-Reviewed-by: Chen-Yu Tsai <wens@csie.org>
-Link: https://lore.kernel.org/r/20190703184814.27191-1-luca@z3ntu.xyz
-Signed-off-by: Mark Brown <broonie@kernel.org>
+Signed-off-by: Markus Elfring <elfring@users.sourceforge.net>
 ---
- sound/soc/sunxi/sun50i-codec-analog.c | 50 +++++++++++++++++++++++++++
- 1 file changed, 50 insertions(+)
+ drivers/hwtracing/coresight/coresight-etm4x-sysfs.c | 13 ++++---------
+ 1 file changed, 4 insertions(+), 9 deletions(-)
 
-diff --git a/sound/soc/sunxi/sun50i-codec-analog.c b/sound/soc/sunxi/sun50i-codec-analog.c
-index d105c90c3706..6d1de565350e 100644
---- a/sound/soc/sunxi/sun50i-codec-analog.c
-+++ b/sound/soc/sunxi/sun50i-codec-analog.c
-@@ -49,6 +49,15 @@
- #define SUN50I_ADDA_OR_MIX_CTRL_DACR		1
- #define SUN50I_ADDA_OR_MIX_CTRL_DACL		0
- 
-+#define SUN50I_ADDA_EARPIECE_CTRL0	0x03
-+#define SUN50I_ADDA_EARPIECE_CTRL0_EAR_RAMP_TIME	4
-+#define SUN50I_ADDA_EARPIECE_CTRL0_ESPSR		0
-+
-+#define SUN50I_ADDA_EARPIECE_CTRL1	0x04
-+#define SUN50I_ADDA_EARPIECE_CTRL1_ESPPA_EN	7
-+#define SUN50I_ADDA_EARPIECE_CTRL1_ESPPA_MUTE	6
-+#define SUN50I_ADDA_EARPIECE_CTRL1_ESP_VOL	0
-+
- #define SUN50I_ADDA_LINEOUT_CTRL0	0x05
- #define SUN50I_ADDA_LINEOUT_CTRL0_LEN		7
- #define SUN50I_ADDA_LINEOUT_CTRL0_REN		6
-@@ -172,6 +181,10 @@ static const DECLARE_TLV_DB_RANGE(sun50i_codec_lineout_vol_scale,
- 	2, 31, TLV_DB_SCALE_ITEM(-4350, 150, 0),
- );
- 
-+static const DECLARE_TLV_DB_RANGE(sun50i_codec_earpiece_vol_scale,
-+	0, 1, TLV_DB_SCALE_ITEM(TLV_DB_GAIN_MUTE, 0, 1),
-+	2, 31, TLV_DB_SCALE_ITEM(-4350, 150, 0),
-+);
- 
- /* volume / mute controls */
- static const struct snd_kcontrol_new sun50i_a64_codec_controls[] = {
-@@ -225,6 +238,15 @@ static const struct snd_kcontrol_new sun50i_a64_codec_controls[] = {
- 		   SUN50I_ADDA_LINEOUT_CTRL0_LEN,
- 		   SUN50I_ADDA_LINEOUT_CTRL0_REN, 1, 0),
- 
-+	SOC_SINGLE_TLV("Earpiece Playback Volume",
-+		       SUN50I_ADDA_EARPIECE_CTRL1,
-+		       SUN50I_ADDA_EARPIECE_CTRL1_ESP_VOL, 0x1f, 0,
-+		       sun50i_codec_earpiece_vol_scale),
-+
-+	SOC_SINGLE("Earpiece Playback Switch",
-+		   SUN50I_ADDA_EARPIECE_CTRL1,
-+		   SUN50I_ADDA_EARPIECE_CTRL1_ESPPA_MUTE, 1, 0),
-+
- };
- 
- static const char * const sun50i_codec_hp_src_enum_text[] = {
-@@ -257,6 +279,20 @@ static const struct snd_kcontrol_new sun50i_codec_lineout_src[] = {
- 		      sun50i_codec_lineout_src_enum),
- };
- 
-+static const char * const sun50i_codec_earpiece_src_enum_text[] = {
-+	"DACR", "DACL", "Right Mixer", "Left Mixer",
-+};
-+
-+static SOC_ENUM_SINGLE_DECL(sun50i_codec_earpiece_src_enum,
-+			    SUN50I_ADDA_EARPIECE_CTRL0,
-+			    SUN50I_ADDA_EARPIECE_CTRL0_ESPSR,
-+			    sun50i_codec_earpiece_src_enum_text);
-+
-+static const struct snd_kcontrol_new sun50i_codec_earpiece_src[] = {
-+	SOC_DAPM_ENUM("Earpiece Source Playback Route",
-+		      sun50i_codec_earpiece_src_enum),
-+};
-+
- static const struct snd_soc_dapm_widget sun50i_a64_codec_widgets[] = {
- 	/* DAC */
- 	SND_SOC_DAPM_DAC("Left DAC", NULL, SUN50I_ADDA_MIX_DAC_CTRL,
-@@ -285,6 +321,12 @@ static const struct snd_soc_dapm_widget sun50i_a64_codec_widgets[] = {
- 			 SND_SOC_NOPM, 0, 0, sun50i_codec_lineout_src),
- 	SND_SOC_DAPM_OUTPUT("LINEOUT"),
- 
-+	SND_SOC_DAPM_MUX("Earpiece Source Playback Route",
-+			 SND_SOC_NOPM, 0, 0, sun50i_codec_earpiece_src),
-+	SND_SOC_DAPM_OUT_DRV("Earpiece Amp", SUN50I_ADDA_EARPIECE_CTRL1,
-+			     SUN50I_ADDA_EARPIECE_CTRL1_ESPPA_EN, 0, NULL, 0),
-+	SND_SOC_DAPM_OUTPUT("EARPIECE"),
-+
- 	/* Microphone inputs */
- 	SND_SOC_DAPM_INPUT("MIC1"),
- 
-@@ -388,6 +430,14 @@ static const struct snd_soc_dapm_route sun50i_a64_codec_routes[] = {
- 	{ "Line Out Source Playback Route", "Mono Differential",
- 		"Right Mixer" },
- 	{ "LINEOUT", NULL, "Line Out Source Playback Route" },
-+
-+	/* Earpiece Routes */
-+	{ "Earpiece Source Playback Route", "DACL", "Left DAC" },
-+	{ "Earpiece Source Playback Route", "DACR", "Right DAC" },
-+	{ "Earpiece Source Playback Route", "Left Mixer", "Left Mixer" },
-+	{ "Earpiece Source Playback Route", "Right Mixer", "Right Mixer" },
-+	{ "Earpiece Amp", NULL, "Earpiece Source Playback Route" },
-+	{ "EARPIECE", NULL, "Earpiece Amp" },
- };
- 
- static const struct snd_soc_component_driver sun50i_codec_analog_cmpnt_drv = {
--- 
-2.20.1
+diff --git a/drivers/hwtracing/coresight/coresight-etm4x-sysfs.c b/drivers/hwtracing/coresight/coresight-etm4x-sysfs.c
+index a0365e23678e..219c10eb752c 100644
+--- a/drivers/hwtracing/coresight/coresight-etm4x-sysfs.c
++++ b/drivers/hwtracing/coresight/coresight-etm4x-sysfs.c
+@@ -296,11 +296,8 @@ static ssize_t mode_store(struct device *dev,
+
+ 	spin_lock(&drvdata->spinlock);
+ 	config->mode = val & ETMv4_MODE_ALL;
+-
+-	if (config->mode & ETM_MODE_EXCLUDE)
+-		etm4_set_mode_exclude(drvdata, true);
+-	else
+-		etm4_set_mode_exclude(drvdata, false);
++	etm4_set_mode_exclude(drvdata,
++			      config->mode & ETM_MODE_EXCLUDE ? true : false);
+
+ 	if (drvdata->instrp0 == true) {
+ 		/* start by clearing instruction P0 field */
+@@ -999,10 +996,8 @@ static ssize_t addr_range_store(struct device *dev,
+ 	 * Program include or exclude control bits for vinst or vdata
+ 	 * whenever we change addr comparators to ETM_ADDR_TYPE_RANGE
+ 	 */
+-	if (config->mode & ETM_MODE_EXCLUDE)
+-		etm4_set_mode_exclude(drvdata, true);
+-	else
+-		etm4_set_mode_exclude(drvdata, false);
++	etm4_set_mode_exclude(drvdata,
++			      config->mode & ETM_MODE_EXCLUDE ? true : false);
+
+ 	spin_unlock(&drvdata->spinlock);
+ 	return size;
+--
+2.22.0
 
 
 _______________________________________________
