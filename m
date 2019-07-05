@@ -2,104 +2,116 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DFEF66082A
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  5 Jul 2019 16:44:40 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 426266074F
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  5 Jul 2019 16:07:21 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
+	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=v2l0ao/gNJ38w7R1Olys7CBNiABcLmL3LVfuFBcIDII=; b=TiEEXvMls3tU04
-	8eMTig49UJtrQNAeQk6brPT5wmi1J7Hkb2HnWweTG6q7mvw5Rt/zHIr20p2QtVlRK6J6ZWXz7SwXD
-	fnt+5cD7TzgiWvmZVyJubMcNd+eqK8pVV8/AyivXWPU+QKAh0l8EQY1pCVZZV9F8P2xKCMhYOuN3q
-	g75v/0n06i+Hs1ckOlHhtpdcDEMNgYfxfA0CaYnGUNlsYOtrHFlseH92VmtQCGfvfRbg1mpVIKOgu
-	AYTu80OnuswXhHwBE8JZrUQlv4x5p6hpdZ2c/Z+/EsaL4HMC9w6kM8MEj4ZZAjdine0ZlcuykB9wZ
-	v+CjjtiTF4f4j+ZflfRw==;
+	List-Owner; bh=FeWrkmUyaMtlbIaVHn0OuxGTVMB8PymhgptjqCO5/qs=; b=ujpYfaIC61F3PQ
+	ri2stEWjCxP5wOM1a6nxlB3vJ1soBKslJjYsec7i5B61+EJwjkuHPFfB7YS27Q2P7vxHFdfTpUhIe
+	U17eubXhBIdosC/fVcGD8W23MXbhOWr03wn59cYuWP5Q5ChWEXg+ZvW5MGtzjneU1mo0d2bVQaxgc
+	ZGlNRlGFqKvHjc2i9zwWfrfPOeDgvHDIgxaERMRzaCXNV9h7nNVrQARJpS1K/bGGSzIaCStrQTvig
+	hnlw8Bgwhkgn7vRDz9r8x0Gk0XgcZ1DPkWnlgyypp1LgK1yVFR+N4Tjo2KDtGvb46BjBoGEDOcnjT
+	9tFrpAv74oyQsXoaE/MQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hjPS3-0006O2-6F; Fri, 05 Jul 2019 14:44:39 +0000
-Received: from merlin.infradead.org ([2001:8b0:10b:1231::1])
+	id 1hjOrv-0002NZ-8A; Fri, 05 Jul 2019 14:07:19 +0000
+Received: from mail-eopbgr30048.outbound.protection.outlook.com ([40.107.3.48]
+ helo=EUR03-AM5-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hjPQz-0005MX-MN
- for linux-arm-kernel@bombadil.infradead.org; Fri, 05 Jul 2019 14:43:33 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=infradead.org; s=merlin.20170209; h=Content-Type:Cc:To:Subject:Message-ID:
- Date:From:In-Reply-To:References:MIME-Version:Sender:Reply-To:
- Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
- List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=60adLkZbywPEuKsZCLqNo80zya9muW5FO6I+W0n23fY=; b=GxStsqP65UfGI77xY05HOnCnK
- HahdRjl9CCRTcnu3zoRStGc+ffhQAFkpN8/hVL/H93f8xmDhrLH+k+jS7e0igwx+s7mMg3Rt5MHn3
- VcaYZbt6EfaxoDZXFU/8zrlnaoDQl3r2BV9xqJ1rT7q72C47Na74r7toC+yr4BUuYNYRftIYTesmx
- 7MQmeL5ifH8/diODTP7QI+ntFUWL6MXJS5ReAQGSOa2pWZCcFeHlkmZ5bVdPbnnqtPedzZQZq69Yc
- J/oYsE26MBHtI6rGE1Oz+KzrJBXyZmkPZJqHc2Clb84QnUsqC3Q6N1p21dDEZ6Y6PKalU555rQk7u
- pg7qbnKxw==;
-Received: from mail-oi1-x244.google.com ([2607:f8b0:4864:20::244])
- by merlin.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hjNKH-0001kq-2L
- for linux-arm-kernel@lists.infradead.org; Fri, 05 Jul 2019 12:28:30 +0000
-Received: by mail-oi1-x244.google.com with SMTP id w7so7031211oic.3
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 05 Jul 2019 05:28:26 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=60adLkZbywPEuKsZCLqNo80zya9muW5FO6I+W0n23fY=;
- b=gR41PYpJoUr4wNhUj+7pOS/whyCQVlB3Y/FyW0MXD2QyAPmFIaSnPr098/+LTqlkaF
- UbXq0mYJxABiIJQ3so7RJcyrf3LxVOOhasmetOHb8+QYHEy/2oifmyt+2t4a9mGC2ve1
- K9Aa3Qr8DFM4YgqrWExIPCc+mCc929pXBJcazbnKwUpHfkH3EY5Zqd/VH6xjqOUklZ7v
- PB1Nj3kVv/30co+ycIaMtFK+5h/shWiDZ85EQV1w9nfGxSVdLOUe6sbpa8xqYHL8MwQR
- YsIK6mntMv+DvJywT2Z2CQVtFUAC/NO/9KtXN+AHYh/yx3dXTSBrJdEFgqJ9GvFxzeWn
- fUDg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=60adLkZbywPEuKsZCLqNo80zya9muW5FO6I+W0n23fY=;
- b=gYysQ6EnSPnwmFROzWvvZPpa8LjLr8zZewgXzuoBsTVB1Y0KsuXIsyykUoaUR8zlhy
- nSU0ykt/dIdJ/cBhkdUPtjERIJnFNwSwv6/SLbzqe7cXkZPUTPP5EBiex24piYV7cRlT
- ZetzGIDreSTl7RZK7qflarn3uoI1zeEeV1o66NU+48+ItlUGPUJUudFsGW7cIB/A4PtZ
- llHdda8MUwtP8VjJI8ekD4dQ2kIVbaVWrAIG60PyDD5zf3ajX4OMvTydRZodPMU1FB/u
- mTNpTNR5faqWLeeCoVWchbjYNDG9+bU6X0L56oJTu1EuT35K4LjWJgMY9d8PeHcUh+DT
- PTzA==
-X-Gm-Message-State: APjAAAXv5ZXjlooPeGtjGv6bcfohA+I2fEkvLj8VyL5D7QtSmPpIFPdy
- 20MKjAkhPLv7/nwoSIlFs7OyFQXiCsuIP5jpvTE=
-X-Google-Smtp-Source: APXvYqySiSmBKjmMw33BQAZIcvRHSfEaWhuwsnn5aoM4/Gm2bIvNUsuuNGFU+OG8Pfy+n9z73RhZ+f/DsrJ8XacvS3A=
-X-Received: by 2002:aca:cf0f:: with SMTP id f15mr1784578oig.169.1562329584866; 
- Fri, 05 Jul 2019 05:26:24 -0700 (PDT)
+ id 1hjOrj-0002Jm-9X
+ for linux-arm-kernel@lists.infradead.org; Fri, 05 Jul 2019 14:07:08 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=Mellanox.com;
+ s=selector2;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=x1qiAtEBlZpCHtJkwG4q444YGHPJFnGegofN5yJ+9dQ=;
+ b=l3gKmVtoz6OdRC28gy3OMrlE+3SDnu7rUq4g6kY0hhX9a6+0yTQYtEI5toAod0PkSHX3+RDMRMS3ub/FBULCiMqQffpYZITcMa9M06amka8BlbLHZs4OAEVD+CCVy71cPx2EpWNy+lBLSQ9oc41NI0HAN9MCjrc+skUxyAKtjMc=
+Received: from VI1PR05MB4141.eurprd05.prod.outlook.com (10.171.182.144) by
+ VI1PR05MB3213.eurprd05.prod.outlook.com (10.170.237.158) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2032.20; Fri, 5 Jul 2019 12:32:15 +0000
+Received: from VI1PR05MB4141.eurprd05.prod.outlook.com
+ ([fe80::f5d8:df9:731:682e]) by VI1PR05MB4141.eurprd05.prod.outlook.com
+ ([fe80::f5d8:df9:731:682e%5]) with mapi id 15.20.2052.019; Fri, 5 Jul 2019
+ 12:32:15 +0000
+From: Jason Gunthorpe <jgg@mellanox.com>
+To: Dan Williams <dan.j.williams@intel.com>
+Subject: Re: [PATCH v3 0/4] Devmap cleanups + arm64 support
+Thread-Topic: [PATCH v3 0/4] Devmap cleanups + arm64 support
+Thread-Index: AQHVK/HAM2r3dJ5EjUuvQfApLyHQmKat3lEAgAA0MoCAAAH5AIAAxnaAgAwArgCAABJ8AIAAPP2AgADYVwA=
+Date: Fri, 5 Jul 2019 12:32:15 +0000
+Message-ID: <20190705123210.GB31525@mellanox.com>
+References: <cover.1558547956.git.robin.murphy@arm.com>
+ <20190626073533.GA24199@infradead.org>
+ <20190626123139.GB20635@lakrids.cambridge.arm.com>
+ <20190626153829.GA22138@infradead.org> <20190626154532.GA3088@mellanox.com>
+ <20190626203551.4612e12be27be3458801703b@linux-foundation.org>
+ <20190704115324.c9780d01ef6938ab41403bf9@linux-foundation.org>
+ <20190704195934.GA23542@mellanox.com>
+ <CAPcyv4iSviwyAPBnw5zDu_Ks0Ty0sFZ6QbEtVVU0PRd=ReRZNg@mail.gmail.com>
+In-Reply-To: <CAPcyv4iSviwyAPBnw5zDu_Ks0Ty0sFZ6QbEtVVU0PRd=ReRZNg@mail.gmail.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-clientproxiedby: YQXPR01CA0085.CANPRD01.PROD.OUTLOOK.COM
+ (2603:10b6:c00:41::14) To VI1PR05MB4141.eurprd05.prod.outlook.com
+ (2603:10a6:803:4d::16)
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=jgg@mellanox.com; 
+x-ms-exchange-messagesentrepresentingtype: 1
+x-originating-ip: [156.34.55.100]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: 23bec929-a95f-47dd-ac5d-08d70144d011
+x-ms-office365-filtering-ht: Tenant
+x-microsoft-antispam: BCL:0; PCL:0;
+ RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600148)(711020)(4605104)(1401327)(4618075)(2017052603328)(7193020);
+ SRVR:VI1PR05MB3213; 
+x-ms-traffictypediagnostic: VI1PR05MB3213:
+x-microsoft-antispam-prvs: <VI1PR05MB3213C8464D7D5409E5085C9CCFF50@VI1PR05MB3213.eurprd05.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:10000;
+x-forefront-prvs: 008960E8EC
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(4636009)(366004)(39860400002)(396003)(376002)(136003)(346002)(199004)(189003)(86362001)(305945005)(316002)(2616005)(186003)(7736002)(52116002)(33656002)(66066001)(81156014)(446003)(11346002)(26005)(386003)(8676002)(8936002)(256004)(6116002)(76176011)(36756003)(81166006)(476003)(102836004)(3846002)(486006)(25786009)(2906002)(66556008)(6512007)(6486002)(71190400001)(478600001)(6436002)(6246003)(6506007)(68736007)(5660300002)(6916009)(1076003)(4326008)(73956011)(66946007)(71200400001)(14454004)(229853002)(4744005)(7416002)(66476007)(53936002)(99286004)(54906003)(64756008)(66446008);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:VI1PR05MB3213;
+ H:VI1PR05MB4141.eurprd05.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; A:1; MX:1; 
+received-spf: None (protection.outlook.com: mellanox.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam-message-info: OXHySS3kGXYFoR8fTp+EyL12yec2p3+BOM6aFore+Im3pyKi5P4GtmIqsv6ZKrzbWKyVp7hdy+8p0je8/r1W7hUP7D7by6lBbUIb6GLoX2xItuS21StUv12Q1Of7kBobFyZJ63Q46bNFRcD2BF2a7t/iA5orFG8cWOxHG2SYbBRih0htRMPVNEdJKr+ve07BItNjDLnJxRPU1RUVWndRSyl6rhpPYrWMxd6Kv+2HB/RtqRkdAMzwcWQyoDIDrfj1Z40MbewF4k3d7N9YDWPePTuoHw3D7OpIUn+OM4+xJ+UGUSinXEWzDZ8w8SUI09HXOgZaORl1UnDUqYJEpuOIYLZX6I93yIb3KQosKLcUpb1OtRoKtgBkbSw1DUvv8Gi8KRT2ZSLBsqpxFQiKOTmNXtcstwPZMUKyY7IWByj/k20=
+Content-ID: <6156315727C54B41AAC7D7197EE2B4AA@eurprd05.prod.outlook.com>
 MIME-Version: 1.0
-References: <20190624140731.24080-1-TheSven73@gmail.com>
- <20190705072847.GA2911@vkoul-mobl>
-In-Reply-To: <20190705072847.GA2911@vkoul-mobl>
-From: Sven Van Asbroeck <thesven73@gmail.com>
-Date: Fri, 5 Jul 2019 08:26:12 -0400
-Message-ID: <CAGngYiVsUZwCUEsqRk-YtZPGYxsqzHzD7U5GeeHyAa2Yw9Z6WA@mail.gmail.com>
-Subject: Re: [PATCH] dmaengine: imx-sdma: fix use-after-free on probe error
- path
-To: Vinod Koul <vkoul@kernel.org>
-X-Spam-Note: CRM114 invocation failed
-X-Spam-Score: 0.1 (/)
-X-Spam-Report: SpamAssassin version 3.4.2 on merlin.infradead.org summary:
- Content analysis details:   (0.1 points)
+X-OriginatorOrg: Mellanox.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 23bec929-a95f-47dd-ac5d-08d70144d011
+X-MS-Exchange-CrossTenant-originalarrivaltime: 05 Jul 2019 12:32:15.8846 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: a652971c-7d2e-4d9b-a6a4-d149256f461b
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: jgg@mellanox.com
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1PR05MB3213
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20190705_070707_339538_BF8E782A 
+X-CRM114-Status: GOOD (  11.38  )
+X-Spam-Score: -0.2 (/)
+X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (thesven73[at]gmail.com)
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (thesven73[at]gmail.com)
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:244 listed in]
- [list.dnswl.org]
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ no trust [40.107.3.48 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- 0.0 T_PDS_NO_HELO_DNS      High profile HELO but no A record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -111,38 +123,39 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Shawn Guo <shawnguo@kernel.org>, Sascha Hauer <s.hauer@pengutronix.de>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- NXP Linux Team <linux-imx@nxp.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>, dmaengine@vger.kernel.org,
- Dan Williams <dan.j.williams@intel.com>, Robin Gong <yibin.gong@nxp.com>,
- Fabio Estevam <festevam@gmail.com>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>
+Cc: Mark Rutland <mark.rutland@arm.com>, Michal Hocko <mhocko@suse.com>,
+ "anshuman.khandual@arm.com" <anshuman.khandual@arm.com>,
+ "catalin.marinas@arm.com" <catalin.marinas@arm.com>,
+ "will.deacon@arm.com" <will.deacon@arm.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Christoph Hellwig <hch@infradead.org>,
+ "linux-mm@kvack.org" <linux-mm@kvack.org>,
+ Andrew Morton <akpm@linux-foundation.org>, Robin Murphy <robin.murphy@arm.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Vinod,
+On Thu, Jul 04, 2019 at 04:37:51PM -0700, Dan Williams wrote:
 
-On Fri, Jul 5, 2019 at 3:32 AM Vinod Koul <vkoul@kernel.org> wrote:
->
-> > +             if (ret)
-> > +                     dev_warn(&pdev->dev, "failed to get firmware name\n");
->
-> if should have braces!
-> Applied after fixing braces!
+> > If we give up on CH's series the hmm.git will not have conflicts,
+> > however we just kick the can to the next merge window where we will be
+> > back to having to co-ordinate amd/nouveau/rdma git trees and -mm's
+> > patch workflow - and I think we will be worse off as we will have
+> > totally given up on a git based work flow for this. :(
+> 
+> I think the problem would be resolved going forward post-v5.3 since we
+> won't have two tress managing kernel/memremap.c. This cycle however
+> there is a backlog of kernel/memremap.c changes in -mm.
 
-checkpatch.pl output after adding braces:
+IHMO there is always something :( 
 
-WARNING: braces {} are not necessary for single statement blocks
-#102: FILE: drivers/dma/imx-sdma.c:2165:
-+ if (ret) {
-+ dev_warn(&pdev->dev, "failed to get firmware from device tree\n");
-+ }
+CH's series had something like 5 different collisions already, and I
+think we did a good job of with everything but your subsection
+patches.
 
-total: 0 errors, 1 warnings, 61 lines checked
+Jason
 
 _______________________________________________
 linux-arm-kernel mailing list
