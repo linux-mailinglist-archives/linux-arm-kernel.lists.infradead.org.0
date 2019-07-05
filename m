@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F0F716080A
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  5 Jul 2019 16:40:20 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B2926609AF
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  5 Jul 2019 17:50:16 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,71 +11,69 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=Q/xlO29HySFWo0Py58PTmo3RfHk4pAQQ5amjd2frAJ4=; b=B4BkdYBDxiLJkeS1dbStFcW19o
-	WHmAOcuh32hN9ZTCu4VhqpTV+IO2fhA3szS4PTE8W0n0cPci9KBKbpbyg2A3MNsu5W639/RJVHGkD
-	UEBGAkNrsPwYvtNqYu3B3sy0/jw1zVxJbr+Nyfgm9pUGoMILqdtAWS7rd/3JhQSHy2+6W0skoL26i
-	K04ySfQNoZGOX3VZi7abo3SBlC0IiOSsCBKrIdn9P/iTN+b0NBFT3onfV+tk3uMZ5lVe48HCJEuKq
-	61GInaMGZSihGZNs3KzIqfKMoooSGKNnvxpKZJgBFpf4BhP9DN7bH2R6xDVWLc1AW25/L7FiVv8pj
-	QMOB7CxQ==;
+	bh=mOIXRJNcg0NCzMyMIJM3CNF4chtEEbEK0HDCQEYZ5/w=; b=HkCVMDzrQN1+HOuydSNlaVMLAU
+	kSJnbRzXpuKK55KEB5QHEXr+QqtdxGDe8/uBVwv09KjYtRbWBfV+yDgWHHzfRwk5CxSLfYVQh2TCF
+	YCtZo595LyTRnUamYq1BUdBSK8mmn0TrYM3DyIXUWhVdSYwbO6TJy4DtopcuEH8fy0yaPRhGz2ayu
+	IKE1/zqlc1GSGJ0k7bI/X3jPubc046B36CD0DzNXQHjpbKuI4TuuKKzSiVGpu7r4rU8zBQ3RiPpPy
+	CCwkOBD2cPunUXCfwiSxIsG4hlq0T7TcrfKGHa6FsnhJs9PQ5iIRoX9TmxwOv0MHpxWqYNsTqoNIY
+	C9ZU5elw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hjPNq-0001qg-Ko; Fri, 05 Jul 2019 14:40:18 +0000
-Received: from casper.infradead.org ([2001:8b0:10b:1236::1])
+	id 1hjQTX-0004IW-Bv; Fri, 05 Jul 2019 15:50:15 +0000
+Received: from merlin.infradead.org ([2001:8b0:10b:1231::1])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hjPKG-0006LN-GI
- for linux-arm-kernel@bombadil.infradead.org; Fri, 05 Jul 2019 14:36:36 +0000
+ id 1hjQNw-00066L-JE
+ for linux-arm-kernel@bombadil.infradead.org; Fri, 05 Jul 2019 15:44:28 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=infradead.org; s=casper.20170209; h=References:In-Reply-To:Message-Id:Date:
+ d=infradead.org; s=merlin.20170209; h=References:In-Reply-To:Message-Id:Date:
  Subject:Cc:To:From:Sender:Reply-To:MIME-Version:Content-Type:
  Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
  Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
  List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=AZTkwAKvu+YSvTEfYjt4PrBulSdtSrSRI8uddEwOfgE=; b=So3aAXP2Qi2limAUfDWNXX9Tr
- zParnHQ7pRSKh/I7EqXzMmi80l9D6mffYoe/dPoZUuV2jC/PXQIwjSmGTlEkcEnCY6oVY98tx9PHW
- 2lgMUCvu0wX3NwVnfzJ84XuVnHjDh9f5+3I5VUjCvNaoD4mnmvUP5IL4R5I115vE4pxf/PRMr+9nm
- P+WTC/fgF3HNVlE2hjuD11e/kFgULCgqkiSgdRYr2MCqyUnsACmlm6Lc8IA4bMXk457HkVYwnG6Y3
- UL86uVknRZRCyLUyG8mVIF7OKzSv78VJgcEqJ+N20bzEjCgjgKUliVoJNRWII+Df7MGlNNnyxQUa7
- 8qV7U9XMg==;
-Received: from inva020.nxp.com ([92.121.34.13])
- by casper.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hjL7x-00022z-Su
- for linux-arm-kernel@lists.infradead.org; Fri, 05 Jul 2019 10:07:40 +0000
-Received: from inva020.nxp.com (localhost [127.0.0.1])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 72D771A077B;
- Fri,  5 Jul 2019 12:07:28 +0200 (CEST)
+ bh=PoD/LNZ3WAuKAbzbfxk+ccktwp+WRdRw3IUZAYLIStA=; b=ls6zGv6m5SZ5vwpmliWDLkadc
+ JV6J3dnKt8HyCYL6yuhAn4Kz2IuFKDI7uCvVcttzBgfVYAf/FXER1IO2xkNRbMIFZxuB9QaRW1MzJ
+ YZLGrX1pevAIkX8g2Gtf6jfXgAmlM0cyv+QKVKb/Ens5a1dqnQMTe8kwczo1lUEzP/UDluRiAFmsB
+ BSpTt/EWsr8sRAKSYrhBhJgLkd+AAB+Kcp0XI0j2dvfds1j5Otb2Zmk5sv3Wo0t/gdT1kx1LT2/GH
+ zF4Pg3tRiw5FKNKBItc4yyzSgJNQBcVTLHqDQIaH/7taWt/PJZ4jLYvg7XiAm4/WdcXoiIklwvJER
+ Ve/KHf9rg==;
+Received: from inva021.nxp.com ([92.121.34.21])
+ by merlin.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hjL7q-0000zh-Ry
+ for linux-arm-kernel@lists.infradead.org; Fri, 05 Jul 2019 10:07:31 +0000
+Received: from inva021.nxp.com (localhost [127.0.0.1])
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id D6EF7200706;
+ Fri,  5 Jul 2019 12:07:29 +0200 (CEST)
 Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
  [165.114.16.14])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id E9F5B1A0EB9;
- Fri,  5 Jul 2019 12:07:19 +0200 (CEST)
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 58AED200044;
+ Fri,  5 Jul 2019 12:07:21 +0200 (CEST)
 Received: from titan.ap.freescale.net (TITAN.ap.freescale.net [10.192.208.233])
- by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id B0AA7402EB;
- Fri,  5 Jul 2019 18:07:09 +0800 (SGT)
+ by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 4B4D240332;
+ Fri,  5 Jul 2019 18:07:11 +0800 (SGT)
 From: Hou Zhiqiang <Zhiqiang.Hou@nxp.com>
 To: linux-pci@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
  devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
  bhelgaas@google.com, robh+dt@kernel.org, mark.rutland@arm.com,
  l.subrahmanya@mobiveil.co.in, shawnguo@kernel.org, leoyang.li@nxp.com,
  lorenzo.pieralisi@arm.com, catalin.marinas@arm.com, will.deacon@arm.com
-Subject: [PATCHv6 16/28] PCI: mobiveil: Fix the returned error number
-Date: Fri,  5 Jul 2019 17:56:44 +0800
-Message-Id: <20190705095656.19191-17-Zhiqiang.Hou@nxp.com>
+Subject: [PATCHv6 17/28] PCI: mobiveil: Remove an unnecessary return value
+ check
+Date: Fri,  5 Jul 2019 17:56:45 +0800
+Message-Id: <20190705095656.19191-18-Zhiqiang.Hou@nxp.com>
 X-Mailer: git-send-email 2.14.1
 In-Reply-To: <20190705095656.19191-1-Zhiqiang.Hou@nxp.com>
 References: <20190705095656.19191-1-Zhiqiang.Hou@nxp.com>
 X-Virus-Scanned: ClamAV using ClamSMTP
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190705_110738_001563_35E17069 
-X-CRM114-Status: UNSURE (   9.96  )
-X-CRM114-Notice: Please train this message.
+X-Spam-Note: CRM114 invocation failed
 X-Spam-Score: -2.3 (--)
-X-Spam-Report: SpamAssassin version 3.4.2 on casper.infradead.org summary:
- Content analysis details:   (-2.3 points, 5.0 required)
+X-Spam-Report: SpamAssassin version 3.4.2 on merlin.infradead.org summary:
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [92.121.34.13 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ medium trust [92.121.34.21 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -95,7 +93,10 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This patch modified the returned error number by convention.
+The memory of private structure has been allocated together with the
+pci_host_bridge structure in function devm_pci_alloc_host_bridge().
+So it is unnecessary to check the return value when get the private
+structure pointer.
 
 Signed-off-by: Hou Zhiqiang <Zhiqiang.Hou@nxp.com>
 Reviewed-by: Minghuan Lian <Minghuan.Lian@nxp.com>
@@ -104,40 +105,22 @@ Reviewed-by: Subrahmanya Lingappa <l.subrahmanya@mobiveil.co.in>
 V6:
  - Splited from #3 of v5 patches, no functional change.
 
- drivers/pci/controller/pcie-mobiveil.c |    6 +++---
- 1 files changed, 3 insertions(+), 3 deletions(-)
+ drivers/pci/controller/pcie-mobiveil.c |    2 --
+ 1 files changed, 0 insertions(+), 2 deletions(-)
 
 diff --git a/drivers/pci/controller/pcie-mobiveil.c b/drivers/pci/controller/pcie-mobiveil.c
-index 965f89a..51cbe53 100644
+index 51cbe53..ddc20d3 100644
 --- a/drivers/pci/controller/pcie-mobiveil.c
 +++ b/drivers/pci/controller/pcie-mobiveil.c
-@@ -822,7 +822,7 @@ static int mobiveil_pcie_init_irq_domain(struct mobiveil_pcie *pcie)
- 
- 	if (!pcie->intx_domain) {
- 		dev_err(dev, "Failed to get a INTx IRQ domain\n");
--		return -ENODEV;
-+		return -ENOMEM;
- 	}
- 
- 	raw_spin_lock_init(&pcie->intx_mask_lock);
-@@ -848,7 +848,7 @@ static int mobiveil_pcie_probe(struct platform_device *pdev)
- 	/* allocate the PCIe port */
- 	bridge = devm_pci_alloc_host_bridge(dev, sizeof(*pcie));
- 	if (!bridge)
--		return -ENODEV;
-+		return -ENOMEM;
+@@ -851,8 +851,6 @@ static int mobiveil_pcie_probe(struct platform_device *pdev)
+ 		return -ENOMEM;
  
  	pcie = pci_host_bridge_priv(bridge);
- 	if (!pcie)
-@@ -869,7 +869,7 @@ static int mobiveil_pcie_probe(struct platform_device *pdev)
- 						    &pcie->resources, &iobase);
- 	if (ret) {
- 		dev_err(dev, "Getting bridge resources failed\n");
+-	if (!pcie)
 -		return -ENOMEM;
-+		return ret;
- 	}
  
- 	/*
+ 	pcie->pdev = pdev;
+ 
 -- 
 1.7.1
 
