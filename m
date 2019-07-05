@@ -2,67 +2,65 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D00CA60B89
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  5 Jul 2019 20:48:02 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1574A60B99
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  5 Jul 2019 20:56:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
 	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=vFJzOr3rrUqvXW5oLP4OfgGLTHQIJNdXEjSVbOsyd8g=; b=NKd5oa12N/3KL9
-	khZKqfr1nWNME0OFa8HUrXBf2UPQc6qKuqQMpPwrYHaoP0oCxLZQTvr5N3Wug2TRN8rLn1OctbwhM
-	Qq53s8Jw0XlmD02+ZPXHoLUGb3gQZR905NF2oDtd9e3e4fRNJftgLQlDnqxWVT/CdG+oIUsU81srv
-	6QFxqDhSBLNvMDVDxAUpMOS0k515mccExHmtibmgN0Ju82EjNh8XDkT4B9iMFqgsVFCtJP4Gopwmi
-	IdwpANGXfhAnZLHx69ibWDfw9RBbF1WfACsWsZaDmip/0Y2Fczr7UrksCXHt0UvhTFRjpWLd1lbR1
-	h0/xKMOSauui08adFswg==;
+	List-Owner; bh=FrXniU1Op4pcY0R2/yVboLqJVww5UCd7lNUQtmbP7to=; b=XeGa3EyTsieNhD
+	tCWXn1YISAtSOwzQFZEZk6EiM7cfDT2rVZZa7e63plnmk7G4IoRIlgmJS0nXI1cNWqbp8EXrJg/rT
+	+sa6hdm/yHIOi0bm2uTLWejcJxVsfxVXQJGrdbd0ssV38zA78eT+6s4U/x/MG6jJcMl+pAbTROyNj
+	1enr0oKQcGb34zeMiRZTjVPXEEoMpTXfPyuNgPiyP3MBvHN8L7wBZeDAy4T3ZYII7heIJF77dtvRq
+	f4dLsf61SfJdCZ/6MwrC5WWu4NYqgsh3mo56syEqjoQ03OTvogEqnS2TRMfXdgS+cf3GPbf9ZSAMu
+	AagGHvOFlxeJ4+E1jlEQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hjTFR-0002e5-Oj; Fri, 05 Jul 2019 18:47:53 +0000
-Received: from mout.kundenserver.de ([212.227.126.135])
+	id 1hjTNg-0005YR-6I; Fri, 05 Jul 2019 18:56:24 +0000
+Received: from mout.kundenserver.de ([217.72.192.74])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hjTFE-0002dU-H5
- for linux-arm-kernel@lists.infradead.org; Fri, 05 Jul 2019 18:47:42 +0000
+ id 1hjTNS-0005Xo-Q5
+ for linux-arm-kernel@lists.infradead.org; Fri, 05 Jul 2019 18:56:12 +0000
 Received: from threadripper.lan ([149.172.19.189]) by mrelayeu.kundenserver.de
- (mreue011 [212.227.15.129]) with ESMTPA (Nemesis) id
- 1MVMqF-1i83313Aox-00SRHt; Fri, 05 Jul 2019 20:47:28 +0200
+ (mreue106 [212.227.15.145]) with ESMTPA (Nemesis) id
+ 1MFL8J-1hlPCN00kL-00FjKe; Fri, 05 Jul 2019 20:56:02 +0200
 From: Arnd Bergmann <arnd@arndb.de>
 To: stable@kernel.org
 Subject: [PATCH] [STABLE backport 4.9] arm64, vdso: Define vdso_{start,
  end} as array
-Date: Fri,  5 Jul 2019 20:47:20 +0200
-Message-Id: <20190705184726.3221252-1-arnd@arndb.de>
+Date: Fri,  5 Jul 2019 20:55:50 +0200
+Message-Id: <20190705185558.3655220-1-arnd@arndb.de>
 X-Mailer: git-send-email 2.20.0
 MIME-Version: 1.0
-X-Provags-ID: V03:K1:J9Iu2hOBd57Q5rq9Xf8IC+BxgXaa2P4hpSWsU2FjYCLv76+DrHz
- 8Om4XxSDxit042SEcgbBJojWhWuX3ms8kLLZ0IhZVAbWrjfxqn/8obfIUTFBf1tZGfwY9Tq
- 7O71ICLIT6PSSmGFd3yFRqb/wvZHg9z8RoO6UK3B2dchqEXvDIwdj8MpDQWj0ZOA7iGOaiD
- WYtZrPmhiPbCFUe9IOhPQ==
+X-Provags-ID: V03:K1:9JINqZTxsunxdoxm0iUUSQeQ4/ecEkdB/hce9tuBRM0t29UkQyB
+ lwdaoYveWTZgF/lUUJRSrqK5WYjQEc/k/B3bNFv2gb4NGga/CJxMU+NjQfEXT5gqJQt5kuo
+ ZIons8w8mls3aB9ApHEnSFneR8RVUzIEHFM6caPOzmfKpEPQ4qNwFkjikgCKvQzq8szf9bK
+ I3Y3ygKkOawd/NWlaivqQ==
 X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:7nP5IUNxmBg=:GluX+cDzMCpvsK0wDxyVon
- hxx8ZemSFuhMU8FOCAU/vUcHFfErh+a2DLTfZEhFl09E4ech10S/X/pne8GbU4hJO4wtlZfxW
- B4xr453d2QYywoHHI6WtnmE7H2elddWjcM+dJPmoZyAyr3/GXEL2Ta7YcPmPzccTT60Ty/5c8
- cpXO64PMiM3/wbUVPR2rCUeJ3+lPAEPFl5H/CKaARIBV4YB1U+O4UMxhGE+F9WZJUfZnyunmo
- jRCWnqQzSdgQlU3kySHD3z4s9t2UK4BfHlMUhbqHzRAoII2EkfxJaeCXGdmkmsGyx78CQY/zg
- TIo5SuwFnGiz+3dIPONQZ1ACL8L3H6xXCRqopgNvt+ComAfC10aDVqsOR/0CmeowEOXNmjpzJ
- UujOFG9NFzJpbDvP/0xYmkDWe5PdcMJbbs7+gcla2IrT5yXdy8Hxk1tJl2GUe3sqZlSfgfAh/
- zBPzcttmBhtgOzvHPGwKUQJVNznDlhPC32eXWN9rrnLQsXe3PlcRIVsun8DpKpzeltTsXcSvE
- 5PrBozokZucix/q5igEZRSmSVjqRt+63Nq/3BPJ7ZBb85bbl2NOF9lFxs8WCloOmtTDGeSbOc
- cgwjb3uPJwwdEHFg5+KMGCbnYpDchMfGCjoKbtvYsF2lQAxTUO2hefGi3iSnrPV4TAGmswqmb
- xD5Br6J0U0edvnGCYSx5cp0OF+UJ8EiVdQcw8rlsh7mb9J8TG0C2xmPLgFHKb/9XITIjRIhi3
- Qzf7LN/AO0fw4ug5SdTqBMco7djdJGL32gblgw==
+X-UI-Out-Filterresults: notjunk:1;V03:K0:qLH4Ljn1ftU=:7RYumwgeDzndatUw45Gd63
+ ankahKZDnMs8XbshANZqkIXJWYw+tKq4O4ySHlOhOuVekatL3/OZ/PWpMIvepxQ4jYTTseMAL
+ D2Lwf7INkibOSaGg1/Eoo8ClWXQZ12MdSGun7BrflypAZjXnuqosuMtplMwTkdld2cC5YvLBW
+ tYlqcXqfkzMqdcOUpgY40AxRWxkOJj0UZmHF8S2NJqLZp9ako89YdArPE/qAdr0SdM/Xg8mDs
+ mMzCZm5VXJbwjskhasHVFRiwYeV3GjBST+hyfwOQ7Frd9Ailqn8DVpZ8dOEIb+VfifAt4Hlz0
+ uMLvUpts4xuJFepYSagTZ67NegJrBfAKgVMqeXQGMnzUkK4JqzgpHK/VXRDxeeiiQa+g5Pg7C
+ l1MWXr7PQA8AHZc1nTuYg39Ko3PbZJCNKLQZhSy6sTrPLggOQMH9Hdeg3annYY9dbfdgD+Yye
+ l7aLSJRiCfUZA53vI51/eLHzCgsVXqAODgvOY+pe2nfVGqElXrv+JTu67RB9Rh3AwhQfBWbrO
+ hKbKPCPGB0jPqkFh9DVefMw+lIx75MwDOF5zJJRflQRB+c1+v7Y0R+wj/bKLkVh2hvmgHcyBA
+ q1I63aheIZu2AoC+NUmOJtYCq7eTp9TvPDcHzuuP5T9LbqdHsZVUEE9KUj6ibgdS+xOb48tai
+ PtDKRxILS9xvJAIvdeesvCglw1pGNbAYZApVwMXppFEHlyzfXN4hnMHpwK2z9Gputf6thSCEK
+ ZTG6x/wWfQPWxr+ozBXhNhAklu9pxcSE9y/Gsw==
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190705_114740_868494_DF3B53F3 
-X-CRM114-Status: GOOD (  14.60  )
-X-Spam-Score: -0.1 (/)
+X-CRM114-CacheID: sfid-20190705_115611_145853_5C74DD77 
+X-CRM114-Status: GOOD (  14.77  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.1 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.227.126.135 listed in list.dnswl.org]
- -0.1 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [212.227.126.135 listed in wl.mailspike.net]
+ no trust [217.72.192.74 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -78,12 +76,10 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>,
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: Mark Rutland <mark.rutland@arm.com>, Jisheng Zhang <jszhang@marvell.com>,
  Kees Cook <keescook@chromium.org>, Arnd Bergmann <arnd@arndb.de>,
- Sasha Levin <sashal@kernel.org>,
  Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
  Will Deacon <will.deacon@arm.com>, linux-kernel@vger.kernel.org,
  Sasha Levin <alexander.levin@microsoft.com>,
  Catalin Marinas <catalin.marinas@arm.com>,
- Vincenzo Frascino <vincenzo.frascino@arm.com>,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
@@ -104,28 +100,29 @@ Signed-off-by: Kees Cook <keescook@chromium.org>
 Signed-off-by: Will Deacon <will.deacon@arm.com>
 Signed-off-by: Arnd Bergmann <arnd@arndb.de>
 ---
-Backported to 4.9, which is lacking the rework from
-2077be6783b5 ("arm64: Use __pa_symbol for kernel symbols")
+Backported to 4.4, which predates the rework from
+2077be6783b5 ("arm64: Use __pa_symbol for kernel symbols") and
+5a9e3e156ec1 ("arm64: apply __ro_after_init to some objects")
 ---
  arch/arm64/kernel/vdso.c | 10 +++++-----
  1 file changed, 5 insertions(+), 5 deletions(-)
 
 diff --git a/arch/arm64/kernel/vdso.c b/arch/arm64/kernel/vdso.c
-index c9b9a5a322eb..c0f315ecfa7c 100644
+index 97bc68f4c689..908bc5ab94c1 100644
 --- a/arch/arm64/kernel/vdso.c
 +++ b/arch/arm64/kernel/vdso.c
-@@ -37,7 +37,7 @@
+@@ -36,7 +36,7 @@
  #include <asm/vdso.h>
  #include <asm/vdso_datapage.h>
  
 -extern char vdso_start, vdso_end;
 +extern char vdso_start[], vdso_end[];
- static unsigned long vdso_pages __ro_after_init;
+ static unsigned long vdso_pages;
+ static struct page **vdso_pagelist;
  
- /*
-@@ -124,14 +124,14 @@ static int __init vdso_init(void)
+@@ -115,14 +115,14 @@ static int __init vdso_init(void)
+ {
  	int i;
- 	struct page **vdso_pagelist;
  
 -	if (memcmp(&vdso_start, "\177ELF", 4)) {
 +	if (memcmp(vdso_start, "\177ELF", 4)) {
@@ -141,15 +138,15 @@ index c9b9a5a322eb..c0f315ecfa7c 100644
  
  	/* Allocate the vDSO pagelist, plus a page for the data. */
  	vdso_pagelist = kcalloc(vdso_pages + 1, sizeof(struct page *),
-@@ -144,7 +144,7 @@ static int __init vdso_init(void)
+@@ -135,7 +135,7 @@ static int __init vdso_init(void)
  
  	/* Grab the vDSO code pages. */
  	for (i = 0; i < vdso_pages; i++)
--		vdso_pagelist[i + 1] = pfn_to_page(PHYS_PFN(__pa(&vdso_start)) + i);
-+		vdso_pagelist[i + 1] = pfn_to_page(PHYS_PFN(__pa(vdso_start)) + i);
+-		vdso_pagelist[i + 1] = virt_to_page(&vdso_start + i * PAGE_SIZE);
++		vdso_pagelist[i + 1] = virt_to_page(vdso_start + i * PAGE_SIZE);
  
- 	vdso_spec[0].pages = &vdso_pagelist[0];
- 	vdso_spec[1].pages = &vdso_pagelist[1];
+ 	/* Populate the special mapping structures */
+ 	vdso_spec[0] = (struct vm_special_mapping) {
 -- 
 2.20.0
 
